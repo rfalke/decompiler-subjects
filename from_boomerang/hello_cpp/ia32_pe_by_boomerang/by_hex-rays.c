@@ -20,7 +20,7 @@ ATOM __cdecl sub_411D60(HINSTANCE hInstance);
 int __cdecl sub_411EA0(HINSTANCE hInstance, int nCmdShow); // idb
 LRESULT __stdcall sub_411F80(HWND hWndParent, UINT Msg, WPARAM wParam, LPARAM lParam);
 int __stdcall sub_412170(HWND hDlg, int, int, int); // idb
-int __cdecl sub_412830(int a1);
+int __cdecl sub_412830(int);
 int sub_412850();
 BOOL sub_413180();
 HANDLE sub_413190();
@@ -28,23 +28,8 @@ struct _TEB *sub_4131A0();
 void sub_4146A0();
 void sub_414740();
 void sub_414FE0();
-// void __usercall sub_41D0F0(int a1@<ecx>, int a2@<ebx>, int a3@<ebp>, int a4@<edi>, int a5@<esi>);
-int __cdecl sub_41F8F0(int a1);
-// void __stdcall DebugBreak();
-// void __stdcall __noreturn ExitProcess(UINT uExitCode);
-// BOOL __stdcall EndDialog(HWND hDlg, INT_PTR nResult);
-// INT_PTR __stdcall DialogBoxParamA(HINSTANCE hInstance, LPCSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
-// BOOL __stdcall DestroyWindow(HWND hWnd);
-// LRESULT __stdcall DefWindowProcA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
-// HDC __stdcall BeginPaint(HWND hWnd, LPPAINTSTRUCT lpPaint);
-// BOOL __stdcall EndPaint(HWND hWnd, const PAINTSTRUCT *lpPaint);
-// void __stdcall PostQuitMessage(int nExitCode);
-// HWND __stdcall CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam);
-// BOOL __stdcall ShowWindow(HWND hWnd, int nCmdShow);
-// BOOL __stdcall UpdateWindow(HWND hWnd);
-// HICON __stdcall LoadIconA(HINSTANCE hInstance, LPCSTR lpIconName);
-// HCURSOR __stdcall LoadCursorA(HINSTANCE hInstance, LPCSTR lpCursorName);
-// ATOM __stdcall RegisterClassExA(const WNDCLASSEXA *);
+// void __usercall sub_41D0F0(int@<ecx>, int@<ebx>, int@<ebp>, int@<edi>, int@<esi>);
+int __cdecl sub_41F8F0(int);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -119,7 +104,7 @@ void (*dword_427A2C[66])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
 _UNKNOWN unk_427B34; // weak
 void (*dword_427D38[178])(void) =
 {
@@ -301,7 +286,7 @@ void (*dword_427D38[178])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
 int dword_428EB0 = -1153374642; // weak
 CHAR ClassName[104] =
 {
@@ -516,6 +501,20 @@ CHAR WindowName[100] =
 HINSTANCE hInstance = NULL; // idb
 int dword_42960C = 0; // weak
 int dword_42992C = 0; // weak
+// extern void (__stdcall *DebugBreak)();
+// extern BOOL (__stdcall *EndDialog)(HWND hDlg, INT_PTR nResult);
+// extern INT_PTR (__stdcall *DialogBoxParamA)(HINSTANCE hInstance, LPCSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
+// extern BOOL (__stdcall *DestroyWindow)(HWND hWnd);
+// extern LRESULT (__stdcall *DefWindowProcA)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+// extern HDC (__stdcall *BeginPaint)(HWND hWnd, LPPAINTSTRUCT lpPaint);
+// extern BOOL (__stdcall *EndPaint)(HWND hWnd, const PAINTSTRUCT *lpPaint);
+// extern void (__stdcall *PostQuitMessage)(int nExitCode);
+// extern HWND (__stdcall *CreateWindowExA)(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam);
+// extern BOOL (__stdcall *ShowWindow)(HWND hWnd, int nCmdShow);
+// extern BOOL (__stdcall *UpdateWindow)(HWND hWnd);
+// extern HICON (__stdcall *LoadIconA)(HINSTANCE hInstance, LPCSTR lpIconName);
+// extern HCURSOR (__stdcall *LoadCursorA)(HINSTANCE hInstance, LPCSTR lpCursorName);
+// extern ATOM (__stdcall *RegisterClassExA)(const WNDCLASSEXA *);
 
 
 //----- (00411B80) --------------------------------------------------------
@@ -652,6 +651,7 @@ void sub_4146A0()
       (*i)();
   }
 }
+// 427A2C: using guessed type void (*dword_427A2C[66])(void);
 
 //----- (00414740) --------------------------------------------------------
 void sub_414740()
@@ -664,6 +664,7 @@ void sub_414740()
       (*i)();
   }
 }
+// 427D38: using guessed type void (*dword_427D38[178])(void);
 
 //----- (00414FE0) --------------------------------------------------------
 void sub_414FE0()

@@ -11,26 +11,26 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int __fastcall sub_140001000(__int64 a1, unsigned int a2, int a3);
+int __fastcall sub_140001000(__int64, unsigned int, int);
 __int64 __fastcall sub_140001190(char *ErrMsg); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
 void sub_14000187C();
 void __fastcall sub_1400018B4();
-__int64 __fastcall UserMathErrorFunction(struct _exception *a1);
+__int64 __fastcall UserMathErrorFunction(struct _exception *);
 // void *__cdecl memset(void *, int Val, size_t Size);
-// int __cdecl stat64i32(const char *FileName, struct _stat64i32 *Stat);
-// int __cdecl fclose(FILE *Stream);
-// size_t __cdecl fread(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
-// FILE *__cdecl fopen(const char *FileName, const char *Mode);
-// int printf(const char *const Format, ...);
-// void __cdecl perror(const char *ErrMsg);
-// int sprintf(char *const Buffer, const char *const Format, ...);
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-void (*qword_140002260[2])(void) = { NULL, NULL }; // idb
-void (*qword_140002270)(void) = NULL; // idb
+// extern int (__cdecl *stat64i32)(const char *FileName, struct _stat64i32 *Stat);
+// extern int (__cdecl *fclose)(FILE *Stream);
+// extern size_t (__cdecl *fread)(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
+// extern FILE *(__cdecl *fopen)(const char *FileName, const char *Mode);
+// extern int (*printf)(const char *const Format, ...);
+// extern void (__cdecl *perror)(const char *ErrMsg);
+// extern int (*sprintf)(char *const Buffer, const char *const Format, ...);
+void (*qword_140002260[2])(void) = { NULL, NULL }; // weak
+void (*qword_140002270)(void) = NULL; // weak
 
 
 //----- (0000000140001000) ----------------------------------------------------
@@ -106,11 +106,11 @@ LABEL_7:
   *(_WORD *)&Buffer[v13 + v5] = 124;
   return printf("%s\n", Buffer);
 }
+// 140001000: using guessed type char var_7F[71];
 
 //----- (0000000140001190) ----------------------------------------------------
 __int64 __fastcall sub_140001190(char *ErrMsg)
 {
-  __int64 result; // rax
   FILE *v3; // rsi
   unsigned int i; // ebx
   int v5; // eax
@@ -121,7 +121,7 @@ __int64 __fastcall sub_140001190(char *ErrMsg)
   if ( stat64i32(ErrMsg, &v7) || (v3 = fopen(ErrMsg, "rb")) == 0i64 )
   {
     perror(ErrMsg);
-    result = 1i64;
+    return 1i64;
   }
   else
   {
@@ -134,9 +134,8 @@ __int64 __fastcall sub_140001190(char *ErrMsg)
       sub_140001000((__int64)Buffer, i, v5);
     }
     fclose(v3);
-    result = 0i64;
+    return 0i64;
   }
-  return result;
 }
 
 //----- (0000000140001290) ----------------------------------------------------
@@ -165,6 +164,7 @@ void sub_14000187C()
       (*i)();
   }
 }
+// 140002260: using guessed type void (*qword_140002260[2])(void);
 
 //----- (00000001400018B4) ----------------------------------------------------
 void __fastcall sub_1400018B4()
@@ -177,6 +177,7 @@ void __fastcall sub_1400018B4()
       (*i)();
   }
 }
+// 140002270: using guessed type void (*qword_140002270)(void);
 
 //----- (00000001400019D0) ----------------------------------------------------
 __int64 __fastcall UserMathErrorFunction(struct _exception *a1)

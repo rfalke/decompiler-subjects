@@ -10,18 +10,15 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void *init_proc();
 __int64 __fastcall sub_400E60(); // weak
 // _QWORD __fastcall std::string::append(std::string *__hidden this, const char *, unsigned __int64); idb
 // void __fastcall __noreturn std::__throw_length_error(const char *); idb
 // _QWORD std::string::string(std::string *__hidden this); idb
 // _QWORD __fastcall std::string::substr(std::string *__hidden this, unsigned __int64, unsigned __int64); idb
-// __int64 __gmon_start__(void); weak
 // void __fastcall operator delete(void *); idb
 // _QWORD __fastcall std::string::reserve(std::string *__hidden this, unsigned __int64); idb
 // _QWORD std::string::size(std::string *__hidden this); idb
 // _QWORD std::ios_base::Init::Init(std::ios_base::Init *__hidden this); idb
-// int __fastcall __libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // _QWORD __fastcall std::string::string(std::string *__hidden this, const std::string *); idb
 // int __fastcall __cxa_atexit(void (__fastcall *lpfunc)(void *), void *obj, void *lpdso_handle);
 // char *fgets(char *s, int n, FILE *stream);
@@ -47,109 +44,93 @@ int _cxx_global_var_init1();
 __int64 GLOBAL__sub_I_wyvern_cpp();
 int _cxx_global_var_init_0();
 int GLOBAL__sub_I_domain_cpp();
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-signed __int64 deregister_tm_clones();
-__int64 register_tm_clones();
-signed __int64 _do_global_dtors_aux();
-__int64 __fastcall frame_dummy(); // weak
-__int64 __fastcall transform_input(__int64 a1);
-__int64 __fastcall sanitize_input(std::string *a1);
-__int64 __fastcall start_quest(std::string *a1);
-_QWORD *__fastcall std::vector<int>::vector(__int64 a1);
+__int64 __fastcall transform_input(__int64);
+__int64 __fastcall sanitize_input(std::string *);
+__int64 __fastcall start_quest(std::string *);
+_QWORD *__fastcall std::vector<int>::vector(__int64);
 void __fastcall std::vector<int>::~vector(void *); // idb
-__int64 __fastcall std::vector<int>::size(__int64 a1);
-__int64 __fastcall std::vector<int>::operator[](__int64 a1, __int64 a2);
-__int64 __fastcall std::vector<int>::push_back(__int64 a1, __int64 a2);
-__int64 *__fastcall std::vector<int>::vector(__int64 a1, __int64 a2);
-void __fastcall __noreturn _clang_call_terminate(void *a1);
-__int64 __fastcall __gnu_cxx::__alloc_traits<std::allocator<int>>::_S_select_on_copy(__int64 a1);
-__int64 __fastcall std::_Vector_base<int>::_M_get_Tp_allocator(__int64 a1);
-__int64 __fastcall std::_Vector_base<int>::_Vector_base(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *,int>(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
-__int64 __fastcall std::vector<int>::begin(__int64 a1);
-__int64 __fastcall std::vector<int>::end(__int64 a1);
-__int64 __fastcall std::_Vector_base<int>::_M_get_Tp_allocator(__int64 a1);
-__int64 __fastcall std::_Vector_base<int>::~_Vector_base(_QWORD *a1);
-__int64 __fastcall std::_Vector_base<int>::_M_deallocate(__int64 a1, __int64 a2, __int64 a3);
-__int64 *__fastcall std::_Vector_base<int>::_Vector_impl::~_Vector_impl(__int64 a1);
-__int64 *__fastcall std::allocator<int>::~allocator(__int64 a1);
-__int64 *__fastcall __gnu_cxx::new_allocator<int>::~new_allocator(__int64 a1);
-void __fastcall __gnu_cxx::new_allocator<int>::deallocate(__int64 a1, __int64 a2, __int64 a3);
-_QWORD *__fastcall __gnu_cxx::__normal_iterator<int const*,std::vector<int>>::__normal_iterator(_QWORD *a1, _QWORD *a2);
-__int64 __fastcall std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::copy<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::__copy_move_a2<false,__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::__miter_base<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>>(__int64 a1);
-__int64 __fastcall std::_Iter_base<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,false>::_S_base(__int64 a1);
-__int64 __fastcall std::__copy_move_a<false,int const*,int *>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::__niter_base<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>>(__int64 a1);
-__int64 __fastcall std::__niter_base<int *>(__int64 a1);
-__int64 __fastcall std::_Iter_base<int *,false>::_S_base(__int64 a1);
-__int64 __fastcall std::_Iter_base<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,true>::_S_base(__int64 a1);
-__int64 __fastcall __gnu_cxx::__normal_iterator<int const*,std::vector<int>>::base(__int64 a1);
-__int64 __fastcall std::__copy_move<false,true,std::random_access_iterator_tag>::__copy_m<int>(__int64 a1, __int64 a2, __int64 a3);
-_QWORD *__fastcall std::_Vector_base<int>::_Vector_impl::_Vector_impl(__int64 a1, __int64 a2);
-__int64 __fastcall std::_Vector_base<int>::_M_create_storage(__int64 a1, __int64 a2);
-__int64 __fastcall std::_Vector_base<int>::_M_allocate(__int64 a1, __int64 a2);
-__int64 __fastcall __gnu_cxx::new_allocator<int>::allocate(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall __gnu_cxx::new_allocator<int>::max_size(__int64 a1);
-__int64 __fastcall std::allocator<int>::allocator(__int64 a1, __int64 a2);
-__int64 __fastcall __gnu_cxx::new_allocator<int>::new_allocator(__int64 a1, __int64 a2);
-__int64 __fastcall __gnu_cxx::__alloc_traits<std::allocator<int>>::construct<int>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::vector<int>::_M_insert_aux(__int64 a1, __int64 a2, __int64 *a3);
-__int64 __fastcall std::vector<int>::end(__int64 a1);
-_QWORD *__fastcall __gnu_cxx::__normal_iterator<int *,std::vector<int>>::__normal_iterator(_QWORD *a1, _QWORD *a2);
-__int64 __fastcall std::copy_backward<int *,int *>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall __gnu_cxx::__normal_iterator<int *,std::vector<int>>::base(__int64 a1);
-__int64 __fastcall __gnu_cxx::__normal_iterator<int *,std::vector<int>>::operator*(__int64 a1);
-__int64 __fastcall std::vector<int>::_M_check_len(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall __gnu_cxx::operator-<int *,std::vector<int>>(__int64 a1, __int64 a2);
-__int64 __fastcall std::vector<int>::begin(__int64 a1);
-__int64 __fastcall std::__uninitialized_move_if_noexcept_a<int *,int *,std::allocator<int>>(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
-__int64 __fastcall __gnu_cxx::__alloc_traits<std::allocator<int>>::destroy(__int64 a1, __int64 a2);
-__int64 __fastcall std::_Destroy<int *,int>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::_Destroy<int *>(__int64 a1, __int64 a2);
-__int64 __fastcall std::_Destroy_aux<true>::__destroy<int *>(__int64 a1, __int64 a2);
-__int64 __fastcall __gnu_cxx::new_allocator<int>::destroy(__int64 a1, __int64 a2);
-__int64 __fastcall std::__uninitialized_copy_a<int *,int *,int>(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
-__int64 __fastcall std::uninitialized_copy<int *,int *>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::__uninitialized_copy<true>::__uninit_copy<int *,int *>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::copy<int *,int *>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::__copy_move_a2<false,int *,int *>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::__miter_base<int *>(__int64 a1);
-__int64 __fastcall std::__copy_move_a<false,int *,int *>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::vector<int>::max_size(__int64 a1);
-__int64 __fastcall std::max<unsigned long>(__int64 a1, __int64 a2);
-__int64 __fastcall __gnu_cxx::__alloc_traits<std::allocator<int>>::max_size(__int64 a1);
-__int64 __fastcall std::__copy_move_backward_a2<false,int *,int *>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::__copy_move_backward_a<false,int *,int *>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall std::__copy_move_backward<false,true,std::random_access_iterator_tag>::__copy_move_b<int>(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall __gnu_cxx::new_allocator<int>::construct(__int64 a1, __int64 a2, __int64 a3);
-_QWORD *__fastcall std::_Vector_base<int>::_Vector_base(__int64 a1);
-_QWORD *__fastcall std::_Vector_base<int>::_Vector_impl::_Vector_impl(__int64 a1);
-__int64 *__fastcall std::allocator<int>::allocator(__int64 a1);
-__int64 *__fastcall __gnu_cxx::new_allocator<int>::new_allocator(__int64 a1);
-void __fastcall reward_strength(std::string *a1);
+__int64 __fastcall std::vector<int>::size(__int64);
+__int64 __fastcall std::vector<int>::operator[](__int64, __int64);
+__int64 __fastcall std::vector<int>::push_back(__int64, __int64);
+__int64 *__fastcall std::vector<int>::vector(__int64, __int64);
+void __fastcall __noreturn _clang_call_terminate(void *);
+__int64 __fastcall __gnu_cxx::__alloc_traits<std::allocator<int>>::_S_select_on_copy(__int64);
+__int64 __fastcall std::_Vector_base<int>::_M_get_Tp_allocator(__int64);
+__int64 __fastcall std::_Vector_base<int>::_Vector_base(__int64, __int64, __int64);
+__int64 __fastcall std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *,int>(__int64, __int64, __int64, __int64);
+__int64 __fastcall std::vector<int>::begin(__int64);
+__int64 __fastcall std::vector<int>::end(__int64);
+__int64 __fastcall std::_Vector_base<int>::_M_get_Tp_allocator(__int64);
+__int64 __fastcall std::_Vector_base<int>::~_Vector_base(_QWORD *);
+__int64 __fastcall std::_Vector_base<int>::_M_deallocate(__int64, __int64, __int64);
+__int64 *__fastcall std::_Vector_base<int>::_Vector_impl::~_Vector_impl(__int64);
+__int64 *__fastcall std::allocator<int>::~allocator(__int64);
+__int64 *__fastcall __gnu_cxx::new_allocator<int>::~new_allocator(__int64);
+void __fastcall __gnu_cxx::new_allocator<int>::deallocate(__int64, __int64, __int64);
+_QWORD *__fastcall __gnu_cxx::__normal_iterator<int const*,std::vector<int>>::__normal_iterator(_QWORD *, _QWORD *);
+__int64 __fastcall std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(__int64, __int64, __int64);
+__int64 __fastcall std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(__int64, __int64, __int64);
+__int64 __fastcall std::copy<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(__int64, __int64, __int64);
+__int64 __fastcall std::__copy_move_a2<false,__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(__int64, __int64, __int64);
+__int64 __fastcall std::__miter_base<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>>(__int64);
+__int64 __fastcall std::_Iter_base<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,false>::_S_base(__int64);
+__int64 __fastcall std::__copy_move_a<false,int const*,int *>(__int64, __int64, __int64);
+__int64 __fastcall std::__niter_base<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>>(__int64);
+__int64 __fastcall std::__niter_base<int *>(__int64);
+__int64 __fastcall std::_Iter_base<int *,false>::_S_base(__int64);
+__int64 __fastcall std::_Iter_base<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,true>::_S_base(__int64);
+__int64 __fastcall __gnu_cxx::__normal_iterator<int const*,std::vector<int>>::base(__int64);
+__int64 __fastcall std::__copy_move<false,true,std::random_access_iterator_tag>::__copy_m<int>(__int64, __int64, __int64);
+_QWORD *__fastcall std::_Vector_base<int>::_Vector_impl::_Vector_impl(__int64, __int64);
+__int64 __fastcall std::_Vector_base<int>::_M_create_storage(__int64, __int64);
+__int64 __fastcall std::_Vector_base<int>::_M_allocate(__int64, __int64);
+__int64 __fastcall __gnu_cxx::new_allocator<int>::allocate(__int64, __int64, __int64);
+__int64 __fastcall __gnu_cxx::new_allocator<int>::max_size(__int64);
+__int64 __fastcall std::allocator<int>::allocator(__int64, __int64);
+__int64 __fastcall __gnu_cxx::new_allocator<int>::new_allocator(__int64, __int64);
+__int64 __fastcall __gnu_cxx::__alloc_traits<std::allocator<int>>::construct<int>(__int64, __int64, __int64);
+__int64 __fastcall std::vector<int>::_M_insert_aux(__int64, __int64, __int64 *);
+__int64 __fastcall std::vector<int>::end(__int64);
+_QWORD *__fastcall __gnu_cxx::__normal_iterator<int *,std::vector<int>>::__normal_iterator(_QWORD *, _QWORD *);
+__int64 __fastcall std::copy_backward<int *,int *>(__int64, __int64, __int64);
+__int64 __fastcall __gnu_cxx::__normal_iterator<int *,std::vector<int>>::base(__int64);
+__int64 __fastcall __gnu_cxx::__normal_iterator<int *,std::vector<int>>::operator*(__int64);
+__int64 __fastcall std::vector<int>::_M_check_len(__int64, __int64, __int64);
+__int64 __fastcall __gnu_cxx::operator-<int *,std::vector<int>>(__int64, __int64);
+__int64 __fastcall std::vector<int>::begin(__int64);
+__int64 __fastcall std::__uninitialized_move_if_noexcept_a<int *,int *,std::allocator<int>>(__int64, __int64, __int64, __int64);
+__int64 __fastcall __gnu_cxx::__alloc_traits<std::allocator<int>>::destroy(__int64, __int64);
+__int64 __fastcall std::_Destroy<int *,int>(__int64, __int64, __int64);
+__int64 __fastcall std::_Destroy<int *>(__int64, __int64);
+__int64 __fastcall std::_Destroy_aux<true>::__destroy<int *>(__int64, __int64);
+__int64 __fastcall __gnu_cxx::new_allocator<int>::destroy(__int64, __int64);
+__int64 __fastcall std::__uninitialized_copy_a<int *,int *,int>(__int64, __int64, __int64, __int64);
+__int64 __fastcall std::uninitialized_copy<int *,int *>(__int64, __int64, __int64);
+__int64 __fastcall std::__uninitialized_copy<true>::__uninit_copy<int *,int *>(__int64, __int64, __int64);
+__int64 __fastcall std::copy<int *,int *>(__int64, __int64, __int64);
+__int64 __fastcall std::__copy_move_a2<false,int *,int *>(__int64, __int64, __int64);
+__int64 __fastcall std::__miter_base<int *>(__int64);
+__int64 __fastcall std::__copy_move_a<false,int *,int *>(__int64, __int64, __int64);
+__int64 __fastcall std::vector<int>::max_size(__int64);
+__int64 __fastcall std::max<unsigned long>(__int64, __int64);
+__int64 __fastcall __gnu_cxx::__alloc_traits<std::allocator<int>>::max_size(__int64);
+__int64 __fastcall std::__copy_move_backward_a2<false,int *,int *>(__int64, __int64, __int64);
+__int64 __fastcall std::__copy_move_backward_a<false,int *,int *>(__int64, __int64, __int64);
+__int64 __fastcall std::__copy_move_backward<false,true,std::random_access_iterator_tag>::__copy_move_b<int>(__int64, __int64, __int64);
+__int64 __fastcall __gnu_cxx::new_allocator<int>::construct(__int64, __int64, __int64);
+_QWORD *__fastcall std::_Vector_base<int>::_Vector_base(__int64);
+_QWORD *__fastcall std::_Vector_base<int>::_Vector_impl::_Vector_impl(__int64);
+__int64 *__fastcall std::allocator<int>::allocator(__int64);
+__int64 *__fastcall __gnu_cxx::new_allocator<int>::new_allocator(__int64);
+void __fastcall reward_strength(std::string *);
 int __cdecl main(int argc, const char **argv, const char **envp);
-std::string *__fastcall std::operator+<char>(std::string *a1, const std::string *a2, const char *a3);
-std::string *__fastcall std::operator+<char>(std::string *a1, const char *a2, std::string *a3);
-size_t __fastcall std::char_traits<char>::length(const char *a1);
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-void _libc_csu_fini(void); // idb
-void term_proc();
+std::string *__fastcall std::operator+<char>(std::string *, const std::string *, const char *);
+std::string *__fastcall std::operator+<char>(std::string *, const char *, std::string *);
+size_t __fastcall std::char_traits<char>::length(const char *);
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-__int64 (__fastcall *_frame_dummy_init_array_entry[4])() =
-{
-  &frame_dummy,
-  &GLOBAL__sub_I_wyvern_cpp,
-  &GLOBAL__sub_I_domain_cpp,
-  &_do_global_dtors_aux
-}; // weak
-__int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)() = &_do_global_dtors_aux; // weak
 __int64 (*qword_610010)(void) = NULL; // weak
 _UNKNOWN _dso_handle; // weak
 int legend = 115; // weak
@@ -181,11 +162,8 @@ _UNKNOWN secret_2336; // weak
 _UNKNOWN secret_2412; // weak
 _UNKNOWN secret_2498; // weak
 _UNKNOWN secret_2575; // weak
-_UNKNOWN _TMC_END__; // weak
-_UNKNOWN unk_6101B7; // weak
 FILE *stdin; // idb
 _UNKNOWN std::cout; // weak
-char completed_6973; // weak
 _UNKNOWN hero; // weak
 _UNKNOWN std::__ioinit; // weak
 _UNKNOWN std::__ioinit; // weak
@@ -355,20 +333,7 @@ int x13; // weak
 int y88; // weak
 int x143; // weak
 int y108; // weak
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (0000000000400E40) ----------------------------------------------------
-void *init_proc()
-{
-  void *result; // rax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (void *)__gmon_start__();
-  return result;
-}
-// 400EB0: using guessed type __int64 __gmon_start__(void);
 
 //----- (0000000000400E60) ----------------------------------------------------
 __int64 sub_400E60()
@@ -457,69 +422,6 @@ int GLOBAL__sub_I_domain_cpp()
 {
   return _cxx_global_var_init_0();
 }
-
-//----- (00000000004013BB) ----------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void))
-{
-  __int64 v3; // rax
-  int v4; // esi
-  __int64 v5; // [rsp-8h] [rbp-8h] BYREF
-  char *retaddr; // [rsp+0h] [rbp+0h] BYREF
-
-  v4 = v5;
-  v5 = v3;
-  __libc_start_main(
-    (int (__fastcall *)(int, char **, char **))main,
-    v4,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a3,
-    &v5);
-  __halt();
-}
-// 4013C1: positive sp value 8 has been found
-// 4013C8: variable 'v3' is possibly undefined
-
-//----- (00000000004013F0) ----------------------------------------------------
-signed __int64 deregister_tm_clones()
-{
-  signed __int64 result; // rax
-
-  result = &unk_6101B7 - &_TMC_END__;
-  if ( (unsigned __int64)(&unk_6101B7 - &_TMC_END__) > 0xE )
-    result = 0LL;
-  return result;
-}
-
-//----- (0000000000401420) ----------------------------------------------------
-__int64 register_tm_clones()
-{
-  return 0LL;
-}
-
-//----- (0000000000401460) ----------------------------------------------------
-signed __int64 _do_global_dtors_aux()
-{
-  signed __int64 result; // rax
-
-  if ( !completed_6973 )
-  {
-    result = deregister_tm_clones();
-    completed_6973 = 1;
-  }
-  return result;
-}
-// 6102F0: using guessed type char completed_6973;
-
-//----- (0000000000401480) ----------------------------------------------------
-__int64 frame_dummy()
-{
-  return register_tm_clones();
-}
-// 401480: could not find valid save-restore pair for rbp
-// 401480: using guessed type __int64 __fastcall frame_dummy();
 
 //----- (00000000004014B0) ----------------------------------------------------
 __int64 __fastcall transform_input(__int64 a1)
@@ -1126,11 +1028,11 @@ void __fastcall std::vector<int>::~vector(void *a1)
 {
   __int64 v1; // rdi
   _QWORD *v2; // [rsp+0h] [rbp-90h] BYREF
-  __int64 v3; // [rsp+40h] [rbp-50h]
+  __int64 Tp_allocator; // [rsp+40h] [rbp-50h]
   _QWORD *v4; // [rsp+48h] [rbp-48h]
   __int64 v5; // [rsp+50h] [rbp-40h]
   _QWORD *v6; // [rsp+58h] [rbp-38h]
-  _QWORD *v7; // [rsp+60h] [rbp-30h]
+  __int64 *v7; // [rsp+60h] [rbp-30h]
   _QWORD **v8; // [rsp+68h] [rbp-28h]
   __int64 v9; // [rsp+70h] [rbp-20h]
   _QWORD *v10; // [rsp+78h] [rbp-18h]
@@ -1144,7 +1046,7 @@ void __fastcall std::vector<int>::~vector(void *a1)
     v1 = *v10;
     v9 = v10[1];
     v8 = &v2;
-    v7 = &v2 - 2;
+    v7 = (__int64 *)(&v2 - 2);
     v6 = v10;
     v5 = v1;
     v4 = v10;
@@ -1153,10 +1055,10 @@ void __fastcall std::vector<int>::~vector(void *a1)
 LABEL_8:
     *(&v2 - 2) = v10;
   }
-  v3 = std::_Vector_base<int>::_M_get_Tp_allocator((__int64)v4);
+  Tp_allocator = std::_Vector_base<int>::_M_get_Tp_allocator((__int64)v4);
   while ( y10 >= 10 && ((((_BYTE)x9 - 1) * (_BYTE)x9) & 1) != 0 )
     ;
-  std::_Destroy<int *,int>(v5, v9, v3);
+  std::_Destroy<int *,int>(v5, v9, Tp_allocator);
   if ( y10 >= 10 && ((((_BYTE)x9 - 1) * (_BYTE)x9) & 1) != 0 )
     goto LABEL_10;
   while ( 1 )
@@ -1305,7 +1207,7 @@ __int64 *__fastcall std::vector<int>::vector(__int64 a1, __int64 a2)
   __int64 v2; // rax
   __int64 v3; // rax
   __int64 v4; // rdi
-  __int64 v5; // rax
+  __int64 Tp_allocator; // rax
   __int64 v6; // rax
   __int64 v7; // rsi
   __int64 *result; // rax
@@ -1358,8 +1260,8 @@ __int64 *__fastcall std::vector<int>::vector(__int64 a1, __int64 a2)
     v3 = std::vector<int>::size(v2);
     v4 = *v34;
     v28 = v3;
-    v5 = std::_Vector_base<int>::_M_get_Tp_allocator(v4);
-    v6 = __gnu_cxx::__alloc_traits<std::allocator<int>>::_S_select_on_copy(v5);
+    Tp_allocator = std::_Vector_base<int>::_M_get_Tp_allocator(v4);
+    v6 = __gnu_cxx::__alloc_traits<std::allocator<int>>::_S_select_on_copy(Tp_allocator);
     std::_Vector_base<int>::_Vector_base(v31, v28, v6);
     v27 = *v34;
     if ( y22 < 10 || ((((_BYTE)x21 - 1) * (_BYTE)x21) & 1) == 0 )
@@ -1541,7 +1443,11 @@ LABEL_6:
 // 6104BC: using guessed type int x31;
 
 //----- (00000000004068D0) ----------------------------------------------------
-__int64 __fastcall std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *,int>(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
+__int64 __fastcall std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *,int>(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4)
 {
   _QWORD v5[2]; // [rsp+0h] [rbp-60h]
   __int64 v6; // [rsp+10h] [rbp-50h]
@@ -1676,7 +1582,7 @@ __int64 __fastcall std::_Vector_base<int>::~_Vector_base(_QWORD *a1)
   _QWORD *v3; // [rsp+0h] [rbp-60h] BYREF
   __int64 v4; // [rsp+20h] [rbp-40h]
   _QWORD *v5; // [rsp+28h] [rbp-38h]
-  _QWORD *v6; // [rsp+30h] [rbp-30h]
+  __int64 *v6; // [rsp+30h] [rbp-30h]
   _QWORD **v7; // [rsp+38h] [rbp-28h]
   __int64 v8; // [rsp+40h] [rbp-20h]
   _QWORD *v9; // [rsp+48h] [rbp-18h]
@@ -1690,7 +1596,7 @@ __int64 __fastcall std::_Vector_base<int>::~_Vector_base(_QWORD *a1)
     v1 = (__int64)(v9[2] - *v9) >> 2;
     v8 = *v9;
     v7 = &v3;
-    v6 = &v3 - 2;
+    v6 = (__int64 *)(&v3 - 2);
     v5 = v9;
     v4 = v1;
     if ( y42 < 10 || ((((_BYTE)x41 - 1) * (_BYTE)x41) & 1) == 0 )
@@ -1901,7 +1807,10 @@ LABEL_3:
 // 610508: using guessed type int x53;
 
 //----- (0000000000407860) ----------------------------------------------------
-__int64 __fastcall std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(__int64 a1, __int64 a2, __int64 a3)
+__int64 __fastcall std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3)
 {
   _QWORD v4[2]; // [rsp+0h] [rbp-50h]
   __int64 v5; // [rsp+10h] [rbp-40h]
@@ -1944,7 +1853,10 @@ LABEL_4:
 // 6104A8: using guessed type int y56;
 
 //----- (0000000000407A00) ----------------------------------------------------
-__int64 __fastcall std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(__int64 a1, __int64 a2, __int64 a3)
+__int64 __fastcall std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3)
 {
   _QWORD v4[2]; // [rsp+0h] [rbp-50h]
   __int64 v5; // [rsp+10h] [rbp-40h]
@@ -1981,7 +1893,10 @@ LABEL_4:
 // 61051C: using guessed type int x57;
 
 //----- (0000000000407BA0) ----------------------------------------------------
-__int64 __fastcall std::copy<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(__int64 a1, __int64 a2, __int64 a3)
+__int64 __fastcall std::copy<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3)
 {
   __int64 v3; // rdi
   __int64 v4; // rax
@@ -2062,7 +1977,10 @@ LABEL_4:
 // 6103EC: using guessed type int y60;
 
 //----- (0000000000407E00) ----------------------------------------------------
-__int64 __fastcall std::__copy_move_a2<false,__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(__int64 a1, __int64 a2, __int64 a3)
+__int64 __fastcall std::__copy_move_a2<false,__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,int *>(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3)
 {
   __int64 v3; // rax
   __int64 v4; // rax
@@ -2189,7 +2107,8 @@ LABEL_4:
 // 6103F4: using guessed type int y64;
 
 //----- (0000000000408150) ----------------------------------------------------
-__int64 __fastcall std::_Iter_base<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,false>::_S_base(__int64 a1)
+__int64 __fastcall std::_Iter_base<__gnu_cxx::__normal_iterator<int const*,std::vector<int>>,false>::_S_base(
+        __int64 a1)
 {
   __int64 v2; // [rsp+0h] [rbp-10h]
   __int64 v3; // [rsp+8h] [rbp-8h]
@@ -2371,7 +2290,10 @@ LABEL_4:
 // 610544: using guessed type int x77;
 
 //----- (0000000000408830) ----------------------------------------------------
-__int64 __fastcall std::__copy_move<false,true,std::random_access_iterator_tag>::__copy_m<int>(__int64 a1, __int64 a2, __int64 a3)
+__int64 __fastcall std::__copy_move<false,true,std::random_access_iterator_tag>::__copy_m<int>(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3)
 {
   bool v3; // r11
   __int64 v5; // [rsp+0h] [rbp-70h] BYREF
@@ -2804,7 +2726,7 @@ __int64 __fastcall std::vector<int>::_M_insert_aux(__int64 a1, __int64 a2, __int
   __int64 v55; // [rsp+110h] [rbp-110h]
   __int64 *v56; // [rsp+118h] [rbp-108h]
   __int64 *v57; // [rsp+120h] [rbp-100h]
-  __int64 v58; // [rsp+128h] [rbp-F8h]
+  __int64 Tp_allocator; // [rsp+128h] [rbp-F8h]
   __int64 *v59; // [rsp+130h] [rbp-F0h]
   __int64 v60; // [rsp+138h] [rbp-E8h]
   __int64 v61; // [rsp+140h] [rbp-E0h]
@@ -2946,10 +2868,14 @@ LABEL_29:
       v59 = v78;
     }
     while ( y98 >= 10 && ((((_BYTE)x97 - 1) * (_BYTE)x97) & 1) != 0 );
-    v58 = std::_Vector_base<int>::_M_get_Tp_allocator((__int64)v59);
+    Tp_allocator = std::_Vector_base<int>::_M_get_Tp_allocator((__int64)v59);
     while ( y98 >= 10 && ((((_BYTE)x97 - 1) * (_BYTE)x97) & 1) != 0 )
       ;
-    v57 = (__int64 *)std::__uninitialized_move_if_noexcept_a<int *,int *,std::allocator<int>>(v63, v61, v60, v58);
+    v57 = (__int64 *)std::__uninitialized_move_if_noexcept_a<int *,int *,std::allocator<int>>(
+                       v63,
+                       v61,
+                       v60,
+                       Tp_allocator);
     if ( y98 >= 10 && ((((_BYTE)x97 - 1) * (_BYTE)x97) & 1) != 0 )
       goto LABEL_32;
     while ( 1 )
@@ -3419,7 +3345,11 @@ LABEL_4:
 // 610564: using guessed type int x113;
 
 //----- (000000000040BDD0) ----------------------------------------------------
-__int64 __fastcall std::__uninitialized_move_if_noexcept_a<int *,int *,std::allocator<int>>(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
+__int64 __fastcall std::__uninitialized_move_if_noexcept_a<int *,int *,std::allocator<int>>(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4)
 {
   __int64 v5; // [rsp+0h] [rbp-50h]
   __int64 v6; // [rsp+8h] [rbp-48h]
@@ -3900,7 +3830,7 @@ LABEL_4:
 //----- (000000000040CE40) ----------------------------------------------------
 __int64 __fastcall std::vector<int>::max_size(__int64 a1)
 {
-  __int64 v1; // rax
+  __int64 Tp_allocator; // rax
   __int64 v3; // rax
   _QWORD v4[2]; // [rsp+0h] [rbp-20h]
   __int64 v5; // [rsp+10h] [rbp-10h]
@@ -3912,8 +3842,8 @@ __int64 __fastcall std::vector<int>::max_size(__int64 a1)
   while ( 1 )
   {
     v4[-2] = v6;
-    v1 = std::_Vector_base<int>::_M_get_Tp_allocator(v4[-2]);
-    v5 = __gnu_cxx::__alloc_traits<std::allocator<int>>::max_size(v1);
+    Tp_allocator = std::_Vector_base<int>::_M_get_Tp_allocator(v4[-2]);
+    v5 = __gnu_cxx::__alloc_traits<std::allocator<int>>::max_size(Tp_allocator);
     if ( y142 < 10 || ((((_BYTE)x141 - 1) * (_BYTE)x141) & 1) == 0 )
       break;
 LABEL_4:
@@ -4132,7 +4062,10 @@ LABEL_4:
 // 61049C: using guessed type int x149;
 
 //----- (000000000040D690) ----------------------------------------------------
-__int64 __fastcall std::__copy_move_backward<false,true,std::random_access_iterator_tag>::__copy_move_b<int>(__int64 a1, __int64 a2, __int64 a3)
+__int64 __fastcall std::__copy_move_backward<false,true,std::random_access_iterator_tag>::__copy_move_b<int>(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3)
 {
   bool v3; // r11
   __int64 v5; // [rsp+0h] [rbp-70h] BYREF
@@ -4372,11 +4305,14 @@ void __fastcall reward_strength(std::string *a1)
   std::string::~string((std::string *)v1);
 }
 // 400FE0: using guessed type __int64 __fastcall std::operator<<<char>(_QWORD, _QWORD);
+// 40E000: using guessed type char var_18[8];
+// 40E000: using guessed type char var_10[8];
+// 40E000: using guessed type char var_8[8];
 
 //----- (000000000040E120) ----------------------------------------------------
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
-  int v4; // [rsp+24h] [rbp-19Ch]
+  int started; // [rsp+24h] [rbp-19Ch]
   char v5[8]; // [rsp+80h] [rbp-140h] BYREF
   char v6[12]; // [rsp+88h] [rbp-138h] BYREF
   char v7[8]; // [rsp+A0h] [rbp-120h] BYREF
@@ -4400,9 +4336,9 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   std::string::string(v8, s, v7);
   std::allocator<char>::~allocator(v7);
   std::string::string((std::string *)v6, (const std::string *)v8);
-  v4 = start_quest((std::string *)v6);
+  started = start_quest((std::string *)v6);
   std::string::~string((std::string *)v6);
-  if ( v4 == 4919 )
+  if ( started == 4919 )
   {
     std::string::string((std::string *)v5, (const std::string *)v8);
     reward_strength((std::string *)v5);
@@ -4422,6 +4358,9 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 // 400FA0: using guessed type __int64 __fastcall std::string::string(_QWORD, _QWORD, _QWORD);
 // 400FF0: using guessed type __int64 __fastcall std::allocator<char>::~allocator(_QWORD);
 // 401040: using guessed type __int64 __fastcall std::allocator<char>::allocator(_QWORD);
+// 40E120: using guessed type char var_120[8];
+// 40E120: using guessed type char var_118[8];
+// 40E120: using guessed type char var_140[8];
 
 //----- (000000000040E3F0) ----------------------------------------------------
 std::string *__fastcall std::operator+<char>(std::string *a1, const std::string *a2, const char *a3)
@@ -4452,30 +4391,5 @@ size_t __fastcall std::char_traits<char>::length(const char *a1)
   return strlen(a1);
 }
 
-//----- (000000000040E5B0) ----------------------------------------------------
-void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3)
-{
-  __int64 v3; // rbx
-  signed __int64 v4; // rbp
-
-  v3 = 0LL;
-  v4 = &_do_global_dtors_aux_fini_array_entry - _frame_dummy_init_array_entry;
-  init_proc();
-  if ( v4 )
-  {
-    do
-      _frame_dummy_init_array_entry[v3++]();
-    while ( v3 != v4 );
-  }
-}
-// 60FDD0: using guessed type __int64 (__fastcall *_frame_dummy_init_array_entry[4])();
-// 60FDE8: using guessed type __int64 (__fastcall *_do_global_dtors_aux_fini_array_entry)();
-
-//----- (000000000040E624) ----------------------------------------------------
-void term_proc()
-{
-  ;
-}
-
-// nfuncs=165 queued=97 decompiled=97 lumina nreq=0 worse=0 better=0
-// ALL OK, 97 function(s) have been successfully decompiled
+// nfuncs=165 queued=89 decompiled=89 lumina nreq=0 worse=0 better=0
+// ALL OK, 89 function(s) have been successfully decompiled

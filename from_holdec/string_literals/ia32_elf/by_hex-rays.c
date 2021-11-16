@@ -10,26 +10,14 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8048390();
 // int printf(const char *format, ...);
 // int fclose(FILE *stream);
 // size_t fwrite(const void *ptr, size_t size, size_t n, FILE *s);
 // int puts(const char *s);
 // char *strchr(const char *s, int c);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // FILE *fopen(const char *filename, const char *modes);
-// int _gmon_start__(void); weak
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _x86_get_pc_thunk_bx();
-// int deregister_tm_clones();
-// int register_tm_clones();
-// int _do_global_dtors_aux();
-// int frame_dummy();
-// void _libc_csu_init(void); idb
-// void _libc_csu_fini(void); idb
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations

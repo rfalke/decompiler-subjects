@@ -1,57 +1,255 @@
-Possible file format: MS-DOS executable (EXE) (IDADIR/loaders/dos.so)
-Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
+
+Database SUBJECTS/from_pouet.net/with_source_399/ia32_pe/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   491520    60 8192 allocating memory for virtual array...
+   475136    58 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  1277952            total memory allocated
+  1261568            total memory allocated
 
-Loading file 'SUBJECTS/from_pouet.net/with_source_399/ia32_pe/subject.exe' into database...
-Detected file format: Portable executable for 80386 (PE)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (00401000-00416000) ... ... OK
-  1. Creating a new segment  (00416000-0041C000) ... ... OK
-  2. Creating a new segment  (0041C000-0047A000) ... ... OK
-Reading imports directory...
-  3. Creating a new segment  (00416154-0041C000) ... ... OK
-The input file was linked with debug information
- and the symbol filename is:
-"c:\ecfh\awts-win32\release\awts-win32.pdb"
-Do you want to look for this file at the specified path
-and the Microsoft Symbol Server?
- -> ~Y~es
-PDB: using PDBIDA provider
-PDB: downloading http://msdl.microsoft.com/download/symbols/awts-win32.pdb/D4FD1E5FA57D463D874F75D1DF7164FB3/awts-win32.pdb => /tmp/ida/awts-win32.pdb/D4FD1E5FA57D463D874F75D1DF7164FB3/awts-win32.pdb
-PDB: HTTP error: Server replied with status code 404
-Could not find PDB file 'awts-win32.pdb'.
-Please check _NT_SYMBOL_PATH
-SUBJECTS/from_pouet.net/..../subject.exe: failed to load pdb info.
-
-Do you want to browse for the pdb file on disk? -> ~Y~es
-Plan  FLIRT signature: Microsoft VisualC 2-14/net runtime
-autoload.cfg: vc32rtf.sig autoloads mssdk_win7.til
-Type library 'mssdk_win7' loaded. Applying types...
-Types applied to 44 names.
-main() function at 4035B0, named "_main"
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_pouet.net/with_source_399/ia32_pe/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Using FLIRT signature: Microsoft VisualC 2-14/net runtime
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 14 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 00401000       with name 'sub_401000'
+  function at 004011E0       with name 'sub_4011E0'
+  function at 00401600       with name 'sub_401600'
+  function at 00401680       with name 'sub_401680'
+  function at 004018C0       with name 'sub_4018C0'
+  function at 004019E0       with name 'sub_4019E0'
+  function at 00401A40       with name 'sub_401A40'
+  function at 00401AF0       with name 'sub_401AF0'
+  function at 00401B90       with name 'sub_401B90'
+  function at 00401D00       with name 'sub_401D00'
+  function at 00401E50       with name 'sub_401E50'
+  function at 00402010       with name 'sub_402010'
+  function at 00402070       with name 'sub_402070'
+  function at 004020E0       with name 'sub_4020E0'
+  function at 00402150       with name 'sub_402150'
+  function at 00402230       with name 'sub_402230'
+  function at 004022A0       with name 'sub_4022A0'
+  function at 004022C0       with name 'sub_4022C0'
+  function at 00402340       with name 'sub_402340'
+  function at 004023C0       with name 'nullsub_1'
+  function at 004023D0       with name 'sub_4023D0'
+  function at 00402780       with name 'sub_402780'
+  function at 004028A0       with name 'sub_4028A0'
+  function at 00402900       with name 'sub_402900'
+  function at 00402A40       with name 'sub_402A40'
+  function at 00402AA0       with name 'sub_402AA0'
+  function at 00402B70       with name 'sub_402B70'
+  function at 00402E00       with name 'sub_402E00'
+  function at 00403040       with name 'sub_403040'
+  function at 00403190       with name 'sub_403190'
+  function at 004032D0       with name 'sub_4032D0'
+  function at 004035B0       with name '_main'
+  function at 00403A50       with name 'sub_403A50'
+  function at 00403EF0       with name 'sub_403EF0'
+  function at 00403FB0       with name 'sub_403FB0'
+  function at 00404080       with name 'sub_404080'
+  function at 004041E0       with name 'sub_4041E0'
+  function at 004042F0       with name 'sub_4042F0'
+  function at 00404A70       with name 'sub_404A70'
+  function at 00404C90       with name 'sub_404C90'
+  function at 00404E40       with name 'sub_404E40'
+  function at 00404FD0       with name 'sub_404FD0'
+  function at 00405030       with name 'sub_405030'
+  function at 004050DE       with name 'SDL_UpdateRect'
+  function at 004050E4       with name 'SDL_Init'
+  function at 004050EA       with name 'SDL_SetVideoMode'
+  function at 004050F0       with name 'SDL_PollEvent'
+  function at 004050F6       with name 'SDL_ShowCursor'
+  function at 004050FC       with name 'SDL_LockSurface'
+  function at 00405102       with name 'SDL_UnlockSurface'
+  function at 00405108       with name 'SDL_SetColors'
+  function at 0040510E       with name 'SDL_Flip'
+  function at 00405114       with name 'SDL_Quit'
+  function at 00405120       with name 'sub_405120'
+  function at 00405140       with name 'sub_405140'
+  function at 00405270       with name 'sub_405270'
+  function at 004052B0       with name 'sub_4052B0'
+  function at 00405510       with name 'sub_405510'
+  function at 004064B0       with name 'sub_4064B0'
+  function at 004069C0       with name 'sub_4069C0'
+  function at 00406A20       with name 'sub_406A20'
+  function at 00407890       with name 'sub_407890'
+  function at 00407B20       with name 'sub_407B20'
+  function at 00407B50       with name 'sub_407B50'
+  function at 00407C10       with name 'sub_407C10'
+  function at 00407C40       with name 'sub_407C40'
+  function at 00407D70       with name 'sub_407D70'
+  function at 00407DC0       with name 'sub_407DC0'
+  function at 00407DD0       with name 'sub_407DD0'
+  function at 00407DF0       with name 'sub_407DF0'
+  function at 00407E40       with name 'sub_407E40'
+  function at 00407E80       with name 'sub_407E80'
+  function at 00408230       with name 'sub_408230'
+  function at 00408290       with name 'sub_408290'
+  function at 004082A0       with name 'sub_4082A0'
+  function at 00408390       with name 'sub_408390'
+  function at 004083B0       with name 'sub_4083B0'
+  function at 004083F0       with name 'sub_4083F0'
+  function at 00408490       with name 'sub_408490'
+  function at 004085C0       with name 'sub_4085C0'
+  function at 00408720       with name 'sub_408720'
+  function at 00408740       with name 'sub_408740'
+  function at 004087F0       with name 'sub_4087F0'
+  function at 00408850       with name 'sub_408850'
+  function at 00408880       with name 'sub_408880'
+  function at 004088C0       with name 'sub_4088C0'
+  function at 004088E0       with name 'sub_4088E0'
+  function at 00408920       with name 'sub_408920'
+  function at 00408980       with name 'sub_408980'
+  function at 00408A30       with name 'sub_408A30'
+  function at 00408AB0       with name 'sub_408AB0'
+  function at 00408AF0       with name 'sub_408AF0'
+  function at 00408B10       with name 'sub_408B10'
+  function at 00408B30       with name 'sub_408B30'
+  function at 00408B60       with name '_exit_0'
+  function at 00408B80       with name '_exit_1'
+  function at 00408BA0       with name 'sub_408BA0'
+  function at 00408BF0       with name 'sub_408BF0'
+  function at 00408C20       with name 'sub_408C20'
+  function at 00408C50       with name 'sub_408C50'
+  function at 00408C80       with name 'sub_408C80'
+  function at 00408CA0       with name 'sub_408CA0'
+  function at 00408CD0       with name 'sub_408CD0'
+  function at 00408D40       with name 'sub_408D40'
+  function at 004090D0       with name 'sub_4090D0'
+  function at 00409130       with name 'sub_409130'
+  function at 00409430       with name 'sub_409430'
+  function at 00409860       with name 'sub_409860'
+  function at 00409A60       with name 'sub_409A60'
+  function at 00409D20       with name 'sub_409D20'
+  function at 00409D50       with name 'sub_409D50'
+  function at 00409E10       with name 'sub_409E10'
+  function at 00409F90       with name 'sub_409F90'
+  function at 0040A120       with name 'sub_40A120'
+  function at 0040A170       with name 'sub_40A170'
+  function at 0040A2E0       with name 'sub_40A2E0'
+  function at 0040A450       with name 'sub_40A450'
+  function at 0040A940       with name 'sub_40A940'
+  function at 0040AB30       with name 'sub_40AB30'
+  function at 0040ACE0       with name 'sub_40ACE0'
+  function at 0040AF00       with name 'sub_40AF00'
+  function at 0040B150       with name 'sub_40B150'
+  function at 0040B390       with name 'sub_40B390'
+  function at 0040B530       with name 'sub_40B530'
+  function at 0040B650       with name 'sub_40B650'
+  function at 0040B780       with name 'sub_40B780'
+  function at 0040B9E0       with name 'sub_40B9E0'
+  function at 0040BBA0       with name 'sub_40BBA0'
+  function at 0040BCC0       with name 'sub_40BCC0'
+  function at 0040BDE0       with name 'sub_40BDE0'
+  function at 0040BF40       with name 'sub_40BF40'
+  function at 0040C120       with name 'sub_40C120'
+  function at 0040C430       with name 'sub_40C430'
+  function at 0040C570       with name 'sub_40C570'
+  function at 0040C750       with name 'sub_40C750'
+  function at 0040C7A0       with name 'sub_40C7A0'
+  function at 0040C920       with name 'sub_40C920'
+  function at 0040CA00       with name 'sub_40CA00'
+  function at 0040CD20       with name 'sub_40CD20'
+  function at 0040CEE0       with name 'sub_40CEE0'
+  function at 0040D5E0       with name 'sub_40D5E0'
+  function at 0040E5E0       with name 'sub_40E5E0'
+  function at 0040E9A0       with name 'sub_40E9A0'
+  function at 0040EBF0       with name 'sub_40EBF0'
+  function at 0040EFF0       with name 'sub_40EFF0'
+  function at 0040F160       with name 'sub_40F160'
+  function at 0040F880       with name 'sub_40F880'
+  function at 0040F950       with name 'sub_40F950'
+  function at 00410530       with name 'sub_410530'
+  function at 004109D0       with name 'sub_4109D0'
+  function at 004109F0       with name 'sub_4109F0'
+  function at 00410A80       with name 'sub_410A80'
+  function at 00410AC0       with name 'sub_410AC0'
+  function at 00410B20       with name 'sub_410B20'
+  function at 00410DD0       with name 'sub_410DD0'
+  function at 00410EC0       with name 'sub_410EC0'
+  function at 00410EF0       with name 'sub_410EF0'
+  function at 00411230       with name 'sub_411230'
+  function at 00411420       with name 'sub_411420'
+  function at 004114A0       with name 'sub_4114A0'
+  function at 00411520       with name 'sub_411520'
+  function at 004115E0       with name 'sub_4115E0'
+  function at 00411810       with name 'sub_411810'
+  function at 00411840       with name 'sub_411840'
+  function at 004119E0       with name 'sub_4119E0'
+  function at 00411A20       with name 'sub_411A20'
+  function at 00411A50       with name 'sub_411A50'
+  function at 00411AE0       with name 'sub_411AE0'
+  function at 00411B10       with name 'sub_411B10'
+  function at 00411B30       with name 'sub_411B30'
+  function at 00411C10       with name 'sub_411C10'
+  function at 00411D10       with name 'sub_411D10'
+  function at 00411F00       with name 'sub_411F00'
+  function at 00411F30       with name 'sub_411F30'
+  function at 00411FC0       with name 'sub_411FC0'
+  function at 00412100       with name 'sub_412100'
+  function at 00412237       with name '@__security_check_cookie@4'
+  function at 00412246       with name '_pre_cpp_init'
+  function at 00412291       with name '___tmainCRTStartup'
+  function at 00412407       with name '_pre_c_init'
+  function at 004124E9       with name 'start'
+  function at 00412500       with name '_setjmp3'
+  function at 00412506       with name 'memset'
+  function at 0041250C       with name 'memcpy'
+  function at 00412512       with name '_CIpow'
+  function at 00412520       with name '__ftol2_sse'
+  function at 004125CB       with name '___report_gsfailure'
+  function at 004126D0       with name '_amsg_exit'
+  function at 004126D6       with name '__onexit'
+  function at 00412775       with name '_atexit'
+  function at 00412787       with name 'sub_412787'
+  function at 004127AB       with name 'sub_4127AB'
+  function at 004127D0       with name '_XcptFilter'
+  function at 004127E0       with name '__ValidateImageBase'
+  function at 00412810       with name '__FindPESection'
+  function at 00412852       with name '__IsNonwritableInCurrentImage'
+  function at 004128BE       with name '_initterm'
+  function at 004128C4       with name '_initterm_e'
+  function at 004128CC       with name '__SEH_prolog4'
+  function at 00412911       with name '__SEH_epilog4'
+  function at 00412925       with name '__except_handler4'
+  function at 00412948       with name '__setdefaultprecision'
+  function at 00412971       with name 'UserMathErrorFunction'
+  function at 00412974       with name '___security_init_cookie'
+  function at 00412A08       with name '_has_osfxsr_set'
+  function at 00412A58       with name '__get_sse2_info'
+  function at 00412AB8       with name 'sub_412AB8'
+  function at 00412AC6       with name '_crt_debugger_hook'
+  function at 00412ACC       with name '_unlock'
+  function at 00412AD2       with name '__dllonexit'
+  function at 00412AD8       with name '_lock'
+  function at 00412ADE       with name '_except_handler4_common'
+  function at 00412AE4       with name '_invoke_watson'
+  function at 00412AEA       with name '_controlfp_s'
+  function at 00412AF0       with name 'sub_412AF0'
+  function at 00412B50       with name 'sub_412B50'
+  function at 00412C20       with name 'sub_412C20'
+  function at 00412C40       with name 'sub_412C40'
+  function at 00412C60       with name 'sub_412C60'
+  function at 00412D50       with name 'sub_412D50'
+  function at 00414340       with name 'sub_414340'
+  function at 00414630       with name 'sub_414630'
+  function at 00414650       with name 'sub_414650'
+  function at 00414670       with name 'sub_414670'
+  function at 00414680       with name 'sub_414680'
+  function at 00414B40       with name 'sub_414B40'
+  function at 00415030       with name 'sub_415030'
+  function at 004152A2       with name '_CIsin'
+  function at 004152A8       with name '_CIcos'
+  function at 004152AE       with name '_CIsqrt'
+finished -> OK
 TIMESTAMP decompiling 401000 size=000001DA times=0...
 TIMESTAMP decompiling 4011E0 size=00000418 times=0...
 TIMESTAMP decompiling 401600 size=00000079 times=0...
@@ -84,8 +282,6 @@ TIMESTAMP decompiling 402780 size=0000011D times=0...
 TIMESTAMP decompiling 4028A0 size=0000005B times=0...
 TIMESTAMP decompiling 402900 size=00000134 times=0...
 TIMESTAMP decompiling 402A40 size=00000058 times=0...
-TIMESTAMP decompiling 402900 size=00000134 times=1;usedcpu 00:00:00 ...int __cdecl(int a1)
-TIMESTAMP decompiling 402780 size=0000011D times=1;usedcpu 00:00:00 ...int()
 TIMESTAMP decompiling 402E00 size=00000237 times=0...
 TIMESTAMP decompiling 403040 size=00000146 times=0...
 TIMESTAMP decompiling 403A50 size=0000049C times=0...
@@ -214,7 +410,6 @@ TIMESTAMP decompiling 40F160 size=00000717 times=0...
 TIMESTAMP decompiling 40F950 size=00000BAF times=0...
 TIMESTAMP decompiling 409A60 size=000002B8 times=0...
 TIMESTAMP decompiling 40C120 size=00000302 times=0...
-TIMESTAMP decompiling 409A60 size=000002B8 times=1;usedcpu 00:00:00 ...void *__cdecl(int a1)
 TIMESTAMP decompiling 410530 size=0000049B times=0...
 TIMESTAMP decompiling 4064B0 size=000004E6 times=0...
 TIMESTAMP decompiling 4069C0 size=00000052 times=0...
@@ -244,14 +439,12 @@ TIMESTAMP decompiling 403190 size=00000137 times=0...
 TIMESTAMP decompiling 4032D0 size=000002D9 times=0...
 TIMESTAMP decompiling 403EF0 size=000000BB times=0...
 TIMESTAMP decompiling 403FB0 size=000000C2 times=0...
-TIMESTAMP decompiling 403EF0 size=000000BB times=1;usedcpu 00:00:00 ...void *()
 TIMESTAMP decompiling 402070 size=00000070 times=0...
 TIMESTAMP decompiling 404080 size=00000160 times=0...
 TIMESTAMP decompiling 4042F0 size=0000077A times=0...
-TIMESTAMP decompiling 4041E0 size=00000107 times=1;usedcpu 00:00:00 ...int __cdecl(char *a1, int a2)
-TIMESTAMP decompiling 404080 size=00000160 times=1;usedcpu 00:00:00 ..._DWORD *()
 TIMESTAMP decompiling 404FD0 size=00000060 times=0...
 TIMESTAMP decompiling 405030 size=000000AD times=0...
 TIMESTAMP decompiling 4035B0 size=00000472 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

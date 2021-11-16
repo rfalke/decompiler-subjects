@@ -1,0 +1,53 @@
+
+Database SUBJECTS/from_internet/fizzbuzz/plain_answer/x64_elf/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
+Autoanalysis subsystem has been initialized.
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
+  Please check the Edit/Plugins menu for more informaton.
+=== start of cleanup script -> OK
+  function at 00401000  LIB  with name '.init_proc'
+  function at 00401020       with name 'sub_401020'
+  function at 00401030       with name '.puts'
+  function at 00401040       with name '.printf'
+  function at 00401050       with name 'main'
+  function at 004010F0  LIB  with name '_start'
+  function at 00401120  LIB  with name '_dl_relocate_static_pie'
+  function at 00401130  LIB  with name 'deregister_tm_clones'
+  function at 00401160  LIB  with name 'register_tm_clones'
+  function at 004011A0  LIB  with name '__do_global_dtors_aux'
+  function at 004011D0  LIB  with name 'frame_dummy'
+  function at 004011E0  LIB  with name '__libc_csu_init'
+  function at 00401250  LIB  with name '__libc_csu_fini'
+  function at 00401258  LIB  with name '.term_proc'
+  function at 00404038       with name 'puts'
+  function at 00404040       with name 'printf'
+  function at 00404048  LIB  with name '__libc_start_main'
+  function at 00404050       with name '__gmon_start__'
+finished -> OK
+TIMESTAMP decompiling 401020 size=000000000000000C times=0...
+The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 401050 size=000000000000009C times=0...
+TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
+Unloading IDP module IDADIR/procs/pc64.so...

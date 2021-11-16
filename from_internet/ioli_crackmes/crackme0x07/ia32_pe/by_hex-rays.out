@@ -1,5 +1,6 @@
-Possible file format: MS-DOS executable (EXE) (IDADIR/loaders/dos.so)
-Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
+
+Database SUBJECTS/from_internet/ioli_crackmes/crackme0x07/ia32_pe/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -9,34 +10,84 @@ Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_internet/ioli_crackmes/crackme0x07/ia32_pe/subject.exe' into database...
-Detected file format: Portable executable for 80386 (PE)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (00401000-00404000) ... ... OK
-  1. Creating a new segment  (00404000-00405000) ... ... OK
-  2. Creating a new segment  (00405000-00406000) ... ... OK
-  3. Creating a new segment  (00406000-00407000) ... ... OK
-  4. Creating a new segment  (00407000-00408000) ... ... OK
-Reading imports directory...
-Type library 'mssdk_win7' loaded. Applying types...
-Types applied to 29 names.
-Plan  FLIRT signature: SEH for vc7-14
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_internet/ioli_crackmes/crackme0x07/ia32_pe/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Using FLIRT signature: SEH for vc7-14
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 8 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 00401000       with name 'TopLevelExceptionFilter'
+  function at 00401140       with name 'sub_401140'
+  function at 00401260       with name 'start'
+  function at 004012A0       with name 'sub_4012A0'
+  function at 004012C0       with name 'sub_4012C0'
+  function at 004012F0       with name 'sub_4012F0'
+  function at 00401310       with name 'sub_401310'
+  function at 00401380       with name 'sub_401380'
+  function at 0040139E       with name 'sub_40139E'
+  function at 00401415       with name 'sub_401415'
+  function at 004014D9       with name 'sub_4014D9'
+  function at 00401550       with name 'sub_401550'
+  function at 00401580       with name 'sub_401580'
+  function at 00401590       with name 'sub_401590'
+  function at 004015C0       with name 'sub_4015C0'
+  function at 00401620       with name 'sub_401620'
+  function at 00401640       with name 'sub_401640'
+  function at 00401690       with name 'sub_401690'
+  function at 004016E0       with name 'sub_4016E0'
+  function at 00401750       with name 'sub_401750'
+  function at 00401820       with name 'sub_401820'
+  function at 00401870       with name 'sub_401870'
+  function at 00401900       with name 'sub_401900'
+  function at 004019F0       with name 'sub_4019F0'
+  function at 00401A60       with name 'sub_401A60'
+  function at 00401B60       with name 'sub_401B60'
+  function at 00401BC0       with name 'sub_401BC0'
+  function at 00401D50       with name 'sub_401D50'
+  function at 00401D90       with name 'sub_401D90'
+  function at 00401DF0       with name 'sub_401DF0'
+  function at 00401E80       with name 'sub_401E80'
+  function at 00401EA0       with name 'sub_401EA0'
+  function at 00401F20       with name 'sub_401F20'
+  function at 00401FB0       with name 'sub_401FB0'
+  function at 00402040       with name 'sub_402040'
+  function at 004020B0       with name 'sub_4020B0'
+  function at 004021D0       with name 'sub_4021D0'
+  function at 004022D0       with name 'sub_4022D0'
+  function at 004023F0       with name 'sub_4023F0'
+  function at 00402B50       with name 'sub_402B50'
+  function at 00402B60       with name 'sub_402B60'
+  function at 00402C00       with name 'sub_402C00'
+  function at 00402E20       with name 'sub_402E20'
+  function at 00402EA0       with name '__p__fmode'
+  function at 00402EB0       with name '__getmainargs'
+  function at 00402EC0       with name 'scanf'
+  function at 00402ED0       with name 'strlen'
+  function at 00402EE0       with name 'sscanf'
+  function at 00402EF0       with name 'exit'
+  function at 00402F00       with name 'printf'
+  function at 00402F10       with name 'strncmp'
+  function at 00402F20       with name 'free'
+  function at 00402F30       with name 'malloc'
+  function at 00402F40       with name 'abort'
+  function at 00402F50       with name '_assert'
+  function at 00402F60       with name 'ExitProcess'
+  function at 00402F70       with name 'SetUnhandledExceptionFilter'
+  function at 00402F80       with name 'ReleaseSemaphore'
+  function at 00402F90       with name 'InterlockedDecrement'
+  function at 00402FA0       with name 'WaitForSingleObject'
+  function at 00402FB0       with name 'CreateSemaphoreA'
+  function at 00402FC0       with name 'Sleep'
+  function at 00402FD0       with name 'InterlockedIncrement'
+  function at 00402FE0       with name 'GetAtomNameA'
+  function at 00402FF0       with name 'AddAtomA'
+  function at 00403000       with name 'FindAtomA'
+  function at 00403010       with name 'sub_403010'
+  function at 00403020       with name 'sub_403020'
+finished -> OK
 TIMESTAMP decompiling 4012A0 size=0000000C times=0...
 The decompiler assumes that the segment '.idata' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -68,11 +119,10 @@ If the segment is not read-only, please change the segment NAME.
 In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
+TIMESTAMP decompiling 402E20 size=0000002D times=0...
 TIMESTAMP decompiling 401000 size=0000013F times=0...
 TIMESTAMP decompiling 40139E size=00000077 times=0...
 TIMESTAMP decompiling 401415 size=000000C4 times=0...
-TIMESTAMP decompiling 401380 size=0000001E times=1;usedcpu 00:00:00 ...int(void)
-TIMESTAMP decompiling 401415 size=000000C4 times=1;usedcpu 00:00:00 ...void __cdecl __noreturn(char *, int)
 TIMESTAMP decompiling 4015C0 size=00000053 times=0...
 The decompiler assumes that the segment '.text' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -102,10 +152,10 @@ TIMESTAMP decompiling 4019F0 size=00000026 times=0...
 TIMESTAMP decompiling 402C00 size=00000218 times=0...
 TIMESTAMP decompiling 4012C0 size=00000022 times=0...
 TIMESTAMP decompiling 403010 size=00000009 times=0...
-TIMESTAMP decompiling 4015C0 size=00000053 times=1;usedcpu 00:00:00 ...int()
 TIMESTAMP decompiling 401BC0 size=00000183 times=0...
 TIMESTAMP decompiling 401D50 size=00000009 times=0...
 TIMESTAMP decompiling 4012F0 size=00000014 times=0...
 TIMESTAMP decompiling 403020 size=00000009 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

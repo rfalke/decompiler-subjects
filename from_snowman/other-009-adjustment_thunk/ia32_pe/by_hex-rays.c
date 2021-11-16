@@ -14,16 +14,16 @@
 #define __thiscall __cdecl // Test compile in C mode
 
 int __thiscall sub_401023(void *, char); // idb
-void *__thiscall sub_401120(void *this, char a2);
+void *__thiscall sub_401120(void *this, char);
 void *sub_401160();
-void *__thiscall sub_401170(void *this, char a2);
+void *__thiscall sub_401170(void *this, char);
 void *sub_4011B0();
-void *__thiscall sub_4011C0(void *this, char a2);
+void *__thiscall sub_4011C0(void *this, char);
 char *__thiscall sub_401250(char *this);
 char *__thiscall sub_401260(char *this);
-int __thiscall sub_401290(char *this, char a2);
-int __thiscall sub_4012A0(char *this, char a2);
-void *__thiscall sub_4012B0(void *this, char a2);
+int __thiscall sub_401290(char *this, char);
+int __thiscall sub_4012A0(char *this, char);
+void *__thiscall sub_4012B0(void *this, char);
 int __cdecl main_0(int argc, const char **argv, const char **envp);
 // void __cdecl operator delete(void *); idb
 // void *__cdecl operator new(unsigned int); idb
@@ -33,7 +33,6 @@ int (*sub_40188C())(void);
 void __cdecl sub_4018B2(); // idb
 int __cdecl UserMathErrorFunction();
 int sub_401B27();
-// LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -113,7 +112,7 @@ int (*dword_403FA8[66])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
 _UNKNOWN unk_4040B0; // weak
 void (*dword_4041B0[66])(void) =
 {
@@ -183,7 +182,8 @@ void (*dword_4041B0[66])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
+// extern LPTOP_LEVEL_EXCEPTION_FILTER (__stdcall *SetUnhandledExceptionFilter)(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
 
 
 //----- (00401120) --------------------------------------------------------
@@ -322,6 +322,7 @@ int (*sub_40188C())(void)
   }
   return result;
 }
+// 403FA8: using guessed type int (*dword_403FA8[66])(void);
 
 //----- (004018B2) --------------------------------------------------------
 void __cdecl sub_4018B2()
@@ -340,6 +341,7 @@ void __cdecl sub_4018B2()
     while ( v0 < dword_4041B0 );
   }
 }
+// 4041B0: using guessed type void (*dword_4041B0[66])(void);
 
 //----- (00401B24) --------------------------------------------------------
 int __cdecl UserMathErrorFunction()

@@ -1,3 +1,4 @@
+
 Database SUBJECTS/from_holdec/pic/x64_elf_clang_O0_unlimited-pie/subject.exe.i64 already exists.
 Do you want to overwrite it? -> ~L~oad existing
 
@@ -13,10 +14,10 @@ Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processo
 Loading type libraries...
 Autoanalysis subsystem has been initialized.
 Database for file 'subject.exe' has been loaded.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
 === start of cleanup script -> OK
   function at 00401000  LIB  with name '.init_proc'
   function at 00401020       with name 'sub_401020'

@@ -15,27 +15,9 @@
 int sub_401000();
 int sub_40101B();
 void sub_40114A();
-// __int64 __usercall sub_40115F@<edx:eax>(__int64 result@<edx:eax>, __int16 a2@<cx>, __int16 a3@<bp>, __int16 a4@<di>);
-void __stdcall __noreturn start(int a1, int a2, int a3, int a4);
+// __int64 __usercall sub_40115F@<edx:eax>(__int64 result@<edx:eax>, __int16@<cx>, __int16@<bp>, __int16@<di>);
+void __stdcall __noreturn start(int, int, int, int);
 LRESULT __stdcall sub_4012AF(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
-// void __stdcall __noreturn ExitProcess(UINT uExitCode);
-// HMODULE __stdcall GetModuleHandleW(LPCWSTR lpModuleName);
-// HGLOBAL __stdcall GlobalAlloc(UINT uFlags, SIZE_T dwBytes);
-// HGLOBAL __stdcall GlobalFree(HGLOBAL hMem);
-// HWND __stdcall CreateWindowExW(DWORD dwExStyle, LPCWSTR lpClassName, LPCWSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam);
-// LRESULT __stdcall DefWindowProcW(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
-// LRESULT __stdcall DispatchMessageW(const MSG *lpMsg);
-// BOOL __stdcall GetClientRect(HWND hWnd, LPRECT lpRect);
-// HDC __stdcall GetDC(HWND hWnd);
-// HCURSOR __stdcall LoadCursorW(HINSTANCE hInstance, LPCWSTR lpCursorName);
-// HICON __stdcall LoadIconW(HINSTANCE hInstance, LPCWSTR lpIconName);
-// int __stdcall MessageBoxW(HWND hWnd, LPCWSTR lpText, LPCWSTR lpCaption, UINT uType);
-// BOOL __stdcall PeekMessageW(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg);
-// void __stdcall PostQuitMessage(int nExitCode);
-// ATOM __stdcall RegisterClassW(const WNDCLASSW *lpWndClass);
-// int __stdcall ReleaseDC(HWND hWnd, HDC hDC);
-// BOOL __stdcall TranslateMessage(const MSG *lpMsg);
-// int __stdcall StretchDIBits(HDC hdc, int xDest, int yDest, int DestWidth, int DestHeight, int xSrc, int ySrc, int SrcWidth, int SrcHeight, const void *lpBits, const BITMAPINFO *lpbmi, UINT iUsage, DWORD rop);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -55,6 +37,24 @@ int dword_4020DE = 0; // weak
 HGLOBAL hMem = NULL; // idb
 _UNKNOWN unk_4020EE; // weak
 _UNKNOWN unk_4020F4; // weak
+// extern void (__stdcall __noreturn *ExitProcess)(UINT uExitCode);
+// extern HMODULE (__stdcall *GetModuleHandleW)(LPCWSTR lpModuleName);
+// extern HGLOBAL (__stdcall *GlobalAlloc)(UINT uFlags, SIZE_T dwBytes);
+// extern HGLOBAL (__stdcall *GlobalFree)(HGLOBAL hMem);
+// extern HWND (__stdcall *CreateWindowExW)(DWORD dwExStyle, LPCWSTR lpClassName, LPCWSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam);
+// extern LRESULT (__stdcall *DefWindowProcW)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+// extern LRESULT (__stdcall *DispatchMessageW)(const MSG *lpMsg);
+// extern BOOL (__stdcall *GetClientRect)(HWND hWnd, LPRECT lpRect);
+// extern HDC (__stdcall *GetDC)(HWND hWnd);
+// extern HCURSOR (__stdcall *LoadCursorW)(HINSTANCE hInstance, LPCWSTR lpCursorName);
+// extern HICON (__stdcall *LoadIconW)(HINSTANCE hInstance, LPCWSTR lpIconName);
+// extern int (__stdcall *MessageBoxW)(HWND hWnd, LPCWSTR lpText, LPCWSTR lpCaption, UINT uType);
+// extern BOOL (__stdcall *PeekMessageW)(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg);
+// extern void (__stdcall *PostQuitMessage)(int nExitCode);
+// extern ATOM (__stdcall *RegisterClassW)(const WNDCLASSW *lpWndClass);
+// extern int (__stdcall *ReleaseDC)(HWND hWnd, HDC hDC);
+// extern BOOL (__stdcall *TranslateMessage)(const MSG *lpMsg);
+// extern int (__stdcall *StretchDIBits)(HDC hdc, int xDest, int yDest, int DestWidth, int DestHeight, int xSrc, int ySrc, int SrcWidth, int SrcHeight, const void *lpBits, const BITMAPINFO *lpbmi, UINT iUsage, DWORD rop);
 
 
 //----- (00401000) --------------------------------------------------------
@@ -160,8 +160,21 @@ int sub_40101B()
 //----- (0040114A) --------------------------------------------------------
 void sub_40114A()
 {
-  ;
+  __asm
+  {
+    fld     st
+    fmul    st, st(3)
+    fxch    st(2)
+    fld     st
+    fmul    st, st(5)
+    faddp   st(3), st
+    fmul    st, st(3)
+    fxch    st(1)
+    fmul    st, st(4)
+    fsubp   st(1), st
+  }
 }
+// 40114A: inconsistent fpu stack
 
 //----- (0040115F) --------------------------------------------------------
 __int64 __usercall sub_40115F@<edx:eax>(__int64 result@<edx:eax>, __int16 a2@<cx>, __int16 a3@<bp>, __int16 a4@<di>)
@@ -182,7 +195,7 @@ void __stdcall __noreturn start(int a1, int a2, int a3, int a4)
 {
   char *v4; // eax
   int v5; // eax
-  HWND v6; // eax
+  HWND Window; // eax
 
   v4 = (char *)GlobalAlloc(0, 0x7A120u);
   if ( !v4 )
@@ -196,11 +209,11 @@ void __stdcall __noreturn start(int a1, int a2, int a3, int a4)
   LOWORD(v5) = RegisterClassW(&WndClass);
   if ( !v5 )
     goto LABEL_7;
-  v6 = CreateWindowExW(0, ClassName, WindowName, 0x10CF0000u, 0x8000, 0x8000, 640, 500, 0, 0, WndClass.hInstance, 0);
-  if ( v6 )
+  Window = CreateWindowExW(0, ClassName, WindowName, 0x10CF0000u, 0x8000, 0x8000, 640, 500, 0, 0, WndClass.hInstance, 0);
+  if ( Window )
   {
-    hWnd = v6;
-    hDC = GetDC(v6);
+    hWnd = Window;
+    hDC = GetDC(Window);
     sub_401000();
     sub_40101B();
     while ( 1 )
@@ -230,20 +243,17 @@ LABEL_7:
 //----- (004012AF) --------------------------------------------------------
 LRESULT __stdcall sub_4012AF(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
-  LRESULT result; // eax
-
   if ( Msg == 2 )
   {
     PostQuitMessage(0);
-    result = 0;
+    return 0;
   }
   else
   {
     if ( Msg == 5 && (unsigned int)dword_4020DE >= 0xA )
       sub_40101B();
-    result = DefWindowProcW(hWnd, Msg, wParam, lParam);
+    return DefWindowProcW(hWnd, Msg, wParam, lParam);
   }
-  return result;
 }
 // 4020DE: using guessed type int dword_4020DE;
 

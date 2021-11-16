@@ -12,7 +12,6 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int init_proc();
 int sub_8048A74();
 // int fputs(const char *s, FILE *stream);
 // int *__errno_location(void);
@@ -23,7 +22,6 @@ int sub_8048A74();
 // int __cdecl __cxa_atexit(void (__cdecl *lpfunc)(void *), void *obj, void *lpdso_handle);
 // int __isoc99_fscanf(_DWORD, const char *, ...); weak
 // int __xstat(int ver, const char *filename, struct stat *stat_buf);
-// int __gmon_start__(void); weak
 // void rewind(FILE *stream);
 // int __isoc99_sscanf(_DWORD, const char *, ...); weak
 // int vsprintf(char *s, const char *format, __gnuc_va_list arg);
@@ -33,7 +31,6 @@ int sub_8048A74();
 // int system(const char *command);
 // char *strncpy(char *dest, const char *src, size_t n);
 // char *fgets(char *s, int n, FILE *stream);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // char *strrchr(const char *s, int c);
 // struct dirent *readdir(DIR *dirp);
 // int strtol(const char *nptr, char **endptr, int base);
@@ -65,9 +62,6 @@ int sub_8048A74();
 // char *strdup(const char *s);
 // int strcmp(const char *s1, const char *s2);
 // void exit(int status);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _do_global_dtors_aux();
-int frame_dummy();
 void exit_env(); // idb
 void exit_tmp(); // idb
 void exit_db(); // idb
@@ -132,12 +126,8 @@ void __cdecl show_license(char *package);
 void __noreturn show_version();
 void __cdecl get_configure_options(char *gisbase);
 int __cdecl main(int argc, const char **argv, const char **envp);
-void _libc_csu_fini(void); // idb
-void _libc_csu_init(void); // idb
 int __cdecl atexit(void (__cdecl *lpfunc)(void *)); // idb
 int __cdecl stat_0(char *filename, int); // idb
-void (*_do_global_ctors_aux())(void);
-void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -146,12 +136,8 @@ _UNKNOWN unk_8054D15; // weak
 _UNKNOWN unk_8055722; // weak
 const char byte_805698C[4] = { '\0', '\0', '\0', '\0' }; // idb
 _UNKNOWN unk_8057925; // weak
-int _CTOR_LIST__ = -1; // weak
-int _DTOR_LIST__[] = { -1 }; // weak
-int _DTOR_END__ = 0; // weak
-int _JCR_LIST__ = 0; // weak
 int (*dword_8058FFC)(void) = NULL; // weak
-_DWORD _dso_handle[7] = { 0, 0, 0, 0, 0, 0, 0 }; // idb
+_DWORD _dso_handle[7] = { 0, 0, 0, 0, 0, 0, 0 }; // weak
 option long_options_3722[20] =
 {
   { "install", 1, NULL, 105 },
@@ -180,8 +166,6 @@ FILE *stderr; // idb
 FILE *stdout; // idb
 int opterr; // weak
 char *optarg; // idb
-char completed_7065; // weak
-int dtor_idx_7067; // weak
 unsigned int next_4089; // idb
 char GINSTALL_DST[2048]; // idb
 char GINSTALL_INC[2048]; // idb
@@ -230,22 +214,7 @@ char MAKE_CMD[2048]; // idb
 char CWD[2048]; // idb
 int ERROR; // idb
 int WARNINGS; // idb
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08048A44) --------------------------------------------------------
-int init_proc()
-{
-  int v1; // [esp+0h] [ebp-8h]
-
-  if ( &_gmon_start__ )
-    __gmon_start__();
-  frame_dummy();
-  _do_global_ctors_aux();
-  return v1;
-}
-// 8048A70: variable 'v1' is possibly undefined
-// 8048B14: using guessed type int __gmon_start__(void);
 
 //----- (08048A74) --------------------------------------------------------
 int sub_8048A74()
@@ -253,55 +222,6 @@ int sub_8048A74()
   return dword_8058FFC();
 }
 // 8058FFC: using guessed type int (*dword_8058FFC)(void);
-
-//----- (08048DD0) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, _libc_csu_init, _libc_csu_fini, a2, &v3);
-  __halt();
-}
-// 8048DD3: positive sp value 4 has been found
-
-//----- (08048E00) --------------------------------------------------------
-void _do_global_dtors_aux()
-{
-  int v0; // eax
-  unsigned int i; // ebx
-
-  if ( !completed_7065 )
-  {
-    v0 = dtor_idx_7067;
-    for ( i = &_DTOR_END__ - _DTOR_LIST__ - 1; dtor_idx_7067 < i; v0 = dtor_idx_7067 )
-    {
-      dtor_idx_7067 = v0 + 1;
-      ((void (*)(void))_DTOR_LIST__[v0 + 1])();
-    }
-    completed_7065 = 1;
-  }
-}
-// 8058F18: using guessed type int _DTOR_LIST__[];
-// 8058F1C: using guessed type int _DTOR_END__;
-// 8059284: using guessed type char completed_7065;
-// 8059288: using guessed type int dtor_idx_7067;
-
-//----- (08048E60) --------------------------------------------------------
-int frame_dummy()
-{
-  int result; // eax
-
-  result = _JCR_LIST__;
-  if ( _JCR_LIST__ )
-    result = 0;
-  return result;
-}
-// 8058F20: using guessed type int _JCR_LIST__;
 
 //----- (08048E84) --------------------------------------------------------
 void exit_env()
@@ -469,7 +389,6 @@ void print_done()
 //----- (08049554) --------------------------------------------------------
 char *__cdecl basename(char *path)
 {
-  char *result; // eax
   char *backup; // [esp+14h] [ebp-14h]
   const char *element; // [esp+18h] [ebp-10h]
   char *copy; // [esp+1Ch] [ebp-Ch]
@@ -490,15 +409,14 @@ LABEL_11:
     }
     if ( copy )
       free(copy);
-    result = backup;
+    return backup;
   }
   else
   {
     if ( copy )
       free(copy);
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (0804961D) --------------------------------------------------------
@@ -538,7 +456,6 @@ int __cdecl chop(char *string)
 //----- (08049737) --------------------------------------------------------
 int __cdecl insert_str(char *str, int pos, char **strarr)
 {
-  int result; // eax
   size_t v4; // eax
   size_t v5; // eax
   int len; // [esp+20h] [ebp-1818h]
@@ -564,7 +481,7 @@ int __cdecl insert_str(char *str, int pos, char **strarr)
     strcpy(strarr[n], str);
     na = n + 2;
     strarr[na - 1] = 0;
-    result = na;
+    return na;
   }
   else
   {
@@ -588,9 +505,8 @@ int __cdecl insert_str(char *str, int pos, char **strarr)
     strcpy(strarr[n], last);
     nb = n + 2;
     strarr[nb - 1] = 0;
-    result = nb;
+    return nb;
   }
-  return result;
 }
 
 //----- (08049A5E) --------------------------------------------------------
@@ -1107,7 +1023,6 @@ int __cdecl vercmp(int major, int minor, int revision, int major2, int minor2, i
 //----- (0804AE20) --------------------------------------------------------
 char *__cdecl depstr(char *package, char *gisbase)
 {
-  char *result; // eax
   int *v3; // eax
   char *v4; // eax
   FILE *f_deps; // [esp+2Ch] [ebp-181Ch]
@@ -1143,7 +1058,7 @@ char *__cdecl depstr(char *package, char *gisbase)
       }
     }
     fclose(f_deps);
-    result = str;
+    return str;
   }
   else
   {
@@ -1153,14 +1068,19 @@ char *__cdecl depstr(char *package, char *gisbase)
       v4 = strerror(*v3);
       print_error(-17, "checking for file '%s': %s\n", file, v4);
     }
-    result = (char *)&unk_8054D15;
+    return (char *)&unk_8054D15;
   }
-  return result;
 }
 // 8048B34: using guessed type int __isoc99_sscanf(_DWORD, const char *, ...);
 
 //----- (0804B014) --------------------------------------------------------
-void __cdecl register_extension(char *gisbase, char *bins, char *pkg_short_name, int pkg_major, int pkg_minor, int pkg_revision)
+void __cdecl register_extension(
+        char *gisbase,
+        char *bins,
+        char *pkg_short_name,
+        int pkg_major,
+        int pkg_minor,
+        int pkg_revision)
 {
   int *v6; // eax
   char *v7; // eax
@@ -1573,8 +1493,7 @@ int __cdecl check_ext_menu(char **tcl_lines)
 //----- (0804C009) --------------------------------------------------------
 int __cdecl new_submenu(char *pkg_short_name, char *menu, char **tcl_lines)
 {
-  int v3; // eax
-  int result; // eax
+  int pos; // eax
   char *v5; // ebx
   size_t v6; // ebx
   char *v7; // eax
@@ -1593,9 +1512,9 @@ int __cdecl new_submenu(char *pkg_short_name, char *menu, char **tcl_lines)
 
   v19 = __readgsdword(0x14u);
   idx = find_pos("\"&Xtns\" all options", tcl_lines, 0);
-  v3 = find_pos("\" all options", tcl_lines, idx + 1);
-  last = v3 - 1;
-  if ( !v3 )
+  pos = find_pos("\" all options", tcl_lines, idx + 1);
+  last = pos - 1;
+  if ( !pos )
     last = find_pos("}]", tcl_lines, 0);
   if ( is_submenu(menu) )
   {
@@ -1630,26 +1549,24 @@ int __cdecl new_submenu(char *pkg_short_name, char *menu, char **tcl_lines)
       terminator = find_pos("}]", tcl_lines, 0);
       sprintf(tmp, "#(DO_NOT_REMOVE_THIS_COMMENT) <%s> %s {} \"\" 1 {\n", pkg_short_name, searchstr);
       insert_str(tmp, terminator + 1, tcl_lines);
-      result = insert_here + 1;
+      return insert_here + 1;
     }
     else
     {
       print_warning("submenu '%s' exists in GIS Manager's Xtns menu.\n", tmp);
-      result = -1;
+      return -1;
     }
   }
   else
   {
     print_warning("first line not a submenu specifier in 'entries-gisman'.\n");
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (0804C41B) --------------------------------------------------------
 int __cdecl new_item(char *item, char *menu, char **tcl_lines, int line_no)
 {
-  int result; // eax
   int num_tokens; // [esp+34h] [ebp-1814h]
   const char *token; // [esp+38h] [ebp-1810h]
   char tmp[2048]; // [esp+3Ch] [ebp-180Ch] BYREF
@@ -1678,20 +1595,19 @@ int __cdecl new_item(char *item, char *menu, char **tcl_lines, int line_no)
       else
         sprintf(tmp, " \t\t\t {command \"%s\" {} \"%s\" {} -command {%s }}\n", entry, command, command);
       insert_str(tmp, line_no, tcl_lines);
-      result = line_no + 1;
+      return line_no + 1;
     }
     else
     {
       print_warning("invalid number of tokens (%i) in 'entries-gisman'.\n", num_tokens);
-      result = -1;
+      return -1;
     }
   }
   else
   {
     print_warning("invalid token in 'entries-gisman'.\n");
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (0804C5F0) --------------------------------------------------------
@@ -1916,7 +1832,6 @@ void __cdecl register_entries_gisman2(char *pkg_short_name, char *gisbase)
 //----- (0804CEC7) --------------------------------------------------------
 int __cdecl deregister_entries_gisman(char *pkg_short_name, char *gisbase)
 {
-  int result; // eax
   int *v3; // eax
   char *v4; // eax
   int *v5; // eax
@@ -2016,7 +1931,7 @@ int __cdecl deregister_entries_gisman(char *pkg_short_name, char *gisbase)
       if ( pos == -1 )
       {
         print_warning("could not find uninstall information in 'menu.tcl'.\n");
-        result = -1;
+        return -1;
       }
       else
       {
@@ -2032,7 +1947,7 @@ int __cdecl deregister_entries_gisman(char *pkg_short_name, char *gisbase)
         if ( start == -1 )
         {
           print_warning("menu 'Xtns' does not exist.\n");
-          result = -1;
+          return -1;
         }
         else
         {
@@ -2041,7 +1956,7 @@ int __cdecl deregister_entries_gisman(char *pkg_short_name, char *gisbase)
           if ( start_sub == -1 || start_sub > end )
           {
             print_warning("could not find submenu entry '%s' in 'menu.tcl'.\n", tmp);
-            result = -1;
+            return -1;
           }
           else
           {
@@ -2049,7 +1964,7 @@ int __cdecl deregister_entries_gisman(char *pkg_short_name, char *gisbase)
             if ( end_sub == -1 || end_sub > end )
             {
               print_warning("could not find end of submenu entry '%s' in 'menu.tcl'.\n", tmp);
-              result = -1;
+              return -1;
             }
             else
             {
@@ -2090,7 +2005,7 @@ int __cdecl deregister_entries_gisman(char *pkg_short_name, char *gisbase)
               for ( ie = 0; n_lines + 1 > ie; ++ie )
                 free(line[ie]);
               free(line);
-              result = num_removeda;
+              return num_removeda;
             }
           }
         }
@@ -2098,7 +2013,7 @@ int __cdecl deregister_entries_gisman(char *pkg_short_name, char *gisbase)
     }
     else
     {
-      result = -1;
+      return -1;
     }
   }
   else
@@ -2110,9 +2025,8 @@ int __cdecl deregister_entries_gisman(char *pkg_short_name, char *gisbase)
       v4 = strerror(*v3);
       print_error(-22, "checking for file '%s': %s\n", file, v4);
     }
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (0804D743) --------------------------------------------------------
@@ -2146,7 +2060,6 @@ void __cdecl deregister_entries_gisman2(char *pkg_short_name, char *gisbase)
 //----- (0804D896) --------------------------------------------------------
 int __cdecl restore_entries_gisman(char *gisbase)
 {
-  int result; // eax
   int *v2; // eax
   char *v3; // eax
   int *v4; // eax
@@ -2157,8 +2070,8 @@ int __cdecl restore_entries_gisman(char *gisbase)
   char *v9; // eax
   int n_files; // [esp+48h] [ebp-2840h]
   int num_restored; // [esp+4Ch] [ebp-283Ch]
-  dirent *ep; // [esp+50h] [ebp-2838h]
-  dirent *epa; // [esp+50h] [ebp-2838h]
+  struct dirent *ep; // [esp+50h] [ebp-2838h]
+  struct dirent *epa; // [esp+50h] [ebp-2838h]
   DIR *dirp; // [esp+54h] [ebp-2834h]
   DIR *dirpa; // [esp+54h] [ebp-2834h]
   FILE *f_out; // [esp+58h] [ebp-2830h]
@@ -2327,16 +2240,16 @@ int __cdecl restore_entries_gisman(char *gisbase)
         for ( id = 0; n_lines + 2 * n_entries + 5 * n_files + 1 > id; ++id )
           free(line[id]);
         free(line);
-        result = num_restored;
+        return num_restored;
       }
       else
       {
-        result = 0;
+        return 0;
       }
     }
     else
     {
-      result = 0;
+      return 0;
     }
   }
   else
@@ -2348,9 +2261,8 @@ int __cdecl restore_entries_gisman(char *gisbase)
       v3 = strerror(*v2);
       print_error(-21, "checking for file '%s': %s\n", file, v3);
     }
-    result = 0;
+    return 0;
   }
-  return result;
 }
 // 804DF71: variable 'line_no' is possibly undefined
 
@@ -2675,7 +2587,6 @@ void __cdecl deregister_html(char *pkg_short_name, char *gisbase)
 //----- (0804F026) --------------------------------------------------------
 int __cdecl restore_html(char *gisbase)
 {
-  int result; // eax
   int *v2; // eax
   char *v3; // eax
   int *v4; // eax
@@ -2838,16 +2749,16 @@ int __cdecl restore_html(char *gisbase)
         for ( i = 0; n_lines + n_subdirs + 10 > i; ++i )
           free(line[i]);
         free(line);
-        result = num_restored;
+        return num_restored;
       }
       else
       {
-        result = 0;
+        return 0;
       }
     }
     else
     {
-      result = 0;
+      return 0;
     }
   }
   else
@@ -2859,9 +2770,8 @@ int __cdecl restore_html(char *gisbase)
       v3 = strerror(*v2);
       print_error(-24, "checking for file '%s': %s\n", idx, v3);
     }
-    result = 0;
+    return 0;
   }
-  return result;
 }
 // 8048B34: using guessed type int __isoc99_sscanf(_DWORD, const char *, ...);
 
@@ -2876,8 +2786,7 @@ void __cdecl check_extension(char *package, char *name, int *major, int *minor, 
   unsigned int v10; // [esp+84Ch] [ebp-Ch]
 
   v10 = __readgsdword(0x14u);
-  *(_DWORD *)tmp = 0;
-  memset(&tmp[4], 0, 0x7FCu);
+  memset(tmp, 0, sizeof(tmp));
   fwrite("Checking extension ...", 1u, 0x16u, stdout);
   strcpy(tmp, package);
   if ( chdir(tmp) < 0 )
@@ -3022,7 +2931,15 @@ void __cdecl unpack_extension(char *package)
 }
 
 //----- (0804FF43) --------------------------------------------------------
-void __cdecl __noreturn query_extension(char *package, char *name, int major, int minor, int revision, char *short_name, char *invocation, char *org_name)
+void __cdecl __noreturn query_extension(
+        char *package,
+        char *name,
+        int major,
+        int minor,
+        int revision,
+        char *short_name,
+        char *invocation,
+        char *org_name)
 {
   char *v8; // eax
   int *v9; // eax
@@ -3075,7 +2992,14 @@ void print_cfg()
 }
 
 //----- (08050220) --------------------------------------------------------
-void __cdecl source_install(char *package, char *gisbase, char *pkg_short_name, int pkg_major, int pkg_minor, int pkg_revision, char *grass_version)
+void __cdecl source_install(
+        char *package,
+        char *gisbase,
+        char *pkg_short_name,
+        int pkg_major,
+        int pkg_minor,
+        int pkg_revision,
+        char *grass_version)
 {
   int *v7; // eax
   char *v8; // eax
@@ -3257,7 +3181,15 @@ void __cdecl source_install(char *package, char *gisbase, char *pkg_short_name, 
 }
 
 //----- (08050C67) --------------------------------------------------------
-void __cdecl bin_install(char *package, char *gisbase, char *bins, char *pkg_short_name, int pkg_major, int pkg_minor, int pkg_revision, char *grass_version)
+void __cdecl bin_install(
+        char *package,
+        char *gisbase,
+        char *bins,
+        char *pkg_short_name,
+        int pkg_major,
+        int pkg_minor,
+        int pkg_revision,
+        char *grass_version)
 {
   int *v8; // eax
   char *v9; // eax
@@ -3400,7 +3332,14 @@ void __cdecl bin_install(char *package, char *gisbase, char *bins, char *pkg_sho
 }
 
 //----- (0805148A) --------------------------------------------------------
-void __cdecl test_install(char *package, char *gisbase, char *pkg_short_name, int pkg_major, int pkg_minor, int pkg_revision, char *grass_version)
+void __cdecl test_install(
+        char *package,
+        char *gisbase,
+        char *pkg_short_name,
+        int pkg_major,
+        int pkg_minor,
+        int pkg_revision,
+        char *grass_version)
 {
   int *v7; // eax
   char *v8; // eax
@@ -4361,18 +4300,8 @@ LABEL_110:
 // 8048AF4: using guessed type int __isoc99_fscanf(_DWORD, const char *, ...);
 // 8059240: using guessed type int optopt;
 // 8059264: using guessed type int opterr;
-
-//----- (080546E0) --------------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (080546F0) --------------------------------------------------------
-void _libc_csu_init(void)
-{
-  init_proc();
-}
+// 805331E: using guessed type int var_38D4[4];
+// 805331E: using guessed type int var_392C[4];
 
 //----- (08054750) --------------------------------------------------------
 int __cdecl atexit(void (__cdecl *lpfunc)(void *))
@@ -4384,6 +4313,7 @@ int __cdecl atexit(void (__cdecl *lpfunc)(void *))
     v1 = (_DWORD *)_dso_handle[0];
   return __cxa_atexit(lpfunc, 0, v1);
 }
+// 80590E4: using guessed type _DWORD _dso_handle[7];
 
 //----- (08054790) --------------------------------------------------------
 int __cdecl stat_0(char *filename, int a2)
@@ -4391,33 +4321,5 @@ int __cdecl stat_0(char *filename, int a2)
   return __xstat(3, filename, (struct stat *)a2);
 }
 
-//----- (080547D0) --------------------------------------------------------
-void (*_do_global_ctors_aux())(void)
-{
-  void (*result)(void); // eax
-  void (**v1)(void); // ebx
-
-  result = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    v1 = (void (**)(void))&_CTOR_LIST__;
-    do
-    {
-      --v1;
-      result();
-      result = *v1;
-    }
-    while ( *v1 != (void (*)(void))-1 );
-  }
-  return result;
-}
-// 8058F10: using guessed type int _CTOR_LIST__;
-
-//----- (080547FC) --------------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=180 queued=75 decompiled=75 lumina nreq=0 worse=0 better=0
-// ALL OK, 75 function(s) have been successfully decompiled
+// nfuncs=180 queued=67 decompiled=67 lumina nreq=0 worse=0 better=0
+// ALL OK, 67 function(s) have been successfully decompiled

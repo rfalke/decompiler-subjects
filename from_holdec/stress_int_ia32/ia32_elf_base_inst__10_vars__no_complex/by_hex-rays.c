@@ -10,19 +10,10 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8052EE7();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// char *deregister_tm_clones();
-// int register_tm_clones();
-// char *_do_global_dtors_aux();
-// int frame_dummy();
 int inst_0_values_var_0();
 int inst_0_flags_var_0();
 int inst_0_values_var_1();
@@ -2323,25 +2314,25 @@ __int64 inst_114_values_var_8();
 int inst_114_flags_var_8();
 __int64 inst_114_values_var_9();
 int inst_114_flags_var_9();
-// int __usercall inst_115_values_var_0@<eax>(char a1@<efl>);
+// int __usercall inst_115_values_var_0@<eax>(char@<efl>);
 int inst_115_flags_var_0();
-// int __usercall inst_115_values_var_1@<eax>(char a1@<efl>);
+// int __usercall inst_115_values_var_1@<eax>(char@<efl>);
 int inst_115_flags_var_1();
-// int __usercall inst_115_values_var_2@<eax>(char a1@<efl>);
+// int __usercall inst_115_values_var_2@<eax>(char@<efl>);
 int inst_115_flags_var_2();
-// int __usercall inst_115_values_var_3@<eax>(char a1@<efl>);
+// int __usercall inst_115_values_var_3@<eax>(char@<efl>);
 int inst_115_flags_var_3();
-// int __usercall inst_115_values_var_4@<eax>(char a1@<efl>);
+// int __usercall inst_115_values_var_4@<eax>(char@<efl>);
 int inst_115_flags_var_4();
-// int __usercall inst_115_values_var_5@<eax>(char a1@<efl>);
+// int __usercall inst_115_values_var_5@<eax>(char@<efl>);
 int inst_115_flags_var_5();
-// int __usercall inst_115_values_var_6@<eax>(char a1@<efl>);
+// int __usercall inst_115_values_var_6@<eax>(char@<efl>);
 int inst_115_flags_var_6();
-// int __usercall inst_115_values_var_7@<eax>(char a1@<efl>);
+// int __usercall inst_115_values_var_7@<eax>(char@<efl>);
 int inst_115_flags_var_7();
-// int __usercall inst_115_values_var_8@<eax>(char a1@<efl>);
+// int __usercall inst_115_values_var_8@<eax>(char@<efl>);
 int inst_115_flags_var_8();
-// int __usercall inst_115_values_var_9@<eax>(char a1@<efl>);
+// int __usercall inst_115_values_var_9@<eax>(char@<efl>);
 int inst_115_flags_var_9();
 int inst_116_values_var_0();
 int inst_116_flags_var_0();
@@ -5803,9 +5794,6 @@ int inst_288_values_var_8();
 int inst_288_flags_var_8();
 int inst_288_values_var_9();
 int inst_288_flags_var_9();
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -17454,7 +17442,7 @@ int inst_0_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(52, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -17614,7 +17602,7 @@ int inst_1_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-75, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -17648,7 +17636,7 @@ int inst_1_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(16, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -17720,7 +17708,7 @@ int inst_1_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(22, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -18174,7 +18162,7 @@ int inst_3_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-12874, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -18271,7 +18259,7 @@ int inst_4_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(-134340190, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -18309,7 +18297,7 @@ int inst_4_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-1195916612, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -18406,7 +18394,7 @@ int inst_5_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-1118485473, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -18423,7 +18411,7 @@ int inst_5_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-1295614101, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -18474,7 +18462,7 @@ int inst_5_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-296200803, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -18491,7 +18479,7 @@ int inst_5_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(1122043091, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -18525,7 +18513,7 @@ int inst_5_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(1671072035, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -18908,7 +18896,7 @@ int inst_7_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(117, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -18967,7 +18955,7 @@ int inst_7_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(122, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -19316,7 +19304,7 @@ int inst_9_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(20845, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -19333,7 +19321,7 @@ int inst_9_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-28993, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -19350,7 +19338,7 @@ int inst_9_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(26806, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -19388,7 +19376,7 @@ int inst_10_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(1950145312, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -19582,7 +19570,7 @@ int inst_11_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(771817084, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -19616,7 +19604,7 @@ int inst_11_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(1448600836, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -19684,7 +19672,7 @@ int inst_11_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(1486980933, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -19718,7 +19706,7 @@ int inst_11_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-1906710459, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -20025,7 +20013,7 @@ int inst_13_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(118, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -20496,7 +20484,7 @@ int inst_15_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(13310, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -20534,7 +20522,7 @@ int inst_15_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-9784, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22252,7 +22240,7 @@ int inst_24_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(22, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22269,7 +22257,7 @@ int inst_24_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(64, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22286,7 +22274,7 @@ int inst_24_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(25, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22337,7 +22325,7 @@ int inst_24_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(74, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22354,7 +22342,7 @@ int inst_24_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(26, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22371,7 +22359,7 @@ int inst_24_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(8, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22439,7 +22427,7 @@ int inst_25_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(1, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22456,7 +22444,7 @@ int inst_25_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(4, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22473,7 +22461,7 @@ int inst_25_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(88, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22592,7 +22580,7 @@ int inst_26_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(4945, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22626,7 +22614,7 @@ int inst_26_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(16419, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22643,7 +22631,7 @@ int inst_26_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(516, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22711,7 +22699,7 @@ int inst_26_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(10593, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22728,7 +22716,7 @@ int inst_26_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(118, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22779,7 +22767,7 @@ int inst_27_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-27384, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22796,7 +22784,7 @@ int inst_27_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(9297, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22830,7 +22818,7 @@ int inst_27_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-16696, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22847,7 +22835,7 @@ int inst_27_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-26077, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22898,7 +22886,7 @@ int inst_27_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(16392, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22915,7 +22903,7 @@ int inst_27_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(97, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22949,7 +22937,7 @@ int inst_28_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(302540036, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -22983,7 +22971,7 @@ int inst_28_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(605228563, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -23017,7 +23005,7 @@ int inst_28_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(1325798657, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -23051,7 +23039,7 @@ int inst_28_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(335683585, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -23068,7 +23056,7 @@ int inst_28_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-1291841080, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -23119,7 +23107,7 @@ int inst_29_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(346686080, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -23136,7 +23124,7 @@ int inst_29_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(155747473, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -23204,7 +23192,7 @@ int inst_29_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-1568536563, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -23221,7 +23209,7 @@ int inst_29_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(1611285520, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -23238,7 +23226,7 @@ int inst_29_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(810073376, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -23688,10 +23676,7 @@ int inst_33_values_var_0()
 //----- (0806298F) --------------------------------------------------------
 int inst_33_flags_var_0()
 {
-  __int16 v0; // bx
-
-  v0 = 9716;
-  return _bittest(&v0, 0xB920u);
+  return 0;
 }
 
 //----- (080629F5) --------------------------------------------------------
@@ -23706,7 +23691,7 @@ int inst_33_flags_var_1()
   unsigned __int16 v0; // dx
 
   v0 = -28059;
-  return _bittest((const __int16 *)&v0, v0) - 1;
+  return _bittest16((const __int16 *)&v0, v0) - 1;
 }
 
 //----- (08062AA2) --------------------------------------------------------
@@ -23718,10 +23703,7 @@ int inst_33_values_var_2()
 //----- (08062AE9) --------------------------------------------------------
 int inst_33_flags_var_2()
 {
-  __int16 v0; // bp
-
-  v0 = -11977;
-  return _bittest(&v0, 0xB944u) - 1;
+  return 0;
 }
 
 //----- (08062B4F) --------------------------------------------------------
@@ -23736,7 +23718,7 @@ int inst_33_flags_var_3()
   unsigned __int16 v0; // bp
 
   v0 = -23320;
-  return _bittest((const __int16 *)&v0, v0);
+  return _bittest16((const __int16 *)&v0, v0);
 }
 
 //----- (08062BFC) --------------------------------------------------------
@@ -23751,7 +23733,7 @@ int inst_33_flags_var_4()
   unsigned __int16 v0; // ax
 
   v0 = -31142;
-  return _bittest((const __int16 *)&v0, v0) - 1;
+  return _bittest16((const __int16 *)&v0, v0) - 1;
 }
 
 //----- (08062CA9) --------------------------------------------------------
@@ -23763,10 +23745,7 @@ int inst_33_values_var_5()
 //----- (08062CF0) --------------------------------------------------------
 int inst_33_flags_var_5()
 {
-  __int16 v0; // di
-
-  v0 = -25090;
-  return _bittest(&v0, 0x211Au) - 1;
+  return 0;
 }
 
 //----- (08062D56) --------------------------------------------------------
@@ -23778,10 +23757,7 @@ int inst_33_values_var_6()
 //----- (08062D9D) --------------------------------------------------------
 int inst_33_flags_var_6()
 {
-  __int16 v0; // cx
-
-  v0 = -27574;
-  return _bittest(&v0, 0x6EC9u);
+  return 0;
 }
 
 //----- (08062E03) --------------------------------------------------------
@@ -23793,10 +23769,7 @@ int inst_33_values_var_7()
 //----- (08062E4A) --------------------------------------------------------
 int inst_33_flags_var_7()
 {
-  __int16 v0; // di
-
-  v0 = 12475;
-  return _bittest(&v0, 0x6882u);
+  return 0;
 }
 
 //----- (08062EB0) --------------------------------------------------------
@@ -23808,10 +23781,7 @@ int inst_33_values_var_8()
 //----- (08062EF7) --------------------------------------------------------
 int inst_33_flags_var_8()
 {
-  __int16 v0; // bx
-
-  v0 = -29861;
-  return _bittest(&v0, 0x24CCu);
+  return 0;
 }
 
 //----- (08062F5D) --------------------------------------------------------
@@ -23823,10 +23793,7 @@ int inst_33_values_var_9()
 //----- (08062FA4) --------------------------------------------------------
 int inst_33_flags_var_9()
 {
-  __int16 v0; // cx
-
-  v0 = -24831;
-  return _bittest(&v0, 0xBB0Fu) - 1;
+  return 0;
 }
 
 //----- (0806300A) --------------------------------------------------------
@@ -23838,10 +23805,7 @@ int inst_34_values_var_0()
 //----- (08063050) --------------------------------------------------------
 int inst_34_flags_var_0()
 {
-  int v0; // ebp
-
-  v0 = -649462458;
-  return _bittest(&v0, 0x8897B381) - 1;
+  return 0;
 }
 
 //----- (080630B5) --------------------------------------------------------
@@ -23853,10 +23817,7 @@ int inst_34_values_var_1()
 //----- (080630FB) --------------------------------------------------------
 int inst_34_flags_var_1()
 {
-  int v0; // ebp
-
-  v0 = 621420231;
-  return _bittest(&v0, 0x2372BB2u);
+  return 0;
 }
 
 //----- (08063160) --------------------------------------------------------
@@ -23868,10 +23829,7 @@ int inst_34_values_var_2()
 //----- (080631A6) --------------------------------------------------------
 int inst_34_flags_var_2()
 {
-  int v0; // ebx
-
-  v0 = -880304355;
-  return _bittest(&v0, 0x9C56334D);
+  return 0;
 }
 
 //----- (0806320B) --------------------------------------------------------
@@ -23898,10 +23856,7 @@ int inst_34_values_var_4()
 //----- (080632FC) --------------------------------------------------------
 int inst_34_flags_var_4()
 {
-  int v0; // esi
-
-  v0 = -316050501;
-  return _bittest(&v0, 0xD039E795) - 1;
+  return 0;
 }
 
 //----- (08063361) --------------------------------------------------------
@@ -23943,10 +23898,7 @@ int inst_34_values_var_7()
 //----- (080634FD) --------------------------------------------------------
 int inst_34_flags_var_7()
 {
-  int v0; // ecx
-
-  v0 = 1497916925;
-  return _bittest(&v0, 0x31B006CBu);
+  return 0;
 }
 
 //----- (08063562) --------------------------------------------------------
@@ -23958,10 +23910,7 @@ int inst_34_values_var_8()
 //----- (080635A8) --------------------------------------------------------
 int inst_34_flags_var_8()
 {
-  int v0; // edx
-
-  v0 = 2005571429;
-  return _bittest(&v0, 0x660FF730u);
+  return 0;
 }
 
 //----- (0806360D) --------------------------------------------------------
@@ -23973,10 +23922,7 @@ int inst_34_values_var_9()
 //----- (08063653) --------------------------------------------------------
 int inst_34_flags_var_9()
 {
-  int v0; // eax
-
-  v0 = 582933052;
-  return _bittest(&v0, 0xA88A8865) - 1;
+  return 0;
 }
 
 //----- (080636B8) --------------------------------------------------------
@@ -23988,10 +23934,7 @@ int inst_35_values_var_0()
 //----- (08063700) --------------------------------------------------------
 int inst_35_flags_var_0()
 {
-  __int16 v0; // bp
-
-  v0 = 3671;
-  return _bittest(&v0, 0xFBu) - 1;
+  return 0;
 }
 
 //----- (08063767) --------------------------------------------------------
@@ -24003,10 +23946,7 @@ int inst_35_values_var_1()
 //----- (080637AF) --------------------------------------------------------
 int inst_35_flags_var_1()
 {
-  __int16 v0; // ax
-
-  v0 = -8748;
-  return _bittest(&v0, 0xA9u);
+  return 0;
 }
 
 //----- (08063816) --------------------------------------------------------
@@ -24018,10 +23958,7 @@ int inst_35_values_var_2()
 //----- (0806385E) --------------------------------------------------------
 int inst_35_flags_var_2()
 {
-  __int16 v0; // dx
-
-  v0 = 29400;
-  return _bittest(&v0, 0xA6u) - 1;
+  return 0;
 }
 
 //----- (080638C5) --------------------------------------------------------
@@ -24033,10 +23970,7 @@ int inst_35_values_var_3()
 //----- (0806390D) --------------------------------------------------------
 int inst_35_flags_var_3()
 {
-  __int16 v0; // ax
-
-  v0 = 22203;
-  return _bittest(&v0, 0xD9u) - 1;
+  return 0;
 }
 
 //----- (08063974) --------------------------------------------------------
@@ -24048,10 +23982,7 @@ int inst_35_values_var_4()
 //----- (080639BC) --------------------------------------------------------
 int inst_35_flags_var_4()
 {
-  __int16 v0; // cx
-
-  v0 = 20237;
-  return _bittest(&v0, 0x73u) - 1;
+  return 0;
 }
 
 //----- (08063A23) --------------------------------------------------------
@@ -24063,10 +23994,7 @@ int inst_35_values_var_5()
 //----- (08063A6B) --------------------------------------------------------
 int inst_35_flags_var_5()
 {
-  __int16 v0; // ax
-
-  v0 = 7838;
-  return _bittest(&v0, 0xB6u);
+  return 0;
 }
 
 //----- (08063AD2) --------------------------------------------------------
@@ -24078,10 +24006,7 @@ int inst_35_values_var_6()
 //----- (08063B1A) --------------------------------------------------------
 int inst_35_flags_var_6()
 {
-  __int16 v0; // cx
-
-  v0 = 12528;
-  return _bittest(&v0, 0xF2u);
+  return 0;
 }
 
 //----- (08063B81) --------------------------------------------------------
@@ -24093,10 +24018,7 @@ int inst_35_values_var_7()
 //----- (08063BC9) --------------------------------------------------------
 int inst_35_flags_var_7()
 {
-  __int16 v0; // ax
-
-  v0 = -17480;
-  return _bittest(&v0, 2u);
+  return 0;
 }
 
 //----- (08063C30) --------------------------------------------------------
@@ -24108,10 +24030,7 @@ int inst_35_values_var_8()
 //----- (08063C78) --------------------------------------------------------
 int inst_35_flags_var_8()
 {
-  __int16 v0; // dx
-
-  v0 = 5641;
-  return _bittest(&v0, 0x36u);
+  return 0;
 }
 
 //----- (08063CDF) --------------------------------------------------------
@@ -24123,10 +24042,7 @@ int inst_35_values_var_9()
 //----- (08063D27) --------------------------------------------------------
 int inst_35_flags_var_9()
 {
-  __int16 v0; // dx
-
-  v0 = 7385;
-  return _bittest(&v0, 0x1Au) - 1;
+  return 0;
 }
 
 //----- (08063D8E) --------------------------------------------------------
@@ -24138,10 +24054,7 @@ int inst_36_values_var_0()
 //----- (08063DD5) --------------------------------------------------------
 int inst_36_flags_var_0()
 {
-  int v0; // ebp
-
-  v0 = 1620260644;
-  return _bittest(&v0, 0xF8u);
+  return 0;
 }
 
 //----- (08063E3B) --------------------------------------------------------
@@ -24153,10 +24066,7 @@ int inst_36_values_var_1()
 //----- (08063E82) --------------------------------------------------------
 int inst_36_flags_var_1()
 {
-  int v0; // edx
-
-  v0 = 483596909;
-  return _bittest(&v0, 0x1Du);
+  return 0;
 }
 
 //----- (08063EE8) --------------------------------------------------------
@@ -24168,10 +24078,7 @@ int inst_36_values_var_2()
 //----- (08063F2F) --------------------------------------------------------
 int inst_36_flags_var_2()
 {
-  int v0; // edx
-
-  v0 = 58393022;
-  return _bittest(&v0, 0x26u);
+  return 0;
 }
 
 //----- (08063F95) --------------------------------------------------------
@@ -24183,10 +24090,7 @@ int inst_36_values_var_3()
 //----- (08063FDC) --------------------------------------------------------
 int inst_36_flags_var_3()
 {
-  int v0; // eax
-
-  v0 = -32614110;
-  return _bittest(&v0, 0x48u) - 1;
+  return 0;
 }
 
 //----- (08064042) --------------------------------------------------------
@@ -24198,10 +24102,7 @@ int inst_36_values_var_4()
 //----- (08064089) --------------------------------------------------------
 int inst_36_flags_var_4()
 {
-  int v0; // ebx
-
-  v0 = -1923287324;
-  return _bittest(&v0, 0x7Bu) - 1;
+  return 0;
 }
 
 //----- (080640EF) --------------------------------------------------------
@@ -24213,10 +24114,7 @@ int inst_36_values_var_5()
 //----- (08064136) --------------------------------------------------------
 int inst_36_flags_var_5()
 {
-  int v0; // ebp
-
-  v0 = 528096316;
-  return _bittest(&v0, 0xEAu) - 1;
+  return 0;
 }
 
 //----- (0806419C) --------------------------------------------------------
@@ -24228,10 +24126,7 @@ int inst_36_values_var_6()
 //----- (080641E3) --------------------------------------------------------
 int inst_36_flags_var_6()
 {
-  int v0; // edi
-
-  v0 = 1575118759;
-  return _bittest(&v0, 0x48u) - 1;
+  return 0;
 }
 
 //----- (08064249) --------------------------------------------------------
@@ -24243,10 +24138,7 @@ int inst_36_values_var_7()
 //----- (08064290) --------------------------------------------------------
 int inst_36_flags_var_7()
 {
-  int v0; // eax
-
-  v0 = 875788515;
-  return _bittest(&v0, 0x67u) - 1;
+  return 0;
 }
 
 //----- (080642F6) --------------------------------------------------------
@@ -24258,10 +24150,7 @@ int inst_36_values_var_8()
 //----- (0806433D) --------------------------------------------------------
 int inst_36_flags_var_8()
 {
-  int v0; // ebp
-
-  v0 = -2086475012;
-  return _bittest(&v0, 0xE8u);
+  return 0;
 }
 
 //----- (080643A3) --------------------------------------------------------
@@ -24273,10 +24162,7 @@ int inst_36_values_var_9()
 //----- (080643EA) --------------------------------------------------------
 int inst_36_flags_var_9()
 {
-  int v0; // ebp
-
-  v0 = -280788585;
-  return _bittest(&v0, 0xF1u) - 1;
+  return 0;
 }
 
 //----- (08064450) --------------------------------------------------------
@@ -24288,42 +24174,31 @@ int inst_37_values_var_0()
 //----- (08064497) --------------------------------------------------------
 int inst_37_flags_var_0()
 {
-  __int16 v0; // dx
-
-  v0 = -874;
-  return (char)_bittestandcomplement(&v0, 0xAAB3u);
+  return 0;
 }
 
 //----- (080644FD) --------------------------------------------------------
 int inst_37_values_var_1()
 {
-  return -256;
+  return 0;
 }
 
 //----- (08064544) --------------------------------------------------------
 int inst_37_flags_var_1()
 {
-  __int16 v0; // ax
-
-  v0 = -31254;
-  return (char)_bittestandcomplement(&v0, 0xB569u);
+  return 0;
 }
 
 //----- (080645AA) --------------------------------------------------------
 int inst_37_values_var_2()
 {
-  return -8192;
+  return 0;
 }
 
 //----- (080645F1) --------------------------------------------------------
 int inst_37_flags_var_2()
 {
-  __int16 v0; // bp
-  unsigned __int8 v1; // cf
-
-  v0 = 17571;
-  v1 = _bittestandcomplement(&v0, 0xF485u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08064657) --------------------------------------------------------
@@ -24335,10 +24210,7 @@ int inst_37_values_var_3()
 //----- (0806469E) --------------------------------------------------------
 int inst_37_flags_var_3()
 {
-  __int16 v0; // si
-
-  v0 = -13598;
-  return (char)_bittestandcomplement(&v0, 0x86CAu);
+  return 0;
 }
 
 //----- (08064704) --------------------------------------------------------
@@ -24350,25 +24222,19 @@ int inst_37_values_var_4()
 //----- (0806474B) --------------------------------------------------------
 int inst_37_flags_var_4()
 {
-  __int16 v0; // bx
-
-  v0 = 2310;
-  return (char)_bittestandcomplement(&v0, 0xFEFAu);
+  return 0;
 }
 
 //----- (080647B1) --------------------------------------------------------
 int inst_37_values_var_5()
 {
-  return -32;
+  return 0;
 }
 
 //----- (080647F8) --------------------------------------------------------
 int inst_37_flags_var_5()
 {
-  __int16 v0; // di
-
-  v0 = -28870;
-  return (char)_bittestandcomplement(&v0, 0x472Eu);
+  return 0;
 }
 
 //----- (0806485E) --------------------------------------------------------
@@ -24380,12 +24246,7 @@ int inst_37_values_var_6()
 //----- (080648A5) --------------------------------------------------------
 int inst_37_flags_var_6()
 {
-  __int16 v0; // cx
-  unsigned __int8 v1; // cf
-
-  v0 = 3618;
-  v1 = _bittestandcomplement(&v0, 0x4725u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0806490B) --------------------------------------------------------
@@ -24400,7 +24261,7 @@ int inst_37_flags_var_7()
   unsigned __int16 v0; // ax
 
   v0 = 28482;
-  return (char)_bittestandcomplement((__int16 *)&v0, v0);
+  return (char)_bittestandcomplement16((__int16 *)&v0, v0);
 }
 
 //----- (080649B8) --------------------------------------------------------
@@ -24412,18 +24273,13 @@ int inst_37_values_var_8()
 //----- (080649FF) --------------------------------------------------------
 int inst_37_flags_var_8()
 {
-  __int16 v0; // di
-  unsigned __int8 v1; // cf
-
-  v0 = -8798;
-  v1 = _bittestandcomplement(&v0, 0xC19Fu);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08064A65) --------------------------------------------------------
 int inst_37_values_var_9()
 {
-  return -8192;
+  return 0;
 }
 
 //----- (08064AAC) --------------------------------------------------------
@@ -24432,7 +24288,7 @@ int inst_37_flags_var_9()
   unsigned __int16 v0; // bx
 
   v0 = -23300;
-  return (char)_bittestandcomplement((__int16 *)&v0, v0);
+  return (char)_bittestandcomplement16((__int16 *)&v0, v0);
 }
 
 //----- (08064B12) --------------------------------------------------------
@@ -24444,10 +24300,7 @@ int inst_38_values_var_0()
 //----- (08064B58) --------------------------------------------------------
 int inst_38_flags_var_0()
 {
-  int v0; // ecx
-
-  v0 = -1500198686;
-  return (char)_bittestandcomplement(&v0, 0xD62043C9);
+  return 0;
 }
 
 //----- (08064BBD) --------------------------------------------------------
@@ -24459,10 +24312,7 @@ int inst_38_values_var_1()
 //----- (08064C03) --------------------------------------------------------
 int inst_38_flags_var_1()
 {
-  int v0; // edx
-
-  v0 = 1369923621;
-  return (char)_bittestandcomplement(&v0, 0x8E8B4261);
+  return 0;
 }
 
 //----- (08064C68) --------------------------------------------------------
@@ -24474,12 +24324,7 @@ int inst_38_values_var_2()
 //----- (08064CAE) --------------------------------------------------------
 int inst_38_flags_var_2()
 {
-  int v0; // ebp
-  unsigned __int8 v1; // cf
-
-  v0 = -6460420;
-  v1 = _bittestandcomplement(&v0, 0x216B3633u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08064D13) --------------------------------------------------------
@@ -24506,12 +24351,7 @@ int inst_38_values_var_4()
 //----- (08064E04) --------------------------------------------------------
 int inst_38_flags_var_4()
 {
-  int v0; // esi
-  unsigned __int8 v1; // cf
-
-  v0 = 1501834427;
-  v1 = _bittestandcomplement(&v0, 0xA43F3221);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08064E69) --------------------------------------------------------
@@ -24523,12 +24363,7 @@ int inst_38_values_var_5()
 //----- (08064EAF) --------------------------------------------------------
 int inst_38_flags_var_5()
 {
-  int v0; // edi
-  unsigned __int8 v1; // cf
-
-  v0 = 1957373407;
-  v1 = _bittestandcomplement(&v0, 0x2C862C87u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08064F14) --------------------------------------------------------
@@ -24540,10 +24375,7 @@ int inst_38_values_var_6()
 //----- (08064F5A) --------------------------------------------------------
 int inst_38_flags_var_6()
 {
-  int v0; // ecx
-
-  v0 = 1401841182;
-  return (char)_bittestandcomplement(&v0, 0x5B0F3B00u);
+  return 0;
 }
 
 //----- (08064FBF) --------------------------------------------------------
@@ -24555,12 +24387,7 @@ int inst_38_values_var_7()
 //----- (08065005) --------------------------------------------------------
 int inst_38_flags_var_7()
 {
-  int v0; // ebx
-  unsigned __int8 v1; // cf
-
-  v0 = -2034768745;
-  v1 = _bittestandcomplement(&v0, 0x1378D802u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0806506A) --------------------------------------------------------
@@ -24572,10 +24399,7 @@ int inst_38_values_var_8()
 //----- (080650B0) --------------------------------------------------------
 int inst_38_flags_var_8()
 {
-  int v0; // esi
-
-  v0 = -496014316;
-  return (char)_bittestandcomplement(&v0, 0x342867C5u);
+  return 0;
 }
 
 //----- (08065115) --------------------------------------------------------
@@ -24587,40 +24411,31 @@ int inst_38_values_var_9()
 //----- (0806515B) --------------------------------------------------------
 int inst_38_flags_var_9()
 {
-  int v0; // ebx
-
-  v0 = 710563833;
-  return (char)_bittestandcomplement(&v0, 0x854A0850);
+  return 0;
 }
 
 //----- (080651C0) --------------------------------------------------------
 int inst_39_values_var_0()
 {
-  return 256;
+  return 0;
 }
 
 //----- (08065208) --------------------------------------------------------
 int inst_39_flags_var_0()
 {
-  __int16 v0; // cx
-
-  v0 = -23011;
-  return (char)_bittestandcomplement(&v0, 0x91u);
+  return 0;
 }
 
 //----- (0806526F) --------------------------------------------------------
 int inst_39_values_var_1()
 {
-  return -4096;
+  return 0;
 }
 
 //----- (080652B7) --------------------------------------------------------
 int inst_39_flags_var_1()
 {
-  __int16 v0; // bp
-
-  v0 = -7599;
-  return (char)_bittestandcomplement(&v0, 0xFAu);
+  return 0;
 }
 
 //----- (0806531E) --------------------------------------------------------
@@ -24632,76 +24447,55 @@ int inst_39_values_var_2()
 //----- (08065366) --------------------------------------------------------
 int inst_39_flags_var_2()
 {
-  __int16 v0; // bp
-  unsigned __int8 v1; // cf
-
-  v0 = -16145;
-  v1 = _bittestandcomplement(&v0, 0x83u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (080653CD) --------------------------------------------------------
 int inst_39_values_var_3()
 {
-  return -32768;
+  return 0;
 }
 
 //----- (08065415) --------------------------------------------------------
 int inst_39_flags_var_3()
 {
-  __int16 v0; // ax
-
-  v0 = 737;
-  return (char)_bittestandcomplement(&v0, 0x7Bu);
+  return 0;
 }
 
 //----- (0806547C) --------------------------------------------------------
 int inst_39_values_var_4()
 {
-  return 2;
+  return 0;
 }
 
 //----- (080654C4) --------------------------------------------------------
 int inst_39_flags_var_4()
 {
-  __int16 v0; // dx
-  unsigned __int8 v1; // cf
-
-  v0 = 8112;
-  v1 = _bittestandcomplement(&v0, 0xDAu);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0806552B) --------------------------------------------------------
 int inst_39_values_var_5()
 {
-  return -4096;
+  return 0;
 }
 
 //----- (08065573) --------------------------------------------------------
 int inst_39_flags_var_5()
 {
-  __int16 v0; // bp
-
-  v0 = 20730;
-  return (char)_bittestandcomplement(&v0, 0x90u);
+  return 0;
 }
 
 //----- (080655DA) --------------------------------------------------------
 int inst_39_values_var_6()
 {
-  return -256;
+  return 0;
 }
 
 //----- (08065622) --------------------------------------------------------
 int inst_39_flags_var_6()
 {
-  __int16 v0; // dx
-  unsigned __int8 v1; // cf
-
-  v0 = -24842;
-  v1 = _bittestandcomplement(&v0, 6u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08065689) --------------------------------------------------------
@@ -24713,42 +24507,31 @@ int inst_39_values_var_7()
 //----- (080656D1) --------------------------------------------------------
 int inst_39_flags_var_7()
 {
-  __int16 v0; // cx
-
-  v0 = 7461;
-  return (char)_bittestandcomplement(&v0, 0x73u);
+  return 0;
 }
 
 //----- (08065738) --------------------------------------------------------
 int inst_39_values_var_8()
 {
-  return 256;
+  return 0;
 }
 
 //----- (08065780) --------------------------------------------------------
 int inst_39_flags_var_8()
 {
-  __int16 v0; // bx
-  unsigned __int8 v1; // cf
-
-  v0 = 26596;
-  v1 = _bittestandcomplement(&v0, 0x89u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (080657E7) --------------------------------------------------------
 int inst_39_values_var_9()
 {
-  return 1;
+  return 0;
 }
 
 //----- (0806582F) --------------------------------------------------------
 int inst_39_flags_var_9()
 {
-  __int16 v0; // cx
-
-  v0 = 626;
-  return (char)_bittestandcomplement(&v0, 0xA7u);
+  return 0;
 }
 
 //----- (08065896) --------------------------------------------------------
@@ -24760,12 +24543,7 @@ int inst_40_values_var_0()
 //----- (080658DD) --------------------------------------------------------
 int inst_40_flags_var_0()
 {
-  int v0; // eax
-  unsigned __int8 v1; // cf
-
-  v0 = 1096615257;
-  v1 = _bittestandcomplement(&v0, 0x64u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08065943) --------------------------------------------------------
@@ -24777,10 +24555,7 @@ int inst_40_values_var_1()
 //----- (0806598A) --------------------------------------------------------
 int inst_40_flags_var_1()
 {
-  int v0; // ecx
-
-  v0 = 852194627;
-  return (char)_bittestandcomplement(&v0, 0xB8u);
+  return 0;
 }
 
 //----- (080659F0) --------------------------------------------------------
@@ -24792,10 +24567,7 @@ int inst_40_values_var_2()
 //----- (08065A37) --------------------------------------------------------
 int inst_40_flags_var_2()
 {
-  int v0; // esi
-
-  v0 = -579637272;
-  return (char)_bittestandcomplement(&v0, 0xAFu);
+  return 0;
 }
 
 //----- (08065A9D) --------------------------------------------------------
@@ -24807,12 +24579,7 @@ int inst_40_values_var_3()
 //----- (08065AE4) --------------------------------------------------------
 int inst_40_flags_var_3()
 {
-  int v0; // ebp
-  unsigned __int8 v1; // cf
-
-  v0 = 26743560;
-  v1 = _bittestandcomplement(&v0, 0x18u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08065B4A) --------------------------------------------------------
@@ -24824,12 +24591,7 @@ int inst_40_values_var_4()
 //----- (08065B91) --------------------------------------------------------
 int inst_40_flags_var_4()
 {
-  int v0; // ebx
-  unsigned __int8 v1; // cf
-
-  v0 = 648778503;
-  v1 = _bittestandcomplement(&v0, 0xB5u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08065BF7) --------------------------------------------------------
@@ -24841,12 +24603,7 @@ int inst_40_values_var_5()
 //----- (08065C3E) --------------------------------------------------------
 int inst_40_flags_var_5()
 {
-  int v0; // ebp
-  unsigned __int8 v1; // cf
-
-  v0 = -1737535846;
-  v1 = _bittestandcomplement(&v0, 0xB3u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08065CA4) --------------------------------------------------------
@@ -24858,12 +24615,7 @@ int inst_40_values_var_6()
 //----- (08065CEB) --------------------------------------------------------
 int inst_40_flags_var_6()
 {
-  int v0; // ebp
-  unsigned __int8 v1; // cf
-
-  v0 = 134881689;
-  v1 = _bittestandcomplement(&v0, 0xBBu);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08065D51) --------------------------------------------------------
@@ -24875,10 +24627,7 @@ int inst_40_values_var_7()
 //----- (08065D98) --------------------------------------------------------
 int inst_40_flags_var_7()
 {
-  int v0; // eax
-
-  v0 = -1705798259;
-  return (char)_bittestandcomplement(&v0, 0x49u);
+  return 0;
 }
 
 //----- (08065DFE) --------------------------------------------------------
@@ -24890,12 +24639,7 @@ int inst_40_values_var_8()
 //----- (08065E45) --------------------------------------------------------
 int inst_40_flags_var_8()
 {
-  int v0; // edi
-  unsigned __int8 v1; // cf
-
-  v0 = 2088807688;
-  v1 = _bittestandcomplement(&v0, 0x8Bu);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08065EAB) --------------------------------------------------------
@@ -24907,10 +24651,7 @@ int inst_40_values_var_9()
 //----- (08065EF2) --------------------------------------------------------
 int inst_40_flags_var_9()
 {
-  int v0; // edx
-
-  v0 = 198891491;
-  return (char)_bittestandcomplement(&v0, 0xFDu);
+  return 0;
 }
 
 //----- (08065F58) --------------------------------------------------------
@@ -24922,12 +24663,7 @@ int inst_41_values_var_0()
 //----- (08065F9F) --------------------------------------------------------
 int inst_41_flags_var_0()
 {
-  __int16 v0; // bx
-  unsigned __int8 v1; // cf
-
-  v0 = -29505;
-  v1 = _bittestandreset(&v0, 0x7CC0u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08066005) --------------------------------------------------------
@@ -24939,12 +24675,7 @@ int inst_41_values_var_1()
 //----- (0806604C) --------------------------------------------------------
 int inst_41_flags_var_1()
 {
-  __int16 v0; // bp
-  unsigned __int8 v1; // cf
-
-  v0 = 4699;
-  v1 = _bittestandreset(&v0, 0x7E94u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (080660B2) --------------------------------------------------------
@@ -24956,12 +24687,7 @@ int inst_41_values_var_2()
 //----- (080660F9) --------------------------------------------------------
 int inst_41_flags_var_2()
 {
-  __int16 v0; // cx
-  unsigned __int8 v1; // cf
-
-  v0 = -20616;
-  v1 = _bittestandreset(&v0, 0xDFEAu);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0806615F) --------------------------------------------------------
@@ -24973,12 +24699,7 @@ int inst_41_values_var_3()
 //----- (080661A6) --------------------------------------------------------
 int inst_41_flags_var_3()
 {
-  __int16 v0; // cx
-  unsigned __int8 v1; // cf
-
-  v0 = -11892;
-  v1 = _bittestandreset(&v0, 0x6A7Eu);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0806620C) --------------------------------------------------------
@@ -24990,10 +24711,7 @@ int inst_41_values_var_4()
 //----- (08066253) --------------------------------------------------------
 int inst_41_flags_var_4()
 {
-  __int16 v0; // bp
-
-  v0 = 3281;
-  return (char)_bittestandreset(&v0, 0xB75Cu);
+  return 0;
 }
 
 //----- (080662B9) --------------------------------------------------------
@@ -25008,7 +24726,7 @@ int inst_41_flags_var_5()
   unsigned __int16 v0; // cx
 
   v0 = 16877;
-  return (char)_bittestandreset((__int16 *)&v0, v0);
+  return (char)_bittestandreset16((__int16 *)&v0, v0);
 }
 
 //----- (08066366) --------------------------------------------------------
@@ -25020,27 +24738,19 @@ int inst_41_values_var_6()
 //----- (080663AD) --------------------------------------------------------
 int inst_41_flags_var_6()
 {
-  __int16 v0; // dx
-  unsigned __int8 v1; // cf
-
-  v0 = 5086;
-  v1 = _bittestandreset(&v0, 0x6357u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08066413) --------------------------------------------------------
 int inst_41_values_var_7()
 {
-  return 1;
+  return 0;
 }
 
 //----- (0806645A) --------------------------------------------------------
 int inst_41_flags_var_7()
 {
-  __int16 v0; // dx
-
-  v0 = 2215;
-  return (char)_bittestandreset(&v0, 0x7234u);
+  return 0;
 }
 
 //----- (080664C0) --------------------------------------------------------
@@ -25052,18 +24762,13 @@ int inst_41_values_var_8()
 //----- (08066507) --------------------------------------------------------
 int inst_41_flags_var_8()
 {
-  __int16 v0; // bp
-  unsigned __int8 v1; // cf
-
-  v0 = -1745;
-  v1 = _bittestandreset(&v0, 0x9328u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0806656D) --------------------------------------------------------
 int inst_41_values_var_9()
 {
-  return 2048;
+  return 0;
 }
 
 //----- (080665B4) --------------------------------------------------------
@@ -25072,7 +24777,7 @@ int inst_41_flags_var_9()
   unsigned __int16 v0; // bp
 
   v0 = 12142;
-  return (char)_bittestandreset((__int16 *)&v0, v0);
+  return (char)_bittestandreset16((__int16 *)&v0, v0);
 }
 
 //----- (0806661A) --------------------------------------------------------
@@ -25084,12 +24789,7 @@ int inst_42_values_var_0()
 //----- (08066660) --------------------------------------------------------
 int inst_42_flags_var_0()
 {
-  int v0; // ebp
-  unsigned __int8 v1; // cf
-
-  v0 = 1742818787;
-  v1 = _bittestandreset(&v0, 0x750154C7u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (080666C5) --------------------------------------------------------
@@ -25101,10 +24801,7 @@ int inst_42_values_var_1()
 //----- (0806670B) --------------------------------------------------------
 int inst_42_flags_var_1()
 {
-  int v0; // edi
-
-  v0 = -1997196003;
-  return (char)_bittestandreset(&v0, 0xF5F690C6);
+  return 0;
 }
 
 //----- (08066770) --------------------------------------------------------
@@ -25133,12 +24830,7 @@ int inst_42_values_var_3()
 //----- (08066861) --------------------------------------------------------
 int inst_42_flags_var_3()
 {
-  int v0; // esi
-  unsigned __int8 v1; // cf
-
-  v0 = -205325676;
-  v1 = _bittestandreset(&v0, 0xBDAFDA8E);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (080668C6) --------------------------------------------------------
@@ -25150,10 +24842,7 @@ int inst_42_values_var_4()
 //----- (0806690C) --------------------------------------------------------
 int inst_42_flags_var_4()
 {
-  int v0; // eax
-
-  v0 = -1146484080;
-  return (char)_bittestandreset(&v0, 0x6325AF9Eu);
+  return 0;
 }
 
 //----- (08066971) --------------------------------------------------------
@@ -25165,10 +24854,7 @@ int inst_42_values_var_5()
 //----- (080669B7) --------------------------------------------------------
 int inst_42_flags_var_5()
 {
-  int v0; // ecx
-
-  v0 = 395063099;
-  return (char)_bittestandreset(&v0, 0xB45E997D);
+  return 0;
 }
 
 //----- (08066A1C) --------------------------------------------------------
@@ -25180,12 +24866,7 @@ int inst_42_values_var_6()
 //----- (08066A62) --------------------------------------------------------
 int inst_42_flags_var_6()
 {
-  int v0; // ecx
-  unsigned __int8 v1; // cf
-
-  v0 = 1604791190;
-  v1 = _bittestandreset(&v0, 0xCD182671);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08066AC7) --------------------------------------------------------
@@ -25197,12 +24878,7 @@ int inst_42_values_var_7()
 //----- (08066B0D) --------------------------------------------------------
 int inst_42_flags_var_7()
 {
-  int v0; // ebx
-  unsigned __int8 v1; // cf
-
-  v0 = 1946517471;
-  v1 = _bittestandreset(&v0, 0x46FB2126u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08066B72) --------------------------------------------------------
@@ -25231,42 +24907,31 @@ int inst_42_values_var_9()
 //----- (08066C63) --------------------------------------------------------
 int inst_42_flags_var_9()
 {
-  int v0; // ecx
-
-  v0 = 358907972;
-  return (char)_bittestandreset(&v0, 0x68CE358Bu);
+  return 0;
 }
 
 //----- (08066CC8) --------------------------------------------------------
 int inst_43_values_var_0()
 {
-  return 32;
+  return 0;
 }
 
 //----- (08066D10) --------------------------------------------------------
 int inst_43_flags_var_0()
 {
-  __int16 v0; // dx
-  unsigned __int8 v1; // cf
-
-  v0 = 5870;
-  v1 = _bittestandreset(&v0, 0x73u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08066D77) --------------------------------------------------------
 int inst_43_values_var_1()
 {
-  return 4096;
+  return 0;
 }
 
 //----- (08066DBF) --------------------------------------------------------
 int inst_43_flags_var_1()
 {
-  __int16 v0; // cx
-
-  v0 = -24781;
-  return (char)_bittestandreset(&v0, 0x52u);
+  return 0;
 }
 
 //----- (08066E26) --------------------------------------------------------
@@ -25278,10 +24943,7 @@ int inst_43_values_var_2()
 //----- (08066E6E) --------------------------------------------------------
 int inst_43_flags_var_2()
 {
-  __int16 v0; // bx
-
-  v0 = -7550;
-  return (char)_bittestandreset(&v0, 0xCu);
+  return 0;
 }
 
 //----- (08066ED5) --------------------------------------------------------
@@ -25293,12 +24955,7 @@ int inst_43_values_var_3()
 //----- (08066F1D) --------------------------------------------------------
 int inst_43_flags_var_3()
 {
-  __int16 v0; // dx
-  unsigned __int8 v1; // cf
-
-  v0 = -14870;
-  v1 = _bittestandreset(&v0, 0xDEu);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08066F84) --------------------------------------------------------
@@ -25310,25 +24967,19 @@ int inst_43_values_var_4()
 //----- (08066FCC) --------------------------------------------------------
 int inst_43_flags_var_4()
 {
-  __int16 v0; // cx
-
-  v0 = 8009;
-  return (char)_bittestandreset(&v0, 0xD7u);
+  return 0;
 }
 
 //----- (08067033) --------------------------------------------------------
 int inst_43_values_var_5()
 {
-  return 2048;
+  return 0;
 }
 
 //----- (0806707B) --------------------------------------------------------
 int inst_43_flags_var_5()
 {
-  __int16 v0; // ax
-
-  v0 = -29818;
-  return (char)_bittestandreset(&v0, 0xD5u);
+  return 0;
 }
 
 //----- (080670E2) --------------------------------------------------------
@@ -25340,10 +24991,7 @@ int inst_43_values_var_6()
 //----- (0806712A) --------------------------------------------------------
 int inst_43_flags_var_6()
 {
-  __int16 v0; // dx
-
-  v0 = 13542;
-  return (char)_bittestandreset(&v0, 0xEu);
+  return 0;
 }
 
 //----- (08067191) --------------------------------------------------------
@@ -25355,29 +25003,19 @@ int inst_43_values_var_7()
 //----- (080671D9) --------------------------------------------------------
 int inst_43_flags_var_7()
 {
-  __int16 v0; // cx
-  unsigned __int8 v1; // cf
-
-  v0 = -22672;
-  v1 = _bittestandreset(&v0, 0xE6u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08067240) --------------------------------------------------------
 int inst_43_values_var_8()
 {
-  return 1;
+  return 0;
 }
 
 //----- (08067288) --------------------------------------------------------
 int inst_43_flags_var_8()
 {
-  __int16 v0; // cx
-  unsigned __int8 v1; // cf
-
-  v0 = -12400;
-  v1 = _bittestandreset(&v0, 0x88u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (080672EF) --------------------------------------------------------
@@ -25389,10 +25027,7 @@ int inst_43_values_var_9()
 //----- (08067337) --------------------------------------------------------
 int inst_43_flags_var_9()
 {
-  __int16 v0; // si
-
-  v0 = 14800;
-  return (char)_bittestandreset(&v0, 0x23u);
+  return 0;
 }
 
 //----- (0806739E) --------------------------------------------------------
@@ -25404,10 +25039,7 @@ int inst_44_values_var_0()
 //----- (080673E5) --------------------------------------------------------
 int inst_44_flags_var_0()
 {
-  int v0; // ecx
-
-  v0 = -782056375;
-  return (char)_bittestandreset(&v0, 0x8Bu);
+  return 0;
 }
 
 //----- (0806744B) --------------------------------------------------------
@@ -25419,12 +25051,7 @@ int inst_44_values_var_1()
 //----- (08067492) --------------------------------------------------------
 int inst_44_flags_var_1()
 {
-  int v0; // ebp
-  unsigned __int8 v1; // cf
-
-  v0 = 297570025;
-  v1 = _bittestandreset(&v0, 0xA9u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (080674F8) --------------------------------------------------------
@@ -25436,10 +25063,7 @@ int inst_44_values_var_2()
 //----- (0806753F) --------------------------------------------------------
 int inst_44_flags_var_2()
 {
-  int v0; // edi
-
-  v0 = 1874363332;
-  return (char)_bittestandreset(&v0, 0xCEu);
+  return 0;
 }
 
 //----- (080675A5) --------------------------------------------------------
@@ -25451,12 +25075,7 @@ int inst_44_values_var_3()
 //----- (080675EC) --------------------------------------------------------
 int inst_44_flags_var_3()
 {
-  int v0; // ebx
-  unsigned __int8 v1; // cf
-
-  v0 = -1611844463;
-  v1 = _bittestandreset(&v0, 0xB2u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08067652) --------------------------------------------------------
@@ -25468,10 +25087,7 @@ int inst_44_values_var_4()
 //----- (08067699) --------------------------------------------------------
 int inst_44_flags_var_4()
 {
-  int v0; // edx
-
-  v0 = -290087235;
-  return (char)_bittestandreset(&v0, 0x2Eu);
+  return 0;
 }
 
 //----- (080676FF) --------------------------------------------------------
@@ -25483,10 +25099,7 @@ int inst_44_values_var_5()
 //----- (08067746) --------------------------------------------------------
 int inst_44_flags_var_5()
 {
-  int v0; // edi
-
-  v0 = 1848993826;
-  return (char)_bittestandreset(&v0, 6u);
+  return 0;
 }
 
 //----- (080677AC) --------------------------------------------------------
@@ -25498,10 +25111,7 @@ int inst_44_values_var_6()
 //----- (080677F3) --------------------------------------------------------
 int inst_44_flags_var_6()
 {
-  int v0; // edx
-
-  v0 = -1908358828;
-  return (char)_bittestandreset(&v0, 0x93u);
+  return 0;
 }
 
 //----- (08067859) --------------------------------------------------------
@@ -25513,12 +25123,7 @@ int inst_44_values_var_7()
 //----- (080678A0) --------------------------------------------------------
 int inst_44_flags_var_7()
 {
-  int v0; // esi
-  unsigned __int8 v1; // cf
-
-  v0 = 2062689235;
-  v1 = _bittestandreset(&v0, 0x36u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08067906) --------------------------------------------------------
@@ -25530,10 +25135,7 @@ int inst_44_values_var_8()
 //----- (0806794D) --------------------------------------------------------
 int inst_44_flags_var_8()
 {
-  int v0; // edx
-
-  v0 = -1994265410;
-  return (char)_bittestandreset(&v0, 0x60u);
+  return 0;
 }
 
 //----- (080679B3) --------------------------------------------------------
@@ -25545,10 +25147,7 @@ int inst_44_values_var_9()
 //----- (080679FA) --------------------------------------------------------
 int inst_44_flags_var_9()
 {
-  int v0; // edi
-
-  v0 = -1815539575;
-  return (char)_bittestandreset(&v0, 0x6Fu);
+  return 0;
 }
 
 //----- (08067A60) --------------------------------------------------------
@@ -25560,12 +25159,7 @@ int inst_45_values_var_0()
 //----- (08067AA7) --------------------------------------------------------
 int inst_45_flags_var_0()
 {
-  __int16 v0; // bp
-  unsigned __int8 v1; // cf
-
-  v0 = 21211;
-  v1 = _bittestandset(&v0, 0x2A40u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08067B0D) --------------------------------------------------------
@@ -25577,10 +25171,7 @@ int inst_45_values_var_1()
 //----- (08067B54) --------------------------------------------------------
 int inst_45_flags_var_1()
 {
-  __int16 v0; // ax
-
-  v0 = -25371;
-  return (char)_bittestandset(&v0, 0x6DEDu);
+  return 0;
 }
 
 //----- (08067BBA) --------------------------------------------------------
@@ -25592,12 +25183,7 @@ int inst_45_values_var_2()
 //----- (08067C01) --------------------------------------------------------
 int inst_45_flags_var_2()
 {
-  __int16 v0; // si
-  unsigned __int8 v1; // cf
-
-  v0 = -25373;
-  v1 = _bittestandset(&v0, 0x553Au);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08067C67) --------------------------------------------------------
@@ -25609,25 +25195,19 @@ int inst_45_values_var_3()
 //----- (08067CAE) --------------------------------------------------------
 int inst_45_flags_var_3()
 {
-  __int16 v0; // di
-
-  v0 = 5380;
-  return (char)_bittestandset(&v0, 0xAB47u);
+  return 0;
 }
 
 //----- (08067D14) --------------------------------------------------------
 int inst_45_values_var_4()
 {
-  return -4;
+  return 0;
 }
 
 //----- (08067D5B) --------------------------------------------------------
 int inst_45_flags_var_4()
 {
-  __int16 v0; // bp
-
-  v0 = -22158;
-  return (char)_bittestandset(&v0, 0xCF00u);
+  return 0;
 }
 
 //----- (08067DC1) --------------------------------------------------------
@@ -25639,10 +25219,7 @@ int inst_45_values_var_5()
 //----- (08067E08) --------------------------------------------------------
 int inst_45_flags_var_5()
 {
-  __int16 v0; // cx
-
-  v0 = -27398;
-  return (char)_bittestandset(&v0, 0x1220u);
+  return 0;
 }
 
 //----- (08067E6E) --------------------------------------------------------
@@ -25654,10 +25231,7 @@ int inst_45_values_var_6()
 //----- (08067EB5) --------------------------------------------------------
 int inst_45_flags_var_6()
 {
-  __int16 v0; // bp
-
-  v0 = -1945;
-  return (char)_bittestandset(&v0, 0x311Au);
+  return 0;
 }
 
 //----- (08067F1B) --------------------------------------------------------
@@ -25672,7 +25246,7 @@ int inst_45_flags_var_7()
   unsigned __int16 v0; // bp
 
   v0 = -4141;
-  return (char)_bittestandset((__int16 *)&v0, v0);
+  return (char)_bittestandset16((__int16 *)&v0, v0);
 }
 
 //----- (08067FC8) --------------------------------------------------------
@@ -25687,7 +25261,7 @@ int inst_45_flags_var_8()
   unsigned __int16 v0; // dx
 
   v0 = -12356;
-  return (char)_bittestandset((__int16 *)&v0, v0);
+  return (char)_bittestandset16((__int16 *)&v0, v0);
 }
 
 //----- (08068075) --------------------------------------------------------
@@ -25702,7 +25276,7 @@ int inst_45_flags_var_9()
   unsigned __int16 v0; // di
 
   v0 = 3481;
-  return (char)_bittestandset((__int16 *)&v0, v0);
+  return (char)_bittestandset16((__int16 *)&v0, v0);
 }
 
 //----- (08068122) --------------------------------------------------------
@@ -25714,12 +25288,7 @@ int inst_46_values_var_0()
 //----- (08068168) --------------------------------------------------------
 int inst_46_flags_var_0()
 {
-  int v0; // ebp
-  unsigned __int8 v1; // cf
-
-  v0 = -492011406;
-  v1 = _bittestandset(&v0, 0xA50AF795);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (080681CD) --------------------------------------------------------
@@ -25731,10 +25300,7 @@ int inst_46_values_var_1()
 //----- (08068213) --------------------------------------------------------
 int inst_46_flags_var_1()
 {
-  int v0; // ecx
-
-  v0 = -1405117021;
-  return (char)_bittestandset(&v0, 0x2BF671B9u);
+  return 0;
 }
 
 //----- (08068278) --------------------------------------------------------
@@ -25746,12 +25312,7 @@ int inst_46_values_var_2()
 //----- (080682BE) --------------------------------------------------------
 int inst_46_flags_var_2()
 {
-  int v0; // ebx
-  unsigned __int8 v1; // cf
-
-  v0 = -1036746939;
-  v1 = _bittestandset(&v0, 0xD99EE6AE);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08068323) --------------------------------------------------------
@@ -25763,10 +25324,7 @@ int inst_46_values_var_3()
 //----- (08068369) --------------------------------------------------------
 int inst_46_flags_var_3()
 {
-  int v0; // edi
-
-  v0 = 137795659;
-  return (char)_bittestandset(&v0, 0xFA3763Cu);
+  return 0;
 }
 
 //----- (080683CE) --------------------------------------------------------
@@ -25778,12 +25336,7 @@ int inst_46_values_var_4()
 //----- (08068414) --------------------------------------------------------
 int inst_46_flags_var_4()
 {
-  int v0; // ebp
-  unsigned __int8 v1; // cf
-
-  v0 = 2100691058;
-  v1 = _bittestandset(&v0, 0xD46A2084);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08068479) --------------------------------------------------------
@@ -25795,10 +25348,7 @@ int inst_46_values_var_5()
 //----- (080684BF) --------------------------------------------------------
 int inst_46_flags_var_5()
 {
-  int v0; // eax
-
-  v0 = 854425147;
-  return (char)_bittestandset(&v0, 0x7175789Au);
+  return 0;
 }
 
 //----- (08068524) --------------------------------------------------------
@@ -25810,10 +25360,7 @@ int inst_46_values_var_6()
 //----- (0806856A) --------------------------------------------------------
 int inst_46_flags_var_6()
 {
-  int v0; // esi
-
-  v0 = -178956215;
-  return (char)_bittestandset(&v0, 0x5B15E0D7u);
+  return 0;
 }
 
 //----- (080685CF) --------------------------------------------------------
@@ -25825,10 +25372,7 @@ int inst_46_values_var_7()
 //----- (08068615) --------------------------------------------------------
 int inst_46_flags_var_7()
 {
-  int v0; // edi
-
-  v0 = 900738292;
-  return (char)_bittestandset(&v0, 0xF2E26B79);
+  return 0;
 }
 
 //----- (0806867A) --------------------------------------------------------
@@ -25840,10 +25384,7 @@ int inst_46_values_var_8()
 //----- (080686C0) --------------------------------------------------------
 int inst_46_flags_var_8()
 {
-  int v0; // ebx
-
-  v0 = 1600838559;
-  return (char)_bittestandset(&v0, 0x2EFAD94Du);
+  return 0;
 }
 
 //----- (08068725) --------------------------------------------------------
@@ -25870,12 +25411,7 @@ int inst_47_values_var_0()
 //----- (08068818) --------------------------------------------------------
 int inst_47_flags_var_0()
 {
-  __int16 v0; // dx
-  unsigned __int8 v1; // cf
-
-  v0 = -12701;
-  v1 = _bittestandset(&v0, 0x91u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0806887F) --------------------------------------------------------
@@ -25887,12 +25423,7 @@ int inst_47_values_var_1()
 //----- (080688C7) --------------------------------------------------------
 int inst_47_flags_var_1()
 {
-  __int16 v0; // cx
-  unsigned __int8 v1; // cf
-
-  v0 = 7588;
-  v1 = _bittestandset(&v0, 0xC7u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0806892E) --------------------------------------------------------
@@ -25904,10 +25435,7 @@ int inst_47_values_var_2()
 //----- (08068976) --------------------------------------------------------
 int inst_47_flags_var_2()
 {
-  __int16 v0; // bx
-
-  v0 = 1216;
-  return (char)_bittestandset(&v0, 0x2Eu);
+  return 0;
 }
 
 //----- (080689DD) --------------------------------------------------------
@@ -25919,44 +25447,31 @@ int inst_47_values_var_3()
 //----- (08068A25) --------------------------------------------------------
 int inst_47_flags_var_3()
 {
-  __int16 v0; // di
-  unsigned __int8 v1; // cf
-
-  v0 = -27214;
-  v1 = _bittestandset(&v0, 0xCAu);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08068A8C) --------------------------------------------------------
 int inst_47_values_var_4()
 {
-  return -1024;
+  return 0;
 }
 
 //----- (08068AD4) --------------------------------------------------------
 int inst_47_flags_var_4()
 {
-  __int16 v0; // bp
-  unsigned __int8 v1; // cf
-
-  v0 = -12530;
-  v1 = _bittestandset(&v0, 0xB3u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08068B3B) --------------------------------------------------------
 int inst_47_values_var_5()
 {
-  return -4096;
+  return 0;
 }
 
 //----- (08068B83) --------------------------------------------------------
 int inst_47_flags_var_5()
 {
-  __int16 v0; // cx
-
-  v0 = 3267;
-  return (char)_bittestandset(&v0, 0x38u);
+  return 0;
 }
 
 //----- (08068BEA) --------------------------------------------------------
@@ -25968,27 +25483,19 @@ int inst_47_values_var_6()
 //----- (08068C32) --------------------------------------------------------
 int inst_47_flags_var_6()
 {
-  __int16 v0; // di
-  unsigned __int8 v1; // cf
-
-  v0 = -26395;
-  v1 = _bittestandset(&v0, 0x4Cu);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08068C99) --------------------------------------------------------
 int inst_47_values_var_7()
 {
-  return -16;
+  return 0;
 }
 
 //----- (08068CE1) --------------------------------------------------------
 int inst_47_flags_var_7()
 {
-  __int16 v0; // dx
-
-  v0 = 10640;
-  return (char)_bittestandset(&v0, 0xF6u);
+  return 0;
 }
 
 //----- (08068D48) --------------------------------------------------------
@@ -26000,10 +25507,7 @@ int inst_47_values_var_8()
 //----- (08068D90) --------------------------------------------------------
 int inst_47_flags_var_8()
 {
-  __int16 v0; // bx
-
-  v0 = -18815;
-  return (char)_bittestandset(&v0, 0xC4u);
+  return 0;
 }
 
 //----- (08068DF7) --------------------------------------------------------
@@ -26015,12 +25519,7 @@ int inst_47_values_var_9()
 //----- (08068E3F) --------------------------------------------------------
 int inst_47_flags_var_9()
 {
-  __int16 v0; // bx
-  unsigned __int8 v1; // cf
-
-  v0 = -26678;
-  v1 = _bittestandset(&v0, 0x81u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08068EA6) --------------------------------------------------------
@@ -26032,10 +25531,7 @@ int inst_48_values_var_0()
 //----- (08068EED) --------------------------------------------------------
 int inst_48_flags_var_0()
 {
-  int v0; // edi
-
-  v0 = 1224484527;
-  return (char)_bittestandset(&v0, 0xC4u);
+  return 0;
 }
 
 //----- (08068F53) --------------------------------------------------------
@@ -26047,12 +25543,7 @@ int inst_48_values_var_1()
 //----- (08068F9A) --------------------------------------------------------
 int inst_48_flags_var_1()
 {
-  int v0; // ecx
-  unsigned __int8 v1; // cf
-
-  v0 = -1278716215;
-  v1 = _bittestandset(&v0, 0xA3u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08069000) --------------------------------------------------------
@@ -26064,12 +25555,7 @@ int inst_48_values_var_2()
 //----- (08069047) --------------------------------------------------------
 int inst_48_flags_var_2()
 {
-  int v0; // edi
-  unsigned __int8 v1; // cf
-
-  v0 = 805552872;
-  v1 = _bittestandset(&v0, 0x25u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (080690AD) --------------------------------------------------------
@@ -26081,10 +25567,7 @@ int inst_48_values_var_3()
 //----- (080690F4) --------------------------------------------------------
 int inst_48_flags_var_3()
 {
-  int v0; // ebx
-
-  v0 = 201454890;
-  return (char)_bittestandset(&v0, 0xB2u);
+  return 0;
 }
 
 //----- (0806915A) --------------------------------------------------------
@@ -26096,12 +25579,7 @@ int inst_48_values_var_4()
 //----- (080691A1) --------------------------------------------------------
 int inst_48_flags_var_4()
 {
-  int v0; // edx
-  unsigned __int8 v1; // cf
-
-  v0 = -1027084252;
-  v1 = _bittestandset(&v0, 0xB9u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08069207) --------------------------------------------------------
@@ -26113,10 +25591,7 @@ int inst_48_values_var_5()
 //----- (0806924E) --------------------------------------------------------
 int inst_48_flags_var_5()
 {
-  int v0; // eax
-
-  v0 = -934043980;
-  return (char)_bittestandset(&v0, 6u);
+  return 0;
 }
 
 //----- (080692B4) --------------------------------------------------------
@@ -26128,10 +25603,7 @@ int inst_48_values_var_6()
 //----- (080692FB) --------------------------------------------------------
 int inst_48_flags_var_6()
 {
-  int v0; // ebp
-
-  v0 = -87098740;
-  return (char)_bittestandset(&v0, 0x94u);
+  return 0;
 }
 
 //----- (08069361) --------------------------------------------------------
@@ -26143,12 +25615,7 @@ int inst_48_values_var_7()
 //----- (080693A8) --------------------------------------------------------
 int inst_48_flags_var_7()
 {
-  int v0; // ecx
-  unsigned __int8 v1; // cf
-
-  v0 = 1154543296;
-  v1 = _bittestandset(&v0, 0x2Eu);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0806940E) --------------------------------------------------------
@@ -26160,12 +25627,7 @@ int inst_48_values_var_8()
 //----- (08069455) --------------------------------------------------------
 int inst_48_flags_var_8()
 {
-  int v0; // esi
-  unsigned __int8 v1; // cf
-
-  v0 = 1731029506;
-  v1 = _bittestandset(&v0, 0xB3u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (080694BB) --------------------------------------------------------
@@ -26177,12 +25639,7 @@ int inst_48_values_var_9()
 //----- (08069502) --------------------------------------------------------
 int inst_48_flags_var_9()
 {
-  int v0; // edi
-  unsigned __int8 v1; // cf
-
-  v0 = -1131656806;
-  v1 = _bittestandset(&v0, 0x17u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (08069568) --------------------------------------------------------
@@ -30938,7 +30395,7 @@ int inst_87_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-116, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31006,7 +30463,7 @@ int inst_87_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(112, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31040,7 +30497,7 @@ int inst_87_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(46, 79) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31057,7 +30514,7 @@ int inst_87_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-49, 125) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31091,7 +30548,7 @@ int inst_87_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(-104, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31108,7 +30565,7 @@ int inst_88_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(28, 61) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31210,7 +30667,7 @@ int inst_88_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(38, -32) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31227,7 +30684,7 @@ int inst_88_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-78, -66) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31244,7 +30701,7 @@ int inst_88_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-3, 50) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31261,7 +30718,7 @@ int inst_88_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(-90, -115) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31295,7 +30752,7 @@ int inst_89_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-20662, 30895) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31312,7 +30769,7 @@ int inst_89_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(-27507, 18581) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31329,7 +30786,7 @@ int inst_89_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(15433, 21234) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31414,7 +30871,7 @@ int inst_89_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-31554, 13665) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31431,7 +30888,7 @@ int inst_89_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(-5634, 1346) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31448,7 +30905,7 @@ int inst_90_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(30561, -8050) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31465,7 +30922,7 @@ int inst_90_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-3413, -26266) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31482,7 +30939,7 @@ int inst_90_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(31788, -16657) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31567,7 +31024,7 @@ int inst_90_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-15233, 23494) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31652,7 +31109,7 @@ int inst_91_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(1487260784, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31669,7 +31126,7 @@ int inst_91_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(-1192755527, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31720,7 +31177,7 @@ int inst_91_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-337222505, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31771,7 +31228,7 @@ int inst_91_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(-194586283, 1238710172) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31788,7 +31245,7 @@ int inst_92_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-1901153022, -529444231) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31805,7 +31262,7 @@ int inst_92_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-138550355, 972412557) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31839,7 +31296,7 @@ int inst_92_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(-796923657, 2024337973) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31873,7 +31330,7 @@ int inst_92_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(1978400005, 1006638424) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -31924,7 +31381,7 @@ int inst_92_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(1191779559, -1041546573) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -32708,7 +32165,7 @@ int inst_96_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-23, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -32725,7 +32182,7 @@ int inst_96_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(31, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -32759,7 +32216,7 @@ int inst_96_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(84, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -32776,7 +32233,7 @@ int inst_96_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(0x80, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -32793,7 +32250,7 @@ int inst_96_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(93, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -32810,7 +32267,7 @@ int inst_97_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-3972, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -32844,7 +32301,7 @@ int inst_97_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(-23952, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -32861,7 +32318,7 @@ int inst_97_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(-19282, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -32895,7 +32352,7 @@ int inst_97_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-6312, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -32912,7 +32369,7 @@ int inst_97_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(13166, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -32929,7 +32386,7 @@ int inst_97_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-16585, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -32946,7 +32403,7 @@ int inst_97_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-21014, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -32980,7 +32437,7 @@ int inst_98_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(2049971768, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -33031,7 +32488,7 @@ int inst_98_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(516448579, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -33082,7 +32539,7 @@ int inst_98_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(1697560812, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -33116,7 +32573,7 @@ int inst_98_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-2025950979, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -33133,7 +32590,7 @@ int inst_98_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(-1243602126, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -37214,7 +36671,7 @@ int inst_130_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(47, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -37248,7 +36705,7 @@ int inst_130_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-123, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -37282,7 +36739,7 @@ int inst_130_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-36, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -37333,7 +36790,7 @@ int inst_130_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(109, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -37435,7 +36892,7 @@ int inst_131_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-15468, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -37452,7 +36909,7 @@ int inst_131_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-21602, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -37520,7 +36977,7 @@ int inst_132_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(855467176, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -37588,7 +37045,7 @@ int inst_132_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-2008674222, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38187,7 +37644,7 @@ int inst_137_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-57, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38204,7 +37661,7 @@ int inst_137_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(-71, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38221,7 +37678,7 @@ int inst_137_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(-5, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38272,7 +37729,7 @@ int inst_137_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-17, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38289,7 +37746,7 @@ int inst_137_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-26, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38306,7 +37763,7 @@ int inst_137_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-65, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38323,7 +37780,7 @@ int inst_137_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(127, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38340,7 +37797,7 @@ int inst_138_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(127, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38425,7 +37882,7 @@ int inst_138_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-3, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38442,7 +37899,7 @@ int inst_138_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-83, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38459,7 +37916,7 @@ int inst_138_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-2, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38493,7 +37950,7 @@ int inst_138_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(87, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38510,7 +37967,7 @@ int inst_139_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(32735, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38527,7 +37984,7 @@ int inst_139_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-24581, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38544,7 +38001,7 @@ int inst_139_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(24303, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38578,7 +38035,7 @@ int inst_139_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-16643, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38612,7 +38069,7 @@ int inst_139_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(32447, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38646,7 +38103,7 @@ int inst_139_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-18458, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38663,7 +38120,7 @@ int inst_139_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(-24584, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38714,7 +38171,7 @@ int inst_140_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(-30357, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38765,7 +38222,7 @@ int inst_140_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(32414, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38782,7 +38239,7 @@ int inst_140_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-8713, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38799,7 +38256,7 @@ int inst_140_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(9790, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38850,7 +38307,7 @@ int inst_141_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-47777671, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38884,7 +38341,7 @@ int inst_141_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(1946017215, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38918,7 +38375,7 @@ int inst_141_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-1400899267, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -38952,7 +38409,7 @@ int inst_141_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-407509025, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -39003,7 +38460,7 @@ int inst_141_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(2122280934, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -39071,7 +38528,7 @@ int inst_142_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(835460048, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -39088,7 +38545,7 @@ int inst_142_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(950750480, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -39105,7 +38562,7 @@ int inst_142_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-77660162, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -39122,7 +38579,7 @@ int inst_142_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(1038088383, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -39156,7 +38613,7 @@ int inst_142_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-547356835, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -39173,7 +38630,7 @@ int inst_142_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(838696940, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -39471,7 +38928,7 @@ int inst_144_flags_var_2()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8091A8B: variable 'v0' is possibly undefined
@@ -39517,7 +38974,7 @@ int inst_144_flags_var_4()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8091BED: variable 'v0' is possibly undefined
@@ -39540,7 +38997,7 @@ int inst_144_flags_var_5()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8091C9E: variable 'v0' is possibly undefined
@@ -39563,7 +39020,7 @@ int inst_144_flags_var_6()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8091D4F: variable 'v0' is possibly undefined
@@ -39586,7 +39043,7 @@ int inst_144_flags_var_7()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8091E00: variable 'v0' is possibly undefined
@@ -39609,7 +39066,7 @@ int inst_144_flags_var_8()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8091EB1: variable 'v0' is possibly undefined
@@ -39632,7 +39089,7 @@ int inst_144_flags_var_9()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8091F62: variable 'v0' is possibly undefined
@@ -39651,7 +39108,7 @@ int inst_145_flags_var_0()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8092013: variable 'v0' is possibly undefined
@@ -39670,7 +39127,7 @@ int inst_145_flags_var_1()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80920C4: variable 'v0' is possibly undefined
@@ -39689,7 +39146,7 @@ int inst_145_flags_var_2()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8092175: variable 'v0' is possibly undefined
@@ -39708,7 +39165,7 @@ int inst_145_flags_var_3()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8092226: variable 'v0' is possibly undefined
@@ -39727,7 +39184,7 @@ int inst_145_flags_var_4()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80922D7: variable 'v0' is possibly undefined
@@ -39746,7 +39203,7 @@ int inst_145_flags_var_5()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8092388: variable 'v0' is possibly undefined
@@ -39765,7 +39222,7 @@ int inst_145_flags_var_6()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8092439: variable 'v0' is possibly undefined
@@ -39784,7 +39241,7 @@ int inst_145_flags_var_7()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80924EA: variable 'v0' is possibly undefined
@@ -39803,7 +39260,7 @@ int inst_145_flags_var_8()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 809259B: variable 'v0' is possibly undefined
@@ -39822,7 +39279,7 @@ int inst_145_flags_var_9()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 809264C: variable 'v0' is possibly undefined
@@ -40031,7 +39488,7 @@ int inst_147_flags_var_0()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8092DE7: variable 'v0' is possibly undefined
@@ -40050,7 +39507,7 @@ int inst_147_flags_var_1()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8092E98: variable 'v0' is possibly undefined
@@ -40069,7 +39526,7 @@ int inst_147_flags_var_2()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8092F49: variable 'v0' is possibly undefined
@@ -40126,7 +39583,7 @@ int inst_147_flags_var_5()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 809315C: variable 'v0' is possibly undefined
@@ -40145,7 +39602,7 @@ int inst_147_flags_var_6()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 809320D: variable 'v0' is possibly undefined
@@ -40164,7 +39621,7 @@ int inst_147_flags_var_7()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80932BE: variable 'v0' is possibly undefined
@@ -40455,7 +39912,7 @@ int inst_149_flags_var_0()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8093BD1: variable 'v0' is possibly undefined
@@ -40478,7 +39935,7 @@ int inst_149_flags_var_1()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8093C84: variable 'v0' is possibly undefined
@@ -40547,7 +40004,7 @@ int inst_149_flags_var_4()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8093E9D: variable 'v0' is possibly undefined
@@ -40616,7 +40073,7 @@ int inst_149_flags_var_7()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80940B6: variable 'v0' is possibly undefined
@@ -40681,7 +40138,7 @@ int inst_150_flags_var_0()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80942CF: variable 'v0' is possibly undefined
@@ -40700,7 +40157,7 @@ int inst_150_flags_var_1()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8094382: variable 'v0' is possibly undefined
@@ -40719,7 +40176,7 @@ int inst_150_flags_var_2()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8094435: variable 'v0' is possibly undefined
@@ -40738,7 +40195,7 @@ int inst_150_flags_var_3()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80944E8: variable 'v0' is possibly undefined
@@ -40757,7 +40214,7 @@ int inst_150_flags_var_4()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 809459B: variable 'v0' is possibly undefined
@@ -40776,7 +40233,7 @@ int inst_150_flags_var_5()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 809464E: variable 'v0' is possibly undefined
@@ -40795,7 +40252,7 @@ int inst_150_flags_var_6()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8094701: variable 'v0' is possibly undefined
@@ -40814,7 +40271,7 @@ int inst_150_flags_var_7()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80947B4: variable 'v0' is possibly undefined
@@ -40833,7 +40290,7 @@ int inst_150_flags_var_8()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8094867: variable 'v0' is possibly undefined
@@ -40852,7 +40309,7 @@ int inst_150_flags_var_9()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 809491A: variable 'v0' is possibly undefined
@@ -41080,7 +40537,7 @@ int inst_152_flags_var_1()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 809517E: variable 'v0' is possibly undefined
@@ -41099,7 +40556,7 @@ int inst_152_flags_var_2()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8095231: variable 'v0' is possibly undefined
@@ -41118,7 +40575,7 @@ int inst_152_flags_var_3()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80952E4: variable 'v0' is possibly undefined
@@ -41137,7 +40594,7 @@ int inst_152_flags_var_4()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8095397: variable 'v0' is possibly undefined
@@ -41156,7 +40613,7 @@ int inst_152_flags_var_5()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 809544A: variable 'v0' is possibly undefined
@@ -41175,7 +40632,7 @@ int inst_152_flags_var_6()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80954FD: variable 'v0' is possibly undefined
@@ -41194,7 +40651,7 @@ int inst_152_flags_var_7()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80955B0: variable 'v0' is possibly undefined
@@ -41213,7 +40670,7 @@ int inst_152_flags_var_8()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8095663: variable 'v0' is possibly undefined
@@ -41441,7 +40898,7 @@ int inst_154_flags_var_0()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8095EB1: variable 'v0' is possibly undefined
@@ -41460,7 +40917,7 @@ int inst_154_flags_var_1()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8095F62: variable 'v0' is possibly undefined
@@ -41479,7 +40936,7 @@ int inst_154_flags_var_2()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8096013: variable 'v0' is possibly undefined
@@ -41498,7 +40955,7 @@ int inst_154_flags_var_3()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80960C4: variable 'v0' is possibly undefined
@@ -41536,7 +40993,7 @@ int inst_154_flags_var_5()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8096226: variable 'v0' is possibly undefined
@@ -41574,7 +41031,7 @@ int inst_154_flags_var_7()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8096388: variable 'v0' is possibly undefined
@@ -41593,7 +41050,7 @@ int inst_154_flags_var_8()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8096439: variable 'v0' is possibly undefined
@@ -41612,7 +41069,7 @@ int inst_154_flags_var_9()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80964EA: variable 'v0' is possibly undefined
@@ -41631,7 +41088,7 @@ int inst_155_flags_var_0()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 809659B: variable 'v0' is possibly undefined
@@ -41650,7 +41107,7 @@ int inst_155_flags_var_1()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 809664C: variable 'v0' is possibly undefined
@@ -41669,7 +41126,7 @@ int inst_155_flags_var_2()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80966FD: variable 'v0' is possibly undefined
@@ -41688,7 +41145,7 @@ int inst_155_flags_var_3()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80967AE: variable 'v0' is possibly undefined
@@ -41707,7 +41164,7 @@ int inst_155_flags_var_4()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 809685F: variable 'v0' is possibly undefined
@@ -41726,7 +41183,7 @@ int inst_155_flags_var_5()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8096910: variable 'v0' is possibly undefined
@@ -41745,7 +41202,7 @@ int inst_155_flags_var_6()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80969C1: variable 'v0' is possibly undefined
@@ -41764,7 +41221,7 @@ int inst_155_flags_var_7()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8096A72: variable 'v0' is possibly undefined
@@ -41783,7 +41240,7 @@ int inst_155_flags_var_8()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8096B23: variable 'v0' is possibly undefined
@@ -41802,7 +41259,7 @@ int inst_155_flags_var_9()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8096BD4: variable 'v0' is possibly undefined
@@ -42030,7 +41487,7 @@ int inst_157_flags_var_1()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8097420: variable 'v0' is possibly undefined
@@ -42068,7 +41525,7 @@ int inst_157_flags_var_3()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8097582: variable 'v0' is possibly undefined
@@ -42087,7 +41544,7 @@ int inst_157_flags_var_4()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8097633: variable 'v0' is possibly undefined
@@ -42125,7 +41582,7 @@ int inst_157_flags_var_6()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8097795: variable 'v0' is possibly undefined
@@ -42144,7 +41601,7 @@ int inst_157_flags_var_7()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8097846: variable 'v0' is possibly undefined
@@ -42182,7 +41639,7 @@ int inst_157_flags_var_9()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80979A8: variable 'v0' is possibly undefined
@@ -50779,7 +50236,7 @@ int inst_219_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-88, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -50813,7 +50270,7 @@ int inst_219_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(-108, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -50847,7 +50304,7 @@ int inst_219_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-80, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -50915,7 +50372,7 @@ int inst_219_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-2, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -50966,7 +50423,7 @@ int inst_220_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(22, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -50983,7 +50440,7 @@ int inst_220_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(41, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51017,7 +50474,7 @@ int inst_220_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-70, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51034,7 +50491,7 @@ int inst_220_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(91, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51051,7 +50508,7 @@ int inst_220_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-122, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51068,7 +50525,7 @@ int inst_220_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(37, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51187,7 +50644,7 @@ int inst_221_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-24265, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51221,7 +50678,7 @@ int inst_221_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-14910, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51238,7 +50695,7 @@ int inst_221_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(14898, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51306,7 +50763,7 @@ int inst_222_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(4782, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51408,7 +50865,7 @@ int inst_222_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-3147, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51425,7 +50882,7 @@ int inst_222_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-24222, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51476,7 +50933,7 @@ int inst_223_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-1581298253, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51561,7 +51018,7 @@ int inst_223_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(1080218650, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51612,7 +51069,7 @@ int inst_223_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(1699923614, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51663,7 +51120,7 @@ int inst_224_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(1033178595, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51731,7 +51188,7 @@ int inst_224_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-1172599952, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51748,7 +51205,7 @@ int inst_224_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-1493498117, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51765,7 +51222,7 @@ int inst_224_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-593603929, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51799,7 +51256,7 @@ int inst_225_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(35, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51833,7 +51290,7 @@ int inst_225_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(-45, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51850,7 +51307,7 @@ int inst_225_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(112, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51918,7 +51375,7 @@ int inst_225_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-83, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51935,7 +51392,7 @@ int inst_225_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(82, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -51969,7 +51426,7 @@ int inst_226_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-17, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52003,7 +51460,7 @@ int inst_226_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(69, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52037,7 +51494,7 @@ int inst_226_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(84, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52054,7 +51511,7 @@ int inst_226_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(97, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52105,7 +51562,7 @@ int inst_226_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-23, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52139,7 +51596,7 @@ int inst_227_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-23912, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52156,7 +51613,7 @@ int inst_227_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(26800, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52207,7 +51664,7 @@ int inst_227_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(7156, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52224,7 +51681,7 @@ int inst_227_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-28060, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52241,7 +51698,7 @@ int inst_227_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(11589, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52292,7 +51749,7 @@ int inst_227_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(-5921, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52309,7 +51766,7 @@ int inst_228_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-20069, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52343,7 +51800,7 @@ int inst_228_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(12730, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52360,7 +51817,7 @@ int inst_228_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(-1984, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52394,7 +51851,7 @@ int inst_228_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-5501, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52428,7 +51885,7 @@ int inst_228_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-31381, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52479,7 +51936,7 @@ int inst_229_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-2117408234, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52496,7 +51953,7 @@ int inst_229_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-1175807517, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52530,7 +51987,7 @@ int inst_229_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(744021525, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52547,7 +52004,7 @@ int inst_229_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(1050051974, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52615,7 +52072,7 @@ int inst_229_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-1320996378, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52666,7 +52123,7 @@ int inst_230_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-1225681879, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52734,7 +52191,7 @@ int inst_230_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-1898939975, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52768,7 +52225,7 @@ int inst_230_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-1401682506, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52819,7 +52276,7 @@ int inst_231_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-9, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52836,7 +52293,7 @@ int inst_231_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-113, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52853,7 +52310,7 @@ int inst_231_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(-14, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52870,7 +52327,7 @@ int inst_231_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(-71, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52904,7 +52361,7 @@ int inst_231_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-110, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52955,7 +52412,7 @@ int inst_231_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(49, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -52989,7 +52446,7 @@ int inst_232_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(59, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53057,7 +52514,7 @@ int inst_232_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(41, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53074,7 +52531,7 @@ int inst_232_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-99, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53108,7 +52565,7 @@ int inst_232_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(93, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53142,7 +52599,7 @@ int inst_232_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(-38, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53176,7 +52633,7 @@ int inst_233_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(20105, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53193,7 +52650,7 @@ int inst_233_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(-18380, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53244,7 +52701,7 @@ int inst_233_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(574, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53261,7 +52718,7 @@ int inst_233_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-29438, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53278,7 +52735,7 @@ int inst_233_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(18047, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53312,7 +52769,7 @@ int inst_233_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(-12321, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53448,7 +52905,7 @@ int inst_234_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(14812, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53499,7 +52956,7 @@ int inst_235_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(1045048775, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53550,7 +53007,7 @@ int inst_235_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(735148487, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53584,7 +53041,7 @@ int inst_235_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-1632543200, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53601,7 +53058,7 @@ int inst_235_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-1930085484, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53669,7 +53126,7 @@ int inst_236_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-871740259, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53686,7 +53143,7 @@ int inst_236_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(1691262056, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53703,7 +53160,7 @@ int inst_236_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(882892433, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53737,7 +53194,7 @@ int inst_236_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-827654112, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53788,7 +53245,7 @@ int inst_236_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-235133086, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -53805,7 +53262,7 @@ int inst_236_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-824050720, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -56213,7 +55670,7 @@ int inst_255_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(740027708, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57496,7 +56953,7 @@ int inst_265_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-65, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57513,7 +56970,7 @@ int inst_265_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(107, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57564,7 +57021,7 @@ int inst_265_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(104, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57598,7 +57055,7 @@ int inst_265_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(1, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57615,7 +57072,7 @@ int inst_265_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(103, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57683,7 +57140,7 @@ int inst_266_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(52, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57700,7 +57157,7 @@ int inst_266_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(112, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57734,7 +57191,7 @@ int inst_266_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-68, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57751,7 +57208,7 @@ int inst_266_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(14, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57768,7 +57225,7 @@ int inst_266_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-104, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57785,7 +57242,7 @@ int inst_266_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(76, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57836,7 +57293,7 @@ int inst_267_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-21723, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57887,7 +57344,7 @@ int inst_267_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-10102, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57904,7 +57361,7 @@ int inst_267_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-10567, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57938,7 +57395,7 @@ int inst_267_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(9377, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -57972,7 +57429,7 @@ int inst_267_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(-26383, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58006,7 +57463,7 @@ int inst_268_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-20654, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58091,7 +57548,7 @@ int inst_268_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(14861, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58176,7 +57633,7 @@ int inst_269_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-1490662273, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58244,7 +57701,7 @@ int inst_269_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-2074131073, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58312,7 +57769,7 @@ int inst_269_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(1347011958, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58329,7 +57786,7 @@ int inst_270_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-1671051798, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58363,7 +57820,7 @@ int inst_270_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(593465113, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58397,7 +57854,7 @@ int inst_270_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(1526935836, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58431,7 +57888,7 @@ int inst_270_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(1900730571, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58550,7 +58007,7 @@ int inst_271_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(16, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58567,7 +58024,7 @@ int inst_271_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(0x80, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58584,7 +58041,7 @@ int inst_271_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(64, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58601,7 +58058,7 @@ int inst_271_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(91, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58618,7 +58075,7 @@ int inst_271_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(16, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58669,7 +58126,7 @@ int inst_272_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(32, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58686,7 +58143,7 @@ int inst_272_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-71, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58737,7 +58194,7 @@ int inst_272_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-71, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58754,7 +58211,7 @@ int inst_272_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(4, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58788,7 +58245,7 @@ int inst_272_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(84, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58805,7 +58262,7 @@ int inst_272_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(0x80, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58839,7 +58296,7 @@ int inst_273_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(27908, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58856,7 +58313,7 @@ int inst_273_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-16300, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58890,7 +58347,7 @@ int inst_273_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(-28656, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -58958,7 +58415,7 @@ int inst_273_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(4296, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -59026,7 +58483,7 @@ int inst_274_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(353, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -59043,7 +58500,7 @@ int inst_274_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(8723, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -59060,7 +58517,7 @@ int inst_274_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(6170, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -59077,7 +58534,7 @@ int inst_274_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(16, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -59111,7 +58568,7 @@ int inst_274_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(16448, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -59264,7 +58721,7 @@ int inst_275_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(6492820, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -59298,7 +58755,7 @@ int inst_275_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(323226370, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -59315,7 +58772,7 @@ int inst_275_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(773087413, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -59332,7 +58789,7 @@ int inst_275_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(281060610, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -59349,7 +58806,7 @@ int inst_276_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(1636044888, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -59383,7 +58840,7 @@ int inst_276_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(-1805122556, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -59400,7 +58857,7 @@ int inst_276_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(-1534050037, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -59485,7 +58942,7 @@ int inst_276_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(21821441, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60509,7 +59966,7 @@ int inst_283_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-111, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60594,7 +60051,7 @@ int inst_283_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(56, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60611,7 +60068,7 @@ int inst_283_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(84, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60628,7 +60085,7 @@ int inst_283_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-75, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60645,7 +60102,7 @@ int inst_283_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-23, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60662,7 +60119,7 @@ int inst_283_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(-57, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60798,7 +60255,7 @@ int inst_284_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(97, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60815,7 +60272,7 @@ int inst_284_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-92, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60832,7 +60289,7 @@ int inst_284_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(1, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60849,7 +60306,7 @@ int inst_285_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-30487, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60866,7 +60323,7 @@ int inst_285_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(2586, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60883,7 +60340,7 @@ int inst_285_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(-6831, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60951,7 +60408,7 @@ int inst_285_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(19149, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -60985,7 +60442,7 @@ int inst_285_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-3281, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61019,7 +60476,7 @@ int inst_286_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-15304, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61036,7 +60493,7 @@ int inst_286_flags_var_1()
 
   v0 = 0;
   if ( __SETP__(-22872, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61070,7 +60527,7 @@ int inst_286_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(18689, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61104,7 +60561,7 @@ int inst_286_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(-15661, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61223,7 +60680,7 @@ int inst_287_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(-202864091, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61257,7 +60714,7 @@ int inst_287_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-55669483, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61274,7 +60731,7 @@ int inst_287_flags_var_5()
 
   v0 = 0;
   if ( __SETP__(642113456, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61291,7 +60748,7 @@ int inst_287_flags_var_6()
 
   v0 = 0;
   if ( __SETP__(-655088497, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61308,7 +60765,7 @@ int inst_287_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(1880842473, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61325,7 +60782,7 @@ int inst_287_flags_var_8()
 
   v0 = 0;
   if ( __SETP__(-1136108910, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61342,7 +60799,7 @@ int inst_287_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(-1576614592, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61393,7 +60850,7 @@ int inst_288_flags_var_2()
 
   v0 = 0;
   if ( __SETP__(1074290779, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61410,7 +60867,7 @@ int inst_288_flags_var_3()
 
   v0 = 0;
   if ( __SETP__(-1548744456, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61427,7 +60884,7 @@ int inst_288_flags_var_4()
 
   v0 = 0;
   if ( __SETP__(-1195781562, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61478,7 +60935,7 @@ int inst_288_flags_var_7()
 
   v0 = 0;
   if ( __SETP__(-1062918552, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -61512,7 +60969,7 @@ int inst_288_flags_var_9()
 
   v0 = 0;
   if ( __SETP__(-1000652330, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 

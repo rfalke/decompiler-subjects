@@ -10,13 +10,13 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void __usercall __noreturn start(int a1@<eax>);
+// void __usercall __noreturn start(char@<al>);
 
 
 //----- (08048098) --------------------------------------------------------
-void __usercall __noreturn start(int a1@<eax>)
+void __usercall __noreturn start(char a1@<al>)
 {
-  if ( _bittest(&a1, 3u) )
+  if ( (a1 & 8) != 0 )
     MEMORY[0x1F4] = 10;
   JUMPOUT(0x80480AB);
 }

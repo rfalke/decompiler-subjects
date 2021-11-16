@@ -12,7 +12,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int __fastcall init_proc(int a1, int a2);
+// int __fastcall init_proc(int, int);
 int sub_80488D4();
 // size_t __fpending(FILE *fp);
 // int __overflow(_IO_FILE *, int);
@@ -41,25 +41,25 @@ int sub_80488D4();
 // int mbsinit(const mbstate_t *ps);
 // void error(int status, int errnum, const char *format, ...);
 // const unsigned __int16 **__ctype_b_loc(void);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-int __fastcall sub_8048AE4(int a1, int a2);
+// void __usercall __noreturn start(int@<eax>, void (*)(void)@<edx>);
+int __fastcall sub_8048AE4(int, int);
 void sub_8048B08();
 int sub_8048B3C();
 void __cdecl __noreturn sub_8048B68(int status); // idb
-void __cdecl __noreturn main(int a1, char **a2);
+void __cdecl __noreturn main(int, char **);
 void sub_8048D64();
 void close_stdout();
 void sub_8048E5F();
-int __cdecl sub_8048F36(int a1, unsigned __int8 a2, char a3);
+int __cdecl sub_8048F36(int, unsigned __int8, char);
 // char *__usercall sub_8048FA3@<eax>(const char *a1@<eax>, int a2@<edx>);
-// unsigned int __usercall sub_8048FF6@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx>, const char *a3, unsigned int a4, int a5, int a6);
-unsigned int __cdecl sub_80496C3(_BYTE *a1, unsigned int a2, const char *a3, unsigned int a4, int *a5);
-// _BYTE *__usercall sub_8049721@<eax>(int a1@<eax>, const char *a2@<edx>, unsigned int a3, int *a4);
-_BYTE *__cdecl sub_80498AE(int a1, const char *a2);
-// _DWORD *__usercall sub_8049905@<eax>(_DWORD *result@<eax>, int a2@<edx>);
-_BYTE *__cdecl sub_804995F(int a1, int a2, const char *a3);
-_BYTE *__cdecl sub_80499F0(const char *a1, unsigned __int8 a2);
-_BYTE *__cdecl sub_8049A8B(const char *a1);
+// unsigned int __usercall sub_8048FF6@<eax>(_BYTE *@<eax>, unsigned int@<edx>, const char *, unsigned int, int, int);
+unsigned int __cdecl sub_80496C3(_BYTE *, unsigned int, const char *, unsigned int, int *);
+// _BYTE *__usercall sub_8049721@<eax>(unsigned int a1@<eax>, const char *a2@<edx>, unsigned int a3, int *a4);
+_BYTE *__cdecl sub_80498AE(int, const char *);
+// _DWORD *__usercall sub_8049905@<eax>(_DWORD *result@<eax>, int@<edx>);
+_BYTE *__cdecl sub_804995F(int, int, const char *);
+_BYTE *__cdecl sub_80499F0(const char *, unsigned __int8);
+_BYTE *__cdecl sub_8049A8B(const char *);
 int __cdecl sub_8049AC0(FILE *stream, int, int, int, __gnuc_va_list __varargs); // idb
 int sub_8049CCD(FILE *stream, int, int, int, ...); // idb
 void __noreturn sub_8049D10();
@@ -69,7 +69,7 @@ void __cdecl sub_8049FE0(void *ptr);
 void __fastcall init(int a1, int a2);
 void fini(void); // idb
 int __cdecl sub_804A0A0(void (__cdecl *lpfunc)(void *)); // idb
-int __fastcall sub_804A0D0(int a1, int a2);
+int __fastcall sub_804A0D0(int, int);
 // void term_proc();
 
 //-------------------------------------------------------------------------
@@ -79,7 +79,7 @@ _UNKNOWN unk_804A289; // weak
 int dword_804B82C = -1; // weak
 int dword_804B83C = 0; // weak
 int (*dword_804B954)(void) = NULL; // weak
-_DWORD dword_804B9D0 = 0; // idb
+_DWORD dword_804B9D0 = 0; // weak
 int *off_804B9D4 = &dword_804B838; // weak
 _UNKNOWN exit_failure; // weak
 int dword_804B9DC = 1; // weak
@@ -99,7 +99,7 @@ int dword_804BB34; // weak
 int dword_804BB38; // weak
 int dword_804BB3C; // weak
 int dword_804BB40; // weak
-void (*xalloc_fail_func)(void); // idb
+void (*xalloc_fail_func)(void); // weak
 _UNKNOWN program_name; // weak
 // extern struct _IO_FILE *stdout;
 // extern _UNKNOWN _gmon_start__; weak
@@ -130,11 +130,14 @@ void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
 //----- (08048AE4) --------------------------------------------------------
 int __fastcall sub_8048AE4(int a1, int a2)
 {
+  int v3; // [esp-4h] [ebp-8h]
+
+  v3 = a2;
   if ( &_gmon_start__ )
     ((void (__thiscall *)(int, int))_gmon_start__)(a1, a2);
-  return a2;
+  return v3;
 }
-// 8048B01: variable 'a2' is possibly undefined
+// 8048B01: variable 'v3' is possibly undefined
 
 //----- (08048B08) --------------------------------------------------------
 void sub_8048B08()
@@ -164,7 +167,7 @@ int sub_8048B3C()
 
   result = dword_804B83C;
   if ( dword_804B83C )
-    result = 0;
+    return 0;
   return result;
 }
 // 804B83C: using guessed type int dword_804B83C;
@@ -282,13 +285,19 @@ char *__usercall sub_8048FA3@<eax>(const char *a1@<eax>, int a2@<edx>)
 
   v4 = dcgettext(0, a1, 5);
   if ( a2 == 6 && v4 == a1 )
-    v4 = (char *)L"\"'`";
+    return (char *)L"\"'`";
   return v4;
 }
 // 804A588: using guessed type __int16 asc_804A588[4];
 
 //----- (08048FF6) --------------------------------------------------------
-unsigned int __usercall sub_8048FF6@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx>, const char *a3, unsigned int a4, int a5, int a6)
+unsigned int __usercall sub_8048FF6@<eax>(
+        _BYTE *a1@<eax>,
+        unsigned int a2@<edx>,
+        const char *a3,
+        unsigned int a4,
+        int a5,
+        int a6)
 {
   unsigned int v6; // ecx
   int v7; // edx
@@ -718,9 +727,9 @@ unsigned int __cdecl sub_80496C3(_BYTE *a1, unsigned int a2, const char *a3, uns
 // 804BB20: using guessed type int dword_804BB20;
 
 //----- (08049721) --------------------------------------------------------
-_BYTE *__usercall sub_8049721@<eax>(int a1@<eax>, const char *a2@<edx>, unsigned int a3, int *a4)
+_BYTE *__usercall sub_8049721@<eax>(unsigned int a1@<eax>, const char *a2@<edx>, unsigned int a3, int *a4)
 {
-  int v4; // edi
+  unsigned int v4; // edi
   void *v5; // esi
   _BYTE *v6; // edi
   unsigned int v7; // eax
@@ -733,12 +742,12 @@ _BYTE *__usercall sub_8049721@<eax>(int a1@<eax>, const char *a2@<edx>, unsigned
   int v15; // [esp+4h] [ebp-18h]
 
   v15 = *__errno_location();
-  if ( a1 < 0 )
+  if ( (a1 & 0x80000000) != 0 )
     abort();
-  if ( dword_804B9DC <= (unsigned int)a1 )
+  if ( dword_804B9DC <= a1 )
   {
     v4 = a1 + 1;
-    if ( (unsigned int)(a1 + 1) > 0x1FFFFFFF )
+    if ( a1 + 1 > 0x1FFFFFFF )
       sub_8049D10();
     v5 = (void *)off_804B9E8;
     if ( (int *)off_804B9E8 == &dword_804B9E0 )
@@ -813,6 +822,7 @@ _BYTE *__cdecl sub_804995F(int a1, int a2, const char *a3)
   sub_8049905(v4, a2);
   return sub_8049721(a1, a3, 0xFFFFFFFF, v4);
 }
+// 804995F: using guessed type int var_38[14];
 
 //----- (080499F0) --------------------------------------------------------
 _BYTE *__cdecl sub_80499F0(const char *a1, unsigned __int8 a2)
@@ -854,7 +864,7 @@ int __cdecl sub_8049AC0(FILE *stream, int a2, int a3, int a4, __gnuc_va_list __v
   char *v6; // edx
   _DWORD *v7; // eax
   char *v8; // eax
-  char *v9; // eax
+  char *IO_write_ptr; // eax
   char *v10; // eax
   char *v11; // eax
   int result; // eax
@@ -909,14 +919,14 @@ int __cdecl sub_8049AC0(FILE *stream, int a2, int a3, int a4, __gnuc_va_list __v
       break;
   }
   vfprintf(stream, v8, __varargs);
-  v9 = stream->_IO_write_ptr;
-  if ( v9 >= stream->_IO_write_end )
+  IO_write_ptr = stream->_IO_write_ptr;
+  if ( IO_write_ptr >= stream->_IO_write_end )
   {
     __overflow(stream, 10);
   }
   else
   {
-    *v9 = 10;
+    *IO_write_ptr = 10;
     ++stream->_IO_write_ptr;
   }
   fputs_unlocked(version_etc_copyright, stream);
@@ -960,6 +970,7 @@ void __noreturn sub_8049D10()
   error(exit_failure, 0, "%s", v0);
   abort();
 }
+// 804BB44: using guessed type void (*xalloc_fail_func)(void);
 
 //----- (08049DC5) --------------------------------------------------------
 void *__cdecl sub_8049DC5(size_t size)
@@ -1001,7 +1012,7 @@ void fini(void)
 {
   term_proc();
 }
-// 804A08F: conditional instruction was optimized away because of 'esi.4==FFFFFFFF'
+// 804A08F: conditional instruction was optimized away because esi.4==FFFFFFFF
 
 //----- (0804A0A0) --------------------------------------------------------
 int __cdecl sub_804A0A0(void (__cdecl *lpfunc)(void *))
@@ -1013,6 +1024,7 @@ int __cdecl sub_804A0A0(void (__cdecl *lpfunc)(void *))
     v1 = (void *)dword_804B9D0;
   return __cxa_atexit(lpfunc, 0, v1);
 }
+// 804B9D0: using guessed type _DWORD dword_804B9D0;
 
 //----- (0804A0D0) --------------------------------------------------------
 int __fastcall sub_804A0D0(int a1, int a2)

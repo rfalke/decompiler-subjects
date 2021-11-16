@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-__int64 __fastcall f(__int64 a1, __int64 a2, unsigned int a3);
+__int64 __fastcall f(__int64, __int64, unsigned int);
 int __cdecl main(int argc, const char **argv, const char **envp);
 
 

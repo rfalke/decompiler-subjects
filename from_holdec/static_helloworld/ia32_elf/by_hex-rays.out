@@ -1,22 +1,23 @@
+
 Database SUBJECTS/from_holdec/static_helloworld/ia32_elf/subject.exe.idb already exists.
 Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
-   933888   114 8192 allocating memory for b-tree...
+   925696   113 8192 allocating memory for b-tree...
   2179072   266 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  3375104            total memory allocated
+  3366912            total memory allocated
 
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
 Loading type libraries...
 Autoanalysis subsystem has been initialized.
 Database for file 'subject.exe' has been loaded.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
 === start of cleanup script -> OK
   function at 08049000  LIB  with name '.init_proc'
   function at 08049030       with name '__assert_fail_base.cold.0'
@@ -1020,23 +1021,23 @@ In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
 TIMESTAMP decompiling 8070A70 size=0000016F times=0...
-TIMESTAMP decompiling 8070A60 size=00000010 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int ebx0@<ebx>, int a1, int *a2, _DWORD *a3)
+TIMESTAMP decompiling 8070A60 size=00000010 times=1;usedcpu 00:00:00 ...unsigned int __cdecl(int a1, int *a2, _DWORD *a3)
 TIMESTAMP decompiling 8070A70 size=0000016F times=1;usedcpu 00:00:00 ...int __cdecl(int a1, int *a2, _DWORD *a3)
-TIMESTAMP decompiling 8070A60 size=00000010 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int ebx0@<ebx>, int a1, int *a2, _DWORD *a3)
+TIMESTAMP decompiling 8070A60 size=00000010 times=2;usedcpu 00:00:00 ...int __cdecl(int a1, int *a2, _DWORD *a3)
 TIMESTAMP decompiling 8070A70 size=0000016F times=2;usedcpu 00:00:00 ...unsigned int __cdecl(int a1, int *a2, _DWORD *a3)
-TIMESTAMP decompiling 8070A60 size=00000010 times=3;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int ebx0@<ebx>, int a1, int *a2, _DWORD *a3)
+TIMESTAMP decompiling 8070A60 size=00000010 times=3;usedcpu 00:00:00 ...unsigned int __cdecl(int a1, int *a2, _DWORD *a3)
 TIMESTAMP decompiling 8070A70 size=0000016F times=3;usedcpu 00:00:00 ...int __cdecl(int a1, int *a2, _DWORD *a3)
-TIMESTAMP decompiling 8070A60 size=00000010 times=4;usedcpu 00:00:00 ...int __usercall@<eax>(int ebx0@<ebx>, int a1, int *a2, _DWORD *a3)
+TIMESTAMP decompiling 8070A60 size=00000010 times=4;usedcpu 00:00:00 ...int __cdecl(int a1, int *a2, _DWORD *a3)
 TIMESTAMP decompiling 8070A70 size=0000016F times=4;usedcpu 00:00:00 ...unsigned int __cdecl(int a1, int *a2, _DWORD *a3)
-TIMESTAMP decompiling 8070A60 size=00000010 times=5;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int ebx0@<ebx>, int a1, int *a2, _DWORD *a3)
+TIMESTAMP decompiling 8070A60 size=00000010 times=5;usedcpu 00:00:00 ...unsigned int __cdecl(int a1, int *a2, _DWORD *a3)
 TIMESTAMP decompiling 8070A70 size=0000016F times=5;usedcpu 00:00:00 ...int __cdecl(int a1, int *a2, _DWORD *a3)
-TIMESTAMP decompiling 8070A60 size=00000010 times=6;usedcpu 00:00:00 ...int __usercall@<eax>(int ebx0@<ebx>, int a1, int *a2, _DWORD *a3)
+TIMESTAMP decompiling 8070A60 size=00000010 times=6;usedcpu 00:00:00 ...int __cdecl(int a1, int *a2, _DWORD *a3)
 TIMESTAMP decompiling 8070A70 size=0000016F times=6;usedcpu 00:00:00 ...unsigned int __cdecl(int a1, int *a2, _DWORD *a3)
-TIMESTAMP decompiling 8070A60 size=00000010 times=7;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int ebx0@<ebx>, int a1, int *a2, _DWORD *a3)
+TIMESTAMP decompiling 8070A60 size=00000010 times=7;usedcpu 00:00:00 ...unsigned int __cdecl(int a1, int *a2, _DWORD *a3)
 TIMESTAMP decompiling 8070A70 size=0000016F times=7;usedcpu 00:00:00 ...int __cdecl(int a1, int *a2, _DWORD *a3)
-TIMESTAMP decompiling 8070A60 size=00000010 times=8;usedcpu 00:00:00 ...int __usercall@<eax>(int ebx0@<ebx>, int a1, int *a2, _DWORD *a3)
+TIMESTAMP decompiling 8070A60 size=00000010 times=8;usedcpu 00:00:00 ...int __cdecl(int a1, int *a2, _DWORD *a3)
 TIMESTAMP decompiling 8070A70 size=0000016F times=8;usedcpu 00:00:00 ...unsigned int __cdecl(int a1, int *a2, _DWORD *a3)
-TIMESTAMP decompiling 8070A60 size=00000010 times=9;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int ebx0@<ebx>, int a1, int *a2, _DWORD *a3)
+TIMESTAMP decompiling 8070A60 size=00000010 times=9;usedcpu 00:00:00 ...unsigned int __cdecl(int a1, int *a2, _DWORD *a3)
 TIMESTAMP decompiling 8070BE0 size=00000043 times=0...
 TIMESTAMP decompiling 8070C30 size=000000AC times=0...
 TIMESTAMP decompiling 8049049 size=000001D7 times=0...
@@ -1382,73 +1383,71 @@ TIMESTAMP decompiling 8050A60 size=000001B3 times=0...
 TIMESTAMP decompiling 8050C20 size=000000B5 times=0...
 TIMESTAMP decompiling 8058D10 size=00000065 times=0...
 TIMESTAMP decompiling 805D260 size=000002C8 times=0...
-TIMESTAMP decompiling 809A0C0 size=00001135 times=1;usedcpu 00:00:00 ...struct timespec *__usercall@<eax>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>, int a4@<esi>)
-TIMESTAMP decompiling 8097D70 size=00000EE6 times=1;usedcpu 00:00:00 ..._TBYTE *__cdecl(int a1, char a2)
-TIMESTAMP decompiling 8097480 size=000007B1 times=1;usedcpu 00:00:00 ...char **__cdecl(char **a1)
-TIMESTAMP decompiling 8096E40 size=00000220 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>)
-TIMESTAMP decompiling 80928D0 size=00000236 times=1;usedcpu 00:00:00 ..._BYTE *__cdecl(_DWORD *a1, unsigned int *a2, _BYTE *a3, char a4)
-TIMESTAMP decompiling 80927F0 size=000000D4 times=1;usedcpu 00:00:00 ...const char *__cdecl(const char **a1, unsigned int *a2, unsigned int *a3)
-TIMESTAMP decompiling 80924E0 size=000000E3 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int ebp0@<ebp>, int *a2@<edi>, int a1)
+TIMESTAMP decompiling 809A0C0 size=00001135 times=1;usedcpu 00:00:00 ...struct timespec *__usercall@<eax>(int@<ebx>, int@<ebp>, int@<edi>, int@<esi>)
+TIMESTAMP decompiling 8097D70 size=00000EE6 times=1;usedcpu 00:00:00 ..._TBYTE *__cdecl(int, char)
+TIMESTAMP decompiling 8097480 size=000007B1 times=1;usedcpu 00:00:00 ...char **__cdecl(char **)
+TIMESTAMP decompiling 8096E40 size=00000220 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>)
+TIMESTAMP decompiling 80928D0 size=00000236 times=1;usedcpu 00:00:00 ..._BYTE *__cdecl(_DWORD *, unsigned int *, _BYTE *, char)
+TIMESTAMP decompiling 80927F0 size=000000D4 times=1;usedcpu 00:00:00 ...const char *__cdecl(const char **, unsigned int *, unsigned int *)
+TIMESTAMP decompiling 80924E0 size=000000E3 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int ebp0@<ebp>, int *@<edi>, int)
 TIMESTAMP decompiling 8092350 size=0000018E times=1;usedcpu 00:00:00 ...int()
-TIMESTAMP decompiling 8092260 size=000000E8 times=1;usedcpu 00:00:00 ...unsigned int *__cdecl(unsigned int a1)
-TIMESTAMP decompiling 808D740 size=0000031B times=1;usedcpu 00:00:00 ...struct timespec *__usercall@<eax>(int *edi0@<edi>, unsigned int *a1, unsigned int *a2, char a3, unsigned __int8 *a4, char a5, int a6)
-TIMESTAMP decompiling 808CA90 size=00000B2F times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(unsigned __int8 *a1, _DWORD *a2, int *a3, int **a4, _DWORD *a5, int a6, int a7, int a8)
-TIMESTAMP decompiling 808AED0 size=0000021F times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, _DWORD *a2@<edx>, int a3@<ecx>, int a4)
-TIMESTAMP decompiling 808ABF0 size=000002DD times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int a1@<eax>, _DWORD *a2@<edx>, _BYTE *a3@<ecx>, int ebp0@<ebp>, int a4, unsigned int *a5, int a6)
-TIMESTAMP decompiling 808AAD0 size=00000112 times=1;usedcpu 00:00:00 ...char *__usercall@<eax>(int a1@<eax>, unsigned int *a2@<edx>)
-TIMESTAMP decompiling 8089720 size=000010BC times=1;usedcpu 00:00:00 ...int __usercall@<eax>(unsigned int *a1@<eax>, int a2@<edx>, _DWORD *a3@<ecx>, unsigned int *a4, unsigned __int8 *a5, char a6, int a7, int a8, int a9)
-TIMESTAMP decompiling 80890B0 size=00000665 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx>, int a3@<ecx>, int *a4, _DWORD *a5, int *a6, int a7, int a8, _BYTE *a9)
-TIMESTAMP decompiling 8088920 size=000000E8 times=1;usedcpu 00:00:00 ..._BYTE *__usercall@<eax>(_BYTE **a1@<eax>, unsigned int *a2@<edx>)
-TIMESTAMP decompiling 8088590 size=000002FB times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, _DWORD *a2@<edx>, int a3@<ecx>, _DWORD *a4)
-TIMESTAMP decompiling 80874F0 size=00000102 times=1;usedcpu 00:00:00 ...int *__cdecl(int a1, char a2, int a3, int a4)
-TIMESTAMP decompiling 80854D0 size=000000D1 times=1;usedcpu 00:00:00 ...int __cdecl(int *a1, unsigned int a2, int a3)
-TIMESTAMP decompiling 8085400 size=000000CC times=1;usedcpu 00:00:00 ...int __cdecl(int a1)
-TIMESTAMP decompiling 8083700 size=0000029D times=1;usedcpu 00:00:00 ...int __usercall@<eax>(signed int a1@<esi>, _DWORD *a2, unsigned int *a3, int a4, int *a5)
-TIMESTAMP decompiling 8082185 size=00000035 times=1;usedcpu 00:00:00 ...void __usercall(int a1@<edx>, int a2@<ebp>, const struct timespec *a3@<ecx>)
-TIMESTAMP decompiling 807F7D0 size=00002AC6 times=1;usedcpu 00:00:02 ...void __cdecl(struct timespec *a1, int *a2, int a3)
-TIMESTAMP decompiling 807CD80 size=00002A46 times=1;usedcpu 00:00:02 ...unsigned int __usercall@<eax>(int *a1@<eax>, _DWORD *a2@<edx>, int a3@<ecx>, int a4, int a5, int a6, unsigned int a7, unsigned int a8, int *a9, _BYTE *a10, signed int a11, char *a12, int a13)
-TIMESTAMP decompiling 8077D50 size=000028E3 times=1;usedcpu 00:00:02 ...int __usercall@<eax>(unsigned int a1@<ebx>, int a2@<ebp>, unsigned int a3@<edi>, unsigned int a4@<esi>, _DWORD *a5, unsigned __int32 a6, int a7, const __m128i **a8)
-TIMESTAMP decompiling 80775BA size=00000039 times=1;usedcpu 00:00:00 ...void __usercall(int a1@<ebp>, const struct timespec *a2@<edx>)
-TIMESTAMP decompiling 8077593 size=00000027 times=1;usedcpu 00:00:00 ...void __usercall(int a1@<ebp>)
-TIMESTAMP decompiling 8074CB0 size=000029E9 times=1;usedcpu 00:00:01 ...void __usercall(int a1@<ebx>, int a2@<esi>, int a3, unsigned int *a4, int a5)
-TIMESTAMP decompiling 8072380 size=00002924 times=1;usedcpu 00:00:02 ...unsigned int __usercall@<eax>(int *a1@<eax>, unsigned int *a2@<edx>, int a3@<ecx>, int a4, int a5, int a6, unsigned int a7, unsigned int a8, unsigned __int8 *a9, _BYTE *a10, signed int a11, char *a12, unsigned int *a13)
-TIMESTAMP decompiling 806E200 size=000001E9 times=1;usedcpu 00:00:00 ...int *__cdecl(unsigned int *a1)
-TIMESTAMP decompiling 806DC80 size=0000047C times=1;usedcpu 00:00:00 ...int __cdecl(unsigned __int8 *a1, unsigned __int8 *a2, int ***a3, int *a4, char a5)
-TIMESTAMP decompiling 806D9D0 size=00000204 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(unsigned int a1@<ebp>, int *a2@<edi>)
-TIMESTAMP decompiling 8067600 size=0000040D times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int *a1@<edi>)
-TIMESTAMP decompiling 8067580 size=0000007F times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(_BYTE *a1@<eax>, int a2@<edx>, int a3@<ecx>)
-TIMESTAMP decompiling 8067A10 size=000004C3 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int *a1@<edi>)
-TIMESTAMP decompiling 80660F0 size=00000B32 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_BYTE *a1@<eax>, _BYTE *a2@<edx>, unsigned int *a3@<ecx>, unsigned int *a4, unsigned int ***a5, unsigned int *a6)
-TIMESTAMP decompiling 8065760 size=000005F1 times=1;usedcpu 00:00:00 ...int __cdecl(char *a1, int *a2, char **a3, char a4)
-TIMESTAMP decompiling 8062150 size=00000152 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(int a1, int *a2, int (__cdecl *a3)(int, _DWORD))
-TIMESTAMP decompiling 8061250 size=0000079D times=1;usedcpu 00:00:00 ...char *__cdecl(__int64 a1)
-TIMESTAMP decompiling 805EE00 size=00000043 times=1;usedcpu 00:00:00 ..._BYTE *__cdecl(unsigned int *a1)
-TIMESTAMP decompiling 805DA40 size=00000380 times=1;usedcpu 00:00:00 ..._BYTE *__usercall@<eax>(int ebp0@<ebp>, _BYTE *a1, const struct timespec *a2)
-TIMESTAMP decompiling 808D740 size=0000031B times=2;usedcpu 00:00:00 ...struct timespec *__usercall@<eax>(int *edi0@<edi>, unsigned int *a1, unsigned int *a2, char a3, unsigned __int8 *a4, char a5, int a6)
-TIMESTAMP decompiling 8088A10 size=0000069C times=1;usedcpu 00:00:00 ...int __usercall@<eax>(unsigned int *a1@<eax>, int *a2@<edx>, int a3@<ecx>, _BYTE *a4, int a5)
-TIMESTAMP decompiling 8085400 size=000000CC times=2;usedcpu 00:00:00 ...int __cdecl(int a1)
-TIMESTAMP decompiling 8083700 size=0000029D times=2;usedcpu 00:00:00 ...int __usercall@<eax>(signed int a1@<esi>, _DWORD *a2, unsigned int *a3, int a4, int *a5)
-TIMESTAMP decompiling 8061250 size=0000079D times=2;usedcpu 00:00:00 ...char *__cdecl(__int64 a1)
-TIMESTAMP decompiling 804D9A0 size=0000057A times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx>)
-TIMESTAMP decompiling 8055C60 size=0000021E times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *a1@<eax>, int a2@<edx>)
-TIMESTAMP decompiling 80553A0 size=00000508 times=1;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, _BYTE *a3, int a4)
-TIMESTAMP decompiling 8052E50 size=000001C7 times=1;usedcpu 00:00:00 ...__int64 __cdecl(_DWORD *a1, unsigned int *a2, int a3)
-TIMESTAMP decompiling 80510F0 size=000000EE times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int a1@<ebp>, int a2, _BYTE *a3, int a4)
-TIMESTAMP decompiling 80511E0 size=0000001A times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int a1@<ebp>, int a2, _BYTE *a3)
-TIMESTAMP decompiling 8088140 size=00000227 times=1;usedcpu 00:00:00 ...int __cdecl(unsigned int a1, unsigned int a2)
-TIMESTAMP decompiling 8067A10 size=000004C3 times=2;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int *a1@<edi>)
-TIMESTAMP decompiling 804D9A0 size=0000057A times=2;usedcpu 00:00:00 ...int __usercall@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx>)
-TIMESTAMP decompiling 8050A60 size=000001B3 times=1;usedcpu 00:00:00 ...void __usercall(struct timespec *a1@<eax>, unsigned int *a2@<edx>, int a3@<ecx>)
-TIMESTAMP decompiling 804F890 size=00000349 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int a1@<ebx>, int a2@<ebp>, int a3@<edi>, int a4@<esi>, char *a5, unsigned int a6, unsigned int a7, int (__cdecl *a8)(char *, char *, int), int a9)
-TIMESTAMP decompiling 804EAC0 size=000008AE times=1;usedcpu 00:00:00 ...int __cdecl(unsigned __int8 **a1)
-TIMESTAMP decompiling 804E9E0 size=000000D5 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebp>)
-TIMESTAMP decompiling 804E610 size=00000142 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(unsigned __int8 *a1, unsigned int a2)
-TIMESTAMP decompiling 804E760 size=00000209 times=1;usedcpu 00:00:00 ...int __cdecl(unsigned __int8 *a1, unsigned __int8 **a2, _DWORD *a3, unsigned __int8 **a4, char **a5, _DWORD *a6)
-TIMESTAMP decompiling 804E0D0 size=0000053D times=1;usedcpu 00:00:00 ...unsigned int **__cdecl(unsigned int ***a1, unsigned int *a2, unsigned int a3, int a4, unsigned int *a5, unsigned int *a6, unsigned int *a7, unsigned int *a8, unsigned int *a9, unsigned int *a10, int a11)
-TIMESTAMP decompiling 804C420 size=00001541 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(size_t a1@<ebp>, int a2@<esi>, int *a3, int a4)
-TIMESTAMP decompiling 804C140 size=000002D2 times=1;usedcpu 00:00:00 ...__int64 __cdecl(unsigned int *a1, unsigned int *a2, unsigned int *a3, int a4)
-TIMESTAMP decompiling 804B970 size=000007C5 times=1;usedcpu 00:00:00 ...unsigned __int8 *__cdecl(char *a1, unsigned __int8 *a2, int a3, int a4, int a5, unsigned int a6)
-TIMESTAMP decompiling 804ADC0 size=00000BA6 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<esi>, int *a2, int a3, unsigned __int8 *a4, int a5, _DWORD *a6)
+TIMESTAMP decompiling 8092260 size=000000E8 times=1;usedcpu 00:00:00 ...unsigned int *__cdecl(unsigned int)
+TIMESTAMP decompiling 808D740 size=0000031B times=1;usedcpu 00:00:00 ...unsigned __int8 *__usercall@<eax>(int *edi0@<edi>, unsigned int *, unsigned int *, char, unsigned __int8 *, char, int)
+TIMESTAMP decompiling 808CA90 size=00000B2F times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(unsigned __int8 *, _DWORD *, int *, int **, _DWORD *, int, int, int)
+TIMESTAMP decompiling 808AED0 size=0000021F times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, _DWORD *@<edx>, int@<ecx>, int)
+TIMESTAMP decompiling 808ABF0 size=000002DD times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int@<eax>, _DWORD *@<edx>, _BYTE *@<ecx>, int ebp0@<ebp>, int, unsigned int *, int)
+TIMESTAMP decompiling 808AAD0 size=00000112 times=1;usedcpu 00:00:00 ...char *__usercall@<eax>(int@<eax>, unsigned int *@<edx>)
+TIMESTAMP decompiling 8089720 size=000010BC times=1;usedcpu 00:00:00 ...int __usercall@<eax>(unsigned int *@<eax>, int@<edx>, _DWORD *@<ecx>, unsigned int *, unsigned __int8 *, char, int, int, int)
+TIMESTAMP decompiling 80890B0 size=00000665 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx>, const char *a3@<ecx>, int *a4, _DWORD *a5, int *a6, int a7, int a8, _BYTE *a9)
+TIMESTAMP decompiling 8088920 size=000000E8 times=1;usedcpu 00:00:00 ..._BYTE *__usercall@<eax>(_BYTE **@<eax>, unsigned int *@<edx>)
+TIMESTAMP decompiling 8088590 size=000002FB times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, _DWORD *@<edx>, int@<ecx>, _DWORD *)
+TIMESTAMP decompiling 80874F0 size=00000102 times=1;usedcpu 00:00:00 ...int *__cdecl(int, char, int, int)
+TIMESTAMP decompiling 80854D0 size=000000D1 times=1;usedcpu 00:00:00 ...int __cdecl(int *, unsigned int, int)
+TIMESTAMP decompiling 8085400 size=000000CC times=1;usedcpu 00:00:00 ...int __cdecl(int)
+TIMESTAMP decompiling 8083700 size=0000029D times=1;usedcpu 00:00:00 ...int __usercall@<eax>(signed int@<esi>, _DWORD *, unsigned int *, int, int *)
+TIMESTAMP decompiling 8082185 size=00000035 times=1;usedcpu 00:00:00 ...void __usercall(int@<edx>, int@<ebp>, const struct timespec *@<ecx>)
+TIMESTAMP decompiling 807F7D0 size=00002AC6 times=1;usedcpu 00:00:02 ...void __cdecl(struct timespec *, int *, int)
+TIMESTAMP decompiling 807CD80 size=00002A46 times=1;usedcpu 00:00:02 ...unsigned int __usercall@<eax>(int *@<eax>, _DWORD *@<edx>, int@<ecx>, int, int, int, unsigned int, unsigned int, int *, _BYTE *, signed int, char *, int)
+TIMESTAMP decompiling 8077D50 size=000028E3 times=1;usedcpu 00:00:02 ...int __usercall@<eax>(unsigned int@<ebx>, int@<ebp>, unsigned int@<edi>, unsigned int@<esi>, _DWORD *, unsigned __int32, int, const __m128i **)
+TIMESTAMP decompiling 80775BA size=00000039 times=1;usedcpu 00:00:00 ...void __usercall(int@<ebp>, const struct timespec *@<edx>)
+TIMESTAMP decompiling 8077593 size=00000027 times=1;usedcpu 00:00:00 ...void __usercall(int@<ebp>)
+TIMESTAMP decompiling 8074CB0 size=000029E9 times=1;usedcpu 00:00:01 ...void __usercall(int@<ebx>, int@<esi>, int, unsigned int *, int)
+TIMESTAMP decompiling 8072380 size=00002924 times=1;usedcpu 00:00:02 ...unsigned int __usercall@<eax>(int *@<eax>, unsigned int *@<edx>, int@<ecx>, int, int, int, unsigned int, unsigned int, unsigned __int8 *, _BYTE *, signed int, char *, unsigned int *)
+TIMESTAMP decompiling 806E200 size=000001E9 times=1;usedcpu 00:00:00 ...int *__cdecl(unsigned int *)
+TIMESTAMP decompiling 806DC80 size=0000047C times=1;usedcpu 00:00:00 ...int __cdecl(unsigned __int8 *, unsigned __int8 *, int ***, int *, char)
+TIMESTAMP decompiling 806D9D0 size=00000204 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(unsigned int@<ebp>, int *@<edi>)
+TIMESTAMP decompiling 8067600 size=0000040D times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int *@<edi>)
+TIMESTAMP decompiling 8067580 size=0000007F times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(_BYTE *@<eax>, int@<edx>, int@<ecx>)
+TIMESTAMP decompiling 80660F0 size=00000B32 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_BYTE *@<eax>, _BYTE *@<edx>, unsigned int *@<ecx>, unsigned int *, unsigned int ***, unsigned int *)
+TIMESTAMP decompiling 8065760 size=000005F1 times=1;usedcpu 00:00:00 ...int __cdecl(char *, int *, char **, char)
+TIMESTAMP decompiling 8062150 size=00000152 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(int, int *, int (__cdecl *)(int, _DWORD))
+TIMESTAMP decompiling 8061250 size=0000079D times=1;usedcpu 00:00:00 ...char *__cdecl(__int64)
+TIMESTAMP decompiling 805EE00 size=00000043 times=1;usedcpu 00:00:00 ..._BYTE *__cdecl(unsigned int *)
+TIMESTAMP decompiling 8092C60 size=000006DC times=1;usedcpu 00:00:00 ..._BYTE *__cdecl(char *)
+TIMESTAMP decompiling 808B3C0 size=00000935 times=1;usedcpu 00:00:00 ...unsigned __int8 *__usercall@<eax>(unsigned int *edi0@<edi>, int, char *, char, int, int, int)
+TIMESTAMP decompiling 808AED0 size=0000021F times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, _DWORD *@<edx>, int@<ecx>, int)
+TIMESTAMP decompiling 808AAD0 size=00000112 times=2;usedcpu 00:00:00 ...char *__usercall@<eax>(int@<eax>, unsigned int *@<edx>)
+TIMESTAMP decompiling 80660F0 size=00000B32 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(_BYTE *@<eax>, _BYTE *@<edx>, unsigned int *@<ecx>, unsigned int *, unsigned int ***, unsigned int *)
+TIMESTAMP decompiling 805DA40 size=00000380 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int ebp0@<ebp>, _BYTE *, const struct timespec *)
+TIMESTAMP decompiling 8055C60 size=0000021E times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *@<eax>, int@<edx>)
+TIMESTAMP decompiling 80553A0 size=00000508 times=1;usedcpu 00:00:00 ...int __cdecl(int, int, _BYTE *, int)
+TIMESTAMP decompiling 8052E50 size=000001C7 times=1;usedcpu 00:00:00 ...__int64 __cdecl(int **, unsigned int *, int)
+TIMESTAMP decompiling 80510F0 size=000000EE times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int@<ebp>, int, _BYTE *, int)
+TIMESTAMP decompiling 80511E0 size=0000001A times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int@<ebp>, int, _BYTE *)
+TIMESTAMP decompiling 8088140 size=00000227 times=1;usedcpu 00:00:00 ...int __cdecl(unsigned int, unsigned int)
+TIMESTAMP decompiling 8067A10 size=000004C3 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int *@<edi>)
+TIMESTAMP decompiling 804D9A0 size=0000057A times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_BYTE *@<eax>, unsigned int@<edx>)
+TIMESTAMP decompiling 8050A60 size=000001B3 times=1;usedcpu 00:00:00 ...void __usercall(struct timespec *@<eax>, unsigned int *@<edx>, int@<ecx>)
+TIMESTAMP decompiling 804F890 size=00000349 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int@<ebx>, int@<ebp>, int@<edi>, int@<esi>, char *, unsigned int, unsigned int, int (__cdecl *)(char *, char *, int), int)
+TIMESTAMP decompiling 804EAC0 size=000008AE times=1;usedcpu 00:00:00 ...int __cdecl(unsigned __int8 **)
+TIMESTAMP decompiling 804E9E0 size=000000D5 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int a1@<eax>, int a2@<edx>, int *a3@<ecx>, int a4@<ebp>)
+TIMESTAMP decompiling 804E610 size=00000142 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(unsigned __int8 *, unsigned int)
+TIMESTAMP decompiling 804E760 size=00000209 times=1;usedcpu 00:00:00 ...int __cdecl(unsigned __int8 *, unsigned __int8 **, _DWORD *, unsigned __int8 **, char **, _DWORD *)
+TIMESTAMP decompiling 804E0D0 size=0000053D times=1;usedcpu 00:00:00 ...unsigned int **__cdecl(unsigned int ***, unsigned int *, unsigned int, int, unsigned int *, unsigned int *, unsigned int *, unsigned int *, unsigned int *, unsigned int *, int)
+TIMESTAMP decompiling 804C420 size=00001541 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(size_t@<ebp>, int@<esi>, int *, int)
+TIMESTAMP decompiling 804C140 size=000002D2 times=1;usedcpu 00:00:00 ...__int64 __cdecl(unsigned int *, unsigned int *, unsigned int *, int)
+TIMESTAMP decompiling 804B970 size=000007C5 times=1;usedcpu 00:00:00 ...unsigned __int8 *__cdecl(char *, unsigned __int8 *, int, int, int, unsigned int)
+TIMESTAMP decompiling 804ADC0 size=00000BA6 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<esi>, int *, int, unsigned __int8 *, int, _DWORD *)
 TIMESTAMP decompiling 809EE60 size=00000091 times=0...
 TIMESTAMP decompiling 809FA20 size=00000144 times=0...
 TIMESTAMP decompiling 809FB70 size=0000010C times=0...
@@ -1571,7 +1570,7 @@ TIMESTAMP decompiling 805C8C0 size=00000122 times=0...
 TIMESTAMP decompiling 8058900 size=000001F1 times=0...
 TIMESTAMP decompiling 805C9F0 size=000000C0 times=0...
 TIMESTAMP decompiling 805CAB0 size=00000019 times=0...
-TIMESTAMP decompiling 805C9F0 size=000000C0 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(const struct timespec *a1@<eax>, int a2@<ebp>, int *a3@<edi>, int a4)
+TIMESTAMP decompiling 805C9F0 size=000000C0 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(const struct timespec *@<eax>, int@<ebp>, int *@<edi>, int)
 TIMESTAMP decompiling 805CAB0 size=00000019 times=1;usedcpu 00:00:00 ...const struct timespec *__usercall@<eax>(int a1@<ebp>, int *a2@<edi>, const struct timespec *a3)
 TIMESTAMP decompiling 805CE40 size=00000230 times=0...
 TIMESTAMP decompiling 805D210 size=00000049 times=0...
@@ -1592,7 +1591,6 @@ TIMESTAMP decompiling 805D570 size=0000026D times=0...
 TIMESTAMP decompiling 805D7E0 size=0000003C times=0...
 TIMESTAMP decompiling 805D910 size=00000128 times=0...
 TIMESTAMP decompiling 805DDC0 size=00000046 times=0...
-TIMESTAMP decompiling 805DA40 size=00000380 times=2;usedcpu 00:00:00 ...int *__usercall@<eax>(int ebp0@<ebp>, _BYTE *a1, const struct timespec *a2)
 TIMESTAMP decompiling 805DE10 size=00000014 times=0...
 TIMESTAMP decompiling 805DE30 size=00000047 times=0...
 TIMESTAMP decompiling 805DE80 size=0000006F times=0...

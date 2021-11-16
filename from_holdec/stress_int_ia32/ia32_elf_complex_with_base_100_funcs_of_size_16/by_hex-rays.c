@@ -10,24 +10,15 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049397();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// char *deregister_tm_clones();
-// int register_tm_clones();
-// char *_do_global_dtors_aux();
-// int frame_dummy();
 int log_size_4_var_000();
 int log_size_4_var_001();
 int log_size_4_var_002();
 int log_size_4_var_003();
-// int __usercall log_size_4_var_004@<eax>(char a1@<zf>);
+// int __usercall log_size_4_var_004@<eax>(char@<zf>);
 unsigned __int32 log_size_4_var_005();
 unsigned int log_size_4_var_006();
 unsigned int log_size_4_var_007();
@@ -40,7 +31,7 @@ int log_size_4_var_013();
 int log_size_4_var_014();
 unsigned int log_size_4_var_015();
 int log_size_4_var_016();
-// int __usercall log_size_4_var_017@<eax>(char a1@<efl>);
+// int __usercall log_size_4_var_017@<eax>(char@<efl>);
 unsigned int log_size_4_var_018();
 int log_size_4_var_019();
 int log_size_4_var_020();
@@ -51,7 +42,7 @@ int log_size_4_var_024();
 int log_size_4_var_025();
 int log_size_4_var_026();
 int log_size_4_var_027();
-// unsigned int __usercall log_size_4_var_028@<eax>(char a1@<efl>);
+// unsigned int __usercall log_size_4_var_028@<eax>(char@<efl>);
 int log_size_4_var_029();
 int log_size_4_var_030();
 unsigned int log_size_4_var_031();
@@ -123,9 +114,6 @@ unsigned int log_size_4_var_096();
 int log_size_4_var_097();
 int log_size_4_var_098();
 int log_size_4_var_099();
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -366,7 +354,7 @@ int log_size_4_var_000()
   __asm { rcl     al, 1 }
   v1 = ((unsigned int)_EAX | 0x3B1F2C0000000000uLL) % 0xCC53054A;
   BYTE1(v1) = 1;
-  return v1 + ((unsigned int)_EAX | 0x3B1F2C0000000000uLL) / 0xCC53054A - 646791991 + 866974390 - 1578290269;
+  return v1 + ((unsigned int)_EAX | 0x3B1F2C0000000000uLL) / 0xCC53054A - 646787895 + 866974390 - 1578290269;
 }
 
 //----- (080494F1) --------------------------------------------------------
@@ -393,23 +381,13 @@ int log_size_4_var_001()
 //----- (0804955D) --------------------------------------------------------
 int log_size_4_var_002()
 {
-  int v0; // ecx
   int v1; // edi
-  __int16 v2; // bp
-  int v4; // ecx
 
-  v0 = 1385867714;
   _ESI = 190399294;
-  v1 = 1068383918;
-  v2 = 17650;
+  HIWORD(v1) = 16302;
   __asm { rcl     si, 1 }
-  if ( _bittest(&v2, 0xAu) )
-    LOWORD(v1) = _ESI;
-  BYTE1(v0) = -20;
-  v4 = v0 >> 2;
-  LOWORD(v1) = v1 + 7326;
-  LOBYTE(v4) = (char)v4 >> 1;
-  return v1 + _ESI + v4 + 1089039898 + 1600630072;
+  LOWORD(v1) = _ESI + 7326;
+  return v1 + _ESI + 1435511090 + 1600630072;
 }
 
 //----- (080495D4) --------------------------------------------------------
@@ -472,7 +450,7 @@ unsigned __int32 log_size_4_var_005()
        - 1348246369
        + 960063544;
 }
-// 8049701: conditional instruction was optimized away because of 'al.1<50u'
+// 8049701: conditional instruction was optimized away because al.1<50u
 
 //----- (0804972B) --------------------------------------------------------
 unsigned int log_size_4_var_006()
@@ -525,8 +503,8 @@ unsigned int log_size_4_var_007()
   HIWORD(v4) = (unsigned int)(0x1B4F6D69CFD007F3uLL % _ECX) >> 16;
   __asm { cmpxchg ch, bl }
   v5 = _EBX >> 1;
-  v6 = (v5 * (unsigned int)(unsigned __int16)v3) >> 16;
-  LOWORD(v3) = v5 * v3;
+  v6 = (v5 * ((unsigned __int16)v3 | 0x1000u)) >> 16;
+  LOWORD(v3) = v5 * (v3 | 0x1000);
   LOWORD(v4) = __ROL2__(v6, 1);
   return v4 + _ECX + (unsigned __int8)v5 + v3 - 1441782404;
 }
@@ -578,14 +556,14 @@ int log_size_4_var_011()
   v2 = -1402312959;
   LOBYTE(_ECX) = -16;
   if ( __SETP__(12, 0) )
-    LOWORD(v2) = 13679;
+    LOWORD(v2) = -19089;
   BYTE1(_ECX) = __ROL1__(86, 240);
   BYTE1(v0) = 50;
   LOWORD(v4) = _ECX;
   HIWORD(v4) = v2;
   LOWORD(_ECX) = v4 >> 1;
   __asm { rcl     si, cl }
-  return v2 + _ESI + _ECX + v0 + 3275 - 2088553105 + 1300738636 + 395274249;
+  return v2 + _ESI + _ECX + v0 + 3275 - 2088520337 + 1300738636 + 395274249;
 }
 
 //----- (080499EA) --------------------------------------------------------
@@ -733,21 +711,10 @@ int log_size_4_var_019()
 //----- (08049D58) --------------------------------------------------------
 int log_size_4_var_020()
 {
-  int v0; // ebx
-  unsigned __int8 v2; // cf
-  int v3; // eax
-
-  v0 = -1221533626;
   _ECX = -1943070514;
-  v2 = _bittestandcomplement(&v0, 0xF5FD427E);
-  HIWORD(v3) = (v2 << 15) | 0x1794;
   _DH = -47;
   __asm { cmpxchg ch, dh }
-  LOBYTE(v0) = v0 - 1;
-  BYTE1(v0) -= 84;
-  LOWORD(v0) = v0 + 1;
-  LOWORD(v3) = -19985;
-  return 1828169392 - ((__PAIR64__(_ECX, -484124353) + 2312293745u) >> 32) + _ECX + v0 + v3 + 53573 - 2076030477;
+  return 1828169392 - ((__PAIR64__(_ECX, -484124353) + 2312293745u) >> 32) + _ECX + 247861114 - 2076030477;
 }
 
 //----- (08049DC5) --------------------------------------------------------
@@ -762,7 +729,7 @@ int log_size_4_var_021()
   BYTE1(v1) = __ROR1__(-1, 42);
   LOWORD(v0) = (unsigned int)(19686 * (__int16)v1) >> 16;
   LOWORD(v1) = 19686 * v1;
-  v0 &= 0xFFFF7FFF;
+  v0 &= ~0x8000u;
   LOBYTE(v0) = 1;
   v2 = __CFSHL__(BYTE1(v0), 1);
   BYTE1(v0) *= 2;
@@ -799,6 +766,7 @@ int log_size_4_var_023()
   __asm { cmpxchg al, bh }
   BYTE1(_EBX) = -85;
   __asm { rcr     esi, 0E5h }
+  LOWORD(_EAX) = _EAX ^ 0x8000;
   return _ESI + _EBX + _EAX + 1809144680 - 1301745851;
 }
 
@@ -881,7 +849,7 @@ int log_size_4_var_029()
     v2 = 1746534139;
   LOWORD(v0) = 18935 - v3;
   BYTE1(v1) += 2;
-  return v3 + v1 + v0 + v2 + 1746534139 - 669319062 + 56629031;
+  return v3 + v1 + v0 + v2 + 1746534139 - 669351830 + 56629031;
 }
 // 804A190: variable 'v4' is possibly undefined
 
@@ -916,12 +884,12 @@ unsigned int log_size_4_var_031()
   int v9; // ecx
 
   _EAX = 112421074;
-  _CL = 60;
+  _CL = 52;
   HIWORD(v2) = 5617;
   v4 = -659084810;
   __asm { rcr     eax, cl }
-  LOWORD(v2) = __ROL2__(-13809, 60);
-  LOBYTE(v4) = __ROR1__(-10, 60);
+  LOWORD(v2) = __ROL2__(-13809, 52);
+  LOBYTE(v4) = __ROR1__(-10, 52);
   v5 = v2 & ~(1 << _EAX);
   v6 = 2 * _EAX;
   v9 = -242089454;
@@ -991,16 +959,9 @@ int log_size_4_var_034()
 //----- (0804A3E5) --------------------------------------------------------
 int log_size_4_var_035()
 {
-  int v0; // ebp
-  unsigned __int8 v1; // cf
-
-  v0 = 126139455;
-  v1 = _bittestandcomplement(&v0, 0xC4129B7A);
-  _ECX = -1556820973 - (v1 + 289965095);
-  BYTE1(_ECX) = ((unsigned __int8)((unsigned __int16)(-13293 - (v1 - 31705)) >> 8) >> 1) | (((unsigned int)v1
-                                                                                           + 289965095 > 0xA334CC13) << 7);
+  _ECX = -1846795285;
   __asm { rcl     ecx, cl }
-  return v0 + _ECX - 1699108508 - 1733709867 + 1744343105;
+  return _ECX - 1629444679;
 }
 
 //----- (0804A45B) --------------------------------------------------------
@@ -1198,18 +1159,11 @@ int log_size_4_var_046()
 unsigned int log_size_4_var_047()
 {
   int v0; // edi
-  int v1; // ebx
-  int v2; // edx
-  char v3; // zf
 
   HIWORD(v0) = 6404;
   LOWORD(v0) = __ROR2__(24484, 205) | 0x98AE;
-  v1 = -821583819;
-  v2 = 2052646539;
-  LOBYTE(v1) = !(_bittest(&v2, 0x41u) | v3);
-  return v0 + v0 - 832320412 + ((v0 - 832320412) & 0xF46A1463) + v1 - 1585184758 + 627028651 - 2059475575;
+  return v0 + v0 - 832320412 + ((v0 - 832320412) & 0xF46A1463) - 1779739979 - 2059475575;
 }
-// 804A997: variable 'v3' is possibly undefined
 
 //----- (0804A9B2) --------------------------------------------------------
 int log_size_4_var_048()
@@ -1353,12 +1307,12 @@ int log_size_4_var_054()
   __asm { cmpxchg esi, edi }
   return _ESI - 1685455507 + 591333839;
 }
-// 804ACAC: conditional instruction was optimized away because of 'bh.1>=C6u'
+// 804ACAC: conditional instruction was optimized away because bh.1>=C6u
 
 //----- (0804ACCA) --------------------------------------------------------
 int log_size_4_var_055()
 {
-  return 128;
+  return 0;
 }
 
 //----- (0804AD34) --------------------------------------------------------
@@ -1517,21 +1471,21 @@ int log_size_4_var_067()
 {
   int v0; // ebx
   int v2; // esi
-  char v3; // zf
+  char v4; // zf
 
   v0 = -713666674;
-  _ECX = -1723144256;
+  _CX = -6208;
   v2 = 1808992084;
   __asm { cmpxchg cx, cx }
-  if ( _bittest(&_ECX, 0xD5764F8E) | v3 )
+  if ( ((_CX & 0x4000) != 0) | v4 )
     v2 = -1200416044;
-  BYTE1(v0) = v3;
+  BYTE1(v0) = v4;
   _EDI = v0 + 1478597910;
   _ECX = ((unsigned __int8)((v0 >= -1478597910) << (v0 >= -1478597910)) >> 2) | 0x80;
   __asm { rcr     edi, cl }
   return _EDI + v2 + (_ECX << 19) + v0 - 560662583 - 1074462476 - 1178716700;
 }
-// 804B22C: variable 'v3' is possibly undefined
+// 804B22C: variable 'v4' is possibly undefined
 
 //----- (0804B267) --------------------------------------------------------
 int log_size_4_var_068()
@@ -1614,7 +1568,7 @@ int log_size_4_var_072()
 //----- (0804B498) --------------------------------------------------------
 int log_size_4_var_073()
 {
-  _EDI = 126777469;
+  _EDI = 126761085;
   __asm { rcl     edi, 1 }
   return _EDI - 253522171;
 }
@@ -1668,7 +1622,7 @@ unsigned int log_size_4_var_077()
   unsigned int v0; // eax
 
   _BitScanForward(&v0, 0xFD65C23C);
-  return (v0 & 0xF3) - 710934545 + 710934535;
+  return (v0 & 0xF3) - 710934545 + 710934543;
 }
 
 //----- (0804B6CB) --------------------------------------------------------
@@ -1767,6 +1721,7 @@ unsigned int log_size_4_var_082()
   _EDX = 35805117;
   __asm { rcl     dx, cl }
   v7 = (unsigned int)(v5 >> 5) >> 12;
+  BYTE1(v7) &= ~2u;
   LOBYTE(v7) = 56;
   v8 = _EDX;
   LOWORD(_EDX) = _EDX - 14536;
@@ -1821,7 +1776,7 @@ int log_size_4_var_085()
   BYTE1(_ECX) += BYTE1(v7);
   if ( !__SETP__(BYTE1(_ECX), 0) )
     LOWORD(v2) = v7;
-  return v2 + v7 + _ECX + v5 - 668197992 - 1103887623 + 123027346;
+  return v2 + v7 + _ECX + v5 - 668197992 - 1103887621 + 123027346;
 }
 // 804BA3F: variable 'v4' is possibly undefined
 
@@ -1908,29 +1863,24 @@ int log_size_4_var_090()
   HIWORD(v3) = -15886;
   BYTE1(v3) = __ROR1__(-5, 1);
   __asm { rcl     edi, 34h }
-  LOBYTE(v3) = -2 - (_bittest(&_EDI, 0x15C5FFE2u) + 86);
+  LOBYTE(v3) = -2 - (((_EDI & 4) != 0) + 86);
   return _EDI + _EDX + v3 + 436207508 + 1424224382 + 166377171;
 }
 
 //----- (0804BC8D) --------------------------------------------------------
 int log_size_4_var_091()
 {
-  int v0; // ebx
-  unsigned __int8 v3; // cf
-  int v4; // edx
+  int v2; // edx
 
-  v0 = 1732182166;
   _EBP = -1041401740;
   _ESI = 2101952584;
-  v3 = _bittestandset(&v0, 0x6E3328A9u);
-  HIWORD(v4) = 30800;
-  LOWORD(v0) = v3 + (_WORD)v0 - 23624;
+  HIWORD(v2) = 30800;
   __asm { rcr     esi, 0D2h }
-  BYTE1(v4) = __ROR1__(0, 1);
+  BYTE1(v2) = __ROR1__(0, 1);
   _AX = __ROL2__(8721, 169);
-  LOBYTE(v4) = (_AX & 0x8000u) == 0;
+  LOBYTE(v2) = (_AX & 0x8000u) == 0;
   __asm { cmpxchg bp, ax }
-  return _EBP + v4 + v0 + _AX + 1848846505 - 581766186 + 318524490;
+  return _EBP + v2 + _AX - 713896201 - 581766186 + 318524490;
 }
 
 //----- (0804BD04) --------------------------------------------------------
@@ -1963,7 +1913,7 @@ int log_size_4_var_094()
   int v0; // eax
   int v2; // edx
   unsigned int v3; // et0
-  unsigned __int8 v4; // cf
+  bool v4; // cf
 
   HIWORD(v0) = -12339;
   _ECX = 168283971;
@@ -1973,7 +1923,8 @@ int log_size_4_var_094()
   LOWORD(v3) = 92;
   HIWORD(v3) = v2;
   LOWORD(v0) = v3 >> 3;
-  v4 = _bittestandreset((__int16 *)&v0, 0x1Cu);
+  v4 = (v0 & 0x1000) != 0;
+  LOWORD(v0) = v0 & 0xEFFF;
   LOBYTE(v2) = v4;
   return v2 + _ECX + v0 - 561636278 - 1782030432 + 886441348;
 }
@@ -2014,28 +1965,26 @@ int log_size_4_var_097()
   int v0; // ebx
   int v1; // esi
   int v2; // edi
-  unsigned __int8 v3; // cf
-  int v4; // edx
-  int v5; // ecx
+  int v3; // edx
+  int v4; // ecx
 
   v0 = -1353907376;
-  HIWORD(v5) = -31173;
+  HIWORD(v4) = -31173;
   HIWORD(v1) = 27167;
   HIWORD(v2) = -21630;
-  v4 = 1821338320;
-  v3 = _bittestandcomplement(&v4, 0x3F49D5B5u);
-  LOBYTE(v5) = (__ROL1__(-55, 201) >> 1) | (v3 << 7);
+  HIWORD(v3) = 27823;
+  LOBYTE(v4) = __ROL1__(-55, 201) >> 1;
   if ( !__OFADD__(-110, -126) )
     v0 = 1061803445;
-  BYTE1(v5) = 21;
+  BYTE1(v4) = 21;
   LOWORD(v1) = 13672;
-  LOWORD(v4) = ((unsigned __int16)v4 >> 1) | 0x8000;
+  BYTE1(v3) = -75;
   LOWORD(v2) = -8646;
-  LOWORD(v5) = v0 + v5;
-  LOBYTE(v4) = __ROR1__(v4, 18);
-  if ( BYTE1(v0) != (_BYTE)v5 )
-    LOWORD(v5) = -8646;
-  return v2 + v1 + v4 + v5 + v0 + 1061803445 - 1341744067 + 1490379720;
+  LOWORD(v4) = v0 + v4;
+  LOBYTE(v3) = __ROR1__(104, 18);
+  if ( BYTE1(v0) != (_BYTE)v4 )
+    LOWORD(v4) = -8646;
+  return v2 + v1 + v3 + v4 + v0 + 1061803445 - 1341744067 + 1490379720;
 }
 
 //----- (0804BFBE) --------------------------------------------------------

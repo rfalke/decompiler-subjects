@@ -10,23 +10,12 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void (*init_proc())(void);
 __int64 __fastcall sub_400368(); // weak
-// int __fastcall __libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// __int64 (**call_gmon_start())(void);
-// signed __int64 _do_global_dtors_aux();
-// void frame_dummy();
 int __cdecl main(int argc, const char **argv, const char **envp);
 void __cdecl enter();
 void __cdecl leave();
 void __cdecl loop1();
 int __cdecl loop2();
-// void _libc_csu_fini(void); idb
-// void _libc_csu_init(void); idb
-// void (*_do_global_ctors_aux())(void);
-// signed __int64 term_proc();
-// __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations

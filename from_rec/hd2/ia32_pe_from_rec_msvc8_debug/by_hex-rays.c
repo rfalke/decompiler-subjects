@@ -16,26 +16,19 @@
 void __cdecl __noreturn j____report_gsfailure();
 char *__cdecl j_strcat(char *Destination, const char *Source);
 size_t __cdecl j_strlen(const char *Str);
-_DWORD __cdecl sub_4110C3(_DWORD, _DWORD, _DWORD); // weak
+int __cdecl sub_4110C3(int, int, int);
 char *__cdecl j_strcpy(char *Destination, const char *Source);
 int __cdecl sub_411163(char *ErrMsg); // idb
-int __cdecl sub_411410(int a1, int a2, int a3);
+int __cdecl sub_411410(int, int, int);
 int __cdecl sub_4116A0(char *ErrMsg); // idb
 int __cdecl sub_411860(char *FileName, struct _stat64i32 *Stat); // idb
 int __cdecl main_0(int argc, const char **argv, const char **envp);
 void __thiscall sub_411970(void *this);
-int __cdecl sub_412C60(int a1);
+int __cdecl sub_412C60(int);
 int sub_412C90();
 int sub_412CA0();
 int (*sub_412E00())(void);
 int (*sub_412E30())(void);
-// int __cdecl stat64i32(const char *FileName, struct _stat64i32 *Stat);
-// void __cdecl perror(const char *ErrMsg);
-// FILE *__cdecl fopen(const char *FileName, const char *Mode);
-// size_t __cdecl fread(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
-// int __cdecl fclose(FILE *Stream);
-// int sprintf(char *const Buffer, const char *const Format, ...);
-// int printf(const char *const Format, ...);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -109,7 +102,7 @@ int (*dword_4166A4[66])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
 _UNKNOWN unk_4167AC; // weak
 int (*dword_4169B0[66])(void) =
 {
@@ -179,10 +172,17 @@ int (*dword_4169B0[66])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
 int dword_417000 = -1153374642; // weak
 int dword_417538; // weak
 int dword_41753C; // weak
+// extern int (__cdecl *stat64i32)(const char *FileName, struct _stat64i32 *Stat);
+// extern void (__cdecl *perror)(const char *ErrMsg);
+// extern FILE *(__cdecl *fopen)(const char *FileName, const char *Mode);
+// extern size_t (__cdecl *fread)(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
+// extern int (__cdecl *fclose)(FILE *Stream);
+// extern int (*sprintf)(char *const Buffer, const char *const Format, ...);
+// extern int (*printf)(const char *const Format, ...);
 
 
 //----- (00411410) --------------------------------------------------------
@@ -231,8 +231,7 @@ int __cdecl sub_411410(int a1, int a2, int a3)
 //----- (004116A0) --------------------------------------------------------
 int __cdecl sub_4116A0(char *ErrMsg)
 {
-  int result; // eax
-  size_t v2; // [esp+D0h] [ebp-74h]
+  int v2; // [esp+D0h] [ebp-74h]
   struct _stat64i32 v3; // [esp+DCh] [ebp-68h] BYREF
   FILE *Stream; // [esp+114h] [ebp-30h]
   unsigned int i; // [esp+120h] [ebp-24h]
@@ -241,7 +240,7 @@ int __cdecl sub_4116A0(char *ErrMsg)
   if ( sub_411860(ErrMsg, &v3) || (Stream = fopen(ErrMsg, "rb")) == 0 )
   {
     perror(ErrMsg);
-    result = 1;
+    return 1;
   }
   else
   {
@@ -250,14 +249,12 @@ int __cdecl sub_4116A0(char *ErrMsg)
       v2 = fread(Buffer, 1u, 0x10u, Stream);
       if ( !v2 )
         break;
-      sub_4110C3(Buffer, i, v2);
+      sub_4110C3((int)Buffer, i, v2);
     }
     fclose(Stream);
-    result = 0;
+    return 0;
   }
-  return result;
 }
-// 4110C3: using guessed type _DWORD __cdecl sub_4110C3(_DWORD, _DWORD, _DWORD);
 
 //----- (00411860) --------------------------------------------------------
 int __cdecl sub_411860(char *FileName, struct _stat64i32 *Stat)
@@ -333,6 +330,7 @@ int (*sub_412E00())(void)
   }
   return result;
 }
+// 4166A4: using guessed type int (*dword_4166A4[66])(void);
 
 //----- (00412E30) --------------------------------------------------------
 int (*sub_412E30())(void)
@@ -355,6 +353,7 @@ int (*sub_412E30())(void)
   }
   return result;
 }
+// 4169B0: using guessed type int (*dword_4169B0[66])(void);
 
 // nfuncs=115 queued=10 decompiled=10 lumina nreq=0 worse=0 better=0
 // ALL OK, 10 function(s) have been successfully decompiled

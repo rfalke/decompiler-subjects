@@ -44,14 +44,10 @@ __int64 __fastcall vowels(const char *a1)
         if ( !*a1 )
           return 0xFFFFFFFFLL;
         if ( v1 == 97 )
-        {
 LABEL_14:
           ++v4;
-          goto LABEL_16;
-        }
       }
     }
-LABEL_16:
     ++a1;
   }
   return v4;

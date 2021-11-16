@@ -12,49 +12,49 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// char __usercall sub_401000@<al>(int a1@<eax>, int a2, int a3, int a4, int a5, unsigned __int8 a6, unsigned __int8 a7);
-// float *__usercall sub_4011E0@<eax>(float *result@<eax>, int a2, int a3, float a4, float a5, float a6, float a7);
-// int __usercall sub_401600@<eax>(int result@<eax>, int a2@<ebx>, int a3, float a4, float a5, float a6);
+// char __usercall sub_401000@<al>(int@<eax>, int, int, int, int, unsigned __int8, unsigned __int8);
+// float *__usercall sub_4011E0@<eax>(float *result@<eax>, int, int, float, float, float, float);
+// int __usercall sub_401600@<eax>(int result@<eax>, int@<ebx>, int, float, float, float);
 int __cdecl sub_401680(int, int, float, float, float); // idb
-// void __usercall sub_4018C0(int a1@<eax>, float a2);
+// void __usercall sub_4018C0(int@<eax>, float);
 char sub_4019E0();
-float *__cdecl sub_401A40(int *a1);
-// _BYTE *__usercall sub_401AF0@<eax>(int *a1@<eax>);
-// int __usercall sub_401B90@<eax>(int *a1@<edi>, int a2, int a3, int a4);
+float *__cdecl sub_401A40(int *);
+// _BYTE *__usercall sub_401AF0@<eax>(int *@<eax>);
+// int __usercall sub_401B90@<eax>(int *@<edi>, int, int, int);
 int *sub_401D00();
-// _DWORD *__usercall sub_401E50@<eax>(int a1@<eax>);
-// void *__usercall sub_402010@<eax>(unsigned __int8 a1@<al>, _DWORD *a2@<edi>, void *a3, int a4);
-// char __usercall sub_402070@<al>(int a1@<eax>, _DWORD *a2@<ecx>, _DWORD *a3, int a4);
-// _BYTE *__usercall sub_4020E0@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<edi>, char a4, int a5, size_t Size);
-// int __usercall sub_402150@<eax>(int *a1@<eax>, int a2@<edx>, int *a3@<ecx>, int a4);
-int __fastcall sub_402230(char **a1, int a2);
-// int __usercall sub_4022A0@<eax>(int result@<eax>, int a2@<ecx>);
-int __cdecl sub_4022C0(int a1);
+// _DWORD *__usercall sub_401E50@<eax>(int@<eax>);
+// void *__usercall sub_402010@<eax>(unsigned __int8@<al>, _DWORD *@<edi>, void *, int);
+// char __usercall sub_402070@<al>(int@<eax>, _DWORD *@<ecx>, _DWORD *, int);
+// _BYTE *__usercall sub_4020E0@<eax>(_BYTE *a1@<eax>, int a2@<ecx>, int *a3@<edi>, char a4, int a5, size_t Size);
+// int __usercall sub_402150@<eax>(int *@<eax>, int@<edx>, int *@<ecx>, int);
+int __fastcall sub_402230(char **, int);
+// int __usercall sub_4022A0@<eax>(int result@<eax>, int@<ecx>);
+int __cdecl sub_4022C0(int);
 _DWORD *sub_402340();
 int nullsub_1(); // weak
 int __cdecl sub_4023D0(int, int, char *FileName); // idb
 int sub_402780();
 int sub_4028A0();
-int __cdecl sub_402900(int a1);
-// int __usercall sub_402A40@<eax>(char *a1@<ecx>, int a2@<esi>);
+int __cdecl sub_402900(int);
+// int __usercall sub_402A40@<eax>(char *@<ecx>, int@<esi>);
 _DWORD *sub_402AA0();
-// int __usercall sub_402B70@<eax>(size_t *a1@<eax>, _DWORD *a2);
+// int __usercall sub_402B70@<eax>(size_t *@<eax>, _DWORD *);
 int sub_402E00();
-// int *__usercall sub_403040@<eax>(int *result@<eax>, int a2, int a3, int a4, int a5, float a6);
-// _DWORD *__usercall sub_403190@<eax>(_DWORD *a1@<eax>);
-// int *__usercall sub_4032D0@<eax>(signed int *a1@<eax>, char **a2@<ecx>, int a3, int a4, int a5);
+// int *__usercall sub_403040@<eax>(int *result@<eax>, int, int, int, int, float);
+// _DWORD *__usercall sub_403190@<eax>(_DWORD *@<eax>);
+// int *__usercall sub_4032D0@<eax>(signed int *@<eax>, char **@<ecx>, int, int, int);
 int __cdecl main(int argc, const char **argv, const char **envp);
 int __cdecl sub_403A50(int, float, float); // idb
 void *sub_403EF0();
-int __cdecl sub_403FB0(size_t *a1);
+int __cdecl sub_403FB0(size_t *);
 _DWORD *sub_404080();
-int __cdecl sub_4041E0(char *a1, int a2);
-// int __usercall sub_4042F0@<eax>(int a1@<edx>, char **a2@<ecx>, int a3, int a4, int a5);
+int __cdecl sub_4041E0(char *, int);
+// int __usercall sub_4042F0@<eax>(int@<edx>, char **@<ecx>, int, int, int);
 int sub_404A70();
-_DWORD *__cdecl sub_404C90(float a1);
+_DWORD *__cdecl sub_404C90(float);
 _BYTE *sub_404E40();
 _DWORD *sub_404FD0();
-_BYTE *__cdecl sub_405030(int a1, int a2);
+_BYTE *__cdecl sub_405030(int, int);
 // int __cdecl SDL_UpdateRect(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD); weak
 // int __cdecl SDL_Init(_DWORD); weak
 // int __cdecl SDL_SetVideoMode(_DWORD, _DWORD, _DWORD, _DWORD); weak
@@ -65,128 +65,128 @@ _BYTE *__cdecl sub_405030(int a1, int a2);
 // int __cdecl SDL_SetColors(_DWORD, _DWORD, _DWORD, _DWORD); weak
 // int __cdecl SDL_Flip(_DWORD); weak
 // int SDL_Quit(void); weak
-int __cdecl sub_405120(int a1, int a2);
-int __cdecl sub_405140(int *a1, int a2, _DWORD *a3, _DWORD *a4, _DWORD *a5, _DWORD *a6, _DWORD *a7, _DWORD *a8, _DWORD *a9);
-int __cdecl sub_405270(int a1, int a2, _DWORD *a3, _DWORD *a4);
-void **__cdecl sub_4052B0(char *a1, int a2, int a3, int a4, int a5, int (__cdecl *a6)(char *, size_t), int a7);
+int __cdecl sub_405120(int, int);
+int __cdecl sub_405140(int *, int, _DWORD *, _DWORD *, _DWORD *, _DWORD *, _DWORD *, _DWORD *, _DWORD *);
+int __cdecl sub_405270(int, int, _DWORD *, _DWORD *);
+void **__cdecl sub_4052B0(char *, int, int, int, int, int (__cdecl *)(char *, size_t), int);
 int __cdecl sub_405510(char *EndPtr, int); // idb
-int (__cdecl *__cdecl sub_4064B0(int a1, void *a2, void *a3))(int, _DWORD, _DWORD);
-int (__cdecl *__cdecl sub_4069C0(int a1, void **a2))(int, _DWORD, _DWORD);
-void __cdecl sub_406A20(char *EndPtr, int a2);
-void *__cdecl sub_407890(void *a1, int a2, int a3);
-void **__cdecl sub_407B20(char *a1, int a2, int a3, int a4);
-void __cdecl sub_407B50(_DWORD **a1, void **a2, void **a3);
-// int __usercall sub_407C10@<eax>(int a1@<eax>, int a2, int a3);
-int __cdecl sub_407C40(int a1, unsigned int a2, unsigned int a3);
-void *__cdecl sub_407D70(int a1, unsigned int a2, unsigned int a3);
+int (__cdecl *__cdecl sub_4064B0(int, void *, void *))(int, _DWORD, _DWORD);
+char *__cdecl sub_4069C0(int a1, void **a2);
+void __cdecl sub_406A20(char *EndPtr, int);
+void *__cdecl sub_407890(void *, int, int);
+void **__cdecl sub_407B20(char *, int, int, int);
+void __cdecl sub_407B50(_DWORD **, void **, void **);
+// int __usercall sub_407C10@<eax>(int@<eax>, int, int);
+int __cdecl sub_407C40(int, unsigned int, unsigned int);
+void *__cdecl sub_407D70(int, unsigned int, unsigned int);
 int __cdecl sub_407DC0(int, void *Block); // idb
-int __cdecl sub_407DD0(int a1);
-void __cdecl sub_407DF0(int a1, _BYTE *a2, unsigned int a3);
-void *__cdecl sub_407E40(int *a1, unsigned int a2);
-void __cdecl png_free_data(int a1, int a2, int a3, int a4);
-void *__cdecl sub_408230(int a1, int a2);
-int __cdecl sub_408290(int a1, int a2);
-int __cdecl sub_4082A0(int a1, const void *a2);
-int __cdecl sub_408390(int a1);
-void *__cdecl sub_4083B0(void *a1);
-// char *__usercall sub_4083F0@<eax>(int a1@<eax>, const char *a2@<edx>, int a3);
-void __cdecl __noreturn sub_408490(int *a1, char *a2);
-int __cdecl sub_4085C0(const char *a1);
-_DWORD *__cdecl sub_408720(_DWORD *a1, int a2, int a3, int a4);
-void __cdecl __noreturn sub_408740(int *a1, char *a2);
-int __cdecl sub_4087F0(int a1, _BYTE *a2);
-void __cdecl __noreturn sub_408850(int *a1, const char *a2);
-int __cdecl sub_408880(int a1, const char *a2);
-int __cdecl sub_4088C0(int *a1);
-size_t __cdecl sub_4088E0(int a1, void *Buffer, size_t ElementCount);
-int __cdecl sub_408920(_DWORD *a1, int a2, int a3);
-void *__cdecl sub_408980(int a1, int (__cdecl *a2)(char *, size_t), int a3);
-void __cdecl sub_408A30(void *Block, int a2, int a3);
-void *__cdecl sub_408AB0(int a1, size_t Size);
-void *__cdecl sub_408AF0(int a1, void *a2, void *Src, size_t Size);
-void *__cdecl sub_408B10(int a1, void *a2, int Val, size_t Size);
-_DWORD *__cdecl sub_408B30(_DWORD *a1, int a2, int a3, int a4);
+unsigned int __cdecl sub_407DD0(int a1);
+void __cdecl sub_407DF0(int, _BYTE *, unsigned int);
+void *__cdecl sub_407E40(int *, unsigned int);
+void __cdecl sub_407E80(int, int, int, int);
+void *__cdecl sub_408230(int, int);
+int __cdecl sub_408290(int, int);
+int __cdecl sub_4082A0(int, const void *);
+int __cdecl sub_408390(int);
+void *__cdecl sub_4083B0(void *);
+// char *__usercall sub_4083F0@<eax>(int@<eax>, const char *@<edx>, int);
+void __cdecl __noreturn sub_408490(int *, char *);
+int __cdecl sub_4085C0(const char *);
+_DWORD *__cdecl sub_408720(_DWORD *, int, int, int);
+void __cdecl __noreturn sub_408740(int *, char *);
+int __cdecl sub_4087F0(int, _BYTE *);
+void __cdecl __noreturn sub_408850(int *, const char *);
+int __cdecl sub_408880(int, const char *);
+int __cdecl sub_4088C0(int *);
+size_t __cdecl sub_4088E0(int, void *Buffer, size_t ElementCount);
+int __cdecl sub_408920(_DWORD *, int, int);
+void *__cdecl sub_408980(int, int (__cdecl *)(char *, size_t), int);
+void __cdecl sub_408A30(void *Block, int, int);
+void *__cdecl sub_408AB0(int, size_t Size);
+void *__cdecl sub_408AF0(int, void *, void *Src, size_t Size);
+void *__cdecl sub_408B10(int, void *, int Val, size_t Size);
+_DWORD *__cdecl sub_408B30(_DWORD *, int, int, int);
 // void __cdecl __noreturn exit_1(int Code);
-void *__cdecl sub_408BA0(int a1, size_t Size);
-void __cdecl sub_408BF0(int a1, void *Block);
-void *__cdecl sub_408C20(int a1, size_t Size);
-int __cdecl png_get_uint_32(unsigned __int8 *a1);
-__int16 __cdecl sub_408C80(unsigned __int8 *a1);
-void __cdecl png_crc_read(struct png_struct_def *, unsigned __int8 *, unsigned int); // idb
-BOOL __cdecl png_crc_error(struct png_struct_def *a1);
-char *__cdecl sub_408D40(int a1, int a2, char *a3, int a4, size_t a5, size_t *a6);
-unsigned __int8 __cdecl sub_4090D0(int *a1, unsigned __int8 *a2);
+void *__cdecl sub_408BA0(int, size_t Size);
+void __cdecl sub_408BF0(int, void *Block);
+void *__cdecl sub_408C20(int, size_t Size);
+int __cdecl sub_408C50(unsigned __int8 *);
+__int16 __cdecl sub_408C80(unsigned __int8 *);
+void __cdecl sub_408CA0(int *, _BYTE *, unsigned int);
+BOOL __cdecl sub_408CD0(int);
+char *__cdecl sub_408D40(int, int, char *, int, size_t, size_t *);
+unsigned __int8 __cdecl sub_4090D0(int *, unsigned __int8 *);
 int __cdecl sub_409130(int, void *, int); // idb
-unsigned int __cdecl sub_409430(unsigned int a1);
-char __cdecl sub_409860(int a1, int a2, _BYTE *a3, _BYTE *a4, int a5);
-void *__cdecl sub_409A60(int a1);
-unsigned int __cdecl sub_409D20(int *a1, unsigned __int8 *a2);
-int __cdecl png_crc_finish(struct png_struct_def *, unsigned int); // idb
-void __cdecl sub_409E10(int a1, int a2, int a3);
-void __cdecl sub_409F90(int a1, int a2, signed int a3);
-int __cdecl sub_40A120(int *a1, int a2, unsigned int a3);
-void __cdecl sub_40A170(int *a1, int a2, unsigned int a3);
-void __cdecl sub_40A2E0(int a1, int a2, unsigned int a3);
-int __cdecl sub_40A450(int *a1, int a2, unsigned int a3);
-void __cdecl sub_40A940(int *a1, int a2, unsigned int a3);
-void __cdecl sub_40AB30(int *a1, int a2, unsigned int a3);
-void __cdecl sub_40ACE0(int *a1, int a2, unsigned int a3);
-void __cdecl sub_40AF00(int a1, int a2, unsigned int a3);
-void __cdecl png_handle_bKGD(struct png_struct_def *, struct png_info_struct *, unsigned int); // idb
-void __cdecl sub_40B390(int a1, int a2, unsigned int a3);
-void __cdecl sub_40B530(int *a1, int a2, unsigned int a3);
-void __cdecl sub_40B650(int *a1, int a2, unsigned int a3);
-void __cdecl sub_40B780(int *a1, int a2, unsigned int a3);
-void __cdecl sub_40B9E0(char *EndPtr, int a2, int a3);
-void __cdecl sub_40BBA0(int a1, _DWORD *a2, unsigned int a3);
-void __cdecl sub_40BCC0(int a1, _DWORD *a2, unsigned int a3);
-void __cdecl sub_40BDE0(int a1, _DWORD *a2, int a3);
+unsigned int __cdecl sub_409430(unsigned int);
+char __cdecl sub_409860(int, int, _BYTE *, _BYTE *, int);
+void *__cdecl sub_409A60(int);
+unsigned int __cdecl sub_409D20(int *, unsigned __int8 *);
+int __cdecl sub_409D50(int, unsigned int);
+void __cdecl sub_409E10(int, int, int);
+void __cdecl sub_409F90(int, int, signed int);
+int __cdecl sub_40A120(int *, int, unsigned int);
+void __cdecl sub_40A170(int *, int, unsigned int);
+void __cdecl sub_40A2E0(int, int, unsigned int);
+int __cdecl sub_40A450(int *, int, unsigned int);
+void __cdecl sub_40A940(int *, int, unsigned int);
+void __cdecl sub_40AB30(int *, int, unsigned int);
+void __cdecl sub_40ACE0(int *, int, unsigned int);
+void __cdecl sub_40AF00(int, int, unsigned int);
+void __cdecl sub_40B150(int, int, unsigned int);
+void __cdecl sub_40B390(int, int, unsigned int);
+void __cdecl sub_40B530(int *, int, unsigned int);
+void __cdecl sub_40B650(int *, int, unsigned int);
+void __cdecl sub_40B780(int *, int, unsigned int);
+void __cdecl sub_40B9E0(char *EndPtr, int, int);
+void __cdecl sub_40BBA0(int, _DWORD *, unsigned int);
+void __cdecl sub_40BCC0(int, _DWORD *, unsigned int);
+void __cdecl sub_40BDE0(int, _DWORD *, int);
 int __cdecl sub_40BF40(int, int, size_t Size); // idb
-unsigned int __cdecl sub_40C120(int a1);
-char __cdecl sub_40C430(int *a1, int a2);
-void __cdecl sub_40C570(int *a1, _BYTE *a2, unsigned __int8 *a3);
-void __cdecl sub_40C750(int a1, _BYTE *a2);
-_BYTE *__cdecl sub_40C7A0(int *a1, int a2);
-_BYTE *__cdecl sub_40C920(int *a1, int a2);
-char __cdecl sub_40CA00(int a1, int a2, unsigned int a3, char a4);
-void __cdecl sub_40CD20(int *a1, int a2);
-int __cdecl sub_40CEE0(int a1, int *a2, unsigned __int8 *a3);
-char __cdecl sub_40D5E0(int *a1, unsigned __int8 *a2, _WORD *a3, _BYTE *a4, _WORD *a5, int a6, int a7, int a8, int a9, int a10, int a11, __int16 a12);
-char __cdecl sub_40E5E0(int *a1, unsigned __int8 *a2, int a3, int a4, char a5);
-void __cdecl sub_40E9A0(int *a1, int a2, int a3, int a4, int a5);
-char __cdecl sub_40EBF0(int *a1, int a2, _WORD *a3);
-char __cdecl sub_40EFF0(int *a1, char *a2, int a3, int a4);
-void __cdecl sub_40F160(int a1);
-char __cdecl sub_40F880(int *a1, int a2);
-void __cdecl sub_40F950(int a1);
-void __cdecl sub_410530(int a1);
-int __cdecl sub_4109D0(int a1);
-char __cdecl sub_4109F0(int a1, _BYTE *a2);
-void __cdecl sub_410A80(int a1, char *a2);
-_BYTE *__cdecl sub_410AC0(int a1, _BYTE *a2);
-int __cdecl sub_410B20(int a1, _BYTE *a2, int a3);
-char __cdecl sub_410DD0(int *a1, char *a2);
-void __cdecl sub_410EC0(int a1, int a2, int a3);
-void __cdecl png_set_cHRM(int a1, int a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10);
-int __cdecl sub_411230(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);
-void __cdecl sub_411420(int a1, int a2, double a3);
-void __cdecl sub_4114A0(int a1, int a2, int a3);
-void __cdecl sub_411520(int a1, int a2, int a3);
-void __cdecl png_set_IHDR(jmp_buf Buf, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);
-void __cdecl sub_411810(int a1, int a2, int a3, int a4, char a5);
-void __cdecl sub_411840(int a1, int a2, void *Src, int a4, int a5, char a6, int a7, void *a8, int a9);
-void __cdecl sub_4119E0(int a1, int a2, char a3, double a4, double a5);
-void __cdecl sub_411A20(int a1, int a2, int a3, int a4, char a5);
-void __cdecl sub_411A50(int a1, int a2, void *Src, int a4);
-void __cdecl sub_411AE0(int a1, int a2, int a3);
-void __cdecl sub_411B10(int a1, int a2, char a3);
-void __cdecl sub_411B30(int a1, int a2, char a3);
-void __cdecl sub_411C10(int a1, int a2, int a3, char a4, void *Src, size_t Size);
-int __cdecl sub_411D10(int a1, _DWORD *a2, int a3, int a4);
-void __cdecl sub_411F00(int a1, _DWORD *a2, _DWORD *a3);
-void __cdecl sub_411F30(int a1, int a2, void *Src, size_t Size, int a5);
-int __cdecl sub_411FC0(int a1, int a2, int a3, int a4);
-void __cdecl sub_412100(int a1, int a2, int a3, int a4);
+unsigned int __cdecl sub_40C120(int);
+char __cdecl sub_40C430(int *, int);
+void __cdecl sub_40C570(int *, _BYTE *, unsigned __int8 *);
+void __cdecl sub_40C750(int, _BYTE *);
+int *__cdecl sub_40C7A0(int *a1, int a2);
+int *__cdecl sub_40C920(int *a1, int a2);
+char __cdecl sub_40CA00(int, int, unsigned int, char);
+void __cdecl sub_40CD20(int *, int);
+int __cdecl sub_40CEE0(int, int *, unsigned __int8 *);
+char __cdecl sub_40D5E0(int *, unsigned __int8 *, _WORD *, _BYTE *, _WORD *, int, int, int, int, int, int, __int16);
+char __cdecl sub_40E5E0(int *, unsigned __int8 *, int, int, char);
+void __cdecl sub_40E9A0(int *, int, int, int, int);
+char __cdecl sub_40EBF0(int *, int, _WORD *);
+char __cdecl sub_40EFF0(int *, char *, int, int);
+void __cdecl sub_40F160(int);
+char __cdecl sub_40F880(int *, int);
+void __cdecl sub_40F950(int);
+void __cdecl sub_410530(int);
+int __cdecl sub_4109D0(int);
+char __cdecl sub_4109F0(int, _BYTE *);
+void __cdecl sub_410A80(int, char *);
+_BYTE *__cdecl sub_410AC0(int, _BYTE *);
+unsigned int __cdecl sub_410B20(int a1, _BYTE *a2, int a3);
+char __cdecl sub_410DD0(int *, char *);
+void __cdecl sub_410EC0(int, int, int);
+void __cdecl sub_410EF0(int, int, double, double, double, double, double, double, double, double);
+int __cdecl sub_411230(int, int, int, int, int, int, int, int, int, int);
+void __cdecl sub_411420(int, int, double);
+void __cdecl sub_4114A0(int, int, int);
+void __cdecl sub_411520(int, int, int);
+void __cdecl sub_4115E0(int *, int, unsigned int, unsigned int, int, int, int, int, int);
+void __cdecl sub_411810(int, int, int, int, char);
+void __cdecl sub_411840(int, int, void *Src, int, int, char, int, void *, int);
+void __cdecl sub_4119E0(int, int, char, double, double);
+void __cdecl sub_411A20(int, int, int, int, char);
+void __cdecl sub_411A50(int, int, void *Src, int);
+void __cdecl sub_411AE0(int, int, int);
+void __cdecl sub_411B10(int, int, char);
+void __cdecl sub_411B30(int, int, char);
+void __cdecl sub_411C10(int, int, int, char, void *Src, size_t Size);
+int __cdecl sub_411D10(int, _DWORD *, int, int);
+void __cdecl sub_411F00(int, _DWORD *, _DWORD *);
+void __cdecl sub_411F30(int, int, void *Src, size_t Size, int);
+int __cdecl sub_411FC0(int, int, int, int);
+void __cdecl sub_412100(int, int, int, int);
 // void __fastcall __security_check_cookie(uintptr_t StackCookie);
 // int __cdecl setjmp3(_DWORD, _DWORD); weak
 // void *__cdecl memset(void *, int Val, size_t Size);
@@ -196,35 +196,19 @@ void __cdecl sub_4127AB(); // idb
 int __cdecl UserMathErrorFunction();
 // int _get_sse2_info(void); weak
 int sub_412AB8();
-int __cdecl inflateReset(_DWORD *a1);
-int __cdecl sub_412B50(_DWORD *a1, int a2, _BYTE *a3, int a4);
-int __cdecl sub_412C20(_DWORD *a1, _BYTE *a2, int a3);
+int __cdecl sub_412AF0(_DWORD *);
+int __cdecl sub_412B50(_DWORD *, int, _BYTE *, int);
+int __cdecl sub_412C20(_DWORD *, _BYTE *, int);
 // _DWORD *__usercall sub_412C40@<eax>(_DWORD *result@<eax>);
-// int __usercall sub_412C60@<eax>(int a1@<eax>, int a2@<ebx>);
-int __cdecl inflate(int a1, int a2);
-int __cdecl inflateEnd(_DWORD *a1);
-int __cdecl sub_414630(int a1, _BYTE *a2, unsigned int a3);
-void *__cdecl sub_414650(int a1, int a2, int a3);
-void __cdecl sub_414670(int a1, void *Block);
-_DWORD *__cdecl inflate_fast(_DWORD *a1, int a2);
-int __cdecl inflate_table(int a1, int a2, unsigned int a3, _DWORD **a4, unsigned int *a5, _WORD *a6);
-unsigned int __cdecl adler32(unsigned int a1, unsigned __int8 *a2, unsigned int a3);
-// void *__cdecl malloc(size_t Size);
-// FILE *__cdecl _iob_func();
-// FILE *__cdecl fopen(const char *FileName, const char *Mode);
-// int fprintf(FILE *const Stream, const char *const Format, ...);
-// int __cdecl fclose(FILE *Stream);
-// void __cdecl free(void *Block);
-// int __cdecl rand();
-// int printf(const char *const Format, ...);
-// void __cdecl __noreturn exit(int Code);
-// void __cdecl __noreturn abort();
-// int sprintf(char *const Buffer, const char *const Format, ...);
-// char *__cdecl strncpy(char *Destination, const char *Source, size_t Count);
-// void __cdecl __noreturn longjmp(jmp_buf Buf, int Value);
-// size_t __cdecl fread(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
-// double __cdecl strtod(const char *String, char **EndPtr);
-// DWORD __stdcall timeGetTime();
+// int __usercall sub_412C60@<eax>(int@<eax>, int@<ebx>);
+int __cdecl sub_412D50(int, int);
+int __cdecl sub_414340(_DWORD *);
+unsigned int __cdecl sub_414630(int a1, _BYTE *a2, unsigned int a3);
+void *__cdecl sub_414650(int, int, int);
+void __cdecl sub_414670(int, void *Block);
+_DWORD *__cdecl sub_414680(_DWORD *, int);
+int __cdecl sub_414B40(int, int, unsigned int, _DWORD **, unsigned int *, _WORD *);
+unsigned int __cdecl sub_415030(unsigned int, unsigned __int8 *, unsigned int);
 // int MikMod_RegisterAllLoaders(void); weak
 // int MikMod_Update(void); weak
 // int __cdecl Player_Start(_DWORD); weak
@@ -237,14 +221,30 @@ unsigned int __cdecl adler32(unsigned int a1, unsigned __int8 *a2, unsigned int 
 //-------------------------------------------------------------------------
 // Data declarations
 
+// extern void *(__cdecl *malloc)(size_t Size);
+// extern FILE *(__cdecl *_iob_func)();
+// extern FILE *(__cdecl *fopen)(const char *FileName, const char *Mode);
+// extern int (*fprintf)(FILE *const Stream, const char *const Format, ...);
+// extern int (__cdecl *fclose)(FILE *Stream);
+// extern void (__cdecl *free)(void *Block);
+// extern int (__cdecl *rand)();
+// extern int (*printf)(const char *const Format, ...);
+// extern void (__cdecl __noreturn *exit)(int Code);
+// extern void (__cdecl __noreturn *abort)();
+// extern int (*sprintf)(char *const Buffer, const char *const Format, ...);
+// extern char *(__cdecl *strncpy)(char *Destination, const char *Source, size_t Count);
+// extern void (__cdecl __noreturn *longjmp)(jmp_buf Buf, int Value);
+// extern size_t (__cdecl *fread)(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
+// extern double (__cdecl *strtod)(const char *String, char **EndPtr);
+// extern DWORD (__stdcall *timeGetTime)();
 // extern _UNKNOWN md_reverb; weak
 // extern _UNKNOWN md_mode; weak
 char a128_0[6] = "1.2.8"; // weak
-int dword_4164B4[7] = { 0, 4, 0, 2, 0, 1, 0 }; // idb
-int dword_4164D0[7] = { 8, 8, 4, 4, 2, 2, 1 }; // idb
-int dword_4164EC[7] = { 0, 0, 4, 0, 2, 0, 1 }; // idb
-int dword_416508[7] = { 8, 8, 8, 4, 4, 2, 2 }; // idb
-int dword_416524[7] = { 128, 8, 136, 34, 170, 85, 255 }; // idb
+int dword_4164B4[7] = { 0, 4, 0, 2, 0, 1, 0 }; // weak
+int dword_4164D0[7] = { 8, 8, 4, 4, 2, 2, 1 }; // weak
+int dword_4164EC[7] = { 0, 0, 4, 0, 2, 0, 1 }; // weak
+int dword_416508[7] = { 8, 8, 8, 4, 4, 2, 2 }; // weak
+int dword_416524[7] = { 128, 8, 136, 34, 170, 85, 255 }; // weak
 const int dword_416540 = 255; // idb
 char byte_4165D4[16] =
 {
@@ -264,10 +264,10 @@ char byte_4165D4[16] =
   'D',
   'E',
   'F'
-}; // idb
+}; // weak
 _UNKNOWN unk_417B70; // weak
 _UNKNOWN unk_418370; // weak
-__int16 word_4183F0[20] = { 16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15, 0 }; // idb
+__int16 word_4183F0[20] = { 16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15, 0 }; // weak
 int dword_4185D8[256] =
 {
   0,
@@ -526,7 +526,7 @@ int dword_4185D8[256] =
   -1022587231,
   1510334235,
   755167117
-}; // idb
+}; // weak
 int dword_4189D8[256] =
 {
   0,
@@ -785,7 +785,7 @@ int dword_4189D8[256] =
   -1592614928,
   -1975530445,
   -1826292366
-}; // idb
+}; // weak
 int dword_418DD8[256] =
 {
   0,
@@ -1044,7 +1044,7 @@ int dword_418DD8[256] =
   -1122180989,
   -1084596518,
   -1097321235
-}; // idb
+}; // weak
 int dword_4191D8[1334] =
 {
   0,
@@ -2381,7 +2381,7 @@ int dword_4191D8[1334] =
   543912545,
   1701602369,
   8306
-}; // idb
+}; // weak
 _UNKNOWN unk_41A6B0; // weak
 _UNKNOWN unk_41A6F0; // weak
 _UNKNOWN unk_41A730; // weak
@@ -2390,7 +2390,7 @@ _UNKNOWN unk_41A836; // weak
 const char FileName[] = { 'c', 'h', 'i', 'p' }; // idb
 _UNKNOWN unk_41AEF8; // weak
 char aErrorDecodingC[31] = "Error decoding compressed text"; // weak
-int dword_41C020[8] = { 16, 33, 66, 132, 272, 584, 1360, 4080 }; // idb
+int dword_41C020[8] = { 16, 33, 66, 132, 272, 584, 1360, 4080 }; // weak
 _UNKNOWN unk_41C040; // weak
 _UNKNOWN unk_41C140; // weak
 _UNKNOWN unk_41C240; // weak
@@ -2409,39 +2409,39 @@ int dword_41C390 = 64; // weak
 int dword_41C394 = 64; // weak
 int dword_41C398 = 64; // weak
 int dword_41C39C = 64; // weak
-float flt_41C3A0 =  50.0; // weak
-float flt_41C3A4 =  130.0; // weak
-float flt_41C3A8 =  560.0; // weak
-float flt_41C3AC =  1.0; // weak
-float flt_41C3B0 =  1.0; // weak
-float flt_41C3B4 =  1.0; // weak
-float flt_41C3B8 =  1.0; // weak
+float flt_41C3A0 = 50.0; // weak
+float flt_41C3A4 = 130.0; // weak
+float flt_41C3A8 = 560.0; // weak
+float flt_41C3AC = 1.0; // weak
+float flt_41C3B0 = 1.0; // weak
+float flt_41C3B4 = 1.0; // weak
+float flt_41C3B8 = 1.0; // weak
 int dword_41C3BC = 1; // weak
 _UNKNOWN unk_41C3C0; // weak
-float flt_41CA14 =  2.0; // weak
-float flt_41CA18 =  1500.0; // weak
+float flt_41CA14 = 2.0; // weak
+float flt_41CA18 = 1500.0; // weak
 int dword_41CA1C = 1; // weak
 int dword_41CD78 = 0; // weak
-float flt_41CE78 =  0.0; // weak
-float flt_41CE7C =  0.0; // weak
+float flt_41CE78 = 0.0; // weak
+float flt_41CE7C = 0.0; // weak
 int dword_41CE80 = 0; // weak
-float flt_41CE84 =  0.0; // weak
-float flt_41CE88 =  0.0; // weak
-float flt_41CE8C =  0.0; // weak
+float flt_41CE84 = 0.0; // weak
+float flt_41CE88 = 0.0; // weak
+float flt_41CE8C = 0.0; // weak
 int dword_41CE90 = 0; // weak
 int dword_41CE94 = 0; // weak
 int dword_41CE98 = 0; // weak
 int dword_41CE9C = 0; // weak
 int dword_41CEA0 = 0; // weak
-float flt_41CEA4 =  0.0; // weak
+float flt_41CEA4 = 0.0; // weak
 int dword_41CEA8 = 0; // weak
-float flt_41CEAC =  0.0; // weak
+float flt_41CEAC = 0.0; // weak
 int dword_41CEB0 = 0; // weak
-float flt_41CEB4 =  0.0; // weak
+float flt_41CEB4 = 0.0; // weak
 int dword_41CEB8 = 0; // weak
 int dword_41CEBC = 0; // weak
 int dword_41CEC0 = 0; // weak
-float flt_41CEC4 =  0.0; // weak
+float flt_41CEC4 = 0.0; // weak
 int dword_41CEC8 = 0; // weak
 int dword_41CECC = 0; // weak
 char byte_41CF00[65536] =
@@ -2703,10 +2703,10 @@ char byte_41CF00[65536] =
   '\0',
   '\0',
   
-}; // idb
+}; // weak
 char byte_42CF00[]; // weak
 _UNKNOWN unk_42CF02; // weak
-char byte_43CF00[320]; // idb
+char byte_43CF00[320]; // weak
 int dword_43D040; // weak
 _UNKNOWN unk_43D064; // weak
 _UNKNOWN unk_43E060; // weak
@@ -2726,21 +2726,21 @@ int dword_45807C; // weak
 int dword_458080; // weak
 _UNKNOWN unk_4580A0; // weak
 _UNKNOWN unk_4580A1; // weak
-char byte_4581E9[26071]; // idb
+char byte_4581E9[26071]; // weak
 _UNKNOWN unk_45E7C0; // weak
 int dword_468270[]; // weak
 int dword_468274; // weak
 int dword_468278; // weak
 int dword_46827C; // weak
 _UNKNOWN unk_468280; // weak
-char byte_4683C9[65671]; // idb
+char byte_4683C9[65671]; // weak
 float flt_478450[]; // weak
 int dword_478460; // weak
 int dword_478470; // weak
 int dword_478474; // weak
 int dword_478478; // weak
 int dword_47847C; // weak
-char *dword_478480; // idb
+char *dword_478480; // weak
 int dword_478484; // weak
 int dword_478488; // weak
 int dword_47848C; // weak
@@ -2776,7 +2776,7 @@ int dword_478518; // weak
 int dword_47851C; // weak
 char byte_478520[]; // weak
 char byte_478521[]; // weak
-char byte_478522[694]; // idb
+char byte_478522[694]; // weak
 char byte_4787D8; // weak
 char byte_4787D9; // weak
 char byte_4787DA; // weak
@@ -2813,12 +2813,12 @@ char __usercall sub_401000@<al>(int a1@<eax>, int a2, int a3, int a4, int a5, un
   bool v17; // zf
   int v18; // ebx
   unsigned __int8 v19; // dl
-  int v20; // edi
+  char *v20; // edi
   int v21; // ebx
   int v22; // ebp
   int v23; // esi
   int v24; // edx
-  _BYTE *v25; // edx
+  char *v25; // edx
   int v27; // [esp+10h] [ebp-8h]
   int v28; // [esp+14h] [ebp-4h]
   unsigned __int8 v29; // [esp+1Ch] [ebp+4h]
@@ -2856,7 +2856,7 @@ char __usercall sub_401000@<al>(int a1@<eax>, int a2, int a3, int a4, int a5, un
         }
         if ( v11 )
         {
-          v20 = a1 + v18 * v8 + v9;
+          v20 = (char *)(a1 + v18 * v8 + v9);
           v21 = v19 << 16;
           v22 = ((a7 - v19) << 16) / v11;
           a1 = (v10 << 16) / v11;
@@ -2870,8 +2870,8 @@ char __usercall sub_401000@<al>(int a1@<eax>, int a2, int a3, int a4, int a5, un
               v23 += v28;
               v21 += v22;
               v24 = 320 * (v23 >> 16);
-              a1 = *(unsigned __int8 *)(v24 + v20);
-              v25 = (_BYTE *)(v20 + v24);
+              a1 = (unsigned __int8)v20[v24];
+              v25 = &v20[v24];
               LOBYTE(a1) = byte_478840[64 * a1 + (v21 >> 16)];
               ++v20;
               v17 = v32-- == 1;
@@ -3312,7 +3312,7 @@ float *__cdecl sub_401A40(int *a1)
 //----- (00401AF0) --------------------------------------------------------
 _BYTE *__usercall sub_401AF0@<eax>(int *a1@<eax>)
 {
-  int v2; // esi
+  _BYTE *v2; // esi
   float v4; // [esp+8h] [ebp-4h]
 
   flt_41CA14 = flt_41CE78 + flt_41CA14;
@@ -3323,9 +3323,9 @@ _BYTE *__usercall sub_401AF0@<eax>(int *a1@<eax>)
     flt_41CA14 = (float)a1[1];
     flt_41CE78 = 0.0;
   }
-  v2 = (int)flt_41CA14;
+  v2 = (_BYTE *)(int)flt_41CA14;
   sub_4020E0(v2, 0, a1, 63, 0, *a1);
-  return sub_4020E0((int)((double)(a1[1] + 1) - flt_41CA14), v2, a1, 0, 0, *a1);
+  return sub_4020E0((_BYTE *)(int)((double)(a1[1] + 1) - flt_41CA14), (int)v2, a1, 0, 0, *a1);
 }
 // 41CA14: using guessed type float flt_41CA14;
 // 41CE78: using guessed type float flt_41CE78;
@@ -3335,7 +3335,7 @@ int __usercall sub_401B90@<eax>(int *a1@<edi>, int a2, int a3, int a4)
 {
   int v4; // ebx
   char *v5; // esi
-  size_t v6; // ebp
+  int v6; // ebp
   int v7; // esi
   int v8; // ebx
   float v10; // [esp+8h] [ebp-14h]
@@ -3403,7 +3403,6 @@ int __usercall sub_401B90@<eax>(int *a1@<edi>, int a2, int a3, int a4)
 int *sub_401D00()
 {
   FILE *v0; // eax
-  int *result; // eax
   int v2; // eax
   char v3; // cl
   FILE *v4; // eax
@@ -3428,15 +3427,14 @@ int *sub_401D00()
   {
 LABEL_2:
     fclose(v0);
-    result = &dword_41CD78;
+    return &dword_41CD78;
   }
   else
   {
     v4 = _iob_func();
     fprintf(v4 + 2, "findfile: file %s could not be found\n", FileName);
-    result = 0;
+    return 0;
   }
-  return result;
 }
 // 41CD78: using guessed type int dword_41CD78;
 
@@ -3543,14 +3541,14 @@ void *__usercall sub_402010@<eax>(unsigned __int8 a1@<al>, _DWORD *a2@<edi>, voi
   char *v6; // esi
   void *result; // eax
   int v8; // ebx
-  int Size; // [esp+Ch] [ebp-8h]
+  size_t Size; // [esp+Ch] [ebp-8h]
   int i; // [esp+10h] [ebp-4h]
 
   v4 = (int *)a2[514];
   v6 = (char *)(v4[3] + a2[a1 + 257]);
   result = (void *)a2[a1 + 1];
   v8 = 0;
-  Size = (int)result;
+  Size = (size_t)result;
   for ( i = *v4; v8 < *a2; ++v8 )
   {
     result = memcpy(a3, v6, Size);
@@ -3598,25 +3596,25 @@ char __usercall sub_402070@<al>(int a1@<eax>, _DWORD *a2@<ecx>, _DWORD *a3, int 
 }
 
 //----- (004020E0) --------------------------------------------------------
-_BYTE *__usercall sub_4020E0@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<edi>, char a4, int a5, size_t Size)
+_BYTE *__usercall sub_4020E0@<eax>(_BYTE *a1@<eax>, int a2@<ecx>, int *a3@<edi>, char a4, int a5, size_t Size)
 {
   _BYTE *result; // eax
-  signed int v8; // edx
+  int v8; // edx
   char *v9; // esi
 
   result = (_BYTE *)a3[1];
   if ( a2 <= (int)result )
   {
     v8 = *a3;
-    if ( a5 <= *a3 && (int)Size > 0 && a1 > 0 )
+    if ( a5 <= *a3 && (int)Size > 0 && (int)a1 > 0 )
     {
-      if ( a2 + a1 > (int)result )
-        a1 = (int)&result[-a2];
+      if ( (int)&a1[a2] > (int)result )
+        a1 = &result[-a2];
       result = (_BYTE *)a5;
       if ( (int)(a5 + Size) > v8 )
         Size = v8 - a5;
       v9 = (char *)(a5 + a2 * a3[2] + a3[3]);
-      if ( a1 > 0 )
+      if ( (int)a1 > 0 )
       {
         do
         {
@@ -3644,7 +3642,7 @@ int __usercall sub_402150@<eax>(int *a1@<eax>, int a2@<edx>, int *a3@<ecx>, int 
   int v12; // edi
   char *v13; // ebx
   int v14; // ebp
-  size_t Size; // [esp+10h] [ebp-14h]
+  int Size; // [esp+10h] [ebp-14h]
   int v16; // [esp+18h] [ebp-Ch]
   int v17; // [esp+1Ch] [ebp-8h]
   int v18; // [esp+20h] [ebp-4h]
@@ -3745,7 +3743,7 @@ int __fastcall sub_402230(char **a1, int a2)
 int __usercall sub_4022A0@<eax>(int result@<eax>, int a2@<ecx>)
 {
   if ( result >= a2 )
-    result = a2 < 0 ? 0 : a2;
+    return a2 < 0 ? 0 : a2;
   return result;
 }
 
@@ -3840,7 +3838,6 @@ _DWORD *sub_402340()
 int __cdecl sub_4023D0(int a1, int a2, char *FileName)
 {
   FILE *v3; // edi
-  int result; // eax
   char *v5; // eax
   int v6; // esi
   void **v7; // edi
@@ -3889,7 +3886,7 @@ int __cdecl sub_4023D0(int a1, int a2, char *FileName)
           printf("pngloader: file %s doesn't seem to be a valid .png file\n", FileName);
           sub_407B50((_DWORD **)&EndPtr, (void **)&v30, 0);
           fclose(Stream);
-          result = 1;
+          return 1;
         }
         else
         {
@@ -3912,7 +3909,7 @@ int __cdecl sub_4023D0(int a1, int a2, char *FileName)
                 goto LABEL_12;
             }
             printf("pngloader: could not allocate memory\n");
-            result = -1;
+            return -1;
           }
           else
           {
@@ -3981,12 +3978,12 @@ LABEL_12:
               sub_406A20(EndPtr, v30);
               sub_407B50((_DWORD **)&EndPtr, (void **)&v30, 0);
               fclose(Stream);
-              result = 0;
+              return 0;
             }
             else
             {
               printf("pngloader: could not get memory for image\n");
-              result = 1;
+              return 1;
             }
           }
         }
@@ -3996,22 +3993,21 @@ LABEL_12:
         printf("pngloader: file %s doesn't seem to be a valid .png file\n", FileName);
         fclose(v3);
         sub_407B50((_DWORD **)&EndPtr, 0, 0);
-        result = 1;
+        return 1;
       }
     }
     else
     {
       printf("pngloader: file %s doesn't seem to be a valid .png file\n", FileName);
       fclose(v3);
-      result = 1;
+      return 1;
     }
   }
   else
   {
     printf("pngloader: could not open file %s\n", FileName);
-    result = 1;
+    return 1;
   }
-  return result;
 }
 // 4023C0: using guessed type int nullsub_1();
 // 412500: using guessed type int __cdecl setjmp3(_DWORD, _DWORD);
@@ -4021,7 +4017,6 @@ int sub_402780()
 {
   int v0; // eax
   int v1; // eax
-  int result; // eax
   int v3; // ecx
   int v4; // edx
   void *v5; // edi
@@ -4058,15 +4053,14 @@ int sub_402780()
     dword_478828 = 14285;
     dword_478510 = timeGetTime();
     dword_478820 = timeGetTime();
-    result = 0;
+    return 0;
   }
   else
   {
     printf("sdl video init failure\n");
     SDL_Quit();
-    result = -1;
+    return -1;
   }
-  return result;
 }
 // 4050E4: using guessed type int __cdecl SDL_Init(_DWORD);
 // 4050EA: using guessed type int __cdecl SDL_SetVideoMode(_DWORD, _DWORD, _DWORD, _DWORD);
@@ -4278,7 +4272,7 @@ int __usercall sub_402B70@<eax>(size_t *a1@<eax>, _DWORD *a2)
   int v7; // ecx
   bool v8; // cc
   int v9; // ebp
-  int v10; // esi
+  size_t v10; // esi
   int *v11; // ecx
   unsigned __int8 v12; // al
   _DWORD *v13; // esi
@@ -4338,7 +4332,7 @@ int __usercall sub_402B70@<eax>(size_t *a1@<eax>, _DWORD *a2)
   dword_41CE94 = v9;
 LABEL_19:
   v10 = a1[1] - 27;
-  sub_4020E0(dword_4784C4, v10 - dword_4784C4 / 2, (int *)a1, 0, 220 - (int)Size / 2, Size);
+  sub_4020E0((_BYTE *)dword_4784C4, v10 - dword_4784C4 / 2, (int *)a1, 0, 220 - (int)Size / 2, Size);
   switch ( v21 )
   {
     case 1:
@@ -4645,7 +4639,7 @@ _DWORD *__usercall sub_403190@<eax>(_DWORD *a1@<eax>)
 int *__usercall sub_4032D0@<eax>(signed int *a1@<eax>, char **a2@<ecx>, int a3, int a4, int a5)
 {
   int v6; // edx
-  int v7; // eax
+  signed int v7; // eax
   bool v8; // cc
   signed int v9; // ecx
   int v10; // esi
@@ -4887,7 +4881,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
         if ( v9 > 56 && v15 < 200 )
         {
           sub_402150((int *)v5, 0, v24, ++v15);
-          sub_4020E0(1, v15 - 1, (int *)v5, 0, 0, *v5);
+          sub_4020E0((_BYTE *)1, v15 - 1, (int *)v5, 0, 0, *v5);
         }
         break;
       case 9:
@@ -5219,6 +5213,7 @@ void *sub_403EF0()
 // 478474: using guessed type int dword_478474;
 // 478478: using guessed type int dword_478478;
 // 47847C: using guessed type int dword_47847C;
+// 478480: using guessed type char *dword_478480;
 
 //----- (00403FB0) --------------------------------------------------------
 int __cdecl sub_403FB0(size_t *a1)
@@ -5258,6 +5253,7 @@ int __cdecl sub_403FB0(size_t *a1)
 }
 // 41C370: using guessed type int dword_41C370;
 // 41CEB4: using guessed type float flt_41CEB4;
+// 478480: using guessed type char *dword_478480;
 
 //----- (00404080) --------------------------------------------------------
 _DWORD *sub_404080()
@@ -5639,7 +5635,7 @@ int __usercall sub_4042F0@<eax>(int a1@<edx>, char **a2@<ecx>, int a3, int a4, i
         v63 = *(float *)&dword_458070[v26] + v28;
         if ( v63 <= 1.0 )
         {
-          v55 = v63 >= 0.0 ? (float)(*(float *)&dword_458070[v26] + v28) : (float)0.0;
+          v55 = v63 >= 0.0 ? *(float *)&dword_458070[v26] + v28 : 0.0;
           v33 = v28;
           v31 = v6;
           v32 = v33;
@@ -5801,6 +5797,7 @@ int __usercall sub_4042F0@<eax>(int a1@<edx>, char **a2@<ecx>, int a3, int a4, i
 // 468270: using guessed type int dword_468270[];
 // 478450: using guessed type float flt_478450[];
 // 478508: using guessed type int dword_478508;
+// 4042F0: using guessed type char var_198[404];
 
 //----- (00404A70) --------------------------------------------------------
 int sub_404A70()
@@ -6075,17 +6072,23 @@ _BYTE *__cdecl sub_405030(int a1, int a2)
 //----- (00405120) --------------------------------------------------------
 int __cdecl sub_405120(int a1, int a2)
 {
-  int result; // eax
-
   if ( a1 && a2 )
-    result = *(_DWORD *)(a2 + 12);
+    return *(_DWORD *)(a2 + 12);
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (00405140) --------------------------------------------------------
-int __cdecl sub_405140(int *a1, int a2, _DWORD *a3, _DWORD *a4, _DWORD *a5, _DWORD *a6, _DWORD *a7, _DWORD *a8, _DWORD *a9)
+int __cdecl sub_405140(
+        int *a1,
+        int a2,
+        _DWORD *a3,
+        _DWORD *a4,
+        _DWORD *a5,
+        _DWORD *a6,
+        _DWORD *a7,
+        _DWORD *a8,
+        _DWORD *a9)
 {
   if ( !a1 || !a2 || !a3 || !a4 || !a5 || !a6 )
     return 0;
@@ -6213,10 +6216,10 @@ int __cdecl sub_405510(char *EndPtr, int a2)
   unsigned __int8 v3; // al
   unsigned int v4; // edi
   unsigned int v5; // esi
-  unsigned __int8 *v6; // edi
+  char *v6; // edi
   unsigned int v7; // ebp
   int result; // eax
-  unsigned __int8 v9[4]; // [esp+10h] [ebp-4h] BYREF
+  char v9[4]; // [esp+10h] [ebp-4h] BYREF
 
   v2 = (int *)EndPtr;
   v3 = EndPtr[300];
@@ -6238,7 +6241,7 @@ int __cdecl sub_405510(char *EndPtr, int a2)
     if ( v4 < 3 )
       *((_DWORD *)EndPtr + 26) |= 0x1000u;
   }
-  v6 = (unsigned __int8 *)(EndPtr + 284);
+  v6 = EndPtr + 284;
   while ( 1 )
   {
     while ( 1 )
@@ -6250,9 +6253,9 @@ int __cdecl sub_405510(char *EndPtr, int a2)
           while ( 1 )
           {
             sub_4088C0(v2);
-            v7 = sub_409D20(v2, v9);
+            v7 = sub_409D20(v2, (unsigned __int8 *)v9);
             sub_407DD0((int)v2);
-            png_crc_read((struct png_struct_def *)v2, v6, 4u);
+            sub_408CA0(v2, v6, 4u);
             if ( memcmp(v6, "IHDR", 4u) )
               break;
             v2 = (int *)EndPtr;
@@ -6293,7 +6296,7 @@ int __cdecl sub_405510(char *EndPtr, int a2)
     if ( !memcmp(v6, "bKGD", 4u) )
     {
       v2 = (int *)EndPtr;
-      png_handle_bKGD((struct png_struct_def *)EndPtr, (struct png_info_struct *)a2, v7);
+      sub_40B150((int)EndPtr, a2, v7);
     }
     else if ( !memcmp(v6, "cHRM", 4u) )
     {
@@ -6383,6 +6386,7 @@ int __cdecl sub_405510(char *EndPtr, int a2)
   *((_DWORD *)EndPtr + 67) = v7;
   return result;
 }
+// 405510: using guessed type unsigned __int8 var_4[4];
 
 //----- (004064B0) --------------------------------------------------------
 int (__cdecl *__cdecl sub_4064B0(int a1, void *a2, void *a3))(int, _DWORD, _DWORD)
@@ -6397,7 +6401,7 @@ int (__cdecl *__cdecl sub_4064B0(int a1, void *a2, void *a3))(int, _DWORD, _DWOR
   int v10; // edi
   unsigned int v11; // eax
   unsigned int v12; // ecx
-  unsigned __int8 *v13; // edx
+  _BYTE *v13; // edx
   int v14; // eax
   char *v15; // eax
   int v16; // ecx
@@ -6487,26 +6491,26 @@ LABEL_32:
       {
         while ( !*(_DWORD *)(v3 + 268) )
         {
-          png_crc_finish((struct png_struct_def *)v3, 0);
+          sub_409D50(v3, 0);
           sub_4088C0((int *)v3);
           *(_DWORD *)(v3 + 268) = sub_409D20((int *)v3, (unsigned __int8 *)&a1);
           sub_407DD0(v3);
-          png_crc_read((struct png_struct_def *)v3, (unsigned __int8 *)(v3 + 284), 4u);
+          sub_408CA0((int *)v3, (_BYTE *)(v3 + 284), 4u);
           if ( memcmp((const void *)(v3 + 284), "IDAT", 4u) )
             sub_408740((int *)v3, "Not enough image data");
         }
         v11 = *(_DWORD *)(v3 + 176);
         v12 = *(_DWORD *)(v3 + 268);
-        v13 = *(unsigned __int8 **)(v3 + 172);
+        v13 = *(_BYTE **)(v3 + 172);
         v10 = v3 + 116;
         *(_DWORD *)(v3 + 120) = v11;
         *(_DWORD *)(v3 + 116) = v13;
         if ( v11 > v12 )
           *(_DWORD *)(v3 + 120) = v12;
-        png_crc_read((struct png_struct_def *)v3, v13, *(_DWORD *)(v3 + 120));
+        sub_408CA0((int *)v3, v13, *(_DWORD *)(v3 + 120));
         *(_DWORD *)(v3 + 268) -= *(_DWORD *)(v3 + 120);
       }
-      v14 = inflate(v10, 1);
+      v14 = sub_412D50(v10, 1);
       if ( v14 == 1 )
         break;
       if ( v14 )
@@ -6564,26 +6568,27 @@ LABEL_55:
     sub_40C120(v3);
     result = *(int (__cdecl **)(int, _DWORD, _DWORD))(v3 + 408);
     if ( result )
-      result = (int (__cdecl *)(int, _DWORD, _DWORD))result(v3, *(_DWORD *)(v3 + 228), *(unsigned __int8 *)(v3 + 292));
+      return (int (__cdecl *)(int, _DWORD, _DWORD))result(v3, *(_DWORD *)(v3 + 228), *(unsigned __int8 *)(v3 + 292));
   }
   return result;
 }
+// 416524: using guessed type int dword_416524[7];
 
 //----- (004069C0) --------------------------------------------------------
-int (__cdecl *__cdecl sub_4069C0(int a1, void **a2))(int, _DWORD, _DWORD)
+char *__cdecl sub_4069C0(int a1, void **a2)
 {
-  int (__cdecl *result)(int, _DWORD, _DWORD); // eax
+  char *result; // eax
   int v4; // ebp
   void **v5; // esi
   int v6; // edi
-  int v7; // [esp+Ch] [ebp+4h]
+  char *v7; // [esp+Ch] [ebp+4h]
 
-  result = (int (__cdecl *)(int, _DWORD, _DWORD))sub_4109D0(a1);
+  result = (char *)sub_4109D0(a1);
   v4 = *(_DWORD *)(a1 + 204);
   *(_DWORD *)(a1 + 208) = v4;
   if ( (int)result > 0 )
   {
-    v7 = (int)result;
+    v7 = result;
     do
     {
       v5 = a2;
@@ -6592,7 +6597,7 @@ int (__cdecl *__cdecl sub_4069C0(int a1, void **a2))(int, _DWORD, _DWORD)
         v6 = v4;
         do
         {
-          result = sub_4064B0(a1, *v5++, 0);
+          result = (char *)sub_4064B0(a1, *v5++, 0);
           --v6;
         }
         while ( v6 );
@@ -6609,16 +6614,16 @@ void __cdecl sub_406A20(char *EndPtr, int a2)
 {
   bool v3; // zf
   char *v4; // edx
-  unsigned __int8 v5[4]; // [esp+10h] [ebp-4h] BYREF
+  char v5[4]; // [esp+10h] [ebp-4h] BYREF
   char *EndPtra; // [esp+18h] [ebp+4h]
 
-  png_crc_finish((struct png_struct_def *)EndPtr, 0);
+  sub_409D50((int)EndPtr, 0);
   do
   {
     sub_4088C0((int *)EndPtr);
-    EndPtra = (char *)sub_409D20((int *)EndPtr, v5);
+    EndPtra = (char *)sub_409D20((int *)EndPtr, (unsigned __int8 *)v5);
     sub_407DD0((int)EndPtr);
-    png_crc_read((struct png_struct_def *)EndPtr, (unsigned __int8 *)EndPtr + 284, 4u);
+    sub_408CA0((int *)EndPtr, EndPtr + 284, 4u);
     if ( !memcmp(EndPtr + 284, "IHDR", 4u) )
     {
       sub_409E10((int)EndPtr, a2, (int)EndPtra);
@@ -6637,7 +6642,7 @@ void __cdecl sub_406A20(char *EndPtr, int a2)
         {
           if ( EndPtra || (EndPtr[104] & 8) != 0 )
             sub_408740((int *)EndPtr, "Too many IDAT's found");
-          png_crc_finish((struct png_struct_def *)EndPtr, 0);
+          sub_409D50((int)EndPtr, 0);
         }
         else if ( !memcmp(EndPtr + 284, "PLTE", 4u) )
         {
@@ -6645,7 +6650,7 @@ void __cdecl sub_406A20(char *EndPtr, int a2)
         }
         else if ( !memcmp(EndPtr + 284, "bKGD", 4u) )
         {
-          png_handle_bKGD((struct png_struct_def *)EndPtr, (struct png_info_struct *)a2, (unsigned int)EndPtra);
+          sub_40B150((int)EndPtr, a2, (unsigned int)EndPtra);
         }
         else if ( !memcmp(EndPtr + 284, "cHRM", 4u) )
         {
@@ -6731,6 +6736,7 @@ void __cdecl sub_406A20(char *EndPtr, int a2)
   }
   while ( (EndPtr[104] & 0x10) == 0 );
 }
+// 406A20: using guessed type unsigned __int8 var_4[4];
 
 //----- (00407890) --------------------------------------------------------
 void *__cdecl sub_407890(void *a1, int a2, int a3)
@@ -6763,13 +6769,13 @@ void *__cdecl sub_407890(void *a1, int a2, int a3)
   sub_408BF0((int)a1, *((void **)a1 + 91));
   if ( (*((_DWORD *)a1 + 133) & 0x1000) != 0 )
     sub_407DC0((int)a1, *((void **)a1 + 69));
-  *((_DWORD *)a1 + 133) &= 0xFFFFEFFF;
+  *((_DWORD *)a1 + 133) &= ~0x1000u;
   if ( (*((_DWORD *)a1 + 133) & 0x2000) != 0 )
     sub_408BF0((int)a1, *((void **)a1 + 98));
-  *((_DWORD *)a1 + 133) &= 0xFFFFDFFF;
+  *((_DWORD *)a1 + 133) &= ~0x2000u;
   if ( (*((_DWORD *)a1 + 133) & 8) != 0 )
     sub_408BF0((int)a1, *((void **)a1 + 125));
-  *((_DWORD *)a1 + 133) &= 0xFFFFFFF7;
+  *((_DWORD *)a1 + 133) &= ~8u;
   if ( *((_DWORD *)a1 + 92) )
   {
     v3 = 1 << (8 - *((_BYTE *)a1 + 344));
@@ -6792,7 +6798,7 @@ void *__cdecl sub_407890(void *a1, int a2, int a3)
     sub_408BF0((int)a1, *((void **)a1 + 94));
   }
   sub_408BF0((int)a1, *((void **)a1 + 132));
-  inflateEnd((_DWORD *)a1 + 29);
+  sub_414340((_DWORD *)a1 + 29);
   sub_408BF0((int)a1, *((void **)a1 + 108));
   sub_408BF0((int)a1, *((void **)a1 + 121));
   v9 = *((_DWORD *)a1 + 147);
@@ -6839,13 +6845,13 @@ void __cdecl sub_407B50(_DWORD **a1, void **a2, void **a3)
   sub_407890(v3, (int)v4, (int)Block);
   if ( v4 )
   {
-    png_free_data((int)v3, (int)v4, 0x4000, -1);
+    sub_407E80((int)v3, (int)v4, 0x4000, -1);
     sub_408A30(v4, v5, v6);
     *a2 = 0;
   }
   if ( Block )
   {
-    png_free_data((int)v3, (int)Block, 0x4000, -1);
+    sub_407E80((int)v3, (int)Block, 0x4000, -1);
     sub_408A30(Block, v5, v6);
     *a3 = 0;
   }
@@ -6956,7 +6962,7 @@ LABEL_9:
   }
   result = 1;
   if ( v6 <= 0 )
-    result = -1;
+    return -1;
   return result;
 }
 
@@ -6976,15 +6982,15 @@ void *__cdecl sub_407D70(int a1, unsigned int a2, unsigned int a3)
   else
   {
     sub_4087F0(a1, "Potential overflow in png_zalloc()");
-    result = 0;
+    return 0;
   }
   return result;
 }
 
 //----- (00407DD0) --------------------------------------------------------
-int __cdecl sub_407DD0(int a1)
+unsigned int __cdecl sub_407DD0(int a1)
 {
-  int result; // eax
+  unsigned int result; // eax
 
   result = sub_414630(0, 0, 0);
   *(_DWORD *)(a1 + 272) = result;
@@ -7014,7 +7020,7 @@ void *__cdecl sub_407E40(int *a1, unsigned int a2)
 }
 
 //----- (00407E80) --------------------------------------------------------
-void __cdecl png_free_data(int a1, int a2, int a3, int a4)
+void __cdecl sub_407E80(int a1, int a2, int a3, int a4)
 {
   int v4; // ebp
   int v5; // eax
@@ -7040,7 +7046,7 @@ void __cdecl png_free_data(int a1, int a2, int a3, int a4)
     if ( a4 == -1 )
     {
       for ( i = 0; i < *(_DWORD *)(a2 + 48); ++i )
-        png_free_data(a1, a2, 0x4000, i);
+        sub_407E80(a1, a2, 0x4000, i);
       sub_408BF0(a1, *(void **)(a2 + 56));
       *(_DWORD *)(a2 + 56) = 0;
       *(_DWORD *)(a2 + 48) = 0;
@@ -7063,12 +7069,12 @@ LABEL_12:
   if ( (v4 & *(_DWORD *)(a2 + 184) & 0x2000) != 0 )
   {
     sub_408BF0(a1, *(void **)(a2 + 76));
-    *(_DWORD *)(a2 + 8) &= 0xFFFFFFEF;
+    *(_DWORD *)(a2 + 8) &= ~0x10u;
     *(_DWORD *)(a2 + 76) = 0;
   }
   v8 = v4 & *(_DWORD *)(a2 + 184);
   if ( (v8 & 0x100) != 0 )
-    *(_DWORD *)(a2 + 8) &= 0xFFFFBFFF;
+    *(_DWORD *)(a2 + 8) &= ~0x4000u;
   if ( (v8 & 0x80u) != 0 )
   {
     sub_408BF0(a1, *(void **)(a2 + 160));
@@ -7092,13 +7098,13 @@ LABEL_12:
       v4 = a3;
       *(_DWORD *)(a2 + 176) = 0;
     }
-    *(_DWORD *)(a2 + 8) &= 0xFFFFFBFF;
+    *(_DWORD *)(a2 + 8) &= ~0x400u;
   }
   if ( ((unsigned __int8)v4 & *(_BYTE *)(a2 + 184) & 0x10) != 0 )
   {
     sub_408BF0(a1, *(void **)(a2 + 196));
     sub_408BF0(a1, *(void **)(a2 + 200));
-    *(_DWORD *)(a2 + 8) &= 0xFFFFEFFF;
+    *(_DWORD *)(a2 + 8) &= ~0x1000u;
     *(_DWORD *)(a2 + 196) = 0;
     *(_DWORD *)(a2 + 200) = 0;
   }
@@ -7113,7 +7119,7 @@ LABEL_12:
         if ( v13 > 0 )
         {
           do
-            png_free_data(a1, a2, 32, v14++);
+            sub_407E80(a1, a2, 32, v14++);
           while ( v14 < *(_DWORD *)(a2 + 216) );
         }
         sub_408BF0(a1, *(void **)(a2 + 212));
@@ -7121,7 +7127,7 @@ LABEL_12:
         *(_DWORD *)(a2 + 212) = 0;
         *(_DWORD *)(a2 + 216) = 0;
       }
-      *(_DWORD *)(a2 + 8) &= 0xFFFFDFFF;
+      *(_DWORD *)(a2 + 8) &= ~0x2000u;
     }
     else
     {
@@ -7148,7 +7154,7 @@ LABEL_12:
       if ( v16 > 0 )
       {
         do
-          png_free_data(a1, a2, 512, v17++);
+          sub_407E80(a1, a2, 512, v17++);
         while ( v17 < *(_DWORD *)(a2 + 192) );
       }
       sub_408BF0(a1, *(void **)(a2 + 188));
@@ -7166,20 +7172,19 @@ LABEL_12:
       *(_DWORD *)(*(_DWORD *)(a2 + 188) + 20 * a4 + 8) = 0;
 LABEL_41:
       v4 = a3;
-      goto LABEL_42;
     }
   }
 LABEL_42:
   if ( ((unsigned __int8)v4 & *(_BYTE *)(a2 + 184) & 8) != 0 )
   {
     sub_408BF0(a1, *(void **)(a2 + 124));
-    *(_DWORD *)(a2 + 8) &= 0xFFFFFFBF;
+    *(_DWORD *)(a2 + 8) &= ~0x40u;
     *(_DWORD *)(a2 + 124) = 0;
   }
   if ( (v4 & *(_DWORD *)(a2 + 184) & 0x1000) != 0 )
   {
     sub_407DC0(a1, *(void **)(a2 + 16));
-    *(_DWORD *)(a2 + 8) &= 0xFFFFFFF7;
+    *(_DWORD *)(a2 + 8) &= ~8u;
     *(_DWORD *)(a2 + 16) = 0;
     *(_WORD *)(a2 + 20) = 0;
   }
@@ -7196,7 +7201,7 @@ LABEL_42:
       v4 = a3;
       *(_DWORD *)(a2 + 248) = 0;
     }
-    *(_DWORD *)(a2 + 8) &= 0xFFFF7FFF;
+    *(_DWORD *)(a2 + 8) &= ~0x8000u;
   }
   if ( a4 != -1 )
     v4 &= 0xFFFFBDDF;
@@ -7206,7 +7211,7 @@ LABEL_42:
 //----- (00408230) --------------------------------------------------------
 void *__cdecl sub_408230(int a1, int a2)
 {
-  png_free_data(a1, a2, 0x7FFF, -1);
+  sub_407E80(a1, a2, 0x7FFF, -1);
   if ( *(_DWORD *)(a1 + 544) )
   {
     sub_408BF0(a1, *(void **)(a1 + 548));
@@ -7273,7 +7278,7 @@ void *__cdecl sub_4083B0(void *a1)
     if ( result )
     {
       sub_407E40((int *)&a1, 0x120u);
-      result = a1;
+      return a1;
     }
   }
   return result;
@@ -7327,8 +7332,8 @@ char *__usercall sub_4083F0@<eax>(int a1@<eax>, const char *a2@<edx>, int a3)
 //----- (00408490) --------------------------------------------------------
 void __cdecl __noreturn sub_408490(int *a1, char *a2)
 {
-  char *v2; // ebx
-  char *v3; // ebp
+  int v2; // ebx
+  int v3; // ebp
   int v4; // esi
   bool v5; // zf
   char v6; // dl
@@ -7339,22 +7344,22 @@ void __cdecl __noreturn sub_408490(int *a1, char *a2)
   FILE *v11; // eax
   const char *v12; // [esp-Ch] [ebp-38h]
   char *v13; // [esp-8h] [ebp-34h]
-  const char *v14; // [esp-4h] [ebp-30h]
-  char *v15; // [esp+14h] [ebp-18h]
+  char *v14; // [esp-4h] [ebp-30h]
+  int v15; // [esp+14h] [ebp-18h]
   char v16[2]; // [esp+18h] [ebp-14h] BYREF
   char v17[14]; // [esp+1Ah] [ebp-12h] BYREF
 
   if ( *a2 == 35 )
   {
-    v2 = (char *)(v16 - a2);
-    v3 = (char *)(v17 - a2);
+    v2 = v16 - a2;
+    v3 = v17 - a2;
     v4 = 0;
-    v15 = (char *)(v17 - a2);
+    v15 = v17 - a2;
     while ( 1 )
     {
       v5 = a2[v4] == 32;
       v6 = a2[v4 + 1];
-      a2[v4 + (_DWORD)v2] = v6;
+      a2[v4 + v2] = v6;
       if ( v5 )
         goto LABEL_15;
       v7 = a2[v4 + 2];
@@ -7365,7 +7370,7 @@ void __cdecl __noreturn sub_408490(int *a1, char *a2)
         goto LABEL_15;
       }
       v8 = a2[v4 + 3];
-      a2[v4 + (_DWORD)v3] = v8;
+      a2[v4 + v3] = v8;
       if ( v7 == 32 )
       {
         v4 += 2;
@@ -7385,13 +7390,13 @@ void __cdecl __noreturn sub_408490(int *a1, char *a2)
       if ( v4 >= 15 )
         goto LABEL_15;
       v3 = v15;
-      v2 = (char *)(v16 - a2);
+      v2 = v16 - a2;
     }
     v4 += 4;
 LABEL_15:
     if ( (unsigned int)(v4 - 2) > 0xC )
     {
-      v14 = (const char *)v4;
+      v14 = (char *)v4;
       v13 = a2;
       v12 = "libpng error: %s, offset=%d\n";
     }
@@ -7399,7 +7404,7 @@ LABEL_15:
     {
       v14 = &a2[v4];
       v13 = v16;
-      *((_BYTE *)&v15 + v4 + 3) = 0;
+      v16[v4 - 1] = 0;
       v12 = "libpng error no. %s: %s\n";
     }
     v10 = _iob_func();
@@ -7416,8 +7421,8 @@ LABEL_15:
 //----- (004085C0) --------------------------------------------------------
 int __cdecl sub_4085C0(const char *a1)
 {
-  char *v1; // ebx
-  char *v2; // ebp
+  int v1; // ebx
+  int v2; // ebp
   int v3; // esi
   bool v4; // zf
   char v5; // dl
@@ -7425,23 +7430,22 @@ int __cdecl sub_4085C0(const char *a1)
   char v7; // dl
   char v8; // bl
   FILE *v9; // eax
-  int result; // eax
   FILE *v11; // eax
   FILE *v12; // eax
-  char *i; // [esp+Ch] [ebp-18h]
+  int i; // [esp+Ch] [ebp-18h]
   char v14[2]; // [esp+10h] [ebp-14h] BYREF
   char v15[14]; // [esp+12h] [ebp-12h] BYREF
 
   if ( *a1 == 35 )
   {
-    v1 = (char *)(v14 - a1);
-    v2 = (char *)(v15 - a1);
+    v1 = v14 - a1;
+    v2 = v15 - a1;
     v3 = 0;
-    for ( i = (char *)(v14 - a1); ; v1 = i )
+    for ( i = v14 - a1; ; v1 = i )
     {
       v4 = a1[v3] == 32;
       v5 = a1[v3 + 1];
-      a1[v3 + (_DWORD)v1] = v5;
+      a1[v3 + v1] = v5;
       if ( v4 )
         break;
       v6 = a1[v3 + 2];
@@ -7452,7 +7456,7 @@ int __cdecl sub_4085C0(const char *a1)
         break;
       }
       v7 = a1[v3 + 3];
-      a1[v3 + (_DWORD)v2] = v7;
+      a1[v3 + v2] = v7;
       if ( v6 == 32 )
       {
         v3 += 2;
@@ -7474,26 +7478,25 @@ int __cdecl sub_4085C0(const char *a1)
       v3 += 5;
       if ( v3 >= 15 )
         break;
-      v2 = (char *)(v15 - a1);
+      v2 = v15 - a1;
     }
     if ( (unsigned int)(v3 - 2) > 0xC )
     {
       v11 = _iob_func();
-      result = fprintf(v11 + 2, "libpng warning: %s\n", a1);
+      return fprintf(v11 + 2, "libpng warning: %s\n", a1);
     }
     else
     {
-      *((_BYTE *)&i + v3 + 3) = 0;
+      v14[v3 - 1] = 0;
       v9 = _iob_func();
-      result = fprintf(v9 + 2, "libpng warning no. %s: %s\n", v14, &a1[v3]);
+      return fprintf(v9 + 2, "libpng warning no. %s: %s\n", v14, &a1[v3]);
     }
   }
   else
   {
     v12 = _iob_func();
-    result = fprintf(v12 + 2, "libpng warning: %s\n", a1);
+    return fprintf(v12 + 2, "libpng warning: %s\n", a1);
   }
-  return result;
 }
 
 //----- (00408720) --------------------------------------------------------
@@ -7556,8 +7559,7 @@ LABEL_9:
   {
     if ( (v2 & 0x80000) == 0 )
       goto LABEL_17;
-    v8[0] = 48;
-    v8[1] = 0;
+    strcpy(v8, "0");
   }
   v3 = v8;
 LABEL_17:
@@ -7572,7 +7574,6 @@ int __cdecl sub_4087F0(int a1, _BYTE *a2)
 {
   int v2; // eax
   int (__cdecl *v3)(int, const char *); // edx
-  int result; // eax
   const char *v5; // [esp-4h] [ebp-8h]
 
   v2 = 0;
@@ -7594,10 +7595,9 @@ int __cdecl sub_4087F0(int a1, _BYTE *a2)
   v3 = *(int (__cdecl **)(int, const char *))(a1 + 68);
   v5 = &a2[v2];
   if ( v3 )
-    result = v3(a1, v5);
+    return v3(a1, v5);
   else
-    result = sub_4085C0(v5);
-  return result;
+    return sub_4085C0(v5);
 }
 
 //----- (00408850) --------------------------------------------------------
@@ -7694,6 +7694,7 @@ void *__cdecl sub_408980(int a1, int (__cdecl *a2)(char *, size_t), int a3)
     memset(v4, 0, v3);
   return v5;
 }
+// 408980: using guessed type char var_270[580];
 
 //----- (00408A30) --------------------------------------------------------
 void __cdecl sub_408A30(void *Block, int a2, int a3)
@@ -7714,17 +7715,15 @@ void __cdecl sub_408A30(void *Block, int a2, int a3)
     }
   }
 }
+// 408A30: using guessed type char var_270[580];
 
 //----- (00408AB0) --------------------------------------------------------
 void *__cdecl sub_408AB0(int a1, size_t Size)
 {
-  void *result; // eax
-
   if ( a1 && Size )
-    result = malloc(Size);
+    return malloc(Size);
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (00408AF0) --------------------------------------------------------
@@ -7783,8 +7782,8 @@ void __cdecl sub_408BF0(int a1, void *Block)
       free(Block);
   }
 }
-// 408AD5: conditional instruction was optimized away because of '%arg_0.4!=0'
-// 408ADD: conditional instruction was optimized away because of '%Block.4!=0'
+// 408AD5: conditional instruction was optimized away because %arg_0.4!=0
+// 408ADD: conditional instruction was optimized away because %Block.4!=0
 
 //----- (00408C20) --------------------------------------------------------
 void *__cdecl sub_408C20(int a1, size_t Size)
@@ -7800,7 +7799,7 @@ void *__cdecl sub_408C20(int a1, size_t Size)
 }
 
 //----- (00408C50) --------------------------------------------------------
-int __cdecl png_get_uint_32(unsigned __int8 *a1)
+int __cdecl sub_408C50(unsigned __int8 *a1)
 {
   return a1[3] + ((a1[2] + ((a1[1] + (*a1 << 8)) << 8)) << 8);
 }
@@ -7812,38 +7811,33 @@ __int16 __cdecl sub_408C80(unsigned __int8 *a1)
 }
 
 //----- (00408CA0) --------------------------------------------------------
-void __cdecl png_crc_read(struct png_struct_def *a1, unsigned __int8 *a2, unsigned int a3)
+void __cdecl sub_408CA0(int *a1, _BYTE *a2, unsigned int a3)
 {
-  sub_4088C0((int *)a1);
+  sub_4088C0(a1);
   sub_407DF0((int)a1, a2, a3);
 }
 
 //----- (00408CD0) --------------------------------------------------------
-BOOL __cdecl png_crc_error(struct png_struct_def *a1)
+BOOL __cdecl sub_408CD0(int a1)
 {
-  struct png_struct_def *v1; // edi
+  int v1; // edi
   int v2; // esi
-  BOOL result; // eax
 
   v1 = a1;
   v2 = 1;
-  if ( (*((_BYTE *)a1 + 284) & 0x20) != 0 )
+  if ( (*(_BYTE *)(a1 + 284) & 0x20) != 0 )
   {
-    if ( (*((_DWORD *)a1 + 27) & 0x300) != 768 )
+    if ( (*(_DWORD *)(a1 + 108) & 0x300) != 768 )
       goto LABEL_6;
   }
-  else if ( (*((_DWORD *)a1 + 27) & 0x800) == 0 )
+  else if ( (*(_DWORD *)(a1 + 108) & 0x800) == 0 )
   {
     goto LABEL_6;
   }
   v2 = 0;
 LABEL_6:
   sub_4088C0((int *)a1);
-  if ( v2 )
-    result = png_get_uint_32((unsigned __int8 *)&a1) != *((_DWORD *)v1 + 68);
-  else
-    result = 0;
-  return result;
+  return v2 && sub_408C50((unsigned __int8 *)&a1) != *(_DWORD *)(v1 + 272);
 }
 
 //----- (00408D40) --------------------------------------------------------
@@ -7877,7 +7871,7 @@ char *__cdecl sub_408D40(int a1, int a2, char *a3, int a4, size_t a5, size_t *a6
     {
       while ( 1 )
       {
-        v10 = inflate(a1 + 116, 1);
+        v10 = sub_412D50(a1 + 116, 1);
         v16 = v10;
         if ( v10 )
         {
@@ -7930,7 +7924,7 @@ char *__cdecl sub_408D40(int a1, int a2, char *a3, int a4, size_t a5, size_t *a6
         sub_4087F0(a1, *(_BYTE **)(a1 + 140));
       else
         sub_4087F0(a1, aErrorDecodingC);
-      inflateReset((_DWORD *)(a1 + 116));
+      sub_412AF0((_DWORD *)(a1 + 116));
       *(_DWORD *)(a1 + 120) = 0;
       if ( !v9 )
       {
@@ -7972,7 +7966,7 @@ LABEL_34:
           }
           v9[a5] = 0;
 LABEL_39:
-          inflateReset((_DWORD *)(a1 + 116));
+          sub_412AF0((_DWORD *)(a1 + 116));
           *(_DWORD *)(a1 + 120) = 0;
           sub_408BF0(a1, a3);
           result = v9;
@@ -8062,7 +8056,7 @@ int __cdecl sub_409130(int a1, void *a2, int a3)
       v4 = (*(_DWORD *)(a1 + 200) * (unsigned int)v3 + 7) >> 3;
     else
       v4 = *(_DWORD *)(a1 + 200) * (v3 >> 3);
-    result = (int)memcpy(a2, (const void *)(*(_DWORD *)(a1 + 236) + 1), v4);
+    return (int)memcpy(a2, (const void *)(*(_DWORD *)(a1 + 236) + 1), v4);
   }
   else
   {
@@ -8523,6 +8517,7 @@ LABEL_61:
   *(_DWORD *)(a1 + 260) = result;
   return result;
 }
+// 4164D0: using guessed type int dword_4164D0[7];
 
 //----- (00409860) --------------------------------------------------------
 char __cdecl sub_409860(int a1, int a2, _BYTE *a3, _BYTE *a4, int a5)
@@ -8536,15 +8531,15 @@ char __cdecl sub_409860(int a1, int a2, _BYTE *a3, _BYTE *a4, int a5)
   unsigned int i; // ecx
   _BYTE *v12; // ecx
   _BYTE *v13; // esi
-  unsigned int v14; // edx
-  unsigned __int8 *v15; // edi
+  int v14; // edx
+  _BYTE *v15; // edi
   int v16; // ebp
-  unsigned int v17; // ebx
-  unsigned __int8 *v18; // esi
+  int v17; // ebx
+  _BYTE *v18; // esi
   _BYTE *v19; // edi
-  unsigned __int8 *v20; // edx
-  unsigned int v21; // ecx
-  unsigned __int8 *v22; // ebp
+  _BYTE *v20; // edx
+  int v21; // ecx
+  _BYTE *v22; // ebp
   int v23; // edi
   int v24; // ebx
   int v25; // edx
@@ -8553,9 +8548,9 @@ char __cdecl sub_409860(int a1, int a2, _BYTE *a3, _BYTE *a4, int a5)
   int v28; // eax
   bool v29; // zf
   int v31; // [esp+10h] [ebp-10h]
-  unsigned int v32; // [esp+14h] [ebp-Ch]
-  unsigned __int8 *v33; // [esp+18h] [ebp-8h]
-  unsigned __int8 *v34; // [esp+1Ch] [ebp-4h]
+  int v32; // [esp+14h] [ebp-Ch]
+  _BYTE *v33; // [esp+18h] [ebp-8h]
+  _BYTE *v34; // [esp+1Ch] [ebp-4h]
   _BYTE *v35; // [esp+34h] [ebp+14h]
 
   LOBYTE(v5) = a5;
@@ -8610,7 +8605,7 @@ char __cdecl sub_409860(int a1, int a2, _BYTE *a3, _BYTE *a4, int a5)
         v17 = v14;
         do
         {
-          v5 = ((unsigned __int8)*v13 + *v15) / 2;
+          v5 = ((unsigned __int8)*v13 + (unsigned __int8)*v15) / 2;
           *v12 += v5;
           ++v15;
           ++v13;
@@ -8643,10 +8638,10 @@ char __cdecl sub_409860(int a1, int a2, _BYTE *a3, _BYTE *a4, int a5)
         v32 = v21;
         while ( 1 )
         {
-          v23 = *v20;
-          v24 = *v18;
+          v23 = (unsigned __int8)*v20;
+          v24 = (unsigned __int8)*v18;
           v33 = v20 + 1;
-          v25 = *v22;
+          v25 = (unsigned __int8)*v22;
           ++v18;
           v26 = v23 - v25;
           v34 = v22 + 1;
@@ -8823,54 +8818,58 @@ LABEL_32:
   *(_DWORD *)(a1 + 108) |= 0x40u;
   return result;
 }
+// 4164B4: using guessed type int dword_4164B4[7];
+// 4164D0: using guessed type int dword_4164D0[7];
+// 4164EC: using guessed type int dword_4164EC[7];
+// 416508: using guessed type int dword_416508[7];
 
 //----- (00409D20) --------------------------------------------------------
 unsigned int __cdecl sub_409D20(int *a1, unsigned __int8 *a2)
 {
   unsigned int result; // eax
 
-  result = png_get_uint_32(a2);
+  result = sub_408C50(a2);
   if ( result > 0x7FFFFFFF )
     sub_408740(a1, "PNG unsigned integer out of range.\n");
   return result;
 }
 
 //----- (00409D50) --------------------------------------------------------
-int __cdecl png_crc_finish(struct png_struct_def *a1, unsigned int a2)
+int __cdecl sub_409D50(int a1, unsigned int a2)
 {
   unsigned int v2; // ebx
   unsigned int i; // edi
 
-  v2 = *((_DWORD *)a1 + 44);
+  v2 = *(_DWORD *)(a1 + 176);
   for ( i = a2; i > v2; i -= v2 )
-    png_crc_read(a1, *((unsigned __int8 **)a1 + 43), *((_DWORD *)a1 + 44));
+    sub_408CA0((int *)a1, *(_BYTE **)(a1 + 172), *(_DWORD *)(a1 + 176));
   if ( i )
-    png_crc_read(a1, *((unsigned __int8 **)a1 + 43), i);
-  if ( !png_crc_error(a1) )
+    sub_408CA0((int *)a1, *(_BYTE **)(a1 + 172), i);
+  if ( !sub_408CD0(a1) )
     return 0;
-  if ( ((*((_BYTE *)a1 + 284) & 0x20) == 0 || (*((_DWORD *)a1 + 27) & 0x200) != 0)
-    && ((*((_BYTE *)a1 + 284) & 0x20) != 0 || (*((_DWORD *)a1 + 27) & 0x400) == 0) )
+  if ( ((*(_BYTE *)(a1 + 284) & 0x20) == 0 || (*(_DWORD *)(a1 + 108) & 0x200) != 0)
+    && ((*(_BYTE *)(a1 + 284) & 0x20) != 0 || (*(_DWORD *)(a1 + 108) & 0x400) == 0) )
   {
     sub_408850((int *)a1, "CRC error");
   }
-  sub_408880((int)a1, "CRC error");
+  sub_408880(a1, "CRC error");
   return 1;
 }
 
 //----- (00409E10) --------------------------------------------------------
 void __cdecl sub_409E10(int a1, int a2, int a3)
 {
-  int v3; // edi
+  unsigned int v3; // edi
   unsigned int v4; // eax
   int v5; // ecx
   int v6; // edx
   int v7; // ebx
-  int v8; // ebp
+  unsigned int v8; // ebp
   unsigned __int8 v9; // al
   unsigned int v10; // eax
   int v11; // [esp+10h] [ebp-20h]
   int v12; // [esp+14h] [ebp-1Ch]
-  unsigned __int8 v13[4]; // [esp+1Ch] [ebp-14h] BYREF
+  char v13[4]; // [esp+1Ch] [ebp-14h] BYREF
   unsigned __int8 v14[8]; // [esp+20h] [ebp-10h] BYREF
   unsigned __int8 v15; // [esp+28h] [ebp-8h]
 
@@ -8879,9 +8878,9 @@ void __cdecl sub_409E10(int a1, int a2, int a3)
   if ( a3 != 13 )
     sub_408740((int *)a1, "Invalid IHDR chunk");
   *(_DWORD *)(a1 + 104) |= 1u;
-  png_crc_read((struct png_struct_def *)a1, v13, 0xDu);
-  png_crc_finish((struct png_struct_def *)a1, 0);
-  v3 = sub_409D20((int *)a1, v13);
+  sub_408CA0((int *)a1, v13, 0xDu);
+  sub_409D50(a1, 0);
+  v3 = sub_409D20((int *)a1, (unsigned __int8 *)v13);
   v4 = sub_409D20((int *)a1, v14);
   v5 = v14[5];
   v6 = v14[4];
@@ -8917,12 +8916,13 @@ void __cdecl sub_409E10(int a1, int a2, int a3)
   v9 = v6 * *(_BYTE *)(a1 + 298);
   *(_BYTE *)(a1 + 297) = v9;
   if ( v9 < 8u )
-    v10 = (v3 * (unsigned int)v9 + 7) >> 3;
+    v10 = (v3 * v9 + 7) >> 3;
   else
     v10 = v3 * (v9 >> 3);
   *(_DWORD *)(a1 + 216) = v10;
-  png_set_IHDR((int *)a1, a2, v3, v8, v6, v5, v12, v7, v11);
+  sub_4115E0((int *)a1, a2, v3, v8, v6, v5, v12, v7, v11);
 }
+// 409E10: using guessed type unsigned __int8 var_14[4];
 
 //----- (00409F90) --------------------------------------------------------
 void __cdecl sub_409F90(int a1, int a2, signed int a3)
@@ -8932,9 +8932,9 @@ void __cdecl sub_409F90(int a1, int a2, signed int a3)
   int v5; // ebx
   char *v6; // edi
   int v7; // ebp
-  unsigned __int8 v8; // al
-  unsigned __int8 v9; // cl
-  unsigned __int8 v10[4]; // [esp+4h] [ebp-304h] BYREF
+  char v8; // al
+  char v9; // cl
+  char v10[4]; // [esp+4h] [ebp-304h] BYREF
   char Src[2]; // [esp+8h] [ebp-300h] BYREF
   char v12; // [esp+Ah] [ebp-2FEh] BYREF
 
@@ -8944,7 +8944,7 @@ void __cdecl sub_409F90(int a1, int a2, signed int a3)
   if ( (v3 & 4) != 0 )
   {
     sub_4087F0(a1, "Invalid PLTE after IDAT");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50(a1, a3);
   }
   else
   {
@@ -8959,7 +8959,7 @@ void __cdecl sub_409F90(int a1, int a2, signed int a3)
         if ( v4 == 3 )
           sub_408740((int *)a1, "Invalid palette chunk");
         sub_4087F0(a1, "Invalid palette chunk");
-        png_crc_finish((struct png_struct_def *)a1, a3);
+        sub_409D50(a1, a3);
       }
       else
       {
@@ -8970,7 +8970,7 @@ void __cdecl sub_409F90(int a1, int a2, signed int a3)
           v7 = a3 / 3;
           do
           {
-            png_crc_read((struct png_struct_def *)a1, v10, 3u);
+            sub_408CA0((int *)a1, v10, 3u);
             v8 = v10[1];
             v9 = v10[2];
             *(v6 - 2) = v10[0];
@@ -8981,7 +8981,7 @@ void __cdecl sub_409F90(int a1, int a2, signed int a3)
           }
           while ( v7 );
         }
-        png_crc_finish((struct png_struct_def *)a1, 0);
+        sub_409D50(a1, 0);
         sub_411A50(a1, a2, Src, v5);
         if ( *(_BYTE *)(a1 + 294) == 3 && a2 && (*(_BYTE *)(a2 + 8) & 0x10) != 0 )
         {
@@ -9001,10 +9001,11 @@ void __cdecl sub_409F90(int a1, int a2, signed int a3)
     else
     {
       sub_4087F0(a1, "Ignoring PLTE chunk in grayscale PNG");
-      png_crc_finish((struct png_struct_def *)a1, a3);
+      sub_409D50(a1, a3);
     }
   }
 }
+// 409F90: using guessed type char Src[2];
 
 //----- (0040A120) --------------------------------------------------------
 int __cdecl sub_40A120(int *a1, int a2, unsigned int a3)
@@ -9017,13 +9018,13 @@ int __cdecl sub_40A120(int *a1, int a2, unsigned int a3)
   a1[26] |= 0x18u;
   if ( a3 )
     sub_4087F0((int)a1, "Incorrect IEND chunk length");
-  return png_crc_finish((struct png_struct_def *)a1, a3);
+  return sub_409D50((int)a1, a3);
 }
 
 //----- (0040A170) --------------------------------------------------------
 void __cdecl sub_40A170(int *a1, int a2, unsigned int a3)
 {
-  int v3; // esi
+  int *v3; // esi
   int v4; // eax
   int v5; // ebx
   int v6; // eax
@@ -9033,14 +9034,14 @@ void __cdecl sub_40A170(int *a1, int a2, unsigned int a3)
   FILE *v10; // eax
   float v11; // [esp+14h] [ebp-4h]
 
-  v3 = (int)a1;
+  v3 = a1;
   v4 = a1[26];
   if ( (v4 & 1) == 0 )
     sub_408740(a1, "Missing IHDR before gAMA");
   if ( (v4 & 4) != 0 )
   {
     sub_4087F0((int)a1, "Invalid gAMA after IDAT");
-    png_crc_finish((struct png_struct_def *)v3, a3);
+    sub_409D50((int)v3, a3);
   }
   else
   {
@@ -9049,45 +9050,45 @@ void __cdecl sub_40A170(int *a1, int a2, unsigned int a3)
     v5 = a2;
     if ( a2 && (v6 = *(_DWORD *)(a2 + 8), (v6 & 1) != 0) && (v6 & 0x800) == 0 )
     {
-      sub_4087F0(v3, "Duplicate gAMA chunk");
-      png_crc_finish((struct png_struct_def *)v3, a3);
+      sub_4087F0((int)v3, "Duplicate gAMA chunk");
+      sub_409D50((int)v3, a3);
     }
     else
     {
       v7 = a3;
       if ( a3 == 4 )
       {
-        png_crc_read((struct png_struct_def *)v3, (unsigned __int8 *)&a1, 4u);
-        if ( !png_crc_finish((struct png_struct_def *)v3, 0) )
+        sub_408CA0(v3, &a1, 4u);
+        if ( !sub_409D50((int)v3, 0) )
         {
-          v8 = png_get_uint_32((unsigned __int8 *)&a1);
+          v8 = sub_408C50((unsigned __int8 *)&a1);
           v9 = v8;
           if ( v8 )
           {
             if ( (*(_DWORD *)(v5 + 8) & 0x800) != 0 && (v8 < 45000 || v8 > 46000) )
             {
-              sub_4087F0(v3, "Ignoring incorrect gAMA value when sRGB is also present");
+              sub_4087F0((int)v3, "Ignoring incorrect gAMA value when sRGB is also present");
               v10 = _iob_func();
               fprintf(v10 + 2, "gamma = (%d/100000)\n", v9);
             }
             else
             {
               v11 = (double)v8 / 100000.0;
-              *(float *)(v3 + 348) = v11;
-              sub_411420(v3, v5, v11);
-              sub_4114A0(v3, v5, v9);
+              *((float *)v3 + 87) = v11;
+              sub_411420((int)v3, v5, v11);
+              sub_4114A0((int)v3, v5, v9);
             }
           }
           else
           {
-            sub_4087F0(v3, "Ignoring gAMA chunk with gamma=0");
+            sub_4087F0((int)v3, "Ignoring gAMA chunk with gamma=0");
           }
         }
       }
       else
       {
-        sub_4087F0(v3, "Incorrect gAMA chunk length");
-        png_crc_finish((struct png_struct_def *)v3, v7);
+        sub_4087F0((int)v3, "Incorrect gAMA chunk length");
+        sub_409D50((int)v3, v7);
       }
     }
   }
@@ -9098,12 +9099,12 @@ void __cdecl sub_40A2E0(int a1, int a2, unsigned int a3)
 {
   int v3; // eax
   unsigned int v4; // eax
-  unsigned __int8 *v5; // eax
+  char *v5; // eax
   char v6; // dl
   char v7; // cl
   char v8; // dl
-  unsigned __int8 v9; // cl
-  unsigned __int8 v10; // [esp+8h] [ebp-4h] BYREF
+  char v9; // cl
+  char v10; // [esp+8h] [ebp-4h] BYREF
   char v11; // [esp+9h] [ebp-3h]
   char v12; // [esp+Ah] [ebp-2h]
   char v13; // [esp+Bh] [ebp-1h]
@@ -9118,7 +9119,7 @@ void __cdecl sub_40A2E0(int a1, int a2, unsigned int a3)
   if ( (v3 & 4) != 0 )
   {
     sub_4087F0(a1, "Invalid sBIT after IDAT");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50(a1, a3);
   }
   else
   {
@@ -9127,7 +9128,7 @@ void __cdecl sub_40A2E0(int a1, int a2, unsigned int a3)
     if ( a2 && (*(_BYTE *)(a2 + 8) & 2) != 0 )
     {
       sub_4087F0(a1, "Duplicate sBIT chunk");
-      png_crc_finish((struct png_struct_def *)a1, a3);
+      sub_409D50(a1, a3);
     }
     else
     {
@@ -9136,10 +9137,10 @@ void __cdecl sub_40A2E0(int a1, int a2, unsigned int a3)
         v4 = *(unsigned __int8 *)(a1 + 298);
       if ( a3 == v4 && a3 <= 4 )
       {
-        png_crc_read((struct png_struct_def *)a1, &v10, v4);
-        if ( !png_crc_finish((struct png_struct_def *)a1, 0) )
+        sub_408CA0((int *)a1, &v10, v4);
+        if ( !sub_409D50(a1, 0) )
         {
-          v5 = (unsigned __int8 *)(a1 + 380);
+          v5 = (char *)(a1 + 380);
           if ( (*(_BYTE *)(a1 + 294) & 2) != 0 )
           {
             v6 = v11;
@@ -9165,7 +9166,7 @@ void __cdecl sub_40A2E0(int a1, int a2, unsigned int a3)
       else
       {
         sub_4087F0(a1, "Incorrect sBIT chunk length");
-        png_crc_finish((struct png_struct_def *)a1, a3);
+        sub_409D50(a1, a3);
       }
     }
   }
@@ -9175,7 +9176,6 @@ void __cdecl sub_40A2E0(int a1, int a2, unsigned int a3)
 int __cdecl sub_40A450(int *a1, int a2, unsigned int a3)
 {
   int v3; // eax
-  int result; // eax
   int v5; // eax
   unsigned int v6; // edi
   unsigned int v7; // eax
@@ -9197,7 +9197,7 @@ int __cdecl sub_40A450(int *a1, int a2, unsigned int a3)
   double v23; // [esp+30h] [ebp-90h]
   double v24; // [esp+38h] [ebp-88h]
   double v25; // [esp+38h] [ebp-88h]
-  unsigned __int8 v26[4]; // [esp+84h] [ebp-3Ch] BYREF
+  char v26[4]; // [esp+84h] [ebp-3Ch] BYREF
   int v27; // [esp+88h] [ebp-38h]
   int v28; // [esp+8Ch] [ebp-34h]
   int v29; // [esp+90h] [ebp-30h]
@@ -9219,7 +9219,7 @@ int __cdecl sub_40A450(int *a1, int a2, unsigned int a3)
   if ( (v3 & 4) != 0 )
   {
     sub_4087F0((int)a1, "Invalid cHRM after IDAT");
-    result = png_crc_finish((struct png_struct_def *)a1, a3);
+    return sub_409D50((int)a1, a3);
   }
   else
   {
@@ -9228,60 +9228,60 @@ int __cdecl sub_40A450(int *a1, int a2, unsigned int a3)
     if ( a2 && (v5 = *(_DWORD *)(a2 + 8), (v5 & 4) != 0) && (v5 & 0x800) == 0 )
     {
       sub_4087F0((int)a1, "Duplicate cHRM chunk");
-      result = png_crc_finish((struct png_struct_def *)a1, a3);
+      return sub_409D50((int)a1, a3);
     }
     else if ( a3 == 32 )
     {
-      png_crc_read((struct png_struct_def *)a1, v26, 4u);
-      v6 = png_get_uint_32(v26);
-      png_crc_read((struct png_struct_def *)a1, v26, 4u);
-      v7 = png_get_uint_32(v26);
+      sub_408CA0(a1, v26, 4u);
+      v6 = sub_408C50((unsigned __int8 *)v26);
+      sub_408CA0(a1, v26, 4u);
+      v7 = sub_408C50((unsigned __int8 *)v26);
       if ( v6 > 0x13880 || v7 > 0x13880 || v7 + v6 > 0x186A0 )
       {
         sub_4087F0((int)a1, "Invalid cHRM white point");
-        result = png_crc_finish((struct png_struct_def *)a1, 0x18u);
+        return sub_409D50((int)a1, 0x18u);
       }
       else
       {
         v32 = v6;
         v31 = v7;
-        png_crc_read((struct png_struct_def *)a1, v26, 4u);
-        v8 = png_get_uint_32(v26);
-        png_crc_read((struct png_struct_def *)a1, v26, 4u);
-        v9 = png_get_uint_32(v26);
+        sub_408CA0(a1, v26, 4u);
+        v8 = sub_408C50((unsigned __int8 *)v26);
+        sub_408CA0(a1, v26, 4u);
+        v9 = sub_408C50((unsigned __int8 *)v26);
         if ( v8 > 0x13880 || v9 > 0x13880 || v9 + v8 > 0x186A0 )
         {
           sub_4087F0((int)a1, "Invalid cHRM red point");
-          result = png_crc_finish((struct png_struct_def *)a1, 0x10u);
+          return sub_409D50((int)a1, 0x10u);
         }
         else
         {
           v30 = v8;
           v29 = v9;
-          png_crc_read((struct png_struct_def *)a1, v26, 4u);
-          v10 = png_get_uint_32(v26);
-          png_crc_read((struct png_struct_def *)a1, v26, 4u);
-          v11 = png_get_uint_32(v26);
+          sub_408CA0(a1, v26, 4u);
+          v10 = sub_408C50((unsigned __int8 *)v26);
+          sub_408CA0(a1, v26, 4u);
+          v11 = sub_408C50((unsigned __int8 *)v26);
           if ( v10 > 0x13880 || v11 > 0x13880 || v11 + v10 > 0x186A0 )
           {
             sub_4087F0((int)a1, "Invalid cHRM green point");
-            result = png_crc_finish((struct png_struct_def *)a1, 8u);
+            return sub_409D50((int)a1, 8u);
           }
           else
           {
             v28 = v10;
             v27 = v11;
-            png_crc_read((struct png_struct_def *)a1, v26, 4u);
-            v12 = png_get_uint_32(v26);
+            sub_408CA0(a1, v26, 4u);
+            v12 = sub_408C50((unsigned __int8 *)v26);
             v34 = *(float *)&v12;
-            png_crc_read((struct png_struct_def *)a1, v26, 4u);
-            v13 = png_get_uint_32(v26);
+            sub_408CA0(a1, v26, 4u);
+            v13 = sub_408C50((unsigned __int8 *)v26);
             v14 = v13;
             v33 = *(float *)&v13;
             if ( (unsigned int)v12 > 0x13880 || (unsigned int)v13 > 0x13880 || (unsigned int)(v13 + v12) > 0x186A0 )
             {
               sub_4087F0((int)a1, "Invalid cHRM blue point");
-              result = png_crc_finish((struct png_struct_def *)a1, 0);
+              return sub_409D50((int)a1, 0);
             }
             else
             {
@@ -9296,9 +9296,9 @@ int __cdecl sub_40A450(int *a1, int a2, unsigned int a3)
               v33 = (double)SLODWORD(v33) / 100000.0;
               if ( v15 )
               {
-                png_set_cHRM((int)a1, a2, v40, v39, v38, v37, v36, v35, v34, v33);
+                sub_410EF0((int)a1, a2, v40, v39, v38, v37, v36, v35, v34, v33);
                 sub_411230((int)a1, a2, v32, v31, v30, v29, v28, v27, v12, v14);
-                result = png_crc_finish((struct png_struct_def *)a1, 0);
+                return sub_409D50((int)a1, 0);
               }
               else
               {
@@ -9327,7 +9327,7 @@ int __cdecl sub_40A450(int *a1, int a2, unsigned int a3)
                   v17 = _iob_func();
                   fprintf(v17 + 2, "gx=%f, gy=%f, bx=%f, by=%f\n", v19, v21, v23, v25);
                 }
-                result = png_crc_finish((struct png_struct_def *)a1, 0);
+                return sub_409D50((int)a1, 0);
               }
             }
           }
@@ -9337,16 +9337,16 @@ int __cdecl sub_40A450(int *a1, int a2, unsigned int a3)
     else
     {
       sub_4087F0((int)a1, "Incorrect cHRM chunk length");
-      result = png_crc_finish((struct png_struct_def *)a1, a3);
+      return sub_409D50((int)a1, a3);
     }
   }
-  return result;
 }
+// 40A450: using guessed type unsigned __int8 var_3C[4];
 
 //----- (0040A940) --------------------------------------------------------
 void __cdecl sub_40A940(int *a1, int a2, unsigned int a3)
 {
-  int v3; // edi
+  int *v3; // edi
   int v4; // eax
   int v5; // esi
   unsigned int v6; // ebx
@@ -9363,14 +9363,14 @@ void __cdecl sub_40A940(int *a1, int a2, unsigned int a3)
   int v17; // eax
   int v18; // [esp-Ch] [ebp-10h]
 
-  v3 = (int)a1;
+  v3 = a1;
   v4 = a1[26];
   if ( (v4 & 1) == 0 )
     sub_408740(a1, "Missing IHDR before sRGB");
   if ( (v4 & 4) != 0 )
   {
     sub_4087F0((int)a1, "Invalid sRGB after IDAT");
-    png_crc_finish((struct png_struct_def *)v3, a3);
+    sub_409D50((int)v3, a3);
   }
   else
   {
@@ -9379,16 +9379,16 @@ void __cdecl sub_40A940(int *a1, int a2, unsigned int a3)
     v5 = a2;
     if ( a2 && (*(_DWORD *)(a2 + 8) & 0x800) != 0 )
     {
-      sub_4087F0(v3, "Duplicate sRGB chunk");
-      png_crc_finish((struct png_struct_def *)v3, a3);
+      sub_4087F0((int)v3, "Duplicate sRGB chunk");
+      sub_409D50((int)v3, a3);
     }
     else
     {
       v6 = a3;
       if ( a3 == 1 )
       {
-        png_crc_read((struct png_struct_def *)v3, (unsigned __int8 *)&a1, 1u);
-        if ( !png_crc_finish((struct png_struct_def *)v3, 0) )
+        sub_408CA0(v3, &a1, 1u);
+        if ( !sub_409D50((int)v3, 0) )
         {
           v7 = (char)a1;
           if ( (unsigned __int8)a1 < 4u )
@@ -9398,8 +9398,8 @@ void __cdecl sub_40A940(int *a1, int a2, unsigned int a3)
               v8 = *(_DWORD *)(v5 + 252);
               if ( v8 < 45000 || v8 > 46000 )
               {
-                sub_4087F0(v3, "Ignoring incorrect gAMA value when sRGB is also present");
-                v18 = *(_DWORD *)(v3 + 564);
+                sub_4087F0((int)v3, "Ignoring incorrect gAMA value when sRGB is also present");
+                v18 = v3[141];
                 v9 = _iob_func();
                 fprintf(v9 + 2, "incorrect gamma=(%d/100000)\n", v18);
               }
@@ -9424,21 +9424,21 @@ void __cdecl sub_40A940(int *a1, int a2, unsigned int a3)
                 || (v17 = *(_DWORD *)(v5 + 284), v17 < 5000)
                 || v17 > 7000 )
               {
-                sub_4087F0(v3, "Ignoring incorrect cHRM value when sRGB is also present");
+                sub_4087F0((int)v3, "Ignoring incorrect cHRM value when sRGB is also present");
               }
             }
-            sub_411B30(v3, v5, v7);
+            sub_411B30((int)v3, v5, v7);
           }
           else
           {
-            sub_4087F0(v3, "Unknown sRGB intent");
+            sub_4087F0((int)v3, "Unknown sRGB intent");
           }
         }
       }
       else
       {
-        sub_4087F0(v3, "Incorrect sRGB chunk length");
-        png_crc_finish((struct png_struct_def *)v3, v6);
+        sub_4087F0((int)v3, "Incorrect sRGB chunk length");
+        sub_409D50((int)v3, v6);
       }
     }
   }
@@ -9447,29 +9447,29 @@ void __cdecl sub_40A940(int *a1, int a2, unsigned int a3)
 //----- (0040AB30) --------------------------------------------------------
 void __cdecl sub_40AB30(int *a1, int a2, unsigned int a3)
 {
-  struct png_struct_def *v3; // edi
+  int *v3; // edi
   int v4; // eax
   unsigned int v5; // ebp
-  unsigned __int8 *v6; // ebx
-  unsigned __int8 *i; // esi
+  _BYTE *v6; // ebx
+  _BYTE *i; // esi
   unsigned __int8 *v8; // esi
   unsigned __int8 v9; // al
   _BYTE *v10; // esi
   size_t v11; // esi
   char *v12; // ebp
-  size_t v13; // eax
+  char *v13; // eax
   unsigned __int16 v14; // dx
   unsigned int v15; // edx
   char v16; // [esp+4h] [ebp-4h]
 
-  v3 = (struct png_struct_def *)a1;
+  v3 = a1;
   v4 = a1[26];
   if ( (v4 & 1) == 0 )
     sub_408740(a1, "Missing IHDR before iCCP");
   if ( (v4 & 4) != 0 )
   {
     sub_4087F0((int)a1, "Invalid iCCP after IDAT");
-    png_crc_finish(v3, a3);
+    sub_409D50((int)v3, a3);
     return;
   }
   if ( (v4 & 2) != 0 )
@@ -9477,13 +9477,13 @@ void __cdecl sub_40AB30(int *a1, int a2, unsigned int a3)
   if ( a2 && (*(_DWORD *)(a2 + 8) & 0x1000) != 0 )
   {
     sub_4087F0((int)v3, "Duplicate iCCP chunk");
-    png_crc_finish(v3, a3);
+    sub_409D50((int)v3, a3);
     return;
   }
   v5 = a3;
-  v6 = (unsigned __int8 *)sub_408BA0((int)v3, a3 + 1);
-  png_crc_read(v3, v6, v5);
-  if ( png_crc_finish(v3, 0) )
+  v6 = sub_408BA0((int)v3, a3 + 1);
+  sub_408CA0(v3, v6, v5);
+  if ( sub_409D50((int)v3, 0) )
   {
     sub_408BF0((int)v3, v6);
     return;
@@ -9507,9 +9507,9 @@ void __cdecl sub_40AB30(int *a1, int a2, unsigned int a3)
   }
   v11 = v10 - v6;
   v16 = v9;
-  v12 = sub_408D40((int)v3, v9, (char *)v6, v5, v11, (size_t *)&a1);
-  v13 = (size_t)a1 - v11;
-  if ( v11 > (unsigned int)a1 || v13 < 4 )
+  v12 = sub_408D40((int)v3, v9, v6, v5, v11, (size_t *)&a1);
+  v13 = (char *)a1 - v11;
+  if ( v11 > (unsigned int)a1 || (unsigned int)v13 < 4 )
   {
     sub_408BF0((int)v3, v12);
     sub_4087F0((int)v3, "Profile size field missing from iCCP chunk");
@@ -9519,15 +9519,15 @@ void __cdecl sub_40AB30(int *a1, int a2, unsigned int a3)
     HIBYTE(v14) = v12[v11];
     LOBYTE(v14) = v12[v11 + 1];
     v15 = (unsigned __int8)v12[v11 + 3] | (((unsigned __int8)v12[v11 + 2] | (v14 << 8)) << 8);
-    if ( v15 < v13 )
+    if ( v15 < (unsigned int)v13 )
     {
-      v13 = v15;
+      v13 = (char *)v15;
 LABEL_22:
-      sub_411C10((int)v3, a2, (int)v12, v16, &v12[v11], v13);
+      sub_411C10((int)v3, a2, (int)v12, v16, &v12[v11], (size_t)v13);
       sub_408BF0((int)v3, v12);
       return;
     }
-    if ( v15 <= v13 )
+    if ( v15 <= (unsigned int)v13 )
       goto LABEL_22;
     sub_408BF0((int)v3, v12);
     sub_4087F0((int)v3, "Ignoring truncated iCCP profile.\n");
@@ -9537,12 +9537,12 @@ LABEL_22:
 //----- (0040ACE0) --------------------------------------------------------
 void __cdecl sub_40ACE0(int *a1, int a2, unsigned int a3)
 {
-  int v3; // ebx
+  int *v3; // ebx
   int v4; // eax
-  unsigned __int8 *v5; // ebp
-  unsigned __int8 *i; // esi
-  unsigned __int8 *v7; // esi
-  unsigned __int8 v8; // al
+  _BYTE *v5; // ebp
+  _BYTE *i; // esi
+  _BYTE *v7; // esi
+  char v8; // al
   unsigned __int8 *v9; // esi
   int v10; // ecx
   unsigned int v11; // eax
@@ -9566,25 +9566,25 @@ void __cdecl sub_40ACE0(int *a1, int a2, unsigned int a3)
   int v29; // edx
   __int16 v30; // ax
   int v31; // edx
-  unsigned __int8 *v32; // [esp+8h] [ebp-10h] BYREF
+  _BYTE *v32; // [esp+8h] [ebp-10h] BYREF
   int v33; // [esp+Ch] [ebp-Ch]
   void *Block; // [esp+10h] [ebp-8h]
   int v35; // [esp+14h] [ebp-4h]
 
-  v3 = (int)a1;
+  v3 = a1;
   v4 = a1[26];
   if ( (v4 & 1) == 0 )
     sub_408740(a1, "Missing IHDR before sPLT");
   if ( (v4 & 4) != 0 )
   {
     sub_4087F0((int)a1, "Invalid sPLT after IDAT");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50((int)a1, a3);
   }
   else
   {
-    v5 = (unsigned __int8 *)sub_408BA0((int)a1, a3 + 1);
-    png_crc_read((struct png_struct_def *)a1, v5, a3);
-    if ( png_crc_finish((struct png_struct_def *)a1, 0) )
+    v5 = sub_408BA0((int)a1, a3 + 1);
+    sub_408CA0(a1, v5, a3);
+    if ( sub_409D50((int)a1, 0) )
     {
       sub_408BF0((int)a1, v5);
     }
@@ -9658,12 +9658,12 @@ void __cdecl sub_40ACE0(int *a1, int a2, unsigned int a3)
                     break;
                   v12 = (char *)Block;
                 }
-                v3 = (int)a1;
+                v3 = a1;
               }
               v32 = v5;
-              sub_411FC0(v3, a2, (int)&v32, 1);
-              sub_408BF0(v3, v5);
-              sub_408BF0(v3, Block);
+              sub_411FC0((int)v3, a2, (int)&v32, 1);
+              sub_408BF0((int)v3, v5);
+              sub_408BF0((int)v3, Block);
             }
             else
             {
@@ -9696,11 +9696,11 @@ void __cdecl sub_40AF00(int a1, int a2, unsigned int a3)
   int v3; // eax
   char v4; // al
   unsigned int v5; // edi
-  unsigned __int8 v6[4]; // [esp+8h] [ebp-110h] BYREF
+  char v6[4]; // [esp+8h] [ebp-110h] BYREF
   unsigned __int8 v7[2]; // [esp+Ch] [ebp-10Ch] BYREF
-  unsigned __int8 v8[2]; // [esp+Eh] [ebp-10Ah] BYREF
-  unsigned __int8 v9[4]; // [esp+10h] [ebp-108h] BYREF
-  unsigned __int8 Src[256]; // [esp+14h] [ebp-104h] BYREF
+  char v8[2]; // [esp+Eh] [ebp-10Ah] BYREF
+  char v9[4]; // [esp+10h] [ebp-108h] BYREF
+  char Src[256]; // [esp+14h] [ebp-104h] BYREF
 
   v3 = *(_DWORD *)(a1 + 104);
   if ( (v3 & 1) == 0 )
@@ -9708,13 +9708,13 @@ void __cdecl sub_40AF00(int a1, int a2, unsigned int a3)
   if ( (v3 & 4) != 0 )
   {
     sub_4087F0(a1, "Invalid tRNS after IDAT");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50(a1, a3);
     return;
   }
   if ( a2 && (*(_BYTE *)(a2 + 8) & 0x10) != 0 )
   {
     sub_4087F0(a1, "Duplicate tRNS chunk");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50(a1, a3);
     return;
   }
   v4 = *(_BYTE *)(a1 + 294);
@@ -9725,18 +9725,18 @@ void __cdecl sub_40AF00(int a1, int a2, unsigned int a3)
       v5 = a3;
       if ( a3 != 6 )
         goto LABEL_5;
-      png_crc_read((struct png_struct_def *)a1, v7, 6u);
+      sub_408CA0((int *)a1, v7, 6u);
       *(_WORD *)(a1 + 282) = 1;
       *(_WORD *)(a1 + 398) = sub_408C80(v7);
-      *(_WORD *)(a1 + 400) = sub_408C80(v8);
-      *(_WORD *)(a1 + 402) = sub_408C80(v9);
+      *(_WORD *)(a1 + 400) = sub_408C80((unsigned __int8 *)v8);
+      *(_WORD *)(a1 + 402) = sub_408C80((unsigned __int8 *)v9);
     }
     else
     {
       if ( v4 != 3 )
       {
         sub_4087F0(a1, "tRNS chunk not allowed with alpha channel");
-        png_crc_finish((struct png_struct_def *)a1, a3);
+        sub_409D50(a1, a3);
         return;
       }
       if ( (*(_BYTE *)(a1 + 104) & 2) == 0 )
@@ -9747,10 +9747,10 @@ void __cdecl sub_40AF00(int a1, int a2, unsigned int a3)
       if ( !a3 )
       {
         sub_4087F0(a1, "Zero length tRNS chunk");
-        png_crc_finish((struct png_struct_def *)a1, 0);
+        sub_409D50(a1, 0);
         return;
       }
-      png_crc_read((struct png_struct_def *)a1, Src, a3);
+      sub_408CA0((int *)a1, Src, a3);
       *(_WORD *)(a1 + 282) = a3;
     }
   }
@@ -9761,19 +9761,22 @@ void __cdecl sub_40AF00(int a1, int a2, unsigned int a3)
     {
 LABEL_5:
       sub_4087F0(a1, "Incorrect tRNS chunk length");
-      png_crc_finish((struct png_struct_def *)a1, v5);
+      sub_409D50(a1, v5);
       return;
     }
-    png_crc_read((struct png_struct_def *)a1, v6, 2u);
+    sub_408CA0((int *)a1, v6, 2u);
     *(_WORD *)(a1 + 282) = 1;
-    *(_WORD *)(a1 + 404) = sub_408C80(v6);
+    *(_WORD *)(a1 + 404) = sub_408C80((unsigned __int8 *)v6);
   }
-  if ( !png_crc_finish((struct png_struct_def *)a1, 0) )
+  if ( !sub_409D50(a1, 0) )
     sub_411F30(a1, a2, Src, *(unsigned __int16 *)(a1 + 282), a1 + 396);
 }
+// 40AF00: using guessed type unsigned __int8 var_110[4];
+// 40AF00: using guessed type unsigned __int8 var_10A[2];
+// 40AF00: using guessed type unsigned __int8 var_108[4];
 
 //----- (0040B150) --------------------------------------------------------
-void __cdecl png_handle_bKGD(struct png_struct_def *a1, struct png_info_struct *a2, unsigned int a3)
+void __cdecl sub_40B150(int a1, int a2, unsigned int a3)
 {
   int v3; // eax
   char v4; // al
@@ -9786,87 +9789,89 @@ void __cdecl png_handle_bKGD(struct png_struct_def *a1, struct png_info_struct *
   __int16 v11; // dx
   int v12; // eax
   __int16 v13; // ax
-  int v14; // [esp+8h] [ebp-Ch] BYREF
-  unsigned __int8 v15[4]; // [esp+Ch] [ebp-8h] BYREF
+  unsigned __int8 v14[2]; // [esp+8h] [ebp-Ch] BYREF
+  unsigned __int8 v15; // [esp+Ah] [ebp-Ah] BYREF
+  char v16[4]; // [esp+Ch] [ebp-8h] BYREF
 
-  v3 = *((_DWORD *)a1 + 26);
+  v3 = *(_DWORD *)(a1 + 104);
   if ( (v3 & 1) == 0 )
     sub_408740((int *)a1, "Missing IHDR before bKGD");
   if ( (v3 & 4) != 0 )
   {
-    sub_4087F0((int)a1, "Invalid bKGD after IDAT");
-    png_crc_finish(a1, a3);
+    sub_4087F0(a1, "Invalid bKGD after IDAT");
+    sub_409D50(a1, a3);
     return;
   }
-  if ( *((_BYTE *)a1 + 294) == 3 && (v3 & 2) == 0 )
+  if ( *(_BYTE *)(a1 + 294) == 3 && (v3 & 2) == 0 )
   {
-    sub_4087F0((int)a1, "Missing PLTE before bKGD");
-    png_crc_finish(a1, a3);
+    sub_4087F0(a1, "Missing PLTE before bKGD");
+    sub_409D50(a1, a3);
     return;
   }
-  if ( a2 && (*((_BYTE *)a2 + 8) & 0x20) != 0 )
+  if ( a2 && (*(_BYTE *)(a2 + 8) & 0x20) != 0 )
   {
-    sub_4087F0((int)a1, "Duplicate bKGD chunk");
-    png_crc_finish(a1, a3);
+    sub_4087F0(a1, "Duplicate bKGD chunk");
+    sub_409D50(a1, a3);
     return;
   }
-  v4 = *((_BYTE *)a1 + 294);
+  v4 = *(_BYTE *)(a1 + 294);
   if ( v4 == 3 )
     v5 = 1;
   else
     v5 = 2 * (v4 & 2 | 1);
   if ( a3 != v5 )
   {
-    sub_4087F0((int)a1, "Incorrect bKGD chunk length");
-    png_crc_finish(a1, a3);
+    sub_4087F0(a1, "Incorrect bKGD chunk length");
+    sub_409D50(a1, a3);
     return;
   }
-  png_crc_read(a1, (unsigned __int8 *)&v14, v5);
-  if ( !png_crc_finish(a1, 0) )
+  sub_408CA0((int *)a1, v14, v5);
+  if ( !sub_409D50(a1, 0) )
   {
-    v6 = *((_BYTE *)a1 + 294);
+    v6 = *(_BYTE *)(a1 + 294);
     if ( v6 == 3 )
     {
-      v7 = v14;
-      *((_BYTE *)a1 + 312) = v14;
-      v8 = *((_WORD *)a2 + 10);
+      v7 = v14[0];
+      *(_BYTE *)(a1 + 312) = v14[0];
+      v8 = *(_WORD *)(a2 + 20);
       if ( v8 )
       {
         if ( v7 > v8 )
         {
-          sub_4087F0((int)a1, "Incorrect bKGD chunk index value");
+          sub_4087F0(a1, "Incorrect bKGD chunk index value");
           return;
         }
         v9 = v7;
-        v10 = *((_DWORD *)a1 + 69);
+        v10 = *(_DWORD *)(a1 + 276);
         v9 *= 3;
         v11 = *(unsigned __int8 *)(v9 + v10);
         v12 = v10 + v9;
-        *((_WORD *)a1 + 157) = v11;
-        *((_WORD *)a1 + 158) = *(unsigned __int8 *)(v12 + 1);
-        *((_WORD *)a1 + 159) = *(unsigned __int8 *)(v12 + 2);
+        *(_WORD *)(a1 + 314) = v11;
+        *(_WORD *)(a1 + 316) = *(unsigned __int8 *)(v12 + 1);
+        *(_WORD *)(a1 + 318) = *(unsigned __int8 *)(v12 + 2);
       }
     }
     else
     {
       if ( (v6 & 2) != 0 )
       {
-        *((_WORD *)a1 + 157) = sub_408C80((unsigned __int8 *)&v14);
-        *((_WORD *)a1 + 158) = sub_408C80((unsigned __int8 *)&v14 + 2);
-        v13 = sub_408C80(v15);
+        *(_WORD *)(a1 + 314) = sub_408C80(v14);
+        *(_WORD *)(a1 + 316) = sub_408C80(&v15);
+        v13 = sub_408C80((unsigned __int8 *)v16);
       }
       else
       {
-        v13 = sub_408C80((unsigned __int8 *)&v14);
-        *((_WORD *)a1 + 160) = v13;
-        *((_WORD *)a1 + 158) = v13;
-        *((_WORD *)a1 + 157) = v13;
+        v13 = sub_408C80(v14);
+        *(_WORD *)(a1 + 320) = v13;
+        *(_WORD *)(a1 + 316) = v13;
+        *(_WORD *)(a1 + 314) = v13;
       }
-      *((_WORD *)a1 + 159) = v13;
+      *(_WORD *)(a1 + 318) = v13;
     }
-    sub_410EC0((int)a1, (int)a2, (int)a1 + 312);
+    sub_410EC0(a1, a2, a1 + 312);
   }
 }
+// 40B150: using guessed type unsigned __int8 var_8[4];
 
 //----- (0040B390) --------------------------------------------------------
 void __cdecl sub_40B390(int a1, int a2, unsigned int a3)
@@ -9874,7 +9879,7 @@ void __cdecl sub_40B390(int a1, int a2, unsigned int a3)
   int v3; // eax
   unsigned int v4; // ebx
   unsigned int i; // edi
-  unsigned __int8 v6[4]; // [esp+8h] [ebp-208h] BYREF
+  char v6[4]; // [esp+8h] [ebp-208h] BYREF
   __int16 v7[256]; // [esp+Ch] [ebp-204h] BYREF
 
   v3 = *(_DWORD *)(a1 + 104);
@@ -9883,14 +9888,14 @@ void __cdecl sub_40B390(int a1, int a2, unsigned int a3)
   if ( (v3 & 4) != 0 )
   {
     sub_4087F0(a1, "Invalid hIST after IDAT");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50(a1, a3);
   }
   else if ( (v3 & 2) != 0 )
   {
     if ( a2 && (*(_BYTE *)(a2 + 8) & 0x40) != 0 )
     {
       sub_4087F0(a1, "Duplicate hIST chunk");
-      png_crc_finish((struct png_struct_def *)a1, a3);
+      sub_409D50(a1, a3);
     }
     else
     {
@@ -9899,25 +9904,27 @@ void __cdecl sub_40B390(int a1, int a2, unsigned int a3)
       {
         for ( i = 0; i < v4; ++i )
         {
-          png_crc_read((struct png_struct_def *)a1, v6, 2u);
-          v7[i] = sub_408C80(v6);
+          sub_408CA0((int *)a1, v6, 2u);
+          v7[i] = sub_408C80((unsigned __int8 *)v6);
         }
-        if ( !png_crc_finish((struct png_struct_def *)a1, 0) )
+        if ( !sub_409D50(a1, 0) )
           sub_411520(a1, a2, (int)v7);
       }
       else
       {
         sub_4087F0(a1, "Incorrect hIST chunk length");
-        png_crc_finish((struct png_struct_def *)a1, a3);
+        sub_409D50(a1, a3);
       }
     }
   }
   else
   {
     sub_4087F0(a1, "Missing PLTE before hIST");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50(a1, a3);
   }
 }
+// 40B390: using guessed type unsigned __int8 var_208[4];
+// 40B390: using guessed type __int16 var_204[256];
 
 //----- (0040B530) --------------------------------------------------------
 void __cdecl sub_40B530(int *a1, int a2, unsigned int a3)
@@ -9926,7 +9933,7 @@ void __cdecl sub_40B530(int *a1, int a2, unsigned int a3)
   int v4; // eax
   int v5; // [esp-Ch] [ebp-24h]
   char v6; // [esp-8h] [ebp-20h]
-  unsigned __int8 v7[4]; // [esp+8h] [ebp-10h] BYREF
+  char v7[4]; // [esp+8h] [ebp-10h] BYREF
   int v8; // [esp+Ch] [ebp-Ch] BYREF
   char v9; // [esp+10h] [ebp-8h]
 
@@ -9936,30 +9943,31 @@ void __cdecl sub_40B530(int *a1, int a2, unsigned int a3)
   if ( (v3 & 4) != 0 )
   {
     sub_4087F0((int)a1, "Invalid pHYs after IDAT");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50((int)a1, a3);
   }
   else if ( a2 && *(char *)(a2 + 8) < 0 )
   {
     sub_4087F0((int)a1, "Duplicate pHYs chunk");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50((int)a1, a3);
   }
   else if ( a3 == 9 )
   {
-    png_crc_read((struct png_struct_def *)a1, v7, 9u);
-    if ( !png_crc_finish((struct png_struct_def *)a1, 0) )
+    sub_408CA0(a1, v7, 9u);
+    if ( !sub_409D50((int)a1, 0) )
     {
       v6 = v9;
-      v5 = png_get_uint_32((unsigned __int8 *)&v8);
-      v4 = png_get_uint_32(v7);
+      v5 = sub_408C50((unsigned __int8 *)&v8);
+      v4 = sub_408C50((unsigned __int8 *)v7);
       sub_411A20((int)a1, a2, v4, v5, v6);
     }
   }
   else
   {
     sub_4087F0((int)a1, "Incorrect pHYs chunk length");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50((int)a1, a3);
   }
 }
+// 40B530: using guessed type unsigned __int8 var_10[4];
 
 //----- (0040B650) --------------------------------------------------------
 void __cdecl sub_40B650(int *a1, int a2, unsigned int a3)
@@ -9968,7 +9976,7 @@ void __cdecl sub_40B650(int *a1, int a2, unsigned int a3)
   int v4; // eax
   int v5; // [esp-Ch] [ebp-24h]
   char v6; // [esp-8h] [ebp-20h]
-  unsigned __int8 v7[4]; // [esp+8h] [ebp-10h] BYREF
+  char v7[4]; // [esp+8h] [ebp-10h] BYREF
   int v8; // [esp+Ch] [ebp-Ch] BYREF
   char v9; // [esp+10h] [ebp-8h]
 
@@ -9978,47 +9986,48 @@ void __cdecl sub_40B650(int *a1, int a2, unsigned int a3)
   if ( (v3 & 4) != 0 )
   {
     sub_4087F0((int)a1, "Invalid oFFs after IDAT");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50((int)a1, a3);
   }
   else if ( a2 && (*(_DWORD *)(a2 + 8) & 0x100) != 0 )
   {
     sub_4087F0((int)a1, "Duplicate oFFs chunk");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50((int)a1, a3);
   }
   else if ( a3 == 9 )
   {
-    png_crc_read((struct png_struct_def *)a1, v7, 9u);
-    if ( !png_crc_finish((struct png_struct_def *)a1, 0) )
+    sub_408CA0(a1, v7, 9u);
+    if ( !sub_409D50((int)a1, 0) )
     {
       v6 = v9;
-      v5 = png_get_uint_32((unsigned __int8 *)&v8);
-      v4 = png_get_uint_32(v7);
+      v5 = sub_408C50((unsigned __int8 *)&v8);
+      v4 = sub_408C50((unsigned __int8 *)v7);
       sub_411810((int)a1, a2, v4, v5, v6);
     }
   }
   else
   {
     sub_4087F0((int)a1, "Incorrect oFFs chunk length");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50((int)a1, a3);
   }
 }
+// 40B650: using guessed type unsigned __int8 var_10[4];
 
 //----- (0040B780) --------------------------------------------------------
 void __cdecl sub_40B780(int *a1, int a2, unsigned int a3)
 {
   int v4; // eax
-  unsigned __int8 *v5; // eax
-  unsigned __int8 *v6; // ebx
-  unsigned __int8 *i; // esi
+  char *v5; // eax
+  char *v6; // ebx
+  unsigned __int8 *v7; // esi
   int v8; // eax
   unsigned __int8 v9; // cl
   char v10; // al
-  unsigned __int8 *v11; // esi
+  char *v11; // esi
   void *v12; // ebp
   int v13; // eax
   char v14; // [esp+9h] [ebp-11h]
-  unsigned __int8 *v15; // [esp+Ah] [ebp-10h]
-  unsigned __int8 *v16; // [esp+Eh] [ebp-Ch]
+  char *v15; // [esp+Ah] [ebp-10h]
+  char *v16; // [esp+Eh] [ebp-Ch]
   int v17; // [esp+12h] [ebp-8h]
   int v18; // [esp+16h] [ebp-4h]
   unsigned __int8 v19; // [esp+1Eh] [ebp+4h]
@@ -10030,45 +10039,50 @@ void __cdecl sub_40B780(int *a1, int a2, unsigned int a3)
   if ( (v4 & 4) != 0 )
   {
     sub_4087F0((int)a1, "Invalid pCAL after IDAT");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50((int)a1, a3);
     return;
   }
   if ( a2 && (*(_DWORD *)(a2 + 8) & 0x400) != 0 )
   {
     sub_4087F0((int)a1, "Duplicate pCAL chunk");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50((int)a1, a3);
     return;
   }
-  v5 = (unsigned __int8 *)sub_408C20((int)a1, a3 + 1);
+  v5 = (char *)sub_408C20((int)a1, a3 + 1);
   v6 = v5;
   if ( !v5 )
   {
     sub_4087F0((int)a1, "No memory for pCAL purpose.");
     return;
   }
-  png_crc_read((struct png_struct_def *)a1, v5, a3);
-  if ( png_crc_finish((struct png_struct_def *)a1, 0) )
+  sub_408CA0(a1, v5, a3);
+  if ( sub_409D50((int)a1, 0) )
   {
     sub_408BF0((int)a1, v6);
     return;
   }
   v6[a3] = 0;
   v15 = &v6[a3];
-  for ( i = v6; *i; ++i )
-    ;
-  if ( &v6[a3] <= i + 12 )
+  v7 = (unsigned __int8 *)v6;
+  if ( *v6 )
+  {
+    do
+      ++v7;
+    while ( *v7 );
+  }
+  if ( &v6[a3] <= (char *)v7 + 12 )
   {
     sub_4087F0((int)a1, "Invalid pCAL data");
 LABEL_28:
     sub_408BF0((int)a1, v6);
     return;
   }
-  v18 = png_get_uint_32(i + 1);
-  v8 = png_get_uint_32(i + 5);
-  v9 = i[10];
+  v18 = sub_408C50(v7 + 1);
+  v8 = sub_408C50(v7 + 5);
+  v9 = v7[10];
   v17 = v8;
-  v10 = i[9];
-  v11 = i + 11;
+  v10 = v7[9];
+  v11 = (char *)(v7 + 11);
   v14 = v10;
   v19 = v9;
   v16 = v11;
@@ -10141,34 +10155,34 @@ LABEL_41:
     sub_4087F0((int)a1, "No memory for pCAL params.");
   }
 }
-// 40B8E5: conditional instruction was optimized away because of 'al.1>=4u'
+// 40B8E5: conditional instruction was optimized away because al.1>=4u
 
 //----- (0040B9E0) --------------------------------------------------------
 void __cdecl sub_40B9E0(char *EndPtr, int a2, int a3)
 {
-  char *v3; // edi
+  int *v3; // edi
   int v4; // eax
   int v5; // ebx
   char *v6; // esi
   const char *v7; // ebp
-  _BYTE *i; // ebx
+  char *i; // ebx
   const char *v9; // ebx
   double v10; // st7
   double v11; // [esp+28h] [ebp-8h]
 
-  v3 = EndPtr;
+  v3 = (int *)EndPtr;
   v4 = *((_DWORD *)EndPtr + 26);
   if ( (v4 & 1) == 0 )
     sub_408740((int *)EndPtr, "Missing IHDR before sCAL");
   if ( (v4 & 4) != 0 )
   {
     sub_4087F0((int)EndPtr, "Invalid sCAL after IDAT");
-    png_crc_finish((struct png_struct_def *)v3, a3);
+    sub_409D50((int)v3, a3);
   }
   else if ( a2 && (*(_DWORD *)(a2 + 8) & 0x4000) != 0 )
   {
     sub_4087F0((int)EndPtr, "Duplicate sCAL chunk");
-    png_crc_finish((struct png_struct_def *)v3, a3);
+    sub_409D50((int)v3, a3);
   }
   else
   {
@@ -10176,8 +10190,8 @@ void __cdecl sub_40B9E0(char *EndPtr, int a2, int a3)
     v6 = (char *)sub_408C20((int)EndPtr, a3 + 1);
     if ( v6 )
     {
-      png_crc_read((struct png_struct_def *)v3, (unsigned __int8 *)v6, v5);
-      if ( png_crc_finish((struct png_struct_def *)v3, 0) )
+      sub_408CA0(v3, v6, v5);
+      if ( sub_409D50((int)v3, 0) )
       {
         sub_408BF0((int)v3, v6);
       }
@@ -10236,7 +10250,7 @@ void __cdecl sub_40BBA0(int a1, _DWORD *a2, unsigned int a3)
   if ( a2 && (a2[2] & 0x200) != 0 )
   {
     sub_4087F0(a1, "Duplicate tIME chunk");
-    png_crc_finish((struct png_struct_def *)a1, a3);
+    sub_409D50(a1, a3);
   }
   else
   {
@@ -10245,8 +10259,8 @@ void __cdecl sub_40BBA0(int a1, _DWORD *a2, unsigned int a3)
       *(_DWORD *)(a1 + 104) = v3 | 8;
     if ( a3 == 7 )
     {
-      png_crc_read((struct png_struct_def *)a1, (unsigned __int8 *)v9, 7u);
-      if ( !png_crc_finish((struct png_struct_def *)a1, 0) )
+      sub_408CA0((int *)a1, v9, 7u);
+      if ( !sub_409D50(a1, 0) )
       {
         v7 = v9[5];
         v8 = v9[6];
@@ -10259,7 +10273,7 @@ void __cdecl sub_40BBA0(int a1, _DWORD *a2, unsigned int a3)
     else
     {
       sub_4087F0(a1, "Incorrect tIME chunk length");
-      png_crc_finish((struct png_struct_def *)a1, a3);
+      sub_409D50(a1, a3);
     }
   }
 }
@@ -10268,9 +10282,9 @@ void __cdecl sub_40BBA0(int a1, _DWORD *a2, unsigned int a3)
 void __cdecl sub_40BCC0(int a1, _DWORD *a2, unsigned int a3)
 {
   int v3; // eax
-  unsigned __int8 *v4; // eax
-  unsigned __int8 *v5; // ebx
-  const char *v6; // ebp
+  char *v4; // eax
+  char *v5; // ebx
+  const char *i; // ebp
   _DWORD *v7; // esi
   int v8; // ebp
 
@@ -10279,34 +10293,29 @@ void __cdecl sub_40BCC0(int a1, _DWORD *a2, unsigned int a3)
   v3 = *(_DWORD *)(a1 + 104);
   if ( (v3 & 4) != 0 )
     *(_DWORD *)(a1 + 104) = v3 | 8;
-  v4 = (unsigned __int8 *)sub_408C20(a1, a3 + 1);
+  v4 = (char *)sub_408C20(a1, a3 + 1);
   v5 = v4;
   if ( v4 )
   {
-    png_crc_read((struct png_struct_def *)a1, v4, a3);
-    if ( png_crc_finish((struct png_struct_def *)a1, 0) )
+    sub_408CA0((int *)a1, v4, a3);
+    if ( sub_409D50(a1, 0) )
     {
       sub_408BF0(a1, v5);
     }
     else
     {
       v5[a3] = 0;
-      v6 = (const char *)v5;
-      if ( *v5 )
-      {
-        do
-          ++v6;
-        while ( *v6 );
-      }
-      if ( v6 != (const char *)&v5[a3] )
-        ++v6;
+      for ( i = v5; *i; ++i )
+        ;
+      if ( i != &v5[a3] )
+        ++i;
       v7 = sub_408C20(a1, 0x10u);
       if ( v7 )
       {
         *v7 = -1;
         v7[1] = v5;
-        v7[2] = v6;
-        v7[3] = strlen(v6);
+        v7[2] = i;
+        v7[3] = strlen(i);
         v8 = sub_411D10(a1, a2, (int)v7, 1);
         sub_408BF0(a1, v5);
         sub_408BF0(a1, v7);
@@ -10330,11 +10339,11 @@ void __cdecl sub_40BCC0(int a1, _DWORD *a2, unsigned int a3)
 void __cdecl sub_40BDE0(int a1, _DWORD *a2, int a3)
 {
   int v4; // eax
-  unsigned int v5; // esi
-  unsigned __int8 *v6; // eax
-  unsigned __int8 *v7; // ebx
-  unsigned __int8 *v8; // eax
-  unsigned __int8 *i; // esi
+  int v5; // esi
+  char *v6; // eax
+  char *v7; // ebx
+  char *v8; // eax
+  char *i; // esi
   int v10; // ebp
   _BYTE *v11; // esi
   char *v12; // ebx
@@ -10350,12 +10359,12 @@ void __cdecl sub_40BDE0(int a1, _DWORD *a2, int a3)
   if ( (v4 & 4) != 0 )
     *(_DWORD *)(a1 + 104) = v4 | 8;
   v5 = a3;
-  v6 = (unsigned __int8 *)sub_408C20(a1, a3 + 1);
+  v6 = (char *)sub_408C20(a1, a3 + 1);
   v7 = v6;
   if ( v6 )
   {
-    png_crc_read((struct png_struct_def *)a1, v6, v5);
-    if ( png_crc_finish((struct png_struct_def *)a1, 0) )
+    sub_408CA0((int *)a1, v6, v5);
+    if ( sub_409D50(a1, 0) )
     {
       sub_408BF0(a1, v7);
     }
@@ -10372,7 +10381,7 @@ void __cdecl sub_40BDE0(int a1, _DWORD *a2, int a3)
       }
       else
       {
-        v10 = (char)i[1];
+        v10 = i[1];
         v11 = i + 1;
         if ( v10 )
         {
@@ -10382,7 +10391,7 @@ void __cdecl sub_40BDE0(int a1, _DWORD *a2, int a3)
         i = v11 + 1;
       }
       v17 = i - v7;
-      v12 = sub_408D40(a1, v10, (char *)v7, a3, i - v7, (size_t *)&a3);
+      v12 = sub_408D40(a1, v10, v7, a3, i - v7, (size_t *)&a3);
       v13 = sub_408C20(a1, 0x10u);
       v14 = v13;
       if ( v13 )
@@ -10434,7 +10443,7 @@ int __cdecl sub_40BF40(int a1, int a2, size_t Size)
   if ( (*(_DWORD *)(a1 + 108) & 0x8000) == 0 )
   {
     v8 = Size;
-    return png_crc_finish((struct png_struct_def *)a1, v8);
+    return sub_409D50(a1, v8);
   }
   v5 = (char *)(a1 + 284);
   do
@@ -10446,7 +10455,7 @@ int __cdecl sub_40BF40(int a1, int a2, size_t Size)
   while ( v6 );
   Block = sub_408BA0(a1, Size);
   v12 = Size;
-  png_crc_read((struct png_struct_def *)a1, (unsigned __int8 *)Block, Size);
+  sub_408CA0((int *)a1, Block, Size);
   v7 = *(int (__cdecl **)(int, char *))(a1 + 540);
   if ( !v7 )
     goto LABEL_16;
@@ -10462,7 +10471,7 @@ LABEL_16:
   }
   sub_408BF0(a1, Block);
   v8 = 0;
-  return png_crc_finish((struct png_struct_def *)a1, v8);
+  return sub_409D50(a1, v8);
 }
 
 //----- (0040C120) --------------------------------------------------------
@@ -10477,12 +10486,12 @@ unsigned int __cdecl sub_40C120(int a1)
   int v7; // edi
   unsigned int v8; // eax
   unsigned int v9; // ecx
-  unsigned __int8 *v10; // edx
+  _BYTE *v10; // edx
   int v11; // eax
   char *v12; // eax
   void *v13; // [esp-14h] [ebp-20h]
   size_t v14; // [esp-Ch] [ebp-18h]
-  unsigned __int8 v15[4]; // [esp+8h] [ebp-4h] BYREF
+  char v15[4]; // [esp+8h] [ebp-4h] BYREF
 
   v1 = a1;
   ++*(_DWORD *)(a1 + 228);
@@ -10531,26 +10540,26 @@ unsigned int __cdecl sub_40C120(int a1)
         {
           while ( !*(_DWORD *)(v1 + 268) )
           {
-            png_crc_finish((struct png_struct_def *)v1, 0);
+            sub_409D50(v1, 0);
             sub_4088C0((int *)v1);
-            *(_DWORD *)(v1 + 268) = sub_409D20((int *)v1, v15);
+            *(_DWORD *)(v1 + 268) = sub_409D20((int *)v1, (unsigned __int8 *)v15);
             sub_407DD0(v1);
-            png_crc_read((struct png_struct_def *)v1, (unsigned __int8 *)(v1 + 284), 4u);
+            sub_408CA0((int *)v1, (_BYTE *)(v1 + 284), 4u);
             if ( memcmp((const void *)(v1 + 284), "IDAT", 4u) )
               sub_408740((int *)v1, "Not enough image data");
           }
           v8 = *(_DWORD *)(v1 + 176);
           v9 = *(_DWORD *)(v1 + 268);
-          v10 = *(unsigned __int8 **)(v1 + 172);
+          v10 = *(_BYTE **)(v1 + 172);
           v7 = v1 + 116;
           *(_DWORD *)(v1 + 120) = v8;
           *(_DWORD *)(v1 + 116) = v10;
           if ( v8 > v9 )
             *(_DWORD *)(v1 + 120) = v9;
-          png_crc_read((struct png_struct_def *)v1, v10, *(_DWORD *)(v1 + 120));
+          sub_408CA0((int *)v1, v10, *(_DWORD *)(v1 + 120));
           *(_DWORD *)(v1 + 268) -= *(_DWORD *)(v1 + 120);
         }
-        v11 = inflate(v7, 1);
+        v11 = sub_412D50(v7, 1);
         if ( v11 == 1 )
           break;
         if ( v11 )
@@ -10575,12 +10584,17 @@ LABEL_28:
     }
     if ( *(_DWORD *)(v1 + 268) || *(_DWORD *)(v1 + 120) )
       sub_4087F0(v1, "Extra compression data");
-    result = inflateReset((_DWORD *)(v1 + 116));
+    result = sub_412AF0((_DWORD *)(v1 + 116));
     *(_DWORD *)(v1 + 104) |= 8u;
   }
   return result;
 }
-// 40C21C: conditional instruction was optimized away because of 'bl.1<7u'
+// 40C21C: conditional instruction was optimized away because bl.1<7u
+// 4164B4: using guessed type int dword_4164B4[7];
+// 4164D0: using guessed type int dword_4164D0[7];
+// 4164EC: using guessed type int dword_4164EC[7];
+// 416508: using guessed type int dword_416508[7];
+// 40C120: using guessed type unsigned __int8 var_4[4];
 
 //----- (0040C430) --------------------------------------------------------
 char __cdecl sub_40C430(int *a1, int a2)
@@ -10667,7 +10681,6 @@ char __cdecl sub_40C430(int *a1, int a2)
         while ( v13 );
 LABEL_25:
         v2 = a1;
-        goto LABEL_26;
       }
     }
     else
@@ -10730,9 +10743,9 @@ void __cdecl sub_40C570(int *a1, _BYTE *a2, unsigned __int8 *a3)
   unsigned int v20; // ebp
   unsigned int k; // ebx
   int v22; // edx
-  unsigned __int8 *v23; // esi
+  _BYTE *v23; // esi
   unsigned int v24; // ebp
-  unsigned int l; // ebx
+  unsigned int m; // ebx
   int v26; // edx
   unsigned __int16 v27; // ax
   __int16 v28; // ax
@@ -10809,11 +10822,11 @@ void __cdecl sub_40C570(int *a1, _BYTE *a2, unsigned __int8 *a3)
           case 0x10:
             v23 = a2;
             v24 = v10 * v4;
-            for ( l = 0; l < v24; *(v23 - 1) = v28 )
+            for ( m = 0; m < v24; *(v23 - 1) = v28 )
             {
-              v26 = l % v10;
-              v27 = v23[1] + (*v23 << 8);
-              ++l;
+              v26 = m % v10;
+              v27 = (unsigned __int8)v23[1] + ((unsigned __int8)*v23 << 8);
+              ++m;
               v23 += 2;
               v28 = v27 >> LOWORD(v29[v26]);
               *(v23 - 2) = HIBYTE(v28);
@@ -10861,13 +10874,13 @@ void __cdecl sub_40C750(int a1, _BYTE *a2)
 }
 
 //----- (0040C7A0) --------------------------------------------------------
-_BYTE *__cdecl sub_40C7A0(int *a1, int a2)
+int *__cdecl sub_40C7A0(int *a1, int a2)
 {
-  _BYTE *result; // eax
+  int *result; // eax
   char v3; // cl
   int v4; // edx
   int v5; // eax
-  _BYTE *v6; // ecx
+  int *v6; // ecx
   int v7; // esi
   char v8; // dl
   _BYTE *v9; // eax
@@ -10875,7 +10888,7 @@ _BYTE *__cdecl sub_40C7A0(int *a1, int a2)
   char v11; // bl
   _BYTE *v12; // ecx
   char v13; // bl
-  _BYTE *v14; // ecx
+  int *v14; // ecx
   int v15; // esi
   char v16; // dl
   _BYTE *v17; // eax
@@ -10885,13 +10898,13 @@ _BYTE *__cdecl sub_40C7A0(int *a1, int a2)
   char v21; // bl
   char v22; // bl
   int v23; // eax
-  _BYTE *v24; // ecx
+  int *v24; // ecx
   int v25; // esi
   char v26; // dl
   _BYTE *v27; // eax
   char v28; // bl
   _BYTE *v29; // ecx
-  _BYTE *v30; // ecx
+  int *v30; // ecx
   int v31; // esi
   char v32; // dl
   _BYTE *v33; // eax
@@ -10909,46 +10922,46 @@ _BYTE *__cdecl sub_40C7A0(int *a1, int a2)
     v5 = a1[1];
     if ( *((_BYTE *)a1 + 9) == 8 )
     {
-      result = (_BYTE *)(a2 + v5);
+      result = (int *)(a2 + v5);
       v6 = result;
       if ( v4 )
       {
         v7 = *a1;
         do
         {
-          v8 = *(result - 1);
-          v9 = result - 1;
+          v8 = *((_BYTE *)result - 1);
+          v9 = (char *)result - 1;
           v10 = *--v9;
-          *(v6 - 1) = v10;
+          *((_BYTE *)v6 - 1) = v10;
           v11 = *--v9;
-          v12 = v6 - 2;
+          v12 = (char *)v6 - 2;
           *v12 = v11;
           v13 = *(v9 - 1);
-          result = v9 - 1;
+          result = (int *)(v9 - 1);
           *--v12 = v13;
-          v6 = v12 - 1;
+          v6 = (int *)(v12 - 1);
           --v7;
-          *v6 = v8;
+          *(_BYTE *)v6 = v8;
         }
         while ( v7 );
       }
     }
     else
     {
-      result = (_BYTE *)(a2 + v5);
+      result = (int *)(a2 + v5);
       v14 = result;
       if ( v4 )
       {
         v15 = *a1;
         do
         {
-          v16 = *(result - 1);
-          v17 = result - 1;
+          v16 = *((_BYTE *)result - 1);
+          v17 = (char *)result - 1;
           v18 = *(v17 - 1);
           v17 -= 2;
           v37 = v18;
-          *(v14 - 1) = *v17;
-          v19 = v14 - 1;
+          *((_BYTE *)v14 - 1) = *v17;
+          v19 = (char *)v14 - 1;
           *(v19 - 1) = *--v17;
           *(--v19 - 1) = *(v17 - 1);
           v20 = *(--v17 - 1);
@@ -10959,12 +10972,12 @@ _BYTE *__cdecl sub_40C7A0(int *a1, int a2)
           v19 -= 2;
           *v19 = v21;
           v22 = *(v17 - 1);
-          result = v17 - 1;
+          result = (int *)(v17 - 1);
           *--v19 = v22;
           *--v19 = v16;
-          v14 = v19 - 1;
+          v14 = (int *)(v19 - 1);
           --v15;
-          *v14 = v37;
+          *(_BYTE *)v14 = v37;
         }
         while ( v15 );
       }
@@ -10975,49 +10988,49 @@ _BYTE *__cdecl sub_40C7A0(int *a1, int a2)
     v23 = a1[1];
     if ( *((_BYTE *)a1 + 9) == 8 )
     {
-      result = (_BYTE *)(a2 + v23);
+      result = (int *)(a2 + v23);
       v24 = result;
       if ( v4 )
       {
         v25 = *a1;
         do
         {
-          v26 = *(result - 1);
-          v27 = result - 1;
+          v26 = *((_BYTE *)result - 1);
+          v27 = (char *)result - 1;
           v28 = *(v27 - 1);
-          result = v27 - 1;
-          v29 = v24 - 1;
+          result = (int *)(v27 - 1);
+          v29 = (char *)v24 - 1;
           *v29 = v28;
-          v24 = v29 - 1;
+          v24 = (int *)(v29 - 1);
           --v25;
-          *v24 = v26;
+          *(_BYTE *)v24 = v26;
         }
         while ( v25 );
       }
     }
     else
     {
-      result = (_BYTE *)(a2 + v23);
+      result = (int *)(a2 + v23);
       v30 = result;
       if ( v4 )
       {
         v31 = *a1;
         do
         {
-          v32 = *(result - 1);
-          v33 = result - 1;
+          v32 = *((_BYTE *)result - 1);
+          v33 = (char *)result - 1;
           v34 = *(v33 - 1);
           v33 -= 2;
           v38 = v34;
-          v35 = v30 - 1;
+          v35 = (char *)v30 - 1;
           *v35 = *v33;
           v36 = *(v33 - 1);
-          result = v33 - 1;
+          result = (int *)(v33 - 1);
           *--v35 = v36;
           *--v35 = v32;
-          v30 = v35 - 1;
+          v30 = (int *)(v35 - 1);
           --v31;
-          *v30 = v38;
+          *(_BYTE *)v30 = v38;
         }
         while ( v31 );
       }
@@ -11027,9 +11040,9 @@ _BYTE *__cdecl sub_40C7A0(int *a1, int a2)
 }
 
 //----- (0040C920) --------------------------------------------------------
-_BYTE *__cdecl sub_40C920(int *a1, int a2)
+int *__cdecl sub_40C920(int *a1, int a2)
 {
-  _BYTE *result; // eax
+  int *result; // eax
   char v3; // cl
   int v4; // edx
   int v5; // eax
@@ -11040,7 +11053,7 @@ _BYTE *__cdecl sub_40C920(int *a1, int a2)
   _BYTE *v10; // eax
   char v11; // dl
   int v12; // eax
-  _BYTE *v13; // ecx
+  int *v13; // ecx
   int v14; // esi
   _BYTE *v15; // eax
   _BYTE *v16; // ecx
@@ -11058,27 +11071,27 @@ _BYTE *__cdecl sub_40C920(int *a1, int a2)
     v5 = a1[1];
     if ( *((_BYTE *)a1 + 9) == 8 )
     {
-      for ( result = (_BYTE *)(a2 + v5); v4; result[3] = v7 )
+      for ( result = (int *)(a2 + v5); v4; *((_BYTE *)result + 3) = v7 )
       {
-        v6 = result - 1;
+        v6 = (char *)result - 1;
         v7 = -1 - *v6;
-        result = v6 - 3;
+        result = (int *)(v6 - 3);
         --v4;
       }
     }
     else
     {
-      result = (_BYTE *)(a2 + v5);
+      result = (int *)(a2 + v5);
       if ( v4 )
       {
         v8 = *a1;
         do
         {
-          v9 = result - 1;
+          v9 = (char *)result - 1;
           *v9 = -1 - *v9;
-          v10 = result - 2;
+          v10 = (char *)result - 2;
           v11 = -1 - *v10;
-          result = v10 - 6;
+          result = (int *)(v10 - 6);
           --v8;
           *(v9 - 1) = v11;
         }
@@ -11091,38 +11104,38 @@ _BYTE *__cdecl sub_40C920(int *a1, int a2)
     v12 = a1[1];
     if ( *((_BYTE *)a1 + 9) == 8 )
     {
-      result = (_BYTE *)(a2 + v12);
+      result = (int *)(a2 + v12);
       v13 = result;
       if ( v4 )
       {
         v14 = *a1;
         do
         {
-          v15 = result - 1;
-          v16 = v13 - 1;
+          v15 = (char *)result - 1;
+          v16 = (char *)v13 - 1;
           *v16 = -1 - *v15;
           v17 = *(v15 - 1);
-          result = v15 - 1;
-          v13 = v16 - 1;
+          result = (int *)(v15 - 1);
+          v13 = (int *)(v16 - 1);
           --v14;
-          *v13 = v17;
+          *(_BYTE *)v13 = v17;
         }
         while ( v14 );
       }
     }
     else
     {
-      result = (_BYTE *)(a2 + v12);
+      result = (int *)(a2 + v12);
       if ( v4 )
       {
         v18 = *a1;
         do
         {
-          v19 = result - 1;
+          v19 = (char *)result - 1;
           *v19 = -1 - *v19;
-          v20 = result - 2;
+          v20 = (char *)result - 2;
           v21 = -1 - *v20;
-          result = v20 - 2;
+          result = (int *)(v20 - 2);
           --v18;
           *(v19 - 1) = v21;
         }
@@ -11139,7 +11152,7 @@ char __cdecl sub_40CA00(int a1, int a2, unsigned int a3, char a4)
   _BYTE *v5; // eax
   unsigned int v6; // esi
   unsigned int v7; // ebx
-  int v8; // edi
+  unsigned int v8; // edi
   unsigned int v9; // ecx
   _BYTE *v10; // eax
   char v11; // bl
@@ -11623,7 +11636,7 @@ int __cdecl sub_40CEE0(int a1, int *a2, unsigned __int8 *a3)
   unsigned __int16 v34; // bp
   unsigned __int16 v35; // cx
   _BYTE *v36; // esi
-  _BYTE *v37; // ebp
+  unsigned __int8 *v37; // ebp
   int v38; // ecx
   unsigned __int8 v39; // dl
   unsigned __int8 *v40; // esi
@@ -11637,7 +11650,7 @@ int __cdecl sub_40CEE0(int a1, int *a2, unsigned __int8 *a3)
   unsigned __int8 v48; // dl
   _BYTE *v49; // eax
   _BYTE *v50; // esi
-  _BYTE *v51; // ecx
+  unsigned __int8 *v51; // ecx
   unsigned __int16 v52; // dx
   _BYTE *v53; // ecx
   unsigned __int16 v54; // bp
@@ -11649,8 +11662,8 @@ int __cdecl sub_40CEE0(int a1, int *a2, unsigned __int8 *a3)
   int v60; // ebp
   unsigned int v61; // ebp
   _BYTE *v62; // esi
-  _BYTE *v63; // eax
-  _BYTE *v64; // ecx
+  unsigned __int8 *v63; // eax
+  unsigned __int8 *v64; // ecx
   unsigned __int16 v65; // dx
   _BYTE *v66; // eax
   unsigned __int16 v67; // bp
@@ -11764,7 +11777,6 @@ int __cdecl sub_40CEE0(int a1, int *a2, unsigned __int8 *a3)
       while ( v89 );
 LABEL_38:
       v3 = v82;
-      goto LABEL_39;
     }
   }
   else if ( *(_DWORD *)(a1 + 376) && *(_DWORD *)(a1 + 372) )
@@ -12004,7 +12016,7 @@ LABEL_75:
   *((_BYTE *)a2 + 10) -= 2;
   v72 = *((_BYTE *)a2 + 9);
   v73 = *((_BYTE *)a2 + 10);
-  *((_BYTE *)a2 + 8) &= 0xFDu;
+  *((_BYTE *)a2 + 8) &= ~2u;
   v74 = v73 * v72;
   *((_BYTE *)a2 + 11) = v74;
   if ( v74 < 8u )
@@ -12015,40 +12027,52 @@ LABEL_75:
 }
 
 //----- (0040D5E0) --------------------------------------------------------
-char __cdecl sub_40D5E0(int *a1, unsigned __int8 *a2, _WORD *a3, _BYTE *a4, _WORD *a5, int a6, int a7, int a8, int a9, int a10, int a11, __int16 a12)
+char __cdecl sub_40D5E0(
+        int *a1,
+        unsigned __int8 *a2,
+        _WORD *a3,
+        _BYTE *a4,
+        _WORD *a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        __int16 a12)
 {
   unsigned int v12; // eax
   int v13; // ecx
   _WORD *v14; // ebp
-  _BYTE *v15; // esi
+  unsigned __int8 *v15; // esi
   int v16; // edx
   int v17; // ebp
-  char v18; // al
-  _BYTE *v19; // esi
+  unsigned __int8 v18; // al
+  unsigned __int8 *v19; // esi
   int v20; // edx
   unsigned __int8 v21; // al
-  char v22; // al
+  unsigned __int8 v22; // al
   char v23; // bl
   int v24; // ebp
-  char v25; // al
-  _BYTE *v26; // esi
+  unsigned __int8 v25; // al
+  unsigned __int8 *v26; // esi
   int v27; // edx
   unsigned __int8 v28; // al
-  char v29; // al
+  unsigned __int8 v29; // al
   char v30; // bl
   int v31; // ebp
-  char v32; // al
-  _BYTE *v33; // eax
+  unsigned __int8 v32; // al
+  unsigned __int8 *v33; // eax
   int v34; // edx
-  char v35; // cl
+  unsigned __int8 v35; // cl
   unsigned __int8 *v36; // eax
   unsigned __int8 v37; // cl
   __int16 v38; // cx
-  _BYTE *v39; // eax
+  unsigned __int8 *v39; // eax
   int v40; // edi
   unsigned __int8 v41; // cl
-  char v42; // cl
-  _BYTE *v43; // eax
+  unsigned __int8 v42; // cl
+  unsigned __int8 *v43; // eax
   unsigned __int8 *v44; // eax
   unsigned __int8 v45; // bl
   unsigned __int8 v46; // cl
@@ -12060,16 +12084,16 @@ char __cdecl sub_40D5E0(int *a1, unsigned __int8 *a2, _WORD *a3, _BYTE *a4, _WOR
   __int16 v52; // cx
   unsigned __int8 *v53; // eax
   unsigned __int8 *v54; // ecx
-  _BYTE *v55; // esi
+  unsigned __int8 *v55; // esi
   __int16 v56; // ax
   unsigned int v57; // eax
   unsigned __int8 *v58; // ecx
-  _BYTE *v59; // esi
+  unsigned __int8 *v59; // esi
   int v60; // edi
   unsigned __int8 v61; // al
   int v62; // edx
   unsigned int v63; // eax
-  _BYTE *v64; // esi
+  unsigned __int8 *v64; // esi
   _BYTE *v65; // edi
   unsigned __int8 *v66; // edx
   unsigned __int16 v67; // ax
@@ -12084,16 +12108,16 @@ char __cdecl sub_40D5E0(int *a1, unsigned __int8 *a2, _WORD *a3, _BYTE *a4, _WOR
   int v76; // ebp
   int v77; // ecx
   _BYTE *v78; // ebx
-  _BYTE *v79; // esi
+  unsigned __int8 *v79; // esi
   unsigned __int8 *v80; // edi
   unsigned __int8 v81; // al
-  char v82; // al
+  unsigned __int8 v82; // al
   __int16 v83; // cx
   unsigned int v84; // ebp
   unsigned int v85; // ebp
-  char v86; // bl
+  unsigned __int8 v86; // bl
   unsigned int v87; // eax
-  _BYTE *v88; // esi
+  unsigned __int8 *v88; // esi
   unsigned __int8 *v89; // edi
   unsigned __int8 v90; // al
   int v91; // ecx
@@ -12101,7 +12125,7 @@ char __cdecl sub_40D5E0(int *a1, unsigned __int8 *a2, _WORD *a3, _BYTE *a4, _WOR
   unsigned int v93; // eax
   int v94; // ebp
   char v95; // bl
-  _BYTE *v96; // eax
+  unsigned __int8 *v96; // eax
   unsigned __int8 *v97; // edx
   unsigned __int16 v98; // si
   __int16 v99; // cx
@@ -12326,10 +12350,10 @@ char __cdecl sub_40D5E0(int *a1, unsigned __int8 *a2, _WORD *a3, _BYTE *a4, _WOR
               v34 = *a1;
               do
               {
-                if ( (unsigned __int8)*v33 == v14[4] )
+                if ( *v33 == v14[4] )
                   v35 = a4[8];
                 else
-                  v35 = *(_BYTE *)((unsigned __int8)*v33 + a6);
+                  v35 = *(_BYTE *)(*v33 + a6);
                 *v33++ = v35;
                 --v34;
               }
@@ -12340,7 +12364,7 @@ char __cdecl sub_40D5E0(int *a1, unsigned __int8 *a2, _WORD *a3, _BYTE *a4, _WOR
           {
             for ( ; v13; --v13 )
             {
-              if ( (unsigned __int8)*v33 == v14[4] )
+              if ( *v33 == v14[4] )
                 *v33 = a4[8];
               ++v33;
             }
@@ -12402,7 +12426,7 @@ char __cdecl sub_40D5E0(int *a1, unsigned __int8 *a2, _WORD *a3, _BYTE *a4, _WOR
             do
             {
               v41 = *(v39 - 2);
-              if ( v41 == v14[1] && (unsigned __int8)*(v39 - 1) == v14[2] && (unsigned __int8)*v39 == v14[3] )
+              if ( v41 == v14[1] && *(v39 - 1) == v14[2] && *v39 == v14[3] )
               {
                 *(v39 - 2) = a4[2];
                 *(v39 - 1) = a4[4];
@@ -12411,8 +12435,8 @@ char __cdecl sub_40D5E0(int *a1, unsigned __int8 *a2, _WORD *a3, _BYTE *a4, _WOR
               else
               {
                 *(v39 - 2) = *(_BYTE *)(v41 + a6);
-                *(v39 - 1) = *(_BYTE *)((unsigned __int8)*(v39 - 1) + a6);
-                v42 = *(_BYTE *)((unsigned __int8)*v39 + a6);
+                *(v39 - 1) = *(_BYTE *)(*(v39 - 1) + a6);
+                v42 = *(_BYTE *)(*v39 + a6);
               }
               *v39 = v42;
               v39 += 3;
@@ -12426,9 +12450,7 @@ char __cdecl sub_40D5E0(int *a1, unsigned __int8 *a2, _WORD *a3, _BYTE *a4, _WOR
           v43 = a2 + 2;
           do
           {
-            if ( (unsigned __int8)*(v43 - 2) == v14[1]
-              && (unsigned __int8)*(v43 - 1) == v14[2]
-              && (unsigned __int8)*v43 == v14[3] )
+            if ( *(v43 - 2) == v14[1] && *(v43 - 1) == v14[2] && *v43 == v14[3] )
             {
               *(v43 - 2) = a4[2];
               *(v43 - 1) = a4[4];
@@ -13199,7 +13221,6 @@ void __cdecl sub_40E9A0(int *a1, int a2, int a3, int a4, int a5)
         while ( v30 );
 LABEL_26:
         v5 = a1;
-        goto LABEL_27;
       }
     }
     else
@@ -13651,19 +13672,19 @@ LABEL_72:
 char __cdecl sub_40EFF0(int *a1, char *a2, int a3, int a4)
 {
   int *v4; // edx
-  unsigned int i; // eax
+  int i; // eax
   int v6; // ebx
   char *v7; // ecx
   char *v8; // edi
   char v9; // al
   char v10; // si
-  _BYTE *v11; // ecx
+  char *v11; // ecx
   int v12; // eax
   char *v13; // ecx
   char *v14; // edi
   char v15; // al
   char v16; // si
-  _BYTE *v17; // ecx
+  char *v17; // ecx
   int v19; // [esp+10h] [ebp-4h]
 
   v4 = a1;
@@ -13745,7 +13766,7 @@ LABEL_17:
     {
       if ( *((_BYTE *)a1 + 9) == 8 )
       {
-        for ( i = (unsigned int)a2; v6; --v6 )
+        for ( i = (int)a2; v6; --v6 )
         {
           *(_BYTE *)i = *(_BYTE *)(*(unsigned __int8 *)i + a4);
           ++i;
@@ -14067,6 +14088,7 @@ LABEL_61:
     }
   }
 }
+// 41C020: using guessed type int dword_41C020[8];
 
 //----- (0040F880) --------------------------------------------------------
 char __cdecl sub_40F880(int *a1, int a2)
@@ -14590,7 +14612,7 @@ LABEL_78:
     }
   }
 }
-// 40FAA0: conditional instruction was optimized away because of 'dx.2!=0'
+// 40FAA0: conditional instruction was optimized away because dx.2!=0
 
 //----- (00410530) --------------------------------------------------------
 void __cdecl sub_410530(int a1)
@@ -14788,7 +14810,7 @@ char __cdecl sub_4109F0(int a1, _BYTE *a2)
   }
   return (char)i;
 }
-// 410A43: conditional instruction was optimized away because of 'al.1==4'
+// 410A43: conditional instruction was optimized away because al.1==4
 
 //----- (00410A80) --------------------------------------------------------
 void __cdecl sub_410A80(int a1, char *a2)
@@ -14816,7 +14838,7 @@ _BYTE *__cdecl sub_410AC0(int a1, _BYTE *a2)
 {
   _BYTE *result; // eax
   unsigned __int8 v3; // dl
-  unsigned int v4; // ecx
+  _BYTE *v4; // ecx
   _BYTE *v5; // esi
 
   result = (_BYTE *)a1;
@@ -14824,7 +14846,7 @@ _BYTE *__cdecl sub_410AC0(int a1, _BYTE *a2)
   if ( v3 < 8u )
   {
     result = a2;
-    v4 = (unsigned int)&a2[*(_DWORD *)(a1 + 4)];
+    v4 = &a2[*(_DWORD *)(a1 + 4)];
     switch ( v3 )
     {
       case 1u:
@@ -14839,26 +14861,26 @@ _BYTE *__cdecl sub_410AC0(int a1, _BYTE *a2)
       default:
         return result;
     }
-    if ( (unsigned int)a2 < v4 )
+    if ( a2 < v4 )
     {
       do
       {
         *result = v5[(unsigned __int8)*result];
         ++result;
       }
-      while ( (unsigned int)result < v4 );
+      while ( result < v4 );
     }
   }
   return result;
 }
 
 //----- (00410B20) --------------------------------------------------------
-int __cdecl sub_410B20(int a1, _BYTE *a2, int a3)
+unsigned int __cdecl sub_410B20(int a1, _BYTE *a2, int a3)
 {
   int v3; // ebx
   char v4; // dl
   unsigned int v5; // edi
-  int result; // eax
+  unsigned int result; // eax
   _BYTE *v7; // ecx
   _BYTE *v8; // edx
   _BYTE *v9; // eax
@@ -14868,7 +14890,7 @@ int __cdecl sub_410B20(int a1, _BYTE *a2, int a3)
   _BYTE *v13; // edx
   unsigned int v14; // esi
   char v15; // dl
-  int v16; // eax
+  unsigned int v16; // eax
   char v17; // dl
   _BYTE *v18; // ecx
   _BYTE *v19; // edx
@@ -14881,7 +14903,7 @@ int __cdecl sub_410B20(int a1, _BYTE *a2, int a3)
   char v26; // cl
   char v27; // cl
   unsigned int v28; // esi
-  int v29; // eax
+  unsigned int v29; // eax
   char v30; // dl
   char v31; // dl
   _BYTE *v32; // ecx
@@ -14895,13 +14917,13 @@ int __cdecl sub_410B20(int a1, _BYTE *a2, int a3)
   _BYTE *v40; // eax
   unsigned int v41; // esi
   char v42; // dl
-  int v43; // eax
+  unsigned int v43; // eax
   _BYTE *v44; // ecx
 
   v3 = a3;
   v4 = *(_BYTE *)(a1 + 8);
   v5 = *(_DWORD *)a1;
-  result = (int)a2;
+  result = (unsigned int)a2;
   v7 = a2;
   if ( (v4 == 2 || v4 == 6 && (a3 & 0x400000) != 0) && *(_BYTE *)(a1 + 10) == 4 )
   {
@@ -15116,7 +15138,7 @@ LABEL_48:
   }
 LABEL_49:
   if ( (v3 & 0x400000) != 0 )
-    *(_BYTE *)(a1 + 8) &= 0xFBu;
+    *(_BYTE *)(a1 + 8) &= ~4u;
   return result;
 }
 
@@ -15247,7 +15269,17 @@ void __cdecl sub_410EC0(int a1, int a2, int a3)
 }
 
 //----- (00410EF0) --------------------------------------------------------
-void __cdecl png_set_cHRM(int a1, int a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10)
+void __cdecl sub_410EF0(
+        int a1,
+        int a2,
+        double a3,
+        double a4,
+        double a5,
+        double a6,
+        double a7,
+        double a8,
+        double a9,
+        double a10)
 {
   if ( a1 && a2 )
   {
@@ -15306,21 +15338,35 @@ int __cdecl sub_411230(int a1, int a2, int a3, int a4, int a5, int a6, int a7, i
   {
     if ( a3 < 0 || a4 < 0 || a5 < 0 || a6 < 0 || a7 < 0 || a8 < 0 || a9 < 0 || a10 < 0 )
     {
-      result = sub_4087F0(a1, "Ignoring attempt to set negative chromaticity value");
+      return sub_4087F0(a1, "Ignoring attempt to set negative chromaticity value");
     }
     else
     {
       v10 = (double)a3;
-      if ( v10 > 2147483647.0
-        || (v18 = (double)a4, v18 > 2147483647.0)
-        || (v11 = (double)a5, v11 > 2147483647.0)
-        || (v12 = (double)a6, v12 > 2147483647.0)
-        || (v13 = (double)a7, v13 > 2147483647.0)
-        || (v14 = (double)a8, v14 > 2147483647.0)
-        || (v15 = (double)a9, v15 > 2147483647.0)
-        || (v16 = (double)a10, v16 > 2147483647.0) )
+      if ( v10 > 2147483647.0 )
+        return sub_4087F0(a1, "Ignoring attempt to set chromaticity value exceeding 21474.83");
+      v18 = (double)a4;
+      if ( v18 > 2147483647.0 )
+        return sub_4087F0(a1, "Ignoring attempt to set chromaticity value exceeding 21474.83");
+      v11 = (double)a5;
+      if ( v11 > 2147483647.0 )
+        return sub_4087F0(a1, "Ignoring attempt to set chromaticity value exceeding 21474.83");
+      v12 = (double)a6;
+      if ( v12 > 2147483647.0 )
+        return sub_4087F0(a1, "Ignoring attempt to set chromaticity value exceeding 21474.83");
+      v13 = (double)a7;
+      if ( v13 > 2147483647.0 )
+        return sub_4087F0(a1, "Ignoring attempt to set chromaticity value exceeding 21474.83");
+      v14 = (double)a8;
+      if ( v14 > 2147483647.0 )
+        return sub_4087F0(a1, "Ignoring attempt to set chromaticity value exceeding 21474.83");
+      v15 = (double)a9;
+      if ( v15 > 2147483647.0 )
+        return sub_4087F0(a1, "Ignoring attempt to set chromaticity value exceeding 21474.83");
+      v16 = (double)a10;
+      if ( v16 > 2147483647.0 )
       {
-        result = sub_4087F0(a1, "Ignoring attempt to set chromaticity value exceeding 21474.83");
+        return sub_4087F0(a1, "Ignoring attempt to set chromaticity value exceeding 21474.83");
       }
       else
       {
@@ -15401,7 +15447,7 @@ void __cdecl sub_411520(int a1, int a2, int a3)
   {
     if ( *(_WORD *)(a2 + 20) )
     {
-      png_free_data(a1, a2, 8, 0);
+      sub_407E80(a1, a2, 8, 0);
       v3 = sub_408C20(a1, 0x200u);
       *(_DWORD *)(a1 + 500) = v3;
       if ( v3 )
@@ -15434,46 +15480,46 @@ void __cdecl sub_411520(int a1, int a2, int a3)
 }
 
 //----- (004115E0) --------------------------------------------------------
-void __cdecl png_set_IHDR(jmp_buf Buf, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9)
+void __cdecl sub_4115E0(int *a1, int a2, unsigned int a3, unsigned int a4, int a5, int a6, int a7, int a8, int a9)
 {
   unsigned __int8 v9; // al
 
-  if ( !Buf || !a2 )
+  if ( !a1 || !a2 )
     return;
   if ( !a3 || !a4 )
-    sub_408740(Buf, "Image width or height is zero in IHDR");
-  if ( a3 > (unsigned int)Buf[153] || a4 > (unsigned int)Buf[154] )
-    sub_408740(Buf, "image size exceeds user limits in IHDR");
-  if ( (unsigned int)a3 > 0x7FFFFFFF || (unsigned int)a4 > 0x7FFFFFFF )
-    sub_408740(Buf, "Invalid image size in IHDR");
-  if ( (unsigned int)a3 > 0x1FFFFF7E )
-    sub_4087F0((int)Buf, "Width is too large for libpng to process pixels");
+    sub_408740(a1, "Image width or height is zero in IHDR");
+  if ( a3 > a1[153] || a4 > a1[154] )
+    sub_408740(a1, "image size exceeds user limits in IHDR");
+  if ( a3 > 0x7FFFFFFF || a4 > 0x7FFFFFFF )
+    sub_408740(a1, "Invalid image size in IHDR");
+  if ( a3 > 0x1FFFFF7E )
+    sub_4087F0((int)a1, "Width is too large for libpng to process pixels");
   if ( a5 != 1 && a5 != 2 && a5 != 4 && a5 != 8 && a5 != 16 )
-    sub_408740(Buf, "Invalid bit depth in IHDR");
+    sub_408740(a1, "Invalid bit depth in IHDR");
   if ( a6 < 0 || a6 == 1 || a6 == 5 || a6 > 6 )
-    sub_408740(Buf, "Invalid color type in IHDR");
+    sub_408740(a1, "Invalid color type in IHDR");
   if ( a6 != 3 )
   {
     if ( a6 != 2 && a6 != 4 && a6 != 6 || a5 >= 8 )
       goto LABEL_33;
 LABEL_32:
-    sub_408740(Buf, "Invalid color type/bit depth combination in IHDR");
+    sub_408740(a1, "Invalid color type/bit depth combination in IHDR");
   }
   if ( a5 > 8 )
     goto LABEL_32;
 LABEL_33:
   if ( a7 >= 2 )
-    sub_408740(Buf, "Unknown interlace method in IHDR");
+    sub_408740(a1, "Unknown interlace method in IHDR");
   if ( a8 )
-    sub_408740(Buf, "Unknown compression method in IHDR");
-  if ( (Buf[26] & 0x1000) != 0 && Buf[140] )
-    sub_4087F0((int)Buf, "MNG features are not allowed in a PNG datastream\n");
+    sub_408740(a1, "Unknown compression method in IHDR");
+  if ( (a1[26] & 0x1000) != 0 && a1[140] )
+    sub_4087F0((int)a1, "MNG features are not allowed in a PNG datastream\n");
   if ( a9 )
   {
-    if ( (Buf[140] & 4) == 0 || a9 != 64 || (Buf[26] & 0x1000) != 0 || a6 != 2 && a6 != 6 )
-      sub_408740(Buf, "Unknown filter method in IHDR");
-    if ( (Buf[26] & 0x1000) != 0 )
-      sub_4087F0((int)Buf, "Invalid filter method in IHDR");
+    if ( (a1[140] & 4) == 0 || a9 != 64 || (a1[26] & 0x1000) != 0 || a6 != 2 && a6 != 6 )
+      sub_408740(a1, "Unknown filter method in IHDR");
+    if ( (a1[26] & 0x1000) != 0 )
+      sub_4087F0((int)a1, "Invalid filter method in IHDR");
   }
   *(_DWORD *)(a2 + 4) = a4;
   *(_BYTE *)(a2 + 26) = 0;
@@ -15490,10 +15536,10 @@ LABEL_33:
     ++*(_BYTE *)(a2 + 29);
   v9 = a5 * *(_BYTE *)(a2 + 29);
   *(_BYTE *)(a2 + 30) = v9;
-  if ( (unsigned int)a3 <= 0x1FFFFF7E )
+  if ( a3 <= 0x1FFFFF7E )
   {
     if ( v9 < 8u )
-      *(_DWORD *)(a2 + 12) = (a3 * (unsigned int)v9 + 7) >> 3;
+      *(_DWORD *)(a2 + 12) = (a3 * v9 + 7) >> 3;
     else
       *(_DWORD *)(a2 + 12) = a3 * (v9 >> 3);
   }
@@ -15632,7 +15678,7 @@ void __cdecl sub_411A50(int a1, int a2, void *Src, int a4)
   {
     if ( a2 )
     {
-      png_free_data(a1, a2, 4096, 0);
+      sub_407E80(a1, a2, 4096, 0);
       v4 = sub_408BA0(a1, 0x300u);
       *(_DWORD *)(a1 + 276) = v4;
       memset(v4, 0, 0x300u);
@@ -15687,7 +15733,7 @@ void __cdecl sub_411B30(int a1, int a2, char a3)
       sub_411420(a1, a2, 0.4545499980449677);
       sub_4114A0(a1, a2, 45455);
       sub_411230(a1, a2, 31270, 32900, 64000, 33000, 30000, 60000, 15000, 6000);
-      png_set_cHRM(
+      sub_410EF0(
         a1,
         a2,
         0.3127000033855438,
@@ -15718,7 +15764,7 @@ void __cdecl sub_411C10(int a1, int a2, int a3, char a4, void *Src, size_t Size)
       if ( v7 )
       {
         memcpy(v7, Src, Size);
-        png_free_data(a1, a2, 16, 0);
+        sub_407E80(a1, a2, 16, 0);
         *(_DWORD *)(a2 + 184) |= 0x10u;
         *(_DWORD *)(a2 + 8) |= 0x1000u;
         *(_DWORD *)(a2 + 196) = v6;
@@ -15879,7 +15925,7 @@ void __cdecl sub_411F30(int a1, int a2, void *Src, size_t Size, int a5)
     v5 = Size;
     if ( Src )
     {
-      png_free_data(a1, a2, 0x2000, 0);
+      sub_407E80(a1, a2, 0x2000, 0);
       v6 = sub_408BA0(a1, 0x100u);
       *(_DWORD *)(a2 + 76) = v6;
       *(_DWORD *)(a1 + 392) = v6;
@@ -16054,7 +16100,7 @@ int sub_412AB8()
 // 41CECC: using guessed type int dword_41CECC;
 
 //----- (00412AF0) --------------------------------------------------------
-int __cdecl inflateReset(_DWORD *a1)
+int __cdecl sub_412AF0(_DWORD *a1)
 {
   _DWORD *v1; // eax
 
@@ -16124,7 +16170,7 @@ int __cdecl sub_412B50(_DWORD *a1, int a2, _BYTE *a3, int a4)
     {
       v5[9] = v7;
       v5[13] = 0;
-      return inflateReset(a1);
+      return sub_412AF0(a1);
     }
     ((void (__cdecl *)(_DWORD, _DWORD *))a1[9])(a1[10], v5);
     a1[7] = 0;
@@ -16153,7 +16199,6 @@ int __usercall sub_412C60@<eax>(int a1@<eax>, int a2@<ebx>)
 {
   int v2; // esi
   int v4; // eax
-  int result; // eax
   int v6; // ecx
   size_t v7; // edi
   size_t v8; // eax
@@ -16194,7 +16239,7 @@ int __usercall sub_412C60@<eax>(int a1@<eax>, int a2@<ebx>)
       v12 = *(_DWORD *)(v2 + 40);
       *(_DWORD *)(v2 + 48) = v11;
       *(_DWORD *)(v2 + 44) = v12;
-      result = 0;
+      return 0;
     }
     else
     {
@@ -16205,7 +16250,7 @@ int __usercall sub_412C60@<eax>(int a1@<eax>, int a2@<ebx>)
       v14 = *(_DWORD *)(v2 + 44);
       if ( v14 < v13 )
         *(_DWORD *)(v2 + 44) = v10 + v14;
-      result = 0;
+      return 0;
     }
   }
   else
@@ -16214,13 +16259,12 @@ int __usercall sub_412C60@<eax>(int a1@<eax>, int a2@<ebx>)
     v9 = *(_DWORD *)(v2 + 40);
     *(_DWORD *)(v2 + 48) = 0;
     *(_DWORD *)(v2 + 44) = v9;
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (00412D50) --------------------------------------------------------
-int __cdecl inflate(int a1, int a2)
+int __cdecl sub_412D50(int a1, int a2)
 {
   int *v2; // edi
   unsigned int v3; // edx
@@ -16229,42 +16273,42 @@ int __cdecl inflate(int a1, int a2)
   int v6; // eax
   unsigned int v7; // esi
   int v8; // eax
-  int v9; // eax
+  unsigned int v9; // eax
   int v10; // eax
   unsigned int v11; // ecx
   unsigned int v12; // eax
   int v13; // eax
   int *v14; // eax
-  int v15; // eax
+  unsigned int v15; // eax
   int v16; // eax
   int v17; // eax
-  int v18; // eax
+  unsigned int v18; // eax
   int v19; // eax
   int v20; // eax
-  int v21; // eax
+  unsigned int v21; // eax
   int v22; // eax
   int v23; // eax
-  int v24; // eax
+  unsigned int v24; // eax
   int v25; // eax
   size_t v26; // eax
   int v27; // ecx
   unsigned int v28; // edx
-  int v29; // eax
+  unsigned int v29; // eax
   unsigned int v30; // eax
   int v31; // ecx
   int v32; // eax
   unsigned int v33; // ecx
-  int v34; // eax
+  unsigned int v34; // eax
   int v35; // eax
   unsigned int v36; // eax
   int v37; // ecx
   int v38; // eax
   unsigned int v39; // ecx
-  int v40; // eax
+  unsigned int v40; // eax
   int v41; // eax
   int v42; // eax
   int v43; // eax
-  int v44; // eax
+  unsigned int v44; // eax
   int v45; // eax
   unsigned __int16 v46; // ax
   int v47; // eax
@@ -16445,7 +16489,7 @@ int __cdecl inflate(int a1, int a2)
           goto LABEL_293;
         }
         v2[5] = 1 << v11;
-        v12 = adler32(0, 0, 0);
+        v12 = sub_415030(0, 0, 0);
         v3 = v121;
         v2[6] = v12;
         *(_DWORD *)(a1 + 48) = v12;
@@ -16835,7 +16879,7 @@ LABEL_128:
           v2[14] = v4;
           return 2;
         }
-        v48 = adler32(0, 0, 0);
+        v48 = sub_415030(0, 0, 0);
         v2[6] = v48;
         *(_DWORD *)(a1 + 48) = v48;
         v3 = v121;
@@ -17041,7 +17085,7 @@ LABEL_166:
         v2[27] = (int)(v2 + 332);
         v2[19] = (int)(v2 + 332);
         v2[21] = 7;
-        v66 = inflate_table(0, (int)(v2 + 28), 0x13u, (_DWORD **)v2 + 27, (unsigned int *)v2 + 21, (_WORD *)v2 + 376);
+        v66 = sub_414B40(0, (int)(v2 + 28), 0x13u, (_DWORD **)v2 + 27, (unsigned int *)v2 + 21, (_WORD *)v2 + 376);
         v3 = v121;
         v141 = v66;
         if ( v66 )
@@ -17222,7 +17266,7 @@ LABEL_202:
         v2[19] = (int)(v2 + 332);
         v118 = v2[24];
         v2[21] = 9;
-        v141 = inflate_table(1, (int)(v2 + 28), v118, (_DWORD **)v2 + 27, (unsigned int *)v2 + 21, (_WORD *)v2 + 376);
+        v141 = sub_414B40(1, (int)(v2 + 28), v118, (_DWORD **)v2 + 27, (unsigned int *)v2 + 21, (_WORD *)v2 + 376);
         if ( v141 )
         {
           v3 = v121;
@@ -17232,7 +17276,7 @@ LABEL_202:
         v2[20] = v2[27];
         v81 = v2[24];
         v2[22] = 6;
-        v82 = inflate_table(
+        v82 = sub_414B40(
                 2,
                 (int)v2 + 2 * v81 + 112,
                 v2[25],
@@ -17258,7 +17302,7 @@ LABEL_210:
           *(_DWORD *)(a1 + 4) = v121;
           v2[14] = v4;
           v2[15] = v7;
-          inflate_fast((_DWORD *)a1, v84);
+          sub_414680((_DWORD *)a1, v84);
           v5 = *(unsigned __int8 **)a1;
           v85 = *(_DWORD *)(a1 + 4);
           v4 = v2[14];
@@ -17569,7 +17613,7 @@ LABEL_275:
           if ( v2[4] )
             v110 = sub_414630(v119, v120, v109);
           else
-            v110 = adler32(v119, v120, v109);
+            v110 = sub_415030(v119, v120, v109);
           v3 = v121;
           v2[6] = v110;
           *(_DWORD *)(a1 + 48) = v110;
@@ -17650,27 +17694,26 @@ LABEL_302:
             if ( v2[4] )
               v117 = sub_414630(v2[6], (_BYTE *)(*(_DWORD *)(a1 + 12) - v116), v116);
             else
-              v117 = adler32(v2[6], (unsigned __int8 *)(*(_DWORD *)(a1 + 12) - v116), v116);
+              v117 = sub_415030(v2[6], (unsigned __int8 *)(*(_DWORD *)(a1 + 12) - v116), v116);
             v2[6] = v117;
             *(_DWORD *)(a1 + 48) = v117;
           }
           *(_DWORD *)(a1 + 44) = v2[15] + (*v2 != 11 ? 0 : 0x80) + (v2[1] != 0 ? 0x40 : 0);
           if ( (v115 || v116) && a2 != 4 )
           {
-            result = v141;
+            return v141;
           }
           else
           {
             result = v141;
             if ( !v141 )
-              result = -5;
+              return -5;
           }
         }
         else
         {
           *v2 = 28;
-LABEL_307:
-          result = -4;
+          return -4;
         }
         return result;
       case 25:
@@ -17681,16 +17724,17 @@ LABEL_307:
         v141 = -3;
         goto LABEL_302;
       case 28:
-        goto LABEL_307;
+        return -4;
       default:
         return -2;
     }
   }
 }
 // 412DF2: variable 'v3' is possibly undefined
+// 4183F0: using guessed type __int16 word_4183F0[20];
 
 //----- (00414340) --------------------------------------------------------
-int __cdecl inflateEnd(_DWORD *a1)
+int __cdecl sub_414340(_DWORD *a1)
 {
   int v1; // eax
   void (__cdecl *v2)(_DWORD, int); // ecx
@@ -17713,7 +17757,7 @@ int __cdecl inflateEnd(_DWORD *a1)
 }
 
 //----- (00414630) --------------------------------------------------------
-int __cdecl sub_414630(int a1, _BYTE *a2, unsigned int a3)
+unsigned int __cdecl sub_414630(int a1, _BYTE *a2, unsigned int a3)
 {
   unsigned int v3; // esi
   unsigned int i; // eax
@@ -17780,6 +17824,10 @@ int __cdecl sub_414630(int a1, _BYTE *a2, unsigned int a3)
     i = dword_4185D8[(unsigned __int8)(i ^ *v17++)] ^ (i >> 8);
   return ~i;
 }
+// 4185D8: using guessed type int dword_4185D8[256];
+// 4189D8: using guessed type int dword_4189D8[256];
+// 418DD8: using guessed type int dword_418DD8[256];
+// 4191D8: using guessed type int dword_4191D8[1334];
 
 //----- (00414650) --------------------------------------------------------
 void *__cdecl sub_414650(int a1, int a2, int a3)
@@ -17794,7 +17842,7 @@ void __cdecl sub_414670(int a1, void *Block)
 }
 
 //----- (00414680) --------------------------------------------------------
-_DWORD *__cdecl inflate_fast(_DWORD *a1, int a2)
+_DWORD *__cdecl sub_414680(_DWORD *a1, int a2)
 {
   _DWORD *v2; // eax
   unsigned int v3; // ebx
@@ -18077,7 +18125,6 @@ LABEL_61:
           while ( v25 );
 LABEL_39:
           v27 = &v5[-v22];
-          goto LABEL_40;
         }
       }
 LABEL_40:
@@ -18156,7 +18203,7 @@ LABEL_47:
 }
 
 //----- (00414B40) --------------------------------------------------------
-int __cdecl inflate_table(int a1, int a2, unsigned int a3, _DWORD **a4, unsigned int *a5, _WORD *a6)
+int __cdecl sub_414B40(int a1, int a2, unsigned int a3, _DWORD **a4, unsigned int *a5, _WORD *a6)
 {
   unsigned int v6; // eax
   unsigned int v7; // eax
@@ -18174,7 +18221,7 @@ int __cdecl inflate_table(int a1, int a2, unsigned int a3, _DWORD **a4, unsigned
   int v20; // edx
   _DWORD *v21; // ecx
   unsigned int v22; // edx
-  unsigned int l; // eax
+  unsigned int m; // eax
   int v24; // esi
   char v25; // cl
   unsigned int v26; // edx
@@ -18182,7 +18229,7 @@ int __cdecl inflate_table(int a1, int a2, unsigned int a3, _DWORD **a4, unsigned
   unsigned __int16 *v28; // esi
   int v29; // eax
   _DWORD *v30; // esi
-  unsigned int m; // eax
+  unsigned int n; // eax
   int v32; // [esp+Ch] [ebp-8Ch]
   int v33; // [esp+Ch] [ebp-8Ch]
   unsigned int v34; // [esp+10h] [ebp-88h]
@@ -18191,28 +18238,27 @@ int __cdecl inflate_table(int a1, int a2, unsigned int a3, _DWORD **a4, unsigned
   unsigned int v37; // [esp+1Ch] [ebp-7Ch]
   _DWORD *v38; // [esp+20h] [ebp-78h]
   unsigned int v39; // [esp+24h] [ebp-74h]
-  char *v40; // [esp+28h] [ebp-70h]
+  _WORD *v40; // [esp+28h] [ebp-70h]
   int v41; // [esp+2Ch] [ebp-6Ch]
   int v42; // [esp+30h] [ebp-68h]
-  char *v43; // [esp+34h] [ebp-64h]
+  _WORD *v43; // [esp+34h] [ebp-64h]
   int v44; // [esp+3Ch] [ebp-5Ch]
   int v45; // [esp+40h] [ebp-58h]
   int v46; // [esp+54h] [ebp-44h] BYREF
   int v47; // [esp+58h] [ebp-40h]
-  int v48[6]; // [esp+5Ch] [ebp-3Ch]
-  __int16 v49; // [esp+76h] [ebp-22h]
+  _WORD v48[28]; // [esp+5Ch] [ebp-3Ch] BYREF
 
   v36 = a6;
   v6 = 0;
   v46 = 0;
   v47 = 0;
-  v48[0] = 0;
-  v48[1] = 0;
-  v48[2] = 0;
-  v48[3] = 0;
-  v48[4] = 0;
-  for ( v48[5] = 0; v6 < a3; ++v6 )
-    ++*((_WORD *)&v46 + *(unsigned __int16 *)(a2 + 2 * v6));
+  memset(v48, 0, 24);
+  if ( a3 )
+  {
+    do
+      ++*((_WORD *)&v46 + *(unsigned __int16 *)(a2 + 2 * v6++));
+    while ( v6 < a3 );
+  }
   v7 = *a5;
   v34 = *a5;
   v8 = 15;
@@ -18244,17 +18290,17 @@ int __cdecl inflate_table(int a1, int a2, unsigned int a3, _DWORD **a4, unsigned
       ++v10;
       break;
     }
-    if ( *((_WORD *)&v47 + v10) )
+    if ( v48[v10 - 2] )
     {
       v10 += 2;
       break;
     }
-    if ( *((_WORD *)&v47 + v10 + 1) )
+    if ( v48[v10 - 1] )
     {
       v10 += 3;
       break;
     }
-    if ( *((_WORD *)v48 + v10) )
+    if ( v48[v10] )
     {
       v10 += 4;
       break;
@@ -18274,36 +18320,36 @@ int __cdecl inflate_table(int a1, int a2, unsigned int a3, _DWORD **a4, unsigned
   }
   if ( v11 > 0 && (!a1 || v8 != 1) )
     return -1;
-  v49 = 0;
-  for ( j = 2; j < 0x1E; *(_WORD *)((char *)&v48[6] + j) = v14 )
+  v48[13] = 0;
+  for ( j = 1; j < 15; v48[j + 12] = v14 )
   {
-    v14 = *(_WORD *)((char *)&v46 + j) + *(_WORD *)((char *)&v48[6] + j);
-    j += 2;
+    v14 = *(_WORD *)((char *)&v46 + j * 2) + v48[j + 12];
+    ++j;
   }
   for ( k = 0; k < a3; ++k )
   {
     if ( *(_WORD *)(a2 + 2 * k) )
-      a6[(unsigned __int16)(*((_WORD *)&v48[6] + *(unsigned __int16 *)(a2 + 2 * k)))++] = k;
+      a6[(unsigned __int16)v48[*(unsigned __int16 *)(a2 + 2 * k) + 12]++] = k;
   }
   if ( a1 )
   {
     if ( a1 == 1 )
     {
-      v40 = (char *)&unk_41A6B0 - 514;
-      v43 = (char *)&unk_41A6F0 - 514;
+      v40 = (_WORD *)((char *)&unk_41A6B0 - 514);
+      v43 = (_WORD *)((char *)&unk_41A6F0 - 514);
       v41 = 256;
     }
     else
     {
-      v40 = (char *)&unk_41A730;
-      v43 = (char *)&unk_41A770;
+      v40 = &unk_41A730;
+      v43 = &unk_41A770;
       v41 = -1;
     }
   }
   else
   {
-    v43 = (char *)a6;
-    v40 = (char *)a6;
+    v43 = a6;
+    v40 = a6;
     v41 = 19;
   }
   v38 = *a4;
@@ -18327,9 +18373,9 @@ int __cdecl inflate_table(int a1, int a2, unsigned int a3, _DWORD **a4, unsigned
       }
       else
       {
-        v18 = 2 * (unsigned __int16)*v36;
+        v18 = (unsigned __int16)*v36;
         LOBYTE(v32) = v43[v18];
-        HIWORD(v32) = *(_WORD *)&v40[v18];
+        HIWORD(v32) = v40[v18];
       }
     }
     else
@@ -18349,10 +18395,10 @@ int __cdecl inflate_table(int a1, int a2, unsigned int a3, _DWORD **a4, unsigned
     }
     while ( v19 );
     v22 = v35;
-    for ( l = 1 << (v35 - 1); (l & v16) != 0; l >>= 1 )
+    for ( m = 1 << (v35 - 1); (m & v16) != 0; m >>= 1 )
       ;
-    if ( l )
-      v16 = l + (v16 & (l - 1));
+    if ( m )
+      v16 = m + (v16 & (m - 1));
     else
       v16 = 0;
     --*((_WORD *)&v46 + v35);
@@ -18418,11 +18464,11 @@ LABEL_59:
         LOBYTE(v22) = v34;
       }
       v30[v16 >> v17] = v33;
-      for ( m = 1 << (v22 - 1); (m & v16) != 0; m >>= 1 )
+      for ( n = 1 << (v22 - 1); (n & v16) != 0; n >>= 1 )
         ;
-      if ( !m )
+      if ( !n )
         break;
-      v16 = m + (v16 & (m - 1));
+      v16 = n + (v16 & (n - 1));
     }
     while ( v16 );
   }
@@ -18432,14 +18478,13 @@ LABEL_59:
 }
 
 //----- (00415030) --------------------------------------------------------
-unsigned int __cdecl adler32(unsigned int a1, unsigned __int8 *a2, unsigned int a3)
+unsigned int __cdecl sub_415030(unsigned int a1, unsigned __int8 *a2, unsigned int a3)
 {
   unsigned int v3; // ebx
   unsigned int v4; // edi
   unsigned int v5; // ecx
   unsigned int v6; // ecx
   unsigned int v7; // edi
-  unsigned int result; // eax
   unsigned __int8 *v9; // esi
   unsigned int v10; // ebp
   int v11; // eax
@@ -18456,9 +18501,9 @@ unsigned int __cdecl adler32(unsigned int a1, unsigned __int8 *a2, unsigned int 
   unsigned int v22; // ecx
   unsigned int v23; // edi
   unsigned int v24; // ecx
-  int v25; // edi
+  unsigned int v25; // edi
   unsigned int v26; // ecx
-  int v27; // edi
+  unsigned int v27; // edi
   unsigned int v28; // ecx
   int v29; // edi
   int v30; // ecx
@@ -18487,9 +18532,9 @@ unsigned int __cdecl adler32(unsigned int a1, unsigned __int8 *a2, unsigned int 
   unsigned int v53; // ecx
   unsigned int v54; // edi
   unsigned int v55; // ecx
-  int v56; // edi
+  unsigned int v56; // edi
   unsigned int v57; // ecx
-  int v58; // edi
+  unsigned int v58; // edi
   unsigned int v59; // ecx
   int v60; // edi
   int v61; // ecx
@@ -18516,7 +18561,7 @@ unsigned int __cdecl adler32(unsigned int a1, unsigned __int8 *a2, unsigned int 
     v7 = v6 + v4;
     if ( v7 >= 0xFFF1 )
       v7 -= 65521;
-    result = v6 | (v7 << 16);
+    return v6 | (v7 << 16);
   }
   else
   {
@@ -18630,7 +18675,7 @@ unsigned int __cdecl adler32(unsigned int a1, unsigned __int8 *a2, unsigned int 
           v5 %= 0xFFF1u;
           v4 %= 0xFFF1u;
         }
-        result = v5 | (v4 << 16);
+        return v5 | (v4 << 16);
       }
       else
       {
@@ -18647,15 +18692,14 @@ unsigned int __cdecl adler32(unsigned int a1, unsigned __int8 *a2, unsigned int 
         }
         if ( v5 >= 0xFFF1 )
           v5 -= 65521;
-        result = v5 | ((v4 + 15 * (v4 / 0xFFF1)) << 16);
+        return v5 | ((v4 + 15 * (v4 / 0xFFF1)) << 16);
       }
     }
     else
     {
-      result = 1;
+      return 1;
     }
   }
-  return result;
 }
 // 415030: too many cbuild loops
 

@@ -11,7 +11,7 @@
 // Function declarations
 
 void printf();
-const char *__cdecl do_switch(int a1);
+const char *__cdecl do_switch(int);
 
 
 //----- (080480D8) --------------------------------------------------------

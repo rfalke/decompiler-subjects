@@ -10,24 +10,13 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 __int64 __fastcall sub_400440(); // weak
 // int printf(const char *format, ...);
-// int __fastcall __libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// __int64 __gmon_start__(void); weak
 // void *malloc(size_t size);
 // int rand(void);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// signed __int64 deregister_tm_clones();
-// __int64 register_tm_clones();
-// signed __int64 _do_global_dtors_aux();
-// __int64 frame_dummy();
-__int64 __fastcall insert(_QWORD *a1, _DWORD *a2);
-__int64 __fastcall printout(unsigned int *a1);
+__int64 __fastcall insert(_QWORD *, _DWORD *);
+__int64 __fastcall printout(unsigned int *);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-// void _libc_csu_fini(void); idb
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -54,11 +43,11 @@ __int64 __fastcall insert(_QWORD *a1, _DWORD *a2)
     {
       result = *(unsigned int *)*a1;
       if ( *a2 > (int)result )
-        result = insert((_QWORD *)(*a1 + 8LL), a2);
+        return insert((_QWORD *)(*a1 + 8LL), a2);
     }
     else
     {
-      result = insert((_QWORD *)(*a1 + 16LL), a2);
+      return insert((_QWORD *)(*a1 + 16LL), a2);
     }
   }
   else
@@ -79,7 +68,7 @@ __int64 __fastcall printout(unsigned int *a1)
   printf("%d\n", *a1);
   result = *((_QWORD *)a1 + 1);
   if ( result )
-    result = printout(*((unsigned int **)a1 + 1));
+    return printout(*((unsigned int **)a1 + 1));
   return result;
 }
 

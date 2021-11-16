@@ -11,31 +11,22 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
 // int printf(const char *format, ...);
 // int puts(const char *s);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int putchar(int c);
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_80490C7();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// char *deregister_tm_clones();
-// int register_tm_clones();
-// char *_do_global_dtors_aux();
-// int frame_dummy();
 int __cdecl main(int argc, const char **argv, const char **envp);
 int F2XM1();
 int __cdecl FABS(double); // idb
 int __cdecl FADD(double); // idb
 int FBSTP();
-// void __usercall FBLD(long double fst6_0@<st1>);
+// void __usercall FBLD(long double a1@<st1>);
 int __cdecl FCHS(double); // idb
-int __cdecl FCMOV(__int16 a1);
+int __cdecl FCMOV(__int16);
 int __cdecl FCOM(double); // idb
-// int __usercall FCOMI@<eax>(char a1@<efl>, double a2);
+// int __usercall FCOMI@<eax>(char@<efl>, double);
 int __cdecl FCOS(double); // idb
 int __cdecl FDIV(double); // idb
 int __cdecl FDIVR(double); // idb
@@ -57,14 +48,11 @@ int __cdecl FSUB(double); // idb
 int __cdecl FTST(double); // idb
 int __cdecl FXAM(double); // idb
 int __cdecl FXCH(double); // idb
-// void __usercall FXTRACT(long double _FST6@<st1>, long double _FST5@<st2>, double a2);
+// void __usercall FXTRACT(long double _FST6@<st1>, long double _FST5@<st2>, double a3);
 int __cdecl FYL2X(double); // idb
 int __cdecl FYL2XP1(double); // idb
 int NOT_EXECUTED();
-// int __usercall TOP@<eax>(unsigned __int16 a1@<fpstat>);
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
+// int __usercall TOP@<eax>(unsigned __int16@<fpstat>);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -167,9 +155,9 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   int v78; // [esp+7Ch] [ebp-14h]
   int v79; // [esp+80h] [ebp-10h]
   int v80; // [esp+84h] [ebp-Ch]
-  int *v81; // [esp+88h] [ebp-8h]
+  int *p_argc; // [esp+88h] [ebp-8h]
 
-  v81 = &argc;
+  p_argc = &argc;
   F2XM1();
   v80 = TOP(v5);
   if ( v80 )
@@ -551,7 +539,7 @@ int __cdecl FADD(double a1)
 //----- (0804A060) --------------------------------------------------------
 int FBSTP()
 {
-  *(long double *)&buffer = __FBSTP__(-1.234567890112233e17);
+  __FBSTP__(&buffer, -1.234567890112233e17);
   printf(
     "FBSTP(%f) should=0x44 0x33 0x22 0x11 0x90 0x78 0x56 0x34 0x12 0x80 is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%0"
     "2x 0x%02x 0x%02x 0x%02x\n",
@@ -571,12 +559,12 @@ int FBSTP()
 // 8050028: using guessed type _TBYTE buffer;
 
 //----- (0804A0E0) --------------------------------------------------------
-void __usercall FBLD(long double fst6_0@<st1>)
+void __usercall FBLD(long double a1@<st1>)
 {
   long double v2; // rt1
 
   v2 = __FBLD__(*(long double *)&readbuffer);
-  *(double *)&fst6_0 = *(double *)&v2;
+  *(double *)&a1 = *(double *)&v2;
   printf(
     "FBLD(0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x): should=-123456789088776656.000000/  -1."
     "234568e+17 is=%12f/%15e\n",
@@ -590,8 +578,8 @@ void __usercall FBLD(long double fst6_0@<st1>)
     BYTE7(readbuffer),
     BYTE8(readbuffer),
     HIBYTE(readbuffer),
-    (double)fst6_0,
-    (double)fst6_0);
+    (double)a1,
+    (double)a1);
 }
 // 804C4FD: using guessed type _TBYTE readbuffer;
 
@@ -1088,23 +1076,22 @@ int __cdecl FRNDINT(double a1)
 //----- (0804AED0) --------------------------------------------------------
 int __cdecl FSCALE(double a1)
 {
-  printf("FSCALE(para*2^4):   should=                             is=%12f/%15e\n", a1, a1);
-  printf(
-    "FSCALE(pi*2^para):  should=                             is=%12f/%15e\n",
-    (double)3.141592653589793116,
-    (double)3.141592653589793116);
-  printf(
-    "FSCALE(pi*2^4):     should=   50.265482/   5.026548e+01 is=%12f/%15e\n",
-    (double)3.141592653589793116,
-    (double)3.141592653589793116);
-  printf(
-    "FSCALE(pi*2^-4):    should=    0.196350/   1.963495e-01 is=%12f/%15e\n",
-    (double)3.141592653589793116,
-    (double)3.141592653589793116);
-  printf(
-    "FSCALE(pi*2^12.34): should=12867.963509/   1.286796e+04 is=%12f/%15e\n",
-    (double)3.141592653589793116,
-    (double)3.141592653589793116);
+  double v2; // [esp+0h] [ebp-28h]
+  double v3; // [esp+0h] [ebp-28h]
+  double v4; // [esp+0h] [ebp-28h]
+  double v5; // [esp+0h] [ebp-28h]
+  double v6; // [esp+0h] [ebp-28h]
+
+  v2 = __FSCALE__(a1, (long double)4);
+  printf("FSCALE(para*2^4):   should=                             is=%12f/%15e\n", v2, v2);
+  v3 = __FSCALE__(3.141592653589793116, a1);
+  printf("FSCALE(pi*2^para):  should=                             is=%12f/%15e\n", v3, v3);
+  v4 = __FSCALE__(3.141592653589793116, (long double)4);
+  printf("FSCALE(pi*2^4):     should=   50.265482/   5.026548e+01 is=%12f/%15e\n", v4, v4);
+  v5 = __FSCALE__(3.141592653589793116, -(long double)4);
+  printf("FSCALE(pi*2^-4):    should=    0.196350/   1.963495e-01 is=%12f/%15e\n", v5, v5);
+  v6 = __FSCALE__(3.141592653589793116, 12.34);
+  printf("FSCALE(pi*2^12.34): should=12867.963509/   1.286796e+04 is=%12f/%15e\n", v6, v6);
   return 0;
 }
 
@@ -1337,12 +1324,12 @@ int __cdecl FXCH(double a1)
 }
 
 //----- (0804B460) --------------------------------------------------------
-void __usercall FXTRACT(long double _FST6@<st1>, long double _FST5@<st2>, double a2)
+void __usercall FXTRACT(long double _FST6@<st1>, long double _FST5@<st2>, double a3)
 {
   __asm { fxtract }
   printf("FXTRACT(para)[0=signi]:  should=                             is=%12f/%15e\n", (double)_FST5, (double)_FST5);
   __asm { fxtract }
-  printf("FXTRACT(para)[1=exp]:    should=                             is=%12f/%15e\n", a2, a2);
+  printf("FXTRACT(para)[1=exp]:    should=                             is=%12f/%15e\n", a3, a3);
   __asm { fxtract }
   printf("FXTRACT(12.34)[0=signi]: should=    1.542500/   1.542500e+00 is=%12f/%15e\n", (double)_FST5, (double)_FST5);
   __asm { fxtract }

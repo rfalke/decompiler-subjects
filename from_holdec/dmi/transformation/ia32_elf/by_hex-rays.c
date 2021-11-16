@@ -10,29 +10,17 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_80482F0();
 // int puts(const char *s);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int putchar(int c);
-// int _gmon_start__(void); weak
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _x86_get_pc_thunk_bx();
-// int deregister_tm_clones();
-// int register_tm_clones();
-// int _do_global_dtors_aux();
-// int frame_dummy();
-_BOOL4 __cdecl basic_1_ternary_simple(int a1);
-int __cdecl basic_2_ternary_other(int a1);
-int __cdecl intermediate_10_double_word_signed_math(__int64 a1, __int64 a2, __int64 a3);
-int __cdecl intermediate_10_double_word_unsigned_math(unsigned __int64 a1, unsigned __int64 a2, unsigned __int64 a3);
+_BOOL4 __cdecl basic_1_ternary_simple(int);
+int __cdecl basic_2_ternary_other(int);
+int __cdecl intermediate_10_double_word_signed_math(__int64, __int64, __int64);
+int __cdecl intermediate_10_double_word_unsigned_math(unsigned __int64, unsigned __int64, unsigned __int64);
 int advanced_1_unrolled_loop();
-_BOOL4 __cdecl intermediate_1_ternary_blocks(int a1);
-int __cdecl intermediate_2_other_in_blocks(int a1);
-// void _libc_csu_init(void); idb
-// void _libc_csu_fini(void); idb
-// void term_proc();
+_BOOL4 __cdecl intermediate_1_ternary_blocks(int);
+int __cdecl intermediate_2_other_in_blocks(int);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -79,7 +67,7 @@ int __cdecl basic_2_ternary_other(int a1)
 
   result = 100;
   if ( a1 != 42 )
-    result = 201;
+    return 201;
   return result;
 }
 
@@ -164,13 +152,10 @@ _BOOL4 __cdecl intermediate_1_ternary_blocks(int a1)
 //----- (0804891B) --------------------------------------------------------
 int __cdecl intermediate_2_other_in_blocks(int a1)
 {
-  int result; // eax
-
   if ( a1 == 42 )
-    result = 100;
+    return 100;
   else
-    result = 201;
-  return result;
+    return 201;
 }
 
 // nfuncs=31 queued=9 decompiled=9 lumina nreq=0 worse=0 better=0

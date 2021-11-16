@@ -17,24 +17,24 @@ int __thiscall sub_401005(_DWORD); // weak
 int __thiscall sub_40100A(_DWORD); // weak
 int __cdecl sub_40100F(char *Str); // idb
 _DWORD __cdecl std::char_traits<char>::eq_int_type(_DWORD, _DWORD); // weak
-_DWORD __stdcall sub_401019(_DWORD); // weak
+int __thiscall sub_401019(_DWORD *this, int);
 int j_unknown_libname_1(void); // weak
 int sub_401023(void); // weak
 int __cdecl sub_401028(int, char *Str); // idb
 int __thiscall sub_40102D(_DWORD); // weak
-_DWORD __stdcall sub_401037(_DWORD); // weak
-_DWORD __stdcall sub_40103C(_DWORD); // weak
-_DWORD __stdcall sub_401041(_DWORD); // weak
+_DWORD *__thiscall sub_401037(_DWORD *this, int);
+_BYTE *__thiscall sub_40103C(_BYTE *this, int);
+void *__thiscall sub_401041(void *this, int);
 int __cdecl main_0(int argc, const char **argv, const char **envp);
-_DWORD *__thiscall sub_4010C0(_DWORD *this, int a2);
+_DWORD *__thiscall sub_4010C0(_DWORD *this, int);
 int sub_401110();
-int __thiscall sub_401150(_DWORD *this, int a2);
+int __thiscall sub_401150(_DWORD *this, int);
 int __cdecl sub_401190(int, char *Str); // idb
 size_t __cdecl sub_401530(char *Str);
-_BYTE *__thiscall sub_401580(_BYTE *this, int a2);
+_BYTE *__thiscall sub_401580(_BYTE *this, int);
 int __thiscall sub_401620(_DWORD *this);
 int __thiscall sub_401660(_BYTE *this);
-void *__thiscall sub_401690(void *this, int a2);
+void *__thiscall sub_401690(void *this, int);
 int __thiscall sub_401700(void *this);
 // size_t __cdecl strlen(const char *Str);
 // LONG __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo); idb
@@ -43,7 +43,6 @@ int (*sub_401CDA())(void);
 void __cdecl sub_401D00(); // idb
 int __cdecl UserMathErrorFunction();
 int sub_401F77();
-// LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
 // bool __cdecl std::uncaught_exception(); weak
 // int __thiscall std::ostream::_Osfx(_DWORD); weak
 // bool __thiscall std::ios_base::good(std::ios_base *__hidden this); weak
@@ -132,7 +131,7 @@ int (*dword_405D60[66])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
 _UNKNOWN unk_405E68; // weak
 void (*dword_405F68[66])(void) =
 {
@@ -202,7 +201,8 @@ void (*dword_405F68[66])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
+// extern LPTOP_LEVEL_EXCEPTION_FILTER (__stdcall *SetUnhandledExceptionFilter)(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
 // extern _UNKNOWN std::endl; weak
 // extern int std::cout; idb
 
@@ -212,14 +212,13 @@ int __cdecl main_0(int argc, const char **argv, const char **envp)
 {
   char v4[4]; // [esp+0h] [ebp-4h] BYREF
 
-  sub_401037(10);
-  sub_401019(20);
+  sub_401037(v4, 10);
+  sub_401019(v4, 20);
   sub_401005(v4);
   return 0;
 }
 // 401005: using guessed type int __thiscall sub_401005(_DWORD);
-// 401019: using guessed type _DWORD __stdcall sub_401019(_DWORD);
-// 401037: using guessed type _DWORD __stdcall sub_401037(_DWORD);
+// 401090: using guessed type char var_4[4];
 
 //----- (004010C0) --------------------------------------------------------
 _DWORD *__thiscall sub_4010C0(_DWORD *this, int a2)
@@ -295,7 +294,7 @@ int __cdecl sub_401190(int a1, char *Str)
     v12 = v2 - v22;
   }
   v21 = v12;
-  sub_40103C(a1);
+  sub_40103C(v20, a1);
   if ( sub_40100A(v20) == -1 )
   {
     v23 |= 4u;
@@ -355,7 +354,6 @@ int __cdecl sub_401190(int a1, char *Str)
 // 401014: using guessed type _DWORD __cdecl std::char_traits<char>::eq_int_type(_DWORD, _DWORD);
 // 40101E: using guessed type int j_unknown_libname_1(void);
 // 401023: using guessed type int sub_401023(void);
-// 40103C: using guessed type _DWORD __stdcall sub_40103C(_DWORD);
 // 408274: using guessed type __int64 __thiscall std::ios_base::width(std::ios_base *__hidden this);
 // 408278: using guessed type _DWORD __thiscall std::ios_base::flags(std::ios_base *__hidden this);
 // 40827C: using guessed type int __thiscall std::ios::fill(_DWORD);
@@ -363,6 +361,7 @@ int __cdecl sub_401190(int a1, char *Str)
 // 408288: using guessed type __int64 __thiscall std::streambuf::sputn(_DWORD, _DWORD, _DWORD, _DWORD);
 // 40828C: using guessed type __int64 __thiscall std::ios_base::width(std::ios_base *__hidden this, __int64);
 // 408290: using guessed type int __thiscall std::ios::setstate(_DWORD, _DWORD, _DWORD);
+// 401190: using guessed type char var_30[8];
 
 //----- (00401530) --------------------------------------------------------
 size_t __cdecl sub_401530(char *Str)
@@ -375,7 +374,7 @@ _BYTE *__thiscall sub_401580(_BYTE *this, int a2)
 {
   int v2; // eax
 
-  sub_401041(a2);
+  sub_401041(this, a2);
   if ( std::ios_base::good((std::ios_base *)(*(_DWORD *)(*(_DWORD *)a2 + 4) + a2))
     && std::ios::tie(*(_DWORD *)(*(_DWORD *)a2 + 4) + a2) )
   {
@@ -385,7 +384,6 @@ _BYTE *__thiscall sub_401580(_BYTE *this, int a2)
   this[4] = std::ios_base::good((std::ios_base *)(*(_DWORD *)(*(_DWORD *)a2 + 4) + a2));
   return this;
 }
-// 401041: using guessed type _DWORD __stdcall sub_401041(_DWORD);
 // 408268: using guessed type bool __thiscall std::ios_base::good(std::ios_base *__hidden this);
 // 40826C: using guessed type int __thiscall std::ios::tie(_DWORD);
 // 408270: using guessed type int __thiscall std::ostream::flush(_DWORD);
@@ -431,7 +429,7 @@ int __thiscall sub_401700(void *this)
   if ( result )
   {
     v2 = std::ios::rdbuf(*(_DWORD *)(**(_DWORD **)this + 4) + *(_DWORD *)this);
-    result = (*(int (__thiscall **)(int, int))(*(_DWORD *)v2 + 8))(v2, v2);
+    return (*(int (__thiscall **)(int, int))(*(_DWORD *)v2 + 8))(v2, v2);
   }
   return result;
 }
@@ -464,6 +462,7 @@ int (*sub_401CDA())(void)
   }
   return result;
 }
+// 405D60: using guessed type int (*dword_405D60[66])(void);
 
 //----- (00401D00) --------------------------------------------------------
 void __cdecl sub_401D00()
@@ -482,6 +481,7 @@ void __cdecl sub_401D00()
     while ( v0 < dword_405F68 );
   }
 }
+// 405F68: using guessed type void (*dword_405F68[66])(void);
 
 //----- (00401F74) --------------------------------------------------------
 int __cdecl UserMathErrorFunction()

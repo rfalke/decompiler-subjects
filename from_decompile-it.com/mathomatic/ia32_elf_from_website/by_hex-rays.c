@@ -11,17 +11,15 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int init_proc();
 int sub_8048E84();
 // double fmod(double x, double y);
 // int *__errno_location(void);
 // int rl_initialize(void); weak
 // void qsort(void *base, size_t nmemb, size_t size, __compar_fn_t compar);
 // int __cdecl write_history(_DWORD); weak
-// int __cdecl __longjmp_chk(_DWORD, _DWORD); weak
+// void __cdecl __noreturn __longjmp_chk(_DWORD, _DWORD); weak
 // int __fprintf_chk(_DWORD, _DWORD, const char *, ...); weak
 // __sighandler_t signal(int sig, __sighandler_t handler);
-// int __gmon_start__(void); weak
 // int __printf_chk(_DWORD, const char *, ...); weak
 // int __isinf(double value);
 // int __cdecl read_history(_DWORD); weak
@@ -31,7 +29,6 @@ int sub_8048E84();
 // int system(const char *command);
 // double pow(double x, double y);
 // char *fgets(char *s, int n, FILE *stream);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int tigetnum(const char *);
 // double modf(double x, double *iptr);
 // void perror(const char *s);
@@ -78,9 +75,6 @@ int sub_8048E84();
 // void exit(int status);
 // int __cdecl sincos(_DWORD, _DWORD, _DWORD, _DWORD); weak
 // double ceil(double x);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _do_global_dtors_aux();
-int frame_dummy();
 void __cdecl fphandler(int sig);
 void __cdecl __noreturn exit_program(int exit_value);
 void __cdecl exithandler(int sig);
@@ -372,10 +366,6 @@ int __cdecl factor_one(double value);
 int __cdecl factor_int(token_type *equation, int *np);
 int __cdecl list_factor(token_type *equation, int *np, int factor_flag);
 void __cdecl factor_int_sub(int n);
-void _libc_csu_fini(void); // idb
-void _libc_csu_init(void); // idb
-void (*_do_global_ctors_aux())(void);
-void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -729,59 +719,55 @@ char *const html_carray[7] = { "green", "olive", "red", "maroon", "purple", "tea
 const int carray[6] = { 32, 33, 31, 35, 34, 36 }; // idb
 const double skip_multiples[48] =
 {
-   10.0,
-   2.0,
-   4.0,
-   2.0,
-   4.0,
-   6.0,
-   2.0,
-   6.0,
-   4.0,
-   2.0,
-   4.0,
-   6.0,
-   6.0,
-   2.0,
-   6.0,
-   4.0,
-   2.0,
-   6.0,
-   4.0,
-   6.0,
-   8.0,
-   4.0,
-   2.0,
-   4.0,
-   2.0,
-   4.0,
-   8.0,
-   6.0,
-   4.0,
-   6.0,
-   2.0,
-   4.0,
-   6.0,
-   2.0,
-   6.0,
-   6.0,
-   4.0,
-   2.0,
-   4.0,
-   6.0,
-   2.0,
-   6.0,
-   4.0,
-   2.0,
-   4.0,
-   2.0,
-   10.0,
-   2.0
+  10.0,
+  2.0,
+  4.0,
+  2.0,
+  4.0,
+  6.0,
+  2.0,
+  6.0,
+  4.0,
+  2.0,
+  4.0,
+  6.0,
+  6.0,
+  2.0,
+  6.0,
+  4.0,
+  2.0,
+  6.0,
+  4.0,
+  6.0,
+  8.0,
+  4.0,
+  2.0,
+  4.0,
+  2.0,
+  4.0,
+  8.0,
+  6.0,
+  4.0,
+  6.0,
+  2.0,
+  4.0,
+  6.0,
+  2.0,
+  6.0,
+  6.0,
+  4.0,
+  2.0,
+  4.0,
+  6.0,
+  2.0,
+  6.0,
+  4.0,
+  2.0,
+  4.0,
+  2.0,
+  10.0,
+  2.0
 }; // idb
-int _CTOR_LIST__ = -1; // weak
-int _DTOR_LIST__[] = { -1 }; // weak
-int _DTOR_END__ = 0; // weak
-int _JCR_LIST__ = 0; // weak
 int (*dword_8078FFC)(void) = NULL; // weak
 int n_tokens = 60000; // idb
 int precision = 14; // idb
@@ -1057,8 +1043,8 @@ char special_variable_characters[256] =
 int negate_highest_precedence = 1; // idb
 int color_flag = 1; // idb
 int cur_color = -1; // idb
-double small_epsilon =  5.0e-15; // idb
-double epsilon =  5.0e-14; // idb
+double small_epsilon = 5.0e-15; // idb
+double epsilon = 5.0e-14; // idb
 char *prog_name = "mathomatic"; // idb
 int readline_enabled = 1; // idb
 int symblify = 1; // idb
@@ -1092,8 +1078,6 @@ FILE *stderr; // idb
 int signgam; // weak
 FILE *stdin; // idb
 FILE *stdout; // idb
-char completed_7065; // weak
-int dtor_idx_7067; // weak
 int integer_coefficients; // idb
 int last_int_var; // idb
 int prev_n2_10129; // idb
@@ -1167,22 +1151,7 @@ int n_quotient; // idb
 int len_d; // idb
 int dword_816E598[]; // weak
 token_type divisor[30000]; // idb
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08048E54) --------------------------------------------------------
-int init_proc()
-{
-  int v1; // [esp+0h] [ebp-8h]
-
-  if ( &_gmon_start__ )
-    __gmon_start__();
-  frame_dummy();
-  _do_global_ctors_aux();
-  return v1;
-}
-// 8048E80: variable 'v1' is possibly undefined
-// 8048F24: using guessed type int __gmon_start__(void);
 
 //----- (08048E84) --------------------------------------------------------
 int sub_8048E84()
@@ -1190,55 +1159,6 @@ int sub_8048E84()
   return dword_8078FFC();
 }
 // 8078FFC: using guessed type int (*dword_8078FFC)(void);
-
-//----- (080492D0) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, _libc_csu_init, _libc_csu_fini, a2, &v3);
-  __halt();
-}
-// 80492D3: positive sp value 4 has been found
-
-//----- (08049300) --------------------------------------------------------
-void _do_global_dtors_aux()
-{
-  int v0; // eax
-  unsigned int i; // ebx
-
-  if ( !completed_7065 )
-  {
-    v0 = dtor_idx_7067;
-    for ( i = &_DTOR_END__ - _DTOR_LIST__ - 1; dtor_idx_7067 < i; v0 = dtor_idx_7067 )
-    {
-      dtor_idx_7067 = v0 + 1;
-      ((void (*)(void))_DTOR_LIST__[v0 + 1])();
-    }
-    completed_7065 = 1;
-  }
-}
-// 8078F04: using guessed type int _DTOR_LIST__[];
-// 8078F08: using guessed type int _DTOR_END__;
-// 80793A4: using guessed type char completed_7065;
-// 80793A8: using guessed type int dtor_idx_7067;
-
-//----- (08049360) --------------------------------------------------------
-int frame_dummy()
-{
-  int result; // eax
-
-  result = _JCR_LIST__;
-  if ( _JCR_LIST__ )
-    result = 0;
-  return result;
-}
-// 8078F0C: using guessed type int _JCR_LIST__;
 
 //----- (08049390) --------------------------------------------------------
 void __cdecl fphandler(int sig)
@@ -1378,7 +1298,7 @@ _BOOL4 set_signals()
   if ( signal(1, exithandler) == (__sighandler_t)-1 )
     v1 = 0;
   if ( signal(28, resizehandler) == (__sighandler_t)-1 )
-    v1 = 0;
+    return 0;
   return v1;
 }
 
@@ -1386,7 +1306,7 @@ _BOOL4 set_signals()
 void main_io_loop()
 {
   const char *v0; // eax
-  char *v1; // eax
+  char *string; // eax
 
   while ( 1 )
   {
@@ -1395,10 +1315,10 @@ void main_io_loop()
     if ( html_flag )
       v0 = "&mdash;&gt; ";
     __snprintf_chk(prompt_str, 80, 1, 80, "%d%s", cur_equation + 1, v0);
-    v1 = get_string((char *)tlhs, 16 * n_tokens);
-    if ( !v1 )
+    string = get_string((char *)tlhs, 16 * n_tokens);
+    if ( !string )
       break;
-    process(v1);
+    process(string);
   }
 }
 // 8049224: using guessed type int __snprintf_chk(_DWORD, _DWORD, _DWORD, _DWORD, const char *, ...);
@@ -1547,8 +1467,8 @@ LABEL_61:
   exit(2);
   return result;
 }
-// 8049D22: conditional instruction was optimized away because of '%0x28.4==0'
-// 8049DA6: conditional instruction was optimized away because of '%0x28.4==0'
+// 8049D22: conditional instruction was optimized away because %0x28.4==0
+// 8049DA6: conditional instruction was optimized away because %0x28.4==0
 // 80498B9: variable 'result' is possibly undefined
 // 8048EC4: using guessed type int rl_initialize(void);
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
@@ -1627,39 +1547,39 @@ int __cdecl solved_equation(int i)
 {
   int v1; // edx
   token_type *v2; // ecx
-  int v3; // ecx
-  int result; // eax
+  int variable; // ecx
 
   v1 = n_rhs[i];
-  if ( v1 > 0 && n_lhs[i] == 1 && (v2 = lhs[i], v2->kind == VARIABLE) && (v3 = v2->token.variable, (v3 & 0x3FFFu) > 4) )
-    result = found_var(rhs[i], v1, v3) == 0;
+  if ( v1 > 0
+    && n_lhs[i] == 1
+    && (v2 = lhs[i], v2->kind == VARIABLE)
+    && (variable = v2->token.variable, (variable & 0x3FFFu) > 4) )
+  {
+    return found_var(rhs[i], v1, variable) == 0;
+  }
   else
-    result = 0;
-  return result;
+  {
+    return 0;
+  }
 }
 
 //----- (0804A168) --------------------------------------------------------
 int __cdecl var_in_equation(int i, int v)
 {
   int v2; // eax
-  int v3; // edx
+  int found; // edx
   int result; // eax
   int v5; // eax
 
   v2 = n_lhs[i];
   if ( v2 <= 0 )
-    goto LABEL_5;
-  v3 = found_var(lhs[i], v2, v);
+    return 0;
+  found = found_var(lhs[i], v2, v);
   result = 1;
-  if ( v3 )
+  if ( found )
     return result;
   v5 = n_rhs[i];
-  if ( v5 <= 0 )
-LABEL_5:
-    result = 0;
-  else
-    result = found_var(rhs[i], v5, v) != 0;
-  return result;
+  return v5 > 0 && found_var(rhs[i], v5, v) != 0;
 }
 
 //----- (0804A1E2) --------------------------------------------------------
@@ -1683,7 +1603,7 @@ int __cdecl min_level(token_type *expression, int n)
   {
     result = 1;
     if ( n > 0 )
-      result = expression->level;
+      return expression->level;
   }
   return result;
 }
@@ -1739,7 +1659,7 @@ int __cdecl no_vars(token_type *source, int n, int *vp)
 {
   token_type *v3; // eax
   int i; // edx
-  int v6; // ebx
+  int variable; // ebx
   int found; // [esp+8h] [ebp-10h]
 
   v3 = source;
@@ -1753,12 +1673,12 @@ int __cdecl no_vars(token_type *source, int n, int *vp)
     {
       if ( v3->kind == VARIABLE )
       {
-        v6 = v3->token.variable;
-        if ( (v6 & 0x3FFFu) > 4 )
+        variable = v3->token.variable;
+        if ( (variable & 0x3FFFu) > 4 )
         {
           if ( *vp )
           {
-            if ( v6 != *vp )
+            if ( variable != *vp )
             {
               *vp = 0;
               return found == 0;
@@ -1766,7 +1686,7 @@ int __cdecl no_vars(token_type *source, int n, int *vp)
           }
           else
           {
-            *vp = v6;
+            *vp = variable;
             found = 1;
           }
         }
@@ -1834,13 +1754,7 @@ int __cdecl exp_contains_infinity(token_type *p1, int n1)
 //----- (0804A42B) --------------------------------------------------------
 int __cdecl isdelimiter(int ch_0)
 {
-  int result; // eax
-
-  if ( ((*__ctype_b_loc())[ch_0] & 0x2000) != 0 || ch_0 == 44 )
-    result = 1;
-  else
-    result = ch_0 == 61;
-  return result;
+  return ((*__ctype_b_loc())[ch_0] & 0x2000) != 0 || ch_0 == 44 || ch_0 == 61;
 }
 
 //----- (0804A45E) --------------------------------------------------------
@@ -1926,7 +1840,7 @@ char *__cdecl skip_param(char *cp)
     }
     v1 = skip_space(v1);
     if ( isdelimiter(*v1) )
-      v1 = skip_space(v1 + 1);
+      return skip_space(v1 + 1);
   }
   return v1;
 }
@@ -1960,7 +1874,7 @@ int __cdecl return_result(int en)
 
   result = 0;
   if ( n_lhs[en] > 0 )
-    result = list_sub(en) != 0;
+    return list_sub(en) != 0;
   return result;
 }
 
@@ -2032,7 +1946,7 @@ LABEL_20:
 //----- (0804A801) --------------------------------------------------------
 int get_yes_no()
 {
-  char *v0; // eax
+  char *string; // eax
   char *v1; // ebx
   char buf[4096]; // [esp+1Ch] [ebp-100Ch] BYREF
   unsigned int v4; // [esp+101Ch] [ebp-Ch]
@@ -2040,11 +1954,11 @@ int get_yes_no()
   v4 = __readgsdword(0x14u);
   while ( 1 )
   {
-    v0 = get_string(buf, 4096);
-    v1 = v0;
-    if ( !v0 )
+    string = get_string(buf, 4096);
+    v1 = string;
+    if ( !string )
       break;
-    str_tolower(v0);
+    str_tolower(string);
     if ( *v1 == 110 )
       break;
     if ( *v1 == 121 )
@@ -2089,7 +2003,7 @@ void __noreturn error_huge()
 {
   __longjmp_chk(jmp_save, 14);
 }
-// 8048EF4: using guessed type int __cdecl __longjmp_chk(_DWORD, _DWORD);
+// 8048EF4: using guessed type void __cdecl __noreturn __longjmp_chk(_DWORD, _DWORD);
 
 //----- (0804A977) --------------------------------------------------------
 void __cdecl subst_var_with_exp(token_type *equation, int *np, token_type *expression, int len, int v)
@@ -2098,9 +2012,9 @@ void __cdecl subst_var_with_exp(token_type *equation, int *np, token_type *expre
   int v6; // esi
   token_type *v7; // ebx
   int v8; // edi
-  int *v9; // eax
+  int *p_level; // eax
   int v10; // edx
-  int v11; // [esp+18h] [ebp-30h]
+  int level; // [esp+18h] [ebp-30h]
   int v12; // [esp+24h] [ebp-24h]
   token_type *dest; // [esp+28h] [ebp-20h]
   token_type *src; // [esp+2Ch] [ebp-1Ch]
@@ -2122,7 +2036,7 @@ void __cdecl subst_var_with_exp(token_type *equation, int *np, token_type *expre
         {
           if ( v7->kind == VARIABLE && v7->token.variable == v )
           {
-            v11 = v7->level;
+            level = v7->level;
             if ( len + *np - 1 > n_tokens )
               error_huge();
             memmove(dest, src, 16 * (*np + v12));
@@ -2130,13 +2044,13 @@ void __cdecl subst_var_with_exp(token_type *equation, int *np, token_type *expre
             memmove(v7, expression, 16 * len);
             if ( v6 < v8 )
             {
-              v9 = &v7->level;
+              p_level = &v7->level;
               v10 = v6;
               do
               {
-                *v9 += v11;
+                *p_level += level;
                 ++v10;
-                v9 += 4;
+                p_level += 4;
               }
               while ( v10 < v8 );
             }
@@ -2251,7 +2165,7 @@ int __cdecl check_divide_by_zero(double denominator)
   if ( denominator == 0.0 )
   {
     warning("Division by zero.");
-    result = 1;
+    return 1;
   }
   return result;
 }
@@ -2329,7 +2243,7 @@ int __cdecl extra_characters(char *cp)
 //----- (0804ADED) --------------------------------------------------------
 int __cdecl prompt_var(int *vp)
 {
-  char *v1; // eax
+  char *string; // eax
   char *v2; // eax
   char buf[4096]; // [esp+1Ch] [ebp-100Ch] BYREF
   unsigned int v5; // [esp+101Ch] [ebp-Ch]
@@ -2338,10 +2252,10 @@ int __cdecl prompt_var(int *vp)
   while ( 1 )
   {
     my_strlcpy(prompt_str, "Enter variable: ", 80);
-    v1 = get_string(buf, 4096);
-    if ( !v1 || !*v1 )
+    string = get_string(buf, 4096);
+    if ( !string || !*string )
       break;
-    v2 = parse_var2(vp, v1);
+    v2 = parse_var2(vp, string);
     if ( v2 && !extra_characters(v2) )
       return 1;
   }
@@ -2356,7 +2270,7 @@ int current_not_defined()
   if ( cur_equation < 0 || cur_equation >= n_equations || (result = 0, n_lhs[cur_equation] <= 0) )
   {
     error("No current equation or expression.");
-    result = 1;
+    return 1;
   }
   return result;
 }
@@ -2372,13 +2286,13 @@ int __cdecl not_defined(int i)
     if ( n_lhs[i] <= 0 )
     {
       error("Equation space is empty.");
-      result = 1;
+      return 1;
     }
   }
   else
   {
     error("Invalid equation number.");
-    result = 1;
+    return 1;
   }
   return result;
 }
@@ -2466,7 +2380,7 @@ int __cdecl get_range(char **cpp, int *ip_0, int *jp)
       {
         *jp = *ip_0;
         *cpp = skip_space(cp[0]);
-        result = 1;
+        return 1;
       }
       return result;
     }
@@ -2513,13 +2427,13 @@ LABEL_29:
 //----- (0804B139) --------------------------------------------------------
 int __cdecl get_range_eol(char **cpp, int *ip_0, int *jp)
 {
-  int v3; // edx
+  int range; // edx
   int result; // eax
 
-  v3 = get_range(cpp, ip_0, jp);
+  range = get_range(cpp, ip_0, jp);
   result = 0;
-  if ( v3 )
-    result = extra_characters(*cpp) == 0;
+  if ( range )
+    return extra_characters(*cpp) == 0;
   return result;
 }
 
@@ -2537,7 +2451,7 @@ int next_espace()
   }
   return result;
 }
-// 8048EF4: using guessed type int __cdecl __longjmp_chk(_DWORD, _DWORD);
+// 8048EF4: using guessed type void __cdecl __noreturn __longjmp_chk(_DWORD, _DWORD);
 // 8048F34: using guessed type int __printf_chk(_DWORD, const char *, ...);
 
 //----- (0804B1C1) --------------------------------------------------------
@@ -2563,7 +2477,7 @@ void check_err()
     __longjmp_chk(jmp_save, 2);
   }
 }
-// 8048EF4: using guessed type int __cdecl __longjmp_chk(_DWORD, _DWORD);
+// 8048EF4: using guessed type void __cdecl __noreturn __longjmp_chk(_DWORD, _DWORD);
 
 //----- (0804B23D) --------------------------------------------------------
 void __cdecl __noreturn error_bug(const char *str)
@@ -2574,7 +2488,7 @@ void __cdecl __noreturn error_bug(const char *str)
   __printf_chk(1, "Type \"help bugs\" for info on how to report bugs found in this program.\n");
   __longjmp_chk(jmp_save, 13);
 }
-// 8048EF4: using guessed type int __cdecl __longjmp_chk(_DWORD, _DWORD);
+// 8048EF4: using guessed type void __cdecl __noreturn __longjmp_chk(_DWORD, _DWORD);
 // 8048F34: using guessed type int __printf_chk(_DWORD, const char *, ...);
 
 //----- (0804B29E) --------------------------------------------------------
@@ -2773,12 +2687,18 @@ int __usercall flip@<eax>(token_type *side1p@<eax>, int *side1np@<edx>, token_ty
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
 
 //----- (0804B637) --------------------------------------------------------
-int __usercall g_of_f@<eax>(int op@<eax>, token_type *operandp@<edx>, token_type *side1p@<ecx>, int *side1np, token_type *side2p, int *side2np)
+int __usercall g_of_f@<eax>(
+        int op@<eax>,
+        token_type *operandp@<edx>,
+        token_type *side1p@<ecx>,
+        int *side1np,
+        token_type *side2p,
+        int *side2np)
 {
   int result; // eax
   token_type *v7; // edi
   token_type *i; // ebx
-  int v9; // eax
+  int variable; // eax
   int v10; // eax
   int v11; // eax
   int v12; // eax
@@ -2839,14 +2759,14 @@ int __usercall g_of_f@<eax>(int op@<eax>, token_type *operandp@<edx>, token_type
   {
     if ( i->level == 1 )
     {
-      v9 = i->token.variable;
-      if ( v9 == 5 )
+      variable = i->token.variable;
+      if ( variable == 5 )
       {
         v28 = i + 1;
       }
       else
       {
-        if ( v9 != 7 )
+        if ( variable != 7 )
           break;
         v30 = 1;
       }
@@ -3087,7 +3007,7 @@ LABEL_50:
   if ( (unsigned int)(v30 - 5) <= 1 )
   {
     *side1np = &v28[-1] - side1p;
-    result = 1;
+    return 1;
   }
   return result;
 }
@@ -3101,11 +3021,11 @@ int __usercall quad_solve@<eax>(int v@<eax>)
   token_type *v1; // eax
   token_type *v2; // esi
   long double v3; // fst7
-  int v4; // edx
+  int level; // edx
   token_type *v5; // edi
   token_type *v6; // edx
   int v7; // ecx
-  long double v8; // fst6
+  long double constant; // fst6
   long double v9; // fst6
   int v10; // eax
   int v11; // eax
@@ -3161,7 +3081,7 @@ int __usercall quad_solve@<eax>(int v@<eax>)
   int alen; // [esp+3Ch] [ebp-68Ch]
   int alena; // [esp+3Ch] [ebp-68Ch]
   size_t n; // [esp+40h] [ebp-688h]
-  int v64; // [esp+44h] [ebp-684h]
+  int variable; // [esp+44h] [ebp-684h]
   int v65; // [esp+44h] [ebp-684h]
   int v66; // [esp+44h] [ebp-684h]
   int nx1; // [esp+4Ch] [ebp-67Ch]
@@ -3193,10 +3113,10 @@ int __usercall quad_solve@<eax>(int v@<eax>)
   {
     if ( v1 < v70 )
     {
-      v4 = v1->level;
+      level = v1->level;
       high_power[0] = v3;
       v5 = v2;
-      if ( v4 != 1 )
+      if ( level != 1 )
         goto LABEL_44;
       if ( v1->kind != OPERATOR )
         goto LABEL_42;
@@ -3215,7 +3135,7 @@ int __usercall quad_solve@<eax>(int v@<eax>)
       v5 = v2;
       v6 = v2;
       nx1 = 0;
-      v64 = 0;
+      variable = 0;
       while ( 1 )
       {
         v7 = v6->level;
@@ -3224,7 +3144,7 @@ int __usercall quad_solve@<eax>(int v@<eax>)
           if ( v6->kind == OPERATOR )
           {
             v5 = v6 + 1;
-            v64 = v6->token.variable;
+            variable = v6->token.variable;
             high_power[0] = v3;
             nx1 = 0;
             goto LABEL_30;
@@ -3235,13 +3155,13 @@ int __usercall quad_solve@<eax>(int v@<eax>)
           if ( v7 == 3
             && v6->token.variable == 6
             && nx1
-            && (v64 == 3 || !v64)
+            && (variable == 3 || !variable)
             && v6[1].level == 3
             && v6[1].kind == CONSTANT )
           {
-            v8 = v6[1].token.constant;
+            constant = v6[1].token.constant;
             high_power[0] = v6[1].token.constant;
-            if ( v8 > v3 )
+            if ( constant > v3 )
             {
               a2p = v6 + 2;
               a2ep = v1;
@@ -3284,8 +3204,8 @@ LABEL_30:
 LABEL_39:
     if ( v1 >= v70 )
       break;
-    v4 = v1->level;
-    if ( v4 == 1 )
+    level = v1->level;
+    if ( level == 1 )
     {
       v3 = high_power[0];
       v2 = v5;
@@ -3301,7 +3221,7 @@ LABEL_42:
 LABEL_44:
     if ( v1->kind == OPERATOR )
     {
-      if ( v4 == 2 )
+      if ( level == 2 )
       {
         op = v1->token.variable;
         v3 = high_power[0];
@@ -3631,7 +3551,7 @@ LABEL_127:
   if ( debug_level >= 0 )
   {
     __fprintf_chk(gfp, 1, "%s\n", "Equation was solved with the quadratic formula.");
-    result = 1;
+    return 1;
   }
   return result;
 }
@@ -3646,7 +3566,7 @@ int __cdecl solve_sub(token_type *wantp, int wantn, token_type *leftp, int *left
   token_type *v8; // ecx
   token_type *v9; // edi
   token_type *v10; // ecx
-  int v11; // esi
+  int variable; // esi
   token_type *v12; // edx
   token_type *i; // ecx
   token_type *v14; // ecx
@@ -3655,7 +3575,7 @@ int __cdecl solve_sub(token_type *wantp, int wantn, token_type *leftp, int *left
   token_type *v17; // eax
   int v18; // ecx
   token_type *v19; // ebx
-  kind_list v20; // eax
+  kind_list kind; // eax
   token_type *j; // esi
   token_type *v22; // eax
   token_type *v23; // esi
@@ -3670,20 +3590,20 @@ int __cdecl solve_sub(token_type *wantp, int wantn, token_type *leftp, int *left
   int k; // edx
   int v33; // ecx
   token_type *v34; // eax
-  int l; // edx
+  int m; // edx
   int v36; // ecx
   token_type *v37; // eax
   token_type *v38; // ebx
   int v39; // esi
   int v40; // edi
-  int v41; // edx
+  int level; // edx
   token_type *v42; // edx
   int v43; // eax
   token_type *v44; // edx
   token_type *v45; // eax
   token_type *v46; // eax
   double *v47; // edx
-  int m; // esi
+  int n; // esi
   int v49; // edi
   double *v50; // ebx
   token_type *v51; // ecx
@@ -3771,742 +3691,730 @@ LABEL_2:
   inc_count = 0;
   qtries = 0;
   uf_flag = 0;
+  while ( 1 )
+  {
+LABEL_17:
+    list_debug(2, tlhs, n_tlhs, trhs, n_trhs);
+    simps_side(tlhs, &n_tlhs, zsolve);
+    if ( uf_flag )
+    {
+      simp_loop(trhs, &n_trhs);
+      uf_simp(trhs, &n_trhs);
+      factorv(trhs, &n_trhs, v);
+    }
+    else
+    {
+      simps_side(trhs, &n_trhs, zsolve);
+    }
+    list_debug(1, tlhs, n_tlhs, trhs, n_trhs);
+no_simp:
+    v6 = trhs;
+    v7 = &trhs[n_trhs];
+    if ( !zsolve )
+      break;
+    if ( trhs >= v7 )
+      goto LABEL_60;
+    v8 = trhs;
+    while ( v8->level != 1 || v8->kind != OPERATOR || v8->token.variable != 4 )
+    {
+      if ( v7 <= ++v8 )
+        goto LABEL_60;
+    }
+    if ( !g_of_f(4, v8 + 1, trhs, &n_trhs, tlhs, &n_tlhs) )
+      return 0;
+  }
+  if ( trhs < v7 )
+  {
+    v9 = trhs;
+    v10 = trhs;
+    variable = 0;
+    while ( v10->kind != VARIABLE || v10->token.variable != v )
+    {
+      if ( v10->level == 1 && v10->kind == OPERATOR )
+      {
+        variable = v10->token.variable;
+        v9 = v10 + 1;
+      }
+      if ( v7 <= ++v10 )
+      {
+        v6 = trhs;
+        goto LABEL_60;
+      }
+    }
+    v12 = trhs;
+    if ( variable )
+    {
+LABEL_46:
+      if ( (unsigned int)variable > 6 || ((1 << variable) & 0x58) == 0 )
+      {
+        v12 = v9;
+        goto LABEL_53;
+      }
+    }
+    else
+    {
+      for ( i = v10 + 1; ; ++i )
+      {
+        if ( i >= v7 )
+          goto LABEL_52;
+        if ( i->level == 1 && i->kind == OPERATOR )
+          break;
+      }
+      variable = i->token.variable;
+      if ( variable < 1 )
+        goto LABEL_46;
+      if ( variable <= 2 )
+      {
+LABEL_52:
+        v12 = v9;
+        variable = 1;
+        goto LABEL_53;
+      }
+      if ( variable > 4 )
+        goto LABEL_46;
+    }
+    v14 = trhs;
+    do
+    {
+      ++v14->level;
+      ++v14;
+    }
+    while ( v14 < v7 );
+    variable = 1;
+LABEL_53:
+    if ( !g_of_f(variable, v12, trhs, &n_trhs, tlhs, &n_tlhs) )
+      return 0;
+    goto LABEL_17;
+  }
+LABEL_60:
+  if ( uf_flag )
+    simps_side(v6, &n_trhs, zsolve);
   while ( 2 )
   {
     while ( 2 )
     {
+      uf_flag = 0;
+      worked = 1;
+LABEL_64:
       while ( 2 )
       {
-        while ( 2 )
+        if ( found_var(trhs, n_trhs, v) )
         {
-          while ( 1 )
-          {
-            list_debug(2, tlhs, n_tlhs, trhs, n_trhs);
-            simps_side(tlhs, &n_tlhs, zsolve);
-            if ( uf_flag )
-            {
-              simp_loop(trhs, &n_trhs);
-              uf_simp(trhs, &n_trhs);
-              factorv(trhs, &n_trhs, v);
-            }
-            else
-            {
-              simps_side(trhs, &n_trhs, zsolve);
-            }
-            list_debug(1, tlhs, n_tlhs, trhs, n_trhs);
-no_simp:
-            v6 = trhs;
-            v7 = &trhs[n_trhs];
-            if ( !zsolve )
-              break;
-            if ( trhs >= v7 )
-              goto LABEL_60;
-            v8 = trhs;
-            while ( v8->level != 1 || v8->kind != OPERATOR || v8->token.variable != 4 )
-            {
-              if ( v7 <= ++v8 )
-                goto LABEL_60;
-            }
-            if ( !g_of_f(4, v8 + 1, trhs, &n_trhs, tlhs, &n_tlhs) )
-              return 0;
-          }
-          if ( trhs < v7 )
-          {
-            v9 = trhs;
-            v10 = trhs;
-            v11 = 0;
-            while ( v10->kind != VARIABLE || v10->token.variable != v )
-            {
-              if ( v10->level == 1 && v10->kind == OPERATOR )
-              {
-                v11 = v10->token.variable;
-                v9 = v10 + 1;
-              }
-              if ( v7 <= ++v10 )
-              {
-                v6 = trhs;
-                goto LABEL_60;
-              }
-            }
-            v12 = trhs;
-            if ( v11 )
-            {
-LABEL_46:
-              if ( (unsigned int)v11 > 6 || ((1 << v11) & 0x58) == 0 )
-              {
-                v12 = v9;
-                goto LABEL_53;
-              }
-            }
-            else
-            {
-              for ( i = v10 + 1; ; ++i )
-              {
-                if ( i >= v7 )
-                  goto LABEL_52;
-                if ( i->level == 1 && i->kind == OPERATOR )
-                  break;
-              }
-              v11 = i->token.variable;
-              if ( v11 < 1 )
-                goto LABEL_46;
-              if ( v11 <= 2 )
-              {
-LABEL_52:
-                v12 = v9;
-                v11 = 1;
-                goto LABEL_53;
-              }
-              if ( v11 > 4 )
-                goto LABEL_46;
-            }
-            v14 = trhs;
-            do
-            {
-              ++v14->level;
-              ++v14;
-            }
-            while ( v14 < v7 );
-            v11 = 1;
-LABEL_53:
-            if ( !g_of_f(v11, v12, trhs, &n_trhs, tlhs, &n_tlhs) )
-              return 0;
-            continue;
-          }
-          break;
+          if ( debug_level <= 0 )
+            return 0;
+          goto LABEL_66;
         }
-LABEL_60:
-        if ( uf_flag )
-          simps_side(v6, &n_trhs, zsolve);
-LABEL_63:
-        while ( 2 )
+        if ( se_compare(wantp, 1, tlhs, n_tlhs, diff_sign) && !diff_sign[0] )
         {
-          uf_flag = 0;
-          worked = 1;
-LABEL_64:
-          while ( 2 )
+          if ( zsolve )
           {
-            if ( found_var(trhs, n_trhs, v) )
+            while ( 1 )
             {
-              if ( debug_level <= 0 )
-                return 0;
-              goto LABEL_66;
-            }
-            if ( se_compare(wantp, 1, tlhs, n_tlhs, diff_sign) && !diff_sign[0] )
-            {
-              if ( zsolve )
+LABEL_70:
+              list_debug(4, tlhs, n_tlhs, trhs, n_trhs);
+              uf_power(trhs, &n_trhs);
+              do
               {
+                do
+                  simp_ssub(trhs, &n_trhs, 0, 0.0, 0, 1, 0);
+                while ( uf_power(trhs, &n_trhs) );
+              }
+              while ( super_factor(trhs, &n_trhs, 1) );
+              list_debug(3, tlhs, n_tlhs, trhs, n_trhs);
+              v15 = trhs;
+              v16 = &trhs[n_trhs];
+              v17 = trhs + 1;
+              v18 = 0;
+              while ( v17 < v16 )
+              {
+                if ( v17->level == 1 )
+                {
+                  v18 = v17->token.variable;
+                  if ( v18 == 4 )
+                    goto no_simp;
+                  if ( v18 != 3 )
+                    break;
+                }
+                v17 += 2;
+              }
+              if ( v18 == 3 )
+              {
+LABEL_96:
+                if ( v15 >= v16 )
+                  break;
+                v19 = v15;
                 while ( 1 )
                 {
-LABEL_70:
-                  list_debug(4, tlhs, n_tlhs, trhs, n_trhs);
-                  uf_power(trhs, &n_trhs);
-                  do
+                  kind = v19->kind;
+                  if ( v19->kind == OPERATOR )
                   {
-                    do
-                      simp_ssub(trhs, &n_trhs, 0, 0.0, 0, 1, 0);
-                    while ( uf_power(trhs, &n_trhs) );
+                    if ( v19->level == 1 )
+                      goto LABEL_85;
                   }
-                  while ( super_factor(trhs, &n_trhs, 1) );
-                  list_debug(3, tlhs, n_tlhs, trhs, n_trhs);
-                  v15 = trhs;
-                  v16 = &trhs[n_trhs];
-                  v17 = trhs + 1;
-                  v18 = 0;
-                  while ( v17 < v16 )
+                  else if ( kind && (kind != VARIABLE || (v19->token.variable & 0x3FFFu) > 4) )
                   {
-                    if ( v17->level == 1 )
-                    {
-                      v18 = v17->token.variable;
-                      if ( v18 == 4 )
-                        goto no_simp;
-                      if ( v18 != 3 )
-                        break;
-                    }
-                    v17 += 2;
+                    for ( j = v15 + 1; j < v16 && j->level > 1; j += 2 )
+                      ;
+                    v15 = j + 1;
+                    goto LABEL_96;
                   }
-                  if ( v18 == 3 )
+                  if ( v16 <= ++v19 )
                   {
-LABEL_96:
-                    if ( v15 >= v16 )
-                      break;
-                    v19 = v15;
-                    while ( 1 )
-                    {
-                      v20 = v19->kind;
-                      if ( v19->kind == OPERATOR )
-                      {
-                        if ( v19->level == 1 )
-                          goto LABEL_85;
-                      }
-                      else if ( v20 && (v20 != VARIABLE || (v19->token.variable & 0x3FFFu) > 4) )
-                      {
-                        for ( j = v15 + 1; j < v16 && j->level > 1; j += 2 )
-                          ;
-                        v15 = j + 1;
-                        goto LABEL_96;
-                      }
-                      if ( v16 <= ++v19 )
-                      {
 LABEL_85:
-                        memmove(&v15[1], v19, (char *)v16 - (char *)v19);
-                        n_trhs -= v19 - &v15[1];
-                        v15->kind = CONSTANT;
-                        v15->token.constant = 1.0;
-                        goto LABEL_70;
-                      }
-                    }
+                    memmove(&v15[1], v19, (char *)v16 - (char *)v19);
+                    n_trhs -= v19 - &v15[1];
+                    v15->kind = CONSTANT;
+                    v15->token.constant = 1.0;
+                    goto LABEL_70;
                   }
-                  if ( v18 != 6 )
-                    break;
-                  v22 = v17 + 1;
-                  if ( v22->level != 1 || v22->kind || v22->token.constant <= 0.0 )
-                    break;
-                  n_trhs -= 2;
                 }
-                if ( debug_level > 0 )
-                  __fprintf_chk(gfp, 1, "%s\n", "Solve for zero completed:");
               }
-              else if ( debug_level > 0 )
-              {
-                __fprintf_chk(gfp, 1, "%s\n", "Solve completed:");
-              }
-              list_debug(1, tlhs, n_tlhs, trhs, n_trhs);
-              memmove(leftp, tlhs, 16 * n_tlhs);
-              *leftnp = n_tlhs;
-              memmove(rightp, trhs, 16 * n_trhs);
-              *rightnp = n_trhs;
-              return success;
+              if ( v18 != 6 )
+                break;
+              v22 = v17 + 1;
+              if ( v22->level != 1 || v22->kind || v22->token.constant <= 0.0 )
+                break;
+              n_trhs -= 2;
             }
-            operandp = tlhs;
-            v23 = &tlhs[n_tlhs];
-            v24 = tlhs;
-            v25 = tlhs;
-            v26 = 0;
-            v27 = 0;
-            found_count = 0;
-            v68 = 0;
-            while ( v25 < v23 && (v25->level != 1 || v25->kind != OPERATOR) )
-            {
-              if ( v25->kind == VARIABLE && v25->token.variable == v )
-              {
-                ++found_count;
-                ++v26;
-              }
+            if ( debug_level > 0 )
+              __fprintf_chk(gfp, 1, "%s\n", "Solve for zero completed:");
+          }
+          else if ( debug_level > 0 )
+          {
+            __fprintf_chk(gfp, 1, "%s\n", "Solve completed:");
+          }
+          list_debug(1, tlhs, n_tlhs, trhs, n_trhs);
+          memmove(leftp, tlhs, 16 * n_tlhs);
+          *leftnp = n_tlhs;
+          memmove(rightp, trhs, 16 * n_trhs);
+          *rightnp = n_trhs;
+          return success;
+        }
+        operandp = tlhs;
+        v23 = &tlhs[n_tlhs];
+        v24 = tlhs;
+        v25 = tlhs;
+        v26 = 0;
+        v27 = 0;
+        found_count = 0;
+        v68 = 0;
+        while ( v25 < v23 && (v25->level != 1 || v25->kind != OPERATOR) )
+        {
+          if ( v25->kind == VARIABLE && v25->token.variable == v )
+          {
+            ++found_count;
+            ++v26;
+          }
 LABEL_342:
-              ++v25;
-            }
-            if ( v26 )
-            {
-              v30 = v68 + v26;
-              if ( v27 != 4 )
-                v30 = v68;
-              v68 = v30;
-            }
-            else if ( (v25 < v23 || found_count || zsolve || n_tlhs > 1 || tlhs->kind)
-                   && ((unsigned int)((char *)v25 - (char *)v24 - 16) > 0xF
-                    || v24->kind
-                    || v24->token.constant != 1.0
-                    || v25 >= v23
-                    || v25->token.variable != 4) )
-            {
-              if ( !v27 )
-              {
-                if ( v25 >= v23 )
-                  goto LABEL_132;
-                while ( v25->level != 1 || v25->kind != OPERATOR )
-                {
-                  if ( v23 <= ++v25 )
-                    goto LABEL_132;
-                }
-                v27 = v25->token.variable;
-                if ( v27 < 1 )
-                  goto LABEL_133;
-                if ( v27 <= 2 )
-                {
-LABEL_132:
-                  v27 = 1;
-                }
-                else if ( v27 <= 4 )
-                {
-                  v27 = 3;
-                }
-              }
-LABEL_133:
-              if ( !zsolve )
-              {
-                v28 = v27;
-                goto LABEL_145;
-              }
-              if ( v25 >= v23 )
-              {
-                v28 = v27;
-                if ( v27 != 4 )
-                {
-                  if ( tlhs < v23 )
-                  {
-                    v29 = tlhs;
-                    do
-                    {
-                      ++v29->level;
-                      ++v29;
-                    }
-                    while ( v23 > v29 );
-                  }
-                  v24 = operandp;
-                  v28 = 1;
-                }
-LABEL_145:
-                if ( !g_of_f(v28, v24, tlhs, &n_tlhs, trhs, &n_trhs) )
-                  return 0;
-                list_debug(2, tlhs, n_tlhs, trhs, n_trhs);
-                if ( uf_flag )
-                  simp_loop(tlhs, &n_tlhs);
-                else
-                  simps_side(tlhs, &n_tlhs, zsolve);
-                simps_side(trhs, &n_trhs, zsolve);
-                list_debug(1, tlhs, n_tlhs, trhs, n_trhs);
-                continue;
-              }
-              if ( (unsigned int)v27 <= 4 && ((1 << v27) & 0x16) != 0 )
-              {
-                v28 = v27;
-                goto LABEL_145;
-              }
-              goto fin1;
-            }
-            break;
-          }
-          if ( v25 < v23 )
+          ++v25;
+        }
+        if ( v26 )
+        {
+          v30 = v68 + v26;
+          if ( v27 != 4 )
+            v30 = v68;
+          v68 = v30;
+        }
+        else if ( (v25 < v23 || found_count || zsolve || n_tlhs > 1 || tlhs->kind)
+               && ((unsigned int)((char *)v25 - (char *)v24 - 16) > 0xF
+                || v24->kind
+                || v24->token.constant != 1.0
+                || v25 >= v23
+                || v25->token.variable != 4) )
+        {
+          if ( !v27 )
           {
-fin1:
+            if ( v25 >= v23 )
+              goto LABEL_132;
+            while ( v25->level != 1 || v25->kind != OPERATOR )
+            {
+              if ( v23 <= ++v25 )
+                goto LABEL_132;
+            }
             v27 = v25->token.variable;
-            v24 = v25 + 1;
-            v26 = 0;
-            goto LABEL_342;
-          }
-          if ( !found_count )
-          {
-            if ( !found_var(trhs, n_trhs, v) )
+            if ( v27 < 1 )
+              goto LABEL_133;
+            if ( v27 <= 2 )
             {
-              calc_simp(tlhs, &n_tlhs);
-              calc_simp(trhs, &n_trhs);
-              if ( !se_compare(tlhs, n_tlhs, trhs, n_trhs, diff_sign) || diff_sign[0] )
-              {
-                v31 = tlhs;
-                for ( k = 0; k < n_tlhs; k += 2 )
-                {
-                  if ( v31->kind == VARIABLE && v31->token.variable > 3 )
-                  {
-                    v33 = 1;
-                    goto LABEL_168;
-                  }
-                  v31 += 2;
-                }
-                v33 = 0;
-LABEL_168:
-                v34 = trhs;
-                for ( l = 0; l < n_trhs; l += 2 )
-                {
-                  if ( v34->kind == VARIABLE && v34->token.variable > 3 )
-                    goto LABEL_174;
-                  v34 += 2;
-                }
-                if ( v33 )
-                {
-LABEL_174:
-                  error("This equation is independent of the solve variable.");
-                  return -2;
-                }
-                error("There are no possible values for the solve variable.");
-                success = -2;
-              }
-              else
-              {
-                error("This equation is an identity.");
-                __printf_chk(1, "That is, the LHS is identical to the RHS.\n");
-                success = -1;
-              }
-              return success;
+LABEL_132:
+              v27 = 1;
             }
-            if ( debug_level <= 0 )
-              return 0;
-LABEL_66:
-            __fprintf_chk(gfp, 1, "%s\n", "Solve variable moved back to RHS, quitting solve routine.");
-            return 0;
+            else if ( v27 <= 4 )
+            {
+              v27 = 3;
+            }
           }
-          if ( n_trhs == 1 && trhs->kind == CONSTANT && trhs->token.constant == 0.0 )
+LABEL_133:
+          if ( !zsolve )
           {
-            trhs->token.constant = 0.0;
-            v36 = 1;
+            v28 = v27;
+            goto LABEL_145;
           }
-          else
+          if ( v25 >= v23 )
           {
-            v36 = 0;
-          }
-          if ( found_count <= v68 )
-          {
-            if ( !flip(tlhs, &n_tlhs, trhs, &n_trhs) )
+            v28 = v27;
+            if ( v27 != 4 )
+            {
+              if ( tlhs < v23 )
+              {
+                v29 = tlhs;
+                do
+                {
+                  ++v29->level;
+                  ++v29;
+                }
+                while ( v23 > v29 );
+              }
+              v24 = operandp;
+              v28 = 1;
+            }
+LABEL_145:
+            if ( !g_of_f(v28, v24, tlhs, &n_tlhs, trhs, &n_trhs) )
               return 0;
             list_debug(2, tlhs, n_tlhs, trhs, n_trhs);
-            simps_side(tlhs, &n_tlhs, zsolve);
+            if ( uf_flag )
+              simp_loop(tlhs, &n_tlhs);
+            else
+              simps_side(tlhs, &n_tlhs, zsolve);
             simps_side(trhs, &n_trhs, zsolve);
             list_debug(1, tlhs, n_tlhs, trhs, n_trhs);
             continue;
           }
-          break;
-        }
-        if ( worked && !uf_flag )
-        {
-          if ( debug_level > 0 )
-            __fprintf_chk(gfp, 1, "%s\n", "Unfactoring...");
-          partial_flag = 0;
-          uf_simp(tlhs, &n_tlhs);
-          partial_flag = 1;
-          factorv(tlhs, &n_tlhs, v);
-          list_debug(1, tlhs, n_tlhs, trhs, n_trhs);
-          uf_flag = 1;
-          worked = 0;
-          goto LABEL_64;
-        }
-        if ( uf_flag )
-        {
-          simps_side(tlhs, &n_tlhs, zsolve);
-          list_debug(1, tlhs, n_tlhs, trhs, n_trhs);
-          uf_flag = 0;
-          goto LABEL_64;
-        }
-        v37 = tlhs + 2;
-        v38 = tlhs;
-        v39 = 0;
-        v40 = 1;
-        while ( 2 )
-        {
-          if ( v40 < n_tlhs )
+          if ( (unsigned int)v27 <= 4 && ((1 << v27) & 0x16) != 0 )
           {
-            if ( v37[-1].level == 1 )
-            {
-              workeda = v37[-1].token.variable;
-              if ( (unsigned int)(workeda - 3) > 1 )
-              {
-                v39 = v37[-1].token.variable;
-                break;
-              }
-              if ( !v39 )
-                v39 = 3;
-              if ( v36 )
-              {
-                if ( workeda == 4 )
-                {
-                  v38 = &tlhs[v40 + 1];
-                  v39 = 4;
-                  break;
-                }
-                operandpa = v37;
-                if ( v37->kind == VARIABLE && v37->token.variable == v )
-                {
-                  v41 = v37->level;
-                  if ( v41 == 1
-                    || v41 == 2
-                    && v37[1].token.variable == 6
-                    && v37[2].level == 2
-                    && v37[2].kind == CONSTANT
-                    && v37[2].token.constant > 0.0 )
-                  {
-                    v39 = v37[-1].token.variable;
-                    goto LABEL_219;
-                  }
-                }
-              }
-              else if ( workeda == 4 )
-              {
-                operandpb = (token_type *)(v40 + 2);
-                v42 = v37 + 1;
-                while ( (int)operandpb < n_tlhs )
-                {
-                  workedb = (int)v42;
-                  v81 = v42->level;
-                  if ( v81 <= 1 )
-                    break;
-                  v42 += 2;
-                  if ( v81 == 2 )
-                  {
-                    if ( (unsigned int)(*(_DWORD *)(workedb + 8) - 1) > 1 )
-                      break;
-                    operandpa = v37;
-                    v39 = 4;
-                    goto LABEL_219;
-                  }
-                  operandpb = (token_type *)((char *)operandpb + 2);
-                }
-              }
-            }
-            operandpa = v38;
-LABEL_219:
-            v40 += 2;
-            v37 += 2;
-            v38 = operandpa;
-            continue;
+            v28 = v27;
+            goto LABEL_145;
           }
-          break;
-        }
-        if ( v36 && zero_solved && v39 == 3 && v38->kind == VARIABLE && v38->token.variable == v )
-        {
-          v43 = v38->level;
-          if ( v43 == 1
-            || v43 == 2
-            && v38[1].token.variable == 6
-            && v38[2].level == 2
-            && v38[2].kind == CONSTANT
-            && v38[2].token.constant > 0.0 )
-          {
-            __fprintf_chk(gfp, 1, "Removing possible solution: \"");
-            list_proc(v38, 1, 0);
-            __fprintf_chk(gfp, 1, " = 0\".\n");
-            success = 2;
-            qtries = 0;
-LABEL_238:
-            if ( !g_of_f(v39, v38, tlhs, &n_tlhs, trhs, &n_trhs) )
-              return 0;
-            continue;
-          }
-        }
-        else if ( v39 == 4 )
-        {
-          uf_flag = 1;
-          if ( debug_level > 0 )
-          {
-            __fprintf_chk(gfp, 1, "%s\n", "Juggling...");
-            uf_flag = 1;
-          }
-          goto LABEL_238;
+          goto fin1;
         }
         break;
       }
-      v49 = 0;
-      v50 = 0;
-      for ( m = 1; m < n_tlhs; m += 2 )
+      if ( v25 < v23 )
       {
-        v44 = &tlhs[m];
-        if ( v44->token.variable == 6 )
+fin1:
+        v27 = v25->token.variable;
+        v24 = v25 + 1;
+        v26 = 0;
+        goto LABEL_342;
+      }
+      if ( !found_count )
+      {
+        if ( !found_var(trhs, n_trhs, v) )
         {
-          operandpc = (token_type *)(v49 * 16 + 32);
-          v45 = &tlhs[v49 + 2];
-          if ( v45->level == v44->level
-            && v45->kind == CONSTANT
-            && fabs(v45->token.constant) < 1.0
-            && f_to_fraction(v45->token.constant, &numerator, &denominator)
-            && fabs(numerator) == 1.0
-            && denominator >= 2.0 )
+          calc_simp(tlhs, &n_tlhs);
+          calc_simp(trhs, &n_trhs);
+          if ( !se_compare(tlhs, n_tlhs, trhs, n_trhs, diff_sign) || diff_sign[0] )
           {
-            v46 = &tlhs[v49];
-            for ( workedc = m - 1; workedc >= 0 && v46->level >= tlhs[m].level; --workedc )
+            v31 = tlhs;
+            for ( k = 0; k < n_tlhs; k += 2 )
             {
-              if ( v46->kind == VARIABLE && v46->token.variable == v )
+              if ( v31->kind == VARIABLE && v31->token.variable > 3 )
               {
-                if ( !v50 )
-                {
-                  v47 = (double *)((char *)tlhs + (_DWORD)operandpc);
-                  goto LABEL_258;
-                }
-                v47 = (double *)((char *)tlhs + (_DWORD)operandpc);
-                if ( fabs(*(double *)((char *)&tlhs->token.constant + (_DWORD)operandpc)) > fabs(v50[1]) )
-                  goto LABEL_258;
-                break;
+                v33 = 1;
+                goto LABEL_168;
               }
-              --v46;
+              v31 += 2;
             }
+            v33 = 0;
+LABEL_168:
+            v34 = trhs;
+            for ( m = 0; m < n_trhs; m += 2 )
+            {
+              if ( v34->kind == VARIABLE && v34->token.variable > 3 )
+                goto LABEL_174;
+              v34 += 2;
+            }
+            if ( v33 )
+            {
+LABEL_174:
+              error("This equation is independent of the solve variable.");
+              return -2;
+            }
+            error("There are no possible values for the solve variable.");
+            return -2;
+          }
+          else
+          {
+            error("This equation is an identity.");
+            __printf_chk(1, "That is, the LHS is identical to the RHS.\n");
+            return -1;
           }
         }
-        v47 = v50;
-LABEL_258:
-        v49 += 2;
-        v50 = v47;
+        if ( debug_level <= 0 )
+          return 0;
+LABEL_66:
+        __fprintf_chk(gfp, 1, "%s\n", "Solve variable moved back to RHS, quitting solve routine.");
+        return 0;
       }
-      if ( !zero_solved || !v50 )
+      if ( n_trhs == 1 && trhs->kind == CONSTANT && trhs->token.constant == 0.0 )
       {
-        if ( qtries )
+        trhs->token.constant = 0.0;
+        v36 = 1;
+      }
+      else
+      {
+        v36 = 0;
+      }
+      if ( found_count <= v68 )
+      {
+        if ( !flip(tlhs, &n_tlhs, trhs, &n_trhs) )
           return 0;
-        if ( debug_level > 0 )
-          __fprintf_chk(gfp, 1, "%s\n", "Solving for zero...");
-        *leftnp = n_tlhs;
-        memmove(leftp, tlhs, 16 * n_tlhs);
-        *rightnp = n_trhs;
-        memmove(rightp, trhs, 16 * n_trhs);
-        if ( solve_sub(&zero_token, 1, leftp, leftnp, rightp, rightnp) <= 0 )
-          return 0;
-        qtries = zero_solved != 0;
-        if ( !quad_solve(v) )
-        {
-          zero_solved = 1;
-          continue;
-        }
-        zero_solved = 1;
-        goto LABEL_63;
+        list_debug(2, tlhs, n_tlhs, trhs, n_trhs);
+        simps_side(tlhs, &n_tlhs, zsolve);
+        simps_side(trhs, &n_trhs, zsolve);
+        list_debug(1, tlhs, n_tlhs, trhs, n_trhs);
+        continue;
       }
       break;
     }
-    if ( ++inc_count > 20 )
-      return 0;
-    __fprintf_chk(
-      gfp,
-      1,
-      "Raising both equation sides to the power of %.*g and unfactoring...\n",
-      precision,
-      (double)(1.0 / v50[1]));
-    found_counta = v50[1];
-    partial_flag = 0;
-    ufactor(tlhs, &n_tlhs);
-    partial_flag = 1;
-    symb_flag = symblify;
-    simp_ssub(tlhs, &n_tlhs, v, found_counta, 1, 0, 2);
-    simp_ssub(tlhs, &n_tlhs, 0, 1.0, 1, 1, 2);
-    symb_flag = 0;
+    if ( worked && !uf_flag )
+    {
+      if ( debug_level > 0 )
+        __fprintf_chk(gfp, 1, "%s\n", "Unfactoring...");
+      partial_flag = 0;
+      uf_simp(tlhs, &n_tlhs);
+      partial_flag = 1;
+      factorv(tlhs, &n_tlhs, v);
+      list_debug(1, tlhs, n_tlhs, trhs, n_trhs);
+      uf_flag = 1;
+      worked = 0;
+      goto LABEL_64;
+    }
+    if ( uf_flag )
+    {
+      simps_side(tlhs, &n_tlhs, zsolve);
+      list_debug(1, tlhs, n_tlhs, trhs, n_trhs);
+      uf_flag = 0;
+      goto LABEL_64;
+    }
+    v37 = tlhs + 2;
+    v38 = tlhs;
+    v39 = 0;
+    v40 = 1;
     while ( 2 )
     {
-      uf_flaga = &tlhs[n_tlhs];
-      v51 = tlhs + 1;
-      operandpd = 0;
-      v52 = 0;
-      while ( 1 )
+      if ( v40 < n_tlhs )
       {
-        if ( uf_flaga <= v51 )
-          goto LABEL_16;
-        v53 = v51->level;
-        if ( v53 == 1 )
-          break;
-        if ( v51->token.variable == 6
-          && v53 == v51[1].level
-          && v51[1].kind == CONSTANT
-          && found_counta == v51[1].token.constant )
+        if ( v37[-1].level == 1 )
         {
-          v54 = v51 - 1;
-          v55 = 0;
-          while ( 1 )
+          workeda = v37[-1].token.variable;
+          if ( (unsigned int)(workeda - 3) > 1 )
           {
-            if ( v51->level > v54->level )
+            v39 = v37[-1].token.variable;
+            break;
+          }
+          if ( !v39 )
+            v39 = 3;
+          if ( v36 )
+          {
+            if ( workeda == 4 )
             {
-              v56 = v54 + 1;
-              goto LABEL_281;
-            }
-            if ( v54->kind == VARIABLE && v == v54->token.variable )
-              v55 = 1;
-            if ( tlhs == v54 )
+              v38 = &tlhs[v40 + 1];
+              v39 = 4;
               break;
-            --v54;
-          }
-          v56 = tlhs;
-LABEL_281:
-          if ( v55 )
-          {
-            v57 = v51 - v56;
-            if ( (int)operandpd >= v57 )
-              v57 = (int)operandpd;
-            operandpd = (token_type *)v57;
-            v52 = 1;
-          }
-        }
-        v51 += 2;
-      }
-      zero_solveda = v52;
-      v58 = v51 + 2;
-      v59 = 0;
-      v82 = 0;
-      workedd = v52;
-      while ( uf_flaga > v58 )
-      {
-        if ( v58->token.variable == 6 )
-        {
-          v83 = v58[1].level;
-          if ( v83 == v58->level && v58[1].kind == CONSTANT && found_counta == v58[1].token.constant )
-          {
-            v60 = v58 - 1;
-            v61 = 0;
-            while ( 1 )
+            }
+            operandpa = v37;
+            if ( v37->kind == VARIABLE && v37->token.variable == v )
             {
-              if ( v83 > v60->level )
+              level = v37->level;
+              if ( level == 1
+                || level == 2
+                && v37[1].token.variable == 6
+                && v37[2].level == 2
+                && v37[2].kind == CONSTANT
+                && v37[2].token.constant > 0.0 )
               {
-                v62 = v60 + 1;
-                goto LABEL_301;
+                v39 = v37[-1].token.variable;
+                goto LABEL_219;
               }
-              if ( v60->kind == VARIABLE && v == v60->token.variable )
-                v61 = 1;
-              if ( tlhs == v60 )
-                break;
-              --v60;
             }
-            v62 = tlhs;
-LABEL_301:
-            if ( v61 )
+          }
+          else if ( workeda == 4 )
+          {
+            operandpb = (token_type *)(v40 + 2);
+            v42 = v37 + 1;
+            while ( (int)operandpb < n_tlhs )
             {
-              v63 = v58 - v62;
-              if ( v59 < v63 )
-                v59 = v63;
-              v82 = 1;
+              workedb = (int)v42;
+              v81 = v42->level;
+              if ( v81 <= 1 )
+                break;
+              v42 += 2;
+              if ( v81 == 2 )
+              {
+                if ( (unsigned int)(*(_DWORD *)(workedb + 8) - 1) > 1 )
+                  break;
+                operandpa = v37;
+                v39 = 4;
+                goto LABEL_219;
+              }
+              operandpb = (token_type *)((char *)operandpb + 2);
             }
           }
         }
-        v58 += 2;
-      }
-      v64 = workedd;
-      if ( zero_solveda && v82 && v59 > (int)operandpd )
-        v64 = 0;
-      v65 = v51 + 1;
-      v66 = v51->token.variable;
-      if ( v66 != 6 || v51[1].level != 1 || v65->kind || found_counta != v51[1].token.constant )
-      {
-        if ( v64 )
-          goto LABEL_330;
-        if ( (unsigned int)((char *)v51 - (char *)tlhs - 16) <= 0xF && v66 == 4 )
-        {
-          if ( tlhs->kind == CONSTANT && tlhs->token.constant == 1.0 )
-          {
-            if ( !flip(tlhs, &n_tlhs, trhs, &n_trhs) )
-              return 0;
-LABEL_331:
-            list_debug(2, tlhs, n_tlhs, trhs, n_trhs);
-            simp_loop(tlhs, &n_tlhs);
-            simp_loop(trhs, &n_trhs);
-            list_debug(1, tlhs, n_tlhs, trhs, n_trhs);
-            continue;
-          }
-        }
-        else
-        {
-          if ( v66 < 1 )
-            goto LABEL_328;
-          if ( v66 <= 2 )
-          {
-            v65 = tlhs;
-            v66 = 1;
-            goto LABEL_330;
-          }
-          if ( v66 > 4 )
-          {
-LABEL_328:
-            v65 = tlhs;
-            goto LABEL_330;
-          }
-        }
-        v65 = tlhs;
-        v66 = 3;
-LABEL_330:
-        if ( !g_of_f(v66, v65, tlhs, &n_tlhs, trhs, &n_trhs) )
-          return 0;
-        goto LABEL_331;
+        operandpa = v38;
+LABEL_219:
+        v40 += 2;
+        v37 += 2;
+        v38 = operandpa;
+        continue;
       }
       break;
     }
-    if ( g_of_f(6, v65, tlhs, &n_tlhs, trhs, &n_trhs) )
+    if ( v36 && zero_solved && v39 == 3 && v38->kind == VARIABLE && v38->token.variable == v )
     {
-LABEL_16:
-      zero_solved = 0;
-      qtries = 0;
+      v43 = v38->level;
+      if ( v43 == 1
+        || v43 == 2
+        && v38[1].token.variable == 6
+        && v38[2].level == 2
+        && v38[2].kind == CONSTANT
+        && v38[2].token.constant > 0.0 )
+      {
+        __fprintf_chk(gfp, 1, "Removing possible solution: \"");
+        list_proc(v38, 1, 0);
+        __fprintf_chk(gfp, 1, " = 0\".\n");
+        success = 2;
+        qtries = 0;
+LABEL_238:
+        if ( !g_of_f(v39, v38, tlhs, &n_tlhs, trhs, &n_trhs) )
+          return 0;
+        goto LABEL_17;
+      }
+    }
+    else if ( v39 == 4 )
+    {
       uf_flag = 1;
+      if ( debug_level > 0 )
+      {
+        __fprintf_chk(gfp, 1, "%s\n", "Juggling...");
+        uf_flag = 1;
+      }
+      goto LABEL_238;
+    }
+    v49 = 0;
+    v50 = 0;
+    for ( n = 1; n < n_tlhs; n += 2 )
+    {
+      v44 = &tlhs[n];
+      if ( v44->token.variable == 6 )
+      {
+        operandpc = (token_type *)(v49 * 16 + 32);
+        v45 = &tlhs[v49 + 2];
+        if ( v45->level == v44->level
+          && v45->kind == CONSTANT
+          && fabs(v45->token.constant) < 1.0
+          && f_to_fraction(v45->token.constant, &numerator, &denominator)
+          && fabs(numerator) == 1.0
+          && denominator >= 2.0 )
+        {
+          v46 = &tlhs[v49];
+          for ( workedc = n - 1; workedc >= 0 && v46->level >= tlhs[n].level; --workedc )
+          {
+            if ( v46->kind == VARIABLE && v46->token.variable == v )
+            {
+              if ( !v50 )
+              {
+                v47 = (double *)((char *)tlhs + (_DWORD)operandpc);
+                goto LABEL_258;
+              }
+              v47 = (double *)((char *)tlhs + (_DWORD)operandpc);
+              if ( fabs(*(double *)((char *)&tlhs->token.constant + (_DWORD)operandpc)) > fabs(v50[1]) )
+                goto LABEL_258;
+              break;
+            }
+            --v46;
+          }
+        }
+      }
+      v47 = v50;
+LABEL_258:
+      v49 += 2;
+      v50 = v47;
+    }
+    if ( !zero_solved || !v50 )
+    {
+      if ( qtries )
+        return 0;
+      if ( debug_level > 0 )
+        __fprintf_chk(gfp, 1, "%s\n", "Solving for zero...");
+      *leftnp = n_tlhs;
+      memmove(leftp, tlhs, 16 * n_tlhs);
+      *rightnp = n_trhs;
+      memmove(rightp, trhs, 16 * n_trhs);
+      if ( solve_sub(&zero_token, 1, leftp, leftnp, rightp, rightnp) <= 0 )
+        return 0;
+      qtries = zero_solved != 0;
+      if ( !quad_solve(v) )
+      {
+        zero_solved = 1;
+        goto LABEL_17;
+      }
+      zero_solved = 1;
       continue;
     }
-    return 0;
+    break;
   }
+  if ( ++inc_count > 20 )
+    return 0;
+  __fprintf_chk(
+    gfp,
+    1,
+    "Raising both equation sides to the power of %.*g and unfactoring...\n",
+    precision,
+    (double)(1.0 / v50[1]));
+  found_counta = v50[1];
+  partial_flag = 0;
+  ufactor(tlhs, &n_tlhs);
+  partial_flag = 1;
+  symb_flag = symblify;
+  simp_ssub(tlhs, &n_tlhs, v, found_counta, 1, 0, 2);
+  simp_ssub(tlhs, &n_tlhs, 0, 1.0, 1, 1, 2);
+  symb_flag = 0;
+  while ( 2 )
+  {
+    uf_flaga = &tlhs[n_tlhs];
+    v51 = tlhs + 1;
+    operandpd = 0;
+    v52 = 0;
+    while ( 1 )
+    {
+      if ( uf_flaga <= v51 )
+        goto LABEL_16;
+      v53 = v51->level;
+      if ( v53 == 1 )
+        break;
+      if ( v51->token.variable == 6
+        && v53 == v51[1].level
+        && v51[1].kind == CONSTANT
+        && found_counta == v51[1].token.constant )
+      {
+        v54 = v51 - 1;
+        v55 = 0;
+        while ( 1 )
+        {
+          if ( v51->level > v54->level )
+          {
+            v56 = v54 + 1;
+            goto LABEL_281;
+          }
+          if ( v54->kind == VARIABLE && v == v54->token.variable )
+            v55 = 1;
+          if ( tlhs == v54 )
+            break;
+          --v54;
+        }
+        v56 = tlhs;
+LABEL_281:
+        if ( v55 )
+        {
+          v57 = v51 - v56;
+          if ( (int)operandpd >= v57 )
+            v57 = (int)operandpd;
+          operandpd = (token_type *)v57;
+          v52 = 1;
+        }
+      }
+      v51 += 2;
+    }
+    zero_solveda = v52;
+    v58 = v51 + 2;
+    v59 = 0;
+    v82 = 0;
+    workedd = v52;
+    while ( uf_flaga > v58 )
+    {
+      if ( v58->token.variable == 6 )
+      {
+        v83 = v58[1].level;
+        if ( v83 == v58->level && v58[1].kind == CONSTANT && found_counta == v58[1].token.constant )
+        {
+          v60 = v58 - 1;
+          v61 = 0;
+          while ( 1 )
+          {
+            if ( v83 > v60->level )
+            {
+              v62 = v60 + 1;
+              goto LABEL_301;
+            }
+            if ( v60->kind == VARIABLE && v == v60->token.variable )
+              v61 = 1;
+            if ( tlhs == v60 )
+              break;
+            --v60;
+          }
+          v62 = tlhs;
+LABEL_301:
+          if ( v61 )
+          {
+            v63 = v58 - v62;
+            if ( v59 < v63 )
+              v59 = v63;
+            v82 = 1;
+          }
+        }
+      }
+      v58 += 2;
+    }
+    v64 = workedd;
+    if ( zero_solveda && v82 && v59 > (int)operandpd )
+      v64 = 0;
+    v65 = v51 + 1;
+    v66 = v51->token.variable;
+    if ( v66 != 6 || v51[1].level != 1 || v65->kind || found_counta != v51[1].token.constant )
+    {
+      if ( v64 )
+        goto LABEL_330;
+      if ( (unsigned int)((char *)v51 - (char *)tlhs - 16) <= 0xF && v66 == 4 )
+      {
+        if ( tlhs->kind == CONSTANT && tlhs->token.constant == 1.0 )
+        {
+          if ( !flip(tlhs, &n_tlhs, trhs, &n_trhs) )
+            return 0;
+LABEL_331:
+          list_debug(2, tlhs, n_tlhs, trhs, n_trhs);
+          simp_loop(tlhs, &n_tlhs);
+          simp_loop(trhs, &n_trhs);
+          list_debug(1, tlhs, n_tlhs, trhs, n_trhs);
+          continue;
+        }
+      }
+      else
+      {
+        if ( v66 < 1 )
+          goto LABEL_328;
+        if ( v66 <= 2 )
+        {
+          v65 = tlhs;
+          v66 = 1;
+          goto LABEL_330;
+        }
+        if ( v66 > 4 )
+        {
+LABEL_328:
+          v65 = tlhs;
+          goto LABEL_330;
+        }
+      }
+      v65 = tlhs;
+      v66 = 3;
+LABEL_330:
+      if ( !g_of_f(v66, v65, tlhs, &n_tlhs, trhs, &n_trhs) )
+        return 0;
+      goto LABEL_331;
+    }
+    break;
+  }
+  if ( g_of_f(6, v65, tlhs, &n_tlhs, trhs, &n_trhs) )
+  {
+LABEL_16:
+    zero_solved = 0;
+    qtries = 0;
+    uf_flag = 1;
+    goto LABEL_17;
+  }
+  return 0;
 }
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
 // 8048F34: using guessed type int __printf_chk(_DWORD, const char *, ...);
@@ -4547,18 +4455,18 @@ LABEL_7:
 //----- (0804E7B0) --------------------------------------------------------
 int __cdecl display_command(int i)
 {
-  char *v1; // eax
+  char *secondary_name; // eax
   int v2; // esi
-  char *v4; // [esp+2Ch] [ebp-1Ch]
+  char *name; // [esp+2Ch] [ebp-1Ch]
 
-  v4 = com_list[i].name;
-  __fprintf_chk(gfp, 1, "%s - %s\n", v4, com_list[i].info);
-  __fprintf_chk(gfp, 1, "Usage: %s %s\n", v4, com_list[i].usage);
-  v1 = com_list[i].secondary_name;
+  name = com_list[i].name;
+  __fprintf_chk(gfp, 1, "%s - %s\n", name, com_list[i].info);
+  __fprintf_chk(gfp, 1, "Usage: %s %s\n", name, com_list[i].usage);
+  secondary_name = com_list[i].secondary_name;
   v2 = 3;
-  if ( v1 )
+  if ( secondary_name )
   {
-    __fprintf_chk(gfp, 1, "Alternate name for this command: %s\n", v1);
+    __fprintf_chk(gfp, 1, "Alternate name for this command: %s\n", secondary_name);
     LOWORD(v2) = 4;
   }
   if ( com_list[i].extra )
@@ -4582,7 +4490,7 @@ char *__cdecl parse_var2(int *vp, char *cp)
   v2 = parse_var(vp, v4);
   result = 0;
   if ( v2 )
-    result = skip_space(v2);
+    return skip_space(v2);
   return result;
 }
 
@@ -4620,15 +4528,14 @@ int __cdecl parse(int n, char *cp)
       *lhs[n] = zero_token;
     }
     cur_equation = n;
-    result = return_result(n);
+    return return_result(n);
   }
   else
   {
     n_lhs[n] = 0;
     n_rhs[n] = 0;
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (0804E9F6) --------------------------------------------------------
@@ -4645,7 +4552,7 @@ int __cdecl process_parse(int n, char *cp)
   token_type *v10; // ecx
   int v11; // edx
   token_type *v12; // eax
-  long double v13; // fst5
+  long double constant; // fst5
   char v15; // c2
   long double v16; // fst7
   int v17; // edi
@@ -4728,11 +4635,11 @@ LABEL_36:
           v12 = lhs[n];
           if ( v12->kind == CONSTANT )
           {
-            v13 = v12->token.constant;
+            constant = v12->token.constant;
             do
-              v13 = __FPREM__(v13, 1.0);
+              constant = __FPREM__(constant, 1.0);
             while ( v15 );
-            if ( v13 == 0.0 )
+            if ( constant == 0.0 )
             {
               v16 = lhs[n]->token.constant;
               if ( v16 > 0.0 && (long double)n_equations >= v16 )
@@ -4787,7 +4694,7 @@ LABEL_34:
   v11 = solve_espace(n, cur_equation);
   result = 0;
   if ( v11 )
-    result = return_result(cur_equation);
+    return return_result(cur_equation);
   return result;
 }
 // 804EC9A: variable 'v15' is possibly undefined
@@ -4809,9 +4716,9 @@ int __cdecl process(char *cp)
   const unsigned __int16 **v11; // eax
   char v12; // dl
   const com_type *v13; // esi
-  const char *v14; // ebx
+  const char *name; // ebx
   unsigned int v15; // ecx
-  const char *v16; // edx
+  const char *secondary_name; // edx
   unsigned int v17; // ecx
   const char *v18; // esi
   unsigned int v19; // ecx
@@ -4821,7 +4728,7 @@ int __cdecl process(char *cp)
   char *v23; // eax
   unsigned int v24; // edx
   int v25; // ecx
-  int v26; // eax
+  int espace; // eax
   char *v28; // [esp+10h] [ebp-1048h]
   int v29; // [esp+1Ch] [ebp-103Ch]
   size_t v30; // [esp+20h] [ebp-1038h]
@@ -4855,19 +4762,19 @@ int __cdecl process(char *cp)
         if ( *v5 )
         {
           input_column += v5 - cp;
-          v1 = parse(v4, v5);
+          return parse(v4, v5);
         }
         else
         {
           cur_equation = v4;
           return_result(v4);
-          v1 = 1;
+          return 1;
         }
       }
       else
       {
         error("Equation not defined.");
-        v1 = 0;
+        return 0;
       }
     }
     return v1;
@@ -4881,16 +4788,15 @@ int __cdecl process(char *cp)
     if ( access(v6, 1) )
     {
       error("Shell not found or not executable, check SHELL environment variable.");
-      v1 = 0;
+      return 0;
     }
     else
     {
       v7 = skip_space(s1 + 1);
       if ( !*v7 )
         v7 = cp1;
-      v1 = shell_out(v7) == 0;
+      return shell_out(v7) == 0;
     }
-    return v1;
   }
   v29 = 0;
   if ( v2 == 63 )
@@ -4928,19 +4834,19 @@ int __cdecl process(char *cp)
   v28 = v10;
   while ( 1 )
   {
-    v14 = v13->name;
+    name = v13->name;
     v15 = strlen(v13->name);
     if ( v15 > 4 )
       v15 = 4;
-    if ( v30 >= v15 && !strncasecmp(s1, v14, v30) )
+    if ( v30 >= v15 && !strncasecmp(s1, name, v30) )
       break;
-    v16 = v13->secondary_name;
-    if ( v16 )
+    secondary_name = v13->secondary_name;
+    if ( secondary_name )
     {
       v17 = strlen(v13->secondary_name);
       if ( v17 > 4 )
         v17 = 4;
-      if ( v30 >= v17 && !strncasecmp(s1, v16, v30) )
+      if ( v30 >= v17 && !strncasecmp(s1, secondary_name, v30) )
         break;
     }
     ++v31;
@@ -4950,18 +4856,17 @@ int __cdecl process(char *cp)
       if ( v29 )
       {
         error("Expecting command to repeat.");
-        v1 = 0;
+        return 0;
       }
       else
       {
-        v26 = next_espace();
+        espace = next_espace();
         input_column += s1 - cp;
-        v1 = process_parse(v26, s1);
+        return process_parse(espace, s1);
       }
-      return v1;
     }
   }
-  v18 = v14;
+  v18 = name;
   cp1 = skip_space(v28);
   input_column += cp1 - cp;
   if ( (unsigned int)my_strlcpy(buf2, cp1, 4096) > 0xFFF )
@@ -4975,7 +4880,7 @@ int __cdecl process(char *cp)
     v20 = v19 - 2;
     if ( (int)(v19 - 2) >= 0 )
     {
-      v21 = (char *)&cp1 + v19 + 1;
+      v21 = &buf2[v19 - 3];
       if ( buf2[v20] == 62 )
       {
 LABEL_49:
@@ -5058,7 +4963,7 @@ int __cdecl display_process(char *cp)
     if ( gfp != stdout && gfp != stderr )
       __fprintf_chk(gfp, 1, "%d%s%s", cur_equation + 1, "-> ", cp);
     set_error_level(cp);
-    result = process(cp);
+    return process(cp);
   }
   return result;
 }
@@ -5101,7 +5006,7 @@ int __cdecl help_cmd(char *cp)
   char *v3; // edx
   const com_type *v4; // ebx
   int v5; // esi
-  const char *v6; // eax
+  const char *secondary_name; // eax
   size_t v7; // ebx
   char v8; // al
   char *v9; // ecx
@@ -5141,7 +5046,8 @@ int __cdecl help_cmd(char *cp)
         n = v19 - v1;
         do
         {
-          if ( !strncasecmp(v1, v4->name, n) || (v6 = v4->secondary_name) != 0 && !strncasecmp(v1, v6, n) )
+          if ( !strncasecmp(v1, v4->name, n)
+            || (secondary_name = v4->secondary_name) != 0 && !strncasecmp(v1, secondary_name, n) )
           {
             display_command(v5);
             flag = 1;
@@ -5365,6 +5271,7 @@ int __cdecl subst_constants(token_type *equation, int *np)
   }
   return modified;
 }
+// 805031B: using guessed type double d[3];
 
 //----- (0805037E) --------------------------------------------------------
 int __cdecl my_strlcpy(char *dest, char *src, int n)
@@ -5442,7 +5349,7 @@ void __cdecl set_error_level(char *cp)
 void __cdecl binary_parenthesize(token_type *p1, int n, int i)
 {
   token_type *v3; // eax
-  int v4; // ecx
+  int level; // ecx
   token_type *v5; // edx
   int v6; // eax
   token_type *v7; // edi
@@ -5458,16 +5365,16 @@ void __cdecl binary_parenthesize(token_type *p1, int n, int i)
   if ( n - 1 <= i || (n & 1) == 0 || (i & 1) == 0 )
     error_bug("Internal error in arguments to binary_parenthesize().");
   v3 = &p1[i];
-  v4 = v3->level;
-  v3->level = v4 + 1;
+  level = v3->level;
+  v3->level = level + 1;
   v5 = v3 - 1;
   v6 = v3[-1].level;
   v5->level = v6 + 1;
-  if ( v4 < v6 && i - 2 >= 0 )
+  if ( level < v6 && i - 2 >= 0 )
   {
     v7 = &p1[i - 2];
     v8 = v7->level;
-    if ( v4 < v8 )
+    if ( level < v8 )
     {
       v9 = &p1[i - 3];
       v10 = i - 2;
@@ -5480,18 +5387,18 @@ void __cdecl binary_parenthesize(token_type *p1, int n, int i)
         v8 = v9->level;
         --v9;
       }
-      while ( v4 < v8 );
+      while ( level < v8 );
     }
   }
   v11 = p1[i + 1].level;
   p1[i + 1].level = v11 + 1;
-  if ( v4 < v11 )
+  if ( level < v11 )
   {
     v12 = i + 2;
     if ( n > i + 2 )
     {
       v13 = &p1[v12];
-      if ( v4 < v13->level )
+      if ( level < v13->level )
       {
         v14 = &p1[i + 3];
         v15 = v13->level;
@@ -5504,7 +5411,7 @@ void __cdecl binary_parenthesize(token_type *p1, int n, int i)
           v15 = v14->level;
           ++v14;
         }
-        while ( v4 < v15 );
+        while ( level < v15 );
       }
     }
   }
@@ -5520,7 +5427,7 @@ void __cdecl give_priority(token_type *equation, int *np)
   int v6; // ebx
   int v7; // eax
   int i; // ebx
-  storage_type *v9; // [esp+1Ch] [ebp-1Ch]
+  storage_type *p_token; // [esp+1Ch] [ebp-1Ch]
 
   v2 = *np;
   if ( *np > 1 )
@@ -5540,13 +5447,13 @@ void __cdecl give_priority(token_type *equation, int *np)
     v6 = v2 - 2;
     if ( v2 - 2 > 0 )
     {
-      v9 = &equation[v6].token;
+      p_token = &equation[v6].token;
       do
       {
-        if ( v9->variable == 6 )
+        if ( p_token->variable == 6 )
           binary_parenthesize(equation, *np, v6);
         v6 -= 2;
-        v9 -= 4;
+        p_token -= 4;
       }
       while ( v6 > 0 );
     }
@@ -5603,13 +5510,10 @@ void __cdecl handle_negate(token_type *equation, int *np)
 //----- (080506F5) --------------------------------------------------------
 int __cdecl isvarchar(int ch_0)
 {
-  int result; // eax
-
   if ( ch_0 == 95 || ch_0 && strchr(special_variable_characters, ch_0) )
-    result = 1;
+    return 1;
   else
-    result = ((*__ctype_b_loc())[ch_0] >> 10) & 1;
-  return result;
+    return ((*__ctype_b_loc())[ch_0] >> 10) & 1;
 }
 
 //----- (0805073A) --------------------------------------------------------
@@ -5849,7 +5753,6 @@ char *__cdecl parse_section(token_type *equation, int *np, char *cp, int allow_s
   int operand; // [esp+24h] [ebp-54h]
   int v36; // [esp+28h] [ebp-50h]
   int n; // [esp+2Ch] [ebp-4Ch]
-  int v38; // [esp+34h] [ebp-44h]
   int abs_array[10]; // [esp+38h] [ebp-40h]
 
   v34 = cp;
@@ -5868,7 +5771,7 @@ char *__cdecl parse_section(token_type *equation, int *np, char *cp, int allow_s
     if ( *cp == 41 )
     {
 LABEL_25:
-      if ( --v36 <= 0 || abs_count > 0 && v36 < *(&v38 + abs_count) )
+      if ( --v36 <= 0 || abs_count > 0 && v36 < abs_array[abs_count - 1] )
       {
         put_up_arrow(cp - v34, "Unmatched parenthesis: too many )");
         return 0;
@@ -6169,7 +6072,7 @@ p_out:
   {
 syntax_error:
     put_up_arrow(cp - v34, "Syntax error.");
-    result = 0;
+    return 0;
   }
   else if ( v36 == 1 )
   {
@@ -6192,7 +6095,7 @@ syntax_error:
   else
   {
     put_up_arrow(cp - v34, "Unmatched parenthesis: missing )");
-    result = 0;
+    return 0;
   }
   return result;
 }
@@ -6252,7 +6155,7 @@ char *__cdecl parse_expr(token_type *equation, int *np, char *cp)
       if ( v5 == cp2[0] || *cp2[0] )
       {
         error("Error parsing equation space number.");
-        v3 = 0;
+        return 0;
       }
       else if ( v7 >= 0 && v7 < n_equations && (v8 = n_lhs[v7], v8 > 0) )
       {
@@ -6269,12 +6172,12 @@ char *__cdecl parse_expr(token_type *equation, int *np, char *cp)
         }
         list_proc(equation, *np, 0);
         __fprintf_chk(gfp, 1, "\n");
-        v3 = cp2[0];
+        return cp2[0];
       }
       else
       {
         error("No expression available in specified equation space.");
-        v3 = 0;
+        return 0;
       }
     }
     else
@@ -6282,7 +6185,7 @@ char *__cdecl parse_expr(token_type *equation, int *np, char *cp)
       v10 = parse_section(equation, np, cp, 1);
       v3 = v10;
       if ( v10 && extra_characters(v10) )
-        v3 = 0;
+        return 0;
     }
   }
   return v3;
@@ -6310,7 +6213,7 @@ char *__cdecl parse_equation(int n, char *cp)
       if ( v4 )
       {
         if ( extra_characters(v4) )
-          v2 = 0;
+          return 0;
       }
     }
   }
@@ -6364,13 +6267,14 @@ int __cdecl fraction_cmd(char *cp)
   }
   return 1;
 }
+// 80516E8: using guessed type int i[3];
 
 //----- (0805178A) --------------------------------------------------------
 int __cdecl unfactor_cmd(char *cp)
 {
   int v1; // esi
   char *v2; // ebx
-  int v3; // edx
+  int range_eol; // edx
   int result; // eax
   int v5; // eax
   int v6; // eax
@@ -6401,9 +6305,9 @@ LABEL_9:
     power_flag = 1;
     goto LABEL_9;
   }
-  v3 = get_range_eol(&cp, i, &j);
+  range_eol = get_range_eol(&cp, i, &j);
   result = 0;
-  if ( v3 )
+  if ( range_eol )
   {
     partial_flag = v8 == 0;
     if ( power_flag )
@@ -6475,12 +6379,13 @@ LABEL_9:
       {
 LABEL_37:
         partial_flag = 1;
-        result = 1;
+        return 1;
       }
     }
   }
   return result;
 }
+// 805178A: using guessed type int i[7];
 
 //----- (08051A6A) --------------------------------------------------------
 int __cdecl skip_no(char **cpp)
@@ -6498,13 +6403,13 @@ int __cdecl skip_no(char **cpp)
       || (v2 = strcmp_tospace(*cpp, "true"), result = 0, !v2) )
     {
       *cpp = skip_param(*cpp);
-      result = 0;
+      return 0;
     }
   }
   else
   {
     *cpp = skip_param(*cpp);
-    result = 1;
+    return 1;
   }
   return result;
 }
@@ -6514,7 +6419,7 @@ int __cdecl factor_cmd(char *cp)
 {
   int v1; // ebx
   char v2; // bl
-  char *v3; // eax
+  char *string; // eax
   char v4; // si
   char *v5; // ebx
   token_type **v6; // edi
@@ -6575,12 +6480,12 @@ LABEL_11:
           goto LABEL_29;
 retry:
         my_strlcpy(prompt_str, "Enter integers to factor: ", 80);
-        v3 = get_string(buf, 4096);
-        cp_start = v3;
-        cp_0 = v3;
-        if ( !v3 )
+        string = get_string(buf, 4096);
+        cp_start = string;
+        cp_0 = string;
+        if ( !string )
           break;
-        if ( !*v3 )
+        if ( !*string )
           return 1;
 LABEL_29:
         while ( 1 )
@@ -6805,7 +6710,6 @@ void __cdecl output_options(FILE *ofp)
 //----- (080524DF) --------------------------------------------------------
 int save_set_options()
 {
-  int result; // eax
   FILE *v1; // eax
   FILE *v2; // ebx
 
@@ -6821,26 +6725,25 @@ int save_set_options()
       if ( fclose(v2) )
       {
         error("Error saving set options.");
-        result = 0;
+        return 0;
       }
       else
       {
         __printf_chk(1, "All options saved in startup file \"%s\".\n", rc_file);
-        result = 1;
+        return 1;
       }
     }
     else
     {
       error("Unable to write to set options startup file.");
-      result = 0;
+      return 0;
     }
   }
   else
   {
     error("Set options startup file name not set.");
-    result = 0;
+    return 0;
   }
-  return result;
 }
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
 // 8048F34: using guessed type int __printf_chk(_DWORD, const char *, ...);
@@ -6885,7 +6788,7 @@ int __cdecl copy_cmd(char *cp)
   char *v5; // esi
   char *v6; // ecx
   int v7; // eax
-  int v8; // edi
+  int espace; // edi
   char *cp_0; // [esp+1Ch] [ebp-8Ch] BYREF
   int j; // [esp+20h] [ebp-88h] BYREF
   int i; // [esp+24h] [ebp-84h] BYREF
@@ -6919,9 +6822,9 @@ int __cdecl copy_cmd(char *cp)
     {
       if ( *v5 )
       {
-        v8 = next_espace();
-        copy_espace(v2, v8);
-        if ( !return_result(v8) )
+        espace = next_espace();
+        copy_espace(v2, espace);
+        if ( !return_result(espace) )
           break;
       }
       ++v2;
@@ -6940,7 +6843,7 @@ int __cdecl replace_cmd(char *cp)
   int v1; // edi
   int *v2; // ebx
   char *v3; // esi
-  int v5; // ebx
+  int variable; // ebx
   token_type *v6; // eax
   int v7; // ecx
   int v8; // edx
@@ -7016,10 +6919,10 @@ LABEL_15:
   memmove(tlhs, lhs[i], 16 * n_tlhs);
   n_trhs = n_rhs[i];
   memmove(trhs, rhs[i], 16 * n_trhs);
-  for ( last_v = 0; ; last_v = v5 )
+  for ( last_v = 0; ; last_v = variable )
   {
     v27 = n_lhs[i];
-    v5 = -1;
+    variable = -1;
     if ( v27 > 0 )
     {
       v6 = lhs[i];
@@ -7027,20 +6930,20 @@ LABEL_15:
       v8 = 0;
       while ( 1 )
       {
-        if ( v6->kind == VARIABLE && (v5 = v6->token.variable, last_v < v5) )
+        if ( v6->kind == VARIABLE && (variable = v6->token.variable, last_v < variable) )
         {
-          if ( v7 != -1 && v5 > v7 )
-            v5 = v7;
+          if ( v7 != -1 && variable > v7 )
+            variable = v7;
         }
         else
         {
-          v5 = v7;
+          variable = v7;
         }
         v8 += 2;
         v6 += 2;
         if ( v8 >= v27 )
           break;
-        v7 = v5;
+        v7 = variable;
       }
     }
     if ( n_rhs[i] > 0 )
@@ -7051,22 +6954,22 @@ LABEL_15:
       {
         if ( v9->kind == VARIABLE && (v11 = v9->token.variable, last_v < v11) )
         {
-          if ( v5 != -1 && v11 > v5 )
-            v11 = v5;
+          if ( variable != -1 && v11 > variable )
+            v11 = variable;
         }
         else
         {
-          v11 = v5;
+          v11 = variable;
         }
         v10 += 2;
         v9 += 2;
         if ( n_rhs[i] <= v10 )
           break;
-        v5 = v11;
+        variable = v11;
       }
-      v5 = v11;
+      variable = v11;
     }
-    if ( v5 == -1 )
+    if ( variable == -1 )
       break;
     if ( !v1 )
       goto LABEL_57;
@@ -7075,7 +6978,7 @@ LABEL_15:
       v13 = 0;
       for ( j = 0; j != v1; ++j )
       {
-        if ( va[j] == v5 )
+        if ( va[j] == variable )
           v13 = 1;
       }
       if ( v13 )
@@ -7091,7 +6994,7 @@ LABEL_15:
           goto LABEL_59;
         }
 LABEL_57:
-        list_var(v5, 0);
+        list_var(variable, 0);
         __snprintf_chk(prompt_str, 80, 1, 80, "Enter %s: ", var_str);
         if ( !get_expr(scratch, n) )
           continue;
@@ -7110,8 +7013,8 @@ LABEL_59:
           }
           while ( n[0] > v17 );
         }
-        subst_var_with_exp(tlhs, &n_tlhs, scratch, v16, v5);
-        subst_var_with_exp(trhs, &n_trhs, scratch, n[0], v5);
+        subst_var_with_exp(tlhs, &n_tlhs, scratch, v16, variable);
+        subst_var_with_exp(trhs, &n_trhs, scratch, n[0], variable);
         continue;
       }
     }
@@ -7192,11 +7095,12 @@ int __cdecl approximate_cmd(char *cp)
       return 1;
   }
 }
+// 8052D39: using guessed type int i[7];
 
 //----- (08052E8C) --------------------------------------------------------
 int __cdecl variables_cmd(char *cp)
 {
-  int v1; // edx
+  int range_eol; // edx
   int result; // eax
   int *v3; // ebx
   int *v4; // esi
@@ -7216,7 +7120,7 @@ int __cdecl variables_cmd(char *cp)
   int v18; // ecx
   int v19; // esi
   int k; // ebx
-  int v21; // eax
+  int v; // eax
   int imag_flag; // [esp+18h] [ebp-1F90h]
   int v23; // [esp+1Ch] [ebp-1F8Ch]
   int int_flag; // [esp+20h] [ebp-1F88h]
@@ -7261,9 +7165,9 @@ int __cdecl variables_cmd(char *cp)
     int_flag = 0;
     v23 = 1;
   }
-  v1 = get_range_eol(&cp, i, &j);
+  range_eol = get_range_eol(&cp, i, &j);
   result = 0;
-  if ( !v1 )
+  if ( !range_eol )
     return result;
   v26 = i[0];
   v27 = j;
@@ -7320,10 +7224,10 @@ LABEL_55:
       {
         if ( v23 )
         {
-          v21 = va[k].v;
-          if ( v21 > 3 )
+          v = va[k].v;
+          if ( v > 3 )
           {
-            list_var(v21, v23);
+            list_var(v, v23);
             if ( imag_flag )
               __fprintf_chk(gfp, 1, "_Complex ");
             if ( int_flag )
@@ -7450,6 +7354,7 @@ LABEL_51:
   return 0;
 }
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
+// 8052E8C: using guessed type int i[7];
 
 //----- (08053371) --------------------------------------------------------
 int __cdecl code_cmd(char *cp)
@@ -7559,6 +7464,7 @@ LABEL_39:
       return displayed;
   }
 }
+// 8053371: using guessed type int i[7];
 
 //----- (0805364D) --------------------------------------------------------
 int __cdecl list_cmd(char *cp)
@@ -7613,6 +7519,7 @@ int __cdecl list_cmd(char *cp)
   }
   return result;
 }
+// 805364D: using guessed type int i[7];
 
 //----- (08053768) --------------------------------------------------------
 int __cdecl save_cmd(char *cp)
@@ -7652,7 +7559,7 @@ int __cdecl save_cmd(char *cp)
         if ( fclose(v3) || !v1 )
         {
           error("Error encountered while saving equations.");
-          v1 = 0;
+          return 0;
         }
         else
         {
@@ -7662,19 +7569,19 @@ int __cdecl save_cmd(char *cp)
       else
       {
         error("Can't create specified save file.");
-        v1 = 0;
+        return 0;
       }
     }
     else
     {
       error("No file name specified.");
-      v1 = 0;
+      return 0;
     }
   }
   else
   {
     error("Command disabled.");
-    v1 = 0;
+    return 0;
   }
   return v1;
 }
@@ -7732,11 +7639,12 @@ int __cdecl clear_cmd(char *cp)
   while ( *v3 );
   return 1;
 }
+// 80538F6: using guessed type int i[7];
 
 //----- (080539AA) --------------------------------------------------------
 int __usercall elim_sub@<eax>(int i@<eax>, int v@<edx>)
 {
-  int v5; // eax
+  int variable; // eax
   token_type want; // [esp+20h] [ebp-28h] BYREF
 
   if ( i == cur_equation )
@@ -7746,10 +7654,10 @@ int __usercall elim_sub@<eax>(int i@<eax>, int v@<edx>)
   }
   if ( solved_equation(i) )
   {
-    v5 = lhs[i]->token.variable;
-    if ( v5 == v )
+    variable = lhs[i]->token.variable;
+    if ( variable == v )
     {
-      list_var(v5, 0);
+      list_var(variable, 0);
       __printf_chk(
         1,
         "Substituting the RHS of equation #%d into the current equation for variable (%s)...\n",
@@ -7793,12 +7701,13 @@ int __cdecl display_fraction(double value)
   return v1;
 }
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
+// 8053B59: using guessed type double d4[2];
 
 //----- (08053C1D) --------------------------------------------------------
 int __cdecl divide_cmd(char *cp)
 {
   char *v1; // eax
-  int v2; // ebx
+  int espace; // ebx
   long double v4; // fst6
   int v5; // esi
   const char *v6; // eax
@@ -7826,7 +7735,7 @@ int __cdecl divide_cmd(char *cp)
     if ( !v1 || extra_characters(v1) )
       return 0;
   }
-  v2 = next_espace();
+  espace = next_espace();
   do
   {
     while ( 1 )
@@ -7834,17 +7743,17 @@ int __cdecl divide_cmd(char *cp)
       while ( 1 )
       {
         my_strlcpy(prompt_str, "Enter dividend: ", 80);
-        if ( !get_expr(rhs[v2], &nright) )
+        if ( !get_expr(rhs[espace], &nright) )
           return repeat_flag;
         my_strlcpy(prompt_str, "Enter divisor: ", 80);
-        if ( !get_expr(lhs[v2], &nleft) )
+        if ( !get_expr(lhs[espace], &nleft) )
           return repeat_flag;
         __fprintf_chk(gfp, 1, "\n");
-        calc_simp(rhs[v2], &nright);
-        calc_simp(lhs[v2], &nleft);
-        if ( get_constant(lhs[v2], nleft, &d2) )
+        calc_simp(rhs[espace], &nright);
+        calc_simp(lhs[espace], &nleft);
+        if ( get_constant(lhs[espace], nleft, &d2) )
           check_divide_by_zero(d2);
-        if ( !get_constant(rhs[v2], nright, &d1) || !get_constant(lhs[v2], nleft, &d2) )
+        if ( !get_constant(rhs[espace], nright, &d1) || !get_constant(lhs[espace], nleft, &d2) )
           break;
         d3 = gcd_verified(d1, d2);
         d4 = modf(d1 / d2, &d5);
@@ -7881,7 +7790,7 @@ int __cdecl divide_cmd(char *cp)
             return 1;
         }
       }
-      if ( !parse_complex(rhs[v2], nright, &c1) || !parse_complex(lhs[v2], nleft, &c2) )
+      if ( !parse_complex(rhs[espace], nright, &c1) || !parse_complex(lhs[espace], nleft, &c2) )
         break;
       complex_div(&c3, c1, c2);
       __fprintf_chk(gfp, 1, "Result of complex number division:\n");
@@ -7890,7 +7799,7 @@ int __cdecl divide_cmd(char *cp)
         return 1;
     }
     v_tmp = v[0];
-    if ( poly_div(rhs[v2], nright, lhs[v2], nleft, &v_tmp) )
+    if ( poly_div(rhs[espace], nright, lhs[espace], nleft, &v_tmp) )
     {
       simp_divide(tlhs, &n_tlhs);
       simp_divide(trhs, &n_trhs);
@@ -7909,8 +7818,8 @@ int __cdecl divide_cmd(char *cp)
       __fprintf_chk(gfp, 1, "Polynomial division failed.\n");
     }
     __fprintf_chk(gfp, 1, "\n");
-    v5 = poly_gcd(rhs[v2], nright, lhs[v2], nleft, v[0]);
-    if ( v5 || (v5 = poly_gcd(lhs[v2], nleft, rhs[v2], nright, v[0])) != 0 )
+    v5 = poly_gcd(rhs[espace], nright, lhs[espace], nleft, v[0]);
+    if ( v5 || (v5 = poly_gcd(lhs[espace], nleft, rhs[espace], nright, v[0])) != 0 )
     {
       simp_divide(trhs, &n_trhs);
       v6 = "s";
@@ -7930,6 +7839,7 @@ int __cdecl divide_cmd(char *cp)
   return 1;
 }
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
+// 8053C1D: using guessed type int v[7];
 
 //----- (080543B1) --------------------------------------------------------
 int __usercall compare_rhs@<eax>(int i@<eax>, int j@<edx>, int *diff_signp@<ecx>)
@@ -7945,7 +7855,7 @@ int __usercall compare_rhs@<eax>(int i@<eax>, int j@<edx>, int *diff_signp@<ecx>
   else
   {
     error("Error in compare function or too many terms to compare.");
-    result = 0;
+    return 0;
   }
   return result;
 }
@@ -7957,32 +7867,29 @@ int __cdecl compare_es(int i, int j)
   int v3; // edx
   int v4; // eax
   int v5; // eax
-  int result; // eax
   int v7; // edx
   int v8; // eax
   int diff_sign; // [esp+2Ch] [ebp-Ch] BYREF
 
   v2 = n_lhs[i];
   if ( !v2 )
-    goto LABEL_10;
+    return 0;
   v3 = n_lhs[j];
   if ( !v3 )
-    goto LABEL_10;
+    return 0;
   sign_cmp_flag = 1;
   v4 = se_compare(lhs[i], v2, lhs[j], v3, &diff_sign);
   sign_cmp_flag = 0;
   if ( !v4 || diff_sign )
-    goto LABEL_10;
+    return 0;
   v5 = n_rhs[i];
   if ( !v5 )
     return n_rhs[j] == 0;
   v7 = n_rhs[j];
   if ( v7 && (sign_cmp_flag = 1, v8 = se_compare(rhs[i], v5, rhs[j], v7, &diff_sign), sign_cmp_flag = 0, v8) )
-    result = diff_sign == 0;
+    return diff_sign == 0;
   else
-LABEL_10:
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (0805454A) --------------------------------------------------------
@@ -7991,7 +7898,7 @@ int __cdecl compare_cmd(char *cp)
   char *v1; // ebx
   int v2; // edi
   int v3; // ebx
-  int v4; // eax
+  int default_en; // eax
   int v5; // esi
   int result; // eax
   int *np; // [esp+24h] [ebp-34h]
@@ -8017,16 +7924,16 @@ int __cdecl compare_cmd(char *cp)
     return 0;
   if ( !strcmp_tospace(cp, "with") )
     cp = skip_param(cp);
-  v4 = get_default_en(cp);
-  v5 = v4;
-  if ( v4 < 0 )
+  default_en = get_default_en(cp);
+  v5 = default_en;
+  if ( default_en < 0 )
     return 0;
-  if ( v3 == v4 )
+  if ( v3 == default_en )
   {
     error("Cannot compare an equation with itself.");
     return 0;
   }
-  __fprintf_chk(gfp, 1, "Comparing #%d with #%d...\n", v2, v4 + 1);
+  __fprintf_chk(gfp, 1, "Comparing #%d with #%d...\n", v2, default_en + 1);
   if ( !n_rhs[v3] )
   {
     if ( !n_rhs[v5] )
@@ -8052,14 +7959,13 @@ int __cdecl compare_cmd(char *cp)
       {
 LABEL_23:
         __fprintf_chk(gfp, 1, "Expressions are identical.\n");
-        result = 1;
+        return 1;
       }
       else
       {
         __fprintf_chk(gfp, 1, "Expressions differ.\n");
-        result = 0;
+        return 0;
       }
-      return result;
     }
 LABEL_25:
     error("Cannot compare an equation with a non-equation.");
@@ -8163,7 +8069,7 @@ int __usercall find_more@<eax>(token_type *equation@<eax>, int *np@<edx>, int en
   int v3; // esi
   int i; // ebx
   int v5; // edx
-  int *v6; // eax
+  int *p_level; // eax
   token_type *v7; // eax
   token_type *v8; // eax
   int v10; // edi
@@ -8190,14 +8096,14 @@ int __usercall find_more@<eax>(token_type *equation@<eax>, int *np@<edx>, int en
         {
           if ( i < v11 && v3 <= equation[i].level )
           {
-            v6 = &equation[i + 2].level;
+            p_level = &equation[i + 2].level;
             do
             {
               i += 2;
               if ( i >= v11 )
                 break;
-              v5 = *v6;
-              v6 += 8;
+              v5 = *p_level;
+              p_level += 8;
             }
             while ( v5 >= v3 );
           }
@@ -8248,6 +8154,7 @@ int __usercall find_more@<eax>(token_type *equation@<eax>, int *np@<edx>, int en
   }
   return 0;
 }
+// 8054E04: using guessed type int diff_sign[7];
 
 //----- (08054FE6) --------------------------------------------------------
 int __cdecl tally_cmd(char *cp)
@@ -8346,7 +8253,7 @@ int __cdecl tally_cmd(char *cp)
       }
     }
     __fprintf_chk(gfp, 1, "End.\n");
-    result = 1;
+    return 1;
   }
   return result;
 }
@@ -8359,7 +8266,7 @@ int __usercall complex_func@<eax>(char *cp@<eax>, int imag_flag@<edx>)
   int v4; // edx
   int k; // ebx
   int v6; // ecx
-  int *v7; // eax
+  int *p_level; // eax
   int *np; // [esp+24h] [ebp-54h]
   int j; // [esp+28h] [ebp-50h]
   int i; // [esp+2Ch] [ebp-4Ch]
@@ -8416,21 +8323,21 @@ int __usercall complex_func@<eax>(char *cp@<eax>, int imag_flag@<edx>)
     v6 = 0;
     if ( v4 <= k )
       goto LABEL_20;
-    v7 = &source[k].level;
+    p_level = &source[k].level;
     v6 = 0;
     do
     {
-      if ( *v7 == 1 && *(v7 - 1) == 2 )
+      if ( *p_level == 1 && *(p_level - 1) == 2 )
       {
-        if ( (unsigned int)(v7[1] - 1) <= 1 )
+        if ( (unsigned int)(p_level[1] - 1) <= 1 )
           break;
       }
-      else if ( *(v7 - 1) == 1 && v7[1] == v )
+      else if ( *(p_level - 1) == 1 && p_level[1] == v )
       {
         v6 = 1;
       }
       ++k;
-      v7 += 4;
+      p_level += 4;
     }
     while ( v4 > k );
     if ( v6 )
@@ -8482,9 +8389,8 @@ int __cdecl real_cmd(char *cp)
 int __cdecl pause_cmd(char *cp)
 {
   char *v1; // ebx
-  char *v2; // eax
+  char *string; // eax
   const char *v3; // ebx
-  int result; // eax
   char buf[4096]; // [esp+2Ch] [ebp-100Ch] BYREF
   unsigned int v6; // [esp+102Ch] [ebp-Ch]
 
@@ -8495,13 +8401,9 @@ int __cdecl pause_cmd(char *cp)
   if ( !*cp )
     v1 = "Please press the Enter key";
   __snprintf_chk(prompt_str, 80, 1, 80, " ==== %s ==== ", v1);
-  v2 = get_string(buf, 4096);
-  v3 = v2;
-  if ( !v2 || !strncasecmp(v2, "quit", 4u) )
-    result = 0;
-  else
-    result = strncasecmp(v3, "exit", 4u) != 0;
-  return result;
+  string = get_string(buf, 4096);
+  v3 = string;
+  return string && strncasecmp(string, "quit", 4u) && strncasecmp(v3, "exit", 4u) != 0;
 }
 // 8049224: using guessed type int __snprintf_chk(_DWORD, _DWORD, _DWORD, _DWORD, const char *, ...);
 
@@ -8580,7 +8482,7 @@ int __cdecl set_options(char *cp)
       else
       {
         my_strlcpy(special_variable_characters, v7, 256);
-        result = 1;
+        return 1;
       }
       return result;
     }
@@ -8623,14 +8525,13 @@ int __cdecl set_options(char *cp)
         if ( v10 > 0xE || cp == cp1[0] )
         {
           error("Please specify a display precision between 0 and 14 digits.");
-          result = 0;
+          return 0;
         }
         else
         {
           precision = v10;
-          result = 1;
+          return 1;
         }
-        return result;
       }
       if ( strcmp_tospace(v6, "auto") )
       {
@@ -8791,14 +8692,13 @@ int __cdecl set_options(char *cp)
   if ( chdir(cp) )
   {
     error("Error changing directory.");
-    result = 0;
+    return 0;
   }
   else
   {
     output_current_directory(stdout);
-    result = 1;
+    return 1;
   }
-  return result;
 }
 // 8048F34: using guessed type int __printf_chk(_DWORD, const char *, ...);
 
@@ -8839,16 +8739,16 @@ int __cdecl push_en(int en)
 int __cdecl push_cmd(char *cp)
 {
   int result; // eax
-  int v2; // edx
+  int range_eol; // edx
   int v3; // eax
   int j; // [esp+18h] [ebp-10h] BYREF
   int i[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
   if ( readline_enabled )
   {
-    v2 = get_range_eol(&cp, i, &j);
+    range_eol = get_range_eol(&cp, i, &j);
     result = 0;
-    if ( v2 )
+    if ( range_eol )
     {
       v3 = i[0];
       if ( i[0] > j )
@@ -8858,7 +8758,7 @@ LABEL_9:
         if ( debug_level >= 0 )
         {
           __fprintf_chk(gfp, 1, "%s\n", "Expression pushed.  Press the UP key to access.");
-          result = 1;
+          return 1;
         }
       }
       else
@@ -8871,33 +8771,34 @@ LABEL_9:
             goto LABEL_9;
         }
         error("Push failed.");
-        result = 0;
+        return 0;
       }
     }
   }
   else
   {
     error("Readline is currently turned off.");
-    result = 0;
+    return 0;
   }
   return result;
 }
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
+// 80560AE: using guessed type int i[3];
 
 //----- (08056176) --------------------------------------------------------
 int __usercall opt_es@<eax>(token_type *equation@<eax>, int *np@<edx>)
 {
   int v2; // edx
   int v3; // esi
-  int *v4; // eax
+  int *p_level; // eax
   int k; // esi
-  int l; // ebx
+  int m; // ebx
   int v7; // edx
   int *v8; // eax
   int v9; // eax
   token_type *v10; // eax
   token_type *v11; // eax
-  int m; // eax
+  int n; // eax
   int v14; // edi
   int v15; // ecx
   int v16; // ebx
@@ -8931,15 +8832,15 @@ int __usercall opt_es@<eax>(token_type *equation@<eax>, int *np@<edx>)
       {
         if ( v17 > j && i < equation[j].level )
         {
-          v4 = &equation[j + 2].level;
+          p_level = &equation[j + 2].level;
           v2 = j;
           while ( 1 )
           {
             v2 += 2;
             if ( v2 >= v17 )
               break;
-            v3 = *v4;
-            v4 += 8;
+            v3 = *p_level;
+            p_level += 8;
             if ( v3 <= i )
             {
               j = v2;
@@ -8962,30 +8863,30 @@ LABEL_7:
                 break;
               found_se1a = 0;
               v14 = 1;
-              for ( l = 1; ; l += 2 )
+              for ( m = 1; ; m += 2 )
               {
-                if ( v15 > l && k < equation[l].level )
+                if ( v15 > m && k < equation[m].level )
                 {
-                  v8 = &equation[l + 2].level;
+                  v8 = &equation[m + 2].level;
                   do
                   {
-                    l += 2;
-                    if ( l >= v15 )
+                    m += 2;
+                    if ( m >= v15 )
                       break;
                     v7 = *v8;
                     v8 += 8;
                   }
                   while ( v7 > k );
                 }
-                if ( l != v14 )
+                if ( m != v14 )
                 {
                   if ( v14 > j )
                   {
                     found_se1 = v14 - 1;
-                    if ( l - (v14 - 1) > 6 )
+                    if ( m - (v14 - 1) > 6 )
                     {
                       p2 = &equation[found_se1];
-                      if ( se_compare(p1, n1, p2, l - (v14 - 1), &diff_sign) )
+                      if ( se_compare(p1, n1, p2, m - (v14 - 1), &diff_sign) )
                       {
                         v18 = k;
                         __snprintf_chk(v32, 100, 1, 100, "temp%.0d", last_temp_var);
@@ -9004,8 +8905,8 @@ LABEL_7:
                         n_rhs[i2] = n1;
                         if ( diff_sign )
                         {
-                          memmove(&equation[v14 + 2], &equation[l], 16 * (*np - l));
-                          *np = v14 + *np + 2 - l;
+                          memmove(&equation[v14 + 2], &equation[m], 16 * (*np - m));
+                          *np = v14 + *np + 2 - m;
                           ++k;
                           p2->level = v18 + 1;
                           p2->kind = CONSTANT;
@@ -9018,8 +8919,8 @@ LABEL_7:
                         }
                         else
                         {
-                          memmove(&equation[v14], &equation[l], 16 * (*np - l));
-                          *np += v14 - l;
+                          memmove(&equation[v14], &equation[m], 16 * (*np - m));
+                          *np += v14 - m;
                         }
                         v11 = &equation[found_se1];
                         v11->level = k;
@@ -9034,19 +8935,19 @@ LABEL_7:
                           ;
                         simp_loop(rhs[i2], &n_rhs[i2]);
                         simp_loop(equation, np);
-                        for ( m = 0; opt_en[m] >= 0; ++m )
+                        for ( n = 0; opt_en[n] >= 0; ++n )
                           ;
-                        opt_en[m] = i2;
-                        opt_en[m + 1] = -1;
+                        opt_en[n] = i2;
+                        opt_en[n + 1] = -1;
                         return 1;
                       }
                     }
                   }
                   found_se1a = 1;
                 }
-                v14 = l + 2;
+                v14 = m + 2;
                 v15 = *np;
-                if ( *np <= l + 2 )
+                if ( *np <= m + 2 )
                   break;
               }
               if ( !found_se1a )
@@ -9233,6 +9134,7 @@ int __cdecl optimize_cmd(char *cp)
   }
   return v1;
 }
+// 80566A8: using guessed type int start[7];
 
 //----- (0805699C) --------------------------------------------------------
 int __usercall sum_product@<eax>(char *cp@<eax>, int product_flag@<edx>)
@@ -9248,7 +9150,7 @@ int __usercall sum_product@<eax>(char *cp@<eax>, int product_flag@<edx>)
   int v13; // eax
   int v14; // ecx
   token_type *v15; // eax
-  int v16; // edx
+  int i; // edx
   long double v17; // fst7
   double step; // [esp+30h] [ebp-1058h]
   double end; // [esp+38h] [ebp-1050h]
@@ -9406,15 +9308,12 @@ LABEL_22:
     if ( n > 0 )
     {
       v15 = v4;
-      v16 = 0;
-      do
+      for ( i = 0; i < n; ++i )
       {
         ++v15->level;
-        ++v16;
         v14 = n;
         ++v15;
       }
-      while ( n > v16 );
     }
     v4[v14].kind = OPERATOR;
     v4[n].level = 1;
@@ -9461,8 +9360,8 @@ int __cdecl sum_cmd(char *cp)
 //----- (080570F2) --------------------------------------------------------
 int __cdecl solve_cmd(char *cp)
 {
-  char *v1; // esi
-  int v3; // ebx
+  char *string; // esi
+  int espace; // ebx
   int v4; // edi
   char *v5; // eax
   char *v6; // eax
@@ -9480,44 +9379,44 @@ int __cdecl solve_cmd(char *cp)
   char buf[4096]; // [esp+4Ch] [ebp-101Ch] BYREF
   unsigned int v19; // [esp+104Ch] [ebp-1Ch]
 
-  v1 = cp;
+  string = cp;
   v19 = __readgsdword(0x14u);
   if ( cur_equation < 0 || cur_equation >= n_equations || n_lhs[cur_equation] <= 0 || n_rhs[cur_equation] <= 0 )
   {
     error("No current equation.");
     return 0;
   }
-  v3 = next_espace();
+  espace = next_espace();
   v4 = 0;
   if ( !strcmp_tospace(cp, "verify") )
   {
-    v1 = skip_param(cp);
+    string = skip_param(cp);
     LOWORD(v4) = 1;
   }
-  if ( strcmp_tospace(v1, "for") || (v5 = skip_param(v1), !*v5) )
+  if ( strcmp_tospace(string, "for") || (v5 = skip_param(string), !*v5) )
   {
-    if ( !*v1 )
+    if ( !*string )
     {
       my_strlcpy(prompt_str, "Enter variable to solve for: ", 80);
-      v1 = get_string(buf, 4096);
-      if ( !v1 )
+      string = get_string(buf, 4096);
+      if ( !string )
         return 0;
     }
   }
   else
   {
-    v1 = v5;
+    string = v5;
   }
   if ( !v4 )
   {
-    if ( parse_equation(v3, v1) && solve_espace(v3, cur_equation) )
+    if ( parse_equation(espace, string) && solve_espace(espace, cur_equation) )
       return return_result(cur_equation);
     goto LABEL_47;
   }
-  v6 = parse_var2(&v, v1);
+  v6 = parse_var2(&v, string);
   if ( !v6 || extra_characters(v6) )
     return 0;
-  copy_espace(cur_equation, v3);
+  copy_espace(cur_equation, espace);
   want.level = 1;
   want.kind = VARIABLE;
   want.token.variable = v;
@@ -9531,12 +9430,12 @@ int __cdecl solve_cmd(char *cp)
   {
     __printf_chk(1, "Solve failed.\n");
 LABEL_47:
-    n_lhs[v3] = 0;
-    n_rhs[v3] = 0;
+    n_lhs[espace] = 0;
+    n_rhs[espace] = 0;
     return 0;
   }
   return_result(cur_equation);
-  if ( !compare_es(cur_equation, v3) )
+  if ( !compare_es(cur_equation, espace) )
   {
     v7 = n_rhs[cur_equation];
     if ( v7 > 0 )
@@ -9557,28 +9456,28 @@ LABEL_47:
 LABEL_28:
       plural_flag = 0;
     }
-    np = (int *)(4 * v3 + 134753664);
-    subst_var_with_exp(lhs[v3], np, rhs[cur_equation], v7, v);
-    v14 = (int *)(4 * v3 + 134715712);
-    subst_var_with_exp(rhs[v3], v14, rhs[cur_equation], n_rhs[cur_equation], v);
-    calc_simp(lhs[v3], np);
-    calc_simp(rhs[v3], v14);
+    np = (int *)(4 * espace + 134753664);
+    subst_var_with_exp(lhs[espace], np, rhs[cur_equation], v7, v);
+    v14 = (int *)(4 * espace + 134715712);
+    subst_var_with_exp(rhs[espace], v14, rhs[cur_equation], n_rhs[cur_equation], v);
+    calc_simp(lhs[espace], np);
+    calc_simp(rhs[espace], v14);
     for ( i = 0; ; LOWORD(i) = 1 )
     {
-      if ( exp_contains_infinity(lhs[v3], n_lhs[v3]) || exp_contains_infinity(rhs[v3], n_rhs[v3]) )
+      if ( exp_contains_infinity(lhs[espace], n_lhs[espace]) || exp_contains_infinity(rhs[espace], n_rhs[espace]) )
       {
         v11 = 1;
       }
       else
       {
-        if ( se_compare(lhs[v3], n_lhs[v3], rhs[v3], n_rhs[v3], &diff_sign) && !diff_sign )
+        if ( se_compare(lhs[espace], n_lhs[espace], rhs[espace], n_rhs[espace], &diff_sign) && !diff_sign )
         {
           if ( plural_flag )
             __printf_chk(1, "Solutions verified.\n");
           else
             __printf_chk(1, "Solution verified.\n");
-          n_lhs[v3] = 0;
-          n_rhs[v3] = 0;
+          n_lhs[espace] = 0;
+          n_rhs[espace] = 0;
           return 1;
         }
         v11 = 0;
@@ -9586,20 +9485,20 @@ LABEL_28:
       if ( v11 || i )
       {
         error("Solution might be incorrect.");
-        n_lhs[v3] = 0;
-        n_rhs[v3] = 0;
+        n_lhs[espace] = 0;
+        n_rhs[espace] = 0;
         return 2;
       }
       symb_flag = symblify;
-      simpa_side(lhs[v3], np, 1, 0);
-      simpa_side(rhs[v3], v14, 1, 0);
+      simpa_side(lhs[espace], np, 1, 0);
+      simpa_side(rhs[espace], v14, 1, 0);
       symb_flag = 0;
     }
   }
   if ( debug_level >= 0 )
     __fprintf_chk(gfp, 1, "%s\n", "Nothing was done, so no need to verify solution.");
-  n_lhs[v3] = 0;
-  n_rhs[v3] = 0;
+  n_lhs[espace] = 0;
+  n_rhs[espace] = 0;
   return 1;
 }
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
@@ -9682,7 +9581,7 @@ LABEL_21:
   {
     error("Error trying to run gnuplot.");
     __printf_chk(1, "Command line = \"%s\".\n", cl_0);
-    result = 0;
+    return 0;
   }
   else
   {
@@ -9690,7 +9589,7 @@ LABEL_21:
     if ( debug_level > 0 )
     {
       __printf_chk(1, "Command line = \"%s\".\n", cl_0);
-      result = 1;
+      return 1;
     }
   }
   return result;
@@ -9727,14 +9626,14 @@ int __cdecl read_sub(FILE *fp)
   memmove(jmp_save, save_save, 0x9Cu);
   return v1;
 }
-// 8048EF4: using guessed type int __cdecl __longjmp_chk(_DWORD, _DWORD);
+// 8048EF4: using guessed type void __cdecl __noreturn __longjmp_chk(_DWORD, _DWORD);
 
 //----- (08057973) --------------------------------------------------------
 int __cdecl read_file(char *cp)
 {
   char *v1; // ebx
   FILE *v3; // esi
-  int v4; // edi
+  int sub; // edi
   char buf[4096]; // [esp+2Ch] [ebp-101Ch] BYREF
   unsigned int v6; // [esp+102Ch] [ebp-1Ch]
 
@@ -9760,8 +9659,8 @@ int __cdecl read_file(char *cp)
       return 0;
     }
   }
-  v4 = read_sub(v3);
-  if ( v4 )
+  sub = read_sub(v3);
+  if ( sub )
   {
     __printf_chk(1, "Read operation aborted.\n");
   }
@@ -9770,7 +9669,7 @@ int __cdecl read_file(char *cp)
     __printf_chk(1, "Finished reading file \"%s\".\n", v1);
   }
   fclose(v3);
-  return v4 == 0;
+  return sub == 0;
 }
 // 8048F34: using guessed type int __printf_chk(_DWORD, const char *, ...);
 // 8049224: using guessed type int __snprintf_chk(_DWORD, _DWORD, _DWORD, _DWORD, const char *, ...);
@@ -9829,7 +9728,7 @@ int __cdecl edit_cmd(char *cp)
   if ( security_level )
   {
     error("Command disabled.");
-    v1 = 0;
+    return 0;
   }
   else
   {
@@ -9839,11 +9738,11 @@ int __cdecl edit_cmd(char *cp)
       if ( access(cp, 6) )
       {
         error("You can only edit existing/writable files or all equations.");
-        v1 = 0;
+        return 0;
       }
       else
       {
-        v1 = edit_sub(cp);
+        return edit_sub(cp);
       }
     }
     else
@@ -9864,7 +9763,7 @@ int __cdecl edit_cmd(char *cp)
       else
       {
         error("Can't create temporary file.");
-        v1 = 0;
+        return 0;
       }
     }
   }
@@ -9929,14 +9828,15 @@ int __cdecl display_cmd(char *cp)
   return 0;
 }
 // 8048F34: using guessed type int __printf_chk(_DWORD, const char *, ...);
+// 8057CF9: using guessed type int i[3];
 
 //----- (08057EB0) --------------------------------------------------------
 int __cdecl eliminate_cmd(char *cp)
 {
-  char *v1; // eax
+  char *string; // eax
   int v2; // ebx
   int v3; // edi
-  int v4; // eax
+  int variable; // eax
   token_type *v5; // edx
   int v6; // ecx
   int j; // ebx
@@ -9975,9 +9875,9 @@ int __cdecl eliminate_cmd(char *cp)
   if ( !*cp_0 )
   {
     my_strlcpy(prompt_str, "Enter variables to eliminate: ", 80);
-    v1 = get_string(buf, 4096);
-    cp_0 = v1;
-    if ( !v1 || !*v1 )
+    string = get_string(buf, 4096);
+    cp_0 = string;
+    if ( !string || !*string )
       return 0;
   }
   cp_start = cp_0;
@@ -10056,23 +9956,23 @@ LABEL_68:
       cp_0 = skip_param(cp_0);
       v21 = cur_equation;
       v3 = n_lhs[cur_equation];
-      for ( i = 0; ; i = v4 )
+      for ( i = 0; ; i = variable )
       {
-        v4 = -1;
+        variable = -1;
         if ( v3 > 0 )
         {
           v5 = lhs[v21];
           v6 = 0;
-          for ( j = -1; ; j = v4 )
+          for ( j = -1; ; j = variable )
           {
-            if ( v5->kind == VARIABLE && (v4 = v5->token.variable, i < v4) )
+            if ( v5->kind == VARIABLE && (variable = v5->token.variable, i < variable) )
             {
-              if ( j != -1 && v4 > j )
-                v4 = j;
+              if ( j != -1 && variable > j )
+                variable = j;
             }
             else
             {
-              v4 = j;
+              variable = j;
             }
             v6 += 2;
             v5 += 2;
@@ -10089,28 +9989,28 @@ LABEL_68:
           {
             if ( v9->kind == VARIABLE && (v10 = v9->token.variable, i < v10) )
             {
-              if ( v4 != -1 && v10 > v4 )
-                v10 = v4;
+              if ( variable != -1 && v10 > variable )
+                v10 = variable;
             }
             else
             {
-              v10 = v4;
+              v10 = variable;
             }
             v2 += 2;
             v9 += 2;
             if ( v8 <= v2 )
               break;
-            v4 = v10;
+            variable = v10;
           }
-          v4 = v10;
+          variable = v10;
         }
-        if ( v4 == -1 )
+        if ( variable == -1 )
           break;
-        if ( (v4 & 0x3FFFu) > 4 )
+        if ( (variable & 0x3FFFu) > 4 )
         {
           if ( vc > 999 )
             goto LABEL_8;
-          va[vc++] = v4;
+          va[vc++] = variable;
         }
       }
     }
@@ -10130,7 +10030,7 @@ LABEL_68:
 int __cdecl simplify_cmd(char *cp)
 {
   int v1; // edi
-  int v2; // edx
+  int range_eol; // edx
   int result; // eax
   int k; // eax
   int v5; // eax
@@ -10139,7 +10039,7 @@ int __cdecl simplify_cmd(char *cp)
   token_type *v8; // edi
   int v9; // edx
   int v10; // ecx
-  int l; // eax
+  int m; // eax
   token_type *v12; // edi
   int v13; // eax
   int v14; // ecx
@@ -10206,9 +10106,9 @@ LABEL_12:
     cp_0 = skip_param(cp_0);
   }
   v26 = v1;
-  v2 = get_range_eol(&cp_0, &i, &j);
+  range_eol = get_range_eol(&cp_0, &i, &j);
   result = 0;
-  if ( !v2 )
+  if ( !range_eol )
     return result;
   symb_flag = n;
   for ( k = i; j >= k; i = k )
@@ -10252,9 +10152,9 @@ LABEL_12:
         v10 = n_rhs[i];
         if ( v10 > 0 )
         {
-          for ( l = 0; l < v10; l += 2 )
+          for ( m = 0; m < v10; m += 2 )
           {
-            v12 = &rhs[v9][l];
+            v12 = &rhs[v9][m];
             if ( v12->kind == VARIABLE && (v12->token.variable & 0x3FFF) == 4 )
               sa_mark[(v12->token.variable >> 14) & 0x3F] = 1;
           }
@@ -10398,26 +10298,26 @@ int __cdecl calculate_cmd(char *cp)
   token_type *v2; // eax
   int v3; // ecx
   int v4; // edx
-  int v5; // ebx
+  int variable; // ebx
   int k; // eax
   int v7; // edx
   int v8; // eax
   token_type *v9; // edx
   token_type *v10; // edx
   int v11; // ecx
-  int l; // ebx
+  int m; // ebx
   int v13; // ecx
   token_type *v14; // eax
   int v15; // edx
   char v16; // cl
-  int m; // eax
+  int n; // eax
   int v18; // ecx
   int v19; // ecx
   int v20; // eax
   int v21; // ecx
   token_type *v22; // edx
   int v23; // eax
-  int n; // ebx
+  int ii; // ebx
   token_type *source; // [esp+28h] [ebp-10D0h]
   int v26; // [esp+2Ch] [ebp-10CCh]
   int value_entered; // [esp+30h] [ebp-10C8h]
@@ -10503,33 +10403,33 @@ LABEL_22:
     if ( v28 > 0 )
     {
       value_entered = 0;
-      for ( j = 0; ; j = v5 )
+      for ( j = 0; ; j = variable )
       {
         v2 = source;
         v3 = -1;
         v4 = 0;
         while ( 1 )
         {
-          if ( v2->kind == VARIABLE && (v5 = v2->token.variable, j < v5) )
+          if ( v2->kind == VARIABLE && (variable = v2->token.variable, j < variable) )
           {
-            if ( v3 != -1 && v5 > v3 )
-              v5 = v3;
+            if ( v3 != -1 && variable > v3 )
+              variable = v3;
           }
           else
           {
-            v5 = v3;
+            variable = v3;
           }
           v4 += 2;
           v2 += 2;
           if ( v28 <= v4 )
             break;
-          v3 = v5;
+          v3 = variable;
         }
-        if ( v5 == -1 )
+        if ( variable == -1 )
           break;
-        if ( (v5 & 0x3FFFu) > 4 && v5 != it_v )
+        if ( (variable & 0x3FFFu) > 4 && variable != it_v )
         {
-          list_var(v5, 0);
+          list_var(variable, 0);
           __snprintf_chk(prompt_str, 80, 1, 80, "Enter %s: ", var_str);
           if ( get_expr(tlhs, &n_tlhs) )
           {
@@ -10547,7 +10447,7 @@ LABEL_22:
               }
               while ( n_tlhs > v8 );
             }
-            subst_var_with_exp(trhs, &n_trhs, tlhs, v7, v5);
+            subst_var_with_exp(trhs, &n_trhs, tlhs, v7, variable);
             value_entered = 1;
           }
         }
@@ -10576,7 +10476,7 @@ LABEL_22:
       calc_simp(tes, &n_tes);
       memmove(tlhs, trhs, 16 * n_trhs);
       n_tlhs = n_trhs;
-      for ( l = 0; l < v26; ++l )
+      for ( m = 0; m < v26; ++m )
       {
         memmove(trhs, tlhs, 16 * n_tlhs);
         n_trhs = n_tlhs;
@@ -10584,7 +10484,7 @@ LABEL_22:
         calc_simp(trhs, &n_trhs);
         if ( se_compare(trhs, n_trhs, tes, n_tes, &diff_sign) && !diff_sign )
         {
-          __fprintf_chk(gfp, 1, "Convergence reached after %ld iterations.\n", l + 1);
+          __fprintf_chk(gfp, 1, "Convergence reached after %ld iterations.\n", m + 1);
           value_entered = 1;
           goto LABEL_61;
         }
@@ -10611,10 +10511,10 @@ LABEL_61:
       while ( v13 > v15 );
     }
     v16 = 0;
-    for ( m = 0; m != 64; ++m )
-      v16 -= (sa_mark[m] == 0) - 1;
-    LOBYTE(m) = 1;
-    v18 = m << v16;
+    for ( n = 0; n != 64; ++n )
+      v16 -= (sa_mark[n] == 0) - 1;
+    LOBYTE(n) = 1;
+    v18 = n << v16;
     counter_max = v18 - 1;
     if ( v18 == 1 )
     {
@@ -10667,17 +10567,17 @@ LABEL_61:
         while ( n_tlhs > v20 );
       }
       v23 = 0;
-      for ( n = 0; n != 64; ++n )
+      for ( ii = 0; ii != 64; ++ii )
       {
-        if ( sa_mark[n] )
+        if ( sa_mark[ii] )
         {
           if ( v23 )
             __fprintf_chk(gfp, 1, ", ");
           else
             __fprintf_chk(gfp, 1, "Solution number %ld with ", counter + 1);
-          list_var((n << 14) + 4, 0);
+          list_var((ii << 14) + 4, 0);
           __fprintf_chk(gfp, 1, "%s = ", var_str);
-          if ( sa_value[n] )
+          if ( sa_value[ii] )
             __fprintf_chk(gfp, 1, "-1");
           else
             __fprintf_chk(gfp, 1, "1");
@@ -10712,7 +10612,7 @@ LABEL_104:
     return 1;
   }
 }
-// 8058F44: conditional instruction was optimized away because of '%var_10CC.4>=1'
+// 8058F44: conditional instruction was optimized away because %var_10CC.4>=1
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
 // 8049224: using guessed type int __snprintf_chk(_DWORD, _DWORD, _DWORD, _DWORD, const char *, ...);
 
@@ -10720,7 +10620,7 @@ LABEL_104:
 void __usercall org_up_level(token_type *bp_0@<eax>, token_type *ep@<edx>, int level@<ecx>, int invert)
 {
   int v4; // ebx
-  int v5; // ebx
+  int variable; // ebx
 
   if ( invert )
   {
@@ -10730,23 +10630,23 @@ void __usercall org_up_level(token_type *bp_0@<eax>, token_type *ep@<edx>, int l
       bp_0->level = v4;
       if ( v4 == level && bp_0->kind == OPERATOR )
       {
-        v5 = bp_0->token.variable;
-        if ( v5 == 2 )
+        variable = bp_0->token.variable;
+        if ( variable == 2 )
         {
           bp_0->token.variable = 1;
         }
-        else if ( v5 > 2 )
+        else if ( variable > 2 )
         {
-          if ( v5 == 3 )
+          if ( variable == 3 )
           {
             bp_0->token.variable = 4;
           }
-          else if ( v5 == 4 )
+          else if ( variable == 4 )
           {
             bp_0->token.variable = 3;
           }
         }
-        else if ( v5 == 1 )
+        else if ( variable == 1 )
         {
           bp_0->token.variable = 2;
         }
@@ -10847,7 +10747,6 @@ LABEL_39:
               v15 = equation[v12 - 1].token.variable == 2;
 LABEL_37:
             org_up_level(v13, &equation[sub_eloc[0]], level, v15);
-            goto LABEL_38;
           }
         }
 LABEL_38:
@@ -10872,18 +10771,19 @@ LABEL_38:
   bp_0->level = v10;
   return 0;
 }
+// 80595E1: using guessed type int sub_eloc[7];
 
 //----- (080597BE) --------------------------------------------------------
 int __cdecl simpb_vcmp(sort_type *p1, sort_type *p2)
 {
-  int v2; // esi
+  int v; // esi
   int v3; // ebx
-  int v4; // eax
+  int count; // eax
   int v5; // edx
   int result; // eax
   int v7; // [esp+0h] [ebp-14h]
 
-  v2 = p1->v;
+  v = p1->v;
   v7 = p1->v & 0x3FFF;
   v3 = p2->v;
   if ( (v7 != 4) == ((p2->v & 0x3FFF) == 4) )
@@ -10894,12 +10794,12 @@ int __cdecl simpb_vcmp(sort_type *p1, sort_type *p2)
   }
   else
   {
-    v4 = p2->count;
+    count = p2->count;
     v5 = p1->count;
-    if ( v4 != v5 )
-      return v4 - v5;
-    if ( v2 >= v3 )
-      return v2 != v3;
+    if ( count != v5 )
+      return count - v5;
+    if ( v >= v3 )
+      return v != v3;
   }
   return -1;
 }
@@ -11122,7 +11022,7 @@ int __cdecl simp2_power(token_type *equation, int *np)
   token_type *v7; // edx
   int v8; // ecx
   int v9; // eax
-  int *v10; // edx
+  int *p_level; // edx
   int v11; // ecx
   int v12; // edi
   int *v13; // eax
@@ -11133,7 +11033,7 @@ int __cdecl simp2_power(token_type *equation, int *np)
   int modified; // [esp+3Ch] [ebp-2Ch]
   int v20; // [esp+40h] [ebp-28h]
   int v21; // [esp+44h] [ebp-24h]
-  int v22; // [esp+48h] [ebp-20h]
+  int level; // [esp+48h] [ebp-20h]
   int i; // [esp+4Ch] [ebp-1Ch]
 
   v2 = *np;
@@ -11151,9 +11051,9 @@ LABEL_38:
       if ( *np <= i )
         return modified;
     }
-    v22 = v3[-1].level;
+    level = v3[-1].level;
     v20 = i + 1;
-    if ( v2 <= i + 1 || (v4 = (double *)v3, v5 = v3->level, v22 > v5) )
+    if ( v2 <= i + 1 || (v4 = (double *)v3, v5 = v3->level, level > v5) )
     {
       v6 = i + 1;
       v18 = 0;
@@ -11167,7 +11067,7 @@ LABEL_38:
       v7 = v3 + 1;
       do
       {
-        if ( v22 + 1 == v5 )
+        if ( level + 1 == v5 )
         {
           if ( *(_DWORD *)v4 == 2 )
           {
@@ -11187,7 +11087,7 @@ LABEL_38:
         v5 = v7->level;
         ++v7;
       }
-      while ( v22 <= v5 );
+      while ( level <= v5 );
     }
     if ( v6 - i > 2 || v3->kind || v3->token.constant >= 0.0 )
     {
@@ -11201,17 +11101,17 @@ LABEL_38:
         error_huge();
       equation[v20].token.constant = -equation[v20].token.constant;
       v9 = i - 2;
-      if ( i - 2 >= 0 && v22 <= v3[-3].level )
+      if ( i - 2 >= 0 && level <= v3[-3].level )
       {
-        v10 = &v3[-4].level;
+        p_level = &v3[-4].level;
         do
         {
           if ( --v9 < 0 )
             break;
-          v11 = *v10;
-          v10 -= 4;
+          v11 = *p_level;
+          p_level -= 4;
         }
-        while ( v22 <= v11 );
+        while ( level <= v11 );
       }
       v12 = v9 + 1;
       if ( v6 > v9 + 1 )
@@ -11229,10 +11129,10 @@ LABEL_38:
       v15 = &equation[v12];
       memmove(&v15[2], v15, 16 * (*np - v12));
       *np += 2;
-      v15->level = v22;
+      v15->level = level;
       v15->kind = CONSTANT;
       v15->token.constant = 1.0;
-      v15[1].level = v22;
+      v15[1].level = level;
       v15[1].kind = OPERATOR;
       v15[1].token.variable = 4;
       v16 = 1;
@@ -11253,11 +11153,11 @@ int __cdecl simp_constant_power(token_type *equation, int *np)
   int v2; // eax
   token_type *v3; // ebx
   int v4; // esi
-  int v5; // edx
+  int variable; // edx
   int v6; // eax
   int v7; // edx
   int v9; // [esp+24h] [ebp-24h]
-  int v10; // [esp+28h] [ebp-20h]
+  int level; // [esp+28h] [ebp-20h]
   int modified; // [esp+2Ch] [ebp-1Ch]
 
   if ( symb_flag )
@@ -11278,17 +11178,17 @@ LABEL_20:
         if ( *np <= v7 )
           return modified;
       }
-      v10 = v3[-2].level;
-      if ( v10 == v3[-3].level && v3[-3].kind == CONSTANT )
+      level = v3[-2].level;
+      if ( level == v3[-3].level && v3[-3].kind == CONSTANT )
       {
         v9 = v3[-1].level;
-        if ( v9 == v10 + 1 && v3[-1].kind == CONSTANT && v3[-1].token.constant != 1.0 && v4 < v2 && v9 == v3->level )
+        if ( v9 == level + 1 && v3[-1].kind == CONSTANT && v3[-1].token.constant != 1.0 && v4 < v2 && v9 == v3->level )
         {
-          v5 = v3->token.variable;
-          if ( v5 == 3 )
+          variable = v3->token.variable;
+          if ( variable == 3 )
           {
 LABEL_17:
-            v3->level = v10;
+            v3->level = level;
             v3->token.variable = 6;
             ++v3[-3].level;
             ++v3[-2].level;
@@ -11297,7 +11197,7 @@ LABEL_19:
             modified |= v6;
             goto LABEL_20;
           }
-          if ( v5 == 4 )
+          if ( variable == 4 )
           {
             if ( v2 + 2 > n_tokens )
               error_huge();
@@ -11323,20 +11223,20 @@ int __cdecl rationalize(token_type *equation, int *np)
   int v2; // esi
   token_type *v3; // eax
   int v4; // ebx
-  int v5; // eax
-  int *v6; // edx
+  int level; // eax
+  int *p_level; // edx
   int v7; // eax
   int v8; // edi
   token_type *v9; // ebx
   int v10; // ecx
   token_type *v11; // eax
-  int v12; // eax
+  int variable; // eax
   int v13; // edx
   int v14; // eax
   long double v15; // fst5
   char v17; // c2
   int v18; // ebx
-  storage_type *v19; // esi
+  storage_type *p_token; // esi
   int *v20; // edi
   int v21; // ebx
   long double v22; // fst5
@@ -11386,15 +11286,15 @@ LABEL_3:
     v44 = i + 2;
     if ( v2 <= i + 2 )
       goto LABEL_67;
-    v5 = equation[v4].level;
-    if ( div_level >= v5 )
+    level = equation[v4].level;
+    if ( div_level >= level )
       goto LABEL_67;
-    v6 = &equation[i + 4].level;
+    p_level = &equation[i + 4].level;
     count = 0;
     v51 = -1;
     do
     {
-      if ( v5 == div_level + 1 )
+      if ( level == div_level + 1 )
       {
         ++count;
         v7 = v51;
@@ -11405,10 +11305,10 @@ LABEL_3:
       v4 += 2;
       if ( v2 <= v4 )
         break;
-      v5 = *v6;
-      v6 += 8;
+      level = *p_level;
+      p_level += 8;
     }
-    while ( div_level < v5 );
+    while ( div_level < level );
     v41 = div_level + 1;
     if ( v51 < 0 || (unsigned int)(equation[v51].token.variable - 1) > 1 )
     {
@@ -11445,13 +11345,13 @@ LABEL_67:
           }
         }
       }
-      v12 = v9->token.variable;
-      if ( v12 >= 3 )
+      variable = v9->token.variable;
+      if ( variable >= 3 )
       {
         flag = 1;
-        if ( v12 <= 4 )
+        if ( variable <= 4 )
           goto LABEL_69;
-        if ( v12 == 6 )
+        if ( variable == 6 )
           break;
       }
 LABEL_60:
@@ -11499,27 +11399,27 @@ LABEL_69:
     v18 = v42;
     if ( v44 < v42 )
     {
-      v19 = &equation[v44].token;
+      p_token = &equation[v44].token;
       v43 = v8;
       neg_one_loca = v18;
       v20 = &equation[i + 3].level;
       v21 = i + 2;
       do
       {
-        if ( v19->variable == 6 && *(&v19[-1].operatr + 1) == *v20 && !*(v20 - 1) )
+        if ( p_token->variable == 6 && *(&p_token[-1].operatr + 1) == *v20 && !*(v20 - 1) )
         {
           v22 = *(double *)(v20 + 1);
           do
             v22 = __FPREM__(v22, 1.0);
           while ( v24 );
-          if ( v22 == 0.5 && v43 != v21 && (v39 != *(&v19[-1].operatr + 1) || count != 1) )
+          if ( v22 == 0.5 && v43 != v21 && (v39 != *(&p_token[-1].operatr + 1) || count != 1) )
           {
             i += 2;
             goto LABEL_3;
           }
         }
         v21 += 2;
-        v19 += 4;
+        p_token += 4;
         v20 += 8;
       }
       while ( neg_one_loca > v21 );
@@ -11585,9 +11485,9 @@ int __usercall order_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, in
   token_type *v6; // edx
   int v7; // eax
   int v8; // eax
-  int *v9; // edx
+  int *p_level; // edx
   int v10; // ebx
-  int v11; // edx
+  int variable; // edx
   int v12; // ecx
   token_type *v13; // edx
   int v14; // edi
@@ -11607,7 +11507,6 @@ int __usercall order_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, in
   size_t v28; // eax
   token_type *v29; // ebx
   int v31; // [esp+2Ch] [ebp-3Ch]
-  int v32; // [esp+3Ch] [ebp-2Ch]
   int v33; // [esp+40h] [ebp-28h]
   int modified; // [esp+44h] [ebp-24h]
   int modifieda; // [esp+44h] [ebp-24h]
@@ -11615,7 +11514,6 @@ int __usercall order_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, in
   token_type *ka; // [esp+48h] [ebp-20h]
   int kb; // [esp+48h] [ebp-20h]
 
-  v32 = loc;
   if ( (loc & 1) != 0 )
     goto corrupt;
   v4 = loc;
@@ -11636,24 +11534,24 @@ int __usercall order_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, in
         goto corrupt;
       if ( v6->kind != OPERATOR )
         goto LABEL_24;
-      v11 = v6->token.variable;
-      if ( !v11 )
+      variable = v6->token.variable;
+      if ( !variable )
         goto corrupt;
       if ( v5 )
       {
-        if ( v11 < 1 )
+        if ( variable < 1 )
           goto corrupt;
-        if ( v11 <= 2 )
+        if ( variable <= 2 )
         {
           if ( (unsigned int)(v5 - 1) > 1 )
             goto corrupt;
         }
-        else if ( v11 > 4 || (unsigned int)(v5 - 3) > 1 )
+        else if ( variable > 4 || (unsigned int)(v5 - 3) > 1 )
         {
           goto corrupt;
         }
 LABEL_24:
-        v11 = v5;
+        variable = v5;
       }
       v8 = v4 + 1;
       goto LABEL_27;
@@ -11662,19 +11560,19 @@ LABEL_24:
     v8 = v4 + 1;
     if ( v4 + 1 < *np && level < equation[v8].level )
     {
-      v9 = &equation[v4 + 2].level;
+      p_level = &equation[v4 + 2].level;
       do
       {
         if ( ++v8 >= *np )
           break;
-        v10 = *v9;
-        v9 += 4;
+        v10 = *p_level;
+        p_level += 4;
       }
       while ( level < v10 );
     }
-    v11 = v5;
+    variable = v5;
 LABEL_27:
-    v5 = v11;
+    v5 = variable;
     v4 = v8;
   }
   if ( v6->kind != OPERATOR )
@@ -11687,18 +11585,18 @@ corrupt:
   {
     if ( v5 <= 2 )
     {
-      v13 = &equation[v32];
+      v13 = &equation[loc];
       ka = v13;
       if ( v13->kind == CONSTANT
         && v13->token.constant < 0.0
         && (v13->level == level
-         || equation[v32 + 1].level == level + 1 && (unsigned int)(equation[v32 + 1].token.variable - 3) <= 1) )
+         || equation[loc + 1].level == level + 1 && (unsigned int)(equation[loc + 1].token.variable - 3) <= 1) )
       {
-        v14 = v32 + 1;
-        if ( v32 + 1 < v4 )
+        v14 = loc + 1;
+        if ( loc + 1 < v4 )
         {
           v15 = &equation[v14].level;
-          v16 = v32 + 1;
+          v16 = loc + 1;
           while ( *v15 != level || v15[1] != 1 )
           {
             v16 += 2;
@@ -11726,18 +11624,18 @@ corrupt:
               break;
             v19 += 2;
           }
-          memmove(scratch, ka, 16 * (v19 - v32));
-          memmove(&equation[v19 - modifieda + v32], &equation[v14], 16 * (modifieda - v14));
-          memmove(ka, &scratch[modifieda - v32], 16 * (v19 - modifieda));
-          memmove(&equation[v19 - (v14 - v32)], scratch, 16 * (v14 - v32));
-          modified = 1;
+          memmove(scratch, ka, 16 * (v19 - loc));
+          memmove(&equation[v19 - modifieda + loc], &equation[v14], 16 * (modifieda - v14));
+          memmove(ka, &scratch[modifieda - loc], 16 * (v19 - modifieda));
+          memmove(&equation[v19 - (v14 - loc)], scratch, 16 * (v14 - loc));
+          return 1;
         }
       }
     }
     else if ( v5 <= 4 )
     {
-      v22 = v32 + 1;
-      if ( v32 + 1 < v4 )
+      v22 = loc + 1;
+      if ( loc + 1 < v4 )
       {
         for ( i = &equation[v22].level; *i != level || i[1] != 4; i += 8 )
         {
@@ -11810,7 +11708,7 @@ int __cdecl elim_sign(token_type *equation, int *np)
   int v2; // edx
   int i; // ebx
   token_type *v4; // esi
-  int v5; // eax
+  int variable; // eax
   token_type *v6; // eax
   token_type *v7; // eax
   long double v8; // fst5
@@ -11824,7 +11722,7 @@ int __cdecl elim_sign(token_type *equation, int *np)
   int v17; // edx
   token_type *v18; // eax
   int v19; // ebx
-  long double v20; // fst7
+  long double constant; // fst7
   token_type *v21; // eax
   int v22; // eax
   long double v23; // fst5
@@ -11848,8 +11746,8 @@ int __cdecl elim_sign(token_type *equation, int *np)
   {
     v4 = &equation[i];
     level = v4->level;
-    v5 = v4->token.variable;
-    if ( v5 == 4 && (v35 = equation[i + 1].level, v35 == level) )
+    variable = v4->token.variable;
+    if ( variable == 4 && (v35 = equation[i + 1].level, v35 == level) )
     {
       if ( equation[i + 1].kind == VARIABLE && equation[i + 1].token.variable == 3 )
       {
@@ -11872,7 +11770,7 @@ int __cdecl elim_sign(token_type *equation, int *np)
         modified = 1;
       }
     }
-    else if ( v5 == 6 )
+    else if ( variable == 6 )
     {
       v34 = equation[i + 1].level;
       if ( v34 == level && equation[i + 1].kind == CONSTANT )
@@ -11937,10 +11835,10 @@ LABEL_31:
                       }
                       else if ( v16->kind == CONSTANT )
                       {
-                        v20 = v16->token.constant;
-                        if ( v20 < 0.0 )
+                        constant = v16->token.constant;
+                        if ( constant < 0.0 )
                         {
-                          v16->token.constant = -v20;
+                          v16->token.constant = -constant;
                           modified = 1;
                         }
                       }
@@ -12020,13 +11918,14 @@ LABEL_61:
 // 805ACF6: variable 'v25' is possibly undefined
 // 805AD98: variable 'v28' is possibly undefined
 // 805ADDA: variable 'v31' is possibly undefined
+// 805A9A6: using guessed type double numerator[4];
 
 //----- (0805AE41) --------------------------------------------------------
 int __cdecl simp_pp(token_type *equation, int *np)
 {
   int v2; // esi
   token_type *v3; // eax
-  int *v4; // eax
+  int *p_level; // eax
   int v5; // ebx
   int v6; // esi
   long double v7; // fst5
@@ -12035,7 +11934,7 @@ int __cdecl simp_pp(token_type *equation, int *np)
   char v12; // c2
   long double v13; // fst5
   char v15; // c2
-  int v16; // edx
+  int level; // edx
   token_type *v17; // eax
   token_type *v18; // ecx
   int v19; // edx
@@ -12061,17 +11960,17 @@ int __cdecl simp_pp(token_type *equation, int *np)
       v23 = i + 2;
       if ( i + 2 < v2 )
       {
-        v4 = &equation[i + 2].level;
+        p_level = &equation[i + 2].level;
         v5 = i + 2;
         while ( 1 )
         {
-          v24 = v4 - 1;
-          if ( ilevel - 1 == *v4 && v4[1] == 6 )
+          v24 = p_level - 1;
+          if ( ilevel - 1 == *p_level && p_level[1] == 6 )
             break;
-          if ( ilevel < *v4 )
+          if ( ilevel < *p_level )
           {
             v5 += 2;
-            v4 += 8;
+            p_level += 8;
             if ( v2 > v5 )
               continue;
           }
@@ -12085,21 +11984,21 @@ LABEL_24:
           v24[2] = 3;
           if ( v5 < *np )
           {
-            v16 = v24[1];
-            if ( ilevela <= v16 )
+            level = v24[1];
+            if ( ilevela <= level )
             {
               v17 = &equation[v5 + 1];
               v25 = v5;
               v18 = (token_type *)v24;
               while ( 1 )
               {
-                v18->level = v16 + 2;
+                v18->level = level + 2;
                 if ( *np <= ++v5 )
                   break;
                 v18 = v17;
-                v16 = v17->level;
+                level = v17->level;
                 ++v17;
-                if ( ilevela > v16 )
+                if ( ilevela > level )
                 {
                   v6 = v25;
                   goto LABEL_31;
@@ -12170,12 +12069,18 @@ LABEL_37:
 // 805B035: variable 'v15' is possibly undefined
 
 //----- (0805B11E) --------------------------------------------------------
-_BOOL4 __usercall compare_recurse@<eax>(token_type *p1@<eax>, int n1@<edx>, int l1@<ecx>, token_type *p2, int n2, int l2, int *diff_signp)
+_BOOL4 __usercall compare_recurse@<eax>(
+        token_type *p1@<eax>,
+        int n1@<edx>,
+        int l1@<ecx>,
+        token_type *p2,
+        int n2,
+        int l2,
+        int *diff_signp)
 {
   token_type *v7; // ebx
-  kind_list v9; // eax
-  _BOOL4 result; // eax
-  long double v11; // fst6
+  kind_list kind; // eax
+  long double constant; // fst6
   long double v12; // fst7
   long double v13; // fst4
   token_type *v14; // edx
@@ -12187,7 +12092,7 @@ _BOOL4 __usercall compare_recurse@<eax>(token_type *p1@<eax>, int n1@<edx>, int 
   int v20; // eax
   int v21; // ecx
   int v22; // ebx
-  int v23; // edx
+  int level; // edx
   token_type *v24; // eax
   int v25; // esi
   token_type *v26; // ebx
@@ -12224,35 +12129,34 @@ _BOOL4 __usercall compare_recurse@<eax>(token_type *p1@<eax>, int n1@<edx>, int 
   *diff_signp = 0;
   if ( n1 == 1 && n2 == 1 )
   {
-    v9 = p1->kind;
+    kind = p1->kind;
     if ( v7->kind == p2->kind )
     {
-      if ( v9 )
+      if ( kind )
       {
-        if ( v9 == VARIABLE )
+        if ( kind == VARIABLE )
         {
           if ( sign_cmp_flag && (v7->token.variable & 0x3FFF) == 4 )
-            result = (p2->token.variable & 0x3FFF) == 4;
+            return (p2->token.variable & 0x3FFF) == 4;
           else
-            result = v7->token.variable == p2->token.variable;
-          return result;
+            return v7->token.variable == p2->token.variable;
         }
       }
       else
       {
-        v11 = v7->token.constant;
+        constant = v7->token.constant;
         v12 = p2->token.constant;
-        if ( v11 == v12 )
+        if ( constant == v12 )
           return 1;
-        if ( -v12 == v11 )
+        if ( -v12 == constant )
         {
           *diff_signp = 1;
           return 1;
         }
-        v13 = fabs(v11) * compare_epsilon;
-        if ( v13 > fabs(v11 - v12) )
+        v13 = fabs(constant) * compare_epsilon;
+        if ( v13 > fabs(constant - v12) )
           return 1;
-        if ( v13 > fabs(v12 + v11) )
+        if ( v13 > fabs(v12 + constant) )
         {
           *diff_signp = 1;
           return 1;
@@ -12341,9 +12245,9 @@ LABEL_65:
           v26 = v24;
           if ( v24 >= v39 )
             break;
-          v23 = v24->level;
+          level = v24->level;
           v24 += 2;
-          if ( l1 >= v23 )
+          if ( l1 >= level )
           {
             v43 = v26;
             goto LABEL_72;
@@ -12555,7 +12459,7 @@ int __cdecl elim_k(token_type *equation, int *np)
 {
   token_type *v3; // ebx
   token_type *v4; // edi
-  int v5; // eax
+  int variable; // eax
   token_type *v6; // edx
   int v7; // esi
   bool v8; // zf
@@ -12585,7 +12489,7 @@ int __cdecl elim_k(token_type *equation, int *np)
   token_type *srca; // [esp+2Ch] [ebp-4Ch]
   int modified; // [esp+34h] [ebp-44h]
   int v35; // [esp+38h] [ebp-40h]
-  char *v36; // [esp+3Ch] [ebp-3Ch]
+  char *level; // [esp+3Ch] [ebp-3Ch]
   token_type *v37; // [esp+3Ch] [ebp-3Ch]
   char *d; // [esp+40h] [ebp-38h]
   token_type *da; // [esp+40h] [ebp-38h]
@@ -12605,8 +12509,8 @@ int __cdecl elim_k(token_type *equation, int *np)
     if ( v3->kind == OPERATOR )
     {
       d = (char *)v3->level;
-      v5 = v3->token.variable;
-      if ( (unsigned int)(v5 - 1) > 1 )
+      variable = v3->token.variable;
+      if ( (unsigned int)(variable - 1) > 1 )
         goto LABEL_52;
       v41 = (double *)&v3[1];
       if ( v4 > &v3[2]
@@ -12615,7 +12519,7 @@ int __cdecl elim_k(token_type *equation, int *np)
         && !*(_DWORD *)v41
         && v3[1].token.constant < 0.0 )
       {
-        v3->token.variable = (v5 == 1) + 1;
+        v3->token.variable = (variable == 1) + 1;
         v3[1].token.constant = -v3[1].token.constant;
       }
       if ( (char *)v3[1].level == d && !*(_DWORD *)v41 )
@@ -12629,15 +12533,15 @@ int __cdecl elim_k(token_type *equation, int *np)
           goto LABEL_17;
       }
       v6 = v3 - 1;
-      v36 = (char *)v3[-1].level;
-      if ( v36 == d && v6->kind == CONSTANT && __isinf(v6->token.constant) )
+      level = (char *)v3[-1].level;
+      if ( level == d && v6->kind == CONSTANT && __isinf(v6->token.constant) )
       {
         v41 = (double *)&v3[-1];
       }
       else
       {
-        v36 = (char *)v3[1].level;
-        if ( v36 != d || *(_DWORD *)v41 )
+        level = (char *)v3[1].level;
+        if ( level != d || *(_DWORD *)v41 )
           goto LABEL_52;
       }
       v31 = v41[1];
@@ -12646,7 +12550,7 @@ int __cdecl elim_k(token_type *equation, int *np)
         src = (void *)v3->level;
         dest = v3;
         v35 = 0;
-        if ( (int)v36 <= (int)src )
+        if ( (int)level <= (int)src )
         {
           v27 = v3;
           v26 = np;
@@ -12676,7 +12580,7 @@ int __cdecl elim_k(token_type *equation, int *np)
         {
 LABEL_26:
           desta = dest + 1;
-          if ( (int)v36 > (int)src )
+          if ( (int)level > (int)src )
           {
             srca = v3;
             goto LABEL_47;
@@ -12695,7 +12599,7 @@ LABEL_26:
           }
           if ( v4 <= ++v3 )
             break;
-          if ( (int)v36 > v3->level )
+          if ( (int)level > v3->level )
           {
             srca = v3;
             v3 = v28;
@@ -12947,6 +12851,7 @@ LABEL_17:
     }
   }
 }
+// 805B9CE: using guessed type double numerator[4];
 
 //----- (0805C1F9) --------------------------------------------------------
 int __cdecl calc(int *op1p, double *k1p, int op2, double k2_0)
@@ -13001,14 +12906,13 @@ int __cdecl calc(int *op1p, double *k1p, int op2, double k2_0)
           *op1p = 1;
           *k1p = d[0];
         }
-        result = 1;
+        return 1;
       }
       else
       {
         *k1p = d[0];
-        result = 1;
+        return 1;
       }
-      return result;
     case 3:
     case 4:
       if ( !v5 )
@@ -13016,14 +12920,14 @@ int __cdecl calc(int *op1p, double *k1p, int op2, double k2_0)
       if ( v5 == op2 )
       {
         *k1p = k2_0 * *k1p;
-        result = 1;
+        return 1;
       }
       else if ( v5 == 4 )
       {
         check_divide_by_zero(*k1p);
         *k1p = k2_0 / *k1p;
         *op1p = 3;
-        result = 1;
+        return 1;
       }
       else
       {
@@ -13031,9 +12935,8 @@ int __cdecl calc(int *op1p, double *k1p, int op2, double k2_0)
           return 1;
         check_divide_by_zero(k2_0);
         *k1p = *k1p / k2_0;
-        result = 1;
+        return 1;
       }
-      return result;
     case 5:
       if ( k2_0 == 0.0 )
         warning("Modulo 0 encountered, might be considered undefined.");
@@ -13132,6 +13035,7 @@ LABEL_55:
 // 805C416: variable 'v11' is possibly undefined
 // 805C504: variable 'v15' is possibly undefined
 // 8079368: using guessed type int signgam;
+// 805C1F9: using guessed type double d[2];
 
 //----- (0805C5E4) --------------------------------------------------------
 int __usercall const_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int loc@<ecx>, int level, int iflag)
@@ -13140,9 +13044,9 @@ int __usercall const_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, in
   token_type *v6; // esi
   int v7; // eax
   int v8; // eax
-  int *v9; // eax
+  int *p_level; // eax
   int v10; // ecx
-  storage_type *v11; // eax
+  storage_type *p_token; // eax
   double *v12; // esi
   token_type *v13; // eax
   _DWORD *v14; // esi
@@ -13214,13 +13118,13 @@ int __usercall const_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, in
       modified |= const_recurse(v51, v50, v5, v40, iflag);
       if ( v5 < *v50 && level < v6->level )
       {
-        v9 = &v51[v5 + 1].level;
+        p_level = &v51[v5 + 1].level;
         do
         {
           if ( ++v5 >= *v50 )
             break;
-          v10 = *v9;
-          v9 += 4;
+          v10 = *p_level;
+          p_level += 4;
         }
         while ( level < v10 );
       }
@@ -13239,10 +13143,10 @@ int __usercall const_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, in
       src = &v51[loc1];
       d1[0] = *((double *)src + 1);
       d2 = v6->token.constant;
-      v11 = 0;
+      p_token = 0;
       if ( loc1 > v41 )
-        v11 = &v51[v39 - 1].token;
-      if ( calc((int *)v11, d1, SLODWORD(d3), d2) )
+        p_token = &v51[v39 - 1].token;
+      if ( calc((int *)p_token, d1, SLODWORD(d3), d2) )
         break;
     }
 LABEL_46:
@@ -13297,7 +13201,7 @@ not_imaginary:
       *(_DWORD *)(v17 + 4) = level + 1;
       *(_DWORD *)v17 = 0;
       *(double *)(v17 + 8) = cv.im;
-      modified = 1;
+      return 1;
     }
     return modified;
   }
@@ -13374,12 +13278,13 @@ not_imaginary:
       *(_DWORD *)v35 = 0;
       *(double *)(v35 + 8) = d2 + d2;
     }
-    modified = 1;
+    return 1;
   }
   return modified;
 }
 // 805C908: variable 'v20' is possibly undefined
 // 805C94A: variable 'v23' is possibly undefined
+// 805C5E4: using guessed type double d1[4];
 
 //----- (0805CB7B) --------------------------------------------------------
 int __cdecl combine_constants(token_type *equation, int *np, int iflag)
@@ -13397,12 +13302,12 @@ int __cdecl integer_root_simp(token_type *equation, int *np)
   char v7; // c2
   int *v8; // ebx
   long double v9; // fst7
-  long double v10; // fst6
+  long double constant; // fst6
   int v11; // ebx
   int i; // eax
   int v13; // ecx
   int v14; // edx
-  int *v15; // eax
+  int *p_level; // eax
   token_type *dest; // [esp+18h] [ebp-40h]
   int v18; // [esp+1Ch] [ebp-3Ch]
   int d2; // [esp+20h] [ebp-38h]
@@ -13410,7 +13315,7 @@ int __cdecl integer_root_simp(token_type *equation, int *np)
   double d2b; // [esp+20h] [ebp-38h]
   int modified; // [esp+2Ch] [ebp-2Ch]
   token_type *src; // [esp+30h] [ebp-28h]
-  int v24; // [esp+34h] [ebp-24h]
+  int level; // [esp+34h] [ebp-24h]
 
   v2 = *np;
   v3 = 1;
@@ -13420,11 +13325,11 @@ int __cdecl integer_root_simp(token_type *equation, int *np)
     if ( v4->token.variable == 6 )
     {
       src = &equation[v3 - 1];
-      v24 = src->level;
-      if ( v24 == v4->level )
+      level = src->level;
+      if ( level == v4->level )
       {
         d2 = equation[v3 + 2].level;
-        if ( d2 == v24 + 1
+        if ( d2 == level + 1
           && equation[v3 + 2].token.variable == 4
           && d2 == equation[v3 + 3].level
           && src->kind == CONSTANT )
@@ -13432,7 +13337,7 @@ int __cdecl integer_root_simp(token_type *equation, int *np)
           dest = &equation[v3 + 1];
           if ( dest->kind == CONSTANT
             && equation[v3 + 3].kind == CONSTANT
-            && (v3 + 4 >= v2 || v24 > equation[v3 + 4].level) )
+            && (v3 + 4 >= v2 || level > equation[v3 + 4].level) )
           {
             d2a = equation[v3 + 1].token.constant;
             if ( d2a >= 1.0 && d2a <= 50.0 )
@@ -13448,11 +13353,11 @@ int __cdecl integer_root_simp(token_type *equation, int *np)
                 v9 = pow(src->token.constant, d2a);
                 if ( !*v8 )
                 {
-                  v10 = equation[v3 + 3].token.constant;
-                  if ( v10 <= 50.0 && v10 >= 2.0 )
+                  constant = equation[v3 + 3].token.constant;
+                  if ( constant <= 50.0 && constant >= 2.0 )
                   {
-                    v11 = (int)v10;
-                    if ( v10 == (long double)(int)v10 && v11 > 1 && factor_one(v9) )
+                    v11 = (int)constant;
+                    if ( constant == (long double)(int)constant && v11 > 1 && factor_one(v9) )
                     {
                       v18 = uno;
                       d2b = 1.0;
@@ -13474,19 +13379,19 @@ int __cdecl integer_root_simp(token_type *equation, int *np)
                         equation[v3 + 1].token.constant = 1.0;
                         src->token.constant = multiply_out_unique();
                         v14 = v3 - 1;
-                        v15 = &equation[v3 - 1].level;
+                        p_level = &equation[v3 - 1].level;
                         while ( v14 < v3 + 4 )
                         {
-                          ++*v15;
+                          ++*p_level;
                           ++v14;
-                          v15 += 4;
+                          p_level += 4;
                         }
                         memmove(dest, src, 16 * (*np + 1 - v3));
                         *np += 2;
-                        v4->level = v24;
+                        v4->level = level;
                         v4->kind = OPERATOR;
                         v4->token.variable = 3;
-                        src->level = v24;
+                        src->level = level;
                         src->kind = CONSTANT;
                         src->token.constant = d2b;
                         v3 += 2;
@@ -13545,7 +13450,7 @@ void __cdecl elim_loop(token_type *equation, int *np)
   }
   list_debug(5, equation, *np, 0, 0);
 }
-// 8048EF4: using guessed type int __cdecl __longjmp_chk(_DWORD, _DWORD);
+// 8048EF4: using guessed type void __cdecl __noreturn __longjmp_chk(_DWORD, _DWORD);
 
 //----- (0805D024) --------------------------------------------------------
 int __cdecl simp_loop(token_type *equation, int *np)
@@ -13644,7 +13549,7 @@ void __cdecl simpb_side(token_type *equation, int *np, int uf_power_flag, int po
 {
   int v5; // edi
   int v6; // ebx
-  int v7; // ecx
+  int variable; // ecx
   int v8; // edx
   token_type *v9; // eax
   int i; // ebx
@@ -13669,10 +13574,10 @@ LABEL_19:
     {
       if ( v9->kind != VARIABLE )
         goto LABEL_11;
-      v7 = v9->token.variable;
-      if ( v7 <= v5 )
+      variable = v9->token.variable;
+      if ( variable <= v5 )
         goto LABEL_11;
-      if ( v6 != -1 && v7 >= v6 )
+      if ( v6 != -1 && variable >= v6 )
         break;
       cnt = 1;
 LABEL_13:
@@ -13680,31 +13585,31 @@ LABEL_13:
       v9 += 2;
       if ( v8 >= *np )
       {
-        if ( v7 != -1 )
+        if ( variable != -1 )
         {
-          if ( v7 > 3 )
+          if ( variable > 3 )
           {
-            va[vc].v = v7;
+            va[vc].v = variable;
             va[vc++].count = cnt;
           }
           if ( vc <= 999 )
           {
-            v5 = v7;
+            v5 = variable;
             goto LABEL_19;
           }
         }
         goto LABEL_21;
       }
-      v6 = v7;
+      v6 = variable;
     }
-    if ( v6 == v7 )
+    if ( v6 == variable )
     {
       ++cnt;
-      v7 = v6;
+      variable = v6;
       goto LABEL_13;
     }
 LABEL_11:
-    v7 = v6;
+    variable = v6;
     goto LABEL_13;
   }
 LABEL_21:
@@ -13984,7 +13889,7 @@ LABEL_30:
     goto LABEL_30;
   }
 }
-// 8048EF4: using guessed type int __cdecl __longjmp_chk(_DWORD, _DWORD);
+// 8048EF4: using guessed type void __cdecl __noreturn __longjmp_chk(_DWORD, _DWORD);
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
 
 //----- (0805E1EE) --------------------------------------------------------
@@ -14019,7 +13924,7 @@ int __usercall fpower_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, i
   int v9; // ecx
   int k; // ebx
   int v11; // ebx
-  int *v12; // edx
+  int *p_level; // edx
   int v13; // eax
   int v14; // ecx
   int v15; // eax
@@ -14072,7 +13977,7 @@ int __usercall fpower_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, i
   int v63; // [esp+60h] [ebp-68h]
   int p1; // [esp+64h] [ebp-64h]
   int v65; // [esp+68h] [ebp-60h]
-  int v66; // [esp+70h] [ebp-58h]
+  int variable; // [esp+70h] [ebp-58h]
   int v67; // [esp+70h] [ebp-58h]
   int v70; // [esp+7Ch] [ebp-4Ch]
   int v71; // [esp+80h] [ebp-48h]
@@ -14118,15 +14023,15 @@ LABEL_6:
               }
               else
               {
-                v12 = &equation[v71 + 3].level;
+                p_level = &equation[v71 + 3].level;
                 v13 = v71 + 1;
                 do
                 {
                   v13 += 2;
                   if ( v13 >= v11 )
                     break;
-                  v14 = *v12;
-                  v12 += 8;
+                  v14 = *p_level;
+                  p_level += 8;
                 }
                 while ( level < v14 );
               }
@@ -14174,7 +14079,7 @@ LABEL_103:
               }
 LABEL_32:
               len2 = v18 - j;
-              v66 = dest->token.variable;
+              variable = dest->token.variable;
               v70 = 3;
               if ( v71 > loc )
                 v70 = v62->token.variable;
@@ -14295,7 +14200,7 @@ LABEL_102:
             v60 = v73;
             p1 = 3;
 LABEL_76:
-            if ( v66 == 4 )
+            if ( variable == 4 )
               diff_signp[0] = diff_signp[0] == 0;
             v75 = 0;
             if ( v70 == 4 )
@@ -14454,7 +14359,7 @@ int __usercall ftimes_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, i
   int v8; // edi
   int v9; // ecx
   int v10; // esi
-  int *v11; // edx
+  int *p_level; // edx
   int v12; // eax
   int v13; // ecx
   int v14; // eax
@@ -14486,7 +14391,7 @@ int __usercall ftimes_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, i
   char v42; // [esp+50h] [ebp-78h]
   token_type *p1; // [esp+64h] [ebp-64h]
   int n1; // [esp+68h] [ebp-60h]
-  int v45; // [esp+6Ch] [ebp-5Ch]
+  int variable; // [esp+6Ch] [ebp-5Ch]
   int v46; // [esp+70h] [ebp-58h]
   int v47; // [esp+74h] [ebp-54h]
   int v48; // [esp+74h] [ebp-54h]
@@ -14546,15 +14451,15 @@ LABEL_12:
     }
     else
     {
-      v11 = &equation[v46 + 3].level;
+      p_level = &equation[v46 + 3].level;
       v12 = v46 + 1;
       do
       {
         v12 += 2;
         if ( v12 >= v10 )
           break;
-        v13 = *v11;
-        v11 += 8;
+        v13 = *p_level;
+        p_level += 8;
       }
       while ( level < v13 );
     }
@@ -14597,7 +14502,7 @@ LABEL_12:
           }
 LABEL_31:
           len2 = v17 - j;
-          v45 = v60->token.variable;
+          variable = v60->token.variable;
           v49 = 3;
           if ( v46 > loc )
             v49 = v39->token.variable;
@@ -14649,7 +14554,7 @@ LABEL_31:
           n1 = v55 - 1 - v20;
 LABEL_59:
           LOBYTE(v19) = v49 == 4;
-          v50 = v49 != 4 || v45 != 4;
+          v50 = v49 != 4 || variable != 4;
           LOBYTE(v19) = v50 & v19;
           v42 = v19;
           v23 = (v19 << 31 >> 31) & 2;
@@ -14674,7 +14579,7 @@ LABEL_59:
               *np += v48;
               p2b->level = level;
               p2b->kind = OPERATOR;
-              p2b->token.variable = v45;
+              p2b->token.variable = variable;
               p2b[1].level = level + 1;
               p2b[1].kind = CONSTANT;
               p2b[1].token.constant = -1.0;
@@ -14727,7 +14632,7 @@ LABEL_71:
               v31 = &equation[v30];
               v31->level = v8;
               v31->kind = OPERATOR;
-              if ( v50 && v45 == 4 )
+              if ( v50 && variable == 4 )
                 v31->token.variable = 2;
               else
                 v31->token.variable = 1;
@@ -14818,7 +14723,23 @@ int __cdecl factor_times(token_type *equation, int *np)
 }
 
 //----- (0805F3FC) --------------------------------------------------------
-int __usercall big_fplus@<eax>(token_type *equation@<eax>, int level@<edx>, int diff_sign@<ecx>, int sop1, int op1, int op2, int i1, int i2, int b1, int b2, int ai, int aj, int i, int j, int e1, int e2)
+int __usercall big_fplus@<eax>(
+        token_type *equation@<eax>,
+        int level@<edx>,
+        int diff_sign@<ecx>,
+        int sop1,
+        int op1,
+        int op2,
+        int i1,
+        int i2,
+        int b1,
+        int b2,
+        int ai,
+        int aj,
+        int i,
+        int j,
+        int e1,
+        int e2)
 {
   int v16; // ebx
   int v17; // esi
@@ -15001,14 +14922,22 @@ int __usercall big_fplus@<eax>(token_type *equation@<eax>, int level@<edx>, int 
 }
 
 //----- (0805F8B2) --------------------------------------------------------
-int __usercall fplus_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int loc@<ecx>, int level, int v, double d, int whole_flag, int div_only)
+int __usercall fplus_recurse@<eax>(
+        token_type *equation@<eax>,
+        int *np@<edx>,
+        int loc@<ecx>,
+        int level,
+        int v,
+        double d,
+        int whole_flag,
+        int div_only)
 {
   int v8; // edx
   token_type *v9; // eax
   token_type *v10; // ebx
   int v11; // ecx
   int v12; // ebx
-  int *v13; // edx
+  int *p_level; // edx
   int v14; // eax
   int v15; // ecx
   int v16; // eax
@@ -15022,7 +14951,7 @@ int __usercall fplus_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, in
   token_type *v24; // eax
   token_type *v25; // eax
   int v26; // edx
-  storage_type *v27; // edx
+  storage_type *p_token; // edx
   int v28; // ecx
   int *v29; // ebx
   int *v30; // esi
@@ -15102,7 +15031,7 @@ int __usercall fplus_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, in
   int v108; // [esp+70h] [ebp-B8h]
   int v109; // [esp+74h] [ebp-B4h]
   int op2; // [esp+78h] [ebp-B0h]
-  int v111; // [esp+7Ch] [ebp-ACh]
+  int variable; // [esp+7Ch] [ebp-ACh]
   int v113; // [esp+88h] [ebp-A0h]
   int modified; // [esp+8Ch] [ebp-9Ch]
   token_type *dest; // [esp+94h] [ebp-94h]
@@ -15124,7 +15053,7 @@ int __usercall fplus_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, in
   int v132; // [esp+D0h] [ebp-58h]
   double v133; // [esp+D0h] [ebp-58h]
   token_type *v134; // [esp+D8h] [ebp-50h]
-  double v135; // [esp+D8h] [ebp-50h]
+  double constant; // [esp+D8h] [ebp-50h]
   double v136; // [esp+D8h] [ebp-50h]
   int i1; // [esp+E0h] [ebp-48h]
   int j; // [esp+E4h] [ebp-44h]
@@ -15168,15 +15097,15 @@ LABEL_9:
       }
       else
       {
-        v13 = &equation[i1 + 3].level;
+        p_level = &equation[i1 + 3].level;
         v14 = i1 + 1;
         do
         {
           v14 += 2;
           if ( v14 >= v12 )
             break;
-          v15 = *v13;
-          v13 += 8;
+          v15 = *p_level;
+          p_level += 8;
         }
         while ( level < v15 );
       }
@@ -15212,9 +15141,9 @@ LABEL_9:
             len2 = v17 - j;
             v139 = v17;
             op2 = dest->token.variable;
-            v111 = 1;
+            variable = 1;
             if ( i1 > loc )
-              v111 = v107->token.variable;
+              variable = v107->token.variable;
             v20 = i1 - 1;
             op1 = &equation[v113];
             while ( 1 )
@@ -15333,14 +15262,14 @@ LABEL_100:
                         v41 = i1 < b1 && whole_flag != 0;
                         if ( i1 < b1 && whole_flag != 0 )
                         {
-                          v135 = v122->token.constant;
+                          constant = v122->token.constant;
                           v122->token.constant = 1.0;
                           v36 = (token_type *)i1;
                           b1 = i1;
                         }
                         else
                         {
-                          v135 = 0.0;
+                          constant = 0.0;
                         }
                         LOBYTE(v36) = j < b2a;
                         v42 = (unsigned int)v36 & v40;
@@ -15357,7 +15286,7 @@ LABEL_100:
                         v43 = se_compare(&equation[b1], v140 - b1, &equation[b2a], v37 - b2a, diff_signp);
                         if ( v41 )
                         {
-                          v122->token.constant = v135;
+                          v122->token.constant = constant;
                           b1 += 2;
                         }
                         if ( v42 )
@@ -15486,7 +15415,7 @@ LABEL_196:
                                       diff_signp[0],
                                       sop1,
                                       op2,
-                                      v111,
+                                      variable,
                                       j,
                                       i1,
                                       b2a,
@@ -15503,7 +15432,7 @@ LABEL_196:
                                       v121,
                                       diff_signp[0],
                                       sop1,
-                                      v111,
+                                      variable,
                                       op2,
                                       i1,
                                       j,
@@ -15672,7 +15601,7 @@ LABEL_115:
                             v66 = op1b;
                             scratch[v66].level = v121;
                             scratch[v66].kind = CONSTANT;
-                            if ( v111 == 2 )
+                            if ( variable == 2 )
                               scratch[v66].token.constant = -1.0;
                             else
                               scratch[v66].token.constant = 1.0;
@@ -15757,7 +15686,7 @@ LABEL_115:
 LABEL_162:
                             if ( ~len2 + *np + v78 - len1 > n_tokens )
                               error_huge();
-                            if ( v111 == 2 )
+                            if ( variable == 2 )
                               v107->token.variable = 1;
                             memmove(dest, &equation[v139], 16 * (*np - v139));
                             v80 = *np + ~len2;
@@ -15779,16 +15708,16 @@ LABEL_162:
                   }
                   else if ( v140 > b1 + 1 )
                   {
-                    v27 = &equation[b1 + 1].token;
+                    p_token = &equation[b1 + 1].token;
                     v28 = b1;
                     v29 = &equation[b1 + 2].level;
                     v30 = &equation[b1].level;
                     v31 = &equation[b1 - 1];
                     do
                     {
-                      if ( v27->variable == 6 )
+                      if ( p_token->variable == 6 )
                       {
-                        v105 = *(&v27[-1].operatr + 1);
+                        v105 = *(&p_token[-1].operatr + 1);
                         if ( v105 == *v29 && !*(v29 - 1) && d == *(double *)(v29 + 1) )
                         {
                           b2 = v28;
@@ -15823,7 +15752,7 @@ LABEL_162:
                         }
                       }
 LABEL_78:
-                      v27 += 4;
+                      p_token += 4;
                       v28 += 2;
                       v29 += 8;
                       v30 += 8;
@@ -15910,7 +15839,7 @@ int __usercall sf_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
   token_type *v8; // eax
   int v9; // ebx
   int v10; // eax
-  int *v11; // edx
+  int *p_level; // edx
   int v12; // ebx
   token_type *v13; // edx
   int v14; // eax
@@ -15938,7 +15867,7 @@ int __usercall sf_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
   int *v36; // eax
   int v37; // edx
   int v38; // edx
-  int l; // eax
+  int m; // eax
   int v40; // edx
   int v41; // esi
   int v42; // edx
@@ -15996,7 +15925,7 @@ int __usercall sf_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
   int modifieda; // [esp+80h] [ebp-28h]
   int modifiedb; // [esp+80h] [ebp-28h]
   int v99; // [esp+84h] [ebp-24h]
-  int v101; // [esp+8Ch] [ebp-1Ch]
+  int variable; // [esp+8Ch] [ebp-1Ch]
   int v102; // [esp+8Ch] [ebp-1Ch]
   int v103; // [esp+8Ch] [ebp-1Ch]
   int v104; // [esp+8Ch] [ebp-1Ch]
@@ -16033,7 +15962,7 @@ int __usercall sf_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
 LABEL_10:
   v9 = loc;
   modified = 0;
-  v101 = 0;
+  variable = 0;
   while ( v9 < *np )
   {
     v13 = &equation[v9];
@@ -16043,7 +15972,7 @@ LABEL_10:
     if ( level >= v14 )
     {
       if ( v13->kind == OPERATOR )
-        v101 = v13->token.variable;
+        variable = v13->token.variable;
       v10 = v9 + 1;
     }
     else
@@ -16052,21 +15981,21 @@ LABEL_10:
       v10 = v9 + 1;
       if ( v9 + 1 < *np && level < equation[v10].level )
       {
-        v11 = &equation[v9 + 3].level;
+        p_level = &equation[v9 + 3].level;
         do
         {
           v10 += 2;
           if ( v10 >= *np )
             break;
-          v12 = *v11;
-          v11 += 8;
+          v12 = *p_level;
+          p_level += 8;
         }
         while ( level < v12 );
       }
     }
     v9 = v10;
   }
-  if ( !modified && start_flag && (unsigned int)(v101 - 1) <= 1 )
+  if ( !modified && start_flag && (unsigned int)(variable - 1) <= 1 )
   {
     v93 = loc + 1;
     src = &equation[loc];
@@ -16372,8 +16301,8 @@ LABEL_112:
       }
       if ( v104 > 0 )
       {
-        for ( l = 0; l != v104; ++l )
-          scratch[l].level += 2;
+        for ( m = 0; m != v104; ++m )
+          scratch[m].level += 2;
       }
       v40 = v104;
       scratch[v40].level = level + 2;
@@ -16466,7 +16395,7 @@ void __usercall group_recurse(token_type *equation@<eax>, int *np@<edx>, int loc
 {
   int i; // esi
   int v6; // eax
-  int *v7; // edx
+  int *p_level; // edx
   int v8; // esi
   int v9; // eax
   int v10; // edi
@@ -16479,11 +16408,9 @@ void __usercall group_recurse(token_type *equation@<eax>, int *np@<edx>, int loc
   int *v17; // eax
   char *src; // [esp+1Ch] [ebp-2Ch]
   char *v19; // [esp+20h] [ebp-28h]
-  int di_0; // [esp+24h] [ebp-24h]
   int di_0a; // [esp+24h] [ebp-24h]
   int v22; // [esp+28h] [ebp-20h]
 
-  di_0 = loc;
   for ( i = loc; i < *np; i = v6 )
   {
     v9 = equation[i].level;
@@ -16499,21 +16426,21 @@ void __usercall group_recurse(token_type *equation@<eax>, int *np@<edx>, int loc
       v6 = i + 1;
       if ( i + 1 < *np && level < equation[v6].level )
       {
-        v7 = &equation[i + 3].level;
+        p_level = &equation[i + 3].level;
         do
         {
           v6 += 2;
           if ( v6 >= *np )
             break;
-          v8 = *v7;
-          v7 += 8;
+          v8 = *p_level;
+          p_level += 8;
         }
         while ( level < v8 );
       }
     }
   }
-  v10 = di_0 + 1;
-  if ( di_0 + 1 < i )
+  v10 = loc + 1;
+  if ( loc + 1 < i )
   {
     v11 = 0;
     di_0a = -1;
@@ -16617,12 +16544,12 @@ int __cdecl super_factor(token_type *equation, int *np, int start_flag)
 //----- (08061B6C) --------------------------------------------------------
 int __cdecl fractions_and_group(token_type *equation, int *np)
 {
-  int v2; // edi
+  int fractions; // edi
 
   elim_loop(equation, np);
-  v2 = make_fractions(equation, np);
+  fractions = make_fractions(equation, np);
   group_proc(equation, np);
-  return v2;
+  return fractions;
 }
 
 //----- (08061BB6) --------------------------------------------------------
@@ -16637,7 +16564,7 @@ int __cdecl make_fractions_and_group(int n)
     if ( n_rhs[n] )
     {
       if ( fractions_and_group(rhs[n], (int *)(4 * n + 134715712)) )
-        v1 = 1;
+        return 1;
     }
   }
   return v1;
@@ -16648,13 +16575,13 @@ int __cdecl patch_root_div(token_type *equation, int *np)
 {
   int i; // ebx
   token_type *v3; // edi
-  long double v4; // fst5
+  long double constant; // fst5
   char v6; // c2
   token_type *v7; // eax
   int v9; // [esp+1Ch] [ebp-3Ch]
   double v10; // [esp+28h] [ebp-30h]
   int modified; // [esp+34h] [ebp-24h]
-  int v12; // [esp+38h] [ebp-20h]
+  int level; // [esp+38h] [ebp-20h]
 
   modified = 0;
   for ( i = 1; *np - 2 > i; i += 2 )
@@ -16662,20 +16589,20 @@ int __cdecl patch_root_div(token_type *equation, int *np)
     v3 = &equation[i];
     if ( v3->token.variable == 4 )
     {
-      v12 = v3->level;
+      level = v3->level;
       if ( equation[i + 2].token.variable == 6 )
       {
         v9 = equation[i + 2].level;
-        if ( v9 == v12 + 1
+        if ( v9 == level + 1
           && equation[i + 1].kind == CONSTANT
           && v9 == equation[i + 3].level
           && equation[i + 3].kind == CONSTANT )
         {
-          v4 = equation[i + 1].token.constant;
+          constant = equation[i + 1].token.constant;
           do
-            v4 = __FPREM__(v4, 1.0);
+            constant = __FPREM__(constant, 1.0);
           while ( v6 );
-          if ( v4 == 0.0 )
+          if ( constant == 0.0 )
           {
             if ( rationalize_denominators )
             {
@@ -16690,7 +16617,7 @@ int __cdecl patch_root_div(token_type *equation, int *np)
                   memmove(&equation[i + 2], v3, 16 * (*np - i));
                   *np += 2;
                   v7 = &equation[i + 1];
-                  v7->level = v12;
+                  v7->level = level;
                   v7->kind = CONSTANT;
                   v7->token.constant = equation[i + 3].token.constant;
                   i += 2;
@@ -16721,7 +16648,7 @@ void __cdecl uf_neg_help(token_type *equation, int *np)
   token_type *v4; // esi
   token_type *v5; // eax
   token_type *v6; // eax
-  int v7; // [esp+18h] [ebp-20h]
+  int level; // [esp+18h] [ebp-20h]
 
   v2 = *np;
   if ( *np - 1 > 0 )
@@ -16732,8 +16659,8 @@ void __cdecl uf_neg_help(token_type *equation, int *np)
       v4 = &equation[v3];
       if ( v4->kind == CONSTANT && v4->token.constant < 0.0 )
       {
-        v7 = equation[v3 + 1].level;
-        if ( v7 == v4->level && (unsigned int)(equation[v3 + 1].token.variable - 3) <= 1 )
+        level = equation[v3 + 1].level;
+        if ( level == v4->level && (unsigned int)(equation[v3 + 1].token.variable - 3) <= 1 )
         {
           if ( v2 + 2 > n_tokens )
             error_huge();
@@ -16741,12 +16668,12 @@ void __cdecl uf_neg_help(token_type *equation, int *np)
           *np += 2;
           v4->token.constant = -v4->token.constant;
           v5 = &equation[v3 + 1];
-          v5->level = v7;
+          v5->level = level;
           v5->kind = OPERATOR;
           v5->token.variable = 4;
           v3 += 2;
           v6 = &equation[v3];
-          v6->level = v7;
+          v6->level = level;
           v6->kind = CONSTANT;
           v6->token.constant = -1.0;
         }
@@ -16778,7 +16705,7 @@ int __cdecl unsimp_power(token_type *equation, int *np)
   int v17; // [esp+20h] [ebp-28h]
   int modified; // [esp+24h] [ebp-24h]
   token_type *v19; // [esp+28h] [ebp-20h]
-  int v20; // [esp+2Ch] [ebp-1Ch]
+  int level; // [esp+2Ch] [ebp-1Ch]
 
   v2 = *np;
   modified = 0;
@@ -16790,15 +16717,15 @@ int __cdecl unsimp_power(token_type *equation, int *np)
     {
       if ( v3[-1].token.variable != 6 )
         goto LABEL_29;
-      v20 = v3[-1].level;
-      if ( v20 == v3->level && v3->kind == CONSTANT )
+      level = v3[-1].level;
+      if ( level == v3->level && v3->kind == CONSTANT )
         goto LABEL_29;
       v5 = v4;
       if ( v4 >= 0 )
       {
         v19 = v3 - 3;
         v6 = v3[-3].level;
-        if ( v20 <= v6 )
+        if ( level <= v6 )
         {
           v8 = v3 - 5;
           v17 = v2;
@@ -16810,7 +16737,7 @@ int __cdecl unsimp_power(token_type *equation, int *np)
             v7 = v8;
             v6 = v8->level;
             v8 -= 2;
-            if ( v20 > v6 )
+            if ( level > v6 )
             {
               v19 = v7;
               v2 = v17;
@@ -16821,7 +16748,7 @@ int __cdecl unsimp_power(token_type *equation, int *np)
         else
         {
 LABEL_11:
-          if ( v6 == v20 - 1 && v19->token.variable == 4 )
+          if ( v6 == level - 1 && v19->token.variable == 4 )
           {
             if ( v2 + 2 > n_tokens )
               error_huge();
@@ -16830,7 +16757,7 @@ LABEL_11:
             if ( *np > v4 + 3 )
             {
               v10 = v3->level;
-              if ( v20 <= v10 )
+              if ( level <= v10 )
               {
                 v11 = v3 + 1;
                 v12 = v4 + 3;
@@ -16849,17 +16776,17 @@ LABEL_11:
                   v10 = v11->level;
                   ++v11;
                 }
-                while ( v20 <= v10 );
+                while ( level <= v10 );
                 v3 = v16;
               }
             }
 LABEL_26:
             memmove(&v3[2], v3, 16 * (v9 - (v4 + 3)));
             *np += 2;
-            v3->level = v20 + 1;
+            v3->level = level + 1;
             v3->kind = CONSTANT;
             v3->token.constant = -1.0;
-            v3[1].level = v20 + 1;
+            v3[1].level = level + 1;
             v3[1].kind = OPERATOR;
             v3[1].token.variable = 3;
             v13 = 1;
@@ -16886,12 +16813,12 @@ int __cdecl sub_ufactor(token_type *equation, int *np, int ii)
 {
   int v3; // ecx
   int v4; // ebx
-  int v5; // edi
-  int v6; // esi
+  int variable; // edi
+  int level; // esi
   int *v7; // eax
   int v8; // edx
   int v9; // ebx
-  int *v10; // eax
+  int *p_level; // eax
   int v11; // edx
   int v12; // ebx
   int v13; // ecx
@@ -16979,7 +16906,7 @@ int __cdecl sub_ufactor(token_type *equation, int *np, int ii)
   int v97; // [esp+58h] [ebp-30h]
   int v98; // [esp+58h] [ebp-30h]
   char *v99; // [esp+58h] [ebp-30h]
-  double v100; // [esp+58h] [ebp-30h]
+  double constant; // [esp+58h] [ebp-30h]
   int v101; // [esp+58h] [ebp-30h]
   token_type *v102; // [esp+58h] [ebp-30h]
   int v103; // [esp+60h] [ebp-28h]
@@ -17000,21 +16927,21 @@ int __cdecl sub_ufactor(token_type *equation, int *np, int ii)
   {
     v89 = v4;
     v110 = &equation[v4];
-    v5 = v110->token.variable;
-    if ( v5 >= 3 )
+    variable = v110->token.variable;
+    if ( variable >= 3 )
     {
-      if ( v5 <= 4 )
+      if ( variable <= 4 )
       {
         if ( ii != 1 )
           goto LABEL_152;
       }
-      else if ( v5 != 6 || (ii & 1) != 0 )
+      else if ( variable != 6 || (ii & 1) != 0 )
       {
         goto LABEL_152;
       }
-      v6 = v110->level;
+      level = v110->level;
       v78 = v4 - 2;
-      if ( v4 - 2 >= 0 && v6 <= equation[v4 - 2].level )
+      if ( v4 - 2 >= 0 && level <= equation[v4 - 2].level )
       {
         v7 = (int *)&equation[v4 - 3] - 3;
         v8 = v4 - 2;
@@ -17031,20 +16958,20 @@ int __cdecl sub_ufactor(token_type *equation, int *np, int ii)
           v9 = *v7;
           v7 -= 8;
         }
-        while ( v6 <= v9 );
+        while ( level <= v9 );
         v78 = v8;
         v4 = v87;
       }
 LABEL_16:
       v69 = v78 + 1;
       v95 = v4 + 2;
-      if ( v4 + 2 >= v3 || v6 > equation[v4 + 2].level )
+      if ( v4 + 2 >= v3 || level > equation[v4 + 2].level )
       {
         v88 = v4 + 2;
       }
       else
       {
-        v10 = &equation[v4 + 4].level;
+        p_level = &equation[v4 + 4].level;
         v11 = v4 + 2;
         v103 = v4;
         do
@@ -17056,15 +16983,15 @@ LABEL_16:
             v4 = v103;
             goto LABEL_24;
           }
-          v12 = *v10;
-          v10 += 8;
+          v12 = *p_level;
+          p_level += 8;
         }
-        while ( v6 <= v12 );
+        while ( level <= v12 );
         v88 = v11;
         v4 = v103;
       }
 LABEL_24:
-      if ( v5 <= 4 )
+      if ( variable <= 4 )
       {
         if ( ii == 1 && v78 + 2 < v88 )
         {
@@ -17074,10 +17001,10 @@ LABEL_24:
           {
             v14 = &equation[v13];
             v15 = v14->level;
-            if ( v15 == v6 + 1 && (unsigned int)(v14->token.variable - 1) <= 1 )
+            if ( v15 == level + 1 && (unsigned int)(v14->token.variable - 1) <= 1 )
             {
               v16 = v13 - 2;
-              if ( v69 <= v13 - 2 && v6 < equation[v16].level )
+              if ( v69 <= v13 - 2 && level < equation[v16].level )
               {
                 v17 = (int *)&equation[v13 - 3] - 3;
                 v104 = v15;
@@ -17092,13 +17019,13 @@ LABEL_24:
                   v18 = *v17;
                   v17 -= 8;
                 }
-                while ( v6 < v18 );
+                while ( level < v18 );
                 v15 = v104;
               }
 LABEL_37:
               v90 = v16 + 1;
               v19 = v13 + 2;
-              if ( v13 + 2 < v88 && v6 < equation[v19].level )
+              if ( v13 + 2 < v88 && level < equation[v19].level )
               {
                 v20 = &equation[v13 + 4].level;
                 v105 = v15;
@@ -17113,7 +17040,7 @@ LABEL_37:
                   v21 = *v20;
                   v20 += 8;
                 }
-                while ( v6 < v21 );
+                while ( level < v21 );
                 v15 = v105;
               }
 LABEL_44:
@@ -17204,8 +17131,8 @@ LABEL_44:
         if ( v78 + 2 < v4 )
         {
           v31 = &equation[v107];
-          v80 = v6 + 1;
-          if ( v31->level == v6 + 1 )
+          v80 = level + 1;
+          if ( v31->level == level + 1 )
           {
 LABEL_74:
             if ( (unsigned int)(v31->token.variable - 3) <= 1 )
@@ -17285,8 +17212,8 @@ LABEL_74:
       if ( (!ii || ii == 4) && v95 < v88 )
       {
         v42 = &equation[v95];
-        v86 = (void *)(v6 + 1);
-        if ( v42->level == v6 + 1 )
+        v86 = (void *)(level + 1);
+        if ( v42->level == level + 1 )
         {
           v108 = v95;
 LABEL_102:
@@ -17370,25 +17297,25 @@ LABEL_102:
       if ( ii != 6 && ii != 8 )
         goto LABEL_152;
       v54 = &equation[v89 + 1];
-      if ( v6 != equation[v89 + 1].level )
+      if ( level != equation[v89 + 1].level )
         goto LABEL_152;
       if ( v54->kind )
         goto LABEL_152;
-      v100 = equation[v89 + 1].token.constant;
-      if ( !__finite(v100) || v100 <= 1.0 )
+      constant = equation[v89 + 1].token.constant;
+      if ( !__finite(constant) || constant <= 1.0 )
         goto LABEL_152;
       if ( ii != 8 )
       {
-        if ( v100 > 100.0 )
+        if ( constant > 100.0 )
           goto LABEL_152;
         if ( v4 - v69 == 1 )
         {
           if ( equation[v69].kind )
             goto LABEL_152;
         }
-        else if ( v4 - v69 > 1 && v100 > 2.0 )
+        else if ( v4 - v69 > 1 && constant > 2.0 )
         {
-          v55 = v100;
+          v55 = constant;
           do
             v55 = __FPREM__(v55, 1.0);
           while ( v57 );
@@ -17396,7 +17323,7 @@ LABEL_102:
             goto LABEL_152;
         }
       }
-      v93 = ceil(v100) - 1.0;
+      v93 = ceil(constant) - 1.0;
       v101 = v4 - v69;
       v58 = ((long double)(v4 - v69) + 1.0) * v93;
       if ( (long double)*np + v58 <= (long double)(n_tokens - 10) )
@@ -17415,7 +17342,7 @@ LABEL_102:
           v60 = &equation[v88].level;
           do
           {
-            *v60 = v6;
+            *v60 = level;
             *(v60 - 1) = 2;
             v60[1] = 3;
             memmove(v102, &equation[v69], v72);
@@ -17447,7 +17374,6 @@ LABEL_102:
 LABEL_154:
         v4 = v78;
         modified = 1;
-        goto LABEL_152;
       }
     }
 LABEL_152:
@@ -17456,8 +17382,8 @@ LABEL_152:
   }
   return modified;
 }
-// 80621CF: conditional instruction was optimized away because of 'edi.4 in (3..4|==6)'
-// 80621DD: conditional instruction was optimized away because of 'edi.4==6'
+// 80621CF: conditional instruction was optimized away because edi.4 is in (3..4|==6)
+// 80621DD: conditional instruction was optimized away because edi.4==6
 // 8062AAA: variable 'v57' is possibly undefined
 
 //----- (08062CC2) --------------------------------------------------------
@@ -17521,7 +17447,7 @@ int __cdecl uf_times(token_type *equation, int *np)
   int v8; // eax
   int v9; // eax
   int rv; // [esp+18h] [ebp-20h]
-  int v12; // [esp+1Ch] [ebp-1Ch]
+  int level; // [esp+1Ch] [ebp-1Ch]
 
   rv = 0;
   do
@@ -17538,13 +17464,13 @@ int __cdecl uf_times(token_type *equation, int *np)
       {
         if ( v2[1].token.variable == 4 )
         {
-          v12 = v2[1].level;
+          level = v2[1].level;
           v4 = v3;
           if ( v3 >= 0 )
           {
             v5 = v2;
             v6 = v2->level;
-            if ( v12 <= v6 )
+            if ( level <= v6 )
             {
               v7 = v2 - 1;
               do
@@ -17556,7 +17482,7 @@ int __cdecl uf_times(token_type *equation, int *np)
                 v6 = v7->level;
                 --v7;
               }
-              while ( v12 <= v6 );
+              while ( level <= v6 );
             }
           }
         }
@@ -17652,7 +17578,7 @@ LABEL_9:
 void __cdecl term_value(double *dp, token_type *p1, int n1, int loc)
 {
   int v4; // eax
-  int *v5; // edx
+  int *p_level; // edx
   int v6; // edi
   int v7; // ebx
   int v8; // ecx
@@ -17668,7 +17594,7 @@ void __cdecl term_value(double *dp, token_type *p1, int n1, int loc)
   long double v18; // fst4
   int v19; // ebx
   int *v20; // edx
-  int v21; // ecx
+  int level; // ecx
   long double v22; // fst6
   int *v23; // [esp+4h] [ebp-38h]
   int v24; // [esp+8h] [ebp-34h]
@@ -17690,38 +17616,38 @@ void __cdecl term_value(double *dp, token_type *p1, int n1, int loc)
   div_level = 0;
   if ( loc < n1 )
   {
-    v5 = &p1[loc].level;
+    p_level = &p1[loc].level;
     v4 = loc;
     v6 = 0;
     do
     {
-      v7 = *v5;
-      v8 = *(v5 - 1);
+      v7 = *p_level;
+      v8 = *(p_level - 1);
       if ( v8 == 1 )
       {
         if ( v6 )
         {
           *dp = *dp - 1.0;
-          *v31 = *v31 - (long double)v5[1];
-          v9 = *v29 - (long double)v5[1];
+          *v31 = *v31 - (long double)p_level[1];
+          v9 = *v29 - (long double)p_level[1];
         }
         else
         {
           *dp = *dp + 1.0;
-          *v31 = (long double)v5[1] + *v31;
-          v9 = (long double)v5[1] + *v29;
+          *v31 = (long double)p_level[1] + *v31;
+          v9 = (long double)p_level[1] + *v29;
         }
         *v29 = v9;
       }
       else if ( v8 == 2 )
       {
-        if ( v7 == 1 && (unsigned int)(v5[1] - 1) <= 1 )
+        if ( v7 == 1 && (unsigned int)(p_level[1] - 1) <= 1 )
           break;
-        if ( v5[1] == 4 )
+        if ( p_level[1] == 4 )
         {
           if ( !v6 || v7 < div_level )
           {
-            div_level = *v5;
+            div_level = *p_level;
             v6 = 1;
           }
         }
@@ -17731,7 +17657,7 @@ void __cdecl term_value(double *dp, token_type *p1, int n1, int loc)
         }
       }
       ++v4;
-      v5 += 4;
+      p_level += 4;
     }
     while ( n1 > v4 );
   }
@@ -17790,9 +17716,9 @@ void __cdecl term_value(double *dp, token_type *p1, int n1, int loc)
                 if ( loc > --v19 )
                   break;
                 v20 = (int *)v16;
-                v21 = v16->level;
+                level = v16->level;
                 --v16;
-                if ( v26 > v21 )
+                if ( v26 > level )
                 {
                   v11 = v24;
                   v10 = v23;
@@ -17890,10 +17816,10 @@ int __cdecl poly_in_v(token_type *p1, int n, int v, int allow_divides)
   int v7; // eax
   token_type *v8; // edx
   int v9; // ecx
-  int v10; // edi
+  int level; // edi
   int v11; // edi
   token_type *v12; // esi
-  int v13; // edx
+  int variable; // edx
   token_type *v15; // [esp+20h] [ebp-38h]
   int v16; // [esp+28h] [ebp-30h]
   token_type *v17; // [esp+2Ch] [ebp-2Ch]
@@ -17931,9 +17857,9 @@ LABEL_33:
     {
       if ( ++v19 > 1 )
         return 0;
-      v10 = v8->level;
-      v18 = v10;
-      if ( v7 != v10 && v10 != v16 )
+      level = v8->level;
+      v18 = level;
+      if ( v7 != level && level != v16 )
         return 0;
       if ( v5 > 1 )
       {
@@ -17944,8 +17870,8 @@ LABEL_33:
         {
           if ( v7 == v12[1].level )
           {
-            v13 = v12[1].token.variable;
-            switch ( v13 )
+            variable = v12[1].token.variable;
+            switch ( variable )
             {
               case 4:
                 if ( !allow_divides && v9 - 2 == v11 )
@@ -18341,6 +18267,7 @@ end_div2:
 }
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
 // 8049244: using guessed type int __cdecl __memmove_chk(_DWORD, _DWORD, _DWORD, _DWORD);
+// 8063572: using guessed type int t1[7];
 
 //----- (0806425F) --------------------------------------------------------
 void __usercall save_factors(token_type *equation@<eax>, int *np@<edx>, int loc1@<ecx>, int len, int level)
@@ -18348,7 +18275,7 @@ void __usercall save_factors(token_type *equation@<eax>, int *np@<edx>, int loc1
   int v7; // edx
   token_type *v8; // eax
   int v9; // edx
-  int *v10; // eax
+  int *p_level; // eax
   int v11; // ecx
   int v12; // [esp+18h] [ebp-20h]
   int v13; // [esp+18h] [ebp-20h]
@@ -18369,13 +18296,13 @@ void __usercall save_factors(token_type *equation@<eax>, int *np@<edx>, int loc1
   v9 = n_trhs + v13;
   if ( loc1 < n_trhs + v13 )
   {
-    v10 = &equation[loc1].level;
+    p_level = &equation[loc1].level;
     v11 = loc1;
     do
     {
-      *v10 += level;
+      *p_level += level;
       ++v11;
-      v10 += 4;
+      p_level += 4;
     }
     while ( v9 > v11 );
   }
@@ -18394,7 +18321,7 @@ int __cdecl is_integer_var(int v)
   v2 = var_name(v);
   result = 0;
   if ( v2 )
-    result = v1(v2, "integer", 7) == 0;
+    return v1(v2, "integer", 7) == 0;
   return result;
 }
 
@@ -18402,32 +18329,32 @@ int __cdecl is_integer_var(int v)
 int __cdecl is_integer_expr(token_type *p1, int n)
 {
   int i; // esi
-  kind_list v4; // eax
-  long double v5; // fst5
+  kind_list kind; // eax
+  long double constant; // fst5
   char v7; // c2
 
   if ( n > 0 )
   {
     for ( i = 0; n > i; ++i )
     {
-      v4 = p1->kind;
+      kind = p1->kind;
       if ( p1->kind == VARIABLE )
       {
         if ( !is_integer_var(p1->token.variable) && (p1->token.variable & 0x3FFF) != 4 )
           return 0;
       }
-      else if ( v4 )
+      else if ( kind )
       {
-        if ( v4 == OPERATOR && p1->token.variable == 4 )
+        if ( kind == OPERATOR && p1->token.variable == 4 )
           return 0;
       }
       else
       {
-        v5 = p1->token.constant;
+        constant = p1->token.constant;
         do
-          v5 = __FPREM__(v5, 1.0);
+          constant = __FPREM__(constant, 1.0);
         while ( v7 );
-        if ( v5 != 0.0 )
+        if ( constant != 0.0 )
           return 0;
       }
       ++p1;
@@ -18444,8 +18371,8 @@ int remove_factors()
   int v2; // ecx
   int v3; // ebx
   token_type *v4; // eax
-  int v5; // esi
-  int v6; // eax
+  int variable; // esi
+  int level; // eax
   int divide_flag; // [esp+24h] [ebp-24h]
   int n1; // [esp+28h] [ebp-20h]
   int v9; // [esp+2Ch] [ebp-1Ch]
@@ -18467,19 +18394,19 @@ int remove_factors()
   do
   {
     v4 = &tlhs[v3];
-    v5 = v4->token.variable;
-    v6 = v4->level;
-    if ( v6 == 1 )
+    variable = v4->token.variable;
+    level = v4->level;
+    if ( level == 1 )
     {
-      if ( v5 < 1 )
+      if ( variable < 1 )
         return 0;
-      if ( v5 <= 2 )
+      if ( variable <= 2 )
       {
 LABEL_26:
         v2 = 1;
         goto LABEL_27;
       }
-      if ( v5 > 4 )
+      if ( variable > 4 )
         return 0;
       if ( v2 && !divide_flag )
       {
@@ -18487,11 +18414,11 @@ LABEL_26:
         memmove(&scratch[n1], &tlhs[v10], 16 * (v3 - v10));
         n1 += v3 - v10;
       }
-      divide_flag = v5 == 4;
+      divide_flag = variable == 4;
       v9 = v3 + 1;
       v2 = 0;
     }
-    else if ( v6 == 2 && (unsigned int)(v5 - 1) <= 1 )
+    else if ( level == 2 && (unsigned int)(variable - 1) <= 1 )
     {
       goto LABEL_26;
     }
@@ -18525,7 +18452,7 @@ int __cdecl find_greatest_power(token_type *p1, int n1, int *vp1, double *pp1, i
   int v8; // ecx
   int v9; // ebx
   token_type *k; // esi
-  int v11; // eax
+  int variable; // eax
   int v12; // eax
   token_type *v13; // ecx
   int v14; // edx
@@ -18538,11 +18465,11 @@ int __cdecl find_greatest_power(token_type *p1, int n1, int *vp1, double *pp1, i
   int v21; // esi
   int *v22; // edx
   int v23; // ecx
-  int v24; // edx
+  int level; // edx
   int v25; // edi
   token_type *v26; // eax
   int v27; // ecx
-  int *v28; // ebx
+  int *p_level; // ebx
   long double v29; // fst7
   int v30; // edx
   int v31; // eax
@@ -18552,7 +18479,7 @@ int __cdecl find_greatest_power(token_type *p1, int n1, int *vp1, double *pp1, i
   int v35; // esi
   int v36; // ecx
   int v37; // edx
-  storage_type *v38; // eax
+  storage_type *p_token; // eax
   int v40; // [esp+24h] [ebp-84h]
   double d; // [esp+28h] [ebp-80h]
   token_type *v42; // [esp+38h] [ebp-70h]
@@ -18584,13 +18511,13 @@ int __cdecl find_greatest_power(token_type *p1, int n1, int *vp1, double *pp1, i
   v9 = 1;
   for ( k = p1; v9 < n1; k += 2 )
   {
-    v11 = k[1].token.variable;
-    if ( (unsigned int)(v11 - 1) <= 1 && k[1].level == 1 )
+    variable = k[1].token.variable;
+    if ( (unsigned int)(variable - 1) <= 1 && k[1].level == 1 )
       break;
-    v24 = k[1].level;
-    if ( v11 == 4 )
+    level = k[1].level;
+    if ( variable == 4 )
     {
-      if ( !v52 || v24 < div_level )
+      if ( !v52 || level < div_level )
       {
         div_level = k[1].level;
         v52 = 1;
@@ -18601,14 +18528,14 @@ int __cdecl find_greatest_power(token_type *p1, int n1, int *vp1, double *pp1, i
       if ( v52 )
       {
         v25 = 0;
-        if ( v24 > div_level )
+        if ( level > div_level )
           v25 = v52;
         v52 = v25;
       }
-      if ( v11 == 6 && k[2].kind == CONSTANT )
+      if ( variable == 6 && k[2].kind == CONSTANT )
       {
         v49 = *vp1;
-        if ( (*vp1 || k[2].level == v24) && (*dcodep > 1 || v52 == *dcodep) )
+        if ( (*vp1 || k[2].level == level) && (*dcodep > 1 || v52 == *dcodep) )
         {
           d = k[2].token.constant;
           v26 = k;
@@ -18616,7 +18543,7 @@ int __cdecl find_greatest_power(token_type *p1, int n1, int *vp1, double *pp1, i
           v40 = v8;
           v27 = v9;
           v44 = v9;
-          v28 = &k[-1].level;
+          p_level = &k[-1].level;
           while ( 1 )
           {
             if ( v26->kind == VARIABLE )
@@ -18647,10 +18574,10 @@ int __cdecl find_greatest_power(token_type *p1, int n1, int *vp1, double *pp1, i
               v9 = v44;
               goto LABEL_92;
             }
-            v35 = *v28;
+            v35 = *p_level;
             v26 -= 2;
-            v28 -= 8;
-            if ( v24 >= v35 )
+            p_level -= 8;
+            if ( level >= v35 )
             {
               k = v42;
               v8 = v40;
@@ -18847,13 +18774,13 @@ LABEL_49:
     v37 = v36 + 1;
     if ( n1 > v36 + 1 )
     {
-      v38 = &p1[v37].token;
+      p_token = &p1[v37].token;
       do
       {
-        if ( (unsigned int)(v38->variable - 1) <= 1 && *(&v38[-1].operatr + 1) == 1 )
+        if ( (unsigned int)(p_token->variable - 1) <= 1 && *(&p_token[-1].operatr + 1) == 1 )
           break;
         v37 += 2;
-        v38 += 4;
+        p_token += 4;
       }
       while ( n1 > v37 );
     }
@@ -18872,12 +18799,12 @@ LABEL_49:
 int __usercall find_highest_count@<eax>(token_type *p1@<eax>, int n1@<edx>, token_type *p2@<ecx>, int n2, int *vp1)
 {
   int v6; // edi
-  int v7; // ecx
+  int variable; // ecx
   int v8; // edx
   token_type *v9; // eax
   signed int v10; // esi
   int v11; // edi
-  int v12; // eax
+  int greatest_power; // eax
   int v13; // eax
   int count1; // [esp+28h] [ebp-1F90h]
   int count1a; // [esp+28h] [ebp-1F90h]
@@ -18909,19 +18836,19 @@ int __usercall find_highest_count@<eax>(token_type *p1@<eax>, int n1@<edx>, toke
     {
       if ( v9->kind != VARIABLE )
         goto LABEL_10;
-      v7 = v9->token.variable;
-      if ( v7 <= last_v )
+      variable = v9->token.variable;
+      if ( variable <= last_v )
         goto LABEL_10;
-      if ( v6 != -1 && v7 >= v6 )
+      if ( v6 != -1 && variable >= v6 )
       {
-        if ( v6 == v7 )
+        if ( v6 == variable )
         {
           ++count1;
-          v7 = v6;
+          variable = v6;
           goto LABEL_12;
         }
 LABEL_10:
-        v7 = v6;
+        variable = v6;
         goto LABEL_12;
       }
       count1 = 1;
@@ -18930,15 +18857,15 @@ LABEL_12:
       v9 += 2;
       if ( n1 <= v8 )
         break;
-      v6 = v7;
+      v6 = variable;
     }
-    if ( v7 != -1 )
+    if ( variable != -1 )
     {
-      va[v10].v = v7;
+      va[v10].v = variable;
       va[v10++].count = count1;
       if ( v10 != 1000 )
       {
-        last_v = v7;
+        last_v = variable;
         continue;
       }
 LABEL_19:
@@ -18951,8 +18878,8 @@ LABEL_19:
           *vp1 = va[v11].v;
           divide_flag[0] = 2;
           count1a = find_greatest_power(p1, n1, vp1, &d1, &t1, &len_t1, divide_flag);
-          v12 = find_greatest_power(p2, n2, vp1, &d2, &t2, &len_t2, divide_flag);
-          if ( d2 > 0.0 && d2 <= (long double)d1 && count1a >= v12 )
+          greatest_power = find_greatest_power(p2, n2, vp1, &d2, &t2, &len_t2, divide_flag);
+          if ( d2 > 0.0 && d2 <= (long double)d1 && count1a >= greatest_power )
             break;
           divide_flag[0] = divide_flag[0] == 0;
           count1b = find_greatest_power(p1, n1, vp1, &d1, &t1, &len_t1, divide_flag);
@@ -18996,7 +18923,7 @@ int __cdecl poly_div(token_type *d1, int len1, token_type *d2, int len2, int *vp
   int v22; // ebx
   int v23; // edx
   int v24; // eax
-  int v25; // eax
+  int greatest_power; // eax
   int v27; // [esp+24h] [ebp-F4h]
   int v28; // [esp+28h] [ebp-F0h]
   int old_partial; // [esp+2Ch] [ebp-ECh]
@@ -19020,7 +18947,7 @@ int __cdecl poly_div(token_type *d1, int len1, token_type *d2, int len2, int *vp
     partial_flag = old_partial;
     if ( v5 == 13 )
       __longjmp_chk(jmp_save, 13);
-    v6 = 0;
+    return 0;
   }
   else
   {
@@ -19191,7 +19118,7 @@ int __cdecl poly_div(token_type *d1, int len1, token_type *d2, int len2, int *vp
               uf_repeat(trhs, &n_trhs);
               uf_tsimp(trhs, &n_trhs);
               list_debug(4, trhs, n_trhs, 0, 0);
-              v25 = find_greatest_power(trhs, n_trhs, vp, &v31, tp1, &lentp1, &dcodep);
+              greatest_power = find_greatest_power(trhs, n_trhs, vp, &v31, tp1, &lentp1, &dcodep);
               if ( v32 > (long double)v31 )
               {
                 memmove(tlhs, quotient, 16 * n_quotient);
@@ -19211,14 +19138,14 @@ int __cdecl poly_div(token_type *d1, int len1, token_type *d2, int len2, int *vp
               }
               if ( pp1 <= (long double)v31 )
               {
-                if ( v31 > (long double)pp1 || v25 >= v7 )
+                if ( v31 > (long double)pp1 || greatest_power >= v7 )
                   break;
               }
               else
               {
                 pp1 = v31;
               }
-              v7 = v25;
+              v7 = greatest_power;
             }
           }
         }
@@ -19231,7 +19158,7 @@ LABEL_69:
   }
   return v6;
 }
-// 8048EF4: using guessed type int __cdecl __longjmp_chk(_DWORD, _DWORD);
+// 8048EF4: using guessed type void __cdecl __noreturn __longjmp_chk(_DWORD, _DWORD);
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
 // 8049244: using guessed type int __cdecl __memmove_chk(_DWORD, _DWORD, _DWORD, _DWORD);
 // 816E598: using guessed type int dword_816E598[];
@@ -19274,12 +19201,12 @@ int __usercall pdiv_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int
   int v8; // edx
   int v9; // ecx
   int v10; // edx
-  int *v11; // ebx
+  int *p_level; // ebx
   int v12; // esi
   int v13; // ebx
   int v14; // eax
   int v15; // esi
-  int v16; // edx
+  int variable; // edx
   int v17; // edx
   token_type *v18; // edi
   int v19; // ecx
@@ -19367,14 +19294,14 @@ int __usercall pdiv_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int
           }
           else
           {
-            v11 = &v65->level;
+            p_level = &v65->level;
             do
             {
               v10 += 2;
               if ( v10 >= v7 )
                 break;
-              v12 = *v11;
-              v11 += 8;
+              v12 = *p_level;
+              p_level += 8;
             }
             while ( level < v12 );
           }
@@ -19391,14 +19318,14 @@ int __usercall pdiv_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int
               d1 = v54;
               v15 = v66 + v10;
               j = loc;
-              v16 = 0;
+              variable = 0;
               do
               {
                 if ( level == v14 && d1->kind == OPERATOR )
                 {
-                  v16 = d1->token.variable;
+                  variable = d1->token.variable;
                 }
-                else if ( v16 != 4 )
+                else if ( variable != 4 )
                 {
                   v17 = j + 1;
                   if ( v13 > j + 1 )
@@ -19642,7 +19569,7 @@ LABEL_48:
                     }
                   }
 LABEL_101:
-                  v16 = 4;
+                  variable = 4;
                 }
                 ++j;
                 v13 = *np;
@@ -19710,6 +19637,7 @@ LABEL_106:
   return v78;
 }
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
+// 8065B31: using guessed type int v[7];
 
 //----- (080664F4) --------------------------------------------------------
 int __cdecl div_remainder(token_type *equation, int *np, int poly_flag, int quick_flag)
@@ -19729,7 +19657,7 @@ int __usercall mod_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int 
 {
   int v4; // ebx
   int v6; // eax
-  int *v7; // edx
+  int *p_level; // edx
   int v8; // ebx
   int v9; // edx
   int v10; // eax
@@ -19743,7 +19671,7 @@ int __usercall mod_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int 
   int v18; // ebx
   int v19; // ecx
   int v20; // eax
-  int v21; // edx
+  int variable; // edx
   int v22; // edx
   token_type *v23; // eax
   token_type *v24; // esi
@@ -19768,7 +19696,6 @@ int __usercall mod_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int 
   int len2; // [esp+38h] [ebp-B0h]
   int v44; // [esp+3Ch] [ebp-ACh]
   token_type *d1; // [esp+4Ch] [ebp-9Ch]
-  int v46; // [esp+50h] [ebp-98h]
   token_type *v47; // [esp+54h] [ebp-94h]
   int *v48; // [esp+60h] [ebp-88h]
   int v49; // [esp+64h] [ebp-84h]
@@ -19777,14 +19704,13 @@ int __usercall mod_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int 
   int v52; // [esp+70h] [ebp-78h]
   token_type *p1; // [esp+74h] [ebp-74h]
   int len1; // [esp+78h] [ebp-70h]
-  int v55; // [esp+7Ch] [ebp-6Ch]
+  token_type *v55; // [esp+7Ch] [ebp-6Ch]
   int v56; // [esp+80h] [ebp-68h]
   int i3; // [esp+88h] [ebp-60h]
   token_type *v58; // [esp+90h] [ebp-58h]
   int v59; // [esp+94h] [ebp-54h]
-  token_type *v61; // [esp+A4h] [ebp-44h]
   int v62; // [esp+A8h] [ebp-40h]
-  int v63; // [esp+ACh] [ebp-3Ch]
+  token_type *v63; // [esp+ACh] [ebp-3Ch]
   int *v64; // [esp+B0h] [ebp-38h]
   int *v65; // [esp+B0h] [ebp-38h]
   int dest; // [esp+B4h] [ebp-34h]
@@ -19796,8 +19722,6 @@ int __usercall mod_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int 
   int v; // [esp+C8h] [ebp-20h] BYREF
   int diff_sign[7]; // [esp+CCh] [ebp-1Ch] BYREF
 
-  v61 = equation;
-  v46 = loc;
   v4 = loc;
   v49 = 0;
   while ( 1 )
@@ -19818,14 +19742,14 @@ int __usercall mod_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int 
       v6 = v4 + 1;
       if ( v4 + 1 < *np && level < equation[v6].level )
       {
-        v7 = &equation[v4 + 3].level;
+        p_level = &equation[v4 + 3].level;
         do
         {
           v6 += 2;
           if ( v6 >= *np )
             break;
-          v8 = *v7;
-          v7 += 8;
+          v8 = *p_level;
+          p_level += 8;
         }
         while ( level < v8 );
       }
@@ -19835,20 +19759,20 @@ int __usercall mod_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int 
   result = v49;
   if ( v49 )
     return 1;
-  v12 = v46 + 1;
-  if ( v46 + 1 < v9 )
+  v12 = loc + 1;
+  if ( loc + 1 < v9 )
   {
-    v13 = &v61[v12];
+    v13 = &equation[v12];
     v14 = v13->level;
     if ( level <= v14 )
     {
-      v59 = v46 + 3;
+      v59 = loc + 3;
       v56 = ~v12;
-      v55 = (int)&v61[v46 + 5];
-      v58 = &v61[v46 + 3];
-      v42 = &v61[v12];
+      v55 = &equation[loc + 5];
+      v58 = &equation[loc + 3];
+      v42 = &equation[v12];
       v62 = level + 2;
-      v15 = v46 + 1;
+      v15 = loc + 1;
       while ( 1 )
       {
         if ( level == v14 && v13->token.variable == 5 )
@@ -19856,7 +19780,7 @@ int __usercall mod_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int 
           v16 = v59;
           if ( v9 > v59 && level < v58->level )
           {
-            v17 = (int *)(v55 + 4);
+            v17 = &v55->level;
             do
             {
               v16 += 2;
@@ -19869,9 +19793,9 @@ int __usercall mod_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int 
           }
           len1 = v56 + v16;
           v19 = *np;
-          if ( v46 < *np )
+          if ( loc < *np )
           {
-            v20 = v61[v46].level;
+            v20 = equation[loc].level;
             if ( level <= v20 )
               break;
           }
@@ -19884,26 +19808,26 @@ LABEL_101:
         v14 = v58->level;
         v58 += 2;
         v56 -= 2;
-        v55 += 32;
+        v55 += 2;
         if ( level > v14 )
           return 0;
         v15 = v59;
         v59 += 2;
       }
-      p1 = &v61[v15 + 1];
+      p1 = &equation[v15 + 1];
       v51 = v42;
-      v47 = &v61[v46 + 3];
-      d1 = &v61[v46];
-      j = v46;
-      v21 = 0;
+      v47 = &equation[loc + 3];
+      d1 = &equation[loc];
+      j = loc;
+      variable = 0;
       v44 = level + 1;
       while ( 1 )
       {
         if ( level == v20 && d1->kind == OPERATOR )
         {
-          v21 = d1->token.variable;
+          variable = d1->token.variable;
         }
-        else if ( v21 != 5 )
+        else if ( variable != 5 )
         {
           v67 = (token_type *)(j + 1);
           if ( v19 <= j + 1 || (v22 = v51->level, level >= v22) )
@@ -19946,14 +19870,14 @@ LABEL_101:
                   {
                     if ( (int)v67 > v27 )
                     {
-                      v28 = &v61[v27].level;
+                      v28 = &equation[v27].level;
                       v29 = (int)v67 + ~v27;
-                      p2a = &v61[v27 + 1];
+                      p2a = &equation[v27 + 1];
                       do
                       {
                         if ( *v28 == v62 && v28[1] == 5 && se_compare(p1, len1, p2a, v29, diff_sign) )
                         {
-                          memmove(v28 - 1, &v61[(_DWORD)v67], 16 * (*np - (_DWORD)v67));
+                          memmove(v28 - 1, &equation[(_DWORD)v67], 16 * (*np - (_DWORD)v67));
                           *np += ~v29;
                           return 1;
                         }
@@ -19974,9 +19898,9 @@ LABEL_101:
             }
             else if ( v26 > 3 )
             {
-              if ( v26 == 5 && se_compare(p1, len1, &v61[p2 + 1], v25 + ~p2, diff_sign) )
+              if ( v26 == 5 && se_compare(p1, len1, &equation[p2 + 1], v25 + ~p2, diff_sign) )
               {
-                memmove(&v61[p2], &v61[v25], 16 * (*np - v25));
+                memmove(&equation[p2], &equation[v25], 16 * (*np - v25));
                 *np += ~(v25 + ~p2);
                 return 1;
               }
@@ -19992,24 +19916,24 @@ LABEL_101:
                 {
                   for ( ; p2b > v30; v30 += 2 )
                   {
-                    v31 = &v61[v30];
+                    v31 = &equation[v30];
                     if ( v31->level == v62 )
                     {
                       v32 = v31->token.variable;
                       if ( v32 == 3 )
                       {
                         v30 = p2b - 2;
-                        if ( is_integer_expr(&v61[i3 + 1], p2b + ~i3) )
+                        if ( is_integer_expr(&equation[i3 + 1], p2b + ~i3) )
                         {
                           v33 = i3 + 2;
                           if ( p2b > i3 + 2 )
                           {
                             v34 = i3 + 4;
-                            v35 = &v61[v33].level;
+                            v35 = &equation[v33].level;
                             dest = ~v33;
-                            v68 = &v61[i3 + 3];
-                            v65 = &v61[i3 + 4].level;
-                            v63 = (int)&v61[i3 + 6];
+                            v68 = &equation[i3 + 3];
+                            v65 = &equation[i3 + 4].level;
+                            v63 = &equation[i3 + 6];
                             do
                             {
                               v36 = *v35;
@@ -20018,7 +19942,7 @@ LABEL_101:
                                 v37 = v34;
                                 if ( p2b > v34 && *v65 > v36 )
                                 {
-                                  v38 = (int *)(v63 + 4);
+                                  v38 = &v63->level;
                                   do
                                   {
                                     v37 += 2;
@@ -20031,7 +19955,7 @@ LABEL_101:
                                 }
                                 if ( se_compare(p1, len1, v68, v37 + dest, diff_sign) )
                                 {
-                                  memmove(v35 - 1, &v61[v37], 16 * (*np - v37));
+                                  memmove(v35 - 1, &equation[v37], 16 * (*np - v37));
                                   *np += ~(v37 + dest);
                                   return 1;
                                 }
@@ -20041,16 +19965,16 @@ LABEL_101:
                               dest -= 2;
                               v68 += 2;
                               v65 += 8;
-                              v63 += 32;
+                              v63 += 2;
                             }
                             while ( p2b > v34 - 2 );
                             v30 = p2b - 2;
                           }
                         }
                       }
-                      else if ( v32 == 5 && se_compare(p1, len1, &v61[v30 + 1], ~v30 + p2b, diff_sign) )
+                      else if ( v32 == 5 && se_compare(p1, len1, &equation[v30 + 1], ~v30 + p2b, diff_sign) )
                       {
-                        memmove(v31, &v61[p2b], 16 * (*np - p2b));
+                        memmove(v31, &equation[p2b], 16 * (*np - p2b));
                         *np += ~(~v30 + p2b);
                         return 1;
                       }
@@ -20083,13 +20007,13 @@ LABEL_101:
                 }
                 while ( n_trhs > v41 );
               }
-              memmove(&v61[j + v40], &v61[j + len2], 16 * (*np - (j + len2)));
+              memmove(&equation[j + v40], &equation[j + len2], 16 * (*np - (j + len2)));
               *np = n_trhs + *np - len2;
               memmove(d1, trhs, 16 * n_trhs);
               return 1;
             }
           }
-          v21 = 5;
+          variable = 5;
         }
         ++j;
         v19 = *np;
@@ -20261,7 +20185,7 @@ int __cdecl poly2_gcd(token_type *larger, int llen, token_type *smaller, int sle
   }
   return v8;
 }
-// 8048EF4: using guessed type int __cdecl __longjmp_chk(_DWORD, _DWORD);
+// 8048EF4: using guessed type void __cdecl __noreturn __longjmp_chk(_DWORD, _DWORD);
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
 // 8049244: using guessed type int __cdecl __memmove_chk(_DWORD, _DWORD, _DWORD, _DWORD);
 
@@ -20270,7 +20194,7 @@ int __usercall polydiv_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, 
 {
   int v4; // esi
   int v6; // eax
-  int *v7; // edx
+  int *p_level; // edx
   int v8; // esi
   int v9; // eax
   int v10; // eax
@@ -20282,7 +20206,7 @@ int __usercall polydiv_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, 
   int v16; // edi
   int v17; // eax
   token_type *v18; // esi
-  int v19; // edx
+  int variable; // edx
   int v20; // eax
   int *v21; // edx
   int v22; // ecx
@@ -20295,21 +20219,17 @@ int __usercall polydiv_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, 
   int v29; // eax
   int v31; // [esp+38h] [ebp-50h]
   int modified; // [esp+3Ch] [ebp-4Ch]
-  int v33; // [esp+40h] [ebp-48h]
-  token_type *v34; // [esp+44h] [ebp-44h]
   token_type *larger; // [esp+48h] [ebp-40h]
   int llen; // [esp+4Ch] [ebp-3Ch]
-  int v37; // [esp+50h] [ebp-38h]
+  token_type *v37; // [esp+50h] [ebp-38h]
   int v38; // [esp+54h] [ebp-34h]
-  int v39; // [esp+58h] [ebp-30h]
+  token_type *v39; // [esp+58h] [ebp-30h]
   token_type *smaller; // [esp+5Ch] [ebp-2Ch]
-  int v42; // [esp+64h] [ebp-24h]
+  token_type *v42; // [esp+64h] [ebp-24h]
   int v43; // [esp+68h] [ebp-20h]
   int j; // [esp+6Ch] [ebp-1Ch]
   int ja; // [esp+6Ch] [ebp-1Ch]
 
-  v34 = equation;
-  v33 = loc;
   v4 = loc;
   modified = 0;
   while ( v4 < *np )
@@ -20327,43 +20247,43 @@ int __usercall polydiv_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, 
       v6 = v4 + 1;
       if ( v4 + 1 < *np && level < equation[v6].level )
       {
-        v7 = &equation[v4 + 3].level;
+        p_level = &equation[v4 + 3].level;
         do
         {
           v6 += 2;
           if ( v6 >= *np )
             break;
-          v8 = *v7;
-          v7 += 8;
+          v8 = *p_level;
+          p_level += 8;
         }
         while ( level < v8 );
       }
     }
     v4 = v6;
   }
-  v31 = v33 + 1;
+  v31 = loc + 1;
   while ( 1 )
   {
     v10 = *np;
     if ( v31 >= *np )
       return modified;
-    v11 = v34[v33 + 1].level;
+    v11 = equation[loc + 1].level;
     if ( level > v11 )
       return modified;
-    v38 = ~(v33 + 1);
-    v37 = (int)&v34[v33 + 5];
-    v42 = (int)&v34[v33 + 3];
-    v12 = &v34[v33 + 1];
-    j = v33 + 1;
-    v43 = v33 + 1;
+    v38 = ~(loc + 1);
+    v37 = &equation[loc + 5];
+    v42 = &equation[loc + 3];
+    v12 = &equation[loc + 1];
+    j = loc + 1;
+    v43 = loc + 1;
     while ( 1 )
     {
       if ( level == v11 && v12->token.variable == 4 )
       {
         v13 = v43 + 2;
-        if ( v10 > v43 + 2 && level < *(_DWORD *)(v42 + 4) )
+        if ( v10 > v43 + 2 && level < v42->level )
         {
-          v14 = (int *)(v37 + 4);
+          v14 = &v37->level;
           do
           {
             v13 += 2;
@@ -20376,9 +20296,9 @@ int __usercall polydiv_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, 
         }
         llen = v38 + v13;
         v16 = *np;
-        if ( v33 < *np )
+        if ( loc < *np )
         {
-          v17 = v34[v33].level;
+          v17 = equation[loc].level;
           if ( level <= v17 )
             break;
         }
@@ -20389,30 +20309,30 @@ LABEL_55:
       if ( *np > v43 )
       {
         j = v43;
-        v12 = (token_type *)v42;
-        v11 = *(_DWORD *)(v42 + 4);
-        v42 += 32;
+        v12 = v42;
+        v11 = v42->level;
+        v42 += 2;
         v38 -= 2;
-        v37 += 32;
+        v37 += 2;
         if ( level <= v11 )
           continue;
       }
       return modified;
     }
-    larger = &v34[j + 1];
-    v18 = &v34[v31];
-    v39 = (int)&v34[v33 + 3];
-    smaller = &v34[v33];
-    ja = v33;
-    v19 = 0;
+    larger = &equation[j + 1];
+    v18 = &equation[v31];
+    v39 = &equation[loc + 3];
+    smaller = &equation[loc];
+    ja = loc;
+    variable = 0;
     while ( 1 )
     {
       if ( level == v17 && smaller->kind == OPERATOR )
       {
-        v19 = smaller->token.variable;
+        variable = smaller->token.variable;
         goto LABEL_53;
       }
-      if ( v19 != 4 )
+      if ( variable != 4 )
         break;
 LABEL_53:
       ++ja;
@@ -20422,7 +20342,7 @@ LABEL_53:
         smaller = v18;
         v17 = v18->level;
         ++v18;
-        v39 += 16;
+        ++v39;
         if ( level <= v17 )
           continue;
       }
@@ -20431,7 +20351,7 @@ LABEL_53:
     v20 = ja + 1;
     if ( v16 > ja + 1 && level < v18->level )
     {
-      v21 = (int *)(v39 + 4);
+      v21 = &v39->level;
       do
       {
         v20 += 2;
@@ -20447,7 +20367,7 @@ LABEL_53:
       goto store_code;
     if ( !poly2_gcd(smaller, v23, larger, llen, 0) )
     {
-      v19 = 4;
+      variable = 4;
       goto LABEL_53;
     }
     v28 = ja - 1;
@@ -20478,14 +20398,14 @@ store_code:
     v27 = *np + v25 - v23;
     if ( v27 > n_tokens || n_tokens < n_tlhs + v27 - llen )
       error_huge();
-    memmove(&v34[n_trhs + ja], &v34[v23 + ja], 16 * (*np - (v23 + ja)));
+    memmove(&equation[n_trhs + ja], &equation[v23 + ja], 16 * (*np - (v23 + ja)));
     *np = n_trhs + *np - v23;
     if ( v43 > ja )
       v43 = n_trhs + v43 - v23;
-    memmove(&v34[ja], trhs, 16 * n_trhs);
-    memmove(&v34[n_tlhs + 1 + v43], &v34[v43 + 1 + llen], 16 * (*np - llen + ~v43));
+    memmove(&equation[ja], trhs, 16 * n_trhs);
+    memmove(&equation[n_tlhs + 1 + v43], &equation[v43 + 1 + llen], 16 * (*np - llen + ~v43));
     *np = n_tlhs + *np - llen;
-    memmove(&v34[v43 + 1], tlhs, 16 * n_tlhs);
+    memmove(&equation[v43 + 1], tlhs, 16 * n_tlhs);
     modified = 1;
     if ( debug_level > 0 )
     {
@@ -20503,10 +20423,16 @@ int __cdecl poly_gcd_simp(token_type *equation, int *np)
 }
 
 //----- (08067931) --------------------------------------------------------
-int __usercall pf_sub@<eax>(token_type *equation@<eax>, int *np@<edx>, int loc@<ecx>, int len, int level, int do_repeat)
+int __usercall pf_sub@<eax>(
+        token_type *equation@<eax>,
+        int *np@<edx>,
+        int loc@<ecx>,
+        int len,
+        int level,
+        int do_repeat)
 {
   int v6; // edi
-  int l; // ebx
+  int m; // ebx
   int v8; // ecx
   int v9; // edx
   token_type *v10; // eax
@@ -20519,7 +20445,7 @@ int __usercall pf_sub@<eax>(token_type *equation@<eax>, int *np@<edx>, int loc@<
   int v17; // esi
   token_type *v18; // eax
   int i; // edx
-  int v20; // ecx
+  int variable; // ecx
   int v21; // ebx
   int v22; // eax
   int v23; // edx
@@ -20538,7 +20464,7 @@ int __usercall pf_sub@<eax>(token_type *equation@<eax>, int *np@<edx>, int loc@<
   int v40; // [esp+68h] [ebp-2030h]
   int cnt; // [esp+6Ch] [ebp-202Ch]
   int v42; // [esp+70h] [ebp-2028h]
-  int v43; // [esp+74h] [ebp-2024h]
+  int count; // [esp+74h] [ebp-2024h]
   int vc; // [esp+7Ch] [ebp-201Ch]
   sort_type va[1000]; // [esp+8Ch] [ebp-200Ch] BYREF
   jmp_buf save_save; // [esp+1FCCh] [ebp-CCh] BYREF
@@ -20586,8 +20512,8 @@ LABEL_63:
         {
           if ( v18->kind == VARIABLE )
           {
-            v20 = v18->token.variable;
-            if ( v17 < v20 && (v == -1 || v20 < v) )
+            variable = v18->token.variable;
+            if ( v17 < variable && (v == -1 || variable < v) )
               v = v18->token.variable;
           }
           v18 += 2;
@@ -20657,14 +20583,14 @@ LABEL_26:
     v10 = v39;
     v9 = 0;
     cnt = 0;
-    for ( l = -1; ; l = v8 )
+    for ( m = -1; ; m = v8 )
     {
       if ( v10->kind != VARIABLE )
         goto LABEL_20;
       v8 = v10->token.variable;
       if ( v8 <= v42 )
         goto LABEL_20;
-      if ( l != -1 && v8 >= l )
+      if ( m != -1 && v8 >= m )
         break;
       cnt = 1;
 LABEL_22:
@@ -20690,7 +20616,7 @@ LABEL_28:
         if ( vc <= 0 )
           goto skip_factor;
         v11 = 0;
-        v43 = -1;
+        count = -1;
         do
         {
           v12 = va[v11].v;
@@ -20698,13 +20624,13 @@ LABEL_28:
           {
             if ( !v && poly_in_v(trhs, n_trhs, v12, 1) )
               v = v12;
-            if ( v43 < 0 || v43 > va[v11].count )
-              v43 = va[v11].count;
+            if ( count < 0 || count > va[v11].count )
+              count = va[v11].count;
           }
           ++v11;
         }
         while ( v11 < vc );
-        if ( v43 <= 1 )
+        if ( count <= 1 )
           goto skip_factor;
         if ( !v )
           goto skip_factor;
@@ -20771,14 +20697,14 @@ LABEL_61:
         goto LABEL_10;
       }
     }
-    if ( l == v8 )
+    if ( m == v8 )
     {
       ++cnt;
-      v8 = l;
+      v8 = m;
       goto LABEL_22;
     }
 LABEL_20:
-    v8 = l;
+    v8 = m;
     goto LABEL_22;
   }
 skip_factor:
@@ -20818,7 +20744,7 @@ LABEL_98:
   v21 = 0;
   return v21 | modified;
 }
-// 8048EF4: using guessed type int __cdecl __longjmp_chk(_DWORD, _DWORD);
+// 8048EF4: using guessed type void __cdecl __noreturn __longjmp_chk(_DWORD, _DWORD);
 // 8048F04: using guessed type int __fprintf_chk(_DWORD, _DWORD, const char *, ...);
 
 //----- (080684BF) --------------------------------------------------------
@@ -20830,7 +20756,7 @@ int __usercall pf_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
   token_type *v9; // eax
   int i; // esi
   int v11; // eax
-  int *v12; // edx
+  int *p_level; // edx
   int v13; // esi
   int v14; // eax
   int op; // [esp+28h] [ebp-20h]
@@ -20877,14 +20803,14 @@ LABEL_10:
       v11 = i + 1;
       if ( *np > i + 1 && level < equation[v11].level )
       {
-        v12 = &equation[i + 3].level;
+        p_level = &equation[i + 3].level;
         do
         {
           v11 += 2;
           if ( *np <= v11 )
             break;
-          v13 = *v12;
-          v12 += 8;
+          v13 = *p_level;
+          p_level += 8;
         }
         while ( level < v13 );
       }
@@ -20902,7 +20828,7 @@ int __cdecl poly_factor(token_type *equation, int *np, int do_repeat)
 //----- (08068610) --------------------------------------------------------
 int __cdecl limit_cmd(char *cp)
 {
-  int v1; // ebx
+  int espace; // ebx
   int v2; // eax
   char *v4; // esi
   token_type *v5; // eax
@@ -20913,7 +20839,7 @@ int __cdecl limit_cmd(char *cp)
   v[0] = 0;
   if ( current_not_defined() )
     return 0;
-  v1 = next_espace();
+  espace = next_espace();
   if ( !n_rhs[cur_equation] )
   {
     memmove(rhs[cur_equation], lhs[cur_equation], 16 * n_lhs[cur_equation]);
@@ -20957,8 +20883,8 @@ int __cdecl limit_cmd(char *cp)
     if ( !parse_expr(tes, &n_tes, v4) || n_tes <= 0 )
       return 0;
 LABEL_21:
-    copy_espace(cur_equation, v1);
-    simpa_side(rhs[v1], &n_rhs[v1], 0, 0);
+    copy_espace(cur_equation, espace);
+    simpa_side(rhs[espace], &n_rhs[espace], 0, 0);
     simp_loop(tes, &n_tes);
     if ( n_tes == 1 )
     {
@@ -20977,7 +20903,7 @@ LABEL_21:
         tlhs[2].kind = VARIABLE;
         tlhs[2].token.variable = v[0];
         n_tlhs = 3;
-        subst_var_with_exp(rhs[v1], &n_rhs[v1], tlhs, 3, v[0]);
+        subst_var_with_exp(rhs[espace], &n_rhs[espace], tlhs, 3, v[0]);
       }
     }
     if ( debug_level >= 0 )
@@ -20985,24 +20911,24 @@ LABEL_21:
     want.level = 1;
     want.kind = VARIABLE;
     want.token.variable = v[0];
-    if ( solve_sub(&want, 1, lhs[v1], (int *)(4 * v1 + 134753664), rhs[v1], &n_rhs[v1]) <= 0 )
+    if ( solve_sub(&want, 1, lhs[espace], (int *)(4 * espace + 134753664), rhs[espace], &n_rhs[espace]) <= 0 )
       goto LABEL_28;
-    memmove(lhs[v1], tes, 16 * n_tes);
-    n_lhs[v1] = n_tes;
+    memmove(lhs[espace], tes, 16 * n_tes);
+    n_lhs[espace] = n_tes;
     symb_flag = symblify;
-    simpa_side(rhs[v1], &n_rhs[v1], 0, 0);
+    simpa_side(rhs[espace], &n_rhs[espace], 0, 0);
     symb_flag = 0;
-    if ( !exp_contains_nan(rhs[v1], n_rhs[v1]) )
+    if ( !exp_contains_nan(rhs[espace], n_rhs[espace]) )
     {
-      if ( solve_sub(&solved_v, 1, lhs[v1], (int *)(4 * v1 + 134753664), rhs[v1], &n_rhs[v1]) <= 0 )
+      if ( solve_sub(&solved_v, 1, lhs[espace], (int *)(4 * espace + 134753664), rhs[espace], &n_rhs[espace]) <= 0 )
       {
 LABEL_28:
         error("Can't take the limit because solve failed.");
         return 0;
       }
-      simpa_side(rhs[v1], &n_rhs[v1], 0, 0);
-      if ( !exp_contains_nan(rhs[v1], n_rhs[v1]) )
-        return return_result(v1);
+      simpa_side(rhs[espace], &n_rhs[espace], 0, 0);
+      if ( !exp_contains_nan(rhs[espace], n_rhs[espace]) )
+        return return_result(espace);
     }
     error("Unable to take limit; result contains NaN (Not a Number).");
     return 0;
@@ -21021,7 +20947,6 @@ int __usercall d_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int lo
 {
   int v5; // esi
   token_type *v6; // eax
-  int result; // eax
   int v8; // ebx
   int v9; // edi
   int v10; // edx
@@ -21030,7 +20955,7 @@ int __usercall d_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int lo
   token_type *v13; // eax
   int v14; // edx
   int v15; // eax
-  int *v16; // edx
+  int *p_level; // edx
   int v17; // ebx
   int i; // ebx
   token_type *v19; // eax
@@ -21065,7 +20990,6 @@ int __usercall d_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int lo
   int oplocb; // [esp+3Ch] [ebp-4Ch]
   int oplocc; // [esp+3Ch] [ebp-4Ch]
   token_type *src; // [esp+40h] [ebp-48h]
-  int v54; // [esp+48h] [ebp-40h]
   unsigned int op; // [esp+4Ch] [ebp-3Ch]
   int opa; // [esp+4Ch] [ebp-3Ch]
   int opd; // [esp+4Ch] [ebp-3Ch]
@@ -21075,7 +20999,6 @@ int __usercall d_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int lo
   complexs_0 v61; // [esp+50h] [ebp-38h] BYREF
   complexs_0 c; // [esp+60h] [ebp-28h] BYREF
 
-  v54 = loc;
   v5 = level;
   v6 = &equation[loc];
   src = v6;
@@ -21086,7 +21009,7 @@ int __usercall d_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int lo
     if ( loc + 1 >= *np || (v10 = equation[v8].level, level > v10) )
     {
 LABEL_39:
-      for ( i = v54; i < *np; i = v15 )
+      for ( i = loc; i < *np; i = v15 )
       {
         v19 = &equation[i];
         if ( level > v19->level )
@@ -21098,24 +21021,24 @@ LABEL_39:
         else
         {
           if ( !d_recurse(equation, np, i, level + 1, v) )
-            goto LABEL_84;
+            return 0;
           v15 = i + 1;
           if ( i + 1 < *np && level < equation[v15].level )
           {
-            v16 = &equation[i + 3].level;
+            p_level = &equation[i + 3].level;
             do
             {
               v15 += 2;
               if ( v15 >= *np )
                 break;
-              v17 = *v16;
-              v16 += 8;
+              v17 = *p_level;
+              p_level += 8;
             }
             while ( level < v17 );
           }
         }
       }
-      result = 1;
+      return 1;
     }
     else
     {
@@ -21148,12 +21071,12 @@ LABEL_39:
         case 2u:
           goto LABEL_39;
         case 3u:
-          if ( v9 + v8 - v54 + 1 > n_tokens )
+          if ( v9 + v8 - loc + 1 > n_tokens )
             error_huge();
-          if ( v54 < v8 )
+          if ( loc < v8 )
           {
             v20 = &src->level;
-            v21 = v54;
+            v21 = loc;
             do
             {
               ++*v20;
@@ -21162,25 +21085,25 @@ LABEL_39:
             }
             while ( v21 < v8 );
           }
-          memmove(&equation[v8 + 1], src, 16 * (*np - v54));
-          *np += v8 - v54 + 1;
+          memmove(&equation[v8 + 1], src, 16 * (*np - loc));
+          *np += v8 - loc + 1;
           v22 = &equation[v8];
           v22->level = level;
           v22->kind = OPERATOR;
           v22->token.variable = 1;
           v23 = level + 2;
-          if ( !d_recurse(equation, np, v8 + oploc - v54 + 2, level + 2, v) )
-            goto LABEL_84;
-          return d_recurse(equation, np, v54, v23, v);
+          if ( !d_recurse(equation, np, v8 + oploc - loc + 2, level + 2, v) )
+            return 0;
+          return d_recurse(equation, np, loc, v23, v);
         case 4u:
-          opa = v8 - v54;
+          opa = v8 - loc;
           oploca = v8 - oploc;
-          if ( v8 - v45 + v9 + v8 - v54 + 3 > n_tokens )
+          if ( v8 - v45 + v9 + v8 - loc + 3 > n_tokens )
             error_huge();
-          if ( v54 < v8 )
+          if ( loc < v8 )
           {
             v24 = &src->level;
-            v25 = v54;
+            v25 = loc;
             do
             {
               *v24 += 2;
@@ -21190,7 +21113,7 @@ LABEL_39:
             while ( v25 < v8 );
           }
           equation[v45].token.variable = 3;
-          memmove(&equation[v8 + 1], src, 16 * (*np - v54));
+          memmove(&equation[v8 + 1], src, 16 * (*np - loc));
           *np += opa + 1;
           v26 = &equation[v8];
           v26->level = level + 1;
@@ -21213,9 +21136,9 @@ LABEL_39:
           v28->kind = CONSTANT;
           v28->token.constant = 2.0;
           v23 = level + 3;
-          if ( !d_recurse(equation, np, v8 + v45 - v54 + 2, level + 3, v) )
-            goto LABEL_84;
-          return d_recurse(equation, np, v54, v23, v);
+          if ( !d_recurse(equation, np, v8 + v45 - loc + 2, level + 3, v) )
+            return 0;
+          return d_recurse(equation, np, loc, v23, v);
         case 6u:
           if ( oploc >= v8 )
             goto LABEL_70;
@@ -21235,10 +21158,10 @@ LABEL_70:
               scratch[v33].kind = OPERATOR;
               scratch[v33].token.variable = 3;
               opb = oplocc + 1;
-              if ( v8 - v54 + oplocc + 1 + 2 > n_tokens )
+              if ( v8 - loc + oplocc + 1 + 2 > n_tokens )
                 error_huge();
-              memmove(&scratch[opb], src, 16 * (v8 - v54));
-              v34 = opb + v45 - v54 + 1;
+              memmove(&scratch[opb], src, 16 * (v8 - loc));
+              v34 = opb + v45 - loc + 1;
               v35 = oplocc + 1;
               if ( opb < v34 )
               {
@@ -21250,7 +21173,7 @@ LABEL_70:
                   ++v36;
                 }
                 while ( v34 > v35 );
-                v35 = opb + opb + v45 - v54 - (v8 + ~v45);
+                v35 = opb + opb + v45 - loc - (v8 + ~v45);
               }
               v37 = oplocc + v34;
               if ( v35 < v37 )
@@ -21273,7 +21196,7 @@ LABEL_70:
               scratch[v40].kind = CONSTANT;
               scratch[v40].token.constant = 1.0;
               v41 = v37 + 2;
-              v46 = v45 - v54;
+              v46 = v45 - loc;
               if ( v46 + v41 + 1 > n_tokens )
                 error_huge();
               v42 = v41;
@@ -21283,16 +21206,16 @@ LABEL_70:
               opc = v41 + 1;
               memmove(&scratch[v41 + 1], src, 16 * v46);
               v43 = v46 + opc;
-              if ( v46 + opc + *np + v54 - v8 > n_tokens )
+              if ( v46 + opc + *np + loc - v8 > n_tokens )
                 error_huge();
-              memmove(&equation[v43 + v54], &equation[v8], 16 * (*np - v8));
-              *np += v43 + v54 - v8;
+              memmove(&equation[v43 + loc], &equation[v8], 16 * (*np - v8));
+              *np += v43 + loc - v8;
               memmove(src, scratch, 16 * v43);
-              return d_recurse(equation, np, v54 + opc, level + 1, v);
+              return d_recurse(equation, np, loc + opc, level + 1, v);
             }
           }
-          if ( !parse_complex(src, oploc - v54, &c) )
-            goto LABEL_84;
+          if ( !parse_complex(src, oploc - loc, &c) )
+            return 0;
           complex_log(&v61, c);
           c = v61;
           oplocb = v8 + 6 - oploc;
@@ -21323,10 +21246,10 @@ LABEL_70:
           ope[6].kind = OPERATOR;
           ope[6].token.variable = 3;
           memmove(&equation[v8 + 7], &equation[v45 + 1], 16 * (v8 + ~v45));
-          if ( v54 < v8 )
+          if ( loc < v8 )
           {
             v31 = &src->level;
-            v32 = v54;
+            v32 = loc;
             do
             {
               ++*v31;
@@ -21337,10 +21260,10 @@ LABEL_70:
           }
           return d_recurse(equation, np, v8 + 7, level + 1, v);
         default:
-          if ( v54 >= v8 )
+          if ( loc >= v8 )
             goto LABEL_28;
           v13 = src;
-          v14 = v54;
+          v14 = loc;
           break;
       }
       while ( v13->kind != VARIABLE || (v != 5 || (v13->token.variable & 0x3FFFu) <= 4) && v13->token.variable != v )
@@ -21352,30 +21275,28 @@ LABEL_70:
           v5 = level;
 LABEL_28:
           memmove(&equation[loc + 1], &equation[v8], 16 * (v9 - v8));
-          *np += v54 - v8 + 1;
+          *np += loc - v8 + 1;
           src->level = v5;
           src->kind = CONSTANT;
           src->token.constant = 0.0;
           return 1;
         }
       }
-LABEL_84:
-      result = 0;
+      return 0;
     }
   }
   else if ( v6->kind == VARIABLE && (v == 5 && (v6->token.variable & 0x3FFFu) > 4 || v6->token.variable == v) )
   {
     v6->kind = CONSTANT;
     v6->token.constant = 1.0;
-    result = 1;
+    return 1;
   }
   else
   {
     v6->kind = CONSTANT;
     v6->token.constant = 0.0;
-    result = 1;
+    return 1;
   }
-  return result;
 }
 
 //----- (080694F5) --------------------------------------------------------
@@ -21407,13 +21328,13 @@ int __cdecl taylor_cmd(char *cp)
   token_type *v2; // edi
   int *v3; // ebx
   char *v4; // eax
-  char *v5; // eax
+  char *string; // eax
   int v6; // esi
   int v7; // eax
   int v8; // ebx
   token_type *v9; // esi
   int v10; // eax
-  int *v11; // esi
+  int *p_level; // esi
   int v12; // ecx
   int *v13; // eax
   int v14; // edx
@@ -21435,7 +21356,7 @@ int __cdecl taylor_cmd(char *cp)
   int *np; // [esp+24h] [ebp-1064h]
   int order; // [esp+28h] [ebp-1060h]
   int simplify_flag; // [esp+2Ch] [ebp-105Ch]
-  int v33; // [esp+30h] [ebp-1058h]
+  int level; // [esp+30h] [ebp-1058h]
   int i; // [esp+34h] [ebp-1054h]
   int v35; // [esp+38h] [ebp-1050h]
   int our; // [esp+3Ch] [ebp-104Ch]
@@ -21541,13 +21462,13 @@ LABEL_17:
   if ( order < 0 )
   {
     my_strlcpy(prompt_str, "Enter order (number of derivatives to take): ", 80);
-    v5 = get_string(buf, 4096);
-    cp1 = v5;
-    if ( v5 )
+    string = get_string(buf, 4096);
+    cp1 = string;
+    if ( string )
     {
-      if ( *v5 )
+      if ( *string )
       {
-        order = decstrtol(v5, &cp_0);
+        order = decstrtol(string, &cp_0);
         if ( *cp_0 || order < 0 )
         {
           error("Positive integer required for order.");
@@ -21586,7 +21507,7 @@ LABEL_36:
         v9 = &dest[v8];
         if ( v9->kind == VARIABLE && v9->token.variable == v )
         {
-          v33 = v9->level;
+          level = v9->level;
           if ( v7 + our_nlhs - 1 > n_tokens )
             error_huge();
           memmove(&dest[our_nlhs + v8], &dest[v8 + 1], 16 * (n1 + ~v8));
@@ -21595,12 +21516,12 @@ LABEL_36:
           v10 = our_nlhs + v8;
           if ( v8 < our_nlhs + v8 )
           {
-            v11 = &v9->level;
+            p_level = &v9->level;
             do
             {
-              *v11 += v33;
+              *p_level += level;
               ++v8;
-              v11 += 4;
+              p_level += 4;
             }
             while ( v10 > v8 );
           }
@@ -21757,8 +21678,7 @@ LABEL_36:
 //----- (08069FF8) --------------------------------------------------------
 int __cdecl extrema_cmd(char *cp)
 {
-  int v1; // ebx
-  int result; // eax
+  int espace; // ebx
   token_type *v3; // esi
   int i; // edi
   int order; // [esp+2Ch] [ebp-3Ch]
@@ -21769,7 +21689,7 @@ int __cdecl extrema_cmd(char *cp)
   v[0] = 0;
   if ( current_not_defined() )
     return 0;
-  v1 = next_espace();
+  espace = next_espace();
   if ( n_rhs[cur_equation] )
   {
     if ( !solved_equation(cur_equation) )
@@ -21815,50 +21735,49 @@ LABEL_15:
     return 0;
   if ( found_var(v3, n, v[0]) )
   {
-    memmove(rhs[v1], v3, 16 * n);
+    memmove(rhs[espace], v3, 16 * n);
     for ( i = 0; i < order; ++i )
     {
-      if ( !differentiate(rhs[v1], &n, v[0]) )
+      if ( !differentiate(rhs[espace], &n, v[0]) )
       {
         error("Differentiation failed.");
         return 0;
       }
-      simpa_side(rhs[v1], &n, 1, 0);
+      simpa_side(rhs[espace], &n, 1, 0);
     }
-    if ( found_var(rhs[v1], n, v[0]) )
+    if ( found_var(rhs[espace], n, v[0]) )
     {
-      n_rhs[v1] = n;
-      n_lhs[v1] = 1;
-      *lhs[v1] = zero_token;
-      cur_equation = v1;
+      n_rhs[espace] = n;
+      n_lhs[espace] = 1;
+      *lhs[espace] = zero_token;
+      cur_equation = espace;
       want.level = 1;
       want.kind = VARIABLE;
       want.token.variable = v[0];
-      if ( solve_sub(&want, 1, lhs[v1], (int *)(4 * v1 + 134753664), rhs[v1], &n_rhs[v1]) > 0 )
+      if ( solve_sub(&want, 1, lhs[espace], (int *)(4 * espace + 134753664), rhs[espace], &n_rhs[espace]) > 0 )
       {
-        simpa_side(rhs[v1], &n_rhs[v1], 0, 0);
-        result = return_result(cur_equation);
+        simpa_side(rhs[espace], &n_rhs[espace], 0, 0);
+        return return_result(cur_equation);
       }
       else
       {
         error("Solve failed.");
-        result = 0;
+        return 0;
       }
     }
     else
     {
       error("There are no solutions.");
-      result = 0;
+      return 0;
     }
   }
   else
   {
     error("Variable not found; the derivative would be zero.");
-    result = 0;
+    return 0;
   }
-  return result;
 }
-// 806A18B: conditional instruction was optimized away because of '%order.4>=1'
+// 806A18B: conditional instruction was optimized away because %order.4>=1
 
 //----- (0806A31A) --------------------------------------------------------
 int __cdecl derivative_cmd(char *cp)
@@ -21866,7 +21785,6 @@ int __cdecl derivative_cmd(char *cp)
   token_type *v1; // edi
   int *v2; // ebx
   token_type *v3; // esi
-  int result; // eax
   int j; // ebx
   int v6; // eax
   char *v7; // ecx
@@ -22000,17 +21918,16 @@ LABEL_19:
       }
     }
     cur_equation = i;
-    result = return_result(i);
+    return return_result(i);
   }
   else
   {
     error("Variable not found; the derivative would be zero.");
-    result = 0;
+    return 0;
   }
-  return result;
 }
-// 806A5E1: conditional instruction was optimized away because of '%var_2C.4>=1'
-// 806A6D9: conditional instruction was optimized away because of '%var_2C.4>=1'
+// 806A5E1: conditional instruction was optimized away because %var_2C.4>=1
+// 806A6D9: conditional instruction was optimized away because %var_2C.4>=1
 // 8048F34: using guessed type int __printf_chk(_DWORD, const char *, ...);
 
 //----- (0806A750) --------------------------------------------------------
@@ -22026,7 +21943,7 @@ int __cdecl nintegrate_cmd(char *cp)
   token_type *v9; // eax
   bool v10; // zf
   int v11; // ecx
-  int v12; // ebx
+  int level; // ebx
   int v13; // edx
   int v14; // eax
   int v15; // ebx
@@ -22038,7 +21955,7 @@ int __cdecl nintegrate_cmd(char *cp)
   token_type *v21; // ecx
   int v22; // ebx
   int v23; // eax
-  int *v24; // edx
+  int *p_level; // edx
   int v25; // ecx
   token_type *v26; // esi
   int v27; // eax
@@ -22053,7 +21970,7 @@ int __cdecl nintegrate_cmd(char *cp)
   int v36; // eax
   int v37; // ecx
   token_type *v38; // eax
-  int l; // edx
+  int m; // edx
   token_type *v40; // eax
   token_type *v41; // eax
   token_type *v42; // eax
@@ -22155,10 +22072,10 @@ LABEL_16:
               if ( ++v7 >= v57 )
                 break;
               v8 = v9;
-              v12 = v9->level;
+              level = v9->level;
               ++v9;
             }
-            while ( v12 >= v5[-1].level );
+            while ( level >= v5[-1].level );
           }
         }
       }
@@ -22264,14 +22181,14 @@ LABEL_33:
     n1 = v23;
     if ( v22 < v23 )
     {
-      v24 = &v49[v22].level;
+      p_level = &v49[v22].level;
       v25 = v22;
       do
       {
-        *v24 += 2;
+        *p_level += 2;
         ++v25;
         v23 = n1;
-        v24 += 4;
+        p_level += 4;
       }
       while ( n1 > v25 );
       for ( ; n1 > v22; v23 = n1 )
@@ -22386,7 +22303,7 @@ LABEL_33:
   if ( n1 > 0 )
   {
     v38 = v49;
-    for ( l = 0; l < n1; ++l )
+    for ( m = 0; m < n1; ++m )
     {
       ++v38->level;
       v37 = n1;
@@ -22452,7 +22369,7 @@ LABEL_33:
   cur_equation = i;
   return return_result(i);
 }
-// 806AC9C: conditional instruction was optimized away because of '%iterations.4>=1'
+// 806AC9C: conditional instruction was optimized away because %iterations.4>=1
 // 8048F34: using guessed type int __printf_chk(_DWORD, const char *, ...);
 
 //----- (0806B21F) --------------------------------------------------------
@@ -22460,9 +22377,9 @@ void __cdecl make_powers(token_type *equation, int *np, int v)
 {
   int i; // eax
   token_type *v4; // ebx
-  int v5; // esi
+  int level; // esi
   int v6; // ecx
-  int *v7; // eax
+  int *p_level; // eax
   int v8; // ebx
   int v9; // esi
   token_type *v10; // ebx
@@ -22476,22 +22393,22 @@ void __cdecl make_powers(token_type *equation, int *np, int v)
     if ( i >= *np )
       break;
     v4 = &equation[i];
-    v5 = v4->level;
+    level = v4->level;
     if ( v4->kind == OPERATOR && v4->token.variable == 6 )
     {
       v6 = i + 2;
-      if ( v12 > i + 2 && v5 <= equation[v6].level )
+      if ( v12 > i + 2 && level <= equation[v6].level )
       {
-        v7 = &equation[i + 4].level;
+        p_level = &equation[i + 4].level;
         do
         {
           v6 += 2;
           if ( v12 <= v6 )
             break;
-          v8 = *v7;
-          v7 += 8;
+          v8 = *p_level;
+          p_level += 8;
         }
-        while ( v5 <= v8 );
+        while ( level <= v8 );
       }
     }
     else
@@ -22503,7 +22420,7 @@ void __cdecl make_powers(token_type *equation, int *np, int v)
         {
           if ( v12 + 2 > n_tokens )
             error_huge();
-          v9 = v5 + 1;
+          v9 = level + 1;
           v4->level = v9;
           v10 = &equation[v13];
           memmove(&v10[2], v10, 16 * (*np - v13));
@@ -22530,7 +22447,7 @@ int __cdecl int_dispatch(token_type *equation, int *np, int v, int (*func)(...))
   int v5; // eax
   token_type *v7; // edx
   int v8; // edi
-  int *v9; // edx
+  int *p_level; // edx
 
   make_powers(equation, np, v);
   v4 = 0;
@@ -22556,14 +22473,14 @@ LABEL_14:
     if ( *np <= v5 )
       return func(equation, np, v4, v5, v);
   }
-  v9 = &equation[v4 + 3].level;
+  p_level = &equation[v4 + 3].level;
   while ( 1 )
   {
     v5 += 2;
     if ( v5 >= *np )
       return 1;
-    v8 = *v9;
-    v9 += 8;
+    v8 = *p_level;
+    p_level += 8;
     if ( v8 == 1 )
       goto LABEL_10;
   }
@@ -22573,7 +22490,7 @@ LABEL_14:
 int __cdecl laplace_cmd(char *cp)
 {
   char *v1; // ebx
-  int v2; // esi
+  int espace; // esi
   int *v3; // edi
   int v4; // eax
   int v5; // eax
@@ -22588,20 +22505,20 @@ int __cdecl laplace_cmd(char *cp)
   v[0] = 0;
   if ( current_not_defined() )
     return 0;
-  v2 = next_espace();
+  espace = next_espace();
   if ( n_rhs[cur_equation] )
   {
     source = rhs[cur_equation];
     v3 = &n_rhs[cur_equation];
-    dest = rhs[v2];
-    np = &n_rhs[v2];
+    dest = rhs[espace];
+    np = &n_rhs[espace];
   }
   else
   {
     source = lhs[cur_equation];
     v3 = &n_lhs[cur_equation];
-    dest = lhs[v2];
-    np = &n_lhs[v2];
+    dest = lhs[espace];
+    np = &n_lhs[espace];
   }
   v4 = strcmp_tospace(cp, "inverse");
   inverse_flag = v4 == 0;
@@ -22642,23 +22559,23 @@ int __cdecl laplace_cmd(char *cp)
   simp_loop(dest, &n1);
   if ( n_rhs[cur_equation] )
   {
-    memmove(lhs[v2], lhs[cur_equation], 16 * n_lhs[cur_equation]);
-    n_lhs[v2] = n_lhs[cur_equation];
+    memmove(lhs[espace], lhs[cur_equation], 16 * n_lhs[cur_equation]);
+    n_lhs[espace] = n_lhs[cur_equation];
   }
   *np = n1;
-  cur_equation = v2;
-  return return_result(v2);
+  cur_equation = espace;
+  return return_result(espace);
 }
 
 //----- (0806B6A8) --------------------------------------------------------
 int __cdecl laplace_sub(token_type *equation, int *np, int loc, int eloc, int v)
 {
   int v5; // ebx
-  int *v6; // eax
+  int *p_level; // eax
   int v7; // edx
   token_type *v8; // eax
   token_type *v9; // eax
-  int v10; // eax
+  int level; // eax
   token_type *v11; // ecx
   int v12; // edx
   token_type *v13; // eax
@@ -22671,7 +22588,6 @@ int __cdecl laplace_sub(token_type *equation, int *np, int loc, int eloc, int v)
   token_type *v20; // eax
   token_type *v21; // ebx
   token_type *v22; // eax
-  int result; // eax
   token_type *v24; // ebx
   int v25; // [esp+1Ch] [ebp-2Ch]
   token_type *src; // [esp+20h] [ebp-28h]
@@ -22695,17 +22611,17 @@ LABEL_23:
     v24[1].level = mlevel;
     v24[1].kind = VARIABLE;
     v24[1].token.variable = v;
-    result = 1;
+    return 1;
   }
   else
   {
-    v6 = &equation[loc].level;
+    p_level = &equation[loc].level;
     v7 = loc;
     do
     {
-      *v6 += 2;
+      *p_level += 2;
       ++v7;
-      v6 += 4;
+      p_level += 4;
     }
     while ( eloc > v7 );
     v8 = &equation[loc];
@@ -22718,10 +22634,10 @@ LABEL_23:
     }
     if ( eloc > v5 + 1 && (v9 = &equation[v5 + 1], v9->token.variable == 6) )
     {
-      v10 = v9->level;
-      v25 = v10;
+      level = v9->level;
+      v25 = level;
       expression = (token_type *)(v5 + 2);
-      if ( eloc <= v5 + 2 || (v11 = &equation[v5 + 2], v12 = v11->level, v10 > v12) )
+      if ( eloc <= v5 + 2 || (v11 = &equation[v5 + 2], v12 = v11->level, level > v12) )
       {
         v14 = v5 + 2;
       }
@@ -22790,25 +22706,24 @@ LABEL_23:
       v22->level = mlevel + 1;
       v22->kind = CONSTANT;
       v22->token.constant = 1.0;
-      result = 1;
+      return 1;
     }
     else
     {
-      result = 0;
+      return 0;
     }
   }
-  return result;
 }
 
 //----- (0806B9BB) --------------------------------------------------------
 int __cdecl inv_laplace_sub(token_type *equation, int *np, int loc, int eloc, int v)
 {
-  int *v5; // eax
+  int *p_level; // eax
   int v6; // edx
   token_type *v7; // eax
   int v8; // edx
   token_type *v9; // esi
-  int v10; // edi
+  int level; // edi
   token_type *v11; // ecx
   int v12; // eax
   token_type *v13; // edx
@@ -22824,13 +22739,13 @@ int __cdecl inv_laplace_sub(token_type *equation, int *np, int loc, int eloc, in
   v21 = min_level(&equation[loc], eloc - loc);
   if ( eloc <= loc )
     return 0;
-  v5 = &equation[loc].level;
+  p_level = &equation[loc].level;
   v6 = loc;
   do
   {
-    *v5 += 2;
+    *p_level += 2;
     ++v6;
-    v5 += 4;
+    p_level += 4;
   }
   while ( eloc > v6 );
   v7 = &equation[loc];
@@ -22847,9 +22762,9 @@ int __cdecl inv_laplace_sub(token_type *equation, int *np, int loc, int eloc, in
   v9 = &equation[v8 + 1];
   if ( v9->token.variable != 6 || loc >= v8 - 1 || equation[v8 - 1].token.variable != 4 )
     return 0;
-  v10 = v9->level;
+  level = v9->level;
   expression = v8 + 2;
-  if ( eloc <= v8 + 2 || (v11 = &equation[v8 + 2], v12 = v11->level, v10 > v12) )
+  if ( eloc <= v8 + 2 || (v11 = &equation[v8 + 2], v12 = v11->level, level > v12) )
   {
     v14 = v8 + 2;
   }
@@ -22866,7 +22781,7 @@ int __cdecl inv_laplace_sub(token_type *equation, int *np, int loc, int eloc, in
       v12 = v13->level;
       ++v13;
     }
-    while ( v10 <= v12 );
+    while ( level <= v12 );
   }
   len = v14 - expression;
   if ( v14 - expression + *np + 7 > n_tokens )
@@ -22875,7 +22790,7 @@ int __cdecl inv_laplace_sub(token_type *equation, int *np, int loc, int eloc, in
   src = &equation[v14];
   memmove(&src[2], src, 16 * (*np - v14));
   *np += 2;
-  v15 = v10 + 1;
+  v15 = level + 1;
   src->level = v15;
   src->kind = OPERATOR;
   src->token.variable = 2;
@@ -22906,9 +22821,9 @@ int __cdecl integrate_sub(token_type *equation, int *np, int loc, int eloc, int 
   int v5; // ebx
   int v6; // edx
   token_type *v7; // eax
-  storage_type *v8; // ecx
-  int v9; // edi
-  int *v10; // esi
+  storage_type *p_token; // ecx
+  int level; // edi
+  int *p_level; // esi
   int v11; // edi
   int v12; // ecx
   token_type *v13; // edi
@@ -22950,44 +22865,44 @@ int __cdecl integrate_sub(token_type *equation, int *np, int loc, int eloc, int 
     v7 = &equation[loc];
     count = 0;
     v34 = v37 + 1;
-    v8 = &v7[1].token;
+    p_token = &v7[1].token;
     do
     {
       if ( v7->kind == VARIABLE && v7->token.variable == v )
       {
         if ( ++count > 1 )
           return 0;
-        v9 = v7->level;
-        vlevel = v9;
-        if ( v37 != v9 && v34 != v9 )
+        level = v7->level;
+        vlevel = level;
+        if ( v37 != level && v34 != level )
           return 0;
         if ( eloc > loc + 1 )
         {
-          v10 = &equation[loc + 1].level;
+          p_level = &equation[loc + 1].level;
           v11 = loc + 1;
-          v33 = v8;
+          v33 = p_token;
           while ( 1 )
           {
-            if ( v37 == *v10 )
+            if ( v37 == *p_level )
             {
-              v12 = v10[1];
+              v12 = p_level[1];
               if ( v12 < 3 || v12 > 4 && (v12 != 6 || v11 != v6) )
                 return 0;
             }
             v11 += 2;
-            v10 += 8;
+            p_level += 8;
             if ( eloc <= v11 )
             {
-              v8 = v33;
+              p_token = v33;
               break;
             }
           }
         }
-        if ( v34 == vlevel && (eloc <= v6 || v34 != *(&v8[-1].operatr + 1) || v8->variable != 6) )
+        if ( v34 == vlevel && (eloc <= v6 || v34 != *(&p_token[-1].operatr + 1) || p_token->variable != 6) )
           return 0;
       }
       v7 += 2;
-      v8 += 4;
+      p_token += 4;
       v6 += 2;
     }
     while ( eloc > v6 - 1 );
@@ -23136,11 +23051,11 @@ int __cdecl integrate_cmd(char *cp)
   int v10; // esi
   int v11; // ecx
   token_type *v12; // eax
-  int m; // edx
+  int n; // edx
   int v14; // eax
   token_type *v15; // eax
   int k; // edx
-  int l; // eax
+  int m; // eax
   int v18; // eax
   _BYTE *v19; // ecx
   int j; // edx
@@ -23301,8 +23216,8 @@ LABEL_61:
         }
         if ( n2 > 0 )
         {
-          for ( l = 0; l < n2; ++l )
-            ++scratch[l].level;
+          for ( m = 0; m < n2; ++m )
+            ++scratch[m].level;
         }
         v6[n1].kind = OPERATOR;
         v6[n1].level = 1;
@@ -23324,7 +23239,7 @@ LABEL_61:
       if ( n1 > 0 )
       {
         v12 = v6;
-        for ( m = 0; m < n1; ++m )
+        for ( n = 0; n < n1; ++n )
         {
           ++v12->level;
           v11 = n1;
@@ -23359,13 +23274,13 @@ LABEL_61:
 //----- (0806C8F0) --------------------------------------------------------
 int __cdecl get_constant(token_type *p1, int n, double *dp)
 {
-  int v4; // ebx
+  int level; // ebx
   token_type *v5; // eax
   int v6; // eax
   int v7; // edi
   int i; // ecx
   int v9; // ebx
-  int *v10; // eax
+  int *p_level; // eax
   int v11; // edx
   int prev_approx_flag; // [esp+28h] [ebp-30h]
   int prev_approx_flaga; // [esp+28h] [ebp-30h]
@@ -23388,13 +23303,13 @@ int __cdecl get_constant(token_type *p1, int n, double *dp)
   else if ( n > 2 )
   {
     v14 = p1 + 1;
-    v4 = p1[1].level;
+    level = p1[1].level;
     if ( get_constant(p1, 1, d1) )
     {
       if ( v14->kind == OPERATOR )
       {
         v7 = p1[1].level;
-        if ( v4 >= v7 )
+        if ( level >= v7 )
         {
           prev_approx_flag = 1;
           for ( i = 1; ; i = v9 )
@@ -23402,14 +23317,14 @@ int __cdecl get_constant(token_type *p1, int n, double *dp)
             v9 = i + 2;
             if ( n > i + 2 && v7 < p1[v9].level )
             {
-              v10 = &p1[i + 4].level;
+              p_level = &p1[i + 4].level;
               do
               {
                 v9 += 2;
                 if ( n <= v9 )
                   break;
-                v11 = *v10;
-                v10 += 8;
+                v11 = *p_level;
+                p_level += 8;
               }
               while ( v11 > v7 );
             }
@@ -23447,15 +23362,15 @@ int __cdecl get_constant(token_type *p1, int n, double *dp)
   }
   return 0;
 }
-// 806C99E: conditional instruction was optimized away because of '%n.4>=3'
+// 806C99E: conditional instruction was optimized away because %n.4>=3
 
 //----- (0806CAE3) --------------------------------------------------------
 int __cdecl parse_complex(token_type *p1, int n, complexs_0 *cp)
 {
   token_type *v4; // ebx
-  kind_list v5; // eax
+  kind_list kind; // eax
   int v6; // edx
-  int v7; // eax
+  int variable; // eax
   int v8; // eax
   int v9; // eax
   int level; // [esp+20h] [ebp-48h]
@@ -23489,7 +23404,7 @@ int __cdecl parse_complex(token_type *p1, int n, complexs_0 *cp)
   imag_cnt = 0;
   while ( 1 )
   {
-    v5 = v4->kind;
+    kind = v4->kind;
     if ( v4->kind == VARIABLE )
     {
       if ( !var_is_const(v4->token.variable, 0) )
@@ -23500,7 +23415,7 @@ int __cdecl parse_complex(token_type *p1, int n, complexs_0 *cp)
       }
       goto LABEL_45;
     }
-    if ( v5 )
+    if ( kind )
       break;
 LABEL_45:
     ++v14;
@@ -23510,20 +23425,20 @@ LABEL_45:
     if ( --j < 0 )
       goto done;
   }
-  if ( v5 != OPERATOR )
+  if ( kind != OPERATOR )
     return 0;
   v6 = v4->level;
-  v7 = v4->token.variable;
-  if ( v7 == 2 )
+  variable = v4->token.variable;
+  if ( variable == 2 )
   {
     if ( imag_cnt )
       c.im = -c.im;
   }
   else
   {
-    if ( v7 > 2 )
+    if ( variable > 2 )
     {
-      if ( v7 == 3 )
+      if ( variable == 3 )
       {
         if ( ++times_cnt > 1 )
           return 0;
@@ -23542,7 +23457,7 @@ LABEL_45:
       }
       else
       {
-        if ( v7 != 4 )
+        if ( variable != 4 )
           return 0;
         if ( ++times_cnt > 1 )
           return 0;
@@ -23559,7 +23474,7 @@ LABEL_45:
       }
       goto LABEL_45;
     }
-    if ( v7 != 1 )
+    if ( variable != 1 )
       return 0;
   }
   if ( ++plus_cnt > 1 || level != v6 )
@@ -23586,9 +23501,9 @@ int __cdecl complex_root_simp(token_type *equation, int *np)
 {
   int v2; // edi
   token_type *v3; // esi
-  int v4; // ebx
+  int level; // ebx
   int v5; // eax
-  int *v6; // edx
+  int *p_level; // edx
   int v7; // ecx
   int v8; // edi
   int *v9; // eax
@@ -23619,26 +23534,26 @@ int __cdecl complex_root_simp(token_type *equation, int *np)
     {
       if ( v3[-1].token.variable == 6 )
       {
-        v4 = v3[-1].level;
+        level = v3[-1].level;
         v5 = v22 + 2;
-        if ( v2 > v22 + 2 && v4 <= v3[1].level )
+        if ( v2 > v22 + 2 && level <= v3[1].level )
         {
-          v6 = &v3[3].level;
+          p_level = &v3[3].level;
           do
           {
             v5 += 2;
             if ( v5 >= v2 )
               break;
-            v7 = *v6;
-            v6 += 8;
+            v7 = *p_level;
+            p_level += 8;
           }
-          while ( v4 <= v7 );
+          while ( level <= v7 );
         }
         len = v5 + ~v22;
         if ( parse_complex(v3, len, &p) )
         {
           v8 = v22 - 1;
-          if ( v22 - 1 >= 0 && v4 <= v3[-2].level )
+          if ( v22 - 1 >= 0 && level <= v3[-2].level )
           {
             v9 = &v3[-3].level;
             do
@@ -23648,7 +23563,7 @@ int __cdecl complex_root_simp(token_type *equation, int *np)
               v10 = *v9;
               v9 -= 4;
             }
-            while ( v4 <= v10 );
+            while ( level <= v10 );
           }
           v11 = v8 + 1;
           v21 = &equation[v11];
@@ -23671,14 +23586,14 @@ int __cdecl complex_root_simp(token_type *equation, int *np)
       error_huge();
     memmove(&equation[v11 + 5], &equation[v12], 16 * (*np - v12));
     *np += v11 - v12 + 5;
-    v21->level = v4;
+    v21->level = level;
     v21->kind = CONSTANT;
     v21->token.constant = r.re;
     v13 = &equation[v11 + 1];
-    v13->level = v4;
+    v13->level = level;
     v13->kind = OPERATOR;
     v13->token.variable = 1;
-    v14 = v4 + 1;
+    v14 = level + 1;
     v15 = &equation[v11 + 2];
     v15->level = v14;
     v15->kind = CONSTANT;
@@ -23720,7 +23635,7 @@ int __cdecl roots_cmd(char *cp)
   long double v2; // fst6
   char v4; // c2
   char *v6; // esi
-  long double v7; // fst7
+  long double re; // fst7
   long double v8; // fst7
   long double v9; // fst7
   long double v10; // fst7
@@ -23839,15 +23754,15 @@ LABEL_26:
           complex_fixup(&c2);
           if ( c2.re == 0.0 )
           {
-            v7 = c2.re;
+            re = c2.re;
             if ( c2.im != 0.0 )
               goto LABEL_36;
           }
           else
           {
-            v7 = c2.re;
+            re = c2.re;
           }
-          __fprintf_chk(gfp, 1, "%.12g ", (double)v7);
+          __fprintf_chk(gfp, 1, "%.12g ", (double)re);
 LABEL_36:
           if ( c2.im != 0.0 )
             __fprintf_chk(gfp, 1, "%+.12g*i", c2.im);
@@ -23928,7 +23843,7 @@ int __cdecl complex_fixup(complexs_0 *ap)
   else
   {
     ap->im = 0.0;
-    result = 1;
+    return 1;
   }
   return result;
 }
@@ -23998,6 +23913,7 @@ complexs_0 *__userpurge complex_exp@<eax>(complexs_0 *retstr, complexs_0 a)
   return retstr;
 }
 // 80492A4: using guessed type int __cdecl sincos(_DWORD, _DWORD, _DWORD, _DWORD);
+// 806D968: using guessed type double var_10[2];
 
 //----- (0806D9B9) --------------------------------------------------------
 complexs_0 *__userpurge complex_log@<eax>(complexs_0 *retstr, complexs_0 a)
@@ -24036,7 +23952,7 @@ char *__cdecl var_name(int v)
   v1 = (v & 0x3FFF) - 65;
   result = 0;
   if ( v1 <= 0x1F3F )
-    result = var_names[v1];
+    return var_names[v1];
   return result;
 }
 
@@ -24075,7 +23991,7 @@ void __usercall trim_zeros(char *buf@<eax>)
 int __cdecl int_expr(token_type *p1, int n)
 {
   int i; // esi
-  long double v4; // fst5
+  long double constant; // fst5
   char v6; // c2
 
   if ( n > 0 )
@@ -24089,11 +24005,11 @@ int __cdecl int_expr(token_type *p1, int n)
       }
       else
       {
-        v4 = p1->token.constant;
+        constant = p1->token.constant;
         do
-          v4 = __FPREM__(v4, 1.0);
+          constant = __FPREM__(constant, 1.0);
         while ( v6 );
-        if ( v4 != 0.0 )
+        if ( constant != 0.0 )
           return 0;
       }
       ++p1;
@@ -24241,17 +24157,17 @@ LABEL_27:
 //----- (0806DE45) --------------------------------------------------------
 int __cdecl list_code(token_type *equation, int *np, language_list language, int int_flag)
 {
-  int v4; // eax
+  int level; // eax
   token_type *v5; // esi
   int v6; // edi
   token_type *v7; // edx
-  int v8; // eax
+  int variable; // eax
   token_type *v9; // edx
   int v10; // ecx
   token_type *v11; // eax
   int v12; // eax
   int v13; // ecx
-  kind_list v14; // eax
+  kind_list kind; // eax
   const char *v15; // eax
   int v16; // ebx
   int v17; // esi
@@ -24287,16 +24203,16 @@ int __cdecl list_code(token_type *equation, int *np, language_list language, int
             ++v26;
             if ( i + 1 < *np )
             {
-              v4 = equation[i + 1].level;
-              if ( v26 <= v4 )
+              level = equation[i + 1].level;
+              if ( v26 <= level )
               {
                 v5 = &equation[i + 1];
                 v6 = i + 1;
-                if ( v26 == v4 )
+                if ( v26 == level )
                 {
 LABEL_12:
-                  v8 = v5->token.variable;
-                  if ( v8 == 6 )
+                  variable = v5->token.variable;
+                  if ( variable == 6 )
                   {
                     v9 = &equation[v6 - 1];
                     v10 = v9->level;
@@ -24320,7 +24236,7 @@ LABEL_12:
                       }
                     }
                   }
-                  else if ( v8 == 7 )
+                  else if ( variable == 7 )
                   {
                     v24 += __fprintf_chk(gfp, 1, "fact");
                   }
@@ -24355,7 +24271,7 @@ LABEL_12:
           }
         }
       }
-      v14 = v20->kind;
+      kind = v20->kind;
       if ( v20->kind == VARIABLE )
       {
         if ( int_flag && (unsigned int)(language - 1) <= 1 && v20->token.variable == 3 )
@@ -24368,9 +24284,9 @@ LABEL_12:
           v24 += __fprintf_chk(gfp, 1, "%s", var_str);
         }
       }
-      else if ( v14 )
+      else if ( kind )
       {
-        if ( v14 == OPERATOR )
+        if ( kind == OPERATOR )
         {
           switch ( v20->token.variable )
           {
@@ -24436,7 +24352,7 @@ LABEL_12:
         --v16;
       }
       while ( v16 > 0 );
-      v24 = v17;
+      return v17;
     }
   }
   return v24;
@@ -24491,13 +24407,21 @@ void __cdecl set_color(int color)
 // 8048F34: using guessed type int __printf_chk(_DWORD, const char *, ...);
 
 //----- (0806E66C) --------------------------------------------------------
-int __usercall flist_recurse@<eax>(token_type *p1@<eax>, int n@<edx>, int out_flag@<ecx>, int line, int pos, int cur_level, int *highp, int *lowp)
+int __usercall flist_recurse@<eax>(
+        token_type *p1@<eax>,
+        int n@<edx>,
+        int out_flag@<ecx>,
+        int line,
+        int pos,
+        int cur_level,
+        int *highp,
+        int *lowp)
 {
   int v8; // ebx
   int v9; // edi
   int v10; // eax
   token_type *v11; // edx
-  int v12; // esi
+  int level; // esi
   int v13; // edx
   int *v14; // ecx
   int v15; // ebx
@@ -24506,7 +24430,7 @@ int __usercall flist_recurse@<eax>(token_type *p1@<eax>, int n@<edx>, int out_fl
   int i; // ebx
   int v19; // esi
   int v20; // ebx
-  int *v21; // eax
+  int *p_level; // eax
   int v22; // edx
   int v23; // eax
   int v24; // ecx
@@ -24518,8 +24442,8 @@ int __usercall flist_recurse@<eax>(token_type *p1@<eax>, int n@<edx>, int out_fl
   int v30; // eax
   int v31; // eax
   token_type *v32; // eax
-  kind_list v33; // edx
-  long double v34; // fst7
+  kind_list kind; // edx
+  long double constant; // fst7
   int v35; // ebx
   const char *v36; // eax
   int v37; // ebx
@@ -24598,9 +24522,9 @@ LABEL_12:
     v11 = &p1[v10];
     if ( v11->kind == OPERATOR && v11->token.variable == 4 )
     {
-      v12 = v11->level;
+      level = v11->level;
       v13 = v10 - 2;
-      if ( v10 - 2 > 0 && v12 <= p1[v13].level )
+      if ( v10 - 2 > 0 && level <= p1[v13].level )
       {
         v14 = (int *)&p1[v10 - 3] - 3;
         do
@@ -24611,10 +24535,10 @@ LABEL_12:
           v15 = *v14;
           v14 -= 8;
         }
-        while ( v12 <= v15 );
+        while ( level <= v15 );
       }
       v16 = v13 + 1;
-      if ( div_loc < 0 || v16 < stop_at || v16 == stop_at && (stop_at = v16, v12 < p1[div_loc].level) )
+      if ( div_loc < 0 || v16 < stop_at || v16 == stop_at && (stop_at = v16, level < p1[div_loc].level) )
       {
         div_loc = v10;
         stop_at = v16;
@@ -24668,7 +24592,7 @@ LABEL_12:
     if ( stop_at == len2 )
       break;
     v32 = &p1[len2];
-    v33 = v32->kind;
+    kind = v32->kind;
     if ( v32->kind == VARIABLE )
     {
       v64 += list_var(v32->token.variable, 0);
@@ -24679,16 +24603,16 @@ LABEL_12:
     }
     else
     {
-      if ( v33 == CONSTANT )
+      if ( kind == CONSTANT )
       {
         if ( v32->token.constant == 0.0 )
         {
-          v34 = 0.0;
+          constant = 0.0;
           v32->token.constant = 0.0;
           goto LABEL_82;
         }
-        v34 = v32->token.constant;
-        if ( v34 == -1.0
+        constant = v32->token.constant;
+        if ( constant == -1.0
           && (!len2 || p1[len2 - 1].level < v32->level)
           && (v35 = len2 + 1, n > len2 + 1)
           && v32->level == p1[len2 + 1].level
@@ -24701,20 +24625,20 @@ LABEL_12:
 LABEL_82:
           if ( finance_option )
           {
-            if ( v34 >= 0.0 )
-              v64 += __snprintf_chk(buf, 500, 1, 500, "%.*f", finance_option, (double)v34);
+            if ( constant >= 0.0 )
+              v64 += __snprintf_chk(buf, 500, 1, 500, "%.*f", finance_option, (double)constant);
             else
-              v64 += __snprintf_chk(buf, 500, 1, 500, "(%.*f)", finance_option, (double)v34);
+              v64 += __snprintf_chk(buf, 500, 1, 500, "(%.*f)", finance_option, (double)constant);
             v35 = len2;
           }
-          else if ( v34 >= 0.0 || negate_highest_precedence )
+          else if ( constant >= 0.0 || negate_highest_precedence )
           {
-            v64 += __snprintf_chk(buf, 500, 1, 500, "%.*g", precision, (double)v34);
+            v64 += __snprintf_chk(buf, 500, 1, 500, "%.*g", precision, (double)constant);
             v35 = len2;
           }
           else
           {
-            v64 += __snprintf_chk(buf, 500, 1, 500, "(%.*g)", precision, (double)v34);
+            v64 += __snprintf_chk(buf, 500, 1, 500, "(%.*g)", precision, (double)constant);
             v35 = len2;
           }
         }
@@ -24722,7 +24646,7 @@ LABEL_82:
           __fprintf_chk(gfp, 1, "%s", buf);
         goto LABEL_114;
       }
-      if ( v33 != OPERATOR )
+      if ( kind != OPERATOR )
         goto LABEL_113;
       switch ( v32->token.variable )
       {
@@ -24799,14 +24723,14 @@ LABEL_114:
   v20 = div_loc + 2;
   if ( n > div_loc + 2 && v19 < p1[v20].level )
   {
-    v21 = &p1[div_loc + 4].level;
+    p_level = &p1[div_loc + 4].level;
     do
     {
       v20 += 2;
       if ( n <= v20 )
         break;
-      v22 = *v21;
-      v21 += 8;
+      v22 = *p_level;
+      p_level += 8;
     }
     while ( v19 < v22 );
   }
@@ -24911,7 +24835,7 @@ int __cdecl list_string_sub(token_type *p1, int n, int outflag, char *string, in
   int v6; // esi
   char *v7; // edi
   int j; // ebx
-  kind_list v9; // eax
+  kind_list kind; // eax
   const char *v10; // edi
   char *v11; // esi
   int v12; // ebx
@@ -24975,7 +24899,7 @@ int __cdecl list_string_sub(token_type *p1, int n, int outflag, char *string, in
           ++v7;
         }
       }
-      v9 = v17->kind;
+      kind = v17->kind;
       if ( v17->kind == VARIABLE )
       {
         list_var(v17->token.variable, -export_flag);
@@ -24986,9 +24910,9 @@ int __cdecl list_string_sub(token_type *p1, int n, int outflag, char *string, in
         v20 += strlen(var_str);
         goto LABEL_77;
       }
-      if ( v9 )
+      if ( kind )
       {
-        if ( v9 == OPERATOR )
+        if ( kind == OPERATOR )
         {
           switch ( v17->token.variable )
           {
@@ -25251,7 +25175,7 @@ int __cdecl flist_equation(int n)
   int v3; // eax
   int v4; // edi
   int v5; // eax
-  int *v6; // eax
+  int *p_level; // eax
   int v7; // edi
   unsigned int v8; // kr04_4
   int v9; // edi
@@ -25293,13 +25217,18 @@ int __cdecl flist_equation(int n)
           break;
         if ( --v2 > 0 )
         {
-          v6 = &rhs[n][v2].level;
+          p_level = &rhs[n][v2].level;
           do
           {
-            if ( *v6 == 1 && *(v6 - 1) == 2 && (unsigned int)v6[1] <= 5 && ((1 << *((_BYTE *)v6 + 4)) & 0x26) != 0 )
+            if ( *p_level == 1
+              && *(p_level - 1) == 2
+              && (unsigned int)p_level[1] <= 5
+              && ((1 << *((_BYTE *)p_level + 4)) & 0x26) != 0 )
+            {
               break;
+            }
             --v2;
-            v6 -= 4;
+            p_level -= 4;
           }
           while ( v2 > 0 );
         }
@@ -25368,9 +25297,9 @@ int __cdecl list_sub(int n)
     if ( factor_int_flag )
       factor_int_sub(n);
     if ( display2d )
-      result = flist_equation(n);
+      return flist_equation(n);
     else
-      result = list1_sub(n, 0);
+      return list1_sub(n, 0);
   }
   return result;
 }
@@ -25463,7 +25392,7 @@ double __cdecl gcd(double d1, double d2)
   v21 = v20;
   result = 0.0;
   if ( v21 == 0.0 || lower_limit * 100.0 < divisor )
-    result = divisor;
+    return divisor;
   return result;
 }
 // 80703AA: variable 'v19' is possibly undefined
@@ -25488,7 +25417,7 @@ double __cdecl gcd_verified(double d1, double d2)
       v3 = __FPREM__(v3, 1.0);
     while ( v5 );
     if ( v3 != 0.0 )
-      goto LABEL_10;
+      return 0.0;
     d4 = d2 / divisor;
     v6 = d4;
     do
@@ -25497,12 +25426,11 @@ double __cdecl gcd_verified(double d1, double d2)
     if ( v6 == 0.0 )
     {
       if ( gcd(v2, d4) != 1.0 )
-        divisor = 0.0;
+        return 0.0;
     }
     else
     {
-LABEL_10:
-      divisor = 0.0;
+      return 0.0;
     }
   }
   return divisor;
@@ -25590,7 +25518,7 @@ int __cdecl make_fractions(token_type *equation, int *np)
   token_type *v4; // esi
   token_type *v5; // eax
   int v6; // edx
-  int v7; // eax
+  int variable; // eax
   bool v8; // zf
   _BOOL4 v9; // eax
   int v10; // ecx
@@ -25602,7 +25530,7 @@ int __cdecl make_fractions(token_type *equation, int *np)
   token_type *v16; // eax
   int v17; // eax
   token_type *v18; // edx
-  int *v19; // esi
+  int *p_level; // esi
   int v20; // edx
   token_type *v22; // [esp+14h] [ebp-44h]
   int v23; // [esp+18h] [ebp-40h]
@@ -25611,7 +25539,7 @@ int __cdecl make_fractions(token_type *equation, int *np)
   token_type *inc_levela; // [esp+20h] [ebp-38h]
   int modified; // [esp+24h] [ebp-34h]
   int modifieda; // [esp+24h] [ebp-34h]
-  int v29; // [esp+28h] [ebp-30h]
+  int level; // [esp+28h] [ebp-30h]
   token_type *v30; // [esp+28h] [ebp-30h]
   int v31; // [esp+2Ch] [ebp-2Ch]
   double denominator; // [esp+30h] [ebp-28h] BYREF
@@ -25625,7 +25553,7 @@ int __cdecl make_fractions(token_type *equation, int *np)
     v4 = &equation[v3];
     if ( v4->kind )
       goto LABEL_37;
-    v29 = v4->level;
+    level = v4->level;
     if ( v3 > 0 )
     {
       v5 = &equation[v3 - 1];
@@ -25647,12 +25575,12 @@ int __cdecl make_fractions(token_type *equation, int *np)
       if ( *np <= v3 + 1 )
         goto LABEL_32;
       v24 = equation[v3 + 1].level;
-      if ( v24 != v29 )
+      if ( v24 != level )
         goto LABEL_32;
-      v7 = equation[v3 + 1].token.variable;
-      if ( v7 != 3 )
+      variable = equation[v3 + 1].token.variable;
+      if ( variable != 3 )
       {
-        v8 = v7 == 4;
+        v8 = variable == 4;
         v9 = 0;
         if ( !v8 )
           v9 = *np > 1;
@@ -25662,23 +25590,23 @@ LABEL_32:
         *np += 2;
         v4->token.constant = numerator[0];
         v16 = &equation[v3 + 1];
-        v16->level = v29;
+        v16->level = level;
         v16->kind = OPERATOR;
         v16->token.variable = 4;
         v17 = v3 + 2;
         v18 = &equation[v3 + 2];
-        v18->level = v29;
+        v18->level = level;
         v18->kind = CONSTANT;
         v18->token.constant = denominator;
         if ( inc_level && v3 <= v17 )
         {
-          v19 = &v4->level;
+          p_level = &v4->level;
           v20 = v3;
           do
           {
-            ++*v19;
+            ++*p_level;
             ++v20;
-            v19 += 4;
+            p_level += 4;
           }
           while ( v17 >= v20 );
         }
@@ -25691,13 +25619,13 @@ LABEL_36:
       {
         inc_levela = &equation[v3 + 3];
         v10 = inc_levela->level;
-        if ( v29 <= v10 )
+        if ( level <= v10 )
         {
           v11 = &equation[v3 + 5];
           v23 = v3;
           v12 = v3 + 3;
           v22 = v4;
-          v13 = v29;
+          v13 = level;
           v30 = equation;
           v14 = inc_levela;
           while ( 1 )
@@ -25761,6 +25689,7 @@ LABEL_37:
   }
   return modified;
 }
+// 8070715: using guessed type double numerator[4];
 
 //----- (08070A10) --------------------------------------------------------
 long double multiply_out_unique()
@@ -25791,13 +25720,7 @@ long double multiply_out_unique()
 //----- (08070A5D) --------------------------------------------------------
 _BOOL4 is_prime()
 {
-  _BOOL4 result; // eax
-
-  if ( multiply_out_unique() >= 2.0 && uno == 1 )
-    result = ucnt[0] == 1;
-  else
-    result = 0;
-  return result;
+  return multiply_out_unique() >= 2.0 && uno == 1 && ucnt[0] == 1;
 }
 
 //----- (08070A90) --------------------------------------------------------
@@ -25805,25 +25728,25 @@ int __usercall fc_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
 {
   int v5; // ebx
   int v7; // eax
-  int *v8; // edx
+  int *p_level; // edx
   int v9; // ebx
   int v10; // eax
   unsigned int v11; // eax
   long double v12; // fst7
-  long double v13; // fst6
-  int v14; // eax
+  long double constant; // fst6
+  int variable; // eax
   int v15; // eax
   long double v16; // fst6
   long double v17; // fst5
   int v18; // ebx
   token_type *v19; // ecx
   int v20; // edx
-  int v21; // eax
+  token_type *v21; // eax
   int v22; // esi
   int *v23; // esi
   int v24; // edi
   int v25; // eax
-  storage_type *v26; // ebx
+  storage_type *p_token; // ebx
   long double v27; // fst6
   int v28; // eax
   long double v29; // fst6
@@ -25851,9 +25774,9 @@ int __usercall fc_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
   token_type *v53; // esi
   token_type *v54; // eax
   int v55; // ecx
-  int v56; // edx
+  token_type *v56; // edx
   int v57; // ebx
-  int v58; // esi
+  token_type *v58; // esi
   token_type *v59; // esi
   int improve_readability; // [esp+14h] [ebp-74h]
   int op_count; // [esp+1Ch] [ebp-6Ch]
@@ -25862,11 +25785,9 @@ int __usercall fc_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
   int gcd_flag; // [esp+28h] [ebp-60h]
   int v66; // [esp+30h] [ebp-58h]
   int neg_flag; // [esp+34h] [ebp-54h]
-  int v68; // [esp+38h] [ebp-50h]
   int first; // [esp+3Ch] [ebp-4Ch]
   double minimum; // [esp+40h] [ebp-48h]
   double minimuma; // [esp+40h] [ebp-48h]
-  token_type *v72; // [esp+4Ch] [ebp-3Ch]
   int v73; // [esp+50h] [ebp-38h]
   token_type *v74; // [esp+50h] [ebp-38h]
   int v76; // [esp+5Ch] [ebp-2Ch]
@@ -25876,8 +25797,6 @@ int __usercall fc_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
   double v80; // [esp+68h] [ebp-20h]
   token_type *v81; // [esp+68h] [ebp-20h]
 
-  v72 = equation;
-  v68 = loc;
   v5 = loc;
   v66 = 0;
   while ( v5 < *np )
@@ -25895,14 +25814,14 @@ int __usercall fc_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
       v7 = v5 + 1;
       if ( v5 + 1 < *np && level < equation[v7].level )
       {
-        v8 = &equation[v5 + 3].level;
+        p_level = &equation[v5 + 3].level;
         do
         {
           v7 += 2;
           if ( v7 >= *np )
             break;
-          v9 = *v8;
-          v8 += 8;
+          v9 = *p_level;
+          p_level += 8;
         }
         while ( level < v9 );
       }
@@ -25918,7 +25837,7 @@ int __usercall fc_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
   {
     gcd_flag = ((unsigned int)level_code >> 2) & 1;
   }
-  v77 = v68;
+  v77 = loc;
   const_count = 0;
   op_count = 0;
   neg_flag = 1;
@@ -25930,7 +25849,7 @@ int __usercall fc_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
     v32 = *np;
     if ( v77 >= *np )
       break;
-    v74 = &v72[v77];
+    v74 = &equation[v77];
     v33 = v74->level;
     if ( level > v33 )
       break;
@@ -25939,17 +25858,17 @@ int __usercall fc_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
       if ( v74->kind == CONSTANT )
       {
         ++const_count;
-        v13 = v74->token.constant;
+        constant = v74->token.constant;
         goto LABEL_31;
       }
       if ( v74->kind == OPERATOR )
       {
-        v14 = v74->token.variable;
-        if ( v14 == 1 )
+        variable = v74->token.variable;
+        if ( variable == 1 )
         {
           neg_flag = 0;
         }
-        else if ( v14 != 2 )
+        else if ( variable != 2 )
         {
           return 0;
         }
@@ -25958,16 +25877,16 @@ int __usercall fc_recurse@<eax>(token_type *equation@<eax>, int *np@<edx>, int l
       }
       else
       {
-        v13 = 1.0;
+        constant = 1.0;
 LABEL_31:
-        if ( v77 == v68 )
+        if ( v77 == loc )
         {
           v15 = 0;
-          if ( v13 <= 0.0 )
+          if ( constant <= 0.0 )
             v15 = neg_flag;
           neg_flag = v15;
         }
-        v16 = fabs(v13);
+        v16 = fabs(constant);
         if ( first )
         {
           v12 = v16;
@@ -25991,11 +25910,11 @@ LABEL_31:
       v18 = v77 + 1;
       if ( v32 <= v77 + 1 )
         goto LABEL_71;
-      v19 = &v72[v18];
+      v19 = &equation[v18];
       v20 = v19->level;
       if ( level >= v20 )
         goto LABEL_71;
-      v21 = (int)&v72[v77 + 3];
+      v21 = &equation[v77 + 3];
       v22 = 0;
       do
       {
@@ -26004,9 +25923,9 @@ LABEL_31:
         v18 += 2;
         if ( v32 <= v18 )
           break;
-        v19 = (token_type *)v21;
-        v20 = *(_DWORD *)(v21 + 4);
-        v21 += 32;
+        v19 = v21;
+        v20 = v21->level;
+        v21 += 2;
       }
       while ( level < v20 );
       v76 = v18;
@@ -26019,15 +25938,15 @@ LABEL_31:
         v73 = v18;
         v25 = v77;
         v64 = v18;
-        v26 = &v72[v77 - 1].token;
+        p_token = &equation[v77 - 1].token;
         do
         {
           if ( *v23 == level + 1 && !*(v23 - 1) )
           {
-            if ( v25 == v76 || v24 > v25 && v26->variable != 3 )
+            if ( v25 == v76 || v24 > v25 && p_token->variable != 3 )
               return 0;
             v27 = *(double *)(v23 + 1);
-            if ( v25 == v68 )
+            if ( v25 == loc )
             {
               v28 = 0;
               if ( v27 <= 0.0 )
@@ -26061,7 +25980,7 @@ LABEL_31:
           }
           ++v24;
           v23 += 4;
-          v26 += 2;
+          p_token += 2;
         }
         while ( v76 > v24 );
         v77 = v25;
@@ -26071,7 +25990,7 @@ LABEL_31:
       {
 LABEL_71:
         v31 = 0;
-        if ( v77 != v68 )
+        if ( v77 != loc )
           v31 = neg_flag;
         neg_flag = v31;
         if ( first )
@@ -26109,15 +26028,15 @@ LABEL_71:
   {
     if ( improve_readability )
     {
-      for ( i = v68; ; i = v43 + 1 )
+      for ( i = loc; ; i = v43 + 1 )
       {
-        v36 = &v72[i];
+        v36 = &equation[i];
         if ( v36->kind == CONSTANT
           && ((v78 = v36->level, v78 == level)
            || i + 1 < *np
            && v78 == level + 1
-           && v78 == v72[i + 1].level
-           && (unsigned int)(v72[i + 1].token.variable - 3) <= 1) )
+           && v78 == equation[i + 1].level
+           && (unsigned int)(equation[i + 1].token.variable - 3) <= 1) )
         {
           v80 = v36->token.constant;
         }
@@ -26152,13 +26071,13 @@ LABEL_123:
         v43 = i + 1;
         if ( i + 1 >= *np )
           goto LABEL_124;
-        if ( level < v72[v43].level )
+        if ( level < equation[v43].level )
           break;
 LABEL_151:
-        if ( level > v72[v43].level )
+        if ( level > equation[v43].level )
           goto LABEL_124;
       }
-      v44 = &v72[i + 3].level;
+      v44 = &equation[i + 3].level;
       while ( 1 )
       {
         v43 += 2;
@@ -26180,20 +26099,20 @@ LABEL_124:
       if ( *np + 2 * op_count + 4 > n_tokens )
         error_huge();
       v47 = *np;
-      if ( v68 >= *np )
+      if ( loc >= *np )
         goto LABEL_147;
-      v48 = &v72[v68];
+      v48 = &equation[loc];
       v81 = v48;
       if ( level > v48->level )
         goto LABEL_147;
-      v49 = v68;
+      v49 = loc;
       v79 = level + 1;
       do
       {
         if ( v48->kind != OPERATOR )
         {
-          v50 = &v72[v49].level;
-          v51 = &v72[v49 + 1].level;
+          v50 = &equation[v49].level;
+          v51 = &equation[v49 + 1].level;
           do
           {
             ++*v50;
@@ -26204,13 +26123,13 @@ LABEL_124:
             v51 += 4;
           }
           while ( level < v52 );
-          v53 = &v72[v49];
+          v53 = &equation[v49];
           memmove(&v53[2], v53, 16 * (*np - v49));
           *np += 2;
           v53->level = v79;
           v53->kind = OPERATOR;
           v53->token.variable = 4;
-          v54 = &v72[++v49];
+          v54 = &equation[++v49];
           v54->level = v79;
           v54->kind = CONSTANT;
           v54->token.constant = minimuma;
@@ -26219,33 +26138,33 @@ LABEL_124:
         v47 = *np;
         if ( *np <= v49 )
           break;
-        v48 = &v72[v49];
+        v48 = &equation[v49];
       }
       while ( level <= v48->level );
-      if ( v47 > v68 && (v55 = v81->level, level <= v55) )
+      if ( v47 > loc && (v55 = v81->level, level <= v55) )
       {
-        v56 = (int)&v72[v68 + 1];
-        v57 = v68;
-        v58 = (int)v81;
+        v56 = &equation[loc + 1];
+        v57 = loc;
+        v58 = v81;
         do
         {
-          *(_DWORD *)(v58 + 4) = v55 + 1;
+          v58->level = v55 + 1;
           ++v57;
           v47 = *np;
           if ( *np <= v57 )
             break;
           v58 = v56;
-          v55 = *(_DWORD *)(v56 + 4);
-          v56 += 16;
+          v55 = v56->level;
+          ++v56;
         }
         while ( level <= v55 );
       }
       else
       {
 LABEL_147:
-        v57 = v68;
+        v57 = loc;
       }
-      v59 = &v72[v57];
+      v59 = &equation[v57];
       memmove(&v59[2], v59, 16 * (v47 - v57));
       *np += 2;
       v59->level = level;
@@ -26254,7 +26173,7 @@ LABEL_147:
       v59[1].level = level;
       v59[1].kind = CONSTANT;
       v59[1].token.constant = minimuma;
-      v66 = 1;
+      return 1;
     }
   }
   return v66;
@@ -26269,7 +26188,7 @@ int __cdecl factor_constants(token_type *equation, int *np, int level_code)
 
   result = 0;
   if ( level_code != 3 )
-    result = fc_recurse(equation, np, 0, 1, level_code);
+    return fc_recurse(equation, np, 0, 1, level_code);
   return result;
 }
 
@@ -26467,7 +26386,6 @@ LABEL_10:
         while ( uno > v7 );
         i = v8;
         modified = 1;
-        continue;
       }
     }
   }
@@ -26492,45 +26410,5 @@ void __cdecl factor_int_sub(int n)
   }
 }
 
-//----- (08071820) --------------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (08071830) --------------------------------------------------------
-void _libc_csu_init(void)
-{
-  init_proc();
-}
-
-//----- (08071890) --------------------------------------------------------
-void (*_do_global_ctors_aux())(void)
-{
-  void (*result)(void); // eax
-  void (**v1)(void); // ebx
-
-  result = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    v1 = (void (**)(void))&_CTOR_LIST__;
-    do
-    {
-      --v1;
-      result();
-      result = *v1;
-    }
-    while ( *v1 != (void (*)(void))-1 );
-  }
-  return result;
-}
-// 8078EFC: using guessed type int _CTOR_LIST__;
-
-//----- (080718BC) --------------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=435 queued=300 decompiled=300 lumina nreq=0 worse=0 better=0
-// ALL OK, 300 function(s) have been successfully decompiled
+// nfuncs=435 queued=292 decompiled=292 lumina nreq=0 worse=0 better=0
+// ALL OK, 292 function(s) have been successfully decompiled

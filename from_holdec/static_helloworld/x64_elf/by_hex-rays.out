@@ -1,22 +1,23 @@
+
 Database SUBJECTS/from_holdec/static_helloworld/x64_elf/subject.exe.i64 already exists.
 Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
-  1122304   137 8192 allocating memory for b-tree...
+  1105920   135 8192 allocating memory for b-tree...
   2752512   336 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  4136960            total memory allocated
+  4120576            total memory allocated
 
 Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
 Loading type libraries...
 Autoanalysis subsystem has been initialized.
 Database for file 'subject.exe' has been loaded.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
 === start of cleanup script -> OK
   function at 00401000  LIB  with name '.init_proc'
   function at 00401020       with name '.strcpy_ifunc'
@@ -1298,6 +1299,7 @@ TIMESTAMP decompiling 40F1B0 size=00000000000000A7 times=0...
 TIMESTAMP decompiling 40EA60 size=0000000000000065 times=0...
 TIMESTAMP decompiling 4108A0 size=0000000000000096 times=0...
 TIMESTAMP decompiling 4116D0 size=000000000000014F times=0...
+TIMESTAMP decompiling 411630 size=00000000000000A0 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 *, __int64, __int64, __int64, __int64, __int64)
 TIMESTAMP decompiling 413150 size=000000000000081B times=0...
 TIMESTAMP decompiling 413970 size=0000000000000FD5 times=0...
 TIMESTAMP decompiling 414FE0 size=0000000000000326 times=0...
@@ -1541,8 +1543,8 @@ TIMESTAMP decompiling 43F020 size=0000000000000199 times=0...
 TIMESTAMP decompiling 43F220 size=0000000000000323 times=0...
 TIMESTAMP decompiling 411960 size=00000000000004EA times=0...
 TIMESTAMP decompiling 414A20 size=000000000000013E times=0...
-TIMESTAMP decompiling 416560 size=00000000000003D5 times=1;usedcpu 00:00:00 ...u32 *__fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
+TIMESTAMP decompiling 416560 size=00000000000003D5 times=1;usedcpu 00:00:00 ...u32 *__fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 a1, unsigned __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, unsigned __int64 a6)
 TIMESTAMP decompiling 415E50 size=00000000000000FA times=0...
 TIMESTAMP decompiling 43CBB0 size=000000000000036D times=0...
 TIMESTAMP decompiling 43C6B0 size=0000000000000022 times=0...
@@ -1552,73 +1554,69 @@ TIMESTAMP decompiling 463B90 size=00000000000001A6 times=0...
 TIMESTAMP decompiling 459150 size=0000000000002955 times=0...
 TIMESTAMP decompiling 45E9D0 size=00000000000002AF times=0...
 TIMESTAMP decompiling 45BAB0 size=0000000000002F14 times=0...
+TIMESTAMP decompiling 45E9D0 size=00000000000002AF times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 _RSI, __m128i *a3, __int64 a4, u32 *a5, __int64 a6)
 TIMESTAMP decompiling 408E50 size=000000000000019B times=0...
 TIMESTAMP decompiling 408FF0 size=0000000000000181 times=0...
+TIMESTAMP decompiling 402A00 size=000000000000015B times=1;usedcpu 00:00:00 ...void __fastcall __noreturn(unsigned __int64, __int64, __int64, unsigned int, unsigned __int8 *, __int64, int, __int64)
 TIMESTAMP decompiling 410F70 size=0000000000000054 times=0...
 TIMESTAMP decompiling 4157F0 size=000000000000031F times=0...
-TIMESTAMP decompiling 4772D0 size=00000000000010AC times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 a1, __int64 *a2, __int64 a3, int a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 4747D0 size=0000000000000757 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, double a2, double a3, double a4, double a5, double a6, double a7, double a8, double a9)
-TIMESTAMP decompiling 4741B0 size=000000000000022C times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 470000 size=00000000000002BC times=1;usedcpu 00:00:00 ...const char *__fastcall(const char **a1, void *a2, _BYTE *a3, double a4, double a5, double a6, double a7, double a8, double a9, double a10, double a11, __int64 a12, u32 *a13, __int64 a14, char a15)
-TIMESTAMP decompiling 46FF30 size=00000000000000CA times=1;usedcpu 00:00:00 ...const char *__fastcall(const char **a1, void *a2, __int64 a3)
-TIMESTAMP decompiling 46F0D0 size=00000000000000D0 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, unsigned __int64 a6)
+TIMESTAMP decompiling 4772D0 size=00000000000010AC times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64, __int64 *, __int64, int, __int64, unsigned __int64)
+TIMESTAMP decompiling 4747D0 size=0000000000000757 times=1;usedcpu 00:00:00 ...signed __int64 __fastcall(__int64, double, double, double, double, double, double, double, double)
+TIMESTAMP decompiling 4741B0 size=000000000000022C times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64, __int64, __int64, __int64, __int64, __int64)
+TIMESTAMP decompiling 470000 size=00000000000002BC times=1;usedcpu 00:00:00 ...const char *__fastcall(const char **, void *, _BYTE *, double, double, double, double, double, double, double, double, __int64, u32 *, __int64, char)
+TIMESTAMP decompiling 46FF30 size=00000000000000CA times=1;usedcpu 00:00:00 ...const char *__fastcall(const char **, void *, __int64)
+TIMESTAMP decompiling 46F0D0 size=00000000000000D0 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, unsigned __int64 a6)
 TIMESTAMP decompiling 46EF40 size=0000000000000185 times=1;usedcpu 00:00:00 ...__int64()
-TIMESTAMP decompiling 46EE50 size=00000000000000EC times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int64 a1, __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 46AAE0 size=000000000000031C times=1;usedcpu 00:00:00 ...u32 *__fastcall(unsigned __int8 *a1, __int64 a2, char a3, _QWORD *a4, char a5, __int64 a6)
-TIMESTAMP decompiling 469F10 size=0000000000000A47 times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, __int64 a2, unsigned int **a3, __int64 *a4, const char **a5, int a6, double a7, double a8, double a9, double a10, double a11, double a12, double a13, double a14, int a15, __int64 a16)
-TIMESTAMP decompiling 468230 size=000000000000020B times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, int a3, __int64 a4)
-TIMESTAMP decompiling 467F30 size=00000000000002F1 times=1;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, _QWORD *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 467E20 size=000000000000010C times=1;usedcpu 00:00:00 ...char *__fastcall(__int64 a1, char *a2)
-TIMESTAMP decompiling 466B10 size=000000000000101F times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, unsigned int a2, char *a3, unsigned __int8 *a4, _QWORD *a5, char a6, int a7, __int64 a8, __int64 a9)
-TIMESTAMP decompiling 466490 size=0000000000000675 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, int a3, __int64 *a4, __int64 *a5, __int64 a6, __int64 a7, int a8, _BYTE *a9)
-TIMESTAMP decompiling 465D10 size=00000000000000ED times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, __int64 a2)
-TIMESTAMP decompiling 4659B0 size=00000000000002D9 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, _QWORD *a2, _QWORD *a3, _QWORD *a4, u32 *a5, unsigned __int64 a6)
-TIMESTAMP decompiling 464D00 size=00000000000000FB times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned int a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 465100 size=00000000000000BF times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned int a1)
-TIMESTAMP decompiling 464E00 size=00000000000000A9 times=1;usedcpu 00:00:00 ...__int64 __fastcall(signed int a1)
-TIMESTAMP decompiling 464EF0 size=0000000000000039 times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, __int64 a2, int a3)
-TIMESTAMP decompiling 43F550 size=00000000000000EF times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, char **a2, int a3)
-TIMESTAMP decompiling 461E10 size=00000000000000B8 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, unsigned __int64 a2, __int64 a3, __int64 a4, u32 *a5, unsigned __int64 a6)
-TIMESTAMP decompiling 461D60 size=00000000000000AD times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 45FF20 size=00000000000002CB times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 _RSI, __int64 _RDX, unsigned int *a4, u32 *a5, unsigned __int64 a6)
-TIMESTAMP decompiling 45BAB0 size=0000000000002F14 times=1;usedcpu 00:00:02 ...__int64 __fastcall(__int64 a1, int *a2, __m128i *a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 459150 size=0000000000002955 times=1;usedcpu 00:00:03 ...__int64 __fastcall(u32 *a1, __int64 a2, unsigned int a3, __int64 a4, u32 *a5, unsigned __int64 a6, int a7, _DWORD *a8, __int64 a9, unsigned int a10, _BYTE *a11, int a12)
-TIMESTAMP decompiling 454030 size=0000000000002A74 times=1;usedcpu 00:00:02 ...__int64 __fastcall(char *a1, _QWORD *a2, __int64 a3, long double **a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 4508C0 size=00000000000030BE times=1;usedcpu 00:00:02 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __m128i *a3)
-TIMESTAMP decompiling 44DFF0 size=00000000000028C6 times=1;usedcpu 00:00:02 ...__int64 __fastcall(char *a1, __int64 a2, int a3, __int64 a4, unsigned __int64 a5, unsigned __int64 a6, int a7, _BYTE *a8, __int64 a9, int a10, char *a11, __int64 a12)
-TIMESTAMP decompiling 44A6C0 size=00000000000001E0 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1)
-TIMESTAMP decompiling 44A140 size=00000000000004C4 times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *a1, unsigned __int8 *a2, __int64 *a3, __int64 *a4, char a5)
+TIMESTAMP decompiling 46EE50 size=00000000000000EC times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int64, __int64, _QWORD *, __int64, u32 *, __int64)
+TIMESTAMP decompiling 46AAE0 size=000000000000031C times=1;usedcpu 00:00:00 ...u32 *__fastcall(unsigned __int8 *, __int64, char, _QWORD *, char, __int64)
+TIMESTAMP decompiling 469F10 size=0000000000000A47 times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *, __int64, unsigned int **, __int64 *, const char **, int, double, double, double, double, double, double, double, double, int, __int64)
+TIMESTAMP decompiling 468230 size=000000000000020B times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64, __int64, int, __int64)
+TIMESTAMP decompiling 467F30 size=00000000000002F1 times=1;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64, _QWORD *, __int64, __int64, __int64, __int64)
+TIMESTAMP decompiling 467E20 size=000000000000010C times=1;usedcpu 00:00:00 ...char *__fastcall(__int64, char *)
+TIMESTAMP decompiling 466B10 size=000000000000101F times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *, unsigned int, char *, unsigned __int8 *, _QWORD *, char, int, __int64, __int64)
+TIMESTAMP decompiling 466490 size=0000000000000675 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, int a3, __int64 *a4, __int64 *a5, unsigned __int64 a6, __int64 a7, int a8, _BYTE *a9)
+TIMESTAMP decompiling 465D10 size=00000000000000ED times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, void *a2)
+TIMESTAMP decompiling 4659B0 size=00000000000002D9 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64, _QWORD *, _QWORD *, _QWORD *, u32 *, unsigned __int64)
+TIMESTAMP decompiling 464D00 size=00000000000000FB times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned int a1, __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 465100 size=00000000000000BF times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned int)
+TIMESTAMP decompiling 464E00 size=00000000000000A9 times=1;usedcpu 00:00:00 ...__int64 __fastcall(signed int)
+TIMESTAMP decompiling 464EF0 size=0000000000000039 times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *, __int64, int)
+TIMESTAMP decompiling 43F550 size=00000000000000EF times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64, char **, int)
+TIMESTAMP decompiling 461E10 size=00000000000000B8 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *, unsigned __int64, __int64, __int64, u32 *, unsigned __int64)
+TIMESTAMP decompiling 461D60 size=00000000000000AD times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 a2, _QWORD *a3, __int64 *a4, u32 *a5, unsigned __int64 a6)
+TIMESTAMP decompiling 45FF20 size=00000000000002CB times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *, __int64 _RSI, __int64 _RDX, unsigned int *, u32 *, unsigned __int64)
+TIMESTAMP decompiling 45BAB0 size=0000000000002F14 times=1;usedcpu 00:00:03 ...__int64 __fastcall(__int64 a1, int *a2, __m128i *a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 459150 size=0000000000002955 times=1;usedcpu 00:00:03 ...__int64 __fastcall(u32 *, unsigned __int64, unsigned int, __int64, u32 *, unsigned __int64, int, _DWORD *, __int64, unsigned int, _BYTE *, int)
+TIMESTAMP decompiling 454030 size=0000000000002A74 times=1;usedcpu 00:00:02 ...__int64 __fastcall(char *, _QWORD *, __int64, long double **, u32 *, __int64)
+TIMESTAMP decompiling 4508C0 size=00000000000030BE times=1;usedcpu 00:00:02 ...__int64 __fastcall(__int64, unsigned __int64, __m128i *)
+TIMESTAMP decompiling 44DFF0 size=00000000000028C6 times=1;usedcpu 00:00:02 ...__int64 __fastcall(char *a1, __int64 a2, int a3, __int64 a4, u32 *a5, unsigned __int64 a6, int a7, _BYTE *a8, __int64 a9, int a10, char *a11, __int64 a12)
+TIMESTAMP decompiling 44A6C0 size=00000000000001E0 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64)
+TIMESTAMP decompiling 44A140 size=00000000000004C4 times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 *, unsigned __int8 *, __int64 *, __int64 *, char)
 TIMESTAMP decompiling 449E80 size=0000000000000214 times=1;usedcpu 00:00:00 ...__int64()
-TIMESTAMP decompiling 443BB0 size=0000000000000423 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, u32 a6)
-TIMESTAMP decompiling 443B20 size=0000000000000083 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 4424B0 size=0000000000000C53 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 *a5, unsigned __int64 *a6)
-TIMESTAMP decompiling 441B40 size=00000000000005F3 times=1;usedcpu 00:00:00 ...__int64 __fastcall(char *a1, char *a2, _QWORD *a3, int a4)
-TIMESTAMP decompiling 43E7C0 size=0000000000000163 times=1;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, __int64 *a2, __int64 (__fastcall *a3)(__int64, _QWORD), __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 43D8A0 size=000000000000071A times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 4173C0 size=0000000000000049 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2)
-TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 46AAE0 size=000000000000031C times=2;usedcpu 00:00:00 ...u32 *__fastcall(unsigned __int8 *a1, __int64 a2, char a3, _QWORD *a4, char a5, __int64 a6)
-TIMESTAMP decompiling 465E00 size=0000000000000685 times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, __int64 a2, int a3, _BYTE *a4, int a5)
-TIMESTAMP decompiling 461D60 size=00000000000000AD times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 45FF20 size=00000000000002CB times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, __int64 _RSI, __int64 _RDX, unsigned int *a4, u32 *a5, unsigned __int64 a6)
-TIMESTAMP decompiling 43D8A0 size=000000000000071A times=2;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 405D20 size=0000000000000535 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, int a2)
-TIMESTAMP decompiling 415B10 size=000000000000003C times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 416560 size=00000000000003D5 times=2;usedcpu 00:00:00 ...u32 *__fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 40DE60 size=00000000000001DC times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
-TIMESTAMP decompiling 40D590 size=000000000000052F times=1;usedcpu 00:00:00 ...int *__fastcall(__int64 a1, const char *a2, _BYTE *a3)
-TIMESTAMP decompiling 40B350 size=0000000000000188 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *a1, unsigned __int64 a2, __m128i *a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 4096E0 size=00000000000000FE times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *a1, _BYTE *a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 408E50 size=000000000000019B times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, unsigned __int64 a2, __m128i *a3)
-TIMESTAMP decompiling 407C20 size=000000000000036E times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(char *a1, __int64 a2, unsigned __int64 a3, int (__fastcall *a4)(char *, char *, __int64), __int64 a5, unsigned __int64 a6)
-TIMESTAMP decompiling 406DD0 size=000000000000089B times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 **a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int8 *a6)
-TIMESTAMP decompiling 406CE0 size=00000000000000E2 times=1;usedcpu 00:00:00 ...int *__fastcall(int a1, __int64 a2, __int64 a3, __int64 a4, u32 *a5, unsigned __int64 a6)
-TIMESTAMP decompiling 406950 size=0000000000000103 times=1;usedcpu 00:00:00 ..._DWORD *__fastcall(unsigned __int8 *a1, unsigned __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 406430 size=0000000000000518 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 **a1, unsigned __int64 a2, __int64 a3, int a4, __int64 a5, __int64 a6, __int64 a7, __int64 a8, __int64 a9, __int64 a10, int a11)
-TIMESTAMP decompiling 404670 size=000000000000168B times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __off_t _RSI, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
-TIMESTAMP decompiling 4043D0 size=0000000000000295 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(unsigned __int64 a1, __int64 a2, __int64 a3, __off_t a4)
-TIMESTAMP decompiling 403B40 size=0000000000000890 times=1;usedcpu 00:00:00 ...unsigned __int8 *__fastcall(char *a1, unsigned __int8 *a2, __int64 a3, int a4, __int64 a5, unsigned int a6)
-TIMESTAMP decompiling 402EA0 size=0000000000000C9E times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __off_t a2, unsigned __int8 *a3, unsigned int a4, u32 *a5)
+TIMESTAMP decompiling 443BB0 size=0000000000000423 times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64, __int64, __int64, __int64, u32 *, u32)
+TIMESTAMP decompiling 443B20 size=0000000000000083 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64, __int64, __int64, __int64, u32 *, __int64)
+TIMESTAMP decompiling 4424B0 size=0000000000000C53 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64, __int64, __int64, __int64, __int64 *, unsigned __int64 *)
+TIMESTAMP decompiling 441B40 size=00000000000005F3 times=1;usedcpu 00:00:00 ...__int64 __fastcall(char *, char *, _QWORD *, int)
+TIMESTAMP decompiling 43E7C0 size=0000000000000163 times=1;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64, __int64 *, __int64 (__fastcall *)(__int64, _QWORD), __int64, u32 *, __int64)
+TIMESTAMP decompiling 43D8A0 size=000000000000071A times=1;usedcpu 00:00:00 ...char *__fastcall(__int64 *a1, unsigned __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 4173C0 size=0000000000000049 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64, __int64)
+TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=2;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 a1, unsigned __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, unsigned __int64 a6)
+TIMESTAMP decompiling 415B10 size=000000000000003C times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int64 a1, __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 416560 size=00000000000003D5 times=2;usedcpu 00:00:00 ...u32 *__fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6)
+TIMESTAMP decompiling 40DE60 size=00000000000001DC times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD *, __int64, __int64, __int64, __int64, __int64)
+TIMESTAMP decompiling 40D590 size=000000000000052F times=1;usedcpu 00:00:00 ...int *__fastcall(__int64, const char *, _BYTE *)
+TIMESTAMP decompiling 40B350 size=0000000000000188 times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 *, unsigned __int64, __m128i *, __int64, u32 *, __int64)
+TIMESTAMP decompiling 4096E0 size=00000000000000FE times=1;usedcpu 00:00:00 ...__int64 __fastcall(const char *, _BYTE *, _QWORD *, __int64, u32 *, __int64)
+TIMESTAMP decompiling 408E50 size=000000000000019B times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64 a1, __int64 a2, __m128i *a3)
+TIMESTAMP decompiling 407C20 size=000000000000036E times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(char *a1, __int64 a2, unsigned __int64 a3, int (__fastcall *a4)(char *, char *, __int64), u32 *a5, unsigned __int64 a6)
+TIMESTAMP decompiling 406DD0 size=000000000000089B times=1;usedcpu 00:00:00 ...__int64 __fastcall(unsigned __int8 **, __int64, __int64, __int64, __int64, unsigned __int8 *)
+TIMESTAMP decompiling 406CE0 size=00000000000000E2 times=1;usedcpu 00:00:00 ...int *__fastcall(int a1, __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, unsigned __int64 a6)
+TIMESTAMP decompiling 406950 size=0000000000000103 times=1;usedcpu 00:00:00 ..._DWORD *__fastcall(unsigned __int8 *, unsigned __int64, _QWORD *, __int64, u32 *, __int64)
+TIMESTAMP decompiling 406430 size=0000000000000518 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 **a1, __int64 a2, __int64 a3, int a4, __int64 a5, __int64 a6, __int64 a7, __int64 a8, __int64 a9, __int64 a10, int a11)
+TIMESTAMP decompiling 404670 size=000000000000168B times=1;usedcpu 00:00:00 ...unsigned __int64 __fastcall(__int64 a1, __off_t _RSI, __int64 a3, __int64 a4, u32 *a5, unsigned __int64 a6)
+TIMESTAMP decompiling 4043D0 size=0000000000000295 times=1;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 a1, __int64 a2, __int64 a3, __off_t a4)
+TIMESTAMP decompiling 403B40 size=0000000000000890 times=1;usedcpu 00:00:00 ...unsigned __int8 *__fastcall(char *, unsigned __int8 *, __int64, int, __int64, unsigned int)
+TIMESTAMP decompiling 402EA0 size=0000000000000C9E times=1;usedcpu 00:00:00 ...__int64 __fastcall(__int64, __off_t, unsigned __int8 *, unsigned int, u32 *)
 TIMESTAMP decompiling 47C590 size=00000000000000A4 times=0...
 TIMESTAMP decompiling 47C890 size=0000000000000080 times=0...
 TIMESTAMP decompiling 47D0A0 size=0000000000000095 times=0...
@@ -1733,11 +1731,11 @@ TIMESTAMP decompiling 415670 size=000000000000008D times=0...
 TIMESTAMP decompiling 4157A0 size=0000000000000047 times=0...
 TIMESTAMP decompiling 415B50 size=00000000000002AB times=0...
 TIMESTAMP decompiling 4157A0 size=0000000000000047 times=1;usedcpu 00:00:00 ...__int64 (__fastcall *())(unsigned __int64 a1, int *a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6, double a7)
-TIMESTAMP decompiling 411F30 size=000000000000004D times=1;usedcpu 00:00:00 ...__int64 (__fastcall *__fastcall(unsigned int *a1))(unsigned __int64 a1, int *a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6, double a7)
+TIMESTAMP decompiling 411F30 size=000000000000004D times=1;usedcpu 00:00:00 ...__int64 (__fastcall *__fastcall(unsigned int *))(unsigned __int64 a1, int *a2, __int64 a3, __int64 a4, u32 *a5, __int64 a6, double a7)
 TIMESTAMP decompiling 415E00 size=0000000000000042 times=0...
 TIMESTAMP decompiling 415F50 size=000000000000014F times=0...
 TIMESTAMP decompiling 416440 size=0000000000000054 times=0...
-TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=3;usedcpu 00:00:00 ..._QWORD *__fastcall(__int64 a1, unsigned __int64 a2, __int64 a3, __int64 a4, __int64 a5, unsigned __int64 a6)
+TIMESTAMP decompiling 4160A0 size=00000000000003A0 times=3;usedcpu 00:00:00 ...__int64 *__fastcall(__int64 a1, unsigned __int64 a2, _QWORD *a3, __int64 a4, u32 *a5, unsigned __int64 a6)
 TIMESTAMP decompiling 4164A0 size=000000000000000D times=0...
 TIMESTAMP decompiling 4164B0 size=0000000000000037 times=0...
 TIMESTAMP decompiling 4164F0 size=0000000000000067 times=0...

@@ -10,8 +10,8 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-_DWORD *__fastcall g(_DWORD *a1, _DWORD *a2, _DWORD *a3);
-__int64 __fastcall f(unsigned int a1, unsigned int a2, unsigned int a3);
+_DWORD *__fastcall g(_DWORD *, _DWORD *, _DWORD *);
+__int64 __fastcall f(unsigned int, unsigned int, unsigned int);
 
 
 //----- (00000000004000E8) ----------------------------------------------------

@@ -1,75 +1,460 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+
+Database SUBJECTS/from_decompile-it.com/mathomatic/ia32_elf_from_website/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
-  1744896   213 8192 allocating memory for b-tree...
-  1744896   213 8192 allocating memory for virtual array...
+   630784    77 8192 allocating memory for b-tree...
+   802816    98 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  3751936            total memory allocated
+  1695744            total memory allocated
 
-Loading file 'SUBJECTS/from_decompile-it.com/mathomatic/ia32_elf_from_website/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-08077E4C) ... ... OK
-  1. Creating a new segment  (08078EFC-081E38A0) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (08048E54-08048E84) ... ... OK
-  3. Creating a new segment  (08048E84-08077E4C) ... ... OK
-  4. Creating a new segment  (08048E84-080492C4) ... ... OK
-     Deleting segment        (080492C4-08077E4C) ...
-  4. Creating a new segment  (080492C4-08077E4C) ... ... OK
-  5. Creating a new segment  (080492D0-080718BC) ... ... OK
-  6. Creating a new segment  (080718BC-08077E4C) ... ... OK
-  7. Creating a new segment  (080718BC-080718D8) ... ... OK
-     Deleting segment        (080718D8-08077E4C) ...
-  7. Creating a new segment  (080718D8-08077E4C) ... ... OK
-  8. Creating a new segment  (080718E0-08077E48) ... ... OK
-  9. Creating a new segment  (08077E48-08077E4C) ... ... OK
-     Deleting segment        (08077E48-08077E4C) ...
-  9. Creating a new segment  (08077E48-08077E4C) ... ... OK
- 10. Creating a new segment  (08078EFC-08078F04) ... ... OK
-     Deleting segment        (08078F04-081E38A0) ...
- 10. Creating a new segment  (08078F04-081E38A0) ... ... OK
- 11. Creating a new segment  (08078F04-08078F0C) ... ... OK
-     Deleting segment        (08078F0C-081E38A0) ...
- 11. Creating a new segment  (08078F0C-081E38A0) ... ... OK
- 12. Creating a new segment  (08078F0C-08078F10) ... ... OK
-     Deleting segment        (08078F10-081E38A0) ...
- 12. Creating a new segment  (08078F10-081E38A0) ... ... OK
- 13. Creating a new segment  (08078FF0-08078FF4) ... ... OK
- 14. Creating a new segment  (08078FF4-081E38A0) ... ... OK
- 15. Creating a new segment  (08078FF4-0807910C) ... ... OK
-     Deleting segment        (0807910C-081E38A0) ...
- 15. Creating a new segment  (0807910C-081E38A0) ... ... OK
- 16. Creating a new segment  (08079120-0807932C) ... ... OK
- 17. Creating a new segment  (0807932C-081E38A0) ... ... OK
- 18. Creating a new segment  (08079340-081E38A0) ... ... OK
- 19. Creating a new segment  (081E38A0-081E38A1) ... ... OK
- 20. Creating a new segment  (081E38A4-081E39B4) ... ... OK
- 21. Creating a new segment  (081E39B4-081E3A20) ... ... OK
-Processing relocations...
-DWARF: File "SUBJECTS/from_decompile-it.com/mathomatic/ia32_elf_from_website/subject.exe" contains DWARF information.
-DWARF: Functions: 318 symbols applied
-DWARF: Globals: 99 symbols applied
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_decompile-it.com/mathomatic/ia32_elf_from_website/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 5 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08048E54  LIB  with name '.init_proc'
+  function at 08048E84       with name 'sub_8048E84'
+  function at 08048E94       with name '.fmod'
+  function at 08048EA4       with name '.__errno_location'
+  function at 08048EB4       with name '.setbuf'
+  function at 08048EC4       with name '.rl_initialize'
+  function at 08048ED4       with name '.qsort'
+  function at 08048EE4       with name '.write_history'
+  function at 08048EF4       with name '.__longjmp_chk'
+  function at 08048F04       with name '.__fprintf_chk'
+  function at 08048F14       with name '.signal'
+  function at 08048F24       with name '.__gmon_start__'
+  function at 08048F34       with name '.__printf_chk'
+  function at 08048F44       with name '.__isinf'
+  function at 08048F54       with name '.read_history'
+  function at 08048F64       with name '.strtod'
+  function at 08048F74       with name '.strchr'
+  function at 08048F84       with name '.getenv'
+  function at 08048F94       with name '.system'
+  function at 08048FA4       with name '.pow'
+  function at 08048FB4       with name '.fgets'
+  function at 08048FC4  LIB  with name '.__libc_start_main'
+  function at 08048FD4       with name '.tigetnum'
+  function at 08048FE4       with name '.modf'
+  function at 08048FF4       with name '.perror'
+  function at 08049004       with name '.exp'
+  function at 08049014       with name '.strtol'
+  function at 08049024       with name '.fdopen'
+  function at 08049034       with name '.free'
+  function at 08049044       with name '.access'
+  function at 08049054       with name '.fflush'
+  function at 08049064       with name '.mkstemp'
+  function at 08049074       with name '.ioctl'
+  function at 08049084       with name '.__ctype_b_loc'
+  function at 08049094       with name '.isatty'
+  function at 080490A4       with name '.fclose'
+  function at 080490B4       with name '._setjmp'
+  function at 080490C4       with name '.getopt'
+  function at 080490D4       with name '.fopen'
+  function at 080490E4       with name '.cos'
+  function at 080490F4       with name '.unlink'
+  function at 08049104       with name '.__finite'
+  function at 08049114       with name '.strcpy'
+  function at 08049124       with name '.chdir'
+  function at 08049134       with name '.lgamma'
+  function at 08049144       with name '.strcasecmp'
+  function at 08049154       with name '.stifle_history'
+  function at 08049164       with name '.readline'
+  function at 08049174       with name '.malloc'
+  function at 08049184       with name '.__stack_chk_fail'
+  function at 08049194       with name '.atan2'
+  function at 080491A4       with name '.__isnan'
+  function at 080491B4       with name '.strncasecmp'
+  function at 080491C4       with name '.memmove'
+  function at 080491D4       with name '.__ctype_tolower_loc'
+  function at 080491E4       with name '.getcwd'
+  function at 080491F4       with name '.log'
+  function at 08049204       with name '.using_history'
+  function at 08049214       with name '.strncmp'
+  function at 08049224       with name '.__snprintf_chk'
+  function at 08049234       with name '.strpbrk'
+  function at 08049244       with name '.__memmove_chk'
+  function at 08049254       with name '.add_history'
+  function at 08049264       with name '.sin'
+  function at 08049274       with name '.strcmp'
+  function at 08049284       with name '.__strdup'
+  function at 08049294       with name '.exit'
+  function at 080492A4       with name '.sincos'
+  function at 080492B4       with name '.ceil'
+  function at 080492D0  LIB  with name '_start'
+  function at 08049300  LIB  with name '__do_global_dtors_aux'
+  function at 08049360  LIB  with name 'frame_dummy'
+  function at 08049390       with name 'fphandler'
+  function at 08049395       with name 'exit_program'
+  function at 0804943C       with name 'exithandler'
+  function at 08049450       with name 'alarmhandler'
+  function at 08049478       with name 'inthandler'
+  function at 080494F0       with name 'usage'
+  function at 0804965D       with name 'resizehandler'
+  function at 08049673       with name 'load_rc'
+  function at 08049760       with name 'set_signals'
+  function at 0804982A       with name 'main_io_loop'
+  function at 080498B9       with name 'main'
+  function at 08049FD0       with name 'init_gvars'
+  function at 0804A053       with name 'next_sign'
+  function at 0804A0A7       with name 'found_var'
+  function at 0804A101       with name 'solved_equation'
+  function at 0804A168       with name 'var_in_equation'
+  function at 0804A1E2       with name 'min_level'
+  function at 0804A221       with name 'level_plus_count'
+  function at 0804A25F       with name 'level1_plus_count'
+  function at 0804A297       with name 'var_count'
+  function at 0804A2C9       with name 'no_vars'
+  function at 0804A35B       with name 'exp_is_numeric'
+  function at 0804A39A       with name 'exp_contains_nan'
+  function at 0804A3E4       with name 'exp_contains_infinity'
+  function at 0804A42B       with name 'isdelimiter'
+  function at 0804A45E       with name 'strcmp_tospace'
+  function at 0804A4DC       with name 'is_all'
+  function at 0804A4FF       with name 'skip_space'
+  function at 0804A535       with name 'skip_param'
+  function at 0804A597       with name 'decstrtol'
+  function at 0804A5E5       with name 'free_result_str'
+  function at 0804A612       with name 'return_result'
+  function at 0804A63C       with name 'get_string'
+  function at 0804A801       with name 'get_yes_no'
+  function at 0804A86F       with name 'get_expr'
+  function at 0804A8DF       with name 'copy_espace'
+  function at 0804A95D       with name 'error_huge'
+  function at 0804A977       with name 'subst_var_with_exp'
+  function at 0804AAA1       with name 'alloc_espace'
+  function at 0804AB33       with name 'clean_up'
+  function at 0804ABAC       with name 'get_screen_size'
+  function at 0804AC01       with name 'warning'
+  function at 0804AC49       with name 'check_divide_by_zero'
+  function at 0804AC74       with name 'alloc_next_espace'
+  function at 0804AD7A       with name 'error'
+  function at 0804ADB9       with name 'extra_characters'
+  function at 0804ADED       with name 'prompt_var'
+  function at 0804AE82       with name 'current_not_defined'
+  function at 0804AEBC       with name 'not_defined'
+  function at 0804AF06       with name 'get_default_en'
+  function at 0804AF59       with name 'get_range'
+  function at 0804B139       with name 'get_range_eol'
+  function at 0804B17C       with name 'next_espace'
+  function at 0804B1C1       with name 'check_err'
+  function at 0804B23D       with name 'error_bug'
+  function at 0804B29E       with name 'clear_all'
+  function at 0804B351       with name 'init_mem'
+  function at 0804B3E4       with name 'set_sign_array'
+  function at 0804B4F0       with name 'flip'
+  function at 0804B637       with name 'g_of_f'
+  function at 0804C1C3       with name 'quad_solve'
+  function at 0804D01A       with name 'solve_sub'
+  function at 0804E68E       with name 'solve_espace'
+  function at 0804E7B0       with name 'display_command'
+  function at 0804E8BB       with name 'parse_var2'
+  function at 0804E8F0       with name 'shell_out'
+  function at 0804E95A       with name 'parse'
+  function at 0804E9F6       with name 'process_parse'
+  function at 0804EE45       with name 'process'
+  function at 0804F44B       with name 'display_process'
+  function at 0804F53B       with name 'read_examples'
+  function at 0804F580       with name 'help_cmd'
+  function at 080502D0       with name 'var_is_const'
+  function at 0805031B       with name 'subst_constants'
+  function at 0805037E       with name 'my_strlcpy'
+  function at 080503D7       with name 'remove_trailing_spaces'
+  function at 08050428       with name 'set_error_level'
+  function at 0805048F       with name 'binary_parenthesize'
+  function at 08050598       with name 'give_priority'
+  function at 0805069F       with name 'handle_negate'
+  function at 080506F5       with name 'isvarchar'
+  function at 0805073A       with name 'parse_var'
+  function at 08050BE0       with name 'put_up_arrow'
+  function at 08050C67       with name 'parse_section'
+  function at 080513EC       with name 'str_tolower'
+  function at 0805143A       with name 'parse_expr'
+  function at 080515D9       with name 'parse_equation'
+  function at 08051690       with name 'vcmp'
+  function at 080516A1       with name 'quit_cmd'
+  function at 080516E8       with name 'fraction_cmd'
+  function at 0805178A       with name 'unfactor_cmd'
+  function at 08051A6A       with name 'skip_no'
+  function at 08051B3F       with name 'factor_cmd'
+  function at 08052146       with name 'echo_cmd'
+  function at 08052177       with name 'output_options'
+  function at 080524DF       with name 'save_set_options'
+  function at 080525B0       with name 'version_report'
+  function at 080526BA       with name 'version_cmd'
+  function at 0805277E       with name 'copy_cmd'
+  function at 08052868       with name 'replace_cmd'
+  function at 08052D39       with name 'approximate_cmd'
+  function at 08052E8C       with name 'variables_cmd'
+  function at 08053371       with name 'code_cmd'
+  function at 0805364D       with name 'list_cmd'
+  function at 08053768       with name 'save_cmd'
+  function at 080538F6       with name 'clear_cmd'
+  function at 080539AA       with name 'elim_sub'
+  function at 08053B59       with name 'display_fraction'
+  function at 08053C1D       with name 'divide_cmd'
+  function at 080543B1       with name 'compare_rhs'
+  function at 08054457       with name 'compare_es'
+  function at 0805454A       with name 'compare_cmd'
+  function at 08054E04       with name 'find_more'
+  function at 08054FE6       with name 'tally_cmd'
+  function at 08055415       with name 'complex_func'
+  function at 08055703       with name 'imaginary_cmd'
+  function at 08055718       with name 'real_cmd'
+  function at 0805572D       with name 'pause_cmd'
+  function at 08055821       with name 'output_current_directory'
+  function at 080558A8       with name 'set_options'
+  function at 08055FD5       with name 'set_cmd'
+  function at 08056051       with name 'push_en'
+  function at 080560AE       with name 'push_cmd'
+  function at 08056176       with name 'opt_es'
+  function at 080566A8       with name 'optimize_cmd'
+  function at 0805699C       with name 'sum_product'
+  function at 080570C8       with name 'product_cmd'
+  function at 080570DD       with name 'sum_cmd'
+  function at 080570F2       with name 'solve_cmd'
+  function at 08057638       with name 'plot_cmd'
+  function at 080578B1       with name 'read_sub'
+  function at 08057973       with name 'read_file'
+  function at 08057A98       with name 'read_cmd'
+  function at 08057AC7       with name 'edit_sub'
+  function at 08057BBF       with name 'edit_cmd'
+  function at 08057CF9       with name 'display_cmd'
+  function at 08057EB0       with name 'eliminate_cmd'
+  function at 08058321       with name 'simplify_cmd'
+  function at 08058A78       with name 'calculate_cmd'
+  function at 08059530       with name 'org_up_level'
+  function at 080595E1       with name 'org_recurse'
+  function at 080597BE       with name 'simpb_vcmp'
+  function at 08059835       with name 'div_imaginary'
+  function at 08059CBE       with name 'simp2_power'
+  function at 08059ED8       with name 'simp_constant_power'
+  function at 0805A00B       with name 'rationalize'
+  function at 0805A554       with name 'order_recurse'
+  function at 0805A987       with name 'reorder'
+  function at 0805A9A6       with name 'elim_sign'
+  function at 0805AE41       with name 'simp_pp'
+  function at 0805B11E       with name 'compare_recurse'
+  function at 0805B96D       with name 'se_compare'
+  function at 0805B9CE       with name 'elim_k'
+  function at 0805C1F9       with name 'calc'
+  function at 0805C5E4       with name 'const_recurse'
+  function at 0805CB7B       with name 'combine_constants'
+  function at 0805CBA1       with name 'integer_root_simp'
+  function at 0805CEBA       with name 'organize'
+  function at 0805CF2C       with name 'elim_loop'
+  function at 0805D024       with name 'simp_loop'
+  function at 0805D095       with name 'simp_divide'
+  function at 0805D0EC       with name 'factorv'
+  function at 0805D152       with name 'simp_equation'
+  function at 0805D1B8       with name 'simp2_divide'
+  function at 0805D23F       with name 'simp_ssub'
+  function at 0805D324       with name 'simpb_side'
+  function at 0805D5D8       with name 'simple_frac_side'
+  function at 0805D6E2       with name 'simpv_side'
+  function at 0805D72A       with name 'simp_side'
+  function at 0805D76A       with name 'calc_simp'
+  function at 0805D82F       with name 'simps_side'
+  function at 0805D8AF       with name 'simp_i'
+  function at 0805DA11       with name 'simpa_side'
+  function at 0805E1EE       with name 'simpa_repeat_side'
+  function at 0805E290       with name 'fpower_recurse'
+  function at 0805EB89       with name 'factor_power'
+  function at 0805EBA8       with name 'ftimes_recurse'
+  function at 0805F3DD       with name 'factor_times'
+  function at 0805F3FC       with name 'big_fplus'
+  function at 0805F8B2       with name 'fplus_recurse'
+  function at 08060C10       with name 'factor_plus'
+  function at 08060C4D       with name 'subtract_itself'
+  function at 08060C8A       with name 'factor_divide'
+  function at 08060CD0       with name 'sf_recurse'
+  function at 080618F5       with name 'group_recurse'
+  function at 08061AF3       with name 'group_proc'
+  function at 08061B12       with name 'super_factor'
+  function at 08061B6C       with name 'fractions_and_group'
+  function at 08061BB6       with name 'make_fractions_and_group'
+  function at 08061C40       with name 'patch_root_div'
+  function at 08061E10       with name 'uf_neg_help'
+  function at 08061F1B       with name 'unsimp_power'
+  function at 080620AE       with name '_sub_ufactor'
+  function at 08062CC2       with name 'uf_repeat_always'
+  function at 08062D0E       with name 'uf_repeat'
+  function at 08062D66       with name 'uf_allpower'
+  function at 08062D9F       with name 'uf_pplus'
+  function at 08062DF5       with name 'uf_power'
+  function at 08062E4B       with name 'uf_times'
+  function at 08062F4B       with name 'ufactor'
+  function at 08062F95       with name 'uf_tsimp'
+  function at 08062FEB       with name 'uf_simp_no_repeat'
+  function at 0806301F       with name 'uf_simp'
+  function at 08063070       with name 'vcmp_0'
+  function at 08063081       with name 'get_term'
+  function at 080630F1       with name 'term_value'
+  function at 08063353       with name 'basic_size'
+  function at 08063406       with name 'poly_in_v'
+  function at 08063572       with name 'smart_div'
+  function at 0806425F       with name 'save_factors'
+  function at 0806436B       with name 'is_integer_var'
+  function at 080643BF       with name 'is_integer_expr'
+  function at 0806447A       with name 'remove_factors'
+  function at 080646FC       with name 'find_greatest_power'
+  function at 08064D0F       with name 'find_highest_count'
+  function at 08064F8F       with name 'poly_div'
+  function at 08065A2E       with name 'do_gcd'
+  function at 08065B31       with name 'pdiv_recurse'
+  function at 080664F4       with name 'div_remainder'
+  function at 08066571       with name 'mod_recurse'
+  function at 08066DDE       with name 'mod_simp'
+  function at 08066DFD       with name 'poly_gcd'
+  function at 08067067       with name 'poly2_gcd'
+  function at 0806749B       with name 'polydiv_recurse'
+  function at 08067912       with name 'poly_gcd_simp'
+  function at 08067931       with name 'pf_sub'
+  function at 080684BF       with name 'pf_recurse'
+  function at 080685DE       with name 'poly_factor'
+  function at 08068610       with name 'limit_cmd'
+  function at 08068BB6       with name 'd_recurse'
+  function at 080694F5       with name 'differentiate'
+  function at 0806956A       with name 'taylor_cmd'
+  function at 08069FF8       with name 'extrema_cmd'
+  function at 0806A31A       with name 'derivative_cmd'
+  function at 0806A750       with name 'nintegrate_cmd'
+  function at 0806B21F       with name 'make_powers'
+  function at 0806B348       with name 'int_dispatch'
+  function at 0806B429       with name 'laplace_cmd'
+  function at 0806B6A8       with name 'laplace_sub'
+  function at 0806B9BB       with name 'inv_laplace_sub'
+  function at 0806BC22       with name 'integrate_sub'
+  function at 0806C0D8       with name 'integrate_cmd'
+  function at 0806C8F0       with name 'get_constant'
+  function at 0806CAE3       with name 'parse_complex'
+  function at 0806CDD7       with name 'complex_root_simp'
+  function at 0806D04B       with name 'approximate_complex_roots'
+  function at 0806D07C       with name 'rect_to_polar'
+  function at 0806D0AE       with name 'roots_cmd'
+  function at 0806D830       with name 'complex_fixup'
+  function at 0806D882       with name 'complex_add'
+  function at 0806D89D       with name 'complex_negate'
+  function at 0806D8B6       with name 'complex_mult'
+  function at 0806D8E3       with name 'complex_div'
+  function at 0806D968       with name 'complex_exp'
+  function at 0806D9B9       with name 'complex_log'
+  function at 0806DA0F       with name 'complex_pow'
+  function at 0806DB10       with name 'var_name'
+  function at 0806DB35       with name 'trim_zeros'
+  function at 0806DB71       with name 'int_expr'
+  function at 0806DC02       with name 'list_var'
+  function at 0806DE45       with name 'list_code'
+  function at 0806E42E       with name 'list_c_equation'
+  function at 0806E52F       with name 'set_color'
+  function at 0806E66C       with name 'flist_recurse'
+  function at 0806F191       with name 'list_string_sub'
+  function at 0806F95B       with name 'list_string'
+  function at 0806F98B       with name 'list_expression'
+  function at 0806FA09       with name 'list_equation'
+  function at 0806FB4B       with name 'list_proc'
+  function at 0806FB7C       with name 'list_debug'
+  function at 0806FC38       with name 'list1_sub'
+  function at 0806FD58       with name 'default_color'
+  function at 0806FD6C       with name 'flist_sub'
+  function at 0806FDB5       with name 'flist_equation'
+  function at 0807022B       with name 'list_sub'
+  function at 08070286       with name 'reset_attr'
+  function at 08070300       with name 'gcd'
+  function at 08070444       with name 'gcd_verified'
+  function at 08070529       with name 'my_round'
+  function at 0807057D       with name 'f_to_fraction'
+  function at 08070715       with name 'make_fractions'
+  function at 08070A10       with name 'multiply_out_unique'
+  function at 08070A5D       with name 'is_prime'
+  function at 08070A90       with name 'fc_recurse'
+  function at 0807122F       with name 'factor_constants'
+  function at 0807125F       with name 'display_unique'
+  function at 08071341       with name 'try_factor'
+  function at 08071415       with name 'factor_one'
+  function at 0807157C       with name 'factor_int'
+  function at 08071777       with name 'list_factor'
+  function at 080717C4       with name 'factor_int_sub'
+  function at 08071820  LIB  with name '__libc_csu_fini'
+  function at 08071830  LIB  with name '__libc_csu_init'
+  function at 0807188A       with name '__i686.get_pc_thunk.bx'
+  function at 08071890  LIB  with name '__do_global_ctors_aux'
+  function at 080718BC  LIB  with name '.term_proc'
+  function at 081E38A4       with name 'fmod'
+  function at 081E38A8       with name '__errno_location'
+  function at 081E38AC       with name 'setbuf'
+  function at 081E38B0       with name 'rl_initialize'
+  function at 081E38B4       with name 'qsort'
+  function at 081E38B8       with name 'write_history'
+  function at 081E38BC       with name '__longjmp_chk'
+  function at 081E38C0       with name '__fprintf_chk'
+  function at 081E38C4       with name 'signal'
+  function at 081E38C8       with name '__printf_chk'
+  function at 081E38CC       with name '__isinf'
+  function at 081E38D0       with name 'read_history'
+  function at 081E38D4       with name 'strtod'
+  function at 081E38D8       with name 'strchr'
+  function at 081E38DC       with name 'getenv'
+  function at 081E38E0       with name 'system'
+  function at 081E38E4       with name 'pow'
+  function at 081E38E8       with name 'fgets'
+  function at 081E38EC  LIB  with name '__libc_start_main'
+  function at 081E38F0       with name 'tigetnum'
+  function at 081E38F4       with name 'modf'
+  function at 081E38F8       with name 'perror'
+  function at 081E38FC       with name 'exp'
+  function at 081E3900       with name 'strtol'
+  function at 081E3904       with name 'fdopen'
+  function at 081E3908       with name 'free'
+  function at 081E390C       with name 'access'
+  function at 081E3910       with name 'fflush'
+  function at 081E3914       with name 'mkstemp'
+  function at 081E3918       with name 'ioctl'
+  function at 081E391C       with name '__ctype_b_loc'
+  function at 081E3920       with name 'isatty'
+  function at 081E3924       with name 'fclose'
+  function at 081E3928       with name '_setjmp'
+  function at 081E392C       with name 'getopt'
+  function at 081E3930       with name 'fopen'
+  function at 081E3934       with name 'cos'
+  function at 081E3938       with name 'unlink'
+  function at 081E393C       with name '__finite'
+  function at 081E3940       with name 'strcpy'
+  function at 081E3944       with name 'chdir'
+  function at 081E3948       with name 'lgamma'
+  function at 081E394C       with name 'stifle_history'
+  function at 081E3950       with name 'readline'
+  function at 081E3954       with name 'malloc'
+  function at 081E3958       with name '__stack_chk_fail'
+  function at 081E395C       with name 'atan2'
+  function at 081E3960       with name '__isnan'
+  function at 081E3964       with name 'memmove'
+  function at 081E3968       with name '__ctype_tolower_loc'
+  function at 081E396C       with name 'getcwd'
+  function at 081E3970       with name 'log'
+  function at 081E3974       with name 'using_history'
+  function at 081E3978       with name '__snprintf_chk'
+  function at 081E397C       with name 'strpbrk'
+  function at 081E3980       with name '__memmove_chk'
+  function at 081E3984       with name 'add_history'
+  function at 081E3988       with name 'sin'
+  function at 081E398C       with name '__strdup'
+  function at 081E3990       with name 'exit'
+  function at 081E3994       with name 'sincos'
+  function at 081E3998       with name 'ceil'
+  function at 081E399C       with name 'strncasecmp'
+  function at 081E39A0       with name 'strcasecmp'
+  function at 081E39A4       with name 'strcmp'
+  function at 081E39A8       with name 'strncmp'
+  function at 081E39AC       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 8048E84 size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -79,8 +464,6 @@ If the segment is not read-only, please change the segment NAME.
 In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
-TIMESTAMP decompiling 8049300 size=00000055 times=0...
-TIMESTAMP decompiling 8049360 size=00000023 times=0...
 TIMESTAMP decompiling 8049390 size=00000005 times=0...
 TIMESTAMP decompiling 80494F0 size=0000016D times=0...
 The decompiler assumes that the segment '.rodata' is read-only because of its NAME.
@@ -141,9 +524,8 @@ TIMESTAMP decompiling 8070300 size=00000144 times=0...
 TIMESTAMP decompiling 8070529 size=00000054 times=0...
 TIMESTAMP decompiling 8070A10 size=0000004D times=0...
 TIMESTAMP decompiling 8071341 size=000000D4 times=0...
-TIMESTAMP decompiling 8071820 size=00000005 times=0...
-TIMESTAMP decompiling 8071890 size=0000002A times=0...
 TIMESTAMP decompiling 8049395 size=000000A7 times=0...
+TIMESTAMP decompiling 8049450 size=00000026 times=0...
 TIMESTAMP decompiling 8050428 size=00000067 times=0...
 TIMESTAMP decompiling 804A45E size=0000007E times=0...
 TIMESTAMP decompiling 804A535 size=00000062 times=0...
@@ -281,18 +663,6 @@ TIMESTAMP decompiling 804B351 size=00000093 times=0...
 TIMESTAMP decompiling 80578B1 size=000000C2 times=0...
 TIMESTAMP decompiling 8057973 size=00000125 times=0...
 TIMESTAMP decompiling 80498B9 size=000006F9 times=0...
-TIMESTAMP decompiling 8048E54 size=00000030 times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
-
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
-TIMESTAMP decompiling 8071830 size=0000005A times=0...
-TIMESTAMP decompiling 80492D0 size=00000022 times=0...
-TIMESTAMP decompiling 8049450 size=00000026 times=0...
 TIMESTAMP decompiling 80516A1 size=00000047 times=0...
 TIMESTAMP decompiling 804B139 size=00000043 times=0...
 TIMESTAMP decompiling 805D1B8 size=00000087 times=0...
@@ -393,6 +763,6 @@ TIMESTAMP decompiling 806B429 size=0000027F times=0...
 TIMESTAMP decompiling 806BC22 size=000004B6 times=0...
 TIMESTAMP decompiling 806C0D8 size=00000810 times=0...
 TIMESTAMP decompiling 806D0AE size=00000782 times=0...
-TIMESTAMP decompiling 80718BC size=0000001C times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

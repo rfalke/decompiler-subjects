@@ -10,19 +10,10 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_804A0F7();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// char *deregister_tm_clones();
-// int register_tm_clones();
-// char *_do_global_dtors_aux();
-// int frame_dummy();
 int inst_0_values_var_0();
 int inst_0_flags_var_0();
 int inst_1_values_var_0();
@@ -265,7 +256,7 @@ int inst_119_values_var_0();
 int inst_119_flags_var_0();
 __int64 inst_120_values_var_0();
 int inst_120_flags_var_0();
-// int __usercall inst_121_values_var_0@<eax>(char a1@<efl>);
+// int __usercall inst_121_values_var_0@<eax>(char@<efl>);
 int inst_121_flags_var_0();
 int inst_122_values_var_0();
 int inst_122_flags_var_0();
@@ -613,9 +604,6 @@ int inst_293_values_var_0();
 int inst_293_flags_var_0();
 int inst_294_values_var_0();
 int inst_294_flags_var_0();
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -2451,7 +2439,7 @@ int inst_28_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(0x80, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -2468,7 +2456,7 @@ int inst_29_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(32, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -2502,7 +2490,7 @@ int inst_31_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(8518, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -2519,7 +2507,7 @@ int inst_32_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(426000, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -2536,7 +2524,7 @@ int inst_33_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(176879648, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -2591,10 +2579,7 @@ int inst_37_values_var_0()
 //----- (0804BEE0) --------------------------------------------------------
 int inst_37_flags_var_0()
 {
-  __int16 v0; // si
-
-  v0 = 26000;
-  return _bittest(&v0, 0x18A9u);
+  return 0;
 }
 
 //----- (0804BF46) --------------------------------------------------------
@@ -2606,10 +2591,7 @@ int inst_38_values_var_0()
 //----- (0804BF8C) --------------------------------------------------------
 int inst_38_flags_var_0()
 {
-  int v0; // eax
-
-  v0 = -2019576311;
-  return _bittest(&v0, 0x3DDFF8E1u);
+  return 0;
 }
 
 //----- (0804BFF1) --------------------------------------------------------
@@ -2621,10 +2603,7 @@ int inst_39_values_var_0()
 //----- (0804C039) --------------------------------------------------------
 int inst_39_flags_var_0()
 {
-  __int16 v0; // cx
-
-  v0 = 24791;
-  return _bittest(&v0, 0x20u) - 1;
+  return 0;
 }
 
 //----- (0804C0A0) --------------------------------------------------------
@@ -2636,10 +2615,7 @@ int inst_40_values_var_0()
 //----- (0804C0E7) --------------------------------------------------------
 int inst_40_flags_var_0()
 {
-  int v0; // edi
-
-  v0 = -18375799;
-  return _bittest(&v0, 0xFBu) - 1;
+  return 0;
 }
 
 //----- (0804C14D) --------------------------------------------------------
@@ -2651,10 +2627,7 @@ int inst_41_values_var_0()
 //----- (0804C194) --------------------------------------------------------
 int inst_41_flags_var_0()
 {
-  __int16 v0; // dx
-
-  v0 = -29171;
-  return (char)_bittestandcomplement(&v0, 0xCBF5u);
+  return 0;
 }
 
 //----- (0804C1FA) --------------------------------------------------------
@@ -2666,10 +2639,7 @@ int inst_42_values_var_0()
 //----- (0804C240) --------------------------------------------------------
 int inst_42_flags_var_0()
 {
-  int v0; // edx
-
-  v0 = 275933206;
-  return (char)_bittestandcomplement(&v0, 0xCADB82E6);
+  return 0;
 }
 
 //----- (0804C2A5) --------------------------------------------------------
@@ -2681,12 +2651,7 @@ int inst_43_values_var_0()
 //----- (0804C2ED) --------------------------------------------------------
 int inst_43_flags_var_0()
 {
-  __int16 v0; // cx
-  unsigned __int8 v1; // cf
-
-  v0 = 19195;
-  v1 = _bittestandcomplement(&v0, 0xB0u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0804C354) --------------------------------------------------------
@@ -2698,12 +2663,7 @@ int inst_44_values_var_0()
 //----- (0804C39B) --------------------------------------------------------
 int inst_44_flags_var_0()
 {
-  int v0; // ebx
-  unsigned __int8 v1; // cf
-
-  v0 = -1707479082;
-  v1 = _bittestandcomplement(&v0, 0x22u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0804C401) --------------------------------------------------------
@@ -2715,12 +2675,7 @@ int inst_45_values_var_0()
 //----- (0804C448) --------------------------------------------------------
 int inst_45_flags_var_0()
 {
-  __int16 v0; // di
-  unsigned __int8 v1; // cf
-
-  v0 = 15027;
-  v1 = _bittestandreset(&v0, 0xBF59u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0804C4AE) --------------------------------------------------------
@@ -2732,12 +2687,7 @@ int inst_46_values_var_0()
 //----- (0804C4F4) --------------------------------------------------------
 int inst_46_flags_var_0()
 {
-  int v0; // ebx
-  unsigned __int8 v1; // cf
-
-  v0 = -1666561114;
-  v1 = _bittestandreset(&v0, 0xE98943EE);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0804C559) --------------------------------------------------------
@@ -2749,12 +2699,7 @@ int inst_47_values_var_0()
 //----- (0804C5A1) --------------------------------------------------------
 int inst_47_flags_var_0()
 {
-  __int16 v0; // ax
-  unsigned __int8 v1; // cf
-
-  v0 = 15516;
-  v1 = _bittestandreset(&v0, 0x83u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0804C608) --------------------------------------------------------
@@ -2766,12 +2711,7 @@ int inst_48_values_var_0()
 //----- (0804C64F) --------------------------------------------------------
 int inst_48_flags_var_0()
 {
-  int v0; // eax
-  unsigned __int8 v1; // cf
-
-  v0 = 1628445108;
-  v1 = _bittestandreset(&v0, 5u);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0804C6B5) --------------------------------------------------------
@@ -2786,7 +2726,7 @@ int inst_49_flags_var_0()
   unsigned __int16 v0; // di
 
   v0 = 12424;
-  return (char)_bittestandset((__int16 *)&v0, v0);
+  return (char)_bittestandset16((__int16 *)&v0, v0);
 }
 
 //----- (0804C762) --------------------------------------------------------
@@ -2798,12 +2738,7 @@ int inst_50_values_var_0()
 //----- (0804C7A8) --------------------------------------------------------
 int inst_50_flags_var_0()
 {
-  int v0; // edi
-  unsigned __int8 v1; // cf
-
-  v0 = 1834291546;
-  v1 = _bittestandset(&v0, 0x951A81B2);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0804C80D) --------------------------------------------------------
@@ -2815,10 +2750,7 @@ int inst_51_values_var_0()
 //----- (0804C855) --------------------------------------------------------
 int inst_51_flags_var_0()
 {
-  __int16 v0; // cx
-
-  v0 = 15029;
-  return (char)_bittestandset(&v0, 0xE1u);
+  return 0;
 }
 
 //----- (0804C8BC) --------------------------------------------------------
@@ -2830,12 +2762,7 @@ int inst_52_values_var_0()
 //----- (0804C903) --------------------------------------------------------
 int inst_52_flags_var_0()
 {
-  int v0; // ecx
-  unsigned __int8 v1; // cf
-
-  v0 = 2070137050;
-  v1 = _bittestandset(&v0, 0xAEu);
-  return v1 - 1;
+  return 0;
 }
 
 //----- (0804C969) --------------------------------------------------------
@@ -4123,7 +4050,7 @@ int inst_143_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-3, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -4157,7 +4084,7 @@ int inst_145_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(27643, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -4253,7 +4180,7 @@ int inst_150_flags_var_0()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8050C8B: variable 'v0' is possibly undefined
@@ -4272,7 +4199,7 @@ int inst_151_flags_var_0()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8050D3C: variable 'v0' is possibly undefined
@@ -4310,7 +4237,7 @@ int inst_153_flags_var_0()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8050E9E: variable 'v0' is possibly undefined
@@ -4356,7 +4283,7 @@ int inst_155_flags_var_0()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8051004: variable 'v0' is possibly undefined
@@ -4375,7 +4302,7 @@ int inst_156_flags_var_0()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 80510B7: variable 'v0' is possibly undefined
@@ -4470,7 +4397,7 @@ int inst_161_flags_var_0()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8051430: variable 'v0' is possibly undefined
@@ -4508,7 +4435,7 @@ int inst_163_flags_var_0()
 
   v1 = 0;
   if ( v0 )
-    v1 = 2;
+    return 2;
   return v1;
 }
 // 8051592: variable 'v0' is possibly undefined
@@ -6204,7 +6131,7 @@ int inst_277_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-119, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -6221,7 +6148,7 @@ int inst_278_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(-104, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -6238,7 +6165,7 @@ int inst_279_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(1026, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -6272,7 +6199,7 @@ int inst_281_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(1107412005, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -6289,7 +6216,7 @@ int inst_282_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(310389894, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -6428,7 +6355,7 @@ int inst_290_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(76, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -6462,7 +6389,7 @@ int inst_292_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(2395, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 
@@ -6479,7 +6406,7 @@ int inst_293_flags_var_0()
 
   v0 = 0;
   if ( __SETP__(1123348556, 0) )
-    v0 = 4;
+    return 4;
   return v0;
 }
 

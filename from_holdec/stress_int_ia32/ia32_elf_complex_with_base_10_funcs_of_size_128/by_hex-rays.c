@@ -10,19 +10,10 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049117();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// char *deregister_tm_clones();
-// int register_tm_clones();
-// char *_do_global_dtors_aux();
-// int frame_dummy();
 unsigned int log_size_7_var_000();
 // unsigned __int32 __usercall log_size_7_var_001@<eax>(char a1@<efl>);
 int log_size_7_var_002();
@@ -33,9 +24,6 @@ unsigned __int32 log_size_7_var_005();
 int log_size_7_var_007();
 unsigned int log_size_7_var_008();
 unsigned int log_size_7_var_009();
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -89,119 +77,97 @@ void sub_8049117()
 unsigned int log_size_7_var_000()
 {
   unsigned int v1; // ebp
-  int v3; // ebx
-  int v4; // edi
-  unsigned __int32 v6; // ecx
+  int v3; // edi
   bool v7; // cf
-  unsigned int v8; // esi
-  int v9; // eax
-  int v10; // edi
-  int v12; // esi
-  unsigned int v13; // edi
-  int v14; // ebx
-  __int64 v15; // rt0
-  __int16 v16; // t2
-  int v17; // ebp
-  unsigned __int64 v18; // rax
-  int v19; // ebp
-  char v21; // cc
-  unsigned int v24; // ebx
-  int v25; // esi
-  int v26; // ebp
-  int v28; // ecx
-  unsigned int v29; // edx
-  unsigned int v30; // edx
-  unsigned int v31; // eax
+  unsigned __int16 v8; // bp
+  int v9; // esi
+  int v10; // ebx
+  unsigned int v11; // edi
+  __int16 v12; // t2
+  int v13; // ebp
+  unsigned __int64 v14; // rax
+  int v15; // ebp
+  char v17; // cc
+  unsigned int v20; // ebx
+  int v21; // esi
+  int v22; // ebp
+  int v24; // ecx
+  unsigned int v25; // edx
+  unsigned int v26; // edx
+  unsigned int v27; // eax
 
   _EDX = 1647767891;
   HIWORD(v1) = 12993;
-  _ECX = _byteswap_ulong(0x94144314);
-  v4 = 375461277 >> _ECX;
-  HIWORD(v3) = -15808;
-  LOWORD(v4) = (__int16)(375461277 >> _ECX) >> 1;
+  _CX = _byteswap_ulong(0x94144314);
+  v3 = 375461277 >> _CX;
+  HIWORD(v10) = -15808;
+  LOWORD(v3) = (__int16)(375461277 >> _CX) >> 1;
   __asm
   {
     rcl     cx, cl
     rcl     edx, cl
   }
-  v8 = -19401353;
-  v6 = _ECX >> 30;
-  v7 = _bittestandreset((__int16 *)&v8, 0x3Cu);
-  v9 = 40039;
-  if ( v7 )
-    LOWORD(v9) = -1;
-  v10 = v4 - 2057448645;
-  BYTE1(v6) = (unsigned __int16)(13027 * v9) >> 8;
-  LOWORD(v9) = (v8 >> 1) ^ v9;
-  LOBYTE(v6) = (v9 & 0x8000u) != 0;
-  _EAX = v9 >> ((v9 & 0x8000u) != 0);
+  v3 -= 2057448645;
+  _EAX = 3396;
   __asm { rcl     ax, 6 }
-  v7 = __CFADD__((_WORD)v10, -25497);
-  LOWORD(v1) = v10 - 25497;
-  LOWORD(v10) = -25497;
+  v7 = __CFADD__((_WORD)v3, -25497);
+  v8 = v3 - 25497;
+  LOWORD(v3) = -25497;
   LOBYTE(_EAX) = v7 + _EAX + 72;
-  HIDWORD(v18) = 147587071;
-  v13 = v10 + 147587072;
-  v12 = __ROL4__(0, v6);
-  BYTE1(v18) = !__SETP__(-1, 0) ^ 0xF0;
-  LOWORD(v1) = (__int16)(((unsigned __int16)v1 >> 1) | 0x8000) >> 4;
-  LOWORD(v3) = BYTE1(v18);
-  LOWORD(v13) = __ROL2__(v13, 17);
-  HIDWORD(v15) = v3;
-  LODWORD(v15) = v3;
-  v14 = (unsigned __int64)(v15 << v6) >> 32;
-  BYTE1(v6) |= 0xC0u;
-  LOWORD(v18) = v18 & 0x3FFF;
-  v16 = (unsigned __int16)v18 % BYTE1(v6);
-  LOBYTE(v18) = (unsigned __int16)v18 / BYTE1(v6);
-  BYTE1(v18) = v16;
-  BYTE1(v6) = ~BYTE1(v6);
-  BYTE5(v18) = __ROR1__(-1, v6);
-  v17 = __PAIR64__(v18, v1) >> 1;
-  LODWORD(v18) = _byteswap_ulong(v18);
-  v19 = ~v17;
-  HIDWORD(v15) = v6;
-  LODWORD(v15) = v6;
-  _ECX = (unsigned __int64)(v15 << v6) >> 32;
+  HIDWORD(v14) = 147587071;
+  v11 = v3 + 147587072;
+  v9 = 0;
+  BYTE1(v14) = !__SETP__(-1, 0) ^ 0xF0;
+  LOWORD(v1) = (__int16)((v8 >> 1) | 0x8000) >> 4;
+  LOWORD(v10) = BYTE1(v14);
+  LOWORD(v11) = __ROL2__(v11, 17);
+  LOWORD(v14) = v14 & 0x3FFF;
+  v12 = (unsigned __int16)v14 % 0xCDu;
+  LOBYTE(v14) = (unsigned __int16)v14 / 0xCDu;
+  BYTE1(v14) = v12;
+  v13 = __PAIR64__(v14, v1) >> 1;
+  LODWORD(v14) = _byteswap_ulong(v14);
+  v15 = ~v13;
+  _ECX = 12800;
   __asm { rcl     ecx, 1 }
-  if ( !__SETP__(v14 + (v13 < 0xFB50677C) + (_WORD)v13, 0) )
-    v12 = v19;
-  v21 = ((char)(v14 + 59) < 0) ^ __OFADD__(59, (_BYTE)v14);
-  LOBYTE(v14) = v14 + 59;
-  if ( !v21 )
-    LOBYTE(v18) = v19;
-  _CX = (unsigned __int8)v18;
-  LOWORD(v13) = 17721 * v12;
-  BYTE5(v18) -= v14;
+  if ( !__SETP__(v10 + (v11 < 0xFB50677C) + (_WORD)v11, 0) )
+    v9 = v15;
+  v17 = ((char)(v10 + 59) < 0) ^ __OFADD__(59, (_BYTE)v10);
+  LOBYTE(v10) = v10 + 59;
+  if ( !v17 )
+    LOBYTE(v14) = v15;
+  _CX = (unsigned __int8)v14;
+  LOWORD(v11) = 17721 * v9;
+  BYTE5(v14) -= v10;
   __asm
   {
     rcl     cl, 1
     cmpxchg cx, cx
   }
-  v24 = v14 << _CX;
-  LOBYTE(v24) = v24 | 0xC0;
-  _EBX = __PAIR64__(v24, HIDWORD(v18)) >> 15;
-  LOWORD(v19) = (__int16)v19 >> 1;
+  v20 = v10 << _CX;
+  LOBYTE(v20) = v20 | 0xC0;
+  _EBX = __PAIR64__(v20, HIDWORD(v14)) >> 15;
+  LOWORD(v15) = (__int16)v15 >> 1;
   __asm { rcr     bx, 0ECh }
-  v25 = v12 - 155604128 + 1;
-  LOBYTE(v18) = 40;
-  LOWORD(v25) = v25 ^ (1 << v13);
-  v26 = v19 + 108750436;
-  v28 = 1798504448;
-  BYTE4(v18) = -115;
-  SBYTE5(v18) >>= 1;
-  HIDWORD(v18) &= ~(1 << v25);
-  LOBYTE(_EBX) = BYTE4(v18) & _EBX;
-  BYTE1(v18) = -43 - _EBX;
-  LOBYTE(v28) = __ROR1__(0, 238);
-  v29 = v18 >> 31;
-  v7 = v29 & 1;
-  v30 = v29 >> 1;
+  v21 = v9 - 155604128 + 1;
+  LOBYTE(v14) = 40;
+  LOWORD(v21) = v21 ^ (1 << (v11 & 0xF));
+  v22 = v15 + 108750436;
+  v24 = 1798504448;
+  BYTE4(v14) = -115;
+  SBYTE5(v14) >>= 1;
+  HIDWORD(v14) &= ~(1 << v21);
+  LOBYTE(_EBX) = BYTE4(v14) & _EBX;
+  BYTE1(v14) = -43 - _EBX;
+  LOBYTE(v24) = __ROR1__(0, 238);
+  v25 = v14 >> 31;
+  v7 = v25 & 1;
+  v26 = v25 >> 1;
   if ( v7 )
-    LOWORD(v25) = 40 * (unsigned __int8)_EBX;
+    LOWORD(v21) = 40 * (unsigned __int8)_EBX;
   LOBYTE(_EBX) = ((unsigned __int16)((40 * (unsigned __int8)_EBX) & 0xFEFF) >> 8) | _EBX;
-  _BitScanReverse(&v31, _EBX);
-  return v13 + (v25 & 0xADFA054A) + v26 + v30 + v28 + _EBX + v31 - 2115682197;
+  _BitScanReverse(&v27, _EBX);
+  return v11 + (v21 & 0xADFA054A) + v22 + v26 + v24 + _EBX + v27 - 2115682197;
 }
 
 //----- (080493D3) --------------------------------------------------------
@@ -221,19 +187,20 @@ unsigned __int32 __usercall log_size_7_var_001@<eax>(char a1@<efl>)
   __int16 v21; // t1
   bool v24; // of
   int v25; // eax
-  int v27; // ebp
-  int v28; // eax
-  unsigned int v29; // ebp
-  unsigned int v31; // et0
-  unsigned int v32; // ebx
-  int v33; // eax
-  unsigned __int64 v34; // rt2
-  int v36; // edi
-  int v37; // esi
-  int v38; // eax
-  unsigned int v40; // ecx
-  int v41; // ebx
-  int v43; // edi
+  int v28; // ebp
+  int v29; // eax
+  unsigned int v30; // ebp
+  int v31; // esi
+  unsigned int v32; // et0
+  unsigned int v33; // ebx
+  int v34; // eax
+  unsigned __int64 v35; // rt2
+  int v37; // edi
+  int v38; // esi
+  int v39; // eax
+  unsigned int v41; // ecx
+  int v42; // ebx
+  int v44; // edi
 
   _EAX = 196075807;
   _ECX = -1634354148;
@@ -248,7 +215,7 @@ unsigned __int32 __usercall log_size_7_var_001@<eax>(char a1@<efl>)
   LOBYTE(v4) = v6 ^ 6;
   __asm { rcr     dh, 3Dh }
   v5 = __ROR4__(_ECX, 214);
-  LOWORD(v6) = v6 & ~(1 << v6);
+  LOWORD(v6) = v6 & ~(1 << (v6 & 0xF));
   _EBX = ~v4;
   _EBP = 916606998;
   __asm { rcl     edx, 1 }
@@ -300,53 +267,54 @@ unsigned __int32 __usercall log_size_7_var_001@<eax>(char a1@<efl>)
     _ECX = v18;
   _ESI = v25 & 0x861CC6B3;
   v14 = __CFADD__(v20, 1885705838);
-  v27 = v20 + 1885705838;
-  LOWORD(_ECX) = v27 + v14 + (_WORD)_ECX;
+  v28 = v20 + 1885705838;
+  LOWORD(_ECX) = v28 + v14 + (_WORD)_ECX;
   __asm { cmpxchg cx, si }
-  LOWORD(v27) = (__int16)(v27 ^ (1 << _DI)) >> _ECX;
+  LOWORD(v28) = (__int16)(v28 ^ (1 << (_DI & 0xF))) >> _ECX;
   __asm { cmpxchg si, di }
-  LOWORD(_ECX) = (unsigned __int8)_ECX | (unsigned __int16)(1 << __ROL1__(v18, 158));
+  LOWORD(_ECX) = (unsigned __int8)_ECX | (unsigned __int16)(1 << (__ROL1__(v18, 158) & 0xF));
   LOWORD(v25) = (char)(BYTE1(v25) + v25);
-  v28 = -837098883 * v25;
-  v29 = v27 << _ECX;
+  v29 = -837098883 * v25;
+  v30 = v28 << _ECX;
   _BitScanReverse(&v18, _ECX);
-  v14 = _bittestandset((int *)&_ESI, 0x5Du);
+  v14 = (_ESI & 0x20000000) != 0;
+  v31 = _ESI | 0x20000000;
   if ( v14 || v10 )
-    _ECX = v29;
+    _ECX = v30;
   __asm { rcr     edx, 8Eh }
-  LOBYTE(v28) = __ROR1__(v28, 1);
+  LOBYTE(v29) = __ROR1__(v29, 1);
   LOBYTE(_ECX) = _ECX & 3;
-  LOWORD(v31) = _ECX;
-  HIWORD(v31) = _ESI;
-  LOWORD(_ECX) = v31 >> _ECX;
-  v32 = v18 | 0xC0000000;
-  v34 = (v28 & 0x3FFFFFFFFFFFFFFFuLL) % v32;
-  v33 = (v28 & 0x3FFFFFFFFFFFFFFFuLL) / v32;
-  _BitScanForward((unsigned int *)&_EDX, v34);
-  LODWORD(v34) = _ESI;
-  v37 = _ESI + v33;
-  v36 = v34;
-  if ( !__SETP__(v37, 0) )
-    LOBYTE(v32) = v29;
-  LOBYTE(v32) = v32 + 31;
-  BYTE1(v32) = (unsigned __int16)v33 >= 0x355Au;
+  LOWORD(v32) = _ECX;
+  HIWORD(v32) = v31;
+  LOWORD(_ECX) = v32 >> _ECX;
+  v33 = v18 | 0xC0000000;
+  v35 = (v29 & 0x3FFFFFFFFFFFFFFFuLL) % v33;
+  v34 = (v29 & 0x3FFFFFFFFFFFFFFFuLL) / v33;
+  _BitScanForward((unsigned int *)&_EDX, v35);
+  LODWORD(v35) = v31;
+  v38 = v31 + v34;
+  v37 = v35;
+  if ( !__SETP__(v38, 0) )
+    LOBYTE(v33) = v30;
+  LOBYTE(v33) = v33 + 31;
+  BYTE1(v33) = (unsigned __int16)v34 >= 0x355Au;
   __asm { rcl     cl, 1 }
-  v38 = 2 * v33;
+  v39 = 2 * v34;
   LOBYTE(_ECX) = _EDX;
-  v14 = __CFADD__(v29, 1);
-  _EBP = v29 + 1;
+  v14 = __CFADD__(v30, 1);
+  _EBP = v30 + 1;
   v14 |= __CFADD__(_ECX, _EBP);
   _EBP += _ECX;
   BYTE1(_ECX) = !v14 && _EBP != 0;
-  v40 = 2 * _ECX;
-  v41 = _EBP | v32;
-  LOWORD(v36) = v40 + v36;
-  BYTE1(v40) = 0;
-  _ECX = _byteswap_ulong(v40);
-  LOWORD(v38) = BYTE1(v41) * (unsigned __int8)v38;
-  v43 = _EBP | v36;
+  v41 = 2 * _ECX;
+  v42 = _EBP | v33;
+  LOWORD(v37) = v41 + v37;
+  BYTE1(v41) = 0;
+  _ECX = _byteswap_ulong(v41);
+  LOWORD(v39) = BYTE1(v42) * (unsigned __int8)v39;
+  v44 = _EBP | v37;
   __asm { rcl     bp, cl }
-  return v43 + v37 + _EBP + _ECX + v41 + v38 + 1106154195;
+  return v44 + v38 + _EBP + _ECX + v42 + v39 + 1106154195;
 }
 // 8049496: variable 'v24' is possibly undefined
 // 80494F5: variable 'v10' is possibly undefined
@@ -357,9 +325,9 @@ int log_size_7_var_002()
   int v2; // edi
   unsigned int v3; // ecx
   unsigned __int64 v4; // rtt
-  unsigned __int32 v5; // ebp
-  int v8; // eax
-  __int16 v9; // di
+  int v7; // eax
+  __int16 v8; // di
+  unsigned __int32 v9; // ebp
   __int16 v10; // di
   unsigned int v11; // et0
   int v12; // ebx
@@ -386,34 +354,36 @@ int log_size_7_var_002()
   LODWORD(_RAX) = v4 / v3;
   LOWORD(_EBX) = _EBX | 0x9576;
   BYTE1(v3) <<= v3;
-  v5 = _byteswap_ulong(0x4E403BC9u);
+  v9 = _byteswap_ulong(0x4E403BC9u);
   SBYTE1(_EBX) >>= v3;
   LOBYTE(v3) = v3 + BYTE1(_RAX) + v3;
   LOWORD(_RAX) = (unsigned __int8)_RAX * (unsigned __int8)_RAX;
   _ECX = v3 ^ 0x40000;
-  v8 = _RAX ^ 0x7DFFE825;
-  v9 = (v2 & 1) + ((unsigned __int16)v2 >> 1) + 10377;
+  v7 = _RAX ^ 0x7DFFE825;
+  v8 = (v2 & 1) + ((unsigned __int16)v2 >> 1) + 10377;
+  LOWORD(v9) = v9 & 0xFFBF;
   if ( __SETP__(BYTE1(_ECX) & _ECX, 0) )
     LOWORD(_ECX) = 24519;
   BYTE1(_EBX) -= 65;
   LOBYTE(_ECX) = _ECX & 0xF;
-  HIWORD(v11) = v9;
-  LOWORD(v11) = v9;
+  HIWORD(v11) = v8;
+  LOWORD(v11) = v8;
   v10 = v11 << _ECX >> 16;
   __asm { cmpxchg cl, bl }
-  LOWORD(v8) = BYTE1(_EBX) * (unsigned __int8)((unsigned __int16)v8 >> 1);
-  v12 = v5 | _EBX;
-  v13 = v5 & 1;
-  LOWORD(v5) = (__int16)v5 >> 1;
+  LOWORD(v7) = BYTE1(_EBX) * (unsigned __int8)((unsigned __int16)v7 >> 1);
+  v12 = v9 | _EBX;
+  v13 = v9 & 1;
+  LOWORD(v9) = (__int16)v9 >> 1;
   LOWORD(v12) = v12 - (v13 - 26407);
-  v16 = v5 ^ (1 << v10);
+  v16 = v9 ^ (1 << v10);
   BYTE1(_ECX) += __CFADD__((_WORD)v12, 18285) + 4;
   __asm { rcl     ch, 1 }
   _RDI = 0x97033415FE6765E9LL;
   LOWORD(v12) = __ROL2__(v12 + 18285, 149);
   LOWORD(_ECX) = (__int16)_ECX >> _ECX;
   BYTE1(v12) *= 2;
-  _RAX = (unsigned int)_ECX * (unsigned __int64)(unsigned int)(v8 + 15368201);
+  _RAX = (unsigned int)_ECX * (unsigned __int64)(unsigned int)(v7 + 15368201);
+  WORD2(_RAX) |= 0x10u;
   HIDWORD(_RAX) = ~HIDWORD(_RAX);
   _EBX = v12 - 1720255372;
   __asm
@@ -548,7 +518,7 @@ unsigned int log_size_7_var_003()
   LOWORD(_EBP) = -20977 * _EBP;
   return v21 + _EBP + v24 + _EBX - 791074230 - 791074231 + 2099034730;
 }
-// 80497A8: conditional instruction was optimized away because of 'dx.2==B9'
+// 80497A8: conditional instruction was optimized away because dx.2==B9
 
 //----- (08049907) --------------------------------------------------------
 unsigned int log_size_7_var_004()
@@ -639,8 +609,8 @@ unsigned int log_size_7_var_004()
   LOWORD(_RAX) = (unsigned __int8)__ROR1__(_RAX - 1, 1);
   v4 = _RAX & 1;
   v21 = ((unsigned int)_RAX >> 1) | 0x80000000;
-  BYTE1(_ECX) = -(char)(v4 + 121);
-  v22 = v9 - ((v4 != -121) + 1415193276);
+  BYTE1(_ECX) = 1 - (v4 + 121);
+  v22 = v9 - (((unsigned __int8)(v4 + 121) > 1u) + 1415193276);
   LOBYTE(_ECX) = (v21 & 0x100) == 0;
   v23 = _ECX | v12;
   LOBYTE(_ECX) = _ECX - (v20 + 116);
@@ -675,18 +645,17 @@ unsigned __int32 log_size_7_var_005()
   unsigned int v11; // ebx
   int v12; // edi
   unsigned __int64 v13; // rt2
-  unsigned __int8 v14; // cf
-  int v16; // edi
-  int v17; // esi
-  int v18; // ecx
+  int v15; // edi
+  int v16; // esi
+  int v17; // ecx
+  int v21; // ecx
   int v22; // ecx
-  int v23; // ecx
-  unsigned __int16 v25; // kr00_2
-  char v27; // cc
-  unsigned int v28; // et0
-  unsigned int v29; // ecx
-  int v30; // edx
-  unsigned __int32 v31; // ebp
+  unsigned __int16 v24; // kr00_2
+  char v26; // cc
+  unsigned int v27; // et0
+  unsigned int v28; // ecx
+  int v29; // edx
+  unsigned __int32 v30; // ebp
 
   v0 = 1442269864;
   _EDX = 1395986154;
@@ -731,61 +700,60 @@ unsigned __int32 log_size_7_var_005()
   LOWORD(_EAX) = (_RAX & 0x3FFFFFFFFFFFFFFFuLL) / (unsigned int)_ESI;
   HIWORD(_RAX) = WORD1(v13);
   _EBX = _byteswap_ulong(v11);
-  v16 = -886708428 * v12;
+  v15 = -886708428 * v12;
   LODWORD(v13) = (unsigned __int16)v6 * (unsigned __int16)_EAX;
   LOBYTE(_EAX) = v6 * _EAX;
   WORD2(_RAX) = WORD1(v13);
   HIDWORD(_RAX) >>= 10;
-  v14 = _bittestandset((__int16 *)&_EBP, 0x20u);
   __asm { cmpxchg al, dl }
-  LOBYTE(_EBX) = v14;
-  LOWORD(_EBP) = (__int16)_EBP >> 1;
-  LOWORD(v16) = __ROL2__(v16, 1);
+  LOBYTE(_EBX) = (_EBP & 1) != 0;
+  LOWORD(_EBP) = (__int16)(_EBP | 1) >> 1;
+  LOWORD(v15) = __ROL2__(v15, 1);
   LOWORD(v13) = WORD2(_RAX);
   WORD2(_RAX) += _EBX;
   LOWORD(_EBX) = v13;
-  v17 = (unsigned __int16)v13;
+  v16 = (unsigned __int16)v13;
   __asm { cmpxchg bx, bx }
   _EDX = -HIDWORD(_RAX);
   __asm { rcl     dh, 1 }
-  v18 = _EDX;
+  v17 = _EDX;
   LOWORD(_EDX) = 16 * _EDX;
   HIWORD(_EAX) = 0;
-  LOBYTE(_EBX) = (_BYTE)_EBX << v18;
-  v22 = v18 & 0x4B09527C;
-  if ( v22 )
-    LOWORD(_EBP) = v16;
+  LOBYTE(_EBX) = (_BYTE)_EBX << v17;
+  v21 = v17 & 0x4B09527C;
+  if ( v21 )
+    LOWORD(_EBP) = v15;
   LOWORD(_EAX) = -18427;
-  v23 = v22 - _EAX;
+  v22 = v21 - _EAX;
   _EDX = _EAX & _EDX;
-  LOWORD(v17) = -32039;
-  v25 = _EDX;
+  LOWORD(v16) = -32039;
+  v24 = _EDX;
   LOWORD(_EDX) = 14120 * _EDX;
-  if ( is_mul_ok(0x3728u, v25) )
-    LOWORD(v17) = v23;
+  if ( is_mul_ok(0x3728u, v24) )
+    LOWORD(v16) = v22;
   LOWORD(_EAX) = (unsigned __int16)(-128 * (char)_EBX) >> 8;
-  LOWORD(_EBP) = v16 & _EBP;
-  LOBYTE(v23) = 1;
+  LOWORD(_EBP) = v15 & _EBP;
+  LOBYTE(v22) = 1;
   __asm { rcl     ebp, 1 }
   LOBYTE(_EBX) = __ROR1__(_EBX, 185);
-  v27 = ((__int16)(_EBX + 1) < 0) ^ __OFADD__(1, (_WORD)_EBX) | ((_WORD)_EBX == 0xFFFF);
+  v26 = ((__int16)(_EBX + 1) < 0) ^ __OFADD__(1, (_WORD)_EBX) | ((_WORD)_EBX == 0xFFFF);
   LOWORD(_EBX) = _EBX + 1;
-  if ( v27 )
+  if ( v26 )
     _EDX = _EAX;
-  HIWORD(v28) = _EBX;
-  LOWORD(v28) = _EBP;
-  LOWORD(_EBX) = v28 >> 15;
+  HIWORD(v27) = _EBX;
+  LOWORD(v27) = _EBP;
+  LOWORD(_EBX) = v27 >> 15;
   __asm { rcr     bl, 0D8h }
   LOBYTE(_EBX) = __ROR1__(_EBX, 130);
-  v29 = v23 & 0xAB284DD1;
+  v28 = v22 & 0xAB284DD1;
   __asm { rcl     dx, 1 }
-  v30 = _EDX - 1;
-  v31 = _byteswap_ulong(_EBP);
-  LOWORD(_EAX) = __CFSHL__(v17, 1) + (_EAX ^ 0x800) - 15543;
-  LOWORD(v31) = v31 - 11401;
-  LOWORD(v16) = ((__int16)v16 >> v29) + 1;
-  LOWORD(v30) = v30 - 22724;
-  return v16 + __ROL4__(v17, 1) + v31 + v30 + v29 + (_EBX >> 1) + _EAX - 138919572;
+  v29 = _EDX - 1;
+  v30 = _byteswap_ulong(_EBP);
+  LOWORD(_EAX) = __CFSHL__(v16, 1) + (_EAX ^ 0x800) - 15543;
+  LOWORD(v30) = v30 - 11401;
+  LOWORD(v15) = ((__int16)v15 >> v28) + 1;
+  LOWORD(v29) = v29 - 22724;
+  return v15 + __ROL4__(v16, 1) + v30 + v29 + v28 + (_EBX >> 1) + _EAX - 138919572;
 }
 
 //----- (08049C61) --------------------------------------------------------
@@ -878,7 +846,7 @@ unsigned int __usercall log_size_7_var_006@<eax>(char a1@<efl>)
     LOWORD(_EDX) = _EDI;
   v34 = _EDI + 1;
   HIWORD(v29) = 7226;
-  LOWORD(v19) = _bittest(&_EDX, 0x1C3A753Fu) + (_WORD)v19;
+  LOWORD(v19) = (_EDX < 0) + (_WORD)v19;
   v36 = v19 >> (4 * v28);
   v37 = (4 * v28) << (4 * v28);
   LOWORD(v37) = v37 | 0xC000;
@@ -901,7 +869,8 @@ unsigned int __usercall log_size_7_var_006@<eax>(char a1@<efl>)
   BYTE1(v36) = __ROR1__(BYTE1(v36), 1);
   LOBYTE(v37) = v37 + 16;
   v38 = v34 & v29;
-  v18 = _bittestandreset((__int16 *)&_EDX, 0x1Au);
+  v18 = (v33 & 0x400) != 0;
+  LOWORD(_EDX) = v33 & 0xFBFF;
   LOWORD(v20) = -31566 * v31 - (v18 + (_WORD)v31);
   if ( (v20 & 0x6883BE94) == 0 )
     LOWORD(v38) = v37;
@@ -1022,7 +991,7 @@ unsigned int log_size_7_var_008()
   int v38; // ebx
   int v39; // esi
 
-  _ESI = 1747342665;
+  _ESI = 1747342409;
   _EDI = 377445931;
   _ECX = 609836951;
   __asm { rcr     esi, cl }
@@ -1094,7 +1063,8 @@ unsigned int log_size_7_var_008()
   if ( !v10 )
     _EAX = v17;
   __asm { rcl     dh, 17h }
-  v5 = _bittestandcomplement((__int16 *)&_EDX, 0xC5u);
+  v5 = (_EDX & 0x20) != 0;
+  LOWORD(_EDX) = _EDX ^ 0x20;
   v21 = _ESI + v5 + _ECX;
   __asm { rcl     ebp, 1 }
   LODWORD(v24) = __PAIR64__(_EDX, _ESI) >> 50;
@@ -1115,7 +1085,7 @@ unsigned int log_size_7_var_008()
   _ECX = v21 - v31;
   __asm { rcl     eax, 0DEh }
   v28 = v23 & 0x49A95B55;
-  LOWORD(v28) = v28 | (1 << v26);
+  LOWORD(v28) = v28 | (1 << (v26 & 0xF));
   LOWORD(_EAX) = __ROL2__(_EAX, 158);
   v32 = v31;
   LOBYTE(v31) = v10;
@@ -1190,6 +1160,7 @@ unsigned int log_size_7_var_009()
     _EDX = 998244352;
   __asm { rcr     ecx, cl }
   LOBYTE(_ECX) = BYTE1(v7) & _ECX;
+  LOWORD(_EBX) = _EBX ^ 0x40;
   LOWORD(v2) = 146;
   BYTE1(_ECX) = v10;
   v13 = __CFSHL__(_EBX, 1);

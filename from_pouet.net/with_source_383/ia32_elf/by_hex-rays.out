@@ -1,4 +1,6 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+
+Database SUBJECTS/from_pouet.net/with_source_383/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,33 +10,93 @@ Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_pouet.net/with_source_383/ia32_elf/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-08049F40) ... ... OK
-  1. Creating a new segment  (0804A000-0804A13C) ... ... OK
-  2. Creating a new segment  (0804A13C-0804A13D) ... ... OK
-  3. Creating a new segment  (0804A140-0804A1B8) ... ... OK
-  4. Creating a new segment  (0804A1B8-0804A1C4) ... ... OK
-Processing relocations...
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 48 names.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_pouet.net/with_source_383/ia32_elf/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 0 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 080486FC       with name '.glTranslated'
+  function at 0804870C       with name '.glEnd'
+  function at 0804871C       with name '.srand'
+  function at 0804872C       with name '.glEnable'
+  function at 0804873C       with name '.glHint'
+  function at 0804874C       with name '.glColor3fv'
+  function at 0804875C       with name '.glMatrixMode'
+  function at 0804876C       with name '.glClear'
+  function at 0804877C       with name '.SDL_ShowCursor'
+  function at 0804878C       with name '.SDL_PollEvent'
+  function at 0804879C       with name '.SDL_GL_SwapBuffers'
+  function at 080487AC       with name '.glLoadIdentity'
+  function at 080487BC       with name '.glClearColor'
+  function at 080487CC       with name '.SDL_SetVideoMode'
+  function at 080487DC       with name '.glShadeModel'
+  function at 080487EC       with name '.glFrustum'
+  function at 080487FC       with name '.glTranslatef'
+  function at 0804880C       with name '.malloc'
+  function at 0804881C       with name '.glRotatef'
+  function at 0804882C       with name '.glDepthFunc'
+  function at 0804883C       with name '.glClearDepth'
+  function at 0804884C       with name '.glBegin'
+  function at 0804885C       with name '.glVertex3f'
+  function at 0804886C       with name '.glPushMatrix'
+  function at 0804887C       with name '.glFlush'
+  function at 0804888C       with name '.SDL_Delay'
+  function at 0804889C       with name '.SDL_Quit'
+  function at 080488AC       with name '.rand'
+  function at 080488BC       with name '.glPopMatrix'
+  function at 080488CC       with name '.glViewport'
+  function at 08048903       with name 'sub_8048903'
+  function at 080489C3       with name 'sub_80489C3'
+  function at 08048AA8       with name 'sub_8048AA8'
+  function at 08048B68       with name 'sub_8048B68'
+  function at 08048BE1       with name 'sub_8048BE1'
+  function at 08048C24       with name 'sub_8048C24'
+  function at 08048C67       with name 'sub_8048C67'
+  function at 08048EB5       with name 'sub_8048EB5'
+  function at 080490D5       with name 'sub_80490D5'
+  function at 080492D1       with name 'sub_80492D1'
+  function at 08049330       with name 'sub_8049330'
+  function at 08049363       with name 'sub_8049363'
+  function at 0804937F       with name 'sub_804937F'
+  function at 08049394       with name 'sub_8049394'
+  function at 08049444       with name 'sub_8049444'
+  function at 0804993D       with name 'sub_804993D'
+  function at 08049B18       with name 'start'
+  function at 0804A140       with name 'glTranslated'
+  function at 0804A144       with name 'glEnd'
+  function at 0804A148       with name 'srand'
+  function at 0804A14C       with name 'glEnable'
+  function at 0804A150       with name 'glHint'
+  function at 0804A154       with name 'glColor3fv'
+  function at 0804A158       with name 'glMatrixMode'
+  function at 0804A15C       with name 'glClear'
+  function at 0804A160       with name 'SDL_ShowCursor'
+  function at 0804A164       with name 'SDL_PollEvent'
+  function at 0804A168       with name 'SDL_GL_SwapBuffers'
+  function at 0804A16C       with name 'glLoadIdentity'
+  function at 0804A170       with name 'glClearColor'
+  function at 0804A174       with name 'SDL_SetVideoMode'
+  function at 0804A178       with name 'glShadeModel'
+  function at 0804A17C       with name 'glFrustum'
+  function at 0804A180       with name 'glTranslatef'
+  function at 0804A184       with name 'malloc'
+  function at 0804A188       with name 'glRotatef'
+  function at 0804A18C       with name 'glDepthFunc'
+  function at 0804A190       with name 'glClearDepth'
+  function at 0804A194       with name 'glBegin'
+  function at 0804A198       with name 'glVertex3f'
+  function at 0804A19C       with name 'glPushMatrix'
+  function at 0804A1A0       with name 'glFlush'
+  function at 0804A1A4       with name 'SDL_Delay'
+  function at 0804A1A8       with name 'SDL_Quit'
+  function at 0804A1AC       with name 'rand'
+  function at 0804A1B0       with name 'glPopMatrix'
+  function at 0804A1B4       with name 'glViewport'
+finished -> OK
 TIMESTAMP decompiling 8048903 size=000000C0 times=0...
 TIMESTAMP decompiling 8048B68 size=00000079 times=0...
 TIMESTAMP decompiling 8049330 size=00000033 times=0...
@@ -61,4 +123,5 @@ TIMESTAMP decompiling 8049394 size=000000B0 times=0...
 TIMESTAMP decompiling 804993D size=000001DB times=0...
 TIMESTAMP decompiling 8049B18 size=00000394 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

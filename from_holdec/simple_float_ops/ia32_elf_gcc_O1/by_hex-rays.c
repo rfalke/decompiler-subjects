@@ -10,17 +10,8 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_80482D0();
 // int printf(const char *format, ...);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// int _gmon_start__(void); weak
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _x86_get_pc_thunk_bx();
-// int deregister_tm_clones();
-// int register_tm_clones();
-// int _do_global_dtors_aux();
-// int frame_dummy();
 void __cdecl use(double x);
 void __cdecl use_int(int x);
 int read_ints(); // idb
@@ -37,17 +28,14 @@ int __cdecl basic_operations(double x, double y);
 int __cdecl compare_floats(double x, double y);
 int __cdecl constants(double x);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void _libc_csu_init(void); idb
-// void _libc_csu_fini(void); idb
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
 int (*dword_804A008)(void) = NULL; // weak
 long double global_long_double = ?flt; // idb
-double global_double =  11.0; // idb
-float global_float =  10.0; // idb
+double global_double = 11.0; // idb
+float global_float = 10.0; // idb
 __int64 global_long_long = 5LL; // idb
 int global_long = 4; // idb
 int global_int = 3; // idb

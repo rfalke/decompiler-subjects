@@ -10,19 +10,9 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int __usercall init_proc@<eax>(int a1@<eax>);
 void sub_8048248();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int printf(const char *format, ...);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void *__usercall call_gmon_start@<eax>(int a1@<eax>);
-// void _do_global_dtors_aux();
-// int frame_dummy();
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall _libc_csu_init(int a1@<eax>);
-// void _libc_csu_fini(void); idb
-// int __fastcall _do_global_ctors_aux(int a1, int a2);
-// void term_proc();
 
 
 //----- (08048248) --------------------------------------------------------
@@ -51,9 +41,9 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   while ( argc <= 5 );
   return 7;
 }
-// 8048350: conditional instruction was optimized away because of '%argc.4>=3'
-// 80483CA: conditional instruction was optimized away because of '%argc.4<3'
-// 80483D9: conditional instruction was optimized away because of '%argc.4<3'
+// 8048350: conditional instruction was optimized away because %argc.4>=3
+// 80483CA: conditional instruction was optimized away because %argc.4<3
+// 80483D9: conditional instruction was optimized away because %argc.4<3
 
 // nfuncs=15 queued=2 decompiled=2 lumina nreq=0 worse=0 better=0
 // ALL OK, 2 function(s) have been successfully decompiled

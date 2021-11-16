@@ -1,3 +1,4 @@
+
 Database SUBJECTS/from_boomerang/funcptr/ia32_elf_by_boomerang/subject.exe.idb already exists.
 Do you want to overwrite it? -> ~L~oad existing
 
@@ -13,10 +14,10 @@ Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor 
 Loading type libraries...
 Autoanalysis subsystem has been initialized.
 Database for file 'subject.exe' has been loaded.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
 === start of cleanup script -> OK
   function at 08048230  LIB  with name '.init_proc'
   function at 08048248       with name 'sub_8048248'

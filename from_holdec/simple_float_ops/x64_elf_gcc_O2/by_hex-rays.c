@@ -10,43 +10,32 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// __int64 (**init_proc())(void);
 __int64 __fastcall sub_4003E0(); // weak
 // int printf(const char *format, ...);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// __int64 deregister_tm_clones();
-// __int64 register_tm_clones();
-// __int64 __fastcall _do_global_dtors_aux(); weak
-// __int64 frame_dummy();
-void __fastcall use(double a1, double x);
+void __fastcall use(double, double x);
 void __fastcall use_int(int x);
 int __cdecl read_ints();
-__int64 __fastcall write_ints(double a1, double pi);
+__int64 __fastcall write_ints(double, double pi);
 int __cdecl read_floats();
-void __fastcall write_floats(double a1, double pi);
+void __fastcall write_floats(double, double pi);
 void __cdecl converting_between_floats_f1();
 void __cdecl converting_between_floats_f2();
 void __cdecl converting_between_floats_d1();
 void __cdecl converting_between_floats_d2();
 void __cdecl converting_between_floats_l1();
 void __cdecl converting_between_floats_l2();
-__int64 __fastcall basic_operations(double a1, double x, double y);
-__int64 __fastcall compare_floats(double a1, double x, double y);
-__int64 __fastcall constants(double a1, double x);
-// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-// void _libc_csu_fini(void); idb
-// void term_proc();
-// int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// __int64 _gmon_start__(void); weak
+__int64 __fastcall basic_operations(double, double x, double y);
+__int64 __fastcall compare_floats(double, double x, double y);
+__int64 __fastcall constants(double, double x);
 
 //-------------------------------------------------------------------------
 // Data declarations
 
 __int64 (*qword_601010)(void) = NULL; // weak
 long double global_long_double = ?flt; // idb
-double global_double =  11.0; // idb
-float global_float =  10.0; // idb
+double global_double = 11.0; // idb
+float global_float = 10.0; // idb
 __int64 global_long_long = 5LL; // idb
 __int64 global_long = 4LL; // idb
 int global_int = 3; // idb

@@ -10,16 +10,9 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// __int64 (**init_proc())(void);
 __int64 __fastcall sub_401020(); // weak
 // void __noreturn __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// void dl_relocate_static_pie();
-// void *deregister_tm_clones();
-// __int64 register_tm_clones();
-// void *_do_global_dtors_aux();
-// __int64 frame_dummy();
 __int64 inst_0_values_var_0();
 __int64 inst_0_flags_var_0();
 __int64 inst_1_values_var_0();
@@ -104,11 +97,6 @@ __int64 inst_40_values_var_0();
 __int64 inst_40_flags_var_0();
 unsigned __int64 inst_41_values_var_0();
 __int64 inst_41_flags_var_0();
-// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-// void _libc_csu_fini(void); idb
-// void term_proc();
-// int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -622,131 +610,96 @@ __int64 inst_20_flags_var_0()
 //----- (0000000000403EE5) ----------------------------------------------------
 __int64 inst_21_values_var_0()
 {
-  _ER14 = 1014434738;
-  HIDWORD(_RAX) = 942590766;
-  __asm { rorx    eax, r14d, 4Ah ; 'J' }
-  return _RAX - 3968802242LL;
+  return (unsigned int)__ROR4__(1014434738, 74) - 3968802242LL;
 }
 
 //----- (0000000000403FE6) ----------------------------------------------------
 __int64 inst_21_flags_var_0()
 {
-  _ECX = -918290130;
-  __asm { rorx    ebx, ecx, 0CFh }
   return 0LL;
 }
 
 //----- (00000000004040E5) ----------------------------------------------------
 __int64 inst_22_values_var_0()
 {
-  _R10 = 0x467AD91114BF224LL;
-  __asm { rorx    r9, r10, 71h ; 'q' }
-  return _R9 + 0x2937775A06EDFDCDLL;
+  return __ROR8__(0x467AD91114BF224LL, 113) + 0x2937775A06EDFDCDLL;
 }
 
 //----- (00000000004041E6) ----------------------------------------------------
 __int64 inst_22_flags_var_0()
 {
-  _R8 = 0x8ED43EAAFD1DAF08LL;
-  __asm { rorx    r14, r8, 0F7h }
   return 0LL;
 }
 
 //----- (00000000004042E5) ----------------------------------------------------
 __int64 inst_23_values_var_0()
 {
-  _ER10 = -1313810261;
-  HIDWORD(_R14) = 1505045184;
-  __asm { sarx    r14d, r10d, eax }
-  return _R14 - 4294646541LL;
+  return 0LL;
 }
 
 //----- (00000000004043E5) ----------------------------------------------------
 __int64 inst_23_flags_var_0()
 {
-  _ESI = 974413938;
-  __asm { sarx    r11d, esi, r9d }
   return 0LL;
 }
 
 //----- (00000000004044E3) ----------------------------------------------------
 __int64 inst_24_values_var_0()
 {
-  _RDI = 0xEDAD9C318A6951B3LL;
-  __asm { sarx    rax, rdi, rbx }
-  return _RAX - 0x6CE68F409A722A8BLL + 0x6CE68F409A7273D5LL;
+  return 0LL;
 }
 
 //----- (00000000004045E3) ----------------------------------------------------
 __int64 inst_24_flags_var_0()
 {
-  _R15 = 0x2193C1B52B1F5E50LL;
-  __asm { sarx    r9, r15, rbx }
   return 0LL;
 }
 
 //----- (00000000004046E1) ----------------------------------------------------
 __int64 inst_25_values_var_0()
 {
-  _EBP = -1725303626;
-  HIDWORD(_RDI) = -767019391;
-  __asm { shlx    edi, ebp, ebp }
-  return _RDI - 0x4855E23CE2D3C028LL + 0x4855E23CB553C028LL;
+  return 0LL;
 }
 
 //----- (00000000004047E1) ----------------------------------------------------
 __int64 inst_25_flags_var_0()
 {
-  _ER12 = -374122533;
-  __asm { shlx    r13d, r12d, esi }
   return 0LL;
 }
 
 //----- (00000000004048DF) ----------------------------------------------------
 __int64 inst_26_values_var_0()
 {
-  _R9 = 0x265026590548CFF9LL;
-  __asm { shlx    r14, r9, r15 }
-  return _R14 + 0xE00000000000000LL;
+  return 0LL;
 }
 
 //----- (00000000004049DF) ----------------------------------------------------
 __int64 inst_26_flags_var_0()
 {
-  _R12 = 0x498495988B479943LL;
-  __asm { shlx    r13, r12, r11 }
   return 0LL;
 }
 
 //----- (0000000000404ADD) ----------------------------------------------------
 __int64 inst_27_values_var_0()
 {
-  _RDI = 0x147482E21AE0819FLL;
-  __asm { shrx    edi, edi, r10d }
-  return _RDI - 112730215;
+  return 0LL;
 }
 
 //----- (0000000000404BDD) ----------------------------------------------------
 __int64 inst_27_flags_var_0()
 {
-  _ER11 = -1837437245;
-  __asm { shrx    r12d, r11d, esi }
   return 0LL;
 }
 
 //----- (0000000000404CDB) ----------------------------------------------------
 __int64 inst_28_values_var_0()
 {
-  _R8 = 0x2DACC80866774071LL;
-  __asm { shrx    r10, r8, r10 }
-  return _R10 - 1496676;
+  return 0LL;
 }
 
 //----- (0000000000404DDB) ----------------------------------------------------
 __int64 inst_28_flags_var_0()
 {
-  _RDX = 0x8B1F928319D2FF3ELL;
-  __asm { shrx    rbx, rdx, r15 }
   return 0LL;
 }
 

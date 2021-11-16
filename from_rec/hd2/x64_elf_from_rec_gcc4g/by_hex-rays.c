@@ -10,11 +10,9 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void (*init_proc())(void);
 __int64 __fastcall sub_4005F0(); // weak
 // int puts(const char *s);
 // FILE *fopen(const char *filename, const char *modes);
-// int __fastcall __libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // size_t strlen(const char *s);
 // int __xstat(int ver, const char *filename, struct stat *stat_buf);
 // int sprintf(char *s, const char *format, ...);
@@ -23,19 +21,10 @@ __int64 __fastcall sub_4005F0(); // weak
 // size_t fread(void *ptr, size_t size, size_t n, FILE *stream);
 // int fclose(FILE *stream);
 // void perror(const char *s);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// __int64 (**call_gmon_start())(void);
-// void _do_global_dtors_aux();
-// void frame_dummy();
 void __cdecl dumpline(unsigned __int8 *p, unsigned __int64 offset, int cnt);
 int __cdecl hexdump(char *fname);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void _libc_csu_fini(void); idb
-// void _libc_csu_init(void); idb
 int __fastcall stat_0(char *filename, struct stat *stat_buf);
-// void (*_do_global_ctors_aux())(void);
-// void term_proc();
-// __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -89,7 +78,6 @@ void __cdecl dumpline(unsigned __int8 *p, unsigned __int64 offset, int cnt)
 //----- (0000000000400942) ----------------------------------------------------
 int __cdecl hexdump(char *fname)
 {
-  int result; // eax
   stat st; // [rsp+10h] [rbp-C0h] BYREF
   unsigned __int8 buff[16]; // [rsp+A0h] [rbp-30h] BYREF
   unsigned __int64 offset; // [rsp+B8h] [rbp-18h]
@@ -99,7 +87,7 @@ int __cdecl hexdump(char *fname)
   if ( stat_0(fname, &st) || (fp = fopen(fname, "rb")) == 0LL )
   {
     perror(fname);
-    result = 1;
+    return 1;
   }
   else
   {
@@ -111,9 +99,8 @@ int __cdecl hexdump(char *fname)
       dumpline(buff, offset, cnt);
     }
     fclose(fp);
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (0000000000400A34) ----------------------------------------------------

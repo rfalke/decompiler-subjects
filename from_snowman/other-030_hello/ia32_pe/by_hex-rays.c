@@ -62,9 +62,6 @@ WINBOOL __cdecl __mingw_TLScallback(HANDLE hDllHandle, DWORD reason, LPVOID rese
 // void __stdcall DeleteCriticalSection(LPCRITICAL_SECTION lpCriticalSection);
 // void __stdcall InitializeCriticalSection(LPCRITICAL_SECTION lpCriticalSection);
 int register_frame_ctor();
-// void __cdecl ___set_app_type(_crt_app_type Type);
-// _onexit_t __cdecl __onexit(_onexit_t Func);
-// int __cdecl _atexit(void (__cdecl *)());
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -76,7 +73,7 @@ int __CTOR_LIST__[] = { -1 }; // weak
 func_ptr *p_1615 = &dword_401C74; // idb
 int data = 0; // weak
 int _rt_psrelocs_start = 0; // weak
-int _rt_psrelocs_end[944] =
+int _rt_psrelocs_end[48] =
 {
   0,
   0,
@@ -125,9 +122,8 @@ int _rt_psrelocs_end[944] =
   0,
   0,
   0,
-  0,
-  
-}; // idb
+  0
+}; // weak
 _UNKNOWN __EH_FRAME_BEGIN__; // weak
 _UNKNOWN obj; // weak
 unsigned int __cpu_features; // idb
@@ -137,55 +133,56 @@ int _CRT_MT; // idb
 volatile int __mingwthr_cs_init; // idb
 CRITICAL_SECTION __mingwthr_cs; // idb
 volatile __mingwthr_key_t *key_dtor_list; // idb
+// extern void (__cdecl *___set_app_type)(_crt_app_type Type);
 // extern FILE __iob[];
+// extern _onexit_t (__cdecl *__onexit)(_onexit_t Func);
+// extern int (__cdecl *_atexit)(void (__cdecl *)());
 // extern _UNKNOWN std::cerr; weak
 
 
 //----- (00401110) --------------------------------------------------------
 int __stdcall _gnu_exception_handler(EXCEPTION_POINTERS *exception_data)
 {
-  DWORD v1; // eax
+  DWORD ExceptionCode; // eax
   int v2; // ebx
   _crt_signal_t v3; // eax
-  int result; // eax
   _crt_signal_t v5; // eax
   _crt_signal_t v6; // eax
 
-  v1 = exception_data->ExceptionRecord->ExceptionCode;
-  if ( v1 <= 0xC0000091 )
+  ExceptionCode = exception_data->ExceptionRecord->ExceptionCode;
+  if ( ExceptionCode <= 0xC0000091 )
   {
-    if ( v1 >= 0xC000008D )
+    if ( ExceptionCode >= 0xC000008D )
     {
 LABEL_3:
       v2 = 1;
       goto LABEL_4;
     }
-    if ( v1 == -1073741819 )
+    if ( ExceptionCode == -1073741819 )
     {
       v6 = signal(11, 0);
       if ( v6 == (_crt_signal_t)1 )
       {
         signal(11, (_crt_signal_t)1);
-        result = -1;
+        return -1;
       }
       else
       {
         if ( !v6 )
           return 0;
         v6(11);
-        result = -1;
+        return -1;
       }
-      return result;
     }
-    if ( v1 != -1073741795 )
+    if ( ExceptionCode != -1073741795 )
       return 0;
     goto LABEL_13;
   }
-  if ( v1 != -1073741676 )
+  if ( ExceptionCode != -1073741676 )
   {
-    if ( v1 != -1073741674 )
+    if ( ExceptionCode != -1073741674 )
     {
-      if ( v1 != -1073741677 )
+      if ( ExceptionCode != -1073741677 )
         return 0;
       goto LABEL_3;
     }
@@ -194,16 +191,15 @@ LABEL_13:
     if ( v5 == (_crt_signal_t)1 )
     {
       signal(4, (_crt_signal_t)1);
-      result = -1;
+      return -1;
     }
     else
     {
       if ( !v5 )
         return 0;
       v5(4);
-      result = -1;
+      return -1;
     }
-    return result;
   }
   v2 = 0;
 LABEL_4:
@@ -213,16 +209,15 @@ LABEL_4:
     signal(8, (_crt_signal_t)1);
     if ( v2 )
       fpreset();
-    result = -1;
+    return -1;
   }
   else
   {
     if ( !v3 )
       return 0;
     v3(8);
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (00401284) --------------------------------------------------------
@@ -247,13 +242,13 @@ _onexit_t __cdecl _onexit(_onexit_t pfn)
 //----- (004012BC) --------------------------------------------------------
 int (__cdecl *__gcc_register_frame())(void *, void *)
 {
-  HMODULE v0; // eax
+  HMODULE ModuleHandleA; // eax
   int (__cdecl *result)(void *, void *); // eax
   HMODULE v2; // eax
 
-  v0 = GetModuleHandleA("libgcc_s_dw2-1.dll");
-  if ( v0 )
-    result = (int (__cdecl *)(void *, void *))GetProcAddress(v0, "__register_frame_info");
+  ModuleHandleA = GetModuleHandleA("libgcc_s_dw2-1.dll");
+  if ( ModuleHandleA )
+    result = (int (__cdecl *)(void *, void *))GetProcAddress(ModuleHandleA, "__register_frame_info");
   else
     result = (int (__cdecl *)(void *, void *))&__register_frame_info;
   if ( result )
@@ -266,7 +261,7 @@ int (__cdecl *__gcc_register_frame())(void *, void *)
     else
       result = 0;
     if ( result )
-      result = (int (__cdecl *)(void *, void *))((int (__cdecl *)(int *))result)(&data);
+      return (int (__cdecl *)(void *, void *))((int (__cdecl *)(int *))result)(&data);
   }
   return result;
 }
@@ -275,12 +270,12 @@ int (__cdecl *__gcc_register_frame())(void *, void *)
 //----- (00401348) --------------------------------------------------------
 void __gcc_deregister_frame(void)
 {
-  HMODULE v0; // eax
+  HMODULE ModuleHandleA; // eax
   FARPROC __deregister_frame_info; // eax
 
-  v0 = GetModuleHandleA("libgcc_s_dw2-1.dll");
-  if ( v0 )
-    __deregister_frame_info = GetProcAddress(v0, "__deregister_frame_info");
+  ModuleHandleA = GetModuleHandleA("libgcc_s_dw2-1.dll");
+  if ( ModuleHandleA )
+    __deregister_frame_info = GetProcAddress(ModuleHandleA, "__deregister_frame_info");
   else
     __deregister_frame_info = (FARPROC)&::__deregister_frame_info;
   if ( __deregister_frame_info )
@@ -425,7 +420,7 @@ void __noreturn __report_error(const char *msg, ...)
 //----- (00401648) --------------------------------------------------------
 void __usercall __write_memory(void *addr@<eax>, const void *src@<edx>, size_t len@<ecx>)
 {
-  DWORD v5; // eax
+  DWORD Protect; // eax
   MEMORY_BASIC_INFORMATION b; // [esp+20h] [ebp-38h] BYREF
   DWORD oldprot[7]; // [esp+3Ch] [ebp-1Ch] BYREF
 
@@ -440,9 +435,9 @@ void __usercall __write_memory(void *addr@<eax>, const void *src@<edx>, size_t l
     else
     {
       VirtualProtect(b.BaseAddress, b.RegionSize, 0x40u, oldprot);
-      v5 = b.Protect;
+      Protect = b.Protect;
       qmemcpy(addr, src, len);
-      if ( v5 != 64 && v5 != 4 )
+      if ( Protect != 64 && Protect != 4 )
         VirtualProtect(b.BaseAddress, b.RegionSize, oldprot[0], oldprot);
     }
   }
@@ -541,9 +536,10 @@ LABEL_20:
     goto LABEL_21;
   }
 }
-// 40187A: conditional instruction was optimized away because of 'edx.4==8'
-// 40187F: conditional instruction was optimized away because of 'edx.4==8'
+// 40187A: conditional instruction was optimized away because edx.4==8
+// 40187F: conditional instruction was optimized away because edx.4==8
 // 403128: using guessed type int _rt_psrelocs_start;
+// 403140: using guessed type int _rt_psrelocs_end[48];
 
 //----- (004018F8) --------------------------------------------------------
 void __do_global_dtors()
@@ -588,18 +584,18 @@ void __main()
 void __mingwthr_run_key_dtors()
 {
   volatile __mingwthr_key_t *i; // ebx
-  LPVOID v1; // esi
+  LPVOID Value; // esi
 
   if ( __mingwthr_cs_init )
   {
     EnterCriticalSection((LPCRITICAL_SECTION)&__mingwthr_cs);
     for ( i = key_dtor_list; i; i = i->next )
     {
-      v1 = TlsGetValue(i->key);
+      Value = TlsGetValue(i->key);
       if ( !GetLastError() )
       {
-        if ( v1 )
-          i->dtor(v1);
+        if ( Value )
+          i->dtor(Value);
       }
     }
     LeaveCriticalSection((LPCRITICAL_SECTION)&__mingwthr_cs);
@@ -631,7 +627,7 @@ int __cdecl ___w64_mingwthr_add_key_dtor(DWORD key, void (*dtor)(void *))
 int __cdecl ___w64_mingwthr_remove_key_dtor(DWORD key)
 {
   volatile __mingwthr_key_t *v2; // edx
-  volatile __mingwthr_key_t *v3; // eax
+  volatile __mingwthr_key_t *next; // eax
 
   if ( !__mingwthr_cs_init )
     return 0;
@@ -642,20 +638,20 @@ int __cdecl ___w64_mingwthr_remove_key_dtor(DWORD key)
     if ( key_dtor_list->key == key )
     {
       key_dtor_list = key_dtor_list->next;
-      v3 = v2;
+      next = v2;
 LABEL_12:
-      free((void *)v3);
+      free((void *)next);
       LeaveCriticalSection((LPCRITICAL_SECTION)&__mingwthr_cs);
       return 0;
     }
     while ( 1 )
     {
-      v3 = v2->next;
-      if ( !v3 )
+      next = v2->next;
+      if ( !next )
         break;
-      if ( v3->key == key )
+      if ( next->key == key )
       {
-        v2->next = v3->next;
+        v2->next = next->next;
         goto LABEL_12;
       }
       v2 = v2->next;
@@ -668,14 +664,12 @@ LABEL_12:
 //----- (00401B04) --------------------------------------------------------
 WINBOOL __cdecl __mingw_TLScallback(HANDLE hDllHandle, DWORD reason, LPVOID reserved)
 {
-  WINBOOL result; // eax
-
   if ( reason == 1 )
   {
     if ( !__mingwthr_cs_init )
       InitializeCriticalSection((LPCRITICAL_SECTION)&__mingwthr_cs);
     __mingwthr_cs_init = 1;
-    result = 1;
+    return 1;
   }
   else
   {
@@ -693,9 +687,8 @@ WINBOOL __cdecl __mingw_TLScallback(HANDLE hDllHandle, DWORD reason, LPVOID rese
         DeleteCriticalSection((LPCRITICAL_SECTION)&__mingwthr_cs);
       }
     }
-    result = 1;
+    return 1;
   }
-  return result;
 }
 
 //----- (00401C44) --------------------------------------------------------

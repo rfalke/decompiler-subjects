@@ -1,76 +1,188 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+
+Database SUBJECTS/from_decompile-it.com/cat/ia32_elf_from_website/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   344064    42 8192 allocating memory for virtual array...
+   155648    19 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  1130496            total memory allocated
+   942080            total memory allocated
 
-Loading file 'SUBJECTS/from_decompile-it.com/cat/ia32_elf_from_website/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-08050B68) ... ... OK
-  1. Creating a new segment  (08051F08-08052284) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (08048A9C-08048ACC) ... ... OK
-  3. Creating a new segment  (08048ACC-08050B68) ... ... OK
-  4. Creating a new segment  (08048ACC-08048DBC) ... ... OK
-     Deleting segment        (08048DBC-08050B68) ...
-  4. Creating a new segment  (08048DBC-08050B68) ... ... OK
-  5. Creating a new segment  (08048DC0-0804FCFC) ... ... OK
-  6. Creating a new segment  (0804FCFC-08050B68) ... ... OK
-  7. Creating a new segment  (0804FCFC-0804FD18) ... ... OK
-     Deleting segment        (0804FD18-08050B68) ...
-  7. Creating a new segment  (0804FD18-08050B68) ... ... OK
-  8. Creating a new segment  (0804FD20-08050B64) ... ... OK
-  9. Creating a new segment  (08050B64-08050B68) ... ... OK
-     Deleting segment        (08050B64-08050B68) ...
-  9. Creating a new segment  (08050B64-08050B68) ... ... OK
- 10. Creating a new segment  (08051F08-08051F10) ... ... OK
-     Deleting segment        (08051F10-08052284) ...
- 10. Creating a new segment  (08051F10-08052284) ... ... OK
- 11. Creating a new segment  (08051F10-08051F18) ... ... OK
-     Deleting segment        (08051F18-08052284) ...
- 11. Creating a new segment  (08051F18-08052284) ... ... OK
- 12. Creating a new segment  (08051F18-08051F1C) ... ... OK
-     Deleting segment        (08051F1C-08052284) ...
- 12. Creating a new segment  (08051F1C-08052284) ... ... OK
- 13. Creating a new segment  (08051FEC-08051FF4) ... ... OK
- 14. Creating a new segment  (08051FF4-08052284) ... ... OK
- 15. Creating a new segment  (08051FF4-080520B8) ... ... OK
-     Deleting segment        (080520B8-08052284) ...
- 15. Creating a new segment  (080520B8-08052284) ... ... OK
- 16. Creating a new segment  (080520B8-080520F4) ... ... OK
-     Deleting segment        (080520F4-08052284) ...
- 16. Creating a new segment  (080520F4-08052284) ... ... OK
- 17. Creating a new segment  (08052100-08052284) ... ... OK
- 18. Creating a new segment  (08052284-08052285) ... ... OK
- 19. Creating a new segment  (08052288-08052340) ... ... OK
- 20. Creating a new segment  (08052340-080523AC) ... ... OK
-Processing relocations...
-DWARF: File "SUBJECTS/from_decompile-it.com/cat/ia32_elf_from_website/subject.exe" contains DWARF information.
-DWARF: Functions: 71 symbols applied
-DWARF: Globals: 18 symbols applied
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_decompile-it.com/cat/ia32_elf_from_website/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 6 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08048A9C  LIB  with name '.init_proc'
+  function at 08048ACC       with name 'sub_8048ACC'
+  function at 08048ADC       with name '.getpagesize'
+  function at 08048AEC       with name '.abort'
+  function at 08048AFC       with name '.__errno_location'
+  function at 08048B0C       with name '.__cxa_atexit'
+  function at 08048B1C       with name '.memcmp'
+  function at 08048B2C       with name '.open64'
+  function at 08048B3C       with name '.fputs_unlocked'
+  function at 08048B4C       with name '.__ctype_get_mb_cur_max'
+  function at 08048B5C       with name '.__gmon_start__'
+  function at 08048B6C       with name '.realloc'
+  function at 08048B7C       with name '.calloc'
+  function at 08048B8C       with name '.write'
+  function at 08048B9C       with name '.memset'
+  function at 08048BAC  LIB  with name '.__libc_start_main'
+  function at 08048BBC       with name '.stpcpy'
+  function at 08048BCC       with name '.ferror_unlocked'
+  function at 08048BDC       with name '._exit'
+  function at 08048BEC       with name '.bindtextdomain'
+  function at 08048BFC       with name '.mbrtowc'
+  function at 08048C0C       with name '.read'
+  function at 08048C1C       with name '.gettext'
+  function at 08048C2C       with name '.free'
+  function at 08048C3C       with name '.getopt_long'
+  function at 08048C4C       with name '.ioctl'
+  function at 08048C5C       with name '.__ctype_b_loc'
+  function at 08048C6C       with name '.fclose'
+  function at 08048C7C       with name '.mbsinit'
+  function at 08048C8C       with name '.memcpy'
+  function at 08048C9C       with name '.strlen'
+  function at 08048CAC       with name '.setlocale'
+  function at 08048CBC       with name '.printf'
+  function at 08048CCC       with name '.__signbitl'
+  function at 08048CDC       with name '.close'
+  function at 08048CEC       with name '.fwrite'
+  function at 08048CFC       with name '.fprintf'
+  function at 08048D0C       with name '.malloc'
+  function at 08048D1C       with name '.__stack_chk_fail'
+  function at 08048D2C       with name '.__fpending'
+  function at 08048D3C       with name '.error'
+  function at 08048D4C       with name '.memmove'
+  function at 08048D5C       with name '.textdomain'
+  function at 08048D6C       with name '.__fxstat64'
+  function at 08048D7C       with name '.snprintf'
+  function at 08048D8C       with name '.iswprint'
+  function at 08048D9C       with name '.strcmp'
+  function at 08048DAC       with name '.exit'
+  function at 08048DC0  LIB  with name '_start'
+  function at 08048DF0  LIB  with name '__do_global_dtors_aux'
+  function at 08048E50  LIB  with name 'frame_dummy'
+  function at 08048E74       with name 'usage'
+  function at 08048F9B       with name 'emit_bug_reporting_address'
+  function at 08048FBF       with name 'next_line_num'
+  function at 08049040       with name 'simple_cat'
+  function at 08049108       with name 'cat'
+  function at 080495FB       with name 'write_pending'
+  function at 08049671       with name 'main'
+  function at 08049DB4       with name 'ptr_align'
+  function at 08049DE8       with name 'full_write'
+  function at 08049E50       with name 'version_etc_va'
+  function at 0804A0AF       with name 'version_etc'
+  function at 0804A0E4       with name 'close_stdout_set_file_name'
+  function at 0804A0F1       with name 'close_stdout'
+  function at 0804A1B8       with name 'quote_n'
+  function at 0804A1DA       with name 'quote'
+  function at 0804A1F8       with name 'clone_quoting_options'
+  function at 0804A244       with name 'get_quoting_style'
+  function at 0804A266       with name 'set_quoting_style'
+  function at 0804A28B       with name 'set_char_quoting'
+  function at 0804A305       with name 'gettext_quote'
+  function at 0804A333       with name 'quotearg_buffer_restyled'
+  function at 0804AA7F       with name 'quotearg_buffer'
+  function at 0804AAEE       with name 'quotearg_alloc'
+  function at 0804AB73       with name 'quotearg_free'
+  function at 0804AC05       with name 'quotearg_n_options'
+  function at 0804ADC5       with name 'quotearg_n'
+  function at 0804ADEF       with name 'quotearg'
+  function at 0804AE0A       with name 'quoting_options_from_style'
+  function at 0804AE77       with name 'quotearg_n_style'
+  function at 0804AEB5       with name 'quotearg_n_style_mem'
+  function at 0804AEF2       with name 'quotearg_style'
+  function at 0804AF14       with name 'quotearg_char'
+  function at 0804AFA7       with name 'quotearg_colon'
+  function at 0804AFC4       with name 'safe_read'
+  function at 0804B02C       with name 'safe_write'
+  function at 0804B094       with name 'rpl_vfprintf'
+  function at 0804B1FC       with name 'xnmalloc'
+  function at 0804B22A       with name 'xnrealloc'
+  function at 0804B25F       with name 'x2nrealloc'
+  function at 0804B2DA       with name 'xcharalloc'
+  function at 0804B2ED       with name 'xmalloc'
+  function at 0804B317       with name 'xrealloc'
+  function at 0804B348       with name 'x2realloc'
+  function at 0804B36A       with name 'xzalloc'
+  function at 0804B396       with name 'xcalloc'
+  function at 0804B3C1       with name 'xmemdup'
+  function at 0804B3EC       with name 'xstrdup'
+  function at 0804B414       with name 'fseterr'
+  function at 0804B428       with name 'xalloc_die'
+  function at 0804B464       with name 'close_stream'
+  function at 0804B4F4       with name 'is_infinitel'
+  function at 0804B55A       with name 'vasnprintf'
+  function at 0804E995       with name 'xsum4'
+  function at 0804E9D1       with name 'xmax'
+  function at 0804E9F6       with name 'xsum'
+  function at 0804EA24       with name 'rpl_isnanl'
+  function at 0804EA90       with name 'printf_fetchargs'
+  function at 0804ED4C       with name 'printf_parse'
+  function at 0804FBAD       with name 'xsum_0'
+  function at 0804FBE0  LIB  with name '__libc_csu_fini'
+  function at 0804FBF0  LIB  with name '__libc_csu_init'
+  function at 0804FC4A       with name '__i686.get_pc_thunk.bx'
+  function at 0804FC50       with name 'atexit'
+  function at 0804FC90       with name 'fstat64'
+  function at 0804FCD0  LIB  with name '__do_global_ctors_aux'
+  function at 0804FCFC  LIB  with name '.term_proc'
+  function at 08052288       with name 'getpagesize'
+  function at 0805228C       with name 'abort'
+  function at 08052290       with name '__errno_location'
+  function at 08052294       with name '__cxa_atexit'
+  function at 08052298       with name 'memcmp'
+  function at 0805229C       with name 'open64'
+  function at 080522A0       with name 'fputs_unlocked'
+  function at 080522A4       with name '__ctype_get_mb_cur_max'
+  function at 080522A8       with name 'realloc'
+  function at 080522AC       with name 'calloc'
+  function at 080522B0       with name 'write'
+  function at 080522B4       with name 'memset'
+  function at 080522B8  LIB  with name '__libc_start_main'
+  function at 080522BC       with name 'stpcpy'
+  function at 080522C0       with name 'ferror_unlocked'
+  function at 080522C4       with name '_exit'
+  function at 080522C8       with name 'bindtextdomain'
+  function at 080522CC       with name 'mbrtowc'
+  function at 080522D0       with name 'read'
+  function at 080522D4       with name 'gettext'
+  function at 080522D8       with name 'free'
+  function at 080522DC       with name 'getopt_long'
+  function at 080522E0       with name 'ioctl'
+  function at 080522E4       with name '__ctype_b_loc'
+  function at 080522E8       with name 'fclose'
+  function at 080522EC       with name 'mbsinit'
+  function at 080522F0       with name 'memcpy'
+  function at 080522F4       with name 'strlen'
+  function at 080522F8       with name 'setlocale'
+  function at 080522FC       with name 'printf'
+  function at 08052300       with name '__signbitl'
+  function at 08052304       with name 'close'
+  function at 08052308       with name 'fwrite'
+  function at 0805230C       with name 'fprintf'
+  function at 08052310       with name 'malloc'
+  function at 08052314       with name '__stack_chk_fail'
+  function at 08052318       with name '__fpending'
+  function at 0805231C       with name 'error'
+  function at 08052320       with name 'memmove'
+  function at 08052324       with name 'textdomain'
+  function at 08052328       with name '__fxstat64'
+  function at 0805232C       with name 'snprintf'
+  function at 08052330       with name 'iswprint'
+  function at 08052334       with name 'strcmp'
+  function at 08052338       with name 'exit'
+  function at 0805233C       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 8048ACC size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -80,8 +192,6 @@ If the segment is not read-only, please change the segment NAME.
 In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
-TIMESTAMP decompiling 8048DF0 size=00000056 times=0...
-TIMESTAMP decompiling 8048E50 size=00000023 times=0...
 TIMESTAMP decompiling 8048F9B size=00000024 times=0...
 The decompiler assumes that the segment '.rodata' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -110,7 +220,6 @@ TIMESTAMP decompiling 804E9F6 size=0000002D times=0...
 TIMESTAMP decompiling 804EA24 size=0000006B times=0...
 TIMESTAMP decompiling 804EA90 size=000002B9 times=0...
 TIMESTAMP decompiling 804FBAD size=0000002D times=0...
-TIMESTAMP decompiling 804FBE0 size=00000005 times=0...
 TIMESTAMP decompiling 804FC50 size=0000003D times=0...
 The decompiler assumes that the segment '.got' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -121,7 +230,6 @@ In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
 TIMESTAMP decompiling 804FC90 size=00000032 times=0...
-TIMESTAMP decompiling 804FCD0 size=0000002A times=0...
 TIMESTAMP decompiling 8048E74 size=00000127 times=0...
 TIMESTAMP decompiling 8049DE8 size=00000067 times=0...
 TIMESTAMP decompiling 8049040 size=000000C8 times=0...
@@ -147,9 +255,6 @@ TIMESTAMP decompiling 804AF14 size=00000093 times=0...
 TIMESTAMP decompiling 804AFA7 size=0000001B times=0...
 TIMESTAMP decompiling 804A0F1 size=000000C6 times=0...
 TIMESTAMP decompiling 8049671 size=00000743 times=0...
-TIMESTAMP decompiling 8048A9C size=00000030 times=0...
-TIMESTAMP decompiling 804FBF0 size=0000005A times=0...
-TIMESTAMP decompiling 8048DC0 size=00000022 times=0...
 TIMESTAMP decompiling 804B3C1 size=0000002B times=0...
 TIMESTAMP decompiling 804A1F8 size=0000004C times=0...
 TIMESTAMP decompiling 804AAEE size=00000085 times=0...
@@ -164,6 +269,6 @@ TIMESTAMP decompiling 804B348 size=00000022 times=0...
 TIMESTAMP decompiling 804B36A size=0000002C times=0...
 TIMESTAMP decompiling 804B396 size=0000002B times=0...
 TIMESTAMP decompiling 804B3EC size=00000025 times=0...
-TIMESTAMP decompiling 804FCFC size=0000001C times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

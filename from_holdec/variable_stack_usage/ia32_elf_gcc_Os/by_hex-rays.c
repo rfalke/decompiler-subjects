@@ -10,24 +10,12 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_80482B0();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// int _gmon_start__(void); weak
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _x86_get_pc_thunk_bx();
-// int deregister_tm_clones();
-// int register_tm_clones();
-// int _do_global_dtors_aux();
-// int frame_dummy();
 void __cdecl use(int *x);
 void __cdecl fill(int *dest, int n);
 void __cdecl with_array(int n);
 void __cdecl with_alloca(int n);
-// void _libc_csu_init(void); idb
-// void _libc_csu_fini(void); idb
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -81,6 +69,7 @@ void __cdecl with_array(int n)
   use(fixed2);
 }
 // 804845F: variable 'v2' is possibly undefined
+// 8048423: using guessed type int fixed2[3];
 
 //----- (08048474) --------------------------------------------------------
 void __cdecl with_alloca(int n)
@@ -100,6 +89,7 @@ void __cdecl with_alloca(int n)
   use(fixed2);
 }
 // 80484B5: variable 'v2' is possibly undefined
+// 8048474: using guessed type int fixed2[3];
 
 // nfuncs=20 queued=6 decompiled=6 lumina nreq=0 worse=0 better=0
 // ALL OK, 6 function(s) have been successfully decompiled

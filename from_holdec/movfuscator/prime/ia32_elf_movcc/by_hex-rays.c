@@ -561,7 +561,7 @@ char alu_true[528] =
   '\0',
   '\0',
   '\0'
-}; // idb
+}; // weak
 int alu_false[] = { 1 }; // weak
 int alu_b0[260] =
 {
@@ -825,7 +825,7 @@ int alu_b0[260] =
   0,
   0,
   0
-}; // idb
+}; // weak
 int alu_b1[] = { 0 }; // weak
 int alu_b2[] = { 0 }; // weak
 int alu_b3[] = { 0 }; // weak
@@ -1091,7 +1091,7 @@ int alu_b4[260] =
   0,
   0,
   0
-}; // idb
+}; // weak
 int alu_b5[260] =
 {
   0,
@@ -1354,7 +1354,7 @@ int alu_b5[260] =
   0,
   0,
   0
-}; // idb
+}; // weak
 int alu_b6[260] =
 {
   0,
@@ -1617,7 +1617,7 @@ int alu_b6[260] =
   0,
   0,
   0
-}; // idb
+}; // weak
 int alu_b7[260] =
 {
   0,
@@ -1880,7 +1880,7 @@ int alu_b7[260] =
   0,
   0,
   0
-}; // idb
+}; // weak
 char alu_b_s_0[257] =
 {
   '\x01',
@@ -2140,7 +2140,7 @@ char alu_b_s_0[257] =
   '\xFF',
   '\xFF',
   '\0'
-}; // idb
+}; // weak
 char alu_b_s_1[257] =
 {
   '\x02',
@@ -2400,7 +2400,7 @@ char alu_b_s_1[257] =
   '\xFE',
   '\xFF',
   '\0'
-}; // idb
+}; // weak
 char alu_b_s_2[257] =
 {
   '\x04',
@@ -2660,7 +2660,7 @@ char alu_b_s_2[257] =
   '\xFE',
   '\xFF',
   '\0'
-}; // idb
+}; // weak
 char alu_b_s_3[257] =
 {
   '\b',
@@ -2920,7 +2920,7 @@ char alu_b_s_3[257] =
   '\xFE',
   '\xFF',
   '\0'
-}; // idb
+}; // weak
 char alu_b_s_4[257] =
 {
   '\x10',
@@ -3180,7 +3180,7 @@ char alu_b_s_4[257] =
   '\xFE',
   '\xFF',
   '\0'
-}; // idb
+}; // weak
 char alu_b_s_5[257] =
 {
   ' ',
@@ -3440,7 +3440,7 @@ char alu_b_s_5[257] =
   '\xFE',
   '\xFF',
   '\0'
-}; // idb
+}; // weak
 char alu_b_s_6[257] =
 {
   '@',
@@ -3700,7 +3700,7 @@ char alu_b_s_6[257] =
   '\xFE',
   '\xFF',
   '\0'
-}; // idb
+}; // weak
 char alu_b_s_7[261] =
 {
   '\x80',
@@ -3964,7 +3964,7 @@ char alu_b_s_7[261] =
   '\0',
   '\0',
   '\0'
-}; // idb
+}; // weak
 void *alu_eq = &alu_eq_0; // weak
 void *alu_add16 = &alu_add16_0; // weak
 unsigned __int16 alu_inv16[65544] =
@@ -69513,7 +69513,7 @@ unsigned __int16 alu_inv16[65544] =
   0u,
   0u,
   0u
-}; // idb
+}; // weak
 char alu_mul_sum8l[784] =
 {
   '\0',
@@ -70300,7 +70300,7 @@ char alu_mul_sum8l[784] =
   '\0',
   '\0',
   '\0'
-}; // idb
+}; // weak
 char alu_mul_sum8h[784] =
 {
   '\0',
@@ -71087,7 +71087,7 @@ char alu_mul_sum8h[784] =
   '\0',
   '\0',
   '\0'
-}; // idb
+}; // weak
 int alu_mul_shl2[4100] =
 {
   0,
@@ -75190,7 +75190,7 @@ int alu_mul_shl2[4100] =
   0,
   0,
   0
-}; // idb
+}; // weak
 int alu_mul_sums = 0; // weak
 void *alu_mul_mul8l = &alu_mul_mul8l_0; // weak
 void *alu_mul_mul8h = &alu_mul_mul8h_0; // weak
@@ -75712,7 +75712,7 @@ int alu_div_shl1_8_c_d[516] =
   0,
   0,
   0
-}; // idb
+}; // weak
 int alu_div_shl3_8_d[260] =
 {
   0,
@@ -75975,7 +75975,7 @@ int alu_div_shl3_8_d[260] =
   0,
   0,
   0
-}; // idb
+}; // weak
 void ***alu_cmp_of[6] =
 {
   &alu_cmp_of_0,
@@ -76052,7 +76052,6 @@ int dispatch()
 {
   return external();
 }
-// 83FD120: using guessed type void *off_83FD120;
 // 85FD1B4: using guessed type int (*external)(void);
 
 //----- (08048764) --------------------------------------------------------
@@ -76070,374 +76069,366 @@ void is_prime()
   int v9; // edx
   int v10; // eax
   int v11; // eax
-  int v12; // eax
+  void ***v12; // edx
   int v13; // eax
-  void ***v14; // edx
-  int v15; // eax
-  void **v16; // edx
-  int v17; // ecx
+  void **v14; // edx
+  int v15; // ecx
+  _DWORD *v16; // eax
+  _DWORD *v17; // eax
   _DWORD *v18; // eax
-  _DWORD *v19; // eax
+  int v19; // ecx
   _DWORD *v20; // eax
-  int v21; // ecx
+  _DWORD *v21; // eax
   _DWORD *v22; // eax
-  _DWORD *v23; // eax
-  _DWORD *v24; // eax
-  int v25; // eax
-  int v26; // edx
-  int v27; // ecx
-  _DWORD *v28; // eax
-  _DWORD *v29; // eax
-  int v30; // edx
+  int v23; // eax
+  int v24; // edx
+  int v25; // ecx
+  _DWORD *v26; // eax
+  _DWORD *v27; // eax
+  int v28; // edx
+  int v29; // edx
+  int v30; // eax
   int v31; // edx
   int v32; // eax
-  int v33; // edx
-  int v34; // eax
+  int v33; // eax
+  void ***v34; // edx
   int v35; // eax
-  int v36; // eax
-  int v37; // eax
-  void ***v38; // edx
-  int v39; // eax
-  void **v40; // edx
+  void **v36; // edx
+  int v37; // ecx
+  _DWORD *v38; // eax
+  _DWORD *v39; // eax
+  _DWORD *v40; // eax
   int v41; // ecx
   _DWORD *v42; // eax
   _DWORD *v43; // eax
   _DWORD *v44; // eax
-  int v45; // ecx
-  _DWORD *v46; // eax
-  _DWORD *v47; // eax
+  int v45; // eax
+  int v46; // edx
+  int v47; // ecx
   _DWORD *v48; // eax
-  int v49; // eax
-  int v50; // edx
-  int v51; // ecx
+  _DWORD *v49; // eax
+  int v50; // ecx
+  _DWORD *v51; // eax
   _DWORD *v52; // eax
   _DWORD *v53; // eax
-  int v54; // ecx
-  _DWORD *v55; // eax
-  _DWORD *v56; // eax
+  int v54; // eax
+  int v55; // edx
+  int v56; // ecx
   _DWORD *v57; // eax
-  int v58; // eax
+  _DWORD *v58; // eax
   int v59; // edx
-  int v60; // ecx
-  _DWORD *v61; // eax
-  _DWORD *v62; // eax
-  int v63; // edx
-  int v64; // edx
-  int v65; // edx
+  int v60; // edx
+  int v61; // edx
+  int v62; // edx
+  __int16 v63; // kr00_2
+  __int16 v64; // kr02_2
+  __int16 v65; // kr04_2
   int v66; // edx
-  __int16 v67; // kr00_2
-  __int16 v68; // kr02_2
-  __int16 v69; // kr04_2
-  int v70; // edx
-  int v71; // edx
-  int v72; // edx
+  int v67; // edx
+  int v68; // edx
+  int v69; // edx
+  __int16 v70; // kr06_2
+  __int16 v71; // kr08_2
+  __int16 v72; // kr0A_2
   int v73; // edx
-  __int16 v74; // kr06_2
-  __int16 v75; // kr08_2
-  __int16 v76; // kr0A_2
-  int v77; // edx
-  int v78; // edx
-  int v79; // edx
+  int v74; // edx
+  int v75; // edx
+  int v76; // edx
+  __int16 v77; // kr0C_2
+  __int16 v78; // kr0E_2
+  __int16 v79; // kr10_2
   int v80; // edx
-  __int16 v81; // kr0C_2
-  __int16 v82; // kr0E_2
-  __int16 v83; // kr10_2
-  int v84; // edx
-  int v85; // edx
-  int v86; // edx
+  int v81; // edx
+  int v82; // edx
+  int v83; // edx
+  __int16 v84; // kr12_2
+  __int16 v85; // kr14_2
+  __int16 v86; // kr16_2
   int v87; // edx
-  __int16 v88; // kr12_2
-  __int16 v89; // kr14_2
-  __int16 v90; // kr16_2
-  int v91; // edx
-  int v92; // edx
-  int v93; // edx
+  int v88; // edx
+  int v89; // edx
+  int v90; // edx
+  __int16 v91; // kr18_2
+  __int16 v92; // kr1A_2
+  __int16 v93; // kr1C_2
   int v94; // edx
-  __int16 v95; // kr18_2
-  __int16 v96; // kr1A_2
-  __int16 v97; // kr1C_2
-  int v98; // edx
-  int v99; // edx
-  int v100; // edx
+  int v95; // edx
+  int v96; // edx
+  int v97; // edx
+  __int16 v98; // kr1E_2
+  __int16 v99; // kr20_2
+  __int16 v100; // kr22_2
   int v101; // edx
-  __int16 v102; // kr1E_2
-  __int16 v103; // kr20_2
-  __int16 v104; // kr22_2
-  int v105; // edx
-  int v106; // edx
-  int v107; // edx
+  int v102; // edx
+  int v103; // edx
+  int v104; // edx
+  __int16 v105; // kr24_2
+  __int16 v106; // kr26_2
+  __int16 v107; // kr28_2
   int v108; // edx
-  __int16 v109; // kr24_2
-  __int16 v110; // kr26_2
-  __int16 v111; // kr28_2
-  int v112; // edx
-  int v113; // edx
-  int v114; // edx
+  int v109; // edx
+  int v110; // edx
+  int v111; // edx
+  __int16 v112; // kr2A_2
+  __int16 v113; // kr2C_2
+  __int16 v114; // kr2E_2
   int v115; // edx
-  __int16 v116; // kr2A_2
-  __int16 v117; // kr2C_2
-  __int16 v118; // kr2E_2
-  int v119; // edx
-  int v120; // edx
-  int v121; // edx
+  int v116; // edx
+  int v117; // edx
+  int v118; // edx
+  __int16 v119; // kr30_2
+  __int16 v120; // kr32_2
+  __int16 v121; // kr34_2
   int v122; // edx
-  __int16 v123; // kr30_2
-  __int16 v124; // kr32_2
-  __int16 v125; // kr34_2
-  int v126; // edx
-  int v127; // edx
-  int v128; // edx
+  int v123; // edx
+  int v124; // edx
+  int v125; // edx
+  __int16 v126; // kr36_2
+  __int16 v127; // kr38_2
+  __int16 v128; // kr3A_2
   int v129; // edx
-  __int16 v130; // kr36_2
-  __int16 v131; // kr38_2
-  __int16 v132; // kr3A_2
-  int v133; // edx
-  int v134; // edx
-  int v135; // edx
+  int v130; // edx
+  int v131; // edx
+  int v132; // edx
+  __int16 v133; // kr3C_2
+  __int16 v134; // kr3E_2
+  __int16 v135; // kr40_2
   int v136; // edx
-  __int16 v137; // kr3C_2
-  __int16 v138; // kr3E_2
-  __int16 v139; // kr40_2
-  int v140; // edx
-  int v141; // edx
-  int v142; // edx
+  int v137; // edx
+  int v138; // edx
+  int v139; // edx
+  __int16 v140; // kr42_2
+  __int16 v141; // kr44_2
+  __int16 v142; // kr46_2
   int v143; // edx
-  __int16 v144; // kr42_2
-  __int16 v145; // kr44_2
-  __int16 v146; // kr46_2
-  int v147; // edx
-  int v148; // edx
-  int v149; // edx
+  int v144; // edx
+  int v145; // edx
+  int v146; // edx
+  __int16 v147; // kr48_2
+  __int16 v148; // kr4A_2
+  __int16 v149; // kr4C_2
   int v150; // edx
-  __int16 v151; // kr48_2
-  __int16 v152; // kr4A_2
-  __int16 v153; // kr4C_2
-  int v154; // edx
-  int v155; // edx
-  int v156; // edx
+  int v151; // edx
+  int v152; // edx
+  int v153; // edx
+  __int16 v154; // kr4E_2
+  __int16 v155; // kr50_2
+  __int16 v156; // kr52_2
   int v157; // edx
-  __int16 v158; // kr4E_2
-  __int16 v159; // kr50_2
-  __int16 v160; // kr52_2
-  int v161; // edx
-  int v162; // edx
-  int v163; // edx
+  int v158; // edx
+  int v159; // edx
+  int v160; // edx
+  __int16 v161; // kr54_2
+  __int16 v162; // kr56_2
+  __int16 v163; // kr58_2
   int v164; // edx
-  __int16 v165; // kr54_2
-  __int16 v166; // kr56_2
-  __int16 v167; // kr58_2
-  int v168; // edx
-  int v169; // edx
-  int v170; // edx
+  int v165; // edx
+  int v166; // edx
+  int v167; // edx
+  __int16 v168; // kr5A_2
+  __int16 v169; // kr5C_2
+  __int16 v170; // kr5E_2
   int v171; // edx
-  __int16 v172; // kr5A_2
-  __int16 v173; // kr5C_2
-  __int16 v174; // kr5E_2
-  int v175; // edx
-  int v176; // edx
-  int v177; // edx
+  int v172; // edx
+  int v173; // edx
+  int v174; // edx
+  __int16 v175; // kr60_2
+  __int16 v176; // kr62_2
+  __int16 v177; // kr64_2
   int v178; // edx
-  __int16 v179; // kr60_2
-  __int16 v180; // kr62_2
-  __int16 v181; // kr64_2
-  int v182; // edx
-  int v183; // edx
-  int v184; // edx
+  int v179; // edx
+  int v180; // edx
+  int v181; // edx
+  __int16 v182; // kr66_2
+  __int16 v183; // kr68_2
+  __int16 v184; // kr6A_2
   int v185; // edx
-  __int16 v186; // kr66_2
-  __int16 v187; // kr68_2
-  __int16 v188; // kr6A_2
-  int v189; // edx
-  int v190; // edx
-  int v191; // edx
+  int v186; // edx
+  int v187; // edx
+  int v188; // edx
+  __int16 v189; // kr6C_2
+  __int16 v190; // kr6E_2
+  __int16 v191; // kr70_2
   int v192; // edx
-  __int16 v193; // kr6C_2
-  __int16 v194; // kr6E_2
-  __int16 v195; // kr70_2
-  int v196; // edx
-  int v197; // edx
-  int v198; // edx
+  int v193; // edx
+  int v194; // edx
+  int v195; // edx
+  __int16 v196; // kr72_2
+  __int16 v197; // kr74_2
+  __int16 v198; // kr76_2
   int v199; // edx
-  __int16 v200; // kr72_2
-  __int16 v201; // kr74_2
-  __int16 v202; // kr76_2
-  int v203; // edx
-  int v204; // edx
-  int v205; // edx
+  int v200; // edx
+  int v201; // edx
+  int v202; // edx
+  __int16 v203; // kr78_2
+  __int16 v204; // kr7A_2
+  __int16 v205; // kr7C_2
   int v206; // edx
-  __int16 v207; // kr78_2
-  __int16 v208; // kr7A_2
-  __int16 v209; // kr7C_2
-  int v210; // edx
-  int v211; // edx
-  int v212; // edx
+  int v207; // edx
+  int v208; // edx
+  int v209; // edx
+  __int16 v210; // kr7E_2
+  __int16 v211; // kr80_2
+  __int16 v212; // kr82_2
   int v213; // edx
-  __int16 v214; // kr7E_2
-  __int16 v215; // kr80_2
-  __int16 v216; // kr82_2
-  int v217; // edx
-  int v218; // edx
-  int v219; // edx
+  int v214; // edx
+  int v215; // edx
+  int v216; // edx
+  __int16 v217; // kr84_2
+  __int16 v218; // kr86_2
+  __int16 v219; // kr88_2
   int v220; // edx
-  __int16 v221; // kr84_2
-  __int16 v222; // kr86_2
-  __int16 v223; // kr88_2
-  int v224; // edx
-  int v225; // edx
-  int v226; // edx
+  int v221; // edx
+  int v222; // edx
+  int v223; // edx
+  __int16 v224; // kr8A_2
+  __int16 v225; // kr8C_2
+  __int16 v226; // kr8E_2
   int v227; // edx
-  __int16 v228; // kr8A_2
-  __int16 v229; // kr8C_2
-  __int16 v230; // kr8E_2
-  int v231; // edx
-  int v232; // edx
-  int v233; // edx
+  int v228; // edx
+  int v229; // edx
+  int v230; // edx
+  __int16 v231; // kr90_2
+  __int16 v232; // kr92_2
+  __int16 v233; // kr94_2
   int v234; // edx
-  __int16 v235; // kr90_2
-  __int16 v236; // kr92_2
-  __int16 v237; // kr94_2
-  int v238; // edx
-  int v239; // edx
-  int v240; // edx
+  int v235; // edx
+  int v236; // edx
+  int v237; // edx
+  __int16 v238; // kr96_2
+  __int16 v239; // kr98_2
+  __int16 v240; // kr9A_2
   int v241; // edx
-  __int16 v242; // kr96_2
-  __int16 v243; // kr98_2
-  __int16 v244; // kr9A_2
-  int v245; // edx
-  int v246; // edx
-  int v247; // edx
+  int v242; // edx
+  int v243; // edx
+  int v244; // edx
+  __int16 v245; // kr9C_2
+  __int16 v246; // kr9E_2
+  __int16 v247; // krA0_2
   int v248; // edx
-  __int16 v249; // kr9C_2
-  __int16 v250; // kr9E_2
-  __int16 v251; // krA0_2
-  int v252; // edx
-  int v253; // edx
-  int v254; // edx
+  int v249; // edx
+  int v250; // edx
+  int v251; // edx
+  __int16 v252; // krA2_2
+  __int16 v253; // krA4_2
+  __int16 v254; // krA6_2
   int v255; // edx
-  __int16 v256; // krA2_2
-  __int16 v257; // krA4_2
-  __int16 v258; // krA6_2
-  int v259; // edx
-  int v260; // edx
-  int v261; // edx
+  int v256; // edx
+  int v257; // edx
+  int v258; // edx
+  __int16 v259; // krA8_2
+  __int16 v260; // krAA_2
+  __int16 v261; // krAC_2
   int v262; // edx
-  __int16 v263; // krA8_2
-  __int16 v264; // krAA_2
-  __int16 v265; // krAC_2
-  int v266; // edx
-  int v267; // edx
-  int v268; // edx
+  int v263; // edx
+  int v264; // edx
+  int v265; // edx
+  __int16 v266; // krAE_2
+  __int16 v267; // krB0_2
+  __int16 v268; // krB2_2
   int v269; // edx
-  __int16 v270; // krAE_2
-  __int16 v271; // krB0_2
-  __int16 v272; // krB2_2
-  int v273; // edx
-  int v274; // edx
-  int v275; // edx
+  int v270; // edx
+  int v271; // edx
+  int v272; // edx
+  __int16 v273; // krB4_2
+  __int16 v274; // krB6_2
+  __int16 v275; // krB8_2
   int v276; // edx
-  __int16 v277; // krB4_2
-  __int16 v278; // krB6_2
-  __int16 v279; // krB8_2
-  int v280; // edx
-  int v281; // edx
-  int v282; // edx
+  int v277; // edx
+  int v278; // edx
+  int v279; // edx
+  __int16 v280; // krBA_2
+  __int16 v281; // krBC_2
+  __int16 v282; // krBE_2
   int v283; // edx
-  __int16 v284; // krBA_2
-  __int16 v285; // krBC_2
-  __int16 v286; // krBE_2
+  int v284; // edx
+  int v285; // edx
+  int v286; // edx
   int v287; // edx
   int v288; // edx
   int v289; // edx
   int v290; // edx
-  int v291; // edx
+  int v291; // eax
   int v292; // edx
-  int v293; // edx
-  int v294; // edx
-  int v295; // eax
-  int v296; // edx
-  int v297; // eax
-  int v298; // eax
-  int v299; // eax
-  int v300; // eax
-  void ***v301; // edx
-  int v302; // eax
-  void **v303; // edx
-  int v304; // ecx
+  int v293; // eax
+  int v294; // eax
+  void ***v295; // edx
+  int v296; // eax
+  void **v297; // edx
+  int v298; // ecx
+  _DWORD *v299; // eax
+  _DWORD *v300; // eax
+  _DWORD *v301; // eax
+  int v302; // ecx
+  _DWORD *v303; // eax
+  _DWORD *v304; // eax
   _DWORD *v305; // eax
-  _DWORD *v306; // eax
-  _DWORD *v307; // eax
+  int v306; // eax
+  int v307; // edx
   int v308; // ecx
   _DWORD *v309; // eax
   _DWORD *v310; // eax
-  _DWORD *v311; // eax
-  int v312; // eax
-  int v313; // edx
-  int v314; // ecx
+  int v311; // eax
+  int v312; // edx
+  int v313; // ecx
+  _DWORD *v314; // eax
   _DWORD *v315; // eax
-  _DWORD *v316; // eax
-  int v317; // eax
-  int v318; // edx
-  int v319; // ecx
-  _DWORD *v320; // eax
+  int v316; // edx
+  int v317; // edx
+  int v318; // eax
+  int v319; // edx
+  int v320; // ecx
   _DWORD *v321; // eax
-  int v322; // edx
+  _DWORD *v322; // eax
   int v323; // edx
-  int v324; // eax
-  int v325; // edx
-  int v326; // ecx
-  _DWORD *v327; // eax
-  _DWORD *v328; // eax
+  int v324; // ecx
+  int v325; // eax
+  int v326; // edx
+  int v327; // ecx
+  int v328; // eax
   int v329; // edx
   int v330; // ecx
   int v331; // eax
   int v332; // edx
-  int v333; // ecx
-  int v334; // eax
-  int v335; // edx
-  int v336; // ecx
-  int v337; // eax
-  int v338; // edx
+  int v333; // edx
+  int v334; // ecx
+  int v335; // eax
+  int v336; // edx
+  int v337; // ecx
+  int v338; // eax
   int v339; // edx
-  int v340; // ecx
-  int v341; // eax
-  int v342; // edx
-  int v343; // ecx
-  int v344; // eax
-  int v345; // edx
-  int v346; // edx
-  int v347; // ecx
-  int v348; // eax
+  int v340; // edx
+  int v341; // ecx
+  int v342; // eax
+  int v343; // edx
+  int v344; // edx
+  __int16 v345; // krC0_2
+  __int16 v346; // krC2_2
+  __int16 v347; // krC4_2
+  __int16 v348; // krC6_2
   int v349; // edx
   int v350; // edx
-  __int16 v351; // krC0_2
-  __int16 v352; // krC2_2
-  __int16 v353; // krC4_2
-  __int16 v354; // krC6_2
-  int v355; // edx
-  int v356; // edx
-  int v357; // eax
-  int v358; // edx
-  int v359; // eax
-  int v360; // eax
-  int v361; // eax
+  int v351; // eax
+  int v352; // edx
+  int v353; // eax
+  int v354; // eax
+  void ***v355; // edx
+  int v356; // eax
+  void **v357; // edx
+  int v358; // ecx
+  _DWORD *v359; // eax
+  _DWORD *v360; // eax
+  _DWORD *v361; // eax
   int v362; // eax
-  void ***v363; // edx
-  int v364; // eax
-  void **v365; // edx
-  int v366; // ecx
+  int v363; // edx
+  int v364; // ecx
+  _DWORD *v365; // eax
+  _DWORD *v366; // eax
   _DWORD *v367; // eax
-  _DWORD *v368; // eax
+  int v368; // ecx
   _DWORD *v369; // eax
-  int v370; // eax
-  int v371; // edx
-  int v372; // ecx
-  _DWORD *v373; // eax
-  _DWORD *v374; // eax
-  _DWORD *v375; // eax
-  int v376; // ecx
-  _DWORD *v377; // eax
-  _DWORD *v378; // eax
-  _DWORD *v379; // eax
+  _DWORD *v370; // eax
+  _DWORD *v371; // eax
 
   alu_x = target;
   alu_y = -2012969116;
@@ -76550,101 +76541,101 @@ void is_prime()
   LOBYTE(v9) = BYTE1(alu_s);
   v10 = (unsigned __int8)alu_true[v9 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
   LOBYTE(v9) = BYTE2(alu_s);
-  v11 = (unsigned __int8)alu_true[v9 + v10];
+  LOBYTE(v10) = alu_true[v9 + v10];
   LOBYTE(v9) = HIBYTE(alu_s);
-  v12 = *((unsigned __int8 *)alu_false + (unsigned __int8)alu_true[v9 + v11]);
-  LOBYTE(dword_81FD0E0) = v12;
-  LOBYTE(v12) = HIBYTE(R3);
-  v13 = alu_b7[v12];
-  v14 = alu_cmp_of[v13];
-  LOBYTE(v13) = 0;
-  v15 = alu_b7[v13];
-  v16 = v14[v15];
-  LOBYTE(v15) = HIBYTE(alu_s);
-  LOBYTE(dword_81FD0E8) = *(_DWORD *)v16[alu_b7[v15]];
+  LOBYTE(v10) = alu_true[v9 + v10];
+  LOBYTE(dword_81FD0E0) = *((_BYTE *)alu_false + v10);
+  LOBYTE(v10) = HIBYTE(R3);
+  v11 = alu_b7[v10];
+  v12 = alu_cmp_of[v11];
+  LOBYTE(v11) = 0;
+  v13 = alu_b7[v11];
+  v14 = v12[v13];
+  LOBYTE(v13) = HIBYTE(alu_s);
+  LOBYTE(dword_81FD0E8) = *(_DWORD *)v14[alu_b7[v13]];
   b0 = alu_false[dword_81FD0E0];
   b0 = *((_DWORD *)*(&and + b0) + on);
   *(_DWORD *)*(&sel_target + b0) = -2012967188;
-  v17 = b0;
+  v15 = b0;
   data_p = (int)&jmp_r0;
-  v18 = *(&sel_data + b0);
-  *v18 = R0;
-  v18[1] = R1;
-  v18[2] = R2;
-  v18[3] = R3;
+  v16 = *(&sel_data + b0);
+  *v16 = R0;
+  v16[1] = R1;
+  v16[2] = R2;
+  v16[3] = R3;
   data_p = (int)&jmp_f0;
-  v19 = *(&sel_data + v17);
-  *v19 = F0;
-  v19[1] = F1;
+  v17 = *(&sel_data + v15);
+  *v17 = F0;
+  v17[1] = F1;
   data_p = (int)&jmp_d0;
-  v20 = *(&sel_data + v17);
-  *v20 = D0;
-  v20[1] = dword_8054064;
-  v20[2] = D1;
-  v20[3] = dword_805406C;
+  v18 = *(&sel_data + v15);
+  *v18 = D0;
+  v18[1] = dword_8054064;
+  v18[2] = D1;
+  v18[3] = dword_805406C;
   *(_DWORD *)*(&sel_on + b0) = 0;
   R0 = 0;
   branch_temp = -2012937899;
   *(_DWORD *)*(&sel_target + on) = -2012937899;
-  v21 = on;
+  v19 = on;
   data_p = (int)&jmp_r0;
-  v22 = *(&sel_data + on);
-  *v22 = R0;
-  v22[1] = R1;
-  v22[2] = R2;
-  v22[3] = R3;
+  v20 = *(&sel_data + on);
+  *v20 = R0;
+  v20[1] = R1;
+  v20[2] = R2;
+  v20[3] = R3;
   data_p = (int)&jmp_f0;
-  v23 = *(&sel_data + v21);
-  *v23 = F0;
-  v23[1] = F1;
+  v21 = *(&sel_data + v19);
+  *v21 = F0;
+  v21[1] = F1;
   data_p = (int)&jmp_d0;
-  v24 = *(&sel_data + v21);
-  *v24 = D0;
-  v24[1] = dword_8054064;
-  v24[2] = D1;
-  v24[3] = dword_805406C;
+  v22 = *(&sel_data + v19);
+  *v22 = D0;
+  v22[1] = dword_8054064;
+  v22[2] = D1;
+  v22[3] = dword_805406C;
   *(_DWORD *)*(&sel_on + on) = 0;
   alu_x = target;
   alu_y = -2012967188;
-  v25 = (unsigned __int8)target;
-  v26 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 236);
-  b0 = v26;
-  LOBYTE(v25) = BYTE1(target);
-  LOBYTE(v26) = -114;
-  LOBYTE(v26) = *((_BYTE *)*(&alu_eq + v25) + v26);
-  b1 = v26;
-  LOBYTE(v25) = BYTE2(target);
-  LOBYTE(v26) = 4;
-  LOBYTE(v26) = *((_BYTE *)*(&alu_eq + v25) + v26);
-  b2 = v26;
-  LOBYTE(v25) = HIBYTE(target);
-  LOBYTE(v26) = -120;
-  LOBYTE(v26) = *((_BYTE *)*(&alu_eq + v25) + v26);
-  b3 = v26;
+  v23 = (unsigned __int8)target;
+  v24 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 236);
+  b0 = v24;
+  LOBYTE(v23) = BYTE1(target);
+  LOBYTE(v24) = -114;
+  LOBYTE(v24) = *((_BYTE *)*(&alu_eq + v23) + v24);
+  b1 = v24;
+  LOBYTE(v23) = BYTE2(target);
+  LOBYTE(v24) = 4;
+  LOBYTE(v24) = *((_BYTE *)*(&alu_eq + v23) + v24);
+  b2 = v24;
+  LOBYTE(v23) = HIBYTE(target);
+  LOBYTE(v24) = -120;
+  LOBYTE(v24) = *((_BYTE *)*(&alu_eq + v23) + v24);
+  b3 = v24;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v26);
-  v27 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v24);
+  v25 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v27) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v25) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v27) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v25) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v27) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v25) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v27) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v25) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v27) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v25) = jmp_f1;
   data_p = (int)&D0;
-  v28 = *(&sel_data + v27);
-  *v28 = jmp_d0;
-  v28[1] = dword_85FD19C;
+  v26 = *(&sel_data + v25);
+  *v26 = jmp_d0;
+  v26[1] = dword_85FD19C;
   data_p = (int)&D1;
-  v29 = *(&sel_data + v27);
-  *v29 = jmp_d1;
-  v29[1] = dword_85FD1A4;
+  v27 = *(&sel_data + v25);
+  *v27 = jmp_d1;
+  v27[1] = dword_85FD1A4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524312)
                                                                                          - 2097248)
@@ -76662,39 +76653,60 @@ void is_prime()
   alu_y = 2;
   alu_t = 2;
   alu_c = 1;
-  v30 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + alu_inv16[2])) + 1);
-  LOWORD(alu_s) = v30;
-  unk_81FCFEE = v30;
-  v31 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + alu_inv16[0])) + alu_c);
-  HIWORD(alu_s) = v31;
-  unk_81FCFEE = v31;
+  v28 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + alu_inv16[2])) + 1);
+  LOWORD(alu_s) = v28;
+  unk_81FCFEE = v28;
+  v29 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + alu_inv16[0])) + alu_c);
+  HIWORD(alu_s) = v29;
+  unk_81FCFEE = v29;
   alu_y = 2;
-  byte_81FD0EC = *((_BYTE *)alu_false + BYTE2(v31));
-  v32 = (unsigned __int8)byte_81FD0EC;
-  LOBYTE(v32) = BYTE1(v31);
-  LOBYTE(dword_81FD0E4) = alu_b7[v32];
-  v33 = (unsigned __int8)alu_s;
-  LOBYTE(v33) = BYTE1(alu_s);
-  v34 = (unsigned __int8)alu_true[v33 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
-  LOBYTE(v33) = BYTE2(alu_s);
-  v35 = (unsigned __int8)alu_true[v33 + v34];
-  LOBYTE(v33) = HIBYTE(alu_s);
-  v36 = *((unsigned __int8 *)alu_false + (unsigned __int8)alu_true[v33 + v35]);
-  LOBYTE(dword_81FD0E0) = v36;
-  LOBYTE(v36) = HIBYTE(R3);
-  v37 = alu_b7[v36];
-  v38 = alu_cmp_of[v37];
-  LOBYTE(v37) = 0;
-  v39 = alu_b7[v37];
-  v40 = v38[v39];
-  LOBYTE(v39) = HIBYTE(alu_s);
-  LOBYTE(dword_81FD0E8) = *(_DWORD *)v40[alu_b7[v39]];
+  byte_81FD0EC = *((_BYTE *)alu_false + BYTE2(v29));
+  v30 = (unsigned __int8)byte_81FD0EC;
+  LOBYTE(v30) = BYTE1(v29);
+  LOBYTE(dword_81FD0E4) = alu_b7[v30];
+  v31 = (unsigned __int8)alu_s;
+  LOBYTE(v31) = BYTE1(alu_s);
+  v32 = (unsigned __int8)alu_true[v31 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
+  LOBYTE(v31) = BYTE2(alu_s);
+  LOBYTE(v32) = alu_true[v31 + v32];
+  LOBYTE(v31) = HIBYTE(alu_s);
+  LOBYTE(v32) = alu_true[v31 + v32];
+  LOBYTE(dword_81FD0E0) = *((_BYTE *)alu_false + v32);
+  LOBYTE(v32) = HIBYTE(R3);
+  v33 = alu_b7[v32];
+  v34 = alu_cmp_of[v33];
+  LOBYTE(v33) = 0;
+  v35 = alu_b7[v33];
+  v36 = v34[v35];
+  LOBYTE(v35) = HIBYTE(alu_s);
+  LOBYTE(dword_81FD0E8) = *(_DWORD *)v36[alu_b7[v35]];
   b0 = alu_false[dword_81FD0E0];
   b0 = *((_DWORD *)*(&and + b0) + on);
   *(_DWORD *)*(&sel_target + b0) = -2012965831;
-  v41 = b0;
+  v37 = b0;
   data_p = (int)&jmp_r0;
-  v42 = *(&sel_data + b0);
+  v38 = *(&sel_data + b0);
+  *v38 = R0;
+  v38[1] = R1;
+  v38[2] = R2;
+  v38[3] = R3;
+  data_p = (int)&jmp_f0;
+  v39 = *(&sel_data + v37);
+  *v39 = F0;
+  v39[1] = F1;
+  data_p = (int)&jmp_d0;
+  v40 = *(&sel_data + v37);
+  *v40 = D0;
+  v40[1] = dword_8054064;
+  v40[2] = D1;
+  v40[3] = dword_805406C;
+  *(_DWORD *)*(&sel_on + b0) = 0;
+  R0 = 1;
+  branch_temp = -2012937899;
+  *(_DWORD *)*(&sel_target + on) = -2012937899;
+  v41 = on;
+  data_p = (int)&jmp_r0;
+  v42 = *(&sel_data + on);
   *v42 = R0;
   v42[1] = R1;
   v42[2] = R2;
@@ -76709,134 +76721,113 @@ void is_prime()
   v44[1] = dword_8054064;
   v44[2] = D1;
   v44[3] = dword_805406C;
-  *(_DWORD *)*(&sel_on + b0) = 0;
-  R0 = 1;
-  branch_temp = -2012937899;
-  *(_DWORD *)*(&sel_target + on) = -2012937899;
-  v45 = on;
-  data_p = (int)&jmp_r0;
-  v46 = *(&sel_data + on);
-  *v46 = R0;
-  v46[1] = R1;
-  v46[2] = R2;
-  v46[3] = R3;
-  data_p = (int)&jmp_f0;
-  v47 = *(&sel_data + v45);
-  *v47 = F0;
-  v47[1] = F1;
-  data_p = (int)&jmp_d0;
-  v48 = *(&sel_data + v45);
-  *v48 = D0;
-  v48[1] = dword_8054064;
-  v48[2] = D1;
-  v48[3] = dword_805406C;
   *(_DWORD *)*(&sel_on + on) = 0;
   alu_x = target;
   alu_y = -2012965831;
-  v49 = (unsigned __int8)target;
-  v50 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 57);
-  b0 = v50;
-  LOBYTE(v49) = BYTE1(target);
-  LOBYTE(v50) = -108;
-  LOBYTE(v50) = *((_BYTE *)*(&alu_eq + v49) + v50);
-  b1 = v50;
-  LOBYTE(v49) = BYTE2(target);
-  LOBYTE(v50) = 4;
-  LOBYTE(v50) = *((_BYTE *)*(&alu_eq + v49) + v50);
-  b2 = v50;
-  LOBYTE(v49) = HIBYTE(target);
-  LOBYTE(v50) = -120;
-  LOBYTE(v50) = *((_BYTE *)*(&alu_eq + v49) + v50);
-  b3 = v50;
+  v45 = (unsigned __int8)target;
+  v46 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 57);
+  b0 = v46;
+  LOBYTE(v45) = BYTE1(target);
+  LOBYTE(v46) = -108;
+  LOBYTE(v46) = *((_BYTE *)*(&alu_eq + v45) + v46);
+  b1 = v46;
+  LOBYTE(v45) = BYTE2(target);
+  LOBYTE(v46) = 4;
+  LOBYTE(v46) = *((_BYTE *)*(&alu_eq + v45) + v46);
+  b2 = v46;
+  LOBYTE(v45) = HIBYTE(target);
+  LOBYTE(v46) = -120;
+  LOBYTE(v46) = *((_BYTE *)*(&alu_eq + v45) + v46);
+  b3 = v46;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v50);
-  v51 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v46);
+  v47 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v51) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v47) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v51) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v47) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v51) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v47) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v51) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v47) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v51) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v47) = jmp_f1;
   data_p = (int)&D0;
-  v52 = *(&sel_data + v51);
-  *v52 = jmp_d0;
-  v52[1] = dword_85FD19C;
+  v48 = *(&sel_data + v47);
+  *v48 = jmp_d0;
+  v48[1] = dword_85FD19C;
   data_p = (int)&D1;
-  v53 = *(&sel_data + v51);
-  *v53 = jmp_d1;
-  v53[1] = dword_85FD1A4;
+  v49 = *(&sel_data + v47);
+  *v49 = jmp_d1;
+  v49[1] = dword_85FD1A4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = 2;
   data_p = *((_DWORD *)fp - 524314);
   *(_DWORD *)*(&sel_data + on) = 2;
   branch_temp = -2012940689;
   *(_DWORD *)*(&sel_target + on) = -2012940689;
-  v54 = on;
+  v50 = on;
   data_p = (int)&jmp_r0;
-  v55 = *(&sel_data + on);
-  *v55 = R0;
-  v55[1] = R1;
-  v55[2] = R2;
-  v55[3] = R3;
+  v51 = *(&sel_data + on);
+  *v51 = R0;
+  v51[1] = R1;
+  v51[2] = R2;
+  v51[3] = R3;
   data_p = (int)&jmp_f0;
-  v56 = *(&sel_data + v54);
-  *v56 = F0;
-  v56[1] = F1;
+  v52 = *(&sel_data + v50);
+  *v52 = F0;
+  v52[1] = F1;
   data_p = (int)&jmp_d0;
-  v57 = *(&sel_data + v54);
-  *v57 = D0;
-  v57[1] = dword_8054064;
-  v57[2] = D1;
-  v57[3] = dword_805406C;
+  v53 = *(&sel_data + v50);
+  *v53 = D0;
+  v53[1] = dword_8054064;
+  v53[2] = D1;
+  v53[3] = dword_805406C;
   *(_DWORD *)*(&sel_on + on) = 0;
   alu_x = target;
   alu_y = -2012965118;
-  v58 = (unsigned __int8)target;
-  v59 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 2);
-  b0 = v59;
-  LOBYTE(v58) = BYTE1(target);
-  LOBYTE(v59) = -105;
-  LOBYTE(v59) = *((_BYTE *)*(&alu_eq + v58) + v59);
-  b1 = v59;
-  LOBYTE(v58) = BYTE2(target);
-  LOBYTE(v59) = 4;
-  LOBYTE(v59) = *((_BYTE *)*(&alu_eq + v58) + v59);
-  b2 = v59;
-  LOBYTE(v58) = HIBYTE(target);
-  LOBYTE(v59) = -120;
-  LOBYTE(v59) = *((_BYTE *)*(&alu_eq + v58) + v59);
-  b3 = v59;
+  v54 = (unsigned __int8)target;
+  v55 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 2);
+  b0 = v55;
+  LOBYTE(v54) = BYTE1(target);
+  LOBYTE(v55) = -105;
+  LOBYTE(v55) = *((_BYTE *)*(&alu_eq + v54) + v55);
+  b1 = v55;
+  LOBYTE(v54) = BYTE2(target);
+  LOBYTE(v55) = 4;
+  LOBYTE(v55) = *((_BYTE *)*(&alu_eq + v54) + v55);
+  b2 = v55;
+  LOBYTE(v54) = HIBYTE(target);
+  LOBYTE(v55) = -120;
+  LOBYTE(v55) = *((_BYTE *)*(&alu_eq + v54) + v55);
+  b3 = v55;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v59);
-  v60 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v55);
+  v56 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v60) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v56) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v60) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v56) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v60) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v56) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v60) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v56) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v60) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v56) = jmp_f1;
   data_p = (int)&D0;
-  v61 = *(&sel_data + v60);
-  *v61 = jmp_d0;
-  v61[1] = dword_85FD19C;
+  v57 = *(&sel_data + v56);
+  *v57 = jmp_d0;
+  v57[1] = dword_85FD19C;
   data_p = (int)&D1;
-  v62 = *(&sel_data + v60);
-  *v62 = jmp_d1;
-  v62[1] = dword_85FD1A4;
+  v58 = *(&sel_data + v56);
+  *v58 = jmp_d1;
+  v58[1] = dword_85FD1A4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524312)
                                                                                          - 2097248)
@@ -76859,1207 +76850,1207 @@ void is_prime()
   alu_y = R3;
   alu_x = 0;
   alu_c = 1;
-  v63 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)alu_add16 + alu_inv16[(unsigned __int16)R3])) + 1);
-  LOWORD(alu_s) = v63;
-  unk_81FCFEE = v63;
-  v64 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)alu_add16 + alu_inv16[HIWORD(R3)])) + alu_c);
-  HIWORD(alu_s) = v64;
-  unk_81FCFEE = v64;
+  v59 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)alu_add16 + alu_inv16[(unsigned __int16)R3])) + 1);
+  LOWORD(alu_s) = v59;
+  unk_81FCFEE = v59;
+  v60 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)alu_add16 + alu_inv16[HIWORD(R3)])) + alu_c);
+  HIWORD(alu_s) = v60;
+  unk_81FCFEE = v60;
   data_p = (int)&alu_n;
   *(_DWORD *)*(&sel_data + alu_ns) = alu_s;
   alu_y = alu_d;
   alu_x = 0;
   alu_c = 1;
-  v65 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)alu_add16 + alu_inv16[1])) + 1);
-  LOWORD(alu_s) = v65;
-  unk_81FCFEE = v65;
-  v66 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)alu_add16 + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_s) = v66;
-  unk_81FCFEE = v66;
+  v61 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)alu_add16 + alu_inv16[1])) + 1);
+  LOWORD(alu_s) = v61;
+  unk_81FCFEE = v61;
+  v62 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)alu_add16 + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_s) = v62;
+  unk_81FCFEE = v62;
   data_p = (int)&alu_d;
   *(_DWORD *)*(&sel_data + alu_ds) = alu_s;
   alu_q = 0;
   alu_r = 0;
   alu_c = alu_b7[HIBYTE(alu_n)];
-  v67 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[0]);
-  LOBYTE(alu_c) = HIBYTE(v67);
-  alu_r = (unsigned __int8)v67;
-  v68 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v67)] + alu_div_shl3_8_d[0]);
-  LOBYTE(alu_c) = HIBYTE(v68);
-  *(_WORD *)((char *)&alu_r + 1) = (unsigned __int8)v68;
-  v69 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v68)] + alu_div_shl3_8_d[0]);
-  LOBYTE(alu_c) = HIBYTE(v69);
-  BYTE2(alu_r) = v69;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v69)] + alu_div_shl3_8_d[0]);
+  v63 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[0]);
+  LOBYTE(alu_c) = HIBYTE(v63);
+  alu_r = (unsigned __int8)v63;
+  v64 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v63)] + alu_div_shl3_8_d[0]);
+  LOBYTE(alu_c) = HIBYTE(v64);
+  *(_WORD *)((char *)&alu_r + 1) = (unsigned __int8)v64;
+  v65 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v64)] + alu_div_shl3_8_d[0]);
+  LOBYTE(alu_c) = HIBYTE(v65);
+  BYTE2(alu_r) = v65;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v65)] + alu_div_shl3_8_d[0]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v70 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v70;
-  unk_81FCFEE = v70;
-  v71 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v71;
-  unk_81FCFEE = v71;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v71)];
+  v66 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v66;
+  unk_81FCFEE = v66;
+  v67 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v67;
+  unk_81FCFEE = v67;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v67)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v72 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v72;
-  unk_81FCFEE = v72;
-  v73 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v73;
-  unk_81FCFEE = v73;
+  v68 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v68;
+  unk_81FCFEE = v68;
+  v69 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v69;
+  unk_81FCFEE = v69;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   HIBYTE(alu_sq) = alu_b_s_7[HIBYTE(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b6[HIBYTE(alu_n)];
-  v74 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v74);
-  LOBYTE(alu_r) = v74;
-  v75 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v74)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v75);
-  BYTE1(alu_r) = v75;
-  v76 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v75)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v76);
-  BYTE2(alu_r) = v76;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v76)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v70 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v70);
+  LOBYTE(alu_r) = v70;
+  v71 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v70)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v71);
+  BYTE1(alu_r) = v71;
+  v72 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v71)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v72);
+  BYTE2(alu_r) = v72;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v72)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v77 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v77;
-  unk_81FCFEE = v77;
-  v78 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v78;
-  unk_81FCFEE = v78;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v78)];
+  v73 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v73;
+  unk_81FCFEE = v73;
+  v74 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v74;
+  unk_81FCFEE = v74;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v74)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v79 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v79;
-  unk_81FCFEE = v79;
-  v80 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v80;
-  unk_81FCFEE = v80;
+  v75 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v75;
+  unk_81FCFEE = v75;
+  v76 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v76;
+  unk_81FCFEE = v76;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   HIBYTE(alu_sq) = alu_b_s_6[HIBYTE(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b5[HIBYTE(alu_n)];
-  v81 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v81);
-  LOBYTE(alu_r) = v81;
-  v82 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v81)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v82);
-  BYTE1(alu_r) = v82;
-  v83 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v82)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v83);
-  BYTE2(alu_r) = v83;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v83)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v77 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v77);
+  LOBYTE(alu_r) = v77;
+  v78 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v77)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v78);
+  BYTE1(alu_r) = v78;
+  v79 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v78)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v79);
+  BYTE2(alu_r) = v79;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v79)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v84 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v84;
-  unk_81FCFEE = v84;
-  v85 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v85;
-  unk_81FCFEE = v85;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v85)];
+  v80 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v80;
+  unk_81FCFEE = v80;
+  v81 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v81;
+  unk_81FCFEE = v81;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v81)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v86 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v86;
-  unk_81FCFEE = v86;
-  v87 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v87;
-  unk_81FCFEE = v87;
+  v82 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v82;
+  unk_81FCFEE = v82;
+  v83 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v83;
+  unk_81FCFEE = v83;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   HIBYTE(alu_sq) = alu_b_s_5[HIBYTE(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b4[HIBYTE(alu_n)];
-  v88 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v88);
-  LOBYTE(alu_r) = v88;
-  v89 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v88)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v89);
-  BYTE1(alu_r) = v89;
-  v90 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v89)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v90);
-  BYTE2(alu_r) = v90;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v90)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v84 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v84);
+  LOBYTE(alu_r) = v84;
+  v85 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v84)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v85);
+  BYTE1(alu_r) = v85;
+  v86 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v85)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v86);
+  BYTE2(alu_r) = v86;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v86)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v91 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v91;
-  unk_81FCFEE = v91;
-  v92 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v92;
-  unk_81FCFEE = v92;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v92)];
+  v87 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v87;
+  unk_81FCFEE = v87;
+  v88 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v88;
+  unk_81FCFEE = v88;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v88)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v93 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v93;
-  unk_81FCFEE = v93;
-  v94 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v94;
-  unk_81FCFEE = v94;
+  v89 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v89;
+  unk_81FCFEE = v89;
+  v90 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v90;
+  unk_81FCFEE = v90;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   HIBYTE(alu_sq) = alu_b_s_4[HIBYTE(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b3[HIBYTE(alu_n)];
-  v95 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v95);
-  LOBYTE(alu_r) = v95;
-  v96 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v95)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v96);
-  BYTE1(alu_r) = v96;
-  v97 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v96)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v97);
-  BYTE2(alu_r) = v97;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v97)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v91 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v91);
+  LOBYTE(alu_r) = v91;
+  v92 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v91)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v92);
+  BYTE1(alu_r) = v92;
+  v93 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v92)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v93);
+  BYTE2(alu_r) = v93;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v93)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v98 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v98;
-  unk_81FCFEE = v98;
-  v99 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v99;
-  unk_81FCFEE = v99;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v99)];
+  v94 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v94;
+  unk_81FCFEE = v94;
+  v95 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v95;
+  unk_81FCFEE = v95;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v95)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v100 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v100;
-  unk_81FCFEE = v100;
-  v101 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v101;
-  unk_81FCFEE = v101;
+  v96 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v96;
+  unk_81FCFEE = v96;
+  v97 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v97;
+  unk_81FCFEE = v97;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   HIBYTE(alu_sq) = alu_b_s_3[HIBYTE(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b2[HIBYTE(alu_n)];
-  v102 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v102);
-  LOBYTE(alu_r) = v102;
-  v103 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v102)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v103);
-  BYTE1(alu_r) = v103;
-  v104 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v103)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v104);
-  BYTE2(alu_r) = v104;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v104)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v98 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v98);
+  LOBYTE(alu_r) = v98;
+  v99 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v98)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v99);
+  BYTE1(alu_r) = v99;
+  v100 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v99)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v100);
+  BYTE2(alu_r) = v100;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v100)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v105 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v105;
-  unk_81FCFEE = v105;
-  v106 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v106;
-  unk_81FCFEE = v106;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v106)];
+  v101 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v101;
+  unk_81FCFEE = v101;
+  v102 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v102;
+  unk_81FCFEE = v102;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v102)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v107 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v107;
-  unk_81FCFEE = v107;
-  v108 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v108;
-  unk_81FCFEE = v108;
+  v103 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v103;
+  unk_81FCFEE = v103;
+  v104 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v104;
+  unk_81FCFEE = v104;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   HIBYTE(alu_sq) = alu_b_s_2[HIBYTE(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b1[HIBYTE(alu_n)];
-  v109 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v109);
-  LOBYTE(alu_r) = v109;
-  v110 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v109)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v110);
-  BYTE1(alu_r) = v110;
-  v111 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v110)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v111);
-  BYTE2(alu_r) = v111;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v111)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v105 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v105);
+  LOBYTE(alu_r) = v105;
+  v106 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v105)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v106);
+  BYTE1(alu_r) = v106;
+  v107 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v106)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v107);
+  BYTE2(alu_r) = v107;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v107)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v112 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v112;
-  unk_81FCFEE = v112;
-  v113 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v113;
-  unk_81FCFEE = v113;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v113)];
+  v108 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v108;
+  unk_81FCFEE = v108;
+  v109 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v109;
+  unk_81FCFEE = v109;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v109)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v114 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v114;
-  unk_81FCFEE = v114;
-  v115 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v115;
-  unk_81FCFEE = v115;
+  v110 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v110;
+  unk_81FCFEE = v110;
+  v111 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v111;
+  unk_81FCFEE = v111;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   HIBYTE(alu_sq) = alu_b_s_1[HIBYTE(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b0[HIBYTE(alu_n)];
-  v116 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v116);
-  LOBYTE(alu_r) = v116;
-  v117 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v116)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v117);
-  BYTE1(alu_r) = v117;
-  v118 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v117)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v118);
-  BYTE2(alu_r) = v118;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v118)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v112 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v112);
+  LOBYTE(alu_r) = v112;
+  v113 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v112)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v113);
+  BYTE1(alu_r) = v113;
+  v114 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v113)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v114);
+  BYTE2(alu_r) = v114;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v114)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v119 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v119;
-  unk_81FCFEE = v119;
-  v120 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v120;
-  unk_81FCFEE = v120;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v120)];
+  v115 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v115;
+  unk_81FCFEE = v115;
+  v116 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v116;
+  unk_81FCFEE = v116;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v116)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v121 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v121;
-  unk_81FCFEE = v121;
-  v122 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v122;
-  unk_81FCFEE = v122;
+  v117 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v117;
+  unk_81FCFEE = v117;
+  v118 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v118;
+  unk_81FCFEE = v118;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   HIBYTE(alu_sq) = alu_b_s_0[HIBYTE(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b7[BYTE2(alu_n)];
-  v123 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v123);
-  LOBYTE(alu_r) = v123;
-  v124 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v123)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v124);
-  BYTE1(alu_r) = v124;
-  v125 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v124)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v125);
-  BYTE2(alu_r) = v125;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v125)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v119 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v119);
+  LOBYTE(alu_r) = v119;
+  v120 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v119)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v120);
+  BYTE1(alu_r) = v120;
+  v121 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v120)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v121);
+  BYTE2(alu_r) = v121;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v121)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v126 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v126;
-  unk_81FCFEE = v126;
-  v127 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v127;
-  unk_81FCFEE = v127;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v127)];
+  v122 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v122;
+  unk_81FCFEE = v122;
+  v123 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v123;
+  unk_81FCFEE = v123;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v123)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v128 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v128;
-  unk_81FCFEE = v128;
-  v129 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v129;
-  unk_81FCFEE = v129;
+  v124 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v124;
+  unk_81FCFEE = v124;
+  v125 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v125;
+  unk_81FCFEE = v125;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE2(alu_sq) = alu_b_s_7[BYTE2(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b6[BYTE2(alu_n)];
-  v130 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v130);
-  LOBYTE(alu_r) = v130;
-  v131 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v130)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v131);
-  BYTE1(alu_r) = v131;
-  v132 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v131)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v132);
-  BYTE2(alu_r) = v132;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v132)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v126 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v126);
+  LOBYTE(alu_r) = v126;
+  v127 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v126)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v127);
+  BYTE1(alu_r) = v127;
+  v128 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v127)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v128);
+  BYTE2(alu_r) = v128;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v128)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v133 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v133;
-  unk_81FCFEE = v133;
-  v134 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v134;
-  unk_81FCFEE = v134;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v134)];
+  v129 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v129;
+  unk_81FCFEE = v129;
+  v130 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v130;
+  unk_81FCFEE = v130;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v130)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v135 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v135;
-  unk_81FCFEE = v135;
-  v136 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v136;
-  unk_81FCFEE = v136;
+  v131 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v131;
+  unk_81FCFEE = v131;
+  v132 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v132;
+  unk_81FCFEE = v132;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE2(alu_sq) = alu_b_s_6[BYTE2(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b5[BYTE2(alu_n)];
-  v137 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v137);
-  LOBYTE(alu_r) = v137;
-  v138 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v137)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v138);
-  BYTE1(alu_r) = v138;
-  v139 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v138)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v139);
-  BYTE2(alu_r) = v139;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v139)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v133 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v133);
+  LOBYTE(alu_r) = v133;
+  v134 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v133)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v134);
+  BYTE1(alu_r) = v134;
+  v135 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v134)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v135);
+  BYTE2(alu_r) = v135;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v135)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v140 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v140;
-  unk_81FCFEE = v140;
-  v141 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v141;
-  unk_81FCFEE = v141;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v141)];
+  v136 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v136;
+  unk_81FCFEE = v136;
+  v137 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v137;
+  unk_81FCFEE = v137;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v137)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v142 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v142;
-  unk_81FCFEE = v142;
-  v143 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v143;
-  unk_81FCFEE = v143;
+  v138 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v138;
+  unk_81FCFEE = v138;
+  v139 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v139;
+  unk_81FCFEE = v139;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE2(alu_sq) = alu_b_s_5[BYTE2(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b4[BYTE2(alu_n)];
-  v144 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v144);
-  LOBYTE(alu_r) = v144;
-  v145 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v144)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v145);
-  BYTE1(alu_r) = v145;
-  v146 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v145)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v146);
-  BYTE2(alu_r) = v146;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v146)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v140 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v140);
+  LOBYTE(alu_r) = v140;
+  v141 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v140)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v141);
+  BYTE1(alu_r) = v141;
+  v142 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v141)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v142);
+  BYTE2(alu_r) = v142;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v142)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v147 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v147;
-  unk_81FCFEE = v147;
-  v148 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v148;
-  unk_81FCFEE = v148;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v148)];
+  v143 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v143;
+  unk_81FCFEE = v143;
+  v144 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v144;
+  unk_81FCFEE = v144;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v144)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v149 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v149;
-  unk_81FCFEE = v149;
-  v150 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v150;
-  unk_81FCFEE = v150;
+  v145 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v145;
+  unk_81FCFEE = v145;
+  v146 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v146;
+  unk_81FCFEE = v146;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE2(alu_sq) = alu_b_s_4[BYTE2(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b3[BYTE2(alu_n)];
-  v151 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v151);
-  LOBYTE(alu_r) = v151;
-  v152 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v151)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v152);
-  BYTE1(alu_r) = v152;
-  v153 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v152)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v153);
-  BYTE2(alu_r) = v153;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v153)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v147 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v147);
+  LOBYTE(alu_r) = v147;
+  v148 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v147)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v148);
+  BYTE1(alu_r) = v148;
+  v149 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v148)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v149);
+  BYTE2(alu_r) = v149;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v149)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v154 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v154;
-  unk_81FCFEE = v154;
-  v155 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v155;
-  unk_81FCFEE = v155;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v155)];
+  v150 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v150;
+  unk_81FCFEE = v150;
+  v151 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v151;
+  unk_81FCFEE = v151;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v151)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v156 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v156;
-  unk_81FCFEE = v156;
-  v157 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v157;
-  unk_81FCFEE = v157;
+  v152 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v152;
+  unk_81FCFEE = v152;
+  v153 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v153;
+  unk_81FCFEE = v153;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE2(alu_sq) = alu_b_s_3[BYTE2(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b2[BYTE2(alu_n)];
-  v158 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v158);
-  LOBYTE(alu_r) = v158;
-  v159 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v158)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v159);
-  BYTE1(alu_r) = v159;
-  v160 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v159)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v160);
-  BYTE2(alu_r) = v160;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v160)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v154 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v154);
+  LOBYTE(alu_r) = v154;
+  v155 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v154)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v155);
+  BYTE1(alu_r) = v155;
+  v156 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v155)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v156);
+  BYTE2(alu_r) = v156;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v156)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v161 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v161;
-  unk_81FCFEE = v161;
-  v162 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v162;
-  unk_81FCFEE = v162;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v162)];
+  v157 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v157;
+  unk_81FCFEE = v157;
+  v158 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v158;
+  unk_81FCFEE = v158;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v158)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v163 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v163;
-  unk_81FCFEE = v163;
-  v164 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v164;
-  unk_81FCFEE = v164;
+  v159 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v159;
+  unk_81FCFEE = v159;
+  v160 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v160;
+  unk_81FCFEE = v160;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE2(alu_sq) = alu_b_s_2[BYTE2(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b1[BYTE2(alu_n)];
-  v165 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v165);
-  LOBYTE(alu_r) = v165;
-  v166 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v165)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v166);
-  BYTE1(alu_r) = v166;
-  v167 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v166)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v167);
-  BYTE2(alu_r) = v167;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v167)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v161 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v161);
+  LOBYTE(alu_r) = v161;
+  v162 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v161)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v162);
+  BYTE1(alu_r) = v162;
+  v163 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v162)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v163);
+  BYTE2(alu_r) = v163;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v163)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v168 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v168;
-  unk_81FCFEE = v168;
-  v169 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v169;
-  unk_81FCFEE = v169;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v169)];
+  v164 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v164;
+  unk_81FCFEE = v164;
+  v165 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v165;
+  unk_81FCFEE = v165;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v165)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v170 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v170;
-  unk_81FCFEE = v170;
-  v171 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v171;
-  unk_81FCFEE = v171;
+  v166 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v166;
+  unk_81FCFEE = v166;
+  v167 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v167;
+  unk_81FCFEE = v167;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE2(alu_sq) = alu_b_s_1[BYTE2(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b0[BYTE2(alu_n)];
-  v172 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v172);
-  LOBYTE(alu_r) = v172;
-  v173 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v172)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v173);
-  BYTE1(alu_r) = v173;
-  v174 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v173)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v174);
-  BYTE2(alu_r) = v174;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v174)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v168 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v168);
+  LOBYTE(alu_r) = v168;
+  v169 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v168)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v169);
+  BYTE1(alu_r) = v169;
+  v170 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v169)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v170);
+  BYTE2(alu_r) = v170;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v170)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v175 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v175;
-  unk_81FCFEE = v175;
-  v176 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v176;
-  unk_81FCFEE = v176;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v176)];
+  v171 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v171;
+  unk_81FCFEE = v171;
+  v172 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v172;
+  unk_81FCFEE = v172;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v172)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v177 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v177;
-  unk_81FCFEE = v177;
-  v178 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v178;
-  unk_81FCFEE = v178;
+  v173 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v173;
+  unk_81FCFEE = v173;
+  v174 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v174;
+  unk_81FCFEE = v174;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE2(alu_sq) = alu_b_s_0[BYTE2(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b7[BYTE1(alu_n)];
-  v179 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v179);
-  LOBYTE(alu_r) = v179;
-  v180 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v179)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v180);
-  BYTE1(alu_r) = v180;
-  v181 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v180)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v181);
-  BYTE2(alu_r) = v181;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v181)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v175 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v175);
+  LOBYTE(alu_r) = v175;
+  v176 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v175)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v176);
+  BYTE1(alu_r) = v176;
+  v177 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v176)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v177);
+  BYTE2(alu_r) = v177;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v177)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v182 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v182;
-  unk_81FCFEE = v182;
-  v183 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v183;
-  unk_81FCFEE = v183;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v183)];
+  v178 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v178;
+  unk_81FCFEE = v178;
+  v179 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v179;
+  unk_81FCFEE = v179;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v179)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v184 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v184;
-  unk_81FCFEE = v184;
-  v185 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v185;
-  unk_81FCFEE = v185;
+  v180 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v180;
+  unk_81FCFEE = v180;
+  v181 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v181;
+  unk_81FCFEE = v181;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE1(alu_sq) = alu_b_s_7[BYTE1(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b6[BYTE1(alu_n)];
-  v186 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v186);
-  LOBYTE(alu_r) = v186;
-  v187 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v186)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v187);
-  BYTE1(alu_r) = v187;
-  v188 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v187)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v188);
-  BYTE2(alu_r) = v188;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v188)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v182 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v182);
+  LOBYTE(alu_r) = v182;
+  v183 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v182)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v183);
+  BYTE1(alu_r) = v183;
+  v184 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v183)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v184);
+  BYTE2(alu_r) = v184;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v184)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v189 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v189;
-  unk_81FCFEE = v189;
-  v190 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v190;
-  unk_81FCFEE = v190;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v190)];
+  v185 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v185;
+  unk_81FCFEE = v185;
+  v186 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v186;
+  unk_81FCFEE = v186;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v186)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v191 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v191;
-  unk_81FCFEE = v191;
-  v192 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v192;
-  unk_81FCFEE = v192;
+  v187 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v187;
+  unk_81FCFEE = v187;
+  v188 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v188;
+  unk_81FCFEE = v188;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE1(alu_sq) = alu_b_s_6[BYTE1(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b5[BYTE1(alu_n)];
-  v193 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v193);
-  LOBYTE(alu_r) = v193;
-  v194 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v193)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v194);
-  BYTE1(alu_r) = v194;
-  v195 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v194)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v195);
-  BYTE2(alu_r) = v195;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v195)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v189 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v189);
+  LOBYTE(alu_r) = v189;
+  v190 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v189)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v190);
+  BYTE1(alu_r) = v190;
+  v191 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v190)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v191);
+  BYTE2(alu_r) = v191;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v191)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v196 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v196;
-  unk_81FCFEE = v196;
-  v197 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v197;
-  unk_81FCFEE = v197;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v197)];
+  v192 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v192;
+  unk_81FCFEE = v192;
+  v193 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v193;
+  unk_81FCFEE = v193;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v193)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v198 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v198;
-  unk_81FCFEE = v198;
-  v199 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v199;
-  unk_81FCFEE = v199;
+  v194 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v194;
+  unk_81FCFEE = v194;
+  v195 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v195;
+  unk_81FCFEE = v195;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE1(alu_sq) = alu_b_s_5[BYTE1(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b4[BYTE1(alu_n)];
-  v200 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v200);
-  LOBYTE(alu_r) = v200;
-  v201 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v200)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v201);
-  BYTE1(alu_r) = v201;
-  v202 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v201)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v202);
-  BYTE2(alu_r) = v202;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v202)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v196 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v196);
+  LOBYTE(alu_r) = v196;
+  v197 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v196)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v197);
+  BYTE1(alu_r) = v197;
+  v198 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v197)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v198);
+  BYTE2(alu_r) = v198;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v198)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v203 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v203;
-  unk_81FCFEE = v203;
-  v204 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v204;
-  unk_81FCFEE = v204;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v204)];
+  v199 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v199;
+  unk_81FCFEE = v199;
+  v200 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v200;
+  unk_81FCFEE = v200;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v200)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v205 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v205;
-  unk_81FCFEE = v205;
-  v206 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v206;
-  unk_81FCFEE = v206;
+  v201 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v201;
+  unk_81FCFEE = v201;
+  v202 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v202;
+  unk_81FCFEE = v202;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE1(alu_sq) = alu_b_s_4[BYTE1(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b3[BYTE1(alu_n)];
-  v207 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v207);
-  LOBYTE(alu_r) = v207;
-  v208 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v207)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v208);
-  BYTE1(alu_r) = v208;
-  v209 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v208)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v209);
-  BYTE2(alu_r) = v209;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v209)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v203 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v203);
+  LOBYTE(alu_r) = v203;
+  v204 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v203)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v204);
+  BYTE1(alu_r) = v204;
+  v205 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v204)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v205);
+  BYTE2(alu_r) = v205;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v205)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v210 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v210;
-  unk_81FCFEE = v210;
-  v211 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v211;
-  unk_81FCFEE = v211;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v211)];
+  v206 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v206;
+  unk_81FCFEE = v206;
+  v207 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v207;
+  unk_81FCFEE = v207;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v207)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v212 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v212;
-  unk_81FCFEE = v212;
-  v213 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v213;
-  unk_81FCFEE = v213;
+  v208 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v208;
+  unk_81FCFEE = v208;
+  v209 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v209;
+  unk_81FCFEE = v209;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE1(alu_sq) = alu_b_s_3[BYTE1(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b2[BYTE1(alu_n)];
-  v214 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v214);
-  LOBYTE(alu_r) = v214;
-  v215 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v214)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v215);
-  BYTE1(alu_r) = v215;
-  v216 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v215)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v216);
-  BYTE2(alu_r) = v216;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v216)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v210 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v210);
+  LOBYTE(alu_r) = v210;
+  v211 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v210)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v211);
+  BYTE1(alu_r) = v211;
+  v212 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v211)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v212);
+  BYTE2(alu_r) = v212;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v212)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v217 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v217;
-  unk_81FCFEE = v217;
-  v218 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v218;
-  unk_81FCFEE = v218;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v218)];
+  v213 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v213;
+  unk_81FCFEE = v213;
+  v214 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v214;
+  unk_81FCFEE = v214;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v214)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v219 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v219;
-  unk_81FCFEE = v219;
-  v220 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v220;
-  unk_81FCFEE = v220;
+  v215 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v215;
+  unk_81FCFEE = v215;
+  v216 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v216;
+  unk_81FCFEE = v216;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE1(alu_sq) = alu_b_s_2[BYTE1(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b1[BYTE1(alu_n)];
-  v221 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v221);
-  LOBYTE(alu_r) = v221;
-  v222 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v221)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v222);
-  BYTE1(alu_r) = v222;
-  v223 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v222)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v223);
-  BYTE2(alu_r) = v223;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v223)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v217 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v217);
+  LOBYTE(alu_r) = v217;
+  v218 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v217)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v218);
+  BYTE1(alu_r) = v218;
+  v219 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v218)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v219);
+  BYTE2(alu_r) = v219;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v219)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v224 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v224;
-  unk_81FCFEE = v224;
-  v225 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v225;
-  unk_81FCFEE = v225;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v225)];
+  v220 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v220;
+  unk_81FCFEE = v220;
+  v221 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v221;
+  unk_81FCFEE = v221;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v221)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v226 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v226;
-  unk_81FCFEE = v226;
-  v227 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v227;
-  unk_81FCFEE = v227;
+  v222 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v222;
+  unk_81FCFEE = v222;
+  v223 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v223;
+  unk_81FCFEE = v223;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE1(alu_sq) = alu_b_s_1[BYTE1(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b0[BYTE1(alu_n)];
-  v228 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v228);
-  LOBYTE(alu_r) = v228;
-  v229 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v228)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v229);
-  BYTE1(alu_r) = v229;
-  v230 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v229)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v230);
-  BYTE2(alu_r) = v230;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v230)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v224 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v224);
+  LOBYTE(alu_r) = v224;
+  v225 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v224)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v225);
+  BYTE1(alu_r) = v225;
+  v226 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v225)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v226);
+  BYTE2(alu_r) = v226;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v226)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v231 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v231;
-  unk_81FCFEE = v231;
-  v232 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v232;
-  unk_81FCFEE = v232;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v232)];
+  v227 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v227;
+  unk_81FCFEE = v227;
+  v228 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v228;
+  unk_81FCFEE = v228;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v228)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v233 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v233;
-  unk_81FCFEE = v233;
-  v234 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v234;
-  unk_81FCFEE = v234;
+  v229 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v229;
+  unk_81FCFEE = v229;
+  v230 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v230;
+  unk_81FCFEE = v230;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   BYTE1(alu_sq) = alu_b_s_0[BYTE1(alu_sq)];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b7[(unsigned __int8)alu_n];
-  v235 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v235);
-  LOBYTE(alu_r) = v235;
-  v236 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v235)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v236);
-  BYTE1(alu_r) = v236;
-  v237 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v236)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v237);
-  BYTE2(alu_r) = v237;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v237)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v231 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v231);
+  LOBYTE(alu_r) = v231;
+  v232 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v231)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v232);
+  BYTE1(alu_r) = v232;
+  v233 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v232)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v233);
+  BYTE2(alu_r) = v233;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v233)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v238 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v238;
-  unk_81FCFEE = v238;
-  v239 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v239;
-  unk_81FCFEE = v239;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v239)];
+  v234 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v234;
+  unk_81FCFEE = v234;
+  v235 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v235;
+  unk_81FCFEE = v235;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v235)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v240 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v240;
-  unk_81FCFEE = v240;
-  v241 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v241;
-  unk_81FCFEE = v241;
+  v236 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v236;
+  unk_81FCFEE = v236;
+  v237 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v237;
+  unk_81FCFEE = v237;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   LOBYTE(alu_sq) = alu_b_s_7[(unsigned __int8)alu_sq];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b6[(unsigned __int8)alu_n];
-  v242 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v242);
-  LOBYTE(alu_r) = v242;
-  v243 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v242)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v243);
-  BYTE1(alu_r) = v243;
-  v244 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v243)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v244);
-  BYTE2(alu_r) = v244;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v244)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v238 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v238);
+  LOBYTE(alu_r) = v238;
+  v239 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v238)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v239);
+  BYTE1(alu_r) = v239;
+  v240 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v239)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v240);
+  BYTE2(alu_r) = v240;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v240)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v245 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v245;
-  unk_81FCFEE = v245;
-  v246 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v246;
-  unk_81FCFEE = v246;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v246)];
+  v241 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v241;
+  unk_81FCFEE = v241;
+  v242 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v242;
+  unk_81FCFEE = v242;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v242)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v247 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v247;
-  unk_81FCFEE = v247;
-  v248 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v248;
-  unk_81FCFEE = v248;
+  v243 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v243;
+  unk_81FCFEE = v243;
+  v244 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v244;
+  unk_81FCFEE = v244;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   LOBYTE(alu_sq) = alu_b_s_6[(unsigned __int8)alu_sq];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b5[(unsigned __int8)alu_n];
-  v249 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v249);
-  LOBYTE(alu_r) = v249;
-  v250 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v249)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v250);
-  BYTE1(alu_r) = v250;
-  v251 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v250)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v251);
-  BYTE2(alu_r) = v251;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v251)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v245 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v245);
+  LOBYTE(alu_r) = v245;
+  v246 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v245)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v246);
+  BYTE1(alu_r) = v246;
+  v247 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v246)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v247);
+  BYTE2(alu_r) = v247;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v247)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v252 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v252;
-  unk_81FCFEE = v252;
-  v253 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v253;
-  unk_81FCFEE = v253;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v253)];
+  v248 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v248;
+  unk_81FCFEE = v248;
+  v249 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v249;
+  unk_81FCFEE = v249;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v249)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v254 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v254;
-  unk_81FCFEE = v254;
-  v255 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v255;
-  unk_81FCFEE = v255;
+  v250 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v250;
+  unk_81FCFEE = v250;
+  v251 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v251;
+  unk_81FCFEE = v251;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   LOBYTE(alu_sq) = alu_b_s_5[(unsigned __int8)alu_sq];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b4[(unsigned __int8)alu_n];
-  v256 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v256);
-  LOBYTE(alu_r) = v256;
-  v257 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v256)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v257);
-  BYTE1(alu_r) = v257;
-  v258 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v257)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v258);
-  BYTE2(alu_r) = v258;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v258)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v252 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v252);
+  LOBYTE(alu_r) = v252;
+  v253 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v252)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v253);
+  BYTE1(alu_r) = v253;
+  v254 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v253)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v254);
+  BYTE2(alu_r) = v254;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v254)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v259 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v259;
-  unk_81FCFEE = v259;
-  v260 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v260;
-  unk_81FCFEE = v260;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v260)];
+  v255 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v255;
+  unk_81FCFEE = v255;
+  v256 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v256;
+  unk_81FCFEE = v256;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v256)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v261 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v261;
-  unk_81FCFEE = v261;
-  v262 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v262;
-  unk_81FCFEE = v262;
+  v257 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v257;
+  unk_81FCFEE = v257;
+  v258 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v258;
+  unk_81FCFEE = v258;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   LOBYTE(alu_sq) = alu_b_s_4[(unsigned __int8)alu_sq];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b3[(unsigned __int8)alu_n];
-  v263 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v263);
-  LOBYTE(alu_r) = v263;
-  v264 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v263)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v264);
-  BYTE1(alu_r) = v264;
-  v265 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v264)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v265);
-  BYTE2(alu_r) = v265;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v265)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v259 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v259);
+  LOBYTE(alu_r) = v259;
+  v260 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v259)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v260);
+  BYTE1(alu_r) = v260;
+  v261 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v260)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v261);
+  BYTE2(alu_r) = v261;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v261)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v266 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v266;
-  unk_81FCFEE = v266;
-  v267 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v267;
-  unk_81FCFEE = v267;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v267)];
+  v262 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v262;
+  unk_81FCFEE = v262;
+  v263 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v263;
+  unk_81FCFEE = v263;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v263)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v268 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v268;
-  unk_81FCFEE = v268;
-  v269 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v269;
-  unk_81FCFEE = v269;
+  v264 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v264;
+  unk_81FCFEE = v264;
+  v265 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v265;
+  unk_81FCFEE = v265;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   LOBYTE(alu_sq) = alu_b_s_3[(unsigned __int8)alu_sq];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b2[(unsigned __int8)alu_n];
-  v270 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v270);
-  LOBYTE(alu_r) = v270;
-  v271 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v270)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v271);
-  BYTE1(alu_r) = v271;
-  v272 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v271)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v272);
-  BYTE2(alu_r) = v272;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v272)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v266 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v266);
+  LOBYTE(alu_r) = v266;
+  v267 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v266)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v267);
+  BYTE1(alu_r) = v267;
+  v268 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v267)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v268);
+  BYTE2(alu_r) = v268;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v268)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v273 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v273;
-  unk_81FCFEE = v273;
-  v274 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v274;
-  unk_81FCFEE = v274;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v274)];
+  v269 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v269;
+  unk_81FCFEE = v269;
+  v270 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v270;
+  unk_81FCFEE = v270;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v270)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v275 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v275;
-  unk_81FCFEE = v275;
-  v276 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v276;
-  unk_81FCFEE = v276;
+  v271 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v271;
+  unk_81FCFEE = v271;
+  v272 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v272;
+  unk_81FCFEE = v272;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   LOBYTE(alu_sq) = alu_b_s_2[(unsigned __int8)alu_sq];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b1[(unsigned __int8)alu_n];
-  v277 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v277);
-  LOBYTE(alu_r) = v277;
-  v278 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v277)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v278);
-  BYTE1(alu_r) = v278;
-  v279 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v278)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v279);
-  BYTE2(alu_r) = v279;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v279)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v273 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v273);
+  LOBYTE(alu_r) = v273;
+  v274 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v273)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v274);
+  BYTE1(alu_r) = v274;
+  v275 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v274)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v275);
+  BYTE2(alu_r) = v275;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v275)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v280 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v280;
-  unk_81FCFEE = v280;
-  v281 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v281;
-  unk_81FCFEE = v281;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v281)];
+  v276 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v276;
+  unk_81FCFEE = v276;
+  v277 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v277;
+  unk_81FCFEE = v277;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v277)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v282 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v282;
-  unk_81FCFEE = v282;
-  v283 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v283;
-  unk_81FCFEE = v283;
+  v278 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v278;
+  unk_81FCFEE = v278;
+  v279 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v279;
+  unk_81FCFEE = v279;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   LOBYTE(alu_sq) = alu_b_s_1[(unsigned __int8)alu_sq];
   *(_DWORD *)alu_psel_q = alu_sq;
   alu_c = alu_b0[(unsigned __int8)alu_n];
-  v284 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
-  LOBYTE(alu_c) = HIBYTE(v284);
-  LOBYTE(alu_r) = v284;
-  v285 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v284)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v285);
-  BYTE1(alu_r) = v285;
-  v286 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v285)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
-  LOBYTE(alu_c) = HIBYTE(v286);
-  BYTE2(alu_r) = v286;
-  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v286)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
+  v280 = *(int *)((char *)&alu_div_shl1_8_c_d[(unsigned __int8)alu_c] + alu_div_shl3_8_d[(unsigned __int8)alu_r]);
+  LOBYTE(alu_c) = HIBYTE(v280);
+  LOBYTE(alu_r) = v280;
+  v281 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v280)] + alu_div_shl3_8_d[BYTE1(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v281);
+  BYTE1(alu_r) = v281;
+  v282 = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v281)] + alu_div_shl3_8_d[BYTE2(alu_r)]);
+  LOBYTE(alu_c) = HIBYTE(v282);
+  BYTE2(alu_r) = v282;
+  HIBYTE(alu_r) = *(int *)((char *)&alu_div_shl1_8_c_d[HIBYTE(v282)] + alu_div_shl3_8_d[HIBYTE(alu_r)]);
   alu_x = alu_r;
   alu_y = alu_d;
   alu_c = 1;
-  v287 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_t) = v287;
-  unk_81FCFEE = v287;
-  v288 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_t) = v288;
-  unk_81FCFEE = v288;
-  alu_t = (unsigned __int8)alu_true[BYTE2(v288)];
+  v283 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_t) = v283;
+  unk_81FCFEE = v283;
+  v284 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_t) = v284;
+  unk_81FCFEE = v284;
+  alu_t = (unsigned __int8)alu_true[BYTE2(v284)];
   alu_psel_r = (int)alu_sel_r[alu_t];
   alu_psel_q = (int)alu_sel_q[alu_t];
   alu_sr = *(_DWORD *)alu_psel_r;
   alu_x = alu_sr;
   alu_y = alu_d;
   alu_c = 1;
-  v289 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
-  LOWORD(alu_sr) = v289;
-  unk_81FCFEE = v289;
-  v290 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
-  HIWORD(alu_sr) = v290;
-  unk_81FCFEE = v290;
+  v285 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_sr) + alu_inv16[1])) + 1);
+  LOWORD(alu_sr) = v285;
+  unk_81FCFEE = v285;
+  v286 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(alu_d)])) + alu_c);
+  HIWORD(alu_sr) = v286;
+  unk_81FCFEE = v286;
   *(_DWORD *)alu_psel_r = alu_sr;
   alu_sq = *(_DWORD *)alu_psel_q;
   LOBYTE(alu_sq) = alu_b_s_0[(unsigned __int8)alu_sq];
@@ -78067,12 +78058,12 @@ void is_prime()
   alu_y = alu_r;
   alu_x = 0;
   alu_c = 1;
-  v291 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)alu_add16 + alu_inv16[1])) + 1);
-  LOWORD(alu_s) = v291;
-  unk_81FCFEE = v291;
-  v292 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)alu_add16 + alu_inv16[HIWORD(alu_r)])) + alu_c);
-  HIWORD(alu_s) = v292;
-  unk_81FCFEE = v292;
+  v287 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)alu_add16 + alu_inv16[1])) + 1);
+  LOWORD(alu_s) = v287;
+  unk_81FCFEE = v287;
+  v288 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)alu_add16 + alu_inv16[HIWORD(alu_r)])) + alu_c);
+  HIWORD(alu_s) = v288;
+  unk_81FCFEE = v288;
   data_p = (int)&alu_r;
   *(_DWORD *)*(&sel_data + alu_rs) = alu_s;
   R3 = alu_r;
@@ -78082,158 +78073,158 @@ void is_prime()
   alu_y = 0;
   alu_t = 0;
   alu_c = 1;
-  v293 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
-  LOWORD(alu_s) = v293;
-  unk_81FCFEE = v293;
-  v294 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[0])) + alu_c);
-  HIWORD(alu_s) = v294;
-  unk_81FCFEE = v294;
+  v289 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_r) + alu_inv16[1])) + 1);
+  LOWORD(alu_s) = v289;
+  unk_81FCFEE = v289;
+  v290 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_r)) + alu_inv16[0])) + alu_c);
+  HIWORD(alu_s) = v290;
+  unk_81FCFEE = v290;
   alu_y = 0;
-  byte_81FD0EC = *((_BYTE *)alu_false + BYTE2(v294));
-  v295 = (unsigned __int8)byte_81FD0EC;
-  LOBYTE(v295) = BYTE1(v294);
-  LOBYTE(dword_81FD0E4) = alu_b7[v295];
-  v296 = (unsigned __int8)alu_s;
-  LOBYTE(v296) = BYTE1(alu_s);
-  v297 = (unsigned __int8)alu_true[v296 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
-  LOBYTE(v296) = BYTE2(alu_s);
-  v298 = (unsigned __int8)alu_true[v296 + v297];
+  byte_81FD0EC = *((_BYTE *)alu_false + BYTE2(v290));
+  v291 = (unsigned __int8)byte_81FD0EC;
+  LOBYTE(v291) = BYTE1(v290);
+  LOBYTE(dword_81FD0E4) = alu_b7[v291];
+  v292 = (unsigned __int8)alu_s;
+  LOBYTE(v292) = BYTE1(alu_s);
+  v293 = (unsigned __int8)alu_true[v292 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
+  LOBYTE(v292) = BYTE2(alu_s);
+  LOBYTE(v293) = alu_true[v292 + v293];
+  LOBYTE(v292) = HIBYTE(alu_s);
+  LOBYTE(v293) = alu_true[v292 + v293];
+  LOBYTE(dword_81FD0E0) = *((_BYTE *)alu_false + v293);
+  LOBYTE(v293) = HIBYTE(alu_r);
+  v294 = alu_b7[v293];
+  v295 = alu_cmp_of[v294];
+  LOBYTE(v294) = 0;
+  v296 = alu_b7[v294];
+  v297 = v295[v296];
   LOBYTE(v296) = HIBYTE(alu_s);
-  v299 = *((unsigned __int8 *)alu_false + (unsigned __int8)alu_true[v296 + v298]);
-  LOBYTE(dword_81FD0E0) = v299;
-  LOBYTE(v299) = HIBYTE(alu_r);
-  v300 = alu_b7[v299];
-  v301 = alu_cmp_of[v300];
-  LOBYTE(v300) = 0;
-  v302 = alu_b7[v300];
-  v303 = v301[v302];
-  LOBYTE(v302) = HIBYTE(alu_s);
-  LOBYTE(dword_81FD0E8) = *(_DWORD *)v303[alu_b7[v302]];
+  LOBYTE(dword_81FD0E8) = *(_DWORD *)v297[alu_b7[v296]];
   b0 = alu_false[dword_81FD0E0];
   b0 = *((_DWORD *)*(&and + b0) + on);
   *(_DWORD *)*(&sel_target + b0) = -2012941888;
-  v304 = b0;
+  v298 = b0;
   data_p = (int)&jmp_r0;
-  v305 = *(&sel_data + b0);
-  *v305 = R0;
-  v305[1] = R1;
-  v305[2] = R2;
-  v305[3] = R3;
+  v299 = *(&sel_data + b0);
+  *v299 = R0;
+  v299[1] = R1;
+  v299[2] = R2;
+  v299[3] = R3;
   data_p = (int)&jmp_f0;
-  v306 = *(&sel_data + v304);
-  *v306 = F0;
-  v306[1] = F1;
+  v300 = *(&sel_data + v298);
+  *v300 = F0;
+  v300[1] = F1;
   data_p = (int)&jmp_d0;
-  v307 = *(&sel_data + v304);
-  *v307 = D0;
-  v307[1] = dword_8054064;
-  v307[2] = D1;
-  v307[3] = dword_805406C;
+  v301 = *(&sel_data + v298);
+  *v301 = D0;
+  v301[1] = dword_8054064;
+  v301[2] = D1;
+  v301[3] = dword_805406C;
   *(_DWORD *)*(&sel_on + b0) = 0;
   R0 = 0;
   branch_temp = -2012937899;
   *(_DWORD *)*(&sel_target + on) = -2012937899;
-  v308 = on;
+  v302 = on;
   data_p = (int)&jmp_r0;
-  v309 = *(&sel_data + on);
-  *v309 = R0;
-  v309[1] = R1;
-  v309[2] = R2;
-  v309[3] = R3;
+  v303 = *(&sel_data + on);
+  *v303 = R0;
+  v303[1] = R1;
+  v303[2] = R2;
+  v303[3] = R3;
   data_p = (int)&jmp_f0;
-  v310 = *(&sel_data + v308);
-  *v310 = F0;
-  v310[1] = F1;
+  v304 = *(&sel_data + v302);
+  *v304 = F0;
+  v304[1] = F1;
   data_p = (int)&jmp_d0;
-  v311 = *(&sel_data + v308);
-  *v311 = D0;
-  v311[1] = dword_8054064;
-  v311[2] = D1;
-  v311[3] = dword_805406C;
+  v305 = *(&sel_data + v302);
+  *v305 = D0;
+  v305[1] = dword_8054064;
+  v305[2] = D1;
+  v305[3] = dword_805406C;
   *(_DWORD *)*(&sel_on + on) = 0;
   alu_x = target;
   alu_y = -2012941888;
-  v312 = (unsigned __int8)target;
-  v313 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 192);
-  b0 = v313;
-  LOBYTE(v312) = BYTE1(target);
-  LOBYTE(v313) = -15;
-  LOBYTE(v313) = *((_BYTE *)*(&alu_eq + v312) + v313);
-  b1 = v313;
-  LOBYTE(v312) = BYTE2(target);
-  LOBYTE(v313) = 4;
-  LOBYTE(v313) = *((_BYTE *)*(&alu_eq + v312) + v313);
-  b2 = v313;
-  LOBYTE(v312) = HIBYTE(target);
-  LOBYTE(v313) = -120;
-  LOBYTE(v313) = *((_BYTE *)*(&alu_eq + v312) + v313);
-  b3 = v313;
+  v306 = (unsigned __int8)target;
+  v307 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 192);
+  b0 = v307;
+  LOBYTE(v306) = BYTE1(target);
+  LOBYTE(v307) = -15;
+  LOBYTE(v307) = *((_BYTE *)*(&alu_eq + v306) + v307);
+  b1 = v307;
+  LOBYTE(v306) = BYTE2(target);
+  LOBYTE(v307) = 4;
+  LOBYTE(v307) = *((_BYTE *)*(&alu_eq + v306) + v307);
+  b2 = v307;
+  LOBYTE(v306) = HIBYTE(target);
+  LOBYTE(v307) = -120;
+  LOBYTE(v307) = *((_BYTE *)*(&alu_eq + v306) + v307);
+  b3 = v307;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v313);
-  v314 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v307);
+  v308 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v314) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v308) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v314) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v308) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v314) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v308) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v314) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v308) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v314) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v308) = jmp_f1;
   data_p = (int)&D0;
-  v315 = *(&sel_data + v314);
-  *v315 = jmp_d0;
-  v315[1] = dword_85FD19C;
+  v309 = *(&sel_data + v308);
+  *v309 = jmp_d0;
+  v309[1] = dword_85FD19C;
   data_p = (int)&D1;
-  v316 = *(&sel_data + v314);
-  *v316 = jmp_d1;
-  v316[1] = dword_85FD1A4;
+  v310 = *(&sel_data + v308);
+  *v310 = jmp_d1;
+  v310[1] = dword_85FD1A4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   alu_x = target;
   alu_y = -2012941414;
-  v317 = (unsigned __int8)target;
-  v318 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 154);
-  b0 = v318;
-  LOBYTE(v317) = BYTE1(target);
-  LOBYTE(v318) = -13;
-  LOBYTE(v318) = *((_BYTE *)*(&alu_eq + v317) + v318);
-  b1 = v318;
-  LOBYTE(v317) = BYTE2(target);
-  LOBYTE(v318) = 4;
-  LOBYTE(v318) = *((_BYTE *)*(&alu_eq + v317) + v318);
-  b2 = v318;
-  LOBYTE(v317) = HIBYTE(target);
-  LOBYTE(v318) = -120;
-  LOBYTE(v318) = *((_BYTE *)*(&alu_eq + v317) + v318);
-  b3 = v318;
+  v311 = (unsigned __int8)target;
+  v312 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 154);
+  b0 = v312;
+  LOBYTE(v311) = BYTE1(target);
+  LOBYTE(v312) = -13;
+  LOBYTE(v312) = *((_BYTE *)*(&alu_eq + v311) + v312);
+  b1 = v312;
+  LOBYTE(v311) = BYTE2(target);
+  LOBYTE(v312) = 4;
+  LOBYTE(v312) = *((_BYTE *)*(&alu_eq + v311) + v312);
+  b2 = v312;
+  LOBYTE(v311) = HIBYTE(target);
+  LOBYTE(v312) = -120;
+  LOBYTE(v312) = *((_BYTE *)*(&alu_eq + v311) + v312);
+  b3 = v312;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v318);
-  v319 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v312);
+  v313 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v319) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v313) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v319) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v313) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v319) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v313) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v319) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v313) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v319) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v313) = jmp_f1;
   data_p = (int)&D0;
-  v320 = *(&sel_data + v319);
-  *v320 = jmp_d0;
-  v320[1] = dword_85FD19C;
+  v314 = *(&sel_data + v313);
+  *v314 = jmp_d0;
+  v314[1] = dword_85FD19C;
   data_p = (int)&D1;
-  v321 = *(&sel_data + v319);
-  *v321 = jmp_d1;
-  v321[1] = dword_85FD1A4;
+  v315 = *(&sel_data + v313);
+  *v315 = jmp_d1;
+  v315[1] = dword_85FD1A4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *((_DWORD *)fp - 524314);
   data_p = R3;
@@ -78242,56 +78233,56 @@ void is_prime()
   alu_x = R3;
   alu_y = 1;
   alu_c = 0;
-  v322 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + 1));
-  LOWORD(alu_s) = v322;
-  alu_c = v322;
-  v323 = *((_DWORD *)*(&alu_add16 + *(_DWORD *)*(&alu_add16 + HIWORD(R3))) + HIWORD(v322));
-  HIWORD(alu_s) = v323;
-  alu_c = v323;
+  v316 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + 1));
+  LOWORD(alu_s) = v316;
+  alu_c = v316;
+  v317 = *((_DWORD *)*(&alu_add16 + *(_DWORD *)*(&alu_add16 + HIWORD(R3))) + HIWORD(v316));
+  HIWORD(alu_s) = v317;
+  alu_c = v317;
   R3 = alu_s;
   data_p = *((_DWORD *)fp - 524314);
   *(_DWORD *)*(&sel_data + on) = alu_s;
   alu_x = target;
   alu_y = -2012940689;
-  v324 = (unsigned __int8)target;
-  v325 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 111);
-  b0 = v325;
-  LOBYTE(v324) = BYTE1(target);
-  LOBYTE(v325) = -10;
-  LOBYTE(v325) = *((_BYTE *)*(&alu_eq + v324) + v325);
-  b1 = v325;
-  LOBYTE(v324) = BYTE2(target);
-  LOBYTE(v325) = 4;
-  LOBYTE(v325) = *((_BYTE *)*(&alu_eq + v324) + v325);
-  b2 = v325;
-  LOBYTE(v324) = HIBYTE(target);
-  LOBYTE(v325) = -120;
-  LOBYTE(v325) = *((_BYTE *)*(&alu_eq + v324) + v325);
-  b3 = v325;
+  v318 = (unsigned __int8)target;
+  v319 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 111);
+  b0 = v319;
+  LOBYTE(v318) = BYTE1(target);
+  LOBYTE(v319) = -10;
+  LOBYTE(v319) = *((_BYTE *)*(&alu_eq + v318) + v319);
+  b1 = v319;
+  LOBYTE(v318) = BYTE2(target);
+  LOBYTE(v319) = 4;
+  LOBYTE(v319) = *((_BYTE *)*(&alu_eq + v318) + v319);
+  b2 = v319;
+  LOBYTE(v318) = HIBYTE(target);
+  LOBYTE(v319) = -120;
+  LOBYTE(v319) = *((_BYTE *)*(&alu_eq + v318) + v319);
+  b3 = v319;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v325);
-  v326 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v319);
+  v320 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v326) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v320) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v326) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v320) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v326) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v320) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v326) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v320) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v326) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v320) = jmp_f1;
   data_p = (int)&D0;
-  v327 = *(&sel_data + v326);
-  *v327 = jmp_d0;
-  v327[1] = dword_85FD19C;
+  v321 = *(&sel_data + v320);
+  *v321 = jmp_d0;
+  v321[1] = dword_85FD19C;
   data_p = (int)&D1;
-  v328 = *(&sel_data + v326);
-  *v328 = jmp_d1;
-  v328[1] = dword_85FD1A4;
+  v322 = *(&sel_data + v320);
+  *v322 = jmp_d1;
+  v322[1] = dword_85FD1A4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *((_DWORD *)fp - 524314);
   data_p = R3;
@@ -78303,90 +78294,90 @@ void is_prime()
   alu_z2 = 0;
   alu_z3 = 0;
   alu_c = 0;
+  v323 = (unsigned __int8)R3;
+  v324 = *((unsigned __int8 *)*(&alu_mul_mul8l + (unsigned __int8)R3) + (unsigned __int8)R3);
+  v325 = *((unsigned __int8 *)*(&alu_mul_mul8h + (unsigned __int8)R3) + (unsigned __int8)R3);
+  LOBYTE(v323) = 0;
+  LOBYTE(alu_z0) = alu_mul_sum8l[v324 + v323];
+  LOBYTE(v323) = 0;
+  LOBYTE(v323) = alu_mul_sum8h[v324 + v323];
+  LOBYTE(alu_c) = alu_mul_sum8l[v323 + v325];
+  v326 = (unsigned __int8)R3;
+  v327 = *((unsigned __int8 *)*(&alu_mul_mul8l + BYTE1(R3)) + (unsigned __int8)R3);
+  v328 = *((unsigned __int8 *)*(&alu_mul_mul8h + BYTE1(R3)) + (unsigned __int8)R3);
+  LOBYTE(v326) = alu_c;
+  BYTE1(alu_z0) = alu_mul_sum8l[v327 + v326];
+  LOBYTE(v326) = alu_c;
+  LOBYTE(v326) = alu_mul_sum8h[v327 + v326];
+  LOBYTE(alu_c) = alu_mul_sum8l[v326 + v328];
   v329 = (unsigned __int8)R3;
-  v330 = *((unsigned __int8 *)*(&alu_mul_mul8l + (unsigned __int8)R3) + (unsigned __int8)R3);
-  v331 = *((unsigned __int8 *)*(&alu_mul_mul8h + (unsigned __int8)R3) + (unsigned __int8)R3);
-  LOBYTE(v329) = 0;
-  alu_z0 = (unsigned __int8)alu_mul_sum8l[v330 + v329];
-  LOBYTE(v329) = 0;
+  v330 = *((unsigned __int8 *)*(&alu_mul_mul8l + BYTE2(R3)) + (unsigned __int8)R3);
+  v331 = *((unsigned __int8 *)*(&alu_mul_mul8h + BYTE2(R3)) + (unsigned __int8)R3);
+  LOBYTE(v329) = alu_c;
+  BYTE2(alu_z0) = alu_mul_sum8l[v330 + v329];
+  LOBYTE(v329) = alu_c;
   LOBYTE(v329) = alu_mul_sum8h[v330 + v329];
-  alu_c = (unsigned __int8)alu_mul_sum8l[v329 + v331];
+  LOBYTE(alu_c) = alu_mul_sum8l[v329 + v331];
   v332 = (unsigned __int8)R3;
-  v333 = *((unsigned __int8 *)*(&alu_mul_mul8l + BYTE1(R3)) + (unsigned __int8)R3);
-  v334 = *((unsigned __int8 *)*(&alu_mul_mul8h + BYTE1(R3)) + (unsigned __int8)R3);
   LOBYTE(v332) = alu_c;
-  *(_WORD *)((char *)&alu_z0 + 1) = (unsigned __int8)alu_mul_sum8l[v333 + v332];
-  LOBYTE(v332) = alu_c;
-  LOBYTE(v332) = alu_mul_sum8h[v333 + v332];
-  alu_c = (unsigned __int8)alu_mul_sum8l[v332 + v334];
-  v335 = (unsigned __int8)R3;
-  v336 = *((unsigned __int8 *)*(&alu_mul_mul8l + BYTE2(R3)) + (unsigned __int8)R3);
-  v337 = *((unsigned __int8 *)*(&alu_mul_mul8h + BYTE2(R3)) + (unsigned __int8)R3);
-  LOBYTE(v335) = alu_c;
-  BYTE2(alu_z0) = alu_mul_sum8l[v336 + v335];
-  LOBYTE(v335) = alu_c;
-  LOBYTE(v335) = alu_mul_sum8h[v336 + v335];
-  alu_c = (unsigned __int8)alu_mul_sum8l[v335 + v337];
-  v338 = (unsigned __int8)R3;
-  LOBYTE(v338) = alu_c;
-  HIBYTE(alu_z0) = alu_mul_sum8l[*((unsigned __int8 *)*(&alu_mul_mul8l + HIBYTE(R3)) + (unsigned __int8)R3) + v338];
+  HIBYTE(alu_z0) = alu_mul_sum8l[*((unsigned __int8 *)*(&alu_mul_mul8l + HIBYTE(R3)) + (unsigned __int8)R3) + v332];
   alu_c = 0;
+  v333 = BYTE1(R3);
+  v334 = *((unsigned __int8 *)*(&alu_mul_mul8l + (unsigned __int8)R3) + BYTE1(R3));
+  v335 = *((unsigned __int8 *)*(&alu_mul_mul8h + (unsigned __int8)R3) + BYTE1(R3));
+  LOBYTE(v333) = 0;
+  BYTE1(alu_z1) = alu_mul_sum8l[v334 + v333];
+  LOBYTE(v333) = 0;
+  LOBYTE(v333) = alu_mul_sum8h[v334 + v333];
+  LOBYTE(alu_c) = alu_mul_sum8l[v333 + v335];
+  v336 = BYTE1(R3);
+  v337 = *((unsigned __int8 *)*(&alu_mul_mul8l + BYTE1(R3)) + BYTE1(R3));
+  v338 = *((unsigned __int8 *)*(&alu_mul_mul8h + BYTE1(R3)) + BYTE1(R3));
+  LOBYTE(v336) = alu_c;
+  BYTE2(alu_z1) = alu_mul_sum8l[v337 + v336];
+  LOBYTE(v336) = alu_c;
+  LOBYTE(v336) = alu_mul_sum8h[v337 + v336];
+  LOBYTE(alu_c) = alu_mul_sum8l[v336 + v338];
   v339 = BYTE1(R3);
-  v340 = *((unsigned __int8 *)*(&alu_mul_mul8l + (unsigned __int8)R3) + BYTE1(R3));
-  v341 = *((unsigned __int8 *)*(&alu_mul_mul8h + (unsigned __int8)R3) + BYTE1(R3));
-  LOBYTE(v339) = 0;
-  *(_WORD *)((char *)&alu_z1 + 1) = (unsigned __int8)alu_mul_sum8l[v340 + v339];
-  LOBYTE(v339) = 0;
-  LOBYTE(v339) = alu_mul_sum8h[v340 + v339];
-  alu_c = (unsigned __int8)alu_mul_sum8l[v339 + v341];
-  v342 = BYTE1(R3);
-  v343 = *((unsigned __int8 *)*(&alu_mul_mul8l + BYTE1(R3)) + BYTE1(R3));
-  v344 = *((unsigned __int8 *)*(&alu_mul_mul8h + BYTE1(R3)) + BYTE1(R3));
-  LOBYTE(v342) = alu_c;
-  BYTE2(alu_z1) = alu_mul_sum8l[v343 + v342];
-  LOBYTE(v342) = alu_c;
-  LOBYTE(v342) = alu_mul_sum8h[v343 + v342];
-  alu_c = (unsigned __int8)alu_mul_sum8l[v342 + v344];
-  v345 = BYTE1(R3);
-  LOBYTE(v345) = alu_c;
-  HIBYTE(alu_z1) = alu_mul_sum8l[*((unsigned __int8 *)*(&alu_mul_mul8l + BYTE2(R3)) + BYTE1(R3)) + v345];
+  LOBYTE(v339) = alu_c;
+  HIBYTE(alu_z1) = alu_mul_sum8l[*((unsigned __int8 *)*(&alu_mul_mul8l + BYTE2(R3)) + BYTE1(R3)) + v339];
   alu_c = 0;
-  v346 = BYTE2(R3);
-  v347 = *((unsigned __int8 *)*(&alu_mul_mul8l + (unsigned __int8)R3) + BYTE2(R3));
-  v348 = *((unsigned __int8 *)*(&alu_mul_mul8h + (unsigned __int8)R3) + BYTE2(R3));
-  LOBYTE(v346) = 0;
-  HIWORD(alu_z2) = (unsigned __int8)alu_mul_sum8l[v347 + v346];
-  LOBYTE(v346) = 0;
-  LOBYTE(v346) = alu_mul_sum8h[v347 + v346];
-  alu_c = (unsigned __int8)alu_mul_sum8l[v346 + v348];
-  v349 = BYTE2(R3);
-  LOBYTE(v349) = alu_c;
-  HIBYTE(alu_z2) = alu_mul_sum8l[*((unsigned __int8 *)*(&alu_mul_mul8l + BYTE1(R3)) + BYTE2(R3)) + v349];
+  v340 = BYTE2(R3);
+  v341 = *((unsigned __int8 *)*(&alu_mul_mul8l + (unsigned __int8)R3) + BYTE2(R3));
+  v342 = *((unsigned __int8 *)*(&alu_mul_mul8h + (unsigned __int8)R3) + BYTE2(R3));
+  LOBYTE(v340) = 0;
+  BYTE2(alu_z2) = alu_mul_sum8l[v341 + v340];
+  LOBYTE(v340) = 0;
+  LOBYTE(v340) = alu_mul_sum8h[v341 + v340];
+  LOBYTE(alu_c) = alu_mul_sum8l[v340 + v342];
+  v343 = BYTE2(R3);
+  LOBYTE(v343) = alu_c;
+  HIBYTE(alu_z2) = alu_mul_sum8l[*((unsigned __int8 *)*(&alu_mul_mul8l + BYTE1(R3)) + BYTE2(R3)) + v343];
   alu_c = 0;
-  v350 = HIBYTE(R3);
-  LOBYTE(v350) = 0;
-  HIBYTE(alu_z3) = alu_mul_sum8l[*((unsigned __int8 *)*(&alu_mul_mul8l + (unsigned __int8)R3) + HIBYTE(R3)) + v350];
+  v344 = HIBYTE(R3);
+  LOBYTE(v344) = 0;
+  HIBYTE(alu_z3) = alu_mul_sum8l[*((unsigned __int8 *)*(&alu_mul_mul8l + (unsigned __int8)R3) + HIBYTE(R3)) + v344];
   alu_c = 0;
-  v351 = *(int *)((char *)&alu_mul_sums + alu_mul_shl2[(unsigned __int8)alu_z0] + alu_mul_shl2[0]);
-  alu_c = HIBYTE(v351);
-  LOBYTE(alu_s) = v351;
-  v352 = *(int *)((char *)&alu_mul_sums
-                + alu_mul_shl2[HIBYTE(v351)]
+  v345 = *(int *)((char *)&alu_mul_sums + alu_mul_shl2[(unsigned __int8)alu_z0] + alu_mul_shl2[0]);
+  alu_c = HIBYTE(v345);
+  LOBYTE(alu_s) = v345;
+  v346 = *(int *)((char *)&alu_mul_sums
+                + alu_mul_shl2[HIBYTE(v345)]
                 + alu_mul_shl2[*(int *)((char *)&alu_mul_sums + alu_mul_shl2[BYTE1(alu_z0)]
                                                               + alu_mul_shl2[BYTE1(alu_z1)])]);
-  alu_c = HIBYTE(v352);
-  BYTE1(alu_s) = v352;
-  v353 = *(int *)((char *)&alu_mul_sums
-                + alu_mul_shl2[HIBYTE(v352)]
+  alu_c = HIBYTE(v346);
+  BYTE1(alu_s) = v346;
+  v347 = *(int *)((char *)&alu_mul_sums
+                + alu_mul_shl2[HIBYTE(v346)]
                 + alu_mul_shl2[*(int *)((char *)&alu_mul_sums
                                       + alu_mul_shl2[BYTE2(alu_z2)]
                                       + alu_mul_shl2[*(int *)((char *)&alu_mul_sums
                                                             + alu_mul_shl2[BYTE2(alu_z0)]
                                                             + alu_mul_shl2[BYTE2(alu_z1)])])]);
-  alu_c = HIBYTE(v353);
-  BYTE2(alu_s) = v353;
-  v354 = *(int *)((char *)&alu_mul_sums
-                + alu_mul_shl2[HIBYTE(v353)]
+  alu_c = HIBYTE(v347);
+  BYTE2(alu_s) = v347;
+  v348 = *(int *)((char *)&alu_mul_sums
+                + alu_mul_shl2[HIBYTE(v347)]
                 + alu_mul_shl2[*(int *)((char *)&alu_mul_sums
                                       + alu_mul_shl2[HIBYTE(alu_z3)]
                                       + alu_mul_shl2[*(int *)((char *)&alu_mul_sums
@@ -78394,8 +78385,8 @@ void is_prime()
                                                             + alu_mul_shl2[*(int *)((char *)&alu_mul_sums
                                                                                   + alu_mul_shl2[HIBYTE(alu_z0)]
                                                                                   + alu_mul_shl2[HIBYTE(alu_z1)])])])]);
-  alu_c = HIBYTE(v354);
-  HIBYTE(alu_s) = v354;
+  alu_c = HIBYTE(v348);
+  HIBYTE(alu_s) = v348;
   R3 = alu_s;
   R2 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524312)
                                                                                          - 2097248)
@@ -78412,99 +78403,99 @@ void is_prime()
   alu_y = R2;
   alu_t = R2;
   alu_c = 1;
-  v355 = *((_DWORD *)*(&alu_add16
+  v349 = *((_DWORD *)*(&alu_add16
                      + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_s) + alu_inv16[(unsigned __int16)R2]))
          + 1);
-  LOWORD(alu_s) = v355;
-  unk_81FCFEE = v355;
-  v356 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(R2)])) + alu_c);
-  HIWORD(alu_s) = v356;
-  unk_81FCFEE = v356;
+  LOWORD(alu_s) = v349;
+  unk_81FCFEE = v349;
+  v350 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[HIWORD(R2)])) + alu_c);
+  HIWORD(alu_s) = v350;
+  unk_81FCFEE = v350;
   alu_y = R2;
-  byte_81FD0EC = *((_BYTE *)alu_false + BYTE2(v356));
-  v357 = (unsigned __int8)byte_81FD0EC;
-  LOBYTE(v357) = BYTE1(v356);
-  LOBYTE(dword_81FD0E4) = alu_b7[v357];
-  v358 = (unsigned __int8)alu_s;
-  LOBYTE(v358) = BYTE1(alu_s);
-  v359 = (unsigned __int8)alu_true[v358 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
-  LOBYTE(v358) = BYTE2(alu_s);
-  v360 = (unsigned __int8)alu_true[v358 + v359];
-  LOBYTE(v358) = HIBYTE(alu_s);
-  v361 = *((unsigned __int8 *)alu_false + (unsigned __int8)alu_true[v358 + v360]);
-  LOBYTE(dword_81FD0E0) = v361;
-  LOBYTE(v361) = HIBYTE(alu_x);
-  v362 = alu_b7[v361];
-  v363 = alu_cmp_of[v362];
-  LOBYTE(v362) = HIBYTE(R2);
-  v364 = alu_b7[v362];
-  v365 = v363[v364];
-  LOBYTE(v364) = HIBYTE(alu_s);
-  LOBYTE(dword_81FD0E8) = *(_DWORD *)v365[alu_b7[v364]];
+  byte_81FD0EC = *((_BYTE *)alu_false + BYTE2(v350));
+  v351 = (unsigned __int8)byte_81FD0EC;
+  LOBYTE(v351) = BYTE1(v350);
+  LOBYTE(dword_81FD0E4) = alu_b7[v351];
+  v352 = (unsigned __int8)alu_s;
+  LOBYTE(v352) = BYTE1(alu_s);
+  v353 = (unsigned __int8)alu_true[v352 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
+  LOBYTE(v352) = BYTE2(alu_s);
+  LOBYTE(v353) = alu_true[v352 + v353];
+  LOBYTE(v352) = HIBYTE(alu_s);
+  LOBYTE(v353) = alu_true[v352 + v353];
+  LOBYTE(dword_81FD0E0) = *((_BYTE *)alu_false + v353);
+  LOBYTE(v353) = HIBYTE(alu_x);
+  v354 = alu_b7[v353];
+  v355 = alu_cmp_of[v354];
+  LOBYTE(v354) = HIBYTE(R2);
+  v356 = alu_b7[v354];
+  v357 = v355[v356];
+  LOBYTE(v356) = HIBYTE(alu_s);
+  LOBYTE(dword_81FD0E8) = *(_DWORD *)v357[alu_b7[v356]];
   b0 = *((_DWORD *)*(&xor + dword_81FD0E4) + dword_81FD0E8);
   b0 = *((_DWORD *)*(&or + b0) + dword_81FD0E0);
   b0 = *((_DWORD *)*(&and + b0) + on);
   *(_DWORD *)*(&sel_target + b0) = -2012965118;
-  v366 = b0;
+  v358 = b0;
   data_p = (int)&jmp_r0;
-  v367 = *(&sel_data + b0);
-  *v367 = R0;
-  v367[1] = R1;
-  v367[2] = R2;
-  v367[3] = R3;
+  v359 = *(&sel_data + b0);
+  *v359 = R0;
+  v359[1] = R1;
+  v359[2] = R2;
+  v359[3] = R3;
   data_p = (int)&jmp_f0;
-  v368 = *(&sel_data + v366);
-  *v368 = F0;
-  v368[1] = F1;
+  v360 = *(&sel_data + v358);
+  *v360 = F0;
+  v360[1] = F1;
   data_p = (int)&jmp_d0;
-  v369 = *(&sel_data + v366);
-  *v369 = D0;
-  v369[1] = dword_8054064;
-  v369[2] = D1;
-  v369[3] = dword_805406C;
+  v361 = *(&sel_data + v358);
+  *v361 = D0;
+  v361[1] = dword_8054064;
+  v361[2] = D1;
+  v361[3] = dword_805406C;
   *(_DWORD *)*(&sel_on + b0) = 0;
   R0 = 1;
   alu_x = target;
   alu_y = -2012937899;
-  v370 = (unsigned __int8)target;
-  v371 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 85);
-  b0 = v371;
-  LOBYTE(v370) = BYTE1(target);
-  LOBYTE(v371) = 1;
-  LOBYTE(v371) = *((_BYTE *)*(&alu_eq + v370) + v371);
-  b1 = v371;
-  LOBYTE(v370) = BYTE2(target);
-  LOBYTE(v371) = 5;
-  LOBYTE(v371) = *((_BYTE *)*(&alu_eq + v370) + v371);
-  b2 = v371;
-  LOBYTE(v370) = HIBYTE(target);
-  LOBYTE(v371) = -120;
-  LOBYTE(v371) = *((_BYTE *)*(&alu_eq + v370) + v371);
-  b3 = v371;
+  v362 = (unsigned __int8)target;
+  v363 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 85);
+  b0 = v363;
+  LOBYTE(v362) = BYTE1(target);
+  LOBYTE(v363) = 1;
+  LOBYTE(v363) = *((_BYTE *)*(&alu_eq + v362) + v363);
+  b1 = v363;
+  LOBYTE(v362) = BYTE2(target);
+  LOBYTE(v363) = 5;
+  LOBYTE(v363) = *((_BYTE *)*(&alu_eq + v362) + v363);
+  b2 = v363;
+  LOBYTE(v362) = HIBYTE(target);
+  LOBYTE(v363) = -120;
+  LOBYTE(v363) = *((_BYTE *)*(&alu_eq + v362) + v363);
+  b3 = v363;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v371);
-  v372 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v363);
+  v364 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v372) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v364) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v372) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v364) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v372) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v364) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v372) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v364) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v372) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v364) = jmp_f1;
   data_p = (int)&D0;
-  v373 = *(&sel_data + v372);
-  *v373 = jmp_d0;
-  v373[1] = dword_85FD19C;
+  v365 = *(&sel_data + v364);
+  *v365 = jmp_d0;
+  v365[1] = dword_85FD19C;
   data_p = (int)&D1;
-  v374 = *(&sel_data + v372);
-  *v374 = jmp_d1;
-  v374[1] = dword_85FD1A4;
+  v366 = *(&sel_data + v364);
+  *v366 = jmp_d1;
+  v366[1] = dword_85FD1A4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   data_p = (int)&off_83FD120;
   *(_DWORD *)*(&sel_data + on) = fp;
@@ -78513,9 +78504,9 @@ void is_prime()
   data_p = (int)&off_83FD120;
   *(_DWORD *)*(&sel_data + on) = *(_DWORD *)(*((_DWORD *)off_83FD120 - 524312) - 2097248);
   data_p = (int)&D1;
-  v375 = *(&sel_data + on);
-  *v375 = stack_temp;
-  v375[1] = dword_81FD104;
+  v367 = *(&sel_data + on);
+  *v367 = stack_temp;
+  v367[1] = dword_81FD104;
   stack_temp = *(_DWORD *)off_83FD120;
   data_p = (int)&off_83FD120;
   *(_DWORD *)*(&sel_data + on) = *((_DWORD *)off_83FD120 - 524312);
@@ -78546,23 +78537,23 @@ void is_prime()
   *(_DWORD *)*(&sel_data + on) = *((_DWORD *)off_83FD120 - 524312);
   branch_temp = stack_temp;
   *(_DWORD *)*(&sel_target + on) = stack_temp;
-  v376 = on;
+  v368 = on;
   data_p = (int)&jmp_r0;
-  v377 = *(&sel_data + on);
-  *v377 = R0;
-  v377[1] = R1;
-  v377[2] = R2;
-  v377[3] = R3;
+  v369 = *(&sel_data + on);
+  *v369 = R0;
+  v369[1] = R1;
+  v369[2] = R2;
+  v369[3] = R3;
   data_p = (int)&jmp_f0;
-  v378 = *(&sel_data + v376);
-  *v378 = F0;
-  v378[1] = F1;
+  v370 = *(&sel_data + v368);
+  *v370 = F0;
+  v370[1] = F1;
   data_p = (int)&jmp_d0;
-  v379 = *(&sel_data + v376);
-  *v379 = D0;
-  v379[1] = dword_8054064;
-  v379[2] = D1;
-  v379[3] = dword_805406C;
+  v371 = *(&sel_data + v368);
+  *v371 = D0;
+  v371[1] = dword_8054064;
+  v371[2] = D1;
+  v371[3] = dword_805406C;
   *(_DWORD *)*(&sel_on + on) = 0;
   JUMPOUT(0x8050641);
 }
@@ -78581,14 +78572,23 @@ void is_prime()
 // 8054090: using guessed type void *and;
 // 80540B0: using guessed type void *xor;
 // 8054300: using guessed type int alu_false[];
+// 8054510: using guessed type int alu_b0[260];
 // 8054920: using guessed type int alu_b1[];
 // 8054D30: using guessed type int alu_b2[];
 // 8055140: using guessed type int alu_b3[];
+// 8055550: using guessed type int alu_b4[260];
+// 8055960: using guessed type int alu_b5[260];
+// 8055D70: using guessed type int alu_b6[260];
+// 8056180: using guessed type int alu_b7[260];
 // 80575F0: using guessed type void *alu_eq;
 // 8067F20: using guessed type void *alu_add16;
+// 8168040: using guessed type unsigned __int16 alu_inv16[65544];
+// 81D2CE0: using guessed type int alu_mul_shl2[4100];
 // 81D6CF0: using guessed type int alu_mul_sums;
 // 81DAD00: using guessed type void *alu_mul_mul8l;
 // 81EB210: using guessed type void *alu_mul_mul8h;
+// 81FB720: using guessed type int alu_div_shl1_8_c_d[516];
+// 81FC750: using guessed type int alu_div_shl3_8_d[260];
 // 81FCF70: using guessed type void ***alu_cmp_of[6];
 // 81FCFD0: using guessed type int b0;
 // 81FCFD4: using guessed type int b1;

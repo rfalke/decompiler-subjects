@@ -12,7 +12,6 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int init_proc();
 int sub_8048ACC();
 // int getpagesize(void);
 // void abort(void);
@@ -22,12 +21,10 @@ int sub_8048ACC();
 // int __cdecl open64(_DWORD, _DWORD); weak
 // int __cdecl fputs_unlocked(_DWORD, _DWORD); weak
 // size_t __ctype_get_mb_cur_max(void);
-// int __gmon_start__(void); weak
 // void *realloc(void *ptr, size_t size);
 // void *calloc(size_t nmemb, size_t size);
 // ssize_t write(int fd, const void *buf, size_t n);
 // void *memset(void *s, int c, size_t n);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int __cdecl stpcpy(_DWORD, _DWORD); weak
 // int ferror_unlocked(FILE *stream);
 // void _exit(int status);
@@ -59,9 +56,6 @@ int sub_8048ACC();
 // int iswprint(wint_t wc);
 // int strcmp(const char *s1, const char *s2);
 // void exit(int status);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _do_global_dtors_aux();
-int frame_dummy();
 void __cdecl usage(int status);
 void emit_bug_reporting_address(); // idb
 void next_line_num(); // idb
@@ -75,7 +69,7 @@ void __cdecl version_etc_va(FILE *stream, const char *command_name, const char *
 void version_etc(FILE *stream, const char *command_name, const char *package, const char *version, ...);
 void __cdecl close_stdout_set_file_name(const char *file);
 void close_stdout(); // idb
-const char *__cdecl _ZNK6idVec58ToStringEi(int n, const char *name);
+const char *__cdecl quote_n(int n, const char *name);
 const char *__cdecl quote(const char *name);
 quoting_options *__cdecl clone_quoting_options(quoting_options *o);
 quoting_style __cdecl get_quoting_style(quoting_options *o);
@@ -104,7 +98,7 @@ void *__cdecl x2nrealloc(void *p, size_t *pn, size_t s);
 char *__cdecl xcharalloc(size_t n);
 void *__cdecl xmalloc(size_t n);
 void *__cdecl xrealloc(void *p, size_t n);
-void *__cdecl _ZN10Fl_Browser10bottomlineEi(void *p, size_t *pn);
+void *__cdecl x2realloc(void *p, size_t *pn);
 void *__cdecl xzalloc(size_t s);
 void *__cdecl xcalloc(size_t n, size_t s);
 void *__cdecl xmemdup(const void *p, size_t s);
@@ -121,12 +115,8 @@ int __cdecl rpl_isnanl(long double x);
 int __cdecl printf_fetchargs(va_list args, arguments *a);
 int __cdecl printf_parse(const char *format, char_directives *d, arguments *a);
 size_t __cdecl xsum_0(size_t size1, size_t size2);
-void _libc_csu_fini(void); // idb
-void _libc_csu_init(void); // idb
 int __cdecl atexit(void (__cdecl *lpfunc)(void *)); // idb
-int __cdecl fstat64(int a1, int a2);
-void (*_do_global_ctors_aux())(void);
-void term_proc();
+int __cdecl fstat64(int, int);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -146,12 +136,8 @@ const option long_options_4647[10] =
 }; // idb
 const char locale = '\0'; // idb
 const wchar_t wide_null_string_1636[7] = { 40, 78, 85, 76, 76, 41, 0 }; // idb
-int _CTOR_LIST__ = -1; // weak
-int _DTOR_LIST__[] = { -1 }; // weak
-int _DTOR_END__ = 0; // weak
-int _JCR_LIST__ = 0; // weak
 int (*dword_8051FFC)(void) = NULL; // weak
-_DWORD _dso_handle = 0; // idb
+_DWORD _dso_handle = 0; // weak
 char line_buf[20] = "                 0\t"; // idb
 char *line_num_print = (char *)0x80520CC; // idb
 char *line_num_start = (char *)0x80520D1; // idb
@@ -163,8 +149,6 @@ slotvec *slotvec_0 = &slotvec0; // idb
 int optind; // weak
 FILE *stderr; // idb
 FILE *stdout; // idb
-char completed_6635; // weak
-int dtor_idx_6637; // weak
 int newlines2; // idb
 const char *infile; // idb
 int input_desc; // idb
@@ -172,22 +156,7 @@ const char *file_name; // idb
 quoting_options default_quoting_options; // idb
 char slot0[256]; // idb
 char *program_name; // idb
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08048A9C) --------------------------------------------------------
-int init_proc()
-{
-  int v1; // [esp+0h] [ebp-8h]
-
-  if ( &_gmon_start__ )
-    __gmon_start__();
-  frame_dummy();
-  _do_global_ctors_aux();
-  return v1;
-}
-// 8048AC8: variable 'v1' is possibly undefined
-// 8048B5C: using guessed type int __gmon_start__(void);
 
 //----- (08048ACC) --------------------------------------------------------
 int sub_8048ACC()
@@ -195,55 +164,6 @@ int sub_8048ACC()
   return dword_8051FFC();
 }
 // 8051FFC: using guessed type int (*dword_8051FFC)(void);
-
-//----- (08048DC0) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, _libc_csu_init, _libc_csu_fini, a2, &v3);
-  __halt();
-}
-// 8048DC3: positive sp value 4 has been found
-
-//----- (08048DF0) --------------------------------------------------------
-void _do_global_dtors_aux()
-{
-  int v0; // edx
-  unsigned int i; // ebx
-
-  if ( !completed_6635 )
-  {
-    v0 = dtor_idx_6637;
-    for ( i = &_DTOR_END__ - _DTOR_LIST__ - 1; dtor_idx_6637 < i; v0 = dtor_idx_6637 )
-    {
-      dtor_idx_6637 = v0 + 1;
-      ((void (*)(void))_DTOR_LIST__[v0 + 1])();
-    }
-    completed_6635 = 1;
-  }
-}
-// 8051F10: using guessed type int _DTOR_LIST__[];
-// 8051F14: using guessed type int _DTOR_END__;
-// 8052124: using guessed type char completed_6635;
-// 8052128: using guessed type int dtor_idx_6637;
-
-//----- (08048E50) --------------------------------------------------------
-int frame_dummy()
-{
-  int result; // eax
-
-  result = _JCR_LIST__;
-  if ( _JCR_LIST__ )
-    result = 0;
-  return result;
-}
-// 8051F18: using guessed type int _JCR_LIST__;
 
 //----- (08048E74) --------------------------------------------------------
 void __cdecl __noreturn usage(int status)
@@ -379,7 +299,17 @@ bool __cdecl simple_cat(char *buf, size_t bufsize)
 }
 
 //----- (08049108) --------------------------------------------------------
-bool __cdecl cat(char *inbuf, size_t insize, char *outbuf, size_t outsize, bool show_nonprinting, bool show_tabs, bool number, bool number_nonblank, bool show_ends, bool squeeze_blank)
+bool __cdecl cat(
+        char *inbuf,
+        size_t insize,
+        char *outbuf,
+        size_t outsize,
+        bool show_nonprinting,
+        bool show_tabs,
+        bool number,
+        bool number_nonblank,
+        bool show_ends,
+        bool squeeze_blank)
 {
   char *v10; // ebx
   int *v11; // eax
@@ -660,7 +590,7 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
   char *v17; // ebx
   int *v18; // eax
   size_t v19; // [esp+4h] [ebp-DCh]
-  size_t v20; // [esp+10h] [ebp-D0h]
+  size_t st_blksize; // [esp+10h] [ebp-D0h]
   size_t v21; // [esp+14h] [ebp-CCh]
   bool v22; // [esp+18h] [ebp-C8h]
   bool v23; // [esp+1Ch] [ebp-C4h]
@@ -687,9 +617,9 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
   bool have_read_stdin; // [esp+CDh] [ebp-13h]
   bool check_redirection; // [esp+CEh] [ebp-12h]
   bool ok; // [esp+CFh] [ebp-11h]
-  int *v47; // [esp+D0h] [ebp-10h]
+  int *p_argc; // [esp+D0h] [ebp-10h]
 
-  v47 = &argc;
+  p_argc = &argc;
   page_size = getpagesize();
   ok = 1;
   check_redirection = 1;
@@ -790,10 +720,10 @@ LABEL_32:
     error(1, *v4, v3);
   }
   if ( stat_buf.st_blksize <= 0 || stat_buf.st_blksize > 0x20000000u )
-    v20 = 512;
+    st_blksize = 512;
   else
-    v20 = stat_buf.st_blksize;
-  outsize = v20;
+    st_blksize = stat_buf.st_blksize;
+  outsize = st_blksize;
   if ( (stat_buf.st_mode & 0xF000) == 0x8000 )
   {
     out_dev = stat_buf.st_dev;
@@ -927,7 +857,12 @@ size_t __cdecl full_write(int fd, const void *buf, size_t count)
 }
 
 //----- (08049E50) --------------------------------------------------------
-void __cdecl version_etc_va(FILE *stream, const char *command_name, const char *package, const char *version, va_list authors)
+void __cdecl version_etc_va(
+        FILE *stream,
+        const char *command_name,
+        const char *package,
+        const char *version,
+        va_list authors)
 {
   _DWORD *v5; // edx
   char *v6; // edx
@@ -1059,7 +994,7 @@ void close_stdout()
 }
 
 //----- (0804A1B8) --------------------------------------------------------
-const char *__cdecl _ZNK6idVec58ToStringEi(int n, const char *name)
+const char *__cdecl quote_n(int n, const char *name)
 {
   return quotearg_n_style(n, locale_quoting_style, name);
 }
@@ -1067,7 +1002,7 @@ const char *__cdecl _ZNK6idVec58ToStringEi(int n, const char *name)
 //----- (0804A1DA) --------------------------------------------------------
 const char *__cdecl quote(const char *name)
 {
-  return _ZNK6idVec58ToStringEi(0, name);
+  return quote_n(0, name);
 }
 
 //----- (0804A1F8) --------------------------------------------------------
@@ -1133,13 +1068,19 @@ const char *__cdecl gettext_quote(const char *msgid, quoting_style s)
 
   translation = gettext(msgid);
   if ( translation == msgid && s == clocale_quoting_style )
-    translation = (char *)L"\"`'";
+    return (const char *)L"\"`'";
   return translation;
 }
 // 805067C: using guessed type __int16 asc_805067C[4];
 
 //----- (0804A333) --------------------------------------------------------
-size_t __cdecl quotearg_buffer_restyled(char *buffer, size_t buffersize, const char *arg, size_t argsize, quoting_style quoting_style, const quoting_options *o)
+size_t __cdecl quotearg_buffer_restyled(
+        char *buffer,
+        size_t buffersize,
+        const char *arg,
+        size_t argsize,
+        quoting_style quoting_style,
+        const quoting_options *o)
 {
   unsigned int v7; // [esp+24h] [ebp-54h]
   bool v8; // [esp+32h] [ebp-46h]
@@ -1520,7 +1461,12 @@ store_escape:
 // 805067C: using guessed type __int16 asc_805067C[4];
 
 //----- (0804AA7F) --------------------------------------------------------
-size_t __cdecl quotearg_buffer(char *buffer, size_t buffersize, const char *arg, size_t argsize, const quoting_options *o)
+size_t __cdecl quotearg_buffer(
+        char *buffer,
+        size_t buffersize,
+        const char *arg,
+        size_t argsize,
+        const quoting_options *o)
 {
   quoting_options *v6; // [esp+24h] [ebp-14h]
   size_t r; // [esp+2Ch] [ebp-Ch]
@@ -1747,7 +1693,6 @@ size_t __cdecl safe_write(int fd, const void *buf, size_t count)
 int __cdecl rpl_vfprintf(FILE *fp, const char *format, va_list args)
 {
   size_t v3; // eax
-  int v5; // [esp+18h] [ebp-800h]
   int saved_errno; // [esp+34h] [ebp-7E4h]
   size_t lenbuf; // [esp+38h] [ebp-7E0h] BYREF
   size_t len; // [esp+3Ch] [ebp-7DCh]
@@ -1766,13 +1711,13 @@ int __cdecl rpl_vfprintf(FILE *fp, const char *format, va_list args)
     {
       if ( (len & 0x80000000) == 0 )
       {
-        v5 = len;
+        return len;
       }
       else
       {
         *__errno_location() = 75;
         fseterr(fp);
-        v5 = -1;
+        return -1;
       }
     }
     else
@@ -1783,15 +1728,14 @@ int __cdecl rpl_vfprintf(FILE *fp, const char *format, va_list args)
         free(output);
         *__errno_location() = saved_errno;
       }
-      v5 = -1;
+      return -1;
     }
   }
   else
   {
     fseterr(fp);
-    v5 = -1;
+    return -1;
   }
-  return v5;
 }
 
 //----- (0804B1FC) --------------------------------------------------------
@@ -1859,7 +1803,7 @@ void *__cdecl xrealloc(void *p, size_t n)
 }
 
 //----- (0804B348) --------------------------------------------------------
-void *__cdecl _ZN10Fl_Browser10bottomlineEi(void *p, size_t *pn)
+void *__cdecl x2realloc(void *p, size_t *pn)
 {
   return x2nrealloc(p, pn, 1u);
 }
@@ -1945,7 +1889,7 @@ int __cdecl is_infinitel(long double x)
 char *__cdecl vasnprintf(char *resultbuf, size_t *lengthp, const char *format, va_list args)
 {
   void *v4; // esp
-  _DWORD *v5; // ecx
+  _DWORD *a_count_int_pointer; // ecx
   argument *v6; // eax
   unsigned int v7; // ecx
   unsigned int v8; // edx
@@ -1962,57 +1906,58 @@ char *__cdecl vasnprintf(char *resultbuf, size_t *lengthp, const char *format, v
   size_t v19; // eax
   char *v20; // eax
   long double v21; // [esp+0h] [ebp-558h]
-  char v22; // [esp+33h] [ebp-525h] BYREF
-  unsigned int v23; // [esp+38h] [ebp-520h]
-  unsigned int v24; // [esp+3Ch] [ebp-51Ch]
-  unsigned int v25; // [esp+40h] [ebp-518h]
-  unsigned int v26; // [esp+44h] [ebp-514h]
-  unsigned int v27; // [esp+48h] [ebp-510h]
-  unsigned int v28; // [esp+4Ch] [ebp-50Ch]
-  unsigned int v29; // [esp+50h] [ebp-508h]
-  unsigned int v30; // [esp+54h] [ebp-504h]
-  unsigned int v31; // [esp+58h] [ebp-500h]
-  unsigned int v32; // [esp+5Ch] [ebp-4FCh]
-  unsigned int v33; // [esp+60h] [ebp-4F8h]
-  unsigned int v34; // [esp+64h] [ebp-4F4h]
-  unsigned int v35; // [esp+68h] [ebp-4F0h]
-  unsigned int v36; // [esp+6Ch] [ebp-4ECh]
-  unsigned int v37; // [esp+70h] [ebp-4E8h]
-  unsigned int v38; // [esp+74h] [ebp-4E4h]
-  unsigned int v39; // [esp+78h] [ebp-4E0h]
-  int v40; // [esp+7Ch] [ebp-4DCh]
-  int v41; // [esp+84h] [ebp-4D4h]
-  char *v43; // [esp+8Ch] [ebp-4CCh]
-  size_t v44; // [esp+90h] [ebp-4C8h]
-  size_t v45; // [esp+94h] [ebp-4C4h]
-  size_t v46; // [esp+98h] [ebp-4C0h]
-  size_t v47; // [esp+9Ch] [ebp-4BCh]
+  long double v22; // [esp+0h] [ebp-558h]
+  _BYTE v23[8]; // [esp+30h] [ebp-528h] BYREF
+  unsigned int v24; // [esp+38h] [ebp-520h]
+  unsigned int v25; // [esp+3Ch] [ebp-51Ch]
+  unsigned int v26; // [esp+40h] [ebp-518h]
+  unsigned int v27; // [esp+44h] [ebp-514h]
+  unsigned int v28; // [esp+48h] [ebp-510h]
+  unsigned int v29; // [esp+4Ch] [ebp-50Ch]
+  unsigned int v30; // [esp+50h] [ebp-508h]
+  unsigned int v31; // [esp+54h] [ebp-504h]
+  unsigned int v32; // [esp+58h] [ebp-500h]
+  unsigned int v33; // [esp+5Ch] [ebp-4FCh]
+  unsigned int v34; // [esp+60h] [ebp-4F8h]
+  unsigned int v35; // [esp+64h] [ebp-4F4h]
+  unsigned int v36; // [esp+68h] [ebp-4F0h]
+  unsigned int v37; // [esp+6Ch] [ebp-4ECh]
+  unsigned int v38; // [esp+70h] [ebp-4E8h]
+  unsigned int v39; // [esp+74h] [ebp-4E4h]
+  unsigned int v40; // [esp+78h] [ebp-4E0h]
+  int v41; // [esp+7Ch] [ebp-4DCh]
+  int v42; // [esp+84h] [ebp-4D4h]
+  _BYTE *v44; // [esp+8Ch] [ebp-4CCh]
+  size_t v45; // [esp+90h] [ebp-4C8h]
+  size_t v46; // [esp+94h] [ebp-4C4h]
+  size_t v47; // [esp+98h] [ebp-4C0h]
+  size_t v48; // [esp+9Ch] [ebp-4BCh]
   size_t size2; // [esp+A0h] [ebp-4B8h]
   size_t size1; // [esp+A4h] [ebp-4B4h]
-  size_t v50; // [esp+A8h] [ebp-4B0h]
-  size_t v51; // [esp+ACh] [ebp-4ACh]
-  size_t v52; // [esp+B0h] [ebp-4A8h]
-  size_t v53; // [esp+B4h] [ebp-4A4h]
-  size_t v54; // [esp+B8h] [ebp-4A0h]
-  size_t v55; // [esp+BCh] [ebp-49Ch]
-  size_t v56; // [esp+C0h] [ebp-498h]
-  size_t v57; // [esp+C4h] [ebp-494h]
-  size_t v58; // [esp+C8h] [ebp-490h]
-  size_t v59; // [esp+CCh] [ebp-48Ch]
-  size_t v60; // [esp+D0h] [ebp-488h]
-  size_t v61; // [esp+D4h] [ebp-484h]
-  size_t v62; // [esp+D8h] [ebp-480h]
-  size_t v63; // [esp+DCh] [ebp-47Ch]
+  size_t v51; // [esp+A8h] [ebp-4B0h]
+  size_t v52; // [esp+ACh] [ebp-4ACh]
+  size_t v53; // [esp+B0h] [ebp-4A8h]
+  size_t v54; // [esp+B4h] [ebp-4A4h]
+  size_t v55; // [esp+B8h] [ebp-4A0h]
+  size_t v56; // [esp+BCh] [ebp-49Ch]
+  size_t v57; // [esp+C0h] [ebp-498h]
+  size_t v58; // [esp+C4h] [ebp-494h]
+  size_t v59; // [esp+C8h] [ebp-490h]
+  size_t v60; // [esp+CCh] [ebp-48Ch]
+  size_t v61; // [esp+D0h] [ebp-488h]
+  size_t v62; // [esp+D4h] [ebp-484h]
+  size_t v63; // [esp+D8h] [ebp-480h]
+  size_t v64; // [esp+DCh] [ebp-47Ch]
   va_list argsa; // [esp+E0h] [ebp-478h]
   const char *formata; // [esp+E4h] [ebp-474h]
   size_t *lengthpa; // [esp+E8h] [ebp-470h]
   char *resultbufa; // [esp+ECh] [ebp-46Ch]
   char_directives d; // [esp+F0h] [ebp-468h] BYREF
-  long double v69; // [esp+100h] [ebp-458h]
+  long double v70; // [esp+100h] [ebp-458h]
   long double x; // [esp+110h] [ebp-448h]
-  double v71; // [esp+128h] [ebp-430h]
-  unsigned __int64 v72; // [esp+130h] [ebp-428h]
-  __int64 v73; // [esp+138h] [ebp-420h]
+  double a_double; // [esp+128h] [ebp-430h]
+  unsigned __int64 a_ulonglongint; // [esp+130h] [ebp-428h]
+  __int64 v74; // [esp+138h] [ebp-420h]
   int prefixes[2]; // [esp+140h] [ebp-418h]
   arguments a; // [esp+148h] [ebp-410h] BYREF
   char *memory_6; // [esp+150h] [ebp-408h]
@@ -2024,19 +1969,19 @@ char *__cdecl vasnprintf(char *resultbuf, size_t *lengthp, const char *format, v
   char *memory_3; // [esp+168h] [ebp-3F0h]
   size_t memory_size_3; // [esp+16Ch] [ebp-3ECh]
   size_t bigger_need; // [esp+170h] [ebp-3E8h]
-  void *v85; // [esp+174h] [ebp-3E4h]
-  const wchar_t *v86; // [esp+178h] [ebp-3E0h]
-  const char *v87; // [esp+17Ch] [ebp-3DCh]
-  wint_t v88; // [esp+180h] [ebp-3D8h]
-  int v89; // [esp+184h] [ebp-3D4h]
-  unsigned int v90; // [esp+188h] [ebp-3D0h]
-  int v91; // [esp+18Ch] [ebp-3CCh]
-  unsigned int v92; // [esp+190h] [ebp-3C8h]
-  int v93; // [esp+194h] [ebp-3C4h]
-  unsigned int v94; // [esp+198h] [ebp-3C0h]
-  int v95; // [esp+19Ch] [ebp-3BCh]
-  unsigned int v96; // [esp+1A0h] [ebp-3B8h]
-  int v97; // [esp+1A4h] [ebp-3B4h]
+  void *a_pointer; // [esp+174h] [ebp-3E4h]
+  const wchar_t *a_wide_string; // [esp+178h] [ebp-3E0h]
+  const char *a_string; // [esp+17Ch] [ebp-3DCh]
+  wint_t v89; // [esp+180h] [ebp-3D8h]
+  int v90; // [esp+184h] [ebp-3D4h]
+  unsigned int v91; // [esp+188h] [ebp-3D0h]
+  int v92; // [esp+18Ch] [ebp-3CCh]
+  unsigned int a_uint; // [esp+190h] [ebp-3C8h]
+  int a_int; // [esp+194h] [ebp-3C4h]
+  unsigned int a_ushort; // [esp+198h] [ebp-3C0h]
+  int a_short; // [esp+19Ch] [ebp-3BCh]
+  unsigned int a_uchar; // [esp+1A0h] [ebp-3B8h]
+  int a_schar; // [esp+1A4h] [ebp-3B4h]
   size_t maxlen; // [esp+1A8h] [ebp-3B0h]
   int retcount; // [esp+1ACh] [ebp-3ACh]
   int count_0; // [esp+1B0h] [ebp-3A8h] BYREF
@@ -2059,7 +2004,7 @@ char *__cdecl vasnprintf(char *resultbuf, size_t *lengthp, const char *format, v
   int sign; // [esp+1FCh] [ebp-35Ch]
   size_t tmp_memsize; // [esp+200h] [ebp-358h]
   const char *digitp_0; // [esp+204h] [ebp-354h]
-  int v120; // [esp+208h] [ebp-350h]
+  int v121; // [esp+208h] [ebp-350h]
   const char *digitp; // [esp+20Ch] [ebp-34Ch]
   int arg; // [esp+210h] [ebp-348h]
   char *p; // [esp+214h] [ebp-344h]
@@ -2090,13 +2035,13 @@ char *__cdecl vasnprintf(char *resultbuf, size_t *lengthp, const char *format, v
   size_t buf_neededlength; // [esp+278h] [ebp-2E0h]
   fpucw_t oldcw; // [esp+27Eh] [ebp-2DAh]
   char tmpbuf[700]; // [esp+280h] [ebp-2D8h] BYREF
-  unsigned int v151; // [esp+53Ch] [ebp-1Ch]
+  unsigned int v152; // [esp+53Ch] [ebp-1Ch]
 
   resultbufa = resultbuf;
   lengthpa = lengthp;
   formata = format;
   argsa = args;
-  v151 = __readgsdword(0x14u);
+  v152 = __readgsdword(0x14u);
   if ( printf_parse(format, &d, &a) < 0 )
     return 0;
   if ( printf_fetchargs(argsa, &a) < 0 )
@@ -2121,8 +2066,8 @@ char *__cdecl vasnprintf(char *resultbuf, size_t *lengthp, const char *format, v
   else
   {
     v4 = alloca(16 * ((buf_neededlength + 30) >> 4));
-    v43 = (char *)(16 * ((unsigned int)&v22 >> 4));
-    buf = v43;
+    v44 = v23;
+    buf = v23;
     buf_malloced = 0;
   }
   if ( resultbufa )
@@ -2149,17 +2094,17 @@ char *__cdecl vasnprintf(char *resultbuf, size_t *lengthp, const char *format, v
         if ( allocated )
         {
           if ( (allocated & 0x80000000) != 0 )
-            v45 = -1;
+            v46 = -1;
           else
-            v45 = 2 * allocated;
-          v44 = v45;
+            v46 = 2 * allocated;
+          v45 = v46;
         }
         else
         {
-          v44 = 12;
+          v45 = 12;
         }
-        allocated = v44;
-        if ( augmented_length > v44 )
+        allocated = v45;
+        if ( augmented_length > v45 )
           allocated = augmented_length;
         memory_size = allocated;
         if ( allocated == -1 )
@@ -2186,17 +2131,17 @@ char *__cdecl vasnprintf(char *resultbuf, size_t *lengthp, const char *format, v
         if ( allocated )
         {
           if ( (allocated & 0x80000000) != 0 )
-            v47 = -1;
+            v48 = -1;
           else
-            v47 = 2 * allocated;
-          v46 = v47;
+            v48 = 2 * allocated;
+          v47 = v48;
         }
         else
         {
-          v46 = 12;
+          v47 = 12;
         }
-        allocated = v46;
-        if ( augmented_length_0 > v46 )
+        allocated = v47;
+        if ( augmented_length_0 > v47 )
           allocated = augmented_length_0;
         memory_size_0 = allocated;
         if ( allocated == -1 )
@@ -2217,8 +2162,8 @@ char *__cdecl vasnprintf(char *resultbuf, size_t *lengthp, const char *format, v
         abort();
       if ( dp->conversion == 110 )
       {
-        v41 = a.arg[dp->arg_index].type - 18;
-        switch ( v41 )
+        v42 = a.arg[dp->arg_index].type - 18;
+        switch ( v42 )
         {
           case 0:
             *a.arg[dp->arg_index].a.a_count_schar_pointer = length;
@@ -2233,9 +2178,9 @@ char *__cdecl vasnprintf(char *resultbuf, size_t *lengthp, const char *format, v
             *a.arg[dp->arg_index].a.a_count_int_pointer = length;
             break;
           case 4:
-            v5 = a.arg[dp->arg_index].a.a_count_int_pointer;
-            *v5 = length;
-            v5[1] = 0;
+            a_count_int_pointer = a.arg[dp->arg_index].a.a_count_int_pointer;
+            *a_count_int_pointer = length;
+            a_count_int_pointer[1] = 0;
             break;
           default:
             abort();
@@ -2286,14 +2231,14 @@ char *__cdecl vasnprintf(char *resultbuf, size_t *lengthp, const char *format, v
           }
           if ( (unsigned int)type <= TYPE_WIDE_STRING )
           {
-            v40 = 1 << type;
+            v41 = 1 << type;
             if ( ((1 << type) & 0x14180) != 0 )
               goto LABEL_207;
-            if ( (v40 & 0x1000) != 0 )
+            if ( (v41 & 0x1000) != 0 )
             {
               *fbp++ = 76;
             }
-            else if ( (v40 & 0x600) != 0 )
+            else if ( (v41 & 0x600) != 0 )
             {
               *fbp++ = 108;
 LABEL_207:
@@ -2320,16 +2265,16 @@ LABEL_207:
             if ( allocated )
             {
               if ( (allocated & 0x80000000) != 0 )
-                v55 = -1;
+                v56 = -1;
               else
-                v55 = 2 * allocated;
-              v54 = v55;
+                v56 = 2 * allocated;
+              v55 = v56;
             }
             else
             {
-              v54 = 12;
+              v55 = 12;
             }
-            allocated = v54;
+            allocated = v55;
             v11 = xsum(length, 2u);
             if ( v11 > allocated )
               allocated = xsum(length, 2u);
@@ -2369,97 +2314,115 @@ LABEL_236:
             switch ( type )
             {
               case TYPE_SCHAR:
-                v97 = a.arg[dp->arg_index].a.a_schar;
+                a_schar = a.arg[dp->arg_index].a.a_schar;
+                v40 = prefix_count;
+                if ( prefix_count == 1 )
+                {
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], a_schar, &count_0);
+                }
+                else if ( v40 )
+                {
+                  if ( v40 != 2 )
+                    abort();
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], a_schar, &count_0);
+                }
+                else
+                {
+                  retcount = snprintf(&result[length], maxlen, buf, a_schar, &count_0);
+                }
+                break;
+              case TYPE_UCHAR:
+                a_uchar = a.arg[dp->arg_index].a.a_uchar;
                 v39 = prefix_count;
                 if ( prefix_count == 1 )
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v97, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], a_uchar, &count_0);
                 }
                 else if ( v39 )
                 {
                   if ( v39 != 2 )
                     abort();
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v97, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], a_uchar, &count_0);
                 }
                 else
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, v97, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, a_uchar, &count_0);
                 }
                 break;
-              case TYPE_UCHAR:
-                v96 = a.arg[dp->arg_index].a.a_uchar;
+              case TYPE_SHORT:
+                a_short = a.arg[dp->arg_index].a.a_short;
                 v38 = prefix_count;
                 if ( prefix_count == 1 )
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v96, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], a_short, &count_0);
                 }
                 else if ( v38 )
                 {
                   if ( v38 != 2 )
                     abort();
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v96, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], a_short, &count_0);
                 }
                 else
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, v96, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, a_short, &count_0);
                 }
                 break;
-              case TYPE_SHORT:
-                v95 = a.arg[dp->arg_index].a.a_short;
+              case TYPE_USHORT:
+                a_ushort = a.arg[dp->arg_index].a.a_ushort;
                 v37 = prefix_count;
                 if ( prefix_count == 1 )
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v95, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], a_ushort, &count_0);
                 }
                 else if ( v37 )
                 {
                   if ( v37 != 2 )
                     abort();
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v95, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], a_ushort, &count_0);
                 }
                 else
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, v95, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, a_ushort, &count_0);
                 }
                 break;
-              case TYPE_USHORT:
-                v94 = a.arg[dp->arg_index].a.a_ushort;
+              case TYPE_INT:
+                a_int = a.arg[dp->arg_index].a.a_int;
                 v36 = prefix_count;
                 if ( prefix_count == 1 )
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v94, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], a_int, &count_0);
                 }
                 else if ( v36 )
                 {
                   if ( v36 != 2 )
                     abort();
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v94, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], a_int, &count_0);
                 }
                 else
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, v94, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, a_int, &count_0);
                 }
                 break;
-              case TYPE_INT:
-                v93 = a.arg[dp->arg_index].a.a_int;
+              case TYPE_UINT:
+                a_uint = a.arg[dp->arg_index].a.a_uint;
                 v35 = prefix_count;
                 if ( prefix_count == 1 )
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v93, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], a_uint, &count_0);
                 }
                 else if ( v35 )
                 {
                   if ( v35 != 2 )
                     abort();
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v93, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], a_uint, &count_0);
                 }
                 else
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, v93, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, a_uint, &count_0);
                 }
                 break;
-              case TYPE_UINT:
-                v92 = a.arg[dp->arg_index].a.a_uint;
+              case TYPE_LONGINT:
+                v92 = a.arg[dp->arg_index].a.a_int;
                 v34 = prefix_count;
                 if ( prefix_count == 1 )
                 {
@@ -2476,8 +2439,8 @@ LABEL_236:
                   retcount = snprintf(&result[length], maxlen, buf, v92, &count_0);
                 }
                 break;
-              case TYPE_LONGINT:
-                v91 = a.arg[dp->arg_index].a.a_int;
+              case TYPE_ULONGINT:
+                v91 = a.arg[dp->arg_index].a.a_uint;
                 v33 = prefix_count;
                 if ( prefix_count == 1 )
                 {
@@ -2494,16 +2457,110 @@ LABEL_236:
                   retcount = snprintf(&result[length], maxlen, buf, v91, &count_0);
                 }
                 break;
-              case TYPE_ULONGINT:
-                v90 = a.arg[dp->arg_index].a.a_uint;
+              case TYPE_LONGLONGINT:
+                v12 = &a.arg[dp->arg_index];
+                v13 = *((_DWORD *)&v12->a.a_ushort + 1);
+                LODWORD(v74) = v12->a.a_int;
+                HIDWORD(v74) = v13;
                 v32 = prefix_count;
                 if ( prefix_count == 1 )
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v90, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v74, &count_0);
                 }
                 else if ( v32 )
                 {
                   if ( v32 != 2 )
+                    abort();
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v74, &count_0);
+                }
+                else
+                {
+                  retcount = snprintf(&result[length], maxlen, buf, v74, &count_0);
+                }
+                break;
+              case TYPE_ULONGLONGINT:
+                a_ulonglongint = a.arg[dp->arg_index].a.a_ulonglongint;
+                v31 = prefix_count;
+                if ( prefix_count == 1 )
+                {
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], a_ulonglongint, &count_0);
+                }
+                else if ( v31 )
+                {
+                  if ( v31 != 2 )
+                    abort();
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], a_ulonglongint, &count_0);
+                }
+                else
+                {
+                  retcount = snprintf(&result[length], maxlen, buf, a_ulonglongint, &count_0);
+                }
+                break;
+              case TYPE_DOUBLE:
+                a_double = a.arg[dp->arg_index].a.a_double;
+                v30 = prefix_count;
+                if ( prefix_count == 1 )
+                {
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], a_double, &count_0);
+                }
+                else if ( v30 )
+                {
+                  if ( v30 != 2 )
+                    abort();
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], a_double, &count_0);
+                }
+                else
+                {
+                  retcount = snprintf(&result[length], maxlen, buf, a_double, &count_0);
+                }
+                break;
+              case TYPE_LONGDOUBLE:
+                v14 = &a.arg[dp->arg_index];
+                v15 = *(&v14->a.a_ulongint + 2);
+                v16 = *((_DWORD *)&v14->a.a_ushort + 1);
+                LODWORD(v70) = v14->a.a_int;
+                *(_QWORD *)((char *)&v70 + 4) = __PAIR64__(v15, v16);
+                v29 = prefix_count;
+                if ( prefix_count == 1 )
+                {
+                  retcount = snprintf(
+                               &result[length],
+                               maxlen,
+                               buf,
+                               prefixes[0],
+                               *(_QWORD *)&v70,
+                               HIDWORD(v70),
+                               &count_0);
+                }
+                else if ( v29 )
+                {
+                  if ( v29 != 2 )
+                    abort();
+                  retcount = snprintf(
+                               &result[length],
+                               maxlen,
+                               buf,
+                               prefixes[0],
+                               prefixes[1],
+                               *(_QWORD *)&v70,
+                               HIDWORD(v70),
+                               &count_0);
+                }
+                else
+                {
+                  retcount = snprintf(&result[length], maxlen, buf, *(_QWORD *)&v70, HIDWORD(v70), &count_0);
+                }
+                break;
+              case TYPE_CHAR:
+                v90 = a.arg[dp->arg_index].a.a_int;
+                v28 = prefix_count;
+                if ( prefix_count == 1 )
+                {
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v90, &count_0);
+                }
+                else if ( v28 )
+                {
+                  if ( v28 != 2 )
                     abort();
                   retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v90, &count_0);
                 }
@@ -2512,102 +2569,8 @@ LABEL_236:
                   retcount = snprintf(&result[length], maxlen, buf, v90, &count_0);
                 }
                 break;
-              case TYPE_LONGLONGINT:
-                v12 = &a.arg[dp->arg_index];
-                v13 = *((_DWORD *)&v12->a.a_ushort + 1);
-                LODWORD(v73) = v12->a.a_int;
-                HIDWORD(v73) = v13;
-                v31 = prefix_count;
-                if ( prefix_count == 1 )
-                {
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v73, &count_0);
-                }
-                else if ( v31 )
-                {
-                  if ( v31 != 2 )
-                    abort();
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v73, &count_0);
-                }
-                else
-                {
-                  retcount = snprintf(&result[length], maxlen, buf, v73, &count_0);
-                }
-                break;
-              case TYPE_ULONGLONGINT:
-                v72 = a.arg[dp->arg_index].a.a_ulonglongint;
-                v30 = prefix_count;
-                if ( prefix_count == 1 )
-                {
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v72, &count_0);
-                }
-                else if ( v30 )
-                {
-                  if ( v30 != 2 )
-                    abort();
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v72, &count_0);
-                }
-                else
-                {
-                  retcount = snprintf(&result[length], maxlen, buf, v72, &count_0);
-                }
-                break;
-              case TYPE_DOUBLE:
-                v71 = a.arg[dp->arg_index].a.a_double;
-                v29 = prefix_count;
-                if ( prefix_count == 1 )
-                {
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v71, &count_0);
-                }
-                else if ( v29 )
-                {
-                  if ( v29 != 2 )
-                    abort();
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v71, &count_0);
-                }
-                else
-                {
-                  retcount = snprintf(&result[length], maxlen, buf, v71, &count_0);
-                }
-                break;
-              case TYPE_LONGDOUBLE:
-                v14 = &a.arg[dp->arg_index];
-                v15 = *(&v14->a.a_ulongint + 2);
-                v16 = *((_DWORD *)&v14->a.a_ushort + 1);
-                LODWORD(v69) = v14->a.a_int;
-                *(_QWORD *)((char *)&v69 + 4) = __PAIR64__(v15, v16);
-                v28 = prefix_count;
-                if ( prefix_count == 1 )
-                {
-                  retcount = snprintf(
-                               &result[length],
-                               maxlen,
-                               buf,
-                               prefixes[0],
-                               *(_QWORD *)&v69,
-                               HIDWORD(v69),
-                               &count_0);
-                }
-                else if ( v28 )
-                {
-                  if ( v28 != 2 )
-                    abort();
-                  retcount = snprintf(
-                               &result[length],
-                               maxlen,
-                               buf,
-                               prefixes[0],
-                               prefixes[1],
-                               *(_QWORD *)&v69,
-                               HIDWORD(v69),
-                               &count_0);
-                }
-                else
-                {
-                  retcount = snprintf(&result[length], maxlen, buf, *(_QWORD *)&v69, HIDWORD(v69), &count_0);
-                }
-                break;
-              case TYPE_CHAR:
-                v89 = a.arg[dp->arg_index].a.a_int;
+              case TYPE_WIDE_CHAR:
+                v89 = a.arg[dp->arg_index].a.a_uint;
                 v27 = prefix_count;
                 if ( prefix_count == 1 )
                 {
@@ -2624,76 +2587,58 @@ LABEL_236:
                   retcount = snprintf(&result[length], maxlen, buf, v89, &count_0);
                 }
                 break;
-              case TYPE_WIDE_CHAR:
-                v88 = a.arg[dp->arg_index].a.a_uint;
+              case TYPE_STRING:
+                a_string = a.arg[dp->arg_index].a.a_string;
                 v26 = prefix_count;
                 if ( prefix_count == 1 )
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v88, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], a_string, &count_0);
                 }
                 else if ( v26 )
                 {
                   if ( v26 != 2 )
                     abort();
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v88, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], a_string, &count_0);
                 }
                 else
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, v88, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, a_string, &count_0);
                 }
                 break;
-              case TYPE_STRING:
-                v87 = a.arg[dp->arg_index].a.a_string;
+              case TYPE_WIDE_STRING:
+                a_wide_string = a.arg[dp->arg_index].a.a_wide_string;
                 v25 = prefix_count;
                 if ( prefix_count == 1 )
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v87, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], a_wide_string, &count_0);
                 }
                 else if ( v25 )
                 {
                   if ( v25 != 2 )
                     abort();
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v87, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], a_wide_string, &count_0);
                 }
                 else
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, v87, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, a_wide_string, &count_0);
                 }
                 break;
-              case TYPE_WIDE_STRING:
-                v86 = a.arg[dp->arg_index].a.a_wide_string;
+              case TYPE_POINTER:
+                a_pointer = a.arg[dp->arg_index].a.a_pointer;
                 v24 = prefix_count;
                 if ( prefix_count == 1 )
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v86, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], a_pointer, &count_0);
                 }
                 else if ( v24 )
                 {
                   if ( v24 != 2 )
                     abort();
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v86, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], a_pointer, &count_0);
                 }
                 else
                 {
-                  retcount = snprintf(&result[length], maxlen, buf, v86, &count_0);
-                }
-                break;
-              case TYPE_POINTER:
-                v85 = a.arg[dp->arg_index].a.a_pointer;
-                v23 = prefix_count;
-                if ( prefix_count == 1 )
-                {
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], v85, &count_0);
-                }
-                else if ( v23 )
-                {
-                  if ( v23 != 2 )
-                    abort();
-                  retcount = snprintf(&result[length], maxlen, buf, prefixes[0], prefixes[1], v85, &count_0);
-                }
-                else
-                {
-                  retcount = snprintf(&result[length], maxlen, buf, v85, &count_0);
+                  retcount = snprintf(&result[length], maxlen, buf, a_pointer, &count_0);
                 }
                 break;
               default:
@@ -2710,26 +2655,26 @@ LABEL_236:
               if ( retcount < 0 )
               {
                 if ( (allocated & 0x80000000) != 0 )
-                  v56 = -1;
+                  v57 = -1;
                 else
-                  v56 = 2 * allocated;
-                bigger_need = xsum(v56, 0xCu);
+                  v57 = 2 * allocated;
+                bigger_need = xsum(v57, 0xCu);
                 if ( bigger_need > allocated )
                 {
                   if ( allocated )
                   {
                     if ( (allocated & 0x80000000) != 0 )
-                      v58 = -1;
+                      v59 = -1;
                     else
-                      v58 = 2 * allocated;
-                    v57 = v58;
+                      v59 = 2 * allocated;
+                    v58 = v59;
                   }
                   else
                   {
-                    v57 = 12;
+                    v58 = 12;
                   }
-                  allocated = v57;
-                  if ( bigger_need > v57 )
+                  allocated = v58;
+                  if ( bigger_need > v58 )
                     allocated = bigger_need;
                   memory_size_3 = allocated;
                   if ( allocated == -1 )
@@ -2782,27 +2727,27 @@ LABEL_236:
               return 0;
             }
             if ( (allocated & 0x80000000) != 0 )
-              v59 = -1;
+              v60 = -1;
             else
-              v59 = 2 * allocated;
+              v60 = 2 * allocated;
             v17 = xsum(length, count_0 + 2);
-            n_3 = xmax(v17, v59);
+            n_3 = xmax(v17, v60);
             if ( n_3 > allocated )
             {
               if ( allocated )
               {
                 if ( (allocated & 0x80000000) != 0 )
-                  v61 = -1;
+                  v62 = -1;
                 else
-                  v61 = 2 * allocated;
-                v60 = v61;
+                  v62 = 2 * allocated;
+                v61 = v62;
               }
               else
               {
-                v60 = 12;
+                v61 = 12;
               }
-              allocated = v60;
-              if ( n_3 > v60 )
+              allocated = v61;
+              if ( n_3 > v61 )
                 allocated = n_3;
               memory_size_4 = allocated;
               if ( allocated == -1 )
@@ -2862,12 +2807,12 @@ LABEL_236:
             precision = 0;
             while ( dp->precision_end != digitp_0 )
             {
-              v50 = *digitp_0++ - 48;
+              v51 = *digitp_0++ - 48;
               if ( precision > 0x19999999 )
-                v51 = -1;
+                v52 = -1;
               else
-                v51 = 10 * precision;
-              precision = xsum(v51, v50);
+                v52 = 10 * precision;
+              precision = xsum(v52, v51);
             }
             has_precision = 1;
           }
@@ -2875,10 +2820,10 @@ LABEL_236:
           {
             if ( a.arg[dp->precision_arg_index].type != TYPE_INT )
               abort();
-            v120 = a.arg[dp->precision_arg_index].a.a_int;
-            if ( v120 >= 0 )
+            v121 = a.arg[dp->precision_arg_index].a.a_int;
+            if ( v121 >= 0 )
             {
-              precision = v120;
+              precision = v121;
               has_precision = 1;
             }
           }
@@ -2912,8 +2857,8 @@ LABEL_236:
         v8 = *((_DWORD *)&v6->a.a_ushort + 1);
         LODWORD(x) = v6->a.a_int;
         *(_QWORD *)((char *)&x + 4) = __PAIR64__(v7, v8);
-        LODWORD(v21) = LODWORD(x);
-        *(_QWORD *)((char *)&v21 + 4) = __PAIR64__(v7, v8);
+        *(_QWORD *)&v21 = __PAIR64__(v8, LODWORD(x));
+        HIDWORD(v21) = v7;
         if ( rpl_isnanl(v21) )
         {
           if ( dp->conversion <= 64 || dp->conversion > 90 )
@@ -2936,7 +2881,8 @@ LABEL_236:
           LOBYTE(v9) = count_0;
           HIBYTE(v9) = BYTE1(count_0) | 3;
           LOWORD(count_0) = v9;
-          if ( __signbitl(LODWORD(x), DWORD1(x), HIDWORD(x)) )
+          v22 = x;
+          if ( __signbitl(LODWORD(v22), DWORD1(v22), HIDWORD(v22)) )
           {
             sign = -1;
             x = -x;
@@ -3019,17 +2965,17 @@ LABEL_236:
             if ( allocated )
             {
               if ( (allocated & 0x80000000) != 0 )
-                v53 = -1;
+                v54 = -1;
               else
-                v53 = 2 * allocated;
-              v52 = v53;
+                v54 = 2 * allocated;
+              v53 = v54;
             }
             else
             {
-              v52 = 12;
+              v53 = 12;
             }
-            allocated = v52;
-            if ( n_0 > v52 )
+            allocated = v53;
+            if ( n_0 > v53 )
               allocated = n_0;
             memory_size_1 = allocated;
             if ( allocated == -1 )
@@ -3058,16 +3004,16 @@ LABEL_426:
     if ( allocated )
     {
       if ( (allocated & 0x80000000) != 0 )
-        v63 = -1;
+        v64 = -1;
       else
-        v63 = 2 * allocated;
-      v62 = v63;
+        v64 = 2 * allocated;
+      v63 = v64;
     }
     else
     {
-      v62 = 12;
+      v63 = 12;
     }
-    allocated = v62;
+    allocated = v63;
     v19 = xsum(length, 1u);
     if ( v19 > allocated )
       allocated = xsum(length, 1u);
@@ -3116,20 +3062,17 @@ size_t __cdecl xmax(size_t size1, size_t size2)
 
   v3 = size1;
   if ( size1 < size2 )
-    v3 = size2;
+    return size2;
   return v3;
 }
 
 //----- (0804E9F6) --------------------------------------------------------
 size_t __cdecl xsum(size_t size1, size_t size2)
 {
-  size_t v3; // [esp+0h] [ebp-14h]
-
   if ( size2 + size1 < size1 )
-    v3 = -1;
+    return -1;
   else
-    v3 = size2 + size1;
-  return v3;
+    return size2 + size1;
 }
 
 //----- (0804EA24) --------------------------------------------------------
@@ -3314,7 +3257,7 @@ LABEL_27:
 //----- (0804ED4C) --------------------------------------------------------
 int __cdecl printf_parse(const char *format, char_directives *d, arguments *a)
 {
-  size_t v3; // edx
+  size_t count; // edx
   size_t v4; // edx
   size_t v5; // edx
   int size1; // [esp+14h] [ebp-C4h]
@@ -3504,9 +3447,9 @@ out_of_memory:
       }
       while ( a->count <= n_1 )
       {
-        v3 = a->count;
+        count = a->count;
         a->arg[a->count].type = TYPE_NONE;
-        a->count = v3 + 1;
+        a->count = count + 1;
       }
       if ( a->arg[n_1].type )
       {
@@ -3866,25 +3809,10 @@ error:
 //----- (0804FBAD) --------------------------------------------------------
 size_t __cdecl xsum_0(size_t size1, size_t size2)
 {
-  size_t v3; // [esp+0h] [ebp-14h]
-
   if ( size2 + size1 < size1 )
-    v3 = -1;
+    return -1;
   else
-    v3 = size2 + size1;
-  return v3;
-}
-
-//----- (0804FBE0) --------------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (0804FBF0) --------------------------------------------------------
-void _libc_csu_init(void)
-{
-  init_proc();
+    return size2 + size1;
 }
 
 //----- (0804FC50) --------------------------------------------------------
@@ -3897,6 +3825,7 @@ int __cdecl atexit(void (__cdecl *lpfunc)(void *))
     v1 = (void *)_dso_handle;
   return __cxa_atexit(lpfunc, 0, v1);
 }
+// 80520BC: using guessed type _DWORD _dso_handle;
 
 //----- (0804FC90) --------------------------------------------------------
 int __cdecl fstat64(int a1, int a2)
@@ -3905,33 +3834,5 @@ int __cdecl fstat64(int a1, int a2)
 }
 // 8048D6C: using guessed type int __cdecl __fxstat64(_DWORD, _DWORD, _DWORD);
 
-//----- (0804FCD0) --------------------------------------------------------
-void (*_do_global_ctors_aux())(void)
-{
-  void (*result)(void); // eax
-  void (**v1)(void); // ebx
-
-  result = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    v1 = (void (**)(void))&_CTOR_LIST__;
-    do
-    {
-      --v1;
-      result();
-      result = *v1;
-    }
-    while ( *v1 != (void (*)(void))-1 );
-  }
-  return result;
-}
-// 8051F08: using guessed type int _CTOR_LIST__;
-
-//----- (0804FCFC) --------------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=163 queued=70 decompiled=70 lumina nreq=0 worse=0 better=0
-// ALL OK, 70 function(s) have been successfully decompiled
+// nfuncs=163 queued=62 decompiled=62 lumina nreq=0 worse=0 better=0
+// ALL OK, 62 function(s) have been successfully decompiled

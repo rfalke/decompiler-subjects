@@ -10,29 +10,17 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
 // int printf(const char *format, ...);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049137();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// char *deregister_tm_clones();
-// int register_tm_clones();
-// char *_do_global_dtors_aux();
-// int frame_dummy();
-int __cdecl print_char(unsigned __int8 a1);
-int __cdecl print_short(unsigned __int16 a1);
-int __cdecl print_float_as_hex(unsigned int a1);
-int __cdecl print_double_as_hex(unsigned int a1, unsigned int a2);
-int __cdecl print_long_double_as_hex(long double a1);
+int __cdecl print_char(unsigned __int8);
+int __cdecl print_short(unsigned __int16);
+int __cdecl print_float_as_hex(unsigned int);
+int __cdecl print_double_as_hex(unsigned int, unsigned int);
+int __cdecl print_long_double_as_hex(long double);
 int __cdecl print_varargs(int, double); // idb
 int __cdecl print_without_prototype(double); // idb
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -111,37 +99,18 @@ int __cdecl print_double_as_hex(unsigned int a1, unsigned int a2)
 //----- (080492E0) --------------------------------------------------------
 int __cdecl print_long_double_as_hex(long double a1)
 {
-  long double v3; // [esp+14h] [ebp-9Ch]
-  long double v4; // [esp+24h] [ebp-8Ch]
-  long double v5; // [esp+34h] [ebp-7Ch]
-  long double v6; // [esp+44h] [ebp-6Ch]
-  long double v7; // [esp+54h] [ebp-5Ch]
-  long double v8; // [esp+64h] [ebp-4Ch]
-  long double v9; // [esp+74h] [ebp-3Ch]
-  long double v10; // [esp+84h] [ebp-2Ch]
-  long double v11; // [esp+94h] [ebp-1Ch]
-
-  v11 = a1;
-  v10 = a1;
-  v9 = a1;
-  v8 = a1;
-  v7 = a1;
-  v6 = a1;
-  v5 = a1;
-  v4 = a1;
-  v3 = a1;
   printf(
     "got a long double with 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n",
     BYTE9(a1),
-    BYTE8(v3),
-    BYTE7(v4),
-    BYTE6(v5),
-    BYTE5(v6),
-    BYTE4(v7),
-    BYTE3(v8),
-    BYTE2(v9),
-    BYTE1(v10),
-    LOBYTE(v11));
+    BYTE8(a1),
+    BYTE7(a1),
+    BYTE6(a1),
+    BYTE5(a1),
+    BYTE4(a1),
+    BYTE3(a1),
+    BYTE2(a1),
+    BYTE1(a1),
+    LOBYTE(a1));
   return 0;
 }
 

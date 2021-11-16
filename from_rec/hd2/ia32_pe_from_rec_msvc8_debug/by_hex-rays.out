@@ -1,3 +1,4 @@
+
 Database SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_debug/subject.exe.idb already exists.
 Do you want to overwrite it? -> ~L~oad existing
 
@@ -13,10 +14,10 @@ Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor 
 Loading type libraries...
 Autoanalysis subsystem has been initialized.
 Database for file 'subject.exe' has been loaded.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
 === start of cleanup script -> OK
   function at 00411005       with name 'j___setdefaultprecision'
   function at 0041100A       with name 'j_unknown_libname_2'
@@ -136,6 +137,14 @@ IDAPython Hex-Rays bindings initialized.
 finished -> OK
 TIMESTAMP decompiling 411410 size=000001ED times=0...
 The decompiler assumes that the segment '.idata' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+The decompiler assumes that the segment '.rdata' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
 This may lead to drastic changes in the decompiler output.
 If the segment is not read-only, please change the segment NAME.

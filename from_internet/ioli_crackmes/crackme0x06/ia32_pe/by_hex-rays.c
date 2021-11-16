@@ -20,8 +20,8 @@ int __cdecl atexit(void (__cdecl *)());
 _onexit_t __cdecl _onexit(_onexit_t Func);
 void __do_frame_init();
 int __do_frame_fini();
-int __cdecl dummy(int a1, int a2);
-int *__cdecl parell(char *Buffer, int a2);
+int __cdecl dummy(int, int);
+int *__cdecl parell(char *Buffer, int);
 int __cdecl check(char *, int); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
 int _pei386_runtime_relocator();
@@ -29,33 +29,33 @@ void __cdecl _fpreset();
 void __cdecl __do_global_dtors(); // idb
 int __do_global_ctors();
 int __main();
-// int __usercall size_of_encoded_value@<eax>(char a1@<al>);
-// char *__usercall read_uleb128@<eax>(char *a1@<eax>, _DWORD *a2@<edx>);
-// char *__usercall read_sleb128@<eax>(char *a1@<eax>, _DWORD *a2@<edx>);
-// char *__usercall read_encoded_value_with_base@<eax>(char a1@<al>, int a2@<edx>, char *a3, int *a4);
+// int __usercall size_of_encoded_value@<eax>(char@<al>);
+// char *__usercall read_uleb128@<eax>(char *@<eax>, _DWORD *@<edx>);
+// char *__usercall read_sleb128@<eax>(char *@<eax>, _DWORD *@<edx>);
+// char *__usercall read_encoded_value_with_base@<eax>(char@<al>, int@<edx>, char *, int *);
 HANDLE init_object_mutex();
 HANDLE init_object_mutex_once();
-void __cdecl __register_frame_info_bases(_DWORD *a1, _DWORD *a2, int a3, int a4);
-void __cdecl __register_frame_info(_DWORD *a1, _DWORD *a2);
-void __cdecl __register_frame(_DWORD *a1);
-LONG __cdecl __register_frame_info_table_bases(int a1, _DWORD *a2, int a3, int a4);
-LONG __cdecl __register_frame_info_table(int a1, _DWORD *a2);
-LONG __cdecl __register_frame_table(int a1);
-int __cdecl __deregister_frame_info_bases(_DWORD *a1);
-int __cdecl __deregister_frame_info(_DWORD *a1);
-void __cdecl __deregister_frame(_DWORD *a1);
-// int __usercall base_from_object@<eax>(char a1@<al>, int a2@<edx>);
-// int __usercall get_cie_encoding@<eax>(int a1@<eax>);
-int __cdecl fde_unencoded_compare(int a1, int a2, int a3);
-int __cdecl fde_single_encoding_compare(int a1, int a2, int a3);
-int __cdecl fde_mixed_encoding_compare(int a1, int a2, int a3);
-// int __usercall frame_downheap@<eax>(int result@<eax>, int (__cdecl *a2)(int, _DWORD, _DWORD)@<edx>, int a3, int a4, int a5);
-// unsigned int __usercall frame_heapsort@<eax>(int a1@<eax>, int (__cdecl *a2)(int, _DWORD, _DWORD)@<edx>, int a3);
-// int __usercall classify_object_over_fdes@<eax>(int a1@<eax>, char *a2@<edx>);
-// int __usercall add_fdes@<eax>(int a1@<eax>, int *a2@<edx>, char *a3);
-// int __usercall linear_search_fdes@<eax>(int a1@<eax>, int a2@<edx>, int a3);
-// int __usercall search_object@<eax>(int a1@<eax>, unsigned int a2@<edx>);
-int __cdecl _Unwind_Find_FDE(unsigned int a1, _DWORD *a2);
+void __cdecl __register_frame_info_bases(_DWORD *, _DWORD *, int, int);
+void __cdecl __register_frame_info(_DWORD *, _DWORD *);
+void __cdecl __register_frame(_DWORD *);
+LONG __cdecl __register_frame_info_table_bases(int, _DWORD *, int, int);
+LONG __cdecl __register_frame_info_table(int, _DWORD *);
+LONG __cdecl __register_frame_table(int);
+int __cdecl __deregister_frame_info_bases(_DWORD *);
+int __cdecl __deregister_frame_info(_DWORD *);
+void __cdecl __deregister_frame(_DWORD *);
+// int __usercall base_from_object@<eax>(char@<al>, int@<edx>);
+// int __usercall get_cie_encoding@<eax>(int@<eax>);
+int __cdecl fde_unencoded_compare(int, int, int);
+int __cdecl fde_single_encoding_compare(int, int, int);
+int __cdecl fde_mixed_encoding_compare(int, int, int);
+// int __usercall frame_downheap@<eax>(int result@<eax>, int (__cdecl *)(int, _DWORD, _DWORD)@<edx>, int, int, int);
+// unsigned int __usercall frame_heapsort@<eax>(int@<eax>, int (__cdecl *)(int, _DWORD, _DWORD)@<edx>, int);
+// int __usercall classify_object_over_fdes@<eax>(int@<eax>, char *@<edx>);
+// int __usercall add_fdes@<eax>(int@<eax>, int *@<edx>, char *);
+// int __usercall linear_search_fdes@<eax>(int@<eax>, int@<edx>, int);
+// int __usercall search_object@<eax>(int@<eax>, unsigned int@<edx>);
+int __cdecl _Unwind_Find_FDE(unsigned int, _DWORD *);
 int __w32_sharedptr_default_unexpected();
 // unsigned int __usercall __w32_sharedptr_get@<eax>(ATOM nAtom@<ax>);
 void __w32_sharedptr_initialize();
@@ -70,7 +70,7 @@ void __w32_sharedptr_initialize();
 // void __cdecl free(void *Block);
 // void *__cdecl malloc(size_t Size);
 // void __cdecl __noreturn abort();
-// int __thiscall _assert(_DWORD, _DWORD, _DWORD, _DWORD); weak
+// void __thiscall __noreturn _assert(_DWORD, _DWORD, _DWORD, _DWORD); weak
 // void __stdcall __noreturn ExitProcess(UINT uExitCode);
 // LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
 // BOOL __stdcall ReleaseSemaphore(HANDLE hSemaphore, LONG lReleaseCount, LPLONG lpPreviousCount);
@@ -84,13 +84,6 @@ void __w32_sharedptr_initialize();
 // ATOM __stdcall FindAtomA(LPCSTR lpString);
 void __reg_frame_ctor();
 int __dereg_frame_dtor();
-// char ***__cdecl ___p__environ();
-// void __cdecl ___set_app_type(_crt_app_type Type);
-// void __cdecl __cexit();
-// _onexit_t __cdecl __onexit(_onexit_t Func);
-// int __cdecl __setmode(int FileHandle, int Mode);
-// int __cdecl _atexit(void (__cdecl *)());
-// _crt_signal_t __cdecl _signal(int Signal, _crt_signal_t Function);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -213,8 +206,8 @@ _DWORD __EH_FRAME_BEGIN__[107] =
   67977730,
   1191413569,
   75892099
-}; // idb
-_DWORD _RUNTIME_PSEUDO_RELOC_LIST_END__[828] =
+}; // weak
+_DWORD _RUNTIME_PSEUDO_RELOC_LIST_END__[60] =
 {
   0,
   0,
@@ -275,12 +268,11 @@ _DWORD _RUNTIME_PSEUDO_RELOC_LIST_END__[828] =
   0,
   0,
   0,
-  0,
-  
-}; // idb
+  0
+}; // weak
 char **_argv; // idb
 int _argc; // idb
-_DWORD obj[8]; // idb
+_DWORD obj[8]; // weak
 int _CRT_fmode; // idb
 int initialized; // weak
 int dw2_object_mutex_0; // weak
@@ -292,7 +284,14 @@ int _CRT_MT; // weak
 int __w32_sharedptr_terminate; // weak
 int __w32_sharedptr; // weak
 int __w32_sharedptr_unexpected; // weak
+// extern char ***(__cdecl *___p__environ)();
+// extern void (__cdecl *___set_app_type)(_crt_app_type Type);
+// extern void (__cdecl *__cexit)();
 // extern FILE __iob[];
+// extern _onexit_t (__cdecl *__onexit)(_onexit_t Func);
+// extern int (__cdecl *__setmode)(int FileHandle, int Mode);
+// extern int (__cdecl *_atexit)(void (__cdecl *)());
+// extern _crt_signal_t (__cdecl *_signal)(int Signal, _crt_signal_t Function);
 
 
 //----- (00401000) --------------------------------------------------------
@@ -300,7 +299,7 @@ LONG __stdcall _gnu_exception_handler(struct _EXCEPTION_POINTERS *ExceptionInfo)
 {
   int v1; // ebx
   int v2; // esi
-  DWORD v3; // eax
+  DWORD ExceptionCode; // eax
   _crt_signal_t v4; // eax
   bool v6; // zf
   _crt_signal_t v7; // eax
@@ -308,16 +307,16 @@ LONG __stdcall _gnu_exception_handler(struct _EXCEPTION_POINTERS *ExceptionInfo)
 
   v1 = 0;
   v2 = 0;
-  v3 = ExceptionInfo->ExceptionRecord->ExceptionCode;
-  if ( v3 <= 0xC0000091 )
+  ExceptionCode = ExceptionInfo->ExceptionRecord->ExceptionCode;
+  if ( ExceptionCode <= 0xC0000091 )
   {
-    if ( v3 >= 0xC000008D )
+    if ( ExceptionCode >= 0xC000008D )
     {
 LABEL_3:
       v2 = 1;
       goto LABEL_4;
     }
-    if ( v3 == -1073741819 )
+    if ( ExceptionCode == -1073741819 )
     {
       v8 = _signal(11, 0);
       if ( v8 == (_crt_signal_t)1 )
@@ -332,7 +331,7 @@ LABEL_3:
       }
       return -1;
     }
-    v6 = v3 == -1073741795;
+    v6 = ExceptionCode == -1073741795;
 LABEL_15:
     if ( !v6 )
       return v1;
@@ -349,7 +348,7 @@ LABEL_15:
     }
     return -1;
   }
-  if ( v3 == -1073741676 )
+  if ( ExceptionCode == -1073741676 )
   {
 LABEL_4:
     v4 = _signal(8, 0);
@@ -367,12 +366,12 @@ LABEL_4:
     }
     return -1;
   }
-  if ( v3 > 0xC0000094 )
+  if ( ExceptionCode > 0xC0000094 )
   {
-    v6 = v3 == -1073741674;
+    v6 = ExceptionCode == -1073741674;
     goto LABEL_15;
   }
-  if ( v3 == -1073741677 )
+  if ( ExceptionCode == -1073741677 )
     goto LABEL_3;
   return 0;
 }
@@ -380,7 +379,7 @@ LABEL_4:
 //----- (00401140) --------------------------------------------------------
 void __noreturn __mingw_CRTStartup()
 {
-  char *v0; // edx
+  char *ptr; // edx
   char ***v1; // eax
   int v2; // ebx
   char v3[4]; // [esp+1Ch] [ebp-Ch] BYREF
@@ -393,18 +392,18 @@ void __noreturn __mingw_CRTStartup()
   if ( _CRT_fmode )
   {
     _fmode = _CRT_fmode;
-    v0 = __iob[0]._ptr;
+    ptr = __iob[0]._ptr;
     if ( __iob[0]._ptr )
     {
       __setmode(__iob[0]._file, _CRT_fmode);
-      v0 = __iob[0]._ptr;
+      ptr = __iob[0]._ptr;
     }
-    if ( v0 != (char *)-32 )
+    if ( ptr != (char *)-32 )
     {
       __setmode(__iob[1]._file, _CRT_fmode);
-      v0 = __iob[0]._ptr;
+      ptr = __iob[0]._ptr;
     }
-    if ( v0 != (char *)-64 )
+    if ( ptr != (char *)-64 )
       __setmode(__iob[2]._file, _CRT_fmode);
   }
   *__p__fmode() = _fmode;
@@ -416,6 +415,7 @@ void __noreturn __mingw_CRTStartup()
 }
 // 402E40: using guessed type int __cdecl __getmainargs(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 // 403000: using guessed type int _CRT_glob;
+// 401140: using guessed type char var_C[4];
 
 //----- (00401280) --------------------------------------------------------
 void __noreturn WinMainCRTStartup()
@@ -443,12 +443,15 @@ void __do_frame_init()
   __w32_sharedptr_initialize();
   __register_frame_info(__EH_FRAME_BEGIN__, obj);
 }
+// 404160: using guessed type _DWORD __EH_FRAME_BEGIN__[107];
+// 405010: using guessed type _DWORD obj[8];
 
 //----- (004012F0) --------------------------------------------------------
 int __do_frame_fini()
 {
   return __deregister_frame_info(__EH_FRAME_BEGIN__);
 }
+// 404160: using guessed type _DWORD __EH_FRAME_BEGIN__[107];
 
 //----- (00401310) --------------------------------------------------------
 int __cdecl dummy(int a1, int a2)
@@ -493,22 +496,18 @@ int *__cdecl parell(char *Buffer, int a2)
 //----- (004013E4) --------------------------------------------------------
 int __cdecl check(char *Str, int a2)
 {
-  size_t v2; // eax
   char Buffer; // [esp+1Bh] [ebp-Dh] BYREF
-  unsigned int i; // [esp+1Ch] [ebp-Ch]
-  int v6; // [esp+20h] [ebp-8h]
-  int v7; // [esp+24h] [ebp-4h] BYREF
+  size_t i; // [esp+1Ch] [ebp-Ch]
+  int v5; // [esp+20h] [ebp-8h]
+  int v6; // [esp+24h] [ebp-4h] BYREF
 
-  v6 = 0;
-  for ( i = 0; ; ++i )
+  v5 = 0;
+  for ( i = 0; i < strlen(Str); ++i )
   {
-    v2 = strlen(Str);
-    if ( i >= v2 )
-      break;
     Buffer = Str[i];
-    sscanf(&Buffer, "%d", &v7);
-    v6 += v7;
-    if ( v6 == 16 )
+    sscanf(&Buffer, "%d", &v6);
+    v5 += v6;
+    if ( v5 == 16 )
       parell(Str, a2);
   }
   return printf("Password Incorrect!\n");
@@ -544,6 +543,7 @@ int _pei386_runtime_relocator()
   }
   return result;
 }
+// 404310: using guessed type _DWORD _RUNTIME_PSEUDO_RELOC_LIST_END__[60];
 
 //----- (00401510) --------------------------------------------------------
 void __cdecl _fpreset()
@@ -602,7 +602,7 @@ int __main()
   if ( !initialized )
   {
     initialized = 1;
-    result = __do_global_ctors();
+    return __do_global_ctors();
   }
   return result;
 }
@@ -687,7 +687,6 @@ char *__usercall read_encoded_value_with_base@<eax>(char a1@<al>, int a2@<edx>, 
 {
   int v6; // edx
   char *v7; // ecx
-  char *result; // eax
   int *v9; // eax
   char *v10; // eax
   char *v11; // eax
@@ -698,7 +697,7 @@ char *__usercall read_encoded_value_with_base@<eax>(char a1@<al>, int a2@<edx>, 
   {
     v9 = (int *)((unsigned int)(a3 + 3) & 0xFFFFFFFC);
     *a4 = *v9;
-    result = (char *)(v9 + 1);
+    return (char *)(v9 + 1);
   }
   else
   {
@@ -746,9 +745,8 @@ char *__usercall read_encoded_value_with_base@<eax>(char a1@<al>, int a2@<edx>, 
         v6 = *(_DWORD *)v6;
     }
     *a4 = v6;
-    result = v7;
+    return v7;
   }
-  return result;
 }
 
 //----- (004017B0) --------------------------------------------------------
@@ -919,7 +917,7 @@ LONG __cdecl __register_frame_info_table_bases(int a1, _DWORD *a2, int a3, int a
 LABEL_6:
     result = InterlockedDecrement((volatile LONG *)lpAddend);
     if ( result >= 0 )
-      result = ReleaseSemaphore(*(HANDLE *)(lpAddend + 4), 1, 0);
+      return ReleaseSemaphore(*(HANDLE *)(lpAddend + 4), 1, 0);
   }
   return result;
 }
@@ -1084,23 +1082,23 @@ int __usercall get_cie_encoding@<eax>(int a1@<eax>)
   const char *Str; // ebx
   int result; // eax
   size_t v4; // eax
-  char *v5; // eax
+  char *uleb128; // eax
   char *v6; // ebx
   char *v7; // eax
   char *i; // ecx
   char v9; // al
   int v10; // [esp+14h] [ebp-14h] BYREF
   int v11; // [esp+18h] [ebp-10h] BYREF
-  _DWORD v12[3]; // [esp+1Ch] [ebp-Ch] BYREF
+  int v12[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
   Str = (const char *)(a1 + 9);
   result = 0;
   if ( *(_BYTE *)(a1 + 9) == 122 )
   {
     v4 = strlen(Str);
-    v5 = read_uleb128((char *)&Str[v4 + 1], v12);
+    uleb128 = read_uleb128((char *)&Str[v4 + 1], v12);
     v6 = (char *)(a1 + 10);
-    v7 = read_sleb128(v5, &v11);
+    v7 = read_sleb128(uleb128, &v11);
     for ( i = read_uleb128(v7 + 1, v12); ; ++i )
     {
       while ( 1 )
@@ -1117,10 +1115,11 @@ int __usercall get_cie_encoding@<eax>(int a1@<eax>)
         break;
       ++v6;
     }
-    result = 0;
+    return 0;
   }
   return result;
 }
+// 401D80: using guessed type _DWORD var_C[3];
 
 //----- (00401E10) --------------------------------------------------------
 int __cdecl fde_unencoded_compare(int a1, int a2, int a3)
@@ -1131,7 +1130,7 @@ int __cdecl fde_unencoded_compare(int a1, int a2, int a3)
   v3 = 1;
   v4 = *(_DWORD *)(a3 + 8);
   if ( *(_DWORD *)(a2 + 8) <= v4 )
-    v3 = -(*(_DWORD *)(a2 + 8) < v4);
+    return -(*(_DWORD *)(a2 + 8) < v4);
   return v3;
 }
 
@@ -1141,42 +1140,49 @@ int __cdecl fde_single_encoding_compare(int a1, int a2, int a3)
   int v3; // esi
   int v4; // edx
   unsigned int v6; // [esp+8h] [ebp-10h] BYREF
-  unsigned int v7[3]; // [esp+Ch] [ebp-Ch] BYREF
+  int v7[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   v3 = base_from_object(*(unsigned __int16 *)(a1 + 16) >> 3, a1);
-  read_encoded_value_with_base(*(unsigned __int16 *)(a1 + 16) >> 3, v3, (char *)(a2 + 8), (int *)v7);
+  read_encoded_value_with_base(*(unsigned __int16 *)(a1 + 16) >> 3, v3, (char *)(a2 + 8), v7);
   read_encoded_value_with_base(*(unsigned __int16 *)(a1 + 16) >> 3, v3, (char *)(a3 + 8), (int *)&v6);
   v4 = 1;
   if ( v7[0] <= v6 )
-    v4 = -(v7[0] < v6);
+    return -(v7[0] < v6);
   return v4;
 }
+// 401E30: using guessed type unsigned int var_C[3];
 
 //----- (00401EB0) --------------------------------------------------------
 int __cdecl fde_mixed_encoding_compare(int a1, int a2, int a3)
 {
-  char v3; // bl
+  char cie_encoding; // bl
   int v4; // eax
   char v5; // bl
   int v6; // eax
   int v7; // edx
   unsigned int v9; // [esp+14h] [ebp-14h] BYREF
-  unsigned int v10[4]; // [esp+18h] [ebp-10h] BYREF
+  int v10[4]; // [esp+18h] [ebp-10h] BYREF
 
-  v3 = get_cie_encoding(a2 - *(_DWORD *)(a2 + 4) + 4);
-  v4 = base_from_object(v3, a1);
-  read_encoded_value_with_base(v3, v4, (char *)(a2 + 8), (int *)v10);
+  cie_encoding = get_cie_encoding(a2 - *(_DWORD *)(a2 + 4) + 4);
+  v4 = base_from_object(cie_encoding, a1);
+  read_encoded_value_with_base(cie_encoding, v4, (char *)(a2 + 8), v10);
   v5 = get_cie_encoding(a3 - *(_DWORD *)(a3 + 4) + 4);
   v6 = base_from_object(v5, a1);
   read_encoded_value_with_base(v5, v6, (char *)(a3 + 8), (int *)&v9);
   v7 = 1;
   if ( v10[0] <= v9 )
-    v7 = -(v10[0] < v9);
+    return -(v10[0] < v9);
   return v7;
 }
+// 401EB0: using guessed type unsigned int var_10[4];
 
 //----- (00401F40) --------------------------------------------------------
-int __usercall frame_downheap@<eax>(int result@<eax>, int (__cdecl *a2)(int, _DWORD, _DWORD)@<edx>, int a3, int a4, int a5)
+int __usercall frame_downheap@<eax>(
+        int result@<eax>,
+        int (__cdecl *a2)(int, _DWORD, _DWORD)@<edx>,
+        int a3,
+        int a4,
+        int a5)
 {
   int v5; // edi
   int i; // ebx
@@ -1241,16 +1247,16 @@ int __usercall classify_object_over_fdes@<eax>(int a1@<eax>, char *a2@<edx>)
   unsigned int v10; // eax
   int v11; // eax
   int v13; // [esp+8h] [ebp-20h]
-  int v14; // [esp+Ch] [ebp-1Ch]
+  int cie_encoding; // [esp+Ch] [ebp-1Ch]
   int v15; // [esp+10h] [ebp-18h]
   int v16; // [esp+14h] [ebp-14h]
-  unsigned int v17[4]; // [esp+18h] [ebp-10h] BYREF
+  int v17[4]; // [esp+18h] [ebp-10h] BYREF
 
   v3 = a2;
   v4 = *(_DWORD *)a2 == 0;
   v16 = 0;
   v15 = 0;
-  LOBYTE(v14) = 0;
+  LOBYTE(cie_encoding) = 0;
   v13 = 0;
   while ( !v4 )
   {
@@ -1261,22 +1267,22 @@ int __usercall classify_object_over_fdes@<eax>(int a1@<eax>, char *a2@<edx>)
       if ( v6 != v16 )
       {
         v16 = v6;
-        v14 = get_cie_encoding(v6);
-        v7 = base_from_object(v14, a1);
+        cie_encoding = get_cie_encoding(v6);
+        v7 = base_from_object(cie_encoding, a1);
         v8 = *(unsigned __int16 *)(a1 + 16);
         v13 = v7;
         v9 = (unsigned __int8)(v8 >> 3);
         if ( v9 == 255 )
         {
-          *(_WORD *)(a1 + 16) = (8 * (unsigned __int8)v14) | v8 & 0xF807;
+          *(_WORD *)(a1 + 16) = (8 * (unsigned __int8)cie_encoding) | v8 & 0xF807;
         }
-        else if ( v9 != v14 )
+        else if ( v9 != cie_encoding )
         {
           *(_BYTE *)(a1 + 16) |= 4u;
         }
       }
-      read_encoded_value_with_base(v14, v13, v3 + 8, (int *)v17);
-      v10 = size_of_encoded_value(v14);
+      read_encoded_value_with_base(cie_encoding, v13, v3 + 8, v17);
+      v10 = size_of_encoded_value(cie_encoding);
       if ( v10 > 3 )
         v11 = -1;
       else
@@ -1293,13 +1299,14 @@ int __usercall classify_object_over_fdes@<eax>(int a1@<eax>, char *a2@<edx>)
   }
   return v15;
 }
+// 402040: using guessed type unsigned int var_10[4];
 
 //----- (00402160) --------------------------------------------------------
 int __usercall add_fdes@<eax>(int a1@<eax>, int *a2@<edx>, char *a3)
 {
   char *v3; // esi
   int v4; // eax
-  int v5; // edi
+  int cie_encoding; // edi
   int result; // eax
   bool v7; // zf
   int v8; // eax
@@ -1315,7 +1322,7 @@ int __usercall add_fdes@<eax>(int a1@<eax>, int *a2@<edx>, char *a3)
   v3 = a3;
   v15 = 0;
   v4 = *(unsigned __int16 *)(a1 + 16) >> 3;
-  v5 = (unsigned __int8)v4;
+  cie_encoding = (unsigned __int8)v4;
   result = base_from_object(v4, a1);
   v7 = *(_DWORD *)a3 == 0;
   v14 = result;
@@ -1330,14 +1337,14 @@ int __usercall add_fdes@<eax>(int a1@<eax>, int *a2@<edx>, char *a3)
         if ( v9 != v15 )
         {
           v15 = v9;
-          v5 = get_cie_encoding(v9);
-          v14 = base_from_object(v5, a1);
+          cie_encoding = get_cie_encoding(v9);
+          v14 = base_from_object(cie_encoding, a1);
         }
       }
-      if ( v5 )
+      if ( cie_encoding )
       {
-        read_encoded_value_with_base(v5, v14, v3 + 8, v18);
-        v13 = size_of_encoded_value(v5);
+        read_encoded_value_with_base(cie_encoding, v14, v3 + 8, v18);
+        v13 = size_of_encoded_value(cie_encoding);
         if ( v13 > 3 )
           v10 = v18[0] == 0;
         else
@@ -1364,19 +1371,20 @@ int __usercall add_fdes@<eax>(int a1@<eax>, int *a2@<edx>, char *a3)
   }
   return result;
 }
+// 402160: using guessed type int var_10[4];
 
 //----- (00402260) --------------------------------------------------------
 int __usercall linear_search_fdes@<eax>(int a1@<eax>, int a2@<edx>, int a3)
 {
   int v4; // eax
-  int v5; // edi
+  int cie_encoding; // edi
   int v6; // eax
   bool v7; // zf
   int v8; // eax
   int v9; // eax
   int v10; // edx
   unsigned int v11; // ecx
-  char *v13; // eax
+  char *encoded_value_with_base; // eax
   unsigned int v14; // eax
   int v15; // eax
   int v16; // [esp+8h] [ebp-20h]
@@ -1386,7 +1394,7 @@ int __usercall linear_search_fdes@<eax>(int a1@<eax>, int a2@<edx>, int a3)
 
   v17 = 0;
   v4 = *(unsigned __int16 *)(a1 + 16) >> 3;
-  v5 = (unsigned __int8)v4;
+  cie_encoding = (unsigned __int8)v4;
   v6 = base_from_object(v4, a1);
   v7 = *(_DWORD *)a2 == 0;
   v16 = v6;
@@ -1401,15 +1409,15 @@ int __usercall linear_search_fdes@<eax>(int a1@<eax>, int a2@<edx>, int a3)
       if ( v9 != v17 )
       {
         v17 = v9;
-        v5 = get_cie_encoding(v9);
-        v16 = base_from_object(v5, a1);
+        cie_encoding = get_cie_encoding(v9);
+        v16 = base_from_object(cie_encoding, a1);
       }
     }
-    if ( v5 )
+    if ( cie_encoding )
     {
-      v13 = read_encoded_value_with_base(v5, v16, (char *)(a2 + 8), v20);
-      read_encoded_value_with_base(v5 & 0xF, 0, v13, (int *)&v19);
-      v14 = size_of_encoded_value(v5);
+      encoded_value_with_base = read_encoded_value_with_base(cie_encoding, v16, (char *)(a2 + 8), v20);
+      read_encoded_value_with_base(cie_encoding & 0xF, 0, encoded_value_with_base, (int *)&v19);
+      v14 = size_of_encoded_value(cie_encoding);
       if ( v14 > 3 )
         v15 = -1;
       else
@@ -1436,6 +1444,7 @@ LABEL_2:
   }
   return 0;
 }
+// 402260: using guessed type int var_10[4];
 
 //----- (00402380) --------------------------------------------------------
 int __usercall search_object@<eax>(int a1@<eax>, unsigned int a2@<edx>)
@@ -1444,9 +1453,9 @@ int __usercall search_object@<eax>(int a1@<eax>, unsigned int a2@<edx>)
   int result; // eax
   unsigned int v4; // esi
   int v5; // edi
-  char v6; // bl
+  char cie_encoding; // bl
   int v7; // eax
-  char *v8; // eax
+  char *encoded_value_with_base; // eax
   int *k; // ebx
   char **i; // ebx
   char *v11; // edx
@@ -1677,10 +1686,10 @@ LABEL_6:
         {
           v4 = (v53 + v54) >> 1;
           v5 = *(_DWORD *)(v55 + 4 * v4 + 8);
-          v6 = get_cie_encoding(v5 - *(_DWORD *)(v5 + 4) + 4);
-          v7 = base_from_object(v6, a1);
-          v8 = read_encoded_value_with_base(v6, v7, (char *)(v5 + 8), (int *)&v67);
-          read_encoded_value_with_base(v6 & 0xF, 0, v8, &v66);
+          cie_encoding = get_cie_encoding(v5 - *(_DWORD *)(v5 + 4) + 4);
+          v7 = base_from_object(cie_encoding, a1);
+          encoded_value_with_base = read_encoded_value_with_base(cie_encoding, v7, (char *)(v5 + 8), (int *)&v67);
+          read_encoded_value_with_base(cie_encoding & 0xF, 0, encoded_value_with_base, &v66);
           if ( a2 >= v67 )
           {
             if ( a2 < v66 + v67 )
@@ -1783,7 +1792,7 @@ int __cdecl _Unwind_Find_FDE(unsigned int a1, _DWORD *a2)
   int *v7; // edx
   _DWORD *v8; // eax
   int lpAddend; // ebx
-  char v10; // al
+  char cie_encoding; // al
   char v11; // bl
   int v12; // eax
 
@@ -1872,11 +1881,11 @@ LABEL_12:
   {
     *a2 = *(_DWORD *)(i + 4);
     a2[1] = *(_DWORD *)(i + 8);
-    v10 = *(unsigned __int16 *)(i + 16) >> 3;
+    cie_encoding = *(unsigned __int16 *)(i + 16) >> 3;
     if ( (*(_BYTE *)(i + 16) & 4) != 0 )
-      v10 = get_cie_encoding(v2 - *(_DWORD *)(v2 + 4) + 4);
-    v11 = v10;
-    v12 = base_from_object(v10, i);
+      cie_encoding = get_cie_encoding(v2 - *(_DWORD *)(v2 + 4) + 4);
+    v11 = cie_encoding;
+    v12 = base_from_object(cie_encoding, i);
     read_encoded_value_with_base(v11, v12, (char *)(v2 + 8), a2 + 2);
   }
   return v2;
@@ -1895,16 +1904,16 @@ int __w32_sharedptr_default_unexpected()
 unsigned int __usercall __w32_sharedptr_get@<eax>(ATOM nAtom@<ax>)
 {
   unsigned int v1; // ebx
-  UINT v2; // eax
+  UINT AtomNameA; // eax
   int v3; // edx
   int v4; // ecx
-  CHAR Buffer[68]; // [esp+10h] [ebp-48h] BYREF
+  char Buffer[68]; // [esp+10h] [ebp-48h] BYREF
 
   v1 = 0;
-  v2 = GetAtomNameA(nAtom, Buffer, 61);
+  AtomNameA = GetAtomNameA(nAtom, Buffer, 61);
   v3 = 31;
   v4 = 1;
-  if ( !v2 )
+  if ( !AtomNameA )
     _assert(
       "../../gcc-3.4.5-20060117-1/gcc/config/i386/w32-shared-ptr.c",
       "GetAtomNameA (atom, s, sizeof(s)) != 0",
@@ -1932,12 +1941,13 @@ LABEL_6:
       247);
   return v1;
 }
-// 402EE0: using guessed type int __thiscall _assert(_DWORD, _DWORD, _DWORD, _DWORD);
+// 402EE0: using guessed type void __thiscall __noreturn _assert(_DWORD, _DWORD, _DWORD, _DWORD);
+// 402AF0: using guessed type CHAR Buffer[68];
 
 //----- (00402B90) --------------------------------------------------------
 void __w32_sharedptr_initialize()
 {
-  ATOM v0; // ax
+  ATOM AtomA; // ax
   _DWORD *v1; // eax
   unsigned int v2; // ebx
   int v3; // ecx
@@ -1956,16 +1966,16 @@ void __w32_sharedptr_initialize()
   int v16; // edx
   unsigned int v17; // eax
   int v18; // [esp+1Ch] [ebp-9Ch]
-  CHAR lpString[32]; // [esp+20h] [ebp-98h] BYREF
+  char lpString[32]; // [esp+20h] [ebp-98h] BYREF
   char v20[32]; // [esp+40h] [ebp-78h] BYREF
   CHAR String[88]; // [esp+60h] [ebp-58h] BYREF
 
   if ( !__w32_sharedptr )
   {
     strcpy(String, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-LIBGCCW32-EH-3-GTHR-MINGW32");
-    v0 = FindAtomA(String);
-    v18 = v0;
-    if ( !v0 )
+    AtomA = FindAtomA(String);
+    v18 = AtomA;
+    if ( !AtomA )
     {
       v1 = malloc(0x40u);
       v2 = (unsigned int)v1;
@@ -2010,9 +2020,9 @@ void __w32_sharedptr_initialize()
       if ( v16 )
         goto LABEL_11;
       free((void *)v2);
-      v0 = FindAtomA(String);
+      AtomA = FindAtomA(String);
     }
-    v2 = __w32_sharedptr_get(v0);
+    v2 = __w32_sharedptr_get(AtomA);
 LABEL_11:
     __w32_sharedptr = v2;
     __w32_sharedptr_terminate = v2 + 4;
@@ -2031,6 +2041,7 @@ LABEL_11:
 // 4050A0: using guessed type int __w32_sharedptr_terminate;
 // 4050B0: using guessed type int __w32_sharedptr;
 // 4050C0: using guessed type int __w32_sharedptr_unexpected;
+// 402B90: using guessed type CHAR var_98[32];
 
 //----- (00402FA0) --------------------------------------------------------
 void __reg_frame_ctor()

@@ -561,7 +561,7 @@ char alu_true[528] =
   '\0',
   '\0',
   '\0'
-}; // idb
+}; // weak
 int alu_false[] = { 1 }; // weak
 int alu_b7[260] =
 {
@@ -825,7 +825,7 @@ int alu_b7[260] =
   0,
   0,
   0
-}; // idb
+}; // weak
 void *alu_eq = &alu_eq_0; // weak
 void *alu_add16 = &alu_add16_0; // weak
 char alu_inv8[272] =
@@ -1102,7 +1102,7 @@ char alu_inv8[272] =
   '\0',
   '\0',
   '\0'
-}; // idb
+}; // weak
 unsigned __int16 alu_inv16[65544] =
 {
   65535u,
@@ -66649,7 +66649,7 @@ unsigned __int16 alu_inv16[65544] =
   0u,
   0u,
   0u
-}; // idb
+}; // weak
 void *alu_band8 = &alu_band8_0; // weak
 void *alu_bor8 = &alu_bor8_0; // weak
 void *alu_bxor8 = &alu_bxor8_0; // weak
@@ -67173,7 +67173,7 @@ int alu_clamp32[516] =
   0,
   0,
   0
-}; // idb
+}; // weak
 int alu_sex8[260] =
 {
   0,
@@ -67436,7 +67436,7 @@ int alu_sex8[260] =
   0,
   0,
   0
-}; // idb
+}; // weak
 void ***alu_cmp_of[6] =
 {
   &alu_cmp_of_0,
@@ -67506,7 +67506,6 @@ int dispatch()
 {
   return external();
 }
-// 83F9140: using guessed type void *off_83F9140;
 // 85F91D4: using guessed type int (*external)(void);
 
 //----- (08048794) --------------------------------------------------------
@@ -67524,165 +67523,155 @@ void rc_crc32()
   int v9; // edx
   int v10; // eax
   int v11; // eax
-  int v12; // eax
+  void ***v12; // edx
   int v13; // eax
-  void ***v14; // edx
-  int v15; // eax
-  void **v16; // edx
-  int v17; // ecx
+  void **v14; // edx
+  int v15; // ecx
+  _DWORD *v16; // eax
+  _DWORD *v17; // eax
   _DWORD *v18; // eax
-  _DWORD *v19; // eax
-  _DWORD *v20; // eax
-  int v21; // eax
-  int v22; // edx
-  int v23; // ecx
-  _DWORD *v24; // eax
-  _DWORD *v25; // eax
-  int v26; // eax
-  int v27; // edx
-  int v28; // ecx
-  _DWORD *v29; // eax
-  _DWORD *v30; // eax
-  int v31; // edx
+  int v19; // eax
+  int v20; // edx
+  int v21; // ecx
+  _DWORD *v22; // eax
+  _DWORD *v23; // eax
+  int v24; // eax
+  int v25; // edx
+  int v26; // ecx
+  _DWORD *v27; // eax
+  _DWORD *v28; // eax
+  int v29; // edx
+  int v30; // edx
+  int v31; // eax
   int v32; // edx
   int v33; // eax
-  int v34; // edx
-  int v35; // eax
+  int v34; // eax
+  void ***v35; // edx
   int v36; // eax
-  int v37; // eax
-  int v38; // eax
-  void ***v39; // edx
-  int v40; // eax
-  void **v41; // edx
-  int v42; // ecx
-  _DWORD *v43; // eax
-  _DWORD *v44; // eax
+  void **v37; // edx
+  int v38; // ecx
+  _DWORD *v39; // eax
+  _DWORD *v40; // eax
+  _DWORD *v41; // eax
+  int v42; // edx
+  int v43; // eax
+  int v44; // ecx
   _DWORD *v45; // eax
-  int v46; // edx
-  int v47; // eax
-  int v48; // ecx
-  _DWORD *v49; // eax
-  _DWORD *v50; // eax
+  _DWORD *v46; // eax
+  _DWORD *v47; // eax
+  int v48; // eax
+  int v49; // edx
+  int v50; // ecx
   _DWORD *v51; // eax
-  int v52; // eax
+  _DWORD *v52; // eax
   int v53; // edx
-  int v54; // ecx
-  _DWORD *v55; // eax
-  _DWORD *v56; // eax
-  int v57; // edx
-  int v58; // eax
-  int v59; // eax
-  int v60; // edx
-  int v61; // ecx
-  _DWORD *v62; // eax
+  int v54; // eax
+  int v55; // eax
+  int v56; // edx
+  int v57; // ecx
+  _DWORD *v58; // eax
+  _DWORD *v59; // eax
+  int v60; // eax
+  int v61; // edx
+  int v62; // ecx
   _DWORD *v63; // eax
-  int v64; // eax
+  _DWORD *v64; // eax
   int v65; // edx
-  int v66; // ecx
-  _DWORD *v67; // eax
-  _DWORD *v68; // eax
-  int v69; // edx
+  int v66; // edx
+  int v67; // edx
+  int v68; // edx
+  int v69; // eax
   int v70; // edx
-  int v71; // edx
-  int v72; // edx
-  int v73; // eax
-  int v74; // edx
-  int v75; // eax
-  int v76; // eax
-  int v77; // eax
-  int v78; // eax
-  void ***v79; // edx
-  int v80; // eax
-  void **v81; // edx
-  int v82; // ecx
-  _DWORD *v83; // eax
-  _DWORD *v84; // eax
-  _DWORD *v85; // eax
-  int v86; // edx
-  int v87; // eax
-  int v88; // edx
+  int v71; // eax
+  int v72; // eax
+  void ***v73; // edx
+  int v74; // eax
+  void **v75; // edx
+  int v76; // ecx
+  _DWORD *v77; // eax
+  _DWORD *v78; // eax
+  _DWORD *v79; // eax
+  int v80; // edx
+  int v81; // eax
+  int v82; // edx
+  int v83; // edx
+  int v84; // eax
+  int v85; // edx
+  int v86; // ecx
+  _DWORD *v87; // eax
+  _DWORD *v88; // eax
   int v89; // edx
-  int v90; // eax
+  int v90; // edx
   int v91; // edx
-  int v92; // ecx
-  _DWORD *v93; // eax
-  _DWORD *v94; // eax
-  int v95; // edx
-  int v96; // edx
-  int v97; // edx
-  int v98; // edx
-  int v99; // eax
-  int v100; // edx
-  int v101; // eax
-  int v102; // eax
-  int v103; // eax
+  int v92; // edx
+  int v93; // eax
+  int v94; // edx
+  int v95; // eax
+  int v96; // eax
+  void ***v97; // edx
+  int v98; // eax
+  void **v99; // edx
+  int v100; // ecx
+  _DWORD *v101; // eax
+  _DWORD *v102; // eax
+  _DWORD *v103; // eax
   int v104; // eax
-  void ***v105; // edx
-  int v106; // eax
-  void **v107; // edx
-  int v108; // ecx
-  _DWORD *v109; // eax
-  _DWORD *v110; // eax
-  _DWORD *v111; // eax
-  int v112; // eax
-  int v113; // edx
-  int v114; // ecx
-  _DWORD *v115; // eax
-  _DWORD *v116; // eax
-  int v117; // edx
-  int v118; // edx
-  int v119; // ecx
-  _DWORD *v120; // eax
-  _DWORD *v121; // eax
-  _DWORD *v122; // eax
+  int v105; // edx
+  int v106; // ecx
+  _DWORD *v107; // eax
+  _DWORD *v108; // eax
+  int v109; // edx
+  int v110; // edx
+  int v111; // ecx
+  _DWORD *v112; // eax
+  _DWORD *v113; // eax
+  _DWORD *v114; // eax
+  int v115; // eax
+  int v116; // edx
+  int v117; // ecx
+  _DWORD *v118; // eax
+  _DWORD *v119; // eax
+  int v120; // edx
+  int v121; // eax
+  int v122; // edx
   int v123; // eax
   int v124; // edx
-  int v125; // ecx
-  _DWORD *v126; // eax
-  _DWORD *v127; // eax
-  int v128; // edx
-  int v129; // eax
-  int v130; // edx
-  int v131; // eax
+  int v125; // edx
+  int v126; // eax
+  int v127; // edx
+  int v128; // ecx
+  _DWORD *v129; // eax
+  _DWORD *v130; // eax
+  int v131; // edx
   int v132; // edx
-  int v133; // edx
-  int v134; // eax
-  int v135; // edx
-  int v136; // ecx
+  int v133; // eax
+  int v134; // edx
+  int v135; // ecx
+  _DWORD *v136; // eax
   _DWORD *v137; // eax
-  _DWORD *v138; // eax
+  int v138; // edx
   int v139; // edx
-  int v140; // edx
-  int v141; // eax
-  int v142; // edx
-  int v143; // ecx
-  _DWORD *v144; // eax
-  _DWORD *v145; // eax
-  int v146; // edx
-  int v147; // edx
-  int v148; // eax
-  int v149; // edx
-  int v150; // eax
+  int v140; // eax
+  int v141; // edx
+  int v142; // eax
+  int v143; // eax
+  void ***v144; // edx
+  int v145; // eax
+  void **v146; // edx
+  int v147; // ecx
+  _DWORD *v148; // eax
+  _DWORD *v149; // eax
+  _DWORD *v150; // eax
   int v151; // eax
-  int v152; // eax
-  int v153; // eax
-  void ***v154; // edx
-  int v155; // eax
-  void **v156; // edx
+  int v152; // edx
+  int v153; // ecx
+  _DWORD *v154; // eax
+  _DWORD *v155; // eax
+  _DWORD *v156; // eax
   int v157; // ecx
   _DWORD *v158; // eax
   _DWORD *v159; // eax
   _DWORD *v160; // eax
-  int v161; // eax
-  int v162; // edx
-  int v163; // ecx
-  _DWORD *v164; // eax
-  _DWORD *v165; // eax
-  _DWORD *v166; // eax
-  int v167; // ecx
-  _DWORD *v168; // eax
-  _DWORD *v169; // eax
-  _DWORD *v170; // eax
 
   alu_x = target;
   alu_y = -2012969068;
@@ -67792,83 +67781,83 @@ void rc_crc32()
   LOBYTE(v9) = BYTE1(alu_s);
   v10 = (unsigned __int8)alu_true[v9 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
   LOBYTE(v9) = BYTE2(alu_s);
-  v11 = (unsigned __int8)alu_true[v9 + v10];
+  LOBYTE(v10) = alu_true[v9 + v10];
   LOBYTE(v9) = HIBYTE(alu_s);
-  v12 = *((unsigned __int8 *)alu_false + (unsigned __int8)alu_true[v9 + v11]);
-  LOBYTE(dword_81F9100) = v12;
-  LOBYTE(v12) = HIBYTE(R3);
-  v13 = alu_b7[v12];
-  v14 = alu_cmp_of[v13];
-  LOBYTE(v13) = 0;
-  v15 = alu_b7[v13];
-  v16 = v14[v15];
-  LOBYTE(v15) = HIBYTE(alu_s);
-  LOBYTE(dword_81F9108) = *(_DWORD *)v16[alu_b7[v15]];
+  LOBYTE(v10) = alu_true[v9 + v10];
+  LOBYTE(dword_81F9100) = *((_BYTE *)alu_false + v10);
+  LOBYTE(v10) = HIBYTE(R3);
+  v11 = alu_b7[v10];
+  v12 = alu_cmp_of[v11];
+  LOBYTE(v11) = 0;
+  v13 = alu_b7[v11];
+  v14 = v12[v13];
+  LOBYTE(v13) = HIBYTE(alu_s);
+  LOBYTE(dword_81F9108) = *(_DWORD *)v14[alu_b7[v13]];
   b0 = alu_false[dword_81F9100];
   b0 = *((_DWORD *)*(&and + b0) + on);
   *(_DWORD *)*(&sel_target + b0) = -2012958315;
-  v17 = b0;
+  v15 = b0;
   data_p = (int)&jmp_r0;
-  v18 = *(&sel_data + b0);
-  *v18 = R0;
-  v18[1] = R1;
-  v18[2] = R2;
-  v18[3] = R3;
+  v16 = *(&sel_data + b0);
+  *v16 = R0;
+  v16[1] = R1;
+  v16[2] = R2;
+  v16[3] = R3;
   data_p = (int)&jmp_f0;
-  v19 = *(&sel_data + v17);
-  *v19 = F0;
-  v19[1] = F1;
+  v17 = *(&sel_data + v15);
+  *v17 = F0;
+  v17[1] = F1;
   data_p = (int)&jmp_d0;
-  v20 = *(&sel_data + v17);
-  *v20 = D0;
-  v20[1] = dword_8050084;
-  v20[2] = D1;
-  v20[3] = dword_805008C;
+  v18 = *(&sel_data + v15);
+  *v18 = D0;
+  v18[1] = dword_8050084;
+  v18[2] = D1;
+  v18[3] = dword_805008C;
   *(_DWORD *)*(&sel_on + b0) = 0;
   R3 = 0;
   data_p = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524314) - 2097256) - 2097256) - 2097256);
   *(_DWORD *)*(&sel_data + on) = 0;
   alu_x = target;
   alu_y = -2012967295;
-  v21 = (unsigned __int8)target;
-  v22 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 129);
-  b0 = v22;
-  LOBYTE(v21) = BYTE1(target);
-  LOBYTE(v22) = -114;
-  LOBYTE(v22) = *((_BYTE *)*(&alu_eq + v21) + v22);
-  b1 = v22;
-  LOBYTE(v21) = BYTE2(target);
-  LOBYTE(v22) = 4;
-  LOBYTE(v22) = *((_BYTE *)*(&alu_eq + v21) + v22);
-  b2 = v22;
-  LOBYTE(v21) = HIBYTE(target);
-  LOBYTE(v22) = -120;
-  LOBYTE(v22) = *((_BYTE *)*(&alu_eq + v21) + v22);
-  b3 = v22;
+  v19 = (unsigned __int8)target;
+  v20 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 129);
+  b0 = v20;
+  LOBYTE(v19) = BYTE1(target);
+  LOBYTE(v20) = -114;
+  LOBYTE(v20) = *((_BYTE *)*(&alu_eq + v19) + v20);
+  b1 = v20;
+  LOBYTE(v19) = BYTE2(target);
+  LOBYTE(v20) = 4;
+  LOBYTE(v20) = *((_BYTE *)*(&alu_eq + v19) + v20);
+  b2 = v20;
+  LOBYTE(v19) = HIBYTE(target);
+  LOBYTE(v20) = -120;
+  LOBYTE(v20) = *((_BYTE *)*(&alu_eq + v19) + v20);
+  b3 = v20;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v22);
-  v23 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v20);
+  v21 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v23) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v21) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v23) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v21) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v23) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v21) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v23) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v21) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v23) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v21) = jmp_f1;
   data_p = (int)&D0;
-  v24 = *(&sel_data + v23);
-  *v24 = jmp_d0;
-  v24[1] = dword_85F91BC;
+  v22 = *(&sel_data + v21);
+  *v22 = jmp_d0;
+  v22[1] = dword_85F91BC;
   data_p = (int)&D1;
-  v25 = *(&sel_data + v23);
-  *v25 = jmp_d1;
-  v25[1] = dword_85F91C4;
+  v23 = *(&sel_data + v21);
+  *v23 = jmp_d1;
+  v23[1] = dword_85F91C4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524314) - 2097256) - 2097256) - 2097256);
   data_p = R3;
@@ -67880,45 +67869,45 @@ void rc_crc32()
   *(_DWORD *)*(&sel_data + on) = 0;
   alu_x = target;
   alu_y = -2012966657;
-  v26 = (unsigned __int8)target;
-  v27 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 255);
-  b0 = v27;
-  LOBYTE(v26) = BYTE1(target);
-  LOBYTE(v27) = -112;
-  LOBYTE(v27) = *((_BYTE *)*(&alu_eq + v26) + v27);
-  b1 = v27;
-  LOBYTE(v26) = BYTE2(target);
-  LOBYTE(v27) = 4;
-  LOBYTE(v27) = *((_BYTE *)*(&alu_eq + v26) + v27);
-  b2 = v27;
-  LOBYTE(v26) = HIBYTE(target);
-  LOBYTE(v27) = -120;
-  LOBYTE(v27) = *((_BYTE *)*(&alu_eq + v26) + v27);
-  b3 = v27;
+  v24 = (unsigned __int8)target;
+  v25 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 255);
+  b0 = v25;
+  LOBYTE(v24) = BYTE1(target);
+  LOBYTE(v25) = -112;
+  LOBYTE(v25) = *((_BYTE *)*(&alu_eq + v24) + v25);
+  b1 = v25;
+  LOBYTE(v24) = BYTE2(target);
+  LOBYTE(v25) = 4;
+  LOBYTE(v25) = *((_BYTE *)*(&alu_eq + v24) + v25);
+  b2 = v25;
+  LOBYTE(v24) = HIBYTE(target);
+  LOBYTE(v25) = -120;
+  LOBYTE(v25) = *((_BYTE *)*(&alu_eq + v24) + v25);
+  b3 = v25;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v27);
-  v28 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v25);
+  v26 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v28) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v26) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v28) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v26) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v28) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v26) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v28) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v26) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v28) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v26) = jmp_f1;
   data_p = (int)&D0;
-  v29 = *(&sel_data + v28);
-  *v29 = jmp_d0;
-  v29[1] = dword_85F91BC;
+  v27 = *(&sel_data + v26);
+  *v27 = jmp_d0;
+  v27[1] = dword_85F91BC;
   data_p = (int)&D1;
-  v30 = *(&sel_data + v28);
-  *v30 = jmp_d1;
-  v30[1] = dword_85F91C4;
+  v28 = *(&sel_data + v26);
+  *v28 = jmp_d1;
+  v28[1] = dword_85F91C4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *((_DWORD *)fp - 524314);
   data_p = R3;
@@ -67937,52 +67926,52 @@ void rc_crc32()
   alu_y = 0;
   alu_t = 0;
   alu_c = 1;
-  v31 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_s) + alu_inv16[0])) + 1);
-  LOWORD(alu_s) = v31;
-  unk_81F900E = v31;
-  v32 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[0])) + alu_c);
-  HIWORD(alu_s) = v32;
-  unk_81F900E = v32;
+  v29 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_s) + alu_inv16[0])) + 1);
+  LOWORD(alu_s) = v29;
+  unk_81F900E = v29;
+  v30 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + alu_inv16[0])) + alu_c);
+  HIWORD(alu_s) = v30;
+  unk_81F900E = v30;
   alu_y = 0;
-  LOBYTE(dword_81F910C) = *((_BYTE *)alu_false + BYTE2(v32));
-  v33 = (unsigned __int8)dword_81F910C;
-  LOBYTE(v33) = BYTE1(v32);
-  LOBYTE(dword_81F9104) = alu_b7[v33];
-  v34 = (unsigned __int8)alu_s;
-  LOBYTE(v34) = BYTE1(alu_s);
-  v35 = (unsigned __int8)alu_true[v34 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
-  LOBYTE(v34) = BYTE2(alu_s);
-  v36 = (unsigned __int8)alu_true[v34 + v35];
-  LOBYTE(v34) = HIBYTE(alu_s);
-  v37 = *((unsigned __int8 *)alu_false + (unsigned __int8)alu_true[v34 + v36]);
-  LOBYTE(dword_81F9100) = v37;
-  LOBYTE(v37) = HIBYTE(alu_x);
-  v38 = alu_b7[v37];
-  v39 = alu_cmp_of[v38];
-  LOBYTE(v38) = 0;
-  v40 = alu_b7[v38];
-  v41 = v39[v40];
-  LOBYTE(v40) = HIBYTE(alu_s);
-  LOBYTE(dword_81F9108) = *(_DWORD *)v41[alu_b7[v40]];
+  LOBYTE(dword_81F910C) = *((_BYTE *)alu_false + BYTE2(v30));
+  v31 = (unsigned __int8)dword_81F910C;
+  LOBYTE(v31) = BYTE1(v30);
+  LOBYTE(dword_81F9104) = alu_b7[v31];
+  v32 = (unsigned __int8)alu_s;
+  LOBYTE(v32) = BYTE1(alu_s);
+  v33 = (unsigned __int8)alu_true[v32 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
+  LOBYTE(v32) = BYTE2(alu_s);
+  LOBYTE(v33) = alu_true[v32 + v33];
+  LOBYTE(v32) = HIBYTE(alu_s);
+  LOBYTE(v33) = alu_true[v32 + v33];
+  LOBYTE(dword_81F9100) = *((_BYTE *)alu_false + v33);
+  LOBYTE(v33) = HIBYTE(alu_x);
+  v34 = alu_b7[v33];
+  v35 = alu_cmp_of[v34];
+  LOBYTE(v34) = 0;
+  v36 = alu_b7[v34];
+  v37 = v35[v36];
+  LOBYTE(v36) = HIBYTE(alu_s);
+  LOBYTE(dword_81F9108) = *(_DWORD *)v37[alu_b7[v36]];
   b0 = *((_DWORD *)*(&and + dword_81F9100) + on);
   *(_DWORD *)*(&sel_target + b0) = -2012964062;
-  v42 = b0;
+  v38 = b0;
   data_p = (int)&jmp_r0;
-  v43 = *(&sel_data + b0);
-  *v43 = R0;
-  v43[1] = R1;
-  v43[2] = R2;
-  v43[3] = R3;
+  v39 = *(&sel_data + b0);
+  *v39 = R0;
+  v39[1] = R1;
+  v39[2] = R2;
+  v39[3] = R3;
   data_p = (int)&jmp_f0;
-  v44 = *(&sel_data + v42);
-  *v44 = F0;
-  v44[1] = F1;
+  v40 = *(&sel_data + v38);
+  *v40 = F0;
+  v40[1] = F1;
   data_p = (int)&jmp_d0;
-  v45 = *(&sel_data + v42);
-  *v45 = D0;
-  v45[1] = dword_8050084;
-  v45[2] = D1;
-  v45[3] = dword_805008C;
+  v41 = *(&sel_data + v38);
+  *v41 = D0;
+  v41[1] = dword_8050084;
+  v41[2] = D1;
+  v41[3] = dword_805008C;
   *(_DWORD *)*(&sel_on + b0) = 0;
   R3 = *((_DWORD *)fp - 524314);
   data_p = R3;
@@ -67992,25 +67981,26 @@ void rc_crc32()
   alu_y = 1;
   alu_sx = 1;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
-  LOBYTE(v45) = alu_true[alu_sc];
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(v41) = alu_true[alu_sc];
   alu_sc = 1;
-  BYTE1(alu_sc) = (_BYTE)v45;
+  BYTE1(alu_sc) = (_BYTE)v41;
   alu_y = alu_clamp32[alu_sc];
   alu_s0 = 0;
   alu_s1 = 0;
   alu_s2 = 0;
   alu_s3 = 0;
-  v46 = (int)*(&alu_rshu8 + alu_y);
-  v47 = (unsigned __int8)R3;
-  unk_81F9021 = *(_DWORD *)(v46 + 4 * (unsigned __int8)R3);
-  LOBYTE(v47) = BYTE1(R3);
-  unk_81F902E = *(_DWORD *)(v46 + 4 * v47);
-  LOBYTE(v47) = BYTE2(R3);
-  unk_81F903B = *(_DWORD *)(v46 + 4 * v47);
-  LOBYTE(v47) = HIBYTE(R3);
-  alu_s3 = *(_DWORD *)(v46 + 4 * v47);
+  v42 = (int)*(&alu_rshu8 + alu_y);
+  v43 = (unsigned __int8)R3;
+  unk_81F9021 = *(_DWORD *)(v42 + 4 * (unsigned __int8)R3);
+  LOBYTE(v43) = BYTE1(R3);
+  unk_81F902E = *(_DWORD *)(v42 + 4 * v43);
+  LOBYTE(v43) = BYTE2(R3);
+  unk_81F903B = *(_DWORD *)(v42 + 4 * v43);
+  LOBYTE(v43) = HIBYTE(R3);
+  alu_s3 = *(_DWORD *)(v42 + 4 * v43);
   LOBYTE(alu_s) = *((_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_s0) + (unsigned __int8)alu_s1);
   BYTE1(alu_s) = *((_BYTE *)alu_bor8 + BYTE1(alu_s1));
   BYTE2(alu_s) = *(_BYTE *)alu_bor8;
@@ -68041,65 +68031,65 @@ void rc_crc32()
   *(_DWORD *)*(&sel_data + on) = alu_s;
   branch_temp = -2012962736;
   *(_DWORD *)*(&sel_target + on) = -2012962736;
-  v48 = on;
+  v44 = on;
   data_p = (int)&jmp_r0;
-  v49 = *(&sel_data + on);
-  *v49 = R0;
-  v49[1] = R1;
-  v49[2] = R2;
-  v49[3] = R3;
+  v45 = *(&sel_data + on);
+  *v45 = R0;
+  v45[1] = R1;
+  v45[2] = R2;
+  v45[3] = R3;
   data_p = (int)&jmp_f0;
-  v50 = *(&sel_data + v48);
-  *v50 = F0;
-  v50[1] = F1;
+  v46 = *(&sel_data + v44);
+  *v46 = F0;
+  v46[1] = F1;
   data_p = (int)&jmp_d0;
-  v51 = *(&sel_data + v48);
-  *v51 = D0;
-  v51[1] = dword_8050084;
-  v51[2] = D1;
-  v51[3] = dword_805008C;
+  v47 = *(&sel_data + v44);
+  *v47 = D0;
+  v47[1] = dword_8050084;
+  v47[2] = D1;
+  v47[3] = dword_805008C;
   *(_DWORD *)*(&sel_on + on) = 0;
   alu_x = target;
   alu_y = -2012964062;
-  v52 = (unsigned __int8)target;
-  v53 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 34);
-  b0 = v53;
-  LOBYTE(v52) = BYTE1(target);
-  LOBYTE(v53) = -101;
-  LOBYTE(v53) = *((_BYTE *)*(&alu_eq + v52) + v53);
-  b1 = v53;
-  LOBYTE(v52) = BYTE2(target);
-  LOBYTE(v53) = 4;
-  LOBYTE(v53) = *((_BYTE *)*(&alu_eq + v52) + v53);
-  b2 = v53;
-  LOBYTE(v52) = HIBYTE(target);
-  LOBYTE(v53) = -120;
-  LOBYTE(v53) = *((_BYTE *)*(&alu_eq + v52) + v53);
-  b3 = v53;
+  v48 = (unsigned __int8)target;
+  v49 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 34);
+  b0 = v49;
+  LOBYTE(v48) = BYTE1(target);
+  LOBYTE(v49) = -101;
+  LOBYTE(v49) = *((_BYTE *)*(&alu_eq + v48) + v49);
+  b1 = v49;
+  LOBYTE(v48) = BYTE2(target);
+  LOBYTE(v49) = 4;
+  LOBYTE(v49) = *((_BYTE *)*(&alu_eq + v48) + v49);
+  b2 = v49;
+  LOBYTE(v48) = HIBYTE(target);
+  LOBYTE(v49) = -120;
+  LOBYTE(v49) = *((_BYTE *)*(&alu_eq + v48) + v49);
+  b3 = v49;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v53);
-  v54 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v49);
+  v50 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v54) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v50) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v54) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v50) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v54) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v50) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v54) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v50) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v54) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v50) = jmp_f1;
   data_p = (int)&D0;
-  v55 = *(&sel_data + v54);
-  *v55 = jmp_d0;
-  v55[1] = dword_85F91BC;
+  v51 = *(&sel_data + v50);
+  *v51 = jmp_d0;
+  v51[1] = dword_85F91BC;
   data_p = (int)&D1;
-  v56 = *(&sel_data + v54);
-  *v56 = jmp_d1;
-  v56[1] = dword_85F91C4;
+  v52 = *(&sel_data + v50);
+  *v52 = jmp_d1;
+  v52[1] = dword_85F91C4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *((_DWORD *)fp - 524314);
   data_p = R3;
@@ -68109,25 +68099,26 @@ void rc_crc32()
   alu_y = 1;
   alu_sx = 1;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
-  LOBYTE(v56) = alu_true[alu_sc];
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(v52) = alu_true[alu_sc];
   alu_sc = 1;
-  BYTE1(alu_sc) = (_BYTE)v56;
+  BYTE1(alu_sc) = (_BYTE)v52;
   alu_y = alu_clamp32[alu_sc];
   alu_s0 = 0;
   alu_s1 = 0;
   alu_s2 = 0;
   alu_s3 = 0;
-  v57 = (int)*(&alu_rshu8 + alu_y);
-  v58 = (unsigned __int8)R3;
-  unk_81F9021 = *(_DWORD *)(v57 + 4 * (unsigned __int8)R3);
-  LOBYTE(v58) = BYTE1(R3);
-  unk_81F902E = *(_DWORD *)(v57 + 4 * v58);
-  LOBYTE(v58) = BYTE2(R3);
-  unk_81F903B = *(_DWORD *)(v57 + 4 * v58);
-  LOBYTE(v58) = HIBYTE(R3);
-  alu_s3 = *(_DWORD *)(v57 + 4 * v58);
+  v53 = (int)*(&alu_rshu8 + alu_y);
+  v54 = (unsigned __int8)R3;
+  unk_81F9021 = *(_DWORD *)(v53 + 4 * (unsigned __int8)R3);
+  LOBYTE(v54) = BYTE1(R3);
+  unk_81F902E = *(_DWORD *)(v53 + 4 * v54);
+  LOBYTE(v54) = BYTE2(R3);
+  unk_81F903B = *(_DWORD *)(v53 + 4 * v54);
+  LOBYTE(v54) = HIBYTE(R3);
+  alu_s3 = *(_DWORD *)(v53 + 4 * v54);
   LOBYTE(alu_s) = *((_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_s0) + (unsigned __int8)alu_s1);
   BYTE1(alu_s) = *((_BYTE *)alu_bor8 + BYTE1(alu_s1));
   BYTE2(alu_s) = *(_BYTE *)alu_bor8;
@@ -68145,87 +68136,87 @@ void rc_crc32()
   *(_DWORD *)*(&sel_data + on) = alu_s;
   alu_x = target;
   alu_y = -2012962736;
-  v59 = (unsigned __int8)target;
-  v60 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 80);
-  b0 = v60;
-  LOBYTE(v59) = BYTE1(target);
-  LOBYTE(v60) = -96;
-  LOBYTE(v60) = *((_BYTE *)*(&alu_eq + v59) + v60);
-  b1 = v60;
-  LOBYTE(v59) = BYTE2(target);
-  LOBYTE(v60) = 4;
-  LOBYTE(v60) = *((_BYTE *)*(&alu_eq + v59) + v60);
-  b2 = v60;
-  LOBYTE(v59) = HIBYTE(target);
-  LOBYTE(v60) = -120;
-  LOBYTE(v60) = *((_BYTE *)*(&alu_eq + v59) + v60);
-  b3 = v60;
+  v55 = (unsigned __int8)target;
+  v56 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 80);
+  b0 = v56;
+  LOBYTE(v55) = BYTE1(target);
+  LOBYTE(v56) = -96;
+  LOBYTE(v56) = *((_BYTE *)*(&alu_eq + v55) + v56);
+  b1 = v56;
+  LOBYTE(v55) = BYTE2(target);
+  LOBYTE(v56) = 4;
+  LOBYTE(v56) = *((_BYTE *)*(&alu_eq + v55) + v56);
+  b2 = v56;
+  LOBYTE(v55) = HIBYTE(target);
+  LOBYTE(v56) = -120;
+  LOBYTE(v56) = *((_BYTE *)*(&alu_eq + v55) + v56);
+  b3 = v56;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v60);
-  v61 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v56);
+  v57 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v61) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v57) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v61) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v57) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v61) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v57) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v61) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v57) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v61) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v57) = jmp_f1;
   data_p = (int)&D0;
-  v62 = *(&sel_data + v61);
-  *v62 = jmp_d0;
-  v62[1] = dword_85F91BC;
+  v58 = *(&sel_data + v57);
+  *v58 = jmp_d0;
+  v58[1] = dword_85F91BC;
   data_p = (int)&D1;
-  v63 = *(&sel_data + v61);
-  *v63 = jmp_d1;
-  v63[1] = dword_85F91C4;
+  v59 = *(&sel_data + v57);
+  *v59 = jmp_d1;
+  v59[1] = dword_85F91C4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   alu_x = target;
   alu_y = -2012962262;
-  v64 = (unsigned __int8)target;
-  v65 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 42);
-  b0 = v65;
-  LOBYTE(v64) = BYTE1(target);
-  LOBYTE(v65) = -94;
-  LOBYTE(v65) = *((_BYTE *)*(&alu_eq + v64) + v65);
-  b1 = v65;
-  LOBYTE(v64) = BYTE2(target);
-  LOBYTE(v65) = 4;
-  LOBYTE(v65) = *((_BYTE *)*(&alu_eq + v64) + v65);
-  b2 = v65;
-  LOBYTE(v64) = HIBYTE(target);
-  LOBYTE(v65) = -120;
-  LOBYTE(v65) = *((_BYTE *)*(&alu_eq + v64) + v65);
-  b3 = v65;
+  v60 = (unsigned __int8)target;
+  v61 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 42);
+  b0 = v61;
+  LOBYTE(v60) = BYTE1(target);
+  LOBYTE(v61) = -94;
+  LOBYTE(v61) = *((_BYTE *)*(&alu_eq + v60) + v61);
+  b1 = v61;
+  LOBYTE(v60) = BYTE2(target);
+  LOBYTE(v61) = 4;
+  LOBYTE(v61) = *((_BYTE *)*(&alu_eq + v60) + v61);
+  b2 = v61;
+  LOBYTE(v60) = HIBYTE(target);
+  LOBYTE(v61) = -120;
+  LOBYTE(v61) = *((_BYTE *)*(&alu_eq + v60) + v61);
+  b3 = v61;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v65);
-  v66 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v61);
+  v62 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v66) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v62) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v66) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v62) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v66) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v62) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v66) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v62) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v66) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v62) = jmp_f1;
   data_p = (int)&D0;
-  v67 = *(&sel_data + v66);
-  *v67 = jmp_d0;
-  v67[1] = dword_85F91BC;
+  v63 = *(&sel_data + v62);
+  *v63 = jmp_d0;
+  v63[1] = dword_85F91BC;
   data_p = (int)&D1;
-  v68 = *(&sel_data + v66);
-  *v68 = jmp_d1;
-  v68[1] = dword_85F91C4;
+  v64 = *(&sel_data + v62);
+  *v64 = jmp_d1;
+  v64[1] = dword_85F91C4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *(_DWORD *)(*((_DWORD *)fp - 524314) - 2097256);
   data_p = R3;
@@ -68234,12 +68225,12 @@ void rc_crc32()
   alu_x = R3;
   alu_y = 1;
   alu_c = 0;
-  v69 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + 1));
-  LOWORD(alu_s) = v69;
-  alu_c = v69;
-  v70 = *((_DWORD *)*(&alu_add16 + *(_DWORD *)*(&alu_add16 + HIWORD(R3))) + HIWORD(v69));
-  HIWORD(alu_s) = v70;
-  alu_c = v70;
+  v65 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + 1));
+  LOWORD(alu_s) = v65;
+  alu_c = v65;
+  v66 = *((_DWORD *)*(&alu_add16 + *(_DWORD *)*(&alu_add16 + HIWORD(R3))) + HIWORD(v65));
+  HIWORD(alu_s) = v66;
+  alu_c = v66;
   R3 = alu_s;
   data_p = *(_DWORD *)(*((_DWORD *)fp - 524314) - 2097256);
   *(_DWORD *)*(&sel_data + on) = alu_s;
@@ -68252,53 +68243,53 @@ void rc_crc32()
   alu_y = 8;
   alu_t = 8;
   alu_c = 1;
-  v71 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + alu_inv16[8])) + 1);
-  LOWORD(alu_s) = v71;
-  unk_81F900E = v71;
-  v72 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + alu_inv16[0])) + alu_c);
-  HIWORD(alu_s) = v72;
-  unk_81F900E = v72;
+  v67 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + alu_inv16[8])) + 1);
+  LOWORD(alu_s) = v67;
+  unk_81F900E = v67;
+  v68 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + alu_inv16[0])) + alu_c);
+  HIWORD(alu_s) = v68;
+  unk_81F900E = v68;
   alu_y = 8;
-  LOBYTE(dword_81F910C) = *((_BYTE *)alu_false + BYTE2(v72));
-  v73 = (unsigned __int8)dword_81F910C;
-  LOBYTE(v73) = BYTE1(v72);
-  LOBYTE(dword_81F9104) = alu_b7[v73];
-  v74 = (unsigned __int8)alu_s;
-  LOBYTE(v74) = BYTE1(alu_s);
-  v75 = (unsigned __int8)alu_true[v74 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
-  LOBYTE(v74) = BYTE2(alu_s);
-  v76 = (unsigned __int8)alu_true[v74 + v75];
+  LOBYTE(dword_81F910C) = *((_BYTE *)alu_false + BYTE2(v68));
+  v69 = (unsigned __int8)dword_81F910C;
+  LOBYTE(v69) = BYTE1(v68);
+  LOBYTE(dword_81F9104) = alu_b7[v69];
+  v70 = (unsigned __int8)alu_s;
+  LOBYTE(v70) = BYTE1(alu_s);
+  v71 = (unsigned __int8)alu_true[v70 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
+  LOBYTE(v70) = BYTE2(alu_s);
+  LOBYTE(v71) = alu_true[v70 + v71];
+  LOBYTE(v70) = HIBYTE(alu_s);
+  LOBYTE(v71) = alu_true[v70 + v71];
+  LOBYTE(dword_81F9100) = *((_BYTE *)alu_false + v71);
+  LOBYTE(v71) = HIBYTE(R3);
+  v72 = alu_b7[v71];
+  v73 = alu_cmp_of[v72];
+  LOBYTE(v72) = 0;
+  v74 = alu_b7[v72];
+  v75 = v73[v74];
   LOBYTE(v74) = HIBYTE(alu_s);
-  v77 = *((unsigned __int8 *)alu_false + (unsigned __int8)alu_true[v74 + v76]);
-  LOBYTE(dword_81F9100) = v77;
-  LOBYTE(v77) = HIBYTE(R3);
-  v78 = alu_b7[v77];
-  v79 = alu_cmp_of[v78];
-  LOBYTE(v78) = 0;
-  v80 = alu_b7[v78];
-  v81 = v79[v80];
-  LOBYTE(v80) = HIBYTE(alu_s);
-  LOBYTE(dword_81F9108) = *(_DWORD *)v81[alu_b7[v80]];
+  LOBYTE(dword_81F9108) = *(_DWORD *)v75[alu_b7[v74]];
   b0 = *((_DWORD *)*(&xor + dword_81F9104) + dword_81F9108);
   b0 = *((_DWORD *)*(&and + b0) + on);
   *(_DWORD *)*(&sel_target + b0) = -2012966657;
-  v82 = b0;
+  v76 = b0;
   data_p = (int)&jmp_r0;
-  v83 = *(&sel_data + b0);
-  *v83 = R0;
-  v83[1] = R1;
-  v83[2] = R2;
-  v83[3] = R3;
+  v77 = *(&sel_data + b0);
+  *v77 = R0;
+  v77[1] = R1;
+  v77[2] = R2;
+  v77[3] = R3;
   data_p = (int)&jmp_f0;
-  v84 = *(&sel_data + v82);
-  *v84 = F0;
-  v84[1] = F1;
+  v78 = *(&sel_data + v76);
+  *v78 = F0;
+  v78[1] = F1;
   data_p = (int)&jmp_d0;
-  v85 = *(&sel_data + v82);
-  *v85 = D0;
-  v85[1] = dword_8050084;
-  v85[2] = D1;
-  v85[3] = dword_805008C;
+  v79 = *(&sel_data + v76);
+  *v79 = D0;
+  v79[1] = dword_8050084;
+  v79[2] = D1;
+  v79[3] = dword_805008C;
   *(_DWORD *)*(&sel_on + b0) = 0;
   R3 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524314) - 2097256) - 2097256) - 2097256);
   data_p = R3;
@@ -68308,25 +68299,26 @@ void rc_crc32()
   alu_y = 2;
   alu_sx = 2;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
-  LOBYTE(v85) = alu_true[alu_sc];
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(v79) = alu_true[alu_sc];
   alu_sc = 2;
-  BYTE1(alu_sc) = (_BYTE)v85;
+  BYTE1(alu_sc) = (_BYTE)v79;
   alu_y = alu_clamp32[alu_sc];
   alu_s0 = 0;
   alu_s1 = 0;
   alu_s2 = 0;
   alu_s3 = 0;
-  v86 = (int)*(&alu_lshu8 + alu_y);
-  v87 = (unsigned __int8)R3;
-  alu_s0 = *(_DWORD *)(v86 + 4 * (unsigned __int8)R3);
-  LOBYTE(v87) = BYTE1(R3);
-  *(int *)((char *)&alu_s1 + 1) = *(_DWORD *)(v86 + 4 * v87);
-  LOBYTE(v87) = BYTE2(R3);
-  *(int *)((char *)&alu_s2 + 2) = *(_DWORD *)(v86 + 4 * v87);
-  LOBYTE(v87) = HIBYTE(R3);
-  *(int *)((char *)&alu_s3 + 3) = *(_DWORD *)(v86 + 4 * v87);
+  v80 = (int)*(&alu_lshu8 + alu_y);
+  v81 = (unsigned __int8)R3;
+  alu_s0 = *(_DWORD *)(v80 + 4 * (unsigned __int8)R3);
+  LOBYTE(v81) = BYTE1(R3);
+  *(int *)((char *)&alu_s1 + 1) = *(_DWORD *)(v80 + 4 * v81);
+  LOBYTE(v81) = BYTE2(R3);
+  *(int *)((char *)&alu_s2 + 2) = *(_DWORD *)(v80 + 4 * v81);
+  LOBYTE(v81) = HIBYTE(R3);
+  *(int *)((char *)&alu_s3 + 3) = *(_DWORD *)(v80 + 4 * v81);
   LOBYTE(alu_s) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_s0);
   BYTE1(alu_s) = *((_BYTE *)*(&alu_bor8 + BYTE1(alu_s0)) + BYTE1(alu_s1));
   BYTE2(alu_s) = *((_BYTE *)*(&alu_bor8 + BYTE2(alu_s0)) + BYTE2(alu_s1));
@@ -68344,13 +68336,13 @@ void rc_crc32()
   alu_x = alu_s;
   alu_y = (int)&table_8;
   alu_c = 0;
-  v88 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_s) + (unsigned __int16)&table_8));
-  LOWORD(alu_s) = v88;
-  alu_c = v88;
-  v89 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + ((unsigned int)&table_8 >> 16)))
-        + HIWORD(v88));
-  HIWORD(alu_s) = v89;
-  alu_c = v89;
+  v82 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_s) + (unsigned __int16)&table_8));
+  LOWORD(alu_s) = v82;
+  alu_c = v82;
+  v83 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + ((unsigned int)&table_8 >> 16)))
+        + HIWORD(v82));
+  HIWORD(alu_s) = v83;
+  alu_c = v83;
   R3 = alu_s;
   R2 = *((_DWORD *)fp - 524314);
   data_p = R2;
@@ -68359,45 +68351,45 @@ void rc_crc32()
   *(_DWORD *)*(&sel_data + on) = R2;
   alu_x = target;
   alu_y = -2012959793;
-  v90 = (unsigned __int8)target;
-  v91 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 207);
-  b0 = v91;
-  LOBYTE(v90) = BYTE1(target);
-  LOBYTE(v91) = -85;
-  LOBYTE(v91) = *((_BYTE *)*(&alu_eq + v90) + v91);
-  b1 = v91;
-  LOBYTE(v90) = BYTE2(target);
-  LOBYTE(v91) = 4;
-  LOBYTE(v91) = *((_BYTE *)*(&alu_eq + v90) + v91);
-  b2 = v91;
-  LOBYTE(v90) = HIBYTE(target);
-  LOBYTE(v91) = -120;
-  LOBYTE(v91) = *((_BYTE *)*(&alu_eq + v90) + v91);
-  b3 = v91;
+  v84 = (unsigned __int8)target;
+  v85 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 207);
+  b0 = v85;
+  LOBYTE(v84) = BYTE1(target);
+  LOBYTE(v85) = -85;
+  LOBYTE(v85) = *((_BYTE *)*(&alu_eq + v84) + v85);
+  b1 = v85;
+  LOBYTE(v84) = BYTE2(target);
+  LOBYTE(v85) = 4;
+  LOBYTE(v85) = *((_BYTE *)*(&alu_eq + v84) + v85);
+  b2 = v85;
+  LOBYTE(v84) = HIBYTE(target);
+  LOBYTE(v85) = -120;
+  LOBYTE(v85) = *((_BYTE *)*(&alu_eq + v84) + v85);
+  b3 = v85;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v91);
-  v92 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v85);
+  v86 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v92) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v86) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v92) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v86) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v92) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v86) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v92) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v86) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v92) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v86) = jmp_f1;
   data_p = (int)&D0;
-  v93 = *(&sel_data + v92);
-  *v93 = jmp_d0;
-  v93[1] = dword_85F91BC;
+  v87 = *(&sel_data + v86);
+  *v87 = jmp_d0;
+  v87[1] = dword_85F91BC;
   data_p = (int)&D1;
-  v94 = *(&sel_data + v92);
-  *v94 = jmp_d1;
-  v94[1] = dword_85F91C4;
+  v88 = *(&sel_data + v86);
+  *v88 = jmp_d1;
+  v88[1] = dword_85F91C4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524314) - 2097256) - 2097256) - 2097256);
   data_p = R3;
@@ -68406,12 +68398,12 @@ void rc_crc32()
   alu_x = R3;
   alu_y = 1;
   alu_c = 0;
-  v95 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + 1));
-  LOWORD(alu_s) = v95;
-  alu_c = v95;
-  v96 = *((_DWORD *)*(&alu_add16 + *(_DWORD *)*(&alu_add16 + HIWORD(R3))) + HIWORD(v95));
-  HIWORD(alu_s) = v96;
-  alu_c = v96;
+  v89 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + 1));
+  LOWORD(alu_s) = v89;
+  alu_c = v89;
+  v90 = *((_DWORD *)*(&alu_add16 + *(_DWORD *)*(&alu_add16 + HIWORD(R3))) + HIWORD(v89));
+  HIWORD(alu_s) = v90;
+  alu_c = v90;
   R3 = alu_s;
   data_p = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524314) - 2097256) - 2097256) - 2097256);
   *(_DWORD *)*(&sel_data + on) = alu_s;
@@ -68424,53 +68416,53 @@ void rc_crc32()
   alu_y = 256;
   alu_t = 256;
   alu_c = 1;
-  v97 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + alu_inv16[256])) + 1);
-  LOWORD(alu_s) = v97;
-  unk_81F900E = v97;
-  v98 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + alu_inv16[0])) + alu_c);
-  HIWORD(alu_s) = v98;
-  unk_81F900E = v98;
+  v91 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + alu_inv16[256])) + 1);
+  LOWORD(alu_s) = v91;
+  unk_81F900E = v91;
+  v92 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + alu_inv16[0])) + alu_c);
+  HIWORD(alu_s) = v92;
+  unk_81F900E = v92;
   alu_y = 256;
-  LOBYTE(dword_81F910C) = *((_BYTE *)alu_false + BYTE2(v98));
-  v99 = (unsigned __int8)dword_81F910C;
-  LOBYTE(v99) = BYTE1(v98);
-  LOBYTE(dword_81F9104) = alu_b7[v99];
-  v100 = (unsigned __int8)alu_s;
-  LOBYTE(v100) = BYTE1(alu_s);
-  v101 = (unsigned __int8)alu_true[v100 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
-  LOBYTE(v100) = BYTE2(alu_s);
-  v102 = (unsigned __int8)alu_true[v100 + v101];
-  LOBYTE(v100) = HIBYTE(alu_s);
-  v103 = *((unsigned __int8 *)alu_false + (unsigned __int8)alu_true[v100 + v102]);
-  LOBYTE(dword_81F9100) = v103;
-  LOBYTE(v103) = HIBYTE(R3);
-  v104 = alu_b7[v103];
-  v105 = alu_cmp_of[v104];
-  LOBYTE(v104) = 0;
-  v106 = alu_b7[v104];
-  v107 = v105[v106];
-  LOBYTE(v106) = HIBYTE(alu_s);
-  LOBYTE(dword_81F9108) = *(_DWORD *)v107[alu_b7[v106]];
+  LOBYTE(dword_81F910C) = *((_BYTE *)alu_false + BYTE2(v92));
+  v93 = (unsigned __int8)dword_81F910C;
+  LOBYTE(v93) = BYTE1(v92);
+  LOBYTE(dword_81F9104) = alu_b7[v93];
+  v94 = (unsigned __int8)alu_s;
+  LOBYTE(v94) = BYTE1(alu_s);
+  v95 = (unsigned __int8)alu_true[v94 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
+  LOBYTE(v94) = BYTE2(alu_s);
+  LOBYTE(v95) = alu_true[v94 + v95];
+  LOBYTE(v94) = HIBYTE(alu_s);
+  LOBYTE(v95) = alu_true[v94 + v95];
+  LOBYTE(dword_81F9100) = *((_BYTE *)alu_false + v95);
+  LOBYTE(v95) = HIBYTE(R3);
+  v96 = alu_b7[v95];
+  v97 = alu_cmp_of[v96];
+  LOBYTE(v96) = 0;
+  v98 = alu_b7[v96];
+  v99 = v97[v98];
+  LOBYTE(v98) = HIBYTE(alu_s);
+  LOBYTE(dword_81F9108) = *(_DWORD *)v99[alu_b7[v98]];
   b0 = *((_DWORD *)*(&xor + dword_81F9104) + dword_81F9108);
   b0 = *((_DWORD *)*(&and + b0) + on);
   *(_DWORD *)*(&sel_target + b0) = -2012967295;
-  v108 = b0;
+  v100 = b0;
   data_p = (int)&jmp_r0;
-  v109 = *(&sel_data + b0);
-  *v109 = R0;
-  v109[1] = R1;
-  v109[2] = R2;
-  v109[3] = R3;
+  v101 = *(&sel_data + b0);
+  *v101 = R0;
+  v101[1] = R1;
+  v101[2] = R2;
+  v101[3] = R3;
   data_p = (int)&jmp_f0;
-  v110 = *(&sel_data + v108);
-  *v110 = F0;
-  v110[1] = F1;
+  v102 = *(&sel_data + v100);
+  *v102 = F0;
+  v102[1] = F1;
   data_p = (int)&jmp_d0;
-  v111 = *(&sel_data + v108);
-  *v111 = D0;
-  v111[1] = dword_8050084;
-  v111[2] = D1;
-  v111[3] = dword_805008C;
+  v103 = *(&sel_data + v100);
+  *v103 = D0;
+  v103[1] = dword_8050084;
+  v103[2] = D1;
+  v103[3] = dword_805008C;
   *(_DWORD *)*(&sel_on + b0) = 0;
   R3 = (int)&have_table_9;
   R2 = 1;
@@ -68478,45 +68470,45 @@ void rc_crc32()
   *(_DWORD *)*(&sel_data + on) = 1;
   alu_x = target;
   alu_y = -2012958315;
-  v112 = (unsigned __int8)target;
-  v113 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 149);
-  b0 = v113;
-  LOBYTE(v112) = BYTE1(target);
-  LOBYTE(v113) = -79;
-  LOBYTE(v113) = *((_BYTE *)*(&alu_eq + v112) + v113);
-  b1 = v113;
-  LOBYTE(v112) = BYTE2(target);
-  LOBYTE(v113) = 4;
-  LOBYTE(v113) = *((_BYTE *)*(&alu_eq + v112) + v113);
-  b2 = v113;
-  LOBYTE(v112) = HIBYTE(target);
-  LOBYTE(v113) = -120;
-  LOBYTE(v113) = *((_BYTE *)*(&alu_eq + v112) + v113);
-  b3 = v113;
+  v104 = (unsigned __int8)target;
+  v105 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 149);
+  b0 = v105;
+  LOBYTE(v104) = BYTE1(target);
+  LOBYTE(v105) = -79;
+  LOBYTE(v105) = *((_BYTE *)*(&alu_eq + v104) + v105);
+  b1 = v105;
+  LOBYTE(v104) = BYTE2(target);
+  LOBYTE(v105) = 4;
+  LOBYTE(v105) = *((_BYTE *)*(&alu_eq + v104) + v105);
+  b2 = v105;
+  LOBYTE(v104) = HIBYTE(target);
+  LOBYTE(v105) = -120;
+  LOBYTE(v105) = *((_BYTE *)*(&alu_eq + v104) + v105);
+  b3 = v105;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v113);
-  v114 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v105);
+  v106 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v114) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v106) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v114) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v106) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v114) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v106) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v114) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v106) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v114) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v106) = jmp_f1;
   data_p = (int)&D0;
-  v115 = *(&sel_data + v114);
-  *v115 = jmp_d0;
-  v115[1] = dword_85F91BC;
+  v107 = *(&sel_data + v106);
+  *v107 = jmp_d0;
+  v107[1] = dword_85F91BC;
   data_p = (int)&D1;
-  v116 = *(&sel_data + v114);
-  *v116 = jmp_d1;
-  v116[1] = dword_85F91C4;
+  v108 = *(&sel_data + v106);
+  *v108 = jmp_d1;
+  v108[1] = dword_85F91C4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524312)
                                                                                          - 2097248)
@@ -68567,12 +68559,12 @@ void rc_crc32()
   alu_x = R3;
   alu_y = R2;
   alu_c = 0;
-  v117 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + (unsigned __int16)R2));
-  LOWORD(alu_s) = v117;
-  alu_c = v117;
-  v118 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + HIWORD(R2))) + HIWORD(v117));
-  HIWORD(alu_s) = v118;
-  alu_c = v118;
+  v109 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + (unsigned __int16)R2));
+  LOWORD(alu_s) = v109;
+  alu_c = v109;
+  v110 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + HIWORD(R2))) + HIWORD(v109));
+  HIWORD(alu_s) = v110;
+  alu_c = v110;
   R3 = alu_s;
   data_p = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524314) - 2097256) - 2097256)
                                              - 2097256)
@@ -68593,65 +68585,65 @@ void rc_crc32()
   *(_DWORD *)*(&sel_data + on) = R3;
   branch_temp = -2012952830;
   *(_DWORD *)*(&sel_target + on) = -2012952830;
-  v119 = on;
+  v111 = on;
   data_p = (int)&jmp_r0;
-  v120 = *(&sel_data + on);
-  *v120 = R0;
-  v120[1] = R1;
-  v120[2] = R2;
-  v120[3] = R3;
+  v112 = *(&sel_data + on);
+  *v112 = R0;
+  v112[1] = R1;
+  v112[2] = R2;
+  v112[3] = R3;
   data_p = (int)&jmp_f0;
-  v121 = *(&sel_data + v119);
-  *v121 = F0;
-  v121[1] = F1;
+  v113 = *(&sel_data + v111);
+  *v113 = F0;
+  v113[1] = F1;
   data_p = (int)&jmp_d0;
-  v122 = *(&sel_data + v119);
-  *v122 = D0;
-  v122[1] = dword_8050084;
-  v122[2] = D1;
-  v122[3] = dword_805008C;
+  v114 = *(&sel_data + v111);
+  *v114 = D0;
+  v114[1] = dword_8050084;
+  v114[2] = D1;
+  v114[3] = dword_805008C;
   *(_DWORD *)*(&sel_on + on) = 0;
   alu_x = target;
   alu_y = -2012956806;
-  v123 = (unsigned __int8)target;
-  v124 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 122);
-  b0 = v124;
-  LOBYTE(v123) = BYTE1(target);
-  LOBYTE(v124) = -73;
-  LOBYTE(v124) = *((_BYTE *)*(&alu_eq + v123) + v124);
-  b1 = v124;
-  LOBYTE(v123) = BYTE2(target);
-  LOBYTE(v124) = 4;
-  LOBYTE(v124) = *((_BYTE *)*(&alu_eq + v123) + v124);
-  b2 = v124;
-  LOBYTE(v123) = HIBYTE(target);
-  LOBYTE(v124) = -120;
-  LOBYTE(v124) = *((_BYTE *)*(&alu_eq + v123) + v124);
-  b3 = v124;
+  v115 = (unsigned __int8)target;
+  v116 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 122);
+  b0 = v116;
+  LOBYTE(v115) = BYTE1(target);
+  LOBYTE(v116) = -73;
+  LOBYTE(v116) = *((_BYTE *)*(&alu_eq + v115) + v116);
+  b1 = v116;
+  LOBYTE(v115) = BYTE2(target);
+  LOBYTE(v116) = 4;
+  LOBYTE(v116) = *((_BYTE *)*(&alu_eq + v115) + v116);
+  b2 = v116;
+  LOBYTE(v115) = HIBYTE(target);
+  LOBYTE(v116) = -120;
+  LOBYTE(v116) = *((_BYTE *)*(&alu_eq + v115) + v116);
+  b3 = v116;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v124);
-  v125 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v116);
+  v117 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v125) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v117) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v125) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v117) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v125) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v117) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v125) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v117) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v125) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v117) = jmp_f1;
   data_p = (int)&D0;
-  v126 = *(&sel_data + v125);
-  *v126 = jmp_d0;
-  v126[1] = dword_85F91BC;
+  v118 = *(&sel_data + v117);
+  *v118 = jmp_d0;
+  v118[1] = dword_85F91BC;
   data_p = (int)&D1;
-  v127 = *(&sel_data + v125);
-  *v127 = jmp_d1;
-  v127[1] = dword_85F91C4;
+  v119 = *(&sel_data + v117);
+  *v119 = jmp_d1;
+  v119[1] = dword_85F91C4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524314) - 2097256) - 2097256);
   data_p = R3;
@@ -68686,25 +68678,26 @@ void rc_crc32()
   alu_y = 8;
   alu_sx = 8;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
-  LOBYTE(v127) = alu_true[alu_sc];
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(v119) = alu_true[alu_sc];
   alu_sc = 8;
-  BYTE1(alu_sc) = (_BYTE)v127;
+  BYTE1(alu_sc) = (_BYTE)v119;
   alu_y = alu_clamp32[alu_sc];
   alu_s0 = 0;
   alu_s1 = 0;
   alu_s2 = 0;
   alu_s3 = 0;
-  v128 = (int)*(&alu_rshu8 + alu_y);
-  v129 = (unsigned __int8)R3;
-  unk_81F9021 = *(_DWORD *)(v128 + 4 * (unsigned __int8)R3);
-  LOBYTE(v129) = BYTE1(R3);
-  unk_81F902E = *(_DWORD *)(v128 + 4 * v129);
-  LOBYTE(v129) = BYTE2(R3);
-  unk_81F903B = *(_DWORD *)(v128 + 4 * v129);
-  LOBYTE(v129) = HIBYTE(R3);
-  alu_s3 = *(_DWORD *)(v128 + 4 * v129);
+  v120 = (int)*(&alu_rshu8 + alu_y);
+  v121 = (unsigned __int8)R3;
+  unk_81F9021 = *(_DWORD *)(v120 + 4 * (unsigned __int8)R3);
+  LOBYTE(v121) = BYTE1(R3);
+  unk_81F902E = *(_DWORD *)(v120 + 4 * v121);
+  LOBYTE(v121) = BYTE2(R3);
+  unk_81F903B = *(_DWORD *)(v120 + 4 * v121);
+  LOBYTE(v121) = HIBYTE(R3);
+  alu_s3 = *(_DWORD *)(v120 + 4 * v121);
   LOBYTE(alu_s) = *((_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_s0) + (unsigned __int8)alu_s1);
   BYTE1(alu_s) = *((_BYTE *)alu_bor8 + BYTE1(alu_s1));
   BYTE2(alu_s) = *(_BYTE *)alu_bor8;
@@ -68743,25 +68736,26 @@ void rc_crc32()
   alu_y = 2;
   alu_sx = 2;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
-  LOBYTE(v129) = alu_true[alu_sc];
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(v121) = alu_true[alu_sc];
   alu_sc = 2;
-  BYTE1(alu_sc) = v129;
+  BYTE1(alu_sc) = v121;
   alu_y = alu_clamp32[alu_sc];
   alu_s0 = 0;
   alu_s1 = 0;
   alu_s2 = 0;
   alu_s3 = 0;
-  v130 = (int)*(&alu_lshu8 + alu_y);
-  v131 = (unsigned __int8)alu_s;
-  alu_s0 = *(_DWORD *)(v130 + 4 * (unsigned __int8)alu_s);
-  LOBYTE(v131) = BYTE1(alu_s);
-  *(int *)((char *)&alu_s1 + 1) = *(_DWORD *)(v130 + 4 * v131);
-  LOBYTE(v131) = BYTE2(alu_s);
-  *(int *)((char *)&alu_s2 + 2) = *(_DWORD *)(v130 + 4 * v131);
-  LOBYTE(v131) = HIBYTE(alu_s);
-  *(int *)((char *)&alu_s3 + 3) = *(_DWORD *)(v130 + 4 * v131);
+  v122 = (int)*(&alu_lshu8 + alu_y);
+  v123 = (unsigned __int8)alu_s;
+  alu_s0 = *(_DWORD *)(v122 + 4 * (unsigned __int8)alu_s);
+  LOBYTE(v123) = BYTE1(alu_s);
+  *(int *)((char *)&alu_s1 + 1) = *(_DWORD *)(v122 + 4 * v123);
+  LOBYTE(v123) = BYTE2(alu_s);
+  *(int *)((char *)&alu_s2 + 2) = *(_DWORD *)(v122 + 4 * v123);
+  LOBYTE(v123) = HIBYTE(alu_s);
+  *(int *)((char *)&alu_s3 + 3) = *(_DWORD *)(v122 + 4 * v123);
   LOBYTE(alu_s) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_s0);
   BYTE1(alu_s) = *((_BYTE *)*(&alu_bor8 + BYTE1(alu_s0)) + BYTE1(alu_s1));
   BYTE2(alu_s) = *((_BYTE *)*(&alu_bor8 + BYTE2(alu_s0)) + BYTE2(alu_s1));
@@ -68779,13 +68773,13 @@ void rc_crc32()
   alu_x = alu_s;
   alu_y = (int)&table_8;
   alu_c = 0;
-  v132 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_s) + (unsigned __int16)&table_8));
-  LOWORD(alu_s) = v132;
-  alu_c = v132;
-  v133 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + ((unsigned int)&table_8 >> 16)))
-         + HIWORD(v132));
-  HIWORD(alu_s) = v133;
-  alu_c = v133;
+  v124 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)alu_s) + (unsigned __int16)&table_8));
+  LOWORD(alu_s) = v124;
+  alu_c = v124;
+  v125 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(alu_x)) + ((unsigned int)&table_8 >> 16)))
+         + HIWORD(v124));
+  HIWORD(alu_s) = v125;
+  alu_c = v125;
   R3 = alu_s;
   data_p = alu_s;
   R3 = *(_DWORD *)*(&sel_data + on);
@@ -68800,45 +68794,45 @@ void rc_crc32()
   *(_DWORD *)*(&sel_data + on) = alu_s;
   alu_x = target;
   alu_y = -2012953579;
-  v134 = (unsigned __int8)target;
-  v135 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 21);
-  b0 = v135;
-  LOBYTE(v134) = BYTE1(target);
-  LOBYTE(v135) = -60;
-  LOBYTE(v135) = *((_BYTE *)*(&alu_eq + v134) + v135);
-  b1 = v135;
-  LOBYTE(v134) = BYTE2(target);
-  LOBYTE(v135) = 4;
-  LOBYTE(v135) = *((_BYTE *)*(&alu_eq + v134) + v135);
-  b2 = v135;
-  LOBYTE(v134) = HIBYTE(target);
-  LOBYTE(v135) = -120;
-  LOBYTE(v135) = *((_BYTE *)*(&alu_eq + v134) + v135);
-  b3 = v135;
+  v126 = (unsigned __int8)target;
+  v127 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 21);
+  b0 = v127;
+  LOBYTE(v126) = BYTE1(target);
+  LOBYTE(v127) = -60;
+  LOBYTE(v127) = *((_BYTE *)*(&alu_eq + v126) + v127);
+  b1 = v127;
+  LOBYTE(v126) = BYTE2(target);
+  LOBYTE(v127) = 4;
+  LOBYTE(v127) = *((_BYTE *)*(&alu_eq + v126) + v127);
+  b2 = v127;
+  LOBYTE(v126) = HIBYTE(target);
+  LOBYTE(v127) = -120;
+  LOBYTE(v127) = *((_BYTE *)*(&alu_eq + v126) + v127);
+  b3 = v127;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v135);
-  v136 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v127);
+  v128 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v136) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v128) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v136) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v128) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v136) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v128) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v136) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v128) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v136) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v128) = jmp_f1;
   data_p = (int)&D0;
-  v137 = *(&sel_data + v136);
-  *v137 = jmp_d0;
-  v137[1] = dword_85F91BC;
+  v129 = *(&sel_data + v128);
+  *v129 = jmp_d0;
+  v129[1] = dword_85F91BC;
   data_p = (int)&D1;
-  v138 = *(&sel_data + v136);
-  *v138 = jmp_d1;
-  v138[1] = dword_85F91C4;
+  v130 = *(&sel_data + v128);
+  *v130 = jmp_d1;
+  v130[1] = dword_85F91C4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524314) - 2097256) - 2097256);
   data_p = R3;
@@ -68847,56 +68841,56 @@ void rc_crc32()
   alu_x = R3;
   alu_y = 1;
   alu_c = 0;
-  v139 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + 1));
-  LOWORD(alu_s) = v139;
-  alu_c = v139;
-  v140 = *((_DWORD *)*(&alu_add16 + *(_DWORD *)*(&alu_add16 + HIWORD(R3))) + HIWORD(v139));
-  HIWORD(alu_s) = v140;
-  alu_c = v140;
+  v131 = *(_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + 1));
+  LOWORD(alu_s) = v131;
+  alu_c = v131;
+  v132 = *((_DWORD *)*(&alu_add16 + *(_DWORD *)*(&alu_add16 + HIWORD(R3))) + HIWORD(v131));
+  HIWORD(alu_s) = v132;
+  alu_c = v132;
   R3 = alu_s;
   data_p = *(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524314) - 2097256) - 2097256);
   *(_DWORD *)*(&sel_data + on) = alu_s;
   alu_x = target;
   alu_y = -2012952830;
-  v141 = (unsigned __int8)target;
-  v142 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 2);
-  b0 = v142;
-  LOBYTE(v141) = BYTE1(target);
-  LOBYTE(v142) = -57;
-  LOBYTE(v142) = *((_BYTE *)*(&alu_eq + v141) + v142);
-  b1 = v142;
-  LOBYTE(v141) = BYTE2(target);
-  LOBYTE(v142) = 4;
-  LOBYTE(v142) = *((_BYTE *)*(&alu_eq + v141) + v142);
-  b2 = v142;
-  LOBYTE(v141) = HIBYTE(target);
-  LOBYTE(v142) = -120;
-  LOBYTE(v142) = *((_BYTE *)*(&alu_eq + v141) + v142);
-  b3 = v142;
+  v133 = (unsigned __int8)target;
+  v134 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 2);
+  b0 = v134;
+  LOBYTE(v133) = BYTE1(target);
+  LOBYTE(v134) = -57;
+  LOBYTE(v134) = *((_BYTE *)*(&alu_eq + v133) + v134);
+  b1 = v134;
+  LOBYTE(v133) = BYTE2(target);
+  LOBYTE(v134) = 4;
+  LOBYTE(v134) = *((_BYTE *)*(&alu_eq + v133) + v134);
+  b2 = v134;
+  LOBYTE(v133) = HIBYTE(target);
+  LOBYTE(v134) = -120;
+  LOBYTE(v134) = *((_BYTE *)*(&alu_eq + v133) + v134);
+  b3 = v134;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v142);
-  v143 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v134);
+  v135 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v143) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v135) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v143) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v135) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v143) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v135) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v143) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v135) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v143) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v135) = jmp_f1;
   data_p = (int)&D0;
-  v144 = *(&sel_data + v143);
-  *v144 = jmp_d0;
-  v144[1] = dword_85F91BC;
+  v136 = *(&sel_data + v135);
+  *v136 = jmp_d0;
+  v136[1] = dword_85F91BC;
   data_p = (int)&D1;
-  v145 = *(&sel_data + v143);
-  *v145 = jmp_d1;
-  v145[1] = dword_85F91C4;
+  v137 = *(&sel_data + v135);
+  *v137 = jmp_d1;
+  v137[1] = dword_85F91C4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524314) - 2097256) - 2097256);
   data_p = R3;
@@ -68912,53 +68906,53 @@ void rc_crc32()
   alu_y = R2;
   alu_t = R2;
   alu_c = 1;
-  v146 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + alu_inv16[(unsigned __int16)R2]))
+  v138 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + alu_inv16[(unsigned __int16)R2]))
          + 1);
-  LOWORD(alu_s) = v146;
-  unk_81F900E = v146;
-  v147 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + alu_inv16[HIWORD(R2)])) + alu_c);
-  HIWORD(alu_s) = v147;
-  unk_81F900E = v147;
+  LOWORD(alu_s) = v138;
+  unk_81F900E = v138;
+  v139 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + alu_inv16[HIWORD(R2)])) + alu_c);
+  HIWORD(alu_s) = v139;
+  unk_81F900E = v139;
   alu_y = R2;
-  LOBYTE(dword_81F910C) = *((_BYTE *)alu_false + BYTE2(v147));
-  v148 = (unsigned __int8)dword_81F910C;
-  LOBYTE(v148) = BYTE1(v147);
-  LOBYTE(dword_81F9104) = alu_b7[v148];
-  v149 = (unsigned __int8)alu_s;
-  LOBYTE(v149) = BYTE1(alu_s);
-  v150 = (unsigned __int8)alu_true[v149 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
-  LOBYTE(v149) = BYTE2(alu_s);
-  v151 = (unsigned __int8)alu_true[v149 + v150];
-  LOBYTE(v149) = HIBYTE(alu_s);
-  v152 = *((unsigned __int8 *)alu_false + (unsigned __int8)alu_true[v149 + v151]);
-  LOBYTE(dword_81F9100) = v152;
-  LOBYTE(v152) = HIBYTE(R3);
-  v153 = alu_b7[v152];
-  v154 = alu_cmp_of[v153];
-  LOBYTE(v153) = HIBYTE(R2);
-  v155 = alu_b7[v153];
-  v156 = v154[v155];
-  LOBYTE(v155) = HIBYTE(alu_s);
-  LOBYTE(dword_81F9108) = *(_DWORD *)v156[alu_b7[v155]];
+  LOBYTE(dword_81F910C) = *((_BYTE *)alu_false + BYTE2(v139));
+  v140 = (unsigned __int8)dword_81F910C;
+  LOBYTE(v140) = BYTE1(v139);
+  LOBYTE(dword_81F9104) = alu_b7[v140];
+  v141 = (unsigned __int8)alu_s;
+  LOBYTE(v141) = BYTE1(alu_s);
+  v142 = (unsigned __int8)alu_true[v141 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
+  LOBYTE(v141) = BYTE2(alu_s);
+  LOBYTE(v142) = alu_true[v141 + v142];
+  LOBYTE(v141) = HIBYTE(alu_s);
+  LOBYTE(v142) = alu_true[v141 + v142];
+  LOBYTE(dword_81F9100) = *((_BYTE *)alu_false + v142);
+  LOBYTE(v142) = HIBYTE(R3);
+  v143 = alu_b7[v142];
+  v144 = alu_cmp_of[v143];
+  LOBYTE(v143) = HIBYTE(R2);
+  v145 = alu_b7[v143];
+  v146 = v144[v145];
+  LOBYTE(v145) = HIBYTE(alu_s);
+  LOBYTE(dword_81F9108) = *(_DWORD *)v146[alu_b7[v145]];
   b0 = *((_DWORD *)*(&and + dword_81F910C) + on);
   *(_DWORD *)*(&sel_target + b0) = -2012956806;
-  v157 = b0;
+  v147 = b0;
   data_p = (int)&jmp_r0;
-  v158 = *(&sel_data + b0);
-  *v158 = R0;
-  v158[1] = R1;
-  v158[2] = R2;
-  v158[3] = R3;
+  v148 = *(&sel_data + b0);
+  *v148 = R0;
+  v148[1] = R1;
+  v148[2] = R2;
+  v148[3] = R3;
   data_p = (int)&jmp_f0;
-  v159 = *(&sel_data + v157);
-  *v159 = F0;
-  v159[1] = F1;
+  v149 = *(&sel_data + v147);
+  *v149 = F0;
+  v149[1] = F1;
   data_p = (int)&jmp_d0;
-  v160 = *(&sel_data + v157);
-  *v160 = D0;
-  v160[1] = dword_8050084;
-  v160[2] = D1;
-  v160[3] = dword_805008C;
+  v150 = *(&sel_data + v147);
+  *v150 = D0;
+  v150[1] = dword_8050084;
+  v150[2] = D1;
+  v150[3] = dword_805008C;
   *(_DWORD *)*(&sel_on + b0) = 0;
   R3 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524312)
                                                                                          - 2097248)
@@ -68978,45 +68972,45 @@ void rc_crc32()
   R0 = alu_x;
   alu_x = target;
   alu_y = -2012951444;
-  v161 = (unsigned __int8)target;
-  v162 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 108);
-  b0 = v162;
-  LOBYTE(v161) = BYTE1(target);
-  LOBYTE(v162) = -52;
-  LOBYTE(v162) = *((_BYTE *)*(&alu_eq + v161) + v162);
-  b1 = v162;
-  LOBYTE(v161) = BYTE2(target);
-  LOBYTE(v162) = 4;
-  LOBYTE(v162) = *((_BYTE *)*(&alu_eq + v161) + v162);
-  b2 = v162;
-  LOBYTE(v161) = HIBYTE(target);
-  LOBYTE(v162) = -120;
-  LOBYTE(v162) = *((_BYTE *)*(&alu_eq + v161) + v162);
-  b3 = v162;
+  v151 = (unsigned __int8)target;
+  v152 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 108);
+  b0 = v152;
+  LOBYTE(v151) = BYTE1(target);
+  LOBYTE(v152) = -52;
+  LOBYTE(v152) = *((_BYTE *)*(&alu_eq + v151) + v152);
+  b1 = v152;
+  LOBYTE(v151) = BYTE2(target);
+  LOBYTE(v152) = 4;
+  LOBYTE(v152) = *((_BYTE *)*(&alu_eq + v151) + v152);
+  b2 = v152;
+  LOBYTE(v151) = HIBYTE(target);
+  LOBYTE(v152) = -120;
+  LOBYTE(v152) = *((_BYTE *)*(&alu_eq + v151) + v152);
+  b3 = v152;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v162);
-  v163 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v152);
+  v153 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v163) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v153) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v163) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v153) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v163) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v153) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v163) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v153) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v163) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v153) = jmp_f1;
   data_p = (int)&D0;
-  v164 = *(&sel_data + v163);
-  *v164 = jmp_d0;
-  v164[1] = dword_85F91BC;
+  v154 = *(&sel_data + v153);
+  *v154 = jmp_d0;
+  v154[1] = dword_85F91BC;
   data_p = (int)&D1;
-  v165 = *(&sel_data + v163);
-  *v165 = jmp_d1;
-  v165[1] = dword_85F91C4;
+  v155 = *(&sel_data + v153);
+  *v155 = jmp_d1;
+  v155[1] = dword_85F91C4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   data_p = (int)&off_83F9140;
   *(_DWORD *)*(&sel_data + on) = fp;
@@ -69025,9 +69019,9 @@ void rc_crc32()
   data_p = (int)&off_83F9140;
   *(_DWORD *)*(&sel_data + on) = *(_DWORD *)(*((_DWORD *)off_83F9140 - 524312) - 2097248);
   data_p = (int)&D1;
-  v166 = *(&sel_data + on);
-  *v166 = stack_temp;
-  v166[1] = dword_81F9124;
+  v156 = *(&sel_data + on);
+  *v156 = stack_temp;
+  v156[1] = dword_81F9124;
   stack_temp = *(_DWORD *)off_83F9140;
   data_p = (int)&off_83F9140;
   *(_DWORD *)*(&sel_data + on) = *((_DWORD *)off_83F9140 - 524312);
@@ -69058,23 +69052,23 @@ void rc_crc32()
   *(_DWORD *)*(&sel_data + on) = *((_DWORD *)off_83F9140 - 524312);
   branch_temp = stack_temp;
   *(_DWORD *)*(&sel_target + on) = stack_temp;
-  v167 = on;
+  v157 = on;
   data_p = (int)&jmp_r0;
-  v168 = *(&sel_data + on);
-  *v168 = R0;
-  v168[1] = R1;
-  v168[2] = R2;
-  v168[3] = R3;
+  v158 = *(&sel_data + on);
+  *v158 = R0;
+  v158[1] = R1;
+  v158[2] = R2;
+  v158[3] = R3;
   data_p = (int)&jmp_f0;
-  v169 = *(&sel_data + v167);
-  *v169 = F0;
-  v169[1] = F1;
+  v159 = *(&sel_data + v157);
+  *v159 = F0;
+  v159[1] = F1;
   data_p = (int)&jmp_d0;
-  v170 = *(&sel_data + v167);
-  *v170 = D0;
-  v170[1] = dword_8050084;
-  v170[2] = D1;
-  v170[3] = dword_805008C;
+  v160 = *(&sel_data + v157);
+  *v160 = D0;
+  v160[1] = dword_8050084;
+  v160[2] = D1;
+  v160[3] = dword_805008C;
   *(_DWORD *)*(&sel_on + on) = 0;
   JUMPOUT(0x804D158);
 }
@@ -69092,13 +69086,17 @@ void rc_crc32()
 // 80500B0: using guessed type void *and;
 // 80500D0: using guessed type void *xor;
 // 8050320: using guessed type int alu_false[];
+// 80521A0: using guessed type int alu_b7[260];
 // 8053610: using guessed type void *alu_eq;
 // 8063F40: using guessed type void *alu_add16;
+// 8164060: using guessed type unsigned __int16 alu_inv16[65544];
 // 8184070: using guessed type void *alu_band8;
 // 8194580: using guessed type void *alu_bor8;
 // 81A4A90: using guessed type void *alu_bxor8;
 // 81B4FA0: using guessed type void *alu_lshu8;
 // 81BD4B0: using guessed type void *alu_rshu8;
+// 81CDED0: using guessed type int alu_clamp32[516];
+// 81F8B80: using guessed type int alu_sex8[260];
 // 81F8F90: using guessed type void ***alu_cmp_of[6];
 // 81F8FF0: using guessed type int b0;
 // 81F8FF4: using guessed type int b1;

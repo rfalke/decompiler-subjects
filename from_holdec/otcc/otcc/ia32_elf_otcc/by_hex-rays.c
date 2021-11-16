@@ -11,26 +11,26 @@
 // Function declarations
 
 void __noreturn start(); // weak
-int __cdecl sub_8048205(int a1);
+int __cdecl sub_8048205(int);
 int sub_8048227();
 int sub_80482B5();
 int sub_80482FE();
 int sub_804835D();
-_BOOL4 __cdecl sub_804898B(int a1);
-_DWORD *__cdecl sub_8048A15(_DWORD *a1);
-int __cdecl sub_8048A74(int a1, int a2);
-int __cdecl sub_8048AD9(int a1);
-int __cdecl sub_8048B0E(int a1);
-int __cdecl sub_8048B48(int a1, int a2);
-_BOOL4 __cdecl sub_8048BA9(int a1);
-int __cdecl sub_8048C4F(int a1, int a2);
-int __cdecl sub_8048CD0(unsigned __int8 a1);
-int __cdecl sub_80495A9(int a1);
+_BOOL4 __cdecl sub_804898B(int);
+_DWORD *__cdecl sub_8048A15(_DWORD *);
+int __cdecl sub_8048A74(int, int);
+int __cdecl sub_8048AD9(int);
+int __cdecl sub_8048B0E(int);
+int __cdecl sub_8048B48(int, int);
+_BOOL4 __cdecl sub_8048BA9(int);
+int __cdecl sub_8048C4F(int, int);
+int __cdecl sub_8048CD0(unsigned __int8);
+int __cdecl sub_80495A9(int);
 int sub_80498E4();
 int sub_804990C();
-_DWORD *__cdecl sub_8049950(int *a1);
-_BOOL4 __cdecl sub_8049E97(int a1);
-int __cdecl sub_804A1A4(int a1, const char **a2);
+_DWORD *__cdecl sub_8049950(int *);
+_BOOL4 __cdecl sub_8049E97(int);
+int __cdecl sub_804A1A4(int, const char **);
 // int fgetc(FILE *stream);
 // int isalnum(int);
 // int isspace(int);
@@ -217,7 +217,7 @@ int sub_804835D()
           dword_8048130 = *(_DWORD *)(dword_80480FC + 4);
           dword_8048134 = dword_8048108;
           sub_8048227();
-          result = sub_804835D();
+          return sub_804835D();
         }
       }
     }
@@ -231,7 +231,7 @@ int sub_804835D()
       sub_80482FE();
       dword_8048100 = dword_8048108;
       sub_8048227();
-      result = sub_8048227();
+      return sub_8048227();
     }
     else if ( dword_80480FC == 47 && dword_8048108 == 42 )
     {
@@ -245,7 +245,7 @@ int sub_804835D()
           dword_8048108 = 0;
       }
       sub_8048227();
-      result = sub_804835D();
+      return sub_804835D();
     }
     else
     {
@@ -527,7 +527,7 @@ int __cdecl sub_8048CD0(unsigned __int8 a1)
     }
     result = v8;
     if ( v8 )
-      result = sub_8048A74(50305, v8);
+      return sub_8048A74(50305, v8);
   }
   return result;
 }
@@ -586,7 +586,7 @@ int __cdecl sub_80495A9(int a1)
     sub_8048AD9(v6 ^ 1);
     sub_8048B0E(5);
     sub_8048A15(v4);
-    result = sub_8048AD9(v6);
+    return sub_8048AD9(v6);
   }
   return result;
 }
@@ -610,7 +610,6 @@ int sub_804990C()
 //----- (08049950) --------------------------------------------------------
 _DWORD *__cdecl sub_8049950(int *a1)
 {
-  _DWORD *result; // eax
   int v2; // [esp+0h] [ebp-Ch]
   _DWORD *v3; // [esp+0h] [ebp-Ch]
   _DWORD *v4; // [esp+4h] [ebp-8h]
@@ -630,11 +629,11 @@ _DWORD *__cdecl sub_8049950(int *a1)
       v4 = (_DWORD *)sub_8048B0E(0);
       sub_8048A15(v6);
       sub_8049950(a1);
-      result = sub_8048A15(v4);
+      return sub_8048A15(v4);
     }
     else
     {
-      result = sub_8048A15(v6);
+      return sub_8048A15(v6);
     }
   }
   else if ( dword_80480FC == 352 || dword_80480FC == 504 )
@@ -669,7 +668,7 @@ _DWORD *__cdecl sub_8049950(int *a1)
     sub_804835D();
     sub_8049950((int *)&v6);
     sub_8048B0E(v5 - dword_8048118 - 5);
-    result = sub_8048A15(v6);
+    return sub_8048A15(v6);
   }
   else
   {
@@ -696,9 +695,8 @@ _DWORD *__cdecl sub_8049950(int *a1)
           sub_80498E4();
         break;
     }
-    result = (_DWORD *)sub_804835D();
+    return (_DWORD *)sub_804835D();
   }
-  return result;
 }
 // 8048110: using guessed type int dword_8048110;
 // 8048118: using guessed type int dword_8048118;

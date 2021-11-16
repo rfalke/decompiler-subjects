@@ -10,10 +10,10 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void __fastcall __noreturn start(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, const char *a7);
-void *__fastcall dumpline(__int64 a1, __int64 a2, int a3);
-__int64 __fastcall __inline_strcpy_chk(__int64 a1, __int64 a2);
-__int64 __fastcall hexdump(const char *a1);
+void __fastcall __noreturn start(__int64, __int64, __int64, __int64, __int64, __int64, const char *);
+void *__fastcall dumpline(__int64, __int64, int);
+__int64 __fastcall __inline_strcpy_chk(__int64, __int64);
+__int64 __fastcall hexdump(const char *);
 int __cdecl main(int argc, const char **argv, const char **envp);
 // int __sprintf_chk(char *, int, size_t, const char *, ...);
 // __int64 __fastcall __strcat_chk(_QWORD, _QWORD, _QWORD); weak
@@ -34,7 +34,14 @@ int __cdecl main(int argc, const char **argv, const char **envp);
 
 
 //----- (00000001000009F0) ----------------------------------------------------
-void __fastcall __noreturn start(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, const char *a7)
+void __fastcall __noreturn start(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6,
+        const char *a7)
 {
   _QWORD *i; // rcx
   int v8; // eax
@@ -85,6 +92,7 @@ void *__fastcall dumpline(__int64 a1, __int64 a2, int a3)
 }
 // 100000DF0: using guessed type __int64 __fastcall __strcat_chk(_QWORD, _QWORD, _QWORD);
 // 100000DF6: using guessed type __int64 __fastcall __strcpy_chk(_QWORD, _QWORD, _QWORD);
+// 100000A2C: using guessed type char __s[88];
 
 //----- (0000000100000C70) ----------------------------------------------------
 __int64 __fastcall __inline_strcpy_chk(__int64 a1, __int64 a2)
@@ -96,7 +104,6 @@ __int64 __fastcall __inline_strcpy_chk(__int64 a1, __int64 a2)
 //----- (0000000100000C96) ----------------------------------------------------
 __int64 __fastcall hexdump(const char *a1)
 {
-  unsigned int v2; // [rsp+4h] [rbp-DCh]
   char v3[96]; // [rsp+10h] [rbp-D0h] BYREF
   unsigned __int64 v4; // [rsp+70h] [rbp-70h]
   FILE *v5; // [rsp+A8h] [rbp-38h]
@@ -107,7 +114,7 @@ __int64 __fastcall hexdump(const char *a1)
   if ( (unsigned int)stat_INODE64(a1, v3, 0LL) || (v5 = fopen(a1, "rb")) == 0LL )
   {
     perror(a1);
-    v2 = 1;
+    return 1;
   }
   else
   {
@@ -119,11 +126,11 @@ __int64 __fastcall hexdump(const char *a1)
       dumpline((__int64)v8, i, v7);
     }
     fclose(v5);
-    v2 = 0;
+    return 0;
   }
-  return v2;
 }
 // 100000E20: using guessed type __int64 __fastcall stat_INODE64(_QWORD, _QWORD, _QWORD);
+// 100000C96: using guessed type char var_D0[96];
 
 //----- (0000000100000D9D) ----------------------------------------------------
 int __cdecl main(int argc, const char **argv, const char **envp)

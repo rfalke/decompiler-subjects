@@ -13,7 +13,6 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int init_proc();
 int sub_804A03C();
 // int fileno(FILE *stream);
 // double ldexp(double x, int exponent);
@@ -35,7 +34,6 @@ int sub_804A03C();
 // int __cdecl lame_bitrate_hist(_DWORD, _DWORD); weak
 // int __cdecl lame_get_noclipGainChange(_DWORD); weak
 // int __cdecl id3tag_init(_DWORD); weak
-// int __gmon_start__(void); weak
 // int __isoc99_sscanf(_DWORD, const char *, ...); weak
 // int __cdecl __xstat64(_DWORD, _DWORD, _DWORD); weak
 // int __cdecl lame_get_id3v2_tag(_DWORD, _DWORD, _DWORD); weak
@@ -54,7 +52,6 @@ int sub_804A03C();
 // int __cdecl lame_get_VBR_min_bitrate_kbps(_DWORD); weak
 // int get_lame_url(void); weak
 // int __cdecl lame_set_write_id3tag_automatic(_DWORD, _DWORD); weak
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int __cdecl id3tag_set_comment(_DWORD, _DWORD); weak
 // int __cdecl lame_set_decode_on_the_fly(_DWORD, _DWORD); weak
 // int _IO_getc(_IO_FILE *fp);
@@ -89,7 +86,7 @@ int sub_804A03C();
 // int __cdecl lame_set_VBR(_DWORD, _DWORD); weak
 // int __cdecl lame_print_config(_DWORD); weak
 // int __cdecl lame_get_bWriteVbrTag(_DWORD); weak
-// int __fastcall lame_bitrate_stereo_mode_hist(_DWORD, _DWORD, _DWORD, _DWORD); weak
+// int __cdecl lame_bitrate_stereo_mode_hist(_DWORD, _DWORD); weak
 // int __cdecl lame_set_nogap_currentindex(_DWORD, _DWORD); weak
 // int __cdecl lame_set_msfix(_DWORD, _DWORD, _DWORD); weak
 // int __cdecl lame_get_VBR(_DWORD); weak
@@ -182,9 +179,6 @@ int sub_804A03C();
 // int __cdecl lame_get_VBR_q(_DWORD); weak
 // int pclose(FILE *stream);
 // int __cdecl lame_get_VBR_mean_bitrate_kbps(_DWORD); weak
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _do_global_dtors_aux();
-int frame_dummy();
 int __cdecl parse_args_from_string(lame_global_flags *const gfp, const char *p, char *inPath, char *outPath);
 FILE *__cdecl init_files(lame_global_flags *gf, char *inPath, char *outPath, int *enc_delay, int *enc_padding);
 int __cdecl lame_decoder(lame_global_flags *gfp, FILE *outf, int skip_start, char *inPath, char *outPath, int *enc_delay, int *enc_padding);
@@ -221,8 +215,8 @@ FILE *__cdecl init_outfile(char *outPath, int decode);
 void __cdecl init_infile(lame_global_flags *gfp, char *inPath, int *enc_delay, int *enc_padding);
 void close_infile(); // idb
 void __cdecl SwapBytesInWords(__int16 *ptr, int short_words);
-int __cdecl _ZN25idRenderModelManagerLocal10CheckModelEPKc(lame_global_flags *const gfp, int (*buffer)[1152]);
-int __cdecl jzero_far(lame_global_flags *const gfp, __int16 (*buffer)[1152]);
+int __cdecl get_audio(lame_global_flags *const gfp, int (*buffer)[1152]);
+int __cdecl get_audio16(lame_global_flags *const gfp, __int16 (*buffer)[1152]);
 int __cdecl get_audio_common(lame_global_flags *const gfp, int (*buffer)[1152], __int16 (*buffer16)[1152]);
 int __cdecl read_samples_mp3(lame_global_flags *const gfp, FILE *const musicin, __int16 (*mpg123pcm)[1152]);
 int __cdecl WriteWaveHeader(FILE *const fp, const int pcmbytes, const int freq, const int channels, const int bits);
@@ -256,7 +250,7 @@ void __cdecl display_bitrate(FILE *const fp, const char *const version, const in
 int __cdecl display_bitrates(FILE *const fp);
 void __cdecl presets_longinfo_dm(FILE *msgfp);
 int __cdecl presets_set(lame_t gfp, int fast, int cbr, const char *preset_name, const char *ProgramName);
-void __cdecl _decoder_realloc(int num, const char *name, void *cookie);
+void __cdecl genre_list_handler(int num, const char *name, void *cookie);
 int __cdecl local_strcasecmp(const char *s1, const char *s2);
 int __cdecl filename_to_type(const char *FileName);
 int __cdecl resample_rate(double freq);
@@ -299,12 +293,8 @@ int __cdecl stats_head(double x, const char *txt);
 void __cdecl stats_line(double *stat);
 void __cdecl brhist_disp(const lame_global_flags *gf);
 void brhist_jump_back(); // idb
-void _libc_csu_fini(void); // idb
-void _libc_csu_init(void); // idb
-int __cdecl stat64(int a1, int a2);
-int __cdecl fstat64(int a1, int a2);
-void (*_do_global_ctors_aux())(void);
-void term_proc();
+int __cdecl stat64(int, int);
+int __cdecl fstat64(int, int);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -348,10 +338,6 @@ _UNKNOWN unk_8055592; // weak
 _UNKNOWN unk_8058E4C; // weak
 _UNKNOWN unk_8059978; // weak
 _UNKNOWN unk_8059B6F; // weak
-int _CTOR_LIST__ = -1; // weak
-int _DTOR_LIST__[] = { -1 }; // weak
-int _DTOR_END__ = 0; // weak
-int _JCR_LIST__ = 0; // weak
 int (*dword_805AFFC)(void) = NULL; // weak
 int in_signed = -1; // idb
 int in_bitwidth = 16; // idb
@@ -360,12 +346,10 @@ const char *mode_names_3185[2][4] =
   { "stereo", "j-stereo", "dual-ch", "single-ch" },
   { "stereo", "force-ms", "dual-ch", "single-ch" }
 }; // idb
-int bitrate_table[48]; // idb
+int bitrate_table[48]; // weak
 FILE *stderr; // idb
 int stdin; // weak
 FILE *stdout; // idb
-char completed_7065; // weak
-int dtor_idx_7067; // weak
 get_audio_global_data_0 global; // idb
 int swapbytes; // idb
 ByteOrder in_endian; // idb
@@ -387,22 +371,7 @@ int disable_wav_header; // idb
 int brhist_0; // idb
 mp3data_struct mp3input_data; // idb
 int ignore_tag_errors; // idb
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (0804A00C) --------------------------------------------------------
-int init_proc()
-{
-  int v1; // [esp+0h] [ebp-8h]
-
-  if ( &_gmon_start__ )
-    __gmon_start__();
-  frame_dummy();
-  _do_global_ctors_aux();
-  return v1;
-}
-// 804A038: variable 'v1' is possibly undefined
-// 804A18C: using guessed type int __gmon_start__(void);
 
 //----- (0804A03C) --------------------------------------------------------
 int sub_804A03C()
@@ -410,55 +379,6 @@ int sub_804A03C()
   return dword_805AFFC();
 }
 // 805AFFC: using guessed type int (*dword_805AFFC)(void);
-
-//----- (0804AAD0) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, _libc_csu_init, _libc_csu_fini, a2, &v3);
-  __halt();
-}
-// 804AAD3: positive sp value 4 has been found
-
-//----- (0804AB00) --------------------------------------------------------
-void _do_global_dtors_aux()
-{
-  int v0; // eax
-  unsigned int i; // ebx
-
-  if ( !completed_7065 )
-  {
-    v0 = dtor_idx_7067;
-    for ( i = &_DTOR_END__ - _DTOR_LIST__ - 1; dtor_idx_7067 < i; v0 = dtor_idx_7067 )
-    {
-      dtor_idx_7067 = v0 + 1;
-      ((void (*)(void))_DTOR_LIST__[v0 + 1])();
-    }
-    completed_7065 = 1;
-  }
-}
-// 805AF04: using guessed type int _DTOR_LIST__[];
-// 805AF08: using guessed type int _DTOR_END__;
-// 805B3C4: using guessed type char completed_7065;
-// 805B3C8: using guessed type int dtor_idx_7067;
-
-//----- (0804AB60) --------------------------------------------------------
-int frame_dummy()
-{
-  int result; // eax
-
-  result = _JCR_LIST__;
-  if ( _JCR_LIST__ )
-    result = 0;
-  return result;
-}
-// 805AF0C: using guessed type int _JCR_LIST__;
 
 //----- (0804AB84) --------------------------------------------------------
 int __cdecl parse_args_from_string(lame_global_flags *const gfp, const char *p, char *inPath, char *outPath)
@@ -496,36 +416,41 @@ int __cdecl parse_args_from_string(lame_global_flags *const gfp, const char *p, 
 //----- (0804AC92) --------------------------------------------------------
 FILE *__cdecl init_files(lame_global_flags *gf, char *inPath, char *outPath, int *enc_delay, int *enc_padding)
 {
-  FILE *result; // eax
-  int v6; // [esp+4h] [ebp-24h]
+  int decode_only; // [esp+4h] [ebp-24h]
   FILE *outf; // [esp+1Ch] [ebp-Ch]
 
   if ( !strcmp("-", outPath) || strcmp(inPath, outPath) )
   {
     init_infile(gf, inPath, enc_delay, enc_padding);
-    v6 = lame_get_decode_only(gf);
-    outf = init_outfile(outPath, v6);
+    decode_only = lame_get_decode_only(gf);
+    outf = init_outfile(outPath, decode_only);
     if ( outf )
     {
-      result = outf;
+      return outf;
     }
     else
     {
       error_printf("Can't init outfile '%s'\n", outPath);
-      result = 0;
+      return 0;
     }
   }
   else
   {
     error_printf("Input file and Output file are the same. Abort.\n");
-    result = 0;
+    return 0;
   }
-  return result;
 }
 // 804A30C: using guessed type int __cdecl lame_get_decode_only(_DWORD);
 
 //----- (0804AD3A) --------------------------------------------------------
-int __cdecl lame_decoder(lame_global_flags *gfp, FILE *outf, int skip_start, char *inPath, char *outPath, int *enc_delay, int *enc_padding)
+int __cdecl lame_decoder(
+        lame_global_flags *gfp,
+        FILE *outf,
+        int skip_start,
+        char *inPath,
+        char *outPath,
+        int *enc_delay,
+        int *enc_padding)
 {
   const char *v7; // esi
   const char *v8; // ebx
@@ -535,7 +460,7 @@ int __cdecl lame_decoder(lame_global_flags *gfp, FILE *outf, int skip_start, cha
   const char *v12; // ebx
   int v13; // eax
   const char *v14; // ebx
-  int v15; // eax
+  int version; // eax
   const char *v16; // ebx
   char *v17; // eax
   void (*v18)(FILE *, char *, int); // eax
@@ -593,8 +518,8 @@ int __cdecl lame_decoder(lame_global_flags *gfp, FILE *outf, int skip_start, cha
           v14 = (const char *)&unk_80548B4;
         else
           v14 = ".5";
-        v15 = lame_get_version(gfp);
-        console_printf("MPEG-%u%s Layer %s", 2 - v15, v14, "I");
+        version = lame_get_version(gfp);
+        console_printf("MPEG-%u%s Layer %s", 2 - version, v14, "I");
       }
       goto LABEL_50;
     case sf_mp2:
@@ -677,7 +602,7 @@ LABEL_50:
       mp3input_data.totalframes = mp3input_data.nsamp / mp3input_data.framesize;
       do
       {
-        iread = jzero_far(gfp, Buffer);
+        iread = get_audio16(gfp, Buffer);
         if ( iread >= 0 )
         {
           mp3input_data.framenum += iread / mp3input_data.framesize;
@@ -782,7 +707,7 @@ void __cdecl print_trailing_info(lame_global_flags *gf)
   if ( lame_get_findReplayGain(gf) )
   {
     RadioGain = lame_get_RadioGain(gf);
-    v1 = (const char *)(RadioGain <= 0 ? &unk_80548B4 : "+");
+    v1 = RadioGain <= 0 ? (const char *)&unk_80548B4 : "+";
     console_printf("ReplayGain: %s%.1fdB\n", v1, (double)((long double)RadioGain / 10.0));
     if ( RadioGain > 510 || RadioGain < -510 )
       error_printf(
@@ -831,8 +756,7 @@ void __cdecl print_trailing_info(lame_global_flags *gf)
 //----- (0804B68B) --------------------------------------------------------
 int __cdecl write_xing_frame(lame_global_flags *gf, FILE *outf)
 {
-  int result; // eax
-  size_t imp3; // [esp+28h] [ebp-24010h]
+  unsigned int imp3; // [esp+28h] [ebp-24010h]
   unsigned __int8 mp3buffer[147456]; // [esp+2Ch] [ebp-2400Ch] BYREF
   unsigned int v5; // [esp+2402Ch] [ebp-Ch]
 
@@ -846,32 +770,30 @@ int __cdecl write_xing_frame(lame_global_flags *gf, FILE *outf)
       {
         if ( flush_write == 1 )
           fflush(outf);
-        result = imp3;
+        return imp3;
       }
       else
       {
         error_printf("Error writing LAME-tag \n");
-        result = -1;
+        return -1;
       }
     }
     else
     {
-      result = 0;
+      return 0;
     }
   }
   else
   {
     error_printf("Error writing LAME-tag frame: buffer too small: buffer size=%d  frame size=%d\n", 147456, imp3);
-    result = -1;
+    return -1;
   }
-  return result;
 }
 // 804A31C: using guessed type int __cdecl lame_get_lametag_frame(_DWORD, _DWORD, _DWORD);
 
 //----- (0804B79A) --------------------------------------------------------
 int __cdecl lame_encoder(lame_global_flags *gf, FILE *outf, int nogap, char *inPath, char *outPath)
 {
-  int result; // eax
   int Buffer[2][1152]; // [esp+3Ch] [ebp-2641Ch] BYREF
   int id3v2_size; // [esp+243Ch] [ebp-2401Ch]
   int owrite; // [esp+2440h] [ebp-24018h]
@@ -893,7 +815,7 @@ int __cdecl lame_encoder(lame_global_flags *gf, FILE *outf, int nogap, char *inP
       id3v2_size = imp3;
       do
       {
-        iread = _ZN25idRenderModelManagerLocal10CheckModelEPKc(gf, Buffer);
+        iread = get_audio(gf, Buffer);
         if ( iread >= 0 )
         {
           encoder_progress(gf);
@@ -957,7 +879,7 @@ LABEL_15:
           write_xing_frame(gf, outf);
         if ( silent <= 0 )
           print_trailing_info(gf);
-        result = 0;
+        return 0;
       }
       else
       {
@@ -965,23 +887,22 @@ LABEL_15:
           error_printf("mp3 buffer is not big enough... \n");
         else
           error_printf("mp3 internal error:  error code=%i\n", imp3);
-        result = 1;
+        return 1;
       }
     }
     else
     {
       encoder_progress_end(gf);
       error_printf("Error writing ID3v2 tag \n");
-      result = 1;
+      return 1;
     }
   }
   else
   {
     encoder_progress_end(gf);
     error_printf("Error writing ID3v2 tag: buffer too small: buffer size=%d  ID3v2 size=%d\n", 147456, imp3);
-    result = 1;
+    return 1;
   }
-  return result;
 }
 // 804A1BC: using guessed type int __cdecl lame_get_id3v2_tag(_DWORD, _DWORD, _DWORD);
 // 804A27C: using guessed type int __cdecl lame_encode_buffer_int(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
@@ -992,14 +913,14 @@ LABEL_15:
 //----- (0804BC85) --------------------------------------------------------
 void __cdecl brhist_init_package(lame_global_flags *gf)
 {
-  int v1; // ebx
-  int v2; // [esp+4h] [ebp-14h]
+  int VBR_max_bitrate_kbps; // ebx
+  int VBR_min_bitrate_kbps; // [esp+4h] [ebp-14h]
 
   if ( brhist_0 )
   {
-    v1 = lame_get_VBR_max_bitrate_kbps(gf);
-    v2 = lame_get_VBR_min_bitrate_kbps(gf);
-    if ( brhist_init(gf, v2, v1) )
+    VBR_max_bitrate_kbps = lame_get_VBR_max_bitrate_kbps(gf);
+    VBR_min_bitrate_kbps = lame_get_VBR_min_bitrate_kbps(gf);
+    if ( brhist_init(gf, VBR_min_bitrate_kbps, VBR_max_bitrate_kbps) )
       brhist_0 = 0;
   }
   else
@@ -1065,12 +986,11 @@ void __cdecl parse_nogap_filenames(int nogapout, char *inPath, char *outPath, ch
 //----- (0804BFA5) --------------------------------------------------------
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
-  int result; // eax
   char *v4; // eax
   char s[819400]; // [esp+3Ch] [ebp-CB424h] BYREF
   char *nogap_inPath[200]; // [esp+C8104h] [ebp-335Ch] BYREF
   int v7; // [esp+C8424h] [ebp-303Ch]
-  FILE *v8; // [esp+C8428h] [ebp-3038h]
+  FILE *inited; // [esp+C8428h] [ebp-3038h]
   int i; // [esp+C842Ch] [ebp-3034h]
   int num_nogap; // [esp+C8430h] [ebp-3030h] BYREF
   int v11; // [esp+C8434h] [ebp-302Ch]
@@ -1116,14 +1036,14 @@ int __cdecl main(int argc, const char **argv, const char **envp)
         }
         if ( num_nogap <= 0 )
         {
-          v8 = init_files(v14, inPath, outPath, &enc_delay, &enc_padding);
+          inited = init_files(v14, inPath, outPath, &enc_delay, &enc_padding);
         }
         else
         {
           parse_nogap_filenames(v11, nogap_inPath[0], outPath, dest);
-          v8 = init_files(v14, nogap_inPath[0], outPath, &enc_delay, &enc_padding);
+          inited = init_files(v14, nogap_inPath[0], outPath, &enc_delay, &enc_padding);
         }
-        if ( v8 )
+        if ( inited )
         {
           lame_set_write_id3tag_automatic(v14, 0);
           i = lame_init_params(v14);
@@ -1134,15 +1054,15 @@ int __cdecl main(int argc, const char **argv, const char **envp)
             if ( lame_get_decode_only(v14) )
             {
               if ( mp3_delay_set )
-                lame_decoder(v14, v8, mp3_delay, inPath, outPath, &enc_delay, &enc_padding);
+                lame_decoder(v14, inited, mp3_delay, inPath, outPath, &enc_delay, &enc_padding);
               else
-                lame_decoder(v14, v8, 0, inPath, outPath, &enc_delay, &enc_padding);
+                lame_decoder(v14, inited, 0, inPath, outPath, &enc_delay, &enc_padding);
             }
             else if ( num_nogap <= 0 )
             {
               brhist_init_package(v14);
-              v15 = lame_encoder(v14, v8, 0, inPath, outPath);
-              fclose(v8);
+              v15 = lame_encoder(v14, inited, 0, inPath, outPath);
+              fclose(inited);
               close_infile();
             }
             else
@@ -1153,20 +1073,20 @@ int __cdecl main(int argc, const char **argv, const char **envp)
                 if ( i > 0 )
                 {
                   parse_nogap_filenames(v11, nogap_inPath[i], outPath, dest);
-                  v8 = init_files(v14, nogap_inPath[i], outPath, &enc_delay, &enc_padding);
+                  inited = init_files(v14, nogap_inPath[i], outPath, &enc_delay, &enc_padding);
                   lame_init_bitstream(v14);
                 }
                 brhist_init_package(v14);
                 lame_set_nogap_total(v14, num_nogap);
                 lame_set_nogap_currentindex(v14, i);
-                v15 = lame_encoder(v14, v8, v7, nogap_inPath[i], outPath);
-                fclose(v8);
+                v15 = lame_encoder(v14, inited, v7, nogap_inPath[i], outPath);
+                fclose(inited);
                 close_infile();
               }
             }
             lame_close(v14);
             frontend_close_console();
-            result = v15;
+            return v15;
           }
           else
           {
@@ -1175,21 +1095,21 @@ int __cdecl main(int argc, const char **argv, const char **envp)
             error_printf("fatal error during initialization\n");
             lame_close(v14);
             frontend_close_console();
-            result = i;
+            return i;
           }
         }
         else
         {
           lame_close(v14);
           frontend_close_console();
-          result = -1;
+          return -1;
         }
       }
       else
       {
         lame_close(v14);
         frontend_close_console();
-        result = v15 != -2;
+        return v15 != -2;
       }
     }
     else
@@ -1197,16 +1117,15 @@ int __cdecl main(int argc, const char **argv, const char **envp)
       usage(stderr, *argv);
       lame_close(v14);
       frontend_close_console();
-      result = 1;
+      return 1;
     }
   }
   else
   {
     error_printf("fatal error during initialization\n");
     frontend_close_console();
-    result = 1;
+    return 1;
   }
-  return result;
 }
 // 804A21C: using guessed type int __cdecl lame_set_debugf(_DWORD, _DWORD);
 // 804A2AC: using guessed type int __cdecl lame_set_write_id3tag_automatic(_DWORD, _DWORD);
@@ -1223,37 +1142,28 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 //----- (0804C6C0) --------------------------------------------------------
 int __cdecl my_console_printing(FILE *fp, const char *format, va_list ap)
 {
-  int result; // eax
-
   if ( fp )
-    result = vfprintf(fp, format, ap);
+    return vfprintf(fp, format, ap);
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (0804C6EE) --------------------------------------------------------
 int __cdecl my_error_printing(FILE *fp, const char *format, va_list ap)
 {
-  int result; // eax
-
   if ( fp )
-    result = vfprintf(fp, format, ap);
+    return vfprintf(fp, format, ap);
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (0804C71C) --------------------------------------------------------
 int __cdecl my_report_printing(FILE *fp, const char *format, va_list ap)
 {
-  int result; // eax
-
   if ( fp )
-    result = vfprintf(fp, format, ap);
+    return vfprintf(fp, format, ap);
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (0804C74A) --------------------------------------------------------
@@ -1429,13 +1339,10 @@ void __cdecl set_debug_file(const char *fn)
 //----- (0804CC8C) --------------------------------------------------------
 size_t __cdecl min_size_t(size_t a, size_t b)
 {
-  size_t result; // eax
-
   if ( a >= b )
-    result = b;
+    return b;
   else
-    result = a;
-  return result;
+    return a;
 }
 
 //----- (0804CCA1) --------------------------------------------------------
@@ -1447,7 +1354,6 @@ ByteOrder machine_byte_order()
 //----- (0804CCBE) --------------------------------------------------------
 int __cdecl fskip(FILE *fp, int offset, int whence)
 {
-  int result; // eax
   stat file_stat; // [esp+28h] [ebp-1080h] BYREF
   size_t read_0; // [esp+88h] [ebp-1020h]
   size_t bytes_to_skip_0; // [esp+8Ch] [ebp-101Ch]
@@ -1473,19 +1379,19 @@ int __cdecl fskip(FILE *fp, int offset, int whence)
             return -1;
           offset -= read_0;
         }
-        result = 0;
+        return 0;
       }
       else
       {
         if ( silent <= 9 )
           error_printf(
             "fskip problem: Mostly the return status of functions is not evaluate so it is more secure to polute <stderr>.\n");
-        result = -1;
+        return -1;
       }
     }
     else
     {
-      result = 0;
+      return 0;
     }
   }
   else if ( whence == 1 && offset >= 0 )
@@ -1498,13 +1404,12 @@ int __cdecl fskip(FILE *fp, int offset, int whence)
         return -1;
       offset -= read;
     }
-    result = 0;
+    return 0;
   }
   else
   {
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (0804CE8D) --------------------------------------------------------
@@ -1565,13 +1470,13 @@ void __cdecl SwapBytesInWords(__int16 *ptr, int short_words)
 }
 
 //----- (0804CFF1) --------------------------------------------------------
-int __cdecl _ZN25idRenderModelManagerLocal10CheckModelEPKc(lame_global_flags *const gfp, int (*buffer)[1152])
+int __cdecl get_audio(lame_global_flags *const gfp, int (*buffer)[1152])
 {
   return get_audio_common(gfp, buffer, 0);
 }
 
 //----- (0804D013) --------------------------------------------------------
-int __cdecl jzero_far(lame_global_flags *const gfp, __int16 (*buffer)[1152])
+int __cdecl get_audio16(lame_global_flags *const gfp, __int16 (*buffer)[1152])
 {
   return get_audio_common(gfp, 0, buffer);
 }
@@ -1579,7 +1484,7 @@ int __cdecl jzero_far(lame_global_flags *const gfp, __int16 (*buffer)[1152])
 //----- (0804D035) --------------------------------------------------------
 int __cdecl get_audio_common(lame_global_flags *const gfp, int (*buffer)[1152], __int16 (*buffer16)[1152])
 {
-  unsigned int v3; // eax
+  unsigned int num_samples_read; // eax
   int insamp[2304]; // [esp+10h] [ebp-3628h] BYREF
   __int16 buf_tmp16[2][1152]; // [esp+2410h] [ebp-1228h] BYREF
   int *p; // [esp+3610h] [ebp-28h]
@@ -1597,11 +1502,11 @@ int __cdecl get_audio_common(lame_global_flags *const gfp, int (*buffer)[1152], 
   tmp_num_samples = lame_get_num_samples(gfp);
   if ( global.count_samples_carefully )
   {
-    v3 = tmp_num_samples;
+    num_samples_read = tmp_num_samples;
     if ( global.num_samples_read <= tmp_num_samples )
-      v3 = global.num_samples_read;
-    remaining = tmp_num_samples - v3;
-    if ( framesize > tmp_num_samples - v3 && tmp_num_samples )
+      num_samples_read = global.num_samples_read;
+    remaining = tmp_num_samples - num_samples_read;
+    if ( framesize > tmp_num_samples - num_samples_read && tmp_num_samples )
       samples_to_read = remaining;
   }
   if ( is_mpeg_file_format(input_format) )
@@ -1677,7 +1582,6 @@ int __cdecl get_audio_common(lame_global_flags *const gfp, int (*buffer)[1152], 
 //----- (0804D384) --------------------------------------------------------
 int __cdecl read_samples_mp3(lame_global_flags *const gfp, FILE *const musicin, __int16 (*mpg123pcm)[1152])
 {
-  int result; // eax
   int out; // [esp+1Ch] [ebp-Ch]
 
   out = lame_decode_fromfile(musicin, (__int16 *)mpg123pcm, &(*mpg123pcm)[1152], &mp3input_data);
@@ -1693,16 +1597,15 @@ int __cdecl read_samples_mp3(lame_global_flags *const gfp, FILE *const musicin, 
     {
       if ( silent <= 9 )
         error_printf("Error: sample frequency has changed in %s - not supported\n", "MP3 file");
-      out = -1;
+      return -1;
     }
-    result = out;
+    return out;
   }
   else
   {
     memset(mpg123pcm, 0, 0x1200u);
-    result = 0;
+    return 0;
   }
-  return result;
 }
 // 804A06C: using guessed type int __cdecl lame_get_in_samplerate(_DWORD);
 // 804A75C: using guessed type int __cdecl lame_get_num_channels(_DWORD);
@@ -1711,7 +1614,6 @@ int __cdecl read_samples_mp3(lame_global_flags *const gfp, FILE *const musicin, 
 int __cdecl WriteWaveHeader(FILE *const fp, const int pcmbytes, const int freq, const int channels, const int bits)
 {
   int v5; // eax
-  int result; // eax
   int bytes; // [esp+1Ch] [ebp-Ch]
 
   v5 = bits + 7;
@@ -1731,14 +1633,18 @@ int __cdecl WriteWaveHeader(FILE *const fp, const int pcmbytes, const int freq, 
   fwrite("data", 1u, 4u, fp);
   Write32BitsLowHigh(fp, pcmbytes);
   if ( ferror(fp) )
-    result = -1;
+    return -1;
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (0804D5A8) --------------------------------------------------------
-int __cdecl unpack_read_samples(const int samples_to_read, const int bytes_per_sample, const int swap_order, int *sample_buffer, FILE *pcm_in)
+int __cdecl unpack_read_samples(
+        const int samples_to_read,
+        const int bytes_per_sample,
+        const int swap_order,
+        int *sample_buffer,
+        FILE *pcm_in)
 {
   int *op; // [esp+24h] [ebp-14h]
   int i; // [esp+28h] [ebp-10h]
@@ -1885,7 +1791,6 @@ LABEL_16:
 //----- (0804DAE3) --------------------------------------------------------
 int __cdecl parse_wave_header(lame_global_flags *gfp, FILE *sf_0)
 {
-  int result; // eax
   int v3; // eax
   int v4; // [esp+4h] [ebp-54h]
   int type; // [esp+20h] [ebp-38h]
@@ -1955,7 +1860,7 @@ int __cdecl parse_wave_header(lame_global_flags *gfp, FILE *sf_0)
     {
       if ( silent <= 9 )
         error_printf("Unsupported number of channels: %u\n", channels);
-      result = 0;
+      return 0;
     }
     else
     {
@@ -1966,16 +1871,15 @@ int __cdecl parse_wave_header(lame_global_flags *gfp, FILE *sf_0)
       if ( bits_per_sample + 7 < 0 )
         v3 = bits_per_sample + 14;
       lame_set_num_samples(gfp, data_length / (channels * (v3 >> 3)));
-      result = 1;
+      return 1;
     }
   }
   else
   {
     if ( silent <= 9 )
       error_printf("Unsupported data format: 0x%04X\n", format_tag);
-    result = 0;
+    return 0;
   }
-  return result;
 }
 // 804A0BC: using guessed type int __cdecl lame_set_num_channels(_DWORD, _DWORD);
 // 804A87C: using guessed type int __cdecl lame_set_num_samples(_DWORD, _DWORD);
@@ -1984,7 +1888,6 @@ int __cdecl parse_wave_header(lame_global_flags *gfp, FILE *sf_0)
 //----- (0804DDD0) --------------------------------------------------------
 int __cdecl aiff_check2(IFF_AIFF *const pcm_aiff_data)
 {
-  int result; // eax
   unsigned int v2; // eax
 
   if ( pcm_aiff_data->sampleType == IFF_ID_SSND )
@@ -1998,52 +1901,47 @@ int __cdecl aiff_check2(IFF_AIFF *const pcm_aiff_data)
         {
           if ( silent <= 9 )
             error_printf("ERROR: block size of input sound data is not 0 bytes\n");
-          result = 1;
+          return 1;
         }
         else
         {
-          result = 0;
+          return 0;
         }
       }
       else
       {
         if ( silent <= 9 )
           error_printf("ERROR: input sound data is not mono or stereo\n");
-        result = 1;
+        return 1;
       }
     }
     else
     {
       if ( silent <= 9 )
         error_printf("ERROR: input sound data is not 8, 16, 24 or 32 bits\n");
-      result = 1;
+      return 1;
     }
   }
   else
   {
     if ( silent <= 9 )
       error_printf("ERROR: input sound data is not PCM\n");
-    result = 1;
+    return 1;
   }
-  return result;
 }
 
 //----- (0804DEB2) --------------------------------------------------------
 int __cdecl make_even_number_of_bytes_in_length(int x)
 {
-  int result; // eax
-
   if ( (x & 1) != 0 )
-    result = x + 1;
+    return x + 1;
   else
-    result = x;
-  return result;
+    return x;
 }
 
 //----- (0804DECC) --------------------------------------------------------
 int __cdecl parse_aiff_header(lame_global_flags *gfp, FILE *sf_0)
 {
-  int result; // eax
   IFF_AIFF aiff_info; // [esp+2Ch] [ebp-4Ch] BYREF
   int type; // [esp+4Ch] [ebp-2Ch]
   int ckSize; // [esp+50h] [ebp-28h]
@@ -2147,7 +2045,7 @@ int __cdecl parse_aiff_header(lame_global_flags *gfp, FILE *sf_0)
   {
     if ( silent <= 9 )
       error_printf("Unsupported number of channels: %u\n", aiff_info.numChannels);
-    result = 0;
+    return 0;
   }
   else
   {
@@ -2159,14 +2057,13 @@ int __cdecl parse_aiff_header(lame_global_flags *gfp, FILE *sf_0)
     {
       if ( silent <= 9 )
         error_printf("Can't rewind stream to audio data position\n");
-      result = 0;
+      return 0;
     }
     else
     {
-      result = 1;
+      return 1;
     }
   }
-  return result;
 }
 // 804A0BC: using guessed type int __cdecl lame_set_num_channels(_DWORD, _DWORD);
 // 804A87C: using guessed type int __cdecl lame_set_num_samples(_DWORD, _DWORD);
@@ -2380,7 +2277,6 @@ int __cdecl is_syncword_mp123(const void *const headerptr)
 //----- (0804E961) --------------------------------------------------------
 int __cdecl lame_decode_initfile(FILE *fd, mp3data_struct *mp3data, int *enc_delay, int *enc_padding)
 {
-  int result; // eax
   __int16 pcm_r[1152]; // [esp+34h] [ebp-1284h] BYREF
   __int16 pcm_l[1152]; // [esp+934h] [ebp-984h] BYREF
   unsigned int i; // [esp+1234h] [ebp-84h]
@@ -2406,10 +2302,10 @@ int __cdecl lame_decode_initfile(FILE *fd, mp3data_struct *mp3data, int *enc_del
       console_printf("ID3v2 found. Be aware that the ID3 tag is currently lost when transcoding.\n");
     if ( fread(buf, 1u, 6u, fd) != 6 )
       return -1;
-    buf[2] &= 0x7Fu;
-    buf[3] &= 0x7Fu;
-    buf[4] &= 0x7Fu;
-    buf[5] &= 0x7Fu;
+    buf[2] &= ~0x80u;
+    buf[3] &= ~0x80u;
+    buf[4] &= ~0x80u;
+    buf[5] &= ~0x80u;
     fskip(fd, (((((buf[2] << 7) + buf[3]) << 7) + buf[4]) << 7) + buf[5], 1);
     len = 4;
     if ( fread(buf, 1u, 4u, fd) != 4 )
@@ -2457,15 +2353,14 @@ LABEL_21:
   {
     if ( mp3data->totalframes <= 0 )
       mp3data->nsamp = -1;
-    result = 0;
+    return 0;
   }
   else
   {
     if ( silent <= 9 )
       error_printf("fail to sync...\n");
-    result = lame_decode_initfile(fd, mp3data, enc_delay, enc_padding);
+    return lame_decode_initfile(fd, mp3data, enc_delay, enc_padding);
   }
-  return result;
 }
 // 804A76C: using guessed type int hip_decode_init(void);
 // 804A8CC: using guessed type int __cdecl hip_decode_exit(_DWORD);
@@ -2551,14 +2446,12 @@ int __cdecl lame_set_stream_binary_mode(FILE *const fp)
 //----- (0804F0F0) --------------------------------------------------------
 off_t __cdecl lame_get_file_size(const char *const filename)
 {
-  off_t result; // rax
   stat sb; // [esp+10h] [ebp-68h] BYREF
 
   if ( stat64((int)filename, (int)&sb) )
-    result = -1LL;
+    return -1LL;
   else
-    result = sb.st_size;
-  return result;
+    return sb.st_size;
 }
 
 //----- (0804F120) --------------------------------------------------------
@@ -2752,7 +2645,7 @@ int __cdecl usage(FILE *const fp, const char *ProgramName)
 //----- (0804F4EA) --------------------------------------------------------
 int __cdecl short_help(const lame_global_flags *gfp, FILE *const fp, const char *ProgramName)
 {
-  int v4; // [esp+8h] [ebp-10h]
+  int VBR_q; // [esp+8h] [ebp-10h]
 
   lame_version_print(fp);
   fprintf(
@@ -2765,7 +2658,7 @@ int __cdecl short_help(const lame_global_flags *gfp, FILE *const fp, const char 
     "    lame -V2 input.wav output.mp3\n"
     "\n",
     ProgramName);
-  v4 = lame_get_VBR_q(gfp);
+  VBR_q = lame_get_VBR_q(gfp);
   fprintf(
     fp,
     "OPTIONS:\n"
@@ -2774,7 +2667,7 @@ int __cdecl short_help(const lame_global_flags *gfp, FILE *const fp, const char 
     "    -f              fast mode (lower quality)\n"
     "    -V n            quality setting for VBR.  default n=%i\n"
     "                    0=high quality,bigger files. 9=smaller files\n",
-    v4);
+    VBR_q);
   fwrite(
     "    --preset type   type must be \"medium\", \"standard\", \"extreme\", \"insane\",\n"
     "                    or a value for an average desired bitrate and depending\n"
@@ -2808,7 +2701,7 @@ void __cdecl wait_for(FILE *const fp, int lessmode)
 //----- (0804F5CE) --------------------------------------------------------
 int __cdecl long_help(const lame_global_flags *gfp, FILE *const fp, const char *ProgramName, int lessmode)
 {
-  int v5; // [esp+8h] [ebp-10h]
+  int VBR_q; // [esp+8h] [ebp-10h]
 
   lame_version_print(fp);
   fprintf(
@@ -2923,7 +2816,7 @@ int __cdecl long_help(const lame_global_flags *gfp, FILE *const fp, const char *
     1u,
     0xFBu,
     fp);
-  v5 = lame_get_VBR_q(gfp);
+  VBR_q = lame_get_VBR_q(gfp);
   fprintf(
     fp,
     "  VBR options:\n"
@@ -2932,7 +2825,7 @@ int __cdecl long_help(const lame_global_flags *gfp, FILE *const fp, const char *
     "    -v              the same as -V 4\n"
     "    --vbr-old       use old variable bitrate (VBR) routine\n"
     "    --vbr-new       use new variable bitrate (VBR) routine (default)\n",
-    v5);
+    VBR_q);
   fwrite(
     "    -b <bitrate>    specify minimum allowed bitrate, default  32 kbps\n"
     "    -B <bitrate>    specify maximum allowed bitrate, default 320 kbps\n"
@@ -3056,6 +2949,7 @@ void __cdecl display_bitrate(FILE *const fp, const char *const version, const in
     fprintf(fp, " %2i", bitrate_table[16 * indx + i]);
   fputc(10, fp);
 }
+// 805B2E0: using guessed type int bitrate_table[48];
 
 //----- (0804FA50) --------------------------------------------------------
 int __cdecl display_bitrates(FILE *const fp)
@@ -3174,7 +3068,6 @@ void __cdecl presets_longinfo_dm(FILE *msgfp)
 //----- (0804FC9C) --------------------------------------------------------
 int __cdecl presets_set(lame_t gfp, int fast, int cbr, const char *preset_name, const char *ProgramName)
 {
-  int result; // eax
   int v6; // [esp+4h] [ebp-34h]
   int mono; // [esp+2Ch] [ebp-Ch]
 
@@ -3183,7 +3076,7 @@ int __cdecl presets_set(lame_t gfp, int fast, int cbr, const char *preset_name, 
   {
     lame_version_print(stdout);
     presets_longinfo_dm(stdout);
-    result = -1;
+    return -1;
   }
   else
   {
@@ -3227,7 +3120,7 @@ int __cdecl presets_set(lame_t gfp, int fast, int cbr, const char *preset_name, 
         lame_set_VBR(gfp, 2);
       else
         lame_set_VBR(gfp, 4);
-      result = 0;
+      return 0;
     }
     else if ( !strcmp(preset_name, "standard") )
     {
@@ -3236,7 +3129,7 @@ int __cdecl presets_set(lame_t gfp, int fast, int cbr, const char *preset_name, 
         lame_set_VBR(gfp, 2);
       else
         lame_set_VBR(gfp, 4);
-      result = 0;
+      return 0;
     }
     else if ( !strcmp(preset_name, "extreme") )
     {
@@ -3245,12 +3138,12 @@ int __cdecl presets_set(lame_t gfp, int fast, int cbr, const char *preset_name, 
         lame_set_VBR(gfp, 2);
       else
         lame_set_VBR(gfp, 4);
-      result = 0;
+      return 0;
     }
     else if ( !strcmp(preset_name, "insane") && fast <= 0 )
     {
       lame_set_preset(gfp, 1003);
-      result = 0;
+      return 0;
     }
     else if ( atoi(preset_name) <= 0 || fast > 0 )
     {
@@ -3283,7 +3176,7 @@ int __cdecl presets_set(lame_t gfp, int fast, int cbr, const char *preset_name, 
         ProgramName,
         ProgramName,
         ProgramName);
-      result = -1;
+      return -1;
     }
     else if ( atoi(preset_name) <= 7 || atoi(preset_name) > 320 )
     {
@@ -3295,7 +3188,7 @@ int __cdecl presets_set(lame_t gfp, int fast, int cbr, const char *preset_name, 
         "\n"
         "For further information try: \"%s --preset help\"\n",
         ProgramName);
-      result = -1;
+      return -1;
     }
     else
     {
@@ -3305,10 +3198,9 @@ int __cdecl presets_set(lame_t gfp, int fast, int cbr, const char *preset_name, 
         lame_set_VBR(gfp, 0);
       if ( mono == 1 )
         lame_set_mode(gfp, 3);
-      result = 0;
+      return 0;
     }
   }
-  return result;
 }
 // 804A4BC: using guessed type int __cdecl lame_set_VBR(_DWORD, _DWORD);
 // 804A88C: using guessed type int __cdecl lame_set_preset(_DWORD, _DWORD);
@@ -3316,7 +3208,7 @@ int __cdecl presets_set(lame_t gfp, int fast, int cbr, const char *preset_name, 
 // 804A96C: using guessed type int __cdecl lame_set_VBR_q(_DWORD, _DWORD);
 
 //----- (080500DE) --------------------------------------------------------
-void __cdecl _decoder_realloc(int num, const char *name, void *cookie)
+void __cdecl genre_list_handler(int num, const char *name, void *cookie)
 {
   console_printf("%3d %s\n", num, name);
 }
@@ -3476,18 +3368,24 @@ int __cdecl set_id3_albumart(lame_t gfp, const char *file_name)
   }
   return ret;
 }
-// 8050483: conditional instruction was optimized away because of '%ret.4==4'
+// 8050483: conditional instruction was optimized away because %ret.4==4
 // 804A0EC: using guessed type int __cdecl id3tag_set_albumart(_DWORD, _DWORD, _DWORD);
 // 804A26C: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
 //----- (080504D7) --------------------------------------------------------
-int __cdecl parse_args(lame_global_flags *gfp, int argc, char **argv, char *const inPath, char *const outPath, char **nogap_inPath, int *num_nogap)
+int __cdecl parse_args(
+        lame_global_flags *gfp,
+        int argc,
+        char **argv,
+        char *const inPath,
+        char *const outPath,
+        char **nogap_inPath,
+        int *num_nogap)
 {
   char *v8; // eax
   long double v9; // fst7
-  int v10; // eax
+  int VBR_mean_bitrate_kbps; // eax
   int v11; // eax
-  int result; // eax
   int v13; // eax
   int v14; // eax
   long double v15; // fst7
@@ -3497,7 +3395,7 @@ int __cdecl parse_args(lame_global_flags *gfp, int argc, char **argv, char *cons
   int v19; // eax
   int v20; // eax
   int v21; // eax
-  int v22; // eax
+  int exp_nspsytune; // eax
   char *v23; // eax
   char *v24; // eax
   long double v25; // fst7
@@ -3511,7 +3409,7 @@ int __cdecl parse_args(lame_global_flags *gfp, int argc, char **argv, char *cons
   _BOOL4 v33; // [esp+4h] [ebp-D4h]
   int v34; // [esp+4h] [ebp-D4h]
   int v35; // [esp+4h] [ebp-D4h]
-  int v36; // [esp+4h] [ebp-D4h]
+  int brate; // [esp+4h] [ebp-D4h]
   int v37; // [esp+4h] [ebp-D4h]
   float v38; // [esp+2Ch] [ebp-ACh]
   float v39; // [esp+2Ch] [ebp-ACh]
@@ -3661,8 +3559,8 @@ LABEL_342:
               argUsed = 1;
               v35 = atoi(arg);
               lame_set_brate(gfp, v35);
-              v36 = lame_get_brate(gfp);
-              lame_set_VBR_min_bitrate_kbps(gfp, v36);
+              brate = lame_get_brate(gfp);
+              lame_set_VBR_min_bitrate_kbps(gfp, brate);
               goto LABEL_325;
             case 'c':
               lame_set_copyright(gfp, 1);
@@ -3883,7 +3781,7 @@ LABEL_279:
                                                                                                   {
                                                                                                     if ( !local_strcasecmp(token, "genre-list") )
                                                                                                     {
-                                                                                                      id3tag_genre_list(_decoder_realloc, 0);
+                                                                                                      id3tag_genre_list(genre_list_handler, 0);
                                                                                                       return -2;
                                                                                                     }
                                                                                                     if ( local_strcasecmp(token, "lowpass") )
@@ -4035,8 +3933,8 @@ LABEL_279:
                                                                                                                                   if ( k_2 > 31 )
                                                                                                                                     k_2 = 31;
                                                                                                                                   k_2 += k_2 < 0 ? 0x40 : 0;
-                                                                                                                                  v22 = lame_get_exp_nspsytune(gfp);
-                                                                                                                                  lame_set_exp_nspsytune(gfp, (k_2 << 20) | v22);
+                                                                                                                                  exp_nspsytune = lame_get_exp_nspsytune(gfp);
+                                                                                                                                  lame_set_exp_nspsytune(gfp, (k_2 << 20) | exp_nspsytune);
                                                                                                                                 }
                                                                                                                               }
                                                                                                                               else
@@ -4528,10 +4426,10 @@ LABEL_279:
                   lame_set_VBR_mean_bitrate_kbps(gfp, v32);
                 }
                 if ( lame_get_VBR_mean_bitrate_kbps(gfp) > 319 )
-                  v10 = 320;
+                  VBR_mean_bitrate_kbps = 320;
                 else
-                  v10 = lame_get_VBR_mean_bitrate_kbps(gfp);
-                lame_set_VBR_mean_bitrate_kbps(gfp, v10);
+                  VBR_mean_bitrate_kbps = lame_get_VBR_mean_bitrate_kbps(gfp);
+                lame_set_VBR_mean_bitrate_kbps(gfp, VBR_mean_bitrate_kbps);
                 if ( lame_get_VBR_mean_bitrate_kbps(gfp) <= 8 )
                   v11 = 8;
                 else
@@ -4642,23 +4540,21 @@ LABEL_50:
     {
       error_printf("For free format, specify a bitrate between 8 and 640 kbps\n");
       error_printf("with the -b <bitrate> option\n");
-      result = -1;
+      return -1;
     }
     else
     {
       if ( num_nogap )
         *num_nogap = count_nogap;
-      result = 0;
+      return 0;
     }
   }
   else
   {
     usage(Console_IO.Console_fp, ProgramName);
-    result = -1;
+    return -1;
   }
-  return result;
 }
-// 12: found interdependent unknown calls
 // 804A0BC: using guessed type int __cdecl lame_set_num_channels(_DWORD, _DWORD);
 // 804A0CC: using guessed type int __cdecl id3tag_v1_only(_DWORD);
 // 804A0DC: using guessed type int __cdecl id3tag_v2_only(_DWORD);
@@ -4726,7 +4622,7 @@ int __cdecl ReadByte(FILE *fp)
   v1 = _IO_getc(fp);
   result = v1;
   if ( (v1 & 0x80) != 0 )
-    result = v1 - 256;
+    return v1 - 256;
   return result;
 }
 
@@ -4887,7 +4783,6 @@ void __cdecl WriteBytesSwapped(FILE *fp, char *p, int n)
 //----- (08052D11) --------------------------------------------------------
 double __cdecl ConvertFromIeeeExtended(char *bytes)
 {
-  long double result; // fst7
   double f; // [esp+28h] [ebp-20h]
   double fa; // [esp+28h] [ebp-20h]
   int loMant; // [esp+34h] [ebp-14h]
@@ -4916,10 +4811,9 @@ double __cdecl ConvertFromIeeeExtended(char *bytes)
     f = 0.0;
   }
   if ( *bytes >= 0 )
-    result = f;
+    return f;
   else
-    result = -f;
-  return result;
+    return -f;
 }
 
 //----- (08052E8B) --------------------------------------------------------
@@ -4934,7 +4828,12 @@ double __cdecl ReadIeeeExtendedHighLow(FILE *fp)
 }
 
 //----- (08052EDC) --------------------------------------------------------
-void __cdecl ts_calc_times(timestatus_t *const tstime, const int sample_freq, const int frameNum, const int totalframes, const int framesize)
+void __cdecl ts_calc_times(
+        timestatus_t *const tstime,
+        const int sample_freq,
+        const int frameNum,
+        const int totalframes,
+        const int framesize)
 {
   if ( frameNum <= 0 || tstime->elapsed_time <= 0.0 )
   {
@@ -5062,11 +4961,11 @@ void __cdecl encoder_progress_begin(const lame_global_flags *gf, const char *inP
   size_t v4; // ebx
   const char *v5; // ebx
   const char *v6; // eax
-  unsigned int v7; // eax
-  int v8; // edi
+  unsigned int VBR; // eax
+  int quality; // edi
   const char *v9; // esi
-  int v10; // ebx
-  int v11; // eax
+  int force_ms; // ebx
+  int mode; // eax
   const char *v12; // edi
   int v13; // esi
   int v14; // ebx
@@ -5079,16 +4978,16 @@ void __cdecl encoder_progress_begin(const lame_global_flags *gf, const char *inP
   const char *v21; // edi
   int v22; // esi
   int v23; // eax
-  double v24; // [esp+28h] [ebp-60h]
+  double VBR_quality; // [esp+28h] [ebp-60h]
   int v25; // [esp+34h] [ebp-54h]
   double v26; // [esp+38h] [ebp-50h]
-  int v27; // [esp+44h] [ebp-44h]
+  int VBR_mean_bitrate_kbps; // [esp+44h] [ebp-44h]
   double v28; // [esp+48h] [ebp-40h]
   int v29; // [esp+50h] [ebp-38h]
-  int v30; // [esp+54h] [ebp-34h]
+  int brate; // [esp+54h] [ebp-34h]
   double v31; // [esp+58h] [ebp-30h]
   int v32; // [esp+64h] [ebp-24h]
-  int v33; // [esp+68h] [ebp-20h]
+  int out_samplerate; // [esp+68h] [ebp-20h]
 
   if ( silent <= 9 )
   {
@@ -5107,29 +5006,35 @@ void __cdecl encoder_progress_begin(const lame_global_flags *gf, const char *inP
     else
       v6 = inPath;
     console_printf("Encoding %s%s to %s\n", v6, v5, v3);
-    v33 = lame_get_out_samplerate(gf);
-    console_printf("Encoding as %g kHz ", (double)((long double)v33 * 0.001));
-    v7 = lame_get_VBR(gf);
-    if ( v7 == 2 )
+    out_samplerate = lame_get_out_samplerate(gf);
+    console_printf("Encoding as %g kHz ", (double)((long double)out_samplerate * 0.001));
+    VBR = lame_get_VBR(gf);
+    if ( VBR == 2 )
     {
-      v8 = lame_get_quality(gf);
-      v24 = lame_get_VBR_quality(gf);
+      quality = lame_get_quality(gf);
+      VBR_quality = lame_get_VBR_quality(gf);
       if ( lame_get_out_samplerate(gf) > 15999 )
         v9 = (const char *)&unk_8059978;
       else
         v9 = ".5";
       v25 = 2 - lame_get_version(gf);
-      v10 = lame_get_force_ms(gf);
-      v11 = lame_get_mode(gf);
-      console_printf("%s MPEG-%u%s Layer III VBR(q=%g) qval=%i\n", mode_names_3185[v10][v11], v25, v9, v24, v8);
+      force_ms = lame_get_force_ms(gf);
+      mode = lame_get_mode(gf);
+      console_printf(
+        "%s MPEG-%u%s Layer III VBR(q=%g) qval=%i\n",
+        mode_names_3185[force_ms][mode],
+        v25,
+        v9,
+        VBR_quality,
+        quality);
       goto LABEL_34;
     }
-    if ( v7 > 2 )
+    if ( VBR > 2 )
     {
-      if ( v7 == 3 )
+      if ( VBR == 3 )
       {
         v16 = lame_get_quality(gf);
-        v27 = lame_get_VBR_mean_bitrate_kbps(gf);
+        VBR_mean_bitrate_kbps = lame_get_VBR_mean_bitrate_kbps(gf);
         v28 = (long double)(int)(lame_get_compression_ratio(gf) * 10.0 + 0.5) * 0.1;
         if ( lame_get_out_samplerate(gf) > 15999 )
           v17 = (const char *)&unk_8059978;
@@ -5144,18 +5049,18 @@ void __cdecl encoder_progress_begin(const lame_global_flags *gf, const char *inP
           v29,
           v17,
           v28,
-          v27,
+          VBR_mean_bitrate_kbps,
           v16);
         goto LABEL_34;
       }
-      if ( v7 != 4 )
+      if ( VBR != 4 )
         goto LABEL_30;
     }
-    else if ( v7 != 1 )
+    else if ( VBR != 1 )
     {
 LABEL_30:
       v20 = lame_get_quality(gf);
-      v30 = lame_get_brate(gf);
+      brate = lame_get_brate(gf);
       v31 = (long double)(int)(lame_get_compression_ratio(gf) * 10.0 + 0.5) * 0.1;
       if ( lame_get_out_samplerate(gf) > 15999 )
         v21 = (const char *)&unk_8059978;
@@ -5170,7 +5075,7 @@ LABEL_30:
         v32,
         v21,
         v31,
-        v30,
+        brate,
         v20);
 LABEL_34:
       if ( silent < -9 )
@@ -5329,8 +5234,6 @@ int __cdecl calculate_index(const int *const array, const int len, const int val
 //----- (08053A43) --------------------------------------------------------
 int __cdecl brhist_init(const lame_global_flags *gf, const int bitrate_kbps_min, const int bitrate_kbps_max)
 {
-  int result; // eax
-
   brhist.hist_printed_lines = 0;
   lame_bitrate_kbps(gf, 134591624);
   brhist.vbr_bitrate_min_index = calculate_index(brhist.kbps, 14, bitrate_kbps_min);
@@ -5341,7 +5244,7 @@ int __cdecl brhist_init(const lame_global_flags *gf, const int bitrate_kbps_min,
     memset(brhist.bar_percent, 37, 0x200u);
     memset(brhist.bar_space, 45, 0x200u);
     memset(brhist.bar_coded, 45, 0x200u);
-    result = 0;
+    return 0;
   }
   else
   {
@@ -5349,9 +5252,8 @@ int __cdecl brhist_init(const lame_global_flags *gf, const int bitrate_kbps_min,
       "lame internal error: VBR min %d kbps or VBR max %d kbps not allowed.\n",
       bitrate_kbps_min,
       bitrate_kbps_max);
-    result = -1;
+    return -1;
   }
-  return result;
 }
 // 804A5DC: using guessed type int __cdecl lame_bitrate_kbps(_DWORD, _DWORD);
 
@@ -5451,12 +5353,7 @@ void __cdecl progress_line(const lame_global_flags *gf, int full, int frames)
   unsigned int v19; // [esp+7Ch] [ebp-Ch]
 
   v19 = __readgsdword(0x14u);
-  *(_WORD *)rst = 0;
-  *(_DWORD *)&rst[2] = 0;
-  *(_DWORD *)&rst[6] = 0;
-  *(_DWORD *)&rst[10] = 0;
-  *(_DWORD *)&rst[14] = 0;
-  *(_WORD *)&rst[18] = 0;
+  memset(rst, 0, sizeof(rst));
   res = 1;
   time_in_sec = 0.0;
   fsize = lame_get_framesize(gf);
@@ -5599,7 +5496,7 @@ void __cdecl stats_line(double *stat)
 void __cdecl brhist_disp(const lame_global_flags *gf)
 {
   int v1; // eax
-  int v2; // [esp+4h] [ebp-1E4h]
+  int totalframes; // [esp+4h] [ebp-1E4h]
   int br_sm_hist[14][4]; // [esp+38h] [ebp-1B0h] BYREF
   double stat[9]; // [esp+118h] [ebp-D0h] BYREF
   int br_hist[14]; // [esp+160h] [ebp-88h] BYREF
@@ -5618,7 +5515,7 @@ void __cdecl brhist_disp(const lame_global_flags *gf)
   memset(stat, 0, sizeof(stat));
   st_frames = 0;
   brhist.hist_printed_lines = 0;
-  lame_bitrate_stereo_mode_hist(0, 18, gf, br_sm_hist);
+  lame_bitrate_stereo_mode_hist(gf, br_sm_hist);
   lame_bitrate_hist(gf, br_hist);
   lame_stereo_mode_hist(gf, st_mode);
   lame_block_type_hist(gf, bl_type);
@@ -5661,13 +5558,13 @@ void __cdecl brhist_disp(const lame_global_flags *gf)
     stat[7] = (long double)bl_type[2] * 100.0 / (long double)bl_type[5];
     stat[8] = (long double)bl_type[4] * 100.0 / (long double)bl_type[5];
   }
-  v2 = lame_get_totalframes(gf);
-  progress_line(gf, v2, frames);
+  totalframes = lame_get_totalframes(gf);
+  progress_line(gf, totalframes, frames);
   stats_line(stat);
 }
 // 804A10C: using guessed type int __cdecl lame_stereo_mode_hist(_DWORD, _DWORD);
 // 804A15C: using guessed type int __cdecl lame_bitrate_hist(_DWORD, _DWORD);
-// 804A4EC: using guessed type int __fastcall lame_bitrate_stereo_mode_hist(_DWORD, _DWORD, _DWORD, _DWORD);
+// 804A4EC: using guessed type int __cdecl lame_bitrate_stereo_mode_hist(_DWORD, _DWORD);
 // 804A5AC: using guessed type int __cdecl lame_block_type_hist(_DWORD, _DWORD);
 // 804A6FC: using guessed type int __cdecl lame_get_totalframes(_DWORD);
 
@@ -5676,18 +5573,6 @@ void brhist_jump_back()
 {
   console_up(brhist.hist_printed_lines);
   brhist.hist_printed_lines = 0;
-}
-
-//----- (08054720) --------------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (08054730) --------------------------------------------------------
-void _libc_csu_init(void)
-{
-  init_proc();
 }
 
 //----- (08054790) --------------------------------------------------------
@@ -5704,33 +5589,5 @@ int __cdecl fstat64(int a1, int a2)
 }
 // 804A83C: using guessed type int __cdecl __fxstat64(_DWORD, _DWORD, _DWORD);
 
-//----- (08054810) --------------------------------------------------------
-void (*_do_global_ctors_aux())(void)
-{
-  void (*result)(void); // eax
-  void (**v1)(void); // ebx
-
-  result = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    v1 = (void (**)(void))&_CTOR_LIST__;
-    do
-    {
-      --v1;
-      result();
-      result = *v1;
-    }
-    while ( *v1 != (void (*)(void))-1 );
-  }
-  return result;
-}
-// 805AEFC: using guessed type int _CTOR_LIST__;
-
-//----- (0805483C) --------------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=462 queued=125 decompiled=125 lumina nreq=0 worse=0 better=0
-// ALL OK, 125 function(s) have been successfully decompiled
+// nfuncs=462 queued=117 decompiled=117 lumina nreq=0 worse=0 better=0
+// ALL OK, 117 function(s) have been successfully decompiled

@@ -12,7 +12,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int __usercall init_proc@<eax>(int a1@<eax>);
+// int __usercall init_proc@<eax>(int@<eax>);
 int sub_8048790();
 // size_t __fpending(FILE *fp);
 // int __overflow(_IO_FILE *, int);
@@ -42,22 +42,22 @@ int sub_8048790();
 // int mbsinit(const mbstate_t *ps);
 // void error(int status, int errnum, const char *format, ...);
 // const unsigned __int16 **__ctype_b_loc(void);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void *__usercall sub_80489A4@<eax>(int a1@<eax>);
+// void __usercall __noreturn start(int@<eax>, void (*)(void)@<edx>);
+// void *__usercall sub_80489A4@<eax>(int@<eax>);
 void sub_80489C8();
 int sub_8048A04();
 void __cdecl __noreturn sub_8048A30(int status); // idb
 void __cdecl __noreturn main(int a1, char **a2);
 void __cdecl func();
-int __cdecl sub_8048DB0(int a1, unsigned __int8 a2, char a3);
+int __cdecl sub_8048DB0(int, unsigned __int8, char);
 char *__cdecl sub_8048E10(char *msgid, int a2);
-unsigned int __cdecl sub_8048E50(int a1, int a2, char *s, int a4, int a5, int a6);
-unsigned int __cdecl sub_8049490(int a1, int a2, char *s, int a4, int a5);
-void *__cdecl sub_80494F0(int a1, char *s, int a3, int a4);
-void *__cdecl sub_8049660(int a1, char *s);
-// _DWORD *__userpurge sub_80496B0@<eax>(_DWORD *a1, int a2);
-void *__cdecl sub_8049720(int a1, int a2, char *s);
-void *__cdecl sub_80497F0(char *s, char a2);
+unsigned int __cdecl sub_8048E50(int, int, char *s, int, int, int);
+unsigned int __cdecl sub_8049490(int, int, char *s, int, int);
+void *__cdecl sub_80494F0(int, char *s, int, int);
+void *__cdecl sub_8049660(int, char *s);
+// _DWORD *__userpurge sub_80496B0@<eax>(_DWORD *, int);
+void *__cdecl sub_8049720(int, int, char *s);
+void *__cdecl sub_80497F0(char *s, char);
 void *__cdecl sub_8049890(char *s);
 int __cdecl sub_80498B0(FILE *stream, int, int, int, __gnuc_va_list __varargs); // idb
 int sub_8049AC0(FILE *stream, int, int, int, ...); // idb
@@ -68,7 +68,7 @@ void __cdecl sub_8049DF0(void *ptr);
 // void __usercall init(int a1@<eax>);
 void fini(void); // idb
 int __cdecl sub_8049E90(void (__cdecl *lpfunc)(void *)); // idb
-int __fastcall sub_8049EC0(int a1, int a2);
+int __fastcall sub_8049EC0(int, int);
 // void term_proc();
 
 //-------------------------------------------------------------------------
@@ -78,7 +78,7 @@ _UNKNOWN unk_804A079; // weak
 int dword_804B648 = -1; // weak
 int dword_804B658 = 0; // weak
 int (*dword_804B734)(void) = NULL; // weak
-_DWORD dword_804B7B4 = 0; // idb
+_DWORD dword_804B7B4 = 0; // weak
 int *off_804B7B8 = &dword_804B654; // weak
 int status = 1; // idb
 int dword_804B7C0 = 1; // weak
@@ -133,7 +133,7 @@ void *__usercall sub_80489A4@<eax>(int a1@<eax>)
 
   result = &_gmon_start__;
   if ( &_gmon_start__ )
-    result = (void *)((int (__cdecl *)(int))_gmon_start__)(a1);
+    return (void *)((int (__cdecl *)(int))_gmon_start__)(a1);
   return result;
 }
 
@@ -165,7 +165,7 @@ int sub_8048A04()
 
   result = dword_804B658;
   if ( dword_804B658 )
-    result = 0;
+    return 0;
   return result;
 }
 // 804B658: using guessed type int dword_804B658;
@@ -275,7 +275,7 @@ char *__cdecl sub_8048E10(char *msgid, int a2)
 
   result = dcgettext(0, msgid, 5);
   if ( result == msgid && a2 == 6 )
-    result = "\"";
+    return "\"";
   return result;
 }
 
@@ -816,7 +816,7 @@ int __cdecl sub_80498B0(FILE *stream, int a2, int a3, int a4, __gnuc_va_list __v
   _DWORD *v6; // edx
   const char *v8; // eax
   char *v9; // eax
-  char *v10; // eax
+  char *IO_write_ptr; // eax
   char *v11; // eax
   char *v12; // eax
   int result; // eax
@@ -871,14 +871,14 @@ LABEL_8:
       v9 = dcgettext(0, v8, 5);
 LABEL_9:
       vfprintf(stream, v9, __varargs);
-      v10 = stream->_IO_write_ptr;
-      if ( v10 >= stream->_IO_write_end )
+      IO_write_ptr = stream->_IO_write_ptr;
+      if ( IO_write_ptr >= stream->_IO_write_end )
       {
         __overflow(stream, 10);
       }
       else
       {
-        *v10 = 10;
+        *IO_write_ptr = 10;
         ++stream->_IO_write_ptr;
       }
       fputs_unlocked(off_804B7D0, stream);
@@ -976,6 +976,7 @@ int __cdecl sub_8049E90(void (__cdecl *lpfunc)(void *))
     v1 = (void *)dword_804B7B4;
   return __cxa_atexit(lpfunc, 0, v1);
 }
+// 804B7B4: using guessed type _DWORD dword_804B7B4;
 
 //----- (08049EC0) --------------------------------------------------------
 int __fastcall sub_8049EC0(int a1, int a2)

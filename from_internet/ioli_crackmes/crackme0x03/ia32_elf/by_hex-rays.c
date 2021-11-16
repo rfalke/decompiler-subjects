@@ -10,42 +10,21 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int __fastcall init_proc(int a1, int a2);
 int sub_8048310();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int scanf(const char *format, ...);
 // size_t strlen(const char *s);
 // int printf(const char *format, ...);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-int __fastcall sub_8048384(int a1, int a2);
-void _do_global_dtors_aux();
-int frame_dummy();
+int __fastcall sub_8048384(int, int);
 int __cdecl shift(char *s); // idb
-int __cdecl test(int a1, int a2);
+int __cdecl test(int, int);
 int __cdecl main(int argc, const char **argv, const char **envp);
-void __fastcall _libc_csu_init(int a1, int a2);
-void _libc_csu_fini(void); // idb
-int _do_global_ctors_aux();
-void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-int _CTOR_LIST__ = -1; // weak
-int _JCR_LIST__ = 0; // weak
 int (*dword_8049FFC)(void) = NULL; // weak
-int *p_0 = &_DTOR_END__; // weak
-char completed_1; // weak
 // extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (080482F8) --------------------------------------------------------
-int __fastcall init_proc(int a1, int a2)
-{
-  sub_8048384(a1, a2);
-  frame_dummy();
-  return _do_global_ctors_aux();
-}
 
 //----- (08048310) --------------------------------------------------------
 int sub_8048310()
@@ -54,69 +33,17 @@ int sub_8048310()
 }
 // 8049FFC: using guessed type int (*dword_8049FFC)(void);
 
-//----- (08048360) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main(
-    (int (__cdecl *)(int, char **, char **))main,
-    v2,
-    &retaddr,
-    (void (*)(void))_libc_csu_init,
-    _libc_csu_fini,
-    a2,
-    &v3);
-  __halt();
-}
-// 8048363: positive sp value 4 has been found
-
 //----- (08048384) --------------------------------------------------------
 int __fastcall sub_8048384(int a1, int a2)
 {
+  int v3; // [esp-4h] [ebp-8h]
+
+  v3 = a2;
   if ( &_gmon_start__ )
-    ((void (__cdecl *)(int))_gmon_start__)(a2);
-  return a2;
+    ((void (__thiscall *)(int, int))_gmon_start__)(a1, a2);
+  return v3;
 }
-// 80483A1: variable 'a2' is possibly undefined
-
-//----- (080483B0) --------------------------------------------------------
-void _do_global_dtors_aux()
-{
-  void (*v0)(void); // edx
-
-  if ( !completed_1 )
-  {
-    while ( 1 )
-    {
-      v0 = (void (*)(void))*p_0;
-      if ( !*p_0 )
-        break;
-      ++p_0;
-      v0();
-    }
-    completed_1 = 1;
-  }
-}
-// 804A018: using guessed type int *p_0;
-// 804A01C: using guessed type char completed_1;
-
-//----- (080483E0) --------------------------------------------------------
-int frame_dummy()
-{
-  int result; // eax
-
-  result = _JCR_LIST__;
-  if ( _JCR_LIST__ )
-    result = 0;
-  return result;
-}
-// 8049F1C: using guessed type int _JCR_LIST__;
+// 80483A1: variable 'v3' is possibly undefined
 
 //----- (08048414) --------------------------------------------------------
 int __cdecl shift(char *s)
@@ -129,17 +56,15 @@ int __cdecl shift(char *s)
   v3[i] = 0;
   return printf("%s\n", v3);
 }
+// 8048414: using guessed type char var_78[120];
 
 //----- (0804846E) --------------------------------------------------------
 int __cdecl test(int a1, int a2)
 {
-  int result; // eax
-
   if ( a1 == a2 )
-    result = shift("Sdvvzrug#RN$$$#=,");
+    return shift("Sdvvzrug#RN$$$#=,");
   else
-    result = shift("Lqydolg#Sdvvzrug$");
-  return result;
+    return shift("Lqydolg#Sdvvzrug$");
 }
 
 //----- (08048498) --------------------------------------------------------
@@ -156,41 +81,5 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   return 0;
 }
 
-//----- (08048520) --------------------------------------------------------
-void __fastcall _libc_csu_init(int a1, int a2)
-{
-  init_proc(a1, a2);
-}
-
-//----- (08048590) --------------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (080485A0) --------------------------------------------------------
-int _do_global_ctors_aux()
-{
-  void (**v0)(void); // ebx
-  void (*i)(void); // eax
-  int v3; // [esp+0h] [ebp-8h]
-
-  v0 = (void (**)(void))&_CTOR_LIST__;
-  for ( i = (void (*)(void))_CTOR_LIST__; i != (void (*)(void))-1; i = *v0 )
-  {
-    --v0;
-    i();
-  }
-  return v3;
-}
-// 80485BF: variable 'v3' is possibly undefined
-// 8049F0C: using guessed type int _CTOR_LIST__;
-
-//----- (080485C4) --------------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=22 queued=13 decompiled=13 lumina nreq=0 worse=0 better=0
-// ALL OK, 13 function(s) have been successfully decompiled
+// nfuncs=22 queued=5 decompiled=5 lumina nreq=0 worse=0 better=0
+// ALL OK, 5 function(s) have been successfully decompiled

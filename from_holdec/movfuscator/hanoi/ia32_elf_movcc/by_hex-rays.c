@@ -571,7 +571,7 @@ char alu_true[528] =
   '\0',
   '\0',
   '\0'
-}; // idb
+}; // weak
 int alu_false[] = { 1 }; // weak
 int alu_b7[260] =
 {
@@ -835,7 +835,7 @@ int alu_b7[260] =
   0,
   0,
   0
-}; // idb
+}; // weak
 void *alu_eq = &alu_eq_0; // weak
 void *alu_add16 = &alu_add16_0; // weak
 unsigned __int16 alu_inv16[65544] =
@@ -66384,7 +66384,7 @@ unsigned __int16 alu_inv16[65544] =
   0u,
   0u,
   0u
-}; // idb
+}; // weak
 void *alu_bor8 = &alu_bor8_0; // weak
 void *alu_lshu8 = &alu_lshu8_0; // weak
 int alu_clamp32[516] =
@@ -66905,7 +66905,7 @@ int alu_clamp32[516] =
   0,
   0,
   0
-}; // idb
+}; // weak
 char alu_mul_sum8l[784] =
 {
   '\0',
@@ -67692,7 +67692,7 @@ char alu_mul_sum8l[784] =
   '\0',
   '\0',
   '\0'
-}; // idb
+}; // weak
 char alu_mul_sum8h[784] =
 {
   '\0',
@@ -68479,7 +68479,7 @@ char alu_mul_sum8h[784] =
   '\0',
   '\0',
   '\0'
-}; // idb
+}; // weak
 int alu_mul_shl2[4100] =
 {
   0,
@@ -72582,7 +72582,7 @@ int alu_mul_shl2[4100] =
   0,
   0,
   0
-}; // idb
+}; // weak
 int alu_mul_sums = 0; // weak
 void *alu_mul_mul8l = &alu_mul_mul8l_0; // weak
 void *alu_mul_mul8h = &alu_mul_mul8h_0; // weak
@@ -72659,7 +72659,6 @@ int dispatch()
 {
   return external();
 }
-// 8401130: using guessed type void *off_8401130;
 // 86011C4: using guessed type int (*external)(void);
 
 //----- (08048884) --------------------------------------------------------
@@ -72785,8 +72784,9 @@ void new_tower()
   alu_y = 2;
   alu_sx = 2;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
   LOBYTE(v5) = alu_true[alu_sc];
   alu_sc = 2;
   BYTE1(alu_sc) = (_BYTE)v5;
@@ -73000,6 +73000,7 @@ void new_tower()
 // 806BF30: using guessed type void *alu_add16;
 // 819C570: using guessed type void *alu_bor8;
 // 81BCF90: using guessed type void *alu_lshu8;
+// 81D5EC0: using guessed type int alu_clamp32[516];
 // 8200FE0: using guessed type int b0;
 // 8200FE4: using guessed type int b1;
 // 8200FE8: using guessed type int b2;
@@ -73109,25 +73110,23 @@ void text()
   int v65; // edx
   int v66; // eax
   int v67; // eax
-  int v68; // eax
+  void ***v68; // edx
   int v69; // eax
-  void ***v70; // edx
-  int v71; // eax
-  void **v72; // edx
-  int v73; // ecx
+  void **v70; // edx
+  int v71; // ecx
+  _DWORD *v72; // eax
+  _DWORD *v73; // eax
   _DWORD *v74; // eax
-  _DWORD *v75; // eax
-  _DWORD *v76; // eax
-  int v77; // eax
-  int v78; // edx
-  int v79; // ecx
+  int v75; // eax
+  int v76; // edx
+  int v77; // ecx
+  _DWORD *v78; // eax
+  _DWORD *v79; // eax
   _DWORD *v80; // eax
-  _DWORD *v81; // eax
+  int v81; // ecx
   _DWORD *v82; // eax
-  int v83; // ecx
+  _DWORD *v83; // eax
   _DWORD *v84; // eax
-  _DWORD *v85; // eax
-  _DWORD *v86; // eax
 
   alu_x = target;
   alu_y = -2012964608;
@@ -73234,8 +73233,9 @@ void text()
   alu_y = 1;
   alu_sx = 1;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
   LOBYTE(v5) = alu_true[alu_sc];
   alu_sc = 1;
   BYTE1(alu_sc) = (_BYTE)v5;
@@ -73285,18 +73285,18 @@ void text()
   v11 = *((unsigned __int8 *)*(&alu_mul_mul8l + (unsigned __int8)R1) + (unsigned __int8)alu_s);
   v12 = *((unsigned __int8 *)*(&alu_mul_mul8h + (unsigned __int8)R1) + (unsigned __int8)alu_s);
   LOBYTE(v10) = 0;
-  alu_z0 = (unsigned __int8)alu_mul_sum8l[v11 + v10];
+  LOBYTE(alu_z0) = alu_mul_sum8l[v11 + v10];
   LOBYTE(v10) = 0;
   LOBYTE(v10) = alu_mul_sum8h[v11 + v10];
-  alu_c = (unsigned __int8)alu_mul_sum8l[v10 + v12];
+  LOBYTE(alu_c) = alu_mul_sum8l[v10 + v12];
   v13 = (unsigned __int8)alu_s;
   v14 = *((unsigned __int8 *)*(&alu_mul_mul8l + BYTE1(R1)) + (unsigned __int8)alu_s);
   v15 = *((unsigned __int8 *)*(&alu_mul_mul8h + BYTE1(R1)) + (unsigned __int8)alu_s);
   LOBYTE(v13) = alu_c;
-  *(_WORD *)((char *)&alu_z0 + 1) = (unsigned __int8)alu_mul_sum8l[v14 + v13];
+  BYTE1(alu_z0) = alu_mul_sum8l[v14 + v13];
   LOBYTE(v13) = alu_c;
   LOBYTE(v13) = alu_mul_sum8h[v14 + v13];
-  alu_c = (unsigned __int8)alu_mul_sum8l[v13 + v15];
+  LOBYTE(alu_c) = alu_mul_sum8l[v13 + v15];
   v16 = (unsigned __int8)alu_s;
   v17 = *((unsigned __int8 *)*(&alu_mul_mul8l + BYTE2(R1)) + (unsigned __int8)alu_s);
   v18 = *((unsigned __int8 *)*(&alu_mul_mul8h + BYTE2(R1)) + (unsigned __int8)alu_s);
@@ -73304,7 +73304,7 @@ void text()
   BYTE2(alu_z0) = alu_mul_sum8l[v17 + v16];
   LOBYTE(v16) = alu_c;
   LOBYTE(v16) = alu_mul_sum8h[v17 + v16];
-  alu_c = (unsigned __int8)alu_mul_sum8l[v16 + v18];
+  LOBYTE(alu_c) = alu_mul_sum8l[v16 + v18];
   v19 = (unsigned __int8)alu_s;
   LOBYTE(v19) = alu_c;
   HIBYTE(alu_z0) = alu_mul_sum8l[*((unsigned __int8 *)*(&alu_mul_mul8l + HIBYTE(R1)) + (unsigned __int8)alu_s) + v19];
@@ -73313,10 +73313,10 @@ void text()
   v21 = *((unsigned __int8 *)*(&alu_mul_mul8l + (unsigned __int8)R1) + BYTE1(alu_s));
   v22 = *((unsigned __int8 *)*(&alu_mul_mul8h + (unsigned __int8)R1) + BYTE1(alu_s));
   LOBYTE(v20) = 0;
-  *(_WORD *)((char *)&alu_z1 + 1) = (unsigned __int8)alu_mul_sum8l[v21 + v20];
+  BYTE1(alu_z1) = alu_mul_sum8l[v21 + v20];
   LOBYTE(v20) = 0;
   LOBYTE(v20) = alu_mul_sum8h[v21 + v20];
-  alu_c = (unsigned __int8)alu_mul_sum8l[v20 + v22];
+  LOBYTE(alu_c) = alu_mul_sum8l[v20 + v22];
   v23 = BYTE1(alu_s);
   v24 = *((unsigned __int8 *)*(&alu_mul_mul8l + BYTE1(R1)) + BYTE1(alu_s));
   v25 = *((unsigned __int8 *)*(&alu_mul_mul8h + BYTE1(R1)) + BYTE1(alu_s));
@@ -73324,7 +73324,7 @@ void text()
   BYTE2(alu_z1) = alu_mul_sum8l[v24 + v23];
   LOBYTE(v23) = alu_c;
   LOBYTE(v23) = alu_mul_sum8h[v24 + v23];
-  alu_c = (unsigned __int8)alu_mul_sum8l[v23 + v25];
+  LOBYTE(alu_c) = alu_mul_sum8l[v23 + v25];
   v26 = BYTE1(alu_s);
   LOBYTE(v26) = alu_c;
   HIBYTE(alu_z1) = alu_mul_sum8l[*((unsigned __int8 *)*(&alu_mul_mul8l + BYTE2(R1)) + BYTE1(alu_s)) + v26];
@@ -73333,10 +73333,10 @@ void text()
   v28 = *((unsigned __int8 *)*(&alu_mul_mul8l + (unsigned __int8)R1) + BYTE2(alu_s));
   v29 = *((unsigned __int8 *)*(&alu_mul_mul8h + (unsigned __int8)R1) + BYTE2(alu_s));
   LOBYTE(v27) = 0;
-  HIWORD(alu_z2) = (unsigned __int8)alu_mul_sum8l[v28 + v27];
+  BYTE2(alu_z2) = alu_mul_sum8l[v28 + v27];
   LOBYTE(v27) = 0;
   LOBYTE(v27) = alu_mul_sum8h[v28 + v27];
-  alu_c = (unsigned __int8)alu_mul_sum8l[v27 + v29];
+  LOBYTE(alu_c) = alu_mul_sum8l[v27 + v29];
   v30 = BYTE2(alu_s);
   LOBYTE(v30) = alu_c;
   HIBYTE(alu_z2) = alu_mul_sum8l[*((unsigned __int8 *)*(&alu_mul_mul8l + BYTE1(R1)) + BYTE2(alu_s)) + v30];
@@ -73662,80 +73662,80 @@ void text()
   LOBYTE(v65) = BYTE1(alu_s);
   v66 = (unsigned __int8)alu_true[v65 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
   LOBYTE(v65) = BYTE2(alu_s);
-  v67 = (unsigned __int8)alu_true[v65 + v66];
+  LOBYTE(v66) = alu_true[v65 + v66];
   LOBYTE(v65) = HIBYTE(alu_s);
-  v68 = *((unsigned __int8 *)alu_false + (unsigned __int8)alu_true[v65 + v67]);
-  LOBYTE(dword_82010F0) = v68;
-  LOBYTE(v68) = HIBYTE(R3);
-  v69 = alu_b7[v68];
-  v70 = alu_cmp_of[v69];
-  LOBYTE(v69) = 0;
-  v71 = alu_b7[v69];
-  v72 = v70[v71];
-  LOBYTE(v71) = HIBYTE(alu_s);
-  LOBYTE(dword_82010F8) = *(_DWORD *)v72[alu_b7[v71]];
+  LOBYTE(v66) = alu_true[v65 + v66];
+  LOBYTE(dword_82010F0) = *((_BYTE *)alu_false + v66);
+  LOBYTE(v66) = HIBYTE(R3);
+  v67 = alu_b7[v66];
+  v68 = alu_cmp_of[v67];
+  LOBYTE(v67) = 0;
+  v69 = alu_b7[v67];
+  v70 = v68[v69];
+  LOBYTE(v69) = HIBYTE(alu_s);
+  LOBYTE(dword_82010F8) = *(_DWORD *)v70[alu_b7[v69]];
   b0 = alu_false[dword_82010F0];
   b0 = *((_DWORD *)*(&and + b0) + on);
   *(_DWORD *)*(&sel_target + b0) = -2012959327;
-  v73 = b0;
+  v71 = b0;
   data_p = (int)&jmp_r0;
-  v74 = *(&sel_data + b0);
-  *v74 = R0;
-  v74[1] = R1;
-  v74[2] = R2;
-  v74[3] = R3;
+  v72 = *(&sel_data + b0);
+  *v72 = R0;
+  v72[1] = R1;
+  v72[2] = R2;
+  v72[3] = R3;
   data_p = (int)&jmp_f0;
-  v75 = *(&sel_data + v73);
-  *v75 = F0;
-  v75[1] = F1;
+  v73 = *(&sel_data + v71);
+  *v73 = F0;
+  v73[1] = F1;
   data_p = (int)&jmp_d0;
-  v76 = *(&sel_data + v73);
-  *v76 = D0;
-  v76[1] = dword_8058074;
-  v76[2] = D1;
-  v76[3] = dword_805807C;
+  v74 = *(&sel_data + v71);
+  *v74 = D0;
+  v74[1] = dword_8058074;
+  v74[2] = D1;
+  v74[3] = dword_805807C;
   *(_DWORD *)*(&sel_on + b0) = 0;
   alu_x = target;
   alu_y = -2012956755;
-  v77 = (unsigned __int8)target;
-  v78 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 173);
-  b0 = v78;
-  LOBYTE(v77) = BYTE1(target);
-  LOBYTE(v78) = -73;
-  LOBYTE(v78) = *((_BYTE *)*(&alu_eq + v77) + v78);
-  b1 = v78;
-  LOBYTE(v77) = BYTE2(target);
-  LOBYTE(v78) = 4;
-  LOBYTE(v78) = *((_BYTE *)*(&alu_eq + v77) + v78);
-  b2 = v78;
-  LOBYTE(v77) = HIBYTE(target);
-  LOBYTE(v78) = -120;
-  LOBYTE(v78) = *((_BYTE *)*(&alu_eq + v77) + v78);
-  b3 = v78;
+  v75 = (unsigned __int8)target;
+  v76 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 173);
+  b0 = v76;
+  LOBYTE(v75) = BYTE1(target);
+  LOBYTE(v76) = -73;
+  LOBYTE(v76) = *((_BYTE *)*(&alu_eq + v75) + v76);
+  b1 = v76;
+  LOBYTE(v75) = BYTE2(target);
+  LOBYTE(v76) = 4;
+  LOBYTE(v76) = *((_BYTE *)*(&alu_eq + v75) + v76);
+  b2 = v76;
+  LOBYTE(v75) = HIBYTE(target);
+  LOBYTE(v76) = -120;
+  LOBYTE(v76) = *((_BYTE *)*(&alu_eq + v75) + v76);
+  b3 = v76;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v78);
-  v79 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v76);
+  v77 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v79) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v77) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v79) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v77) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v79) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v77) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v79) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v77) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v79) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v77) = jmp_f1;
   data_p = (int)&D0;
-  v80 = *(&sel_data + v79);
-  *v80 = jmp_d0;
-  v80[1] = dword_86011AC;
+  v78 = *(&sel_data + v77);
+  *v78 = jmp_d0;
+  v78[1] = dword_86011AC;
   data_p = (int)&D1;
-  v81 = *(&sel_data + v79);
-  *v81 = jmp_d1;
-  v81[1] = dword_86011B4;
+  v79 = *(&sel_data + v77);
+  *v79 = jmp_d1;
+  v79[1] = dword_86011B4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   data_p = (int)&off_8401130;
   *(_DWORD *)*(&sel_data + on) = fp;
@@ -73744,9 +73744,9 @@ void text()
   data_p = (int)&off_8401130;
   *(_DWORD *)*(&sel_data + on) = *(_DWORD *)(*((_DWORD *)off_8401130 - 524312) - 2097248);
   data_p = (int)&D1;
-  v82 = *(&sel_data + on);
-  *v82 = stack_temp;
-  v82[1] = dword_8201114;
+  v80 = *(&sel_data + on);
+  *v80 = stack_temp;
+  v80[1] = dword_8201114;
   stack_temp = *(_DWORD *)off_8401130;
   data_p = (int)&off_8401130;
   *(_DWORD *)*(&sel_data + on) = *((_DWORD *)off_8401130 - 524312);
@@ -73777,23 +73777,23 @@ void text()
   *(_DWORD *)*(&sel_data + on) = *((_DWORD *)off_8401130 - 524312);
   branch_temp = stack_temp;
   *(_DWORD *)*(&sel_target + on) = stack_temp;
-  v83 = on;
+  v81 = on;
   data_p = (int)&jmp_r0;
-  v84 = *(&sel_data + on);
-  *v84 = R0;
-  v84[1] = R1;
-  v84[2] = R2;
-  v84[3] = R3;
+  v82 = *(&sel_data + on);
+  *v82 = R0;
+  v82[1] = R1;
+  v82[2] = R2;
+  v82[3] = R3;
   data_p = (int)&jmp_f0;
-  v85 = *(&sel_data + v83);
-  *v85 = F0;
-  v85[1] = F1;
+  v83 = *(&sel_data + v81);
+  *v83 = F0;
+  v83[1] = F1;
   data_p = (int)&jmp_d0;
-  v86 = *(&sel_data + v83);
-  *v86 = D0;
-  v86[1] = dword_8058074;
-  v86[2] = D1;
-  v86[3] = dword_805807C;
+  v84 = *(&sel_data + v81);
+  *v84 = D0;
+  v84[1] = dword_8058074;
+  v84[2] = D1;
+  v84[3] = dword_805807C;
   *(_DWORD *)*(&sel_on + on) = 0;
   add_disk();
 }
@@ -73809,10 +73809,14 @@ void text()
 // 805807C: using guessed type int dword_805807C;
 // 80580A0: using guessed type void *and;
 // 8058310: using guessed type int alu_false[];
+// 805A190: using guessed type int alu_b7[260];
 // 805B600: using guessed type void *alu_eq;
 // 806BF30: using guessed type void *alu_add16;
+// 816C050: using guessed type unsigned __int16 alu_inv16[65544];
 // 819C570: using guessed type void *alu_bor8;
 // 81BCF90: using guessed type void *alu_lshu8;
+// 81D5EC0: using guessed type int alu_clamp32[516];
+// 81D6CF0: using guessed type int alu_mul_shl2[4100];
 // 81DAD00: using guessed type int alu_mul_sums;
 // 81DED10: using guessed type void *alu_mul_mul8l;
 // 81EF220: using guessed type void *alu_mul_mul8h;
@@ -74011,8 +74015,9 @@ void add_disk()
   alu_y = 2;
   alu_sx = 2;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
   LOBYTE(v5) = alu_true[alu_sc];
   alu_sc = 2;
   BYTE1(alu_sc) = (_BYTE)v5;
@@ -74087,8 +74092,9 @@ void add_disk()
   alu_y = 2;
   alu_sx = 2;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
   LOBYTE(v7) = alu_true[alu_sc];
   alu_sc = 2;
   BYTE1(alu_sc) = v7;
@@ -74133,8 +74139,9 @@ void add_disk()
   alu_y = 2;
   alu_sx = 2;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
   LOBYTE(v15) = alu_true[alu_sc];
   alu_sc = 2;
   BYTE1(alu_sc) = v15;
@@ -74243,8 +74250,9 @@ void add_disk()
   alu_y = 2;
   alu_sx = 2;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
   LOBYTE(v17) = alu_true[alu_sc];
   alu_sc = 2;
   BYTE1(alu_sc) = v17;
@@ -74551,6 +74559,7 @@ void add_disk()
 // 806BF30: using guessed type void *alu_add16;
 // 819C570: using guessed type void *alu_bor8;
 // 81BCF90: using guessed type void *alu_lshu8;
+// 81D5EC0: using guessed type int alu_clamp32[516];
 // 8200FE0: using guessed type int b0;
 // 8200FE4: using guessed type int b1;
 // 8200FE8: using guessed type int b2;
@@ -74737,8 +74746,9 @@ void remove_disk()
   alu_y = 2;
   alu_sx = 2;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
   LOBYTE(v5) = alu_true[alu_sc];
   alu_sc = 2;
   BYTE1(alu_sc) = (_BYTE)v5;
@@ -74813,8 +74823,9 @@ void remove_disk()
   alu_y = 2;
   alu_sx = 2;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
   LOBYTE(v7) = alu_true[alu_sc];
   alu_sc = 2;
   BYTE1(alu_sc) = v7;
@@ -74859,8 +74870,9 @@ void remove_disk()
   alu_y = 2;
   alu_sx = 2;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
   LOBYTE(v15) = alu_true[alu_sc];
   alu_sc = 2;
   BYTE1(alu_sc) = v15;
@@ -74954,8 +74966,9 @@ void remove_disk()
   alu_y = 2;
   alu_sx = 2;
   alu_sc = 0;
-  alu_sc = *(unsigned __int8 *)alu_bor8;
-  alu_sc = *(unsigned __int8 *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)alu_bor8;
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
+  LOBYTE(alu_sc) = *(_BYTE *)*(&alu_bor8 + (unsigned __int8)alu_sc);
   LOBYTE(v17) = alu_true[alu_sc];
   alu_sc = 2;
   BYTE1(alu_sc) = v17;
@@ -75216,8 +75229,10 @@ void remove_disk()
 // 80580A0: using guessed type void *and;
 // 805B600: using guessed type void *alu_eq;
 // 806BF30: using guessed type void *alu_add16;
+// 816C050: using guessed type unsigned __int16 alu_inv16[65544];
 // 819C570: using guessed type void *alu_bor8;
 // 81BCF90: using guessed type void *alu_lshu8;
+// 81D5EC0: using guessed type int alu_clamp32[516];
 // 8200FE0: using guessed type int b0;
 // 8200FE4: using guessed type int b1;
 // 8200FE8: using guessed type int b2;
@@ -75269,74 +75284,72 @@ void move()
   int v9; // edx
   int v10; // eax
   int v11; // eax
-  int v12; // eax
+  void ***v12; // edx
   int v13; // eax
-  void ***v14; // edx
-  int v15; // eax
-  void **v16; // edx
-  int v17; // ecx
+  void **v14; // edx
+  int v15; // ecx
+  _DWORD *v16; // eax
+  _DWORD *v17; // eax
   _DWORD *v18; // eax
-  _DWORD *v19; // eax
+  int v19; // ecx
   _DWORD *v20; // eax
-  int v21; // ecx
+  _DWORD *v21; // eax
   _DWORD *v22; // eax
-  _DWORD *v23; // eax
-  _DWORD *v24; // eax
-  int v25; // eax
-  int v26; // edx
-  int v27; // ecx
-  _DWORD *v28; // eax
-  _DWORD *v29; // eax
-  int v30; // edx
-  int v31; // edx
-  int v32; // ecx
+  int v23; // eax
+  int v24; // edx
+  int v25; // ecx
+  _DWORD *v26; // eax
+  _DWORD *v27; // eax
+  int v28; // edx
+  int v29; // edx
+  int v30; // ecx
+  _DWORD *v31; // eax
+  _DWORD *v32; // eax
   _DWORD *v33; // eax
-  _DWORD *v34; // eax
-  _DWORD *v35; // eax
-  int v36; // eax
-  int v37; // edx
-  int v38; // ecx
-  _DWORD *v39; // eax
+  int v34; // eax
+  int v35; // edx
+  int v36; // ecx
+  _DWORD *v37; // eax
+  _DWORD *v38; // eax
+  int v39; // ecx
   _DWORD *v40; // eax
-  int v41; // ecx
+  _DWORD *v41; // eax
   _DWORD *v42; // eax
-  _DWORD *v43; // eax
-  _DWORD *v44; // eax
-  int v45; // eax
-  int v46; // edx
-  int v47; // ecx
-  _DWORD *v48; // eax
+  int v43; // eax
+  int v44; // edx
+  int v45; // ecx
+  _DWORD *v46; // eax
+  _DWORD *v47; // eax
+  int v48; // ecx
   _DWORD *v49; // eax
-  int v50; // ecx
+  _DWORD *v50; // eax
   _DWORD *v51; // eax
-  _DWORD *v52; // eax
-  _DWORD *v53; // eax
-  int v54; // eax
-  int v55; // edx
-  int v56; // ecx
-  _DWORD *v57; // eax
-  _DWORD *v58; // eax
-  int v59; // edx
-  int v60; // edx
-  int v61; // ecx
+  int v52; // eax
+  int v53; // edx
+  int v54; // ecx
+  _DWORD *v55; // eax
+  _DWORD *v56; // eax
+  int v57; // edx
+  int v58; // edx
+  int v59; // ecx
+  _DWORD *v60; // eax
+  _DWORD *v61; // eax
   _DWORD *v62; // eax
-  _DWORD *v63; // eax
-  _DWORD *v64; // eax
-  int v65; // eax
-  int v66; // edx
-  int v67; // ecx
-  _DWORD *v68; // eax
-  _DWORD *v69; // eax
-  int v70; // eax
-  int v71; // edx
-  int v72; // ecx
+  int v63; // eax
+  int v64; // edx
+  int v65; // ecx
+  _DWORD *v66; // eax
+  _DWORD *v67; // eax
+  int v68; // eax
+  int v69; // edx
+  int v70; // ecx
+  _DWORD *v71; // eax
+  _DWORD *v72; // eax
   _DWORD *v73; // eax
-  _DWORD *v74; // eax
+  int v74; // ecx
   _DWORD *v75; // eax
-  int v76; // ecx
+  _DWORD *v76; // eax
   _DWORD *v77; // eax
-  _DWORD *v78; // eax
-  _DWORD *v79; // eax
 
   alu_x = target;
   alu_y = -2012937734;
@@ -75446,100 +75459,100 @@ void move()
   LOBYTE(v9) = BYTE1(alu_s);
   v10 = (unsigned __int8)alu_true[v9 + (unsigned __int8)alu_true[(unsigned __int8)alu_s]];
   LOBYTE(v9) = BYTE2(alu_s);
-  v11 = (unsigned __int8)alu_true[v9 + v10];
+  LOBYTE(v10) = alu_true[v9 + v10];
   LOBYTE(v9) = HIBYTE(alu_s);
-  v12 = *((unsigned __int8 *)alu_false + (unsigned __int8)alu_true[v9 + v11]);
-  LOBYTE(dword_82010F0) = v12;
-  LOBYTE(v12) = HIBYTE(R3);
-  v13 = alu_b7[v12];
-  v14 = alu_cmp_of[v13];
-  LOBYTE(v13) = 0;
-  v15 = alu_b7[v13];
-  v16 = v14[v15];
-  LOBYTE(v15) = HIBYTE(alu_s);
-  LOBYTE(dword_82010F8) = *(_DWORD *)v16[alu_b7[v15]];
+  LOBYTE(v10) = alu_true[v9 + v10];
+  LOBYTE(dword_82010F0) = *((_BYTE *)alu_false + v10);
+  LOBYTE(v10) = HIBYTE(R3);
+  v11 = alu_b7[v10];
+  v12 = alu_cmp_of[v11];
+  LOBYTE(v11) = 0;
+  v13 = alu_b7[v11];
+  v14 = v12[v13];
+  LOBYTE(v13) = HIBYTE(alu_s);
+  LOBYTE(dword_82010F8) = *(_DWORD *)v14[alu_b7[v13]];
   b0 = alu_false[dword_82010F0];
   b0 = *((_DWORD *)*(&and + b0) + on);
   *(_DWORD *)*(&sel_target + b0) = -2012935863;
-  v17 = b0;
+  v15 = b0;
   data_p = (int)&jmp_r0;
-  v18 = *(&sel_data + b0);
-  *v18 = R0;
-  v18[1] = R1;
-  v18[2] = R2;
-  v18[3] = R3;
+  v16 = *(&sel_data + b0);
+  *v16 = R0;
+  v16[1] = R1;
+  v16[2] = R2;
+  v16[3] = R3;
   data_p = (int)&jmp_f0;
-  v19 = *(&sel_data + v17);
-  *v19 = F0;
-  v19[1] = F1;
+  v17 = *(&sel_data + v15);
+  *v17 = F0;
+  v17[1] = F1;
   data_p = (int)&jmp_d0;
-  v20 = *(&sel_data + v17);
-  *v20 = D0;
-  v20[1] = dword_8058074;
-  v20[2] = D1;
-  v20[3] = dword_805807C;
+  v18 = *(&sel_data + v15);
+  *v18 = D0;
+  v18[1] = dword_8058074;
+  v18[2] = D1;
+  v18[3] = dword_805807C;
   *(_DWORD *)*(&sel_on + b0) = 0;
   branch_temp = -2012929951;
   *(_DWORD *)*(&sel_target + on) = -2012929951;
-  v21 = on;
+  v19 = on;
   data_p = (int)&jmp_r0;
-  v22 = *(&sel_data + on);
-  *v22 = R0;
-  v22[1] = R1;
-  v22[2] = R2;
-  v22[3] = R3;
+  v20 = *(&sel_data + on);
+  *v20 = R0;
+  v20[1] = R1;
+  v20[2] = R2;
+  v20[3] = R3;
   data_p = (int)&jmp_f0;
-  v23 = *(&sel_data + v21);
-  *v23 = F0;
-  v23[1] = F1;
+  v21 = *(&sel_data + v19);
+  *v21 = F0;
+  v21[1] = F1;
   data_p = (int)&jmp_d0;
-  v24 = *(&sel_data + v21);
-  *v24 = D0;
-  v24[1] = dword_8058074;
-  v24[2] = D1;
-  v24[3] = dword_805807C;
+  v22 = *(&sel_data + v19);
+  *v22 = D0;
+  v22[1] = dword_8058074;
+  v22[2] = D1;
+  v22[3] = dword_805807C;
   *(_DWORD *)*(&sel_on + on) = 0;
   alu_x = target;
   alu_y = -2012935863;
-  v25 = (unsigned __int8)target;
-  v26 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 73);
-  b0 = v26;
-  LOBYTE(v25) = BYTE1(target);
-  LOBYTE(v26) = 9;
-  LOBYTE(v26) = *((_BYTE *)*(&alu_eq + v25) + v26);
-  b1 = v26;
-  LOBYTE(v25) = BYTE2(target);
-  LOBYTE(v26) = 5;
-  LOBYTE(v26) = *((_BYTE *)*(&alu_eq + v25) + v26);
-  b2 = v26;
-  LOBYTE(v25) = HIBYTE(target);
-  LOBYTE(v26) = -120;
-  LOBYTE(v26) = *((_BYTE *)*(&alu_eq + v25) + v26);
-  b3 = v26;
+  v23 = (unsigned __int8)target;
+  v24 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 73);
+  b0 = v24;
+  LOBYTE(v23) = BYTE1(target);
+  LOBYTE(v24) = 9;
+  LOBYTE(v24) = *((_BYTE *)*(&alu_eq + v23) + v24);
+  b1 = v24;
+  LOBYTE(v23) = BYTE2(target);
+  LOBYTE(v24) = 5;
+  LOBYTE(v24) = *((_BYTE *)*(&alu_eq + v23) + v24);
+  b2 = v24;
+  LOBYTE(v23) = HIBYTE(target);
+  LOBYTE(v24) = -120;
+  LOBYTE(v24) = *((_BYTE *)*(&alu_eq + v23) + v24);
+  b3 = v24;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v26);
-  v27 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v24);
+  v25 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v27) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v25) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v27) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v25) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v27) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v25) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v27) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v25) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v27) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v25) = jmp_f1;
   data_p = (int)&D0;
-  v28 = *(&sel_data + v27);
-  *v28 = jmp_d0;
-  v28[1] = dword_86011AC;
+  v26 = *(&sel_data + v25);
+  *v26 = jmp_d0;
+  v26[1] = dword_86011AC;
   data_p = (int)&D1;
-  v29 = *(&sel_data + v27);
-  *v29 = jmp_d1;
-  v29[1] = dword_86011B4;
+  v27 = *(&sel_data + v25);
+  *v27 = jmp_d1;
+  v27[1] = dword_86011B4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   R3 = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)fp - 524312) - 2097248) - 2097248)
                                                                                          - 2097248)
@@ -75600,12 +75613,12 @@ void move()
   alu_x = R3;
   alu_y = 1;
   alu_c = 1;
-  v30 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + alu_inv16[1])) + 1);
-  LOWORD(alu_s) = v30;
-  unk_8200FFE = v30;
-  v31 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + alu_inv16[0])) + alu_c);
-  HIWORD(alu_s) = v31;
-  unk_8200FFE = v31;
+  v28 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + alu_inv16[1])) + 1);
+  LOWORD(alu_s) = v28;
+  unk_8200FFE = v28;
+  v29 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + alu_inv16[0])) + alu_c);
+  HIWORD(alu_s) = v29;
+  unk_8200FFE = v29;
   R3 = alu_s;
   stack_temp = alu_s;
   data_p = (int)&off_8401130;
@@ -75619,65 +75632,65 @@ void move()
   *(_DWORD *)*(&sel_data + on) = stack_temp;
   branch_temp = -2012937734;
   *(_DWORD *)*(&sel_target + on) = -2012937734;
-  v32 = on;
+  v30 = on;
   data_p = (int)&jmp_r0;
-  v33 = *(&sel_data + on);
-  *v33 = R0;
-  v33[1] = R1;
-  v33[2] = R2;
-  v33[3] = R3;
+  v31 = *(&sel_data + on);
+  *v31 = R0;
+  v31[1] = R1;
+  v31[2] = R2;
+  v31[3] = R3;
   data_p = (int)&jmp_f0;
-  v34 = *(&sel_data + v32);
-  *v34 = F0;
-  v34[1] = F1;
+  v32 = *(&sel_data + v30);
+  *v32 = F0;
+  v32[1] = F1;
   data_p = (int)&jmp_d0;
-  v35 = *(&sel_data + v32);
-  *v35 = D0;
-  v35[1] = dword_8058074;
-  v35[2] = D1;
-  v35[3] = dword_805807C;
+  v33 = *(&sel_data + v30);
+  *v33 = D0;
+  v33[1] = dword_8058074;
+  v33[2] = D1;
+  v33[3] = dword_805807C;
   *(_DWORD *)*(&sel_on + on) = 0;
   alu_x = target;
   alu_y = -2012934227;
-  v36 = (unsigned __int8)target;
-  v37 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 173);
-  b0 = v37;
-  LOBYTE(v36) = BYTE1(target);
-  LOBYTE(v37) = 15;
-  LOBYTE(v37) = *((_BYTE *)*(&alu_eq + v36) + v37);
-  b1 = v37;
-  LOBYTE(v36) = BYTE2(target);
-  LOBYTE(v37) = 5;
-  LOBYTE(v37) = *((_BYTE *)*(&alu_eq + v36) + v37);
-  b2 = v37;
-  LOBYTE(v36) = HIBYTE(target);
-  LOBYTE(v37) = -120;
-  LOBYTE(v37) = *((_BYTE *)*(&alu_eq + v36) + v37);
-  b3 = v37;
+  v34 = (unsigned __int8)target;
+  v35 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 173);
+  b0 = v35;
+  LOBYTE(v34) = BYTE1(target);
+  LOBYTE(v35) = 15;
+  LOBYTE(v35) = *((_BYTE *)*(&alu_eq + v34) + v35);
+  b1 = v35;
+  LOBYTE(v34) = BYTE2(target);
+  LOBYTE(v35) = 5;
+  LOBYTE(v35) = *((_BYTE *)*(&alu_eq + v34) + v35);
+  b2 = v35;
+  LOBYTE(v34) = HIBYTE(target);
+  LOBYTE(v35) = -120;
+  LOBYTE(v35) = *((_BYTE *)*(&alu_eq + v34) + v35);
+  b3 = v35;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v37);
-  v38 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v35);
+  v36 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v38) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v36) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v38) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v36) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v38) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v36) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v38) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v36) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v38) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v36) = jmp_f1;
   data_p = (int)&D0;
-  v39 = *(&sel_data + v38);
-  *v39 = jmp_d0;
-  v39[1] = dword_86011AC;
+  v37 = *(&sel_data + v36);
+  *v37 = jmp_d0;
+  v37[1] = dword_86011AC;
   data_p = (int)&D1;
-  v40 = *(&sel_data + v38);
-  *v40 = jmp_d1;
-  v40[1] = dword_86011B4;
+  v38 = *(&sel_data + v36);
+  *v38 = jmp_d1;
+  v38[1] = dword_86011B4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   stack_temp = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)off_8401130 - 524312) - 2097248) - 2097248) - 2097248);
   data_p = (int)&off_8401130;
@@ -75704,65 +75717,65 @@ void move()
   *(_DWORD *)*(&sel_data + on) = stack_temp;
   branch_temp = -2012946228;
   *(_DWORD *)*(&sel_target + on) = -2012946228;
-  v41 = on;
+  v39 = on;
   data_p = (int)&jmp_r0;
-  v42 = *(&sel_data + on);
-  *v42 = R0;
-  v42[1] = R1;
-  v42[2] = R2;
-  v42[3] = R3;
+  v40 = *(&sel_data + on);
+  *v40 = R0;
+  v40[1] = R1;
+  v40[2] = R2;
+  v40[3] = R3;
   data_p = (int)&jmp_f0;
-  v43 = *(&sel_data + v41);
-  *v43 = F0;
-  v43[1] = F1;
+  v41 = *(&sel_data + v39);
+  *v41 = F0;
+  v41[1] = F1;
   data_p = (int)&jmp_d0;
-  v44 = *(&sel_data + v41);
-  *v44 = D0;
-  v44[1] = dword_8058074;
-  v44[2] = D1;
-  v44[3] = dword_805807C;
+  v42 = *(&sel_data + v39);
+  *v42 = D0;
+  v42[1] = dword_8058074;
+  v42[2] = D1;
+  v42[3] = dword_805807C;
   *(_DWORD *)*(&sel_on + on) = 0;
   alu_x = target;
   alu_y = -2012933242;
-  v45 = (unsigned __int8)target;
-  v46 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 134);
-  b0 = v46;
-  LOBYTE(v45) = BYTE1(target);
-  LOBYTE(v46) = 19;
-  LOBYTE(v46) = *((_BYTE *)*(&alu_eq + v45) + v46);
-  b1 = v46;
-  LOBYTE(v45) = BYTE2(target);
-  LOBYTE(v46) = 5;
-  LOBYTE(v46) = *((_BYTE *)*(&alu_eq + v45) + v46);
-  b2 = v46;
-  LOBYTE(v45) = HIBYTE(target);
-  LOBYTE(v46) = -120;
-  LOBYTE(v46) = *((_BYTE *)*(&alu_eq + v45) + v46);
-  b3 = v46;
+  v43 = (unsigned __int8)target;
+  v44 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 134);
+  b0 = v44;
+  LOBYTE(v43) = BYTE1(target);
+  LOBYTE(v44) = 19;
+  LOBYTE(v44) = *((_BYTE *)*(&alu_eq + v43) + v44);
+  b1 = v44;
+  LOBYTE(v43) = BYTE2(target);
+  LOBYTE(v44) = 5;
+  LOBYTE(v44) = *((_BYTE *)*(&alu_eq + v43) + v44);
+  b2 = v44;
+  LOBYTE(v43) = HIBYTE(target);
+  LOBYTE(v44) = -120;
+  LOBYTE(v44) = *((_BYTE *)*(&alu_eq + v43) + v44);
+  b3 = v44;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v46);
-  v47 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v44);
+  v45 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v47) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v45) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v47) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v45) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v47) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v45) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v47) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v45) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v47) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v45) = jmp_f1;
   data_p = (int)&D0;
-  v48 = *(&sel_data + v47);
-  *v48 = jmp_d0;
-  v48[1] = dword_86011AC;
+  v46 = *(&sel_data + v45);
+  *v46 = jmp_d0;
+  v46[1] = dword_86011AC;
   data_p = (int)&D1;
-  v49 = *(&sel_data + v47);
-  *v49 = jmp_d1;
-  v49[1] = dword_86011B4;
+  v47 = *(&sel_data + v45);
+  *v47 = jmp_d1;
+  v47[1] = dword_86011B4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   stack_temp = *((_DWORD *)off_8401130 - 524312);
   data_p = (int)&off_8401130;
@@ -75795,65 +75808,65 @@ void move()
   *(_DWORD *)*(&sel_data + on) = stack_temp;
   branch_temp = -2012955495;
   *(_DWORD *)*(&sel_target + on) = -2012955495;
-  v50 = on;
+  v48 = on;
   data_p = (int)&jmp_r0;
-  v51 = *(&sel_data + on);
-  *v51 = R0;
-  v51[1] = R1;
-  v51[2] = R2;
-  v51[3] = R3;
+  v49 = *(&sel_data + on);
+  *v49 = R0;
+  v49[1] = R1;
+  v49[2] = R2;
+  v49[3] = R3;
   data_p = (int)&jmp_f0;
-  v52 = *(&sel_data + v50);
-  *v52 = F0;
-  v52[1] = F1;
+  v50 = *(&sel_data + v48);
+  *v50 = F0;
+  v50[1] = F1;
   data_p = (int)&jmp_d0;
-  v53 = *(&sel_data + v50);
-  *v53 = D0;
-  v53[1] = dword_8058074;
-  v53[2] = D1;
-  v53[3] = dword_805807C;
+  v51 = *(&sel_data + v48);
+  *v51 = D0;
+  v51[1] = dword_8058074;
+  v51[2] = D1;
+  v51[3] = dword_805807C;
   *(_DWORD *)*(&sel_on + on) = 0;
   alu_x = target;
   alu_y = -2012932179;
-  v54 = (unsigned __int8)target;
-  v55 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 173);
-  b0 = v55;
-  LOBYTE(v54) = BYTE1(target);
-  LOBYTE(v55) = 23;
-  LOBYTE(v55) = *((_BYTE *)*(&alu_eq + v54) + v55);
-  b1 = v55;
-  LOBYTE(v54) = BYTE2(target);
-  LOBYTE(v55) = 5;
-  LOBYTE(v55) = *((_BYTE *)*(&alu_eq + v54) + v55);
-  b2 = v55;
-  LOBYTE(v54) = HIBYTE(target);
-  LOBYTE(v55) = -120;
-  LOBYTE(v55) = *((_BYTE *)*(&alu_eq + v54) + v55);
-  b3 = v55;
+  v52 = (unsigned __int8)target;
+  v53 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 173);
+  b0 = v53;
+  LOBYTE(v52) = BYTE1(target);
+  LOBYTE(v53) = 23;
+  LOBYTE(v53) = *((_BYTE *)*(&alu_eq + v52) + v53);
+  b1 = v53;
+  LOBYTE(v52) = BYTE2(target);
+  LOBYTE(v53) = 5;
+  LOBYTE(v53) = *((_BYTE *)*(&alu_eq + v52) + v53);
+  b2 = v53;
+  LOBYTE(v52) = HIBYTE(target);
+  LOBYTE(v53) = -120;
+  LOBYTE(v53) = *((_BYTE *)*(&alu_eq + v52) + v53);
+  b3 = v53;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v55);
-  v56 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v53);
+  v54 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v56) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v54) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v56) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v54) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v56) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v54) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v56) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v54) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v56) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v54) = jmp_f1;
   data_p = (int)&D0;
-  v57 = *(&sel_data + v56);
-  *v57 = jmp_d0;
-  v57[1] = dword_86011AC;
+  v55 = *(&sel_data + v54);
+  *v55 = jmp_d0;
+  v55[1] = dword_86011AC;
   data_p = (int)&D1;
-  v58 = *(&sel_data + v56);
-  *v58 = jmp_d1;
-  v58[1] = dword_86011B4;
+  v56 = *(&sel_data + v54);
+  *v56 = jmp_d1;
+  v56[1] = dword_86011B4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   stack_temp = *(_DWORD *)(*((_DWORD *)off_8401130 - 524312) - 2097248);
   data_p = (int)&off_8401130;
@@ -75917,12 +75930,12 @@ void move()
   alu_x = R3;
   alu_y = 1;
   alu_c = 1;
-  v59 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + alu_inv16[1])) + 1);
-  LOWORD(alu_s) = v59;
-  unk_8200FFE = v59;
-  v60 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + alu_inv16[0])) + alu_c);
-  HIWORD(alu_s) = v60;
-  unk_8200FFE = v60;
+  v57 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + (unsigned __int16)R3) + alu_inv16[1])) + 1);
+  LOWORD(alu_s) = v57;
+  unk_8200FFE = v57;
+  v58 = *((_DWORD *)*(&alu_add16 + *((_DWORD *)*(&alu_add16 + HIWORD(R3)) + alu_inv16[0])) + alu_c);
+  HIWORD(alu_s) = v58;
+  unk_8200FFE = v58;
   R3 = alu_s;
   stack_temp = alu_s;
   data_p = (int)&off_8401130;
@@ -75936,110 +75949,110 @@ void move()
   *(_DWORD *)*(&sel_data + on) = stack_temp;
   branch_temp = -2012937734;
   *(_DWORD *)*(&sel_target + on) = -2012937734;
-  v61 = on;
+  v59 = on;
   data_p = (int)&jmp_r0;
-  v62 = *(&sel_data + on);
-  *v62 = R0;
-  v62[1] = R1;
-  v62[2] = R2;
-  v62[3] = R3;
+  v60 = *(&sel_data + on);
+  *v60 = R0;
+  v60[1] = R1;
+  v60[2] = R2;
+  v60[3] = R3;
   data_p = (int)&jmp_f0;
-  v63 = *(&sel_data + v61);
-  *v63 = F0;
-  v63[1] = F1;
+  v61 = *(&sel_data + v59);
+  *v61 = F0;
+  v61[1] = F1;
   data_p = (int)&jmp_d0;
-  v64 = *(&sel_data + v61);
-  *v64 = D0;
-  v64[1] = dword_8058074;
-  v64[2] = D1;
-  v64[3] = dword_805807C;
+  v62 = *(&sel_data + v59);
+  *v62 = D0;
+  v62[1] = dword_8058074;
+  v62[2] = D1;
+  v62[3] = dword_805807C;
   *(_DWORD *)*(&sel_on + on) = 0;
   alu_x = target;
   alu_y = -2012930490;
-  v65 = (unsigned __int8)target;
-  v66 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 70);
-  b0 = v66;
-  LOBYTE(v65) = BYTE1(target);
-  LOBYTE(v66) = 30;
-  LOBYTE(v66) = *((_BYTE *)*(&alu_eq + v65) + v66);
-  b1 = v66;
-  LOBYTE(v65) = BYTE2(target);
-  LOBYTE(v66) = 5;
-  LOBYTE(v66) = *((_BYTE *)*(&alu_eq + v65) + v66);
-  b2 = v66;
-  LOBYTE(v65) = HIBYTE(target);
-  LOBYTE(v66) = -120;
-  LOBYTE(v66) = *((_BYTE *)*(&alu_eq + v65) + v66);
-  b3 = v66;
+  v63 = (unsigned __int8)target;
+  v64 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 70);
+  b0 = v64;
+  LOBYTE(v63) = BYTE1(target);
+  LOBYTE(v64) = 30;
+  LOBYTE(v64) = *((_BYTE *)*(&alu_eq + v63) + v64);
+  b1 = v64;
+  LOBYTE(v63) = BYTE2(target);
+  LOBYTE(v64) = 5;
+  LOBYTE(v64) = *((_BYTE *)*(&alu_eq + v63) + v64);
+  b2 = v64;
+  LOBYTE(v63) = HIBYTE(target);
+  LOBYTE(v64) = -120;
+  LOBYTE(v64) = *((_BYTE *)*(&alu_eq + v63) + v64);
+  b3 = v64;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v66);
-  v67 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v64);
+  v65 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v67) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v65) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v67) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v65) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v67) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v65) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v67) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v65) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v67) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v65) = jmp_f1;
   data_p = (int)&D0;
-  v68 = *(&sel_data + v67);
-  *v68 = jmp_d0;
-  v68[1] = dword_86011AC;
+  v66 = *(&sel_data + v65);
+  *v66 = jmp_d0;
+  v66[1] = dword_86011AC;
   data_p = (int)&D1;
-  v69 = *(&sel_data + v67);
-  *v69 = jmp_d1;
-  v69[1] = dword_86011B4;
+  v67 = *(&sel_data + v65);
+  *v67 = jmp_d1;
+  v67[1] = dword_86011B4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   stack_temp = *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(*((_DWORD *)off_8401130 - 524312) - 2097248) - 2097248) - 2097248);
   data_p = (int)&off_8401130;
   *(_DWORD *)*(&sel_data + on) = stack_temp;
   alu_x = target;
   alu_y = -2012929951;
-  v70 = (unsigned __int8)target;
-  v71 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 97);
-  b0 = v71;
-  LOBYTE(v70) = BYTE1(target);
-  LOBYTE(v71) = 32;
-  LOBYTE(v71) = *((_BYTE *)*(&alu_eq + v70) + v71);
-  b1 = v71;
-  LOBYTE(v70) = BYTE2(target);
-  LOBYTE(v71) = 5;
-  LOBYTE(v71) = *((_BYTE *)*(&alu_eq + v70) + v71);
-  b2 = v71;
-  LOBYTE(v70) = HIBYTE(target);
-  LOBYTE(v71) = -120;
-  LOBYTE(v71) = *((_BYTE *)*(&alu_eq + v70) + v71);
-  b3 = v71;
+  v68 = (unsigned __int8)target;
+  v69 = *((unsigned __int8 *)*(&alu_eq + (unsigned __int8)target) + 97);
+  b0 = v69;
+  LOBYTE(v68) = BYTE1(target);
+  LOBYTE(v69) = 32;
+  LOBYTE(v69) = *((_BYTE *)*(&alu_eq + v68) + v69);
+  b1 = v69;
+  LOBYTE(v68) = BYTE2(target);
+  LOBYTE(v69) = 5;
+  LOBYTE(v69) = *((_BYTE *)*(&alu_eq + v68) + v69);
+  b2 = v69;
+  LOBYTE(v68) = HIBYTE(target);
+  LOBYTE(v69) = -120;
+  LOBYTE(v69) = *((_BYTE *)*(&alu_eq + v68) + v69);
+  b3 = v69;
   b0 = *((_DWORD *)*(&and + b0) + b1);
   b0 = *((_DWORD *)*(&and + b0) + b2);
-  b0 = *((_DWORD *)*(&and + b0) + v71);
-  v72 = b0;
+  b0 = *((_DWORD *)*(&and + b0) + v69);
+  v70 = b0;
   data_p = (int)&R0;
   *(_DWORD *)*(&sel_data + b0) = jmp_r0;
   data_p = (int)&R1;
-  *(_DWORD *)*(&sel_data + v72) = jmp_r1;
+  *(_DWORD *)*(&sel_data + v70) = jmp_r1;
   data_p = (int)&R2;
-  *(_DWORD *)*(&sel_data + v72) = jmp_r2;
+  *(_DWORD *)*(&sel_data + v70) = jmp_r2;
   data_p = (int)&R3;
-  *(_DWORD *)*(&sel_data + v72) = jmp_r3;
+  *(_DWORD *)*(&sel_data + v70) = jmp_r3;
   data_p = (int)&F0;
-  *(_DWORD *)*(&sel_data + v72) = jmp_f0;
+  *(_DWORD *)*(&sel_data + v70) = jmp_f0;
   data_p = (int)&F1;
-  *(_DWORD *)*(&sel_data + v72) = jmp_f1;
+  *(_DWORD *)*(&sel_data + v70) = jmp_f1;
   data_p = (int)&D0;
-  v73 = *(&sel_data + v72);
-  *v73 = jmp_d0;
-  v73[1] = dword_86011AC;
+  v71 = *(&sel_data + v70);
+  *v71 = jmp_d0;
+  v71[1] = dword_86011AC;
   data_p = (int)&D1;
-  v74 = *(&sel_data + v72);
-  *v74 = jmp_d1;
-  v74[1] = dword_86011B4;
+  v72 = *(&sel_data + v70);
+  *v72 = jmp_d1;
+  v72[1] = dword_86011B4;
   *(_DWORD *)*(&sel_on + b0) = 1;
   data_p = (int)&off_8401130;
   *(_DWORD *)*(&sel_data + on) = fp;
@@ -76048,9 +76061,9 @@ void move()
   data_p = (int)&off_8401130;
   *(_DWORD *)*(&sel_data + on) = *(_DWORD *)(*((_DWORD *)off_8401130 - 524312) - 2097248);
   data_p = (int)&D1;
-  v75 = *(&sel_data + on);
-  *v75 = stack_temp;
-  v75[1] = dword_8201114;
+  v73 = *(&sel_data + on);
+  *v73 = stack_temp;
+  v73[1] = dword_8201114;
   stack_temp = *(_DWORD *)off_8401130;
   data_p = (int)&off_8401130;
   *(_DWORD *)*(&sel_data + on) = *((_DWORD *)off_8401130 - 524312);
@@ -76081,23 +76094,23 @@ void move()
   *(_DWORD *)*(&sel_data + on) = *((_DWORD *)off_8401130 - 524312);
   branch_temp = stack_temp;
   *(_DWORD *)*(&sel_target + on) = stack_temp;
-  v76 = on;
+  v74 = on;
   data_p = (int)&jmp_r0;
-  v77 = *(&sel_data + on);
-  *v77 = R0;
-  v77[1] = R1;
-  v77[2] = R2;
-  v77[3] = R3;
+  v75 = *(&sel_data + on);
+  *v75 = R0;
+  v75[1] = R1;
+  v75[2] = R2;
+  v75[3] = R3;
   data_p = (int)&jmp_f0;
-  v78 = *(&sel_data + v76);
-  *v78 = F0;
-  v78[1] = F1;
+  v76 = *(&sel_data + v74);
+  *v76 = F0;
+  v76[1] = F1;
   data_p = (int)&jmp_d0;
-  v79 = *(&sel_data + v76);
-  *v79 = D0;
-  v79[1] = dword_8058074;
-  v79[2] = D1;
-  v79[3] = dword_805807C;
+  v77 = *(&sel_data + v74);
+  *v77 = D0;
+  v77[1] = dword_8058074;
+  v77[2] = D1;
+  v77[3] = dword_805807C;
   *(_DWORD *)*(&sel_on + on) = 0;
   JUMPOUT(0x805254D);
 }
@@ -76114,8 +76127,10 @@ void move()
 // 805807C: using guessed type int dword_805807C;
 // 80580A0: using guessed type void *and;
 // 8058310: using guessed type int alu_false[];
+// 805A190: using guessed type int alu_b7[260];
 // 805B600: using guessed type void *alu_eq;
 // 806BF30: using guessed type void *alu_add16;
+// 816C050: using guessed type unsigned __int16 alu_inv16[65544];
 // 8200F80: using guessed type void ***alu_cmp_of[6];
 // 8200FE0: using guessed type int b0;
 // 8200FE4: using guessed type int b1;

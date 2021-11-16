@@ -10,7 +10,6 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8048410();
 // int printf(const char *format, ...);
 // time_t time(time_t *timer);
@@ -19,34 +18,23 @@ int sub_8048410();
 // size_t fwrite(const void *ptr, size_t size, size_t n, FILE *s);
 // int puts(const char *s);
 // char *strchr(const char *s, int c);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // FILE *fopen(const char *filename, const char *modes);
 // int putchar(int c);
 // int chmod(const char *file, __mode_t mode);
-// int _gmon_start__(void); weak
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _x86_get_pc_thunk_bx();
-// int deregister_tm_clones();
-// int register_tm_clones();
-// int _do_global_dtors_aux();
-// int frame_dummy();
 int basic_1_string_literals_quoting();
 int basic_2_string_literals_low_chars();
 int basic_3_string_literals_high_chars();
 int basic_4_readonly_vs_modifiable();
-int __cdecl basic_10_result_var_name(int a1);
-int __cdecl intermediate_1_for_loop_name(int a1);
-int __cdecl intermediate_2_parameter_names(int a1);
-int __cdecl intermediate_10_int_literal_in_bit_context(int a1);
-int __cdecl intermediate_11_int_literal_in_arithm_context(int a1);
+int __cdecl basic_10_result_var_name(int);
+int __cdecl intermediate_1_for_loop_name(int);
+int __cdecl intermediate_2_parameter_names(int);
+int __cdecl intermediate_10_int_literal_in_bit_context(int);
+int __cdecl intermediate_11_int_literal_in_arithm_context(int);
 int __cdecl advanced_1_null_bytes_with_fixed_length(FILE *s); // idb
 int __cdecl advanced_2_naming_enums(FILE *stream); // idb
 int __cdecl advanced_10_int_literal_in_char_context(char *s); // idb
 int advanced_11_printf_type_related();
-// void _libc_csu_init(void); idb
-// void _libc_csu_fini(void); idb
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -199,13 +187,10 @@ int basic_4_readonly_vs_modifiable()
 //----- (080488F0) --------------------------------------------------------
 int __cdecl basic_10_result_var_name(int a1)
 {
-  int result; // eax
-
   if ( a1 <= 5 )
-    result = time(0) + 10;
+    return time(0) + 10;
   else
-    result = 4 * a1;
-  return result;
+    return 4 * a1;
 }
 
 //----- (08048920) --------------------------------------------------------

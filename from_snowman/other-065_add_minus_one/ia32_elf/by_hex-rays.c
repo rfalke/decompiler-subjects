@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void __usercall __noreturn start(_DWORD *a1@<eax>);
+// void __usercall __noreturn start(_DWORD *@<eax>);
 
 
 //----- (08048098) --------------------------------------------------------

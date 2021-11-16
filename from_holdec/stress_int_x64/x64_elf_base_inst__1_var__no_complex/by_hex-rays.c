@@ -10,16 +10,9 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// __int64 (**init_proc())(void);
 __int64 __fastcall sub_401020(); // weak
 // void __noreturn __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// void dl_relocate_static_pie();
-// void *deregister_tm_clones();
-// __int64 register_tm_clones();
-// void *_do_global_dtors_aux();
-// __int64 frame_dummy();
 __int64 inst_0_values_var_0();
 __int64 inst_0_flags_var_0();
 __int64 inst_1_values_var_0();
@@ -860,11 +853,6 @@ __int64 inst_418_values_var_0();
 __int64 inst_418_flags_var_0();
 __int64 inst_419_values_var_0();
 __int64 inst_419_flags_var_0();
-// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-// void _libc_csu_fini(void); idb
-// void term_proc();
-// int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -2744,7 +2732,7 @@ __int64 inst_8_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0x50C8CDA3FF78A2C2LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -3026,7 +3014,7 @@ __int64 inst_22_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-3390, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -3333,7 +3321,7 @@ __int64 inst_37_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(16, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -3367,7 +3355,7 @@ __int64 inst_39_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(4118, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -3418,7 +3406,7 @@ __int64 inst_42_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(1677732610, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -3435,7 +3423,7 @@ __int64 inst_43_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0x30B79EE288012049LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -3583,10 +3571,7 @@ __int64 inst_53_values_var_0()
 //----- (0000000000409B7C) ----------------------------------------------------
 __int64 inst_53_flags_var_0()
 {
-  __int16 v0; // bp
-
-  v0 = 18615;
-  return _bittest(&v0, 0x3F4Cu);
+  return 0LL;
 }
 
 //----- (0000000000409C81) ----------------------------------------------------
@@ -3598,10 +3583,7 @@ __int64 inst_54_values_var_0()
 //----- (0000000000409D81) ----------------------------------------------------
 __int64 inst_54_flags_var_0()
 {
-  __int16 v0; // ax
-
-  v0 = -21864;
-  return (char)_bittestandcomplement(&v0, 0x1F98u);
+  return 0LL;
 }
 
 //----- (0000000000409E87) ----------------------------------------------------
@@ -3613,12 +3595,7 @@ __int64 inst_55_values_var_0()
 //----- (0000000000409F87) ----------------------------------------------------
 __int64 inst_55_flags_var_0()
 {
-  __int16 v0; // si
-  unsigned __int8 v1; // cf
-
-  v0 = 15816;
-  v1 = _bittestandreset(&v0, 0x7917u);
-  return v1 - 1LL;
+  return 0LL;
 }
 
 //----- (000000000040A08C) ----------------------------------------------------
@@ -3630,12 +3607,7 @@ __int64 inst_56_values_var_0()
 //----- (000000000040A18B) ----------------------------------------------------
 __int64 inst_56_flags_var_0()
 {
-  __int16 v0; // r11
-  unsigned __int8 v1; // cf
-
-  v0 = -30355;
-  v1 = _bittestandset(&v0, 0x98BBu);
-  return v1 - 1LL;
+  return 0LL;
 }
 
 //----- (000000000040A291) ----------------------------------------------------
@@ -3647,10 +3619,7 @@ __int64 inst_57_values_var_0()
 //----- (000000000040A390) ----------------------------------------------------
 __int64 inst_57_flags_var_0()
 {
-  int v0; // er11
-
-  v0 = 1760569483;
-  return _bittest(&v0, 0x6396D6F9u);
+  return 0LL;
 }
 
 //----- (000000000040A495) ----------------------------------------------------
@@ -3662,10 +3631,7 @@ __int64 inst_58_values_var_0()
 //----- (000000000040A594) ----------------------------------------------------
 __int64 inst_58_flags_var_0()
 {
-  int v0; // eax
-
-  v0 = -12497560;
-  return (char)_bittestandcomplement(&v0, 0x978773C7);
+  return 0LL;
 }
 
 //----- (000000000040A699) ----------------------------------------------------
@@ -3677,10 +3643,7 @@ __int64 inst_59_values_var_0()
 //----- (000000000040A798) ----------------------------------------------------
 __int64 inst_59_flags_var_0()
 {
-  int v0; // er12
-
-  v0 = -2031037360;
-  return (char)_bittestandreset(&v0, 0x8F95BF45);
+  return 0LL;
 }
 
 //----- (000000000040A89D) ----------------------------------------------------
@@ -3692,12 +3655,7 @@ __int64 inst_60_values_var_0()
 //----- (000000000040A99C) ----------------------------------------------------
 __int64 inst_60_flags_var_0()
 {
-  int v0; // eax
-  unsigned __int8 v1; // cf
-
-  v0 = 1011840433;
-  v1 = _bittestandset(&v0, 0x15CB7F68u);
-  return v1 - 1LL;
+  return 0LL;
 }
 
 //----- (000000000040AAA1) ----------------------------------------------------
@@ -3709,10 +3667,7 @@ __int64 inst_61_values_var_0()
 //----- (000000000040ABA0) ----------------------------------------------------
 __int64 inst_61_flags_var_0()
 {
-  unsigned __int64 v0; // rbx
-
-  v0 = 0xBF4B86F791CA9883LL;
-  return _bittest64((const __int64 *)&v0, 0x883CE3CC35E25762LL) - 1LL;
+  return 0LL;
 }
 
 //----- (000000000040ACA5) ----------------------------------------------------
@@ -3739,10 +3694,7 @@ __int64 inst_63_values_var_0()
 //----- (000000000040AFA8) ----------------------------------------------------
 __int64 inst_63_flags_var_0()
 {
-  unsigned __int64 v0; // r15
-
-  v0 = 0xAFC653B8FE91E6D1LL;
-  return (char)_bittestandreset64((__int64 *)&v0, 0x5F47C1AACC3E2D6uLL);
+  return 0LL;
 }
 
 //----- (000000000040B0AD) ----------------------------------------------------
@@ -3754,10 +3706,7 @@ __int64 inst_64_values_var_0()
 //----- (000000000040B1AC) ----------------------------------------------------
 __int64 inst_64_flags_var_0()
 {
-  __int64 v0; // r8
-
-  v0 = 0x3F6510A655734971LL;
-  return (char)_bittestandset64(&v0, 0x2631C16A0D46B389uLL);
+  return 0LL;
 }
 
 //----- (000000000040B2B1) ----------------------------------------------------
@@ -3769,59 +3718,43 @@ __int64 inst_65_values_var_0()
 //----- (000000000040B3B2) ----------------------------------------------------
 __int64 inst_65_flags_var_0()
 {
-  __int16 v0; // r15
-
-  v0 = 29615;
-  return _bittest(&v0, 0xE5u) - 1LL;
+  return 0LL;
 }
 
 //----- (000000000040B4B9) ----------------------------------------------------
 __int64 inst_66_values_var_0()
 {
-  return 32LL;
+  return 0LL;
 }
 
 //----- (000000000040B5B9) ----------------------------------------------------
 __int64 inst_66_flags_var_0()
 {
-  __int16 v0; // r13
-  unsigned __int8 v1; // cf
-
-  v0 = 5845;
-  v1 = _bittestandcomplement(&v0, 0xA9u);
-  return v1 - 1LL;
+  return 0LL;
 }
 
 //----- (000000000040B6C0) ----------------------------------------------------
 __int64 inst_67_values_var_0()
 {
-  return 128LL;
+  return 0LL;
 }
 
 //----- (000000000040B7C1) ----------------------------------------------------
 __int64 inst_67_flags_var_0()
 {
-  __int16 v0; // r15
-
-  v0 = 8935;
-  return (char)_bittestandreset(&v0, 0x73u);
+  return 0LL;
 }
 
 //----- (000000000040B8C8) ----------------------------------------------------
 __int64 inst_68_values_var_0()
 {
-  return -64LL;
+  return 0LL;
 }
 
 //----- (000000000040B9C8) ----------------------------------------------------
 __int64 inst_68_flags_var_0()
 {
-  __int16 v0; // di
-  unsigned __int8 v1; // cf
-
-  v0 = 5293;
-  v1 = _bittestandset(&v0, 0x15u);
-  return v1 - 1LL;
+  return 0LL;
 }
 
 //----- (000000000040BACE) ----------------------------------------------------
@@ -3833,10 +3766,7 @@ __int64 inst_69_values_var_0()
 //----- (000000000040BBCE) ----------------------------------------------------
 __int64 inst_69_flags_var_0()
 {
-  int v0; // er15
-
-  v0 = 2054945207;
-  return _bittest(&v0, 0x51u) - 1LL;
+  return 0LL;
 }
 
 //----- (000000000040BCD4) ----------------------------------------------------
@@ -3848,12 +3778,7 @@ __int64 inst_70_values_var_0()
 //----- (000000000040BDD4) ----------------------------------------------------
 __int64 inst_70_flags_var_0()
 {
-  int v0; // edx
-  unsigned __int8 v1; // cf
-
-  v0 = -1891046882;
-  v1 = _bittestandcomplement(&v0, 0x6Fu);
-  return v1 - 1LL;
+  return 0LL;
 }
 
 //----- (000000000040BED9) ----------------------------------------------------
@@ -3865,10 +3790,7 @@ __int64 inst_71_values_var_0()
 //----- (000000000040BFD9) ----------------------------------------------------
 __int64 inst_71_flags_var_0()
 {
-  int v0; // edi
-
-  v0 = -745450538;
-  return (char)_bittestandreset(&v0, 0x4Bu);
+  return 0LL;
 }
 
 //----- (000000000040C0DE) ----------------------------------------------------
@@ -3880,12 +3802,7 @@ unsigned __int64 inst_72_values_var_0()
 //----- (000000000040C1DE) ----------------------------------------------------
 __int64 inst_72_flags_var_0()
 {
-  int v0; // er10
-  unsigned __int8 v1; // cf
-
-  v0 = 1317918583;
-  v1 = _bittestandset(&v0, 0x25u);
-  return v1 - 1LL;
+  return 0LL;
 }
 
 //----- (000000000040C2E4) ----------------------------------------------------
@@ -3897,10 +3814,7 @@ __int64 inst_73_values_var_0()
 //----- (000000000040C3E4) ----------------------------------------------------
 __int64 inst_73_flags_var_0()
 {
-  __int64 v0; // r8
-
-  v0 = 0x75290B77EBAEACB4LL;
-  return _bittest64(&v0, 0xDDu) - 1LL;
+  return 0LL;
 }
 
 //----- (000000000040C4EA) ----------------------------------------------------
@@ -3912,10 +3826,7 @@ __int64 inst_74_values_var_0()
 //----- (000000000040C5EA) ----------------------------------------------------
 __int64 inst_74_flags_var_0()
 {
-  unsigned __int64 v0; // r12
-
-  v0 = 0xCCC86620DEB4D5A3LL;
-  return (char)_bittestandcomplement64((__int64 *)&v0, 0x6Fu);
+  return 0LL;
 }
 
 //----- (000000000040C6F0) ----------------------------------------------------
@@ -3927,12 +3838,7 @@ __int64 inst_75_values_var_0()
 //----- (000000000040C7F0) ----------------------------------------------------
 __int64 inst_75_flags_var_0()
 {
-  unsigned __int64 v0; // rbp
-  unsigned __int8 v1; // cf
-
-  v0 = 0x8232F5F85D341E86LL;
-  v1 = _bittestandreset64((__int64 *)&v0, 0xECu);
-  return v1 - 1LL;
+  return 0LL;
 }
 
 //----- (000000000040C8F6) ----------------------------------------------------
@@ -3944,10 +3850,7 @@ __int64 inst_76_values_var_0()
 //----- (000000000040C9F6) ----------------------------------------------------
 __int64 inst_76_flags_var_0()
 {
-  unsigned __int64 v0; // r14
-
-  v0 = 0x93CCC5EE2C02CC16LL;
-  return (char)_bittestandset64((__int64 *)&v0, 0xCDu);
+  return 0LL;
 }
 
 //----- (000000000040CAFC) ----------------------------------------------------
@@ -4653,7 +4556,7 @@ __int64 inst_132_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-20, 108) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -4670,7 +4573,7 @@ __int64 inst_133_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-113, -33) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -4704,7 +4607,7 @@ __int64 inst_135_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-12567, 29040) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -4755,7 +4658,7 @@ __int64 inst_138_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-1133163810, -1231444753) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -4772,7 +4675,7 @@ __int64 inst_139_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0x3FEBB0F295DECFC7LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -4857,7 +4760,7 @@ __int64 inst_143_flags_var_0()
   __asm { cmpxchg si, r14w }
   v3 = 0LL;
   if ( __SETP__(0xFC04A42AE0701C88LL, 0LL) )
-    v3 = 4LL;
+    return 4LL;
   return v3;
 }
 
@@ -4920,7 +4823,7 @@ __int64 inst_146_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(8, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -4971,7 +4874,7 @@ __int64 inst_149_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0x55B4D495586D7007LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -5705,7 +5608,7 @@ __int64 inst_203_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(8, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -5722,7 +5625,7 @@ __int64 inst_204_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-13256, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -5756,7 +5659,7 @@ __int64 inst_206_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0xBC3717D4F4966646LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -5833,7 +5736,7 @@ __int64 inst_212_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-36, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -5867,7 +5770,7 @@ __int64 inst_214_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-45, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -5884,7 +5787,7 @@ __int64 inst_215_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-4113, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -5901,7 +5804,7 @@ __int64 inst_216_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(31423, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -5918,7 +5821,7 @@ __int64 inst_217_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-8784155, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -5952,7 +5855,7 @@ __int64 inst_219_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-2494529LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -6014,7 +5917,7 @@ __int64 inst_222_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 41F1F9: variable 'v0' is possibly undefined
@@ -6033,7 +5936,7 @@ __int64 inst_223_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 41F401: variable 'v0' is possibly undefined
@@ -6071,7 +5974,7 @@ __int64 inst_225_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 41F813: variable 'v0' is possibly undefined
@@ -6117,7 +6020,7 @@ __int64 inst_227_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 41FC29: variable 'v0' is possibly undefined
@@ -6136,7 +6039,7 @@ __int64 inst_228_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 41FE33: variable 'v0' is possibly undefined
@@ -6174,7 +6077,7 @@ __int64 inst_230_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 420248: variable 'v0' is possibly undefined
@@ -6212,7 +6115,7 @@ __int64 inst_232_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 42065B: variable 'v0' is possibly undefined
@@ -6231,7 +6134,7 @@ __int64 inst_233_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 420864: variable 'v0' is possibly undefined
@@ -6269,7 +6172,7 @@ __int64 inst_235_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 420C75: variable 'v0' is possibly undefined
@@ -6307,7 +6210,7 @@ __int64 inst_237_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 421089: variable 'v0' is possibly undefined
@@ -6326,7 +6229,7 @@ __int64 inst_238_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 421293: variable 'v0' is possibly undefined
@@ -6364,7 +6267,7 @@ __int64 inst_240_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 4216A7: variable 'v0' is possibly undefined
@@ -7512,7 +7415,7 @@ __int64 inst_322_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-70, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -7529,7 +7432,7 @@ __int64 inst_323_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(37, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -7546,7 +7449,7 @@ __int64 inst_324_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(25, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -7563,7 +7466,7 @@ __int64 inst_325_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-4577, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -7580,7 +7483,7 @@ __int64 inst_326_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-10026, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -7597,7 +7500,7 @@ __int64 inst_327_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-19798400, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -7665,7 +7568,7 @@ __int64 inst_331_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(59, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -7784,7 +7687,7 @@ __int64 inst_338_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0xDD97CD27D6F30EB5LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -7818,7 +7721,7 @@ __int64 inst_340_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(42, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -7835,7 +7738,7 @@ __int64 inst_341_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-77, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -7869,7 +7772,7 @@ __int64 inst_343_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(31239, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -7886,7 +7789,7 @@ __int64 inst_344_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-4221, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -7903,7 +7806,7 @@ __int64 inst_345_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(2105251639, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -7937,7 +7840,7 @@ __int64 inst_347_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0xE39633AF027764F4LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -8243,7 +8146,7 @@ __int64 inst_369_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0xD56C3474AEEEF8FDLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -8264,7 +8167,7 @@ __int64 inst_370_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0x9FC14502A2F4B996LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -8433,7 +8336,7 @@ __int64 inst_383_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(84, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -8450,7 +8353,7 @@ __int64 inst_384_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-116, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -8484,7 +8387,7 @@ __int64 inst_386_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-12662, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -8518,7 +8421,7 @@ __int64 inst_388_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-949580642, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -8535,7 +8438,7 @@ __int64 inst_389_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-1034671636, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -8552,7 +8455,7 @@ __int64 inst_390_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0xC5748C51F302E589LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -8603,7 +8506,7 @@ __int64 inst_393_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(32, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -8637,7 +8540,7 @@ __int64 inst_395_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(720, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -8705,7 +8608,7 @@ __int64 inst_399_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0x8F03FD5708430A04LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 
@@ -9040,7 +8943,7 @@ __int64 inst_419_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0x8579195D2CDD465DLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 

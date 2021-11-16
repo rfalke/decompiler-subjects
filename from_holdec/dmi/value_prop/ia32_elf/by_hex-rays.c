@@ -10,41 +10,29 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8048350();
 // int abs(int x);
 // int puts(const char *s);
 // void exit(int status);
 // size_t strlen(const char *s);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int putchar(int c);
-// int _gmon_start__(void); weak
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _x86_get_pc_thunk_bx();
-// int deregister_tm_clones();
-// int register_tm_clones();
-// int _do_global_dtors_aux();
-// int frame_dummy();
-int __cdecl advanced_3_value_range_analysis(int a1);
-int __cdecl basic_1_reg_in_block(int a1);
-int __cdecl basic_2_reg_in_prev_block(int a1);
-int __cdecl basic_3_reg_cond_overwrite(int a1);
-int __cdecl basic_4_reg_cond_change(int a1);
-int __cdecl basic_5_reg_different_values(int a1);
-int __cdecl basic_6_reg_overwrite_in_block(int a1);
-int __cdecl intermediate_1_mem_in_block(int a1);
-int __cdecl intermediate_2_mem_in_prev_block(int a1);
-int __cdecl intermediate_3_mem_cond_overwrite(int a1);
-int __cdecl intermediate_4_mem_cond_change(int a1);
-int __cdecl intermediate_5_mem_different_values(int a1);
-int __cdecl intermediate_6_mem_overwrite_in_block(int a1);
+int __cdecl advanced_3_value_range_analysis(int);
+int __cdecl basic_1_reg_in_block(int);
+int __cdecl basic_2_reg_in_prev_block(int);
+int __cdecl basic_3_reg_cond_overwrite(int);
+int __cdecl basic_4_reg_cond_change(int);
+int __cdecl basic_5_reg_different_values(int);
+int __cdecl basic_6_reg_overwrite_in_block(int);
+int __cdecl intermediate_1_mem_in_block(int);
+int __cdecl intermediate_2_mem_in_prev_block(int);
+int __cdecl intermediate_3_mem_cond_overwrite(int);
+int __cdecl intermediate_4_mem_cond_change(int);
+int __cdecl intermediate_5_mem_different_values(int);
+int __cdecl intermediate_6_mem_overwrite_in_block(int);
 int intermediate_10_subregs();
 int __cdecl advanced_1_writes_can_be_omitted_for_non_mem_access_calls(int x); // idb
 size_t __cdecl advanced_2_mem_values_can_be_propagated_for_non_write_calls(char *s);
-// void _libc_csu_init(void); idb
-// void _libc_csu_fini(void); idb
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -120,13 +108,13 @@ int __cdecl advanced_3_value_range_analysis(int a1)
   }
   return 0;
 }
-// 804859A: conditional instruction was optimized away because of '%arg_0.4>=B'
-// 80485B9: conditional instruction was optimized away because of '%arg_0.4>=B'
-// 80485D8: conditional instruction was optimized away because of '%arg_0.4>=B'
-// 80485F7: conditional instruction was optimized away because of '%arg_0.4>=B'
-// 8048634: conditional instruction was optimized away because of '%arg_0.4==2A'
-// 8048653: conditional instruction was optimized away because of '%arg_0.4==2A'
-// 8048672: conditional instruction was optimized away because of '%arg_0.4==2A'
+// 804859A: conditional instruction was optimized away because %arg_0.4>=B
+// 80485B9: conditional instruction was optimized away because %arg_0.4>=B
+// 80485D8: conditional instruction was optimized away because %arg_0.4>=B
+// 80485F7: conditional instruction was optimized away because %arg_0.4>=B
+// 8048634: conditional instruction was optimized away because %arg_0.4==2A
+// 8048653: conditional instruction was optimized away because %arg_0.4==2A
+// 8048672: conditional instruction was optimized away because %arg_0.4==2A
 
 //----- (0804868D) --------------------------------------------------------
 int __cdecl basic_1_reg_in_block(int a1)

@@ -10,19 +10,10 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049CD7();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// char *deregister_tm_clones();
-// int register_tm_clones();
-// char *_do_global_dtors_aux();
-// int frame_dummy();
 int inst_0_values_var_0();
 int inst_0_flags_var_0();
 int inst_0_values_var_1();
@@ -463,9 +454,6 @@ unsigned int inst_21_values_var_8();
 int inst_21_flags_var_8();
 unsigned int inst_21_values_var_9();
 int inst_21_flags_var_9();
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -3031,640 +3019,480 @@ int inst_10_flags_var_9()
 //----- (0804EB54) --------------------------------------------------------
 int inst_11_values_var_0()
 {
-  _ECX = -1914860796;
-  __asm { rorx    ecx, ecx, 0E7h }
-  return _ECX - 1971460633 + 1818648323;
+  return __ROR4__(-1914860796, 231) - 1971460633 + 1818648323;
 }
 
 //----- (0804EB9D) --------------------------------------------------------
 int inst_11_flags_var_0()
 {
-  _EDX = 791217770;
-  __asm { rorx    eax, edx, 30h ; '0' }
   return 0;
 }
 
 //----- (0804EBFD) --------------------------------------------------------
 int inst_11_values_var_1()
 {
-  _EDX = -451963335;
-  __asm { rorx    ebp, edx, 0E3h }
-  return _EBP - 1299807197 + 282560790;
+  return __ROR4__(-451963335, 227) - 1299807197 + 282560790;
 }
 
 //----- (0804EC46) --------------------------------------------------------
 int inst_11_flags_var_1()
 {
-  _ECX = 1563318186;
-  __asm { rorx    edx, ecx, 0AFh }
   return 0;
 }
 
 //----- (0804ECA6) --------------------------------------------------------
 int inst_11_values_var_2()
 {
-  _EAX = 1561684145;
-  __asm { rorx    ecx, eax, 1Bh }
-  return _ECX + 1565714901;
+  return __ROR4__(1561684145, 27) + 1565714901;
 }
 
 //----- (0804ECEF) --------------------------------------------------------
 int inst_11_flags_var_2()
 {
-  _EDX = 756535360;
-  __asm { rorx    ebp, edx, 1Bh }
   return 0;
 }
 
 //----- (0804ED4F) --------------------------------------------------------
 int inst_11_values_var_3()
 {
-  _EDI = -1176159040;
-  __asm { rorx    edi, edi, 34h ; '4' }
-  return _EDI - 1405881246;
+  return __ROR4__(-1176159040, 52) - 1405881246;
 }
 
 //----- (0804ED98) --------------------------------------------------------
 int inst_11_flags_var_3()
 {
-  _ESI = 2045245946;
-  __asm { rorx    ebp, esi, 3Dh ; '=' }
   return 0;
 }
 
 //----- (0804EDF8) --------------------------------------------------------
 int inst_11_values_var_4()
 {
-  _EDX = 9729078;
-  __asm { rorx    eax, edx, 0AAh }
-  return _EAX - 463883587 + 237381670;
+  return __ROR4__(9729078, 170) - 463883587 + 237381670;
 }
 
 //----- (0804EE41) --------------------------------------------------------
 int inst_11_flags_var_4()
 {
-  _EDX = -566220227;
-  __asm { rorx    ecx, edx, 0FDh }
   return 0;
 }
 
 //----- (0804EEA1) --------------------------------------------------------
 int inst_11_values_var_5()
 {
-  _EAX = 483342351;
-  __asm { rorx    edx, eax, 0D0h }
-  return _EDX - 940514511;
+  return __ROR4__(483342351, 208) - 940514511;
 }
 
 //----- (0804EEEA) --------------------------------------------------------
 int inst_11_flags_var_5()
 {
-  _ESI = 2026154275;
-  __asm { rorx    edx, esi, 62h ; 'b' }
   return 0;
 }
 
 //----- (0804EF4A) --------------------------------------------------------
 int inst_11_values_var_6()
 {
-  _EBX = 248159769;
-  __asm { rorx    edx, ebx, 70h ; 'p' }
-  return _EDX + 1642524982;
+  return __ROR4__(248159769, 112) + 1642524982;
 }
 
 //----- (0804EF93) --------------------------------------------------------
 int inst_11_flags_var_6()
 {
-  _EDI = -215248950;
-  __asm { rorx    ecx, edi, 0ABh }
   return 0;
 }
 
 //----- (0804EFF3) --------------------------------------------------------
 int inst_11_values_var_7()
 {
-  _ESI = -778493540;
-  __asm { rorx    esi, esi, 0E3h }
-  return _ESI + 1707924429;
+  return __ROR4__(-778493540, 227) + 1707924429;
 }
 
 //----- (0804F03C) --------------------------------------------------------
 int inst_11_flags_var_7()
 {
-  _EDI = -1490672704;
-  __asm { rorx    edi, edi, 75h ; 'u' }
   return 0;
 }
 
 //----- (0804F09C) --------------------------------------------------------
 int inst_11_values_var_8()
 {
-  _EDX = 705535203;
-  __asm { rorx    esi, edx, 0AEh }
-  return _ESI - 1944971529 + 6373587;
+  return __ROR4__(705535203, 174) - 1944971529 + 6373587;
 }
 
 //----- (0804F0E5) --------------------------------------------------------
 int inst_11_flags_var_8()
 {
-  _ESI = -306083654;
-  __asm { rorx    esi, esi, 7Fh }
   return 0;
 }
 
 //----- (0804F145) --------------------------------------------------------
 int inst_11_values_var_9()
 {
-  _ESI = 478395520;
-  __asm { rorx    edi, esi, 5Dh ; ']' }
-  return _EDI - 858056603 + 1325859739;
+  return __ROR4__(478395520, 93) - 858056603 + 1325859739;
 }
 
 //----- (0804F18E) --------------------------------------------------------
 int inst_11_flags_var_9()
 {
-  _EDX = -1886514143;
-  __asm { rorx    ebx, edx, 85h }
   return 0;
 }
 
 //----- (0804F1EE) --------------------------------------------------------
 int inst_12_values_var_0()
 {
-  _EBP = -339657518;
-  __asm { sarx    ebp, ebp, ebx }
-  return _EBP + 20732;
+  return 0;
 }
 
 //----- (0804F236) --------------------------------------------------------
 int inst_12_flags_var_0()
 {
-  _ECX = -837019802;
-  __asm { sarx    ebp, ecx, ecx }
   return 0;
 }
 
 //----- (0804F295) --------------------------------------------------------
 int inst_12_values_var_1()
 {
-  _ECX = 227819983;
-  __asm { sarx    edi, ecx, eax }
-  return _EDI - 1716111019 + 1715888539;
+  return 0;
 }
 
 //----- (0804F2DD) --------------------------------------------------------
 int inst_12_flags_var_1()
 {
-  _EBX = -1483328310;
-  __asm { sarx    ebx, ebx, ebx }
   return 0;
 }
 
 //----- (0804F33C) --------------------------------------------------------
 int inst_12_values_var_2()
 {
-  _EAX = -849670622;
-  __asm { sarx    edi, eax, esi }
-  return _EDI + 406;
+  return 0;
 }
 
 //----- (0804F384) --------------------------------------------------------
 int inst_12_flags_var_2()
 {
-  _EAX = 1409890689;
-  __asm { sarx    ebp, eax, ebp }
   return 0;
 }
 
 //----- (0804F3E3) --------------------------------------------------------
 int inst_12_values_var_3()
 {
-  _EBP = 850822812;
-  __asm { sarx    edi, ebp, edi }
-  return _EDI - 415440;
+  return 0;
 }
 
 //----- (0804F42B) --------------------------------------------------------
 int inst_12_flags_var_3()
 {
-  _ECX = 1271515703;
-  __asm { sarx    ebx, ecx, ebx }
   return 0;
 }
 
 //----- (0804F48A) --------------------------------------------------------
 int inst_12_values_var_4()
 {
-  _ECX = -333162186;
-  __asm { sarx    edi, ecx, ebx }
-  return _EDI - 2020389475 + 2020389476;
+  return 0;
 }
 
 //----- (0804F4D2) --------------------------------------------------------
 int inst_12_flags_var_4()
 {
-  _EBX = -1376792358;
-  __asm { sarx    edi, ebx, ecx }
   return 0;
 }
 
 //----- (0804F531) --------------------------------------------------------
 int inst_12_values_var_5()
 {
-  _EDX = -1085266451;
-  __asm { sarx    edx, edx, ebp }
-  return _EDX - 1274785157 + 1274785675;
+  return 0;
 }
 
 //----- (0804F579) --------------------------------------------------------
 int inst_12_flags_var_5()
 {
-  _EAX = -945325897;
-  __asm { sarx    edx, eax, ebp }
   return 0;
 }
 
 //----- (0804F5D8) --------------------------------------------------------
 int inst_12_values_var_6()
 {
-  _EAX = -1982898954;
-  __asm { sarx    eax, eax, edi }
-  return _EAX + 247862370;
+  return 0;
 }
 
 //----- (0804F620) --------------------------------------------------------
 int inst_12_flags_var_6()
 {
-  _EDI = 50145679;
-  __asm { sarx    ebx, edi, ecx }
   return 0;
 }
 
 //----- (0804F67F) --------------------------------------------------------
 int inst_12_values_var_7()
 {
-  _EDX = 1736612914;
-  __asm { sarx    edi, edx, ecx }
-  return _EDI - 12;
+  return 0;
 }
 
 //----- (0804F6C7) --------------------------------------------------------
 int inst_12_flags_var_7()
 {
-  _EDX = 1025114071;
-  __asm { sarx    ebp, edx, ebp }
   return 0;
 }
 
 //----- (0804F726) --------------------------------------------------------
 int inst_12_values_var_8()
 {
-  _EBP = 610576373;
-  __asm { sarx    edx, ebp, eax }
-  return _EDX - 305288186;
+  return 0;
 }
 
 //----- (0804F76E) --------------------------------------------------------
 int inst_12_flags_var_8()
 {
-  _EBX = -556133123;
-  __asm { sarx    edx, ebx, ebx }
   return 0;
 }
 
 //----- (0804F7CD) --------------------------------------------------------
 int inst_12_values_var_9()
 {
-  _EBX = 750257426;
-  __asm { sarx    edi, ebx, ebx }
-  return _EDI - 2862;
+  return 0;
 }
 
 //----- (0804F815) --------------------------------------------------------
 int inst_12_flags_var_9()
 {
-  _ECX = -1880037206;
-  __asm { sarx    esi, ecx, edi }
   return 0;
 }
 
 //----- (0804F874) --------------------------------------------------------
 int inst_13_values_var_0()
 {
-  _ECX = -189994739;
-  __asm { shlx    ebp, ecx, ebp }
-  return _EBP + 0x80000000;
+  return 0;
 }
 
 //----- (0804F8BC) --------------------------------------------------------
 int inst_13_flags_var_0()
 {
-  _EDX = 1380798466;
-  __asm { shlx    ebx, edx, edx }
   return 0;
 }
 
 //----- (0804F91B) --------------------------------------------------------
 int inst_13_values_var_1()
 {
-  _EBP = 1847510208;
-  __asm { shlx    edx, ebp, edi }
-  return _EDX - 1895179776;
+  return 0;
 }
 
 //----- (0804F963) --------------------------------------------------------
 int inst_13_flags_var_1()
 {
-  _EDI = 1463000842;
-  __asm { shlx    esi, edi, ebp }
   return 0;
 }
 
 //----- (0804F9C2) --------------------------------------------------------
 int inst_13_values_var_2()
 {
-  _ECX = -884507854;
-  __asm { shlx    eax, ecx, ecx }
-  return _EAX + 322437120;
+  return 0;
 }
 
 //----- (0804FA0A) --------------------------------------------------------
 int inst_13_flags_var_2()
 {
-  _EAX = -2109057769;
-  __asm { shlx    ecx, eax, esi }
   return 0;
 }
 
 //----- (0804FA69) --------------------------------------------------------
 int inst_13_values_var_3()
 {
-  _EDI = 1684066975;
-  __asm { shlx    edx, edi, ebp }
-  return _EDX + 0x80000000;
+  return 0;
 }
 
 //----- (0804FAB1) --------------------------------------------------------
 int inst_13_flags_var_3()
 {
-  _EDX = 1838050962;
-  __asm { shlx    ebp, edx, esi }
   return 0;
 }
 
 //----- (0804FB10) --------------------------------------------------------
 int inst_13_values_var_4()
 {
-  _EBX = 1250472528;
-  __asm { shlx    edx, ebx, esi }
-  return _EDX - 2019154873 + 523361209;
+  return 0;
 }
 
 //----- (0804FB58) --------------------------------------------------------
 int inst_13_flags_var_4()
 {
-  _EBX = -1210723727;
-  __asm { shlx    ecx, ebx, eax }
   return 0;
 }
 
 //----- (0804FBB7) --------------------------------------------------------
 int inst_13_values_var_5()
 {
-  _EDI = 1886636564;
-  __asm { shlx    eax, edi, esi }
-  return _EAX - 1520295066 + 1277467162;
+  return 0;
 }
 
 //----- (0804FBFF) --------------------------------------------------------
 int inst_13_flags_var_5()
 {
-  _ESI = 210278682;
-  __asm { shlx    ebx, esi, esi }
   return 0;
 }
 
 //----- (0804FC5E) --------------------------------------------------------
 int inst_13_values_var_6()
 {
-  _EDI = 1426518199;
-  __asm { shlx    esi, edi, edx }
-  return _ESI - 2019262464;
+  return 0;
 }
 
 //----- (0804FCA6) --------------------------------------------------------
 int inst_13_flags_var_6()
 {
-  _ESI = 335361602;
-  __asm { shlx    esi, esi, ecx }
   return 0;
 }
 
 //----- (0804FD05) --------------------------------------------------------
 int inst_13_values_var_7()
 {
-  _EAX = -1163094687;
-  __asm { shlx    ecx, eax, ecx }
-  return _ECX + 1788805120;
+  return 0;
 }
 
 //----- (0804FD4D) --------------------------------------------------------
 int inst_13_flags_var_7()
 {
-  _ESI = -1064844691;
-  __asm { shlx    edx, esi, edx }
   return 0;
 }
 
 //----- (0804FDAC) --------------------------------------------------------
 int inst_13_values_var_8()
 {
-  _EAX = -1108246737;
-  __asm { shlx    eax, eax, ecx }
-  return _EAX - 803594240;
+  return 0;
 }
 
 //----- (0804FDF4) --------------------------------------------------------
 int inst_13_flags_var_8()
 {
-  _EBP = 501258026;
-  __asm { shlx    edx, ebp, esi }
   return 0;
 }
 
 //----- (0804FE53) --------------------------------------------------------
 int inst_13_values_var_9()
 {
-  _ESI = -173612166;
-  __asm { shlx    edi, esi, ebp }
-  return _EDI + 1914175488;
+  return 0;
 }
 
 //----- (0804FE9B) --------------------------------------------------------
 int inst_13_flags_var_9()
 {
-  _ECX = 1990687555;
-  __asm { shlx    eax, ecx, ebx }
   return 0;
 }
 
 //----- (0804FEFA) --------------------------------------------------------
 int inst_14_values_var_0()
 {
-  _EBX = -622290496;
-  __asm { shrx    esi, ebx, esi }
-  return _ESI - 378557551 + 378109227;
+  return 0;
 }
 
 //----- (0804FF42) --------------------------------------------------------
 int inst_14_flags_var_0()
 {
-  _EBX = 1211086396;
-  __asm { shrx    ecx, ebx, ecx }
   return 0;
 }
 
 //----- (0804FFA1) --------------------------------------------------------
 int inst_14_values_var_1()
 {
-  _EDI = -1797435201;
-  __asm { shrx    edi, edi, eax }
-  return _EDI - 39023938;
+  return 0;
 }
 
 //----- (0804FFE9) --------------------------------------------------------
 int inst_14_flags_var_1()
 {
-  _EBP = 487407864;
-  __asm { shrx    edi, ebp, eax }
   return 0;
 }
 
 //----- (08050048) --------------------------------------------------------
 int inst_14_values_var_2()
 {
-  _EDX = -72701831;
-  __asm { shrx    ebx, edx, ebx }
-  return _EBX - 128853;
+  return 0;
 }
 
 //----- (08050090) --------------------------------------------------------
 int inst_14_flags_var_2()
 {
-  _EBP = -854685950;
-  __asm { shrx    ebp, ebp, esi }
   return 0;
 }
 
 //----- (080500EF) --------------------------------------------------------
 int inst_14_values_var_3()
 {
-  _EDX = 1583725550;
-  __asm { shrx    ecx, edx, ebp }
-  return _ECX - 617752111 + 617752088;
+  return 0;
 }
 
 //----- (08050137) --------------------------------------------------------
 int inst_14_flags_var_3()
 {
-  _ESI = 749149621;
-  __asm { shrx    eax, esi, ebp }
   return 0;
 }
 
 //----- (08050196) --------------------------------------------------------
 int inst_14_values_var_4()
 {
-  _EDI = -689855870;
-  __asm { shrx    edi, edi, esi }
-  return _EDI - 112659732;
+  return 0;
 }
 
 //----- (080501DE) --------------------------------------------------------
 int inst_14_flags_var_4()
 {
-  _ESI = 954023587;
-  __asm { shrx    eax, esi, ecx }
   return 0;
 }
 
 //----- (0805023D) --------------------------------------------------------
 int inst_14_values_var_5()
 {
-  _EBP = 1686027328;
-  __asm { shrx    edx, ebp, eax }
-  return _EDX - 12;
+  return 0;
 }
 
 //----- (08050285) --------------------------------------------------------
 int inst_14_flags_var_5()
 {
-  _EDX = -1431248416;
-  __asm { shrx    ebx, edx, edi }
   return 0;
 }
 
 //----- (080502E4) --------------------------------------------------------
 int inst_14_values_var_6()
 {
-  _ECX = 532396544;
-  __asm { shrx    esi, ecx, ebp }
-  return _ESI - 60029888 + 60029873;
+  return 0;
 }
 
 //----- (0805032C) --------------------------------------------------------
 int inst_14_flags_var_6()
 {
-  _ESI = -102237385;
-  __asm { shrx    ebx, esi, edx }
   return 0;
 }
 
 //----- (0805038B) --------------------------------------------------------
 int inst_14_values_var_7()
 {
-  _EBP = 1525987144;
-  __asm { shrx    edi, ebp, ebx }
-  return _EDI - 373483830 + 373483740;
+  return 0;
 }
 
 //----- (080503D3) --------------------------------------------------------
 int inst_14_flags_var_7()
 {
-  _ESI = -1091432292;
-  __asm { shrx    ecx, esi, ebp }
   return 0;
 }
 
 //----- (08050432) --------------------------------------------------------
 int inst_14_values_var_8()
 {
-  _EDI = -2119179658;
-  __asm { shrx    ecx, edi, edi }
-  return _ECX - 1303796112 + 1303795594;
+  return 0;
 }
 
 //----- (0805047A) --------------------------------------------------------
 int inst_14_flags_var_8()
 {
-  _ESI = 1830574762;
-  __asm { shrx    edi, esi, esi }
   return 0;
 }
 
 //----- (080504D9) --------------------------------------------------------
 int inst_14_values_var_9()
 {
-  _EDX = 286227558;
-  __asm { shrx    ebp, edx, ebp }
-  return _EBP - 1091;
+  return 0;
 }
 
 //----- (08050521) --------------------------------------------------------
 int inst_14_flags_var_9()
 {
-  _EDX = -663605155;
-  __asm { shrx    ebp, edx, edi }
   return 0;
 }
 

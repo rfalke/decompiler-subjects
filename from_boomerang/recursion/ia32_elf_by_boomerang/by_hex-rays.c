@@ -10,31 +10,20 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int __fastcall init_proc(int a1);
 int sub_8048298();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int printf(const char *format, ...);
-// int __gmon_start__(void); weak
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// int __fastcall call_gmon_start(int a1);
-// void _do_global_dtors_aux();
-// int frame_dummy();
 int __cdecl main(int argc, const char **argv, const char **envp);
-int __cdecl b(int a1);
-int __cdecl c(int a1);
-int __cdecl d(int a1);
-int __cdecl e(int a1);
-int __cdecl f(int a1);
-int __cdecl g(int a1);
-int __cdecl h(int a1);
-int __cdecl i(int a1);
-int __cdecl j(int a1);
-int __cdecl k(int a1);
-int __cdecl l(int a1);
-// void __fastcall _libc_csu_init(int a1);
-// void _libc_csu_fini(void); idb
-// int __fastcall _do_global_ctors_aux(int a1, int a2);
-// void __spoils<edx,ecx> term_proc();
+int __cdecl b(int);
+int __cdecl c(int);
+int __cdecl d(int);
+int __cdecl e(int);
+int __cdecl f(int);
+int __cdecl g(int);
+int __cdecl h(int);
+int __cdecl i(int);
+int __cdecl j(int);
+int __cdecl k(int);
+int __cdecl l(int);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -104,7 +93,7 @@ int __cdecl d(int a1)
 
   result = printf("d(%d)\n", a1);
   if ( a1 > 1 )
-    result = e(a1 - 1);
+    return e(a1 - 1);
   return result;
 }
 
@@ -122,7 +111,7 @@ int __cdecl f(int a1)
 
   result = printf("f(%d)\n", a1);
   if ( a1 > 1 )
-    result = g(a1 - 1);
+    return g(a1 - 1);
   return result;
 }
 
@@ -133,7 +122,7 @@ int __cdecl g(int a1)
 
   result = printf("g(%d)\n", a1);
   if ( a1 > 1 )
-    result = f(a1 - 1);
+    return f(a1 - 1);
   return result;
 }
 
@@ -144,7 +133,7 @@ int __cdecl h(int a1)
 
   result = printf("h(%d)\n", a1);
   if ( a1 > 0 )
-    result = i(a1 - 1);
+    return i(a1 - 1);
   return result;
 }
 
@@ -161,7 +150,7 @@ int __cdecl j(int a1)
 
   result = printf("j(%d)\n", a1);
   if ( a1 > 1 )
-    result = k(a1);
+    return k(a1);
   return result;
 }
 
@@ -172,7 +161,7 @@ int __cdecl k(int a1)
 
   result = printf("k(%d)\n", a1);
   if ( a1 > 1 )
-    result = e(a1 - 1);
+    return e(a1 - 1);
   return result;
 }
 
@@ -183,7 +172,7 @@ int __cdecl l(int a1)
 
   result = printf("l(%d)\n", a1);
   if ( a1 > 1 )
-    result = b(a1 + 2);
+    return b(a1 + 2);
   return result;
 }
 

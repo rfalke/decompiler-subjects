@@ -10,28 +10,17 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void (*init_proc())(void);
 __int64 __fastcall sub_400540(); // weak
 // int puts(const char *s);
 // FILE *fopen(const char *filename, const char *modes);
-// int __fastcall __libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int __xstat(int ver, const char *filename, struct stat *stat_buf);
 // int sprintf(char *s, const char *format, ...);
 // size_t fread(void *ptr, size_t size, size_t n, FILE *stream);
 // int fclose(FILE *stream);
 // void perror(const char *s);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// __int64 (**call_gmon_start())(void);
-// void _do_global_dtors_aux();
-// void frame_dummy();
-int __fastcall dumpline(unsigned __int8 *a1, __int64 a2, int a3);
+int __fastcall dumpline(unsigned __int8 *, __int64, int);
 __int64 __fastcall hexdump(char *s); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void _libc_csu_fini(void); idb
-// void _libc_csu_init(void); idb
-// void (*_do_global_ctors_aux())(void);
-// void term_proc();
-// __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -126,11 +115,11 @@ LABEL_19:
   *(_WORD *)&v15[v9 + (__int64)v4] = 124;
   return puts(v15);
 }
+// 4006C0: using guessed type char var_88[136];
 
 //----- (0000000000400853) ----------------------------------------------------
 __int64 __fastcall hexdump(char *s)
 {
-  __int64 result; // rax
   FILE *v2; // r13
   unsigned __int64 i; // rbp
   int v4; // eax
@@ -141,7 +130,7 @@ __int64 __fastcall hexdump(char *s)
   if ( __xstat(1, s, &v6) || (v2 = fopen(s, "rb")) == 0LL )
   {
     perror(s);
-    result = 1LL;
+    return 1LL;
   }
   else
   {
@@ -154,9 +143,8 @@ __int64 __fastcall hexdump(char *s)
       dumpline(ptr, i, v4);
     }
     fclose(v2);
-    result = 0LL;
+    return 0LL;
   }
-  return result;
 }
 
 //----- (0000000000400912) ----------------------------------------------------

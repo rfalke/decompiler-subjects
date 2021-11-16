@@ -11,7 +11,6 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void init_proc(void); // idb
 void sub_8048814();
 // int XDrawString(Display *, Drawable, GC, int, int, const char *, int);
 // int XMapWindow(Display *, Window);
@@ -22,7 +21,6 @@ void sub_8048814();
 // int __cdecl MikMod_strerror(_DWORD); weak
 // size_t strlen(const char *s);
 // int XParseColor(Display *, Colormap, const char *, XColor *);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // XFontStruct *XLoadQueryFont(Display *, const char *);
 // int printf(const char *format, ...);
 // int MikMod_RegisterAllDrivers(void); weak
@@ -37,30 +35,20 @@ void sub_8048814();
 // double sin(double x);
 // GC XCreateGC(Display *, Drawable, unsigned int, XGCValues *);
 // Display *XOpenDisplay(const char *);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void *call_gmon_start();
-void _do_global_dtors_aux();
-int frame_dummy();
-int __cdecl FontInit(const char *a1);
+int __cdecl FontInit(const char *);
 int __cdecl XPrint(int, int, int, int, char *s); // idb
-int __cdecl init(unsigned int a1, unsigned int a2);
+int __cdecl init(unsigned int, unsigned int);
 int MikmodInit();
 int __cdecl main(int argc, const char **argv, const char **envp);
-int __fastcall _do_global_ctors_aux(int a1, int a2);
-void term_proc(void); // idb
 
 //-------------------------------------------------------------------------
 // Data declarations
 
 _UNKNOWN unk_8048E10; // weak
-int *p_0 = &_DTOR_END__; // weak
 char dude[4920] = "Hello everyone, this is a long boring scroller brought to you by **** l33t kru, we have no idea what to write in here, so lets have a technical description of the production. We spent 2 hours making this masterpiece, it is so advanced and all that, bla bla. Let's get to the fun part of this scroller <insert random german stuff here>. Fr09 is here to make you happy, and the product and all that, i like the speakers! And they have girls? What. Okey, seriously, this is a stupid production, we don't know why we made it, but we did, so there, hah! If you enjoy stuff like this you are our friend, at least not our enemy.                                             Seriously: this production sucks, it depends xlib, we had no idea how to make the window doublebuffer and we didn't bother googling for the answer, so we made some stupid stuff which would not make it flimmer that much, by not clearing the screen every frame, hah. Okey. This should not take a fast machine to run, but since we don't have a timing routine of some sort it will not run independent of the framerate, which means if you have a fast computer this scroller will almost be unreadable, haha, which also means you are clearly owned by this scroller. There is so much interresting information here that I think you would like to read, but then again, no. Why am I writing this stuff? Probably because I am bored, and i think there is a lot of spiellieng missteiks as well so if you feel like whining send all your whine requests to a random SCO email. This production was made possible thanks to the following people: ... oh wait. We choose to stay anonymous. We greet everyone, because we are so nice and all that. We are SUPER. Okey, not really. THE END.                                            Hah, tricked you which scrollers always do. Do you feel like continue reading? Okey, well, we do have a few more things to say. Blizzard recently shut down the freecraft project, damn Blizzard for this, you can read more about this in a slashdot article, or something like that. Do you feel ENJOY? We do. To change the subject, we should have some effect running on the side of this scroller, but what? If you have some cool stuff you would like in our next release send your suggestions to a random SCO email as always, it does help, or you could send it to a blizzard email, it's all up to you! We are looking forward to this summer, assembly coming up and scene event as well, we just can't wait! Will we contribute with a demo? Maybe! Are you contributing? You should. I need to do something productive for a change, but it has been a lot of fun writing this scroller, hope you had fun reading it as well, i REALLY hope so, because .. umm.            No, we are not done yet. You are now 30% in our scroller, still a lot more information we need to put here. Lot's of important stuff. We enjoy iste and coke, and some other liquid. If you have some of that, please bring it to us, this summer heat is killing us, not litterally though. 32%... Did you enjoy The Gathering 2003? We did. It was a lot of fun, hope it will be as good next year as it was this year, we didn't acually contribute with a good demo, the timing got all screwed and one of our coders got sick and went to sleep, but the most important thing is of course that he is okey. Alive'n'kickin'! We are ready to contribute with something better to one of the parties we mentioned earlier, at least we hope so, but it's often like this, we have huge plans then it don't turn our that way after all. I've seen it happen man! The binary is 68467 right now, probably more now, that is unstipped though. 5560byte with sstrip and upx, woho. This is no 4k, damn. Would be cool if it was, can see if i'll stip something more down and make it a 4k, would be cool, but then again no. I still need music. How should I make that one? I have no idea. Soundtracker, i suck at tracking. ... Okey, I just made something, did you like it? I personaly think it suck, which it does. There, now this intro or demo or whatever you want to call it is complete. Did you like the 300x100 resolution window? I thin you did! This has been a long scroller, when I said we were 30% earlier it was just a joke, hah, hope you didn't believe it and quit this thing. It's such a fine small scroller. I need to find a good color for the text as wel, so I'll guess the current color will do! This demo is done now, thanks for watching, you can continue to watch if you want to hear the rest of the cool repeting tune, but i don't think you want to do that. I made it 101 patterns, so it should play for some time, but the text ends here, good bye.                                                                                                                                                                             haha. You located the secret part, or are you viewing the source code now? Congratulations."; // idb
 char color[] = "#6eff00"; // idb
-int _CTOR_LIST__ = -1; // weak
-int _JCR_LIST__ = 0; // weak
 FILE *stderr; // idb
 int MikMod_errno; // weak
-char completed_1; // weak
 GC green_gc; // idb
 Colormap colormap; // idb
 XColor green_col; // idb
@@ -68,21 +56,7 @@ Drawable win; // idb
 Display *dis; // idb
 float tim; // weak
 float rut; // weak
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (080487FC) --------------------------------------------------------
-void init_proc(void)
-{
-  int v0; // edx
-  int v1; // ecx
-
-  call_gmon_start();
-  frame_dummy();
-  _do_global_ctors_aux(v1, v0);
-}
-// 804880C: variable 'v1' is possibly undefined
-// 804880C: variable 'v0' is possibly undefined
 
 //----- (08048814) --------------------------------------------------------
 void sub_8048814()
@@ -91,72 +65,13 @@ void sub_8048814()
 }
 // 804881A: control flows out of bounds to 0
 
-//----- (080489A4) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, init_proc, term_proc, a2, &v3);
-  __halt();
-}
-// 80489A7: positive sp value 4 has been found
-
-//----- (080489C8) --------------------------------------------------------
-void *call_gmon_start()
-{
-  void *result; // eax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (void *)((int (*)(void))_gmon_start__)();
-  return result;
-}
-
-//----- (080489EC) --------------------------------------------------------
-void _do_global_dtors_aux()
-{
-  int *v0; // eax
-  void (*i)(void); // edx
-
-  if ( !completed_1 )
-  {
-    v0 = p_0;
-    for ( i = (void (*)(void))*p_0; *p_0; i = (void (*)(void))*p_0 )
-    {
-      p_0 = v0 + 1;
-      i();
-      v0 = p_0;
-    }
-    completed_1 = 1;
-  }
-}
-// 8049008: using guessed type int *p_0;
-// 804A4E8: using guessed type char completed_1;
-
-//----- (08048A28) --------------------------------------------------------
-int frame_dummy()
-{
-  int result; // eax
-
-  result = _JCR_LIST__;
-  if ( _JCR_LIST__ )
-    result = 0;
-  return result;
-}
-// 804A454: using guessed type int _JCR_LIST__;
-
 //----- (08048A54) --------------------------------------------------------
 int __cdecl FontInit(const char *a1)
 {
-  XFontStruct *v2; // [esp+4h] [ebp-4h]
+  XFontStruct *Font; // [esp+4h] [ebp-4h]
 
-  v2 = XLoadQueryFont(dis, a1);
-  return XSetFont(dis, green_gc, v2->fid);
+  Font = XLoadQueryFont(dis, a1);
+  return XSetFont(dis, green_gc, Font->fid);
 }
 
 //----- (08048A98) --------------------------------------------------------
@@ -253,33 +168,5 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
 // 804A584: using guessed type float tim;
 // 804A588: using guessed type float rut;
 
-//----- (08048DC4) --------------------------------------------------------
-int __fastcall _do_global_ctors_aux(int a1, int a2)
-{
-  void (*v2)(void); // eax
-  void (**v3)(void); // ebx
-
-  v2 = (void (*)(void))_CTOR_LIST__;
-  v3 = (void (**)(void))&_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    do
-    {
-      --v3;
-      v2();
-      v2 = *v3;
-    }
-    while ( *v3 != (void (*)(void))-1 );
-  }
-  return a2;
-}
-// 804A444: using guessed type int _CTOR_LIST__;
-
-//----- (08048DE8) --------------------------------------------------------
-void term_proc(void)
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=61 queued=13 decompiled=13 lumina nreq=0 worse=0 better=0
-// ALL OK, 13 function(s) have been successfully decompiled
+// nfuncs=61 queued=6 decompiled=6 lumina nreq=0 worse=0 better=0
+// ALL OK, 6 function(s) have been successfully decompiled

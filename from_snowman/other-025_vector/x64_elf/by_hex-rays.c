@@ -10,25 +10,14 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void (*init_proc())(void);
 __int64 __fastcall sub_400530(); // weak
 // void __fastcall __noreturn std::__throw_length_error(const char *); idb
 // void __fastcall operator delete(void *); idb
-// int __fastcall __libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void *memmove(void *dest, const void *src, size_t n);
 // _QWORD __fastcall operator new(unsigned __int64); idb
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// __int64 (**call_gmon_start())(void);
-// void _do_global_dtors_aux();
-// void frame_dummy();
-void __fastcall f(__int64 a1, char **a2);
-void __fastcall std::vector<int>::_M_range_insert<__gnu_cxx::__normal_iterator<int *,std::vector<int>>>(__int64 a1, _BYTE *a2, char *a3, char *a4);
-// void _libc_csu_fini(void); idb
-// void _libc_csu_init(void); idb
-// void (*_do_global_ctors_aux())(void);
-// void term_proc();
-// __int64 _gmon_start__(void); weak
+void __fastcall f(__int64, char **);
+void __fastcall std::vector<int>::_M_range_insert<__gnu_cxx::__normal_iterator<int *,std::vector<int>>>(__int64, _BYTE *, char *, char *);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -61,7 +50,11 @@ void __fastcall f(__int64 a1, char **a2)
 }
 
 //----- (00000000004006A0) ----------------------------------------------------
-void __fastcall std::vector<int>::_M_range_insert<__gnu_cxx::__normal_iterator<int *,std::vector<int>>>(__int64 a1, _BYTE *a2, char *a3, char *a4)
+void __fastcall std::vector<int>::_M_range_insert<__gnu_cxx::__normal_iterator<int *,std::vector<int>>>(
+        __int64 a1,
+        _BYTE *a2,
+        char *a3,
+        char *a4)
 {
   __int64 v7; // r14
   unsigned __int64 v8; // r13

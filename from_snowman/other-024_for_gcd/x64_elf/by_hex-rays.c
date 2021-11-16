@@ -10,20 +10,17 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-__int64 __fastcall gcd(unsigned int a1, unsigned int a2);
+__int64 __fastcall gcd(unsigned int a1, signed int a2);
 int __cdecl main(int argc, const char **argv, const char **envp);
 
 
 //----- (00000000004000E8) ----------------------------------------------------
-__int64 __fastcall gcd(unsigned int a1, unsigned int a2)
+__int64 __fastcall gcd(unsigned int a1, signed int a2)
 {
-  __int64 result; // rax
-
   if ( a2 )
-    result = gcd(a2, (int)a1 % (int)a2);
+    return gcd(a2, (int)a1 % a2);
   else
-    result = a1;
-  return result;
+    return a1;
 }
 
 //----- (000000000040011A) ----------------------------------------------------

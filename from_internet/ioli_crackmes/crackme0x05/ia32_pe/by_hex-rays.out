@@ -1,44 +1,101 @@
-Possible file format: MS-DOS executable (EXE) (IDADIR/loaders/dos.so)
-Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
+
+Database SUBJECTS/from_internet/ioli_crackmes/crackme0x05/ia32_pe/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-    98304    12 8192 allocating memory for virtual array...
+    65536     8 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-   884736            total memory allocated
+   851968            total memory allocated
 
-Loading file 'SUBJECTS/from_internet/ioli_crackmes/crackme0x05/ia32_pe/subject.exe' into database...
-Detected file format: Portable executable for 80386 (PE)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (00401000-00403000) ... ... OK
-  1. Creating a new segment  (00403000-00404000) ... ... OK
-  2. Creating a new segment  (00404000-00405000) ... ... OK
-  3. Creating a new segment  (00405000-00406000) ... ... OK
-  4. Creating a new segment  (00406000-00407000) ... ... OK
-Reading imports directory...
-Loading COFF symbols...
-Assuming __cdecl calling convention by default
-Type library 'mssdk_win7' loaded. Applying types...
-Types applied to 56 names.
-Plan  FLIRT signature: SEH for vc7-14
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_internet/ioli_crackmes/crackme0x05/ia32_pe/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Using FLIRT signature: SEH for vc7-14
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 8 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 00401000       with name '__gnu_exception_handler@4'
+  function at 00401140       with name '___mingw_CRTStartup'
+  function at 00401260       with name '_mainCRTStartup'
+  function at 00401280       with name '_WinMainCRTStartup'
+  function at 004012A0       with name '_atexit'
+  function at 004012B0       with name '__onexit'
+  function at 004012C0       with name '___do_frame_init'
+  function at 004012F0       with name '___do_frame_fini'
+  function at 00401310       with name '_parell'
+  function at 00401354       with name '_check'
+  function at 004013CC       with name '_main'
+  function at 00401440       with name '__pei386_runtime_relocator'
+  function at 00401470       with name '__fpreset'
+  function at 00401480       with name '___do_global_dtors'
+  function at 004014B0       with name '___do_global_ctors'
+  function at 00401510       with name '___main'
+  function at 00401530       with name '_size_of_encoded_value'
+  function at 00401580       with name '_read_uleb128'
+  function at 004015D0       with name '_read_sleb128'
+  function at 00401640       with name '_read_encoded_value_with_base'
+  function at 00401710       with name '_init_object_mutex'
+  function at 00401760       with name '_init_object_mutex_once'
+  function at 004017F0       with name '___register_frame_info_bases'
+  function at 004018E0       with name '___register_frame_info'
+  function at 00401910       with name '___register_frame'
+  function at 00401950       with name '___register_frame_info_table_bases'
+  function at 00401A50       with name '___register_frame_info_table'
+  function at 00401A80       with name '___register_frame_table'
+  function at 00401AB0       with name '___deregister_frame_info_bases'
+  function at 00401C40       with name '___deregister_frame_info'
+  function at 00401C50       with name '___deregister_frame'
+  function at 00401C80       with name '_base_from_object'
+  function at 00401CE0       with name '_get_cie_encoding'
+  function at 00401D70       with name '_fde_unencoded_compare'
+  function at 00401D90       with name '_fde_single_encoding_compare'
+  function at 00401E10       with name '_fde_mixed_encoding_compare'
+  function at 00401EA0       with name '_frame_downheap'
+  function at 00401F30       with name '_frame_heapsort'
+  function at 00401FA0       with name '_classify_object_over_fdes'
+  function at 004020C0       with name '_add_fdes'
+  function at 004021C0       with name '_linear_search_fdes'
+  function at 004022E0       with name '_search_object'
+  function at 00402860       with name '__Unwind_Find_FDE'
+  function at 00402A40       with name '___w32_sharedptr_default_unexpected'
+  function at 00402A50       with name '___w32_sharedptr_get'
+  function at 00402AF0       with name '___w32_sharedptr_initialize'
+  function at 00402D10       with name '__alloca'
+  function at 00402D40       with name '_signal'
+  function at 00402D50       with name '__setmode'
+  function at 00402D60       with name '___p__environ'
+  function at 00402D70       with name '__cexit'
+  function at 00402D80       with name '___set_app_type'
+  function at 00402D90       with name '___p__fmode'
+  function at 00402DA0       with name '___getmainargs'
+  function at 00402DB0       with name '_scanf'
+  function at 00402DC0       with name '_strlen'
+  function at 00402DD0       with name '_exit'
+  function at 00402DE0       with name '_printf'
+  function at 00402DF0       with name '_sscanf'
+  function at 00402E00       with name '_free'
+  function at 00402E10       with name '_malloc'
+  function at 00402E20       with name '_abort'
+  function at 00402E30       with name '__assert'
+  function at 00402E40       with name '_ExitProcess@4'
+  function at 00402E50       with name '_SetUnhandledExceptionFilter@4'
+  function at 00402E60       with name '_ReleaseSemaphore@12'
+  function at 00402E70       with name '_InterlockedDecrement@4'
+  function at 00402E80       with name '_WaitForSingleObject@8'
+  function at 00402E90       with name '_CreateSemaphoreA@16'
+  function at 00402EA0       with name '_Sleep@4'
+  function at 00402EB0       with name '_InterlockedIncrement@4'
+  function at 00402EC0       with name '_GetAtomNameA@12'
+  function at 00402ED0       with name '_AddAtomA@4'
+  function at 00402EE0       with name '_FindAtomA@4'
+  function at 00402EF0       with name '___reg_frame_ctor'
+  function at 00402F00       with name '___dereg_frame_dtor'
+finished -> OK
 TIMESTAMP decompiling 4012A0 size=0000000C times=0...
 The decompiler assumes that the segment '.idata' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -85,8 +142,6 @@ TIMESTAMP decompiling 401510 size=0000001D times=0...
 TIMESTAMP decompiling 4013CC size=0000006A times=0...
 TIMESTAMP decompiling 401140 size=00000117 times=0...
 TIMESTAMP decompiling 401280 size=00000018 times=0...
-TIMESTAMP decompiling 401140 size=00000117 times=1;usedcpu 00:00:00 ...int(void)
-TIMESTAMP decompiling 401280 size=00000018 times=1;usedcpu 00:00:00 ...void __noreturn()
 TIMESTAMP decompiling 401760 size=00000085 times=0...
 TIMESTAMP decompiling 4017F0 size=000000ED times=0...
 TIMESTAMP decompiling 4018E0 size=00000026 times=0...
@@ -110,8 +165,8 @@ TIMESTAMP decompiling 402860 size=000001E0 times=0...
 TIMESTAMP decompiling 402AF0 size=00000218 times=0...
 TIMESTAMP decompiling 4012C0 size=00000022 times=0...
 TIMESTAMP decompiling 402EF0 size=00000009 times=0...
-TIMESTAMP decompiling 4014B0 size=00000053 times=1;usedcpu 00:00:00 ...int()
 TIMESTAMP decompiling 4012F0 size=00000014 times=0...
 TIMESTAMP decompiling 402F00 size=00000009 times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

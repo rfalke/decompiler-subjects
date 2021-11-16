@@ -13,7 +13,6 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int init_proc();
 int sub_8049C2C();
 // int fileno(FILE *stream);
 // int fputs(const char *s, FILE *stream);
@@ -37,7 +36,6 @@ int sub_8049C2C();
 // void *bsearch(const void *key, const void *base, size_t nmemb, size_t size, __compar_fn_t compar);
 // int tgetflag(const char *);
 // int __xstat(int ver, const char *filename, struct stat *stat_buf);
-// int __gmon_start__(void); weak
 // int __lxstat(int ver, const char *filename, struct stat *stat_buf);
 // int __isoc99_sscanf(_DWORD, const char *, ...); weak
 // int vsprintf(char *s, const char *format, __gnuc_va_list arg);
@@ -53,7 +51,6 @@ int sub_8049C2C();
 // int __cdecl GC_realloc(_DWORD, _DWORD); weak
 // int rename(const char *old, const char *new);
 // void *memset(void *s, int c, size_t n);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int execl(const char *path, const char *arg, ...);
 // int _IO_getc(_IO_FILE *fp);
 // double floor(double x);
@@ -172,9 +169,6 @@ int sub_8049C2C();
 // int pclose(FILE *stream);
 // double ceil(double x);
 // __uid_t geteuid(void);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _do_global_dtors_aux();
-int frame_dummy();
 void __cdecl fversion(FILE *f);
 void __cdecl fusage(FILE *f, int err);
 void __cdecl wrap_GC_warn_proc(char *msg, GC_word arg);
@@ -592,7 +586,7 @@ void __cdecl addMChar(char *p, Lineprop mode, size_t len);
 void __cdecl record_err_message(char *s);
 Buffer *message_list_panel(); // idb
 void __cdecl message(char *s, int return_x, int return_y);
-void __cdecl _ZN10bdInetAddrC2Ej(char *s, int redraw_current);
+void __cdecl disp_err_message(char *s, int redraw_current);
 void __cdecl disp_message_nsec(char *s, int redraw_current, int sec, int purge, int mouse);
 void __cdecl disp_message(char *s, int redraw_current);
 void __cdecl disp_message_nomouse(char *s, int redraw_current);
@@ -903,7 +897,7 @@ int __cdecl process_mMouse(int btn, int x, int y);
 int __cdecl mMouse(char c);
 int __cdecl gpm_process_menu_mouse(Gpm_Event_0 *event, void *data);
 void __cdecl popupMenu(int x, int y, Menu *menu);
-void __cdecl find_nvp_node(int x, int y);
+void __cdecl mainMenu(int x, int y);
 void mainMn(); // idb
 void selMn(); // idb
 void initSelectMenu(); // idb
@@ -934,7 +928,7 @@ char *acceptableMimeTypes(); // idb
 mailcap *__cdecl searchExtViewer(char *type);
 Str __cdecl quote_mailcap(char *s, int flag);
 Str __cdecl unquote_mailcap_loop(char *qstr, char *type, char *name, char *attr, int *mc_stat, int flag0);
-Str __cdecl cptifil(char *qstr, char *type, char *name, char *attr, int *mc_stat);
+Str __cdecl unquote_mailcap(char *qstr, char *type, char *name, char *attr, int *mc_stat);
 void initImage(); // idb
 int getCharSize(); // idb
 void termImage(); // idb
@@ -1083,7 +1077,7 @@ longchar *set_longchar(longchar *__return_ptr __struct_ptr retstr, char *str);
 char *__cdecl regexCompile(char *ex, int igncase);
 Regex *__cdecl newRegex0(char **ex, int igncase, Regex *regex, char **msg, int level);
 Regex *__cdecl newRegex(char *ex, int igncase, Regex *regex, char **msg);
-int __cdecl __gmp_vfprintf(char *str, int len, int firstp);
+int __cdecl regexMatch(char *str, int len, int firstp);
 int __cdecl RegexMatch(Regex *re, char *str, int len, int firstp);
 void __cdecl MatchedPosition(Regex *re, char **first, char **last);
 void __cdecl matchedPosition(char **first, char **last);
@@ -1184,8 +1178,8 @@ void __cdecl reseq_anchor(Buffer *buf);
 char *__cdecl reAnchorPos(Buffer *buf, Line *l, char *p1, char *p2, Anchor *(*anchorproc)(Buffer *, char *, char *, int, int));
 void __cdecl reAnchorWord(Buffer *buf, Line *l, int spos, int epos);
 char *__cdecl reAnchorAny(Buffer *buf, char *re, Anchor *(*anchorproc)(Buffer *, char *, char *, int, int));
-char *__cdecl find_nvp_node_0(Buffer *buf, char *re);
-char *__cdecl find_nvp_node_1(Buffer *buf, char *re);
+char *__cdecl reAnchor(Buffer *buf, char *re);
+char *__cdecl reAnchorNews(Buffer *buf, char *re);
 char *__cdecl reAnchorNewsheader(Buffer *buf);
 HmarkerList *__cdecl putHmarker(HmarkerList *ml, int line, int pos, int seq);
 Anchor *__cdecl closest_next_anchor(AnchorList *a, Anchor *an, int x, int y);
@@ -1207,8 +1201,8 @@ Str __cdecl parsedtag2str(parsed_tag *tag);
 void __cdecl do_update(BaseStream base);
 int __cdecl buffer_read(StreamBuffer sb, char *obuf, int count);
 void __cdecl init_buffer(BaseStream base, char *buf, int bufsize);
-void __cdecl jzero_far(BaseStream base, int bufsize);
-void __cdecl savexmlstr(BaseStream base, Str s);
+void __cdecl init_base_stream(BaseStream base, int bufsize);
+void __cdecl init_str_stream(BaseStream base, Str s);
 InputStream __cdecl newInputStream(int des);
 InputStream __cdecl newFileStream(FILE *f, void (*closep)(...));
 InputStream __cdecl newStrStream(Str s);
@@ -1240,7 +1234,7 @@ void __cdecl Strcopy(Str x, Str y);
 void __cdecl Strcopy_charp(Str x, char *y);
 void __cdecl Strcopy_charp_n(Str x, char *y, int n);
 void __cdecl Strcat_charp_n(Str x, char *y, int n);
-void __cdecl savexmlstr_0(Str x, Str y);
+void __cdecl Strcat(Str x, Str y);
 void __cdecl Strcat_charp(Str x, char *y);
 void Strcat_m_charp(Str x, ...);
 void __cdecl Strgrow(Str x);
@@ -1493,13 +1487,9 @@ Str __cdecl wc_conv_from_priv1(Str is, wc_ces ces);
 Str __cdecl wc_char_conv_from_priv1(wc_uchar c, wc_status *st);
 Str __cdecl wc_conv_from_ascii(Str is, wc_ces ces);
 void __cdecl wc_push_to_raw(Str os, wc_wchar_t cc, wc_status *st);
-void _libc_csu_fini(void); // idb
-void _libc_csu_init(void); // idb
 int __cdecl stat_0(char *filename, int); // idb
 int __cdecl fstat(int fildes, int); // idb
 int __cdecl lstat(char *filename, int); // idb
-void (*_do_global_ctors_aux())(void);
-void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -1529,10 +1519,6 @@ const char byte_80CF3D8 = '\0'; // idb
 _UNKNOWN unk_80D019C; // weak
 _UNKNOWN unk_80D08CE; // weak
 _UNKNOWN unk_80D19D7; // weak
-int _CTOR_LIST__ = -1; // weak
-int _DTOR_LIST__[] = { -1 }; // weak
-int _DTOR_END__ = 0; // weak
-int _JCR_LIST__ = 0; // weak
 int (*dword_80D4FFC)(void) = NULL; // weak
 int REV_LB[5] = { 1, 0, 3, 2, 4 }; // idb
 int Tabstop = 8; // idb
@@ -1597,9 +1583,9 @@ int relative_wheel_scroll_ratio = 30; // idb
 int default_use_cookie = 1; // idb
 int show_cookie = 1; // idb
 int clear_buffer = 1; // idb
-double pixel_per_char =  7.0; // idb
-double pixel_per_line =  14.0; // idb
-double image_scale =  100.0; // idb
+double pixel_per_char = 7.0; // idb
+double pixel_per_line = 14.0; // idb
+double image_scale = 100.0; // idb
 char *keymap_file = "keymap"; // idb
 int FollowRedirection = 10; // idb
 AlarmEvent *CurrentAlarm = &DefaultAlarm; // idb
@@ -1740,7 +1726,7 @@ void (*InputKeymap[32])(...) =
   &insertself,
   &insertself
 }; // idb
-double Tiny =  5.562684646268004e-308; // idb
+double Tiny = 5.562684646268004e-308; // idb
 $5B4474C97B2465C9E4B84D4DB8AF7C3E internal_action[7] =
 {
   { "map", &follow_map },
@@ -16087,8 +16073,6 @@ int gpm_arg; // weak
 int gpm_consolefd; // idb
 FILE *stdin; // idb
 FILE *stdout; // idb
-char completed_7065; // weak
-int dtor_idx_7067; // weak
 char SearchHeader[4]; // idb
 char *DefaultType; // idb
 char RenderFrame; // idb
@@ -16210,7 +16194,7 @@ int pos_11062; // idb
 int i_8929; // idb
 int n_8930; // idb
 wrap_GC_warn_proc::$DC0EE1D9CEAA20A895DBDA750A9BF6F1 msg_ring_8928[20]; // idb
-int dword_817C524[39]; // idb
+int dword_817C524[39]; // weak
 int lock_8931; // idb
 auth_param none_auth_param[1]; // idb
 int frame_source; // idb
@@ -16519,22 +16503,7 @@ char *T_md; // idb
 char *T_so; // idb
 char *T_sc; // idb
 char *T_us; // idb
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08049BFC) --------------------------------------------------------
-int init_proc()
-{
-  int v1; // [esp+0h] [ebp-8h]
-
-  if ( &_gmon_start__ )
-    __gmon_start__();
-  frame_dummy();
-  _do_global_ctors_aux();
-  return v1;
-}
-// 8049C28: variable 'v1' is possibly undefined
-// 8049D9C: using guessed type int __gmon_start__(void);
 
 //----- (08049C2C) --------------------------------------------------------
 int sub_8049C2C()
@@ -16542,55 +16511,6 @@ int sub_8049C2C()
   return dword_80D4FFC();
 }
 // 80D4FFC: using guessed type int (*dword_80D4FFC)(void);
-
-//----- (0804A620) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, _libc_csu_init, _libc_csu_fini, a2, &v3);
-  __halt();
-}
-// 804A623: positive sp value 4 has been found
-
-//----- (0804A650) --------------------------------------------------------
-void _do_global_dtors_aux()
-{
-  int v0; // eax
-  unsigned int i; // ebx
-
-  if ( !completed_7065 )
-  {
-    v0 = dtor_idx_7067;
-    for ( i = &_DTOR_END__ - _DTOR_LIST__ - 1; dtor_idx_7067 < i; v0 = dtor_idx_7067 )
-    {
-      dtor_idx_7067 = v0 + 1;
-      ((void (*)(void))_DTOR_LIST__[v0 + 1])();
-    }
-    completed_7065 = 1;
-  }
-}
-// 80D4EEC: using guessed type int _DTOR_LIST__[];
-// 80D4EF0: using guessed type int _DTOR_END__;
-// 817C224: using guessed type char completed_7065;
-// 817C228: using guessed type int dtor_idx_7067;
-
-//----- (0804A6B0) --------------------------------------------------------
-int frame_dummy()
-{
-  int result; // eax
-
-  result = _JCR_LIST__;
-  if ( _JCR_LIST__ )
-    result = 0;
-  return result;
-}
-// 80D4EF4: using guessed type int _JCR_LIST__;
 
 //----- (0804A6D4) --------------------------------------------------------
 void __cdecl fversion(FILE *f)
@@ -16693,6 +16613,7 @@ void __cdecl wrap_GC_warn_proc(char *msg, GC_word arg)
     fprintf(stderr, msg, arg);
   }
 }
+// 817C524: using guessed type int dword_817C524[39];
 
 //----- (0804AEF1) --------------------------------------------------------
 void __cdecl sig_chld(int signo)
@@ -16703,6 +16624,7 @@ void __cdecl sig_chld(int signo)
     ;
   mySignal(17, sig_chld);
 }
+// 804AEF1: using guessed type int p_stat[3];
 
 //----- (0804AF31) --------------------------------------------------------
 Str __cdecl make_optional_header_string(char *s)
@@ -16738,14 +16660,14 @@ Str __cdecl make_optional_header_string(char *s)
 //----- (0804B07E) --------------------------------------------------------
 int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
 {
-  int v3; // eax
+  int length; // eax
   char *v4; // eax
   Str v5; // eax
   Str v6; // eax
   int v7; // eax
   FILE *v8; // eax
   Str v9; // eax
-  int v10; // eax
+  int real_scheme; // eax
   wc_ces v11; // esi
   wc_ces v12; // ebx
   _Str *v13; // eax
@@ -16762,11 +16684,11 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
   _Str *v24; // [esp+4h] [ebp-9Ch]
   double v25; // [esp+28h] [ebp-78h]
   double v26; // [esp+30h] [ebp-70h]
-  Anchor *v27; // [esp+38h] [ebp-68h]
+  Anchor *submit; // [esp+38h] [ebp-68h]
   Str v28; // [esp+3Ch] [ebp-64h]
   FILE *v29; // [esp+40h] [ebp-60h]
   _Str *v30; // [esp+44h] [ebp-5Ch]
-  _Str *v31; // [esp+48h] [ebp-58h]
+  _Str *optional_header_string; // [esp+48h] [ebp-58h]
   Str v32; // [esp+4Ch] [ebp-54h]
   char *v33; // [esp+50h] [ebp-50h]
   Str v34; // [esp+54h] [ebp-4Ch]
@@ -16795,12 +16717,12 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
   char *v57; // [esp+84h] [ebp-1Ch]
   char *v58; // [esp+84h] [ebp-1Ch]
   char *v59; // [esp+84h] [ebp-1Ch]
-  Buffer *v60; // [esp+88h] [ebp-18h]
-  wc_uint8 v61; // [esp+8Dh] [ebp-13h]
+  Buffer *GeneralFile; // [esp+88h] [ebp-18h]
+  wc_uint8 auto_detect; // [esp+8Dh] [ebp-13h]
   char v62; // [esp+8Eh] [ebp-12h]
   char v63; // [esp+8Fh] [ebp-11h]
 
-  v60 = 0;
+  GeneralFile = 0;
   v44 = 0;
   v39 = 0;
   v38 = 0;
@@ -16861,7 +16783,7 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
     DisplayCharset = wc_guess_locale_charset(v33, DisplayCharset);
     SystemCharset = wc_guess_locale_charset(v33, SystemCharset);
   }
-  v61 = WcOption.auto_detect;
+  auto_detect = WcOption.auto_detect;
   BookmarkCharset = DocumentCharset;
   if ( !non_null(HTTP_proxy) )
   {
@@ -17011,9 +16933,9 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
           {
             if ( v32->length + 1 >= v32->area_size )
               Strgrow(v32);
-            v3 = v32->length;
-            v32->ptr[v3] = 47;
-            v32->length = v3 + 1;
+            length = v32->length;
+            v32->ptr[length] = 47;
+            v32->length = length + 1;
             v32->ptr[v32->length] = 0;
           }
           Strcat_charp(v32, BookmarkFile);
@@ -17124,13 +17046,13 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
       {
         if ( ++j >= argc )
           fusage(stderr, 1);
-        v31 = make_optional_header_string((char *)argv[j]);
-        if ( v31 )
+        optional_header_string = make_optional_header_string((char *)argv[j]);
+        if ( optional_header_string )
         {
           if ( header_string )
-            savexmlstr_0(header_string, v31);
+            Strcat(header_string, optional_header_string);
           else
-            header_string = v31;
+            header_string = optional_header_string;
         }
         while ( *argv[j] )
           *argv[j]++ = 0;
@@ -17255,8 +17177,8 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
     {
       if ( v39 )
       {
-        v60 = loadGeneralFile(BookmarkFile, 0, (char *)0xFFFFFFFF, 0, 0);
-        if ( !v60 )
+        GeneralFile = loadGeneralFile(BookmarkFile, 0, (char *)0xFFFFFFFF, 0, 0);
+        if ( !GeneralFile )
           Strcat_charp(v34, "w3m: Can't load bookmark.\n");
       }
       else if ( v38 )
@@ -17274,11 +17196,11 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
           "<p>Debian package is maintained by <a href='mailto:ukai@debian.or.jp'>Fumitoshi UKAI</a>.",
           "You can read <a href='file:///usr/share/doc/w3m/'>w3m documents on your local system</a>.",
           0);
-        v60 = loadHTMLString(v30);
-        if ( v60 )
+        GeneralFile = loadHTMLString(v30);
+        if ( GeneralFile )
         {
-          if ( v60 != (Buffer *)1 )
-            v60->bufferprop |= 0x18u;
+          if ( GeneralFile != (Buffer *)1 )
+            GeneralFile->bufferprop |= 0x18u;
         }
         else
         {
@@ -17298,19 +17220,19 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
             fusage(stderr, 1);
           }
         }
-        v60 = loadGeneralFile(v59, 0, (char *)0xFFFFFFFF, 0, 0);
-        if ( v60 )
+        GeneralFile = loadGeneralFile(v59, 0, (char *)0xFFFFFFFF, 0, 0);
+        if ( GeneralFile )
         {
-          if ( v60 != (Buffer *)1 )
+          if ( GeneralFile != (Buffer *)1 )
           {
-            v9 = parsedURL2Str(&v60->currentURL);
+            v9 = parsedURL2Str(&GeneralFile->currentURL);
             pushHashHist(URLHist, v9->ptr);
           }
         }
         else
         {
           v22 = Sprintf("w3m: Can't load %s.\n", v59);
-          savexmlstr_0(v34, v22);
+          Strcat(v34, v22);
         }
       }
     }
@@ -17319,10 +17241,10 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
       v7 = dup(0);
       v8 = fdopen(v7, "rb");
       v45 = newFileStream(v8, (void (*)(...))pclose);
-      v60 = openGeneralPagerBuffer(v45);
+      GeneralFile = openGeneralPagerBuffer(v45);
       dup2(1, 0);
     }
-    if ( !v60 )
+    if ( !GeneralFile )
     {
       if ( fmInitialized )
         fmTerm();
@@ -17382,13 +17304,13 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
       }
       if ( !FirstTab || !CurrentTab->firstBuffer || CurrentTab->firstBuffer == (Buffer *)1 )
       {
-        if ( v60 == (Buffer *)1 && fmInitialized )
+        if ( GeneralFile == (Buffer *)1 && fmInitialized )
           inputLineHistSearch("Hit any key to quit w3m:", (char *)&def_str, 512, 0, 0);
         if ( fmInitialized )
           fmTerm();
         if ( v34->length )
           fputs(v34->ptr, stderr);
-        if ( v60 == (Buffer *)1 )
+        if ( GeneralFile == (Buffer *)1 )
         {
           save_cookies();
           if ( !v34->length )
@@ -17401,7 +17323,7 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
       SearchHeader[0] = 0;
       DefaultType = 0;
       UseContentCharset = 1;
-      WcOption.auto_detect = v61;
+      WcOption.auto_detect = auto_detect;
       CurrentTab->currentBuffer = CurrentTab->firstBuffer;
       displayBuffer(CurrentTab->currentBuffer, 1);
       if ( v44 )
@@ -17420,10 +17342,10 @@ LABEL_344:
             }
             if ( !CurrentTab->currentBuffer->submit )
               break;
-            v27 = CurrentTab->currentBuffer->submit;
+            submit = CurrentTab->currentBuffer->submit;
             CurrentTab->currentBuffer->submit = 0;
-            gotoLine(CurrentTab->currentBuffer, v27->start.line);
-            CurrentTab->currentBuffer->pos = v27->start.pos;
+            gotoLine(CurrentTab->currentBuffer, submit->start.line);
+            CurrentTab->currentBuffer->pos = submit->start.pos;
             followForm(1);
           }
           if ( !CurrentEvent )
@@ -17520,7 +17442,7 @@ LABEL_344:
     {
       v41 = (FormList *)GC_malloc(52);
       v41->method = 3;
-      v60 = loadGeneralFile(*(char **)(v43 + 4 * v48), 0, (char *)0xFFFFFFFF, 0, v41);
+      GeneralFile = loadGeneralFile(*(char **)(v43 + 4 * v48), 0, (char *)0xFFFFFFFF, 0, v41);
     }
     else
     {
@@ -17537,7 +17459,7 @@ LABEL_344:
         if ( !v29 )
         {
           v23 = Sprintf("w3m: Can't open %s.\n", v35);
-          savexmlstr_0(v34, v23);
+          Strcat(v34, v23);
           goto LABEL_306;
         }
         v28 = Strfgetall(v29);
@@ -17548,20 +17470,20 @@ LABEL_344:
         v42->boundary = 0;
         v42->length = v28->length;
       }
-      v60 = loadGeneralFile(*(char **)(v43 + 4 * v48), 0, (char *)0xFFFFFFFF, 0, v42);
+      GeneralFile = loadGeneralFile(*(char **)(v43 + 4 * v48), 0, (char *)0xFFFFFFFF, 0, v42);
     }
-    if ( !v60 )
+    if ( !GeneralFile )
     {
       v24 = Sprintf("w3m: Can't load %s.\n", *(const char **)(v43 + 4 * v48));
-      savexmlstr_0(v34, v24);
+      Strcat(v34, v24);
       goto LABEL_306;
     }
-    if ( v60 != (Buffer *)1 )
+    if ( GeneralFile != (Buffer *)1 )
     {
-      v10 = v60->real_scheme;
-      if ( v10 < 4 )
+      real_scheme = GeneralFile->real_scheme;
+      if ( real_scheme < 4 )
         goto LABEL_285;
-      if ( v10 <= 5 )
+      if ( real_scheme <= 5 )
       {
         v11 = InnerCharset;
         v12 = SystemCharset;
@@ -17570,30 +17492,33 @@ LABEL_344:
         unshiftHist(LoadHist, v14->ptr);
         goto LABEL_285;
       }
-      if ( v10 != 12 )
+      if ( real_scheme != 12 )
       {
 LABEL_285:
-        v15 = parsedURL2Str(&v60->currentURL);
+        v15 = parsedURL2Str(&GeneralFile->currentURL);
         pushHashHist(URLHist, v15->ptr);
       }
 LABEL_287:
-      if ( v60->pagerSource
-        || v60->real_scheme == 4 && v60->header_source && v60->currentURL.file && strcmp(v60->currentURL.file, "-") )
+      if ( GeneralFile->pagerSource
+        || GeneralFile->real_scheme == 4
+        && GeneralFile->header_source
+        && GeneralFile->currentURL.file
+        && strcmp(GeneralFile->currentURL.file, "-") )
       {
-        v60->search_header = v62;
+        GeneralFile->search_header = v62;
       }
       if ( CurrentTab )
       {
         if ( v37 )
         {
           newT();
-          CurrentTab->currentBuffer->nextBuffer = v60;
+          CurrentTab->currentBuffer->nextBuffer = GeneralFile;
           delBuffer(CurrentTab->currentBuffer);
         }
         else
         {
-          CurrentTab->currentBuffer->nextBuffer = v60;
-          CurrentTab->currentBuffer = v60;
+          CurrentTab->currentBuffer->nextBuffer = GeneralFile;
+          CurrentTab->currentBuffer = GeneralFile;
         }
       }
       else
@@ -17604,7 +17529,7 @@ LABEL_287:
         nTab = 1;
         v16 = CurrentTab;
         v17 = CurrentTab;
-        CurrentTab->currentBuffer = v60;
+        CurrentTab->currentBuffer = GeneralFile;
         v16->firstBuffer = v17->currentBuffer;
       }
       if ( (!w3m_dump || w3m_dump == 1) && CurrentTab->currentBuffer->frameset && RenderFrame )
@@ -17612,12 +17537,12 @@ LABEL_287:
       if ( w3m_dump )
         do_dump(CurrentTab->currentBuffer);
       else
-        CurrentTab->currentBuffer = v60;
+        CurrentTab->currentBuffer = GeneralFile;
     }
 LABEL_306:
     ++v48;
   }
-  if ( v60 == (Buffer *)1 )
+  if ( GeneralFile == (Buffer *)1 )
     goto LABEL_306;
   goto LABEL_287;
 }
@@ -17674,7 +17599,7 @@ void __cdecl dump_source(Buffer *buf)
 //----- (0804D913) --------------------------------------------------------
 void __cdecl dump_head(Buffer *buf)
 {
-  wc_ces v1; // esi
+  wc_ces document_charset; // esi
   wc_ces v2; // ebx
   _Str *v3; // eax
   Str v4; // eax
@@ -17684,10 +17609,10 @@ void __cdecl dump_head(Buffer *buf)
   {
     for ( ti = buf->document_header->first; ti; ti = ti->next )
     {
-      v1 = buf->document_charset;
+      document_charset = buf->document_charset;
       v2 = InnerCharset;
       v3 = Strnew_charp(ti->ptr);
-      v4 = wc_Str_conv_strict(v3, v2, v1);
+      v4 = wc_Str_conv_strict(v3, v2, document_charset);
       printf("%s", v4->ptr);
     }
     puts(&def_str);
@@ -18082,14 +18007,18 @@ void ldown1()
 //----- (0804E398) --------------------------------------------------------
 void ctrCsrV()
 {
-  Buffer *v0; // ebx
+  Buffer *currentBuffer; // ebx
 
   if ( CurrentTab->currentBuffer->firstLine )
   {
     if ( (__int16)(CurrentTab->currentBuffer->LINES / 2) != CurrentTab->currentBuffer->cursorY )
     {
-      v0 = CurrentTab->currentBuffer;
-      v0->topLine = lineSkip(v0, v0->topLine, v0->cursorY - v0->LINES / 2, 0);
+      currentBuffer = CurrentTab->currentBuffer;
+      currentBuffer->topLine = lineSkip(
+                                 currentBuffer,
+                                 currentBuffer->topLine,
+                                 currentBuffer->cursorY - currentBuffer->LINES / 2,
+                                 0);
       arrangeLine(CurrentTab->currentBuffer);
       displayBuffer(CurrentTab->currentBuffer, 0);
     }
@@ -18129,7 +18058,7 @@ void __cdecl clear_mark(Line *l)
   if ( l )
   {
     for ( pos = 0; l->size > pos; ++pos )
-      l->propBuf[pos] &= 0xFFFE;
+      l->propBuf[pos] &= ~1;
   }
 }
 
@@ -18783,7 +18712,7 @@ void ldfile()
 void ldhelp()
 {
   _Str *v0; // eax
-  char *v1; // ebx
+  char *ptr; // ebx
   _Str *v2; // eax
   Str v3; // eax
   Str tmp; // [esp+14h] [ebp-14h]
@@ -18793,10 +18722,10 @@ void ldhelp()
   lang = AcceptLang;
   n = strcspn(AcceptLang, ";, \t");
   v0 = Strnew_charp_n(lang, n);
-  v1 = Str_form_quote(v0)->ptr;
+  ptr = Str_form_quote(v0)->ptr;
   v2 = Strnew_charp(w3m_version);
   v3 = Str_form_quote(v2);
-  tmp = Sprintf("file:///$LIB/w3mhelp.cgi?version=%s&lang=%s", v3->ptr, v1);
+  tmp = Sprintf("file:///$LIB/w3mhelp.cgi?version=%s&lang=%s", v3->ptr, ptr);
   cmd_loadURL(tmp->ptr, 0, (char *)0xFFFFFFFF, 0);
 }
 
@@ -18832,7 +18761,7 @@ void __cdecl cmd_loadfile(char *fn)
     v4 = Strnew_charp(fn);
     v5 = wc_Str_conv(v4, v3, v2);
     v6 = Sprintf("%s not found", v5->ptr);
-    _ZN10bdInetAddrC2Ej(v6->ptr, 0);
+    disp_err_message(v6->ptr, 0);
   }
   displayBuffer(CurrentTab->currentBuffer, 0);
 }
@@ -19190,6 +19119,7 @@ void selBuf()
   }
   displayBuffer(CurrentTab->currentBuffer, 1);
 }
+// 805052A: using guessed type char cmd[9];
 
 //----- (08050668) --------------------------------------------------------
 void susp()
@@ -19206,7 +19136,7 @@ void susp()
 //----- (080506C8) --------------------------------------------------------
 void __cdecl goLine(char *l)
 {
-  Buffer *v1; // edx
+  Buffer *currentBuffer; // edx
   Buffer *v2; // ebx
   int v3; // eax
 
@@ -19219,9 +19149,9 @@ void __cdecl goLine(char *l)
     }
     else if ( *l == 94 )
     {
-      v1 = CurrentTab->currentBuffer;
-      v1->currentLine = v1->firstLine;
-      v1->topLine = v1->currentLine;
+      currentBuffer = CurrentTab->currentBuffer;
+      currentBuffer->currentLine = currentBuffer->firstLine;
+      currentBuffer->topLine = currentBuffer->currentLine;
     }
     else if ( *l == 36 )
     {
@@ -19306,7 +19236,7 @@ void linend()
 //----- (08050A14) --------------------------------------------------------
 int __cdecl cur_real_linenumber(Buffer *buf)
 {
-  int v2; // eax
+  int real_linenumber; // eax
   int n; // [esp+4h] [ebp-Ch]
   Line *cur; // [esp+8h] [ebp-8h]
   Line *l; // [esp+Ch] [ebp-4h]
@@ -19315,10 +19245,10 @@ int __cdecl cur_real_linenumber(Buffer *buf)
   if ( !cur )
     return 1;
   if ( cur->real_linenumber )
-    v2 = cur->real_linenumber;
+    real_linenumber = cur->real_linenumber;
   else
-    v2 = 1;
-  n = v2;
+    real_linenumber = 1;
+  n = real_linenumber;
   for ( l = buf->firstLine; l && l != cur && !l->real_linenumber; l = l->next )
   {
     if ( !l->bpos )
@@ -19347,7 +19277,7 @@ void editBf()
     if ( CurrentTab->currentBuffer->edit )
     {
       v0 = checkHeader(CurrentTab->currentBuffer, "Content-Type:");
-      cmd = cptifil(CurrentTab->currentBuffer->edit, CurrentTab->currentBuffer->real_type, fn, v0, 0);
+      cmd = unquote_mailcap(CurrentTab->currentBuffer->edit, CurrentTab->currentBuffer->real_type, fn, v0, 0);
     }
     else
     {
@@ -19363,7 +19293,7 @@ void editBf()
   }
   else
   {
-    _ZN10bdInetAddrC2Ej("Can't edit other than local file", 1);
+    disp_err_message("Can't edit other than local file", 1);
   }
 }
 
@@ -19395,7 +19325,7 @@ void editScr()
   else
   {
     v0 = Sprintf("Can't open %s", tmpf);
-    _ZN10bdInetAddrC2Ej(v0->ptr, 1);
+    disp_err_message(v0->ptr, 1);
   }
 }
 
@@ -19512,7 +19442,7 @@ void reMark()
         MarkString = 0;
         for ( l = CurrentTab->currentBuffer->firstLine; l; l = l->next )
         {
-          for ( p = l->lineBuf; __gmp_vfprintf(p, &l->lineBuf[l->len] - p, l->lineBuf == p) == 1; p = p2 )
+          for ( p = l->lineBuf; regexMatch(p, &l->lineBuf[l->len] - p, l->lineBuf == p) == 1; p = p2 )
           {
             matchedPosition(&p1, &p2);
             l->propBuf[p1 - l->lineBuf] |= 1;
@@ -19543,7 +19473,7 @@ Buffer *__cdecl loadLink(char *url, char *target, char *referer, FormList *reque
   Str v4; // eax
   Str v5; // eax
   Str v7; // eax
-  Buffer *v8; // ebx
+  Buffer *currentBuffer; // ebx
   frameset *v9; // eax
   Buffer *v10; // ebx
   ParsedURL *v11; // [esp+4h] [ebp-74h]
@@ -19571,7 +19501,7 @@ Buffer *__cdecl loadLink(char *url, char *target, char *referer, FormList *reque
   if ( !buf )
   {
     v5 = Sprintf("Can't load %s", url);
-    _ZN10bdInetAddrC2Ej(v5->ptr, 0);
+    disp_err_message(v5->ptr, 0);
     return 0;
   }
   parseURL2(url, &pu, base);
@@ -19595,9 +19525,9 @@ Buffer *__cdecl loadLink(char *url, char *target, char *referer, FormList *reque
   f_element = search_frame(nfbuf->frameset, target);
   if ( !f_element )
     return loadNormalBuf(buf, 1);
-  v8 = CurrentTab->currentBuffer;
+  currentBuffer = CurrentTab->currentBuffer;
   v9 = copyFrameSet(nfbuf->frameset);
-  pushFrameTree(&nfbuf->frameQ, v9, v8);
+  pushFrameTree(&nfbuf->frameQ, v9, currentBuffer);
   delBuffer(CurrentTab->currentBuffer);
   CurrentTab->currentBuffer = nfbuf;
   resetFrameElement(f_element, buf, referer, request);
@@ -19632,7 +19562,7 @@ void __cdecl gotoLabel(char *label)
 {
   Str v1; // eax
   Str v2; // eax
-  Buffer *v3; // ebx
+  Buffer *currentBuffer; // ebx
   int i; // [esp+14h] [ebp-14h]
   Anchor *al_0; // [esp+18h] [ebp-10h]
   Buffer *buf; // [esp+1Ch] [ebp-Ch]
@@ -19652,8 +19582,12 @@ void __cdecl gotoLabel(char *label)
     gotoLine(CurrentTab->currentBuffer, al_0->start.line);
     if ( label_topline )
     {
-      v3 = CurrentTab->currentBuffer;
-      v3->topLine = lineSkip(v3, v3->topLine, v3->currentLine->linenumber - v3->topLine->linenumber, 0);
+      currentBuffer = CurrentTab->currentBuffer;
+      currentBuffer->topLine = lineSkip(
+                                 currentBuffer,
+                                 currentBuffer->topLine,
+                                 currentBuffer->currentLine->linenumber - currentBuffer->topLine->linenumber,
+                                 0);
     }
     CurrentTab->currentBuffer->pos = al_0->start.pos;
     arrangeCursor(CurrentTab->currentBuffer);
@@ -19670,7 +19604,7 @@ void __cdecl gotoLabel(char *label)
 void followA()
 {
   ParsedURL *v0; // eax
-  char *v1; // ebx
+  char *ptr; // ebx
   Str v2; // eax
   char *v3; // eax
   char *v4; // eax
@@ -19714,9 +19648,9 @@ void followA()
         {
           v0 = baseURL(CurrentTab->currentBuffer);
           parseURL2(a->url, &u, v0);
-          v1 = parsedURL2Str(&CurrentTab->currentBuffer->currentURL)->ptr;
+          ptr = parsedURL2Str(&CurrentTab->currentBuffer->currentURL)->ptr;
           v2 = parsedURL2Str(&u);
-          if ( !strcmp(v2->ptr, v1) && u.label )
+          if ( !strcmp(v2->ptr, ptr) && u.label )
           {
             gotoLabel(u.label);
           }
@@ -19802,7 +19736,7 @@ void followI()
       else
       {
         v2 = Sprintf("Can't load %s", a->url);
-        _ZN10bdInetAddrC2Ej(v2->ptr, 0);
+        disp_err_message(v2->ptr, 0);
       }
       displayBuffer(CurrentTab->currentBuffer, 0);
     }
@@ -19910,13 +19844,13 @@ Str __cdecl conv_form_encoding(Str val, FormItemList *fi, Buffer *buf)
 //----- (08051F46) --------------------------------------------------------
 void __cdecl query_from_followform(Str *query, FormItemList *fi, int multipart)
 {
-  form_list *v3; // ebx
-  Anchor *v4; // eax
+  form_list *parent; // ebx
+  Anchor *CurrentImg; // eax
   _Str *v5; // eax
   Str v6; // eax
   _Str *v7; // eax
   Str v8; // eax
-  char *v9; // esi
+  char *ptr; // esi
   char *v10; // ebx
   Str v11; // eax
   char *v12; // ebx
@@ -19931,7 +19865,7 @@ void __cdecl query_from_followform(Str *query, FormItemList *fi, int multipart)
   _Str *v21; // eax
   _Str *v22; // eax
   Str v23; // eax
-  int v24; // edx
+  int length; // edx
   _Str *v25; // eax
   _Str *v26; // eax
   Str v27; // eax
@@ -19949,8 +19883,13 @@ void __cdecl query_from_followform(Str *query, FormItemList *fi, int multipart)
     if ( !body )
       return;
     fi->parent->body = (*query)->ptr;
-    v3 = fi->parent;
-    v3->boundary = Sprintf("------------------------------%d%ld%ld%ld", CurrentPid, v3, v3->body, v3->boundary)->ptr;
+    parent = fi->parent;
+    parent->boundary = Sprintf(
+                         "------------------------------%d%ld%ld%ld",
+                         CurrentPid,
+                         parent,
+                         parent->body,
+                         parent->boundary)->ptr;
   }
   *query = Strnew();
   for ( f2 = fi->parent->item; f2; f2 = f2->next )
@@ -19979,8 +19918,8 @@ LABEL_14:
             {
               y = 0;
               x_0 = 0;
-              v4 = retrieveCurrentImg(CurrentTab->currentBuffer);
-              getMapXY(CurrentTab->currentBuffer, v4, &y, &x_0);
+              CurrentImg = retrieveCurrentImg(CurrentTab->currentBuffer);
+              getMapXY(CurrentTab->currentBuffer, CurrentImg, &y, &x_0);
               v5 = conv_form_encoding(f2->name, fi, CurrentTab->currentBuffer);
               *query = Strdup(v5);
               Strcat_charp(*query, ".x");
@@ -19997,10 +19936,10 @@ LABEL_14:
               *query = conv_form_encoding(f2->value, fi, CurrentTab->currentBuffer);
               if ( f2->type == 11 )
               {
-                v9 = wc_Str_conv_strict(f2->value, InnerCharset, SystemCharset)->ptr;
+                ptr = wc_Str_conv_strict(f2->value, InnerCharset, SystemCharset)->ptr;
                 v10 = (*query)->ptr;
                 v11 = conv_form_encoding(f2->name, fi, CurrentTab->currentBuffer);
-                form_write_from_file(body, fi->parent->boundary, v11->ptr, v10, v9);
+                form_write_from_file(body, fi->parent->boundary, v11->ptr, v10, ptr);
               }
               else
               {
@@ -20020,14 +19959,14 @@ LABEL_14:
               getMapXY(CurrentTab->currentBuffer, v14, &x_0, &y);
               v15 = conv_form_encoding(f2->name, fi, CurrentTab->currentBuffer);
               v16 = Str_form_quote(v15);
-              savexmlstr_0(*query, v16);
+              Strcat(*query, v16);
               v17 = Sprintf(".x=%d&", x_0);
-              savexmlstr_0(*query, v17);
+              Strcat(*query, v17);
               v18 = conv_form_encoding(f2->name, fi, CurrentTab->currentBuffer);
               v19 = Str_form_quote(v18);
-              savexmlstr_0(*query, v19);
+              Strcat(*query, v19);
               v20 = Sprintf(".y=%d", y);
-              savexmlstr_0(*query, v20);
+              Strcat(*query, v20);
             }
             else
             {
@@ -20035,13 +19974,13 @@ LABEL_14:
               {
                 v21 = conv_form_encoding(f2->name, fi, CurrentTab->currentBuffer);
                 v22 = Str_form_quote(v21);
-                savexmlstr_0(*query, v22);
+                Strcat(*query, v22);
                 if ( (*query)->length + 1 >= (*query)->area_size )
                   Strgrow(*query);
                 v23 = *query;
-                v24 = (*query)->length;
-                (*query)->ptr[v24] = 61;
-                v23->length = v24 + 1;
+                length = (*query)->length;
+                (*query)->ptr[length] = 61;
+                v23->length = length + 1;
                 (*query)->ptr[(*query)->length] = 0;
               }
               if ( f2->value )
@@ -20055,7 +19994,7 @@ LABEL_14:
                   v26 = conv_form_encoding(f2->value, fi, CurrentTab->currentBuffer);
                   v25 = Str_form_quote(v26);
                 }
-                savexmlstr_0(*query, v25);
+                Strcat(*query, v25);
               }
             }
             if ( f2->next )
@@ -20102,7 +20041,7 @@ void __cdecl followForm(int submit)
 {
   char *v1; // eax
   char *v2; // eax
-  char *v3; // eax
+  char *ptr; // eax
   int v4; // eax
   FormItemList *v5; // eax
   stat st; // [esp+2Ch] [ebp-8Ch] BYREF
@@ -20152,10 +20091,10 @@ void __cdecl followForm(int submit)
           if ( fi->readonly )
             goto LABEL_44;
           if ( fi->value )
-            v3 = fi->value->ptr;
+            ptr = fi->value->ptr;
           else
-            v3 = 0;
-          p = inputLineHistSearch("Password:", v3, 64, 0, 0);
+            ptr = 0;
+          p = inputLineHistSearch("Password:", ptr, 64, 0, 0);
           if ( p )
           {
             fi->value = Strnew_charp(p);
@@ -20285,7 +20224,7 @@ do_submit:
             }
             else
             {
-              _ZN10bdInetAddrC2Ej("Can't send form because of illegal method.", 0);
+              disp_err_message("Can't send form because of illegal method.", 0);
             }
           }
           else
@@ -20294,7 +20233,7 @@ do_submit:
             if ( p )
               Strshrink(tmp2, &tmp2->ptr[tmp2->length] - p);
             Strcat_charp(tmp2, "?");
-            savexmlstr_0(tmp2, tmp);
+            Strcat(tmp2, tmp);
             loadLink(tmp2->ptr, a->target, 0, 0);
           }
           break;
@@ -20624,13 +20563,13 @@ LABEL_32:
     }
   }
 }
-// 80538B3: conditional instruction was optimized away because of '%an.4!=0'
+// 80538B3: conditional instruction was optimized away because %an.4!=0
 
 //----- (080539BF) --------------------------------------------------------
 void __cdecl nextX(int d, int dy)
 {
-  int v2; // eax
-  _Line *v3; // eax
+  int pos; // eax
+  _Line *prev; // eax
   int v4; // eax
   int n; // [esp+10h] [ebp-28h]
   int y; // [esp+14h] [ebp-24h]
@@ -20669,10 +20608,10 @@ LABEL_33:
     if ( an )
     {
       if ( d <= 0 )
-        v2 = an->start.pos - 1;
+        pos = an->start.pos - 1;
       else
-        v2 = an->end.pos;
-      x = v2;
+        pos = an->end.pos;
+      x = pos;
     }
     an = 0;
     while ( 1 )
@@ -20686,7 +20625,7 @@ LABEL_33:
       {
         pan = an;
 LABEL_20:
-        if ( !dy || an || (dy <= 0 ? (v3 = l->prev) : (v3 = l->next), (l = v3) == 0) )
+        if ( !dy || an || (dy <= 0 ? (prev = l->prev) : (prev = l->next), (l = prev) == 0) )
         {
           if ( an )
           {
@@ -20698,7 +20637,7 @@ LABEL_20:
         if ( d > 0 )
           v4 = 0;
         else
-          v4 = v3->len - 1;
+          v4 = prev->len - 1;
         x = v4;
         y = l->linenumber;
       }
@@ -20849,26 +20788,23 @@ void prevBf()
 //----- (08053F30) --------------------------------------------------------
 int __cdecl checkBackBuffer(Buffer *buf)
 {
-  int result; // eax
   Buffer *fbuf; // [esp+Ch] [ebp-4h]
 
   fbuf = buf->linkBuffer[1];
   if ( !fbuf )
-    goto LABEL_7;
+    return buf->nextBuffer != 0;
   if ( fbuf->frameQ )
     return 1;
   if ( RenderFrame && buf->nextBuffer == fbuf )
-    result = fbuf->nextBuffer != 0;
+    return fbuf->nextBuffer != 0;
   else
-LABEL_7:
-    result = buf->nextBuffer != 0;
-  return result;
+    return buf->nextBuffer != 0;
 }
 
 //----- (08053F9F) --------------------------------------------------------
 void backBf()
 {
-  Buffer *v0; // ebx
+  Buffer *currentBuffer; // ebx
   AnchorList *formitem; // [esp+14h] [ebp-24h]
   int currentColumn; // [esp+18h] [ebp-20h]
   int pos; // [esp+1Ch] [ebp-1Ch]
@@ -20896,8 +20832,8 @@ void backBf()
         if ( CurrentTab->currentBuffer == buf )
         {
           rFrame();
-          v0 = CurrentTab->currentBuffer;
-          v0->topLine = lineSkip(v0, v0->firstLine, top - 1, 0);
+          currentBuffer = CurrentTab->currentBuffer;
+          currentBuffer->topLine = lineSkip(currentBuffer, currentBuffer->firstLine, top - 1, 0);
           gotoLine(CurrentTab->currentBuffer, linenumber);
           CurrentTab->currentBuffer->pos = pos;
           CurrentTab->currentBuffer->currentColumn = currentColumn;
@@ -20982,7 +20918,7 @@ void __cdecl cmd_loadURL(char *url, ParsedURL *current, char *referer, FormList 
       v9 = Strnew_charp(url);
       v10 = wc_Str_conv(v9, v8, v7);
       v11 = Sprintf("Can't load %s", v10->ptr);
-      _ZN10bdInetAddrC2Ej(v11->ptr, 0);
+      disp_err_message(v11->ptr, 0);
     }
     displayBuffer(CurrentTab->currentBuffer, 0);
   }
@@ -20991,7 +20927,7 @@ void __cdecl cmd_loadURL(char *url, ParsedURL *current, char *referer, FormList 
 //----- (0805439A) --------------------------------------------------------
 void __cdecl goURL0(char *prompt, int relative)
 {
-  wc_ces v2; // esi
+  wc_ces document_charset; // esi
   wc_ces v3; // ebx
   _Str *v4; // eax
   wc_ces v5; // esi
@@ -21056,10 +20992,10 @@ void __cdecl goURL0(char *prompt, int relative)
   {
     if ( (relative || *url == 35) && CurrentTab->currentBuffer->document_charset )
     {
-      v2 = CurrentTab->currentBuffer->document_charset;
+      document_charset = CurrentTab->currentBuffer->document_charset;
       v3 = InnerCharset;
       v4 = Strnew_charp(url);
-      url = wc_Str_conv_strict(v4, v3, v2)->ptr;
+      url = wc_Str_conv_strict(v4, v3, document_charset)->ptr;
     }
     else
     {
@@ -21136,7 +21072,7 @@ void __cdecl cmd_loadBuffer(Buffer *buf, int prop, int linkid)
   }
   else
   {
-    _ZN10bdInetAddrC2Ej("Can't load string", 0);
+    disp_err_message("Can't load string", 0);
   }
   displayBuffer(CurrentTab->currentBuffer, 1);
 }
@@ -21161,7 +21097,7 @@ void adBmark()
   char *v8; // esi
   _Str *v9; // eax
   Str v10; // eax
-  char *v11; // [esp+2Ch] [ebp-2Ch]
+  char *ptr; // [esp+2Ch] [ebp-2Ch]
   form_list *request; // [esp+38h] [ebp-20h]
   Str tmp; // [esp+3Ch] [ebp-1Ch]
 
@@ -21170,14 +21106,14 @@ void adBmark()
   v2 = InnerCharset;
   v3 = Strnew_charp(CurrentTab->currentBuffer->buffername);
   v4 = wc_Str_conv_strict(v3, v2, v1);
-  v11 = Str_form_quote(v4)->ptr;
+  ptr = Str_form_quote(v4)->ptr;
   v5 = parsedURL2Str(&CurrentTab->currentBuffer->currentURL);
   v6 = Str_form_quote(v5)->ptr;
   v7 = Strnew_charp(BookmarkFile);
   v8 = Str_form_quote(v7)->ptr;
   v9 = localCookie();
   v10 = Str_form_quote(v9);
-  tmp = Sprintf("mode=panel&cookie=%s&bmark=%s&url=%s&title=%s&charset=%s", v10->ptr, v8, v6, v11, v0);
+  tmp = Sprintf("mode=panel&cookie=%s&bmark=%s&url=%s&title=%s&charset=%s", v10->ptr, v8, v6, ptr, v0);
   request = newFormList(0, "post", 0, 0, 0, 0, 0);
   request->body = tmp->ptr;
   request->length = tmp->length;
@@ -21187,10 +21123,10 @@ void adBmark()
 //----- (08054950) --------------------------------------------------------
 void ldOpt()
 {
-  Buffer *v0; // eax
+  Buffer *option_panel; // eax
 
-  v0 = load_option_panel();
-  cmd_loadBuffer(v0, 16, -1);
+  option_panel = load_option_panel();
+  cmd_loadBuffer(option_panel, 16, -1);
 }
 
 //----- (08054975) --------------------------------------------------------
@@ -21264,7 +21200,7 @@ void __cdecl follow_map(parsed_tagarg *arg)
 {
   ParsedURL *v1; // eax
   Str v2; // eax
-  char *v3; // ebx
+  char *ptr; // ebx
   ParsedURL *v4; // eax
   char *v5; // ebx
   ParsedURL *v6; // eax
@@ -21300,9 +21236,9 @@ void __cdecl follow_map(parsed_tagarg *arg)
       {
         newT();
         buf = CurrentTab->currentBuffer;
-        v3 = parsedURL2Str(&CurrentTab->currentBuffer->currentURL)->ptr;
+        ptr = parsedURL2Str(&CurrentTab->currentBuffer->currentURL)->ptr;
         v4 = baseURL(CurrentTab->currentBuffer);
-        cmd_loadURL(a->url, v4, v3, 0);
+        cmd_loadURL(a->url, v4, ptr, 0);
         if ( CurrentTab->currentBuffer == buf )
           deleteTab(CurrentTab);
         else
@@ -21324,7 +21260,7 @@ void linkMn()
 {
   ParsedURL *v0; // eax
   Str v1; // eax
-  char *v2; // ebx
+  char *ptr; // ebx
   ParsedURL *v3; // eax
   ParsedURL p_url; // [esp+14h] [ebp-34h] BYREF
   LinkList *l; // [esp+3Ch] [ebp-Ch]
@@ -21342,9 +21278,9 @@ void linkMn()
       parseURL2(l->url, &p_url, v0);
       v1 = parsedURL2Str(&p_url);
       pushHashHist(URLHist, v1->ptr);
-      v2 = parsedURL2Str(&CurrentTab->currentBuffer->currentURL)->ptr;
+      ptr = parsedURL2Str(&CurrentTab->currentBuffer->currentURL)->ptr;
       v3 = baseURL(CurrentTab->currentBuffer);
-      cmd_loadURL(l->url, v3, v2, 0);
+      cmd_loadURL(l->url, v3, ptr, 0);
     }
   }
 }
@@ -21512,7 +21448,7 @@ void svBuf()
       v12 = Strnew_charp(filea);
       v13 = wc_Str_conv(v12, v11, v10);
       v14 = Sprintf("Can't open %s", v13->ptr);
-      _ZN10bdInetAddrC2Ej(v14->ptr, 1);
+      disp_err_message(v14->ptr, 1);
       return;
     }
     saveBuffer(CurrentTab->currentBuffer, f, 1);
@@ -21559,8 +21495,8 @@ void svSrc()
 //----- (08055427) --------------------------------------------------------
 void __cdecl peekURL(int only_img)
 {
-  Anchor *v1; // eax
-  Anchor *v2; // eax
+  Anchor *CurrentAnchor; // eax
+  Anchor *CurrentForm; // eax
   char *v3; // eax
   ParsedURL *v4; // eax
   char *v5; // eax
@@ -21587,18 +21523,18 @@ void __cdecl peekURL(int only_img)
       offset_15242 = 0;
       s_15239 = 0;
       if ( only_img )
-        v1 = 0;
+        CurrentAnchor = 0;
       else
-        v1 = retrieveCurrentAnchor(CurrentTab->currentBuffer);
-      a = v1;
-      if ( !v1 )
+        CurrentAnchor = retrieveCurrentAnchor(CurrentTab->currentBuffer);
+      a = CurrentAnchor;
+      if ( !CurrentAnchor )
       {
         if ( only_img )
-          v2 = 0;
+          CurrentForm = 0;
         else
-          v2 = retrieveCurrentForm(CurrentTab->currentBuffer);
-        a = v2;
-        if ( v2 )
+          CurrentForm = retrieveCurrentForm(CurrentTab->currentBuffer);
+        a = CurrentForm;
+        if ( CurrentForm )
         {
           v3 = form2str((FormItemList *)a->url);
           s_15239 = Strnew_charp(v3);
@@ -21650,13 +21586,10 @@ void peekIMG()
 //----- (080556F0) --------------------------------------------------------
 Str currentURL()
 {
-  Str result; // eax
-
   if ( (CurrentTab->currentBuffer->bufferprop & 8) != 0 )
-    result = Strnew_size(0);
+    return Strnew_size(0);
   else
-    result = parsedURL2Str(&CurrentTab->currentBuffer->currentURL);
-  return result;
+    return parsedURL2Str(&CurrentTab->currentBuffer->currentURL);
 }
 
 //----- (0805572F) --------------------------------------------------------
@@ -21705,7 +21638,7 @@ void curURL()
 //----- (08055906) --------------------------------------------------------
 void vwSrc()
 {
-  wc_ces v0; // eax
+  wc_ces document_charset; // eax
   int v1; // eax
   int v2; // eax
   Str tmpf; // [esp+1Ch] [ebp-1Ch]
@@ -21737,10 +21670,10 @@ void vwSrc()
       old_charset = DisplayCharset;
       old_fix_width_conv = WcOption.fix_width_conv;
       if ( CurrentTab->currentBuffer->document_charset == 256 )
-        v0 = 0;
+        document_charset = 0;
       else
-        v0 = CurrentTab->currentBuffer->document_charset;
-      DisplayCharset = v0;
+        document_charset = CurrentTab->currentBuffer->document_charset;
+      DisplayCharset = document_charset;
       WcOption.fix_width_conv = 0;
       saveBufferBody(CurrentTab->currentBuffer, f, 1);
       DisplayCharset = old_charset;
@@ -21816,7 +21749,7 @@ void reload()
   {
     if ( CurrentTab->currentBuffer->currentURL.scheme == 4 && !strcmp(CurrentTab->currentBuffer->currentURL.file, "-") )
     {
-      _ZN10bdInetAddrC2Ej("Can't reload stdin", 1);
+      disp_err_message("Can't reload stdin", 1);
       return;
     }
     copyBuffer(&sbuf, CurrentTab->currentBuffer);
@@ -21889,7 +21822,7 @@ void reload()
         unlink(request->body);
       if ( !buf )
       {
-        _ZN10bdInetAddrC2Ej("Can't reload...", 1);
+        disp_err_message("Can't reload...", 1);
         return;
       }
       if ( buf == (Buffer *)1 )
@@ -21933,7 +21866,7 @@ LABEL_13:
   if ( !strcmp(CurrentTab->currentBuffer->buffername, "Download List Panel") )
     ldDL();
   else
-    _ZN10bdInetAddrC2Ej("Can't reload...", 1);
+    disp_err_message("Can't reload...", 1);
 }
 
 //----- (080563C2) --------------------------------------------------------
@@ -22032,7 +21965,7 @@ void __cdecl chkURLBuffer(Buffer *buf)
   int i; // [esp+1Ch] [ebp-Ch]
 
   for ( i = 0; url_like_pat_15972[i]; ++i )
-    find_nvp_node_0(buf, url_like_pat_15972[i]);
+    reAnchor(buf, url_like_pat_15972[i]);
   chkExternalURIBuffer(buf);
   buf->check_url |= 1u;
 }
@@ -22063,7 +21996,7 @@ void __cdecl chkNMIDBuffer(Buffer *buf)
   int i; // [esp+1Ch] [ebp-Ch]
 
   for ( i = 0; url_like_pat_16013[i]; ++i )
-    find_nvp_node_1(buf, url_like_pat_16013[i]);
+    reAnchorNews(buf, url_like_pat_16013[i]);
   buf->check_url |= 2u;
 }
 
@@ -22115,7 +22048,6 @@ void rFrame()
 LABEL_2:
       CurrentTab->currentBuffer = buf;
       displayBuffer(CurrentTab->currentBuffer, 0);
-      return;
     }
   }
 }
@@ -22191,12 +22123,12 @@ void extbrz()
 
   if ( (CurrentTab->currentBuffer->bufferprop & 8) != 0 )
   {
-    _ZN10bdInetAddrC2Ej("Can't browse...", 1);
+    disp_err_message("Can't browse...", 1);
   }
   else if ( CurrentTab->currentBuffer->currentURL.scheme == 4
          && !strcmp(CurrentTab->currentBuffer->currentURL.file, "-") )
   {
-    _ZN10bdInetAddrC2Ej("Can't browse stdin", 1);
+    disp_err_message("Can't browse stdin", 1);
   }
   else
   {
@@ -22301,13 +22233,10 @@ void stopI()
 //----- (08056F14) --------------------------------------------------------
 int mouse_scroll_line()
 {
-  int result; // eax
-
   if ( relative_wheel_scroll )
-    result = ((LINES - 1) * relative_wheel_scroll_ratio + 99) / 100;
+    return ((LINES - 1) * relative_wheel_scroll_ratio + 99) / 100;
   else
-    result = fixed_wheel_scroll_count;
-  return result;
+    return fixed_wheel_scroll_count;
 }
 
 //----- (08056F53) --------------------------------------------------------
@@ -22606,7 +22535,7 @@ void mouse()
 //----- (08057A20) --------------------------------------------------------
 int __cdecl gpm_process_mouse(Gpm_Event_0 *event, void *data)
 {
-  int v2; // eax
+  int buttons; // eax
   _WORD *v3; // edx
   _WORD *v4; // eax
   _WORD *v5; // ecx
@@ -22635,8 +22564,8 @@ int __cdecl gpm_process_mouse(Gpm_Event_0 *event, void *data)
       ioctl(gpm_consolefd, 0x541Cu, &byte_817C201);
       return 0;
     }
-    v2 = event->buttons;
-    switch ( v2 )
+    buttons = event->buttons;
+    switch ( buttons )
     {
       case 2:
         btn = 1;
@@ -22791,18 +22720,17 @@ char *__cdecl getCurWord(Buffer *buf, int *spos, int *epos, const char *badchars
 //----- (08057FBD) --------------------------------------------------------
 char *__cdecl GetWord(Buffer *buf)
 {
-  char *result; // eax
   char *p; // [esp+14h] [ebp-14h]
   int e; // [esp+18h] [ebp-10h] BYREF
   int b[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
   p = getCurWord(buf, b, &e, 0);
   if ( p )
-    result = Strnew_charp_n(p, e - b[0])->ptr;
+    return Strnew_charp_n(p, e - b[0])->ptr;
   else
-    result = 0;
-  return result;
+    return 0;
 }
+// 8057FBD: using guessed type int b[3];
 
 //----- (08058013) --------------------------------------------------------
 void __cdecl execdict(char *word)
@@ -22863,17 +22791,17 @@ void dictword()
 //----- (080581C6) --------------------------------------------------------
 void dictwordat()
 {
-  char *v0; // eax
+  char *Word; // eax
 
-  v0 = GetWord(CurrentTab->currentBuffer);
-  execdict(v0);
+  Word = GetWord(CurrentTab->currentBuffer);
+  execdict(Word);
 }
 
 //----- (080581E6) --------------------------------------------------------
 void __cdecl set_buffer_environ(Buffer *buf)
 {
   Str v1; // eax
-  char *v2; // eax
+  char *real_type; // eax
   char *v3; // eax
   char *v4; // eax
   ParsedURL *v5; // eax
@@ -22898,10 +22826,10 @@ void __cdecl set_buffer_environ(Buffer *buf)
       v1 = parsedURL2Str(&buf->currentURL);
       set_environ("W3M_URL", v1->ptr);
       if ( buf->real_type )
-        v2 = buf->real_type;
+        real_type = buf->real_type;
       else
-        v2 = "unknown";
-      set_environ("W3M_TYPE", v2);
+        real_type = "unknown";
+      set_environ("W3M_TYPE", real_type);
       v3 = wc_ces_to_charset(buf->document_charset);
       set_environ("W3M_CHARSET", v3);
     }
@@ -22974,7 +22902,6 @@ void __cdecl set_buffer_environ(Buffer *buf)
 //----- (08058533) --------------------------------------------------------
 char *searchKeyData()
 {
-  char *result; // eax
   const char *data; // [esp+1Ch] [ebp-Ch]
 
   data = 0;
@@ -22993,10 +22920,9 @@ char *searchKeyData()
   CurrentKeyData = 0;
   CurrentCmdData = 0;
   if ( data && *data )
-    result = allocStr(data, -1);
+    return allocStr(data, -1);
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (080585D7) --------------------------------------------------------
@@ -23143,7 +23069,7 @@ void __cdecl SigAlarm(int _dummy)
 //----- (08058998) --------------------------------------------------------
 void setAlarm()
 {
-  char *v0; // eax
+  char *Word; // eax
   char *v1; // eax
   Str v2; // eax
   int cmd; // [esp+24h] [ebp-14h]
@@ -23159,8 +23085,8 @@ void setAlarm()
   {
     if ( *data[0] )
     {
-      v0 = getWord(data);
-      sec = atoi(v0);
+      Word = getWord(data);
+      sec = atoi(Word);
       if ( sec > 0 )
       {
         v1 = getWord(data);
@@ -23246,7 +23172,7 @@ void reinit()
     else
     {
       v0 = Sprintf("Don't know how to reinitialize '%s'", resource);
-      _ZN10bdInetAddrC2Ej(v0->ptr, 0);
+      disp_err_message(v0->ptr, 0);
     }
   }
   else
@@ -23352,7 +23278,7 @@ TabBuffer *__cdecl numTab(int n)
 //----- (08058FC5) --------------------------------------------------------
 void calcTabPos()
 {
-  int v0; // eax
+  int menu_width; // eax
   int iy; // [esp+8h] [ebp-2Ch]
   int ix; // [esp+Ch] [ebp-28h]
   int ny; // [esp+10h] [ebp-24h]
@@ -23364,12 +23290,12 @@ void calcTabPos()
   TabBuffer *tab; // [esp+30h] [ebp-4h]
 
   if ( mouse_action.menu_str )
-    v0 = mouse_action.menu_width;
+    menu_width = mouse_action.menu_width;
   else
-    v0 = 0;
+    menu_width = 0;
   if ( nTab > 0 )
   {
-    n1 = (COLS - v0) / TabCols;
+    n1 = (COLS - menu_width) / TabCols;
     if ( n1 < nTab )
     {
       if ( n1 < 0 )
@@ -23398,7 +23324,7 @@ void calcTabPos()
       else
       {
         nx = n1a;
-        col = COLS - v0;
+        col = COLS - menu_width;
       }
       for ( ix = 0; ix < nx && tab; ++ix )
       {
@@ -23407,8 +23333,8 @@ void calcTabPos()
         tab->y = iy;
         if ( !iy )
         {
-          tab->x1 += v0;
-          tab->x2 += v0;
+          tab->x1 += menu_width;
+          tab->x2 += menu_width;
         }
         tab = tab->nextTab;
       }
@@ -23817,7 +23743,7 @@ Buffer *DownloadListBuffer()
   char *v6; // eax
   _Str *v7; // eax
   DownloadList *v8; // ecx
-  int v9; // eax
+  int length; // eax
   int v11; // eax
   int v13; // eax
   int v14; // esi
@@ -23862,7 +23788,7 @@ Buffer *DownloadListBuffer()
     v5 = html_quote(v4->ptr);
     v6 = html_quote(d->url);
     v7 = Sprintf("%s\n  --&gt; %s\n  ", v6, v5);
-    savexmlstr_0(src, v7);
+    Strcat(src, v7);
     duration = cur_time - d->time;
     if ( stat_0(d->save, (int)&st) )
     {
@@ -23891,9 +23817,9 @@ Buffer *DownloadListBuffer()
       {
         if ( src->length + 1 >= src->area_size )
           Strgrow(src);
-        v9 = src->length;
-        src->ptr[v9] = 35;
-        src->length = v9 + 1;
+        length = src->length;
+        src->ptr[length] = 35;
+        src->length = length + 1;
         src->ptr[src->length] = 0;
       }
       while ( l-- > 0 )
@@ -23916,7 +23842,7 @@ Buffer *DownloadListBuffer()
     {
       v18 = convert_size3(size);
       v19 = Sprintf("  %s bytes loaded", v18);
-      savexmlstr_0(src, v19);
+      Strcat(src, v19);
     }
     else
     {
@@ -23924,19 +23850,19 @@ Buffer *DownloadListBuffer()
       v15 = convert_size3(d->size);
       v16 = convert_size3(size);
       v17 = Sprintf("  %s / %s bytes (%d%%)", v16, v15, v14);
-      savexmlstr_0(src, v17);
+      Strcat(src, v17);
     }
     if ( duration > 0 )
     {
       rate = size / duration;
       v20 = convert_size((int)(size / duration), 1);
       v21 = Sprintf("  %02d:%02d:%02d  rate %s/sec", duration / 3600, duration / 60 % 60, duration % 60, v20);
-      savexmlstr_0(src, v21);
+      Strcat(src, v21);
       if ( !d->ok && size < d->size && rate )
       {
         eta = (d->size - size) / rate;
         v22 = Sprintf("  eta %02d:%02d:%02d", eta / 3600, eta / 60 % 60, eta % 60);
-        savexmlstr_0(src, v22);
+        Strcat(src, v22);
       }
     }
     if ( src->length + 1 >= src->area_size )
@@ -23948,7 +23874,7 @@ Buffer *DownloadListBuffer()
     if ( d->ok )
     {
       v24 = Sprintf("<input type=submit name=ok%d value=OK>", d->pid);
-      savexmlstr_0(src, v24);
+      Strcat(src, v24);
       if ( size >= d->size )
         Strcat_charp(src, " Download completed");
       else
@@ -23957,7 +23883,7 @@ Buffer *DownloadListBuffer()
     else
     {
       v25 = Sprintf("<input type=submit name=stop%d value=STOP>", d->pid);
-      savexmlstr_0(src, v25);
+      Strcat(src, v25);
     }
     Strcat_charp(src, "\n</pre><hr>\n");
   }
@@ -24027,7 +23953,7 @@ void stopDownload()
 //----- (0805A4D7) --------------------------------------------------------
 void ldDL()
 {
-  Buffer *v0; // ebx
+  Buffer *currentBuffer; // ebx
   int reload; // [esp+20h] [ebp-18h]
   int new_tab; // [esp+24h] [ebp-14h]
   int replace; // [esp+28h] [ebp-10h]
@@ -24068,8 +23994,8 @@ void ldDL()
       deletePrevBuf();
     if ( reload )
     {
-      v0 = CurrentTab->currentBuffer;
-      v0->event = setAlarmEvent(v0->event, 1, 2, 112, 0);
+      currentBuffer = CurrentTab->currentBuffer;
+      currentBuffer->event = setAlarmEvent(currentBuffer->event, 1, 2, 112, 0);
     }
   }
   else
@@ -24093,9 +24019,9 @@ void __cdecl save_buffer_position(Buffer *buf)
 {
   int v1; // eax
   int v2; // eax
-  int v3; // eax
+  int linenumber; // eax
   int v4; // eax
-  int v5; // eax
+  int bpos; // eax
   _BufferPos *b; // [esp+1Ch] [ebp-Ch]
   BufferPos *ba; // [esp+1Ch] [ebp-Ch]
 
@@ -24110,10 +24036,10 @@ void __cdecl save_buffer_position(Buffer *buf)
     {
       ba = (BufferPos *)GC_malloc(28);
       if ( buf->topLine )
-        v3 = buf->topLine->linenumber;
+        linenumber = buf->topLine->linenumber;
       else
-        v3 = 1;
-      ba->top_linenumber = v3;
+        linenumber = 1;
+      ba->top_linenumber = linenumber;
       if ( buf->currentLine )
         v4 = buf->currentLine->linenumber;
       else
@@ -24122,10 +24048,10 @@ void __cdecl save_buffer_position(Buffer *buf)
       ba->currentColumn = buf->currentColumn;
       ba->pos = buf->pos;
       if ( buf->currentLine )
-        v5 = buf->currentLine->bpos;
+        bpos = buf->currentLine->bpos;
       else
-        v5 = 0;
-      ba->bpos = v5;
+        bpos = 0;
+      ba->bpos = bpos;
       ba->next = 0;
       ba->prev = buf->undo;
       if ( buf->undo )
@@ -24206,14 +24132,14 @@ void __cdecl __noreturn KeyAbort(int _dummy)
 //----- (0805AA0E) --------------------------------------------------------
 void __cdecl UFhalfclose(URLFile *f)
 {
-  int v1; // eax
+  int scheme; // eax
 
-  v1 = f->scheme;
-  if ( v1 == 7 || v1 == 9 )
+  scheme = f->scheme;
+  if ( scheme == 7 || scheme == 9 )
   {
     closeNews();
   }
-  else if ( v1 == 2 )
+  else if ( scheme == 2 )
   {
     closeFTP();
   }
@@ -24226,13 +24152,10 @@ void __cdecl UFhalfclose(URLFile *f)
 //----- (0805AA60) --------------------------------------------------------
 int __cdecl currentLn(Buffer *buf)
 {
-  int result; // eax
-
   if ( buf->currentLine )
-    result = buf->currentLine->linenumber + 1;
+    return buf->currentLine->linenumber + 1;
   else
-    result = 1;
-  return result;
+    return 1;
 }
 
 //----- (0805AA82) --------------------------------------------------------
@@ -24240,7 +24163,7 @@ Buffer *__cdecl loadSomething(URLFile *f, char *path, Buffer *(*loadproc)(URLFil
 {
   wc_ces v5; // esi
   wc_ces v6; // ebx
-  char *v7; // eax
+  char *FileName; // eax
   _Str *v8; // eax
   Buffer *buf; // [esp+1Ch] [ebp-Ch]
 
@@ -24255,8 +24178,8 @@ Buffer *__cdecl loadSomething(URLFile *f, char *path, Buffer *(*loadproc)(URLFil
     {
       v5 = InnerCharset;
       v6 = SystemCharset;
-      v7 = lastFileName(path);
-      v8 = Strnew_charp(v7);
+      FileName = lastFileName(path);
+      v8 = Strnew_charp(FileName);
       buf->buffername = wc_Str_conv(v8, v6, v5)->ptr;
     }
   }
@@ -24293,7 +24216,7 @@ int __cdecl is_dump_text_type(char *type)
     if ( mcap )
     {
       if ( (mcap->flags & 6) != 0 )
-        result = 1;
+        return 1;
     }
   }
   return result;
@@ -24361,7 +24284,7 @@ char *__cdecl compress_application_type(int compression)
 char *__cdecl uncompressed_file_type(char *path, char **ext)
 {
   compression_decoder *d; // [esp+1Ch] [ebp-1Ch]
-  const char *t0; // [esp+20h] [ebp-18h]
+  char *t0; // [esp+20h] [ebp-18h]
   _Str *fn; // [esp+24h] [ebp-14h]
   signed int slen; // [esp+28h] [ebp-10h]
   int len; // [esp+2Ch] [ebp-Ch]
@@ -24387,8 +24310,8 @@ char *__cdecl uncompressed_file_type(char *path, char **ext)
     *ext = filename_extension(fn->ptr, 0);
   t0 = guessContentType(fn->ptr);
   if ( !t0 )
-    t0 = "text/plain";
-  return (char *)t0;
+    return "text/plain";
+  return t0;
 }
 
 //----- (0805AEF2) --------------------------------------------------------
@@ -24461,7 +24384,7 @@ LABEL_16:
 int __cdecl check_command(char *cmd, int auxbin_p)
 {
   char *v2; // eax
-  int v3; // eax
+  int length; // eax
   stat st; // [esp+18h] [ebp-70h] BYREF
   Str pathname; // [esp+70h] [ebp-18h]
   char *np; // [esp+74h] [ebp-14h]
@@ -24488,9 +24411,9 @@ int __cdecl check_command(char *cmd, int auxbin_p)
     Strcat_charp(pathname, p);
     if ( pathname->length + 1 >= pathname->area_size )
       Strgrow(pathname);
-    v3 = pathname->length;
-    pathname->ptr[v3] = 47;
-    pathname->length = v3 + 1;
+    length = pathname->length;
+    pathname->ptr[length] = 47;
+    pathname->length = length + 1;
     pathname->ptr[pathname->length] = 0;
     Strcat_charp(pathname, cmd);
     if ( !stat_0(pathname->ptr, (int)&st) && (st.st_mode & 0xF000) == 0x8000 && (st.st_mode & 0x49) != 0 )
@@ -24574,7 +24497,7 @@ Buffer *__cdecl loadFile(char *path)
 int __cdecl matchattr(char *p, char *attr, int len, Str *value)
 {
   Str v4; // eax
-  int v5; // edx
+  int length; // edx
   char *q; // [esp+18h] [ebp-10h]
   int quoted; // [esp+1Ch] [ebp-Ch]
   char *pa; // [esp+30h] [ebp+8h]
@@ -24606,9 +24529,9 @@ int __cdecl matchattr(char *p, char *attr, int len, Str *value)
         if ( (*value)->length + 1 >= (*value)->area_size )
           Strgrow(*value);
         v4 = *value;
-        v5 = (*value)->length;
-        (*value)->ptr[v5] = *pb;
-        v4->length = v5 + 1;
+        length = (*value)->length;
+        (*value)->ptr[length] = *pb;
+        v4->length = length + 1;
         (*value)->ptr[(*value)->length] = 0;
       }
       ++pb;
@@ -24662,7 +24585,7 @@ char *__cdecl xface2xpm(char *xface)
 void __cdecl readHeader(URLFile *uf, Buffer *newBuf, int thru, ParsedURL *pu)
 {
   wc_ces v4; // edx
-  wc_ces *v5; // eax
+  wc_ces *p_mime_charset; // eax
   _Str *v6; // eax
   int v7; // eax
   int v8; // eax
@@ -24671,12 +24594,12 @@ void __cdecl readHeader(URLFile *uf, Buffer *newBuf, int thru, ParsedURL *pu)
   char *v11; // eax
   input_stream *v12; // eax
   size_t v13; // eax
-  int v14; // eax
+  int length; // eax
   int v15; // eax
   time_t v16; // ebx
   Str v17; // eax
   char *v18; // eax
-  char *v19; // eax
+  char *ptr; // eax
   Str v20; // eax
   int v21; // eax
   char *v22; // eax
@@ -24845,9 +24768,9 @@ LABEL_75:
         {
           if ( name->length + 1 >= name->area_size )
             Strgrow(name);
-          v14 = name->length;
-          name->ptr[v14] = *p;
-          name->length = v14 + 1;
+          length = name->length;
+          name->ptr[length] = *p;
+          name->length = length + 1;
           ++p;
           name->ptr[name->length] = 0;
         }
@@ -24954,10 +24877,10 @@ LABEL_75:
             if ( fmInitialized && (err & 0x20) != 0 && accept_bad_cookie == 2 )
             {
               if ( domain && domain->ptr )
-                v19 = domain->ptr;
+                ptr = domain->ptr;
               else
-                v19 = "<localdomain>";
-              msg = Sprintf("Accept bad cookie from %s for %s?", pu->host, v19);
+                ptr = "<localdomain>";
+              msg = Sprintf("Accept bad cookie from %s for %s?", pu->host, ptr);
               if ( msg->length > COLS - 10 )
                 Strshrink(msg, 10 - COLS + msg->length);
               Strcat_charp(msg, " (y/n)");
@@ -25038,7 +24961,7 @@ LABEL_240:
         goto LABEL_75;
       }
       if ( lineBuf2 )
-        savexmlstr_0(lineBuf2, tmp);
+        Strcat(lineBuf2, tmp);
       else
         lineBuf2 = tmp;
       c = ISgetc(uf->stream);
@@ -25051,10 +24974,10 @@ LABEL_240:
         else
           v4 = DocumentCharset;
         if ( mime_charset )
-          v5 = &mime_charset;
+          p_mime_charset = &mime_charset;
         else
-          v5 = &charset;
-        lineBuf2 = convertLine(0, lineBuf2, 0, v5, v4);
+          p_mime_charset = &charset;
+        lineBuf2 = convertLine(0, lineBuf2, 0, p_mime_charset, v4);
         tmp = Strnew_size(lineBuf2->length);
         for ( p = lineBuf2->ptr; *p; p = q )
         {
@@ -25062,7 +24985,7 @@ LABEL_240:
             ;
           v6 = Strnew_charp_n(p, q - p);
           lineBuf2 = checkType(v6, &propBuffer, 0);
-          savexmlstr_0(tmp, lineBuf2);
+          Strcat(tmp, lineBuf2);
           if ( thru )
           {
             if ( FoldLine )
@@ -25125,7 +25048,7 @@ LABEL_240:
   if ( src )
     fclose(src);
 }
-// 805C564: conditional instruction was optimized away because of '%pu.4!=0'
+// 805C564: conditional instruction was optimized away because %pu.4!=0
 
 //----- (0805CB59) --------------------------------------------------------
 char *__cdecl checkHeader(Buffer *buf, char *field)
@@ -25147,7 +25070,7 @@ char *__cdecl checkHeader(Buffer *buf, char *field)
 //----- (0805CBED) --------------------------------------------------------
 char *__cdecl checkContentType(Buffer *buf)
 {
-  int v2; // eax
+  int length; // eax
   Str r; // [esp+18h] [ebp-10h]
   char *p; // [esp+1Ch] [ebp-Ch]
   char *pa; // [esp+1Ch] [ebp-Ch]
@@ -25162,9 +25085,9 @@ char *__cdecl checkContentType(Buffer *buf)
   {
     if ( r->length + 1 >= r->area_size )
       Strgrow(r);
-    v2 = r->length;
-    r->ptr[v2] = *p;
-    r->length = v2 + 1;
+    length = r->length;
+    r->ptr[length] = *p;
+    r->length = length + 1;
     ++p;
     r->ptr[r->length] = 0;
   }
@@ -25247,7 +25170,7 @@ endoftoken:
 //----- (0805CDCE) --------------------------------------------------------
 Str __cdecl extract_auth_val(char **q)
 {
-  int v1; // eax
+  int length; // eax
   int v2; // eax
   int v3; // eax
   int v4; // eax
@@ -25265,9 +25188,9 @@ Str __cdecl extract_auth_val(char **q)
     quoted = 1;
     if ( val->length + 1 >= val->area_size )
       Strgrow(val);
-    v1 = val->length;
-    val->ptr[v1] = *qq;
-    val->length = v1 + 1;
+    length = val->length;
+    val->ptr[length] = *qq;
+    val->length = length + 1;
     ++qq;
     val->ptr[val->length] = 0;
   }
@@ -25339,12 +25262,12 @@ end_token:
   *q = qq;
   return val;
 }
-// 805CF34: conditional instruction was optimized away because of '%quoted.4==1'
+// 805CF34: conditional instruction was optimized away because %quoted.4==1
 
 //----- (0805D007) --------------------------------------------------------
 Str __cdecl qstr_unquote(Str s)
 {
-  int v2; // eax
+  int length; // eax
   Str tmp; // [esp+18h] [ebp-10h]
   char *p; // [esp+1Ch] [ebp-Ch]
   char *pa; // [esp+1Ch] [ebp-Ch]
@@ -25361,9 +25284,9 @@ Str __cdecl qstr_unquote(Str s)
       ++pa;
     if ( tmp->length + 1 >= tmp->area_size )
       Strgrow(tmp);
-    v2 = tmp->length;
-    tmp->ptr[v2] = *pa;
-    tmp->length = v2 + 1;
+    length = tmp->length;
+    tmp->ptr[length] = *pa;
+    tmp->length = length + 1;
     tmp->ptr[tmp->length] = 0;
   }
   if ( tmp->length > 0 && tmp->ptr[tmp->length - 1] == 34 )
@@ -25439,18 +25362,18 @@ Str __cdecl get_auth_param(auth_param *auth, char *name)
 //----- (0805D364) --------------------------------------------------------
 Str __cdecl AuthBasicCred(http_auth *ha, Str uname, Str pw, ParsedURL *pu, HRequest *hr, FormList *request)
 {
-  int v6; // eax
+  int length; // eax
   Str v7; // eax
   Str s; // [esp+1Ch] [ebp-Ch]
 
   s = Strdup(uname);
   if ( s->length + 1 >= s->area_size )
     Strgrow(s);
-  v6 = s->length;
-  s->ptr[v6] = 58;
-  s->length = v6 + 1;
+  length = s->length;
+  s->ptr[length] = 58;
+  s->length = length + 1;
   s->ptr[s->length] = 0;
-  savexmlstr_0(s, pw);
+  Strcat(s, pw);
   v7 = encodeB(s->ptr);
   return Strnew_m_charp("Basic ", v7->ptr, 0);
 }
@@ -25458,7 +25381,6 @@ Str __cdecl AuthBasicCred(http_auth *ha, Str uname, Str pw, ParsedURL *pu, HRequ
 //----- (0805D3FE) --------------------------------------------------------
 http_auth *__cdecl findAuthentication(http_auth *hauth, Buffer *buf, char *auth_field)
 {
-  http_auth *result; // eax
   char *p; // [esp+18h] [ebp-20h] BYREF
   char *p0; // [esp+1Ch] [ebp-1Ch]
   TextListItem *i; // [esp+20h] [ebp-18h]
@@ -25506,16 +25428,23 @@ http_auth *__cdecl findAuthentication(http_auth *hauth, Buffer *buf, char *auth_
     }
   }
   if ( hauth->scheme )
-    result = hauth;
+    return hauth;
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (0805D642) --------------------------------------------------------
-void __cdecl getAuthCookie(http_auth *hauth, char *auth_header, TextList *extra_header, ParsedURL *pu, HRequest *hr, FormList *request, volatile Str *uname, volatile Str *pwd)
+void __cdecl getAuthCookie(
+        http_auth *hauth,
+        char *auth_header,
+        TextList *extra_header,
+        ParsedURL *pu,
+        HRequest *hr,
+        FormList *request,
+        volatile Str *uname,
+        volatile Str *pwd)
 {
-  _Str *v8; // eax
+  _Str *auth_param; // eax
   Str v9; // eax
   wc_ces v10; // esi
   wc_ces v11; // ebx
@@ -25542,8 +25471,8 @@ void __cdecl getAuthCookie(http_auth *hauth, char *auth_header, TextList *extra_
   realm = 0;
   if ( hauth )
   {
-    v8 = get_auth_param(hauth->param, "realm");
-    realm = qstr_unquote(v8)->ptr;
+    auth_param = get_auth_param(hauth->param, "realm");
+    realm = qstr_unquote(auth_param)->ptr;
   }
   if ( realm )
   {
@@ -25654,7 +25583,6 @@ int __cdecl same_url_p(ParsedURL *pu1, ParsedURL *pu2)
 //----- (0805DB36) --------------------------------------------------------
 int __cdecl checkRedirection(ParsedURL *pu)
 {
-  int result; // eax
   Str v2; // eax
   Str v3; // eax
   Str tmp; // [esp+2Ch] [ebp-Ch]
@@ -25670,8 +25598,8 @@ int __cdecl checkRedirection(ParsedURL *pu)
       {
         v3 = parsedURL2Str(pu);
         tmpa = Sprintf("Redirection loop detected (%s)", v3->ptr);
-        _ZN10bdInetAddrC2Ej(tmpa->ptr, 0);
-        result = 0;
+        disp_err_message(tmpa->ptr, 0);
+        return 0;
       }
       else
       {
@@ -25683,15 +25611,15 @@ int __cdecl checkRedirection(ParsedURL *pu)
         }
         copyParsedURL(&puv_10888[nredir_10889 % nredir_size_10890], pu);
         ++nredir_10889;
-        result = 1;
+        return 1;
       }
     }
     else
     {
       v2 = parsedURL2Str(pu);
       tmp = Sprintf("Number of redirections exceeded %d at %s", FollowRedirection, v2->ptr);
-      _ZN10bdInetAddrC2Ej(tmp->ptr, 0);
-      result = 0;
+      disp_err_message(tmp->ptr, 0);
+      return 0;
     }
   }
   else
@@ -25699,16 +25627,19 @@ int __cdecl checkRedirection(ParsedURL *pu)
     nredir_10889 = 0;
     nredir_size_10890 = 0;
     puv_10888 = 0;
-    result = 1;
+    return 1;
   }
-  return result;
 }
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
 
 //----- (0805DD60) --------------------------------------------------------
-Buffer *__cdecl loadGeneralFile(char *path, ParsedURL *volatile current, char *referer, int flag, FormList *volatile request)
+Buffer *__cdecl loadGeneralFile(
+        char *path,
+        ParsedURL *volatile current,
+        char *referer,
+        int flag,
+        FormList *volatile request)
 {
-  Buffer *result; // eax
   Str v6; // eax
   Str v7; // eax
   Str v8; // eax
@@ -25752,7 +25683,7 @@ Buffer *__cdecl loadGeneralFile(char *path, ParsedURL *volatile current, char *r
   char *v46; // eax
   int v47; // eax
   int v48; // eax
-  char *v49; // eax
+  char *real_file; // eax
   Buffer *v50; // ebx
   URLFile v51; // [esp+30h] [ebp-168h] BYREF
   stat st; // [esp+50h] [ebp-148h] BYREF
@@ -25790,7 +25721,7 @@ Buffer *__cdecl loadGeneralFile(char *path, ParsedURL *volatile current, char *r
   Buffer *(*proc)(...); // [esp+170h] [ebp-28h]
   Buffer *b; // [esp+174h] [ebp-24h] BYREF
   URLFile *of_0; // [esp+178h] [ebp-20h]
-  unsigned __int8 status[25]; // [esp+17Fh] [ebp-19h] BYREF
+  char status[25]; // [esp+17Fh] [ebp-19h] BYREF
 
   of_0 = 0;
   b = 0;
@@ -25824,7 +25755,7 @@ Buffer *__cdecl loadGeneralFile(char *path, ParsedURL *volatile current, char *r
       }
       url_option.referer = referer;
       url_option.flag = flag;
-      openURL(&v51, tpath, &pu, current, &url_option, request, extra_header, of_0, &hr, status);
+      openURL(&v51, tpath, &pu, current, &url_option, request, extra_header, of_0, &hr, (unsigned __int8 *)status);
       f = v51;
       of_0 = 0;
       content_charset = 0;
@@ -25871,7 +25802,7 @@ Buffer *__cdecl loadGeneralFile(char *path, ParsedURL *volatile current, char *r
             }
             v6 = parsedURL2Str(&pu);
             v7 = Sprintf("Unknown URI: %s", v6->ptr);
-            _ZN10bdInetAddrC2Ej(v7->ptr, 0);
+            disp_err_message(v7->ptr, 0);
           }
         }
         else if ( f.scheme == 3 )
@@ -25883,7 +25814,7 @@ Buffer *__cdecl loadGeneralFile(char *path, ParsedURL *volatile current, char *r
           return 0;
         goto page_loaded;
       }
-      if ( status[0] == 0xFE )
+      if ( status[0] == -2 )
       {
         if ( TrapSignal )
         {
@@ -26211,11 +26142,8 @@ LABEL_201:
     if ( fmInitialized )
       term_raw();
     if ( prevtrap )
-    {
 LABEL_160:
       mySignal(2, prevtrap);
-      goto page_loaded;
-    }
   }
 page_loaded:
   if ( page )
@@ -26240,11 +26168,11 @@ page_loaded:
         if ( f.scheme == 10 )
           file = Sprintf("%s.html", file)->ptr;
         doFileMove(tmp->ptr, file);
-        result = (Buffer *)1;
+        return (Buffer *)1;
       }
       else
       {
-        result = 0;
+        return 0;
       }
     }
     else
@@ -26259,9 +26187,8 @@ page_loaded:
           b->sourcefile = tmp->ptr;
         b->document_charset = charset;
       }
-      result = b;
+      return b;
     }
-    return result;
   }
   if ( !real_type )
     real_type = t;
@@ -26386,10 +26313,10 @@ LABEL_330:
     }
     frame_source = flag & 4;
     if ( pu.real_file )
-      v49 = pu.real_file;
+      real_file = pu.real_file;
     else
-      v49 = pu.file;
-    b = loadSomething(&f, v49, (Buffer *(*)(URLFile *, Buffer *))proc, t_buf);
+      real_file = pu.file;
+    b = loadSomething(&f, real_file, (Buffer *(*)(URLFile *, Buffer *))proc, t_buf);
     if ( !ISclose(f.stream) )
       f.stream = 0;
     frame_source = 0;
@@ -26513,7 +26440,7 @@ LABEL_330:
         UFhalfclose(&f);
       }
     }
-    result = (Buffer *)1;
+    return (Buffer *)1;
   }
   else
   {
@@ -26536,11 +26463,11 @@ LABEL_330:
       if ( prevtrap )
         mySignal(2, prevtrap);
     }
-    result = b;
+    return b;
   }
-  return result;
 }
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
+// 805DD60: using guessed type unsigned __int8 status[25];
 
 //----- (0805FA4E) --------------------------------------------------------
 char *__cdecl has_hidden_link(readbuffer *obuf, int cmd)
@@ -26718,7 +26645,7 @@ void __cdecl back_to_breakpoint(readbuffer *obuf)
 //----- (0805FF94) --------------------------------------------------------
 void __cdecl append_tags(readbuffer *obuf)
 {
-  int v1; // eax
+  int cmd; // eax
   int v2; // eax
   int set_bp; // [esp+14h] [ebp-14h]
   int len; // [esp+18h] [ebp-10h]
@@ -26728,23 +26655,19 @@ void __cdecl append_tags(readbuffer *obuf)
   set_bp = 0;
   for ( i = 0; obuf->tag_sp > i; ++i )
   {
-    v1 = obuf->tag_stack[i]->cmd;
-    if ( v1 == 65 )
+    cmd = obuf->tag_stack[i]->cmd;
+    if ( cmd == 65 )
       goto LABEL_10;
-    if ( v1 > 65 )
+    if ( cmd > 65 )
     {
-      if ( v1 == 109 || v1 == 136 || v1 == 105 )
-      {
+      if ( cmd == 109 || cmd == 136 || cmd == 105 )
 LABEL_10:
         push_link(obuf->tag_stack[i]->cmd, obuf->line->length, obuf->pos);
-        goto LABEL_11;
-      }
     }
-    else if ( v1 == 1 || v1 == 7 )
+    else if ( cmd == 1 || cmd == 7 )
     {
       goto LABEL_10;
     }
-LABEL_11:
     Strcat_charp(obuf->line, obuf->tag_stack[i]->cmdname);
     v2 = obuf->tag_stack[i]->cmd;
     if ( v2 == 50 )
@@ -26766,11 +26689,11 @@ LABEL_15:
 //----- (080600BA) --------------------------------------------------------
 void __cdecl push_tag(readbuffer *obuf, char *cmdname, int cmd)
 {
-  int v3; // ebx
+  int tag_sp; // ebx
   cmdtable *v4; // ebx
 
-  v3 = obuf->tag_sp;
-  obuf->tag_stack[v3] = (cmdtable *)GC_malloc(8);
+  tag_sp = obuf->tag_sp;
+  obuf->tag_stack[tag_sp] = (cmdtable *)GC_malloc(8);
   v4 = obuf->tag_stack[obuf->tag_sp];
   v4->cmdname = allocStr(cmdname, -1);
   obuf->tag_stack[obuf->tag_sp]->cmd = cmd;
@@ -26782,7 +26705,7 @@ void __cdecl push_tag(readbuffer *obuf, char *cmdname, int cmd)
 //----- (08060163) --------------------------------------------------------
 void __cdecl push_nchars(readbuffer *obuf, int width, char *str, int len, Lineprop mode)
 {
-  int v5; // edx
+  int flag; // edx
 
   append_tags(obuf);
   Strcat_charp_n(obuf->line, str, len);
@@ -26792,9 +26715,9 @@ void __cdecl push_nchars(readbuffer *obuf, int width, char *str, int len, Linepr
     Strcopy_charp_n(obuf->prevchar, str, len);
     obuf->prev_ctype = mode;
   }
-  v5 = obuf->flag;
-  BYTE1(v5) |= 0x80u;
-  obuf->flag = v5;
+  flag = obuf->flag;
+  BYTE1(flag) |= 0x80u;
+  obuf->flag = flag;
 }
 
 //----- (080601F1) --------------------------------------------------------
@@ -26816,35 +26739,35 @@ void __cdecl check_breakpoint(readbuffer *obuf, int pre_mode, char *ch_0)
 //----- (08060259) --------------------------------------------------------
 void __cdecl push_char(readbuffer *obuf, int pre_mode, char ch_0)
 {
-  Str v3; // eax
-  int v4; // edx
-  int v5; // edx
+  Str line; // eax
+  int length; // edx
+  int flag; // edx
   char ch_0a[12]; // [esp+1Ch] [ebp-Ch] BYREF
 
   ch_0a[0] = ch_0;
   check_breakpoint(obuf, pre_mode, ch_0a);
   if ( obuf->line->length + 1 >= obuf->line->area_size )
     Strgrow(obuf->line);
-  v3 = obuf->line;
-  v4 = obuf->line->length;
-  obuf->line->ptr[v4] = ch_0a[0];
-  v3->length = v4 + 1;
+  line = obuf->line;
+  length = obuf->line->length;
+  obuf->line->ptr[length] = ch_0a[0];
+  line->length = length + 1;
   obuf->line->ptr[obuf->line->length] = 0;
   ++obuf->pos;
   Strcopy_charp_n(obuf->prevchar, ch_0a, 1);
   if ( ch_0a[0] != 32 )
     obuf->prev_ctype = 0;
-  v5 = obuf->flag;
-  BYTE1(v5) |= 0x80u;
-  obuf->flag = v5;
+  flag = obuf->flag;
+  BYTE1(flag) |= 0x80u;
+  obuf->flag = flag;
 }
 
 //----- (08060330) --------------------------------------------------------
 void __cdecl push_spaces(readbuffer *obuf, int pre_mode, int width)
 {
-  Str v3; // eax
-  int v4; // edx
-  int v5; // edx
+  Str line; // eax
+  int length; // edx
+  int flag; // edx
   int i; // [esp+1Ch] [ebp-Ch]
 
   if ( width > 0 )
@@ -26854,24 +26777,24 @@ void __cdecl push_spaces(readbuffer *obuf, int pre_mode, int width)
     {
       if ( obuf->line->length + 1 >= obuf->line->area_size )
         Strgrow(obuf->line);
-      v3 = obuf->line;
-      v4 = obuf->line->length;
-      obuf->line->ptr[v4] = 32;
-      v3->length = v4 + 1;
+      line = obuf->line;
+      length = obuf->line->length;
+      obuf->line->ptr[length] = 32;
+      line->length = length + 1;
       obuf->line->ptr[obuf->line->length] = 0;
     }
     obuf->pos += width;
     Strcopy_charp_n(obuf->prevchar, " ", 1);
-    v5 = obuf->flag;
-    BYTE1(v5) |= 0x80u;
-    obuf->flag = v5;
+    flag = obuf->flag;
+    BYTE1(flag) |= 0x80u;
+    obuf->flag = flag;
   }
 }
 
 //----- (08060416) --------------------------------------------------------
 void __cdecl proc_mchar(readbuffer *obuf, int pre_mode, int width, char **str, Lineprop mode)
 {
-  int v5; // edx
+  int flag; // edx
 
   check_breakpoint(obuf, pre_mode, *str);
   obuf->pos += width;
@@ -26883,9 +26806,9 @@ void __cdecl proc_mchar(readbuffer *obuf, int pre_mode, int width, char **str, L
       obuf->prev_ctype = mode;
   }
   *str += WTF_LEN_MAP[(unsigned __int8)**str];
-  v5 = obuf->flag;
-  BYTE1(v5) |= 0x80u;
-  obuf->flag = v5;
+  flag = obuf->flag;
+  BYTE1(flag) |= 0x80u;
+  obuf->flag = flag;
 }
 
 //----- (080604F8) --------------------------------------------------------
@@ -26906,23 +26829,20 @@ void __cdecl push_render_image(Str str, int width, int limit, html_feed_environ 
 //----- (080605DF) --------------------------------------------------------
 int __cdecl sloppy_parse_line(char **str)
 {
-  int result; // eax
-
   if ( **str == 60 )
   {
     while ( **str && **str != 62 )
       ++*str;
     if ( **str == 62 )
       ++*str;
-    result = 1;
+    return 1;
   }
   else
   {
     while ( **str && **str != 60 )
       ++*str;
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (08060664) --------------------------------------------------------
@@ -26978,25 +26898,25 @@ void __cdecl passthrough(readbuffer *obuf, char *str, int back)
 //----- (080607D1) --------------------------------------------------------
 void __cdecl fillline(readbuffer *obuf, int indent)
 {
-  int v2; // edx
+  int flag; // edx
 
   push_spaces(obuf, 1, indent - obuf->pos);
-  v2 = obuf->flag;
-  BYTE1(v2) &= 0x7Fu;
-  obuf->flag = v2;
+  flag = obuf->flag;
+  BYTE1(flag) &= ~0x80u;
+  obuf->flag = flag;
 }
 
 //----- (08060812) --------------------------------------------------------
 void __cdecl flushline(html_feed_environ *h_env, readbuffer *obuf, int indent, int force, int width)
 {
   Str v5; // eax
-  int v6; // edx
+  int length; // edx
   Str v7; // eax
   size_t v8; // ebx
   Str v9; // eax
   Str v10; // eax
   int v11; // edx
-  int v12; // edx
+  int flag; // edx
   char *v13; // eax
   char *v14; // eax
   char *v15; // eax
@@ -27152,9 +27072,9 @@ void __cdecl flushline(html_feed_environ *h_env, readbuffer *obuf, int indent, i
       if ( o.line->length + 1 >= o.line->area_size )
         Strgrow(o.line);
       v5 = o.line;
-      v6 = o.line->length;
-      o.line->ptr[v6] = 32;
-      v5->length = v6 + 1;
+      length = o.line->length;
+      o.line->ptr[length] = 32;
+      v5->length = length + 1;
       o.line->ptr[o.line->length] = 0;
     }
     Strcat_charp(o.line, "</pre_int>");
@@ -27225,7 +27145,7 @@ void __cdecl flushline(html_feed_environ *h_env, readbuffer *obuf, int indent, i
         }
         else
         {
-          savexmlstr_0(tmp2, tmp);
+          Strcat(tmp2, tmp);
         }
         Strclear(tmp);
       }
@@ -27248,7 +27168,7 @@ void __cdecl flushline(html_feed_environ *h_env, readbuffer *obuf, int indent, i
     else
     {
       if ( pass )
-        savexmlstr_0(tmp2, pass);
+        Strcat(tmp2, pass);
       pass = tmp2;
     }
   }
@@ -27283,9 +27203,9 @@ void __cdecl flushline(html_feed_environ *h_env, readbuffer *obuf, int indent, i
     obuf->bottom_margin = 0;
     Strcopy_charp_n(obuf->prevchar, " ", 1);
     obuf->bp.init_flag = 1;
-    v12 = obuf->flag;
-    BYTE1(v12) &= 0x7Fu;
-    obuf->flag = v12;
+    flag = obuf->flag;
+    BYTE1(flag) &= ~0x80u;
+    obuf->flag = flag;
     set_breakpoint(obuf, 0);
     obuf->prev_ctype = 0;
     link_stack_0 = 0;
@@ -27394,7 +27314,6 @@ void __cdecl purgeline(html_feed_environ *h_env)
 //----- (08061803) --------------------------------------------------------
 int __cdecl close_effect0(readbuffer *obuf, int cmd)
 {
-  int result; // eax
   char *p; // [esp+18h] [ebp-10h]
   int i; // [esp+1Ch] [ebp-Ch]
 
@@ -27406,26 +27325,25 @@ int __cdecl close_effect0(readbuffer *obuf, int cmd)
     if ( p )
     {
       passthrough(obuf, p, 1);
-      result = 1;
+      return 1;
     }
     else
     {
-      result = 0;
+      return 0;
     }
   }
   else
   {
     bcopy(&obuf->tag_stack[i + 1], &obuf->tag_stack[i], 4 * (--obuf->tag_sp - i));
-    result = 1;
+    return 1;
   }
-  return result;
 }
 
 //----- (080618EE) --------------------------------------------------------
 void __cdecl close_anchor(html_feed_environ *h_env, readbuffer *obuf)
 {
-  Str v2; // eax
-  int v3; // edx
+  Str line; // eax
+  int length; // edx
   int is_erased; // [esp+14h] [ebp-14h]
   char *p; // [esp+18h] [ebp-10h]
   int i; // [esp+1Ch] [ebp-Ch]
@@ -27460,10 +27378,10 @@ void __cdecl close_anchor(html_feed_environ *h_env, readbuffer *obuf)
     {
       if ( obuf->line->length + 1 >= obuf->line->area_size )
         Strgrow(obuf->line);
-      v2 = obuf->line;
-      v3 = obuf->line->length;
-      obuf->line->ptr[v3] = 32;
-      v2->length = v3 + 1;
+      line = obuf->line;
+      length = obuf->line->length;
+      obuf->line->ptr[length] = 32;
+      line->length = length + 1;
       obuf->line->ptr[obuf->line->length] = 0;
       ++obuf->pos;
     }
@@ -27539,7 +27457,7 @@ void __cdecl feed_title(char *str)
 {
   char *v1; // eax
   Str v2; // eax
-  int v3; // edx
+  int length; // edx
   Str v4; // eax
   int v5; // ecx
   char *v6; // edx
@@ -27558,9 +27476,9 @@ void __cdecl feed_title(char *str)
         if ( cur_title->length + 1 >= cur_title->area_size )
           Strgrow(cur_title);
         v2 = cur_title;
-        v3 = cur_title->length;
-        cur_title->ptr[v3] = 32;
-        v2->length = v3 + 1;
+        length = cur_title->length;
+        cur_title->ptr[length] = 32;
+        v2->length = length + 1;
         cur_title->ptr[cur_title->length] = 0;
         ++str;
       }
@@ -27618,7 +27536,7 @@ Str __cdecl process_img(parsed_tag *tag, int width)
   Str v35; // eax
   char *v36; // eax
   char *v37; // eax
-  int v38; // eax
+  int length; // eax
   int v39; // eax
   int v40; // eax
   int v41; // eax
@@ -27751,13 +27669,13 @@ Str __cdecl process_img(parsed_tag *tag, int width)
     v4 = parse_tag(&s, 1);
     tmp2 = process_form(v4);
     if ( tmp2 )
-      savexmlstr_0(tmp, tmp2);
+      Strcat(tmp, tmp2);
     if ( form_sp < 0 )
       v5 = -1;
     else
       v5 = form_stack[form_sp];
     v6 = Sprintf("<input_alt fid=\"%d\" type=hidden name=link value=\"", v5);
-    savexmlstr_0(tmp, v6);
+    Strcat(tmp, v6);
     if ( r2 )
       v7 = r2 + 1;
     else
@@ -27770,7 +27688,7 @@ Str __cdecl process_img(parsed_tag *tag, int width)
       v9 = form_stack[form_sp];
     v10 = cur_hseq++;
     v11 = Sprintf("\"><input_alt hseq=\"%d\" fid=\"%d\" type=submit no_effect=true>", v10, v9);
-    savexmlstr_0(tmp, v11);
+    Strcat(tmp, v11);
   }
   if ( use_image )
   {
@@ -27815,7 +27733,7 @@ Str __cdecl process_img(parsed_tag *tag, int width)
     ni = v18;
     v19 = cur_iseq++;
     v20 = Sprintf("<pre_int><img_alt hseq=\"%d\" src=\"", v19);
-    savexmlstr_0(tmp, v20);
+    Strcat(tmp, v20);
     pre_int = 1;
   }
   else
@@ -27849,12 +27767,12 @@ Str __cdecl process_img(parsed_tag *tag, int width)
     if ( w0 >= 0 )
     {
       v24 = Sprintf(" width=%d", w0);
-      savexmlstr_0(tmp, v24);
+      Strcat(tmp, v24);
     }
     if ( i0 >= 0 )
     {
       v25 = Sprintf(" height=%d", i0);
-      savexmlstr_0(tmp, v25);
+      Strcat(tmp, v25);
     }
     switch ( align )
     {
@@ -27896,22 +27814,22 @@ Str __cdecl process_img(parsed_tag *tag, int width)
     if ( xoffset )
     {
       v27 = Sprintf(" xoffset=%d", xoffset);
-      savexmlstr_0(tmp, v27);
+      Strcat(tmp, v27);
     }
     if ( yoffset )
     {
       v28 = Sprintf(" yoffset=%d", yoffset);
-      savexmlstr_0(tmp, v28);
+      Strcat(tmp, v28);
     }
     if ( top )
     {
       v29 = Sprintf(" top_margin=%d", top);
-      savexmlstr_0(tmp, v29);
+      Strcat(tmp, v29);
     }
     if ( bottom )
     {
       v30 = Sprintf(" bottom_margin=%d", bottom);
-      savexmlstr_0(tmp, v30);
+      Strcat(tmp, v30);
     }
     if ( r )
     {
@@ -27980,9 +27898,9 @@ Str __cdecl process_img(parsed_tag *tag, int width)
       ++q;
     if ( tmp->length + 1 >= tmp->area_size )
       Strgrow(tmp);
-    v38 = tmp->length;
-    tmp->ptr[v38] = 91;
-    tmp->length = v38 + 1;
+    length = tmp->length;
+    tmp->ptr[length] = 91;
+    tmp->length = length + 1;
     tmp->ptr[tmp->length] = 0;
     n = 1;
     p = q;
@@ -28013,7 +27931,7 @@ Str __cdecl process_img(parsed_tag *tag, int width)
     r_0 = q;
     for ( n = 0; r_0; n += v34 )
     {
-      v33 = WcOption.use_wide ? WTF_WIDTH_MAP[(unsigned __int8)*r_0] : WTF_WIDTH_MAP[(unsigned __int8)*r_0] != 0;
+      v33 = WcOption.use_wide ? WTF_WIDTH_MAP[(unsigned __int8)*r_0] : (unsigned __int8)(WTF_WIDTH_MAP[(unsigned __int8)*r_0] != 0);
       if ( n + v33 > nw )
         break;
       r_0 += WTF_LEN_MAP[(unsigned __int8)*r_0];
@@ -28066,26 +27984,24 @@ img_end:
 Str __cdecl process_anchor(parsed_tag *tag, char *tagbuf)
 {
   int v2; // edx
-  Str result; // eax
-  char *v4; // [esp+8h] [ebp-20h]
+  char *ptr; // [esp+8h] [ebp-20h]
   _Str *tmp; // [esp+1Ch] [ebp-Ch]
 
   v2 = cur_hseq;
   if ( tag->need_reconstruct )
   {
     ++cur_hseq;
-    v4 = Sprintf("%d", v2)->ptr;
-    parsedtag_set_value(tag, 69, v4);
-    result = parsedtag2str(tag);
+    ptr = Sprintf("%d", v2)->ptr;
+    parsedtag_set_value(tag, 69, ptr);
+    return parsedtag2str(tag);
   }
   else
   {
     ++cur_hseq;
     tmp = Sprintf("<a hseq=\"%d\"", v2);
     Strcat_charp(tmp, tagbuf + 2);
-    result = tmp;
+    return tmp;
   }
-  return result;
 }
 
 //----- (080632F6) --------------------------------------------------------
@@ -28096,7 +28012,7 @@ Str __cdecl process_input(parsed_tag *tag)
   int v3; // eax
   int v4; // eax
   int v6; // eax
-  int v7; // eax
+  int length; // eax
   int v8; // edi
   char *v9; // ecx
   int v10; // edx
@@ -28203,9 +28119,9 @@ Str __cdecl process_input(parsed_tag *tag)
   {
     if ( tmp->length + 1 >= tmp->area_size )
       Strgrow(tmp);
-    v7 = tmp->length;
-    tmp->ptr[v7] = 40;
-    tmp->length = v7 + 1;
+    length = tmp->length;
+    tmp->ptr[length] = 40;
+    tmp->length = length + 1;
     tmp->ptr[tmp->length] = 0;
     goto LABEL_43;
   }
@@ -28220,7 +28136,6 @@ LABEL_37:
       tmp->ptr[v6] = 91;
       tmp->length = v6 + 1;
       tmp->ptr[tmp->length] = 0;
-      goto LABEL_43;
     }
   }
   else if ( v >= 0 )
@@ -28245,7 +28160,7 @@ LABEL_43:
           v8,
           v32,
           qq);
-  savexmlstr_0(tmp, v12);
+  Strcat(tmp, v12);
   if ( x )
     Strcat_charp(tmp, " checked");
   if ( y )
@@ -28285,7 +28200,7 @@ LABEL_71:
           v23 = w;
           v24 = Strnew_charp(q);
           v25 = textfieldrep(v24, v23);
-          savexmlstr_0(tmp, v25);
+          Strcat(tmp, v25);
         }
         else
         {
@@ -28394,7 +28309,6 @@ LABEL_113:
         tmp->ptr[v30] = 93;
         tmp->length = v30 + 1;
         tmp->ptr[tmp->length] = 0;
-        goto LABEL_119;
       }
     }
     else if ( v >= 0 )
@@ -28415,27 +28329,28 @@ LABEL_70:
   }
   v15 = html_quote(s);
   v16 = Sprintf("<img src=\"%s\"", v15);
-  savexmlstr_0(tmp, v16);
+  Strcat(tmp, v16);
   if ( p2 )
   {
     v17 = html_quote(p2);
     v18 = Sprintf(" alt=\"%s\"", v17);
-    savexmlstr_0(tmp, v18);
+    Strcat(tmp, v18);
   }
   if ( parsedtag_get_value(tag, 38, &iw) )
   {
     v19 = Sprintf(" width=\"%d\"", iw);
-    savexmlstr_0(tmp, v19);
+    Strcat(tmp, v19);
   }
   if ( parsedtag_get_value(tag, 17, &ih) )
   {
     v20 = Sprintf(" height=\"%d\"", ih);
-    savexmlstr_0(tmp, v20);
+    Strcat(tmp, v20);
   }
   Strcat_charp(tmp, " pre_int>");
   Strcat_charp(tmp, "</input_alt></pre_int>");
   return tmp;
 }
+// 80632F6: using guessed type int i[7];
 
 //----- (08063D02) --------------------------------------------------------
 Str __cdecl process_select(parsed_tag *tag)
@@ -28517,7 +28432,7 @@ Str process_n_select()
     {
       chooseSelectOption(&sitem, select_option[n_select].first);
       v1 = textfieldrep(sitem.label, cur_option_maxwidth);
-      savexmlstr_0(select_str, v1);
+      Strcat(select_str, v1);
     }
     Strcat_charp(select_str, "</input_alt>]</pre_int>");
     ++n_select;
@@ -28533,7 +28448,7 @@ void __cdecl feed_select(char *str)
   _BOOL4 v1; // eax
   char *v2; // eax
   Str v3; // eax
-  int v4; // ecx
+  int length; // ecx
   char *v5; // edx
   char *q; // [esp+2Ch] [ebp-1Ch] BYREF
   parsed_tag *tag; // [esp+30h] [ebp-18h]
@@ -28593,10 +28508,10 @@ void __cdecl feed_select(char *str)
                 if ( cur_option->length + 1 >= cur_option->area_size )
                   Strgrow(cur_option);
                 v3 = cur_option;
-                v4 = cur_option->length;
+                length = cur_option->length;
                 v5 = p;
-                cur_option->ptr[v4] = *p;
-                v3->length = v4 + 1;
+                cur_option->ptr[length] = *p;
+                v3->length = length + 1;
                 p = v5 + 1;
                 cur_option->ptr[cur_option->length] = 0;
               }
@@ -28618,7 +28533,7 @@ void process_option()
   int v4; // edi
   _Str *v5; // eax
   Str v6; // eax
-  int v7; // edx
+  int length; // edx
   char *v8; // eax
   int len; // [esp+28h] [ebp-20h]
 
@@ -28651,7 +28566,7 @@ void process_option()
              v2,
              v1,
              v0);
-      savexmlstr_0(select_str, v5);
+      Strcat(select_str, v5);
       if ( cur_option_selected )
         Strcat_charp(select_str, " checked>*</input_alt>");
       else
@@ -28659,9 +28574,9 @@ void process_option()
       if ( select_str->length + 1 >= select_str->area_size )
         Strgrow(select_str);
       v6 = select_str;
-      v7 = select_str->length;
-      select_str->ptr[v7] = 93;
-      v6->length = v7 + 1;
+      length = select_str->length;
+      select_str->ptr[length] = 93;
+      v6->length = length + 1;
       select_str->ptr[select_str->length] = 0;
       v8 = html_quote(cur_option_label->ptr);
       Strcat_charp(select_str, v8);
@@ -28739,7 +28654,7 @@ Str process_n_textarea()
   char *v4; // ecx
   int v5; // eax
   _Str *v6; // eax
-  int v7; // eax
+  int length; // eax
   int v8; // [esp+2Ch] [ebp-2Ch]
   int i; // [esp+38h] [ebp-20h]
   Str tmp; // [esp+3Ch] [ebp-1Ch]
@@ -28765,7 +28680,7 @@ Str process_n_textarea()
          v2,
          v8,
          v1);
-  savexmlstr_0(tmp, v6);
+  Strcat(tmp, v6);
   if ( cur_textarea_readonly )
     Strcat_charp(tmp, " readonly");
   Strcat_charp(tmp, "><u>");
@@ -28773,9 +28688,9 @@ Str process_n_textarea()
   {
     if ( tmp->length + 1 >= tmp->area_size )
       Strgrow(tmp);
-    v7 = tmp->length;
-    tmp->ptr[v7] = 32;
-    tmp->length = v7 + 1;
+    length = tmp->length;
+    tmp->ptr[length] = 32;
+    tmp->length = length + 1;
     tmp->ptr[tmp->length] = 0;
   }
   Strcat_charp(tmp, "</u></input_alt>]</pre_int>\n");
@@ -28790,7 +28705,7 @@ void __cdecl feed_textarea(char *str)
 {
   char *v1; // eax
   Str v2; // eax
-  int v3; // ecx
+  int length; // ecx
   char *v4; // edx
 
   if ( cur_textarea )
@@ -28820,10 +28735,10 @@ void __cdecl feed_textarea(char *str)
         if ( textarea_str[n_textarea]->length + 1 >= textarea_str[n_textarea]->area_size )
           Strgrow(textarea_str[n_textarea]);
         v2 = textarea_str[n_textarea];
-        v3 = v2->length;
+        length = v2->length;
         v4 = str;
-        v2->ptr[v3] = *str;
-        v2->length = v3 + 1;
+        v2->ptr[length] = *str;
+        v2->length = length + 1;
         str = v4 + 1;
         textarea_str[n_textarea]->ptr[textarea_str[n_textarea]->length] = 0;
       }
@@ -28880,13 +28795,10 @@ Str __cdecl process_hr(parsed_tag *tag, int width, int indent_width)
 //----- (08064C43) --------------------------------------------------------
 char *__cdecl check_charset(char *p)
 {
-  char *result; // eax
-
   if ( wc_guess_charset(p, 0) )
-    result = p;
+    return p;
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (08064C6C) --------------------------------------------------------
@@ -28919,7 +28831,6 @@ Str __cdecl process_form_int(parsed_tag *tag, int fid)
   char *v4; // eax
   char *v5; // eax
   char *v6; // eax
-  Str result; // eax
   _Str *v8; // [esp+4h] [ebp-64h]
   _Str *v9; // [esp+4h] [ebp-64h]
   _Str *v10; // [esp+4h] [ebp-64h]
@@ -28986,36 +28897,35 @@ Str __cdecl process_form_int(parsed_tag *tag, int fid)
     {
       v3 = html_quote(s);
       v8 = Sprintf(" enctype=\"%s\"", v3);
-      savexmlstr_0(tmp, v8);
+      Strcat(tmp, v8);
     }
     if ( tg )
     {
       v4 = html_quote(tg);
       v9 = Sprintf(" target=\"%s\"", v4);
-      savexmlstr_0(tmp, v9);
+      Strcat(tmp, v9);
     }
     if ( n )
     {
       v5 = html_quote(n);
       v10 = Sprintf(" name=\"%s\"", v5);
-      savexmlstr_0(tmp, v10);
+      Strcat(tmp, v10);
     }
     if ( r )
     {
       v6 = html_quote(r);
       v11 = Sprintf(" accept-charset=\"%s\"", v6);
-      savexmlstr_0(tmp, v11);
+      Strcat(tmp, v11);
     }
     Strcat_charp(tmp, ">");
-    result = tmp;
+    return tmp;
   }
   else
   {
     v13 = &forms[fid];
     *v13 = newFormList(q, p, r, s, tg, n, 0);
-    result = 0;
+    return 0;
   }
-  return result;
 }
 // 8049E6C: using guessed type int __cdecl GC_realloc(_DWORD, _DWORD);
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
@@ -29038,16 +28948,16 @@ Str process_n_form()
 //----- (08065116) --------------------------------------------------------
 void __cdecl clear_ignore_p_flag(int cmd, readbuffer *obuf)
 {
-  int v2; // edx
+  int flag; // edx
   int i; // [esp+Ch] [ebp-4h]
 
   for ( i = 0; clear_flag_cmd_15359[i]; ++i )
   {
     if ( clear_flag_cmd_15359[i] == cmd )
     {
-      v2 = obuf->flag;
-      BYTE1(v2) &= 0xDFu;
-      obuf->flag = v2;
+      flag = obuf->flag;
+      BYTE1(flag) &= ~0x20u;
+      obuf->flag = flag;
       return;
     }
   }
@@ -29056,7 +28966,7 @@ void __cdecl clear_ignore_p_flag(int cmd, readbuffer *obuf)
 //----- (0806515B) --------------------------------------------------------
 void __cdecl set_alignment(readbuffer *obuf, parsed_tag *tag)
 {
-  int v2; // eax
+  int flag_sp; // eax
   int align; // [esp+18h] [ebp-10h] BYREF
   int flag; // [esp+1Ch] [ebp-Ch]
 
@@ -29078,9 +28988,9 @@ void __cdecl set_alignment(readbuffer *obuf, parsed_tag *tag)
   }
   if ( obuf->flag_sp <= 9 )
   {
-    v2 = obuf->flag_sp;
-    obuf->flag_stack[v2] = obuf->flag & 0x70;
-    obuf->flag_sp = v2 + 1;
+    flag_sp = obuf->flag_sp;
+    obuf->flag_stack[flag_sp] = obuf->flag & 0x70;
+    obuf->flag_sp = flag_sp + 1;
   }
   if ( flag != -1 )
   {
@@ -29126,21 +29036,18 @@ void __cdecl process_idattr(readbuffer *obuf, int cmd, parsed_tag *tag)
 //----- (080652EC) --------------------------------------------------------
 int __cdecl ul_type(parsed_tag *tag, int default_type)
 {
-  int result; // eax
   char *p; // [esp+1Ch] [ebp-Ch] BYREF
 
   if ( !parsedtag_get_value(tag, 33, &p) )
-    goto LABEL_8;
+    return default_type;
   if ( !strcasecmp(p, "disc") )
     return 100;
   if ( !strcasecmp(p, "circle") )
     return 99;
   if ( !strcasecmp(p, "square") )
-    result = 115;
+    return 115;
   else
-LABEL_8:
-    result = default_type;
-  return result;
+    return default_type;
 }
 
 //----- (0806536F) --------------------------------------------------------
@@ -29190,7 +29097,7 @@ int __cdecl HTMLtagproc1(parsed_tag *tag, html_feed_environ *h_env)
   int v4; // edx
   int v5; // edx
   int v6; // edx
-  int v7; // edx
+  int flag; // edx
   int v8; // edx
   int v9; // edx
   int v10; // edx
@@ -29198,7 +29105,7 @@ int __cdecl HTMLtagproc1(parsed_tag *tag, html_feed_environ *h_env)
   int v12; // edx
   int v13; // edx
   int v14; // edx
-  int v15; // eax
+  int envc_real; // eax
   bool v16; // dl
   int v17; // edx
   int v18; // edx
@@ -29207,11 +29114,11 @@ int __cdecl HTMLtagproc1(parsed_tag *tag, html_feed_environ *h_env)
   int v21; // edx
   int v22; // edx
   int v23; // edx
-  int v24; // eax
+  int env; // eax
   environment *v25; // ebx
   int v26; // eax
-  int v27; // eax
-  int v28; // eax
+  int type; // eax
+  int length; // eax
   int v29; // edx
   int v30; // edx
   int v31; // edx
@@ -29253,11 +29160,11 @@ int __cdecl HTMLtagproc1(parsed_tag *tag, html_feed_environ *h_env)
   int v67; // edx
   int v68; // eax
   int v69; // eax
-  int v70; // ebx
+  int table_level; // ebx
   table *v71; // ebx
   int v72; // edx
   int v73; // edx
-  int v74; // eax
+  int flag_sp; // eax
   int v75; // edx
   int v76; // edx
   int v77; // edx
@@ -29354,8 +29261,8 @@ int __cdecl HTMLtagproc1(parsed_tag *tag, html_feed_environ *h_env)
       if ( obuf->flag_sp > 0 )
       {
         obuf->flag &= 0xFFFFFF8F;
-        v7 = obuf->flag;
-        obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v7;
+        flag = obuf->flag;
+        obuf->flag = obuf->flag_stack[--obuf->flag_sp] | flag;
       }
       close_anchor(h_env, obuf);
       v8 = obuf->flag;
@@ -29374,7 +29281,7 @@ int __cdecl HTMLtagproc1(parsed_tag *tag, html_feed_environ *h_env)
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v3;
         }
         v4 = obuf->flag;
-        BYTE1(v4) &= 0xFEu;
+        BYTE1(v4) &= ~1u;
         obuf->flag = v4;
       }
       close_anchor(h_env, obuf);
@@ -29405,7 +29312,7 @@ int __cdecl HTMLtagproc1(parsed_tag *tag, html_feed_environ *h_env)
         obuf->fontstat[0] = 0;
       result = 1;
       if ( obuf->fontstat[0] > 0 && !--obuf->fontstat[0] )
-        result = 0;
+        return 0;
       return result;
     case 9:
     case 12:
@@ -29420,7 +29327,7 @@ int __cdecl HTMLtagproc1(parsed_tag *tag, html_feed_environ *h_env)
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v9;
         }
         v10 = obuf->flag;
-        BYTE1(v10) &= 0xFEu;
+        BYTE1(v10) &= ~1u;
         obuf->flag = v10;
       }
       close_anchor(h_env, obuf);
@@ -29461,7 +29368,7 @@ int __cdecl HTMLtagproc1(parsed_tag *tag, html_feed_environ *h_env)
       if ( (obuf->flag & 0x400) != 0 )
       {
         v12 = obuf->flag;
-        BYTE1(v12) &= 0xFBu;
+        BYTE1(v12) &= ~4u;
         obuf->flag = v12;
         HTMLlineproc0("</b>", h_env, 1);
       }
@@ -29475,16 +29382,16 @@ int __cdecl HTMLtagproc1(parsed_tag *tag, html_feed_environ *h_env)
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v13;
         }
         v14 = obuf->flag;
-        BYTE1(v14) &= 0xFEu;
+        BYTE1(v14) &= ~1u;
         obuf->flag = v14;
       }
       close_anchor(h_env, obuf);
       if ( h_env->envc > 0 )
       {
         flushline(h_env, obuf, envs[h_env->envc - 1].indent, 0, h_env->limit);
-        v15 = h_env->envc_real;
-        v16 = v15 < h_env->nenv;
-        h_env->envc_real = v15 - 1;
+        envc_real = h_env->envc_real;
+        v16 = envc_real < h_env->nenv;
+        h_env->envc_real = envc_real - 1;
         if ( v16 )
           --h_env->envc;
         if ( (obuf->flag & 0xA0F) == 0 && (!h_env->envc || cmd == 18 || cmd == 24) )
@@ -29509,14 +29416,14 @@ LABEL_92:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v21;
         }
         v22 = obuf->flag;
-        BYTE1(v22) &= 0xFEu;
+        BYTE1(v22) &= ~1u;
         obuf->flag = v22;
       }
       close_anchor(h_env, obuf);
       if ( (obuf->flag & 0x400) != 0 )
       {
         v23 = obuf->flag;
-        BYTE1(v23) &= 0xFBu;
+        BYTE1(v23) &= ~4u;
         obuf->flag = v23;
         HTMLlineproc0("</b>", h_env, 1);
       }
@@ -29535,10 +29442,10 @@ LABEL_92:
         else
           envs[h_env->envc].count = count;
       }
-      v24 = envs[h_env->envc].env;
-      if ( v24 != 9 )
+      env = envs[h_env->envc].env;
+      if ( env != 9 )
       {
-        if ( v24 != 12 )
+        if ( env != 12 )
         {
           push_spaces(obuf, 1, IndentIncr);
           goto LABEL_160;
@@ -29546,23 +29453,23 @@ LABEL_92:
         if ( parsedtag_get_value(tag, 33, p) )
           envs[h_env->envc].type = *p[0];
         if ( envs[h_env->envc].count <= 0 )
-          v27 = 49;
+          type = 49;
         else
-          v27 = envs[h_env->envc].type;
-        if ( v27 == 73 )
+          type = envs[h_env->envc].type;
+        if ( type == 73 )
         {
           num = romanNumeral(envs[h_env->envc].count);
           Strupper(num);
         }
-        else if ( v27 > 73 )
+        else if ( type > 73 )
         {
-          if ( v27 == 97 )
+          if ( type == 97 )
           {
             num = romanAlphabet(envs[h_env->envc].count);
           }
           else
           {
-            if ( v27 != 105 )
+            if ( type != 105 )
             {
 LABEL_151:
               num = Sprintf("%d", envs[h_env->envc].count);
@@ -29573,7 +29480,7 @@ LABEL_151:
         }
         else
         {
-          if ( v27 != 65 )
+          if ( type != 65 )
             goto LABEL_151;
           num = romanAlphabet(envs[h_env->envc].count);
           Strupper(num);
@@ -29583,9 +29490,9 @@ LABEL_152:
         {
           if ( num->length + 1 >= num->area_size )
             Strgrow(num);
-          v28 = num->length;
-          num->ptr[v28] = 46;
-          num->length = v28 + 1;
+          length = num->length;
+          num->ptr[length] = 46;
+          num->length = length + 1;
           num->ptr[num->length] = 0;
         }
         else
@@ -29641,7 +29548,7 @@ LABEL_160:
       if ( (obuf->flag & 0x4000) == 0 )
         return 1;
       v38 = obuf->flag;
-      BYTE1(v38) &= 0xBFu;
+      BYTE1(v38) &= ~0x40u;
       obuf->flag = v38;
       obuf->end_tag = 0;
       tmp = process_n_title(tag);
@@ -29665,7 +29572,7 @@ LABEL_160:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v18;
         }
         v19 = obuf->flag;
-        BYTE1(v19) &= 0xFEu;
+        BYTE1(v19) &= ~1u;
         obuf->flag = v19;
       }
       close_anchor(h_env, obuf);
@@ -29701,7 +29608,7 @@ LABEL_160:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v30;
         }
         v31 = obuf->flag;
-        BYTE1(v31) &= 0xFEu;
+        BYTE1(v31) &= ~1u;
         obuf->flag = v31;
       }
       close_anchor(h_env, obuf);
@@ -29740,14 +29647,14 @@ LABEL_160:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v34;
         }
         v35 = obuf->flag;
-        BYTE1(v35) &= 0xFEu;
+        BYTE1(v35) &= ~1u;
         obuf->flag = v35;
       }
       close_anchor(h_env, obuf);
       if ( (obuf->flag & 0x400) != 0 )
       {
         v36 = obuf->flag;
-        BYTE1(v36) &= 0xFBu;
+        BYTE1(v36) &= ~4u;
         obuf->flag = v36;
         HTMLlineproc0("</b>", h_env, 1);
       }
@@ -29769,7 +29676,7 @@ LABEL_160:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v51;
         }
         v52 = obuf->flag;
-        BYTE1(v52) &= 0xFEu;
+        BYTE1(v52) &= ~1u;
         obuf->flag = v52;
       }
       close_anchor(h_env, obuf);
@@ -29795,7 +29702,7 @@ LABEL_160:
         obuf->flag = v53;
         ++h_env->blank_lines;
       }
-      obuf->flag &= 0xFFFFFFFE;
+      obuf->flag &= ~1u;
       close_anchor(h_env, obuf);
       return 1;
     case 25:
@@ -29815,7 +29722,7 @@ LABEL_160:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v63;
         }
         v64 = obuf->flag;
-        BYTE1(v64) &= 0xFEu;
+        BYTE1(v64) &= ~1u;
         obuf->flag = v64;
       }
       close_anchor(h_env, obuf);
@@ -29850,7 +29757,7 @@ LABEL_160:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v65;
         }
         v66 = obuf->flag;
-        BYTE1(v66) &= 0xFEu;
+        BYTE1(v66) &= ~1u;
         obuf->flag = v66;
       }
       close_anchor(h_env, obuf);
@@ -29862,76 +29769,81 @@ LABEL_160:
         BYTE1(v67) |= 0x20u;
         obuf->flag = v67;
       }
-      obuf->flag &= 0xFFFFFFF7;
+      obuf->flag &= ~8u;
       obuf->end_tag = 0;
       return 1;
     case 31:
       close_anchor(h_env, obuf);
-      if ( ++obuf->table_level > 19 )
+      if ( ++obuf->table_level <= 19 )
+      {
+        w = 0;
+        x = 2;
+        y = 1;
+        z = 0;
+        width = 0;
+        if ( tag->map && tag->map[8] != 75 && tag->attrid[tag->map[8]] )
+        {
+          if ( parsedtag_get_value(tag, 8, &w) )
+          {
+            if ( w <= 2 )
+            {
+              if ( w < 0 )
+                w = 1;
+            }
+            else
+            {
+              w = 2;
+            }
+          }
+          else
+          {
+            w = 1;
+          }
+        }
+        if ( parsedtag_get_value(tag, 38, &i) )
+        {
+          if ( obuf->table_level )
+          {
+            if ( i < 0 )
+              v69 = i;
+            else
+              v69 = (int)((long double)i / pixel_per_char);
+            width = v69;
+          }
+          else
+          {
+            if ( i < 0 )
+              v68 = i * (envs[h_env->envc].indent - h_env->limit) / 100;
+            else
+              v68 = (int)((long double)i / pixel_per_char);
+            width = v68;
+          }
+        }
+        if ( tag->map && tag->map[68] != 75 && tag->attrid[tag->map[68]] )
+          w = 3;
+        parsedtag_get_value(tag, 10, &x);
+        parsedtag_get_value(tag, 9, &y);
+        parsedtag_get_value(tag, 37, &z);
+        parsedtag_get_value(tag, 20, &id);
+        table_level = obuf->table_level;
+        tables[table_level] = begin_table(w, x, y, z);
+        if ( id )
+        {
+          v71 = tables[obuf->table_level];
+          v71->id = Strnew_charp(id);
+        }
+        table_mode_0[obuf->table_level].pre_mode = 0;
+        table_mode_0[obuf->table_level].indent_level = 0;
+        table_mode_0[obuf->table_level].nobr_level = 0;
+        table_mode_0[obuf->table_level].caption = 0;
+        table_mode_0[obuf->table_level].end_tag = 0;
+        tables[obuf->table_level]->total_width = width;
+        return 1;
+      }
+      else
+      {
         return 0;
-      w = 0;
-      x = 2;
-      y = 1;
-      z = 0;
-      width = 0;
-      if ( tag->map && tag->map[8] != 75 && tag->attrid[tag->map[8]] )
-      {
-        if ( parsedtag_get_value(tag, 8, &w) )
-        {
-          if ( w <= 2 )
-          {
-            if ( w < 0 )
-              w = 1;
-          }
-          else
-          {
-            w = 2;
-          }
-        }
-        else
-        {
-          w = 1;
-        }
       }
-      if ( parsedtag_get_value(tag, 38, &i) )
-      {
-        if ( obuf->table_level )
-        {
-          if ( i < 0 )
-            v69 = i;
-          else
-            v69 = (int)((long double)i / pixel_per_char);
-          width = v69;
-        }
-        else
-        {
-          if ( i < 0 )
-            v68 = i * (envs[h_env->envc].indent - h_env->limit) / 100;
-          else
-            v68 = (int)((long double)i / pixel_per_char);
-          width = v68;
-        }
-      }
-      if ( tag->map && tag->map[68] != 75 && tag->attrid[tag->map[68]] )
-        w = 3;
-      parsedtag_get_value(tag, 10, &x);
-      parsedtag_get_value(tag, 9, &y);
-      parsedtag_get_value(tag, 37, &z);
-      parsedtag_get_value(tag, 20, &id);
-      v70 = obuf->table_level;
-      tables[v70] = begin_table(w, x, y, z);
-      if ( id )
-      {
-        v71 = tables[obuf->table_level];
-        v71->id = Strnew_charp(id);
-      }
-      table_mode_0[obuf->table_level].pre_mode = 0;
-      table_mode_0[obuf->table_level].indent_level = 0;
-      table_mode_0[obuf->table_level].nobr_level = 0;
-      table_mode_0[obuf->table_level].caption = 0;
-      table_mode_0[obuf->table_level].end_tag = 0;
-      tables[obuf->table_level]->total_width = width;
-      return 1;
     case 32:
       return 1;
     case 33:
@@ -30032,7 +29944,7 @@ LABEL_160:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v72;
         }
         v73 = obuf->flag;
-        BYTE1(v73) &= 0xFEu;
+        BYTE1(v73) &= ~1u;
         obuf->flag = v73;
       }
       close_anchor(h_env, obuf);
@@ -30040,9 +29952,9 @@ LABEL_160:
         flushline(h_env, obuf, envs[h_env->envc].indent, 0, h_env->limit);
       if ( obuf->flag_sp <= 9 )
       {
-        v74 = obuf->flag_sp;
-        obuf->flag_stack[v74] = obuf->flag & 0x70;
-        obuf->flag_sp = v74 + 1;
+        flag_sp = obuf->flag_sp;
+        obuf->flag_stack[flag_sp] = obuf->flag & 0x70;
+        obuf->flag_sp = flag_sp + 1;
       }
       obuf->flag &= 0xFFFFFF8F;
       obuf->flag |= 0x20u;
@@ -30058,7 +29970,7 @@ LABEL_160:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v75;
         }
         v76 = obuf->flag;
-        BYTE1(v76) &= 0xFEu;
+        BYTE1(v76) &= ~1u;
         obuf->flag = v76;
       }
       close_anchor(h_env, obuf);
@@ -30086,7 +29998,7 @@ LABEL_160:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v88;
         }
         v89 = obuf->flag;
-        BYTE1(v89) &= 0xFEu;
+        BYTE1(v89) &= ~1u;
         obuf->flag = v89;
       }
       close_anchor(h_env, obuf);
@@ -30107,7 +30019,7 @@ LABEL_160:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v90;
         }
         v91 = obuf->flag;
-        BYTE1(v91) &= 0xFEu;
+        BYTE1(v91) &= ~1u;
         obuf->flag = v91;
       }
       close_anchor(h_env, obuf);
@@ -30135,7 +30047,7 @@ LABEL_160:
       return 1;
     case 46:
       v96 = obuf->flag;
-      BYTE1(v96) &= 0xF7u;
+      BYTE1(v96) &= ~8u;
       obuf->flag = v96;
       obuf->end_tag = 0;
       tmp = process_n_textarea();
@@ -30154,7 +30066,7 @@ LABEL_160:
       return 1;
     case 48:
       v94 = obuf->flag;
-      BYTE1(v94) &= 0xEFu;
+      BYTE1(v94) &= ~0x10u;
       obuf->flag = v94;
       obuf->end_tag = 0;
       tmp = process_n_select();
@@ -30190,7 +30102,7 @@ LABEL_160:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v78;
         }
         v79 = obuf->flag;
-        BYTE1(v79) &= 0xFEu;
+        BYTE1(v79) &= ~1u;
         obuf->flag = v79;
       }
       close_anchor(h_env, obuf);
@@ -30208,7 +30120,7 @@ LABEL_160:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v80;
         }
         v81 = obuf->flag;
-        BYTE1(v81) &= 0xFEu;
+        BYTE1(v81) &= ~1u;
         obuf->flag = v81;
       }
       close_anchor(h_env, obuf);
@@ -30245,7 +30157,7 @@ LABEL_160:
       obuf->end_tag = 59;
       return 1;
     case 59:
-      obuf->flag &= 0xFFFFFFFD;
+      obuf->flag &= ~2u;
       obuf->end_tag = 0;
       return 1;
     case 60:
@@ -30280,7 +30192,7 @@ LABEL_160:
       else if ( displayInsDel != 2 )
       {
         if ( !displayInsDel )
-          obuf->flag &= 0xFFEFFFFF;
+          obuf->flag &= ~0x100000u;
         return 1;
       }
       if ( !obuf->fontstat[3] )
@@ -30322,14 +30234,14 @@ LABEL_160:
         obuf->fontstat[1] = 0;
       result = 1;
       if ( obuf->fontstat[1] > 0 && !--obuf->fontstat[1] )
-        result = 0;
+        return 0;
       return result;
     case 67:
       obuf->flag |= 4u;
       obuf->end_tag = 68;
       return 1;
     case 68:
-      obuf->flag &= 0xFFFFFFFB;
+      obuf->flag &= ~4u;
       obuf->end_tag = 0;
       return 1;
     case 70:
@@ -30389,7 +30301,7 @@ LABEL_560:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v41;
         }
         v42 = obuf->flag;
-        BYTE1(v42) &= 0xFEu;
+        BYTE1(v42) &= ~1u;
         obuf->flag = v42;
       }
       close_anchor(h_env, obuf);
@@ -30407,12 +30319,12 @@ LABEL_560:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v43;
         }
         v44 = obuf->flag;
-        BYTE1(v44) &= 0xFEu;
+        BYTE1(v44) &= ~1u;
         obuf->flag = v44;
       }
       close_anchor(h_env, obuf);
       flushline(h_env, obuf, envs[h_env->envc].indent, 0, h_env->limit);
-      obuf->flag &= 0xFFFEFFFF;
+      obuf->flag &= ~0x10000u;
       return 1;
     case 100:
       if ( (obuf->flag & 0x300000) == 0 )
@@ -30458,7 +30370,7 @@ LABEL_560:
             push_tag(obuf, "</s>", 106);
           break;
         case 0:
-          obuf->flag &= 0xFFDFFFFF;
+          obuf->flag &= ~0x200000u;
           break;
       }
       return 1;
@@ -30475,7 +30387,7 @@ LABEL_560:
         obuf->fontstat[2] = 0;
       result = 1;
       if ( obuf->fontstat[2] > 0 && !--obuf->fontstat[2] )
-        result = 0;
+        return 0;
       return result;
     case 111:
       HTMLlineproc0("<b>", h_env, 1);
@@ -30495,7 +30407,7 @@ LABEL_560:
     case 129:
       push_tag(obuf, "</pre_int>", 129);
       v55 = obuf->flag;
-      BYTE1(v55) &= 0xFDu;
+      BYTE1(v55) &= ~2u;
       obuf->flag = v55;
       if ( (obuf->flag & 0x28F) == 0 && obuf->pos > obuf->bp.pos )
       {
@@ -30544,7 +30456,7 @@ LABEL_560:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v58;
         }
         v59 = obuf->flag;
-        BYTE1(v59) &= 0xFEu;
+        BYTE1(v59) &= ~1u;
         obuf->flag = v59;
       }
       close_anchor(h_env, obuf);
@@ -30566,7 +30478,7 @@ LABEL_560:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v60;
         }
         v61 = obuf->flag;
-        BYTE1(v61) &= 0xFEu;
+        BYTE1(v61) &= ~1u;
         obuf->flag = v61;
       }
       close_anchor(h_env, obuf);
@@ -30578,7 +30490,7 @@ LABEL_560:
         BYTE1(v62) |= 0x20u;
         obuf->flag = v62;
       }
-      obuf->flag &= 0xFFFFFFFE;
+      obuf->flag &= ~1u;
       return 1;
     case 143:
       if ( (obuf->flag & 0x100) != 0 )
@@ -30591,7 +30503,7 @@ LABEL_560:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v83;
         }
         v84 = obuf->flag;
-        BYTE1(v84) &= 0xFEu;
+        BYTE1(v84) &= ~1u;
         obuf->flag = v84;
       }
       if ( (obuf->flag & 0x2000) == 0 )
@@ -30610,7 +30522,7 @@ LABEL_385:
           obuf->flag = obuf->flag_stack[--obuf->flag_sp] | v85;
         }
         v86 = obuf->flag;
-        BYTE1(v86) &= 0xFEu;
+        BYTE1(v86) &= ~1u;
         obuf->flag = v86;
       }
       flushline(h_env, obuf, envs[h_env->envc].indent, 0, h_env->limit);
@@ -30653,7 +30565,7 @@ int __cdecl ex_efct(int ex)
   if ( (ex & 2) != 0 )
     effect |= 2u;
   if ( (ex & 4) != 0 )
-    effect |= 4u;
+    return effect | 4;
   return effect;
 }
 
@@ -30686,7 +30598,7 @@ void __cdecl HTMLlineproc2body(Buffer *buf, Str (*feed)(...), int llimit)
   Lineprop *v28; // ebx
   __int16 v29; // si
   char *v30; // eax
-  wc_ces v32; // esi
+  wc_ces document_charset; // esi
   wc_ces v33; // ebx
   _Str *v34; // eax
   Str v35; // eax
@@ -30974,10 +30886,10 @@ LABEL_242:
                       {
                         if ( parsedtag_get_value(tag, 67, &p) )
                         {
-                          v32 = buf->document_charset;
+                          document_charset = buf->document_charset;
                           v33 = InnerCharset;
                           v34 = Strnew_charp(p);
-                          v35 = wc_Str_conv_strict(v34, v33, v32);
+                          v35 = wc_Str_conv_strict(v34, v33, document_charset);
                           p = url_quote(v35->ptr);
                           if ( !idFrame || strcmp(idFrame->element->name, p) )
                           {
@@ -31084,7 +30996,7 @@ LABEL_242:
                       }
                       break;
                     case 2u:
-                      effect &= 0xFFEFu;
+                      effect &= ~0x10u;
                       if ( a_href )
                       {
                         v59 = currentLn(buf);
@@ -31103,7 +31015,7 @@ LABEL_242:
                       effect |= 8u;
                       break;
                     case 8u:
-                      effect &= 0xFFF7u;
+                      effect &= ~8u;
                       break;
                     case 0x21u:
                       q = 0;
@@ -31221,13 +31133,13 @@ LABEL_242:
                       ex_effect |= 2u;
                       break;
                     case 0x40u:
-                      ex_effect &= 0xFFFDu;
+                      ex_effect &= ~2u;
                       break;
                     case 0x41u:
                       effect |= 2u;
                       break;
                     case 0x42u:
-                      effect &= 0xFFFDu;
+                      effect &= ~2u;
                       break;
                     case 0x68u:
                       addLink(buf, tag);
@@ -31236,13 +31148,13 @@ LABEL_242:
                       ex_effect |= 4u;
                       break;
                     case 0x6Au:
-                      ex_effect &= 0xFFFBu;
+                      ex_effect &= ~4u;
                       break;
                     case 0x6Du:
                       ex_effect |= 1u;
                       break;
                     case 0x6Eu:
-                      ex_effect &= 0xFFFEu;
+                      ex_effect &= ~1u;
                       break;
                     case 0x78u:
                       if ( parsedtag_get_value(tag, 72, &n_select) && n_select < max_select )
@@ -31305,7 +31217,7 @@ LABEL_242:
                         symbol = atoi(p);
                       break;
                     case 0x7Fu:
-                      effect &= 0x7FFFu;
+                      effect &= ~0x8000u;
                       break;
                     case 0x82u:
                       if ( parsedtag_get_value(tag, 49, &p) )
@@ -31370,7 +31282,7 @@ LABEL_242:
                       break;
                     case 0x87u:
 LABEL_159:
-                      effect &= 0xFFBFu;
+                      effect &= ~0x40u;
                       if ( a_form )
                       {
                         v78 = currentLn(buf);
@@ -31474,7 +31386,7 @@ LABEL_159:
                       effect |= 0x20u;
                       break;
                     case 0x89u:
-                      effect &= 0xFFDFu;
+                      effect &= ~0x20u;
                       if ( a_img )
                       {
                         v74 = currentLn(buf);
@@ -31623,7 +31535,7 @@ LABEL_159:
       }
       break;
     }
-    savexmlstr_0(textarea_str[n_textarea], line);
+    Strcat(textarea_str[n_textarea], line);
   }
   for ( form_id = 1; form_id <= form_max; ++form_id )
     forms[form_id]->next = forms[form_id - 1];
@@ -31643,7 +31555,7 @@ LABEL_159:
 //----- (0806C0A4) --------------------------------------------------------
 void __cdecl addLink(Buffer *buf, parsed_tag *tag)
 {
-  wc_ces v2; // esi
+  wc_ces document_charset; // esi
   wc_ces v3; // ebx
   char *v4; // eax
   _Str *v5; // eax
@@ -31666,11 +31578,11 @@ void __cdecl addLink(Buffer *buf, parsed_tag *tag)
   parsedtag_get_value(tag, 18, &href);
   if ( href )
   {
-    v2 = buf->document_charset;
+    document_charset = buf->document_charset;
     v3 = InnerCharset;
     v4 = remove_space(href);
     v5 = Strnew_charp(v4);
-    v6 = wc_Str_conv_strict(v5, v3, v2);
+    v6 = wc_Str_conv_strict(v5, v3, document_charset);
     href = url_quote(v6->ptr);
   }
   parsedtag_get_value(tag, 49, &title);
@@ -31785,7 +31697,6 @@ void __cdecl proc_escape(readbuffer *obuf, char **str_return)
 //----- (0806C497) --------------------------------------------------------
 int __cdecl need_flushline(html_feed_environ *h_env, readbuffer *obuf, Lineprop mode)
 {
-  int result; // eax
   char v4; // al
 
   if ( (obuf->flag & 0x200) != 0 )
@@ -31794,11 +31705,7 @@ int __cdecl need_flushline(html_feed_environ *h_env, readbuffer *obuf, Lineprop 
     v4 = 0;
   else
     v4 = obuf->line->ptr[obuf->line->length - 1];
-  if ( v4 == 32 )
-    result = 0;
-  else
-    result = obuf->pos > h_env->limit;
-  return result;
+  return v4 != 32 && obuf->pos > h_env->limit;
 }
 
 //----- (0806C532) --------------------------------------------------------
@@ -31814,8 +31721,8 @@ int __cdecl table_width(html_feed_environ *h_env, int table_level)
 //----- (0806C58D) --------------------------------------------------------
 void __cdecl HTMLlineproc0(char *line, html_feed_environ *h_env, int internal)
 {
-  __int16 v3; // ax
-  int v4; // eax
+  __int16 table_level; // ax
+  int flag; // eax
   int v5; // eax
   int v6; // eax
   int v7; // edx
@@ -31867,23 +31774,23 @@ void __cdecl HTMLlineproc0(char *line, html_feed_environ *h_env, int internal)
 table_start:
   if ( obuf->table_level >= 0 )
   {
-    v3 = obuf->table_level;
-    if ( v3 > 19 )
-      v3 = 19;
-    level = v3;
-    tbl = tables[v3];
-    tbl_mode = (table_mode *)(16 * v3 + 135776000);
-    tbl_width = table_width(h_env, v3);
+    table_level = obuf->table_level;
+    if ( table_level > 19 )
+      table_level = 19;
+    level = table_level;
+    tbl = tables[table_level];
+    tbl_mode = (table_mode *)(16 * table_level + 135776000);
+    tbl_width = table_width(h_env, table_level);
   }
 LABEL_151:
   while ( *line )
   {
     is_tag = 0;
     if ( obuf->table_level < 0 )
-      v4 = obuf->flag;
+      flag = obuf->flag;
     else
-      v4 = tbl_mode->pre_mode;
-    pre_mode = v4;
+      flag = tbl_mode->pre_mode;
+    pre_mode = flag;
     if ( obuf->table_level < 0 )
       v5 = obuf->end_tag;
     else
@@ -31993,14 +31900,14 @@ LABEL_70:
                     if ( !*str )
                       goto LABEL_151;
                     mode = WTF_TYPE_MAP[(unsigned __int8)*str] << 8;
-                    v10 = WcOption.use_wide ? WTF_WIDTH_MAP[(unsigned __int8)*str] : WTF_WIDTH_MAP[(unsigned __int8)*str] != 0;
+                    v10 = WcOption.use_wide ? WTF_WIDTH_MAP[(unsigned __int8)*str] : (unsigned __int8)(WTF_WIDTH_MAP[(unsigned __int8)*str] != 0);
                     delta = v10;
                     if ( (obuf->flag & 0x20F) != 0 )
                       break;
                     if ( (MYCTYPE_MAP[(unsigned __int8)*str] & 2) == 0 )
                     {
                       v14 = obuf->flag;
-                      BYTE1(v14) &= 0xDFu;
+                      BYTE1(v14) &= ~0x20u;
                       obuf->flag = v14;
                     }
                     if ( (!mode || mode == 256) && (MYCTYPE_MAP[(unsigned __int8)*str] & 2) != 0 )
@@ -32085,7 +31992,7 @@ LABEL_144:
                   if ( ch_0 != 10 )
                   {
                     v11 = obuf->flag;
-                    BYTE1(v11) &= 0xDFu;
+                    BYTE1(v11) &= ~0x20u;
                     obuf->flag = v11;
                   }
                   if ( ch_0 != 10 )
@@ -32100,7 +32007,7 @@ LABEL_144:
                     goto LABEL_110;
                   }
                   v12 = obuf->flag;
-                  BYTE1(v12) &= 0xDFu;
+                  BYTE1(v12) &= ~0x20u;
                   obuf->flag = v12;
                 }
                 if ( ch_0 == 9 )
@@ -32161,7 +32068,7 @@ LABEL_110:
                   renderTable(tbl, tbl_width, h_env);
                   restore_fonteffect(h_env, obuf);
                   v7 = obuf->flag;
-                  BYTE1(v7) &= 0xDFu;
+                  BYTE1(v7) &= ~0x20u;
                   obuf->flag = v7;
                   if ( tbl->vspace > 0 )
                   {
@@ -32536,7 +32443,14 @@ void __cdecl showProgress(clen_t *linelen, clen_t *trbyte)
 }
 
 //----- (0806E0B9) --------------------------------------------------------
-void __cdecl init_henv(html_feed_environ *h_env, readbuffer *obuf, environment *envs, int nenv, TextLineList *buf, int limit, int indent)
+void __cdecl init_henv(
+        html_feed_environ *h_env,
+        readbuffer *obuf,
+        environment *envs,
+        int nenv,
+        TextLineList *buf,
+        int limit,
+        int indent)
 {
   envs->indent = indent;
   obuf->line = Strnew();
@@ -32635,7 +32549,7 @@ void __cdecl print_internal_information(html_feed_environ *henv)
   TextLine *v4; // eax
   const char *v5; // ebx
   char *v6; // esi
-  char *v7; // eax
+  char *ptr; // eax
   char *v8; // eax
   TextLine *v9; // eax
   TextLine *v10; // eax
@@ -32644,7 +32558,7 @@ void __cdecl print_internal_information(html_feed_environ *henv)
   char *v13; // eax
   TextLine *v14; // eax
   TextLine *v15; // eax
-  Str v16; // eax
+  Str line; // eax
   TextLineListItem *p; // [esp+1Ch] [ebp-1Ch]
   FormSelectOptionItem *ip_0; // [esp+20h] [ebp-18h]
   GeneralList *tl; // [esp+24h] [ebp-14h]
@@ -32681,13 +32595,13 @@ void __cdecl print_internal_information(html_feed_environ *henv)
         if ( ip_0->checked )
           v5 = " selected";
         else
-          v5 = &line;
+          v5 = &::line;
         v6 = html_quote(ip_0->label->ptr);
         if ( ip_0->value )
-          v7 = ip_0->value->ptr;
+          ptr = ip_0->value->ptr;
         else
-          v7 = ip_0->label->ptr;
-        v8 = html_quote(v7);
+          ptr = ip_0->label->ptr;
+        v8 = html_quote(ptr);
         sc = Sprintf("<option_int value=\"%s\" label=\"%s\"%s>", v8, v6, v5);
         v9 = newTextLine(sc, 0);
         pushValue(tl, v9);
@@ -32723,10 +32637,10 @@ void __cdecl print_internal_information(html_feed_environ *henv)
     for ( p = (TextLineListItem *)tl->first; p; p = p->next )
     {
       if ( ExtHalfdump )
-        v16 = wc_Str_conv(p->ptr->line, InnerCharset, DisplayCharset);
+        line = wc_Str_conv(p->ptr->line, InnerCharset, DisplayCharset);
       else
-        v16 = p->ptr->line;
-      fprintf(henv->f, "%s\n", v16->ptr);
+        line = p->ptr->line;
+      fprintf(henv->f, "%s\n", line->ptr);
     }
   }
 }
@@ -32938,7 +32852,6 @@ Buffer *__cdecl loadHTMLString(Str page)
 {
   int v1; // eax
   int v2; // eax
-  Buffer *result; // eax
   input_stream *v4; // eax
   URLFile f; // [esp+18h] [ebp-30h] BYREF
   Buffer *newBuf; // [esp+38h] [ebp-10h]
@@ -32961,7 +32874,7 @@ Buffer *__cdecl loadHTMLString(Str page)
         term_raw();
     }
     discardBuffer(newBuf);
-    result = 0;
+    return 0;
   }
   else
   {
@@ -32990,11 +32903,10 @@ Buffer *__cdecl loadHTMLString(Str page)
     newBuf->real_type = newBuf->type;
     if ( n_textarea )
       formResetBuffer(newBuf, newBuf->formitem);
-    result = newBuf;
+    return newBuf;
   }
-  return result;
 }
-// 806EFBF: conditional instruction was optimized away because of '%prevtrap.4==0'
+// 806EFBF: conditional instruction was optimized away because %prevtrap.4==0
 
 //----- (0806F10D) --------------------------------------------------------
 Str __cdecl loadGopherDir(URLFile *uf, ParsedURL *pu, wc_ces *charset)
@@ -33391,8 +33303,7 @@ Buffer *__cdecl loadImageBuffer(URLFile *uf, Buffer *newBuf)
 Str __cdecl conv_symbol(Line *l)
 {
   int v1; // eax
-  int v2; // eax
-  Str result; // eax
+  int length; // eax
   int len; // [esp+10h] [ebp-28h]
   char **symbol; // [esp+14h] [ebp-24h]
   int w; // [esp+18h] [ebp-20h] BYREF
@@ -33415,9 +33326,9 @@ Str __cdecl conv_symbol(Line *l)
       {
         if ( tmp->length + 1 >= tmp->area_size )
           Strgrow(tmp);
-        v2 = tmp->length;
-        tmp->ptr[v2] = *p;
-        tmp->length = v2 + 1;
+        length = tmp->length;
+        tmp->ptr[length] = *p;
+        tmp->length = length + 1;
         tmp->ptr[tmp->length] = 0;
       }
     }
@@ -33444,10 +33355,9 @@ Str __cdecl conv_symbol(Line *l)
     ++pr;
   }
   if ( tmp )
-    result = tmp;
+    return tmp;
   else
-    result = Strnew_charp_n(l->lineBuf, l->len);
-  return result;
+    return Strnew_charp_n(l->lineBuf, l->len);
 }
 
 //----- (0806FF79) --------------------------------------------------------
@@ -33881,10 +33791,10 @@ Line *__cdecl getNextPage(Buffer *buf, int plen)
   if ( !last )
     return buf->firstLine;
   if ( last->next || !squeeze_flag )
-    last = last->next;
+    return last->next;
   return last;
 }
-// 8070C90: conditional instruction was optimized away because of '%last.4!=0'
+// 8070C90: conditional instruction was optimized away because %last.4!=0
 
 //----- (08070CBA) --------------------------------------------------------
 int __cdecl save2tmp(URLFile uf, char *tmpf)
@@ -33976,7 +33886,6 @@ int __cdecl save2tmp(URLFile uf, char *tmpf)
 //----- (08070F2F) --------------------------------------------------------
 int __cdecl doExternal(URLFile uf, char *path, char *type, Buffer **bufp, Buffer *defaultbuf)
 {
-  int result; // eax
   char *v6; // eax
   wc_ces v7; // esi
   wc_ces v8; // ebx
@@ -33987,7 +33896,7 @@ int __cdecl doExternal(URLFile uf, char *path, char *type, Buffer **bufp, Buffer
   int v13; // eax
   wc_ces v14; // esi
   wc_ces v15; // ebx
-  char *v16; // eax
+  char *FileName; // eax
   _Str *v17; // eax
   char *ext; // [esp+40h] [ebp-28h]
   char *src; // [esp+44h] [ebp-24h]
@@ -34005,7 +33914,7 @@ int __cdecl doExternal(URLFile uf, char *path, char *type, Buffer **bufp, Buffer
     return 0;
   if ( mcap->nametemplate )
   {
-    tmpf = cptifil(mcap->nametemplate, 0, (char *)&line, 0, 0);
+    tmpf = unquote_mailcap(mcap->nametemplate, 0, (char *)&line, 0, 0);
     if ( *tmpf->ptr == 46 )
       ext = tmpf->ptr;
   }
@@ -34024,7 +33933,7 @@ int __cdecl doExternal(URLFile uf, char *path, char *type, Buffer **bufp, Buffer
     v9 = Strnew_charp(header);
     header = wc_Str_conv_strict(v9, v8, v7)->ptr;
   }
-  command = cptifil(mcap->viewer, type, tmpf->ptr, header, &mc_stat);
+  command = unquote_mailcap(mcap->viewer, type, tmpf->ptr, header, &mc_stat);
   if ( (mc_stat & 1) == 0 )
   {
     v10 = shell_quote(tmpf->ptr);
@@ -34097,20 +34006,20 @@ int __cdecl doExternal(URLFile uf, char *path, char *type, Buffer **bufp, Buffer
         {
           v14 = InnerCharset;
           v15 = SystemCharset;
-          v16 = lastFileName(path);
-          v17 = Strnew_charp(v16);
+          FileName = lastFileName(path);
+          v17 = Strnew_charp(FileName);
           buf->buffername = wc_Str_conv(v17, v15, v14)->ptr;
         }
         buf->edit = mcap->edit;
         buf->mailcap = mcap;
       }
       *bufp = buf;
-      result = 1;
+      return 1;
     }
     else
     {
       *bufp = 0;
-      result = 1;
+      return 1;
     }
   }
   else
@@ -34126,16 +34035,14 @@ int __cdecl doExternal(URLFile uf, char *path, char *type, Buffer **bufp, Buffer
       myExec(command->ptr);
     }
     *bufp = (Buffer *)1;
-    result = 1;
+    return 1;
   }
-  return result;
 }
 
 //----- (08071480) --------------------------------------------------------
 int __cdecl MoveFile(char *path1, char *path2)
 {
   int v2; // eax
-  int result; // eax
   clen_t trbyte; // [esp+10h] [ebp-28h] BYREF
   clen_t linelen; // [esp+18h] [ebp-20h] BYREF
   Str buf; // [esp+20h] [ebp-18h]
@@ -34174,14 +34081,13 @@ int __cdecl MoveFile(char *path1, char *path2)
       pclose(f2);
     else
       fclose(f2);
-    result = 0;
+    return 0;
   }
   else
   {
     ISclose(f1);
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (0807160F) --------------------------------------------------------
@@ -34197,7 +34103,7 @@ int __cdecl doFileCopy(char *tmpf, char *defstr, int download)
   wc_ces v11; // esi
   wc_ces v12; // ebx
   _Str *v13; // eax
-  char *v14; // ebx
+  char *ptr; // ebx
   wc_ces v15; // edi
   wc_ces v16; // esi
   _Str *v17; // eax
@@ -34300,13 +34206,13 @@ int __cdecl doFileCopy(char *tmpf, char *defstr, int download)
     v11 = InnerCharset;
     v12 = SystemCharset;
     v13 = Strnew_charp(p);
-    v14 = wc_Str_conv(v13, v12, v11)->ptr;
+    ptr = wc_Str_conv(v13, v12, v11)->ptr;
     v15 = InnerCharset;
     v16 = SystemCharset;
     v17 = Strnew_charp(tmpf);
     v18 = wc_Str_conv(v17, v16, v15);
-    msg = Sprintf("Can't copy. %s and %s are identical.", v18->ptr, v14);
-    _ZN10bdInetAddrC2Ej(msg->ptr, 0);
+    msg = Sprintf("Can't copy. %s and %s are identical.", v18->ptr, ptr);
+    disp_err_message(msg->ptr, 0);
     return -1;
   }
   if ( download )
@@ -34339,7 +34245,7 @@ int __cdecl doFileCopy(char *tmpf, char *defstr, int download)
     v21 = Strnew_charp(p);
     v22 = wc_Str_conv(v21, v20, v19);
     msg = Sprintf("Can't save to %s", v22->ptr);
-    _ZN10bdInetAddrC2Ej(msg->ptr, 0);
+    disp_err_message(msg->ptr, 0);
   }
   return -1;
 }
@@ -34396,7 +34302,7 @@ int __cdecl doFileSave(URLFile uf, char *defstr)
       v8 = Strnew_charp(p);
       v9 = wc_Str_conv(v8, v7, v6);
       msg = Sprintf("Can't save. Load file and %s are identical.", v9->ptr);
-      _ZN10bdInetAddrC2Ej(msg->ptr, 0);
+      disp_err_message(msg->ptr, 0);
       return -1;
     }
     lock = tmpfname(0, ".lock")->ptr;
@@ -34525,22 +34431,19 @@ int __cdecl checkOverWrite(char *path)
 //----- (0807218F) --------------------------------------------------------
 char *__cdecl inputAnswer(char *prompt)
 {
-  char *ans; // [esp+2Ch] [ebp-Ch]
-
   if ( QuietMessage[0] )
     return "n";
   if ( fmInitialized )
   {
     term_raw();
-    ans = inputLineHistSearch(prompt, (char *)&line, 512, 0, 0);
+    return inputLineHistSearch(prompt, (char *)&line, 512, 0, 0);
   }
   else
   {
     printf("%s", prompt);
     fflush(stdout);
-    ans = Strfgets(stdin)->ptr;
+    return Strfgets(stdin)->ptr;
   }
-  return ans;
 }
 
 //----- (0807221F) --------------------------------------------------------
@@ -34784,7 +34687,7 @@ void __cdecl clearBuffer(Buffer *buf)
 //----- (0807298B) --------------------------------------------------------
 void __cdecl discardBuffer(Buffer *buf)
 {
-  int *v1; // eax
+  int *clone; // eax
   Buffer *b; // [esp+18h] [ebp-10h]
   int i; // [esp+1Ch] [ebp-Ch]
 
@@ -34798,8 +34701,8 @@ void __cdecl discardBuffer(Buffer *buf)
   }
   if ( buf->savecache )
     unlink(buf->savecache);
-  v1 = buf->clone;
-  if ( !--*v1 )
+  clone = buf->clone;
+  if ( !--*clone )
   {
     if ( buf->pagerSource )
       ISclose(buf->pagerSource);
@@ -34839,7 +34742,6 @@ Buffer *__cdecl namedBuffer(Buffer *first, char *name)
 //----- (08072B89) --------------------------------------------------------
 Buffer *__cdecl deleteBuffer(Buffer *first, Buffer *delbuf)
 {
-  Buffer *result; // eax
   Buffer *b; // [esp+18h] [ebp-10h]
   _Buffer *bufa; // [esp+1Ch] [ebp-Ch]
   Buffer *buf; // [esp+1Ch] [ebp-Ch]
@@ -34848,7 +34750,7 @@ Buffer *__cdecl deleteBuffer(Buffer *first, Buffer *delbuf)
   {
     bufa = first->nextBuffer;
     discardBuffer(first);
-    result = bufa;
+    return bufa;
   }
   else
   {
@@ -34859,15 +34761,13 @@ Buffer *__cdecl deleteBuffer(Buffer *first, Buffer *delbuf)
       buf->nextBuffer = b->nextBuffer;
       discardBuffer(b);
     }
-    result = first;
+    return first;
   }
-  return result;
 }
 
 //----- (08072BFA) --------------------------------------------------------
 Buffer *__cdecl replaceBuffer(Buffer *first, Buffer *delbuf, Buffer *newbuf)
 {
-  Buffer *result; // eax
   Buffer *buf; // [esp+1Ch] [ebp-Ch]
 
   if ( delbuf )
@@ -34876,7 +34776,7 @@ Buffer *__cdecl replaceBuffer(Buffer *first, Buffer *delbuf, Buffer *newbuf)
     {
       newbuf->nextBuffer = delbuf->nextBuffer;
       discardBuffer(delbuf);
-      result = newbuf;
+      return newbuf;
     }
     else
     {
@@ -34886,23 +34786,22 @@ Buffer *__cdecl replaceBuffer(Buffer *first, Buffer *delbuf, Buffer *newbuf)
         buf->nextBuffer = newbuf;
         newbuf->nextBuffer = delbuf->nextBuffer;
         discardBuffer(delbuf);
-        result = first;
+        return first;
       }
       else
       {
         newbuf->nextBuffer = first;
-        result = newbuf;
+        return newbuf;
       }
     }
   }
   else
   {
     newbuf->nextBuffer = first;
-    result = newbuf;
+    return newbuf;
   }
-  return result;
 }
-// 8072C3C: conditional instruction was optimized away because of '%delbuf.4!=0'
+// 8072C3C: conditional instruction was optimized away because %delbuf.4!=0
 
 //----- (08072C8C) --------------------------------------------------------
 Buffer *__cdecl nthBuffer(Buffer *firstbuf, int n)
@@ -34925,13 +34824,13 @@ Buffer *__cdecl nthBuffer(Buffer *firstbuf, int n)
 //----- (08072CD3) --------------------------------------------------------
 void __cdecl writeBufferName(Buffer *buf, int n)
 {
-  int v2; // eax
+  int scheme; // eax
   int v3; // eax
   wc_ces v4; // esi
   wc_ces v5; // ebx
   _Str *v6; // eax
-  int v7; // eax
-  char *v8; // [esp+4h] [ebp-24h]
+  int length; // eax
+  char *ptr; // [esp+4h] [ebp-24h]
   _Str *v9; // [esp+4h] [ebp-24h]
   int all; // [esp+18h] [ebp-10h]
   Str msg; // [esp+1Ch] [ebp-Ch]
@@ -34943,23 +34842,23 @@ void __cdecl writeBufferName(Buffer *buf, int n)
   msg = Sprintf("<%s> [%d lines]", buf->buffername, all);
   if ( buf->filename )
   {
-    v2 = buf->currentURL.scheme;
-    if ( v2 < 4 )
+    scheme = buf->currentURL.scheme;
+    if ( scheme < 4 )
     {
 LABEL_13:
       if ( msg->length + 1 >= msg->area_size )
         Strgrow(msg);
-      v7 = msg->length;
-      msg->ptr[v7] = 32;
-      msg->length = v7 + 1;
+      length = msg->length;
+      msg->ptr[length] = 32;
+      msg->length = length + 1;
       msg->ptr[msg->length] = 0;
       v9 = parsedURL2Str(&buf->currentURL);
-      savexmlstr_0(msg, v9);
+      Strcat(msg, v9);
       goto LABEL_16;
     }
-    if ( v2 > 5 )
+    if ( scheme > 5 )
     {
-      if ( (unsigned int)(v2 - 254) <= 1 )
+      if ( (unsigned int)(scheme - 254) <= 1 )
         goto LABEL_16;
       goto LABEL_13;
     }
@@ -34974,8 +34873,8 @@ LABEL_13:
       v4 = InnerCharset;
       v5 = SystemCharset;
       v6 = Strnew_charp(buf->currentURL.real_file);
-      v8 = wc_Str_conv(v6, v5, v4)->ptr;
-      Strcat_charp(msg, v8);
+      ptr = wc_Str_conv(v6, v5, v4)->ptr;
+      Strcat_charp(msg, ptr);
     }
   }
 LABEL_16:
@@ -35485,7 +35384,6 @@ _error1:
 //----- (08073FE8) --------------------------------------------------------
 int __cdecl readBufferCache(Buffer *buf)
 {
-  int result; // eax
   char *v2; // eax
   Linecolor *v3; // eax
   int colorflag; // [esp+10h] [ebp-28h] BYREF
@@ -35573,14 +35471,13 @@ int __cdecl readBufferCache(Buffer *buf)
     fclose(cache);
     unlink(buf->savecache);
     buf->savecache = 0;
-    result = 0;
+    return 0;
   }
   else
   {
     buf->savecache = 0;
-    result = -1;
+    return -1;
   }
-  return result;
 }
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
 // 804A51C: using guessed type int __cdecl GC_malloc_atomic(_DWORD);
@@ -35741,7 +35638,6 @@ void fmInit()
 //----- (080746B5) --------------------------------------------------------
 Str __cdecl make_lastline_link(Buffer *buf, char *title, char *url)
 {
-  Str result; // eax
   char *v4; // eax
   int v5; // eax
   int v6; // ebx
@@ -35793,24 +35689,23 @@ Str __cdecl make_lastline_link(Buffer *buf, char *title, char *url)
     for ( i = v6 + 1 - COLS + wtf_strwidth((wc_uchar *)s->ptr); u->length > i && (pr[i] & 0x400) != 0; ++i )
       ;
     Strcat_charp(s, &u->ptr[i]);
-    result = s;
+    return s;
   }
   else if ( s )
   {
-    savexmlstr_0(s, u);
-    result = s;
+    Strcat(s, u);
+    return s;
   }
   else
   {
-    result = u;
+    return u;
   }
-  return result;
 }
 
 //----- (0807495D) --------------------------------------------------------
 Str __cdecl make_lastline_message(Buffer *buf)
 {
-  char *v1; // eax
+  char *url; // eax
   long double v3; // fst6
   int v4; // eax
   _Str *v5; // [esp+4h] [ebp-54h]
@@ -35851,10 +35746,10 @@ Str __cdecl make_lastline_message(Buffer *buf)
       if ( p || a_0 )
       {
         if ( a_0 )
-          v1 = a_0->url;
+          url = a_0->url;
         else
-          v1 = 0;
-        s = make_lastline_link(buf, p, v1);
+          url = 0;
+        s = make_lastline_link(buf, p, url);
       }
     }
     if ( s )
@@ -35880,7 +35775,7 @@ Str __cdecl make_lastline_message(Buffer *buf)
            buf->currentLine->real_linenumber,
            ll,
            (int)((long double)buf->currentLine->real_linenumber * 100.0 / v3 + 0.5));
-    savexmlstr_0(msg, v5);
+    Strcat(msg, v5);
   }
   else
   {
@@ -35895,7 +35790,7 @@ Str __cdecl make_lastline_message(Buffer *buf)
     {
       for ( p_0 = msg->ptr; *p_0; p_0 += WTF_LEN_MAP[(unsigned __int8)*p_0] )
       {
-        v4 = WcOption.use_wide ? WTF_WIDTH_MAP[(unsigned __int8)*p_0] : WTF_WIDTH_MAP[(unsigned __int8)*p_0] != 0;
+        v4 = WcOption.use_wide ? WTF_WIDTH_MAP[(unsigned __int8)*p_0] : (unsigned __int8)(WTF_WIDTH_MAP[(unsigned __int8)*p_0] != 0);
         l -= v4;
         if ( l < 0 )
           break;
@@ -35903,7 +35798,7 @@ Str __cdecl make_lastline_message(Buffer *buf)
       Strtruncate(msg, p_0 - msg->ptr);
     }
     Strcat_charp(msg, "> ");
-    savexmlstr_0(msg, s);
+    Strcat(msg, s);
   }
   else
   {
@@ -36039,7 +35934,8 @@ void __cdecl displayBuffer(Buffer *buf, int mode)
 //----- (08075138) --------------------------------------------------------
 void __cdecl drawAnchorCursor0(Buffer *buf, AnchorList *al_0, int hseq, int prevhseq, int tline, int eline, int active)
 {
-  Lineprop v7; // ax
+  Lineprop *v7; // edx
+  Lineprop v8; // ax
   Anchor *an; // [esp+20h] [ebp-18h]
   Line *l; // [esp+24h] [ebp-14h]
   int j; // [esp+28h] [ebp-10h]
@@ -36067,12 +35963,13 @@ void __cdecl drawAnchorCursor0(Buffer *buf, AnchorList *al_0, int hseq, int prev
         {
           if ( (l->propBuf[i] & 0x70) != 0 )
           {
-            v7 = l->propBuf[i];
+            v7 = &l->propBuf[i];
+            v8 = *v7;
             if ( active )
-              LOBYTE(v7) = v7 | 0x80;
+              LOBYTE(v8) = *v7 | 0x80;
             else
-              LOBYTE(v7) = v7 & 0x7F;
-            l->propBuf[i] = v7;
+              LOBYTE(v8) = *v7 & 0x7F;
+            *v7 = v8;
           }
         }
         if ( active )
@@ -36207,7 +36104,6 @@ void __cdecl redrawNLine(Buffer *buf, int n)
 //----- (08075864) --------------------------------------------------------
 Line *__cdecl redrawLine(Buffer *buf, Line *l, int i)
 {
-  Line *result; // eax
   ParsedURL *v4; // eax
   Str v5; // eax
   Lineprop v6; // dx
@@ -36385,20 +36281,19 @@ Line *__cdecl redrawLine(Buffer *buf, Line *l, int i)
       do_color(0);
     if ( rcol - column < buf->COLS )
       clrtoeolx();
-    result = la;
+    return la;
   }
   else
   {
     clrtoeolx();
-    result = la;
+    return la;
   }
-  return result;
 }
 
 //----- (08075F31) --------------------------------------------------------
 Line *__cdecl redrawLineImage(Buffer *buf, Line *l, int i)
 {
-  int v4; // ebx
+  int image_flag; // ebx
   ParsedURL *v5; // [esp+4h] [ebp-74h]
   ImageCache *cache; // [esp+3Ch] [ebp-3Ch]
   Image *image; // [esp+40h] [ebp-38h]
@@ -36435,9 +36330,9 @@ Line *__cdecl redrawLineImage(Buffer *buf, Line *l, int i)
           if ( a->image->touch < image_touch )
           {
             image = a->image;
-            v4 = buf->image_flag;
+            image_flag = buf->image_flag;
             v5 = baseURL(buf);
-            image->cache = getImage(image, v5, v4);
+            image->cache = getImage(image, v5, image_flag);
             cache = image->cache;
             if ( cache )
             {
@@ -36779,13 +36674,14 @@ void __cdecl addChar(char c, Lineprop mode)
   ca[0] = c;
   addMChar(ca, mode, 1u);
 }
+// 8076C55: using guessed type char c[12];
 
 //----- (08076C85) --------------------------------------------------------
 void __cdecl addMChar(char *p, Lineprop mode, size_t len)
 {
   Lineprop v3; // ax
   int v4; // eax
-  unsigned __int8 v5; // al
+  unsigned __int8 code; // al
   char buf[5]; // [esp+2Fh] [ebp-19h] BYREF
   int w; // [esp+34h] [ebp-14h] BYREF
   char **symbol; // [esp+38h] [ebp-10h]
@@ -36828,8 +36724,8 @@ void __cdecl addMChar(char *p, Lineprop mode, size_t len)
       }
       else if ( (mode & 0x1000) != 0 )
       {
-        v5 = wtf_get_code((wc_uchar *)p);
-        sprintf(buf, "[%.2X]", v5 | 0x80);
+        code = wtf_get_code((wc_uchar *)p);
+        sprintf(buf, "[%.2X]", code | 0x80);
         addstr(buf);
       }
       else
@@ -36922,7 +36818,7 @@ void __cdecl message(char *s, int return_x, int return_y)
 }
 
 //----- (0807700B) --------------------------------------------------------
-void __cdecl _ZN10bdInetAddrC2Ej(char *s, int redraw_current)
+void __cdecl disp_err_message(char *s, int redraw_current)
 {
   record_err_message(s);
   disp_message(s, redraw_current);
@@ -37200,7 +37096,7 @@ void __cdecl cursorHome(Buffer *buf)
 //----- (08077A2A) --------------------------------------------------------
 void __cdecl arrangeCursor(Buffer *buf)
 {
-  int v1; // esi
+  int bwidth; // esi
   int delta; // [esp+20h] [ebp-18h]
   int pos; // [esp+24h] [ebp-14h]
   int posa; // [esp+24h] [ebp-14h]
@@ -37255,8 +37151,8 @@ void __cdecl arrangeCursor(Buffer *buf)
         columnSkip(buf, col);
     }
     buf->cursorY = buf->currentLine->linenumber - buf->topLine->linenumber;
-    v1 = buf->currentLine->bwidth;
-    buf->visualpos = v1
+    bwidth = buf->currentLine->bwidth;
+    buf->visualpos = bwidth
                    + calcPosition(
                        buf->currentLine->lineBuf,
                        buf->currentLine->propBuf,
@@ -37335,7 +37231,7 @@ void __cdecl cursorXY(Buffer *buf, int x, int y)
 void __cdecl restorePosition(Buffer *buf, Buffer *orig)
 {
   int v2; // eax
-  int v3; // eax
+  int linenumber; // eax
 
   if ( orig->topLine )
     v2 = orig->topLine->linenumber - 1;
@@ -37343,10 +37239,10 @@ void __cdecl restorePosition(Buffer *buf, Buffer *orig)
     v2 = 0;
   buf->topLine = lineSkip(buf, buf->firstLine, v2, 0);
   if ( orig->currentLine )
-    v3 = orig->currentLine->linenumber;
+    linenumber = orig->currentLine->linenumber;
   else
-    v3 = 1;
-  gotoLine(buf, v3);
+    linenumber = 1;
+  gotoLine(buf, linenumber);
   buf->pos = orig->pos;
   if ( buf->currentLine && orig->currentLine )
     buf->pos += orig->currentLine->bpos - buf->currentLine->bpos;
@@ -37453,7 +37349,6 @@ Line *__cdecl currentLineSkip(Buffer *buf, Line *line, int offset, int last)
 int __cdecl gethtmlcmd(char **s)
 {
   char v1; // al
-  int result; // eax
   char v3; // al
   int cmd; // [esp+20h] [ebp-98h]
   char *save; // [esp+24h] [ebp-94h]
@@ -37489,7 +37384,7 @@ int __cdecl gethtmlcmd(char **s)
   if ( p - cmdstr == 128 )
   {
     *s = save + 1;
-    result = 0;
+    return 0;
   }
   else
   {
@@ -37499,9 +37394,8 @@ int __cdecl gethtmlcmd(char **s)
       ++*s;
     if ( **s == 62 )
       ++*s;
-    result = cmd;
+    return cmd;
   }
-  return result;
 }
 
 //----- (080786B3) --------------------------------------------------------
@@ -37615,7 +37509,7 @@ LABEL_47:
 //----- (080788C5) --------------------------------------------------------
 Str __cdecl checkType(Str s, Lineprop **oprop, Linecolor **ocolor)
 {
-  int v3; // eax
+  int length; // eax
   int v4; // eax
   unsigned int v5; // eax
   Lineprop v6; // ax
@@ -37646,7 +37540,7 @@ Str __cdecl checkType(Str s, Lineprop **oprop, Linecolor **ocolor)
   Lineprop ceffect; // [esp+48h] [ebp-10h] BYREF
   Lineprop effect; // [esp+4Ah] [ebp-Eh]
   Lineprop mode; // [esp+4Ch] [ebp-Ch]
-  Linecolor cmode[9]; // [esp+4Fh] [ebp-9h] BYREF
+  char cmode[9]; // [esp+4Fh] [ebp-9h] BYREF
 
   effect = 0;
   str = s->ptr;
@@ -37661,11 +37555,11 @@ Str __cdecl checkType(Str s, Lineprop **oprop, Linecolor **ocolor)
   plen = 0;
   if ( s->length > prop_size_9084 )
   {
-    v3 = s->length;
-    if ( v3 < 256 )
-      v3 = 256;
-    prop_size_9084 = v3;
-    prop_buffer_9083 = (Lineprop *)GC_realloc(prop_buffer_9083, 2 * v3);
+    length = s->length;
+    if ( length < 256 )
+      length = 256;
+    prop_size_9084 = length;
+    prop_buffer_9083 = (Lineprop *)GC_realloc(prop_buffer_9083, 2 * length);
   }
   prop = prop_buffer_9083;
   if ( ShowEffect )
@@ -37836,7 +37730,7 @@ LABEL_90:
         goto LABEL_99;
       if ( str == es_0 )
       {
-        ok = parse_ansi_color(&str, &ceffect, cmode);
+        ok = parse_ansi_color(&str, &ceffect, (Linecolor *)cmode);
         if ( str < endp )
           es_0 = (char *)memchr(str, 27, endp - str);
         if ( !ok )
@@ -37901,11 +37795,11 @@ LABEL_99:
   return s;
 }
 // 8049E6C: using guessed type int __cdecl GC_realloc(_DWORD, _DWORD);
+// 80788C5: using guessed type Linecolor cmode[9];
 
 //----- (080791C2) --------------------------------------------------------
 int __cdecl nextColumn(int n, char *p, Lineprop *pr)
 {
-  int result; // eax
   int v4; // eax
 
   if ( (*pr & 0x100) != 0 )
@@ -37913,22 +37807,18 @@ int __cdecl nextColumn(int n, char *p, Lineprop *pr)
     switch ( *p )
     {
       case 9:
-        result = (n + Tabstop) / Tabstop * Tabstop;
-        break;
+        return (n + Tabstop) / Tabstop * Tabstop;
       case 10:
-        result = n + 1;
-        break;
+        return n + 1;
       case 13:
-        result = n;
-        break;
+        return n;
       default:
-        result = n + 2;
-        break;
+        return n + 2;
     }
   }
   else if ( (*pr & 0x1000) != 0 )
   {
-    result = n + 4;
+    return n + 4;
   }
   else
   {
@@ -37936,15 +37826,13 @@ int __cdecl nextColumn(int n, char *p, Lineprop *pr)
       v4 = WTF_WIDTH_MAP[(unsigned __int8)*p];
     else
       v4 = WTF_WIDTH_MAP[(unsigned __int8)*p] != 0;
-    result = n + v4;
+    return n + v4;
   }
-  return result;
 }
 
 //----- (08079289) --------------------------------------------------------
 int __cdecl calcPosition(char *l, Lineprop *pr, int len, int pos, int bpos, int mode)
 {
-  int result; // eax
   int v7; // eax
   int j; // [esp+18h] [ebp-10h]
   int i; // [esp+1Ch] [ebp-Ch]
@@ -37985,10 +37873,9 @@ int __cdecl calcPosition(char *l, Lineprop *pr, int len, int pos, int bpos, int 
     }
   }
   if ( pos >= i )
-    result = j;
+    return j;
   else
-    result = realColumn_9599[pos];
-  return result;
+    return realColumn_9599[pos];
 }
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
 
@@ -38264,7 +38151,7 @@ LABEL_81:
 //----- (0807999A) --------------------------------------------------------
 int __cdecl read_token(Str buf, char **instr, int *status, int pre, int append)
 {
-  int v6; // eax
+  int length; // eax
   int v7; // edx
   char v8; // al
   int v9; // eax
@@ -38300,9 +38187,9 @@ int __cdecl read_token(Str buf, char **instr, int *status, int pre, int append)
           {
             if ( buf->length + 1 >= buf->area_size )
               Strgrow(buf);
-            v6 = buf->length;
-            buf->ptr[v6] = *p;
-            buf->length = v6 + 1;
+            length = buf->length;
+            buf->ptr[length] = *p;
+            buf->length = length + 1;
             buf->ptr[buf->length] = 0;
           }
           ++p;
@@ -38418,7 +38305,7 @@ proc_end:
 //----- (08079E3B) --------------------------------------------------------
 Str __cdecl correct_irrtag(int status)
 {
-  int v2; // eax
+  int length; // eax
   Str tmp; // [esp+18h] [ebp-10h]
   char c; // [esp+1Fh] [ebp-9h]
 
@@ -38460,9 +38347,9 @@ Str __cdecl correct_irrtag(int status)
 LABEL_9:
           if ( tmp->length + 1 >= tmp->area_size )
             Strgrow(tmp);
-          v2 = tmp->length;
-          tmp->ptr[v2] = c;
-          tmp->length = v2 + 1;
+          length = tmp->length;
+          tmp->ptr[length] = c;
+          tmp->length = length + 1;
           tmp->ptr[tmp->length] = 0;
           continue;
         default:
@@ -38532,14 +38419,13 @@ auth_pass *__cdecl find_auth_pass_entry(char *host, int port, char *realm, char 
 //----- (0807A0BE) --------------------------------------------------------
 int __cdecl find_auth_user_passwd(ParsedURL *pu, char *realm, Str *uname, Str *pwd, int is_proxy)
 {
-  int result; // eax
   auth_pass *ent; // [esp+2Ch] [ebp-Ch]
 
   if ( pu->user && pu->pass )
   {
     *uname = Strnew_charp(pu->user);
     *pwd = Strnew_charp(pu->pass);
-    result = 1;
+    return 1;
   }
   else
   {
@@ -38548,14 +38434,13 @@ int __cdecl find_auth_user_passwd(ParsedURL *pu, char *realm, Str *uname, Str *p
     {
       *uname = ent->uname;
       *pwd = ent->pwd;
-      result = 1;
+      return 1;
     }
     else
     {
-      result = 0;
+      return 0;
     }
   }
-  return result;
 }
 
 //----- (0807A167) --------------------------------------------------------
@@ -38601,7 +38486,7 @@ Str __cdecl next_token(Str arg)
     for ( qa = q + 1; *qa && (MYCTYPE_MAP[(unsigned __int8)*qa] & 2) != 0; ++qa )
       ;
     if ( *qa )
-      narg = Strnew_charp(qa);
+      return Strnew_charp(qa);
   }
   return narg;
 }
@@ -38763,7 +38648,6 @@ void loadPasswd()
 //----- (0807A7B3) --------------------------------------------------------
 char *__cdecl last_modified(Buffer *buf)
 {
-  char *result; // eax
   stat st; // [esp+14h] [ebp-64h] BYREF
   TextListItem *ti; // [esp+6Ch] [ebp-Ch]
 
@@ -38774,26 +38658,25 @@ char *__cdecl last_modified(Buffer *buf)
       if ( !strncasecmp(ti->ptr, "Last-modified: ", 0xFu) )
         return ti->ptr + 15;
     }
-    result = "unknown";
+    return "unknown";
   }
   else if ( buf->currentURL.scheme == 4 )
   {
     if ( stat_0(buf->currentURL.file, (int)&st) >= 0 )
-      result = ctime(&st.st_mtim.tv_sec);
+      return ctime(&st.st_mtim.tv_sec);
     else
-      result = "unknown";
+      return "unknown";
   }
   else
   {
-    result = "unknown";
+    return "unknown";
   }
-  return result;
 }
 
 //----- (0807A85F) --------------------------------------------------------
 Str __cdecl romanNum2(int l, int n)
 {
-  int v2; // eax
+  int length; // eax
   int v3; // eax
   int v4; // eax
   int v5; // eax
@@ -38813,9 +38696,9 @@ Str __cdecl romanNum2(int l, int n)
       {
         if ( s->length + 1 >= s->area_size )
           Strgrow(s);
-        v2 = s->length;
-        s->ptr[v2] = roman_num1[l];
-        s->length = v2 + 1;
+        length = s->length;
+        s->ptr[length] = roman_num1[l];
+        s->length = length + 1;
         s->ptr[s->length] = 0;
         --n;
       }
@@ -38889,13 +38772,13 @@ Str __cdecl romanNumeral(int n)
   if ( n <= 3999 )
   {
     v2 = romanNum2(3, n / 1000);
-    savexmlstr_0(r, v2);
+    Strcat(r, v2);
     v3 = romanNum2(2, n % 1000 / 100);
-    savexmlstr_0(r, v3);
+    Strcat(r, v3);
     v4 = romanNum2(1, n % 100 / 10);
-    savexmlstr_0(r, v4);
+    Strcat(r, v4);
     v5 = romanNum2(0, n % 10);
-    savexmlstr_0(r, v5);
+    Strcat(r, v5);
   }
   else
   {
@@ -38907,7 +38790,7 @@ Str __cdecl romanNumeral(int n)
 //----- (0807AC6D) --------------------------------------------------------
 Str __cdecl romanAlphabet(int n)
 {
-  int v2; // eax
+  int length; // eax
   int l; // [esp+14h] [ebp-24h]
   int la; // [esp+14h] [ebp-24h]
   Str r; // [esp+18h] [ebp-20h]
@@ -38928,9 +38811,9 @@ Str __cdecl romanAlphabet(int n)
   {
     if ( r->length + 1 >= r->area_size )
       Strgrow(r);
-    v2 = r->length;
-    r->ptr[v2] = buf[la];
-    r->length = v2 + 1;
+    length = r->length;
+    r->ptr[length] = buf[la];
+    r->length = length + 1;
     r->ptr[r->length] = 0;
   }
   return r;
@@ -39091,7 +38974,7 @@ void __cdecl mySystem(char *command, int background)
 //----- (0807B172) --------------------------------------------------------
 Str __cdecl myExtCommand(char *cmd, char *arg, int redirect)
 {
-  int v3; // eax
+  int length; // eax
   int set_arg; // [esp+24h] [ebp-14h]
   char *p; // [esp+28h] [ebp-10h]
   Str tmp; // [esp+2Ch] [ebp-Ch]
@@ -39112,18 +38995,18 @@ Str __cdecl myExtCommand(char *cmd, char *arg, int redirect)
     {
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v3 = tmp->length;
-      tmp->ptr[v3] = *p;
-      tmp->length = v3 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = *p;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
     }
   }
   if ( !set_arg )
   {
     if ( redirect )
-      tmp = Strnew_m_charp("(", cmd, ") < ", arg, 0);
+      return Strnew_m_charp("(", cmd, ") < ", arg, 0);
     else
-      tmp = Strnew_m_charp(cmd, " ", arg, 0);
+      return Strnew_m_charp(cmd, " ", arg, 0);
   }
   return tmp;
 }
@@ -39131,7 +39014,7 @@ Str __cdecl myExtCommand(char *cmd, char *arg, int redirect)
 //----- (0807B2BD) --------------------------------------------------------
 Str __cdecl myEditor(char *cmd, char *file, int line)
 {
-  int v3; // eax
+  int length; // eax
   _Str *v5; // [esp+4h] [ebp-24h]
   _Str *v6; // [esp+4h] [ebp-24h]
   int set_line; // [esp+10h] [ebp-18h]
@@ -39157,7 +39040,7 @@ Str __cdecl myEditor(char *cmd, char *file, int line)
       if ( !tmp )
         tmp = Strnew_charp_n(cmd, p - cmd);
       v5 = Sprintf("%d", line);
-      savexmlstr_0(tmp, v5);
+      Strcat(tmp, v5);
       set_line = 1;
       ++p;
     }
@@ -39165,9 +39048,9 @@ Str __cdecl myEditor(char *cmd, char *file, int line)
     {
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v3 = tmp->length;
-      tmp->ptr[v3] = *p;
-      tmp->length = v3 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = *p;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
     }
   }
@@ -39178,7 +39061,7 @@ Str __cdecl myEditor(char *cmd, char *file, int line)
     if ( !set_line && line > 1 && strcasestr(cmd, "vi") )
     {
       v6 = Sprintf(" +%d", line);
-      savexmlstr_0(tmp, v6);
+      Strcat(tmp, v6);
     }
     Strcat_m_charp(tmp, " ", file, 0);
   }
@@ -39192,7 +39075,7 @@ char *__cdecl expandName(char *name)
   char *v2; // eax
   char *q; // [esp+10h] [ebp-18h]
   _Str *extpath; // [esp+14h] [ebp-14h]
-  passwd *passent; // [esp+18h] [ebp-10h]
+  struct passwd *passent; // [esp+18h] [ebp-10h]
   char *p; // [esp+1Ch] [ebp-Ch]
   char *pa; // [esp+1Ch] [ebp-Ch]
 
@@ -39229,7 +39112,7 @@ char *__cdecl expandName(char *name)
 //----- (0807B61E) --------------------------------------------------------
 char *__cdecl file_to_url(char *file)
 {
-  int v1; // eax
+  int length; // eax
   char *v2; // eax
   char *v4; // [esp+4h] [ebp-24h]
   Str tmp; // [esp+1Ch] [ebp-Ch]
@@ -39244,9 +39127,9 @@ char *__cdecl file_to_url(char *file)
     {
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v1 = tmp->length;
-      tmp->ptr[v1] = 47;
-      tmp->length = v1 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = 47;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
     }
     Strcat_charp(tmp, filea);
@@ -39301,7 +39184,7 @@ Str __cdecl tmpfname(int type, char *ext)
 //----- (0807B839) --------------------------------------------------------
 int __cdecl get_day(char **s)
 {
-  int v2; // edx
+  int length; // edx
   char *v3; // eax
   char *ss_0; // [esp+14h] [ebp-14h]
   int day; // [esp+18h] [ebp-10h]
@@ -39315,10 +39198,10 @@ int __cdecl get_day(char **s)
   {
     if ( tmp->length + 1 >= tmp->area_size )
       Strgrow(tmp);
-    v2 = tmp->length;
+    length = tmp->length;
     v3 = *s;
-    tmp->ptr[v2] = **s;
-    tmp->length = v2 + 1;
+    tmp->ptr[length] = **s;
+    tmp->length = length + 1;
     *s = v3 + 1;
     tmp->ptr[tmp->length] = 0;
   }
@@ -39332,7 +39215,7 @@ int __cdecl get_day(char **s)
 //----- (0807B923) --------------------------------------------------------
 int __cdecl get_month(char **s)
 {
-  int v2; // edx
+  int length; // edx
   char *v3; // eax
   int v4; // edx
   char *v5; // eax
@@ -39348,10 +39231,10 @@ int __cdecl get_month(char **s)
   {
     if ( tmp->length + 1 >= tmp->area_size )
       Strgrow(tmp);
-    v2 = tmp->length;
+    length = tmp->length;
     v3 = *s;
-    tmp->ptr[v2] = **s;
-    tmp->length = v2 + 1;
+    tmp->ptr[length] = **s;
+    tmp->length = length + 1;
     *s = v3 + 1;
     tmp->ptr[tmp->length] = 0;
   }
@@ -39384,8 +39267,7 @@ int __cdecl get_month(char **s)
 //----- (0807BAE5) --------------------------------------------------------
 int __cdecl get_year(char **s)
 {
-  int result; // eax
-  int v2; // edx
+  int length; // edx
   char *v3; // eax
   char *ss_0; // [esp+14h] [ebp-14h]
   int year; // [esp+18h] [ebp-10h]
@@ -39399,10 +39281,10 @@ int __cdecl get_year(char **s)
   {
     if ( tmp->length + 1 >= tmp->area_size )
       Strgrow(tmp);
-    v2 = tmp->length;
+    length = tmp->length;
     v3 = *s;
-    tmp->ptr[v2] = **s;
-    tmp->length = v2 + 1;
+    tmp->ptr[length] = **s;
+    tmp->length = length + 1;
     *s = v3 + 1;
     tmp->ptr[tmp->length] = 0;
   }
@@ -39416,21 +39298,19 @@ int __cdecl get_year(char **s)
       else
         year += 1900;
     }
-    result = year;
+    return year;
   }
   else
   {
     *s = ss_0;
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (0807BBFA) --------------------------------------------------------
 int __cdecl get_time(char **s, int *hour, int *min, int *sec)
 {
-  int result; // eax
-  int v5; // edx
+  int length; // edx
   char *v6; // eax
   int v7; // edx
   char *v8; // eax
@@ -39447,10 +39327,10 @@ int __cdecl get_time(char **s, int *hour, int *min, int *sec)
   {
     if ( tmp->length + 1 >= tmp->area_size )
       Strgrow(tmp);
-    v5 = tmp->length;
+    length = tmp->length;
     v6 = *s;
-    tmp->ptr[v5] = **s;
-    tmp->length = v5 + 1;
+    tmp->ptr[length] = **s;
+    tmp->length = length + 1;
     *s = v6 + 1;
     tmp->ptr[tmp->length] = 0;
   }
@@ -39489,33 +39369,31 @@ int __cdecl get_time(char **s, int *hour, int *min, int *sec)
       *sec = atoi(tmp->ptr);
       if ( *hour >= 0 && *hour <= 23 && *min >= 0 && *min <= 59 && *sec >= 0 && *sec <= 59 )
       {
-        result = 0;
+        return 0;
       }
       else
       {
         *s = ss_0;
-        result = -1;
+        return -1;
       }
     }
     else
     {
       *s = ss_0;
-      result = -1;
+      return -1;
     }
   }
   else
   {
     *s = ss_0;
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (0807BEB5) --------------------------------------------------------
 int __cdecl get_zone(char **s, int *z_hour, int *z_min)
 {
-  int result; // eax
-  int v4; // edx
+  int length; // edx
   char *v5; // eax
   int v6; // eax
   char *ss_0; // [esp+14h] [ebp-14h]
@@ -39531,10 +39409,10 @@ int __cdecl get_zone(char **s, int *z_hour, int *z_min)
     Strgrow(tmp);
   while ( 1 )
   {
-    v4 = tmp->length;
+    length = tmp->length;
     v5 = *s;
-    tmp->ptr[v4] = **s;
-    tmp->length = v4 + 1;
+    tmp->ptr[length] = **s;
+    tmp->length = length + 1;
     *s = v5 + 1;
     tmp->ptr[tmp->length] = 0;
 LABEL_11:
@@ -39549,14 +39427,13 @@ LABEL_11:
     v6 = atoi(tmp->ptr);
     *z_hour = v6 / 100;
     *z_min = v6 % 100;
-    result = 0;
+    return 0;
   }
   else
   {
     *s = ss_0;
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (0807C094) --------------------------------------------------------
@@ -39734,15 +39611,13 @@ void init_migemo()
 //----- (0807C752) --------------------------------------------------------
 int __cdecl open_migemo(char *migemo_command)
 {
-  int result; // eax
-
   migemo_pid = open_pipe_rw(&migemor, &migemow);
   if ( migemo_pid < 0 )
   {
     migemo_pid = 0;
     migemo_running = 0;
     migemo_active = 0;
-    result = 0;
+    return 0;
   }
   else
   {
@@ -39751,9 +39626,8 @@ int __cdecl open_migemo(char *migemo_command)
       setup_child(0, 2, -1);
       myExec(migemo_command);
     }
-    result = 1;
+    return 1;
   }
-  return result;
 }
 
 //----- (0807C7D7) --------------------------------------------------------
@@ -39798,7 +39672,7 @@ err:
 char *__cdecl conv_search_string(char *str, wc_ces f_ces)
 {
   if ( SearchConv && !WcOption.pre_conv && CurrentTab->currentBuffer->document_charset != f_ces )
-    str = wtf_conv_fit(str, CurrentTab->currentBuffer->document_charset);
+    return wtf_conv_fit(str, CurrentTab->currentBuffer->document_charset);
   return str;
 }
 
@@ -39807,7 +39681,6 @@ int __cdecl forwardSearch(Buffer *buf, char *str)
 {
   int v2; // ebx
   char *v3; // eax
-  int result; // eax
   int pos; // [esp+14h] [ebp-24h]
   int posa; // [esp+14h] [ebp-24h]
   int posb; // [esp+14h] [ebp-24h]
@@ -39855,7 +39728,7 @@ LABEL_4:
   begin = l;
   while ( l->size > pos && (l->propBuf[pos] & 0x400) != 0 )
     ++pos;
-  if ( l->size > pos && __gmp_vfprintf(&l->lineBuf[pos], l->size - pos, 0) == 1 )
+  if ( l->size > pos && regexMatch(&l->lineBuf[pos], l->size - pos, 0) == 1 )
   {
     matchedPosition(&first, &last);
     posa = first - l->lineBuf;
@@ -39899,7 +39772,7 @@ LABEL_4:
 LABEL_48:
     ;
   }
-  if ( __gmp_vfprintf(la->lineBuf, la->size, 1) != 1 )
+  if ( regexMatch(la->lineBuf, la->size, 1) != 1 )
   {
     if ( wrapped && la == begin )
       return 2;
@@ -39918,10 +39791,9 @@ LABEL_48:
   arrangeCursor(buf);
   set_mark(la, posb, &last[posb] - first);
   if ( wrapped )
-    result = 5;
+    return 5;
   else
-    result = 1;
-  return result;
+    return 1;
 }
 
 //----- (0807CD41) --------------------------------------------------------
@@ -39929,7 +39801,6 @@ int __cdecl backwardSearch(Buffer *buf, char *str)
 {
   int v2; // ebx
   char *v3; // eax
-  int result; // eax
   int pos; // [esp+18h] [ebp-30h]
   int posa; // [esp+18h] [ebp-30h]
   int posb; // [esp+18h] [ebp-30h]
@@ -39989,7 +39860,7 @@ LABEL_4:
   q = l->lineBuf;
   do
   {
-    if ( __gmp_vfprintf(q, &l->lineBuf[l->size] - q, l->lineBuf == q) != 1 )
+    if ( regexMatch(q, &l->lineBuf[l->size] - q, l->lineBuf == q) != 1 )
       break;
     matchedPosition(&first, &last);
     if ( first <= p )
@@ -40017,7 +39888,7 @@ LABEL_4:
       gotoLine(buf, l->linenumber);
     arrangeCursor(buf);
     set_mark(l, posb, &found_last[posb] - found);
-    result = 1;
+    return 1;
   }
   else
   {
@@ -40034,7 +39905,7 @@ LABEL_37:
       found = 0;
       found_last = 0;
       q = la->lineBuf;
-      while ( __gmp_vfprintf(q, &la->lineBuf[la->size] - q, la->lineBuf == q) == 1 )
+      while ( regexMatch(q, &la->lineBuf[la->size] - q, la->lineBuf == q) == 1 )
       {
         matchedPosition(&first, &last);
         found = first;
@@ -40061,19 +39932,22 @@ LABEL_37:
     arrangeCursor(buf);
     set_mark(la, posc, &found_last[posc] - found);
     if ( wrapped )
-      result = 5;
+      return 5;
     else
-      result = 1;
+      return 1;
   }
-  return result;
 }
 
 //----- (0807D230) --------------------------------------------------------
-char *__cdecl inputLineHistSearch(char *prompt, char *def_str, int flag, Hist *hist, int (*incrfunc)(int, Str, Lineprop *))
+char *__cdecl inputLineHistSearch(
+        char *prompt,
+        char *def_str,
+        int flag,
+        Hist *hist,
+        int (*incrfunc)(int, Str, Lineprop *))
 {
   wc_ces v5; // ebx
   wc_ces v6; // eax
-  char *result; // eax
   const char *q; // [esp+28h] [ebp-30h]
   Str tmp; // [esp+2Ch] [ebp-2Ch]
   char *p; // [esp+30h] [ebp-28h]
@@ -40270,10 +40144,9 @@ LABEL_71:
     }
   }
   if ( (flag & 0x20) != 0 )
-    result = expandPath(p);
+    return expandPath(p);
   else
-    result = allocStr(p, -1);
-  return result;
+    return allocStr(p, -1);
 }
 
 //----- (0807D9AC) --------------------------------------------------------
@@ -40754,7 +40627,7 @@ void __cdecl next_dcompl(int next)
   wc_ces v2; // ebx
   _Str *v3; // eax
   Str v4; // eax
-  int v5; // edx
+  int length; // edx
   wc_ces v6; // esi
   wc_ces v7; // ebx
   _Str *v8; // eax
@@ -40803,9 +40676,9 @@ void __cdecl next_dcompl(int next)
         if ( d_9104->length + 1 >= d_9104->area_size )
           Strgrow(d_9104);
         v4 = d_9104;
-        v5 = d_9104->length;
-        d_9104->ptr[v5] = 47;
-        v4->length = v5 + 1;
+        length = d_9104->length;
+        d_9104->ptr[length] = 47;
+        v4->length = length + 1;
         d_9104->ptr[d_9104->length] = 0;
       }
       if ( (cm_mode & 8) != 0 && *d_9104->ptr == 102 )
@@ -40927,8 +40800,7 @@ void __cdecl next_dcompl(int next)
 //----- (0807EBE9) --------------------------------------------------------
 Str __cdecl escape_spaces(Str s)
 {
-  Str result; // eax
-  int v2; // eax
+  int length; // eax
   int v3; // eax
   char *p; // [esp+18h] [ebp-10h]
   Str tmp; // [esp+1Ch] [ebp-Ch]
@@ -40944,9 +40816,9 @@ Str __cdecl escape_spaces(Str s)
         tmp = Strnew_charp_n(s->ptr, p - s->ptr);
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v2 = tmp->length;
-      tmp->ptr[v2] = 92;
-      tmp->length = v2 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = 92;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
     }
     if ( tmp )
@@ -40960,17 +40832,15 @@ Str __cdecl escape_spaces(Str s)
     }
   }
   if ( tmp )
-    result = tmp;
+    return tmp;
   else
-    result = s;
-  return result;
+    return s;
 }
 
 //----- (0807ED0B) --------------------------------------------------------
 Str __cdecl unescape_spaces(Str s)
 {
-  Str result; // eax
-  int v2; // eax
+  int length; // eax
   char *p; // [esp+18h] [ebp-10h]
   Str tmp; // [esp+1Ch] [ebp-Ch]
 
@@ -40988,17 +40858,16 @@ Str __cdecl unescape_spaces(Str s)
     {
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v2 = tmp->length;
-      tmp->ptr[v2] = *p;
-      tmp->length = v2 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = *p;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
     }
   }
   if ( tmp )
-    result = tmp;
+    return tmp;
   else
-    result = s;
-  return result;
+    return s;
 }
 
 //----- (0807EDF7) --------------------------------------------------------
@@ -41010,7 +40879,7 @@ Str __cdecl doComplete(Str ifn, int *status, int next)
   char **v7; // ebx
   size_t v8; // eax
   Str v9; // eax
-  int v10; // edx
+  int length; // edx
   char *v11; // eax
   Str v12; // eax
   int v13; // edx
@@ -41035,12 +40904,12 @@ LABEL_52:
       if ( CompleteBuf->length + 1 >= CompleteBuf->area_size )
         Strgrow(CompleteBuf);
       v9 = CompleteBuf;
-      v10 = CompleteBuf->length;
-      CompleteBuf->ptr[v10] = 47;
-      v9->length = v10 + 1;
+      length = CompleteBuf->length;
+      CompleteBuf->ptr[length] = 47;
+      v9->length = length + 1;
       CompleteBuf->ptr[CompleteBuf->length] = 0;
     }
-    savexmlstr_0(CompleteBuf, CFileName);
+    Strcat(CompleteBuf, CFileName);
     if ( *status != 1 )
     {
       p = CompleteBuf->ptr;
@@ -41306,8 +41175,8 @@ int __cdecl terminated(unsigned __int8 c)
 //----- (0807F8A5) --------------------------------------------------------
 void editor()
 {
-  Str v0; // eax
-  int v1; // edx
+  Str value; // eax
+  int length; // edx
   Str v2; // eax
   int v3; // edx
   FormItemList fi; // [esp+14h] [ebp-54h] BYREF
@@ -41319,10 +41188,10 @@ void editor()
     fi.value = Strdup(strBuf);
     if ( fi.value->length + 1 >= fi.value->area_size )
       Strgrow(fi.value);
-    v0 = fi.value;
-    v1 = fi.value->length;
-    fi.value->ptr[v1] = 10;
-    v0->length = v1 + 1;
+    value = fi.value;
+    length = fi.value->length;
+    fi.value->ptr[length] = 10;
+    value->length = length + 1;
     fi.value->ptr[fi.value->length] = 0;
     input_textarea(&fi);
     strBuf = Strnew();
@@ -41434,7 +41303,6 @@ int __cdecl LUfactor(Matrix A, int *indexarray)
 //----- (0807FD68) --------------------------------------------------------
 int __cdecl LUsolve(Matrix A, int *indexarray, Vector b, Vector x)
 {
-  int result; // eax
   int dim; // [esp+28h] [ebp-10h]
   int i; // [esp+2Ch] [ebp-Ch]
 
@@ -41442,10 +41310,9 @@ int __cdecl LUsolve(Matrix A, int *indexarray, Vector b, Vector x)
   for ( i = 0; i < dim; ++i )
     x->ve[i] = b->ve[indexarray[i]];
   if ( Lsolve(A, x, x, 1.0) == -1 || Usolve(A, x, x, 0.0) == -1 )
-    result = -1;
+    return -1;
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (0807FE0A) --------------------------------------------------------
@@ -41584,7 +41451,14 @@ double __cdecl weight2(int a)
 }
 
 //----- (080802BB) --------------------------------------------------------
-int __cdecl bsearch_2short(__int16 e1, __int16 *ent1, __int16 e2, __int16 *ent2, int base, __int16 *indexarray, int nent)
+int __cdecl bsearch_2short(
+        __int16 e1,
+        __int16 *ent1,
+        __int16 e2,
+        __int16 *ent2,
+        int base,
+        __int16 *indexarray,
+        int nent)
 {
   int ne; // [esp+10h] [ebp-18h]
   int idx; // [esp+14h] [ebp-14h]
@@ -41718,18 +41592,18 @@ int __cdecl minimum_cellspacing(int border_mode)
 //----- (0808058D) --------------------------------------------------------
 int __cdecl table_border_width(table *t)
 {
-  int v1; // eax
+  int border_mode; // eax
 
-  v1 = t->border_mode;
-  if ( v1 <= 2 )
+  border_mode = t->border_mode;
+  if ( border_mode <= 2 )
   {
-    if ( v1 >= 1 )
+    if ( border_mode >= 1 )
       return t->cellspacing * t->maxcol + 2 * (t->cellpadding + symbol_width);
-    if ( v1 )
+    if ( border_mode )
       return 0;
     return t->maxcol * t->cellspacing;
   }
-  if ( v1 == 3 )
+  if ( border_mode == 3 )
     return t->maxcol * t->cellspacing;
   return 0;
 }
@@ -42016,7 +41890,7 @@ int __cdecl visible_length(char *str)
   }
   result = len;
   if ( max_len >= len )
-    result = max_len;
+    return max_len;
   return result;
 }
 
@@ -42058,7 +41932,7 @@ int __cdecl visible_length_plain(char *str)
   }
   result = len;
   if ( max_len >= len )
-    result = max_len;
+    return max_len;
   return result;
 }
 
@@ -42082,7 +41956,7 @@ void __cdecl align(TextLine *lbuf, int width, int mode)
   int v3; // eax
   int v4; // eax
   int v5; // eax
-  int v6; // eax
+  int length; // eax
   int v7; // eax
   Str line; // [esp+18h] [ebp-20h]
   Str buf; // [esp+1Ch] [ebp-1Ch]
@@ -42100,14 +41974,14 @@ void __cdecl align(TextLine *lbuf, int width, int mode)
     l = width - lbuf->pos;
     if ( mode == 1 )
     {
-      savexmlstr_0(buf, line);
+      Strcat(buf, line);
       for ( ic = 0; ic < l; ++ic )
       {
         if ( buf->length + 1 >= buf->area_size )
           Strgrow(buf);
-        v6 = buf->length;
-        buf->ptr[v6] = 32;
-        buf->length = v6 + 1;
+        length = buf->length;
+        buf->ptr[length] = 32;
+        buf->length = length + 1;
         buf->ptr[buf->length] = 0;
       }
     }
@@ -42122,7 +41996,7 @@ void __cdecl align(TextLine *lbuf, int width, int mode)
         buf->length = v7 + 1;
         buf->ptr[buf->length] = 0;
       }
-      savexmlstr_0(buf, line);
+      Strcat(buf, line);
     }
     else
     {
@@ -42137,7 +42011,7 @@ void __cdecl align(TextLine *lbuf, int width, int mode)
         buf->length = v4 + 1;
         buf->ptr[buf->length] = 0;
       }
-      savexmlstr_0(buf, line);
+      Strcat(buf, line);
       for ( ib = 0; ib < l - l / 2; ++ib )
       {
         if ( buf->length + 1 >= buf->area_size )
@@ -42198,13 +42072,13 @@ void __cdecl print_item(table *t, int row, int col, int width, Str buf)
       alignment = 1;
     }
     align(lbuf, width, alignment);
-    savexmlstr_0(buf, lbuf->line);
+    Strcat(buf, lbuf->line);
   }
   else
   {
     lbufa = newTextLine(0, 0);
     align(lbufa, width, 0);
-    savexmlstr_0(buf, lbufa->line);
+    Strcat(buf, lbufa->line);
   }
 }
 
@@ -42351,8 +42225,8 @@ int __cdecl get_spec_cell_width(table *tbl, int row, int col)
 void __cdecl do_refill(table *tbl, int row, int col, int maxlimit)
 {
   GeneralList **v4; // ebx
-  int v5; // eax
-  int v6; // eax
+  int spec_cell_width; // eax
+  int flag; // eax
   int v7; // eax
   readbuffer obuf; // [esp+28h] [ebp-310h] BYREF
   environment envs[20]; // [esp+178h] [ebp-1C0h] BYREF
@@ -42377,8 +42251,8 @@ void __cdecl do_refill(table *tbl, int row, int col, int maxlimit)
   orgdata = (TextList *)tbl->tabdata[row][col];
   v4 = &tbl->tabdata[row][col];
   *v4 = newGeneralList();
-  v5 = get_spec_cell_width(tbl, row, col);
-  init_henv(&h_env, &obuf, envs, 20, (TextLineList *)tbl->tabdata[row][col], v5, 0);
+  spec_cell_width = get_spec_cell_width(tbl, row, col);
+  init_henv(&h_env, &obuf, envs, 20, (TextLineList *)tbl->tabdata[row][col], spec_cell_width, 0);
   obuf.flag |= 0x20000u;
   if ( h_env.limit > maxlimit )
     h_env.limit = maxlimit;
@@ -42424,9 +42298,9 @@ void __cdecl do_refill(table *tbl, int row, int col, int maxlimit)
         if ( h_env.maxlimit < limit )
           h_env.maxlimit = limit;
         restore_fonteffect(&h_env, h_env.obuf);
-        v6 = obuf.flag;
-        BYTE1(v6) = BYTE1(obuf.flag) & 0xDF;
-        obuf.flag = v6;
+        flag = obuf.flag;
+        BYTE1(flag) = BYTE1(obuf.flag) & 0xDF;
+        obuf.flag = flag;
         h_env.blank_lines = 0;
         if ( t->vspace > 0 )
         {
@@ -42489,17 +42363,22 @@ LABEL_48:
 //----- (08081FAE) --------------------------------------------------------
 int __cdecl table_rule_width(table *t)
 {
-  int result; // eax
-
   if ( t->border_mode )
-    result = symbol_width;
+    return symbol_width;
   else
-    result = 1;
-  return result;
+    return 1;
 }
 
 //----- (08081FC9) --------------------------------------------------------
-void __cdecl check_cell_width(__int16 *tabwidth, __int16 *cellwidth, __int16 *col, __int16 *colspan, __int16 maxcell, __int16 *indexarray, int space, int dir)
+void __cdecl check_cell_width(
+        __int16 *tabwidth,
+        __int16 *cellwidth,
+        __int16 *col,
+        __int16 *colspan,
+        __int16 maxcell,
+        __int16 *indexarray,
+        int space,
+        int dir)
 {
   int r; // [esp+18h] [ebp-28h]
   int w; // [esp+1Ch] [ebp-24h]
@@ -42785,9 +42664,15 @@ double __cdecl correlation_coefficient2(double sxx, double syy, double sxy)
 }
 
 //----- (08082B62) --------------------------------------------------------
-double __cdecl recalc_width(double old, double swidth, int cwidth, double sxx, double syy, double sxy, int is_inclusive)
+double __cdecl recalc_width(
+        double old,
+        double swidth,
+        int cwidth,
+        double sxx,
+        double syy,
+        double sxy,
+        int is_inclusive)
 {
-  long double result; // fst7
   double olda; // [esp+48h] [ebp-50h]
   double wmin_0; // [esp+50h] [ebp-48h]
   double coe1; // [esp+58h] [ebp-40h]
@@ -42839,14 +42724,24 @@ double __cdecl recalc_width(double old, double swidth, int cwidth, double sxx, d
     wwa = ww + wmin;
   }
   if ( w <= (long double)wwa )
-    result = olda;
+    return olda;
   else
-    result = wwa / rat;
-  return result;
+    return wwa / rat;
 }
 
 //----- (08082D94) --------------------------------------------------------
-int __cdecl check_compressible_cell(table *t, MAT *minv, double *newwidth, double *swidth, __int16 *cwidth, double totalwidth, double *Sxx, int icol, int icell, double sxx, int corr)
+int __cdecl check_compressible_cell(
+        table *t,
+        MAT *minv,
+        double *newwidth,
+        double *swidth,
+        __int16 *cwidth,
+        double totalwidth,
+        double *Sxx,
+        int icol,
+        int icell,
+        double sxx,
+        int corr)
 {
   int v12; // eax
   long double v13; // fst7
@@ -42986,7 +42881,6 @@ int __cdecl check_table_width(table *t, double *newwidth, MAT *minv, int itr)
   void *v11; // esp
   double *v12; // eax
   int v13; // edx
-  int result; // eax
   int v15; // esi
   int v16; // ebx
   long double v17; // fst7
@@ -43035,11 +42929,11 @@ int __cdecl check_table_width(table *t, double *newwidth, MAT *minv, int itr)
   double (*p_swidth)[]; // [esp+110h] [ebp-68h]
   int v61; // [esp+114h] [ebp-64h]
   __int16 (*p_cwidth)[]; // [esp+118h] [ebp-60h]
-  int v63; // [esp+11Ch] [ebp-5Ch]
+  int maxcell; // [esp+11Ch] [ebp-5Ch]
   __int16 (*p_corwidth)[]; // [esp+120h] [ebp-58h]
   int v65; // [esp+124h] [ebp-54h]
   __int16 (*p_orgwidth)[]; // [esp+128h] [ebp-50h]
-  int v67; // [esp+12Ch] [ebp-4Ch]
+  int maxcol; // [esp+12Ch] [ebp-4Ch]
   int mwidth; // [esp+130h] [ebp-48h]
   int nwidth; // [esp+134h] [ebp-44h]
   double *Sxx; // [esp+138h] [ebp-40h]
@@ -43060,7 +42954,7 @@ int __cdecl check_table_width(table *t, double *newwidth, MAT *minv, int itr)
   corr = 0;
   cell = &t->cell;
   v4 = t->maxcol + 1;
-  v67 = t->maxcol;
+  maxcol = t->maxcol;
   v45 = 16 * v4;
   v46 = ((unsigned __int64)(unsigned int)v4 >> 28) & 0xF;
   v43 = v4;
@@ -43068,7 +42962,7 @@ int __cdecl check_table_width(table *t, double *newwidth, MAT *minv, int itr)
   v41 = 16 * v4;
   v42 = v46;
   v5 = alloca(16 * ((unsigned int)(2 * v4 + 30) >> 4));
-  p_orgwidth = (__int16 (*)[])(16 * (((unsigned int)v21 + 3) >> 4));
+  p_orgwidth = (__int16 (*)[])v21;
   v6 = t->maxcol + 1;
   v65 = t->maxcol;
   v39 = v6;
@@ -43080,9 +42974,9 @@ int __cdecl check_table_width(table *t, double *newwidth, MAT *minv, int itr)
   v33 = 16 * v6;
   v34 = v38;
   v7 = alloca(16 * ((unsigned int)(2 * v6 + 30) >> 4));
-  p_corwidth = p_orgwidth;
+  p_corwidth = (__int16 (*)[])v21;
   v8 = t->cell.maxcell + 1;
-  v63 = t->cell.maxcell;
+  maxcell = t->cell.maxcell;
   v31 = v8;
   v32 = 0;
   v29 = 16 * v8;
@@ -43092,7 +42986,7 @@ int __cdecl check_table_width(table *t, double *newwidth, MAT *minv, int itr)
   v25 = 16 * v8;
   v26 = v30;
   v9 = alloca(16 * ((unsigned int)(2 * v8 + 30) >> 4));
-  p_cwidth = p_orgwidth;
+  p_cwidth = (__int16 (*)[])v21;
   v10 = t->cell.maxcell + 1;
   v61 = t->cell.maxcell;
   v23 = v10;
@@ -43104,7 +42998,7 @@ int __cdecl check_table_width(table *t, double *newwidth, MAT *minv, int itr)
   v21[0] = v10 << 6;
   v21[1] = v22;
   v11 = alloca(16 * ((unsigned int)(8 * v10 + 30) >> 4));
-  p_swidth = (double (*)[])p_orgwidth;
+  p_swidth = (double (*)[])v21;
   twidth = 0.0;
   stotal = 0.0;
   for ( i = 0; ta->maxcol >= i; ++i )
@@ -43265,10 +43159,9 @@ int __cdecl check_table_width(table *t, double *newwidth, MAT *minv, int itr)
     }
   }
   if ( itr <= 9 )
-    result = corr;
+    return corr;
   else
-    result = 0;
-  return result;
+    return 0;
 }
 // 804A51C: using guessed type int __cdecl GC_malloc_atomic(_DWORD);
 
@@ -43277,7 +43170,7 @@ void __cdecl check_table_height(table *t)
 {
   __int16 v1; // ax
   int v2; // eax
-  int v3; // eax
+  int border_mode; // eax
   __int16 *cell; // [esp+48h] [ebp-50h]
   __int16 *cell_4; // [esp+4Ch] [ebp-4Ch]
   __int16 *cell_8; // [esp+50h] [ebp-48h]
@@ -43372,10 +43265,10 @@ void __cdecl check_table_height(table *t)
       }
     }
   }
-  v3 = t->border_mode;
-  if ( v3 )
+  border_mode = t->border_mode;
+  if ( border_mode )
   {
-    if ( v3 >= 0 && v3 <= 3 )
+    if ( border_mode >= 0 && border_mode <= 3 )
       space = 1;
   }
   else
@@ -43399,12 +43292,12 @@ int __cdecl get_table_width(table *t, __int16 *orgwidth, __int16 *cellwidth, int
   __int16 v6; // dx
   int v7; // ecx
   void *v8; // esp
-  int v9; // edx
+  int cellspacing; // edx
   __int16 v10; // di
   int v11; // eax
   int v12; // eax
-  _DWORD v14[11]; // [esp+0h] [ebp-B8h] BYREF
-  int v15[2]; // [esp+2Ch] [ebp-8Ch] BYREF
+  _BYTE v14[32]; // [esp+0h] [ebp-B8h] BYREF
+  int v15[5]; // [esp+20h] [ebp-98h] BYREF
   int v16; // [esp+34h] [ebp-84h]
   int v17; // [esp+38h] [ebp-80h]
   int v18; // [esp+3Ch] [ebp-7Ch]
@@ -43415,15 +43308,15 @@ int __cdecl get_table_width(table *t, __int16 *orgwidth, __int16 *cellwidth, int
   int v23; // [esp+50h] [ebp-68h]
   int v24; // [esp+54h] [ebp-64h]
   __int16 *colspan; // [esp+58h] [ebp-60h]
-  _DWORD *v26; // [esp+5Ch] [ebp-5Ch]
-  _DWORD *v27; // [esp+60h] [ebp-58h]
+  _BYTE *v26; // [esp+5Ch] [ebp-5Ch]
+  _BYTE *v27; // [esp+60h] [ebp-58h]
   __int16 *cellwidtha; // [esp+64h] [ebp-54h]
   __int16 *orgwidtha; // [esp+68h] [ebp-50h]
   table *ta; // [esp+6Ch] [ebp-4Ch]
   __int16 (*p_ccellwidth)[]; // [esp+7Ch] [ebp-3Ch]
-  int v32; // [esp+80h] [ebp-38h]
+  int maxcell; // [esp+80h] [ebp-38h]
   __int16 (*p_newwidth)[]; // [esp+84h] [ebp-34h]
-  int v34; // [esp+88h] [ebp-30h]
+  int maxcol; // [esp+88h] [ebp-30h]
   int rulewidth; // [esp+8Ch] [ebp-2Ch]
   table_cell *cell; // [esp+90h] [ebp-28h]
   int swidth; // [esp+94h] [ebp-24h]
@@ -43436,7 +43329,7 @@ int __cdecl get_table_width(table *t, __int16 *orgwidth, __int16 *cellwidth, int
   v39 = __readgsdword(0x14u);
   v27 = v14;
   v4 = t->maxcol + 1;
-  v34 = t->maxcol;
+  maxcol = t->maxcol;
   v23 = 16 * v4;
   v24 = ((unsigned __int64)(unsigned int)v4 >> 28) & 0xF;
   v21 = v4;
@@ -43444,7 +43337,7 @@ int __cdecl get_table_width(table *t, __int16 *orgwidth, __int16 *cellwidth, int
   v19 = 16 * v4;
   v20 = v24;
   v5 = alloca(16 * ((unsigned int)(2 * v4 + 30) >> 4));
-  p_newwidth = (__int16 (*)[])(16 * (((unsigned int)v15 + 3) >> 4));
+  p_newwidth = (__int16 (*)[])v15;
   cell = &t->cell;
   rulewidth = table_rule_width(t);
   for ( i = 0; ta->maxcol >= i; ++i )
@@ -43458,17 +43351,17 @@ int __cdecl get_table_width(table *t, __int16 *orgwidth, __int16 *cellwidth, int
   {
     v26 = v14;
     v7 = cell->maxcell + 1;
-    v32 = cell->maxcell;
+    maxcell = cell->maxcell;
     v17 = v7;
     v18 = 0;
-    v15[1] = 16 * v7;
+    v15[4] = 16 * v7;
     v16 = ((unsigned __int64)(unsigned int)v7 >> 28) & 0xF;
-    v14[10] = v7;
-    v15[0] = 0;
-    v14[8] = 16 * v7;
-    v14[9] = v16;
+    v15[2] = v7;
+    v15[3] = 0;
+    v15[0] = 16 * v7;
+    v15[1] = v16;
     v8 = alloca(16 * ((unsigned int)(2 * v7 + 30) >> 4));
-    p_ccellwidth = (__int16 (*)[])(16 * (((unsigned int)v15 + 3) >> 4));
+    p_ccellwidth = (__int16 (*)[])v15;
     for ( i = 0; ta->maxcol >= i; ++i )
     {
       if ( *((_WORD *)p_newwidth + i) < ta->fixed_width[i] )
@@ -43480,10 +43373,18 @@ int __cdecl get_table_width(table *t, __int16 *orgwidth, __int16 *cellwidth, int
       if ( *((_WORD *)p_ccellwidth + i) < cell->fixed_width[i] )
         *((_WORD *)p_ccellwidth + i) = cell->fixed_width[i];
     }
-    v9 = ta->cellspacing;
+    cellspacing = ta->cellspacing;
     v10 = cell->maxcell;
     colspan = cell->colspan;
-    check_cell_width((__int16 *)p_newwidth, (__int16 *)p_ccellwidth, cell->col, cell->colspan, v10, cell->index, v9, 0);
+    check_cell_width(
+      (__int16 *)p_newwidth,
+      (__int16 *)p_ccellwidth,
+      cell->col,
+      cell->colspan,
+      v10,
+      cell->index,
+      cellspacing,
+      0);
   }
   else
   {
@@ -43512,7 +43413,7 @@ int __cdecl get_table_width(table *t, __int16 *orgwidth, __int16 *cellwidth, int
 //----- (08084705) --------------------------------------------------------
 void __cdecl renderCoTable(table *tbl, int maxlimit)
 {
-  int v2; // eax
+  int spec_cell_width; // eax
   readbuffer obuf; // [esp+28h] [ebp-2E0h] BYREF
   environment envs[20]; // [esp+178h] [ebp-190h] BYREF
   html_feed_environ h_env; // [esp+2B8h] [ebp-50h] BYREF
@@ -43529,8 +43430,8 @@ void __cdecl renderCoTable(table *tbl, int maxlimit)
     col = tbl->tables[i].col;
     row = tbl->tables[i].row;
     indent = tbl->tables[i].indent;
-    v2 = get_spec_cell_width(tbl, row, col);
-    init_henv(&h_env, &obuf, envs, 20, tbl->tables[i].buf, v2, indent);
+    spec_cell_width = get_spec_cell_width(tbl, row, col);
+    init_henv(&h_env, &obuf, envs, 20, tbl->tables[i].buf, spec_cell_width, indent);
     check_row(tbl, row);
     if ( h_env.limit > maxlimit )
       h_env.limit = maxlimit;
@@ -43551,7 +43452,7 @@ void __cdecl renderCoTable(table *tbl, int maxlimit)
 //----- (0808488F) --------------------------------------------------------
 void __cdecl make_caption(table *t, html_feed_environ *h_env)
 {
-  int v2; // ebx
+  int indent; // ebx
   TextLineList *v3; // eax
   readbuffer obuf; // [esp+2Ch] [ebp-2CCh] BYREF
   environment envs[20]; // [esp+17Ch] [ebp-17Ch] BYREF
@@ -43564,9 +43465,9 @@ void __cdecl make_caption(table *t, html_feed_environ *h_env)
       limit = h_env->limit;
     else
       limit = t->total_width;
-    v2 = h_env->envs[h_env->envc].indent;
+    indent = h_env->envs[h_env->envc].indent;
     v3 = (TextLineList *)newGeneralList();
-    init_henv(&henv, &obuf, envs, 20, v3, limit, v2);
+    init_henv(&henv, &obuf, envs, 20, v3, limit, indent);
     HTMLlineproc0("<center>", &henv, 1);
     HTMLlineproc0(t->caption->ptr, &henv, 0);
     HTMLlineproc0("</center>", &henv, 1);
@@ -43586,18 +43487,18 @@ void __cdecl renderTable(table *t, int max_width, html_feed_environ *h_env)
 {
   int v3; // ebx
   int v4; // ebx
-  int v5; // ebx
+  int total_width; // ebx
   TextLine *v6; // eax
   GeneralList **v7; // ebx
   char *v8; // eax
-  int v9; // eax
+  int border_mode; // eax
   char v10; // al
   int v11; // eax
   int v12; // eax
   int v13; // eax
   char v14; // al
   int v15; // eax
-  int v16; // eax
+  int length; // eax
   char *v17; // eax
   char *v18; // eax
   __int16 new_tabwidth[50]; // [esp+20h] [ebp-B8h] BYREF
@@ -43708,8 +43609,8 @@ void __cdecl renderTable(table *t, int max_width, html_feed_environ *h_env)
     t->tabwidth[v4] = ceil_at_intervals(t->tabwidth[i], rulewidth);
     t->total_width += t->tabwidth[i];
   }
-  v5 = t->total_width;
-  t->total_width = v5 + table_border_width(t);
+  total_width = t->total_width;
+  t->total_width = total_width + table_border_width(t);
   check_table_height(t);
   for ( i = 0; t->maxcol >= i; ++i )
   {
@@ -43758,20 +43659,20 @@ void __cdecl renderTable(table *t, int max_width, html_feed_environ *h_env)
     ++t->total_height;
   }
   vruleb = Strnew();
-  v9 = t->border_mode;
-  if ( v9 <= 2 )
+  border_mode = t->border_mode;
+  if ( border_mode <= 2 )
   {
-    if ( v9 < 1 )
+    if ( border_mode < 1 )
     {
-      if ( !v9 )
+      if ( !border_mode )
       {
         for ( i = 0; t->cellspacing > i; ++i )
         {
           if ( vruleb->length + 1 >= vruleb->area_size )
             Strgrow(vruleb);
-          v16 = vruleb->length;
-          vruleb->ptr[v16] = 32;
-          vruleb->length = v16 + 1;
+          length = vruleb->length;
+          vruleb->ptr[length] = 32;
+          vruleb->length = length + 1;
           vruleb->ptr[vruleb->length] = 0;
         }
       }
@@ -43823,7 +43724,7 @@ LABEL_85:
     }
     goto LABEL_96;
   }
-  if ( v9 == 3 )
+  if ( border_mode == 3 )
     goto LABEL_85;
 LABEL_96:
   for ( r = 0; t->maxrow >= r; ++r )
@@ -43832,12 +43733,12 @@ LABEL_96:
     {
       renderbuf = Strnew();
       if ( t->border_mode == 1 || t->border_mode == 2 )
-        savexmlstr_0(renderbuf, vrulea);
+        Strcat(renderbuf, vrulea);
       if ( t->tridvalue[r] && !h )
       {
         v17 = html_quote(t->tridvalue[r]->ptr);
         idtag = Sprintf("<_id id=\"%s\">", v17);
-        savexmlstr_0(renderbuf, idtag);
+        Strcat(renderbuf, idtag);
       }
       for ( i = 0; t->maxcol >= i; ++i )
       {
@@ -43846,7 +43747,7 @@ LABEL_96:
         {
           v18 = html_quote(t->tabidvalue[r][i]->ptr);
           idtag = Sprintf("<_id id=\"%s\">", v18);
-          savexmlstr_0(renderbuf, idtag);
+          Strcat(renderbuf, idtag);
         }
         if ( (t->tabattr[r][i] & 1) == 0 )
         {
@@ -43865,11 +43766,11 @@ LABEL_96:
           }
         }
         if ( t->maxcol > i && (t->tabattr[r][i + 1] & 1) == 0 )
-          savexmlstr_0(renderbuf, vruleb);
+          Strcat(renderbuf, vruleb);
       }
       if ( (unsigned int)(t->border_mode - 1) <= 1 )
       {
-        savexmlstr_0(renderbuf, vrulec);
+        Strcat(renderbuf, vrulec);
         ++t->total_height;
       }
       push_render_image(renderbuf, width, t->total_width, h_env);
@@ -44148,7 +44049,6 @@ void __cdecl check_rowcol(table *tbl, table_mode *mode)
 int __cdecl skip_space(table *t, char *line, table_linfo *linfo, int checkminimum)
 {
   char *v4; // ebx
-  int result; // eax
   int v6; // eax
   int v7; // [esp+4h] [ebp-44h]
   int plen; // [esp+10h] [ebp-38h]
@@ -44178,7 +44078,7 @@ int __cdecl skip_space(table *t, char *line, table_linfo *linfo, int checkminimu
       v7 = visible_length(line);
       check_minimum0(t, v7);
     }
-    result = 0;
+    return 0;
   }
   else
   {
@@ -44250,9 +44150,8 @@ int __cdecl skip_space(table *t, char *line, table_linfo *linfo, int checkminimu
       linfo->length = w;
       check_minimum0(t, min);
     }
-    result = skip;
+    return skip;
   }
-  return result;
 }
 
 //----- (080866C5) --------------------------------------------------------
@@ -44301,13 +44200,13 @@ void __cdecl feed_table_block_tag(table *tbl, char *line, table_mode *mode, int 
 //----- (0808686B) --------------------------------------------------------
 void __cdecl table_close_select(table *tbl, table_mode *mode, int width)
 {
-  unsigned int v3; // edx
+  unsigned int pre_mode; // edx
   _Str *tmp; // [esp+1Ch] [ebp-Ch]
 
   tmp = process_n_select();
-  v3 = mode->pre_mode;
-  BYTE1(v3) = BYTE1(mode->pre_mode) & 0xEF;
-  mode->pre_mode = v3;
+  pre_mode = mode->pre_mode;
+  BYTE1(pre_mode) = BYTE1(mode->pre_mode) & 0xEF;
+  mode->pre_mode = pre_mode;
   mode->end_tag = 0;
   feed_table1(tbl, tmp, mode, width);
 }
@@ -44315,13 +44214,13 @@ void __cdecl table_close_select(table *tbl, table_mode *mode, int width)
 //----- (080868B1) --------------------------------------------------------
 void __cdecl table_close_textarea(table *tbl, table_mode *mode, int width)
 {
-  unsigned int v3; // edx
+  unsigned int pre_mode; // edx
   _Str *tmp; // [esp+1Ch] [ebp-Ch]
 
   tmp = process_n_textarea();
-  v3 = mode->pre_mode;
-  BYTE1(v3) = BYTE1(mode->pre_mode) & 0xF7;
-  mode->pre_mode = v3;
+  pre_mode = mode->pre_mode;
+  BYTE1(pre_mode) = BYTE1(mode->pre_mode) & 0xF7;
+  mode->pre_mode = pre_mode;
   mode->end_tag = 0;
   feed_table1(tbl, tmp, mode, width);
 }
@@ -44331,7 +44230,7 @@ void __cdecl table_close_anchor0(table *tbl, table_mode *mode)
 {
   if ( (mode->pre_mode & 0x1000000) != 0 )
   {
-    mode->pre_mode &= 0xFEFFFFFF;
+    mode->pre_mode &= ~0x1000000u;
     if ( tbl->tabcontentssize == mode->anchor_offset )
     {
       check_minimum0(tbl, 1);
@@ -44360,11 +44259,11 @@ int __cdecl feed_table_tag(table *tbl, char *line, table_mode *mode, int width, 
   unsigned int v12; // edx
   unsigned int v13; // edx
   unsigned int v14; // edx
-  unsigned int v15; // edx
-  char *v16; // ecx
+  unsigned int pre_mode; // edx
+  char *ptr; // ecx
   _Str *v17; // [esp+4h] [ebp-A4h]
   _Str *v18; // [esp+4h] [ebp-A4h]
-  int v19; // [esp+4h] [ebp-A4h]
+  int table_width; // [esp+4h] [ebp-A4h]
   table *tbl1; // [esp+3Ch] [ebp-6Ch]
   int ii; // [esp+44h] [ebp-64h]
   Str anchor; // [esp+48h] [ebp-60h] BYREF
@@ -44392,7 +44291,7 @@ int __cdecl feed_table_tag(table *tbl, char *line, table_mode *mode, int width, 
   {
     if ( mode->end_tag != cmd )
       return 4;
-    mode->pre_mode &= 0xFFFFFFF7;
+    mode->pre_mode &= ~8u;
     mode->end_tag = 0;
     feed_table_block_tag(tbl, line, mode, 0, cmd);
     return 0;
@@ -44404,7 +44303,7 @@ LABEL_10:
     {
       if ( mode->end_tag != cmd )
         return 4;
-      mode->pre_mode &= 0xFFFFFFFD;
+      mode->pre_mode &= ~2u;
       mode->end_tag = 0;
       return 0;
     }
@@ -44412,7 +44311,7 @@ LABEL_10:
     {
       if ( mode->end_tag != cmd )
         return 4;
-      mode->pre_mode &= 0xFFFFFFFB;
+      mode->pre_mode &= ~4u;
       mode->end_tag = 0;
       return 0;
     }
@@ -44502,8 +44401,8 @@ LABEL_28:
           }
           else
           {
-            v16 = process_anchor(tag, line)->ptr;
-            pushdata(tbl, tbl->row, tbl->col, v16);
+            ptr = process_anchor(tag, line)->ptr;
+            pushdata(tbl, tbl->row, tbl->col, ptr);
           }
           if ( i >= 0 )
           {
@@ -44579,7 +44478,7 @@ LABEL_178:
           mode->end_tag = 27;
           return 0;
         }
-        mode->pre_mode &= 0xFFFFFFFE;
+        mode->pre_mode &= ~1u;
         return 0;
       case 9:
       case 12:
@@ -44667,9 +44566,9 @@ LABEL_277:
         tmp = process_textarea(tag, w);
         if ( tmp )
           feed_table1(tbl, tmp, mode, width);
-        v15 = mode->pre_mode;
-        BYTE1(v15) = BYTE1(mode->pre_mode) | 8;
-        mode->pre_mode = v15;
+        pre_mode = mode->pre_mode;
+        BYTE1(pre_mode) = BYTE1(mode->pre_mode) | 8;
+        mode->pre_mode = pre_mode;
         mode->end_tag = 46;
         return 0;
       case 47:
@@ -44738,7 +44637,7 @@ LABEL_277:
           case 2:
             goto LABEL_267;
           case 0:
-            mode->pre_mode &= 0xFFEFFFFF;
+            mode->pre_mode &= ~0x100000u;
             break;
         }
         return 0;
@@ -44764,7 +44663,7 @@ LABEL_266:
         tbl->col = -1;
         ++tbl->row;
         tbl->flag |= 1u;
-        tbl->flag &= 0xFFFFFFFB;
+        tbl->flag &= ~4u;
         align = 0;
         valign = 0;
         if ( parsedtag_get_value(tag, 4, &i) )
@@ -44910,7 +44809,7 @@ LABEL_266:
           *v8 = Strnew_charp(p);
         }
         if ( v )
-          tbl->tabattr[tbl->row][tbl->col] &= 0xFFFB;
+          tbl->tabattr[tbl->row][tbl->col] &= ~4;
         tbl->tabattr[tbl->row][tbl->col] &= 0xF8CF;
         tbl->tabattr[tbl->row][tbl->col] |= align | valign;
         if ( colspan > 1 )
@@ -44979,7 +44878,7 @@ LABEL_266:
       case 77:
       case 81:
         setwidth(tbl, mode);
-        tbl->flag &= 0xFFFFFFFB;
+        tbl->flag &= ~4u;
         return 0;
       case 78:
         mode->caption = 1;
@@ -45014,7 +44913,7 @@ LABEL_267:
             feed_table_inline_tag(tbl, line, mode, -1);
             break;
           case 0:
-            mode->pre_mode &= 0xFFDFFFFF;
+            mode->pre_mode &= ~0x200000u;
             break;
         }
         return 0;
@@ -45026,8 +44925,8 @@ LABEL_267:
         {
           tbl1 = tbl->tables[id].ptr;
           feed_table_block_tag(tbl, line, mode, 0, cmd);
-          v19 = get_table_width(tbl1, tbl1->tabwidth, tbl1->cell.width, 2);
-          addcontentssize(tbl, v19);
+          table_width = get_table_width(tbl1, tbl1->tabwidth, tbl1->cell.width, 2);
+          addcontentssize(tbl, table_width);
           check_minimum0(tbl, tbl1->sloppy_width);
           setwidth0(tbl, mode);
           clearcontentssize(tbl, mode);
@@ -45111,7 +45010,7 @@ int __cdecl feed_table(table *tbl, char *line, table_mode *mode, int width, int 
   int v9; // eax
   int v10; // eax
   int v11; // eax
-  int v12; // eax
+  int length; // eax
   int v13; // eax
   int v14; // [esp+4h] [ebp-54h]
   int nl; // [esp+2Ch] [ebp-2Ch]
@@ -45204,9 +45103,9 @@ LABEL_27:
               break;
             if ( tmp->length + 1 >= tmp->area_size )
               Strgrow(tmp);
-            v12 = tmp->length;
-            tmp->ptr[v12] = *p;
-            tmp->length = v12 + 1;
+            length = tmp->length;
+            tmp->ptr[length] = *p;
+            tmp->length = length + 1;
             tmp->ptr[tmp->length] = 0;
             ++p;
           }
@@ -45546,8 +45445,8 @@ void __cdecl set_table_matrix0(table *t, int maxwidth)
   long double v8; // fst6
   __int16 v9; // ax
   long double v10; // fst6
-  _DWORD v11[11]; // [esp+0h] [ebp-E8h] BYREF
-  int v12[4]; // [esp+2Ch] [ebp-BCh] BYREF
+  int v11; // [esp+0h] [ebp-E8h] BYREF
+  _DWORD v12[7]; // [esp+20h] [ebp-C8h] BYREF
   int v13; // [esp+3Ch] [ebp-ACh]
   int v14; // [esp+40h] [ebp-A8h]
   int v15; // [esp+44h] [ebp-A4h]
@@ -45556,7 +45455,7 @@ void __cdecl set_table_matrix0(table *t, int maxwidth)
   int v18; // [esp+50h] [ebp-98h]
   int v19; // [esp+54h] [ebp-94h]
   int v20; // [esp+58h] [ebp-90h]
-  _DWORD *v21; // [esp+5Ch] [ebp-8Ch]
+  int *v21; // [esp+5Ch] [ebp-8Ch]
   __int16 v22; // [esp+62h] [ebp-86h]
   int a; // [esp+64h] [ebp-84h]
   __int16 v24; // [esp+68h] [ebp-80h]
@@ -45583,7 +45482,7 @@ void __cdecl set_table_matrix0(table *t, int maxwidth)
 
   ta = t;
   v44 = __readgsdword(0x14u);
-  v21 = v11;
+  v21 = &v11;
   size = t->maxcol + 1;
   v20 = size;
   v35 = size - 1;
@@ -45592,18 +45491,18 @@ void __cdecl set_table_matrix0(table *t, int maxwidth)
   v16 = size << 6;
   v17 = ((unsigned __int64)(unsigned int)size >> 26) & 0xF;
   v2 = alloca(16 * ((unsigned int)(8 * size + 30) >> 4));
-  p_we = (double (*)[])(16 * (((unsigned int)v12 + 3) >> 4));
+  p_we = (double (*)[])v12;
   v33 = size - 1;
   v14 = size;
   v15 = 0;
-  v12[3] = 8 * size;
+  v12[6] = 8 * size;
   v13 = ((unsigned __int64)(unsigned int)size >> 29) & 0xF;
-  v12[1] = size;
-  v12[2] = 0;
-  v11[10] = 8 * size;
-  v12[0] = v13;
+  v12[4] = size;
+  v12[5] = 0;
+  v12[2] = 8 * size;
+  v12[3] = v13;
   v3 = alloca(16 * ((unsigned int)(size + 30) >> 4));
-  p_expand = (char (*)[])p_we;
+  p_expand = (char (*)[])v12;
   cell = &t->cell;
   w0 = 0.0;
   for ( i = 0; i < size; ++i )
@@ -45949,7 +45848,7 @@ Str localCookie()
 //----- (0808A37E) --------------------------------------------------------
 Str __cdecl loadLocalDir(char *dname)
 {
-  int v2; // eax
+  int length; // eax
   Str v3; // eax
   char *v4; // eax
   char *v5; // eax
@@ -46003,9 +45902,9 @@ Str __cdecl loadLocalDir(char *dname)
   {
     if ( dirname->length + 1 >= dirname->area_size )
       Strgrow(dirname);
-    v2 = dirname->length;
-    dirname->ptr[v2] = 47;
-    dirname->length = v2 + 1;
+    length = dirname->length;
+    dirname->ptr[length] = 47;
+    dirname->length = length + 1;
     dirname->ptr[dirname->length] = 0;
   }
   v3 = wc_Str_conv(dirname, SystemCharset, InnerCharset);
@@ -46168,9 +46067,8 @@ Str __cdecl loadLocalDir(char *dname)
 //----- (0808AC49) --------------------------------------------------------
 int __cdecl check_local_cgi(char *file, int status)
 {
-  int result; // eax
-  __uid_t v3; // ebx
-  __gid_t v4; // ebx
+  __uid_t st_uid; // ebx
+  __gid_t st_gid; // ebx
   stat st; // [esp+18h] [ebp-60h] BYREF
 
   if ( status != 1 && status != 2 )
@@ -46179,18 +46077,16 @@ int __cdecl check_local_cgi(char *file, int status)
     return -1;
   if ( (st.st_mode & 0xF000) == 0x4000 )
     return -1;
-  v3 = st.st_uid;
-  if ( v3 == geteuid() && (st.st_mode & 0x40) != 0
-    || (v4 = st.st_gid, v4 == getegid()) && (st.st_mode & 8) != 0
-    || (st.st_mode & 1) != 0 )
-  {
-    result = 0;
-  }
+  st_uid = st.st_uid;
+  if ( st_uid == geteuid() && (st.st_mode & 0x40) != 0 )
+    return 0;
+  st_gid = st.st_gid;
+  if ( st_gid == getegid() && (st.st_mode & 8) != 0 )
+    return 0;
+  if ( (st.st_mode & 1) != 0 )
+    return 0;
   else
-  {
-    result = -1;
-  }
-  return result;
+    return -1;
 }
 
 //----- (0808ACDE) --------------------------------------------------------
@@ -46223,7 +46119,7 @@ Str __cdecl checkPath(char *fn, char *path)
 {
   char *v2; // eax
   char *v3; // eax
-  int v4; // eax
+  int length; // eax
   stat st; // [esp+10h] [ebp-68h] BYREF
   Str tmp; // [esp+68h] [ebp-10h]
   char *p; // [esp+6Ch] [ebp-Ch]
@@ -46241,9 +46137,9 @@ Str __cdecl checkPath(char *fn, char *path)
     {
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v4 = tmp->length;
-      tmp->ptr[v4] = 47;
-      tmp->length = v4 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = 47;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
     }
     Strcat_charp(tmp, fn);
@@ -46260,9 +46156,8 @@ Str __cdecl checkPath(char *fn, char *path)
 //----- (0808AF07) --------------------------------------------------------
 int __cdecl cgi_filename(char *uri, char **fn, char **name, char **path_info)
 {
-  int result; // eax
   char *v5; // eax
-  int v6; // eax
+  int length; // eax
   int v7; // eax
   Str tmp2; // [esp+14h] [ebp-14h]
   int offset; // [esp+18h] [ebp-10h]
@@ -46281,11 +46176,11 @@ int __cdecl cgi_filename(char *uri, char **fn, char **name, char **path_info)
     if ( tmp )
     {
       *fn = tmp->ptr;
-      result = 2;
+      return 2;
     }
     else
     {
-      result = 0;
+      return 0;
     }
   }
   else
@@ -46296,9 +46191,9 @@ int __cdecl cgi_filename(char *uri, char **fn, char **name, char **path_info)
     {
       if ( tmpa->length + 1 >= tmpa->area_size )
         Strgrow(tmpa);
-      v6 = tmpa->length;
-      tmpa->ptr[v6] = 47;
-      tmpa->length = v6 + 1;
+      length = tmpa->length;
+      tmpa->ptr[length] = 47;
+      tmpa->length = length + 1;
       tmpa->ptr[tmpa->length] = 0;
     }
     if ( !strncmp(uri, "/$LIB/", 6u) )
@@ -46335,9 +46230,8 @@ int __cdecl cgi_filename(char *uri, char **fn, char **name, char **path_info)
       *name = allocStr(uri, *path_info - uri);
     Strcat_charp(tmpa, &(*name)[offset]);
     *fn = tmpa->ptr;
-    result = 1;
+    return 1;
   }
-  return result;
 }
 
 //----- (0808B234) --------------------------------------------------------
@@ -46445,7 +46339,14 @@ FILE *__cdecl localcgi_post(char *uri, char *qstr, FormList *request, char *refe
 }
 
 //----- (0808B5F0) --------------------------------------------------------
-form_list *__cdecl newFormList(char *action, char *method, char *charset, char *enctype, char *target, char *name, form_list *_next)
+form_list *__cdecl newFormList(
+        char *action,
+        char *method,
+        char *charset,
+        char *enctype,
+        char *target,
+        char *name,
+        form_list *_next)
 {
   form_list *result; // eax
   wc_ces c; // [esp+1Ch] [ebp-1Ch]
@@ -46677,7 +46578,7 @@ void __cdecl formResetBuffer(Buffer *buf, AnchorList *formitem)
         f2 = formitem->anchors[i].url;
         if ( *(_DWORD *)a->url != *(_DWORD *)f2 )
           return;
-        v2 = *((_DWORD *)f2 + 1) ? **((_DWORD **)f2 + 1) : &byte_80CB9EE;
+        v2 = *((_DWORD *)f2 + 1) ? (const char *)**((_DWORD **)f2 + 1) : &byte_80CB9EE;
         v3 = f1->name ? f1->name->ptr : &byte_80CB9EE;
         if ( strcmp(v3, v2) )
           return;
@@ -47003,7 +46904,7 @@ LABEL_41:
 Str __cdecl textfieldrep(Str s, int width)
 {
   int v2; // eax
-  int v3; // eax
+  int length; // eax
   int v4; // eax
   int v5; // eax
   int c_len; // [esp+18h] [ebp-20h]
@@ -47032,9 +46933,9 @@ Str __cdecl textfieldrep(Str s, int width)
       {
         if ( n->length + 1 >= n->area_size )
           Strgrow(n);
-        v3 = n->length;
-        n->ptr[v3] = 32;
-        n->length = v3 + 1;
+        length = n->length;
+        n->ptr[length] = 32;
+        n->length = length + 1;
         n->ptr[n->length] = 0;
       }
       else if ( (c_type & 0x1000) != 0 )
@@ -47083,7 +46984,7 @@ Str __cdecl textfieldrep(Str s, int width)
 //----- (0808CB78) --------------------------------------------------------
 void __cdecl form_fputs_decode(Str s, FILE *f)
 {
-  int v2; // eax
+  int length; // eax
   Str z; // [esp+18h] [ebp-10h]
   Str za; // [esp+18h] [ebp-10h]
   char *p; // [esp+1Ch] [ebp-Ch]
@@ -47095,9 +46996,9 @@ void __cdecl form_fputs_decode(Str s, FILE *f)
       ++p;
     if ( z->length + 1 >= z->area_size )
       Strgrow(z);
-    v2 = z->length;
-    z->ptr[v2] = *p;
-    z->length = v2 + 1;
+    length = z->length;
+    z->ptr[length] = *p;
+    z->length = length + 1;
     z->ptr[z->length] = 0;
   }
   za = wc_Str_conv_strict(z, InnerCharset, DisplayCharset);
@@ -47149,28 +47050,28 @@ void __cdecl input_textarea(FormItemList *fi)
             Strcat_charp(tmp, "\r\n");
           }
           tmp = convertLine(0, tmp, 0, &charset, DisplayCharset);
-          savexmlstr_0(fi->value, tmp);
+          Strcat(fi->value, tmp);
         }
         WcOption.auto_detect = auto_detect;
         fclose(f);
       }
       else
       {
-        _ZN10bdInetAddrC2Ej("Can't open temporary file", 0);
+        disp_err_message("Can't open temporary file", 0);
       }
     }
     unlink(tmpf);
   }
   else
   {
-    _ZN10bdInetAddrC2Ej("Can't open temporary file", 0);
+    disp_err_message("Can't open temporary file", 0);
   }
 }
 
 //----- (0808CE8B) --------------------------------------------------------
 void __cdecl do_internal(char *action, char *data)
 {
-  void (*v2)(parsed_tagarg *); // ebx
+  void (*rout)(parsed_tagarg *); // ebx
   parsed_tagarg *v3; // eax
   int i; // [esp+1Ch] [ebp-Ch]
 
@@ -47180,9 +47081,9 @@ void __cdecl do_internal(char *action, char *data)
     {
       if ( internal_action[i].rout )
       {
-        v2 = internal_action[i].rout;
+        rout = internal_action[i].rout;
         v3 = cgistr2tagarg(data);
-        v2(v3);
+        rout(v3);
       }
       return;
     }
@@ -47406,7 +47307,13 @@ pre_form *__cdecl add_pre_form(pre_form *prev, char *url, char *name, char *acti
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
 
 //----- (0808D4D8) --------------------------------------------------------
-pre_form_item *__cdecl add_pre_form_item(pre_form *pf_0, pre_form_item *prev, int type, char *name, char *value, char *checked)
+pre_form_item *__cdecl add_pre_form_item(
+        pre_form *pf_0,
+        pre_form_item *prev,
+        int type,
+        char *name,
+        char *value,
+        char *checked)
 {
   pre_form_item *newa; // [esp+1Ch] [ebp-Ch]
 
@@ -47437,7 +47344,7 @@ pre_form_item *__cdecl add_pre_form_item(pre_form *pf_0, pre_form_item *prev, in
 void loadPreForm()
 {
   char *v0; // eax
-  char *v1; // eax
+  char *QWord; // eax
   pre_form *prev; // [esp+24h] [ebp-34h]
   char *arg; // [esp+28h] [ebp-30h]
   const char *s; // [esp+2Ch] [ebp-2Ch]
@@ -47485,7 +47392,7 @@ void loadPreForm()
                 {
                   break;
                 }
-                savexmlstr_0(textarea, line);
+                Strcat(textarea, line);
               }
               Strchop(line);
               Strremovefirstspaces(line);
@@ -47575,8 +47482,8 @@ void loadPreForm()
         type = 8;
 LABEL_56:
         sb = getQWord(&p);
-        v1 = getQWord(&p);
-        pi = add_pre_form_item(pf_0, pi, type, arg, sb, v1);
+        QWord = getQWord(&p);
+        pi = add_pre_form_item(pf_0, pi, type, arg, sb, QWord);
       }
       else if ( !strcmp(s, "textarea") )
       {
@@ -47719,7 +47626,7 @@ MapList *__cdecl searchMapList(Buffer *buf, char *name)
 //----- (0808DF8F) --------------------------------------------------------
 int __cdecl inMapArea(MapArea *a, int x, int y)
 {
-  int v4; // eax
+  int shape; // eax
   double t; // [esp+20h] [ebp-38h]
   double r2; // [esp+38h] [ebp-20h]
   double r1; // [esp+40h] [ebp-18h]
@@ -47727,20 +47634,20 @@ int __cdecl inMapArea(MapArea *a, int x, int y)
 
   if ( !a )
     return 0;
-  v4 = a->shape;
-  if ( v4 == 2 )
+  shape = a->shape;
+  if ( shape == 2 )
   {
     if ( *a->coords <= x && a->coords[1] <= y && a->coords[2] >= x && a->coords[3] >= y )
       return 1;
   }
-  else if ( v4 > 2 )
+  else if ( shape > 2 )
   {
-    if ( v4 == 3 )
+    if ( shape == 3 )
     {
       if ( (x - *a->coords) * (x - *a->coords) + (y - a->coords[1]) * (y - a->coords[1]) <= a->coords[2] * a->coords[2] )
         return 1;
     }
-    else if ( v4 == 4 )
+    else if ( shape == 4 )
     {
       t = 0.0;
       for ( i = 0; a->ncoords > i; i += 2 )
@@ -47768,7 +47675,7 @@ int __cdecl inMapArea(MapArea *a, int x, int y)
         return 1;
     }
   }
-  else if ( v4 == 1 )
+  else if ( shape == 1 )
   {
     return 1;
   }
@@ -47850,7 +47757,7 @@ int __cdecl searchMapArea(Buffer *buf, MapList *ml, Anchor *a_img)
 //----- (0808E611) --------------------------------------------------------
 MapArea *__cdecl retrieveCurrentMapArea(Buffer *buf)
 {
-  char *v2; // eax
+  char *ptr; // eax
   int n; // [esp+10h] [ebp-28h]
   int i; // [esp+14h] [ebp-24h]
   ListItem *al_0; // [esp+1Ch] [ebp-1Ch]
@@ -47871,10 +47778,10 @@ MapArea *__cdecl retrieveCurrentMapArea(Buffer *buf)
     return 0;
   fia = fi->parent->item;
   if ( fia->value )
-    v2 = fia->value->ptr;
+    ptr = fia->value->ptr;
   else
-    v2 = 0;
-  ml = searchMapList(buf, v2);
+    ptr = 0;
+  ml = searchMapList(buf, ptr);
   if ( !ml )
     return 0;
   n = searchMapArea(buf, ml, a_img);
@@ -47936,7 +47843,7 @@ Anchor *__cdecl retrieveCurrentMap(Buffer *buf)
 //----- (0808E90F) --------------------------------------------------------
 MapArea *__cdecl follow_map_menu(Buffer *buf, char *name, Anchor *a_img, int x, int y)
 {
-  char *v6; // eax
+  char *alt; // eax
   char **label; // [esp+24h] [ebp-24h]
   MapArea *a; // [esp+28h] [ebp-20h]
   int initial; // [esp+2Ch] [ebp-1Ch]
@@ -47966,10 +47873,10 @@ LABEL_9:
       if ( al_0->ptr )
       {
         if ( *a->alt )
-          v6 = a->alt;
+          alt = a->alt;
         else
-          v6 = a->url;
-        label[i] = v6;
+          alt = a->url;
+        label[i] = alt;
       }
       else
       {
@@ -48001,7 +47908,6 @@ map_end:
 MapArea *__cdecl newMapArea(char *url, char *target, char *alt, char *shape, char *coords)
 {
   char *v5; // eax
-  MapArea *result; // eax
   int v7; // eax
   __int16 *v8; // ebx
   int max; // [esp+10h] [ebp-18h]
@@ -48121,22 +48027,21 @@ MapArea *__cdecl newMapArea(char *url, char *target, char *alt, char *shape, cha
         a->center_x /= a->ncoords / 2;
         a->center_y /= a->ncoords / 2;
       }
-      result = a;
+      return a;
     }
     else
     {
       a->shape = 0;
       a->coords = 0;
       a->ncoords = 0;
-      result = a;
+      return a;
     }
   }
   else
   {
     a->shape = 0;
-    result = a;
+    return a;
   }
-  return result;
 }
 // 8049E6C: using guessed type int __cdecl GC_realloc(_DWORD, _DWORD);
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
@@ -48144,11 +48049,11 @@ MapArea *__cdecl newMapArea(char *url, char *target, char *alt, char *shape, cha
 //----- (0808EFA6) --------------------------------------------------------
 void __cdecl append_map_info(Buffer *buf, Str tmp, FormItemList *fi)
 {
-  char *v3; // eax
+  char *ptr; // eax
   ParsedURL *v4; // eax
   Str v5; // eax
   char *v6; // eax
-  char *v7; // eax
+  char *alt; // eax
   char *v8; // [esp+10h] [ebp-68h]
   ParsedURL pu; // [esp+34h] [ebp-44h] BYREF
   char *q; // [esp+5Ch] [ebp-1Ch]
@@ -48158,10 +48063,10 @@ void __cdecl append_map_info(Buffer *buf, Str tmp, FormItemList *fi)
   MapList *ml; // [esp+6Ch] [ebp-Ch]
 
   if ( fi->value )
-    v3 = fi->value->ptr;
+    ptr = fi->value->ptr;
   else
-    v3 = 0;
-  ml = searchMapList(buf, v3);
+    ptr = 0;
+  ml = searchMapList(buf, ptr);
   if ( ml )
   {
     Strcat_m_charp(
@@ -48188,10 +48093,10 @@ void __cdecl append_map_info(Buffer *buf, Str tmp, FormItemList *fi)
           p = html_quote(a->url);
         }
         if ( *a->alt )
-          v7 = a->alt;
+          alt = a->alt;
         else
-          v7 = mybasename(a->url);
-        v8 = html_quote(v7);
+          alt = mybasename(a->url);
+        v8 = html_quote(alt);
         Strcat_m_charp(tmp, "<tr valign=top><td>&nbsp;&nbsp;<td><a href=\"", q, "\">", v8, "</a><td>", p, "\n", 0);
       }
     }
@@ -48271,7 +48176,7 @@ void __cdecl append_link_info(Buffer *buf, Str html, LinkList *link)
 //----- (0808F33D) --------------------------------------------------------
 void __cdecl append_frame_info(Buffer *buf, Str html, frameset *set, int level)
 {
-  int v4; // eax
+  int attr; // eax
   char *v5; // eax
   char *v6; // eax
   char *v7; // [esp+4h] [ebp-44h]
@@ -48288,10 +48193,10 @@ void __cdecl append_frame_info(Buffer *buf, Str html, frameset *set, int level)
       frame = set->frame[i].element;
       if ( frame )
       {
-        v4 = frame->attr;
-        if ( v4 >= 0 )
+        attr = frame->attr;
+        if ( attr >= 0 )
         {
-          if ( v4 <= 1 )
+          if ( attr <= 1 )
           {
             if ( *(_DWORD *)&frame[1].attr )
             {
@@ -48318,7 +48223,7 @@ void __cdecl append_frame_info(Buffer *buf, Str html, frameset *set, int level)
               Strcat_m_charp(html, " ", p, "</a></pre_int><br>\n", 0);
             }
           }
-          else if ( v4 == 2 )
+          else if ( attr == 2 )
           {
             append_frame_info(buf, html, (frameset *)frame, level + 1);
           }
@@ -48331,13 +48236,13 @@ void __cdecl append_frame_info(Buffer *buf, Str html, frameset *set, int level)
 //----- (0808F50B) --------------------------------------------------------
 Buffer *__cdecl page_info_panel(Buffer *buf)
 {
-  char *v1; // eax
+  char *modified; // eax
   char *v2; // edi
   char *v3; // ebx
   char *v4; // esi
   char *v5; // eax
   const char *v6; // eax
-  char *v7; // ebx
+  char *ptr; // ebx
   Str v8; // eax
   ParsedURL *v9; // eax
   char *v10; // eax
@@ -48374,8 +48279,8 @@ Buffer *__cdecl page_info_panel(Buffer *buf)
     p = parsedURL2Str(&buf->currentURL)->ptr;
     if ( DecodeURL )
       p = url_unquote_conv(p, 0);
-    v1 = last_modified(buf);
-    v2 = html_quote(v1);
+    modified = last_modified(buf);
+    v2 = html_quote(modified);
     if ( buf->real_type )
       v3 = html_quote(buf->real_type);
     else
@@ -48411,14 +48316,14 @@ Buffer *__cdecl page_info_panel(Buffer *buf)
       Strcat_charp(tmp, "</select>");
       Strcat_charp(tmp, "<tr><td><td><input type=submit value=Change>");
     }
-    v7 = Sprintf("%d", buf->trbyte)->ptr;
+    ptr = Sprintf("%d", buf->trbyte)->ptr;
     v8 = Sprintf("%d", all);
     Strcat_m_charp(
       tmp,
       "<tr valign=top><td nowrap>Number of lines<td>",
       v8->ptr,
       "<tr valign=top><td nowrap>Transferred bytes<td>",
-      v7,
+      ptr,
       0);
     a = retrieveCurrentAnchor(buf);
     if ( a )
@@ -48582,7 +48487,7 @@ frameset *__cdecl newFrameSet(parsed_tag *tag)
 {
   int v1; // eax
   int v2; // eax
-  frameset_element *v3; // eax
+  frameset_element *frame; // eax
   char *rows; // [esp+10h] [ebp-18h] BYREF
   char *cols; // [esp+14h] [ebp-14h] BYREF
   int i; // [esp+18h] [ebp-10h]
@@ -48605,8 +48510,8 @@ frameset *__cdecl newFrameSet(parsed_tag *tag)
   f->frame = (frameset_element *)GC_malloc(4 * i);
   do
   {
-    v3 = f->frame;
-    v3[--i].element = 0;
+    frame = f->frame;
+    frame[--i].element = 0;
   }
   while ( i );
   return f;
@@ -48616,7 +48521,7 @@ frameset *__cdecl newFrameSet(parsed_tag *tag)
 //----- (0808FE7F) --------------------------------------------------------
 frame_body *__cdecl newFrame(parsed_tag *tag, Buffer *buf)
 {
-  wc_ces v2; // esi
+  wc_ces document_charset; // esi
   wc_ces v3; // ebx
   char *v4; // eax
   _Str *v5; // eax
@@ -48639,11 +48544,11 @@ frame_body *__cdecl newFrame(parsed_tag *tag, Buffer *buf)
   {
     if ( parsedtag_get_value(tag, 31, &p) )
     {
-      v2 = buf->document_charset;
+      document_charset = buf->document_charset;
       v3 = InnerCharset;
       v4 = remove_space(p);
       v5 = Strnew_charp(v4);
-      v6 = wc_Str_conv_strict(v5, v3, v2);
+      v6 = wc_Str_conv_strict(v5, v3, document_charset);
       v7 = url_quote(v6->ptr);
       body->url = v7;
     }
@@ -48710,16 +48615,16 @@ void __cdecl deleteFrameSet(frameset *f)
 //----- (0809008A) --------------------------------------------------------
 void __cdecl deleteFrameSetElement(frameset_element e)
 {
-  int v1; // eax
+  int attr; // eax
 
   if ( e.element )
   {
-    v1 = e.element->attr;
-    if ( v1 == 1 )
+    attr = e.element->attr;
+    if ( attr == 1 )
     {
       deleteFrame(e.body);
     }
-    else if ( v1 == 2 )
+    else if ( attr == 2 )
     {
       deleteFrameSet(e.set);
     }
@@ -48740,7 +48645,7 @@ frame_body *__cdecl copyFrame(frame_body *ob)
 //----- (08090105) --------------------------------------------------------
 frameset *__cdecl copyFrameSet(frameset *of_0)
 {
-  int v1; // eax
+  int attr; // eax
   frameset_element *v2; // ebx
   frameset_element *v3; // ebx
   int n; // [esp+18h] [ebp-10h]
@@ -48756,16 +48661,16 @@ frameset *__cdecl copyFrameSet(frameset *of_0)
   rf->frame = (frameset_element *)GC_malloc(4 * n);
   while ( n )
   {
-    if ( of_0->frame[--n].element && (v1 = of_0->frame[n].element->attr, v1 >= 0) )
+    if ( of_0->frame[--n].element && (attr = of_0->frame[n].element->attr, attr >= 0) )
     {
-      if ( v1 <= 1 )
+      if ( attr <= 1 )
       {
         v2 = &rf->frame[n];
         v2->element = (frame_element *)copyFrame(of_0->frame[n].body);
       }
       else
       {
-        if ( v1 != 2 )
+        if ( attr != 2 )
           goto attr_default;
         v3 = &rf->frame[n];
         v3->element = (frame_element *)copyFrameSet(of_0->frame[n].set);
@@ -48784,7 +48689,7 @@ attr_default:
 //----- (080902A2) --------------------------------------------------------
 void __cdecl flushFrameSet(frameset *fs_0)
 {
-  int v1; // eax
+  int attr; // eax
   int n; // [esp+1Ch] [ebp-Ch]
 
   n = fs_0->i;
@@ -48792,14 +48697,14 @@ void __cdecl flushFrameSet(frameset *fs_0)
   {
     if ( fs_0->frame[--n].element )
     {
-      v1 = fs_0->frame[n].element->attr;
-      if ( v1 >= 0 )
+      attr = fs_0->frame[n].element->attr;
+      if ( attr >= 0 )
       {
-        if ( v1 <= 1 )
+        if ( attr <= 1 )
         {
           fs_0->frame[n].element[3].name = 0;
         }
-        else if ( v1 == 2 )
+        else if ( attr == 2 )
         {
           flushFrameSet(fs_0->frame[n].set);
         }
@@ -48811,11 +48716,11 @@ void __cdecl flushFrameSet(frameset *fs_0)
 //----- (0809032D) --------------------------------------------------------
 void __cdecl pushFrameTree(frameset_queue **fqpp, frameset *fs_0, Buffer *buf)
 {
-  int v3; // eax
+  int linenumber; // eax
   int v4; // eax
-  int v5; // eax
-  int v6; // eax
-  AnchorList *v7; // eax
+  int pos; // eax
+  int currentColumn; // eax
+  AnchorList *formitem; // eax
   frameset_queue *cfq; // [esp+18h] [ebp-10h]
   frameset_queue *rfq; // [esp+1Ch] [ebp-Ch]
 
@@ -48824,30 +48729,30 @@ void __cdecl pushFrameTree(frameset_queue **fqpp, frameset *fs_0, Buffer *buf)
   {
     rfq = (frameset_queue *)GC_malloc(32);
     if ( buf && buf->currentLine )
-      v3 = buf->currentLine->linenumber;
+      linenumber = buf->currentLine->linenumber;
     else
-      v3 = 1;
-    rfq->linenumber = v3;
+      linenumber = 1;
+    rfq->linenumber = linenumber;
     if ( buf && buf->topLine )
       v4 = buf->topLine->linenumber;
     else
       v4 = 1;
     rfq->top_linenumber = v4;
     if ( buf )
-      v5 = buf->pos;
+      pos = buf->pos;
     else
-      v5 = 0;
-    rfq->pos = v5;
+      pos = 0;
+    rfq->pos = pos;
     if ( buf )
-      v6 = buf->currentColumn;
+      currentColumn = buf->currentColumn;
     else
-      v6 = 0;
-    rfq->currentColumn = v6;
+      currentColumn = 0;
+    rfq->currentColumn = currentColumn;
     if ( buf )
-      v7 = buf->formitem;
+      formitem = buf->formitem;
     else
-      v7 = 0;
-    rfq->formitem = v7;
+      formitem = 0;
+    rfq->formitem = formitem;
     rfq->back = cfq;
     if ( cfq )
     {
@@ -48896,7 +48801,7 @@ frameset *__cdecl popFrameTree(frameset_queue **fqpp)
 //----- (080904CB) --------------------------------------------------------
 void __cdecl resetFrameElement(frameset_element *f_element, Buffer *buf, char *referer, FormList *request)
 {
-  frame_element *v4; // ebx
+  frame_element *element; // ebx
   frame_body *f_body; // [esp+18h] [ebp-10h]
   char *f_name; // [esp+1Ch] [ebp-Ch]
 
@@ -48905,8 +48810,8 @@ void __cdecl resetFrameElement(frameset_element *f_element, Buffer *buf, char *r
   {
     deleteFrameSetElement((frameset_element)f_element->element);
     f_element->element = (frame_element *)buf->frameset;
-    v4 = f_element->element;
-    *(_DWORD *)&v4[1].attr = GC_malloc(40);
+    element = f_element->element;
+    *(_DWORD *)&element[1].attr = GC_malloc(40);
     copyParsedURL(*(ParsedURL **)&f_element->element[1].attr, &buf->currentURL);
     buf->frameset = popFrameTree(&buf->frameQ);
     f_element->element->name = f_name;
@@ -48936,7 +48841,6 @@ void __cdecl resetFrameElement(frameset_element *f_element, Buffer *buf, char *r
 //----- (0809061A) --------------------------------------------------------
 frameset *__cdecl frame_download_source(frame_body *b, ParsedURL *currentURL, ParsedURL *baseURL, int flag)
 {
-  frameset *result; // eax
   ParsedURL *v5; // eax
   frameset *v6; // eax
   ParsedURL url; // [esp+20h] [ebp-38h] BYREF
@@ -48958,7 +48862,7 @@ frameset *__cdecl frame_download_source(frame_body *b, ParsedURL *currentURL, Pa
   else
     v5 = currentURL;
   buf = loadGeneralFile(b->url, v5, b->referer, flag | 4, b->request);
-  w3m_dump &= 0xFFFFFFDF;
+  w3m_dump &= ~0x20u;
   is_redisplay = 0;
   if ( buf && buf != (Buffer *)1 )
   {
@@ -48982,23 +48886,22 @@ frameset *__cdecl frame_download_source(frame_body *b, ParsedURL *currentURL, Pa
       buf->frameset = v6;
     }
     discardBuffer(buf);
-    result = ret_frameset;
+    return ret_frameset;
   }
   else
   {
     b->source = 0;
     b->flags = buf == (Buffer *)1;
-    result = 0;
+    return 0;
   }
-  return result;
 }
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
 
 //----- (0809081D) --------------------------------------------------------
 int __cdecl createFrameFile(frameset *f, FILE *f1, Buffer *current, int level, int force_reload)
 {
-  ParsedURL *v6; // eax
-  int v7; // eax
+  ParsedURL *p_currentURL; // eax
+  int attr; // eax
   int v8; // ebx
   frameset_element v9; // ebx
   frameset_element *v10; // edx
@@ -49110,10 +49013,10 @@ int __cdecl createFrameFile(frameset *f, FILE *f1, Buffer *current, int level, i
     fwrite("<table hborder width=\"100%\">\n", 1u, 0x1Du, f1);
   }
   if ( f->currentURL )
-    v6 = f->currentURL;
+    p_currentURL = f->currentURL;
   else
-    v6 = &current->currentURL;
-  currentURL = v6;
+    p_currentURL = &current->currentURL;
+  currentURL = p_currentURL;
   r = 0;
 LABEL_210:
   if ( f->row > r )
@@ -49155,10 +49058,10 @@ LABEL_210:
         if ( frame.element->attr == 1 )
           unloadFrame(frame.body);
       }
-      v7 = frame.element->attr;
-      if ( v7 != 1 )
+      attr = frame.element->attr;
+      if ( attr != 1 )
       {
-        if ( v7 == 2 )
+        if ( attr == 2 )
           goto render_frameset;
         if ( frame.element->attr )
         {
@@ -49666,7 +49569,7 @@ LABEL_206:
   }
   return 0;
 }
-// 8090882: conditional instruction was optimized away because of '%prevtrap.4==0'
+// 8090882: conditional instruction was optimized away because %prevtrap.4==0
 // 804A36C: using guessed type int __cdecl strcasestr(_DWORD, _DWORD);
 
 //----- (08091F71) --------------------------------------------------------
@@ -49848,7 +49751,7 @@ void __cdecl show_params(FILE *fp)
   wc_ces v14; // esi
   wc_ces v15; // ebx
   _Str *v16; // eax
-  char *v17; // [esp+Ch] [ebp-3Ch]
+  char *ptr; // [esp+Ch] [ebp-3Ch]
   char *v18; // [esp+18h] [ebp-30h]
   char *cmt; // [esp+2Ch] [ebp-1Ch]
   char *cmta; // [esp+2Ch] [ebp-1Ch]
@@ -49877,8 +49780,8 @@ void __cdecl show_params(FILE *fp)
     v5 = SystemCharset;
     v6 = InnerCharset;
     v7 = Strnew_charp(cmt);
-    v17 = wc_Str_conv_strict(v7, v6, v5)->ptr;
-    fprintf(fp, "  section[%d]: %s\n", j, v17);
+    ptr = wc_Str_conv_strict(v7, v6, v5)->ptr;
+    fprintf(fp, "  section[%d]: %s\n", j, ptr);
     for ( i = 0; sections[j].params[i].name; ++i )
     {
       switch ( sections[j].params[i].type )
@@ -49978,10 +49881,7 @@ int __cdecl str_to_bool(char *value, int old)
         v5 = value[1] | 0x20;
       else
         v5 = value[1];
-      if ( v5 == 111 )
-        result = old == 0;
-      else
-        result = 1;
+      result = v5 != 111 || old == 0;
       break;
     default:
       result = 1;
@@ -50054,7 +49954,7 @@ int __cdecl str_to_color(char *value)
 //----- (080929D0) --------------------------------------------------------
 int __cdecl set_param(char *name, char *value)
 {
-  _DWORD *v3; // ebx
+  _DWORD *varptr; // ebx
   int v4; // eax
   _DWORD *v5; // ebx
   _WORD *v6; // ebx
@@ -50077,12 +49977,12 @@ int __cdecl set_param(char *name, char *value)
     case 0:
       if ( atoi(value) >= 0 )
       {
-        v3 = p->varptr;
+        varptr = p->varptr;
         if ( p->inputtype == 1 )
           v4 = str_to_bool(value, *(_DWORD *)p->varptr);
         else
           v4 = atoi(value);
-        *v3 = v4;
+        *varptr = v4;
       }
       break;
     case 1:
@@ -50141,8 +50041,7 @@ int __cdecl set_param(char *name, char *value)
 //----- (08092C20) --------------------------------------------------------
 int __cdecl set_param_option(char *option)
 {
-  int v1; // eax
-  int result; // eax
+  int length; // eax
   char *q; // [esp+14h] [ebp-14h]
   char *qa; // [esp+14h] [ebp-14h]
   Str tmp; // [esp+1Ch] [ebp-Ch]
@@ -50152,9 +50051,9 @@ int __cdecl set_param_option(char *option)
   {
     if ( tmp->length + 1 >= tmp->area_size )
       Strgrow(tmp);
-    v1 = tmp->length;
-    tmp->ptr[v1] = *option;
-    tmp->length = v1 + 1;
+    length = tmp->length;
+    tmp->ptr[length] = *option;
+    tmp->length = length + 1;
     ++option;
     tmp->ptr[tmp->length] = 0;
   }
@@ -50168,7 +50067,7 @@ int __cdecl set_param_option(char *option)
   }
   Strlower(tmp);
   if ( set_param(tmp->ptr, option) )
-    goto option_assigned;
+    return 1;
   q = tmp->ptr;
   if ( !strncmp(tmp->ptr, "no", 2u) )
   {
@@ -50182,32 +50081,25 @@ int __cdecl set_param_option(char *option)
       return 0;
     qa = q + 1;
   }
-  if ( set_param(qa, "0") )
-option_assigned:
-    result = 1;
-  else
-    result = 0;
-  return result;
+  return set_param(qa, "0") != 0;
 }
 
 //----- (08092DCD) --------------------------------------------------------
 char *__cdecl get_param_option(char *name)
 {
-  char *result; // eax
   param_ptr *p; // [esp+1Ch] [ebp-Ch]
 
   p = search_param(name);
   if ( p )
-    result = to_str(p)->ptr;
+    return to_str(p)->ptr;
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (08092DFD) --------------------------------------------------------
 void __cdecl interpret_rc(FILE *f)
 {
-  int v1; // eax
+  int length; // eax
   char *p; // [esp+14h] [ebp-14h]
   Str tmp; // [esp+18h] [ebp-10h]
   Str line; // [esp+1Ch] [ebp-Ch]
@@ -50226,9 +50118,9 @@ void __cdecl interpret_rc(FILE *f)
       {
         if ( tmp->length + 1 >= tmp->area_size )
           Strgrow(tmp);
-        v1 = tmp->length;
-        tmp->ptr[v1] = *p;
-        tmp->length = v1 + 1;
+        length = tmp->length;
+        tmp->ptr[length] = *p;
+        tmp->length = length + 1;
         tmp->ptr[tmp->length] = 0;
       }
       while ( *p && (MYCTYPE_MAP[(unsigned __int8)*p] & 2) != 0 )
@@ -50441,17 +50333,17 @@ Buffer *load_option_panel()
   char *v17; // eax
   _Str *v18; // eax
   _Str *v19; // eax
-  int v20; // eax
+  int inputtype; // eax
   Str v21; // eax
   char *v22; // eax
   Str v23; // eax
   const char *v24; // edx
   const char *v25; // eax
   _Str *v26; // eax
-  int v27; // ebx
-  int v28; // eax
+  int value; // ebx
+  int length; // eax
   _Str *v29; // eax
-  wc_ces v30; // ebx
+  wc_ces id; // ebx
   int v31; // eax
   Buffer *buf; // [esp+40h] [ebp-38h]
   Str tmp; // [esp+44h] [ebp-34h]
@@ -50542,9 +50434,9 @@ LABEL_58:
       }
       Strcat_m_charp(src, "<tr><td>", pa->comment, 0);
       v19 = Sprintf("</td><td width=%d>", (int)(pixel_per_char * 28.0));
-      savexmlstr_0(src, v19);
-      v20 = pa->inputtype;
-      if ( v20 == 1 )
+      Strcat(src, v19);
+      inputtype = pa->inputtype;
+      if ( inputtype == 1 )
       {
         v23 = to_str(pa);
         x = atoi(v23->ptr);
@@ -50569,9 +50461,9 @@ LABEL_58:
           ">NO",
           0);
       }
-      else if ( v20 > 1 )
+      else if ( inputtype > 1 )
       {
-        if ( v20 == 2 )
+        if ( inputtype == 2 )
         {
           tmp = to_str(pa);
           Strcat_m_charp(src, "<select name=", pa->name, ">", 0);
@@ -50579,23 +50471,23 @@ LABEL_58:
           {
             Strcat_charp(src, "<option value=");
             v26 = Sprintf("%s\n", sb->cvalue);
-            savexmlstr_0(src, v26);
-            if ( pa->type != 3 && (v27 = sb->value, v27 == atoi(tmp->ptr))
+            Strcat(src, v26);
+            if ( pa->type != 3 && (value = sb->value, value == atoi(tmp->ptr))
               || pa->type == 3 && (unsigned __int8)sb->value == *tmp->ptr )
             {
               Strcat_charp(src, " selected");
             }
             if ( src->length + 1 >= src->area_size )
               Strgrow(src);
-            v28 = src->length;
-            src->ptr[v28] = 62;
-            src->length = v28 + 1;
+            length = src->length;
+            src->ptr[length] = 62;
+            src->length = length + 1;
             src->ptr[src->length] = 0;
             Strcat_charp(src, sb->text);
           }
           goto LABEL_54;
         }
-        if ( v20 == 3 )
+        if ( inputtype == 3 )
         {
           tmpa = to_str(pa);
           Strcat_m_charp(src, "<select name=", pa->name, ">", 0);
@@ -50603,9 +50495,9 @@ LABEL_58:
           {
             Strcat_charp(src, "<option value=");
             v29 = Sprintf("%s\n", c->name);
-            savexmlstr_0(src, v29);
-            v30 = c->id;
-            if ( v30 == atoi(tmpa->ptr) )
+            Strcat(src, v29);
+            id = c->id;
+            if ( id == atoi(tmpa->ptr) )
               Strcat_charp(src, " selected");
             if ( src->length + 1 >= src->area_size )
               Strgrow(src);
@@ -50617,16 +50509,14 @@ LABEL_58:
           }
 LABEL_54:
           Strcat_charp(src, "</select>");
-          goto LABEL_55;
         }
       }
-      else if ( !v20 )
+      else if ( !inputtype )
       {
         v21 = to_str(pa);
         v22 = html_quote(v21->ptr);
         Strcat_m_charp(src, "<input type=text name=", pa->name, " value=\"", v22, "\">", 0);
       }
-LABEL_55:
       Strcat_charp(src, "</td></tr>\n");
       ++pa;
     }
@@ -51039,7 +50929,6 @@ void __cdecl down_menu(Menu *menu, int n)
 //----- (08094A54) --------------------------------------------------------
 int __cdecl action_menu(Menu *menu)
 {
-  int result; // eax
   MenuItem *v2; // eax
   int item; // [esp+18h] [ebp-30h]
   int *item_8; // [esp+20h] [ebp-28h]
@@ -51104,15 +50993,14 @@ int __cdecl action_menu(Menu *menu)
         CurrentCmdData = 0;
       }
     }
-    result = 0;
+    return 0;
   }
   else
   {
     if ( menu->parent )
       menu->parent->active = 0;
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (08094C1B) --------------------------------------------------------
@@ -51232,21 +51120,18 @@ int __cdecl mEsc(char c)
 //----- (08095000) --------------------------------------------------------
 int __cdecl mEscB(char c)
 {
-  int result; // eax
   char ca; // [esp+1Ch] [ebp-Ch]
 
   ca = do_getch();
   if ( (MYCTYPE_MAP[(unsigned __int8)ca] & 8) != 0 )
-    result = mEscD(ca);
+    return mEscD(ca);
   else
-    result = MenuEscBKeymap[ca](ca);
-  return result;
+    return MenuEscBKeymap[ca](ca);
 }
 
 //----- (08095050) --------------------------------------------------------
 int __cdecl mEscD(char c)
 {
-  int result; // eax
   char ca; // [esp+1Ch] [ebp-1Ch]
   int d; // [esp+2Ch] [ebp-Ch]
 
@@ -51258,10 +51143,9 @@ int __cdecl mEscD(char c)
     ca = do_getch();
   }
   if ( ca == 126 )
-    result = MenuEscDKeymap[d](126);
+    return MenuEscDKeymap[d](126);
   else
-    result = -1;
-  return result;
+    return -1;
 }
 
 //----- (080950CB) --------------------------------------------------------
@@ -51273,13 +51157,10 @@ int __cdecl mNull(char c)
 //----- (080950DE) --------------------------------------------------------
 int __cdecl mSelect(char c)
 {
-  int result; // eax
-
   if ( (MYCTYPE_MAP[(unsigned __int8)c] & 0x11) != 0 )
-    result = select_menu(CurrentMenu, CurrentMenu->keyselect[c]);
+    return select_menu(CurrentMenu, CurrentMenu->keyselect[c]);
   else
-    result = -1;
-  return result;
+    return -1;
 }
 
 //----- (0809512F) --------------------------------------------------------
@@ -51401,13 +51282,10 @@ int __cdecl mLineD(char c)
 //----- (0809551F) --------------------------------------------------------
 int __cdecl mOk(char c)
 {
-  int result; // eax
-
   if ( CurrentMenu->item[CurrentMenu->select].type == 1 )
-    result = -1;
+    return -1;
   else
-    result = CurrentMenu->select;
-  return result;
+    return CurrentMenu->select;
 }
 
 //----- (08095559) --------------------------------------------------------
@@ -51434,7 +51312,6 @@ int __cdecl mSusp(char c)
 //----- (080955BD) --------------------------------------------------------
 int __cdecl menuForwardSearch(Menu *menu, char *str, int from)
 {
-  int result; // eax
   char *p; // [esp+18h] [ebp-10h]
   int i; // [esp+1Ch] [ebp-Ch]
 
@@ -51442,7 +51319,7 @@ int __cdecl menuForwardSearch(Menu *menu, char *str, int from)
   if ( p )
   {
     message(p, 0, 0);
-    result = -1;
+    return -1;
   }
   else
   {
@@ -51450,12 +51327,11 @@ int __cdecl menuForwardSearch(Menu *menu, char *str, int from)
       from = 0;
     for ( i = from; menu->nitem > i; ++i )
     {
-      if ( menu->item[i].type != 1 && __gmp_vfprintf(menu->item[i].label, -1, 1) == 1 )
+      if ( menu->item[i].type != 1 && regexMatch(menu->item[i].label, -1, 1) == 1 )
         return i;
     }
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (08095675) --------------------------------------------------------
@@ -51496,7 +51372,6 @@ int __cdecl mSrchF(char c)
 //----- (080957C8) --------------------------------------------------------
 int __cdecl menuBackwardSearch(Menu *menu, char *str, int from)
 {
-  int result; // eax
   char *p; // [esp+18h] [ebp-10h]
   int i; // [esp+1Ch] [ebp-Ch]
 
@@ -51504,7 +51379,7 @@ int __cdecl menuBackwardSearch(Menu *menu, char *str, int from)
   if ( p )
   {
     message(p, 0, 0);
-    result = -1;
+    return -1;
   }
   else
   {
@@ -51512,12 +51387,11 @@ int __cdecl menuBackwardSearch(Menu *menu, char *str, int from)
       from = menu->nitem - 1;
     for ( i = from; i >= 0; --i )
     {
-      if ( menu->item[i].type != 1 && __gmp_vfprintf(menu->item[i].label, -1, 1) == 1 )
+      if ( menu->item[i].type != 1 && regexMatch(menu->item[i].label, -1, 1) == 1 )
         return i;
     }
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (08095885) --------------------------------------------------------
@@ -51558,7 +51432,6 @@ int __cdecl mSrchB(char c)
 //----- (080959DA) --------------------------------------------------------
 int __cdecl menu_search_next_previous(Menu *menu, int from, int reverse)
 {
-  int result; // eax
   int v4; // eax
   char *str; // [esp+18h] [ebp-10h]
   int found; // [esp+1Ch] [ebp-Ch]
@@ -51580,19 +51453,18 @@ int __cdecl menu_search_next_previous(Menu *menu, int from, int reverse)
     if ( found < 0 )
     {
       disp_message("Not found", 1);
-      result = -1;
+      return -1;
     }
     else
     {
-      result = found;
+      return found;
     }
   }
   else
   {
     disp_message("No previous regular expression", 1);
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (08095AD5) --------------------------------------------------------
@@ -51620,7 +51492,6 @@ int __cdecl mSrchP(char c)
 //----- (08095B87) --------------------------------------------------------
 int mMouse_scroll_line()
 {
-  int result; // eax
   int i; // [esp+Ch] [ebp-4h]
 
   if ( relative_wheel_scroll )
@@ -51628,16 +51499,14 @@ int mMouse_scroll_line()
   else
     i = fixed_wheel_scroll_count;
   if ( i )
-    result = i;
+    return i;
   else
-    result = 1;
-  return result;
+    return 1;
 }
 
 //----- (08095BE6) --------------------------------------------------------
 int __cdecl process_mMouse(int btn, int x, int y)
 {
-  int result; // eax
   int i; // [esp+10h] [ebp-18h]
   int ia; // [esp+10h] [ebp-18h]
   int ib; // [esp+10h] [ebp-18h]
@@ -51713,36 +51582,35 @@ LABEL_58:
       if ( CurrentMenu->y - 1 == y )
       {
         mPrev(32);
-        result = -1;
+        return -1;
       }
       else if ( CurrentMenu->y + CurrentMenu->height == y )
       {
         mNext(32);
-        result = -1;
+        return -1;
       }
       else
       {
         mselect = y - CurrentMenu->y + CurrentMenu->offset;
         if ( CurrentMenu->item[mselect].type == 1 )
-          result = -1;
+          return -1;
         else
-          result = select_menu(CurrentMenu, mselect);
+          return select_menu(CurrentMenu, mselect);
       }
     }
     else
     {
       for ( ia = 0; y - press_y_8971 > ia; ++ia )
         mLineD(32);
-      result = -1;
+      return -1;
     }
   }
   else
   {
     for ( i = 0; press_y_8971 - y > i; ++i )
       mLineU(32);
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (08095F06) --------------------------------------------------------
@@ -51761,7 +51629,7 @@ int __cdecl mMouse(char c)
 //----- (08095F71) --------------------------------------------------------
 int __cdecl gpm_process_menu_mouse(Gpm_Event_0 *event, void *data)
 {
-  int v2; // eax
+  int buttons; // eax
   _WORD *v3; // edx
   _WORD *v4; // eax
   _WORD *v5; // ecx
@@ -51790,8 +51658,8 @@ int __cdecl gpm_process_menu_mouse(Gpm_Event_0 *event, void *data)
       ioctl(gpm_consolefd, 0x541Cu, &byte_817C201);
       return 0;
     }
-    v2 = event->buttons;
-    switch ( v2 )
+    buttons = event->buttons;
+    switch ( buttons )
     {
       case 2:
         btn = 1;
@@ -51825,7 +51693,7 @@ void __cdecl popupMenu(int x, int y, Menu *menu)
 }
 
 //----- (08096147) --------------------------------------------------------
-void __cdecl find_nvp_node(int x, int y)
+void __cdecl mainMenu(int x, int y)
 {
   popupMenu(x, y, &MainMenu);
 }
@@ -51877,8 +51745,8 @@ void selMn()
 //----- (080962B6) --------------------------------------------------------
 void initSelectMenu()
 {
-  int v0; // eax
-  int v1; // eax
+  int scheme; // eax
+  int length; // eax
   wc_ces v2; // esi
   wc_ces v3; // ebx
   _Str *v4; // eax
@@ -51920,16 +51788,16 @@ void initSelectMenu()
     str = Sprintf("<%s>", bufa->buffername);
     if ( bufa->filename )
     {
-      v0 = bufa->currentURL.scheme;
-      if ( v0 == 4 )
+      scheme = bufa->currentURL.scheme;
+      if ( scheme == 4 )
       {
         if ( strcmp(bufa->currentURL.file, "-") )
         {
           if ( str->length + 1 >= str->area_size )
             Strgrow(str);
-          v1 = str->length;
-          str->ptr[v1] = 32;
-          str->length = v1 + 1;
+          length = str->length;
+          str->ptr[length] = 32;
+          str->length = length + 1;
           str->ptr[str->length] = 0;
           v2 = InnerCharset;
           v3 = SystemCharset;
@@ -51938,7 +51806,7 @@ void initSelectMenu()
           Strcat_charp(str, v5->ptr);
         }
       }
-      else if ( v0 != 254 )
+      else if ( scheme != 254 )
       {
         if ( str->length + 1 >= str->area_size )
           Strgrow(str);
@@ -52101,8 +51969,8 @@ void tabMn()
 //----- (08096A0B) --------------------------------------------------------
 void initSelTabMenu()
 {
-  int v0; // eax
-  int v1; // eax
+  int scheme; // eax
+  int length; // eax
   wc_ces v2; // esi
   wc_ces v3; // ebx
   _Str *v4; // eax
@@ -52145,16 +52013,16 @@ void initSelTabMenu()
     str = Sprintf("<%s>", buf->buffername);
     if ( buf->filename )
     {
-      v0 = buf->currentURL.scheme;
-      if ( v0 == 4 )
+      scheme = buf->currentURL.scheme;
+      if ( scheme == 4 )
       {
         if ( strcmp(buf->currentURL.file, "-") )
         {
           if ( str->length + 1 >= str->area_size )
             Strgrow(str);
-          v1 = str->length;
-          str->ptr[v1] = 32;
-          str->length = v1 + 1;
+          length = str->length;
+          str->ptr[length] = 32;
+          str->length = length + 1;
           str->ptr[str->length] = 0;
           v2 = InnerCharset;
           v3 = SystemCharset;
@@ -52163,7 +52031,7 @@ void initSelTabMenu()
           Strcat_charp(str, v5->ptr);
         }
       }
-      else if ( v0 != 254 )
+      else if ( scheme != 254 )
       {
         p = parsedURL2Str(&buf->currentURL)->ptr;
         if ( DecodeURL )
@@ -52440,7 +52308,6 @@ void initMenu()
 //----- (080974DB) --------------------------------------------------------
 int __cdecl setMenuItem(MenuItem *item, char *type, char *line)
 {
-  int result; // eax
   int v4; // eax
   int n; // [esp+14h] [ebp-24h]
   int f; // [esp+18h] [ebp-20h]
@@ -52457,13 +52324,13 @@ int __cdecl setMenuItem(MenuItem *item, char *type, char *line)
   if ( !strcmp(type, "end") )
   {
     item->type = 0;
-    result = 0;
+    return 0;
   }
   else if ( !strcmp(type, "nop") )
   {
     item->type = 1;
     item->label = getQWord(&line);
-    result = 1;
+    return 1;
   }
   else if ( !strcmp(type, "func") )
   {
@@ -52482,11 +52349,11 @@ int __cdecl setMenuItem(MenuItem *item, char *type, char *line)
       item->func = w3mFuncList[v4].func;
       item->keys = keys;
       item->data = data;
-      result = 4;
+      return 4;
     }
     else
     {
-      result = -1;
+      return -1;
     }
   }
   else if ( !strcmp(type, "popup") )
@@ -52503,18 +52370,17 @@ int __cdecl setMenuItem(MenuItem *item, char *type, char *line)
         n = addMenuList(&w3mMenuList, popup);
       item->popup = w3mMenuList[n].menu;
       item->keys = keysa;
-      result = 8;
+      return 8;
     }
     else
     {
-      result = -1;
+      return -1;
     }
   }
   else
   {
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (080976ED) --------------------------------------------------------
@@ -52561,7 +52427,7 @@ int __cdecl getMenuN(MenuList *list, char *id)
 //----- (080977DA) --------------------------------------------------------
 LinkList *__cdecl link_menu(Buffer *buf)
 {
-  char *v2; // eax
+  char *title; // eax
   Menu menu; // [esp+1Ch] [ebp-45Ch] BYREF
   char *p; // [esp+450h] [ebp-28h]
   Str str; // [esp+454h] [ebp-24h]
@@ -52585,10 +52451,10 @@ LinkList *__cdecl link_menu(Buffer *buf)
   for ( l = buf->linklist; l; l = l->next )
   {
     if ( l->title )
-      v2 = l->title;
+      title = l->title;
     else
-      v2 = "(empty)";
-    str = Strnew_charp(v2);
+      title = "(empty)";
+    str = Strnew_charp(title);
     if ( l->type == 1 )
     {
       Strcat_charp(str, " [Rel] ");
@@ -52643,7 +52509,6 @@ LinkList *__cdecl link_menu(Buffer *buf)
 //----- (08097A58) --------------------------------------------------------
 Anchor *__cdecl accesskey_menu(Buffer *buf)
 {
-  Anchor *result; // eax
   char *v2; // eax
   unsigned __int8 v3; // al
   unsigned __int8 v4; // al
@@ -52741,10 +52606,9 @@ Anchor *__cdecl accesskey_menu(Buffer *buf)
   }
   popup_menu(0, &menu);
   if ( key < 0 )
-    result = 0;
+    return 0;
   else
-    result = ap[key];
-  return result;
+    return ap[key];
 }
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
 
@@ -52762,19 +52626,15 @@ int __cdecl lmGoto(char c)
 //----- (08097F5F) --------------------------------------------------------
 int __cdecl lmSelect(char c)
 {
-  int result; // eax
-
   if ( (MYCTYPE_MAP[(unsigned __int8)c] & 0x11) != 0 )
-    result = select_menu(CurrentMenu, 21 * (CurrentMenu->select / 0x15u) + CurrentMenu->keyselect[c]);
+    return select_menu(CurrentMenu, 21 * (CurrentMenu->select / 0x15u) + CurrentMenu->keyselect[c]);
   else
-    result = -1;
-  return result;
+    return -1;
 }
 
 //----- (08097FE3) --------------------------------------------------------
 Anchor *__cdecl list_menu(Buffer *buf)
 {
-  Anchor *result; // eax
   Menu menu; // [esp+10h] [ebp-468h] BYREF
   char *t; // [esp+444h] [ebp-34h]
   char **label; // [esp+448h] [ebp-30h]
@@ -52881,10 +52741,9 @@ Anchor *__cdecl list_menu(Buffer *buf)
   }
   popup_menu(0, &menu);
   if ( key < 0 )
-    result = 0;
+    return 0;
   else
-    result = ap[key];
-  return result;
+    return ap[key];
 }
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
 
@@ -52894,7 +52753,6 @@ int __cdecl mailcapMatch(mailcap *mcap, char *type)
   char v2; // al
   int v3; // edx
   int v4; // eax
-  int result; // eax
   char v6; // al
   int v7; // edx
   int v8; // eax
@@ -52942,10 +52800,9 @@ int __cdecl mailcapMatch(mailcap *mcap, char *type)
     ++typea;
   }
   if ( *typea )
-    result = 0;
+    return 0;
   else
-    result = level + 20;
-  return result;
+    return level + 20;
 }
 
 //----- (080985E5) --------------------------------------------------------
@@ -52965,7 +52822,7 @@ mailcap *__cdecl searchMailcap(mailcap *table, char *type)
     i = mailcapMatch(table, type);
     if ( i > level )
     {
-      if ( !table->test || (command = cptifil(table->test, type, 0, 0, 0), !system(command->ptr)) )
+      if ( !table->test || (command = unquote_mailcap(table->test, type, 0, 0, 0), !system(command->ptr)) )
       {
         level = i;
         mcap = table;
@@ -52980,7 +52837,7 @@ mailcap *__cdecl searchMailcap(mailcap *table, char *type)
 int __cdecl matchMailcapAttr(char *p, char *attr, int len, Str *value)
 {
   Str v4; // eax
-  int v5; // edx
+  int length; // edx
   char *q; // [esp+18h] [ebp-10h]
   int quoted; // [esp+1Ch] [ebp-Ch]
   char *pa; // [esp+30h] [ebp+8h]
@@ -53010,9 +52867,9 @@ int __cdecl matchMailcapAttr(char *p, char *attr, int len, Str *value)
       if ( (*value)->length + 1 >= (*value)->area_size )
         Strgrow(*value);
       v4 = *value;
-      v5 = (*value)->length;
-      (*value)->ptr[v5] = *pb;
-      v4->length = v5 + 1;
+      length = (*value)->length;
+      (*value)->ptr[length] = *pb;
+      v4->length = length + 1;
       (*value)->ptr[(*value)->length] = 0;
       ++pb;
     }
@@ -53159,7 +53016,7 @@ mailcap *__cdecl loadMailcap(char *filename)
           break;
         Strshrink(tmpa, 1);
         v4 = Strfgets(f);
-        savexmlstr_0(tmpa, v4);
+        Strcat(tmpa, v4);
       }
       if ( extractMailcapEntry(tmpa->ptr, &mcap[ia]) )
         ++ia;
@@ -53274,7 +53131,7 @@ mailcap *__cdecl searchExtViewer(char *type)
 //----- (08099152) --------------------------------------------------------
 Str __cdecl quote_mailcap(char *s, int flag)
 {
-  int v2; // eax
+  int length; // eax
   int v3; // eax
   int v4; // eax
   int v5; // eax
@@ -53295,9 +53152,9 @@ Str __cdecl quote_mailcap(char *s, int flag)
         {
           if ( d->length + 1 >= d->area_size )
             Strgrow(d);
-          v2 = d->length;
-          d->ptr[v2] = 92;
-          d->length = v2 + 1;
+          length = d->length;
+          d->ptr[length] = 92;
+          d->length = length + 1;
           d->ptr[d->length] = 0;
         }
         if ( d->length + 1 >= d->area_size )
@@ -53345,7 +53202,7 @@ LABEL_17:
 Str __cdecl unquote_mailcap_loop(char *qstr, char *type, char *name, char *attr, int *mc_stat, int flag0)
 {
   Str v7; // eax
-  int v8; // edx
+  int length; // edx
   int v9; // eax
   int v10; // eax
   int v11; // eax
@@ -53386,9 +53243,9 @@ Str __cdecl unquote_mailcap_loop(char *qstr, char *type, char *name, char *attr,
         if ( tmp->length + 1 >= tmp->area_size )
           Strgrow(tmp);
         v7 = tmp;
-        v8 = tmp->length;
-        tmp->ptr[v8] = *p;
-        v7->length = v8 + 1;
+        length = tmp->length;
+        tmp->ptr[length] = *p;
+        v7->length = length + 1;
         tmp->ptr[tmp->length] = 0;
       }
       else
@@ -53517,7 +53374,7 @@ Str __cdecl unquote_mailcap_loop(char *qstr, char *type, char *name, char *attr,
         }
         else
         {
-          flag &= 0xFFFFFFFE;
+          flag &= ~1u;
         }
       }
       else if ( *p == 34 )
@@ -53529,7 +53386,7 @@ Str __cdecl unquote_mailcap_loop(char *qstr, char *type, char *name, char *attr,
         }
         else
         {
-          flag &= 0xFFFFFFFD;
+          flag &= ~2u;
         }
       }
       if ( str->length + 1 >= str->area_size )
@@ -53542,11 +53399,11 @@ Str __cdecl unquote_mailcap_loop(char *qstr, char *type, char *name, char *attr,
   }
   return str;
 }
-// 8099461: conditional instruction was optimized away because of '%status.4==0'
+// 8099461: conditional instruction was optimized away because %status.4==0
 // 804A36C: using guessed type int __cdecl strcasestr(_DWORD, _DWORD);
 
 //----- (08099846) --------------------------------------------------------
-Str __cdecl cptifil(char *qstr, char *type, char *name, char *attr, int *mc_stat)
+Str __cdecl unquote_mailcap(char *qstr, char *type, char *name, char *attr, int *mc_stat)
 {
   return unquote_mailcap_loop(qstr, type, name, attr, mc_stat, 0);
 }
@@ -53617,7 +53474,6 @@ int openImgdisplay()
 {
   char *v0; // ebx
   char *v1; // eax
-  int result; // eax
   char *cmd; // [esp+1Ch] [ebp-Ch]
 
   Imgdisplay_pid = open_pipe_rw(&Imgdisplay_rf, &Imgdisplay_wf);
@@ -53625,7 +53481,7 @@ int openImgdisplay()
   {
     Imgdisplay_pid = 0;
     activeImage = 0;
-    result = 0;
+    return 0;
   }
   else
   {
@@ -53642,9 +53498,8 @@ int openImgdisplay()
       myExec(Imgdisplay);
     }
     activeImage = 1;
-    result = 1;
+    return 1;
   }
-  return result;
 }
 
 //----- (08099B96) --------------------------------------------------------
@@ -53712,8 +53567,8 @@ err:
 //----- (08099D88) --------------------------------------------------------
 void drawImage()
 {
-  __int16 v0; // ax
-  __int16 v1; // ax
+  __int16 height; // ax
+  __int16 width; // ax
   int v2; // [esp+58h] [ebp-30h]
   TerminalImage *i; // [esp+64h] [ebp-24h]
   int draw; // [esp+68h] [ebp-20h]
@@ -53738,20 +53593,20 @@ void drawImage()
           i->cache->index = -i->cache->index;
           fwrite("0;", 1u, 2u, Imgdisplay_wf);
         }
-        v0 = i->cache->height;
-        if ( v0 < 0 )
-          v0 = 0;
-        v2 = v0;
-        v1 = i->cache->width;
-        if ( v1 < 0 )
-          v1 = 0;
+        height = i->cache->height;
+        if ( height < 0 )
+          height = 0;
+        v2 = height;
+        width = i->cache->width;
+        if ( width < 0 )
+          width = 0;
         sprintf(
           buf_8642,
           "%d;%d;%d;%d;%d;%d;%d;%d;%d;",
           ~i->cache->index % 1000 + 1,
           i->x,
           i->y,
-          v1,
+          width,
           v2,
           i->sx,
           i->sy,
@@ -53836,7 +53691,7 @@ void __cdecl deleteImage(Buffer *buf)
 //----- (0809A1F4) --------------------------------------------------------
 void __cdecl getAllImage(Buffer *buf)
 {
-  Image *v1; // ebx
+  Image *image; // ebx
   int i; // [esp+10h] [ebp-18h]
   ParsedURL *current; // [esp+14h] [ebp-14h]
   Anchor *a; // [esp+18h] [ebp-10h]
@@ -53856,8 +53711,8 @@ void __cdecl getAllImage(Buffer *buf)
       {
         if ( a->image )
         {
-          v1 = a->image;
-          v1->cache = getImage(v1, current, buf->image_flag);
+          image = a->image;
+          image->cache = getImage(image, current, buf->image_flag);
           if ( a->image->cache )
           {
             if ( !a->image->cache->loaded )
@@ -54210,7 +54065,7 @@ void __cdecl encode_symbol(symbol_set *s)
 {
   char **v1; // edi
   wc_ces v2; // esi
-  wc_ces v3; // ebx
+  wc_ces ces; // ebx
   _Str *v4; // eax
   int i; // [esp+1Ch] [ebp-1Ch]
 
@@ -54220,9 +54075,9 @@ void __cdecl encode_symbol(symbol_set *s)
     {
       v1 = &s->item[i];
       v2 = InnerCharset;
-      v3 = s->ces;
+      ces = s->ces;
       v4 = Strnew_charp(*v1);
-      *v1 = wc_Str_conv(v4, v3, v2)->ptr;
+      *v1 = wc_Str_conv(v4, ces, v2)->ptr;
     }
   }
   s->encode = 1;
@@ -54231,7 +54086,6 @@ void __cdecl encode_symbol(symbol_set *s)
 //----- (0809AEC2) --------------------------------------------------------
 char **__cdecl get_symbol(wc_ces charset, int *width)
 {
-  char **result; // eax
   symbol_set *v3; // eax
   symbol_set *s; // [esp+18h] [ebp-10h]
   charset_symbol_set *p; // [esp+1Ch] [ebp-Ch]
@@ -54240,7 +54094,7 @@ char **__cdecl get_symbol(wc_ces charset, int *width)
   if ( charset == save_charset && save_symbol && *width == save_symbol->width )
   {
     *width = save_symbol->width;
-    result = save_symbol->item;
+    return save_symbol->item;
   }
   else
   {
@@ -54268,9 +54122,8 @@ char **__cdecl get_symbol(wc_ces charset, int *width)
       save_symbol = s;
     }
     *width = s->width;
-    result = s->item;
+    return s->item;
   }
-  return result;
 }
 
 //----- (0809AFC5) --------------------------------------------------------
@@ -54325,7 +54178,7 @@ void __cdecl push_symbol(Str str, char symbol, int width, int n)
     ++p;
   }
   v5 = Sprintf("<_SYMBOL TYPE=%d>", symbol);
-  savexmlstr_0(str, v5);
+  Strcat(str, v5);
   while ( n > 0 )
   {
     Strcat_charp_n(str, buf, i);
@@ -54337,7 +54190,6 @@ void __cdecl push_symbol(Str str, char symbol, int width, int n)
 //----- (0809B188) --------------------------------------------------------
 char *__cdecl conv_entity(unsigned int c)
 {
-  char *result; // eax
   wc_ces v2; // ebx
   _Str *v3; // eax
   wc_ces v4; // ebx
@@ -54358,27 +54210,26 @@ char *__cdecl conv_entity(unsigned int c)
   {
     if ( (c & 0x80000000) != 0 )
     {
-      result = (char *)&unk_80CECFC;
+      return (char *)&unk_80CECFC;
     }
     else
     {
       wc_ucs_to_utf8(c, utf8);
       v4 = InnerCharset;
       v5 = Strnew_charp((char *)utf8);
-      result = wc_Str_conv(v5, 0x308045u, v4)->ptr;
+      return wc_Str_conv(v5, 0x308045u, v4)->ptr;
     }
   }
   else if ( UseAltEntity )
   {
-    result = alt_latin1[c - 160];
+    return alt_latin1[c - 160];
   }
   else
   {
     v2 = InnerCharset;
     v3 = Strnew_charp_n(b, 1);
-    result = wc_Str_conv(v3, 0x100201u, v2)->ptr;
+    return wc_Str_conv(v3, 0x100201u, v2)->ptr;
   }
-  return result;
 }
 
 //----- (0809B290) --------------------------------------------------------
@@ -54940,6 +54791,7 @@ void __cdecl addch(char c)
   ca[0] = c;
   addmch(ca, 1u);
 }
+// 809C5A6: using guessed type char c[12];
 
 //----- (0809C5C7) --------------------------------------------------------
 void __cdecl addmch(char *pc, size_t len)
@@ -55194,7 +55046,7 @@ void touch_line()
   if ( (ScreenImage[CurLine]->isdirty & 1) == 0 )
   {
     for ( i = 0; i < COLS; ++i )
-      ScreenImage[CurLine]->lineprop[i] &= 0xFFDF;
+      ScreenImage[CurLine]->lineprop[i] &= ~0x20;
     ScreenImage[CurLine]->isdirty |= 1u;
   }
 }
@@ -55208,7 +55060,7 @@ void standout()
 //----- (0809D158) --------------------------------------------------------
 void standend()
 {
-  CurrentMode &= 0xFFFEu;
+  CurrentMode &= ~1u;
 }
 
 //----- (0809D16D) --------------------------------------------------------
@@ -55235,7 +55087,7 @@ void bold()
 //----- (0809D220) --------------------------------------------------------
 void boldend()
 {
-  CurrentMode &= 0xFFFBu;
+  CurrentMode &= ~4u;
 }
 
 //----- (0809D235) --------------------------------------------------------
@@ -55247,7 +55099,7 @@ void underline()
 //----- (0809D24A) --------------------------------------------------------
 void underlineend()
 {
-  CurrentMode &= 0xFFFDu;
+  CurrentMode &= ~2u;
 }
 
 //----- (0809D25F) --------------------------------------------------------
@@ -55259,7 +55111,7 @@ void graphstart()
 //----- (0809D274) --------------------------------------------------------
 void graphend()
 {
-  CurrentMode &= 0xFFEFu;
+  CurrentMode &= ~0x10u;
 }
 
 //----- (0809D289) --------------------------------------------------------
@@ -55339,7 +55191,7 @@ void refresh()
     dirty = &ScreenImage[line]->isdirty;
     if ( (*(_BYTE *)dirty & 1) != 0 )
     {
-      *dirty &= 0xFFFEu;
+      *dirty &= ~1u;
       pc = ScreenImage[line]->lineimage;
       pr = ScreenImage[line]->lineprop;
       for ( col = 0; col < COLS && (pr[col] & 8) == 0; ++col )
@@ -55508,8 +55360,8 @@ void refresh()
   writestr(v9);
   flush_tty();
 }
-// 809D57E: conditional instruction was optimized away because of '%moved.4==0'
-// 809D582: conditional instruction was optimized away because of '%moved.4==0'
+// 809D57E: conditional instruction was optimized away because %moved.4==0
+// 809D582: conditional instruction was optimized away because %moved.4==0
 
 //----- (0809DBFF) --------------------------------------------------------
 void clear()
@@ -55634,7 +55486,7 @@ void __cdecl addnstr(char *s, int n)
 
   for ( i = 0; *s; i += width )
   {
-    v2 = WcOption.use_wide ? WTF_WIDTH_MAP[(unsigned __int8)*s] : WTF_WIDTH_MAP[(unsigned __int8)*s] != 0;
+    v2 = WcOption.use_wide ? WTF_WIDTH_MAP[(unsigned __int8)*s] : (unsigned __int8)(WTF_WIDTH_MAP[(unsigned __int8)*s] != 0);
     width = v2;
     if ( i + v2 > n )
       break;
@@ -55654,7 +55506,7 @@ void __cdecl addnstr_sup(char *s, int n)
 
   for ( i = 0; *s; i += width )
   {
-    v2 = WcOption.use_wide ? WTF_WIDTH_MAP[(unsigned __int8)*s] : WTF_WIDTH_MAP[(unsigned __int8)*s] != 0;
+    v2 = WcOption.use_wide ? WTF_WIDTH_MAP[(unsigned __int8)*s] : (unsigned __int8)(WTF_WIDTH_MAP[(unsigned __int8)*s] != 0);
     width = v2;
     if ( i + v2 > n )
       break;
@@ -55742,6 +55594,7 @@ int getch()
   }
   return (unsigned __int8)c[0];
 }
+// 809E1A5: using guessed type char c[9];
 
 //----- (0809E1F6) --------------------------------------------------------
 char __cdecl wgetch(void *p)
@@ -55758,17 +55611,15 @@ char __cdecl wgetch(void *p)
   }
   return c[0];
 }
+// 809E1F6: using guessed type char c[9];
 
 //----- (0809E247) --------------------------------------------------------
 int do_getch()
 {
-  int result; // eax
-
   if ( is_xterm )
-    result = (char)getch();
+    return (char)getch();
   else
-    result = Gpm_Wgetch();
-  return result;
+    return Gpm_Wgetch();
 }
 
 //----- (0809E26E) --------------------------------------------------------
@@ -56182,8 +56033,8 @@ LABEL_39:
   }
   return sock;
 }
-// 809EA8C: conditional instruction was optimized away because of '%sock.4==FFFFFFFF'
-// 809EAE8: conditional instruction was optimized away because of '%hostname.4!=0'
+// 809EA8C: conditional instruction was optimized away because %sock.4==FFFFFFFF
+// 809EAE8: conditional instruction was optimized away because %hostname.4!=0
 
 //----- (0809ED8B) --------------------------------------------------------
 char *__cdecl copyPath(char *orgpath, int length, int option)
@@ -56233,7 +56084,7 @@ char *__cdecl copyPath(char *orgpath, int length, int option)
 void __cdecl parseURL(char *url, ParsedURL *p_url, ParsedURL *current)
 {
   int v3; // eax
-  int v4; // edx
+  int length; // edx
   char *v5; // eax
   char *cgi; // [esp+10h] [ebp-18h]
   Str tmpa; // [esp+14h] [ebp-14h]
@@ -56341,7 +56192,6 @@ analyze_url:
 LABEL_58:
           p_url->host = copyPath(q, p - q, 1);
           p_url->port = DefaultPort[p_url->scheme];
-          goto analyze_file;
         }
       }
     }
@@ -56408,10 +56258,10 @@ analyze_file:
         tmp = Strnew();
         if ( tmp->length + 1 >= tmp->area_size )
           Strgrow(tmp);
-        v4 = tmp->length;
+        length = tmp->length;
         v5 = p;
-        tmp->ptr[v4] = *p;
-        tmp->length = v4 + 1;
+        tmp->ptr[length] = *p;
+        tmp->length = length + 1;
         p = v5 + 1;
         tmp->ptr[tmp->length] = 0;
         while ( *p && *p != 47 )
@@ -56531,9 +56381,9 @@ void __cdecl copyParsedURL(ParsedURL *p, ParsedURL *q)
 void __cdecl parseURL2(char *url, ParsedURL *pu, ParsedURL *current)
 {
   char *v3; // eax
-  char *v4; // ebx
+  char *file; // ebx
   char *v5; // eax
-  int v6; // eax
+  int length; // eax
   char *v7; // eax
   char *v8; // eax
   char *v9; // [esp+4h] [ebp-24h]
@@ -56593,9 +56443,9 @@ void __cdecl parseURL2(char *url, ParsedURL *pu, ParsedURL *current)
     {
       if ( pu->scheme == 255 && !strchr(pu->file, 58) && (pb = strchr(current->file, 58)) != 0 )
       {
-        v4 = pu->file;
+        file = pu->file;
         v5 = allocStr(current->file, pb - current->file);
-        pu->file = Sprintf("%s:%s", v5, v4)->ptr;
+        pu->file = Sprintf("%s:%s", v5, file)->ptr;
       }
       else if ( pu->scheme == 1 || *pu->file == 47 )
       {
@@ -56631,9 +56481,9 @@ void __cdecl parseURL2(char *url, ParsedURL *pu, ParsedURL *current)
       {
         if ( tmpa->length + 1 >= tmpa->area_size )
           Strgrow(tmpa);
-        v6 = tmpa->length;
-        tmpa->ptr[v6] = 47;
-        tmpa->length = v6 + 1;
+        length = tmpa->length;
+        tmpa->ptr[length] = 47;
+        tmpa->length = length + 1;
         tmpa->ptr[tmpa->length] = 0;
       }
       v9 = file_unquote(pu->file);
@@ -56663,13 +56513,12 @@ LABEL_73:
     goto LABEL_73;
   }
 }
-// 809FBBC: conditional instruction was optimized away because of '%current.4!=0'
+// 809FBBC: conditional instruction was optimized away because %current.4!=0
 
 //----- (0809FEC0) --------------------------------------------------------
 Str __cdecl parsedURL2Str(ParsedURL *pu, int pass)
 {
-  Str result; // eax
-  int v3; // eax
+  int length; // eax
   int v4; // eax
   int v5; // eax
   int v6; // eax
@@ -56695,13 +56544,13 @@ Str __cdecl parsedURL2Str(ParsedURL *pu, int pass)
     {
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v3 = tmp->length;
-      tmp->ptr[v3] = 35;
-      tmp->length = v3 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = 35;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
       Strcat_charp(tmp, pu->label);
     }
-    result = tmp;
+    return tmp;
   }
   else
   {
@@ -56715,7 +56564,7 @@ Str __cdecl parsedURL2Str(ParsedURL *pu, int pass)
     if ( pu->scheme == 11 )
     {
       Strcat_charp(tmpa, pu->file);
-      result = tmpa;
+      return tmpa;
     }
     else
     {
@@ -56753,7 +56602,7 @@ Str __cdecl parsedURL2Str(ParsedURL *pu, int pass)
           tmpa->length = v7 + 1;
           tmpa->ptr[tmpa->length] = 0;
           v12 = Sprintf("%d", pu->port);
-          savexmlstr_0(tmpa, v12);
+          Strcat(tmpa, v12);
         }
       }
       if ( pu->scheme != 9 && pu->scheme != 10 && (!pu->file || *pu->file != 47) )
@@ -56795,10 +56644,9 @@ Str __cdecl parsedURL2Str(ParsedURL *pu, int pass)
         tmpa->ptr[tmpa->length] = 0;
         Strcat_charp(tmpa, pu->label);
       }
-      result = tmpa;
+      return tmpa;
     }
   }
-  return result;
 }
 
 //----- (080A03FA) --------------------------------------------------------
@@ -56866,7 +56714,7 @@ char *__cdecl otherinfo(ParsedURL *target, ParsedURL *current, char *referer)
     if ( target->port != DefaultPort[target->scheme] )
     {
       v4 = Sprintf(":%d", target->port);
-      savexmlstr_0(s, v4);
+      Strcat(s, v4);
     }
     Strcat_charp(s, "\r\n");
   }
@@ -56896,7 +56744,7 @@ char *__cdecl otherinfo(ParsedURL *target, ParsedURL *current, char *referer)
       Strcat_charp(s, "Referer: ");
       current->label = 0;
       v5 = parsedURL2Str(current);
-      savexmlstr_0(s, v5);
+      Strcat(s, v5);
       current->label = p;
       Strcat_charp(s, "\r\n");
     }
@@ -56907,10 +56755,10 @@ char *__cdecl otherinfo(ParsedURL *target, ParsedURL *current, char *referer)
 //----- (080A07EC) --------------------------------------------------------
 Str __cdecl HTTPrequestMethod(HRequest *hr)
 {
-  int v1; // eax
+  int command; // eax
 
-  v1 = hr->command;
-  switch ( v1 )
+  command = hr->command;
+  switch ( command )
   {
     case 2:
       return Strnew_charp("CONNECT");
@@ -56925,7 +56773,7 @@ Str __cdecl HTTPrequestMethod(HRequest *hr)
 //----- (080A0844) --------------------------------------------------------
 Str __cdecl HTTPrequestURI(ParsedURL *pu, HRequest *hr)
 {
-  int v2; // eax
+  int length; // eax
   _Str *v4; // [esp+4h] [ebp-24h]
   _Str *v5; // [esp+4h] [ebp-24h]
   char *save_label; // [esp+18h] [ebp-10h]
@@ -56936,7 +56784,7 @@ Str __cdecl HTTPrequestURI(ParsedURL *pu, HRequest *hr)
   {
     Strcat_charp(tmp, pu->host);
     v4 = Sprintf(":%d", pu->port);
-    savexmlstr_0(tmp, v4);
+    Strcat(tmp, v4);
   }
   else if ( (hr->flag & 1) != 0 )
   {
@@ -56945,9 +56793,9 @@ Str __cdecl HTTPrequestURI(ParsedURL *pu, HRequest *hr)
     {
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v2 = tmp->length;
-      tmp->ptr[v2] = 63;
-      tmp->length = v2 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = 63;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
       Strcat_charp(tmp, pu->query);
     }
@@ -56957,7 +56805,7 @@ Str __cdecl HTTPrequestURI(ParsedURL *pu, HRequest *hr)
     save_label = pu->label;
     pu->label = 0;
     v5 = parsedURL2Str(pu, 1);
-    savexmlstr_0(tmp, v5);
+    Strcat(tmp, v5);
     pu->label = save_label;
   }
   return tmp;
@@ -56966,7 +56814,7 @@ Str __cdecl HTTPrequestURI(ParsedURL *pu, HRequest *hr)
 //----- (080A0978) --------------------------------------------------------
 Str __cdecl HTTPrequest(ParsedURL *pu, ParsedURL *current, HRequest *hr, TextList *extra)
 {
-  char *v5; // [esp+4h] [ebp-34h]
+  char *ptr; // [esp+4h] [ebp-34h]
   char *v6; // [esp+4h] [ebp-34h]
   _Str *v7; // [esp+4h] [ebp-34h]
   _Str *v8; // [esp+4h] [ebp-34h]
@@ -56976,8 +56824,8 @@ Str __cdecl HTTPrequest(ParsedURL *pu, ParsedURL *current, HRequest *hr, TextLis
 
   tmp = HTTPrequestMethod(hr);
   Strcat_charp(tmp, " ");
-  v5 = HTTPrequestURI(pu, hr)->ptr;
-  Strcat_charp(tmp, v5);
+  ptr = HTTPrequestURI(pu, hr)->ptr;
+  Strcat_charp(tmp, ptr);
   Strcat_charp(tmp, " HTTP/1.0\r\n");
   if ( hr->referer == (char *)-1 )
     v6 = otherinfo(pu, 0, 0);
@@ -57001,7 +56849,7 @@ Str __cdecl HTTPrequest(ParsedURL *pu, ParsedURL *current, HRequest *hr, TextLis
       if ( cookie )
       {
         Strcat_charp(tmp, "Cookie: ");
-        savexmlstr_0(tmp, cookie);
+        Strcat(tmp, cookie);
         Strcat_charp(tmp, "\r\n");
         if ( *cookie->ptr != 36 )
           Strcat_charp(tmp, "Cookie2: $Version=\"1\"\r\n");
@@ -57016,7 +56864,7 @@ Str __cdecl HTTPrequest(ParsedURL *pu, ParsedURL *current, HRequest *hr, TextLis
       Strcat_charp(tmp, hr->request->boundary);
       Strcat_charp(tmp, "\r\n");
       v7 = Sprintf("Content-length: %ld\r\n", hr->request->length);
-      savexmlstr_0(tmp, v7);
+      Strcat(tmp, v7);
       Strcat_charp(tmp, "\r\n");
     }
     else
@@ -57024,9 +56872,9 @@ Str __cdecl HTTPrequest(ParsedURL *pu, ParsedURL *current, HRequest *hr, TextLis
       if ( !override_content_type )
         Strcat_charp(tmp, "Content-type: application/x-www-form-urlencoded\r\n");
       v8 = Sprintf("Content-length: %ld\r\n", hr->request->length);
-      savexmlstr_0(tmp, v8);
+      Strcat(tmp, v8);
       if ( header_string )
-        savexmlstr_0(tmp, header_string);
+        Strcat(tmp, header_string);
       Strcat_charp(tmp, "\r\n");
       Strcat_charp_n(tmp, hr->request->body, hr->request->length);
       Strcat_charp(tmp, "\r\n");
@@ -57035,7 +56883,7 @@ Str __cdecl HTTPrequest(ParsedURL *pu, ParsedURL *current, HRequest *hr, TextLis
   else
   {
     if ( header_string )
-      savexmlstr_0(tmp, header_string);
+      Strcat(tmp, header_string);
     Strcat_charp(tmp, "\r\n");
   }
   return tmp;
@@ -57057,7 +56905,17 @@ void __cdecl init_stream(URLFile *uf, int scheme, InputStream stream)
 }
 
 //----- (080A0D3B) --------------------------------------------------------
-URLFile *__userpurge openURL@<eax>(URLFile *retstr, char *url, ParsedURL *pu, ParsedURL *current, URLOption *option, FormList *request, TextList *extra_header, URLFile *ouf, HRequest *hr, unsigned __int8 *status)
+URLFile *__userpurge openURL@<eax>(
+        URLFile *retstr,
+        char *url,
+        ParsedURL *pu,
+        ParsedURL *current,
+        URLOption *option,
+        FormList *request,
+        TextList *extra_header,
+        URLFile *ouf,
+        HRequest *hr,
+        unsigned __int8 *status)
 {
   char *v10; // eax
   FILE *v11; // eax
@@ -57065,7 +56923,7 @@ URLFile *__userpurge openURL@<eax>(URLFile *retstr, char *url, ParsedURL *pu, Pa
   int v13; // eax
   char *v14; // eax
   char *v15; // eax
-  int v16; // eax
+  int length; // eax
   char *v17; // eax
   URLFile uf; // [esp+14h] [ebp-54h] BYREF
   HRequest hr0; // [esp+34h] [ebp-34h] BYREF
@@ -57180,9 +57038,9 @@ URLFile *__userpurge openURL@<eax>(URLFile *retstr, char *url, ParsedURL *pu, Pa
           tmp = Strnew_charp(v15);
           if ( tmp->length + 1 >= tmp->area_size )
             Strgrow(tmp);
-          v16 = tmp->length;
-          tmp->ptr[v16] = 10;
-          tmp->length = v16 + 1;
+          length = tmp->length;
+          tmp->ptr[length] = 10;
+          tmp->length = length + 1;
           tmp->ptr[tmp->length] = 0;
         }
         write(sock, tmp->ptr, tmp->length);
@@ -57412,7 +57270,7 @@ char *__cdecl guessContentType(char *filename)
 //----- (080A1CCB) --------------------------------------------------------
 TextList *__cdecl make_domain_list(char *domain_list)
 {
-  int v1; // eax
+  int length; // eax
   char *v2; // eax
   GeneralList *domains; // [esp+14h] [ebp-14h]
   Str tmp; // [esp+18h] [ebp-10h]
@@ -57428,9 +57286,9 @@ TextList *__cdecl make_domain_list(char *domain_list)
     {
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v1 = tmp->length;
-      tmp->ptr[v1] = *domain_list;
-      tmp->length = v1 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = *domain_list;
+      tmp->length = length + 1;
       ++domain_list;
       tmp->ptr[tmp->length] = 0;
     }
@@ -57473,7 +57331,7 @@ int __cdecl domain_match(char *pat, char *domain)
 //----- (080A1EA2) --------------------------------------------------------
 int __cdecl check_no_proxy(char *domain)
 {
-  int v2; // eax
+  int ai_family; // eax
   size_t v3; // eax
   addrinfo hints; // [esp+20h] [ebp-88h] BYREF
   int *af_0; // [esp+40h] [ebp-68h]
@@ -57521,14 +57379,14 @@ int __cdecl check_no_proxy(char *domain)
     }
     for ( res = res0; res; res = res->ai_next )
     {
-      v2 = res->ai_family;
-      if ( v2 == 2 )
+      ai_family = res->ai_family;
+      if ( ai_family == 2 )
       {
         inet_ntop(2, &res->ai_addr->sa_data[2], addr, 0x40u);
       }
       else
       {
-        if ( v2 != 10 )
+        if ( ai_family != 10 )
           continue;
         inet_ntop(10, &res->ai_addr->sa_data[6], addr, 0x40u);
       }
@@ -57742,7 +57600,7 @@ LABEL_14:
 //----- (080A266A) --------------------------------------------------------
 void __cdecl chkExternalURIBuffer(Buffer *buf)
 {
-  char *v1; // [esp+4h] [ebp-24h]
+  char *ptr; // [esp+4h] [ebp-24h]
   char *v2; // [esp+4h] [ebp-24h]
   table2 *ump; // [esp+18h] [ebp-10h]
   table2 *umpa; // [esp+18h] [ebp-10h]
@@ -57755,15 +57613,15 @@ void __cdecl chkExternalURIBuffer(Buffer *buf)
       break;
     while ( ump->item1 )
     {
-      v1 = Sprintf("%s:%s", ump->item1, "([-;/?:@&=+$,a-zA-Z0-9_.!~*'()]|%[0-9A-Fa-f][0-9A-Fa-f])*")->ptr;
-      find_nvp_node_0(buf, v1);
+      ptr = Sprintf("%s:%s", ump->item1, "([-;/?:@&=+$,a-zA-Z0-9_.!~*'()]|%[0-9A-Fa-f][0-9A-Fa-f])*")->ptr;
+      reAnchor(buf, ptr);
       ++ump;
     }
   }
   for ( umpa = default_urimethods; umpa->item1; ++umpa )
   {
     v2 = Sprintf("%s:%s", umpa->item1, "([-;/?:@&=+$,a-zA-Z0-9_.!~*'()]|%[0-9A-Fa-f][0-9A-Fa-f])*")->ptr;
-    find_nvp_node_0(buf, v2);
+    reAnchor(buf, v2);
   }
 }
 
@@ -57780,8 +57638,7 @@ ParsedURL *__cdecl schemeToProxy(int scheme)
     case 2:
       return &FTP_proxy_parsed;
     case 0:
-      pu = &HTTP_proxy_parsed;
-      break;
+      return &HTTP_proxy_parsed;
   }
   return pu;
 }
@@ -57844,7 +57701,7 @@ void __cdecl ftp_close(FTP ftp)
   {
     if ( ftp->rf )
     {
-      ftp->rf->base.type &= 0xEFu;
+      ftp->rf->base.type &= ~0x10u;
       ISclose(ftp->rf);
       ftp->rf = 0;
     }
@@ -57869,7 +57726,7 @@ int __cdecl ftp_login(FTP ftp)
   Str v2; // eax
   char *v4; // [esp+8h] [ebp-60h]
   _Str *tmp; // [esp+34h] [ebp-34h]
-  hostent *sockent; // [esp+38h] [ebp-30h]
+  struct hostent *sockent; // [esp+38h] [ebp-30h]
   int socknamelen; // [esp+3Ch] [ebp-2Ch] BYREF
   size_t n; // [esp+40h] [ebp-28h]
   int status; // [esp+44h] [ebp-24h] BYREF
@@ -58056,6 +57913,7 @@ time_t __cdecl ftp_modtime(FTP ftp, char *path)
   return lt - gt + t;
 }
 // 8049DBC: using guessed type int __isoc99_sscanf(_DWORD, const char *, ...);
+// 80A30EC: using guessed type int status[3];
 
 //----- (080A3221) --------------------------------------------------------
 int __cdecl ftp_quit(FTP ftp)
@@ -58078,6 +57936,7 @@ void __cdecl closeFTPdata(FILE *f)
   }
   ftp_command(&current_ftp, 0, 0, status);
 }
+// 80A325C: using guessed type int status[3];
 
 //----- (080A32AC) --------------------------------------------------------
 void closeFTP()
@@ -58088,14 +57947,13 @@ void closeFTP()
 //----- (080A32C0) --------------------------------------------------------
 InputStream __cdecl openFTPStream(ParsedURL *pu, URLFile *uf)
 {
-  InputStream result; // eax
   char *v3; // eax
   char *v4; // eax
   __uid_t v5; // eax
-  char *v6; // eax
-  int v7; // eax
-  char *v8; // ebx
-  passwd *mypw; // [esp+2Ch] [ebp-2Ch]
+  char *pw_name; // eax
+  int length; // eax
+  char *file; // ebx
+  struct passwd *mypw; // [esp+2Ch] [ebp-2Ch]
   char *realpathname; // [esp+30h] [ebp-28h]
   int add_auth_cookie_flag; // [esp+34h] [ebp-24h]
   Str pwd; // [esp+38h] [ebp-20h] BYREF
@@ -58178,15 +58036,15 @@ InputStream __cdecl openFTPStream(ParsedURL *pu, URLFile *uf)
       v5 = getuid();
       mypw = getpwuid(v5);
       if ( mypw )
-        v6 = mypw->pw_name;
+        pw_name = mypw->pw_name;
       else
-        v6 = "anonymous";
-      tmp = Strnew_charp(v6);
+        pw_name = "anonymous";
+      tmp = Strnew_charp(pw_name);
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v7 = tmp->length;
-      tmp->ptr[v7] = 64;
-      tmp->length = v7 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = 64;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
       pass = tmp->ptr;
     }
@@ -58210,8 +58068,8 @@ ftp_read:
       goto ftp_dir;
     if ( !*pu->file )
       goto ftp_dir;
-    v8 = pu->file;
-    if ( v8[strlen(v8) - 1] == 47 )
+    file = pu->file;
+    if ( file[strlen(file) - 1] == 47 )
       goto ftp_dir;
     realpathname = file_unquote(pu->file);
     if ( *realpathname == 47 && realpathname[1] == 126 )
@@ -58220,28 +58078,26 @@ ftp_read:
     ftp_command(&current_ftp, "RETR", realpathname, &status);
     if ( status == 125 || status == 150 )
     {
-      result = newFileStream(current_ftp.data, (void (*)(...))closeFTPdata);
+      return newFileStream(current_ftp.data, (void (*)(...))closeFTPdata);
     }
     else
     {
 ftp_dir:
       pu->scheme = 3;
-      result = 0;
+      return 0;
     }
   }
   else
   {
     ftp_quit(&current_ftp);
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (080A37A6) --------------------------------------------------------
 Str __cdecl loadFTPDir(ParsedURL *pu, wc_ces *charset)
 {
-  Str result; // eax
-  int v3; // eax
+  int length; // eax
   char *v4; // eax
   _Str *v5; // eax
   char **v6; // ebx
@@ -58320,9 +58176,9 @@ Str __cdecl loadFTPDir(ParsedURL *pu, wc_ces *charset)
     {
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v3 = tmp->length;
-      tmp->ptr[v3] = 47;
-      tmp->length = v3 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = 47;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
     }
     fn = html_quote(tmp->ptr);
@@ -58510,15 +58366,14 @@ Str __cdecl loadFTPDir(ParsedURL *pu, wc_ces *charset)
         mySignal(2, prevtrap);
     }
     closeFTPdata(current_ftp.data);
-    result = FTPDIRtmp;
+    return FTPDIRtmp;
   }
   else
   {
     fclose(current_ftp.data);
     current_ftp.data = 0;
-    result = 0;
+    return 0;
   }
-  return result;
 }
 // 8049E6C: using guessed type int __cdecl GC_realloc(_DWORD, _DWORD);
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
@@ -58779,7 +58634,7 @@ int __cdecl ha2d(char x, char y)
 Str __cdecl decodeB(char **ww)
 {
   int v1; // eax
-  int v3; // eax
+  int length; // eax
   Str ap; // [esp+18h] [ebp-20h]
   int n_pad; // [esp+1Ch] [ebp-1Ch]
   int i; // [esp+20h] [ebp-18h]
@@ -58832,9 +58687,9 @@ Str __cdecl decodeB(char **ww)
     {
       if ( ap->length + 1 >= ap->area_size )
         Strgrow(ap);
-      v3 = ap->length;
-      ap->ptr[v3] = d[ic];
-      ap->length = v3 + 1;
+      length = ap->length;
+      ap->ptr[length] = d[ic];
+      ap->length = length + 1;
       ap->ptr[ap->length] = 0;
     }
   }
@@ -58846,7 +58701,7 @@ Str __cdecl decodeB(char **ww)
 //----- (080A4BAB) --------------------------------------------------------
 Str __cdecl decodeU(char **ww)
 {
-  int v2; // eax
+  int length; // eax
   Str a; // [esp+2Ch] [ebp-2Ch]
   int i; // [esp+30h] [ebp-28h]
   int n; // [esp+34h] [ebp-24h]
@@ -58868,9 +58723,9 @@ Str __cdecl decodeU(char **ww)
     c2 = (wa[1] - 32) % 64;
     if ( a->length + 1 >= a->area_size )
       Strgrow(a);
-    v2 = a->length;
-    a->ptr[v2] = (c1 << i) | ((int)c2 >> (6 - i));
-    a->length = v2 + 1;
+    length = a->length;
+    a->ptr[length] = (c1 << i) | ((int)c2 >> (6 - i));
+    a->length = length + 1;
     a->ptr[a->length] = 0;
     if ( i == 6 )
     {
@@ -58891,7 +58746,7 @@ Str __cdecl decodeU(char **ww)
 Str __cdecl decodeQ(char **ww)
 {
   int v1; // eax
-  int v2; // ebx
+  int length; // ebx
   char *v3; // esi
   int v4; // eax
   int v5; // eax
@@ -58909,10 +58764,10 @@ Str __cdecl decodeQ(char **ww)
       wa = w + 1;
       if ( a->length + 1 >= a->area_size )
         Strgrow(a);
-      v2 = a->length;
-      v3 = &a->ptr[v2];
+      length = a->length;
+      v3 = &a->ptr[length];
       *v3 = ha2d(*wa, wa[1]);
-      a->length = v2 + 1;
+      a->length = length + 1;
       a->ptr[a->length] = 0;
       w = wa + 1;
     }
@@ -58944,7 +58799,7 @@ Str __cdecl decodeQ(char **ww)
 Str __cdecl decodeQP(char **ww)
 {
   int v1; // eax
-  int v2; // ebx
+  int length; // ebx
   char *v3; // esi
   int v4; // eax
   Str a; // [esp+18h] [ebp-10h]
@@ -58970,10 +58825,10 @@ Str __cdecl decodeQP(char **ww)
           break;
         if ( a->length + 1 >= a->area_size )
           Strgrow(a);
-        v2 = a->length;
-        v3 = &a->ptr[v2];
+        length = a->length;
+        v3 = &a->ptr[length];
         *v3 = ha2d(*w, w[1]);
-        a->length = v2 + 1;
+        a->length = length + 1;
         a->ptr[a->length] = 0;
         ++w;
       }
@@ -58996,7 +58851,7 @@ Str __cdecl decodeQP(char **ww)
 //----- (080A502A) --------------------------------------------------------
 Str __cdecl decodeWord(char **ow, wc_ces *charset)
 {
-  int v2; // eax
+  int length; // eax
   int v3; // eax
   Str tmp; // [esp+18h] [ebp-20h]
   _Str *a; // [esp+1Ch] [ebp-1Ch]
@@ -59016,9 +58871,9 @@ Str __cdecl decodeWord(char **ow, wc_ces *charset)
       return Strnew();
     if ( tmp->length + 1 >= tmp->area_size )
       Strgrow(tmp);
-    v2 = tmp->length;
-    tmp->ptr[v2] = *w;
-    tmp->length = v2 + 1;
+    length = tmp->length;
+    tmp->ptr[length] = *w;
+    tmp->length = length + 1;
     tmp->ptr[tmp->length] = 0;
   }
   c = wc_guess_charset(tmp->ptr, 0);
@@ -59054,9 +58909,8 @@ Str __cdecl decodeWord(char **ow, wc_ces *charset)
 //----- (080A51E0) --------------------------------------------------------
 Str __cdecl decodeMIME(Str orgstr, wc_ces *charset)
 {
-  Str result; // eax
   int v3; // eax
-  int v4; // eax
+  int length; // eax
   _Str *v5; // [esp+4h] [ebp-34h]
   Str cnv; // [esp+1Ch] [ebp-1Ch]
   char *p; // [esp+20h] [ebp-18h]
@@ -59082,7 +58936,7 @@ LABEL_24:
       {
         p = org;
         v5 = decodeWord(&org, charset);
-        savexmlstr_0(cnv, v5);
+        Strcat(cnv, v5);
         if ( org == p )
         {
           Strcat_charp(cnv, org);
@@ -59116,25 +58970,24 @@ LABEL_16:
       {
         if ( cnv->length + 1 >= cnv->area_size )
           Strgrow(cnv);
-        v4 = cnv->length;
-        cnv->ptr[v4] = *org;
-        cnv->length = v4 + 1;
+        length = cnv->length;
+        cnv->ptr[length] = *org;
+        cnv->length = length + 1;
         cnv->ptr[cnv->length] = 0;
       }
       ++org;
     }
   }
   if ( cnv )
-    result = cnv;
+    return cnv;
   else
-    result = orgstr;
-  return result;
+    return orgstr;
 }
 
 //----- (080A5389) --------------------------------------------------------
 Str __cdecl encodeB(char *a)
 {
-  int v1; // eax
+  int length; // eax
   int v2; // eax
   int v3; // eax
   int v4; // eax
@@ -59181,9 +59034,9 @@ Str __cdecl encodeB(char *a)
     }
     if ( w->length + 1 >= w->area_size )
       Strgrow(w);
-    v1 = w->length;
-    w->ptr[v1] = Base64Table[c1];
-    w->length = v1 + 1;
+    length = w->length;
+    w->ptr[length] = Base64Table[c1];
+    w->length = length + 1;
     w->ptr[w->length] = 0;
     if ( w->length + 1 >= w->area_size )
       Strgrow(w);
@@ -59265,7 +59118,6 @@ char *__cdecl regexCompile(char *ex, int igncase)
 //----- (080A571C) --------------------------------------------------------
 Regex *__cdecl newRegex0(char **ex, int igncase, Regex *regex, char **msg, int level)
 {
-  Regex *result; // eax
   regexchar_0 *v6; // ecx
   int v7; // edx
   longchar *v8; // ebx
@@ -59318,15 +59170,14 @@ LABEL_74:
         re->mode |= 7u;
         ++re;
         *ex = p[0];
-        result = regex;
+        return regex;
       }
       else
       {
         if ( msg )
           *msg = "Too many ')'";
-        result = 0;
+        return 0;
       }
-      return result;
     case '*':
       if ( regex == (Regex *)re || (re[-1].mode & 7) != 1 && !re[-1].p.pattern )
       {
@@ -59479,7 +59330,7 @@ Regex *__cdecl newRegex(char *ex, int igncase, Regex *regex, char **msg)
 }
 
 //----- (080A5D9B) --------------------------------------------------------
-int __cdecl __gmp_vfprintf(char *str, int len, int firstp)
+int __cdecl regexMatch(char *str, int len, int firstp)
 {
   return RegexMatch(&DefaultRegex, str, len, firstp);
 }
@@ -59542,16 +59393,23 @@ void __cdecl matchedPosition(char **first, char **last)
 }
 
 //----- (080A5F58) --------------------------------------------------------
-int __cdecl regmatch_sub_anytime(MatchingContext2 *c, Regex *regex, regexchar_0 *pat2, char *str, char *end_p, int iter_limit, int firstp)
+int __cdecl regmatch_sub_anytime(
+        MatchingContext2 *c,
+        Regex *regex,
+        regexchar_0 *pat2,
+        char *str,
+        char *end_p,
+        int iter_limit,
+        int firstp)
 {
-  int v7; // eax
+  int label; // eax
 
-  v7 = c->label;
+  label = c->label;
   if ( c->label == 2 )
     goto label2;
-  if ( v7 == 3 )
+  if ( label == 3 )
     goto label3;
-  if ( v7 == 1 )
+  if ( label == 1 )
     goto label2;
   c->ctx = (MatchingContext1 *)GC_malloc(44);
   c->ctx2 = (MatchingContext2 *)GC_malloc(32);
@@ -59605,7 +59463,6 @@ label3:
 //----- (080A61A6) --------------------------------------------------------
 int __cdecl regmatch_iter(MatchingContext1 *c, regexchar_0 *re, char *str, char *end_p, int firstp)
 {
-  int result; // eax
   int v6; // eax
   longchar v7; // [esp+30h] [ebp-38h] BYREF
   longchar k; // [esp+40h] [ebp-28h] BYREF
@@ -59717,16 +59574,15 @@ LABEL_55:
     if ( c->str < c->end_p )
     {
       c->lastpos = 0;
-      result = 0;
+      return 0;
     }
     else
     {
       c->lastpos = c->str;
       ++c->re;
       c->label = 4;
-      result = 1;
+      return 1;
     }
-    return result;
   }
   if ( v6 != 4 )
   {
@@ -59834,21 +59690,21 @@ int __cdecl matchWhich(longchar *pattern, longchar *c, int igncase)
 //----- (080A69CE) --------------------------------------------------------
 int __cdecl match_longchar(longchar *a, longchar *b, int ignore)
 {
-  int v4; // eax
+  int ch; // eax
 
   if ( a->type != b->type )
     return 0;
   if ( a->type == 2 )
     return a->wch.ccs == b->wch.ccs && a->wch.code == b->wch.code;
   if ( ignore && (MYCTYPE_MAP[b->ch] & 4) != 0 )
-    return a->ch == (b->ch | 0x20) || ((MYCTYPE_MAP[b->ch] & 4) == 0 ? (v4 = b->ch) : (v4 = b->ch & 0xDF), a->ch == v4);
+    return a->ch == (b->ch | 0x20) || ((MYCTYPE_MAP[b->ch] & 4) == 0 ? (ch = b->ch) : (ch = b->ch & 0xDF), a->ch == ch);
   return a->ch == b->ch;
 }
 
 //----- (080A6AF9) --------------------------------------------------------
 int __cdecl match_range_longchar(longchar *a, longchar *b, longchar *c, int ignore)
 {
-  int v5; // eax
+  int ch; // eax
   int v6; // eax
   int v7; // eax
 
@@ -59860,7 +59716,7 @@ int __cdecl match_range_longchar(longchar *a, longchar *b, longchar *c, int igno
         && a->wch.code <= c->wch.code
         && c->wch.code <= b->wch.code;
   if ( ignore && (MYCTYPE_MAP[c->ch] & 4) != 0 )
-    return a->ch <= (c->ch | 0x20) && ((MYCTYPE_MAP[c->ch] & 4) == 0 ? (v5 = c->ch) : (v5 = c->ch | 0x20), v5 <= b->ch)
+    return a->ch <= (c->ch | 0x20) && ((MYCTYPE_MAP[c->ch] & 4) == 0 ? (ch = c->ch) : (ch = c->ch | 0x20), ch <= b->ch)
         || ((MYCTYPE_MAP[c->ch] & 4) == 0 ? (v6 = c->ch) : (v6 = c->ch & 0xDF),
             a->ch <= v6 && ((MYCTYPE_MAP[c->ch] & 4) == 0 ? (v7 = c->ch) : (v7 = c->ch & 0xDF), v7 <= b->ch));
   return a->ch <= c->ch && c->ch <= b->ch;
@@ -59905,7 +59761,7 @@ void __cdecl news_close(News *news)
   {
     if ( news->rf )
     {
-      news->rf->base.type &= 0xEFu;
+      news->rf->base.type &= ~0x10u;
       ISclose(news->rf);
       news->rf = 0;
     }
@@ -60046,8 +59902,7 @@ LABEL_33:
 //----- (080A71FD) --------------------------------------------------------
 char *__cdecl html_quote_s(char *str)
 {
-  int v1; // eax
-  char *result; // eax
+  int length; // eax
   int space; // [esp+10h] [ebp-18h]
   char *q; // [esp+14h] [ebp-14h]
   char *p; // [esp+18h] [ebp-10h]
@@ -60079,21 +59934,28 @@ char *__cdecl html_quote_s(char *str)
     {
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v1 = tmp->length;
-      tmp->ptr[v1] = *p;
-      tmp->length = v1 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = *p;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
     }
   }
   if ( tmp )
-    result = tmp->ptr;
+    return tmp->ptr;
   else
-    result = str;
-  return result;
+    return str;
 }
 
 //----- (080A7331) --------------------------------------------------------
-void __cdecl add_news_message(Str str, int index, char *date, char *name, char *subject, char *mid, char *scheme, char *group)
+void __cdecl add_news_message(
+        Str str,
+        int index,
+        char *date,
+        char *name,
+        char *subject,
+        char *mid,
+        char *scheme,
+        char *group)
 {
   char *v8; // ebx
   char *v9; // eax
@@ -60102,7 +59964,7 @@ void __cdecl add_news_message(Str str, int index, char *date, char *name, char *
   char *v12; // [esp+8h] [ebp-30h]
   char *v13; // [esp+10h] [ebp-28h]
   char *v14; // [esp+10h] [ebp-28h]
-  tm *tm; // [esp+28h] [ebp-10h]
+  struct tm *tm; // [esp+28h] [ebp-10h]
   time_t t; // [esp+2Ch] [ebp-Ch] BYREF
   char *namea; // [esp+4Ch] [ebp+14h]
 
@@ -60111,7 +59973,7 @@ void __cdecl add_news_message(Str str, int index, char *date, char *name, char *
   tm = localtime(&t);
   v13 = html_quote_s(namea);
   v10 = Sprintf("<tr valign=top><td>%d<td nowrap>(%02d/%02d)<td nowrap>%s", index, tm->tm_mon + 1, tm->tm_mday, v13);
-  savexmlstr_0(str, v10);
+  Strcat(str, v10);
   if ( group )
   {
     v14 = html_quote(subject);
@@ -60124,13 +59986,12 @@ void __cdecl add_news_message(Str str, int index, char *date, char *name, char *
     v12 = html_quote(v9);
     v11 = Sprintf("<td><a href=\"%s%s\">%s</a>\n", scheme, v12, v8);
   }
-  savexmlstr_0(str, v11);
+  Strcat(str, v11);
 }
 
 //----- (080A7449) --------------------------------------------------------
 InputStream __cdecl openNewsStream(ParsedURL *pu)
 {
-  InputStream result; // eax
   char *v2; // eax
   char *v3; // eax
   char *v4; // eax
@@ -60218,22 +60079,21 @@ InputStream __cdecl openNewsStream(ParsedURL *pu)
         news_command(&current_news, "ARTICLE", p, &status);
       }
       if ( status == 220 )
-        result = current_news.rf;
+        return current_news.rf;
       else
-        result = 0;
+        return 0;
     }
     else
     {
-      result = 0;
+      return 0;
     }
   }
   else
   {
     if ( current_news.host )
       news_quit(&current_news);
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (080A779F) --------------------------------------------------------
@@ -60247,7 +60107,7 @@ Str __cdecl loadNewsgroup(ParsedURL *pu, wc_ces *charset)
   Str v8; // eax
   _Str *v9; // eax
   wc_ces v10; // edx
-  wc_ces *v11; // eax
+  wc_ces *p_mime_charset; // eax
   _Str *v12; // eax
   wc_ces v13; // edx
   wc_ces *v14; // eax
@@ -60386,7 +60246,7 @@ Str __cdecl loadNewsgroup(ParsedURL *pu, wc_ces *charset)
         if ( start - MaxNewsMessage < first )
           i = first;
         v7 = Sprintf("<a href=\"%s%s/%d-%d\">[%d-%d]</a>\n", scheme, qgroup, i, start - 1, i, start - 1);
-        savexmlstr_0(page, v7);
+        Strcat(page, v7);
       }
       Strcat_charp(page, "<table>\n");
       v8 = Sprintf("%d-%d", start, end);
@@ -60431,10 +60291,10 @@ Str __cdecl loadNewsgroup(ParsedURL *pu, wc_ces *charset)
                       else
                         v10 = doc_charset;
                       if ( mime_charset )
-                        v11 = &mime_charset;
+                        p_mime_charset = &mime_charset;
                       else
-                        v11 = charset;
-                      s = convertLine(&f, tmp, 3, v11, v10)->ptr;
+                        p_mime_charset = charset;
+                      s = convertLine(&f, tmp, 3, p_mime_charset, v10)->ptr;
                       v12 = Strnew_charp(n);
                       tmp = decodeMIME(v12, &mime_charset);
                       if ( mime_charset )
@@ -60517,7 +60377,7 @@ Str __cdecl loadNewsgroup(ParsedURL *pu, wc_ces *charset)
         if ( end + MaxNewsMessage > last )
           i = last;
         v20 = Sprintf("<a href=\"%s%s/%d-%d\">[%d-%d]</a>\n", scheme, qgroup, end + 1, i, end + 1, i);
-        savexmlstr_0(page, v20);
+        Strcat(page, v20);
       }
       flag = 1;
     }
@@ -60553,7 +60413,7 @@ Str __cdecl loadNewsgroup(ParsedURL *pu, wc_ces *charset)
         v22 = file_quote(p);
         v23 = html_quote(v22);
         v24 = Sprintf("<tr><td align=right>%d<td><a href=\"%s%s\">%s</a>\n", i, scheme, v23, v21);
-        savexmlstr_0(page, v24);
+        Strcat(page, v24);
       }
       if ( flag == 2 )
         Strcat_charp(page, "</table>\n");
@@ -60711,11 +60571,8 @@ void __cdecl setKeymap(char *p, int lineno, int verbose)
       emsg = Sprintf("line %d: unknown key '%s'", lineno, s)->ptr;
     record_err_message(emsg);
     if ( verbose )
-    {
 LABEL_6:
       disp_message_nsec(emsg, 0, 1, 1, 0);
-      return;
-    }
   }
 }
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
@@ -60826,13 +60683,10 @@ int __cdecl getFuncList(char *id)
 //----- (080A8B91) --------------------------------------------------------
 char *__cdecl getKeyData(int key)
 {
-  char *result; // eax
-
   if ( keyData )
-    result = (char *)getHash_iv(keyData, key, 0);
+    return (char *)getHash_iv(keyData, key, 0);
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (080A8BC5) --------------------------------------------------------
@@ -60854,22 +60708,22 @@ int __cdecl getKey2(char **str)
   if ( !strcasecmp(s, "UP") )
   {
     *str = s + 2;
-    result = 577;
+    return 577;
   }
   else if ( !strcasecmp(s, "DOWN") )
   {
     *str = s + 4;
-    result = 578;
+    return 578;
   }
   else if ( !strcasecmp(s, "RIGHT") )
   {
     *str = s + 5;
-    result = 579;
+    return 579;
   }
   else if ( !strcasecmp(s, "LEFT") )
   {
     *str = s + 4;
-    result = 580;
+    return 580;
   }
   else
   {
@@ -60930,18 +60784,18 @@ int __cdecl getKey2(char **str)
         if ( *s <= 96 || *s > 122 )
         {
           if ( *s == 63 )
-            result = esc | 0x7F;
+            return esc | 0x7F;
           else
-            result = -1;
+            return -1;
         }
         else
         {
-          result = esc | (*s - 96);
+          return esc | (*s - 96);
         }
       }
       else
       {
-        result = esc | (*s - 64);
+        return esc | (*s - 64);
       }
     }
     else if ( esc == 512 && (MYCTYPE_MAP[(unsigned __int8)*s] & 8) != 0 )
@@ -60958,23 +60812,23 @@ int __cdecl getKey2(char **str)
       }
       else
       {
-        result = -1;
+        return -1;
       }
     }
     else if ( !strncasecmp(s, "SPC", 3u) )
     {
       *str = s + 3;
-      result = esc | 0x20;
+      return esc | 0x20;
     }
     else if ( !strncasecmp(s, "TAB", 3u) )
     {
       *str = s + 3;
-      result = esc | 9;
+      return esc | 9;
     }
     else if ( !strncasecmp(s, "DEL", 3u) )
     {
       *str = s + 3;
-      result = esc | 0x7F;
+      return esc | 0x7F;
     }
     else if ( *s == 92 && s[1] )
     {
@@ -61015,9 +60869,9 @@ int __cdecl getKey2(char **str)
     {
       *str = s + 1;
       if ( (MYCTYPE_MAP[(unsigned __int8)*s] & 0x11) != 0 )
-        result = esc | *s;
+        return esc | *s;
       else
-        result = -1;
+        return -1;
     }
   }
   return result;
@@ -61039,7 +60893,7 @@ int __cdecl getKey(char *s)
     c2 = getKey2(&s);
     if ( c2 < 0 )
       return -1;
-    c = c2 | (c << 16) | 0x10000000;
+    return c2 | (c << 16) | 0x10000000;
   }
   return c;
 }
@@ -61062,7 +60916,7 @@ char *__cdecl getWord(char **str)
 //----- (080A91D9) --------------------------------------------------------
 char *__cdecl getQWord(char **str)
 {
-  int v1; // eax
+  int length; // eax
   int v2; // eax
   int v3; // eax
   int v4; // eax
@@ -61091,9 +60945,9 @@ char *__cdecl getQWord(char **str)
         {
           if ( tmp->length + 1 >= tmp->area_size )
             Strgrow(tmp);
-          v1 = tmp->length;
-          tmp->ptr[v1] = 92;
-          tmp->length = v1 + 1;
+          length = tmp->length;
+          tmp->ptr[length] = 92;
+          tmp->length = length + 1;
           tmp->ptr[tmp->length] = 0;
         }
       }
@@ -61232,8 +61086,8 @@ void __cdecl setMouseAction0(char **str, int *width, MouseActionMap **map, char 
 //----- (080A9701) --------------------------------------------------------
 void __cdecl setMouseAction1(MouseActionMap **map, int width, char *p)
 {
-  char *v3; // eax
-  void (*v4)(...); // eax
+  char *Word; // eax
+  void (*func)(...); // eax
   int f; // [esp+10h] [ebp-18h]
   int x2; // [esp+14h] [ebp-14h]
   int x; // [esp+18h] [ebp-10h]
@@ -61259,18 +61113,18 @@ void __cdecl setMouseAction1(MouseActionMap **map, int width, char *p)
     x2 = atoi(sb);
     if ( (MYCTYPE_MAP[*(unsigned __int8 *)sb] & 8) != 0 && x2 >= 0 && x2 < width )
     {
-      v3 = getWord(&p);
-      f = getFuncList(v3);
+      Word = getWord(&p);
+      f = getFuncList(Word);
       s = getQWord(&p);
       if ( !*s )
         s = 0;
       while ( xa <= x2 )
       {
         if ( f < 0 )
-          v4 = 0;
+          func = 0;
         else
-          v4 = w3mFuncList[f].func;
-        (*map)[xa].func = v4;
+          func = w3mFuncList[f].func;
+        (*map)[xa].func = func;
         (*map)[xa++].data = s;
       }
     }
@@ -61281,21 +61135,21 @@ void __cdecl setMouseAction1(MouseActionMap **map, int width, char *p)
 //----- (080A9899) --------------------------------------------------------
 void __cdecl setMouseAction2(MouseActionMap *map, char *p)
 {
-  char *v2; // eax
-  void (*v3)(...); // eax
+  char *Word; // eax
+  void (*func)(...); // eax
   int f; // [esp+18h] [ebp-10h]
   char *s; // [esp+1Ch] [ebp-Ch]
 
-  v2 = getWord(&p);
-  f = getFuncList(v2);
+  Word = getWord(&p);
+  f = getFuncList(Word);
   s = getQWord(&p);
   if ( !*s )
     s = 0;
   if ( f < 0 )
-    v3 = 0;
+    func = 0;
   else
-    v3 = w3mFuncList[f].func;
-  map->func = v3;
+    func = w3mFuncList[f].func;
+  map->func = func;
   map->data = s;
 }
 
@@ -61439,8 +61293,8 @@ char *__cdecl domain_match_0(char *host, char *domain)
   int m0; // [esp+1Ch] [ebp-Ch]
 
   regexCompile("[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+", 0);
-  m0 = __gmp_vfprintf(host, -1, 1);
-  m1 = __gmp_vfprintf(domain, -1, 1);
+  m0 = regexMatch(host, -1, 1);
+  m1 = regexMatch(domain, -1, 1);
   if ( m0 && m1 )
   {
     if ( !strcasecmp(host, domain) )
@@ -61478,7 +61332,7 @@ char *__cdecl domain_match_0(char *host, char *domain)
 //----- (080A9F49) --------------------------------------------------------
 portlist *__cdecl make_portlist(Str port)
 {
-  int v1; // eax
+  int length; // eax
   Str tmp; // [esp+10h] [ebp-18h]
   char *p; // [esp+14h] [ebp-14h]
   portlist *pl; // [esp+18h] [ebp-10h]
@@ -61496,9 +61350,9 @@ portlist *__cdecl make_portlist(Str port)
     {
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v1 = tmp->length;
-      tmp->ptr[v1] = *p;
-      tmp->length = v1 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = *p;
+      tmp->length = length + 1;
       ++p;
       tmp->ptr[tmp->length] = 0;
     }
@@ -61524,7 +61378,7 @@ Str __cdecl portlist2str(portlist *first)
   for ( pl = first->next; pl; pl = pl->next )
   {
     v2 = Sprintf(", %d", pl->port);
-    savexmlstr_0(tmp, v2);
+    Strcat(tmp, v2);
   }
   return tmp;
 }
@@ -61574,17 +61428,17 @@ void check_expired_cookies()
 //----- (080AA1E6) --------------------------------------------------------
 Str __cdecl make_cookie(cookie *cookie)
 {
-  int v1; // eax
+  int length; // eax
   Str tmp; // [esp+1Ch] [ebp-Ch]
 
   tmp = Strdup(cookie->name);
   if ( tmp->length + 1 >= tmp->area_size )
     Strgrow(tmp);
-  v1 = tmp->length;
-  tmp->ptr[v1] = 61;
-  tmp->length = v1 + 1;
+  length = tmp->length;
+  tmp->ptr[length] = 61;
+  tmp->length = length + 1;
   tmp->ptr[tmp->length] = 0;
-  savexmlstr_0(tmp, cookie->value);
+  Strcat(tmp, cookie->value);
   return tmp;
 }
 
@@ -61622,10 +61476,10 @@ cookie *__cdecl get_cookie_info(Str domain, Str path, Str name)
 //----- (080AA39C) --------------------------------------------------------
 Str __cdecl find_cookie(ParsedURL *pu)
 {
-  char *v1; // eax
+  char *host; // eax
   const char *v3; // eax
   _Str *v4; // [esp+4h] [ebp-34h]
-  _Str *v5; // [esp+4h] [ebp-34h]
+  _Str *cookie; // [esp+4h] [ebp-34h]
   _Str *v6; // [esp+4h] [ebp-34h]
   _Str *v7; // [esp+4h] [ebp-34h]
   _Str *v8; // [esp+4h] [ebp-34h]
@@ -61646,10 +61500,10 @@ Str __cdecl find_cookie(ParsedURL *pu)
   for ( p = First_cookie; p; p = p->next )
   {
     if ( p->version )
-      v1 = pu->host;
+      host = pu->host;
     else
-      v1 = fq_domainname;
-    if ( (p->flag & 1) != 0 && match_cookie(pu, p, v1) )
+      host = fq_domainname;
+    if ( (p->flag & 1) != 0 && match_cookie(pu, p, host) )
     {
       for ( p1 = fco; p1 && strcasecmp(p1->name->ptr, p->name->ptr); p1 = p1->next )
         ;
@@ -61670,32 +61524,32 @@ Str __cdecl find_cookie(ParsedURL *pu)
   if ( version > 0 )
   {
     v4 = Sprintf("$Version=\"%d\"; ", version);
-    savexmlstr_0(tmp, v4);
+    Strcat(tmp, v4);
   }
-  v5 = make_cookie(fco);
-  savexmlstr_0(tmp, v5);
+  cookie = make_cookie(fco);
+  Strcat(tmp, cookie);
   for ( p1b = fco->next; p1b; p1b = p1b->next )
   {
     Strcat_charp(tmp, "; ");
     v6 = make_cookie(p1b);
-    savexmlstr_0(tmp, v6);
+    Strcat(tmp, v6);
     if ( version > 0 )
     {
       if ( (p1b->flag & 8) != 0 )
       {
         v7 = Sprintf("; $Path=\"%s\"", p1b->path->ptr);
-        savexmlstr_0(tmp, v7);
+        Strcat(tmp, v7);
       }
       if ( (p1b->flag & 4) != 0 )
       {
         v8 = Sprintf("; $Domain=\"%s\"", p1b->domain->ptr);
-        savexmlstr_0(tmp, v8);
+        Strcat(tmp, v8);
       }
       if ( p1b->portl )
       {
         v3 = (const char *)portlist2str(p1b->portl);
         v9 = Sprintf("; $Port=\"%s\"", v3);
-        savexmlstr_0(tmp, v9);
+        Strcat(tmp, v9);
       }
     }
   }
@@ -61704,10 +61558,21 @@ Str __cdecl find_cookie(ParsedURL *pu)
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
 
 //----- (080AA627) --------------------------------------------------------
-int __cdecl add_cookie(ParsedURL *pu, Str name, Str value, time_t expires, Str domain, Str path, int flag, Str comment, int version, Str port, Str commentURL)
+int __cdecl add_cookie(
+        ParsedURL *pu,
+        Str name,
+        Str value,
+        time_t expires,
+        Str domain,
+        Str path,
+        int flag,
+        Str comment,
+        int version,
+        Str port,
+        Str commentURL)
 {
-  char *v11; // eax
-  int v13; // ebx
+  char *host; // eax
+  int length; // ebx
   int offset; // [esp+14h] [ebp-34h]
   int ok; // [esp+18h] [ebp-30h]
   char **sdomain; // [esp+1Ch] [ebp-2Ch]
@@ -61720,18 +61585,18 @@ int __cdecl add_cookie(ParsedURL *pu, Str name, Str value, time_t expires, Str d
   cookie *p; // [esp+3Ch] [ebp-Ch]
 
   if ( version )
-    v11 = pu->host;
+    host = pu->host;
   else
-    v11 = FQDN(pu->host);
-  domainname = v11;
+    host = FQDN(pu->host);
+  domainname = host;
   odomain = domain;
   opath = path;
   portlist = 0;
-  if ( !v11 )
+  if ( !host )
     return 37;
   if ( !domain )
     goto LABEL_73;
-  if ( *domain->ptr != 46 && (version > 0 || strcasecmp(v11, domain->ptr)) )
+  if ( *domain->ptr != 46 && (version > 0 || strcasecmp(host, domain->ptr)) )
     domain = Sprintf(".%s", domain->ptr);
   if ( version )
   {
@@ -61752,8 +61617,8 @@ int __cdecl add_cookie(ParsedURL *pu, Str name, Str value, time_t expires, Str d
       ok = 0;
       for ( sdomain = special_domain; !ok && *sdomain; ++sdomain )
       {
-        v13 = domain->length;
-        offset = v13 - strlen(*sdomain);
+        length = domain->length;
+        offset = length - strlen(*sdomain);
         if ( offset >= 0 && !strcasecmp(*sdomain, &domain->ptr[offset]) )
           ok = 1;
       }
@@ -61810,22 +61675,22 @@ LABEL_73:
   if ( (flag & 2) != 0 )
     p->flag |= 2u;
   else
-    p->flag &= 0xFDu;
+    p->flag &= ~2u;
   if ( odomain )
     p->flag |= 4u;
   else
-    p->flag &= 0xFBu;
+    p->flag &= ~4u;
   if ( opath )
     p->flag |= 8u;
   else
-    p->flag &= 0xF7u;
+    p->flag &= ~8u;
   if ( (flag & 0x10) != 0 || p->expires == -1 )
   {
     p->flag |= 0x10u;
   }
   else
   {
-    p->flag &= 0xEFu;
+    p->flag &= ~0x10u;
     is_saved = 0;
   }
   check_expired_cookies();
@@ -61854,16 +61719,16 @@ cookie *__cdecl nth_cookie(int n)
 //----- (080AAB54) --------------------------------------------------------
 void save_cookies()
 {
-  const char *v0; // ebx
+  const char *ptr; // ebx
   char *v1; // edi
   const char *v2; // esi
   Str v3; // eax
   const char *v4; // [esp+44h] [ebp-44h]
-  int v5; // [esp+48h] [ebp-40h]
-  int v6; // [esp+4Ch] [ebp-3Ch]
+  int version; // [esp+48h] [ebp-40h]
+  int flag; // [esp+4Ch] [ebp-3Ch]
   const char *v7; // [esp+50h] [ebp-38h]
   const char *v8; // [esp+54h] [ebp-34h]
-  time_t v9; // [esp+58h] [ebp-30h]
+  time_t expires; // [esp+58h] [ebp-30h]
   const char *v10; // [esp+5Ch] [ebp-2Ch]
   FILE *fp; // [esp+64h] [ebp-24h]
   const char *cookie_file; // [esp+68h] [ebp-20h]
@@ -61883,9 +61748,9 @@ void save_cookies()
           if ( (p->flag & 1) != 0 && (p->flag & 0x10) == 0 )
           {
             if ( p->commentURL )
-              v0 = p->commentURL->ptr;
+              ptr = p->commentURL->ptr;
             else
-              v0 = (const char *)&unk_80D019C;
+              ptr = (const char *)&unk_80D019C;
             if ( p->portl )
               v1 = portlist2str(p->portl)->ptr;
             else
@@ -61894,11 +61759,11 @@ void save_cookies()
               v4 = p->comment->ptr;
             else
               v4 = (const char *)&unk_80D019C;
-            v5 = p->version;
-            v6 = p->flag;
+            version = p->version;
+            flag = p->flag;
             v7 = p->path->ptr;
             v8 = p->domain->ptr;
-            v9 = p->expires;
+            expires = p->expires;
             v10 = p->value->ptr;
             v2 = p->name->ptr;
             v3 = parsedURL2Str(&p->url);
@@ -61908,14 +61773,14 @@ void save_cookies()
               v3->ptr,
               v2,
               v10,
-              v9,
+              expires,
               v8,
               v7,
-              v6,
-              v5,
+              flag,
+              version,
               v4,
               v1,
-              v0);
+              ptr);
           }
         }
         fclose(fp);
@@ -61928,7 +61793,7 @@ void save_cookies()
 //----- (080AAD41) --------------------------------------------------------
 Str __cdecl readcol(char **p)
 {
-  int v1; // edx
+  int length; // edx
   char *v2; // eax
   Str tmp; // [esp+1Ch] [ebp-Ch]
 
@@ -61937,10 +61802,10 @@ Str __cdecl readcol(char **p)
   {
     if ( tmp->length + 1 >= tmp->area_size )
       Strgrow(tmp);
-    v1 = tmp->length;
+    length = tmp->length;
     v2 = *p;
-    tmp->ptr[v1] = **p;
-    tmp->length = v1 + 1;
+    tmp->ptr[length] = **p;
+    tmp->length = length + 1;
     *p = v2 + 1;
     tmp->ptr[tmp->length] = 0;
   }
@@ -61967,7 +61832,7 @@ void load_cookies()
   char v12; // dl
   _Str *v13; // eax
   _Str *v14; // eax
-  portlist *v15; // eax
+  portlist *portlist; // eax
   _Str *v16; // eax
   char *str; // [esp+1Ch] [ebp-1Ch] BYREF
   Str line; // [esp+20h] [ebp-18h]
@@ -62045,8 +61910,8 @@ void load_cookies()
       if ( !*str )
         return;
       v14 = readcol(&str);
-      v15 = make_portlist(v14);
-      cookie->portl = v15;
+      portlist = make_portlist(v14);
+      cookie->portl = portlist;
       if ( !*str )
         return;
       v16 = readcol(&str);
@@ -62076,7 +61941,7 @@ Buffer *cookie_list_panel()
 {
   Str v1; // eax
   struct tm *v2; // eax
-  Str v3; // eax
+  Str cookie; // eax
   char *v4; // eax
   char *v5; // eax
   char *v6; // eax
@@ -62128,8 +61993,8 @@ Buffer *cookie_list_panel()
     if ( (p->flag & 2) == 0 )
     {
       Strcat_charp(src, "<tr><td width=\"80\"><b>Cookie:</b></td><td>");
-      v3 = make_cookie(p);
-      v4 = html_quote(v3->ptr);
+      cookie = make_cookie(p);
+      v4 = html_quote(cookie->ptr);
       Strcat_charp(src, v4);
       Strcat_charp(src, "</td></tr>");
     }
@@ -62208,7 +62073,7 @@ Buffer *cookie_list_panel()
             v15,
             i,
             v14);
-    savexmlstr_0(src, v16);
+    Strcat(src, v16);
     Strcat_charp(src, "</td></tr><tr><td><input type=submit value=\"OK\"></table><p>");
     p = p->next;
     ++i;
@@ -62242,7 +62107,7 @@ void __cdecl set_cookie_flag(parsed_tagarg *arg)
               if ( !v || (p->flag & 1) != 0 )
               {
                 if ( !v && (p->flag & 1) != 0 )
-                  p->flag &= 0xFEu;
+                  p->flag &= ~1u;
               }
               else
               {
@@ -62379,7 +62244,7 @@ void __cdecl saveHistory(Hist *hist, size_t size)
       }
       if ( fclose(f) == -1 )
       {
-        _ZN10bdInetAddrC2Ej("Can't save history", 0);
+        disp_err_message("Can't save history", 0);
       }
       else
       {
@@ -62389,7 +62254,7 @@ void __cdecl saveHistory(Hist *hist, size_t size)
     }
     else
     {
-      _ZN10bdInetAddrC2Ej("Can't open history", 0);
+      disp_err_message("Can't open history", 0);
     }
   }
 }
@@ -62424,15 +62289,15 @@ Hist *__cdecl copyHist(Hist *hist)
 //----- (080ABB98) --------------------------------------------------------
 HistItem *__cdecl unshiftHist(Hist *hist, char *ptr)
 {
-  ListItem *v3; // ebx
+  ListItem *first; // ebx
   char *v4; // eax
   ListItem *item; // [esp+1Ch] [ebp-Ch]
 
   if ( !hist || !hist->list )
     return 0;
-  v3 = hist->list->first;
+  first = hist->list->first;
   v4 = allocStr(ptr, -1);
-  item = newListItem(v4, v3, 0);
+  item = newListItem(v4, first, 0);
   if ( hist->list->first )
     hist->list->first->prev = item;
   else
@@ -62445,15 +62310,15 @@ HistItem *__cdecl unshiftHist(Hist *hist, char *ptr)
 //----- (080ABC2E) --------------------------------------------------------
 HistItem *__cdecl pushHist(Hist *hist, char *ptr)
 {
-  ListItem *v3; // ebx
+  ListItem *last; // ebx
   char *v4; // eax
   ListItem *item; // [esp+1Ch] [ebp-Ch]
 
   if ( !hist || !hist->list )
     return 0;
-  v3 = hist->list->last;
+  last = hist->list->last;
   v4 = allocStr(ptr, -1);
-  item = newListItem(v4, 0, v3);
+  item = newListItem(v4, 0, last);
   if ( hist->list->last )
     hist->list->last->next = item;
   else
@@ -62571,8 +62436,8 @@ void __cdecl print_headers(Buffer *buf, int len)
 //----- (080AC005) --------------------------------------------------------
 void __cdecl internal_get(char *url, int flag, FormList *request)
 {
-  Str *v3; // ebx
-  Str v4; // eax
+  Str *p_line; // ebx
+  Str line; // eax
   char *v5; // eax
   int len_0; // [esp+24h] [ebp-24h]
   Line *lp; // [esp+28h] [ebp-20h]
@@ -62594,12 +62459,12 @@ void __cdecl internal_get(char *url, int flag, FormList *request)
       len = 0;
       for ( p = backend_halfdump_buf->first; p; p = p->next )
       {
-        v3 = &p->ptr->line;
+        p_line = &p->ptr->line;
         if ( ExtHalfdump )
-          v4 = wc_Str_conv(p->ptr->line, InnerCharset, DisplayCharset);
+          line = wc_Str_conv(p->ptr->line, InnerCharset, DisplayCharset);
         else
-          v4 = p->ptr->line;
-        *v3 = v4;
+          line = p->ptr->line;
+        *p_line = line;
         len += p->ptr->line->length + 1;
       }
       first = Strnew_charp("<pre>\n");
@@ -62866,17 +62731,15 @@ void __noreturn backend()
 //----- (080AC84F) --------------------------------------------------------
 char *__cdecl readline(char *prompt)
 {
-  char *result; // eax
   Str s; // [esp+1Ch] [ebp-Ch]
 
   fputs(prompt, stdout);
   fflush(stdout);
   s = Strfgets(stdin);
   if ( !feof(stdin) || *s->ptr )
-    result = s->ptr;
+    return s->ptr;
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (080AC8B3) --------------------------------------------------------
@@ -62892,7 +62755,7 @@ TextList *__cdecl split(char *p)
   int v8; // eax
   int v9; // eax
   int v10; // eax
-  int v11; // eax
+  int length; // eax
   char *v12; // eax
   int v13; // eax
   char *v14; // eax
@@ -62917,9 +62780,9 @@ LABEL_49:
         {
           if ( s->length + 1 >= s->area_size )
             Strgrow(s);
-          v11 = s->length;
-          s->ptr[v11] = *p;
-          s->length = v11 + 1;
+          length = s->length;
+          s->ptr[length] = *p;
+          s->length = length + 1;
           s->ptr[s->length] = 0;
         }
         else if ( s->length > 0 )
@@ -63064,7 +62927,16 @@ LABEL_59:
 }
 
 //----- (080ACD68) --------------------------------------------------------
-AnchorList *__cdecl putAnchor(AnchorList *al_0, char *url, char *target, Anchor **anchor_return, char *referer, char *title, unsigned __int8 key, int line, int pos)
+AnchorList *__cdecl putAnchor(
+        AnchorList *al_0,
+        char *url,
+        char *target,
+        Anchor **anchor_return,
+        char *referer,
+        char *title,
+        unsigned __int8 key,
+        int line,
+        int pos)
 {
   bool v9; // al
   Anchor *v10; // eax
@@ -63162,7 +63034,15 @@ LABEL_24:
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
 
 //----- (080AD0B4) --------------------------------------------------------
-Anchor *__cdecl registerHref(Buffer *buf, char *url, char *target, char *referer, char *title, unsigned __int8 key, int line, int pos)
+Anchor *__cdecl registerHref(
+        Buffer *buf,
+        char *url,
+        char *target,
+        char *referer,
+        char *title,
+        unsigned __int8 key,
+        int line,
+        int pos)
 {
   Anchor *a; // [esp+4Ch] [ebp-Ch] BYREF
 
@@ -63205,7 +63085,6 @@ Anchor *__cdecl registerForm(Buffer *buf, FormList *flist, parsed_tag *tag, int 
 int __cdecl onAnchor(Anchor *a, int line, int pos)
 {
   int v3; // eax
-  bool v5; // al
 
   if ( line == a->start.line )
     v3 = pos - a->start.pos;
@@ -63214,10 +63093,9 @@ int __cdecl onAnchor(Anchor *a, int line, int pos)
   if ( v3 < 0 )
     return -1;
   if ( a->end.line == line )
-    v5 = a->end.pos - pos <= 0;
+    return a->end.pos - pos <= 0;
   else
-    v5 = a->end.line - line <= 0;
-  return v5;
+    return a->end.line - line <= 0;
 }
 
 //----- (080AD2E4) --------------------------------------------------------
@@ -63256,37 +63134,28 @@ Anchor *__cdecl retrieveAnchor(AnchorList *al_0, int line, int pos)
 //----- (080AD3E2) --------------------------------------------------------
 Anchor *__cdecl retrieveCurrentAnchor(Buffer *buf)
 {
-  Anchor *result; // eax
-
   if ( buf->currentLine )
-    result = retrieveAnchor(buf->href, buf->currentLine->linenumber, buf->pos);
+    return retrieveAnchor(buf->href, buf->currentLine->linenumber, buf->pos);
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (080AD420) --------------------------------------------------------
 Anchor *__cdecl retrieveCurrentImg(Buffer *buf)
 {
-  Anchor *result; // eax
-
   if ( buf->currentLine )
-    result = retrieveAnchor(buf->img, buf->currentLine->linenumber, buf->pos);
+    return retrieveAnchor(buf->img, buf->currentLine->linenumber, buf->pos);
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (080AD45E) --------------------------------------------------------
 Anchor *__cdecl retrieveCurrentForm(Buffer *buf)
 {
-  Anchor *result; // eax
-
   if ( buf->currentLine )
-    result = retrieveAnchor(buf->formitem, buf->currentLine->linenumber, buf->pos);
+    return retrieveAnchor(buf->formitem, buf->currentLine->linenumber, buf->pos);
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (080AD49C) --------------------------------------------------------
@@ -63315,12 +63184,12 @@ Anchor *__cdecl searchURLLabel(Buffer *buf, char *url)
 //----- (080AD534) --------------------------------------------------------
 Anchor *__cdecl put_anchor_news(Buffer *buf, char *p1, char *p2, int line, int pos)
 {
-  wc_ces v5; // esi
+  wc_ces document_charset; // esi
   wc_ces v6; // ebx
   _Str *v7; // eax
   Str v8; // eax
   char *v9; // eax
-  char *v11; // [esp+4h] [ebp-34h]
+  char *ptr; // [esp+4h] [ebp-34h]
 
   if ( *p1 == 60 )
   {
@@ -63328,28 +63197,28 @@ Anchor *__cdecl put_anchor_news(Buffer *buf, char *p1, char *p2, int line, int p
     if ( *(p2 - 1) == 62 )
       --p2;
   }
-  v5 = buf->document_charset;
+  document_charset = buf->document_charset;
   v6 = InnerCharset;
   v7 = Strnew_charp_n(p1, p2 - p1);
-  v8 = wc_Str_conv_strict(v7, v6, v5);
+  v8 = wc_Str_conv_strict(v7, v6, document_charset);
   v9 = file_quote(v8->ptr);
-  v11 = Sprintf("news:%s", v9)->ptr;
-  return registerHref(buf, v11, 0, (char *)0xFFFFFFFF, 0, 0, line, pos);
+  ptr = Sprintf("news:%s", v9)->ptr;
+  return registerHref(buf, ptr, 0, (char *)0xFFFFFFFF, 0, 0, line, pos);
 }
 
 //----- (080AD601) --------------------------------------------------------
 Anchor *__cdecl put_anchor_all(Buffer *buf, char *p1, char *p2, int line, int pos)
 {
-  wc_ces v5; // esi
+  wc_ces document_charset; // esi
   wc_ces v6; // ebx
   _Str *v7; // eax
   char *v9; // [esp+4h] [ebp-34h]
   Str tmp; // [esp+2Ch] [ebp-Ch]
 
-  v5 = buf->document_charset;
+  document_charset = buf->document_charset;
   v6 = InnerCharset;
   v7 = Strnew_charp_n(p1, p2 - p1);
-  tmp = wc_Str_conv_strict(v7, v6, v5);
+  tmp = wc_Str_conv_strict(v7, v6, document_charset);
   v9 = url_quote(tmp->ptr);
   return registerHref(buf, v9, 0, (char *)0xFFFFFFFF, 0, 0, line, pos);
 }
@@ -63375,7 +63244,7 @@ void __cdecl reseq_anchor0(AnchorList *al_0, __int16 *seqmap)
 void __cdecl reseq_anchor(Buffer *buf)
 {
   int v1; // eax
-  Anchor *v2; // eax
+  Anchor *anchor; // eax
   HmarkerList *ml; // [esp+10h] [ebp-28h]
   Anchor *a1; // [esp+14h] [ebp-24h]
   Anchor *a; // [esp+18h] [ebp-20h]
@@ -63415,8 +63284,8 @@ void __cdecl reseq_anchor(Buffer *buf)
         if ( a->hseq == -2 )
         {
           a->hseq = na;
-          v2 = closest_next_anchor(buf->href, 0, a->start.pos, a->start.line);
-          a1 = closest_next_anchor(buf->formitem, v2, a->start.pos, a->start.line);
+          anchor = closest_next_anchor(buf->href, 0, a->start.pos, a->start.line);
+          a1 = closest_next_anchor(buf->formitem, anchor, a->start.pos, a->start.line);
           if ( a1 && a1->hseq >= 0 )
           {
             seqmap[na] = seqmap[a1->hseq];
@@ -63437,7 +63306,12 @@ void __cdecl reseq_anchor(Buffer *buf)
 // 804A51C: using guessed type int __cdecl GC_malloc_atomic(_DWORD);
 
 //----- (080AD9BB) --------------------------------------------------------
-char *__cdecl reAnchorPos(Buffer *buf, Line *l, char *p1, char *p2, Anchor *(*anchorproc)(Buffer *, char *, char *, int, int))
+char *__cdecl reAnchorPos(
+        Buffer *buf,
+        Line *l,
+        char *p1,
+        char *p2,
+        Anchor *(*anchorproc)(Buffer *, char *, char *, int, int))
 {
   int hseq; // [esp+2Ch] [ebp-1Ch]
   int i; // [esp+30h] [ebp-18h]
@@ -63492,7 +63366,7 @@ void __cdecl reAnchorWord(Buffer *buf, Line *l, int spos, int epos)
 //----- (080ADB8C) --------------------------------------------------------
 char *__cdecl reAnchorAny(Buffer *buf, char *re, Anchor *(*anchorproc)(Buffer *, char *, char *, int, int))
 {
-  Line *v4; // eax
+  Line *firstLine; // eax
   char *p2; // [esp+20h] [ebp-18h] BYREF
   char *p1; // [esp+24h] [ebp-14h] BYREF
   char *p; // [esp+28h] [ebp-10h]
@@ -63506,15 +63380,15 @@ char *__cdecl reAnchorAny(Buffer *buf, char *re, Anchor *(*anchorproc)(Buffer *,
   if ( rea )
     return rea;
   if ( MarkAllPages )
-    v4 = buf->firstLine;
+    firstLine = buf->firstLine;
   else
-    v4 = buf->topLine;
-  for ( l = v4; l && (MarkAllPages || l->linenumber < LINES - 1 + buf->topLine->linenumber); l = l->next )
+    firstLine = buf->topLine;
+  for ( l = firstLine; l && (MarkAllPages || l->linenumber < LINES - 1 + buf->topLine->linenumber); l = l->next )
   {
     if ( !p || !l->bpos )
     {
       for ( p = l->lineBuf;
-            __gmp_vfprintf(p, &l->lineBuf[l->size] - p, l->lineBuf == p) == 1;
+            regexMatch(p, &l->lineBuf[l->size] - p, l->lineBuf == p) == 1;
             p = reAnchorPos(buf, l, p1, p2, anchorproc) )
       {
         matchedPosition(&p1, &p2);
@@ -63527,13 +63401,13 @@ char *__cdecl reAnchorAny(Buffer *buf, char *re, Anchor *(*anchorproc)(Buffer *,
 }
 
 //----- (080ADD1D) --------------------------------------------------------
-char *__cdecl find_nvp_node_0(Buffer *buf, char *re)
+char *__cdecl reAnchor(Buffer *buf, char *re)
 {
   return reAnchorAny(buf, re, put_anchor_all);
 }
 
 //----- (080ADD3F) --------------------------------------------------------
-char *__cdecl find_nvp_node_1(Buffer *buf, char *re)
+char *__cdecl reAnchorNews(Buffer *buf, char *re)
 {
   return reAnchorAny(buf, re, put_anchor_news);
 }
@@ -63587,7 +63461,7 @@ char *__cdecl reAnchorNewsheader(Buffer *buf)
         }
         if ( search )
         {
-          while ( __gmp_vfprintf(p, &l->lineBuf[l->size] - p, l->lineBuf == p) == 1 )
+          while ( regexMatch(p, &l->lineBuf[l->size] - p, l->lineBuf == p) == 1 )
           {
             matchedPosition(&p1, &p2);
             p = reAnchorPos(buf, l, p1, p2, put_anchor_news);
@@ -63726,7 +63600,7 @@ void __cdecl shiftAnchorPosition(AnchorList *al_0, HmarkerList *hl, int line, in
 void __cdecl addMultirowsImg(Buffer *buf, AnchorList *al_0)
 {
   Anchor *v2; // eax
-  _Line *v3; // eax
+  _Line *prev; // eax
   char *a_form; // [esp+54h] [ebp-F4h]
   char *a_form_4; // [esp+58h] [ebp-F0h]
   int a_form_44; // [esp+80h] [ebp-C8h]
@@ -63781,12 +63655,12 @@ void __cdecl addMultirowsImg(Buffer *buf, AnchorList *al_0)
           }
           else
           {
-            for ( ls = l; ls && ls->linenumber != a_img_20; ls = v3 )
+            for ( ls = l; ls && ls->linenumber != a_img_20; ls = prev )
             {
               if ( SHIWORD(a_img_48) >= a_img_20 )
-                v3 = ls->prev;
+                prev = ls->prev;
               else
-                v3 = ls->next;
+                prev = ls->next;
             }
             if ( !ls )
               continue;
@@ -63866,7 +63740,7 @@ void __cdecl addMultirowsImg(Buffer *buf, AnchorList *al_0)
 void __cdecl addMultirowsForm(Buffer *buf, AnchorList *al_0)
 {
   Anchor *v2; // eax
-  _Line *v3; // eax
+  _Line *prev; // eax
   char *a_form; // [esp+3Ch] [ebp-6Ch]
   char *a_form_4; // [esp+40h] [ebp-68h]
   int a_form_20; // [esp+50h] [ebp-58h]
@@ -63913,12 +63787,12 @@ void __cdecl addMultirowsForm(Buffer *buf, AnchorList *al_0)
           }
           else
           {
-            for ( ls = l; ls && ls->linenumber != a_form_20; ls = v3 )
+            for ( ls = l; ls && ls->linenumber != a_form_20; ls = prev )
             {
               if ( SHIWORD(a_form_48) >= a_form_20 )
-                v3 = ls->prev;
+                prev = ls->prev;
               else
-                v3 = ls->next;
+                prev = ls->next;
             }
             if ( !ls )
               continue;
@@ -63955,8 +63829,7 @@ void __cdecl addMultirowsForm(Buffer *buf, AnchorList *al_0)
 //----- (080AEE76) --------------------------------------------------------
 char *__cdecl getAnchorText(Buffer *buf, AnchorList *al_0, Anchor *a)
 {
-  char *result; // eax
-  int v4; // eax
+  int length; // eax
   char *ep; // [esp+18h] [ebp-20h]
   char *p; // [esp+1Ch] [ebp-1Ch]
   Str tmp; // [esp+20h] [ebp-18h]
@@ -63989,9 +63862,9 @@ char *__cdecl getAnchorText(Buffer *buf, AnchorList *al_0, Anchor *a)
         {
           if ( tmp->length + 1 >= tmp->area_size )
             Strgrow(tmp);
-          v4 = tmp->length;
-          tmp->ptr[v4] = 32;
-          tmp->length = v4 + 1;
+          length = tmp->length;
+          tmp->ptr[length] = 32;
+          tmp->length = length + 1;
           tmp->ptr[tmp->length] = 0;
         }
         else
@@ -64003,10 +63876,9 @@ char *__cdecl getAnchorText(Buffer *buf, AnchorList *al_0, Anchor *a)
     }
   }
   if ( tmp )
-    result = tmp->ptr;
+    return tmp->ptr;
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (080AF027) --------------------------------------------------------
@@ -64014,7 +63886,7 @@ Buffer *__cdecl link_list_panel(Buffer *buf)
 {
   ParsedURL *v2; // eax
   char *v3; // eax
-  char *v4; // eax
+  char *title; // eax
   ParsedURL *v5; // eax
   char *v6; // eax
   char *v7; // eax
@@ -64080,10 +63952,10 @@ Buffer *__cdecl link_list_panel(Buffer *buf)
         t = (char *)&unk_80D08CE;
       }
       if ( l->title )
-        v4 = l->title;
+        title = l->title;
       else
-        v4 = (char *)&unk_80D08CE;
-      t = Sprintf("%s%s\n", v4, t)->ptr;
+        title = (char *)&unk_80D08CE;
+      t = Sprintf("%s%s\n", title, t)->ptr;
       t = html_quote(t);
       Strcat_m_charp(tmp, "<li><a href=\"", u, "\">", t, "</a><br>", p, "\n", 0);
     }
@@ -64313,7 +64185,7 @@ parsed_tag *__cdecl parse_tag(char **s, int internal)
 {
   char v2; // al
   char v3; // al
-  int v4; // eax
+  int length; // eax
   int v5; // eax
   int v6; // eax
   int v7; // eax
@@ -64419,9 +64291,9 @@ parsed_tag *__cdecl parse_tag(char **s, int internal)
           {
             if ( value_tmp->length + 1 >= value_tmp->area_size )
               Strgrow(value_tmp);
-            v4 = value_tmp->length;
-            value_tmp->ptr[v4] = *q;
-            value_tmp->length = v4 + 1;
+            length = value_tmp->length;
+            value_tmp->ptr[length] = *q;
+            value_tmp->length = length + 1;
             value_tmp->ptr[value_tmp->length] = 0;
             if ( !tag->need_reconstruct && (QUOTE_MAP[(unsigned __int8)*q] & 7) != 0 )
               tag->need_reconstruct = 1;
@@ -64568,20 +64440,18 @@ int __cdecl parsedtag_set_value(parsed_tag *tag, int id, char *value)
 //----- (080B0659) --------------------------------------------------------
 int __cdecl parsedtag_get_value(parsed_tag *tag, int id, void *value)
 {
-  int result; // eax
   int i; // [esp+1Ch] [ebp-Ch]
 
   if ( tag->map && tag->map[id] != 75 && tag->attrid[tag->map[id]] && (i = tag->map[id], tag->value[i]) )
-    result = toValFunc[AttrMAP[id].vtype](tag->value[i], (char **)value);
+    return toValFunc[AttrMAP[id].vtype](tag->value[i], (char **)value);
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (080B0702) --------------------------------------------------------
 Str __cdecl parsedtag2str(parsed_tag *tag)
 {
-  int v1; // eax
+  int length; // eax
   int v2; // eax
   char *v3; // eax
   int v4; // eax
@@ -64596,9 +64466,9 @@ Str __cdecl parsedtag2str(parsed_tag *tag)
   tagstr = Strnew();
   if ( tagstr->length + 1 >= tagstr->area_size )
     Strgrow(tagstr);
-  v1 = tagstr->length;
-  tagstr->ptr[v1] = 60;
-  tagstr->length = v1 + 1;
+  length = tagstr->length;
+  tagstr->ptr[length] = 60;
+  tagstr->length = length + 1;
   tagstr->ptr[tagstr->length] = 0;
   Strcat_charp(tagstr, TagMAP[tag_id].name);
   for ( i = 0; i < nattr; ++i )
@@ -64616,7 +64486,7 @@ Str __cdecl parsedtag2str(parsed_tag *tag)
       {
         v3 = html_quote(tag->value[i]);
         v6 = Sprintf("=\"%s\"", v3);
-        savexmlstr_0(tagstr, v6);
+        Strcat(tagstr, v6);
       }
     }
   }
@@ -64679,13 +64549,13 @@ void __cdecl init_buffer(BaseStream base, char *buf, int bufsize)
 // 804A51C: using guessed type int __cdecl GC_malloc_atomic(_DWORD);
 
 //----- (080B0A14) --------------------------------------------------------
-void __cdecl jzero_far(BaseStream base, int bufsize)
+void __cdecl init_base_stream(BaseStream base, int bufsize)
 {
   init_buffer(base, 0, bufsize);
 }
 
 //----- (080B0A36) --------------------------------------------------------
-void __cdecl savexmlstr(BaseStream base, Str s)
+void __cdecl init_str_stream(BaseStream base, Str s)
 {
   init_buffer(base, s->ptr, s->length);
 }
@@ -64698,7 +64568,7 @@ InputStream __cdecl newInputStream(int des)
   if ( des < 0 )
     return 0;
   stream = (InputStream)GC_malloc(32);
-  jzero_far(&stream->base, 0x2000);
+  init_base_stream(&stream->base, 0x2000);
   stream->base.type = 0;
   stream->base.handle = (void *)GC_malloc(4);
   *(_DWORD *)stream->base.handle = des;
@@ -64716,7 +64586,7 @@ InputStream __cdecl newFileStream(FILE *f, void (*closep)(...))
   if ( !f )
     return 0;
   stream = (InputStream)GC_malloc(32);
-  jzero_far(&stream->base, 0x2000);
+  init_base_stream(&stream->base, 0x2000);
   stream->base.type = 1;
   stream->base.handle = (void *)GC_malloc(8);
   *(_DWORD *)stream->base.handle = f;
@@ -64738,7 +64608,7 @@ InputStream __cdecl newStrStream(Str s)
   if ( !s )
     return 0;
   stream = (InputStream)GC_malloc(32);
-  savexmlstr(&stream->base, s);
+  init_str_stream(&stream->base, s);
   stream->base.type = 2;
   stream->base.handle = s;
   stream->base.read = (int (*)(...))str_read;
@@ -64755,7 +64625,7 @@ InputStream __cdecl newEncodedStream(InputStream is, char encoding)
   if ( !is || encoding != 2 && encoding != 1 && encoding != 3 )
     return is;
   stream = (InputStream)GC_malloc(32);
-  jzero_far(&stream->base, 0x2000);
+  init_base_stream(&stream->base, 0x2000);
   stream->base.type = 4;
   stream->base.handle = (void *)GC_malloc(16);
   *(_DWORD *)stream->base.handle = is;
@@ -64807,7 +64677,6 @@ int __cdecl ISundogetc(InputStream stream)
 //----- (080B0DA1) --------------------------------------------------------
 Str __cdecl StrISgets(InputStream stream)
 {
-  Str result; // eax
   unsigned int len; // [esp+1Ch] [ebp-1Ch]
   unsigned __int8 *p; // [esp+20h] [ebp-18h]
   _Str *s; // [esp+24h] [ebp-14h]
@@ -64822,10 +64691,9 @@ Str __cdecl StrISgets(InputStream stream)
       if ( stream->base.iseos )
       {
         if ( s )
-          result = s;
+          return s;
         else
-          result = Strnew();
-        return result;
+          return Strnew();
       }
       if ( stream->base.stream.cur != stream->base.stream.next )
         break;
@@ -64856,9 +64724,8 @@ Str __cdecl StrISgets(InputStream stream)
 //----- (080B0F1F) --------------------------------------------------------
 Str __cdecl StrmyISgets(InputStream stream)
 {
-  Str result; // eax
-  int v2; // edx
-  int v3; // eax
+  int length; // edx
+  int cur; // eax
   int len; // [esp+1Ch] [ebp-1Ch]
   int i; // [esp+20h] [ebp-18h]
   Str s; // [esp+24h] [ebp-14h]
@@ -64873,10 +64740,9 @@ Str __cdecl StrmyISgets(InputStream stream)
       if ( stream->base.iseos )
       {
         if ( s )
-          result = s;
+          return s;
         else
-          result = Strnew();
-        return result;
+          return Strnew();
       }
       if ( stream->base.stream.cur != stream->base.stream.next )
         break;
@@ -64915,11 +64781,11 @@ Str __cdecl StrmyISgets(InputStream stream)
   {
     if ( s->length + 1 >= s->area_size )
       Strgrow(s);
-    v2 = s->length;
-    v3 = stream->base.stream.cur;
-    s->ptr[v2] = stream->base.stream.buf[v3];
-    s->length = v2 + 1;
-    stream->base.stream.cur = v3 + 1;
+    length = s->length;
+    cur = stream->base.stream.cur;
+    s->ptr[length] = stream->base.stream.buf[cur];
+    s->length = length + 1;
+    stream->base.stream.cur = cur + 1;
     s->ptr[s->length] = 0;
   }
   return s;
@@ -65109,7 +64975,7 @@ Str __cdecl Strnew_charp(char *p)
 //----- (080B1648) --------------------------------------------------------
 Str Strnew_m_charp(char *p, ...)
 {
-  char **v1; // eax
+  char *v1; // kr00_4
   _Str *r; // [esp+18h] [ebp-10h]
   va_list ap; // [esp+1Ch] [ebp-Ch]
   va_list va; // [esp+34h] [ebp+Ch] BYREF
@@ -65120,9 +64986,8 @@ Str Strnew_m_charp(char *p, ...)
   while ( p )
   {
     Strcat_charp(r, p);
-    v1 = (char **)ap;
-    ap += 4;
-    p = *v1;
+    v1 = va_arg(ap, char *);
+    p = v1;
   }
   return r;
 }
@@ -65261,7 +65126,7 @@ void __cdecl Strcat_charp_n(Str x, char *y, int n)
 // 804A51C: using guessed type int __cdecl GC_malloc_atomic(_DWORD);
 
 //----- (080B19E6) --------------------------------------------------------
-void __cdecl savexmlstr_0(Str x, Str y)
+void __cdecl Strcat(Str x, Str y)
 {
   Strcat_charp_n(x, y->ptr, y->length);
 }
@@ -65281,9 +65146,8 @@ void __cdecl Strcat_charp(Str x, char *y)
 //----- (080B1A3E) --------------------------------------------------------
 void Strcat_m_charp(Str x, ...)
 {
-  char **v1; // eax
+  char *v1; // kr00_4
   int v2; // [esp+8h] [ebp-20h]
-  char *p; // [esp+18h] [ebp-10h]
   va_list ap; // [esp+1Ch] [ebp-Ch]
   va_list va; // [esp+34h] [ebp+Ch] BYREF
 
@@ -65291,13 +65155,11 @@ void Strcat_m_charp(Str x, ...)
   va_copy(ap, va);
   while ( 1 )
   {
-    v1 = (char **)ap;
-    ap += 4;
-    p = *v1;
-    if ( !*v1 )
+    v1 = va_arg(ap, char *);
+    if ( !v1 )
       break;
-    v2 = strlen(p);
-    Strcat_charp_n(x, p, v2);
+    v2 = strlen(v1);
+    Strcat_charp_n(x, v1, v2);
   }
 }
 
@@ -65322,7 +65184,7 @@ void __cdecl Strgrow(Str x)
 //----- (080B1B11) --------------------------------------------------------
 Str __cdecl Strsubstr(Str s, int beg, int len)
 {
-  int v4; // eax
+  int length; // eax
   int i; // [esp+18h] [ebp-10h]
   Str new_s; // [esp+1Ch] [ebp-Ch]
 
@@ -65333,9 +65195,9 @@ Str __cdecl Strsubstr(Str s, int beg, int len)
   {
     if ( new_s->length + 1 >= new_s->area_size )
       Strgrow(new_s);
-    v4 = new_s->length;
-    new_s->ptr[v4] = s->ptr[beg + i];
-    new_s->length = v4 + 1;
+    length = new_s->length;
+    new_s->ptr[length] = s->ptr[beg + i];
+    new_s->length = length + 1;
     new_s->ptr[new_s->length] = 0;
   }
   return new_s;
@@ -65384,7 +65246,7 @@ void __cdecl Strchop(Str s)
 //----- (080B1D01) --------------------------------------------------------
 void __cdecl Strinsert_char(Str s, int pos, char c)
 {
-  char *v3; // edx
+  char *ptr; // edx
   int i; // [esp+2Ch] [ebp-Ch]
 
   if ( pos >= 0 && s->length >= pos )
@@ -65393,8 +65255,8 @@ void __cdecl Strinsert_char(Str s, int pos, char c)
       Strgrow(s);
     for ( i = s->length; i > pos; --i )
       s->ptr[i] = s->ptr[i - 1];
-    v3 = s->ptr;
-    v3[++s->length] = 0;
+    ptr = s->ptr;
+    ptr[++s->length] = 0;
     s->ptr[pos] = c;
   }
 }
@@ -65479,7 +65341,7 @@ void __cdecl Strremovetrailingspaces(Str s)
 //----- (080B1F99) --------------------------------------------------------
 Str __cdecl Stralign_left(Str s, int width)
 {
-  int v3; // eax
+  int length; // eax
   int i; // [esp+18h] [ebp-10h]
   Str n; // [esp+1Ch] [ebp-Ch]
 
@@ -65491,9 +65353,9 @@ Str __cdecl Stralign_left(Str s, int width)
   {
     if ( n->length + 1 >= n->area_size )
       Strgrow(n);
-    v3 = n->length;
-    n->ptr[v3] = 32;
-    n->length = v3 + 1;
+    length = n->length;
+    n->ptr[length] = 32;
+    n->length = length + 1;
     n->ptr[n->length] = 0;
   }
   return n;
@@ -65502,7 +65364,7 @@ Str __cdecl Stralign_left(Str s, int width)
 //----- (080B2041) --------------------------------------------------------
 Str __cdecl Stralign_right(Str s, int width)
 {
-  int v3; // eax
+  int length; // eax
   int i; // [esp+18h] [ebp-10h]
   Str n; // [esp+1Ch] [ebp-Ch]
 
@@ -65513,19 +65375,19 @@ Str __cdecl Stralign_right(Str s, int width)
   {
     if ( n->length + 1 >= n->area_size )
       Strgrow(n);
-    v3 = n->length;
-    n->ptr[v3] = 32;
-    n->length = v3 + 1;
+    length = n->length;
+    n->ptr[length] = 32;
+    n->length = length + 1;
     n->ptr[n->length] = 0;
   }
-  savexmlstr_0(n, s);
+  Strcat(n, s);
   return n;
 }
 
 //----- (080B20E9) --------------------------------------------------------
 Str __cdecl Stralign_center(Str s, int width)
 {
-  int v3; // eax
+  int length; // eax
   int v4; // eax
   int w; // [esp+14h] [ebp-14h]
   int i; // [esp+18h] [ebp-10h]
@@ -65540,12 +65402,12 @@ Str __cdecl Stralign_center(Str s, int width)
   {
     if ( n->length + 1 >= n->area_size )
       Strgrow(n);
-    v3 = n->length;
-    n->ptr[v3] = 32;
-    n->length = v3 + 1;
+    length = n->length;
+    n->ptr[length] = 32;
+    n->length = length + 1;
     n->ptr[n->length] = 0;
   }
-  savexmlstr_0(n, s);
+  Strcat(n, s);
   for ( ia = w + s->length; ia < width; ++ia )
   {
     if ( n->length + 1 >= n->area_size )
@@ -65563,7 +65425,7 @@ Str Sprintf(char *fmt, ...)
 {
   int v1; // eax
   int v2; // eax
-  const char **v3; // eax
+  const char *v3; // kr00_4
   int v4; // eax
   int vi; // [esp+24h] [ebp-24h]
   va_list ap; // [esp+28h] [ebp-20h]
@@ -65609,7 +65471,7 @@ Str Sprintf(char *fmt, ...)
         case 'e':
         case 'f':
         case 'g':
-          ap += 8;
+          va_arg(ap, _QWORD);
           if ( p <= 0 )
             v2 = 15;
           else
@@ -65627,7 +65489,7 @@ Str Sprintf(char *fmt, ...)
         case 'o':
         case 'u':
         case 'x':
-          ap += 4;
+          va_arg(ap, _DWORD);
           if ( p <= 0 )
             v1 = 10;
           else
@@ -65636,19 +65498,18 @@ Str Sprintf(char *fmt, ...)
           goto LABEL_23;
         case 'c':
           ++len;
-          ap += 4;
+          va_arg(ap, _DWORD);
           goto LABEL_23;
         case 'n':
-          ap += 4;
+          va_arg(ap, _DWORD);
           goto LABEL_23;
         case 'p':
-          ap += 4;
+          va_arg(ap, _DWORD);
           len += 10;
           goto LABEL_23;
         case 's':
-          v3 = (const char **)ap;
-          ap += 4;
-          vi = strlen(*v3);
+          v3 = va_arg(ap, const char *);
+          vi = strlen(v3);
           v4 = p;
           if ( vi >= p )
             v4 = vi;
@@ -65686,12 +65547,12 @@ LABEL_32:
   }
   return s;
 }
-// 80B224F: conditional instruction was optimized away because of '%status.4==0'
+// 80B224F: conditional instruction was optimized away because %status.4==0
 
 //----- (080B249D) --------------------------------------------------------
 Str __cdecl Strfgets(FILE *f)
 {
-  int v1; // eax
+  int length; // eax
   Str s; // [esp+18h] [ebp-10h]
   char c; // [esp+1Fh] [ebp-9h]
 
@@ -65703,9 +65564,9 @@ Str __cdecl Strfgets(FILE *f)
       break;
     if ( s->length + 1 >= s->area_size )
       Strgrow(s);
-    v1 = s->length;
-    s->ptr[v1] = c;
-    s->length = v1 + 1;
+    length = s->length;
+    s->ptr[length] = c;
+    s->length = length + 1;
     s->ptr[s->length] = 0;
   }
   while ( c != 10 );
@@ -65715,7 +65576,7 @@ Str __cdecl Strfgets(FILE *f)
 //----- (080B2533) --------------------------------------------------------
 Str __cdecl Strfgetall(FILE *f)
 {
-  int v1; // eax
+  int length; // eax
   Str s; // [esp+18h] [ebp-10h]
   char c; // [esp+1Fh] [ebp-9h]
 
@@ -65726,9 +65587,9 @@ Str __cdecl Strfgetall(FILE *f)
       break;
     if ( s->length + 1 >= s->area_size )
       Strgrow(s);
-    v1 = s->length;
-    s->ptr[v1] = c;
-    s->length = v1 + 1;
+    length = s->length;
+    s->ptr[length] = c;
+    s->length = length + 1;
   }
   return s;
 }
@@ -65868,7 +65729,7 @@ char *__cdecl expandPath(char *name)
   char *v3; // eax
   char *q; // [esp+10h] [ebp-18h]
   _Str *extpath; // [esp+14h] [ebp-14h]
-  passwd *passent; // [esp+18h] [ebp-10h]
+  struct passwd *passent; // [esp+18h] [ebp-10h]
   char *p; // [esp+1Ch] [ebp-Ch]
 
   if ( !name )
@@ -65956,7 +65817,6 @@ LABEL_10:
 //----- (080B2B80) --------------------------------------------------------
 char *__cdecl remove_space(char *str)
 {
-  char *result; // eax
   char *q; // [esp+18h] [ebp-10h]
 
   while ( *str && (MYCTYPE_MAP[(unsigned __int8)*str] & 2) != 0 )
@@ -65966,10 +65826,9 @@ char *__cdecl remove_space(char *str)
   while ( q > str && (MYCTYPE_MAP[(unsigned __int8)*(q - 1)] & 2) != 0 )
     --q;
   if ( *q )
-    result = Strnew_charp_n(str, q - str)->ptr;
+    return Strnew_charp_n(str, q - str)->ptr;
   else
-    result = str;
-  return result;
+    return str;
 }
 
 //----- (080B2C25) --------------------------------------------------------
@@ -65989,7 +65848,7 @@ int __cdecl non_null(char *s)
 //----- (080B2C6E) --------------------------------------------------------
 void __cdecl cleanup_line(Str s, int mode)
 {
-  int v2; // eax
+  int length; // eax
   int v3; // eax
   int i; // [esp+1Ch] [ebp-Ch]
 
@@ -65998,9 +65857,9 @@ void __cdecl cleanup_line(Str s, int mode)
     Strshrink(s, 2);
     if ( s->length + 1 >= s->area_size )
       Strgrow(s);
-    v2 = s->length;
-    s->ptr[v2] = 10;
-    s->length = v2 + 1;
+    length = s->length;
+    s->ptr[length] = 10;
+    s->length = length + 1;
     s->ptr[s->length] = 0;
   }
   else if ( s->length > 0 && s->ptr[s->length - 1] == 13 )
@@ -66029,7 +65888,6 @@ void __cdecl cleanup_line(Str s, int mode)
 //----- (080B2DFB) --------------------------------------------------------
 int __cdecl getescapechar(char **str)
 {
-  int result; // eax
   int strict_entity; // [esp+10h] [ebp-18h]
   char *q; // [esp+14h] [ebp-14h]
   char *qa; // [esp+14h] [ebp-14h]
@@ -66060,12 +65918,12 @@ int __cdecl getescapechar(char **str)
         if ( *pc == 59 )
           ++pc;
         *str = pc;
-        result = dummy;
+        return dummy;
       }
       else
       {
         *str = pb;
-        result = -1;
+        return -1;
       }
     }
     else if ( (MYCTYPE_MAP[(unsigned __int8)*pa] & 8) != 0 )
@@ -66076,12 +65934,12 @@ int __cdecl getescapechar(char **str)
       if ( *pd == 59 )
         ++pd;
       *str = pd;
-      result = dummya;
+      return dummya;
     }
     else
     {
       *str = pa;
-      result = -1;
+      return -1;
     }
   }
   else
@@ -66107,9 +65965,8 @@ int __cdecl getescapechar(char **str)
       return -1;
     }
     *str = pe;
-    result = getHash_si(&entity, qa, -1);
+    return getHash_si(&entity, qa, -1);
   }
-  return result;
 }
 // 804A36C: using guessed type int __cdecl strcasestr(_DWORD, _DWORD);
 
@@ -66135,8 +65992,7 @@ char *__cdecl getescapecmd(char **s)
 //----- (080B3108) --------------------------------------------------------
 char *__cdecl html_quote(char *str)
 {
-  int v1; // eax
-  char *result; // eax
+  int length; // eax
   char *q; // [esp+14h] [ebp-14h]
   char *p; // [esp+18h] [ebp-10h]
   Str tmp; // [esp+1Ch] [ebp-Ch]
@@ -66155,24 +66011,22 @@ char *__cdecl html_quote(char *str)
     {
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v1 = tmp->length;
-      tmp->ptr[v1] = *p;
-      tmp->length = v1 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = *p;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
     }
   }
   if ( tmp )
-    result = tmp->ptr;
+    return tmp->ptr;
   else
-    result = str;
-  return result;
+    return str;
 }
 
 //----- (080B31F7) --------------------------------------------------------
 char *__cdecl html_unquote(char *str)
 {
-  int v1; // eax
-  char *result; // eax
+  int length; // eax
   char *q; // [esp+14h] [ebp-14h]
   char *p; // [esp+18h] [ebp-10h] BYREF
   Str tmp; // [esp+1Ch] [ebp-Ch]
@@ -66194,29 +66048,27 @@ char *__cdecl html_unquote(char *str)
       {
         if ( tmp->length + 1 >= tmp->area_size )
           Strgrow(tmp);
-        v1 = tmp->length;
-        tmp->ptr[v1] = *p;
-        tmp->length = v1 + 1;
+        length = tmp->length;
+        tmp->ptr[length] = *p;
+        tmp->length = length + 1;
         tmp->ptr[tmp->length] = 0;
       }
       ++p;
     }
   }
   if ( tmp )
-    result = tmp->ptr;
+    return tmp->ptr;
   else
-    result = str;
-  return result;
+    return str;
 }
 
 //----- (080B32DF) --------------------------------------------------------
 char *__cdecl url_quote(char *str)
 {
-  int v1; // eax
+  int length; // eax
   int v2; // eax
   int v3; // eax
   int v4; // eax
-  char *result; // eax
   char *p; // [esp+18h] [ebp-10h]
   Str tmp; // [esp+1Ch] [ebp-Ch]
 
@@ -66229,9 +66081,9 @@ char *__cdecl url_quote(char *str)
         tmp = Strnew_charp_n(str, p - str);
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v1 = tmp->length;
-      tmp->ptr[v1] = 37;
-      tmp->length = v1 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = 37;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
@@ -66257,17 +66109,15 @@ char *__cdecl url_quote(char *str)
     }
   }
   if ( tmp )
-    result = tmp->ptr;
+    return tmp->ptr;
   else
-    result = str;
-  return result;
+    return str;
 }
 
 //----- (080B34B7) --------------------------------------------------------
 char *__cdecl file_quote(char *str)
 {
-  int v1; // eax
-  char *result; // eax
+  int length; // eax
   char buf[4]; // [esp+14h] [ebp-14h] BYREF
   char *p; // [esp+18h] [ebp-10h]
   Str tmp; // [esp+1Ch] [ebp-Ch]
@@ -66286,26 +66136,24 @@ char *__cdecl file_quote(char *str)
     {
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v1 = tmp->length;
-      tmp->ptr[v1] = *p;
-      tmp->length = v1 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = *p;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
     }
   }
   if ( tmp )
-    result = tmp->ptr;
+    return tmp->ptr;
   else
-    result = str;
-  return result;
+    return str;
 }
 
 //----- (080B35BB) --------------------------------------------------------
 char *__cdecl file_unquote(char *str)
 {
   int v1; // eax
-  int v2; // eax
+  int length; // eax
   int v3; // eax
-  char *result; // eax
   int c; // [esp+10h] [ebp-18h]
   char *q; // [esp+14h] [ebp-14h]
   char *p; // [esp+18h] [ebp-10h]
@@ -66326,9 +66174,9 @@ char *__cdecl file_unquote(char *str)
       {
         if ( tmp->length + 1 >= tmp->area_size )
           Strgrow(tmp);
-        v2 = tmp->length;
-        tmp->ptr[v2] = c;
-        tmp->length = v2 + 1;
+        length = tmp->length;
+        tmp->ptr[length] = c;
+        tmp->length = length + 1;
         tmp->ptr[tmp->length] = 0;
       }
       p = q;
@@ -66348,18 +66196,16 @@ char *__cdecl file_unquote(char *str)
     }
   }
   if ( tmp )
-    result = tmp->ptr;
+    return tmp->ptr;
   else
-    result = str;
-  return result;
+    return str;
 }
 
 //----- (080B3774) --------------------------------------------------------
 Str __cdecl Str_form_quote(Str x)
 {
-  int v1; // eax
+  int length; // eax
   int v2; // eax
-  Str result; // eax
   char buf[4]; // [esp+10h] [ebp-18h] BYREF
   char *ep; // [esp+14h] [ebp-14h]
   char *p; // [esp+18h] [ebp-10h]
@@ -66376,9 +66222,9 @@ Str __cdecl Str_form_quote(Str x)
         tmp = Strnew_charp_n(x->ptr, p - x->ptr);
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v1 = tmp->length;
-      tmp->ptr[v1] = 43;
-      tmp->length = v1 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = 43;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
     }
     else if ( (QUOTE_MAP[(unsigned __int8)*p] & 0x70) != 0 )
@@ -66400,20 +66246,18 @@ Str __cdecl Str_form_quote(Str x)
     ++p;
   }
   if ( tmp )
-    result = tmp;
+    return tmp;
   else
-    result = x;
-  return result;
+    return x;
 }
 
 //----- (080B3905) --------------------------------------------------------
 Str __cdecl Str_url_unquote(Str x, int is_form, int safe)
 {
-  int v3; // eax
+  int length; // eax
   int v4; // eax
   int v5; // eax
   int v6; // eax
-  Str result; // eax
   char c; // [esp+1Ch] [ebp-1Ch]
   char *q; // [esp+20h] [ebp-18h]
   char *ep; // [esp+24h] [ebp-14h]
@@ -66431,9 +66275,9 @@ Str __cdecl Str_url_unquote(Str x, int is_form, int safe)
         tmp = Strnew_charp_n(x->ptr, p - x->ptr);
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v3 = tmp->length;
-      tmp->ptr[v3] = 32;
-      tmp->length = v3 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = 32;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
       ++p;
     }
@@ -66470,19 +66314,17 @@ Str __cdecl Str_url_unquote(Str x, int is_form, int safe)
     }
   }
   if ( tmp )
-    result = tmp;
+    return tmp;
   else
-    result = x;
-  return result;
+    return x;
 }
 
 //----- (080B3B7B) --------------------------------------------------------
 char *__cdecl shell_quote(char *str)
 {
-  int v1; // eax
+  int length; // eax
   int v2; // eax
   int v3; // eax
-  char *result; // eax
   char *p; // [esp+18h] [ebp-10h]
   Str tmp; // [esp+1Ch] [ebp-Ch]
 
@@ -66495,9 +66337,9 @@ char *__cdecl shell_quote(char *str)
         tmp = Strnew_charp_n(str, p - str);
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
-      v1 = tmp->length;
-      tmp->ptr[v1] = 92;
-      tmp->length = v1 + 1;
+      length = tmp->length;
+      tmp->ptr[length] = 92;
+      tmp->length = length + 1;
       tmp->ptr[tmp->length] = 0;
       if ( tmp->length + 1 >= tmp->area_size )
         Strgrow(tmp);
@@ -66517,10 +66359,9 @@ char *__cdecl shell_quote(char *str)
     }
   }
   if ( tmp )
-    result = tmp->ptr;
+    return tmp->ptr;
   else
-    result = str;
-  return result;
+    return str;
 }
 
 //----- (080B3CEA) --------------------------------------------------------
@@ -66659,7 +66500,7 @@ void __cdecl delValue(GeneralList *tl, ListItem *it)
 //----- (080B3F9F) --------------------------------------------------------
 GeneralList *__cdecl appendGeneralList(GeneralList *tl, GeneralList *tl2)
 {
-  __int16 v2; // dx
+  __int16 nitem; // dx
 
   if ( tl && tl2 )
   {
@@ -66670,15 +66511,15 @@ GeneralList *__cdecl appendGeneralList(GeneralList *tl, GeneralList *tl2)
         tl->last->next = tl2->first;
         tl2->first->prev = tl->last;
         tl->last = tl2->last;
-        v2 = tl->nitem + tl2->nitem;
+        nitem = tl->nitem + tl2->nitem;
       }
       else
       {
         tl->first = tl2->first;
         tl->last = tl2->last;
-        v2 = tl2->nitem;
+        nitem = tl2->nitem;
       }
-      tl->nitem = v2;
+      tl->nitem = nitem;
     }
     tl2->last = 0;
     tl2->first = tl2->last;
@@ -66713,7 +66554,7 @@ void __cdecl appendTextLine(TextLineList *tl, Str line, int pos)
   {
     lbuf = tl->last->ptr;
     if ( lbuf->line )
-      savexmlstr_0(lbuf->line, line);
+      Strcat(lbuf->line, line);
     else
       lbuf->line = line;
     lbuf->pos += pos;
@@ -66753,7 +66594,7 @@ int __cdecl tag_exists(parsed_tagarg *t, char *arg)
 //----- (080B419B) --------------------------------------------------------
 parsed_tagarg *__cdecl cgistr2tagarg(char *cgistr)
 {
-  int v1; // eax
+  int length; // eax
   int v3; // eax
   parsed_tagarg *t; // [esp+10h] [ebp-18h]
   parsed_tagarg *t0; // [esp+14h] [ebp-14h]
@@ -66771,9 +66612,9 @@ parsed_tagarg *__cdecl cgistr2tagarg(char *cgistr)
     {
       if ( tag->length + 1 >= tag->area_size )
         Strgrow(tag);
-      v1 = tag->length;
-      tag->ptr[v1] = *cgistr;
-      tag->length = v1 + 1;
+      length = tag->length;
+      tag->ptr[length] = *cgistr;
+      tag->length = length + 1;
       ++cgistr;
       tag->ptr[tag->length] = 0;
     }
@@ -66877,21 +66718,21 @@ void __cdecl putHash_si(Hash_si_0 *t, char *key, int value)
   }
 }
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
+// 80B4465: using guessed type int h[3];
 
 //----- (080B44E4) --------------------------------------------------------
 int __cdecl getHash_si(Hash_si_0 *t, char *key, int failval)
 {
-  int result; // eax
   HashItem_si_0 *hi; // [esp+18h] [ebp-10h]
   int h[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
   hi = lookupHash_si(t, key, h);
   if ( hi )
-    result = hi->value;
+    return hi->value;
   else
-    result = failval;
-  return result;
+    return failval;
 }
+// 80B44E4: using guessed type int h[3];
 
 //----- (080B4519) --------------------------------------------------------
 Hash_ss_0 *__cdecl newHash_ss(int size)
@@ -66944,21 +66785,21 @@ void __cdecl putHash_ss(Hash_ss_0 *t, char *key, char *value)
   }
 }
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
+// 80B45ED: using guessed type int h[3];
 
 //----- (080B466C) --------------------------------------------------------
 char *__cdecl getHash_ss(Hash_ss_0 *t, char *key, char *failval)
 {
-  char *result; // eax
   HashItem_ss_0 *hi; // [esp+18h] [ebp-10h]
   int h[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
   hi = lookupHash_ss(t, key, h);
   if ( hi )
-    result = hi->value;
+    return hi->value;
   else
-    result = failval;
-  return result;
+    return failval;
 }
+// 80B466C: using guessed type int h[3];
 
 //----- (080B46A1) --------------------------------------------------------
 Hash_sv_0 *__cdecl newHash_sv(int size)
@@ -67011,21 +66852,21 @@ void __cdecl putHash_sv(Hash_sv_0 *t, char *key, void *value)
   }
 }
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
+// 80B4775: using guessed type int h[3];
 
 //----- (080B47F4) --------------------------------------------------------
 void *__cdecl getHash_sv(Hash_sv_0 *t, char *key, void *failval)
 {
-  void *result; // eax
   HashItem_sv_0 *hi; // [esp+18h] [ebp-10h]
   int h[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
   hi = lookupHash_sv(t, key, h);
   if ( hi )
-    result = hi->value;
+    return hi->value;
   else
-    result = failval;
-  return result;
+    return failval;
 }
+// 80B47F4: using guessed type int h[3];
 
 //----- (080B4829) --------------------------------------------------------
 Hash_iv_0 *__cdecl newHash_iv(int size)
@@ -67078,20 +66919,19 @@ void __cdecl putHash_iv(Hash_iv_0 *t, int key, void *value)
   }
 }
 // 8049F2C: using guessed type int __cdecl GC_malloc(_DWORD);
+// 80B48E1: using guessed type int h[3];
 
 //----- (080B4960) --------------------------------------------------------
 void *__cdecl getHash_iv(Hash_iv_0 *t, int key, void *failval)
 {
-  void *result; // eax
   HashItem_iv_0 *hi; // [esp+14h] [ebp-8h]
   int h; // [esp+18h] [ebp-4h] BYREF
 
   hi = lookupHash_iv(t, key, &h);
   if ( hi )
-    result = hi->value;
+    return hi->value;
   else
-    result = failval;
-  return result;
+    return failval;
 }
 
 //----- (080B4998) --------------------------------------------------------
@@ -67117,49 +66957,43 @@ Str __cdecl wc_char_conv(char c)
 //----- (080B4A18) --------------------------------------------------------
 wc_ces __cdecl wc_guess_charset(char *charset, wc_ces orig)
 {
-  wc_ces result; // eax
   wc_ces guess; // [esp+1Ch] [ebp-Ch]
 
   if ( !charset || !*charset )
     return orig;
   guess = wc_charset_to_ces(charset);
   if ( guess )
-    result = guess;
+    return guess;
   else
-    result = orig;
-  return result;
+    return orig;
 }
 
 //----- (080B4A51) --------------------------------------------------------
 wc_ces __cdecl wc_guess_charset_short(char *charset, wc_ces orig)
 {
-  wc_ces result; // eax
   wc_ces guess; // [esp+1Ch] [ebp-Ch]
 
   if ( !charset || !*charset )
     return orig;
   guess = wc_charset_short_to_ces(charset);
   if ( guess )
-    result = guess;
+    return guess;
   else
-    result = orig;
-  return result;
+    return orig;
 }
 
 //----- (080B4A8A) --------------------------------------------------------
 wc_ces __cdecl wc_guess_locale_charset(char *locale, wc_ces orig)
 {
-  wc_ces result; // eax
   wc_ces guess; // [esp+1Ch] [ebp-Ch]
 
   if ( !locale || !*locale )
     return orig;
   guess = wc_locale_to_ces(locale);
   if ( guess )
-    result = guess;
+    return guess;
   else
-    result = orig;
-  return result;
+    return orig;
 }
 
 //----- (080B4AC3) --------------------------------------------------------
@@ -67812,7 +67646,6 @@ LABEL_70:
 //----- (080B5999) --------------------------------------------------------
 wc_ces __cdecl wc_locale_to_ces(char *locale)
 {
-  wc_ces result; // eax
   int v2; // ebx
   char buf[6]; // [esp+1Eh] [ebp-1Ah] BYREF
   char *cs_0; // [esp+24h] [ebp-14h]
@@ -67865,15 +67698,15 @@ wc_ces __cdecl wc_locale_to_ces(char *locale)
         WcLocale = buf[0] == 106;
       }
     }
-    result = wc_charset_to_ces(p);
+    return wc_charset_to_ces(p);
   }
   else if ( !strcmp(buf, "japanese") )
   {
-    result = 3153976;
+    return 3153976;
   }
   else if ( !strcmp(buf, "zh_tw") || !strcmp(buf, "zh_hk") )
   {
-    result = 3153981;
+    return 3153981;
   }
   else
   {
@@ -67882,33 +67715,26 @@ wc_ces __cdecl wc_locale_to_ces(char *locale)
       if ( !strncmp(buf, lang_ces_table[n].lang, 2u) )
         return lang_ces_table[n].ces;
     }
-    result = 1049089;
+    return 1049089;
   }
-  return result;
 }
 
 //----- (080B5BCC) --------------------------------------------------------
 char *__cdecl wc_ces_to_charset(wc_ces ces)
 {
-  char *result; // eax
-
   if ( ces == 3211264 )
-    result = "WTF";
+    return "WTF";
   else
-    result = WcCesInfo[(unsigned __int8)ces].name;
-  return result;
+    return WcCesInfo[(unsigned __int8)ces].name;
 }
 
 //----- (080B5BF2) --------------------------------------------------------
 char *__cdecl wc_ces_to_charset_desc(wc_ces ces)
 {
-  char *result; // eax
-
   if ( ces == 3211264 )
-    result = "W3M Transfer Format";
+    return "W3M Transfer Format";
   else
-    result = WcCesInfo[(unsigned __int8)ces].desc;
-  return result;
+    return WcCesInfo[(unsigned __int8)ces].desc;
 }
 
 //----- (080B5C18) --------------------------------------------------------
@@ -67985,15 +67811,12 @@ wc_ces_list *wc_get_ces_list()
 //----- (080B5E24) --------------------------------------------------------
 Str __cdecl wc_Str_conv(Str is, wc_ces f_ces, wc_ces t_ces)
 {
-  Str result; // eax
-
   if ( f_ces != 3211264 )
     is = WcCesInfo[(unsigned __int8)f_ces].conv_from(is, f_ces);
   if ( t_ces == 3211264 )
-    result = is;
+    return is;
   else
-    result = wc_conv_to_ces(is, t_ces);
-  return result;
+    return wc_conv_to_ces(is, t_ces);
 }
 
 //----- (080B5E7D) --------------------------------------------------------
@@ -68015,8 +67838,8 @@ Str __cdecl wc_Str_conv_strict(Str is, wc_ces f_ces, wc_ces t_ces)
 Str __cdecl wc_conv_to_ces(Str is, wc_ces ces)
 {
   void (*v3)(...); // ebx
-  int v4; // eax
-  void (*v5)(...); // ebx
+  int length; // eax
+  void (*push_to)(...); // ebx
   wc_status st; // [esp+14h] [ebp-64h] BYREF
   wc_wchar_t v7; // [esp+50h] [ebp-28h] BYREF
   wc_wchar_t v8; // [esp+58h] [ebp-20h] BYREF
@@ -68066,17 +67889,17 @@ LABEL_43:
       {
         if ( os->length + 1 >= os->area_size )
           Strgrow(os);
-        v4 = os->length;
-        os->ptr[v4] = *p;
-        os->length = v4 + 1;
+        length = os->length;
+        os->ptr[length] = *p;
+        os->length = length + 1;
         os->ptr[os->length] = 0;
         ++p;
       }
       else
       {
-        v5 = st.ces_info->push_to;
+        push_to = st.ces_info->push_to;
         wtf_parse(&v7, &p);
-        v5(os, v7.ccs, v7.code, &st);
+        push_to(os, v7.ccs, v7.code, &st);
       }
     }
     goto LABEL_44;
@@ -68196,7 +68019,6 @@ void __cdecl wc_create_detect_map(wc_ces ces, wc_bool esc)
 //----- (080B6412) --------------------------------------------------------
 wc_ces __cdecl wc_auto_detect(char *is, size_t len, wc_ces hint)
 {
-  wc_ces result; // eax
   int v4; // eax
   int v5; // eax
   int v6; // eax
@@ -68424,7 +68246,6 @@ LABEL_74:
 LABEL_72:
             iso_detect = 2;
             ok = 1;
-            break;
           }
           break;
         case '.':
@@ -68796,45 +68617,44 @@ LABEL_249:
     }
     if ( iso2022jp3 )
     {
-      result = 2099219;
+      return 2099219;
     }
     else if ( iso2022jp2 )
     {
-      result = 2099218;
+      return 2099218;
     }
     else if ( iso2022cn )
     {
-      result = 2099220;
+      return 2099220;
     }
     else if ( iso2022kr )
     {
-      result = 2099221;
+      return 2099221;
     }
     else
     {
-      result = 2099217;
+      return 2099217;
     }
   }
   else if ( hz_detect == 2 )
   {
-    result = 2105404;
+    return 2105404;
   }
   else if ( priv_detect == 2 )
   {
-    result = priv;
+    return priv;
   }
   else
   {
-    result = 256;
+    return 256;
   }
-  return result;
 }
-// 80B6D73: conditional instruction was optimized away because of '%utf8_next.4==0'
+// 80B6D73: conditional instruction was optimized away because %utf8_next.4==0
 
 //----- (080B7018) --------------------------------------------------------
 Str __cdecl wc_conv_from_hz(Str is, wc_ces ces)
 {
-  int v3; // eax
+  int length; // eax
   int v4; // eax
   int state; // [esp+1Ch] [ebp-1Ch]
   wc_uchar *p; // [esp+20h] [ebp-18h]
@@ -68871,9 +68691,9 @@ Str __cdecl wc_conv_from_hz(Str is, wc_ces ces)
             goto LABEL_16;
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
-          v3 = os->length;
-          os->ptr[v3] = *p;
-          os->length = v3 + 1;
+          length = os->length;
+          os->ptr[length] = *p;
+          os->length = length + 1;
           os->ptr[os->length] = 0;
         }
         break;
@@ -68952,7 +68772,7 @@ LABEL_49:
     wtf_push_unknown(os, p - 1, 1u);
   return os;
 }
-// 80B740A: conditional instruction was optimized away because of '%state.4<6u'
+// 80B740A: conditional instruction was optimized away because %state.4<6u
 
 //----- (080B7449) --------------------------------------------------------
 void __cdecl wc_push_to_hz(Str os, wc_wchar_t cc, wc_status *st)
@@ -68961,7 +68781,7 @@ void __cdecl wc_push_to_hz(Str os, wc_wchar_t cc, wc_status *st)
   int v4; // eax
   int v5; // eax
   int v6; // eax
-  int v7; // eax
+  int length; // eax
   int v8; // eax
   int v9; // eax
   int v10; // eax
@@ -68981,9 +68801,9 @@ void __cdecl wc_push_to_hz(Str os, wc_wchar_t cc, wc_status *st)
         {
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
-          v7 = os->length;
-          os->ptr[v7] = 126;
-          os->length = v7 + 1;
+          length = os->length;
+          os->ptr[length] = 126;
+          os->length = length + 1;
           os->ptr[os->length] = 0;
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
@@ -69105,16 +68925,16 @@ void __cdecl wc_push_to_hz(Str os, wc_wchar_t cc, wc_status *st)
 //----- (080B792D) --------------------------------------------------------
 void __cdecl wc_push_to_hz_end(Str os, wc_status *st)
 {
-  int v2; // eax
+  int length; // eax
   int v3; // eax
 
   if ( st->gl )
   {
     if ( os->length + 1 >= os->area_size )
       Strgrow(os);
-    v2 = os->length;
-    os->ptr[v2] = 126;
-    os->length = v2 + 1;
+    length = os->length;
+    os->ptr[length] = 126;
+    os->length = length + 1;
     os->ptr[os->length] = 0;
     if ( os->length + 1 >= os->area_size )
       Strgrow(os);
@@ -69169,7 +68989,7 @@ Str __cdecl wc_conv_from_iso2022(Str is, wc_ces ces)
   int v7; // eax
   wc_ccs v8; // eax
   wc_ccs v9; // eax
-  int v10; // eax
+  int length; // eax
   int v11; // eax
   int v12; // eax
   int v13; // eax
@@ -69239,9 +69059,9 @@ Str __cdecl wc_conv_from_iso2022(Str is, wc_ces ces)
             case 31:
               if ( os->length + 1 >= os->area_size )
                 Strgrow(os);
-              v10 = os->length;
-              os->ptr[v10] = *p;
-              os->length = v10 + 1;
+              length = os->length;
+              os->ptr[length] = *p;
+              os->length = length + 1;
               os->ptr[os->length] = 0;
               goto LABEL_94;
             case 14:
@@ -69832,7 +69652,7 @@ void __cdecl wc_push_to_iso2022(Str os, wc_wchar_t cc, wc_status *st)
   unsigned int v3; // eax
   wc_ccs v4; // eax
   wc_ccs v5; // eax
-  int v6; // eax
+  int length; // eax
   int v7; // eax
   wc_wchar_t v8; // [esp+28h] [ebp-30h] BYREF
   wc_wchar_t cc2_0; // [esp+3Ch] [ebp-1Ch] BYREF
@@ -69968,9 +69788,9 @@ LABEL_47:
   {
     if ( os->length + 1 >= os->area_size )
       Strgrow(os);
-    v6 = os->length;
-    os->ptr[v6] = BYTE1(cc.code) & 0x7F;
-    os->length = v6 + 1;
+    length = os->length;
+    os->ptr[length] = BYTE1(cc.code) & 0x7F;
+    os->length = length + 1;
     os->ptr[os->length] = 0;
   }
   if ( os->length + 1 >= os->area_size )
@@ -69992,7 +69812,7 @@ void __cdecl wc_push_to_iso2022_end(Str os, wc_status *st)
 //----- (080B8C16) --------------------------------------------------------
 void __cdecl wc_push_iso2022_esc(Str os, wc_ccs ccs, wc_uchar g, wc_uint8 invoke, wc_status *st)
 {
-  int v5; // eax
+  int length; // eax
   int v6; // eax
   int v7; // eax
   int v8; // eax
@@ -70011,9 +69831,9 @@ void __cdecl wc_push_iso2022_esc(Str os, wc_ccs ccs, wc_uchar g, wc_uint8 invoke
   {
     if ( os->length + 1 >= os->area_size )
       Strgrow(os);
-    v5 = os->length;
-    os->ptr[v5] = 27;
-    os->length = v5 + 1;
+    length = os->length;
+    os->ptr[length] = 27;
+    os->length = length + 1;
     os->ptr[os->length] = 0;
     if ( (ccs & 0x18000) != 0 )
     {
@@ -70123,7 +69943,7 @@ void __cdecl wc_push_iso2022_esc(Str os, wc_ccs ccs, wc_uchar g, wc_uint8 invoke
 //----- (080B90B4) --------------------------------------------------------
 void __cdecl wc_push_to_euc(Str os, wc_wchar_t cc, wc_status *st)
 {
-  int v3; // eax
+  int length; // eax
   int v4; // eax
   int v5; // eax
   int v6; // eax
@@ -70138,9 +69958,9 @@ void __cdecl wc_push_to_euc(Str os, wc_wchar_t cc, wc_status *st)
     {
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
-      v3 = os->length;
-      os->ptr[v3] = BYTE1(cc.code) | 0x80;
-      os->length = v3 + 1;
+      length = os->length;
+      os->ptr[length] = BYTE1(cc.code) | 0x80;
+      os->length = length + 1;
       os->ptr[os->length] = 0;
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
@@ -70216,7 +70036,7 @@ LABEL_29:
 void __cdecl wc_push_to_eucjp(Str os, wc_wchar_t cc, wc_status *st)
 {
   int v3; // eax
-  int v4; // eax
+  int length; // eax
   int v5; // eax
   int v6; // eax
   int v7; // eax
@@ -70244,9 +70064,9 @@ void __cdecl wc_push_to_eucjp(Str os, wc_wchar_t cc, wc_status *st)
             {
               if ( os->length + 1 >= os->area_size )
                 Strgrow(os);
-              v4 = os->length;
-              os->ptr[v4] = -114;
-              os->length = v4 + 1;
+              length = os->length;
+              os->ptr[length] = -114;
+              os->length = length + 1;
               os->ptr[os->length] = 0;
               if ( os->length + 1 >= os->area_size )
                 Strgrow(os);
@@ -70386,7 +70206,7 @@ LABEL_32:
 void __cdecl wc_push_to_euctw(Str os, wc_wchar_t cc, wc_status *st)
 {
   int v3; // eax
-  int v4; // eax
+  int length; // eax
   int v5; // eax
   int v6; // eax
   int v7; // eax
@@ -70401,9 +70221,9 @@ void __cdecl wc_push_to_euctw(Str os, wc_wchar_t cc, wc_status *st)
     {
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
-      v4 = os->length;
-      os->ptr[v4] = -114;
-      os->length = v4 + 1;
+      length = os->length;
+      os->ptr[length] = -114;
+      os->length = length + 1;
       os->ptr[os->length] = 0;
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
@@ -70498,7 +70318,7 @@ LABEL_34:
 //----- (080B9C24) --------------------------------------------------------
 void __cdecl wc_push_to_iso8859(Str os, wc_wchar_t cc, wc_status *st)
 {
-  int v3; // eax
+  int length; // eax
   int v4; // eax
   int v5; // eax
   wc_ccs v6; // eax
@@ -70511,9 +70331,9 @@ void __cdecl wc_push_to_iso8859(Str os, wc_wchar_t cc, wc_status *st)
     {
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
-      v3 = os->length;
-      os->ptr[v3] = LOBYTE(cc.code) | 0x80;
-      os->length = v3 + 1;
+      length = os->length;
+      os->ptr[length] = LOBYTE(cc.code) | 0x80;
+      os->length = length + 1;
       os->ptr[os->length] = 0;
       return;
     }
@@ -70569,7 +70389,7 @@ void __cdecl wc_push_to_iso8859(Str os, wc_wchar_t cc, wc_status *st)
 void __cdecl wc_create_gmap(wc_status *st)
 {
   unsigned int v1; // eax
-  unsigned int v2; // eax
+  unsigned int ccs; // eax
   int f; // [esp+0h] [ebp-10h]
   int i; // [esp+4h] [ebp-Ch]
   int ia; // [esp+4h] [ebp-Ch]
@@ -70613,13 +70433,13 @@ void __cdecl wc_create_gmap(wc_status *st)
     {
       if ( v1 == 33024 )
       {
-        v2 = gset[ib].ccs;
-        if ( v2 == 33092 )
+        ccs = gset[ib].ccs;
+        if ( ccs == 33092 )
         {
           if ( WcOption.use_jisx0212 )
             goto LABEL_28;
         }
-        else if ( v2 < 0x8144 || v2 - 33103 > 1 || WcOption.use_jisx0213 )
+        else if ( ccs < 0x8144 || ccs - 33103 > 1 || WcOption.use_jisx0213 )
         {
 LABEL_28:
           cs94w_gmap[f] = gset[ib].g;
@@ -70646,8 +70466,8 @@ LABEL_28:
 //----- (080BA052) --------------------------------------------------------
 Str __cdecl wc_char_conv_from_iso2022(wc_uchar c, wc_status *st)
 {
-  int v2; // edx
-  int v3; // edx
+  int ss; // edx
+  int gr; // edx
   Str v4; // eax
   int v5; // edx
   size_t v6; // eax
@@ -70656,7 +70476,7 @@ Str __cdecl wc_char_conv_from_iso2022(wc_uchar c, wc_status *st)
   int v9; // edx
   size_t v10; // eax
   Str v11; // eax
-  int v12; // edx
+  int length; // edx
   size_t v13; // eax
   size_t v14; // eax
   int v15; // eax
@@ -70681,15 +70501,15 @@ Str __cdecl wc_char_conv_from_iso2022(wc_uchar c, wc_status *st)
     nbuf_4124 = 0;
   }
   if ( st->ss )
-    v2 = st->ss;
+    ss = st->ss;
   else
-    v2 = st->gl;
-  gl_ccs = st->design[v2];
+    ss = st->gl;
+  gl_ccs = st->design[ss];
   if ( st->ss )
-    v3 = st->ss;
+    gr = st->ss;
   else
-    v3 = st->gr;
-  gr_ccs = st->design[v3];
+    gr = st->gr;
+  gr_ccs = st->design[gr];
   switch ( st->state )
   {
     case 0:
@@ -70701,9 +70521,9 @@ Str __cdecl wc_char_conv_from_iso2022(wc_uchar c, wc_status *st)
           if ( os_4122->length + 1 >= os_4122->area_size )
             Strgrow(os_4122);
           v11 = os_4122;
-          v12 = os_4122->length;
-          os_4122->ptr[v12] = c;
-          v11->length = v12 + 1;
+          length = os_4122->length;
+          os_4122->ptr[length] = c;
+          v11->length = length + 1;
           os_4122->ptr[os_4122->length] = 0;
           goto LABEL_83;
         case 0x11u:
@@ -70910,7 +70730,7 @@ LABEL_60:
         buf_4123[nbuf_4124] = c;
         nbuf_4124 = v22 + 1;
         st->state = 44;
-        result = 0;
+        return 0;
       }
       else
       {
@@ -70926,9 +70746,8 @@ LABEL_82:
 LABEL_83:
         st->ss = 0;
         st->state = -1;
-        result = os_4122;
+        return os_4122;
       }
-      return result;
     case 0x25:
       if ( c != 47 )
         goto LABEL_82;
@@ -70973,7 +70792,7 @@ wc_wchar_t *__userpurge wc_jisx0201k_to_jisx0208@<eax>(wc_wchar_t *retstr, wc_wc
 //----- (080BA881) --------------------------------------------------------
 wc_wchar_t *__userpurge wc_jisx0212_to_jisx0213@<eax>(wc_wchar_t *retstr, wc_wchar_t cc)
 {
-  wc_uint32 v2; // edx
+  wc_uint32 code; // edx
   wc_wchar_t cc2; // [esp+18h] [ebp-10h] BYREF
 
   if ( !t1_2377 )
@@ -70984,9 +70803,9 @@ wc_wchar_t *__userpurge wc_jisx0212_to_jisx0213@<eax>(wc_wchar_t *retstr, wc_wch
   wc_any_to_any(&cc2, cc, t2_2378);
   if ( cc2.ccs == 33092 )
   {
-    v2 = cc2.code;
+    code = cc2.code;
     retstr->ccs = 33092;
-    retstr->code = v2;
+    retstr->code = code;
   }
   else
   {
@@ -71007,31 +70826,25 @@ wc_wchar_t *__userpurge wc_jisx0213_to_jisx0212@<eax>(wc_wchar_t *retstr, wc_wch
 //----- (080BA96C) --------------------------------------------------------
 wc_ccs __cdecl wc_jisx0208_or_jisx02131(wc_uint16 code)
 {
-  wc_ccs result; // eax
-
   if ( wc_map_range_search(code & 0x7F7F, jisx0208_jisx02131_map, 18) )
-    result = 33103;
+    return 33103;
   else
-    result = 33090;
-  return result;
+    return 33090;
 }
 
 //----- (080BA9AC) --------------------------------------------------------
 wc_ccs __cdecl wc_jisx0212_or_jisx02132(wc_uint16 code)
 {
-  wc_ccs result; // eax
-
   if ( wc_jisx0212_jisx02132_map[HIBYTE(code) & 0x7F] )
-    result = 33104;
+    return 33104;
   else
-    result = 33092;
-  return result;
+    return 33092;
 }
 
 //----- (080BA9E4) --------------------------------------------------------
 wc_wchar_t *__userpurge wc_johab_to_ksx1001@<eax>(wc_wchar_t *retstr, wc_wchar_t cc)
 {
-  wc_uint32 v2; // edx
+  wc_uint32 code; // edx
   wc_wchar_t v4; // [esp+18h] [ebp-10h] BYREF
 
   if ( cc.ccs > 0x8811 )
@@ -71062,12 +70875,12 @@ wc_wchar_t *__userpurge wc_johab_to_ksx1001@<eax>(wc_wchar_t *retstr, wc_wchar_t
   if ( cc.ccs != 34831 )
   {
 LABEL_16:
-    v2 = cc.code;
+    code = cc.code;
     retstr->ccs = cc.ccs;
-    retstr->code = v2;
+    retstr->code = code;
     return retstr;
   }
-  wc_johab_to_cs128w(&v4, (wc_wchar_t)__PAIR64__(cc.code, 34831));
+  wc_johab_to_cs128w(&v4, cc);
   wc_johab_to_ksx1001(retstr, v4);
   return retstr;
 }
@@ -71077,7 +70890,7 @@ wc_wchar_t *__userpurge wc_ksx1001_to_johab@<eax>(wc_wchar_t *retstr, wc_wchar_t
 {
   wc_uint32 v2; // edx
   wc_uint32 v3; // eax
-  wc_uint32 v4; // edx
+  wc_uint32 code; // edx
 
   cc.code = cc.code & 0x7F7F;
   if ( (cc.code <= 0x2120 || cc.code > 0x2420)
@@ -71093,9 +70906,9 @@ wc_wchar_t *__userpurge wc_ksx1001_to_johab@<eax>(wc_wchar_t *retstr, wc_wchar_t
     {
       cc.ccs = 49152;
     }
-    v4 = cc.code;
+    code = cc.code;
     retstr->ccs = cc.ccs;
-    retstr->code = v4;
+    retstr->code = code;
   }
   else
   {
@@ -71110,7 +70923,7 @@ wc_wchar_t *__userpurge wc_ksx1001_to_johab@<eax>(wc_wchar_t *retstr, wc_wchar_t
 //----- (080BAB86) --------------------------------------------------------
 wc_wchar_t *wc_ucs_to_johab(wc_wchar_t *retstr, wc_uint32 ucs)
 {
-  wc_uint32 v2; // edx
+  wc_uint32 code; // edx
   wc_wchar_t v4; // [esp+18h] [ebp-20h] BYREF
   wc_wchar_t cc; // [esp+24h] [ebp-14h] BYREF
   wc_table *t; // [esp+2Ch] [ebp-Ch]
@@ -71134,9 +70947,9 @@ wc_wchar_t *wc_ucs_to_johab(wc_wchar_t *retstr, wc_uint32 ucs)
     cc.code = wc_N_to_johab1(ucs - 44032);
     cc.ccs = 34831;
   }
-  v2 = cc.code;
+  code = cc.code;
   retstr->ccs = cc.ccs;
-  retstr->code = v2;
+  retstr->code = code;
   return retstr;
 }
 // 80BAB86: inconsistent function type and number of purged bytes
@@ -71144,15 +70957,12 @@ wc_wchar_t *wc_ucs_to_johab(wc_wchar_t *retstr, wc_uint32 ucs)
 //----- (080BAC4A) --------------------------------------------------------
 wc_uint32 __cdecl wc_johab1_to_N(wc_uint32 code)
 {
-  wc_uint32 result; // eax
-
   if ( johab1_N_map[0][(code >> 10) & 0x1F] && johab1_N_map[1][(code >> 5) & 0x1F] && johab1_N_map[2][code & 0x1F] )
-    result = johab1_N_map[2][code & 0x1F]
-           + 28 * (johab1_N_map[1][(code >> 5) & 0x1F] + 21 * johab1_N_map[0][(code >> 10) & 0x1F])
-           - 617;
+    return johab1_N_map[2][code & 0x1F]
+         + 28 * (johab1_N_map[1][(code >> 5) & 0x1F] + 21 * johab1_N_map[0][(code >> 10) & 0x1F])
+         - 617;
   else
-    result = -1;
-  return result;
+    return -1;
 }
 
 //----- (080BACD4) --------------------------------------------------------
@@ -71301,7 +71111,7 @@ wc_wchar_t *__userpurge wc_cs128w_to_johab@<eax>(wc_wchar_t *retstr, wc_wchar_t 
 Str __cdecl wc_conv_from_johab(Str is, wc_ces ces)
 {
   int v3; // eax
-  int v4; // eax
+  int length; // eax
   int state; // [esp+1Ch] [ebp-1Ch]
   wc_uchar *p; // [esp+20h] [ebp-18h]
   wc_uchar *ep; // [esp+24h] [ebp-14h]
@@ -71353,9 +71163,9 @@ Str __cdecl wc_conv_from_johab(Str is, wc_ces ces)
         default:
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
-          v4 = os->length;
-          os->ptr[v4] = *p;
-          os->length = v4 + 1;
+          length = os->length;
+          os->ptr[length] = *p;
+          os->length = length + 1;
           os->ptr[os->length] = 0;
           break;
       }
@@ -71366,12 +71176,12 @@ Str __cdecl wc_conv_from_johab(Str is, wc_ces ces)
     wtf_push_unknown(os, p - 1, 1u);
   return os;
 }
-// 80BB124: conditional instruction was optimized away because of '%state.4==0'
+// 80BB124: conditional instruction was optimized away because %state.4==0
 
 //----- (080BB2FB) --------------------------------------------------------
 void __cdecl wc_push_to_johab(Str os, wc_wchar_t cc, wc_status *st)
 {
-  int v3; // eax
+  int length; // eax
   int v4; // eax
   int v5; // eax
   wc_ccs v6; // eax
@@ -71421,15 +71231,15 @@ LABEL_24:
         {
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
-          v3 = os->length;
-          os->ptr[v3] = cc.code;
-          os->length = v3 + 1;
+          length = os->length;
+          os->ptr[length] = cc.code;
+          os->length = length + 1;
           os->ptr[os->length] = 0;
           return;
         }
         goto LABEL_24;
       }
-      wc_ksx1001_to_johab(&v7, (wc_wchar_t)__PAIR64__(cc.code, 33091));
+      wc_ksx1001_to_johab(&v7, cc);
       cc = v7;
     }
   }
@@ -71450,18 +71260,18 @@ LABEL_24:
 //----- (080BB538) --------------------------------------------------------
 Str __cdecl wc_char_conv_from_johab(wc_uchar c, wc_status *st)
 {
-  int v2; // eax
+  int state; // eax
   int v3; // eax
   Str v5; // eax
-  int v6; // edx
+  int length; // edx
 
   if ( st->state == -1 )
   {
     st->state = 0;
     os_2826 = Strnew_size(8);
   }
-  v2 = st->state;
-  switch ( v2 )
+  state = st->state;
+  switch ( state )
   {
     case 1:
       if ( (WC_JOHAB_MAP[c] & 0x10) == 0 )
@@ -71492,9 +71302,9 @@ LABEL_18:
         if ( os_2826->length + 1 >= os_2826->area_size )
           Strgrow(os_2826);
         v5 = os_2826;
-        v6 = os_2826->length;
-        os_2826->ptr[v6] = c;
-        v5->length = v6 + 1;
+        length = os_2826->length;
+        os_2826->ptr[length] = c;
+        v5->length = length + 1;
         os_2826->ptr[os_2826->length] = 0;
       }
       break;
@@ -71517,7 +71327,7 @@ void __cdecl wc_putc(char *c, FILE *f)
 {
   wc_ces v2; // ebx
   _Str *v3; // eax
-  void (*v4)(...); // ebx
+  void (*push_to)(...); // ebx
   wc_wchar_t v5; // [esp+14h] [ebp-14h] BYREF
   wc_uchar *p; // [esp+1Ch] [ebp-Ch] BYREF
 
@@ -71534,9 +71344,9 @@ void __cdecl wc_putc(char *c, FILE *f)
   Strclear(putc_str);
   while ( *p )
   {
-    v4 = putc_st.ces_info->push_to;
+    push_to = putc_st.ces_info->push_to;
     wtf_parse(&v5, &p);
-    v4(putc_str, v5.ccs, v5.code, &putc_st);
+    push_to(putc_str, v5.ccs, v5.code, &putc_st);
   }
   fwrite(putc_str->ptr, 1u, putc_str->length, f);
 }
@@ -71580,83 +71390,79 @@ int __cdecl map3_cmp(const void *a, const void *b)
 //----- (080BB8EF) --------------------------------------------------------
 int __cdecl map_range_cmp(const void *a, const void *b)
 {
-  int result; // eax
-
   if ( *(_WORD *)a < *(_WORD *)b )
-    result = -1;
+    return -1;
   else
-    result = *(_WORD *)a > *((_WORD *)b + 1);
-  return result;
+    return *(_WORD *)a > *((_WORD *)b + 1);
 }
 
 //----- (080BB922) --------------------------------------------------------
 int __cdecl map2_range_cmp(const void *a, const void *b)
 {
-  int result; // eax
-
   if ( *(_WORD *)a < *(_WORD *)b )
-    result = -1;
+    return -1;
   else
-    result = *(_WORD *)a >= *((_WORD *)b + 2);
-  return result;
+    return *(_WORD *)a >= *((_WORD *)b + 2);
 }
 
 //----- (080BB957) --------------------------------------------------------
 int __cdecl map3_range_cmp(const void *a, const void *b)
 {
-  int result; // eax
-
   if ( *(_WORD *)a < *(_WORD *)b )
-    result = -1;
+    return -1;
   else
-    result = *(_WORD *)a > *((_WORD *)b + 1);
-  return result;
+    return *(_WORD *)a > *((_WORD *)b + 1);
 }
 
 //----- (080BB98A) --------------------------------------------------------
 wc_map *__cdecl wc_map_search(wc_uint16 code, wc_map *map, size_t n)
 {
-  wc_uint16 codea[6]; // [esp+2Ch] [ebp-Ch] BYREF
+  __int16 codea[6]; // [esp+2Ch] [ebp-Ch] BYREF
 
   codea[0] = code;
   return (wc_map *)bsearch(codea, map, n, 4u, map_cmp);
 }
+// 80BB98A: using guessed type wc_uint16 code[6];
 
 //----- (080BB9C2) --------------------------------------------------------
 wc_map3 *__cdecl wc_map3_search(wc_uint16 c1, wc_uint16 c2, wc_map3 *map, size_t n)
 {
-  wc_uint32 code[3]; // [esp+3Ch] [ebp-Ch] BYREF
+  int code[3]; // [esp+3Ch] [ebp-Ch] BYREF
 
   code[0] = (c1 << 16) | c2;
   return (wc_map3 *)bsearch(code, map, n, 6u, map3_cmp);
 }
+// 80BB9C2: using guessed type wc_uint32 code[3];
 
 //----- (080BBA13) --------------------------------------------------------
 wc_map *__cdecl wc_map_range_search(wc_uint16 code, wc_map *map, int n)
 {
-  wc_uint16 codea[6]; // [esp+2Ch] [ebp-Ch] BYREF
+  __int16 codea[6]; // [esp+2Ch] [ebp-Ch] BYREF
 
   codea[0] = code;
   return (wc_map *)bsearch(codea, map, n, 4u, map_range_cmp);
 }
+// 80BBA13: using guessed type wc_uint16 code[6];
 
 //----- (080BBA4B) --------------------------------------------------------
 wc_map *__cdecl wc_map2_range_search(wc_uint16 code, wc_map *map, size_t n)
 {
-  wc_uint16 codea[6]; // [esp+2Ch] [ebp-Ch] BYREF
+  __int16 codea[6]; // [esp+2Ch] [ebp-Ch] BYREF
 
   codea[0] = code;
   return (wc_map *)bsearch(codea, map, n, 4u, map2_range_cmp);
 }
+// 80BBA4B: using guessed type wc_uint16 code[6];
 
 //----- (080BBA83) --------------------------------------------------------
 wc_map3 *__cdecl wc_map3_range_search(wc_uint16 code, wc_map3 *map, size_t n)
 {
-  wc_uint16 codea[6]; // [esp+2Ch] [ebp-Ch] BYREF
+  __int16 codea[6]; // [esp+2Ch] [ebp-Ch] BYREF
 
   codea[0] = code;
   return (wc_map3 *)bsearch(codea, map, n, 6u, map3_range_cmp);
 }
+// 80BBA83: using guessed type wc_uint16 code[6];
 
 //----- (080BBABC) --------------------------------------------------------
 wc_wchar_t *__userpurge wc_sjis_to_jis@<eax>(wc_wchar_t *retstr, wc_wchar_t cc)
@@ -71851,19 +71657,16 @@ wc_uint32 __cdecl wc_sjis_ext1_to_N(wc_uint32 c)
 //----- (080BBDFD) --------------------------------------------------------
 wc_uint32 __cdecl wc_sjis_ext2_to_N(wc_uint32 c)
 {
-  wc_uint32 result; // eax
-
   if ( (BYTE1(c) & 0x7Fu) - 53 > 4 )
-    result = -1;
+    return -1;
   else
-    result = (c & 0x7F) + 94 * (unsigned __int8)((BYTE1(c) & 0x7F) - 48) - 33;
-  return result;
+    return (c & 0x7F) + 94 * (unsigned __int8)((BYTE1(c) & 0x7F) - 48) - 33;
 }
 
 //----- (080BBE3A) --------------------------------------------------------
 Str __cdecl wc_conv_from_sjis(Str is, wc_ces ces)
 {
-  int v3; // eax
+  int length; // eax
   char v4; // al
   char v5; // al
   int state; // [esp+18h] [ebp-20h]
@@ -71951,9 +71754,9 @@ Str __cdecl wc_conv_from_sjis(Str is, wc_ces ces)
         default:
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
-          v3 = os->length;
-          os->ptr[v3] = *p;
-          os->length = v3 + 1;
+          length = os->length;
+          os->ptr[length] = *p;
+          os->length = length + 1;
           os->ptr[os->length] = 0;
           break;
       }
@@ -71964,13 +71767,13 @@ Str __cdecl wc_conv_from_sjis(Str is, wc_ces ces)
     wtf_push_unknown(os, p - 1, 1u);
   return os;
 }
-// 80BBEDE: conditional instruction was optimized away because of '%state.4==0'
-// 80BBEE8: conditional instruction was optimized away because of '%state.4==3'
+// 80BBEDE: conditional instruction was optimized away because %state.4==0
+// 80BBEE8: conditional instruction was optimized away because %state.4==3
 
 //----- (080BC1CA) --------------------------------------------------------
 Str __cdecl wc_conv_from_sjisx0213(Str is, wc_ces ces)
 {
-  int v3; // eax
+  int length; // eax
   char v4; // al
   char v5; // al
   char v6; // al
@@ -72082,9 +71885,9 @@ Str __cdecl wc_conv_from_sjisx0213(Str is, wc_ces ces)
         default:
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
-          v3 = os->length;
-          os->ptr[v3] = *p;
-          os->length = v3 + 1;
+          length = os->length;
+          os->ptr[length] = *p;
+          os->length = length + 1;
           os->ptr[os->length] = 0;
           break;
       }
@@ -72095,8 +71898,8 @@ Str __cdecl wc_conv_from_sjisx0213(Str is, wc_ces ces)
     wtf_push_unknown(os, p - 1, 1u);
   return os;
 }
-// 80BC26E: conditional instruction was optimized away because of '%state.4==0'
-// 80BC278: conditional instruction was optimized away because of '%state.4==3'
+// 80BC26E: conditional instruction was optimized away because %state.4==0
+// 80BC278: conditional instruction was optimized away because %state.4==3
 
 //----- (080BC591) --------------------------------------------------------
 void __cdecl wc_push_to_sjis(Str os, wc_wchar_t cc, wc_status *st)
@@ -72107,7 +71910,7 @@ void __cdecl wc_push_to_sjis(Str os, wc_wchar_t cc, wc_status *st)
   char v6; // al
   int v7; // eax
   int v8; // eax
-  int v9; // eax
+  int length; // eax
   int v10; // eax
   wc_ccs v11; // eax
   wc_wchar_t v12; // [esp+18h] [ebp-20h] BYREF
@@ -72136,9 +71939,9 @@ void __cdecl wc_push_to_sjis(Str os, wc_wchar_t cc, wc_status *st)
 LABEL_37:
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
-          v9 = os->length;
-          os->ptr[v9] = BYTE1(cc.code);
-          os->length = v9 + 1;
+          length = os->length;
+          os->ptr[length] = BYTE1(cc.code);
+          os->length = length + 1;
           os->ptr[os->length] = 0;
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
@@ -72240,7 +72043,7 @@ void __cdecl wc_push_to_sjisx0213(Str os, wc_wchar_t cc, wc_status *st)
   int v4; // eax
   char v5; // al
   char v6; // al
-  int v7; // eax
+  int length; // eax
   int v8; // eax
   char v9; // al
   int v10; // eax
@@ -72276,9 +72079,9 @@ LABEL_23:
           ub += v6;
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
-          v7 = os->length;
-          os->ptr[v7] = ub;
-          os->length = v7 + 1;
+          length = os->length;
+          os->ptr[length] = ub;
+          os->length = length + 1;
           os->ptr[os->length] = 0;
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
@@ -72393,10 +72196,10 @@ LABEL_49:
 //----- (080BCD67) --------------------------------------------------------
 Str __cdecl wc_char_conv_from_sjis(wc_uchar c, wc_status *st)
 {
-  int v2; // eax
+  int state; // eax
   Str result; // eax
   Str v4; // eax
-  int v5; // edx
+  int length; // edx
   char v6; // al
   char v7; // al
   int cc_4; // [esp+2Ch] [ebp-Ch]
@@ -72406,10 +72209,10 @@ Str __cdecl wc_char_conv_from_sjis(wc_uchar c, wc_status *st)
     st->state = 0;
     os_3288 = Strnew_size(8);
   }
-  v2 = st->state;
-  if ( v2 > 2 )
+  state = st->state;
+  if ( state > 2 )
   {
-    if ( v2 == 3 )
+    if ( state == 3 )
     {
       if ( (WC_SJIS_MAP[c] & 0x10) != 0 )
       {
@@ -72420,7 +72223,7 @@ Str __cdecl wc_char_conv_from_sjis(wc_uchar c, wc_status *st)
     }
     goto LABEL_34;
   }
-  if ( v2 >= 1 )
+  if ( state >= 1 )
   {
     if ( (WC_SJIS_MAP[c] & 0x10) != 0 )
     {
@@ -72452,7 +72255,7 @@ Str __cdecl wc_char_conv_from_sjis(wc_uchar c, wc_status *st)
     st->state = 0;
     goto LABEL_34;
   }
-  if ( v2 )
+  if ( state )
   {
 LABEL_34:
     st->state = -1;
@@ -72486,9 +72289,9 @@ LABEL_34:
       if ( os_3288->length + 1 >= os_3288->area_size )
         Strgrow(os_3288);
       v4 = os_3288;
-      v5 = os_3288->length;
-      os_3288->ptr[v5] = c;
-      v4->length = v5 + 1;
+      length = os_3288->length;
+      os_3288->ptr[length] = c;
+      v4->length = length + 1;
       os_3288->ptr[os_3288->length] = 0;
       goto LABEL_34;
   }
@@ -72498,10 +72301,10 @@ LABEL_34:
 //----- (080BD079) --------------------------------------------------------
 Str __cdecl wc_char_conv_from_sjisx0213(wc_uchar c, wc_status *st)
 {
-  int v2; // eax
+  int state; // eax
   Str result; // eax
   Str v4; // eax
-  int v5; // edx
+  int length; // edx
   char v6; // al
   char v7; // al
   char v8; // al
@@ -72513,10 +72316,10 @@ Str __cdecl wc_char_conv_from_sjisx0213(wc_uchar c, wc_status *st)
     st->state = 0;
     os_3413 = Strnew_size(8);
   }
-  v2 = st->state;
-  if ( v2 > 2 )
+  state = st->state;
+  if ( state > 2 )
   {
-    if ( v2 == 3 )
+    if ( state == 3 )
     {
       if ( (WC_SJIS_MAP[c] & 0x10) != 0 )
       {
@@ -72541,7 +72344,7 @@ Str __cdecl wc_char_conv_from_sjisx0213(wc_uchar c, wc_status *st)
     }
     goto LABEL_38;
   }
-  if ( v2 >= 1 )
+  if ( state >= 1 )
   {
     if ( (WC_SJIS_MAP[c] & 0x10) != 0 )
     {
@@ -72571,7 +72374,7 @@ Str __cdecl wc_char_conv_from_sjisx0213(wc_uchar c, wc_status *st)
     st->state = 0;
     goto LABEL_38;
   }
-  if ( v2 )
+  if ( state )
   {
 LABEL_38:
     st->state = -1;
@@ -72605,9 +72408,9 @@ LABEL_38:
       if ( os_3413->length + 1 >= os_3413->area_size )
         Strgrow(os_3413);
       v4 = os_3413;
-      v5 = os_3413->length;
-      os_3413->ptr[v5] = c;
-      v4->length = v5 + 1;
+      length = os_3413->length;
+      os_3413->ptr[length] = c;
+      v4->length = length + 1;
       os_3413->ptr[os_3413->length] = 0;
       goto LABEL_38;
   }
@@ -72649,7 +72452,7 @@ void __cdecl wc_input_init(wc_ces ces, wc_status *st)
 //----- (080BD4D7) --------------------------------------------------------
 void __cdecl wc_output_init(wc_ces ces, wc_status *st)
 {
-  wc_ccs v2; // eax
+  wc_ccs ccs; // eax
   wc_ccs v3; // eax
   unsigned int v4; // eax
   wc_table **v5; // ebx
@@ -72672,10 +72475,10 @@ void __cdecl wc_output_init(wc_ces ces, wc_status *st)
   st->ces_info = &WcCesInfo[(unsigned __int8)ces];
   gset = st->ces_info->gset;
   if ( (ces == 2099217 || ces == 2099218 || ces == 2099219) && WcOption.use_jisx0201 )
-    v2 = 330;
+    ccs = 330;
   else
-    v2 = gset->ccs;
-  st->g0_ccs = v2;
+    ccs = gset->ccs;
+  st->g0_ccs = ccs;
   if ( (ces == 2099217 || ces == 2099218 || ces == 2099219) && WcOption.use_jisc6226 )
     v3 = 33088;
   else
@@ -72931,15 +72734,14 @@ wc_wchar_t *__userpurge ucs_hkscs_conv@<eax>(wc_wchar_t *retstr, wc_ccs cs_0, wc
 wc_table *__cdecl wc_get_ucs_table(wc_ccs ccs)
 {
   wc_ccs v1; // eax
-  wc_table *result; // eax
 
   v1 = ccs & 0xFF00;
   if ( v1 == 2048 )
   {
     if ( (_BYTE)ccs && (unsigned __int8)ccs <= 0x28u )
-      result = (wc_table *)(16 * ((unsigned __int8)ccs - 1) + 135754432);
+      return (wc_table *)(16 * ((unsigned __int8)ccs - 1) + 135754432);
     else
-      result = 0;
+      return 0;
   }
   else if ( v1 > 0x800 )
   {
@@ -72949,16 +72751,14 @@ wc_table *__cdecl wc_get_ucs_table(wc_ccs ccs)
         return 0;
       case 0x8800u:
         if ( (_BYTE)ccs && (unsigned __int8)ccs <= 0x21u )
-          result = (wc_table *)(16 * ((unsigned __int8)ccs - 1) + 135755360);
+          return (wc_table *)(16 * ((unsigned __int8)ccs - 1) + 135755360);
         else
-          result = 0;
-        break;
+          return 0;
       case 0x8100u:
         if ( (unsigned __int8)ccs > 0x3Fu && (unsigned __int8)ccs <= 0x50u )
-          result = (wc_table *)(16 * ((unsigned __int8)ccs - 64) + 135755072);
+          return (wc_table *)(16 * ((unsigned __int8)ccs - 64) + 135755072);
         else
-          result = 0;
-        break;
+          return 0;
       default:
         return 0;
     }
@@ -72969,26 +72769,23 @@ wc_table *__cdecl wc_get_ucs_table(wc_ccs ccs)
     {
       case 0x200u:
         if ( (unsigned __int8)ccs > 0x3Fu && (unsigned __int8)ccs <= 0x66u )
-          result = (wc_table *)(16 * ((unsigned __int8)ccs - 64) + 135753792);
+          return (wc_table *)(16 * ((unsigned __int8)ccs - 64) + 135753792);
         else
-          result = 0;
-        break;
+          return 0;
       case 0x400u:
         return 0;
       case 0x100u:
         if ( (unsigned __int8)ccs > 0x3Fu && (unsigned __int8)ccs <= 0x54u )
-          result = (wc_table *)(16 * ((unsigned __int8)ccs - 64) + 135753440);
+          return (wc_table *)(16 * ((unsigned __int8)ccs - 64) + 135753440);
         else
-          result = 0;
-        break;
+          return 0;
       default:
         return 0;
     }
   }
-  return result;
 }
-// 80BDE0B: conditional instruction was optimized away because of '%f.4 in (40..FF)'
-// 80BDE33: conditional instruction was optimized away because of '%f.4 in (40..FF)'
+// 80BDE0B: conditional instruction was optimized away because %f.4 is in (40..FF)
+// 80BDE33: conditional instruction was optimized away because %f.4 is in (40..FF)
 
 //----- (080BDE9B) --------------------------------------------------------
 wc_wchar_t *__userpurge wc_ucs_to_any@<eax>(wc_wchar_t *retstr, wc_uint32 ucs, wc_table *t)
@@ -73038,9 +72835,9 @@ wc_uint32 __cdecl wc_any_to_ucs(wc_wchar_t cc)
   if ( v1 == 4096 )
   {
     if ( LOWORD(cc.ccs) == 4096 )
-      result = cc.code;
+      return cc.code;
     else
-      result = -1;
+      return -1;
   }
   else
   {
@@ -73074,17 +72871,16 @@ wc_uint32 __cdecl wc_any_to_ucs(wc_wchar_t cc)
         switch ( cc.ccs )
         {
           case 0x81Fu:
-            wc_tcvn57123_to_tcvn5712(&v11, (wc_wchar_t)__PAIR64__(cc.code, 2079));
+            wc_tcvn57123_to_tcvn5712(&v11, cc);
             return wc_any_to_ucs(v11);
           case 0x827u:
             return 8364;
           case 0x81Cu:
             map2 = wc_map_search(cc.code, cp12582_ucs_map, 0x78u);
             if ( map2 )
-              result = map2->code2;
+              return map2->code2;
             else
-              result = -1;
-            return result;
+              return -1;
         }
         map = pcs_ucs_map[f - 1];
         cc.code = cc.code & 0x7F;
@@ -73094,10 +72890,9 @@ LABEL_104:
         return -1;
       cc.code = map[cc.code];
       if ( cc.code )
-        result = cc.code;
+        return cc.code;
       else
-        result = -1;
-      return result;
+        return -1;
     }
     if ( v1 == 33024 )
     {
@@ -73161,10 +72956,9 @@ LABEL_104:
           cc.code = v4 + v5 + v6;
           map2 = wc_map_search(v4 + v5 + v6, johab2_ucs_map, 0x33u);
           if ( map2 )
-            result = map2->code2;
+            return map2->code2;
           else
-            result = -1;
-          return result;
+            return -1;
         case 0x8812u:
           if ( (cc.code & 0x7F7F) > 0x2120 )
             goto LABEL_76;
@@ -73195,7 +72989,7 @@ LABEL_84:
         case 0x8819u:
         case 0x881Au:
         case 0x881Bu:
-          goto LABEL_85;
+          return wc_gb18030_to_ucs(cc);
         case 0x881Cu:
           goto LABEL_87;
         case 0x881Du:
@@ -73237,29 +73031,23 @@ LABEL_63:
     switch ( LOWORD(cc.ccs) )
     {
       case 0x2001u:
-        result = cc.code & 0x1FFFFF;
-        break;
+        return cc.code & 0x1FFFFF;
       case 0x2002u:
-LABEL_85:
-        result = wc_gb18030_to_ucs(cc);
-        break;
+        return wc_gb18030_to_ucs(cc);
       case 0x2000u:
-        result = cc.code;
-        break;
+        return cc.code;
       default:
-        result = -1;
-        break;
+        return -1;
     }
   }
-  return result;
 }
-// 80BE25A: conditional instruction was optimized away because of '%f.4 in (40..FF)'
-// 80BE2AE: conditional instruction was optimized away because of '%f.4 in (40..FF)'
+// 80BE25A: conditional instruction was optimized away because %f.4 is in (40..FF)
+// 80BE2AE: conditional instruction was optimized away because %f.4 is in (40..FF)
 
 //----- (080BE7F3) --------------------------------------------------------
 wc_wchar_t *__userpurge wc_any_to_any@<eax>(wc_wchar_t *retstr, wc_wchar_t cc, wc_table *t)
 {
-  wc_uint32 v3; // edx
+  wc_uint32 code; // edx
   wc_uint32 v4; // edx
   wc_ccs v5; // eax
   wc_uint32 v6; // edx
@@ -73274,9 +73062,9 @@ wc_wchar_t *__userpurge wc_any_to_any@<eax>(wc_wchar_t *retstr, wc_wchar_t cc, w
     wc_ucs_to_any(&cc, ucs, t);
     if ( (cc.ccs & 0x4000) == 0 )
     {
-      v3 = cc.code;
+      code = cc.code;
       retstr->ccs = cc.ccs;
-      retstr->code = v3;
+      retstr->code = code;
       return retstr;
     }
     ucs = wc_ucs_to_fullwidth(ucs);
@@ -73307,7 +73095,7 @@ wc_wchar_t *__userpurge wc_any_to_any@<eax>(wc_wchar_t *retstr, wc_wchar_t cc, w
 //----- (080BE8DA) --------------------------------------------------------
 wc_wchar_t *__userpurge wc_ucs_to_any_list@<eax>(wc_wchar_t *retstr, wc_uint32 ucs, wc_table **tlist)
 {
-  wc_uint32 v3; // edx
+  wc_uint32 code; // edx
   wc_uint32 v4; // edx
   wc_wchar_t cc; // [esp+14h] [ebp-14h] BYREF
   wc_table **t; // [esp+1Ch] [ebp-Ch]
@@ -73321,9 +73109,9 @@ wc_wchar_t *__userpurge wc_ucs_to_any_list@<eax>(wc_wchar_t *retstr, wc_uint32 u
         wc_ucs_to_any(&cc, ucs, *t);
         if ( (cc.ccs & 0x4000) == 0 )
         {
-          v3 = cc.code;
+          code = cc.code;
           retstr->ccs = cc.ccs;
-          retstr->code = v3;
+          retstr->code = code;
           return retstr;
         }
       }
@@ -73342,15 +73130,15 @@ wc_wchar_t *__userpurge wc_any_to_any_ces@<eax>(wc_wchar_t *retstr, wc_wchar_t c
   wc_uint32 v3; // edx
   wc_uint32 v4; // edx
   wc_ccs v5; // eax
-  wc_uint32 v6; // edx
-  wc_table **v7; // eax
+  wc_uint32 code; // edx
+  wc_table **tlistw; // eax
   wc_uint32 v8; // edx
   wc_table **v9; // eax
   wc_uint32 v10; // edx
   wc_ccs v11; // eax
   wc_uint32 v12; // edx
   wc_uint32 v13; // edx
-  wc_table **v14; // eax
+  wc_table **tlist; // eax
   wc_uint32 v15; // edx
   wc_table **v16; // eax
   wc_uint32 v17; // edx
@@ -73393,16 +73181,16 @@ wc_wchar_t *__userpurge wc_any_to_any_ces@<eax>(wc_wchar_t *retstr, wc_wchar_t c
         v5 = 0x4000;
       cc.ccs = v5;
     }
-    v6 = cc.code;
+    code = cc.code;
     retstr->ccs = cc.ccs;
-    retstr->code = v6;
+    retstr->code = code;
     return retstr;
   }
   if ( is_wide )
-    v7 = st->tlistw;
+    tlistw = st->tlistw;
   else
-    v7 = st->tlist;
-  wc_ucs_to_any_list(&v21, ucs, v7);
+    tlistw = st->tlist;
+  wc_ucs_to_any_list(&v21, ucs, tlistw);
   cc = v21;
   if ( (v21.ccs & 0x4000) == 0 )
   {
@@ -73447,10 +73235,10 @@ wc_wchar_t *__userpurge wc_any_to_any_ces@<eax>(wc_wchar_t *retstr, wc_wchar_t c
     if ( ucs != -1 )
     {
       if ( is_wide )
-        v14 = st->tlistw;
+        tlist = st->tlistw;
       else
-        v14 = st->tlist;
-      wc_ucs_to_any_list(&v21, ucs, v14);
+        tlist = st->tlist;
+      wc_ucs_to_any_list(&v21, ucs, tlist);
       cc = v21;
       if ( (v21.ccs & 0x4000) == 0 )
       {
@@ -73504,10 +73292,10 @@ LABEL_49:
 wc_wchar_t *__userpurge wc_any_to_iso2022@<eax>(wc_wchar_t *retstr, wc_wchar_t cc, wc_status *st)
 {
   wc_uint32 v3; // edx
-  wc_table **v4; // eax
-  wc_uint32 v5; // edx
+  wc_table **tlistw; // eax
+  wc_uint32 code; // edx
   wc_uint32 v6; // edx
-  wc_table **v7; // eax
+  wc_table **tlist; // eax
   wc_uint32 v8; // edx
   wc_uint32 v9; // edx
   wc_table **v10; // eax
@@ -73529,15 +73317,15 @@ wc_wchar_t *__userpurge wc_any_to_iso2022@<eax>(wc_wchar_t *retstr, wc_wchar_t c
     if ( ucs != -1 )
     {
       if ( is_wide )
-        v4 = st->tlistw;
+        tlistw = st->tlistw;
       else
-        v4 = st->tlist;
-      wc_ucs_to_any_list(&cc, ucs, v4);
+        tlistw = st->tlist;
+      wc_ucs_to_any_list(&cc, ucs, tlistw);
       if ( (cc.ccs & 0x4000) == 0 )
       {
-        v5 = cc.code;
+        code = cc.code;
         retstr->ccs = cc.ccs;
-        retstr->code = v5;
+        retstr->code = code;
         return retstr;
       }
       if ( !WcOption.strict_iso2022 )
@@ -73558,10 +73346,10 @@ wc_wchar_t *__userpurge wc_any_to_iso2022@<eax>(wc_wchar_t *retstr, wc_wchar_t c
       if ( !WcOption.fix_width_conv )
       {
         if ( is_wide )
-          v7 = st->tlist;
+          tlist = st->tlist;
         else
-          v7 = st->tlistw;
-        wc_ucs_to_any_list(&v19, ucs, v7);
+          tlist = st->tlistw;
+        wc_ucs_to_any_list(&v19, ucs, tlist);
         cc = v19;
         if ( (v19.ccs & 0x4000) == 0 )
         {
@@ -73689,7 +73477,7 @@ wc_wchar_t *__userpurge wc_any_to_iso2022@<eax>(wc_wchar_t *retstr, wc_wchar_t c
 //----- (080BF0AF) --------------------------------------------------------
 wc_wchar_t *wc_ucs_to_iso2022(wc_wchar_t *retstr, wc_uint32 ucs)
 {
-  wc_uint32 v2; // edx
+  wc_uint32 code; // edx
   wc_uint32 v3; // edx
   wc_uint32 v4; // edx
   wc_wchar_t v6; // [esp+18h] [ebp-20h] BYREF
@@ -73707,9 +73495,9 @@ wc_wchar_t *wc_ucs_to_iso2022(wc_wchar_t *retstr, wc_uint32 ucs)
         wc_ucs_to_any(&cc, (unsigned __int16)ucs, t);
         if ( (cc.ccs & 0x4000) == 0 )
         {
-          v2 = cc.code;
+          code = cc.code;
           retstr->ccs = cc.ccs;
-          retstr->code = v2;
+          retstr->code = code;
           return retstr;
         }
       }
@@ -73738,13 +73526,13 @@ wc_wchar_t *wc_ucs_to_iso2022(wc_wchar_t *retstr, wc_uint32 ucs)
   retstr->code = v4;
   return retstr;
 }
-// 80BF210: conditional instruction was optimized away because of '%f.4==0'
+// 80BF210: conditional instruction was optimized away because %f.4==0
 // 80BF0AF: inconsistent function type and number of purged bytes
 
 //----- (080BF22D) --------------------------------------------------------
 wc_wchar_t *wc_ucs_to_iso2022w(wc_wchar_t *retstr, wc_uint32 ucs)
 {
-  wc_uint32 v2; // edx
+  wc_uint32 code; // edx
   wc_uint32 v3; // edx
   wc_wchar_t cc; // [esp+20h] [ebp-18h] BYREF
   int f; // [esp+28h] [ebp-10h]
@@ -73760,9 +73548,9 @@ wc_wchar_t *wc_ucs_to_iso2022w(wc_wchar_t *retstr, wc_uint32 ucs)
         wc_ucs_to_any(&cc, (unsigned __int16)ucs, t);
         if ( (cc.ccs & 0x4000) == 0 )
         {
-          v2 = cc.code;
+          code = cc.code;
           retstr->ccs = cc.ccs;
-          retstr->code = v2;
+          retstr->code = code;
           return retstr;
         }
       }
@@ -73775,7 +73563,7 @@ wc_wchar_t *wc_ucs_to_iso2022w(wc_wchar_t *retstr, wc_uint32 ucs)
   retstr->code = v3;
   return retstr;
 }
-// 80BF31B: conditional instruction was optimized away because of '%f.4==0'
+// 80BF31B: conditional instruction was optimized away because %f.4==0
 // 80BF22D: inconsistent function type and number of purged bytes
 
 //----- (080BF338) --------------------------------------------------------
@@ -73821,7 +73609,7 @@ wc_bool __cdecl wc_is_ucs_wide(wc_uint32 ucs)
     HIWORD(v3) = HIWORD(ucs);
     LOWORD(v3) = 0;
     if ( v3 != 196608 )
-      result = 0;
+      return 0;
   }
   return result;
 }
@@ -73841,7 +73629,6 @@ wc_bool __cdecl wc_is_ucs_hangul(wc_uint32 ucs)
 //----- (080BF491) --------------------------------------------------------
 wc_uint32 __cdecl wc_ucs_precompose(wc_uint32 ucs1, wc_uint32 ucs2)
 {
-  wc_uint32 result; // eax
   wc_map3 *map; // [esp+1Ch] [ebp-Ch]
 
   if ( WcOption.use_combining
@@ -73849,26 +73636,23 @@ wc_uint32 __cdecl wc_ucs_precompose(wc_uint32 ucs1, wc_uint32 ucs2)
     && ucs2 <= 0xFFFF
     && (map = wc_map3_search(ucs1, ucs2, ucs_precompose_map, 0x3DCu)) != 0 )
   {
-    result = map->code3;
+    return map->code3;
   }
   else
   {
-    result = -1;
+    return -1;
   }
-  return result;
 }
 
 //----- (080BF4F8) --------------------------------------------------------
 wc_uint32 __cdecl wc_ucs_to_fullwidth(wc_uint32 ucs)
 {
-  wc_uint32 result; // eax
   wc_map *map; // [esp+1Ch] [ebp-Ch]
 
   if ( ucs <= 0xFFFF && (map = wc_map_search(ucs, ucs_fullwidth_map, 0xEu)) != 0 )
-    result = map->code2;
+    return map->code2;
   else
-    result = -1;
-  return result;
+    return -1;
 }
 
 //----- (080BF541) --------------------------------------------------------
@@ -73892,21 +73676,18 @@ int __cdecl wc_ucs_put_tag(char *p)
 //----- (080BF5CD) --------------------------------------------------------
 char *__cdecl wc_ucs_get_tag(int ntag)
 {
-  char *result; // eax
-
   if ( ntag && ntag <= n_tag_map )
-    result = tag_map[ntag];
+    return tag_map[ntag];
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (080BF5F3) --------------------------------------------------------
 void __cdecl wtf_push_ucs(Str os, wc_uint32 ucs, wc_status *st)
 {
-  Str v3; // eax
+  Str tag; // eax
   int v4; // edx
-  int v5; // eax
+  int length; // eax
   int v6; // eax
   wc_ccs ccs; // [esp+1Ch] [ebp-Ch]
 
@@ -73937,9 +73718,9 @@ void __cdecl wtf_push_ucs(Str os, wc_uint32 ucs, wc_status *st)
     {
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
-      v5 = os->length;
-      os->ptr[v5] = ucs;
-      os->length = v5 + 1;
+      length = os->length;
+      os->ptr[length] = ucs;
+      os->length = length + 1;
       os->ptr[os->length] = 0;
     }
   }
@@ -73958,10 +73739,10 @@ void __cdecl wtf_push_ucs(Str os, wc_uint32 ucs, wc_status *st)
     {
       if ( st->tag->length + 1 >= st->tag->area_size )
         Strgrow(st->tag);
-      v3 = st->tag;
-      v4 = v3->length;
-      v3->ptr[v4] = ucs & 0x7F;
-      v3->length = v4 + 1;
+      tag = st->tag;
+      v4 = tag->length;
+      tag->ptr[v4] = ucs & 0x7F;
+      tag->length = v4 + 1;
       st->tag->ptr[st->tag->length] = 0;
     }
   }
@@ -74029,7 +73810,6 @@ wc_wchar_t *__userpurge wc_cs128w_to_uhc@<eax>(wc_wchar_t *retstr, wc_wchar_t cc
 wc_uint32 __cdecl wc_uhc_to_N(wc_uint32 c)
 {
   int v1; // eax
-  wc_uint32 result; // eax
   int v3; // eax
   int v4; // eax
 
@@ -74051,11 +73831,11 @@ wc_uint32 __cdecl wc_uhc_to_N(wc_uint32 c)
         {
           v4 = 71;
         }
-        result = 178 * BYTE1(c) + (unsigned __int8)c - v4 - 94 * (c >> 8) - 7826;
+        return 178 * BYTE1(c) + (unsigned __int8)c - v4 - 94 * (c >> 8) - 7826;
       }
       else
       {
-        result = c - 35838;
+        return c - 35838;
       }
     }
     else
@@ -74072,7 +73852,7 @@ wc_uint32 __cdecl wc_uhc_to_N(wc_uint32 c)
       {
         v3 = 71;
       }
-      result = 178 * BYTE1(c) + (unsigned __int8)c - v3 - 23056;
+      return 178 * BYTE1(c) + (unsigned __int8)c - v3 - 23056;
     }
   }
   else
@@ -74089,16 +73869,15 @@ wc_uint32 __cdecl wc_uhc_to_N(wc_uint32 c)
     {
       v1 = 71;
     }
-    result = 178 * BYTE1(c) + (unsigned __int8)c - v1 - 22962;
+    return 178 * BYTE1(c) + (unsigned __int8)c - v1 - 22962;
   }
-  return result;
 }
 
 //----- (080BFAE3) --------------------------------------------------------
 Str __cdecl wc_conv_from_uhc(Str is, wc_ces ces)
 {
   int v3; // eax
-  int v4; // eax
+  int length; // eax
   int uhc; // [esp+18h] [ebp-20h]
   int state; // [esp+1Ch] [ebp-1Ch]
   wc_uchar *p; // [esp+20h] [ebp-18h]
@@ -74149,9 +73928,9 @@ Str __cdecl wc_conv_from_uhc(Str is, wc_ces ces)
       {
         if ( os->length + 1 >= os->area_size )
           Strgrow(os);
-        v4 = os->length;
-        os->ptr[v4] = *p;
-        os->length = v4 + 1;
+        length = os->length;
+        os->ptr[length] = *p;
+        os->length = length + 1;
         os->ptr[os->length] = 0;
       }
     }
@@ -74161,13 +73940,13 @@ Str __cdecl wc_conv_from_uhc(Str is, wc_ces ces)
     wtf_push_unknown(os, p - 1, 1u);
   return os;
 }
-// 80BFB7E: conditional instruction was optimized away because of '%state.4==1'
+// 80BFB7E: conditional instruction was optimized away because %state.4==1
 
 //----- (080BFD21) --------------------------------------------------------
 void __cdecl wc_push_to_uhc(Str os, wc_wchar_t cc, wc_status *st)
 {
   int v3; // eax
-  int v4; // eax
+  int length; // eax
   int v5; // eax
   int v6; // eax
   int v7; // eax
@@ -74201,9 +73980,9 @@ void __cdecl wc_push_to_uhc(Str os, wc_wchar_t cc, wc_status *st)
         case 0x8143u:
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
-          v4 = os->length;
-          os->ptr[v4] = BYTE1(cc.code) | 0x80;
-          os->length = v4 + 1;
+          length = os->length;
+          os->ptr[length] = BYTE1(cc.code) | 0x80;
+          os->length = length + 1;
           os->ptr[os->length] = 0;
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
@@ -74253,10 +74032,10 @@ void __cdecl wc_push_to_uhc(Str os, wc_wchar_t cc, wc_status *st)
 //----- (080BFFD6) --------------------------------------------------------
 Str __cdecl wc_char_conv_from_uhc(wc_uchar c, wc_status *st)
 {
-  int v2; // eax
+  int state; // eax
   int v3; // eax
   Str v5; // eax
-  int v6; // edx
+  int length; // edx
   int uhc; // [esp+2Ch] [ebp-Ch]
 
   if ( st->state == -1 )
@@ -74264,10 +74043,10 @@ Str __cdecl wc_char_conv_from_uhc(wc_uchar c, wc_status *st)
     st->state = 0;
     os_2735 = Strnew_size(8);
   }
-  v2 = st->state;
-  if ( v2 )
+  state = st->state;
+  if ( state )
   {
-    if ( v2 == 1 && (WC_UHC_MAP[c] & 4) != 0 )
+    if ( state == 1 && (WC_UHC_MAP[c] & 4) != 0 )
     {
       uhc = (uhcu_2736 << 8) | c;
       if ( uhcu_2736 <= 0xA0u || c <= 0xA0u || uhc == 41702 || uhc == 41703 )
@@ -74290,9 +74069,9 @@ Str __cdecl wc_char_conv_from_uhc(wc_uchar c, wc_status *st)
       if ( os_2735->length + 1 >= os_2735->area_size )
         Strgrow(os_2735);
       v5 = os_2735;
-      v6 = os_2735->length;
-      os_2735->ptr[v6] = c;
-      v5->length = v6 + 1;
+      length = os_2735->length;
+      os_2735->ptr[length] = c;
+      v5->length = length + 1;
       os_2735->ptr[os_2735->length] = 0;
     }
   }
@@ -74305,7 +74084,7 @@ Str __cdecl wc_conv_from_utf7(Str is, wc_ces ces)
 {
   int v3; // eax
   int v4; // eax
-  int v5; // eax
+  int length; // eax
   wc_status st; // [esp+18h] [ebp-60h] BYREF
   wc_uint32 high; // [esp+54h] [ebp-24h]
   wc_uint32 b; // [esp+58h] [ebp-20h]
@@ -74404,9 +74183,9 @@ LABEL_37:
 LABEL_40:
         if ( os->length + 1 >= os->area_size )
           Strgrow(os);
-        v5 = os->length;
-        os->ptr[v5] = *p;
-        os->length = v5 + 1;
+        length = os->length;
+        os->ptr[length] = *p;
+        os->length = length + 1;
         os->ptr[os->length] = 0;
         break;
       default:
@@ -74425,7 +74204,7 @@ void __cdecl wc_push_ucs_to_utf7(Str os, wc_uint32 ucs, wc_status *st)
   wc_uint32 v3; // eax
   wc_uint32 v4; // eax
   int v5; // eax
-  int v6; // eax
+  int length; // eax
   int v7; // eax
   int v8; // eax
   int v9; // eax
@@ -74461,9 +74240,9 @@ LABEL_12:
     {
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
-      v6 = os->length;
-      os->ptr[v6] = base64_c_map[st->base];
-      os->length = v6 + 1;
+      length = os->length;
+      os->ptr[length] = base64_c_map[st->base];
+      os->length = length + 1;
       os->ptr[os->length] = 0;
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
@@ -74600,7 +74379,7 @@ int __cdecl wc_push_tag_to_utf7(Str os, int ntag, wc_status *st)
 void __cdecl wc_push_to_utf7(Str os, wc_wchar_t cc, wc_status *st)
 {
   wc_ccs v3; // eax
-  wc_uint32 v4; // edx
+  wc_uint32 code; // edx
   wc_ccs v5; // eax
   char *p; // [esp+1Ch] [ebp-Ch]
   char *pa; // [esp+1Ch] [ebp-Ch]
@@ -74623,9 +74402,9 @@ void __cdecl wc_push_to_utf7(Str os, wc_wchar_t cc, wc_status *st)
       {
         if ( st->ntag )
           st->ntag = wc_push_tag_to_utf7(os, 0, st);
-        v4 = cc.code;
-        LOBYTE(v4) = LOBYTE(cc.code) | 0x80;
-        wc_push_ucs_to_utf7(os, v4, st);
+        code = cc.code;
+        LOBYTE(code) = LOBYTE(cc.code) | 0x80;
+        wc_push_ucs_to_utf7(os, code, st);
         return;
       }
       if ( LOWORD(cc.ccs) == 4096 || LOWORD(cc.ccs) == 322 )
@@ -74684,7 +74463,7 @@ LABEL_40:
 //----- (080C0D72) --------------------------------------------------------
 void __cdecl wc_push_to_utf7_end(Str os, wc_status *st)
 {
-  int v2; // eax
+  int length; // eax
   int v3; // eax
 
   if ( st->ntag )
@@ -74695,9 +74474,9 @@ void __cdecl wc_push_to_utf7_end(Str os, wc_status *st)
     {
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
-      v2 = os->length;
-      os->ptr[v2] = base64_c_map[st->base];
-      os->length = v2 + 1;
+      length = os->length;
+      os->ptr[length] = base64_c_map[st->base];
+      os->length = length + 1;
       os->ptr[os->length] = 0;
     }
     if ( os->length + 1 >= os->area_size )
@@ -74712,11 +74491,11 @@ void __cdecl wc_push_to_utf7_end(Str os, wc_status *st)
 //----- (080C0E5E) --------------------------------------------------------
 Str __cdecl wc_char_conv_from_utf7(wc_uchar c, wc_status *st)
 {
-  int v2; // eax
+  int state; // eax
   int v4; // eax
   int v5; // eax
   Str v6; // eax
-  int v7; // edx
+  int length; // edx
   wc_uint32 b; // [esp+2Ch] [ebp-Ch]
 
   if ( st->state == -1 )
@@ -74724,8 +74503,8 @@ Str __cdecl wc_char_conv_from_utf7(wc_uchar c, wc_status *st)
     st->state = 0;
     os_2932 = Strnew_size(8);
   }
-  v2 = st->state;
-  if ( v2 == 1 )
+  state = st->state;
+  if ( state == 1 )
   {
     if ( c == 45 )
     {
@@ -74734,9 +74513,9 @@ Str __cdecl wc_char_conv_from_utf7(wc_uchar c, wc_status *st)
       return os_2932;
     }
   }
-  else if ( v2 != 2 )
+  else if ( state != 2 )
   {
-    if ( !v2 && c == 43 )
+    if ( !state && c == 43 )
     {
       st->state = 1;
       st->shift = 16;
@@ -74774,9 +74553,9 @@ LABEL_32:
       if ( os_2932->length + 1 >= os_2932->area_size )
         Strgrow(os_2932);
       v6 = os_2932;
-      v7 = os_2932->length;
-      os_2932->ptr[v7] = c;
-      v6->length = v7 + 1;
+      length = os_2932->length;
+      os_2932->ptr[length] = c;
+      v6->length = length + 1;
       os_2932->ptr[os_2932->length] = 0;
       goto LABEL_36;
     }
@@ -74819,8 +74598,6 @@ LABEL_32:
 //----- (080C117C) --------------------------------------------------------
 size_t __cdecl wc_ucs_to_utf8(wc_uint32 ucs, wc_uchar *utf8)
 {
-  size_t result; // eax
-
   if ( ucs > 0x7F )
   {
     if ( ucs > 0x7FF )
@@ -74834,7 +74611,7 @@ size_t __cdecl wc_ucs_to_utf8(wc_uint32 ucs, wc_uchar *utf8)
             if ( (ucs & 0x80000000) != 0 )
             {
               *utf8 = 0;
-              result = 0;
+              return 0;
             }
             else
             {
@@ -74845,7 +74622,7 @@ size_t __cdecl wc_ucs_to_utf8(wc_uint32 ucs, wc_uchar *utf8)
               utf8[4] = (ucs >> 6) & 0x3F | 0x80;
               utf8[5] = ucs & 0x3F | 0x80;
               utf8[6] = 0;
-              result = 6;
+              return 6;
             }
           }
           else
@@ -74856,7 +74633,7 @@ size_t __cdecl wc_ucs_to_utf8(wc_uint32 ucs, wc_uchar *utf8)
             utf8[3] = (ucs >> 6) & 0x3F | 0x80;
             utf8[4] = ucs & 0x3F | 0x80;
             utf8[5] = 0;
-            result = 5;
+            return 5;
           }
         }
         else
@@ -74866,7 +74643,7 @@ size_t __cdecl wc_ucs_to_utf8(wc_uint32 ucs, wc_uchar *utf8)
           utf8[2] = (ucs >> 6) & 0x3F | 0x80;
           utf8[3] = ucs & 0x3F | 0x80;
           utf8[4] = 0;
-          result = 4;
+          return 4;
         }
       }
       else
@@ -74875,7 +74652,7 @@ size_t __cdecl wc_ucs_to_utf8(wc_uint32 ucs, wc_uchar *utf8)
         utf8[1] = (ucs >> 6) & 0x3F | 0x80;
         utf8[2] = ucs & 0x3F | 0x80;
         utf8[3] = 0;
-        result = 3;
+        return 3;
       }
     }
     else
@@ -74883,16 +74660,15 @@ size_t __cdecl wc_ucs_to_utf8(wc_uint32 ucs, wc_uchar *utf8)
       *utf8 = (ucs >> 6) | 0xC0;
       utf8[1] = ucs & 0x3F | 0x80;
       utf8[2] = 0;
-      result = 2;
+      return 2;
     }
   }
   else
   {
     *utf8 = ucs;
     utf8[1] = 0;
-    result = 1;
+    return 1;
   }
-  return result;
 }
 
 //----- (080C13A7) --------------------------------------------------------
@@ -74943,7 +74719,7 @@ LABEL_14:
 //----- (080C15E5) --------------------------------------------------------
 Str __cdecl wc_conv_from_utf8(Str is, wc_ces ces)
 {
-  int v3; // eax
+  int length; // eax
   wc_status st; // [esp+14h] [ebp-64h] BYREF
   wc_uint32 ucs; // [esp+50h] [ebp-28h]
   size_t next; // [esp+54h] [ebp-24h]
@@ -75009,9 +74785,9 @@ Str __cdecl wc_conv_from_utf8(Str is, wc_ces ces)
         case 8u:
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
-          v3 = os->length;
-          os->ptr[v3] = *p;
-          os->length = v3 + 1;
+          length = os->length;
+          os->ptr[length] = *p;
+          os->length = length + 1;
           os->ptr[os->length] = 0;
           break;
         default:
@@ -75062,8 +74838,8 @@ int __cdecl wc_push_tag_to_utf8(Str os, int ntag)
 //----- (080C196D) --------------------------------------------------------
 void __cdecl wc_push_to_utf8(Str os, wc_wchar_t cc, wc_status *st)
 {
-  int v3; // eax
-  wc_uint32 v4; // eax
+  int length; // eax
+  wc_uint32 code; // eax
   wc_ccs v5; // eax
 
   while ( 1 )
@@ -75084,9 +74860,9 @@ LABEL_16:
         case 0x241u:
           if ( st->ntag )
             st->ntag = wc_push_tag_to_utf8(os, 0);
-          v4 = cc.code;
-          LOBYTE(v4) = LOBYTE(cc.code) | 0x80;
-          wc_ucs_to_utf8(v4, utf8_buf);
+          code = cc.code;
+          LOBYTE(code) = LOBYTE(cc.code) | 0x80;
+          wc_ucs_to_utf8(code, utf8_buf);
           Strcat_charp(os, (char *)utf8_buf);
           return;
         case 0x1000u:
@@ -75096,9 +74872,9 @@ LABEL_16:
             st->ntag = wc_push_tag_to_utf8(os, 0);
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
-          v3 = os->length;
-          os->ptr[v3] = cc.code & 0x7F;
-          os->length = v3 + 1;
+          length = os->length;
+          os->ptr[length] = cc.code & 0x7F;
+          os->length = length + 1;
           os->ptr[os->length] = 0;
           return;
       }
@@ -75156,9 +74932,9 @@ void __cdecl wc_push_to_utf8_end(Str os, wc_status *st)
 //----- (080C1C6F) --------------------------------------------------------
 Str __cdecl wc_char_conv_from_utf8(wc_uchar c, wc_status *st)
 {
-  int v2; // eax
+  int state; // eax
   Str v3; // eax
-  int v4; // edx
+  int length; // edx
   size_t v5; // eax
   size_t v7; // eax
   wc_uint32 ucs; // [esp+2Ch] [ebp-Ch]
@@ -75171,10 +74947,10 @@ Str __cdecl wc_char_conv_from_utf8(wc_uchar c, wc_status *st)
     st->ntag = 0;
     nbuf_2859 = 0;
   }
-  v2 = st->state;
-  if ( v2 )
+  state = st->state;
+  if ( state )
   {
-    if ( v2 == 1 && !WC_UTF8_MAP[c] )
+    if ( state == 1 && !WC_UTF8_MAP[c] )
     {
       v7 = nbuf_2859;
       buf_2858[nbuf_2859] = c;
@@ -75207,9 +74983,9 @@ Str __cdecl wc_char_conv_from_utf8(wc_uchar c, wc_status *st)
       if ( os_2857->length + 1 >= os_2857->area_size )
         Strgrow(os_2857);
       v3 = os_2857;
-      v4 = os_2857->length;
-      os_2857->ptr[v4] = c;
-      v3->length = v4 + 1;
+      length = os_2857->length;
+      os_2857->ptr[length] = c;
+      v3->length = length + 1;
       os_2857->ptr[os_2857->length] = 0;
     }
   }
@@ -75220,20 +74996,17 @@ Str __cdecl wc_char_conv_from_utf8(wc_uchar c, wc_status *st)
 //----- (080C1E74) --------------------------------------------------------
 wc_uint32 __cdecl wc_tcvn5712_precompose(wc_uchar c1, wc_uchar c2)
 {
-  wc_uint32 result; // eax
-
   if ( tcvn5712_precompose_map[c1] == 1 && tcvn5712_precompose_map[c2] == 2 )
-    result = (c1 << 8) | c2;
+    return (c1 << 8) | c2;
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (080C1EBC) --------------------------------------------------------
 wc_wchar_t *__userpurge wc_tcvn57123_to_tcvn5712@<eax>(wc_wchar_t *retstr, wc_wchar_t cc)
 {
   wc_ccs v2; // eax
-  wc_uint16 v3; // ax
+  wc_uint16 code2; // ax
   wc_map *map; // [esp+1Ch] [ebp-Ch]
 
   map = wc_map_search(cc.code & 0x7F7F, tcvn57123_tcvn5712_map, 0x78u);
@@ -75244,9 +75017,9 @@ wc_wchar_t *__userpurge wc_tcvn57123_to_tcvn5712@<eax>(wc_wchar_t *retstr, wc_wc
     else
       v2 = 2078;
     cc.ccs = v2;
-    v3 = map->code2;
-    LOBYTE(v3) = v3 | 0x80;
-    cc.code = v3;
+    code2 = map->code2;
+    LOBYTE(code2) = code2 | 0x80;
+    cc.code = code2;
   }
   else
   {
@@ -75259,19 +75032,16 @@ wc_wchar_t *__userpurge wc_tcvn57123_to_tcvn5712@<eax>(wc_wchar_t *retstr, wc_wc
 //----- (080C1F3B) --------------------------------------------------------
 wc_uint32 __cdecl wc_cp1258_precompose(wc_uchar c1, wc_uchar c2)
 {
-  wc_uint32 result; // eax
-
   if ( cp1258_precompose_map[c1] == 1 && cp1258_precompose_map[c2] == 2 )
-    result = (c1 << 8) | c2;
+    return (c1 << 8) | c2;
   else
-    result = 0;
-  return result;
+    return 0;
 }
 
 //----- (080C1F83) --------------------------------------------------------
 Str __cdecl wc_conv_from_viet(Str is, wc_ces ces)
 {
-  int v3; // eax
+  int length; // eax
   wc_uint8 *map; // [esp+14h] [ebp-24h]
   wc_ccs ccs2; // [esp+18h] [ebp-20h]
   wc_ccs ccs1; // [esp+1Ch] [ebp-1Ch]
@@ -75317,9 +75087,9 @@ Str __cdecl wc_conv_from_viet(Str is, wc_ces ces)
       {
         if ( os->length + 1 >= os->area_size )
           Strgrow(os);
-        v3 = os->length;
-        os->ptr[v3] = *p;
-        os->length = v3 + 1;
+        length = os->length;
+        os->ptr[length] = *p;
+        os->length = length + 1;
         os->ptr[os->length] = 0;
       }
     }
@@ -75335,8 +75105,8 @@ Str __cdecl wc_conv_from_viet(Str is, wc_ces ces)
 //----- (080C2164) --------------------------------------------------------
 void __cdecl wc_push_to_viet(Str os, wc_wchar_t cc, wc_status *st)
 {
-  wc_ces v3; // eax
-  int v4; // eax
+  wc_ces id; // eax
+  int length; // eax
   int v5; // eax
   int v6; // eax
   int v7; // eax
@@ -75352,27 +75122,27 @@ void __cdecl wc_push_to_viet(Str os, wc_wchar_t cc, wc_status *st)
   ccs2 = 0;
   ccs3 = 0;
   map = 0;
-  v3 = st->ces_info->id;
-  if ( v3 == 1066050 )
+  id = st->ces_info->id;
+  if ( id == 1066050 )
   {
     map = wc_c0_tcvn57122_map;
     ccs2 = st->ces_info->gset[2].ccs;
     ccs3 = st->ces_info->gset[3].ccs;
   }
-  else if ( v3 > 0x104442 )
+  else if ( id > 0x104442 )
   {
-    if ( v3 == 1066051 )
+    if ( id == 1066051 )
     {
       map = wc_c0_viscii112_map;
       ccs2 = st->ces_info->gset[2].ccs;
     }
-    else if ( v3 == 1066052 )
+    else if ( id == 1066052 )
     {
       map = wc_c0_vps2_map;
       ccs2 = st->ces_info->gset[2].ccs;
     }
   }
-  else if ( v3 == 1049665 )
+  else if ( id == 1049665 )
   {
     ccs3 = st->ces_info->gset[2].ccs;
   }
@@ -75382,9 +75152,9 @@ void __cdecl wc_push_to_viet(Str os, wc_wchar_t cc, wc_status *st)
     {
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
-      v4 = os->length;
-      os->ptr[v4] = LOBYTE(cc.code) | 0x80;
-      os->length = v4 + 1;
+      length = os->length;
+      os->ptr[length] = LOBYTE(cc.code) | 0x80;
+      os->length = length + 1;
       os->ptr[os->length] = 0;
       return;
     }
@@ -75464,15 +75234,15 @@ void __cdecl wc_push_to_viet(Str os, wc_wchar_t cc, wc_status *st)
 //----- (080C250D) --------------------------------------------------------
 Str __cdecl wc_char_conv_from_viet(wc_uchar c, wc_status *st)
 {
-  wc_ces v2; // eax
-  int v3; // eax
+  wc_ces id; // eax
+  int length; // eax
   wc_uint8 *map; // [esp+28h] [ebp-10h]
   Str os; // [esp+2Ch] [ebp-Ch]
 
   os = Strnew_size(1);
   map = 0;
-  v2 = st->ces_info->id;
-  switch ( v2 )
+  id = st->ces_info->id;
+  switch ( id )
   {
     case 0x104443u:
       map = wc_c0_viscii112_map;
@@ -75494,9 +75264,9 @@ Str __cdecl wc_char_conv_from_viet(wc_uchar c, wc_status *st)
     {
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
-      v3 = os->length;
-      os->ptr[v3] = c;
-      os->length = v3 + 1;
+      length = os->length;
+      os->ptr[length] = c;
+      os->length = length + 1;
       os->ptr[os->length] = 0;
     }
   }
@@ -75579,7 +75349,7 @@ size_t __cdecl wtf_len(wc_uchar *p)
 //----- (080C27FF) --------------------------------------------------------
 void __cdecl wtf_push(Str os, wc_ccs ccs, wc_uint32 code)
 {
-  int v3; // eax
+  int length; // eax
   int v4; // eax
   unsigned int v5; // eax
   char v6; // dl
@@ -75601,9 +75371,9 @@ void __cdecl wtf_push(Str os, wc_ccs ccs, wc_uint32 code)
   {
     if ( osa->length + 1 >= osa->area_size )
       Strgrow(osa);
-    v3 = osa->length;
-    osa->ptr[v3] = code & 0x7F;
-    osa->length = v3 + 1;
+    length = osa->length;
+    osa->ptr[length] = code & 0x7F;
+    osa->length = length + 1;
     osa->ptr[osa->length] = 0;
     return;
   }
@@ -75884,7 +75654,7 @@ LABEL_29:
 //----- (080C30CF) --------------------------------------------------------
 void __cdecl wtf_push_unknown(Str os, wc_uchar *p, size_t len)
 {
-  int v3; // eax
+  int length; // eax
 
   while ( len-- != 0 )
   {
@@ -75892,9 +75662,9 @@ void __cdecl wtf_push_unknown(Str os, wc_uchar *p, size_t len)
     {
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
-      v3 = os->length;
-      os->ptr[v3] = *p;
-      os->length = v3 + 1;
+      length = os->length;
+      os->ptr[length] = *p;
+      os->length = length + 1;
       os->ptr[os->length] = 0;
     }
     else
@@ -76041,8 +75811,8 @@ LABEL_29:
   }
   return retstr;
 }
-// 80C3297: conditional instruction was optimized away because of 'eax.4 in (8201..FFFF)'
-// 80C32A2: conditional instruction was optimized away because of 'eax.4 in (8201..FFFF)'
+// 80C3297: conditional instruction was optimized away because eax.4 is in (8201..FFFF)
+// 80C32A2: conditional instruction was optimized away because eax.4 is in (8201..FFFF)
 // 80C316B: inconsistent function type and number of purged bytes
 
 //----- (080C34FA) --------------------------------------------------------
@@ -76050,7 +75820,7 @@ wc_wchar_t *wtf_parse(wc_wchar_t *retstr, wc_uchar **p)
 {
   wc_uchar *v2; // eax
   wc_uint32 v3; // edx
-  wc_uint32 v4; // edx
+  wc_uint32 code; // edx
   wc_uint32 v5; // edx
   wc_uint32 v6; // eax
   wc_uint32 v7; // eax
@@ -76084,9 +75854,9 @@ wc_wchar_t *wtf_parse(wc_wchar_t *retstr, wc_uchar **p)
       {
         cc2.ccs = 2076;
         *p = q[0];
-        v4 = cc2.code;
+        code = cc2.code;
         retstr->ccs = cc2.ccs;
-        retstr->code = v4;
+        retstr->code = code;
         return retstr;
       }
     }
@@ -76175,7 +75945,6 @@ wc_uint32 __cdecl wtf_get_code(wc_uchar *p)
 //----- (080C3847) --------------------------------------------------------
 wc_bool __cdecl wtf_is_hangul(wc_uchar *p)
 {
-  wc_bool result; // al
   wc_uchar f; // [esp+1Fh] [ebp-9h]
   wc_uchar *pa; // [esp+30h] [ebp+8h]
   wc_uchar *pb; // [esp+30h] [ebp+8h]
@@ -76187,7 +75956,7 @@ wc_bool __cdecl wtf_is_hangul(wc_uchar *p)
   if ( *p == 0x87 )
   {
     f = p[1] & 0x7F;
-    result = f == 16 || f == 17 || f == 18 || f == 29 || f == 30;
+    return f == 16 || f == 17 || f == 18 || f == 29 || f == 30;
   }
   else
   {
@@ -76201,11 +75970,10 @@ wc_bool __cdecl wtf_is_hangul(wc_uchar *p)
     {
       pb = p + 1;
       if ( (*pb & 0x7F) >> 4 == 1 )
-        return wc_is_ucs_hangul((((pb[3] & 0x7F) << 7) | ((pb[2] & 0x7F) << 14) | ((pb[1] & 0x7F) << 21) | (*pb << 28) | pb[4] & 0x7F) & 0x1FFFFF);
+        return wc_is_ucs_hangul(((pb[3] & 0x7F) << 7) | ((pb[2] & 0x7F) << 14) & 0x1FFFFF | pb[4] & 0x7F);
     }
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (080C39F2) --------------------------------------------------------
@@ -76292,7 +76060,7 @@ wc_wchar_t *__userpurge wc_cs94w_to_big5@<eax>(wc_wchar_t *retstr, wc_wchar_t cc
 Str __cdecl wc_conv_from_big5(Str is, wc_ces ces)
 {
   int v3; // eax
-  int v4; // eax
+  int length; // eax
   int state; // [esp+1Ch] [ebp-1Ch]
   wc_uchar *p; // [esp+20h] [ebp-18h]
   wc_uchar *ep; // [esp+24h] [ebp-14h]
@@ -76334,9 +76102,9 @@ Str __cdecl wc_conv_from_big5(Str is, wc_ces ces)
       {
         if ( os->length + 1 >= os->area_size )
           Strgrow(os);
-        v4 = os->length;
-        os->ptr[v4] = *p;
-        os->length = v4 + 1;
+        length = os->length;
+        os->ptr[length] = *p;
+        os->length = length + 1;
         os->ptr[os->length] = 0;
       }
     }
@@ -76346,12 +76114,12 @@ Str __cdecl wc_conv_from_big5(Str is, wc_ces ces)
     wtf_push_unknown(os, p - 1, 1u);
   return os;
 }
-// 80C3D4F: conditional instruction was optimized away because of '%state.4==1'
+// 80C3D4F: conditional instruction was optimized away because %state.4==1
 
 //----- (080C3E9C) --------------------------------------------------------
 void __cdecl wc_push_to_big5(Str os, wc_wchar_t cc, wc_status *st)
 {
-  int v3; // eax
+  int length; // eax
   int v4; // eax
   int v5; // eax
   wc_ccs v6; // eax
@@ -76379,9 +76147,9 @@ void __cdecl wc_push_to_big5(Str os, wc_wchar_t cc, wc_status *st)
       {
         if ( os->length + 1 >= os->area_size )
           Strgrow(os);
-        v3 = os->length;
-        os->ptr[v3] = cc.code;
-        os->length = v3 + 1;
+        length = os->length;
+        os->ptr[length] = cc.code;
+        os->length = length + 1;
         os->ptr[os->length] = 0;
         return;
       }
@@ -76423,20 +76191,20 @@ void __cdecl wc_push_to_big5(Str os, wc_wchar_t cc, wc_status *st)
 //----- (080C40A0) --------------------------------------------------------
 Str __cdecl wc_char_conv_from_big5(wc_uchar c, wc_status *st)
 {
-  int v2; // eax
+  int state; // eax
   int v3; // eax
   Str v5; // eax
-  int v6; // edx
+  int length; // edx
 
   if ( st->state == -1 )
   {
     st->state = 0;
     os_2633 = Strnew_size(8);
   }
-  v2 = st->state;
-  if ( v2 )
+  state = st->state;
+  if ( state )
   {
-    if ( v2 == 1 && (WC_BIG5_MAP[c] & 4) != 0 )
+    if ( state == 1 && (WC_BIG5_MAP[c] & 4) != 0 )
       wtf_push(os_2633, 0x8801u, c | (big5u_2634 << 8));
   }
   else
@@ -76453,9 +76221,9 @@ Str __cdecl wc_char_conv_from_big5(wc_uchar c, wc_status *st)
       if ( os_2633->length + 1 >= os_2633->area_size )
         Strgrow(os_2633);
       v5 = os_2633;
-      v6 = os_2633->length;
-      os_2633->ptr[v6] = c;
-      v5->length = v6 + 1;
+      length = os_2633->length;
+      os_2633->ptr[length] = c;
+      v5->length = length + 1;
       os_2633->ptr[os_2633->length] = 0;
     }
   }
@@ -76550,13 +76318,10 @@ wc_wchar_t *__userpurge wc_cs128w_to_gbk_ext@<eax>(wc_wchar_t *retstr, wc_wchar_
 //----- (080C446B) --------------------------------------------------------
 wc_ccs __cdecl wc_gbk_or_gbk_ext(wc_uint16 code)
 {
-  wc_ccs result; // eax
-
   if ( wc_map3_range_search(code, gbk_ext_ucs_map, 0x6Eu) )
-    result = 34841;
+    return 34841;
   else
-    result = 34838;
-  return result;
+    return 34838;
 }
 
 //----- (080C44A6) --------------------------------------------------------
@@ -76565,7 +76330,6 @@ wc_uint32 __cdecl wc_gb18030_to_ucs(wc_wchar_t cc)
   int v1; // eax
   int v2; // ecx
   int v3; // eax
-  wc_uint32 result; // eax
   int max; // [esp+10h] [ebp-18h]
   int min; // [esp+14h] [ebp-14h]
   int i; // [esp+18h] [ebp-10h]
@@ -76600,9 +76364,9 @@ LABEL_7:
   if ( cc.code <= 0x8130812F || cc.code > 0x8431A439 )
   {
     if ( cc.code <= 0x9030812F || cc.code > 0xE3329A35 )
-      result = -1;
+      return -1;
     else
-      result = LOBYTE(cc.code) + 10 * (BYTE1(cc.code) + 126 * (BYTE2(cc.code) + 10 * HIBYTE(cc.code))) - 1810682;
+      return LOBYTE(cc.code) + 10 * (BYTE1(cc.code) + 126 * (BYTE2(cc.code) + 10 * HIBYTE(cc.code))) - 1810682;
   }
   else
   {
@@ -76619,7 +76383,7 @@ LABEL_7:
         if ( cc.code >= ucs_gb18030_map[i].code3 )
         {
           if ( cc.code < ucs_gb18030_map[i + 1].code3 )
-            break;
+            return ucs_gb18030_map[i].code + cc.code - ucs_gb18030_map[i].code3;
           min = i + 1;
         }
         else
@@ -76632,9 +76396,8 @@ LABEL_7:
     {
       i = 205;
     }
-    result = ucs_gb18030_map[i].code + cc.code - ucs_gb18030_map[i].code3;
+    return ucs_gb18030_map[i].code + cc.code - ucs_gb18030_map[i].code3;
   }
-  return result;
 }
 
 //----- (080C47AD) --------------------------------------------------------
@@ -76726,7 +76489,7 @@ LABEL_20:
 Str __cdecl wc_conv_from_gb18030(Str is, wc_ces ces)
 {
   int v3; // eax
-  int v4; // eax
+  int length; // eax
   wc_ccs v5; // eax
   wc_ccs v6; // [esp+4h] [ebp-44h]
   wc_wchar_t cc; // [esp+1Ch] [ebp-2Ch]
@@ -76795,9 +76558,9 @@ Str __cdecl wc_conv_from_gb18030(Str is, wc_ces ces)
       {
         if ( os->length + 1 >= os->area_size )
           Strgrow(os);
-        v4 = os->length;
-        os->ptr[v4] = *p;
-        os->length = v4 + 1;
+        length = os->length;
+        os->ptr[length] = *p;
+        os->length = length + 1;
         os->ptr[os->length] = 0;
       }
     }
@@ -76853,8 +76616,8 @@ LABEL_41:
   }
   return os;
 }
-// 80C4C1B: conditional instruction was optimized away because of '%state.4==0'
-// 80C4C2E: conditional instruction was optimized away because of '%state.4==3'
+// 80C4C1B: conditional instruction was optimized away because %state.4==0
+// 80C4C2E: conditional instruction was optimized away because %state.4==3
 
 //----- (080C4FA9) --------------------------------------------------------
 void __cdecl wc_push_to_gb18030(Str os, wc_wchar_t cc, wc_status *st)
@@ -76862,7 +76625,7 @@ void __cdecl wc_push_to_gb18030(Str os, wc_wchar_t cc, wc_status *st)
   int v3; // eax
   int v4; // eax
   int v5; // eax
-  int v6; // eax
+  int length; // eax
   int v7; // eax
   int v8; // eax
   int v9; // eax
@@ -76883,9 +76646,9 @@ void __cdecl wc_push_to_gb18030(Str os, wc_wchar_t cc, wc_status *st)
 LABEL_25:
         if ( os->length + 1 >= os->area_size )
           Strgrow(os);
-        v6 = os->length;
-        os->ptr[v6] = BYTE1(cc.code);
-        os->length = v6 + 1;
+        length = os->length;
+        os->ptr[length] = BYTE1(cc.code);
+        os->length = length + 1;
         os->ptr[os->length] = 0;
         if ( os->length + 1 >= os->area_size )
           Strgrow(os);
@@ -77010,10 +76773,10 @@ LABEL_49:
 //----- (080C549B) --------------------------------------------------------
 Str __cdecl wc_char_conv_from_gb18030(wc_uchar c, wc_status *st)
 {
-  int v2; // eax
+  int state; // eax
   int v3; // eax
   Str v5; // eax
-  int v6; // edx
+  int length; // edx
   int v7; // edx
   wc_ccs v8; // eax
   wc_ccs v9; // eax
@@ -77026,8 +76789,8 @@ Str __cdecl wc_char_conv_from_gb18030(wc_uchar c, wc_status *st)
     st->state = 0;
     os_3152 = Strnew_size(8);
   }
-  v2 = st->state;
-  if ( v2 == 1 )
+  state = st->state;
+  if ( state == 1 )
   {
     if ( (WC_GB18030_MAP[c] & 4) != 0 )
     {
@@ -77054,9 +76817,9 @@ Str __cdecl wc_char_conv_from_gb18030(wc_uchar c, wc_status *st)
       return 0;
     }
   }
-  else if ( v2 > 1 )
+  else if ( state > 1 )
   {
-    if ( v2 == 2 )
+    if ( state == 2 )
     {
       if ( WC_GB18030_MAP[c] == 12 )
       {
@@ -77065,7 +76828,7 @@ Str __cdecl wc_char_conv_from_gb18030(wc_uchar c, wc_status *st)
         return 0;
       }
     }
-    else if ( v2 == 3 && WC_GB18030_MAP[c] == 16 )
+    else if ( state == 3 && WC_GB18030_MAP[c] == 16 )
     {
       cc.ccs = 73730;
       cc.code = ((unsigned __int8)byte_81804CA << 8) | ((unsigned __int8)byte_81804C9 << 16) | (gb_3153[0] << 24) | c;
@@ -77081,7 +76844,7 @@ Str __cdecl wc_char_conv_from_gb18030(wc_uchar c, wc_status *st)
       }
     }
   }
-  else if ( !v2 )
+  else if ( !state )
   {
     v3 = WC_GB18030_MAP[c];
     if ( v3 != 2 )
@@ -77095,9 +76858,9 @@ Str __cdecl wc_char_conv_from_gb18030(wc_uchar c, wc_status *st)
       if ( os_3152->length + 1 >= os_3152->area_size )
         Strgrow(os_3152);
       v5 = os_3152;
-      v6 = os_3152->length;
-      os_3152->ptr[v6] = c;
-      v5->length = v6 + 1;
+      length = os_3152->length;
+      os_3152->ptr[length] = c;
+      v5->length = length + 1;
       os_3152->ptr[os_3152->length] = 0;
     }
   }
@@ -77110,13 +76873,10 @@ Str __cdecl wc_char_conv_from_gb18030(wc_uchar c, wc_status *st)
 //----- (080C57A0) --------------------------------------------------------
 wc_ccs __cdecl wc_gb2312_or_gbk(wc_uint16 code)
 {
-  wc_ccs result; // eax
-
   if ( wc_map_range_search(code, gb2312_gbk_map, 7) )
-    result = 34838;
+    return 34838;
   else
-    result = 33089;
-  return result;
+    return 33089;
 }
 
 //----- (080C57DB) --------------------------------------------------------
@@ -77165,7 +76925,6 @@ wc_wchar_t *__userpurge wc_cs128w_to_gbk@<eax>(wc_wchar_t *retstr, wc_wchar_t cc
 wc_uint32 __cdecl wc_gbk_to_N(wc_uint32 c)
 {
   int v1; // eax
-  wc_uint32 result; // eax
   int v3; // eax
   int v4; // eax
   int v5; // eax
@@ -77189,7 +76948,7 @@ wc_uint32 __cdecl wc_gbk_to_N(wc_uint32 c)
                 v8 = 65;
               else
                 v8 = 64;
-              result = 190 * BYTE1(c) + (unsigned __int8)c - v8 - 94 * (c >> 8) - 9338;
+              return 190 * BYTE1(c) + (unsigned __int8)c - v8 - 94 * (c >> 8) - 9338;
             }
             else
             {
@@ -77197,7 +76956,7 @@ wc_uint32 __cdecl wc_gbk_to_N(wc_uint32 c)
                 v7 = 65;
               else
                 v7 = 64;
-              result = 190 * BYTE1(c) + (unsigned __int8)c - v7 - 94 * (c >> 8) - 9370;
+              return 190 * BYTE1(c) + (unsigned __int8)c - v7 - 94 * (c >> 8) - 9370;
             }
           }
           else
@@ -77206,7 +76965,7 @@ wc_uint32 __cdecl wc_gbk_to_N(wc_uint32 c)
               v6 = 65;
             else
               v6 = 64;
-            result = 190 * BYTE1(c) + (unsigned __int8)c - v6 - 94 * (c >> 8) - 9344;
+            return 190 * BYTE1(c) + (unsigned __int8)c - v6 - 94 * (c >> 8) - 9344;
           }
         }
         else
@@ -77215,7 +76974,7 @@ wc_uint32 __cdecl wc_gbk_to_N(wc_uint32 c)
             v5 = 65;
           else
             v5 = 64;
-          result = 190 * BYTE1(c) + (unsigned __int8)c - v5 - 94 * (c >> 8) - 9429;
+          return 190 * BYTE1(c) + (unsigned __int8)c - v5 - 94 * (c >> 8) - 9429;
         }
       }
       else
@@ -77224,7 +76983,7 @@ wc_uint32 __cdecl wc_gbk_to_N(wc_uint32 c)
           v4 = 65;
         else
           v4 = 64;
-        result = 190 * BYTE1(c) + (unsigned __int8)c - v4 - 94 * (c >> 8) - 9366;
+        return 190 * BYTE1(c) + (unsigned __int8)c - v4 - 94 * (c >> 8) - 9366;
       }
     }
     else
@@ -77233,7 +76992,7 @@ wc_uint32 __cdecl wc_gbk_to_N(wc_uint32 c)
         v3 = 65;
       else
         v3 = 64;
-      result = 190 * BYTE1(c) + (unsigned __int8)c - v3 - 94 * (c >> 8) - 9376;
+      return 190 * BYTE1(c) + (unsigned __int8)c - v3 - 94 * (c >> 8) - 9376;
     }
   }
   else
@@ -77242,16 +77001,15 @@ wc_uint32 __cdecl wc_gbk_to_N(wc_uint32 c)
       v1 = 65;
     else
       v1 = 64;
-    result = 190 * BYTE1(c) + (unsigned __int8)c - v1 - 24510;
+    return 190 * BYTE1(c) + (unsigned __int8)c - v1 - 24510;
   }
-  return result;
 }
 
 //----- (080C5BB1) --------------------------------------------------------
 Str __cdecl wc_conv_from_gbk(Str is, wc_ces ces)
 {
   int v3; // eax
-  int v4; // eax
+  int length; // eax
   wc_ccs v5; // [esp+4h] [ebp-34h]
   int gbk; // [esp+18h] [ebp-20h]
   int state; // [esp+1Ch] [ebp-1Ch]
@@ -77310,9 +77068,9 @@ Str __cdecl wc_conv_from_gbk(Str is, wc_ces ces)
         default:
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
-          v4 = os->length;
-          os->ptr[v4] = *p;
-          os->length = v4 + 1;
+          length = os->length;
+          os->ptr[length] = *p;
+          os->length = length + 1;
           os->ptr[os->length] = 0;
           break;
       }
@@ -77323,7 +77081,7 @@ Str __cdecl wc_conv_from_gbk(Str is, wc_ces ces)
     wtf_push_unknown(os, p - 1, 1u);
   return os;
 }
-// 80C5C4C: conditional instruction was optimized away because of '%state.4==1'
+// 80C5C4C: conditional instruction was optimized away because %state.4==1
 
 //----- (080C5E0F) --------------------------------------------------------
 void __cdecl wc_push_to_gbk(Str os, wc_wchar_t cc, wc_status *st)
@@ -77332,7 +77090,7 @@ void __cdecl wc_push_to_gbk(Str os, wc_wchar_t cc, wc_status *st)
   int v4; // eax
   int v5; // eax
   int v6; // eax
-  int v7; // eax
+  int length; // eax
   int v8; // eax
   wc_ccs v9; // eax
   wc_wchar_t v10; // [esp+18h] [ebp-10h] BYREF
@@ -77358,9 +77116,9 @@ void __cdecl wc_push_to_gbk(Str os, wc_wchar_t cc, wc_status *st)
 LABEL_25:
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
-          v7 = os->length;
-          os->ptr[v7] = BYTE1(cc.code);
-          os->length = v7 + 1;
+          length = os->length;
+          os->ptr[length] = BYTE1(cc.code);
+          os->length = length + 1;
           os->ptr[os->length] = 0;
           if ( os->length + 1 >= os->area_size )
             Strgrow(os);
@@ -77431,10 +77189,10 @@ LABEL_25:
 //----- (080C6133) --------------------------------------------------------
 Str __cdecl wc_char_conv_from_gbk(wc_uchar c, wc_status *st)
 {
-  int v2; // eax
+  int state; // eax
   int v3; // eax
   Str v5; // eax
-  int v6; // edx
+  int length; // edx
   wc_ccs v7; // eax
   int gbk; // [esp+2Ch] [ebp-Ch]
 
@@ -77443,10 +77201,10 @@ Str __cdecl wc_char_conv_from_gbk(wc_uchar c, wc_status *st)
     st->state = 0;
     os_2832 = Strnew_size(8);
   }
-  v2 = st->state;
-  if ( v2 )
+  state = st->state;
+  if ( state )
   {
-    if ( v2 == 1 && (WC_GBK_MAP[c] & 4) != 0 )
+    if ( state == 1 && (WC_GBK_MAP[c] & 4) != 0 )
     {
       gbk = (gbku_2833 << 8) | c;
       if ( gbku_2833 <= 0xA0u || c <= 0xA0u )
@@ -77478,9 +77236,9 @@ Str __cdecl wc_char_conv_from_gbk(wc_uchar c, wc_status *st)
       if ( os_2832->length + 1 >= os_2832->area_size )
         Strgrow(os_2832);
       v5 = os_2832;
-      v6 = os_2832->length;
-      os_2832->ptr[v6] = c;
-      v5->length = v6 + 1;
+      length = os_2832->length;
+      os_2832->ptr[length] = c;
+      v5->length = length + 1;
       os_2832->ptr[os_2832->length] = 0;
     }
   }
@@ -77534,7 +77292,6 @@ wc_wchar_t *__userpurge wc_cs128w_to_hkscs@<eax>(wc_wchar_t *retstr, wc_wchar_t 
 wc_uint32 __cdecl wc_hkscs_to_N(wc_uint32 c)
 {
   int v1; // eax
-  wc_uint32 result; // eax
   int v3; // eax
 
   if ( c > 0xA13F )
@@ -77543,7 +77300,7 @@ wc_uint32 __cdecl wc_hkscs_to_N(wc_uint32 c)
       v3 = 98;
     else
       v3 = 64;
-    result = 157 * BYTE1(c) + (unsigned __int8)c - v3 - 35325;
+    return 157 * BYTE1(c) + (unsigned __int8)c - v3 - 35325;
   }
   else
   {
@@ -77551,16 +77308,15 @@ wc_uint32 __cdecl wc_hkscs_to_N(wc_uint32 c)
       v1 = 98;
     else
       v1 = 64;
-    result = 157 * BYTE1(c) + (unsigned __int8)c - v1 - 21352;
+    return 157 * BYTE1(c) + (unsigned __int8)c - v1 - 21352;
   }
-  return result;
 }
 
 //----- (080C64D3) --------------------------------------------------------
 Str __cdecl wc_conv_from_hkscs(Str is, wc_ces ces)
 {
   int v3; // eax
-  int v4; // eax
+  int length; // eax
   int hkscs; // [esp+18h] [ebp-20h]
   int state; // [esp+1Ch] [ebp-1Ch]
   wc_uchar *p; // [esp+20h] [ebp-18h]
@@ -77611,9 +77367,9 @@ Str __cdecl wc_conv_from_hkscs(Str is, wc_ces ces)
       {
         if ( os->length + 1 >= os->area_size )
           Strgrow(os);
-        v4 = os->length;
-        os->ptr[v4] = *p;
-        os->length = v4 + 1;
+        length = os->length;
+        os->ptr[length] = *p;
+        os->length = length + 1;
         os->ptr[os->length] = 0;
       }
     }
@@ -77623,13 +77379,13 @@ Str __cdecl wc_conv_from_hkscs(Str is, wc_ces ces)
     wtf_push_unknown(os, p - 1, 1u);
   return os;
 }
-// 80C656E: conditional instruction was optimized away because of '%state.4==1'
+// 80C656E: conditional instruction was optimized away because %state.4==1
 
 //----- (080C6705) --------------------------------------------------------
 void __cdecl wc_push_to_hkscs(Str os, wc_wchar_t cc, wc_status *st)
 {
   int v3; // eax
-  int v4; // eax
+  int length; // eax
   int v5; // eax
   int v6; // eax
   int v7; // eax
@@ -77646,9 +77402,9 @@ void __cdecl wc_push_to_hkscs(Str os, wc_wchar_t cc, wc_status *st)
 LABEL_17:
         if ( os->length + 1 >= os->area_size )
           Strgrow(os);
-        v4 = os->length;
-        os->ptr[v4] = BYTE1(cc.code);
-        os->length = v4 + 1;
+        length = os->length;
+        os->ptr[length] = BYTE1(cc.code);
+        os->length = length + 1;
         os->ptr[os->length] = 0;
         if ( os->length + 1 >= os->area_size )
           Strgrow(os);
@@ -77724,10 +77480,10 @@ LABEL_32:
 //----- (080C69F7) --------------------------------------------------------
 Str __cdecl wc_char_conv_from_hkscs(wc_uchar c, wc_status *st)
 {
-  int v2; // eax
+  int state; // eax
   int v3; // eax
   Str v5; // eax
-  int v6; // edx
+  int length; // edx
   int hkscs; // [esp+2Ch] [ebp-Ch]
 
   if ( st->state == -1 )
@@ -77735,10 +77491,10 @@ Str __cdecl wc_char_conv_from_hkscs(wc_uchar c, wc_status *st)
     st->state = 0;
     os_2724 = Strnew_size(8);
   }
-  v2 = st->state;
-  if ( v2 )
+  state = st->state;
+  if ( state )
   {
-    if ( v2 == 1 && (WC_HKSCS_MAP[c] & 4) != 0 )
+    if ( state == 1 && (WC_HKSCS_MAP[c] & 4) != 0 )
     {
       hkscs = (hkscsu_2725 << 8) | c;
       if ( hkscsu_2725 <= 0xA0u || hkscsu_2725 > 0xF9u || c <= 0xA0u )
@@ -77761,9 +77517,9 @@ Str __cdecl wc_char_conv_from_hkscs(wc_uchar c, wc_status *st)
       if ( os_2724->length + 1 >= os_2724->area_size )
         Strgrow(os_2724);
       v5 = os_2724;
-      v6 = os_2724->length;
-      os_2724->ptr[v6] = c;
-      v5->length = v6 + 1;
+      length = os_2724->length;
+      os_2724->ptr[length] = c;
+      v5->length = length + 1;
       os_2724->ptr[os_2724->length] = 0;
     }
   }
@@ -77774,7 +77530,7 @@ Str __cdecl wc_char_conv_from_hkscs(wc_uchar c, wc_status *st)
 //----- (080C6B7C) --------------------------------------------------------
 Str __cdecl wc_conv_from_priv1(Str is, wc_ces ces)
 {
-  int v3; // eax
+  int length; // eax
   wc_ccs ccs; // [esp+1Ch] [ebp-1Ch]
   char *p; // [esp+20h] [ebp-18h]
   wc_uchar *ep; // [esp+24h] [ebp-14h]
@@ -77797,9 +77553,9 @@ Str __cdecl wc_conv_from_priv1(Str is, wc_ces ces)
     {
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
-      v3 = os->length;
-      os->ptr[v3] = *p;
-      os->length = v3 + 1;
+      length = os->length;
+      os->ptr[length] = *p;
+      os->length = length + 1;
       os->ptr[os->length] = 0;
     }
     else
@@ -77814,7 +77570,7 @@ Str __cdecl wc_conv_from_priv1(Str is, wc_ces ces)
 //----- (080C6CAB) --------------------------------------------------------
 Str __cdecl wc_char_conv_from_priv1(wc_uchar c, wc_status *st)
 {
-  int v2; // eax
+  int length; // eax
   Str os; // [esp+2Ch] [ebp-Ch]
 
   os = Strnew_size(1);
@@ -77822,9 +77578,9 @@ Str __cdecl wc_char_conv_from_priv1(wc_uchar c, wc_status *st)
   {
     if ( os->length + 1 >= os->area_size )
       Strgrow(os);
-    v2 = os->length;
-    os->ptr[v2] = c;
-    os->length = v2 + 1;
+    length = os->length;
+    os->ptr[length] = c;
+    os->length = length + 1;
     os->ptr[os->length] = 0;
   }
   else
@@ -77837,7 +77593,7 @@ Str __cdecl wc_char_conv_from_priv1(wc_uchar c, wc_status *st)
 //----- (080C6D46) --------------------------------------------------------
 Str __cdecl wc_conv_from_ascii(Str is, wc_ces ces)
 {
-  int v3; // eax
+  int length; // eax
   wc_uchar *p; // [esp+10h] [ebp-18h]
   wc_uchar *ep; // [esp+14h] [ebp-14h]
   char *sp_0; // [esp+18h] [ebp-10h]
@@ -77858,9 +77614,9 @@ Str __cdecl wc_conv_from_ascii(Str is, wc_ces ces)
     {
       if ( os->length + 1 >= os->area_size )
         Strgrow(os);
-      v3 = os->length;
-      os->ptr[v3] = *p;
-      os->length = v3 + 1;
+      length = os->length;
+      os->ptr[length] = *p;
+      os->length = length + 1;
       os->ptr[os->length] = 0;
     }
     else
@@ -77875,29 +77631,17 @@ Str __cdecl wc_conv_from_ascii(Str is, wc_ces ces)
 //----- (080C6E57) --------------------------------------------------------
 void __cdecl wc_push_to_raw(Str os, wc_wchar_t cc, wc_status *st)
 {
-  int v3; // eax
+  int length; // eax
 
   if ( cc.ccs == 322 || cc.ccs == 2088 )
   {
     if ( os->length + 1 >= os->area_size )
       Strgrow(os);
-    v3 = os->length;
-    os->ptr[v3] = cc.code;
-    os->length = v3 + 1;
+    length = os->length;
+    os->ptr[length] = cc.code;
+    os->length = length + 1;
     os->ptr[os->length] = 0;
   }
-}
-
-//----- (080C7210) --------------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (080C7220) --------------------------------------------------------
-void _libc_csu_init(void)
-{
-  init_proc();
 }
 
 //----- (080C7280) --------------------------------------------------------
@@ -77918,33 +77662,5 @@ int __cdecl lstat(char *filename, int a2)
   return __lxstat(3, filename, (struct stat *)a2);
 }
 
-//----- (080C7340) --------------------------------------------------------
-void (*_do_global_ctors_aux())(void)
-{
-  void (*result)(void); // eax
-  void (**v1)(void); // ebx
-
-  result = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    v1 = (void (**)(void))&_CTOR_LIST__;
-    do
-    {
-      --v1;
-      result();
-      result = *v1;
-    }
-    while ( *v1 != (void (*)(void))-1 );
-  }
-  return result;
-}
-// 80D4EE4: using guessed type int _CTOR_LIST__;
-
-//----- (080C736C) --------------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=1649 queued=1330 decompiled=1330 lumina nreq=0 worse=0 better=0
-// ALL OK, 1330 function(s) have been successfully decompiled
+// nfuncs=1649 queued=1322 decompiled=1322 lumina nreq=0 worse=0 better=0
+// ALL OK, 1322 function(s) have been successfully decompiled

@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int __fastcall init_proc(int a1, int a2);
+// int __fastcall init_proc(int, int);
 int sub_80483A0();
 // int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int scanf(const char *format, ...);
@@ -19,20 +19,19 @@ int sub_80483A0();
 // int sscanf(const char *s, const char *format, ...);
 // int strncmp(const char *s1, const char *s2, size_t n);
 // void exit(int status);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-int __fastcall sub_8048444(int a1, int a2);
+// void __usercall __noreturn start(int@<eax>, void (*)(void)@<edx>);
+int __fastcall sub_8048444(int, int);
 void sub_8048470();
 int sub_80484A0();
-int __cdecl sub_80484D4(int a1, int a2);
+int __cdecl sub_80484D4(int, int);
 void __noreturn sub_804855D();
-int *__cdecl sub_8048589(char *s, int a2);
+int *__cdecl sub_8048589(char *s, int);
 void __cdecl __noreturn sub_8048616(char *s, int); // idb
 void __cdecl __noreturn main(int a1, char **a2, char **a3);
 void sub_8048766();
 void __fastcall init(int a1, int a2);
 void fini(void); // idb
 int sub_80487F0();
-void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -45,14 +44,6 @@ char byte_804A028; // weak
 _UNKNOWN LOL; // weak
 // extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08048388) --------------------------------------------------------
-int __fastcall init_proc(int a1, int a2)
-{
-  sub_8048444(a1, a2);
-  sub_80484A0();
-  return sub_80487F0();
-}
 
 //----- (080483A0) --------------------------------------------------------
 int sub_80483A0()
@@ -79,11 +70,14 @@ void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
 //----- (08048444) --------------------------------------------------------
 int __fastcall sub_8048444(int a1, int a2)
 {
+  int v3; // [esp-4h] [ebp-8h]
+
+  v3 = a2;
   if ( &_gmon_start__ )
-    ((void (__cdecl *)(int))_gmon_start__)(a2);
-  return a2;
+    ((void (__thiscall *)(int, int))_gmon_start__)(a1, a2);
+  return v3;
 }
-// 8048461: variable 'a2' is possibly undefined
+// 8048461: variable 'v3' is possibly undefined
 
 //----- (08048470) --------------------------------------------------------
 void sub_8048470()
@@ -113,7 +107,7 @@ int sub_80484A0()
 
   result = dword_8049F18;
   if ( dword_8049F18 )
-    result = 0;
+    return 0;
   return result;
 }
 // 8049F18: using guessed type int dword_8049F18;
@@ -241,11 +235,5 @@ int sub_80487F0()
 // 804880F: variable 'v3' is possibly undefined
 // 8049F08: using guessed type int dword_8049F08;
 
-//----- (08048814) --------------------------------------------------------
-void term_proc()
-{
-  sub_8048470();
-}
-
-// nfuncs=30 queued=16 decompiled=16 lumina nreq=0 worse=0 better=0
-// ALL OK, 16 function(s) have been successfully decompiled
+// nfuncs=30 queued=14 decompiled=14 lumina nreq=0 worse=0 better=0
+// ALL OK, 14 function(s) have been successfully decompiled

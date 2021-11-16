@@ -13,42 +13,42 @@
 void __noreturn sub_10000(); // weak
 int __cdecl main(int argc, const char **argv, const char **envp);
 void sub_104AE();
-int __fastcall sub_104F6(_BYTE *a1, bool *a2);
-int __fastcall sub_10611(_BYTE *a1, unsigned __int8 a2, int a3, int a4, int a5, int a6);
-int __fastcall sub_106ED(_BYTE *a1, unsigned __int8 *a2, int a3);
-int __fastcall sub_10731(_BYTE *a1, unsigned __int8 *a2);
-int __fastcall sub_1073B(int a1);
-int __fastcall sub_107F4(char *a1, unsigned int a2, int a3, int a4);
+int __fastcall sub_104F6(_BYTE *, bool *);
+int __fastcall sub_10611(_BYTE *, unsigned __int8, int, int, int, int);
+char *__fastcall sub_106ED(_BYTE *a1, unsigned __int8 *a2, int a3);
+char *__fastcall sub_10731(_BYTE *a1, unsigned __int8 *a2);
+int __fastcall sub_1073B(int);
+int __fastcall sub_107F4(char *a1, unsigned int a2, int a3, int *a4);
 void *__cdecl operator new(unsigned int); // idb
-int __fastcall fclose(int a1);
-int __fastcall sub_10A07(int a1, int a2);
-int __fastcall sub_10A1C(int a1);
-int __fastcall sub_10A28(const char *a1, int a2);
-void __fastcall sub_10AD2(int a1, int a2);
+int __fastcall sub_109DA(int);
+int __fastcall sub_10A07(int, int);
+int __fastcall sub_10A1C(int);
+int __fastcall sub_10A28(const char *, int);
+void __fastcall sub_10AD2(int, int);
 // double __cdecl _CHP(_DWORD); weak
-int __fastcall sub_10B8D(char *a1, unsigned int a2, int a3, int a4);
+unsigned int __fastcall sub_10B8D(char *a1, unsigned int a2, int a3, char **a4);
 // int __fastcall getch(_DWORD); weak
 unsigned int __fastcall sub_10D8A(unsigned int result);
 // int __fastcall _fatal_runtime_error(_DWORD, _DWORD); weak
-_DWORD *__fastcall sub_110D4(int a1);
+_DWORD *__fastcall sub_110D4(int);
 _DWORD *sub_110E7();
-_DWORD *__fastcall sub_110FE(int a1);
+_DWORD *__fastcall sub_110FE(int);
 // int __fastcall tolower(_DWORD, _DWORD); weak
-int __cdecl sub_1113C(_BYTE *a1, __int16 a2, int a3, char a4);
-int __fastcall sub_11163(_BYTE *a1, __int16 a2, int a3, int *a4);
+unsigned int __cdecl sub_1113C(_BYTE *a1, __int16 a2, int a3, char a4);
+unsigned int __fastcall sub_11163(_BYTE *a1, __int16 a2, int a3, int *a4);
 char *sub_113DF();
-int *__fastcall _freefp(int a1);
-int __fastcall sub_114DF(int a1, int a2);
+int *__fastcall sub_11488(int);
+int __fastcall sub_114DF(int, int);
 int __fastcall sub_1151E(int result);
-int __fastcall sub_11534(int a1, int a2, unsigned int a3);
+int __fastcall sub_11534(int, int, unsigned int);
 // int __fastcall _chktty(_DWORD); weak
 // int __fastcall _ioalloc(_DWORD); weak
 // int __fastcall _qread(_DWORD, _DWORD, _DWORD); weak
-int __fastcall _filbuf(int *a1);
-int __fastcall sub_117F1(int a1);
+int __fastcall sub_117C2(int *);
+int __fastcall sub_117F1(int);
 int sub_118E7();
 char *sub_119E0();
-int __fastcall sub_11AA8(int a1);
+int __fastcall sub_11AA8(int);
 // int __fastcall ftell(_DWORD); weak
 // int __fastcall lseek(_DWORD, _DWORD, _DWORD); weak
 // int __fastcall _close(_DWORD); weak
@@ -57,26 +57,26 @@ int j_unlink(void); // weak
 // int __fastcall _qwrite(_DWORD, _DWORD, _DWORD); weak
 void *sub_11DF7();
 void *sub_11DFD();
-int __fastcall sub_11E03(int a1, int a2);
+int __fastcall sub_11E03(int, int);
 int (**__fastcall sub_11F23(int (**result)(void)))(void);
-char *__fastcall sub_11F2F(unsigned __int8 a1);
-char *__fastcall sub_11F7B(unsigned __int8 a1, unsigned __int8 a2);
-char __fastcall sub_12BA0(int a1, int a2, int a3, int a4);
+char *__fastcall sub_11F2F(unsigned __int8);
+char *__fastcall sub_11F7B(unsigned __int8, unsigned __int8);
+char __fastcall sub_12BA0(int, int, int, int);
 void sub_12C6B();
-__int16 __fastcall sub_12C88(int a1, int a2, int a3);
+__int16 __fastcall sub_12C88(int, int, int);
 __int16 sub_12CD5();
 __int16 sub_12D6F();
 __int16 sub_12DAA();
 int __fastcall sub_12DCB(int result);
 int __fastcall sub_12DD0(int result);
-int _init_8087();
+int sub_12DD4();
 int sub_12E0F();
 int sub_12E79();
-int __fastcall sub_12F74(int a1);
-int __fastcall sub_12FC9(int a1, int a2);
+int __fastcall sub_12F74(unsigned int a1);
+int __fastcall sub_12FC9(int, int);
 // int __fastcall isatty(_DWORD); weak
-int __fastcall sub_13008(int a1, int a2);
-int __fastcall sub_13013(unsigned int a1);
+int __fastcall sub_13008(unsigned int a1, int a2);
+int __fastcall sub_13013(unsigned int);
 // int __fastcall nmalloc(_DWORD); weak
 // int __fastcall memset(_DWORD, _DWORD, _DWORD); weak
 // int __fastcall tell(_DWORD); weak
@@ -89,17 +89,17 @@ int __fastcall j__dos_commit(_DWORD); // weak
 // int __fastcall _MemFree(_DWORD, _DWORD, _DWORD); weak
 char *sub_13811();
 int nullsub_2(); // weak
-void __fastcall __noreturn sub_13876(int a1, int a2);
-void __fastcall __noreturn sub_13899(int a1);
+void __fastcall __noreturn sub_13876(int, int);
+void __fastcall __noreturn sub_13899(int);
 // int _int7(); weak
-int __cdecl sub_14134(int a1, __int16 a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, __int16 a15);
+int __cdecl sub_14134(int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
 int nullsub_4(void); // weak
-// int __usercall sub_14248@<eax>(int a1@<ebp>, int a2@<edi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17);
-// int __usercall sub_14284@<eax>(int a1@<ebp>, int a2@<edi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17);
-// int __usercall sub_14328@<eax>(int a1@<ecx>, _BYTE *a2@<ebp>);
-// int __usercall sub_14332@<eax>(int a1@<ecx>, _BYTE *a2@<ebp>);
-// int __usercall sub_1433C@<eax>(int a1@<ecx>, _BYTE *a2@<ebp>);
-// int __usercall sub_14346@<eax>(int result@<eax>, int a2@<ecx>, _BYTE *a3@<ebp>);
+// int __usercall sub_14248@<eax>(int@<ebp>, int@<edi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14284@<eax>(int@<ebp>, int@<edi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14328@<eax>(int@<ecx>, _BYTE *@<ebp>);
+// int __usercall sub_14332@<eax>(int@<ecx>, _BYTE *@<ebp>);
+// int __usercall sub_1433C@<eax>(int@<ecx>, _BYTE *@<ebp>);
+// int __usercall sub_14346@<eax>(int result@<eax>, int@<ecx>, _BYTE *@<ebp>);
 void sub_14394();
 void sub_1439A();
 void sub_143A0();
@@ -124,121 +124,120 @@ void sub_1442E();
 void sub_14439();
 void sub_14444();
 void sub_1444D();
-// char __usercall sub_14456@<al>(unsigned __int8 a1@<ah>, int a2@<ebx>, _BYTE *a3@<esi>);
-// int __usercall sub_14493@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>);
-// int __usercall sub_144B2@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>);
-// int __usercall sub_144D1@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// int __usercall sub_144ED@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// int __usercall sub_14509@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>);
-// int __usercall sub_14528@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>);
-// int __usercall sub_14547@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>);
-// int __usercall sub_14566@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>);
-// int __usercall sub_14585@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// int __usercall sub_145C3@<eax>(int a1@<ebp>, int a2@<edi>, unsigned int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// void __usercall sub_145D4(int a1@<ebp>, int a2@<edi>, unsigned int *a3@<esi>);
-// int __usercall sub_145E5@<eax>(void *a1@<ebp>, const void *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17);
-// int __usercall sub_14603@<eax>(int a1@<ebp>, __int16 *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17);
-// int __usercall sub_14643@<eax>(const void *a1@<ebp>, void *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17);
-// int __usercall sub_14657@<eax>(_WORD *a1@<ebp>, _WORD *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17);
-// int __usercall sub_14665@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>);
-// int __usercall sub_14684@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>);
-// int __usercall sub_146A3@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// int __usercall sub_146BF@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// int __usercall sub_146DB@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>);
-// int __usercall sub_146FA@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>);
-// int __usercall sub_14719@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>);
-// int __usercall sub_14738@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>);
-// int __usercall sub_14757@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// int __usercall sub_14795@<eax>(_WORD *a1@<ebp>, int a2@<edi>, _DWORD *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// void __usercall sub_147D1(_WORD *a1@<ebp>, int a2@<edi>, _DWORD *a3@<esi>);
-// int __usercall sub_147F5@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>);
-// int __usercall sub_14818@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>);
-// int __usercall sub_1483B@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// int __usercall sub_1485B@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// int __usercall sub_1487B@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>);
-// int __usercall sub_1489E@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>);
-// int __usercall sub_148C1@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>);
-// int __usercall sub_148E4@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>);
-// int __usercall sub_14907@<eax>(int a1@<ebp>, int a2@<edi>, int a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// int __usercall sub_14952@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// int __usercall sub_14994@<eax>(int a1@<edx>, _BYTE *a2@<ebp>, int a3@<edi>, int *a4@<esi>, int a5, __int16 a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, __int16 a19);
-// void __usercall sub_149A9(int a1@<ebp>, int a2@<edi>, int a3@<esi>);
-// void __usercall sub_149C7(int a1@<edx>, _BYTE *a2@<ebp>, int a3@<edi>, int *a4@<esi>);
-// int __usercall sub_149DC@<eax>(_DWORD *a1@<ebp>, _DWORD *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17);
-// void __usercall sub_14A27(char *a1@<ebp>, int a2@<edi>, _DWORD *a3@<esi>);
-// int __usercall sub_14A52@<eax>(int a1@<ebp>, _WORD *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17);
-// int __usercall sub_14A60@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>);
-// int __usercall sub_14A81@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>);
-// int __usercall sub_14AA2@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// int __usercall sub_14AC0@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// int __usercall sub_14ADE@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>);
-// int __usercall sub_14AFF@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>);
-// int __usercall sub_14B20@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>);
-// int __usercall sub_14B41@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>);
-// int __usercall sub_14B62@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// int __usercall sub_14BA2@<eax>(_WORD *a1@<ebp>, int a2@<edi>, _WORD *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// void __usercall sub_14BEA(_WORD *a1@<ebp>, int a2@<edi>, _WORD *a3@<esi>);
-// int __usercall sub_14C1F@<eax>(int a1@<ebp>, int a2@<edi>, unsigned int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18);
-// void __usercall sub_14C62(_WORD *a1@<ebp>, int a2@<edi>, int *a3@<esi>);
-_DWORD __cdecl sub_14C86(_DWORD, __int16, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, __int16); // weak
-// int __usercall sub_14CB8@<eax>(int a1@<ebp>, int a2@<edi>, int a3@<esi>);
-void __fastcall sub_158AA(int a1, int *a2);
-// int __usercall sub_158D4@<eax>(int a1@<eax>, int a2@<edx>, int a3@<esi>);
-// int __userpurge sub_158FE@<eax>(int a1@<eax>, int a2@<esi>, unsigned int a3, unsigned int a4, __int16 a5);
+// char __usercall sub_14456@<al>(unsigned __int8@<ah>, int@<ebx>, _BYTE *@<esi>);
+// int __usercall sub_14493@<eax>(int@<ebp>, int@<edi>, signed int *@<esi>);
+// int __usercall sub_144B2@<eax>(int@<ebp>, int@<edi>, signed int *@<esi>);
+// int __usercall sub_144D1@<eax>(int@<ebp>, int@<edi>, signed int *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_144ED@<eax>(int@<ebp>, int@<edi>, signed int *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14509@<eax>(int@<ebp>, int@<edi>, signed int *@<esi>);
+// int __usercall sub_14528@<eax>(int@<ebp>, int@<edi>, signed int *@<esi>);
+// int __usercall sub_14547@<eax>(int@<ebp>, int@<edi>, signed int *@<esi>);
+// int __usercall sub_14566@<eax>(int@<ebp>, int@<edi>, signed int *@<esi>);
+// int __usercall sub_14585@<eax>(int@<ebp>, int@<edi>, signed int *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_145C3@<eax>(int@<ebp>, int@<edi>, int *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// void __usercall sub_145D4(int@<ebp>, int@<edi>, int *@<esi>);
+// int __usercall sub_145E5@<eax>(void *@<ebp>, const void *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14603@<eax>(int@<ebp>, __int16 *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14643@<eax>(const void *@<ebp>, void *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14657@<eax>(_WORD *@<ebp>, _WORD *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14665@<eax>(int@<ebp>, int@<edi>, int *@<esi>);
+// int __usercall sub_14684@<eax>(int@<ebp>, int@<edi>, int *@<esi>);
+// int __usercall sub_146A3@<eax>(int@<ebp>, int@<edi>, int *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_146BF@<eax>(int@<ebp>, int@<edi>, int *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_146DB@<eax>(int@<ebp>, int@<edi>, int *@<esi>);
+// int __usercall sub_146FA@<eax>(int@<ebp>, int@<edi>, int *@<esi>);
+// int __usercall sub_14719@<eax>(int@<ebp>, int@<edi>, int *@<esi>);
+// int __usercall sub_14738@<eax>(int@<ebp>, int@<edi>, int *@<esi>);
+// int __usercall sub_14757@<eax>(int@<ebp>, int@<edi>, int *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14795@<eax>(_WORD *@<ebp>, int@<edi>, _DWORD *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// void __usercall sub_147D1(_WORD *@<ebp>, int@<edi>, _DWORD *@<esi>);
+// int __usercall sub_147F5@<eax>(int@<ebp>, int@<edi>, __int64 *@<esi>);
+// int __usercall sub_14818@<eax>(int@<ebp>, int@<edi>, __int64 *@<esi>);
+// int __usercall sub_1483B@<eax>(int@<ebp>, int@<edi>, __int64 *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_1485B@<eax>(int@<ebp>, int@<edi>, __int64 *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_1487B@<eax>(int@<ebp>, int@<edi>, __int64 *@<esi>);
+// int __usercall sub_1489E@<eax>(int@<ebp>, int@<edi>, __int64 *@<esi>);
+// int __usercall sub_148C1@<eax>(int@<ebp>, int@<edi>, __int64 *@<esi>);
+// int __usercall sub_148E4@<eax>(int@<ebp>, int@<edi>, __int64 *@<esi>);
+// int __usercall sub_14907@<eax>(int@<ebp>, int@<edi>, int@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14952@<eax>(int@<ebp>, int@<edi>, __int64 *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14994@<eax>(int@<edx>, _BYTE *@<ebp>, int@<edi>, int *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// void __usercall sub_149A9(int@<ebp>, int@<edi>, int@<esi>);
+// void __usercall sub_149C7(int@<edx>, _BYTE *@<ebp>, int@<edi>, int *@<esi>);
+// int __usercall sub_149DC@<eax>(_DWORD *@<ebp>, _DWORD *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// void __usercall sub_14A27(char *@<ebp>, int@<edi>, _DWORD *@<esi>);
+// int __usercall sub_14A52@<eax>(int@<ebp>, _WORD *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14A60@<eax>(int@<ebp>, int@<edi>, __int16 *@<esi>);
+// int __usercall sub_14A81@<eax>(int@<ebp>, int@<edi>, __int16 *@<esi>);
+// int __usercall sub_14AA2@<eax>(int@<ebp>, int@<edi>, __int16 *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14AC0@<eax>(int@<ebp>, int@<edi>, __int16 *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14ADE@<eax>(int@<ebp>, int@<edi>, __int16 *@<esi>);
+// int __usercall sub_14AFF@<eax>(int@<ebp>, int@<edi>, __int16 *@<esi>);
+// int __usercall sub_14B20@<eax>(int@<ebp>, int@<edi>, __int16 *@<esi>);
+// int __usercall sub_14B41@<eax>(int@<ebp>, int@<edi>, __int16 *@<esi>);
+// int __usercall sub_14B62@<eax>(int@<ebp>, int@<edi>, __int16 *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// int __usercall sub_14BA2@<eax>(_WORD *@<ebp>, int@<edi>, _WORD *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// void __usercall sub_14BEA(_WORD *@<ebp>, int@<edi>, _WORD *@<esi>);
+// int __usercall sub_14C1F@<eax>(int@<ebp>, int@<edi>, unsigned int *@<esi>, int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16);
+// void __usercall sub_14C62(_WORD *@<ebp>, int@<edi>, int *@<esi>);
+// int __usercall sub_14CB8@<eax>(int@<ebp>, int@<edi>, int@<esi>);
+void __fastcall sub_158AA(int, int *);
+// int __usercall sub_158D4@<eax>(int@<eax>, int@<edx>, int@<esi>);
+// int __userpurge sub_158FE@<eax>(int@<eax>, int@<esi>, unsigned int, unsigned int, __int16);
 void sub_1592E();
-// int __usercall sub_159B3@<eax>(__int64 a1@<edx:eax>, unsigned int a2@<ecx>, unsigned int a3@<ebx>, int a4@<esi>);
-int __fastcall sub_15B45(unsigned int a1, int a2);
-// int __usercall sub_15BDE@<eax>(int a1@<eax>, int a2@<edx>, _BYTE *a3@<ebp>, int a4@<esi>);
-// int __usercall sub_15C7E@<eax>(unsigned __int64 a1@<edx:eax>, unsigned int a2@<ecx>, unsigned int a3@<ebx>, _BYTE *a4@<ebp>, int a5@<esi>);
-// int __usercall sub_15E39@<eax>(int a1@<eax>, int a2@<edx>, int a3@<esi>);
-// int __usercall sub_15EFF@<eax>(unsigned __int64 a1@<edx:eax>, unsigned int a2@<ecx>, unsigned int a3@<ebx>, int a4@<esi>);
+// int __usercall sub_159B3@<eax>(__int64@<edx:eax>, unsigned int@<ecx>, unsigned int@<ebx>, int@<esi>);
+unsigned int __fastcall sub_15B45(unsigned int a1, int a2);
+// int __usercall sub_15BDE@<eax>(int@<eax>, int@<edx>, _BYTE *@<ebp>, int@<esi>);
+// int __usercall sub_15C7E@<eax>(unsigned __int64@<edx:eax>, unsigned int@<ecx>, unsigned int@<ebx>, _BYTE *@<ebp>, int@<esi>);
+// int __usercall sub_15E39@<eax>(int@<eax>, int@<edx>, int@<esi>);
+// int __usercall sub_15EFF@<eax>(unsigned __int64@<edx:eax>, unsigned int@<ecx>, unsigned int@<ebx>, int@<esi>);
 void sub_16070();
-int __fastcall sub_16075(int *a1);
-int __fastcall sub_160DF(int a1, int a2);
-int __fastcall sub_160F0(unsigned int a1, int a2);
-// int __usercall sub_16125@<eax>(__int64 a1@<edx:eax>, int a2@<ebx>, _BYTE *a3@<ebp>);
-unsigned int __fastcall sub_161A3(int a1);
-// int __usercall sub_16222@<eax>(__int64 *a1@<eax>, _BYTE *a2@<ebp>);
-signed int __fastcall sub_162EC(signed int result, int a2);
-unsigned int __fastcall sub_163B1(unsigned int result, __int16 a2);
-// __int16 __usercall sub_1653E@<ax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>, _BYTE *a4@<ebp>, int a5@<esi>);
-// __int16 __usercall __spoils<> sub_165F4@<ax>(int a1@<eax>, _BYTE *a2@<ebp>, int a3@<esi>);
-// int __usercall sub_16757@<eax>(int a1@<eax>, int a2@<edx>, int a3@<edi>);
-// int __usercall sub_167BD@<eax>(__int64 a1@<edx:eax>, unsigned int a2@<ecx>, unsigned int a3@<ebx>, __int16 a4@<di>, __int16 a5@<si>);
-// char __usercall sub_16838@<al>(int a1@<eax>, int a2@<ebp>, int a3@<edi>);
-// int __usercall sub_16926@<eax>(int a1@<eax>, int a2@<edx>, _BYTE *a3@<ebp>, int a4@<esi>);
-// int __usercall sub_1693F@<eax>(int a1@<eax>, int a2@<edx>, _BYTE *a3@<ebp>, int a4@<esi>);
-// int __usercall sub_16982@<eax>(int a1@<eax>, _BYTE *a2@<ebp>);
-// int __usercall sub_16C1A@<eax>(int a1@<eax>, int a2@<esi>);
-int __fastcall sub_16E11(int a1);
-int __fastcall sub_16E1B(int a1);
-int __fastcall sub_16E28(int a1);
-int sub_16E36(); // weak
-int __fastcall sub_16E5E(int a1, int a2, int a3, int a4);
-int __fastcall sub_17032(unsigned __int64 a1);
-// void __usercall sub_1711E(int a1@<ecx>, int a2@<esi>);
-// int __usercall sub_17170@<eax>(int a1@<eax>, int a2@<edx>, int a3@<esi>);
-char __fastcall sub_171B8(int a1, __int16 a2);
-char __fastcall sub_17282(int a1, __int16 a2);
+int __fastcall sub_16075(int *);
+int __fastcall sub_160DF(int, int);
+int __fastcall sub_160F0(unsigned int, int);
+// int __usercall sub_16125@<eax>(__int64@<edx:eax>, int@<ebx>, _BYTE *@<ebp>);
+int __fastcall sub_161A3(int);
+// int __usercall sub_16222@<eax>(__int64 *@<eax>, _BYTE *@<ebp>);
+signed int __fastcall sub_162EC(signed int result, int);
+unsigned int __fastcall sub_163B1(unsigned int result, __int16);
+// __int16 __usercall sub_1653E@<ax>(int@<eax>, int@<edx>, int@<ebx>, _BYTE *@<ebp>, int@<esi>);
+// __int16 __usercall __spoils<> sub_165F4@<ax>(__int64 *a1@<eax>, _BYTE *a2@<ebp>, int a3@<esi>);
+// int __usercall sub_16757@<eax>(int@<eax>, int@<edx>, int@<edi>);
+// int __usercall sub_167BD@<eax>(__int64@<edx:eax>, unsigned int@<ecx>, unsigned int@<ebx>, __int16@<di>, __int16@<si>);
+// char __usercall sub_16838@<al>(int@<eax>, int@<ebp>, int@<edi>);
+// int __usercall sub_16926@<eax>(int@<eax>, int@<edx>, _BYTE *@<ebp>, int@<esi>);
+// int __usercall sub_1693F@<eax>(int@<eax>, int@<edx>, _BYTE *@<ebp>, int@<esi>);
+// int __usercall sub_16982@<eax>(int@<eax>, _BYTE *@<ebp>);
+// int __usercall sub_16C1A@<eax>(int@<eax>, int@<esi>);
+int __fastcall sub_16E11(int);
+int __fastcall sub_16E1B(int);
+int __fastcall sub_16E28(int);
+// int __usercall sub_16E36@<eax>(char a1@<cf>, int a2@<eax>);
+int __fastcall sub_16E5E(unsigned __int64 *a1, int a2, int a3, int a4);
+int __fastcall sub_17032(unsigned __int64);
+// void __usercall sub_1711E(int@<ecx>, int@<esi>);
+// int __usercall sub_17170@<eax>(int@<eax>, int@<edx>, int@<esi>);
+char __fastcall sub_171B8(int, __int16);
+char __fastcall sub_17282(int, __int16);
 // int __fastcall _init_80x87(_DWORD); weak
-int __fastcall sub_17303(int a1);
-void _FreeDPMIBlocks();
-_DWORD *__fastcall sub_174C1(int *a1);
+int __fastcall sub_17303(int);
+void sub_1736E();
+int *__fastcall sub_174C1(int *a1);
 int sub_17535();
-// _DWORD *__usercall sub_17584@<eax>(unsigned int a1@<eax>, __int16 a2@<di>, __int16 a3@<si>);
-// void __usercall sub_17655(unsigned int a1@<eax>, unsigned int a2@<edx>, unsigned int a3@<ecx>, __int16 a4@<di>, __int16 a5@<si>);
-// void __usercall sub_17702(unsigned int a1@<eax>, unsigned int a2@<edx>, unsigned int a3@<ecx>, __int16 a4@<di>, __int16 a5@<si>);
-bool __fastcall sub_1784C(unsigned int *a1);
+// _DWORD *__usercall sub_17584@<eax>(unsigned int@<eax>, __int16@<di>, __int16@<si>);
+// void __usercall sub_17655(unsigned int@<eax>, unsigned int@<edx>, unsigned int@<ecx>, __int16@<di>, __int16@<si>);
+// void __usercall sub_17702(unsigned int@<eax>, unsigned int@<edx>, unsigned int@<ecx>, __int16@<di>, __int16@<si>);
+bool __fastcall sub_1784C(unsigned int *);
 int sub_178C3();
-int __fastcall sub_17973(unsigned __int8 *a1, unsigned __int8 *a2, int a3);
-// void __usercall __noreturn sub_17A38(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<ebp>, int a6@<edi>, int a7@<esi>);
-// void __usercall __noreturn sub_17ACD(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<ebp>, int a6@<edi>, int a7@<esi>);
+int __fastcall sub_17973(unsigned __int8 *, unsigned __int8 *, int);
+// void __usercall __noreturn sub_17A38(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>, int@<ebp>, int@<edi>, int@<esi>);
+// void __usercall __noreturn sub_17ACD(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>, int@<ebp>, int@<edi>, int@<esi>);
 int sub_17B45();
-void __fastcall sub_17BD0(int a1, int a2);
+void __fastcall sub_17BD0(int, int);
 int sub_17DC0(); // weak
 __int16 sub_17DC5();
-void __fastcall sub_17DE6(int a1, int a2, unsigned int a3);
-void __fastcall sub_17F2E(int a1, int a2, unsigned int a3);
+void __fastcall sub_17DE6(int, int, unsigned int);
+void __fastcall sub_17F2E(int, int, unsigned int);
 void *sub_18143();
 // int __fastcall dos_setvect(_DWORD, _DWORD, _DWORD, _DWORD); weak
 // int __fastcall _brk(_DWORD); weak
@@ -248,31 +247,31 @@ void sub_18393();
 // __int64 __fastcall mbsinc(_DWORD); weak
 int sub_1853B();
 int __fastcall sub_18545(int result);
-int __fastcall sub_18657(int a1);
+int __fastcall sub_18657(int);
 // int _nonIBM(void); weak
 int sub_18770();
 // __int64 __fastcall dos_getvect(_DWORD, _DWORD, _DWORD); weak
-void __fastcall sub_187B9(int a1, __int16 a2);
+void __fastcall sub_187B9(int, __int16);
 // int _terminate(void); weak
-char __fastcall __spoils<ah> sub_1892C(int a1);
+char __fastcall __spoils<ah> sub_1892C(int);
 __int16 sub_18A10();
-void __fastcall sub_18A33(int a1, __int16 a2);
+void __fastcall sub_18A33(int, __int16);
 int sub_18B7A();
-int __fastcall sub_18C7C(int a1, __int16 a2);
+int __fastcall sub_18C7C(int, __int16);
 int __fastcall j__DoINTR(_DWORD, _DWORD); // weak
-void __spoils<edx> _Init_FPE_handler();
-void __spoils<edx> sub_18FCB();
+void sub_18F6E();
+void sub_18FCB();
 void sub_19028();
 void __noreturn sub_1903D(); // weak
 void __noreturn sub_1904A();
-// void __usercall sub_1914D(__int16 a1@<bx>, double *a2@<edi>, double a3@<st0>);
-// void __usercall sub_191DA(__int16 a1@<bx>, int a2@<ebp>, double *a3@<edi>, __int16 a4@<fpstat>, double a5@<st0>);
-// double __usercall sub_1922C@<st0>(char a1@<bh>, int a2@<ebp>, __int16 a3@<fpstat>, double a4@<st0>);
-// __int64 __usercall sub_19252@<edx:eax>(int a1@<edx>, __int16 a2@<bx>, int _ESI@<esi>);
-// double __usercall sub_19277@<st0>(char a1@<bl>, double *a2@<edi>, double result@<st0>);
-// int __usercall sub_192BE@<eax>(int a1@<edi>);
-int __fastcall sub_19330(int a1, int a2);
-int __fastcall sub_19664(unsigned int a1);
+// void __usercall sub_1914D(__int16@<bx>, double *@<edi>, double@<st0>);
+// void __usercall sub_191DA(__int16@<bx>, int@<ebp>, double *@<edi>, __int16@<fpstat>, double@<st0>);
+// double __usercall sub_1922C@<st0>(char@<bh>, int@<ebp>, __int16@<fpstat>, double@<st0>);
+// __int64 __usercall sub_19252@<edx:eax>(int@<edx>, __int16@<bx>, int _ESI@<esi>);
+// double __usercall sub_19277@<st0>(char@<bl>, double *@<edi>, double result@<st0>);
+// int __usercall sub_192BE@<eax>(int@<edi>);
+int __fastcall sub_19330(int, int);
+int __fastcall sub_19664(unsigned int);
 // int _Phar_hook_init(void); weak
 // int _Phar_hook_fini(void); weak
 // int _DOS4G_hook_init(void); weak
@@ -349,28 +348,6 @@ int (*funcs_14469[24])() =
   &sub_14444,
   &sub_1444D
 }; // weak
-int (__cdecl *funcs_15296[8])(int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16) =
-{
-  &sub_14C86,
-  &loc_152BE,
-  &sub_14C86,
-  &sub_14C86,
-  &sub_14C86,
-  &sub_14C86,
-  &sub_14C86,
-  &sub_14C86
-}; // weak
-int (__cdecl *funcs_15538[8])(int, __int16, int, int, int, int, int, int, int, int, int, int, int, int, __int16) =
-{
-  &sub_14C86,
-  &loc_15560,
-  &sub_14C86,
-  &sub_14C86,
-  &sub_14C86,
-  &sub_14C86,
-  &sub_14C86,
-  &sub_14C86
-}; // weak
 int dword_16331[] = { 2147483647 }; // weak
 int dword_164E4[21] =
 {
@@ -433,16 +410,16 @@ int dword_16B54[21] =
 }; // weak
 __int16 word_16BAE[] = { -1905 }; // weak
 __int16 word_16C08[] = { 0 }; // weak
-unsigned __int8 byte_20004[3] = { 114u, 98u, 0u }; // idb
+unsigned __int8 byte_20004[3] = { 114u, 98u, 0u }; // weak
 char aRealPvd[9] = "real.pvd"; // weak
 float flt_20010 = -1.0; // weak
 float flt_20014 = -1.0; // weak
 float flt_20018 = -1.0; // weak
 float flt_2001C = -1.0; // weak
-float flt_20020 =  0.0625; // weak
-float flt_20024 =  200.0; // weak
+float flt_20020 = 0.0625; // weak
+float flt_20024 = 200.0; // weak
 float flt_20028 = -32768.0; // weak
-unsigned __int8 byte_2002C[3] = { 119u, 98u, 0u }; // idb
+unsigned __int8 byte_2002C[3] = { 119u, 98u, 0u }; // weak
 char aFickenRaw[11] = "ficken.raw"; // weak
 char aNotEnoughMemor[48] = "Not enough memory to allocate file structures\r\n"; // weak
 char aUnableToAlloca[38] = "Unable to allocate real mode selector"; // weak
@@ -616,7 +593,7 @@ char byte_2040C[144] =
   '\0',
   '\0',
   '\0'
-}; // idb
+}; // weak
 int dword_20538 = 0; // weak
 int dword_20578 = 0; // weak
 __int16 word_2057C = 0; // weak
@@ -911,11 +888,11 @@ int dword_20800 = -1; // weak
 int dword_20808 = 0; // weak
 __int16 word_2080C = 0; // weak
 _UNKNOWN unk_20818; // weak
-double dbl_20822 =  1.797693134862316e308; // weak
-float flt_2082A =  3.4028235e38; // weak
+double dbl_20822 = 1.797693134862316e308; // weak
+float flt_2082A = 3.4028235e38; // weak
 _UNKNOWN unk_20B3E; // weak
-_BYTE byte_20B86[2] = { 0, 1 }; // idb
-char byte_20B98[8] = { '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0' }; // idb
+_BYTE byte_20B86[2] = { 0, 1 }; // weak
+char byte_20B98[8] = { '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0' }; // weak
 _UNKNOWN unk_20BA0; // weak
 int dword_20CA0 = 0; // weak
 int dword_20CA4 = 0; // weak
@@ -933,6 +910,14 @@ char byte_21194[]; // weak
 __int16 word_21298; // weak
 
 
+//----- (00010000) --------------------------------------------------------
+void __noreturn sub_10000()
+{
+  while ( 1 )
+    __debugbreak();
+}
+// 10000: using guessed type void __noreturn sub_10000();
+
 //----- (00010010) --------------------------------------------------------
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
@@ -948,7 +933,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   _DWORD v13[16]; // [esp+14h] [ebp-188h]
   int v14; // [esp+54h] [ebp-148h]
   _OWORD v15[16]; // [esp+58h] [ebp-144h] BYREF
-  int v16; // [esp+158h] [ebp-44h]
+  int *v16; // [esp+158h] [ebp-44h]
   char v17[4]; // [esp+15Ch] [ebp-40h] BYREF
   int v18; // [esp+160h] [ebp-3Ch] BYREF
   int v19; // [esp+164h] [ebp-38h] BYREF
@@ -956,23 +941,23 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   char *v21; // [esp+16Ch] [ebp-30h]
   int j; // [esp+170h] [ebp-2Ch]
   int k; // [esp+174h] [ebp-28h]
-  float l; // [esp+17Ch] [ebp-20h]
+  float m; // [esp+17Ch] [ebp-20h]
   float v25; // [esp+180h] [ebp-1Ch]
-  float m; // [esp+184h] [ebp-18h]
+  float n; // [esp+184h] [ebp-18h]
   float v27; // [esp+188h] [ebp-14h]
-  float n; // [esp+18Ch] [ebp-10h]
+  float ii; // [esp+18Ch] [ebp-10h]
   float v29; // [esp+190h] [ebp-Ch]
   int i; // [esp+194h] [ebp-8h]
-  int v31; // [esp+198h] [ebp-4h]
+  char **v31; // [esp+198h] [ebp-4h]
 
   __asm { int     10h; - VIDEO - SET VIDEO MODE }
-  v16 = sub_10731(aRealPvd, byte_20004);
+  v16 = (int *)sub_10731(aRealPvd, byte_20004);
   sub_107F4(v17, 4u, 1, v16);
   sub_107F4((char *)&v18, 4u, 1, v16);
   sub_107F4((char *)&v19, 4u, 1, v16);
   v20 = (char *)operator new(v5);
   sub_107F4(v20, 8u, v18, v16);
-  fclose(v16);
+  sub_109DA((int)v16);
   v21 = (char *)operator new(v6);
   qmemcpy(v15, &unk_20BA0, sizeof(v15));
   HIDWORD(v15[1]) = 1007009591;
@@ -983,11 +968,11 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   HIDWORD(v15[11]) = 1052665684;
   HIDWORD(v15[13]) = 1057812980;
   HIDWORD(v15[15]) = 1063793429;
-  l = 0.0;
-  v25 = 0.0022902493;
   m = 0.0;
-  v27 = 0.0022448979;
+  v25 = 0.0022902493;
   n = 0.0;
+  v27 = 0.0022448979;
+  ii = 0.0;
   v29 = 0.0011337869;
   for ( i = 0; v18 - 1 > i; ++i )
   {
@@ -1001,12 +986,12 @@ int __cdecl main(int argc, const char **argv, const char **envp)
     for ( k = 0; k < v19; ++k )
     {
       v11 = 0.0;
-      v10 = l + m + n + flt_20010;
-      for ( l = l + v25; SLODWORD(l) >= 1065353216; l = l + flt_20014 )
+      v10 = m + n + ii + flt_20010;
+      for ( m = m + v25; SLODWORD(m) >= 1065353216; m = m + flt_20014 )
         ;
-      for ( m = m + v27; SLODWORD(m) >= 1065353216; m = m + flt_20018 )
+      for ( n = n + v27; SLODWORD(n) >= 1065353216; n = n + flt_20018 )
         ;
-      for ( n = n + v29; SLODWORD(n) >= 1065353216; n = n + flt_2001C )
+      for ( ii = ii + v29; SLODWORD(ii) >= 1065353216; ii = ii + flt_2001C )
         ;
       for ( j = 0; j < 8; ++j )
       {
@@ -1034,9 +1019,9 @@ int __cdecl main(int argc, const char **argv, const char **envp)
       *(_WORD *)&v21[2 * k + 2 * i * v19] = v7;
     }
   }
-  v31 = sub_10731(aFickenRaw, byte_2002C);
+  v31 = (char **)sub_10731(aFickenRaw, byte_2002C);
   sub_10B8D(v21, v19 * (v18 - 1), 2, v31);
-  v3 = fclose(v31);
+  v3 = sub_109DA((int)v31);
   getch(v3);
   sub_10D8A((unsigned int)v21);
   sub_10D8A((unsigned int)v20);
@@ -1048,6 +1033,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 // 1041B: variable 'v7' is possibly undefined
 // 10B70: using guessed type double __cdecl _CHP(_DWORD);
 // 10D6D: using guessed type int __fastcall getch(_DWORD);
+// 20004: using guessed type unsigned __int8 byte_20004[3];
 // 20010: using guessed type float flt_20010;
 // 20014: using guessed type float flt_20014;
 // 20018: using guessed type float flt_20018;
@@ -1055,6 +1041,8 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 // 20020: using guessed type float flt_20020;
 // 20024: using guessed type float flt_20024;
 // 20028: using guessed type float flt_20028;
+// 2002C: using guessed type unsigned __int8 byte_2002C[3];
+// 10010: using guessed type char var_40[4];
 
 //----- (000104AE) --------------------------------------------------------
 void sub_104AE()
@@ -1150,7 +1138,7 @@ LABEL_28:
         else
         {
           v6 = 1;
-          *(_BYTE *)a2 &= 0xFEu;
+          *(_BYTE *)a2 &= ~1u;
         }
       }
       else if ( v9 == 116 )
@@ -1172,9 +1160,8 @@ LABEL_28:
 int __fastcall sub_10611(_BYTE *a1, unsigned __int8 a2, int a3, int a4, int a5, int a6)
 {
   __int16 v7; // ax
-  int v8; // eax
+  unsigned int v8; // eax
   __int16 v9; // ax
-  int result; // eax
   int v11; // eax
 
   *(_BYTE *)(a6 + 12) &= 0xFCu;
@@ -1206,8 +1193,8 @@ int __fastcall sub_10611(_BYTE *a1, unsigned __int8 a2, int a3, int a4, int a5, 
   *(_DWORD *)(a6 + 16) = v8;
   if ( *(_DWORD *)(a6 + 16) == -1 )
   {
-    _freefp(a6);
-    result = 0;
+    sub_11488(a6);
+    return 0;
   }
   else
   {
@@ -1220,37 +1207,36 @@ int __fastcall sub_10611(_BYTE *a1, unsigned __int8 a2, int a3, int a4, int a5, 
     if ( (a3 & 0x80u) != 0 )
       sub_11534(a6, 0, 2u);
     _chktty(a6);
-    result = a6;
+    return a6;
   }
-  return result;
 }
 // 1110A: using guessed type int __fastcall tolower(_DWORD, _DWORD);
 // 11643: using guessed type int __fastcall _chktty(_DWORD);
 
 //----- (000106ED) --------------------------------------------------------
-int __fastcall sub_106ED(_BYTE *a1, unsigned __int8 *a2, int a3)
+char *__fastcall sub_106ED(_BYTE *a1, unsigned __int8 *a2, int a3)
 {
-  int result; // eax
+  char *result; // eax
   int v7; // ebx
   char *v8; // eax
-  int v9; // edx
+  char *v9; // edx
   int v10; // [esp+0h] [ebp-10h] BYREF
 
-  result = sub_104F6(a2, (bool *)&v10);
-  v7 = result;
+  result = (char *)sub_104F6(a2, (bool *)&v10);
+  v7 = (int)result;
   if ( result )
   {
     v8 = sub_113DF();
-    v9 = (int)v8;
+    v9 = v8;
     if ( v8 )
-      v9 = sub_10611(a1, *a2, v7, v10, a3, (int)v8);
-    result = v9;
+      return (char *)sub_10611(a1, *a2, v7, v10, a3, (int)v8);
+    return v9;
   }
   return result;
 }
 
 //----- (00010731) --------------------------------------------------------
-int __fastcall sub_10731(_BYTE *a1, unsigned __int8 *a2)
+char *__fastcall sub_10731(_BYTE *a1, unsigned __int8 *a2)
 {
   return sub_106ED(a1, a2, 0);
 }
@@ -1295,13 +1281,13 @@ int __fastcall sub_1073B(int a1)
 // 20CA4: using guessed type int dword_20CA4;
 
 //----- (000107F4) --------------------------------------------------------
-int __fastcall sub_107F4(char *a1, unsigned int a2, int a3, int a4)
+int __fastcall sub_107F4(char *a1, unsigned int a2, int a3, int *a4)
 {
   int result; // eax
-  int v6; // ebx
+  unsigned int v6; // ebx
   unsigned int v7; // edx
   unsigned int v8; // edi
-  int v9; // eax
+  unsigned __int8 *v9; // eax
   unsigned int v10; // ebx
   char v11; // cl
   int v12; // eax
@@ -1315,48 +1301,48 @@ int __fastcall sub_107F4(char *a1, unsigned int a2, int a3, int a4)
   unsigned int v22; // [esp+8h] [ebp-14h]
   unsigned int v23; // [esp+Ch] [ebp-10h]
 
-  if ( (*(_BYTE *)(a4 + 12) & 1) != 0 )
+  if ( (a4[3] & 1) != 0 )
   {
     v6 = a2 * a3;
     if ( v6 )
     {
-      if ( !*(_DWORD *)(*(_DWORD *)(a4 + 8) + 8) )
+      if ( !*(_DWORD *)(a4[2] + 8) )
         _ioalloc(a4);
       v22 = 0;
-      if ( (*(_BYTE *)(a4 + 12) & 0x40) != 0 )
+      if ( (a4[3] & 0x40) != 0 )
       {
         v23 = v6;
         while ( 1 )
         {
-          v7 = *(_DWORD *)(a4 + 4);
+          v7 = a4[1];
           if ( v7 )
           {
             if ( v7 > v23 )
               v7 = v23;
-            qmemcpy(a1, *(const void **)a4, v7);
+            qmemcpy(a1, (const void *)*a4, v7);
             a1 += v7;
             v22 += v7;
-            v8 = *(_DWORD *)(a4 + 4) - v7;
-            *(_DWORD *)a4 += v7;
+            v8 = a4[1] - v7;
+            *a4 += v7;
             v23 -= v7;
-            *(_DWORD *)(a4 + 4) = v8;
+            a4[1] = v8;
           }
           if ( !v23 )
             break;
-          if ( v23 >= *(_DWORD *)(a4 + 20) || (*(_BYTE *)(a4 + 13) & 4) != 0 )
+          if ( v23 >= a4[5] || (*((_BYTE *)a4 + 13) & 4) != 0 )
           {
-            v9 = *(_DWORD *)(*(_DWORD *)(a4 + 8) + 8);
-            *(_DWORD *)(a4 + 4) = 0;
+            v9 = *(unsigned __int8 **)(a4[2] + 8);
+            a4[1] = 0;
             v10 = v23;
-            v11 = *(_BYTE *)(a4 + 13);
-            *(_DWORD *)a4 = v9;
+            v11 = *((_BYTE *)a4 + 13);
+            *a4 = (int)v9;
             if ( (v11 & 4) == 0 && v23 > 0x200 )
               LOWORD(v10) = v23 & 0xFE00;
-            v12 = _qread(*(_DWORD *)(a4 + 16), a1, v10);
+            v12 = _qread(a4[4], a1, v10);
             if ( v12 == -1 )
             {
-              *(_BYTE *)(a4 + 12) |= 0x20u;
-              break;
+              *((_BYTE *)a4 + 12) |= 0x20u;
+              return v22 / a2;
             }
             if ( !v12 )
               goto LABEL_22;
@@ -1364,9 +1350,9 @@ int __fastcall sub_107F4(char *a1, unsigned int a2, int a3, int a4)
             v23 -= v12;
             v22 += v12;
           }
-          else if ( !sub_117F1(a4) )
+          else if ( !sub_117F1((int)a4) )
           {
-            break;
+            return v22 / a2;
           }
         }
       }
@@ -1374,47 +1360,47 @@ int __fastcall sub_107F4(char *a1, unsigned int a2, int a3, int a4)
       {
         v13 = a1;
         v14 = &a1[v6];
-        while ( *(_DWORD *)(a4 + 4) || sub_117F1(a4) )
+        while ( a4[1] || sub_117F1((int)a4) )
         {
-          v15 = *(unsigned __int8 **)a4;
-          v16 = *(_DWORD *)a4 + 1;
-          --*(_DWORD *)(a4 + 4);
-          *(_DWORD *)a4 = v16;
+          v15 = (unsigned __int8 *)*a4;
+          v16 = *a4 + 1;
+          --a4[1];
+          *a4 = v16;
           v17 = *v15;
           if ( v17 == 13 )
           {
-            if ( !*(_DWORD *)(a4 + 4) && !sub_117F1(a4) )
-              break;
-            v18 = *(unsigned __int8 **)a4;
-            v19 = *(_DWORD *)a4 + 1;
-            --*(_DWORD *)(a4 + 4);
-            *(_DWORD *)a4 = v19;
+            if ( !a4[1] && !sub_117F1((int)a4) )
+              return v22 / a2;
+            v18 = (unsigned __int8 *)*a4;
+            v19 = *a4 + 1;
+            --a4[1];
+            *a4 = v19;
             v17 = *v18;
           }
           if ( v17 == 26 )
           {
 LABEL_22:
-            *(_BYTE *)(a4 + 12) |= 0x10u;
-            break;
+            *((_BYTE *)a4 + 12) |= 0x10u;
+            return v22 / a2;
           }
           *v13++ = v17;
           ++v22;
           if ( v13 == v14 )
-            break;
+            return v22 / a2;
         }
       }
-      result = v22 / a2;
+      return v22 / a2;
     }
     else
     {
-      result = 0;
+      return 0;
     }
   }
   else
   {
     sub_110D4(4);
     result = 0;
-    *(_BYTE *)(a4 + 12) |= 0x20u;
+    *((_BYTE *)a4 + 12) |= 0x20u;
   }
   return result;
 }
@@ -1422,8 +1408,7 @@ LABEL_22:
 // 116FB: using guessed type int __fastcall _qread(_DWORD, _DWORD, _DWORD);
 
 //----- (000109DA) --------------------------------------------------------
-// fclose_
-int __fastcall fclose(int a1)
+int __fastcall sub_109DA(int a1)
 {
   _DWORD *i; // eax
 
@@ -1446,7 +1431,7 @@ int __fastcall sub_10A07(int a1, int a2)
 
   sub_10AD2(a1, a2);
   v4 = v3;
-  _freefp(a1);
+  sub_11488(a1);
   return v4;
 }
 // 10A0F: variable 'v3' is possibly undefined
@@ -1466,7 +1451,7 @@ int __fastcall sub_10A1C(int a1)
 int __fastcall sub_10A28(const char *a1, int a2)
 {
   unsigned int v3; // eax
-  _BYTE *v4; // edi
+  char *v4; // edi
   unsigned int v5; // ebx
   char *v6; // esi
   char v7; // al
@@ -1476,7 +1461,7 @@ int __fastcall sub_10A28(const char *a1, int a2)
   int result; // eax
 
   v3 = sub_118E7();
-  v4 = a1;
+  v4 = (char *)a1;
   v5 = v3 | HIWORD(v3);
   v6 = sub_119E0();
   do
@@ -1545,73 +1530,74 @@ void __fastcall sub_10AD2(int a1, int a2)
 // 11BE9: using guessed type int __fastcall lseek(_DWORD, _DWORD, _DWORD);
 // 11C4E: using guessed type int __fastcall _close(_DWORD);
 // 11D7E: using guessed type int j_unlink(void);
+// 10AD2: using guessed type char anonymous_0[180];
 
 //----- (00010B8D) --------------------------------------------------------
-int __fastcall sub_10B8D(char *a1, unsigned int a2, int a3, int a4)
+unsigned int __fastcall sub_10B8D(char *a1, unsigned int a2, int a3, char **a4)
 {
-  int v6; // edi
+  unsigned int v6; // edi
   int v7; // ecx
   char v8; // dl
   unsigned int v9; // ebx
   int v10; // eax
   unsigned int v11; // edx
   char *v12; // eax
-  int v13; // ecx
+  char *v13; // ecx
   char v14; // bh
   char v15; // bh
-  int v16; // eax
+  char *v16; // eax
   char v17; // bl
-  int v18; // eax
-  unsigned __int8 *v19; // ebx
+  char *v18; // eax
+  char *v19; // ebx
   int v20; // esi
   char v21; // dh
   int v24; // [esp+8h] [ebp-18h]
   unsigned int v25; // [esp+Ch] [ebp-14h]
   unsigned int v26; // [esp+10h] [ebp-10h]
 
-  if ( (*(_BYTE *)(a4 + 12) & 2) == 0 )
+  if ( ((_BYTE)a4[3] & 2) == 0 )
   {
     sub_110D4(4);
-    *(_BYTE *)(a4 + 12) |= 0x20u;
+    *((_BYTE *)a4 + 12) |= 0x20u;
     return 0;
   }
   v6 = a2 * a3;
   if ( !(a2 * a3) )
     return 0;
-  if ( !*(_DWORD *)(*(_DWORD *)(a4 + 8) + 8) )
+  if ( !*((_DWORD *)a4[2] + 2) )
     _ioalloc(a4);
   v7 = 0;
-  v8 = *(_BYTE *)(a4 + 12) & 0xCF;
+  v8 = (_BYTE)a4[3] & 0xCF;
   v25 = 0;
-  v24 = *(_DWORD *)(a4 + 12) & 0x30;
-  *(_BYTE *)(a4 + 12) = v8;
+  v24 = (unsigned int)a4[3] & 0x30;
+  *((_BYTE *)a4 + 12) = v8;
   if ( (v8 & 0x40) != 0 )
   {
     v26 = v6;
     while ( 1 )
     {
-      if ( *(_DWORD *)(a4 + 4) || v26 < *(_DWORD *)(a4 + 20) )
+      if ( a4[1] || v26 < (unsigned int)a4[5] )
       {
-        v11 = *(_DWORD *)(a4 + 20) - *(_DWORD *)(a4 + 4);
+        v11 = a4[5] - a4[1];
         if ( v11 > v26 )
           v11 = v26;
-        qmemcpy(*(void **)a4, a1, v11);
-        v12 = *(char **)a4;
-        v13 = *(_DWORD *)(a4 + 20);
-        *(_DWORD *)(a4 + 4) += v11;
-        v14 = *(_BYTE *)(a4 + 13);
-        *(_DWORD *)a4 = &v12[v11];
+        qmemcpy(*a4, a1, v11);
+        v12 = *a4;
+        v13 = a4[5];
+        a4[1] += v11;
+        v14 = *((_BYTE *)a4 + 13);
+        *a4 = &v12[v11];
         v15 = v14 | 0x10;
-        v16 = *(_DWORD *)(a4 + 4);
-        *(_BYTE *)(a4 + 13) = v15;
+        v16 = a4[1];
+        *((_BYTE *)a4 + 13) = v15;
         if ( v16 == v13 || (v15 & 4) != 0 )
-          sub_11AA8(a4);
+          sub_11AA8((int)a4);
         goto LABEL_22;
       }
       v9 = v26 & 0xFFFFFE00;
       if ( (v26 & 0xFFFFFE00) == 0 )
         v9 = v26;
-      v10 = _qwrite(*(_DWORD *)(a4 + 16), a1, v9);
+      v10 = _qwrite(a4[4], a1, v9);
       v11 = v10;
       if ( v10 != -1 )
       {
@@ -1619,46 +1605,46 @@ int __fastcall sub_10B8D(char *a1, unsigned int a2, int a3, int a4)
           goto LABEL_22;
         *(_DWORD *)sub_11DF7() = 12;
       }
-      *(_BYTE *)(a4 + 12) |= 0x20u;
+      *((_BYTE *)a4 + 12) |= 0x20u;
 LABEL_22:
       a1 += v11;
       v25 += v11;
       v26 -= v11;
-      if ( !v26 || (*(_BYTE *)(a4 + 12) & 0x20) != 0 )
+      if ( !v26 || ((_BYTE)a4[3] & 0x20) != 0 )
         goto LABEL_32;
     }
   }
-  v17 = *(_BYTE *)(a4 + 13);
+  v17 = *((_BYTE *)a4 + 13);
   if ( (v17 & 4) != 0 )
   {
-    *(_BYTE *)(a4 + 13) = v17 & 0xFA;
+    *((_BYTE *)a4 + 13) = v17 & 0xFA;
     v7 = 1;
-    *(_BYTE *)(a4 + 13) = v17 & 0xFA | 1;
+    *((_BYTE *)a4 + 13) = v17 & 0xFA | 1;
   }
-  v18 = *(_DWORD *)(a4 + 8);
-  v19 = (unsigned __int8 *)a1;
-  v20 = *(_DWORD *)(v18 + 12);
-  *(_DWORD *)(v18 + 12) = 1;
+  v18 = a4[2];
+  v19 = a1;
+  v20 = *((_DWORD *)v18 + 3);
+  *((_DWORD *)v18 + 3) = 1;
   do
   {
-    sub_11E03(*v19++, a4);
-    if ( (*(_BYTE *)(a4 + 12) & 0x30) != 0 )
+    sub_11E03((unsigned __int8)*v19++, (int)a4);
+    if ( ((_BYTE)a4[3] & 0x30) != 0 )
       break;
     ++v25;
   }
   while ( v6 != v25 );
-  *(_DWORD *)(*(_DWORD *)(a4 + 8) + 12) = v20;
+  *((_DWORD *)a4[2] + 3) = v20;
   if ( v7 )
   {
-    v21 = *(_BYTE *)(a4 + 13) & 0xFA;
-    *(_BYTE *)(a4 + 13) = v21;
-    *(_BYTE *)(a4 + 13) = v21 | 4;
-    sub_11AA8(a4);
+    v21 = *((_BYTE *)a4 + 13) & 0xFA;
+    *((_BYTE *)a4 + 13) = v21;
+    *((_BYTE *)a4 + 13) = v21 | 4;
+    sub_11AA8((int)a4);
   }
 LABEL_32:
-  if ( (*(_BYTE *)(a4 + 12) & 0x20) != 0 )
+  if ( ((_BYTE)a4[3] & 0x20) != 0 )
     v25 = 0;
-  *(_DWORD *)(a4 + 12) |= v24;
+  a4[3] = (char *)(v24 | (unsigned int)a4[3]);
   return v25 / a2;
 }
 // 11674: using guessed type int __fastcall _ioalloc(_DWORD);
@@ -1668,7 +1654,7 @@ LABEL_32:
 unsigned int __fastcall sub_10D8A(unsigned int result)
 {
   if ( result )
-    result = sub_11C83(result);
+    return sub_11C83(result);
   return result;
 }
 
@@ -1699,7 +1685,7 @@ _DWORD *__fastcall sub_110FE(int a1)
 }
 
 //----- (0001113C) --------------------------------------------------------
-int __cdecl sub_1113C(_BYTE *a1, __int16 a2, int a3, char a4)
+unsigned int __cdecl sub_1113C(_BYTE *a1, __int16 a2, int a3, char a4)
 {
   int v4; // ecx
   int v6[4]; // [esp+0h] [ebp-10h] BYREF
@@ -1709,11 +1695,12 @@ int __cdecl sub_1113C(_BYTE *a1, __int16 a2, int a3, char a4)
   return sub_11163(a1, a2, a3, v6);
 }
 // 1113D: variable 'v4' is possibly undefined
+// 1113C: using guessed type int var_10[4];
 
 //----- (00011163) --------------------------------------------------------
-int __fastcall sub_11163(_BYTE *a1, __int16 a2, int a3, int *a4)
+unsigned int __fastcall sub_11163(_BYTE *a1, __int16 a2, int a3, int *a4)
 {
-  int v6; // edi
+  unsigned int v6; // edi
   int v9; // eax
   int v16; // ebx
   int v17; // eax
@@ -1867,9 +1854,7 @@ LABEL_6:
 LABEL_42:
     LOBYTE(v24) = v23 | 0x40;
     v23 = v24;
-    goto LABEL_43;
   }
-LABEL_43:
   sub_12FC9(v6, v23);
   return v6;
 }
@@ -1886,7 +1871,6 @@ char *sub_113DF()
   int v2; // edi
   int v3; // eax
   int v4; // eax
-  char *result; // eax
 
   v0 = (int *)dword_20CA4;
   if ( dword_20CA4 )
@@ -1903,7 +1887,7 @@ LABEL_11:
     *((_DWORD *)i + 2) = v0;
     dword_20CA0 = (int)v0;
     *v0 = v4;
-    result = i;
+    return i;
   }
   else
   {
@@ -1930,9 +1914,8 @@ LABEL_11:
     }
 LABEL_12:
     sub_110D4(5);
-    result = 0;
+    return 0;
   }
-  return result;
 }
 // 13077: using guessed type int __fastcall nmalloc(_DWORD);
 // 13158: using guessed type int __fastcall memset(_DWORD, _DWORD, _DWORD);
@@ -1941,8 +1924,7 @@ LABEL_12:
 // 20CA4: using guessed type int dword_20CA4;
 
 //----- (00011488) --------------------------------------------------------
-// __freefp_
-int *__fastcall _freefp(int a1)
+int *__fastcall sub_11488(int a1)
 {
   int *i; // edx
   int *result; // eax
@@ -1982,7 +1964,7 @@ int __fastcall sub_114DF(int a1, int a2)
     return 1;
   v2 = *(_DWORD *)(a2 + 4);
   v3 = a1 + *(_DWORD *)a2;
-  *(_BYTE *)(a2 + 12) &= 0xEFu;
+  *(_BYTE *)(a2 + 12) &= ~0x10u;
   v4 = v2 - a1;
   *(_DWORD *)a2 = v3;
   result = 0;
@@ -1995,7 +1977,7 @@ int __fastcall sub_1151E(int result)
 {
   int v1; // edx
 
-  *(_BYTE *)(result + 12) &= 0xEFu;
+  *(_BYTE *)(result + 12) &= ~0x10u;
   v1 = *(_DWORD *)(*(_DWORD *)(result + 8) + 8);
   *(_DWORD *)(result + 4) = 0;
   *(_DWORD *)result = v1;
@@ -2068,7 +2050,7 @@ LABEL_6:
     return -1;
   }
   v9 = *(_DWORD *)(a1 + 8);
-  *(_BYTE *)(a1 + 12) &= 0xEFu;
+  *(_BYTE *)(a1 + 12) &= ~0x10u;
   *(_DWORD *)a1 = *(_DWORD *)(v9 + 8);
   v10 = *(_DWORD *)(a1 + 16);
   *(_DWORD *)(a1 + 4) = 0;
@@ -2081,8 +2063,7 @@ LABEL_6:
 // 13170: using guessed type int __fastcall tell(_DWORD);
 
 //----- (000117C2) --------------------------------------------------------
-// __filbuf_
-int __fastcall _filbuf(int *a1)
+int __fastcall sub_117C2(int *a1)
 {
   int v3; // ecx
 
@@ -2110,7 +2091,7 @@ int __fastcall sub_117F1(int a1)
   if ( (v2 & 0x20) != 0 && (v2 & 6) != 0 )
     _flushall(0x2000);
   v3 = *(_DWORD *)(a1 + 8);
-  *(_BYTE *)(a1 + 12) &= 0xFBu;
+  *(_BYTE *)(a1 + 12) &= ~4u;
   *(_DWORD *)a1 = *(_DWORD *)(v3 + 8);
   if ( (*(_DWORD *)(a1 + 12) & 0x2400) != 9216 || *(_DWORD *)(a1 + 16) )
   {
@@ -2231,7 +2212,7 @@ int __fastcall sub_11AA8(int a1)
   if ( (*(_BYTE *)(a1 + 13) & 0x10) != 0 )
   {
     v3 = *(_BYTE *)(a1 + 12);
-    *(_BYTE *)(a1 + 13) &= 0xEFu;
+    *(_BYTE *)(a1 + 13) &= ~0x10u;
     if ( (v3 & 2) != 0 )
     {
       v4 = *(_DWORD *)(a1 + 8);
@@ -2260,7 +2241,7 @@ int __fastcall sub_11AA8(int a1)
   }
   else if ( *(_DWORD *)(*(_DWORD *)(a1 + 8) + 8) )
   {
-    *(_BYTE *)(a1 + 12) &= 0xEFu;
+    *(_BYTE *)(a1 + 12) &= ~0x10u;
     if ( (*(_BYTE *)(a1 + 13) & 0x20) == 0 )
     {
       v9 = *(_DWORD *)(a1 + 4);
@@ -2277,7 +2258,7 @@ int __fastcall sub_11AA8(int a1)
   *(_DWORD *)(a1 + 4) = 0;
   *(_DWORD *)a1 = v10;
   if ( !v2 && (*(_BYTE *)(*(_DWORD *)(a1 + 8) + 16) & 1) != 0 && j__dos_commit(*(_DWORD *)(a1 + 16)) == -1 )
-    v2 = -1;
+    return -1;
   return v2;
 }
 // 11BE9: using guessed type int __fastcall lseek(_DWORD, _DWORD, _DWORD);
@@ -2440,7 +2421,7 @@ int __fastcall sub_11E03(int a1, int a2)
 int (**__fastcall sub_11F23(int (**result)(void)))(void)
 {
   if ( *result )
-    result = (int (**)(void))(*result)();
+    return (int (**)(void))(*result)();
   return result;
 }
 
@@ -2472,6 +2453,7 @@ char *__fastcall sub_11F2F(unsigned __int8 a1)
   }
   return result;
 }
+// 20B86: using guessed type _BYTE byte_20B86[2];
 
 //----- (00011F7B) --------------------------------------------------------
 char *__fastcall sub_11F7B(unsigned __int8 a1, unsigned __int8 a2)
@@ -2502,11 +2484,12 @@ char *__fastcall sub_11F7B(unsigned __int8 a1, unsigned __int8 a2)
   }
   return result;
 }
+// 20B86: using guessed type _BYTE byte_20B86[2];
 
 //----- (00012BA0) --------------------------------------------------------
 char __fastcall sub_12BA0(int a1, int a2, int a3, int a4)
 {
-  int *v4; // ebx
+  _DWORD *v4; // ebx
   int v5; // eax
   __int64 v7; // [esp+0h] [ebp-8h] BYREF
 
@@ -2515,7 +2498,7 @@ char __fastcall sub_12BA0(int a1, int a2, int a3, int a4)
   __asm { smsw    word_2057E }
   word_2057E &= 6u;
   __sidt(&v7);
-  v4 = (int *)(*(_DWORD *)((char *)&v7 + 2) + 56);
+  v4 = (_DWORD *)(*(_DWORD *)((char *)&v7 + 2) + 56);
   if ( byte_201D4 )
   {
     sub_12C6B();
@@ -2584,12 +2567,12 @@ __int16 __fastcall sub_12C88(int a1, int a2, int a3)
   {
     __asm { int     21h; DOS - }
     v4 = __readcr0();
-    __writecr0((v4 | 4) & 0xFFFFFFFD);
+    __writecr0(v4 & 0xFFFFFFF9 | 4);
   }
   else
   {
     __asm { int     21h; DOS - SET INTERRUPT VECTOR }
-    result = sub_12CD5();
+    return sub_12CD5();
   }
   return result;
 }
@@ -2605,7 +2588,7 @@ __int16 sub_12CD5()
   result = 9525;
   __asm { int     21h; DOS - SET INTERRUPT VECTOR }
   dword_20538 |= 4u;
-  dword_20538 &= 0xFFFFFFFD;
+  dword_20538 &= ~2u;
   __asm { int     21h; DOS - }
   return result;
 }
@@ -2661,8 +2644,7 @@ int __fastcall sub_12DD0(int result)
 }
 
 //----- (00012DD4) --------------------------------------------------------
-// __init_8087_
-int _init_8087()
+int sub_12DD4()
 {
   if ( byte_2019D )
   {
@@ -2741,14 +2723,14 @@ int sub_12E79()
 // 20CA4: using guessed type int dword_20CA4;
 
 //----- (00012F74) --------------------------------------------------------
-int __fastcall sub_12F74(int a1)
+int __fastcall sub_12F74(unsigned int a1)
 {
   int v3; // ebx
   char v4; // cl
 
-  if ( a1 >= (unsigned int)dword_20588 )
+  if ( a1 >= dword_20588 )
     return 0;
-  if ( a1 < 5 )
+  if ( (int)a1 < 5 )
   {
     v3 = 4 * a1;
     v4 = *((_BYTE *)off_205DC + 4 * a1 + 1);
@@ -2785,17 +2767,14 @@ int __fastcall sub_12FC9(int a1, int a2)
 // 205DC: using guessed type void *off_205DC;
 
 //----- (00013008) --------------------------------------------------------
-int __fastcall sub_13008(int a1, int a2)
+int __fastcall sub_13008(unsigned int a1, int a2)
 {
-  int result; // eax
-
   if ( a2 )
-    result = sub_13013(a1);
+    return sub_13013(a1);
   else
-    result = 0;
-  return result;
+    return 0;
 }
-// 13011: conditional instruction was optimized away because of 'edx.4!=0'
+// 13011: conditional instruction was optimized away because edx.4!=0
 
 //----- (00013013) --------------------------------------------------------
 int __fastcall sub_13013(unsigned int a1)
@@ -2871,7 +2850,22 @@ void __fastcall __noreturn sub_13899(int a1)
 // 20608: using guessed type int (__fastcall *off_20608)(_DWORD);
 
 //----- (00014134) --------------------------------------------------------
-int __cdecl sub_14134(int a1, __int16 a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, __int16 a15)
+int __cdecl sub_14134(
+        int a1,
+        __int16 a2,
+        int a3,
+        int a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        __int16 a15)
 {
   int v15; // esi
   __int16 v16; // dx
@@ -2933,7 +2927,7 @@ LABEL_5:
       v22 = v21 & 0x1807;
       LOWORD(v22) = (unsigned __int8)(BYTE1(v22) | v22);
       funcs_1417E[v22]();
-      ((void (__fastcall *)(int, __int16, int))_GETDS)(v23, v16, (unsigned __int8)v23 | BYTE1(v23) & 0x38);
+      ((void (__fastcall __noreturn *)(int, __int16, int))_GETDS)(v23, v16, (unsigned __int8)v23 | BYTE1(v23) & 0x38);
     }
     JUMPOUT(0x1420F);
   }
@@ -2945,7 +2939,24 @@ LABEL_5:
 // 14247: using guessed type int nullsub_4(void);
 
 //----- (00014248) --------------------------------------------------------
-int __usercall sub_14248@<eax>(int a1@<ebp>, int a2@<edi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
+int __usercall sub_14248@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        int a3,
+        __int16 a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        __int16 a17)
 {
   _DWORD *v17; // ebx
   int v18; // edx
@@ -2976,7 +2987,24 @@ int __usercall sub_14248@<eax>(int a1@<ebp>, int a2@<edi>, int a3, __int16 a4, i
 }
 
 //----- (00014284) --------------------------------------------------------
-int __usercall sub_14284@<eax>(int a1@<ebp>, int a2@<edi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
+int __usercall sub_14284@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        int a3,
+        __int16 a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        __int16 a17)
 {
   _QWORD *v17; // ebx
   int v18; // edx
@@ -3216,10 +3244,28 @@ int __usercall sub_144B2@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>)
 }
 
 //----- (000144D1) --------------------------------------------------------
-int __usercall sub_144D1@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_144D1@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        signed int *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   __int16 v18; // dx
-  int v20; // eax
+  unsigned int v20; // eax
 
   sub_162EC(*a3, a1 + 108);
   v20 = sub_15B45(a2 + a1 + 28, a1 + 108);
@@ -3230,12 +3276,30 @@ int __usercall sub_144D1@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>,
 }
 
 //----- (000144ED) --------------------------------------------------------
-int __usercall sub_144ED@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_144ED@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        signed int *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   __int16 v18; // dx
   int v19; // edi
   __int16 v20; // bx
-  int v22; // eax
+  unsigned int v22; // eax
 
   sub_162EC(*a3, a1 + 108);
   v22 = sub_15B45(a2 + a1 + 28, a1 + 108);
@@ -3293,7 +3357,25 @@ int __usercall sub_14566@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>)
 }
 
 //----- (00014585) --------------------------------------------------------
-int __usercall sub_14585@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_14585@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        signed int *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   int v18; // edi
   __int16 v19; // bx
@@ -3312,14 +3394,32 @@ int __usercall sub_14585@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>,
 // 13D3A: using guessed type __int16 word_13D3A;
 
 //----- (000145C3) --------------------------------------------------------
-int __usercall sub_145C3@<eax>(int a1@<ebp>, int a2@<edi>, unsigned int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_145C3@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        int *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   *a3 = sub_161A3(a2 + a1 + 28);
   return sub_14134(a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
 }
 
 //----- (000145D4) --------------------------------------------------------
-void __usercall sub_145D4(int a1@<ebp>, int a2@<edi>, unsigned int *a3@<esi>)
+void __usercall sub_145D4(int a1@<ebp>, int a2@<edi>, int *a3@<esi>)
 {
   *a3 = sub_161A3(a2 + a1 + 28);
   JUMPOUT(0x142CD);
@@ -3327,14 +3427,48 @@ void __usercall sub_145D4(int a1@<ebp>, int a2@<edi>, unsigned int *a3@<esi>)
 // 145E0: control flows out of bounds to 142CD
 
 //----- (000145E5) --------------------------------------------------------
-int __usercall sub_145E5@<eax>(void *a1@<ebp>, const void *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
+int __usercall sub_145E5@<eax>(
+        void *a1@<ebp>,
+        const void *a2@<esi>,
+        int a3,
+        __int16 a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        __int16 a17)
 {
   qmemcpy(a1, a2, 0x1Cu);
   return sub_14134(a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
 }
 
 //----- (00014603) --------------------------------------------------------
-int __usercall sub_14603@<eax>(int a1@<ebp>, __int16 *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
+int __usercall sub_14603@<eax>(
+        int a1@<ebp>,
+        __int16 *a2@<esi>,
+        int a3,
+        __int16 a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        __int16 a17)
 {
   __int16 v17; // ax
   __int16 v18; // ax
@@ -3358,14 +3492,48 @@ int __usercall sub_14603@<eax>(int a1@<ebp>, __int16 *a2@<esi>, int a3, __int16 
 }
 
 //----- (00014643) --------------------------------------------------------
-int __usercall sub_14643@<eax>(const void *a1@<ebp>, void *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
+int __usercall sub_14643@<eax>(
+        const void *a1@<ebp>,
+        void *a2@<esi>,
+        int a3,
+        __int16 a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        __int16 a17)
 {
   qmemcpy(a2, a1, 0x1Cu);
   return sub_14134(a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
 }
 
 //----- (00014657) --------------------------------------------------------
-int __usercall sub_14657@<eax>(_WORD *a1@<ebp>, _WORD *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
+int __usercall sub_14657@<eax>(
+        _WORD *a1@<ebp>,
+        _WORD *a2@<esi>,
+        int a3,
+        __int16 a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        __int16 a17)
 {
   *a2 = *a1;
   return sub_14134(a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
@@ -3392,10 +3560,28 @@ int __usercall sub_14684@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>)
 }
 
 //----- (000146A3) --------------------------------------------------------
-int __usercall sub_146A3@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_146A3@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        int *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   __int16 v18; // dx
-  int v20; // eax
+  unsigned int v20; // eax
 
   sub_160DF(*a3, a1 + 108);
   v20 = sub_15B45(a2 + a1 + 28, a1 + 108);
@@ -3406,12 +3592,30 @@ int __usercall sub_146A3@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>, int a4
 }
 
 //----- (000146BF) --------------------------------------------------------
-int __usercall sub_146BF@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_146BF@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        int *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   __int16 v18; // dx
   int v19; // edi
   __int16 v20; // bx
-  int v22; // eax
+  unsigned int v22; // eax
 
   sub_160DF(*a3, a1 + 108);
   v22 = sub_15B45(a2 + a1 + 28, a1 + 108);
@@ -3469,7 +3673,25 @@ int __usercall sub_14738@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>)
 }
 
 //----- (00014757) --------------------------------------------------------
-int __usercall sub_14757@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_14757@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        int *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   int v18; // edi
   __int16 v19; // bx
@@ -3488,7 +3710,25 @@ int __usercall sub_14757@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>, int a4
 // 13D3A: using guessed type __int16 word_13D3A;
 
 //----- (00014795) --------------------------------------------------------
-int __usercall sub_14795@<eax>(_WORD *a1@<ebp>, int a2@<edi>, _DWORD *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_14795@<eax>(
+        _WORD *a1@<ebp>,
+        int a2@<edi>,
+        _DWORD *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   int v18; // eax
   _DWORD *v19; // ebx
@@ -3544,10 +3784,28 @@ int __usercall sub_14818@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>)
 }
 
 //----- (0001483B) --------------------------------------------------------
-int __usercall sub_1483B@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_1483B@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        __int64 *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   __int16 v18; // dx
-  int v20; // eax
+  unsigned int v20; // eax
 
   sub_16125(*a3, a1 + 108, (_BYTE *)a1);
   v20 = sub_15B45(a2 + a1 + 28, a1 + 108);
@@ -3558,12 +3816,30 @@ int __usercall sub_1483B@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>, in
 }
 
 //----- (0001485B) --------------------------------------------------------
-int __usercall sub_1485B@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_1485B@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        __int64 *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   __int16 v18; // dx
   int v19; // edi
   __int16 v20; // bx
-  int v22; // eax
+  unsigned int v22; // eax
 
   sub_16125(*a3, a1 + 108, (_BYTE *)a1);
   v22 = sub_15B45(a2 + a1 + 28, a1 + 108);
@@ -3621,7 +3897,25 @@ int __usercall sub_148E4@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>)
 }
 
 //----- (00014907) --------------------------------------------------------
-int __usercall sub_14907@<eax>(int a1@<ebp>, int a2@<edi>, int a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_14907@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        int a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   int v18; // edi
   __int16 v19; // bx
@@ -3642,7 +3936,25 @@ int __usercall sub_14907@<eax>(int a1@<ebp>, int a2@<edi>, int a3@<esi>, int a4,
 // 13D3A: using guessed type __int16 word_13D3A;
 
 //----- (00014952) --------------------------------------------------------
-int __usercall sub_14952@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_14952@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        __int64 *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   int v18; // edi
   __int16 v19; // bx
@@ -3661,7 +3973,26 @@ int __usercall sub_14952@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>, in
 // 13D3A: using guessed type __int16 word_13D3A;
 
 //----- (00014994) --------------------------------------------------------
-int __usercall sub_14994@<eax>(int a1@<edx>, _BYTE *a2@<ebp>, int a3@<edi>, int *a4@<esi>, int a5, __int16 a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, __int16 a19)
+int __usercall sub_14994@<eax>(
+        int a1@<edx>,
+        _BYTE *a2@<ebp>,
+        int a3@<edi>,
+        int *a4@<esi>,
+        int a5,
+        __int16 a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        int a18,
+        __int16 a19)
 {
   *a4 = sub_16222((__int64 *)&a2[a3 + 28], a2);
   a4[1] = a1;
@@ -3688,7 +4019,24 @@ void __usercall sub_149C7(int a1@<edx>, _BYTE *a2@<ebp>, int a3@<edi>, int *a4@<
 // 149D7: control flows out of bounds to 142CD
 
 //----- (000149DC) --------------------------------------------------------
-int __usercall sub_149DC@<eax>(_DWORD *a1@<ebp>, _DWORD *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
+int __usercall sub_149DC@<eax>(
+        _DWORD *a1@<ebp>,
+        _DWORD *a2@<esi>,
+        int a3,
+        __int16 a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        __int16 a17)
 {
   _DWORD *v17; // esi
   unsigned int v18; // ebx
@@ -3742,7 +4090,24 @@ void __usercall sub_14A27(char *a1@<ebp>, int a2@<edi>, _DWORD *a3@<esi>)
 // 13CEA: using guessed type __int16 word_13CEA;
 
 //----- (00014A52) --------------------------------------------------------
-int __usercall sub_14A52@<eax>(int a1@<ebp>, _WORD *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
+int __usercall sub_14A52@<eax>(
+        int a1@<ebp>,
+        _WORD *a2@<esi>,
+        int a3,
+        __int16 a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        __int16 a17)
 {
   *a2 = *(_WORD *)(a1 + 4);
   return sub_14134(a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
@@ -3769,10 +4134,28 @@ int __usercall sub_14A81@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>)
 }
 
 //----- (00014AA2) --------------------------------------------------------
-int __usercall sub_14AA2@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_14AA2@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        __int16 *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   __int16 v18; // dx
-  int v20; // eax
+  unsigned int v20; // eax
 
   sub_160DF(*a3, a1 + 108);
   v20 = sub_15B45(a2 + a1 + 28, a1 + 108);
@@ -3783,12 +4166,30 @@ int __usercall sub_14AA2@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>, in
 }
 
 //----- (00014AC0) --------------------------------------------------------
-int __usercall sub_14AC0@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_14AC0@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        __int16 *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   __int16 v18; // dx
   int v19; // edi
   __int16 v20; // bx
-  int v22; // eax
+  unsigned int v22; // eax
 
   sub_160DF(*a3, a1 + 108);
   v22 = sub_15B45(a2 + a1 + 28, a1 + 108);
@@ -3846,7 +4247,25 @@ int __usercall sub_14B41@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>)
 }
 
 //----- (00014B62) --------------------------------------------------------
-int __usercall sub_14B62@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_14B62@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        __int16 *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   int v18; // edi
   __int16 v19; // bx
@@ -3865,7 +4284,25 @@ int __usercall sub_14B62@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>, in
 // 13D3A: using guessed type __int16 word_13D3A;
 
 //----- (00014BA2) --------------------------------------------------------
-int __usercall sub_14BA2@<eax>(_WORD *a1@<ebp>, int a2@<edi>, _WORD *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_14BA2@<eax>(
+        _WORD *a1@<ebp>,
+        int a2@<edi>,
+        _WORD *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   int v18; // eax
   _DWORD *v19; // ebx
@@ -3905,7 +4342,25 @@ void __usercall sub_14BEA(_WORD *a1@<ebp>, int a2@<edi>, _WORD *a3@<esi>)
 // 14C08: variable 'v3' is possibly undefined
 
 //----- (00014C1F) --------------------------------------------------------
-int __usercall sub_14C1F@<eax>(int a1@<ebp>, int a2@<edi>, unsigned int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
+int __usercall sub_14C1F@<eax>(
+        int a1@<ebp>,
+        int a2@<edi>,
+        unsigned int *a3@<esi>,
+        int a4,
+        __int16 a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        __int16 a18)
 {
   int v18; // edi
   __int16 v19; // bx
@@ -3940,9 +4395,6 @@ int __usercall sub_14CB8@<eax>(int a1@<ebp>, int a2@<edi>, int a3@<esi>)
   v3 = sub_158D4(a2 + a1 + 28, a3 + a1 + 28, a3);
   return (*(int (__fastcall **)(int))(a1 + 122))(v3);
 }
-
-//----- (000151A0) --------------------------------------------------------
-#error "15217: call analysis failed (funcsize=43)"
 
 //----- (000158AA) --------------------------------------------------------
 void __fastcall sub_158AA(int a1, int *a2)
@@ -4017,7 +4469,7 @@ int __usercall sub_159B3@<eax>(__int64 a1@<edx:eax>, unsigned int a2@<ecx>, unsi
   _BOOL1 v10; // cf
   unsigned __int16 v11; // si
   int v12; // ecx
-  int v13; // esi
+  unsigned int v13; // esi
   unsigned int v15; // ebp
   int v16; // edi
   int v17; // ecx
@@ -4025,7 +4477,7 @@ int __usercall sub_159B3@<eax>(__int64 a1@<edx:eax>, unsigned int a2@<ecx>, unsi
   _BOOL1 v19; // cf
   int v20; // ecx
   unsigned int v21; // et1
-  int v22; // et2
+  unsigned int v22; // et2
   int v23; // edi
   int v24; // ebx
   char v25; // ch
@@ -4234,18 +4686,18 @@ LABEL_43:
   }
   return a1;
 }
-// 10000: using guessed type int sub_10000();
+// 10000: using guessed type void __noreturn sub_10000();
 
 //----- (00015B45) --------------------------------------------------------
-int __fastcall sub_15B45(unsigned int a1, int a2)
+unsigned int __fastcall sub_15B45(unsigned int a1, int a2)
 {
   int v2; // esi
   _BOOL1 v3; // cf
   _BOOL1 v4; // zf
   int v5; // edi
-  int result; // eax
+  unsigned int result; // eax
   int v7; // edi
-  int v8; // eax
+  unsigned int v8; // eax
 
   if ( (*(_WORD *)(a1 + 8) | 0x8000) == 0xFFFF && *(_DWORD *)a1 | (2 * *(_DWORD *)(a1 + 4))
     || (*(_WORD *)(a2 + 8) | 0x8000) == 0xFFFF && *(_DWORD *)a2 | (2 * *(_DWORD *)(a2 + 4)) )
@@ -4300,7 +4752,12 @@ int __usercall sub_15BDE@<eax>(int a1@<eax>, int a2@<edx>, _BYTE *a3@<ebp>, int 
 }
 
 //----- (00015C7E) --------------------------------------------------------
-int __usercall sub_15C7E@<eax>(unsigned __int64 a1@<edx:eax>, unsigned int a2@<ecx>, unsigned int a3@<ebx>, _BYTE *a4@<ebp>, int a5@<esi>)
+int __usercall sub_15C7E@<eax>(
+        unsigned __int64 a1@<edx:eax>,
+        unsigned int a2@<ecx>,
+        unsigned int a3@<ebx>,
+        _BYTE *a4@<ebp>,
+        int a5@<esi>)
 {
   _BOOL1 v5; // cc
   _BOOL1 v6; // of
@@ -4320,11 +4777,11 @@ int __usercall sub_15C7E@<eax>(unsigned __int64 a1@<edx:eax>, unsigned int a2@<e
   unsigned int v21; // edi
   unsigned int v22; // esi
   unsigned __int64 v23; // rax
-  int v24; // ecx
+  unsigned int v24; // ecx
   int v25; // edi
   unsigned int i; // esi
   unsigned int v27; // edi
-  int v28; // esi
+  unsigned int v28; // esi
   unsigned int v29; // eax
   unsigned __int64 v30; // kr18_8
   unsigned __int64 v31; // rax
@@ -4518,7 +4975,11 @@ int __usercall sub_15E39@<eax>(int a1@<eax>, int a2@<edx>, int a3@<esi>)
 }
 
 //----- (00015EFF) --------------------------------------------------------
-int __usercall sub_15EFF@<eax>(unsigned __int64 a1@<edx:eax>, unsigned int a2@<ecx>, unsigned int a3@<ebx>, int a4@<esi>)
+int __usercall sub_15EFF@<eax>(
+        unsigned __int64 a1@<edx:eax>,
+        unsigned int a2@<ecx>,
+        unsigned int a3@<ebx>,
+        int a4@<esi>)
 {
   _BOOL1 v4; // zf
   _BOOL1 v5; // cc
@@ -4703,7 +5164,7 @@ int __fastcall sub_16075(int *a1)
 {
   __int16 v1; // cx
   int v2; // ebx
-  unsigned int v3; // eax
+  int v3; // eax
   _BOOL1 v4; // cf
   char v5; // ch
   char v6; // ch
@@ -4727,12 +5188,12 @@ int __fastcall sub_16075(int *a1)
   {
     v5 = 2 * HIBYTE(v1);
     v4 = __CFADD__(v3 << v1, v3 << v1);
-    v3 = (unsigned __int64)v3 << v1 >> 32;
+    v3 = (unsigned __int64)(unsigned int)v3 << v1 >> 32;
   }
   v6 = ((v4 << 7) | 0x7F) & v5;
   result = __CFADD__(v6, v6) + v3;
   if ( __CFADD__(2 * v6, 2 * v6) )
-    result = -result;
+    return -result;
   return result;
 }
 
@@ -4834,13 +5295,13 @@ int __usercall sub_16125@<eax>(__int64 a1@<edx:eax>, int a2@<ebx>, _BYTE *a3@<eb
 }
 
 //----- (000161A3) --------------------------------------------------------
-unsigned int __fastcall sub_161A3(int a1)
+int __fastcall sub_161A3(int a1)
 {
   int v2; // edx
   unsigned int v3; // eax
   unsigned int v4; // ecx
   _BOOL1 v5; // cf
-  unsigned int result; // eax
+  int result; // eax
   __int16 v7; // bx
   __int16 v8; // cx
   unsigned __int64 v9; // rt0
@@ -4868,7 +5329,7 @@ unsigned int __fastcall sub_161A3(int a1)
   {
     if ( v8 == 0x7FFF )
     {
-      result = ((((2 * result) >> 8) | 0xFF000000) >> 1) | (__CFADD__(v7, v7) << 31);
+      return ((((unsigned int)(2 * result) >> 8) | 0xFF000000) >> 1) | (__CFADD__(v7, v7) << 31);
     }
     else
     {
@@ -4879,16 +5340,16 @@ unsigned int __fastcall sub_161A3(int a1)
         {
           LODWORD(v9) = 2 * result;
           HIDWORD(v9) = v4;
-          result = ((unsigned int)(v9 >> 8) >> 1) | (__CFADD__(v7, v7) << 31);
+          return ((unsigned int)(v9 >> 8) >> 1) | (__CFADD__(v7, v7) << 31);
         }
         else
         {
-          result = (__CFADD__(v7, v7) << 31) | 0x7F800000;
+          return (__CFADD__(v7, v7) << 31) | 0x7F800000;
         }
       }
       else
       {
-        result = 0;
+        return 0;
       }
     }
   }
@@ -4933,12 +5394,12 @@ int __usercall sub_16222@<eax>(__int64 *a1@<eax>, _BYTE *a2@<ebp>)
       {
         v9 = result;
         sub_1433C(v6, a2);
-        result = v9;
+        return v9;
       }
     }
     else if ( v6 < -52 )
     {
-      result = 0;
+      return 0;
     }
     else
     {
@@ -4949,16 +5410,16 @@ int __usercall sub_16222@<eax>(__int64 *a1@<eax>, _BYTE *a2@<ebp>)
         v4 = v3;
         v3 = HIDWORD(v3);
       }
-      result = ((unsigned int)(__PAIR64__(v3, v4) >> v8) + __PAIR64__(v3 >> (v8 & 0x1F), __PAIR64__(v3, v4) >> v8)) >> 32;
+      return ((unsigned int)(__PAIR64__(v3, v4) >> v8) + __PAIR64__(v3 >> (v8 & 0x1F), __PAIR64__(v3, v4) >> v8)) >> 32;
     }
   }
   else if ( v6 )
   {
-    result = v3 >> 11;
+    return v3 >> 11;
   }
   else
   {
-    result = v3 >> 12;
+    return v3 >> 12;
   }
   return result;
 }
@@ -4966,7 +5427,7 @@ int __usercall sub_16222@<eax>(__int64 *a1@<eax>, _BYTE *a2@<ebp>)
 //----- (000162EC) --------------------------------------------------------
 signed int __fastcall sub_162EC(signed int result, int a2)
 {
-  int v2; // ecx
+  signed int v2; // ecx
   signed int v3; // eax
 
   v2 = result >> 23;
@@ -4977,7 +5438,7 @@ signed int __fastcall sub_162EC(signed int result, int a2)
     if ( (_BYTE)v2 == 0xFF )
     {
       LOWORD(v2) = -1;
-      v3 &= 0x7FFFFFFFu;
+      v3 &= ~0x80000000;
       if ( v3 )
         v3 |= 0x40000000u;
     }
@@ -5145,7 +5606,7 @@ __int16 __usercall sub_1653E@<ax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>, _BYT
     {
       v5 = *(_BYTE *)(a1 + 9);
       sub_15BDE(a1, a2, a4, a5);
-      LOWORD(a1) = sub_165F4(a3, a4, a5);
+      LOWORD(a1) = sub_165F4((__int64 *)a3, a4, a5);
       v6 = *(_BYTE *)(a3 + 9);
       if ( v5 < 0 )
       {
@@ -5181,7 +5642,7 @@ __int16 __usercall sub_1653E@<ax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>, _BYT
 }
 
 //----- (000165F4) --------------------------------------------------------
-__int16 __usercall __spoils<> sub_165F4@<ax>(int a1@<eax>, _BYTE *a2@<ebp>, int a3@<esi>)
+__int16 __usercall __spoils<> sub_165F4@<ax>(__int64 *a1@<eax>, _BYTE *a2@<ebp>, int a3@<esi>)
 {
   unsigned __int8 v4; // ch
   char v5; // cl
@@ -5201,44 +5662,44 @@ __int16 __usercall __spoils<> sub_165F4@<ax>(int a1@<eax>, _BYTE *a2@<ebp>, int 
   int v19; // [esp-14h] [ebp-1Ch]
 
   v4 = 0;
-  v5 = *(_BYTE *)(a1 + 9);
-  *(_BYTE *)(a1 + 9) = v5 & 0x7F;
-  if ( *(_WORD *)(a1 + 8) == 0x3FFF && *(_DWORD *)(a1 + 4) == 0x80000000 && !*(_DWORD *)a1 )
+  v5 = *((_BYTE *)a1 + 9);
+  *((_BYTE *)a1 + 9) = v5 & 0x7F;
+  if ( *((_WORD *)a1 + 4) == 0x3FFF && *((_DWORD *)a1 + 1) == 0x80000000 && !*(_DWORD *)a1 )
   {
     *(_DWORD *)a1 = 560513589;
-    *(_DWORD *)(a1 + 4) = -921707870;
+    *((_DWORD *)a1 + 1) = -921707870;
     LOBYTE(result) = -2;
     HIBYTE(result) = v5 & 0x80 | 0x3F;
-    *(_WORD *)(a1 + 8) = result;
+    *((_WORD *)a1 + 4) = result;
   }
   else
   {
-    if ( *(__int16 *)(a1 + 8) >= 0x3FFF )
+    if ( *((__int16 *)a1 + 4) >= 0x3FFF )
     {
-      LOWORD(a3) = *(_WORD *)(a1 + 8);
+      LOWORD(a3) = *((_WORD *)a1 + 4);
       a3 <<= 16;
       LOWORD(a3) = 0x3FFF;
-      *(_DWORD *)a1 = sub_15C7E(0x8000000000000000i64, *(_DWORD *)(a1 + 4), *(_DWORD *)a1, a2, a3);
-      *(_DWORD *)(a1 + 4) = 0x80000000;
-      *(_WORD *)(a1 + 8) = 0x3FFF;
+      *(_DWORD *)a1 = sub_15C7E(0x8000000000000000i64, *((_DWORD *)a1 + 1), *(_DWORD *)a1, a2, a3);
+      *((_DWORD *)a1 + 1) = 0x80000000;
+      *((_WORD *)a1 + 4) = 0x3FFF;
       v4 = 2;
     }
-    v7 = *(_WORD *)(a1 + 8);
+    v7 = *((_WORD *)a1 + 4);
     v8 = v7 <= 0x3FFDu;
     if ( v7 == 16381 )
-      v8 = *(_QWORD *)a1 <= 0x8930A2F4F66AB09Bi64;
+      v8 = (unsigned __int64)*a1 <= 0x8930A2F4F66AB09Bi64;
     if ( !v8 )
     {
       HIWORD(v9) = 0x3FFF;
-      v10 = *(_QWORD *)a1;
-      LOWORD(v9) = *(_WORD *)(a1 + 8);
-      v19 = sub_159B3(*(_QWORD *)a1, 0xDDB3D742, 0xC265539E, v9);
+      v10 = *a1;
+      LOWORD(v9) = *((_WORD *)a1 + 4);
+      v19 = sub_159B3(*a1, 0xDDB3D742, 0xC265539E, v9);
       v18 = HIDWORD(v10);
       v17 = v9;
       HIWORD(v9) = 0x3FFF;
-      v11 = *(_QWORD *)a1;
-      LOWORD(v9) = *(_WORD *)(a1 + 8);
-      LODWORD(v11) = sub_15EFF(*(_QWORD *)a1, 0xDDB3D742, 0xC265539E, v9);
+      v11 = *a1;
+      LOWORD(v9) = *((_WORD *)a1 + 4);
+      LODWORD(v11) = sub_15EFF(*a1, 0xDDB3D742, 0xC265539E, v9);
       v12 = __ROL4__(v9, 16);
       LOWORD(v12) = -16385;
       v13 = __ROL4__(v12, 16);
@@ -5247,22 +5708,22 @@ __int16 __usercall __spoils<> sub_165F4@<ax>(int a1@<eax>, _BYTE *a2@<ebp>, int 
       LOWORD(v14) = v13;
       a3 = v14;
       *(_DWORD *)a1 = sub_15C7E(v11, v18, v19, a2, v14);
-      *(_DWORD *)(a1 + 4) = HIDWORD(v11);
-      *(_WORD *)(a1 + 8) = v14;
+      *((_DWORD *)a1 + 1) = HIDWORD(v11);
+      *((_WORD *)a1 + 4) = v14;
       v4 |= 1u;
     }
-    result = sub_17170(a1, (int)dword_164E4, a3);
+    result = sub_17170((int)a1, (int)dword_164E4, a3);
     v15 = v4 & 1;
     v16 = v4 >> 1;
     if ( v15 )
-      result = sub_158FE(a1, a3, 0x6B9B2C23u, 0x860A91C1, 16382);
+      result = sub_158FE((int)a1, a3, 0x6B9B2C23u, 0x860A91C1, 16382);
     if ( v16 & 1 )
     {
-      result = sub_158FE(a1, a3, 0x2168C235u, 0xC90FDAA2, 49151);
-      *(_BYTE *)(a1 + 9) ^= 0x80u;
+      result = sub_158FE((int)a1, a3, 0x2168C235u, 0xC90FDAA2, 49151);
+      *((_BYTE *)a1 + 9) ^= 0x80u;
     }
     if ( v5 < 0 )
-      *(_BYTE *)(a1 + 9) ^= 0x80u;
+      *((_BYTE *)a1 + 9) ^= 0x80u;
   }
   return result;
 }
@@ -5271,7 +5732,6 @@ __int16 __usercall __spoils<> sub_165F4@<ax>(int a1@<eax>, _BYTE *a2@<ebp>, int 
 //----- (00016757) --------------------------------------------------------
 int __usercall sub_16757@<eax>(int a1@<eax>, int a2@<edx>, int a3@<edi>)
 {
-  int result; // eax
   __int16 v4; // si
   unsigned int v5; // ecx
   unsigned int v6; // ebx
@@ -5289,20 +5749,24 @@ int __usercall sub_16757@<eax>(int a1@<eax>, int a2@<edx>, int a3@<edi>)
     *(_DWORD *)a1 = sub_167BD(v7, v5, v6, a3, v4);
     *(_DWORD *)(a1 + 4) = HIDWORD(v7);
     *(_WORD *)(a1 + 8) = v4;
-    result = a3;
+    return a3;
   }
   else
   {
     *(_DWORD *)a1 = 0;
     *(_DWORD *)(a1 + 4) = 0;
     *(_WORD *)(a1 + 8) = 0;
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (000167BD) --------------------------------------------------------
-int __usercall sub_167BD@<eax>(__int64 a1@<edx:eax>, unsigned int a2@<ecx>, unsigned int a3@<ebx>, __int16 a4@<di>, __int16 a5@<si>)
+int __usercall sub_167BD@<eax>(
+        __int64 a1@<edx:eax>,
+        unsigned int a2@<ecx>,
+        unsigned int a3@<ebx>,
+        __int16 a4@<di>,
+        __int16 a5@<si>)
 {
   int v5; // esi
   int v6; // edi
@@ -5563,7 +6027,7 @@ int __usercall sub_16982@<eax>(int a1@<eax>, _BYTE *a2@<ebp>)
 // 16A61: variable 'v7' is possibly undefined
 // 16A88: variable 'v17' is possibly undefined
 // 168E0: using guessed type int dword_168E0[7];
-// 168FE: using guessed type __int16;
+// 168FE: using guessed type __int16 word_168FE;
 
 //----- (00016C1A) --------------------------------------------------------
 int __usercall sub_16C1A@<eax>(int a1@<eax>, int a2@<esi>)
@@ -5709,15 +6173,21 @@ int __fastcall sub_16E28(int a1)
   return sub_16C1A(a1, 1);
 }
 
+//----- (00016E36) --------------------------------------------------------
+int __usercall sub_16E36@<eax>(char a1@<cf>, int a2@<eax>)
+{
+  return a1 + a2 + 1741441147;
+}
+
 //----- (00016E5E) --------------------------------------------------------
-int __fastcall sub_16E5E(int a1, int a2, int a3, int a4)
+int __fastcall sub_16E5E(unsigned __int64 *a1, int a2, int a3, int a4)
 {
   int v5; // esi
   __int16 v6; // cx
   _BOOL1 v7; // zf
   unsigned __int16 v8; // bx
   int v9; // ecx
-  signed __int64 v10; // rax
+  __int64 v10; // rax
   _BOOL1 v11; // cf
   __int16 v12; // bx
   unsigned __int64 v13; // rax
@@ -5735,7 +6205,7 @@ int __fastcall sub_16E5E(int a1, int a2, int a3, int a4)
   int v25; // esi
   unsigned __int64 v26; // rax
   unsigned int v27; // ecx
-  int (*v28)(); // esi
+  int (__usercall *v28)@<eax>(char@<cf>, int@<eax>); // esi
   int v29; // eax
   int v30; // et0
   int v31; // esi
@@ -5751,11 +6221,11 @@ int __fastcall sub_16E5E(int a1, int a2, int a3, int a4)
 
   v41 = a4;
   v5 = 0;
-  v6 = *(_WORD *)(a1 + 8);
-  *(_BYTE *)(a1 + 9) &= 0x7Fu;
-  v7 = *(_WORD *)(a1 + 8) == 0;
-  if ( !*(_WORD *)(a1 + 8) )
-    v7 = *(_QWORD *)a1 == 0i64;
+  v6 = *((_WORD *)a1 + 4);
+  *((_BYTE *)a1 + 9) &= ~0x80u;
+  v7 = *((_WORD *)a1 + 4) == 0;
+  if ( !*((_WORD *)a1 + 4) )
+    v7 = *a1 == 0;
   if ( v7 )
   {
     v9 = 0;
@@ -5765,12 +6235,12 @@ int __fastcall sub_16E5E(int a1, int a2, int a3, int a4)
     if ( v6 < 0 )
     {
       v5 = -1;
-      sub_158FE(a1, -1, 0, 0x80000000, 49151);
-      *(_BYTE *)(a1 + 9) ^= 0x80u;
+      sub_158FE((int)a1, -1, 0, 0x80000000, 49151);
+      *((_BYTE *)a1 + 9) ^= 0x80u;
     }
-    v8 = *(_WORD *)(a1 + 8) + 4;
+    v8 = *((_WORD *)a1 + 4) + 4;
     v9 = 0;
-    v10 = *(_QWORD *)a1;
+    v10 = *a1;
     while ( v8 >= 0x3FFFu )
     {
       v11 = __CFADD__(v10, v10);
@@ -5791,16 +6261,16 @@ int __fastcall sub_16E5E(int a1, int a2, int a3, int a4)
     {
       v12 = 0;
     }
-    *(_QWORD *)a1 = v10;
-    *(_WORD *)(a1 + 8) = v12;
+    *a1 = v10;
+    *((_WORD *)a1 + 4) = v12;
   }
   v40 = v5;
   v39 = v9;
-  v13 = *(_QWORD *)a1;
-  LOWORD(v5) = *(_WORD *)(a1 + 8);
+  v13 = *a1;
+  LOWORD(v5) = *((_WORD *)a1 + 4);
   v14 = v5 << 16;
-  LOWORD(v14) = *(_WORD *)(a1 + 8);
-  LODWORD(v13) = sub_15EFF(*(_QWORD *)a1, *(_DWORD *)(a1 + 4), *(_DWORD *)a1, v14);
+  LOWORD(v14) = *((_WORD *)a1 + 4);
+  LODWORD(v13) = sub_15EFF(*a1, *((_DWORD *)a1 + 1), *(_DWORD *)a1, v14);
   v37 = HIDWORD(v13);
   v38 = v13;
   v36 = v14;
@@ -5812,9 +6282,9 @@ int __fastcall sub_16E5E(int a1, int a2, int a3, int a4)
   v17 = (unsigned __int16)v16 | 0x40010000;
   LODWORD(v13) = sub_159B3(v13, 0xE6D5051A, 0xE536E187, v17);
   v18 = __ROL4__(v17, 16);
-  LOWORD(v18) = *(_WORD *)(a1 + 8);
+  LOWORD(v18) = *((_WORD *)a1 + 4);
   v19 = __ROL4__(v18, 16);
-  LODWORD(v13) = sub_15EFF(v13, *(_DWORD *)(a1 + 4), *(_DWORD *)a1, v19);
+  LODWORD(v13) = sub_15EFF(v13, *((_DWORD *)a1 + 1), *(_DWORD *)a1, v19);
   v34 = HIDWORD(v13);
   v35 = v13;
   v33 = v19;
@@ -5831,8 +6301,8 @@ int __fastcall sub_16E5E(int a1, int a2, int a3, int a4)
   LOWORD(v24) = v33;
   v25 = __ROL4__(v24, 16);
   LODWORD(v26) = sub_15C7E(v26, v34, v35, &v36, v25);
-  *(_QWORD *)a1 = v26;
-  *(_WORD *)(a1 + 8) = v25;
+  *a1 = v26;
+  *((_WORD *)a1 + 4) = v25;
   v27 = v39;
   v28 = sub_16E36;
   while ( v27 )
@@ -5843,24 +6313,23 @@ int __fastcall sub_16E5E(int a1, int a2, int a3, int a4)
     {
       v39 = v27;
       v38 = (unsigned int)v28;
-      LOWORD(v26) = *(_WORD *)(a1 + 8);
+      LOWORD(v26) = *((_WORD *)a1 + 4);
       v29 = (_DWORD)v26 << 16;
       LOWORD(v29) = *((_WORD *)v28 + 4);
       v30 = v29;
       v26 = *(_QWORD *)v28;
-      LODWORD(v26) = sub_15EFF(*(_QWORD *)v28, *(_DWORD *)(a1 + 4), *(_DWORD *)a1, v30);
-      *(_QWORD *)a1 = v26;
-      *(_WORD *)(a1 + 8) = v30;
-      v28 = (int (*)())v38;
+      LODWORD(v26) = sub_15EFF(*(_QWORD *)v28, *((_DWORD *)a1 + 1), *(_DWORD *)a1, v30);
+      *a1 = v26;
+      *((_WORD *)a1 + 4) = v30;
+      v28 = (int (__usercall *)@<eax>(char@<cf>, int@<eax>))v38;
       v27 = v39;
     }
-    v28 = (int (*)())((char *)v28 + 10);
+    v28 = (int (__usercall *)@<eax>(char@<cf>, int@<eax>))((char *)v28 + 10);
   }
   v31 = v40;
-  *(_WORD *)(a1 + 8) += v40;
-  return sub_158FE(a1, v31, 0, 0x80000000, 49151);
+  *((_WORD *)a1 + 4) += v40;
+  return sub_158FE((int)a1, v31, 0, 0x80000000, 49151);
 }
-// 16E36: using guessed type int sub_16E36();
 
 //----- (00017032) --------------------------------------------------------
 int __fastcall sub_17032(unsigned __int64 a1)
@@ -6069,7 +6538,6 @@ char __fastcall sub_171B8(int a1, __int16 a2)
 //----- (00017282) --------------------------------------------------------
 char __fastcall sub_17282(int a1, __int16 a2)
 {
-  char result; // al
   char v3; // bl
   unsigned __int32 v4; // eax
 
@@ -6080,7 +6548,7 @@ char __fastcall sub_17282(int a1, __int16 a2)
       int     2Fh
       int     2Fh
     }
-    result = 1;
+    return 1;
   }
   else
   {
@@ -6094,9 +6562,8 @@ char __fastcall sub_17282(int a1, __int16 a2)
       __writecr0(v4);
       __asm { int     21h; DOS - GET DOS VERSION }
     }
-    result = 0;
+    return 0;
   }
-  return result;
 }
 // 20694: using guessed type char byte_20694;
 // 20695: using guessed type char byte_20695;
@@ -6134,8 +6601,7 @@ int __fastcall sub_17303(int a1)
 // 20CA8: using guessed type int dword_20CA8;
 
 //----- (0001736E) --------------------------------------------------------
-// __FreeDPMIBlocks_
-void _FreeDPMIBlocks()
+void sub_1736E()
 {
   int v0; // edx
   int v1; // ebx
@@ -6176,13 +6642,13 @@ void _FreeDPMIBlocks()
 // 205F8: using guessed type int dword_205F8;
 
 //----- (000174C1) --------------------------------------------------------
-_DWORD *__fastcall sub_174C1(int *a1)
+int *__fastcall sub_174C1(int *a1)
 {
   unsigned int v2; // eax
-  unsigned int v3; // ebx
-  _DWORD *v4; // ebx
+  int v3; // ebx
+  int *v4; // ebx
   int v5; // eax
-  _DWORD *v6; // edx
+  int *v6; // edx
 
   v2 = dword_205F8;
   v3 = 0;
@@ -6206,12 +6672,12 @@ _DWORD *__fastcall sub_174C1(int *a1)
   *(v6 - 7) = 0;
   *(v6 - 5) = 0;
   *(v6 - 4) = 0;
-  *(v6 - 2) = v4;
-  *(v6 - 1) = v4;
+  *(v6 - 2) = (int)v4;
+  *(v6 - 1) = (int)v4;
   v5 -= 44;
-  *(v6 - 8) = v4;
+  *(v6 - 8) = (int)v4;
   *v6 = v5;
-  *(_DWORD *)((char *)v6 + v5) = -1;
+  *(int *)((char *)v6 + v5) = -1;
   return v6;
 }
 // 205F8: using guessed type int dword_205F8;
@@ -6219,22 +6685,19 @@ _DWORD *__fastcall sub_174C1(int *a1)
 //----- (00017535) --------------------------------------------------------
 int sub_17535()
 {
-  int *v0; // edx
+  int v0; // edx
   int v1; // ebx
-  int result; // eax
 
   if ( !dword_205F8 )
-    goto LABEL_8;
-  v0 = *(int **)(dword_205F8 + 36);
-  v1 = (int)v0 + *v0 + 4;
+    return 0;
+  v0 = *(_DWORD *)(dword_205F8 + 36);
+  v1 = v0 + *(_DWORD *)v0 + 4;
   if ( (unsigned __int8)byte_201D2 >= 2u && (unsigned __int8)byte_201D2 <= 8u && !byte_201D4 )
     dword_201A4 = __segmentlimit((unsigned __int16)__DS__) + 1;
   if ( v1 == dword_201A4 )
-    result = *v0;
+    return *(_DWORD *)v0;
   else
-LABEL_8:
-    result = 0;
-  return result;
+    return 0;
 }
 // 201A4: using guessed type int dword_201A4;
 // 201D2: using guessed type char byte_201D2;
@@ -6250,11 +6713,9 @@ _DWORD *__usercall sub_17584@<eax>(unsigned int a1@<eax>, __int16 a2@<di>, __int
   int v10; // edx
   int v12; // esi
   unsigned int v14; // eax
-  unsigned int v15; // [esp+0h] [ebp-18h]
 
-  v15 = a1;
   v4 = HIWORD(a1);
-  _FreeDPMIBlocks();
+  sub_1736E();
   __asm { int     31h; DPMI Services   ax=func xxxxh }
   _EAX = 1 - v5;
   if ( v5 != 1 )
@@ -6267,16 +6728,16 @@ _DWORD *__usercall sub_17584@<eax>(unsigned int a1@<eax>, __int16 a2@<di>, __int
   }
   if ( _EAX )
   {
-    *(_DWORD *)(_EAX + 8) = v15 - 8;
+    *(_DWORD *)(_EAX + 8) = a1 - 8;
     *(_DWORD *)(_EAX + 4) = 0;
-    result = (_DWORD *)(_EAX + 8);
+    return (_DWORD *)(_EAX + 8);
   }
   else
   {
     if ( (word_2118E & 0xFFF0) != 0 )
       unk_2118C = 0xFFFFF;
-    if ( v15 > (unsigned int)sub_10000 )
-      goto LABEL_11;
+    if ( a1 > (unsigned int)sub_10000 )
+      return 0;
     BYTE1(_EAX) = 72;
     __asm
     {
@@ -6286,7 +6747,7 @@ _DWORD *__usercall sub_17584@<eax>(unsigned int a1@<eax>, __int16 a2@<di>, __int
     _EAX = __ROR4__(_EAX, 1);
     v10 = _EAX;
     if ( _EAX < 0 )
-      goto LABEL_11;
+      return 0;
     BYTE1(_EAX) = 72;
     __asm
     {
@@ -6303,8 +6764,7 @@ _DWORD *__usercall sub_17584@<eax>(unsigned int a1@<eax>, __int16 a2@<di>, __int
     }
     if ( v12 < 0 )
     {
-LABEL_11:
-      result = 0;
+      return 0;
     }
     else
     {
@@ -6313,7 +6773,7 @@ LABEL_11:
       LOWORD(v14) = v10;
       result = (_DWORD *)(v14 + 8);
       *(result - 1) = v12;
-      *result = v15 - 8;
+      *result = a1 - 8;
     }
   }
   return result;
@@ -6323,38 +6783,43 @@ LABEL_11:
 // 2118E: using guessed type __int16 word_2118E;
 
 //----- (00017655) --------------------------------------------------------
-void __usercall sub_17655(unsigned int a1@<eax>, unsigned int a2@<edx>, unsigned int a3@<ecx>, __int16 a4@<di>, __int16 a5@<si>)
+void __usercall sub_17655(
+        unsigned int a1@<eax>,
+        unsigned int a2@<edx>,
+        unsigned int a3@<ecx>,
+        __int16 a4@<di>,
+        __int16 a5@<si>)
 {
-  unsigned int *v5; // eax
+  int *v5; // eax
   int *v6; // edx
   unsigned int v7; // eax
-  unsigned int *v8; // ebx
-  unsigned int v9; // eax
+  int *v8; // ebx
+  int v9; // eax
   int v10; // edi
-  unsigned int v11[6]; // [esp+0h] [ebp-18h] BYREF
+  int v11[6]; // [esp+0h] [ebp-18h] BYREF
 
   v11[4] = a3;
   v11[3] = a2;
   v11[0] = a1;
-  if ( dword_207C8 && dword_201A4 != -2 && sub_1784C(v11) )
+  if ( dword_207C8 && dword_201A4 != -2 && sub_1784C((unsigned int *)v11) )
   {
     if ( byte_201D2 == 1 )
     {
       v5 = sub_17584(v11[0], a4, a5);
-      v6 = (int *)v5;
+      v6 = v5;
       if ( v5 )
         v11[0] = *v5;
     }
     else
     {
       __asm { int     21h; DOS - 2+ - ALLOCATE MEMORY }
-      v6 = (int *)(byte_201D2 == 0 ? 0 : 0x80004800);
+      v6 = byte_201D2 == 0 ? 0 : (int *)0x80004800;
       v11[0] -= 4;
     }
     if ( v6 )
     {
       v7 = v11[0] - 4;
-      if ( v11[0] - 4 <= v11[0] )
+      if ( (unsigned int)(v11[0] - 4) <= v11[0] )
       {
         v11[0] -= 4;
         if ( v7 >= 0x38 )
@@ -6379,19 +6844,25 @@ void __usercall sub_17655(unsigned int a1@<eax>, unsigned int a2@<edx>, unsigned
 // 201A4: using guessed type int dword_201A4;
 // 201D2: using guessed type char byte_201D2;
 // 207C8: using guessed type int dword_207C8;
+// 17655: using guessed type unsigned int var_18[6];
 
 //----- (00017702) --------------------------------------------------------
-void __usercall sub_17702(unsigned int a1@<eax>, unsigned int a2@<edx>, unsigned int a3@<ecx>, __int16 a4@<di>, __int16 a5@<si>)
+void __usercall sub_17702(
+        unsigned int a1@<eax>,
+        unsigned int a2@<edx>,
+        unsigned int a3@<ecx>,
+        __int16 a4@<di>,
+        __int16 a5@<si>)
 {
   unsigned int v5; // edx
   unsigned int v6; // eax
   int *v7; // ebx
   int v8; // eax
   int *v9; // edx
-  unsigned int *v10; // eax
-  unsigned int *v11; // ebx
-  unsigned int v12; // eax
-  unsigned int v13[6]; // [esp+0h] [ebp-18h] BYREF
+  int *v10; // eax
+  int *v11; // ebx
+  int v12; // eax
+  int v13[6]; // [esp+0h] [ebp-18h] BYREF
 
   v13[0] = a1;
   if ( byte_201D2 == 1 && !byte_201D3 || byte_201D2 == 9 )
@@ -6399,12 +6870,12 @@ void __usercall sub_17702(unsigned int a1@<eax>, unsigned int a2@<edx>, unsigned
     sub_17655(v13[0], a2, a3, a4, a5);
     return;
   }
-  if ( dword_207C8 && dword_201A4 != -2 && sub_1784C(v13) )
+  if ( dword_207C8 && dword_201A4 != -2 && sub_1784C((unsigned int *)v13) )
   {
     if ( (unsigned __int8)byte_201D2 >= 2u && (unsigned __int8)byte_201D2 <= 8u && !byte_201D4 )
       dword_201A4 = __segmentlimit((unsigned __int16)__DS__) + 1;
     v5 = dword_201A4 + v13[0];
-    if ( dword_201A4 + v13[0] < dword_201A4 )
+    if ( dword_201A4 + v13[0] < (unsigned int)dword_201A4 )
       v5 = -2;
     v6 = _brk(v5);
     if ( v6 != -1 )
@@ -6414,7 +6885,7 @@ void __usercall sub_17702(unsigned int a1@<eax>, unsigned int a2@<edx>, unsigned
       {
         v13[0] = v5 - v6;
         v8 = v5 - v6 - 4;
-        if ( v13[0] - 4 <= v13[0] )
+        if ( (unsigned int)(v13[0] - 4) <= v13[0] )
         {
           v9 = (int *)dword_205F8;
           v13[0] = v8;
@@ -6422,13 +6893,13 @@ void __usercall sub_17702(unsigned int a1@<eax>, unsigned int a2@<edx>, unsigned
             v9 = (int *)v9[2];
           if ( v9 )
           {
-            v10 = (unsigned int *)((char *)v9 + *v9);
-            if ( v7 - 1 == (int *)v10 )
+            v10 = (int *)((char *)v9 + *v9);
+            if ( v7 - 1 == v10 )
             {
               v13[0] += 4;
               *v9 += v13[0];
               v11 = v10;
-              *(unsigned int *)((char *)v10 + v13[0]) = -1;
+              *(int *)((char *)v10 + v13[0]) = -1;
 LABEL_30:
               v12 = v13[0];
               LOBYTE(v12) = LOBYTE(v13[0]) | 1;
@@ -6439,7 +6910,7 @@ LABEL_30:
               return;
             }
           }
-          if ( v13[0] >= 0x38 )
+          if ( v13[0] >= 0x38u )
           {
             *v7 = v13[0];
             v9 = v7;
@@ -6459,12 +6930,13 @@ LABEL_30:
 // 201D4: using guessed type char byte_201D4;
 // 205F8: using guessed type int dword_205F8;
 // 207C8: using guessed type int dword_207C8;
+// 17702: using guessed type unsigned int var_18[6];
 
 //----- (0001784C) --------------------------------------------------------
 bool __fastcall sub_1784C(unsigned int *a1)
 {
-  int v2; // edx
-  int v4; // edx
+  unsigned int v2; // edx
+  unsigned int v4; // edx
   unsigned int v5; // edx
   unsigned int v6; // edx
 
@@ -6518,21 +6990,31 @@ int __fastcall sub_17973(unsigned __int8 *a1, unsigned __int8 *a2, int a3)
     a2 = (unsigned __int8 *)v5;
   }
   if ( a3 && (mbterm(a1, HIDWORD(v5)) || mbterm(a2, HIDWORD(v5))) )
-    result = *a1 - *a2;
+    return *a1 - *a2;
   else
-    result = HIDWORD(v5);
-  return result;
+    return HIDWORD(v5);
 }
 // 18467: using guessed type int __fastcall mbterm(_DWORD, _DWORD);
 // 184A3: using guessed type int __fastcall mbcicmp(_DWORD, _DWORD);
 // 184FA: using guessed type __int64 __fastcall mbsinc(_DWORD);
 
 //----- (00017A38) --------------------------------------------------------
-void __usercall __noreturn sub_17A38(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<ebp>, int a6@<edi>, int a7@<esi>)
+void __usercall __noreturn sub_17A38(
+        int a1@<eax>,
+        int a2@<edx>,
+        int a3@<ecx>,
+        int a4@<ebx>,
+        int a5@<ebp>,
+        int a6@<edi>,
+        int a7@<esi>)
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
-  ((void (__cdecl *)(_DWORD, _DWORD, _DWORD, _DWORD, int, int, int, int, void **, int, int, int))_GETDS)(
+  ((void (__fastcall __noreturn *)(int, int, int, int, _DWORD, _DWORD, _DWORD, _DWORD, int, int, int, int, void **, int, int, int))_GETDS)(
+    a1,
+    a2,
+    a4,
+    a3,
     (unsigned __int16)__GS__,
     (unsigned __int16)__FS__,
     (unsigned __int16)__ES__,
@@ -6548,11 +7030,22 @@ void __usercall __noreturn sub_17A38(int a1@<eax>, int a2@<edx>, int a3@<ecx>, i
 }
 
 //----- (00017ACD) --------------------------------------------------------
-void __usercall __noreturn sub_17ACD(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<ebp>, int a6@<edi>, int a7@<esi>)
+void __usercall __noreturn sub_17ACD(
+        int a1@<eax>,
+        int a2@<edx>,
+        int a3@<ecx>,
+        int a4@<ebx>,
+        int a5@<ebp>,
+        int a6@<edi>,
+        int a7@<esi>)
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
-  ((void (__cdecl *)(_DWORD, _DWORD, _DWORD, _DWORD, int, int, int, int, void **, int, int, int))_GETDS)(
+  ((void (__fastcall __noreturn *)(int, int, int, int, _DWORD, _DWORD, _DWORD, _DWORD, int, int, int, int, void **, int, int, int))_GETDS)(
+    a1,
+    a2,
+    a4,
+    a3,
     (unsigned __int16)__GS__,
     (unsigned __int16)__FS__,
     (unsigned __int16)__ES__,
@@ -6922,7 +7415,7 @@ int __fastcall sub_18545(int result)
   if ( dword_207D4 != 1 && dword_207D4 != 2 && dword_207D4 != 3 )
   {
     dword_207D4 = 2;
-    result = v1(2, result);
+    return v1(2, result);
   }
   return result;
 }
@@ -7241,10 +7734,8 @@ int __fastcall sub_18C7C(int a1, __int16 a2)
 LABEL_8:
       v3 = 16 * v4 + 5;
       LOWORD(v3) = *MK_FP(word_21298, v3);
-      goto LABEL_9;
     }
   }
-LABEL_9:
   __asm { int     31h; DPMI Services   ax=func xxxxh }
   return v3;
 }
@@ -7254,8 +7745,7 @@ LABEL_9:
 // 21298: using guessed type __int16 word_21298;
 
 //----- (00018F6E) --------------------------------------------------------
-// __Init_FPE_handler_
-void __spoils<edx> _Init_FPE_handler()
+void sub_18F6E()
 {
   if ( !word_2080C && byte_2019C )
   {
@@ -7290,7 +7780,7 @@ void __spoils<edx> _Init_FPE_handler()
 // 2080C: using guessed type __int16 word_2080C;
 
 //----- (00018FCB) --------------------------------------------------------
-void __spoils<edx> sub_18FCB()
+void sub_18FCB()
 {
   if ( word_2080C )
   {
@@ -7352,7 +7842,7 @@ void __noreturn sub_1904A()
     fdisi
   }
   _enable();
-  ((void (*)(void))_GETDS)();
+  ((void (__noreturn *)(void))_GETDS)();
 }
 
 //----- (0001914D) --------------------------------------------------------
@@ -7425,7 +7915,7 @@ double __usercall sub_1922C@<st0>(char a1@<bh>, int a2@<ebp>, __int16 a3@<fpstat
   else
     result = flt_2082A;
   if ( (*(_WORD *)(a2 + 20) & 0x100) != 0 )
-    result = -result;
+    return -result;
   return result;
 }
 // 20822: using guessed type double dbl_20822;
@@ -7499,5 +7989,5 @@ int __fastcall sub_19664(unsigned int a1)
 }
 // 1988F: using guessed type int __fastcall ismbclegal(_DWORD, _DWORD);
 
-// nfuncs=345 queued=258 decompiled=223 lumina nreq=0 worse=0 better=0
-#error "There were 1 decompilation failure(s) on 223 function(s)"
+// nfuncs=345 queued=224 decompiled=224 lumina nreq=0 worse=0 better=0
+// ALL OK, 224 function(s) have been successfully decompiled

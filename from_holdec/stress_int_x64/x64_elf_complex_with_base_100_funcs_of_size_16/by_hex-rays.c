@@ -10,16 +10,9 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// __int64 (**init_proc())(void);
 __int64 __fastcall sub_401020(); // weak
 // void __noreturn __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// void dl_relocate_static_pie();
-// void *deregister_tm_clones();
-// __int64 register_tm_clones();
-// void *_do_global_dtors_aux();
-// __int64 frame_dummy();
 unsigned __int64 log_size_4_var_000();
 __int64 log_size_4_var_001();
 unsigned __int64 log_size_4_var_002();
@@ -28,7 +21,7 @@ unsigned __int64 log_size_4_var_004();
 unsigned __int64 log_size_4_var_005();
 __int64 log_size_4_var_006();
 unsigned __int64 __fastcall log_size_4_var_007();
-unsigned __int64 log_size_4_var_008();
+__int64 log_size_4_var_008();
 unsigned __int64 log_size_4_var_009();
 __int64 log_size_4_var_010();
 unsigned __int64 log_size_4_var_011();
@@ -66,7 +59,7 @@ __int64 log_size_4_var_042();
 __int64 log_size_4_var_043();
 unsigned __int64 log_size_4_var_044();
 __int64 log_size_4_var_045();
-__int64 log_size_4_var_046();
+unsigned __int64 log_size_4_var_046();
 __int64 log_size_4_var_047();
 unsigned __int64 log_size_4_var_048();
 unsigned __int64 log_size_4_var_049();
@@ -104,7 +97,7 @@ unsigned __int64 log_size_4_var_080();
 __int64 log_size_4_var_081();
 unsigned __int64 log_size_4_var_082();
 __int64 log_size_4_var_083();
-unsigned __int64 log_size_4_var_084();
+__int64 log_size_4_var_084();
 unsigned __int64 log_size_4_var_085();
 unsigned __int64 log_size_4_var_086();
 unsigned __int64 log_size_4_var_087();
@@ -120,11 +113,6 @@ __int64 log_size_4_var_096();
 __int64 log_size_4_var_097();
 __int64 log_size_4_var_098();
 unsigned __int64 log_size_4_var_099();
-// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-// void _libc_csu_fini(void); idb
-// void term_proc();
-// int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -473,38 +461,14 @@ __int64 log_size_4_var_003()
 //----- (0000000000401922) ----------------------------------------------------
 unsigned __int64 log_size_4_var_004()
 {
-  __int64 v0; // rax
-  unsigned __int64 v1; // rbx
-  unsigned __int64 v3; // r14
-  __int64 v4; // r15
-  unsigned __int8 v5; // cf
-  __int64 v6; // r9
+  unsigned __int64 v0; // rbx
 
-  v0 = 0x4C362281E2100DFLL;
-  v1 = 0xB85B839420A54B52LL;
+  v0 = 0xB85B839420A54B52LL;
   _RCX = 0x5A085EAA596D13D0LL;
-  v3 = 0xBE81E0DC5180679ALL;
-  v4 = 0x5EC634E386B8DC3ELL;
-  BYTE1(v1) = __ROR1__(75, 1);
-  v5 = _bittestandreset((__int16 *)&v4, 0x652u);
-  v6 = v5 + 0x104155B2E5CE9268LL;
-  LOWORD(v3) = (char)v6;
-  LOWORD(v1) = v1 + 202;
+  BYTE1(v0) = __ROR1__(75, 1);
+  LOWORD(v0) = v0 + 202;
   __asm { rcl     ecx, 1 }
-  LOWORD(v0) = 223 * (unsigned __int8)v6;
-  return v4
-       + v3
-       + v6
-       + (unsigned int)(v4 - 1851652356)
-       + _RCX
-       + v1
-       + v0
-       - 0x3F267E3F0B7200BLL
-       + 0x7C2715E255EB403FLL
-       + 3694102313u
-       - 0x2FAC692149DC3328LL
-       + 0x42F0B46A746A742LL
-       - 0x122BD17266D196EDLL;
+  return _RCX + v0 + 0x4C362281E215B77LL - 0x3F267E3F0B7200BLL + 0x6C075208FF15F6D7LL;
 }
 
 //----- (0000000000401A56) ----------------------------------------------------
@@ -522,7 +486,7 @@ unsigned __int64 log_size_4_var_005()
 //----- (0000000000401B81) ----------------------------------------------------
 __int64 log_size_4_var_006()
 {
-  return -32768LL;
+  return 0LL;
 }
 
 //----- (0000000000401CB7) ----------------------------------------------------
@@ -560,13 +524,8 @@ unsigned __int64 __fastcall log_size_4_var_007()
 }
 
 //----- (0000000000401DEB) ----------------------------------------------------
-unsigned __int64 log_size_4_var_008()
+__int64 log_size_4_var_008()
 {
-  unsigned __int64 v0; // rax
-  __int64 v3; // r11
-  unsigned __int8 v4; // cf
-
-  v0 = 0xD2D3772519662D2DLL;
   _RBX = 0x772B3599047DFC88LL;
   _RCX = 0xB58760007C4065ALL;
   __asm
@@ -574,11 +533,8 @@ unsigned __int64 log_size_4_var_008()
     rcl     bh, cl
     rcl     bh, 1
   }
-  v3 = 2964201333LL;
   LOWORD(_RCX) = 0;
-  v4 = _bittestandcomplement((__int16 *)&v3, 0xA3u);
-  BYTE1(v0) = v4 - 49;
-  return v3 + _RCX + _RBX + v0 - 0x7FEBF90F346578DDLL + 0x7A0CE0197F34D7FCLL - 0x4F7809C921264A51LL;
+  return _RCX + _RBX - 0x2D2C88DAE69930D3LL - 0x7FEBF90F346578DDLL + 0x2A94D6510EBCAD28LL;
 }
 
 //----- (0000000000401F1C) ----------------------------------------------------
@@ -622,16 +578,13 @@ unsigned __int64 log_size_4_var_009()
 //----- (0000000000402045) ----------------------------------------------------
 __int64 log_size_4_var_010()
 {
-  __int64 v0; // rax
-  unsigned __int64 v1; // rcx
-  unsigned __int8 v5; // cf
-  unsigned __int64 v6; // rdx
-  unsigned __int128 v7; // rtt
-  unsigned int v8; // kr00_4
-  __int128 v9; // rt0
+  unsigned __int64 v0; // rcx
+  unsigned __int64 v4; // rdx
+  unsigned __int128 v5; // rtt
+  unsigned int v6; // kr00_4
+  __int128 v7; // rt0
 
-  v0 = 0x179E2DF321862BA4LL;
-  v1 = 0xCD35E1804A887CCFLL;
+  v0 = 0xCD35E1804A887CCFLL;
   _RDX = 0x4EF1E3A3303438DLL;
   _R8 = 21393;
   _R10 = 0x149C48FB0BA6EF01LL;
@@ -640,21 +593,20 @@ __int64 log_size_4_var_010()
     cmpxchg r10w, r8w
     rcl     rdx, 96h
   }
-  v5 = _bittestandreset((__int16 *)&v0, 0x67u);
-  *(_QWORD *)&v7 = v0;
-  *((_QWORD *)&v7 + 1) = _RDX & 0x3FFFFFFFFFFFFFFFLL;
-  v6 = v7 % 0xF939698B0AB6082ALL;
-  v8 = v6 * (v7 / 0xF939698B0AB6082ALL);
-  LODWORD(v6) = (unsigned __int64)((int)v6 * (__int64)(int)(v7 / 0xF939698B0AB6082ALL)) >> 32;
-  *(_QWORD *)&v9 = 0x2131779A839B3003LL;
-  *((_QWORD *)&v9 + 1) = 10757LL;
-  LOWORD(v1) = __ROL2__(31951, 207);
-  return __ROR8__((unsigned int)v5 + 2050263249, 12)
+  *(_QWORD *)&v5 = 0x179E2DF321862B24LL;
+  *((_QWORD *)&v5 + 1) = _RDX & 0x3FFFFFFFFFFFFFFFLL;
+  v4 = v5 % 0xF939698B0AB6082ALL;
+  v6 = v4 * (v5 / 0xF939698B0AB6082ALL);
+  LODWORD(v4) = (unsigned __int64)((int)v4 * (__int64)(int)(v5 / 0xF939698B0AB6082ALL)) >> 32;
+  *(_QWORD *)&v7 = 0x2131779A839B3003LL;
+  *((_QWORD *)&v7 + 1) = 10757LL;
+  LOWORD(v0) = __ROL2__(31951, 207);
+  return __ROR8__(2050263250LL, 12)
        + _R10
+       + v4
+       + v0
+       + (v7 >> 20)
        + v6
-       + v1
-       + (v9 >> 20)
-       + v8
        + 0x79C55D3659CBEDEBLL
        - 0x121056727D15AB65LL
        + 0x26C87CAD425C4CBALL;
@@ -674,7 +626,7 @@ unsigned __int64 log_size_4_var_011()
   LOWORD(_R9) = _R9 + 14231;
   __asm { rcl     rax, 1 }
   v3 = _byteswap_uint64(0xE5E3059F3E21960ALL);
-  LOWORD(v3) = v3 ^ (1 << _RAX);
+  LOWORD(v3) = v3 ^ (1 << (_RAX & 0xF));
   return (unsigned int)(v2 >> 1)
        + _R9
        + v3
@@ -688,19 +640,15 @@ unsigned __int64 log_size_4_var_011()
 //----- (00000000004022BA) ----------------------------------------------------
 __int64 log_size_4_var_012()
 {
-  __int64 v2; // r10
-  unsigned __int8 v3; // cf
-  __int128 v4; // rt0
+  __int128 v2; // rt0
 
   _RBX = 0xF382FFBD98795522LL;
   _CL = -1;
-  v2 = 0x4F29F577A986EAD9LL;
   __asm { rcr     bx, cl }
-  v3 = _bittestandcomplement((int *)&v2, 0x61C37CB6u);
-  LOBYTE(_RBX) = v3;
-  *(_QWORD *)&v4 = _RBX;
-  *((_QWORD *)&v4 + 1) = 0x1CCB7C977A7631FFLL;
-  return v2 + (v4 >> 37) - 0x3421FE02E94A59DFLL + 3513139353LL + 0x784E4C716E811670LL;
+  LOBYTE(_RBX) = 0;
+  *(_QWORD *)&v2 = _RBX;
+  *((_QWORD *)&v2 + 1) = 0x1CCB7C977A7631FFLL;
+  return (v2 >> 37) - 0x6CA9BC18FF9C17FDLL;
 }
 
 //----- (00000000004023FA) ----------------------------------------------------
@@ -766,7 +714,7 @@ unsigned __int64 log_size_4_var_016()
   __asm { cmpxchg dx, si }
   LOBYTE(v2) = !v3;
   LOWORD(_RDX) = 0;
-  return v2 + _RDX - 0x442056B061100FALL - 0x66FF8B0A405BB2EDLL + 0x444511D8F8A6848FLL;
+  return v2 + _RDX - 0x442056B061100FALL - 0x66FF8B0A405BB2FDLL + 0x444511D8F8A6848FLL;
 }
 // 402865: variable 'v3' is possibly undefined
 
@@ -777,7 +725,7 @@ unsigned __int64 __fastcall log_size_4_var_017()
   __int64 v1; // rax
   __int64 v2; // rdx
   unsigned __int64 v3; // rdi
-  unsigned __int8 v4; // cf
+  bool v4; // cf
   unsigned int v5; // ett
   __int64 v6; // rbp
 
@@ -786,7 +734,8 @@ unsigned __int64 __fastcall log_size_4_var_017()
   v3 = 0xE6B0BDFD65D3DA68LL;
   BYTE1(v1) = v0;
   LOWORD(v3) = __ROL2__(-9624, 11);
-  v4 = _bittestandreset((int *)&v1, 0x26B4BE57u);
+  v4 = (v1 & 0x800000) != 0;
+  LODWORD(v1) = v1 & 0xFF7FFFFF;
   LOWORD(v5) = v1;
   HIWORD(v5) = (v4 + 26896) & 0x3FFF;
   LOWORD(v1) = v5 / 0xF1C2;
@@ -911,7 +860,7 @@ unsigned __int64 log_size_4_var_023()
     LOWORD(v0) = -13313;
   LODWORD(v3) = -1771135278;
   LOBYTE(v1) = !__SETP__(-1718432103, 0);
-  return v2 + v1 + v0 + v3 - 0x604C55959BE4E96BLL + 0x7EF6BECEACD27D74LL - 0x4A55A896FFE4CCE6LL + 0x85E8798C935A1FELL;
+  return v2 + v1 + v0 + v3 - 0x604C55959BE4E96BLL + 0x7EF6BECEACD27B74LL - 0x4A55A896FFE4CCE6LL + 0x85E8798C935A1FELL;
 }
 
 //----- (0000000000403145) ----------------------------------------------------
@@ -1028,7 +977,6 @@ unsigned __int64 log_size_4_var_034()
   unsigned __int64 v2; // r13
   __int64 v3; // r9
   __int64 v4; // rbp
-  unsigned __int8 v5; // cf
 
   v0 = 0xC07FED688505DC6ALL;
   v1 = 0x9D66112EBF5C7833LL;
@@ -1041,12 +989,11 @@ unsigned __int64 log_size_4_var_034()
   LOBYTE(v3) = !__SETP__(-1871680673, 0);
   LOBYTE(v1) = __OFADD__(1, -314107940);
   BYTE1(v0) = !__SETP__(0x440200A001085180LL, 0LL);
-  v5 = _bittestandcomplement64(&v3, 0x3E38B64B20994194uLL);
-  LOBYTE(v4) = v5 - 2;
+  LOBYTE(v4) = -1;
   LODWORD(v4) = ((unsigned int)v4 >> 1) | 0x80000000;
   return v2
        + (unsigned __int8)v2
-       + v3
+       + (v3 ^ 0x100000)
        + v4
        + v1
        + v0
@@ -1298,35 +1245,30 @@ __int64 log_size_4_var_045()
 }
 
 //----- (0000000000404B65) ----------------------------------------------------
-__int64 log_size_4_var_046()
+unsigned __int64 log_size_4_var_046()
 {
-  unsigned __int64 v0; // rax
-  unsigned __int8 v6; // cf
-  unsigned __int128 v8; // rax
+  unsigned __int128 v6; // rax
 
-  v0 = 0xA71478D592375510LL;
   _RBX = 0xEAA5191CDCBF4783LL;
   _ECX = -948196652;
   _DH = -111;
   _R11 = -18185;
   _R13 = 0x3CB61327915277EBLL;
-  v6 = _bittestandreset((__int16 *)&v0, 0xF1u);
-  LOWORD(_RBX) = (v6 << 15) | 0x4783;
   __asm
   {
     rcr     r13d, cl
     rcr     dh, cl
   }
   LOBYTE(_ECX) = -4;
-  v8 = 0x16EB1064DE8BB846LL * (unsigned __int128)v0;
+  v6 = 0x16EB1064DE8BB846LL * (unsigned __int128)0xA71478D592375510LL;
   __asm { cmpxchg bh, ch }
-  BYTE8(v8) &= 0xFDu;
+  BYTE8(v6) &= ~2u;
   __asm { rcr     r11w, 0E5h }
   return _R13
-       + *((_QWORD *)&v8 + 1)
+       + *((_QWORD *)&v6 + 1)
        + (unsigned int)(_ECX >> 1)
        + _RBX
-       + v8
+       + 0x3FD3258CCFF4C260LL
        + 0x4DD9CF927A9A8E6LL
        + 0x6E9C47DD957DD9FFLL;
 }
@@ -1518,6 +1460,7 @@ unsigned __int64 log_size_4_var_055()
     rcr     rdi, 0Ch
     rcr     rbp, cl
   }
+  LOWORD(v4) = v4 | 1;
   LOWORD(v0) = 6 * (unsigned __int8)_RBP;
   return (v4 >> 20)
        + v5
@@ -1579,29 +1522,18 @@ unsigned __int64 log_size_4_var_057()
 //----- (00000000004059EF) ----------------------------------------------------
 unsigned __int64 log_size_4_var_058()
 {
-  __int64 v0; // rax
-  unsigned __int64 v1; // rsi
-  __int16 v2; // r11
-  __int64 v5; // rsi
+  __int64 v2; // rsi
 
-  HIDWORD(v0) = 536222632;
-  v1 = 0xB68BD5C18876DF79LL;
-  v2 = -5785;
   _ER12 = -342814263;
   _R14 = 0xEA20C3BB8B30566ELL;
-  if ( _bittest(&v2, 0x39u) )
-    v1 = 4242326250LL;
   __asm { rcr     r14w, 7Fh }
-  v5 = (v1 << 27) | 0x431FFD8;
-  _BitScanForward((unsigned __int16 *)&v5, 0x11C9u);
+  v2 = 0xC43B6FBCC31FFD8LL;
+  _BitScanForward((unsigned __int16 *)&v2, 0x11C9u);
   __asm { rcl     r12d, 1 }
-  LODWORD(v0) = 79;
   return _R14
        + (unsigned int)(_ER12 + 1261912791)
-       + v5
-       + v0
-       - 0x47B63AF877FD9A4DLL
-       - 0x47E4833E113C50C1LL
+       + v2
+       - 0x6FA4A28E8939EABFLL
        + 0x42CF2B631EC7E967LL
        - 0x18A5EFAAA05F13CBLL
        + 0x5E67181B9115FB48LL;
@@ -1616,7 +1548,7 @@ __int64 log_size_4_var_059()
   *(_QWORD *)&v1 = 0xD3379A44DF9F139DLL;
   *((_QWORD *)&v1 + 1) = 0x8A4C763D6B6712ADLL;
   __asm { rcl     di, 1 }
-  return _RDI + (v1 >> 1) - 0x318ABD07EB3D933DLL + 0x7D2EA878025C883CLL + 0x2A1160AA63B4DC52LL;
+  return _RDI + (v1 >> 1) - 0x318ABD07EB3D933DLL + 0x7D2EA878025C883CLL + 0x2A1160AA63B51C52LL;
 }
 
 //----- (0000000000405C52) ----------------------------------------------------
@@ -1672,7 +1604,7 @@ __int64 log_size_4_var_062()
   _RAX = 0x42716586FB3327E8LL;
   __asm { rcl     al, 1 }
   LOBYTE(_RAX) = 1;
-  return _RAX - 0x42716586FB3326F1LL;
+  return _RAX - 0x42716586FB332701LL;
 }
 
 //----- (0000000000405FF2) ----------------------------------------------------
@@ -1816,7 +1748,7 @@ unsigned __int64 log_size_4_var_071()
        + _R11
        + v0
        + _byteswap_uint64(0x63FA5ED01D46BE69uLL)
-       - 0x6F054632F398F010LL
+       - 0x6F054632F3991010LL
        - 0x294B01A1F710E972LL
        + 0x67EBC93B31C240C0LL;
 }
@@ -1860,20 +1792,14 @@ __int64 log_size_4_var_073()
 unsigned __int64 log_size_4_var_074()
 {
   unsigned __int64 v0; // rdx
-  int v1; // er14
-  bool v3; // cf
-  __int16 v4; // tt
+  bool v2; // cf
 
   v0 = 0x810ADA4CCF215C2ELL;
-  v1 = 237351966;
   _RBP = 3458568688LL;
   __asm { rcl     bpl, 1 }
-  v4 = _bittest(&v1, 0x9Eu);
-  v3 = __CFADD__(v4, (_WORD)_RBP);
-  LOWORD(_RBP) = v4 + _RBP;
-  v3 |= __CFADD__((_WORD)_RBP, -30417);
+  v2 = __CFADD__((_WORD)_RBP, -30417);
   LOWORD(_RBP) = _RBP - 30417;
-  LOBYTE(v0) = 46 - (v3 + 63);
+  LOBYTE(v0) = 46 - (v2 + 63);
   return _RBP + v0 + 0x30B93772D6097681LL - 0x5345ACFD734FEE7ELL;
 }
 
@@ -1918,7 +1844,7 @@ __int64 log_size_4_var_077()
   *((_QWORD *)&v0 + 1) = 0xFB380E681BE2DC2DLL;
   *(_QWORD *)&v0 = 0x4D4845AC8C1896B4LL;
   _BitScanForward64(&v1, 0x51BFB40000000000uLL);
-  return (v0 >> 63) + v1 - 0x1907133380171934LL + 0x5DD6CFCC2FDD8E7BLL - 0x3B3FD968E78C2DABLL;
+  return (v0 >> 63) + v1 - 0x1907133380171954LL + 0x5DD6CFCC2FDD8E7BLL - 0x3B3FD968E78C2DABLL;
 }
 
 //----- (00000000004071DF) ----------------------------------------------------
@@ -1968,21 +1894,14 @@ unsigned __int64 log_size_4_var_080()
 //----- (0000000000407569) ----------------------------------------------------
 __int64 log_size_4_var_081()
 {
-  unsigned __int64 v0; // rdi
-  unsigned __int64 v1; // r11
-  unsigned __int8 v2; // cf
-  __int64 v3; // r14
-  __int128 v4; // rt0
+  unsigned __int64 v0; // r11
+  __int128 v1; // rt0
 
-  v0 = 0xB407685186BFAA7DLL;
-  _BitScanReverse64(&v1, 0x7C3DDA5C9184B5F9uLL);
-  LOBYTE(v1) = v1 + 47;
-  v2 = _bittest64((const __int64 *)&v0, 0x1773299870DAD118uLL);
-  v3 = (unsigned int)v2 + 1758842943;
-  LOBYTE(v3) = v2 - 67;
-  *(_QWORD *)&v4 = 0x883C63A3B2F1097DLL;
-  *((_QWORD *)&v4 + 1) = 1042214190LL;
-  return v3 + v1 + (v4 >> 1) + 0x5D85B427DE475334LL + 0x2BB535FA5635616DLL + 0x32A6E40B8934F577LL;
+  _BitScanReverse64(&v0, 0x7C3DDA5C9184B5F9uLL);
+  LOBYTE(v0) = v0 + 47;
+  *(_QWORD *)&v1 = 0x883C63A3B2F1097DLL;
+  *((_QWORD *)&v1 + 1) = 1042214190LL;
+  return v0 + (v1 >> 1) + 0x5D85B427DE475334LL + 0x5E5C1A06484027A1LL;
 }
 
 //----- (00000000004076A8) ----------------------------------------------------
@@ -2022,47 +1941,19 @@ __int64 log_size_4_var_083()
 }
 
 //----- (000000000040790A) ----------------------------------------------------
-unsigned __int64 log_size_4_var_084()
+__int64 log_size_4_var_084()
 {
-  unsigned __int64 v0; // rbp
-  unsigned __int64 v1; // rdi
-  __int64 v2; // r11
-  unsigned __int64 v5; // r14
-  __int64 v6; // rbp
-  __int64 v7; // rbx
-  bool v8; // zf
-
-  v0 = 0xCA11E0A369D3A919LL;
-  v1 = 0x2993669FFC41CE44LL;
-  v2 = 0xBC527EC27D93253LL;
-  v5 = 0xD17D0C61327E517FLL;
   _R15 = 0x6CA9CAB059B2B786LL;
-  if ( !_bittestandcomplement((__int16 *)&v5, 0x806u) )
-    LOWORD(v0) = -12732;
-  v6 = __ROL8__(v0, 1);
-  v7 = 117LL;
-  LOWORD(v2) = -2889;
-  LOBYTE(v5) = v5 ^ 0x49;
-  v8 = (_BYTE)v5 == 0;
-  if ( (v5 & 0x80u) == 0LL )
-    v5 = 3787512975LL;
-  if ( !v8 )
-    v1 = 0xEEC12D675D6404FELL;
-  BYTE1(v7) = 12;
   __asm { rcl     r15, 1 }
   return _R15
-       + v5
        + __ROL8__(0xF4094393D75704A0LL, 66)
-       + v2
-       + v1
-       + v6
-       + v7
-       + 0x51C353326A51FB73LL
-       + 0x6E52CEA150A294B6LL
-       + 0x4CCDCD302C297494LL
-       + 0x2E7716A7338684CELL
+       + __ROL8__(0xCA11E0A369D3A919LL, 1)
+       - 0x45AE394BB7DE9D0LL
+       + 0xBC527EC27D9F4B7LL
+       + 0x2E7716A81547615DLL
        - 0x737DBFF6660C4007LL;
 }
+// 4079D3: conditional instruction was optimized away because zf.1==0
 
 //----- (0000000000407A3F) ----------------------------------------------------
 unsigned __int64 log_size_4_var_085()
@@ -2138,18 +2029,7 @@ unsigned __int64 log_size_4_var_086()
 //----- (0000000000407CA1) ----------------------------------------------------
 unsigned __int64 log_size_4_var_087()
 {
-  unsigned __int64 v0; // rbp
-  __int64 v1; // r13
-  unsigned __int8 v2; // cf
-  unsigned __int64 v3; // r12
-
-  v0 = 0xF8792F83C43D1D93LL;
-  HIDWORD(v1) = -2054181003;
-  v2 = _bittestandset((int *)&v0, 0xB81BA764);
-  LODWORD(v1) = (v2 << 31) | 0xD972821;
-  v3 = 0xBA64AB29E803B5BELL - (v1 + 1);
-  LOWORD(v1) = 0;
-  return v1 + v3 + v0 + 0x5974DB3CBE4136DDLL - 0x13D986676A81E20CLL;
+  return 0xF8792F8300000000LL;
 }
 
 //----- (0000000000407DCD) ----------------------------------------------------
@@ -2187,7 +2067,11 @@ __int64 log_size_4_var_088()
 //----- (0000000000407EFC) ----------------------------------------------------
 __int64 log_size_4_var_089()
 {
-  return (unsigned int)__ROR4__(488914140, 88) + 0x60CD3F65DBC322E3LL;
+  __int64 v0; // r10
+
+  v0 = (unsigned int)__ROR4__(488914140, 88);
+  LOWORD(v0) = v0 ^ 0x100;
+  return v0 + 0x60CD3F65DBC322E3LL;
 }
 
 //----- (0000000000408033) ----------------------------------------------------

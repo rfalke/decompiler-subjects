@@ -7,11 +7,12 @@
 #include <math.h>
 #include <defs.h>
 
+#include <stdarg.h>
+
 
 //-------------------------------------------------------------------------
 // Function declarations
 
-int init_proc();
 int sub_8049DB4();
 // double ldexp(double x, int exponent);
 // int fputs(const char *s, FILE *stream);
@@ -34,7 +35,6 @@ int sub_8049DB4();
 // int shutdown(int fd, int how);
 // int __cdecl open64(_DWORD, _DWORD, _DWORD); weak
 // int sigismember(const sigset_t *set, int signo);
-// int __gmon_start__(void); weak
 // void *realloc(void *ptr, size_t size);
 // double sinh(double x);
 // int __isoc99_sscanf(_DWORD, const char *, ...); weak
@@ -60,7 +60,6 @@ int sub_8049DB4();
 // int setitimer(__itimer_which_t which, const struct itimerval *new, struct itimerval *old);
 // __pid_t setsid(void);
 // struct protoent *getprotobyname(const char *name);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // __pid_t wait(void *stat_loc);
 // double floor(double x);
 // double modf(double x, double *iptr);
@@ -192,9 +191,6 @@ int sub_8049DB4();
 // __gid_t getgid(void);
 // double ceil(double x);
 // __uid_t geteuid(void);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _do_global_dtors_aux();
-int frame_dummy();
 void __noreturn caml_startup__code_begin();
 _DWORD caml_curry9(); // weak
 _DWORD caml_curry9_1(); // weak
@@ -204,190 +200,190 @@ _DWORD caml_curry9_4(); // weak
 _DWORD caml_curry9_5(); // weak
 _DWORD caml_curry9_6(); // weak
 _DWORD caml_curry9_7(); // weak
-// int __usercall caml_curry9_8@<eax>(int a1@<eax>, int a2@<ebx>);
+// int __usercall caml_curry9_8@<eax>(int@<eax>, int@<ebx>);
 _DWORD caml_curry7(); // weak
 _DWORD caml_curry7_1(); // weak
 _DWORD caml_curry7_2(); // weak
 _DWORD caml_curry7_3(); // weak
 _DWORD caml_curry7_4(); // weak
 _DWORD caml_curry7_5(); // weak
-// int __usercall caml_curry7_6@<eax>(int a1@<eax>, int a2@<ebx>);
+// int __usercall caml_curry7_6@<eax>(int@<eax>, int@<ebx>);
 _DWORD caml_curry6(); // weak
 _DWORD caml_curry6_1(); // weak
 _DWORD caml_curry6_2(); // weak
 _DWORD caml_curry6_3(); // weak
 _DWORD caml_curry6_4(); // weak
-// int __usercall caml_curry6_5@<eax>(int a1@<ebx>);
+// int __usercall caml_curry6_5@<eax>(int@<ebx>);
 _DWORD caml_curry5(); // weak
 _DWORD caml_curry5_1(); // weak
 _DWORD caml_curry5_2(); // weak
 _DWORD caml_curry5_3(); // weak
-// int __usercall caml_curry5_4@<eax>(int a1@<ebx>);
+// int __usercall caml_curry5_4@<eax>(int@<ebx>);
 _DWORD caml_curry4(); // weak
 _DWORD caml_curry4_1(); // weak
 _DWORD caml_curry4_2(); // weak
-// int __usercall caml_curry4_3@<eax>(int a1@<eax>, int a2@<ebx>);
+// int __usercall caml_curry4_3@<eax>(int@<eax>, int@<ebx>);
 _DWORD caml_curry3(); // weak
 _DWORD caml_curry3_1(); // weak
-// int __usercall caml_curry3_2@<eax>(int a1@<eax>, int a2@<ebx>);
+// int __usercall caml_curry3_2@<eax>(int@<eax>, int@<ebx>);
 _DWORD caml_curry2(); // weak
-// int __usercall caml_curry2_1@<eax>(int a1@<ebx>);
-// int __usercall caml_tuplify2@<eax>(int a1@<ebx>);
-// int __usercall caml_tuplify3@<eax>(int a1@<eax>, int a2@<ebx>);
-int __fastcall caml_apply6(int a1, int a2);
-// int __usercall caml_apply4@<eax>(int a1@<esi>);
-int __fastcall caml_apply3(int a1, int a2);
-int __fastcall caml_apply2(int a1);
+// int __usercall caml_curry2_1@<eax>(int@<ebx>);
+// int __usercall caml_tuplify2@<eax>(int@<ebx>);
+// int __usercall caml_tuplify3@<eax>(int@<eax>, int@<ebx>);
+int __fastcall caml_apply6(int, int);
+// int __usercall caml_apply4@<eax>(int@<esi>);
+int __fastcall caml_apply3(int, int);
+int __fastcall caml_apply2(int);
 int camlStd_exit__code_begin();
-// int __usercall camlSource__code_begin@<eax>(int a1@<eax>, double *a2@<edx>, int a3@<ecx>, double *a4@<ebx>, int *a5@<edi>, int a6@<esi>);
-// int __usercall camlSource__merge_1034@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<edi>, int a6@<esi>);
-// int __usercall camlSource__isortto_1052@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<esi>);
-// int __usercall camlSource__sortto_1060@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<esi>);
-// int __usercall camlSource__sort_floats_1031@<eax>(int a1@<eax>, double *a2@<ebx>);
-void __fastcall __noreturn camlSource__entry(int a1);
-void __cdecl __noreturn sub_804BE02(int a1, int a2);
+// int __usercall camlSource__code_begin@<eax>(int@<eax>, double *@<edx>, int@<ecx>, double *@<ebx>, int *@<edi>, int@<esi>);
+// int __usercall camlSource__merge_1034@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>, int@<edi>, int@<esi>);
+// int __usercall camlSource__isortto_1052@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>, int@<esi>);
+// int __usercall camlSource__sortto_1060@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int *a5@<esi>);
+// int __usercall camlSource__sort_floats_1031@<eax>(int a1@<eax>, double *a2@<ebx>, int a3@<ecx>);
+void __fastcall __noreturn camlSource__entry(int a1, int a2);
+void __cdecl __noreturn sub_804BE02(int, int);
 _DWORD camlSource__code_end(); // weak
 _DWORD camlUnix__fun_2828(); // weak
-// int __usercall camlUnix__get_port_1739@<eax>(int a1@<eax>, int a2@<ecx>);
+// int __usercall camlUnix__get_port_1739@<eax>(int@<eax>, int@<ecx>);
 _DWORD *sub_804C080();
-// _DWORD *__usercall sub_804C110@<eax>(int a1@<edi>);
+// _DWORD *__usercall sub_804C110@<eax>(int@<edi>);
 _DWORD camlUnix__fun_2833(); // weak
 _DWORD camlUnix__fun_2836(); // weak
-// int __usercall camlUnix__fun_2857@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2863@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2562@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2564@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2566@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2568@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2570@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2572@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2574@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2576@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2578@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2580@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2582@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2584@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2586@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2588@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2590@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2592@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2594@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2596@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2598@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2600@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2602@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2604@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2606@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2608@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2610@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2612@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2614@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2616@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2618@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2620@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2622@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2624@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2626@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2628@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2630@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2632@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2634@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2636@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2638@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2640@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2642@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2644@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2646@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2648@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2650@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2652@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2654@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2656@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2658@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2660@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2662@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2664@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2666@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2668@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2670@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2672@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2674@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2676@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2678@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2680@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2682@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2684@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2686@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2688@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2690@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2692@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2694@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2696@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2698@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2700@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2702@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2704@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2706@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2708@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2710@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2712@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2714@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2716@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2718@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2720@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2722@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2724@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2726@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2728@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2730@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2732@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2734@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2736@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2738@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2740@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2742@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2744@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2746@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2748@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2750@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2752@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2754@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2756@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2758@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2760@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2762@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2764@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2766@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2768@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2770@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2772@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2774@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2776@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2778@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2780@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2782@<eax>(char a1@<al>);
-// int __usercall camlUnix__handle_unix_error_1171@<eax>(int (**a1)(void)@<eax>, int a2@<ecx>);
-int __fastcall sub_804CB10(int a1, int (**a2)(void));
-// int __usercall camlUnix__read_1237@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlUnix__write_1242@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlUnix__single_write_1247@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlUnix__fun_2804@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2802@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2800@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2798@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2796@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2794@<eax>(char a1@<al>);
-// int __usercall camlUnix__try_set_close_on_exec_1366@<eax>(char a1@<al>);
-// int __usercall sub_804CCD0@<eax>(char a1@<al>);
+// int __usercall camlUnix__fun_2857@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2863@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2562@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2564@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2566@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2568@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2570@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2572@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2574@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2576@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2578@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2580@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2582@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2584@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2586@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2588@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2590@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2592@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2594@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2596@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2598@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2600@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2602@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2604@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2606@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2608@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2610@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2612@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2614@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2616@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2618@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2620@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2622@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2624@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2626@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2628@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2630@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2632@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2634@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2636@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2638@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2640@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2642@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2644@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2646@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2648@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2650@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2652@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2654@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2656@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2658@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2660@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2662@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2664@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2666@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2668@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2670@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2672@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2674@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2676@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2678@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2680@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2682@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2684@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2686@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2688@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2690@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2692@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2694@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2696@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2698@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2700@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2702@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2704@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2706@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2708@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2710@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2712@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2714@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2716@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2718@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2720@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2722@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2724@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2726@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2728@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2730@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2732@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2734@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2736@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2738@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2740@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2742@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2744@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2746@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2748@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2750@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2752@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2754@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2756@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2758@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2760@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2762@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2764@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2766@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2768@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2770@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2772@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2774@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2776@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2778@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2780@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2782@<eax>(char@<al>);
+// int __usercall camlUnix__handle_unix_error_1171@<eax>(int (**)(void)@<eax>, int@<ecx>);
+int __fastcall sub_804CB10(int, int (**)(void));
+// int __usercall camlUnix__read_1237@<eax>(char@<al>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlUnix__write_1242@<eax>(char@<al>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlUnix__single_write_1247@<eax>(char@<al>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlUnix__fun_2804@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2802@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2800@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2798@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2796@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2794@<eax>(char@<al>);
+// int __usercall camlUnix__try_set_close_on_exec_1366@<eax>(char@<al>);
+// int __usercall sub_804CCD0@<eax>(char@<al>);
 int camlUnix__pause_1408();
-// int __usercall camlUnix__is_inet6_addr_1500@<eax>(int a1@<eax>);
-// int __usercall camlUnix__domain_of_sockaddr_1529@<eax>(_DWORD *a1@<eax>);
-// int __usercall camlUnix__recv_1558@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlUnix__recvfrom_1564@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlUnix__send_1570@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlUnix__sendto_1576@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlUnix__fun_2816@<eax>(char a1@<al>);
-// int __usercall camlUnix__fun_2814@<eax>(char a1@<al>);
+// int __usercall camlUnix__is_inet6_addr_1500@<eax>(int@<eax>);
+// int __usercall camlUnix__domain_of_sockaddr_1529@<eax>(_DWORD *@<eax>);
+// int __usercall camlUnix__recv_1558@<eax>(char@<al>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlUnix__recvfrom_1564@<eax>(char@<al>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlUnix__send_1570@<eax>(char@<al>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlUnix__sendto_1576@<eax>(char@<al>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlUnix__fun_2816@<eax>(char@<al>);
+// int __usercall camlUnix__fun_2814@<eax>(char@<al>);
 int camlUnix__getsockopt_1643();
 int camlUnix__setsockopt_1646();
 int camlUnix__getsockopt_int_1650();
@@ -397,111 +393,111 @@ int camlUnix__setsockopt_optint_1660();
 int camlUnix__getsockopt_float_1664();
 int camlUnix__setsockopt_float_1667();
 int camlUnix__getsockopt_error_1671();
-// void __usercall camlUnix__getaddrinfo_emulation_756(_DWORD *a1@<eax>, _DWORD *a2@<ecx>, _DWORD *a3@<ebx>, int a4, int a5, char a6);
-void __cdecl sub_804D330(int a1, int a2, char a3);
-// int __usercall sub_804D3C0@<eax>(char a1@<bl>);
-// void __usercall camlUnix__getaddrinfo_1751(_DWORD *a1@<eax>, _DWORD *a2@<ecx>, _DWORD *a3@<ebx>, int a4, int a5, char a6);
-// int __usercall sub_804D510@<eax>(char a1@<al>);
-// void __usercall camlUnix__getnameinfo_emulation_1772(_DWORD *a1@<eax>, _DWORD *a2@<ebx>);
-// _DWORD *__usercall sub_804D600@<eax>(_DWORD *a1@<ebx>);
+// void __usercall camlUnix__getaddrinfo_emulation_1730(_DWORD *a1@<eax>, _DWORD *a2@<ecx>, _DWORD *a3@<ebx>, int a4@<edx>, int a5, int a6, char a7);
+void __cdecl sub_804D330(int, int, char);
+// int *__usercall sub_804D3C0@<eax>(char a1@<bl>);
+// void __usercall camlUnix__getaddrinfo_1751(_DWORD *@<eax>, _DWORD *@<ecx>, _DWORD *@<ebx>, int, int, char);
+// int __usercall sub_804D510@<eax>(char@<al>);
+// void __usercall camlUnix__getnameinfo_emulation_1772(_DWORD *@<eax>, _DWORD *@<ebx>);
+// _DWORD *__usercall sub_804D600@<eax>(_DWORD *@<ebx>);
 _DWORD *sub_804D6B0();
-// void __usercall camlUnix__getnameinfo_1781(_DWORD *a1@<eax>, _DWORD *a2@<ebx>);
-// int __usercall sub_804D810@<eax>(char a1@<al>);
+// void __usercall camlUnix__getnameinfo_1781(_DWORD *@<eax>, _DWORD *@<ebx>);
+// int __usercall sub_804D810@<eax>(char@<al>);
 int camlUnix__system_1891();
-int sub_804D8A0();
-// int __usercall camlUnix__safe_dup_1894@<eax>(char a1@<al>);
-// int __usercall camlUnix__safe_close_1898@<eax>(char a1@<al>);
-// int __usercall sub_804D990@<eax>(char a1@<al>);
-// int __usercall camlUnix__perform_redirections_1900@<eax>(char a1@<al>, char a2@<cl>, char a3@<bl>);
+int __fastcall sub_804D8A0(int a1, int a2);
+// int __usercall camlUnix__safe_dup_1894@<eax>(char@<al>);
+// int __usercall camlUnix__safe_close_1898@<eax>(char@<al>);
+// int __usercall sub_804D990@<eax>(char@<al>);
+// int __usercall camlUnix__perform_redirections_1900@<eax>(char@<al>, char@<cl>, char@<bl>);
 int camlUnix__create_process_1907();
 int sub_804DAE0();
 int camlUnix__create_process_env_1914();
 int sub_804DB90();
-// int __usercall camlUnix__open_proc_1949@<eax>(int a1@<edx>, int a2@<ecx>, unsigned int a3@<ebx>, int a4@<esi>);
-int sub_804DCC0();
+// int __usercall camlUnix__open_proc_1949@<eax>(int@<edx>, int@<ecx>, unsigned int@<ebx>, int@<esi>);
+int __fastcall sub_804DCC0(int a1, int a2);
 int camlUnix__open_process_in_1957();
 int camlUnix__open_process_out_1962();
 int *camlUnix__open_process_1967();
-// int __usercall camlUnix__open_proc_full_1975@<eax>(char a1@<dl>, unsigned int a2@<ecx>, char a3@<dil>, char a4@<sil>);
-int sub_804E0B0();
+// int __usercall camlUnix__open_proc_full_1975@<eax>(char@<dl>, unsigned int@<ecx>, char@<dil>, char@<sil>);
+int __fastcall sub_804E0B0(int a1, int a2);
 int *camlUnix__open_process_full_1985();
-// int __usercall camlUnix__find_proc_id_1997@<eax>(int a1@<eax>, char a2@<bl>);
-// int __usercall sub_804E350@<eax>(char a1@<bl>);
-// int __usercall camlUnix__waitpid_non_intr_2001@<eax>(int a1@<eax>);
+// int __usercall camlUnix__find_proc_id_1997@<eax>(int@<eax>, char@<bl>);
+// int __usercall sub_804E350@<eax>(char@<bl>);
+// int __usercall camlUnix__waitpid_non_intr_2001@<eax>(int@<eax>);
 int sub_804E3E0();
-// int __usercall camlUnix__close_process_in_2003@<eax>(int a1@<eax>);
-// int __usercall camlUnix__close_process_out_2006@<eax>(int a1@<eax>);
-// int __usercall camlUnix__close_process_2009@<eax>(int a1@<eax>, int a2@<ebx>);
+// int __usercall camlUnix__close_process_in_2003@<eax>(int a1@<eax>, int a2@<edx>);
+// int __usercall camlUnix__close_process_out_2006@<eax>(int a1@<eax>, int a2@<edx>);
+// int __usercall camlUnix__close_process_2009@<eax>(int@<eax>, int@<ebx>);
 int sub_804E550();
-// int __usercall camlUnix__close_process_full_2013@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
+// int __usercall camlUnix__close_process_full_2013@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
 int sub_804E610();
-// int *__usercall camlUnix__open_connection_2018@<eax>(_DWORD *a1@<eax>);
-// int *__usercall sub_804E6B0@<eax>(char a1@<al>);
-// int __usercall camlUnix__shutdown_connection_2022@<eax>(char a1@<al>);
-// int __usercall camlUnix__accept_non_intr_2024@<eax>(int a1@<eax>);
-// int __usercall sub_804E7A0@<eax>(char a1@<al>);
-// void __usercall __noreturn camlUnix__establish_server_2026(int a1@<eax>, _DWORD *a2@<ebx>);
-int camlUnix__entry(void); // weak
+// int *__usercall camlUnix__open_connection_2018@<eax>(_DWORD *@<eax>);
+// int *__usercall sub_804E6B0@<eax>(char@<al>);
+// int __usercall camlUnix__shutdown_connection_2022@<eax>(char@<al>);
+// int __usercall camlUnix__accept_non_intr_2024@<eax>(int@<eax>);
+// int __usercall sub_804E7A0@<eax>(char@<al>);
+// void __usercall __noreturn camlUnix__establish_server_2026(int@<eax>, _DWORD *@<ebx>);
+int __fastcall camlUnix__entry(int a1, int a2);
 int sub_804EEAA();
-_DWORD sub_804EEF2(); // weak
+int sub_804EEF2();
 int camlUnixLabels__code_begin();
-// int __usercall camlUnixLabels__code_end@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlPervasives__iter_1186@<eax>(_DWORD *a1@<eax>);
-// void __usercall sub_804F8A0(char a1@<al>, int a2);
-// int __usercall camlPervasives__build_result_1243@<eax>(int result@<eax>, int *a2@<ecx>, int a3@<ebx>);
-// int __usercall camlPervasives__scan_1249@<eax>(int *a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlPervasives__fun_1500@<eax>(int a1@<ebx>);
-// int __usercall camlPervasives__fun_1392@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1394@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1396@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1398@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1400@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1402@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1404@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1406@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1408@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1410@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1412@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1414@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1416@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1418@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1420@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1422@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1424@<eax>(char a1@<al>);
-int camlPervasives__failwith_1010(void); // weak
-int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD); // weak
-// int __usercall camlPervasives__min_1022@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlPervasives__max_1025@<eax>(int a1@<eax>, int a2@<ebx>);
+// int __usercall camlUnixLabels__code_end@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlPervasives__iter_1186@<eax>(_DWORD *@<eax>);
+// void __usercall sub_804F8A0(char@<al>, int);
+// int __usercall camlPervasives__build_result_1243@<eax>(int result@<eax>, int *@<ecx>, int@<ebx>);
+// int __usercall camlPervasives__scan_1249@<eax>(int *@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlPervasives__fun_1500@<eax>(int@<ebx>);
+// int __usercall camlPervasives__fun_1392@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1394@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1396@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1398@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1400@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1402@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1404@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1406@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1408@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1410@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1412@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1414@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1416@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1418@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1420@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1422@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1424@<eax>(char@<al>);
+void __noreturn camlPervasives__failwith_1010(void); // weak
+void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD); // weak
+// int __usercall camlPervasives__min_1022@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlPervasives__max_1025@<eax>(int@<eax>, int@<ebx>);
 // int __usercall camlPervasives__abs_1044@<eax>(int result@<eax>);
-// int __usercall camlPervasives__lnot_1049@<eax>(int a1@<eax>);
-// int __usercall camlPervasives___5e_1112@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlPervasives__char_of_int_1120@<eax>(int result@<eax>, int a2@<edx>, int a3@<ecx>);
-// char *__usercall camlPervasives__string_of_bool_1127@<eax>(int a1@<eax>);
-// int __usercall camlPervasives__bool_of_string_1129@<eax>(_DWORD *a1@<eax>);
+// int __usercall camlPervasives__lnot_1049@<eax>(int@<eax>);
+// int __usercall camlPervasives___5e_1112@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlPervasives__char_of_int_1120@<eax>(int result@<eax>, int@<edx>, int@<ecx>);
+// char *__usercall camlPervasives__string_of_bool_1127@<eax>(int@<eax>);
+// int __usercall camlPervasives__bool_of_string_1129@<eax>(_DWORD *@<eax>);
 int camlPervasives__string_of_int_1130();
 int camlPervasives__valid_float_lexem_1135(void); // weak
 int camlPervasives__string_of_float_1140();
-// _DWORD *__usercall camlPervasives___40_1143@<eax>(int *a1@<eax>, int a2@<ebx>);
-int __fastcall camlPervasives__open_out_gen_1175(char a1);
-// int __usercall camlPervasives__open_out_1179@<eax>(char a1@<al>);
-// int __usercall camlPervasives__open_out_bin_1181@<eax>(char a1@<al>);
+// int *__usercall camlPervasives___40_1143@<eax>(int *a1@<eax>, int a2@<ebx>);
+int __fastcall camlPervasives__open_out_gen_1175(char);
+// int __usercall camlPervasives__open_out_1179@<eax>(char@<al>);
+// int __usercall camlPervasives__open_out_bin_1181@<eax>(char@<al>);
 int camlPervasives__flush_all_1185();
-// int __usercall camlPervasives__output_string_1191@<eax>(char a1@<al>);
-// int __usercall camlPervasives__output_1194@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlPervasives__output_value_1202@<eax>(char a1@<al>);
-// int __usercall camlPervasives__close_out_1209@<eax>(char a1@<al>);
-// void __usercall camlPervasives__close_out_noerr_1211(char a1@<al>);
-// int __usercall sub_8050130@<eax>(char a1@<al>);
+// int __usercall camlPervasives__output_string_1191@<eax>(char@<al>);
+// int __usercall camlPervasives__output_1194@<eax>(char@<al>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlPervasives__output_value_1202@<eax>(char@<al>);
+// int __usercall camlPervasives__close_out_1209@<eax>(char@<al>);
+// void __usercall camlPervasives__close_out_noerr_1211(char@<al>);
+// int __usercall sub_8050130@<eax>(char@<al>);
 int sub_8050170();
-int __fastcall camlPervasives__open_in_gen_1214(char a1);
-// int __usercall camlPervasives__open_in_1218@<eax>(char a1@<al>);
-// int __usercall camlPervasives__open_in_bin_1220@<eax>(char a1@<al>);
-// int __usercall camlPervasives__input_1224@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlPervasives__unsafe_really_input_1229@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>);
-// int __usercall camlPervasives__really_input_1235@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
+int __fastcall camlPervasives__open_in_gen_1214(char);
+// int __usercall camlPervasives__open_in_1218@<eax>(char@<al>);
+// int __usercall camlPervasives__open_in_bin_1220@<eax>(char@<al>);
+// int __usercall camlPervasives__input_1224@<eax>(char@<al>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlPervasives__unsafe_really_input_1229@<eax>(int@<eax>, int@<edx>, int@<ecx>);
+// int __usercall camlPervasives__really_input_1235@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
 int camlPervasives__input_line_1241(void); // weak
-// int __usercall camlPervasives__close_in_noerr_1263@<eax>(char a1@<al>);
-// int __usercall sub_80503A0@<eax>(char a1@<al>);
+// int __usercall camlPervasives__close_in_noerr_1263@<eax>(char@<al>);
+// int __usercall sub_80503A0@<eax>(char@<al>);
 int camlPervasives__print_char_1266();
 int camlPervasives__print_string_1268();
 int camlPervasives__print_int_1270();
@@ -517,284 +513,284 @@ int camlPervasives__prerr_newline_1287();
 int camlPervasives__read_line_1288();
 int camlPervasives__read_int_1289();
 int camlPervasives__read_float_1290();
-// int __usercall camlPervasives__fun_1495@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1493@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1491@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1489@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1487@<eax>(char a1@<al>);
-// int __usercall camlPervasives__fun_1485@<eax>(char a1@<al>);
-// int __usercall camlPervasives___5e_5e_1312@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlPervasives__string_of_format_1315@<eax>(int a1@<eax>);
+// int __usercall camlPervasives__fun_1495@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1493@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1491@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1489@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1487@<eax>(char@<al>);
+// int __usercall camlPervasives__fun_1485@<eax>(char@<al>);
+// int __usercall camlPervasives___5e_5e_1312@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlPervasives__string_of_format_1315@<eax>(int@<eax>);
 _DWORD camlPervasives__at_exit_1322(); // weak
 int camlPervasives__do_at_exit_1325();
-// int __usercall camlPervasives__exit_1326@<eax>(char a1@<al>);
+// int __usercall camlPervasives__exit_1326@<eax>(char@<al>);
 int camlPervasives__entry(void); // weak
-// int __usercall camlArray__code_begin@<eax>(int a1@<eax>, double *a2@<edx>, unsigned int a3@<ecx>, double *a4@<ebx>, int *a5@<edi>, unsigned int a6@<esi>);
-// int __usercall camlArray__size_1065@<eax>(int result@<eax>, _DWORD *a2@<ebx>);
-// int __usercall camlArray__fill_1070@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<ebx>);
-// int (__cdecl **__usercall camlArray__find_init_1077@<eax>(int *a1@<eax>))(int, int);
-// _DWORD *__usercall camlArray__tolist_1123@<eax>(int a1@<eax>, int a2@<ecx>, _DWORD *a3@<ebx>);
-// int __usercall camlArray__fill_1135@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// unsigned int __usercall camlArray__maxson_182@<eax>(signed int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlArray__trickledown_187@<eax>(signed int a1@<eax>, int a2@<edx>, double *a3@<ecx>, unsigned int a4@<ebx>);
-// int __usercall camlArray__trickle_1165@<eax>(signed int a1@<eax>, int a2@<edx>, double *a3@<ecx>, unsigned int a4@<ebx>);
-// int __usercall sub_8051790@<eax>(signed int a1@<eax>, int a2@<edx>, double *a3@<ecx>, unsigned int a4@<ebx>);
-// int __usercall camlArray__bubbledown_1170@<eax>(signed int a1@<eax>, int a2@<ecx>, unsigned int a3@<ebx>);
-// int __usercall camlArray__bubble_1174@<eax>(signed int a1@<eax>, int a2@<ecx>, unsigned int a3@<ebx>);
-// int __usercall sub_80518F0@<eax>(signed int a1@<eax>, int a2@<ecx>, unsigned int a3@<ebx>);
-// int __usercall camlArray__trickleup_205@<eax>(int a1@<eax>, int a2@<ecx>, double *a3@<ebx>);
-// int __usercall camlArray__merge_1191@<eax>(unsigned int a1@<eax>, unsigned int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<edi>, int a6@<esi>);
-// int __usercall camlArray__isortto_236@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<esi>);
-// int __usercall camlArray__sortto_1217@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<esi>);
-// void *__usercall camlArray__init_1037@<eax>(int a1@<eax>, void (**a2)(void)@<ebx>);
-// int __usercall camlArray__make_matrix_1042@<eax>(int a1@<eax>, char a2@<bl>);
-// void *__usercall camlArray__copy_1049@<eax>(double *a1@<eax>);
-// void *__usercall camlArray__append_82@<eax>(double *a1@<eax>, double *a2@<ebx>);
-// int __usercall camlArray__concat_aux_1062@<eax>(int *a1@<ebx>);
-// int (__cdecl **__usercall camlArray__concat_1075@<eax>(int *a1@<eax>))(int, int);
-// void *__usercall camlArray__sub_1081@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlArray__fill_1087@<eax>(int a1@<eax>, double *a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlArray__blit_120@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<esi>);
-// int __usercall camlArray__iter_1101@<eax>(void (**a1)(void)@<eax>, int a2@<ebx>);
-// void *__usercall camlArray__map_1105@<eax>(void (**a1)(void)@<eax>, double *a2@<ebx>);
-// int __usercall camlArray__iteri_1111@<eax>(int a1@<eax>, int a2@<ebx>);
-// void *__usercall camlArray__mapi_1115@<eax>(int a1@<eax>, double *a2@<ebx>);
+// int __usercall camlArray__code_begin@<eax>(int@<eax>, double *@<edx>, unsigned int@<ecx>, double *@<ebx>, int *@<edi>, unsigned int@<esi>);
+// int __usercall camlArray__size_1065@<eax>(int result@<eax>, _DWORD *@<ebx>);
+// int __usercall camlArray__fill_1070@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<ebx>, int a4@<edx>);
+// int (__cdecl **__usercall camlArray__find_init_1077@<eax>(int *@<eax>))(int, int);
+// _DWORD *__usercall camlArray__tolist_1123@<eax>(int@<eax>, int@<ecx>, _DWORD *@<ebx>);
+// int __usercall camlArray__fill_1135@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// unsigned int __usercall camlArray__maxson_1155@<eax>(signed int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
+// int __usercall camlArray__trickledown_1160@<eax>(signed int@<eax>, int@<edx>, double *@<ecx>, unsigned int@<ebx>);
+// int __usercall camlArray__trickle_1165@<eax>(signed int@<eax>, int@<edx>, double *@<ecx>, unsigned int@<ebx>);
+// int __usercall sub_8051790@<eax>(signed int@<eax>, int@<edx>, double *@<ecx>, unsigned int@<ebx>);
+// int __usercall camlArray__bubbledown_1170@<eax>(signed int@<eax>, int@<ecx>, unsigned int@<ebx>);
+// int __usercall camlArray__bubble_1174@<eax>(signed int@<eax>, int@<ecx>, unsigned int@<ebx>);
+// int __usercall sub_80518F0@<eax>(signed int@<eax>, int@<ecx>, unsigned int@<ebx>);
+// int __usercall camlArray__trickleup_1178@<eax>(int@<eax>, int@<ecx>, double *@<ebx>);
+// int __usercall camlArray__merge_1191@<eax>(unsigned int@<eax>, unsigned int@<edx>, int@<ecx>, int@<ebx>, int@<edi>, int@<esi>);
+// int __usercall camlArray__isortto_1209@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, _DWORD *a5@<esi>);
+// int __usercall camlArray__sortto_1217@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>, int@<esi>);
+// void *__usercall camlArray__init_1037@<eax>(int@<eax>, void (**)(void)@<ebx>);
+// int __usercall camlArray__make_matrix_1042@<eax>(int@<eax>, char@<bl>);
+// void *__usercall camlArray__copy_1049@<eax>(double *a1@<eax>, int a2@<edx>);
+// void *__usercall camlArray__append_1054@<eax>(double *@<eax>, double *@<ebx>);
+// int __usercall camlArray__concat_aux_1062@<eax>(int *@<ebx>);
+// int (__cdecl **__usercall camlArray__concat_1075@<eax>(int *@<eax>))(int, int);
+// void *__usercall camlArray__sub_1081@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlArray__fill_1087@<eax>(int@<eax>, double *@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlArray__blit_1093@<eax>(int a1@<eax>, int a2@<edx>, unsigned int a3@<ecx>, int a4@<ebx>, int a5@<esi>);
+// int __usercall camlArray__iter_1101@<eax>(void (**)(void)@<eax>, int@<ebx>);
+// void *__usercall camlArray__map_1105@<eax>(void (**)(void)@<eax>, double *@<ebx>);
+// int __usercall camlArray__iteri_1111@<eax>(int@<eax>, int@<ebx>);
+// void *__usercall camlArray__mapi_1115@<eax>(int@<eax>, double *@<ebx>);
 _DWORD camlArray__to_list_1121(); // weak
-// int __usercall camlArray__list_length_1126@<eax>(int result@<eax>, int a2@<ebx>);
-// void *__usercall camlArray__of_list_1130@<eax>(int *a1@<eax>);
-// unsigned int __usercall camlArray__fold_left_1139@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// unsigned int __usercall camlArray__fold_right_1145@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlArray__sort_179@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlArray__stable_sort_1188@<eax>(int a1@<eax>, double *a2@<ebx>);
+// int __usercall camlArray__list_length_1126@<eax>(int result@<eax>, int@<ebx>);
+// void *__usercall camlArray__of_list_1130@<eax>(int *@<eax>);
+// unsigned int __usercall camlArray__fold_left_1139@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>, int a4@<edx>);
+// unsigned int __usercall camlArray__fold_right_1145@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlArray__sort_1152@<eax>(int a1@<eax>, unsigned int a2@<ebx>, int a3@<edx>);
+// int __usercall camlArray__stable_sort_1188@<eax>(int a1@<eax>, double *a2@<ebx>, int a3@<edx>);
 int camlArray__entry(void); // weak
-// int __usercall camlList__code_begin@<eax>(int *a1@<eax>, int a2@<ebx>);
-// int *__usercall camlList__rmap_f_1070@<eax>(int *result@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int *__usercall camlList__rmap2_f_1103@<eax>(int *result@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlList__find_1207@<eax>(_DWORD *a1@<eax>, int a2@<ecx>, int *a3@<ebx>);
-// int *__usercall camlList__part_1215@<eax>(_DWORD *a1@<eax>, int a2@<edx>, int *a3@<ecx>, _DWORD *a4@<ebx>);
-// int __usercall camlList__rev_merge_1251@<eax>(_DWORD *a1@<eax>, int a2@<edx>, _DWORD *a3@<ecx>, int *a4@<ebx>);
-// int __usercall camlList__rev_merge_rev_1261@<eax>(_DWORD *a1@<eax>, int a2@<edx>, _DWORD *a3@<ecx>, int *a4@<ebx>);
-// _DWORD *__usercall camlList__rev_sort_300@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<ebx>);
-// _DWORD *__usercall camlList__sort_299@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<ebx>);
-// int __usercall camlList__length_aux_1030@<eax>(int result@<eax>, int a2@<ebx>);
-// int __usercall camlList__length_1034@<eax>(int a1@<eax>);
-// int __usercall camlList__hd_1036@<eax>(int a1@<eax>);
-// int __usercall camlList__tl_1039@<eax>(int a1@<eax>);
-// int __usercall camlList__nth_1042@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-int camlList__rev_append_1051(void); // weak
-int camlList__rev_1056();
-// int __usercall camlList__flatten_1058@<eax>(int **a1@<eax>);
-// int __usercall camlList__map_1062@<eax>(int (**a1)(void)@<eax>, int a2@<ebx>);
+// int __usercall camlList__code_begin@<eax>(int *@<eax>, int@<ebx>);
+// int *__usercall camlList__rmap_f_1070@<eax>(int *result@<eax>, int@<ecx>, int@<ebx>);
+// int *__usercall camlList__rmap2_f_1103@<eax>(int *result@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlList__find_1207@<eax>(_DWORD *@<eax>, int@<ecx>, int *@<ebx>);
+// int *__usercall camlList__part_1215@<eax>(_DWORD *@<eax>, int@<edx>, int *@<ecx>, _DWORD *@<ebx>);
+// int __usercall camlList__rev_merge_1251@<eax>(_DWORD *@<eax>, int@<edx>, _DWORD *@<ecx>, int *@<ebx>);
+// int __usercall camlList__rev_merge_rev_1261@<eax>(_DWORD *@<eax>, int@<edx>, _DWORD *@<ecx>, int *@<ebx>);
+// _DWORD *__usercall camlList__rev_sort_1272@<eax>(int@<eax>, int@<ecx>, int *@<ebx>);
+// _DWORD *__usercall camlList__sort_1271@<eax>(int@<eax>, int@<ecx>, int *@<ebx>);
+// int __usercall camlList__length_aux_1030@<eax>(int result@<eax>, int@<ebx>);
+// int __usercall camlList__length_1034@<eax>(int@<eax>);
+// int __usercall camlList__hd_1036@<eax>(int@<eax>);
+// int __usercall camlList__tl_1039@<eax>(int@<eax>);
+// int __usercall camlList__nth_1042@<eax>(int *@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
+int __fastcall camlList__rev_append_1051(_DWORD); // weak
+int __fastcall camlList__rev_1056(int a1);
+// int *__usercall camlList__flatten_1058@<eax>(int **a1@<eax>);
+// unsigned int __usercall camlList__map_1062@<eax>(int (**a1)(void)@<eax>, int a2@<ebx>);
 _DWORD camlList__rev_map_1067(); // weak
-// int __usercall camlList__iter_1074@<eax>(void (**a1)(void)@<eax>, int a2@<ebx>);
-// int __usercall camlList__fold_left_1078@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlList__fold_right_1084@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlList__map2_1090@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
+// int __usercall camlList__iter_1074@<eax>(void (**)(void)@<eax>, int@<ebx>);
+// int __usercall camlList__fold_left_1078@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlList__fold_right_1084@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// unsigned int __usercall camlList__map2_1090@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
 _DWORD camlList__rev_map2_1099(); // weak
-// int __usercall camlList__iter2_1111@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlList__fold_left2_1119@<eax>(int a1@<eax>, int *a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlList__fold_right2_1128@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlList__for_all_1137@<eax>(int (**a1)(void)@<eax>, int a2@<ebx>);
-// int __usercall camlList__exists_1141@<eax>(int (**a1)(void)@<eax>, int a2@<ebx>);
-// int __usercall camlList__for_all2_1145@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlList__exists2_1153@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlList__mem_1161@<eax>(int a1@<eax>, _DWORD *a2@<ebx>);
-// int __usercall camlList__memq_1165@<eax>(int a1@<eax>, _DWORD *a2@<ebx>);
-// int __usercall camlList__assoc_1169@<eax>(int a1@<eax>, _DWORD *a2@<ebx>);
+// int __usercall camlList__iter2_1111@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlList__fold_left2_1119@<eax>(int@<eax>, int *@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlList__fold_right2_1128@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlList__for_all_1137@<eax>(int (**)(void)@<eax>, int@<ebx>);
+// int __usercall camlList__exists_1141@<eax>(int (**)(void)@<eax>, int@<ebx>);
+// int __usercall camlList__for_all2_1145@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlList__exists2_1153@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlList__mem_1161@<eax>(int@<eax>, _DWORD *@<ebx>);
+// int __usercall camlList__memq_1165@<eax>(int@<eax>, _DWORD *@<ebx>);
+// int __usercall camlList__assoc_1169@<eax>(int a1@<eax>, _DWORD *a2@<ebx>, int a3@<edx>, int a4@<ecx>);
 _DWORD camlList__assq_1174(); // weak
-// int __usercall camlList__mem_assoc_1179@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlList__mem_assq_1184@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlList__remove_assoc_1189@<eax>(char a1@<al>, _DWORD *a2@<ebx>);
-// int __usercall camlList__remove_assq_1195@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlList__find_1201@<eax>(int (**a1)(void)@<eax>, int *a2@<ebx>);
+// int __usercall camlList__mem_assoc_1179@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlList__mem_assq_1184@<eax>(int@<eax>, int@<ebx>);
+// unsigned int __usercall camlList__remove_assoc_1189@<eax>(char a1@<al>, _DWORD *a2@<ebx>);
+// unsigned int __usercall camlList__remove_assq_1195@<eax>(int a1@<eax>, int a2@<ebx>);
+// int __usercall camlList__find_1201@<eax>(int (**a1)(void)@<eax>, int *a2@<ebx>, int a3@<ecx>);
 _DWORD camlList__find_all_1205(); // weak
 _DWORD camlList__partition_1212(); // weak
-// _DWORD *__usercall camlList__split_1220@<eax>(int **a1@<eax>);
-// int __usercall camlList__combine_1226@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int *a4@<ebx>);
-// int *__usercall camlList__merge_1233@<eax>(int a1@<eax>, int *a2@<ecx>, int *a3@<ebx>);
+// _DWORD *__usercall camlList__split_1220@<eax>(int **@<eax>);
+// int __usercall camlList__combine_1226@<eax>(int *@<eax>, int@<edx>, int@<ecx>, int *@<ebx>);
+// int *__usercall camlList__merge_1233@<eax>(int@<eax>, int *@<ecx>, int *@<ebx>);
 int camlList__chop_1243(void); // weak
-// _DWORD *__usercall camlList__stable_sort_1248@<eax>(int a1@<eax>, int *a2@<ebx>);
+// int *__usercall camlList__stable_sort_1248@<eax>(int a1@<eax>, int *a2@<ebx>, int a3@<edx>, int a4@<ecx>);
 int camlList__entry();
-// int __usercall camlChar__code_begin@<eax>(int result@<eax>, int a2@<edx>, int a3@<ecx>);
-// _BYTE *__usercall camlChar__escaped_1038@<eax>(int a1@<eax>);
+// int __usercall camlChar__code_begin@<eax>(int result@<eax>, int@<edx>, int@<ecx>);
+// _BYTE *__usercall camlChar__escaped_1038@<eax>(int@<eax>);
 // int __usercall camlChar__lowercase_1043@<eax>(int result@<eax>);
 // int __usercall camlChar__uppercase_1045@<eax>(int result@<eax>);
-// int __usercall camlChar__compare_1048@<eax>(int a1@<eax>, int a2@<ebx>);
+// int __usercall camlChar__compare_1048@<eax>(int@<eax>, int@<ebx>);
 int camlChar__entry();
-// int __usercall camlString__code_begin@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlString__fun_1163@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlString__make_1038@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlString__copy_1042@<eax>(int a1@<eax>);
-// int __usercall camlString__sub_1046@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>, int a4@<edx>);
-// int __usercall camlString__fill_1051@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlString__blit_1056@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<esi>);
-// int __usercall camlString__iter_1062@<eax>(void (**a1)(void)@<eax>, int a2@<ebx>);
-// void *__usercall camlString__concat_1066@<eax>(void (*a1)(void)@<eax>, int *a2@<ebx>);
-// int __usercall camlString__escaped_108@<eax>(int a1@<eax>);
-// int __usercall camlString__map_1090@<eax>(int (**a1)(void)@<eax>, int a2@<ebx>);
-// int __usercall camlString__uppercase_1096@<eax>(int a1@<eax>);
-// int __usercall camlString__lowercase_1098@<eax>(int a1@<eax>);
-// _BYTE *__usercall camlString__apply1_1100@<eax>(int (**a1)(void)@<eax>, int a2@<ebx>);
-// _BYTE *__usercall camlString__capitalize_1104@<eax>(int a1@<eax>);
-// _BYTE *__usercall camlString__uncapitalize_1106@<eax>(int a1@<eax>);
+// int __usercall camlString__code_begin@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlString__fun_1163@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlString__make_1038@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlString__copy_1042@<eax>(int@<eax>);
+// int __usercall camlString__sub_1046@<eax>(int@<eax>, int@<ecx>, int@<ebx>, int@<edx>);
+// int __usercall camlString__fill_1051@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlString__blit_1056@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>, int@<esi>);
+// int __usercall camlString__iter_1062@<eax>(void (**)(void)@<eax>, int@<ebx>);
+// void *__usercall camlString__concat_1066@<eax>(void (*a1)(void)@<eax>, int *a2@<ebx>, int a3@<edx>, int a4@<ecx>);
+// int __usercall camlString__escaped_1080@<eax>(int a1@<eax>, int a2@<ecx>);
+// int __usercall camlString__map_1090@<eax>(int (**)(void)@<eax>, int@<ebx>);
+// int __usercall camlString__uppercase_1096@<eax>(int@<eax>);
+// int __usercall camlString__lowercase_1098@<eax>(int@<eax>);
+// _BYTE *__usercall camlString__apply1_1100@<eax>(int (**)(void)@<eax>, int@<ebx>);
+// _BYTE *__usercall camlString__capitalize_1104@<eax>(int@<eax>);
+// _BYTE *__usercall camlString__uncapitalize_1106@<eax>(int@<eax>);
 int __fastcall camlString__index_rec_1108(_DWORD, _DWORD); // weak
-// int __usercall camlString__index_1113@<eax>(int a1@<ebx>);
-// int __usercall camlString__index_from_1116@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
+// int __usercall camlString__index_1113@<eax>(int@<ebx>);
+// int __usercall camlString__index_from_1116@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
 int __fastcall camlString__rindex_rec_1121(_DWORD); // weak
-// int __usercall camlString__rindex_1125@<eax>(int a1@<ebx>);
-// int __usercall camlString__rindex_from_1128@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlString__contains_from_1132@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall sub_8056680@<eax>(int a1@<edx>, int a2@<esi>);
-// int __usercall camlString__contains_1137@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlString__rcontains_from_1140@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-int __fastcall sub_8056720(int a1);
-// int __usercall camlString__compare_1145@<eax>(const void *a1@<eax>);
+// int __usercall camlString__rindex_1125@<eax>(int@<ebx>);
+// int __usercall camlString__rindex_from_1128@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlString__contains_from_1132@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall sub_8056680@<eax>(int@<edx>, int@<esi>);
+// int __usercall camlString__contains_1137@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlString__rcontains_from_1140@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
+int __fastcall sub_8056720(int);
+// int __usercall camlString__compare_1145@<eax>(const void *@<eax>);
 int camlString__entry();
 void __noreturn camlSys__code_begin(); // weak
-// int __usercall camlSys__set_signal_1057@<eax>(char a1@<al>);
+// int __usercall camlSys__set_signal_1057@<eax>(char@<al>);
 _DWORD camlSys__catch_break_1082(); // weak
 int camlSys__entry(void); // weak
-// int __usercall camlHashtbl__code_begin@<eax>(int *a1@<eax>, int a2@<ebx>);
-// int __usercall camlHashtbl__find_in_bucket_1213@<eax>(int a1@<eax>, int a2@<ebx>);
-// _DWORD *__usercall camlHashtbl__replace_bucket_1221@<eax>(int *a1@<eax>, int a2@<ebx>);
-// int __usercall camlHashtbl__mem_in_bucket_1230@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlHashtbl__insert_bucket_1068@<eax>(int *a1@<eax>, int a2@<ebx>);
-// int __usercall camlHashtbl__remove_bucket_1083@<eax>(int *a1@<eax>, int a2@<ebx>);
-// int __usercall camlHashtbl__find_in_bucket_1108@<eax>(_DWORD *a1@<eax>);
-// _DWORD *__usercall camlHashtbl__replace_bucket_1116@<eax>(int *a1@<eax>, int a2@<ebx>);
-// int __usercall camlHashtbl__mem_in_bucket_1125@<eax>(_DWORD *a1@<eax>);
-// int __usercall camlHashtbl__do_bucket_1132@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlHashtbl__do_bucket_1142@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlHashtbl__safehash_1177@<eax>(int a1@<ebx>);
-// int __usercall camlHashtbl__add_1179@<eax>(_DWORD *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlHashtbl__remove_1185@<eax>(int a1@<eax>, int a2@<ecx>, int (__usercall *a3)@<eax>(int *a1@<eax>, int a2@<ebx>)@<ebx>);
-// int __usercall camlHashtbl__find_rec_1193@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlHashtbl__find_226@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlHashtbl__find_all_1210@<eax>(int a1@<eax>, int a2@<ecx>, int (__usercall *a3)@<eax>(int a1@<eax>, int a2@<ebx>)@<ebx>);
-// int __usercall camlHashtbl__replace_1217@<eax>(_DWORD *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall sub_80578D0@<eax>(int *a1@<eax>, unsigned int a2@<edx>, int a3@<ebx>);
-// int __usercall camlHashtbl__mem_1227@<eax>(int a1@<eax>, int a2@<ecx>, int (__usercall *a3)@<eax>(int a1@<eax>, int a2@<ebx>)@<ebx>);
-// int __usercall camlHashtbl__hash_1031@<eax>(unsigned int a1@<eax>);
+// unsigned int __usercall camlHashtbl__code_begin@<eax>(int *a1@<eax>, int a2@<ebx>);
+// unsigned int __usercall camlHashtbl__find_in_bucket_1213@<eax>(int a1@<eax>, int a2@<ebx>);
+// int *__usercall camlHashtbl__replace_bucket_1221@<eax>(int *a1@<eax>, int a2@<ebx>, int a3@<edx>, int a4@<ecx>);
+// int __usercall camlHashtbl__mem_in_bucket_1230@<eax>(int@<eax>, int@<ebx>);
+// unsigned int __usercall camlHashtbl__insert_bucket_1068@<eax>(int *a1@<eax>, unsigned int a2@<ebx>);
+// unsigned int __usercall camlHashtbl__remove_bucket_1083@<eax>(int *a1@<eax>, int a2@<ebx>);
+// unsigned int __usercall camlHashtbl__find_in_bucket_1108@<eax>(_DWORD *a1@<eax>);
+// int *__usercall camlHashtbl__replace_bucket_1116@<eax>(int *a1@<eax>, int a2@<ebx>, int a3@<edx>, int a4@<ecx>);
+// int __usercall camlHashtbl__mem_in_bucket_1125@<eax>(_DWORD *@<eax>);
+// int __usercall camlHashtbl__do_bucket_1132@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlHashtbl__do_bucket_1142@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlHashtbl__safehash_1177@<eax>(int@<ebx>);
+// int __usercall camlHashtbl__add_1179@<eax>(_DWORD *@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlHashtbl__remove_1185@<eax>(int@<eax>, int@<ecx>, int (__usercall *)@<eax>(int *a1@<eax>, int a2@<ebx>)@<ebx>);
+// int __usercall camlHashtbl__find_rec_1193@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>, int a4@<edx>);
+// int __usercall camlHashtbl__find_1198@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlHashtbl__find_all_1210@<eax>(int@<eax>, int@<ecx>, int (__usercall *)@<eax>(int a1@<eax>, int a2@<ebx>)@<ebx>);
+// int __usercall camlHashtbl__replace_1217@<eax>(_DWORD *a1@<eax>, int a2@<edx>, int *(__usercall *a3)@<eax>(int *a1@<eax>, int a2@<ebx>)@<ecx>, int *(__usercall *a4)@<eax>(int *a1@<eax>, int a2@<ebx>)@<ebx>);
+// int __usercall sub_80578D0@<eax>(int *a1@<eax>, unsigned int a2@<edx>, int a3@<ebx>, int a4@<ecx>);
+// int __usercall camlHashtbl__mem_1227@<eax>(int@<eax>, int@<ecx>, int (__usercall *)@<eax>(int a1@<eax>, int a2@<ebx>)@<ebx>);
+// int __usercall camlHashtbl__hash_1031@<eax>(unsigned int@<eax>);
 _DWORD camlHashtbl__create_1051(); // weak
-// int __usercall camlHashtbl__clear_1054@<eax>(_DWORD *a1@<eax>);
-// _DWORD *__usercall camlHashtbl__copy_1057@<eax>(int a1@<eax>);
-// int __usercall camlHashtbl__length_1059@<eax>(int a1@<eax>);
-// int __usercall camlHashtbl__resize_1061@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlHashtbl__add_1074@<eax>(_DWORD *a1@<eax>, unsigned int a2@<ecx>, unsigned int a3@<ebx>);
-// int __usercall camlHashtbl__remove_1080@<eax>(int a1@<eax>, unsigned int a2@<ebx>);
-// int __usercall camlHashtbl__find_rec_1088@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlHashtbl__find_1093@<eax>(int a1@<eax>, char a2@<bl>);
+// int __usercall camlHashtbl__clear_1054@<eax>(_DWORD *@<eax>);
+// _DWORD *__usercall camlHashtbl__copy_1057@<eax>(int a1@<eax>, int a2@<edx>);
+// int __usercall camlHashtbl__length_1059@<eax>(int@<eax>);
+// int __usercall camlHashtbl__resize_1061@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlHashtbl__add_1074@<eax>(_DWORD *@<eax>, unsigned int@<ecx>, unsigned int@<ebx>);
+// int __usercall camlHashtbl__remove_1080@<eax>(int a1@<eax>, unsigned int a2@<ebx>, int a3@<edx>);
+// int __usercall camlHashtbl__find_rec_1088@<eax>(int a1@<eax>, int a2@<ebx>, int a3@<edx>, int a4@<ecx>);
+// int __usercall camlHashtbl__find_1093@<eax>(int@<eax>, char@<bl>);
 int camlHashtbl__find_all_1105(void); // weak
-// int __usercall camlHashtbl__replace_1112@<eax>(int a1@<eax>, int a2@<ecx>, unsigned int a3@<ebx>);
-// int __usercall sub_80582B0@<eax>(int *a1@<eax>, unsigned int a2@<edx>, int a3@<edi>);
+// int __usercall camlHashtbl__replace_1112@<eax>(_DWORD *a1@<eax>, int a2@<ecx>, unsigned int a3@<ebx>);
+// int __usercall sub_80582B0@<eax>(int *a1@<eax>, unsigned int a2@<edx>, int a3@<edi>, int a4@<ecx>);
 _DWORD camlHashtbl__mem_1122(); // weak
-// int __usercall camlHashtbl__iter_1129@<eax>(int a1@<eax>, int a2@<ebx>);
-// int *__usercall camlHashtbl__fold_1138@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int *__usercall camlHashtbl__Make_1251@<eax>(int (__usercall *a1)@<eax>(int a1@<ebx>)@<eax>);
+// int __usercall camlHashtbl__iter_1129@<eax>(int a1@<eax>, int a2@<ebx>, int a3@<ecx>);
+// int *__usercall camlHashtbl__fold_1138@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>, int a4@<edx>);
+// int *__usercall camlHashtbl__Make_1251@<eax>(int (__usercall *a1)@<eax>(int a1@<ebx>)@<eax>, int a2@<edx>, int a3@<ecx>);
 int camlHashtbl__entry();
-// int __usercall camlBuffer__code_begin@<eax>(int a1@<eax>, _DWORD *a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlBuffer__advance_1111@<eax>(int result@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlBuffer__subst_1127@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int *__usercall camlBuffer__create_1039@<eax>(int a1@<eax>);
-// int __usercall camlBuffer__contents_1044@<eax>(int *a1@<eax>, int a2@<edx>);
-// int __usercall camlBuffer__sub_1046@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlBuffer__blit_1051@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<esi>);
-// int __usercall camlBuffer__nth_1057@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlBuffer__length_1060@<eax>(int a1@<eax>);
-// int __usercall camlBuffer__clear_1062@<eax>(int a1@<eax>);
-// int __usercall camlBuffer__reset_1064@<eax>(unsigned int *a1@<eax>);
-// int __usercall camlBuffer__resize_1066@<eax>(int *a1@<eax>, int a2@<ebx>);
-// int __usercall camlBuffer__add_char_1072@<eax>(int *a1@<eax>, int a2@<ebx>);
-// int __usercall camlBuffer__add_substring_1076@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlBuffer__add_string_1082@<eax>(int *a1@<eax>, int a2@<ebx>);
-// int __usercall camlBuffer__add_buffer_1087@<eax>(int *a1@<eax>, int *a2@<ebx>);
-// int __usercall camlBuffer__add_channel_1090@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlBuffer__output_buffer_1094@<eax>(char a1@<al>, int *a2@<ebx>);
+// int __usercall camlBuffer__code_begin@<eax>(int@<eax>, _DWORD *@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlBuffer__advance_1111@<eax>(int result@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlBuffer__subst_1127@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int *__usercall camlBuffer__create_1039@<eax>(int@<eax>);
+// int __usercall camlBuffer__contents_1044@<eax>(int *@<eax>, int@<edx>);
+// int __usercall camlBuffer__sub_1046@<eax>(int *@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlBuffer__blit_1051@<eax>(int *@<eax>, int@<edx>, int@<ecx>, int@<ebx>, int@<esi>);
+// int __usercall camlBuffer__nth_1057@<eax>(int *@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlBuffer__length_1060@<eax>(int@<eax>);
+// int __usercall camlBuffer__clear_1062@<eax>(int@<eax>);
+// int __usercall camlBuffer__reset_1064@<eax>(unsigned int *@<eax>);
+// int __usercall camlBuffer__resize_1066@<eax>(int *@<eax>, int@<ebx>);
+// int __usercall camlBuffer__add_char_1072@<eax>(int *@<eax>, int@<ebx>);
+// int __usercall camlBuffer__add_substring_1076@<eax>(int *@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlBuffer__add_string_1082@<eax>(int *@<eax>, int@<ebx>);
+// int __usercall camlBuffer__add_buffer_1087@<eax>(int *@<eax>, int *@<ebx>);
+// int __usercall camlBuffer__add_channel_1090@<eax>(int *@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlBuffer__output_buffer_1094@<eax>(char@<al>, int *@<ebx>);
 int camlBuffer__closing_1097(void); // weak
 __int64 __fastcall camlBuffer__advance_to_closing_1098(_DWORD, _DWORD); // weak
 __int64 camlBuffer__advance_to_non_alpha_1108(void); // weak
-// int *__usercall camlBuffer__find_ident_1114@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
+// int *__usercall camlBuffer__find_ident_1114@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>, int a4@<edx>);
 int camlBuffer__add_substitute_1122(void); // weak
 int camlBuffer__entry();
-// int __usercall camlPrintf__code_begin@<eax>(int *a1@<ebx>);
-// int __usercall camlPrintf__skip_int_literal_1092@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlPrintf__sub_sub_1129@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlPrintf__sub_1128@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlPrintf__loop_1159@<eax>(int a1@<eax>, _DWORD *a2@<ebx>);
-// int __usercall camlPrintf__fun_1565@<eax>(int a1@<eax>, int a2@<ecx>, double *a3@<ebx>);
+// int __usercall camlPrintf__code_begin@<eax>(int *@<ebx>);
+// int __usercall camlPrintf__skip_int_literal_1092@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlPrintf__sub_sub_1129@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlPrintf__sub_1128@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlPrintf__loop_1159@<eax>(int@<eax>, _DWORD *@<ebx>);
+// int __usercall camlPrintf__fun_1565@<eax>(int@<eax>, int@<ecx>, double *@<ebx>);
 int camlPrintf__fun_1568(void); // weak
-// int __usercall camlPrintf__got_spec_1304@<eax>(unsigned int *a1@<eax>, _DWORD *a2@<ecx>, int a3@<ebx>, int *a4@<esi>);
-// int __usercall camlPrintf__got_spec_1297@<eax>(int a1@<ecx>, int a2@<ebx>);
-// int __usercall camlPrintf__cont_m_1365@<eax>(int a1@<eax>, int a2@<edx>, int (__usercall *a3)@<eax>(int *a1@<ebx>)@<ecx>, int a4@<ebx>);
-// int __usercall camlPrintf__cont_f_1364@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlPrintf__cont_t_1363@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, void (**a4)(void)@<ebx>);
-// int __usercall camlPrintf__cont_a_1362@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>, int a4@<esi>);
-// int __usercall camlPrintf__cont_s_1361@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>);
-// int __usercall camlPrintf__doprn_1360@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
+// int __usercall camlPrintf__got_spec_1304@<eax>(unsigned int *@<eax>, _DWORD *@<ecx>, int@<ebx>, int *@<esi>);
+// int __usercall camlPrintf__got_spec_1297@<eax>(int@<ecx>, int@<ebx>);
+// int __usercall camlPrintf__cont_m_1365@<eax>(int@<eax>, int@<edx>, int (__usercall *)@<eax>(int *a1@<ebx>)@<ecx>, int@<ebx>);
+// int __usercall camlPrintf__cont_f_1364@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlPrintf__cont_t_1363@<eax>(int@<eax>, int@<edx>, int@<ecx>, void (**)(void)@<ebx>);
+// int __usercall camlPrintf__cont_a_1362@<eax>(int@<eax>, int@<edx>, int@<ebx>, int@<esi>);
+// int __usercall camlPrintf__cont_s_1361@<eax>(int@<eax>, int@<edx>, int@<ecx>);
+// int __usercall camlPrintf__doprn_1360@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
 int camlPrintf__fun_1686();
-// _DWORD *__usercall camlPrintf__parse_1069@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
+// _DWORD *__usercall camlPrintf__parse_1069@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
 int camlPrintf__skip_positional_spec_1090(void); // weak
-// int __usercall camlPrintf__fill_format_1096@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
+// int __usercall camlPrintf__fill_format_1096@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
 int __fastcall camlPrintf__sub_fmt_1124(_DWORD); // weak
-// int __usercall camlPrintf__scan_fmt_1144@<eax>(int result@<eax>, int a2@<ebx>);
-// int __usercall camlPrintf__scan_conv_171@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlPrintf__scan_flags_1142@<eax>(int a1@<eax>, int *a2@<ecx>, int a3@<ebx>);
-// int __usercall camlPrintf__add_char_1166@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlPrintf__add_conv_1169@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlPrintf__incr_ac_1187@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlPrintf__add_conv_1191@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>);
-// int __usercall camlPrintf__add_char_1192@<eax>(int a1@<eax>);
-// int __usercall camlPrintf__loop_1204@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// _DWORD *__usercall camlPrintf__loop_1240@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-// int __usercall camlPrintf__fun_616@<eax>(double *a1@<eax>, double *a2@<edx>, double *a3@<ecx>, double *a4@<ebx>, double *a5@<edi>, double *a6@<esi>);
-// int __usercall camlPrintf__fun_613@<eax>(double *a1@<eax>, double *a2@<edx>, double *a3@<ecx>, double *a4@<ebx>, int a5@<edi>, double *a6@<esi>);
-// int __usercall camlPrintf__fun_1581@<eax>(double *a1@<eax>, double *a2@<edx>, double *a3@<ecx>, double *a4@<ebx>, int a5@<esi>);
-// int __usercall camlPrintf__fun_1578@<eax>(double *a1@<eax>, int a2@<edx>, double *a3@<ecx>, double *a4@<ebx>);
-// int __usercall camlPrintf__fun_1575@<eax>(double *a1@<eax>, int a2@<ecx>, double *a3@<ebx>);
-// int __usercall camlPrintf__fun_1572@<eax>(double *a1@<eax>, int a2@<ebx>);
-// int __usercall camlPrintf__get_int_literal_1258@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>);
-_DWORD camlPrintf__valid_float_loop_1273(); // weak
-// double *__usercall camlPrintf__get_arg_1288@<eax>(unsigned int *a1@<eax>, int a2@<ecx>, unsigned int a3@<ebx>, int *a4@<esi>);
-// int __usercall camlPrintf__scan_conv_325@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int *a4@<esi>, unsigned int a5@<ebx>);
+// int __usercall camlPrintf__scan_fmt_1144@<eax>(int result@<eax>, int@<ebx>);
+// int __usercall camlPrintf__scan_conv_1143@<eax>(int a1@<eax>, int *a2@<ecx>, int a3@<ebx>);
+// int __usercall camlPrintf__scan_flags_1142@<eax>(int@<eax>, int *@<ecx>, int@<ebx>);
+// int __usercall camlPrintf__add_char_1166@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlPrintf__add_conv_1169@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlPrintf__incr_ac_1187@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlPrintf__add_conv_1191@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>);
+// int __usercall camlPrintf__add_char_1192@<eax>(int@<eax>);
+// int __usercall camlPrintf__loop_1204@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// _DWORD *__usercall camlPrintf__loop_1240@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// int __usercall camlPrintf__fun_1587@<eax>(double *@<eax>, double *@<edx>, double *@<ecx>, double *@<ebx>, double *@<edi>, double *@<esi>);
+// int __usercall camlPrintf__fun_1584@<eax>(double *@<eax>, double *@<edx>, double *@<ecx>, double *@<ebx>, int@<edi>, double *@<esi>);
+// int __usercall camlPrintf__fun_1581@<eax>(double *@<eax>, double *@<edx>, double *@<ecx>, double *@<ebx>, int@<esi>);
+// int __usercall camlPrintf__fun_1578@<eax>(double *@<eax>, int@<edx>, double *@<ecx>, double *@<ebx>);
+// int __usercall camlPrintf__fun_1575@<eax>(double *@<eax>, int@<ecx>, double *@<ebx>);
+// int __usercall camlPrintf__fun_1572@<eax>(double *@<eax>, int@<ebx>);
+// int __usercall camlPrintf__get_int_literal_1258@<eax>(int@<eax>, int@<ecx>, int@<ebx>);
+// double *__usercall camlPrintf__valid_float_loop_1273@<eax>(int a1@<eax>, unsigned int a2@<ebx>);
+// double *__usercall camlPrintf__get_arg_1288@<eax>(unsigned int *@<eax>, int@<ecx>, unsigned int@<ebx>, int *@<esi>);
+// int __usercall camlPrintf__scan_conv_1293@<eax>(unsigned int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int *a4@<esi>, unsigned int a5@<ebx>);
 int __fastcall camlPrintf__scan_flags_1292(_DWORD, _DWORD); // weak
 int __fastcall camlPrintf__scan_positional_1291(_DWORD); // weak
-// int __usercall camlPrintf__pr_1354@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, _DWORD *a5@<esi>);
-// int __usercall camlPrintf__fun_1680@<eax>(int a1@<ebx>);
+// int __usercall camlPrintf__pr_1354@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>, _DWORD *@<esi>);
+// int __usercall camlPrintf__fun_1680@<eax>(int@<ebx>);
 int (**camlPrintf__fun_1684())();
 int camlPrintf__fun_1689();
 int camlPrintf__fun_1697();
-// int __usercall camlPrintf__fun_1694@<eax>(int a1@<ebx>);
+// int __usercall camlPrintf__fun_1694@<eax>(int@<ebx>);
 int camlPrintf__fun_1700();
 int camlPrintf__fun_1707();
 // int __usercall camlPrintf__index_of_int_1037@<eax>(int result@<eax>);
-// int __usercall camlPrintf__add_int_index_1040@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlPrintf__index_of_literal_position_1044@<eax>(int a1@<eax>);
-// int __usercall camlPrintf__to_string_1054@<eax>(int a1@<eax>, int a2@<edx>);
-// void __usercall __noreturn camlPrintf__bad_conversion_1057(int a1@<eax>, int a2@<ecx>);
-// void __usercall __noreturn camlPrintf__bad_conversion_format_1061(int a1@<eax>, int a2@<edx>, int a3@<ecx>);
-// void __usercall __noreturn camlPrintf__incomplete_format_1065(int a1@<eax>, int a2@<edx>);
-// _DWORD *__usercall camlPrintf__parse_string_conversion_1067@<eax>(int a1@<eax>);
-_DWORD *__fastcall sub_805B9A0(int a1);
-// int __usercall camlPrintf__pad_string_1072@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<edi>, int a6@<esi>);
-// int __usercall camlPrintf__format_string_1080@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlPrintf__extract_format_1085@<eax>(int a1@<eax>, int a2@<ecx>);
-// int __usercall camlPrintf__extract_format_int_1103@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>);
-// int __usercall camlPrintf__extract_format_float_1110@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>);
-// int __usercall camlPrintf__sub_format_1117@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>);
-// int __usercall camlPrintf__sub_format_for_printf_1135@<eax>(int a1@<eax>);
+// int __usercall camlPrintf__add_int_index_1040@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlPrintf__index_of_literal_position_1044@<eax>(int@<eax>);
+// int __usercall camlPrintf__to_string_1054@<eax>(int@<eax>, int@<edx>);
+// void __usercall __noreturn camlPrintf__bad_conversion_1057(int@<eax>, int@<ecx>);
+// void __usercall __noreturn camlPrintf__bad_conversion_format_1061(int@<eax>, int@<edx>, int@<ecx>);
+// void __usercall __noreturn camlPrintf__incomplete_format_1065(int@<eax>, int@<edx>);
+// _DWORD *__usercall camlPrintf__parse_string_conversion_1067@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>);
+_DWORD *__fastcall sub_805B9A0(int);
+// int __usercall camlPrintf__pad_string_1072@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>, int@<edi>, int@<esi>);
+// int __usercall camlPrintf__format_string_1080@<eax>(int a1@<eax>, int a2@<ebx>, int a3@<edx>, int a4@<ecx>);
+// int __usercall camlPrintf__extract_format_1085@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<edx>);
+// int __usercall camlPrintf__extract_format_int_1103@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>, int a4@<esi>);
+// int __usercall camlPrintf__extract_format_float_1110@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>, int a4@<esi>);
+// int __usercall camlPrintf__sub_format_1117@<eax>(int@<eax>, int@<edx>, int@<ebx>);
+// int __usercall camlPrintf__sub_format_for_printf_1135@<eax>(int@<eax>);
 int camlPrintf__iter_on_format_args_1137(void); // weak
-// int __usercall camlPrintf__summarize_format_type_1162@<eax>(int a1@<eax>);
-_DWORD *camlPrintf__ac_of_format_1184();
-int camlPrintf__count_arguments_of_format_1198();
+// int __usercall camlPrintf__summarize_format_type_1162@<eax>(int@<eax>);
+// _DWORD *__usercall camlPrintf__ac_of_format_1184@<eax>(int a1@<eax>, int a2@<ecx>);
+// int __usercall camlPrintf__count_arguments_of_format_1198@<eax>(int a1@<eax>, int a2@<ecx>);
 int camlPrintf__list_iter_i_1201(void); // weak
-// _DWORD *__usercall camlPrintf__kapr_1179@<eax>(int a1@<eax>, int a2@<ebx>);
+// int (__usercall **__usercall camlPrintf__kapr_1209@<eax>(int (__usercall *a1)@<eax>(double *a1@<eax>, int a2@<ebx>)@<eax>, int (__usercall *a2)@<eax>(double *a1@<eax>, int a2@<ebx>)@<ebx>, int a3@<ecx>))@<eax>(double *a1@<eax>, int a2@<ebx>);
 _DWORD camlPrintf__scan_positional_spec_1252(); // weak
-// int __usercall camlPrintf__next_index_1262@<eax>(int a1@<eax>, int a2@<ebx>);
-// int __usercall camlPrintf__get_index_1265@<eax>(int *a1@<eax>, int a2@<ebx>);
+// int __usercall camlPrintf__next_index_1262@<eax>(int@<eax>, int@<ebx>);
+// int __usercall camlPrintf__get_index_1265@<eax>(int@<eax>, int@<ebx>);
 int camlPrintf__make_valid_float_lexeme_1270(void); // weak
-// int __usercall camlPrintf__fun_1600@<eax>(char a1@<al>, char a2@<bl>);
-// int __usercall camlPrintf__scan_format_1278@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>, int a4@<edi>, int a5@<esi>);
-// _DWORD *__usercall camlPrintf__mkprintf_1345@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int (**a4)(void)@<ebx>, int a5@<esi>);
+// int __usercall camlPrintf__fun_1600@<eax>(char@<al>, char@<bl>);
+// int __usercall camlPrintf__scan_format_1278@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>, int a4@<edi>, int a5@<esi>, int a6@<ecx>);
+// int (__usercall **__usercall camlPrintf__mkprintf_1345@<eax>(int@<eax>, int@<edx>, int@<ecx>, int (**)(void)@<ebx>, int@<esi>))@<eax>(double *a1@<eax>, int a2@<ebx>);
 int camlPrintf__kfprintf_1386(void); // weak
 int camlPrintf__ifprintf_1389();
 int camlPrintf__fprintf_1391();
@@ -802,584 +798,584 @@ int camlPrintf__printf_1393();
 int camlPrintf__eprintf_1395();
 int camlPrintf__kbprintf_1397(void); // weak
 int camlPrintf__bprintf_1400();
-// int *__usercall camlPrintf__get_buff_1402@<eax>(int a1@<eax>);
-// int __usercall camlPrintf__get_contents_1405@<eax>(int *a1@<eax>, int a2@<edx>);
-// int __usercall camlPrintf__get_cont_1408@<eax>(int (**a1)(void)@<eax>, int a2@<edx>, int *a3@<ebx>);
+// int *__usercall camlPrintf__get_buff_1402@<eax>(int@<eax>);
+// int __usercall camlPrintf__get_contents_1405@<eax>(int *@<eax>, int@<edx>);
+// int __usercall camlPrintf__get_cont_1408@<eax>(int (**)(void)@<eax>, int@<edx>, int *@<ebx>);
 int camlPrintf__ksprintf_1411();
 int camlPrintf__sprintf_1413();
-int camlPrintf__entry();
-// int __usercall camlCallback__code_begin@<eax>(char a1@<al>);
-// int __usercall camlCallback__register_exception_1034@<eax>(char a1@<al>, double *a2@<ebx>);
+int __fastcall camlPrintf__entry(int a1, int a2);
+// int __usercall camlCallback__code_begin@<eax>(char@<al>);
+// int __usercall camlCallback__register_exception_1034@<eax>(int a1@<eax>, double *a2@<ebx>, int a3@<edx>);
 int camlCallback__entry();
-_DWORD *__cdecl unix_accept(int a1);
+_DWORD *__cdecl unix_accept(int);
 int __cdecl unix_access(char *name, int); // idb
 _DWORD *__cdecl unix_inet_addr_of_string(char *cp);
-unsigned int __cdecl unix_alarm(int a1);
-int __cdecl unix_bind(int a1, int *a2);
+unsigned int __cdecl unix_alarm(int);
+int __cdecl unix_bind(int, int *);
 int __cdecl unix_chdir(char *path); // idb
 int __cdecl unix_chmod(char *file, int); // idb
 int __cdecl unix_chown(char *file, int, int); // idb
 int __cdecl unix_chroot(char *path); // idb
-int __cdecl unix_close(int a1);
-int __cdecl unix_closedir(DIR **a1);
-int __cdecl unix_connect(int a1, int *a2);
-int __cdecl unix_dup(int a1);
-int __cdecl unix_dup2(int a1, int a2);
+int __cdecl unix_close(int);
+int __cdecl unix_closedir(DIR **);
+int __cdecl unix_connect(int, int *);
+int __cdecl unix_dup(int);
+int __cdecl unix_dup2(int, int);
 char *unix_environment();
-void *__cdecl unix_error_message(int a1);
-int __cdecl unix_execv(char *path, int a2, int a3);
+void *__cdecl unix_error_message(int);
+int __cdecl unix_execv(char *path, int, int);
 int __cdecl unix_execve(char *path, int, int); // idb
 int __cdecl unix_execvpe(char *file, int, int); // idb
 int __cdecl unix_execvp(char *file, int); // idb
-int __cdecl unix_fchmod(int a1, int a2);
-int __cdecl unix_fchown(int a1, int a2, int a3);
-int __cdecl unix_clear_close_on_exec(int a1);
-int __cdecl unix_set_close_on_exec(int a1);
-int __cdecl unix_clear_nonblock(int a1);
-int __cdecl unix_set_nonblock(int a1);
+int __cdecl unix_fchmod(int, int);
+int __cdecl unix_fchown(int, int, int);
+int __cdecl unix_clear_close_on_exec(int);
+int __cdecl unix_set_close_on_exec(int);
+int __cdecl unix_clear_nonblock(int);
+int __cdecl unix_set_nonblock(int);
 int unix_fork();
-int __cdecl unix_ftruncate_64(int a1, int a2);
-int __cdecl unix_ftruncate(int a1, int a2);
+int __cdecl unix_ftruncate_64(int, int);
+int __cdecl unix_ftruncate(int, int);
 int __cdecl unix_getaddrinfo(char *src, char *, int); // idb
 void *unix_getcwd();
 __gid_t unix_getegid();
 __uid_t unix_geteuid();
 __gid_t unix_getgid();
-// _DWORD *__usercall alloc_group_entry@<eax>(int a1@<eax>);
-_DWORD *__cdecl unix_getgrgid(int a1);
+// _DWORD *__usercall alloc_group_entry@<eax>(int@<eax>);
+_DWORD *__cdecl unix_getgrgid(int);
 _DWORD *__cdecl unix_getgrnam(char *name);
 char *unix_getgroups();
-// _DWORD *__usercall alloc_host_entry@<eax>(int a1@<eax>);
+// _DWORD *__usercall alloc_host_entry@<eax>(int@<eax>);
 _DWORD *__cdecl unix_gethostbyname(char *src);
 _DWORD *__cdecl alloc_one_addr(void *src);
-_DWORD *__cdecl unix_gethostbyaddr(int *a1);
+_DWORD *__cdecl unix_gethostbyaddr(int *);
 void *unix_gethostname();
 void *unix_getlogin();
-_DWORD *__cdecl unix_getnameinfo(int *a1, int *a2);
-_DWORD *__cdecl unix_getpeername(int a1);
+_DWORD *__cdecl unix_getnameinfo(int *, int *);
+_DWORD *__cdecl unix_getpeername(int);
 int unix_getpid();
 int unix_getppid();
-// _DWORD *__usercall alloc_proto_entry@<eax>(int a1@<eax>);
-_DWORD *__cdecl unix_getprotobynumber(int a1);
+// _DWORD *__usercall alloc_proto_entry@<eax>(int@<eax>);
+_DWORD *__cdecl unix_getprotobynumber(int);
 _DWORD *__cdecl unix_getprotobyname(char *name);
-// _DWORD *__usercall alloc_passwd_entry@<eax>(int a1@<eax>);
-_DWORD *__cdecl unix_getpwuid(int a1);
+// _DWORD *__usercall alloc_passwd_entry@<eax>(int@<eax>);
+_DWORD *__cdecl unix_getpwuid(int);
 _DWORD *__cdecl unix_getpwnam(char *name);
 int unix_gettimeofday();
-// _DWORD *__usercall alloc_service_entry@<eax>(int a1@<eax>);
-_DWORD *__cdecl unix_getservbyport(int a1, char *proto);
+// _DWORD *__usercall alloc_service_entry@<eax>(int@<eax>);
+_DWORD *__cdecl unix_getservbyport(int, char *proto);
 _DWORD *__cdecl unix_getservbyname(char *name, char *proto);
-_DWORD *__cdecl unix_getsockname(int a1);
+_DWORD *__cdecl unix_getsockname(int);
 __uid_t unix_getuid();
-// _DWORD *__usercall alloc_tm@<eax>(_DWORD *a1@<eax>);
-_DWORD *__cdecl unix_mktime(int *a1);
-_DWORD *__cdecl unix_localtime(double *a1);
-_DWORD *__cdecl unix_gmtime(double *a1);
+// _DWORD *__usercall alloc_tm@<eax>(_DWORD *@<eax>);
+_DWORD *__cdecl unix_mktime(int *);
+_DWORD *__cdecl unix_localtime(double *);
+_DWORD *__cdecl unix_gmtime(double *);
 int __cdecl unix_initgroups(char *, int); // idb
-int __cdecl unix_isatty(int a1);
-// double *__usercall unix_convert_itimer@<eax>(int *a1@<eax>);
-double *__cdecl unix_getitimer(int a1);
-// int __usercall unix_set_timeval@<eax>(int *a1@<eax>, double a2);
-double *__cdecl unix_setitimer(int a1, double *a2);
-int __cdecl unix_kill(int a1, int a2);
+int __cdecl unix_isatty(int);
+// double *__usercall unix_convert_itimer@<eax>(int *@<eax>);
+double *__cdecl unix_getitimer(int);
+// int __usercall unix_set_timeval@<eax>(int *@<eax>, double);
+double *__cdecl unix_setitimer(int, double *);
+int __cdecl unix_kill(int, int);
 int __cdecl unix_link(char *from, char *to); // idb
-int __cdecl unix_listen(int a1, int a2);
-int __cdecl unix_lockf(int a1, int a2, int a3);
-int *__cdecl unix_lseek_64(int a1, int a2, int a3);
-int __cdecl unix_lseek(int a1, int a2, int a3);
+int __cdecl unix_listen(int, int);
+int __cdecl unix_lockf(int, int, int);
+int *__cdecl unix_lseek_64(int, int, int);
+int __cdecl unix_lseek(int, int, int);
 int __cdecl unix_mkdir(char *path, int); // idb
 int __cdecl unix_mkfifo(char *path, int); // idb
-int __cdecl unix_nice(int a1);
+int __cdecl unix_nice(int);
 int __cdecl unix_open(char *src, int, int); // idb
 DIR **__cdecl unix_opendir(char *name);
 _DWORD *unix_pipe();
 int __cdecl unix_putenv(void *src, void *); // idb
-int __cdecl unix_read(int a1, int a2, int a3, int a4);
-void *__cdecl unix_readdir(int *a1);
+size_t __cdecl unix_read(int a1, int a2, int a3, int a4);
+void *__cdecl unix_readdir(int *);
 void *__cdecl unix_readlink(char *path);
 int __cdecl unix_rename(char *old, char *new); // idb
-int __cdecl unix_rewinddir(DIR **a1);
+int __cdecl unix_rewinddir(DIR **);
 int __cdecl unix_rmdir(char *path); // idb
-// int __usercall fdlist_to_fdset@<eax>(int *a1@<eax>, void *a2@<edx>, int *a3);
-// int __usercall fdset_to_fdlist@<eax>(int *a1@<eax>, int a2@<edx>);
-int **__cdecl unix_select(int *a1, int *a2, int *a3, double *a4);
-int __cdecl unix_sendto_native(int a1, int a2, int a3, int a4, int *a5, int *a6);
-int __cdecl unix_sendto(int a1);
-int __cdecl unix_send(int a1, int a2, int a3, int a4, int *a5);
-_DWORD *__cdecl unix_recvfrom(int a1, int a2, int a3, int a4, int *a5);
-int __cdecl unix_recv(int a1, int a2, int a3, int a4, int *a5);
-int __cdecl unix_setgid(int a1);
-int __cdecl unix_setgroups(int a1);
+// int __usercall fdlist_to_fdset@<eax>(int *@<eax>, void *@<edx>, int *);
+// int __usercall fdset_to_fdlist@<eax>(int *@<eax>, int@<edx>);
+int **__cdecl unix_select(int *, int *, int *, double *);
+int __cdecl unix_sendto_native(int, int, int, int, int *, int *);
+int __cdecl unix_sendto(int);
+int __cdecl unix_send(int, int, int, int, int *);
+_DWORD *__cdecl unix_recvfrom(int, int, int, int, int *);
+size_t __cdecl unix_recv(int a1, int a2, int a3, int a4, int *a5);
+int __cdecl unix_setgid(int);
+int __cdecl unix_setgroups(int);
 int unix_setsid();
-int __cdecl unix_setuid(int a1);
-int __cdecl unix_shutdown(int a1, int a2);
-// int __usercall decode_sigset@<eax>(int *a1@<eax>, sigset_t *a2@<edx>);
-int __cdecl unix_sigsuspend(int *a1);
-// int __usercall encode_sigset@<eax>(const sigset_t *a1@<eax>);
+int __cdecl unix_setuid(int);
+int __cdecl unix_shutdown(int, int);
+// int __usercall decode_sigset@<eax>(int *@<eax>, sigset_t *@<edx>);
+int __cdecl unix_sigsuspend(int *);
+// int __usercall encode_sigset@<eax>(const sigset_t *@<eax>);
 int unix_sigpending();
-int __cdecl unix_sigprocmask(int a1, int *a2);
-int __cdecl unix_sleep(int a1);
-int __cdecl unix_socket(int a1, int a2, int a3);
-int *__cdecl get_sockaddr(int *a1, int a2, int *a3);
-_DWORD *__cdecl alloc_inet6_addr(_DWORD *a1);
-_DWORD *__cdecl alloc_inet_addr(_DWORD *a1);
-_DWORD *__cdecl alloc_sockaddr(int a1, int a2, int fd);
-_DWORD *__cdecl unix_socketpair(int a1, int a2, int a3);
+int __cdecl unix_sigprocmask(int, int *);
+int __cdecl unix_sleep(int);
+int __cdecl unix_socket(int, int, int);
+int *__cdecl get_sockaddr(int *, int, int *);
+_DWORD *__cdecl alloc_inet6_addr(_DWORD *);
+_DWORD *__cdecl alloc_inet_addr(_DWORD *);
+_DWORD *__cdecl alloc_sockaddr(int, int, int fd);
+_DWORD *__cdecl unix_socketpair(int, int, int);
 int __cdecl unix_setsockopt_aux(int, int, int level, int optname, int, int); // idb
-int __cdecl unix_setsockopt(int a1, int a2, int a3, int a4);
+int __cdecl unix_setsockopt(int, int, int, int);
 int __cdecl unix_getsockopt_aux(int, int, int level, int optname, int); // idb
-int __cdecl unix_getsockopt(int a1, int a2, int a3);
-// _DWORD *__usercall stat_aux@<eax>(int a1@<eax>, _DWORD *a2@<edx>);
-_DWORD *__cdecl unix_fstat_64(int a1);
-_DWORD *__cdecl unix_lstat_64(void *a1);
-_DWORD *__cdecl unix_stat_64(void *a1);
-_DWORD *__cdecl unix_fstat(int a1);
-_DWORD *__cdecl unix_lstat(void *a1);
-_DWORD *__cdecl unix_stat(void *a1);
+int __cdecl unix_getsockopt(int, int, int);
+// _DWORD *__usercall stat_aux@<eax>(int@<eax>, _DWORD *@<edx>);
+_DWORD *__cdecl unix_fstat_64(int);
+_DWORD *__cdecl unix_lstat_64(void *);
+_DWORD *__cdecl unix_stat_64(void *);
+_DWORD *__cdecl unix_fstat(int);
+_DWORD *__cdecl unix_lstat(void *);
+_DWORD *__cdecl unix_stat(void *);
 void *__cdecl unix_string_of_inet_addr(void *cp);
 int __cdecl unix_symlink(char *from, char *to); // idb
-int __cdecl unix_tcflow(int a1, int a2);
-int __cdecl unix_tcflush(int a1, int a2);
-int __cdecl unix_tcdrain(int a1);
-int __cdecl unix_tcsendbreak(int a1, int a2);
-int __cdecl unix_tcsetattr(int a1, int a2, int *a3);
-char *__cdecl unix_tcgetattr(int a1);
+int __cdecl unix_tcflow(int, int);
+int __cdecl unix_tcflush(int, int);
+int __cdecl unix_tcdrain(int);
+int __cdecl unix_tcsendbreak(int, int);
+int __cdecl unix_tcsetattr(int, int, int *);
+char *__cdecl unix_tcgetattr(int);
 int unix_time();
 double *unix_times();
-int __cdecl unix_truncate_64(void *a1, int a2);
-int __cdecl unix_truncate(void *a1, int a2);
-__mode_t __cdecl unix_umask(int a1);
-_DWORD *__cdecl unix_error_of_code(int a1);
-int __cdecl unix_error(int a1, void *src, void *a3);
-int __cdecl uerror(void *a1, void *a2);
+int __cdecl unix_truncate_64(void *, int);
+int __cdecl unix_truncate(void *, int);
+__mode_t __cdecl unix_umask(int);
+_DWORD *__cdecl unix_error_of_code(int);
+int __cdecl unix_error(int, void *src, void *);
+int __cdecl uerror(void *, void *);
 int __cdecl unix_unlink(char *name); // idb
 int __cdecl unix_utimes(char *file, int, int); // idb
-// _DWORD *__usercall alloc_process_status@<eax>(int a1@<eax>, __int16 a2@<dx>);
-_DWORD *__cdecl unix_waitpid(int *a1, int a2);
+// _DWORD *__usercall alloc_process_status@<eax>(int@<eax>, __int16@<dx>);
+_DWORD *__cdecl unix_waitpid(int *, int);
 _DWORD *unix_wait();
-int __cdecl unix_single_write(int a1, int a2, int a3, int a4);
-int __cdecl unix_write(int a1, int a2, int a3, int a4);
-int __cdecl cst_to_constr(int a1, _DWORD *a2, int a3, int a4);
-_DWORD *__cdecl cstringvect(int a1);
-// int __usercall scanmult@<eax>(int a1@<eax>, _DWORD *a2@<edx>);
-int (__cdecl *__cdecl caml_main(char **a1))(_DWORD);
-int (__cdecl *__cdecl caml_startup(char **a1))(_DWORD);
+int __cdecl unix_single_write(int, int, int, int);
+int __cdecl unix_write(int, int, int, int);
+int __cdecl cst_to_constr(int, _DWORD *, int, int);
+_DWORD *__cdecl cstringvect(int);
+// int __usercall scanmult@<eax>(int@<eax>, _DWORD *@<edx>);
+int (__cdecl *__cdecl caml_main(char **))(_DWORD);
+int (__cdecl *__cdecl caml_startup(char **))(_DWORD);
 int __cdecl main(int argc, const char **argv, const char **envp);
-int __cdecl caml_raise(int a1, int a2, int a3, int a4, _DWORD *a5);
-int __cdecl caml_array_bound_error(int a1, int a2, int a3, int a4, _DWORD *a5);
-int __cdecl caml_raise_stack_overflow(int a1, int a2, int a3, int a4, _DWORD *a5);
-int __cdecl caml_raise_out_of_memory(int a1, int a2, int a3, int a4, _DWORD *a5);
-int __cdecl caml_raise_with_args(int a1, int a2, int a3, int a4, _DWORD *a5);
-int __cdecl caml_raise_with_arg(int a1, int a2, unsigned int a3, int a4, _DWORD *a5);
-int __cdecl caml_raise_sys_error(int a1, void *a2, unsigned int a3, int a4, _DWORD *a5);
-int __cdecl caml_raise_with_string(int a1, void *src, unsigned int a3, int a4, _DWORD *a5);
-int __cdecl caml_invalid_argument(void *a1, int a2, unsigned int a3, int a4, _DWORD *a5);
-int __cdecl caml_failwith(void *a1, int a2, unsigned int a3, int a4, _DWORD *a5);
-int __cdecl caml_raise_constant(int a1, int a2, unsigned int a3, int a4, _DWORD *a5);
-int __cdecl caml_raise_sys_blocked_io(void (__cdecl *a1)(_DWORD, _DWORD *), int a2, unsigned int a3, int a4, _DWORD *a5);
-int __cdecl caml_raise_not_found(void (__cdecl *a1)(_DWORD, _DWORD *), int a2, unsigned int a3, int a4, _DWORD *a5);
-int __cdecl caml_raise_zero_divide(void (__cdecl *a1)(_DWORD, _DWORD *), int a2, unsigned int a3, int a4, _DWORD *a5);
-int __cdecl caml_raise_end_of_file(void (__cdecl *a1)(_DWORD, _DWORD *), int a2, unsigned int a3, int a4, _DWORD *a5);
-int __cdecl caml_do_local_roots(void (__cdecl *a1)(_DWORD, _DWORD *), int a2, unsigned int a3, int a4, _DWORD *a5);
+int __cdecl caml_raise(int, int, int, int, _DWORD *);
+int __cdecl caml_array_bound_error(int, int, int, int, _DWORD *);
+int __cdecl caml_raise_stack_overflow(int, int, int, int, _DWORD *);
+int __cdecl caml_raise_out_of_memory(int, int, int, int, _DWORD *);
+int __cdecl caml_raise_with_args(int, int, int, int, _DWORD *);
+int __cdecl caml_raise_with_arg(int, int, unsigned int, int, _DWORD *);
+int __cdecl caml_raise_sys_error(int, void *, unsigned int, int, _DWORD *);
+int __cdecl caml_raise_with_string(int, void *src, unsigned int, int, _DWORD *);
+int __cdecl caml_invalid_argument(void *, int, unsigned int, int, _DWORD *);
+int __cdecl caml_failwith(void *, int, unsigned int, int, _DWORD *);
+int __cdecl caml_raise_constant(int, int, unsigned int, int, _DWORD *);
+int __cdecl caml_raise_sys_blocked_io(void (__cdecl *)(_DWORD, _DWORD *), int, unsigned int, int, _DWORD *);
+int __cdecl caml_raise_not_found(void (__cdecl *)(_DWORD, _DWORD *), int, unsigned int, int, _DWORD *);
+int __cdecl caml_raise_zero_divide(void (__cdecl *)(_DWORD, _DWORD *), int, unsigned int, int, _DWORD *);
+int __cdecl caml_raise_end_of_file(void (__cdecl *)(_DWORD, _DWORD *), int, unsigned int, int, _DWORD *);
+int __cdecl caml_do_local_roots(void (__cdecl *)(_DWORD, _DWORD *), int, unsigned int, int, _DWORD *);
 int caml_stack_usage();
-// _DWORD *__usercall cons@<eax>(int a1@<eax>, int a2@<edx>);
-_DWORD *__cdecl caml_register_dyn_global(int a1);
-void __cdecl caml_register_frametable(int a1);
+// _DWORD *__usercall cons@<eax>(int@<eax>, int@<edx>);
+_DWORD *__cdecl caml_register_dyn_global(int);
+void __cdecl caml_register_frametable(int);
 int caml_init_frame_descriptors();
-int (__cdecl *__cdecl caml_do_roots(void (__cdecl *a1)(int, char *)))(_DWORD);
+int (__cdecl *__cdecl caml_do_roots(void (__cdecl *)(int, char *)))(_DWORD);
 int (__cdecl *caml_darken_all_roots())(_DWORD);
 int (__cdecl *caml_oldify_local_roots())(_DWORD);
-// int __usercall caml_iterate_global_roots@<eax>(int result@<eax>, int a2@<edx>);
-int __cdecl caml_scan_global_roots(int a1);
-// _DWORD *__usercall caml_insert_global_root@<eax>(int a1@<eax>, unsigned int a2@<edx>);
-unsigned int __cdecl caml_register_generational_global_root(unsigned int *a1);
-_DWORD *__cdecl caml_register_global_root(unsigned int a1);
-void __cdecl caml_scan_global_young_roots(int a1);
-// int __usercall caml_delete_global_root@<eax>(int a1@<eax>, unsigned int a2@<edx>);
-unsigned int __cdecl caml_modify_generational_global_root(unsigned int *a1, unsigned int a2);
-unsigned int __cdecl caml_remove_generational_global_root(unsigned int *a1);
-int __cdecl caml_remove_global_root(unsigned int a1);
-int __cdecl caml_record_signal(int a1);
+// int __usercall caml_iterate_global_roots@<eax>(int result@<eax>, int@<edx>);
+int __cdecl caml_scan_global_roots(int);
+// _DWORD *__usercall caml_insert_global_root@<eax>(int@<eax>, unsigned int@<edx>);
+unsigned int __cdecl caml_register_generational_global_root(unsigned int *);
+_DWORD *__cdecl caml_register_global_root(unsigned int);
+void __cdecl caml_scan_global_young_roots(int);
+// int __usercall caml_delete_global_root@<eax>(int@<eax>, unsigned int@<edx>);
+unsigned int __cdecl caml_modify_generational_global_root(unsigned int *, unsigned int);
+unsigned int __cdecl caml_remove_generational_global_root(unsigned int *);
+int __cdecl caml_remove_global_root(unsigned int);
+int __cdecl caml_record_signal(int);
 void caml_enter_blocking_section_default();
 void caml_leave_blocking_section_default();
 __int32 caml_try_leave_blocking_section_default();
 int caml_urge_major_slice();
-int __cdecl caml_convert_signal_number(int a1);
-int __cdecl caml_rev_convert_signal_number(int a1);
+int __cdecl caml_convert_signal_number(int);
+int __cdecl caml_rev_convert_signal_number(int);
 void __cdecl __noreturn caml_execute_signal(int signo); // idb
 int caml_process_pending_signals();
-int __cdecl caml_install_signal_handler(int a1, unsigned int *a2);
+int __cdecl caml_install_signal_handler(int, unsigned int *);
 int caml_leave_blocking_section();
 int caml_enter_blocking_section();
 int caml_init_signals();
 int __cdecl caml_set_signal_action(int sig, int); // idb
-int __cdecl segv_handler(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, unsigned int a23);
+int __cdecl segv_handler(int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, unsigned int);
 void __cdecl handle_signal(int signo);
 int caml_garbage_collection();
-void __cdecl caml_ext_table_free(int a1, int a2);
-int __cdecl caml_ext_table_add(int *a1, int a2);
-void *__cdecl caml_ext_table_init(_DWORD *a1, int a2);
-int __cdecl caml_aligned_malloc(int a1, int a2, _DWORD *a3);
+void __cdecl caml_ext_table_free(int, int);
+int __cdecl caml_ext_table_add(int *, int);
+void *__cdecl caml_ext_table_init(_DWORD *, int);
+unsigned int __cdecl caml_aligned_malloc(int a1, int a2, _DWORD *a3);
 void __cdecl __noreturn caml_fatal_error_arg2(char *format, int, char *, int); // idb
 void __cdecl __noreturn caml_fatal_error_arg(char *format, int); // idb
 void __cdecl __noreturn caml_fatal_error(char *s); // idb
 int __cdecl caml_gc_message(int, char *format, int); // idb
-// int *__usercall allocate_block@<eax>(int a1@<eax>, int a2@<edx>, int *a3@<ecx>, int *a4);
+// int *__usercall allocate_block@<eax>(int@<eax>, int@<edx>, int *@<ecx>, int *);
 void caml_fl_init_merge();
 // int *__usercall truncate_flp@<eax>(int *result@<eax>);
 void caml_fl_reset();
-int *__cdecl caml_fl_merge_block(int *a1);
-int *__cdecl caml_fl_add_blocks(unsigned int a1);
-int *__cdecl caml_make_free_blocks(int **a1, unsigned int a2, int a3);
-int __cdecl caml_set_allocation_policy(int a1);
-int *__cdecl caml_fl_allocate(unsigned int a1);
-// unsigned int __usercall clip_heap_chunk_size@<eax>(unsigned int a1@<eax>);
-int __cdecl caml_init_major_heap(unsigned int a1);
-unsigned int __cdecl caml_round_heap_chunk_size(unsigned int a1);
+int *__cdecl caml_fl_merge_block(int *);
+int *__cdecl caml_fl_add_blocks(unsigned int);
+int *__cdecl caml_make_free_blocks(int **, unsigned int, int);
+int __cdecl caml_set_allocation_policy(int);
+int *__cdecl caml_fl_allocate(unsigned int);
+// unsigned int __usercall clip_heap_chunk_size@<eax>(unsigned int@<eax>);
+int __cdecl caml_init_major_heap(unsigned int);
+unsigned int __cdecl caml_round_heap_chunk_size(unsigned int);
 int (__cdecl *start_cycle())(_DWORD);
 int realloc_gray_vals();
-// void __usercall mark_slice(int a1@<eax>);
-int __cdecl caml_darken(unsigned int a1);
-// int __usercall sweep_slice@<eax>(int a1@<eax>);
+// void __usercall mark_slice(int@<eax>);
+int __cdecl caml_darken(unsigned int);
+// int __usercall sweep_slice@<eax>(int@<eax>);
 int caml_finish_major_cycle();
-int __cdecl caml_major_collection_slice(int a1);
+int __cdecl caml_major_collection_slice(int);
 // _DWORD *__usercall clear_table@<eax>(_DWORD *result@<eax>);
-void __cdecl caml_oldify_one(unsigned int a1, _DWORD *a2);
+void __cdecl caml_oldify_one(unsigned int, _DWORD *);
 void caml_oldify_mopup();
 int caml_empty_minor_heap();
 int caml_minor_collection();
-int __cdecl caml_check_urgent_gc(int a1);
-// void __usercall reset_table(int a1@<eax>);
-void __cdecl caml_set_minor_heap_size(int a1);
-char *__cdecl caml_alloc_table(int a1, int a2, int a3);
-char *__cdecl caml_realloc_ref_table(int a1);
+int __cdecl caml_check_urgent_gc(int);
+// void __usercall reset_table(int@<eax>);
+void __cdecl caml_set_minor_heap_size(int);
+char *__cdecl caml_alloc_table(int, int, int);
+char *__cdecl caml_realloc_ref_table(int);
 __int16 caml_page_table_initialize();
-int __cdecl caml_allocation_color(unsigned int a1);
-unsigned int __cdecl caml_alloc_dependent_memory(unsigned int a1);
-unsigned int __cdecl caml_free_dependent_memory(unsigned int a1);
+int __cdecl caml_allocation_color(unsigned int);
+unsigned int __cdecl caml_alloc_dependent_memory(unsigned int);
+unsigned int __cdecl caml_free_dependent_memory(unsigned int);
 void *__cdecl caml_stat_resize(void *ptr, size_t size);
 void __cdecl caml_stat_free(void *ptr);
-void __cdecl caml_free_for_heap(int a1);
+void __cdecl caml_free_for_heap(int);
 void *__cdecl caml_stat_alloc(size_t size);
-int *__cdecl caml_modify(unsigned int *a1, unsigned int a2);
-int *__cdecl caml_initialize(unsigned int *a1, unsigned int a2);
-unsigned int __cdecl caml_adjust_gc_speed(unsigned int a1, unsigned int a2);
-int __cdecl caml_alloc_for_heap(int a1);
-// int __usercall caml_page_table_modify@<eax>(unsigned int a1@<eax>, char a2@<dl>, char a3@<cl>);
-int __cdecl caml_page_table_remove(char a1, int a2, int a3);
-void __cdecl caml_shrink_heap(_DWORD *a1);
-int __cdecl caml_page_table_add(char a1, int a2, int a3);
-int __cdecl caml_add_to_heap(unsigned int a1);
-int *__cdecl caml_alloc_shr(unsigned int a1, int a2);
-int __cdecl caml_convert_flag_list(int *a1, int a2);
-int __cdecl caml_update_dummy(unsigned int *a1, int a2);
-int *__cdecl caml_alloc_final(int a1, int a2, unsigned int a3, unsigned int a4);
-int __cdecl caml_alloc_small(int a1, int a2);
-int __cdecl caml_alloc_string(int a1);
+int *__cdecl caml_modify(unsigned int *, unsigned int);
+int *__cdecl caml_initialize(unsigned int *, unsigned int);
+int __cdecl caml_adjust_gc_speed(unsigned int, unsigned int);
+unsigned int __cdecl caml_alloc_for_heap(int a1);
+// int __usercall caml_page_table_modify@<eax>(unsigned int@<eax>, char@<dl>, char@<cl>);
+int __cdecl caml_page_table_remove(char, int, int);
+void __cdecl caml_shrink_heap(_DWORD *);
+int __cdecl caml_page_table_add(char, int, int);
+int __cdecl caml_add_to_heap(unsigned int);
+int *__cdecl caml_alloc_shr(unsigned int, int);
+int __cdecl caml_convert_flag_list(int *, int);
+int __cdecl caml_update_dummy(unsigned int *, int);
+int *__cdecl caml_alloc_final(int, int, unsigned int, unsigned int);
+int __cdecl caml_alloc_small(int, int);
+int __cdecl caml_alloc_string(int);
 void *__cdecl caml_copy_string(void *src);
-char *__cdecl caml_alloc(unsigned int a1, unsigned int a2);
-char *__cdecl caml_alloc_dummy_float(int a1);
-char *__cdecl caml_alloc_dummy(int a1);
-char *__cdecl caml_alloc_array(int (__cdecl *a1)(_DWORD), _DWORD *a2);
-char *__cdecl caml_copy_string_array(_DWORD *a1);
-char *__cdecl caml_alloc_tuple(unsigned int a1);
+char *__cdecl caml_alloc(unsigned int, unsigned int);
+char *__cdecl caml_alloc_dummy_float(int);
+char *__cdecl caml_alloc_dummy(int);
+char *__cdecl caml_alloc_array(int (__cdecl *)(_DWORD), _DWORD *);
+char *__cdecl caml_copy_string_array(_DWORD *);
+char *__cdecl caml_alloc_tuple(unsigned int);
 void compare_free_stack();
 int compare_stack_overflow();
-// int __usercall compare_val@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>);
-unsigned int __cdecl caml_greaterequal(int a1, int a2);
-int __cdecl caml_greaterthan(int a1, int a2);
-int __cdecl caml_lessequal(int a1, int a2);
-int __cdecl caml_lessthan(int a1, int a2);
-int __cdecl caml_notequal(int a1, int a2);
-int __cdecl caml_equal(int a1, int a2);
-int __cdecl caml_compare(int a1, int a2);
-// _BYTE *__usercall parse_sign_and_base@<eax>(_BYTE *result@<eax>, _DWORD *a2@<edx>, _DWORD *a3@<ecx>);
-// int __usercall parse_digit@<eax>(char a1@<al>);
-int __cdecl caml_int_compare(int a1, int a2);
-int __cdecl int32_cmp(int a1, int a2);
-int __cdecl int32_hash(int a1);
-int __cdecl caml_int32_to_int(int a1);
-int __cdecl caml_int32_compare(int a1, int a2);
-int __cdecl int64_cmp(int a1, int a2);
-int __cdecl int64_hash(int a1);
-int __cdecl caml_int64_to_int(int a1);
-int __cdecl caml_int64_compare(int a1, int a2);
-int __cdecl nativeint_cmp(int a1, int a2);
-int __cdecl nativeint_hash(int a1);
-int __cdecl caml_nativeint_to_int(int a1);
-int __cdecl caml_nativeint_compare(int a1, int a2);
-int __cdecl int32_deserialize(int *a1);
-int __cdecl nativeint_deserialize(int *a1);
-_DWORD *__cdecl nativeint_serialize(int a1, _DWORD *a2, _DWORD *a3);
-_DWORD *__cdecl int32_serialize(int a1, _DWORD *a2, _DWORD *a3);
-int __cdecl int64_deserialize(__int64 *a1);
-_DWORD *__cdecl int64_serialize(int a1, _DWORD *a2, _DWORD *a3);
-// unsigned int __usercall parse_intnat@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx>);
-unsigned int __cdecl caml_int_of_string(_BYTE *a1);
-// void *__usercall parse_format@<eax>(_BYTE *a1@<eax>, const char *a2@<edx>, char *a3@<ecx>, void *a4, char *a5);
-int caml_nativeint_format(); // weak
-int caml_int64_format(); // weak
-int caml_int32_format(); // weak
-int caml_format_int(); // weak
-int __cdecl caml_nativeint_to_float(int a1);
-int __cdecl caml_int64_float_of_bits(int a1);
-int __cdecl caml_int64_to_float(int a1);
-int __cdecl caml_int32_float_of_bits(int a1);
-int __cdecl caml_int32_to_float(int a1);
-int *__cdecl caml_copy_nativeint(int a1);
-int *__cdecl caml_nativeint_of_string(_BYTE *a1);
-int *__cdecl caml_nativeint_of_int32(int a1);
-int *__cdecl caml_nativeint_of_float(double *a1);
-int *__cdecl caml_nativeint_of_int(int a1);
-int *__cdecl caml_nativeint_shift_right_unsigned(int a1, int a2);
-int *__cdecl caml_nativeint_shift_right(int a1, int a2);
-int *__cdecl caml_nativeint_shift_left(int a1, int a2);
-int *__cdecl caml_nativeint_xor(int a1, int a2);
-int *__cdecl caml_nativeint_or(int a1, int a2);
-int *__cdecl caml_nativeint_and(int a1, int a2);
-int *__cdecl caml_nativeint_mod(int a1, int a2);
-int *__cdecl caml_nativeint_div(int *a1, int a2);
-int *__cdecl caml_nativeint_mul(int a1, int a2);
-int *__cdecl caml_nativeint_sub(int a1, int a2);
-int *__cdecl caml_nativeint_add(int a1, int a2);
-int *__cdecl caml_nativeint_neg(int a1);
-int *__cdecl caml_int64_to_nativeint(int a1);
-int *__cdecl caml_copy_int64(int a1, int a2);
-int *__cdecl caml_int64_bits_of_float(int *a1);
-int *__cdecl caml_int64_of_string(_BYTE *a1);
-int *__cdecl caml_int64_of_nativeint(int a1);
-int *__cdecl caml_int64_of_int32(int a1);
-int *__cdecl caml_int64_of_float(double *a1);
-int *__cdecl caml_int64_of_int(int a1);
-int *__cdecl caml_int64_shift_right_unsigned(int a1, int a2);
-int *__cdecl caml_int64_shift_right(int a1, int a2);
-int *__cdecl caml_int64_shift_left(int a1, int a2);
-int *__cdecl caml_int64_xor(int a1, int a2);
-int *__cdecl caml_int64_or(int a1, int a2);
-int *__cdecl caml_int64_and(int a1, int a2);
-int *__cdecl caml_int64_mod(int a1, int a2);
-int *__cdecl caml_int64_div(int *a1, int a2);
-int *__cdecl caml_int64_mul(int a1, int a2);
-int *__cdecl caml_int64_sub(int a1, int a2);
-int *__cdecl caml_int64_add(int a1, int a2);
-int *__cdecl caml_int64_neg(int a1);
-int *__cdecl caml_copy_int32(int a1);
-int *__cdecl caml_nativeint_to_int32(int a1);
-int *__cdecl caml_int64_to_int32(int a1);
-int *__cdecl caml_int32_bits_of_float(double *a1);
-int *__cdecl caml_int32_of_string(_BYTE *a1);
-int *__cdecl caml_int32_of_float(double *a1);
-int *__cdecl caml_int32_of_int(int a1);
-int *__cdecl caml_int32_shift_right_unsigned(int a1, int a2);
-int *__cdecl caml_int32_shift_right(int a1, int a2);
-int *__cdecl caml_int32_shift_left(int a1, int a2);
-int *__cdecl caml_int32_xor(int a1, int a2);
-int *__cdecl caml_int32_or(int a1, int a2);
-int *__cdecl caml_int32_and(int a1, int a2);
-int *__cdecl caml_int32_mod(int a1, int a2);
-int *__cdecl caml_int32_div(int *a1, int a2);
-int *__cdecl caml_int32_mul(int a1, int a2);
-int *__cdecl caml_int32_sub(int a1, int a2);
-int *__cdecl caml_int32_add(int a1, int a2);
-int *__cdecl caml_int32_neg(int a1);
-int __cdecl caml_int_of_float(double *a1);
-int __cdecl caml_eq_float(double *a1, double *a2);
-int __cdecl caml_neq_float(double *a1, double *a2);
-int __cdecl caml_le_float(double *a1, double *a2);
-int __cdecl caml_lt_float(double *a1, double *a2);
-int __cdecl caml_ge_float(double *a1, double *a2);
-int __cdecl caml_gt_float(double *a1, double *a2);
-int __cdecl caml_float_compare(double *a1, double *a2);
+// int __usercall compare_val@<eax>(unsigned int a1@<eax>, unsigned int a2@<edx>, int a3@<ecx>);
+unsigned int __cdecl caml_greaterequal(int, int);
+int __cdecl caml_greaterthan(int, int);
+int __cdecl caml_lessequal(int, int);
+int __cdecl caml_lessthan(int, int);
+int __cdecl caml_notequal(int, int);
+int __cdecl caml_equal(int, int);
+int __cdecl caml_compare(int, int);
+// _BYTE *__usercall parse_sign_and_base@<eax>(_BYTE *result@<eax>, _DWORD *@<edx>, _DWORD *@<ecx>);
+// int __usercall parse_digit@<eax>(char@<al>);
+int __cdecl caml_int_compare(int, int);
+int __cdecl int32_cmp(int, int);
+int __cdecl int32_hash(int);
+int __cdecl caml_int32_to_int(int);
+int __cdecl caml_int32_compare(int, int);
+int __cdecl int64_cmp(int, int);
+int __cdecl int64_hash(int);
+int __cdecl caml_int64_to_int(int);
+int __cdecl caml_int64_compare(int, int);
+int __cdecl nativeint_cmp(int, int);
+int __cdecl nativeint_hash(int);
+int __cdecl caml_nativeint_to_int(int);
+int __cdecl caml_nativeint_compare(int, int);
+int __cdecl int32_deserialize(int *);
+int __cdecl nativeint_deserialize(int *);
+_DWORD *__cdecl nativeint_serialize(int, _DWORD *, _DWORD *);
+_DWORD *__cdecl int32_serialize(int, _DWORD *, _DWORD *);
+int __cdecl int64_deserialize(__int64 *);
+_DWORD *__cdecl int64_serialize(int, _DWORD *, _DWORD *);
+// int __usercall parse_intnat@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx>);
+int __cdecl caml_int_of_string(_BYTE *a1);
+// void *__usercall parse_format@<eax>(_BYTE *@<eax>, const char *@<edx>, char *@<ecx>, int, char *);
+void *__cdecl caml_nativeint_format(_BYTE *a1, int a2);
+void *__cdecl caml_int64_format(_BYTE *a1, int a2);
+void *__cdecl caml_int32_format(_BYTE *a1, int a2);
+void *__cdecl caml_format_int(_BYTE *a1, int a2);
+int __cdecl caml_nativeint_to_float(int);
+int __cdecl caml_int64_float_of_bits(int);
+int __cdecl caml_int64_to_float(int);
+int __cdecl caml_int32_float_of_bits(int);
+int __cdecl caml_int32_to_float(int);
+int *__cdecl caml_copy_nativeint(int);
+int *__cdecl caml_nativeint_of_string(_BYTE *);
+int *__cdecl caml_nativeint_of_int32(int);
+int *__cdecl caml_nativeint_of_float(double *);
+int *__cdecl caml_nativeint_of_int(int);
+int *__cdecl caml_nativeint_shift_right_unsigned(int, int);
+int *__cdecl caml_nativeint_shift_right(int, int);
+int *__cdecl caml_nativeint_shift_left(int, int);
+int *__cdecl caml_nativeint_xor(int, int);
+int *__cdecl caml_nativeint_or(int, int);
+int *__cdecl caml_nativeint_and(int, int);
+int *__cdecl caml_nativeint_mod(int, int);
+int *__cdecl caml_nativeint_div(int *, int);
+int *__cdecl caml_nativeint_mul(int, int);
+int *__cdecl caml_nativeint_sub(int, int);
+int *__cdecl caml_nativeint_add(int, int);
+int *__cdecl caml_nativeint_neg(int);
+int *__cdecl caml_int64_to_nativeint(int);
+int *__cdecl caml_copy_int64(int, int);
+int *__cdecl caml_int64_bits_of_float(int *);
+int *__cdecl caml_int64_of_string(_BYTE *);
+int *__cdecl caml_int64_of_nativeint(int);
+int *__cdecl caml_int64_of_int32(int);
+int *__cdecl caml_int64_of_float(double *);
+int *__cdecl caml_int64_of_int(int);
+int *__cdecl caml_int64_shift_right_unsigned(int, int);
+int *__cdecl caml_int64_shift_right(int, int);
+int *__cdecl caml_int64_shift_left(int, int);
+int *__cdecl caml_int64_xor(int, int);
+int *__cdecl caml_int64_or(int, int);
+int *__cdecl caml_int64_and(int, int);
+int *__cdecl caml_int64_mod(int, int);
+int *__cdecl caml_int64_div(int *, int);
+int *__cdecl caml_int64_mul(int, int);
+int *__cdecl caml_int64_sub(int, int);
+int *__cdecl caml_int64_add(int, int);
+int *__cdecl caml_int64_neg(int);
+int *__cdecl caml_copy_int32(int);
+int *__cdecl caml_nativeint_to_int32(int);
+int *__cdecl caml_int64_to_int32(int);
+int *__cdecl caml_int32_bits_of_float(double *);
+int *__cdecl caml_int32_of_string(_BYTE *);
+int *__cdecl caml_int32_of_float(double *);
+int *__cdecl caml_int32_of_int(int);
+int *__cdecl caml_int32_shift_right_unsigned(int, int);
+int *__cdecl caml_int32_shift_right(int, int);
+int *__cdecl caml_int32_shift_left(int, int);
+int *__cdecl caml_int32_xor(int, int);
+int *__cdecl caml_int32_or(int, int);
+int *__cdecl caml_int32_and(int, int);
+int *__cdecl caml_int32_mod(int, int);
+int *__cdecl caml_int32_div(int *, int);
+int *__cdecl caml_int32_mul(int, int);
+int *__cdecl caml_int32_sub(int, int);
+int *__cdecl caml_int32_add(int, int);
+int *__cdecl caml_int32_neg(int);
+int __cdecl caml_int_of_float(double *);
+int __cdecl caml_eq_float(double *, double *);
+int __cdecl caml_neq_float(double *, double *);
+int __cdecl caml_le_float(double *, double *);
+int __cdecl caml_lt_float(double *, double *);
+int __cdecl caml_ge_float(double *, double *);
+int __cdecl caml_gt_float(double *, double *);
+int __cdecl caml_float_compare(double *, double *);
 void caml_init_ieee_floats();
-int __cdecl caml_classify_float(double *a1);
-long double __cdecl caml_log1p(double a1);
-long double __cdecl caml_expm1(double a1);
-int caml_format_float(); // weak
+int __cdecl caml_classify_float(double *);
+long double __cdecl caml_log1p(double);
+long double __cdecl caml_expm1(double);
+void *__cdecl caml_format_float(char *nptr, double *a2);
 int __cdecl caml_copy_double(double); // idb
-int __cdecl caml_log1p_float(double *a1);
-int __cdecl caml_expm1_float(double *a1);
-int __cdecl caml_ceil_float(double *a1);
-int __cdecl caml_atan2_float(double *a1, double *a2);
-int __cdecl caml_atan_float(double *a1);
-int __cdecl caml_acos_float(double *a1);
-int __cdecl caml_asin_float(double *a1);
-int __cdecl caml_tanh_float(double *a1);
-int __cdecl caml_tan_float(double *a1);
-int __cdecl caml_cosh_float(double *a1);
-int __cdecl caml_cos_float(double *a1);
-int __cdecl caml_sinh_float(double *a1);
-int __cdecl caml_sin_float(double *a1);
-int __cdecl caml_power_float(double *a1, double *a2);
-int __cdecl caml_sqrt_float(double *a1);
-char *__cdecl caml_modf_float(double *a1);
-int __cdecl caml_log10_float(double *a1);
-int __cdecl caml_log_float(double *a1);
-int __cdecl caml_ldexp_float(double *a1, int a2);
-char *__cdecl caml_frexp_float(double *a1);
-int __cdecl caml_fmod_float(double *a1, double *a2);
-int __cdecl caml_floor_float(double *a1);
-int __cdecl caml_exp_float(double *a1);
-int __cdecl caml_div_float(double *a1, double *a2);
-int __cdecl caml_mul_float(double *a1, double *a2);
-int __cdecl caml_sub_float(double *a1, double *a2);
-int __cdecl caml_add_float(double *a1, double *a2);
-int __cdecl caml_abs_float(double *a1);
-int __cdecl caml_neg_float(double *a1);
-int __cdecl caml_float_of_int(int a1);
-int __cdecl caml_float_of_string(int a1, int a2, int a3);
-int __cdecl caml_float_of_substring(int a1, int a2, int a3);
-int __cdecl caml_string_length(int a1);
-int __cdecl caml_ml_string_length(int a1);
-int __cdecl caml_string_equal(_DWORD *a1, _DWORD *a2);
-int __cdecl caml_string_notequal(_DWORD *a1, _DWORD *a2);
-int __cdecl caml_bitvect_test(int a1, int a2);
-int __cdecl caml_is_printable(int a1);
-int __cdecl caml_fill_string(int a1, int a2, int a3, int a4);
-int __cdecl caml_blit_string(int a1, int a2, int a3, int a4, int a5);
-int __cdecl caml_string_compare(const void *a1, const void *a2);
-int __cdecl caml_string_greaterequal(const void *a1, const void *a2);
-int __cdecl caml_string_greaterthan(const void *a1, const void *a2);
-int __cdecl caml_string_lessequal(const void *a1, const void *a2);
-int __cdecl caml_string_lessthan(const void *a1, const void *a2);
-// int __usercall caml_string_set@<eax>(_DWORD *a1@<ebx>, int a2, int a3, int a4);
-// int __usercall caml_string_get@<eax>(_DWORD *a1@<ebx>, int a2, int a3);
-int __cdecl caml_create_string(int a1);
-int __cdecl caml_array_unsafe_set_float(int a1, int a2, double *a3);
-int __cdecl caml_make_array(unsigned int *a1);
-int __cdecl caml_array_unsafe_get_float(int a1, int a2);
-int __cdecl caml_array_unsafe_get(int a1, int a2);
-double *__cdecl caml_make_vect(int a1, unsigned int a2);
-int __cdecl caml_array_unsafe_set_addr(int a1, int a2, unsigned int a3);
-int __cdecl caml_array_unsafe_set(int a1, int a2, double *a3);
+int __cdecl caml_log1p_float(double *);
+int __cdecl caml_expm1_float(double *);
+int __cdecl caml_ceil_float(double *);
+int __cdecl caml_atan2_float(double *, double *);
+int __cdecl caml_atan_float(double *);
+int __cdecl caml_acos_float(double *);
+int __cdecl caml_asin_float(double *);
+int __cdecl caml_tanh_float(double *);
+int __cdecl caml_tan_float(double *);
+int __cdecl caml_cosh_float(double *);
+int __cdecl caml_cos_float(double *);
+int __cdecl caml_sinh_float(double *);
+int __cdecl caml_sin_float(double *);
+int __cdecl caml_power_float(double *, double *);
+int __cdecl caml_sqrt_float(double *);
+char *__cdecl caml_modf_float(double *);
+int __cdecl caml_log10_float(double *);
+int __cdecl caml_log_float(double *);
+int __cdecl caml_ldexp_float(double *, int);
+char *__cdecl caml_frexp_float(double *);
+int __cdecl caml_fmod_float(double *, double *);
+int __cdecl caml_floor_float(double *);
+int __cdecl caml_exp_float(double *);
+int __cdecl caml_div_float(double *, double *);
+int __cdecl caml_mul_float(double *, double *);
+int __cdecl caml_sub_float(double *, double *);
+int __cdecl caml_add_float(double *, double *);
+int __cdecl caml_abs_float(double *);
+int __cdecl caml_neg_float(double *);
+int __cdecl caml_float_of_int(int);
+int __cdecl caml_float_of_string(int, int, int);
+int __cdecl caml_float_of_substring(int, int, int);
+int __cdecl caml_string_length(int);
+int __cdecl caml_ml_string_length(int);
+int __cdecl caml_string_equal(_DWORD *, _DWORD *);
+int __cdecl caml_string_notequal(_DWORD *, _DWORD *);
+int __cdecl caml_bitvect_test(int, int);
+int __cdecl caml_is_printable(int);
+int __cdecl caml_fill_string(int, int, int, int);
+int __cdecl caml_blit_string(int, int, int, int, int);
+int __cdecl caml_string_compare(const void *, const void *);
+int __cdecl caml_string_greaterequal(const void *, const void *);
+int __cdecl caml_string_greaterthan(const void *, const void *);
+int __cdecl caml_string_lessequal(const void *, const void *);
+int __cdecl caml_string_lessthan(const void *, const void *);
+// int __usercall caml_string_set@<eax>(_DWORD *@<ebx>, int, int, int);
+// int __usercall caml_string_get@<eax>(_DWORD *@<ebx>, int, int);
+int __cdecl caml_create_string(int);
+int __cdecl caml_array_unsafe_set_float(int, int, double *);
+unsigned int *__cdecl caml_make_array(unsigned int *a1);
+int __cdecl caml_array_unsafe_get_float(int, int);
+int __cdecl caml_array_unsafe_get(int, int);
+double *__cdecl caml_make_vect(int, unsigned int);
+int __cdecl caml_array_unsafe_set_addr(int, int, unsigned int);
+int __cdecl caml_array_unsafe_set(int, int, double *);
 _DWORD __cdecl caml_array_set_float(_DWORD, _DWORD, _DWORD); // weak
-int __cdecl caml_array_set_addr(int a1, int a2, unsigned int a3);
-int __cdecl caml_array_set(int a1, int a2, unsigned int a3);
-int __cdecl caml_array_get_float(int a1, int a2);
+int __cdecl caml_array_set_addr(int, int, unsigned int);
+int __cdecl caml_array_set(int, int, unsigned int);
+int __cdecl caml_array_get_float(int, int);
 _DWORD __cdecl caml_array_get_addr(_DWORD, _DWORD); // weak
-int __cdecl caml_array_get(int a1, int a2);
+int __cdecl caml_array_get(int, int);
 // int __usercall unlink_channel@<eax>(int result@<eax>);
 int caml_channel_binary_mode();
-__int64 __cdecl caml_pos_out(int a1);
-__int64 __cdecl caml_pos_in(int a1);
-int __cdecl compare_channel(int a1, int a2);
+__int64 __cdecl caml_pos_out(int);
+__int64 __cdecl caml_pos_in(int);
+int __cdecl compare_channel(int, int);
 int caml_ml_set_binary_mode();
-int *__cdecl caml_ml_pos_in_64(int a1);
-int *__cdecl caml_ml_pos_out_64(int a1);
-int __cdecl caml_ml_pos_in(int a1);
-int __cdecl caml_ml_pos_out(int a1);
-int __cdecl caml_channel_descriptor(int a1);
-int __cdecl caml_ml_close_channel(int a1);
-int *__cdecl caml_alloc_channel(int a1);
+int *__cdecl caml_ml_pos_in_64(int);
+int *__cdecl caml_ml_pos_out_64(int);
+int __cdecl caml_ml_pos_in(int);
+int __cdecl caml_ml_pos_out(int);
+int __cdecl caml_channel_descriptor(int);
+int __cdecl caml_ml_close_channel(int);
+int *__cdecl caml_alloc_channel(int);
 int caml_ml_out_channels_list();
-void __cdecl caml_finalize_channel(int a1);
+void __cdecl caml_finalize_channel(int);
 void __cdecl caml_close_channel(void *ptr);
-int __cdecl caml_seek_in(int a1, __int64 a2);
-int __cdecl caml_ml_seek_in_64(int a1, int a2);
-int __cdecl caml_ml_seek_in(int a1, int a2);
-int __cdecl caml_channel_size(int *a1);
-int *__cdecl caml_ml_channel_size_64(int a1);
-int __cdecl caml_ml_channel_size(int a1);
+int __cdecl caml_seek_in(int, __int64);
+int __cdecl caml_ml_seek_in_64(int, int);
+int __cdecl caml_ml_seek_in(int, int);
+int __cdecl caml_channel_size(int *);
+int *__cdecl caml_ml_channel_size_64(int);
+int __cdecl caml_ml_channel_size(int);
 ssize_t __cdecl caml_do_read(int fd, void *buf, size_t nbytes);
-int __cdecl caml_ml_input(int a1, int a2, int a3, int a4);
-int __cdecl caml_input_scan_line(int a1);
-int __cdecl caml_ml_input_scan_line(int a1);
-int __cdecl caml_getblock(int, void *dest, size_t n); // idb
-_BOOL4 __cdecl caml_really_getblock(int a1, void *dest, size_t n);
-int __cdecl caml_refill(int a1);
-int __cdecl caml_ml_input_char(int a1);
-int __cdecl caml_getword(int a1);
-int __cdecl caml_ml_input_int(int a1);
-// ssize_t __usercall do_write@<eax>(size_t n@<ecx>, int a2@<eax>, const void *a3@<edx>);
-size_t __cdecl caml_putblock(int a1, void *src, size_t n);
-int __cdecl caml_ml_output(int a1, int a2, int a3, int a4);
-int __cdecl caml_ml_output_partial(int a1, int a2, int a3, int a4);
-void __cdecl caml_really_putblock(int a1, void *src, size_t n);
-_BOOL4 __cdecl caml_flush_partial(int a1);
-int __cdecl caml_ml_output_char(int a1, int a2);
-int __cdecl caml_ml_flush_partial(int a1);
-_BYTE *__cdecl caml_putword(int a1, int a2);
-int __cdecl caml_ml_output_int(int a1, int a2);
-_BOOL4 __cdecl caml_flush(int a1);
-int __cdecl caml_ml_flush(int a1);
-int __cdecl caml_seek_out(int a1, __int64 a2);
-int __cdecl caml_ml_seek_out_64(int a1, int a2);
-int __cdecl caml_ml_seek_out(int a1, int a2);
-char *__cdecl caml_open_descriptor_in(int a1);
-int *__cdecl caml_ml_open_descriptor_in(int a1);
-char *__cdecl caml_open_descriptor_out(int a1);
-int *__cdecl caml_ml_open_descriptor_out(int a1);
+int __cdecl caml_ml_input(int, int, int, int);
+char *__cdecl caml_input_scan_line(int a1);
+int __cdecl caml_ml_input_scan_line(int);
+int __cdecl caml_getblock(int a1, void *dest, size_t n);
+_BOOL4 __cdecl caml_really_getblock(int, void *dest, size_t n);
+int __cdecl caml_refill(int);
+int __cdecl caml_ml_input_char(int);
+int __cdecl caml_getword(int);
+int __cdecl caml_ml_input_int(int);
+// ssize_t __usercall do_write@<eax>(size_t n@<ecx>, int@<eax>, const void *@<edx>);
+signed int __cdecl caml_putblock(int a1, void *src, size_t n);
+int __cdecl caml_ml_output(int, int, int, int);
+int __cdecl caml_ml_output_partial(int, int, int, int);
+void __cdecl caml_really_putblock(int, void *src, size_t n);
+_BOOL4 __cdecl caml_flush_partial(int);
+int __cdecl caml_ml_output_char(int, int);
+int __cdecl caml_ml_flush_partial(int);
+_BYTE *__cdecl caml_putword(int, int);
+int __cdecl caml_ml_output_int(int, int);
+_BOOL4 __cdecl caml_flush(int);
+int __cdecl caml_ml_flush(int);
+int __cdecl caml_seek_out(int, __int64);
+int __cdecl caml_ml_seek_out_64(int, int);
+int __cdecl caml_ml_seek_out(int, int);
+char *__cdecl caml_open_descriptor_in(int);
+int *__cdecl caml_ml_open_descriptor_in(int);
+char *__cdecl caml_open_descriptor_out(int);
+int *__cdecl caml_ml_open_descriptor_out(int);
 _DWORD *extern_replay_trail();
 void free_extern_output();
 int extern_out_of_memory();
-// int __usercall grow_extern_output@<eax>(int a1@<eax>);
-void *__cdecl caml_serialize_block_float_8(void *src, int a2);
-void *__cdecl caml_serialize_float_8(int a1, int a2);
-int __cdecl caml_serialize_block_8(char *a1, int a2);
-int __cdecl caml_serialize_int_8(int a1, int a2);
-int __cdecl caml_serialize_block_4(int a1, int a2);
-int __cdecl caml_serialize_float_4(char a1);
-int __cdecl caml_serialize_block_2(int a1, int a2);
+// int __usercall grow_extern_output@<eax>(int@<eax>);
+void *__cdecl caml_serialize_block_float_8(void *src, int);
+void *__cdecl caml_serialize_float_8(int, int);
+int __cdecl caml_serialize_block_8(char *, int);
+int __cdecl caml_serialize_int_8(int, int);
+int __cdecl caml_serialize_block_4(int, int);
+int __cdecl caml_serialize_float_4(char);
+int __cdecl caml_serialize_block_2(int, int);
 void *__cdecl caml_serialize_block_1(void *src, size_t n);
-void *__cdecl caml_serialize_int_4(int a1);
-void *__cdecl caml_serialize_int_2(__int16 a1);
-void *__cdecl caml_serialize_int_1(char a1);
-// void *__usercall writecode16@<eax>(char a1@<al>, __int16 a2@<dx>);
-// void *__usercall writecode8@<eax>(char a1@<al>, char a2@<dl>);
-// void *__usercall writecode32@<eax>(char a1@<al>, int a2@<edx>);
-// void *__usercall writeblock@<eax>(const void *a1@<eax>, size_t a2@<edx>);
-// void *__usercall write32@<eax>(int a1@<eax>);
+void *__cdecl caml_serialize_int_4(int);
+void *__cdecl caml_serialize_int_2(__int16);
+void *__cdecl caml_serialize_int_1(char);
+// void *__usercall writecode16@<eax>(char@<al>, __int16@<dx>);
+// void *__usercall writecode8@<eax>(char@<al>, char@<dl>);
+// void *__usercall writecode32@<eax>(char@<al>, int@<edx>);
+// void *__usercall writeblock@<eax>(const void *@<eax>, size_t@<edx>);
+// void *__usercall write32@<eax>(int@<eax>);
 // int __usercall extern_record_location@<eax>(int result@<eax>);
 _DWORD *init_extern_output();
-// void *__usercall extern_invalid_argument@<eax>(void *a1@<eax>);
-// void *__usercall extern_rec@<eax>(unsigned int a1@<eax>);
-// char *__usercall extern_value@<eax>(unsigned int a1@<eax>, int *a2@<edx>);
-char *__cdecl caml_output_value_to_block(unsigned int a1, int *a2, void *a3, int a4);
-void __cdecl caml_output_value_to_malloc(unsigned int a1, int *a2, _DWORD *a3, char **a4);
-int __cdecl caml_output_value_to_buffer(int a1, int a2, int a3, unsigned int a4, int *a5);
-int __cdecl caml_output_value_to_string(unsigned int a1, int *a2);
-void __cdecl caml_output_val(int a1, unsigned int a2, int *a3);
-int __cdecl caml_output_value(int a1, unsigned int a2, int *a3);
+// void *__usercall extern_invalid_argument@<eax>(void *@<eax>);
+// void *__usercall extern_rec@<eax>(unsigned int@<eax>);
+// char *__usercall extern_value@<eax>(unsigned int@<eax>, int *@<edx>);
+char *__cdecl caml_output_value_to_block(unsigned int, int *, void *, int);
+void __cdecl caml_output_value_to_malloc(unsigned int, int *, _DWORD *, char **);
+int __cdecl caml_output_value_to_buffer(int, int, int, unsigned int, int *);
+int __cdecl caml_output_value_to_string(unsigned int, int *);
+void __cdecl caml_output_val(int, unsigned int, int *);
+int __cdecl caml_output_value(int, unsigned int, int *);
 int caml_deserialize_uint_1();
 int caml_deserialize_sint_1();
 int caml_deserialize_uint_2();
 int caml_deserialize_sint_2();
 int caml_deserialize_uint_4();
 int caml_deserialize_sint_4();
-void __cdecl caml_deserialize_block_2(int a1, int a2);
-// int __usercall caml_deserialize_block_4@<eax>(int result@<eax>, int a2, int a3);
+void __cdecl caml_deserialize_block_2(int, int);
+// int __usercall caml_deserialize_block_4@<eax>(int result@<eax>, int, int);
 long double caml_deserialize_float_4();
-void __cdecl caml_deserialize_block_8(_BYTE *a1, int a2);
+void __cdecl caml_deserialize_block_8(_BYTE *, int);
 __int64 caml_deserialize_sint_8();
 __int64 caml_deserialize_uint_8();
-int __cdecl caml_marshal_data_size(int a1, int a2);
+int __cdecl caml_marshal_data_size(int, int);
 void intern_cleanup();
-void *__cdecl caml_deserialize_error(void *a1, int a2);
-void *__cdecl caml_deserialize_block_float_8(void *dest, int a2);
+void *__cdecl caml_deserialize_error(void *, int);
+void *__cdecl caml_deserialize_block_float_8(void *dest, int);
 long double caml_deserialize_float_8();
 void *__cdecl caml_deserialize_block_1(void *dest, size_t n);
 _DWORD *caml_code_checksum();
-// int __usercall intern_alloc@<eax>(int result@<eax>, int a2@<edx>);
-// char *__usercall intern_rec@<eax>(void ***a1@<eax>);
+// int __usercall intern_alloc@<eax>(int result@<eax>, int@<edx>);
+// char *__usercall intern_rec@<eax>(void ***@<eax>);
 // int __usercall intern_add_to_heap@<eax>(int result@<eax>);
 void **input_val_from_block();
-void **__cdecl caml_input_value_from_block(unsigned __int8 *a1, unsigned int a2);
-void **__cdecl caml_input_value_from_malloc(unsigned __int8 *a1, int a2);
-void **__cdecl caml_input_val_from_string(int a1, int a2);
-void **__cdecl caml_input_value_from_string(int a1, int a2);
-void **__cdecl caml_input_val(int a1);
-void **__cdecl caml_input_value(int a1);
-int __cdecl caml_hash_variant(_BYTE *a1);
-// int __usercall hash_aux@<eax>(unsigned int a1@<eax>);
-int __cdecl caml_hash_univ_param(int a1, int a2, unsigned int a3);
-int __cdecl caml_sys_init(void *a1, int a2);
+void **__cdecl caml_input_value_from_block(unsigned __int8 *, unsigned int);
+void **__cdecl caml_input_value_from_malloc(unsigned __int8 *, int);
+void **__cdecl caml_input_val_from_string(int, int);
+void **__cdecl caml_input_value_from_string(int, int);
+void **__cdecl caml_input_val(int);
+void **__cdecl caml_input_value(int);
+int __cdecl caml_hash_variant(_BYTE *);
+// int __usercall hash_aux@<eax>(unsigned int@<eax>);
+int __cdecl caml_hash_univ_param(int, int, unsigned int);
+int __cdecl caml_sys_init(void *, int);
 _DWORD *caml_sys_get_config();
 _DWORD *caml_sys_get_argv();
 int caml_sys_random_seed();
 int caml_sys_time();
 void *__cdecl caml_sys_getenv(char *name);
-int __cdecl caml_sys_file_exists(int a1);
-int __cdecl caml_sys_close(int a1);
-void __cdecl __noreturn caml_sys_exit(int a1);
+int __cdecl caml_sys_file_exists(int);
+int __cdecl caml_sys_close(int);
+void __cdecl __noreturn caml_sys_exit(int);
 char *__cdecl caml_sys_error(void *src);
 char *__cdecl caml_sys_read_directory(void *src);
 int __cdecl caml_sys_system_command(void *src); // idb
@@ -1390,98 +1386,98 @@ int __cdecl caml_sys_remove(char *name); // idb
 int __cdecl caml_sys_is_directory(void *src); // idb
 int __cdecl caml_sys_open(char *src, int, int); // idb
 char *__cdecl caml_sys_io_error(void *src);
-int __cdecl caml_set_parser_trace(int a1);
-// const char *__usercall token_name@<eax>(const char *a1@<eax>, int a2@<edx>);
-int __cdecl caml_parse_engine(int a1, _DWORD *a2, int a3, signed int a4);
+int __cdecl caml_set_parser_trace(int);
+// const char *__usercall token_name@<eax>(const char *@<eax>, int@<edx>);
+int __cdecl caml_parse_engine(int, _DWORD *, int, signed int);
 // int __usercall norm_pfree@<eax>(int result@<eax>);
 void norm_pmax();
-// unsigned int __usercall norm_heapincr@<eax>(int a1@<eax>);
+// unsigned int __usercall norm_heapincr@<eax>(int@<eax>);
 // int __usercall norm_minsize@<eax>(int result@<eax>);
-int __cdecl caml_init_gc(int a1, int a2, int a3, int a4);
+int __cdecl caml_init_gc(int, int, int, int);
 int caml_gc_compaction();
 int test_and_compact();
 int caml_gc_full_major();
 int caml_gc_major();
-int __cdecl caml_gc_major_slice(int a1);
+int __cdecl caml_gc_major_slice(int);
 int caml_gc_minor();
-int __cdecl caml_gc_set(int *a1);
+int __cdecl caml_gc_set(int *);
 unsigned int *caml_gc_get();
 unsigned int *caml_gc_counters();
 unsigned int *caml_gc_quick_stat();
 unsigned int *caml_gc_stat();
-_DWORD *__cdecl _Z8MD5_InitP12md5Context_t(_DWORD *a1);
-_DWORD *__cdecl caml_MD5Transform(_DWORD *a1, _DWORD *a2);
-int __cdecl caml_MD5Final(_DWORD *a1, _DWORD *a2);
-void *__cdecl caml_MD5Update(int a1, void *src, size_t n);
-_DWORD *__cdecl caml_md5_chan(int a1, int a2);
-_DWORD *__cdecl caml_md5_string(int a1, int a2, int a3);
-// int __usercall add_char@<eax>(int result@<eax>, char a2@<dl>);
-// void *__usercall add_string@<eax>(int a1@<eax>, const char *a2@<edx>);
-void *__cdecl caml_format_exception(int a1);
-void __cdecl __noreturn caml_fatal_uncaught_exception(int a1);
-// unsigned int __usercall hash_value_name@<eax>(char *a1@<eax>);
+_DWORD *__cdecl caml_MD5Init(_DWORD *);
+_DWORD *__cdecl caml_MD5Transform(_DWORD *, _DWORD *);
+int __cdecl caml_MD5Final(_DWORD *, _DWORD *);
+void *__cdecl caml_MD5Update(int, void *src, size_t n);
+_DWORD *__cdecl caml_md5_chan(int, int);
+_DWORD *__cdecl caml_md5_string(int, int, int);
+// int __usercall add_char@<eax>(int result@<eax>, char@<dl>);
+// void *__usercall add_string@<eax>(int@<eax>, const char *@<edx>);
+void *__cdecl caml_format_exception(int);
+void __cdecl __noreturn caml_fatal_uncaught_exception(int);
+// unsigned int __usercall hash_value_name@<eax>(char *@<eax>);
 int __cdecl caml_named_value(char *s1); // idb
 int __cdecl caml_register_named_value(char *s1, int); // idb
 void __noreturn caml_callback3();
 void __noreturn caml_callback2();
 void __noreturn caml_callback();
-int __cdecl caml_callbackN_exn(int a1, int a2, int a3);
-int __cdecl caml_callbackN(int a1, int a2, int a3);
-int __cdecl caml_weak_check(int a1, int a2);
-// unsigned int __usercall do_set@<eax>(unsigned int result@<eax>, int a2@<edx>, unsigned int a3@<ecx>);
-// int __usercall caml_weak_blit@<eax>(int a1@<edi>, int a2, int a3, unsigned int a4, int a5, int a6);
-// int __usercall caml_weak_set@<eax>(_DWORD *a1@<ebx>, int a2@<esi>, int a3, int a4, unsigned int *a5);
-int __cdecl caml_weak_get_copy(int a1, int a2);
-int __cdecl caml_weak_get(int a1, int a2);
-int *__cdecl caml_weak_create(int a1);
+int __cdecl caml_callbackN_exn(int, int, int);
+int __cdecl caml_callbackN(int, int, int);
+int __cdecl caml_weak_check(int, int);
+// unsigned int __usercall do_set@<eax>(unsigned int result@<eax>, int@<edx>, unsigned int@<ecx>);
+// int __usercall caml_weak_blit@<eax>(int@<edi>, int, int, unsigned int, int, int);
+// int __usercall caml_weak_set@<eax>(_DWORD *@<ebx>, int@<esi>, int, int, unsigned int *);
+int __cdecl caml_weak_get_copy(int, int);
+int __cdecl caml_weak_get(int, int);
+int *__cdecl caml_weak_create(int);
 // unsigned int __usercall invert_pointer_at@<eax>(unsigned int result@<eax>);
-unsigned int __cdecl invert_root(int a1, unsigned int a2);
+unsigned int __cdecl invert_root(int, unsigned int);
 void *init_compact_allocate();
-// int __usercall compact_allocate@<eax>(unsigned int a1@<eax>);
+// int __usercall compact_allocate@<eax>(unsigned int@<eax>);
 int caml_compact_heap();
 int caml_compact_heap_maybe();
-void *__cdecl caml_final_do_strong_roots(void (__cdecl *a1)(_DWORD, char *));
-int __cdecl caml_final_do_weak_roots(int (__cdecl *a1)(_DWORD, char *));
-int __cdecl caml_final_do_young_roots(void (__cdecl *a1)(_DWORD, char *));
+void *__cdecl caml_final_do_strong_roots(void (__cdecl *)(_DWORD, char *));
+int __cdecl caml_final_do_weak_roots(int (__cdecl *)(_DWORD, char *));
+int __cdecl caml_final_do_young_roots(void (__cdecl *)(_DWORD, char *));
 int caml_final_empty_young();
 int caml_final_release();
-// int __usercall caml_final_register@<eax>(unsigned int a1@<esi>, int a2, unsigned int a3);
+// int __usercall caml_final_register@<eax>(unsigned int@<esi>, int, unsigned int);
 void caml_final_do_calls();
 void caml_final_update();
-_DWORD *__cdecl caml_final_custom_operations(int a1);
-_DWORD *__cdecl _ZN2Fl11add_handlerEPFiiE(Fl *this);
+_DWORD *__cdecl caml_final_custom_operations(int);
+_DWORD *__cdecl caml_register_custom_operations(int);
 _DWORD *caml_init_custom_operations();
 const char **__cdecl caml_find_custom_operations(char *s2);
-int *__cdecl caml_alloc_custom(int a1, int a2, unsigned int a3, unsigned int a4);
+int *__cdecl caml_alloc_custom(int, int, unsigned int, unsigned int);
 int __cdecl caml_executable_name(char *buf, size_t len); // idb
-char *__cdecl caml_decompose_path(int a1, char *src);
+char *__cdecl caml_decompose_path(int, char *src);
 int __cdecl caml_read_directory(char *name, int); // idb
 char *caml_dlerror();
 void *__cdecl caml_dlsym(void *handle, char *name);
 void *__cdecl caml_globalsym(char *name);
 int __cdecl caml_dlclose(void *handle); // idb
-void *__cdecl caml_dlopen(char *file, int a2, int a3);
-char *__cdecl caml_search_in_path(int a1, char *src);
-char *__cdecl caml_search_dll_in_path(int a1, char *src);
+void *__cdecl caml_dlopen(char *file, int, int);
+char *__cdecl caml_search_in_path(int, char *src);
+char *__cdecl caml_search_dll_in_path(int, char *src);
 char *__cdecl caml_search_exe_in_path(char *src);
 int caml_backtrace_status();
-// int __usercall extract_location_info@<eax>(int result@<eax>, _DWORD *a2@<edx>);
+// int __usercall extract_location_info@<eax>(int result@<eax>, _DWORD *@<edx>);
 char **caml_get_exception_backtrace();
 void caml_print_exception_backtrace();
-int __cdecl caml_stash_backtrace(int a1, unsigned int a2, unsigned int a3, unsigned int a4);
-int __cdecl caml_record_backtrace(int a1);
+unsigned int __cdecl caml_stash_backtrace(int a1, unsigned int a2, unsigned int a3, unsigned int a4);
+int __cdecl caml_record_backtrace(int);
 void caml_debugger_init();
 void caml_debugger();
 void caml_debugger_cleanup_fork();
-char *__cdecl caml_call_gc(char a1);
-void __fastcall __spoils<ecx> sub_80708DD(int a1);
-unsigned int __cdecl caml_alloc1(char a1);
-unsigned int __cdecl caml_alloc2(char a1);
-unsigned int __cdecl caml_alloc3(char a1);
-// unsigned int __usercall caml_allocN@<eax>(unsigned int a1@<eax>, int a2@<ecx>, char a3);
-// int __usercall caml_c_call@<eax>(int (*a1)(void)@<eax>, char a2);
+// void __usercall caml_call_gc(int a1@<edx>, int a2@<ecx>, char a3);
+// void __usercall sub_80708DD(int a1@<ecx>, int a2@<eax>, int a3@<edx>);
+// unsigned int __usercall caml_alloc1@<eax>(int a1@<edx>, int a2@<ecx>, char a3);
+// unsigned int __usercall caml_alloc2@<eax>(int a1@<edx>, int a2@<ecx>, char a3);
+// unsigned int __usercall caml_alloc3@<eax>(int a1@<edx>, int a2@<ecx>, char a3);
+// unsigned int __usercall caml_allocN@<eax>(unsigned int a1@<eax>, int a2@<ecx>, int a3@<edx>, ...);
+// int __usercall caml_c_call@<eax>(int (*)(void)@<eax>, char);
 void __noreturn caml_start_program();
-int sub_8070A3E(); // weak
+// int __usercall sub_8070A3E@<eax>(int a1@<eax>);
 // int __usercall caml_raise_exn@<eax>(int result@<eax>);
 int caml_raise_exception();
 void __noreturn caml_callback_exn();
@@ -1489,24 +1485,20 @@ void __noreturn caml_callback2_exn();
 void __noreturn caml_callback3_exn();
 _DWORD __cdecl caml_ml_array_bound_error();
 // _DWORD __cdecl _divdi3(_DWORD, _DWORD, _DWORD, _DWORD); weak
-void _libc_csu_fini(void); // idb
-void _libc_csu_init(void); // idb
-void (*_do_global_ctors_aux())(void);
-void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
 _UNKNOWN unk_80710F4; // weak
 _UNKNOWN unk_80710FB; // weak
-int itimers[3] = { 0, 1, 2 }; // idb
-int seek_command_table[3] = { 0, 1, 2 }; // idb
+int itimers[3] = { 0, 1, 2 }; // weak
+int seek_command_table[3] = { 0, 1, 2 }; // weak
 _UNKNOWN unk_8071238; // weak
-int shutdown_command_table[3] = { 0, 1, 2 }; // idb
-int sigprocmask_cmd[3] = { 2, 0, 1 }; // idb
-int action_flag_table[4] = { 0, 1, 2, 3 }; // idb
-int queue_flag_table[3] = { 0, 1, 2 }; // idb
-int when_flag_table[9] = { 0, 1, 2, 0, 0, 0, 0, 0, 0 }; // idb
+int shutdown_command_table[3] = { 0, 1, 2 }; // weak
+int sigprocmask_cmd[3] = { 2, 0, 1 }; // weak
+int action_flag_table[4] = { 0, 1, 2, 3 }; // weak
+int queue_flag_table[3] = { 0, 1, 2 }; // weak
+int when_flag_table[9] = { 0, 1, 2, 0, 0, 0, 0, 0, 0 }; // weak
 int speedtable[] = { 1 }; // weak
 int dword_8071444[35] =
 {
@@ -1545,17 +1537,13 @@ int dword_8071444[35] =
   230400,
   0,
   0
-}; // idb
-int posix_signals[20] = { 6, 14, 8, 1, 4, 2, 9, 13, 3, 11, 15, 10, 12, 17, 18, 19, 20, 21, 22, 26 }; // idb
+}; // weak
+int posix_signals[20] = { 6, 14, 8, 1, 4, 2, 9, 13, 3, 11, 15, 10, 12, 17, 18, 19, 20, 21, 22, 26 }; // weak
 int dword_80716D0[] = { 27 }; // weak
-int CSWTCH_118[4] = { 9, 7, 5, 3 }; // idb
+int CSWTCH_118[4] = { 9, 7, 5, 3 }; // weak
 void *off_8071EA4 = &loc_806B2F5; // weak
 _UNKNOWN unk_80723B4; // weak
 char byte_80723B5 = '.'; // weak
-int _CTOR_LIST__ = -1; // weak
-int _DTOR_LIST__[] = { -1 }; // weak
-int _DTOR_END__ = 0; // weak
-int _JCR_LIST__ = 0; // weak
 void *sockopt_table = &sockopt_bool; // weak
 char *setsockopt_fun_name[10] =
 {
@@ -1622,14 +1610,350 @@ int dword_8074208 = 0; // weak
 int (*camlSource__14)() = &caml_curry2; // weak
 _UNKNOWN camlSource__13; // weak
 int camlUnix = 0; // weak
+int dword_807460C = 0; // weak
+int dword_8074610 = 0; // weak
+int dword_8074614 = 0; // weak
+int dword_8074618 = 0; // weak
+int dword_807461C = 0; // weak
+int dword_8074620 = 0; // weak
+int dword_8074624 = 0; // weak
+int dword_8074628 = 0; // weak
+int dword_807462C = 0; // weak
+int dword_8074630 = 0; // weak
+int dword_8074634 = 0; // weak
+int dword_8074638 = 0; // weak
+int dword_807463C = 0; // weak
+int dword_8074640 = 0; // weak
+int dword_8074644 = 0; // weak
+int dword_8074648 = 0; // weak
+int dword_807464C = 0; // weak
+int dword_8074650 = 0; // weak
+int dword_8074654 = 0; // weak
+int dword_8074658 = 0; // weak
+int dword_807465C = 0; // weak
+int dword_8074660 = 0; // weak
+int dword_8074664 = 0; // weak
+int dword_8074668 = 0; // weak
+int dword_807466C = 0; // weak
+int dword_8074670 = 0; // weak
+int dword_8074674 = 0; // weak
+int dword_8074678 = 0; // weak
+int dword_807467C = 0; // weak
+int dword_8074680 = 0; // weak
+int dword_8074684 = 0; // weak
+int dword_8074688 = 0; // weak
+int dword_807468C = 0; // weak
+int dword_8074690 = 0; // weak
+int dword_8074694 = 0; // weak
+int dword_8074698 = 0; // weak
+int dword_807469C = 0; // weak
+int dword_80746A0 = 0; // weak
+int dword_80746A4 = 0; // weak
+int dword_80746A8 = 0; // weak
+int dword_80746AC = 0; // weak
+int dword_80746B0 = 0; // weak
+int dword_80746B4 = 0; // weak
+int dword_80746B8 = 0; // weak
+int dword_80746BC = 0; // weak
+int dword_80746C0 = 0; // weak
+int dword_80746C4 = 0; // weak
+int dword_80746C8 = 0; // weak
+int dword_80746CC = 0; // weak
+int dword_80746D0 = 0; // weak
+int dword_80746D4 = 0; // weak
+int dword_80746D8 = 0; // weak
+int dword_80746DC = 0; // weak
+int dword_80746E0 = 0; // weak
+int dword_80746E4 = 0; // weak
+int dword_80746E8 = 0; // weak
+int dword_80746EC = 0; // weak
+int dword_80746F0 = 0; // weak
+int dword_80746F4 = 0; // weak
+int dword_80746F8 = 0; // weak
+int dword_80746FC = 0; // weak
+int dword_8074700 = 0; // weak
+int dword_8074704 = 0; // weak
+int dword_8074708 = 0; // weak
+int dword_807470C = 0; // weak
+int dword_8074710 = 0; // weak
+int dword_8074714 = 0; // weak
+int dword_8074718 = 0; // weak
+int dword_807471C = 0; // weak
+int dword_8074720 = 0; // weak
+int dword_8074724 = 0; // weak
+int dword_8074728 = 0; // weak
+int dword_807472C = 0; // weak
+int dword_8074730 = 0; // weak
+int dword_8074734 = 0; // weak
+int dword_8074738 = 0; // weak
+int dword_807473C = 0; // weak
+int dword_8074740 = 0; // weak
+int dword_8074744 = 0; // weak
+int dword_8074748 = 0; // weak
+int dword_807474C = 0; // weak
+int dword_8074750 = 0; // weak
+int dword_8074754 = 0; // weak
+int dword_8074758 = 0; // weak
+int dword_807475C = 0; // weak
+int dword_8074760 = 0; // weak
+int dword_8074764 = 0; // weak
+int dword_8074768 = 0; // weak
+int dword_807476C = 0; // weak
+int dword_8074770 = 0; // weak
+int dword_8074774 = 0; // weak
+int dword_8074778 = 0; // weak
+int dword_807477C = 0; // weak
+int dword_8074780 = 0; // weak
+int dword_8074784 = 0; // weak
+int dword_8074788 = 0; // weak
+int dword_807478C = 0; // weak
+int dword_8074790 = 0; // weak
+int dword_8074794 = 0; // weak
+int dword_8074798 = 0; // weak
+int dword_807479C = 0; // weak
+int dword_80747A0 = 0; // weak
+int dword_80747A4 = 0; // weak
+int dword_80747A8 = 0; // weak
+int dword_80747AC = 0; // weak
+int dword_80747B0 = 0; // weak
+int dword_80747B4 = 0; // weak
+int dword_80747B8 = 0; // weak
 int dword_80747BC = 0; // weak
 int dword_80747C0 = 0; // weak
 int dword_80747C4 = 0; // weak
+int dword_80747C8 = 0; // weak
+int dword_80747CC = 0; // weak
+int dword_80747D0 = 0; // weak
+int dword_80747D4 = 0; // weak
+int dword_80747D8 = 0; // weak
+int dword_80747DC = 0; // weak
+int dword_80747E0 = 0; // weak
+int dword_80747E4 = 0; // weak
+int dword_80747E8 = 0; // weak
+int dword_80747EC = 0; // weak
+int dword_80747F0 = 0; // weak
+int dword_80747F4 = 0; // weak
+int dword_80747F8 = 0; // weak
+int dword_80747FC = 0; // weak
+int dword_8074800 = 0; // weak
+int dword_8074804 = 0; // weak
+int dword_8074808 = 0; // weak
+int dword_807480C = 0; // weak
+int dword_8074810 = 0; // weak
+int dword_8074814 = 0; // weak
+int dword_8074818 = 0; // weak
+int dword_807481C = 0; // weak
+int dword_8074820 = 0; // weak
+int dword_8074824 = 0; // weak
+int dword_8074828 = 0; // weak
+int dword_807482C = 0; // weak
+int dword_8074830 = 0; // weak
+int dword_8074834 = 0; // weak
+int dword_8074838 = 0; // weak
+int dword_807483C = 0; // weak
+int dword_8074840 = 0; // weak
+int dword_8074844 = 0; // weak
+int dword_8074848 = 0; // weak
+int dword_807484C = 0; // weak
+int dword_8074850 = 0; // weak
+int dword_8074854 = 0; // weak
+int dword_8074858 = 0; // weak
+int dword_807485C = 0; // weak
+int dword_8074860 = 0; // weak
+int dword_8074864 = 0; // weak
+int dword_8074868 = 0; // weak
+int dword_807486C = 0; // weak
+int dword_8074870 = 0; // weak
 int dword_8074874 = 0; // weak
+int dword_8074878 = 0; // weak
+int dword_807487C = 0; // weak
+int dword_8074880 = 0; // weak
+int dword_8074884 = 0; // weak
+int dword_8074888 = 0; // weak
+int dword_807488C = 0; // weak
+int dword_8074890 = 0; // weak
 int dword_8074894 = 0; // weak
+int dword_8074898 = 0; // weak
+int dword_807489C = 0; // weak
+int dword_80748A0 = 0; // weak
+int dword_80748A4 = 0; // weak
+int dword_80748A8 = 0; // weak
+int (*camlUnix__1)() = &caml_curry2; // weak
+int (*camlUnix__2)() = &camlUnix__accept_non_intr_2024; // weak
+int (*camlUnix__3)() = &camlUnix__shutdown_connection_2022; // weak
+int (*camlUnix__4)() = &camlUnix__open_connection_2018; // weak
+int (*camlUnix__5)() = &caml_tuplify3; // weak
+int (*camlUnix__6)() = &caml_tuplify2; // weak
+int (*camlUnix__7)() = &camlUnix__close_process_out_2006; // weak
+int (*camlUnix__8)() = &camlUnix__close_process_in_2003; // weak
+int (*camlUnix__9)() = &camlUnix__waitpid_non_intr_2001; // weak
+int (*camlUnix__10)() = &caml_curry2; // weak
+int (*camlUnix__11)() = &caml_curry2; // weak
+int (*camlUnix__12)() = &caml_curry7; // weak
+int (*camlUnix__13)() = &camlUnix__open_process_1967; // weak
+int (*camlUnix__14)() = &camlUnix__open_process_out_1962; // weak
+int (*camlUnix__15)() = &camlUnix__open_process_in_1957; // weak
+int (*camlUnix__16)() = &caml_curry5; // weak
+int (*camlUnix__17)() = &caml_curry6; // weak
+int (*camlUnix__18)() = &caml_curry5; // weak
+int (*camlUnix__19)() = &caml_curry3; // weak
+int (*camlUnix__20)() = &camlUnix__safe_close_1898; // weak
+int (*camlUnix__21)() = &camlUnix__safe_dup_1894; // weak
+int (*camlUnix__22)() = &camlUnix__system_1891; // weak
+int (*camlUnix__23)() = &caml_curry2; // weak
+int (*camlUnix__24)() = &caml_curry2; // weak
+int (*camlUnix__25)() = &caml_curry3; // weak
+int (*camlUnix__26)() = &caml_curry3; // weak
+int (*camlUnix__27)() = &camlUnix__getsockopt_error_1671; // weak
+int (*camlUnix__28)() = &caml_curry3; // weak
+int (*camlUnix__29)() = &caml_curry2; // weak
+int (*camlUnix__30)() = &caml_curry3; // weak
+int (*camlUnix__31)() = &caml_curry2; // weak
+int (*camlUnix__32)() = &caml_curry3; // weak
+int (*camlUnix__33)() = &caml_curry2; // weak
+int (*camlUnix__34)() = &caml_curry3; // weak
+int (*camlUnix__35)() = &caml_curry2; // weak
+int (*camlUnix__36)() = &caml_curry3; // weak
+int (*camlUnix__37)() = &caml_curry4; // weak
+int (*camlUnix__38)() = &caml_curry6; // weak
+int (*camlUnix__39)() = &caml_curry5; // weak
+int (*camlUnix__40)() = &caml_curry5; // weak
+int (*camlUnix__41)() = &caml_curry5; // weak
+int (*camlUnix__42)() = &camlUnix__domain_of_sockaddr_1529; // weak
+int (*camlUnix__47)() = &camlUnix__is_inet6_addr_1500; // weak
+int (*camlUnix__48)() = &camlUnix__pause_1408; // weak
+int (*camlUnix__49)() = &camlUnix__try_set_close_on_exec_1366; // weak
+int (*camlUnix__50)() = &caml_curry3; // weak
+int (*camlUnix__51)() = &caml_curry2; // weak
+int (*camlUnix__52)() = &caml_curry2; // weak
+int (*camlUnix__53)() = &camlUnix__fun_2800; // weak
+int (*camlUnix__54)() = &camlUnix__fun_2802; // weak
+int (*camlUnix__55)() = &camlUnix__fun_2804; // weak
+int (*camlUnix__57)() = &caml_curry4; // weak
+int (*camlUnix__58)() = &caml_curry4; // weak
+int (*camlUnix__59)() = &caml_curry4; // weak
+int (*camlUnix__60)() = &caml_curry2; // weak
+int (*camlUnix__65)() = &camlUnix__fun_2782; // weak
+int (*camlUnix__66)() = &camlUnix__fun_2780; // weak
+int (*camlUnix__67)() = &camlUnix__fun_2778; // weak
+int (*camlUnix__68)() = &caml_curry2; // weak
+int (*camlUnix__69)() = &caml_curry2; // weak
+int (*camlUnix__70)() = &caml_curry3; // weak
+int (*camlUnix__71)() = &caml_curry2; // weak
+int (*camlUnix__72)() = &caml_curry3; // weak
+int (*camlUnix__73)() = &camlUnix__fun_2766; // weak
+int (*camlUnix__74)() = &camlUnix__fun_2764; // weak
+int (*camlUnix__75)() = &caml_curry2; // weak
+int (*camlUnix__76)() = &camlUnix__fun_2760; // weak
+int (*camlUnix__77)() = &camlUnix__fun_2758; // weak
+int (*camlUnix__78)() = &camlUnix__fun_2756; // weak
+int (*camlUnix__79)() = &caml_curry3; // weak
+int (*camlUnix__80)() = &camlUnix__fun_2752; // weak
+int (*camlUnix__81)() = &camlUnix__fun_2750; // weak
+int (*camlUnix__82)() = &camlUnix__fun_2748; // weak
+int (*camlUnix__83)() = &camlUnix__fun_2746; // weak
+int (*camlUnix__84)() = &camlUnix__fun_2744; // weak
+int (*camlUnix__85)() = &caml_curry3; // weak
+int (*camlUnix__86)() = &caml_curry2; // weak
+int (*camlUnix__87)() = &caml_curry2; // weak
+int (*camlUnix__88)() = &camlUnix__fun_2736; // weak
+int (*camlUnix__89)() = &camlUnix__fun_2734; // weak
+int (*camlUnix__90)() = &camlUnix__fun_2732; // weak
+int (*camlUnix__91)() = &camlUnix__fun_2730; // weak
+int (*camlUnix__92)() = &camlUnix__fun_2728; // weak
+int (*camlUnix__93)() = &caml_curry2; // weak
+int (*camlUnix__94)() = &caml_curry2; // weak
+int (*camlUnix__95)() = &caml_curry2; // weak
+int (*camlUnix__96)() = &caml_curry2; // weak
+int (*camlUnix__97)() = &caml_curry3; // weak
+int (*camlUnix__98)() = &caml_curry3; // weak
+int (*camlUnix__99)() = &camlUnix__fun_2714; // weak
+int (*camlUnix__100)() = &caml_curry2; // weak
+int (*camlUnix__101)() = &camlUnix__fun_2710; // weak
+int (*camlUnix__102)() = &caml_curry2; // weak
+int (*camlUnix__103)() = &camlUnix__fun_2706; // weak
+int (*camlUnix__104)() = &camlUnix__fun_2704; // weak
+int (*camlUnix__105)() = &camlUnix__fun_2702; // weak
+int (*camlUnix__106)() = &camlUnix__fun_2700; // weak
+int (*camlUnix__107)() = &caml_curry2; // weak
+int (*camlUnix__108)() = &camlUnix__fun_2696; // weak
+int (*camlUnix__109)() = &camlUnix__fun_2694; // weak
+int (*camlUnix__110)() = &camlUnix__fun_2692; // weak
+int (*camlUnix__111)() = &camlUnix__fun_2690; // weak
+int (*camlUnix__112)() = &camlUnix__fun_2688; // weak
+int (*camlUnix__113)() = &camlUnix__fun_2686; // weak
+int (*camlUnix__114)() = &camlUnix__fun_2684; // weak
+int (*camlUnix__115)() = &camlUnix__fun_2682; // weak
+int (*camlUnix__116)() = &camlUnix__fun_2680; // weak
+int (*camlUnix__117)() = &caml_curry2; // weak
+int (*camlUnix__118)() = &caml_curry2; // weak
+int (*camlUnix__119)() = &camlUnix__fun_2674; // weak
+int (*camlUnix__120)() = &caml_curry4; // weak
+int (*camlUnix__121)() = &caml_curry3; // weak
+int (*camlUnix__122)() = &caml_curry2; // weak
+int (*camlUnix__123)() = &caml_curry2; // weak
+int (*camlUnix__124)() = &camlUnix__fun_2664; // weak
+int (*camlUnix__125)() = &camlUnix__fun_2662; // weak
+int (*camlUnix__126)() = &camlUnix__fun_2660; // weak
+int (*camlUnix__127)() = &camlUnix__fun_2658; // weak
+int (*camlUnix__128)() = &camlUnix__fun_2656; // weak
+int (*camlUnix__129)() = &camlUnix__fun_2654; // weak
+int (*camlUnix__130)() = &camlUnix__fun_2652; // weak
+int (*camlUnix__131)() = &camlUnix__fun_2650; // weak
+int (*camlUnix__132)() = &camlUnix__fun_2648; // weak
+int (*camlUnix__133)() = &camlUnix__fun_2646; // weak
+int (*camlUnix__134)() = &caml_curry3; // weak
+int (*camlUnix__135)() = &camlUnix__fun_2642; // weak
+int (*camlUnix__136)() = &caml_curry2; // weak
+int (*camlUnix__137)() = &camlUnix__fun_2638; // weak
+int (*camlUnix__138)() = &camlUnix__fun_2636; // weak
+int (*camlUnix__139)() = &camlUnix__fun_2634; // weak
+int (*camlUnix__140)() = &camlUnix__fun_2632; // weak
+int (*camlUnix__141)() = &camlUnix__fun_2630; // weak
+int (*camlUnix__142)() = &camlUnix__fun_2628; // weak
+int (*camlUnix__143)() = &camlUnix__fun_2626; // weak
+int (*camlUnix__144)() = &camlUnix__fun_2624; // weak
+int (*camlUnix__145)() = &caml_curry2; // weak
+int (*camlUnix__146)() = &camlUnix__fun_2620; // weak
+int (*camlUnix__147)() = &camlUnix__fun_2618; // weak
+int (*camlUnix__148)() = &camlUnix__fun_2616; // weak
+int (*camlUnix__149)() = &camlUnix__fun_2614; // weak
+int (*camlUnix__150)() = &camlUnix__fun_2612; // weak
+int (*camlUnix__151)() = &camlUnix__fun_2610; // weak
+int (*camlUnix__152)() = &camlUnix__fun_2608; // weak
+int (*camlUnix__153)() = &caml_curry3; // weak
+int (*camlUnix__154)() = &caml_curry3; // weak
+int (*camlUnix__155)() = &camlUnix__fun_2602; // weak
+int (*camlUnix__156)() = &caml_curry2; // weak
+int (*camlUnix__157)() = &caml_curry2; // weak
+int (*camlUnix__158)() = &caml_curry2; // weak
+int (*camlUnix__159)() = &caml_curry2; // weak
+int (*camlUnix__160)() = &camlUnix__fun_2592; // weak
+int (*camlUnix__161)() = &camlUnix__fun_2590; // weak
+int (*camlUnix__162)() = &camlUnix__fun_2588; // weak
+int (*camlUnix__163)() = &camlUnix__fun_2586; // weak
+int (*camlUnix__164)() = &camlUnix__fun_2584; // weak
+int (*camlUnix__165)() = &camlUnix__fun_2582; // weak
+int (*camlUnix__166)() = &camlUnix__fun_2580; // weak
+int (*camlUnix__167)() = &caml_curry2; // weak
+int (*camlUnix__168)() = &caml_curry2; // weak
+int (*camlUnix__169)() = &camlUnix__fun_2574; // weak
+int (*camlUnix__170)() = &caml_curry3; // weak
+int (*camlUnix__171)() = &caml_curry2; // weak
+int (*camlUnix__172)() = &camlUnix__fun_2568; // weak
+int (*camlUnix__173)() = &caml_curry2; // weak
+int (*camlUnix__174)() = &caml_curry2; // weak
+int (*camlUnix__175)() = &camlUnix__fun_2562; // weak
 int (*camlUnix__184)() = &camlUnix__fun_2863; // weak
 int (*camlUnix__188)() = &camlUnix__fun_2857; // weak
+_UNKNOWN camlUnix__43; // weak
 _UNKNOWN camlUnix__44; // weak
+char camlUnix__45[10] = "127.0.0.1"; // weak
+char camlUnix__46[8] = "0.0.0.0"; // weak
+char camlUnix__61[16] = "Unix.Unix_error"; // weak
+_UNKNOWN camlUnix__62; // weak
+_UNKNOWN camlUnix__63; // weak
+char camlUnix__64[16] = "Unix.Unix_error"; // weak
 char camlUnix__176[19] = "close_process_full"; // weak
 char camlUnix__177[14] = "close_process"; // weak
 char camlUnix__178[18] = "close_process_out"; // weak
@@ -1646,8 +1970,8 @@ char camlUnix__190[8] = "/bin/sh"; // weak
 _UNKNOWN camlUnix__191; // weak
 char camlUnix__195[10] = "127.0.0.1"; // weak
 char camlUnix__196[8] = "0.0.0.0"; // weak
-_DWORD camlUnix__197[2] = { 50331648, 1276 }; // idb
-_DWORD camlUnix__202[2] = { 50331648, 3324 }; // idb
+_DWORD camlUnix__197[2] = { 50331648, 1276 }; // weak
+_DWORD camlUnix__202[2] = { 50331648, 3324 }; // weak
 _DWORD camlUnix__215[129] =
 {
   50331648,
@@ -1779,7 +2103,7 @@ _DWORD camlUnix__215[129] =
   134660349,
   134598932,
   134598972
-}; // idb
+}; // weak
 int camlUnixLabels = 0; // weak
 int dword_8076B80 = 0; // weak
 int dword_8076B84 = 0; // weak
@@ -2095,7 +2419,7 @@ int (*camlString__13)() = &caml_curry2; // weak
 int (*camlString__14)() = &camlString__lowercase_1098; // weak
 int (*camlString__15)() = &camlString__uppercase_1096; // weak
 int (*camlString__16)() = &caml_curry2; // weak
-int (*camlString__17)() = &camlString__escaped_108; // weak
+int (*camlString__17)() = &camlString__escaped_1080; // weak
 int (*camlString__18)() = &caml_curry2; // weak
 int (*camlString__19)() = &caml_curry2; // weak
 int (*camlString__20)() = &caml_curry5; // weak
@@ -2268,6 +2592,7 @@ _UNKNOWN camlPrintf__55; // weak
 _UNKNOWN camlPrintf__56; // weak
 _UNKNOWN camlPrintf__57; // weak
 _UNKNOWN camlPrintf__58; // weak
+_UNKNOWN camlPrintf__62; // weak
 _UNKNOWN camlPrintf__64; // weak
 char *camlPrintf__65 = "printf.ml"; // weak
 int camlCallback = 0; // weak
@@ -2278,9 +2603,9 @@ _UNKNOWN access_permission_table; // weak
 _UNKNOWN getnameinfo_flag_table; // weak
 _UNKNOWN open_flag_table; // weak
 _UNKNOWN msg_flag_table; // weak
-_DWORD socket_domain_table[3] = { 1, 2, 10 }; // idb
-_DWORD socket_type_table[6] = { 1, 2, 3, 5, 0, 0 }; // idb
-_DWORD file_kind_table[12] = { 32768, 16384, 8192, 24576, 40960, 4096, 49152, 0, 0, 0, 0, 0 }; // idb
+_DWORD socket_domain_table[3] = { 1, 2, 10 }; // weak
+_DWORD socket_type_table[6] = { 1, 2, 3, 5, 0, 0 }; // weak
+_DWORD file_kind_table[12] = { 32768, 16384, 8192, 24576, 40960, 4096, 49152, 0, 0, 0, 0, 0 }; // weak
 int terminal_io_descr = 0; // weak
 _DWORD error_table[68] =
 {
@@ -2352,7 +2677,7 @@ _DWORD error_table[68] =
   113,
   40,
   75
-}; // idb
+}; // weak
 _UNKNOWN wait_flag_table; // weak
 int percent_free_init = 80; // weak
 int heap_chunk_init = 126976; // weak
@@ -2384,11 +2709,9 @@ int dword_807D0C0 = 0; // weak
 int dword_807D0C4 = 0; // weak
 int dword_807D0C8 = 0; // weak
 FILE *stderr; // idb
-char completed_5978; // weak
-int dtor_idx_5980; // weak
 int entry_h_length; // weak
 _UNKNOWN terminal_status; // weak
-char byte_807D131[43]; // idb
+char byte_807D131[43]; // weak
 int unix_error_exn; // weak
 int (__cdecl *caml_termination_hook)(_DWORD); // weak
 char proc_self_exe_2949[256]; // idb
@@ -2444,10 +2767,10 @@ int caml_young_start; // weak
 int caml_young_end; // weak
 int caml_young_ptr; // weak
 int caml_young_limit; // weak
-int caml_ref_table[3]; // idb
+int caml_ref_table[3]; // weak
 int dword_8080428; // weak
 int dword_808042C; // weak
-int caml_weak_ref_table[3]; // idb
+int caml_weak_ref_table[3]; // weak
 int dword_8080444; // weak
 int dword_8080448; // weak
 int caml_in_minor_collection; // weak
@@ -2477,7 +2800,7 @@ int extern_limit; // weak
 void *extern_output_first; // idb
 int extern_output_block; // weak
 int checksum_computed_3405; // weak
-_DWORD checksum_3404[4]; // idb
+_DWORD checksum_3404[4]; // weak
 void *intern_src; // idb
 void *intern_input; // idb
 int intern_input_malloced; // weak
@@ -2502,7 +2825,7 @@ int caml_stat_heap_size; // weak
 int caml_stat_top_heap_size; // weak
 int caml_stat_compactions; // weak
 int caml_stat_heap_chunks; // weak
-int named_value_table[13]; // idb
+int named_value_table[13]; // weak
 int caml_weak_list_head; // weak
 int compact_fl; // weak
 int running_finalisation_function; // weak
@@ -2521,13 +2844,13 @@ _UNKNOWN caml_debugger_in_use; // weak
 void *caml_code_area_start; // idb
 struct __jmp_buf_tag caml_termination_jmpbuf; // idb
 int caml_code_area_end; // weak
-_DWORD caml_atom_table[1]; // idb
+_DWORD caml_atom_table[1]; // weak
 _UNKNOWN unk_8083AA4; // weak
 _UNKNOWN unk_8083E94; // weak
 int caml_frame_descriptors_mask; // weak
 int caml_top_of_stack; // weak
 int caml_gc_regs; // weak
-int caml_pending_signals[66]; // idb
+int caml_pending_signals[66]; // weak
 int caml_gc_subphase; // idb
 int caml_gc_sweep_hp; // weak
 int caml_percent_free; // idb
@@ -2543,23 +2866,8 @@ int caml_page_table[]; // weak
 int caml_compare_unordered; // weak
 void *caml_exe_name; // idb
 int caml_percent_max; // idb
-// extern void *environ; idb
-// extern _UNKNOWN _gmon_start__; weak
+// extern void *environ; weak
 
-
-//----- (08049D84) --------------------------------------------------------
-int init_proc()
-{
-  int v1; // [esp+0h] [ebp-8h]
-
-  if ( &_gmon_start__ )
-    __gmon_start__();
-  frame_dummy();
-  _do_global_ctors_aux();
-  return v1;
-}
-// 8049DB0: variable 'v1' is possibly undefined
-// 8049F14: using guessed type int __gmon_start__(void);
 
 //----- (08049DB4) --------------------------------------------------------
 int sub_8049DB4()
@@ -2568,59 +2876,15 @@ int sub_8049DB4()
 }
 // 80736AC: using guessed type int (*dword_80736AC)(void);
 
-//----- (0804A910) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, _libc_csu_init, _libc_csu_fini, a2, &v3);
-  __halt();
-}
-// 804A913: positive sp value 4 has been found
-
-//----- (0804A940) --------------------------------------------------------
-void _do_global_dtors_aux()
-{
-  int v0; // eax
-  unsigned int i; // ebx
-
-  if ( !completed_5978 )
-  {
-    v0 = dtor_idx_5980;
-    for ( i = &_DTOR_END__ - _DTOR_LIST__ - 1; dtor_idx_5980 < i; v0 = dtor_idx_5980 )
-    {
-      dtor_idx_5980 = v0 + 1;
-      ((void (*)(void))_DTOR_LIST__[v0 + 1])();
-    }
-    completed_5978 = 1;
-  }
-}
-// 8073560: using guessed type int _DTOR_LIST__[];
-// 8073564: using guessed type int _DTOR_END__;
-// 807D104: using guessed type char completed_5978;
-// 807D108: using guessed type int dtor_idx_5980;
-
-//----- (0804A9A0) --------------------------------------------------------
-int frame_dummy()
-{
-  int result; // eax
-
-  result = _JCR_LIST__;
-  if ( _JCR_LIST__ )
-    result = 0;
-  return result;
-}
-// 8073568: using guessed type int _JCR_LIST__;
-
 //----- (0804A9D0) --------------------------------------------------------
 void __noreturn caml_startup__code_begin()
 {
-  int v0; // ecx
+  int v0; // edx
+  int v1; // ecx
+  int v2; // edx
+  int v3; // ecx
+  int v4; // edx
+  int v5; // ecx
 
   camlPervasives__entry();
   ++caml_globals_inited;
@@ -2638,18 +2902,22 @@ void __noreturn caml_startup__code_begin()
   ++caml_globals_inited;
   camlBuffer__entry();
   ++caml_globals_inited;
-  camlPrintf__entry();
+  camlPrintf__entry(v1, v0);
   ++caml_globals_inited;
   camlCallback__entry();
   ++caml_globals_inited;
-  camlUnix__entry();
+  camlUnix__entry(v3, v2);
   ++caml_globals_inited;
   camlUnixLabels__code_begin();
   ++caml_globals_inited;
-  camlSource__entry(v0);
+  camlSource__entry(v5, v4);
 }
-// 804AA60: variable 'v0' is possibly undefined
-// 804E910: using guessed type int camlUnix__entry(void);
+// 804AA30: variable 'v1' is possibly undefined
+// 804AA30: variable 'v0' is possibly undefined
+// 804AA48: variable 'v3' is possibly undefined
+// 804AA48: variable 'v2' is possibly undefined
+// 804AA60: variable 'v5' is possibly undefined
+// 804AA60: variable 'v4' is possibly undefined
 // 8050760: using guessed type int camlPervasives__entry(void);
 // 80539B0: using guessed type int camlArray__entry(void);
 // 8056920: using guessed type int camlSys__entry(void);
@@ -2908,7 +3176,7 @@ int __fastcall caml_apply3(int a1, int a2)
   int (**v4)(void); // ebx
 
   if ( *(_DWORD *)(a2 + 4) == 7 )
-    return (*(int (**)(void))(a2 + 8))();
+    return (*(int (__fastcall **)(int))(a2 + 8))(a1);
   v3 = (int (**)(void))(*(int (**)(void))a2)();
   v4 = (int (**)(void))(*v3)();
   return (*v4)();
@@ -2934,7 +3202,13 @@ int camlStd_exit__code_begin()
 // 8076F3C: using guessed type int dword_8076F3C;
 
 //----- (0804B5A0) --------------------------------------------------------
-int __usercall camlSource__code_begin@<eax>(int a1@<eax>, double *a2@<edx>, int a3@<ecx>, double *a4@<ebx>, int *a5@<edi>, int a6@<esi>)
+int __usercall camlSource__code_begin@<eax>(
+        int a1@<eax>,
+        double *a2@<edx>,
+        int a3@<ecx>,
+        double *a4@<ebx>,
+        int *a5@<edi>,
+        int a6@<esi>)
 {
   long double v6; // fst7
   char v7; // fps^1
@@ -2962,14 +3236,14 @@ int __usercall camlSource__code_begin@<eax>(int a1@<eax>, double *a2@<edx>, int 
       *(double *)(a5[5] + 4 * a6 - 4) = *a4;
       v12 = a1 + 2;
       if ( a1 + 2 >= a5[6] )
-        return camlArray__blit_120(a5[4], a6 + 2, a5[5], a3, a5[7] - a3 + 1);
+        return camlArray__blit_1093(a5[4], a6 + 2, a5[5], a3, a5[7] - a3 + 1);
       while ( 1 )
       {
         v13 = caml_young_ptr - 12;
         caml_young_ptr = v13;
         if ( v13 >= caml_young_limit )
           break;
-        caml_call_gc(v16);
+        caml_call_gc((int)a2, a3, v16);
       }
       a4 = (double *)(v13 + 4);
       *(_DWORD *)v13 = 2301;
@@ -2987,7 +3261,7 @@ int __usercall camlSource__code_begin@<eax>(int a1@<eax>, double *a2@<edx>, int 
       caml_young_ptr = v15;
       if ( v15 >= caml_young_limit )
         break;
-      caml_call_gc(v16);
+      caml_call_gc((int)a2, a3, v16);
     }
     a2 = (double *)(v15 + 4);
     *(_DWORD *)v15 = 2301;
@@ -2995,7 +3269,7 @@ int __usercall camlSource__code_begin@<eax>(int a1@<eax>, double *a2@<edx>, int 
     a6 += 2;
     a1 = v16;
   }
-  return camlArray__blit_120(a5[3], a6 + 2, a5[5], a1, a5[6] - a1 + 1);
+  return camlArray__blit_1093(a5[3], a6 + 2, a5[5], a1, a5[6] - a1 + 1);
 }
 // 804B5A6: variable 'a2' is possibly undefined
 // 804B5AE: variable 'v7' is possibly undefined
@@ -3005,7 +3279,13 @@ int __usercall camlSource__code_begin@<eax>(int a1@<eax>, double *a2@<edx>, int 
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (0804B6B0) --------------------------------------------------------
-int __usercall camlSource__merge_1034@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<edi>, int a6@<esi>)
+int __usercall camlSource__merge_1034@<eax>(
+        int a1@<eax>,
+        int a2@<edx>,
+        int a3@<ecx>,
+        int a4@<ebx>,
+        int a5@<edi>,
+        int a6@<esi>)
 {
   int v6; // edx
   int v8; // ecx
@@ -3025,7 +3305,7 @@ int __usercall camlSource__merge_1034@<eax>(int a1@<eax>, int a2@<edx>, int a3@<
     caml_young_ptr = v10;
     if ( v10 >= caml_young_limit )
       break;
-    caml_call_gc(v12);
+    caml_call_gc(v6, v8, v12);
   }
   *(_DWORD *)v10 = 8439;
   *(_DWORD *)(v10 + 4) = caml_curry5;
@@ -3080,19 +3360,19 @@ int __usercall camlSource__isortto_1052@<eax>(int a1@<eax>, int a2@<edx>, int a3
 // 804B780: could not find valid save-restore pair for edi
 
 //----- (0804B800) --------------------------------------------------------
-int __usercall camlSource__sortto_1060@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<esi>)
+int __usercall camlSource__sortto_1060@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int *a5@<esi>)
 {
   int v6; // [esp+0h] [ebp-18h]
   int v7; // [esp+4h] [ebp-14h]
   int v9; // [esp+Ch] [ebp-Ch]
 
   if ( a2 <= 11 )
-    return camlSource__isortto_1052(a1, a2, a3, a4, *(_DWORD *)(a5 + 20));
+    return camlSource__isortto_1052(a1, a2, a3, a4, a5[5]);
   v7 = 2 * ((a2 >> 1) / 2) + 1;
   v9 = a2 - 2 * ((a2 >> 1) / 2);
-  camlSource__sortto_1060(a3 + 2 * ((a2 >> 1) / 2), v9);
-  camlSource__sortto_1060(a1 + v9 - 1, v7);
-  v6 = *(_DWORD *)(a5 + 16);
+  camlSource__sortto_1060(a1 + 2 * ((a2 >> 1) / 2), v9, a3 + 2 * ((a2 >> 1) / 2), a4, (int)a5);
+  camlSource__sortto_1060(a1, v7, a1 + v9 - 1, a5[3], (int)a5);
+  v6 = a5[4];
   caml_extra_params = a3;
   dword_807D0C0 = v6;
   return camlSource__merge_1034(a1 + v9 - 1, a3 + v7 - 1, a4, v7, a4, v9);
@@ -3103,81 +3383,83 @@ int __usercall camlSource__sortto_1060@<eax>(int a1@<eax>, int a2@<edx>, int a3@
 // 807D0C0: using guessed type int dword_807D0C0;
 
 //----- (0804B8C0) --------------------------------------------------------
-int __usercall camlSource__sort_floats_1031@<eax>(int a1@<eax>, double *a2@<ebx>)
+int __usercall camlSource__sort_floats_1031@<eax>(int a1@<eax>, double *a2@<ebx>, int a3@<ecx>)
 {
-  _DWORD *v3; // eax
-  _DWORD *v4; // ecx
-  int v5; // esi
-  _DWORD *v6; // eax
-  int v8; // edx
-  unsigned int v9; // eax
-  double *v10; // eax
-  char v11; // [esp+0h] [ebp-20h]
-  int v12; // [esp+0h] [ebp-20h]
-  int v13; // [esp+4h] [ebp-1Ch]
-  int v14; // [esp+8h] [ebp-18h]
-  int v15; // [esp+Ch] [ebp-14h]
-  int v16; // [esp+14h] [ebp-Ch]
+  int i; // edx
+  _DWORD *v4; // eax
+  int v5; // ecx
+  int v6; // esi
+  int *v7; // eax
+  int v9; // edx
+  unsigned int v10; // eax
+  double *v11; // eax
+  char v12; // [esp+0h] [ebp-20h]
+  int *v13; // [esp+0h] [ebp-20h]
+  int v14; // [esp+4h] [ebp-1Ch]
+  int v15; // [esp+8h] [ebp-18h]
+  int v16; // [esp+Ch] [ebp-14h]
+  int v17; // [esp+14h] [ebp-Ch]
 
+  for ( i = a1; ; caml_call_gc(i, a3, v12) )
+  {
+    v4 = (_DWORD *)(caml_young_ptr - 68);
+    caml_young_ptr = (int)v4;
+    if ( (unsigned int)v4 >= caml_young_limit )
+      break;
+  }
+  v5 = (int)(v4 + 1);
+  *v4 = 4343;
+  v4[1] = caml_curry7;
+  v4[2] = 15;
+  v4[3] = camlSource__merge_1034;
+  v4[4] = a2;
+  v6 = (int)(v4 + 6);
+  v4[5] = 4343;
+  v4[6] = caml_curry4;
+  v4[7] = 9;
+  v4[8] = camlSource__isortto_1052;
+  v4[9] = a2;
+  v7 = v4 + 11;
+  *(v7 - 1) = 6391;
+  *v7 = (int)caml_curry4;
+  v7[1] = 9;
+  v7[2] = (int)camlSource__sortto_1060;
+  v7[3] = (int)a2;
+  v7[4] = v5;
+  v7[5] = v6;
+  if ( i <= 11 )
+    return camlSource__isortto_1052(1, i, 1, (int)a2, v6);
+  v13 = v7;
+  v17 = v5;
+  v15 = 2 * ((i >> 1) / 2) + 1;
+  v9 = i - 2 * ((i >> 1) / 2);
+  v14 = v9;
   while ( 1 )
   {
-    v3 = (_DWORD *)(caml_young_ptr - 68);
-    caml_young_ptr = (int)v3;
-    if ( (unsigned int)v3 >= caml_young_limit )
+    v10 = caml_young_ptr - 12;
+    caml_young_ptr = v10;
+    if ( v10 >= caml_young_limit )
       break;
-    caml_call_gc(v11);
+    caml_call_gc(v9, v5, (char)v13);
   }
-  v4 = v3 + 1;
-  *v3 = 4343;
-  v3[1] = caml_curry7;
-  v3[2] = 15;
-  v3[3] = camlSource__merge_1034;
-  v3[4] = a2;
-  v5 = (int)(v3 + 6);
-  v3[5] = 4343;
-  v3[6] = caml_curry4;
-  v3[7] = 9;
-  v3[8] = camlSource__isortto_1052;
-  v3[9] = a2;
-  v6 = v3 + 11;
-  *(v6 - 1) = 6391;
-  *v6 = caml_curry4;
-  v6[1] = 9;
-  v6[2] = camlSource__sortto_1060;
-  v6[3] = a2;
-  v6[4] = v4;
-  v6[5] = v5;
-  if ( a1 <= 11 )
-    return camlSource__isortto_1052(1, a1, 1, (int)a2, v5);
-  v12 = (int)v6;
-  v16 = (int)v4;
-  v14 = 2 * ((a1 >> 1) / 2) + 1;
-  v8 = a1 - 2 * ((a1 >> 1) / 2);
-  v13 = v8;
-  while ( 1 )
-  {
-    v9 = caml_young_ptr - 12;
-    caml_young_ptr = v9;
-    if ( v9 >= caml_young_limit )
-      break;
-    caml_call_gc(v12);
-  }
-  v10 = (double *)(v9 + 4);
-  *((_DWORD *)v10 - 1) = 2301;
-  *v10 = *a2;
-  v15 = caml_c_call((int (*)(void))caml_make_vect, v8);
-  camlSource__sortto_1060(v14, v13, 1, v15, v12);
-  camlSource__sortto_1060(1, v14, v13, (int)a2, v12);
+  v11 = (double *)(v10 + 4);
+  *((_DWORD *)v11 - 1) = 2301;
+  *v11 = *a2;
+  v16 = caml_c_call((int (*)(void))caml_make_vect, v9);
+  camlSource__sortto_1060(v15, v14, 1, v16, v13);
+  camlSource__sortto_1060(1, v15, v14, (int)a2, v13);
   caml_extra_params = 1;
-  dword_807D0C0 = v16;
-  return camlSource__merge_1034(v13, 1, v15, v14, (int)a2, v13);
+  dword_807D0C0 = v17;
+  return camlSource__merge_1034(v14, 1, v16, v15, (int)a2, v14);
 }
 // 804B8C0: could not find valid save-restore pair for ebp
 // 804B8C0: could not find valid save-restore pair for edi
-// 804B94A: variable 'a1' is possibly undefined
-// 804B9B5: variable 'v8' is possibly undefined
-// 804B9D3: variable 'v12' is possibly undefined
-// 804BA2F: variable 'v11' is possibly undefined
+// 804B94A: variable 'i' is possibly undefined
+// 804B9B5: variable 'v9' is possibly undefined
+// 804B9D3: variable 'v13' is possibly undefined
+// 804BA25: variable 'v5' is possibly undefined
+// 804BA2F: variable 'a3' is possibly undefined
+// 804BA2F: variable 'v12' is possibly undefined
 // 804AD50: using guessed type _DWORD caml_curry7();
 // 804B1F0: using guessed type _DWORD caml_curry4();
 // 807D0BC: using guessed type int caml_extra_params;
@@ -3186,44 +3468,46 @@ int __usercall camlSource__sort_floats_1031@<eax>(int a1@<eax>, double *a2@<ebx>
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (0804BA40) --------------------------------------------------------
-void __fastcall __noreturn camlSource__entry(int a1)
+void __fastcall __noreturn camlSource__entry(int a1, int a2)
 {
-  _DWORD *v1; // eax
-  int v2; // ecx
-  int v3; // ebx
+  _DWORD *v2; // eax
+  int v3; // ecx
   int v4; // ebx
-  int *v5; // eax
-  char v6; // [esp+4h] [ebp-54h]
-  char v7; // [esp+4h] [ebp-54h]
-  int v8; // [esp+4h] [ebp-54h]
-  int v9; // [esp+8h] [ebp-50h]
+  int v5; // ebx
+  int v6; // edx
+  int v7; // ecx
+  int *v8; // eax
+  char v9; // [esp+4h] [ebp-54h]
+  int v10; // [esp+4h] [ebp-54h]
+  int v11; // [esp+8h] [ebp-50h]
 
   camlSource = 11;
   dword_80741F8 = (int)&camlSource__14;
-  v1 = (_DWORD *)caml_allocN(0x18u, a1, v6);
-  v2 = (int)(v1 + 1);
-  *v1 = 1024;
-  v1[1] = 1;
-  v3 = (int)(v1 + 3);
-  v1[2] = 1024;
-  v1[3] = &camlSource__13;
-  v1 += 5;
-  *(v1 - 1) = 1024;
-  *v1 = 8193;
-  dword_80741FC = v2;
-  dword_8074200 = v3;
-  dword_8074204 = (int)v1;
-  v4 = caml_c_call((int (*)(void))caml_make_vect, *v1);
-  v5 = (int *)(caml_alloc1(v7) + 4);
-  *(v5 - 1) = 1024;
-  *v5 = v4;
-  dword_8074208 = (int)v5;
-  sub_804BE02(v8, v9);
+  v2 = (_DWORD *)caml_allocN(0x18u, a1, a2);
+  v3 = (int)(v2 + 1);
+  *v2 = 1024;
+  v2[1] = 1;
+  v4 = (int)(v2 + 3);
+  v2[2] = 1024;
+  v2[3] = &camlSource__13;
+  v2 += 5;
+  *(v2 - 1) = 1024;
+  *v2 = 8193;
+  dword_80741FC = v3;
+  dword_8074200 = v4;
+  dword_8074204 = (int)v2;
+  v5 = caml_c_call((int (*)(void))caml_make_vect, *v2);
+  v8 = (int *)(caml_alloc1(v6, v7, v9) + 4);
+  *(v8 - 1) = 1024;
+  *v8 = v5;
+  dword_8074208 = (int)v8;
+  sub_804BE02(v10, v11);
 }
-// 804BA5C: variable 'v6' is possibly undefined
+// 804BABD: variable 'v6' is possibly undefined
 // 804BABD: variable 'v7' is possibly undefined
-// 804BAD3: variable 'v8' is possibly undefined
-// 804BAD3: variable 'v9' is possibly undefined
+// 804BABD: variable 'v9' is possibly undefined
+// 804BAD3: variable 'v10' is possibly undefined
+// 804BAD3: variable 'v11' is possibly undefined
 // 80741F4: using guessed type int camlSource;
 // 80741F8: using guessed type int dword_80741F8;
 // 80741FC: using guessed type int dword_80741FC;
@@ -3237,36 +3521,40 @@ void __cdecl __noreturn sub_804BE02(int a1, int a2)
 {
   char v2; // al
   double *v3; // ebx
-  unsigned int v4; // eax
-  int v5; // ebx
-  int v6; // [esp-4h] [ebp-4h] BYREF
-  int v7; // [esp+4h] [ebp+4h]
-  int v8; // [esp+8h] [ebp+8h]
+  int v4; // ecx
+  int v5; // edx
+  unsigned int v6; // eax
+  int v7; // ebx
+  int v8; // [esp-4h] [ebp-4h] BYREF
+  int v9; // [esp+4h] [ebp+4h]
+  int v10; // [esp+8h] [ebp+8h]
 
-  v6 = caml_exception_pointer;
-  caml_exception_pointer = (int)&v6;
+  v8 = caml_exception_pointer;
+  caml_exception_pointer = (int)&v8;
   while ( 1 )
   {
     do
     {
       v2 = camlPervasives__input_line_1241();
       v3 = (double *)caml_c_call((int (*)(void))caml_float_of_string, v2);
-      *(double *)(*(_DWORD *)dword_8074208 + 4 * *(_DWORD *)dword_80741FC - 4) = *v3;
-      v4 = caml_alloc2(v6);
-      *(_DWORD *)v4 = 2301;
-      *(double *)(v4 + 4) = *(double *)*(_DWORD *)dword_8074200 + *v3;
-      caml_modify((unsigned int *)dword_8074200, v4 + 4);
+      v4 = *(_DWORD *)dword_80741FC;
+      *(double *)(*(_DWORD *)dword_8074208 + 4 * v4 - 4) = *v3;
+      v6 = caml_alloc2(v5, v4, v8);
+      *(_DWORD *)v6 = 2301;
+      *(double *)(v6 + 4) = *(double *)*(_DWORD *)dword_8074200 + *v3;
+      caml_modify((unsigned int *)dword_8074200, v6 + 4);
       *(_DWORD *)dword_80741FC += 2;
-      v7 = *(_DWORD *)dword_8074204;
+      v9 = *(_DWORD *)dword_8074204;
     }
     while ( *(_DWORD *)dword_80741FC != *(_DWORD *)dword_8074204 );
-    v5 = 4 * *(_DWORD *)dword_8074204 - 3;
-    *(_DWORD *)dword_8074204 = v5;
-    v8 = caml_c_call((int (*)(void))caml_make_vect, v5);
-    camlArray__blit_120(*(_DWORD *)dword_8074208, 1, v8, 1, v7);
-    caml_modify((unsigned int *)dword_8074208, v8);
+    v7 = 4 * *(_DWORD *)dword_8074204 - 3;
+    *(_DWORD *)dword_8074204 = v7;
+    v10 = caml_c_call((int (*)(void))caml_make_vect, v7);
+    camlArray__blit_1093(*(_DWORD *)dword_8074208, 1, v10, 1, v9);
+    caml_modify((unsigned int *)dword_8074208, v10);
   }
 }
+// 804BE3C: variable 'v5' is possibly undefined
 // 8050330: using guessed type int camlPervasives__input_line_1241(void);
 // 80741FC: using guessed type int dword_80741FC;
 // 8074200: using guessed type int dword_8074200;
@@ -3283,59 +3571,64 @@ void __cdecl __noreturn sub_804BE02(int a1, int a2)
 //----- (0804BFD0) --------------------------------------------------------
 int __usercall camlUnix__get_port_1739@<eax>(int a1@<eax>, int a2@<ecx>)
 {
-  _DWORD *v4; // eax
-  _DWORD *v5; // ebx
+  int v4; // edx
+  int v5; // ecx
+  _DWORD *v6; // eax
+  _DWORD *v7; // ebx
   int result; // eax
-  char ***v7; // eax
-  char ***v8; // eax
-  char v9; // [esp+0h] [ebp-Ch]
+  char ***v9; // eax
+  char ***v10; // eax
+  char v11; // [esp+0h] [ebp-Ch]
 
   if ( caml_string_equal(*(_DWORD **)(a2 + 12), camlUnix__215) == 1 )
   {
-    v7 = (char ***)sub_804C110(a2);
-    if ( *v7 == &caml_exn_Failure )
+    v9 = (char ***)sub_804C110(a2);
+    if ( *v9 == &caml_exn_Failure )
     {
-      v8 = (char ***)sub_804C080();
-      if ( *v8 == &caml_exn_Not_found )
+      v10 = (char ***)sub_804C080();
+      if ( *v10 == &caml_exn_Not_found )
       {
-        result = 1;
+        return 1;
       }
       else
       {
-        caml_raise_exn((int)v8);
-        result = (int)sub_804C080();
+        caml_raise_exn((int)v10);
+        return (int)sub_804C080();
       }
     }
     else
     {
-      caml_raise_exn((int)v7);
-      result = (int)sub_804C110(a2);
+      caml_raise_exn((int)v9);
+      return (int)sub_804C110(a2);
     }
   }
   else
   {
     while ( 1 )
     {
-      v4 = (_DWORD *)(caml_young_ptr - 24);
-      caml_young_ptr = (int)v4;
-      if ( (unsigned int)v4 >= caml_young_limit )
+      v6 = (_DWORD *)(caml_young_ptr - 24);
+      caml_young_ptr = (int)v6;
+      if ( (unsigned int)v6 >= caml_young_limit )
         break;
-      caml_call_gc(v9);
+      caml_call_gc(v4, v5, v11);
     }
-    v5 = v4 + 1;
-    *v4 = 2048;
-    v4[1] = a1;
-    v4[2] = 1;
-    result = (int)(v4 + 4);
+    v7 = v6 + 1;
+    *v6 = 2048;
+    v6[1] = a1;
+    v6[2] = 1;
+    result = (int)(v6 + 4);
     *(_DWORD *)(result - 4) = 2048;
-    *(_DWORD *)result = v5;
+    *(_DWORD *)result = v7;
     *(_DWORD *)(result + 4) = 1;
   }
   return result;
 }
-// 804C187: variable 'v9' is possibly undefined
+// 804C187: variable 'v4' is possibly undefined
+// 804C187: variable 'v5' is possibly undefined
+// 804C187: variable 'v11' is possibly undefined
 // 80739CC: using guessed type char *caml_exn_Failure;
 // 8073A58: using guessed type char *caml_exn_Not_found;
+// 80753FC: using guessed type _DWORD camlUnix__215[129];
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -3343,36 +3636,38 @@ int __usercall camlUnix__get_port_1739@<eax>(int a1@<eax>, int a2@<ecx>)
 // positive sp value has been detected, the output may be wrong!
 _DWORD *sub_804C080()
 {
-  int v0; // ecx
-  _DWORD *v1; // eax
-  _DWORD *v2; // ebx
+  int v0; // edx
+  int i; // ecx
+  _DWORD *v2; // eax
+  _DWORD *v3; // ebx
   _DWORD *result; // eax
-  _DWORD v4[5]; // [esp-14h] [ebp-14h] BYREF
+  _DWORD v5[5]; // [esp-14h] [ebp-14h] BYREF
 
-  v4[0] = caml_exception_pointer;
-  caml_exception_pointer = (int)v4;
-  v0 = *(_DWORD *)(caml_c_call((int (*)(void))unix_getservbyname, *(_DWORD *)(v4[3] + 12)) + 8);
-  while ( 1 )
+  v5[0] = caml_exception_pointer;
+  caml_exception_pointer = (int)v5;
+  for ( i = *(_DWORD *)(caml_c_call((int (*)(void))unix_getservbyname, *(_DWORD *)(v5[3] + 12)) + 8);
+        ;
+        caml_call_gc(v0, i, v5[0]) )
   {
-    v1 = (_DWORD *)(caml_young_ptr - 24);
-    caml_young_ptr = (int)v1;
-    if ( (unsigned int)v1 >= caml_young_limit )
+    v2 = (_DWORD *)(caml_young_ptr - 24);
+    caml_young_ptr = (int)v2;
+    if ( (unsigned int)v2 >= caml_young_limit )
       break;
-    caml_call_gc(v4[0]);
   }
-  v2 = v1 + 1;
-  *v1 = 2048;
-  v1[1] = v4[4];
-  v1[2] = v0;
-  result = v1 + 4;
+  v3 = v2 + 1;
+  *v2 = 2048;
+  v2[1] = v5[4];
+  v2[2] = i;
+  result = v2 + 4;
   *(result - 1) = 2048;
-  *result = v2;
+  *result = v3;
   result[1] = 1;
-  caml_exception_pointer = v4[0];
+  caml_exception_pointer = v5[0];
   return result;
 }
 // 804C0F5: positive sp value 10 has been found
-// 804C0D3: variable 'v0' is possibly undefined
+// 804C0D3: variable 'i' is possibly undefined
+// 804C17D: variable 'v0' is possibly undefined
 // 807D280: using guessed type int caml_exception_pointer;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -3381,36 +3676,36 @@ _DWORD *sub_804C080()
 // positive sp value has been detected, the output may be wrong!
 _DWORD *__usercall sub_804C110@<eax>(int a1@<edi>)
 {
-  int v1; // ecx
-  _DWORD *v2; // eax
-  _DWORD *v3; // ebx
+  int v1; // edx
+  int i; // ecx
+  _DWORD *v3; // eax
+  _DWORD *v4; // ebx
   _DWORD *result; // eax
-  _DWORD v5[5]; // [esp-14h] [ebp-14h] BYREF
+  _DWORD v6[5]; // [esp-14h] [ebp-14h] BYREF
 
-  v5[0] = caml_exception_pointer;
-  caml_exception_pointer = (int)v5;
-  v1 = caml_c_call((int (*)(void))caml_int_of_string, *(_DWORD *)(a1 + 12));
-  while ( 1 )
+  v6[0] = caml_exception_pointer;
+  caml_exception_pointer = (int)v6;
+  for ( i = caml_c_call((int (*)(void))caml_int_of_string, *(_DWORD *)(a1 + 12)); ; caml_call_gc(v1, i, v6[0]) )
   {
-    v2 = (_DWORD *)(caml_young_ptr - 24);
-    caml_young_ptr = (int)v2;
-    if ( (unsigned int)v2 >= caml_young_limit )
+    v3 = (_DWORD *)(caml_young_ptr - 24);
+    caml_young_ptr = (int)v3;
+    if ( (unsigned int)v3 >= caml_young_limit )
       break;
-    caml_call_gc(v5[0]);
   }
-  v3 = v2 + 1;
-  *v2 = 2048;
-  v2[1] = v5[4];
-  v2[2] = v1;
-  result = v2 + 4;
+  v4 = v3 + 1;
+  *v3 = 2048;
+  v3[1] = v6[4];
+  v3[2] = i;
+  result = v3 + 4;
   *(result - 1) = 2048;
-  *result = v3;
+  *result = v4;
   result[1] = 1;
-  caml_exception_pointer = v5[0];
+  caml_exception_pointer = v6[0];
   return result;
 }
 // 804C175: positive sp value 10 has been found
-// 804C153: variable 'v1' is possibly undefined
+// 804C153: variable 'i' is possibly undefined
+// 804C176: variable 'v1' is possibly undefined
 // 807D280: using guessed type int caml_exception_pointer;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -4105,7 +4400,6 @@ int __usercall camlUnix__handle_unix_error_1171@<eax>(int (**a1)(void)@<eax>, in
   _DWORD *v2; // eax
   int v3; // ebx
   int v4; // ebx
-  int result; // eax
   int (**v6)(void); // edx
   int v7; // ecx
   char v8; // al
@@ -4123,7 +4417,7 @@ int __usercall camlUnix__handle_unix_error_1171@<eax>(int (**a1)(void)@<eax>, in
     if ( *(_DWORD *)(camlSys - 4) >> 9 <= 1u )
     {
       v8 = caml_ml_array_bound_error();
-      result = camlUnix__read_1237(v8, v9, v10, v3);
+      return camlUnix__read_1237(v8, v9, v10, v3);
     }
     else
     {
@@ -4141,15 +4435,14 @@ int __usercall camlUnix__handle_unix_error_1171@<eax>(int (**a1)(void)@<eax>, in
       camlPervasives__output_string_1191(dword_8076E54);
       caml_c_call((int (*)(void))unix_error_message, v11);
       camlPervasives__prerr_endline_1285();
-      result = camlPervasives__exit_1326(5);
+      return camlPervasives__exit_1326(5);
     }
   }
   else
   {
     caml_raise_exn((int)v2);
-    result = sub_804CB10(v7, v6);
+    return sub_804CB10(v7, v6);
   }
-  return result;
 }
 // 804CB0A: variable 'v7' is possibly undefined
 // 804CB0A: variable 'v6' is possibly undefined
@@ -4188,7 +4481,7 @@ int __usercall camlUnix__read_1237@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx
   }
   return caml_c_call((int (*)(void))unix_read, a1);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (0804CB90) --------------------------------------------------------
 int __usercall camlUnix__write_1242@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
@@ -4203,7 +4496,7 @@ int __usercall camlUnix__write_1242@<eax>(char a1@<al>, int a2@<edx>, int a3@<ec
   }
   return caml_c_call((int (*)(void))unix_write, a1);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (0804CBE0) --------------------------------------------------------
 int __usercall camlUnix__single_write_1247@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
@@ -4218,7 +4511,7 @@ int __usercall camlUnix__single_write_1247@<eax>(char a1@<al>, int a2@<edx>, int
   }
   return caml_c_call((int (*)(void))unix_single_write, a1);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (0804CC30) --------------------------------------------------------
 int __usercall camlUnix__fun_2804@<eax>(char a1@<al>)
@@ -4310,17 +4603,15 @@ int __usercall camlUnix__domain_of_sockaddr_1529@<eax>(_DWORD *a1@<eax>)
 {
   int v1; // ebx
   int v2; // eax
-  int result; // eax
 
   if ( !*((_BYTE *)a1 - 4) )
     return 1;
   v1 = *a1;
   v2 = 4 * (*(_DWORD *)(*a1 - 4) >> 10) - 1;
   if ( 2 * (v2 - *(unsigned __int8 *)(v1 + v2)) == 32 )
-    result = 5;
+    return 5;
   else
-    result = 3;
-  return result;
+    return 3;
 }
 
 //----- (0804CDA0) --------------------------------------------------------
@@ -4336,7 +4627,7 @@ int __usercall camlUnix__recv_1558@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx
   }
   return caml_c_call((int (*)(void))unix_recv, a1);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (0804CDF0) --------------------------------------------------------
 int __usercall camlUnix__recvfrom_1564@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
@@ -4351,7 +4642,7 @@ int __usercall camlUnix__recvfrom_1564@<eax>(char a1@<al>, int a2@<edx>, int a3@
   }
   return caml_c_call((int (*)(void))unix_recvfrom, a1);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (0804CE40) --------------------------------------------------------
 int __usercall camlUnix__send_1570@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
@@ -4366,7 +4657,7 @@ int __usercall camlUnix__send_1570@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx
   }
   return caml_c_call((int (*)(void))unix_send, a1);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (0804CE90) --------------------------------------------------------
 int __usercall camlUnix__sendto_1576@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
@@ -4381,7 +4672,7 @@ int __usercall camlUnix__sendto_1576@<eax>(char a1@<al>, int a2@<edx>, int a3@<e
   }
   return caml_c_call((int (*)(void))unix_sendto_native, a1);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (0804CEF0) --------------------------------------------------------
 int __usercall camlUnix__fun_2816@<eax>(char a1@<al>)
@@ -4450,112 +4741,123 @@ int camlUnix__getsockopt_error_1671()
 }
 
 //----- (0804D050) --------------------------------------------------------
-void __usercall camlUnix__getaddrinfo_emulation_756(_DWORD *a1@<eax>, _DWORD *a2@<ecx>, _DWORD *a3@<ebx>, int a4, int a5, char a6)
+void __usercall camlUnix__getaddrinfo_emulation_1730(
+        _DWORD *a1@<eax>,
+        _DWORD *a2@<ecx>,
+        _DWORD *a3@<ebx>,
+        int a4@<edx>,
+        int a5,
+        int a6,
+        char a7)
 {
-  int v6; // ebx
-  _DWORD *v7; // eax
-  void (*v8)(void); // edi
-  void (*v9)(void); // esi
-  void (*v10)(void); // edx
-  void (**v11)(void); // eax
-  _DWORD *v12; // eax
-  int v13; // ecx
-  int *v14; // eax
-  int v15; // ebx
-  _DWORD *v16; // eax
+  _DWORD *v8; // eax
+  void (*v9)(void); // edi
+  void (*v10)(void); // esi
+  void (*v11)(void); // edx
+  void (**v12)(void); // eax
+  int v13; // edx
+  int v14; // ecx
+  _DWORD *v15; // eax
+  int v16; // ecx
   int *v17; // eax
-  _DWORD *v18; // eax
-  _DWORD *v19; // eax
-  char ***v20; // eax
-  char **v21; // ebx
-  char ***v22; // eax
-  int v24; // [esp+0h] [ebp-14h]
-  int v25; // [esp+0h] [ebp-14h]
-  int **v26; // [esp+4h] [ebp-10h]
-  char v27; // [esp+8h] [ebp-Ch]
+  int v18; // ebx
+  int v19; // edx
+  int v20; // ecx
+  _DWORD *v21; // eax
+  int *v22; // eax
+  int v23; // edx
+  int v24; // ecx
+  _DWORD *v25; // eax
+  _DWORD *v26; // eax
+  int *v27; // eax
+  char **v28; // ebx
+  char ***v29; // eax
+  _DWORD *i; // [esp+0h] [ebp-14h]
+  int *v31; // [esp+0h] [ebp-14h]
+  int v32; // [esp+0h] [ebp-14h]
+  int **port_1739; // [esp+4h] [ebp-10h]
+  char v34; // [esp+8h] [ebp-Ch]
 
-  v6 = (int)a2;
+  for ( i = a3; ; caml_call_gc(a4, (int)a2, (char)i) )
+  {
+    v8 = (_DWORD *)(caml_young_ptr - 48);
+    caml_young_ptr = (int)v8;
+    if ( (unsigned int)v8 >= caml_young_limit )
+      break;
+  }
+  v9 = (void (*)(void))(v8 + 1);
+  port_1739 = (int **)(v8 + 1);
+  *v8 = 1024;
+  v8[1] = 1;
+  v10 = (void (*)(void))(v8 + 3);
+  v34 = (_BYTE)v8 + 12;
+  v8[2] = 1024;
+  v8[3] = 1;
+  v11 = (void (*)(void))(v8 + 5);
+  v8[4] = 1024;
+  v8[5] = 1;
+  v12 = (void (**)(void))(v8 + 7);
+  *(v12 - 1) = (void (*)(void))5367;
+  *v12 = (void (*)(void))camlUnix__fun_2828;
+  v12[1] = (void (*)(void))3;
+  v12[2] = v9;
+  v12[3] = v10;
+  v12[4] = v11;
+  camlList__iter_1074(v12, (int)a2);
   while ( 1 )
   {
-    v7 = (_DWORD *)(caml_young_ptr - 48);
-    caml_young_ptr = (int)v7;
-    if ( (unsigned int)v7 >= caml_young_limit )
+    v15 = (_DWORD *)(caml_young_ptr - 20);
+    caml_young_ptr = (int)v15;
+    if ( (unsigned int)v15 >= caml_young_limit )
       break;
-    caml_call_gc((char)a3);
+    caml_call_gc(v13, v14, (char)i);
   }
-  v8 = (void (*)(void))(v7 + 1);
-  v26 = (int **)(v7 + 1);
-  *v7 = 1024;
-  v7[1] = 1;
-  v9 = (void (*)(void))(v7 + 3);
-  v27 = (_BYTE)v7 + 12;
-  v7[2] = 1024;
-  v7[3] = 1;
-  v10 = (void (*)(void))(v7 + 5);
-  v7[4] = 1024;
-  v7[5] = 1;
-  v11 = (void (**)(void))(v7 + 7);
-  *(v11 - 1) = (void (*)(void))5367;
-  *v11 = (void (*)(void))camlUnix__fun_2828;
-  v11[1] = (void (*)(void))3;
-  v11[2] = v8;
-  v11[3] = v9;
-  v11[4] = v10;
-  camlList__iter_1074(v11, v6);
-  while ( 1 )
+  v16 = (int)(v15 + 1);
+  *v15 = 4343;
+  v15[1] = caml_curry2;
+  v15[2] = 5;
+  v15[3] = camlUnix__get_port_1739;
+  v15[4] = i;
+  v17 = *port_1739;
+  if ( *port_1739 == (int *)1 )
   {
-    v12 = (_DWORD *)(caml_young_ptr - 20);
-    caml_young_ptr = (int)v12;
-    if ( (unsigned int)v12 >= caml_young_limit )
-      break;
-    caml_call_gc((char)a3);
-  }
-  v13 = (int)(v12 + 1);
-  *v12 = 4343;
-  v12[1] = caml_curry2;
-  v12[2] = 5;
-  v12[3] = camlUnix__get_port_1739;
-  v12[4] = a3;
-  v14 = *v26;
-  if ( *v26 == (int *)1 )
-  {
-    v25 = v13;
-    v26 = (int **)camlUnix__get_port_1739(3, v13);
-    v17 = (int *)camlUnix__get_port_1739(1, v25);
-    v24 = (int)camlPervasives___40_1143(v17, (int)v26);
+    v32 = v16;
+    port_1739 = (int **)camlUnix__get_port_1739(3, v16);
+    v22 = (int *)camlUnix__get_port_1739(1, v32);
+    v31 = camlPervasives___40_1143(v22, (int)port_1739);
   }
   else
   {
-    v15 = *v14;
-    if ( *v14 == 3 )
+    v18 = *v17;
+    if ( *v17 == 3 )
     {
-      v24 = camlUnix__get_port_1739(3, v13);
+      v31 = (int *)camlUnix__get_port_1739(3, v16);
     }
-    else if ( v15 == 1 )
+    else if ( v18 == 1 )
     {
-      v24 = camlUnix__get_port_1739(1, v13);
+      v31 = (int *)camlUnix__get_port_1739(1, v16);
     }
-    else if ( caml_string_equal(a3, camlUnix__202) == 1 )
+    else if ( caml_string_equal(i, camlUnix__202) == 1 )
     {
-      v24 = 1;
+      v31 = (int *)1;
     }
     else
     {
       while ( 1 )
       {
-        v16 = (_DWORD *)(caml_young_ptr - 24);
-        caml_young_ptr = (int)v16;
-        if ( (unsigned int)v16 >= caml_young_limit )
+        v21 = (_DWORD *)(caml_young_ptr - 24);
+        caml_young_ptr = (int)v21;
+        if ( (unsigned int)v21 >= caml_young_limit )
           break;
-        caml_call_gc((char)a3);
+        caml_call_gc(v19, v20, (char)i);
       }
-      *v16 = 2048;
-      v16[1] = v15;
-      v16[2] = 1;
-      v24 = (int)(v16 + 4);
-      v16[3] = 2048;
-      v16[4] = v16 + 1;
-      v16[5] = 1;
+      *v21 = 2048;
+      v21[1] = v18;
+      v21[2] = 1;
+      v31 = v21 + 4;
+      v21[3] = 2048;
+      v21[4] = v21 + 1;
+      v21[5] = 1;
     }
   }
   if ( caml_string_equal(a1, camlUnix__197) != 1 )
@@ -4564,65 +4866,75 @@ void __usercall camlUnix__getaddrinfo_emulation_756(_DWORD *a1@<eax>, _DWORD *a2
     {
       while ( 1 )
       {
-        v19 = (_DWORD *)(caml_young_ptr - 24);
-        caml_young_ptr = (int)v19;
-        if ( (unsigned int)v19 >= caml_young_limit )
+        v26 = (_DWORD *)(caml_young_ptr - 24);
+        caml_young_ptr = (int)v26;
+        if ( (unsigned int)v26 >= caml_young_limit )
           break;
-        caml_call_gc(v24);
+        caml_call_gc(v23, v24, (char)v31);
       }
-      *v19 = 2048;
-      v19[1] = dword_80747C0;
-      v19[2] = camlUnix__195;
-      v19[3] = 2048;
-      v19[4] = v19 + 1;
-      v19[5] = 1;
+      *v26 = 2048;
+      v26[1] = dword_80747C0;
+      v26[2] = camlUnix__195;
+      v26[3] = 2048;
+      v26[4] = v26 + 1;
+      v26[5] = 1;
     }
     else
     {
       while ( 1 )
       {
-        v18 = (_DWORD *)(caml_young_ptr - 24);
-        caml_young_ptr = (int)v18;
-        if ( (unsigned int)v18 >= caml_young_limit )
+        v25 = (_DWORD *)(caml_young_ptr - 24);
+        caml_young_ptr = (int)v25;
+        if ( (unsigned int)v25 >= caml_young_limit )
           break;
-        caml_call_gc(v24);
+        caml_call_gc(v23, v24, (char)v31);
       }
-      *v18 = 2048;
-      v18[1] = dword_80747BC;
-      v18[2] = camlUnix__196;
-      v18[3] = 2048;
-      v18[4] = v18 + 1;
-      v18[5] = 1;
+      *v25 = 2048;
+      v25[1] = dword_80747BC;
+      v25[2] = camlUnix__196;
+      v25[3] = 2048;
+      v25[4] = v25 + 1;
+      v25[5] = 1;
     }
 LABEL_30:
     JUMPOUT(0x804D424);
   }
-  v20 = (char ***)sub_804D3C0((char)a1);
-  v21 = *v20;
-  if ( *v20 == &caml_exn_Failure )
+  v27 = sub_804D3C0((char)a1);
+  v28 = (char **)*v27;
+  if ( (char **)*v27 == &caml_exn_Failure )
   {
-    sub_804D330(v24, (int)v26, v27);
-    if ( *v22 == &caml_exn_Not_found )
+    sub_804D330((int)v31, (int)port_1739, v34);
+    if ( *v29 == &caml_exn_Not_found )
       goto LABEL_30;
-    caml_raise_exn((int)v22);
-    sub_804D330(a4, a5, a6);
+    caml_raise_exn((int)v29);
+    sub_804D330(a5, a6, a7);
   }
   else
   {
-    caml_raise_exn((int)v20);
-    sub_804D3C0((char)v21);
+    caml_raise_exn((int)v27);
+    sub_804D3C0((char)v28);
   }
 }
 // 804D286: control flows out of bounds to 804D424
-// 804D110: variable 'a3' is possibly undefined
-// 804D302: variable 'v22' is possibly undefined
+// 804D110: variable 'i' is possibly undefined
+// 804D302: variable 'v29' is possibly undefined
+// 804D48C: variable 'v23' is possibly undefined
 // 804D48C: variable 'v24' is possibly undefined
+// 804D48C: variable 'v31' is possibly undefined
+// 804D4A0: variable 'v19' is possibly undefined
+// 804D4A0: variable 'v20' is possibly undefined
+// 804D4AA: variable 'v13' is possibly undefined
+// 804D4AA: variable 'v14' is possibly undefined
+// 804D4B4: variable 'a4' is possibly undefined
+// 804D4B4: variable 'a2' is possibly undefined
 // 804B370: using guessed type _DWORD caml_curry2();
 // 804BF50: using guessed type _DWORD camlUnix__fun_2828();
 // 80739CC: using guessed type char *caml_exn_Failure;
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 80747BC: using guessed type int dword_80747BC;
 // 80747C0: using guessed type int dword_80747C0;
+// 807531C: using guessed type _DWORD camlUnix__197[2];
+// 8075344: using guessed type _DWORD camlUnix__202[2];
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -4630,35 +4942,39 @@ LABEL_30:
 // positive sp value has been detected, the output may be wrong!
 void __cdecl sub_804D330(int a1, int a2, char a3)
 {
-  int v3; // ebx
-  unsigned int v4; // eax
-  unsigned int v5; // eax
-  int v6; // [esp-8h] [ebp-8h] BYREF
-  int v7; // [esp+4h] [ebp+4h]
+  int v3; // edx
+  int v4; // ecx
+  int v5; // ebx
+  unsigned int v6; // eax
+  unsigned int v7; // eax
+  int v8; // [esp-8h] [ebp-8h] BYREF
+  int v9; // [esp+4h] [ebp+4h]
 
-  v6 = caml_exception_pointer;
-  caml_exception_pointer = (int)&v6;
-  v7 = caml_c_call((int (*)(void))unix_gethostbyname, a3);
-  v3 = camlArray__to_list_1121();
+  v8 = caml_exception_pointer;
+  caml_exception_pointer = (int)&v8;
+  v9 = caml_c_call((int (*)(void))unix_gethostbyname, a3);
+  v5 = camlArray__to_list_1121();
   while ( 1 )
   {
-    v4 = caml_young_ptr - 16;
-    caml_young_ptr = v4;
-    if ( v4 >= caml_young_limit )
+    v6 = caml_young_ptr - 16;
+    caml_young_ptr = v6;
+    if ( v6 >= caml_young_limit )
       break;
-    caml_call_gc(v6);
+    caml_call_gc(v3, v4, v8);
   }
-  v5 = v4 + 4;
-  *(_DWORD *)(v5 - 4) = 3319;
-  *(_DWORD *)v5 = camlUnix__fun_2833;
-  *(_DWORD *)(v5 + 4) = 3;
-  *(_DWORD *)(v5 + 8) = v7;
-  camlList__map_1062((int (**)(void))v5, v3);
-  caml_exception_pointer = v6;
+  v7 = v6 + 4;
+  *(_DWORD *)(v7 - 4) = 3319;
+  *(_DWORD *)v7 = camlUnix__fun_2833;
+  *(_DWORD *)(v7 + 4) = 3;
+  *(_DWORD *)(v7 + 8) = v9;
+  camlList__map_1062((int (**)(void))v7, v5);
+  caml_exception_pointer = v8;
   JUMPOUT(0x804D424);
 }
 // 804D3A3: positive sp value 4 has been found
 // 804D3A3: control flows out of bounds to 804D424
+// 804D482: variable 'v3' is possibly undefined
+// 804D482: variable 'v4' is possibly undefined
 // 804C1A0: using guessed type _DWORD camlUnix__fun_2833();
 // 8052F80: using guessed type _DWORD camlArray__to_list_1121();
 // 807D280: using guessed type int caml_exception_pointer;
@@ -4667,112 +4983,124 @@ void __cdecl sub_804D330(int a1, int a2, char a3)
 
 //----- (0804D3C0) --------------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
-int __usercall sub_804D3C0@<eax>(char a1@<bl>)
+int *__usercall sub_804D3C0@<eax>(char a1@<bl>)
 {
-  int v1; // ecx
-  _DWORD *v2; // eax
-  _DWORD *v3; // ecx
-  unsigned int v4; // eax
+  int v1; // edx
+  int i; // ecx
+  _DWORD *v3; // eax
+  int v4; // ecx
   unsigned int v5; // eax
-  int **v6; // eax
-  int v8; // [esp-1Ch] [ebp-1Ch] BYREF
-  int v9; // [esp-14h] [ebp-14h]
-  int v10; // [esp-Ch] [ebp-Ch]
-  int v11; // [esp-8h] [ebp-8h]
+  unsigned int v6; // eax
+  int **v7; // eax
+  int v9; // [esp-1Ch] [ebp-1Ch] BYREF
+  int v10; // [esp-14h] [ebp-14h]
+  int v11; // [esp-Ch] [ebp-Ch]
+  int v12; // [esp-8h] [ebp-8h]
 
-  v8 = caml_exception_pointer;
-  caml_exception_pointer = (int)&v8;
-  v1 = caml_c_call((int (*)(void))unix_inet_addr_of_string, a1);
+  v9 = caml_exception_pointer;
+  caml_exception_pointer = (int)&v9;
+  for ( i = caml_c_call((int (*)(void))unix_inet_addr_of_string, a1); ; caml_call_gc(v1, i, v9) )
+  {
+    v3 = (_DWORD *)(caml_young_ptr - 24);
+    caml_young_ptr = (int)v3;
+    if ( (unsigned int)v3 >= caml_young_limit )
+      break;
+  }
+  *v3 = 2048;
+  v3[1] = i;
+  v3[2] = v12;
+  v4 = (int)(v3 + 4);
+  v3[3] = 2048;
+  v3[4] = v3 + 1;
+  v3[5] = 1;
+  caml_exception_pointer = v9;
   while ( 1 )
   {
-    v2 = (_DWORD *)(caml_young_ptr - 24);
-    caml_young_ptr = (int)v2;
-    if ( (unsigned int)v2 >= caml_young_limit )
+    v5 = caml_young_ptr - 24;
+    caml_young_ptr = v5;
+    if ( v5 >= caml_young_limit )
       break;
-    caml_call_gc(v8);
+    caml_call_gc(v1, v4, v10);
   }
-  *v2 = 2048;
-  v2[1] = v1;
-  v2[2] = v11;
-  v3 = v2 + 4;
-  v2[3] = 2048;
-  v2[4] = v2 + 1;
-  v2[5] = 1;
-  caml_exception_pointer = v8;
-  while ( 1 )
-  {
-    v4 = caml_young_ptr - 24;
-    caml_young_ptr = v4;
-    if ( v4 >= caml_young_limit )
-      break;
-    caml_call_gc(v9);
-  }
-  v5 = v4 + 4;
-  *(_DWORD *)(v5 - 4) = 5367;
-  *(_DWORD *)v5 = caml_tuplify2;
-  *(_DWORD *)(v5 + 4) = -3;
-  *(_DWORD *)(v5 + 8) = camlUnix__fun_2836;
-  *(_DWORD *)(v5 + 12) = v10;
-  *(_DWORD *)(v5 + 16) = v3;
-  v6 = (int **)camlList__map_1062((int (**)(void))v5, v9);
-  return camlList__flatten_1058(v6);
+  v6 = v5 + 4;
+  *(_DWORD *)(v6 - 4) = 5367;
+  *(_DWORD *)v6 = caml_tuplify2;
+  *(_DWORD *)(v6 + 4) = -3;
+  *(_DWORD *)(v6 + 8) = camlUnix__fun_2836;
+  *(_DWORD *)(v6 + 12) = v11;
+  *(_DWORD *)(v6 + 16) = v4;
+  v7 = (int **)camlList__map_1062((int (**)(void))v6, v10);
+  return camlList__flatten_1058(v7);
 }
 // 804D46C: positive sp value 18 has been found
-// 804D3FF: variable 'v1' is possibly undefined
-// 804D45E: variable 'v3' is possibly undefined
+// 804D3FF: variable 'i' is possibly undefined
+// 804D45E: variable 'v4' is possibly undefined
+// 804D471: variable 'v1' is possibly undefined
 // 804C1E0: using guessed type _DWORD camlUnix__fun_2836();
 // 807D280: using guessed type int caml_exception_pointer;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (0804D4C0) --------------------------------------------------------
-void __usercall camlUnix__getaddrinfo_1751(_DWORD *a1@<eax>, _DWORD *a2@<ecx>, _DWORD *a3@<ebx>, int a4, int a5, char a6)
+void __usercall camlUnix__getaddrinfo_1751(
+        _DWORD *a1@<eax>,
+        _DWORD *a2@<ecx>,
+        _DWORD *a3@<ebx>,
+        int a4,
+        int a5,
+        char a6)
 {
   char ***v6; // eax
-  char v7; // al
+  int v7; // edx
+  char v8; // al
 
   v6 = (char ***)sub_804D510((char)a1);
   if ( *v6 == &caml_exn_Invalid_argument )
   {
-    camlUnix__getaddrinfo_emulation_756(a1, a2, a3, a4, a5, a6);
+    camlUnix__getaddrinfo_emulation_1730(a1, a2, a3, v7, a4, a5, a6);
   }
   else
   {
-    v7 = caml_raise_exn((int)v6);
-    sub_804D510(v7);
+    v8 = caml_raise_exn((int)v6);
+    sub_804D510(v8);
   }
 }
+// 804D4EC: variable 'v7' is possibly undefined
 // 80739E8: using guessed type char *caml_exn_Invalid_argument;
 
 //----- (0804D510) --------------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
 int __usercall sub_804D510@<eax>(char a1@<al>)
 {
+  int v1; // ecx
   int result; // eax
-  int v2; // [esp-14h] [ebp-14h] BYREF
+  int v3; // [esp-14h] [ebp-14h] BYREF
 
-  v2 = caml_exception_pointer;
-  caml_exception_pointer = (int)&v2;
+  v3 = caml_exception_pointer;
+  caml_exception_pointer = (int)&v3;
   caml_c_call((int (*)(void))unix_getaddrinfo, a1);
-  result = camlList__rev_append_1051();
-  caml_exception_pointer = v2;
+  result = camlList__rev_append_1051(v1);
+  caml_exception_pointer = v3;
   return result;
 }
 // 804D542: positive sp value 10 has been found
-// 80549C0: using guessed type int camlList__rev_append_1051(void);
+// 804D531: variable 'v1' is possibly undefined
+// 80549C0: using guessed type int __fastcall camlList__rev_append_1051(_DWORD);
 // 807D280: using guessed type int caml_exception_pointer;
 
 //----- (0804D550) --------------------------------------------------------
 void __usercall camlUnix__getnameinfo_emulation_1772(_DWORD *a1@<eax>, _DWORD *a2@<ebx>)
 {
   char ***v2; // eax
-  unsigned int v3; // eax
-  _DWORD *v4; // eax
-  int v5; // [esp+0h] [ebp-Ch]
+  int v3; // edx
+  int v4; // ecx
+  unsigned int v5; // eax
+  _DWORD *v6; // eax
+  int v7; // [esp+0h] [ebp-Ch]
 
   if ( *((_BYTE *)a1 - 4) )
   {
-    v5 = *a1;
+    v7 = *a1;
     v2 = (char ***)sub_804D600(a2);
     if ( *v2 == &caml_exn_Not_found )
     {
@@ -4780,18 +5108,18 @@ void __usercall camlUnix__getnameinfo_emulation_1772(_DWORD *a1@<eax>, _DWORD *a
       {
         while ( 1 )
         {
-          v3 = caml_young_ptr - 8;
-          caml_young_ptr = v3;
-          if ( v3 >= caml_young_limit )
+          v5 = caml_young_ptr - 8;
+          caml_young_ptr = v5;
+          if ( v5 >= caml_young_limit )
             break;
-          caml_call_gc(v5);
+          caml_call_gc(v3, v4, v7);
         }
-        v4 = (_DWORD *)(v3 + 4);
-        *(v4 - 1) = 1024;
-        *v4 = &caml_exn_Not_found;
-        caml_raise_exn((int)v4);
+        v6 = (_DWORD *)(v5 + 4);
+        *(v6 - 1) = 1024;
+        *v6 = &caml_exn_Not_found;
+        caml_raise_exn((int)v6);
       }
-      caml_c_call((int (*)(void))unix_string_of_inet_addr, v5);
+      caml_c_call((int (*)(void))unix_string_of_inet_addr, v7);
     }
     else
     {
@@ -4803,7 +5131,9 @@ void __usercall camlUnix__getnameinfo_emulation_1772(_DWORD *a1@<eax>, _DWORD *a
 }
 // 804D5F3: control flows out of bounds to 804D671
 // 804D559: control flows out of bounds to 804D770
-// 804D5C9: variable 'v5' is possibly undefined
+// 804D5C9: variable 'v7' is possibly undefined
+// 804D7C0: variable 'v3' is possibly undefined
+// 804D7C0: variable 'v4' is possibly undefined
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -4812,42 +5142,46 @@ void __usercall camlUnix__getnameinfo_emulation_1772(_DWORD *a1@<eax>, _DWORD *a
 // positive sp value has been detected, the output may be wrong!
 _DWORD *__usercall sub_804D600@<eax>(_DWORD *a1@<ebx>)
 {
-  unsigned int v1; // eax
-  _DWORD *v2; // eax
-  char ***v3; // eax
-  int v5; // [esp-8h] [ebp-8h] BYREF
+  int v1; // edx
+  int v2; // ecx
+  unsigned int v3; // eax
+  _DWORD *v4; // eax
+  char ***v5; // eax
+  int v7; // [esp-8h] [ebp-8h] BYREF
   void *retaddr; // [esp+0h] [ebp+0h]
 
-  v5 = caml_exception_pointer;
-  caml_exception_pointer = (int)&v5;
+  v7 = caml_exception_pointer;
+  caml_exception_pointer = (int)&v7;
   if ( camlList__mem_1161(3, a1) != 1 )
   {
     while ( 1 )
     {
-      v1 = caml_young_ptr - 8;
-      caml_young_ptr = v1;
-      if ( v1 >= caml_young_limit )
+      v3 = caml_young_ptr - 8;
+      caml_young_ptr = v3;
+      if ( v3 >= caml_young_limit )
         break;
-      caml_call_gc(v5);
+      caml_call_gc(v1, v2, v7);
     }
-    v2 = (_DWORD *)(v1 + 4);
-    *(v2 - 1) = 1024;
-    *v2 = &caml_exn_Not_found;
-    caml_raise_exn((int)v2);
+    v4 = (_DWORD *)(v3 + 4);
+    *(v4 - 1) = 1024;
+    *v4 = &caml_exn_Not_found;
+    caml_raise_exn((int)v4);
   }
   retaddr = *(void **)caml_c_call((int (*)(void))unix_gethostbyaddr, (char)retaddr);
-  caml_exception_pointer = v5;
-  v3 = (char ***)sub_804D6B0();
-  if ( *v3 == &caml_exn_Not_found )
+  caml_exception_pointer = v7;
+  v5 = (char ***)sub_804D6B0();
+  if ( *v5 == &caml_exn_Not_found )
   {
     camlPervasives__string_of_int_1130();
     JUMPOUT(0x804D743);
   }
-  caml_raise_exn((int)v3);
+  caml_raise_exn((int)v5);
   return sub_804D6B0();
 }
 // 804D671: positive sp value 4 has been found
 // 804D68C: control flows out of bounds to 804D743
+// 804D7B6: variable 'v1' is possibly undefined
+// 804D7B6: variable 'v2' is possibly undefined
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 807D280: using guessed type int caml_exception_pointer;
 // 8080414: using guessed type int caml_young_ptr;
@@ -4857,53 +5191,59 @@ _DWORD *__usercall sub_804D600@<eax>(_DWORD *a1@<ebx>)
 // positive sp value has been detected, the output may be wrong!
 _DWORD *sub_804D6B0()
 {
-  unsigned int v0; // eax
-  _DWORD *v1; // eax
-  int v2; // ecx
-  unsigned int v3; // eax
+  int v0; // edx
+  int v1; // ecx
+  unsigned int v2; // eax
+  _DWORD *v3; // eax
+  int v4; // edx
+  int v5; // ecx
+  unsigned int v6; // eax
   _DWORD *result; // eax
-  int v5; // [esp-14h] [ebp-14h] BYREF
-  int v6; // [esp-Ch] [ebp-Ch]
-  char v7; // [esp-8h] [ebp-8h]
-  _DWORD *v8; // [esp-4h] [ebp-4h]
+  int v8; // [esp-14h] [ebp-14h] BYREF
+  int v9; // [esp-Ch] [ebp-Ch]
+  char v10; // [esp-8h] [ebp-8h]
+  _DWORD *v11; // [esp-4h] [ebp-4h]
 
-  v5 = caml_exception_pointer;
-  caml_exception_pointer = (int)&v5;
-  if ( camlList__mem_1161(7, v8) != 1 )
+  v8 = caml_exception_pointer;
+  caml_exception_pointer = (int)&v8;
+  if ( camlList__mem_1161(7, v11) != 1 )
   {
     while ( 1 )
     {
-      v0 = caml_young_ptr - 8;
-      caml_young_ptr = v0;
-      if ( v0 >= caml_young_limit )
+      v2 = caml_young_ptr - 8;
+      caml_young_ptr = v2;
+      if ( v2 >= caml_young_limit )
         break;
-      caml_call_gc(v5);
+      caml_call_gc(v0, v1, v8);
     }
-    v1 = (_DWORD *)(v0 + 4);
-    *(v1 - 1) = 1024;
-    *v1 = &caml_exn_Not_found;
-    caml_raise_exn((int)v1);
+    v3 = (_DWORD *)(v2 + 4);
+    *(v3 - 1) = 1024;
+    *v3 = &caml_exn_Not_found;
+    caml_raise_exn((int)v3);
   }
-  camlList__mem_1161(9, v8);
-  v2 = *(_DWORD *)caml_c_call((int (*)(void))unix_getservbyport, v7);
-  caml_exception_pointer = v5;
+  camlList__mem_1161(9, v11);
+  v5 = *(_DWORD *)caml_c_call((int (*)(void))unix_getservbyport, v10);
+  caml_exception_pointer = v8;
   while ( 1 )
   {
-    v3 = caml_young_ptr - 12;
-    caml_young_ptr = v3;
-    if ( v3 >= caml_young_limit )
+    v6 = caml_young_ptr - 12;
+    caml_young_ptr = v6;
+    if ( v6 >= caml_young_limit )
       break;
-    caml_call_gc(v6);
+    caml_call_gc(v4, v5, v9);
   }
-  result = (_DWORD *)(v3 + 4);
+  result = (_DWORD *)(v6 + 4);
   *(result - 1) = 2048;
-  *result = v6;
-  result[1] = v2;
+  *result = v9;
+  result[1] = v5;
   return result;
 }
 // 804D76D: positive sp value 10 has been found
 // 804D6B0: could not find valid save-restore pair for ebx
-// 804D767: variable 'v2' is possibly undefined
+// 804D767: variable 'v5' is possibly undefined
+// 804D7A5: variable 'v4' is possibly undefined
+// 804D7AC: variable 'v0' is possibly undefined
+// 804D7AC: variable 'v1' is possibly undefined
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 807D280: using guessed type int caml_exception_pointer;
 // 8080414: using guessed type int caml_young_ptr;
@@ -4947,39 +5287,46 @@ int __usercall sub_804D810@<eax>(char a1@<al>)
 //----- (0804D840) --------------------------------------------------------
 int camlUnix__system_1891()
 {
+  int v0; // edx
+  int v1; // ecx
+
   if ( caml_c_call(unix_fork, 1) != 1 )
     return *(_DWORD *)(caml_c_call((int (*)(void))unix_waitpid, 1) + 4);
-  sub_804D8A0();
+  sub_804D8A0(v1, v0);
   return camlPervasives__exit_1326(255);
 }
+// 804D880: variable 'v1' is possibly undefined
+// 804D880: variable 'v0' is possibly undefined
 
 //----- (0804D8A0) --------------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
-int sub_804D8A0()
+int __fastcall sub_804D8A0(int a1, int a2)
 {
-  _DWORD *v0; // eax
+  _DWORD *v2; // eax
   int result; // eax
-  _DWORD v2[3]; // [esp-Ch] [ebp-Ch] BYREF
+  _DWORD v4[3]; // [esp-Ch] [ebp-Ch] BYREF
 
-  v2[0] = caml_exception_pointer;
-  caml_exception_pointer = (int)v2;
+  v4[0] = caml_exception_pointer;
+  caml_exception_pointer = (int)v4;
   while ( 1 )
   {
-    v0 = (_DWORD *)(caml_young_ptr - 16);
-    caml_young_ptr = (int)v0;
-    if ( (unsigned int)v0 >= caml_young_limit )
+    v2 = (_DWORD *)(caml_young_ptr - 16);
+    caml_young_ptr = (int)v2;
+    if ( (unsigned int)v2 >= caml_young_limit )
       break;
-    caml_call_gc(v2[0]);
+    caml_call_gc(a2, a1, v4[0]);
   }
-  *v0 = 3072;
-  v0[1] = camlUnix__190;
-  v0[2] = &camlUnix__191;
-  v0[3] = v2[2];
+  *v2 = 3072;
+  v2[1] = camlUnix__190;
+  v2[2] = &camlUnix__191;
+  v2[3] = v4[2];
   result = caml_c_call((int (*)(void))unix_execv, (char)camlUnix__189);
-  caml_exception_pointer = v2[0];
+  caml_exception_pointer = v4[0];
   return result;
 }
 // 804D8FE: positive sp value 8 has been found
+// 804D8FF: variable 'a2' is possibly undefined
+// 804D8FF: variable 'a1' is possibly undefined
 // 807D280: using guessed type int caml_exception_pointer;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -4988,16 +5335,16 @@ int sub_804D8A0()
 int __usercall camlUnix__safe_dup_1894@<eax>(char a1@<al>)
 {
   int result; // eax
-  int v2; // [esp+0h] [ebp-8h]
-  char v3; // [esp+4h] [ebp-4h]
+  int v3; // [esp+0h] [ebp-8h]
+  char v4; // [esp+4h] [ebp-4h]
 
   result = caml_c_call((int (*)(void))unix_dup, a1);
   if ( result < 7 )
   {
-    v3 = result;
-    v2 = camlUnix__safe_dup_1894();
-    caml_c_call((int (*)(void))unix_close, v3);
-    result = v2;
+    v4 = result;
+    v3 = camlUnix__safe_dup_1894(a1);
+    caml_c_call((int (*)(void))unix_close, v4);
+    return v3;
   }
   return result;
 }
@@ -5062,7 +5409,7 @@ int camlUnix__create_process_1907()
   if ( result == 1 )
   {
     sub_804DAE0();
-    result = camlPervasives__exit_1326(255);
+    return camlPervasives__exit_1326(255);
   }
   return result;
 }
@@ -5097,7 +5444,7 @@ int camlUnix__create_process_env_1914()
   if ( result == 1 )
   {
     sub_804DB90();
-    result = camlPervasives__exit_1326(255);
+    return camlPervasives__exit_1326(255);
   }
   return result;
 }
@@ -5126,13 +5473,14 @@ int sub_804DB90()
 //----- (0804DBE0) --------------------------------------------------------
 int __usercall camlUnix__open_proc_1949@<eax>(int a1@<edx>, int a2@<ecx>, unsigned int a3@<ebx>, int a4@<esi>)
 {
-  int v4; // ecx
-  int v6; // [esp+0h] [ebp-18h]
+  int v4; // edx
+  int v5; // ecx
+  int v7; // [esp+0h] [ebp-18h]
 
-  v6 = camlList__for_all_1137((int (**)(void))dword_8074874, a4);
-  v4 = caml_c_call(unix_fork, 1);
-  if ( v4 != 1 )
-    return camlHashtbl__add_1074((_DWORD *)dword_8074894, v4, a3);
+  v7 = camlList__for_all_1137((int (**)(void))dword_8074874, a4);
+  v5 = caml_c_call(unix_fork, 1);
+  if ( v5 != 1 )
+    return camlHashtbl__add_1074((_DWORD *)dword_8074894, v5, a3);
   if ( a2 != 1 )
   {
     caml_c_call((int (*)(void))unix_dup2, a2);
@@ -5143,42 +5491,46 @@ int __usercall camlUnix__open_proc_1949@<eax>(int a1@<edx>, int a2@<ecx>, unsign
     caml_c_call((int (*)(void))unix_dup2, a1);
     caml_c_call((int (*)(void))unix_close, a1);
   }
-  if ( v6 == 1 )
+  if ( v7 == 1 )
     camlList__iter_1074((void (**)(void))&camlUnix__188, a4);
-  sub_804DCC0();
+  sub_804DCC0(v5, v4);
   return camlPervasives__exit_1326(255);
 }
+// 804DCA4: variable 'v5' is possibly undefined
+// 804DCA4: variable 'v4' is possibly undefined
 // 8074874: using guessed type int dword_8074874;
 // 8074894: using guessed type int dword_8074894;
 // 80751B0: using guessed type int (*camlUnix__188)();
 
 //----- (0804DCC0) --------------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
-int sub_804DCC0()
+int __fastcall sub_804DCC0(int a1, int a2)
 {
-  _DWORD *v0; // eax
+  _DWORD *v2; // eax
   int result; // eax
-  _DWORD v2[8]; // [esp-20h] [ebp-20h] BYREF
+  _DWORD v4[8]; // [esp-20h] [ebp-20h] BYREF
 
-  v2[0] = caml_exception_pointer;
-  caml_exception_pointer = (int)v2;
+  v4[0] = caml_exception_pointer;
+  caml_exception_pointer = (int)v4;
   while ( 1 )
   {
-    v0 = (_DWORD *)(caml_young_ptr - 16);
-    caml_young_ptr = (int)v0;
-    if ( (unsigned int)v0 >= caml_young_limit )
+    v2 = (_DWORD *)(caml_young_ptr - 16);
+    caml_young_ptr = (int)v2;
+    if ( (unsigned int)v2 >= caml_young_limit )
       break;
-    caml_call_gc(v2[0]);
+    caml_call_gc(a2, a1, v4[0]);
   }
-  *v0 = 3072;
-  v0[1] = camlUnix__186;
-  v0[2] = &camlUnix__187;
-  v0[3] = v2[3];
+  *v2 = 3072;
+  v2[1] = camlUnix__186;
+  v2[2] = &camlUnix__187;
+  v2[3] = v4[3];
   result = caml_c_call((int (*)(void))unix_execv, (char)camlUnix__185);
-  caml_exception_pointer = v2[0];
+  caml_exception_pointer = v4[0];
   return result;
 }
 // 804DD1E: positive sp value 1C has been found
+// 804DD1F: variable 'a2' is possibly undefined
+// 804DD1F: variable 'a1' is possibly undefined
 // 807D280: using guessed type int caml_exception_pointer;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -5187,36 +5539,38 @@ int sub_804DCC0()
 int camlUnix__open_process_in_1957()
 {
   int *v0; // eax
-  int v1; // ecx
-  _DWORD *v2; // eax
-  int v4; // [esp+0h] [ebp-10h]
-  int v5; // [esp+8h] [ebp-8h]
-  int v6; // [esp+Ch] [ebp-4h]
+  int v1; // edx
+  int v2; // ecx
+  _DWORD *v3; // eax
+  int v5; // [esp+0h] [ebp-10h]
+  int v6; // [esp+8h] [ebp-8h]
+  int v7; // [esp+Ch] [ebp-4h]
 
   v0 = (int *)caml_c_call((int (*)(void))unix_pipe, 1);
-  v5 = v0[1];
-  v4 = *v0;
-  v1 = caml_c_call((int (*)(void))caml_ml_open_descriptor_in, *v0);
-  v6 = v1;
+  v6 = v0[1];
+  v5 = *v0;
+  v2 = caml_c_call((int (*)(void))caml_ml_open_descriptor_in, *v0);
+  v7 = v2;
   while ( 1 )
   {
-    v2 = (_DWORD *)(caml_young_ptr - 20);
-    caml_young_ptr = (int)v2;
-    if ( (unsigned int)v2 >= caml_young_limit )
+    v3 = (_DWORD *)(caml_young_ptr - 20);
+    caml_young_ptr = (int)v3;
+    if ( (unsigned int)v3 >= caml_young_limit )
       break;
-    caml_call_gc(v4);
+    caml_call_gc(v1, v2, v5);
   }
-  *v2 = 2048;
-  v2[1] = v4;
-  v2[2] = 1;
-  v2[3] = 1025;
-  v2[4] = v1;
-  camlUnix__open_proc_1949(v5, 1, (unsigned int)(v2 + 4), (int)(v2 + 1));
-  caml_c_call((int (*)(void))unix_close, v5);
-  return v6;
+  *v3 = 2048;
+  v3[1] = v5;
+  v3[2] = 1;
+  v3[3] = 1025;
+  v3[4] = v2;
+  camlUnix__open_proc_1949(v6, 1, (unsigned int)(v3 + 4), (int)(v3 + 1));
+  caml_c_call((int (*)(void))unix_close, v6);
+  return v7;
 }
-// 804DD88: variable 'v4' is possibly undefined
-// 804DD9B: variable 'v1' is possibly undefined
+// 804DD88: variable 'v5' is possibly undefined
+// 804DD9B: variable 'v2' is possibly undefined
+// 804DDC9: variable 'v1' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -5224,36 +5578,38 @@ int camlUnix__open_process_in_1957()
 int camlUnix__open_process_out_1962()
 {
   int *v0; // eax
-  int v1; // ecx
-  _DWORD *v2; // eax
-  int v4; // [esp+0h] [ebp-10h]
-  int v5; // [esp+8h] [ebp-8h]
-  int v6; // [esp+Ch] [ebp-4h]
+  int v1; // edx
+  int v2; // ecx
+  _DWORD *v3; // eax
+  int v5; // [esp+0h] [ebp-10h]
+  int v6; // [esp+8h] [ebp-8h]
+  int v7; // [esp+Ch] [ebp-4h]
 
   v0 = (int *)caml_c_call((int (*)(void))unix_pipe, 1);
-  v4 = v0[1];
-  v5 = *v0;
-  v1 = caml_c_call((int (*)(void))caml_ml_open_descriptor_out, v4);
-  v6 = v1;
+  v5 = v0[1];
+  v6 = *v0;
+  v2 = caml_c_call((int (*)(void))caml_ml_open_descriptor_out, v5);
+  v7 = v2;
   while ( 1 )
   {
-    v2 = (_DWORD *)(caml_young_ptr - 20);
-    caml_young_ptr = (int)v2;
-    if ( (unsigned int)v2 >= caml_young_limit )
+    v3 = (_DWORD *)(caml_young_ptr - 20);
+    caml_young_ptr = (int)v3;
+    if ( (unsigned int)v3 >= caml_young_limit )
       break;
-    caml_call_gc(v4);
+    caml_call_gc(v1, v2, v5);
   }
-  *v2 = 2048;
-  v2[1] = v4;
-  v2[2] = 1;
-  v2[3] = 1026;
-  v2[4] = v1;
-  camlUnix__open_proc_1949(3, v5, (unsigned int)(v2 + 4), (int)(v2 + 1));
-  caml_c_call((int (*)(void))unix_close, v5);
-  return v6;
+  *v3 = 2048;
+  v3[1] = v5;
+  v3[2] = 1;
+  v3[3] = 1026;
+  v3[4] = v2;
+  camlUnix__open_proc_1949(3, v6, (unsigned int)(v3 + 4), (int)(v3 + 1));
+  caml_c_call((int (*)(void))unix_close, v6);
+  return v7;
 }
-// 804DE28: variable 'v4' is possibly undefined
-// 804DE3B: variable 'v1' is possibly undefined
+// 804DE28: variable 'v5' is possibly undefined
+// 804DE3B: variable 'v2' is possibly undefined
+// 804DE69: variable 'v1' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -5262,66 +5618,72 @@ int *camlUnix__open_process_1967()
 {
   int *v0; // eax
   int *v1; // eax
-  int v2; // ecx
-  _DWORD *v3; // eax
-  unsigned int v4; // eax
+  int v2; // edx
+  int v3; // ecx
+  _DWORD *v4; // eax
+  int v5; // edx
+  int v6; // ecx
+  unsigned int v7; // eax
   int *result; // eax
-  int v6; // [esp+0h] [ebp-1Ch]
-  char v7; // [esp+0h] [ebp-1Ch]
-  int v8; // [esp+4h] [ebp-18h]
-  int v9; // [esp+Ch] [ebp-10h]
-  int v10; // [esp+10h] [ebp-Ch]
-  int v11; // [esp+14h] [ebp-8h]
-  int v12; // [esp+18h] [ebp-4h]
+  int v9; // [esp+0h] [ebp-1Ch]
+  char v10; // [esp+0h] [ebp-1Ch]
+  int v11; // [esp+4h] [ebp-18h]
+  int v12; // [esp+Ch] [ebp-10h]
+  int v13; // [esp+10h] [ebp-Ch]
+  int v14; // [esp+14h] [ebp-8h]
+  int v15; // [esp+18h] [ebp-4h]
 
   v0 = (int *)caml_c_call((int (*)(void))unix_pipe, 1);
-  v10 = v0[1];
-  v8 = *v0;
+  v13 = v0[1];
+  v11 = *v0;
   v1 = (int *)caml_c_call((int (*)(void))unix_pipe, 1);
-  v6 = v1[1];
-  v9 = *v1;
-  v11 = caml_c_call((int (*)(void))caml_ml_open_descriptor_in, v8);
-  v2 = caml_c_call((int (*)(void))caml_ml_open_descriptor_out, v6);
-  v12 = v2;
+  v9 = v1[1];
+  v12 = *v1;
+  v14 = caml_c_call((int (*)(void))caml_ml_open_descriptor_in, v11);
+  v3 = caml_c_call((int (*)(void))caml_ml_open_descriptor_out, v9);
+  v15 = v3;
   while ( 1 )
   {
-    v3 = (_DWORD *)(caml_young_ptr - 36);
-    caml_young_ptr = (int)v3;
-    if ( (unsigned int)v3 >= caml_young_limit )
+    v4 = (_DWORD *)(caml_young_ptr - 36);
+    caml_young_ptr = (int)v4;
+    if ( (unsigned int)v4 >= caml_young_limit )
       break;
-    caml_call_gc(v6);
+    caml_call_gc(v2, v3, v9);
   }
-  *v3 = 2048;
-  v3[1] = v6;
-  v3[2] = 1;
-  v7 = (_BYTE)v3 + 16;
-  v3[3] = 2048;
-  v3[4] = v8;
-  v3[5] = v3 + 1;
-  v3[6] = 2048;
-  v3[7] = v11;
-  v3[8] = v2;
-  camlUnix__open_proc_1949(v10, v9, (unsigned int)(v3 + 7), (int)(v3 + 4));
-  caml_c_call((int (*)(void))unix_close, v9);
-  caml_c_call((int (*)(void))unix_close, v10);
+  *v4 = 2048;
+  v4[1] = v9;
+  v4[2] = 1;
+  v10 = (_BYTE)v4 + 16;
+  v4[3] = 2048;
+  v4[4] = v11;
+  v4[5] = v4 + 1;
+  v4[6] = 2048;
+  v4[7] = v14;
+  v4[8] = v3;
+  camlUnix__open_proc_1949(v13, v12, (unsigned int)(v4 + 7), (int)(v4 + 4));
+  caml_c_call((int (*)(void))unix_close, v12);
+  caml_c_call((int (*)(void))unix_close, v13);
   while ( 1 )
   {
-    v4 = caml_young_ptr - 12;
-    caml_young_ptr = v4;
-    if ( v4 >= caml_young_limit )
+    v7 = caml_young_ptr - 12;
+    caml_young_ptr = v7;
+    if ( v7 >= caml_young_limit )
       break;
-    caml_call_gc(v7);
+    caml_call_gc(v5, v6, v10);
   }
-  result = (int *)(v4 + 4);
+  result = (int *)(v7 + 4);
   *(result - 1) = 2048;
-  *result = v11;
-  result[1] = v12;
+  *result = v14;
+  result[1] = v15;
   return result;
 }
 // 804DE70: could not find valid save-restore pair for ebx
-// 804DF01: variable 'v6' is possibly undefined
-// 804DF30: variable 'v2' is possibly undefined
-// 804DF9B: variable 'v7' is possibly undefined
+// 804DF01: variable 'v9' is possibly undefined
+// 804DF30: variable 'v3' is possibly undefined
+// 804DF9B: variable 'v5' is possibly undefined
+// 804DF9B: variable 'v6' is possibly undefined
+// 804DF9B: variable 'v10' is possibly undefined
+// 804DFA2: variable 'v2' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -5329,11 +5691,13 @@ int *camlUnix__open_process_1967()
 int __usercall camlUnix__open_proc_full_1975@<eax>(char a1@<dl>, unsigned int a2@<ecx>, char a3@<dil>, char a4@<sil>)
 {
   int v4; // ecx
-  int v7; // [esp+Ch] [ebp-14h]
-  int v8; // [esp+18h] [ebp-8h]
+  int v6; // edx
+  int v7; // ecx
+  int v9; // [esp+Ch] [ebp-14h]
+  int v10; // [esp+18h] [ebp-8h]
 
-  v8 = caml_extra_params;
-  v7 = camlList__for_all_1137((int (**)(void))dword_8074874, caml_extra_params);
+  v10 = caml_extra_params;
+  v9 = camlList__for_all_1137((int (**)(void))dword_8074874, caml_extra_params);
   v4 = caml_c_call(unix_fork, 1);
   if ( v4 != 1 )
     return camlHashtbl__add_1074((_DWORD *)dword_8074894, v4, a2);
@@ -5343,11 +5707,13 @@ int __usercall camlUnix__open_proc_full_1975@<eax>(char a1@<dl>, unsigned int a2
   caml_c_call((int (*)(void))unix_close, a4);
   caml_c_call((int (*)(void))unix_dup2, a3);
   caml_c_call((int (*)(void))unix_close, a3);
-  if ( v7 == 1 )
-    camlList__iter_1074((void (**)(void))&camlUnix__184, v8);
-  sub_804E0B0();
+  if ( v9 == 1 )
+    camlList__iter_1074((void (**)(void))&camlUnix__184, v10);
+  sub_804E0B0(v7, v6);
   return camlPervasives__exit_1326(255);
 }
+// 804E098: variable 'v7' is possibly undefined
+// 804E098: variable 'v6' is possibly undefined
 // 8074874: using guessed type int dword_8074874;
 // 8074894: using guessed type int dword_8074894;
 // 80751A4: using guessed type int (*camlUnix__184)();
@@ -5355,31 +5721,33 @@ int __usercall camlUnix__open_proc_full_1975@<eax>(char a1@<dl>, unsigned int a2
 
 //----- (0804E0B0) --------------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
-int sub_804E0B0()
+int __fastcall sub_804E0B0(int a1, int a2)
 {
-  _DWORD *v0; // eax
+  _DWORD *v2; // eax
   int result; // eax
-  _DWORD v2[10]; // [esp-28h] [ebp-28h] BYREF
+  _DWORD v4[10]; // [esp-28h] [ebp-28h] BYREF
 
-  v2[0] = caml_exception_pointer;
-  caml_exception_pointer = (int)v2;
+  v4[0] = caml_exception_pointer;
+  caml_exception_pointer = (int)v4;
   while ( 1 )
   {
-    v0 = (_DWORD *)(caml_young_ptr - 16);
-    caml_young_ptr = (int)v0;
-    if ( (unsigned int)v0 >= caml_young_limit )
+    v2 = (_DWORD *)(caml_young_ptr - 16);
+    caml_young_ptr = (int)v2;
+    if ( (unsigned int)v2 >= caml_young_limit )
       break;
-    caml_call_gc(v2[0]);
+    caml_call_gc(a2, a1, v4[0]);
   }
-  *v0 = 3072;
-  v0[1] = camlUnix__182;
-  v0[2] = &camlUnix__183;
-  v0[3] = v2[6];
+  *v2 = 3072;
+  v2[1] = camlUnix__182;
+  v2[2] = &camlUnix__183;
+  v2[3] = v4[6];
   result = caml_c_call((int (*)(void))unix_execve, (char)camlUnix__181);
-  caml_exception_pointer = v2[0];
+  caml_exception_pointer = v4[0];
   return result;
 }
 // 804E113: positive sp value 24 has been found
+// 804E114: variable 'a2' is possibly undefined
+// 804E114: variable 'a1' is possibly undefined
 // 807D280: using guessed type int caml_exception_pointer;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -5390,79 +5758,87 @@ int *camlUnix__open_process_full_1985()
   int *v0; // eax
   int *v1; // eax
   int *v2; // eax
-  int v3; // ebx
-  _DWORD *v4; // eax
-  unsigned int v5; // eax
+  int v3; // edx
+  int v4; // ecx
+  int v5; // ebx
+  _DWORD *v6; // eax
+  int v7; // edx
+  int v8; // ecx
+  unsigned int v9; // eax
   int *result; // eax
-  int v7; // [esp+0h] [ebp-2Ch]
-  char v8; // [esp+0h] [ebp-2Ch]
-  int v9; // [esp+4h] [ebp-28h]
-  int v10; // [esp+8h] [ebp-24h]
-  int v11; // [esp+14h] [ebp-18h]
-  int v12; // [esp+18h] [ebp-14h]
-  int v13; // [esp+1Ch] [ebp-10h]
-  int v14; // [esp+20h] [ebp-Ch]
-  int v15; // [esp+24h] [ebp-8h]
+  int v11; // [esp+0h] [ebp-2Ch]
+  char v12; // [esp+0h] [ebp-2Ch]
+  int v13; // [esp+4h] [ebp-28h]
+  int v14; // [esp+8h] [ebp-24h]
+  int v15; // [esp+14h] [ebp-18h]
+  int v16; // [esp+18h] [ebp-14h]
+  int v17; // [esp+1Ch] [ebp-10h]
+  int v18; // [esp+20h] [ebp-Ch]
+  int v19; // [esp+24h] [ebp-8h]
 
   v0 = (int *)caml_c_call((int (*)(void))unix_pipe, 1);
-  v12 = v0[1];
-  v10 = *v0;
+  v16 = v0[1];
+  v14 = *v0;
   v1 = (int *)caml_c_call((int (*)(void))unix_pipe, 1);
-  v9 = v1[1];
-  v11 = *v1;
+  v13 = v1[1];
+  v15 = *v1;
   v2 = (int *)caml_c_call((int (*)(void))unix_pipe, 1);
-  v13 = v2[1];
-  v7 = *v2;
-  v14 = caml_c_call((int (*)(void))caml_ml_open_descriptor_in, v10);
-  v15 = caml_c_call((int (*)(void))caml_ml_open_descriptor_out, v9);
-  v3 = caml_c_call((int (*)(void))caml_ml_open_descriptor_in, v7);
+  v17 = v2[1];
+  v11 = *v2;
+  v18 = caml_c_call((int (*)(void))caml_ml_open_descriptor_in, v14);
+  v19 = caml_c_call((int (*)(void))caml_ml_open_descriptor_out, v13);
+  v5 = caml_c_call((int (*)(void))caml_ml_open_descriptor_in, v11);
   while ( 1 )
   {
-    v4 = (_DWORD *)(caml_young_ptr - 52);
-    caml_young_ptr = (int)v4;
-    if ( (unsigned int)v4 >= caml_young_limit )
+    v6 = (_DWORD *)(caml_young_ptr - 52);
+    caml_young_ptr = (int)v6;
+    if ( (unsigned int)v6 >= caml_young_limit )
       break;
-    caml_call_gc(v7);
+    caml_call_gc(v3, v4, v11);
   }
-  *v4 = 2048;
-  v4[1] = v7;
-  v4[2] = 1;
-  v4[3] = 2048;
-  v4[4] = v9;
-  v4[5] = v4 + 1;
-  v8 = (_BYTE)v4 + 28;
-  v4[6] = 2048;
-  v4[7] = v10;
-  v4[8] = v4 + 4;
-  v4[9] = 3075;
-  v4[10] = v14;
-  v4[11] = v15;
-  v4[12] = v3;
-  caml_extra_params = (int)(v4 + 7);
-  camlUnix__open_proc_full_1975(v11, (unsigned int)(v4 + 10), v13, v12);
-  caml_c_call((int (*)(void))unix_close, v11);
-  caml_c_call((int (*)(void))unix_close, v12);
-  caml_c_call((int (*)(void))unix_close, v13);
+  *v6 = 2048;
+  v6[1] = v11;
+  v6[2] = 1;
+  v6[3] = 2048;
+  v6[4] = v13;
+  v6[5] = v6 + 1;
+  v12 = (_BYTE)v6 + 28;
+  v6[6] = 2048;
+  v6[7] = v14;
+  v6[8] = v6 + 4;
+  v6[9] = 3075;
+  v6[10] = v18;
+  v6[11] = v19;
+  v6[12] = v5;
+  caml_extra_params = (int)(v6 + 7);
+  camlUnix__open_proc_full_1975(v15, (unsigned int)(v6 + 10), v17, v16);
+  caml_c_call((int (*)(void))unix_close, v15);
+  caml_c_call((int (*)(void))unix_close, v16);
+  caml_c_call((int (*)(void))unix_close, v17);
   while ( 1 )
   {
-    v5 = caml_young_ptr - 16;
-    caml_young_ptr = v5;
-    if ( v5 >= caml_young_limit )
+    v9 = caml_young_ptr - 16;
+    caml_young_ptr = v9;
+    if ( v9 >= caml_young_limit )
       break;
-    caml_call_gc(v8);
+    caml_call_gc(v7, v8, v12);
   }
-  result = (int *)(v5 + 4);
+  result = (int *)(v9 + 4);
   *(result - 1) = 3072;
-  *result = v14;
-  result[1] = v15;
-  result[2] = v3;
+  *result = v18;
+  result[1] = v19;
+  result[2] = v5;
   return result;
 }
 // 804E120: could not find valid save-restore pair for ebx
 // 804E120: could not find valid save-restore pair for edi
 // 804E120: could not find valid save-restore pair for esi
-// 804E1E7: variable 'v7' is possibly undefined
+// 804E1E7: variable 'v11' is possibly undefined
+// 804E2C2: variable 'v7' is possibly undefined
 // 804E2C2: variable 'v8' is possibly undefined
+// 804E2C2: variable 'v12' is possibly undefined
+// 804E2C9: variable 'v3' is possibly undefined
+// 804E2C9: variable 'v4' is possibly undefined
 // 807D0BC: using guessed type int caml_extra_params;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -5471,36 +5847,41 @@ int *camlUnix__open_process_full_1985()
 int __usercall camlUnix__find_proc_id_1997@<eax>(int a1@<eax>, char a2@<bl>)
 {
   char ***v2; // eax
-  char **v3; // ebx
-  unsigned int v4; // eax
-  _DWORD *v5; // eax
-  char v7; // [esp+0h] [ebp-Ch]
+  int v3; // edx
+  char **v4; // ecx
+  char **v5; // ebx
+  unsigned int v6; // eax
+  _DWORD *v7; // eax
+  char v9; // [esp+0h] [ebp-Ch]
 
   v2 = (char ***)sub_804E350(a2);
-  v3 = *v2;
+  v4 = &caml_exn_Not_found;
+  v5 = *v2;
   if ( *v2 == &caml_exn_Not_found )
   {
     while ( 1 )
     {
-      v4 = caml_young_ptr - 20;
-      caml_young_ptr = v4;
-      if ( v4 >= caml_young_limit )
+      v6 = caml_young_ptr - 20;
+      caml_young_ptr = v6;
+      if ( v6 >= caml_young_limit )
         break;
-      caml_call_gc(v7);
+      caml_call_gc(v3, (int)v4, v9);
     }
-    v5 = (_DWORD *)(v4 + 4);
-    *(v5 - 1) = 4096;
-    *v5 = camlUnix;
-    v5[1] = 7;
-    LOBYTE(v3) = a1;
-    v5[2] = a1;
-    v5[3] = &camlUnix__180;
-    v2 = (char ***)caml_raise_exn((int)v5);
+    v7 = (_DWORD *)(v6 + 4);
+    *(v7 - 1) = 4096;
+    *v7 = camlUnix;
+    v7[1] = 7;
+    LOBYTE(v5) = a1;
+    v7[2] = a1;
+    v7[3] = &camlUnix__180;
+    v2 = (char ***)caml_raise_exn((int)v7);
   }
   caml_raise_exn((int)v2);
-  return sub_804E350((char)v3);
+  return sub_804E350((char)v5);
 }
-// 804E388: variable 'v7' is possibly undefined
+// 804E388: variable 'v3' is possibly undefined
+// 804E388: variable 'v4' is possibly undefined
+// 804E388: variable 'v9' is possibly undefined
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 8074608: using guessed type int camlUnix;
 // 8080414: using guessed type int caml_young_ptr;
@@ -5510,18 +5891,20 @@ int __usercall camlUnix__find_proc_id_1997@<eax>(int a1@<eax>, char a2@<bl>)
 // positive sp value has been detected, the output may be wrong!
 int __usercall sub_804E350@<eax>(char a1@<bl>)
 {
-  int v2; // [esp-14h] [ebp-14h] BYREF
-  int v3; // [esp-Ch] [ebp-Ch]
-  unsigned int v4; // [esp-4h] [ebp-4h]
+  int v1; // edx
+  int v3; // [esp-14h] [ebp-14h] BYREF
+  int _1093; // [esp-Ch] [ebp-Ch]
+  unsigned int v5; // [esp-4h] [ebp-4h]
 
-  v2 = caml_exception_pointer;
-  caml_exception_pointer = (int)&v2;
-  v3 = camlHashtbl__find_1093(dword_8074894, a1);
-  camlHashtbl__remove_1080(dword_8074894, v4);
-  caml_exception_pointer = v2;
-  return v3;
+  v3 = caml_exception_pointer;
+  caml_exception_pointer = (int)&v3;
+  _1093 = camlHashtbl__find_1093(dword_8074894, a1);
+  camlHashtbl__remove_1080(dword_8074894, v5, v1);
+  caml_exception_pointer = v3;
+  return _1093;
 }
 // 804E387: positive sp value 10 has been found
+// 804E373: variable 'v1' is possibly undefined
 // 8074894: using guessed type int dword_8074894;
 // 807D280: using guessed type int caml_exception_pointer;
 
@@ -5565,63 +5948,73 @@ int sub_804E3E0()
 // 807D280: using guessed type int caml_exception_pointer;
 
 //----- (0804E410) --------------------------------------------------------
-int __usercall camlUnix__close_process_in_2003@<eax>(int a1@<eax>)
+int __usercall camlUnix__close_process_in_2003@<eax>(int a1@<eax>, int a2@<edx>)
 {
-  _DWORD *v2; // eax
+  int v2; // ecx
+  _DWORD *v3; // eax
   char i; // [esp+0h] [ebp-8h]
-  int v5; // [esp+4h] [ebp-4h]
+  int proc_id_1997; // [esp+4h] [ebp-4h]
 
-  for ( i = a1; ; caml_call_gc(i) )
+  v2 = a1;
+  for ( i = a1; ; caml_call_gc(a2, v2, i) )
   {
-    v2 = (_DWORD *)(caml_young_ptr - 8);
-    caml_young_ptr = (int)v2;
-    if ( (unsigned int)v2 >= caml_young_limit )
+    v3 = (_DWORD *)(caml_young_ptr - 8);
+    caml_young_ptr = (int)v3;
+    if ( (unsigned int)v3 >= caml_young_limit )
       break;
   }
-  *v2 = 1025;
-  v2[1] = a1;
-  v5 = camlUnix__find_proc_id_1997((int)camlUnix__179, (_BYTE)v2 + 4);
+  *v3 = 1025;
+  v3[1] = v2;
+  proc_id_1997 = camlUnix__find_proc_id_1997((int)camlUnix__179, (_BYTE)v3 + 4);
   caml_c_call((int (*)(void))caml_ml_close_channel, i);
-  return *(_DWORD *)(camlUnix__waitpid_non_intr_2001(v5) + 4);
+  return *(_DWORD *)(camlUnix__waitpid_non_intr_2001(proc_id_1997) + 4);
 }
-// 804E437: variable 'a1' is possibly undefined
+// 804E437: variable 'v2' is possibly undefined
 // 804E450: variable 'i' is possibly undefined
+// 804E46A: variable 'a2' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (0804E480) --------------------------------------------------------
-int __usercall camlUnix__close_process_out_2006@<eax>(int a1@<eax>)
+int __usercall camlUnix__close_process_out_2006@<eax>(int a1@<eax>, int a2@<edx>)
 {
-  _DWORD *v2; // eax
+  int v2; // ecx
+  _DWORD *v3; // eax
   char i; // [esp+0h] [ebp-8h]
-  int v5; // [esp+4h] [ebp-4h]
+  int proc_id_1997; // [esp+4h] [ebp-4h]
 
-  for ( i = a1; ; caml_call_gc(i) )
+  v2 = a1;
+  for ( i = a1; ; caml_call_gc(a2, v2, i) )
   {
-    v2 = (_DWORD *)(caml_young_ptr - 8);
-    caml_young_ptr = (int)v2;
-    if ( (unsigned int)v2 >= caml_young_limit )
+    v3 = (_DWORD *)(caml_young_ptr - 8);
+    caml_young_ptr = (int)v3;
+    if ( (unsigned int)v3 >= caml_young_limit )
       break;
   }
-  *v2 = 1026;
-  v2[1] = a1;
-  v5 = camlUnix__find_proc_id_1997((int)camlUnix__178, (_BYTE)v2 + 4);
+  *v3 = 1026;
+  v3[1] = v2;
+  proc_id_1997 = camlUnix__find_proc_id_1997((int)camlUnix__178, (_BYTE)v3 + 4);
   camlPervasives__close_out_1209(i);
-  return *(_DWORD *)(camlUnix__waitpid_non_intr_2001(v5) + 4);
+  return *(_DWORD *)(camlUnix__waitpid_non_intr_2001(proc_id_1997) + 4);
 }
-// 804E4A7: variable 'a1' is possibly undefined
+// 804E4A7: variable 'v2' is possibly undefined
 // 804E4BA: variable 'i' is possibly undefined
+// 804E4D1: variable 'a2' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (0804E4E0) --------------------------------------------------------
 int __usercall camlUnix__close_process_2009@<eax>(int a1@<eax>, int a2@<ebx>)
 {
+  int v2; // edx
+  int v3; // ecx
   _DWORD *v4; // eax
   char ***v5; // eax
   char i; // [esp+0h] [ebp-Ch]
 
-  for ( i = a1; ; caml_call_gc(i) )
+  v2 = a2;
+  v3 = a1;
+  for ( i = a1; ; caml_call_gc(v2, v3, i) )
   {
     v4 = (_DWORD *)(caml_young_ptr - 12);
     caml_young_ptr = (int)v4;
@@ -5629,8 +6022,8 @@ int __usercall camlUnix__close_process_2009@<eax>(int a1@<eax>, int a2@<ebx>)
       break;
   }
   *v4 = 2048;
-  v4[1] = a1;
-  v4[2] = a2;
+  v4[1] = v3;
+  v4[2] = v2;
   camlUnix__find_proc_id_1997((int)camlUnix__177, (_BYTE)v4 + 4);
   caml_c_call((int (*)(void))caml_ml_close_channel, i);
   v5 = (char ***)sub_804E550();
@@ -5640,8 +6033,8 @@ int __usercall camlUnix__close_process_2009@<eax>(int a1@<eax>, int a2@<ebx>)
   return sub_804E550();
 }
 // 804E53F: control flows out of bounds to 804E56E
-// 804E50D: variable 'a1' is possibly undefined
-// 804E50F: variable 'a2' is possibly undefined
+// 804E50D: variable 'v3' is possibly undefined
+// 804E50F: variable 'v2' is possibly undefined
 // 804E529: variable 'i' is possibly undefined
 // 80739AC: using guessed type char *caml_exn_Sys_error;
 // 8080414: using guessed type int caml_young_ptr;
@@ -5666,11 +6059,13 @@ int sub_804E550()
 //----- (0804E590) --------------------------------------------------------
 int __usercall camlUnix__close_process_full_2013@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 {
+  int v3; // edx
   _DWORD *v4; // eax
   char ***v5; // eax
   char i; // [esp+0h] [ebp-10h]
 
-  for ( i = a1; ; caml_call_gc(i) )
+  v3 = a1;
+  for ( i = a1; ; caml_call_gc(v3, a2, i) )
   {
     v4 = (_DWORD *)(caml_young_ptr - 16);
     caml_young_ptr = (int)v4;
@@ -5678,7 +6073,7 @@ int __usercall camlUnix__close_process_full_2013@<eax>(int a1@<eax>, int a2@<ecx
       break;
   }
   *v4 = 3075;
-  v4[1] = a1;
+  v4[1] = v3;
   v4[2] = a3;
   v4[3] = a2;
   camlUnix__find_proc_id_1997((int)camlUnix__176, (_BYTE)v4 + 4);
@@ -5690,7 +6085,7 @@ int __usercall camlUnix__close_process_full_2013@<eax>(int a1@<eax>, int a2@<ecx
   return sub_804E610();
 }
 // 804E5FA: control flows out of bounds to 804E62E
-// 804E5C5: variable 'a1' is possibly undefined
+// 804E5C5: variable 'v3' is possibly undefined
 // 804E5CA: variable 'a2' is possibly undefined
 // 804E5E4: variable 'i' is possibly undefined
 // 80739AC: using guessed type char *caml_exn_Sys_error;
@@ -5736,36 +6131,40 @@ int *__usercall camlUnix__open_connection_2018@<eax>(_DWORD *a1@<eax>)
 // positive sp value has been detected, the output may be wrong!
 int *__usercall sub_804E6B0@<eax>(char a1@<al>)
 {
-  int v1; // ebx
-  unsigned int v2; // eax
+  int v1; // edx
+  int v2; // ecx
+  int v3; // ebx
+  unsigned int v4; // eax
   int *result; // eax
-  int v4; // [esp-10h] [ebp-10h] BYREF
-  int v5; // [esp-8h] [ebp-8h]
-  char v6; // [esp-4h] [ebp-4h]
+  int v6; // [esp-10h] [ebp-10h] BYREF
+  int v7; // [esp-8h] [ebp-8h]
+  char v8; // [esp-4h] [ebp-4h]
 
-  v4 = caml_exception_pointer;
-  caml_exception_pointer = (int)&v4;
+  v6 = caml_exception_pointer;
+  caml_exception_pointer = (int)&v6;
   caml_c_call((int (*)(void))unix_connect, a1);
-  camlUnix__try_set_close_on_exec_1366(v6);
-  v5 = caml_c_call((int (*)(void))caml_ml_open_descriptor_out, v6);
-  v1 = caml_c_call((int (*)(void))caml_ml_open_descriptor_in, v6);
+  camlUnix__try_set_close_on_exec_1366(v8);
+  v7 = caml_c_call((int (*)(void))caml_ml_open_descriptor_out, v8);
+  v3 = caml_c_call((int (*)(void))caml_ml_open_descriptor_in, v8);
   while ( 1 )
   {
-    v2 = caml_young_ptr - 12;
-    caml_young_ptr = v2;
-    if ( v2 >= caml_young_limit )
+    v4 = caml_young_ptr - 12;
+    caml_young_ptr = v4;
+    if ( v4 >= caml_young_limit )
       break;
-    caml_call_gc(v4);
+    caml_call_gc(v1, v2, v6);
   }
-  result = (int *)(v2 + 4);
+  result = (int *)(v4 + 4);
   *(result - 1) = 2048;
-  *result = v1;
-  result[1] = v5;
-  caml_exception_pointer = v4;
+  *result = v3;
+  result[1] = v7;
+  caml_exception_pointer = v6;
   return result;
 }
 // 804E736: positive sp value C has been found
 // 804E6B0: could not find valid save-restore pair for ebx
+// 804E737: variable 'v1' is possibly undefined
+// 804E737: variable 'v2' is possibly undefined
 // 807D280: using guessed type int caml_exception_pointer;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -5855,7 +6254,417 @@ void __usercall __noreturn camlUnix__establish_server_2026(int a1@<eax>, _DWORD 
 }
 
 //----- (0804E910) --------------------------------------------------------
-#error "804ED6B: call analysis failed (funcsize=173)"
+int __fastcall camlUnix__entry(int a1, int a2)
+{
+  unsigned int v2; // eax
+  int v3; // edx
+  int v4; // edx
+  int v5; // ecx
+  _DWORD *v6; // eax
+  char ***v7; // eax
+
+  dword_8074870 = (int)&camlUnix__175;
+  dword_807486C = (int)&camlUnix__174;
+  dword_8074868 = (int)&camlUnix__173;
+  dword_8074864 = (int)&camlUnix__172;
+  dword_8074860 = (int)&camlUnix__171;
+  dword_807485C = (int)&camlUnix__170;
+  dword_8074858 = (int)&camlUnix__169;
+  dword_807484C = (int)&camlUnix__168;
+  dword_8074848 = (int)&camlUnix__167;
+  dword_8074844 = (int)&camlUnix__166;
+  dword_8074840 = (int)&camlUnix__165;
+  dword_807483C = (int)&camlUnix__164;
+  dword_8074838 = (int)&camlUnix__163;
+  dword_8074834 = (int)&camlUnix__162;
+  dword_80747F0 = (int)&camlUnix__161;
+  dword_80747EC = (int)&camlUnix__160;
+  dword_80747E8 = (int)&camlUnix__159;
+  dword_80747E4 = (int)&camlUnix__158;
+  dword_80747E0 = (int)&camlUnix__157;
+  dword_80747DC = (int)&camlUnix__156;
+  dword_80747D8 = (int)&camlUnix__155;
+  dword_80747D4 = (int)&camlUnix__154;
+  dword_80747CC = (int)&camlUnix__153;
+  dword_80747B8 = (int)&camlUnix__152;
+  dword_80747B4 = (int)&camlUnix__151;
+  dword_80747B0 = (int)&camlUnix__150;
+  dword_80747AC = (int)&camlUnix__149;
+  dword_80747A8 = (int)&camlUnix__148;
+  dword_80747A4 = (int)&camlUnix__147;
+  dword_80747A0 = (int)&camlUnix__146;
+  dword_807479C = (int)&camlUnix__145;
+  dword_8074798 = (int)&camlUnix__144;
+  dword_8074794 = (int)&camlUnix__143;
+  dword_8074790 = (int)&camlUnix__142;
+  dword_807478C = (int)&camlUnix__141;
+  dword_8074788 = (int)&camlUnix__140;
+  dword_8074784 = (int)&camlUnix__139;
+  dword_8074780 = (int)&camlUnix__138;
+  dword_807477C = (int)&camlUnix__137;
+  dword_8074778 = (int)&camlUnix__136;
+  dword_8074774 = (int)&camlUnix__135;
+  dword_8074770 = (int)&camlUnix__134;
+  dword_807476C = (int)&camlUnix__133;
+  dword_8074768 = (int)&camlUnix__132;
+  dword_8074764 = (int)&camlUnix__131;
+  dword_8074760 = (int)&camlUnix__130;
+  dword_807475C = (int)&camlUnix__129;
+  dword_8074758 = (int)&camlUnix__128;
+  dword_8074754 = (int)&camlUnix__127;
+  dword_8074750 = (int)&camlUnix__126;
+  dword_8074748 = (int)&camlUnix__125;
+  dword_8074744 = (int)&camlUnix__124;
+  dword_8074740 = (int)&camlUnix__123;
+  dword_807473C = (int)&camlUnix__122;
+  dword_8074738 = (int)&camlUnix__121;
+  dword_8074734 = (int)&camlUnix__120;
+  dword_8074730 = (int)&camlUnix__119;
+  dword_807472C = (int)&camlUnix__118;
+  dword_8074700 = (int)&camlUnix__117;
+  dword_80746FC = (int)&camlUnix__116;
+  dword_80746F8 = (int)&camlUnix__115;
+  dword_80746F4 = (int)&camlUnix__114;
+  dword_80746F0 = (int)&camlUnix__113;
+  dword_80746EC = (int)&camlUnix__112;
+  dword_80746E8 = (int)&camlUnix__111;
+  dword_80746E4 = (int)&camlUnix__110;
+  dword_80746E0 = (int)&camlUnix__109;
+  dword_80746DC = (int)&camlUnix__108;
+  dword_80746D8 = (int)&camlUnix__107;
+  dword_80746D4 = (int)&camlUnix__106;
+  dword_80746D0 = (int)&camlUnix__105;
+  dword_80746CC = (int)&camlUnix__104;
+  dword_80746C8 = (int)&camlUnix__103;
+  dword_80746C4 = (int)&camlUnix__102;
+  dword_80746C0 = (int)&camlUnix__101;
+  dword_80746BC = (int)&camlUnix__100;
+  dword_80746B8 = (int)&camlUnix__99;
+  dword_80746B4 = (int)&camlUnix__98;
+  dword_80746B0 = (int)&camlUnix__97;
+  dword_80746AC = (int)&camlUnix__96;
+  dword_80746A8 = (int)&camlUnix__95;
+  dword_80746A4 = (int)&camlUnix__94;
+  dword_80746A0 = (int)&camlUnix__93;
+  dword_807469C = (int)&camlUnix__92;
+  dword_8074694 = (int)&camlUnix__91;
+  dword_8074690 = (int)&camlUnix__90;
+  dword_807468C = (int)&camlUnix__89;
+  dword_8074688 = (int)&camlUnix__88;
+  dword_8074684 = (int)&camlUnix__87;
+  dword_8074680 = (int)&camlUnix__86;
+  dword_807467C = (int)&camlUnix__85;
+  dword_8074678 = (int)&camlUnix__84;
+  dword_8074674 = (int)&camlUnix__83;
+  dword_8074670 = (int)&camlUnix__82;
+  dword_807466C = (int)&camlUnix__81;
+  dword_807465C = (int)&camlUnix__80;
+  dword_8074658 = (int)&camlUnix__79;
+  dword_8074648 = (int)&camlUnix__78;
+  dword_8074644 = (int)&camlUnix__77;
+  dword_8074640 = (int)&camlUnix__76;
+  dword_8074638 = (int)&camlUnix__75;
+  dword_8074634 = (int)&camlUnix__74;
+  dword_8074630 = (int)&camlUnix__73;
+  dword_807462C = (int)&camlUnix__72;
+  dword_8074628 = (int)&camlUnix__71;
+  dword_8074624 = (int)&camlUnix__70;
+  dword_8074620 = (int)&camlUnix__69;
+  dword_807461C = (int)&camlUnix__68;
+  dword_8074618 = (int)&camlUnix__67;
+  dword_8074614 = (int)&camlUnix__66;
+  dword_807460C = (int)&camlUnix__65;
+  v2 = caml_allocN(0x1Cu, a1, a2) + 4;
+  *(_DWORD *)(v2 - 4) = 1024;
+  *(_DWORD *)v2 = camlUnix__64;
+  camlUnix = v2;
+  *(_DWORD *)(v2 + 4) = 4096;
+  *(_DWORD *)(v2 + 8) = camlUnix;
+  *(_DWORD *)(v2 + 12) = 1;
+  *(_DWORD *)(v2 + 16) = &camlUnix__62;
+  *(_DWORD *)(v2 + 20) = &camlUnix__63;
+  camlCallback__register_exception_1034((int)camlUnix__61, (double *)(v2 + 8), v3);
+  dword_8074610 = (int)&camlUnix__60;
+  dword_807464C = 1;
+  dword_8074650 = 3;
+  dword_8074654 = 5;
+  dword_8074660 = (int)&camlUnix__59;
+  dword_8074664 = (int)&camlUnix__58;
+  dword_8074668 = (int)&camlUnix__57;
+  v6 = (_DWORD *)(caml_allocN(0x1Cu, v5, v4) + 4);
+  *(v6 - 1) = 6144;
+  *v6 = &camlUnix__50;
+  v6[1] = &camlUnix__51;
+  v6[2] = &camlUnix__52;
+  v6[3] = &camlUnix__53;
+  v6[4] = &camlUnix__54;
+  v6[5] = &camlUnix__55;
+  dword_8074698 = (int)v6;
+  dword_8074874 = (int)&camlUnix__49;
+  dword_807474C = (int)&camlUnix__48;
+  dword_8074878 = (int)&camlUnix__47;
+  dword_80747BC = caml_c_call((int (*)(void))unix_inet_addr_of_string, (char)camlUnix__46);
+  dword_80747C0 = caml_c_call((int (*)(void))unix_inet_addr_of_string, (char)camlUnix__45);
+  v7 = (char ***)sub_804EEAA();
+  if ( *v7 == &caml_exn_Failure )
+    JUMPOUT(0x804EED1);
+  caml_raise_exn((int)v7);
+  return sub_804EEAA();
+}
+// 804EEA3: control flows out of bounds to 804EED1
+// 804EDB0: variable 'v3' is possibly undefined
+// 804EE05: variable 'v5' is possibly undefined
+// 804EE05: variable 'v4' is possibly undefined
+// 80739CC: using guessed type char *caml_exn_Failure;
+// 8074608: using guessed type int camlUnix;
+// 807460C: using guessed type int dword_807460C;
+// 8074610: using guessed type int dword_8074610;
+// 8074614: using guessed type int dword_8074614;
+// 8074618: using guessed type int dword_8074618;
+// 807461C: using guessed type int dword_807461C;
+// 8074620: using guessed type int dword_8074620;
+// 8074624: using guessed type int dword_8074624;
+// 8074628: using guessed type int dword_8074628;
+// 807462C: using guessed type int dword_807462C;
+// 8074630: using guessed type int dword_8074630;
+// 8074634: using guessed type int dword_8074634;
+// 8074638: using guessed type int dword_8074638;
+// 8074640: using guessed type int dword_8074640;
+// 8074644: using guessed type int dword_8074644;
+// 8074648: using guessed type int dword_8074648;
+// 807464C: using guessed type int dword_807464C;
+// 8074650: using guessed type int dword_8074650;
+// 8074654: using guessed type int dword_8074654;
+// 8074658: using guessed type int dword_8074658;
+// 807465C: using guessed type int dword_807465C;
+// 8074660: using guessed type int dword_8074660;
+// 8074664: using guessed type int dword_8074664;
+// 8074668: using guessed type int dword_8074668;
+// 807466C: using guessed type int dword_807466C;
+// 8074670: using guessed type int dword_8074670;
+// 8074674: using guessed type int dword_8074674;
+// 8074678: using guessed type int dword_8074678;
+// 807467C: using guessed type int dword_807467C;
+// 8074680: using guessed type int dword_8074680;
+// 8074684: using guessed type int dword_8074684;
+// 8074688: using guessed type int dword_8074688;
+// 807468C: using guessed type int dword_807468C;
+// 8074690: using guessed type int dword_8074690;
+// 8074694: using guessed type int dword_8074694;
+// 8074698: using guessed type int dword_8074698;
+// 807469C: using guessed type int dword_807469C;
+// 80746A0: using guessed type int dword_80746A0;
+// 80746A4: using guessed type int dword_80746A4;
+// 80746A8: using guessed type int dword_80746A8;
+// 80746AC: using guessed type int dword_80746AC;
+// 80746B0: using guessed type int dword_80746B0;
+// 80746B4: using guessed type int dword_80746B4;
+// 80746B8: using guessed type int dword_80746B8;
+// 80746BC: using guessed type int dword_80746BC;
+// 80746C0: using guessed type int dword_80746C0;
+// 80746C4: using guessed type int dword_80746C4;
+// 80746C8: using guessed type int dword_80746C8;
+// 80746CC: using guessed type int dword_80746CC;
+// 80746D0: using guessed type int dword_80746D0;
+// 80746D4: using guessed type int dword_80746D4;
+// 80746D8: using guessed type int dword_80746D8;
+// 80746DC: using guessed type int dword_80746DC;
+// 80746E0: using guessed type int dword_80746E0;
+// 80746E4: using guessed type int dword_80746E4;
+// 80746E8: using guessed type int dword_80746E8;
+// 80746EC: using guessed type int dword_80746EC;
+// 80746F0: using guessed type int dword_80746F0;
+// 80746F4: using guessed type int dword_80746F4;
+// 80746F8: using guessed type int dword_80746F8;
+// 80746FC: using guessed type int dword_80746FC;
+// 8074700: using guessed type int dword_8074700;
+// 807472C: using guessed type int dword_807472C;
+// 8074730: using guessed type int dword_8074730;
+// 8074734: using guessed type int dword_8074734;
+// 8074738: using guessed type int dword_8074738;
+// 807473C: using guessed type int dword_807473C;
+// 8074740: using guessed type int dword_8074740;
+// 8074744: using guessed type int dword_8074744;
+// 8074748: using guessed type int dword_8074748;
+// 807474C: using guessed type int dword_807474C;
+// 8074750: using guessed type int dword_8074750;
+// 8074754: using guessed type int dword_8074754;
+// 8074758: using guessed type int dword_8074758;
+// 807475C: using guessed type int dword_807475C;
+// 8074760: using guessed type int dword_8074760;
+// 8074764: using guessed type int dword_8074764;
+// 8074768: using guessed type int dword_8074768;
+// 807476C: using guessed type int dword_807476C;
+// 8074770: using guessed type int dword_8074770;
+// 8074774: using guessed type int dword_8074774;
+// 8074778: using guessed type int dword_8074778;
+// 807477C: using guessed type int dword_807477C;
+// 8074780: using guessed type int dword_8074780;
+// 8074784: using guessed type int dword_8074784;
+// 8074788: using guessed type int dword_8074788;
+// 807478C: using guessed type int dword_807478C;
+// 8074790: using guessed type int dword_8074790;
+// 8074794: using guessed type int dword_8074794;
+// 8074798: using guessed type int dword_8074798;
+// 807479C: using guessed type int dword_807479C;
+// 80747A0: using guessed type int dword_80747A0;
+// 80747A4: using guessed type int dword_80747A4;
+// 80747A8: using guessed type int dword_80747A8;
+// 80747AC: using guessed type int dword_80747AC;
+// 80747B0: using guessed type int dword_80747B0;
+// 80747B4: using guessed type int dword_80747B4;
+// 80747B8: using guessed type int dword_80747B8;
+// 80747BC: using guessed type int dword_80747BC;
+// 80747C0: using guessed type int dword_80747C0;
+// 80747CC: using guessed type int dword_80747CC;
+// 80747D4: using guessed type int dword_80747D4;
+// 80747D8: using guessed type int dword_80747D8;
+// 80747DC: using guessed type int dword_80747DC;
+// 80747E0: using guessed type int dword_80747E0;
+// 80747E4: using guessed type int dword_80747E4;
+// 80747E8: using guessed type int dword_80747E8;
+// 80747EC: using guessed type int dword_80747EC;
+// 80747F0: using guessed type int dword_80747F0;
+// 8074834: using guessed type int dword_8074834;
+// 8074838: using guessed type int dword_8074838;
+// 807483C: using guessed type int dword_807483C;
+// 8074840: using guessed type int dword_8074840;
+// 8074844: using guessed type int dword_8074844;
+// 8074848: using guessed type int dword_8074848;
+// 807484C: using guessed type int dword_807484C;
+// 8074858: using guessed type int dword_8074858;
+// 807485C: using guessed type int dword_807485C;
+// 8074860: using guessed type int dword_8074860;
+// 8074864: using guessed type int dword_8074864;
+// 8074868: using guessed type int dword_8074868;
+// 807486C: using guessed type int dword_807486C;
+// 8074870: using guessed type int dword_8074870;
+// 8074874: using guessed type int dword_8074874;
+// 8074878: using guessed type int dword_8074878;
+// 8074B18: using guessed type int (*camlUnix__47)();
+// 8074B24: using guessed type int (*camlUnix__48)();
+// 8074B30: using guessed type int (*camlUnix__49)();
+// 8074B3C: using guessed type int (*camlUnix__50)();
+// 8074B4C: using guessed type int (*camlUnix__51)();
+// 8074B5C: using guessed type int (*camlUnix__52)();
+// 8074B6C: using guessed type int (*camlUnix__53)();
+// 8074B78: using guessed type int (*camlUnix__54)();
+// 8074B84: using guessed type int (*camlUnix__55)();
+// 8074B90: using guessed type int (*camlUnix__57)();
+// 8074BA0: using guessed type int (*camlUnix__58)();
+// 8074BB0: using guessed type int (*camlUnix__59)();
+// 8074BC0: using guessed type int (*camlUnix__60)();
+// 8074BD0: using guessed type int (*camlUnix__65)();
+// 8074BDC: using guessed type int (*camlUnix__66)();
+// 8074BE8: using guessed type int (*camlUnix__67)();
+// 8074BF4: using guessed type int (*camlUnix__68)();
+// 8074C04: using guessed type int (*camlUnix__69)();
+// 8074C14: using guessed type int (*camlUnix__70)();
+// 8074C24: using guessed type int (*camlUnix__71)();
+// 8074C34: using guessed type int (*camlUnix__72)();
+// 8074C44: using guessed type int (*camlUnix__73)();
+// 8074C50: using guessed type int (*camlUnix__74)();
+// 8074C5C: using guessed type int (*camlUnix__75)();
+// 8074C6C: using guessed type int (*camlUnix__76)();
+// 8074C78: using guessed type int (*camlUnix__77)();
+// 8074C84: using guessed type int (*camlUnix__78)();
+// 8074C90: using guessed type int (*camlUnix__79)();
+// 8074CA0: using guessed type int (*camlUnix__80)();
+// 8074CAC: using guessed type int (*camlUnix__81)();
+// 8074CB8: using guessed type int (*camlUnix__82)();
+// 8074CC4: using guessed type int (*camlUnix__83)();
+// 8074CD0: using guessed type int (*camlUnix__84)();
+// 8074CDC: using guessed type int (*camlUnix__85)();
+// 8074CEC: using guessed type int (*camlUnix__86)();
+// 8074CFC: using guessed type int (*camlUnix__87)();
+// 8074D0C: using guessed type int (*camlUnix__88)();
+// 8074D18: using guessed type int (*camlUnix__89)();
+// 8074D24: using guessed type int (*camlUnix__90)();
+// 8074D30: using guessed type int (*camlUnix__91)();
+// 8074D3C: using guessed type int (*camlUnix__92)();
+// 8074D48: using guessed type int (*camlUnix__93)();
+// 8074D58: using guessed type int (*camlUnix__94)();
+// 8074D68: using guessed type int (*camlUnix__95)();
+// 8074D78: using guessed type int (*camlUnix__96)();
+// 8074D88: using guessed type int (*camlUnix__97)();
+// 8074D98: using guessed type int (*camlUnix__98)();
+// 8074DA8: using guessed type int (*camlUnix__99)();
+// 8074DB4: using guessed type int (*camlUnix__100)();
+// 8074DC4: using guessed type int (*camlUnix__101)();
+// 8074DD0: using guessed type int (*camlUnix__102)();
+// 8074DE0: using guessed type int (*camlUnix__103)();
+// 8074DEC: using guessed type int (*camlUnix__104)();
+// 8074DF8: using guessed type int (*camlUnix__105)();
+// 8074E04: using guessed type int (*camlUnix__106)();
+// 8074E10: using guessed type int (*camlUnix__107)();
+// 8074E20: using guessed type int (*camlUnix__108)();
+// 8074E2C: using guessed type int (*camlUnix__109)();
+// 8074E38: using guessed type int (*camlUnix__110)();
+// 8074E44: using guessed type int (*camlUnix__111)();
+// 8074E50: using guessed type int (*camlUnix__112)();
+// 8074E5C: using guessed type int (*camlUnix__113)();
+// 8074E68: using guessed type int (*camlUnix__114)();
+// 8074E74: using guessed type int (*camlUnix__115)();
+// 8074E80: using guessed type int (*camlUnix__116)();
+// 8074E8C: using guessed type int (*camlUnix__117)();
+// 8074E9C: using guessed type int (*camlUnix__118)();
+// 8074EAC: using guessed type int (*camlUnix__119)();
+// 8074EB8: using guessed type int (*camlUnix__120)();
+// 8074EC8: using guessed type int (*camlUnix__121)();
+// 8074ED8: using guessed type int (*camlUnix__122)();
+// 8074EE8: using guessed type int (*camlUnix__123)();
+// 8074EF8: using guessed type int (*camlUnix__124)();
+// 8074F04: using guessed type int (*camlUnix__125)();
+// 8074F10: using guessed type int (*camlUnix__126)();
+// 8074F1C: using guessed type int (*camlUnix__127)();
+// 8074F28: using guessed type int (*camlUnix__128)();
+// 8074F34: using guessed type int (*camlUnix__129)();
+// 8074F40: using guessed type int (*camlUnix__130)();
+// 8074F4C: using guessed type int (*camlUnix__131)();
+// 8074F58: using guessed type int (*camlUnix__132)();
+// 8074F64: using guessed type int (*camlUnix__133)();
+// 8074F70: using guessed type int (*camlUnix__134)();
+// 8074F80: using guessed type int (*camlUnix__135)();
+// 8074F8C: using guessed type int (*camlUnix__136)();
+// 8074F9C: using guessed type int (*camlUnix__137)();
+// 8074FA8: using guessed type int (*camlUnix__138)();
+// 8074FB4: using guessed type int (*camlUnix__139)();
+// 8074FC0: using guessed type int (*camlUnix__140)();
+// 8074FCC: using guessed type int (*camlUnix__141)();
+// 8074FD8: using guessed type int (*camlUnix__142)();
+// 8074FE4: using guessed type int (*camlUnix__143)();
+// 8074FF0: using guessed type int (*camlUnix__144)();
+// 8074FFC: using guessed type int (*camlUnix__145)();
+// 807500C: using guessed type int (*camlUnix__146)();
+// 8075018: using guessed type int (*camlUnix__147)();
+// 8075024: using guessed type int (*camlUnix__148)();
+// 8075030: using guessed type int (*camlUnix__149)();
+// 807503C: using guessed type int (*camlUnix__150)();
+// 8075048: using guessed type int (*camlUnix__151)();
+// 8075054: using guessed type int (*camlUnix__152)();
+// 8075060: using guessed type int (*camlUnix__153)();
+// 8075070: using guessed type int (*camlUnix__154)();
+// 8075080: using guessed type int (*camlUnix__155)();
+// 807508C: using guessed type int (*camlUnix__156)();
+// 807509C: using guessed type int (*camlUnix__157)();
+// 80750AC: using guessed type int (*camlUnix__158)();
+// 80750BC: using guessed type int (*camlUnix__159)();
+// 80750CC: using guessed type int (*camlUnix__160)();
+// 80750D8: using guessed type int (*camlUnix__161)();
+// 80750E4: using guessed type int (*camlUnix__162)();
+// 80750F0: using guessed type int (*camlUnix__163)();
+// 80750FC: using guessed type int (*camlUnix__164)();
+// 8075108: using guessed type int (*camlUnix__165)();
+// 8075114: using guessed type int (*camlUnix__166)();
+// 8075120: using guessed type int (*camlUnix__167)();
+// 8075130: using guessed type int (*camlUnix__168)();
+// 8075140: using guessed type int (*camlUnix__169)();
+// 807514C: using guessed type int (*camlUnix__170)();
+// 807515C: using guessed type int (*camlUnix__171)();
+// 807516C: using guessed type int (*camlUnix__172)();
+// 8075178: using guessed type int (*camlUnix__173)();
+// 8075188: using guessed type int (*camlUnix__174)();
+// 8075198: using guessed type int (*camlUnix__175)();
 
 //----- (0804EEAA) --------------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
@@ -5878,13 +6687,169 @@ int sub_804EEAA()
 }
 // 804EED1: positive sp value 4 has been found
 // 804EEEB: control flows out of bounds to 804EF19
-// 804EEF2: using guessed type _DWORD sub_804EEF2();
 // 80739CC: using guessed type char *caml_exn_Failure;
+// 80747C0: using guessed type int dword_80747C0;
 // 80747C4: using guessed type int dword_80747C4;
 // 807D280: using guessed type int caml_exception_pointer;
 
 //----- (0804EEF2) --------------------------------------------------------
-#error "804EF55: call analysis failed (funcsize=106)"
+// positive sp value has been detected, the output may be wrong!
+int sub_804EEF2()
+{
+  int v0; // eax
+  int v1; // edx
+  int v2; // ecx
+  _DWORD *v3; // eax
+  int v5; // [esp-8h] [ebp-8h] BYREF
+
+  v5 = caml_exception_pointer;
+  caml_exception_pointer = (int)&v5;
+  v0 = caml_c_call((int (*)(void))unix_inet_addr_of_string, (char)&camlUnix__43);
+  caml_exception_pointer = v5;
+  dword_80747C8 = v0;
+  dword_80747D0 = (int)&camlUnix__42;
+  dword_80747F4 = (int)&camlUnix__41;
+  dword_80747F8 = (int)&camlUnix__40;
+  dword_80747FC = (int)&camlUnix__39;
+  dword_8074800 = (int)&camlUnix__38;
+  v3 = (_DWORD *)(caml_allocN(0x20u, v2, v1) + 4);
+  *(v3 - 1) = 7168;
+  *v3 = 1;
+  v3[1] = 3;
+  v3[2] = 5;
+  v3[3] = 7;
+  v3[4] = 9;
+  v3[5] = &camlUnix__36;
+  v3[6] = &camlUnix__37;
+  dword_807487C = (int)v3;
+  dword_8074804 = (int)&camlUnix__35;
+  dword_8074808 = (int)&camlUnix__34;
+  dword_807480C = (int)&camlUnix__33;
+  dword_8074810 = (int)&camlUnix__32;
+  dword_8074814 = (int)&camlUnix__31;
+  dword_8074818 = (int)&camlUnix__30;
+  dword_807481C = (int)&camlUnix__29;
+  dword_8074820 = (int)&camlUnix__28;
+  dword_8074824 = (int)&camlUnix__27;
+  dword_8074880 = (int)&camlUnix__26;
+  dword_8074850 = (int)&camlUnix__25;
+  dword_8074884 = (int)&camlUnix__24;
+  dword_8074854 = (int)&camlUnix__23;
+  dword_807463C = (int)&camlUnix__22;
+  dword_8074888 = (int)&camlUnix__21;
+  dword_807488C = (int)&camlUnix__20;
+  dword_8074890 = (int)&camlUnix__19;
+  dword_8074704 = (int)&camlUnix__18;
+  dword_8074708 = (int)&camlUnix__17;
+  dword_8074894 = camlHashtbl__create_1051();
+  dword_8074898 = (int)&camlUnix__16;
+  dword_807470C = (int)&camlUnix__15;
+  dword_8074710 = (int)&camlUnix__14;
+  dword_8074714 = (int)&camlUnix__13;
+  dword_807489C = (int)&camlUnix__12;
+  dword_8074718 = (int)&camlUnix__11;
+  dword_80748A0 = (int)&camlUnix__10;
+  dword_80748A4 = (int)&camlUnix__9;
+  dword_807471C = (int)&camlUnix__8;
+  dword_8074720 = (int)&camlUnix__7;
+  dword_8074724 = (int)&camlUnix__6;
+  dword_8074728 = (int)&camlUnix__5;
+  dword_8074828 = (int)&camlUnix__4;
+  dword_807482C = (int)&camlUnix__3;
+  dword_80748A8 = (int)&camlUnix__2;
+  dword_8074830 = (int)&camlUnix__1;
+  return 1;
+}
+// 804EF19: positive sp value 4 has been found
+// 804EF55: variable 'v2' is possibly undefined
+// 804EF55: variable 'v1' is possibly undefined
+// 8057A40: using guessed type _DWORD camlHashtbl__create_1051();
+// 807463C: using guessed type int dword_807463C;
+// 8074704: using guessed type int dword_8074704;
+// 8074708: using guessed type int dword_8074708;
+// 807470C: using guessed type int dword_807470C;
+// 8074710: using guessed type int dword_8074710;
+// 8074714: using guessed type int dword_8074714;
+// 8074718: using guessed type int dword_8074718;
+// 807471C: using guessed type int dword_807471C;
+// 8074720: using guessed type int dword_8074720;
+// 8074724: using guessed type int dword_8074724;
+// 8074728: using guessed type int dword_8074728;
+// 80747C8: using guessed type int dword_80747C8;
+// 80747D0: using guessed type int dword_80747D0;
+// 80747F4: using guessed type int dword_80747F4;
+// 80747F8: using guessed type int dword_80747F8;
+// 80747FC: using guessed type int dword_80747FC;
+// 8074800: using guessed type int dword_8074800;
+// 8074804: using guessed type int dword_8074804;
+// 8074808: using guessed type int dword_8074808;
+// 807480C: using guessed type int dword_807480C;
+// 8074810: using guessed type int dword_8074810;
+// 8074814: using guessed type int dword_8074814;
+// 8074818: using guessed type int dword_8074818;
+// 807481C: using guessed type int dword_807481C;
+// 8074820: using guessed type int dword_8074820;
+// 8074824: using guessed type int dword_8074824;
+// 8074828: using guessed type int dword_8074828;
+// 807482C: using guessed type int dword_807482C;
+// 8074830: using guessed type int dword_8074830;
+// 8074850: using guessed type int dword_8074850;
+// 8074854: using guessed type int dword_8074854;
+// 807487C: using guessed type int dword_807487C;
+// 8074880: using guessed type int dword_8074880;
+// 8074884: using guessed type int dword_8074884;
+// 8074888: using guessed type int dword_8074888;
+// 807488C: using guessed type int dword_807488C;
+// 8074890: using guessed type int dword_8074890;
+// 8074894: using guessed type int dword_8074894;
+// 8074898: using guessed type int dword_8074898;
+// 807489C: using guessed type int dword_807489C;
+// 80748A0: using guessed type int dword_80748A0;
+// 80748A4: using guessed type int dword_80748A4;
+// 80748A8: using guessed type int dword_80748A8;
+// 80748B0: using guessed type int (*camlUnix__1)();
+// 80748C0: using guessed type int (*camlUnix__2)();
+// 80748CC: using guessed type int (*camlUnix__3)();
+// 80748D8: using guessed type int (*camlUnix__4)();
+// 80748E4: using guessed type int (*camlUnix__5)();
+// 80748F4: using guessed type int (*camlUnix__6)();
+// 8074904: using guessed type int (*camlUnix__7)();
+// 8074910: using guessed type int (*camlUnix__8)();
+// 807491C: using guessed type int (*camlUnix__9)();
+// 8074928: using guessed type int (*camlUnix__10)();
+// 8074938: using guessed type int (*camlUnix__11)();
+// 8074948: using guessed type int (*camlUnix__12)();
+// 8074958: using guessed type int (*camlUnix__13)();
+// 8074964: using guessed type int (*camlUnix__14)();
+// 8074970: using guessed type int (*camlUnix__15)();
+// 807497C: using guessed type int (*camlUnix__16)();
+// 807498C: using guessed type int (*camlUnix__17)();
+// 807499C: using guessed type int (*camlUnix__18)();
+// 80749AC: using guessed type int (*camlUnix__19)();
+// 80749BC: using guessed type int (*camlUnix__20)();
+// 80749C8: using guessed type int (*camlUnix__21)();
+// 80749D4: using guessed type int (*camlUnix__22)();
+// 80749E0: using guessed type int (*camlUnix__23)();
+// 80749F0: using guessed type int (*camlUnix__24)();
+// 8074A00: using guessed type int (*camlUnix__25)();
+// 8074A10: using guessed type int (*camlUnix__26)();
+// 8074A20: using guessed type int (*camlUnix__27)();
+// 8074A2C: using guessed type int (*camlUnix__28)();
+// 8074A3C: using guessed type int (*camlUnix__29)();
+// 8074A4C: using guessed type int (*camlUnix__30)();
+// 8074A5C: using guessed type int (*camlUnix__31)();
+// 8074A6C: using guessed type int (*camlUnix__32)();
+// 8074A7C: using guessed type int (*camlUnix__33)();
+// 8074A8C: using guessed type int (*camlUnix__34)();
+// 8074A9C: using guessed type int (*camlUnix__35)();
+// 8074AAC: using guessed type int (*camlUnix__36)();
+// 8074ABC: using guessed type int (*camlUnix__37)();
+// 8074ACC: using guessed type int (*camlUnix__38)();
+// 8074ADC: using guessed type int (*camlUnix__39)();
+// 8074AEC: using guessed type int (*camlUnix__40)();
+// 8074AFC: using guessed type int (*camlUnix__41)();
+// 8074B0C: using guessed type int (*camlUnix__42)();
+// 807D280: using guessed type int caml_exception_pointer;
 
 //----- (0804F110) --------------------------------------------------------
 int camlUnixLabels__code_begin()
@@ -6295,94 +7260,102 @@ int __usercall camlPervasives__build_result_1243@<eax>(int result@<eax>, int *a2
 int __usercall camlPervasives__scan_1249@<eax>(int *a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 {
   int v3; // eax
-  int v4; // eax
-  unsigned int v6; // eax
-  _DWORD *v7; // eax
-  int *v8; // ecx
-  char v9; // dl
-  _DWORD *v10; // eax
-  int v11; // eax
-  unsigned int v12; // eax
-  int v13; // [esp+0h] [ebp-14h]
-  int v14; // [esp+0h] [ebp-14h]
-  int v15; // [esp+4h] [ebp-10h]
-  int v16; // [esp+4h] [ebp-10h]
-  int v17; // [esp+8h] [ebp-Ch]
-  int *v18; // [esp+8h] [ebp-Ch]
-  int *v19; // [esp+10h] [ebp-4h]
+  int v4; // edx
+  int v5; // ecx
+  int v6; // eax
+  unsigned int v8; // eax
+  _DWORD *v9; // eax
+  int v10; // ecx
+  int v11; // edx
+  _DWORD *v12; // eax
+  int v13; // eax
+  int v14; // edx
+  int v15; // ecx
+  unsigned int v16; // eax
+  int v17; // [esp+0h] [ebp-14h]
+  int v18; // [esp+0h] [ebp-14h]
+  int v19; // [esp+4h] [ebp-10h]
+  int v20; // [esp+4h] [ebp-10h]
+  int v21; // [esp+8h] [ebp-Ch]
+  int *v22; // [esp+8h] [ebp-Ch]
+  int *v23; // [esp+10h] [ebp-4h]
 
   while ( 1 )
   {
-    v19 = a1;
-    v15 = a2;
+    v23 = a1;
+    v19 = a2;
     v3 = caml_c_call((int (*)(void))caml_ml_input_scan_line, *(_DWORD *)(a2 + 12));
     if ( v3 == 1 )
     {
-      if ( v19 != (int *)1 )
+      if ( v23 != (int *)1 )
       {
-        v4 = caml_c_call((int (*)(void))caml_create_string, a3);
-        return camlPervasives__build_result_1243(v4, v19, a3);
+        v6 = caml_c_call((int (*)(void))caml_create_string, a3);
+        return camlPervasives__build_result_1243(v6, v23, a3);
       }
       while ( 1 )
       {
-        v6 = caml_young_ptr - 8;
-        caml_young_ptr = v6;
-        if ( v6 >= caml_young_limit )
+        v8 = caml_young_ptr - 8;
+        caml_young_ptr = v8;
+        if ( v8 >= caml_young_limit )
           break;
-        caml_call_gc(v13);
+        caml_call_gc(v4, v5, v17);
       }
-      v7 = (_DWORD *)(v6 + 4);
-      *(v7 - 1) = 1024;
-      *v7 = &caml_exn_End_of_file;
-      v3 = caml_raise_exn((int)v7);
+      v9 = (_DWORD *)(v8 + 4);
+      *(v9 - 1) = 1024;
+      *v9 = &caml_exn_End_of_file;
+      v3 = caml_raise_exn((int)v9);
     }
-    v17 = v3;
+    v21 = v3;
     if ( v3 > 1 )
       break;
-    v13 = caml_c_call((int (*)(void))caml_create_string, 2 - v3);
-    caml_c_call((int (*)(void))caml_ml_input, *(_DWORD *)(v15 + 12));
+    v17 = caml_c_call((int (*)(void))caml_create_string, 2 - v3);
+    caml_c_call((int (*)(void))caml_ml_input, *(_DWORD *)(v19 + 12));
     while ( 1 )
     {
-      v12 = caml_young_ptr - 12;
-      caml_young_ptr = v12;
-      if ( v12 >= caml_young_limit )
+      v16 = caml_young_ptr - 12;
+      caml_young_ptr = v16;
+      if ( v16 >= caml_young_limit )
         break;
-      caml_call_gc(v13);
+      caml_call_gc(v14, v15, v17);
     }
-    a1 = (int *)(v12 + 4);
+    a1 = (int *)(v16 + 4);
     *(a1 - 1) = 2048;
-    *a1 = v13;
-    a1[1] = (int)v19;
-    a3 = a3 - v17 + 1;
-    a2 = v15;
+    *a1 = v17;
+    a1[1] = (int)v23;
+    a3 = a3 - v21 + 1;
+    a2 = v19;
   }
-  v14 = caml_c_call((int (*)(void))caml_create_string, v3 - 2);
-  caml_c_call((int (*)(void))caml_ml_input, *(_DWORD *)(v15 + 12));
-  caml_c_call((int (*)(void))caml_ml_input_char, *(_DWORD *)(v15 + 12));
-  v8 = v19;
-  if ( v19 == (int *)1 )
-    return v14;
-  v9 = a3 + v17 - 3;
-  v16 = a3 + v17 - 3;
+  v18 = caml_c_call((int (*)(void))caml_create_string, v3 - 2);
+  caml_c_call((int (*)(void))caml_ml_input, *(_DWORD *)(v19 + 12));
+  caml_c_call((int (*)(void))caml_ml_input_char, *(_DWORD *)(v19 + 12));
+  v10 = (int)v23;
+  if ( v23 == (int *)1 )
+    return v18;
+  v11 = a3 + v21 - 3;
+  v20 = v11;
   while ( 1 )
   {
-    v10 = (_DWORD *)(caml_young_ptr - 12);
-    caml_young_ptr = (int)v10;
-    if ( (unsigned int)v10 >= caml_young_limit )
+    v12 = (_DWORD *)(caml_young_ptr - 12);
+    caml_young_ptr = (int)v12;
+    if ( (unsigned int)v12 >= caml_young_limit )
       break;
-    caml_call_gc(v14);
+    caml_call_gc(v11, v10, v18);
   }
-  v18 = v10 + 1;
-  *v10 = 2048;
-  v10[1] = v14;
-  v10[2] = v8;
-  v11 = caml_c_call((int (*)(void))caml_create_string, v9);
-  return camlPervasives__build_result_1243(v11, v18, v16);
+  v22 = v12 + 1;
+  *v12 = 2048;
+  v12[1] = v18;
+  v12[2] = v10;
+  v13 = caml_c_call((int (*)(void))caml_create_string, v11);
+  return camlPervasives__build_result_1243(v13, v22, v20);
 }
-// 804FA57: variable 'v14' is possibly undefined
-// 804FA59: variable 'v8' is possibly undefined
-// 804FA62: variable 'v9' is possibly undefined
-// 804FAED: variable 'v13' is possibly undefined
+// 804FA57: variable 'v18' is possibly undefined
+// 804FA59: variable 'v10' is possibly undefined
+// 804FA62: variable 'v11' is possibly undefined
+// 804FAED: variable 'v17' is possibly undefined
+// 804FB0A: variable 'v14' is possibly undefined
+// 804FB0A: variable 'v15' is possibly undefined
+// 804FB1B: variable 'v4' is possibly undefined
+// 804FB1B: variable 'v5' is possibly undefined
 // 8073A10: using guessed type char *caml_exn_End_of_file;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -6505,32 +7478,26 @@ int __usercall camlPervasives__fun_1424@<eax>(char a1@<al>)
 //----- (0804FCF0) --------------------------------------------------------
 int __usercall camlPervasives__min_1022@<eax>(int a1@<eax>, int a2@<ebx>)
 {
-  int result; // eax
-
   if ( caml_c_call((int (*)(void))caml_lessequal, a1) == 1 )
-    result = a2;
+    return a2;
   else
-    result = a1;
-  return result;
+    return a1;
 }
 
 //----- (0804FD30) --------------------------------------------------------
 int __usercall camlPervasives__max_1025@<eax>(int a1@<eax>, int a2@<ebx>)
 {
-  int result; // eax
-
   if ( caml_c_call((int (*)(void))caml_greaterequal, a1) == 1 )
-    result = a2;
+    return a2;
   else
-    result = a1;
-  return result;
+    return a1;
 }
 
 //----- (0804FD70) --------------------------------------------------------
 int __usercall camlPervasives__abs_1044@<eax>(int result@<eax>)
 {
   if ( result < 1 )
-    result = 2 - result;
+    return 2 - result;
   return result;
 }
 
@@ -6569,18 +7536,15 @@ int __usercall camlPervasives__char_of_int_1120@<eax>(int result@<eax>, int a2@<
     camlPervasives__invalid_arg_1012(a3, a2);
   return result;
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (0804FE50) --------------------------------------------------------
 char *__usercall camlPervasives__string_of_bool_1127@<eax>(int a1@<eax>)
 {
-  char *result; // eax
-
   if ( a1 == 1 )
-    result = camlPervasives__100;
+    return camlPervasives__100;
   else
-    result = camlPervasives__101;
-  return result;
+    return camlPervasives__101;
 }
 
 //----- (0804FE70) --------------------------------------------------------
@@ -6597,14 +7561,13 @@ int __usercall camlPervasives__bool_of_string_1129@<eax>(_DWORD *a1@<eax>)
 }
 // 804FE9D: variable 'v3' is possibly undefined
 // 804FE9D: variable 'v2' is possibly undefined
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (0804FED0) --------------------------------------------------------
 int camlPervasives__string_of_int_1130()
 {
-  return caml_c_call(caml_format_int, (char)&camlPervasives__96);
+  return caml_c_call((int (*)(void))caml_format_int, (char)&camlPervasives__96);
 }
-// 8066B1E: using guessed type int caml_format_int();
 
 //----- (0804FEF0) --------------------------------------------------------
 #error "804FF45: call analysis failed (funcsize=22)"
@@ -6612,40 +7575,39 @@ int camlPervasives__string_of_int_1130()
 //----- (0804FF50) --------------------------------------------------------
 int camlPervasives__string_of_float_1140()
 {
-  caml_c_call(caml_format_float, (char)camlPervasives__95);
+  caml_c_call((int (*)(void))caml_format_float, (char)camlPervasives__95);
   return camlPervasives__valid_float_lexem_1135();
 }
 // 804FEF0: using guessed type int camlPervasives__valid_float_lexem_1135(void);
-// 806778A: using guessed type int caml_format_float();
 
 //----- (0804FF70) --------------------------------------------------------
-_DWORD *__usercall camlPervasives___40_1143@<eax>(int *a1@<eax>, int a2@<ebx>)
+int *__usercall camlPervasives___40_1143@<eax>(int *a1@<eax>, int a2@<ebx>)
 {
-  int v2; // ecx
-  unsigned int v3; // eax
-  _DWORD *result; // eax
-  int v5; // [esp+0h] [ebp-4h]
+  int v2; // edx
+  int *i; // ecx
+  unsigned int v4; // eax
+  int *result; // eax
+  int v6; // [esp+0h] [ebp-4h]
 
   if ( a1 == (int *)1 )
-    return (_DWORD *)a2;
-  v5 = *a1;
-  v2 = camlPervasives___40_1143();
-  while ( 1 )
+    return (int *)a2;
+  v6 = *a1;
+  for ( i = camlPervasives___40_1143((int *)a1[1], a2); ; caml_call_gc(v2, (int)i, v6) )
   {
-    v3 = caml_young_ptr - 12;
-    caml_young_ptr = v3;
-    if ( v3 >= caml_young_limit )
+    v4 = caml_young_ptr - 12;
+    caml_young_ptr = v4;
+    if ( v4 >= caml_young_limit )
       break;
-    caml_call_gc(v5);
   }
-  result = (_DWORD *)(v3 + 4);
+  result = (int *)(v4 + 4);
   *(result - 1) = 2048;
-  *result = v5;
-  result[1] = v2;
+  *result = v6;
+  result[1] = (int)i;
   return result;
 }
-// 804FFAB: variable 'v5' is possibly undefined
-// 804FFAD: variable 'v2' is possibly undefined
+// 804FFAB: variable 'v6' is possibly undefined
+// 804FFAD: variable 'i' is possibly undefined
+// 804FFC6: variable 'v2' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -6698,7 +7660,7 @@ int __usercall camlPervasives__output_1194@<eax>(char a1@<al>, int a2@<edx>, int
   }
   return caml_c_call((int (*)(void))caml_ml_output, a1);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (080500D0) --------------------------------------------------------
 int __usercall camlPervasives__output_value_1202@<eax>(char a1@<al>)
@@ -6788,46 +7750,50 @@ int __usercall camlPervasives__input_1224@<eax>(char a1@<al>, int a2@<edx>, int 
   }
   return caml_c_call((int (*)(void))caml_ml_input, a1);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08050250) --------------------------------------------------------
 int __usercall camlPervasives__unsafe_really_input_1229@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>)
 {
   int v4; // eax
-  unsigned int v5; // eax
-  _DWORD *v6; // eax
-  int v7; // [esp+0h] [ebp-10h]
-  int v8; // [esp+4h] [ebp-Ch]
-  int v9; // [esp+8h] [ebp-8h]
+  int v5; // edx
+  int v6; // ecx
+  unsigned int v7; // eax
+  _DWORD *v8; // eax
+  int v9; // [esp+0h] [ebp-10h]
+  int v10; // [esp+4h] [ebp-Ch]
+  int v11; // [esp+8h] [ebp-8h]
 
   while ( a2 > 1 )
   {
-    v7 = a2;
-    v8 = a3;
-    v9 = a1;
+    v9 = a2;
+    v10 = a3;
+    v11 = a1;
     v4 = caml_c_call((int (*)(void))caml_ml_input, a1);
     if ( v4 == 1 )
     {
       while ( 1 )
       {
-        v5 = caml_young_ptr - 8;
-        caml_young_ptr = v5;
-        if ( v5 >= caml_young_limit )
+        v7 = caml_young_ptr - 8;
+        caml_young_ptr = v7;
+        if ( v7 >= caml_young_limit )
           break;
-        caml_call_gc(v7);
+        caml_call_gc(v5, v6, v9);
       }
-      v6 = (_DWORD *)(v5 + 4);
-      *(v6 - 1) = 1024;
-      *v6 = &caml_exn_End_of_file;
-      v4 = caml_raise_exn((int)v6);
+      v8 = (_DWORD *)(v7 + 4);
+      *(v8 - 1) = 1024;
+      *v8 = &caml_exn_End_of_file;
+      v4 = caml_raise_exn((int)v8);
     }
-    a2 = v7 - v4 + 1;
-    a3 = v8 + v4 - 1;
-    a1 = v9;
+    a2 = v9 - v4 + 1;
+    a3 = v10 + v4 - 1;
+    a1 = v11;
   }
   return 1;
 }
-// 80502C3: variable 'v7' is possibly undefined
+// 80502C3: variable 'v9' is possibly undefined
+// 80502DB: variable 'v5' is possibly undefined
+// 80502DB: variable 'v6' is possibly undefined
 // 8073A10: using guessed type char *caml_exn_End_of_file;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -6845,7 +7811,7 @@ int __usercall camlPervasives__really_input_1235@<eax>(int a1@<eax>, int a2@<edx
   }
   return camlPervasives__unsafe_really_input_1229(a1, a2, a3);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08050330) --------------------------------------------------------
 #error "805037F: call analysis failed (funcsize=19)"
@@ -6979,19 +7945,19 @@ int camlPervasives__read_line_1288()
 //----- (080505B0) --------------------------------------------------------
 int camlPervasives__read_int_1289()
 {
-  char v0; // al
+  char line_1288; // al
 
-  v0 = camlPervasives__read_line_1288();
-  return caml_c_call((int (*)(void))caml_int_of_string, v0);
+  line_1288 = camlPervasives__read_line_1288();
+  return caml_c_call((int (*)(void))caml_int_of_string, line_1288);
 }
 
 //----- (080505D0) --------------------------------------------------------
 int camlPervasives__read_float_1290()
 {
-  char v0; // al
+  char line_1288; // al
 
-  v0 = camlPervasives__read_line_1288();
-  return caml_c_call((int (*)(void))caml_float_of_string, v0);
+  line_1288 = camlPervasives__read_line_1288();
+  return caml_c_call((int (*)(void))caml_float_of_string, line_1288);
 }
 
 //----- (080505F0) --------------------------------------------------------
@@ -7077,7 +8043,13 @@ int __usercall camlPervasives__exit_1326@<eax>(char a1@<al>)
 #error "805081E: call analysis failed (funcsize=198)"
 
 //----- (08050B90) --------------------------------------------------------
-int __usercall camlArray__code_begin@<eax>(int a1@<eax>, double *a2@<edx>, unsigned int a3@<ecx>, double *a4@<ebx>, int *a5@<edi>, unsigned int a6@<esi>)
+int __usercall camlArray__code_begin@<eax>(
+        int a1@<eax>,
+        double *a2@<edx>,
+        unsigned int a3@<ecx>,
+        double *a4@<ebx>,
+        int *a5@<edi>,
+        unsigned int a6@<esi>)
 {
   int v6; // eax
   unsigned int v7; // ebx
@@ -7092,7 +8064,7 @@ int __usercall camlArray__code_begin@<eax>(int a1@<eax>, double *a2@<edx>, unsig
   int v17; // eax
   char v18; // [esp+0h] [ebp-20h]
   int v19; // [esp+4h] [ebp-1Ch]
-  int v20; // [esp+8h] [ebp-18h]
+  unsigned int v20; // [esp+8h] [ebp-18h]
   double *v21; // [esp+Ch] [ebp-14h]
   double *v22; // [esp+14h] [ebp-Ch]
 
@@ -7125,7 +8097,7 @@ int __usercall camlArray__code_begin@<eax>(int a1@<eax>, double *a2@<edx>, unsig
       }
       v9 = v19 + 2;
       if ( v19 + 2 >= a5[7] )
-        return camlArray__blit_120(a5[5], a6 + 2, a5[6], v20, a5[8] - v20 + 1);
+        return camlArray__blit_1093(a5[5], a6 + 2, a5[6], v20, a5[8] - v20 + 1);
       v8 = (_DWORD *)a5[4];
       v10 = *(v8 - 1);
       if ( (unsigned __int8)v10 == 254 )
@@ -7138,7 +8110,7 @@ int __usercall camlArray__code_begin@<eax>(int a1@<eax>, double *a2@<edx>, unsig
           caml_young_ptr = v11;
           if ( v11 >= caml_young_limit )
             break;
-          caml_call_gc(v18);
+          caml_call_gc(v10, v9, v18);
         }
         *(_DWORD *)v11 = 2301;
         *(double *)(v11 + 4) = *(double *)&v8[v9 - 1];
@@ -7172,8 +8144,8 @@ int __usercall camlArray__code_begin@<eax>(int a1@<eax>, double *a2@<edx>, unsig
       caml_modify((unsigned int *)(v13 + 2 * a6 - 2), (unsigned int)v21);
     }
     a3 = v20 + 2;
-    if ( v20 + 2 >= a5[8] )
-      return camlArray__blit_120(a5[4], a6 + 2, a5[6], v19, a5[7] - v19 + 1);
+    if ( (int)(v20 + 2) >= a5[8] )
+      return camlArray__blit_1093(a5[4], a6 + 2, a5[6], v19, a5[7] - v19 + 1);
     v8 = (_DWORD *)a5[5];
     v15 = *(v8 - 1);
     if ( (unsigned __int8)v15 == 254 )
@@ -7194,7 +8166,7 @@ LABEL_28:
       caml_young_ptr = v16;
       if ( v16 >= caml_young_limit )
         break;
-      caml_call_gc(v18);
+      caml_call_gc(v15, a3, v18);
     }
     a2 = (double *)(v16 + 4);
     *(_DWORD *)v16 = 2301;
@@ -7221,7 +8193,9 @@ LABEL_39:
 // 8050B90: could not find valid save-restore pair for edi
 // 8050B9D: variable 'a3' is possibly undefined
 // 8050C80: variable 'v9' is possibly undefined
+// 8050DAF: variable 'v15' is possibly undefined
 // 8050DAF: variable 'v18' is possibly undefined
+// 8050DB6: variable 'v10' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -7247,18 +8221,17 @@ int __usercall camlArray__size_1065@<eax>(int result@<eax>, _DWORD *a2@<ebx>)
 }
 
 //----- (08050E40) --------------------------------------------------------
-int __usercall camlArray__fill_1070@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<ebx>)
+int __usercall camlArray__fill_1070@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<ebx>, int a4@<edx>)
 {
-  int v3; // edi
-  int v4; // ebx
-  unsigned int v5; // esi
+  int v4; // edi
+  int v5; // ebx
   unsigned int v6; // esi
-  int v7; // esi
-  int v8; // ecx
-  double *v9; // eax
-  unsigned int v10; // eax
-  int v11; // ebp
-  int v12; // edx
+  unsigned int v7; // esi
+  int v8; // esi
+  int v9; // ecx
+  double *v10; // eax
+  unsigned int v11; // eax
+  int v12; // ebp
   int v13; // eax
   unsigned int v14; // ebx
   unsigned int v15; // ebx
@@ -7268,52 +8241,52 @@ int __usercall camlArray__fill_1070@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<e
 
   while ( 1 )
   {
-    v3 = a2;
+    v4 = a2;
     if ( a3 == (int *)1 )
       break;
     v19 = a1;
     v17 = (int *)a3[1];
     v18 = *a3;
-    v4 = 1;
-    v5 = *(_DWORD *)(v18 - 4);
-    if ( (unsigned __int8)v5 == 254 )
-      v6 = v5 >> 10;
+    v5 = 1;
+    v6 = *(_DWORD *)(v18 - 4);
+    if ( (unsigned __int8)v6 == 254 )
+      v7 = v6 >> 10;
     else
-      v6 = v5 >> 9;
-    v7 = (v6 | 1) - 2;
-    if ( v7 >= 1 )
+      v7 = v6 >> 9;
+    v8 = (v7 | 1) - 2;
+    if ( v8 >= 1 )
     {
       do
       {
-        v8 = v18;
+        v9 = v18;
         if ( *(unsigned __int8 *)(v18 - 4) == 254 )
         {
           while ( 1 )
           {
-            v10 = caml_young_ptr - 12;
-            caml_young_ptr = v10;
-            if ( v10 >= caml_young_limit )
+            v11 = caml_young_ptr - 12;
+            caml_young_ptr = v11;
+            if ( v11 >= caml_young_limit )
               break;
-            caml_call_gc((char)v17);
+            caml_call_gc(a4, v9, (char)v17);
           }
-          v9 = (double *)(v10 + 4);
-          *((_DWORD *)v9 - 1) = 2301;
-          *v9 = *(double *)(v8 + 4 * v4 - 4);
+          v10 = (double *)(v11 + 4);
+          *((_DWORD *)v10 - 1) = 2301;
+          *v10 = *(double *)(v9 + 4 * v5 - 4);
         }
         else
         {
-          v9 = *(double **)(v18 + 2 * v4 - 2);
+          v10 = *(double **)(v18 + 2 * v5 - 2);
         }
-        v11 = v19 + v4 - 1;
-        v12 = *(_DWORD *)(v3 + 12);
-        if ( *(unsigned __int8 *)(v12 - 4) == 254 )
-          *(double *)(v12 + 4 * v11 - 4) = *v9;
+        v12 = v19 + v5 - 1;
+        a4 = *(_DWORD *)(v4 + 12);
+        if ( *(unsigned __int8 *)(a4 - 4) == 254 )
+          *(double *)(a4 + 4 * v12 - 4) = *v10;
         else
-          caml_modify((unsigned int *)(v12 + 2 * v11 - 2), (unsigned int)v9);
-        v13 = v4;
-        v4 += 2;
+          caml_modify((unsigned int *)(a4 + 2 * v12 - 2), (unsigned int)v10);
+        v13 = v5;
+        v5 += 2;
       }
-      while ( v13 != v7 );
+      while ( v13 != v8 );
     }
     v14 = *(_DWORD *)(v18 - 4);
     if ( (unsigned __int8)v14 == 254 )
@@ -7322,12 +8295,13 @@ int __usercall camlArray__fill_1070@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<e
       v15 = v14 >> 9;
     a1 = (v15 | 1) + v19 - 1;
     a3 = v17;
-    a2 = v3;
+    a2 = v4;
   }
   return 1;
 }
-// 8050ED3: variable 'v8' is possibly undefined
+// 8050ED3: variable 'v9' is possibly undefined
 // 8050F3D: variable 'v17' is possibly undefined
+// 8050F59: variable 'a4' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -7338,9 +8312,10 @@ int (__cdecl **__usercall camlArray__find_init_1077@<eax>(int *a1@<eax>))(int, i
   double *v2; // ecx
   unsigned int v3; // edx
   unsigned int v4; // edx
-  unsigned int v5; // eax
-  double *v6; // eax
-  char v8; // [esp+0h] [ebp-8h]
+  int v5; // edx
+  unsigned int v6; // eax
+  double *v7; // eax
+  char v9; // [esp+0h] [ebp-8h]
 
   do
   {
@@ -7354,26 +8329,28 @@ int (__cdecl **__usercall camlArray__find_init_1077@<eax>(int *a1@<eax>))(int, i
       v4 = v3 >> 10;
     else
       v4 = v3 >> 9;
+    v5 = v4 | 1;
   }
-  while ( (int)(v4 | 1) <= 1 );
+  while ( v5 <= 1 );
   if ( *((unsigned __int8 *)v2 - 4) == 254 )
   {
     while ( 1 )
     {
-      v5 = caml_young_ptr - 12;
-      caml_young_ptr = v5;
-      if ( v5 >= caml_young_limit )
+      v6 = caml_young_ptr - 12;
+      caml_young_ptr = v6;
+      if ( v6 >= caml_young_limit )
         break;
-      caml_call_gc(v8);
+      caml_call_gc(v5, (int)v2, v9);
     }
-    v6 = (double *)(v5 + 4);
-    *((_DWORD *)v6 - 1) = 2301;
-    *v6 = *v2;
+    v7 = (double *)(v6 + 4);
+    *((_DWORD *)v7 - 1) = 2301;
+    *v7 = *v2;
   }
   return (int (__cdecl **)(int, int))camlArray__concat_aux_1062(v1);
 }
 // 8050FDF: variable 'v2' is possibly undefined
-// 8051009: variable 'v8' is possibly undefined
+// 8051009: variable 'v5' is possibly undefined
+// 8051009: variable 'v9' is possibly undefined
 // 8077E70: using guessed type int (__cdecl *camlArray__36[2])(int, int);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -7403,7 +8380,7 @@ _DWORD *__usercall camlArray__tolist_1123@<eax>(int a1@<eax>, int a2@<ecx>, _DWO
         caml_young_ptr = v7;
         if ( v7 >= caml_young_limit )
           break;
-        caml_call_gc(v10);
+        caml_call_gc(v3, a2, v10);
       }
       v6 = v7 + 4;
       *(_DWORD *)v7 = 2301;
@@ -7419,7 +8396,7 @@ _DWORD *__usercall camlArray__tolist_1123@<eax>(int a1@<eax>, int a2@<ecx>, _DWO
       caml_young_ptr = (int)v8;
       if ( (unsigned int)v8 >= caml_young_limit )
         break;
-      caml_call_gc(v10);
+      caml_call_gc(v3, a2, v10);
     }
     v9 = v8 + 1;
     *v8 = 2048;
@@ -7466,8 +8443,9 @@ int __usercall camlArray__fill_1135@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<eb
 }
 
 //----- (08051100) --------------------------------------------------------
-unsigned int __usercall camlArray__maxson_182@<eax>(signed int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
+unsigned int __usercall camlArray__maxson_1155@<eax>(signed int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 {
+  int v3; // edx
   unsigned int v4; // esi
   _DWORD *v5; // eax
   unsigned int v6; // edx
@@ -7505,10 +8483,11 @@ unsigned int __usercall camlArray__maxson_182@<eax>(signed int a1@<eax>, int a2@
   double *v38; // ecx
   char v39; // [esp+0h] [ebp-14h]
   int v40; // [esp+0h] [ebp-14h]
-  signed int v41; // [esp+0h] [ebp-14h]
+  int v41; // [esp+0h] [ebp-14h]
   unsigned int *v42; // [esp+4h] [ebp-10h]
   int v44; // [esp+8h] [ebp-Ch]
 
+  v3 = a1;
   v4 = 3 * a3;
   v44 = 3 * a3;
   while ( 1 )
@@ -7517,11 +8496,11 @@ unsigned int __usercall camlArray__maxson_182@<eax>(signed int a1@<eax>, int a2@
     caml_young_ptr = (int)v5;
     if ( (unsigned int)v5 >= caml_young_limit )
       break;
-    caml_call_gc(v39);
+    caml_call_gc(v3, a2, v39);
   }
   *v5 = 1024;
   v5[1] = v4;
-  if ( (int)(v4 + 4) < a1 )
+  if ( (int)(v4 + 4) < v3 )
   {
     v42 = v5 + 1;
     v40 = a2;
@@ -7543,7 +8522,7 @@ LABEL_69:
         caml_young_ptr = v10;
         if ( v10 >= caml_young_limit )
           break;
-        caml_call_gc(v40);
+        caml_call_gc(v6, a2, v40);
       }
       v9 = v10 + 4;
       *(_DWORD *)v10 = 2301;
@@ -7555,7 +8534,7 @@ LABEL_69:
       {
 LABEL_70:
         v36 = caml_ml_array_bound_error();
-        return camlArray__trickledown_187(v36, v37, v38, v9);
+        return camlArray__trickledown_1160(v36, v37, v38, v9);
       }
       v9 = *(_DWORD *)(v7 + 2 * v6 - 2);
     }
@@ -7575,7 +8554,7 @@ LABEL_67:
         caml_young_ptr = v13;
         if ( v13 >= caml_young_limit )
           break;
-        caml_call_gc(v40);
+        caml_call_gc(v11, a2, v40);
       }
       v14 = (double *)(v13 + 4);
       *((_DWORD *)v14 - 1) = 2301;
@@ -7608,7 +8587,7 @@ LABEL_65:
         caml_young_ptr = v19;
         if ( v19 >= caml_young_limit )
           break;
-        caml_call_gc(v40);
+        caml_call_gc(v17, v15, v40);
       }
       v9 = v19 + 4;
       *(_DWORD *)v19 = 2301;
@@ -7646,7 +8625,7 @@ LABEL_30:
         caml_young_ptr = v23;
         if ( v23 >= caml_young_limit )
           break;
-        caml_call_gc(v40);
+        caml_call_gc(v20, v21, v40);
       }
       v24 = (double *)(v23 + 4);
       *((_DWORD *)v24 - 1) = 2301;
@@ -7659,8 +8638,8 @@ LABEL_64:
     caml_ml_array_bound_error();
     goto LABEL_65;
   }
-  v41 = a1;
-  if ( (int)(v4 + 2) < a1 )
+  v41 = v3;
+  if ( (int)(v4 + 2) < v3 )
   {
     v9 = v4 + 2;
     v26 = *(_DWORD *)(a2 + 16);
@@ -7679,7 +8658,7 @@ LABEL_61:
         caml_young_ptr = v28;
         if ( v28 >= caml_young_limit )
           break;
-        caml_call_gc(v41);
+        caml_call_gc(v26, a2, v41);
       }
       v29 = (double *)(v28 + 4);
       *((_DWORD *)v29 - 1) = 2301;
@@ -7708,7 +8687,7 @@ LABEL_62:
           caml_young_ptr = v32;
           if ( v32 >= caml_young_limit )
             break;
-          caml_call_gc(v41);
+          caml_call_gc(v30, a2, v41);
         }
         v33 = (double *)(v32 + 4);
         *((_DWORD *)v33 - 1) = 2301;
@@ -7743,12 +8722,12 @@ LABEL_48:
         v35[1] = a3;
         caml_raise_exn((int)v35);
       }
-      caml_call_gc(v41);
+      caml_call_gc(v3, a2, v41);
     }
   }
   return result;
 }
-// 8051140: variable 'a1' is possibly undefined
+// 8051140: variable 'v3' is possibly undefined
 // 805114A: variable 'a2' is possibly undefined
 // 80511AE: variable 'v6' is possibly undefined
 // 805120E: variable 'v11' is possibly undefined
@@ -7768,39 +8747,44 @@ LABEL_48:
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (080514F0) --------------------------------------------------------
-int __usercall camlArray__trickledown_187@<eax>(signed int a1@<eax>, int a2@<edx>, double *a3@<ecx>, unsigned int a4@<ebx>)
+int __usercall camlArray__trickledown_1160@<eax>(
+        signed int a1@<eax>,
+        int a2@<edx>,
+        double *a3@<ecx>,
+        unsigned int a4@<ebx>)
 {
   int v4; // edx
   int v5; // ecx
   unsigned int v6; // eax
   unsigned int v7; // eax
   double *v8; // eax
-  int v9; // esi
-  int v10; // ecx
-  unsigned int v11; // eax
-  double *v12; // edx
-  unsigned int v13; // eax
-  int v14; // eax
-  unsigned int v15; // edi
-  int v16; // eax
-  unsigned int v17; // ebx
-  signed int v19; // eax
-  int v20; // edx
-  double *v21; // ecx
-  int v22; // [esp+0h] [ebp-1Ch]
-  signed int v23; // [esp+4h] [ebp-18h]
-  double *v24; // [esp+8h] [ebp-14h]
-  unsigned int v25; // [esp+Ch] [ebp-10h]
+  int v9; // edx
+  int v10; // esi
+  int v11; // ecx
+  unsigned int v12; // eax
+  double *v13; // edx
+  unsigned int v14; // eax
+  int v15; // eax
+  unsigned int v16; // edi
+  int v17; // eax
+  unsigned int v18; // ebx
+  signed int v20; // eax
+  int v21; // edx
+  double *v22; // ecx
+  int v23; // [esp+0h] [ebp-1Ch]
+  signed int v24; // [esp+4h] [ebp-18h]
+  double *v25; // [esp+8h] [ebp-14h]
+  unsigned int v26; // [esp+Ch] [ebp-10h]
 
   while ( 1 )
   {
-    v23 = a1;
-    v25 = a4;
-    v24 = a3;
-    v22 = a2;
-    a4 = camlArray__maxson_182(a1, *(_DWORD *)(a2 + 20), a4);
-    v4 = v22;
-    v5 = *(_DWORD *)(v22 + 16);
+    v24 = a1;
+    v26 = a4;
+    v25 = a3;
+    v23 = a2;
+    a4 = camlArray__maxson_1155(a1, *(_DWORD *)(a2 + 20), a4);
+    v4 = v23;
+    v5 = *(_DWORD *)(v23 + 16);
     v6 = *(_DWORD *)(v5 - 4);
     if ( (unsigned __int8)v6 == 254 )
     {
@@ -7812,7 +8796,7 @@ int __usercall camlArray__trickledown_187@<eax>(signed int a1@<eax>, int a2@<edx
         caml_young_ptr = v7;
         if ( v7 >= caml_young_limit )
           break;
-        caml_call_gc(v22);
+        caml_call_gc(v4, v5, v23);
       }
       v8 = (double *)(v7 + 4);
       *((_DWORD *)v8 - 1) = 2301;
@@ -7824,67 +8808,67 @@ int __usercall camlArray__trickledown_187@<eax>(signed int a1@<eax>, int a2@<edx
     }
     if ( caml_apply2(*(_DWORD *)(v4 + 12)) <= 1 )
       break;
-    v9 = v22;
-    v10 = *(_DWORD *)(v22 + 16);
-    v11 = *(_DWORD *)(v10 - 4);
-    if ( (unsigned __int8)v11 == 254 )
+    v10 = v23;
+    v11 = *(_DWORD *)(v23 + 16);
+    v12 = *(_DWORD *)(v11 - 4);
+    if ( (unsigned __int8)v12 == 254 )
     {
-      if ( v11 >> 10 <= a4 )
+      if ( v12 >> 10 <= a4 )
         goto LABEL_32;
       while ( 1 )
       {
-        v13 = caml_young_ptr - 12;
-        caml_young_ptr = v13;
-        if ( v13 >= caml_young_limit )
+        v14 = caml_young_ptr - 12;
+        caml_young_ptr = v14;
+        if ( v14 >= caml_young_limit )
           break;
-        caml_call_gc(v22);
+        caml_call_gc(v9, v11, v23);
       }
-      v12 = (double *)(v13 + 4);
-      *(_DWORD *)v13 = 2301;
-      *(double *)(v13 + 4) = *(double *)(v10 + 4 * a4 - 4);
+      v13 = (double *)(v14 + 4);
+      *(_DWORD *)v14 = 2301;
+      *(double *)(v14 + 4) = *(double *)(v11 + 4 * a4 - 4);
     }
     else
     {
-      if ( v11 >> 9 <= a4 )
+      if ( v12 >> 9 <= a4 )
         goto LABEL_33;
-      v12 = *(double **)(v10 + 2 * a4 - 2);
+      v13 = *(double **)(v11 + 2 * a4 - 2);
     }
-    v14 = *(_DWORD *)(v9 + 16);
-    v15 = *(_DWORD *)(v14 - 4);
-    if ( (unsigned __int8)v15 == 254 )
+    v15 = *(_DWORD *)(v10 + 16);
+    v16 = *(_DWORD *)(v15 - 4);
+    if ( (unsigned __int8)v16 == 254 )
     {
-      if ( v15 >> 10 <= v25 )
+      if ( v16 >> 10 <= v26 )
         goto LABEL_30;
-      *(double *)(v14 + 4 * v25 - 4) = *v12;
+      *(double *)(v15 + 4 * v26 - 4) = *v13;
     }
     else
     {
-      if ( v15 >> 9 <= v25 )
+      if ( v16 >> 9 <= v26 )
         goto LABEL_31;
-      caml_modify((unsigned int *)(v14 + 2 * v25 - 2), (unsigned int)v12);
+      caml_modify((unsigned int *)(v15 + 2 * v26 - 2), (unsigned int)v13);
     }
-    a1 = v23;
-    a3 = v24;
-    a2 = v9;
+    a1 = v24;
+    a3 = v25;
+    a2 = v10;
   }
-  v16 = *(_DWORD *)(v22 + 16);
-  v17 = *(_DWORD *)(v16 - 4);
-  if ( (unsigned __int8)v17 == 254 )
+  v17 = *(_DWORD *)(v23 + 16);
+  v18 = *(_DWORD *)(v17 - 4);
+  if ( (unsigned __int8)v18 == 254 )
   {
-    a4 = v17 >> 10;
-    if ( a4 > v25 )
+    a4 = v18 >> 10;
+    if ( a4 > v26 )
     {
-      *(double *)(v16 + 4 * v25 - 4) = *v24;
+      *(double *)(v17 + 4 * v26 - 4) = *v25;
       return 1;
     }
     caml_ml_array_bound_error();
   }
   else
   {
-    a4 = v17 >> 9;
-    if ( a4 > v25 )
+    a4 = v18 >> 9;
+    if ( a4 > v26 )
     {
-      caml_modify((unsigned int *)(v16 + 2 * v25 - 2), (unsigned int)v24);
+      caml_modify((unsigned int *)(v17 + 2 * v26 - 2), (unsigned int)v25);
       return 1;
     }
   }
@@ -7900,27 +8884,31 @@ LABEL_33:
 LABEL_34:
   caml_ml_array_bound_error();
 LABEL_35:
-  v19 = caml_ml_array_bound_error();
-  return camlArray__trickle_1165(v19, v20, v21, a4);
+  v20 = caml_ml_array_bound_error();
+  return camlArray__trickle_1165(v20, v21, v22, a4);
 }
 // 805156E: variable 'v5' is possibly undefined
 // 8051574: variable 'v4' is possibly undefined
-// 8051589: variable 'v22' is possibly undefined
-// 80515F2: variable 'v10' is possibly undefined
-// 80516FB: variable 'v20' is possibly undefined
+// 8051589: variable 'v23' is possibly undefined
+// 80515F2: variable 'v11' is possibly undefined
+// 80516BE: variable 'v9' is possibly undefined
 // 80516FB: variable 'v21' is possibly undefined
+// 80516FB: variable 'v22' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08051700) --------------------------------------------------------
-int __usercall camlArray__trickle_1165@<eax>(signed int a1@<eax>, int a2@<edx>, double *a3@<ecx>, unsigned int a4@<ebx>)
+int __usercall camlArray__trickle_1165@<eax>(
+        signed int a1@<eax>,
+        int a2@<edx>,
+        double *a3@<ecx>,
+        unsigned int a4@<ebx>)
 {
   unsigned int *v4; // eax
   unsigned int v5; // ebx
   unsigned int v6; // ebx
   int v7; // eax
   unsigned int v8; // ecx
-  int result; // eax
   int v10; // eax
   int v11; // edx
   double *v12; // ecx
@@ -7949,14 +8937,13 @@ int __usercall camlArray__trickle_1165@<eax>(signed int a1@<eax>, int a2@<edx>, 
       return 1;
     }
     v13 = caml_ml_array_bound_error();
-    result = camlArray__bubbledown_1170(v13, v14, v6);
+    return camlArray__bubbledown_1170(v13, v14, v6);
   }
   else
   {
     v10 = caml_raise_exn((int)v4);
-    result = sub_8051790(v10, v11, v12, v5);
+    return sub_8051790(v10, v11, v12, v5);
   }
-  return result;
 }
 // 805178A: variable 'v11' is possibly undefined
 // 805178A: variable 'v12' is possibly undefined
@@ -7972,7 +8959,7 @@ int __usercall sub_8051790@<eax>(signed int a1@<eax>, int a2@<edx>, double *a3@<
 
   v5 = caml_exception_pointer;
   caml_exception_pointer = (int)&v5;
-  result = camlArray__trickledown_187(a1, *(_DWORD *)(a2 + 16), a3, a4);
+  result = camlArray__trickledown_1160(a1, *(_DWORD *)(a2 + 16), a3, a4);
   caml_exception_pointer = v5;
   return result;
 }
@@ -7985,61 +8972,63 @@ int __usercall camlArray__bubbledown_1170@<eax>(signed int a1@<eax>, int a2@<ecx
   int v3; // esi
   int v4; // ecx
   unsigned int v5; // eax
-  double *v6; // edx
-  unsigned int v7; // eax
-  int v8; // eax
-  unsigned int v9; // edi
-  signed int v10; // eax
-  int v11; // ecx
-  int v13; // [esp+0h] [ebp-14h]
-  signed int v14; // [esp+4h] [ebp-10h]
-  unsigned int v15; // [esp+8h] [ebp-Ch]
+  int v6; // edx
+  double *v7; // edx
+  unsigned int v8; // eax
+  int v9; // eax
+  unsigned int v10; // edi
+  signed int v11; // eax
+  int v12; // ecx
+  int v14; // [esp+0h] [ebp-14h]
+  signed int v15; // [esp+4h] [ebp-10h]
+  unsigned int v16; // [esp+8h] [ebp-Ch]
 
   while ( 1 )
   {
-    v14 = a1;
-    v15 = a3;
-    v13 = a2;
-    a3 = camlArray__maxson_182(a1, *(_DWORD *)(a2 + 16), a3);
-    v3 = v13;
-    v4 = *(_DWORD *)(v13 + 12);
+    v15 = a1;
+    v16 = a3;
+    v14 = a2;
+    a3 = camlArray__maxson_1155(a1, *(_DWORD *)(a2 + 16), a3);
+    v3 = v14;
+    v4 = *(_DWORD *)(v14 + 12);
     v5 = *(_DWORD *)(v4 - 4);
+    v6 = (unsigned __int8)v5;
     if ( (unsigned __int8)v5 == 254 )
     {
       if ( v5 >> 10 <= a3 )
         goto LABEL_16;
       while ( 1 )
       {
-        v7 = caml_young_ptr - 12;
-        caml_young_ptr = v7;
-        if ( v7 >= caml_young_limit )
+        v8 = caml_young_ptr - 12;
+        caml_young_ptr = v8;
+        if ( v8 >= caml_young_limit )
           break;
-        caml_call_gc(v13);
+        caml_call_gc(v6, v4, v14);
       }
-      v6 = (double *)(v7 + 4);
-      *(_DWORD *)v7 = 2301;
-      *(double *)(v7 + 4) = *(double *)(v4 + 4 * a3 - 4);
+      v7 = (double *)(v8 + 4);
+      *(_DWORD *)v8 = 2301;
+      *(double *)(v8 + 4) = *(double *)(v4 + 4 * a3 - 4);
     }
     else
     {
       if ( v5 >> 9 <= a3 )
         goto LABEL_17;
-      v6 = *(double **)(v4 + 2 * a3 - 2);
+      v7 = *(double **)(v4 + 2 * a3 - 2);
     }
-    v8 = *(_DWORD *)(v3 + 12);
-    v9 = *(_DWORD *)(v8 - 4);
-    if ( (unsigned __int8)v9 == 254 )
+    v9 = *(_DWORD *)(v3 + 12);
+    v10 = *(_DWORD *)(v9 - 4);
+    if ( (unsigned __int8)v10 == 254 )
       break;
-    if ( v9 >> 9 <= v15 )
+    if ( v10 >> 9 <= v16 )
       goto LABEL_15;
-    caml_modify((unsigned int *)(v8 + 2 * v15 - 2), (unsigned int)v6);
+    caml_modify((unsigned int *)(v9 + 2 * v16 - 2), (unsigned int)v7);
 LABEL_12:
-    a1 = v14;
+    a1 = v15;
     a2 = v3;
   }
-  if ( v9 >> 10 > v15 )
+  if ( v10 >> 10 > v16 )
   {
-    *(double *)(v8 + 4 * v15 - 4) = *v6;
+    *(double *)(v9 + 4 * v16 - 4) = *v7;
     goto LABEL_12;
   }
   caml_ml_array_bound_error();
@@ -8048,13 +9037,14 @@ LABEL_15:
 LABEL_16:
   caml_ml_array_bound_error();
 LABEL_17:
-  v10 = caml_ml_array_bound_error();
-  return camlArray__bubble_1174(v10, v11, a3);
+  v11 = caml_ml_array_bound_error();
+  return camlArray__bubble_1174(v11, v12, a3);
 }
 // 80517C0: could not find valid save-restore pair for esi
 // 805183A: variable 'v4' is possibly undefined
-// 805189C: variable 'v13' is possibly undefined
-// 80518BB: variable 'v11' is possibly undefined
+// 805189C: variable 'v6' is possibly undefined
+// 805189C: variable 'v14' is possibly undefined
+// 80518BB: variable 'v12' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -8093,176 +9083,183 @@ int __usercall sub_80518F0@<eax>(signed int a1@<eax>, int a2@<ecx>, unsigned int
 // 807D280: using guessed type int caml_exception_pointer;
 
 //----- (08051910) --------------------------------------------------------
-int __usercall camlArray__trickleup_205@<eax>(int a1@<eax>, int a2@<ecx>, double *a3@<ebx>)
+int __usercall camlArray__trickleup_1178@<eax>(int a1@<eax>, int a2@<ecx>, double *a3@<ebx>)
 {
   int v3; // esi
   int v4; // edi
   int v5; // eax
-  unsigned int v6; // ecx
-  unsigned int v7; // eax
-  _DWORD *v8; // eax
-  int v9; // edx
-  unsigned int v10; // eax
-  int v11; // esi
+  int v6; // edx
+  int v7; // et2
+  unsigned int v8; // ecx
+  unsigned int v9; // eax
+  _DWORD *v10; // eax
+  int v11; // edx
   unsigned int v12; // eax
-  double *v13; // eax
+  int v13; // esi
   unsigned int v14; // eax
-  double *v15; // ecx
-  unsigned int v16; // eax
-  int v17; // eax
-  unsigned int v18; // edx
-  unsigned int *v19; // ecx
+  double *v15; // eax
+  int v16; // edx
+  unsigned int v17; // eax
+  int v18; // ecx
+  double *v19; // ecx
+  unsigned int v20; // eax
   int v21; // eax
-  unsigned int v22; // ebx
-  unsigned int v23; // eax
-  unsigned int v24; // edx
-  int v25; // ecx
-  int v26; // [esp+0h] [ebp-18h]
-  double *v27; // [esp+4h] [ebp-14h]
-  unsigned int v28; // [esp+8h] [ebp-10h]
-  unsigned int v29; // [esp+Ch] [ebp-Ch]
+  unsigned int v22; // edx
+  unsigned int *v23; // ecx
+  int v25; // eax
+  unsigned int v26; // ebx
+  unsigned int v27; // eax
+  unsigned int v28; // edx
+  int v29; // ecx
+  int v30; // [esp+0h] [ebp-18h]
+  double *v31; // [esp+4h] [ebp-14h]
+  unsigned int v32; // [esp+8h] [ebp-10h]
+  unsigned int v33; // [esp+Ch] [ebp-Ch]
 
   while ( 1 )
   {
     v3 = a1;
     v4 = a2;
+    v7 = ((a1 - 2) >> 1) % 3;
     v5 = ((a1 - 2) >> 1) / 3;
-    v6 = 2 * v5 + 1;
-    if ( v3 == v6 )
+    v6 = v7;
+    v8 = 2 * v5 + 1;
+    if ( v3 == v8 )
     {
       while ( 1 )
       {
-        v7 = caml_young_ptr - 12;
-        caml_young_ptr = v7;
-        if ( v7 >= caml_young_limit )
+        v9 = caml_young_ptr - 12;
+        caml_young_ptr = v9;
+        if ( v9 >= caml_young_limit )
           break;
-        caml_call_gc(v26);
+        caml_call_gc(v6, v8, v30);
       }
-      v8 = (_DWORD *)(v7 + 4);
-      *(v8 - 1) = 2048;
-      *v8 = &caml_exn_Assert_failure;
-      v8[1] = &camlArray__35;
-      caml_raise_exn((int)v8);
+      v10 = (_DWORD *)(v9 + 4);
+      *(v10 - 1) = 2048;
+      *v10 = &caml_exn_Assert_failure;
+      v10[1] = &camlArray__35;
+      caml_raise_exn((int)v10);
     }
     else
     {
-      v29 = 2 * v5 + 1;
-      v26 = v4;
-      v27 = a3;
-      v28 = v3;
+      v33 = 2 * v5 + 1;
+      v30 = v4;
+      v31 = a3;
+      v32 = v3;
     }
-    v9 = *(_DWORD *)(v4 + 16);
-    v10 = *(_DWORD *)(v9 - 4);
-    v11 = (unsigned __int8)v10;
-    if ( (unsigned __int8)v10 == 254 )
+    v11 = *(_DWORD *)(v4 + 16);
+    v12 = *(_DWORD *)(v11 - 4);
+    v13 = (unsigned __int8)v12;
+    if ( (unsigned __int8)v12 == 254 )
     {
-      if ( v10 >> 10 <= v6 )
+      if ( v12 >> 10 <= v8 )
         goto LABEL_48;
       while ( 1 )
       {
-        v12 = caml_young_ptr - 12;
-        caml_young_ptr = v12;
-        if ( v12 >= caml_young_limit )
+        v14 = caml_young_ptr - 12;
+        caml_young_ptr = v14;
+        if ( v14 >= caml_young_limit )
           break;
-        caml_call_gc(v26);
+        caml_call_gc(v11, v8, v30);
       }
-      v13 = (double *)(v12 + 4);
-      *((_DWORD *)v13 - 1) = 2301;
-      *v13 = *(double *)(v9 + 4 * v6 - 4);
+      v15 = (double *)(v14 + 4);
+      *((_DWORD *)v15 - 1) = 2301;
+      *v15 = *(double *)(v11 + 4 * v8 - 4);
     }
-    else if ( v10 >> 9 <= v6 )
+    else if ( v12 >> 9 <= v8 )
     {
       goto LABEL_49;
     }
     if ( caml_apply2(*(_DWORD *)(v4 + 12)) >= 1 )
     {
-      v21 = *(_DWORD *)(v26 + 16);
-      v22 = *(_DWORD *)(v21 - 4);
-      if ( (unsigned __int8)v22 == 254 )
+      v25 = *(_DWORD *)(v30 + 16);
+      v26 = *(_DWORD *)(v25 - 4);
+      if ( (unsigned __int8)v26 == 254 )
       {
-        a3 = (double *)(v22 >> 10);
-        if ( (unsigned int)a3 > v28 )
+        a3 = (double *)(v26 >> 10);
+        if ( (unsigned int)a3 > v32 )
         {
-          *(double *)(v21 + 4 * v28 - 4) = *v27;
+          *(double *)(v25 + 4 * v32 - 4) = *v31;
           return 1;
         }
         caml_ml_array_bound_error();
       }
       else
       {
-        a3 = (double *)(v22 >> 9);
-        if ( (unsigned int)a3 > v28 )
+        a3 = (double *)(v26 >> 9);
+        if ( (unsigned int)a3 > v32 )
         {
-          caml_modify((unsigned int *)(v21 + 2 * v28 - 2), (unsigned int)v27);
+          caml_modify((unsigned int *)(v25 + 2 * v32 - 2), (unsigned int)v31);
           return 1;
         }
       }
       caml_ml_array_bound_error();
       goto LABEL_42;
     }
-    v4 = v26;
-    a3 = *(double **)(v26 + 16);
-    v14 = *((_DWORD *)a3 - 1);
-    if ( (unsigned __int8)v14 == 254 )
+    v4 = v30;
+    a3 = *(double **)(v30 + 16);
+    v17 = *((_DWORD *)a3 - 1);
+    v18 = (unsigned __int8)v17;
+    if ( (unsigned __int8)v17 == 254 )
     {
-      v11 = v29;
-      if ( v14 >> 10 <= v29 )
+      v13 = v33;
+      if ( v17 >> 10 <= v33 )
         goto LABEL_46;
       while ( 1 )
       {
-        v16 = caml_young_ptr - 12;
-        caml_young_ptr = v16;
-        if ( v16 >= caml_young_limit )
+        v20 = caml_young_ptr - 12;
+        caml_young_ptr = v20;
+        if ( v20 >= caml_young_limit )
           break;
-        caml_call_gc(v26);
+        caml_call_gc(v16, v18, v30);
       }
-      v15 = (double *)(v16 + 4);
-      *(_DWORD *)v16 = 2301;
-      *(double *)(v16 + 4) = *(double *)((char *)a3 + 4 * v29 - 4);
+      v19 = (double *)(v20 + 4);
+      *(_DWORD *)v20 = 2301;
+      *(double *)(v20 + 4) = *(double *)((char *)a3 + 4 * v33 - 4);
     }
     else
     {
-      v11 = v29;
-      if ( v14 >> 9 <= v29 )
+      v13 = v33;
+      if ( v17 >> 9 <= v33 )
         goto LABEL_47;
-      v15 = *(double **)((char *)a3 + 2 * v29 - 2);
+      v19 = *(double **)((char *)a3 + 2 * v33 - 2);
     }
-    v17 = *(_DWORD *)(v4 + 16);
-    v18 = *(_DWORD *)(v17 - 4);
-    if ( (unsigned __int8)v18 == 254 )
+    v21 = *(_DWORD *)(v4 + 16);
+    v22 = *(_DWORD *)(v21 - 4);
+    if ( (unsigned __int8)v22 == 254 )
     {
-      a3 = (double *)v28;
-      if ( v18 >> 10 <= v28 )
+      a3 = (double *)v32;
+      if ( v22 >> 10 <= v32 )
         goto LABEL_44;
-      *(double *)(v17 + 4 * v28 - 4) = *v15;
+      *(double *)(v21 + 4 * v32 - 4) = *v19;
     }
     else
     {
-      a3 = (double *)v28;
-      if ( v18 >> 9 <= v28 )
+      a3 = (double *)v32;
+      if ( v22 >> 9 <= v32 )
         goto LABEL_45;
-      caml_modify((unsigned int *)(v17 + 2 * v28 - 2), (unsigned int)v15);
+      caml_modify((unsigned int *)(v21 + 2 * v32 - 2), (unsigned int)v19);
     }
-    if ( v11 <= 1 )
+    if ( v13 <= 1 )
       break;
-    a1 = v11;
-    a3 = v27;
+    a1 = v13;
+    a3 = v31;
     a2 = v4;
   }
-  v19 = *(unsigned int **)(v4 + 16);
-  a3 = (double *)*(v19 - 1);
+  v23 = *(unsigned int **)(v4 + 16);
+  a3 = (double *)*(v23 - 1);
   if ( (unsigned __int8)a3 != 254 )
   {
     if ( (unsigned int)a3 >> 9 > 1 )
     {
-      caml_modify(v19, (unsigned int)v27);
+      caml_modify(v23, (unsigned int)v31);
       return 1;
     }
     goto LABEL_43;
   }
   if ( (unsigned int)a3 >> 10 > 1 )
   {
-    *(double *)v19 = *v27;
+    *(double *)v23 = *v31;
     return 1;
   }
 LABEL_42:
@@ -8280,55 +9277,67 @@ LABEL_47:
 LABEL_48:
   caml_ml_array_bound_error();
 LABEL_49:
-  v23 = caml_ml_array_bound_error();
-  return camlArray__merge_1191(v23, v24, v25, (int)a3, v4, v11);
+  v27 = caml_ml_array_bound_error();
+  return camlArray__merge_1191(v27, v28, v29, (int)a3, v4, v13);
 }
-// 805199B: variable 'v6' is possibly undefined
-// 80519DE: variable 'v9' is possibly undefined
-// 80519F5: variable 'v26' is possibly undefined
-// 8051A11: variable 'v29' is possibly undefined
-// 8051A81: variable 'v28' is possibly undefined
-// 8051ABC: variable 'v27' is possibly undefined
-// 8051BDF: variable 'v24' is possibly undefined
-// 8051BDF: variable 'v25' is possibly undefined
+// 805199B: variable 'v8' is possibly undefined
+// 80519DE: variable 'v11' is possibly undefined
+// 80519F5: variable 'v30' is possibly undefined
+// 8051A11: variable 'v33' is possibly undefined
+// 8051A81: variable 'v32' is possibly undefined
+// 8051ABC: variable 'v31' is possibly undefined
+// 8051B8E: variable 'v16' is possibly undefined
+// 8051B8E: variable 'v18' is possibly undefined
+// 8051BA2: variable 'v6' is possibly undefined
+// 8051BDF: variable 'v28' is possibly undefined
+// 8051BDF: variable 'v29' is possibly undefined
 // 8073AE4: using guessed type char *caml_exn_Assert_failure;
 // 8077E50: using guessed type char *camlArray__35;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08051BE0) --------------------------------------------------------
-int __usercall camlArray__merge_1191@<eax>(unsigned int a1@<eax>, unsigned int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<edi>, int a6@<esi>)
+int __usercall camlArray__merge_1191@<eax>(
+        unsigned int a1@<eax>,
+        unsigned int a2@<edx>,
+        int a3@<ecx>,
+        int a4@<ebx>,
+        int a5@<edi>,
+        int a6@<esi>)
 {
   int v6; // ebp
-  unsigned int v8; // edx
-  int v9; // esi
+  unsigned int v7; // ecx
+  int v8; // edx
+  _DWORD *v9; // esi
   _DWORD *v10; // eax
   int *v11; // edi
   int v12; // ebx
   unsigned int v13; // eax
-  double *v14; // edx
-  unsigned int v15; // eax
+  int v14; // edx
+  double *v15; // edx
   unsigned int v16; // eax
-  double *v17; // ebx
-  unsigned int v18; // eax
-  int v20; // eax
-  int v21; // edx
-  int v22; // ecx
-  char v23; // [esp+0h] [ebp-1Ch]
-  unsigned int v26; // [esp+Ch] [ebp-10h]
+  unsigned int v17; // eax
+  double *v18; // ebx
+  unsigned int v19; // eax
+  int v21; // eax
+  int v22; // edx
+  int v23; // ecx
+  char v24; // [esp+0h] [ebp-1Ch]
+  unsigned int v27; // [esp+Ch] [ebp-10h]
 
-  v23 = a1;
-  v26 = caml_extra_params;
+  v24 = a1;
+  v27 = caml_extra_params;
   v6 = dword_807D0C0;
+  v7 = a1;
   v8 = a1 + a4 - 1;
-  v9 = a2 + a6 - 1;
+  v9 = (_DWORD *)(a2 + a6 - 1);
   while ( 1 )
   {
     v10 = (_DWORD *)(caml_young_ptr - 40);
     caml_young_ptr = (int)v10;
     if ( (unsigned int)v10 >= caml_young_limit )
       break;
-    caml_call_gc(v23);
+    caml_call_gc(v8, v7, v24);
   }
   v11 = v10 + 1;
   *v10 = 9463;
@@ -8343,6 +9352,7 @@ int __usercall camlArray__merge_1191@<eax>(unsigned int a1@<eax>, unsigned int a
   v10[8] = v8;
   v10[9] = v9;
   v13 = *(_DWORD *)(a3 - 4);
+  v14 = (unsigned __int8)v13;
   if ( (unsigned __int8)v13 == 254 )
   {
     if ( v13 >> 10 <= a2 )
@@ -8353,61 +9363,62 @@ LABEL_21:
     }
     while ( 1 )
     {
-      v15 = caml_young_ptr - 12;
-      caml_young_ptr = v15;
-      if ( v15 >= caml_young_limit )
+      v16 = caml_young_ptr - 12;
+      caml_young_ptr = v16;
+      if ( v16 >= caml_young_limit )
         break;
-      caml_call_gc(v23);
+      caml_call_gc(v14, v7, v24);
     }
-    v14 = (double *)(v15 + 4);
-    *(_DWORD *)v15 = 2301;
-    *(double *)(v15 + 4) = *(double *)(a3 + 4 * a2 - 4);
+    v15 = (double *)(v16 + 4);
+    *(_DWORD *)v16 = 2301;
+    *(double *)(v16 + 4) = *(double *)(a3 + 4 * a2 - 4);
 LABEL_9:
-    v9 = *(_DWORD *)(v6 + 16);
-    v16 = *(_DWORD *)(v9 - 4);
-    v12 = (unsigned __int8)v16;
-    if ( (unsigned __int8)v16 == 254 )
+    v9 = *(_DWORD **)(v6 + 16);
+    v17 = *(v9 - 1);
+    v12 = (unsigned __int8)v17;
+    if ( (unsigned __int8)v17 == 254 )
     {
-      if ( v16 >> 10 > a1 )
+      if ( v17 >> 10 > v7 )
       {
         while ( 1 )
         {
-          v18 = caml_young_ptr - 12;
-          caml_young_ptr = v18;
-          if ( v18 >= caml_young_limit )
+          v19 = caml_young_ptr - 12;
+          caml_young_ptr = v19;
+          if ( v19 >= caml_young_limit )
             break;
-          caml_call_gc(v23);
+          caml_call_gc((int)v15, v7, v24);
         }
-        v17 = (double *)(v18 + 4);
-        *(_DWORD *)v18 = 2301;
-        *(double *)(v18 + 4) = *(double *)(v9 + 4 * a1 - 4);
-        return camlArray__code_begin(a1, v14, a2, v17, v11, v26);
+        v18 = (double *)(v19 + 4);
+        *(_DWORD *)v19 = 2301;
+        *(double *)(v19 + 4) = *(double *)&v9[v7 - 1];
+        return camlArray__code_begin(v7, v15, a2, v18, v11, v27);
       }
       caml_ml_array_bound_error();
     }
-    else if ( v16 >> 9 > a1 )
+    else if ( v17 >> 9 > v7 )
     {
-      v17 = *(double **)(v9 + 2 * a1 - 2);
-      return camlArray__code_begin(a1, v14, a2, v17, v11, v26);
+      v18 = *(double **)((char *)v9 + 2 * v7 - 2);
+      return camlArray__code_begin(v7, v15, a2, v18, v11, v27);
     }
     caml_ml_array_bound_error();
     goto LABEL_21;
   }
   if ( v13 >> 9 > a2 )
   {
-    v14 = *(double **)(a3 + 2 * a2 - 2);
+    v15 = *(double **)(a3 + 2 * a2 - 2);
     goto LABEL_9;
   }
 LABEL_22:
-  v20 = caml_ml_array_bound_error();
-  return camlArray__isortto_236(v20, v21, v22, v12, v9);
+  v21 = caml_ml_array_bound_error();
+  return camlArray__isortto_1209(v21, v22, v23, v12, v9);
 }
 // 8051C61: variable 'v8' is possibly undefined
-// 8051CF5: variable 'a1' is possibly undefined
-// 8051D39: variable 'v14' is possibly undefined
-// 8051D3E: variable 'v23' is possibly undefined
-// 8051D6E: variable 'v21' is possibly undefined
+// 8051CF5: variable 'v7' is possibly undefined
+// 8051D39: variable 'v15' is possibly undefined
+// 8051D3E: variable 'v24' is possibly undefined
+// 8051D45: variable 'v14' is possibly undefined
 // 8051D6E: variable 'v22' is possibly undefined
+// 8051D6E: variable 'v23' is possibly undefined
 // 804B0D0: using guessed type _DWORD caml_curry5();
 // 807D0BC: using guessed type int caml_extra_params;
 // 807D0C0: using guessed type int dword_807D0C0;
@@ -8415,178 +9426,189 @@ LABEL_22:
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08051D70) --------------------------------------------------------
-int __usercall camlArray__isortto_236@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<esi>)
+int __usercall camlArray__isortto_1209@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, _DWORD *a5@<esi>)
 {
   int v5; // edi
   int v6; // edx
   unsigned int v7; // eax
   int v8; // ecx
-  unsigned int v9; // eax
-  _DWORD *v10; // eax
-  unsigned int v11; // ecx
-  unsigned int v12; // eax
-  unsigned int v13; // eax
-  double *v14; // eax
-  unsigned int v15; // ecx
+  int v9; // edx
+  int v10; // edx
+  unsigned int v11; // eax
+  _DWORD *v12; // eax
+  unsigned int v13; // ecx
+  unsigned int v14; // eax
+  int v15; // edx
   unsigned int v16; // eax
-  double *v17; // edx
-  unsigned int v18; // eax
+  double *v17; // eax
+  unsigned int v18; // ecx
   unsigned int v19; // eax
-  unsigned int v20; // ecx
-  unsigned int v21; // eax
-  unsigned int v22; // ecx
-  int v23; // ecx
-  int v25; // eax
-  int v26; // edx
+  int v20; // edx
+  double *v21; // edx
+  unsigned int v22; // eax
+  unsigned int v23; // eax
+  unsigned int v24; // ecx
+  unsigned int v25; // eax
+  unsigned int v26; // ecx
   int v27; // ecx
-  unsigned int v29; // [esp+4h] [ebp-24h]
-  double *v30; // [esp+4h] [ebp-24h]
-  unsigned int v31; // [esp+8h] [ebp-20h]
-  unsigned int *v32; // [esp+8h] [ebp-20h]
-  int v33; // [esp+Ch] [ebp-1Ch]
-  int v34; // [esp+10h] [ebp-18h]
-  int v36; // [esp+18h] [ebp-10h]
-  int v37; // [esp+1Ch] [ebp-Ch]
+  int v29; // eax
+  int v30; // edx
+  int v31; // ecx
+  int v32; // [esp+0h] [ebp-28h]
+  unsigned int v33; // [esp+4h] [ebp-24h]
+  double *v34; // [esp+4h] [ebp-24h]
+  unsigned int v35; // [esp+8h] [ebp-20h]
+  _DWORD *v36; // [esp+8h] [ebp-20h]
+  int v37; // [esp+Ch] [ebp-1Ch]
+  int v38; // [esp+10h] [ebp-18h]
+  _DWORD *v40; // [esp+18h] [ebp-10h]
+  int v41; // [esp+1Ch] [ebp-Ch]
 
   v5 = 1;
   v6 = a2 - 2;
   if ( v6 < 1 )
     return 1;
-  v34 = v6;
-  v33 = 1;
-  v36 = a5;
-  v37 = a4;
+  v38 = v6;
+  v37 = 1;
+  v40 = a5;
+  v41 = a4;
+  v32 = a1;
   while ( 2 )
   {
-    v7 = a1 + v5 - 1;
-    v29 = v7;
-    v8 = *(_DWORD *)(v36 + 16);
-    v31 = *(_DWORD *)(v8 - 4);
-    if ( (unsigned __int8)v31 == 254 )
+    v7 = v32 + v5 - 1;
+    v33 = v7;
+    v8 = v40[4];
+    v35 = *(_DWORD *)(v8 - 4);
+    if ( (unsigned __int8)v35 == 254 )
     {
-      if ( v31 >> 10 > v7 )
+      v10 = v35 >> 10;
+      if ( v35 >> 10 > v7 )
       {
         while ( 1 )
         {
-          v9 = caml_young_ptr - 12;
-          caml_young_ptr = v9;
-          if ( v9 >= caml_young_limit )
+          v11 = caml_young_ptr - 12;
+          caml_young_ptr = v11;
+          if ( v11 >= caml_young_limit )
             break;
-          caml_call_gc(a1);
+          caml_call_gc(v10, v8, v32);
         }
-        *(_DWORD *)v9 = 2301;
-        *(double *)(v9 + 4) = *(double *)(v8 + 4 * v29 - 4);
-        v30 = (double *)(v9 + 4);
+        v9 = v11 + 4;
+        *(_DWORD *)v11 = 2301;
+        *(double *)(v11 + 4) = *(double *)(v8 + 4 * v33 - 4);
+        v34 = (double *)(v11 + 4);
         goto LABEL_9;
       }
 LABEL_50:
       caml_ml_array_bound_error();
     }
-    else if ( v31 >> 9 > v7 )
+    else if ( v35 >> 9 > v7 )
     {
-      v30 = *(double **)(v8 + 2 * v7 - 2);
+      v9 = *(_DWORD *)(v8 + 2 * v7 - 2);
+      v34 = (double *)v9;
 LABEL_9:
       while ( 1 )
       {
-        v10 = (_DWORD *)(caml_young_ptr - 8);
-        caml_young_ptr = (int)v10;
-        if ( (unsigned int)v10 >= caml_young_limit )
+        v12 = (_DWORD *)(caml_young_ptr - 8);
+        caml_young_ptr = (int)v12;
+        if ( (unsigned int)v12 >= caml_young_limit )
           break;
-        caml_call_gc(a1);
+        caml_call_gc(v9, v8, v32);
       }
-      a5 = (int)(v10 + 1);
-      v32 = v10 + 1;
-      *v10 = 1024;
-      v10[1] = a3 + v5 - 3;
-      while ( *(_DWORD *)a5 >= a3 )
+      a5 = v12 + 1;
+      v36 = v12 + 1;
+      *v12 = 1024;
+      v12[1] = a3 + v5 - 3;
+      while ( *a5 >= a3 )
       {
-        v11 = *(_DWORD *)a5;
-        v12 = *(_DWORD *)(a4 - 4);
-        if ( (unsigned __int8)v12 == 254 )
+        v13 = *a5;
+        v14 = *(_DWORD *)(a4 - 4);
+        v15 = (unsigned __int8)v14;
+        if ( (unsigned __int8)v14 == 254 )
         {
-          if ( v12 >> 10 <= v11 )
+          if ( v14 >> 10 <= v13 )
             goto LABEL_48;
           while ( 1 )
           {
-            v13 = caml_young_ptr - 12;
-            caml_young_ptr = v13;
-            if ( v13 >= caml_young_limit )
+            v16 = caml_young_ptr - 12;
+            caml_young_ptr = v16;
+            if ( v16 >= caml_young_limit )
               break;
-            caml_call_gc(a1);
+            caml_call_gc(v15, v13, v32);
           }
-          v14 = (double *)(v13 + 4);
-          *((_DWORD *)v14 - 1) = 2301;
-          *v14 = *(double *)(a4 + 4 * v11 - 4);
+          v17 = (double *)(v16 + 4);
+          *((_DWORD *)v17 - 1) = 2301;
+          *v17 = *(double *)(a4 + 4 * v13 - 4);
         }
-        else if ( v12 >> 9 <= v11 )
+        else if ( v14 >> 9 <= v13 )
         {
           goto LABEL_49;
         }
-        if ( caml_apply2(*(_DWORD *)(v36 + 12)) <= 1 )
+        if ( caml_apply2(v40[3]) <= 1 )
           break;
-        a5 = (int)v32;
-        v15 = *v32;
-        a4 = v37;
-        v16 = *(_DWORD *)(v37 - 4);
-        if ( (unsigned __int8)v16 == 254 )
+        a5 = v36;
+        v18 = *v36;
+        a4 = v41;
+        v19 = *(_DWORD *)(v41 - 4);
+        v20 = (unsigned __int8)v19;
+        if ( (unsigned __int8)v19 == 254 )
         {
-          if ( v16 >> 10 <= v15 )
+          if ( v19 >> 10 <= v18 )
             goto LABEL_46;
           while ( 1 )
           {
-            v18 = caml_young_ptr - 12;
-            caml_young_ptr = v18;
-            if ( v18 >= caml_young_limit )
+            v22 = caml_young_ptr - 12;
+            caml_young_ptr = v22;
+            if ( v22 >= caml_young_limit )
               break;
-            caml_call_gc(a1);
+            caml_call_gc(v20, v18, v32);
           }
-          v17 = (double *)(v18 + 4);
-          *(_DWORD *)v18 = 2301;
-          *(double *)(v18 + 4) = *(double *)(v37 + 4 * v15 - 4);
+          v21 = (double *)(v22 + 4);
+          *(_DWORD *)v22 = 2301;
+          *(double *)(v22 + 4) = *(double *)(v41 + 4 * v18 - 4);
         }
         else
         {
-          if ( v16 >> 9 <= v15 )
+          if ( v19 >> 9 <= v18 )
             goto LABEL_47;
-          v17 = *(double **)(v37 + 2 * v15 - 2);
+          v21 = *(double **)(v41 + 2 * v18 - 2);
         }
-        v19 = *v32 + 2;
-        v20 = *(_DWORD *)(v37 - 4);
-        if ( (unsigned __int8)v20 == 254 )
+        v23 = *v36 + 2;
+        v24 = *(_DWORD *)(v41 - 4);
+        if ( (unsigned __int8)v24 == 254 )
         {
-          if ( v20 >> 10 <= v19 )
+          if ( v24 >> 10 <= v23 )
             goto LABEL_44;
-          *(double *)(v37 + 4 * v19 - 4) = *v17;
+          *(double *)(v41 + 4 * v23 - 4) = *v21;
         }
         else
         {
-          if ( v20 >> 9 <= v19 )
+          if ( v24 >> 9 <= v23 )
             goto LABEL_45;
-          caml_modify((unsigned int *)(v37 + 2 * v19 - 2), (unsigned int)v17);
+          caml_modify((unsigned int *)(v41 + 2 * v23 - 2), (unsigned int)v21);
         }
-        *v32 -= 2;
+        *v36 -= 2;
       }
-      v21 = *v32 + 2;
-      a4 = v37;
-      v22 = *(_DWORD *)(v37 - 4);
-      if ( (unsigned __int8)v22 == 254 )
+      v25 = *v36 + 2;
+      a4 = v41;
+      v26 = *(_DWORD *)(v41 - 4);
+      if ( (unsigned __int8)v26 == 254 )
       {
-        if ( v22 >> 10 > v21 )
+        if ( v26 >> 10 > v25 )
         {
-          *(double *)(v37 + 4 * v21 - 4) = *v30;
+          *(double *)(v41 + 4 * v25 - 4) = *v34;
 LABEL_36:
-          v23 = v33;
-          v5 = v33 + 2;
-          v33 += 2;
-          if ( v23 != v34 )
+          v27 = v37;
+          v5 = v37 + 2;
+          v37 += 2;
+          if ( v27 != v38 )
             continue;
           return 1;
         }
         caml_ml_array_bound_error();
       }
-      else if ( v22 >> 9 > v21 )
+      else if ( v26 >> 9 > v25 )
       {
-        caml_modify((unsigned int *)(v37 + 2 * v21 - 2), (unsigned int)v30);
+        caml_modify((unsigned int *)(v41 + 2 * v25 - 2), (unsigned int)v34);
         goto LABEL_36;
       }
       caml_ml_array_bound_error();
@@ -8606,15 +9628,19 @@ LABEL_49:
     }
     break;
   }
-  v25 = caml_ml_array_bound_error();
-  return camlArray__sortto_1217(v25, v26, v27, a4, a5);
+  v29 = caml_ml_array_bound_error();
+  return camlArray__sortto_1217(v29, v30, v31, a4, (int)a5);
 }
-// 8051D9D: variable 'a1' is possibly undefined
+// 8051D9D: variable 'v32' is possibly undefined
 // 8051E16: variable 'v8' is possibly undefined
-// 8051EBE: variable 'v11' is possibly undefined
-// 8051F3E: variable 'v15' is possibly undefined
-// 805206E: variable 'v26' is possibly undefined
-// 805206E: variable 'v27' is possibly undefined
+// 8051EBE: variable 'v13' is possibly undefined
+// 8051F3E: variable 'v18' is possibly undefined
+// 8052013: variable 'v20' is possibly undefined
+// 805201D: variable 'v15' is possibly undefined
+// 8052027: variable 'v9' is possibly undefined
+// 8052031: variable 'v10' is possibly undefined
+// 805206E: variable 'v30' is possibly undefined
+// 805206E: variable 'v31' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -8626,11 +9652,11 @@ int __usercall camlArray__sortto_1217@<eax>(int a1@<eax>, int a2@<edx>, int a3@<
   int v9; // [esp+Ch] [ebp-Ch]
 
   if ( a2 <= 11 )
-    return camlArray__isortto_236(a1, a2, a3, a4, *(_DWORD *)(a5 + 20));
+    return camlArray__isortto_1209(a1, a2, a3, a4, *(_DWORD **)(a5 + 20));
   v7 = 2 * ((a2 >> 1) / 2) + 1;
   v9 = a2 - 2 * ((a2 >> 1) / 2);
-  camlArray__sortto_1217(a3 + 2 * ((a2 >> 1) / 2), v9);
-  camlArray__sortto_1217(a1 + v9 - 1, v7);
+  camlArray__sortto_1217(a1 + 2 * ((a2 >> 1) / 2), v9, a3 + 2 * ((a2 >> 1) / 2), a4, a5);
+  camlArray__sortto_1217(a1, v7, a1 + v9 - 1, *(_DWORD *)(a5 + 12), a5);
   v6 = *(_DWORD *)(a5 + 16);
   caml_extra_params = a3;
   dword_807D0C0 = v6;
@@ -8710,92 +9736,92 @@ int __usercall camlArray__make_matrix_1042@<eax>(int a1@<eax>, char a2@<bl>)
 }
 
 //----- (08052270) --------------------------------------------------------
-void *__usercall camlArray__copy_1049@<eax>(double *a1@<eax>)
+void *__usercall camlArray__copy_1049@<eax>(double *a1@<eax>, int a2@<edx>)
 {
-  double *v1; // ebx
-  unsigned int v2; // ecx
   unsigned int v3; // ecx
-  int v4; // ecx
-  unsigned int v6; // eax
-  double *v7; // eax
-  int v8; // esi
-  int v9; // ebx
-  int v10; // edi
-  double *v11; // ecx
-  double *v12; // edx
-  unsigned int v13; // eax
-  int v14; // eax
-  int v15; // [esp+0h] [ebp-10h]
+  unsigned int v4; // ecx
+  int v5; // ecx
+  unsigned int v7; // eax
+  double *v8; // eax
+  double *v9; // edx
+  int v10; // esi
+  int v11; // ebx
+  int v12; // edi
+  double *v13; // ecx
+  unsigned int v14; // eax
+  int v15; // eax
+  int v16; // [esp+0h] [ebp-10h]
 
-  v1 = a1;
-  v2 = *((_DWORD *)a1 - 1);
-  if ( (unsigned __int8)v2 == 254 )
-    v3 = v2 >> 10;
+  v3 = *((_DWORD *)a1 - 1);
+  if ( (unsigned __int8)v3 == 254 )
+    v4 = v3 >> 10;
   else
-    v3 = v2 >> 9;
-  v4 = v3 | 1;
-  if ( v4 == 1 )
+    v4 = v3 >> 9;
+  v5 = v4 | 1;
+  if ( v5 == 1 )
     return &camlArray__32;
-  v15 = v4;
+  v16 = v5;
   if ( *((unsigned __int8 *)a1 - 4) == 254 )
   {
     while ( 1 )
     {
-      v6 = caml_young_ptr - 12;
-      caml_young_ptr = v6;
-      if ( v6 >= caml_young_limit )
+      v7 = caml_young_ptr - 12;
+      caml_young_ptr = v7;
+      if ( v7 >= caml_young_limit )
         break;
-      caml_call_gc(v15);
+      caml_call_gc(a2, v5, v16);
     }
-    v7 = (double *)(v6 + 4);
-    *((_DWORD *)v7 - 1) = 2301;
-    *v7 = *v1;
+    v8 = (double *)(v7 + 4);
+    *((_DWORD *)v8 - 1) = 2301;
+    *v8 = *a1;
   }
-  v8 = caml_c_call((int (*)(void))caml_make_vect, v4);
-  v9 = 3;
-  v10 = v15 - 2;
-  if ( v15 - 2 >= 3 )
+  v10 = caml_c_call((int (*)(void))caml_make_vect, v5);
+  v11 = 3;
+  v12 = v16 - 2;
+  if ( v16 - 2 >= 3 )
   {
     do
     {
-      v11 = a1;
+      v13 = a1;
       if ( *((unsigned __int8 *)a1 - 4) == 254 )
       {
         while ( 1 )
         {
-          v13 = caml_young_ptr - 12;
-          caml_young_ptr = v13;
-          if ( v13 >= caml_young_limit )
+          v14 = caml_young_ptr - 12;
+          caml_young_ptr = v14;
+          if ( v14 >= caml_young_limit )
             break;
-          caml_call_gc(v15);
+          caml_call_gc((int)v9, (int)v13, v16);
         }
-        v12 = (double *)(v13 + 4);
-        *(_DWORD *)v13 = 2301;
-        *(double *)(v13 + 4) = *(double *)((char *)v11 + 4 * v9 - 4);
+        v9 = (double *)(v14 + 4);
+        *(_DWORD *)v14 = 2301;
+        *(double *)(v14 + 4) = *(double *)((char *)v13 + 4 * v11 - 4);
       }
       else
       {
-        v12 = *(double **)((char *)a1 + 2 * v9 - 2);
+        v9 = *(double **)((char *)a1 + 2 * v11 - 2);
       }
-      if ( *(unsigned __int8 *)(v8 - 4) == 254 )
-        *(double *)(v8 + 4 * v9 - 4) = *v12;
+      if ( *(unsigned __int8 *)(v10 - 4) == 254 )
+        *(double *)(v10 + 4 * v11 - 4) = *v9;
       else
-        caml_modify((unsigned int *)(v8 + 2 * v9 - 2), (unsigned int)v12);
-      v14 = v9;
-      v9 += 2;
+        caml_modify((unsigned int *)(v10 + 2 * v11 - 2), (unsigned int)v9);
+      v15 = v11;
+      v11 += 2;
     }
-    while ( v14 != v10 );
+    while ( v15 != v12 );
   }
-  return (void *)v8;
+  return (void *)v10;
 }
-// 80522FE: variable 'v4' is possibly undefined
-// 8052310: variable 'v15' is possibly undefined
-// 805234F: variable 'v11' is possibly undefined
+// 80522FE: variable 'v5' is possibly undefined
+// 8052310: variable 'v16' is possibly undefined
+// 805234F: variable 'v13' is possibly undefined
+// 8052385: variable 'v9' is possibly undefined
+// 805238C: variable 'a2' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (080523A0) --------------------------------------------------------
-void *__usercall camlArray__append_82@<eax>(double *a1@<eax>, double *a2@<ebx>)
+void *__usercall camlArray__append_1054@<eax>(double *a1@<eax>, double *a2@<ebx>)
 {
   unsigned int v2; // edx
   unsigned int v3; // edx
@@ -8804,23 +9830,22 @@ void *__usercall camlArray__append_82@<eax>(double *a1@<eax>, double *a2@<ebx>)
   unsigned int v6; // ecx
   int v7; // ecx
   unsigned int v9; // eax
-  int v10; // esi
-  int v11; // ebx
-  double *v12; // ecx
-  double *v13; // edx
+  double *v10; // edx
+  int v11; // esi
+  int v12; // ebx
+  int v13; // ecx
   unsigned int v14; // eax
   int v15; // eax
   int v16; // ebx
-  double *v17; // ecx
-  double *v18; // edx
-  unsigned int v19; // eax
+  int v17; // ecx
+  unsigned int v18; // eax
+  int v19; // ecx
   int v20; // ecx
-  int v21; // ecx
+  int v21; // [esp+0h] [ebp-18h]
   int v22; // [esp+0h] [ebp-18h]
-  int v23; // [esp+0h] [ebp-18h]
-  double *v24; // [esp+4h] [ebp-14h]
-  int v25; // [esp+8h] [ebp-10h]
-  double *v26; // [esp+Ch] [ebp-Ch]
+  double *v23; // [esp+4h] [ebp-14h]
+  int v24; // [esp+8h] [ebp-10h]
+  double *v25; // [esp+Ch] [ebp-Ch]
 
   v2 = *((_DWORD *)a1 - 1);
   if ( (unsigned __int8)v2 == 254 )
@@ -8838,17 +9863,17 @@ void *__usercall camlArray__append_82@<eax>(double *a1@<eax>, double *a2@<ebx>)
   {
     if ( v7 == 1 )
       return &camlArray__31;
-    v22 = v7;
-    v25 = 1;
-    v24 = a2;
-    v26 = a1;
+    v21 = v7;
+    v24 = 1;
+    v23 = a2;
+    v25 = a1;
   }
   else
   {
-    v22 = v7;
-    v25 = v4;
-    v24 = a2;
-    v26 = a1;
+    v21 = v7;
+    v24 = v4;
+    v23 = a2;
+    v25 = a1;
   }
   if ( v4 > 1 )
     a2 = a1;
@@ -8860,19 +9885,19 @@ void *__usercall camlArray__append_82@<eax>(double *a1@<eax>, double *a2@<ebx>)
       caml_young_ptr = v9;
       if ( v9 >= caml_young_limit )
         break;
-      caml_call_gc(v22);
+      caml_call_gc(v4, v7, v21);
     }
     *(_DWORD *)v9 = 2301;
     *(double *)(v9 + 4) = *a2;
   }
-  v10 = caml_c_call((int (*)(void))caml_make_vect, v4 + v7 - 1);
-  v11 = 1;
-  if ( v25 - 2 >= 1 )
+  v11 = caml_c_call((int (*)(void))caml_make_vect, v4 + v7 - 1);
+  v12 = 1;
+  if ( v24 - 2 >= 1 )
   {
     do
     {
-      v12 = v26;
-      if ( *((unsigned __int8 *)v26 - 4) == 254 )
+      v13 = (int)v25;
+      if ( *((unsigned __int8 *)v25 - 4) == 254 )
       {
         while ( 1 )
         {
@@ -8880,68 +9905,69 @@ void *__usercall camlArray__append_82@<eax>(double *a1@<eax>, double *a2@<ebx>)
           caml_young_ptr = v14;
           if ( v14 >= caml_young_limit )
             break;
-          caml_call_gc(v22);
+          caml_call_gc((int)v10, v13, v21);
         }
-        v13 = (double *)(v14 + 4);
+        v10 = (double *)(v14 + 4);
         *(_DWORD *)v14 = 2301;
-        *(double *)(v14 + 4) = *(double *)((char *)v12 + 4 * v11 - 4);
+        *(double *)(v14 + 4) = *(double *)(v13 + 4 * v12 - 4);
       }
       else
       {
-        v13 = *(double **)((char *)v26 + 2 * v11 - 2);
+        v10 = *(double **)((char *)v25 + 2 * v12 - 2);
       }
-      if ( *(unsigned __int8 *)(v10 - 4) == 254 )
-        *(double *)(v10 + 4 * v11 - 4) = *v13;
+      if ( *(unsigned __int8 *)(v11 - 4) == 254 )
+        *(double *)(v11 + 4 * v12 - 4) = *v10;
       else
-        caml_modify((unsigned int *)(v10 + 2 * v11 - 2), (unsigned int)v13);
-      v15 = v11;
-      v11 += 2;
+        caml_modify((unsigned int *)(v11 + 2 * v12 - 2), (unsigned int)v10);
+      v15 = v12;
+      v12 += 2;
     }
-    while ( v15 != v25 - 2 );
+    while ( v15 != v24 - 2 );
   }
   v16 = 1;
-  if ( v22 - 2 >= 1 )
+  if ( v21 - 2 >= 1 )
   {
-    v23 = v22 - 2;
+    v22 = v21 - 2;
     do
     {
-      v17 = v24;
-      if ( *((unsigned __int8 *)v24 - 4) == 254 )
+      v17 = (int)v23;
+      if ( *((unsigned __int8 *)v23 - 4) == 254 )
       {
         while ( 1 )
         {
-          v19 = caml_young_ptr - 12;
-          caml_young_ptr = v19;
-          if ( v19 >= caml_young_limit )
+          v18 = caml_young_ptr - 12;
+          caml_young_ptr = v18;
+          if ( v18 >= caml_young_limit )
             break;
-          caml_call_gc(v23);
+          caml_call_gc((int)v10, v17, v22);
         }
-        v18 = (double *)(v19 + 4);
-        *(_DWORD *)v19 = 2301;
-        *(double *)(v19 + 4) = *(double *)((char *)v17 + 4 * v16 - 4);
+        v10 = (double *)(v18 + 4);
+        *(_DWORD *)v18 = 2301;
+        *(double *)(v18 + 4) = *(double *)(v17 + 4 * v16 - 4);
       }
       else
       {
-        v18 = *(double **)((char *)v24 + 2 * v16 - 2);
+        v10 = *(double **)((char *)v23 + 2 * v16 - 2);
       }
-      v20 = v16 + v25 - 1;
-      if ( *(unsigned __int8 *)(v10 - 4) == 254 )
-        *(double *)(v10 + 4 * v20 - 4) = *v18;
+      v19 = v16 + v24 - 1;
+      if ( *(unsigned __int8 *)(v11 - 4) == 254 )
+        *(double *)(v11 + 4 * v19 - 4) = *v10;
       else
-        caml_modify((unsigned int *)(v10 + 2 * v20 - 2), (unsigned int)v18);
-      v21 = v16;
+        caml_modify((unsigned int *)(v11 + 2 * v19 - 2), (unsigned int)v10);
+      v20 = v16;
       v16 += 2;
     }
-    while ( v21 != v23 );
+    while ( v20 != v22 );
   }
-  return (void *)v10;
+  return (void *)v11;
 }
 // 8052478: variable 'v4' is possibly undefined
 // 8052478: variable 'v7' is possibly undefined
-// 80524E3: variable 'v12' is possibly undefined
-// 805252B: variable 'v22' is possibly undefined
+// 80524E3: variable 'v13' is possibly undefined
+// 805252B: variable 'v21' is possibly undefined
 // 805256F: variable 'v17' is possibly undefined
-// 80525B0: variable 'v23' is possibly undefined
+// 80525B0: variable 'v22' is possibly undefined
+// 80525B8: variable 'v10' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -8949,29 +9975,33 @@ void *__usercall camlArray__append_82@<eax>(double *a1@<eax>, double *a2@<ebx>)
 int __usercall camlArray__concat_aux_1062@<eax>(int *a1@<ebx>)
 {
   char v1; // al
-  int v2; // ebx
-  _DWORD *v3; // eax
+  int v2; // edx
+  int v3; // ecx
+  int v4; // ebx
+  _DWORD *v5; // eax
   int i; // [esp+0h] [ebp-8h]
 
   v1 = camlArray__size_1065(1, a1);
-  v2 = caml_c_call((int (*)(void))caml_make_vect, v1);
-  for ( i = v2; ; caml_call_gc(i) )
+  v4 = caml_c_call((int (*)(void))caml_make_vect, v1);
+  for ( i = v4; ; caml_call_gc(v2, v3, i) )
   {
-    v3 = (_DWORD *)(caml_young_ptr - 20);
-    caml_young_ptr = (int)v3;
-    if ( (unsigned int)v3 >= caml_young_limit )
+    v5 = (_DWORD *)(caml_young_ptr - 20);
+    caml_young_ptr = (int)v5;
+    if ( (unsigned int)v5 >= caml_young_limit )
       break;
   }
-  *v3 = 4343;
-  v3[1] = caml_curry2;
-  v3[2] = 5;
-  v3[3] = camlArray__fill_1070;
-  v3[4] = v2;
-  camlArray__fill_1070(1, (int)(v3 + 1), a1);
+  *v5 = 4343;
+  v5[1] = caml_curry2;
+  v5[2] = 5;
+  v5[3] = camlArray__fill_1070;
+  v5[4] = v4;
+  camlArray__fill_1070(1, (int)(v5 + 1), a1, v2);
   return i;
 }
 // 80525E0: could not find valid save-restore pair for ebx
+// 805264F: variable 'v2' is possibly undefined
 // 8052654: variable 'i' is possibly undefined
+// 805265B: variable 'v3' is possibly undefined
 // 804B370: using guessed type _DWORD caml_curry2();
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -8985,6 +10015,7 @@ int (__cdecl **__usercall camlArray__concat_1075@<eax>(int *a1@<eax>))(int, int)
 //----- (08052680) --------------------------------------------------------
 void *__usercall camlArray__sub_1081@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 {
+  int v3; // edx
   unsigned int v4; // esi
   unsigned int v5; // eax
   unsigned int v7; // eax
@@ -8998,21 +10029,24 @@ void *__usercall camlArray__sub_1081@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<e
   unsigned int v15; // eax
   double *v16; // eax
   int v17; // ecx
+  int v18; // [esp+0h] [ebp-18h]
   int v19; // [esp+0h] [ebp-18h]
   int v21; // [esp+8h] [ebp-10h]
   int v22; // [esp+Ch] [ebp-Ch]
 
+  v3 = a1;
   if ( a3 < 1
     || a2 < 1
     || ((v4 = *(_DWORD *)(a1 - 4), (unsigned __int8)v4 == 254) ? (v5 = v4 >> 10) : (v5 = v4 >> 9),
         a3 > (int)((v5 | 1) - a2 + 1)) )
   {
-    camlPervasives__invalid_arg_1012(a2, a1);
+    camlPervasives__invalid_arg_1012(a2, v3);
   }
   if ( a2 == 1 )
     return &camlArray__28;
-  v21 = a1;
-  if ( *(unsigned __int8 *)(a1 - 4) == 254 )
+  v18 = a2;
+  v21 = v3;
+  if ( *(unsigned __int8 *)(v3 - 4) == 254 )
   {
     while ( 1 )
     {
@@ -9020,18 +10054,18 @@ void *__usercall camlArray__sub_1081@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<e
       caml_young_ptr = v7;
       if ( v7 >= caml_young_limit )
         break;
-      caml_call_gc(a2);
+      caml_call_gc(v3, a2, v18);
     }
     v8 = (double *)(v7 + 4);
     *((_DWORD *)v8 - 1) = 2301;
-    *v8 = *(double *)(a1 + 4 * a3 - 4);
+    *v8 = *(double *)(v3 + 4 * a3 - 4);
   }
   v9 = caml_c_call((int (*)(void))caml_make_vect, a2);
   v10 = v9;
   v11 = 3;
-  if ( a2 - 2 >= 3 )
+  if ( v18 - 2 >= 3 )
   {
-    v22 = a2 - 2;
+    v22 = v18 - 2;
     v19 = v9;
     do
     {
@@ -9045,7 +10079,7 @@ void *__usercall camlArray__sub_1081@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<e
           caml_young_ptr = v15;
           if ( v15 >= caml_young_limit )
             break;
-          caml_call_gc(v19);
+          caml_call_gc(v12, v13, v19);
         }
         v16 = (double *)(v15 + 4);
         *((_DWORD *)v16 - 1) = 2301;
@@ -9068,12 +10102,13 @@ void *__usercall camlArray__sub_1081@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<e
   }
   return (void *)v10;
 }
-// 8052723: variable 'a1' is possibly undefined
+// 8052723: variable 'v3' is possibly undefined
 // 8052730: variable 'a2' is possibly undefined
+// 8052742: variable 'v18' is possibly undefined
 // 805279F: variable 'v13' is possibly undefined
 // 805279F: variable 'v12' is possibly undefined
 // 80527A7: variable 'v19' is possibly undefined
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -9111,10 +10146,15 @@ int __usercall camlArray__fill_1087@<eax>(int a1@<eax>, double *a2@<edx>, int a3
   }
   return 1;
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (080528D0) --------------------------------------------------------
-int __usercall camlArray__blit_120@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<esi>)
+int __usercall camlArray__blit_1093@<eax>(
+        int a1@<eax>,
+        int a2@<edx>,
+        unsigned int a3@<ecx>,
+        int a4@<ebx>,
+        int a5@<esi>)
 {
   unsigned int v7; // eax
   unsigned int v8; // eax
@@ -9125,79 +10165,78 @@ int __usercall camlArray__blit_120@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx
   double *v13; // eax
   int v14; // eax
   int v15; // ebx
-  int result; // eax
   int v17; // esi
   int v18; // ebx
-  double *v19; // ebx
-  unsigned int v20; // eax
-  int v21; // eax
-  int v22; // ebx
-  char v23; // [esp+0h] [ebp-18h]
-  int v24; // [esp+0h] [ebp-18h]
-  int v25; // [esp+4h] [ebp-14h]
-  int v27; // [esp+8h] [ebp-10h]
-  int v28; // [esp+Ch] [ebp-Ch]
+  int v19; // ecx
+  double *v20; // ebx
+  unsigned int v21; // eax
+  int v22; // eax
+  int v23; // ebx
+  char v24; // [esp+0h] [ebp-18h]
+  int v25; // [esp+0h] [ebp-18h]
+  unsigned int v28; // [esp+8h] [ebp-10h]
+  int v29; // [esp+Ch] [ebp-Ch]
 
-  v27 = a3;
+  v28 = a3;
   if ( a5 < 1
     || a4 < 1
-    || ((a3 = *(_DWORD *)(a1 - 4), (unsigned __int8)a3 == 254) ? (v7 = (unsigned int)a3 >> 10) : (v7 = (unsigned int)a3 >> 9),
+    || ((a3 = *(_DWORD *)(a1 - 4), (unsigned __int8)a3 == 254) ? (v7 = a3 >> 10) : (v7 = a3 >> 9),
         a4 > (int)((v7 | 1) - a5 + 1)
      || a2 < 1
-     || ((a3 = *(_DWORD *)(v27 - 4), (unsigned __int8)a3 == 254) ? (v8 = (unsigned int)a3 >> 10) : (v8 = (unsigned int)a3 >> 9),
+     || ((a3 = *(_DWORD *)(v28 - 4), (unsigned __int8)a3 == 254) ? (v8 = a3 >> 10) : (v8 = a3 >> 9),
          a2 > (int)((v8 | 1) - a5 + 1))) )
   {
     camlPervasives__invalid_arg_1012(a3, a2);
   }
   if ( a4 >= a2 )
   {
-    v28 = 1;
+    v29 = 1;
     v17 = a5 - 2;
     if ( v17 >= 1 )
     {
-      v24 = a1;
+      v25 = a1;
       do
       {
-        v18 = a4 + v28 - 1;
-        if ( *(unsigned __int8 *)(v24 - 4) == 254 )
+        v18 = a4 + v29 - 1;
+        v19 = *(unsigned __int8 *)(v25 - 4);
+        if ( v19 == 254 )
         {
           while ( 1 )
           {
-            v20 = caml_young_ptr - 12;
-            caml_young_ptr = v20;
-            if ( v20 >= caml_young_limit )
+            v21 = caml_young_ptr - 12;
+            caml_young_ptr = v21;
+            if ( v21 >= caml_young_limit )
               break;
-            caml_call_gc(v24);
+            caml_call_gc(a2, v19, v25);
           }
-          *(_DWORD *)v20 = 2301;
-          *(double *)(v20 + 4) = *(double *)(v24 + 4 * v18 - 4);
-          v19 = (double *)(v20 + 4);
+          *(_DWORD *)v21 = 2301;
+          *(double *)(v21 + 4) = *(double *)(v25 + 4 * v18 - 4);
+          v20 = (double *)(v21 + 4);
         }
         else
         {
-          v19 = *(double **)(v24 + 2 * v18 - 2);
+          v20 = *(double **)(v25 + 2 * v18 - 2);
         }
-        v21 = a2 + v28 - 1;
-        if ( *(unsigned __int8 *)(v27 - 4) == 254 )
-          *(double *)(v27 + 4 * v21 - 4) = *v19;
+        v22 = a2 + v29 - 1;
+        if ( *(unsigned __int8 *)(v28 - 4) == 254 )
+          *(double *)(v28 + 4 * v22 - 4) = *v20;
         else
-          caml_modify((unsigned int *)(v27 + 2 * v21 - 2), (unsigned int)v19);
-        v22 = v28;
-        v28 += 2;
+          caml_modify((unsigned int *)(v28 + 2 * v22 - 2), (unsigned int)v20);
+        v23 = v29;
+        v29 += 2;
       }
-      while ( v22 != v17 );
+      while ( v23 != v17 );
     }
-    result = 1;
+    return 1;
   }
   else
   {
     v9 = a5 - 2;
     if ( v9 >= 1 )
     {
-      v25 = a4;
       do
       {
-        v10 = v25 + v9 - 1;
+        v10 = a4 + v9 - 1;
         if ( *(unsigned __int8 *)(a1 - 4) == 254 )
         {
           while ( 1 )
@@ -9206,7 +10245,7 @@ int __usercall camlArray__blit_120@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx
             caml_young_ptr = v12;
             if ( v12 >= caml_young_limit )
               break;
-            caml_call_gc(v23);
+            caml_call_gc(a2, a3, v24);
           }
           v13 = (double *)(v12 + 4);
           *((_DWORD *)v13 - 1) = 2301;
@@ -9218,22 +10257,25 @@ int __usercall camlArray__blit_120@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx
           v11 = *(double **)(a1 + 2 * v10 - 2);
         }
         v14 = a2 + v9 - 1;
-        if ( *(unsigned __int8 *)(v27 - 4) == 254 )
-          *(double *)(v27 + 4 * v14 - 4) = *v11;
+        a3 = *(unsigned __int8 *)(v28 - 4);
+        if ( a3 == 254 )
+          *(double *)(v28 + 4 * v14 - 4) = *v11;
         else
-          caml_modify((unsigned int *)(v27 + 2 * v14 - 2), (unsigned int)v11);
+          caml_modify((unsigned int *)(v28 + 2 * v14 - 2), (unsigned int)v11);
         v15 = v9;
         v9 -= 2;
       }
       while ( v15 != 1 );
     }
-    result = 1;
+    return 1;
   }
-  return result;
 }
-// 8052A5C: variable 'v24' is possibly undefined
-// 8052B17: variable 'v23' is possibly undefined
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 8052A5C: variable 'v25' is possibly undefined
+// 8052B0D: variable 'a2' is possibly undefined
+// 8052B0D: variable 'v19' is possibly undefined
+// 8052B17: variable 'a3' is possibly undefined
+// 8052B17: variable 'v24' is possibly undefined
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -9248,6 +10290,7 @@ int __usercall camlArray__iter_1101@<eax>(void (**a1)(void)@<eax>, int a2@<ebx>)
   unsigned int v7; // eax
   double *v8; // eax
   int v9; // ebx
+  int v11; // [esp+0h] [ebp-18h]
   int v13; // [esp+8h] [ebp-10h]
   int v14; // [esp+Ch] [ebp-Ch]
 
@@ -9262,10 +10305,11 @@ int __usercall camlArray__iter_1101@<eax>(void (**a1)(void)@<eax>, int a2@<ebx>)
   {
     v14 = v5;
     v13 = 1;
+    v11 = a2;
     do
     {
-      v6 = a2;
-      if ( *(unsigned __int8 *)(a2 - 4) == 254 )
+      v6 = v11;
+      if ( *(unsigned __int8 *)(v11 - 4) == 254 )
       {
         while ( 1 )
         {
@@ -9273,7 +10317,7 @@ int __usercall camlArray__iter_1101@<eax>(void (**a1)(void)@<eax>, int a2@<ebx>)
           caml_young_ptr = v7;
           if ( v7 >= caml_young_limit )
             break;
-          caml_call_gc(a2);
+          caml_call_gc(v5, v2, v11);
         }
         v8 = (double *)(v7 + 4);
         *((_DWORD *)v8 - 1) = 2301;
@@ -9288,101 +10332,109 @@ int __usercall camlArray__iter_1101@<eax>(void (**a1)(void)@<eax>, int a2@<ebx>)
   }
   return 1;
 }
-// 8052B6C: variable 'a2' is possibly undefined
+// 8052B6C: variable 'v11' is possibly undefined
 // 8052B9F: variable 'v2' is possibly undefined
+// 8052BCB: variable 'v5' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08052BE0) --------------------------------------------------------
 void *__usercall camlArray__map_1105@<eax>(void (**a1)(void)@<eax>, double *a2@<ebx>)
 {
+  void (**v2)(void); // ecx
   unsigned int v3; // eax
-  unsigned int v4; // eax
-  int v5; // eax
-  unsigned int v7; // eax
-  double *v8; // eax
-  int v9; // eax
-  int v10; // esi
-  int v11; // ebx
-  double *v12; // ecx
-  unsigned int v13; // eax
-  double *v14; // eax
-  double *v15; // eax
-  int v16; // ecx
-  int v17; // [esp+0h] [ebp-1Ch]
-  int v18; // [esp+0h] [ebp-1Ch]
-  int (**v20)(void); // [esp+8h] [ebp-14h]
-  int v21; // [esp+Ch] [ebp-10h]
-  int v22; // [esp+10h] [ebp-Ch]
+  int v4; // edx
+  unsigned int v5; // eax
+  int v6; // eax
+  unsigned int v8; // eax
+  double *v9; // eax
+  int v10; // eax
+  int v11; // edx
+  int v12; // esi
+  int v13; // ebx
+  double *v14; // ecx
+  unsigned int v15; // eax
+  double *v16; // eax
+  double *v17; // eax
+  int v18; // ecx
+  int v19; // [esp+0h] [ebp-1Ch]
+  int v20; // [esp+0h] [ebp-1Ch]
+  int (**v22)(void); // [esp+8h] [ebp-14h]
+  int v23; // [esp+Ch] [ebp-10h]
+  int v24; // [esp+10h] [ebp-Ch]
 
+  v2 = a1;
   v3 = *((_DWORD *)a2 - 1);
+  v4 = (unsigned __int8)v3;
   if ( (unsigned __int8)v3 == 254 )
-    v4 = v3 >> 10;
+    v5 = v3 >> 10;
   else
-    v4 = v3 >> 9;
-  v5 = v4 | 1;
-  if ( v5 == 1 )
+    v5 = v3 >> 9;
+  v6 = v5 | 1;
+  if ( v6 == 1 )
     return &camlArray__24;
-  v17 = v5;
-  v20 = (int (**)(void))a1;
+  v19 = v6;
+  v22 = (int (**)(void))v2;
   if ( *((unsigned __int8 *)a2 - 4) == 254 )
   {
     while ( 1 )
     {
-      v7 = caml_young_ptr - 12;
-      caml_young_ptr = v7;
-      if ( v7 >= caml_young_limit )
+      v8 = caml_young_ptr - 12;
+      caml_young_ptr = v8;
+      if ( v8 >= caml_young_limit )
         break;
-      caml_call_gc(v17);
+      caml_call_gc(v4, (int)v2, v19);
     }
-    v8 = (double *)(v7 + 4);
-    *((_DWORD *)v8 - 1) = 2301;
-    *v8 = *a2;
+    v9 = (double *)(v8 + 4);
+    *((_DWORD *)v9 - 1) = 2301;
+    *v9 = *a2;
   }
-  (*a1)();
-  v9 = caml_c_call((int (*)(void))caml_make_vect, v17);
-  v10 = v9;
-  v11 = 3;
-  if ( v17 - 2 >= 3 )
+  (*v2)();
+  v10 = caml_c_call((int (*)(void))caml_make_vect, v19);
+  v12 = v10;
+  v13 = 3;
+  if ( v19 - 2 >= 3 )
   {
-    v21 = v17 - 2;
-    v22 = 3;
-    v18 = v9;
+    v23 = v19 - 2;
+    v24 = 3;
+    v20 = v10;
     do
     {
-      v12 = a2;
+      v14 = a2;
       if ( *((unsigned __int8 *)a2 - 4) == 254 )
       {
         while ( 1 )
         {
-          v13 = caml_young_ptr - 12;
-          caml_young_ptr = v13;
-          if ( v13 >= caml_young_limit )
+          v15 = caml_young_ptr - 12;
+          caml_young_ptr = v15;
+          if ( v15 >= caml_young_limit )
             break;
-          caml_call_gc(v18);
+          caml_call_gc(v11, (int)v14, v20);
         }
-        v14 = (double *)(v13 + 4);
-        *((_DWORD *)v14 - 1) = 2301;
-        *v14 = *(double *)((char *)v12 + 4 * v11 - 4);
+        v16 = (double *)(v15 + 4);
+        *((_DWORD *)v16 - 1) = 2301;
+        *v16 = *(double *)((char *)v14 + 4 * v13 - 4);
       }
-      v15 = (double *)(*v20)();
-      v10 = v18;
-      if ( *(unsigned __int8 *)(v18 - 4) == 254 )
-        *(double *)(v18 + 4 * v22 - 4) = *v15;
+      v17 = (double *)(*v22)();
+      v12 = v20;
+      if ( *(unsigned __int8 *)(v20 - 4) == 254 )
+        *(double *)(v20 + 4 * v24 - 4) = *v17;
       else
-        caml_modify((unsigned int *)(v18 + 2 * v22 - 2), (unsigned int)v15);
-      v16 = v22;
-      v11 = v22 + 2;
-      v22 += 2;
+        caml_modify((unsigned int *)(v20 + 2 * v24 - 2), (unsigned int)v17);
+      v18 = v24;
+      v13 = v24 + 2;
+      v24 += 2;
     }
-    while ( v16 != v21 );
+    while ( v18 != v23 );
   }
-  return (void *)v10;
+  return (void *)v12;
 }
-// 8052C67: variable 'a1' is possibly undefined
-// 8052C78: variable 'v17' is possibly undefined
-// 8052CDF: variable 'v12' is possibly undefined
-// 8052CED: variable 'v18' is possibly undefined
+// 8052C67: variable 'v2' is possibly undefined
+// 8052C78: variable 'v19' is possibly undefined
+// 8052CDF: variable 'v14' is possibly undefined
+// 8052CED: variable 'v20' is possibly undefined
+// 8052D35: variable 'v11' is possibly undefined
+// 8052D3C: variable 'v4' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -9396,6 +10448,7 @@ int __usercall camlArray__iteri_1111@<eax>(int a1@<eax>, int a2@<ebx>)
   int v6; // edx
   unsigned int v7; // eax
   int v8; // ebx
+  int v10; // [esp+0h] [ebp-18h]
   int v12; // [esp+8h] [ebp-10h]
   int v13; // [esp+Ch] [ebp-Ch]
 
@@ -9410,10 +10463,11 @@ int __usercall camlArray__iteri_1111@<eax>(int a1@<eax>, int a2@<ebx>)
   {
     v13 = v5;
     v12 = 1;
+    v10 = a2;
     do
     {
-      v6 = a2;
-      if ( *(unsigned __int8 *)(a2 - 4) == 254 )
+      v6 = v10;
+      if ( *(unsigned __int8 *)(v10 - 4) == 254 )
       {
         while ( 1 )
         {
@@ -9421,7 +10475,7 @@ int __usercall camlArray__iteri_1111@<eax>(int a1@<eax>, int a2@<ebx>)
           caml_young_ptr = v7;
           if ( v7 >= caml_young_limit )
             break;
-          caml_call_gc(a2);
+          caml_call_gc(v6, v2, v10);
         }
         *(_DWORD *)v7 = 2301;
         *(double *)(v7 + 4) = *(double *)(v6 + 4 * v2 - 4);
@@ -9435,7 +10489,7 @@ int __usercall camlArray__iteri_1111@<eax>(int a1@<eax>, int a2@<ebx>)
   }
   return 1;
 }
-// 8052D8C: variable 'a2' is possibly undefined
+// 8052D8C: variable 'v10' is possibly undefined
 // 8052DBF: variable 'v6' is possibly undefined
 // 8052DBF: variable 'v2' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
@@ -9444,89 +10498,96 @@ int __usercall camlArray__iteri_1111@<eax>(int a1@<eax>, int a2@<ebx>)
 //----- (08052E00) --------------------------------------------------------
 void *__usercall camlArray__mapi_1115@<eax>(int a1@<eax>, double *a2@<ebx>)
 {
+  int v2; // ecx
   unsigned int v3; // eax
-  unsigned int v4; // eax
-  int v5; // eax
-  unsigned int v7; // eax
-  int v8; // eax
-  int v9; // ebx
-  int v10; // esi
-  double *v11; // ecx
-  unsigned int v12; // eax
-  double *v13; // eax
-  int v14; // ecx
-  int v15; // [esp+0h] [ebp-1Ch]
-  int v16; // [esp+0h] [ebp-1Ch]
-  int v18; // [esp+8h] [ebp-14h]
-  int v19; // [esp+Ch] [ebp-10h]
-  int v20; // [esp+10h] [ebp-Ch]
+  int v4; // edx
+  unsigned int v5; // eax
+  int v6; // eax
+  unsigned int v8; // eax
+  int v9; // eax
+  int v10; // edx
+  int v11; // ebx
+  int v12; // esi
+  double *v13; // ecx
+  unsigned int v14; // eax
+  double *v15; // eax
+  int v16; // ecx
+  int v17; // [esp+0h] [ebp-1Ch]
+  int v18; // [esp+0h] [ebp-1Ch]
+  int v20; // [esp+8h] [ebp-14h]
+  int v21; // [esp+Ch] [ebp-10h]
+  int v22; // [esp+10h] [ebp-Ch]
 
+  v2 = a1;
   v3 = *((_DWORD *)a2 - 1);
+  v4 = (unsigned __int8)v3;
   if ( (unsigned __int8)v3 == 254 )
-    v4 = v3 >> 10;
+    v5 = v3 >> 10;
   else
-    v4 = v3 >> 9;
-  v5 = v4 | 1;
-  if ( v5 == 1 )
+    v5 = v3 >> 9;
+  v6 = v5 | 1;
+  if ( v6 == 1 )
     return &camlArray__23;
-  v15 = v5;
-  v18 = a1;
+  v17 = v6;
+  v20 = v2;
   if ( *((unsigned __int8 *)a2 - 4) == 254 )
   {
     while ( 1 )
     {
-      v7 = caml_young_ptr - 12;
-      caml_young_ptr = v7;
-      if ( v7 >= caml_young_limit )
+      v8 = caml_young_ptr - 12;
+      caml_young_ptr = v8;
+      if ( v8 >= caml_young_limit )
         break;
-      caml_call_gc(v15);
+      caml_call_gc(v4, v2, v17);
     }
-    *(_DWORD *)v7 = 2301;
-    *(double *)(v7 + 4) = *a2;
+    *(_DWORD *)v8 = 2301;
+    *(double *)(v8 + 4) = *a2;
   }
-  caml_apply2(a1);
-  v8 = caml_c_call((int (*)(void))caml_make_vect, v15);
-  v9 = v8;
-  v10 = 3;
-  if ( v15 - 2 >= 3 )
+  caml_apply2(v2);
+  v9 = caml_c_call((int (*)(void))caml_make_vect, v17);
+  v11 = v9;
+  v12 = 3;
+  if ( v17 - 2 >= 3 )
   {
-    v19 = v15 - 2;
-    v20 = 3;
-    v16 = v8;
+    v21 = v17 - 2;
+    v22 = 3;
+    v18 = v9;
     do
     {
-      v11 = a2;
+      v13 = a2;
       if ( *((unsigned __int8 *)a2 - 4) == 254 )
       {
         while ( 1 )
         {
-          v12 = caml_young_ptr - 12;
-          caml_young_ptr = v12;
-          if ( v12 >= caml_young_limit )
+          v14 = caml_young_ptr - 12;
+          caml_young_ptr = v14;
+          if ( v14 >= caml_young_limit )
             break;
-          caml_call_gc(v16);
+          caml_call_gc(v10, (int)v13, v18);
         }
-        *(_DWORD *)v12 = 2301;
-        *(double *)(v12 + 4) = *(double *)((char *)v11 + 4 * v10 - 4);
+        *(_DWORD *)v14 = 2301;
+        *(double *)(v14 + 4) = *(double *)((char *)v13 + 4 * v12 - 4);
       }
-      v13 = (double *)caml_apply2(v18);
-      v9 = v16;
-      if ( *(unsigned __int8 *)(v16 - 4) == 254 )
-        *(double *)(v16 + 4 * v20 - 4) = *v13;
+      v15 = (double *)caml_apply2(v20);
+      v11 = v18;
+      if ( *(unsigned __int8 *)(v18 - 4) == 254 )
+        *(double *)(v18 + 4 * v22 - 4) = *v15;
       else
-        caml_modify((unsigned int *)(v16 + 2 * v20 - 2), (unsigned int)v13);
-      v14 = v20;
-      v10 = v20 + 2;
-      v20 += 2;
+        caml_modify((unsigned int *)(v18 + 2 * v22 - 2), (unsigned int)v15);
+      v16 = v22;
+      v12 = v22 + 2;
+      v22 += 2;
     }
-    while ( v14 != v19 );
+    while ( v16 != v21 );
   }
-  return (void *)v9;
+  return (void *)v11;
 }
-// 8052E8E: variable 'a1' is possibly undefined
-// 8052E9E: variable 'v15' is possibly undefined
-// 8052EFF: variable 'v11' is possibly undefined
-// 8052F10: variable 'v16' is possibly undefined
+// 8052E8E: variable 'v2' is possibly undefined
+// 8052E9E: variable 'v17' is possibly undefined
+// 8052EFF: variable 'v13' is possibly undefined
+// 8052F10: variable 'v18' is possibly undefined
+// 8052F65: variable 'v10' is possibly undefined
+// 8052F6F: variable 'v4' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -9548,118 +10609,124 @@ int __usercall camlArray__list_length_1126@<eax>(int result@<eax>, int a2@<ebx>)
 void *__usercall camlArray__of_list_1130@<eax>(int *a1@<eax>)
 {
   char v1; // al
-  int v2; // ebx
-  _DWORD *v3; // eax
-  int v5; // [esp+0h] [ebp-8h]
-  int v6; // [esp+4h] [ebp-4h]
+  int v2; // edx
+  int v3; // ecx
+  int v4; // ebx
+  _DWORD *v5; // eax
+  int v7; // [esp+0h] [ebp-8h]
+  int v8; // [esp+4h] [ebp-4h]
 
   if ( a1 == (int *)1 )
     return &camlArray__22;
-  v6 = a1[1];
-  v5 = *a1;
+  v8 = a1[1];
+  v7 = *a1;
   v1 = camlArray__list_length_1126(1, (int)a1);
-  v2 = caml_c_call((int (*)(void))caml_make_vect, v1);
+  v4 = caml_c_call((int (*)(void))caml_make_vect, v1);
   while ( 1 )
   {
-    v3 = (_DWORD *)(caml_young_ptr - 20);
-    caml_young_ptr = (int)v3;
-    if ( (unsigned int)v3 >= caml_young_limit )
+    v5 = (_DWORD *)(caml_young_ptr - 20);
+    caml_young_ptr = (int)v5;
+    if ( (unsigned int)v5 >= caml_young_limit )
       break;
-    caml_call_gc(v5);
+    caml_call_gc(v2, v3, v7);
   }
-  *v3 = 4343;
-  v3[1] = caml_curry2;
-  v3[2] = 5;
-  v3[3] = camlArray__fill_1135;
-  v3[4] = v2;
-  return (void *)camlArray__fill_1135(3, (int)(v3 + 1), v6);
+  *v5 = 4343;
+  v5[1] = caml_curry2;
+  v5[2] = 5;
+  v5[3] = camlArray__fill_1135;
+  v5[4] = v4;
+  return (void *)camlArray__fill_1135(3, (int)(v5 + 1), v8);
 }
-// 8053099: variable 'v5' is possibly undefined
+// 8053099: variable 'v2' is possibly undefined
+// 8053099: variable 'v3' is possibly undefined
+// 8053099: variable 'v7' is possibly undefined
 // 804B370: using guessed type _DWORD caml_curry2();
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (080530A0) --------------------------------------------------------
-unsigned int __usercall camlArray__fold_left_1139@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
+unsigned int __usercall camlArray__fold_left_1139@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>, int a4@<edx>)
 {
-  _DWORD *v4; // eax
-  unsigned int *v5; // esi
-  int v6; // edx
-  unsigned int v7; // eax
+  _DWORD *v5; // eax
+  unsigned int *v6; // esi
+  int v7; // edx
   unsigned int v8; // eax
-  int v9; // eax
-  int v10; // ecx
-  unsigned int v11; // eax
-  int v12; // eax
-  int v13; // ebx
-  char v15; // [esp+0h] [ebp-1Ch]
-  int v16; // [esp+0h] [ebp-1Ch]
-  unsigned int *v17; // [esp+8h] [ebp-14h]
-  int v18; // [esp+Ch] [ebp-10h]
-  int v19; // [esp+10h] [ebp-Ch]
+  unsigned int v9; // eax
+  int v10; // eax
+  int v11; // ecx
+  unsigned int v12; // eax
+  int v13; // eax
+  int v14; // ebx
+  char v16; // [esp+0h] [ebp-1Ch]
+  int v17; // [esp+0h] [ebp-1Ch]
+  unsigned int *v18; // [esp+8h] [ebp-14h]
+  int v19; // [esp+Ch] [ebp-10h]
+  int v20; // [esp+10h] [ebp-Ch]
 
   while ( 1 )
   {
-    v4 = (_DWORD *)(caml_young_ptr - 8);
-    caml_young_ptr = (int)v4;
-    if ( (unsigned int)v4 >= caml_young_limit )
+    v5 = (_DWORD *)(caml_young_ptr - 8);
+    caml_young_ptr = (int)v5;
+    if ( (unsigned int)v5 >= caml_young_limit )
       break;
-    caml_call_gc(v15);
+    caml_call_gc(a4, a2, v16);
   }
-  v5 = v4 + 1;
-  *v4 = 1024;
-  v4[1] = a3;
-  v6 = 1;
-  v7 = *(_DWORD *)(a2 - 4);
-  if ( (unsigned __int8)v7 == 254 )
-    v8 = v7 >> 10;
+  v6 = v5 + 1;
+  *v5 = 1024;
+  v5[1] = a3;
+  v7 = 1;
+  v8 = *(_DWORD *)(a2 - 4);
+  if ( (unsigned __int8)v8 == 254 )
+    v9 = v8 >> 10;
   else
-    v8 = v7 >> 9;
-  v9 = (v8 | 1) - 2;
-  if ( v9 >= 1 )
+    v9 = v8 >> 9;
+  v10 = (v9 | 1) - 2;
+  if ( v10 >= 1 )
   {
-    v19 = v9;
-    v18 = 1;
-    v17 = v5;
-    v16 = a2;
+    v20 = v10;
+    v19 = 1;
+    v18 = v6;
+    v17 = a2;
     do
     {
-      v10 = v16;
-      if ( *(unsigned __int8 *)(v16 - 4) == 254 )
+      v11 = v17;
+      if ( *(unsigned __int8 *)(v17 - 4) == 254 )
       {
         while ( 1 )
         {
-          v11 = caml_young_ptr - 12;
-          caml_young_ptr = v11;
-          if ( v11 >= caml_young_limit )
+          v12 = caml_young_ptr - 12;
+          caml_young_ptr = v12;
+          if ( v12 >= caml_young_limit )
             break;
-          caml_call_gc(v16);
+          caml_call_gc(v7, v11, v17);
         }
-        *(_DWORD *)v11 = 2301;
-        *(double *)(v11 + 4) = *(double *)(v10 + 4 * v6 - 4);
+        *(_DWORD *)v12 = 2301;
+        *(double *)(v12 + 4) = *(double *)(v11 + 4 * v7 - 4);
       }
-      v12 = caml_apply2(a1);
-      v5 = v17;
-      caml_modify(v17, v12);
-      v13 = v18;
-      v6 = v18 + 2;
-      v18 += 2;
+      v13 = caml_apply2(a1);
+      v6 = v18;
+      caml_modify(v18, v13);
+      v14 = v19;
+      v7 = v19 + 2;
+      v19 += 2;
     }
-    while ( v13 != v19 );
+    while ( v14 != v20 );
   }
-  return *v5;
+  return *v6;
 }
 // 80530CF: variable 'a2' is possibly undefined
-// 8053114: variable 'v16' is possibly undefined
-// 805314F: variable 'v10' is possibly undefined
-// 805314F: variable 'v6' is possibly undefined
-// 8053190: variable 'v15' is possibly undefined
+// 8053114: variable 'v17' is possibly undefined
+// 805314F: variable 'v11' is possibly undefined
+// 805314F: variable 'v7' is possibly undefined
+// 8053190: variable 'a4' is possibly undefined
+// 8053190: variable 'v16' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (080531A0) --------------------------------------------------------
 unsigned int __usercall camlArray__fold_right_1145@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 {
+  int i; // edx
   _DWORD *v4; // eax
   unsigned int *v5; // esi
   unsigned int v6; // ecx
@@ -9671,17 +10738,17 @@ unsigned int __usercall camlArray__fold_right_1145@<eax>(int a1@<eax>, int a2@<e
   int v12; // eax
   int v13; // eax
   char v15; // [esp+0h] [ebp-18h]
+  int v16; // [esp+0h] [ebp-18h]
   int v17; // [esp+4h] [ebp-14h]
   unsigned int *v18; // [esp+8h] [ebp-10h]
   int v19; // [esp+Ch] [ebp-Ch]
 
-  while ( 1 )
+  for ( i = a1; ; caml_call_gc(i, a2, v15) )
   {
     v4 = (_DWORD *)(caml_young_ptr - 8);
     caml_young_ptr = (int)v4;
     if ( (unsigned int)v4 >= caml_young_limit )
       break;
-    caml_call_gc(v15);
   }
   v5 = v4 + 1;
   *v4 = 1024;
@@ -9696,11 +10763,12 @@ unsigned int __usercall camlArray__fold_right_1145@<eax>(int a1@<eax>, int a2@<e
   {
     v19 = v8;
     v18 = v4 + 1;
-    v17 = a1;
+    v16 = a3;
+    v17 = i;
     do
     {
-      v9 = a3;
-      if ( *(unsigned __int8 *)(a3 - 4) == 254 )
+      v9 = v16;
+      if ( *(unsigned __int8 *)(v16 - 4) == 254 )
       {
         while ( 1 )
         {
@@ -9708,7 +10776,7 @@ unsigned int __usercall camlArray__fold_right_1145@<eax>(int a1@<eax>, int a2@<e
           caml_young_ptr = v10;
           if ( v10 >= caml_young_limit )
             break;
-          caml_call_gc(a3);
+          caml_call_gc(i, v8, v16);
         }
         v11 = (double *)(v10 + 4);
         *((_DWORD *)v11 - 1) = 2301;
@@ -9726,321 +10794,334 @@ unsigned int __usercall camlArray__fold_right_1145@<eax>(int a1@<eax>, int a2@<e
   return *v5;
 }
 // 80531C8: variable 'a2' is possibly undefined
-// 80531FD: variable 'a1' is possibly undefined
-// 8053201: variable 'a3' is possibly undefined
+// 80531FD: variable 'i' is possibly undefined
+// 8053201: variable 'v16' is possibly undefined
 // 805323F: variable 'v8' is possibly undefined
 // 805327D: variable 'v15' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08053290) --------------------------------------------------------
-int __usercall camlArray__sort_179@<eax>(int a1@<eax>, int a2@<ebx>)
+int __usercall camlArray__sort_1152@<eax>(int a1@<eax>, unsigned int a2@<ebx>, int a3@<edx>)
 {
-  _DWORD *v3; // eax
-  unsigned int v4; // eax
+  int i; // ecx
+  _DWORD *v4; // eax
   unsigned int v5; // eax
-  int v6; // eax
-  int v7; // ebx
+  unsigned int v6; // eax
+  int v7; // eax
   int v8; // edx
-  unsigned int v9; // eax
-  double *v10; // ecx
-  unsigned int v11; // eax
-  int v12; // eax
-  unsigned int v13; // esi
-  unsigned int v14; // eax
+  int v9; // et2
+  int v10; // ebx
+  int v11; // edx
+  unsigned int v12; // eax
+  int v13; // ecx
+  double *v14; // ecx
   unsigned int v15; // eax
-  double *v16; // eax
-  unsigned int v17; // eax
-  double *v18; // edx
-  unsigned int v19; // eax
+  int v16; // eax
+  unsigned int v17; // esi
+  unsigned int v18; // eax
+  int v19; // ecx
   unsigned int v20; // eax
-  int v21; // eax
-  int v22; // eax
-  unsigned int v23; // eax
-  double *v24; // esi
+  double *v21; // eax
+  unsigned int v22; // eax
+  int v23; // ecx
+  double *v24; // edx
   unsigned int v25; // eax
   unsigned int v26; // eax
-  double *v27; // edx
-  unsigned int v28; // eax
+  int v27; // eax
+  int v28; // eax
   unsigned int v29; // eax
-  unsigned int v30; // eax
-  int v32; // eax
-  char v33; // [esp+0h] [ebp-20h]
-  int v34; // [esp+0h] [ebp-20h]
-  int v35; // [esp+4h] [ebp-1Ch]
-  double *v36; // [esp+4h] [ebp-1Ch]
-  int v37; // [esp+8h] [ebp-18h]
-  int v38; // [esp+Ch] [ebp-14h]
-  int v39; // [esp+Ch] [ebp-14h]
-  int v41; // [esp+14h] [ebp-Ch]
+  int v30; // ecx
+  double *v31; // esi
+  unsigned int v32; // eax
+  unsigned int v33; // eax
+  int v34; // ecx
+  double *v35; // edx
+  unsigned int v36; // eax
+  unsigned int v37; // eax
+  unsigned int v38; // eax
+  int v40; // eax
+  int v41; // edx
+  char v42; // [esp+0h] [ebp-20h]
+  int v43; // [esp+0h] [ebp-20h]
+  int v44; // [esp+4h] [ebp-1Ch]
+  double *v45; // [esp+4h] [ebp-1Ch]
+  int v46; // [esp+8h] [ebp-18h]
+  int v47; // [esp+Ch] [ebp-14h]
+  int v48; // [esp+Ch] [ebp-14h]
+  int v50; // [esp+14h] [ebp-Ch]
 
-  while ( 1 )
+  for ( i = a1; ; caml_call_gc(a3, i, v42) )
   {
-    v3 = (_DWORD *)(caml_young_ptr - 144);
-    caml_young_ptr = (int)v3;
-    if ( (unsigned int)v3 >= caml_young_limit )
+    v4 = (_DWORD *)(caml_young_ptr - 144);
+    caml_young_ptr = (int)v4;
+    if ( (unsigned int)v4 >= caml_young_limit )
       break;
-    caml_call_gc(v33);
   }
-  *v3 = 5367;
-  v3[1] = caml_curry2;
-  v3[2] = 5;
-  v3[3] = camlArray__maxson_182;
-  v3[4] = a1;
-  v3[5] = a2;
-  v3[6] = 6391;
-  v3[7] = caml_curry3;
-  v3[8] = 7;
-  v3[9] = camlArray__trickledown_187;
-  v3[10] = a1;
-  v3[11] = a2;
-  v3[12] = v3 + 1;
-  v35 = (int)(v3 + 14);
-  v3[13] = 5367;
-  v3[14] = caml_curry3;
-  v3[15] = 7;
-  v3[16] = camlArray__trickle_1165;
-  v3[17] = a2;
-  v3[18] = v3 + 7;
-  v3[19] = 5367;
-  v3[20] = caml_curry2;
-  v3[21] = 5;
-  v3[22] = camlArray__bubbledown_1170;
-  v3[23] = a2;
-  v3[24] = v3 + 1;
-  v34 = (int)(v3 + 26);
-  v3[25] = 4343;
-  v3[26] = caml_curry2;
-  v3[27] = 5;
-  v3[28] = camlArray__bubble_1174;
-  v3[29] = v3 + 20;
-  v37 = (int)(v3 + 31);
-  v3[30] = 5367;
-  v3[31] = caml_curry2;
-  v3[32] = 5;
-  v3[33] = camlArray__trickleup_205;
-  v3[34] = a1;
-  v3[35] = a2;
-  v4 = *(_DWORD *)(a2 - 4);
-  if ( (unsigned __int8)v4 == 254 )
-    v5 = v4 >> 10;
+  *v4 = 5367;
+  v4[1] = caml_curry2;
+  v4[2] = 5;
+  v4[3] = camlArray__maxson_1155;
+  v4[4] = i;
+  v4[5] = a2;
+  v4[6] = 6391;
+  v4[7] = caml_curry3;
+  v4[8] = 7;
+  v4[9] = camlArray__trickledown_1160;
+  v4[10] = i;
+  v4[11] = a2;
+  v4[12] = v4 + 1;
+  v44 = (int)(v4 + 14);
+  v4[13] = 5367;
+  v4[14] = caml_curry3;
+  v4[15] = 7;
+  v4[16] = camlArray__trickle_1165;
+  v4[17] = a2;
+  v4[18] = v4 + 7;
+  v4[19] = 5367;
+  v4[20] = caml_curry2;
+  v4[21] = 5;
+  v4[22] = camlArray__bubbledown_1170;
+  v4[23] = a2;
+  v4[24] = v4 + 1;
+  v43 = (int)(v4 + 26);
+  v4[25] = 4343;
+  v4[26] = caml_curry2;
+  v4[27] = 5;
+  v4[28] = camlArray__bubble_1174;
+  v4[29] = v4 + 20;
+  v46 = (int)(v4 + 31);
+  v4[30] = 5367;
+  v4[31] = caml_curry2;
+  v4[32] = 5;
+  v4[33] = camlArray__trickleup_1178;
+  v4[34] = i;
+  v4[35] = a2;
+  v5 = *(_DWORD *)(a2 - 4);
+  if ( (unsigned __int8)v5 == 254 )
+    v6 = v5 >> 10;
   else
-    v5 = v4 >> 9;
-  v41 = v5 | 1;
-  v6 = ((int)((v5 | 1) + 2) >> 1) / 3;
-  v7 = 2 * v6 - 1;
-  if ( v7 >= 1 )
+    v6 = v5 >> 9;
+  v50 = v6 | 1;
+  v9 = ((int)((v6 | 1) + 2) >> 1) % 3;
+  v7 = ((int)((v6 | 1) + 2) >> 1) / 3;
+  v8 = v9;
+  v10 = 2 * v7 - 1;
+  if ( v10 >= 1 )
   {
-    v38 = 2 * v6 - 1;
+    v47 = 2 * v7 - 1;
     do
     {
-      v8 = a2;
-      v9 = *(_DWORD *)(a2 - 4);
-      if ( (unsigned __int8)v9 == 254 )
+      v11 = a2;
+      v12 = *(_DWORD *)(a2 - 4);
+      v13 = (unsigned __int8)v12;
+      if ( (unsigned __int8)v12 == 254 )
       {
-        if ( v9 >> 10 <= v7 )
-          goto LABEL_79;
-        while ( 1 )
-        {
-          v11 = caml_young_ptr - 12;
-          caml_young_ptr = v11;
-          if ( v11 >= caml_young_limit )
-            break;
-          caml_call_gc(v34);
-        }
-        v10 = (double *)(v11 + 4);
-        *(_DWORD *)v11 = 2301;
-        *(double *)(v11 + 4) = *(double *)(v8 + 4 * v7 - 4);
-      }
-      else
-      {
-        if ( v9 >> 9 <= v7 )
+        if ( v12 >> 10 <= v10 )
           goto LABEL_80;
-        v10 = *(double **)(a2 + 2 * v7 - 2);
-      }
-      camlArray__trickle_1165(v41, v35, v10, v7);
-      v12 = v38;
-      v7 = v38 - 2;
-      v38 -= 2;
-    }
-    while ( v12 != 1 );
-  }
-  v13 = v41 - 2;
-  if ( v41 - 2 >= 5 )
-  {
-    v39 = v41 - 2;
-    do
-    {
-      v7 = a2;
-      v14 = *(_DWORD *)(a2 - 4);
-      if ( (unsigned __int8)v14 == 254 )
-      {
-        if ( v14 >> 10 <= v13 )
-          goto LABEL_77;
         while ( 1 )
         {
           v15 = caml_young_ptr - 12;
           caml_young_ptr = v15;
           if ( v15 >= caml_young_limit )
             break;
-          caml_call_gc(v34);
+          caml_call_gc(v11, v13, v43);
         }
-        v16 = (double *)(v15 + 4);
-        *((_DWORD *)v16 - 1) = 2301;
-        *v16 = *(double *)(a2 + 4 * v13 - 4);
-        v36 = v16;
+        v14 = (double *)(v15 + 4);
+        *(_DWORD *)v15 = 2301;
+        *(double *)(v15 + 4) = *(double *)(v11 + 4 * v10 - 4);
       }
       else
       {
-        if ( v14 >> 9 <= v13 )
-          goto LABEL_78;
-        v36 = *(double **)(a2 + 2 * v13 - 2);
+        if ( v12 >> 9 <= v10 )
+          goto LABEL_81;
+        v14 = *(double **)(a2 + 2 * v10 - 2);
       }
-      v17 = *(_DWORD *)(a2 - 4);
-      if ( (unsigned __int8)v17 == 254 )
+      camlArray__trickle_1165(v50, v44, v14, v10);
+      v16 = v47;
+      v10 = v47 - 2;
+      v47 -= 2;
+    }
+    while ( v16 != 1 );
+  }
+  v17 = v50 - 2;
+  if ( v50 - 2 >= 5 )
+  {
+    v48 = v50 - 2;
+    do
+    {
+      v10 = a2;
+      v18 = *(_DWORD *)(a2 - 4);
+      v19 = (unsigned __int8)v18;
+      if ( (unsigned __int8)v18 == 254 )
       {
-        if ( v17 >> 10 <= 1 )
-          goto LABEL_75;
+        if ( v18 >> 10 <= v17 )
+          goto LABEL_78;
         while ( 1 )
         {
-          v19 = caml_young_ptr - 12;
-          caml_young_ptr = v19;
-          if ( v19 >= caml_young_limit )
+          v20 = caml_young_ptr - 12;
+          caml_young_ptr = v20;
+          if ( v20 >= caml_young_limit )
             break;
-          caml_call_gc(v34);
+          caml_call_gc(v8, v19, v43);
         }
-        v18 = (double *)(v19 + 4);
-        *(_DWORD *)v19 = 2301;
-        *(double *)(v19 + 4) = *(double *)a2;
+        v21 = (double *)(v20 + 4);
+        *((_DWORD *)v21 - 1) = 2301;
+        *v21 = *(double *)(a2 + 4 * v17 - 4);
+        v45 = v21;
       }
       else
       {
-        if ( v17 >> 9 <= 1 )
+        if ( v18 >> 9 <= v17 )
+          goto LABEL_79;
+        v45 = *(double **)(a2 + 2 * v17 - 2);
+      }
+      v22 = *(_DWORD *)(a2 - 4);
+      v23 = (unsigned __int8)v22;
+      if ( (unsigned __int8)v22 == 254 )
+      {
+        if ( v22 >> 10 <= 1 )
           goto LABEL_76;
-        v18 = *(double **)a2;
-      }
-      v20 = *(_DWORD *)(a2 - 4);
-      if ( (unsigned __int8)v20 == 254 )
-      {
-        if ( v20 >> 10 <= v13 )
-          goto LABEL_73;
-        *(double *)(a2 + 4 * v13 - 4) = *v18;
+        while ( 1 )
+        {
+          v25 = caml_young_ptr - 12;
+          caml_young_ptr = v25;
+          if ( v25 >= caml_young_limit )
+            break;
+          caml_call_gc(v8, v23, v43);
+        }
+        v24 = (double *)(v25 + 4);
+        *(_DWORD *)v25 = 2301;
+        *(double *)(v25 + 4) = *(double *)a2;
       }
       else
       {
-        if ( v20 >> 9 <= v13 )
-          goto LABEL_74;
-        caml_modify((unsigned int *)(a2 + 2 * v13 - 2), (unsigned int)v18);
+        if ( v22 >> 9 <= 1 )
+          goto LABEL_77;
+        v24 = *(double **)a2;
       }
-      v21 = camlArray__bubble_1174(v13, v34, 1u);
-      camlArray__trickleup_205(v21, v37, v36);
-      v22 = v39;
-      v13 = v39 - 2;
-      v39 -= 2;
+      v26 = *(_DWORD *)(a2 - 4);
+      if ( (unsigned __int8)v26 == 254 )
+      {
+        if ( v26 >> 10 <= v17 )
+          goto LABEL_74;
+        *(double *)(a2 + 4 * v17 - 4) = *v24;
+      }
+      else
+      {
+        if ( v26 >> 9 <= v17 )
+          goto LABEL_75;
+        caml_modify((unsigned int *)(a2 + 2 * v17 - 2), (unsigned int)v24);
+      }
+      v27 = camlArray__bubble_1174(v17, v43, 1u);
+      camlArray__trickleup_1178(v27, v46, v45);
+      v28 = v48;
+      v17 = v48 - 2;
+      v48 -= 2;
     }
-    while ( v22 != 5 );
+    while ( v28 != 5 );
   }
-  if ( v41 <= 3 )
+  if ( v50 <= 3 )
     return 1;
-  v7 = a2;
-  v23 = *(_DWORD *)(a2 - 4);
-  if ( (unsigned __int8)v23 == 254 )
+  v10 = a2;
+  v29 = *(_DWORD *)(a2 - 4);
+  v30 = (unsigned __int8)v29;
+  if ( (unsigned __int8)v29 == 254 )
   {
-    if ( v23 >> 10 <= 3 )
+    if ( v29 >> 10 <= 3 )
     {
-LABEL_71:
+LABEL_72:
       caml_ml_array_bound_error();
-      goto LABEL_72;
+      goto LABEL_73;
     }
     while ( 1 )
     {
-      v25 = caml_young_ptr - 12;
-      caml_young_ptr = v25;
-      if ( v25 >= caml_young_limit )
+      v32 = caml_young_ptr - 12;
+      caml_young_ptr = v32;
+      if ( v32 >= caml_young_limit )
         break;
-      caml_call_gc(v34);
+      caml_call_gc(v8, v30, v43);
     }
-    v24 = (double *)(v25 + 4);
-    *(_DWORD *)v25 = 2301;
-    *(double *)(v25 + 4) = *(double *)(a2 + 8);
-LABEL_41:
-    v26 = *(_DWORD *)(a2 - 4);
-    if ( (unsigned __int8)v26 == 254 )
+    v31 = (double *)(v32 + 4);
+    *(_DWORD *)v32 = 2301;
+    *(double *)(v32 + 4) = *(double *)(a2 + 8);
+LABEL_42:
+    v33 = *(_DWORD *)(a2 - 4);
+    v34 = (unsigned __int8)v33;
+    if ( (unsigned __int8)v33 == 254 )
     {
-      if ( v26 >> 10 <= 1 )
-      {
-LABEL_69:
-        caml_ml_array_bound_error();
-        goto LABEL_70;
-      }
-      while ( 1 )
-      {
-        v28 = caml_young_ptr - 12;
-        caml_young_ptr = v28;
-        if ( v28 >= caml_young_limit )
-          break;
-        caml_call_gc(v34);
-      }
-      v27 = (double *)(v28 + 4);
-      *(_DWORD *)v28 = 2301;
-      *(double *)(v28 + 4) = *(double *)a2;
-    }
-    else
-    {
-      if ( v26 >> 9 <= 1 )
+      if ( v33 >> 10 <= 1 )
       {
 LABEL_70:
         caml_ml_array_bound_error();
         goto LABEL_71;
       }
-      v27 = *(double **)a2;
-    }
-    v29 = *(_DWORD *)(a2 - 4);
-    if ( (unsigned __int8)v29 == 254 )
-    {
-      if ( v29 >> 10 <= 3 )
+      while ( 1 )
       {
-LABEL_67:
-        caml_ml_array_bound_error();
-        goto LABEL_68;
+        v36 = caml_young_ptr - 12;
+        caml_young_ptr = v36;
+        if ( v36 >= caml_young_limit )
+          break;
+        caml_call_gc(v8, v34, v43);
       }
-      *(double *)(a2 + 8) = *v27;
+      v35 = (double *)(v36 + 4);
+      *(_DWORD *)v36 = 2301;
+      *(double *)(v36 + 4) = *(double *)a2;
     }
     else
     {
-      if ( v29 >> 9 <= 3 )
+      if ( v33 >> 9 <= 1 )
+      {
+LABEL_71:
+        caml_ml_array_bound_error();
+        goto LABEL_72;
+      }
+      v35 = *(double **)a2;
+    }
+    v37 = *(_DWORD *)(a2 - 4);
+    if ( (unsigned __int8)v37 == 254 )
+    {
+      if ( v37 >> 10 <= 3 )
       {
 LABEL_68:
         caml_ml_array_bound_error();
         goto LABEL_69;
       }
-      caml_modify((unsigned int *)(a2 + 4), (unsigned int)v27);
+      *(double *)(a2 + 8) = *v35;
     }
-    v30 = *(_DWORD *)(a2 - 4);
-    if ( (unsigned __int8)v30 == 254 )
+    else
     {
-      if ( v30 >> 10 > 1 )
+      if ( v37 >> 9 <= 3 )
       {
-        *(double *)a2 = *v24;
+LABEL_69:
+        caml_ml_array_bound_error();
+        goto LABEL_70;
+      }
+      caml_modify((unsigned int *)(a2 + 4), (unsigned int)v35);
+    }
+    v38 = *(_DWORD *)(a2 - 4);
+    if ( (unsigned __int8)v38 == 254 )
+    {
+      if ( v38 >> 10 > 1 )
+      {
+        *(double *)a2 = *v31;
         return 1;
       }
       caml_ml_array_bound_error();
     }
-    else if ( v30 >> 9 > 1 )
+    else if ( v38 >> 9 > 1 )
     {
-      caml_modify((unsigned int *)a2, (unsigned int)v24);
+      caml_modify((unsigned int *)a2, (unsigned int)v31);
       return 1;
     }
     caml_ml_array_bound_error();
-    goto LABEL_67;
+    goto LABEL_68;
   }
-  if ( v23 >> 9 > 3 )
+  if ( v29 >> 9 > 3 )
   {
-    v24 = *(double **)(a2 + 4);
-    goto LABEL_41;
+    v31 = *(double **)(a2 + 4);
+    goto LABEL_42;
   }
-LABEL_72:
-  caml_ml_array_bound_error();
 LABEL_73:
   caml_ml_array_bound_error();
 LABEL_74:
@@ -10056,116 +11137,130 @@ LABEL_78:
 LABEL_79:
   caml_ml_array_bound_error();
 LABEL_80:
-  v32 = caml_ml_array_bound_error();
-  return camlArray__stable_sort_1188(v32, (double *)v7);
+  caml_ml_array_bound_error();
+LABEL_81:
+  v40 = caml_ml_array_bound_error();
+  return camlArray__stable_sort_1188(v40, (double *)v10, v41);
 }
-// 80532D2: variable 'a1' is possibly undefined
-// 805342E: variable 'v8' is possibly undefined
-// 805358B: variable 'v34' is possibly undefined
-// 805375B: variable 'v33' is possibly undefined
+// 80532D2: variable 'i' is possibly undefined
+// 805342E: variable 'v11' is possibly undefined
+// 805358B: variable 'v43' is possibly undefined
+// 8053729: variable 'v8' is possibly undefined
+// 8053729: variable 'v34' is possibly undefined
+// 8053733: variable 'v30' is possibly undefined
+// 805373D: variable 'v23' is possibly undefined
+// 8053747: variable 'v19' is possibly undefined
+// 8053751: variable 'v13' is possibly undefined
+// 805375B: variable 'a3' is possibly undefined
+// 805375B: variable 'v42' is possibly undefined
+// 80537BA: variable 'v41' is possibly undefined
 // 804B2D0: using guessed type _DWORD caml_curry3();
 // 804B370: using guessed type _DWORD caml_curry2();
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (080537C0) --------------------------------------------------------
-int __usercall camlArray__stable_sort_1188@<eax>(int a1@<eax>, double *a2@<ebx>)
+int __usercall camlArray__stable_sort_1188@<eax>(int a1@<eax>, double *a2@<ebx>, int a3@<edx>)
 {
-  unsigned int v3; // eax
-  _DWORD *v4; // eax
-  unsigned int v5; // edx
+  int i; // ecx
+  unsigned int v4; // eax
+  _DWORD *v5; // eax
   unsigned int v6; // edx
-  int v7; // edx
-  int v9; // edx
-  unsigned int v10; // eax
+  unsigned int v7; // edx
+  int v8; // edx
+  int v10; // edx
   unsigned int v11; // eax
-  double *v12; // eax
-  char v13; // [esp+0h] [ebp-20h]
-  int v14; // [esp+0h] [ebp-20h]
-  unsigned int v15; // [esp+4h] [ebp-1Ch]
-  int v16; // [esp+8h] [ebp-18h]
-  int v17; // [esp+Ch] [ebp-14h]
-  int v18; // [esp+14h] [ebp-Ch]
+  int v12; // ecx
+  unsigned int v13; // eax
+  double *v14; // eax
+  char v15; // [esp+0h] [ebp-20h]
+  int v16; // [esp+0h] [ebp-20h]
+  unsigned int v17; // [esp+4h] [ebp-1Ch]
+  int v18; // [esp+8h] [ebp-18h]
+  int v19; // [esp+Ch] [ebp-14h]
+  int v20; // [esp+14h] [ebp-Ch]
 
-  while ( 1 )
+  for ( i = a1; ; caml_call_gc(a3, i, v15) )
   {
-    v3 = caml_young_ptr - 76;
-    caml_young_ptr = v3;
-    if ( v3 >= caml_young_limit )
+    v4 = caml_young_ptr - 76;
+    caml_young_ptr = v4;
+    if ( v4 >= caml_young_limit )
       break;
-    caml_call_gc(v13);
   }
-  v4 = (_DWORD *)(v3 + 4);
-  *(v4 - 1) = 5367;
-  *v4 = caml_curry7;
-  v4[1] = 15;
-  v4[2] = camlArray__merge_1191;
-  v4[3] = a1;
-  v4[4] = a2;
-  v4[5] = 5367;
-  v4[6] = caml_curry4;
-  v4[7] = 9;
-  v4[8] = camlArray__isortto_236;
-  v4[9] = a1;
-  v4[10] = a2;
-  v4[11] = 6391;
-  v4[12] = caml_curry4;
-  v4[13] = 9;
-  v4[14] = camlArray__sortto_1217;
-  v4[15] = a2;
-  v4[16] = v4;
-  v4[17] = v4 + 6;
-  v5 = *((_DWORD *)a2 - 1);
-  if ( (unsigned __int8)v5 == 254 )
-    v6 = v5 >> 10;
+  v5 = (_DWORD *)(v4 + 4);
+  *(v5 - 1) = 5367;
+  *v5 = caml_curry7;
+  v5[1] = 15;
+  v5[2] = camlArray__merge_1191;
+  v5[3] = i;
+  v5[4] = a2;
+  v5[5] = 5367;
+  v5[6] = caml_curry4;
+  v5[7] = 9;
+  v5[8] = camlArray__isortto_1209;
+  v5[9] = i;
+  v5[10] = a2;
+  v5[11] = 6391;
+  v5[12] = caml_curry4;
+  v5[13] = 9;
+  v5[14] = camlArray__sortto_1217;
+  v5[15] = a2;
+  v5[16] = v5;
+  v5[17] = v5 + 6;
+  v6 = *((_DWORD *)a2 - 1);
+  if ( (unsigned __int8)v6 == 254 )
+    v7 = v6 >> 10;
   else
-    v6 = v5 >> 9;
-  v7 = v6 | 1;
-  if ( v7 <= 11 )
-    return camlArray__isortto_236(1, v7, 1, (int)a2, (int)(v4 + 6));
-  v14 = (int)(v4 + 12);
-  v18 = (int)v4;
-  v16 = 2 * ((v7 >> 1) / 2) + 1;
-  v9 = v7 - 2 * ((v7 >> 1) / 2);
-  v15 = v9;
-  v10 = *((_DWORD *)a2 - 1);
-  if ( (unsigned __int8)v10 == 254 )
+    v7 = v6 >> 9;
+  v8 = v7 | 1;
+  if ( v8 <= 11 )
+    return camlArray__isortto_1209(1, v8, 1, (int)a2, v5 + 6);
+  v16 = (int)(v5 + 12);
+  v20 = (int)v5;
+  v18 = 2 * ((v8 >> 1) / 2) + 1;
+  v10 = v8 - 2 * ((v8 >> 1) / 2);
+  v17 = v10;
+  v11 = *((_DWORD *)a2 - 1);
+  v12 = (unsigned __int8)v11;
+  if ( (unsigned __int8)v11 == 254 )
   {
-    if ( v10 >> 10 > 1 )
+    if ( v11 >> 10 > 1 )
     {
       while ( 1 )
       {
-        v11 = caml_young_ptr - 12;
-        caml_young_ptr = v11;
-        if ( v11 >= caml_young_limit )
+        v13 = caml_young_ptr - 12;
+        caml_young_ptr = v13;
+        if ( v13 >= caml_young_limit )
           break;
-        caml_call_gc(v14);
+        caml_call_gc(v10, v12, v16);
       }
-      v12 = (double *)(v11 + 4);
-      *((_DWORD *)v12 - 1) = 2301;
-      *v12 = *a2;
-      goto LABEL_13;
+      v14 = (double *)(v13 + 4);
+      *((_DWORD *)v14 - 1) = 2301;
+      *v14 = *a2;
+      goto LABEL_14;
     }
     caml_ml_array_bound_error();
   }
-  else if ( v10 >> 9 > 1 )
+  else if ( v11 >> 9 > 1 )
   {
-LABEL_13:
-    v17 = caml_c_call((int (*)(void))caml_make_vect, v9);
-    camlArray__sortto_1217(v16, v15, 1, v17, v14);
-    camlArray__sortto_1217(1, v16, v15, (int)a2, v14);
+LABEL_14:
+    v19 = caml_c_call((int (*)(void))caml_make_vect, v10);
+    camlArray__sortto_1217(v18, v17, 1, v19, v16);
+    camlArray__sortto_1217(1, v18, v17, (int)a2, v16);
     caml_extra_params = 1;
-    dword_807D0C0 = v18;
-    return camlArray__merge_1191(v15, 1u, v17, v16, (int)a2, v15);
+    dword_807D0C0 = v20;
+    return camlArray__merge_1191(v17, 1u, v19, v18, (int)a2, v17);
   }
   caml_ml_array_bound_error();
   return camlArray__entry();
 }
 // 80537C0: could not find valid save-restore pair for ebp
-// 80537FC: variable 'a1' is possibly undefined
-// 805391A: variable 'v9' is possibly undefined
-// 8053938: variable 'v14' is possibly undefined
-// 8053994: variable 'v13' is possibly undefined
+// 80537FC: variable 'i' is possibly undefined
+// 805391A: variable 'v10' is possibly undefined
+// 8053938: variable 'v16' is possibly undefined
+// 805398A: variable 'v12' is possibly undefined
+// 8053994: variable 'a3' is possibly undefined
+// 8053994: variable 'v15' is possibly undefined
 // 804AD50: using guessed type _DWORD caml_curry7();
 // 804B1F0: using guessed type _DWORD caml_curry4();
 // 80539B0: using guessed type int camlArray__entry(void);
@@ -10196,378 +11291,417 @@ int __usercall camlList__code_begin@<eax>(int *a1@<eax>, int a2@<ebx>)
   }
   return result;
 }
-// 804FC70: using guessed type int camlPervasives__failwith_1010(void);
+// 804FC70: using guessed type void __noreturn camlPervasives__failwith_1010(void);
 
 //----- (08053AF0) --------------------------------------------------------
 int *__usercall camlList__rmap_f_1070@<eax>(int *result@<eax>, int a2@<ecx>, int a3@<ebx>)
 {
-  int v3; // ebx
-  unsigned int v4; // eax
-  int *v5; // [esp+0h] [ebp-Ch]
-  int v6; // [esp+4h] [ebp-8h]
-  int v7; // [esp+8h] [ebp-4h]
+  int v3; // edx
+  int v4; // ecx
+  int v5; // ebx
+  unsigned int v6; // eax
+  int *v7; // [esp+0h] [ebp-Ch]
+  int v8; // [esp+4h] [ebp-8h]
+  int v9; // [esp+8h] [ebp-4h]
 
   while ( a3 != 1 )
   {
-    v7 = a2;
-    v5 = result;
-    v6 = *(_DWORD *)(a3 + 4);
-    v3 = (**(int (***)(void))(a2 + 12))();
+    v9 = a2;
+    v7 = result;
+    v8 = *(_DWORD *)(a3 + 4);
+    v5 = (**(int (***)(void))(a2 + 12))();
     while ( 1 )
     {
-      v4 = caml_young_ptr - 12;
-      caml_young_ptr = v4;
-      if ( v4 >= caml_young_limit )
+      v6 = caml_young_ptr - 12;
+      caml_young_ptr = v6;
+      if ( v6 >= caml_young_limit )
         break;
-      caml_call_gc((char)v5);
+      caml_call_gc(v3, v4, (char)v7);
     }
-    result = (int *)(v4 + 4);
+    result = (int *)(v6 + 4);
     *(result - 1) = 2048;
-    *result = v3;
-    result[1] = (int)v5;
-    a3 = v6;
-    a2 = v7;
+    *result = v5;
+    result[1] = (int)v7;
+    a3 = v8;
+    a2 = v9;
   }
   return result;
 }
-// 8053B35: variable 'v5' is possibly undefined
+// 8053B35: variable 'v7' is possibly undefined
+// 8053B54: variable 'v3' is possibly undefined
+// 8053B54: variable 'v4' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08053B60) --------------------------------------------------------
 int *__usercall camlList__rmap2_f_1103@<eax>(int *result@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
 {
-  int v4; // ebx
-  unsigned int v5; // eax
-  int *v6; // [esp+0h] [ebp-10h]
-  int v7; // [esp+4h] [ebp-Ch]
-  int v8; // [esp+8h] [ebp-8h]
-  int v9; // [esp+Ch] [ebp-4h]
+  int v4; // edx
+  int v5; // ecx
+  int v6; // ebx
+  unsigned int v7; // eax
+  int *v8; // [esp+0h] [ebp-10h]
+  int v9; // [esp+4h] [ebp-Ch]
+  int v10; // [esp+8h] [ebp-8h]
+  int v11; // [esp+Ch] [ebp-4h]
 
   while ( a4 != 1 )
   {
     if ( a3 == 1 )
       goto LABEL_7;
-    v9 = a2;
-    v6 = result;
-    v8 = *(_DWORD *)(a3 + 4);
-    v7 = *(_DWORD *)(a4 + 4);
-    v4 = caml_apply2(*(_DWORD *)(a2 + 12));
+    v11 = a2;
+    v8 = result;
+    v10 = *(_DWORD *)(a3 + 4);
+    v9 = *(_DWORD *)(a4 + 4);
+    v6 = caml_apply2(*(_DWORD *)(a2 + 12));
     while ( 1 )
     {
-      v5 = caml_young_ptr - 12;
-      caml_young_ptr = v5;
-      if ( v5 >= caml_young_limit )
+      v7 = caml_young_ptr - 12;
+      caml_young_ptr = v7;
+      if ( v7 >= caml_young_limit )
         break;
-      caml_call_gc((char)v6);
+      caml_call_gc(v4, v5, (char)v8);
     }
-    result = (int *)(v5 + 4);
+    result = (int *)(v7 + 4);
     *(result - 1) = 2048;
-    *result = v4;
-    result[1] = (int)v6;
-    a4 = v7;
-    a3 = v8;
-    a2 = v9;
+    *result = v6;
+    result[1] = (int)v8;
+    a4 = v9;
+    a3 = v10;
+    a2 = v11;
   }
   if ( a3 != 1 )
 LABEL_7:
     camlPervasives__invalid_arg_1012(a3, a2);
   return result;
 }
-// 8053BB6: variable 'v6' is possibly undefined
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 8053BB6: variable 'v8' is possibly undefined
+// 8053BED: variable 'v4' is possibly undefined
+// 8053BED: variable 'v5' is possibly undefined
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08053C00) --------------------------------------------------------
 int __usercall camlList__find_1207@<eax>(_DWORD *a1@<eax>, int a2@<ecx>, int *a3@<ebx>)
 {
-  unsigned int v3; // eax
-  int v5; // [esp+0h] [ebp-10h]
-  _DWORD *v6; // [esp+4h] [ebp-Ch]
-  int *v7; // [esp+8h] [ebp-8h]
-  int v8; // [esp+Ch] [ebp-4h]
+  int v3; // edx
+  int v4; // ecx
+  unsigned int v5; // eax
+  int v7; // [esp+0h] [ebp-10h]
+  _DWORD *v8; // [esp+4h] [ebp-Ch]
+  int *v9; // [esp+8h] [ebp-8h]
+  int v10; // [esp+Ch] [ebp-4h]
 
   while ( a3 != (int *)1 )
   {
-    v8 = a2;
-    v6 = a1;
-    v7 = (int *)a3[1];
-    v5 = *a3;
+    v10 = a2;
+    v8 = a1;
+    v9 = (int *)a3[1];
+    v7 = *a3;
     if ( (**(int (***)(void))(a2 + 12))() == 1 )
     {
-      a1 = v6;
-      a3 = v7;
-      a2 = v8;
+      a1 = v8;
+      a3 = v9;
+      a2 = v10;
     }
     else
     {
       while ( 1 )
       {
-        v3 = caml_young_ptr - 12;
-        caml_young_ptr = v3;
-        if ( v3 >= caml_young_limit )
+        v5 = caml_young_ptr - 12;
+        caml_young_ptr = v5;
+        if ( v5 >= caml_young_limit )
           break;
-        caml_call_gc(v5);
+        caml_call_gc(v3, v4, v7);
       }
-      a1 = (_DWORD *)(v3 + 4);
+      a1 = (_DWORD *)(v5 + 4);
       *(a1 - 1) = 2048;
-      *a1 = v5;
-      a1[1] = v6;
-      a3 = v7;
-      a2 = v8;
+      *a1 = v7;
+      a1[1] = v8;
+      a3 = v9;
+      a2 = v10;
     }
   }
-  return camlList__rev_append_1051();
+  return camlList__rev_append_1051(a2);
 }
-// 8053C4A: variable 'v5' is possibly undefined
-// 80549C0: using guessed type int camlList__rev_append_1051(void);
+// 8053C4A: variable 'v7' is possibly undefined
+// 8053C7D: variable 'v3' is possibly undefined
+// 8053C7D: variable 'v4' is possibly undefined
+// 80549C0: using guessed type int __fastcall camlList__rev_append_1051(_DWORD);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08053C90) --------------------------------------------------------
 int *__usercall camlList__part_1215@<eax>(_DWORD *a1@<eax>, int a2@<edx>, int *a3@<ecx>, _DWORD *a4@<ebx>)
 {
-  unsigned int v4; // eax
-  _DWORD *v5; // eax
-  int v6; // ebx
-  unsigned int v7; // eax
+  int v4; // edx
+  int v5; // ecx
+  unsigned int v6; // eax
+  _DWORD *v7; // eax
+  int v8; // ecx
+  int v9; // edx
+  int v10; // ecx
+  int v11; // ebx
+  unsigned int v12; // eax
   int *result; // eax
-  int v9; // [esp+0h] [ebp-14h]
-  int v10; // [esp+0h] [ebp-14h]
-  _DWORD *v11; // [esp+4h] [ebp-10h]
-  _DWORD *v12; // [esp+8h] [ebp-Ch]
-  int *v13; // [esp+Ch] [ebp-8h]
-  int v14; // [esp+10h] [ebp-4h]
+  int v14; // [esp+0h] [ebp-14h]
+  int appended; // [esp+0h] [ebp-14h]
+  _DWORD *v16; // [esp+4h] [ebp-10h]
+  _DWORD *v17; // [esp+8h] [ebp-Ch]
+  int *v18; // [esp+Ch] [ebp-8h]
+  int v19; // [esp+10h] [ebp-4h]
 
   while ( 1 )
   {
-    v11 = a1;
+    v16 = a1;
     if ( a3 == (int *)1 )
       break;
-    v14 = a2;
-    v12 = a4;
-    v13 = (int *)a3[1];
-    v9 = *a3;
+    v19 = a2;
+    v17 = a4;
+    v18 = (int *)a3[1];
+    v14 = *a3;
     if ( (**(int (***)(void))(a2 + 12))() == 1 )
     {
       while ( 1 )
       {
-        v5 = (_DWORD *)(caml_young_ptr - 12);
-        caml_young_ptr = (int)v5;
-        if ( (unsigned int)v5 >= caml_young_limit )
+        v7 = (_DWORD *)(caml_young_ptr - 12);
+        caml_young_ptr = (int)v7;
+        if ( (unsigned int)v7 >= caml_young_limit )
           break;
-        caml_call_gc(v9);
+        caml_call_gc(v4, v5, v14);
       }
-      a4 = v5 + 1;
-      *v5 = 2048;
-      v5[1] = v9;
-      v5[2] = v12;
-      a1 = v11;
-      a3 = v13;
-      a2 = v14;
+      a4 = v7 + 1;
+      *v7 = 2048;
+      v7[1] = v14;
+      v7[2] = v17;
+      a1 = v16;
+      a3 = v18;
+      a2 = v19;
     }
     else
     {
       while ( 1 )
       {
-        v4 = caml_young_ptr - 12;
-        caml_young_ptr = v4;
-        if ( v4 >= caml_young_limit )
+        v6 = caml_young_ptr - 12;
+        caml_young_ptr = v6;
+        if ( v6 >= caml_young_limit )
           break;
-        caml_call_gc(v9);
+        caml_call_gc(v4, v5, v14);
       }
-      a1 = (_DWORD *)(v4 + 4);
+      a1 = (_DWORD *)(v6 + 4);
       *(a1 - 1) = 2048;
-      *a1 = v9;
-      a1[1] = v11;
-      a3 = v13;
-      a2 = v14;
+      *a1 = v14;
+      a1[1] = v16;
+      a3 = v18;
+      a2 = v19;
     }
   }
-  v10 = camlList__rev_append_1051();
-  v6 = camlList__rev_append_1051();
+  appended = camlList__rev_append_1051(1);
+  v11 = camlList__rev_append_1051(v8);
   while ( 1 )
   {
-    v7 = caml_young_ptr - 12;
-    caml_young_ptr = v7;
-    if ( v7 >= caml_young_limit )
+    v12 = caml_young_ptr - 12;
+    caml_young_ptr = v12;
+    if ( v12 >= caml_young_limit )
       break;
-    caml_call_gc(v10);
+    caml_call_gc(v9, v10, appended);
   }
-  result = (int *)(v7 + 4);
+  result = (int *)(v12 + 4);
   *(result - 1) = 2048;
-  *result = v6;
-  result[1] = v10;
+  *result = v11;
+  result[1] = appended;
   return result;
 }
 // 8053C90: could not find valid save-restore pair for ebx
-// 8053CE6: variable 'v9' is possibly undefined
-// 8053D85: variable 'v10' is possibly undefined
-// 80549C0: using guessed type int camlList__rev_append_1051(void);
+// 8053CE6: variable 'v14' is possibly undefined
+// 8053D5A: variable 'v8' is possibly undefined
+// 8053D85: variable 'appended' is possibly undefined
+// 8053D8C: variable 'v9' is possibly undefined
+// 8053D8C: variable 'v10' is possibly undefined
+// 8053D93: variable 'v4' is possibly undefined
+// 8053D93: variable 'v5' is possibly undefined
+// 80549C0: using guessed type int __fastcall camlList__rev_append_1051(_DWORD);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08053DB0) --------------------------------------------------------
 int __usercall camlList__rev_merge_1251@<eax>(_DWORD *a1@<eax>, int a2@<edx>, _DWORD *a3@<ecx>, int *a4@<ebx>)
 {
-  _DWORD *v4; // eax
-  _DWORD *v5; // eax
-  int v7; // [esp+0h] [ebp-20h]
-  _DWORD *v8; // [esp+4h] [ebp-1Ch]
-  int *v9; // [esp+8h] [ebp-18h]
-  int v10; // [esp+Ch] [ebp-14h]
-  _DWORD *v11; // [esp+10h] [ebp-10h]
-  _DWORD *v12; // [esp+14h] [ebp-Ch]
-  int v13; // [esp+1Ch] [ebp-4h]
+  int v4; // edx
+  int v5; // ecx
+  _DWORD *v6; // eax
+  _DWORD *v7; // eax
+  int v9; // [esp+0h] [ebp-20h]
+  _DWORD *v10; // [esp+4h] [ebp-1Ch]
+  int *v11; // [esp+8h] [ebp-18h]
+  int v12; // [esp+Ch] [ebp-14h]
+  _DWORD *v13; // [esp+10h] [ebp-10h]
+  _DWORD *v14; // [esp+14h] [ebp-Ch]
+  int v15; // [esp+1Ch] [ebp-4h]
 
   while ( a1 != (_DWORD *)1 && a4 != (int *)1 )
   {
-    v13 = a2;
-    v11 = a3;
-    v8 = a1;
-    v9 = (int *)a4[1];
-    v7 = *a4;
-    v12 = (_DWORD *)a1[1];
-    v10 = *a1;
+    v15 = a2;
+    v13 = a3;
+    v10 = a1;
+    v11 = (int *)a4[1];
+    v9 = *a4;
+    v14 = (_DWORD *)a1[1];
+    v12 = *a1;
     if ( caml_apply2(*(_DWORD *)(a2 + 12)) > 1 )
     {
       while ( 1 )
       {
-        v5 = (_DWORD *)(caml_young_ptr - 12);
-        caml_young_ptr = (int)v5;
-        if ( (unsigned int)v5 >= caml_young_limit )
+        v7 = (_DWORD *)(caml_young_ptr - 12);
+        caml_young_ptr = (int)v7;
+        if ( (unsigned int)v7 >= caml_young_limit )
           break;
-        caml_call_gc(v7);
+        caml_call_gc(v4, v5, v9);
       }
-      a3 = v5 + 1;
-      *v5 = 2048;
-      v5[1] = v7;
-      v5[2] = v11;
-      a1 = v8;
-      a4 = v9;
-      a2 = v13;
+      a3 = v7 + 1;
+      *v7 = 2048;
+      v7[1] = v9;
+      v7[2] = v13;
+      a1 = v10;
+      a4 = v11;
+      a2 = v15;
     }
     else
     {
       while ( 1 )
       {
-        v4 = (_DWORD *)(caml_young_ptr - 12);
-        caml_young_ptr = (int)v4;
-        if ( (unsigned int)v4 >= caml_young_limit )
+        v6 = (_DWORD *)(caml_young_ptr - 12);
+        caml_young_ptr = (int)v6;
+        if ( (unsigned int)v6 >= caml_young_limit )
           break;
-        caml_call_gc(v7);
+        caml_call_gc(v4, v5, v9);
       }
-      a3 = v4 + 1;
-      *v4 = 2048;
-      v4[1] = v10;
-      v4[2] = v11;
-      a1 = v12;
-      a2 = v13;
+      a3 = v6 + 1;
+      *v6 = 2048;
+      v6[1] = v12;
+      v6[2] = v13;
+      a1 = v14;
+      a2 = v15;
     }
   }
-  return camlList__rev_append_1051();
+  return camlList__rev_append_1051(a3);
 }
-// 8053E62: variable 'v7' is possibly undefined
-// 80549C0: using guessed type int camlList__rev_append_1051(void);
+// 8053E62: variable 'v9' is possibly undefined
+// 8053E9C: variable 'v4' is possibly undefined
+// 8053E9C: variable 'v5' is possibly undefined
+// 80549C0: using guessed type int __fastcall camlList__rev_append_1051(_DWORD);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08053EB0) --------------------------------------------------------
 int __usercall camlList__rev_merge_rev_1261@<eax>(_DWORD *a1@<eax>, int a2@<edx>, _DWORD *a3@<ecx>, int *a4@<ebx>)
 {
-  _DWORD *v4; // eax
-  _DWORD *v5; // eax
-  int v7; // [esp+0h] [ebp-20h]
-  _DWORD *v8; // [esp+4h] [ebp-1Ch]
-  int *v9; // [esp+8h] [ebp-18h]
-  int v10; // [esp+Ch] [ebp-14h]
-  _DWORD *v11; // [esp+10h] [ebp-10h]
-  _DWORD *v12; // [esp+14h] [ebp-Ch]
-  int v13; // [esp+1Ch] [ebp-4h]
+  int v4; // edx
+  int v5; // ecx
+  _DWORD *v6; // eax
+  _DWORD *v7; // eax
+  int v9; // [esp+0h] [ebp-20h]
+  _DWORD *v10; // [esp+4h] [ebp-1Ch]
+  int *v11; // [esp+8h] [ebp-18h]
+  int v12; // [esp+Ch] [ebp-14h]
+  _DWORD *v13; // [esp+10h] [ebp-10h]
+  _DWORD *v14; // [esp+14h] [ebp-Ch]
+  int v15; // [esp+1Ch] [ebp-4h]
 
   while ( a1 != (_DWORD *)1 && a4 != (int *)1 )
   {
-    v13 = a2;
-    v11 = a3;
-    v8 = a1;
-    v9 = (int *)a4[1];
-    v7 = *a4;
-    v12 = (_DWORD *)a1[1];
-    v10 = *a1;
+    v15 = a2;
+    v13 = a3;
+    v10 = a1;
+    v11 = (int *)a4[1];
+    v9 = *a4;
+    v14 = (_DWORD *)a1[1];
+    v12 = *a1;
     if ( caml_apply2(*(_DWORD *)(a2 + 12)) <= 1 )
     {
       while ( 1 )
       {
-        v5 = (_DWORD *)(caml_young_ptr - 12);
-        caml_young_ptr = (int)v5;
-        if ( (unsigned int)v5 >= caml_young_limit )
+        v7 = (_DWORD *)(caml_young_ptr - 12);
+        caml_young_ptr = (int)v7;
+        if ( (unsigned int)v7 >= caml_young_limit )
           break;
-        caml_call_gc(v7);
+        caml_call_gc(v4, v5, v9);
       }
-      a3 = v5 + 1;
-      *v5 = 2048;
-      v5[1] = v7;
-      v5[2] = v11;
-      a1 = v8;
-      a4 = v9;
-      a2 = v13;
+      a3 = v7 + 1;
+      *v7 = 2048;
+      v7[1] = v9;
+      v7[2] = v13;
+      a1 = v10;
+      a4 = v11;
+      a2 = v15;
     }
     else
     {
       while ( 1 )
       {
-        v4 = (_DWORD *)(caml_young_ptr - 12);
-        caml_young_ptr = (int)v4;
-        if ( (unsigned int)v4 >= caml_young_limit )
+        v6 = (_DWORD *)(caml_young_ptr - 12);
+        caml_young_ptr = (int)v6;
+        if ( (unsigned int)v6 >= caml_young_limit )
           break;
-        caml_call_gc(v7);
+        caml_call_gc(v4, v5, v9);
       }
-      a3 = v4 + 1;
-      *v4 = 2048;
-      v4[1] = v10;
-      v4[2] = v11;
-      a1 = v12;
-      a2 = v13;
+      a3 = v6 + 1;
+      *v6 = 2048;
+      v6[1] = v12;
+      v6[2] = v13;
+      a1 = v14;
+      a2 = v15;
     }
   }
-  return camlList__rev_append_1051();
+  return camlList__rev_append_1051(a3);
 }
-// 8053F62: variable 'v7' is possibly undefined
-// 80549C0: using guessed type int camlList__rev_append_1051(void);
+// 8053F62: variable 'v9' is possibly undefined
+// 8053F9C: variable 'v4' is possibly undefined
+// 8053F9C: variable 'v5' is possibly undefined
+// 80549C0: using guessed type int __fastcall camlList__rev_append_1051(_DWORD);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08053FB0) --------------------------------------------------------
-_DWORD *__usercall camlList__rev_sort_300@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<ebx>)
+_DWORD *__usercall camlList__rev_sort_1272@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<ebx>)
 {
   int *v3; // esi
   int *v4; // edx
-  _DWORD *v5; // eax
-  _DWORD *result; // eax
+  int v5; // edx
+  int v6; // ecx
   _DWORD *v7; // eax
-  _DWORD *v8; // eax
-  _DWORD *v9; // eax
-  _DWORD *v10; // eax
+  int v9; // edx
+  int v10; // ecx
   _DWORD *v11; // eax
-  int *v12; // edx
-  _DWORD *v13; // eax
-  _DWORD *v14; // eax
-  int *v15; // ebx
-  int v16; // [esp+0h] [ebp-14h]
-  int v17; // [esp+0h] [ebp-14h]
-  int v18; // [esp+0h] [ebp-14h]
-  _DWORD *v19; // [esp+0h] [ebp-14h]
-  int v20; // [esp+4h] [ebp-10h]
-  int v21; // [esp+4h] [ebp-10h]
-  int v22; // [esp+8h] [ebp-Ch]
-  int v23; // [esp+8h] [ebp-Ch]
-  int *v24; // [esp+Ch] [ebp-8h]
-  int v25; // [esp+10h] [ebp-4h]
+  _DWORD *v12; // eax
+  int v13; // edx
+  int v14; // ecx
+  _DWORD *v15; // eax
+  int v16; // edx
+  int v17; // ecx
+  _DWORD *v18; // eax
+  _DWORD *v19; // eax
+  int *v20; // edx
+  int v21; // edx
+  int v22; // ecx
+  _DWORD *v23; // eax
+  _DWORD *v24; // eax
+  int *v25; // ebx
+  int v26; // [esp+0h] [ebp-14h]
+  int v27; // [esp+0h] [ebp-14h]
+  int v28; // [esp+0h] [ebp-14h]
+  _DWORD *v29; // [esp+0h] [ebp-14h]
+  int v30; // [esp+4h] [ebp-10h]
+  int v31; // [esp+4h] [ebp-10h]
+  int v32; // [esp+8h] [ebp-Ch]
+  int v33; // [esp+8h] [ebp-Ch]
+  int *v34; // [esp+Ch] [ebp-8h]
+  int v35; // [esp+10h] [ebp-4h]
 
   if ( a1 != 5 )
   {
-    v25 = a2;
+    v35 = a2;
     if ( a1 == 7 && a3 != (int *)1 )
     {
       v3 = (int *)a3[1];
@@ -10576,243 +11710,260 @@ _DWORD *__usercall camlList__rev_sort_300@<eax>(int a1@<eax>, int a2@<ecx>, int 
         v4 = (int *)v3[1];
         if ( v4 != (int *)1 )
         {
-          v16 = *v4;
-          v20 = *v3;
-          v22 = *a3;
+          v26 = *v4;
+          v30 = *v3;
+          v32 = *a3;
           if ( caml_apply2(*(_DWORD *)(a2 + 12)) <= 1 )
           {
-            if ( caml_apply2(*(_DWORD *)(v25 + 12)) <= 1 )
+            if ( caml_apply2(*(_DWORD *)(v35 + 12)) <= 1 )
             {
-              if ( caml_apply2(*(_DWORD *)(v25 + 12)) <= 1 )
+              if ( caml_apply2(*(_DWORD *)(v35 + 12)) <= 1 )
               {
                 while ( 1 )
                 {
-                  v11 = (_DWORD *)(caml_young_ptr - 36);
-                  caml_young_ptr = (int)v11;
-                  if ( (unsigned int)v11 >= caml_young_limit )
+                  v19 = (_DWORD *)(caml_young_ptr - 36);
+                  caml_young_ptr = (int)v19;
+                  if ( (unsigned int)v19 >= caml_young_limit )
                     break;
-                  caml_call_gc(v16);
+                  caml_call_gc(v16, v17, v26);
                 }
-                *v11 = 2048;
-                v11[1] = v22;
-                v11[2] = 1;
-                v11[3] = 2048;
-                v11[4] = v20;
-                v11[5] = v11 + 1;
-                v11[6] = 2048;
-                v11[7] = v16;
-                v11[8] = v11 + 4;
-                result = v11 + 7;
+                *v19 = 2048;
+                v19[1] = v32;
+                v19[2] = 1;
+                v19[3] = 2048;
+                v19[4] = v30;
+                v19[5] = v19 + 1;
+                v19[6] = 2048;
+                v19[7] = v26;
+                v19[8] = v19 + 4;
+                return v19 + 7;
               }
               else
               {
                 while ( 1 )
                 {
-                  v10 = (_DWORD *)(caml_young_ptr - 36);
-                  caml_young_ptr = (int)v10;
-                  if ( (unsigned int)v10 >= caml_young_limit )
+                  v18 = (_DWORD *)(caml_young_ptr - 36);
+                  caml_young_ptr = (int)v18;
+                  if ( (unsigned int)v18 >= caml_young_limit )
                     break;
-                  caml_call_gc(v16);
+                  caml_call_gc(v16, v17, v26);
                 }
-                *v10 = 2048;
-                v10[1] = v22;
-                v10[2] = 1;
-                v10[3] = 2048;
-                v10[4] = v16;
-                v10[5] = v10 + 1;
-                v10[6] = 2048;
-                v10[7] = v20;
-                v10[8] = v10 + 4;
-                result = v10 + 7;
+                *v18 = 2048;
+                v18[1] = v32;
+                v18[2] = 1;
+                v18[3] = 2048;
+                v18[4] = v26;
+                v18[5] = v18 + 1;
+                v18[6] = 2048;
+                v18[7] = v30;
+                v18[8] = v18 + 4;
+                return v18 + 7;
               }
             }
             else
             {
               while ( 1 )
               {
-                v9 = (_DWORD *)(caml_young_ptr - 36);
-                caml_young_ptr = (int)v9;
-                if ( (unsigned int)v9 >= caml_young_limit )
+                v15 = (_DWORD *)(caml_young_ptr - 36);
+                caml_young_ptr = (int)v15;
+                if ( (unsigned int)v15 >= caml_young_limit )
                   break;
-                caml_call_gc(v16);
+                caml_call_gc(v13, v14, v26);
               }
-              *v9 = 2048;
-              v9[1] = v16;
-              v9[2] = 1;
-              v9[3] = 2048;
-              v9[4] = v22;
-              v9[5] = v9 + 1;
-              v9[6] = 2048;
-              v9[7] = v20;
-              v9[8] = v9 + 4;
-              result = v9 + 7;
+              *v15 = 2048;
+              v15[1] = v26;
+              v15[2] = 1;
+              v15[3] = 2048;
+              v15[4] = v32;
+              v15[5] = v15 + 1;
+              v15[6] = 2048;
+              v15[7] = v30;
+              v15[8] = v15 + 4;
+              return v15 + 7;
             }
           }
-          else if ( caml_apply2(*(_DWORD *)(v25 + 12)) <= 1 )
+          else if ( caml_apply2(*(_DWORD *)(v35 + 12)) <= 1 )
           {
-            if ( caml_apply2(*(_DWORD *)(v25 + 12)) <= 1 )
+            if ( caml_apply2(*(_DWORD *)(v35 + 12)) <= 1 )
             {
               while ( 1 )
               {
-                v8 = (_DWORD *)(caml_young_ptr - 36);
-                caml_young_ptr = (int)v8;
-                if ( (unsigned int)v8 >= caml_young_limit )
+                v12 = (_DWORD *)(caml_young_ptr - 36);
+                caml_young_ptr = (int)v12;
+                if ( (unsigned int)v12 >= caml_young_limit )
                   break;
-                caml_call_gc(v16);
+                caml_call_gc(v9, v10, v26);
               }
-              *v8 = 2048;
-              v8[1] = v20;
-              v8[2] = 1;
-              v8[3] = 2048;
-              v8[4] = v22;
-              v8[5] = v8 + 1;
-              v8[6] = 2048;
-              v8[7] = v16;
-              v8[8] = v8 + 4;
-              result = v8 + 7;
+              *v12 = 2048;
+              v12[1] = v30;
+              v12[2] = 1;
+              v12[3] = 2048;
+              v12[4] = v32;
+              v12[5] = v12 + 1;
+              v12[6] = 2048;
+              v12[7] = v26;
+              v12[8] = v12 + 4;
+              return v12 + 7;
             }
             else
             {
               while ( 1 )
               {
-                v7 = (_DWORD *)(caml_young_ptr - 36);
-                caml_young_ptr = (int)v7;
-                if ( (unsigned int)v7 >= caml_young_limit )
+                v11 = (_DWORD *)(caml_young_ptr - 36);
+                caml_young_ptr = (int)v11;
+                if ( (unsigned int)v11 >= caml_young_limit )
                   break;
-                caml_call_gc(v16);
+                caml_call_gc(v9, v10, v26);
               }
-              *v7 = 2048;
-              v7[1] = v20;
-              v7[2] = 1;
-              v7[3] = 2048;
-              v7[4] = v16;
-              v7[5] = v7 + 1;
-              v7[6] = 2048;
-              v7[7] = v22;
-              v7[8] = v7 + 4;
-              result = v7 + 7;
+              *v11 = 2048;
+              v11[1] = v30;
+              v11[2] = 1;
+              v11[3] = 2048;
+              v11[4] = v26;
+              v11[5] = v11 + 1;
+              v11[6] = 2048;
+              v11[7] = v32;
+              v11[8] = v11 + 4;
+              return v11 + 7;
             }
           }
           else
           {
             while ( 1 )
             {
-              v5 = (_DWORD *)(caml_young_ptr - 36);
-              caml_young_ptr = (int)v5;
-              if ( (unsigned int)v5 >= caml_young_limit )
+              v7 = (_DWORD *)(caml_young_ptr - 36);
+              caml_young_ptr = (int)v7;
+              if ( (unsigned int)v7 >= caml_young_limit )
                 break;
-              caml_call_gc(v16);
+              caml_call_gc(v5, v6, v26);
             }
-            *v5 = 2048;
-            v5[1] = v16;
-            v5[2] = 1;
-            v5[3] = 2048;
-            v5[4] = v20;
-            v5[5] = v5 + 1;
-            v5[6] = 2048;
-            v5[7] = v22;
-            v5[8] = v5 + 4;
-            result = v5 + 7;
+            *v7 = 2048;
+            v7[1] = v26;
+            v7[2] = 1;
+            v7[3] = 2048;
+            v7[4] = v30;
+            v7[5] = v7 + 1;
+            v7[6] = 2048;
+            v7[7] = v32;
+            v7[8] = v7 + 4;
+            return v7 + 7;
           }
-          return result;
         }
       }
     }
 LABEL_32:
-    v18 = (a1 >> 1) | 1;
-    v23 = a1 - v18 + 1;
-    v24 = (int *)camlList__chop_1243();
-    v19 = camlList__sort_299(v18, v25 - 16, a3);
-    v15 = camlList__sort_299(v23, v25 - 16, v24);
-    return (_DWORD *)camlList__rev_merge_1251(v19, *(_DWORD *)(v25 + 16), (_DWORD *)1, v15);
+    v28 = (a1 >> 1) | 1;
+    v33 = a1 - v28 + 1;
+    v34 = (int *)camlList__chop_1243();
+    v29 = camlList__sort_1271(v28, v35 - 16, a3);
+    v25 = camlList__sort_1271(v33, v35 - 16, v34);
+    return (_DWORD *)camlList__rev_merge_1251(v29, *(_DWORD *)(v35 + 16), (_DWORD *)1, v25);
   }
   if ( a3 == (int *)1 )
   {
-    v25 = a2;
+    v35 = a2;
     goto LABEL_32;
   }
-  v12 = (int *)a3[1];
-  if ( v12 == (int *)1 )
+  v20 = (int *)a3[1];
+  if ( v20 == (int *)1 )
   {
-    v25 = a2;
+    v35 = a2;
     goto LABEL_32;
   }
-  v17 = *v12;
-  v21 = *a3;
+  v27 = *v20;
+  v31 = *a3;
   if ( caml_apply2(*(_DWORD *)(a2 + 12)) <= 1 )
   {
     while ( 1 )
     {
-      v14 = (_DWORD *)(caml_young_ptr - 24);
-      caml_young_ptr = (int)v14;
-      if ( (unsigned int)v14 >= caml_young_limit )
+      v24 = (_DWORD *)(caml_young_ptr - 24);
+      caml_young_ptr = (int)v24;
+      if ( (unsigned int)v24 >= caml_young_limit )
         break;
-      caml_call_gc(v17);
+      caml_call_gc(v21, v22, v27);
     }
-    *v14 = 2048;
-    v14[1] = v21;
-    v14[2] = 1;
-    v14[3] = 2048;
-    v14[4] = v17;
-    v14[5] = v14 + 1;
-    result = v14 + 4;
+    *v24 = 2048;
+    v24[1] = v31;
+    v24[2] = 1;
+    v24[3] = 2048;
+    v24[4] = v27;
+    v24[5] = v24 + 1;
+    return v24 + 4;
   }
   else
   {
     while ( 1 )
     {
-      v13 = (_DWORD *)(caml_young_ptr - 24);
-      caml_young_ptr = (int)v13;
-      if ( (unsigned int)v13 >= caml_young_limit )
+      v23 = (_DWORD *)(caml_young_ptr - 24);
+      caml_young_ptr = (int)v23;
+      if ( (unsigned int)v23 >= caml_young_limit )
         break;
-      caml_call_gc(v17);
+      caml_call_gc(v21, v22, v27);
     }
-    *v13 = 2048;
-    v13[1] = v17;
-    v13[2] = 1;
-    v13[3] = 2048;
-    v13[4] = v21;
-    v13[5] = v13 + 1;
-    result = v13 + 4;
+    *v23 = 2048;
+    v23[1] = v27;
+    v23[2] = 1;
+    v23[3] = 2048;
+    v23[4] = v31;
+    v23[5] = v23 + 1;
+    return v23 + 4;
   }
-  return result;
 }
-// 805404C: variable 'v16' is possibly undefined
-// 8054325: variable 'v17' is possibly undefined
+// 805404C: variable 'v26' is possibly undefined
+// 8054325: variable 'v27' is possibly undefined
+// 8054417: variable 'v21' is possibly undefined
+// 8054417: variable 'v22' is possibly undefined
+// 805442B: variable 'v16' is possibly undefined
+// 805442B: variable 'v17' is possibly undefined
+// 805443F: variable 'v13' is possibly undefined
+// 805443F: variable 'v14' is possibly undefined
+// 8054449: variable 'v9' is possibly undefined
+// 8054449: variable 'v10' is possibly undefined
+// 805445D: variable 'v5' is possibly undefined
+// 805445D: variable 'v6' is possibly undefined
 // 8055600: using guessed type int camlList__chop_1243(void);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08054470) --------------------------------------------------------
-_DWORD *__usercall camlList__sort_299@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<ebx>)
+_DWORD *__usercall camlList__sort_1271@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<ebx>)
 {
   int *v3; // esi
   int *v4; // edx
-  _DWORD *v5; // eax
-  _DWORD *result; // eax
+  int v5; // edx
+  int v6; // ecx
   _DWORD *v7; // eax
-  _DWORD *v8; // eax
-  _DWORD *v9; // eax
-  _DWORD *v10; // eax
+  int v9; // edx
+  int v10; // ecx
   _DWORD *v11; // eax
-  int *v12; // edx
-  _DWORD *v13; // eax
-  _DWORD *v14; // eax
-  int *v15; // ebx
-  int v16; // [esp+0h] [ebp-14h]
-  int v17; // [esp+0h] [ebp-14h]
-  int v18; // [esp+0h] [ebp-14h]
-  _DWORD *v19; // [esp+0h] [ebp-14h]
-  int v20; // [esp+4h] [ebp-10h]
-  int v21; // [esp+4h] [ebp-10h]
-  int v22; // [esp+8h] [ebp-Ch]
-  int v23; // [esp+8h] [ebp-Ch]
-  int *v24; // [esp+Ch] [ebp-8h]
-  int v25; // [esp+10h] [ebp-4h]
+  _DWORD *v12; // eax
+  int v13; // edx
+  int v14; // ecx
+  _DWORD *v15; // eax
+  int v16; // edx
+  int v17; // ecx
+  _DWORD *v18; // eax
+  _DWORD *v19; // eax
+  int *v20; // edx
+  int v21; // edx
+  int v22; // ecx
+  _DWORD *v23; // eax
+  _DWORD *v24; // eax
+  int *v25; // ebx
+  int v26; // [esp+0h] [ebp-14h]
+  int v27; // [esp+0h] [ebp-14h]
+  int v28; // [esp+0h] [ebp-14h]
+  _DWORD *v29; // [esp+0h] [ebp-14h]
+  int v30; // [esp+4h] [ebp-10h]
+  int v31; // [esp+4h] [ebp-10h]
+  int v32; // [esp+8h] [ebp-Ch]
+  int v33; // [esp+8h] [ebp-Ch]
+  int *v34; // [esp+Ch] [ebp-8h]
+  int v35; // [esp+10h] [ebp-4h]
 
   if ( a1 != 5 )
   {
-    v25 = a2;
+    v35 = a2;
     if ( a1 == 7 && a3 != (int *)1 )
     {
       v3 = (int *)a3[1];
@@ -10821,209 +11972,217 @@ _DWORD *__usercall camlList__sort_299@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@
         v4 = (int *)v3[1];
         if ( v4 != (int *)1 )
         {
-          v16 = *v4;
-          v20 = *v3;
-          v22 = *a3;
+          v26 = *v4;
+          v30 = *v3;
+          v32 = *a3;
           if ( caml_apply2(*(_DWORD *)(a2 + 28)) > 1 )
           {
-            if ( caml_apply2(*(_DWORD *)(v25 + 28)) > 1 )
+            if ( caml_apply2(*(_DWORD *)(v35 + 28)) > 1 )
             {
-              if ( caml_apply2(*(_DWORD *)(v25 + 28)) > 1 )
+              if ( caml_apply2(*(_DWORD *)(v35 + 28)) > 1 )
               {
                 while ( 1 )
                 {
-                  v11 = (_DWORD *)(caml_young_ptr - 36);
-                  caml_young_ptr = (int)v11;
-                  if ( (unsigned int)v11 >= caml_young_limit )
+                  v19 = (_DWORD *)(caml_young_ptr - 36);
+                  caml_young_ptr = (int)v19;
+                  if ( (unsigned int)v19 >= caml_young_limit )
                     break;
-                  caml_call_gc(v16);
+                  caml_call_gc(v16, v17, v26);
                 }
-                *v11 = 2048;
-                v11[1] = v22;
-                v11[2] = 1;
-                v11[3] = 2048;
-                v11[4] = v20;
-                v11[5] = v11 + 1;
-                v11[6] = 2048;
-                v11[7] = v16;
-                v11[8] = v11 + 4;
-                result = v11 + 7;
+                *v19 = 2048;
+                v19[1] = v32;
+                v19[2] = 1;
+                v19[3] = 2048;
+                v19[4] = v30;
+                v19[5] = v19 + 1;
+                v19[6] = 2048;
+                v19[7] = v26;
+                v19[8] = v19 + 4;
+                return v19 + 7;
               }
               else
               {
                 while ( 1 )
                 {
-                  v10 = (_DWORD *)(caml_young_ptr - 36);
-                  caml_young_ptr = (int)v10;
-                  if ( (unsigned int)v10 >= caml_young_limit )
+                  v18 = (_DWORD *)(caml_young_ptr - 36);
+                  caml_young_ptr = (int)v18;
+                  if ( (unsigned int)v18 >= caml_young_limit )
                     break;
-                  caml_call_gc(v16);
+                  caml_call_gc(v16, v17, v26);
                 }
-                *v10 = 2048;
-                v10[1] = v22;
-                v10[2] = 1;
-                v10[3] = 2048;
-                v10[4] = v16;
-                v10[5] = v10 + 1;
-                v10[6] = 2048;
-                v10[7] = v20;
-                v10[8] = v10 + 4;
-                result = v10 + 7;
+                *v18 = 2048;
+                v18[1] = v32;
+                v18[2] = 1;
+                v18[3] = 2048;
+                v18[4] = v26;
+                v18[5] = v18 + 1;
+                v18[6] = 2048;
+                v18[7] = v30;
+                v18[8] = v18 + 4;
+                return v18 + 7;
               }
             }
             else
             {
               while ( 1 )
               {
-                v9 = (_DWORD *)(caml_young_ptr - 36);
-                caml_young_ptr = (int)v9;
-                if ( (unsigned int)v9 >= caml_young_limit )
+                v15 = (_DWORD *)(caml_young_ptr - 36);
+                caml_young_ptr = (int)v15;
+                if ( (unsigned int)v15 >= caml_young_limit )
                   break;
-                caml_call_gc(v16);
+                caml_call_gc(v13, v14, v26);
               }
-              *v9 = 2048;
-              v9[1] = v16;
-              v9[2] = 1;
-              v9[3] = 2048;
-              v9[4] = v22;
-              v9[5] = v9 + 1;
-              v9[6] = 2048;
-              v9[7] = v20;
-              v9[8] = v9 + 4;
-              result = v9 + 7;
+              *v15 = 2048;
+              v15[1] = v26;
+              v15[2] = 1;
+              v15[3] = 2048;
+              v15[4] = v32;
+              v15[5] = v15 + 1;
+              v15[6] = 2048;
+              v15[7] = v30;
+              v15[8] = v15 + 4;
+              return v15 + 7;
             }
           }
-          else if ( caml_apply2(*(_DWORD *)(v25 + 28)) > 1 )
+          else if ( caml_apply2(*(_DWORD *)(v35 + 28)) > 1 )
           {
-            if ( caml_apply2(*(_DWORD *)(v25 + 28)) > 1 )
+            if ( caml_apply2(*(_DWORD *)(v35 + 28)) > 1 )
             {
               while ( 1 )
               {
-                v8 = (_DWORD *)(caml_young_ptr - 36);
-                caml_young_ptr = (int)v8;
-                if ( (unsigned int)v8 >= caml_young_limit )
+                v12 = (_DWORD *)(caml_young_ptr - 36);
+                caml_young_ptr = (int)v12;
+                if ( (unsigned int)v12 >= caml_young_limit )
                   break;
-                caml_call_gc(v16);
+                caml_call_gc(v9, v10, v26);
               }
-              *v8 = 2048;
-              v8[1] = v20;
-              v8[2] = 1;
-              v8[3] = 2048;
-              v8[4] = v22;
-              v8[5] = v8 + 1;
-              v8[6] = 2048;
-              v8[7] = v16;
-              v8[8] = v8 + 4;
-              result = v8 + 7;
+              *v12 = 2048;
+              v12[1] = v30;
+              v12[2] = 1;
+              v12[3] = 2048;
+              v12[4] = v32;
+              v12[5] = v12 + 1;
+              v12[6] = 2048;
+              v12[7] = v26;
+              v12[8] = v12 + 4;
+              return v12 + 7;
             }
             else
             {
               while ( 1 )
               {
-                v7 = (_DWORD *)(caml_young_ptr - 36);
-                caml_young_ptr = (int)v7;
-                if ( (unsigned int)v7 >= caml_young_limit )
+                v11 = (_DWORD *)(caml_young_ptr - 36);
+                caml_young_ptr = (int)v11;
+                if ( (unsigned int)v11 >= caml_young_limit )
                   break;
-                caml_call_gc(v16);
+                caml_call_gc(v9, v10, v26);
               }
-              *v7 = 2048;
-              v7[1] = v20;
-              v7[2] = 1;
-              v7[3] = 2048;
-              v7[4] = v16;
-              v7[5] = v7 + 1;
-              v7[6] = 2048;
-              v7[7] = v22;
-              v7[8] = v7 + 4;
-              result = v7 + 7;
+              *v11 = 2048;
+              v11[1] = v30;
+              v11[2] = 1;
+              v11[3] = 2048;
+              v11[4] = v26;
+              v11[5] = v11 + 1;
+              v11[6] = 2048;
+              v11[7] = v32;
+              v11[8] = v11 + 4;
+              return v11 + 7;
             }
           }
           else
           {
             while ( 1 )
             {
-              v5 = (_DWORD *)(caml_young_ptr - 36);
-              caml_young_ptr = (int)v5;
-              if ( (unsigned int)v5 >= caml_young_limit )
+              v7 = (_DWORD *)(caml_young_ptr - 36);
+              caml_young_ptr = (int)v7;
+              if ( (unsigned int)v7 >= caml_young_limit )
                 break;
-              caml_call_gc(v16);
+              caml_call_gc(v5, v6, v26);
             }
-            *v5 = 2048;
-            v5[1] = v16;
-            v5[2] = 1;
-            v5[3] = 2048;
-            v5[4] = v20;
-            v5[5] = v5 + 1;
-            v5[6] = 2048;
-            v5[7] = v22;
-            v5[8] = v5 + 4;
-            result = v5 + 7;
+            *v7 = 2048;
+            v7[1] = v26;
+            v7[2] = 1;
+            v7[3] = 2048;
+            v7[4] = v30;
+            v7[5] = v7 + 1;
+            v7[6] = 2048;
+            v7[7] = v32;
+            v7[8] = v7 + 4;
+            return v7 + 7;
           }
-          return result;
         }
       }
     }
 LABEL_32:
-    v18 = (a1 >> 1) | 1;
-    v23 = a1 - v18 + 1;
-    v24 = (int *)camlList__chop_1243();
-    v19 = camlList__rev_sort_300(v18, v25 + 16, a3);
-    v15 = camlList__rev_sort_300(v23, v25 + 16, v24);
-    return (_DWORD *)camlList__rev_merge_rev_1261(v19, *(_DWORD *)(v25 + 36), (_DWORD *)1, v15);
+    v28 = (a1 >> 1) | 1;
+    v33 = a1 - v28 + 1;
+    v34 = (int *)camlList__chop_1243();
+    v29 = camlList__rev_sort_1272(v28, v35 + 16, a3);
+    v25 = camlList__rev_sort_1272(v33, v35 + 16, v34);
+    return (_DWORD *)camlList__rev_merge_rev_1261(v29, *(_DWORD *)(v35 + 36), (_DWORD *)1, v25);
   }
   if ( a3 == (int *)1 )
   {
-    v25 = a2;
+    v35 = a2;
     goto LABEL_32;
   }
-  v12 = (int *)a3[1];
-  if ( v12 == (int *)1 )
+  v20 = (int *)a3[1];
+  if ( v20 == (int *)1 )
   {
-    v25 = a2;
+    v35 = a2;
     goto LABEL_32;
   }
-  v17 = *v12;
-  v21 = *a3;
+  v27 = *v20;
+  v31 = *a3;
   if ( caml_apply2(*(_DWORD *)(a2 + 28)) > 1 )
   {
     while ( 1 )
     {
-      v14 = (_DWORD *)(caml_young_ptr - 24);
-      caml_young_ptr = (int)v14;
-      if ( (unsigned int)v14 >= caml_young_limit )
+      v24 = (_DWORD *)(caml_young_ptr - 24);
+      caml_young_ptr = (int)v24;
+      if ( (unsigned int)v24 >= caml_young_limit )
         break;
-      caml_call_gc(v17);
+      caml_call_gc(v21, v22, v27);
     }
-    *v14 = 2048;
-    v14[1] = v21;
-    v14[2] = 1;
-    v14[3] = 2048;
-    v14[4] = v17;
-    v14[5] = v14 + 1;
-    result = v14 + 4;
+    *v24 = 2048;
+    v24[1] = v31;
+    v24[2] = 1;
+    v24[3] = 2048;
+    v24[4] = v27;
+    v24[5] = v24 + 1;
+    return v24 + 4;
   }
   else
   {
     while ( 1 )
     {
-      v13 = (_DWORD *)(caml_young_ptr - 24);
-      caml_young_ptr = (int)v13;
-      if ( (unsigned int)v13 >= caml_young_limit )
+      v23 = (_DWORD *)(caml_young_ptr - 24);
+      caml_young_ptr = (int)v23;
+      if ( (unsigned int)v23 >= caml_young_limit )
         break;
-      caml_call_gc(v17);
+      caml_call_gc(v21, v22, v27);
     }
-    *v13 = 2048;
-    v13[1] = v17;
-    v13[2] = 1;
-    v13[3] = 2048;
-    v13[4] = v21;
-    v13[5] = v13 + 1;
-    result = v13 + 4;
+    *v23 = 2048;
+    v23[1] = v27;
+    v23[2] = 1;
+    v23[3] = 2048;
+    v23[4] = v31;
+    v23[5] = v23 + 1;
+    return v23 + 4;
   }
-  return result;
 }
-// 805450C: variable 'v16' is possibly undefined
-// 80547E5: variable 'v17' is possibly undefined
+// 805450C: variable 'v26' is possibly undefined
+// 80547E5: variable 'v27' is possibly undefined
+// 80548D7: variable 'v21' is possibly undefined
+// 80548D7: variable 'v22' is possibly undefined
+// 80548EB: variable 'v16' is possibly undefined
+// 80548EB: variable 'v17' is possibly undefined
+// 80548FF: variable 'v13' is possibly undefined
+// 80548FF: variable 'v14' is possibly undefined
+// 8054909: variable 'v9' is possibly undefined
+// 8054909: variable 'v10' is possibly undefined
+// 805491D: variable 'v5' is possibly undefined
+// 805491D: variable 'v6' is possibly undefined
 // 8055600: using guessed type int camlList__chop_1243(void);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -11052,7 +12211,7 @@ int __usercall camlList__hd_1036@<eax>(int a1@<eax>)
     camlPervasives__failwith_1010();
   return *(_DWORD *)a1;
 }
-// 804FC70: using guessed type int camlPervasives__failwith_1010(void);
+// 804FC70: using guessed type void __noreturn camlPervasives__failwith_1010(void);
 
 //----- (08054980) --------------------------------------------------------
 int __usercall camlList__tl_1039@<eax>(int a1@<eax>)
@@ -11061,7 +12220,7 @@ int __usercall camlList__tl_1039@<eax>(int a1@<eax>)
     camlPervasives__failwith_1010();
   return *(_DWORD *)(a1 + 4);
 }
-// 804FC70: using guessed type int camlPervasives__failwith_1010(void);
+// 804FC70: using guessed type void __noreturn camlPervasives__failwith_1010(void);
 
 //----- (080549A0) --------------------------------------------------------
 int __usercall camlList__nth_1042@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
@@ -11070,61 +12229,63 @@ int __usercall camlList__nth_1042@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<ecx
     camlPervasives__invalid_arg_1012(a3, a2);
   return camlList__code_begin(a1, a4);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (080549C0) --------------------------------------------------------
 #error "8054A03: call analysis failed (funcsize=20)"
 
 //----- (08054A10) --------------------------------------------------------
-int camlList__rev_1056()
+int __fastcall camlList__rev_1056(int a1)
 {
-  return camlList__rev_append_1051();
+  return camlList__rev_append_1051(a1);
 }
-// 80549C0: using guessed type int camlList__rev_append_1051(void);
+// 80549C0: using guessed type int __fastcall camlList__rev_append_1051(_DWORD);
 
 //----- (08054A20) --------------------------------------------------------
-int __usercall camlList__flatten_1058@<eax>(int **a1@<eax>)
+int *__usercall camlList__flatten_1058@<eax>(int **a1@<eax>)
 {
   int v1; // ebx
   int *v3; // [esp+0h] [ebp-4h]
 
   if ( a1 == (int **)1 )
-    return 1;
+    return (int *)1;
   v3 = *a1;
-  v1 = camlList__flatten_1058();
-  return (int)camlPervasives___40_1143(v3, v1);
+  v1 = camlList__flatten_1058((int **)a1[1]);
+  return camlPervasives___40_1143(v3, v1);
 }
 
 //----- (08054A60) --------------------------------------------------------
-int __usercall camlList__map_1062@<eax>(int (**a1)(void)@<eax>, int a2@<ebx>)
+unsigned int __usercall camlList__map_1062@<eax>(int (**a1)(void)@<eax>, int a2@<ebx>)
 {
-  int v2; // ecx
-  unsigned int v3; // eax
-  int result; // eax
-  char v5; // [esp+0h] [ebp-Ch]
-  int v6; // [esp+8h] [ebp-4h]
+  int v2; // edx
+  int i; // ecx
+  unsigned int v4; // eax
+  unsigned int result; // eax
+  int (**v6)(void); // [esp+0h] [ebp-Ch]
+  int v7; // [esp+4h] [ebp-8h]
+  int v8; // [esp+8h] [ebp-4h]
 
   if ( a2 == 1 )
     return 1;
-  v5 = (char)a1;
-  v6 = (*a1)();
-  v2 = camlList__map_1062();
-  while ( 1 )
+  v6 = a1;
+  v7 = *(_DWORD *)(a2 + 4);
+  v8 = (*a1)();
+  for ( i = camlList__map_1062(v6, v7); ; caml_call_gc(v2, i, (char)v6) )
   {
-    v3 = caml_young_ptr - 12;
-    caml_young_ptr = v3;
-    if ( v3 >= caml_young_limit )
+    v4 = caml_young_ptr - 12;
+    caml_young_ptr = v4;
+    if ( v4 >= caml_young_limit )
       break;
-    caml_call_gc(v5);
   }
-  result = v3 + 4;
+  result = v4 + 4;
   *(_DWORD *)(result - 4) = 2048;
-  *(_DWORD *)result = v6;
-  *(_DWORD *)(result + 4) = v2;
+  *(_DWORD *)result = v8;
+  *(_DWORD *)(result + 4) = i;
   return result;
 }
-// 8054AB3: variable 'v2' is possibly undefined
-// 8054AC9: variable 'v5' is possibly undefined
+// 8054AB3: variable 'i' is possibly undefined
+// 8054AC9: variable 'v2' is possibly undefined
+// 8054AC9: variable 'v6' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -11176,19 +12337,21 @@ int __usercall camlList__fold_right_1084@<eax>(int a1@<eax>, int a2@<ecx>, int a
 {
   if ( a3 == 1 )
     return a2;
-  camlList__fold_right_1084();
+  camlList__fold_right_1084(a1, a2, *(_DWORD *)(a3 + 4));
   return caml_apply2(a1);
 }
 
 //----- (08054BE0) --------------------------------------------------------
-int __usercall camlList__map2_1090@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
+unsigned int __usercall camlList__map2_1090@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 {
-  int v3; // ecx
-  unsigned int v4; // eax
-  int result; // eax
-  char v6; // [esp+0h] [ebp-10h]
-  int v7; // [esp+8h] [ebp-8h]
-  int v8; // [esp+Ch] [ebp-4h]
+  int v3; // edx
+  int i; // ecx
+  unsigned int v5; // eax
+  unsigned int result; // eax
+  int v7; // [esp+0h] [ebp-10h]
+  int v8; // [esp+4h] [ebp-Ch]
+  int v9; // [esp+8h] [ebp-8h]
+  int v10; // [esp+Ch] [ebp-4h]
 
   if ( a3 == 1 )
   {
@@ -11199,27 +12362,27 @@ LABEL_8:
   }
   if ( a2 == 1 )
     goto LABEL_8;
-  v6 = a1;
-  v7 = *(_DWORD *)(a2 + 4);
-  v8 = caml_apply2(a1);
-  v3 = camlList__map2_1090(v7);
-  while ( 1 )
+  v7 = a1;
+  v9 = *(_DWORD *)(a2 + 4);
+  v8 = *(_DWORD *)(a3 + 4);
+  v10 = caml_apply2(a1);
+  for ( i = camlList__map2_1090(v7, v9, v8); ; caml_call_gc(v3, i, v7) )
   {
-    v4 = caml_young_ptr - 12;
-    caml_young_ptr = v4;
-    if ( v4 >= caml_young_limit )
+    v5 = caml_young_ptr - 12;
+    caml_young_ptr = v5;
+    if ( v5 >= caml_young_limit )
       break;
-    caml_call_gc(v6);
   }
-  result = v4 + 4;
+  result = v5 + 4;
   *(_DWORD *)(result - 4) = 2048;
-  *(_DWORD *)result = v8;
-  *(_DWORD *)(result + 4) = v3;
+  *(_DWORD *)result = v10;
+  *(_DWORD *)(result + 4) = i;
   return result;
 }
-// 8054C48: variable 'v3' is possibly undefined
-// 8054C6D: variable 'v6' is possibly undefined
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 8054C48: variable 'i' is possibly undefined
+// 8054C6D: variable 'v3' is possibly undefined
+// 8054C6D: variable 'v7' is possibly undefined
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -11250,7 +12413,7 @@ LABEL_6:
     camlPervasives__invalid_arg_1012(a2, a1);
   return 1;
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08054D30) --------------------------------------------------------
 int __usercall camlList__fold_left2_1119@<eax>(int a1@<eax>, int *a2@<edx>, int a3@<ecx>, int a4@<ebx>)
@@ -11276,7 +12439,7 @@ LABEL_6:
     camlPervasives__invalid_arg_1012(a3, a2);
   return a4;
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08054D90) --------------------------------------------------------
 int __usercall camlList__fold_right2_1128@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
@@ -11287,7 +12450,7 @@ int __usercall camlList__fold_right2_1128@<eax>(int a1@<eax>, int a2@<edx>, int 
   {
     if ( a3 != 1 )
     {
-      v4 = camlList__fold_right2_1128();
+      v4 = camlList__fold_right2_1128(a1, a2, *(_DWORD *)(a3 + 4), *(_DWORD *)(a4 + 4));
       return caml_apply3(v4, a1);
     }
 LABEL_6:
@@ -11297,7 +12460,7 @@ LABEL_6:
     goto LABEL_6;
   return a2;
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08054DF0) --------------------------------------------------------
 int __usercall camlList__for_all_1137@<eax>(int (**a1)(void)@<eax>, int a2@<ebx>)
@@ -11360,7 +12523,7 @@ LABEL_8:
     camlPervasives__invalid_arg_1012(a2, a1);
   return 3;
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08054F00) --------------------------------------------------------
 int __usercall camlList__exists2_1153@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
@@ -11387,7 +12550,7 @@ LABEL_8:
     camlPervasives__invalid_arg_1012(a2, a1);
   return 1;
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08054F70) --------------------------------------------------------
 int __usercall camlList__mem_1161@<eax>(int a1@<eax>, _DWORD *a2@<ebx>)
@@ -11420,13 +12583,13 @@ int __usercall camlList__memq_1165@<eax>(int a1@<eax>, _DWORD *a2@<ebx>)
 }
 
 //----- (08055010) --------------------------------------------------------
-int __usercall camlList__assoc_1169@<eax>(int a1@<eax>, _DWORD *a2@<ebx>)
+int __usercall camlList__assoc_1169@<eax>(int a1@<eax>, _DWORD *a2@<ebx>, int a3@<edx>, int a4@<ecx>)
 {
-  unsigned int v3; // eax
-  _DWORD *v4; // eax
-  int v5; // [esp+0h] [ebp-Ch]
-  _DWORD *v6; // [esp+4h] [ebp-8h]
-  int v7; // [esp+8h] [ebp-4h]
+  unsigned int v5; // eax
+  _DWORD *v6; // eax
+  int v7; // [esp+0h] [ebp-Ch]
+  _DWORD *v8; // [esp+4h] [ebp-8h]
+  int v9; // [esp+8h] [ebp-4h]
 
   while ( 1 )
   {
@@ -11434,29 +12597,31 @@ int __usercall camlList__assoc_1169@<eax>(int a1@<eax>, _DWORD *a2@<ebx>)
     {
       while ( 1 )
       {
-        v3 = caml_young_ptr - 8;
-        caml_young_ptr = v3;
-        if ( v3 >= caml_young_limit )
+        v5 = caml_young_ptr - 8;
+        caml_young_ptr = v5;
+        if ( v5 >= caml_young_limit )
         {
-          v4 = (_DWORD *)(v3 + 4);
-          *(v4 - 1) = 1024;
-          *v4 = &caml_exn_Not_found;
-          caml_raise_exn((int)v4);
+          v6 = (_DWORD *)(v5 + 4);
+          *(v6 - 1) = 1024;
+          *v6 = &caml_exn_Not_found;
+          caml_raise_exn((int)v6);
         }
-        caml_call_gc(v5);
+        caml_call_gc(a3, a4, v7);
       }
     }
-    v5 = a1;
-    v6 = (_DWORD *)a2[1];
-    v7 = *(_DWORD *)(*a2 + 4);
+    v7 = a1;
+    v8 = (_DWORD *)a2[1];
+    v9 = *(_DWORD *)(*a2 + 4);
     if ( caml_c_call((int (*)(void))caml_compare, *(_DWORD *)*a2) == 1 )
       break;
-    a1 = v5;
-    a2 = v6;
+    a1 = v7;
+    a2 = v8;
   }
-  return v7;
+  return v9;
 }
-// 805508A: variable 'v5' is possibly undefined
+// 805508A: variable 'a3' is possibly undefined
+// 805508A: variable 'a4' is possibly undefined
+// 805508A: variable 'v7' is possibly undefined
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -11495,111 +12660,117 @@ int __usercall camlList__mem_assq_1184@<eax>(int a1@<eax>, int a2@<ebx>)
 }
 
 //----- (080551B0) --------------------------------------------------------
-int __usercall camlList__remove_assoc_1189@<eax>(char a1@<al>, _DWORD *a2@<ebx>)
+unsigned int __usercall camlList__remove_assoc_1189@<eax>(char a1@<al>, _DWORD *a2@<ebx>)
 {
-  int result; // eax
-  int v3; // ecx
-  unsigned int v4; // eax
-  _DWORD *v6; // [esp+4h] [ebp-8h]
-  int v7; // [esp+8h] [ebp-4h]
+  unsigned int result; // eax
+  int v3; // edx
+  int i; // ecx
+  unsigned int v5; // eax
+  char v6; // [esp+0h] [ebp-Ch]
+  int v7; // [esp+4h] [ebp-8h]
+  _DWORD *v8; // [esp+8h] [ebp-4h]
 
   if ( a2 == (_DWORD *)1 )
     return 1;
-  v7 = a2[1];
-  v6 = (_DWORD *)*a2;
+  v6 = a1;
+  v8 = (_DWORD *)a2[1];
+  v7 = *a2;
   if ( caml_c_call((int (*)(void))caml_compare, *(_DWORD *)*a2) == 1 )
-    return v7;
-  v3 = camlList__remove_assoc_1189();
-  while ( 1 )
+    return (unsigned int)v8;
+  for ( i = camlList__remove_assoc_1189(v6, v8); ; caml_call_gc(v3, i, v6) )
   {
-    v4 = caml_young_ptr - 12;
-    caml_young_ptr = v4;
-    if ( v4 >= caml_young_limit )
+    v5 = caml_young_ptr - 12;
+    caml_young_ptr = v5;
+    if ( v5 >= caml_young_limit )
       break;
-    caml_call_gc(a1);
   }
-  result = v4 + 4;
+  result = v5 + 4;
   *(_DWORD *)(result - 4) = 2048;
-  *(_DWORD *)result = v6;
-  *(_DWORD *)(result + 4) = v3;
+  *(_DWORD *)result = v7;
+  *(_DWORD *)(result + 4) = i;
   return result;
 }
-// 8055223: variable 'v3' is possibly undefined
-// 8055239: variable 'a1' is possibly undefined
+// 8055223: variable 'i' is possibly undefined
+// 8055239: variable 'v3' is possibly undefined
+// 8055239: variable 'v6' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08055240) --------------------------------------------------------
-int __usercall camlList__remove_assq_1195@<eax>(int a1@<eax>, int a2@<ebx>)
+unsigned int __usercall camlList__remove_assq_1195@<eax>(int a1@<eax>, int a2@<ebx>)
 {
-  int result; // eax
-  int v3; // ecx
-  unsigned int v4; // eax
-  _DWORD *v5; // [esp+0h] [ebp-4h]
+  unsigned int result; // eax
+  int v3; // edx
+  int i; // ecx
+  unsigned int v5; // eax
+  int v6; // [esp+0h] [ebp-4h]
 
   if ( a2 == 1 )
     return 1;
   if ( **(_DWORD **)a2 == a1 )
     return *(_DWORD *)(a2 + 4);
-  v5 = *(_DWORD **)a2;
-  v3 = camlList__remove_assq_1195();
-  while ( 1 )
+  v6 = *(_DWORD *)a2;
+  for ( i = camlList__remove_assq_1195(a1, *(_DWORD *)(a2 + 4)); ; caml_call_gc(v3, i, v6) )
   {
-    v4 = caml_young_ptr - 12;
-    caml_young_ptr = v4;
-    if ( v4 >= caml_young_limit )
+    v5 = caml_young_ptr - 12;
+    caml_young_ptr = v5;
+    if ( v5 >= caml_young_limit )
       break;
-    caml_call_gc((char)v5);
   }
-  result = v4 + 4;
+  result = v5 + 4;
   *(_DWORD *)(result - 4) = 2048;
-  *(_DWORD *)result = v5;
-  *(_DWORD *)(result + 4) = v3;
+  *(_DWORD *)result = v6;
+  *(_DWORD *)(result + 4) = i;
   return result;
 }
-// 805528E: variable 'v5' is possibly undefined
-// 8055290: variable 'v3' is possibly undefined
+// 805528E: variable 'v6' is possibly undefined
+// 8055290: variable 'i' is possibly undefined
+// 80552A9: variable 'v3' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (080552B0) --------------------------------------------------------
-int __usercall camlList__find_1201@<eax>(int (**a1)(void)@<eax>, int *a2@<ebx>)
+int __usercall camlList__find_1201@<eax>(int (**a1)(void)@<eax>, int *a2@<ebx>, int a3@<ecx>)
 {
-  unsigned int v3; // eax
-  _DWORD *v4; // eax
-  int (**v5)(void); // [esp+0h] [ebp-Ch]
-  int *v6; // [esp+4h] [ebp-8h]
-  int v7; // [esp+8h] [ebp-4h]
+  int (**v3)(void); // edx
+  unsigned int v5; // eax
+  _DWORD *v6; // eax
+  int (**v7)(void); // [esp+0h] [ebp-Ch]
+  int *v8; // [esp+4h] [ebp-8h]
+  int v9; // [esp+8h] [ebp-4h]
 
   while ( 1 )
   {
+    v3 = a1;
     if ( a2 == (int *)1 )
     {
       while ( 1 )
       {
-        v3 = caml_young_ptr - 8;
-        caml_young_ptr = v3;
-        if ( v3 >= caml_young_limit )
+        v5 = caml_young_ptr - 8;
+        caml_young_ptr = v5;
+        if ( v5 >= caml_young_limit )
         {
-          v4 = (_DWORD *)(v3 + 4);
-          *(v4 - 1) = 1024;
-          *v4 = &caml_exn_Not_found;
-          caml_raise_exn((int)v4);
+          v6 = (_DWORD *)(v5 + 4);
+          *(v6 - 1) = 1024;
+          *v6 = &caml_exn_Not_found;
+          caml_raise_exn((int)v6);
         }
-        caml_call_gc((char)v5);
+        caml_call_gc((int)v3, a3, (char)v7);
       }
     }
-    v5 = a1;
-    v6 = (int *)a2[1];
-    v7 = *a2;
+    v7 = a1;
+    v8 = (int *)a2[1];
+    v9 = *a2;
     if ( (*a1)() != 1 )
       break;
-    a1 = v5;
-    a2 = v6;
+    a1 = v7;
+    a2 = v8;
   }
-  return v7;
+  return v9;
 }
-// 805531A: variable 'v5' is possibly undefined
+// 805531A: variable 'v3' is possibly undefined
+// 805531A: variable 'a3' is possibly undefined
+// 805531A: variable 'v7' is possibly undefined
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -11614,58 +12785,59 @@ int __usercall camlList__find_1201@<eax>(int (**a1)(void)@<eax>, int *a2@<ebx>)
 _DWORD *__usercall camlList__split_1220@<eax>(int **a1@<eax>)
 {
   int *v1; // eax
-  int v2; // ebx
-  int v3; // edx
-  _DWORD *v4; // eax
-  _DWORD *v5; // ecx
-  _DWORD *v6; // ebx
+  int v2; // ecx
+  int v3; // ebx
+  int i; // edx
+  _DWORD *v5; // eax
+  _DWORD *v6; // ecx
+  _DWORD *v7; // ebx
   _DWORD *result; // eax
-  int v8; // [esp+0h] [ebp-8h]
-  int v9; // [esp+4h] [ebp-4h]
+  int v9; // [esp+0h] [ebp-8h]
+  int v10; // [esp+4h] [ebp-4h]
 
   if ( a1 == (int **)1 )
     return &camlList__41;
-  v8 = (*a1)[1];
-  v9 = **a1;
-  v1 = (int *)camlList__split_1220();
-  v2 = v1[1];
-  v3 = *v1;
-  while ( 1 )
+  v9 = (*a1)[1];
+  v10 = **a1;
+  v1 = camlList__split_1220((int **)a1[1]);
+  v3 = v1[1];
+  for ( i = *v1; ; caml_call_gc(i, v2, v9) )
   {
-    v4 = (_DWORD *)(caml_young_ptr - 36);
-    caml_young_ptr = (int)v4;
-    if ( (unsigned int)v4 >= caml_young_limit )
+    v5 = (_DWORD *)(caml_young_ptr - 36);
+    caml_young_ptr = (int)v5;
+    if ( (unsigned int)v5 >= caml_young_limit )
       break;
-    caml_call_gc(v8);
   }
-  v5 = v4 + 1;
-  *v4 = 2048;
-  v4[1] = v8;
-  v4[2] = v2;
-  v6 = v4 + 4;
-  v4[3] = 2048;
-  v4[4] = v9;
-  v4[5] = v3;
-  result = v4 + 7;
+  v6 = v5 + 1;
+  *v5 = 2048;
+  v5[1] = v9;
+  v5[2] = v3;
+  v7 = v5 + 4;
+  v5[3] = 2048;
+  v5[4] = v10;
+  v5[5] = i;
+  result = v5 + 7;
   *(result - 1) = 2048;
-  *result = v6;
-  result[1] = v5;
+  *result = v7;
+  result[1] = v6;
   return result;
 }
-// 8055417: variable 'v8' is possibly undefined
-// 805542C: variable 'v3' is possibly undefined
+// 8055417: variable 'v9' is possibly undefined
+// 805542C: variable 'i' is possibly undefined
+// 8055459: variable 'v2' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08055460) --------------------------------------------------------
 int __usercall camlList__combine_1226@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int *a4@<ebx>)
 {
-  int v4; // ecx
-  _DWORD *v5; // eax
-  _DWORD *v6; // ebx
+  int v4; // edx
+  int i; // ecx
+  _DWORD *v6; // eax
+  _DWORD *v7; // ebx
   int result; // eax
-  int v8; // [esp+0h] [ebp-8h]
-  int v9; // [esp+4h] [ebp-4h]
+  int v9; // [esp+0h] [ebp-8h]
+  int v10; // [esp+4h] [ebp-4h]
 
   if ( a1 == (int *)1 )
   {
@@ -11676,91 +12848,90 @@ LABEL_8:
   }
   if ( a4 == (int *)1 )
     goto LABEL_8;
-  v9 = *a4;
-  v8 = *a1;
-  v4 = camlList__combine_1226();
-  while ( 1 )
+  v10 = *a4;
+  v9 = *a1;
+  for ( i = camlList__combine_1226((int *)a1[1], a1[1], *a1, (int *)a4[1]); ; caml_call_gc(v4, i, v9) )
   {
-    v5 = (_DWORD *)(caml_young_ptr - 24);
-    caml_young_ptr = (int)v5;
-    if ( (unsigned int)v5 >= caml_young_limit )
+    v6 = (_DWORD *)(caml_young_ptr - 24);
+    caml_young_ptr = (int)v6;
+    if ( (unsigned int)v6 >= caml_young_limit )
       break;
-    caml_call_gc(v8);
   }
-  v6 = v5 + 1;
-  *v5 = 2048;
-  v5[1] = v8;
-  v5[2] = v9;
-  result = (int)(v5 + 4);
+  v7 = v6 + 1;
+  *v6 = 2048;
+  v6[1] = v9;
+  v6[2] = v10;
+  result = (int)(v6 + 4);
   *(_DWORD *)(result - 4) = 2048;
-  *(_DWORD *)result = v6;
-  *(_DWORD *)(result + 4) = v4;
+  *(_DWORD *)result = v7;
+  *(_DWORD *)(result + 4) = i;
   return result;
 }
-// 80554AB: variable 'v8' is possibly undefined
-// 80554C0: variable 'v4' is possibly undefined
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 80554AB: variable 'v9' is possibly undefined
+// 80554C0: variable 'i' is possibly undefined
+// 80554ED: variable 'v4' is possibly undefined
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08055500) --------------------------------------------------------
 int *__usercall camlList__merge_1233@<eax>(int a1@<eax>, int *a2@<ecx>, int *a3@<ebx>)
 {
-  int v3; // ecx
-  _DWORD *v4; // eax
-  int *result; // eax
-  int v6; // ecx
-  _DWORD *v7; // eax
-  char v8; // [esp+0h] [ebp-1Ch]
-  int v9; // [esp+4h] [ebp-18h]
-  int v10; // [esp+8h] [ebp-14h]
-  int v12; // [esp+18h] [ebp-4h]
+  int v3; // edx
+  int *j; // ecx
+  _DWORD *v5; // eax
+  int v7; // edx
+  int *i; // ecx
+  _DWORD *v9; // eax
+  char v10; // [esp+0h] [ebp-1Ch]
+  int *v11; // [esp+4h] [ebp-18h]
+  int v12; // [esp+8h] [ebp-14h]
+  int *v14; // [esp+10h] [ebp-Ch]
+  int v16; // [esp+18h] [ebp-4h]
 
   if ( a3 == (int *)1 )
     return a2;
   if ( a2 == (int *)1 )
     return a3;
-  v8 = (char)a3;
-  v9 = a2[1];
-  v10 = *a2;
-  v12 = *a3;
+  v10 = (char)a3;
+  v11 = (int *)a2[1];
+  v12 = *a2;
+  v14 = (int *)a3[1];
+  v16 = *a3;
   if ( caml_apply2(a1) > 1 )
   {
-    v6 = camlList__merge_1233(v9);
-    while ( 1 )
+    for ( i = camlList__merge_1233(a1, v11, a3); ; caml_call_gc(v7, (int)i, v10) )
     {
-      v7 = (_DWORD *)(caml_young_ptr - 12);
-      caml_young_ptr = (int)v7;
-      if ( (unsigned int)v7 >= caml_young_limit )
+      v9 = (_DWORD *)(caml_young_ptr - 12);
+      caml_young_ptr = (int)v9;
+      if ( (unsigned int)v9 >= caml_young_limit )
         break;
-      caml_call_gc(v8);
     }
-    *v7 = 2048;
-    v7[1] = v10;
-    v7[2] = v6;
-    result = v7 + 1;
+    *v9 = 2048;
+    v9[1] = v12;
+    v9[2] = i;
+    return v9 + 1;
   }
   else
   {
-    v3 = camlList__merge_1233(a2);
-    while ( 1 )
+    for ( j = camlList__merge_1233(a1, a2, v14); ; caml_call_gc(v3, (int)j, v10) )
     {
-      v4 = (_DWORD *)(caml_young_ptr - 12);
-      caml_young_ptr = (int)v4;
-      if ( (unsigned int)v4 >= caml_young_limit )
+      v5 = (_DWORD *)(caml_young_ptr - 12);
+      caml_young_ptr = (int)v5;
+      if ( (unsigned int)v5 >= caml_young_limit )
         break;
-      caml_call_gc(v8);
     }
-    *v4 = 2048;
-    v4[1] = v12;
-    v4[2] = v3;
-    result = v4 + 1;
+    *v5 = 2048;
+    v5[1] = v16;
+    v5[2] = j;
+    return v5 + 1;
   }
-  return result;
 }
-// 8055586: variable 'v3' is possibly undefined
-// 80555C7: variable 'v6' is possibly undefined
-// 80555E6: variable 'v8' is possibly undefined
+// 8055586: variable 'j' is possibly undefined
+// 80555C7: variable 'i' is possibly undefined
+// 80555E6: variable 'v7' is possibly undefined
+// 80555E6: variable 'v10' is possibly undefined
+// 80555ED: variable 'v3' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -11768,53 +12939,53 @@ int *__usercall camlList__merge_1233@<eax>(int a1@<eax>, int *a2@<ecx>, int *a3@
 #error "8055651: call analysis failed (funcsize=21)"
 
 //----- (08055660) --------------------------------------------------------
-_DWORD *__usercall camlList__stable_sort_1248@<eax>(int a1@<eax>, int *a2@<ebx>)
+int *__usercall camlList__stable_sort_1248@<eax>(int a1@<eax>, int *a2@<ebx>, int a3@<edx>, int a4@<ecx>)
 {
-  _DWORD *v3; // eax
-  int v4; // eax
-  _DWORD *result; // eax
-  char v6; // [esp+0h] [ebp-8h]
-  int v7; // [esp+0h] [ebp-8h]
+  _DWORD *v5; // eax
+  int v6; // eax
+  char v8; // [esp+0h] [ebp-8h]
+  int v9; // [esp+0h] [ebp-8h]
 
   while ( 1 )
   {
-    v3 = (_DWORD *)(caml_young_ptr - 84);
-    caml_young_ptr = (int)v3;
-    if ( (unsigned int)v3 >= caml_young_limit )
+    v5 = (_DWORD *)(caml_young_ptr - 84);
+    caml_young_ptr = (int)v5;
+    if ( (unsigned int)v5 >= caml_young_limit )
       break;
-    caml_call_gc(v6);
+    caml_call_gc(a3, a4, v8);
   }
-  *v3 = 4343;
-  v3[1] = caml_curry3;
-  v3[2] = 7;
-  v3[3] = camlList__rev_merge_1251;
-  v3[4] = a1;
-  v3[5] = 4343;
-  v3[6] = caml_curry3;
-  v3[7] = 7;
-  v3[8] = camlList__rev_merge_rev_1261;
-  v3[9] = a1;
-  v7 = (int)(v3 + 11);
-  v3[10] = 10487;
-  v3[11] = caml_curry2;
-  v3[12] = 5;
-  v3[13] = camlList__sort_299;
-  v3[14] = 4345;
-  v3[15] = caml_curry2;
-  v3[16] = 5;
-  v3[17] = camlList__rev_sort_300;
-  v3[18] = a1;
-  v3[19] = v3 + 1;
-  v3[20] = v3 + 6;
-  v4 = camlList__length_aux_1030(1, (int)a2);
-  if ( v4 >= 5 )
-    result = camlList__sort_299(v4, v7, a2);
+  *v5 = 4343;
+  v5[1] = caml_curry3;
+  v5[2] = 7;
+  v5[3] = camlList__rev_merge_1251;
+  v5[4] = a1;
+  v5[5] = 4343;
+  v5[6] = caml_curry3;
+  v5[7] = 7;
+  v5[8] = camlList__rev_merge_rev_1261;
+  v5[9] = a1;
+  v9 = (int)(v5 + 11);
+  v5[10] = 10487;
+  v5[11] = caml_curry2;
+  v5[12] = 5;
+  v5[13] = camlList__sort_1271;
+  v5[14] = 4345;
+  v5[15] = caml_curry2;
+  v5[16] = 5;
+  v5[17] = camlList__rev_sort_1272;
+  v5[18] = a1;
+  v5[19] = v5 + 1;
+  v5[20] = v5 + 6;
+  v6 = camlList__length_aux_1030(1, (int)a2);
+  if ( v6 >= 5 )
+    return camlList__sort_1271(v6, v9, a2);
   else
-    result = a2;
-  return result;
+    return a2;
 }
 // 8055660: could not find valid save-restore pair for ebx
-// 805573F: variable 'v6' is possibly undefined
+// 805573F: variable 'a3' is possibly undefined
+// 805573F: variable 'a4' is possibly undefined
+// 805573F: variable 'v8' is possibly undefined
 // 804B2D0: using guessed type _DWORD caml_curry3();
 // 804B370: using guessed type _DWORD caml_curry2();
 // 8080414: using guessed type int caml_young_ptr;
@@ -11958,7 +13129,7 @@ int __usercall camlChar__code_begin@<eax>(int result@<eax>, int a2@<edx>, int a3
     camlPervasives__invalid_arg_1012(a3, a2);
   return result;
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08055930) --------------------------------------------------------
 _BYTE *__usercall camlChar__escaped_1038@<eax>(int a1@<eax>)
@@ -12136,7 +13307,7 @@ int __usercall camlString__sub_1046@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<eb
   caml_blit_string(a1, a3, v5, 1, a2);
   return v5;
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08055D20) --------------------------------------------------------
 int __usercall camlString__fill_1051@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
@@ -12151,7 +13322,7 @@ int __usercall camlString__fill_1051@<eax>(int a1@<eax>, int a2@<edx>, int a3@<e
   }
   return caml_fill_string(a1, a4, a3, a2);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08055D70) --------------------------------------------------------
 int __usercall camlString__blit_1056@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<esi>)
@@ -12169,7 +13340,7 @@ int __usercall camlString__blit_1056@<eax>(int a1@<eax>, int a2@<edx>, int a3@<e
   }
   return caml_blit_string(a1, a4, a3, a2, a5);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08055DE0) --------------------------------------------------------
 int __usercall camlString__iter_1062@<eax>(void (**a1)(void)@<eax>, int a2@<ebx>)
@@ -12198,204 +13369,208 @@ int __usercall camlString__iter_1062@<eax>(void (**a1)(void)@<eax>, int a2@<ebx>
 }
 
 //----- (08055E50) --------------------------------------------------------
-void *__usercall camlString__concat_1066@<eax>(void (*a1)(void)@<eax>, int *a2@<ebx>)
+void *__usercall camlString__concat_1066@<eax>(void (*a1)(void)@<eax>, int *a2@<ebx>, int a3@<edx>, int a4@<ecx>)
 {
-  _DWORD *v2; // eax
-  void (*v3)(void); // edx
-  void (*v4)(void); // ecx
-  void (**v5)(void); // eax
-  int v6; // ecx
-  int v7; // edi
-  int v8; // eax
-  _DWORD *v9; // eax
-  void (**v10)(void); // ebx
-  int v11; // eax
-  char v13; // [esp+0h] [ebp-14h]
-  _DWORD *v14; // [esp+0h] [ebp-14h]
-  int v15; // [esp+0h] [ebp-14h]
-  _BYTE *v16; // [esp+4h] [ebp-10h]
-  int v17; // [esp+8h] [ebp-Ch]
-  int v19; // [esp+10h] [ebp-4h]
+  _DWORD *v4; // eax
+  void (*v5)(void); // edx
+  void (*v6)(void); // ecx
+  void (**v7)(void); // eax
+  int v8; // ecx
+  int v9; // edi
+  int v10; // eax
+  int v11; // edx
+  int v12; // ecx
+  _DWORD *v13; // eax
+  void (**v14)(void); // ebx
+  int v15; // eax
+  char v17; // [esp+0h] [ebp-14h]
+  _DWORD *v18; // [esp+0h] [ebp-14h]
+  int v19; // [esp+0h] [ebp-14h]
+  _BYTE *v20; // [esp+4h] [ebp-10h]
+  int v21; // [esp+8h] [ebp-Ch]
+  int v23; // [esp+10h] [ebp-4h]
 
   if ( a2 == (int *)1 )
     return &camlString__29;
-  v19 = a2[1];
-  v17 = *a2;
+  v23 = a2[1];
+  v21 = *a2;
   while ( 1 )
   {
-    v2 = (_DWORD *)(caml_young_ptr - 36);
-    caml_young_ptr = (int)v2;
-    if ( (unsigned int)v2 >= caml_young_limit )
+    v4 = (_DWORD *)(caml_young_ptr - 36);
+    caml_young_ptr = (int)v4;
+    if ( (unsigned int)v4 >= caml_young_limit )
       break;
-    caml_call_gc(v13);
+    caml_call_gc(a3, a4, v17);
   }
-  v3 = (void (*)(void))(v2 + 1);
-  v14 = v2 + 1;
-  *v2 = 1024;
-  v2[1] = 1;
-  v4 = (void (*)(void))(v2 + 3);
-  v16 = v2 + 3;
-  v2[2] = 1024;
-  v2[3] = 1;
-  v5 = (void (**)(void))(v2 + 5);
-  *(v5 - 1) = (void (*)(void))4343;
-  *v5 = (void (*)(void))camlString__code_begin;
-  v5[1] = (void (*)(void))3;
-  v5[2] = v3;
-  v5[3] = v4;
-  camlList__iter_1074(v5, (int)a2);
-  v6 = 4 * (*((_DWORD *)a1 - 1) >> 10) - 1;
-  v7 = caml_c_call((int (*)(void))caml_create_string, ((*v14 - 2) >> 1) * 2 * (v6 - *((_BYTE *)a1 + v6)) + *v16);
-  v15 = v7;
-  v8 = 4 * (*(_DWORD *)(v17 - 4) >> 10) - 1;
-  caml_blit_string(v17, 1, v7, 1, 2 * (v8 - *(unsigned __int8 *)(v17 + v8)) + 1);
+  v5 = (void (*)(void))(v4 + 1);
+  v18 = v4 + 1;
+  *v4 = 1024;
+  v4[1] = 1;
+  v6 = (void (*)(void))(v4 + 3);
+  v20 = v4 + 3;
+  v4[2] = 1024;
+  v4[3] = 1;
+  v7 = (void (**)(void))(v4 + 5);
+  *(v7 - 1) = (void (*)(void))4343;
+  *v7 = (void (*)(void))camlString__code_begin;
+  v7[1] = (void (*)(void))3;
+  v7[2] = v5;
+  v7[3] = v6;
+  camlList__iter_1074(v7, (int)a2);
+  v8 = 4 * (*((_DWORD *)a1 - 1) >> 10) - 1;
+  v9 = caml_c_call((int (*)(void))caml_create_string, ((*v18 - 2) >> 1) * 2 * (v8 - *((_BYTE *)a1 + v8)) + *v20);
+  v19 = v9;
+  v10 = 4 * (*(_DWORD *)(v21 - 4) >> 10) - 1;
+  caml_blit_string(v21, 1, v9, 1, 2 * (v10 - *(unsigned __int8 *)(v21 + v10)) + 1);
   while ( 1 )
   {
-    v9 = (_DWORD *)(caml_young_ptr - 32);
-    caml_young_ptr = (int)v9;
-    if ( (unsigned int)v9 >= caml_young_limit )
+    v13 = (_DWORD *)(caml_young_ptr - 32);
+    caml_young_ptr = (int)v13;
+    if ( (unsigned int)v13 >= caml_young_limit )
       break;
-    caml_call_gc(v15);
+    caml_call_gc(v11, v12, v19);
   }
-  v10 = (void (**)(void))(v9 + 1);
-  *v9 = 1024;
-  v11 = 4 * (*(_DWORD *)(v17 - 4) >> 10) - 1;
-  *v10 = (void (*)(void))(2 * (v11 - *(unsigned __int8 *)(v17 + v11)) + 1);
-  v10[1] = (void (*)(void))5367;
-  v10[2] = (void (*)(void))camlString__fun_1163;
-  v10[3] = (void (*)(void))3;
-  v10[4] = a1;
-  v10[5] = (void (*)(void))v7;
-  v10[6] = (void (*)(void))v10;
-  camlList__iter_1074(v10 + 2, v19);
-  return (void *)v15;
+  v14 = (void (**)(void))(v13 + 1);
+  *v13 = 1024;
+  v15 = 4 * (*(_DWORD *)(v21 - 4) >> 10) - 1;
+  *v14 = (void (*)(void))(2 * (v15 - *(unsigned __int8 *)(v21 + v15)) + 1);
+  v14[1] = (void (*)(void))5367;
+  v14[2] = (void (*)(void))camlString__fun_1163;
+  v14[3] = (void (*)(void))3;
+  v14[4] = a1;
+  v14[5] = (void (*)(void))v9;
+  v14[6] = (void (*)(void))v14;
+  camlList__iter_1074(v14 + 2, v23);
+  return (void *)v19;
 }
 // 8055E50: could not find valid save-restore pair for esi
-// 8055F9F: variable 'v15' is possibly undefined
-// 8055FC3: variable 'v13' is possibly undefined
+// 8055F9F: variable 'v19' is possibly undefined
+// 8055FB9: variable 'v11' is possibly undefined
+// 8055FB9: variable 'v12' is possibly undefined
+// 8055FC3: variable 'a3' is possibly undefined
+// 8055FC3: variable 'a4' is possibly undefined
+// 8055FC3: variable 'v17' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08055FD0) --------------------------------------------------------
-int __usercall camlString__escaped_108@<eax>(int a1@<eax>)
+int __usercall camlString__escaped_1080@<eax>(int a1@<eax>, int a2@<ecx>)
 {
-  int v1; // edx
-  _DWORD *v2; // eax
-  _DWORD *v3; // ebx
-  int v4; // eax
-  int v5; // ecx
+  int i; // edx
+  _DWORD *v3; // eax
+  _DWORD *v4; // ebx
+  int v5; // eax
   int v6; // ecx
-  int v7; // eax
-  int v8; // ecx
-  int v9; // edx
+  int v7; // ecx
+  int v8; // eax
+  int v9; // ecx
+  int v10; // edx
   int result; // eax
-  int v11; // ecx
-  int v12; // ebp
-  int *v13; // esi
-  int v14; // eax
-  int v15; // ecx
+  int v12; // ecx
+  int v13; // ebp
+  int *v14; // esi
+  int v15; // eax
   int v16; // ecx
-  int v17; // eax
-  int v18; // ecx
-  char v19; // [esp+0h] [ebp-18h]
-  int v20; // [esp+0h] [ebp-18h]
+  int v17; // ecx
+  int v18; // eax
+  int v19; // ecx
+  char v20; // [esp+0h] [ebp-18h]
   int v21; // [esp+0h] [ebp-18h]
-  int v22; // [esp+4h] [ebp-14h]
+  int v22; // [esp+0h] [ebp-18h]
   int v23; // [esp+4h] [ebp-14h]
-  int v24; // [esp+8h] [ebp-10h]
-  int v25; // [esp+Ch] [ebp-Ch]
-  _DWORD *v27; // [esp+14h] [ebp-4h]
+  int v24; // [esp+4h] [ebp-14h]
+  int v25; // [esp+8h] [ebp-10h]
+  int v26; // [esp+Ch] [ebp-Ch]
+  _DWORD *v28; // [esp+14h] [ebp-4h]
 
-  v1 = a1;
-  while ( 1 )
+  for ( i = a1; ; caml_call_gc(i, a2, v20) )
   {
-    v2 = (_DWORD *)(caml_young_ptr - 8);
-    caml_young_ptr = (int)v2;
-    if ( (unsigned int)v2 >= caml_young_limit )
+    v3 = (_DWORD *)(caml_young_ptr - 8);
+    caml_young_ptr = (int)v3;
+    if ( (unsigned int)v3 >= caml_young_limit )
       break;
-    caml_call_gc(v19);
   }
-  v3 = v2 + 1;
-  *v2 = 1024;
-  v2[1] = 1;
-  v4 = 1;
-  v5 = 4 * (*(_DWORD *)(v1 - 4) >> 10) - 1;
-  v6 = 2 * (v5 - *(unsigned __int8 *)(v1 + v5)) - 1;
-  if ( v6 >= 1 )
+  v4 = v3 + 1;
+  *v3 = 1024;
+  v3[1] = 1;
+  v5 = 1;
+  v6 = 4 * (*(_DWORD *)(i - 4) >> 10) - 1;
+  v7 = 2 * (v6 - *(unsigned __int8 *)(i + v6)) - 1;
+  if ( v7 >= 1 )
   {
-    v22 = v6;
-    v20 = 1;
-    v27 = v3;
+    v23 = v7;
+    v21 = 1;
+    v28 = v4;
     do
     {
-      v7 = 2 * *(unsigned __int8 *)(a1 + (v4 >> 1)) + 1;
-      if ( v7 < 29 )
+      v8 = 2 * *(unsigned __int8 *)(a1 + (v5 >> 1)) + 1;
+      if ( v8 < 29 )
       {
-        if ( v7 < 23 )
+        if ( v8 < 23 )
         {
-          if ( v7 < 17 )
+          if ( v8 < 17 )
             goto LABEL_13;
         }
-        else if ( v7 < 27 )
+        else if ( v8 < 27 )
         {
           goto LABEL_13;
         }
       }
-      else if ( v7 != 69 && v7 != 185 )
+      else if ( v8 != 69 && v8 != 185 )
       {
 LABEL_13:
-        if ( caml_c_call((int (*)(void))caml_is_printable, v7) == 1 )
-          v8 = 9;
+        if ( caml_c_call((int (*)(void))caml_is_printable, v8) == 1 )
+          v9 = 9;
         else
-          v8 = 3;
+          v9 = 3;
         goto LABEL_17;
       }
-      v8 = 5;
+      v9 = 5;
 LABEL_17:
-      v3 = v27;
-      *v27 = v8 + *v27 - 1;
-      v9 = v20;
-      v4 = v20 + 2;
-      v20 += 2;
+      v4 = v28;
+      *v28 = v9 + *v28 - 1;
+      v10 = v21;
+      v5 = v21 + 2;
+      v21 += 2;
     }
-    while ( v9 != v22 );
+    while ( v10 != v23 );
   }
   result = a1;
-  v11 = 4 * (*(_DWORD *)(a1 - 4) >> 10) - 1;
-  if ( *v3 != 2 * (v11 - *(unsigned __int8 *)(a1 + v11)) + 1 )
+  v12 = 4 * (*(_DWORD *)(a1 - 4) >> 10) - 1;
+  if ( *v4 != 2 * (v12 - *(unsigned __int8 *)(a1 + v12)) + 1 )
   {
-    v12 = caml_c_call((int (*)(void))caml_create_string, *v3);
-    v13 = v3;
-    *v3 = 1;
-    v14 = 1;
-    v15 = 4 * (*(_DWORD *)(a1 - 4) >> 10) - 1;
-    v16 = 2 * (v15 - *(unsigned __int8 *)(a1 + v15)) - 1;
-    if ( v16 >= 1 )
+    v13 = caml_c_call((int (*)(void))caml_create_string, *v4);
+    v14 = v4;
+    *v4 = 1;
+    v15 = 1;
+    v16 = 4 * (*(_DWORD *)(a1 - 4) >> 10) - 1;
+    v17 = 2 * (v16 - *(unsigned __int8 *)(a1 + v16)) - 1;
+    if ( v17 >= 1 )
     {
-      v24 = v16;
-      v23 = 1;
-      v25 = v12;
+      v25 = v17;
+      v24 = 1;
+      v26 = v13;
       while ( 1 )
       {
-        v17 = 2 * *(unsigned __int8 *)(a1 + (v14 >> 1)) + 1;
-        if ( (unsigned int)(v17 - 68) > 0x75 )
+        v18 = 2 * *(unsigned __int8 *)(a1 + (v15 >> 1)) + 1;
+        if ( (unsigned int)(v18 - 68) > 0x75 )
           break;
-        if ( (unsigned int)(v17 - 70) <= 0x71 )
+        if ( (unsigned int)(v18 - 70) <= 0x71 )
           goto LABEL_30;
-        *(_BYTE *)(v12 + (*v13 >> 1)) = 92;
-        *v13 += 2;
-        *(_BYTE *)(v12 + (*v13 >> 1)) = v17 >> 1;
+        *(_BYTE *)(v13 + (*v14 >> 1)) = 92;
+        *v14 += 2;
+        *(_BYTE *)(v13 + (*v14 >> 1)) = v18 >> 1;
 LABEL_33:
-        *v13 += 2;
-        v18 = v23;
-        v14 = v23 + 2;
-        v23 += 2;
-        if ( v18 == v24 )
-          goto LABEL_34;
+        *v14 += 2;
+        v19 = v24;
+        v15 = v24 + 2;
+        v24 += 2;
+        if ( v19 == v25 )
+          return v13;
       }
-      if ( v17 - 68 < -39 )
+      if ( v18 - 68 < -39 )
       {
-        switch ( v17 >> 1 )
+        switch ( v18 >> 1 )
         {
           case 0:
           case 1:
@@ -12409,24 +13584,24 @@ LABEL_33:
           case 12:
             break;
           case 8:
-            *(_BYTE *)(v12 + (*v13 >> 1)) = 92;
-            *v13 += 2;
-            *(_BYTE *)(v12 + (*v13 >> 1)) = 98;
+            *(_BYTE *)(v13 + (*v14 >> 1)) = 92;
+            *v14 += 2;
+            *(_BYTE *)(v13 + (*v14 >> 1)) = 98;
             goto LABEL_33;
           case 9:
-            *(_BYTE *)(v12 + (*v13 >> 1)) = 92;
-            *v13 += 2;
-            *(_BYTE *)(v12 + (*v13 >> 1)) = 116;
+            *(_BYTE *)(v13 + (*v14 >> 1)) = 92;
+            *v14 += 2;
+            *(_BYTE *)(v13 + (*v14 >> 1)) = 116;
             goto LABEL_33;
           case 10:
-            *(_BYTE *)(v12 + (*v13 >> 1)) = 92;
-            *v13 += 2;
-            *(_BYTE *)(v12 + (*v13 >> 1)) = 110;
+            *(_BYTE *)(v13 + (*v14 >> 1)) = 92;
+            *v14 += 2;
+            *(_BYTE *)(v13 + (*v14 >> 1)) = 110;
             goto LABEL_33;
           case 13:
-            *(_BYTE *)(v12 + (*v13 >> 1)) = 92;
-            *v13 += 2;
-            *(_BYTE *)(v12 + (*v13 >> 1)) = 114;
+            *(_BYTE *)(v13 + (*v14 >> 1)) = 92;
+            *v14 += 2;
+            *(_BYTE *)(v13 + (*v14 >> 1)) = 114;
             goto LABEL_33;
           case 14:
             JUMPOUT(0x806800D);
@@ -12439,27 +13614,26 @@ LABEL_33:
         }
       }
 LABEL_30:
-      v21 = v17;
-      v13 = v3;
-      v12 = v25;
-      if ( caml_c_call((int (*)(void))caml_is_printable, v17) == 1 )
+      v22 = v18;
+      v14 = v4;
+      v13 = v26;
+      if ( caml_c_call((int (*)(void))caml_is_printable, v18) == 1 )
       {
-        *(_BYTE *)(v25 + ((int)*v3 >> 1)) = 92;
-        *v3 += 2;
-        *(_BYTE *)(v25 + ((int)*v3 >> 1)) = (2 * ((v21 >> 1) / 100) + 97) >> 1;
-        *v3 += 2;
-        *(_BYTE *)(v25 + ((int)*v3 >> 1)) = (2 * ((v21 >> 1) / 10 % 10) + 97) >> 1;
-        *v3 += 2;
-        *(_BYTE *)(v25 + ((int)*v3 >> 1)) = (2 * ((v21 >> 1) % 10) + 97) >> 1;
+        *(_BYTE *)(v26 + ((int)*v4 >> 1)) = 92;
+        *v4 += 2;
+        *(_BYTE *)(v26 + ((int)*v4 >> 1)) = (2 * ((v22 >> 1) / 100) + 97) >> 1;
+        *v4 += 2;
+        *(_BYTE *)(v26 + ((int)*v4 >> 1)) = (2 * ((v22 >> 1) / 10 % 10) + 97) >> 1;
+        *v4 += 2;
+        *(_BYTE *)(v26 + ((int)*v4 >> 1)) = (2 * ((v22 >> 1) % 10) + 97) >> 1;
       }
       else
       {
-        *(_BYTE *)(v25 + ((int)*v3 >> 1)) = v21 >> 1;
+        *(_BYTE *)(v26 + ((int)*v4 >> 1)) = v22 >> 1;
       }
       goto LABEL_33;
     }
-LABEL_34:
-    result = v12;
+    return v13;
   }
   return result;
 }
@@ -12469,8 +13643,9 @@ LABEL_34:
 // 8056179: control flows out of bounds to 8068247
 // 8055FD0: could not find valid save-restore pair for edi
 // 8055FD0: could not find valid save-restore pair for esi
-// 8056007: variable 'v1' is possibly undefined
-// 805633F: variable 'v19' is possibly undefined
+// 8056007: variable 'i' is possibly undefined
+// 805633F: variable 'a2' is possibly undefined
+// 805633F: variable 'v20' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -12581,7 +13756,7 @@ int __usercall camlString__index_from_1116@<eax>(int a1@<eax>, int a2@<ecx>, int
     camlPervasives__invalid_arg_1012(v6, a2);
   return camlString__index_rec_1108(a3, a2);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 // 80564A0: using guessed type int __fastcall camlString__index_rec_1108(_DWORD, _DWORD);
 
 //----- (08056570) --------------------------------------------------------
@@ -12606,7 +13781,7 @@ int __usercall camlString__rindex_from_1128@<eax>(int a1@<eax>, int a2@<edx>, in
   }
   return camlString__rindex_rec_1121(a3);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 // 8056570: using guessed type int __fastcall camlString__rindex_rec_1121(_DWORD);
 
 //----- (08056630) --------------------------------------------------------
@@ -12630,7 +13805,7 @@ int __usercall camlString__contains_from_1132@<eax>(int a1@<eax>, int a2@<ecx>, 
   return sub_8056680(v10, a3);
 }
 // 805667A: variable 'v10' is possibly undefined
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 // 8073A58: using guessed type char *caml_exn_Not_found;
 
 //----- (08056680) --------------------------------------------------------
@@ -12673,7 +13848,7 @@ int __usercall camlString__rcontains_from_1140@<eax>(int a1@<eax>, int a2@<edx>,
   return sub_8056720(v7);
 }
 // 805671A: variable 'v7' is possibly undefined
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 // 8073A58: using guessed type char *caml_exn_Not_found;
 
 //----- (08056720) --------------------------------------------------------
@@ -12798,160 +13973,168 @@ int __usercall camlSys__set_signal_1057@<eax>(char a1@<al>)
 #error "80569A4: call analysis failed (funcsize=75)"
 
 //----- (08056AD0) --------------------------------------------------------
-int __usercall camlHashtbl__code_begin@<eax>(int *a1@<eax>, int a2@<ebx>)
+unsigned int __usercall camlHashtbl__code_begin@<eax>(int *a1@<eax>, int a2@<ebx>)
 {
-  int result; // eax
-  int v3; // ecx
-  unsigned int v4; // eax
-  int v5; // [esp+0h] [ebp-10h]
-  int v6; // [esp+4h] [ebp-Ch]
-  int v7; // [esp+Ch] [ebp-4h]
+  unsigned int result; // eax
+  int v3; // edx
+  int i; // ecx
+  unsigned int v5; // eax
+  int v6; // [esp+0h] [ebp-10h]
+  int v7; // [esp+4h] [ebp-Ch]
+  int *v8; // [esp+Ch] [ebp-4h]
 
   if ( a1 == (int *)1 )
     return 1;
-  v7 = a1[2];
-  v6 = a1[1];
-  v5 = *a1;
+  v8 = (int *)a1[2];
+  v7 = a1[1];
+  v6 = *a1;
   if ( caml_apply2(**(_DWORD **)(a2 + 8)) == 1 )
   {
-    v3 = camlHashtbl__code_begin();
-    while ( 1 )
-    {
-      v4 = caml_young_ptr - 16;
-      caml_young_ptr = v4;
-      if ( v4 >= caml_young_limit )
-        break;
-      caml_call_gc(v5);
-    }
-    result = v4 + 4;
-    *(_DWORD *)(result - 4) = 3072;
-    *(_DWORD *)result = v5;
-    *(_DWORD *)(result + 4) = v6;
-    *(_DWORD *)(result + 8) = v3;
-  }
-  else
-  {
-    **(_DWORD **)(a2 + 12) -= 2;
-    result = v7;
-  }
-  return result;
-}
-// 8056B51: variable 'v5' is possibly undefined
-// 8056B5A: variable 'v3' is possibly undefined
-// 8080414: using guessed type int caml_young_ptr;
-// 8080418: using guessed type int caml_young_limit;
-
-//----- (08056B80) --------------------------------------------------------
-int __usercall camlHashtbl__find_in_bucket_1213@<eax>(int a1@<eax>, int a2@<ebx>)
-{
-  int v2; // ecx
-  unsigned int v3; // eax
-  int result; // eax
-  int v5; // [esp+0h] [ebp-Ch]
-  int v6; // [esp+8h] [ebp-4h]
-
-  while ( 1 )
-  {
-    if ( a1 == 1 )
-      return 1;
-    v5 = *(_DWORD *)(a1 + 8);
-    v6 = *(_DWORD *)(a1 + 4);
-    if ( caml_apply2(**(_DWORD **)(a2 + 8)) != 1 )
-      break;
-    a1 = v5;
-  }
-  v2 = camlHashtbl__find_in_bucket_1213();
-  while ( 1 )
-  {
-    v3 = caml_young_ptr - 12;
-    caml_young_ptr = v3;
-    if ( v3 >= caml_young_limit )
-      break;
-    caml_call_gc(v5);
-  }
-  result = v3 + 4;
-  *(_DWORD *)(result - 4) = 2048;
-  *(_DWORD *)result = v6;
-  *(_DWORD *)(result + 4) = v2;
-  return result;
-}
-// 8056BE0: variable 'v2' is possibly undefined
-// 8056C09: variable 'v5' is possibly undefined
-// 8080414: using guessed type int caml_young_ptr;
-// 8080418: using guessed type int caml_young_limit;
-
-//----- (08056C10) --------------------------------------------------------
-_DWORD *__usercall camlHashtbl__replace_bucket_1221@<eax>(int *a1@<eax>, int a2@<ebx>)
-{
-  unsigned int v2; // eax
-  _DWORD *result; // eax
-  int v4; // ecx
-  unsigned int v5; // eax
-  unsigned int v6; // eax
-  _DWORD *v7; // eax
-  char v8; // [esp+0h] [ebp-10h]
-  int v9; // [esp+0h] [ebp-10h]
-  int v10; // [esp+4h] [ebp-Ch]
-  int v11; // [esp+Ch] [ebp-4h]
-
-  if ( a1 == (int *)1 )
-  {
-    while ( 1 )
-    {
-      v6 = caml_young_ptr - 8;
-      caml_young_ptr = v6;
-      if ( v6 >= caml_young_limit )
-      {
-        v7 = (_DWORD *)(v6 + 4);
-        *(v7 - 1) = 1024;
-        *v7 = &caml_exn_Not_found;
-        caml_raise_exn((int)v7);
-      }
-      caml_call_gc(v8);
-    }
-  }
-  v11 = a1[2];
-  v9 = a1[1];
-  v10 = *a1;
-  if ( caml_apply2(**(_DWORD **)(a2 + 8)) == 1 )
-  {
-    v4 = camlHashtbl__replace_bucket_1221();
-    while ( 1 )
+    for ( i = camlHashtbl__code_begin(v8, a2); ; caml_call_gc(v3, i, v6) )
     {
       v5 = caml_young_ptr - 16;
       caml_young_ptr = v5;
       if ( v5 >= caml_young_limit )
         break;
-      caml_call_gc(v9);
     }
-    result = (_DWORD *)(v5 + 4);
+    result = v5 + 4;
+    *(_DWORD *)(result - 4) = 3072;
+    *(_DWORD *)result = v6;
+    *(_DWORD *)(result + 4) = v7;
+    *(_DWORD *)(result + 8) = i;
+  }
+  else
+  {
+    **(_DWORD **)(a2 + 12) -= 2;
+    return (unsigned int)v8;
+  }
+  return result;
+}
+// 8056B51: variable 'v6' is possibly undefined
+// 8056B5A: variable 'i' is possibly undefined
+// 8056B79: variable 'v3' is possibly undefined
+// 8080414: using guessed type int caml_young_ptr;
+// 8080418: using guessed type int caml_young_limit;
+
+//----- (08056B80) --------------------------------------------------------
+unsigned int __usercall camlHashtbl__find_in_bucket_1213@<eax>(int a1@<eax>, int a2@<ebx>)
+{
+  int v2; // edx
+  int i; // ecx
+  unsigned int v4; // eax
+  unsigned int result; // eax
+  int v6; // [esp+0h] [ebp-Ch]
+  int v7; // [esp+4h] [ebp-8h]
+  int v8; // [esp+8h] [ebp-4h]
+
+  while ( 1 )
+  {
+    if ( a1 == 1 )
+      return 1;
+    v6 = *(_DWORD *)(a1 + 8);
+    v8 = *(_DWORD *)(a1 + 4);
+    if ( caml_apply2(**(_DWORD **)(a2 + 8)) != 1 )
+      break;
+    a1 = v6;
+  }
+  for ( i = camlHashtbl__find_in_bucket_1213(v6, v7); ; caml_call_gc(v2, i, v6) )
+  {
+    v4 = caml_young_ptr - 12;
+    caml_young_ptr = v4;
+    if ( v4 >= caml_young_limit )
+      break;
+  }
+  result = v4 + 4;
+  *(_DWORD *)(result - 4) = 2048;
+  *(_DWORD *)result = v8;
+  *(_DWORD *)(result + 4) = i;
+  return result;
+}
+// 8056BB4: variable 'v7' is possibly undefined
+// 8056BE0: variable 'i' is possibly undefined
+// 8056C09: variable 'v2' is possibly undefined
+// 8056C09: variable 'v6' is possibly undefined
+// 8080414: using guessed type int caml_young_ptr;
+// 8080418: using guessed type int caml_young_limit;
+
+//----- (08056C10) --------------------------------------------------------
+int *__usercall camlHashtbl__replace_bucket_1221@<eax>(int *a1@<eax>, int a2@<ebx>, int a3@<edx>, int a4@<ecx>)
+{
+  int v4; // edx
+  int v5; // ecx
+  unsigned int v6; // eax
+  int *result; // eax
+  int v8; // edx
+  int *i; // ecx
+  unsigned int v10; // eax
+  unsigned int v11; // eax
+  _DWORD *v12; // eax
+  char v13; // [esp+0h] [ebp-10h]
+  int v14; // [esp+0h] [ebp-10h]
+  int v15; // [esp+4h] [ebp-Ch]
+  int *v16; // [esp+Ch] [ebp-4h]
+
+  if ( a1 == (int *)1 )
+  {
+    while ( 1 )
+    {
+      v11 = caml_young_ptr - 8;
+      caml_young_ptr = v11;
+      if ( v11 >= caml_young_limit )
+      {
+        v12 = (_DWORD *)(v11 + 4);
+        *(v12 - 1) = 1024;
+        *v12 = &caml_exn_Not_found;
+        caml_raise_exn((int)v12);
+      }
+      caml_call_gc(a3, a4, v13);
+    }
+  }
+  v16 = (int *)a1[2];
+  v14 = a1[1];
+  v15 = *a1;
+  if ( caml_apply2(**(_DWORD **)(a2 + 8)) == 1 )
+  {
+    for ( i = camlHashtbl__replace_bucket_1221(v16, a2); ; caml_call_gc(v8, (int)i, v14) )
+    {
+      v10 = caml_young_ptr - 16;
+      caml_young_ptr = v10;
+      if ( v10 >= caml_young_limit )
+        break;
+    }
+    result = (int *)(v10 + 4);
     *(result - 1) = 3072;
-    *result = v10;
-    result[1] = v9;
-    result[2] = v4;
+    *result = v15;
+    result[1] = v14;
+    result[2] = (int)i;
   }
   else
   {
     while ( 1 )
     {
-      v2 = caml_young_ptr - 16;
-      caml_young_ptr = v2;
-      if ( v2 >= caml_young_limit )
+      v6 = caml_young_ptr - 16;
+      caml_young_ptr = v6;
+      if ( v6 >= caml_young_limit )
         break;
-      caml_call_gc(v9);
+      caml_call_gc(v4, v5, v14);
     }
-    result = (_DWORD *)(v2 + 4);
+    result = (int *)(v6 + 4);
     *(result - 1) = 3072;
-    *result = v10;
+    *result = v15;
     result[1] = *(_DWORD *)(a2 + 16);
-    result[2] = v11;
+    result[2] = (int)v16;
   }
   return result;
 }
 // 8056C10: could not find valid save-restore pair for ebx
-// 8056CC7: variable 'v9' is possibly undefined
-// 8056CCA: variable 'v4' is possibly undefined
-// 8056D0A: variable 'v8' is possibly undefined
+// 8056CC7: variable 'v14' is possibly undefined
+// 8056CCA: variable 'i' is possibly undefined
+// 8056D0A: variable 'a3' is possibly undefined
+// 8056D0A: variable 'a4' is possibly undefined
+// 8056D0A: variable 'v13' is possibly undefined
+// 8056D11: variable 'v8' is possibly undefined
+// 8056D18: variable 'v4' is possibly undefined
+// 8056D18: variable 'v5' is possibly undefined
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -12972,7 +14155,7 @@ int __usercall camlHashtbl__mem_in_bucket_1230@<eax>(int a1@<eax>, int a2@<ebx>)
 }
 
 //----- (08056D80) --------------------------------------------------------
-int __usercall camlHashtbl__insert_bucket_1068@<eax>(int *a1@<eax>, int a2@<ebx>)
+unsigned int __usercall camlHashtbl__insert_bucket_1068@<eax>(int *a1@<eax>, unsigned int a2@<ebx>)
 {
   int v2; // edx
   unsigned int v3; // edx
@@ -13011,7 +14194,7 @@ int __usercall camlHashtbl__insert_bucket_1068@<eax>(int *a1@<eax>, int a2@<ebx>
       caml_young_ptr = v5;
       if ( v5 >= caml_young_limit )
         break;
-      caml_call_gc(v10);
+      caml_call_gc(v3, v4, v10);
     }
     v6 = (int *)(v5 + 4);
     *(v6 - 1) = 3072;
@@ -13039,161 +14222,167 @@ int __usercall camlHashtbl__insert_bucket_1068@<eax>(int *a1@<eax>, int a2@<ebx>
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08056E70) --------------------------------------------------------
-int __usercall camlHashtbl__remove_bucket_1083@<eax>(int *a1@<eax>, int a2@<ebx>)
+unsigned int __usercall camlHashtbl__remove_bucket_1083@<eax>(int *a1@<eax>, int a2@<ebx>)
 {
-  int result; // eax
-  int v3; // ecx
-  unsigned int v4; // eax
-  int v5; // [esp+0h] [ebp-10h]
-  int v6; // [esp+4h] [ebp-Ch]
-  int v7; // [esp+Ch] [ebp-4h]
+  unsigned int result; // eax
+  int v3; // edx
+  int i; // ecx
+  unsigned int v5; // eax
+  int v6; // [esp+0h] [ebp-10h]
+  int v7; // [esp+4h] [ebp-Ch]
+  int *v8; // [esp+Ch] [ebp-4h]
 
   if ( a1 == (int *)1 )
     return 1;
-  v7 = a1[2];
-  v6 = a1[1];
-  v5 = *a1;
+  v8 = (int *)a1[2];
+  v7 = a1[1];
+  v6 = *a1;
   if ( caml_c_call((int (*)(void))caml_compare, *a1) == 1 )
   {
     **(_DWORD **)(a2 + 8) -= 2;
-    result = v7;
+    return (unsigned int)v8;
   }
   else
   {
-    v3 = camlHashtbl__remove_bucket_1083();
-    while ( 1 )
-    {
-      v4 = caml_young_ptr - 16;
-      caml_young_ptr = v4;
-      if ( v4 >= caml_young_limit )
-        break;
-      caml_call_gc(v5);
-    }
-    result = v4 + 4;
-    *(_DWORD *)(result - 4) = 3072;
-    *(_DWORD *)result = v5;
-    *(_DWORD *)(result + 4) = v6;
-    *(_DWORD *)(result + 8) = v3;
-  }
-  return result;
-}
-// 8056E70: could not find valid save-restore pair for ebx
-// 8056EF1: variable 'v5' is possibly undefined
-// 8056EFA: variable 'v3' is possibly undefined
-// 8080414: using guessed type int caml_young_ptr;
-// 8080418: using guessed type int caml_young_limit;
-
-//----- (08056F20) --------------------------------------------------------
-int __usercall camlHashtbl__find_in_bucket_1108@<eax>(_DWORD *a1@<eax>)
-{
-  int v1; // ecx
-  unsigned int v2; // eax
-  int result; // eax
-  _DWORD *v4; // [esp+0h] [ebp-Ch]
-  int v5; // [esp+8h] [ebp-4h]
-
-  while ( 1 )
-  {
-    if ( a1 == (_DWORD *)1 )
-      return 1;
-    v4 = (_DWORD *)a1[2];
-    v5 = a1[1];
-    if ( caml_c_call((int (*)(void))caml_compare, *a1) == 1 )
-      break;
-    a1 = v4;
-  }
-  v1 = camlHashtbl__find_in_bucket_1108();
-  while ( 1 )
-  {
-    v2 = caml_young_ptr - 12;
-    caml_young_ptr = v2;
-    if ( v2 >= caml_young_limit )
-      break;
-    caml_call_gc((char)v4);
-  }
-  result = v2 + 4;
-  *(_DWORD *)(result - 4) = 2048;
-  *(_DWORD *)result = v5;
-  *(_DWORD *)(result + 4) = v1;
-  return result;
-}
-// 8056F84: variable 'v1' is possibly undefined
-// 8056FA9: variable 'v4' is possibly undefined
-// 8080414: using guessed type int caml_young_ptr;
-// 8080418: using guessed type int caml_young_limit;
-
-//----- (08056FB0) --------------------------------------------------------
-_DWORD *__usercall camlHashtbl__replace_bucket_1116@<eax>(int *a1@<eax>, int a2@<ebx>)
-{
-  unsigned int v2; // eax
-  _DWORD *result; // eax
-  int v4; // ecx
-  unsigned int v5; // eax
-  unsigned int v6; // eax
-  _DWORD *v7; // eax
-  char v8; // [esp+0h] [ebp-10h]
-  int v9; // [esp+0h] [ebp-10h]
-  int v10; // [esp+4h] [ebp-Ch]
-  int v11; // [esp+Ch] [ebp-4h]
-
-  if ( a1 == (int *)1 )
-  {
-    while ( 1 )
-    {
-      v6 = caml_young_ptr - 8;
-      caml_young_ptr = v6;
-      if ( v6 >= caml_young_limit )
-      {
-        v7 = (_DWORD *)(v6 + 4);
-        *(v7 - 1) = 1024;
-        *v7 = &caml_exn_Not_found;
-        caml_raise_exn((int)v7);
-      }
-      caml_call_gc(v8);
-    }
-  }
-  v11 = a1[2];
-  v9 = a1[1];
-  v10 = *a1;
-  if ( caml_c_call((int (*)(void))caml_compare, *a1) == 1 )
-  {
-    while ( 1 )
-    {
-      v2 = caml_young_ptr - 16;
-      caml_young_ptr = v2;
-      if ( v2 >= caml_young_limit )
-        break;
-      caml_call_gc(v9);
-    }
-    result = (_DWORD *)(v2 + 4);
-    *(result - 1) = 3072;
-    *result = v10;
-    result[1] = *(_DWORD *)(a2 + 12);
-    result[2] = v11;
-  }
-  else
-  {
-    v4 = camlHashtbl__replace_bucket_1116();
-    while ( 1 )
+    for ( i = camlHashtbl__remove_bucket_1083(v8, a2); ; caml_call_gc(v3, i, v6) )
     {
       v5 = caml_young_ptr - 16;
       caml_young_ptr = v5;
       if ( v5 >= caml_young_limit )
         break;
-      caml_call_gc(v9);
     }
-    result = (_DWORD *)(v5 + 4);
+    result = v5 + 4;
+    *(_DWORD *)(result - 4) = 3072;
+    *(_DWORD *)result = v6;
+    *(_DWORD *)(result + 4) = v7;
+    *(_DWORD *)(result + 8) = i;
+  }
+  return result;
+}
+// 8056E70: could not find valid save-restore pair for ebx
+// 8056EF1: variable 'v6' is possibly undefined
+// 8056EFA: variable 'i' is possibly undefined
+// 8056F19: variable 'v3' is possibly undefined
+// 8080414: using guessed type int caml_young_ptr;
+// 8080418: using guessed type int caml_young_limit;
+
+//----- (08056F20) --------------------------------------------------------
+unsigned int __usercall camlHashtbl__find_in_bucket_1108@<eax>(_DWORD *a1@<eax>)
+{
+  int v1; // edx
+  int i; // ecx
+  unsigned int v3; // eax
+  unsigned int result; // eax
+  _DWORD *v5; // [esp+0h] [ebp-Ch]
+  int v6; // [esp+8h] [ebp-4h]
+
+  while ( 1 )
+  {
+    if ( a1 == (_DWORD *)1 )
+      return 1;
+    v5 = (_DWORD *)a1[2];
+    v6 = a1[1];
+    if ( caml_c_call((int (*)(void))caml_compare, *a1) == 1 )
+      break;
+    a1 = v5;
+  }
+  for ( i = camlHashtbl__find_in_bucket_1108(v5); ; caml_call_gc(v1, i, (char)v5) )
+  {
+    v3 = caml_young_ptr - 12;
+    caml_young_ptr = v3;
+    if ( v3 >= caml_young_limit )
+      break;
+  }
+  result = v3 + 4;
+  *(_DWORD *)(result - 4) = 2048;
+  *(_DWORD *)result = v6;
+  *(_DWORD *)(result + 4) = i;
+  return result;
+}
+// 8056F84: variable 'i' is possibly undefined
+// 8056FA9: variable 'v1' is possibly undefined
+// 8056FA9: variable 'v5' is possibly undefined
+// 8080414: using guessed type int caml_young_ptr;
+// 8080418: using guessed type int caml_young_limit;
+
+//----- (08056FB0) --------------------------------------------------------
+int *__usercall camlHashtbl__replace_bucket_1116@<eax>(int *a1@<eax>, int a2@<ebx>, int a3@<edx>, int a4@<ecx>)
+{
+  int v4; // edx
+  int v5; // ecx
+  unsigned int v6; // eax
+  int *result; // eax
+  int v8; // edx
+  int *i; // ecx
+  unsigned int v10; // eax
+  unsigned int v11; // eax
+  _DWORD *v12; // eax
+  char v13; // [esp+0h] [ebp-10h]
+  int v14; // [esp+0h] [ebp-10h]
+  int v15; // [esp+4h] [ebp-Ch]
+  int *v16; // [esp+Ch] [ebp-4h]
+
+  if ( a1 == (int *)1 )
+  {
+    while ( 1 )
+    {
+      v11 = caml_young_ptr - 8;
+      caml_young_ptr = v11;
+      if ( v11 >= caml_young_limit )
+      {
+        v12 = (_DWORD *)(v11 + 4);
+        *(v12 - 1) = 1024;
+        *v12 = &caml_exn_Not_found;
+        caml_raise_exn((int)v12);
+      }
+      caml_call_gc(a3, a4, v13);
+    }
+  }
+  v16 = (int *)a1[2];
+  v14 = a1[1];
+  v15 = *a1;
+  if ( caml_c_call((int (*)(void))caml_compare, *a1) == 1 )
+  {
+    while ( 1 )
+    {
+      v6 = caml_young_ptr - 16;
+      caml_young_ptr = v6;
+      if ( v6 >= caml_young_limit )
+        break;
+      caml_call_gc(v4, v5, v14);
+    }
+    result = (int *)(v6 + 4);
     *(result - 1) = 3072;
-    *result = v10;
-    result[1] = v9;
-    result[2] = v4;
+    *result = v15;
+    result[1] = *(_DWORD *)(a2 + 12);
+    result[2] = (int)v16;
+  }
+  else
+  {
+    for ( i = camlHashtbl__replace_bucket_1116(v16, a2); ; caml_call_gc(v8, (int)i, v14) )
+    {
+      v10 = caml_young_ptr - 16;
+      caml_young_ptr = v10;
+      if ( v10 >= caml_young_limit )
+        break;
+    }
+    result = (int *)(v10 + 4);
+    *(result - 1) = 3072;
+    *result = v15;
+    result[1] = v14;
+    result[2] = (int)i;
   }
   return result;
 }
 // 8056FB0: could not find valid save-restore pair for ebx
-// 8057067: variable 'v9' is possibly undefined
-// 805706A: variable 'v4' is possibly undefined
-// 80570AA: variable 'v8' is possibly undefined
+// 8057067: variable 'v14' is possibly undefined
+// 805706A: variable 'i' is possibly undefined
+// 80570AA: variable 'a3' is possibly undefined
+// 80570AA: variable 'a4' is possibly undefined
+// 80570AA: variable 'v13' is possibly undefined
+// 80570B1: variable 'v8' is possibly undefined
+// 80570B8: variable 'v4' is possibly undefined
+// 80570B8: variable 'v5' is possibly undefined
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -13253,153 +14442,167 @@ int __usercall camlHashtbl__safehash_1177@<eax>(int a1@<ebx>)
 //----- (080571D0) --------------------------------------------------------
 int __usercall camlHashtbl__add_1179@<eax>(_DWORD *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
 {
-  int v4; // edx
-  unsigned int v5; // edx
-  unsigned int v6; // eax
-  int *v7; // eax
-  int v8; // esi
-  int v9; // esi
-  int result; // eax
-  int v11; // eax
-  int v12; // ecx
-  int v17; // [esp+10h] [ebp-4h]
+  int v4; // eax
+  int v5; // ecx
+  int v6; // edx
+  unsigned int i; // edx
+  unsigned int v8; // eax
+  int *v9; // eax
+  int v10; // esi
+  int v11; // esi
+  int v13; // eax
+  int v14; // ecx
+  int v15; // [esp+0h] [ebp-14h]
+  int v16; // [esp+4h] [ebp-10h]
+  int (__usercall *v17)@<eax>(int *@<eax>, int@<ebx>); // [esp+8h] [ebp-Ch]
+  int v18; // [esp+Ch] [ebp-8h]
+  int v19; // [esp+10h] [ebp-4h]
 
   if ( *(_DWORD *)(a1[1] - 4) >> 10 )
   {
-    v17 = *(_DWORD *)(a1[1] - 4) >> 10;
-    v4 = (((**(int (***)(void))(*(_DWORD *)(*(_DWORD *)(a2 + 12) + 8) + 4))() & 0x7FFFFFFF) >> 1) % v17;
+    v19 = *(_DWORD *)(a1[1] - 4) >> 10;
+    v18 = a2;
+    v16 = a3;
+    v15 = a4;
+    v17 = (int (__usercall *)@<eax>(int *@<eax>, int@<ebx>))a1;
+    v4 = (**(int (***)(void))(*(_DWORD *)(*(_DWORD *)(a2 + 12) + 8) + 4))();
+    v5 = v19;
+    v6 = ((v4 & 0x7FFFFFFF) >> 1) % v19;
   }
   else
   {
     caml_raise_exn((int)&caml_bucket_Division_by_zero);
   }
-  v5 = 2 * v4 + 1;
-  while ( 1 )
+  for ( i = 2 * v6 + 1; ; caml_call_gc(i, v5, v15) )
   {
-    v6 = caml_young_ptr - 16;
-    caml_young_ptr = v6;
-    if ( v6 >= caml_young_limit )
+    v8 = caml_young_ptr - 16;
+    caml_young_ptr = v8;
+    if ( v8 >= caml_young_limit )
       break;
-    caml_call_gc(a4);
   }
-  v7 = (int *)(v6 + 4);
-  *(v7 - 1) = 3072;
-  *v7 = a4;
-  v7[1] = a3;
-  v8 = a1[1];
-  if ( *(_DWORD *)(v8 - 4) >> 9 <= v5 )
+  v9 = (int *)(v8 + 4);
+  *(v9 - 1) = 3072;
+  *v9 = v15;
+  v9[1] = v16;
+  v10 = *((_DWORD *)v17 + 1);
+  if ( *(_DWORD *)(v10 - 4) >> 9 <= i )
     goto LABEL_13;
-  v7[2] = *(_DWORD *)(v8 + 2 * v5 - 2);
-  v9 = a1[1];
-  if ( *(_DWORD *)(v9 - 4) >> 9 <= v5 )
+  v9[2] = *(_DWORD *)(v10 + 2 * i - 2);
+  v11 = *((_DWORD *)v17 + 1);
+  if ( *(_DWORD *)(v11 - 4) >> 9 <= i )
   {
     caml_ml_array_bound_error();
 LABEL_13:
-    v11 = caml_ml_array_bound_error();
-    return camlHashtbl__remove_1185(v11, v12, (int (__usercall *)@<eax>(int *@<eax>, int@<ebx>))a1);
+    v13 = caml_ml_array_bound_error();
+    return camlHashtbl__remove_1185(v13, v14, v17);
   }
-  caml_modify((unsigned int *)(v9 + 2 * v5 - 2), (unsigned int)v7);
-  *a1 += 2;
-  if ( *a1 <= 2 * ((*(_DWORD *)(a1[1] - 4) >> 9) | 1) - 1 )
-    result = 1;
+  caml_modify((unsigned int *)(v11 + 2 * i - 2), (unsigned int)v9);
+  *(_DWORD *)v17 += 2;
+  if ( *(_DWORD *)v17 <= 2 * ((*(_DWORD *)(*((_DWORD *)v17 + 1) - 4) >> 9) | 1) - 1 )
+    return 1;
   else
-    result = camlHashtbl__resize_1061(*(_DWORD *)(a2 + 12), (int)a1);
-  return result;
+    return camlHashtbl__resize_1061(*(_DWORD *)(v18 + 12), (int)v17);
 }
 // 80571D0: could not find valid save-restore pair for ebx
-// 8057230: variable 'v4' is possibly undefined
-// 8057259: variable 'a4' is possibly undefined
-// 805725F: variable 'a3' is possibly undefined
-// 8057266: variable 'a1' is possibly undefined
-// 8057271: variable 'v5' is possibly undefined
-// 80572B2: variable 'a2' is possibly undefined
-// 80572DE: variable 'v12' is possibly undefined
+// 8057230: variable 'v6' is possibly undefined
+// 8057259: variable 'v15' is possibly undefined
+// 805725F: variable 'v16' is possibly undefined
+// 8057266: variable 'v17' is possibly undefined
+// 8057271: variable 'i' is possibly undefined
+// 80572B2: variable 'v18' is possibly undefined
+// 80572C9: variable 'v5' is possibly undefined
+// 80572DE: variable 'v14' is possibly undefined
 // 8073A50: using guessed type char **caml_bucket_Division_by_zero;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (080572E0) --------------------------------------------------------
-int __usercall camlHashtbl__remove_1185@<eax>(int a1@<eax>, int a2@<ecx>, int (__usercall *a3)@<eax>(int *a1@<eax>, int a2@<ebx>)@<ebx>)
+int __usercall camlHashtbl__remove_1185@<eax>(
+        int a1@<eax>,
+        int a2@<ecx>,
+        int (__usercall *a3)@<eax>(int *a1@<eax>, int a2@<ebx>)@<ebx>)
 {
+  int i; // edx
   unsigned int v4; // eax
-  int (__usercall **v5)@<eax>(int *@<eax>, int@<ebx>); // eax
+  unsigned int (__usercall **v5)@<eax>(int *@<eax>, int@<ebx>); // eax
   int v6; // edx
   unsigned int v7; // edx
   int v8; // eax
   unsigned int v9; // ebx
-  int v10; // eax
+  unsigned int v10; // eax
   int v12; // eax
-  int v13; // ecx
-  int v14; // [esp+0h] [ebp-Ch]
+  int v13; // edx
+  int v14; // ecx
   int v15; // [esp+0h] [ebp-Ch]
-  int v16; // [esp+4h] [ebp-8h]
-  int v17; // [esp+8h] [ebp-4h]
-  unsigned int v18; // [esp+8h] [ebp-4h]
+  int v16; // [esp+0h] [ebp-Ch]
+  int v17; // [esp+4h] [ebp-8h]
+  int v18; // [esp+8h] [ebp-4h]
+  unsigned int v19; // [esp+8h] [ebp-4h]
 
-  while ( 1 )
+  for ( i = a1; ; caml_call_gc(i, a2, v15) )
   {
     v4 = caml_young_ptr - 24;
     caml_young_ptr = v4;
     if ( v4 >= caml_young_limit )
       break;
-    caml_call_gc(v14);
   }
-  v5 = (int (__usercall **)@<eax>(int *@<eax>, int@<ebx>))(v4 + 4);
-  *(v5 - 1) = (int (__usercall *)@<eax>(int *@<eax>, int@<ebx>))5367;
+  v5 = (unsigned int (__usercall **)@<eax>(int *@<eax>, int@<ebx>))(v4 + 4);
+  *(v5 - 1) = (unsigned int (__usercall *)@<eax>(int *@<eax>, int@<ebx>))5367;
   *v5 = camlHashtbl__code_begin;
-  v5[1] = (int (__usercall *)@<eax>(int *@<eax>, int@<ebx>))3;
-  v5[2] = *(int (__usercall **)@<eax>(int *@<eax>, int@<ebx>))(a2 + 12);
-  v5[3] = (int (__usercall *)@<eax>(int *@<eax>, int@<ebx>))a1;
-  v5[4] = a3;
-  if ( *(_DWORD *)(*(_DWORD *)(a1 + 4) - 4) >> 10 )
+  v5[1] = (unsigned int (__usercall *)@<eax>(int *@<eax>, int@<ebx>))3;
+  v5[2] = *(unsigned int (__usercall **)@<eax>(int *@<eax>, int@<ebx>))(a2 + 12);
+  v5[3] = (unsigned int (__usercall *)@<eax>(int *@<eax>, int@<ebx>))i;
+  v5[4] = (unsigned int (__usercall *)@<eax>(int *@<eax>, int@<ebx>))a3;
+  if ( *(_DWORD *)(*(_DWORD *)(i + 4) - 4) >> 10 )
   {
-    v17 = *(_DWORD *)(*(_DWORD *)(a1 + 4) - 4) >> 10;
-    v16 = (int)v5;
-    v14 = a1;
-    v6 = (((**(int (***)(void))(*(_DWORD *)(*(_DWORD *)(a2 + 16) + 8) + 4))() & 0x7FFFFFFF) >> 1) % v17;
+    v18 = *(_DWORD *)(*(_DWORD *)(i + 4) - 4) >> 10;
+    v17 = (int)v5;
+    v15 = i;
+    v6 = (((**(int (***)(void))(*(_DWORD *)(*(_DWORD *)(a2 + 16) + 8) + 4))() & 0x7FFFFFFF) >> 1) % v18;
   }
   else
   {
     caml_raise_exn((int)&caml_bucket_Division_by_zero);
   }
   v7 = 2 * v6 + 1;
-  v18 = v7;
-  v8 = v14;
-  v15 = *(_DWORD *)(v14 + 4);
-  v9 = *(_DWORD *)(v15 - 4) >> 9;
+  v19 = v7;
+  v8 = v15;
+  v16 = *(_DWORD *)(v15 + 4);
+  v9 = *(_DWORD *)(v16 - 4) >> 9;
   if ( v9 > v7 )
   {
     v9 = *(_DWORD *)(v8 + 4);
     if ( *(_DWORD *)(v9 - 4) >> 9 > v7 )
     {
-      v10 = camlHashtbl__code_begin(*(int **)(v9 + 2 * v7 - 2), v16);
-      caml_modify((unsigned int *)(v15 + 2 * v18 - 2), v10);
+      v10 = camlHashtbl__code_begin(*(int **)(v9 + 2 * v7 - 2), v17);
+      caml_modify((unsigned int *)(v16 + 2 * v19 - 2), v10);
       return 1;
     }
     caml_ml_array_bound_error();
   }
   v12 = caml_ml_array_bound_error();
-  return camlHashtbl__find_rec_1193(v12, v13, v9);
+  return camlHashtbl__find_rec_1193(v12, v14, v9, v13);
 }
 // 8057315: variable 'a2' is possibly undefined
-// 805731B: variable 'a1' is possibly undefined
+// 805731B: variable 'i' is possibly undefined
 // 8057370: variable 'v6' is possibly undefined
-// 8057377: variable 'v14' is possibly undefined
-// 805739F: variable 'v16' is possibly undefined
+// 8057377: variable 'v15' is possibly undefined
+// 805739F: variable 'v17' is possibly undefined
+// 80573DA: variable 'v14' is possibly undefined
 // 80573DA: variable 'v13' is possibly undefined
 // 8073A50: using guessed type char **caml_bucket_Division_by_zero;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (080573E0) --------------------------------------------------------
-int __usercall camlHashtbl__find_rec_1193@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
+int __usercall camlHashtbl__find_rec_1193@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>, int a4@<edx>)
 {
-  unsigned int v4; // eax
-  _DWORD *v5; // eax
-  int v6; // [esp+0h] [ebp-10h]
-  int v7; // [esp+4h] [ebp-Ch]
-  int v8; // [esp+8h] [ebp-8h]
-  int v9; // [esp+Ch] [ebp-4h]
+  unsigned int v5; // eax
+  _DWORD *v6; // eax
+  int v7; // [esp+0h] [ebp-10h]
+  int v8; // [esp+4h] [ebp-Ch]
+  int v9; // [esp+8h] [ebp-8h]
+  int v10; // [esp+Ch] [ebp-4h]
 
   while ( 1 )
   {
@@ -13407,190 +14610,213 @@ int __usercall camlHashtbl__find_rec_1193@<eax>(int a1@<eax>, int a2@<ecx>, int 
     {
       while ( 1 )
       {
-        v4 = caml_young_ptr - 8;
-        caml_young_ptr = v4;
-        if ( v4 >= caml_young_limit )
+        v5 = caml_young_ptr - 8;
+        caml_young_ptr = v5;
+        if ( v5 >= caml_young_limit )
         {
-          v5 = (_DWORD *)(v4 + 4);
-          *(v5 - 1) = 1024;
-          *v5 = &caml_exn_Not_found;
-          caml_raise_exn((int)v5);
+          v6 = (_DWORD *)(v5 + 4);
+          *(v6 - 1) = 1024;
+          *v6 = &caml_exn_Not_found;
+          caml_raise_exn((int)v6);
         }
-        caml_call_gc(v6);
+        caml_call_gc(a4, a2, v7);
       }
     }
-    v8 = a2;
-    v6 = a1;
-    v7 = *(_DWORD *)(a3 + 8);
-    v9 = *(_DWORD *)(a3 + 4);
+    v9 = a2;
+    v7 = a1;
+    v8 = *(_DWORD *)(a3 + 8);
+    v10 = *(_DWORD *)(a3 + 4);
     if ( caml_apply2(**(_DWORD **)(a2 + 12)) != 1 )
       break;
-    a1 = v6;
-    a3 = v7;
-    a2 = v8;
+    a1 = v7;
+    a3 = v8;
+    a2 = v9;
   }
-  return v9;
+  return v10;
 }
-// 805745A: variable 'v6' is possibly undefined
+// 805745A: variable 'a4' is possibly undefined
+// 805745A: variable 'a2' is possibly undefined
+// 805745A: variable 'v7' is possibly undefined
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08057470) --------------------------------------------------------
-int __usercall camlHashtbl__find_226@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
+int __usercall camlHashtbl__find_1198@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 {
-  int v3; // edx
-  unsigned int v4; // edx
-  int (__usercall *v5)@<eax>(int@<eax>, int@<ebx>); // ebx
-  int v6; // ebx
-  int result; // eax
-  int v8; // eax
-  int v9; // eax
-  unsigned int v10; // eax
-  _DWORD *v11; // eax
-  unsigned int v12; // eax
-  _DWORD *v13; // eax
-  unsigned int v14; // eax
-  _DWORD *v15; // eax
-  int v16; // eax
-  int v17; // ecx
-  int v18; // [esp+0h] [ebp-10h]
-  int v19; // [esp+0h] [ebp-10h]
-  int v22; // [esp+Ch] [ebp-4h]
-  int v23; // [esp+Ch] [ebp-4h]
-  int v24; // [esp+Ch] [ebp-4h]
-  int v25; // [esp+Ch] [ebp-4h]
+  int v3; // eax
+  int v4; // ecx
+  int v5; // edx
+  unsigned int v6; // edx
+  int (__usercall *v7)@<eax>(int@<eax>, int@<ebx>); // ebx
+  int v8; // ebx
+  int v9; // edx
+  int v10; // ecx
+  int v12; // eax
+  int v13; // edx
+  int v14; // ecx
+  int v15; // eax
+  int v16; // edx
+  unsigned int v17; // eax
+  _DWORD *v18; // eax
+  unsigned int v19; // eax
+  _DWORD *v20; // eax
+  unsigned int v21; // eax
+  _DWORD *v22; // eax
+  int v23; // eax
+  int v24; // ecx
+  int v25; // [esp+0h] [ebp-10h]
+  int v26; // [esp+0h] [ebp-10h]
+  int v27; // [esp+4h] [ebp-Ch]
+  int v28; // [esp+8h] [ebp-8h]
+  int v29; // [esp+Ch] [ebp-4h]
+  int v30; // [esp+Ch] [ebp-4h]
+  int v31; // [esp+Ch] [ebp-4h]
+  int v32; // [esp+Ch] [ebp-4h]
 
   if ( *(_DWORD *)(*(_DWORD *)(a1 + 4) - 4) >> 10 )
   {
-    v22 = *(_DWORD *)(*(_DWORD *)(a1 + 4) - 4) >> 10;
-    v18 = a1;
-    v3 = (((**(int (***)(void))(*(_DWORD *)(*(_DWORD *)(a2 + 16) + 8) + 4))() & 0x7FFFFFFF) >> 1) % v22;
+    v29 = *(_DWORD *)(*(_DWORD *)(a1 + 4) - 4) >> 10;
+    v27 = a2;
+    v28 = a3;
+    v25 = a1;
+    v3 = (**(int (***)(void))(*(_DWORD *)(*(_DWORD *)(a2 + 16) + 8) + 4))();
+    v4 = v29;
+    v5 = ((v3 & 0x7FFFFFFF) >> 1) % v29;
   }
   else
   {
     caml_raise_exn((int)&caml_bucket_Division_by_zero);
   }
-  v4 = 2 * v3 + 1;
-  v5 = *(int (__usercall **)@<eax>(int@<eax>, int@<ebx>))(v18 + 4);
-  if ( *((_DWORD *)v5 - 1) >> 9 <= v4 )
+  v6 = 2 * v5 + 1;
+  v7 = *(int (__usercall **)@<eax>(int@<eax>, int@<ebx>))(v25 + 4);
+  if ( *((_DWORD *)v7 - 1) >> 9 <= v6 )
   {
-    v16 = caml_ml_array_bound_error();
-    return camlHashtbl__find_all_1210(v16, v17, v5);
+    v23 = caml_ml_array_bound_error();
+    return camlHashtbl__find_all_1210(v23, v24, v7);
   }
-  v6 = *(_DWORD *)((char *)v5 + 2 * v4 - 2);
-  if ( v6 == 1 )
+  v8 = *(_DWORD *)((char *)v7 + 2 * v6 - 2);
+  if ( v8 == 1 )
   {
     while ( 1 )
     {
 LABEL_19:
-      v14 = caml_young_ptr - 8;
-      caml_young_ptr = v14;
-      if ( v14 >= caml_young_limit )
+      v21 = caml_young_ptr - 8;
+      caml_young_ptr = v21;
+      if ( v21 >= caml_young_limit )
       {
-        v15 = (_DWORD *)(v14 + 4);
-        *(v15 - 1) = 1024;
-        *v15 = &caml_exn_Not_found;
-        caml_raise_exn((int)v15);
+        v22 = (_DWORD *)(v21 + 4);
+        *(v22 - 1) = 1024;
+        *v22 = &caml_exn_Not_found;
+        caml_raise_exn((int)v22);
       }
-      caml_call_gc(v18);
+      caml_call_gc(v6, v4, v25);
     }
   }
-  v18 = *(_DWORD *)(v6 + 8);
-  v23 = *(_DWORD *)(v6 + 4);
-  if ( caml_apply2(**(_DWORD **)(a2 + 12)) != 1 )
-    return v23;
-  v8 = v18;
-  if ( v18 == 1 )
+  v25 = *(_DWORD *)(v8 + 8);
+  v30 = *(_DWORD *)(v8 + 4);
+  if ( caml_apply2(**(_DWORD **)(v27 + 12)) != 1 )
+    return v30;
+  v12 = v25;
+  if ( v25 == 1 )
   {
 LABEL_17:
     while ( 1 )
     {
-      v12 = caml_young_ptr - 8;
-      caml_young_ptr = v12;
-      if ( v12 >= caml_young_limit )
+      v19 = caml_young_ptr - 8;
+      caml_young_ptr = v19;
+      if ( v19 >= caml_young_limit )
         break;
-      caml_call_gc(v18);
+      caml_call_gc(v9, v10, v25);
     }
-    v13 = (_DWORD *)(v12 + 4);
-    *(v13 - 1) = 1024;
-    *v13 = &caml_exn_Not_found;
-    caml_raise_exn((int)v13);
+    v20 = (_DWORD *)(v19 + 4);
+    *(v20 - 1) = 1024;
+    *v20 = &caml_exn_Not_found;
+    caml_raise_exn((int)v20);
     goto LABEL_19;
   }
-  v18 = *(_DWORD *)(v18 + 8);
-  v24 = *(_DWORD *)(v8 + 4);
-  if ( caml_apply2(**(_DWORD **)(a2 + 12)) != 1 )
-    return v24;
-  v9 = v18;
-  if ( v18 == 1 )
+  v25 = *(_DWORD *)(v25 + 8);
+  v31 = *(_DWORD *)(v12 + 4);
+  if ( caml_apply2(**(_DWORD **)(v27 + 12)) != 1 )
+    return v31;
+  v15 = v25;
+  if ( v25 == 1 )
   {
     while ( 1 )
     {
-      v10 = caml_young_ptr - 8;
-      caml_young_ptr = v10;
-      if ( v10 >= caml_young_limit )
+      v17 = caml_young_ptr - 8;
+      caml_young_ptr = v17;
+      if ( v17 >= caml_young_limit )
         break;
-      caml_call_gc(v18);
+      caml_call_gc(v13, v14, v25);
     }
-    v11 = (_DWORD *)(v10 + 4);
-    *(v11 - 1) = 1024;
-    *v11 = &caml_exn_Not_found;
-    caml_raise_exn((int)v11);
+    v18 = (_DWORD *)(v17 + 4);
+    *(v18 - 1) = 1024;
+    *v18 = &caml_exn_Not_found;
+    caml_raise_exn((int)v18);
     goto LABEL_17;
   }
-  v19 = *(_DWORD *)(v18 + 8);
-  v25 = *(_DWORD *)(v9 + 4);
-  if ( caml_apply2(**(_DWORD **)(a2 + 12)) == 1 )
-    result = camlHashtbl__find_rec_1193(a3, *(_DWORD *)(a2 + 20), v19);
+  v26 = *(_DWORD *)(v25 + 8);
+  v32 = *(_DWORD *)(v15 + 4);
+  if ( caml_apply2(**(_DWORD **)(v27 + 12)) == 1 )
+    return camlHashtbl__find_rec_1193(v28, *(_DWORD *)(v27 + 20), v26, v16);
   else
-    result = v25;
-  return result;
+    return v32;
 }
-// 80574D0: variable 'v3' is possibly undefined
-// 80574D6: variable 'v18' is possibly undefined
-// 8057507: variable 'a2' is possibly undefined
-// 80575C1: variable 'a3' is possibly undefined
-// 805767A: variable 'v17' is possibly undefined
+// 80574D0: variable 'v5' is possibly undefined
+// 80574D6: variable 'v25' is possibly undefined
+// 8057507: variable 'v27' is possibly undefined
+// 80575C1: variable 'v28' is possibly undefined
+// 80575C1: variable 'v16' is possibly undefined
+// 805765A: variable 'v6' is possibly undefined
+// 805765A: variable 'v4' is possibly undefined
+// 8057661: variable 'v9' is possibly undefined
+// 8057661: variable 'v10' is possibly undefined
+// 8057668: variable 'v13' is possibly undefined
+// 8057668: variable 'v14' is possibly undefined
+// 805767A: variable 'v24' is possibly undefined
 // 8073A50: using guessed type char **caml_bucket_Division_by_zero;
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08057680) --------------------------------------------------------
-int __usercall camlHashtbl__find_all_1210@<eax>(int a1@<eax>, int a2@<ecx>, int (__usercall *a3)@<eax>(int a1@<eax>, int a2@<ebx>)@<ebx>)
+int __usercall camlHashtbl__find_all_1210@<eax>(
+        int a1@<eax>,
+        int a2@<ecx>,
+        int (__usercall *a3)@<eax>(int a1@<eax>, int a2@<ebx>)@<ebx>)
 {
+  int i; // edx
   unsigned int v4; // eax
-  int (__usercall **v5)@<eax>(int@<eax>, int@<ebx>); // eax
+  unsigned int (__usercall **v5)@<eax>(int@<eax>, int@<ebx>); // eax
   int v6; // edx
   unsigned int v7; // edx
-  int v8; // ebx
+  int *(__usercall *v8)@<eax>(int *@<eax>, int@<ebx>); // ebx
   _DWORD *v10; // eax
   int v11; // edx
-  int v12; // ecx
+  int *(__usercall *v12)@<eax>(int *@<eax>, int@<ebx>); // ecx
   int v13; // [esp+0h] [ebp-Ch]
   int v14; // [esp+4h] [ebp-8h]
   int v15; // [esp+8h] [ebp-4h]
 
-  while ( 1 )
+  for ( i = a1; ; caml_call_gc(i, a2, v13) )
   {
     v4 = caml_young_ptr - 20;
     caml_young_ptr = v4;
     if ( v4 >= caml_young_limit )
       break;
-    caml_call_gc(v13);
   }
-  v5 = (int (__usercall **)@<eax>(int@<eax>, int@<ebx>))(v4 + 4);
-  *(v5 - 1) = (int (__usercall *)@<eax>(int@<eax>, int@<ebx>))4343;
+  v5 = (unsigned int (__usercall **)@<eax>(int@<eax>, int@<ebx>))(v4 + 4);
+  *(v5 - 1) = (unsigned int (__usercall *)@<eax>(int@<eax>, int@<ebx>))4343;
   *v5 = camlHashtbl__find_in_bucket_1213;
-  v5[1] = (int (__usercall *)@<eax>(int@<eax>, int@<ebx>))3;
-  v5[2] = *(int (__usercall **)@<eax>(int@<eax>, int@<ebx>))(a2 + 12);
-  v5[3] = a3;
-  if ( *(_DWORD *)(*(_DWORD *)(a1 + 4) - 4) >> 10 )
+  v5[1] = (unsigned int (__usercall *)@<eax>(int@<eax>, int@<ebx>))3;
+  v5[2] = *(unsigned int (__usercall **)@<eax>(int@<eax>, int@<ebx>))(a2 + 12);
+  v5[3] = (unsigned int (__usercall *)@<eax>(int@<eax>, int@<ebx>))a3;
+  if ( *(_DWORD *)(*(_DWORD *)(i + 4) - 4) >> 10 )
   {
-    v15 = *(_DWORD *)(*(_DWORD *)(a1 + 4) - 4) >> 10;
+    v15 = *(_DWORD *)(*(_DWORD *)(i + 4) - 4) >> 10;
     v14 = (int)v5;
-    v13 = a1;
+    v13 = i;
     v6 = (((**(int (***)(void))(*(_DWORD *)(*(_DWORD *)(a2 + 16) + 8) + 4))() & 0x7FFFFFFF) >> 1) % v15;
   }
   else
@@ -13598,14 +14824,14 @@ int __usercall camlHashtbl__find_all_1210@<eax>(int a1@<eax>, int a2@<ecx>, int 
     caml_raise_exn((int)&caml_bucket_Division_by_zero);
   }
   v7 = 2 * v6 + 1;
-  v8 = *(_DWORD *)(v13 + 4);
-  if ( *(_DWORD *)(v8 - 4) >> 9 > v7 )
-    return camlHashtbl__find_in_bucket_1213(*(_DWORD *)(v8 + 2 * v7 - 2), v14);
+  v8 = *(int *(__usercall **)@<eax>(int *@<eax>, int@<ebx>))(v13 + 4);
+  if ( *((_DWORD *)v8 - 1) >> 9 > v7 )
+    return camlHashtbl__find_in_bucket_1213(*(_DWORD *)((char *)v8 + 2 * v7 - 2), v14);
   v10 = (_DWORD *)caml_ml_array_bound_error();
   return camlHashtbl__replace_1217(v10, v11, v12, v8);
 }
 // 80576B5: variable 'a2' is possibly undefined
-// 80576BE: variable 'a1' is possibly undefined
+// 80576BE: variable 'i' is possibly undefined
 // 8057710: variable 'v6' is possibly undefined
 // 8057716: variable 'v13' is possibly undefined
 // 805772E: variable 'v14' is possibly undefined
@@ -13616,10 +14842,14 @@ int __usercall camlHashtbl__find_all_1210@<eax>(int a1@<eax>, int a2@<ecx>, int 
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08057750) --------------------------------------------------------
-int __usercall camlHashtbl__replace_1217@<eax>(_DWORD *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
+int __usercall camlHashtbl__replace_1217@<eax>(
+        _DWORD *a1@<eax>,
+        int a2@<edx>,
+        int *(__usercall *a3)@<eax>(int *a1@<eax>, int a2@<ebx>)@<ecx>,
+        int *(__usercall *a4)@<eax>(int *a1@<eax>, int a2@<ebx>)@<ebx>)
 {
   unsigned int v5; // eax
-  _DWORD *v6; // eax
+  int *(__usercall **v6)@<eax>(int *@<eax>, int@<ebx>, int@<edx>, int@<ecx>); // eax
   int v7; // edx
   unsigned int v8; // edx
   int v9; // ecx
@@ -13627,80 +14857,86 @@ int __usercall camlHashtbl__replace_1217@<eax>(_DWORD *a1@<eax>, int a2@<edx>, i
   char **v11; // ebx
   int v12; // edx
   _DWORD *v13; // eax
-  int result; // eax
   int *v15; // eax
   unsigned int v16; // edx
-  _DWORD *v17; // [esp+0h] [ebp-20h]
-  int v19; // [esp+8h] [ebp-18h]
-  int *v20; // [esp+8h] [ebp-18h]
-  unsigned int v22; // [esp+18h] [ebp-8h]
+  int v17; // ecx
+  _DWORD *v18; // [esp+0h] [ebp-20h]
+  int *(__usercall *v19)@<eax>(int *@<eax>, int@<ebx>); // [esp+4h] [ebp-1Ch]
+  int v20; // [esp+8h] [ebp-18h]
+  int *v21; // [esp+8h] [ebp-18h]
+  int v22; // [esp+Ch] [ebp-14h]
+  unsigned int v23; // [esp+18h] [ebp-8h]
+  int *(__usercall *v24)@<eax>(int *@<eax>, int@<ebx>); // [esp+1Ch] [ebp-4h]
 
   v5 = caml_young_ptr - 24;
   caml_young_ptr = v5;
   if ( v5 < caml_young_limit )
     JUMPOUT(0x8057928);
-  v6 = (_DWORD *)(v5 + 4);
-  *(v6 - 1) = 5367;
+  v6 = (int *(__usercall **)@<eax>(int *@<eax>, int@<ebx>, int@<edx>, int@<ecx>))(v5 + 4);
+  *(v6 - 1) = (int *(__usercall *)@<eax>(int *@<eax>, int@<ebx>, int@<edx>, int@<ecx>))5367;
   *v6 = camlHashtbl__replace_bucket_1221;
-  v6[1] = 3;
-  v6[2] = *(_DWORD *)(a2 + 12);
-  v6[3] = a4;
-  v6[4] = a3;
+  v6[1] = (int *(__usercall *)@<eax>(int *@<eax>, int@<ebx>, int@<edx>, int@<ecx>))3;
+  v6[2] = *(int *(__usercall **)@<eax>(int *@<eax>, int@<ebx>, int@<edx>, int@<ecx>))(a2 + 12);
+  v6[3] = (int *(__usercall *)@<eax>(int *@<eax>, int@<ebx>, int@<edx>, int@<ecx>))a4;
+  v6[4] = (int *(__usercall *)@<eax>(int *@<eax>, int@<ebx>, int@<edx>, int@<ecx>))a3;
   if ( *(_DWORD *)(a1[1] - 4) >> 10 )
   {
-    v19 = *(_DWORD *)(a1[1] - 4) >> 10;
-    v17 = a1;
-    v7 = (((**(int (***)(void))(*(_DWORD *)(*(_DWORD *)(a2 + 16) + 8) + 4))() & 0x7FFFFFFF) >> 1) % v19;
+    v20 = *(_DWORD *)(a1[1] - 4) >> 10;
+    v22 = a2;
+    v19 = a3;
+    v24 = a4;
+    v18 = a1;
+    v7 = (((**(int (***)(void))(*(_DWORD *)(*(_DWORD *)(a2 + 16) + 8) + 4))() & 0x7FFFFFFF) >> 1) % v20;
   }
   else
   {
     caml_raise_exn((int)&caml_bucket_Division_by_zero);
   }
   v8 = 2 * v7 + 1;
-  v22 = v8;
-  v9 = v17[1];
+  v23 = v8;
+  v9 = v18[1];
   if ( *(_DWORD *)(v9 - 4) >> 9 <= v8 )
     JUMPOUT(0x805793C);
-  v20 = *(int **)(v9 + 2 * v8 - 2);
-  v10 = (char ***)sub_80578D0(v20, v8, (int)v17);
+  v21 = *(int **)(v9 + 2 * v8 - 2);
+  v10 = (char ***)sub_80578D0(v21, v8, (int)v18, v9);
   v11 = *v10;
   if ( *v10 == &caml_exn_Not_found )
   {
-    v12 = v17[1];
-    if ( *(_DWORD *)(v12 - 4) >> 9 <= v22 )
+    v12 = v18[1];
+    if ( *(_DWORD *)(v12 - 4) >> 9 <= v23 )
       JUMPOUT(0x8057937);
     v13 = (_DWORD *)(caml_young_ptr - 16);
     caml_young_ptr = (int)v13;
     if ( (unsigned int)v13 < caml_young_limit )
       JUMPOUT(0x805791E);
     *v13 = 3072;
-    v13[1] = a4;
-    v13[2] = a3;
-    v13[3] = v20;
-    caml_modify((unsigned int *)(v12 + 2 * v22 - 2), (unsigned int)(v13 + 1));
-    *v17 += 2;
-    if ( *v17 <= 2 * ((*(_DWORD *)(v17[1] - 4) >> 9) | 1) - 1 )
-      result = 1;
+    v13[1] = v24;
+    v13[2] = v19;
+    v13[3] = v21;
+    caml_modify((unsigned int *)(v12 + 2 * v23 - 2), (unsigned int)(v13 + 1));
+    *v18 += 2;
+    if ( *v18 <= 2 * ((*(_DWORD *)(v18[1] - 4) >> 9) | 1) - 1 )
+      return 1;
     else
-      result = camlHashtbl__resize_1061(*(_DWORD *)(a2 + 16), (int)v17);
+      return camlHashtbl__resize_1061(*(_DWORD *)(v22 + 16), (int)v18);
   }
   else
   {
     v15 = (int *)caml_raise_exn((int)v10);
-    result = sub_80578D0(v15, v16, (int)v11);
+    return sub_80578D0(v15, v16, (int)v11, v17);
   }
-  return result;
 }
 // 8057768: control flows out of bounds to 8057928
 // 8057805: control flows out of bounds to 805793C
 // 8057839: control flows out of bounds to 8057937
 // 8057852: control flows out of bounds to 805791E
 // 80577F0: variable 'v7' is possibly undefined
-// 80577FA: variable 'v17' is possibly undefined
-// 8057866: variable 'a4' is possibly undefined
-// 805786C: variable 'a3' is possibly undefined
-// 80578A1: variable 'a2' is possibly undefined
+// 80577FA: variable 'v18' is possibly undefined
+// 8057866: variable 'v24' is possibly undefined
+// 805786C: variable 'v19' is possibly undefined
+// 80578A1: variable 'v22' is possibly undefined
 // 80578CA: variable 'v16' is possibly undefined
+// 80578CA: variable 'v17' is possibly undefined
 // 8073A50: using guessed type char **caml_bucket_Division_by_zero;
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 8080414: using guessed type int caml_young_ptr;
@@ -13708,44 +14944,48 @@ int __usercall camlHashtbl__replace_1217@<eax>(_DWORD *a1@<eax>, int a2@<edx>, i
 
 //----- (080578D0) --------------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
-int __usercall sub_80578D0@<eax>(int *a1@<eax>, unsigned int a2@<edx>, int a3@<ebx>)
+int __usercall sub_80578D0@<eax>(int *a1@<eax>, unsigned int a2@<edx>, int a3@<ebx>, int a4@<ecx>)
 {
-  int (__usercall *v3)@<eax>(int@<eax>, int@<ebx>); // ebx
-  _DWORD *v4; // eax
+  int (__usercall *v4)@<eax>(int@<eax>, int@<ebx>); // ebx
+  int *v5; // eax
   int result; // eax
-  int v6; // eax
-  int v7; // ecx
-  _DWORD v8[7]; // [esp-28h] [ebp-28h] BYREF
-  int v9; // [esp-Ch] [ebp-Ch]
-  int v10; // [esp-8h] [ebp-8h]
+  int v7; // eax
+  int v8; // ecx
+  _DWORD v9[7]; // [esp-28h] [ebp-28h] BYREF
+  int v10; // [esp-Ch] [ebp-Ch]
+  int v11; // [esp-8h] [ebp-8h]
 
-  v8[0] = caml_exception_pointer;
-  caml_exception_pointer = (int)v8;
-  v9 = *(_DWORD *)(a3 + 4);
-  v3 = (int (__usercall *)@<eax>(int@<eax>, int@<ebx>))(*(_DWORD *)(v9 - 4) >> 9);
-  if ( (unsigned int)v3 <= a2 )
+  v9[0] = caml_exception_pointer;
+  caml_exception_pointer = (int)v9;
+  v10 = *(_DWORD *)(a3 + 4);
+  v4 = (int (__usercall *)@<eax>(int@<eax>, int@<ebx>))(*(_DWORD *)(v10 - 4) >> 9);
+  if ( (unsigned int)v4 <= a2 )
   {
     caml_ml_array_bound_error();
     caml_ml_array_bound_error();
-    v6 = caml_ml_array_bound_error();
-    result = camlHashtbl__mem_1227(v6, v7, v3);
+    v7 = caml_ml_array_bound_error();
+    return camlHashtbl__mem_1227(v7, v8, v4);
   }
   else
   {
-    v4 = camlHashtbl__replace_bucket_1221(a1, v8[6]);
-    caml_modify((unsigned int *)(v9 + 2 * v10 - 2), (unsigned int)v4);
+    v5 = camlHashtbl__replace_bucket_1221(a1, v9[6], a2, a4);
+    caml_modify((unsigned int *)(v10 + 2 * v11 - 2), (unsigned int)v5);
     result = 1;
-    caml_exception_pointer = v8[0];
+    caml_exception_pointer = v9[0];
   }
   return result;
 }
 // 805791D: positive sp value 24 has been found
-// 8057941: variable 'v7' is possibly undefined
+// 8057941: variable 'v8' is possibly undefined
 // 807D280: using guessed type int caml_exception_pointer;
 
 //----- (08057950) --------------------------------------------------------
-int __usercall camlHashtbl__mem_1227@<eax>(int a1@<eax>, int a2@<ecx>, int (__usercall *a3)@<eax>(int a1@<eax>, int a2@<ebx>)@<ebx>)
+int __usercall camlHashtbl__mem_1227@<eax>(
+        int a1@<eax>,
+        int a2@<ecx>,
+        int (__usercall *a3)@<eax>(int a1@<eax>, int a2@<ebx>)@<ebx>)
 {
+  int i; // edx
   unsigned int v4; // eax
   int (__usercall **v5)@<eax>(int@<eax>, int@<ebx>); // eax
   int v6; // edx
@@ -13756,13 +14996,12 @@ int __usercall camlHashtbl__mem_1227@<eax>(int a1@<eax>, int a2@<ecx>, int (__us
   int v12; // [esp+4h] [ebp-8h]
   int v13; // [esp+8h] [ebp-4h]
 
-  while ( 1 )
+  for ( i = a1; ; caml_call_gc(i, a2, v11) )
   {
     v4 = caml_young_ptr - 20;
     caml_young_ptr = v4;
     if ( v4 >= caml_young_limit )
       break;
-    caml_call_gc(v11);
   }
   v5 = (int (__usercall **)@<eax>(int@<eax>, int@<ebx>))(v4 + 4);
   *(v5 - 1) = (int (__usercall *)@<eax>(int@<eax>, int@<ebx>))4343;
@@ -13770,11 +15009,11 @@ int __usercall camlHashtbl__mem_1227@<eax>(int a1@<eax>, int a2@<ecx>, int (__us
   v5[1] = (int (__usercall *)@<eax>(int@<eax>, int@<ebx>))3;
   v5[2] = *(int (__usercall **)@<eax>(int@<eax>, int@<ebx>))(a2 + 12);
   v5[3] = a3;
-  if ( *(_DWORD *)(*(_DWORD *)(a1 + 4) - 4) >> 10 )
+  if ( *(_DWORD *)(*(_DWORD *)(i + 4) - 4) >> 10 )
   {
-    v13 = *(_DWORD *)(*(_DWORD *)(a1 + 4) - 4) >> 10;
+    v13 = *(_DWORD *)(*(_DWORD *)(i + 4) - 4) >> 10;
     v12 = (int)v5;
-    v11 = a1;
+    v11 = i;
     v6 = (((**(int (***)(void))(*(_DWORD *)(*(_DWORD *)(a2 + 16) + 8) + 4))() & 0x7FFFFFFF) >> 1) % v13;
   }
   else
@@ -13789,7 +15028,7 @@ int __usercall camlHashtbl__mem_1227@<eax>(int a1@<eax>, int a2@<ecx>, int (__us
   return camlHashtbl__hash_1031(v10);
 }
 // 8057985: variable 'a2' is possibly undefined
-// 805798E: variable 'a1' is possibly undefined
+// 805798E: variable 'i' is possibly undefined
 // 80579E0: variable 'v6' is possibly undefined
 // 80579E6: variable 'v11' is possibly undefined
 // 80579FE: variable 'v12' is possibly undefined
@@ -13813,8 +15052,8 @@ int __usercall camlHashtbl__clear_1054@<eax>(_DWORD *a1@<eax>)
   int v3; // esi
   int v4; // ecx
   unsigned int v5; // eax
-  int result; // eax
   int v7; // eax
+  int v8; // edx
 
   v2 = 1;
   v3 = ((*(_DWORD *)(a1[1] - 4) >> 9) | 1) - 2;
@@ -13822,7 +15061,7 @@ int __usercall camlHashtbl__clear_1054@<eax>(_DWORD *a1@<eax>)
   {
 LABEL_4:
     *a1 = 1;
-    result = 1;
+    return 1;
   }
   else
   {
@@ -13838,35 +15077,37 @@ LABEL_4:
         goto LABEL_4;
     }
     v7 = caml_ml_array_bound_error();
-    result = (int)camlHashtbl__copy_1057(v7);
+    return (int)camlHashtbl__copy_1057(v7, v8);
   }
-  return result;
 }
+// 8057AEC: variable 'v8' is possibly undefined
 
 //----- (08057AF0) --------------------------------------------------------
-_DWORD *__usercall camlHashtbl__copy_1057@<eax>(int a1@<eax>)
+_DWORD *__usercall camlHashtbl__copy_1057@<eax>(int a1@<eax>, int a2@<edx>)
 {
-  void *v1; // ecx
-  unsigned int v2; // eax
+  int v2; // edx
+  void *i; // ecx
+  unsigned int v4; // eax
   _DWORD *result; // eax
+  _DWORD *v6; // [esp+0h] [ebp-4h]
 
-  v1 = camlArray__copy_1049(*(double **)(a1 + 4));
-  while ( 1 )
+  v6 = (_DWORD *)a1;
+  for ( i = camlArray__copy_1049(*(double **)(a1 + 4), a2); ; caml_call_gc(v2, (int)i, (char)v6) )
   {
-    v2 = caml_young_ptr - 12;
-    caml_young_ptr = v2;
-    if ( v2 >= caml_young_limit )
+    v4 = caml_young_ptr - 12;
+    caml_young_ptr = v4;
+    if ( v4 >= caml_young_limit )
       break;
-    caml_call_gc(a1);
   }
-  result = (_DWORD *)(v2 + 4);
+  result = (_DWORD *)(v4 + 4);
   *(result - 1) = 2048;
-  *result = *(_DWORD *)a1;
-  result[1] = v1;
+  *result = *v6;
+  result[1] = i;
   return result;
 }
-// 8057B22: variable 'a1' is possibly undefined
-// 8057B26: variable 'v1' is possibly undefined
+// 8057B22: variable 'v6' is possibly undefined
+// 8057B26: variable 'i' is possibly undefined
+// 8057B2D: variable 'v2' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -13880,71 +15121,75 @@ int __usercall camlHashtbl__length_1059@<eax>(int a1@<eax>)
 int __usercall camlHashtbl__resize_1061@<eax>(int a1@<eax>, int a2@<ebx>)
 {
   int v2; // eax
-  int v3; // ebx
-  _DWORD *v4; // eax
-  _DWORD *v5; // ecx
-  unsigned int v6; // eax
-  int v7; // ecx
-  int result; // eax
-  _DWORD *v9; // eax
-  unsigned int v10; // ecx
-  int v12; // [esp+0h] [ebp-18h]
-  int v13; // [esp+4h] [ebp-14h]
-  int v14; // [esp+4h] [ebp-14h]
-  int v15; // [esp+8h] [ebp-10h]
-  int v16; // [esp+8h] [ebp-10h]
-  unsigned int v18; // [esp+14h] [ebp-4h]
+  int v3; // edx
+  int v4; // ecx
+  int v5; // ebx
+  _DWORD *v6; // eax
+  _DWORD *v7; // ecx
+  unsigned int v8; // eax
+  int v9; // ecx
+  _DWORD *v11; // eax
+  unsigned int v12; // ecx
+  int v13; // [esp+0h] [ebp-18h]
+  unsigned int v14; // [esp+0h] [ebp-18h]
+  int v15; // [esp+4h] [ebp-14h]
+  int v16; // [esp+4h] [ebp-14h]
+  int v17; // [esp+8h] [ebp-10h]
+  int v18; // [esp+8h] [ebp-10h]
+  unsigned int v20; // [esp+14h] [ebp-4h]
 
-  v18 = *(_DWORD *)(a2 + 4);
-  v15 = (*(_DWORD *)(v18 - 4) >> 9) | 1;
-  v2 = camlPervasives__min_1022(4 * (v15 >> 1) + 3, dword_8079C30);
-  if ( v2 == v15 )
+  v13 = a1;
+  v20 = *(_DWORD *)(a2 + 4);
+  v17 = (*(_DWORD *)(v20 - 4) >> 9) | 1;
+  v2 = camlPervasives__min_1022(4 * (v17 >> 1) + 3, dword_8079C30);
+  if ( v2 == v17 )
     return 1;
-  v13 = v2;
-  v3 = caml_c_call((int (*)(void))caml_make_vect, v2);
+  v15 = v2;
+  v5 = caml_c_call((int (*)(void))caml_make_vect, v2);
   while ( 1 )
   {
-    v4 = (_DWORD *)(caml_young_ptr - 24);
-    caml_young_ptr = (int)v4;
-    if ( (unsigned int)v4 >= caml_young_limit )
+    v6 = (_DWORD *)(caml_young_ptr - 24);
+    caml_young_ptr = (int)v6;
+    if ( (unsigned int)v6 >= caml_young_limit )
       break;
-    caml_call_gc(a1);
+    caml_call_gc(v3, v4, v13);
   }
-  v5 = v4 + 1;
-  *v4 = 5367;
-  v4[1] = camlHashtbl__insert_bucket_1068;
-  v4[2] = 3;
-  v4[3] = a1;
-  v4[4] = v13;
-  v4[5] = v3;
-  v6 = 1;
-  if ( v15 - 2 < 1 )
+  v7 = v6 + 1;
+  *v6 = 5367;
+  v6[1] = camlHashtbl__insert_bucket_1068;
+  v6[2] = 3;
+  v6[3] = v13;
+  v6[4] = v15;
+  v6[5] = v5;
+  v8 = 1;
+  if ( v17 - 2 < 1 )
   {
 LABEL_8:
-    caml_modify((unsigned int *)(a2 + 4), v3);
-    result = 1;
+    caml_modify((unsigned int *)(a2 + 4), v5);
+    return 1;
   }
   else
   {
-    v16 = v15 - 2;
-    v14 = 1;
-    v12 = (int)v5;
-    while ( *(_DWORD *)(v18 - 4) >> 9 > v6 )
+    v18 = v17 - 2;
+    v16 = 1;
+    v14 = (unsigned int)v7;
+    while ( *(_DWORD *)(v20 - 4) >> 9 > v8 )
     {
-      camlHashtbl__insert_bucket_1068(*(int **)(v18 + 2 * v6 - 2), v12);
-      v7 = v14;
-      v6 = v14 + 2;
-      v14 += 2;
-      if ( v7 == v16 )
+      camlHashtbl__insert_bucket_1068(*(int **)(v20 + 2 * v8 - 2), v14);
+      v9 = v16;
+      v8 = v16 + 2;
+      v16 += 2;
+      if ( v9 == v18 )
         goto LABEL_8;
     }
-    v9 = (_DWORD *)caml_ml_array_bound_error();
-    result = camlHashtbl__add_1074(v9, v10, v18);
+    v11 = (_DWORD *)caml_ml_array_bound_error();
+    return camlHashtbl__add_1074(v11, v12, v20);
   }
-  return result;
 }
-// 8057BDF: variable 'a1' is possibly undefined
-// 8057C7A: variable 'v10' is possibly undefined
+// 8057BDF: variable 'v13' is possibly undefined
+// 8057C69: variable 'v3' is possibly undefined
+// 8057C69: variable 'v4' is possibly undefined
+// 8057C7A: variable 'v12' is possibly undefined
 // 8079C30: using guessed type int dword_8079C30;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -13953,130 +15198,144 @@ LABEL_8:
 int __usercall camlHashtbl__add_1074@<eax>(_DWORD *a1@<eax>, unsigned int a2@<ecx>, unsigned int a3@<ebx>)
 {
   int v4; // esi
-  int v5; // edx
-  unsigned int v6; // edx
-  unsigned int v7; // eax
-  unsigned int *v8; // eax
-  int v9; // ecx
-  unsigned int v10; // ebx
+  int v5; // eax
+  int v6; // ecx
+  int v7; // edx
+  unsigned int i; // edx
+  unsigned int v9; // eax
+  unsigned int *v10; // eax
   int v11; // ecx
-  int result; // eax
-  int v13; // eax
+  unsigned int v12; // ebx
+  int v13; // ecx
+  int v15; // eax
+  int v16; // edx
+  unsigned int v17; // [esp+0h] [ebp-4h]
 
   v4 = *(_DWORD *)(a1[1] - 4) >> 10;
   if ( v4 )
-    v5 = (caml_hash_univ_param(21, 201, a3) >> 1) % v4;
-  else
-    caml_raise_exn((int)&caml_bucket_Division_by_zero);
-  v6 = 2 * v5 + 1;
-  while ( 1 )
   {
-    v7 = caml_young_ptr - 16;
-    caml_young_ptr = v7;
-    if ( v7 >= caml_young_limit )
-      break;
-    caml_call_gc(a2);
+    v17 = a2;
+    v5 = caml_hash_univ_param(21, 201, a3);
+    v6 = v4;
+    v7 = (v5 >> 1) % v4;
   }
-  v8 = (unsigned int *)(v7 + 4);
-  *(v8 - 1) = 3072;
-  *v8 = a3;
-  v8[1] = a2;
-  v9 = a1[1];
-  v10 = *(_DWORD *)(v9 - 4) >> 9;
-  if ( v10 <= v6 )
-    goto LABEL_13;
-  v8[2] = *(_DWORD *)(v9 + 2 * v6 - 2);
+  else
+  {
+    caml_raise_exn((int)&caml_bucket_Division_by_zero);
+  }
+  for ( i = 2 * v7 + 1; ; caml_call_gc(i, v6, v17) )
+  {
+    v9 = caml_young_ptr - 16;
+    caml_young_ptr = v9;
+    if ( v9 >= caml_young_limit )
+      break;
+  }
+  v10 = (unsigned int *)(v9 + 4);
+  *(v10 - 1) = 3072;
+  *v10 = a3;
+  v10[1] = v17;
   v11 = a1[1];
-  v10 = *(_DWORD *)(v11 - 4) >> 9;
-  if ( v10 <= v6 )
+  v12 = *(_DWORD *)(v11 - 4) >> 9;
+  if ( v12 <= i )
+    goto LABEL_13;
+  v10[2] = *(_DWORD *)(v11 + 2 * i - 2);
+  v13 = a1[1];
+  v12 = *(_DWORD *)(v13 - 4) >> 9;
+  if ( v12 <= i )
   {
     caml_ml_array_bound_error();
 LABEL_13:
-    v13 = caml_ml_array_bound_error();
-    return camlHashtbl__remove_1080(v13, v10);
+    v15 = caml_ml_array_bound_error();
+    return camlHashtbl__remove_1080(v15, v12, v16);
   }
-  caml_modify((unsigned int *)(v11 + 2 * v6 - 2), (unsigned int)v8);
+  caml_modify((unsigned int *)(v13 + 2 * i - 2), (unsigned int)v10);
   *a1 += 2;
   if ( *a1 <= 2 * ((*(_DWORD *)(a1[1] - 4) >> 9) | 1) - 1 )
-    result = 1;
+    return 1;
   else
-    result = camlHashtbl__resize_1061(dword_8079DB0, (int)a1);
-  return result;
+    return camlHashtbl__resize_1061(dword_8079DB0, (int)a1);
 }
-// 8057CC0: variable 'v5' is possibly undefined
-// 8057CEB: variable 'a2' is possibly undefined
-// 8057CF9: variable 'v6' is possibly undefined
+// 8057CC0: variable 'v7' is possibly undefined
+// 8057CEB: variable 'v17' is possibly undefined
+// 8057CF9: variable 'i' is possibly undefined
+// 8057D59: variable 'v6' is possibly undefined
+// 8057D6E: variable 'v16' is possibly undefined
 // 8073A50: using guessed type char **caml_bucket_Division_by_zero;
 // 8079DB0: using guessed type int dword_8079DB0;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08057D70) --------------------------------------------------------
-int __usercall camlHashtbl__remove_1080@<eax>(int a1@<eax>, unsigned int a2@<ebx>)
+int __usercall camlHashtbl__remove_1080@<eax>(int a1@<eax>, unsigned int a2@<ebx>, int a3@<edx>)
 {
-  _DWORD *v4; // eax
-  int v5; // ebx
-  int v6; // esi
-  int v7; // edx
-  unsigned int v8; // edx
-  int v9; // ecx
-  int v10; // eax
-  int v12; // eax
-  char v13; // [esp+0h] [ebp-8h]
-  int v14; // [esp+0h] [ebp-8h]
-  unsigned int v15; // [esp+4h] [ebp-4h]
+  unsigned int i; // ecx
+  _DWORD *v5; // eax
+  int v6; // ebx
+  int v7; // esi
+  int v8; // edx
+  unsigned int v9; // edx
+  int v10; // ecx
+  unsigned int v11; // eax
+  int v13; // eax
+  int v14; // edx
+  int v15; // ecx
+  char v16; // [esp+0h] [ebp-8h]
+  int v17; // [esp+0h] [ebp-8h]
+  unsigned int v18; // [esp+4h] [ebp-4h]
 
-  while ( 1 )
+  for ( i = a2; ; caml_call_gc(a3, i, v16) )
   {
-    v4 = (_DWORD *)(caml_young_ptr - 20);
-    caml_young_ptr = (int)v4;
-    if ( (unsigned int)v4 >= caml_young_limit )
+    v5 = (_DWORD *)(caml_young_ptr - 20);
+    caml_young_ptr = (int)v5;
+    if ( (unsigned int)v5 >= caml_young_limit )
       break;
-    caml_call_gc(v13);
   }
-  v5 = (int)(v4 + 1);
-  *v4 = 4343;
-  v4[1] = camlHashtbl__remove_bucket_1083;
-  v4[2] = 3;
-  v4[3] = a1;
-  v4[4] = a2;
-  v6 = *(_DWORD *)(*(_DWORD *)(a1 + 4) - 4) >> 10;
-  if ( v6 )
-    v7 = (caml_hash_univ_param(21, 201, a2) >> 1) % v6;
+  v6 = (int)(v5 + 1);
+  *v5 = 4343;
+  v5[1] = camlHashtbl__remove_bucket_1083;
+  v5[2] = 3;
+  v5[3] = a1;
+  v5[4] = i;
+  v7 = *(_DWORD *)(*(_DWORD *)(a1 + 4) - 4) >> 10;
+  if ( v7 )
+    v8 = (caml_hash_univ_param(21, 201, i) >> 1) % v7;
   else
     caml_raise_exn((int)&caml_bucket_Division_by_zero);
-  v8 = 2 * v7 + 1;
-  v15 = v8;
-  v14 = *(_DWORD *)(a1 + 4);
-  if ( *(_DWORD *)(v14 - 4) >> 9 > v8 )
+  v9 = 2 * v8 + 1;
+  v18 = v9;
+  v17 = *(_DWORD *)(a1 + 4);
+  if ( *(_DWORD *)(v17 - 4) >> 9 > v9 )
   {
-    v9 = *(_DWORD *)(a1 + 4);
-    if ( *(_DWORD *)(v9 - 4) >> 9 > v8 )
+    v10 = *(_DWORD *)(a1 + 4);
+    if ( *(_DWORD *)(v10 - 4) >> 9 > v9 )
     {
-      v10 = camlHashtbl__remove_bucket_1083(*(int **)(v9 + 2 * v8 - 2), v5);
-      caml_modify((unsigned int *)(v14 + 2 * v15 - 2), v10);
+      v11 = camlHashtbl__remove_bucket_1083(*(int **)(v10 + 2 * v9 - 2), v6);
+      caml_modify((unsigned int *)(v17 + 2 * v18 - 2), v11);
       return 1;
     }
     caml_ml_array_bound_error();
   }
-  v12 = caml_ml_array_bound_error();
-  return camlHashtbl__find_rec_1088(v12, v5);
+  v13 = caml_ml_array_bound_error();
+  return camlHashtbl__find_rec_1088(v13, v6, v14, v15);
 }
-// 8057DAA: variable 'a2' is possibly undefined
-// 8057DF0: variable 'v7' is possibly undefined
-// 8057E3C: variable 'v13' is possibly undefined
+// 8057DAA: variable 'i' is possibly undefined
+// 8057DF0: variable 'v8' is possibly undefined
+// 8057E3C: variable 'a3' is possibly undefined
+// 8057E3C: variable 'v16' is possibly undefined
+// 8057E4C: variable 'v14' is possibly undefined
+// 8057E4C: variable 'v15' is possibly undefined
 // 8073A50: using guessed type char **caml_bucket_Division_by_zero;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08057E50) --------------------------------------------------------
-int __usercall camlHashtbl__find_rec_1088@<eax>(int a1@<eax>, int a2@<ebx>)
+int __usercall camlHashtbl__find_rec_1088@<eax>(int a1@<eax>, int a2@<ebx>, int a3@<edx>, int a4@<ecx>)
 {
-  unsigned int v3; // eax
-  _DWORD *v4; // eax
-  int v5; // [esp+0h] [ebp-Ch]
-  int v6; // [esp+4h] [ebp-8h]
-  int v7; // [esp+8h] [ebp-4h]
+  unsigned int v5; // eax
+  _DWORD *v6; // eax
+  int v7; // [esp+0h] [ebp-Ch]
+  int v8; // [esp+4h] [ebp-8h]
+  int v9; // [esp+8h] [ebp-4h]
 
   while ( 1 )
   {
@@ -14084,29 +15343,31 @@ int __usercall camlHashtbl__find_rec_1088@<eax>(int a1@<eax>, int a2@<ebx>)
     {
       while ( 1 )
       {
-        v3 = caml_young_ptr - 8;
-        caml_young_ptr = v3;
-        if ( v3 >= caml_young_limit )
+        v5 = caml_young_ptr - 8;
+        caml_young_ptr = v5;
+        if ( v5 >= caml_young_limit )
         {
-          v4 = (_DWORD *)(v3 + 4);
-          *(v4 - 1) = 1024;
-          *v4 = &caml_exn_Not_found;
-          caml_raise_exn((int)v4);
+          v6 = (_DWORD *)(v5 + 4);
+          *(v6 - 1) = 1024;
+          *v6 = &caml_exn_Not_found;
+          caml_raise_exn((int)v6);
         }
-        caml_call_gc(v5);
+        caml_call_gc(a3, a4, v7);
       }
     }
-    v5 = a1;
-    v6 = *(_DWORD *)(a2 + 8);
-    v7 = *(_DWORD *)(a2 + 4);
+    v7 = a1;
+    v8 = *(_DWORD *)(a2 + 8);
+    v9 = *(_DWORD *)(a2 + 4);
     if ( caml_c_call((int (*)(void))caml_compare, a1) == 1 )
       break;
-    a1 = v5;
-    a2 = v6;
+    a1 = v7;
+    a2 = v8;
   }
-  return v7;
+  return v9;
 }
-// 8057ECA: variable 'v5' is possibly undefined
+// 8057ECA: variable 'a3' is possibly undefined
+// 8057ECA: variable 'a4' is possibly undefined
+// 8057ECA: variable 'v7' is possibly undefined
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -14119,20 +15380,25 @@ int __usercall camlHashtbl__find_1093@<eax>(int a1@<eax>, char a2@<bl>)
   unsigned int v5; // edx
   int v6; // ecx
   int v7; // ecx
-  int result; // eax
-  int v9; // eax
-  int v10; // eax
-  unsigned int v11; // eax
-  _DWORD *v12; // eax
-  unsigned int v13; // eax
-  _DWORD *v14; // eax
-  unsigned int v15; // eax
-  _DWORD *v16; // eax
-  int v17; // [esp+0h] [ebp-Ch]
-  int v18; // [esp+0h] [ebp-Ch]
-  int v19; // [esp+8h] [ebp-4h]
-  int v20; // [esp+8h] [ebp-4h]
-  int v21; // [esp+8h] [ebp-4h]
+  int v8; // edx
+  int v9; // ecx
+  int v11; // eax
+  int v12; // edx
+  int v13; // ecx
+  int v14; // eax
+  int v15; // edx
+  int v16; // ecx
+  unsigned int v17; // eax
+  _DWORD *v18; // eax
+  unsigned int v19; // eax
+  _DWORD *v20; // eax
+  unsigned int v21; // eax
+  _DWORD *v22; // eax
+  int v23; // [esp+0h] [ebp-Ch]
+  int v24; // [esp+0h] [ebp-Ch]
+  int v25; // [esp+8h] [ebp-4h]
+  int v26; // [esp+8h] [ebp-4h]
+  int v27; // [esp+8h] [ebp-4h]
 
   v3 = *(_DWORD *)(*(_DWORD *)(a1 + 4) - 4) >> 10;
   if ( v3 )
@@ -14152,71 +15418,78 @@ int __usercall camlHashtbl__find_1093@<eax>(int a1@<eax>, char a2@<bl>)
     while ( 1 )
     {
 LABEL_19:
-      v15 = caml_young_ptr - 8;
-      caml_young_ptr = v15;
-      if ( v15 >= caml_young_limit )
+      v21 = caml_young_ptr - 8;
+      caml_young_ptr = v21;
+      if ( v21 >= caml_young_limit )
       {
-        v16 = (_DWORD *)(v15 + 4);
-        *(v16 - 1) = 1024;
-        *v16 = &caml_exn_Not_found;
-        caml_raise_exn((int)v16);
+        v22 = (_DWORD *)(v21 + 4);
+        *(v22 - 1) = 1024;
+        *v22 = &caml_exn_Not_found;
+        caml_raise_exn((int)v22);
       }
-      caml_call_gc(v17);
+      caml_call_gc(v5, v7, v23);
     }
   }
-  v17 = *(_DWORD *)(v7 + 8);
-  v19 = *(_DWORD *)(v7 + 4);
+  v23 = *(_DWORD *)(v7 + 8);
+  v25 = *(_DWORD *)(v7 + 4);
   if ( caml_c_call((int (*)(void))caml_compare, a2) == 1 )
-    return v19;
-  v9 = v17;
-  if ( v17 == 1 )
+    return v25;
+  v11 = v23;
+  if ( v23 == 1 )
   {
 LABEL_17:
     while ( 1 )
     {
-      v13 = caml_young_ptr - 8;
-      caml_young_ptr = v13;
-      if ( v13 >= caml_young_limit )
+      v19 = caml_young_ptr - 8;
+      caml_young_ptr = v19;
+      if ( v19 >= caml_young_limit )
         break;
-      caml_call_gc(v17);
+      caml_call_gc(v8, v9, v23);
     }
-    v14 = (_DWORD *)(v13 + 4);
-    *(v14 - 1) = 1024;
-    *v14 = &caml_exn_Not_found;
-    caml_raise_exn((int)v14);
+    v20 = (_DWORD *)(v19 + 4);
+    *(v20 - 1) = 1024;
+    *v20 = &caml_exn_Not_found;
+    caml_raise_exn((int)v20);
     goto LABEL_19;
   }
-  v17 = *(_DWORD *)(v17 + 8);
-  v20 = *(_DWORD *)(v9 + 4);
+  v23 = *(_DWORD *)(v23 + 8);
+  v26 = *(_DWORD *)(v11 + 4);
   if ( caml_c_call((int (*)(void))caml_compare, a2) == 1 )
-    return v20;
-  v10 = v17;
-  if ( v17 == 1 )
+    return v26;
+  v14 = v23;
+  if ( v23 == 1 )
   {
     while ( 1 )
     {
-      v11 = caml_young_ptr - 8;
-      caml_young_ptr = v11;
-      if ( v11 >= caml_young_limit )
+      v17 = caml_young_ptr - 8;
+      caml_young_ptr = v17;
+      if ( v17 >= caml_young_limit )
         break;
-      caml_call_gc(v17);
+      caml_call_gc(v12, v13, v23);
     }
-    v12 = (_DWORD *)(v11 + 4);
-    *(v12 - 1) = 1024;
-    *v12 = &caml_exn_Not_found;
-    caml_raise_exn((int)v12);
+    v18 = (_DWORD *)(v17 + 4);
+    *(v18 - 1) = 1024;
+    *v18 = &caml_exn_Not_found;
+    caml_raise_exn((int)v18);
     goto LABEL_17;
   }
-  v18 = *(_DWORD *)(v17 + 8);
-  v21 = *(_DWORD *)(v10 + 4);
+  v24 = *(_DWORD *)(v23 + 8);
+  v27 = *(_DWORD *)(v14 + 4);
   if ( caml_c_call((int (*)(void))caml_compare, a2) == 1 )
-    result = v21;
+    return v27;
   else
-    result = camlHashtbl__find_rec_1088(a2, v18);
-  return result;
+    return camlHashtbl__find_rec_1088(a2, v24, v15, v16);
 }
 // 8057F20: variable 'v4' is possibly undefined
-// 805808A: variable 'v17' is possibly undefined
+// 8057FFA: variable 'v15' is possibly undefined
+// 8057FFA: variable 'v16' is possibly undefined
+// 805808A: variable 'v5' is possibly undefined
+// 805808A: variable 'v7' is possibly undefined
+// 805808A: variable 'v23' is possibly undefined
+// 8058091: variable 'v8' is possibly undefined
+// 8058091: variable 'v9' is possibly undefined
+// 8058098: variable 'v12' is possibly undefined
+// 8058098: variable 'v13' is possibly undefined
 // 80580B0: using guessed type int camlHashtbl__find_all_1105(void);
 // 8073A50: using guessed type char **caml_bucket_Division_by_zero;
 // 8073A58: using guessed type char *caml_exn_Not_found;
@@ -14227,22 +15500,26 @@ LABEL_17:
 #error "8058139: call analysis failed (funcsize=44)"
 
 //----- (08058150) --------------------------------------------------------
-int __usercall camlHashtbl__replace_1112@<eax>(int a1@<eax>, int a2@<ecx>, unsigned int a3@<ebx>)
+int __usercall camlHashtbl__replace_1112@<eax>(_DWORD *a1@<eax>, int a2@<ecx>, unsigned int a3@<ebx>)
 {
   _DWORD *v4; // eax
   int v5; // esi
-  int v6; // edx
-  unsigned int v7; // edx
-  int v8; // ebx
-  char ***v9; // eax
-  int v10; // edx
-  _DWORD *v11; // eax
-  int result; // eax
-  int *v13; // eax
-  unsigned int v14; // edx
-  _DWORD *v15; // [esp+0h] [ebp-1Ch]
-  int *v18; // [esp+Ch] [ebp-10h]
-  unsigned int v19; // [esp+18h] [ebp-4h]
+  int v6; // eax
+  int v7; // ecx
+  int v8; // edx
+  unsigned int v9; // edx
+  int v10; // ebx
+  char ***v11; // eax
+  int v12; // edx
+  _DWORD *v13; // eax
+  int *v15; // eax
+  unsigned int v16; // edx
+  int v17; // ecx
+  _DWORD *v18; // [esp+0h] [ebp-1Ch]
+  unsigned int v19; // [esp+4h] [ebp-18h]
+  int v20; // [esp+8h] [ebp-14h]
+  int *v21; // [esp+Ch] [ebp-10h]
+  unsigned int v22; // [esp+18h] [ebp-4h]
 
   v4 = (_DWORD *)(caml_young_ptr - 20);
   caml_young_ptr = (int)v4;
@@ -14253,59 +15530,64 @@ int __usercall camlHashtbl__replace_1112@<eax>(int a1@<eax>, int a2@<ecx>, unsig
   v4[2] = 3;
   v4[3] = a3;
   v4[4] = a2;
-  v5 = *(_DWORD *)(*(_DWORD *)(a1 + 4) - 4) >> 10;
+  v5 = *(_DWORD *)(a1[1] - 4) >> 10;
   if ( v5 )
   {
-    v15 = (_DWORD *)a1;
-    v6 = (caml_hash_univ_param(21, 201, a3) >> 1) % v5;
+    v20 = a2;
+    v19 = a3;
+    v18 = a1;
+    v6 = caml_hash_univ_param(21, 201, a3);
+    v7 = v5;
+    v8 = (v6 >> 1) % v5;
   }
   else
   {
     caml_raise_exn((int)&caml_bucket_Division_by_zero);
   }
-  v7 = 2 * v6 + 1;
-  v19 = v7;
-  v8 = *(_DWORD *)(a1 + 4);
-  if ( *(_DWORD *)(v8 - 4) >> 9 <= v7 )
+  v9 = 2 * v8 + 1;
+  v22 = v9;
+  v10 = a1[1];
+  if ( *(_DWORD *)(v10 - 4) >> 9 <= v9 )
     JUMPOUT(0x805831C);
-  v18 = *(int **)(v8 + 2 * v7 - 2);
-  v9 = (char ***)sub_80582B0(v18, v7, a1);
-  if ( *v9 == &caml_exn_Not_found )
+  v21 = *(int **)(v10 + 2 * v9 - 2);
+  v11 = (char ***)sub_80582B0(v21, v9, (int)a1, v7);
+  if ( *v11 == &caml_exn_Not_found )
   {
-    v10 = v15[1];
-    if ( *(_DWORD *)(v10 - 4) >> 9 <= v19 )
+    v12 = v18[1];
+    if ( *(_DWORD *)(v12 - 4) >> 9 <= v22 )
       JUMPOUT(0x8058317);
-    v11 = (_DWORD *)(caml_young_ptr - 16);
-    caml_young_ptr = (int)v11;
-    if ( (unsigned int)v11 < caml_young_limit )
+    v13 = (_DWORD *)(caml_young_ptr - 16);
+    caml_young_ptr = (int)v13;
+    if ( (unsigned int)v13 < caml_young_limit )
       JUMPOUT(0x80582FE);
-    *v11 = 3072;
-    v11[1] = a3;
-    v11[2] = a2;
-    v11[3] = v18;
-    caml_modify((unsigned int *)(v10 + 2 * v19 - 2), (unsigned int)(v11 + 1));
-    *v15 += 2;
-    if ( *v15 <= 2 * ((*(_DWORD *)(v15[1] - 4) >> 9) | 1) - 1 )
-      result = 1;
+    *v13 = 3072;
+    v13[1] = v19;
+    v13[2] = v20;
+    v13[3] = v21;
+    caml_modify((unsigned int *)(v12 + 2 * v22 - 2), (unsigned int)(v13 + 1));
+    *v18 += 2;
+    if ( *v18 <= 2 * ((*(_DWORD *)(v18[1] - 4) >> 9) | 1) - 1 )
+      return 1;
     else
-      result = camlHashtbl__resize_1061(dword_8079DB0, (int)v15);
+      return camlHashtbl__resize_1061(dword_8079DB0, (int)v18);
   }
   else
   {
-    v13 = (int *)caml_raise_exn((int)v9);
-    result = sub_80582B0(v13, v14, a1);
+    v15 = (int *)caml_raise_exn((int)v11);
+    return sub_80582B0(v15, v16, (int)a1, v17);
   }
-  return result;
 }
 // 8058168: control flows out of bounds to 8058308
 // 80581E2: control flows out of bounds to 805831C
 // 8058216: control flows out of bounds to 8058317
 // 805822F: control flows out of bounds to 80582FE
-// 80581D0: variable 'v6' is possibly undefined
-// 8058207: variable 'v15' is possibly undefined
-// 8058243: variable 'a3' is possibly undefined
-// 8058249: variable 'a2' is possibly undefined
-// 80582AA: variable 'v14' is possibly undefined
+// 80581D0: variable 'v8' is possibly undefined
+// 80581F0: variable 'v7' is possibly undefined
+// 8058207: variable 'v18' is possibly undefined
+// 8058243: variable 'v19' is possibly undefined
+// 8058249: variable 'v20' is possibly undefined
+// 80582AA: variable 'v16' is possibly undefined
+// 80582AA: variable 'v17' is possibly undefined
 // 8073A50: using guessed type char **caml_bucket_Division_by_zero;
 // 8073A58: using guessed type char *caml_exn_Not_found;
 // 8079DB0: using guessed type int dword_8079DB0;
@@ -14314,30 +15596,30 @@ int __usercall camlHashtbl__replace_1112@<eax>(int a1@<eax>, int a2@<ecx>, unsig
 
 //----- (080582B0) --------------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
-int __usercall sub_80582B0@<eax>(int *a1@<eax>, unsigned int a2@<edx>, int a3@<edi>)
+int __usercall sub_80582B0@<eax>(int *a1@<eax>, unsigned int a2@<edx>, int a3@<edi>, int a4@<ecx>)
 {
-  _DWORD *v3; // eax
+  int *v4; // eax
   int result; // eax
-  _DWORD v5[7]; // [esp-24h] [ebp-24h] BYREF
-  int v6; // [esp-8h] [ebp-8h]
-  int v7; // [esp-4h] [ebp-4h]
+  _DWORD v6[7]; // [esp-24h] [ebp-24h] BYREF
+  int v7; // [esp-8h] [ebp-8h]
+  int v8; // [esp-4h] [ebp-4h]
 
-  v5[0] = caml_exception_pointer;
-  caml_exception_pointer = (int)v5;
-  v6 = *(_DWORD *)(a3 + 4);
-  if ( *(_DWORD *)(v6 - 4) >> 9 <= a2 )
+  v6[0] = caml_exception_pointer;
+  caml_exception_pointer = (int)v6;
+  v7 = *(_DWORD *)(a3 + 4);
+  if ( *(_DWORD *)(v7 - 4) >> 9 <= a2 )
   {
     caml_ml_array_bound_error();
     caml_ml_array_bound_error();
     caml_ml_array_bound_error();
-    result = camlHashtbl__mem_1122();
+    return camlHashtbl__mem_1122();
   }
   else
   {
-    v3 = camlHashtbl__replace_bucket_1116(a1, v5[6]);
-    caml_modify((unsigned int *)(v6 + 2 * v7 - 2), (unsigned int)v3);
+    v4 = camlHashtbl__replace_bucket_1116(a1, v6[6], a2, a4);
+    caml_modify((unsigned int *)(v7 + 2 * v8 - 2), (unsigned int)v4);
     result = 1;
-    caml_exception_pointer = v5[0];
+    caml_exception_pointer = v6[0];
   }
   return result;
 }
@@ -14349,229 +15631,242 @@ int __usercall sub_80582B0@<eax>(int *a1@<eax>, unsigned int a2@<edx>, int a3@<e
 #error "80583B9: call analysis failed (funcsize=44)"
 
 //----- (080583D0) --------------------------------------------------------
-int __usercall camlHashtbl__iter_1129@<eax>(int a1@<eax>, int a2@<ebx>)
+int __usercall camlHashtbl__iter_1129@<eax>(int a1@<eax>, int a2@<ebx>, int a3@<ecx>)
 {
-  _DWORD *v3; // eax
-  _DWORD *v4; // ecx
-  int v5; // edx
-  unsigned int v6; // eax
-  int v7; // ecx
-  int v9; // eax
-  int v10; // ecx
-  char v11; // [esp+0h] [ebp-10h]
-  int v12; // [esp+0h] [ebp-10h]
-  int v13; // [esp+4h] [ebp-Ch]
-  int v14; // [esp+8h] [ebp-8h]
-  int v15; // [esp+Ch] [ebp-4h]
+  int i; // edx
+  _DWORD *v4; // eax
+  _DWORD *v5; // ecx
+  int v6; // edx
+  unsigned int v7; // eax
+  int v8; // ecx
+  int v10; // eax
+  int v11; // edx
+  int v12; // ecx
+  char v13; // [esp+0h] [ebp-10h]
+  int v14; // [esp+0h] [ebp-10h]
+  int v15; // [esp+4h] [ebp-Ch]
+  int v16; // [esp+8h] [ebp-8h]
+  int v17; // [esp+Ch] [ebp-4h]
 
-  while ( 1 )
+  for ( i = a1; ; caml_call_gc(i, a3, v13) )
   {
-    v3 = (_DWORD *)(caml_young_ptr - 16);
-    caml_young_ptr = (int)v3;
-    if ( (unsigned int)v3 >= caml_young_limit )
+    v4 = (_DWORD *)(caml_young_ptr - 16);
+    caml_young_ptr = (int)v4;
+    if ( (unsigned int)v4 >= caml_young_limit )
       break;
-    caml_call_gc(v11);
   }
-  v4 = v3 + 1;
-  *v3 = 3319;
-  v3[1] = camlHashtbl__do_bucket_1132;
-  v3[2] = 3;
-  v3[3] = a1;
-  v5 = *(_DWORD *)(a2 + 4);
-  v6 = 1;
-  if ( ((*(_DWORD *)(v5 - 4) >> 9) | 1) - 2 < 1 )
+  v5 = v4 + 1;
+  *v4 = 3319;
+  v4[1] = camlHashtbl__do_bucket_1132;
+  v4[2] = 3;
+  v4[3] = i;
+  v6 = *(_DWORD *)(a2 + 4);
+  v7 = 1;
+  if ( ((*(_DWORD *)(v6 - 4) >> 9) | 1) - 2 < 1 )
     return 1;
-  v15 = ((*(_DWORD *)(v5 - 4) >> 9) | 1) - 2;
-  v14 = 1;
-  v12 = *(_DWORD *)(a2 + 4);
-  v13 = (int)v4;
-  while ( *(_DWORD *)(v12 - 4) >> 9 > v6 )
+  v17 = ((*(_DWORD *)(v6 - 4) >> 9) | 1) - 2;
+  v16 = 1;
+  v14 = *(_DWORD *)(a2 + 4);
+  v15 = (int)v5;
+  while ( *(_DWORD *)(v14 - 4) >> 9 > v7 )
   {
-    camlHashtbl__do_bucket_1132(*(_DWORD *)(v12 + 2 * v6 - 2), v13);
-    v7 = v14;
-    v6 = v14 + 2;
-    v14 += 2;
-    if ( v7 == v15 )
+    camlHashtbl__do_bucket_1132(*(_DWORD *)(v14 + 2 * v7 - 2), v15);
+    v8 = v16;
+    v7 = v16 + 2;
+    v16 += 2;
+    if ( v8 == v17 )
       return 1;
   }
-  v9 = caml_ml_array_bound_error();
-  return (int)camlHashtbl__fold_1138(v9, v10, v12);
+  v10 = caml_ml_array_bound_error();
+  return (int)camlHashtbl__fold_1138(v10, v12, v14, v11);
 }
-// 8058401: variable 'a1' is possibly undefined
-// 8058463: variable 'v11' is possibly undefined
-// 805847A: variable 'v10' is possibly undefined
+// 8058401: variable 'i' is possibly undefined
+// 8058463: variable 'a3' is possibly undefined
+// 8058463: variable 'v13' is possibly undefined
+// 805847A: variable 'v12' is possibly undefined
+// 805847A: variable 'v11' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08058480) --------------------------------------------------------
-int *__usercall camlHashtbl__fold_1138@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
+int *__usercall camlHashtbl__fold_1138@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>, int a4@<edx>)
 {
-  _DWORD *v4; // eax
-  _DWORD *v5; // edx
-  int v6; // esi
-  unsigned int *v7; // ebx
-  unsigned int v8; // eax
-  int v9; // ebx
-  int v10; // eax
-  int v11; // edx
-  int (__usercall *v13)@<eax>(int@<ebx>); // eax
-  char v14; // [esp+0h] [ebp-14h]
-  int v15; // [esp+4h] [ebp-10h]
-  unsigned int *v16; // [esp+8h] [ebp-Ch]
-  int v17; // [esp+Ch] [ebp-8h]
-  int v18; // [esp+10h] [ebp-4h]
+  _DWORD *v5; // eax
+  _DWORD *v6; // edx
+  int v7; // esi
+  unsigned int *v8; // ebx
+  unsigned int v9; // eax
+  int v10; // ebx
+  int v11; // eax
+  int v12; // edx
+  int (__usercall *v14)@<eax>(int@<ebx>); // eax
+  int v15; // edx
+  int v16; // ecx
+  char v17; // [esp+0h] [ebp-14h]
+  int v18; // [esp+4h] [ebp-10h]
+  unsigned int *v19; // [esp+8h] [ebp-Ch]
+  int v20; // [esp+Ch] [ebp-8h]
+  int v21; // [esp+10h] [ebp-4h]
 
   while ( 1 )
   {
-    v4 = (_DWORD *)(caml_young_ptr - 28);
-    caml_young_ptr = (int)v4;
-    if ( (unsigned int)v4 >= caml_young_limit )
+    v5 = (_DWORD *)(caml_young_ptr - 28);
+    caml_young_ptr = (int)v5;
+    if ( (unsigned int)v5 >= caml_young_limit )
       break;
-    caml_call_gc(v14);
+    caml_call_gc(a4, a2, v17);
   }
-  v5 = v4 + 1;
-  *v4 = 4343;
-  v4[1] = caml_curry2;
-  v4[2] = 5;
-  v4[3] = camlHashtbl__do_bucket_1142;
-  v4[4] = a1;
-  v6 = *(_DWORD *)(a3 + 4);
-  v7 = v4 + 6;
-  v4[5] = 1024;
-  v4[6] = a2;
-  v8 = 1;
-  if ( ((*(_DWORD *)(v6 - 4) >> 9) | 1) - 2 < 1 )
-    return (int *)*v7;
-  v18 = ((*(_DWORD *)(v6 - 4) >> 9) | 1) - 2;
-  v17 = 1;
-  v16 = v7;
-  v15 = (int)v5;
+  v6 = v5 + 1;
+  *v5 = 4343;
+  v5[1] = caml_curry2;
+  v5[2] = 5;
+  v5[3] = camlHashtbl__do_bucket_1142;
+  v5[4] = a1;
+  v7 = *(_DWORD *)(a3 + 4);
+  v8 = v5 + 6;
+  v5[5] = 1024;
+  v5[6] = a2;
+  v9 = 1;
+  if ( ((*(_DWORD *)(v7 - 4) >> 9) | 1) - 2 < 1 )
+    return (int *)*v8;
+  v21 = ((*(_DWORD *)(v7 - 4) >> 9) | 1) - 2;
+  v20 = 1;
+  v19 = v8;
+  v18 = (int)v6;
   while ( 1 )
   {
-    v9 = *v7;
-    if ( *(_DWORD *)(v6 - 4) >> 9 <= v8 )
+    v10 = *v8;
+    if ( *(_DWORD *)(v7 - 4) >> 9 <= v9 )
       break;
-    v10 = camlHashtbl__do_bucket_1142(*(_DWORD *)(v6 + 2 * v8 - 2), v15, v9);
-    v7 = v16;
-    caml_modify(v16, v10);
-    v11 = v17;
-    v8 = v17 + 2;
-    v17 += 2;
-    if ( v11 == v18 )
-      return (int *)*v7;
+    v11 = camlHashtbl__do_bucket_1142(*(_DWORD *)(v7 + 2 * v9 - 2), v18, v10);
+    v8 = v19;
+    caml_modify(v19, v11);
+    v12 = v20;
+    v9 = v20 + 2;
+    v20 += 2;
+    if ( v12 == v21 )
+      return (int *)*v8;
   }
-  v13 = (int (__usercall *)@<eax>(int@<ebx>))caml_ml_array_bound_error();
-  return camlHashtbl__Make_1251(v13);
+  v14 = (int (__usercall *)@<eax>(int@<ebx>))caml_ml_array_bound_error();
+  return camlHashtbl__Make_1251(v14, v15, v16);
 }
 // 80584CC: variable 'a2' is possibly undefined
-// 805853B: variable 'v14' is possibly undefined
+// 805853B: variable 'a4' is possibly undefined
+// 805853B: variable 'v17' is possibly undefined
+// 805854B: variable 'v15' is possibly undefined
+// 805854B: variable 'v16' is possibly undefined
 // 804B370: using guessed type _DWORD caml_curry2();
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08058550) --------------------------------------------------------
-int *__usercall camlHashtbl__Make_1251@<eax>(int (__usercall *a1)@<eax>(int a1@<ebx>)@<eax>)
+int *__usercall camlHashtbl__Make_1251@<eax>(
+        int (__usercall *a1)@<eax>(int a1@<ebx>)@<eax>,
+        int a2@<edx>,
+        int a3@<ecx>)
 {
-  unsigned int v2; // eax
-  int (__usercall **v3)@<eax>(int@<ebx>); // eax
-  _DWORD *v4; // esi
-  _DWORD *v5; // edx
-  _DWORD *v6; // ecx
-  int v7; // ebp
-  int v8; // edi
+  unsigned int v4; // eax
+  int (__usercall **v5)@<eax>(int@<ebx>); // eax
+  int v6; // esi
+  int v7; // edx
+  int v8; // ecx
+  int v9; // ebp
+  int v10; // edi
   int *result; // eax
-  int v10; // [esp+0h] [ebp-1Ch]
-  int v11; // [esp+4h] [ebp-18h]
-  int v12; // [esp+8h] [ebp-14h]
-  _DWORD *v13; // [esp+Ch] [ebp-10h]
-  _DWORD *v14; // [esp+10h] [ebp-Ch]
-  _DWORD *v15; // [esp+14h] [ebp-8h]
-  int v16; // [esp+18h] [ebp-4h]
+  int v12; // [esp+0h] [ebp-1Ch]
+  int v13; // [esp+4h] [ebp-18h]
+  int v14; // [esp+8h] [ebp-14h]
+  int v15; // [esp+Ch] [ebp-10h]
+  int v16; // [esp+10h] [ebp-Ch]
+  int v17; // [esp+14h] [ebp-8h]
+  int v18; // [esp+18h] [ebp-4h]
 
-  v10 = camlHashtbl;
-  v11 = dword_8079D80;
-  v12 = dword_8079D88;
+  v12 = camlHashtbl;
+  v13 = dword_8079D80;
+  v14 = dword_8079D88;
   while ( 1 )
   {
-    v2 = caml_young_ptr - 232;
-    caml_young_ptr = v2;
-    if ( v2 >= caml_young_limit )
+    v4 = caml_young_ptr - 232;
+    caml_young_ptr = v4;
+    if ( v4 >= caml_young_limit )
       break;
-    caml_call_gc(v10);
+    caml_call_gc(a2, a3, v12);
   }
-  v3 = (int (__usercall **)@<eax>(int@<ebx>))(v2 + 4);
-  *(v3 - 1) = (int (__usercall *)@<eax>(int@<ebx>))3319;
-  *v3 = camlHashtbl__safehash_1177;
-  v3[1] = (int (__usercall *)@<eax>(int@<ebx>))3;
-  v3[2] = a1;
-  v13 = v3 + 4;
-  v3[3] = (int (__usercall *)@<eax>(int@<ebx>))4343;
-  v3[4] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry3;
-  v3[5] = (int (__usercall *)@<eax>(int@<ebx>))7;
-  v3[6] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__add_1179;
-  v3[7] = (int (__usercall *)@<eax>(int@<ebx>))v3;
-  v14 = v3 + 9;
-  v3[8] = (int (__usercall *)@<eax>(int@<ebx>))5367;
-  v3[9] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry2;
-  v3[10] = (int (__usercall *)@<eax>(int@<ebx>))5;
-  v3[11] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__remove_1185;
-  v3[12] = a1;
-  v3[13] = (int (__usercall *)@<eax>(int@<ebx>))v3;
-  v3[14] = (int (__usercall *)@<eax>(int@<ebx>))4343;
-  v3[15] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry2;
-  v3[16] = (int (__usercall *)@<eax>(int@<ebx>))5;
-  v3[17] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__find_rec_1193;
-  v3[18] = a1;
-  v15 = v3 + 20;
-  v3[19] = (int (__usercall *)@<eax>(int@<ebx>))6391;
-  v3[20] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry2;
-  v3[21] = (int (__usercall *)@<eax>(int@<ebx>))5;
-  v3[22] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__find_226;
-  v3[23] = a1;
-  v3[24] = (int (__usercall *)@<eax>(int@<ebx>))v3;
-  v3[25] = (int (__usercall *)@<eax>(int@<ebx>))(v3 + 15);
-  v4 = v3 + 27;
-  v3[26] = (int (__usercall *)@<eax>(int@<ebx>))5367;
-  v3[27] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry2;
-  v3[28] = (int (__usercall *)@<eax>(int@<ebx>))5;
-  v3[29] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__find_all_1210;
-  v3[30] = a1;
-  v3[31] = (int (__usercall *)@<eax>(int@<ebx>))v3;
-  v5 = v3 + 33;
-  v3[32] = (int (__usercall *)@<eax>(int@<ebx>))5367;
-  v3[33] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry3;
-  v3[34] = (int (__usercall *)@<eax>(int@<ebx>))7;
-  v3[35] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__replace_1217;
-  v3[36] = a1;
-  v3[37] = (int (__usercall *)@<eax>(int@<ebx>))v3;
-  v6 = v3 + 39;
-  v3[38] = (int (__usercall *)@<eax>(int@<ebx>))5367;
-  v3[39] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry2;
-  v3[40] = (int (__usercall *)@<eax>(int@<ebx>))5;
-  v3[41] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__mem_1227;
-  v3[42] = a1;
-  v3[43] = (int (__usercall *)@<eax>(int@<ebx>))v3;
-  v16 = dword_8079DA0;
-  v7 = dword_8079DA4;
-  v8 = dword_8079DA8;
-  result = (int *)(v3 + 45);
+  v5 = (int (__usercall **)@<eax>(int@<ebx>))(v4 + 4);
+  *(v5 - 1) = (int (__usercall *)@<eax>(int@<ebx>))3319;
+  *v5 = camlHashtbl__safehash_1177;
+  v5[1] = (int (__usercall *)@<eax>(int@<ebx>))3;
+  v5[2] = a1;
+  v15 = (int)(v5 + 4);
+  v5[3] = (int (__usercall *)@<eax>(int@<ebx>))4343;
+  v5[4] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry3;
+  v5[5] = (int (__usercall *)@<eax>(int@<ebx>))7;
+  v5[6] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__add_1179;
+  v5[7] = (int (__usercall *)@<eax>(int@<ebx>))v5;
+  v16 = (int)(v5 + 9);
+  v5[8] = (int (__usercall *)@<eax>(int@<ebx>))5367;
+  v5[9] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry2;
+  v5[10] = (int (__usercall *)@<eax>(int@<ebx>))5;
+  v5[11] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__remove_1185;
+  v5[12] = a1;
+  v5[13] = (int (__usercall *)@<eax>(int@<ebx>))v5;
+  v5[14] = (int (__usercall *)@<eax>(int@<ebx>))4343;
+  v5[15] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry2;
+  v5[16] = (int (__usercall *)@<eax>(int@<ebx>))5;
+  v5[17] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__find_rec_1193;
+  v5[18] = a1;
+  v17 = (int)(v5 + 20);
+  v5[19] = (int (__usercall *)@<eax>(int@<ebx>))6391;
+  v5[20] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry2;
+  v5[21] = (int (__usercall *)@<eax>(int@<ebx>))5;
+  v5[22] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__find_1198;
+  v5[23] = a1;
+  v5[24] = (int (__usercall *)@<eax>(int@<ebx>))v5;
+  v5[25] = (int (__usercall *)@<eax>(int@<ebx>))(v5 + 15);
+  v6 = (int)(v5 + 27);
+  v5[26] = (int (__usercall *)@<eax>(int@<ebx>))5367;
+  v5[27] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry2;
+  v5[28] = (int (__usercall *)@<eax>(int@<ebx>))5;
+  v5[29] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__find_all_1210;
+  v5[30] = a1;
+  v5[31] = (int (__usercall *)@<eax>(int@<ebx>))v5;
+  v7 = (int)(v5 + 33);
+  v5[32] = (int (__usercall *)@<eax>(int@<ebx>))5367;
+  v5[33] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry3;
+  v5[34] = (int (__usercall *)@<eax>(int@<ebx>))7;
+  v5[35] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__replace_1217;
+  v5[36] = a1;
+  v5[37] = (int (__usercall *)@<eax>(int@<ebx>))v5;
+  v8 = (int)(v5 + 39);
+  v5[38] = (int (__usercall *)@<eax>(int@<ebx>))5367;
+  v5[39] = (int (__usercall *)@<eax>(int@<ebx>))caml_curry2;
+  v5[40] = (int (__usercall *)@<eax>(int@<ebx>))5;
+  v5[41] = (int (__usercall *)@<eax>(int@<ebx>))camlHashtbl__mem_1227;
+  v5[42] = a1;
+  v5[43] = (int (__usercall *)@<eax>(int@<ebx>))v5;
+  v18 = dword_8079DA0;
+  v9 = dword_8079DA4;
+  v10 = dword_8079DA8;
+  result = (int *)(v5 + 45);
   *(result - 1) = 12288;
-  *result = v10;
-  result[1] = v11;
-  result[2] = v12;
-  result[3] = (int)v13;
-  result[4] = (int)v14;
-  result[5] = (int)v15;
-  result[6] = (int)v4;
-  result[7] = (int)v5;
-  result[8] = (int)v6;
-  result[9] = v16;
-  result[10] = v7;
-  result[11] = v8;
+  *result = v12;
+  result[1] = v13;
+  result[2] = v14;
+  result[3] = v15;
+  result[4] = v16;
+  result[5] = v17;
+  result[6] = v6;
+  result[7] = v7;
+  result[8] = v8;
+  result[9] = v18;
+  result[10] = v9;
+  result[11] = v10;
   return result;
 }
 // 8058550: could not find valid save-restore pair for ebx
-// 80586D4: variable 'v10' is possibly undefined
+// 80586D4: variable 'v12' is possibly undefined
+// 8058713: variable 'a2' is possibly undefined
+// 8058713: variable 'a3' is possibly undefined
 // 804B2D0: using guessed type _DWORD caml_curry3();
 // 804B370: using guessed type _DWORD caml_curry2();
 // 8079D7C: using guessed type int camlHashtbl;
@@ -14661,7 +15956,7 @@ int __usercall camlBuffer__code_begin@<eax>(int a1@<eax>, _DWORD *a2@<edx>, int 
         caml_young_ptr = v4;
         if ( v4 >= caml_young_limit )
           break;
-        caml_call_gc(v13);
+        caml_call_gc((int)a2, a3, v13);
       }
       v5 = (_DWORD *)(v4 + 4);
       *(v5 - 1) = 1024;
@@ -14840,7 +16135,6 @@ int __usercall camlBuffer__subst_1127@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<
   int v5; // ebp
   int v6; // eax
   int v7; // eax
-  int result; // eax
   int v9; // eax
   int v10; // [esp+0h] [ebp-Ch]
   int v11; // [esp+0h] [ebp-Ch]
@@ -14873,7 +16167,7 @@ int __usercall camlBuffer__subst_1127@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<
       }
       else
       {
-        v12 = camlBuffer__find_ident_1114(*(_DWORD *)(a2 + 20), *(_DWORD *)(a2 + 24), a3 + 2)[1];
+        v12 = camlBuffer__find_ident_1114(*(_DWORD *)(a2 + 20), *(_DWORD *)(a2 + 24), a3 + 2, *(_DWORD *)(a2 + 24))[1];
         v7 = (**(int (***)(void))(v15 + 16))();
         camlBuffer__add_string_1082(*(int **)(v15 + 12), v7);
         a1 = 65;
@@ -14907,51 +16201,50 @@ int __usercall camlBuffer__subst_1127@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<
     }
   }
   if ( a1 == 185 )
-    result = camlBuffer__add_char_1072(*(int **)(a2 + 12), 185);
+    return camlBuffer__add_char_1072(*(int **)(a2 + 12), 185);
   else
-    result = 1;
-  return result;
+    return 1;
 }
 
 //----- (08058B10) --------------------------------------------------------
 int *__usercall camlBuffer__create_1039@<eax>(int a1@<eax>)
 {
-  int v1; // ecx
-  unsigned int v2; // eax
+  int v1; // edx
+  int i; // ecx
+  unsigned int v3; // eax
   int *result; // eax
-  int v4; // [esp+0h] [ebp-4h]
+  int v5; // [esp+0h] [ebp-4h]
 
   if ( a1 < 3 )
     a1 = 3;
   if ( a1 <= dword_8079C2C )
   {
-    v4 = a1;
+    v5 = a1;
   }
   else
   {
     LOBYTE(a1) = dword_8079C2C;
-    v4 = dword_8079C2C;
+    v5 = dword_8079C2C;
   }
-  v1 = caml_c_call((int (*)(void))caml_create_string, a1);
-  while ( 1 )
+  for ( i = caml_c_call((int (*)(void))caml_create_string, a1); ; caml_call_gc(v1, i, v5) )
   {
-    v2 = caml_young_ptr - 20;
-    caml_young_ptr = v2;
-    if ( v2 >= caml_young_limit )
+    v3 = caml_young_ptr - 20;
+    caml_young_ptr = v3;
+    if ( v3 >= caml_young_limit )
       break;
-    caml_call_gc(v4);
   }
-  result = (int *)(v2 + 4);
+  result = (int *)(v3 + 4);
   *(result - 1) = 4096;
-  *result = v1;
+  *result = i;
   result[1] = 1;
-  result[2] = v4;
-  result[3] = v1;
+  result[2] = v5;
+  result[3] = i;
   return result;
 }
 // 8058B10: could not find valid save-restore pair for ebx
-// 8058B72: variable 'v1' is possibly undefined
-// 8058B7E: variable 'v4' is possibly undefined
+// 8058B72: variable 'i' is possibly undefined
+// 8058B7E: variable 'v5' is possibly undefined
+// 8058B88: variable 'v1' is possibly undefined
 // 8079C2C: using guessed type int dword_8079C2C;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -14974,7 +16267,7 @@ int __usercall camlBuffer__sub_1046@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<e
   return v7;
 }
 // 8058BA0: could not find valid save-restore pair for esi
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08058C10) --------------------------------------------------------
 int __usercall camlBuffer__blit_1051@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<esi>)
@@ -14991,7 +16284,7 @@ int __usercall camlBuffer__blit_1051@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<
   }
   return camlString__blit_1056(*a1, a2, a3, a4, a5);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08058C60) --------------------------------------------------------
 int __usercall camlBuffer__nth_1057@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
@@ -15011,7 +16304,7 @@ int __usercall camlBuffer__nth_1057@<eax>(int *a1@<eax>, int a2@<edx>, int a3@<e
   v8 = caml_ml_array_bound_error();
   return camlBuffer__length_1060(v8);
 }
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08058CA0) --------------------------------------------------------
 int __usercall camlBuffer__length_1060@<eax>(int a1@<eax>)
@@ -15042,7 +16335,7 @@ int __usercall camlBuffer__reset_1064@<eax>(unsigned int *a1@<eax>)
 int __usercall camlBuffer__resize_1066@<eax>(int *a1@<eax>, int a2@<ebx>)
 {
   int *v2; // ecx
-  int v3; // edx
+  int i; // edx
   unsigned int v4; // eax
   int *v5; // eax
   char v7; // [esp+0h] [ebp-Ch]
@@ -15050,19 +16343,17 @@ int __usercall camlBuffer__resize_1066@<eax>(int *a1@<eax>, int a2@<ebx>)
   int *v10; // [esp+8h] [ebp-4h]
 
   v2 = a1;
-  v3 = a1[2];
-  while ( 1 )
+  for ( i = a1[2]; ; caml_call_gc(i, (int)v2, v7) )
   {
     v4 = caml_young_ptr - 8;
     caml_young_ptr = v4;
     if ( v4 >= caml_young_limit )
       break;
-    caml_call_gc(v7);
   }
   v5 = (int *)(v4 + 4);
   v10 = v5;
   *(v5 - 1) = 1024;
-  for ( *v5 = v3; v2[1] + a2 - 1 > *v5; *v5 = 4 * (*v5 >> 1) + 1 )
+  for ( *v5 = i; v2[1] + a2 - 1 > *v5; *v5 = 4 * (*v5 >> 1) + 1 )
     ;
   if ( *v5 > dword_8079C2C )
   {
@@ -15076,10 +16367,10 @@ int __usercall camlBuffer__resize_1066@<eax>(int *a1@<eax>, int a2@<ebx>)
   a1[2] = *v10;
   return 1;
 }
-// 8058D33: variable 'v3' is possibly undefined
+// 8058D33: variable 'i' is possibly undefined
 // 8058D37: variable 'v2' is possibly undefined
 // 8058DED: variable 'v7' is possibly undefined
-// 804FC70: using guessed type int camlPervasives__failwith_1010(void);
+// 804FC70: using guessed type void __noreturn camlPervasives__failwith_1010(void);
 // 8079C2C: using guessed type int dword_8079C2C;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
@@ -15089,7 +16380,6 @@ int __usercall camlBuffer__add_char_1072@<eax>(int *a1@<eax>, int a2@<ebx>)
 {
   int v2; // ebx
   int v3; // edx
-  int result; // eax
   int *v5; // eax
   int v6; // edx
   int v7; // ecx
@@ -15103,15 +16393,14 @@ int __usercall camlBuffer__add_char_1072@<eax>(int *a1@<eax>, int a2@<ebx>)
   if ( v3 - (unsigned int)*(unsigned __int8 *)(*a1 + v3) <= v9 >> 1 )
   {
     v5 = (int *)caml_ml_array_bound_error();
-    result = camlBuffer__add_substring_1076(v5, v6, v7, v2);
+    return camlBuffer__add_substring_1076(v5, v6, v7, v2);
   }
   else
   {
     *(_BYTE *)(v2 + (v9 >> 1)) = a2 >> 1;
     a1[1] = v9 + 2;
-    result = 1;
+    return 1;
   }
-  return result;
 }
 // 8058E00: could not find valid save-restore pair for esi
 // 8058E6A: variable 'v6' is possibly undefined
@@ -15138,7 +16427,7 @@ int __usercall camlBuffer__add_substring_1076@<eax>(int *a1@<eax>, int a2@<edx>,
 }
 // 8058E70: could not find valid save-restore pair for ebx
 // 8058E70: could not find valid save-restore pair for esi
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (08058F00) --------------------------------------------------------
 int __usercall camlBuffer__add_string_1082@<eax>(int *a1@<eax>, int a2@<ebx>)
@@ -15177,7 +16466,7 @@ int __usercall camlBuffer__add_channel_1090@<eax>(int *a1@<eax>, int a2@<edx>, i
   return 1;
 }
 // 8058F80: could not find valid save-restore pair for ebx
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 // 8079C2C: using guessed type int dword_8079C2C;
 
 //----- (08059000) --------------------------------------------------------
@@ -15196,88 +16485,94 @@ int __usercall camlBuffer__output_buffer_1094@<eax>(char a1@<al>, int *a2@<ebx>)
 #error "8059138: call analysis failed (funcsize=23)"
 
 //----- (08059140) --------------------------------------------------------
-int *__usercall camlBuffer__find_ident_1114@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
+int *__usercall camlBuffer__find_ident_1114@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>, int a4@<edx>)
 {
-  unsigned int v3; // eax
-  _DWORD *v4; // eax
-  int v5; // edx
-  __int64 v6; // rax
-  int v7; // ecx
-  _DWORD *v8; // eax
+  unsigned int v4; // eax
+  _DWORD *v5; // eax
+  int v6; // edx
+  __int64 v7; // rax
+  int v8; // edx
+  int i; // ecx
+  _DWORD *v10; // eax
   int *result; // eax
-  __int64 v10; // rax
-  int v11; // ebx
-  unsigned int v12; // eax
-  char v13; // [esp+0h] [ebp-10h]
-  int v14; // [esp+0h] [ebp-10h]
-  int v15; // [esp+0h] [ebp-10h]
-  int v16; // [esp+Ch] [ebp-4h]
+  __int64 v12; // rax
+  int v13; // edx
+  int v14; // ecx
+  int v15; // ebx
+  unsigned int v16; // eax
+  char v17; // [esp+0h] [ebp-10h]
+  int v18; // [esp+0h] [ebp-10h]
+  int v19; // [esp+0h] [ebp-10h]
+  int v20; // [esp+Ch] [ebp-4h]
 
   if ( a3 >= a2 )
   {
     while ( 1 )
     {
-      v3 = caml_young_ptr - 8;
-      caml_young_ptr = v3;
-      if ( v3 >= caml_young_limit )
+      v4 = caml_young_ptr - 8;
+      caml_young_ptr = v4;
+      if ( v4 >= caml_young_limit )
         break;
-      caml_call_gc(v13);
+      caml_call_gc(a4, a2, v17);
     }
-    v4 = (_DWORD *)(v3 + 4);
-    *(v4 - 1) = 1024;
-    *v4 = &caml_exn_Not_found;
-    a1 = caml_raise_exn((int)v4);
+    v5 = (_DWORD *)(v4 + 4);
+    *(v5 - 1) = 1024;
+    *v5 = &caml_exn_Not_found;
+    a1 = caml_raise_exn((int)v5);
   }
-  v16 = a1;
-  v5 = 4 * (*(_DWORD *)(a1 - 4) >> 10) - 1;
-  if ( v5 - (unsigned int)*(unsigned __int8 *)(a1 + v5) <= a3 >> 1 )
+  v20 = a1;
+  v6 = 4 * (*(_DWORD *)(a1 - 4) >> 10) - 1;
+  if ( v6 - (unsigned int)*(unsigned __int8 *)(a1 + v6) <= a3 >> 1 )
   {
     caml_ml_array_bound_error();
-    result = (int *)camlBuffer__add_substitute_1122();
+    return (int *)camlBuffer__add_substitute_1122();
   }
   else if ( 2 * *(unsigned __int8 *)(a1 + (a3 >> 1)) == 80 || 2 * *(unsigned __int8 *)(a1 + (a3 >> 1)) == 246 )
   {
     camlBuffer__closing_1097();
-    v10 = camlBuffer__advance_to_closing_1098(1, v16);
-    v15 = v10;
-    v11 = camlString__sub_1046(v16, v10 - a3 - 3 + 2, a3 + 2, SHIDWORD(v10));
+    v12 = camlBuffer__advance_to_closing_1098(1, v20);
+    v19 = v12;
+    v15 = camlString__sub_1046(v20, v12 - a3 - 3 + 2, a3 + 2, SHIDWORD(v12));
     while ( 1 )
     {
-      v12 = caml_young_ptr - 12;
-      caml_young_ptr = v12;
-      if ( v12 >= caml_young_limit )
+      v16 = caml_young_ptr - 12;
+      caml_young_ptr = v16;
+      if ( v16 >= caml_young_limit )
         break;
-      caml_call_gc(v15);
+      caml_call_gc(v13, v14, v19);
     }
-    result = (int *)(v12 + 4);
+    result = (int *)(v16 + 4);
     *(result - 1) = 2048;
-    *result = v11;
-    result[1] = v15 + 2;
+    *result = v15;
+    result[1] = v19 + 2;
   }
   else
   {
-    v6 = camlBuffer__advance_to_non_alpha_1108();
-    v14 = v6;
-    v7 = camlString__sub_1046(v16, v6 - a3 + 1, a3, SHIDWORD(v6));
-    while ( 1 )
+    v7 = camlBuffer__advance_to_non_alpha_1108();
+    v18 = v7;
+    for ( i = camlString__sub_1046(v20, v7 - a3 + 1, a3, SHIDWORD(v7)); ; caml_call_gc(v8, i, v18) )
     {
-      v8 = (_DWORD *)(caml_young_ptr - 12);
-      caml_young_ptr = (int)v8;
-      if ( (unsigned int)v8 >= caml_young_limit )
+      v10 = (_DWORD *)(caml_young_ptr - 12);
+      caml_young_ptr = (int)v10;
+      if ( (unsigned int)v10 >= caml_young_limit )
         break;
-      caml_call_gc(v14);
     }
-    *v8 = 2048;
-    v8[1] = v7;
-    v8[2] = v14;
-    result = v8 + 1;
+    *v10 = 2048;
+    v10[1] = i;
+    v10[2] = v18;
+    return v10 + 1;
   }
   return result;
 }
-// 80591FE: variable 'v7' is possibly undefined
-// 8059203: variable 'v14' is possibly undefined
-// 805928C: variable 'v15' is possibly undefined
-// 80592A7: variable 'v13' is possibly undefined
+// 80591FE: variable 'i' is possibly undefined
+// 8059203: variable 'v18' is possibly undefined
+// 805928C: variable 'v19' is possibly undefined
+// 8059296: variable 'v13' is possibly undefined
+// 8059296: variable 'v14' is possibly undefined
+// 805929D: variable 'v8' is possibly undefined
+// 80592A7: variable 'a4' is possibly undefined
+// 80592A7: variable 'a2' is possibly undefined
+// 80592A7: variable 'v17' is possibly undefined
 // 8059010: using guessed type int camlBuffer__closing_1097(void);
 // 8059070: using guessed type __int64 __fastcall camlBuffer__advance_to_closing_1098(_DWORD, _DWORD);
 // 80590E0: using guessed type __int64 camlBuffer__advance_to_non_alpha_1108(void);
@@ -15383,7 +16678,6 @@ int __usercall camlPrintf__skip_int_literal_1092@<eax>(int a1@<eax>, int a2@<ebx
 //----- (08059450) --------------------------------------------------------
 int __usercall camlPrintf__sub_sub_1129@<eax>(int a1@<eax>, int a2@<ebx>)
 {
-  int result; // eax
   int v3; // edx
   int v4; // esi
   int v5; // edx
@@ -15399,7 +16693,7 @@ int __usercall camlPrintf__sub_sub_1129@<eax>(int a1@<eax>, int a2@<ebx>)
   if ( v4 - (unsigned int)*(unsigned __int8 *)(v3 + v4) <= a1 >> 1 )
   {
     v8 = caml_ml_array_bound_error();
-    result = camlPrintf__sub_1128(v8, a2);
+    return camlPrintf__sub_1128(v8, a2);
   }
   else
   {
@@ -15429,11 +16723,10 @@ LABEL_9:
       }
     }
     if ( v5 == *(_DWORD *)(a2 + 32) )
-      result = a1 + 2;
+      return a1 + 2;
     else
-      result = caml_apply3(v5, *(_DWORD *)(a2 + 12));
+      return caml_apply3(v5, *(_DWORD *)(a2 + 12));
   }
-  return result;
 }
 // 8059C50: using guessed type int __fastcall camlPrintf__sub_fmt_1124(_DWORD);
 
@@ -15525,28 +16818,34 @@ int __usercall camlPrintf__fun_1565@<eax>(int a1@<eax>, int a2@<ecx>, double *a3
 //----- (08059690) --------------------------------------------------------
 int __usercall camlPrintf__got_spec_1304@<eax>(unsigned int *a1@<eax>, _DWORD *a2@<ecx>, int a3@<ebx>, int *a4@<esi>)
 {
-  double *v4; // ebx
-  _DWORD *v5; // eax
-  _DWORD *v9; // [esp+8h] [ebp-8h]
+  int v4; // edx
+  int v5; // ecx
+  double *arg_1288; // ebx
+  _DWORD *v7; // eax
+  unsigned int *v9; // [esp+0h] [ebp-10h]
+  _DWORD *v11; // [esp+8h] [ebp-8h]
 
-  v4 = camlPrintf__get_arg_1288(a1, a2[3], a2[6], a4);
+  v9 = a1;
+  arg_1288 = camlPrintf__get_arg_1288(a1, a2[3], a2[6], a4);
   while ( 1 )
   {
-    v5 = (_DWORD *)(caml_young_ptr - 12);
-    caml_young_ptr = (int)v5;
-    if ( (unsigned int)v5 >= caml_young_limit )
+    v7 = (_DWORD *)(caml_young_ptr - 12);
+    caml_young_ptr = (int)v7;
+    if ( (unsigned int)v7 >= caml_young_limit )
       break;
-    caml_call_gc((char)a1);
+    caml_call_gc(v4, v5, (char)v9);
   }
-  v9 = v5 + 1;
-  *v5 = 2048;
-  v5[1] = v4;
-  v5[2] = a2[7];
-  if ( a1 == (unsigned int *)1 )
+  v11 = v7 + 1;
+  *v7 = 2048;
+  v7[1] = arg_1288;
+  v7[2] = a2[7];
+  if ( v9 == (unsigned int *)1 )
     (**(void (***)(void))(dword_807AE0C + 8))();
-  return camlPrintf__scan_flags_1292(v9, a3);
+  return camlPrintf__scan_flags_1292(v11, a3);
 }
-// 80596E5: variable 'a1' is possibly undefined
+// 80596E5: variable 'v9' is possibly undefined
+// 8059719: variable 'v4' is possibly undefined
+// 8059719: variable 'v5' is possibly undefined
 // 805B4C0: using guessed type int __fastcall camlPrintf__scan_flags_1292(_DWORD, _DWORD);
 // 807AE0C: using guessed type int dword_807AE0C;
 // 8080414: using guessed type int caml_young_ptr;
@@ -15560,35 +16859,41 @@ int __usercall camlPrintf__got_spec_1297@<eax>(int a1@<ecx>, int a2@<ebx>)
 // 805B4C0: using guessed type int __fastcall camlPrintf__scan_flags_1292(_DWORD, _DWORD);
 
 //----- (08059740) --------------------------------------------------------
-int __usercall camlPrintf__cont_m_1365@<eax>(int a1@<eax>, int a2@<edx>, int (__usercall *a3)@<eax>(int *a1@<ebx>)@<ecx>, int a4@<ebx>)
+int __usercall camlPrintf__cont_m_1365@<eax>(
+        int a1@<eax>,
+        int a2@<edx>,
+        int (__usercall *a3)@<eax>(int *a1@<ebx>)@<ecx>,
+        int a4@<ebx>)
 {
   _DWORD *v4; // eax
-  int v5; // edx
-  unsigned int v6; // eax
-  int (__usercall **v7)@<eax>(int *@<ebx>); // eax
+  int i; // edx
+  int v6; // ecx
+  unsigned int v7; // eax
+  int (__usercall **v8)@<eax>(int *@<ebx>); // eax
+  int v10; // [esp+0h] [ebp-10h]
 
-  v4 = camlPrintf__ac_of_format_1184();
-  v5 = camlPrintf__index_of_int_1037(*v4 + a1 - 1);
-  while ( 1 )
+  v10 = a2;
+  v4 = camlPrintf__ac_of_format_1184(a4, (int)a3);
+  for ( i = camlPrintf__index_of_int_1037(*v4 + a1 - 1); ; caml_call_gc(i, v6, v10) )
   {
-    v6 = caml_young_ptr - 24;
-    caml_young_ptr = v6;
-    if ( v6 >= caml_young_limit )
+    v7 = caml_young_ptr - 24;
+    caml_young_ptr = v7;
+    if ( v7 >= caml_young_limit )
       break;
-    caml_call_gc(a2);
   }
-  v7 = (int (__usercall **)@<eax>(int *@<ebx>))(v6 + 4);
-  *(v7 - 1) = (int (__usercall *)@<eax>(int *@<ebx>))5367;
-  *v7 = camlPrintf__code_begin;
-  v7[1] = (int (__usercall *)@<eax>(int *@<ebx>))3;
-  v7[2] = (int (__usercall *)@<eax>(int *@<ebx>))(a2 - 80);
-  v7[3] = a3;
-  v7[4] = (int (__usercall *)@<eax>(int *@<ebx>))v5;
-  return camlPrintf__pr_1354((int)v7, *(_DWORD *)(a2 + 44), a4, a1, *(_DWORD **)(a2 + 32));
+  v8 = (int (__usercall **)@<eax>(int *@<ebx>))(v7 + 4);
+  *(v8 - 1) = (int (__usercall *)@<eax>(int *@<ebx>))5367;
+  *v8 = camlPrintf__code_begin;
+  v8[1] = (int (__usercall *)@<eax>(int *@<ebx>))3;
+  v8[2] = (int (__usercall *)@<eax>(int *@<ebx>))(v10 - 80);
+  v8[3] = a3;
+  v8[4] = (int (__usercall *)@<eax>(int *@<ebx>))i;
+  return camlPrintf__pr_1354((int)v8, *(_DWORD *)(v10 + 44), a4, a1, *(_DWORD **)(v10 + 32));
 }
 // 8059740: could not find valid save-restore pair for ebx
-// 805979B: variable 'a2' is possibly undefined
-// 80597A8: variable 'v5' is possibly undefined
+// 805979B: variable 'v10' is possibly undefined
+// 80597A8: variable 'i' is possibly undefined
+// 80597C1: variable 'v6' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -15666,7 +16971,7 @@ int __usercall camlPrintf__doprn_1360@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<
   caml_extra_params = a2 + 48;
   dword_807D0C0 = a2 + 64;
   dword_807D0C4 = a2 + 80;
-  return camlPrintf__scan_format_1278(v7, v4, v6, a2 + 32, a2 + 16);
+  return camlPrintf__scan_format_1278(v7, v4, v6, a2 + 32, a2 + 16, v3);
 }
 // 807D0BC: using guessed type int caml_extra_params;
 // 807D0C0: using guessed type int dword_807D0C0;
@@ -15691,10 +16996,11 @@ _DWORD *__usercall camlPrintf__parse_1069@<eax>(int a1@<eax>, int a2@<ecx>, int 
   int v10; // edx
   int v11; // ecx
   char v12; // al
-  int v13; // ecx
-  _DWORD *v14; // eax
-  char v15; // [esp+0h] [ebp-4h]
-  int v16; // [esp+0h] [ebp-4h]
+  int v13; // edx
+  int i; // ecx
+  _DWORD *v15; // eax
+  char v16; // [esp+0h] [ebp-4h]
+  int v17; // [esp+0h] [ebp-4h]
 
   while ( 1 )
   {
@@ -15715,24 +17021,22 @@ _DWORD *__usercall camlPrintf__parse_1069@<eax>(int a1@<eax>, int a2@<ecx>, int 
     {
       if ( v8 < 117 )
       {
-        v16 = v3;
+        v17 = v3;
         v9 = *(_DWORD *)(a2 + 12);
         v10 = 4 * (*(_DWORD *)(v9 - 4) >> 10) - 1;
         v11 = 2 * (v10 - *(unsigned __int8 *)(v9 + v10)) - a3;
         v12 = camlString__sub_1046(v9, v11, a3, v11);
-        v13 = caml_c_call((int (*)(void))caml_int_of_string, v12);
-        while ( 1 )
+        for ( i = caml_c_call((int (*)(void))caml_int_of_string, v12); ; caml_call_gc(v13, i, v17) )
         {
-          v14 = (_DWORD *)(caml_young_ptr - 12);
-          caml_young_ptr = (int)v14;
-          if ( (unsigned int)v14 >= caml_young_limit )
+          v15 = (_DWORD *)(caml_young_ptr - 12);
+          caml_young_ptr = (int)v15;
+          if ( (unsigned int)v15 >= caml_young_limit )
             break;
-          caml_call_gc(v16);
         }
-        *v14 = 2048;
-        v14[1] = v13;
-        v14[2] = v16;
-        return v14 + 1;
+        *v15 = 2048;
+        v15[1] = i;
+        v15[2] = v17;
+        return v15 + 1;
       }
 LABEL_11:
       a3 += 2;
@@ -15745,7 +17049,7 @@ LABEL_11:
     caml_young_ptr = v6;
     if ( v6 >= caml_young_limit )
       break;
-    caml_call_gc(v15);
+    caml_call_gc(v3, a2, v16);
   }
   result = (_DWORD *)(v6 + 4);
   *(result - 1) = 2048;
@@ -15754,9 +17058,11 @@ LABEL_11:
   return result;
 }
 // 8059A0C: variable 'v3' is possibly undefined
-// 8059A99: variable 'v13' is possibly undefined
-// 8059A9E: variable 'v16' is possibly undefined
-// 8059AE1: variable 'v15' is possibly undefined
+// 8059A99: variable 'i' is possibly undefined
+// 8059A9E: variable 'v17' is possibly undefined
+// 8059ADA: variable 'v13' is possibly undefined
+// 8059AE1: variable 'a2' is possibly undefined
+// 8059AE1: variable 'v16' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -15766,56 +17072,60 @@ LABEL_11:
 //----- (08059B60) --------------------------------------------------------
 int __usercall camlPrintf__fill_format_1096@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 {
-  int v3; // eax
-  unsigned int v4; // eax
-  _DWORD *v5; // eax
-  int v7; // [esp+0h] [ebp-Ch]
-  int v8; // [esp+4h] [ebp-8h]
-  int v9; // [esp+8h] [ebp-4h]
+  int v3; // edx
+  int v4; // eax
+  unsigned int v5; // eax
+  _DWORD *v6; // eax
+  int v8; // [esp+0h] [ebp-Ch]
+  int v9; // [esp+4h] [ebp-8h]
   int v10; // [esp+8h] [ebp-4h]
+  int v11; // [esp+8h] [ebp-4h]
 
   while ( a1 <= *(_DWORD *)(a2 + 16) )
   {
+    v3 = 2 * *(unsigned __int8 *)(*(_DWORD *)(a2 + 12) + (a1 >> 1)) + 1;
     if ( 2 * *(unsigned __int8 *)(*(_DWORD *)(a2 + 12) + (a1 >> 1)) == 84 )
     {
       if ( a3 == 1 )
       {
         while ( 1 )
         {
-          v4 = caml_young_ptr - 12;
-          caml_young_ptr = v4;
-          if ( v4 >= caml_young_limit )
+          v5 = caml_young_ptr - 12;
+          caml_young_ptr = v5;
+          if ( v5 >= caml_young_limit )
             break;
-          caml_call_gc(v7);
+          caml_call_gc(v3, a2, v8);
         }
-        v5 = (_DWORD *)(v4 + 4);
-        *(v5 - 1) = 2048;
-        *v5 = &caml_exn_Assert_failure;
-        v5[1] = &camlPrintf__65;
-        caml_raise_exn((int)v5);
+        v6 = (_DWORD *)(v5 + 4);
+        *(v6 - 1) = 2048;
+        *v6 = &caml_exn_Assert_failure;
+        v6[1] = &camlPrintf__65;
+        caml_raise_exn((int)v6);
         return 1;
       }
-      v10 = a2;
-      v7 = *(_DWORD *)(a3 + 4);
-      v3 = camlPervasives__string_of_int_1130();
-      camlBuffer__add_string_1082(*(int **)(v10 + 24), v3);
+      v11 = a2;
+      v8 = *(_DWORD *)(a3 + 4);
+      v4 = camlPervasives__string_of_int_1130();
+      camlBuffer__add_string_1082(*(int **)(v11 + 24), v4);
       a1 = camlPrintf__skip_positional_spec_1090();
-      a3 = v7;
-      a2 = v10;
+      a3 = v8;
+      a2 = v11;
     }
     else
     {
-      v9 = a2;
-      LOBYTE(v7) = a3;
-      v8 = a1;
-      camlBuffer__add_char_1072(*(int **)(a2 + 24), 2 * *(unsigned __int8 *)(*(_DWORD *)(a2 + 12) + (a1 >> 1)) + 1);
-      a1 = v8 + 2;
-      a2 = v9;
+      v10 = a2;
+      LOBYTE(v8) = a3;
+      v9 = a1;
+      camlBuffer__add_char_1072(*(int **)(a2 + 24), v3);
+      a1 = v9 + 2;
+      a2 = v10;
     }
   }
   return 1;
 }
-// 8059C49: variable 'v7' is possibly undefined
+// 8059C49: variable 'v3' is possibly undefined
+// 8059C49: variable 'a2' is possibly undefined
+// 8059C49: variable 'v8' is possibly undefined
 // 8059AF0: using guessed type int camlPrintf__skip_positional_spec_1090(void);
 // 8073AE4: using guessed type char *caml_exn_Assert_failure;
 // 807B234: using guessed type char *camlPrintf__65;
@@ -15831,7 +17141,7 @@ int __usercall camlPrintf__scan_fmt_1144@<eax>(int result@<eax>, int a2@<ebx>)
   int v2; // esi
   int v3; // ecx
   int v4; // eax
-  int v5; // ecx
+  int *v5; // ecx
 
   while ( result < *(_DWORD *)(a2 + 20) )
   {
@@ -15840,7 +17150,7 @@ int __usercall camlPrintf__scan_fmt_1144@<eax>(int result@<eax>, int a2@<ebx>)
     if ( v3 - (unsigned int)*(unsigned __int8 *)(v2 + v3) <= result >> 1 )
     {
       v4 = caml_ml_array_bound_error();
-      return camlPrintf__scan_conv_171(v4, v5, a2);
+      return camlPrintf__scan_conv_1143(v4, v5, a2);
     }
     if ( 2 * *(unsigned __int8 *)(v2 + (result >> 1)) == 74 )
       result = camlPrintf__scan_flags_1142(1, (int *)(a2 - 32), result + 2);
@@ -15852,7 +17162,7 @@ int __usercall camlPrintf__scan_fmt_1144@<eax>(int result@<eax>, int a2@<ebx>)
 // 8059D5A: variable 'v5' is possibly undefined
 
 //----- (08059D60) --------------------------------------------------------
-int __usercall camlPrintf__scan_conv_171@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
+int __usercall camlPrintf__scan_conv_1143@<eax>(int a1@<eax>, int *a2@<ecx>, int a3@<ebx>)
 {
   int *v3; // edx
   int v4; // ecx
@@ -15860,31 +17170,32 @@ int __usercall camlPrintf__scan_conv_171@<eax>(int a1@<eax>, int a2@<ecx>, int a
   int result; // eax
   int v7; // eax
   int v8; // edx
-  _DWORD *v9; // eax
-  int v10; // edi
-  int v11; // esi
-  int v12; // ebp
-  int v13; // ecx
-  int v14; // eax
-  int *v15; // ecx
-  int v16; // [esp+0h] [ebp-10h]
+  int v9; // ecx
+  _DWORD *v10; // eax
+  int v11; // edi
+  int v12; // esi
+  int v13; // ebp
+  int v14; // ecx
+  int v15; // eax
+  int *v16; // ecx
+  int v17; // [esp+0h] [ebp-10h]
   int i; // [esp+0h] [ebp-10h]
-  int v18; // [esp+4h] [ebp-Ch]
-  int v19; // [esp+8h] [ebp-8h]
-  int v20; // [esp+Ch] [ebp-4h]
+  int v19; // [esp+4h] [ebp-Ch]
+  int v20; // [esp+8h] [ebp-8h]
   int *v21; // [esp+Ch] [ebp-4h]
+  int *v22; // [esp+Ch] [ebp-4h]
 
   while ( 2 )
   {
-    v3 = (int *)a2;
-    if ( a3 > *(_DWORD *)(a2 + 36) )
-      camlPrintf__incomplete_format_1065(*(_DWORD *)(a2 + 24), a2);
-    v4 = 2 * *(unsigned __int8 *)(*(_DWORD *)(a2 + 24) + (a3 >> 1)) + 1;
+    v3 = a2;
+    if ( a3 > a2[9] )
+      camlPrintf__incomplete_format_1065(a2[6], (int)a2);
+    v4 = 2 * *(unsigned __int8 *)(a2[6] + (a3 >> 1)) + 1;
     if ( v4 >= 253 )
 LABEL_9:
       camlPrintf__bad_conversion_format_1061(v3[6], (int)v3, v4);
-    v20 = (int)v3;
-    v19 = a1;
+    v21 = v3;
+    v20 = a1;
     switch ( v4 >> 1 )
     {
       case 0:
@@ -15987,7 +17298,7 @@ LABEL_9:
         return a3 + 2;
       case 40:
         v5 = caml_apply3(v4, v3[7]);
-        return camlPrintf__scan_fmt_1144(v5, v20 + 16);
+        return camlPrintf__scan_fmt_1144(v5, (int)(v21 + 4));
       case 41:
       case 97:
       case 114:
@@ -16010,28 +17321,27 @@ LABEL_9:
       case 76:
       case 108:
       case 110:
-        v10 = a3 + 2;
+        v11 = a3 + 2;
         if ( a3 + 2 > v3[9] )
-          goto LABEL_17;
-        v11 = v3[6];
-        v12 = 4 * (*(_DWORD *)(v11 - 4) >> 10) - 1;
-        if ( v12 - (unsigned int)*(unsigned __int8 *)(v11 + v12) <= v10 >> 1 )
+          return caml_apply3(211, v3[7]);
+        v12 = v3[6];
+        v13 = 4 * (*(_DWORD *)(v12 - 4) >> 10) - 1;
+        if ( v13 - (unsigned int)*(unsigned __int8 *)(v12 + v13) <= v11 >> 1 )
         {
-          v14 = caml_ml_array_bound_error();
-          result = camlPrintf__scan_flags_1142(v14, v15, a3);
+          v15 = caml_ml_array_bound_error();
+          return camlPrintf__scan_flags_1142(v15, v16, a3);
         }
         else
         {
-          v13 = 2 * *(unsigned __int8 *)(v11 + (v10 >> 1)) - 175;
-          if ( (unsigned int)v13 > 0x41 )
+          v14 = 2 * *(unsigned __int8 *)(v12 + (v11 >> 1)) - 175;
+          if ( (unsigned int)v14 > 0x41 )
           {
-LABEL_17:
-            result = caml_apply3(211, v3[7]);
+            return caml_apply3(211, v3[7]);
           }
           else
           {
-            v21 = v3;
-            switch ( v13 >> 1 )
+            v22 = v3;
+            switch ( v14 >> 1 )
             {
               case 0:
               case 12:
@@ -16040,7 +17350,7 @@ LABEL_17:
               case 29:
               case 32:
                 caml_apply3(2 * *(unsigned __int8 *)(v3[6] + (a3 >> 1)) + 1, v3[7]);
-                result = caml_apply2(v21[8]);
+                result = caml_apply2(v22[8]);
                 break;
               case 1:
               case 2:
@@ -16069,7 +17379,7 @@ LABEL_17:
               case 28:
               case 30:
               case 31:
-                goto LABEL_17;
+                return caml_apply3(211, v3[7]);
             }
           }
         }
@@ -16081,40 +17391,41 @@ LABEL_17:
       case 111:
       case 117:
       case 120:
-        goto LABEL_17;
+        return caml_apply3(211, v3[7]);
       case 83:
       case 91:
       case 115:
         return caml_apply3(231, v3[7]);
       case 123:
-        v16 = 2 * *(unsigned __int8 *)(v3[6] + (a3 >> 1)) + 1;
-        v18 = caml_apply3(v4, v3[7]);
-        v7 = camlPrintf__sub_format_for_printf_1135(v16);
+        v17 = 2 * *(unsigned __int8 *)(v3[6] + (a3 >> 1)) + 1;
+        v19 = caml_apply3(v4, v3[7]);
+        v7 = camlPrintf__sub_format_for_printf_1135(v17);
         v8 = caml_apply2(v7);
-        for ( i = v8; ; caml_call_gc(i) )
+        for ( i = v8; ; caml_call_gc(v8, v9, i) )
         {
-          v9 = (_DWORD *)(caml_young_ptr - 24);
-          caml_young_ptr = (int)v9;
-          if ( (unsigned int)v9 >= caml_young_limit )
+          v10 = (_DWORD *)(caml_young_ptr - 24);
+          caml_young_ptr = (int)v10;
+          if ( (unsigned int)v10 >= caml_young_limit )
             break;
         }
-        *v9 = 5367;
-        v9[1] = camlPrintf__loop_1159;
-        v9[2] = 3;
-        v9[3] = *(_DWORD *)(v20 + 24);
-        v9[4] = *(_DWORD *)(v20 + 32);
-        v9[5] = v8;
-        camlPrintf__loop_1159(v18, v9 + 1);
+        *v10 = 5367;
+        v10[1] = camlPrintf__loop_1159;
+        v10[2] = 3;
+        v10[3] = v21[6];
+        v10[4] = v21[8];
+        v10[5] = v8;
+        camlPrintf__loop_1159(v19, v10 + 1);
         a3 = i - 2;
-        a1 = v19;
-        a2 = v20;
+        a1 = v20;
+        a2 = v21;
         continue;
     }
   }
 }
 // 8059E3E: variable 'v8' is possibly undefined
 // 8059E4F: variable 'i' is possibly undefined
-// 8059F9B: variable 'v15' is possibly undefined
+// 8059F8B: variable 'v9' is possibly undefined
+// 8059F9B: variable 'v16' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -16136,7 +17447,7 @@ LABEL_1:
     if ( v4 < 117 )
       break;
     if ( 2 * *(unsigned __int8 *)(a2[10] + (a3 >> 1)) != 190 )
-      return camlPrintf__scan_conv_171(a1, (int)(a2 + 4), a3);
+      return camlPrintf__scan_conv_1143(a1, a2 + 4, a3);
     a3 += 2;
     a1 = 3;
   }
@@ -16162,7 +17473,7 @@ LABEL_1:
       case 9:
       case 12:
       case 15:
-        return camlPrintf__scan_conv_171(a1, (int)(a2 + 4), a3);
+        return camlPrintf__scan_conv_1143(a1, a2 + 4, a3);
       case 10:
         a3 = caml_apply3(211, a2[11]);
         a1 = v6;
@@ -16183,7 +17494,7 @@ LABEL_1:
         goto LABEL_1;
     }
   }
-  return camlPrintf__scan_conv_171(a1, (int)(a2 + 4), a3);
+  return camlPrintf__scan_conv_1143(a1, a2 + 4, a3);
 }
 
 //----- (0805A060) --------------------------------------------------------
@@ -16262,61 +17573,63 @@ int __usercall camlPrintf__loop_1204@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<e
 //----- (0805A1E0) --------------------------------------------------------
 _DWORD *__usercall camlPrintf__loop_1240@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 {
-  int v4; // ecx
-  unsigned int v5; // eax
-  _DWORD *v6; // eax
+  int v3; // edx
+  int v4; // edx
+  int i; // ecx
+  unsigned int v6; // eax
+  _DWORD *v7; // eax
   _DWORD *result; // eax
-  unsigned int v8; // eax
-  char v9; // [esp+0h] [ebp-Ch]
+  unsigned int v9; // eax
   char v10; // [esp+0h] [ebp-Ch]
+  char v11; // [esp+0h] [ebp-Ch]
 
+  v3 = a1;
   if ( a1 < *(_DWORD *)(a2 + 20) )
   {
     while ( 1 )
     {
-      v8 = caml_young_ptr - 24;
-      caml_young_ptr = v8;
-      if ( v8 >= caml_young_limit )
+      v9 = caml_young_ptr - 24;
+      caml_young_ptr = v9;
+      if ( v9 >= caml_young_limit )
         break;
-      caml_call_gc(v9);
+      caml_call_gc(v3, a2, v10);
     }
-    result = (_DWORD *)(v8 + 4);
+    result = (_DWORD *)(v9 + 4);
     *(result - 1) = 5367;
     *result = camlPrintf__fun_1568;
     result[1] = 3;
     result[2] = a2;
-    result[3] = a1;
+    result[3] = v3;
     result[4] = a3;
   }
   else
   {
-    v10 = a3;
-    v4 = caml_c_call((int (*)(void))caml_make_vect, *(_DWORD *)(a2 + 20));
-    while ( 1 )
+    v11 = a3;
+    for ( i = caml_c_call((int (*)(void))caml_make_vect, *(_DWORD *)(a2 + 20)); ; caml_call_gc(v4, i, v11) )
     {
-      v5 = caml_young_ptr - 24;
-      caml_young_ptr = v5;
-      if ( v5 >= caml_young_limit )
+      v6 = caml_young_ptr - 24;
+      caml_young_ptr = v6;
+      if ( v6 >= caml_young_limit )
         break;
-      caml_call_gc(v10);
     }
-    v6 = (_DWORD *)(v5 + 4);
-    *(v6 - 1) = 5367;
-    *v6 = caml_curry2;
-    v6[1] = 5;
-    v6[2] = camlPrintf__fun_1565;
-    v6[3] = *(_DWORD *)(a2 + 20);
-    v6[4] = v4;
+    v7 = (_DWORD *)(v6 + 4);
+    *(v7 - 1) = 5367;
+    *v7 = caml_curry2;
+    v7[1] = 5;
+    v7[2] = camlPrintf__fun_1565;
+    v7[3] = *(_DWORD *)(a2 + 20);
+    v7[4] = i;
     camlPrintf__list_iter_i_1201();
-    result = (_DWORD *)caml_apply2(*(_DWORD *)(a2 + 12));
+    return (_DWORD *)caml_apply2(*(_DWORD *)(a2 + 12));
   }
   return result;
 }
-// 805A250: variable 'v4' is possibly undefined
+// 805A250: variable 'i' is possibly undefined
 // 805A2AC: variable 'a2' is possibly undefined
-// 805A2AF: variable 'a1' is possibly undefined
-// 805A2B9: variable 'v9' is possibly undefined
-// 805A2C0: variable 'v10' is possibly undefined
+// 805A2AF: variable 'v3' is possibly undefined
+// 805A2B9: variable 'v10' is possibly undefined
+// 805A2C0: variable 'v4' is possibly undefined
+// 805A2C0: variable 'v11' is possibly undefined
 // 804B370: using guessed type _DWORD caml_curry2();
 // 8059650: using guessed type int camlPrintf__fun_1568(void);
 // 805BF90: using guessed type int camlPrintf__list_iter_i_1201(void);
@@ -16324,7 +17637,13 @@ _DWORD *__usercall camlPrintf__loop_1240@<eax>(int a1@<eax>, int a2@<ecx>, int a
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (0805A2D0) --------------------------------------------------------
-int __usercall camlPrintf__fun_616@<eax>(double *a1@<eax>, double *a2@<edx>, double *a3@<ecx>, double *a4@<ebx>, double *a5@<edi>, double *a6@<esi>)
+int __usercall camlPrintf__fun_1587@<eax>(
+        double *a1@<eax>,
+        double *a2@<edx>,
+        double *a3@<ecx>,
+        double *a4@<ebx>,
+        double *a5@<edi>,
+        double *a6@<esi>)
 {
   int v6; // ebx
   unsigned int v7; // eax
@@ -16460,14 +17779,20 @@ LABEL_35:
   }
 LABEL_43:
   v14 = (double *)caml_ml_array_bound_error();
-  return camlPrintf__fun_613(v14, v15, v16, (double *)v6, (int)a5, a6);
+  return camlPrintf__fun_1584(v14, v15, v16, (double *)v6, (int)a5, a6);
 }
 // 805A52F: variable 'v15' is possibly undefined
 // 805A52F: variable 'v16' is possibly undefined
 // 807D0BC: using guessed type int caml_extra_params;
 
 //----- (0805A530) --------------------------------------------------------
-int __usercall camlPrintf__fun_613@<eax>(double *a1@<eax>, double *a2@<edx>, double *a3@<ecx>, double *a4@<ebx>, int a5@<edi>, double *a6@<esi>)
+int __usercall camlPrintf__fun_1584@<eax>(
+        double *a1@<eax>,
+        double *a2@<edx>,
+        double *a3@<ecx>,
+        double *a4@<ebx>,
+        int a5@<edi>,
+        double *a6@<esi>)
 {
   int v6; // ebx
   unsigned int v7; // eax
@@ -16585,7 +17910,12 @@ LABEL_36:
 // 805A72B: variable 'v15' is possibly undefined
 
 //----- (0805A730) --------------------------------------------------------
-int __usercall camlPrintf__fun_1581@<eax>(double *a1@<eax>, double *a2@<edx>, double *a3@<ecx>, double *a4@<ebx>, int a5@<esi>)
+int __usercall camlPrintf__fun_1581@<eax>(
+        double *a1@<eax>,
+        double *a2@<edx>,
+        double *a3@<ecx>,
+        double *a4@<ebx>,
+        int a5@<esi>)
 {
   int v5; // ebx
   unsigned int v6; // eax
@@ -16833,8 +18163,11 @@ int __usercall camlPrintf__fun_1572@<eax>(double *a1@<eax>, int a2@<ebx>)
 int __usercall camlPrintf__get_int_literal_1258@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 {
   int v3; // edx
-  int v4; // ebx
-  _DWORD *v5; // eax
+  int v4; // edx
+  int v5; // ecx
+  int v6; // ebx
+  _DWORD *v7; // eax
+  int v9; // [esp+0h] [ebp-8h]
 
   while ( 1 )
   {
@@ -16850,43 +18183,83 @@ int __usercall camlPrintf__get_int_literal_1258@<eax>(int a1@<eax>, int a2@<ecx>
     return caml_apply2(*(_DWORD *)(a2 + 16));
   if ( a1 == 1 )
     camlPervasives__failwith_1010();
-  v4 = camlPrintf__index_of_int_1037(a1 - 2);
+  v9 = a2;
+  v6 = camlPrintf__index_of_int_1037(a1 - 2);
   while ( 1 )
   {
-    v5 = (_DWORD *)(caml_young_ptr - 8);
-    caml_young_ptr = (int)v5;
-    if ( (unsigned int)v5 >= caml_young_limit )
+    v7 = (_DWORD *)(caml_young_ptr - 8);
+    caml_young_ptr = (int)v7;
+    if ( (unsigned int)v7 >= caml_young_limit )
       break;
-    caml_call_gc(a2);
+    caml_call_gc(v4, v5, v9);
   }
-  *v5 = 1024;
-  v5[1] = v4;
-  return caml_apply2(*(_DWORD *)(a2 + 16));
+  *v7 = 1024;
+  v7[1] = v6;
+  return caml_apply2(*(_DWORD *)(v9 + 16));
 }
-// 805ABE5: variable 'a2' is possibly undefined
-// 804FC70: using guessed type int camlPervasives__failwith_1010(void);
+// 805ABE5: variable 'v9' is possibly undefined
+// 805AC15: variable 'v4' is possibly undefined
+// 805AC15: variable 'v5' is possibly undefined
+// 804FC70: using guessed type void __noreturn camlPervasives__failwith_1010(void);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (0805AC20) --------------------------------------------------------
-#error "805AC94: call analysis failed (funcsize=34)"
+double *__usercall camlPrintf__valid_float_loop_1273@<eax>(int a1@<eax>, unsigned int a2@<ebx>)
+{
+  int v3; // edx
+  int v4; // esi
+  unsigned int v5; // esi
+  unsigned int *v6; // eax
+  int v7; // ecx
+
+  while ( 1 )
+  {
+    if ( a1 >= *(_DWORD *)(a2 + 12) )
+      return (double *)camlPervasives___5e_1112(*(_DWORD *)(a2 + 8), (int)&camlPrintf__62);
+    v3 = *(_DWORD *)(a2 + 8);
+    v4 = 4 * (*(_DWORD *)(v3 - 4) >> 10) - 1;
+    v5 = v4 - *(unsigned __int8 *)(v3 + v4);
+    if ( v5 <= a1 >> 1 )
+      break;
+    if ( 2 * (unsigned int)*(unsigned __int8 *)(v3 + (a1 >> 1)) - 91 <= 0x2F )
+    {
+      if ( 2 * (unsigned int)*(unsigned __int8 *)(v3 + (a1 >> 1)) - 93 > 0x2B )
+        return *(double **)(a2 + 8);
+    }
+    else if ( 2 * *(unsigned __int8 *)(v3 + (a1 >> 1)) == 202 )
+    {
+      return *(double **)(a2 + 8);
+    }
+    a1 += 2;
+  }
+  v6 = (unsigned int *)caml_ml_array_bound_error();
+  return camlPrintf__get_arg_1288(v6, v7, a2, (int *)v5);
+}
+// 805AC9A: variable 'v7' is possibly undefined
 
 //----- (0805ACA0) --------------------------------------------------------
-double *__usercall camlPrintf__get_arg_1288@<eax>(unsigned int *a1@<eax>, int a2@<ecx>, unsigned int a3@<ebx>, int *a4@<esi>)
+double *__usercall camlPrintf__get_arg_1288@<eax>(
+        unsigned int *a1@<eax>,
+        int a2@<ecx>,
+        unsigned int a3@<ebx>,
+        int *a4@<esi>)
 {
   int v4; // ecx
   unsigned int v5; // eax
+  int v6; // edx
   double *result; // eax
-  unsigned int v7; // eax
-  int v8; // eax
-  int v9; // edx
-  int v10; // ecx
-  char v11; // [esp+0h] [ebp-8h]
+  unsigned int v8; // eax
+  unsigned int *v9; // eax
+  int v10; // edx
+  int v11; // ecx
+  char v12; // [esp+0h] [ebp-8h]
 
   if ( a1 != (unsigned int *)1 )
     a3 = *a1;
   v4 = *(_DWORD *)(a2 + 12);
   v5 = *(_DWORD *)(v4 - 4);
+  v6 = (unsigned __int8)v5;
   if ( (unsigned __int8)v5 != 254 )
   {
     if ( v5 >> 9 > a3 )
@@ -16897,70 +18270,81 @@ double *__usercall camlPrintf__get_arg_1288@<eax>(unsigned int *a1@<eax>, int a2
   {
     caml_ml_array_bound_error();
 LABEL_11:
-    v8 = caml_ml_array_bound_error();
-    return (double *)camlPrintf__scan_conv_325(v8, v9, v10, a4, a3);
+    v9 = (unsigned int *)caml_ml_array_bound_error();
+    return (double *)camlPrintf__scan_conv_1293(v9, v10, v11, a4, a3);
   }
   while ( 1 )
   {
-    v7 = caml_young_ptr - 12;
-    caml_young_ptr = v7;
-    if ( v7 >= caml_young_limit )
+    v8 = caml_young_ptr - 12;
+    caml_young_ptr = v8;
+    if ( v8 >= caml_young_limit )
       break;
-    caml_call_gc(v11);
+    caml_call_gc(v6, v4, v12);
   }
-  result = (double *)(v7 + 4);
+  result = (double *)(v8 + 4);
   *((_DWORD *)result - 1) = 2301;
   *result = *(double *)(v4 + 4 * a3 - 4);
   return result;
 }
 // 805ACF6: variable 'v4' is possibly undefined
-// 805AD00: variable 'v11' is possibly undefined
-// 805AD11: variable 'v9' is possibly undefined
+// 805AD00: variable 'v6' is possibly undefined
+// 805AD00: variable 'v12' is possibly undefined
 // 805AD11: variable 'v10' is possibly undefined
+// 805AD11: variable 'v11' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (0805AD20) --------------------------------------------------------
-int __usercall camlPrintf__scan_conv_325@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int *a4@<esi>, unsigned int a5@<ebx>)
+int __usercall camlPrintf__scan_conv_1293@<eax>(
+        unsigned int *a1@<eax>,
+        int a2@<edx>,
+        int a3@<ecx>,
+        int *a4@<esi>,
+        unsigned int a5@<ebx>)
 {
   int v6; // ecx
   int result; // eax
-  char v8; // al
+  char format_float_1110; // al
   double *v9; // eax
-  int v10; // eax
+  int v10; // ecx
   int v11; // eax
   int v12; // eax
-  double *v13; // ebx
-  _BYTE *v14; // eax
-  int v15; // eax
-  char v16; // al
-  char v17; // al
-  double *v18; // eax
-  int v19; // edi
-  char v20; // al
-  int v21; // ecx
-  int v22; // ecx
-  char v23; // al
-  char v24; // al
-  char v25; // al
-  int v26; // eax
-  int v27; // [esp+0h] [ebp-1Ch]
-  int v28; // [esp+0h] [ebp-1Ch]
-  int v29; // [esp+0h] [ebp-1Ch]
+  int v13; // eax
+  int v14; // edx
+  int v15; // ecx
+  double *v16; // ebx
+  _BYTE *v17; // eax
+  int v18; // eax
+  char v19; // al
+  char format_1085; // al
+  double *v21; // eax
+  int v22; // edi
+  char format_int_1103; // al
+  int v24; // ecx
+  int v25; // ecx
+  char v26; // al
+  char v27; // al
+  char v28; // al
+  int v29; // eax
   int v30; // [esp+0h] [ebp-1Ch]
   int v31; // [esp+0h] [ebp-1Ch]
-  char v32; // [esp+4h] [ebp-18h]
-  int v33; // [esp+4h] [ebp-18h]
-  int v34; // [esp+4h] [ebp-18h]
-  unsigned int v35; // [esp+8h] [ebp-14h]
-  double *v36; // [esp+8h] [ebp-14h]
-  int v38; // [esp+Ch] [ebp-10h]
+  int v32; // [esp+0h] [ebp-1Ch]
+  int v33; // [esp+0h] [ebp-1Ch]
+  int v34; // [esp+0h] [ebp-1Ch]
+  char v35; // [esp+4h] [ebp-18h]
+  int v36; // [esp+4h] [ebp-18h]
+  int v37; // [esp+4h] [ebp-18h]
+  int v38; // [esp+8h] [ebp-14h]
+  unsigned int v39; // [esp+8h] [ebp-14h]
+  double *arg_1288; // [esp+8h] [ebp-14h]
+  int v42; // [esp+Ch] [ebp-10h]
 
   v6 = 2 * *(unsigned __int8 *)(a4[3] + (a2 >> 1)) + 1;
   if ( v6 >= 249 )
 LABEL_17:
     camlPrintf__bad_conversion_format_1061(a4[3], a2, v6);
-  v27 = 2 * *(unsigned __int8 *)(a4[3] + (a2 >> 1)) + 1;
+  v30 = 2 * *(unsigned __int8 *)(a4[3] + (a2 >> 1)) + 1;
+  v38 = a3;
   switch ( v6 >> 1 )
   {
     case 0:
@@ -17066,92 +18450,90 @@ LABEL_17:
       return caml_apply3(a2 + 2, a4[5]);
     case 40:
     case 123:
-      v34 = 2 * *(unsigned __int8 *)(a4[3] + (a2 >> 1)) + 1;
-      v36 = camlPrintf__get_arg_1288((unsigned int *)a1, a4[10], a5, a4);
-      v26 = camlPrintf__sub_format_for_printf_1135(v34);
-      v38 = caml_apply2(v26);
-      if ( v34 == 247 )
+      v37 = 2 * *(unsigned __int8 *)(a4[3] + (a2 >> 1)) + 1;
+      arg_1288 = camlPrintf__get_arg_1288(a1, a4[10], a5, a4);
+      v29 = camlPrintf__sub_format_for_printf_1135(v37);
+      v42 = caml_apply2(v29);
+      if ( v37 == 247 )
       {
-        camlPrintf__summarize_format_type_1162((int)v36);
-        if ( a1 == 1 )
+        camlPrintf__summarize_format_type_1162((int)arg_1288);
+        if ( a1 == (unsigned int *)1 )
           (**(void (***)(void))(dword_807AE0C + 8))();
-        result = caml_apply3(v38, a4[5]);
+        return caml_apply3(v42, a4[5]);
       }
       else
       {
-        if ( a1 == 1 )
+        if ( a1 == (unsigned int *)1 )
           (**(void (***)(void))(dword_807AE0C + 8))();
-        result = caml_apply3(v38, a4[9]);
+        return caml_apply3(v42, a4[9]);
       }
-      return result;
     case 66:
     case 98:
-      v18 = camlPrintf__get_arg_1288((unsigned int *)a1, a4[10], a5, a4);
-      camlPervasives__string_of_bool_1127((int)v18);
-      if ( a1 == 1 )
+      v21 = camlPrintf__get_arg_1288(a1, a4[10], a5, a4);
+      camlPervasives__string_of_bool_1127((int)v21);
+      if ( a1 == (unsigned int *)1 )
         (**(void (***)(void))(dword_807AE0C + 8))();
-      goto LABEL_44;
+      return caml_apply3(a2 + 2, a4[5]);
     case 67:
     case 99:
-      v30 = 2 * *(unsigned __int8 *)(a4[3] + (a2 >> 1)) + 1;
-      v13 = camlPrintf__get_arg_1288((unsigned int *)a1, a4[10], a5, a4);
-      if ( v30 == 199 )
+      v33 = 2 * *(unsigned __int8 *)(a4[3] + (a2 >> 1)) + 1;
+      v16 = camlPrintf__get_arg_1288(a1, a4[10], a5, a4);
+      if ( v33 == 199 )
       {
-        camlString__make_1038(3, (int)v13);
+        camlString__make_1038(3, (int)v16);
       }
       else
       {
-        v14 = camlChar__escaped_1038((int)v13);
-        v15 = camlPervasives___5e_1112((int)v14, (int)&camlPrintf__56);
-        camlPervasives___5e_1112((int)&camlPrintf__55, v15);
+        v17 = camlChar__escaped_1038((int)v16);
+        v18 = camlPervasives___5e_1112((int)v17, (int)&camlPrintf__56);
+        camlPervasives___5e_1112((int)&camlPrintf__55, v18);
       }
-      if ( a1 == 1 )
+      if ( a1 == (unsigned int *)1 )
         (**(void (***)(void))(dword_807AE0C + 8))();
-      goto LABEL_44;
+      return caml_apply3(a2 + 2, a4[5]);
     case 69:
     case 71:
     case 101:
     case 102:
     case 103:
-      camlPrintf__get_arg_1288((unsigned int *)a1, a4[10], a5, a4);
-      v17 = camlPrintf__extract_format_1085(a4[3], a2);
-      caml_c_call(caml_format_float, v17);
-      if ( a1 == 1 )
+      camlPrintf__get_arg_1288(a1, a4[10], a5, a4);
+      format_1085 = camlPrintf__extract_format_1085(a4[3], a2, a3);
+      caml_c_call((int (*)(void))caml_format_float, format_1085);
+      if ( a1 == (unsigned int *)1 )
         (**(void (***)(void))(dword_807AE0C + 8))();
-      goto LABEL_44;
+      return caml_apply3(a2 + 2, a4[5]);
     case 70:
-      v28 = 2 * *(unsigned __int8 *)(a4[3] + (a2 >> 1)) + 1;
-      v32 = (unsigned __int8)camlPrintf__get_arg_1288((unsigned int *)a1, a4[10], a5, a4);
+      v31 = 2 * *(unsigned __int8 *)(a4[3] + (a2 >> 1)) + 1;
+      v35 = (unsigned __int8)camlPrintf__get_arg_1288(a1, a4[10], a5, a4);
       if ( a3 == 1 )
       {
         camlPervasives__string_of_float_1140();
       }
       else
       {
-        v8 = camlPrintf__extract_format_float_1110(v28, a2, a4[3]);
-        camlPrintf__fun_1600(v8, v32);
+        format_float_1110 = camlPrintf__extract_format_float_1110(v31, a2, a4[3], a3);
+        camlPrintf__fun_1600(format_float_1110, v35);
       }
-      if ( a1 == 1 )
+      if ( a1 == (unsigned int *)1 )
         (**(void (***)(void))(dword_807AE0C + 8))();
-      goto LABEL_44;
+      return caml_apply3(a2 + 2, a4[5]);
     case 76:
     case 108:
     case 110:
-      v19 = 2 * *(unsigned __int8 *)(a4[3] + ((a2 + 2) >> 1)) - 175;
-      if ( (unsigned int)v19 > 0x41 )
+      v22 = 2 * *(unsigned __int8 *)(a4[3] + ((a2 + 2) >> 1)) - 175;
+      if ( (unsigned int)v22 > 0x41 )
       {
 LABEL_42:
-        camlPrintf__get_arg_1288((unsigned int *)a1, a4[10], a5, a4);
-        v20 = camlPrintf__extract_format_int_1103(221, a2, a4[3]);
-        caml_c_call(caml_format_int, v20);
-        if ( a1 == 1 )
+        camlPrintf__get_arg_1288(a1, a4[10], a5, a4);
+        format_int_1103 = camlPrintf__extract_format_int_1103(221, a2, a4[3], v38);
+        caml_c_call((int (*)(void))caml_format_int, format_int_1103);
+        if ( a1 == (unsigned int *)1 )
           (**(void (***)(void))(dword_807AE0C + 8))();
-LABEL_44:
-        result = caml_apply3(a2 + 2, a4[5]);
+        return caml_apply3(a2 + 2, a4[5]);
       }
       else
       {
-        switch ( v19 >> 1 )
+        switch ( v22 >> 1 )
         {
           case 0:
           case 12:
@@ -17159,29 +18541,29 @@ LABEL_44:
           case 23:
           case 29:
           case 32:
-            v33 = a2 + 2;
-            v21 = 2 * *(unsigned __int8 *)(a4[3] + (a2 >> 1)) - 215;
-            if ( (unsigned int)v21 > 5 || (v22 = v21 >> 1, v22 == 1) )
+            v36 = a2 + 2;
+            v24 = 2 * *(unsigned __int8 *)(a4[3] + (a2 >> 1)) - 215;
+            if ( (unsigned int)v24 > 5 || (v25 = v24 >> 1, v25 == 1) )
             {
-              camlPrintf__get_arg_1288((unsigned int *)a1, a4[10], a5, a4);
-              v25 = camlPrintf__extract_format_1085(a4[3], v33);
-              caml_c_call(caml_int64_format, v25);
+              camlPrintf__get_arg_1288(a1, a4[10], a5, a4);
+              v28 = camlPrintf__extract_format_1085(a4[3], v36, v38);
+              caml_c_call((int (*)(void))caml_int64_format, v28);
             }
-            else if ( v22 > 1 )
+            else if ( v25 > 1 )
             {
-              camlPrintf__get_arg_1288((unsigned int *)a1, a4[10], a5, a4);
-              v24 = camlPrintf__extract_format_1085(a4[3], v33);
-              caml_c_call(caml_nativeint_format, v24);
+              camlPrintf__get_arg_1288(a1, a4[10], a5, a4);
+              v27 = camlPrintf__extract_format_1085(a4[3], v36, v38);
+              caml_c_call((int (*)(void))caml_nativeint_format, v27);
             }
             else
             {
-              camlPrintf__get_arg_1288((unsigned int *)a1, a4[10], a5, a4);
-              v23 = camlPrintf__extract_format_1085(a4[3], v33);
-              caml_c_call(caml_int32_format, v23);
+              camlPrintf__get_arg_1288(a1, a4[10], a5, a4);
+              v26 = camlPrintf__extract_format_1085(a4[3], v36, v38);
+              caml_c_call((int (*)(void))caml_int32_format, v26);
             }
-            if ( a1 == 1 )
+            if ( a1 == (unsigned int *)1 )
               (**(void (***)(void))(dword_807AE0C + 8))();
-            result = caml_apply3(v33 + 2, a4[5]);
+            result = caml_apply3(v36 + 2, a4[5]);
             break;
           case 1:
           case 2:
@@ -17221,50 +18603,48 @@ LABEL_44:
     case 111:
     case 117:
     case 120:
-      v31 = 2 * *(unsigned __int8 *)(a4[3] + (a2 >> 1)) + 1;
-      camlPrintf__get_arg_1288((unsigned int *)a1, a4[10], a5, a4);
-      v16 = camlPrintf__extract_format_int_1103(v31, a2, a4[3]);
-      caml_c_call(caml_format_int, v16);
-      if ( a1 == 1 )
+      v34 = 2 * *(unsigned __int8 *)(a4[3] + (a2 >> 1)) + 1;
+      camlPrintf__get_arg_1288(a1, a4[10], a5, a4);
+      v19 = camlPrintf__extract_format_int_1103(v34, a2, a4[3], a3);
+      caml_c_call((int (*)(void))caml_format_int, v19);
+      if ( a1 == (unsigned int *)1 )
         (**(void (***)(void))(dword_807AE0C + 8))();
-      goto LABEL_44;
+      return caml_apply3(a2 + 2, a4[5]);
     case 83:
     case 115:
-      v9 = camlPrintf__get_arg_1288((unsigned int *)a1, a4[10], a5, a4);
-      if ( v27 != 231 )
+      v9 = camlPrintf__get_arg_1288(a1, a4[10], a5, a4);
+      if ( v30 != 231 )
       {
-        v10 = camlString__escaped_108((int)v9);
-        v11 = camlPervasives___5e_1112(v10, (int)&camlPrintf__58);
-        v9 = (double *)camlPervasives___5e_1112((int)&camlPrintf__57, v11);
+        v11 = camlString__escaped_1080((int)v9, v10);
+        v12 = camlPervasives___5e_1112(v11, (int)&camlPrintf__58);
+        v9 = (double *)camlPervasives___5e_1112((int)&camlPrintf__57, v12);
       }
-      v29 = (int)v9;
+      v32 = (int)v9;
       if ( a2 != a4[4] + 2 )
       {
-        v12 = camlPrintf__extract_format_1085(a4[3], a2);
-        camlPrintf__format_string_1080(v12, v29);
+        v13 = camlPrintf__extract_format_1085(a4[3], a2, a3);
+        camlPrintf__format_string_1080(v13, v32, v14, v15);
       }
-      if ( a1 == 1 )
+      if ( a1 == (unsigned int *)1 )
         (**(void (***)(void))(dword_807AE0C + 8))();
-      goto LABEL_44;
+      return caml_apply3(a2 + 2, a4[5]);
     case 97:
-      camlPrintf__get_arg_1288((unsigned int *)a1, a4[10], a5, a4);
-      v35 = (**(int (***)(void))(dword_807AE0C + 8))();
-      camlPrintf__get_arg_1288((unsigned int *)1, a4[10], v35, a4);
-      if ( a1 == 1 )
+      camlPrintf__get_arg_1288(a1, a4[10], a5, a4);
+      v39 = (**(int (***)(void))(dword_807AE0C + 8))();
+      camlPrintf__get_arg_1288((unsigned int *)1, a4[10], v39, a4);
+      if ( a1 == (unsigned int *)1 )
         (**(void (***)(void))(dword_807AE0C + 8))();
       return caml_apply4(a4[6]);
     case 116:
-      camlPrintf__get_arg_1288((unsigned int *)a1, a4[10], a5, a4);
-      if ( a1 == 1 )
+      camlPrintf__get_arg_1288(a1, a4[10], a5, a4);
+      if ( a1 == (unsigned int *)1 )
         (**(void (***)(void))(dword_807AE0C + 8))();
       return caml_apply3(a2 + 2, a4[7]);
   }
 }
-// 80669D6: using guessed type int caml_nativeint_format();
-// 8066A41: using guessed type int caml_int64_format();
-// 8066AB3: using guessed type int caml_int32_format();
-// 8066B1E: using guessed type int caml_format_int();
-// 806778A: using guessed type int caml_format_float();
+// 805AFA0: variable 'v10' is possibly undefined
+// 805AFF5: variable 'v14' is possibly undefined
+// 805AFF5: variable 'v15' is possibly undefined
 // 807AE0C: using guessed type int dword_807AE0C;
 
 //----- (0805B4C0) --------------------------------------------------------
@@ -17277,57 +18657,62 @@ LABEL_44:
 int __usercall camlPrintf__pr_1354@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, _DWORD *a5@<esi>)
 {
   int v6; // eax
-  int v7; // ebp
-  _DWORD *v8; // eax
+  int v7; // ecx
+  int v8; // ebp
+  _DWORD *v9; // eax
+  int v11; // [esp+0h] [ebp-4h]
 
+  v11 = a1;
   v6 = 4 * (*(_DWORD *)(a3 - 4) >> 10) - 1;
-  v7 = 2 * (v6 - *(unsigned __int8 *)(a3 + v6)) + 1;
+  v7 = *(unsigned __int8 *)(a3 + v6);
+  v8 = 2 * (v6 - v7) + 1;
   while ( 1 )
   {
-    v8 = (_DWORD *)(caml_young_ptr - 136);
-    caml_young_ptr = (int)v8;
-    if ( (unsigned int)v8 >= caml_young_limit )
+    v9 = (_DWORD *)(caml_young_ptr - 136);
+    caml_young_ptr = (int)v9;
+    if ( (unsigned int)v9 >= caml_young_limit )
       break;
-    caml_call_gc(a1);
+    caml_call_gc(a2, v7, v11);
   }
-  *v8 = 34039;
-  v8[1] = caml_curry2;
-  v8[2] = 5;
-  v8[3] = camlPrintf__doprn_1360;
-  v8[4] = 4345;
-  v8[5] = caml_curry3;
-  v8[6] = 7;
-  v8[7] = camlPrintf__cont_s_1361;
-  v8[8] = 8441;
-  v8[9] = caml_curry4;
-  v8[10] = 9;
-  v8[11] = camlPrintf__cont_a_1362;
-  v8[12] = 12537;
-  v8[13] = caml_curry3;
-  v8[14] = 7;
-  v8[15] = camlPrintf__cont_t_1363;
-  v8[16] = 16633;
-  v8[17] = caml_curry2;
-  v8[18] = 5;
-  v8[19] = camlPrintf__cont_f_1364;
-  v8[20] = 20729;
-  v8[21] = caml_curry3;
-  v8[22] = 7;
-  v8[23] = camlPrintf__cont_m_1365;
-  v8[24] = a5[3];
-  v8[25] = a5[4];
-  v8[26] = a5[5];
-  v8[27] = a5[6];
-  v8[28] = a5[7];
-  v8[29] = a5;
-  v8[30] = a1;
-  v8[31] = a3;
-  v8[32] = a2;
-  v8[33] = v7;
-  return camlPrintf__doprn_1360(a4, (int)(v8 + 1), 1);
+  *v9 = 34039;
+  v9[1] = caml_curry2;
+  v9[2] = 5;
+  v9[3] = camlPrintf__doprn_1360;
+  v9[4] = 4345;
+  v9[5] = caml_curry3;
+  v9[6] = 7;
+  v9[7] = camlPrintf__cont_s_1361;
+  v9[8] = 8441;
+  v9[9] = caml_curry4;
+  v9[10] = 9;
+  v9[11] = camlPrintf__cont_a_1362;
+  v9[12] = 12537;
+  v9[13] = caml_curry3;
+  v9[14] = 7;
+  v9[15] = camlPrintf__cont_t_1363;
+  v9[16] = 16633;
+  v9[17] = caml_curry2;
+  v9[18] = 5;
+  v9[19] = camlPrintf__cont_f_1364;
+  v9[20] = 20729;
+  v9[21] = caml_curry3;
+  v9[22] = 7;
+  v9[23] = camlPrintf__cont_m_1365;
+  v9[24] = a5[3];
+  v9[25] = a5[4];
+  v9[26] = a5[5];
+  v9[27] = a5[6];
+  v9[28] = a5[7];
+  v9[29] = a5;
+  v9[30] = v11;
+  v9[31] = a3;
+  v9[32] = a2;
+  v9[33] = v8;
+  return camlPrintf__doprn_1360(a4, (int)(v9 + 1), 1);
 }
-// 805B6E8: variable 'a1' is possibly undefined
+// 805B6E8: variable 'v11' is possibly undefined
 // 805B6EE: variable 'a2' is possibly undefined
+// 805B708: variable 'v7' is possibly undefined
 // 804B1F0: using guessed type _DWORD caml_curry4();
 // 804B2D0: using guessed type _DWORD caml_curry3();
 // 804B370: using guessed type _DWORD caml_curry2();
@@ -17390,7 +18775,7 @@ int __usercall camlPrintf__index_of_int_1037@<eax>(int result@<eax>)
   }
   return result;
 }
-// 804FC70: using guessed type int camlPervasives__failwith_1010(void);
+// 804FC70: using guessed type void __noreturn camlPervasives__failwith_1010(void);
 
 //----- (0805B7D0) --------------------------------------------------------
 int __usercall camlPrintf__add_int_index_1040@<eax>(int a1@<eax>, int a2@<ebx>)
@@ -17419,7 +18804,7 @@ void __usercall __noreturn camlPrintf__bad_conversion_1057(int a1@<eax>, int a2@
   int v2; // eax
   int v3; // eax
   int v4; // eax
-  int v5; // eax
+  int _1038; // eax
   int v6; // eax
   int v7; // edx
   int v8; // ecx
@@ -17431,14 +18816,14 @@ void __usercall __noreturn camlPrintf__bad_conversion_1057(int a1@<eax>, int a2@
   v3 = camlPervasives__string_of_int_1130();
   v4 = camlPervasives___5e_1112(v3, v10);
   v9 = camlPervasives___5e_1112((int)camlPrintf__50, v4);
-  v5 = camlString__make_1038(3, a2);
-  v6 = camlPervasives___5e_1112(v5, v9);
+  _1038 = camlString__make_1038(3, a2);
+  v6 = camlPervasives___5e_1112(_1038, v9);
   camlPervasives___5e_1112((int)camlPrintf__49, v6);
   camlPervasives__invalid_arg_1012(v8, v7);
 }
 // 805B899: variable 'v8' is possibly undefined
 // 805B899: variable 'v7' is possibly undefined
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (0805B8A0) --------------------------------------------------------
 void __usercall __noreturn camlPrintf__bad_conversion_format_1061(int a1@<eax>, int a2@<edx>, int a3@<ecx>)
@@ -17468,38 +18853,38 @@ void __usercall __noreturn camlPrintf__incomplete_format_1065(int a1@<eax>, int 
 }
 // 805B917: variable 'v6' is possibly undefined
 // 805B917: variable 'v5' is possibly undefined
-// 804FCB0: using guessed type int __fastcall camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
+// 804FCB0: using guessed type void __fastcall __noreturn camlPervasives__invalid_arg_1012(_DWORD, _DWORD);
 
 //----- (0805B920) --------------------------------------------------------
-_DWORD *__usercall camlPrintf__parse_string_conversion_1067@<eax>(int a1@<eax>)
+_DWORD *__usercall camlPrintf__parse_string_conversion_1067@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>)
 {
-  int v1; // ebx
-  _DWORD *v2; // eax
-  char ***v3; // eax
-  int v4; // ecx
+  _DWORD *v4; // eax
+  char ***v5; // eax
+  int v6; // ecx
+  int i; // [esp+0h] [ebp-4h]
 
-  v1 = a1;
-  while ( 1 )
+  for ( i = a1; ; caml_call_gc(a2, a3, i) )
   {
-    v2 = (_DWORD *)(caml_young_ptr - 20);
-    caml_young_ptr = (int)v2;
-    if ( (unsigned int)v2 >= caml_young_limit )
+    v4 = (_DWORD *)(caml_young_ptr - 20);
+    caml_young_ptr = (int)v4;
+    if ( (unsigned int)v4 >= caml_young_limit )
       break;
-    caml_call_gc(a1);
   }
-  *v2 = 4343;
-  v2[1] = caml_curry2;
-  v2[2] = 5;
-  v2[3] = camlPrintf__parse_1069;
-  v2[4] = v1;
-  v3 = (char ***)sub_805B9A0((int)(v2 + 1));
-  if ( *v3 == &caml_exn_Failure )
-    camlPrintf__bad_conversion_1057(a1, 231);
-  caml_raise_exn((int)v3);
-  return sub_805B9A0(v4);
+  *v4 = 4343;
+  v4[1] = caml_curry2;
+  v4[2] = 5;
+  v4[3] = camlPrintf__parse_1069;
+  v4[4] = a1;
+  v5 = (char ***)sub_805B9A0((int)(v4 + 1));
+  if ( *v5 == &caml_exn_Failure )
+    camlPrintf__bad_conversion_1057(i, 231);
+  caml_raise_exn((int)v5);
+  return sub_805B9A0(v6);
 }
-// 805B982: variable 'a1' is possibly undefined
-// 805B99A: variable 'v4' is possibly undefined
+// 805B982: variable 'i' is possibly undefined
+// 805B99A: variable 'v6' is possibly undefined
+// 805B9C8: variable 'a2' is possibly undefined
+// 805B9C8: variable 'a3' is possibly undefined
 // 804B370: using guessed type _DWORD caml_curry2();
 // 80739CC: using guessed type char *caml_exn_Failure;
 // 8080414: using guessed type int caml_young_ptr;
@@ -17522,187 +18907,202 @@ _DWORD *__fastcall sub_805B9A0(int a1)
 // 807D280: using guessed type int caml_exception_pointer;
 
 //----- (0805B9E0) --------------------------------------------------------
-int __usercall camlPrintf__pad_string_1072@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<edi>, int a6@<esi>)
+int __usercall camlPrintf__pad_string_1072@<eax>(
+        int a1@<eax>,
+        int a2@<edx>,
+        int a3@<ecx>,
+        int a4@<ebx>,
+        int a5@<edi>,
+        int a6@<esi>)
 {
-  int v7; // ecx
+  int _1038; // ecx
   int v9; // [esp+4h] [ebp-14h]
 
   if ( a4 == a5 && a6 == 1 )
     return a2;
   if ( a4 <= a5 )
     return camlString__sub_1046(a2, a5, a6, a2);
-  v7 = camlString__make_1038(a4, a1);
-  v9 = v7;
+  _1038 = camlString__make_1038(a4, a1);
+  v9 = _1038;
   if ( a3 == 1 )
-    camlString__blit_1056(a2, a4 - a5 + 1, v7, a6, a5);
+    camlString__blit_1056(a2, a4 - a5 + 1, _1038, a6, a5);
   else
-    camlString__blit_1056(a2, 1, v7, a6, a5);
+    camlString__blit_1056(a2, 1, _1038, a6, a5);
   return v9;
 }
 
 //----- (0805BA90) --------------------------------------------------------
-int __usercall camlPrintf__format_string_1080@<eax>(int a1@<eax>, int a2@<ebx>)
+int __usercall camlPrintf__format_string_1080@<eax>(int a1@<eax>, int a2@<ebx>, int a3@<edx>, int a4@<ecx>)
 {
-  int *v2; // eax
-  int v3; // ecx
-  int v4; // ebx
-  int v5; // eax
+  int *v4; // eax
+  int v5; // ecx
+  int v6; // ebx
+  int v7; // eax
 
-  v2 = camlPrintf__parse_string_conversion_1067(a1);
-  v3 = v2[1];
-  v4 = *v2;
-  v5 = 4 * (*(_DWORD *)(a2 - 4) >> 10) - 1;
-  return camlPrintf__pad_string_1072(65, a2, v3, v4, 2 * (v5 - *(unsigned __int8 *)(a2 + v5)) + 1, 1);
+  v4 = camlPrintf__parse_string_conversion_1067(a1, a3, a4);
+  v5 = v4[1];
+  v6 = *v4;
+  v7 = 4 * (*(_DWORD *)(a2 - 4) >> 10) - 1;
+  return camlPrintf__pad_string_1072(65, a2, v5, v6, 2 * (v7 - *(unsigned __int8 *)(a2 + v7)) + 1, 1);
 }
 
 //----- (0805BAD0) --------------------------------------------------------
-int __usercall camlPrintf__extract_format_1085@<eax>(int a1@<eax>, int a2@<ecx>)
+int __usercall camlPrintf__extract_format_1085@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<edx>)
 {
-  int v2; // esi
-  _DWORD *v3; // eax
   _DWORD *v4; // eax
-  int v5; // eax
-  int v6; // edx
-  _DWORD *v10; // [esp+8h] [ebp-14h]
-  int v11; // [esp+10h] [ebp-Ch]
-  int v12; // [esp+14h] [ebp-8h]
-  int *v13; // [esp+18h] [ebp-4h]
+  int v5; // edx
+  int v6; // ecx
+  _DWORD *v7; // eax
+  int appended; // eax
+  int v9; // edx
+  int i; // [esp+0h] [ebp-1Ch]
+  _DWORD *v13; // [esp+8h] [ebp-14h]
+  int v14; // [esp+10h] [ebp-Ch]
+  int v15; // [esp+14h] [ebp-8h]
+  int *_1039; // [esp+18h] [ebp-4h]
 
-  v2 = a1;
-  while ( 1 )
+  for ( i = a1; ; caml_call_gc(a3, a2, i) )
   {
-    v3 = (_DWORD *)(caml_young_ptr - 16);
-    caml_young_ptr = (int)v3;
-    if ( (unsigned int)v3 >= caml_young_limit )
-      break;
-    caml_call_gc(a1);
-  }
-  v10 = v3 + 1;
-  *v3 = 3319;
-  v3[1] = camlPrintf__skip_positional_spec_1090;
-  v3[2] = 3;
-  v3[3] = v2;
-  v11 = camlPrintf__skip_positional_spec_1090();
-  v13 = camlBuffer__create_1039(a2 - v11 + 21);
-  camlBuffer__add_char_1072(v13, 75);
-  while ( 1 )
-  {
-    v4 = (_DWORD *)(caml_young_ptr - 32);
+    v4 = (_DWORD *)(caml_young_ptr - 16);
     caml_young_ptr = (int)v4;
     if ( (unsigned int)v4 >= caml_young_limit )
       break;
-    caml_call_gc(a1);
   }
-  v12 = (int)(v4 + 1);
-  *v4 = 7415;
-  v4[1] = caml_curry2;
-  v4[2] = 5;
-  v4[3] = camlPrintf__fill_format_1096;
-  v4[4] = a1;
-  v4[5] = a2;
-  v4[6] = v10;
-  v4[7] = v13;
-  v5 = camlList__rev_append_1051();
-  camlPrintf__fill_format_1096(v11, v12, v5);
-  return camlString__sub_1046(*v13, v13[1], 1, v6);
+  v13 = v4 + 1;
+  *v4 = 3319;
+  v4[1] = camlPrintf__skip_positional_spec_1090;
+  v4[2] = 3;
+  v4[3] = a1;
+  v14 = camlPrintf__skip_positional_spec_1090();
+  _1039 = camlBuffer__create_1039(a2 - v14 + 21);
+  camlBuffer__add_char_1072(_1039, 75);
+  while ( 1 )
+  {
+    v7 = (_DWORD *)(caml_young_ptr - 32);
+    caml_young_ptr = (int)v7;
+    if ( (unsigned int)v7 >= caml_young_limit )
+      break;
+    caml_call_gc(v5, v6, i);
+  }
+  v15 = (int)(v7 + 1);
+  *v7 = 7415;
+  v7[1] = caml_curry2;
+  v7[2] = 5;
+  v7[3] = camlPrintf__fill_format_1096;
+  v7[4] = i;
+  v7[5] = a2;
+  v7[6] = v13;
+  v7[7] = _1039;
+  appended = camlList__rev_append_1051(v6);
+  camlPrintf__fill_format_1096(v14, v15, appended);
+  return camlString__sub_1046(*_1039, _1039[1], 1, v9);
 }
-// 805BB7F: variable 'a1' is possibly undefined
-// 805BBC5: variable 'v6' is possibly undefined
+// 805BB7F: variable 'i' is possibly undefined
+// 805BBA0: variable 'v6' is possibly undefined
+// 805BBC5: variable 'v9' is possibly undefined
+// 805BBCA: variable 'v5' is possibly undefined
+// 805BBD4: variable 'a3' is possibly undefined
+// 805BBD4: variable 'a2' is possibly undefined
 // 804B370: using guessed type _DWORD caml_curry2();
-// 80549C0: using guessed type int camlList__rev_append_1051(void);
+// 80549C0: using guessed type int __fastcall camlList__rev_append_1051(_DWORD);
 // 8059AF0: using guessed type int camlPrintf__skip_positional_spec_1090(void);
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (0805BBE0) --------------------------------------------------------
-int __usercall camlPrintf__extract_format_int_1103@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>)
+int __usercall camlPrintf__extract_format_int_1103@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>, int a4@<esi>)
 {
   int result; // eax
-  int v4; // ebx
-  unsigned int v5; // ebx
-  int v6; // ecx
-  int v7; // eax
-  int v8; // edx
+  int v5; // ebx
+  unsigned int v6; // ebx
+  int v7; // ecx
+  int v8; // eax
+  int v9; // edx
 
-  result = camlPrintf__extract_format_1085(a3, a2);
+  result = camlPrintf__extract_format_1085(a3, a2, a4);
   if ( a1 == 157 || a1 == 221 )
   {
-    v4 = 4 * (*(_DWORD *)(result - 4) >> 10) - 1;
-    v5 = (2 * (v4 - *(unsigned __int8 *)(result + v4)) - 1) >> 1;
-    v6 = 4 * (*(_DWORD *)(result - 4) >> 10) - 1;
-    if ( v6 - (unsigned int)*(unsigned __int8 *)(result + v6) <= v5 )
+    v5 = 4 * (*(_DWORD *)(result - 4) >> 10) - 1;
+    v6 = (2 * (v5 - *(unsigned __int8 *)(result + v5)) - 1) >> 1;
+    v7 = 4 * (*(_DWORD *)(result - 4) >> 10) - 1;
+    if ( v7 - (unsigned int)*(unsigned __int8 *)(result + v7) <= v6 )
     {
-      v7 = caml_ml_array_bound_error();
-      result = camlPrintf__extract_format_float_1110(v7, v8, v5);
+      v8 = caml_ml_array_bound_error();
+      return camlPrintf__extract_format_float_1110(v8, v9, v6, a4);
     }
     else
     {
-      *(_BYTE *)(result + v5) = 117;
+      *(_BYTE *)(result + v6) = 117;
     }
   }
   return result;
 }
-// 805BC51: variable 'v8' is possibly undefined
+// 805BC51: variable 'v9' is possibly undefined
 
 //----- (0805BC60) --------------------------------------------------------
-int __usercall camlPrintf__extract_format_float_1110@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>)
+int __usercall camlPrintf__extract_format_float_1110@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>, int a4@<esi>)
 {
   int result; // eax
-  int v4; // ebx
-  unsigned int v5; // ebx
-  int v6; // ecx
-  int v7; // eax
-  int v8; // edx
+  int v5; // ebx
+  unsigned int v6; // ebx
+  int v7; // ecx
+  int v8; // eax
+  int v9; // edx
 
-  result = camlPrintf__extract_format_1085(a3, a2);
+  result = camlPrintf__extract_format_1085(a3, a2, a4);
   if ( a1 == 141 )
   {
-    v4 = 4 * (*(_DWORD *)(result - 4) >> 10) - 1;
-    v5 = (2 * (v4 - *(unsigned __int8 *)(result + v4)) - 1) >> 1;
-    v6 = 4 * (*(_DWORD *)(result - 4) >> 10) - 1;
-    if ( v6 - (unsigned int)*(unsigned __int8 *)(result + v6) <= v5 )
+    v5 = 4 * (*(_DWORD *)(result - 4) >> 10) - 1;
+    v6 = (2 * (v5 - *(unsigned __int8 *)(result + v5)) - 1) >> 1;
+    v7 = 4 * (*(_DWORD *)(result - 4) >> 10) - 1;
+    if ( v7 - (unsigned int)*(unsigned __int8 *)(result + v7) <= v6 )
     {
-      v7 = caml_ml_array_bound_error();
-      result = camlPrintf__sub_format_1117(v7, v8, v5);
+      v8 = caml_ml_array_bound_error();
+      return camlPrintf__sub_format_1117(v8, v9, v6);
     }
     else
     {
-      *(_BYTE *)(result + v5) = 103;
+      *(_BYTE *)(result + v6) = 103;
     }
   }
   return result;
 }
-// 805BCD1: variable 'v8' is possibly undefined
+// 805BCD1: variable 'v9' is possibly undefined
 
 //----- (0805BCE0) --------------------------------------------------------
 int __usercall camlPrintf__sub_format_1117@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>)
 {
   int v3; // eax
-  int v4; // edi
-  _DWORD *v5; // eax
+  int v4; // ecx
+  int v5; // edi
+  _DWORD *v6; // eax
+  int v8; // [esp+0h] [ebp-4h]
 
+  v8 = a1;
   v3 = 4 * (*(_DWORD *)(a2 - 4) >> 10) - 1;
-  v4 = 2 * (v3 - *(unsigned __int8 *)(a2 + v3)) + 1;
+  v4 = *(unsigned __int8 *)(a2 + v3);
+  v5 = 2 * (v3 - v4) + 1;
   while ( 1 )
   {
-    v5 = (_DWORD *)(caml_young_ptr - 32);
-    caml_young_ptr = (int)v5;
-    if ( (unsigned int)v5 >= caml_young_limit )
+    v6 = (_DWORD *)(caml_young_ptr - 32);
+    caml_young_ptr = (int)v6;
+    if ( (unsigned int)v6 >= caml_young_limit )
       break;
-    caml_call_gc(a1);
+    caml_call_gc(a2, v4, v8);
   }
-  *v5 = 7415;
-  v5[1] = caml_curry2;
-  v5[2] = 5;
-  v5[3] = camlPrintf__sub_fmt_1124;
-  v5[4] = a1;
-  v5[5] = a3;
-  v5[6] = a2;
-  v5[7] = v4;
-  return camlPrintf__sub_fmt_1124(v5 + 1);
+  *v6 = 7415;
+  v6[1] = caml_curry2;
+  v6[2] = 5;
+  v6[3] = camlPrintf__sub_fmt_1124;
+  v6[4] = v8;
+  v6[5] = a3;
+  v6[6] = a2;
+  v6[7] = v5;
+  return camlPrintf__sub_fmt_1124(v6 + 1);
 }
-// 805BD35: variable 'a1' is possibly undefined
+// 805BD35: variable 'v8' is possibly undefined
 // 805BD3B: variable 'a2' is possibly undefined
+// 805BD4D: variable 'v4' is possibly undefined
 // 804B370: using guessed type _DWORD caml_curry2();
 // 8059C50: using guessed type int __fastcall camlPrintf__sub_fmt_1124(_DWORD);
 // 8080414: using guessed type int caml_young_ptr;
@@ -17713,8 +19113,6 @@ int __usercall camlPrintf__sub_format_for_printf_1135@<eax>(int a1@<eax>)
 {
   return caml_apply3(a1, dword_807AE34);
 }
-// 807AE14: using guessed type int dword_807AE14;
-// 807AE18: using guessed type int dword_807AE18;
 // 807AE34: using guessed type int dword_807AE34;
 
 //----- (0805BD80) --------------------------------------------------------
@@ -17724,39 +19122,43 @@ int __usercall camlPrintf__sub_format_for_printf_1135@<eax>(int a1@<eax>)
 int __usercall camlPrintf__summarize_format_type_1162@<eax>(int a1@<eax>)
 {
   int v1; // eax
-  int *v2; // edx
-  _DWORD *v3; // eax
-  int v4; // edx
-  int *v7; // [esp+4h] [ebp-4h]
+  int *_1039; // edx
+  int v3; // ecx
+  _DWORD *v4; // eax
+  int v5; // edx
+  int v7; // [esp+0h] [ebp-8h]
+  int *v8; // [esp+4h] [ebp-4h]
 
+  v7 = a1;
   v1 = 4 * (*(_DWORD *)(a1 - 4) >> 10) - 1;
-  v2 = camlBuffer__create_1039(2 * (v1 - *(unsigned __int8 *)(a1 + v1)) + 1);
-  v7 = v2;
+  _1039 = camlBuffer__create_1039(2 * (v1 - *(unsigned __int8 *)(v7 + v1)) + 1);
+  v8 = _1039;
   while ( 1 )
   {
-    v3 = (_DWORD *)(caml_young_ptr - 44);
-    caml_young_ptr = (int)v3;
-    if ( (unsigned int)v3 >= caml_young_limit )
+    v4 = (_DWORD *)(caml_young_ptr - 44);
+    caml_young_ptr = (int)v4;
+    if ( (unsigned int)v4 >= caml_young_limit )
       break;
-    caml_call_gc(a1);
+    caml_call_gc((int)_1039, v3, v7);
   }
-  *v3 = 4343;
-  v3[1] = caml_curry2;
-  v3[2] = 5;
-  v3[3] = camlPrintf__add_char_1166;
-  v3[4] = v2;
-  v3[5] = 5367;
-  v3[6] = caml_curry3;
-  v3[7] = 7;
-  v3[8] = camlPrintf__add_conv_1169;
-  v3[9] = v2;
-  v3[10] = v3 + 1;
+  *v4 = 4343;
+  v4[1] = caml_curry2;
+  v4[2] = 5;
+  v4[3] = camlPrintf__add_char_1166;
+  v4[4] = _1039;
+  v4[5] = 5367;
+  v4[6] = caml_curry3;
+  v4[7] = 7;
+  v4[8] = camlPrintf__add_conv_1169;
+  v4[9] = _1039;
+  v4[10] = v4 + 1;
   camlPrintf__iter_on_format_args_1137();
-  return camlString__sub_1046(*v7, v7[1], 1, v4);
+  return camlString__sub_1046(*v8, v8[1], 1, v5);
 }
-// 805BE8D: variable 'v2' is possibly undefined
-// 805BECD: variable 'v4' is possibly undefined
-// 805BED2: variable 'a1' is possibly undefined
+// 805BE8D: variable '_1039' is possibly undefined
+// 805BECD: variable 'v5' is possibly undefined
+// 805BED2: variable 'v3' is possibly undefined
+// 805BED2: variable 'v7' is possibly undefined
 // 804B2D0: using guessed type _DWORD caml_curry3();
 // 804B370: using guessed type _DWORD caml_curry2();
 // 805BD80: using guessed type int camlPrintf__iter_on_format_args_1137(void);
@@ -17764,44 +19166,46 @@ int __usercall camlPrintf__summarize_format_type_1162@<eax>(int a1@<eax>)
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (0805BEE0) --------------------------------------------------------
-_DWORD *camlPrintf__ac_of_format_1184()
+_DWORD *__usercall camlPrintf__ac_of_format_1184@<eax>(int a1@<eax>, int a2@<ecx>)
 {
-  _DWORD *v0; // eax
-  _DWORD *v1; // ebx
-  _DWORD *v2; // eax
-  char v4; // [esp+0h] [ebp-4h]
-  _DWORD *v5; // [esp+0h] [ebp-4h]
+  int i; // edx
+  _DWORD *v3; // eax
+  _DWORD *v4; // ebx
+  _DWORD *v5; // eax
+  char v7; // [esp+0h] [ebp-4h]
+  _DWORD *v8; // [esp+0h] [ebp-4h]
 
-  while ( 1 )
+  for ( i = a1; ; caml_call_gc(i, a2, v7) )
   {
-    v0 = (_DWORD *)(caml_young_ptr - 56);
-    caml_young_ptr = (int)v0;
-    if ( (unsigned int)v0 >= caml_young_limit )
+    v3 = (_DWORD *)(caml_young_ptr - 56);
+    caml_young_ptr = (int)v3;
+    if ( (unsigned int)v3 >= caml_young_limit )
       break;
-    caml_call_gc(v4);
   }
-  v1 = v0 + 1;
-  v5 = v0 + 1;
-  *v0 = 3072;
-  v0[1] = 1;
-  v0[2] = 1;
-  v0[3] = 1;
-  v2 = v0 + 5;
-  *(v2 - 1) = 4343;
-  *v2 = caml_curry2;
-  v2[1] = 5;
-  v2[2] = camlPrintf__incr_ac_1187;
-  v2[3] = v1;
-  v1 += 9;
-  *(v1 - 1) = 4343;
-  *v1 = caml_curry3;
-  v1[1] = 7;
-  v1[2] = camlPrintf__add_conv_1191;
-  v1[3] = v2;
+  v4 = v3 + 1;
+  v8 = v3 + 1;
+  *v3 = 3072;
+  v3[1] = 1;
+  v3[2] = 1;
+  v3[3] = 1;
+  v5 = v3 + 5;
+  *(v5 - 1) = 4343;
+  *v5 = caml_curry2;
+  v5[1] = 5;
+  v5[2] = camlPrintf__incr_ac_1187;
+  v5[3] = v4;
+  v4 += 9;
+  *(v4 - 1) = 4343;
+  *v4 = caml_curry3;
+  v4[1] = 7;
+  v4[2] = camlPrintf__add_conv_1191;
+  v4[3] = v5;
   camlPrintf__iter_on_format_args_1137();
-  return v5;
+  return v8;
 }
-// 805BF70: variable 'v4' is possibly undefined
+// 805BF70: variable 'i' is possibly undefined
+// 805BF70: variable 'a2' is possibly undefined
+// 805BF70: variable 'v7' is possibly undefined
 // 804B2D0: using guessed type _DWORD caml_curry3();
 // 804B370: using guessed type _DWORD caml_curry2();
 // 805BD80: using guessed type int camlPrintf__iter_on_format_args_1137(void);
@@ -17809,134 +19213,141 @@ _DWORD *camlPrintf__ac_of_format_1184()
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (0805BF80) --------------------------------------------------------
-int camlPrintf__count_arguments_of_format_1198()
+int __usercall camlPrintf__count_arguments_of_format_1198@<eax>(int a1@<eax>, int a2@<ecx>)
 {
-  return *camlPrintf__ac_of_format_1184();
+  return *camlPrintf__ac_of_format_1184(a1, a2);
 }
 
 //----- (0805BF90) --------------------------------------------------------
 #error "805BFD2: call analysis failed (funcsize=16)"
 
 //----- (0805BFE0) --------------------------------------------------------
-_DWORD *__usercall camlPrintf__kapr_1179@<eax>(int a1@<eax>, int a2@<ebx>)
+int (__usercall **__usercall camlPrintf__kapr_1209@<eax>(
+        int (__usercall *a1)@<eax>(double *a1@<eax>, int a2@<ebx>)@<eax>,
+        int (__usercall *a2)@<eax>(double *a1@<eax>, int a2@<ebx>)@<ebx>,
+        int a3@<ecx>))@<eax>(double *a1@<eax>, int a2@<ebx>)
 {
-  int v2; // ebx
-  _DWORD *v3; // eax
-  _DWORD *result; // eax
-  unsigned int v5; // eax
-  unsigned int v6; // eax
-  unsigned int v7; // eax
+  int v3; // edx
+  int v4; // ecx
+  int v5; // ebx
+  _DWORD *v6; // eax
+  int (__usercall **result)@<eax>(double *@<eax>, int@<ebx>); // eax
   unsigned int v8; // eax
   unsigned int v9; // eax
   unsigned int v10; // eax
+  unsigned int v11; // eax
+  unsigned int v12; // eax
+  unsigned int v13; // eax
+  int (__usercall *v14)@<eax>(double *@<eax>, int@<ebx>); // [esp+0h] [ebp-8h]
 
-  v2 = *camlPrintf__ac_of_format_1184();
-  if ( (unsigned int)v2 <= 0xD )
+  v14 = a1;
+  v5 = *camlPrintf__ac_of_format_1184((int)a2, a3);
+  if ( (unsigned int)v5 <= 0xD )
   {
-    switch ( v2 >> 1 )
+    switch ( v5 >> 1 )
     {
       case 0:
-        result = (_DWORD *)caml_apply2(a1);
+        result = (int (__usercall **)@<eax>(double *@<eax>, int@<ebx>))caml_apply2((int)v14);
         break;
       case 1:
         while ( 1 )
         {
-          v5 = caml_young_ptr - 20;
-          caml_young_ptr = v5;
-          if ( v5 >= caml_young_limit )
-            break;
-          caml_call_gc(a1);
-        }
-        result = (_DWORD *)(v5 + 4);
-        *(result - 1) = 4343;
-        *result = camlPrintf__fun_1572;
-        result[1] = 3;
-        result[2] = a1;
-        result[3] = a2;
-        break;
-      case 2:
-        while ( 1 )
-        {
-          v6 = caml_young_ptr - 24;
-          caml_young_ptr = v6;
-          if ( v6 >= caml_young_limit )
-            break;
-          caml_call_gc(a1);
-        }
-        result = (_DWORD *)(v6 + 4);
-        *(result - 1) = 5367;
-        *result = caml_curry2;
-        result[1] = 5;
-        result[2] = camlPrintf__fun_1575;
-        result[3] = a1;
-        result[4] = a2;
-        break;
-      case 3:
-        while ( 1 )
-        {
-          v7 = caml_young_ptr - 24;
-          caml_young_ptr = v7;
-          if ( v7 >= caml_young_limit )
-            break;
-          caml_call_gc(a1);
-        }
-        result = (_DWORD *)(v7 + 4);
-        *(result - 1) = 5367;
-        *result = caml_curry3;
-        result[1] = 7;
-        result[2] = camlPrintf__fun_1578;
-        result[3] = a1;
-        result[4] = a2;
-        break;
-      case 4:
-        while ( 1 )
-        {
-          v8 = caml_young_ptr - 24;
+          v8 = caml_young_ptr - 20;
           caml_young_ptr = v8;
           if ( v8 >= caml_young_limit )
             break;
-          caml_call_gc(a1);
+          caml_call_gc(v3, v4, (char)v14);
         }
-        result = (_DWORD *)(v8 + 4);
-        *(result - 1) = 5367;
-        *result = caml_curry4;
-        result[1] = 9;
-        result[2] = camlPrintf__fun_1581;
-        result[3] = a1;
-        result[4] = a2;
+        result = (int (__usercall **)@<eax>(double *@<eax>, int@<ebx>))(v8 + 4);
+        *(result - 1) = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))4343;
+        *result = camlPrintf__fun_1572;
+        result[1] = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))3;
+        result[2] = v14;
+        result[3] = a2;
         break;
-      case 5:
+      case 2:
         while ( 1 )
         {
           v9 = caml_young_ptr - 24;
           caml_young_ptr = v9;
           if ( v9 >= caml_young_limit )
             break;
-          caml_call_gc(a1);
+          caml_call_gc(v3, v4, (char)v14);
         }
-        result = (_DWORD *)(v9 + 4);
-        *(result - 1) = 5367;
-        *result = caml_curry5;
-        result[1] = 11;
-        result[2] = camlPrintf__fun_613;
-        result[3] = a1;
+        result = (int (__usercall **)@<eax>(double *@<eax>, int@<ebx>))(v9 + 4);
+        *(result - 1) = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))5367;
+        *result = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))caml_curry2;
+        result[1] = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))5;
+        result[2] = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))camlPrintf__fun_1575;
+        result[3] = v14;
         result[4] = a2;
         break;
-      case 6:
+      case 3:
         while ( 1 )
         {
           v10 = caml_young_ptr - 24;
           caml_young_ptr = v10;
           if ( v10 >= caml_young_limit )
             break;
-          caml_call_gc(a1);
+          caml_call_gc(v3, v4, (char)v14);
         }
-        result = (_DWORD *)(v10 + 4);
-        *(result - 1) = 5367;
-        *result = caml_curry6;
-        result[1] = 13;
-        result[2] = camlPrintf__fun_616;
-        result[3] = a1;
+        result = (int (__usercall **)@<eax>(double *@<eax>, int@<ebx>))(v10 + 4);
+        *(result - 1) = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))5367;
+        *result = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))caml_curry3;
+        result[1] = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))7;
+        result[2] = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))camlPrintf__fun_1578;
+        result[3] = v14;
+        result[4] = a2;
+        break;
+      case 4:
+        while ( 1 )
+        {
+          v11 = caml_young_ptr - 24;
+          caml_young_ptr = v11;
+          if ( v11 >= caml_young_limit )
+            break;
+          caml_call_gc(v3, v4, (char)v14);
+        }
+        result = (int (__usercall **)@<eax>(double *@<eax>, int@<ebx>))(v11 + 4);
+        *(result - 1) = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))5367;
+        *result = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))caml_curry4;
+        result[1] = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))9;
+        result[2] = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))camlPrintf__fun_1581;
+        result[3] = v14;
+        result[4] = a2;
+        break;
+      case 5:
+        while ( 1 )
+        {
+          v12 = caml_young_ptr - 24;
+          caml_young_ptr = v12;
+          if ( v12 >= caml_young_limit )
+            break;
+          caml_call_gc(v3, v4, (char)v14);
+        }
+        result = (int (__usercall **)@<eax>(double *@<eax>, int@<ebx>))(v12 + 4);
+        *(result - 1) = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))5367;
+        *result = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))caml_curry5;
+        result[1] = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))11;
+        result[2] = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))camlPrintf__fun_1584;
+        result[3] = v14;
+        result[4] = a2;
+        break;
+      case 6:
+        while ( 1 )
+        {
+          v13 = caml_young_ptr - 24;
+          caml_young_ptr = v13;
+          if ( v13 >= caml_young_limit )
+            break;
+          caml_call_gc(v3, v4, (char)v14);
+        }
+        result = (int (__usercall **)@<eax>(double *@<eax>, int@<ebx>))(v13 + 4);
+        *(result - 1) = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))5367;
+        *result = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))caml_curry6;
+        result[1] = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))13;
+        result[2] = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))camlPrintf__fun_1587;
+        result[3] = v14;
         result[4] = a2;
         break;
       case 7:
@@ -17955,20 +19366,20 @@ _DWORD *__usercall camlPrintf__kapr_1179@<eax>(int a1@<eax>, int a2@<ebx>)
   {
     while ( 1 )
     {
-      v3 = (_DWORD *)(caml_young_ptr - 28);
-      caml_young_ptr = (int)v3;
-      if ( (unsigned int)v3 >= caml_young_limit )
+      v6 = (_DWORD *)(caml_young_ptr - 28);
+      caml_young_ptr = (int)v6;
+      if ( (unsigned int)v6 >= caml_young_limit )
         break;
-      caml_call_gc(a1);
+      caml_call_gc(v3, v4, (char)v14);
     }
-    *v3 = 6391;
-    v3[1] = caml_curry2;
-    v3[2] = 5;
-    v3[3] = camlPrintf__loop_1240;
-    v3[4] = a1;
-    v3[5] = a2;
-    v3[6] = v2;
-    result = camlPrintf__loop_1240(1, (int)(v3 + 1), 1);
+    *v6 = 6391;
+    v6[1] = caml_curry2;
+    v6[2] = 5;
+    v6[3] = camlPrintf__loop_1240;
+    v6[4] = v14;
+    v6[5] = a2;
+    v6[6] = v5;
+    return (int (__usercall **)@<eax>(double *@<eax>, int@<ebx>))camlPrintf__loop_1240(1, (int)(v6 + 1), 1);
   }
   return result;
 }
@@ -17977,7 +19388,9 @@ _DWORD *__usercall camlPrintf__kapr_1179@<eax>(int a1@<eax>, int a2@<ebx>)
 // 805C062: control flows out of bounds to 8066AB3
 // 805C062: control flows out of bounds to 8066B1E
 // 805C062: control flows out of bounds to 806778A
-// 805C032: variable 'a1' is possibly undefined
+// 805C032: variable 'v14' is possibly undefined
+// 805C264: variable 'v3' is possibly undefined
+// 805C264: variable 'v4' is possibly undefined
 // 804AF40: using guessed type _DWORD caml_curry6();
 // 804B0D0: using guessed type _DWORD caml_curry5();
 // 804B1F0: using guessed type _DWORD caml_curry4();
@@ -17992,26 +19405,20 @@ _DWORD *__usercall camlPrintf__kapr_1179@<eax>(int a1@<eax>, int a2@<ebx>)
 //----- (0805C330) --------------------------------------------------------
 int __usercall camlPrintf__next_index_1262@<eax>(int a1@<eax>, int a2@<ebx>)
 {
-  int result; // eax
-
   if ( a1 == 1 )
-    result = (**(int (***)(void))(dword_807AE0C + 8))();
+    return (**(int (***)(void))(dword_807AE0C + 8))();
   else
-    result = a2;
-  return result;
+    return a2;
 }
 // 807AE0C: using guessed type int dword_807AE0C;
 
 //----- (0805C360) --------------------------------------------------------
-int __usercall camlPrintf__get_index_1265@<eax>(int *a1@<eax>, int a2@<ebx>)
+int __usercall camlPrintf__get_index_1265@<eax>(int a1@<eax>, int a2@<ebx>)
 {
-  int result; // eax
-
-  if ( a1 == (int *)1 )
-    result = a2;
+  if ( a1 == 1 )
+    return a2;
   else
-    result = *a1;
-  return result;
+    return *(_DWORD *)a1;
 }
 
 //----- (0805C380) --------------------------------------------------------
@@ -18020,68 +19427,75 @@ int __usercall camlPrintf__get_index_1265@<eax>(int *a1@<eax>, int a2@<ebx>)
 //----- (0805C3E0) --------------------------------------------------------
 int __usercall camlPrintf__fun_1600@<eax>(char a1@<al>, char a2@<bl>)
 {
-  int result; // eax
   int v3; // [esp+8h] [ebp-4h]
 
-  v3 = caml_c_call(caml_format_float, a1);
+  v3 = caml_c_call((int (*)(void))caml_format_float, a1);
   if ( caml_c_call((int (*)(void))caml_classify_float, a2) < 7 )
-    result = camlPrintf__make_valid_float_lexeme_1270();
+    return camlPrintf__make_valid_float_lexeme_1270();
   else
-    result = v3;
-  return result;
+    return v3;
 }
 // 805C380: using guessed type int camlPrintf__make_valid_float_lexeme_1270(void);
-// 806778A: using guessed type int caml_format_float();
 
 //----- (0805C430) --------------------------------------------------------
-int __usercall camlPrintf__scan_format_1278@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ebx>, int a4@<edi>, int a5@<esi>)
+int __usercall camlPrintf__scan_format_1278@<eax>(
+        int a1@<eax>,
+        int a2@<edx>,
+        int a3@<ebx>,
+        int a4@<edi>,
+        int a5@<esi>,
+        int a6@<ecx>)
 {
-  int v5; // edi
-  int v6; // ebp
-  unsigned int v7; // eax
-  _DWORD *v8; // eax
-  int v13; // [esp+10h] [ebp-8h]
+  int v6; // edi
+  int v7; // ebp
+  unsigned int v8; // eax
+  _DWORD *v9; // eax
+  int v11; // [esp+0h] [ebp-18h]
+  int v14; // [esp+10h] [ebp-8h]
 
-  v13 = caml_extra_params;
-  v5 = dword_807D0C0;
-  v6 = dword_807D0C4;
+  v11 = a3;
+  v14 = caml_extra_params;
+  v6 = dword_807D0C0;
+  v7 = dword_807D0C4;
   while ( 1 )
   {
-    v7 = caml_young_ptr - 100;
-    caml_young_ptr = v7;
-    if ( v7 >= caml_young_limit )
+    v8 = caml_young_ptr - 100;
+    caml_young_ptr = v8;
+    if ( v8 >= caml_young_limit )
       break;
-    caml_call_gc(a3);
+    caml_call_gc(a2, a6, v11);
   }
-  v8 = (_DWORD *)(v7 + 4);
-  *(v8 - 1) = 4343;
-  *v8 = caml_curry2;
-  v8[1] = 5;
-  v8[2] = camlPrintf__get_arg_1288;
-  v8[3] = a3;
-  v8[4] = 19703;
-  v8[5] = caml_curry3;
-  v8[6] = 7;
-  v8[7] = camlPrintf__scan_positional_1291;
-  v8[8] = 4345;
-  v8[9] = caml_curry4;
-  v8[10] = 9;
-  v8[11] = camlPrintf__scan_flags_1292;
-  v8[12] = 8441;
-  v8[13] = caml_curry4;
-  v8[14] = 9;
-  v8[15] = camlPrintf__scan_conv_325;
-  v8[16] = a1;
-  v8[17] = a2;
-  v8[18] = a5;
-  v8[19] = a4;
-  v8[20] = v13;
-  v8[21] = v5;
-  v8[22] = v6;
-  v8[23] = v8;
+  v9 = (_DWORD *)(v8 + 4);
+  *(v9 - 1) = 4343;
+  *v9 = caml_curry2;
+  v9[1] = 5;
+  v9[2] = camlPrintf__get_arg_1288;
+  v9[3] = v11;
+  v9[4] = 19703;
+  v9[5] = caml_curry3;
+  v9[6] = 7;
+  v9[7] = camlPrintf__scan_positional_1291;
+  v9[8] = 4345;
+  v9[9] = caml_curry4;
+  v9[10] = 9;
+  v9[11] = camlPrintf__scan_flags_1292;
+  v9[12] = 8441;
+  v9[13] = caml_curry4;
+  v9[14] = 9;
+  v9[15] = camlPrintf__scan_conv_1293;
+  v9[16] = a1;
+  v9[17] = a2;
+  v9[18] = a5;
+  v9[19] = a4;
+  v9[20] = v14;
+  v9[21] = v6;
+  v9[22] = v7;
+  v9[23] = v9;
   return camlPrintf__scan_positional_1291(a2 + 2);
 }
-// 805C495: variable 'a3' is possibly undefined
+// 805C495: variable 'v11' is possibly undefined
+// 805C52A: variable 'a2' is possibly undefined
+// 805C52A: variable 'a6' is possibly undefined
 // 804B1F0: using guessed type _DWORD caml_curry4();
 // 804B2D0: using guessed type _DWORD caml_curry3();
 // 804B370: using guessed type _DWORD caml_curry2();
@@ -18094,40 +19508,49 @@ int __usercall camlPrintf__scan_format_1278@<eax>(int a1@<eax>, int a2@<edx>, in
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (0805C540) --------------------------------------------------------
-_DWORD *__usercall camlPrintf__mkprintf_1345@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int (**a4)(void)@<ebx>, int a5@<esi>)
+int (__usercall **__usercall camlPrintf__mkprintf_1345@<eax>(
+        int a1@<eax>,
+        int a2@<edx>,
+        int a3@<ecx>,
+        int (**a4)(void)@<ebx>,
+        int a5@<esi>))@<eax>(double *a1@<eax>, int a2@<ebx>)
 {
-  int v5; // ecx
-  _DWORD *v6; // eax
-  int v7; // eax
-  int v12; // [esp+14h] [ebp-8h]
-  int v13; // [esp+18h] [ebp-4h]
+  int v5; // edx
+  int i; // ecx
+  _DWORD *v7; // eax
+  int (__usercall *v8)@<eax>(double *@<eax>, int@<ebx>); // eax
+  int v9; // ecx
+  int v11; // [esp+0h] [ebp-1Ch]
+  int v14; // [esp+14h] [ebp-8h]
+  int (__usercall *v15)@<eax>(double *@<eax>, int@<ebx>); // [esp+18h] [ebp-4h]
 
-  v13 = caml_extra_params;
-  v5 = (*a4)();
-  while ( 1 )
+  v11 = a1;
+  v15 = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))caml_extra_params;
+  for ( i = (*a4)(); ; caml_call_gc(v5, i, v11) )
   {
-    v6 = (_DWORD *)(caml_young_ptr - 36);
-    caml_young_ptr = (int)v6;
-    if ( (unsigned int)v6 >= caml_young_limit )
+    v7 = (_DWORD *)(caml_young_ptr - 36);
+    caml_young_ptr = (int)v7;
+    if ( (unsigned int)v7 >= caml_young_limit )
       break;
-    caml_call_gc(a1);
   }
-  v12 = (int)(v6 + 1);
-  *v6 = 8439;
-  v6[1] = caml_curry4;
-  v6[2] = 9;
-  v6[3] = camlPrintf__pr_1354;
-  v6[4] = a1;
-  v6[5] = a3;
-  v6[6] = a2;
-  v6[7] = a5;
-  v6[8] = v5;
+  v14 = (int)(v7 + 1);
+  *v7 = 8439;
+  v7[1] = caml_curry4;
+  v7[2] = 9;
+  v7[3] = camlPrintf__pr_1354;
+  v7[4] = v11;
+  v7[5] = a3;
+  v7[6] = a2;
+  v7[7] = a5;
+  v7[8] = i;
   camlPrintf__index_of_int_1037(1);
-  v7 = caml_apply2(v12);
-  return camlPrintf__kapr_1179(v7, v13);
+  v8 = (int (__usercall *)@<eax>(double *@<eax>, int@<ebx>))caml_apply2(v14);
+  return camlPrintf__kapr_1209(v8, v15, v9);
 }
-// 805C59F: variable 'a1' is possibly undefined
-// 805C5B7: variable 'v5' is possibly undefined
+// 805C59F: variable 'v11' is possibly undefined
+// 805C5B7: variable 'i' is possibly undefined
+// 805C5DA: variable 'v9' is possibly undefined
+// 805C5DF: variable 'v5' is possibly undefined
 // 804B1F0: using guessed type _DWORD caml_curry4();
 // 807D0BC: using guessed type int caml_extra_params;
 // 8080414: using guessed type int caml_young_ptr;
@@ -18158,6 +19581,7 @@ int camlPrintf__printf_1393()
   v0 = (int (**)(void))camlPrintf__fprintf_1391();
   return (*v0)();
 }
+// 8076E50: using guessed type int dword_8076E50;
 
 //----- (0805C6A0) --------------------------------------------------------
 int camlPrintf__eprintf_1395()
@@ -18218,7 +19642,6 @@ int camlPrintf__ksprintf_1411()
 // 807A77C: using guessed type int dword_807A77C;
 // 807A780: using guessed type int dword_807A780;
 // 807AE6C: using guessed type int dword_807AE6C;
-// 807AE70: using guessed type int dword_807AE70;
 // 807AE78: using guessed type int dword_807AE78;
 // 807D0BC: using guessed type int caml_extra_params;
 
@@ -18232,48 +19655,47 @@ int camlPrintf__sprintf_1413()
 }
 
 //----- (0805C830) --------------------------------------------------------
-int camlPrintf__entry()
+int __fastcall camlPrintf__entry(int a1, int a2)
 {
-  _DWORD *v0; // eax
-  int v1; // ecx
-  int v2; // ebx
+  _DWORD *v2; // eax
   int v3; // ecx
-  _DWORD *v4; // eax
-  int v5; // ebp
-  int v6; // edi
-  int v7; // esi
-  int v8; // ebx
-  _DWORD *v9; // esi
-  char v11; // [esp+0h] [ebp-8h]
-  int v12; // [esp+0h] [ebp-8h]
-  int v13; // [esp+0h] [ebp-8h]
-  _DWORD *v14; // [esp+4h] [ebp-4h]
+  int v4; // ebx
+  int v5; // edx
+  int v6; // ecx
+  _DWORD *v7; // eax
+  int v8; // ebp
+  int v9; // edi
+  int v10; // esi
+  int v11; // ebx
+  _DWORD *v12; // esi
+  int v14; // [esp+0h] [ebp-8h]
+  _DWORD *v15; // [esp+4h] [ebp-4h]
 
-  v0 = (_DWORD *)caml_allocN(0x14u, (int)&camlPrintf__38, (char)&camlPrintf__38);
-  v14 = v0 + 1;
-  *v0 = 4343;
-  v0[1] = caml_curry2;
-  v0[2] = 5;
-  v0[3] = camlPrintf__add_int_index_1040;
-  v0[4] = v1;
-  v2 = ((int (*)(void))v0[1])();
-  v4 = (_DWORD *)caml_allocN(0x94u, v3, v11);
-  *v4 = 3319;
-  v4[1] = camlPrintf__index_of_literal_position_1044;
-  v4[2] = 3;
-  v4[3] = v12;
-  v4[4] = 3319;
-  v4[5] = camlPrintf__to_string_1054;
-  v4[6] = 3;
-  v4[7] = &camlPrintf__37;
-  v4[8] = 6144;
-  v4[9] = v12;
-  v4[10] = v14;
-  v4[11] = v2;
-  v4[12] = v4 + 1;
-  v4[13] = &camlPrintf__37;
-  v4[14] = v4 + 5;
-  dword_807AE0C = (int)(v4 + 9);
+  v2 = (_DWORD *)caml_allocN(0x14u, (int)&camlPrintf__38, a2);
+  v15 = v2 + 1;
+  *v2 = 4343;
+  v2[1] = caml_curry2;
+  v2[2] = 5;
+  v2[3] = camlPrintf__add_int_index_1040;
+  v2[4] = v3;
+  v4 = ((int (*)(void))v2[1])();
+  v7 = (_DWORD *)caml_allocN(0x94u, v6, v5);
+  *v7 = 3319;
+  v7[1] = camlPrintf__index_of_literal_position_1044;
+  v7[2] = 3;
+  v7[3] = &camlPrintf__38;
+  v7[4] = 3319;
+  v7[5] = camlPrintf__to_string_1054;
+  v7[6] = 3;
+  v7[7] = &camlPrintf__37;
+  v7[8] = 6144;
+  v7[9] = &camlPrintf__38;
+  v7[10] = v15;
+  v7[11] = v4;
+  v7[12] = v7 + 1;
+  v7[13] = &camlPrintf__37;
+  v7[14] = v7 + 5;
+  dword_807AE0C = (int)(v7 + 9);
   dword_807AE10 = (int)&camlPrintf__36;
   dword_807AE14 = (int)&camlPrintf__35;
   dword_807AE18 = (int)&camlPrintf__34;
@@ -18295,12 +19717,12 @@ int camlPrintf__entry()
   dword_807AE58 = (int)&camlPrintf__18;
   dword_807AE5C = (int)&camlPrintf__17;
   dword_807AE60 = (int)&camlPrintf__16;
-  v4[15] = 4343;
-  v4[16] = caml_curry2;
-  v4[17] = 5;
-  v4[18] = camlPrintf__fun_1600;
-  v4[19] = &camlPrintf__15;
-  dword_807AE64 = (int)(v4 + 16);
+  v7[15] = 4343;
+  v7[16] = caml_curry2;
+  v7[17] = 5;
+  v7[18] = camlPrintf__fun_1600;
+  v7[19] = &camlPrintf__15;
+  dword_807AE64 = (int)(v7 + 16);
   dword_807AE68 = (int)&camlPrintf__14;
   dword_807AE6C = (int)&camlPrintf__13;
   dword_807ADF8 = (int)&camlPrintf__12;
@@ -18316,36 +19738,35 @@ int camlPrintf__entry()
   dword_807ADFC = (int)&camlPrintf__2;
   dword_807ADF0 = (int)&camlPrintf__1;
   dword_807AE04 = (int)&camlPrintf__2;
-  v13 = dword_807AE0C;
-  v5 = dword_807AE48;
-  v6 = dword_807AE34;
-  v7 = dword_807AE40;
-  v8 = dword_807AE54;
-  v4[20] = 5120;
-  v4[21] = v5;
-  v4[22] = v6;
-  v4[23] = v7;
-  v4[24] = &camlPrintf__14;
-  v4[25] = v8;
-  v4[26] = 2048;
-  v4[27] = v13;
-  v4[28] = v4 + 21;
-  v9 = (_DWORD *)v4[27];
-  v4[29] = 4096;
-  v4[30] = *v9;
-  v4[31] = v9[2];
-  v4[32] = v9[4];
-  v4[33] = v9[5];
-  v4[34] = 2048;
-  v4[35] = v4 + 30;
-  v4[36] = v4[28];
-  dword_807AE08 = (int)(v4 + 35);
+  v14 = dword_807AE0C;
+  v8 = dword_807AE48;
+  v9 = dword_807AE34;
+  v10 = dword_807AE40;
+  v11 = dword_807AE54;
+  v7[20] = 5120;
+  v7[21] = v8;
+  v7[22] = v9;
+  v7[23] = v10;
+  v7[24] = &camlPrintf__14;
+  v7[25] = v11;
+  v7[26] = 2048;
+  v7[27] = v14;
+  v7[28] = v7 + 21;
+  v12 = (_DWORD *)v7[27];
+  v7[29] = 4096;
+  v7[30] = *v12;
+  v7[31] = v12[2];
+  v7[32] = v12[4];
+  v7[33] = v12[5];
+  v7[34] = 2048;
+  v7[35] = v7 + 30;
+  v7[36] = v7[28];
+  dword_807AE08 = (int)(v7 + 35);
   return 1;
 }
-// 805C867: variable 'v1' is possibly undefined
-// 805C87A: variable 'v3' is possibly undefined
-// 805C87A: variable 'v11' is possibly undefined
-// 805C899: variable 'v12' is possibly undefined
+// 805C867: variable 'v3' is possibly undefined
+// 805C87A: variable 'v6' is possibly undefined
+// 805C87A: variable 'v5' is possibly undefined
 // 804B370: using guessed type _DWORD caml_curry2();
 // 807ADE0: using guessed type int camlPrintf;
 // 807ADE4: using guessed type int dword_807ADE4;
@@ -18431,30 +19852,33 @@ int __usercall camlCallback__code_begin@<eax>(char a1@<al>)
 }
 
 //----- (0805CB20) --------------------------------------------------------
-int __usercall camlCallback__register_exception_1034@<eax>(char a1@<al>, double *a2@<ebx>)
+int __usercall camlCallback__register_exception_1034@<eax>(int a1@<eax>, double *a2@<ebx>, int a3@<edx>)
 {
-  unsigned int v3; // eax
-  double *v4; // eax
-  char v6; // [esp+0h] [ebp-8h]
+  int v3; // ecx
+  unsigned int v4; // eax
+  double *v5; // eax
+  char v7; // [esp+0h] [ebp-8h]
 
+  v3 = a1;
   if ( *((unsigned __int8 *)a2 - 4) == 254 )
   {
     while ( 1 )
     {
-      v3 = caml_young_ptr - 12;
-      caml_young_ptr = v3;
-      if ( v3 >= caml_young_limit )
+      v4 = caml_young_ptr - 12;
+      caml_young_ptr = v4;
+      if ( v4 >= caml_young_limit )
         break;
-      caml_call_gc(v6);
+      caml_call_gc(a3, v3, v7);
     }
-    v4 = (double *)(v3 + 4);
-    *((_DWORD *)v4 - 1) = 2301;
-    *v4 = *a2;
+    v5 = (double *)(v4 + 4);
+    *((_DWORD *)v5 - 1) = 2301;
+    *v5 = *a2;
   }
-  return caml_c_call((int (*)(void))caml_register_named_value, a1);
+  return caml_c_call((int (*)(void))caml_register_named_value, v3);
 }
-// 805CB6A: variable 'a1' is possibly undefined
-// 805CB76: variable 'v6' is possibly undefined
+// 805CB6A: variable 'v3' is possibly undefined
+// 805CB76: variable 'a3' is possibly undefined
+// 805CB76: variable 'v7' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -18518,7 +19942,7 @@ _DWORD *__cdecl unix_inet_addr_of_string(char *cp)
   unsigned int v3; // [esp+8h] [ebp-30h]
   int v4; // [esp+Ch] [ebp-2Ch]
   _DWORD *v5; // [esp+10h] [ebp-28h]
-  _DWORD v6[4]; // [esp+1Ch] [ebp-1Ch] BYREF
+  int v6[4]; // [esp+1Ch] [ebp-1Ch] BYREF
   int buf; // [esp+2Ch] [ebp-Ch] BYREF
 
   if ( inet_pton(2, cp, &buf) > 0 )
@@ -18531,6 +19955,7 @@ _DWORD *__cdecl unix_inet_addr_of_string(char *cp)
 // 805CD67: variable 'v3' is possibly undefined
 // 805CD67: variable 'v4' is possibly undefined
 // 805CD67: variable 'v5' is possibly undefined
+// 805CCF4: using guessed type _DWORD var_1C[4];
 
 //----- (0805CD78) --------------------------------------------------------
 unsigned int __cdecl unix_alarm(int a1)
@@ -18643,6 +20068,7 @@ char *unix_environment()
 {
   return caml_copy_string_array(environ);
 }
+// 80849AC: using guessed type void *environ;
 
 //----- (0805D13C) --------------------------------------------------------
 void *__cdecl unix_error_message(int a1)
@@ -18657,6 +20083,7 @@ void *__cdecl unix_error_message(int a1)
   v2 = strerror(v1);
   return caml_copy_string(v2);
 }
+// 807CE80: using guessed type _DWORD error_table[68];
 
 //----- (0805D17C) --------------------------------------------------------
 int __cdecl unix_execv(char *path, int a2, int a3)
@@ -18701,6 +20128,7 @@ int __cdecl unix_execvpe(char *file, int a2, int a3)
   uerror("execvp", file);
   return unix_execvp(file, a2);
 }
+// 80849AC: using guessed type void *environ;
 
 //----- (0805D2B2) --------------------------------------------------------
 int __cdecl unix_execvp(char *file, int a2)
@@ -18758,7 +20186,7 @@ int __cdecl unix_clear_nonblock(int a1)
   int v1; // eax
 
   v1 = fcntl(a1 >> 1, 3, 0);
-  if ( v1 == -1 || (BYTE1(v1) &= 0xF7u, fcntl(a1 >> 1, 4, v1) == -1) )
+  if ( v1 == -1 || (BYTE1(v1) &= ~8u, fcntl(a1 >> 1, 4, v1) == -1) )
     uerror("clear_nonblock", 0);
   return 1;
 }
@@ -18818,8 +20246,8 @@ int __cdecl unix_getaddrinfo(char *src, char *a2, int a3)
   char v10; // dl
   int v11; // eax
   struct addrinfo *k; // esi
-  size_t v13; // edi
-  char *v14; // eax
+  size_t ai_addrlen; // edi
+  char *ai_canonname; // eax
   int *v15; // edi
   int v17; // [esp+10h] [ebp-138h]
   int v18; // [esp+1Ch] [ebp-12Ch]
@@ -18933,15 +20361,15 @@ int __cdecl unix_getaddrinfo(char *src, char *a2, int a3)
       v21[3] = (int)&v24;
       v21[4] = (int)&v23;
       v21[5] = (int)&v22;
-      v13 = 112;
+      ai_addrlen = 112;
       if ( k->ai_addrlen <= 0x70 )
-        v13 = k->ai_addrlen;
-      memcpy(v20, k->ai_addr, v13);
-      v23 = alloc_sockaddr((int)v20, v13, -1);
-      v14 = k->ai_canonname;
-      if ( !v14 )
-        v14 = (char *)"";
-      v22 = caml_copy_string(v14);
+        ai_addrlen = k->ai_addrlen;
+      memcpy(v20, k->ai_addr, ai_addrlen);
+      v23 = alloc_sockaddr((int)v20, ai_addrlen, -1);
+      ai_canonname = k->ai_canonname;
+      if ( !ai_canonname )
+        ai_canonname = (char *)"";
+      v22 = caml_copy_string(ai_canonname);
       v24 = (int *)caml_alloc_small(5, 0);
       *v24 = cst_to_constr(k->ai_family, socket_domain_table, 3, 0);
       v15 = v24 + 1;
@@ -18961,6 +20389,8 @@ int __cdecl unix_getaddrinfo(char *src, char *a2, int a3)
   caml_local_roots = v17;
   return v30;
 }
+// 807CB9C: using guessed type _DWORD socket_domain_table[3];
+// 807CBA8: using guessed type _DWORD socket_type_table[6];
 // 807D294: using guessed type int caml_local_roots;
 
 //----- (0805DADC) --------------------------------------------------------
@@ -19072,9 +20502,9 @@ char *unix_getgroups()
   int v1; // esi
   char *result; // eax
   int i; // edx
-  __gid_t v4[65542]; // [esp+10h] [ebp-40018h] BYREF
+  int v4[65542]; // [esp+10h] [ebp-40018h] BYREF
 
-  v0 = getgroups(0x10000, v4);
+  v0 = getgroups(0x10000, (__gid_t *)v4);
   v1 = v0;
   if ( v0 == -1 )
     v0 = uerror("getgroups", 0);
@@ -19086,6 +20516,7 @@ char *unix_getgroups()
   }
   return result;
 }
+// 805DCD4: using guessed type __gid_t var_40018[65542];
 
 //----- (0805DD54) --------------------------------------------------------
 _DWORD *__usercall alloc_host_entry@<eax>(int a1@<eax>)
@@ -19131,6 +20562,7 @@ _DWORD *__usercall alloc_host_entry@<eax>(int a1@<eax>)
 }
 // 807D10C: using guessed type int entry_h_length;
 // 807D294: using guessed type int caml_local_roots;
+// 8083AA0: using guessed type _DWORD caml_atom_table[1];
 
 //----- (0805DE63) --------------------------------------------------------
 _DWORD *__cdecl unix_gethostbyname(char *src)
@@ -19169,27 +20601,27 @@ _DWORD *__cdecl unix_gethostbyname(char *src)
 // 805DEFB: variable 'v9' is possibly undefined
 // 805DEFB: variable 'v10' is possibly undefined
 // 805DEFB: variable 'v11' is possibly undefined
+// 805DE63: using guessed type char buf[10000];
 
 //----- (0805DF12) --------------------------------------------------------
 _DWORD *__cdecl alloc_one_addr(void *src)
 {
-  _DWORD *result; // eax
-  _DWORD dest[4]; // [esp+1Ch] [ebp-1Ch] BYREF
+  int dest[4]; // [esp+1Ch] [ebp-1Ch] BYREF
   int v3; // [esp+2Ch] [ebp-Ch] BYREF
 
   if ( entry_h_length == 16 )
   {
     memmove(dest, src, 0x10u);
-    result = alloc_inet6_addr(dest);
+    return alloc_inet6_addr(dest);
   }
   else
   {
     memmove(&v3, src, 4u);
-    result = alloc_inet_addr(&v3);
+    return alloc_inet_addr(&v3);
   }
-  return result;
 }
 // 807D10C: using guessed type int entry_h_length;
+// 805DF12: using guessed type _DWORD dest[4];
 
 //----- (0805DF7F) --------------------------------------------------------
 _DWORD *__cdecl unix_gethostbyaddr(int *a1)
@@ -19228,6 +20660,8 @@ LABEL_4:
 // 805E002: variable 'v6' is possibly undefined
 // 805E002: variable 'v7' is possibly undefined
 // 805E002: variable 'v8' is possibly undefined
+// 805DF7F: using guessed type int addr[3];
+// 805DF7F: using guessed type char buf[10000];
 
 //----- (0805E018) --------------------------------------------------------
 void *unix_gethostname()
@@ -19701,6 +21135,7 @@ double *__cdecl unix_getitimer(int a1)
     uerror("getitimer", 0);
   return unix_convert_itimer(&value.it_interval.tv_sec);
 }
+// 80711D0: using guessed type int itimers[3];
 
 //----- (0805EB03) --------------------------------------------------------
 int __usercall unix_set_timeval@<eax>(int *a1@<eax>, double a2)
@@ -19722,6 +21157,7 @@ int __usercall unix_set_timeval@<eax>(int *a1@<eax>, double a2)
   }
   return result;
 }
+// 805EB03: using guessed type double iptr[2];
 
 //----- (0805EB99) --------------------------------------------------------
 double *__cdecl unix_setitimer(int a1, double *a2)
@@ -19735,6 +21171,7 @@ double *__cdecl unix_setitimer(int a1, double *a2)
     uerror("setitimer", 0);
   return unix_convert_itimer(&old.it_interval.tv_sec);
 }
+// 80711D0: using guessed type int itimers[3];
 
 //----- (0805EC24) --------------------------------------------------------
 int __cdecl unix_kill(int a1, int a2)
@@ -19783,7 +21220,7 @@ int __cdecl unix_lockf(int a1, int a2, int a3)
   }
   else
   {
-    v8 = a3 >> 1;
+    v8 = v4;
     v4 = -v4;
   }
   v9 = v4;
@@ -19850,6 +21287,7 @@ int *__cdecl unix_lseek_64(int a1, int a2, int a3)
   return caml_copy_int64(v5, SHIDWORD(v5));
 }
 // 804A844: using guessed type __int64 __cdecl lseek64(_DWORD, _DWORD, _DWORD, _DWORD);
+// 80711F4: using guessed type int seek_command_table[3];
 
 //----- (0805EF66) --------------------------------------------------------
 int __cdecl unix_lseek(int a1, int a2, int a3)
@@ -19866,6 +21304,7 @@ int __cdecl unix_lseek(int a1, int a2, int a3)
   return 2 * v3 + 1;
 }
 // 804A844: using guessed type __int64 __cdecl lseek64(_DWORD, _DWORD, _DWORD, _DWORD);
+// 80711F4: using guessed type int seek_command_table[3];
 
 //----- (0805F01C) --------------------------------------------------------
 int __cdecl unix_mkdir(char *path, int a2)
@@ -19979,7 +21418,7 @@ int __cdecl unix_putenv(void *src, void *a2)
 }
 
 //----- (0805F384) --------------------------------------------------------
-int __cdecl unix_read(int a1, int a2, int a3, int a4)
+size_t __cdecl unix_read(int a1, int a2, int a3, int a4)
 {
   int v4; // esi
   size_t v5; // esi
@@ -20043,6 +21482,7 @@ void *__cdecl unix_readlink(char *path)
   buf[v1] = 0;
   return caml_copy_string(buf);
 }
+// 805F4B8: using guessed type char buf[4096];
 
 //----- (0805F528) --------------------------------------------------------
 int __cdecl unix_rename(char *old, char *newa)
@@ -20148,7 +21588,7 @@ int __usercall fdset_to_fdlist@<eax>(int *a1@<eax>, int a2@<edx>)
 int **__cdecl unix_select(int *a1, int *a2, int *a3, double *a4)
 {
   long double v4; // fst7
-  struct timeval *v5; // esi
+  struct timeval *p_timeout; // esi
   int v6; // esi
   int **result; // eax
   int v8[8]; // [esp+34h] [ebp-1B4h] BYREF
@@ -20170,15 +21610,15 @@ int **__cdecl unix_select(int *a1, int *a2, int *a3, double *a4)
   fdlist_to_fdset(a2, &writefds, &v10);
   fdlist_to_fdset(a3, &exceptfds, &v10);
   v4 = *a4;
-  v5 = 0;
+  p_timeout = 0;
   if ( v4 >= 0.0 )
   {
     timeout.tv_sec = (int)v4;
     timeout.tv_usec = (int)((v4 - (long double)(int)v4) * 1000000.0);
-    v5 = &timeout;
+    p_timeout = &timeout;
   }
   caml_enter_blocking_section();
-  v6 = select(v10 + 1, &readfds, &writefds, &exceptfds, v5);
+  v6 = select(v10 + 1, &readfds, &writefds, &exceptfds, p_timeout);
   caml_leave_blocking_section();
   if ( v6 == -1 )
     uerror("select", 0);
@@ -20292,7 +21732,7 @@ _DWORD *__cdecl unix_recvfrom(int a1, int a2, int a3, int a4, int *a5)
 // 807D294: using guessed type int caml_local_roots;
 
 //----- (0805FC77) --------------------------------------------------------
-int __cdecl unix_recv(int a1, int a2, int a3, int a4, int *a5)
+size_t __cdecl unix_recv(int a1, int a2, int a3, int a4, int *a5)
 {
   int v5; // edi
   int v6; // esi
@@ -20373,6 +21813,7 @@ int __cdecl unix_shutdown(int a1, int a2)
     uerror("shutdown", 0);
   return 1;
 }
+// 807129C: using guessed type int shutdown_command_table[3];
 
 //----- (0805FF10) --------------------------------------------------------
 int __usercall decode_sigset@<eax>(int *a1@<eax>, sigset_t *a2@<edx>)
@@ -20459,6 +21900,7 @@ int __cdecl unix_sigprocmask(int a1, int *a2)
     uerror("sigprocmask", 0);
   return encode_sigset(&oset);
 }
+// 80712CC: using guessed type int sigprocmask_cmd[3];
 
 //----- (08060154) --------------------------------------------------------
 int __cdecl unix_sleep(int a1)
@@ -20479,6 +21921,8 @@ int __cdecl unix_socket(int a1, int a2, int a3)
     v3 = uerror("socket", 0);
   return 2 * v3 + 1;
 }
+// 807CB9C: using guessed type _DWORD socket_domain_table[3];
+// 807CBA8: using guessed type _DWORD socket_type_table[6];
 
 //----- (080601F0) --------------------------------------------------------
 int *__cdecl get_sockaddr(int *a1, int a2, int *a3)
@@ -20623,7 +22067,7 @@ _DWORD *__cdecl alloc_sockaddr(int a1, int a2, int fd)
   {
     if ( fd != -1 )
       close(fd);
-    result = (_DWORD *)unix_error(97, (void *)"", 0);
+    return (_DWORD *)unix_error(97, (void *)"", 0);
   }
   return result;
 }
@@ -20642,6 +22086,8 @@ _DWORD *__cdecl unix_socketpair(int a1, int a2, int a3)
   result[1] = 2 * fds[1] + 1;
   return result;
 }
+// 807CB9C: using guessed type _DWORD socket_domain_table[3];
+// 807CBA8: using guessed type _DWORD socket_type_table[6];
 
 //----- (080605D0) --------------------------------------------------------
 int __cdecl unix_setsockopt_aux(int a1, int a2, int level, int optname, int a5, int a6)
@@ -20824,45 +22270,49 @@ _DWORD *__usercall stat_aux@<eax>(int a1@<eax>, _DWORD *a2@<edx>)
   caml_local_roots = v3;
   return v9;
 }
+// 807CC70: using guessed type _DWORD file_kind_table[12];
 // 807D294: using guessed type int caml_local_roots;
 
 //----- (08060AD3) --------------------------------------------------------
 _DWORD *__cdecl unix_fstat_64(int a1)
 {
-  _DWORD v2[26]; // [esp+10h] [ebp-68h] BYREF
+  int v2[26]; // [esp+10h] [ebp-68h] BYREF
 
   if ( __fxstat64(3, a1 >> 1, v2) == -1 )
     uerror("fstat", 0);
   return stat_aux(1, v2);
 }
 // 804A714: using guessed type int __cdecl __fxstat64(_DWORD, _DWORD, _DWORD);
+// 8060AD3: using guessed type _DWORD var_68[26];
 
 //----- (08060B2F) --------------------------------------------------------
 _DWORD *__cdecl unix_lstat_64(void *a1)
 {
-  _DWORD v2[24]; // [esp+10h] [ebp-68h] BYREF
+  int v2[24]; // [esp+10h] [ebp-68h] BYREF
 
   if ( __lxstat64(3, a1, v2) == -1 )
     uerror("lstat", a1);
   return stat_aux(1, v2);
 }
 // 804A1C4: using guessed type int __cdecl __lxstat64(_DWORD, _DWORD, _DWORD);
+// 8060B2F: using guessed type _DWORD var_68[24];
 
 //----- (08060B8E) --------------------------------------------------------
 _DWORD *__cdecl unix_stat_64(void *a1)
 {
-  _DWORD v2[24]; // [esp+10h] [ebp-68h] BYREF
+  int v2[24]; // [esp+10h] [ebp-68h] BYREF
 
   if ( __xstat64(3, a1, v2) == -1 )
     uerror("stat", a1);
   return stat_aux(1, v2);
 }
 // 8049F54: using guessed type int __cdecl __xstat64(_DWORD, _DWORD, _DWORD);
+// 8060B8E: using guessed type _DWORD var_68[24];
 
 //----- (08060BED) --------------------------------------------------------
 _DWORD *__cdecl unix_fstat(int a1)
 {
-  _DWORD v2[4]; // [esp+10h] [ebp-68h] BYREF
+  int v2[4]; // [esp+10h] [ebp-68h] BYREF
   int v3; // [esp+20h] [ebp-58h]
   __int64 v4; // [esp+3Ch] [ebp-3Ch]
 
@@ -20873,11 +22323,12 @@ _DWORD *__cdecl unix_fstat(int a1)
   return stat_aux(0, v2);
 }
 // 804A714: using guessed type int __cdecl __fxstat64(_DWORD, _DWORD, _DWORD);
+// 8060BED: using guessed type _DWORD var_68[4];
 
 //----- (08060C8B) --------------------------------------------------------
 _DWORD *__cdecl unix_lstat(void *a1)
 {
-  _DWORD v2[4]; // [esp+10h] [ebp-68h] BYREF
+  int v2[4]; // [esp+10h] [ebp-68h] BYREF
   int v3; // [esp+20h] [ebp-58h]
   __int64 v4; // [esp+3Ch] [ebp-3Ch]
 
@@ -20888,11 +22339,12 @@ _DWORD *__cdecl unix_lstat(void *a1)
   return stat_aux(0, v2);
 }
 // 804A1C4: using guessed type int __cdecl __lxstat64(_DWORD, _DWORD, _DWORD);
+// 8060C8B: using guessed type _DWORD var_68[4];
 
 //----- (08060D21) --------------------------------------------------------
 _DWORD *__cdecl unix_stat(void *a1)
 {
-  _DWORD v2[4]; // [esp+10h] [ebp-68h] BYREF
+  int v2[4]; // [esp+10h] [ebp-68h] BYREF
   int v3; // [esp+20h] [ebp-58h]
   __int64 v4; // [esp+3Ch] [ebp-3Ch]
 
@@ -20903,6 +22355,7 @@ _DWORD *__cdecl unix_stat(void *a1)
   return stat_aux(0, v2);
 }
 // 8049F54: using guessed type int __cdecl __xstat64(_DWORD, _DWORD, _DWORD);
+// 8060D21: using guessed type _DWORD var_68[4];
 
 //----- (08060DB8) --------------------------------------------------------
 void *__cdecl unix_string_of_inet_addr(void *cp)
@@ -20934,6 +22387,7 @@ int __cdecl unix_tcflow(int a1, int a2)
     uerror("tcflow", 0);
   return 1;
 }
+// 8071400: using guessed type int action_flag_table[4];
 
 //----- (08060EF5) --------------------------------------------------------
 int __cdecl unix_tcflush(int a1, int a2)
@@ -20942,6 +22396,7 @@ int __cdecl unix_tcflush(int a1, int a2)
     uerror("tcflush", 0);
   return 1;
 }
+// 8071410: using guessed type int queue_flag_table[3];
 
 //----- (08060F4A) --------------------------------------------------------
 int __cdecl unix_tcdrain(int a1)
@@ -21074,7 +22529,9 @@ LABEL_34:
 // 806111A: variable 'v10' is possibly undefined
 // 806111C: variable 'v15' is possibly undefined
 // 8061121: variable 'v9' is possibly undefined
+// 807141C: using guessed type int when_flag_table[9];
 // 8071440: using guessed type int speedtable[];
+// 8071444: using guessed type int dword_8071444[35];
 // 807CCA0: using guessed type int terminal_io_descr;
 
 //----- (08061211) --------------------------------------------------------
@@ -21186,6 +22643,7 @@ LABEL_31:
   return v13;
 }
 // 8071440: using guessed type int speedtable[];
+// 8071444: using guessed type int dword_8071444[35];
 // 80736A4: using guessed type Elf32_Dyn *GLOBAL_OFFSET_TABLE_;
 // 807CCA0: using guessed type int terminal_io_descr;
 
@@ -21251,6 +22709,7 @@ _DWORD *__cdecl unix_error_of_code(int a1)
   }
   return v1;
 }
+// 807CE80: using guessed type _DWORD error_table[68];
 
 //----- (080615EF) --------------------------------------------------------
 int __cdecl unix_error(int a1, void *src, void *a3)
@@ -21399,6 +22858,7 @@ _DWORD *__cdecl unix_waitpid(int *a1, int a2)
     uerror("waitpid", 0);
   return alloc_process_status(v3, stat_loc[0]);
 }
+// 80618EF: using guessed type int stat_loc[3];
 
 //----- (08061969) --------------------------------------------------------
 _DWORD *unix_wait()
@@ -21651,7 +23111,7 @@ int (__cdecl *__cdecl caml_main(char **a1))(_DWORD)
     caml_start_program();
   result = caml_termination_hook;
   if ( caml_termination_hook )
-    result = (int (__cdecl *)(_DWORD))caml_termination_hook(0);
+    return (int (__cdecl *)(_DWORD))caml_termination_hook(0);
   return result;
 }
 // 8073E20: using guessed type void *caml_data_segments;
@@ -21665,6 +23125,7 @@ int (__cdecl *__cdecl caml_main(char **a1))(_DWORD)
 // 807CFA8: using guessed type int minor_heap_init;
 // 807D160: using guessed type int (__cdecl *caml_termination_hook)(_DWORD);
 // 8083A9C: using guessed type int caml_code_area_end;
+// 8083AA0: using guessed type _DWORD caml_atom_table[1];
 // 8083EA0: using guessed type int caml_frame_descriptors_mask;
 // 8083EA4: using guessed type int caml_top_of_stack;
 
@@ -21943,7 +23404,12 @@ int __cdecl caml_raise_constant(int a1, int a2, unsigned int a3, int a4, _DWORD 
 // 807D294: using guessed type int caml_local_roots;
 
 //----- (08062305) --------------------------------------------------------
-int __cdecl caml_raise_sys_blocked_io(void (__cdecl *a1)(_DWORD, _DWORD *), int a2, unsigned int a3, int a4, _DWORD *a5)
+int __cdecl caml_raise_sys_blocked_io(
+        void (__cdecl *a1)(_DWORD, _DWORD *),
+        int a2,
+        unsigned int a3,
+        int a4,
+        _DWORD *a5)
 {
   int v6; // [esp+4h] [ebp-14h]
   unsigned int v7; // [esp+8h] [ebp-10h]
@@ -22015,14 +23481,14 @@ int __cdecl caml_do_local_roots(void (__cdecl *a1)(_DWORD, _DWORD *), int a2, un
 {
   int result; // eax
   _DWORD *v7; // esi
-  int v8; // eax
+  unsigned int v8; // eax
   int i; // ebx
   int v10; // esi
   unsigned __int16 *j; // edi
   int v12; // eax
   _DWORD *v13; // eax
   int v14; // eax
-  int l; // ebx
+  int m; // ebx
   int k; // edi
   _DWORD *v17; // [esp+4h] [ebp-34h]
   int v19; // [esp+1Ch] [ebp-1Ch]
@@ -22071,9 +23537,9 @@ int __cdecl caml_do_local_roots(void (__cdecl *a1)(_DWORD, _DWORD *), int a2, un
     {
       for ( k = 0; v7[1] > k; ++k )
       {
-        for ( l = 0; v7[2] > l; ++l )
+        for ( m = 0; v7[2] > m; ++m )
         {
-          v17 = (_DWORD *)(v7[k + 3] + 4 * l);
+          v17 = (_DWORD *)(v7[k + 3] + 4 * m);
           result = ((int (__cdecl *)(_DWORD, _DWORD *))a1)(*v17, v17);
         }
       }
@@ -22147,7 +23613,7 @@ int caml_init_frame_descriptors()
   int v8; // esi
   int v9; // edi
   int v10; // eax
-  int *l; // edx
+  int *m; // edx
   unsigned int v12; // eax
   int k; // [esp+18h] [ebp-20h]
   int v14; // [esp+1Ch] [ebp-1Ch]
@@ -22207,13 +23673,13 @@ LABEL_15:
       while ( 1 )
       {
         v10 = caml_frame_descriptors_mask & (*(_DWORD *)v8 >> 3);
-        for ( l = (int *)((char *)caml_frame_descriptors + 4 * v10);
-              *l;
-              l = (int *)((char *)caml_frame_descriptors + 4 * v10) )
+        for ( m = (int *)((char *)caml_frame_descriptors + 4 * v10);
+              *m;
+              m = (int *)((char *)caml_frame_descriptors + 4 * v10) )
         {
           v10 = caml_frame_descriptors_mask & (v10 + 1);
         }
-        *l = v8;
+        *m = v8;
         v12 = (v8 + 2 * *(unsigned __int16 *)(v8 + 6) + 11) & 0xFFFFFFFC;
         if ( (*(_BYTE *)(v8 + 4) & 1) != 0 )
           v12 += 8;
@@ -22295,7 +23761,7 @@ int (__cdecl *__cdecl caml_do_roots(void (__cdecl *a1)(int, char *)))(_DWORD)
   caml_final_do_strong_roots(a1);
   result = caml_scan_roots_hook;
   if ( caml_scan_roots_hook )
-    result = (int (__cdecl *)(_DWORD))caml_scan_roots_hook(a1);
+    return (int (__cdecl *)(_DWORD))caml_scan_roots_hook(a1);
   return result;
 }
 // 8073B34: using guessed type int *caml_globals[13];
@@ -22329,17 +23795,17 @@ int (__cdecl *caml_oldify_local_roots())(_DWORD)
   unsigned int v11; // eax
   unsigned int v12; // edx
   int v13; // eax
-  int l; // ebx
+  int m; // ebx
   int v15; // esi
-  unsigned __int16 *m; // edi
+  unsigned __int16 *n; // edi
   int v17; // edx
   unsigned int *v18; // edx
   unsigned int v19; // eax
   int v20; // eax
   _DWORD *v21; // esi
   unsigned int v22; // eax
-  int ii; // ebx
-  int n; // edi
+  int jj; // ebx
+  int ii; // edi
   int (__cdecl *result)(_DWORD); // eax
   int k; // [esp+18h] [ebp-20h]
   int v27; // [esp+1Ch] [ebp-1Ch]
@@ -22402,20 +23868,20 @@ int (__cdecl *caml_oldify_local_roots())(_DWORD)
     while ( 1 )
     {
       v13 = caml_frame_descriptors_mask & (v12 >> 3);
-      for ( l = *((_DWORD *)caml_frame_descriptors + v13);
-            *(_DWORD *)l != v12;
-            l = *((_DWORD *)caml_frame_descriptors + v13) )
+      for ( m = *((_DWORD *)caml_frame_descriptors + v13);
+            *(_DWORD *)m != v12;
+            m = *((_DWORD *)caml_frame_descriptors + v13) )
       {
         v13 = caml_frame_descriptors_mask & (v13 + 1);
       }
-      if ( *(_WORD *)(l + 4) == 0xFFFF )
+      if ( *(_WORD *)(m + 4) == 0xFFFF )
         break;
-      v15 = *(unsigned __int16 *)(l + 6);
-      if ( *(_WORD *)(l + 6) )
+      v15 = *(unsigned __int16 *)(m + 6);
+      if ( *(_WORD *)(m + 6) )
       {
-        for ( m = (unsigned __int16 *)(l + 8); ; ++m )
+        for ( n = (unsigned __int16 *)(m + 8); ; ++n )
         {
-          v17 = *m;
+          v17 = *n;
           v18 = (unsigned int *)((v17 & 1) != 0 ? k + 4 * (v17 >> 1) : v29 + v17);
           v19 = *v18;
           if ( (*v18 & 1) == 0 && v19 < caml_young_end && v19 > caml_young_start )
@@ -22424,7 +23890,7 @@ int (__cdecl *caml_oldify_local_roots())(_DWORD)
             break;
         }
       }
-      v29 += *(_WORD *)(l + 4) & 0xFFFC;
+      v29 += *(_WORD *)(m + 4) & 0xFFFC;
       v12 = *(_DWORD *)(v29 - 4);
     }
     v20 = v29 + 8;
@@ -22436,13 +23902,13 @@ int (__cdecl *caml_oldify_local_roots())(_DWORD)
   {
     do
     {
-      for ( n = 0; v21[1] > n; ++n )
+      for ( ii = 0; v21[1] > ii; ++ii )
       {
-        for ( ii = 0; v21[2] > ii; ++ii )
+        for ( jj = 0; v21[2] > jj; ++jj )
         {
-          v22 = *(_DWORD *)(v21[n + 3] + 4 * ii);
+          v22 = *(_DWORD *)(v21[ii + 3] + 4 * jj);
           if ( (v22 & 1) == 0 && v22 < caml_young_end && v22 > caml_young_start )
-            caml_oldify_one(v22, (_DWORD *)(v21[n + 3] + 4 * ii));
+            caml_oldify_one(v22, (_DWORD *)(v21[ii + 3] + 4 * jj));
         }
       }
       v21 = (_DWORD *)*v21;
@@ -22453,7 +23919,7 @@ int (__cdecl *caml_oldify_local_roots())(_DWORD)
   caml_final_do_young_roots((void (__cdecl *)(_DWORD, char *))caml_oldify_one);
   result = caml_scan_roots_hook;
   if ( caml_scan_roots_hook )
-    result = (int (__cdecl *)(_DWORD))caml_scan_roots_hook(caml_oldify_one);
+    return (int (__cdecl *)(_DWORD))caml_scan_roots_hook(caml_oldify_one);
   return result;
 }
 // 8073B34: using guessed type int *caml_globals[13];
@@ -22492,7 +23958,6 @@ int __cdecl caml_scan_global_roots(int a1)
 //----- (08062A90) --------------------------------------------------------
 _DWORD *__usercall caml_insert_global_root@<eax>(int a1@<eax>, unsigned int a2@<edx>)
 {
-  int v3; // edi
   int v4; // ecx
   int v5; // edx
   unsigned int *v6; // eax
@@ -22502,12 +23967,9 @@ _DWORD *__usercall caml_insert_global_root@<eax>(int a1@<eax>, unsigned int a2@<
   int j; // eax
   int k; // edx
   int v12; // ecx
-  int v13; // [esp+18h] [ebp-70h]
   int v14; // [esp+1Ch] [ebp-6Ch]
-  _DWORD v15[23]; // [esp+2Ch] [ebp-5Ch]
+  int v15[23]; // [esp+2Ch] [ebp-5Ch]
 
-  v13 = a1;
-  v3 = a1;
   v14 = *(_DWORD *)(a1 + 72);
   v4 = v14;
   v5 = a1;
@@ -22536,8 +23998,8 @@ _DWORD *__usercall caml_insert_global_root@<eax>(int a1@<eax>, unsigned int a2@<
     if ( v14 < i )
     {
       for ( j = v14 + 1; j <= i; ++j )
-        v15[j] = v3;
-      *(_DWORD *)(v13 + 72) = i;
+        v15[j] = a1;
+      *(_DWORD *)(a1 + 72) = i;
     }
     result = caml_stat_alloc(4 * i + 8);
     *result = a2;
@@ -22554,6 +24016,7 @@ _DWORD *__usercall caml_insert_global_root@<eax>(int a1@<eax>, unsigned int a2@<
   return result;
 }
 // 807D3CC: using guessed type int random_seed;
+// 8062A90: using guessed type _DWORD var_5C[23];
 
 //----- (08062B77) --------------------------------------------------------
 unsigned int __cdecl caml_register_generational_global_root(unsigned int *a1)
@@ -22569,11 +24032,11 @@ unsigned int __cdecl caml_register_generational_global_root(unsigned int *a1)
       v2 = result >> 23;
       result = (result >> 12) & 0x7FF;
       if ( (*(_BYTE *)(caml_page_table[v2] + result) & 1) != 0 )
-        result = (unsigned int)caml_insert_global_root((int)&caml_global_roots_old, (unsigned int)a1);
+        return (unsigned int)caml_insert_global_root((int)&caml_global_roots_old, (unsigned int)a1);
     }
     else
     {
-      result = (unsigned int)caml_insert_global_root((int)&caml_global_roots_young, (unsigned int)a1);
+      return (unsigned int)caml_insert_global_root((int)&caml_global_roots_young, (unsigned int)a1);
     }
   }
   return result;
@@ -22636,7 +24099,6 @@ void __cdecl caml_scan_global_young_roots(int a1)
 //----- (08062C6C) --------------------------------------------------------
 int __usercall caml_delete_global_root@<eax>(int a1@<eax>, unsigned int a2@<edx>)
 {
-  int v2; // ebx
   int v3; // ecx
   int result; // eax
   int i; // esi
@@ -22644,9 +24106,8 @@ int __usercall caml_delete_global_root@<eax>(int a1@<eax>, unsigned int a2@<edx>
   int v7; // eax
   int v8; // edx
   int v9; // [esp+1Ch] [ebp-6Ch]
-  _DWORD v10[23]; // [esp+2Ch] [ebp-5Ch]
+  int v10[23]; // [esp+2Ch] [ebp-5Ch]
 
-  v2 = a1;
   v3 = a1;
   result = *(_DWORD *)(a1 + 72);
   v9 = result;
@@ -22677,25 +24138,26 @@ int __usercall caml_delete_global_root@<eax>(int a1@<eax>, unsigned int a2@<edx>
           *(_DWORD *)(v8 + 4 * v7 + 4) = v6[v7 + 1];
         ++v7;
       }
-      while ( *(_DWORD *)(v2 + 72) >= v7 );
+      while ( *(_DWORD *)(a1 + 72) >= v7 );
     }
     caml_stat_free(v6);
-    result = *(_DWORD *)(v2 + 72);
-    if ( result > 0 && !*(_DWORD *)(v2 + 4 * result + 4) )
+    result = *(_DWORD *)(a1 + 72);
+    if ( result > 0 && !*(_DWORD *)(a1 + 4 * result + 4) )
     {
       while ( --result > 0 )
       {
-        if ( *(_DWORD *)(v2 + 4 * result + 4) )
+        if ( *(_DWORD *)(a1 + 4 * result + 4) )
         {
-          *(_DWORD *)(v2 + 72) = result;
+          *(_DWORD *)(a1 + 72) = result;
           return result;
         }
       }
-      *(_DWORD *)(v2 + 72) = result;
+      *(_DWORD *)(a1 + 72) = result;
     }
   }
   return result;
 }
+// 8062C6C: using guessed type _DWORD var_5C[23];
 
 //----- (08062D09) --------------------------------------------------------
 unsigned int __cdecl caml_modify_generational_global_root(unsigned int *a1, unsigned int a2)
@@ -22773,11 +24235,11 @@ unsigned int __cdecl caml_remove_generational_global_root(unsigned int *a1)
       v2 = result >> 23;
       result = (result >> 12) & 0x7FF;
       if ( (*(_BYTE *)(caml_page_table[v2] + result) & 1) != 0 )
-        result = caml_delete_global_root((int)&caml_global_roots_old, (unsigned int)a1);
+        return caml_delete_global_root((int)&caml_global_roots_old, (unsigned int)a1);
     }
     else
     {
-      result = caml_delete_global_root((int)&caml_global_roots_young, (unsigned int)a1);
+      return caml_delete_global_root((int)&caml_global_roots_young, (unsigned int)a1);
     }
   }
   return result;
@@ -22806,6 +24268,7 @@ int __cdecl caml_record_signal(int a1)
 // 807D3D0: using guessed type int caml_signals_are_pending;
 // 8080410: using guessed type int caml_young_end;
 // 8080418: using guessed type int caml_young_limit;
+// 8083EC0: using guessed type int caml_pending_signals[66];
 
 //----- (08062EA7) --------------------------------------------------------
 void caml_enter_blocking_section_default()
@@ -22849,9 +24312,10 @@ int __cdecl caml_convert_signal_number(int a1)
 
   result = a1;
   if ( a1 < 0 && (unsigned int)a1 > 0xFFFFFFEA )
-    result = posix_signals[~a1];
+    return posix_signals[~a1];
   return result;
 }
+// 8071680: using guessed type int posix_signals[20];
 
 //----- (08062F05) --------------------------------------------------------
 int __cdecl caml_rev_convert_signal_number(int a1)
@@ -22875,6 +24339,7 @@ int __cdecl caml_rev_convert_signal_number(int a1)
   }
   return ~v2;
 }
+// 8071680: using guessed type int posix_signals[20];
 
 //----- (08062F33) --------------------------------------------------------
 void __cdecl __noreturn caml_execute_signal(int signo)
@@ -22911,6 +24376,7 @@ int caml_process_pending_signals()
   return result;
 }
 // 807D3D0: using guessed type int caml_signals_are_pending;
+// 8083EC0: using guessed type int caml_pending_signals[66];
 
 //----- (0806305E) --------------------------------------------------------
 int __cdecl caml_install_signal_handler(int a1, unsigned int *a2)
@@ -23030,7 +24496,7 @@ int caml_init_signals()
   system_stack_top = (int)&v1;
   result = sigaltstack(&v2, 0);
   if ( !result )
-    result = sigaction(11, &v1, 0);
+    return sigaction(11, &v1, 0);
   return result;
 }
 // 807D3E0: using guessed type int system_stack_top;
@@ -23063,13 +24529,36 @@ int __cdecl caml_set_signal_action(int sig, int a2)
   {
     result = 2;
     if ( v4.sa_handler != handle_signal )
-      result = v4.sa_handler == (__sighandler_t)1;
+      return v4.sa_handler == (__sighandler_t)1;
   }
   return result;
 }
 
 //----- (0806331F) --------------------------------------------------------
-int __cdecl segv_handler(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, unsigned int a23)
+int __cdecl segv_handler(
+        int a1,
+        int a2,
+        int a3,
+        int a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9,
+        int a10,
+        int a11,
+        int a12,
+        int a13,
+        int a14,
+        int a15,
+        int a16,
+        int a17,
+        int a18,
+        int a19,
+        int a20,
+        int a21,
+        int a22,
+        unsigned int a23)
 {
   int v24; // [esp+8h] [ebp-B0h]
   int v25; // [esp+Ch] [ebp-ACh]
@@ -23089,6 +24578,7 @@ int __cdecl segv_handler(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
 // 806335E: variable 'v26' is possibly undefined
 // 804A754: using guessed type int getrlimit64(void);
 // 807D3E0: using guessed type int system_stack_top;
+// 806331F: using guessed type int var_18[6];
 
 //----- (080633A9) --------------------------------------------------------
 void __cdecl handle_signal(int signo)
@@ -23160,17 +24650,17 @@ void *__cdecl caml_ext_table_init(_DWORD *a1, int a2)
 }
 
 //----- (080634C4) --------------------------------------------------------
-int __cdecl caml_aligned_malloc(int a1, int a2, _DWORD *a3)
+unsigned int __cdecl caml_aligned_malloc(int a1, int a2, _DWORD *a3)
 {
   void *v3; // edx
-  int result; // eax
+  unsigned int result; // eax
 
   v3 = malloc(a1 + 4096);
   result = 0;
   if ( v3 )
   {
     *a3 = v3;
-    result = (((unsigned int)v3 + a2) & 0xFFFFF000) + 4096 - a2;
+    return (((unsigned int)v3 + a2) & 0xFFFFF000) + 4096 - a2;
   }
   return result;
 }
@@ -23206,7 +24696,7 @@ int __cdecl caml_gc_message(int a1, char *format, int a3)
   if ( a1 < 0 || (a1 & caml_verb_gc) != 0 )
   {
     fprintf(stderr, format, a3);
-    result = fflush(stderr);
+    return fflush(stderr);
   }
   return result;
 }
@@ -23451,7 +24941,7 @@ int *__cdecl caml_fl_add_blocks(unsigned int a1)
     if ( v4 == caml_fl_merge && a1 < caml_gc_sweep_hp )
       caml_fl_merge = *(int **)(a1 + 4);
     if ( caml_allocation_policy == 1 )
-      result = truncate_flp((int *)a1);
+      return truncate_flp((int *)a1);
   }
   else
   {
@@ -23545,7 +25035,7 @@ int *__cdecl caml_fl_allocate(unsigned int a1)
   int v4; // ebx
   int *v5; // ecx
   int *v6; // edx
-  int *v7; // edi
+  int *block; // edi
   int *v8; // ecx
   unsigned int v9; // edi
   int *v10; // edx
@@ -23615,7 +25105,7 @@ int *__cdecl caml_fl_allocate(unsigned int a1)
     if ( a1 <= v3 )
     {
 LABEL_19:
-      v7 = allocate_block(a1 + 1, v4, v1, v2);
+      block = allocate_block(a1 + 1, v4, v1, v2);
 LABEL_48:
       if ( v4 < flp_size )
       {
@@ -23637,7 +25127,7 @@ LABEL_48:
           v18 = v15;
           v25 = v4;
           v19 = 0;
-          v24 = v7;
+          v24 = block;
           v20 = (_DWORD *)v17;
           while ( v20 != v16 )
           {
@@ -23652,7 +25142,7 @@ LABEL_48:
             }
             v16 = v21;
           }
-          v7 = v24;
+          block = v24;
           if ( flp_size - 1 + v19 > 1000 )
           {
             if ( v25 + v19 > 999 )
@@ -23679,7 +25169,7 @@ LABEL_48:
           }
         }
       }
-      return v7;
+      return block;
     }
     while ( ++v4 < flp_size )
     {
@@ -23722,7 +25212,7 @@ LABEL_48:
       if ( a1 <= v3 )
       {
         beyond = (int)v10;
-        v7 = allocate_block(a1 + 1, v4, v8, v10);
+        block = allocate_block(a1 + 1, v4, v8, v10);
         goto LABEL_48;
       }
       v9 = v3;
@@ -23767,6 +25257,7 @@ LABEL_48:
 // 807F43C: using guessed type int dword_807F43C[];
 // 807F440: using guessed type int flp[];
 // 80803DC: using guessed type int dword_80803DC;
+// 8063A2C: using guessed type int src[1006];
 
 //----- (08063EB0) --------------------------------------------------------
 unsigned int __usercall clip_heap_chunk_size@<eax>(unsigned int a1@<eax>)
@@ -24170,7 +25661,7 @@ int __cdecl caml_darken(unsigned int a1)
         result = v4 + 4;
         gray_vals_cur = v4 + 4;
         if ( v4 + 4 >= (unsigned int)gray_vals_end )
-          result = realloc_gray_vals();
+          return realloc_gray_vals();
       }
     }
   }
@@ -24185,14 +25676,14 @@ int __usercall sweep_slice@<eax>(int a1@<eax>)
 {
   int v1; // esi
   int result; // eax
-  int *v3; // ebx
-  void (__cdecl *v4)(int *); // eax
+  _DWORD *v3; // ebx
+  void (__cdecl *v4)(_DWORD *); // eax
 
   v1 = a1;
   result = caml_gc_message(64, "Sweeping %ld words\n", a1);
   while ( v1 > 0 )
   {
-    v3 = (int *)caml_gc_sweep_hp;
+    v3 = (_DWORD *)caml_gc_sweep_hp;
     if ( caml_gc_sweep_hp >= (unsigned int)limit )
     {
       result = *(_DWORD *)(chunk - 4);
@@ -24228,7 +25719,7 @@ int __usercall sweep_slice@<eax>(int a1@<eax>)
       {
         if ( (_BYTE)result == 0xFF )
         {
-          v4 = *(void (__cdecl **)(int *))(v3[1] + 4);
+          v4 = *(void (__cdecl **)(_DWORD *))(v3[1] + 4);
           if ( v4 )
             v4(v3 + 1);
         }
@@ -24358,7 +25849,7 @@ void __cdecl caml_oldify_one(unsigned int a1, _DWORD *a2)
   int *v7; // eax
   unsigned int v8; // edx
   int *v9; // eax
-  unsigned int v10; // edx
+  unsigned int i; // edx
   int v11; // ebx
   _DWORD *v12; // esi
   unsigned __int8 *v13; // eax
@@ -24436,13 +25927,8 @@ LABEL_24:
   v9 = caml_alloc_shr(v5 >> 10, (unsigned __int8)v5);
   if ( v16 )
   {
-    v10 = 0;
-    do
-    {
-      v9[v10] = *(_DWORD *)(a1 + 4 * v10);
-      ++v10;
-    }
-    while ( v16 > v10 );
+    for ( i = 0; i < v16; ++i )
+      v9[i] = *(_DWORD *)(a1 + 4 * i);
   }
   *v17 = 0;
   *(_DWORD *)a1 = v9;
@@ -24558,7 +26044,9 @@ int caml_empty_minor_heap()
 // 8080410: using guessed type int caml_young_end;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
+// 808041C: using guessed type int caml_ref_table[3];
 // 8080428: using guessed type int dword_8080428;
+// 8080438: using guessed type int caml_weak_ref_table[3];
 // 8080444: using guessed type int dword_8080444;
 // 8080454: using guessed type int caml_in_minor_collection;
 // 8083920: using guessed type double caml_stat_minor_words;
@@ -24671,6 +26159,8 @@ void __cdecl caml_set_minor_heap_size(int a1)
 // 8080410: using guessed type int caml_young_end;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
+// 808041C: using guessed type int caml_ref_table[3];
+// 8080438: using guessed type int caml_weak_ref_table[3];
 // 8083FF4: using guessed type int caml_minor_heap_size;
 
 //----- (08064F74) --------------------------------------------------------
@@ -24716,7 +26206,7 @@ char *__cdecl caml_realloc_ref_table(int a1)
   {
     caml_gc_message(8, "ref_table threshold crossed\n", 0);
     *(_DWORD *)(a1 + 16) = *(_DWORD *)(a1 + 4);
-    result = (char *)caml_urge_major_slice();
+    return (char *)caml_urge_major_slice();
   }
   else
   {
@@ -24755,13 +26245,10 @@ __int16 caml_page_table_initialize()
 //----- (080650F4) --------------------------------------------------------
 int __cdecl caml_allocation_color(unsigned int a1)
 {
-  int result; // eax
-
   if ( caml_gc_phase && (caml_gc_phase != 1 || a1 < caml_gc_sweep_hp) )
-    result = 0;
+    return 0;
   else
-    result = 768;
-  return result;
+    return 768;
 }
 // 8083FCC: using guessed type int caml_gc_sweep_hp;
 // 8083FDC: using guessed type int caml_gc_phase;
@@ -24805,7 +26292,7 @@ void *__cdecl caml_stat_resize(void *ptr, size_t size)
 
   result = realloc(ptr, size);
   if ( !result )
-    result = (void *)caml_raise_out_of_memory(v3, v4, v5, v6, v7);
+    return (void *)caml_raise_out_of_memory(v3, v4, v5, v6, v7);
   return result;
 }
 // 806517A: variable 'v3' is possibly undefined
@@ -24840,7 +26327,7 @@ void *__cdecl caml_stat_alloc(size_t size)
   if ( !result )
   {
     if ( size )
-      result = (void *)caml_raise_out_of_memory(v2, v3, v4, v5, v6);
+      return (void *)caml_raise_out_of_memory(v2, v3, v4, v5, v6);
   }
   return result;
 }
@@ -24884,6 +26371,7 @@ int *__cdecl caml_modify(unsigned int *a1, unsigned int a2)
 }
 // 808040C: using guessed type int caml_young_start;
 // 8080410: using guessed type int caml_young_end;
+// 808041C: using guessed type int caml_ref_table[3];
 // 8080428: using guessed type int dword_8080428;
 // 808042C: using guessed type int dword_808042C;
 // 8083FDC: using guessed type int caml_gc_phase;
@@ -24914,17 +26402,18 @@ int *__cdecl caml_initialize(unsigned int *a1, unsigned int a2)
 }
 // 808040C: using guessed type int caml_young_start;
 // 8080410: using guessed type int caml_young_end;
+// 808041C: using guessed type int caml_ref_table[3];
 // 8080428: using guessed type int dword_8080428;
 // 808042C: using guessed type int dword_808042C;
 // 8084000: using guessed type int caml_page_table[];
 
 //----- (080652E8) --------------------------------------------------------
-unsigned int __cdecl caml_adjust_gc_speed(unsigned int a1, unsigned int a2)
+int __cdecl caml_adjust_gc_speed(unsigned int a1, unsigned int a2)
 {
   unsigned int v2; // edx
   unsigned int v3; // eax
   long double v4; // fst7
-  unsigned int result; // eax
+  int result; // eax
 
   v2 = a1;
   v3 = a2;
@@ -24943,7 +26432,7 @@ unsigned int __cdecl caml_adjust_gc_speed(unsigned int a1, unsigned int a2)
   if ( caml_extra_heap_resources > (long double)((unsigned int)caml_minor_heap_size >> 2)
                                  * 0.5
                                  / (long double)((unsigned int)caml_stat_heap_size >> 2) )
-    result = caml_urge_major_slice();
+    return caml_urge_major_slice();
   return result;
 }
 // 8083940: using guessed type int caml_stat_heap_size;
@@ -24951,9 +26440,9 @@ unsigned int __cdecl caml_adjust_gc_speed(unsigned int a1, unsigned int a2)
 // 8083FF4: using guessed type int caml_minor_heap_size;
 
 //----- (0806538B) --------------------------------------------------------
-int __cdecl caml_alloc_for_heap(int a1)
+unsigned int __cdecl caml_alloc_for_heap(int a1)
 {
-  int result; // eax
+  unsigned int result; // eax
   _DWORD *v2; // edx
   int v3[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
@@ -24967,6 +26456,7 @@ int __cdecl caml_alloc_for_heap(int a1)
   }
   return result;
 }
+// 806538B: using guessed type int var_C[3];
 
 //----- (080653C7) --------------------------------------------------------
 int __usercall caml_page_table_modify@<eax>(unsigned int a1@<eax>, char a2@<dl>, char a3@<cl>)
@@ -25013,13 +26503,13 @@ int __cdecl caml_page_table_remove(char a1, int a2, int a3)
 //----- (08065497) --------------------------------------------------------
 void __cdecl caml_shrink_heap(_DWORD *a1)
 {
-  char *v1; // esi
+  _DWORD *v1; // esi
   _DWORD *v2; // eax
   void **v3; // edx
 
   if ( a1 != caml_heap_start )
   {
-    v1 = (char *)(a1 - 4);
+    v1 = a1 - 4;
     caml_stat_heap_size -= *(a1 - 2);
     caml_gc_message(4, "Shrinking heap to %luk bytes\n", (unsigned int)caml_stat_heap_size >> 10);
     --caml_stat_heap_chunks;
@@ -25034,8 +26524,8 @@ void __cdecl caml_shrink_heap(_DWORD *a1)
       }
       while ( a1 != v2 );
     }
-    *v3 = (void *)*((_DWORD *)v1 + 3);
-    caml_page_table_remove(1, (int)a1, (int)a1 + *((_DWORD *)v1 + 2));
+    *v3 = (void *)v1[3];
+    caml_page_table_remove(1, (int)a1, (int)a1 + v1[2]);
     caml_free_for_heap((int)a1);
   }
 }
@@ -25353,7 +26843,7 @@ char *__cdecl caml_alloc(unsigned int a1, unsigned int a2)
       v7 = (int)v6;
       if ( a2 <= 0xFA )
         memset(v6, 0, 4 * a1);
-      result = (char *)caml_check_urgent_gc(v7);
+      return (char *)caml_check_urgent_gc(v7);
     }
     else
     {
@@ -25387,7 +26877,7 @@ char *__cdecl caml_alloc_dummy_float(int a1)
 
   result = (char *)&unk_8083AA4;
   if ( (a1 & 0xFFFFFFFE) != 0 )
-    result = caml_alloc(a1 & 0xFFFFFFFE, 0);
+    return caml_alloc(a1 & 0xFFFFFFFE, 0);
   return result;
 }
 
@@ -25398,7 +26888,7 @@ char *__cdecl caml_alloc_dummy(int a1)
 
   result = (char *)&unk_8083AA4;
   if ( a1 >> 1 )
-    result = caml_alloc(a1 >> 1, 0);
+    return caml_alloc(a1 >> 1, 0);
   return result;
 }
 
@@ -25440,7 +26930,7 @@ char *__cdecl caml_alloc_array(int (__cdecl *a1)(_DWORD), _DWORD *a2)
       ++v2;
     }
     caml_local_roots = v6;
-    result = v8;
+    return v8;
   }
   else
   {
@@ -25481,7 +26971,7 @@ void compare_free_stack()
 int compare_stack_overflow()
 {
   int v0; // eax
-  int v1; // edx
+  unsigned int v1; // edx
   int v2; // ecx
   int v4; // [esp+0h] [ebp-18h]
   int v5; // [esp+4h] [ebp-14h]
@@ -25503,14 +26993,14 @@ int compare_stack_overflow()
 // 8065C68: variable 'v2' is possibly undefined
 
 //----- (08065C6C) --------------------------------------------------------
-int __usercall compare_val@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>)
+int __usercall compare_val@<eax>(unsigned int a1@<eax>, unsigned int a2@<edx>, int a3@<ecx>)
 {
-  char *v3; // ebx
+  unsigned int **v3; // ebx
   int result; // eax
   char v5; // al
-  int (__cdecl *v6)(int); // eax
+  int (__cdecl *v6)(unsigned int); // eax
   char v7; // al
-  int (__cdecl *v8)(int); // eax
+  int (__cdecl *v8)(unsigned int); // eax
   _DWORD *v9; // edi
   int v10; // edx
   unsigned int v11; // esi
@@ -25526,9 +27016,9 @@ int __usercall compare_val@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>)
   int v21; // eax
   int v22; // edx
   int v23; // eax
-  int (__cdecl *v24)(int); // edx
+  int (__cdecl *v24)(unsigned int); // edx
   int v25; // eax
-  int *v26; // eax
+  unsigned int *v26; // eax
   int v27; // eax
   int v28; // [esp+4h] [ebp-54h]
   unsigned int v29; // [esp+8h] [ebp-50h]
@@ -25541,7 +27031,7 @@ int __usercall compare_val@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>)
   _DWORD *v36; // [esp+28h] [ebp-30h]
   char *v37; // [esp+28h] [ebp-30h]
 
-  v3 = (char *)compare_stack;
+  v3 = (unsigned int **)compare_stack;
   while ( 1 )
   {
     while ( 1 )
@@ -25560,17 +27050,17 @@ LABEL_2:
             if ( a1 == a2 )
               goto LABEL_94;
             if ( (a2 & 1) != 0 )
-              return (a1 >> 1) - (a2 >> 1);
-            if ( (*(_BYTE *)(caml_page_table[(unsigned int)a2 >> 23] + (((unsigned int)a2 >> 12) & 0x7FF)) & 7) == 0 )
-              goto LABEL_100;
+              return ((int)a1 >> 1) - ((int)a2 >> 1);
+            if ( (*(_BYTE *)(caml_page_table[a2 >> 23] + ((a2 >> 12) & 0x7FF)) & 7) == 0 )
+              return -1;
             v5 = *(_BYTE *)(a2 - 4);
             if ( v5 != -6 )
             {
               if ( v5 != -1 )
-                goto LABEL_100;
-              v6 = *(int (__cdecl **)(int))(*(_DWORD *)a2 + 24);
+                return -1;
+              v6 = *(int (__cdecl **)(unsigned int))(*(_DWORD *)a2 + 24);
               if ( !v6 )
-                goto LABEL_100;
+                return -1;
               caml_compare_unordered = 0;
               v28 = a2;
               result = v6(a1);
@@ -25584,16 +27074,16 @@ LABEL_2:
           }
           if ( (a2 & 1) == 0 )
             break;
-          if ( (*(_BYTE *)(caml_page_table[(unsigned int)a1 >> 23] + (((unsigned int)a1 >> 12) & 0x7FF)) & 7) == 0 )
-            goto LABEL_101;
+          if ( (*(_BYTE *)(caml_page_table[a1 >> 23] + ((a1 >> 12) & 0x7FF)) & 7) == 0 )
+            return 1;
           v7 = *(_BYTE *)(a1 - 4);
           if ( v7 != -6 )
           {
             if ( v7 != -1 )
-              goto LABEL_101;
-            v8 = *(int (__cdecl **)(int))(*(_DWORD *)a1 + 24);
+              return 1;
+            v8 = *(int (__cdecl **)(unsigned int))(*(_DWORD *)a1 + 24);
             if ( !v8 )
-              goto LABEL_101;
+              return 1;
             caml_compare_unordered = 0;
             v28 = a2;
             result = v8(a1);
@@ -25605,25 +27095,24 @@ LABEL_2:
           }
           a1 = *(_DWORD *)a1;
         }
-        if ( (*(_BYTE *)(caml_page_table[(unsigned int)a1 >> 23] + (((unsigned int)a1 >> 12) & 0x7FF)) & 7) != 0
-          && (*(_BYTE *)(caml_page_table[(unsigned int)a2 >> 23] + (((unsigned int)a2 >> 12) & 0x7FF)) & 7) != 0 )
+        if ( (*(_BYTE *)(caml_page_table[a1 >> 23] + ((a1 >> 12) & 0x7FF)) & 7) != 0
+          && (*(_BYTE *)(caml_page_table[a2 >> 23] + ((a2 >> 12) & 0x7FF)) & 7) != 0 )
         {
           break;
         }
         if ( a1 != a2 )
-          return (a1 >> 1) - (a2 >> 1);
+          return ((int)a1 >> 1) - ((int)a2 >> 1);
 LABEL_94:
         if ( v3 == compare_stack )
           return 0;
-        a1 = **(_DWORD **)v3;
-        *(_DWORD *)v3 += 4;
-        v26 = (int *)*((_DWORD *)v3 + 1);
+        a1 = *(*v3)++;
+        v26 = v3[1];
         a2 = *v26;
-        *((_DWORD *)v3 + 1) = v26 + 1;
-        v27 = *((_DWORD *)v3 + 2) - 1;
-        *((_DWORD *)v3 + 2) = v27;
+        v3[1] = v26 + 1;
+        v27 = (int)v3[2] - 1;
+        v3[2] = (unsigned int *)v27;
         if ( !v27 )
-          v3 -= 12;
+          v3 -= 3;
       }
       v9 = (_DWORD *)(a1 - 4);
       v10 = *(unsigned __int8 *)(a1 - 4);
@@ -25668,23 +27157,23 @@ LABEL_67:
         v13 = v12;
       v14 = memcmp((const void *)a1, (const void *)a2, v13);
       if ( v14 < 0 )
-        goto LABEL_100;
+        return -1;
       if ( v14 > 0 )
-        goto LABEL_101;
+        return 1;
       if ( v11 == v12 )
         goto LABEL_94;
       return v11 - v12;
     case 0xFD:
       if ( *(double *)a2 > (long double)*(double *)a1 )
-        goto LABEL_100;
+        return -1;
       v15 = *(double *)a1;
       v16 = *(double *)a2;
       if ( v15 > v16 )
-        goto LABEL_101;
+        return 1;
       if ( v15 == v16 )
         goto LABEL_94;
       if ( a3 )
-        goto LABEL_101;
+        return 1;
       return 0x80000000;
     case 0xFE:
       v17 = *v9 >> 11;
@@ -25694,29 +27183,29 @@ LABEL_67:
       if ( !v17 )
         goto LABEL_94;
       if ( *(double *)a2 > (long double)*(double *)a1 )
-        goto LABEL_100;
+        return -1;
       v19 = *(double *)a1;
       v20 = *(double *)a2;
       if ( v19 > v20 )
-        goto LABEL_101;
+        return 1;
       v21 = 0;
       while ( v19 == v20 )
       {
         if ( v17 <= ++v21 )
           goto LABEL_94;
         if ( *(double *)(a2 + 8 * v21) > (long double)*(double *)(a1 + 8 * v21) )
-          goto LABEL_100;
+          return -1;
         v19 = *(double *)(a1 + 8 * v21);
         v20 = *(double *)(a2 + 8 * v21);
         if ( v19 > v20 )
-          goto LABEL_101;
+          return 1;
       }
       if ( a3 )
-        goto LABEL_101;
+        return 1;
       return 0x80000000;
     case 0xFF:
-      v24 = *(int (__cdecl **)(int))(*(_DWORD *)a2 + 8);
-      if ( v24 == *(int (__cdecl **)(int))(*(_DWORD *)a1 + 8) )
+      v24 = *(int (__cdecl **)(unsigned int))(*(_DWORD *)a2 + 8);
+      if ( v24 == *(int (__cdecl **)(unsigned int))(*(_DWORD *)a1 + 8) )
       {
         if ( !v24 )
         {
@@ -25733,12 +27222,9 @@ LABEL_67:
         goto LABEL_94;
       }
       if ( strcmp(**(const char ***)a1, **(const char ***)a2) >= 0 )
-LABEL_101:
-        result = 1;
+        return 1;
       else
-LABEL_100:
-        result = -1;
-      return result;
+        return -1;
     default:
       v35 = *v9 >> 10;
       v25 = *v36 >> 10;
@@ -25748,7 +27234,7 @@ LABEL_100:
         goto LABEL_94;
       if ( v35 > 1 )
       {
-        v3 += 12;
+        v3 += 3;
         if ( (unsigned int)v3 >= compare_stack_limit )
         {
           v32 = compare_stack;
@@ -25770,11 +27256,11 @@ LABEL_100:
           }
           compare_stack = v37;
           compare_stack_limit = (int)&v37[12 * v33];
-          v3 = &v37[(v3 - v32) & 0xFFFFFFFC];
+          v3 = (unsigned int **)&v37[((char *)v3 - v32) & 0xFFFFFFFC];
         }
-        *(_DWORD *)v3 = a1 + 4;
-        *((_DWORD *)v3 + 1) = a2 + 4;
-        *((_DWORD *)v3 + 2) = v35 - 1;
+        *v3 = (unsigned int *)(a1 + 4);
+        v3[1] = (unsigned int *)(a2 + 4);
+        v3[2] = (unsigned int *)(v35 - 1);
       }
       a1 = *(_DWORD *)a1;
       a2 = *(_DWORD *)a2;
@@ -25867,7 +27353,7 @@ int __cdecl caml_compare(int a1, int a2)
     compare_free_stack();
   result = -1;
   if ( v2 >= 0 )
-    result = 2 * (v2 > 0) + 1;
+    return 2 * (v2 > 0) + 1;
   return result;
 }
 
@@ -25920,7 +27406,7 @@ int __usercall parse_digit@<eax>(char a1@<al>)
   v3 = a1 - 97;
   result = -1;
   if ( v3 <= 5u )
-    result = a1 - 87;
+    return a1 - 87;
   return result;
 }
 
@@ -26079,7 +27565,7 @@ _DWORD *__cdecl int64_serialize(int a1, _DWORD *a2, _DWORD *a3)
 }
 
 //----- (08066786) --------------------------------------------------------
-unsigned int __usercall parse_intnat@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx>)
+int __usercall parse_intnat@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx>)
 {
   char *v2; // ebx
   signed int v3; // edi
@@ -26092,18 +27578,20 @@ unsigned int __usercall parse_intnat@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx
   int v11; // [esp+4h] [ebp-44h]
   unsigned int v12; // [esp+8h] [ebp-40h]
   int v13; // [esp+Ch] [ebp-3Ch]
+  unsigned int v14; // [esp+10h] [ebp-38h]
   unsigned int v16; // [esp+18h] [ebp-30h]
   unsigned int v17; // [esp+1Ch] [ebp-2Ch]
   unsigned int v18; // [esp+28h] [ebp-20h] BYREF
   int v19[7]; // [esp+2Ch] [ebp-1Ch] BYREF
 
+  v14 = a2;
   v2 = parse_sign_and_base(a1, &v18, v19);
   v3 = v18;
   v16 = v18;
   v17 = 0xFFFFFFFF / v18;
   v4 = parse_digit(*v2);
   if ( v4 < 0 || v3 <= v4 )
-    v4 = caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)a2);
+    v4 = caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)v14);
   v5 = v2 + 1;
   v6 = v4;
   while ( 1 )
@@ -26114,35 +27602,35 @@ unsigned int __usercall parse_intnat@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx
     if ( v7 < 0 || v3 <= v7 )
       break;
     if ( v6 > v17 )
-      v7 = caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)a2);
+      v7 = caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)v14);
     v8 = v16 * v6;
     v9 = __CFADD__(v7, v8);
     v6 = v7 + v8;
     if ( v9 )
-      caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)a2);
+      caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)v14);
 LABEL_12:
     ++v5;
   }
   if ( v5 != &a1[caml_string_length((int)a1)] )
-    caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)a2);
+    caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)v14);
   if ( v18 != 10 )
   {
 LABEL_21:
-    if ( a2 <= 0x1F && 1 << a2 <= v6 )
-      caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)a2);
+    if ( v14 <= 0x1F && 1 << v14 <= v6 )
+      caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)v14);
     if ( v19[0] < 0 )
       return -v6;
     return v6;
   }
   if ( v19[0] < 0 )
     goto LABEL_19;
-  if ( 1 << (a2 - 1) > v6 )
+  if ( 1 << (v14 - 1) > v6 )
     return v6;
-  caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)a2);
+  caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)v14);
 LABEL_19:
-  if ( 1 << (a2 - 1) < v6 )
+  if ( 1 << (v14 - 1) < v6 )
   {
-    caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)a2);
+    caml_failwith("int_of_string", v11, v12, v13, (_DWORD *)v14);
     goto LABEL_21;
   }
   return -v6;
@@ -26150,16 +27638,17 @@ LABEL_19:
 // 80667CE: variable 'v11' is possibly undefined
 // 80667CE: variable 'v12' is possibly undefined
 // 80667CE: variable 'v13' is possibly undefined
-// 80667FB: variable 'a2' is possibly undefined
+// 80667FB: variable 'v14' is possibly undefined
+// 8066786: using guessed type int var_1C[7];
 
 //----- (080668B4) --------------------------------------------------------
-unsigned int __cdecl caml_int_of_string(_BYTE *a1)
+int __cdecl caml_int_of_string(_BYTE *a1)
 {
   return 2 * parse_intnat(a1, 0x1Fu) + 1;
 }
 
 //----- (080668CD) --------------------------------------------------------
-void *__usercall parse_format@<eax>(_BYTE *a1@<eax>, const char *a2@<edx>, char *a3@<ecx>, void *a4, char *a5)
+void *__usercall parse_format@<eax>(_BYTE *a1@<eax>, const char *a2@<edx>, char *a3@<ecx>, int a4, char *a5)
 {
   int v5; // ebx
   unsigned int v6; // ecx
@@ -26195,7 +27684,7 @@ void *__usercall parse_format@<eax>(_BYTE *a1@<eax>, const char *a2@<edx>, char 
   {
 LABEL_17:
     *a5 = v9;
-    return a4;
+    return (void *)a4;
   }
   if ( (unsigned __int8)(*a1 - 48) > 9u )
   {
@@ -26210,13 +27699,99 @@ LABEL_11:
   v13 = strtol(v12, 0, 10) + 5;
   *a5 = v9;
   if ( v13 > 31 )
-    a4 = caml_stat_alloc(v13 + 1);
-  return a4;
+    return caml_stat_alloc(v13 + 1);
+  return (void *)a4;
 }
 // 806690D: variable 'v15' is possibly undefined
 // 806690D: variable 'v16' is possibly undefined
 // 806690D: variable 'v17' is possibly undefined
 // 806690D: variable 'v18' is possibly undefined
+
+//----- (080669D6) --------------------------------------------------------
+// jumptable 0805C062 case 8
+void *__cdecl caml_nativeint_format(_BYTE *a1, int a2)
+{
+  char *v2; // ebx
+  void *v3; // esi
+  char v5; // [esp+1Fh] [ebp-59h] BYREF
+  char v6[32]; // [esp+20h] [ebp-58h] BYREF
+  char format[44]; // [esp+40h] [ebp-38h] BYREF
+
+  v2 = (char *)parse_format(a1, "l", format, (int)v6, &v5);
+  sprintf(v2, format, *(_DWORD *)(a2 + 4));
+  v3 = caml_copy_string(v2);
+  if ( v2 != v6 )
+    caml_stat_free(v2);
+  return v3;
+}
+
+//----- (08066A41) --------------------------------------------------------
+// jumptable 0805C062 case 7
+void *__cdecl caml_int64_format(_BYTE *a1, int a2)
+{
+  char *v2; // ebx
+  void *v3; // esi
+  char v5; // [esp+1Fh] [ebp-59h] BYREF
+  char v6[32]; // [esp+20h] [ebp-58h] BYREF
+  char format[44]; // [esp+40h] [ebp-38h] BYREF
+
+  v2 = (char *)parse_format(a1, "ll", format, (int)v6, &v5);
+  sprintf(v2, format, *(_DWORD *)(a2 + 4), *(_DWORD *)(a2 + 8));
+  v3 = caml_copy_string(v2);
+  if ( v2 != v6 )
+    caml_stat_free(v2);
+  return v3;
+}
+
+//----- (08066AB3) --------------------------------------------------------
+// jumptable 0805C062 case 9
+void *__cdecl caml_int32_format(_BYTE *a1, int a2)
+{
+  char *v2; // ebx
+  void *v3; // esi
+  char v5; // [esp+1Fh] [ebp-59h] BYREF
+  char v6[32]; // [esp+20h] [ebp-58h] BYREF
+  char format[44]; // [esp+40h] [ebp-38h] BYREF
+
+  v2 = (char *)parse_format(a1, "", format, (int)v6, &v5);
+  sprintf(v2, format, *(_DWORD *)(a2 + 4));
+  v3 = caml_copy_string(v2);
+  if ( v2 != v6 )
+    caml_stat_free(v2);
+  return v3;
+}
+
+//----- (08066B1E) --------------------------------------------------------
+// jumptable 0805C062 case 10
+void *__cdecl caml_format_int(_BYTE *a1, int a2)
+{
+  char *v2; // ebx
+  void *v3; // esi
+  char v5; // [esp+1Fh] [ebp-49h] BYREF
+  char v6[32]; // [esp+20h] [ebp-48h] BYREF
+  char format[40]; // [esp+40h] [ebp-28h] BYREF
+
+  v2 = (char *)parse_format(a1, "l", format, (int)v6, &v5);
+  if ( v5 == 111 )
+    goto LABEL_7;
+  if ( v5 > 111 )
+  {
+    if ( v5 == 117 || v5 == 120 )
+      goto LABEL_7;
+  }
+  else if ( v5 == 88 )
+  {
+LABEL_7:
+    sprintf(v2, format, (unsigned int)a2 >> 1);
+    goto LABEL_9;
+  }
+  sprintf(v2, format, a2 >> 1);
+LABEL_9:
+  v3 = caml_copy_string(v2);
+  if ( v2 != v6 )
+    caml_stat_free(v2);
+  return v3;
+}
 
 //----- (08066BB4) --------------------------------------------------------
 int __cdecl caml_nativeint_to_float(int a1)
@@ -26327,7 +27902,6 @@ int *__cdecl caml_nativeint_mod(int a1, int a2)
 {
   int v2; // edx
   int v3; // ecx
-  int *result; // eax
   void (__cdecl *v5)(_DWORD, _DWORD *); // [esp+0h] [ebp-18h]
   int v6; // [esp+4h] [ebp-14h]
   unsigned int v7; // [esp+8h] [ebp-10h]
@@ -26339,10 +27913,9 @@ int *__cdecl caml_nativeint_mod(int a1, int a2)
   if ( !v3 )
     caml_raise_zero_divide(v5, v6, v7, v8, v9);
   if ( v2 == 0x80000000 && v3 == -1 )
-    result = caml_copy_nativeint(0);
+    return caml_copy_nativeint(0);
   else
-    result = caml_copy_nativeint(v2 % v3);
-  return result;
+    return caml_copy_nativeint(v2 % v3);
 }
 // 8066D85: variable 'v5' is possibly undefined
 // 8066D85: variable 'v6' is possibly undefined
@@ -26370,7 +27943,7 @@ int *__cdecl caml_nativeint_div(int *a1, int a2)
   if ( !v4 )
     result = (int *)caml_raise_zero_divide(v5, v6, v7, v8, v9);
   if ( v3 != 0x80000000 || v4 != -1 )
-    result = caml_copy_nativeint(v3 / v4);
+    return caml_copy_nativeint(v3 / v4);
   return result;
 }
 // 8066DCC: variable 'v5' is possibly undefined
@@ -26495,6 +28068,7 @@ int *__cdecl caml_int64_of_string(_BYTE *a1)
 }
 // 8066F3A: variable 'v11' is possibly undefined
 // 8066F3A: variable 'v12' is possibly undefined
+// 8066ED4: using guessed type int var_1C[7];
 
 //----- (08067051) --------------------------------------------------------
 int *__cdecl caml_int64_of_nativeint(int a1)
@@ -26572,7 +28146,6 @@ int *__cdecl caml_int64_mod(int a1, int a2)
   unsigned int v3; // ecx
   unsigned int v4; // edx
   int v5; // eax
-  int *result; // eax
   void (__cdecl *v7)(_DWORD, _DWORD *); // [esp+0h] [ebp-18h]
   int v8; // [esp+4h] [ebp-14h]
   unsigned int v9; // [esp+8h] [ebp-10h]
@@ -26586,12 +28159,11 @@ int *__cdecl caml_int64_mod(int a1, int a2)
   if ( !*(_QWORD *)(a2 + 4) )
     v5 = caml_raise_zero_divide(v7, v8, v9, v10, v11);
   if ( v2 | (v3 + 0x80000000) || (v5 & v4) != -1 )
-    result = caml_copy_int64(
-               __SPAIR64__(v3, v2) % __SPAIR64__(v5, v4),
-               (unsigned __int64)(__SPAIR64__(v3, v2) % __SPAIR64__(v5, v4)) >> 32);
+    return caml_copy_int64(
+             __SPAIR64__(v3, v2) % __SPAIR64__(v5, v4),
+             (unsigned __int64)(__SPAIR64__(v3, v2) % __SPAIR64__(v5, v4)) >> 32);
   else
-    result = caml_copy_int64(0, 0);
-  return result;
+    return caml_copy_int64(0, 0);
 }
 // 80671F8: variable 'v7' is possibly undefined
 // 80671F8: variable 'v8' is possibly undefined
@@ -26623,9 +28195,9 @@ int *__cdecl caml_int64_div(int *a1, int a2)
   if ( !*(_QWORD *)(a2 + 4) )
     result = (int *)caml_raise_zero_divide(v7, v8, v9, v10, v11);
   if ( v3 | (v4 + 0x80000000) || (v6 & v5) != -1 )
-    result = caml_copy_int64(
-               __SPAIR64__(v4, v3) / __SPAIR64__(v6, v5),
-               (unsigned __int64)(__SPAIR64__(v4, v3) / __SPAIR64__(v6, v5)) >> 32);
+    return caml_copy_int64(
+             __SPAIR64__(v4, v3) / __SPAIR64__(v6, v5),
+             (unsigned __int64)(__SPAIR64__(v4, v3) / __SPAIR64__(v6, v5)) >> 32);
   return result;
 }
 // 8067274: variable 'v7' is possibly undefined
@@ -26763,7 +28335,6 @@ int *__cdecl caml_int32_mod(int a1, int a2)
 {
   int v2; // edx
   int v3; // ecx
-  int *result; // eax
   void (__cdecl *v5)(_DWORD, _DWORD *); // [esp+0h] [ebp-18h]
   int v6; // [esp+4h] [ebp-14h]
   unsigned int v7; // [esp+8h] [ebp-10h]
@@ -26775,10 +28346,9 @@ int *__cdecl caml_int32_mod(int a1, int a2)
   if ( !v3 )
     caml_raise_zero_divide(v5, v6, v7, v8, v9);
   if ( v2 == 0x80000000 && v3 == -1 )
-    result = caml_copy_int32(0);
+    return caml_copy_int32(0);
   else
-    result = caml_copy_int32(v2 % v3);
-  return result;
+    return caml_copy_int32(v2 % v3);
 }
 // 8067516: variable 'v5' is possibly undefined
 // 8067516: variable 'v6' is possibly undefined
@@ -26806,7 +28376,7 @@ int *__cdecl caml_int32_div(int *a1, int a2)
   if ( !v4 )
     result = (int *)caml_raise_zero_divide(v5, v6, v7, v8, v9);
   if ( v3 != 0x80000000 || v4 != -1 )
-    result = caml_copy_int32(v3 / v4);
+    return caml_copy_int32(v3 / v4);
   return result;
 }
 // 806755D: variable 'v5' is possibly undefined
@@ -26908,10 +28478,11 @@ int __cdecl caml_classify_float(double *a1)
   v1 = __fpclassify(COERCE_UNSIGNED_INT64(*a1), HIDWORD(COERCE_UNSIGNED_INT64(*a1)));
   result = 1;
   if ( v1 <= 3 )
-    result = CSWTCH_118[v1];
+    return CSWTCH_118[v1];
   return result;
 }
 // 804A1E4: using guessed type int __cdecl __fpclassify(_DWORD, _DWORD);
+// 8071B84: using guessed type int CSWTCH_118[4];
 
 //----- (08067764) --------------------------------------------------------
 long double __cdecl caml_log1p(double a1)
@@ -26923,6 +28494,65 @@ long double __cdecl caml_log1p(double a1)
 long double __cdecl caml_expm1(double a1)
 {
   return expm1(a1);
+}
+
+//----- (0806778A) --------------------------------------------------------
+// jumptable 0805C062 case 11
+void *__cdecl caml_format_float(char *nptr, double *a2)
+{
+  char *v2; // ebx
+  signed int v3; // esi
+  int v4; // eax
+  char *v5; // esi
+  void *v6; // ebx
+  char s[394]; // [esp+1Eh] [ebp-18Ah] BYREF
+
+  v2 = nptr;
+  if ( !*nptr )
+    goto LABEL_21;
+  if ( (unsigned __int8)(*nptr - 48) > 9u )
+  {
+    while ( *++v2 )
+    {
+      if ( (unsigned __int8)(*v2 - 48) <= 9u )
+        goto LABEL_5;
+    }
+    goto LABEL_21;
+  }
+LABEL_5:
+  v3 = strtol(v2, 0, 10) + 350;
+  if ( v3 < 350 )
+    v3 = 350;
+  if ( *v2 )
+  {
+    if ( *v2 == 46 )
+    {
+LABEL_13:
+      v4 = strtol(v2 + 1, 0, 10) + 350;
+      if ( v3 < v4 )
+        v3 = v4;
+    }
+    else
+    {
+      while ( *++v2 )
+      {
+        if ( *v2 == 46 )
+          goto LABEL_13;
+      }
+    }
+  }
+  if ( (unsigned int)v3 <= 0x171 )
+  {
+LABEL_21:
+    sprintf(s, nptr, *a2);
+    return caml_copy_string(s);
+  }
+  v5 = (char *)caml_stat_alloc(v3);
+  sprintf(v5, nptr, *a2);
+  v6 = caml_copy_string(v5);
+  if ( v5 != s )
+    caml_stat_free(v5);
+  return v6;
 }
 
 //----- (080678AA) --------------------------------------------------------
@@ -27116,6 +28746,7 @@ char *__cdecl caml_modf_float(double *a1)
   return v7;
 }
 // 807D294: using guessed type int caml_local_roots;
+// 8067AD1: using guessed type double iptr[2];
 
 //----- (08067B91) --------------------------------------------------------
 int __cdecl caml_log10_float(double *a1)
@@ -27260,7 +28891,6 @@ int __cdecl caml_float_of_string(int a1, int a2, int a3)
   char *v5; // edi
   char *v6; // eax
   char *v7; // esi
-  int result; // eax
   int v9; // [esp+4h] [ebp-84h]
   unsigned int v10; // [esp+8h] [ebp-80h]
   int v11; // [esp+Ch] [ebp-7Ch]
@@ -27289,15 +28919,14 @@ int __cdecl caml_float_of_string(int a1, int a2, int a3)
     if ( v5 != nptr )
       caml_stat_free(v5);
     caml_failwith("float_of_string", v9, v10, v11, v12);
-    result = caml_float_of_substring(a1, a2, a3);
+    return caml_float_of_substring(a1, a2, a3);
   }
   else
   {
     if ( v5 != nptr )
       caml_stat_free(v5);
-    result = caml_copy_double(v13);
+    return caml_copy_double(v13);
   }
-  return result;
 }
 // 8067E69: variable 'v9' is possibly undefined
 // 8067E69: variable 'v10' is possibly undefined
@@ -27313,7 +28942,6 @@ int __cdecl caml_float_of_substring(int a1, int a2, int a3)
   char *v6; // edi
   char *v7; // eax
   char *v8; // esi
-  int result; // eax
   int v10; // [esp+4h] [ebp-84h]
   unsigned int v11; // [esp+8h] [ebp-80h]
   int v12; // [esp+Ch] [ebp-7Ch]
@@ -27352,15 +28980,14 @@ int __cdecl caml_float_of_substring(int a1, int a2, int a3)
     if ( v6 != nptr )
       caml_stat_free(v6);
     caml_failwith("float_of_string", v10, v11, v12, v13);
-    result = caml_string_length(a1);
+    return caml_string_length(a1);
   }
   else
   {
     if ( v6 != nptr )
       caml_stat_free(v6);
-    result = caml_copy_double(v14);
+    return caml_copy_double(v14);
   }
-  return result;
 }
 // 8067F36: variable 'v10' is possibly undefined
 // 8067F36: variable 'v11' is possibly undefined
@@ -27575,10 +29202,10 @@ int __cdecl caml_array_unsafe_set_float(int a1, int a2, double *a3)
 }
 
 //----- (0806828A) --------------------------------------------------------
-int __cdecl caml_make_array(unsigned int *a1)
+unsigned int *__cdecl caml_make_array(unsigned int *a1)
 {
   int v1; // ebx
-  int result; // eax
+  unsigned int *result; // eax
   unsigned int v3; // esi
   unsigned int v4; // edx
   unsigned int i; // eax
@@ -27600,7 +29227,7 @@ int __cdecl caml_make_array(unsigned int *a1)
   v6[1] = 2;
   v6[3] = (int)&v8;
   v6[4] = (int)&v7;
-  result = (int)a1;
+  result = a1;
   v3 = *(a1 - 1) >> 10;
   if ( v3 )
   {
@@ -27613,7 +29240,7 @@ int __cdecl caml_make_array(unsigned int *a1)
       for ( i = 0; i < v3; ++i )
         *(double *)(v7 + 8 * i) = *(double *)a1[i];
       caml_local_roots = v1;
-      result = v7;
+      return (unsigned int *)v7;
     }
     else
     {
@@ -27656,13 +29283,10 @@ int __cdecl caml_array_unsafe_get_float(int a1, int a2)
 //----- (080683D2) --------------------------------------------------------
 int __cdecl caml_array_unsafe_get(int a1, int a2)
 {
-  int result; // eax
-
   if ( *(_BYTE *)(a1 - 4) == 0xFE )
-    result = caml_array_unsafe_get_float(a1, a2);
+    return caml_array_unsafe_get_float(a1, a2);
   else
-    result = *(_DWORD *)(a1 + 4 * (a2 >> 1));
-  return result;
+    return *(_DWORD *)(a1 + 4 * (a2 >> 1));
 }
 
 //----- (080683F9) --------------------------------------------------------
@@ -27779,14 +29403,14 @@ double *__cdecl caml_make_vect(int a1, unsigned int a2)
 //----- (080685D1) --------------------------------------------------------
 int __cdecl caml_array_unsafe_set_addr(int a1, int a2, unsigned int a3)
 {
-  unsigned int *v3; // ebx
+  unsigned int v3; // ebx
   unsigned int v4; // edi
   int v5; // edx
 
-  v3 = (unsigned int *)(a1 + 4 * (a2 >> 1));
-  v4 = *v3;
-  *v3 = a3;
-  if ( (*(_BYTE *)(caml_page_table[(unsigned int)v3 >> 23] + (((unsigned int)v3 >> 12) & 0x7FF)) & 1) != 0 )
+  v3 = a1 + 4 * (a2 >> 1);
+  v4 = *(_DWORD *)v3;
+  *(_DWORD *)v3 = a3;
+  if ( (*(_BYTE *)(caml_page_table[v3 >> 23] + ((v3 >> 12) & 0x7FF)) & 1) != 0 )
   {
     if ( !caml_gc_phase )
       caml_darken(v4);
@@ -27806,6 +29430,7 @@ int __cdecl caml_array_unsafe_set_addr(int a1, int a2, unsigned int a3)
 }
 // 808040C: using guessed type int caml_young_start;
 // 8080410: using guessed type int caml_young_end;
+// 808041C: using guessed type int caml_ref_table[3];
 // 8080428: using guessed type int dword_8080428;
 // 808042C: using guessed type int dword_808042C;
 // 8083FDC: using guessed type int caml_gc_phase;
@@ -27814,13 +29439,10 @@ int __cdecl caml_array_unsafe_set_addr(int a1, int a2, unsigned int a3)
 //----- (0806868B) --------------------------------------------------------
 int __cdecl caml_array_unsafe_set(int a1, int a2, double *a3)
 {
-  int result; // eax
-
   if ( *(_BYTE *)(a1 - 4) == 0xFE )
-    result = caml_array_unsafe_set_float(a1, a2, a3);
+    return caml_array_unsafe_set_float(a1, a2, a3);
   else
-    result = caml_array_unsafe_set_addr(a1, a2, (unsigned int)a3);
-  return result;
+    return caml_array_unsafe_set_addr(a1, a2, (unsigned int)a3);
 }
 
 //----- (080686C4) --------------------------------------------------------
@@ -27830,7 +29452,8 @@ int __cdecl caml_array_unsafe_set(int a1, int a2, double *a3)
 int __cdecl caml_array_set_addr(int a1, int a2, unsigned int a3)
 {
   unsigned int v3; // eax
-  unsigned int *v5; // ebx
+  int v4; // edx
+  unsigned int v5; // ebx
   unsigned int v6; // edi
   int v7; // edx
   int v9; // [esp+0h] [ebp-28h]
@@ -27840,12 +29463,12 @@ int __cdecl caml_array_set_addr(int a1, int a2, unsigned int a3)
   _DWORD *v13; // [esp+10h] [ebp-18h]
 
   v3 = a2 >> 1;
-  if ( a2 >> 1 < 0 || v3 >= *(_DWORD *)(a1 - 4) >> 10 )
+  if ( a2 >> 1 < 0 || (v4 = a1, v3 >= *(_DWORD *)(a1 - 4) >> 10) )
     v3 = caml_array_bound_error(v9, v10, v11, v12, v13);
-  v5 = (unsigned int *)(a1 + 4 * v3);
-  v6 = *v5;
-  *v5 = a3;
-  if ( (*(_BYTE *)(caml_page_table[(unsigned int)v5 >> 23] + (((unsigned int)v5 >> 12) & 0x7FF)) & 1) != 0 )
+  v5 = v4 + 4 * v3;
+  v6 = *(_DWORD *)v5;
+  *(_DWORD *)v5 = a3;
+  if ( (*(_BYTE *)(caml_page_table[v5 >> 23] + ((v5 >> 12) & 0x7FF)) & 1) != 0 )
   {
     if ( !caml_gc_phase )
       caml_darken(v6);
@@ -27868,9 +29491,10 @@ int __cdecl caml_array_set_addr(int a1, int a2, unsigned int a3)
 // 8068718: variable 'v11' is possibly undefined
 // 8068718: variable 'v12' is possibly undefined
 // 8068718: variable 'v13' is possibly undefined
-// 806871D: variable 'a1' is possibly undefined
+// 806871D: variable 'v4' is possibly undefined
 // 808040C: using guessed type int caml_young_start;
 // 8080410: using guessed type int caml_young_end;
+// 808041C: using guessed type int caml_ref_table[3];
 // 8080428: using guessed type int dword_8080428;
 // 808042C: using guessed type int dword_808042C;
 // 8083FDC: using guessed type int caml_gc_phase;
@@ -27879,13 +29503,10 @@ int __cdecl caml_array_set_addr(int a1, int a2, unsigned int a3)
 //----- (080687BD) --------------------------------------------------------
 int __cdecl caml_array_set(int a1, int a2, unsigned int a3)
 {
-  int result; // eax
-
   if ( *(_BYTE *)(a1 - 4) == 0xFE )
-    result = caml_array_set_float(a1, a2, a3);
+    return caml_array_set_float(a1, a2, a3);
   else
-    result = caml_array_set_addr(a1, a2, a3);
-  return result;
+    return caml_array_set_addr(a1, a2, a3);
 }
 // 80686C4: using guessed type _DWORD __cdecl caml_array_set_float(_DWORD, _DWORD, _DWORD);
 
@@ -27893,6 +29514,7 @@ int __cdecl caml_array_set(int a1, int a2, unsigned int a3)
 int __cdecl caml_array_get_float(int a1, int a2)
 {
   unsigned int v2; // eax
+  int v3; // edx
   int v4; // edx
   int result; // eax
   int v6; // [esp+0h] [ebp-18h]
@@ -27903,9 +29525,9 @@ int __cdecl caml_array_get_float(int a1, int a2)
   _DWORD *v11; // [esp+10h] [ebp-8h]
 
   v2 = a2 >> 1;
-  if ( a2 >> 1 < 0 || v2 >= *(_DWORD *)(a1 - 4) >> 11 )
+  if ( a2 >> 1 < 0 || (v3 = a1, v2 >= *(_DWORD *)(a1 - 4) >> 11) )
     v2 = caml_array_bound_error(v6, v7, v8, v10, v11);
-  v9 = *(double *)(a1 + 8 * v2);
+  v9 = *(double *)(v3 + 8 * v2);
   v4 = caml_young_ptr;
   caml_young_ptr -= 12;
   if ( caml_young_ptr < (unsigned int)caml_young_limit )
@@ -27924,7 +29546,7 @@ int __cdecl caml_array_get_float(int a1, int a2)
 // 8068810: variable 'v8' is possibly undefined
 // 8068810: variable 'v10' is possibly undefined
 // 8068810: variable 'v11' is possibly undefined
-// 8068815: variable 'a1' is possibly undefined
+// 8068815: variable 'v3' is possibly undefined
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
@@ -27934,13 +29556,10 @@ int __cdecl caml_array_get_float(int a1, int a2)
 //----- (08068881) --------------------------------------------------------
 int __cdecl caml_array_get(int a1, int a2)
 {
-  int result; // eax
-
   if ( *(_BYTE *)(a1 - 4) == 0xFE )
-    result = caml_array_get_float(a1, a2);
+    return caml_array_get_float(a1, a2);
   else
-    result = caml_array_get_addr(a1, a2);
-  return result;
+    return caml_array_get_addr(a1, a2);
 }
 // 806885D: using guessed type _DWORD __cdecl caml_array_get_addr(_DWORD, _DWORD);
 
@@ -28001,7 +29620,7 @@ int __cdecl compare_channel(int a1, int a2)
   v3 = *(_DWORD *)(a2 + 4);
   result = 0;
   if ( v2 != v3 )
-    result = v2 < v3 ? -1 : 1;
+    return v2 < v3 ? -1 : 1;
   return result;
 }
 
@@ -28415,7 +30034,7 @@ int __cdecl caml_ml_input(int a1, int a2, int a3, int a4)
 // 808186C: using guessed type int (__cdecl *caml_channel_mutex_unlock)(_DWORD);
 
 //----- (08069088) --------------------------------------------------------
-int __cdecl caml_input_scan_line(int a1)
+char *__cdecl caml_input_scan_line(int a1)
 {
   char *v1; // esi
   unsigned int v2; // eax
@@ -28446,17 +30065,17 @@ int __cdecl caml_input_scan_line(int a1)
       v5 = *(void **)(a1 + 20);
       v6 = *(_DWORD *)(a1 + 12);
       if ( (unsigned int)v5 >= v6 )
-        return *(_DWORD *)(a1 + 16) - (_DWORD)v5;
+        return (char *)(*(_DWORD *)(a1 + 16) - (_DWORD)v5);
       v8 = caml_do_read(*(_DWORD *)a1, v5, v6 - (_DWORD)v5);
       if ( !v8 )
-        return *(_DWORD *)(a1 + 16) - *(_DWORD *)(a1 + 20);
+        return (char *)(*(_DWORD *)(a1 + 16) - *(_DWORD *)(a1 + 20));
       *(_QWORD *)(a1 + 4) += v8;
       *(_DWORD *)(a1 + 20) += v8;
     }
     v9 = *v1++;
   }
   while ( v9 != 10 );
-  return (int)&v1[-*(_DWORD *)(a1 + 16)];
+  return &v1[-*(_DWORD *)(a1 + 16)];
 }
 
 //----- (0806912A) --------------------------------------------------------
@@ -28464,7 +30083,7 @@ int __cdecl caml_ml_input_scan_line(int a1)
 {
   int v1; // esi
   int v2; // ebx
-  int v3; // edi
+  char *v3; // edi
   int v5[11]; // [esp+10h] [ebp-38h] BYREF
 
   v1 = caml_local_roots;
@@ -28480,7 +30099,7 @@ int __cdecl caml_ml_input_scan_line(int a1)
   if ( caml_channel_mutex_unlock )
     caml_channel_mutex_unlock(v2);
   caml_local_roots = v1;
-  return 2 * v3 + 1;
+  return 2 * (_DWORD)v3 + 1;
 }
 // 807D294: using guessed type int caml_local_roots;
 // 8081868: using guessed type int (__cdecl *caml_channel_mutex_lock)(_DWORD);
@@ -28518,7 +30137,7 @@ int __cdecl caml_getblock(int a1, void *dest, size_t n)
   {
     memmove(dest, v3, n);
     *(_DWORD *)(a1 + 16) += n;
-    v4 = n;
+    return n;
   }
   return v4;
 }
@@ -28698,11 +30317,10 @@ ssize_t __usercall do_write@<eax>(size_t n@<ecx>, int a2@<eax>, const void *a3@<
 }
 
 //----- (080694C3) --------------------------------------------------------
-size_t __cdecl caml_putblock(int a1, void *src, size_t n)
+signed int __cdecl caml_putblock(int a1, void *src, size_t n)
 {
   void *v3; // eax
   signed int v4; // esi
-  size_t result; // eax
   ssize_t v6; // eax
   ssize_t v7; // edi
   signed int v8; // [esp+18h] [ebp-20h]
@@ -28719,15 +30337,14 @@ size_t __cdecl caml_putblock(int a1, void *src, size_t n)
       memmove((void *)(a1 + 52), (const void *)(v6 + a1 + 52), v8 - v6);
     *(_QWORD *)(a1 + 4) += v7;
     *(_DWORD *)(a1 + 16) = *(_DWORD *)(a1 + 12) - v7;
-    result = v4;
+    return v4;
   }
   else
   {
     memmove(v3, src, n);
     *(_DWORD *)(a1 + 16) += n;
-    result = n;
+    return n;
   }
-  return result;
 }
 
 //----- (0806956F) --------------------------------------------------------
@@ -28737,7 +30354,7 @@ int __cdecl caml_ml_output(int a1, int a2, int a3, int a4)
   int v5; // esi
   int v6; // ebx
   int v7; // esi
-  size_t v8; // eax
+  signed int v8; // eax
   int v10; // [esp+1Ch] [ebp-3Ch]
   int v11[14]; // [esp+20h] [ebp-38h] BYREF
 
@@ -28780,7 +30397,7 @@ int __cdecl caml_ml_output_partial(int a1, int a2, int a3, int a4)
 {
   int v4; // esi
   int v5; // ebx
-  size_t v6; // edi
+  signed int v6; // edi
   int v8[11]; // [esp+10h] [ebp-38h] BYREF
 
   v4 = caml_local_roots;
@@ -28809,7 +30426,7 @@ int __cdecl caml_ml_output_partial(int a1, int a2, int a3, int a4)
 void __cdecl caml_really_putblock(int a1, void *src, size_t n)
 {
   int i; // ebx
-  size_t v5; // eax
+  signed int v5; // eax
 
   for ( i = n; i > 0; i -= v5 )
   {
@@ -28873,7 +30490,6 @@ int __cdecl caml_ml_flush_partial(int a1)
 {
   int v1; // esi
   _DWORD *v2; // ebx
-  int result; // eax
   _BOOL4 v4; // edi
   int v5[11]; // [esp+10h] [ebp-38h] BYREF
 
@@ -28887,7 +30503,7 @@ int __cdecl caml_ml_flush_partial(int a1)
   if ( *v2 == -1 )
   {
     caml_local_roots = v1;
-    result = 3;
+    return 3;
   }
   else
   {
@@ -28897,9 +30513,8 @@ int __cdecl caml_ml_flush_partial(int a1)
     if ( caml_channel_mutex_unlock )
       caml_channel_mutex_unlock(v2);
     caml_local_roots = v1;
-    result = !v4 ? 1 : 3;
+    return !v4 ? 1 : 3;
   }
-  return result;
 }
 // 807D294: using guessed type int caml_local_roots;
 // 8081868: using guessed type int (__cdecl *caml_channel_mutex_lock)(_DWORD);
@@ -29481,12 +31096,12 @@ void *__cdecl caml_serialize_int_1(char a1)
 //----- (0806A138) --------------------------------------------------------
 void *__usercall writecode16@<eax>(char a1@<al>, __int16 a2@<dx>)
 {
-  char *v4; // eax
+  _BYTE *v4; // eax
   void *result; // eax
 
   if ( extern_limit < (unsigned int)extern_ptr + 3 )
     grow_extern_output(3);
-  v4 = (char *)extern_ptr;
+  v4 = extern_ptr;
   *(_BYTE *)extern_ptr = a1;
   v4[1] = HIBYTE(a2);
   v4[2] = a2;
@@ -29697,13 +31312,13 @@ void *__usercall extern_rec@<eax>(unsigned int a1@<eax>)
         if ( v2 + 128 > 0xFF )
         {
           if ( v2 + 0x8000 > 0xFFFF )
-            result = writecode32(2, v2);
+            return writecode32(2, v2);
           else
-            result = writecode16(1, v2);
+            return writecode16(1, v2);
         }
         else
         {
-          result = writecode8(0, v2);
+          return writecode8(0, v2);
         }
       }
       else
@@ -29738,13 +31353,13 @@ void *__usercall extern_rec@<eax>(unsigned int a1@<eax>)
           if ( v11 > 0xFF )
           {
             if ( v11 > 0xFFFF )
-              result = writecode32(6, v11);
+              return writecode32(6, v11);
             else
-              result = writecode16(5, v11);
+              return writecode16(5, v11);
           }
           else
           {
-            result = writecode8(4, v11);
+            return writecode8(4, v11);
           }
         }
         else
@@ -29860,7 +31475,7 @@ void *__usercall extern_rec@<eax>(unsigned int a1@<eax>)
       }
       else if ( (unsigned __int8)v6 > 0xFu )
       {
-        result = writecode32(8, v6);
+        return writecode32(8, v6);
       }
       else
       {
@@ -29890,6 +31505,7 @@ void *__usercall extern_rec@<eax>(unsigned int a1@<eax>)
 // 80838C0: using guessed type int extern_limit;
 // 8083A9C: using guessed type int caml_code_area_end;
 // 8084000: using guessed type int caml_page_table[];
+// 806A3D7: using guessed type int var_1C[7];
 
 //----- (0806A8CD) --------------------------------------------------------
 char *__usercall extern_value@<eax>(unsigned int a1@<eax>, int *a2@<edx>)
@@ -30373,6 +31989,7 @@ long double caml_deserialize_float_8()
   caml_deserialize_block_float_8(dest, 1);
   return dest[0];
 }
+// 806AFB2: using guessed type double dest[2];
 
 //----- (0806AFD0) --------------------------------------------------------
 void *__cdecl caml_deserialize_block_1(void *dest, size_t n)
@@ -30391,7 +32008,7 @@ _DWORD *caml_code_checksum()
 
   if ( !checksum_computed_3405 )
   {
-    _Z8MD5_InitP12md5Context_t(v1);
+    caml_MD5Init(v1);
     caml_MD5Update((int)v1, caml_code_area_start, caml_code_area_end - (_DWORD)caml_code_area_start);
     caml_MD5Final(checksum_3404, v1);
     checksum_computed_3405 = 1;
@@ -30399,6 +32016,7 @@ _DWORD *caml_code_checksum()
   return checksum_3404;
 }
 // 80838CC: using guessed type int checksum_computed_3405;
+// 80838D0: using guessed type _DWORD checksum_3404[4];
 // 8083A9C: using guessed type int caml_code_area_end;
 
 //----- (0806B05B) --------------------------------------------------------
@@ -30594,7 +32212,7 @@ int __usercall intern_add_to_heap@<eax>(int result@<eax>)
     if ( v1 > intern_dest )
       caml_make_free_blocks((int **)intern_dest, (int)(v1 - intern_dest) >> 2, 0);
     caml_allocated_words += (unsigned int)(intern_dest - intern_extra_block) >> 2;
-    result = caml_add_to_heap(intern_extra_block);
+    return caml_add_to_heap(intern_extra_block);
   }
   return result;
 }
@@ -30654,7 +32272,7 @@ void **__cdecl caml_input_value_from_block(unsigned __int8 *a1, unsigned int a2)
 //----- (0806B957) --------------------------------------------------------
 void **__cdecl caml_input_value_from_malloc(unsigned __int8 *a1, int a2)
 {
-  int v2; // eax
+  unsigned __int8 *v2; // eax
   void **v3; // ebx
   int v5; // [esp+4h] [ebp-14h]
   unsigned int v6; // [esp+8h] [ebp-10h]
@@ -30663,11 +32281,11 @@ void **__cdecl caml_input_value_from_malloc(unsigned __int8 *a1, int a2)
 
   intern_input = a1;
   intern_input_malloced = 1;
-  v2 = (int)&a1[a2 + 4];
-  intern_src = (void *)v2;
+  v2 = &a1[a2 + 4];
+  intern_src = v2;
   if ( (a1[a2 + 2] << 8) + (a1[a2 + 1] << 16) + a1[a2 + 3] + (a1[a2] << 24) != -2070567234 )
-    v2 = caml_failwith("input_value_from_malloc: bad object", v5, v6, v7, v8);
-  intern_src = (void *)(v2 + 4);
+    v2 = (unsigned __int8 *)caml_failwith("input_value_from_malloc: bad object", v5, v6, v7, v8);
+  intern_src = v2 + 4;
   v3 = input_val_from_block();
   caml_stat_free(intern_input);
   return v3;
@@ -30826,7 +32444,7 @@ int __usercall hash_aux@<eax>(unsigned int a1@<eax>)
 {
   int v2; // edx
   int result; // eax
-  int v4; // ebx
+  unsigned int v4; // ebx
   _DWORD *v5; // ecx
   unsigned __int8 v6; // dl
   int v7; // edx
@@ -30866,7 +32484,7 @@ LABEL_6:
               hash_accu = result;
               break;
             case 0xF9:
-              result = hash_aux();
+              result = hash_aux(v4 - 4 * (*v5 >> 10));
               break;
             case 0xFA:
               a1 = *(_DWORD *)a1;
@@ -30937,7 +32555,7 @@ LABEL_6:
               --hash_univ_count;
               result = v6 + 19 * hash_accu;
               hash_accu = result;
-              for ( i = *v5 >> 10; i; result = hash_aux() )
+              for ( i = *v5 >> 10; i; result = hash_aux(*(_DWORD *)(v4 + 4 * i)) )
                 --i;
               break;
           }
@@ -31044,16 +32662,16 @@ _DWORD *caml_sys_get_argv()
 //----- (0806C06A) --------------------------------------------------------
 int caml_sys_random_seed()
 {
-  __time_t v0; // esi
-  __suseconds_t v1; // ebx
+  __time_t tv_sec; // esi
+  __suseconds_t tv_usec; // ebx
   __pid_t v2; // edi
   struct timeval tv; // [esp+18h] [ebp-20h] BYREF
 
   gettimeofday(&tv, 0);
-  v0 = tv.tv_sec;
-  v1 = tv.tv_usec;
+  tv_sec = tv.tv_sec;
+  tv_usec = tv.tv_usec;
   v2 = getppid();
-  return 2 * ((v2 << 16) ^ getpid() ^ v0 ^ v1) + 1;
+  return 2 * ((v2 << 16) ^ getpid() ^ tv_sec ^ tv_usec) + 1;
 }
 
 //----- (0806C0BC) --------------------------------------------------------
@@ -31098,6 +32716,7 @@ int __cdecl caml_sys_file_exists(int a1)
   return __xstat64(3, a1, v2) == 0 ? 3 : 1;
 }
 // 8049F54: using guessed type int __cdecl __xstat64(_DWORD, _DWORD, _DWORD);
+// 806C121: using guessed type char var_68[104];
 
 //----- (0806C14E) --------------------------------------------------------
 int __cdecl caml_sys_close(int a1)
@@ -31281,6 +32900,7 @@ int __cdecl caml_sys_is_directory(void *src)
   return 2 * ((v3 & 0xF000) == 0x4000) + 1;
 }
 // 8049F54: using guessed type int __cdecl __xstat64(_DWORD, _DWORD, _DWORD);
+// 806C4A6: using guessed type char var_68[16];
 
 //----- (0806C4F1) --------------------------------------------------------
 int __cdecl caml_sys_open(char *src, int a2, int a3)
@@ -31374,13 +32994,12 @@ const char *__usercall token_name@<eax>(const char *a1@<eax>, int a2@<edx>)
         if ( --a2 <= 0 )
           break;
         if ( !*v2 )
-          goto LABEL_7;
+          return "<unknown token>";
       }
     }
     else
     {
-LABEL_7:
-      v2 = "<unknown token>";
+      return "<unknown token>";
     }
   }
   return v2;
@@ -31390,7 +33009,6 @@ LABEL_7:
 int __cdecl caml_parse_engine(int a1, _DWORD *a2, int a3, signed int a4)
 {
   unsigned int v4; // edi
-  int result; // eax
   const char *v6; // eax
   const char *v7; // eax
   int v8; // eax
@@ -31622,16 +33240,15 @@ LABEL_67:
             a2[13] = 2 * v17 + 1;
             a2[14] = 2 * v21 + 1;
             a2[15] = 2 * v22 + 1;
-            result = 9;
+            return 9;
           }
           else
           {
             a2[13] = 2 * v17 + 1;
             a2[14] = 2 * v21 + 1;
             a2[15] = 2 * v22 + 1;
-            result = 7;
+            return 7;
           }
-          return result;
         }
       }
     }
@@ -31650,7 +33267,7 @@ LABEL_67:
 int __usercall norm_pfree@<eax>(int result@<eax>)
 {
   if ( !result )
-    result = 1;
+    return 1;
   return result;
 }
 
@@ -31667,7 +33284,7 @@ unsigned int __usercall norm_heapincr@<eax>(int a1@<eax>)
 
   result = (a1 + 1023) & 0xFFFFFC00;
   if ( result <= 0x7FF )
-    result = 2048;
+    return 2048;
   return result;
 }
 
@@ -31677,7 +33294,7 @@ int __usercall norm_minsize@<eax>(int result@<eax>)
   if ( result <= 4095 )
     result = 4096;
   if ( result > 0x10000000 )
-    result = 0x10000000;
+    return 0x10000000;
   return result;
 }
 
@@ -31746,7 +33363,7 @@ int test_and_compact()
   if ( v3 >= (long double)(unsigned int)caml_percent_max && caml_stat_heap_chunks > 1 )
   {
     caml_gc_message(512, "Automatic compaction triggered.\n", 0);
-    result = caml_compact_heap();
+    return caml_compact_heap();
   }
   return result;
 }
@@ -32156,7 +33773,7 @@ LABEL_26:
 // 8083FDC: using guessed type int caml_gc_phase;
 
 //----- (0806D998) --------------------------------------------------------
-_DWORD *__cdecl _Z8MD5_InitP12md5Context_t(_DWORD *a1)
+_DWORD *__cdecl caml_MD5Init(_DWORD *a1)
 {
   _DWORD *result; // eax
 
@@ -32472,7 +34089,7 @@ void *__cdecl caml_MD5Update(int a1, void *src, size_t n)
 _DWORD *__cdecl caml_md5_chan(int a1, int a2)
 {
   int v2; // ebx
-  size_t v3; // eax
+  int v3; // eax
   size_t v4; // eax
   int v5; // eax
   int v6; // esi
@@ -32498,7 +34115,7 @@ _DWORD *__cdecl caml_md5_chan(int a1, int a2)
   v15 = *(_DWORD *)(a1 + 4);
   if ( caml_channel_mutex_lock )
     caml_channel_mutex_lock(v15);
-  _Z8MD5_InitP12md5Context_t(v17);
+  caml_MD5Init(v17);
   v2 = a2 >> 1;
   if ( a2 >> 1 < 0 )
   {
@@ -32546,7 +34163,7 @@ _DWORD *__cdecl caml_md5_string(int a1, int a2, int a3)
   _DWORD *v3; // esi
   int v5[22]; // [esp+18h] [ebp-60h] BYREF
 
-  _Z8MD5_InitP12md5Context_t(v5);
+  caml_MD5Init(v5);
   caml_MD5Update((int)v5, (void *)(a1 + (a2 >> 1)), a3 >> 1);
   v3 = (_DWORD *)caml_alloc_string(16);
   caml_MD5Final(v3, v5);
@@ -32556,9 +34173,9 @@ _DWORD *__cdecl caml_md5_string(int a1, int a2, int a3)
 //----- (0806E528) --------------------------------------------------------
 int __usercall add_char@<eax>(int result@<eax>, char a2@<dl>)
 {
-  _BYTE *v2; // ecx
+  char *v2; // ecx
 
-  v2 = *(_BYTE **)result;
+  v2 = *(char **)result;
   if ( *(_DWORD *)result < *(_DWORD *)(result + 4) )
   {
     *v2 = a2;
@@ -32707,6 +34324,7 @@ int __cdecl caml_named_value(char *s1)
   }
   return v1;
 }
+// 8083960: using guessed type int named_value_table[13];
 
 //----- (0806E867) --------------------------------------------------------
 int __cdecl caml_register_named_value(char *s1, int a2)
@@ -32739,6 +34357,7 @@ LABEL_5:
   }
   return 1;
 }
+// 8083960: using guessed type int named_value_table[13];
 
 //----- (0806E900) --------------------------------------------------------
 void __noreturn caml_callback3()
@@ -32808,7 +34427,7 @@ int __cdecl caml_callbackN(int a1, int a2, int a3)
 
   result = caml_callbackN_exn(a1, a2, a3);
   if ( (result & 3) == 2 )
-    result = caml_raise(result & 0xFFFFFFFC, v4, v5, v6, v7);
+    return caml_raise(result & 0xFFFFFFFC, v4, v5, v6, v7);
   return result;
 }
 // 806EB33: variable 'v4' is possibly undefined
@@ -32820,21 +34439,22 @@ int __cdecl caml_callbackN(int a1, int a2, int a3)
 int __cdecl caml_weak_check(int a1, int a2)
 {
   unsigned int v2; // eax
+  int v3; // edx
   int v5; // [esp+4h] [ebp-14h]
   unsigned int v6; // [esp+8h] [ebp-10h]
   int v7; // [esp+Ch] [ebp-Ch]
   _DWORD *v8; // [esp+10h] [ebp-8h]
 
   v2 = (a2 >> 1) + 1;
-  if ( a2 >> 1 == -1 || v2 >= *(_DWORD *)(a1 - 4) >> 10 )
+  if ( a2 >> 1 == -1 || (v3 = a1, v2 >= *(_DWORD *)(a1 - 4) >> 10) )
     v2 = caml_invalid_argument("Weak.get", v5, v6, v7, v8);
-  return 2 * (*(_DWORD *)(a1 + 4 * v2) != (_DWORD)caml_weak_none) + 1;
+  return 2 * (*(_DWORD *)(v3 + 4 * v2) != (_DWORD)caml_weak_none) + 1;
 }
 // 806EB64: variable 'v5' is possibly undefined
 // 806EB64: variable 'v6' is possibly undefined
 // 806EB64: variable 'v7' is possibly undefined
 // 806EB64: variable 'v8' is possibly undefined
-// 806EB69: variable 'a1' is possibly undefined
+// 806EB69: variable 'v3' is possibly undefined
 // 807D0A4: using guessed type void *caml_weak_none;
 
 //----- (0806EB7E) --------------------------------------------------------
@@ -32866,6 +34486,7 @@ unsigned int __usercall do_set@<eax>(unsigned int result@<eax>, int a2@<edx>, un
 }
 // 808040C: using guessed type int caml_young_start;
 // 8080410: using guessed type int caml_young_end;
+// 8080438: using guessed type int caml_weak_ref_table[3];
 // 8080444: using guessed type int dword_8080444;
 // 8080448: using guessed type int dword_8080448;
 
@@ -32951,26 +34572,28 @@ int __usercall caml_weak_blit@<eax>(int a1@<edi>, int a2, int a3, unsigned int a
 int __usercall caml_weak_set@<eax>(_DWORD *a1@<ebx>, int a2@<esi>, int a3, int a4, unsigned int *a5)
 {
   int v5; // eax
+  unsigned int *v6; // ecx
   unsigned int v7; // edx
   int v9; // [esp+4h] [ebp-14h]
   unsigned int v10; // [esp+8h] [ebp-10h]
   int v11; // [esp+Ch] [ebp-Ch]
 
   v5 = a3;
+  v6 = a5;
   v7 = (a4 >> 1) + 1;
   if ( a4 >> 1 == -1 || (a2 = a3, v7 >= *(_DWORD *)(a3 - 4) >> 10) )
     v5 = caml_invalid_argument("Weak.set", v9, v10, v11, a1);
-  if ( a5 == (unsigned int *)1 || ((unsigned __int8)a5 & 1) != 0 )
+  if ( v6 == (unsigned int *)1 || ((unsigned __int8)v6 & 1) != 0 )
     *(_DWORD *)(a2 + 4 * v7) = caml_weak_none;
   else
-    do_set(v5, v7, *a5);
+    do_set(v5, v7, *v6);
   return 1;
 }
 // 806ED3B: could not find valid save-restore pair for ebx
 // 806ED6A: variable 'v9' is possibly undefined
 // 806ED6A: variable 'v10' is possibly undefined
 // 806ED6A: variable 'v11' is possibly undefined
-// 806ED72: variable 'a5' is possibly undefined
+// 806ED72: variable 'v6' is possibly undefined
 // 806ED7B: variable 'v7' is possibly undefined
 // 807D0A4: using guessed type void *caml_weak_none;
 
@@ -33101,6 +34724,7 @@ int __cdecl caml_weak_get_copy(int a1, int a2)
 // 807D294: using guessed type int caml_local_roots;
 // 808040C: using guessed type int caml_young_start;
 // 8080410: using guessed type int caml_young_end;
+// 808041C: using guessed type int caml_ref_table[3];
 // 8080428: using guessed type int dword_8080428;
 // 808042C: using guessed type int dword_808042C;
 // 8083FDC: using guessed type int caml_gc_phase;
@@ -33249,7 +34873,7 @@ unsigned int __usercall invert_pointer_at@<eax>(unsigned int result@<eax>)
   }
   return result;
 }
-// 806F1CB: conditional instruction was optimized away because of 'edx.4==3'
+// 806F1CB: conditional instruction was optimized away because edx.4==3
 // 8084000: using guessed type int caml_page_table[];
 
 //----- (0806F25F) --------------------------------------------------------
@@ -33335,19 +34959,19 @@ int caml_compact_heap()
   unsigned int v8; // eax
   unsigned int k; // eax
   unsigned int v10; // ebx
-  unsigned int l; // esi
-  unsigned int m; // edi
+  unsigned int m; // esi
+  unsigned int n; // edi
   unsigned int v13; // edi
   void **v14; // ebx
-  unsigned int n; // esi
+  unsigned int ii; // esi
   unsigned int *v16; // ebx
   unsigned int v17; // eax
   int v18; // edx
-  unsigned int ii; // eax
+  unsigned int jj; // eax
   int v20; // eax
   _DWORD *v21; // edx
   _DWORD *v22; // ecx
-  unsigned int jj; // ecx
+  unsigned int kk; // ecx
   _DWORD *v24; // edi
   _DWORD *v25; // edx
   unsigned int *v26; // ebx
@@ -33425,7 +35049,7 @@ int caml_compact_heap()
           if ( v8 <= 0xFA && v7 > 1 )
           {
             v10 = (unsigned int)(v50 + 1);
-            for ( l = 1; l < v7; ++l )
+            for ( m = 1; m < v7; ++m )
             {
               invert_pointer_at(v10);
               v10 += 4;
@@ -33445,13 +35069,13 @@ int caml_compact_heap()
     v48 = &caml_weak_list_head;
     do
     {
-      for ( m = *(v51 - 1); (m & 3) == 0; m = *(_DWORD *)m )
+      for ( n = *(v51 - 1); (n & 3) == 0; n = *(_DWORD *)n )
         ;
-      v13 = m >> 10;
+      v13 = n >> 10;
       if ( v13 > 1 )
       {
         v14 = (void **)(v51 + 1);
-        for ( n = 1; n < v13; ++n )
+        for ( ii = 1; ii < v13; ++ii )
         {
           if ( *v14 != caml_weak_none )
             invert_pointer_at((unsigned int)v14);
@@ -33493,10 +35117,10 @@ int caml_compact_heap()
           v42 = (v17 >> 10) + 1;
 LABEL_39:
           v49 = &v16[v42];
-          for ( ii = *v49; (ii & 3) != 3; ii = *(_DWORD *)(ii & 0xFFFFFFFC) )
+          for ( jj = *v49; (jj & 3) != 3; jj = *(_DWORD *)(jj & 0xFFFFFFFC) )
             ;
-          v42 = (ii >> 10) + 1;
-          v46 = (unsigned __int8)(ii >> 2);
+          v42 = (jj >> 10) + 1;
+          v46 = (unsigned __int8)(jj >> 2);
 LABEL_42:
           v20 = compact_allocate(4 * v42);
           v21 = (_DWORD *)*v16;
@@ -33514,13 +35138,13 @@ LABEL_42:
           *v16 = (v42 << 10) + v46 - 1024;
           if ( v49 )
           {
-            for ( jj = (unsigned int)v49; (jj & 3) != 3; *v24 = ((v24 - v16) << 10) + 249 )
+            for ( kk = (unsigned int)v49; (kk & 3) != 3; *v24 = ((v24 - v16) << 10) + 249 )
             {
-              v24 = (_DWORD *)(jj & 0xFFFFFFFC);
-              for ( jj = *(_DWORD *)(jj & 0xFFFFFFFC); (jj & 3) == 2; *v25 = v20 + 4 * (v24 - v16) + 4 )
+              v24 = (_DWORD *)(kk & 0xFFFFFFFC);
+              for ( kk = *(_DWORD *)(kk & 0xFFFFFFFC); (kk & 3) == 2; *v25 = v20 + 4 * (v24 - v16) + 4 )
               {
-                v25 = (_DWORD *)(jj & 0xFFFFFFFC);
-                jj = *(_DWORD *)(jj & 0xFFFFFFFC);
+                v25 = (_DWORD *)(kk & 0xFFFFFFFC);
+                kk = *(_DWORD *)(kk & 0xFFFFFFFC);
               }
             }
           }
@@ -33661,7 +35285,7 @@ int caml_compact_heap_maybe()
          * 100.0
          / ((long double)((unsigned int)caml_stat_heap_size >> 2) - (long double)(unsigned int)caml_fl_cur_size);
       caml_gc_message(512, "Measured overhead: %lu%%\n", (__int64)v8);
-      result = caml_compact_heap();
+      return caml_compact_heap();
     }
   }
   return result;
@@ -33792,7 +35416,7 @@ int __usercall caml_final_register@<eax>(unsigned int a1@<esi>, int a2, unsigned
 {
   int v3; // edi
   int v4; // eax
-  _DWORD *v5; // edx
+  int *v5; // edx
   _DWORD *v6; // ecx
   int v8; // [esp+4h] [ebp-24h]
   unsigned int v9; // [esp+8h] [ebp-20h]
@@ -33816,7 +35440,7 @@ int __usercall caml_final_register@<eax>(unsigned int a1@<esi>, int a2, unsigned
     }
   }
   v4 = young;
-  v5 = (char *)final_table + 12 * young;
+  v5 = (int *)((char *)final_table + 12 * young);
   *v5 = a2;
   v6 = (_DWORD *)(a1 - 4);
   if ( *(_BYTE *)(a1 - 4) == 0xF9 )
@@ -34045,12 +35669,12 @@ _DWORD *__cdecl caml_final_custom_operations(int a1)
 // 80839BC: using guessed type int custom_ops_final_table;
 
 //----- (0806FF77) --------------------------------------------------------
-_DWORD *__cdecl _ZN2Fl11add_handlerEPFiiE(Fl *this)
+_DWORD *__cdecl caml_register_custom_operations(int a1)
 {
   _DWORD *result; // eax
 
   result = caml_stat_alloc(8u);
-  *result = this;
+  *result = a1;
   result[1] = custom_ops_table;
   custom_ops_table = (int)result;
   return result;
@@ -34060,9 +35684,9 @@ _DWORD *__cdecl _ZN2Fl11add_handlerEPFiiE(Fl *this)
 //----- (0806FF9E) --------------------------------------------------------
 _DWORD *caml_init_custom_operations()
 {
-  _ZN2Fl11add_handlerEPFiiE((Fl *)&caml_int32_ops);
-  _ZN2Fl11add_handlerEPFiiE((Fl *)&caml_nativeint_ops);
-  return _ZN2Fl11add_handlerEPFiiE((Fl *)&caml_int64_ops);
+  caml_register_custom_operations((int)&caml_int32_ops);
+  caml_register_custom_operations((int)&caml_nativeint_ops);
+  return caml_register_custom_operations((int)&caml_int64_ops);
 }
 // 807CFFC: using guessed type char *caml_int32_ops;
 // 807D018: using guessed type char *caml_int64_ops;
@@ -34101,7 +35725,7 @@ int *__cdecl caml_alloc_custom(int a1, int a2, unsigned int a3, unsigned int a4)
     v5 = caml_alloc_shr(((unsigned int)(a2 + 3) >> 2) + 1, 255);
     *v5 = a1;
     caml_adjust_gc_speed(a3, a4);
-    result = (int *)caml_check_urgent_gc((int)v5);
+    return (int *)caml_check_urgent_gc((int)v5);
   }
   else
   {
@@ -34120,11 +35744,18 @@ int __cdecl caml_executable_name(char *buf, size_t len)
   int v5; // [esp+20h] [ebp-58h]
 
   v2 = readlink("/proc/self/exe", buf, len);
-  if ( v2 == -1 || (int)len <= v2 || (buf[v2] = 0, (result = __xstat64(3, buf, v4)) != 0) || (v5 & 0xF000) != 0x8000 )
-    result = -1;
+  if ( v2 == -1 )
+    return -1;
+  if ( (int)len <= v2 )
+    return -1;
+  buf[v2] = 0;
+  result = __xstat64(3, buf, v4);
+  if ( result || (v5 & 0xF000) != 0x8000 )
+    return -1;
   return result;
 }
 // 8049F54: using guessed type int __cdecl __xstat64(_DWORD, _DWORD, _DWORD);
+// 8070080: using guessed type char var_68[16];
 
 //----- (080700EE) --------------------------------------------------------
 char *__cdecl caml_decompose_path(int a1, char *src)
@@ -34195,7 +35826,7 @@ int __cdecl caml_read_directory(char *name, int a2)
       }
     }
     closedir(dirp);
-    result = 0;
+    return 0;
   }
   return result;
 }
@@ -34279,6 +35910,7 @@ LABEL_13:
   }
 }
 // 8049F54: using guessed type int __cdecl __xstat64(_DWORD, _DWORD, _DWORD);
+// 80702B8: using guessed type char var_78[16];
 
 //----- (080703EF) --------------------------------------------------------
 char *__cdecl caml_search_dll_in_path(int a1, char *src)
@@ -34444,10 +36076,10 @@ void caml_print_exception_backtrace()
 // 80839CC: using guessed type int caml_backtrace_buffer;
 
 //----- (08070799) --------------------------------------------------------
-int __cdecl caml_stash_backtrace(int a1, unsigned int a2, unsigned int a3, unsigned int a4)
+unsigned int __cdecl caml_stash_backtrace(int a1, unsigned int a2, unsigned int a3, unsigned int a4)
 {
-  int result; // eax
-  int v7; // edx
+  unsigned int result; // eax
+  unsigned int v7; // edx
   int v8; // edx
 
   if ( a1 != caml_backtrace_last_exn )
@@ -34455,7 +36087,7 @@ int __cdecl caml_stash_backtrace(int a1, unsigned int a2, unsigned int a3, unsig
     caml_backtrace_pos = 0;
     caml_backtrace_last_exn = a1;
   }
-  if ( caml_backtrace_buffer || (result = (int)malloc(0x1000u), (caml_backtrace_buffer = result) != 0) )
+  if ( caml_backtrace_buffer || (result = (unsigned int)malloc(0x1000u), (caml_backtrace_buffer = result) != 0) )
   {
     if ( !caml_frame_descriptors )
       caml_init_frame_descriptors();
@@ -34538,38 +36170,33 @@ void caml_debugger_cleanup_fork()
 }
 
 //----- (080708CC) --------------------------------------------------------
-char *__cdecl caml_call_gc(char a1)
+void __usercall caml_call_gc(int a1@<edx>, int a2@<ecx>, char a3)
 {
-  int v1; // ecx
-  char *result; // eax
   int retaddr; // [esp+0h] [ebp+0h]
 
   caml_last_return_address = retaddr;
-  result = &a1;
-  caml_bottom_of_stack = (int)&a1;
-  sub_80708DD(v1);
-  return result;
+  caml_bottom_of_stack = (int)&a3;
+  sub_80708DD(a2, (int)&a3, a1);
 }
-// 80708D4: returning address of temporary local variable '%arg_0'
-// 80708D9: variable 'v1' is possibly undefined
 // 807CFCC: using guessed type int caml_last_return_address;
 // 807D2A0: using guessed type int caml_bottom_of_stack;
 
 //----- (080708DD) --------------------------------------------------------
-void __fastcall __spoils<ecx> sub_80708DD(int a1)
+void __usercall sub_80708DD(int a1@<ecx>, int a2@<eax>, int a3@<edx>)
 {
-  _DWORD v1[7]; // [esp-10h] [ebp-1Ch] BYREF
+  _DWORD v3[7]; // [esp-10h] [ebp-1Ch] BYREF
 
-  v1[2] = a1;
-  caml_gc_regs = (int)v1;
+  v3[3] = a3;
+  v3[2] = a1;
+  v3[0] = a2;
+  caml_gc_regs = (int)v3;
   caml_garbage_collection();
 }
 // 8083EA8: using guessed type int caml_gc_regs;
 
 //----- (080708F8) --------------------------------------------------------
-unsigned int __cdecl caml_alloc1(char a1)
+unsigned int __usercall caml_alloc1@<eax>(int a1@<edx>, int a2@<ecx>, char a3)
 {
-  int v1; // ecx
   unsigned int result; // eax
   int retaddr; // [esp+0h] [ebp+0h]
 
@@ -34580,21 +36207,21 @@ unsigned int __cdecl caml_alloc1(char a1)
     if ( result >= caml_young_limit )
       break;
     caml_last_return_address = retaddr;
-    caml_bottom_of_stack = (int)&a1;
-    sub_80708DD(v1);
+    caml_bottom_of_stack = (int)&a3;
+    sub_80708DD(a2, (int)&a3, a1);
   }
   return result;
 }
-// 807091F: variable 'v1' is possibly undefined
+// 807091F: variable 'a2' is possibly undefined
+// 807091F: variable 'a1' is possibly undefined
 // 807CFCC: using guessed type int caml_last_return_address;
 // 807D2A0: using guessed type int caml_bottom_of_stack;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (0807092C) --------------------------------------------------------
-unsigned int __cdecl caml_alloc2(char a1)
+unsigned int __usercall caml_alloc2@<eax>(int a1@<edx>, int a2@<ecx>, char a3)
 {
-  int v1; // ecx
   unsigned int result; // eax
   int retaddr; // [esp+0h] [ebp+0h]
 
@@ -34605,21 +36232,21 @@ unsigned int __cdecl caml_alloc2(char a1)
     if ( result >= caml_young_limit )
       break;
     caml_last_return_address = retaddr;
-    caml_bottom_of_stack = (int)&a1;
-    sub_80708DD(v1);
+    caml_bottom_of_stack = (int)&a3;
+    sub_80708DD(a2, (int)&a3, a1);
   }
   return result;
 }
-// 8070953: variable 'v1' is possibly undefined
+// 8070953: variable 'a2' is possibly undefined
+// 8070953: variable 'a1' is possibly undefined
 // 807CFCC: using guessed type int caml_last_return_address;
 // 807D2A0: using guessed type int caml_bottom_of_stack;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08070960) --------------------------------------------------------
-unsigned int __cdecl caml_alloc3(char a1)
+unsigned int __usercall caml_alloc3@<eax>(int a1@<edx>, int a2@<ecx>, char a3)
 {
-  int v1; // ecx
   unsigned int result; // eax
   int retaddr; // [esp+0h] [ebp+0h]
 
@@ -34630,24 +36257,27 @@ unsigned int __cdecl caml_alloc3(char a1)
     if ( result >= caml_young_limit )
       break;
     caml_last_return_address = retaddr;
-    caml_bottom_of_stack = (int)&a1;
-    sub_80708DD(v1);
+    caml_bottom_of_stack = (int)&a3;
+    sub_80708DD(a2, (int)&a3, a1);
   }
   return result;
 }
-// 8070987: variable 'v1' is possibly undefined
+// 8070987: variable 'a2' is possibly undefined
+// 8070987: variable 'a1' is possibly undefined
 // 807CFCC: using guessed type int caml_last_return_address;
 // 807D2A0: using guessed type int caml_bottom_of_stack;
 // 8080414: using guessed type int caml_young_ptr;
 // 8080418: using guessed type int caml_young_limit;
 
 //----- (08070994) --------------------------------------------------------
-unsigned int __usercall caml_allocN@<eax>(unsigned int a1@<eax>, int a2@<ecx>, char a3)
+unsigned int __usercall caml_allocN@<eax>(unsigned int a1@<eax>, int a2@<ecx>, int a3@<edx>, ...)
 {
   unsigned int result; // eax
   unsigned int v4; // [esp-4h] [ebp-4h]
   int retaddr; // [esp+0h] [ebp+0h]
+  va_list va; // [esp+4h] [ebp+4h] BYREF
 
+  va_start(va, a3);
   while ( 1 )
   {
     result = caml_young_ptr - a1;
@@ -34656,14 +36286,15 @@ unsigned int __usercall caml_allocN@<eax>(unsigned int a1@<eax>, int a2@<ecx>, c
     v4 = caml_young_ptr - result;
     caml_young_ptr -= caml_young_ptr - result;
     caml_last_return_address = retaddr;
-    caml_bottom_of_stack = (int)&a3;
-    sub_80708DD(a2);
+    va_copy((va_list)caml_bottom_of_stack, va);
+    sub_80708DD(a2, (int)va, a3);
     a1 = v4;
   }
   caml_young_ptr = result;
   return result;
 }
 // 80709CB: variable 'a2' is possibly undefined
+// 80709CB: variable 'a3' is possibly undefined
 // 807CFCC: using guessed type int caml_last_return_address;
 // 807D2A0: using guessed type int caml_bottom_of_stack;
 // 8080414: using guessed type int caml_young_ptr;
@@ -34694,9 +36325,31 @@ void __noreturn caml_start_program()
   caml_exception_pointer = (int)v0;
   caml_startup__code_begin();
 }
-// 8070A3E: using guessed type int sub_8070A3E();
 // 807CFCC: using guessed type int caml_last_return_address;
 // 807D280: using guessed type int caml_exception_pointer;
+// 807D2A0: using guessed type int caml_bottom_of_stack;
+// 8083EA8: using guessed type int caml_gc_regs;
+
+//----- (08070A3E) --------------------------------------------------------
+// positive sp value has been detected, the output may be wrong!
+int __usercall sub_8070A3E@<eax>(int a1@<eax>)
+{
+  int result; // eax
+  int v2; // [esp-1Ch] [ebp-1Ch]
+  int v3; // [esp-18h] [ebp-18h]
+  int v4; // [esp-14h] [ebp-14h]
+
+  result = a1 | 2;
+  caml_bottom_of_stack = v2;
+  caml_last_return_address = v3;
+  caml_gc_regs = v4;
+  return result;
+}
+// 8070A3D: positive sp value 1C has been found
+// 8070A27: variable 'v2' is possibly undefined
+// 8070A2D: variable 'v3' is possibly undefined
+// 8070A33: variable 'v4' is possibly undefined
+// 807CFCC: using guessed type int caml_last_return_address;
 // 807D2A0: using guessed type int caml_bottom_of_stack;
 // 8083EA8: using guessed type int caml_gc_regs;
 
@@ -34783,45 +36436,5 @@ void __noreturn caml_callback3_exn()
 //----- (08070B18) --------------------------------------------------------
 #error "8070B3B: call analysis failed (funcsize=13)"
 
-//----- (08070FC0) --------------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (08070FD0) --------------------------------------------------------
-void _libc_csu_init(void)
-{
-  init_proc();
-}
-
-//----- (08071030) --------------------------------------------------------
-void (*_do_global_ctors_aux())(void)
-{
-  void (*result)(void); // eax
-  void (**v1)(void); // ebx
-
-  result = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    v1 = (void (**)(void))&_CTOR_LIST__;
-    do
-    {
-      --v1;
-      result();
-      result = *v1;
-    }
-    while ( *v1 != (void (*)(void))-1 );
-  }
-  return result;
-}
-// 8073558: using guessed type int _CTOR_LIST__;
-
-//----- (0807105C) --------------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=1668 queued=1296 decompiled=1296 lumina nreq=0 worse=0 better=0
-#error "There were 79 decompilation failure(s) on 1296 function(s)"
+// nfuncs=1668 queued=1294 decompiled=1294 lumina nreq=0 worse=0 better=0
+#error "There were 76 decompilation failure(s) on 1294 function(s)"

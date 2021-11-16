@@ -13,8 +13,8 @@
 
 #define __thiscall __cdecl // Test compile in C mode
 
-int __thiscall sub_401014(_DWORD); // weak
-int __thiscall sub_401019(_DWORD); // weak
+_DWORD *__thiscall sub_401014(_DWORD *this);
+_DWORD *__thiscall sub_401019(_DWORD *this);
 _DWORD *__thiscall sub_401040(_DWORD *this);
 int sub_401060();
 _DWORD *__thiscall sub_401070(_DWORD *this);
@@ -27,7 +27,6 @@ int (*sub_40169C())(void);
 void __cdecl sub_4016C2(); // idb
 int __cdecl UserMathErrorFunction();
 int sub_401937();
-// LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -103,7 +102,7 @@ int (*dword_403E38[66])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
 _UNKNOWN unk_403F40; // weak
 void (*dword_404040[66])(void) =
 {
@@ -173,7 +172,8 @@ void (*dword_404040[66])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
+// extern LPTOP_LEVEL_EXCEPTION_FILTER (__stdcall *SetUnhandledExceptionFilter)(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
 
 
 //----- (00401040) --------------------------------------------------------
@@ -202,7 +202,6 @@ _DWORD *__thiscall sub_401070(_DWORD *this)
   *this = &BBBBB::`vftable';
   return this;
 }
-// 401014: using guessed type int __thiscall sub_401014(_DWORD);
 // 40374C: using guessed type void *BBBBB::`vftable';
 
 //----- (00401090) --------------------------------------------------------
@@ -214,45 +213,43 @@ int __thiscall sub_401090(_DWORD *this)
 //----- (004010A0) --------------------------------------------------------
 int __cdecl main_0(int argc, const char **argv, const char **envp)
 {
-  void *v3; // eax
-  int (__thiscall ***v4)(_DWORD); // ebp
-  void *v5; // eax
-  int (__thiscall ***v6)(_DWORD); // ebx
-  void *v7; // eax
-  int (__thiscall ***v8)(_DWORD); // edi
-  void *v9; // eax
-  int (__thiscall ***v10)(_DWORD); // esi
+  _DWORD *v3; // eax
+  _DWORD *v4; // ebp
+  _DWORD *v5; // eax
+  _DWORD *v6; // ebx
+  _DWORD *v7; // eax
+  _DWORD *v8; // edi
+  _DWORD *v9; // eax
+  _DWORD *v10; // esi
   int v11; // ebx
   int v12; // esi
   int v13; // esi
 
   v3 = operator new(8u);
   if ( v3 )
-    v4 = (int (__thiscall ***)(_DWORD))sub_401019(v3);
+    v4 = sub_401019(v3);
   else
     v4 = 0;
   v5 = operator new(8u);
   if ( v5 )
-    v6 = (int (__thiscall ***)(_DWORD))sub_401014(v5);
+    v6 = sub_401014(v5);
   else
     v6 = 0;
   v7 = operator new(8u);
   if ( v7 )
-    v8 = (int (__thiscall ***)(_DWORD))sub_401019(v7);
+    v8 = sub_401019(v7);
   else
     v8 = 0;
   v9 = operator new(8u);
   if ( v9 )
-    v10 = (int (__thiscall ***)(_DWORD))sub_401014(v9);
+    v10 = sub_401014(v9);
   else
     v10 = 0;
-  v11 = (**v6)(v6);
-  v12 = v11 + (**v10)(v10);
-  v13 = (**v8)(v8) + v12;
-  return v13 + (**v4)(v4);
+  v11 = (*(int (__thiscall **)(_DWORD *))*v6)(v6);
+  v12 = v11 + (*(int (__thiscall **)(_DWORD *))*v10)(v10);
+  v13 = (*(int (__thiscall **)(_DWORD *))*v8)(v8) + v12;
+  return v13 + (*(int (__thiscall **)(_DWORD *))*v4)(v4);
 }
-// 401014: using guessed type int __thiscall sub_401014(_DWORD);
-// 401019: using guessed type int __thiscall sub_401019(_DWORD);
 
 //----- (004015C9) --------------------------------------------------------
 int sub_4015C9()
@@ -282,6 +279,7 @@ int (*sub_40169C())(void)
   }
   return result;
 }
+// 403E38: using guessed type int (*dword_403E38[66])(void);
 
 //----- (004016C2) --------------------------------------------------------
 void __cdecl sub_4016C2()
@@ -300,6 +298,7 @@ void __cdecl sub_4016C2()
     while ( v0 < dword_404040 );
   }
 }
+// 404040: using guessed type void (*dword_404040[66])(void);
 
 //----- (00401934) --------------------------------------------------------
 int __cdecl UserMathErrorFunction()

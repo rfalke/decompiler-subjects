@@ -10,12 +10,11 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int init_proc();
+// int init_proc();
 int sub_80487A4();
 // void glEnable(GLenum cap);
 // void glEnableClientState(GLenum cap);
 // void glMatrixMode(GLenum mode);
-// int __gmon_start__(void); weak
 // void glClear(GLbitfield mask);
 // int __cdecl SDL_ShowCursor(_DWORD); weak
 // int __cdecl SDL_PollEvent(_DWORD); weak
@@ -38,17 +37,16 @@ int sub_80487A4();
 // int SDL_Quit(void); weak
 // void glVertexPointer(GLint size, GLenum type, GLsizei stride, const GLvoid *ptr);
 // void glPopMatrix(void);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
+// void __usercall __noreturn start(int@<eax>, void (*)(void)@<edx>);
 void sub_8048990();
-int frame_dummy();
-void __cdecl sub_80489E4(float a1, float a2, float a3, float a4, float a5, float a6, int a7, int a8, int a9);
+int sub_80489C0();
+void __cdecl sub_80489E4(float, float, float, float, float, float, int, int, int);
 void sub_804908A();
 int __cdecl main(int a1);
 void fini(void); // idb
 void init(void); // idb
 void sub_804940A();
 void (*sub_8049410())(void);
-void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -77,7 +75,7 @@ int dword_804A1C4[]; // weak
 int dword_804A1C8[]; // weak
 int dword_804A1CC[]; // weak
 int dword_804A1D0[]; // weak
-int dword_804A1D4[59985]; // idb
+int dword_804A1D4[59985]; // weak
 int dword_8084B18[]; // weak
 int dword_8084B1C; // weak
 int dword_8084B20; // weak
@@ -91,22 +89,7 @@ int dword_8084B3C; // weak
 int dword_8084B40; // weak
 int dword_8084B44; // weak
 _UNKNOWN unk_80D2D18; // weak
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (08048774) --------------------------------------------------------
-int init_proc()
-{
-  int v1; // [esp+0h] [ebp-8h]
-
-  if ( &_gmon_start__ )
-    __gmon_start__();
-  frame_dummy();
-  sub_8049410();
-  return v1;
-}
-// 80487A0: variable 'v1' is possibly undefined
-// 80487E4: using guessed type int __gmon_start__(void);
 
 //----- (080487A4) --------------------------------------------------------
 int sub_80487A4()
@@ -152,13 +135,13 @@ void sub_8048990()
 // 804A188: using guessed type char byte_804A188;
 
 //----- (080489C0) --------------------------------------------------------
-int frame_dummy()
+int sub_80489C0()
 {
   int result; // eax
 
   result = dword_804A010;
   if ( dword_804A010 )
-    result = 0;
+    return 0;
   return result;
 }
 // 804A010: using guessed type int dword_804A010;
@@ -401,6 +384,7 @@ void __cdecl sub_80489E4(float a1, float a2, float a3, float a4, float a5, float
 // 804A1C8: using guessed type int dword_804A1C8[];
 // 804A1CC: using guessed type int dword_804A1CC[];
 // 804A1D0: using guessed type int dword_804A1D0[];
+// 804A1D4: using guessed type int dword_804A1D4[59985];
 // 8084B18: using guessed type int dword_8084B18[];
 
 //----- (0804908A) --------------------------------------------------------
@@ -477,12 +461,13 @@ int __cdecl main(int a1)
   int v8; // [esp-4h] [ebp-30h]
   _DWORD v9[2]; // [esp+0h] [ebp-2Ch] BYREF
   int v10; // [esp+8h] [ebp-24h]
-  __int64 v11; // [esp+Ch] [ebp-20h]
-  GLfloat dest[6]; // [esp+14h] [ebp-18h] BYREF
+  int v11; // [esp+Ch] [ebp-20h]
+  int v12; // [esp+10h] [ebp-1Ch]
+  float dest[6]; // [esp+14h] [ebp-18h] BYREF
 
   LODWORD(dest[3]) = &a1;
   memcpy(dest, &unk_8049460, 0xCu);
-  SDL_Init(32, v3, v4, v5, v6, v7, v8, v9[0], v9[1], v10, v11, HIDWORD(v11));
+  SDL_Init(32, v3, v4, v5, v6, v7, v8, v9[0], v9[1], v10, v11, v12);
   SDL_SetVideoMode(1024, 768, 32, -1610612717);
   SDL_ShowCursor(0);
   glClearColor(0.0, 0.0, 0.0, 0.0);
@@ -527,6 +512,7 @@ int __cdecl main(int a1)
 // 8048864: using guessed type int __cdecl SDL_SetVideoMode(_DWORD, _DWORD, _DWORD, _DWORD);
 // 8048884: using guessed type int __stdcall SDL_Init(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 // 8048924: using guessed type int SDL_Quit(void);
+// 804922C: using guessed type GLfloat dest[6];
 
 //----- (080493A0) --------------------------------------------------------
 void fini(void)
@@ -568,11 +554,5 @@ void (*sub_8049410())(void)
 }
 // 804A000: using guessed type int dword_804A000;
 
-//----- (0804943C) --------------------------------------------------------
-void term_proc()
-{
-  sub_8048990();
-}
-
-// nfuncs=65 queued=13 decompiled=13 lumina nreq=0 worse=0 better=0
-// ALL OK, 13 function(s) have been successfully decompiled
+// nfuncs=65 queued=11 decompiled=11 lumina nreq=0 worse=0 better=0
+// ALL OK, 11 function(s) have been successfully decompiled

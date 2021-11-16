@@ -21,19 +21,19 @@
 // int SDL_Quit(void); weak
 // int rand(void);
 // float powf(float x, float y);
-// long double __usercall sub_8048438@<st0>(float *a1@<eax>, float *a2@<edx>);
-// float *__usercall sub_804844D@<eax>(float *result@<eax>, float *a2@<edx>, float *a3@<ecx>);
-// float *__usercall sub_804847F@<eax>(float *result@<eax>, float *a2@<edx>, float *a3@<ecx>);
-// long double __usercall sub_8048498@<st0>(float *a1@<eax>);
-// void __usercall sub_80484A2(float *a1@<eax>);
-// int __usercall sub_80484CA@<eax>(int a1@<eax>, int a2@<edx>);
-// void *__usercall sub_8048613@<eax>(void *a1@<eax>, char a2@<dl>, float a3, int a4, int a5, int a6, int a7, int a8, int a9);
-// void *__usercall sub_80486BA@<eax>(void *a1@<eax>, char a2@<dl>, int a3, int a4, int a5, float a6, int a7, int a8);
-// void *__usercall sub_8048775@<eax>(void *a1@<eax>, char a2@<dl>, int a3, int a4, int a5, int a6);
-// void *__usercall sub_804881D@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4, int a5, int a6, int a7);
-// long double __usercall sub_8048C66@<st0>(int a1@<eax>, int a2@<edx>, float *a3@<ecx>, float *a4, int a5);
-// float *__usercall sub_8048EBE@<eax>(float *a1@<eax>, int a2@<edx>, int a3@<ecx>, float *a4, float *a5, int a6, int a7);
-// int __usercall sub_804938F@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>);
+// long double __usercall sub_8048438@<st0>(float *@<eax>, float *@<edx>);
+// float *__usercall sub_804844D@<eax>(float *result@<eax>, float *@<edx>, float *@<ecx>);
+// float *__usercall sub_804847F@<eax>(float *result@<eax>, float *@<edx>, float *@<ecx>);
+// long double __usercall sub_8048498@<st0>(float *@<eax>);
+// void __usercall sub_80484A2(float *@<eax>);
+// int __usercall sub_80484CA@<eax>(int@<eax>, int@<edx>);
+// void *__usercall sub_8048613@<eax>(void *@<eax>, char@<dl>, float, int, int, int, int, int, int);
+// void *__usercall sub_80486BA@<eax>(void *@<eax>, char@<dl>, int, int, int, float, int, int);
+// void *__usercall sub_8048775@<eax>(void *@<eax>, char@<dl>, int, int, int, int);
+// void *__usercall sub_804881D@<eax>(int@<eax>, int@<edx>, int@<ecx>, int, int, int, int);
+// long double __usercall sub_8048C66@<st0>(int@<eax>, int@<edx>, float *@<ecx>, float *, int);
+// float *__usercall sub_8048EBE@<eax>(float *@<eax>, int@<edx>, int@<ecx>, float *, float *, int, int);
+// int __usercall sub_804938F@<eax>(int@<eax>, int@<edx>, int@<ecx>);
 void __noreturn start(); // weak
 
 //-------------------------------------------------------------------------
@@ -50,10 +50,10 @@ _UNKNOWN unk_820A480; // weak
 float flt_824A500; // weak
 float flt_824A504; // weak
 int dword_824A508; // weak
-float flt_824A50C[2]; // idb
+float flt_824A50C[2]; // weak
 int dword_824A514; // weak
 _UNKNOWN unk_824A520; // weak
-char byte_824A59D[18096643]; // idb
+char byte_824A59D[18096643]; // weak
 _UNKNOWN unk_938C7A0; // weak
 _UNKNOWN unk_93CC820; // weak
 _UNKNOWN unk_940C8A0; // weak
@@ -113,12 +113,12 @@ void __usercall sub_80484A2(float *a1@<eax>)
 int __usercall sub_80484CA@<eax>(int a1@<eax>, int a2@<edx>)
 {
   int v3; // edi
-  int *v4; // esi
+  _DWORD *v4; // esi
   int v5; // eax
   int result; // eax
   int i; // ebx
   int v8; // edx
-  int l; // esi
+  int m; // esi
   int v10; // ebx
   int k; // edi
   int j; // ebp
@@ -130,7 +130,7 @@ int __usercall sub_80484CA@<eax>(int a1@<eax>, int a2@<edx>)
   {
     for ( i = 0; i != 256; ++i )
     {
-      v4 = (int *)(a1 + 4 * (i + (v3 << 8)));
+      v4 = (_DWORD *)(a1 + 4 * (i + (v3 << 8)));
       *v4 = 0xFFFFFF;
       if ( !(_BYTE)a2 )
       {
@@ -165,7 +165,7 @@ LABEL_12:
       for ( k = 0; k != 256; k += 32 )
       {
         v10 = j;
-        for ( l = 0; l != 16; ++l )
+        for ( m = 0; m != 16; ++m )
         {
           v8 = k;
           v13 = 0;
@@ -186,7 +186,16 @@ LABEL_12:
 }
 
 //----- (08048613) --------------------------------------------------------
-void *__usercall sub_8048613@<eax>(void *a1@<eax>, char a2@<dl>, float a3, int a4, int a5, int a6, int a7, int a8, int a9)
+void *__usercall sub_8048613@<eax>(
+        void *a1@<eax>,
+        char a2@<dl>,
+        float a3,
+        int a4,
+        int a5,
+        int a6,
+        int a7,
+        int a8,
+        int a9)
 {
   int v10; // ebx
   float v12[15]; // [esp+0h] [ebp-4008Ch] BYREF
@@ -212,6 +221,8 @@ void *__usercall sub_8048613@<eax>(void *a1@<eax>, char a2@<dl>, float a3, int a
   memcpy(a1, v12, 0x40080u);
   return a1;
 }
+// 8048613: using guessed type float var_40050[3];
+// 8048613: using guessed type char var_4000C[262156];
 
 //----- (080486BA) --------------------------------------------------------
 void *__usercall sub_80486BA@<eax>(void *a1@<eax>, char a2@<dl>, int a3, int a4, int a5, float a6, int a7, int a8)
@@ -245,6 +256,8 @@ void *__usercall sub_80486BA@<eax>(void *a1@<eax>, char a2@<dl>, int a3, int a4,
   memcpy(a1, v11, 0x40080u);
   return a1;
 }
+// 80486BA: using guessed type float var_40050[3];
+// 80486BA: using guessed type char var_4000C[262156];
 
 //----- (08048775) --------------------------------------------------------
 void *__usercall sub_8048775@<eax>(void *a1@<eax>, char a2@<dl>, int a3, int a4, int a5, int a6)
@@ -258,9 +271,7 @@ void *__usercall sub_8048775@<eax>(void *a1@<eax>, char a2@<dl>, int a3, int a4,
   src[19] = 1065353216;
   v9 = 0;
   src[24] = a6;
-  src[16] = 0;
-  src[17] = 0;
-  src[18] = 0;
+  memset(&src[16], 0, 12);
   src[20] = 0;
   v10 = 1;
   src[28] = 1059942564;
@@ -273,6 +284,7 @@ void *__usercall sub_8048775@<eax>(void *a1@<eax>, char a2@<dl>, int a3, int a4,
   memcpy(a1, src, 0x40080u);
   return a1;
 }
+// 8048775: using guessed type char var_40008[262152];
 
 //----- (0804881D) --------------------------------------------------------
 void *__usercall sub_804881D@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4, int a5, int a6, int a7)
@@ -280,23 +292,24 @@ void *__usercall sub_804881D@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int
   int v8; // edi
   int v9; // esi
   long double v11; // fst7
-  float v12; // [esp+0h] [ebp-40108h]
-  float v13; // [esp+0h] [ebp-40108h]
-  float v14; // [esp+Ch] [ebp-400FCh]
-  float v15; // [esp+Ch] [ebp-400FCh]
-  float v16; // [esp+Ch] [ebp-400FCh]
-  float v17; // [esp+10h] [ebp-400F8h]
-  float v18; // [esp+10h] [ebp-400F8h]
-  float v19; // [esp+10h] [ebp-400F8h]
-  float v20; // [esp+10h] [ebp-400F8h]
-  float v21; // [esp+14h] [ebp-400F4h]
+  int v12; // [esp+0h] [ebp-40108h]
+  int v13; // [esp+0h] [ebp-40108h]
+  int v14; // [esp+Ch] [ebp-400FCh]
+  int v15; // [esp+Ch] [ebp-400FCh]
+  int v16; // [esp+Ch] [ebp-400FCh]
+  int v17; // [esp+10h] [ebp-400F8h]
+  int v18; // [esp+10h] [ebp-400F8h]
+  int v19; // [esp+10h] [ebp-400F8h]
+  int v20; // [esp+10h] [ebp-400F8h]
+  int v21; // [esp+14h] [ebp-400F4h]
   int v22; // [esp+18h] [ebp-400F0h]
   float v23; // [esp+2Ch] [ebp-400DCh]
-  float v26; // [esp+68h] [ebp-400A0h]
+  int v24; // [esp+3Ch] [ebp-400CCh]
   float v27; // [esp+68h] [ebp-400A0h]
-  float v28; // [esp+68h] [ebp-400A0h]
+  int v28; // [esp+68h] [ebp-400A0h]
+  int v29; // [esp+68h] [ebp-400A0h]
   char src[262300]; // [esp+6Ch] [ebp-4009Ch] BYREF
-  float v30; // [esp+40114h] [ebp+Ch]
+  int v31; // [esp+40114h] [ebp+Ch]
 
   v8 = a7;
   *(float *)&v22 = (float)a1;
@@ -304,66 +317,67 @@ void *__usercall sub_804881D@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int
   memcpy((void *)(262272 * a7 + 155240608), src, 0x40080u);
   if ( a2 <= 0 )
     goto LABEL_9;
+  v24 = a2 - 1;
   if ( a3 == 1 )
   {
     v9 = a7 + 2;
     v11 = (long double)(3 * a1 / 2);
-    v16 = *(float *)&a4 - v11;
+    *(float *)&v16 = *(float *)&a4 - v11;
     v23 = v11;
-    sub_804881D(LODWORD(v16), a5, a6, a7 + 1);
-    v12 = v23 + *(float *)&a5;
-    sub_804881D(a4, LODWORD(v12), a6, a7 + 2);
+    sub_804881D(a1 / 2, v24, 1, v16, a5, a6, a7 + 1);
+    *(float *)&v12 = v23 + *(float *)&a5;
+    sub_804881D(a1 / 2, v24, 4, a4, v12, a6, a7 + 2);
     goto LABEL_6;
   }
-  v26 = (float)(3 * a1 / 2);
-  v14 = *(float *)&a4 + v26;
-  sub_804881D(LODWORD(v14), a5, a6, a7 + 1);
+  v27 = (float)(3 * a1 / 2);
+  *(float *)&v14 = *(float *)&a4 + v27;
+  sub_804881D(a1 / 2, v24, 2, v14, a5, a6, a7 + 1);
   if ( a3 != 2 )
   {
-    v15 = *(float *)&a4 - v26;
-    sub_804881D(LODWORD(v15), a5, a6, a7 + 2);
+    *(float *)&v15 = *(float *)&a4 - v27;
+    sub_804881D(a1 / 2, v24, 1, v15, a5, a6, a7 + 2);
     if ( a3 == 3 )
     {
       v8 = a7 + 4;
-      v20 = *(float *)&a5 - v26;
-      sub_804881D(a4, LODWORD(v20), a6, a7 + 3);
-      v27 = *(float *)&a6 + v26;
-      sub_804881D(a4, a5, LODWORD(v27), a7 + 4);
+      *(float *)&v20 = *(float *)&a5 - v27;
+      sub_804881D(a1 / 2, v24, 3, a4, v20, a6, a7 + 3);
+      *(float *)&v28 = *(float *)&a6 + v27;
+      sub_804881D(a1 / 2, v24, 6, a4, a5, v28, a7 + 4);
       goto LABEL_8;
     }
     v9 = a7 + 3;
-    v17 = *(float *)&a5 + v26;
-    sub_804881D(a4, LODWORD(v17), a6, a7 + 3);
+    *(float *)&v17 = *(float *)&a5 + v27;
+    sub_804881D(a1 / 2, v24, 4, a4, v17, a6, a7 + 3);
     if ( a3 == 4 )
     {
       v8 = a7 + 4;
-      v28 = *(float *)&a6 + v26;
-      sub_804881D(a4, a5, LODWORD(v28), a7 + 4);
+      *(float *)&v29 = *(float *)&a6 + v27;
+      sub_804881D(a1 / 2, v24, 6, a4, a5, v29, a7 + 4);
       goto LABEL_8;
     }
 LABEL_6:
     v8 = v9 + 1;
-    v18 = *(float *)&a5 - (long double)(3 * a1 / 2);
-    sub_804881D(a4, LODWORD(v18), a6, v9 + 1);
+    *(float *)&v18 = *(float *)&a5 - (long double)(3 * a1 / 2);
+    sub_804881D(a1 / 2, a2 - 1, 3, a4, v18, a6, v9 + 1);
     if ( a3 == 5 )
     {
 LABEL_8:
       ++v8;
-      v30 = *(float *)&a6 - (long double)(3 * a1 / 2);
-      sub_804881D(a4, a5, LODWORD(v30), v8);
+      *(float *)&v31 = *(float *)&a6 - (long double)(3 * a1 / 2);
+      sub_804881D(a1 / 2, a2 - 1, 5, a4, a5, v31, v8);
       goto LABEL_9;
     }
     goto LABEL_7;
   }
   v8 = a7 + 3;
-  v19 = *(float *)&a5 + v26;
-  sub_804881D(a4, LODWORD(v19), a6, a7 + 2);
-  v13 = *(float *)&a5 - v26;
-  sub_804881D(a4, LODWORD(v13), a6, a7 + 3);
+  *(float *)&v19 = *(float *)&a5 + v27;
+  sub_804881D(a1 / 2, v24, 4, a4, v19, a6, a7 + 2);
+  *(float *)&v13 = *(float *)&a5 - v27;
+  sub_804881D(a1 / 2, v24, 3, a4, v13, a6, a7 + 3);
 LABEL_7:
   ++v8;
-  v21 = (long double)(3 * a1 / 2) + *(float *)&a6;
-  sub_804881D(a4, a5, LODWORD(v21), v8);
+  *(float *)&v21 = (long double)(3 * a1 / 2) + *(float *)&a6;
+  sub_804881D(a1 / 2, a2 - 1, 6, a4, a5, v21, v8);
   if ( a3 != 6 )
     goto LABEL_8;
 LABEL_9:
@@ -440,7 +454,7 @@ long double __usercall sub_8048C66@<st0>(int a1@<eax>, int a2@<edx>, float *a3@<
       }
       sub_80484A2(&v27);
       v22 = sub_8048438(v30, &v27);
-      HIBYTE(v22) &= 0x7Fu;
+      HIBYTE(v22) &= ~0x80u;
       if ( v22 > (long double)*(float *)(v5 + 96) )
         return -1.0;
       sub_804844D(v30, (float *)(v5 + 84), v26);
@@ -480,6 +494,8 @@ LABEL_7:
   }
   return -1.0;
 }
+// 8048C66: using guessed type float var_28[10];
+// 8048C66: using guessed type float var_4C[3];
 
 //----- (08048EBE) --------------------------------------------------------
 float *__usercall sub_8048EBE@<eax>(float *a1@<eax>, int a2@<edx>, int a3@<ecx>, float *a4, float *a5, int a6, int a7)
@@ -540,7 +556,8 @@ float *__usercall sub_8048EBE@<eax>(float *a1@<eax>, int a2@<edx>, int a3@<ecx>,
   float v66; // [esp+6Ch] [ebp-40h] BYREF
   float v67; // [esp+70h] [ebp-3Ch]
   float v68; // [esp+74h] [ebp-38h]
-  float v69[13]; // [esp+78h] [ebp-34h] BYREF
+  float v69[3]; // [esp+78h] [ebp-34h] BYREF
+  float v70[10]; // [esp+84h] [ebp-28h] BYREF
 
   v7 = -1;
   v8 = 0;
@@ -667,10 +684,10 @@ LABEL_20:
       v69[1] = a5[1] - v41;
       v69[2] = a5[2] - v43;
       sub_80484A2(v69);
-      sub_8048EBE(v61, v69, a6 - 1, 1);
-      v62 = v69[3] * 0.60000002 + v62;
-      v64 = v69[4] * 0.60000002 + v64;
-      v63 = 0.60000002 * v69[5] + v63;
+      sub_8048EBE(v70, a2, a3, v61, v69, a6 - 1, 1);
+      v62 = v70[0] * 0.60000002 + v62;
+      v64 = v70[1] * 0.60000002 + v64;
+      v63 = 0.60000002 * v70[2] + v63;
     }
     v44 = v62;
     if ( v62 > 255.0 )
@@ -690,6 +707,7 @@ LABEL_20:
 // 804912A: variable 'v30' is possibly undefined
 // 804916F: variable 'v33' is possibly undefined
 // 824A500: using guessed type float flt_824A500;
+// 8048EBE: using guessed type float var_4C[3];
 
 //----- (0804938F) --------------------------------------------------------
 int __usercall sub_804938F@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>)
@@ -738,6 +756,7 @@ int __usercall sub_804938F@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>)
   while ( v5 != 196608 );
   return result;
 }
+// 824A50C: using guessed type float flt_824A50C[2];
 
 //----- (080494A7) --------------------------------------------------------
 void __noreturn start()
@@ -753,7 +772,7 @@ void __noreturn start()
   int v8; // ebp
   int v9; // ebx
   int v10; // esi
-  int v11; // edi
+  int Ticks; // edi
   long double v12; // fst7
   int j; // eax
   int v14; // ebx
@@ -853,8 +872,8 @@ void __noreturn start()
       v10 = 0;
       memcpy(&unk_820A480, src, 0x40080u);
       dword_824A508 = -1024458752;
-      v11 = SDL_GetTicks();
-      while ( (unsigned int)(SDL_GetTicks() - v11) <= 0x36AF && v32[0] != 2 )
+      Ticks = SDL_GetTicks();
+      while ( (unsigned int)(SDL_GetTicks() - Ticks) <= 0x36AF && v32[0] != 2 )
       {
         v12 = (long double)v9 * 0.017453279;
         flt_824A500 = cos(v12) * 30.0;

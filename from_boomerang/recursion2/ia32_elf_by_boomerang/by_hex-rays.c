@@ -10,31 +10,20 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int __fastcall init_proc(int a1);
 int sub_8048298();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int printf(const char *format, ...);
-// int __gmon_start__(void); weak
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// int __fastcall call_gmon_start(int a1);
-// void _do_global_dtors_aux();
-// int frame_dummy();
 int __cdecl main(int argc, const char **argv, const char **envp);
-int __fastcall b(int a1, int a2);
-int __fastcall c(int a1, int a2);
-int __fastcall d(int a1, int a2);
-int __fastcall e(int a1, int a2);
+int __fastcall b(int, int);
+int __fastcall c(int, int);
+int __fastcall d(int, int);
+int __fastcall e(int, int);
 int f();
 int g();
 int h();
 int i();
-int __fastcall j(int a1, int a2);
-int __fastcall k(int a1, int a2);
-int __fastcall l(int a1, int a2);
-// void __fastcall _libc_csu_init(int a1);
-// void _libc_csu_fini(void); idb
-// int __fastcall _do_global_ctors_aux(int a1, int a2);
-// void __spoils<edx,ecx> term_proc();
+int __fastcall j(int, int);
+int __fastcall k(int, int);
+int __fastcall l(int, int);
 
 //-------------------------------------------------------------------------
 // Data declarations

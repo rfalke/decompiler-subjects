@@ -1,83 +1,81 @@
-Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf64.so)
+
+Database SUBJECTS/from_holdec/int_math_with_constants/x64_elf_gcc_O3/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
+IDA has found an unpacked version of database: SUBJECTS/from_holdec/int_math_with_constants/x64_elf_gcc_O3/subject.exe.i64
+on the disk.
+It appears IDA did not close properly;
+it is probably safer to restart your work from the packed database -> ~R~estore packed base
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
-  4808704   587 8192 allocating memory for b-tree...
-  4808704   587 8192 allocating memory for virtual array...
+  6004736   733 8192 allocating memory for b-tree...
+  4341760   530 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  9879552            total memory allocated
+ 10608640            total memory allocated
 
-Loading file 'SUBJECTS/from_holdec/int_math_with_constants/x64_elf_gcc_O3/subject.exe' into database...
-Detected file format: ELF64 for x86-64 (Executable)
 Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (0000000000400000-0000000000508264) ... ... OK
-  1. Creating a new segment  (0000000000708E48-0000000000720040) ... ... OK
-Assuming __fastcall calling convention by default
-Type library 'gnulnx_x64' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (0000000000400390-00000000004003A7) ... ... OK
-  3. Creating a new segment  (00000000004003A7-0000000000508264) ... ... OK
-  4. Creating a new segment  (00000000004003B0-0000000000507A12) ... ... OK
-  5. Creating a new segment  (0000000000507A12-0000000000508264) ... ... OK
-  6. Creating a new segment  (0000000000507A14-0000000000507A1D) ... ... OK
-  7. Creating a new segment  (0000000000507A1D-0000000000508264) ... ... OK
-  8. Creating a new segment  (0000000000507A20-0000000000507A30) ... ... OK
-  9. Creating a new segment  (0000000000507A30-0000000000508264) ... ... OK
- 10. Creating a new segment  (0000000000507A30-0000000000507B9C) ... ... OK
-     Deleting segment        (0000000000507B9C-0000000000508264) ...
- 10. Creating a new segment  (0000000000507B9C-0000000000508264) ... ... OK
- 11. Creating a new segment  (0000000000507BA0-0000000000508264) ... ... OK
- 12. Creating a new segment  (0000000000708E48-0000000000708E50) ... ... OK
-     Deleting segment        (0000000000708E50-0000000000720040) ...
- 12. Creating a new segment  (0000000000708E50-0000000000720040) ... ... OK
- 13. Creating a new segment  (0000000000708E50-0000000000708E58) ... ... OK
-     Deleting segment        (0000000000708E58-0000000000720040) ...
- 13. Creating a new segment  (0000000000708E58-0000000000720040) ... ... OK
- 14. Creating a new segment  (0000000000708E58-0000000000708E60) ... ... OK
-     Deleting segment        (0000000000708E60-0000000000720040) ...
- 14. Creating a new segment  (0000000000708E60-0000000000720040) ... ... OK
- 15. Creating a new segment  (0000000000708FF0-0000000000709000) ... ... OK
- 16. Creating a new segment  (0000000000709000-0000000000720040) ... ... OK
- 17. Creating a new segment  (0000000000709000-0000000000709018) ... ... OK
-     Deleting segment        (0000000000709018-0000000000720040) ...
- 17. Creating a new segment  (0000000000709018-0000000000720040) ... ... OK
- 18. Creating a new segment  (0000000000709018-000000000070901C) ... ... OK
-     Deleting segment        (000000000070901C-0000000000720040) ...
- 18. Creating a new segment  (000000000070901C-0000000000720040) ... ... OK
- 19. Creating a new segment  (0000000000709020-0000000000720040) ... ... OK
- 20. Creating a new segment  (0000000000720040-0000000000720041) ... ... OK
- 21. Creating a new segment  (0000000000720048-0000000000720058) ... ... OK
-Processing relocations...
-DWARF: File "SUBJECTS/from_holdec/int_math_with_constants/x64_elf_gcc_O3/subject.exe" contains DWARF information.
-DWARF: Functions: 41 symbols applied
-DWARF: Globals: 20 symbols applied
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_holdec/int_math_with_constants/x64_elf_gcc_O3/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
-  Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 5 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
-TIMESTAMP decompiling 400390 size=0000000000000017 times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
 
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
-TIMESTAMP decompiling 400500 size=0000000000000032 times=0...
-TIMESTAMP decompiling 400540 size=000000000000003A times=0...
+  Please check the Edit/Plugins menu for more informaton.
+=== start of cleanup script -> OK
+  function at 00400390  LIB  with name '.init_proc'
+  function at 004003B0       with name 'main'
+  function at 004004D0  LIB  with name '_start'
+  function at 00400500  LIB  with name 'deregister_tm_clones'
+  function at 00400540  LIB  with name 'register_tm_clones'
+  function at 00400580  LIB  with name '__do_global_dtors_aux'
+  function at 004005A0  LIB  with name 'frame_dummy'
+  function at 004005D0       with name 'signed_char_add'
+  function at 004045D0       with name 'signed_char_mult'
+  function at 00409790       with name 'signed_char_div'
+  function at 0040C290       with name 'signed_char_modulo'
+  function at 004107D0       with name 'unsigned_char_add'
+  function at 004147D0       with name 'unsigned_char_mult'
+  function at 00419990       with name 'unsigned_char_div'
+  function at 0041C610       with name 'unsigned_char_modulo'
+  function at 004212A0       with name 'signed_short_add'
+  function at 00425A30       with name 'signed_short_mult'
+  function at 0042A550       with name 'signed_short_div'
+  function at 00432900       with name 'signed_short_modulo'
+  function at 0043D920       with name 'unsigned_short_add'
+  function at 004420B0       with name 'unsigned_short_mult'
+  function at 00446BD0       with name 'unsigned_short_div'
+  function at 0044D5D0       with name 'unsigned_short_modulo'
+  function at 00456E20       with name 'signed_int_add'
+  function at 0045B130       with name 'signed_int_mult'
+  function at 0045F090       with name 'signed_int_div'
+  function at 00466800       with name 'signed_int_modulo'
+  function at 00470540       with name 'unsigned_int_add'
+  function at 00474850       with name 'unsigned_int_mult'
+  function at 004787B0       with name 'unsigned_int_div'
+  function at 0047E780       with name 'unsigned_int_modulo'
+  function at 00486FA0       with name 'signed_long_int_add'
+  function at 0048BEB0       with name 'signed_long_int_mult'
+  function at 00490DB0       with name 'signed_long_int_div'
+  function at 0049B280       with name 'signed_long_int_modulo'
+  function at 004A8FB0       with name 'unsigned_long_int_add'
+  function at 004ADEC0       with name 'unsigned_long_int_mult'
+  function at 004B2DC0       with name 'unsigned_long_int_div'
+  function at 004BB4A0       with name 'unsigned_long_int_modulo'
+  function at 004C74A0       with name 'signed_long_long_add'
+  function at 004CC3B0       with name 'signed_long_long_mult'
+  function at 004D12B0       with name 'signed_long_long_div'
+  function at 004DB780       with name 'signed_long_long_modulo'
+  function at 004E94B0       with name 'unsigned_long_long_add'
+  function at 004EE3C0       with name 'unsigned_long_long_mult'
+  function at 004F32C0       with name 'unsigned_long_long_div'
+  function at 004FB9A0       with name 'unsigned_long_long_modulo'
+  function at 005079A0  LIB  with name '__libc_csu_init'
+  function at 00507A10  LIB  with name '__libc_csu_fini'
+  function at 00507A14  LIB  with name '.term_proc'
+  function at 00720048  LIB  with name '__libc_start_main'
+  function at 00720050       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 4005D0 size=0000000000003FF5 times=0...
 TIMESTAMP decompiling 4045D0 size=00000000000051B9 times=0...
 TIMESTAMP decompiling 409790 size=0000000000002AF3 times=0...
@@ -112,3 +110,8 @@ TIMESTAMP decompiling 4B2DC0 size=00000000000086D6 times=0...
 TIMESTAMP decompiling 4BB4A0 size=000000000000BFF7 times=0...
 TIMESTAMP decompiling 4C74A0 size=0000000000004F01 times=0...
 TIMESTAMP decompiling 4CC3B0 size=0000000000004EF6 times=0...
+TIMESTAMP decompiling 4D12B0 size=000000000000A4CB times=0...
+TIMESTAMP decompiling 4DB780 size=000000000000DD24 times=0...
+TIMESTAMP decompiling 4E94B0 size=0000000000004F01 times=0...
+TIMESTAMP decompiling 4EE3C0 size=0000000000004EF6 times=0...
+TIMESTAMP decompiling 4F32C0 size=00000000000086D6 times=0...

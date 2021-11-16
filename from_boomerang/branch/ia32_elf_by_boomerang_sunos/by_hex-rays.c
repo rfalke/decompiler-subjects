@@ -11,39 +11,29 @@
 // Function declarations
 
 void PROCEDURE_LINKAGE_TABLE_();
-// void _cleanup(void); idb
-// int atexit(void (*func)(void));
-// int __fpstart(void); weak
-// void exit(int status);
 // int scanf(const char *format, ...);
 // int printf(const char *format, ...);
 // void *malloc(size_t size);
 // void free(void *ptr);
 // void abort(void);
 // void *memset(void *s, int c, size_t n);
-// void __usercall __noreturn start(void (*a1)(void)@<edx>, const char *a2);
-// void _do_global_dtors_aux();
 void fini_dummy();
-// int frame_dummy();
 void init_dummy();
 int __cdecl main(int argc, const char **argv, const char **envp);
-char *__cdecl decode_uleb128(char *a1, _DWORD *a2);
-char *__cdecl decode_sleb128(char *a1, _DWORD *a2);
-int __cdecl fde_insert(int a1, int a2, int a3);
-int __cdecl count_fdes(_DWORD *a1);
-// char *__usercall add_fdes@<eax>(char *result@<eax>, _DWORD *a2, int a3, int *a4, unsigned int *a5, unsigned int *a6);
-unsigned int __cdecl frame_init(int a1);
-int __cdecl find_fde(unsigned int a1);
-char *__cdecl extract_cie_info(int a1, int *a2);
-char *__cdecl execute_cfa_insn(unsigned __int8 *a1, int a2, int a3, _DWORD *a4);
-int __cdecl _register_frame_info(int a1, _DWORD *a2);
-int __cdecl _register_frame_info_table(int a1, _DWORD *a2);
-void __cdecl _deregister_frame_info(int a1);
-char *__cdecl _frame_state_for(unsigned int a1, int *a2);
-// int *_do_global_ctors_aux();
+char *__cdecl decode_uleb128(char *, _DWORD *);
+char *__cdecl decode_sleb128(char *, _DWORD *);
+int __cdecl fde_insert(int, int, int);
+int __cdecl count_fdes(_DWORD *);
+// char *__usercall add_fdes@<eax>(char *result@<eax>, _DWORD *, int, int *, unsigned int *, unsigned int *);
+unsigned int __cdecl frame_init(int);
+int __cdecl find_fde(unsigned int);
+char *__cdecl extract_cie_info(int, int *);
+char *__cdecl execute_cfa_insn(unsigned __int8 *, int, int, _DWORD *);
+int __cdecl _register_frame_info(int, _DWORD *);
+int __cdecl _register_frame_info_table(int, _DWORD *);
+void __cdecl _deregister_frame_info(int);
+char *__cdecl _frame_state_for(unsigned int, int *);
 void init_dummy_0();
-// int *init_proc();
-// void term_proc(void); idb
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -378,7 +368,7 @@ char *__cdecl extract_cie_info(int a1, int *a2)
   if ( *(_BYTE *)*a2 == 122 )
   {
     v9 = decode_uleb128(v8, &v11);
-    v8 = &v9[v11];
+    return &v9[v11];
   }
   return v8;
 }
@@ -614,7 +604,7 @@ char *__cdecl _frame_state_for(unsigned int a1, int *a2)
           break;
       }
       qmemcpy(a2, s, 0x70u);
-      result = (char *)a2;
+      return (char *)a2;
     }
   }
   return result;

@@ -13,19 +13,16 @@
 
 #define __thiscall __cdecl // Test compile in C mode
 
-int init_proc();
 int sub_8048B00();
 // int __cdecl _gfortran_os_error(_DWORD); weak
 // int __cdecl _gfortran_exit_i4(_DWORD); weak
 // int __thiscall _gfortran_st_open(_DWORD, _DWORD); weak
 // int __cdecl dgemm_(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); weak
 // int __cdecl _gfortran_st_write_done(_DWORD); weak
-// int __gmon_start__(void); weak
 // int __cdecl _gfortran_date_and_time(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); weak
 // int __cdecl _gfortran_st_inquire(_DWORD); weak
 // void *memset(void *s, int c, size_t n);
 // int __cdecl _gfortran_transfer_complex(_DWORD, _DWORD, _DWORD); weak
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void free(void *ptr);
 // int __cdecl _gfortran_transfer_array(_DWORD, _DWORD, _DWORD, _DWORD); weak
 // int __cdecl _gfortran_st_read_done(_DWORD); weak
@@ -56,10 +53,7 @@ int sub_8048B00();
 // int __cdecl _gfortran_compare_string(_DWORD, _DWORD, _DWORD, _DWORD); weak
 // int __cdecl _gfortran_pow_i4_i4(_DWORD, _DWORD); weak
 // int __cdecl _gfortran_store_exe_path(_DWORD); weak
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _do_global_dtors_aux();
-int frame_dummy();
-// void __usercall optic(real(kind_8) (*a1)[][][]@<ebx>, int a2@<edi>);
+// void __usercall optic(real(kind_8) (*)[][][]@<ebx>, int@<edi>);
 void __cdecl linopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(kind_4) *p_nkpt, real(kind_8) (*p_wkpt)[], integer(kind_4) *p_nsymcrys, real(kind_8) (*p_symcrys)[3][3][], integer(kind_4) *p_nstval, real(kind_8) (*p_occv)[][][], real(kind_8) (*p_evalv)[][][], real(kind_8) *p_efermi, complex(kind_8) (*p_pmat)[][][][3][], integer(kind_4) *p_v1, integer(kind_4) *p_v2, integer(kind_4) *p_nmesh, real(kind_8) *p_de, real(kind_8) *p_sc, real(kind_8) *p_brod, char (*p_fnam)[256], const integer(kind_4) _fnam);
 void __cdecl nlinopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(kind_4) *p_nkpt, real(kind_8) (*p_wkpt)[], integer(kind_4) *p_nsymcrys, real(kind_8) (*p_symcrys)[3][3][], integer(kind_4) *p_nstval, real(kind_8) (*p_evalv)[][][], real(kind_8) *p_efermi, complex(kind_8) (*p_pmat)[][][][3][], integer(kind_4) *p_v1, integer(kind_4) *p_v2, integer(kind_4) *p_v3, integer(kind_4) *p_nmesh, real(kind_8) *p_de, real(kind_8) *p_sc, real(kind_8) *p_brod, real(kind_8) *p_tol, char (*p_fnam)[256], const integer(kind_4) _fnam);
 void __cdecl hdr_clean(hdr_type *p_hdr);
@@ -92,10 +86,6 @@ void __cdecl timein(real(kind_8) *p_cpu, real(kind_8) *p_wall);
 void __cdecl wrtout(integer(kind_4) *p_unit, char (*p_message)[500], char (*p_mode_paral)[4], const integer(kind_4) _message, const integer(kind_4) _mode_paral);
 void leave_myproc();
 int __cdecl main(int argc, const char **argv, const char **envp);
-void _libc_csu_fini(void); // idb
-void _libc_csu_init(void); // idb
-void (*_do_global_ctors_aux())(void);
-void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -142,10 +132,6 @@ _UNKNOWN unk_80741BC; // weak
 const integer(kind_4) dword_80741D4 = 6; // idb
 const integer(kind_4) dword_8074288 = 6; // idb
 _UNKNOWN unk_80743E0; // weak
-int _CTOR_LIST__ = -1; // weak
-int _DTOR_LIST__[] = { -1 }; // weak
-int _DTOR_END__ = 0; // weak
-int _JCR_LIST__ = 0; // weak
 int (*dword_8075FFC)(void) = NULL; // weak
 integer(kind_4) start_1509 = 1; // idb
 integer(kind_4) nday_1537[24] =
@@ -176,33 +162,16 @@ integer(kind_4) nday_1537[24] =
   31
 }; // idb
 int _defs_time_MOD_timopt = 1; // weak
-char completed_7065; // weak
-int dtor_idx_7067; // weak
 integer(kind_4) year_init_1513; // idb
 integer(kind_4) month_init_1506; // idb
 integer(kind_4) month_now_1507; // idb
 integer(kind_4) nwarning_1508; // idb
 integer(kind_4) ncomment_1507; // idb
 integer(kind_4) iexit_1504; // idb
-double _defs_time_MOD_acctim[1200]; // idb
-int _defs_time_MOD_ncount[600]; // idb
-double _defs_time_MOD_tzero[1198]; // idb
-// extern _UNKNOWN _gmon_start__; weak
+double _defs_time_MOD_acctim[1200]; // weak
+int _defs_time_MOD_ncount[600]; // weak
+double _defs_time_MOD_tzero[1198]; // weak
 
-
-//----- (08048AD0) --------------------------------------------------------
-int init_proc()
-{
-  int v1; // [esp+0h] [ebp-8h]
-
-  if ( &_gmon_start__ )
-    __gmon_start__();
-  frame_dummy();
-  _do_global_ctors_aux();
-  return v1;
-}
-// 8048AFC: variable 'v1' is possibly undefined
-// 8048B60: using guessed type int __gmon_start__(void);
 
 //----- (08048B00) --------------------------------------------------------
 int sub_8048B00()
@@ -210,55 +179,6 @@ int sub_8048B00()
   return dword_8075FFC();
 }
 // 8075FFC: using guessed type int (*dword_8075FFC)(void);
-
-//----- (08048DA0) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, _libc_csu_init, _libc_csu_fini, a2, &v3);
-  __halt();
-}
-// 8048DA3: positive sp value 4 has been found
-
-//----- (08048DD0) --------------------------------------------------------
-void _do_global_dtors_aux()
-{
-  int v0; // eax
-  unsigned int i; // ebx
-
-  if ( !completed_7065 )
-  {
-    v0 = dtor_idx_7067;
-    for ( i = &_DTOR_END__ - _DTOR_LIST__ - 1; dtor_idx_7067 < i; v0 = dtor_idx_7067 )
-    {
-      dtor_idx_7067 = v0 + 1;
-      ((void (*)(void))_DTOR_LIST__[v0 + 1])();
-    }
-    completed_7065 = 1;
-  }
-}
-// 8075EF4: using guessed type int _DTOR_LIST__[];
-// 8075EF8: using guessed type int _DTOR_END__;
-// 80761E0: using guessed type char completed_7065;
-// 80761E4: using guessed type int dtor_idx_7067;
-
-//----- (08048E30) --------------------------------------------------------
-int frame_dummy()
-{
-  int result; // eax
-
-  result = _JCR_LIST__;
-  if ( _JCR_LIST__ )
-    result = 0;
-  return result;
-}
-// 8075EFC: using guessed type int _JCR_LIST__;
 
 //----- (08048E54) --------------------------------------------------------
 void __usercall optic(real(kind_8) (*a1)[][][]@<ebx>, int a2@<edi>)
@@ -276,7 +196,7 @@ void __usercall optic(real(kind_8) (*a1)[][][]@<ebx>, int a2@<edi>)
   int v12; // edx
   int v13; // esi
   int v14; // edi
-  int l; // ebx
+  int m; // ebx
   int k; // edx
   integer(kind_4) v17; // edx
   int v18; // edx
@@ -286,7 +206,7 @@ void __usercall optic(real(kind_8) (*a1)[][][]@<ebx>, int a2@<edi>)
   int v22; // edx
   signed int v23; // eax
   integer(kind_4) (*v24)[3][3][]; // eax
-  int m; // edx
+  int n; // edx
   integer(kind_4) (*v26)[3][3]; // esi
   integer(kind_4) v28; // edx
   int v29; // edx
@@ -294,10 +214,10 @@ void __usercall optic(real(kind_8) (*a1)[][][]@<ebx>, int a2@<edi>)
   real(kind_8) (*v31)[3][]; // eax
   int v32; // edi
   int v33; // esi
-  int n; // edx
+  int jj; // edx
   integer(kind_4) v35; // ecx
   int v36; // ebx
-  int jj; // edx
+  int kk; // edx
   integer(kind_4) v38; // eax
   int v40; // edx
   signed int v41; // eax
@@ -320,18 +240,18 @@ void __usercall optic(real(kind_8) (*a1)[][][]@<ebx>, int a2@<edi>)
   integer(kind_4) v58; // edi
   int v59; // esi
   int v60; // ebx
-  int kk; // edx
+  int mm; // edx
   integer(kind_4) v62; // edi
   int v63; // esi
   int v64; // ebx
-  int ll; // edx
+  int nn; // edx
   integer(kind_4) v66; // edi
   int v67; // esi
   int v68; // ebx
-  int mm; // edx
+  int i1; // edx
   integer(kind_4) v70; // edi
   int v71; // esi
-  int nn; // edx
+  int i2; // edx
   integer(kind_4) v75; // edx
   signed int v76; // eax
   real(kind_8) (*v77)[]; // eax
@@ -992,12 +912,12 @@ LABEL_28:
   v13 = *(_DWORD *)v368.gap7C;
   v14 = *(_DWORD *)&v368.gap7C[4];
   v148 = nsppol * nkpt;
-  l = (int)v339;
+  m = (int)v339;
   v147 = v340;
   v150 = *(_DWORD *)&v368.gap7C[12];
   v149 = v342;
   for ( k = 1; k <= v148; ++k )
-    *(_DWORD *)(l + 4 * (k * v149 + v147)) = *(_DWORD *)(v13 + 4 * (v14 + k * v150));
+    *(_DWORD *)(m + 4 * (k * v149 + v147)) = *(_DWORD *)(v13 + 4 * (v14 + k * v150));
   nsym = v368.nsym;
   v261 = 267;
   v263 = 1;
@@ -1081,7 +1001,7 @@ LABEL_60:
     v159 = *(_DWORD *)&v368.gap13C[20];
     v158 = *(integer(kind_4) (**)[3][3])&v368.gap13C[28];
     v157 = *(_DWORD *)&v368.gap13C[32];
-    l = *(_DWORD *)&v368.gap13C[40];
+    m = *(_DWORD *)&v368.gap13C[40];
     v156 = *(_DWORD *)&v368.gap13C[44];
     v155 = v259;
     v154 = v260;
@@ -1096,12 +1016,12 @@ LABEL_60:
   {
     v166 = v13 * *(_DWORD *)&v368.gap13C[36] + v161;
     v165 = (v13 + v151) * v268 + v154;
-    for ( l = (int)v158; l <= v157; ++l )
+    for ( m = (int)v158; m <= v157; ++m )
     {
-      v167 = l * *(_DWORD *)&v368.gap13C[24] + v166;
-      v142 = (l + v152) * v265 + v165;
-      for ( m = v160; m <= v159; ++m )
-        *((_DWORD *)v155 + v163 * (m + v153) + v142) = *(_DWORD *)(v162 + 4 * (v167 + m * v164));
+      v167 = m * *(_DWORD *)&v368.gap13C[24] + v166;
+      v142 = (m + v152) * v265 + v165;
+      for ( n = v160; n <= v159; ++n )
+        *((_DWORD *)v155 + v163 * (n + v153) + v142) = *(_DWORD *)(v162 + 4 * (v167 + n * v164));
     }
     ++v13;
   }
@@ -1130,15 +1050,15 @@ LABEL_60:
       v210 = v277;
       v204 = (int)p_symrel + 4 * (isym - v281) * v280;
       v205 = 0;
-      l = _gfortran_internal_pack(&v204);
-      mati3inv(v26, (integer(kind_4) (*)[3][3])l);
+      m = _gfortran_internal_pack(&v204);
+      mati3inv(v26, (integer(kind_4) (*)[3][3])m);
       if ( (integer(kind_4) (*)[3][3])v218[0] != v26 && v26 )
         free(v26);
-      if ( v204 != l )
+      if ( v204 != m )
       {
-        _gfortran_internal_unpack(&v204, l);
-        if ( l )
-          free((void *)l);
+        _gfortran_internal_unpack(&v204, m);
+        if ( m )
+          free((void *)m);
       }
     }
     while ( isym++ != v168 );
@@ -1187,22 +1107,22 @@ LABEL_60:
     v169 = v362 - *(_DWORD *)&v368.gap234[28];
     v179 = *(_DWORD *)&v368.gap234[12];
     v178 = v358;
-    l = *(_DWORD *)&v368.gap234[28];
+    m = *(_DWORD *)&v368.gap234[28];
   }
-  while ( l <= v173 )
+  while ( m <= v173 )
   {
-    v32 = l * *(_DWORD *)&v368.gap234[24] + v176;
-    v33 = (l + v169) * v361 + v171;
-    for ( n = v175; n <= v174; ++n )
-      *((double *)v172 + v33 + v178 * (n + v170)) = *(double *)(v177 + 8 * (v32 + n * v179));
-    ++l;
+    v32 = m * *(_DWORD *)&v368.gap234[24] + v176;
+    v33 = (m + v169) * v361 + v171;
+    for ( jj = v175; jj <= v174; ++jj )
+      *((double *)v172 + v33 + v178 * (jj + v170)) = *(double *)(v177 + 8 * (v32 + jj * v179));
+    ++m;
   }
   v35 = 0x80000000;
   v36 = (int)v339;
-  for ( jj = v343; jj <= v344; ++jj )
+  for ( kk = v343; kk <= v344; ++kk )
   {
-    if ( *((_DWORD *)v339 + v340 + v342 * jj) > v35 )
-      v35 = *((_DWORD *)v339 + v340 + v342 * jj);
+    if ( *((_DWORD *)v339 + v340 + v342 * kk) > v35 )
+      v35 = *((_DWORD *)v339 + v340 + v342 * kk);
   }
   mband = v35;
   v38 = nkpt;
@@ -1569,8 +1489,8 @@ LABEL_193:
           v58 = bdtot0_index;
           v59 = v415;
           v60 = v409;
-          for ( kk = 1; kk <= v184; ++kk )
-            *((double *)v183 + v60 * (kk + v58) + v182) = *((double *)v186 + v59 * kk + v185);
+          for ( mm = 1; mm <= v184; ++mm )
+            *((double *)v183 + v60 * (mm + v58) + v182) = *((double *)v186 + v59 * mm + v185);
           wffreadeigk(v382, &formeig, &headform, &ikpt, &isppol, &mband, &nband1, &tim_rwwf, &wff1);
           v191 = v382;
           v190 = v383;
@@ -1580,8 +1500,8 @@ LABEL_193:
           v62 = bdtot_index;
           v63 = v385;
           v64 = v403;
-          for ( ll = 1; ll <= v189; ++ll )
-            *((double *)v188 + v64 * (ll + v62) + v187) = *((double *)v191 + v63 * ll + v190);
+          for ( nn = 1; nn <= v189; ++nn )
+            *((double *)v188 + v64 * (nn + v62) + v187) = *((double *)v191 + v63 * nn + v190);
           wffreadeigk(v382, &formeig, &headform, &ikpt, &isppol, &mband, &nband1, &tim_rwwf, &wff2);
           v196 = v382;
           v195 = v383;
@@ -1591,8 +1511,8 @@ LABEL_193:
           v66 = bdtot_index;
           v67 = v385;
           v68 = v397;
-          for ( mm = 1; mm <= v194; ++mm )
-            *((double *)v193 + v68 * (mm + v66) + v192) = *((double *)v196 + v67 * mm + v195);
+          for ( i1 = 1; i1 <= v194; ++i1 )
+            *((double *)v193 + v68 * (i1 + v66) + v192) = *((double *)v196 + v67 * i1 + v195);
           wffreadeigk(v382, &formeig, &headform, &ikpt, &isppol, &mband, &nband1, &tim_rwwf, &wff3);
           v201 = v382;
           v200 = v383;
@@ -1602,8 +1522,8 @@ LABEL_193:
           v70 = bdtot_index;
           v71 = v385;
           v36 = v391;
-          for ( nn = 1; nn <= v199; ++nn )
-            *((double *)v198 + v36 * (nn + v70) + v197) = *((double *)v201 + v71 * nn + v200);
+          for ( i2 = 1; i2 <= v199; ++i2 )
+            *((double *)v198 + v36 * (i2 + v70) + v197) = *((double *)v201 + v71 * i2 + v200);
           bdtot0_index += nband1;
           bdtot_index += 2 * nband1 * nband1;
         }
@@ -2503,9 +2423,29 @@ LABEL_343:
 // 8048D30: using guessed type int __cdecl _gfortran_st_read(_DWORD);
 // 8048D50: using guessed type int __cdecl _gfortran_transfer_real(_DWORD, _DWORD, _DWORD);
 // 8048D60: using guessed type int __cdecl _gfortran_stop_numeric(_DWORD);
+// 8048E54: using guessed type double var_1130;
 
 //----- (0804DDD8) --------------------------------------------------------
-void __cdecl linopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(kind_4) *p_nkpt, real(kind_8) (*p_wkpt)[], integer(kind_4) *p_nsymcrys, real(kind_8) (*p_symcrys)[3][3][], integer(kind_4) *p_nstval, real(kind_8) (*p_occv)[][][], real(kind_8) (*p_evalv)[][][], real(kind_8) *p_efermi, complex(kind_8) (*p_pmat)[][][][3][], integer(kind_4) *p_v1, integer(kind_4) *p_v2, integer(kind_4) *p_nmesh, real(kind_8) *p_de, real(kind_8) *p_sc, real(kind_8) *p_brod, char (*p_fnam)[256], const integer(kind_4) _fnam)
+void __cdecl linopt(
+        integer(kind_4) *p_nspin,
+        real(kind_8) *p_omega,
+        integer(kind_4) *p_nkpt,
+        real(kind_8) (*p_wkpt)[],
+        integer(kind_4) *p_nsymcrys,
+        real(kind_8) (*p_symcrys)[3][3][],
+        integer(kind_4) *p_nstval,
+        real(kind_8) (*p_occv)[][][],
+        real(kind_8) (*p_evalv)[][][],
+        real(kind_8) *p_efermi,
+        complex(kind_8) (*p_pmat)[][][][3][],
+        integer(kind_4) *p_v1,
+        integer(kind_4) *p_v2,
+        integer(kind_4) *p_nmesh,
+        real(kind_8) *p_de,
+        real(kind_8) *p_sc,
+        real(kind_8) *p_brod,
+        char (*p_fnam)[256],
+        const integer(kind_4) _fnam)
 {
   integer(kind_4) v19; // ecx
   int v20; // ebx
@@ -2534,10 +2474,10 @@ void __cdecl linopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(kin
   int v43; // edi
   int v44; // esi
   int k; // ecx
-  int l; // edx
-  int m; // esi
+  int m; // edx
+  int n; // esi
   int v48; // edi
-  int n; // ecx
+  int ii; // ecx
   integer(kind_4) v53; // esi
   integer(kind_4) v54; // ebx
   integer(kind_4) v55; // ecx
@@ -2547,7 +2487,7 @@ void __cdecl linopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(kin
   int v62; // edi
   integer(kind_4) v63; // esi
   int v64; // ebx
-  int ii; // edx
+  int jj; // edx
   int v66; // eax
   int v67; // eax
   long double v68; // fst6
@@ -2571,8 +2511,8 @@ void __cdecl linopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(kin
   long double v88; // fst6
   long double v89; // fst5
   long double v90; // fst4
-  long double v91; // fst3
-  long double v92; // fst2
+  long double real; // fst3
+  long double imag; // fst2
   long double v93; // rtt
   long double v94; // fst4
   long double v95; // fst5
@@ -3161,8 +3101,8 @@ LABEL_68:
   for ( k = v180; k <= v43; ++k )
   {
     v121 = k * v179 + v128;
-    for ( l = v127; l <= v126; ++l )
-      v129[v44 * l + v121] = 0.0;
+    for ( m = v127; m <= v126; ++m )
+      v129[v44 * m + v121] = 0.0;
   }
   v130 = *p_nsymcrys;
   isym = 1;
@@ -3176,11 +3116,11 @@ LABEL_68:
       v131 = v189 - 1;
       v136 = 9 * isym - 13;
       v135 = v185;
-      for ( m = 1; m <= 3; ++m )
+      for ( n = 1; n <= 3; ++n )
       {
-        v48 = (m + v131) * v188 + v133;
-        for ( n = 1; n <= 3; ++n )
-          v134[v135 * (n + v132) + v48] = *((double *)p_symcrys + 3 * m + n + v136);
+        v48 = (n + v131) * v188 + v133;
+        for ( ii = 1; ii <= 3; ++ii )
+          v134[v135 * (ii + v132) + v48] = *((double *)p_symcrys + 3 * n + ii + v136);
       }
       i = 1;
       do
@@ -3237,9 +3177,9 @@ LABEL_68:
   v62 = v202;
   v63 = v206;
   v64 = v204;
-  for ( ii = v205; ii <= v63; ++ii )
+  for ( jj = v205; jj <= v63; ++jj )
   {
-    v66 = 16 * (v62 + v64 * ii);
+    v66 = 16 * (v62 + v64 * jj);
     *(double *)&v61[v66] = 0.0;
     *(double *)&v61[v66 + 8] = 0.0;
   }
@@ -3336,21 +3276,21 @@ LABEL_68:
                           v122 = 0.0;
                           v89 = -e12 - w.real;
                           v90 = 0.0 - w.imag;
-                          v91 = b12.real;
-                          v92 = b12.imag;
+                          real = b12.real;
+                          imag = b12.imag;
                           if ( fabs(v90) <= fabs(v89) )
                           {
                             v97 = v90 / v89;
                             v98 = v89 + v90 * v97;
-                            v96 = (v92 - v97 * v91) / v98;
-                            v95 = (v92 * v97 + v91) / v98;
+                            v96 = (imag - v97 * real) / v98;
+                            v95 = (imag * v97 + real) / v98;
                           }
                           else
                           {
                             v93 = v89 / v90;
                             v94 = v90 + v89 * v93;
-                            v95 = (v91 * v93 + v92) / v94;
-                            v96 = (v93 * v92 - v91) / v94;
+                            v95 = (real * v93 + imag) / v94;
+                            v96 = (v93 * imag - real) / v94;
                           }
                           v99 = 16 * (iw * v204 + v202);
                           *(double *)((char *)v201 + v99) = v87 + v123 * v95 - v122 * v96;
@@ -3665,7 +3605,27 @@ LABEL_68:
 // 8048D60: using guessed type int __cdecl _gfortran_stop_numeric(_DWORD);
 
 //----- (08050B5C) --------------------------------------------------------
-void __cdecl nlinopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(kind_4) *p_nkpt, real(kind_8) (*p_wkpt)[], integer(kind_4) *p_nsymcrys, real(kind_8) (*p_symcrys)[3][3][], integer(kind_4) *p_nstval, real(kind_8) (*p_evalv)[][][], real(kind_8) *p_efermi, complex(kind_8) (*p_pmat)[][][][3][], integer(kind_4) *p_v1, integer(kind_4) *p_v2, integer(kind_4) *p_v3, integer(kind_4) *p_nmesh, real(kind_8) *p_de, real(kind_8) *p_sc, real(kind_8) *p_brod, real(kind_8) *p_tol, char (*p_fnam)[256], const integer(kind_4) _fnam)
+void __cdecl nlinopt(
+        integer(kind_4) *p_nspin,
+        real(kind_8) *p_omega,
+        integer(kind_4) *p_nkpt,
+        real(kind_8) (*p_wkpt)[],
+        integer(kind_4) *p_nsymcrys,
+        real(kind_8) (*p_symcrys)[3][3][],
+        integer(kind_4) *p_nstval,
+        real(kind_8) (*p_evalv)[][][],
+        real(kind_8) *p_efermi,
+        complex(kind_8) (*p_pmat)[][][][3][],
+        integer(kind_4) *p_v1,
+        integer(kind_4) *p_v2,
+        integer(kind_4) *p_v3,
+        integer(kind_4) *p_nmesh,
+        real(kind_8) *p_de,
+        real(kind_8) *p_sc,
+        real(kind_8) *p_brod,
+        real(kind_8) *p_tol,
+        char (*p_fnam)[256],
+        const integer(kind_4) _fnam)
 {
   integer(kind_4) v20; // ecx
   int v21; // ebx
@@ -3697,7 +3657,7 @@ void __cdecl nlinopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(ki
   integer(kind_4) v47; // ecx
   integer(kind_4) v49; // esi
   integer(kind_4) v50; // eax
-  int l; // ebx
+  int m; // ebx
   int v52; // edx
   signed int v53; // eax
   void *v54; // eax
@@ -3733,43 +3693,43 @@ void __cdecl nlinopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(ki
   void *v84; // eax
   void *v85; // eax
   int v86; // edi
-  int m; // ecx
-  int n; // edx
-  int ii; // esi
+  int n; // ecx
+  int ii; // edx
+  int jj; // esi
   int v90; // edi
-  int jj; // ecx
+  int kk; // ecx
   char *v96; // ecx
   int v97; // edi
   integer(kind_4) v98; // esi
   int v99; // ebx
-  int kk; // edx
+  int mm; // edx
   int v101; // eax
   char *v102; // ecx
   int v103; // edi
   integer(kind_4) v104; // esi
   int v105; // ebx
-  int ll; // edx
+  int nn; // edx
   int v107; // eax
   char *v108; // ecx
   int v109; // edi
   integer(kind_4) v110; // esi
   int v111; // ebx
-  int mm; // edx
+  int i4; // edx
   int v113; // eax
   char *v114; // ecx
   int v115; // edi
   integer(kind_4) v116; // esi
   int v117; // ebx
-  int nn; // edx
+  int i5; // edx
   int v119; // eax
   char *v120; // edi
-  int i5; // ecx
-  int i4; // ebx
+  int i7; // ecx
+  int i6; // ebx
   int v123; // esi
-  int i6; // edx
+  int i8; // edx
   int v125; // eax
   long double v126; // fst7
-  int i7; // ecx
+  int i9; // ecx
   int v128; // eax
   long double v129; // fst5
   char *v130; // ebx
@@ -3795,7 +3755,7 @@ void __cdecl nlinopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(ki
   long double v155; // fst7
   int v156; // edi
   int v157; // esi
-  int i8; // ecx
+  int i10; // ecx
   int v159; // eax
   long double v160; // fst7
   long double v161; // fst6
@@ -3822,8 +3782,8 @@ void __cdecl nlinopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(ki
   int v184; // eax
   long double v185; // rtt
   long double v189; // fst7
-  long double v190; // fst5
-  long double v191; // fst4
+  long double real; // fst5
+  long double imag; // fst4
   long double v192; // rt0
   long double v193; // fst6
   long double v194; // fst7
@@ -5245,7 +5205,7 @@ void __cdecl nlinopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(ki
   v956 = 1;
   v957 = 3;
   v955 = 9 * v49 * v50;
-  l = ~v49 - v49 * v50 - v952 - v955;
+  m = ~v49 - v49 * v50 - v952 - v955;
   if ( *p_nstval > 0 )
     v52 = 432 * v49 * v50;
   else
@@ -5268,7 +5228,7 @@ void __cdecl nlinopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(ki
     if ( !v54 )
       v54 = (void *)_gfortran_os_error("Out of memory");
     v940 = v54;
-    v941 = l;
+    v941 = m;
     v924 = 1061;
     v926 = 1;
     v927 = *p_nstval;
@@ -5291,7 +5251,7 @@ void __cdecl nlinopt(integer(kind_4) *p_nspin, real(kind_8) *p_omega, integer(ki
     v938 = 1;
     v939 = 3;
     v937 = 9 * v49 * v55;
-    l = ~v49 - v49 * v55 - v934 - v937;
+    m = ~v49 - v49 * v55 - v934 - v937;
     if ( *p_nstval > 0 )
     {
       v56 = 432 * v49 * v55;
@@ -5318,7 +5278,7 @@ LABEL_136:
     if ( !v58 )
       v58 = (void *)_gfortran_os_error("Out of memory");
     v922 = v58;
-    v923 = l;
+    v923 = m;
     v906 = 1061;
     v908 = 1;
     v909 = *p_nstval;
@@ -5341,7 +5301,7 @@ LABEL_136:
     v920 = 1;
     v921 = 3;
     v919 = 9 * v49 * v59;
-    l = ~v49 - v49 * v59 - v916 - v919;
+    m = ~v49 - v49 * v59 - v916 - v919;
     if ( *p_nstval > 0 )
     {
       v60 = 432 * v49 * v59;
@@ -5368,7 +5328,7 @@ LABEL_151:
     if ( !v62 )
       v62 = (void *)_gfortran_os_error("Out of memory");
     v904 = v62;
-    v905 = l;
+    v905 = m;
     v977 = 1057;
     v979 = 1;
     v980 = *p_nmesh;
@@ -5521,7 +5481,7 @@ LABEL_203:
     v1005 = 1;
     v1006 = 3;
     v1004 = v79 * v80;
-    l = 3 * v79 * v80;
+    m = 3 * v79 * v80;
     v49 = ~v79 - v79 * v80;
     if ( *p_nstval > 0 )
     {
@@ -5604,14 +5564,14 @@ LABEL_232:
   v792 = v894;
   v799 = v886;
 LABEL_235:
-  for ( l = v893; l <= v792; ++l )
+  for ( m = v893; m <= v792; ++m )
   {
-    v86 = l * v892 + v797;
-    for ( m = v794; m <= v793; ++m )
+    v86 = m * v892 + v797;
+    for ( n = v794; n <= v793; ++n )
     {
-      v777 = v86 + m * v889;
-      for ( n = v796; n <= v795; ++n )
-        v798[n * v799 + v777] = 0.0;
+      v777 = v86 + n * v889;
+      for ( ii = v796; ii <= v795; ++ii )
+        v798[ii * v799 + v777] = 0.0;
     }
   }
   v800 = *p_nsymcrys;
@@ -5626,11 +5586,11 @@ LABEL_235:
       v801 = v902 - 1;
       v806 = 9 * isym - 13;
       v805 = v898;
-      for ( ii = 1; ii <= 3; ++ii )
+      for ( jj = 1; jj <= 3; ++jj )
       {
-        v90 = (ii + v801) * v901 + v803;
-        for ( jj = 1; jj <= 3; ++jj )
-          v804[v805 * (jj + v802) + v90] = *((double *)p_symcrys + 3 * ii + jj + v806);
+        v90 = (jj + v801) * v901 + v803;
+        for ( kk = 1; kk <= 3; ++kk )
+          v804[v805 * (kk + v802) + v90] = *((double *)p_symcrys + 3 * jj + kk + v806);
       }
       i = 1;
       do
@@ -5666,9 +5626,9 @@ LABEL_235:
   v97 = v976;
   v98 = v980;
   v99 = v978;
-  for ( kk = v979; kk <= v98; ++kk )
+  for ( mm = v979; mm <= v98; ++mm )
   {
-    v101 = 16 * (v97 + v99 * kk);
+    v101 = 16 * (v97 + v99 * mm);
     *(double *)&v96[v101] = 0.0;
     *(double *)&v96[v101 + 8] = 0.0;
   }
@@ -5676,9 +5636,9 @@ LABEL_235:
   v103 = v982;
   v104 = v986;
   v105 = v984;
-  for ( ll = v985; ll <= v104; ++ll )
+  for ( nn = v985; nn <= v104; ++nn )
   {
-    v107 = 16 * (v103 + v105 * ll);
+    v107 = 16 * (v103 + v105 * nn);
     *(double *)&v102[v107] = 0.0;
     *(double *)&v102[v107 + 8] = 0.0;
   }
@@ -5686,9 +5646,9 @@ LABEL_235:
   v109 = v964;
   v110 = v968;
   v111 = v966;
-  for ( mm = v967; mm <= v110; ++mm )
+  for ( i4 = v967; i4 <= v110; ++i4 )
   {
-    v113 = 16 * (v109 + v111 * mm);
+    v113 = 16 * (v109 + v111 * i4);
     *(double *)&v108[v113] = 0.0;
     *(double *)&v108[v113 + 8] = 0.0;
   }
@@ -5696,9 +5656,9 @@ LABEL_235:
   v115 = v970;
   v116 = v974;
   v117 = v972;
-  for ( nn = v973; nn <= v116; ++nn )
+  for ( i5 = v973; i5 <= v116; ++i5 )
   {
-    v119 = 16 * (v115 + v117 * nn);
+    v119 = 16 * (v115 + v117 * i5);
     *(double *)&v114[v119] = 0.0;
     *(double *)&v114[v119 + 8] = 0.0;
   }
@@ -5708,18 +5668,18 @@ LABEL_235:
   v810 = v1000;
   v809 = v1002;
   v808 = v1003;
-  i5 = v1006;
+  i7 = v1006;
   v807 = v1006;
   v813 = v998;
-  for ( i4 = v1005; i4 <= v807; ++i4 )
+  for ( i6 = v1005; i6 <= v807; ++i6 )
   {
-    v814 = i4 * v1004 + v812;
-    for ( i5 = v809; i5 <= v808; ++i5 )
+    v814 = i6 * v1004 + v812;
+    for ( i7 = v809; i7 <= v808; ++i7 )
     {
-      v123 = i5 * v1001 + v814;
-      for ( i6 = v811; i6 <= v810; ++i6 )
+      v123 = i7 * v1001 + v814;
+      for ( i8 = v811; i8 <= v810; ++i8 )
       {
-        v125 = 16 * (v123 + i6 * v813);
+        v125 = 16 * (v123 + i8 * v813);
         *(double *)&v120[v125] = 0.0;
         *(double *)&v120[v125 + 8] = 0.0;
       }
@@ -5774,9 +5734,9 @@ LABEL_235:
                       corec = (e12 - *p_sc) / e12;
                       v126 = corec;
                       v819 = ik * v830 + v829 * ist2 + v791 + ist1 + isp * v832;
-                      for ( i7 = 1; i7 <= 3; ++i7 )
+                      for ( i9 = 1; i9 <= 3; ++i9 )
                       {
-                        v128 = 16 * (v819 + i7 * v831);
+                        v128 = 16 * (v819 + i9 * v831);
                         v129 = *(double *)((char *)p_pmat + v128) * 0.0 + *(double *)((char *)p_pmat + v128 + 8) * v126;
                         *(double *)((char *)p_pmat + v128) = *(double *)((char *)p_pmat + v128) * v126
                                                            - *(double *)((char *)p_pmat + v128 + 8) * 0.0;
@@ -5865,15 +5825,15 @@ LABEL_235:
                   v823 = ik * v830 + ist2 * v829 + ist2 + v791 + v832 * isp;
                   v156 = ist2 * v1001 + ist1 * v998 + v996;
                   v157 = v1004;
-                  for ( i8 = 1; i8 <= 3; ++i8 )
+                  for ( i10 = 1; i10 <= 3; ++i10 )
                   {
-                    v159 = 16 * (v824 + i8 * v831);
+                    v159 = 16 * (v824 + i10 * v831);
                     v160 = *(double *)((char *)p_pmat + v159);
                     v161 = *(double *)((char *)p_pmat + v159 + 8);
-                    v162 = 16 * (v823 + i8 * v831);
+                    v162 = 16 * (v823 + i10 * v831);
                     v163 = v161 - *(double *)((char *)p_pmat + v162 + 8);
                     v164 = v160 - *(double *)((char *)p_pmat + v162);
-                    v165 = 16 * (v157 * i8 + v156);
+                    v165 = 16 * (v157 * i10 + v156);
                     *(double *)&v822[v165] = v164;
                     *(double *)&v822[v165 + 8] = v163;
                   }
@@ -6002,22 +5962,22 @@ LABEL_235:
                       }
                       while ( lx++ != 3 );
                       v189 = wnm;
-                      v190 = mat1w3_tra.real;
-                      v191 = mat1w3_tra.imag;
+                      real = mat1w3_tra.real;
+                      imag = mat1w3_tra.imag;
                       if ( fabs(0.0) <= fabs(wnm) )
                       {
                         v195 = 0.0 / v189;
                         v196 = 0.0 * v195 + v189;
-                        v197 = (v191 * v195 + v190) / v196;
+                        v197 = (imag * v195 + real) / v196;
                         v198 = v196;
                         v193 = v197;
-                        v194 = (v191 - v195 * mat1w3_tra.real) / v198;
+                        v194 = (imag - v195 * mat1w3_tra.real) / v198;
                       }
                       else
                       {
                         v192 = v189 / 0.0;
-                        v193 = (v190 * v192 + v191) / (v189 * v192 + 0.0);
-                        v194 = (v192 * v191 - v190) / (v189 * v192 + 0.0);
+                        v193 = (real * v192 + imag) / (v189 * v192 + 0.0);
+                        v194 = (v192 * imag - real) / (v189 * v192 + 0.0);
                       }
                       b331.real = v193;
                       b331.imag = v194;
@@ -7308,7 +7268,7 @@ LABEL_235:
             }
             while ( istn++ != v825 );
           }
-          i5 = v816;
+          i7 = v816;
         }
         while ( isp++ != v816 );
       }
@@ -7325,7 +7285,7 @@ LABEL_235:
   v843 = 5;
   v833 = 18688;
   v834 = 92;
-  _gfortran_st_open(i5, &v833);
+  _gfortran_st_open(i7, &v833);
   v835 = 134682283;
   v836 = 608;
   v838 = fnam2;
@@ -8155,7 +8115,7 @@ LABEL_235:
 // 805312A: variable 'v795' is possibly undefined
 // 8053151: variable 'v798' is possibly undefined
 // 8053132: variable 'v799' is possibly undefined
-// 8057B35: variable 'i5' is possibly undefined
+// 8057B35: variable 'i7' is possibly undefined
 // 8057BA9: variable 'v761' is possibly undefined
 // 8057C1D: variable 'v762' is possibly undefined
 // 8057C91: variable 'v763' is possibly undefined
@@ -8178,7 +8138,7 @@ LABEL_235:
 //----- (0805ACD4) --------------------------------------------------------
 void __cdecl hdr_clean(hdr_type *p_hdr)
 {
-  integer(kind_4) v1; // ebx
+  integer(kind_4) natom; // ebx
   integer(kind_4) iatom; // [esp+1Ch] [ebp-Ch]
 
   if ( !*(_DWORD *)p_hdr->gap4C )
@@ -8267,9 +8227,9 @@ void __cdecl hdr_clean(hdr_type *p_hdr)
   *(_DWORD *)p_hdr->gap300 = 0;
   if ( p_hdr->usepaw == 1 )
   {
-    v1 = p_hdr->natom;
+    natom = p_hdr->natom;
     iatom = 1;
-    if ( v1 >= 1 )
+    if ( natom >= 1 )
     {
       do
       {
@@ -8313,7 +8273,7 @@ void __cdecl hdr_clean(hdr_type *p_hdr)
                   + 264 * (iatom * *(_DWORD *)&p_hdr->gap338[12] + *(_DWORD *)&p_hdr->gap338[4])
                   + 72) = 0;
       }
-      while ( iatom++ != v1 );
+      while ( iatom++ != natom );
     }
     if ( !*(_DWORD *)p_hdr->gap338 )
       _gfortran_runtime_error_at("At line 86 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr");
@@ -8324,7 +8284,16 @@ void __cdecl hdr_clean(hdr_type *p_hdr)
 // 8048C30: using guessed type int _gfortran_runtime_error_at(_DWORD, const char *, ...);
 
 //----- (0805B598) --------------------------------------------------------
-void __cdecl wffreadeigk(real(kind_8) (*p_eigen)[], integer(kind_4) *p_formeig, integer(kind_4) *p_headform, integer(kind_4) *p_ikpt, integer(kind_4) *p_isppol, integer(kind_4) *p_mband, integer(kind_4) *p_nband, integer(kind_4) *p_tim_rwwf, wffile_type *p_wff)
+void __cdecl wffreadeigk(
+        real(kind_8) (*p_eigen)[],
+        integer(kind_4) *p_formeig,
+        integer(kind_4) *p_headform,
+        integer(kind_4) *p_ikpt,
+        integer(kind_4) *p_isppol,
+        integer(kind_4) *p_mband,
+        integer(kind_4) *p_nband,
+        integer(kind_4) *p_tim_rwwf,
+        wffile_type *p_wff)
 {
   integer(kind_4) (*v9)[3][]; // eax
   integer(kind_4) v10; // edx
@@ -8428,18 +8397,23 @@ void __cdecl wffreadeigk(real(kind_8) (*p_eigen)[], integer(kind_4) *p_formeig, 
   if ( p_kg_k )
     free(p_kg_k);
 }
-// 805B67F: conditional instruction was optimized away because of '%optkg.4==0'
-// 805B694: conditional instruction was optimized away because of '%p_kg_k.4==0'
-// 805B698: conditional instruction was optimized away because of 'eax.4==0'
-// 805B6AD: conditional instruction was optimized away because of 'eax.4==0'
-// 805B740: conditional instruction was optimized away because of '%p_occ.4==0'
+// 805B67F: conditional instruction was optimized away because %optkg.4==0
+// 805B694: conditional instruction was optimized away because %p_kg_k.4==0
+// 805B698: conditional instruction was optimized away because eax.4==0
+// 805B6AD: conditional instruction was optimized away because eax.4==0
+// 805B740: conditional instruction was optimized away because %p_occ.4==0
 // 8048B10: using guessed type int __cdecl _gfortran_os_error(_DWORD);
 // 8048C30: using guessed type int _gfortran_runtime_error_at(_DWORD, const char *, ...);
 // 8048C80: using guessed type int __cdecl _gfortran_runtime_error(_DWORD);
 // 8048D80: using guessed type int __cdecl _gfortran_pow_i4_i4(_DWORD, _DWORD);
 
 //----- (0805B8D4) --------------------------------------------------------
-void __cdecl getwtk(real(kind_8) (*p_kpt)[3][], integer(kind_4) *p_nkpt, integer(kind_4) *p_nsym, integer(kind_4) (*p_symrel)[3][3][], real(kind_8) (*p_wtk)[])
+void __cdecl getwtk(
+        real(kind_8) (*p_kpt)[3][],
+        integer(kind_4) *p_nkpt,
+        integer(kind_4) *p_nsym,
+        integer(kind_4) (*p_symrel)[3][3][],
+        real(kind_8) (*p_wtk)[])
 {
   int v5; // eax
   integer(kind_4) v6; // eax
@@ -8457,20 +8431,20 @@ void __cdecl getwtk(real(kind_8) (*p_kpt)[3][], integer(kind_4) *p_nkpt, integer
   int j; // ebx
   integer(kind_4) v20; // esi
   int k; // edx
-  int l; // eax
+  int m; // eax
   integer(kind_4) v23; // edi
   void *v24; // esi
   void *v25; // ebx
   long double v26; // fst7
-  int m; // eax
-  int v28; // ecx
   int n; // eax
-  long double v30; // fst7
+  int v28; // ecx
   int ii; // eax
-  int v33; // ebx
+  long double v30; // fst7
   int jj; // eax
+  int v33; // ebx
+  int kk; // eax
   integer(kind_4) v38; // edx
-  integer(kind_4) kk; // eax
+  integer(kind_4) mm; // eax
   integer(kind_4) v40; // eax
   int v42; // [esp+30h] [ebp-2A8h]
   int v43; // [esp+34h] [ebp-2A4h]
@@ -8628,8 +8602,8 @@ void __cdecl getwtk(real(kind_8) (*p_kpt)[3][], integer(kind_4) *p_nkpt, integer
       v20 = ubound_2;
       for ( k = 1; k <= v20; ++k )
       {
-        for ( l = 1; l <= 3; ++l )
-          *((double *)kptstar + 3 * k + l - 4) = 0.0;
+        for ( m = 1; m <= 3; ++m )
+          *((double *)kptstar + 3 * k + m - 4) = 0.0;
       }
       v23 = *p_nsym;
       isym = 1;
@@ -8704,8 +8678,8 @@ void __cdecl getwtk(real(kind_8) (*p_kpt)[3][], integer(kind_4) *p_nkpt, integer
           {
             timsign = (long double)itim * -2.0 + 1.0;
             v26 = timsign;
-            for ( m = 1; m <= 3; ++m )
-              tsymkpt[m - 1] = symkpt[m - 1] * v26;
+            for ( n = 1; n <= 3; ++n )
+              tsymkpt[n - 1] = symkpt[n - 1] * v26;
             canon9(tsymkpt, &tmp, &shift);
             tsymkpt[0] = tmp;
             canon9(&tsymkpt[1], &tmp, &shift);
@@ -8720,11 +8694,11 @@ void __cdecl getwtk(real(kind_8) (*p_kpt)[3][], integer(kind_4) *p_nkpt, integer
               while ( 1 )
               {
                 v64 = 3 * istar - 4;
-                for ( n = 1; n <= 3; ++n )
-                  dkpt[n - 1] = fabs(tsymkpt[n - 1] - *((double *)kptstar + n + v64));
-                v30 = 0.0;
                 for ( ii = 1; ii <= 3; ++ii )
-                  v30 = v30 + dkpt[ii - 1];
+                  dkpt[ii - 1] = fabs(tsymkpt[ii - 1] - *((double *)kptstar + ii + v64));
+                v30 = 0.0;
+                for ( jj = 1; jj <= 3; ++jj )
+                  v30 = v30 + dkpt[jj - 1];
                 if ( v30 < 0.000001 )
                   break;
                 if ( istar++ == v28 )
@@ -8737,8 +8711,8 @@ LABEL_65:
             {
               ++*((_DWORD *)nstar + ikpt - 1);
               v33 = 3 * *((_DWORD *)nstar + ikpt - 1) - 4;
-              for ( jj = 1; jj <= 3; ++jj )
-                *((real(kind_8) *)kptstar + jj + v33) = tsymkpt[jj - 1];
+              for ( kk = 1; kk <= 3; ++kk )
+                *((real(kind_8) *)kptstar + kk + v33) = tsymkpt[kk - 1];
             }
           }
           while ( itim++ != 1 );
@@ -8749,8 +8723,8 @@ LABEL_65:
     while ( ikpt++ != v63 );
   }
   v38 = 0;
-  for ( kk = 1; kk <= ubound_4; ++kk )
-    v38 += *((_DWORD *)nstar + kk - 1);
+  for ( mm = 1; mm <= ubound_4; ++mm )
+    v38 += *((_DWORD *)nstar + mm - 1);
   nkpt_tot = v38;
   v40 = *p_nkpt;
   ikpt = 1;
@@ -8767,7 +8741,6 @@ LABEL_65:
   if ( kptstar )
     free(kptstar);
 }
-// 3C: found interdependent unknown calls
 // 805BEEC: variable 'v42' is possibly undefined
 // 805BEEC: variable 'v43' is possibly undefined
 // 805BEEC: variable 'v44' is possibly undefined
@@ -8799,7 +8772,15 @@ LABEL_65:
 // 8048D40: using guessed type int __cdecl dgemv_(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 
 //----- (0805C23C) --------------------------------------------------------
-void __cdecl pmat2cart(real(kind_8) (*p_eigen11)[2][][][][], real(kind_8) (*p_eigen12)[2][][][][], real(kind_8) (*p_eigen13)[2][][][][], integer(kind_4) *p_mband, integer(kind_4) *p_nkpt, integer(kind_4) *p_nsppol, complex(kind_8) (*p_pmat)[][][][3][], real(kind_8) (*p_rprimd)[3][3])
+void __cdecl pmat2cart(
+        real(kind_8) (*p_eigen11)[2][][][][],
+        real(kind_8) (*p_eigen12)[2][][][][],
+        real(kind_8) (*p_eigen13)[2][][][][],
+        integer(kind_4) *p_mband,
+        integer(kind_4) *p_nkpt,
+        integer(kind_4) *p_nsppol,
+        complex(kind_8) (*p_pmat)[][][][3][],
+        real(kind_8) (*p_rprimd)[3][3])
 {
   integer(kind_4) v8; // ecx
   int v9; // eax
@@ -9061,7 +9042,7 @@ void __cdecl hdr_io_wfftype(integer(kind_4) *p_fform, hdr_type *p_hdr, integer(k
 //----- (0805CB14) --------------------------------------------------------
 void __cdecl hdr_io_int(integer(kind_4) *p_fform, hdr_type *p_hdr, integer(kind_4) *p_rdwr, integer(kind_4) *p_unitfi)
 {
-  int ll; // eax
+  int nn; // eax
   integer(kind_4) v5; // edx
   signed int v6; // eax
   void *v7; // eax
@@ -9136,27 +9117,27 @@ void __cdecl hdr_io_int(integer(kind_4) *p_fform, hdr_type *p_hdr, integer(kind_
   int v76; // ebx
   int v77; // edi
   int v78; // esi
-  int mm; // eax
+  int i1; // eax
   int v80; // edx
   int v81; // ebx
   int v82; // edi
   int v83; // esi
-  int nn; // eax
+  int i2; // eax
   int v85; // edx
   int v86; // ebx
   int v87; // edi
   int v88; // esi
-  int i1; // eax
+  int i3; // eax
   int v90; // edx
   int v91; // ebx
   int v92; // edi
   int v93; // esi
-  int i2; // eax
+  int i4; // eax
   int v95; // edx
   int v96; // ebx
   int v97; // edi
   int v98; // esi
-  int i3; // eax
+  int i5; // eax
   integer(kind_4) v100; // ebx
   integer(kind_4) v102; // ebx
   integer(kind_4) v104; // ebx
@@ -9184,10 +9165,10 @@ void __cdecl hdr_io_int(integer(kind_4) *p_fform, hdr_type *p_hdr, integer(kind_
   integer(kind_4) v129; // esi
   int v132; // edi
   int v133; // esi
-  int i4; // edx
+  int i6; // edx
   integer(kind_4) v136; // ebx
-  integer(kind_4) i5; // ecx
-  integer(kind_4) i6; // edx
+  integer(kind_4) i7; // ecx
+  integer(kind_4) i8; // edx
   integer(kind_4) v139; // edx
   signed int v140; // eax
   void *v141; // eax
@@ -9196,11 +9177,11 @@ void __cdecl hdr_io_int(integer(kind_4) *p_fform, hdr_type *p_hdr, integer(kind_
   void *v144; // eax
   int v145; // edi
   int v146; // esi
-  int i7; // edx
+  int i9; // edx
   int v148; // edi
   int v149; // esi
   int v150; // ebx
-  int i8; // edx
+  int i10; // edx
   integer(kind_4) v154; // ebx
   integer(kind_4) v156; // eax
   integer(kind_4) v157; // edx
@@ -9210,7 +9191,7 @@ void __cdecl hdr_io_int(integer(kind_4) *p_fform, hdr_type *p_hdr, integer(kind_
   void *v161; // eax
   int v162; // edi
   int v163; // esi
-  int m; // edx
+  int n; // edx
   integer(kind_4) v166; // ebx
   integer(kind_4) v167; // esi
   integer(kind_4) v170; // ebx
@@ -9228,7 +9209,7 @@ void __cdecl hdr_io_int(integer(kind_4) *p_fform, hdr_type *p_hdr, integer(kind_
   int v182; // edi
   int v183; // esi
   int v184; // ebx
-  int l; // edx
+  int m; // edx
   int v188; // edi
   int v189; // edx
   int v190; // ebx
@@ -9250,12 +9231,12 @@ void __cdecl hdr_io_int(integer(kind_4) *p_fform, hdr_type *p_hdr, integer(kind_
   int v207; // ecx
   int v208; // eax
   integer(kind_4) v210; // eax
-  unsigned int n; // ebx
+  unsigned int jj; // ebx
   integer(kind_4) v212; // eax
   integer(kind_4) v213; // ecx
   int v214; // eax
   integer(kind_4) v215; // eax
-  unsigned int jj; // ebx
+  unsigned int kk; // ebx
   integer(kind_4) v217; // eax
   integer(kind_4) v218; // ecx
   int v219; // eax
@@ -9326,7 +9307,7 @@ void __cdecl hdr_io_int(integer(kind_4) *p_fform, hdr_type *p_hdr, integer(kind_
   int v288; // [esp+12Ch] [ebp-8ACh]
   integer(kind_4) v289; // [esp+130h] [ebp-8A8h]
   int v290; // [esp+134h] [ebp-8A4h]
-  unsigned int kk; // [esp+138h] [ebp-8A0h]
+  unsigned int mm; // [esp+138h] [ebp-8A0h]
   integer(kind_4) v292; // [esp+13Ch] [ebp-89Ch]
   integer(kind_4) v293; // [esp+140h] [ebp-898h]
   real(kind_8) (*p_a_ij)[]; // [esp+148h] [ebp-890h]
@@ -9339,13 +9320,13 @@ void __cdecl hdr_io_int(integer(kind_4) *p_fform, hdr_type *p_hdr, integer(kind_
   int v301; // [esp+184h] [ebp-854h]
   char *v302; // [esp+190h] [ebp-848h]
   int v303; // [esp+194h] [ebp-844h]
-  int v304; // [esp+2A4h] [ebp-734h] BYREF
+  int rprimd; // [esp+2A4h] [ebp-734h] BYREF
   integer(kind_4) v305; // [esp+2A8h] [ebp-730h]
   int v306; // [esp+2ACh] [ebp-72Ch]
   int v307; // [esp+2B0h] [ebp-728h]
   int v308; // [esp+2B4h] [ebp-724h]
   int v309; // [esp+2B8h] [ebp-720h]
-  int v310; // [esp+2BCh] [ebp-71Ch]
+  int p_ierr; // [esp+2BCh] [ebp-71Ch]
   int v311; // [esp+2C0h] [ebp-718h]
   int v312; // [esp+2C4h] [ebp-714h]
   int v313; // [esp+2D0h] [ebp-708h]
@@ -9395,7 +9376,7 @@ void __cdecl hdr_io_int(integer(kind_4) *p_fform, hdr_type *p_hdr, integer(kind_
   int v357; // [esp+70Ch] [ebp-2CCh]
   int v358; // [esp+710h] [ebp-2C8h]
   integer(kind_4) v359; // [esp+714h] [ebp-2C4h]
-  integer(kind_4) v360; // [esp+718h] [ebp-2C0h]
+  integer(kind_4) nspden; // [esp+718h] [ebp-2C0h]
   integer(kind_4) v361; // [esp+71Ch] [ebp-2BCh]
   integer(kind_4) v362; // [esp+720h] [ebp-2B8h]
   integer(kind_4) v363; // [esp+724h] [ebp-2B4h]
@@ -9504,10 +9485,10 @@ void __cdecl hdr_io_int(integer(kind_4) *p_fform, hdr_type *p_hdr, integer(kind_
       v307 = 1;
       v311 = 1;
       v312 = 3;
-      v310 = 3;
-      v304 = (int)p_hdr->rprimd;
+      p_ierr = 3;
+      rprimd = (int)p_hdr->rprimd;
       v305 = -4;
-      _gfortran_transfer_array(&v295, &v304, 8, 0);
+      _gfortran_transfer_array(&v295, &rprimd, 8, 0);
       _gfortran_transfer_real(&v295, &p_hdr->stmbias, 8);
       _gfortran_transfer_real(&v295, &p_hdr->tphysel, 8);
       _gfortran_transfer_real(&v295, &p_hdr->tsmear, 8);
@@ -9591,7 +9572,7 @@ void __cdecl hdr_io_int(integer(kind_4) *p_fform, hdr_type *p_hdr, integer(kind_
         goto LABEL_636;
       v357 = 266;
       v359 = 1;
-      v360 = p_hdr->nspden;
+      nspden = p_hdr->nspden;
       v358 = 1;
       v156 = p_hdr->nspden;
       if ( v156 < 0 )
@@ -9657,7 +9638,7 @@ LABEL_487:
           v170 = 0;
           for ( i = v362; i <= v363; ++i )
           {
-            for ( j = v359; j <= v360; ++j )
+            for ( j = v359; j <= nspden; ++j )
               v170 += *((_DWORD *)v355 + i * v361 + v356 + j * v358);
           }
           bsize = v170;
@@ -9776,8 +9757,8 @@ LABEL_515:
                                  + 264 * (iatom * *(_DWORD *)&p_hdr->gap338[12] + *(_DWORD *)&p_hdr->gap338[4])
                                  + 204);
                 v184 = v385;
-                for ( l = 1; l <= v284; ++l )
-                  v283[v184 * (l + v281) + v282] = *(double *)(v285 + 8 * (v182 + v183 * l));
+                for ( m = 1; m <= v284; ++m )
+                  v283[v184 * (m + v281) + v282] = *(double *)(v285 + 8 * (v182 + v183 * m));
                 ii += nselect;
               }
               while ( ispden++ != v275 );
@@ -9830,8 +9811,8 @@ LABEL_534:
                          + 36);
         v163 = iatom * v361 + v356;
         v250 = v358;
-        for ( m = 1; m <= v271; ++m )
-          v270[v163 + m * v250] = *(_DWORD *)(v273 + 4 * (v272 + v162 * m));
+        for ( n = 1; n <= v271; ++n )
+          v270[v163 + n * v250] = *(_DWORD *)(v273 + 4 * (v272 + v162 * n));
       }
       while ( iatom++ != v269 );
       goto LABEL_487;
@@ -10451,14 +10432,14 @@ LABEL_534:
         v192 = *(_DWORD *)&p_hdr->gap13C[24];
         v311 = 1;
         v312 = v190 + 1 - v287;
-        v310 = v192;
-        v304 = *(_DWORD *)p_hdr->gap13C
-             + 4
-             * (v192 * (v287 - *(_DWORD *)&p_hdr->gap13C[28])
-              + v191 * (v188 - *(_DWORD *)&p_hdr->gap13C[16])
-              + (2 * isym - 1 - *(_DWORD *)&p_hdr->gap13C[40]) * *(_DWORD *)&p_hdr->gap13C[36]);
+        p_ierr = v192;
+        rprimd = *(_DWORD *)p_hdr->gap13C
+               + 4
+               * (v192 * (v287 - *(_DWORD *)&p_hdr->gap13C[28])
+                + v191 * (v188 - *(_DWORD *)&p_hdr->gap13C[16])
+                + (2 * isym - 1 - *(_DWORD *)&p_hdr->gap13C[40]) * *(_DWORD *)&p_hdr->gap13C[36]);
         v305 = 0;
-        _gfortran_transfer_array(&v295, &v304, 4, 0);
+        _gfortran_transfer_array(&v295, &rprimd, 4, 0);
         _gfortran_transfer_character(&v295, 134688038, 2);
         v193 = *(_DWORD *)&p_hdr->gap13C[16];
         v194 = *(_DWORD *)&p_hdr->gap13C[20];
@@ -10472,14 +10453,14 @@ LABEL_534:
         v197 = *(_DWORD *)&p_hdr->gap13C[24];
         v311 = 1;
         v312 = v195 + 1 - v288;
-        v310 = v197;
-        v304 = *(_DWORD *)p_hdr->gap13C
-             + 4
-             * (v197 * (v288 - *(_DWORD *)&p_hdr->gap13C[28])
-              + v196 * (v193 - *(_DWORD *)&p_hdr->gap13C[16])
-              + (2 * isym - *(_DWORD *)&p_hdr->gap13C[40]) * *(_DWORD *)&p_hdr->gap13C[36]);
+        p_ierr = v197;
+        rprimd = *(_DWORD *)p_hdr->gap13C
+               + 4
+               * (v197 * (v288 - *(_DWORD *)&p_hdr->gap13C[28])
+                + v196 * (v193 - *(_DWORD *)&p_hdr->gap13C[16])
+                + (2 * isym - *(_DWORD *)&p_hdr->gap13C[40]) * *(_DWORD *)&p_hdr->gap13C[36]);
         v305 = 0;
-        _gfortran_transfer_array(&v295, &v304, 4, 0);
+        _gfortran_transfer_array(&v295, &rprimd, 4, 0);
         _gfortran_st_write_done(&v295);
       }
       while ( isym++ != v286 );
@@ -10513,14 +10494,14 @@ LABEL_534:
       v203 = *(_DWORD *)&p_hdr->gap13C[24];
       v311 = 1;
       v312 = v201 + 1 - v200;
-      v310 = v203;
-      v304 = *(_DWORD *)p_hdr->gap13C
-           + 4
-           * (v203 * (v200 - *(_DWORD *)&p_hdr->gap13C[28])
-            + v202 * (v290 - *(_DWORD *)&p_hdr->gap13C[16])
-            + (v289 - *(_DWORD *)&p_hdr->gap13C[40]) * *(_DWORD *)&p_hdr->gap13C[36]);
+      p_ierr = v203;
+      rprimd = *(_DWORD *)p_hdr->gap13C
+             + 4
+             * (v203 * (v200 - *(_DWORD *)&p_hdr->gap13C[28])
+              + v202 * (v290 - *(_DWORD *)&p_hdr->gap13C[16])
+              + (v289 - *(_DWORD *)&p_hdr->gap13C[40]) * *(_DWORD *)&p_hdr->gap13C[36]);
       v305 = 0;
-      _gfortran_transfer_array(&v295, &v304, 4, 0);
+      _gfortran_transfer_array(&v295, &rprimd, 4, 0);
       _gfortran_st_write_done(&v295);
     }
     v297 = "hdr_io.F90";
@@ -10604,7 +10585,7 @@ LABEL_534:
     ikpt = 1;
     if ( v210 > 0 )
     {
-      for ( n = (v210 - 1) / 0xAu; ; --n )
+      for ( jj = (v210 - 1) / 0xAu; ; --jj )
       {
         v297 = "hdr_io.F90";
         v298 = 652;
@@ -10632,7 +10613,7 @@ LABEL_534:
         _gfortran_transfer_array(&v295, v327, 8, 0);
         _gfortran_st_write_done(&v295);
         ikpt += 10;
-        if ( !n )
+        if ( !jj )
           break;
       }
     }
@@ -10649,7 +10630,7 @@ LABEL_534:
     ii = 1;
     if ( v215 > 0 )
     {
-      for ( jj = (v215 - 1) / 0xAu; ; --jj )
+      for ( kk = (v215 - 1) / 0xAu; ; --kk )
       {
         v297 = "hdr_io.F90";
         v298 = 656;
@@ -10677,7 +10658,7 @@ LABEL_534:
         _gfortran_transfer_array(&v295, v326, 8, 0);
         _gfortran_st_write_done(&v295);
         ii += 10;
-        if ( !jj )
+        if ( !kk )
           break;
       }
     }
@@ -11000,7 +10981,7 @@ LABEL_534:
       {
         if ( v239 <= 1 )
         {
-          for ( kk = (1 - v239) / (unsigned int)-natinc; ; --kk )
+          for ( mm = (1 - v239) / (unsigned int)-natinc; ; --mm )
           {
 LABEL_621:
             itypat = *(_DWORD *)(*(_DWORD *)p_hdr->gap16C
@@ -11123,19 +11104,17 @@ LABEL_621:
               while ( ispden++ != v293 );
             }
             iatom += v292;
-            if ( !kk )
+            if ( !mm )
               break;
           }
-          goto LABEL_631;
         }
       }
       else if ( v239 > 0 )
       {
-        kk = (v239 - 1) / (unsigned int)natinc;
+        mm = (v239 - 1) / (unsigned int)natinc;
         goto LABEL_621;
       }
     }
-LABEL_631:
     if ( *p_rdwr == 3 )
     {
       v297 = "hdr_io.F90";
@@ -11190,13 +11169,13 @@ LABEL_631:
   v306 = (int)"hdr_io.F90";
   v307 = 179;
   ierr = 0;
-  v310 = (int)&ierr;
-  v304 = 32;
+  p_ierr = (int)&ierr;
+  rprimd = 32;
   v305 = *p_unitfi;
-  _gfortran_st_read(&v304);
-  _gfortran_transfer_character(&v304, codvsn, 6);
-  _gfortran_transfer_integer(&v304, p_fform, 4);
-  _gfortran_st_read_done(&v304);
+  _gfortran_st_read(&rprimd);
+  _gfortran_transfer_character(&rprimd, codvsn, 6);
+  _gfortran_transfer_integer(&rprimd, p_fform, 4);
+  _gfortran_st_read_done(&rprimd);
   if ( ierr )
   {
     *p_fform = 0;
@@ -11215,13 +11194,13 @@ LABEL_631:
     _gfortran_st_backspace(v350);
     v306 = (int)"hdr_io.F90";
     v307 = 198;
-    v304 = 0;
+    rprimd = 0;
     v305 = *p_unitfi;
-    _gfortran_st_read(&v304);
-    _gfortran_transfer_character(&v304, codvsn, 6);
-    _gfortran_transfer_integer(&v304, &headform, 4);
-    _gfortran_transfer_integer(&v304, p_fform, 4);
-    _gfortran_st_read_done(&v304);
+    _gfortran_st_read(&rprimd);
+    _gfortran_transfer_character(&rprimd, codvsn, 6);
+    _gfortran_transfer_integer(&rprimd, &headform, 4);
+    _gfortran_transfer_integer(&rprimd, p_fform, 4);
+    _gfortran_st_read_done(&rprimd);
     if ( headform != 23
       && headform != 34
       && headform != 40
@@ -11238,24 +11217,24 @@ LABEL_631:
       v305 = 0;
       v314 = "(4a,i3,3a,i8,3a)\n hdr_io : ERROR -";
       v315 = 16;
-      v304 = 20480;
-      _gfortran_st_write(&v304);
-      _gfortran_transfer_character(&v304, 134686043, 1);
-      _gfortran_transfer_character(&v304, 134686044, 17);
-      _gfortran_transfer_character(&v304, 134686043, 1);
+      rprimd = 20480;
+      _gfortran_st_write(&rprimd);
+      _gfortran_transfer_character(&rprimd, 134686043, 1);
+      _gfortran_transfer_character(&rprimd, 134686044, 17);
+      _gfortran_transfer_character(&rprimd, 134686043, 1);
       _gfortran_transfer_character(
-        &v304,
+        &rprimd,
         "  The first line of the (WF, DEN or POT) file read in unit  is erroneous.  headform is ",
         59);
-      _gfortran_transfer_integer(&v304, p_unitfi, 4);
-      _gfortran_transfer_character(&v304, 134686123, 14);
-      _gfortran_transfer_character(&v304, 134686043, 1);
-      _gfortran_transfer_character(&v304, 134686137, 14);
-      _gfortran_transfer_integer(&v304, &headform, 4);
-      _gfortran_transfer_character(&v304, ", while it should be 23, 34, 40, 41, 42, 44 or 53.", 50);
-      _gfortran_transfer_character(&v304, 134686043, 1);
-      _gfortran_transfer_character(&v304, "  Action : check the correctness of your file.COLL", 46);
-      _gfortran_st_write_done(&v304);
+      _gfortran_transfer_integer(&rprimd, p_unitfi, 4);
+      _gfortran_transfer_character(&rprimd, 134686123, 14);
+      _gfortran_transfer_character(&rprimd, 134686043, 1);
+      _gfortran_transfer_character(&rprimd, 134686137, 14);
+      _gfortran_transfer_integer(&rprimd, &headform, 4);
+      _gfortran_transfer_character(&rprimd, ", while it should be 23, 34, 40, 41, 42, 44 or 53.", 50);
+      _gfortran_transfer_character(&rprimd, 134686043, 1);
+      _gfortran_transfer_character(&rprimd, "  Action : check the correctness of your file.COLL", 46);
+      _gfortran_st_write_done(&rprimd);
       wrtout((integer(kind_4) *)&p_unit, (char (*)[500])message, (char (*)[4])"COLL", 500, 4);
       leave_new((char (*)[4])"COLL", 4);
     }
@@ -11270,8 +11249,8 @@ LABEL_631:
   p_hdr->ecut = 0.0;
   p_hdr->ecutdg = 0.0;
   p_hdr->ecutsm = 0.0;
-  for ( ll = 1; ll <= 3; ++ll )
-    p_hdr->qptn[ll - 1] = 0.0;
+  for ( nn = 1; nn <= 3; ++nn )
+    p_hdr->qptn[nn - 1] = 0.0;
   p_hdr->stmbias = 0.0;
   p_hdr->tphysel = 0.0;
   p_hdr->tsmear = 0.0;
@@ -11313,10 +11292,10 @@ LABEL_631:
       v307 = 1;
       v311 = 1;
       v312 = 3;
-      v310 = 3;
-      v304 = (int)p_hdr->rprimd;
+      p_ierr = 3;
+      rprimd = (int)p_hdr->rprimd;
       v305 = -4;
-      _gfortran_transfer_array(&v295, &v304, 8, 0);
+      _gfortran_transfer_array(&v295, &rprimd, 8, 0);
       _gfortran_st_read_done(&v295);
       npsp = ntypat;
       break;
@@ -11359,10 +11338,10 @@ LABEL_631:
       v307 = 1;
       v311 = 1;
       v312 = 3;
-      v310 = 3;
-      v304 = (int)p_hdr->rprimd;
+      p_ierr = 3;
+      rprimd = (int)p_hdr->rprimd;
       v305 = -4;
-      _gfortran_transfer_array(&v295, &v304, 8, 0);
+      _gfortran_transfer_array(&v295, &rprimd, 8, 0);
       _gfortran_st_read_done(&v295);
       npsp = ntypat;
       break;
@@ -11399,10 +11378,10 @@ LABEL_631:
       v307 = 1;
       v311 = 1;
       v312 = 3;
-      v310 = 3;
-      v304 = (int)p_hdr->rprimd;
+      p_ierr = 3;
+      rprimd = (int)p_hdr->rprimd;
       v305 = -4;
-      _gfortran_transfer_array(&v295, &v304, 8, 0);
+      _gfortran_transfer_array(&v295, &rprimd, 8, 0);
       _gfortran_st_read_done(&v295);
       break;
     case 40:
@@ -11440,10 +11419,10 @@ LABEL_631:
       v307 = 1;
       v311 = 1;
       v312 = 3;
-      v310 = 3;
-      v304 = (int)p_hdr->rprimd;
+      p_ierr = 3;
+      rprimd = (int)p_hdr->rprimd;
       v305 = -4;
-      _gfortran_transfer_array(&v295, &v304, 8, 0);
+      _gfortran_transfer_array(&v295, &rprimd, 8, 0);
       _gfortran_transfer_real(&v295, &p_hdr->tphysel, 8);
       _gfortran_transfer_real(&v295, &p_hdr->tsmear, 8);
       _gfortran_st_read_done(&v295);
@@ -11491,10 +11470,10 @@ LABEL_631:
       v307 = 1;
       v311 = 1;
       v312 = 3;
-      v310 = 3;
-      v304 = (int)p_hdr->rprimd;
+      p_ierr = 3;
+      rprimd = (int)p_hdr->rprimd;
       v305 = -4;
-      _gfortran_transfer_array(&v295, &v304, 8, 0);
+      _gfortran_transfer_array(&v295, &rprimd, 8, 0);
       _gfortran_transfer_real(&v295, &p_hdr->tphysel, 8);
       _gfortran_transfer_real(&v295, &p_hdr->tsmear, 8);
       _gfortran_st_read_done(&v295);
@@ -11542,10 +11521,10 @@ LABEL_631:
       v307 = 1;
       v311 = 1;
       v312 = 3;
-      v310 = 3;
-      v304 = (int)p_hdr->rprimd;
+      p_ierr = 3;
+      rprimd = (int)p_hdr->rprimd;
       v305 = -4;
-      _gfortran_transfer_array(&v295, &v304, 8, 0);
+      _gfortran_transfer_array(&v295, &rprimd, 8, 0);
       _gfortran_transfer_real(&v295, &p_hdr->stmbias, 8);
       _gfortran_transfer_real(&v295, &p_hdr->tphysel, 8);
       _gfortran_transfer_real(&v295, &p_hdr->tsmear, 8);
@@ -11598,10 +11577,10 @@ LABEL_631:
         v307 = 1;
         v311 = 1;
         v312 = 3;
-        v310 = 3;
-        v304 = (int)p_hdr->rprimd;
+        p_ierr = 3;
+        rprimd = (int)p_hdr->rprimd;
         v305 = -4;
-        _gfortran_transfer_array(&v295, &v304, 8, 0);
+        _gfortran_transfer_array(&v295, &rprimd, 8, 0);
         _gfortran_transfer_real(&v295, &p_hdr->stmbias, 8);
         _gfortran_transfer_real(&v295, &p_hdr->tphysel, 8);
         _gfortran_transfer_real(&v295, &p_hdr->tsmear, 8);
@@ -12130,20 +12109,20 @@ LABEL_631:
   v76 = *(_DWORD *)&p_hdr->gap4C[4];
   v77 = *(_DWORD *)&p_hdr->gap4C[20];
   v78 = *(_DWORD *)&p_hdr->gap4C[12];
-  for ( mm = *(_DWORD *)&p_hdr->gap4C[16]; mm <= v77; ++mm )
-    *(_DWORD *)(v75 + 4 * (v76 + v78 * mm)) = 1;
+  for ( i1 = *(_DWORD *)&p_hdr->gap4C[16]; i1 <= v77; ++i1 )
+    *(_DWORD *)(v75 + 4 * (v76 + v78 * i1)) = 1;
   v80 = *(_DWORD *)p_hdr->gap10C;
   v81 = *(_DWORD *)&p_hdr->gap10C[4];
   v82 = *(_DWORD *)&p_hdr->gap10C[20];
   v83 = *(_DWORD *)&p_hdr->gap10C[12];
-  for ( nn = *(_DWORD *)&p_hdr->gap10C[16]; nn <= v82; ++nn )
-    *(_DWORD *)(v80 + 4 * (v81 + v83 * nn)) = 1;
+  for ( i2 = *(_DWORD *)&p_hdr->gap10C[16]; i2 <= v82; ++i2 )
+    *(_DWORD *)(v80 + 4 * (v81 + v83 * i2)) = 1;
   v85 = *(_DWORD *)p_hdr->gap124;
   v86 = *(_DWORD *)&p_hdr->gap124[4];
   v87 = *(_DWORD *)&p_hdr->gap124[20];
   v88 = *(_DWORD *)&p_hdr->gap124[12];
-  for ( i1 = *(_DWORD *)&p_hdr->gap124[16]; i1 <= v87; ++i1 )
-    *(_DWORD *)(v85 + 4 * (v86 + v88 * i1)) = 1;
+  for ( i3 = *(_DWORD *)&p_hdr->gap124[16]; i3 <= v87; ++i3 )
+    *(_DWORD *)(v85 + 4 * (v86 + v88 * i3)) = 1;
   if ( headform == 22 && (*p_fform == 1 || *p_fform == 51 || *p_fform == 101) )
   {
     v297 = "hdr_io.F90";
@@ -12227,14 +12206,14 @@ LABEL_631:
   v91 = *(_DWORD *)&p_hdr->gapDC[4];
   v92 = *(_DWORD *)&p_hdr->gapDC[20];
   v93 = *(_DWORD *)&p_hdr->gapDC[12];
-  for ( i2 = *(_DWORD *)&p_hdr->gapDC[16]; i2 <= v92; ++i2 )
-    *(_DWORD *)(v90 + 4 * (v91 + v93 * i2)) = 1;
+  for ( i4 = *(_DWORD *)&p_hdr->gapDC[16]; i4 <= v92; ++i4 )
+    *(_DWORD *)(v90 + 4 * (v91 + v93 * i4)) = 1;
   v95 = *(_DWORD *)p_hdr->gap64;
   v96 = *(_DWORD *)&p_hdr->gap64[4];
   v97 = *(_DWORD *)&p_hdr->gap64[20];
   v98 = *(_DWORD *)&p_hdr->gap64[12];
-  for ( i3 = *(_DWORD *)&p_hdr->gap64[16]; i3 <= v97; ++i3 )
-    *(_DWORD *)(v95 + 4 * (v96 + v98 * i3)) = 0;
+  for ( i5 = *(_DWORD *)&p_hdr->gap64[16]; i5 <= v97; ++i5 )
+    *(_DWORD *)(v95 + 4 * (v96 + v98 * i5)) = 0;
   switch ( headform )
   {
     case 22:
@@ -12613,7 +12592,7 @@ LABEL_631:
     }
     v357 = 266;
     v359 = 1;
-    v360 = p_hdr->nspden;
+    nspden = p_hdr->nspden;
     v358 = 1;
     v123 = p_hdr->nspden;
     if ( v123 < 0 )
@@ -12678,16 +12657,16 @@ LABEL_404:
             v248 = *(_DWORD *)(*(_DWORD *)p_hdr->gap338
                              + 264 * (iatom * *(_DWORD *)&p_hdr->gap338[12] + *(_DWORD *)&p_hdr->gap338[4])
                              + 36);
-            for ( i4 = 1; i4 <= v254; ++i4 )
-              *(_DWORD *)(v253 + 4 * (v132 + i4 * v248)) = v255[v256 + v133 * i4];
+            for ( i6 = 1; i6 <= v254; ++i6 )
+              *(_DWORD *)(v253 + 4 * (v132 + i6 * v248)) = v255[v256 + v133 * i6];
           }
           while ( iatom++ != v252 );
         }
         v136 = 0;
-        for ( i5 = v362; i5 <= v363; ++i5 )
+        for ( i7 = v362; i7 <= v363; ++i7 )
         {
-          for ( i6 = v359; i6 <= v360; ++i6 )
-            v136 += *((_DWORD *)v355 + i5 * v361 + v356 + i6 * v358);
+          for ( i8 = v359; i8 <= nspden; ++i8 )
+            v136 += *((_DWORD *)v355 + i7 * v361 + v356 + i8 * v358);
         }
         bsize = v136;
         v375 = 265;
@@ -12793,8 +12772,8 @@ LABEL_433:
               v249 = *(_DWORD *)(*(_DWORD *)p_hdr->gap338
                                + 264 * (iatom * *(_DWORD *)&p_hdr->gap338[12] + *(_DWORD *)&p_hdr->gap338[4])
                                + 84);
-              for ( i7 = 1; i7 <= v260; ++i7 )
-                *(_DWORD *)(v261 + 4 * (v146 + i7 * v249)) = v263[v262 + v145 * (i7 + v259)];
+              for ( i9 = 1; i9 <= v260; ++i9 )
+                *(_DWORD *)(v261 + 4 * (v146 + i9 * v249)) = v263[v262 + v145 * (i9 + v259)];
               v268 = (double *)v382;
               v267 = v383;
               v266 = *(_DWORD *)(*(_DWORD *)p_hdr->gap338
@@ -12813,8 +12792,8 @@ LABEL_433:
               v150 = *(_DWORD *)(*(_DWORD *)p_hdr->gap338
                                + 264 * (iatom * *(_DWORD *)&p_hdr->gap338[12] + *(_DWORD *)&p_hdr->gap338[4])
                                + 204);
-              for ( i8 = 1; i8 <= v265; ++i8 )
-                *(double *)(v266 + 8 * (v149 + v150 * i8)) = v268[v148 * (i8 + v264) + v267];
+              for ( i10 = 1; i10 <= v265; ++i10 )
+                *(double *)(v266 + 8 * (v149 + v150 * i10)) = v268[v148 * (i10 + v264) + v267];
               ii += nselect;
             }
             while ( ispden++ != v258 );
@@ -13021,7 +13000,26 @@ void __cdecl hdr_skip_wfftype(wffile_type *p_wff, integer(kind_4) *p_ierr)
 // 8048D30: using guessed type int __cdecl _gfortran_st_read(_DWORD);
 
 //----- (08067F38) --------------------------------------------------------
-void __cdecl rwwf(real(kind_8) (*p_cg)[2][], real(kind_8) (*p_eigen)[], integer(kind_4) *p_formeig, integer(kind_4) *p_headform, integer(kind_4) *p_icg, integer(kind_4) *p_ikpt, integer(kind_4) *p_isppol, integer(kind_4) (*p_kg_k)[3][], integer(kind_4) *p_mband, integer(kind_4) *p_mcg, integer(kind_4) *p_nband, integer(kind_4) *p_nband_disk, integer(kind_4) *p_npw, integer(kind_4) *p_nspinor, real(kind_8) (*p_occ)[], integer(kind_4) *p_option, integer(kind_4) *p_optkg, integer(kind_4) *p_tim_rwwf, wffile_type *p_wff)
+void __cdecl rwwf(
+        real(kind_8) (*p_cg)[2][],
+        real(kind_8) (*p_eigen)[],
+        integer(kind_4) *p_formeig,
+        integer(kind_4) *p_headform,
+        integer(kind_4) *p_icg,
+        integer(kind_4) *p_ikpt,
+        integer(kind_4) *p_isppol,
+        integer(kind_4) (*p_kg_k)[3][],
+        integer(kind_4) *p_mband,
+        integer(kind_4) *p_mcg,
+        integer(kind_4) *p_nband,
+        integer(kind_4) *p_nband_disk,
+        integer(kind_4) *p_npw,
+        integer(kind_4) *p_nspinor,
+        real(kind_8) (*p_occ)[],
+        integer(kind_4) *p_option,
+        integer(kind_4) *p_optkg,
+        integer(kind_4) *p_tim_rwwf,
+        wffile_type *p_wff)
 {
   integer(kind_4) v19; // eax
   integer(kind_4) v20; // eax
@@ -13043,7 +13041,7 @@ void __cdecl rwwf(real(kind_8) (*p_cg)[2][], real(kind_8) (*p_eigen)[], integer(
   int v37; // [esp+1E8h] [ebp-3E0h]
   int v38; // [esp+1ECh] [ebp-3DCh]
   int v39; // [esp+1F0h] [ebp-3D8h]
-  int v40; // [esp+1F4h] [ebp-3D4h]
+  int p_ios; // [esp+1F4h] [ebp-3D4h]
   int v41; // [esp+1F8h] [ebp-3D0h]
   integer(kind_4) v42; // [esp+1FCh] [ebp-3CCh]
   int v43; // [esp+208h] [ebp-3C0h]
@@ -13201,7 +13199,7 @@ void __cdecl rwwf(real(kind_8) (*p_cg)[2][], real(kind_8) (*p_eigen)[], integer(
         v36 = (int)"rwwf.F90";
         v37 = 272;
         ios = 0;
-        v40 = (int)&ios;
+        p_ios = (int)&ios;
         v34 = 32;
         v35 = unitwf;
         _gfortran_st_read(&v34);
@@ -13395,7 +13393,7 @@ void __cdecl rwwf(real(kind_8) (*p_cg)[2][], real(kind_8) (*p_eigen)[], integer(
           v37 = 1;
           v41 = 1;
           v42 = v19;
-          v40 = 3;
+          p_ios = 3;
           v34 = (int)p_kg_k;
           v35 = -4;
           _gfortran_transfer_array(&v24, &v34, 4, 0);
@@ -13595,7 +13593,7 @@ void __cdecl rwwf(real(kind_8) (*p_cg)[2][], real(kind_8) (*p_eigen)[], integer(
               v37 = 1;
               v41 = 1;
               v42 = npwso1;
-              v40 = 2;
+              p_ios = 2;
               v34 = (int)p_cg + 16 * ipw;
               v35 = -2 * ipw - 3;
               _gfortran_transfer_array(&v24, &v34, 8, 0);
@@ -13663,7 +13661,25 @@ void __cdecl rwwf(real(kind_8) (*p_cg)[2][], real(kind_8) (*p_eigen)[], integer(
 // 8048D80: using guessed type int __cdecl _gfortran_pow_i4_i4(_DWORD, _DWORD);
 
 //----- (0806A30D) --------------------------------------------------------
-void __cdecl writewf(real(kind_8) (*p_cg)[2][], real(kind_8) (*p_eigen)[], integer(kind_4) *p_formeig, integer(kind_4) *p_headform, integer(kind_4) *p_icg, integer(kind_4) *p_ikpt, integer(kind_4) *p_isppol, integer(kind_4) (*p_kg_k)[3][], integer(kind_4) *p_mband, integer(kind_4) *p_mcg, integer(kind_4) *p_nband, integer(kind_4) *p_nband_disk, integer(kind_4) *p_npw, integer(kind_4) *p_nspinor, real(kind_8) (*p_occ)[], integer(kind_4) *p_option, integer(kind_4) *p_optkg, wffile_type *p_wff)
+void __cdecl writewf(
+        real(kind_8) (*p_cg)[2][],
+        real(kind_8) (*p_eigen)[],
+        integer(kind_4) *p_formeig,
+        integer(kind_4) *p_headform,
+        integer(kind_4) *p_icg,
+        integer(kind_4) *p_ikpt,
+        integer(kind_4) *p_isppol,
+        integer(kind_4) (*p_kg_k)[3][],
+        integer(kind_4) *p_mband,
+        integer(kind_4) *p_mcg,
+        integer(kind_4) *p_nband,
+        integer(kind_4) *p_nband_disk,
+        integer(kind_4) *p_npw,
+        integer(kind_4) *p_nspinor,
+        real(kind_8) (*p_occ)[],
+        integer(kind_4) *p_option,
+        integer(kind_4) *p_optkg,
+        wffile_type *p_wff)
 {
   int v18; // eax
   integer(kind_4) v19; // ebx
@@ -13927,7 +13943,7 @@ void __cdecl writewf(real(kind_8) (*p_cg)[2][], real(kind_8) (*p_eigen)[], integ
 void __cdecl wffclose(wffile_type *p_wff, integer(kind_4) *p_ier)
 {
   int v2; // [esp+1Ch] [ebp-2Ch] BYREF
-  integer(kind_4) v3; // [esp+20h] [ebp-28h]
+  integer(kind_4) unwff; // [esp+20h] [ebp-28h]
   int v4; // [esp+24h] [ebp-24h]
   int v5; // [esp+28h] [ebp-20h]
 
@@ -13939,7 +13955,7 @@ void __cdecl wffclose(wffile_type *p_wff, integer(kind_4) *p_ier)
       v4 = 134689716;
       v5 = 90;
       v2 = 0;
-      v3 = p_wff->unwff;
+      unwff = p_wff->unwff;
       _gfortran_st_close(&v2);
     }
   }
@@ -13948,14 +13964,23 @@ void __cdecl wffclose(wffile_type *p_wff, integer(kind_4) *p_ier)
     v4 = 134689716;
     v5 = 71;
     v2 = 0;
-    v3 = p_wff->unwff;
+    unwff = p_wff->unwff;
     _gfortran_st_close(&v2);
   }
 }
 // 8048C70: using guessed type int __cdecl _gfortran_st_close(_DWORD);
 
 //----- (0806AF3C) --------------------------------------------------------
-void __cdecl wffopen(integer(kind_4) *p_accesswff, integer(kind_4) *p_spacecomm, char (*p_filename)[132], integer(kind_4) *p_ier, wffile_type *p_wff, integer(kind_4) *p_master, integer(kind_4) *p_me, integer(kind_4) *p_unwff, const integer(kind_4) _filename)
+void __cdecl wffopen(
+        integer(kind_4) *p_accesswff,
+        integer(kind_4) *p_spacecomm,
+        char (*p_filename)[132],
+        integer(kind_4) *p_ier,
+        wffile_type *p_wff,
+        integer(kind_4) *p_master,
+        integer(kind_4) *p_me,
+        integer(kind_4) *p_unwff,
+        const integer(kind_4) _filename)
 {
   int v9; // ecx
   int v10; // [esp+20h] [ebp-388h] BYREF
@@ -14064,7 +14089,13 @@ void __cdecl wffopen(integer(kind_4) *p_accesswff, integer(kind_4) *p_spacecomm,
 // 8048D20: using guessed type int __cdecl _gfortran_st_rewind(_DWORD);
 
 //----- (0806B330) --------------------------------------------------------
-void __cdecl wffreadnpwrec(integer(kind_4) *p_ierr, integer(kind_4) *p_ikpt, integer(kind_4) *p_nband_disk, integer(kind_4) *p_npw, integer(kind_4) *p_nspinor, wffile_type *p_wff)
+void __cdecl wffreadnpwrec(
+        integer(kind_4) *p_ierr,
+        integer(kind_4) *p_ikpt,
+        integer(kind_4) *p_nband_disk,
+        integer(kind_4) *p_npw,
+        integer(kind_4) *p_nspinor,
+        wffile_type *p_wff)
 {
   int v6[87]; // [esp+1Ch] [ebp-15Ch] BYREF
 
@@ -14097,7 +14128,12 @@ void __cdecl wffreadskiprec(integer(kind_4) *p_ierr, integer(kind_4) *p_nrec, wf
 }
 
 //----- (0806B480) --------------------------------------------------------
-void __cdecl wffwritenpwrec(integer(kind_4) *p_ierr, integer(kind_4) *p_nband_disk, integer(kind_4) *p_npw, integer(kind_4) *p_nspinor, wffile_type *p_wff)
+void __cdecl wffwritenpwrec(
+        integer(kind_4) *p_ierr,
+        integer(kind_4) *p_nband_disk,
+        integer(kind_4) *p_npw,
+        integer(kind_4) *p_nspinor,
+        wffile_type *p_wff)
 {
   int v5[87]; // [esp+1Ch] [ebp-15Ch] BYREF
 
@@ -14122,7 +14158,13 @@ void __cdecl wffwritenpwrec(integer(kind_4) *p_ierr, integer(kind_4) *p_nband_di
 // 8048CD0: using guessed type int __cdecl _gfortran_st_write(_DWORD);
 
 //----- (0806B578) --------------------------------------------------------
-void __cdecl metric(real(kind_8) (*p_gmet)[3][3], real(kind_8) (*p_gprimd)[3][3], integer(kind_4) *p_iout, real(kind_8) (*p_rmet)[3][3], real(kind_8) (*p_rprimd)[3][3], real(kind_8) *p_ucvol)
+void __cdecl metric(
+        real(kind_8) (*p_gmet)[3][3],
+        real(kind_8) (*p_gprimd)[3][3],
+        integer(kind_4) *p_iout,
+        real(kind_8) (*p_rmet)[3][3],
+        real(kind_8) (*p_rprimd)[3][3],
+        real(kind_8) *p_ucvol)
 {
   int v6; // esi
   int i; // ebx
@@ -14137,7 +14179,7 @@ void __cdecl metric(real(kind_8) (*p_gmet)[3][3], real(kind_8) (*p_gprimd)[3][3]
   long double v18; // fst6
   long double v19; // fst5
   int v20; // esi
-  int l; // eax
+  int m; // eax
   int v23; // [esp+2Ch] [ebp-3ECh] BYREF
   int v24; // [esp+30h] [ebp-3E8h]
   const char *v25; // [esp+34h] [ebp-3E4h]
@@ -14341,8 +14383,8 @@ void __cdecl metric(real(kind_8) (*p_gmet)[3][3], real(kind_8) (*p_gprimd)[3][3]
     v18 = (*p_gprimd)[ii - 1][1];
     v19 = (*p_gprimd)[ii - 1][2];
     v20 = ii - 4;
-    for ( l = 1; l <= 3; ++l )
-      (*p_gmet)[l][v20] = (*p_gprimd)[l - 1][0] * v17 + (*p_gprimd)[l - 1][1] * v18 + (*p_gprimd)[l - 1][2] * v19;
+    for ( m = 1; m <= 3; ++m )
+      (*p_gmet)[m][v20] = (*p_gprimd)[m - 1][0] * v17 + (*p_gprimd)[m - 1][1] * v18 + (*p_gprimd)[m - 1][2] * v19;
   }
   while ( ii++ != 3 );
   if ( *p_iout >= 0 )
@@ -14384,12 +14426,17 @@ void __cdecl metric(real(kind_8) (*p_gmet)[3][3], real(kind_8) (*p_gprimd)[3][3]
 // 8048D50: using guessed type int __cdecl _gfortran_transfer_real(_DWORD, _DWORD, _DWORD);
 
 //----- (0806C41C) --------------------------------------------------------
-void __cdecl sym2cart(real(kind_8) (*p_gprimd)[3][3], integer(kind_4) *p_nsym, real(kind_8) (*p_rprimd)[3][3], integer(kind_4) (*p_symrel)[3][3][], real(kind_8) (*p_symcart)[3][3][])
+void __cdecl sym2cart(
+        real(kind_8) (*p_gprimd)[3][3],
+        integer(kind_4) *p_nsym,
+        real(kind_8) (*p_rprimd)[3][3],
+        integer(kind_4) (*p_symrel)[3][3][],
+        real(kind_8) (*p_symcart)[3][3][])
 {
   int i; // edx
   int j; // ecx
   int k; // edx
-  int l; // ecx
+  int m; // ecx
   integer(kind_4) v10; // [esp+5Ch] [ebp-11Ch]
   int v11; // [esp+60h] [ebp-118h]
   int v12; // [esp+68h] [ebp-110h]
@@ -14449,8 +14496,8 @@ void __cdecl sym2cart(real(kind_8) (*p_gprimd)[3][3], integer(kind_4) *p_nsym, r
       v12 = 9 * isym - 13;
       for ( k = 1; k <= 3; ++k )
       {
-        for ( l = 1; l <= 3; ++l )
-          *((double *)p_symcart + 3 * k + l + v12) = rsymcart[k - 1][l - 1];
+        for ( m = 1; m <= 3; ++m )
+          *((double *)p_symcart + 3 * k + m + v12) = rsymcart[k - 1][m - 1];
       }
     }
     while ( isym++ != v10 );
@@ -14740,7 +14787,17 @@ void __cdecl mvrecord(integer(kind_4) *p_ierr, integer(kind_4) *p_nrec, integer(
 // 8048D30: using guessed type int __cdecl _gfortran_st_read(_DWORD);
 
 //----- (0806D2A0) --------------------------------------------------------
-void __cdecl print_ij(real(kind_8) (*p_a_ij)[], integer(kind_4) *p_adim, integer(kind_4) *p_ndim, integer(kind_4) *p_opt_io, integer(kind_4) *p_opt_l, integer(kind_4) (*p_opt_l_index)[], integer(kind_4) *p_opt_pack, integer(kind_4) (*p_pack2ij)[], real(kind_8) *p_test_value, integer(kind_4) *p_unt)
+void __cdecl print_ij(
+        real(kind_8) (*p_a_ij)[],
+        integer(kind_4) *p_adim,
+        integer(kind_4) *p_ndim,
+        integer(kind_4) *p_opt_io,
+        integer(kind_4) *p_opt_l,
+        integer(kind_4) (*p_opt_l_index)[],
+        integer(kind_4) *p_opt_pack,
+        integer(kind_4) (*p_pack2ij)[],
+        real(kind_8) *p_test_value,
+        integer(kind_4) *p_unt)
 {
   int v10; // edx
   integer(kind_4) v11; // eax
@@ -14768,12 +14825,12 @@ void __cdecl print_ij(real(kind_8) (*p_a_ij)[], integer(kind_4) *p_adim, integer
   int k; // ebx
   int v37; // edi
   int v38; // esi
-  int l; // edx
+  int m; // edx
   integer(kind_4) v40; // ebx
   integer(kind_4) v42; // ebx
   integer(kind_4) v44; // ebx
-  integer(kind_4) m; // ecx
-  integer(kind_4) n; // edx
+  integer(kind_4) n; // ecx
+  integer(kind_4) ii; // edx
   int v47; // [esp+60h] [ebp-458h]
   integer(kind_4) v48; // [esp+64h] [ebp-454h]
   int v49; // [esp+68h] [ebp-450h]
@@ -14963,7 +15020,6 @@ LABEL_57:
             *((double *)v72 + jlmn1 * v78 + ilmn1 * v75 + v73) = *((double *)v72 + ilmn1 * v78 + jlmn1 * v75 + v73);
             goto LABEL_58;
           }
-          continue;
         }
       }
       else
@@ -14996,8 +15052,8 @@ LABEL_59:
     {
       v37 = k * v78 + v56;
       v38 = k * v78 + v51;
-      for ( l = v55; l <= v54; ++l )
-        v52[v38 + v58 * l] = v57[v37 + l * v59] * 27.2113845;
+      for ( m = v55; m <= v54; ++m )
+        v52[v38 + v58 * m] = v57[v37 + m * v59] * 27.2113845;
     }
   }
   if ( *p_ndim > 12 && *p_opt_l < 0 )
@@ -15091,11 +15147,11 @@ LABEL_59:
       testval = testval * 27.2113845;
     nhigh = 0;
     v44 = 0;
-    for ( m = v79; m <= v80; ++m )
+    for ( n = v79; n <= v80; ++n )
     {
-      for ( n = v76; n <= v77; ++n )
+      for ( ii = v76; ii <= v77; ++ii )
       {
-        if ( fabs(*((double *)v72 + m * v78 + v73 + n * v75)) >= testval )
+        if ( fabs(*((double *)v72 + n * v78 + v73 + ii * v75)) >= testval )
           ++v44;
       }
     }
@@ -15147,8 +15203,8 @@ LABEL_59:
   if ( ptr )
     free(ptr);
 }
-// 806D4BD: conditional instruction was optimized away because of '%var_274.4==0'
-// 806D5B9: conditional instruction was optimized away because of '%ptr.4==0'
+// 806D4BD: conditional instruction was optimized away because %var_274.4==0
+// 806D5B9: conditional instruction was optimized away because %ptr.4==0
 // 8048B10: using guessed type int __cdecl _gfortran_os_error(_DWORD);
 // 8048B50: using guessed type int __cdecl _gfortran_st_write_done(_DWORD);
 // 8048BD0: using guessed type int __cdecl _gfortran_transfer_array(_DWORD, _DWORD, _DWORD, _DWORD);
@@ -15160,7 +15216,12 @@ LABEL_59:
 // 8048D50: using guessed type int __cdecl _gfortran_transfer_real(_DWORD, _DWORD, _DWORD);
 
 //----- (0806E304) --------------------------------------------------------
-void __cdecl herald(char (*p_code_name)[24], char (*p_code_version)[6], integer(kind_4) *p_iout, const integer(kind_4) _code_name, const integer(kind_4) _code_version)
+void __cdecl herald(
+        char (*p_code_name)[24],
+        char (*p_code_version)[6],
+        integer(kind_4) *p_iout,
+        const integer(kind_4) _code_name,
+        const integer(kind_4) _code_version)
 {
   _BOOL4 v5; // ebx
   _BOOL4 v6; // ebx
@@ -15540,6 +15601,9 @@ void __cdecl timab(integer(kind_4) *p_nn, integer(kind_4) *p_option, real(kind_8
 // 8048CC0: using guessed type int __cdecl _gfortran_transfer_character(_DWORD, _DWORD, _DWORD);
 // 8048CD0: using guessed type int __cdecl _gfortran_st_write(_DWORD);
 // 80761C0: using guessed type int _defs_time_MOD_timopt;
+// 8076200: using guessed type double _defs_time_MOD_acctim[1200];
+// 8078780: using guessed type int _defs_time_MOD_ncount[600];
+// 80790E0: using guessed type double _defs_time_MOD_tzero[1198];
 
 //----- (0806F560) --------------------------------------------------------
 void __cdecl timein(real(kind_8) *p_cpu, real(kind_8) *p_wall)
@@ -15631,7 +15695,12 @@ void __cdecl timein(real(kind_8) *p_cpu, real(kind_8) *p_wall)
 // 8048CD0: using guessed type int __cdecl _gfortran_st_write(_DWORD);
 
 //----- (0806F9A4) --------------------------------------------------------
-void __cdecl wrtout(integer(kind_4) *p_unit, char (*p_message)[500], char (*p_mode_paral)[4], const integer(kind_4) _message, const integer(kind_4) _mode_paral)
+void __cdecl wrtout(
+        integer(kind_4) *p_unit,
+        char (*p_message)[500],
+        char (*p_mode_paral)[4],
+        const integer(kind_4) _message,
+        const integer(kind_4) _mode_paral)
 {
   signed int v5; // ebx
   signed int v6; // ebx
@@ -15941,6 +16010,7 @@ void __cdecl wrtout(integer(kind_4) *p_unit, char (*p_message)[500], char (*p_mo
 // 8048CD0: using guessed type int __cdecl _gfortran_st_write(_DWORD);
 // 8048D00: using guessed type int __cdecl _gfortran_string_index(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 // 8048D70: using guessed type int __cdecl _gfortran_compare_string(_DWORD, _DWORD, _DWORD, _DWORD);
+// 806F9A4: using guessed type int var_418;
 
 //----- (08070748) --------------------------------------------------------
 void leave_myproc()
@@ -15949,12 +16019,12 @@ void leave_myproc()
   int v1; // [esp+18h] [ebp-100h]
   const char *v2; // [esp+1Ch] [ebp-FCh]
   int v3; // [esp+20h] [ebp-F8h]
-  logical(kind_4) *v4; // [esp+34h] [ebp-E4h]
+  logical(kind_4) *p_testopen; // [esp+34h] [ebp-E4h]
   logical(kind_4) testopen; // [esp+10Ch] [ebp-Ch] BYREF
 
   v2 = "leave_myproc.F90";
   v3 = 56;
-  v4 = &testopen;
+  p_testopen = &testopen;
   v0 = 256;
   v1 = 7;
   _gfortran_st_inquire(&v0);
@@ -15988,45 +16058,5 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 // 8048C00: using guessed type int __cdecl _gfortran_set_args(_DWORD, _DWORD);
 // 8048D90: using guessed type int __cdecl _gfortran_store_exe_path(_DWORD);
 
-//----- (08070820) --------------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (08070830) --------------------------------------------------------
-void _libc_csu_init(void)
-{
-  init_proc();
-}
-
-//----- (08070890) --------------------------------------------------------
-void (*_do_global_ctors_aux())(void)
-{
-  void (*result)(void); // eax
-  void (**v1)(void); // ebx
-
-  result = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    v1 = (void (**)(void))&_CTOR_LIST__;
-    do
-    {
-      --v1;
-      result();
-      result = *v1;
-    }
-    while ( *v1 != (void (*)(void))-1 );
-  }
-  return result;
-}
-// 8075EEC: using guessed type int _CTOR_LIST__;
-
-//----- (080708BC) --------------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=125 queued=42 decompiled=42 lumina nreq=0 worse=0 better=0
-// ALL OK, 42 function(s) have been successfully decompiled
+// nfuncs=125 queued=34 decompiled=34 lumina nreq=0 worse=0 better=0
+// ALL OK, 34 function(s) have been successfully decompiled

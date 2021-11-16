@@ -10,25 +10,13 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8048300();
 // int printf(const char *format, ...);
 // void *malloc(size_t size);
-// int __gmon_start__(void); weak
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int rand(void);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _x86_get_pc_thunk_bx();
-// int deregister_tm_clones();
-// int register_tm_clones();
-// int _do_global_dtors_aux();
-// int frame_dummy();
-_DWORD **__cdecl insert(_DWORD **a1, _DWORD *a2);
-int __cdecl printout(_DWORD *a1);
+_DWORD **__cdecl insert(_DWORD **, _DWORD *);
+int __cdecl printout(_DWORD *);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void _libc_csu_init(void); idb
-// void _libc_csu_fini(void); idb
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -54,11 +42,11 @@ _DWORD **__cdecl insert(_DWORD **a1, _DWORD *a2)
     {
       result = (_DWORD **)**a1;
       if ( *a2 > (int)result )
-        result = insert((_DWORD **)*a1 + 1, a2);
+        return insert((_DWORD **)*a1 + 1, a2);
     }
     else
     {
-      result = insert((_DWORD **)*a1 + 2, a2);
+      return insert((_DWORD **)*a1 + 2, a2);
     }
   }
   else
@@ -79,7 +67,7 @@ int __cdecl printout(_DWORD *a1)
   printf("%d\n", *a1);
   result = a1[1];
   if ( result )
-    result = printout((_DWORD *)a1[1]);
+    return printout((_DWORD *)a1[1]);
   return result;
 }
 

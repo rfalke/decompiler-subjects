@@ -10,21 +10,11 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int __fastcall init_proc(int a1, int a2);
 int sub_80482B4();
 // int scanf(const char *format, ...);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int printf(const char *format, ...);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// int __fastcall call_gmon_start(int a1, int a2);
-// void _do_global_dtors_aux();
-// int frame_dummy();
-// _DWORD *__userpurge twofib@<eax>(_DWORD *a1, int a2);
+// _DWORD *__userpurge twofib@<eax>(_DWORD *, int);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall _libc_csu_init(int a1, int a2);
-// void _libc_csu_fini(void); idb
-// int __fastcall _do_global_ctors_aux(int a1, int a2);
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -79,6 +69,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   printf("Fibonacci of %d is %d\n", v6, v5[0]);
   return 0;
 }
+// 80483F5: using guessed type int var_10[3];
 
 // nfuncs=18 queued=3 decompiled=3 lumina nreq=0 worse=0 better=0
 // ALL OK, 3 function(s) have been successfully decompiled

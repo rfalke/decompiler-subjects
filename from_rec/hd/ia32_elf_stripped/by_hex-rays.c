@@ -26,10 +26,10 @@ void sub_80484A8();
 // size_t strlen(const char *s);
 void __noreturn start(); // weak
 int sub_8048620();
-int __cdecl sub_8048660(int a1, int a2, int a3);
+int __cdecl sub_8048660(int, int, int);
 int __cdecl sub_80487F0(char *s); // idb
-int __cdecl sub_80488E0(int a1, int a2);
-int __cdecl sub_8048950(int a1, int a2);
+int __cdecl sub_80488E0(int, int);
+int __cdecl sub_8048950(int, int);
 int sub_8048980();
 // void term_proc(void); idb
 
@@ -132,11 +132,11 @@ int __cdecl sub_8048660(int a1, int a2, int a3)
   strcpy(&s[v6 + j], "|");
   return printf("%s\n", s);
 }
+// 8048660: using guessed type char s[80];
 
 //----- (080487F0) --------------------------------------------------------
 int __cdecl sub_80487F0(char *s)
 {
-  int result; // eax
   int v2; // [esp+0h] [ebp-5Ch]
   char v3[20]; // [esp+4h] [ebp-58h] BYREF
   unsigned int v4; // [esp+18h] [ebp-44h]
@@ -154,15 +154,15 @@ int __cdecl sub_80487F0(char *s)
       sub_8048660((int)ptr, i, v2);
     }
     fclose(stream);
-    result = 0;
+    return 0;
   }
   else
   {
     perror(s);
-    result = 1;
+    return 1;
   }
-  return result;
 }
+// 80487F0: using guessed type char var_58[20];
 
 //----- (080488E0) --------------------------------------------------------
 int __cdecl sub_80488E0(int a1, int a2)

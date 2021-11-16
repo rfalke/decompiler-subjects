@@ -10,60 +10,48 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8048330();
 // time_t time(time_t *timer);
 // int puts(const char *s);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int putchar(int c);
 // int rand(void);
-// int _gmon_start__(void); weak
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _x86_get_pc_thunk_bx();
-// int deregister_tm_clones();
-// int register_tm_clones();
-// int _do_global_dtors_aux();
-// int frame_dummy();
-int __cdecl basic_1_if(int a1);
-int __cdecl basic_2_if_else(int a1);
-int __cdecl basic_3_if_elseif(int a1);
-int __cdecl basic_4_if_elseif_else(int a1);
+int __cdecl basic_1_if(int);
+int __cdecl basic_2_if_else(int);
+int __cdecl basic_3_if_elseif(int);
+int __cdecl basic_4_if_elseif_else(int);
 int basic_7_for_loop();
-int __cdecl intermediate_1_short_circuit_and(int a1, int a2);
-int __cdecl intermediate_2_short_circuit_or(int a1, int a2);
-int __cdecl intermediate_10_loop_with_one_break(int a1);
-int __cdecl intermediate_11_loop_with_two_breaks(int a1);
-int __cdecl intermediate_12_loop_with_break_and_block(int a1);
-int __cdecl intermediate_13_loop_with_one_continue(int a1);
-int __cdecl intermediate_14_loop_with_two_continues(int a1);
-int __cdecl intermediate_15_loop_with_continue_and_block(int a1);
-int __cdecl intermediate_16_loop_with_breaks_and_continues(int a1);
-int __cdecl intermediate_20_nested_loops(int a1);
-int __cdecl intermediate_30_switch_case(int a1);
+int __cdecl intermediate_1_short_circuit_and(int, int);
+int __cdecl intermediate_2_short_circuit_or(int, int);
+int __cdecl intermediate_10_loop_with_one_break(int);
+int __cdecl intermediate_11_loop_with_two_breaks(int);
+int __cdecl intermediate_12_loop_with_break_and_block(int);
+int __cdecl intermediate_13_loop_with_one_continue(int);
+int __cdecl intermediate_14_loop_with_two_continues(int);
+int __cdecl intermediate_15_loop_with_continue_and_block(int);
+int __cdecl intermediate_16_loop_with_breaks_and_continues(int);
+int __cdecl intermediate_20_nested_loops(int);
+int __cdecl intermediate_30_switch_case(int);
 int sub_8048B50();
 int def_8048B20();
-int __cdecl advanced_1_loop_with_multiple_entries(int a1);
-int __cdecl advanced_2_loop_with_multiple_exits(int a1);
-int __cdecl advanced_10_irreducible(int a1);
-int __cdecl advanced_11_nested_loops_complex_condition(int a1);
-int __cdecl advanced_12_nested_if_in_loop(int a1);
-int __cdecl advanced_20_jump_table_on_stack(unsigned int a1);
+int __cdecl advanced_1_loop_with_multiple_entries(int);
+int __cdecl advanced_2_loop_with_multiple_exits(int);
+int __cdecl advanced_10_irreducible(int);
+int __cdecl advanced_11_nested_loops_complex_condition(int);
+int __cdecl advanced_12_nested_if_in_loop(int);
+int __cdecl advanced_20_jump_table_on_stack(unsigned int);
 int sub_8048F90();
 int sub_8048FB0();
 int sub_8048FD0();
 int sub_8048FF0();
 int sub_8049010();
 int sub_8049030();
-int __cdecl advanced_21_computed_jumps(unsigned int a1);
-int __cdecl basic_5_head_controlled_loop(int a1);
-int __cdecl basic_6_tail_controlled_loop(int a1);
-int __cdecl basic_8_forever_loop(int a1);
+int __cdecl advanced_21_computed_jumps(unsigned int);
+int __cdecl basic_5_head_controlled_loop(int);
+int __cdecl basic_6_tail_controlled_loop(int);
+int __cdecl basic_8_forever_loop(int);
 int basic_9_dead_block();
 void __noreturn intermediate_17_forever_loop_with_extra_statement();
-// void _libc_csu_init(void); idb
-// void _libc_csu_fini(void); idb
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -426,7 +414,6 @@ LABEL_4:
 int __cdecl advanced_2_loop_with_multiple_exits(int a1)
 {
   int v1; // ebx
-  int result; // eax
 
   v1 = a1;
   if ( a1 > 0 )
@@ -446,15 +433,14 @@ int __cdecl advanced_2_loop_with_multiple_exits(int a1)
         goto LABEL_7;
     }
     puts("took exit 2");
-    result = 0;
+    return 0;
   }
   else
   {
 LABEL_7:
     puts("normal exit");
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (08048D30) --------------------------------------------------------
@@ -602,13 +588,12 @@ int sub_8049030()
 int __cdecl advanced_21_computed_jumps(unsigned int a1)
 {
   int v1; // eax
-  int result; // eax
 
   puts("start");
   if ( a1 > 2 )
   {
     puts("is something else");
-    result = 0;
+    return 0;
   }
   else
   {
@@ -620,9 +605,8 @@ int __cdecl advanced_21_computed_jumps(unsigned int a1)
       __asm { jmp     eax }
     }
     puts("is 0");
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (08049110) --------------------------------------------------------

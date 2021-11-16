@@ -10,16 +10,9 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// __int64 (**init_proc())(void);
 __int64 __fastcall sub_401020(); // weak
 // void __noreturn __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// void dl_relocate_static_pie();
-// void *deregister_tm_clones();
-// __int64 register_tm_clones();
-// void *_do_global_dtors_aux();
-// __int64 frame_dummy();
 unsigned __int64 log_size_7_var_000();
 unsigned __int64 __fastcall log_size_7_var_001();
 unsigned __int64 log_size_7_var_002();
@@ -30,11 +23,6 @@ __int64 log_size_7_var_006();
 unsigned __int64 log_size_7_var_007();
 __int64 log_size_7_var_008();
 unsigned __int64 log_size_7_var_009();
-// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-// void _libc_csu_fini(void); idb
-// void term_proc();
-// int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -83,9 +71,9 @@ unsigned __int64 log_size_7_var_000()
   int v0; // eax
   unsigned int v2; // esi
   __int128 v8; // rt0
-  int v12; // er14
-  unsigned int v13; // er13
-  __int64 v14; // rsi
+  int v11; // er14
+  unsigned int v12; // er13
+  __int64 v13; // rsi
   __int16 v15; // t1
   int v16; // er12
   int v17; // eax
@@ -139,36 +127,36 @@ unsigned __int64 log_size_7_var_000()
     rcr     r10w, 42h
   }
   LOWORD(v2) = __ROR2__(-31088, 228);
-  _EAX = __ROL4__(v0, 1);
   v16 = (int)_R12 >> 30;
-  v12 = 2004338686;
-  v14 = _byteswap_ulong(v2);
-  LOBYTE(v12) = -2 - _R10;
-  HIWORD(v13) = 9314;
-  LOWORD(v14) = __ROR2__(v14, 32);
+  v11 = 2004338686;
+  v13 = _byteswap_ulong(v2);
+  LOBYTE(v11) = -2 - _R10;
+  HIWORD(v12) = 9314;
+  LOWORD(v13) = __ROR2__(v13, 32);
   LOWORD(_R10) = (_WORD)_R10 << 7;
-  *(_QWORD *)&v8 = 610408736LL;
+  _EAX = __ROL4__(v0, 1);
   __asm { rcl     ax, 1 }
   v15 = _EAX;
   LOWORD(_EAX) = 6432;
-  LOWORD(v13) = v15;
+  LOWORD(v12) = v15;
   _BitScanForward((unsigned __int16 *)&v16, 0x909u);
-  v13 |= 0xC0000000;
-  v17 = (_EAX | 0x1080090900000000uLL) / v13;
-  _R14 = (unsigned int)(v12 + 1);
+  v12 |= 0xC0000000;
+  v17 = (_EAX | 0x1080090900000000uLL) / v12;
+  _R14 = (unsigned int)(v11 + 1);
   v23 = (unsigned int)__ROR4__(493235269, 32);
-  v18 = (unsigned int)v14 | -(int)__ROL8__(0x3809DDC6059D31CDLL, 32);
+  v18 = (unsigned int)v13 | -(int)__ROL8__(0x3809DDC6059D31CDLL, 32);
   LOBYTE(_RCX) = 32 - BYTE1(v17);
   v20 = (unsigned __int64)((int)v23 * (__int64)v17) >> 32;
   v28 = (unsigned int)(v23 * v17);
-  v21 = v13 - ((v20 != 0) + (_DWORD)_R14);
+  v21 = v12 - ((v20 != 0) + (_DWORD)_R14);
   v24 = 0xC8A24B3334E02DBELL << _RCX;
+  *(_QWORD *)&v8 = 610404640LL;
   *((_QWORD *)&v8 + 1) = 0x729C58B9A0E71D99LL;
   v22 = v8 >> 23;
   LOBYTE(v24) = (0xC8A24B3334E02DBELL << _RCX) + v28;
   LOBYTE(v28) = 0xC8A24B3334E02DBELL << _RCX;
   __asm { rcr     r14d, cl }
-  LOWORD(v23) = v23 & ~(1 << v16);
+  LOWORD(v23) = v23 & ~(1 << (v16 & 0xF));
   WORD1(v8) = v24;
   LOWORD(v8) = _R10;
   LOWORD(v24) = (unsigned int)v8 >> 15;
@@ -218,7 +206,7 @@ unsigned __int64 log_size_7_var_000()
   v40 = v41 / 0xF29C58B9A0E71D99LL;
   HIDWORD(v42) = -1595466343;
   LODWORD(v42) = v41 / 0xF29C58B9A0E71D99LL;
-  LOWORD(v14) = __ROL2__(v14, 1);
+  LOWORD(v13) = __ROL2__(v13, 1);
   LOBYTE(v34) = v42 >> 11;
   LOWORD(v40) = v40 & 0x9B0E;
   return v18
@@ -229,7 +217,7 @@ unsigned __int64 log_size_7_var_000()
        + (int)(v42 >> 11)
        + v34
        + (v37 >> 61)
-       + v14
+       + v13
        + v25
        + v41 % 0xF29C58B9A0E71D99LL
        + v38
@@ -292,7 +280,7 @@ unsigned __int64 __fastcall log_size_7_var_001()
   LOWORD(v4) = (unsigned __int8)((unsigned __int16)(v5 / 0xF4A83ABCF2A32B46LL) >> 8) * (unsigned __int8)v4;
   v4 >>= 14;
   BYTE1(v1) = __ROL1__(65, 46);
-  HIWORD(_EBP) = -6694;
+  _EBP = -438666698;
   HIBYTE(v14) = v0;
   v12 = 0xA5B2374C8940F18ALL;
   LOWORD(v8) = __ROR2__(28837, 1);
@@ -317,7 +305,7 @@ unsigned __int64 __fastcall log_size_7_var_001()
   _RBX = v18 >> 20;
   LOWORD(_RCX) = __ROL2__(_RCX, _RCX);
   v24 = __ROR8__(0xF4A83ABCF2A32B00LL, 12);
-  LOWORD(_EBP) = ~(1 << v16) & 0x7A36;
+  LOWORD(_EBP) = ~(1 << (v16 & 0xF)) & 0x7A36;
   v25 = v16 & 0xA5219962;
   if ( !v25 )
     _EBP = _RCX;
@@ -417,26 +405,24 @@ unsigned __int64 log_size_7_var_002()
   __int128 v3; // rt0
   __int64 v4; // rdi
   unsigned int v6; // er14
-  __int16 v7; // r9
-  __int64 v8; // r13
-  unsigned int v10; // et1
-  bool v15; // of
-  __int64 v16; // rsi
-  unsigned __int8 v17; // cf
-  __int64 v19; // rax
-  __int64 v20; // r15
-  int v21; // ebx
-  __int64 v22; // r9
-  unsigned __int64 v23; // rbp
-  int v24; // ebp
-  int v25; // ebx
-  unsigned __int64 v28; // rdi
-  unsigned __int64 v29; // r10
-  unsigned __int64 v30; // rax
-  unsigned __int64 v31; // rdx
-  unsigned __int128 v32; // rtt
-  unsigned __int64 v33; // r14
-  __int64 v34; // rbp
+  __int64 v7; // r13
+  unsigned int v9; // et1
+  bool v14; // of
+  __int64 v15; // rsi
+  __int64 v17; // rax
+  __int64 v18; // r15
+  int v19; // ebx
+  __int64 v20; // r9
+  unsigned __int64 v21; // rbp
+  int v23; // ebp
+  int v24; // ebx
+  unsigned __int64 v27; // rdi
+  unsigned __int64 v28; // r10
+  unsigned __int64 v29; // rax
+  unsigned __int64 v30; // rdx
+  unsigned __int128 v31; // rtt
+  unsigned __int64 v32; // r14
+  __int64 v33; // rbp
 
   _RCX = 0x8DA8492C704BE801LL;
   LODWORD(_R10) = 644169044;
@@ -448,96 +434,93 @@ unsigned __int64 log_size_7_var_002()
   v2 = v3 >> 60;
   _ER15 = -1741592311;
   __asm { rcl     r15w, 1 }
-  v16 = 4182149188LL;
+  v15 = 4182149188LL;
   LOBYTE(v0) = __ROL1__(-4, 217);
   v4 = -3631689054LL;
   LOWORD(_ER15) = _ER15 + 1;
   v6 = __ROL4__(v0, 102);
   _BitScanReverse64((unsigned __int64 *)&_R10, v6);
-  v7 = -15299;
-  v10 = v6;
+  v9 = v6;
   _ER14 = v6 - 2074347748;
-  v8 = v10;
+  v7 = v9;
   LOWORD(_R10) = 2 * _R10;
-  _RDX = 1900798494LL;
+  _RDX = 1900798478LL;
   __asm
   {
     rcl     ch, 1
     rcl     rdx, cl
   }
-  LOBYTE(v16) = __ROR1__(68, 1);
-  if ( !v15 )
+  LOBYTE(v15) = __ROR1__(68, 1);
+  if ( !v14 )
     _ER15 = 192832123;
-  v17 = _bittestandset(&v7, 0x55u);
-  LOBYTE(v4) = -94 - (v17 - 23);
+  LOBYTE(v4) = -71;
   __asm { rcl     edx, 0AFh }
-  _R13 = v8 | 0x5EEF81E;
+  _R13 = v7 | 0x5EEF81E;
   __asm { rcr     r11w, 79h }
-  v19 = _ER15 & 0xFFFFFFD5;
-  v20 = 38575LL;
-  v21 = v19;
-  v22 = (unsigned __int8)_R13 + 807390255LL;
-  if ( !((v22 < 0) ^ (__OFADD__(1LL, (unsigned __int8)_R13) | __OFADD__(807390254LL, (unsigned __int8)_R13 + 1LL)) | ((unsigned __int8)_R13 == -807390255LL)) )
+  v17 = _ER15 & 0xFFFFFFD5;
+  v18 = 38575LL;
+  v19 = v17;
+  v20 = (unsigned __int8)_R13 + 807390255LL;
+  if ( !((v20 < 0) ^ (__OFADD__(1LL, (unsigned __int8)_R13) | __OFADD__(807390254LL, (unsigned __int8)_R13 + 1LL)) | ((unsigned __int8)_R13 == -807390255LL)) )
     _RCX = v4;
-  v23 = 0x9DBFBB661F2A054BLL;
-  LOBYTE(v19) = 0;
+  v21 = 0x9DBFBB661F2A054BLL;
+  LOBYTE(v17) = 0;
   __asm { rcl     r13w, cl }
-  v17 = _bittestandcomplement(&v21, _ER14);
-  if ( !v17 )
-    v2 = (unsigned int)v16;
+  if ( !_bittestandcomplement(&v19, _ER14) )
+    v2 = (unsigned int)v15;
   LOWORD(v2) = v2 - 1;
-  LOBYTE(v23) = 76;
-  BYTE1(v19) = -38;
-  v15 = __OFSUB__(v23, _R13);
-  v24 = v23 - _R13;
-  if ( v15 )
+  LOBYTE(v21) = 76;
+  BYTE1(v17) = -38;
+  v14 = __OFSUB__(v21, _R13);
+  v23 = v21 - _R13;
+  if ( v14 )
     LOWORD(_ER14) = _RCX;
-  v25 = v21 - 1159361043;
-  if ( v25 >= 0 )
-    LOWORD(_ER14) = v25;
+  v24 = v19 - 1159361043;
+  if ( v24 >= 0 )
+    LOWORD(_ER14) = v24;
   __asm
   {
     rcl     r14d, 1
     rcl     rdx, 1
   }
-  LOWORD(v24) = _R13 & (v24 - 5400);
-  if ( (__int16)v24 <= 0 )
-    _R11 = (unsigned int)v19;
-  v28 = (v4 << _RCX) | ((v22 & 0xFFFFFFFF9197F1B9LL) >> (64 - (unsigned __int8)_RCX));
-  v29 = _R10 | 0xC000000000000000LL;
-  *(_QWORD *)&v32 = v19;
-  *((_QWORD *)&v32 + 1) = _RDX & 0x3FFFFFFFFFFFFFFFLL;
-  v30 = v32 / v29;
-  v31 = v32 % v29;
-  LODWORD(v29) = v29 ^ 0x8000;
-  _BitScanForward64(&v33, _R11);
-  BYTE1(v30) ^= v30;
-  BYTE1(v31) = v30 | (BYTE1(v25) + BYTE1(v31));
-  v34 = (unsigned int)__ROL4__(v24 + 1317972578, 167);
-  LOWORD(v20) = -26962;
-  LOBYTE(v34) = v34 - 1;
+  LOWORD(v23) = _R13 & (v23 - 5400);
+  if ( (__int16)v23 <= 0 )
+    _R11 = (unsigned int)v17;
+  v27 = (v4 << _RCX) | ((v20 & 0xFFFFFFFF9197F1B9LL) >> (64 - (unsigned __int8)_RCX));
+  v28 = _R10 | 0xC000000000000000LL;
+  *(_QWORD *)&v31 = v17;
+  *((_QWORD *)&v31 + 1) = _RDX & 0x3FFFFFFFFFFFFFFFLL;
+  v29 = v31 / v28;
+  v30 = v31 % v28;
+  LODWORD(v28) = v28 ^ 0x8000;
+  _BitScanForward64(&v32, _R11);
+  BYTE1(v29) ^= v29;
+  BYTE1(v30) = v29 | (BYTE1(v24) + BYTE1(v30));
+  v33 = (unsigned int)__ROL4__(v23 + 1317972578, 167);
+  LOWORD(v18) = -26962;
+  LOBYTE(v33) = v33 - 1;
   LOWORD(_RCX) = -1;
-  LOWORD(v32) = v28;
-  LOWORD(v28) = v28 + v29;
-  LOWORD(v29) = v32;
-  return v20
-       + -1501704645LL * v33
+  LOWORD(v31) = v27;
+  LOWORD(v27) = v27 + v28;
+  LOWORD(v28) = v31;
+  return v18
+       + -1501704645LL * v32
        + _R13
        + v2
-       + v29
-       + (unsigned int)__ROL4__(v22 & 0x9197F1B9, 1)
        + v28
-       + v16
-       + v34
-       + v31
-       + _RCX
-       + (unsigned int)v25
+       + (unsigned int)__ROL4__(v20 & 0x9197F1B9, 1)
+       + v27
+       + v15
+       + v33
        + v30
+       + _RCX
+       + (unsigned int)v24
+       + v29
        + 0x3FFFFFFFFFFFFFFFLL
        - _R11
        + 0xE00008FCDF080FCLL;
 }
-// 4018B2: variable 'v15' is possibly undefined
+// 4018B2: variable 'v14' is possibly undefined
 
 //----- (0000000000401A12) ----------------------------------------------------
 __int64 log_size_7_var_003()
@@ -595,7 +578,7 @@ __int64 log_size_7_var_003()
     rcl     ch, 1
     rcr     r14, cl
   }
-  LOWORD(v7) = 15628;
+  LOWORD(v7) = 15756;
   *((_QWORD *)&_RT0 + 1) = 0x728ED4D37E6C3D0CLL;
   *(_QWORD *)&_RT0 = 0xECA4E000C3AEAFACLL;
   v15 = _RT0 >> 20;
@@ -668,7 +651,7 @@ __int64 log_size_7_var_003()
        + v38
        - 0x7E9A80F2EB9315CLL;
 }
-// 401C39: conditional instruction was optimized away because of 'bl.1>=F2u'
+// 401C39: conditional instruction was optimized away because bl.1>=F2u
 
 //----- (0000000000401CCE) ----------------------------------------------------
 unsigned __int64 log_size_7_var_004()
@@ -713,7 +696,7 @@ unsigned __int64 log_size_7_var_004()
   _RSI = 36278LL;
   _R14 = (unsigned int)((_ER14 - 1686935148) >> _RCX);
   LOBYTE(_RCX) = _RCX & 0xF;
-  HIWORD(v19) = 29278;
+  v19 = 1918827273;
   __asm { cmpxchg bl, sil }
   LOBYTE(v2) = -45 - BYTE1(_RCX);
   __asm
@@ -741,7 +724,7 @@ unsigned __int64 log_size_7_var_004()
   LOBYTE(_RAX) = _RAX + 31;
   LOBYTE(v10) = __ROR1__(v10, 54);
   LOWORD(_R8) = _R8 + 1;
-  _R13 = v19 & 0x378AB69C;
+  _R13 = v19 & 0x378AB68C;
   LOWORD(_RBX) = _RBX + 19360;
   v20 = (unsigned int)__ROL4__(_R14, 255);
   v15 = v10 ^ _RBX;
@@ -1134,15 +1117,15 @@ unsigned __int64 log_size_7_var_007()
   signed int v13; // er10
   unsigned __int64 v14; // r14
   unsigned __int64 v15; // r15
-  unsigned __int64 v16; // rdi
-  bool v17; // cc
-  __int64 v18; // r8
-  signed int v20; // eax
-  __int128 v21; // rt0
-  __int64 v22; // r14
-  __int64 v23; // kr08_8
-  __int64 v24; // rax
-  bool v25; // cf
+  bool v16; // cf
+  unsigned __int64 v17; // rdi
+  bool v18; // cc
+  __int64 v19; // r8
+  signed int v21; // eax
+  __int128 v22; // rt0
+  __int64 v23; // r14
+  __int64 v24; // kr08_8
+  __int64 v25; // rax
   int v26; // ecx
   __int64 v27; // r10
   __int64 v28; // r11
@@ -1152,7 +1135,7 @@ unsigned __int64 log_size_7_var_007()
   __int64 v32; // rdx
   unsigned int v33; // et0
 
-  v16 = 0xECE25E889D8A3BFBLL;
+  v17 = 0xECE25E889D8A3BFBLL;
   _R9 = 0xA0CEF136D121B358LL;
   v1 = 0x1226DAAD5AC8C5EELL;
   __asm { rcl     r9b, 1 }
@@ -1166,87 +1149,86 @@ unsigned __int64 log_size_7_var_007()
   v6 = v7 >> 1;
   WORD1(v7) = 15355;
   LOWORD(v7) = v6;
-  LOWORD(v16) = (unsigned int)v7 >> 15;
+  LOWORD(v17) = (unsigned int)v7 >> 15;
   v8 = __ROR8__(0x1131D4AD55F49BA0LL, 1);
   v9 = __ROL8__(0x61C33929593117FCLL, 11);
-  v18 = v6 + 0x6C4035AD85204DCDLL;
+  v19 = v6 + 0x6C4035AD85204DCDLL;
   LOWORD(v3) = (unsigned __int16)(v3 - 1466) >> 11;
   v10 = (_R9 >> 11) | 0xF920000000000000LL;
   *((_QWORD *)&v7 + 1) = (unsigned int)__ROR4__(-1589375836, 171);
   *(_QWORD *)&v7 = v10;
   LOWORD(v9) = __ROR2__(v9 - 19780, 230);
   v13 = v3 | 0xB2A556A7;
-  LOBYTE(v16) = __ROR1__(v9 & v16, 1);
-  LOWORD(v16) = v16 | 2;
-  LOWORD(v18) = ((__int16)v18 >> 1) & ~(1 << __ROR8__(0x57800000000F2FEFLL, 239));
-  _CL = v18;
+  LOBYTE(v17) = __ROR1__(v9 & v17, 1);
+  LOWORD(v17) = v17 | 2;
+  LOWORD(v19) = ((__int16)v19 >> 1) & ~(1 << (__ROR8__(0x57800000000F2FEFLL, 239) & 0xF));
+  _CL = v19;
   __asm { cmpxchg cl, cl }
   LOWORD(v13) = v13 - v8;
   LOBYTE(v13) = __ROR1__(v13, 97);
   v14 = v9 & 0xFFFFFFFFFFFFF7FFLL;
-  v15 = ((unsigned int)v10 | ((unsigned int)(v7 >> 63) << _CL) | ((unsigned __int64)(unsigned int)v16 >> (64 - _CL)))
+  v15 = ((unsigned int)v10 | ((unsigned int)(v7 >> 63) << _CL) | ((unsigned __int64)(unsigned int)v17 >> (64 - _CL)))
       - v13;
-  v25 = __CFADD__((_BYTE)v10, (_BYTE)v16);
-  LOBYTE(v16) = v10 + v16;
-  v17 = (__int16)v18 < (__int16)(v25 + (_WORD)v16);
-  LOWORD(v18) = v18 - (v25 + (_WORD)v16);
+  v16 = __CFADD__((_BYTE)v10, (_BYTE)v17);
+  LOBYTE(v17) = v10 + v17;
+  v18 = (__int16)v19 < (__int16)(v16 + (_WORD)v17);
+  LOWORD(v19) = v19 - (v16 + (_WORD)v17);
   __asm { cmpxchg cl, cl }
-  if ( v17 )
+  if ( v18 )
     v14 = 752635220LL;
-  LOBYTE(v18) = v18 & 0xEE;
-  HIWORD(v20) = -1;
+  LOBYTE(v19) = v19 & 0xEE;
+  HIWORD(v21) = -1;
   LOWORD(v5) = __ROL2__(-2258, 1);
-  LOWORD(v20) = -16385 * v10;
-  LODWORD(v18) = v18 & 0xFFFDFFFF;
-  *(_QWORD *)&v21 = v14;
-  *((_QWORD *)&v21 + 1) = 0x1226DAAD5AC8C5EELL;
+  LOWORD(v21) = -16385 * v10;
+  LODWORD(v19) = v19 & 0xFFFDFFFF;
+  *(_QWORD *)&v22 = v14;
+  *((_QWORD *)&v22 + 1) = 0x1226DAAD5AC8C5EELL;
   _BitScanReverse((unsigned __int16 *)&v13, 0xB837u);
-  v22 = (unsigned int)(v21 >> 1) << 16;
+  v23 = (unsigned int)(v22 >> 1) << 16;
   LOWORD(v13) = v13 - 3471;
   LODWORD(v10) = v10 & 0xFFFFFFEF;
-  v23 = v13 * (__int64)v20;
-  is_mul_ok(v13, v20);
+  v24 = v13 * (__int64)v21;
+  is_mul_ok(v13, v21);
   v27 = (unsigned int)((_DWORD)v5 << 29);
-  LODWORD(v5) = v5 ^ (1 << v18);
-  v24 = (unsigned int)v23 - v18;
-  LOWORD(v18) = WORD2(v23) + v18 + 1;
-  v25 = _bittest64((const __int64 *)&v16, 0x8Du);
-  v26 = BYTE4(v23) - (v25 + 1709285823);
+  LODWORD(v5) = v5 ^ (1 << v19);
+  v25 = (unsigned int)v24 - v19;
+  LOWORD(v19) = WORD2(v24) + v19 + 1;
+  v26 = BYTE4(v24) - (((v17 & 0x2000) != 0) + 1709285823);
   LOWORD(v27) = v27 + 1;
-  *((_QWORD *)&v21 + 1) = v8;
-  *(_QWORD *)&v21 = v10;
-  v28 = v21 >> 63;
-  v30 = (unsigned int)(v16 + 17414380);
-  LODWORD(v21) = v10;
-  DWORD1(v21) = v16 + 17414380;
-  v29 = (unsigned int)((unsigned __int64)v21 >> (BYTE4(v23) - (v25 - 65)));
-  LOWORD(v30) = v16 - 18377 + 4118;
+  *((_QWORD *)&v22 + 1) = v8;
+  *(_QWORD *)&v22 = v10;
+  v28 = v22 >> 63;
+  v30 = (unsigned int)(v17 + 17414380);
+  LODWORD(v22) = v10;
+  DWORD1(v22) = v17 + 17414380;
+  v29 = (unsigned int)((unsigned __int64)v22 >> (BYTE4(v24) - (((v17 & 0x2000) != 0) - 65)));
+  LOWORD(v30) = v17 - 18377 + 4118;
   LOWORD(v15) = ~(_WORD)v15;
-  if ( (unsigned __int16)(v16 - 18377 + 181) < 0xF09Fu )
-    v30 = HIDWORD(v23);
-  LOWORD(v16) = v16 ^ (1 << v22);
-  LOBYTE(v26) = BYTE4(v23) - (v25 - 65) - 34;
+  if ( (unsigned __int16)(v17 - 18377 + 181) < 0xF09Fu )
+    v30 = HIDWORD(v24);
+  LOWORD(v17) = v17 ^ (1 << (v23 & 0xF));
+  LOBYTE(v26) = v26 - 34;
   v31 = v29;
   LOBYTE(v29) = v29 - 18;
   LOBYTE(v1) = v31;
-  v32 = ((unsigned __int16)v18 * (unsigned int)(unsigned __int16)(char)v24) >> 16;
-  LOWORD(v24) = v18 * (char)v24;
+  v32 = ((unsigned __int16)v19 * (unsigned int)(unsigned __int16)(char)v25) >> 16;
+  LOWORD(v25) = v19 * (char)v25;
   HIWORD(v33) = v29;
-  LOWORD(v33) = v16;
+  LOWORD(v33) = v17;
   LOWORD(v29) = v33 >> 6;
   return v15
-       + v22
+       + v23
        + v1
        + v28
        + v27
        + v29
-       + v18
-       + v16
+       + v19
+       + v17
        + v5
        + v32
        + (unsigned int)__ROL4__(v26, 135)
        + v30
-       + v24
+       + v25
        - 4277553097LL
        + 0x4A06B06D7DEEFC2ELL
        - 0x5A41BE5174259B33LL;
@@ -1296,7 +1278,7 @@ __int64 log_size_7_var_008()
   LOWORD(v6) = __ROL2__(-3332, 146) - 23016;
   v7 = _RBP + 12;
   _RCX = 8 * _RBP + 288150547;
-  LOWORD(_RAX) = (22913 * _RBP) | (1 << v6);
+  LOWORD(_RAX) = (22913 * _RBP) | (1 << (v6 & 0xF));
   DWORD2(_RAX) = (unsigned __int64)(7579LL * (int)_RAX) >> 32;
   LODWORD(_RAX) = 7579 * _RAX;
   __asm { cmpxchg cl, bpl }
@@ -1320,6 +1302,7 @@ __int64 log_size_7_var_008()
   _R8 = __ROL1__(v7, v15);
   _BitScanForward((unsigned __int16 *)&v17, 0x9CFDu);
   LOWORD(_ER14) = -19419 * (v14 + 1);
+  LOWORD(_RAX) = _RAX & 0xFFDF;
   __asm { rcl     r14d, 1 }
   v19 = (unsigned int)_RAX >> 1;
   v18 = __PAIR64__(_ER14, v19) << v15 >> 32;
@@ -1433,20 +1416,20 @@ unsigned __int64 log_size_7_var_009()
   HIWORD(v7) = _EBX;
   LOWORD(v7) = 30106;
   LOWORD(_EBX) = __ROL2__((unsigned int)(v7 << v16) >> 16, v16);
-  v8 = (0x75E42556AFDA0003LL << v16) | (0x4A5DDEC788FE9B85uLL >> (64 - (unsigned __int8)v16));
+  v8 = (0x75E42556AFDA0003LL << v16) | (0x4A5DDEC788FE9B87uLL >> (64 - (unsigned __int8)v16));
   LOBYTE(_EBX) = __ROR1__(_EBX, 1);
   v13 = ((_DWORD)v8 - 22271) ^ 0xCB61BAu;
   v9 = _EBX | 0xB3CDED8A;
-  v10 = __ROL4__(__ROR8__(v4, 1), 1) - 1996579963;
+  v10 = __ROL4__(__ROR8__(v4, 1), 1) - 1996579961;
   LOWORD(v0) = __ROR2__(v0, 1);
-  v11 = (v0 | 0x88FE9B8500000000LL) >> 37;
+  v11 = (v0 | 0x88FE9B8700000000LL) >> 37;
   LOBYTE(v13) = 2 * ((v8 + 1) ^ 0xBA);
   v18 = (unsigned int)(char)v13;
   v22 = (unsigned int)~v10;
   v12 = (unsigned int)((int)v13 >> 31);
   LOWORD(v12) = (unsigned int)((__int16)v22 * (__int16)v13) >> 16;
   LOWORD(v13) = v22 * v13;
-  v14 = (unsigned int)(((_WORD)v12 != 0) + ((unsigned __int64)(0xB13903C88FE9B85LL << v16) >> 32) + 1364381513);
+  v14 = (unsigned int)(((_WORD)v12 != 0) + ((unsigned __int64)(0xB13903C88FE9B87LL << v16) >> 32) + 1364381513);
   v15 = __ROL4__(_byteswap_uint64(0x35A6CF27529968D0uLL), 225);
   LOWORD(v16) = v16 + 1;
   v17 = (unsigned __int8)v12;

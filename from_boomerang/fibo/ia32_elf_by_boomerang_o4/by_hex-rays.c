@@ -11,21 +11,12 @@
 // Function declarations
 
 void PROCEDURE_LINKAGE_TABLE_();
-// void _cleanup(void); idb
-// int atexit(void (*func)(void));
-// int __fpstart(void); weak
-// void exit(int status);
 // int printf(const char *format, ...);
 // int scanf(const char *format, ...);
-// void __usercall __noreturn start(void (*a1)(void)@<edx>, const char *a2);
-// int *_do_global_dtors_aux();
 void fini_dummy();
-int __cdecl fib(int a1);
+int __cdecl fib(int);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// int *_do_global_ctors_aux();
 void init_dummy();
-// int *init_proc();
-// void term_proc(void); idb
 
 
 //----- (0804866C) --------------------------------------------------------

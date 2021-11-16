@@ -10,20 +10,10 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int init_proc();
 int sub_80482C4();
-// int __gmon_start__(void); weak
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int printf(const char *format, ...);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _do_global_dtors_aux();
-// int frame_dummy();
 void __noreturn forever();
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void _libc_csu_fini(void); idb
-// void _libc_csu_init(void); idb
-// void (*_do_global_ctors_aux())(void);
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations

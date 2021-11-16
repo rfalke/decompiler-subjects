@@ -10,24 +10,13 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// __int64 (**init_proc())(void);
 __int64 __fastcall sub_4003E0(); // weak
 // void *memset(void *s, int c, size_t n);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// signed __int64 deregister_tm_clones();
-// __int64 register_tm_clones();
-// signed __int64 _do_global_dtors_aux();
-// __int64 frame_dummy();
 void __cdecl use(int *x);
 void __cdecl fill(int *dest, int n);
 void __cdecl with_array(int n);
 void __cdecl with_alloca(int n);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-// void _libc_csu_fini(void); idb
-// void term_proc();
-// int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -60,7 +49,7 @@ void __cdecl fill(int *dest, int n)
 void __cdecl with_array(int n)
 {
   void *v1; // rsp
-  _BYTE v2[5]; // [rsp+3h] [rbp-3Dh] BYREF
+  int v2[3]; // [rsp+0h] [rbp-40h] BYREF
   int na; // [rsp+Ch] [rbp-34h]
   int fixed2; // [rsp+18h] [rbp-28h] BYREF
   int fixed1; // [rsp+1Ch] [rbp-24h] BYREF
@@ -71,9 +60,9 @@ void __cdecl with_array(int n)
   fixed1 = 7;
   v7 = n - 1LL;
   v1 = alloca(16 * ((4LL * n + 18) / 0x10uLL));
-  p_dynamic = (int (*)[])(4 * ((unsigned __int64)v2 >> 2));
+  p_dynamic = (int (*)[])v2;
   fixed2 = 8;
-  fill((int *)p_dynamic, n);
+  fill(v2, n);
   use(&fixed1);
   use((int *)p_dynamic);
   use(&fixed2);
@@ -83,7 +72,8 @@ void __cdecl with_array(int n)
 void __cdecl with_alloca(int n)
 {
   void *v1; // rsp
-  int na; // [rsp+Ch] [rbp-14h] BYREF
+  int v2[3]; // [rsp+0h] [rbp-20h] BYREF
+  int na; // [rsp+Ch] [rbp-14h]
   int fixed2; // [rsp+10h] [rbp-10h] BYREF
   int fixed1; // [rsp+14h] [rbp-Ch] BYREF
   int *dynamic; // [rsp+18h] [rbp-8h]
@@ -91,9 +81,9 @@ void __cdecl with_alloca(int n)
   na = n;
   fixed1 = 7;
   v1 = alloca(16 * ((4LL * n + 30) / 0x10uLL));
-  dynamic = (int *)(16 * (((unsigned __int64)&na + 3) >> 4));
+  dynamic = v2;
   fixed2 = 8;
-  fill(dynamic, n);
+  fill(v2, n);
   use(&fixed1);
   use(dynamic);
   use(&fixed2);

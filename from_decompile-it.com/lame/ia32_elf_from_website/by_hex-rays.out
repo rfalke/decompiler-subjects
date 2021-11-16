@@ -1,78 +1,487 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+
+Database SUBJECTS/from_decompile-it.com/lame/ia32_elf_from_website/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
-   540672    66 8192 allocating memory for b-tree...
-   540672    66 8192 allocating memory for virtual array...
+   524288    64 8192 allocating memory for b-tree...
+   311296    38 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  1343488            total memory allocated
+  1097728            total memory allocated
 
-Loading file 'SUBJECTS/from_decompile-it.com/lame/ia32_elf_from_website/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-08059C5C) ... ... OK
-  1. Creating a new segment  (0805AEFC-0805C58C) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (0804A00C-0804A03C) ... ... OK
-  3. Creating a new segment  (0804A03C-08059C5C) ... ... OK
-  4. Creating a new segment  (0804A03C-0804AACC) ... ... OK
-     Deleting segment        (0804AACC-08059C5C) ...
-  4. Creating a new segment  (0804AACC-08059C5C) ... ... OK
-  5. Creating a new segment  (0804AAD0-0805483C) ... ... OK
-  6. Creating a new segment  (0805483C-08059C5C) ... ... OK
-  7. Creating a new segment  (0805483C-08054858) ... ... OK
-     Deleting segment        (08054858-08059C5C) ...
-  7. Creating a new segment  (08054858-08059C5C) ... ... OK
-  8. Creating a new segment  (08054858-08059C58) ... ... OK
-     Deleting segment        (08059C58-08059C5C) ...
-  8. Creating a new segment  (08059C58-08059C5C) ... ... OK
-     Deleting segment        (08059C58-08059C5C) ...
-  8. Creating a new segment  (08059C58-08059C5C) ... ... OK
-  9. Creating a new segment  (0805AEFC-0805AF04) ... ... OK
-     Deleting segment        (0805AF04-0805C58C) ...
-  9. Creating a new segment  (0805AF04-0805C58C) ... ... OK
- 10. Creating a new segment  (0805AF04-0805AF0C) ... ... OK
-     Deleting segment        (0805AF0C-0805C58C) ...
- 10. Creating a new segment  (0805AF0C-0805C58C) ... ... OK
- 11. Creating a new segment  (0805AF0C-0805AF10) ... ... OK
-     Deleting segment        (0805AF10-0805C58C) ...
- 11. Creating a new segment  (0805AF10-0805C58C) ... ... OK
- 12. Creating a new segment  (0805AFF0-0805AFF4) ... ... OK
- 13. Creating a new segment  (0805AFF4-0805C58C) ... ... OK
- 14. Creating a new segment  (0805AFF4-0805B2A0) ... ... OK
-     Deleting segment        (0805B2A0-0805C58C) ...
- 14. Creating a new segment  (0805B2A0-0805C58C) ... ... OK
- 15. Creating a new segment  (0805B2A0-0805B2E0) ... ... OK
-     Deleting segment        (0805B2E0-0805C58C) ...
- 15. Creating a new segment  (0805B2E0-0805C58C) ... ... OK
-     Deleting segment        (0805B2E0-0805C58C) ...
- 15. Creating a new segment  (0805B2E0-0805C58C) ... ... OK
- 16. Creating a new segment  (0805C58C-0805C58D) ... ... OK
- 17. Creating a new segment  (0805C590-0805C834) ... ... OK
- 18. Creating a new segment  (0805C834-0805C874) ... ... OK
-Processing relocations...
-DWARF: File "SUBJECTS/from_decompile-it.com/lame/ia32_elf_from_website/subject.exe" contains DWARF information.
-DWARF: Functions: 114 symbols applied
-DWARF: Globals: 33 symbols applied
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_decompile-it.com/lame/ia32_elf_from_website/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 8 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 0804A00C  LIB  with name '.init_proc'
+  function at 0804A03C       with name 'sub_804A03C'
+  function at 0804A04C       with name '.fileno'
+  function at 0804A05C       with name '.ldexp'
+  function at 0804A06C       with name '.lame_get_in_samplerate'
+  function at 0804A07C       with name '.fputs'
+  function at 0804A08C       with name '.get_lame_version'
+  function at 0804A09C       with name '.sprintf'
+  function at 0804A0AC       with name '.popen'
+  function at 0804A0BC       with name '.lame_set_num_channels'
+  function at 0804A0CC       with name '.id3tag_v1_only'
+  function at 0804A0DC       with name '.id3tag_v2_only'
+  function at 0804A0EC       with name '.id3tag_set_albumart'
+  function at 0804A0FC       with name '.memcmp'
+  function at 0804A10C       with name '.lame_stereo_mode_hist'
+  function at 0804A11C       with name '.lame_get_RadioGain'
+  function at 0804A12C       with name '.lame_set_scale_right'
+  function at 0804A13C       with name '.getchar'
+  function at 0804A14C       with name '.lame_set_decode_only'
+  function at 0804A15C       with name '.lame_bitrate_hist'
+  function at 0804A16C       with name '.lame_get_noclipGainChange'
+  function at 0804A17C       with name '.id3tag_init'
+  function at 0804A18C       with name '.__gmon_start__'
+  function at 0804A19C       with name '.__isoc99_sscanf'
+  function at 0804A1AC       with name '.__xstat64'
+  function at 0804A1BC       with name '.lame_get_id3v2_tag'
+  function at 0804A1CC       with name '.get_lame_os_bitness'
+  function at 0804A1DC       with name '.getenv'
+  function at 0804A1EC       with name '.strncpy'
+  function at 0804A1FC       with name '.lame_set_error_protection'
+  function at 0804A20C       with name '.lame_get_num_samples'
+  function at 0804A21C       with name '.lame_set_debugf'
+  function at 0804A22C       with name '.lame_get_noclipScale'
+  function at 0804A23C       with name '.lame_get_compression_ratio'
+  function at 0804A24C       with name '.lame_get_VBR_max_bitrate_kbps'
+  function at 0804A25C       with name '.memset'
+  function at 0804A26C       with name '.fopen64'
+  function at 0804A27C       with name '.lame_encode_buffer_int'
+  function at 0804A28C       with name '.lame_get_VBR_min_bitrate_kbps'
+  function at 0804A29C       with name '.get_lame_url'
+  function at 0804A2AC       with name '.lame_set_write_id3tag_automatic'
+  function at 0804A2BC  LIB  with name '.__libc_start_main'
+  function at 0804A2CC       with name '.id3tag_set_comment'
+  function at 0804A2DC       with name '.lame_set_decode_on_the_fly'
+  function at 0804A2EC       with name '._IO_getc'
+  function at 0804A2FC       with name '.lame_set_VBR_hard_min'
+  function at 0804A30C       with name '.lame_get_decode_only'
+  function at 0804A31C       with name '.lame_get_lametag_frame'
+  function at 0804A32C       with name '.lame_set_strict_ISO'
+  function at 0804A33C       with name '.lame_set_useTemporal'
+  function at 0804A34C       with name '.lame_set_force_ms'
+  function at 0804A35C       with name '.lame_set_compression_ratio'
+  function at 0804A36C       with name '.gettimeofday'
+  function at 0804A37C       with name '.free'
+  function at 0804A38C       with name '.lame_set_VBR_quality'
+  function at 0804A39C       with name '.lame_set_disable_reservoir'
+  function at 0804A3AC       with name '.hip_decode1_headers'
+  function at 0804A3BC       with name '.lame_close'
+  function at 0804A3CC       with name '.lame_set_nogap_total'
+  function at 0804A3DC       with name '.tgetent'
+  function at 0804A3EC       with name '.fflush'
+  function at 0804A3FC       with name '.lame_get_encoder_delay'
+  function at 0804A40C       with name '.fseek'
+  function at 0804A41C       with name '.lame_set_VBR_min_bitrate_kbps'
+  function at 0804A42C       with name '.lame_set_free_format'
+  function at 0804A43C       with name '.fclose'
+  function at 0804A44C       with name '.lame_set_errorf'
+  function at 0804A45C       with name '.lame_init_bitstream'
+  function at 0804A46C       with name '.lame_set_exp_nspsytune'
+  function at 0804A47C       with name '.clock'
+  function at 0804A48C       with name '.memcpy'
+  function at 0804A49C       with name '.lame_get_decode_on_the_fly'
+  function at 0804A4AC       with name '.strlen'
+  function at 0804A4BC       with name '.lame_set_VBR'
+  function at 0804A4CC       with name '.lame_print_config'
+  function at 0804A4DC       with name '.lame_get_bWriteVbrTag'
+  function at 0804A4EC       with name '.lame_bitrate_stereo_mode_hist'
+  function at 0804A4FC       with name '.lame_set_nogap_currentindex'
+  function at 0804A50C       with name '.lame_set_msfix'
+  function at 0804A51C       with name '.lame_get_VBR'
+  function at 0804A52C       with name '.lame_set_athaa_sensitivity'
+  function at 0804A53C       with name '.feof'
+  function at 0804A54C       with name '.strcpy'
+  function at 0804A55C       with name '.ftell'
+  function at 0804A56C       with name '.lame_set_out_samplerate'
+  function at 0804A57C       with name '.lame_set_asm_optimizations'
+  function at 0804A58C       with name '.lame_get_quality'
+  function at 0804A59C       with name '.id3tag_set_title'
+  function at 0804A5AC       with name '.lame_block_type_hist'
+  function at 0804A5BC       with name '.lame_set_brate'
+  function at 0804A5CC       with name '.atoi'
+  function at 0804A5DC       with name '.lame_bitrate_kbps'
+  function at 0804A5EC       with name '.lame_set_findReplayGain'
+  function at 0804A5FC       with name '.lame_get_framesize'
+  function at 0804A60C       with name '.atof'
+  function at 0804A61C       with name '.id3tag_set_artist'
+  function at 0804A62C       with name '.lame_encode_flush'
+  function at 0804A63C       with name '.lame_set_highpassfreq'
+  function at 0804A64C       with name '.fwrite'
+  function at 0804A65C       with name '.fprintf'
+  function at 0804A66C       with name '.lame_set_VBR_mean_bitrate_kbps'
+  function at 0804A67C       with name '.lame_set_quality'
+  function at 0804A68C       with name '.setvbuf'
+  function at 0804A69C       with name '.strncat'
+  function at 0804A6AC       with name '.lame_get_mode'
+  function at 0804A6BC       with name '.lame_set_msgf'
+  function at 0804A6CC       with name '.id3tag_set_year'
+  function at 0804A6DC       with name '.id3tag_set_album'
+  function at 0804A6EC       with name '.malloc'
+  function at 0804A6FC       with name '.lame_get_totalframes'
+  function at 0804A70C       with name '.__stack_chk_fail'
+  function at 0804A71C       with name '.id3tag_set_pad'
+  function at 0804A72C       with name '.lame_encode_flush_nogap'
+  function at 0804A73C       with name '.fputc'
+  function at 0804A74C       with name '.lame_set_VBR_max_bitrate_kbps'
+  function at 0804A75C       with name '.lame_get_num_channels'
+  function at 0804A76C       with name '.hip_decode_init'
+  function at 0804A77C       with name '.lame_set_original'
+  function at 0804A78C       with name '.id3tag_pad_v2'
+  function at 0804A79C       with name '.tgetnum'
+  function at 0804A7AC       with name '.lame_get_version'
+  function at 0804A7BC       with name '.id3tag_add_v2'
+  function at 0804A7CC       with name '.lame_init_params'
+  function at 0804A7DC       with name '.lame_set_bWriteVbrTag'
+  function at 0804A7EC       with name '.strcat'
+  function at 0804A7FC       with name '.lame_get_id3v1_tag'
+  function at 0804A80C       with name '.id3tag_genre_list'
+  function at 0804A81C       with name '.lame_get_exp_nspsytune'
+  function at 0804A82C       with name '.id3tag_set_track'
+  function at 0804A83C       with name '.__fxstat64'
+  function at 0804A84C       with name '.lame_get_frameNum'
+  function at 0804A85C       with name '.lame_set_interChRatio'
+  function at 0804A86C       with name '.id3tag_set_genre'
+  function at 0804A87C       with name '.lame_set_num_samples'
+  function at 0804A88C       with name '.lame_set_preset'
+  function at 0804A89C       with name '.lame_get_free_format'
+  function at 0804A8AC       with name '.lame_set_emphasis'
+  function at 0804A8BC       with name '.lame_set_mode'
+  function at 0804A8CC       with name '.hip_decode_exit'
+  function at 0804A8DC       with name '.lame_print_internals'
+  function at 0804A8EC       with name '.vfprintf'
+  function at 0804A8FC       with name '.lame_set_experimentalY'
+  function at 0804A90C       with name '._IO_putc'
+  function at 0804A91C       with name '.lame_get_VBR_quality'
+  function at 0804A92C       with name '.lame_get_findReplayGain'
+  function at 0804A93C       with name '.lame_set_in_samplerate'
+  function at 0804A94C       with name '.fread'
+  function at 0804A95C       with name '.lame_get_out_samplerate'
+  function at 0804A96C       with name '.lame_set_VBR_q'
+  function at 0804A97C       with name '.tgetstr'
+  function at 0804A98C       with name '.lame_get_force_ms'
+  function at 0804A99C       with name '.lame_set_lowpassfreq'
+  function at 0804A9AC       with name '.lame_set_scale_left'
+  function at 0804A9BC       with name '.lame_get_brate'
+  function at 0804A9CC       with name '.lame_init'
+  function at 0804A9DC       with name '.lame_set_highpasswidth'
+  function at 0804A9EC       with name '.strdup'
+  function at 0804A9FC       with name '.id3tag_set_fieldvalue'
+  function at 0804AA0C       with name '.lame_set_scale'
+  function at 0804AA1C       with name '.ferror'
+  function at 0804AA2C       with name '.hip_decode1_headersB'
+  function at 0804AA3C       with name '.tolower'
+  function at 0804AA4C       with name '.lame_set_copyright'
+  function at 0804AA5C       with name '.lame_set_lowpasswidth'
+  function at 0804AA6C       with name '.strcmp'
+  function at 0804AA7C       with name '.exit'
+  function at 0804AA8C       with name '.id3tag_space_v1'
+  function at 0804AA9C       with name '.lame_get_VBR_q'
+  function at 0804AAAC       with name '.pclose'
+  function at 0804AABC       with name '.lame_get_VBR_mean_bitrate_kbps'
+  function at 0804AAD0  LIB  with name '_start'
+  function at 0804AB00  LIB  with name '__do_global_dtors_aux'
+  function at 0804AB60  LIB  with name 'frame_dummy'
+  function at 0804AB84       with name 'parse_args_from_string'
+  function at 0804AC92       with name 'init_files'
+  function at 0804AD3A       with name 'lame_decoder'
+  function at 0804B4F0       with name 'print_lame_tag_leading_info'
+  function at 0804B513       with name 'print_trailing_info'
+  function at 0804B68B       with name 'write_xing_frame'
+  function at 0804B79A       with name 'lame_encoder'
+  function at 0804BC85       with name 'brhist_init_package'
+  function at 0804BCF1       with name 'parse_nogap_filenames'
+  function at 0804BFA5       with name 'main'
+  function at 0804C6C0       with name 'my_console_printing'
+  function at 0804C6EE       with name 'my_error_printing'
+  function at 0804C71C       with name 'my_report_printing'
+  function at 0804C74A       with name 'apply_termcap_settings'
+  function at 0804C978       with name 'init_console'
+  function at 0804CA23       with name 'deinit_console'
+  function at 0804CA9F       with name 'frontend_open_console'
+  function at 0804CAB3       with name 'frontend_close_console'
+  function at 0804CAC7       with name 'frontend_debugf'
+  function at 0804CAEA       with name 'frontend_msgf'
+  function at 0804CB0D       with name 'frontend_errorf'
+  function at 0804CB30       with name 'console_printf'
+  function at 0804CB5F       with name 'error_printf'
+  function at 0804CB8E       with name 'report_printf'
+  function at 0804CBBD       with name 'console_flush'
+  function at 0804CBD2       with name 'error_flush'
+  function at 0804CBE7       with name 'report_flush'
+  function at 0804CBFC       with name 'console_up'
+  function at 0804CC31       with name 'set_debug_file'
+  function at 0804CC8C       with name 'min_size_t'
+  function at 0804CCA1       with name 'machine_byte_order'
+  function at 0804CCBE       with name 'fskip'
+  function at 0804CE8D       with name 'init_outfile'
+  function at 0804CEE8       with name 'init_infile'
+  function at 0804CF50       with name 'close_infile'
+  function at 0804CF6F       with name 'SwapBytesInWords'
+  function at 0804CFF1       with name 'get_audio'
+  function at 0804D013       with name 'get_audio16'
+  function at 0804D035       with name 'get_audio_common'
+  function at 0804D384       with name 'read_samples_mp3'
+  function at 0804D455       with name 'WriteWaveHeader'
+  function at 0804D5A8       with name 'unpack_read_samples'
+  function at 0804D9AB       with name 'read_samples_pcm'
+  function at 0804DAE3       with name 'parse_wave_header'
+  function at 0804DDD0       with name 'aiff_check2'
+  function at 0804DEB2       with name 'make_even_number_of_bytes_in_length'
+  function at 0804DECC       with name 'parse_aiff_header'
+  function at 0804E2E4       with name 'parse_file_header'
+  function at 0804E3E1       with name 'CloseSndFile'
+  function at 0804E41A       with name 'OpenSndFile'
+  function at 0804E748       with name 'check_aid'
+  function at 0804E773       with name 'is_syncword_mp123'
+  function at 0804E961       with name 'lame_decode_initfile'
+  function at 0804EE68       with name 'lame_decode_fromfile'
+  function at 0804F04D       with name 'is_mpeg_file_format'
+  function at 0804F094       with name 'GetCPUTime'
+  function at 0804F0AF       with name 'GetRealTime'
+  function at 0804F0E6       with name 'lame_set_stream_binary_mode'
+  function at 0804F0F0       with name 'lame_get_file_size'
+  function at 0804F120       with name 'set_id3tag'
+  function at 0804F204       with name 'id3_tag'
+  function at 0804F24B       with name 'lame_version_print'
+  function at 0804F3AB       with name 'print_license'
+  function at 0804F49B       with name 'usage'
+  function at 0804F4EA       with name 'short_help'
+  function at 0804F588       with name 'wait_for'
+  function at 0804F5CE       with name 'long_help'
+  function at 0804F991       with name 'display_bitrate'
+  function at 0804FA50       with name 'display_bitrates'
+  function at 0804FAE4       with name 'presets_longinfo_dm'
+  function at 0804FC9C       with name 'presets_set'
+  function at 080500DE       with name 'genre_list_handler'
+  function at 08050100       with name 'local_strcasecmp'
+  function at 08050158       with name 'filename_to_type'
+  function at 08050285       with name 'resample_rate'
+  function at 08050341       with name 'set_id3_albumart'
+  function at 080504D7       with name 'parse_args'
+  function at 08052914       with name 'ReadByte'
+  function at 08052945       with name 'Read16BitsLowHigh'
+  function at 08052995       with name 'Read16BitsHighLow'
+  function at 080529E5       with name 'Write8Bits'
+  function at 08052A02       with name 'Write16BitsLowHigh'
+  function at 08052A37       with name 'Write16BitsHighLow'
+  function at 08052A6C       with name 'Read24BitsHighLow'
+  function at 08052ADA       with name 'Read32Bits'
+  function at 08052B17       with name 'Read32BitsHighLow'
+  function at 08052B54       with name 'Write32Bits'
+  function at 08052B88       with name 'Write32BitsLowHigh'
+  function at 08052BBC       with name 'Write32BitsHighLow'
+  function at 08052BF0       with name 'ReadBytes'
+  function at 08052C31       with name 'ReadBytesSwapped'
+  function at 08052C9E       with name 'WriteBytes'
+  function at 08052CD3       with name 'WriteBytesSwapped'
+  function at 08052D11       with name 'ConvertFromIeeeExtended'
+  function at 08052E8B       with name 'ReadIeeeExtendedHighLow'
+  function at 08052EDC       with name 'ts_calc_times'
+  function at 08052F47       with name 'ts_time_decompose'
+  function at 0805303F       with name 'timestatus'
+  function at 08053376       with name 'timestatus_finish'
+  function at 0805338A       with name 'encoder_progress_begin'
+  function at 080537BE       with name 'encoder_progress'
+  function at 080538AF       with name 'encoder_progress_end'
+  function at 080538F2       with name 'decoder_progress'
+  function at 080539F8       with name 'decoder_progress_finish'
+  function at 08053A0C       with name 'calculate_index'
+  function at 08053A43       with name 'brhist_init'
+  function at 08053B52       with name 'digits'
+  function at 08053BDA       with name 'brhist_disp_line'
+  function at 08053D7C       with name 'progress_line'
+  function at 0805409D       with name 'stats_value'
+  function at 080540E2       with name 'stats_head'
+  function at 0805411F       with name 'stats_line'
+  function at 08054399       with name 'brhist_disp'
+  function at 080546F4       with name 'brhist_jump_back'
+  function at 08054720  LIB  with name '__libc_csu_fini'
+  function at 08054730  LIB  with name '__libc_csu_init'
+  function at 0805478A       with name '__i686.get_pc_thunk.bx'
+  function at 08054790       with name 'stat64'
+  function at 080547D0       with name 'fstat64'
+  function at 08054810  LIB  with name '__do_global_ctors_aux'
+  function at 0805483C  LIB  with name '.term_proc'
+  function at 0805C590       with name 'fileno'
+  function at 0805C594       with name 'ldexp'
+  function at 0805C598       with name 'lame_get_in_samplerate'
+  function at 0805C59C       with name 'fputs'
+  function at 0805C5A0       with name 'get_lame_version'
+  function at 0805C5A4       with name 'sprintf'
+  function at 0805C5A8       with name 'popen'
+  function at 0805C5AC       with name 'lame_set_num_channels'
+  function at 0805C5B0       with name 'id3tag_v1_only'
+  function at 0805C5B4       with name 'id3tag_v2_only'
+  function at 0805C5B8       with name 'id3tag_set_albumart'
+  function at 0805C5BC       with name 'memcmp'
+  function at 0805C5C0       with name 'lame_stereo_mode_hist'
+  function at 0805C5C4       with name 'lame_get_RadioGain'
+  function at 0805C5C8       with name 'lame_set_scale_right'
+  function at 0805C5CC       with name 'getchar'
+  function at 0805C5D0       with name 'lame_set_decode_only'
+  function at 0805C5D4       with name 'lame_bitrate_hist'
+  function at 0805C5D8       with name 'lame_get_noclipGainChange'
+  function at 0805C5DC       with name 'id3tag_init'
+  function at 0805C5E0       with name '__isoc99_sscanf'
+  function at 0805C5E4       with name '__xstat64'
+  function at 0805C5E8       with name 'lame_get_id3v2_tag'
+  function at 0805C5EC       with name 'get_lame_os_bitness'
+  function at 0805C5F0       with name 'getenv'
+  function at 0805C5F4       with name 'strncpy'
+  function at 0805C5F8       with name 'lame_set_error_protection'
+  function at 0805C5FC       with name 'lame_get_num_samples'
+  function at 0805C600       with name 'lame_set_debugf'
+  function at 0805C604       with name 'lame_get_noclipScale'
+  function at 0805C608       with name 'lame_get_compression_ratio'
+  function at 0805C60C       with name 'lame_get_VBR_max_bitrate_kbps'
+  function at 0805C610       with name 'memset'
+  function at 0805C614       with name 'fopen64'
+  function at 0805C618       with name 'lame_encode_buffer_int'
+  function at 0805C61C       with name 'lame_get_VBR_min_bitrate_kbps'
+  function at 0805C620       with name 'get_lame_url'
+  function at 0805C624       with name 'lame_set_write_id3tag_automatic'
+  function at 0805C628  LIB  with name '__libc_start_main'
+  function at 0805C62C       with name 'id3tag_set_comment'
+  function at 0805C630       with name 'lame_set_decode_on_the_fly'
+  function at 0805C634       with name '_IO_getc'
+  function at 0805C638       with name 'lame_set_VBR_hard_min'
+  function at 0805C63C       with name 'lame_get_decode_only'
+  function at 0805C640       with name 'lame_get_lametag_frame'
+  function at 0805C644       with name 'lame_set_strict_ISO'
+  function at 0805C648       with name 'lame_set_useTemporal'
+  function at 0805C64C       with name 'lame_set_force_ms'
+  function at 0805C650       with name 'lame_set_compression_ratio'
+  function at 0805C654       with name 'gettimeofday'
+  function at 0805C658       with name 'free'
+  function at 0805C65C       with name 'lame_set_VBR_quality'
+  function at 0805C660       with name 'lame_set_disable_reservoir'
+  function at 0805C664       with name 'hip_decode1_headers'
+  function at 0805C668       with name 'lame_close'
+  function at 0805C66C       with name 'lame_set_nogap_total'
+  function at 0805C670       with name 'tgetent'
+  function at 0805C674       with name 'fflush'
+  function at 0805C678       with name 'lame_get_encoder_delay'
+  function at 0805C67C       with name 'fseek'
+  function at 0805C680       with name 'lame_set_VBR_min_bitrate_kbps'
+  function at 0805C684       with name 'lame_set_free_format'
+  function at 0805C688       with name 'fclose'
+  function at 0805C68C       with name 'lame_set_errorf'
+  function at 0805C690       with name 'lame_init_bitstream'
+  function at 0805C694       with name 'lame_set_exp_nspsytune'
+  function at 0805C698       with name 'clock'
+  function at 0805C69C       with name 'memcpy'
+  function at 0805C6A0       with name 'lame_get_decode_on_the_fly'
+  function at 0805C6A4       with name 'strlen'
+  function at 0805C6A8       with name 'lame_set_VBR'
+  function at 0805C6AC       with name 'lame_print_config'
+  function at 0805C6B0       with name 'lame_get_bWriteVbrTag'
+  function at 0805C6B4       with name 'lame_bitrate_stereo_mode_hist'
+  function at 0805C6B8       with name 'lame_set_nogap_currentindex'
+  function at 0805C6BC       with name 'lame_set_msfix'
+  function at 0805C6C0       with name 'lame_get_VBR'
+  function at 0805C6C4       with name 'lame_set_athaa_sensitivity'
+  function at 0805C6C8       with name 'feof'
+  function at 0805C6CC       with name 'strcpy'
+  function at 0805C6D0       with name 'ftell'
+  function at 0805C6D4       with name 'lame_set_out_samplerate'
+  function at 0805C6D8       with name 'lame_set_asm_optimizations'
+  function at 0805C6DC       with name 'lame_get_quality'
+  function at 0805C6E0       with name 'id3tag_set_title'
+  function at 0805C6E4       with name 'lame_block_type_hist'
+  function at 0805C6E8       with name 'lame_set_brate'
+  function at 0805C6EC       with name 'atoi'
+  function at 0805C6F0       with name 'lame_bitrate_kbps'
+  function at 0805C6F4       with name 'lame_set_findReplayGain'
+  function at 0805C6F8       with name 'lame_get_framesize'
+  function at 0805C6FC       with name 'atof'
+  function at 0805C700       with name 'id3tag_set_artist'
+  function at 0805C704       with name 'lame_encode_flush'
+  function at 0805C708       with name 'lame_set_highpassfreq'
+  function at 0805C70C       with name 'fwrite'
+  function at 0805C710       with name 'fprintf'
+  function at 0805C714       with name 'lame_set_VBR_mean_bitrate_kbps'
+  function at 0805C718       with name 'lame_set_quality'
+  function at 0805C71C       with name 'setvbuf'
+  function at 0805C720       with name 'strncat'
+  function at 0805C724       with name 'lame_get_mode'
+  function at 0805C728       with name 'lame_set_msgf'
+  function at 0805C72C       with name 'id3tag_set_year'
+  function at 0805C730       with name 'id3tag_set_album'
+  function at 0805C734       with name 'malloc'
+  function at 0805C738       with name 'lame_get_totalframes'
+  function at 0805C73C       with name '__stack_chk_fail'
+  function at 0805C740       with name 'id3tag_set_pad'
+  function at 0805C744       with name 'lame_encode_flush_nogap'
+  function at 0805C748       with name 'fputc'
+  function at 0805C74C       with name 'lame_set_VBR_max_bitrate_kbps'
+  function at 0805C750       with name 'lame_get_num_channels'
+  function at 0805C754       with name 'hip_decode_init'
+  function at 0805C758       with name 'lame_set_original'
+  function at 0805C75C       with name 'id3tag_pad_v2'
+  function at 0805C760       with name 'tgetnum'
+  function at 0805C764       with name 'lame_get_version'
+  function at 0805C768       with name 'id3tag_add_v2'
+  function at 0805C76C       with name 'lame_init_params'
+  function at 0805C770       with name 'lame_set_bWriteVbrTag'
+  function at 0805C774       with name 'strcat'
+  function at 0805C778       with name 'lame_get_id3v1_tag'
+  function at 0805C77C       with name 'id3tag_genre_list'
+  function at 0805C780       with name 'lame_get_exp_nspsytune'
+  function at 0805C784       with name 'id3tag_set_track'
+  function at 0805C788       with name '__fxstat64'
+  function at 0805C78C       with name 'lame_get_frameNum'
+  function at 0805C790       with name 'lame_set_interChRatio'
+  function at 0805C794       with name 'id3tag_set_genre'
+  function at 0805C798       with name 'lame_set_num_samples'
+  function at 0805C79C       with name 'lame_set_preset'
+  function at 0805C7A0       with name 'lame_get_free_format'
+  function at 0805C7A4       with name 'lame_set_emphasis'
+  function at 0805C7A8       with name 'lame_set_mode'
+  function at 0805C7AC       with name 'hip_decode_exit'
+  function at 0805C7B0       with name 'lame_print_internals'
+  function at 0805C7B4       with name 'vfprintf'
+  function at 0805C7B8       with name 'lame_set_experimentalY'
+  function at 0805C7BC       with name '_IO_putc'
+  function at 0805C7C0       with name 'lame_get_VBR_quality'
+  function at 0805C7C4       with name 'lame_get_findReplayGain'
+  function at 0805C7C8       with name 'lame_set_in_samplerate'
+  function at 0805C7CC       with name 'fread'
+  function at 0805C7D0       with name 'lame_get_out_samplerate'
+  function at 0805C7D4       with name 'lame_set_VBR_q'
+  function at 0805C7D8       with name 'tgetstr'
+  function at 0805C7DC       with name 'lame_get_force_ms'
+  function at 0805C7E0       with name 'lame_set_lowpassfreq'
+  function at 0805C7E4       with name 'lame_set_scale_left'
+  function at 0805C7E8       with name 'lame_get_brate'
+  function at 0805C7EC       with name 'lame_init'
+  function at 0805C7F0       with name 'lame_set_highpasswidth'
+  function at 0805C7F4       with name 'strdup'
+  function at 0805C7F8       with name 'id3tag_set_fieldvalue'
+  function at 0805C7FC       with name 'lame_set_scale'
+  function at 0805C800       with name 'ferror'
+  function at 0805C804       with name 'hip_decode1_headersB'
+  function at 0805C808       with name 'tolower'
+  function at 0805C80C       with name 'lame_set_copyright'
+  function at 0805C810       with name 'lame_set_lowpasswidth'
+  function at 0805C814       with name 'strcmp'
+  function at 0805C818       with name 'exit'
+  function at 0805C81C       with name 'id3tag_space_v1'
+  function at 0805C820       with name 'lame_get_VBR_q'
+  function at 0805C824       with name 'pclose'
+  function at 0805C828       with name 'lame_get_VBR_mean_bitrate_kbps'
+  function at 0805C82C       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 804A03C size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -82,8 +491,6 @@ If the segment is not read-only, please change the segment NAME.
 In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
-TIMESTAMP decompiling 804AB00 size=00000055 times=0...
-TIMESTAMP decompiling 804AB60 size=00000023 times=0...
 TIMESTAMP decompiling 804BCF1 size=000002B4 times=0...
 TIMESTAMP decompiling 804C6C0 size=0000002E times=0...
 TIMESTAMP decompiling 804C6EE size=0000002E times=0...
@@ -134,10 +541,8 @@ TIMESTAMP decompiling 8052D11 size=0000017A times=0...
 TIMESTAMP decompiling 8052EDC size=0000006B times=0...
 TIMESTAMP decompiling 8053A0C size=00000037 times=0...
 TIMESTAMP decompiling 8053B52 size=00000088 times=0...
-TIMESTAMP decompiling 8054720 size=00000005 times=0...
 TIMESTAMP decompiling 8054790 size=00000032 times=0...
 TIMESTAMP decompiling 80547D0 size=00000032 times=0...
-TIMESTAMP decompiling 8054810 size=0000002A times=0...
 TIMESTAMP decompiling 804CB30 size=0000002F times=0...
 TIMESTAMP decompiling 804CB5F size=0000002F times=0...
 TIMESTAMP decompiling 804F204 size=00000047 times=0...
@@ -206,21 +611,10 @@ TIMESTAMP decompiling 804CB0D size=00000023 times=0...
 TIMESTAMP decompiling 804E3E1 size=00000039 times=0...
 TIMESTAMP decompiling 804CF50 size=0000001F times=0...
 TIMESTAMP decompiling 804BFA5 size=00000719 times=0...
-TIMESTAMP decompiling 804A00C size=00000030 times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
-
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
-TIMESTAMP decompiling 8054730 size=0000005A times=0...
-TIMESTAMP decompiling 804AAD0 size=00000022 times=0...
 TIMESTAMP decompiling 804CB8E size=0000002F times=0...
 TIMESTAMP decompiling 804CC31 size=0000005B times=0...
 TIMESTAMP decompiling 8052B54 size=00000034 times=0...
 TIMESTAMP decompiling 8052BBC size=00000034 times=0...
-TIMESTAMP decompiling 805483C size=0000001C times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

@@ -12,7 +12,6 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int init_proc();
 int sub_804A764();
 // int fileno(FILE *stream);
 // int scrollok(WINDOW *, bool);
@@ -44,7 +43,6 @@ int sub_804A764();
 // int __cdecl gzopen64(_DWORD, _DWORD); weak
 // int keypad(WINDOW *, bool);
 // __sighandler_t signal(int sig, __sighandler_t handler);
-// int __gmon_start__(void); weak
 // int echo(void);
 // void *realloc(void *ptr, size_t size);
 // iconv_t iconv_open(const char *tocode, const char *fromcode);
@@ -72,7 +70,6 @@ int sub_804A764();
 // int rename(const char *old, const char *new);
 // void *memset(void *s, int c, size_t n);
 // int __cdecl fopen64(_DWORD, _DWORD); weak
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int _IO_getc(_IO_FILE *fp);
 // void _exit(int status);
 // char *strrchr(const char *s, int c);
@@ -216,9 +213,6 @@ int sub_804A764();
 // int __cdecl freopen64(_DWORD, _DWORD, _DWORD); weak
 // int wattr_on(WINDOW *, attr_t, void *);
 // __uid_t geteuid(void);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _do_global_dtors_aux();
-int frame_dummy();
 void __cdecl cleanup_sig(int sig);
 void cleanup_files(); // idb
 void cleanup(); // idb
@@ -422,8 +416,8 @@ void __cdecl HText_startStblRowGroup(HText *me, __int16 alignment);
 void __cdecl add_link_number(HText *text, TextAnchor *a, BOOLEAN save_position);
 int __cdecl HText_beginAnchor(HText *text, BOOLEAN underline, HTChildAnchor *anc);
 BOOLEAN __cdecl HText_endAnchor0(HText *text, int number, int really);
-void __cdecl _ZN10Fl_Browser10bottomlineEi(HText *text, int number);
-BOOLEAN __cdecl _ZN25idRenderModelManagerLocal10CheckModelEPKc(HText *text, int number);
+void __cdecl HText_endAnchor(HText *text, int number);
+BOOLEAN __cdecl HText_isAnchorBlank(HText *text, int number);
 void __cdecl HText_appendText(HText *text, const char *str);
 int __cdecl remove_special_attr_chars(char *buf);
 void __cdecl HText_endAppend(HText *text);
@@ -748,7 +742,7 @@ void handle_LYK_UPLOAD(); // idb
 void __cdecl handle_LYK_UP_xxx(int *arrowup, int *old_c, int real_c, int scroll_by);
 void __cdecl handle_LYK_UP_HALF(int *arrowup, int *old_c, int real_c);
 void __cdecl handle_LYK_UP_LINK(int *follow_col, int *arrowup, int *old_c, int real_c);
-void __cdecl _ZN18CScriptUnitDisplay21ClearSpellStateVisualEii(int *arrowup, int *old_c, int real_c);
+void __cdecl handle_LYK_UP_TWO(int *arrowup, int *old_c, int real_c);
 void __cdecl handle_LYK_VIEW_BOOKMARK(BOOLEAN *refresh_screen, int *old_c, int real_c);
 BOOLEAN __cdecl handle_LYK_VLINKS(int *cmd, BOOLEAN *newdoc_link_is_absolute);
 void __cdecl handle_LYK_WHEREIS(int cmd, BOOLEAN *refresh_screen);
@@ -1061,7 +1055,7 @@ FILE *__cdecl LYOpenCFG(const char *cfg_filename, const char *parent_filename, c
 void __cdecl LYSetConfigValue(char *name, char *value);
 void __cdecl do_read_cfg(const char *cfg_filename, const char *parent_filename, int nesting_level, FILE *fp0, optidx_set_t *allowed);
 void __cdecl read_cfg(const char *cfg_filename, const char *parent_filename, int nesting_level, FILE *fp0);
-void __cdecl _Z9vsoprintfPcPKcS_(FILE *fp, const char *href, const char *name);
+void __cdecl extra_cfg_link(FILE *fp, const char *href, const char *name);
 int __cdecl lynx_cfg_infopage(DocInfo *newdoc);
 int __cdecl lynx_compile_opts(DocInfo *newdoc);
 BOOLEAN __cdecl link_has_target(int cur, char *target);
@@ -1598,7 +1592,7 @@ int __cdecl get_connection(const char *arg, HTParentAnchor *anchor);
 void reset_master_socket(); // idb
 void __cdecl set_master_socket(int value);
 int close_master_socket(); // idb
-int get_listen_socket(); // idb
+unsigned int get_listen_socket();
 void set_years_and_date(); // idb
 void __cdecl free_entryinfo_struct_contents(EntryInfo *entry_info);
 BOOLEAN __cdecl is_ls_date(char *s);
@@ -1674,7 +1668,7 @@ int __cdecl IS_SJIS_STR(const unsigned __int8 *str);
 unsigned __int8 *__cdecl SJIS_TO_JIS1(unsigned __int8 HI, unsigned __int8 LO, unsigned __int8 *JCODE);
 unsigned __int8 *__cdecl JIS_TO_SJIS1(unsigned __int8 HI, unsigned __int8 LO, unsigned __int8 *SJCODE);
 unsigned __int8 *__cdecl EUC_TO_SJIS1(unsigned __int8 HI, unsigned __int8 LO, unsigned __int8 *SJCODE);
-void __cdecl JISx0201TO0208_SJIS(unsigned __int8 a1, unsigned __int8 *a2, unsigned __int8 *a3);
+void __cdecl JISx0201TO0208_SJIS(unsigned __int8, unsigned __int8 *, unsigned __int8 *);
 unsigned __int8 *__cdecl SJIS_TO_EUC1(unsigned __int8 HI, unsigned __int8 LO, unsigned __int8 *data);
 unsigned __int8 *__cdecl SJIS_TO_EUC(unsigned __int8 *src, unsigned __int8 *dst);
 unsigned __int8 *__cdecl EUC_TO_SJIS(unsigned __int8 *src, unsigned __int8 *dst);
@@ -2037,12 +2031,8 @@ GroupDef *__cdecl HTAA_parseGroupDef(FILE *fp);
 void __cdecl print_item(Item *item);
 void __cdecl print_item_list(ItemList *item_list);
 void __cdecl HTAA_printGroupDef(GroupDef *group_def);
-void _libc_csu_fini(void); // idb
-void _libc_csu_init(void); // idb
-int __cdecl stat64(int a1, int a2);
-int __cdecl lstat64(int a1, int a2);
-void (*_do_global_ctors_aux())(void);
-void term_proc();
+int __cdecl stat64(int, int);
+int __cdecl lstat64(int, int);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -5780,7 +5770,7 @@ const TABLE TimezoneTable[55] =
   { "nzst", 265, -720 },
   { "nzdt", 258, -720 }
 }; // idb
-TABLE stru_8170D14 = { NULL, 0, 0 }; // idb
+TABLE stru_8170D14 = { NULL, 0, 0 }; // weak
 const int LeapYears_7979[17] =
 {
   1972,
@@ -5801,7 +5791,7 @@ const int LeapYears_7979[17] =
   2032,
   2036
 }; // idb
-int dword_8170D64[7] = { 0, 0, 0, 0, 0, 0, 0 }; // idb
+int dword_8170D64[7] = { 0, 0, 0, 0, 0, 0, 0 }; // weak
 const int DaysLeap_7978[13] = { 0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }; // idb
 const int DaysNormal_7977[13] = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 }; // idb
 const unsigned __int8 dfont_unicount_windows_1250[256] =
@@ -29746,10 +29736,6 @@ _UNKNOWN unk_8190F46; // weak
 const char byte_8191195 = '\0'; // idb
 _UNKNOWN unk_81918B7; // weak
 _UNKNOWN unk_8192001; // weak
-int _CTOR_LIST__ = -1; // weak
-int _DTOR_LIST__[] = { -1 }; // weak
-int _DTOR_END__ = 0; // weak
-int _JCR_LIST__ = 0; // weak
 int (*dword_8193FFC)(void) = NULL; // weak
 char tempfile_11105[256] =
 {
@@ -41951,8 +41937,8 @@ HTProtocol HTTPS = { "https", &HTLoadHTTP, NULL }; // idb
 int HTDirAccess = 2; // idb
 const char *HTMountRoot = "/Net/"; // idb
 const char *HTCacheRoot = "/tmp/W3_Cache_"; // idb
-HTSuffix no_suffix = { "*", NULL, NULL, NULL,  1.0 }; // idb
-HTSuffix unknown_suffix = { "*.*", NULL, NULL, NULL,  1.0 }; // idb
+HTSuffix no_suffix = { "*", NULL, NULL, NULL, 1.0 }; // idb
+HTSuffix unknown_suffix = { "*.*", NULL, NULL, NULL, 1.0 }; // idb
 const char *ptbits_11098[9] = { "--T", "--t", "-wT", "-wt", "r-T", "r-t", "rwT", "rwt", NULL }; // idb
 const char *psbits_11097[9] = { "--S", "--s", "-wS", "-ws", "r-S", "r-s", "rwS", "rws", NULL }; // idb
 const char *pbits_11096[9] = { "---", "--x", "-w-", "-wx", "r--", "r-x", "rw-", "rwx", NULL }; // idb
@@ -42044,7 +42030,7 @@ const char *table_15794[63] =
 }; // idb
 int HTPlain_lastraw = -1; // idb
 const char *HTLibraryVersion = "2.14"; // idb
-float HTMaxSecs =  1.0e10; // idb
+float HTMaxSecs = 1.0e10; // idb
 char dummy_head_11307[2] = { 'x', '\x01' }; // idb
 HTStreamClass NetToTextClass =
 {
@@ -42162,8 +42148,6 @@ chtype dword_81AACA4; // idb
 char *strfnames; // idb
 int COLOR_PAIRS; // weak
 char ttytype[256]; // idb
-char completed_6635; // weak
-int dtor_idx_6637; // weak
 char temp_11056[12]; // idb
 int label_columns; // idb
 char s_str_13245[1024]; // idb
@@ -42861,22 +42845,7 @@ int yynerrs; // idb
 __int16 *yyssp; // idb
 char class_string[256]; // idb
 char HTlex_buffer[40]; // idb
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (0804A734) --------------------------------------------------------
-int init_proc()
-{
-  int v1; // [esp+0h] [ebp-8h]
-
-  if ( &_gmon_start__ )
-    __gmon_start__();
-  frame_dummy();
-  _do_global_ctors_aux();
-  return v1;
-}
-// 804A760: variable 'v1' is possibly undefined
-// 804A954: using guessed type int __gmon_start__(void);
 
 //----- (0804A764) --------------------------------------------------------
 int sub_804A764()
@@ -42884,55 +42853,6 @@ int sub_804A764()
   return dword_8193FFC();
 }
 // 8193FFC: using guessed type int (*dword_8193FFC)(void);
-
-//----- (0804B430) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, _libc_csu_init, _libc_csu_fini, a2, &v3);
-  __halt();
-}
-// 804B433: positive sp value 4 has been found
-
-//----- (0804B460) --------------------------------------------------------
-void _do_global_dtors_aux()
-{
-  int v0; // edx
-  unsigned int i; // ebx
-
-  if ( !completed_6635 )
-  {
-    v0 = dtor_idx_6637;
-    for ( i = &_DTOR_END__ - _DTOR_LIST__ - 1; dtor_idx_6637 < i; v0 = dtor_idx_6637 )
-    {
-      dtor_idx_6637 = v0 + 1;
-      ((void (*)(void))_DTOR_LIST__[v0 + 1])();
-    }
-    completed_6635 = 1;
-  }
-}
-// 8193F04: using guessed type int _DTOR_LIST__[];
-// 8193F08: using guessed type int _DTOR_END__;
-// 81AB4A0: using guessed type char completed_6635;
-// 81AB4A4: using guessed type int dtor_idx_6637;
-
-//----- (0804B4C0) --------------------------------------------------------
-int frame_dummy()
-{
-  int result; // eax
-
-  result = _JCR_LIST__;
-  if ( _JCR_LIST__ )
-    result = 0;
-  return result;
-}
-// 8193F0C: using guessed type int _JCR_LIST__;
 
 //----- (0804B4E4) --------------------------------------------------------
 void __cdecl cleanup_sig(int sig)
@@ -43004,13 +42924,10 @@ int LYVersionIsRelease()
 //----- (0804B67A) --------------------------------------------------------
 char *LYVersionStatus()
 {
-  char *v1; // [esp+4h] [ebp-4h]
-
   if ( (unsigned __int8)LYVersionIsRelease() )
-    v1 = gettext("latest release");
+    return gettext("latest release");
   else
-    v1 = gettext("development version");
-  return v1;
+    return gettext("development version");
 }
 
 //----- (0804B6AE) --------------------------------------------------------
@@ -43069,7 +42986,7 @@ int __cdecl LYShowInfo(DocInfo *doc, DocInfo *newdoc, char *owner_address)
   char *v5; // eax
   char *v6; // eax
   char *v7; // eax
-  char *v8; // ebx
+  char *address; // ebx
   char *v9; // eax
   int v10; // ebx
   char *v11; // esi
@@ -43085,7 +43002,7 @@ int __cdecl LYShowInfo(DocInfo *doc, DocInfo *newdoc, char *owner_address)
   char *v21; // eax
   char *v22; // eax
   char *v23; // esi
-  int v24; // ebx
+  int st_size; // ebx
   char *v25; // eax
   char *v26; // ebx
   char *v27; // eax
@@ -43118,29 +43035,29 @@ int __cdecl LYShowInfo(DocInfo *doc, DocInfo *newdoc, char *owner_address)
   char *v54; // ebx
   char *v55; // eax
   char *v56; // eax
-  const char *v57; // ebx
+  const char *MIMEname; // ebx
   char *v58; // eax
   char *v59; // eax
   char *v60; // eax
   char *v61; // eax
-  char *v62; // ebx
+  char *expires; // ebx
   char *v63; // eax
-  char *v64; // ebx
+  char *cache_control; // ebx
   char *v65; // eax
   char *v66; // esi
-  int v67; // ebx
+  int content_length; // ebx
   char *v68; // eax
   char *v69; // esi
-  int v70; // ebx
+  int NumOfBytes; // ebx
   char *v71; // eax
-  char *v72; // ebx
+  char *content_language; // ebx
   char *v73; // eax
   char *v74; // eax
-  char *v75; // ebx
+  char *post_content_type; // ebx
   char *v76; // eax
   char *v77; // eax
   char *v78; // esi
-  int v79; // ebx
+  int NumOfLines; // ebx
   char *v80; // eax
   char *v81; // eax
   char *v82; // eax
@@ -43154,16 +43071,15 @@ int __cdecl LYShowInfo(DocInfo *doc, DocInfo *newdoc, char *owner_address)
   char *v90; // eax
   char *v91; // eax
   char *v92; // eax
-  char *v93; // ebx
+  char *submit_action; // ebx
   char *v94; // eax
   char *v95; // eax
   char *v96; // eax
-  int v98; // [esp+20h] [ebp-538h]
   char *v99; // [esp+24h] [ebp-534h]
   const char *v100; // [esp+28h] [ebp-530h]
   const char *v101; // [esp+2Ch] [ebp-52Ch]
-  char *v102; // [esp+30h] [ebp-528h]
-  int v103; // [esp+34h] [ebp-524h]
+  char *str; // [esp+30h] [ebp-528h]
+  int len; // [esp+34h] [ebp-524h]
   const char *value; // [esp+38h] [ebp-520h]
   const char *src; // [esp+3Ch] [ebp-51Ch]
   char *v106; // [esp+40h] [ebp-518h]
@@ -43244,9 +43160,9 @@ int __cdecl LYShowInfo(DocInfo *doc, DocInfo *newdoc, char *owner_address)
         free(temp);
         temp = 0;
       }
-      v8 = doc->address;
+      address = doc->address;
       v9 = gettext("URL:");
-      dt_String(fp0, v9, v8);
+      dt_String(fp0, v9, address);
       fwrite("\n</dl>\n", 1u, 7u, fp0);
       temp = HTnameOfFile_WWW(links[doc->link].lname, 0, 1);
       if ( lstat64((int)temp, (int)&dir_info) == -1 )
@@ -43315,9 +43231,9 @@ int __cdecl LYShowInfo(DocInfo *doc, DocInfo *newdoc, char *owner_address)
         if ( (dir_info.st_mode & 0xF000) == 0x8000 )
         {
           v23 = gettext("(bytes)");
-          v24 = dir_info.st_size;
+          st_size = dir_info.st_size;
           v25 = gettext("File size:");
-          dt_Number(fp0, v25, v24, v23);
+          dt_Number(fp0, v25, st_size, v23);
         }
         v26 = ctime(&dir_info.st_ctim.tv_sec);
         v27 = gettext("Creation date:");
@@ -43479,9 +43395,9 @@ int __cdecl LYShowInfo(DocInfo *doc, DocInfo *newdoc, char *owner_address)
               {
                 v56 = gettext("(assumed)");
                 HTSprintf(&temp, "%s %s", p_in->MIMEname, v56);
-                v57 = p_in->MIMEname;
+                MIMEname = p_in->MIMEname;
                 v58 = gettext("Charset:");
-                dt_String(fp0, v58, v57);
+                dt_String(fp0, v58, MIMEname);
                 if ( temp )
                 {
                   free(temp);
@@ -43514,49 +43430,49 @@ int __cdecl LYShowInfo(DocInfo *doc, DocInfo *newdoc, char *owner_address)
       {
         if ( HTMainAnchor && HTMainAnchor->expires )
         {
-          v62 = HTMainAnchor->expires;
+          expires = HTMainAnchor->expires;
           v63 = gettext("Expires:");
-          dt_String(fp0, v63, v62);
+          dt_String(fp0, v63, expires);
         }
         if ( HTMainAnchor && HTMainAnchor->cache_control )
         {
-          v64 = HTMainAnchor->cache_control;
+          cache_control = HTMainAnchor->cache_control;
           v65 = gettext("Cache-Control:");
-          dt_String(fp0, v65, v64);
+          dt_String(fp0, v65, cache_control);
         }
         if ( HTMainAnchor && HTMainAnchor->content_length > 0 )
         {
           v66 = gettext("bytes");
-          v67 = HTMainAnchor->content_length;
+          content_length = HTMainAnchor->content_length;
           v68 = gettext("Content-Length:");
-          dt_Number(fp0, v68, v67, v66);
+          dt_Number(fp0, v68, content_length, v66);
         }
         else
         {
           v69 = gettext("bytes");
-          v70 = HText_getNumOfBytes();
+          NumOfBytes = HText_getNumOfBytes();
           v71 = gettext("Length:");
-          dt_Number(fp0, v71, v70, v69);
+          dt_Number(fp0, v71, NumOfBytes, v69);
         }
         if ( HTMainAnchor && HTMainAnchor->content_language )
         {
-          v72 = HTMainAnchor->content_language;
+          content_language = HTMainAnchor->content_language;
           v73 = gettext("Language:");
-          dt_String(fp0, v73, v72);
+          dt_String(fp0, v73, content_language);
         }
       }
       if ( doc->post_data )
       {
-        v102 = doc->post_data->str;
+        str = doc->post_data->str;
         if ( doc->post_data )
-          v103 = doc->post_data->len;
+          len = doc->post_data->len;
         else
-          v103 = 0;
+          len = 0;
         v74 = gettext("Post Data:");
-        fprintf(fp0, "<dt><em>%s</em> <xmp>%.*s</xmp>\n", v74, v103, v102);
-        v75 = doc->post_content_type;
+        fprintf(fp0, "<dt><em>%s</em> <xmp>%.*s</xmp>\n", v74, len, str);
+        post_content_type = doc->post_content_type;
         v76 = gettext("Post Content Type:");
-        dt_String(fp0, v76, v75);
+        dt_String(fp0, v76, post_content_type);
       }
       if ( owner_address )
         value = owner_address;
@@ -43565,9 +43481,9 @@ int __cdecl LYShowInfo(DocInfo *doc, DocInfo *newdoc, char *owner_address)
       v77 = gettext("Owner(s):");
       dt_String(fp0, v77, value);
       v78 = gettext("lines");
-      v79 = HText_getNumOfLines();
+      NumOfLines = HText_getNumOfLines();
       v80 = gettext("size:");
-      dt_Number(fp0, v80, v79, v78);
+      dt_Number(fp0, v80, NumOfLines, v78);
       if ( lynx_mode == 2 )
       {
         src = gettext("forms mode");
@@ -43659,9 +43575,9 @@ int __cdecl LYShowInfo(DocInfo *doc, DocInfo *newdoc, char *owner_address)
           }
           if ( links[doc->link].l_form->submit_action )
           {
-            v93 = links[doc->link].l_form->submit_action;
+            submit_action = links[doc->link].l_form->submit_action;
             v94 = gettext("Action:");
-            dt_String(fp0, v94, v93);
+            dt_String(fp0, v94, submit_action);
           }
           if ( !links[doc->link].l_form->submit_method || !links[doc->link].l_form->submit_action )
           {
@@ -43688,21 +43604,20 @@ int __cdecl LYShowInfo(DocInfo *doc, DocInfo *newdoc, char *owner_address)
       free(Title);
       Title = 0;
     }
-    v98 = 0;
+    return 0;
   }
   else
   {
     v3 = gettext("Can't open temporary file!");
     HTAlert(v3);
-    v98 = -1;
+    return -1;
   }
-  return v98;
 }
 
 //----- (0804D090) --------------------------------------------------------
 int editor_can_position()
 {
-  const char *v2; // [esp+14h] [ebp-14h]
+  const char *object; // [esp+14h] [ebp-14h]
   unsigned int n; // [esp+1Ch] [ebp-Ch]
   HTList *p; // [esp+20h] [ebp-8h]
 
@@ -43717,12 +43632,12 @@ int editor_can_position()
     while ( 1 )
     {
       if ( p && (p = p->next) != 0 )
-        v2 = (const char *)p->object;
+        object = (const char *)p->object;
       else
-        v2 = 0;
-      if ( !v2 )
+        object = 0;
+      if ( !object )
         break;
-      if ( !strcmp(editor, v2) )
+      if ( !strcmp(editor, object) )
         return 1;
     }
   }
@@ -43736,8 +43651,7 @@ int __cdecl edit_current_file(char *newfile, int cur, int lineno)
   char *v4; // eax
   char *v5; // eax
   FILE *v6; // eax
-  int v8; // [esp+1Ch] [ebp-7Ch]
-  int v9; // [esp+20h] [ebp-78h]
+  int ly; // [esp+20h] [ebp-78h]
   char *number_sign; // [esp+34h] [ebp-64h]
   char *colon; // [esp+38h] [ebp-60h]
   char *filename; // [esp+3Ch] [ebp-5Ch] BYREF
@@ -43779,10 +43693,10 @@ LABEL_13:
         cur = 0;
       position[0] = 0;
       if ( nlinks )
-        v9 = links[cur].ly;
+        ly = links[cur].ly;
       else
-        v9 = 0;
-      linenoa = v9 + lineno;
+        ly = 0;
+      linenoa = ly + lineno;
       if ( linenoa > 0 )
         sprintf(position, "%d", linenoa);
       edit_temporary_file(filename, position, 0);
@@ -43805,15 +43719,14 @@ LABEL_13:
       v6 = TraceFP();
       fprintf(v6, "edit_current_file returns %d\n", result);
     }
-    v8 = result;
+    return result;
   }
   else
   {
     v4 = gettext("Lynx cannot currently (e)dit remote WWW files.");
     HTUserMsg(v4);
-    v8 = 0;
+    return 0;
   }
-  return v8;
 }
 
 //----- (0804D39E) --------------------------------------------------------
@@ -43961,7 +43874,7 @@ int get_mouse_link()
   t = mouse_link;
   mouse_link = -1;
   if ( t < 0 )
-    t = -1;
+    return -1;
   return t;
 }
 
@@ -43974,8 +43887,8 @@ int peek_mouse_link()
 //----- (0804D82D) --------------------------------------------------------
 int __cdecl fancy_mouse(WINDOW *win, int row, int *position)
 {
-  int v4; // [esp+Ch] [ebp-5Ch]
-  int v5; // [esp+14h] [ebp-54h]
+  int begy; // [esp+Ch] [ebp-5Ch]
+  int begx; // [esp+14h] [ebp-54h]
   int v6; // [esp+1Ch] [ebp-4Ch]
   int v7; // [esp+20h] [ebp-48h]
   int v9; // [esp+2Ch] [ebp-3Ch]
@@ -43993,20 +43906,20 @@ int __cdecl fancy_mouse(WINDOW *win, int row, int *position)
   if ( (event.bstate & 0x1C) == 0 )
   {
     if ( (event.bstate & 0x1C000) != 0 )
-      cmd = 13;
+      return 13;
     return cmd;
   }
   if ( win )
-    v4 = win->_begy;
+    begy = win->_begy;
   else
-    v4 = -1;
-  mypos = event.y - v4;
-  delta = event.y - v4 - row;
+    begy = -1;
+  mypos = event.y - begy;
+  delta = event.y - begy - row;
   if ( win )
-    v5 = win->_begx;
+    begx = win->_begx;
   else
-    v5 = -1;
-  if ( event.x >= v5
+    begx = -1;
+  if ( event.x >= begx
     && (!win ? (v6 = -1) : (v6 = win->_begx), !win ? (v7 = -1) : (v7 = win->_maxx + 1), event.x < v7 + v6)
     || (event.bstate & 0x7000000) != 0 )
   {
@@ -44018,15 +43931,15 @@ int __cdecl fancy_mouse(WINDOW *win, int row, int *position)
     {
       if ( (event.bstate & 0x10) != 0 )
       {
-        cmd = 23;
+        return 23;
       }
       else if ( (event.bstate & 8) != 0 )
       {
-        cmd = 15;
+        return 15;
       }
       else
       {
-        cmd = 27;
+        return 27;
       }
     }
     else
@@ -44053,52 +43966,51 @@ int __cdecl fancy_mouse(WINDOW *win, int row, int *position)
               if ( (event.bstate & 0x7000000) != 0 )
               {
                 *position += delta;
-                cmd = -1;
+                return -1;
               }
               else
               {
                 *position += delta;
-                cmd = 39;
+                return 39;
               }
             }
             else
             {
               *position += delta;
-              cmd = -1;
+              return -1;
             }
           }
           else if ( (event.bstate & 0x18) != 0 )
           {
-            cmd = 22;
+            return 22;
           }
           else
           {
-            cmd = 16;
+            return 16;
           }
         }
         else if ( (event.bstate & 0x10) != 0 )
         {
-          cmd = 22;
+          return 22;
         }
         else if ( (event.bstate & 8) != 0 )
         {
-          cmd = 16;
+          return 16;
         }
         else
         {
-          cmd = 26;
+          return 26;
         }
       }
       else if ( (event.bstate & 0x18) != 0 )
       {
-        cmd = 23;
+        return 23;
       }
       else
       {
-        cmd = 15;
+        return 15;
       }
     }
-    return cmd;
   }
   return 13;
 }
@@ -44142,7 +44054,7 @@ void __cdecl LYCloseCloset(RecallType recall)
 //----- (0804DBD2) --------------------------------------------------------
 char *__cdecl LYFindInCloset(RecallType recall, char *base)
 {
-  char *v3; // [esp+10h] [ebp-18h]
+  char *object; // [esp+10h] [ebp-18h]
   unsigned int len; // [esp+1Ch] [ebp-Ch]
   HTList *list; // [esp+24h] [ebp-4h]
 
@@ -44152,15 +44064,15 @@ char *__cdecl LYFindInCloset(RecallType recall, char *base)
   {
     list = list->next;
     if ( list )
-      v3 = (char *)list->object;
+      object = (char *)list->object;
     else
-      v3 = 0;
-    if ( !strncmp(base, v3, len) )
-      return v3;
+      object = 0;
+    if ( !strncmp(base, object, len) )
+      return object;
   }
   return 0;
 }
-// 804DBFA: conditional instruction was optimized away because of '%list.4!=0'
+// 804DBFA: conditional instruction was optimized away because %list.4!=0
 
 //----- (0804DC63) --------------------------------------------------------
 void __cdecl LYAddToCloset(RecallType recall, char *str)
@@ -44179,8 +44091,6 @@ void __cdecl LYAddToCloset(RecallType recall, char *str)
 //----- (0804DCC1) --------------------------------------------------------
 int __cdecl XYdist(int x1, int y1, int x2, int y2, int dx2)
 {
-  int v6; // [esp+0h] [ebp-18h]
-  int v7; // [esp+4h] [ebp-14h]
   int yerr; // [esp+10h] [ebp-8h]
   int xerr; // [esp+14h] [ebp-4h]
 
@@ -44196,19 +44106,18 @@ int __cdecl XYdist(int x1, int y1, int x2, int y2, int dx2)
   {
     if ( xerr <= 8 )
       yerr += 9 - xerr;
-    v6 = 2 * xerr + yerr;
+    return 2 * xerr + yerr;
+  }
+  else if ( xerr <= 0 )
+  {
+    return 0;
   }
   else
   {
-    if ( xerr <= 0 )
-      v7 = 0;
-    else
-      v7 = 2 * xerr - 1;
-    v6 = v7;
+    return 2 * xerr - 1;
   }
-  return v6;
 }
-// 804DD59: conditional instruction was optimized away because of '%yerr.4!=0'
+// 804DD59: conditional instruction was optimized away because %yerr.4!=0
 
 //----- (0804DD78) --------------------------------------------------------
 int __cdecl set_clicked_link(int x, int y, int code, int clicks)
@@ -44219,16 +44128,10 @@ int __cdecl set_clicked_link(int x, int y, int code, int clicks)
   int v8; // [esp+20h] [ebp-98h]
   int v9; // [esp+24h] [ebp-94h]
   _BOOL4 v10; // [esp+28h] [ebp-90h]
-  int v11; // [esp+2Ch] [ebp-8Ch]
-  int v12; // [esp+30h] [ebp-88h]
-  int v13; // [esp+34h] [ebp-84h]
-  int v14; // [esp+38h] [ebp-80h]
-  int v15; // [esp+3Ch] [ebp-7Ch]
   int v16; // [esp+44h] [ebp-74h]
   int v17; // [esp+48h] [ebp-70h]
-  int v18; // [esp+4Ch] [ebp-6Ch]
-  int v19; // [esp+50h] [ebp-68h]
-  int v20; // [esp+54h] [ebp-64h]
+  int cury; // [esp+50h] [ebp-68h]
+  int curx; // [esp+54h] [ebp-64h]
   const char *text; // [esp+78h] [ebp-40h]
   const char *texta; // [esp+78h] [ebp-40h]
   int count; // [esp+7Ch] [ebp-3Ch]
@@ -44261,34 +44164,27 @@ int __cdecl set_clicked_link(int x, int y, int code, int clicks)
         if ( x <= right )
         {
           if ( y )
-            c = 2063;
+            return 2063;
           else
-            c = 2064;
+            return 2064;
+        }
+        else if ( code == 3 && y )
+        {
+          return 258;
         }
         else
         {
-          if ( code == 3 && y )
-            v15 = 258;
-          else
-            v15 = 2084;
-          c = v15;
+          return 2084;
         }
       }
       else
       {
         if ( code == 3 && y )
-        {
-          v13 = 259;
-        }
+          return 259;
+        if ( s_forw_backw == -1 || x - v10 <= 2 )
+          return 2085;
         else
-        {
-          if ( s_forw_backw == -1 || x - v10 <= 2 )
-            v14 = 2085;
-          else
-            v14 = 2086;
-          v13 = v14;
-        }
-        c = v13;
+          return 2086;
       }
     }
     else if ( v10 + 6 <= x )
@@ -44296,28 +44192,27 @@ int __cdecl set_clicked_link(int x, int y, int code, int clicks)
       if ( x <= right )
       {
         if ( y )
-          c = 2071;
+          return 2071;
         else
-          c = 2070;
+          return 2070;
+      }
+      else if ( code == 3 && y )
+      {
+        return 263;
       }
       else
       {
-        if ( code == 3 && y )
-          v12 = 263;
-        else
-          v12 = 2109;
-        c = v12;
+        return 2109;
       }
+    }
+    else if ( code == 3 && y )
+    {
+      return 262;
     }
     else
     {
-      if ( code == 3 && y )
-        v11 = 262;
-      else
-        v11 = 2096;
-      c = v11;
+      return 2096;
     }
-    return c;
   }
   if ( LYcols - 1 != x || !LYShowScrollbar || LYsb_begin < 0 )
   {
@@ -44361,16 +44256,16 @@ int __cdecl set_clicked_link(int x, int y, int code, int clicks)
         if ( !cur_err )
         {
           if ( LYwin )
-            v19 = LYwin->_cury;
+            cury = LYwin->_cury;
           else
-            v19 = -1;
+            cury = -1;
           if ( LYwin )
-            v20 = LYwin->_curx;
+            curx = LYwin->_curx;
           else
-            v20 = -1;
+            curx = -1;
           if ( clicks > 1 && is_text && links[i].l_form->type == 12 )
           {
-            if ( code == 2 && v19 == y && v20 >= lx && v20 - lx <= len )
+            if ( code == 2 && cury == y && curx >= lx && curx - lx <= len )
             {
               c = 2088;
               mouse_link = -1;
@@ -44384,7 +44279,7 @@ int __cdecl set_clicked_link(int x, int y, int code, int clicks)
           }
           else
           {
-            if ( code == 2 && v19 == y && v20 >= lx && v20 - lx <= len )
+            if ( code == 2 && cury == y && curx >= lx && curx - lx <= len )
             {
               mouse_link = -1;
             }
@@ -44410,27 +44305,27 @@ int __cdecl set_clicked_link(int x, int y, int code, int clicks)
       if ( 2 * y <= LYlines )
       {
         if ( 4 * y >= LYlines )
-          c = 2065;
+          return 2065;
         else
-          c = 2067;
+          return 2067;
       }
       else if ( 4 * y >= 3 * LYlines )
       {
-        c = 2068;
+        return 2068;
       }
       else
       {
-        c = 2066;
+        return 2066;
       }
     }
     else if ( mouse_err )
     {
       if ( mouse_err >= 0 )
-        c = 2132;
+        return 2132;
     }
     else if ( c == -1 )
     {
-      c = 2087;
+      return 2087;
     }
     return c;
   }
@@ -44458,11 +44353,11 @@ int __cdecl set_clicked_link(int x, int y, int code, int clicks)
         mouse_link = -1;
         return c;
       }
-      v18 = 2063;
+      return 2063;
     }
     else
     {
-      v18 = 2064;
+      return 2064;
     }
   }
   else
@@ -44470,9 +44365,8 @@ int __cdecl set_clicked_link(int x, int y, int code, int clicks)
     l = HText_getNumOfLines() + 1 - display_lines;
     if ( l > 0 )
       LYSetNewline((int)((long double)l * (double)((long double)ya / (long double)(h - 1)) + 1.0 + 0.5));
-    v18 = LYReverseKeymap(69);
+    return LYReverseKeymap(69);
   }
-  return v18;
 }
 
 //----- (0804E53C) --------------------------------------------------------
@@ -44557,7 +44451,7 @@ const char *__cdecl LYmbcs_skip_glyphs(const char *data, int n_glyphs, BOOLEAN u
   }
   return data;
 }
-// 804E6B2: conditional instruction was optimized away because of '%utf_flag.1!=0'
+// 804E6B2: conditional instruction was optimized away because %utf_flag.1!=0
 
 //----- (0804E6ED) --------------------------------------------------------
 const char *__cdecl LYmbcs_skip_cells(const char *data, int n_cells, BOOLEAN utf_flag)
@@ -44590,7 +44484,7 @@ int __cdecl LYmbcsstrlen(const char *str, BOOLEAN utf_flag, BOOLEAN count_gcells
   {
     if ( count_gcells )
     {
-      len = LYstrCells(str);
+      return LYstrCells(str);
     }
     else
     {
@@ -44615,8 +44509,8 @@ int __cdecl LYmbcsstrlen(const char *str, BOOLEAN utf_flag, BOOLEAN count_gcells
   }
   return len;
 }
-// 804E83A: conditional instruction was optimized away because of '%utf_flag.1!=0'
-// 804E86C: conditional instruction was optimized away because of '%count_gcells.1==0'
+// 804E83A: conditional instruction was optimized away because %utf_flag.1!=0
+// 804E86C: conditional instruction was optimized away because %count_gcells.1==0
 
 //----- (0804E8C9) --------------------------------------------------------
 void __cdecl ena_csi(BOOLEAN flag)
@@ -44858,13 +44752,13 @@ BOOLEAN __cdecl unescape_string(char *src, char *dst, char *final)
     {
       *dst = keysym;
       dst[1] = 0;
-      ok = 1;
+      return 1;
     }
   }
   else if ( *src == 34 )
   {
     v4 = &src[strlen(src) - 1];
-    ok = expand_substring(dst, src + 1, v4, final);
+    return expand_substring(dst, src + 1, v4, final);
   }
   return ok;
 }
@@ -44995,7 +44889,6 @@ int __cdecl map_string_to_keysym(const char *str, int *keysym)
 //----- (0804F48B) --------------------------------------------------------
 char *__cdecl skip_keysym(char *parse)
 {
-  char *v2; // [esp+4h] [ebp-14h]
   int escaped; // [esp+10h] [ebp-8h]
   int quoted; // [esp+14h] [ebp-4h]
 
@@ -45033,10 +44926,9 @@ char *__cdecl skip_keysym(char *parse)
     ++parse;
   }
   if ( quoted || escaped )
-    v2 = 0;
+    return 0;
   else
-    v2 = parse;
-  return v2;
+    return parse;
 }
 
 //----- (0804F571) --------------------------------------------------------
@@ -45052,7 +44944,6 @@ int __cdecl setkey_cmd(char *parse)
   FILE *v8; // eax
   FILE *v9; // eax
   FILE *v10; // eax
-  int v12; // [esp+1Ch] [ebp-201Ch]
   int keysym; // [esp+24h] [ebp-2014h] BYREF
   char *t; // [esp+28h] [ebp-2010h]
   char *s; // [esp+2Ch] [ebp-200Ch]
@@ -45124,7 +45015,7 @@ int __cdecl setkey_cmd(char *parse)
       v5 = TraceFP();
       fprintf(v5, "KEYMAP(DEF) keysym=%#x\n", v4);
     }
-    v12 = define_key(buf, keysym);
+    return define_key(buf, keysym);
   }
   else
   {
@@ -45133,9 +45024,8 @@ int __cdecl setkey_cmd(char *parse)
       v3 = TraceFP();
       fprintf(v3, "KEYMAP(SKIP) could unescape key\n");
     }
-    v12 = 0;
+    return 0;
   }
-  return v12;
 }
 
 //----- (0804F8A6) --------------------------------------------------------
@@ -45347,7 +45237,6 @@ int __cdecl LYgetch_for(int code)
   char *v28; // eax
   int v29; // edx
   int v32; // [esp+28h] [ebp-50h]
-  int v33; // [esp+2Ch] [ebp-4Ch]
   int v34; // [esp+30h] [ebp-48h]
   MEVENT event; // [esp+3Ch] [ebp-3Ch] BYREF
   int atlink; // [esp+50h] [ebp-28h]
@@ -45616,7 +45505,7 @@ LABEL_92:
     }
     else if ( c >= 0 && (c & 0x400) != 0 )
     {
-      c &= 0xFFFFFBFF;
+      c &= ~0x400u;
       done_esc = 1;
     }
     if ( c >= 0 && (c & 0x8000) == 0 && (c & 0x2000) != 0 )
@@ -45817,10 +45706,9 @@ LABEL_213:
           fprintf(v27, "Mouse error: no event available!\n");
         }
         if ( code )
-          v33 = 270;
+          return 270;
         else
-          v33 = 0;
-        return v33;
+          return 0;
       case 410:
         if ( WWW_TraceFlag[0] )
         {
@@ -45847,9 +45735,9 @@ LABEL_213:
     }
   }
 }
-// 805021B: conditional instruction was optimized away because of '%c.4==1B'
-// 8050341: conditional instruction was optimized away because of '%c.4>=0'
-// 8050396: conditional instruction was optimized away because of '%c.4>=0'
+// 805021B: conditional instruction was optimized away because %c.4==1B
+// 8050341: conditional instruction was optimized away because %c.4>=0
+// 8050396: conditional instruction was optimized away because %c.4>=0
 
 //----- (080509C7) --------------------------------------------------------
 int LYgetch()
@@ -45864,7 +45752,7 @@ int LYgetch_choice()
 
   ch_0 = LYReadCmdKey(1);
   if ( ch_0 == 3 )
-    ch_0 = 7;
+    return 7;
   return ch_0;
 }
 
@@ -45875,14 +45763,13 @@ int LYgetch_input()
 
   ch_0 = LYReadCmdKey(2);
   if ( ch_0 == 3 )
-    ch_0 = 7;
+    return 7;
   return ch_0;
 }
 
 //----- (08050A29) --------------------------------------------------------
 int LYgetch_single()
 {
-  int v1; // [esp+4h] [ebp-14h]
   int ch_0; // [esp+14h] [ebp-4h]
 
   ch_0 = LYReadCmdKey(4);
@@ -45891,10 +45778,9 @@ int LYgetch_single()
   if ( ch_0 > 0 && ch_0 <= 255 )
   {
     if ( ((*__ctype_b_loc())[(unsigned __int8)ch_0] & 0x200) != 0 )
-      v1 = toupper((unsigned __int8)ch_0);
+      return toupper((unsigned __int8)ch_0);
     else
-      v1 = (unsigned __int8)ch_0;
-    ch_0 = v1;
+      return (unsigned __int8)ch_0;
   }
   return ch_0;
 }
@@ -46145,19 +46031,19 @@ void __cdecl LYTrimAllStartfile(char *buffer)
 //----- (0805124A) --------------------------------------------------------
 void __cdecl LYSetupEdit(EditFieldData *edit, char *old, int maxstr, int maxdsp)
 {
-  int v4; // [esp+10h] [ebp-8h]
-  int v5; // [esp+14h] [ebp-4h]
+  int cury; // [esp+10h] [ebp-8h]
+  int curx; // [esp+14h] [ebp-4h]
 
   if ( LYwin )
-    v4 = LYwin->_cury;
+    cury = LYwin->_cury;
   else
-    v4 = -1;
-  edit->sy = v4;
+    cury = -1;
+  edit->sy = cury;
   if ( LYwin )
-    v5 = LYwin->_curx;
+    curx = LYwin->_curx;
   else
-    v5 = -1;
-  edit->sx = v5;
+    curx = -1;
+  edit->sx = curx;
   edit->pad = 32;
   edit->dirty = 1;
   edit->panon = 0;
@@ -46207,7 +46093,7 @@ int __cdecl mbcs_glyphs(char *s, int len)
   }
   else
   {
-    glyphs = len;
+    return len;
   }
   return glyphs;
 }
@@ -46244,7 +46130,7 @@ int __cdecl mbcs_skip(char *s, int pos)
   }
   else
   {
-    i = pos;
+    return pos;
   }
   return i;
 }
@@ -46319,7 +46205,7 @@ finish:
 int __cdecl LYEdit1(EditFieldData *edit, int ch_0, int action, BOOLEAN maxMessage)
 {
   char *v4; // eax
-  int v5; // ebx
+  int pos; // ebx
   int v6; // ebx
   int v7; // eax
   int v8; // ebx
@@ -46345,7 +46231,7 @@ int __cdecl LYEdit1(EditFieldData *edit, int ch_0, int action, BOOLEAN maxMessag
   int id; // [esp+3Ch] [ebp-Ch]
   int ie; // [esp+3Ch] [ebp-Ch]
   int ig; // [esp+3Ch] [ebp-Ch]
-  unsigned __int8 uch[5]; // [esp+43h] [ebp-5h] BYREF
+  char uch[5]; // [esp+43h] [ebp-5h] BYREF
   int ch_0a; // [esp+54h] [ebp+Ch]
 
   if ( edit->maxlen <= 0 )
@@ -46356,13 +46242,13 @@ int __cdecl LYEdit1(EditFieldData *edit, int ch_0, int action, BOOLEAN maxMessag
   {
     case 1:
       uch[0] = ch_0;
-      LYEditInsert(edit, uch, 1, 0, maxMessage);
+      LYEditInsert(edit, (const unsigned __int8 *)uch, 1, 0, maxMessage);
       return 0;
     case 7:
       if ( edit->pos >= length )
         goto LABEL_140;
-      v5 = edit->pos;
-      edit->pos = v5 + mbcs_skip(&edit->buffer[v5], 1);
+      pos = edit->pos;
+      edit->pos = pos + mbcs_skip(&edit->buffer[pos], 1);
       goto LABEL_71;
     case 9:
 LABEL_71:
@@ -46606,12 +46492,12 @@ LABEL_140:
   }
   return v14;
 }
+// 80516E9: using guessed type unsigned __int8 uch[5];
 
 //----- (080522A6) --------------------------------------------------------
 int __cdecl get_popup_number(const char *msg, int *c, int *rel)
 {
   char *v3; // eax
-  int v5; // [esp+14h] [ebp-A4h]
   int v6; // [esp+18h] [ebp-A0h]
   int num; // [esp+34h] [ebp-84h]
   char *p; // [esp+38h] [ebp-80h]
@@ -46655,7 +46541,7 @@ int __cdecl get_popup_number(const char *msg, int *c, int *rel)
     }
     if ( *rel != 43 && *rel != 45 )
       *rel = 0;
-    v5 = num;
+    return num;
   }
   else
   {
@@ -46663,21 +46549,20 @@ int __cdecl get_popup_number(const char *msg, int *c, int *rel)
     HTInfoMsg(v3);
     *c = 0;
     *rel = 0;
-    v5 = 0;
+    return 0;
   }
-  return v5;
 }
 
 //----- (080524C5) --------------------------------------------------------
 void __cdecl remember_column(EditFieldData *edit, int offset)
 {
-  int v2; // [esp+4h] [ebp-14h]
+  int curx; // [esp+4h] [ebp-14h]
 
   if ( LYwin )
-    v2 = LYwin->_curx;
+    curx = LYwin->_curx;
   else
-    v2 = -1;
-  edit->offset2col[offset] = v2;
+    curx = -1;
+  edit->offset2col[offset] = curx;
 }
 
 //----- (08052529) --------------------------------------------------------
@@ -46912,8 +46797,8 @@ LABEL_86:
     curses_style(estyle, 0);
   LYrefresh();
 }
-// 80527BA: conditional instruction was optimized away because of '%prompting.4==0'
-// 805281D: conditional instruction was optimized away because of '%prompting.4==0'
+// 80527BA: conditional instruction was optimized away because %prompting.4==0
+// 805281D: conditional instruction was optimized away because %prompting.4==0
 
 //----- (08052F5D) --------------------------------------------------------
 void __cdecl reinsertEdit(EditFieldData *edit, char *result)
@@ -46947,7 +46832,7 @@ int __cdecl normalCmpList(const void *a, const void *b)
 //----- (08053014) --------------------------------------------------------
 char **__cdecl sortedList(HTList *list, BOOLEAN ignorecase)
 {
-  char *v3; // [esp+1Ch] [ebp-2Ch]
+  char *object; // [esp+1Ch] [ebp-2Ch]
   int (*compar)(const void *, const void *); // [esp+20h] [ebp-28h]
   char **result; // [esp+34h] [ebp-14h]
   unsigned int jk; // [esp+38h] [ebp-10h]
@@ -46966,10 +46851,10 @@ char **__cdecl sortedList(HTList *list, BOOLEAN ignorecase)
   {
     list = list->next;
     if ( list )
-      v3 = (char *)list->object;
+      object = (char *)list->object;
     else
-      v3 = 0;
-    result[j++] = v3;
+      object = 0;
+    result[j++] = object;
   }
   if ( count > 1 )
   {
@@ -46996,7 +46881,7 @@ char **__cdecl sortedList(HTList *list, BOOLEAN ignorecase)
   }
   return result;
 }
-// 805307C: conditional instruction was optimized away because of '%list.4!=0'
+// 805307C: conditional instruction was optimized away because %list.4!=0
 
 //----- (080531AB) --------------------------------------------------------
 int __cdecl LYarrayLength(const char **list)
@@ -47061,7 +46946,14 @@ unsigned int __cdecl options_width(const char **list)
 }
 
 //----- (080532EF) --------------------------------------------------------
-void __cdecl draw_option(WINDOW *win, int entry, int width, BOOLEAN reversed, int num_choices, int number, const char *value)
+void __cdecl draw_option(
+        WINDOW *win,
+        int entry,
+        int width,
+        BOOLEAN reversed,
+        int num_choices,
+        int number,
+        const char *value)
 {
   int style; // [esp+14h] [ebp-424h]
   int v8; // [esp+18h] [ebp-420h]
@@ -47094,7 +46986,15 @@ void __cdecl draw_option(WINDOW *win, int entry, int width, BOOLEAN reversed, in
 }
 
 //----- (08053519) --------------------------------------------------------
-int __cdecl LYhandlePopupList(int cur_choice, int ly, int lx, const char **choices, int width, int i_length, int disabled, BOOLEAN for_mouse)
+int __cdecl LYhandlePopupList(
+        int cur_choice,
+        int ly,
+        int lx,
+        const char **choices,
+        int width,
+        int i_length,
+        int disabled,
+        BOOLEAN for_mouse)
 {
   char *v8; // eax
   FILE *v9; // eax
@@ -47126,7 +47026,6 @@ int __cdecl LYhandlePopupList(int cur_choice, int ly, int lx, const char **choic
   int v37; // [esp+44h] [ebp-4F4h]
   int v38; // [esp+48h] [ebp-4F0h]
   int v39; // [esp+4Ch] [ebp-4ECh]
-  int v40; // [esp+50h] [ebp-4E8h]
   BOOLEAN for_mousea; // [esp+54h] [ebp-4E4h]
   const char **choicesa; // [esp+58h] [ebp-4E0h]
   char *msg; // [esp+68h] [ebp-4D0h] BYREF
@@ -47917,10 +47816,9 @@ LABEL_133:
   }
   LYsubwindow(0);
   if ( disabled )
-    v40 = orig_choice;
+    return orig_choice;
   else
-    v40 = cur_choice;
-  return v40;
+    return cur_choice;
 }
 
 //----- (080551A5) --------------------------------------------------------
@@ -47928,18 +47826,18 @@ int __cdecl LYgetstr(char *inputline, int hidden, size_t bufsize, RecallType rec
 {
   FILE *v4; // eax
   FILE *v5; // eax
-  int v6; // eax
+  int current_modifiers; // eax
   int v7; // eax
   char *v8; // eax
   FILE *v9; // eax
   FILE *v10; // eax
   FILE *v11; // eax
   int v12; // eax
-  int v14; // [esp+2Ch] [ebp-449Ch]
+  int curx; // [esp+2Ch] [ebp-449Ch]
   int v15; // [esp+30h] [ebp-4498h]
   bool v17; // [esp+3Ah] [ebp-448Eh]
   bool v18; // [esp+3Bh] [ebp-448Dh]
-  int v19; // [esp+3Ch] [ebp-448Ch]
+  int cury; // [esp+3Ch] [ebp-448Ch]
   int v20; // [esp+40h] [ebp-4488h]
   unsigned __int8 *e1; // [esp+50h] [ebp-4478h]
   int len; // [esp+54h] [ebp-4474h]
@@ -47964,14 +47862,14 @@ int __cdecl LYgetstr(char *inputline, int hidden, size_t bufsize, RecallType rec
   last_xlkc = -1;
   refresh_mb = 1;
   if ( LYwin )
-    v14 = LYwin->_curx;
+    curx = LYwin->_curx;
   else
-    v14 = -1;
+    curx = -1;
   if ( bufsize > 0x3FF )
     v15 = 1023;
   else
     v15 = bufsize - 1;
-  LYSetupEdit(&MyEdit, inputline, v15, LYcols - (LYShowScrollbar != 0) - v14);
+  LYSetupEdit(&MyEdit, inputline, v15, LYcols - (LYShowScrollbar != 0) - curx);
   MyEdit.hidden = hidden;
   if ( WWW_TraceFlag[0] )
   {
@@ -48023,7 +47921,7 @@ again:
       else
       {
         last_xlkc = ch_0a;
-        xlec &= 0xFFFFFF7F;
+        xlec &= ~0x80u;
       }
       switch ( xlec )
       {
@@ -48049,9 +47947,9 @@ again:
               while ( cur_choice < num_options && strcasecomp(data[cur_choice], MyEdit.buffer) < 0 )
                 ++cur_choice;
               if ( LYwin )
-                v19 = LYwin->_cury;
+                cury = LYwin->_cury;
               else
-                v19 = -1;
+                cury = -1;
               if ( LYwin )
                 v20 = LYwin->_curx;
               else
@@ -48066,7 +47964,7 @@ again:
                 }
                 reinsertEdit(&MyEdit, data[cur_choicea]);
               }
-              LYmove(v19, v20);
+              LYmove(cury, v20);
               if ( data )
                 free(data);
             }
@@ -48097,9 +47995,9 @@ again:
         case 23:
           goto again;
         case 29:
-          v6 = MyEdit.current_modifiers;
-          BYTE1(v6) = BYTE1(MyEdit.current_modifiers) | 0x40;
-          MyEdit.current_modifiers = v6;
+          current_modifiers = MyEdit.current_modifiers;
+          BYTE1(current_modifiers) = BYTE1(MyEdit.current_modifiers) | 0x40;
+          MyEdit.current_modifiers = current_modifiers;
           goto again;
         case 30:
           v7 = MyEdit.current_modifiers;
@@ -48314,9 +48212,14 @@ LABEL_19:
 }
 
 //----- (08055ECC) --------------------------------------------------------
-const char *__cdecl LYno_attr_mbcs_case_strstr(const char *chptr, const char *tarptr, BOOLEAN utf_flag, BOOLEAN count_gcells, int *nstartp, int *nendp)
+const char *__cdecl LYno_attr_mbcs_case_strstr(
+        const char *chptr,
+        const char *tarptr,
+        BOOLEAN utf_flag,
+        BOOLEAN count_gcells,
+        int *nstartp,
+        int *nendp)
 {
-  const char *v7; // [esp+Ch] [ebp-2Ch]
   int tarlen; // [esp+24h] [ebp-14h]
   int offset; // [esp+28h] [ebp-10h]
   int len; // [esp+2Ch] [ebp-Ch]
@@ -48377,9 +48280,9 @@ LABEL_79:
     tarlen = 1;
   if ( *tmptarptr )
   {
-LABEL_41:
     while ( 1 )
     {
+LABEL_41:
       if ( *tmpchptr > 2 && *tmpchptr <= 8 )
       {
         ++tmpchptr;
@@ -48414,7 +48317,7 @@ LABEL_41:
       *nstartp = offset;
     if ( nendp )
       *nendp = len + tarlen;
-    v7 = chptr;
+    return chptr;
   }
   else
   {
@@ -48422,15 +48325,19 @@ LABEL_41:
       *nstartp = offset;
     if ( nendp )
       *nendp = len + tarlen;
-    v7 = chptr;
+    return chptr;
   }
-  return v7;
 }
 
 //----- (0805628E) --------------------------------------------------------
-const char *__cdecl LYno_attr_mbcs_strstr(const char *chptr, const char *tarptr, BOOLEAN utf_flag, BOOLEAN count_gcells, int *nstartp, int *nendp)
+const char *__cdecl LYno_attr_mbcs_strstr(
+        const char *chptr,
+        const char *tarptr,
+        BOOLEAN utf_flag,
+        BOOLEAN count_gcells,
+        int *nstartp,
+        int *nendp)
 {
-  const char *v7; // [esp+0h] [ebp-2Ch]
   int tarlen; // [esp+18h] [ebp-14h]
   int offset; // [esp+1Ch] [ebp-10h]
   int len; // [esp+20h] [ebp-Ch]
@@ -48488,9 +48395,9 @@ LABEL_71:
     tarlen = 1;
   if ( *tmptarptr )
   {
-LABEL_33:
     while ( 1 )
     {
+LABEL_33:
       if ( *tmpchptr > 2 && *tmpchptr <= 8 )
       {
         ++tmpchptr;
@@ -48525,7 +48432,7 @@ LABEL_33:
       *nstartp = offset;
     if ( nendp )
       *nendp = len + tarlen;
-    v7 = chptr;
+    return chptr;
   }
   else
   {
@@ -48533,9 +48440,8 @@ LABEL_33:
       *nstartp = offset;
     if ( nendp )
       *nendp = len + tarlen;
-    v7 = chptr;
+    return chptr;
   }
-  return v7;
 }
 
 //----- (080565C8) --------------------------------------------------------
@@ -48624,7 +48530,6 @@ int __cdecl UniToLowerCase(int upper)
 int __cdecl UPPER8(int ch1, int ch2)
 {
   int v2; // ebx
-  int v4; // [esp+10h] [ebp-28h]
   int v5; // [esp+14h] [ebp-24h]
   int v6; // [esp+18h] [ebp-20h]
   int v7; // [esp+1Ch] [ebp-1Ch]
@@ -48642,7 +48547,7 @@ int __cdecl UPPER8(int ch1, int ch2)
   {
     if ( (ch1 & 0x80u) == 0 || (ch2 & 0x80u) == 0 )
     {
-      v4 = -10;
+      return -10;
     }
     else if ( DisplayCharsetMatchLocale )
     {
@@ -48654,7 +48559,7 @@ int __cdecl UPPER8(int ch1, int ch2)
         v8 = toupper((unsigned __int8)ch2);
       else
         v8 = (unsigned __int8)ch2;
-      v4 = v7 - v8;
+      return v7 - v8;
     }
     else
     {
@@ -48663,11 +48568,11 @@ int __cdecl UPPER8(int ch1, int ch2)
       {
         uni_ch1 = UCTransToUni(ch1, current_char_set);
         v2 = UniToLowerCase(uni_ch1);
-        v4 = v2 - UniToLowerCase(uni_ch2);
+        return v2 - UniToLowerCase(uni_ch2);
       }
       else
       {
-        v4 = (unsigned __int8)ch1;
+        return (unsigned __int8)ch1;
       }
     }
   }
@@ -48681,9 +48586,8 @@ int __cdecl UPPER8(int ch1, int ch2)
       v6 = toupper((unsigned __int8)ch2);
     else
       v6 = (unsigned __int8)ch2;
-    v4 = v5 - v6;
+    return v5 - v6;
   }
-  return v4;
 }
 
 //----- (08056A34) --------------------------------------------------------
@@ -48724,7 +48628,7 @@ LABEL_16:
     *src = result;
   return result;
 }
-// 8056B5E: conditional instruction was optimized away because of '%result.4!=0'
+// 8056B5E: conditional instruction was optimized away because %result.4!=0
 
 //----- (08056BA8) --------------------------------------------------------
 void __cdecl LYOpenCmdLogfile(int argc, char **argv)
@@ -49252,7 +49156,11 @@ FILE *LYPipeToMailer()
 }
 
 //----- (08057A6E) --------------------------------------------------------
-void __cdecl mailform(const char *mailto_address, const char *mailto_subject, const char *mailto_content, const char *mailto_type)
+void __cdecl mailform(
+        const char *mailto_address,
+        const char *mailto_subject,
+        const char *mailto_content,
+        const char *mailto_type)
 {
   FILE *v4; // eax
   FILE *v5; // eax
@@ -49496,15 +49404,15 @@ LABEL_49:
     goto cleanup;
   }
 }
-// 8057DA6: conditional instruction was optimized away because of '%keywords.4!=0'
+// 8057DA6: conditional instruction was optimized away because %keywords.4!=0
 
 //----- (0805842D) --------------------------------------------------------
 void __cdecl mailmsg(int cur, char *owner_address, char *filename, char *linkname)
 {
   FILE *v4; // eax
   FILE *v5; // eax
-  char *v6; // esi
-  char *v7; // ebx
+  char *target; // esi
+  char *lname; // ebx
   char *v8; // eax
   const char *v9; // ebx
   char *v10; // eax
@@ -49567,10 +49475,10 @@ void __cdecl mailmsg(int cur, char *owner_address, char *filename, char *linknam
             fprintf(fd, "Cc: %s\n", personal_mail_address);
           fprintf(fd, "X-URL: %s\n", filename);
           fprintf(fd, "X-Mailer: %s, Version %s\n\n", "Lynx", "2.8.7dev.11");
-          v6 = links[cur].target;
-          v7 = links[cur].lname;
+          target = links[cur].target;
+          lname = links[cur].lname;
           v8 = gettext("The link   %s :?: %s \n");
-          fprintf(fd, v8, v7, v6);
+          fprintf(fd, v8, lname, target);
           v9 = LYGetHiliteStr(cur, 0);
           v10 = gettext("called \"%s\"\n");
           fprintf(fd, v10, v9);
@@ -50241,7 +50149,7 @@ cleanup:
       free(body);
   }
 }
-// 8058C5C: conditional instruction was optimized away because of '%keywords.4!=0'
+// 8058C5C: conditional instruction was optimized away because %keywords.4!=0
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
 //----- (0805A0F9) --------------------------------------------------------
@@ -50250,10 +50158,15 @@ int LYSystemMail()
   char *v0; // eax
 
   if ( system_mail && strcmp(system_mail, "unknown") )
+  {
     return 1;
-  v0 = gettext("No system mailer configured");
-  HTAlert(v0);
-  return 0;
+  }
+  else
+  {
+    v0 = gettext("No system mailer configured");
+    HTAlert(v0);
+    return 0;
+  }
 }
 
 //----- (0805A148) --------------------------------------------------------
@@ -50475,18 +50388,15 @@ void __cdecl HTProgress(const char *Msg)
 //----- (0805A673) --------------------------------------------------------
 const char *__cdecl HTProgressUnits(int rate)
 {
-  const char *v2; // [esp+4h] [ebp-4h]
-
   if ( !bunits_10637 )
   {
     bunits_10637 = gettext("bytes");
     kbunits_10638 = gettext(LYTransferName);
   }
   if ( rate == 2 || rate == 4 )
-    v2 = kbunits_10638;
+    return kbunits_10638;
   else
-    v2 = bunits_10637;
-  return v2;
+    return bunits_10637;
 }
 
 //----- (0805A6C8) --------------------------------------------------------
@@ -50663,10 +50573,15 @@ void __cdecl HTReadProgress(off_t bytes, off_t total)
 //----- (0805B052) --------------------------------------------------------
 int HTLastConfirmCancelled()
 {
-  if ( !conf_cancelled[0] )
+  if ( conf_cancelled[0] )
+  {
+    conf_cancelled[0] = 0;
+    return 1;
+  }
+  else
+  {
     return 0;
-  conf_cancelled[0] = 0;
-  return 1;
+  }
 }
 
 //----- (0805B07A) --------------------------------------------------------
@@ -50889,7 +50804,6 @@ BOOLEAN __cdecl HTConfirm(const char *Msg)
 BOOLEAN __cdecl confirm_post_resub(const char *address, const char *title, int if_imgmap, int if_file)
 {
   char *v4; // eax
-  BOOLEAN v6; // [esp+Fh] [ebp-119h]
   size_t maxlen; // [esp+20h] [ebp-108h]
   char *temp; // [esp+24h] [ebp-104h]
   char *tempa; // [esp+24h] [ebp-104h]
@@ -50942,7 +50856,7 @@ LABEL_19:
       if ( title && len1 + strlen(title) <= maxlen )
       {
         sprintf(buf, msg, title);
-        v6 = HTConfirm(buf);
+        return HTConfirm(buf);
       }
       else
       {
@@ -50957,14 +50871,14 @@ LABEL_19:
             sprintf(buf, msg, tempb);
             resb = HTConfirm(buf);
             free(tempb);
-            v6 = resb;
+            return resb;
           }
           else
           {
             if ( tempb )
               free(tempb);
             v4 = gettext("Document from Form with POST content.  Resubmit?");
-            v6 = HTConfirm(v4);
+            return HTConfirm(v4);
           }
         }
         else
@@ -50973,7 +50887,7 @@ LABEL_19:
           resa = HTConfirm(buf);
           if ( tempa )
             free(tempa);
-          v6 = resa;
+          return resa;
         }
       }
     }
@@ -50983,17 +50897,16 @@ LABEL_19:
       res = HTConfirm(buf);
       if ( temp )
         free(temp);
-      v6 = res;
+      return res;
     }
   }
   else
   {
     sprintf(buf, msg, address);
-    v6 = HTConfirm(buf);
+    return HTConfirm(buf);
   }
-  return v6;
 }
-// 805BA89: conditional instruction was optimized away because of '%temp.4!=0'
+// 805BA89: conditional instruction was optimized away because %temp.4!=0
 
 //----- (0805BB07) --------------------------------------------------------
 char *__cdecl HTPrompt(const char *Msg, const char *deflt)
@@ -51201,7 +51114,6 @@ void __cdecl HTPromptUsernameAndPassword(const char *Msg, char **username, char 
 LABEL_20:
           free(proxyauth_info[1]);
           proxyauth_info[1] = 0;
-          return;
         }
       }
       else if ( authentication_info[1] )
@@ -51209,7 +51121,6 @@ LABEL_20:
 LABEL_22:
         free(authentication_info[1]);
         authentication_info[1] = 0;
-        return;
       }
     }
     else if ( *username && **username )
@@ -51236,7 +51147,7 @@ BOOLEAN __cdecl HTConfirmCookie(domain_entry *de, const char *server, const char
   char *v10; // ebx
   char *v11; // eax
   char *v12; // eax
-  char *v13; // ebx
+  char *domain; // ebx
   char *v14; // eax
   char *v15; // eax
   int v18; // [esp+38h] [ebp-40h]
@@ -51346,9 +51257,9 @@ reject:
         if ( ch_0 == 86 )
         {
           de->bv = REJECT_ALWAYS;
-          v13 = de->domain;
+          domain = de->domain;
           v14 = gettext("ne'V'er allowing from domain '%s'.");
-          HTUserMsg2(v14, v13);
+          HTUserMsg2(v14, domain);
           return 0;
         }
         if ( ch_0 == 89 )
@@ -51396,7 +51307,6 @@ int __cdecl HTConfirmPostRedirect(const char *Redirecting_url, int server_status
   char *v5; // eax
   char *v6; // eax
   int v8; // [esp+14h] [ebp-34h]
-  int v9; // [esp+1Ch] [ebp-2Ch]
   char *v10; // [esp+24h] [ebp-24h]
   int on_screen; // [esp+34h] [ebp-14h]
   char *url; // [esp+38h] [ebp-10h] BYREF
@@ -51414,10 +51324,9 @@ int __cdecl HTConfirmPostRedirect(const char *Redirecting_url, int server_status
   if ( dump_output_immediately )
   {
     if ( server_status == 301 )
-      v9 = 303;
+      return 303;
     else
-      v9 = 0;
-    return v9;
+      return 0;
   }
   if ( user_mode )
   {
@@ -51611,7 +51520,7 @@ pool_data *__cdecl ALLOC_IN_POOL(HTPool **ppoolptr, unsigned int request)
     }
     else
     {
-      ptr = 0;
+      return 0;
     }
   }
   else
@@ -51719,7 +51628,7 @@ void *__cdecl LY_check_calloc(size_t nmemb, size_t size)
   char *v3; // eax
   char *v4; // eax
   const char *v6; // [esp+1Ch] [ebp-1Ch]
-  const char *v7; // [esp+20h] [ebp-18h]
+  const char *address; // [esp+20h] [ebp-18h]
   HText *t; // [esp+28h] [ebp-10h]
   int n; // [esp+2Ch] [ebp-Ch]
   int i; // [esp+30h] [ebp-8h]
@@ -51737,11 +51646,11 @@ void *__cdecl LY_check_calloc(size_t nmemb, size_t size)
         else
           v6 = &byte_814CBAC;
         if ( t && t->node_anchor && t->node_anchor->address )
-          v7 = t->node_anchor->address;
+          address = t->node_anchor->address;
         else
-          v7 = "unknown anchor";
+          address = "unknown anchor";
         v2 = TraceFP();
-        fprintf(v2, "\nBUG *** Emergency freeing document %d/%d for '%s'%s!\n", i + 1, n, v7, v6);
+        fprintf(v2, "\nBUG *** Emergency freeing document %d/%d for '%s'%s!\n", i + 1, n, address, v6);
       }
       HTList_removeObjectAt(loaded_texts, i);
       HText_free(t);
@@ -51873,7 +51782,6 @@ void __cdecl LYAddHiText(TextAnchor *a, const char *text, int x)
 //----- (0805D296) --------------------------------------------------------
 int __cdecl LYAdjHiTextPos(TextAnchor *a, int count)
 {
-  char *v3; // [esp+4h] [ebp-14h]
   char *result; // [esp+14h] [ebp-4h]
 
   if ( a->lites.hl_len > count )
@@ -51888,10 +51796,9 @@ int __cdecl LYAdjHiTextPos(TextAnchor *a, int count)
     result = 0;
   }
   if ( result )
-    v3 = (char *)(LYSkipBlanks(result) - result);
+    return LYSkipBlanks(result) - result;
   else
-    v3 = 0;
-  return (int)v3;
+    return 0;
 }
 
 //----- (0805D30B) --------------------------------------------------------
@@ -51989,7 +51896,7 @@ void __cdecl PerFormInfo_free(PerFormInfo *form)
     free(form);
   }
 }
-// 805D559: conditional instruction was optimized away because of '%form.4!=0'
+// 805D559: conditional instruction was optimized away because %form.4!=0
 
 //----- (0805D56F) --------------------------------------------------------
 void __cdecl free_form_fields(FormInfo *input_field)
@@ -52071,24 +51978,24 @@ void __cdecl free_form_fields(FormInfo *input_field)
     input_field->accept_cs = 0;
   }
 }
-// 805D5F1: conditional instruction was optimized away because of '%tmp.4!=0'
+// 805D5F1: conditional instruction was optimized away because %tmp.4!=0
 
 //----- (0805D773) --------------------------------------------------------
 void __cdecl FormList_delete(HTList *forms)
 {
-  PerFormInfo *v1; // [esp+4h] [ebp-14h]
+  PerFormInfo *object; // [esp+4h] [ebp-14h]
   HTList *cur; // [esp+14h] [ebp-4h]
 
   cur = forms;
   while ( 1 )
   {
     if ( cur && (cur = cur->next) != 0 )
-      v1 = (PerFormInfo *)cur->object;
+      object = (PerFormInfo *)cur->object;
     else
-      v1 = 0;
-    if ( !v1 )
+      object = 0;
+    if ( !object )
       break;
-    PerFormInfo_free(v1);
+    PerFormInfo_free(object);
   }
   HTList_delete(forms);
 }
@@ -52110,7 +52017,7 @@ HText *__cdecl HText_new(HTParentAnchor *anchor)
   FILE *v2; // eax
   FILE *v3; // eax
   HText *v4; // eax
-  LYUCcharset *v5; // edx
+  LYUCcharset *UCInfoStage; // edx
   __int16 v8; // [esp+22h] [ebp-26h]
   bool v9; // [esp+24h] [ebp-24h]
   bool v10; // [esp+2Bh] [ebp-1Dh]
@@ -52169,7 +52076,7 @@ HText *__cdecl HText_new(HTParentAnchor *anchor)
   self->pool = POOL_NEW();
   if ( !self->pool )
     outofmem("./GridText.c", "HText_New");
-  self->last_line = (HTLine *)self->temp_line;
+  self->last_line = &self->temp_line[0].base;
   line = self->last_line;
   line->prev = line;
   line->next = line->prev;
@@ -52177,7 +52084,7 @@ HText *__cdecl HText_new(HTParentAnchor *anchor)
   line->offset = line->size;
   line->data[line->size] = 0;
   line->numstyles = 0;
-  line->styles = (HTStyleChange *)stylechanges_buffers;
+  line->styles = stylechanges_buffers[0];
   self->Lines = 0;
   self->last_anchor = 0;
   self->first_anchor = self->last_anchor;
@@ -52246,8 +52153,8 @@ HText *__cdecl HText_new(HTParentAnchor *anchor)
   self->have_8bit_chars = 0;
   HText_getChartransInfo(self);
   UCSetTransParams(&self->T, self->UCLYhndl, self->UCI, current_char_set, &LYCharSet_UC[current_char_set]);
-  v5 = HTAnchor_getUCInfoStage(anchor, 3);
-  HText_setKcode(self, anchor->charset, v5);
+  UCInfoStage = HTAnchor_getUCInfoStage(anchor, 3);
+  HText_setKcode(self, anchor->charset, UCInfoStage);
   if ( underscore_string[0] != 46 )
   {
     memset(underscore_string, 46, 0x3FFu);
@@ -52286,7 +52193,7 @@ HText *__cdecl HText_new2(HTParentAnchor *anchor, HTStream *stream)
 //----- (0805DEE7) --------------------------------------------------------
 void __cdecl HText_free(HText *self)
 {
-  void **v1; // [esp+14h] [ebp-14h]
+  void **object; // [esp+14h] [ebp-14h]
   HTList *cur; // [esp+1Ch] [ebp-Ch]
   TextAnchor *l; // [esp+24h] [ebp-4h]
 
@@ -52311,17 +52218,17 @@ void __cdecl HText_free(HText *self)
       while ( 1 )
       {
         if ( cur && (cur = cur->next) != 0 )
-          v1 = (void **)cur->object;
+          object = (void **)cur->object;
         else
-          v1 = 0;
-        if ( !v1 )
+          object = 0;
+        if ( !object )
           break;
-        if ( *v1 )
+        if ( *object )
         {
-          free(*v1);
-          *v1 = 0;
+          free(*object);
+          *object = 0;
         }
-        free(v1);
+        free(object);
       }
       HTList_delete(self->tabs);
       self->tabs = 0;
@@ -52345,8 +52252,8 @@ void __cdecl HText_free(HText *self)
     free(self);
   }
 }
-// 805E106: conditional instruction was optimized away because of '%self.4!=0'
-// 805DFBF: conditional instruction was optimized away because of '%var_14.4!=0'
+// 805E106: conditional instruction was optimized away because %self.4!=0
+// 805DFBF: conditional instruction was optimized away because %var_14.4!=0
 
 //----- (0805E11C) --------------------------------------------------------
 int __cdecl display_line(HTLine *line, HText *text, int scrline, const char *target)
@@ -52677,7 +52584,7 @@ void __cdecl display_title(HText *text)
     lynx_stop_title_color();
   }
 }
-// 805E891: conditional instruction was optimized away because of '%tmp.4!=0'
+// 805E891: conditional instruction was optimized away because %tmp.4!=0
 
 //----- (0805EC06) --------------------------------------------------------
 void __cdecl display_scrollbar(HText *text)
@@ -52791,8 +52698,8 @@ void __cdecl display_page(HText *text, int line_number, const char *target)
   FILE *v7; // eax
   char *v8; // eax
   FILE *v9; // eax
-  int v10; // [esp+18h] [ebp-90h]
-  int v11; // [esp+1Ch] [ebp-8Ch]
+  int cury; // [esp+18h] [ebp-90h]
+  int curx; // [esp+1Ch] [ebp-8Ch]
   const char *v12; // [esp+20h] [ebp-88h]
   int v13; // [esp+28h] [ebp-80h]
   char *v14; // [esp+2Ch] [ebp-7Ch]
@@ -53014,15 +52921,15 @@ void __cdecl display_page(HText *text, int line_number, const char *target)
             }
             LYstopTargetEmphasis();
             if ( LYwin )
-              v10 = LYwin->_cury;
+              cury = LYwin->_cury;
             else
-              v10 = -1;
-            y = v10;
+              cury = -1;
+            y = cury;
             if ( LYwin )
-              v11 = LYwin->_curx;
+              curx = LYwin->_curx;
             else
-              v11 = -1;
-            offset = v11;
+              curx = -1;
+            offset = curx;
             data += itmp;
             LYmove(title_lines + i + 1, 0);
           }
@@ -53225,7 +53132,14 @@ int __cdecl set_style_by_embedded_chars(char *s, char *e, unsigned __int8 start_
 }
 
 //----- (080600F8) --------------------------------------------------------
-void __cdecl move_anchors_in_region(HTLine *line, int line_number, TextAnchor **prev_anchor, int *prev_head_processed, int sbyte, int ebyte, int shift)
+void __cdecl move_anchors_in_region(
+        HTLine *line,
+        int line_number,
+        TextAnchor **prev_anchor,
+        int *prev_head_processed,
+        int sbyte,
+        int ebyte,
+        int shift)
 {
   int v7; // [esp+4h] [ebp-14h]
   int last; // [esp+Ch] [ebp-Ch]
@@ -53268,7 +53182,14 @@ void __cdecl move_anchors_in_region(HTLine *line, int line_number, TextAnchor **
 }
 
 //----- (0806025D) --------------------------------------------------------
-HTLine *__cdecl insert_blanks_in_line(HTLine *line, int line_number, HText *text, TextAnchor **prev_anchor, int ninserts, int *oldpos, int *newpos)
+HTLine *__cdecl insert_blanks_in_line(
+        HTLine *line,
+        int line_number,
+        HText *text,
+        TextAnchor **prev_anchor,
+        int ninserts,
+        int *oldpos,
+        int *newpos)
 {
   unsigned int v7; // eax
   int v11; // [esp+2Ch] [ebp-4Ch]
@@ -53403,7 +53324,10 @@ HTLine *__cdecl insert_blanks_in_line(HTLine *line, int line_number, HText *text
 }
 
 //----- (080606F2) --------------------------------------------------------
-HTStyleChange *__cdecl skip_matched_and_correct_offsets(HTStyleChange *end, HTStyleChange *start, unsigned int split_pos)
+HTStyleChange *__cdecl skip_matched_and_correct_offsets(
+        HTStyleChange *end,
+        HTStyleChange *start,
+        unsigned int split_pos)
 {
   HTStyleChange *tmp; // [esp+Ch] [ebp-8h]
   int level; // [esp+10h] [ebp-4h]
@@ -53434,7 +53358,7 @@ HTStyleChange *__cdecl skip_matched_and_correct_offsets(HTStyleChange *end, HTSt
 //----- (080607A2) --------------------------------------------------------
 void __cdecl split_line(HText *text, unsigned int split)
 {
-  int v2; // ebx
+  int size; // ebx
   FILE *v3; // edx
   FILE *v4; // eax
   unsigned __int16 v5; // cx
@@ -53448,9 +53372,9 @@ void __cdecl split_line(HText *text, unsigned int split)
   FILE *v13; // eax
   FILE *v14; // eax
   FILE *v15; // eax
-  int v16; // esi
-  int v17; // edi
-  int v18; // ebx
+  int extent; // esi
+  int line_pos; // edi
+  int line_num; // ebx
   FILE *v19; // edx
   FILE *v20; // eax
   FILE *v21; // eax
@@ -53460,7 +53384,7 @@ void __cdecl split_line(HText *text, unsigned int split)
   FILE *v25; // eax
   int v26; // ebx
   FILE *v27; // eax
-  HTCoord v28; // [esp+3Ch] [ebp-10Ch]
+  HTCoord indent1st; // [esp+3Ch] [ebp-10Ch]
   int v29; // [esp+40h] [ebp-108h]
   __int16 v30; // [esp+46h] [ebp-102h]
   int v31; // [esp+48h] [ebp-100h]
@@ -53529,9 +53453,9 @@ void __cdecl split_line(HText *text, unsigned int split)
 
   style = text->style;
   if ( text->in_line_1 )
-    v28 = text->style->indent1st;
+    indent1st = text->style->indent1st;
   else
-    v28 = text->style->leftIndent;
+    indent1st = text->style->leftIndent;
   CurLine = text->Lines;
   HeadTrim = 0;
   SpecialAttrChars = 0;
@@ -53576,9 +53500,9 @@ LABEL_15:
   {
     if ( WWW_TraceFlag[0] )
     {
-      v2 = previous->size;
+      size = previous->size;
       v3 = TraceFP();
-      fprintf(v3, "*** split_line: split==%u greater than last_line->size==%d !\n", split, v2);
+      fprintf(v3, "*** split_line: split==%u greater than last_line->size==%d !\n", split, size);
     }
     if ( split > 0x400 )
     {
@@ -53704,7 +53628,7 @@ LABEL_15:
   if ( (HTStyleChange (*)[64])previous->styles == stylechanges_buffers )
     line->base.styles = (HTStyleChange *)(stylechanges_buffers + 256);
   else
-    line->base.styles = (HTStyleChange *)stylechanges_buffers;
+    line->base.styles = stylechanges_buffers[0];
   line->base.numstyles = 0;
   from = &previous->styles[-(1 - previous->numstyles)];
   for ( to = line->base.styles + 63; previous->styles <= from && line->base.styles <= to; --to )
@@ -53851,7 +53775,7 @@ LABEL_15:
     {
       v31 = LYcols - (LYShowScrollbar != 0);
     }
-    v11 = v31 - style->rightIndent - v28;
+    v11 = v31 - style->rightIndent - indent1st;
     spare = v11 - LYstrExtent2(temp->data, temp->size);
     if ( spare < 0 && LYwideLines )
       spare = 0;
@@ -53860,15 +53784,15 @@ LABEL_15:
   v34 = style->alignment;
   if ( v34 == 2 )
   {
-    new_offseta = v28 + spare + new_offset;
+    new_offseta = indent1st + spare + new_offset;
   }
   else if ( v34 == 3 )
   {
-    new_offseta = v28 + spare / 2 + new_offset;
+    new_offseta = indent1st + spare / 2 + new_offset;
   }
   else
   {
-    new_offseta = v28 + new_offset;
+    new_offseta = indent1st + new_offset;
   }
   temp->offset = new_offseta & ~(unsigned __int16)(new_offseta >> 31);
   if ( text->stbl )
@@ -53897,9 +53821,9 @@ LABEL_15:
             ++a->line_num;
             if ( WWW_TraceFlag[0] )
             {
-              v16 = a->extent;
-              v17 = a->line_pos;
-              v18 = a->line_num;
+              extent = a->extent;
+              line_pos = a->line_pos;
+              line_num = a->line_num;
               v19 = TraceFP();
               fprintf(
                 v19,
@@ -53908,9 +53832,9 @@ LABEL_15:
                 TailTrim,
                 HeadTrim,
                 SpecialAttrChars,
-                v18,
-                v17,
-                v16);
+                line_num,
+                line_pos,
+                extent);
             }
             if ( end < s_post )
             {
@@ -53993,7 +53917,7 @@ LABEL_15:
     || justify_max_void_percent > 100
     || (!text->stbl ? (v35 = LYcols - (LYShowScrollbar != 0)) : (LYtableCols > 0 ? (v36 = LYcols * LYtableCols / 12) : (LYwideLines ? (v37 = 1014) : (v37 = LYcols), v36 = v37),
                                                                  v35 = v36 - (LYShowScrollbar != 0)),
-        100 * spare / (ctrl_chars_on_previous_line + v35 - style->rightIndent - v28) > justify_max_void_percent) )
+        100 * spare / (ctrl_chars_on_previous_line + v35 - style->rightIndent - indent1st) > justify_max_void_percent) )
   {
     if ( wait_for_this_stacked_elt >= 0
       || text->style->alignment != 1 && text->style->alignment
@@ -54163,7 +54087,7 @@ void __cdecl HText_appendParagraph(HText *text)
 //----- (080622F7) --------------------------------------------------------
 void __cdecl HText_setStyle(HText *text, HTStyle *style)
 {
-  char *v2; // ebx
+  char *name; // ebx
   FILE *v3; // eax
   int newlines; // [esp+10h] [ebp-18h]
   int before; // [esp+1Ch] [ebp-Ch]
@@ -54175,9 +54099,9 @@ void __cdecl HText_setStyle(HText *text, HTStyle *style)
     before = style->spaceBefore;
     if ( WWW_TraceFlag[0] )
     {
-      v2 = style->name;
+      name = style->name;
       v3 = TraceFP();
-      fprintf(v3, "GridText: Change to style %s\n", v2);
+      fprintf(v3, "GridText: Change to style %s\n", name);
     }
     newlines = before;
     if ( before < after )
@@ -54198,7 +54122,7 @@ void __cdecl HText_appendCharacter(HText *text, int ch_0)
   unsigned __int16 v7; // cx
   unsigned __int16 v8; // cx
   unsigned __int16 v9; // cx
-  unsigned __int16 v10; // cx
+  unsigned __int16 size; // cx
   unsigned __int16 v11; // cx
   unsigned __int16 v12; // cx
   unsigned __int16 v13; // cx
@@ -54220,10 +54144,10 @@ void __cdecl HText_appendCharacter(HText *text, int ch_0)
   unsigned __int16 v29; // cx
   unsigned __int16 v30; // cx
   char *v31; // [esp+4h] [ebp-1A4h]
-  eSJIS_status v32; // [esp+20h] [ebp-188h]
-  eEUC_status v33; // [esp+24h] [ebp-184h]
-  eDetectedKCode v34; // [esp+28h] [ebp-180h]
-  HTCoord v35; // [esp+2Ch] [ebp-17Ch]
+  eSJIS_status SJIS_status; // [esp+20h] [ebp-188h]
+  eEUC_status EUC_status; // [esp+24h] [ebp-184h]
+  eDetectedKCode detected_kcode; // [esp+28h] [ebp-180h]
+  HTCoord indent1st; // [esp+2Ch] [ebp-17Ch]
   int v36; // [esp+38h] [ebp-170h]
   int v37; // [esp+40h] [ebp-168h]
   int v38; // [esp+44h] [ebp-164h]
@@ -54323,8 +54247,8 @@ void __cdecl HText_appendCharacter(HText *text, int ch_0)
   {
     c = ch_0;
     save_d_kcode = text->detected_kcode;
-    v32 = text->SJIS_status;
-    if ( v32 == SJIS_state_in_kanji )
+    SJIS_status = text->SJIS_status;
+    if ( SJIS_status == SJIS_state_in_kanji )
     {
       if ( c <= 0x3Fu || c == 127 || c > 0xFCu )
       {
@@ -54339,7 +54263,7 @@ void __cdecl HText_appendCharacter(HText *text, int ch_0)
         text->SJIS_status = SJIS_state_neutral;
       }
     }
-    else if ( v32 == SJIS_state_neutral )
+    else if ( SJIS_status == SJIS_state_neutral )
     {
       if ( (c <= 0x80u || c > 0x9Fu) && (c <= 0xDFu || c > 0xEFu) )
       {
@@ -54357,8 +54281,8 @@ void __cdecl HText_appendCharacter(HText *text, int ch_0)
         text->SJIS_status = SJIS_state_in_kanji;
       }
     }
-    v33 = text->EUC_status;
-    if ( v33 == EUC_state_in_kanji )
+    EUC_status = text->EUC_status;
+    if ( EUC_status == EUC_state_in_kanji )
     {
       if ( c <= 0xA0u || c == 0xFF )
       {
@@ -54373,9 +54297,9 @@ void __cdecl HText_appendCharacter(HText *text, int ch_0)
         text->EUC_status = EUC_state_neutral;
       }
     }
-    else if ( v33 )
+    else if ( EUC_status )
     {
-      if ( v33 == EUC_state_in_kana )
+      if ( EUC_status == EUC_state_in_kana )
       {
         if ( c <= 0xA0u || c > 0xDFu )
         {
@@ -54412,8 +54336,8 @@ void __cdecl HText_appendCharacter(HText *text, int ch_0)
     }
     if ( text->detected_kcode != save_d_kcode )
     {
-      v34 = text->detected_kcode;
-      if ( v34 == DET_EUC )
+      detected_kcode = text->detected_kcode;
+      if ( detected_kcode == DET_EUC )
       {
         if ( WWW_TraceFlag[0] )
         {
@@ -54421,9 +54345,9 @@ void __cdecl HText_appendCharacter(HText *text, int ch_0)
           fprintf(v3, "TH_JP_AUTO_DETECT: This document's kcode seems EUC.\n");
         }
       }
-      else if ( v34 )
+      else if ( detected_kcode )
       {
-        if ( v34 == DET_MIXED )
+        if ( detected_kcode == DET_MIXED )
         {
           if ( WWW_TraceFlag[0] )
           {
@@ -54460,9 +54384,9 @@ void __cdecl HText_appendCharacter(HText *text, int ch_0)
     line = text->last_line;
     style = text->style;
     if ( text->in_line_1 )
-      v35 = style->indent1st;
+      indent1st = style->indent1st;
     else
-      v35 = style->leftIndent;
+      indent1st = style->leftIndent;
     if ( HTCJK )
     {
       switch ( text->state )
@@ -54604,9 +54528,9 @@ LABEL_135:
     {
       if ( ch_0 == 8 )
       {
-        v10 = line->size;
-        line->data[v10] = 8;
-        line->size = v10 + 1;
+        size = line->size;
+        line->data[size] = 8;
+        line->size = size + 1;
         line->data[line->size] = 0;
         return;
       }
@@ -54677,7 +54601,7 @@ LABEL_174:
               || (!line->size || line->data[line->size - 1] != 7 ? (v36 = 0) : (v36 = 1),
                   !text->stbl ? (v37 = LYcols - (LYShowScrollbar != 0)) : (LYtableCols > 0 ? (v38 = LYcols * LYtableCols / 12) : (LYwideLines ? (v39 = 1014) : (v39 = LYcols), v38 = v39),
                                                                            v37 = v38 - (LYShowScrollbar != 0)),
-                  v36 + v35 + line->offset + line->size - ctrl_chars_on_this_line >= v37) )
+                  v36 + indent1st + line->offset + line->size - ctrl_chars_on_this_line >= v37) )
             {
               if ( !text->permissible_split || text->source )
               {
@@ -54746,7 +54670,7 @@ LABEL_174:
             line->data[--line->size] = 0;
             --ctrl_chars_on_this_line;
           }
-          here = v35 + line->size + line->offset - ctrl_chars_on_this_line;
+          here = indent1st + line->size + line->offset - ctrl_chars_on_this_line;
           if ( style->tabs )
           {
             for ( Tab = style->tabs; Tab->position <= here; ++Tab )
@@ -54956,7 +54880,7 @@ LABEL_322:
         }
         if ( text->IgnoreExcess )
         {
-          nominal = v35 + line->offset + line->size - ctrl_chars_on_this_line;
+          nominal = indent1st + line->offset + line->size - ctrl_chars_on_this_line;
           if ( text->stbl )
           {
             if ( LYtableCols > 0 )
@@ -55047,7 +54971,7 @@ LABEL_322:
           if ( v70 <= nominal )
             return;
         }
-        v73 = line->size + v35 + line->offset;
+        v73 = line->size + indent1st + line->offset;
         v74 = line->size && line->data[line->size - 1] == 7;
         v75 = HTCJK && text->kanji_buf;
         if ( text->stbl )
@@ -55371,7 +55295,7 @@ LABEL_438:
     }
   }
 }
-// 806451E: conditional instruction was optimized away because of '%hi.1 in (E0..EF)'
+// 806451E: conditional instruction was optimized away because %hi.1 is in (E0..EF)
 
 //----- (08064B7D) --------------------------------------------------------
 void __cdecl internal_HTC(HText *text, int style, int dir)
@@ -55419,13 +55343,10 @@ void __cdecl HText_setLastChar(HText *text, char ch_0)
 //----- (08064DA6) --------------------------------------------------------
 char __cdecl HText_getLastChar(HText *text)
 {
-  char v2; // [esp+3h] [ebp-1h]
-
   if ( text )
-    v2 = text->LastChar;
+    return text->LastChar;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08064DCB) --------------------------------------------------------
@@ -55803,9 +55724,9 @@ void __cdecl HText_startStblTABLE(HText *me, __int16 alignment)
 //----- (08065818) --------------------------------------------------------
 void __cdecl free_enclosed_stbl(HText *me)
 {
-  STable_info *v1; // ebx
+  STable_info *stbl; // ebx
   FILE *v2; // eax
-  STable_info *v3; // [esp+10h] [ebp-18h]
+  STable_info *object; // [esp+10h] [ebp-18h]
   HTList *list; // [esp+20h] [ebp-8h]
 
   if ( me->enclosed_stbl )
@@ -55814,18 +55735,18 @@ void __cdecl free_enclosed_stbl(HText *me)
     while ( 1 )
     {
       if ( list && (list = list->next) != 0 )
-        v3 = (STable_info *)list->object;
+        object = (STable_info *)list->object;
       else
-        v3 = 0;
-      if ( !v3 )
+        object = 0;
+      if ( !object )
         break;
       if ( WWW_TraceFlag[0] )
       {
-        v1 = me->stbl;
+        stbl = me->stbl;
         v2 = TraceFP();
-        fprintf(v2, "endStblTABLE: finally free %p\n", v1);
+        fprintf(v2, "endStblTABLE: finally free %p\n", stbl);
       }
-      Stbl_free(v3);
+      Stbl_free(object);
     }
     HTList_delete(me->enclosed_stbl);
     me->enclosed_stbl = 0;
@@ -55839,10 +55760,9 @@ int __cdecl HText_endStblTABLE(HText *me)
   FILE *v2; // eax
   FILE *v3; // eax
   FILE *v4; // eax
-  STable_info *v5; // ebx
+  STable_info *stbl; // ebx
   FILE *v6; // eax
   FILE *v7; // eax
-  int v9; // [esp+1Ch] [ebp-1Ch]
   const char *v10; // [esp+20h] [ebp-18h]
   STable_info *enclosing; // [esp+28h] [ebp-10h]
   int lines_changed; // [esp+2Ch] [ebp-Ch]
@@ -55883,9 +55803,9 @@ int __cdecl HText_endStblTABLE(HText *me)
         HTList_addObject(me->enclosed_stbl, me->stbl);
         if ( WWW_TraceFlag[0] )
         {
-          v5 = me->stbl;
+          stbl = me->stbl;
           v6 = TraceFP();
-          fprintf(v6, "endStblTABLE: postpone free %p\n", v5);
+          fprintf(v6, "endStblTABLE: postpone free %p\n", stbl);
         }
       }
       else
@@ -55909,7 +55829,7 @@ int __cdecl HText_endStblTABLE(HText *me)
       v7 = TraceFP();
       fprintf(v7, "endStblTABLE: have%s enclosing table (%p)\n", v10, enclosing);
     }
-    v9 = enclosing != 0;
+    return enclosing != 0;
   }
   else
   {
@@ -55919,9 +55839,8 @@ int __cdecl HText_endStblTABLE(HText *me)
       fprintf(v1, "endStblTABLE: ignored.\n");
     }
     free_enclosed_stbl(me);
-    v9 = 0;
+    return 0;
   }
-  return v9;
 }
 
 //----- (08065B34) --------------------------------------------------------
@@ -55942,7 +55861,7 @@ void __cdecl HText_startStblTD(HText *me, int colspan, int rowspan, __int16 alig
 {
   FILE *v5; // eax
   FILE *v6; // eax
-  int v7; // [esp+18h] [ebp-20h]
+  int LineOffset; // [esp+18h] [ebp-20h]
   int pos; // [esp+20h] [ebp-18h]
 
   if ( me && me->stbl )
@@ -55968,8 +55887,8 @@ void __cdecl HText_startStblTD(HText *me, int colspan, int rowspan, __int16 alig
       rowspan = 1;
     }
     pos = HText_LastLineSize(me, 0);
-    v7 = HText_LastLineOffset(me);
-    if ( Stbl_addCellToTable(me->stbl, colspan, rowspan, alignment, isheader, me->Lines, v7, pos) < 0 )
+    LineOffset = HText_LastLineOffset(me);
+    if ( Stbl_addCellToTable(me->stbl, colspan, rowspan, alignment, isheader, me->Lines, LineOffset, pos) < 0 )
       HText_cancelStbl(me);
   }
 }
@@ -55977,14 +55896,14 @@ void __cdecl HText_startStblTD(HText *me, int colspan, int rowspan, __int16 alig
 //----- (08065CD2) --------------------------------------------------------
 void __cdecl HText_endStblTD(HText *me)
 {
-  int v1; // ebx
-  int v2; // eax
+  int LineSize; // ebx
+  int LineOffset; // eax
 
   if ( me && me->stbl )
   {
-    v1 = HText_LastLineSize(me, 0);
-    v2 = HText_LastLineOffset(me);
-    if ( Stbl_finishCellInTable(me->stbl, 1, me->Lines, v2, v1) < 0 )
+    LineSize = HText_LastLineSize(me, 0);
+    LineOffset = HText_LastLineOffset(me);
+    if ( Stbl_finishCellInTable(me->stbl, 1, me->Lines, LineOffset, LineSize) < 0 )
       HText_cancelStbl(me);
   }
 }
@@ -56084,7 +56003,7 @@ int __cdecl HText_beginAnchor(HText *text, BOOLEAN underline, HTChildAnchor *anc
 //----- (080660CF) --------------------------------------------------------
 BOOLEAN __cdecl HText_endAnchor0(HText *text, int number, int really)
 {
-  int v3; // ebx
+  int link_type; // ebx
   int v4; // esi
   FILE *v5; // eax
   FILE *v6; // eax
@@ -56093,9 +56012,9 @@ BOOLEAN __cdecl HText_endAnchor0(HText *text, int number, int really)
   int v9; // esi
   int v10; // edi
   FILE *v11; // edx
-  int v12; // ebx
-  int v13; // esi
-  int v14; // edi
+  int extent; // ebx
+  int line_pos; // esi
+  int line_num; // edi
   FILE *v15; // edx
   int v16; // ebx
   int v17; // esi
@@ -56153,10 +56072,10 @@ BOOLEAN __cdecl HText_endAnchor0(HText *text, int number, int really)
   }
   if ( WWW_TraceFlag[0] )
   {
-    v3 = a->link_type;
+    link_type = a->link_type;
     v4 = a->number;
     v5 = TraceFP();
-    fprintf(v5, "GridText:HText_endAnchor0: number:%d link_type:%d\n", v4, v3);
+    fprintf(v5, "GridText:HText_endAnchor0: number:%d link_type:%d\n", v4, link_type);
   }
   if ( a->link_type != 2 )
   {
@@ -56273,11 +56192,17 @@ BOOLEAN __cdecl HText_endAnchor0(HText *text, int number, int really)
         a->show_anchor = 1;
         if ( BlankExtent && WWW_TraceFlag[0] )
         {
-          v12 = a->extent;
-          v13 = a->line_pos;
-          v14 = a->line_num;
+          extent = a->extent;
+          line_pos = a->line_pos;
+          line_num = a->line_num;
           v15 = TraceFP();
-          fprintf(v15, "HText_endAnchor0: blanks (line,pos,ext,BlankExtent):(%d,%d,%d,%d)", v14, v13, v12, BlankExtent);
+          fprintf(
+            v15,
+            "HText_endAnchor0: blanks (line,pos,ext,BlankExtent):(%d,%d,%d,%d)",
+            line_num,
+            line_pos,
+            extent,
+            BlankExtent);
         }
       }
       else
@@ -56489,13 +56414,13 @@ BOOLEAN __cdecl HText_endAnchor0(HText *text, int number, int really)
 }
 
 //----- (08066E6B) --------------------------------------------------------
-void __cdecl _ZN10Fl_Browser10bottomlineEi(HText *text, int number)
+void __cdecl HText_endAnchor(HText *text, int number)
 {
   HText_endAnchor0(text, number, 1);
 }
 
 //----- (08066E8D) --------------------------------------------------------
-BOOLEAN __cdecl _ZN25idRenderModelManagerLocal10CheckModelEPKc(HText *text, int number)
+BOOLEAN __cdecl HText_isAnchorBlank(HText *text, int number)
 {
   return HText_endAnchor0(text, number, 0);
 }
@@ -56533,7 +56458,7 @@ int __cdecl remove_special_attr_chars(char *buf)
 void __cdecl HText_endAppend(HText *text)
 {
   FILE *v1; // eax
-  char *v2; // ebx
+  char *data; // ebx
   FILE *v3; // eax
   char *v4; // ebx
   FILE *v5; // eax
@@ -56565,9 +56490,9 @@ void __cdecl HText_endAppend(HText *text)
       next_to_the_last_line = text->last_line->prev;
       if ( WWW_TraceFlag[0] )
       {
-        v2 = text->last_line->data;
+        data = text->last_line->data;
         v3 = TraceFP();
-        fprintf(v3, "GridText: Removing bottom blank line: `%s'\n", v2);
+        fprintf(v3, "GridText: Removing bottom blank line: `%s'\n", data);
       }
       next_to_the_last_line->next = line_ptr;
       line_ptr->prev = next_to_the_last_line;
@@ -56588,13 +56513,13 @@ void __cdecl HText_endAppend(HText *text)
 void __cdecl HText_trimHightext(HText *text, BOOLEAN final, int stop_before)
 {
   FILE *v3; // eax
-  int v4; // ebx
+  int Lines; // ebx
   FILE *v5; // edx
-  int v6; // ebx
-  int v7; // esi
-  int v8; // edi
+  int extent; // ebx
+  int number; // esi
+  int sgml_offset; // edi
   FILE *v9; // eax
-  char *v10; // ebx
+  char *data; // ebx
   FILE *v11; // eax
   size_t v12; // ebx
   FILE *v13; // eax
@@ -56604,7 +56529,7 @@ void __cdecl HText_trimHightext(HText *text, BOOLEAN final, int stop_before)
   int v17; // esi
   int v18; // ebx
   FILE *v19; // eax
-  int v20; // [esp+24h] [ebp-54h]
+  int line_pos; // [esp+24h] [ebp-54h]
   int hi_offseta; // [esp+2Ch] [ebp-4Ch]
   int hi_offset; // [esp+2Ch] [ebp-4Ch]
   char *hi_string; // [esp+30h] [ebp-48h] BYREF
@@ -56640,9 +56565,9 @@ void __cdecl HText_trimHightext(HText *text, BOOLEAN final, int stop_before)
         stop_before = text->Lines;
       if ( WWW_TraceFlag[0] )
       {
-        v4 = text->Lines;
+        Lines = text->Lines;
         v5 = TraceFP();
-        fprintf(v5, "GridText: Entering HText_trimHightext (partial: 0..%d/%d)\n", stop_before, v4);
+        fprintf(v5, "GridText: Entering HText_trimHightext (partial: 0..%d/%d)\n", stop_before, Lines);
       }
     }
     line_ptr = text->last_line->next;
@@ -56686,12 +56611,19 @@ void __cdecl HText_trimHightext(HText *text, BOOLEAN final, int stop_before)
           }
           if ( WWW_TraceFlag[0] )
           {
-            v6 = anchor_ptr->extent;
-            v7 = anchor_ptr->number;
-            v8 = anchor_ptr->sgml_offset;
-            v20 = anchor_ptr->line_pos;
+            extent = anchor_ptr->extent;
+            number = anchor_ptr->number;
+            sgml_offset = anchor_ptr->sgml_offset;
+            line_pos = anchor_ptr->line_pos;
             v9 = TraceFP();
-            fprintf(v9, "GridText: Anchor found on line:%d col:%d [%05d:%d] ext:%d\n", cur_line, v20, v8, v7, v6);
+            fprintf(
+              v9,
+              "GridText: Anchor found on line:%d col:%d [%05d:%d] ext:%d\n",
+              cur_line,
+              line_pos,
+              sgml_offset,
+              number,
+              extent);
           }
           cur_shift = 0;
           if ( (anchor_ptr->link_type & 1) != 0 )
@@ -56709,9 +56641,9 @@ void __cdecl HText_trimHightext(HText *text, BOOLEAN final, int stop_before)
             anchor_ptr->extent = 0;
           if ( WWW_TraceFlag[0] )
           {
-            v10 = line_ptr->data;
+            data = line_ptr->data;
             v11 = TraceFP();
-            fprintf(v11, "anchor text: '%s'\n", v10);
+            fprintf(v11, "anchor text: '%s'\n", data);
           }
           v12 = anchor_ptr->line_pos;
           if ( v12 < strlen(line_ptr->data) )
@@ -56938,14 +56870,12 @@ int __cdecl HTGetRelLinkNum(int num, int rel, int cur)
   int v5; // ebx
   FILE *v6; // edx
   FILE *v7; // edx
-  int v8; // ebx
-  int v9; // esi
+  int number; // ebx
+  int line_num; // esi
   FILE *v10; // eax
   FILE *v11; // edx
   _BOOL4 v13; // [esp+20h] [ebp-38h]
   const char *v14; // [esp+24h] [ebp-34h]
-  int v15; // [esp+28h] [ebp-30h]
-  int v16; // [esp+2Ch] [ebp-2Ch]
   int curanchor; // [esp+34h] [ebp-24h]
   int curpos; // [esp+3Ch] [ebp-1Ch]
   int curline; // [esp+40h] [ebp-18h]
@@ -56988,15 +56918,15 @@ int __cdecl HTGetRelLinkNum(int num, int rel, int cur)
     }
     if ( rel == 43 )
     {
-      v15 = num + curanchor;
+      return num + curanchor;
     }
     else if ( rel == 45 )
     {
-      v15 = curanchor - num;
+      return curanchor - num;
     }
     else
     {
-      v15 = num;
+      return num;
     }
   }
   else
@@ -57005,10 +56935,10 @@ int __cdecl HTGetRelLinkNum(int num, int rel, int cur)
     {
       if ( WWW_TraceFlag[0] )
       {
-        v8 = a->number;
-        v9 = a->line_num;
+        number = a->number;
+        line_num = a->line_num;
         v10 = TraceFP();
-        fprintf(v10, "  a->line_num=%d, a->number=%d\n", v9, v8);
+        fprintf(v10, "  a->line_num=%d, a->number=%d\n", line_num, number);
       }
       if ( a->line_num >= scrtop )
         break;
@@ -57039,37 +56969,34 @@ int __cdecl HTGetRelLinkNum(int num, int rel, int cur)
     }
     if ( rel == 43 )
     {
-      v15 = num + curanchor;
+      return num + curanchor;
     }
     else if ( rel == 45 )
     {
       if ( l )
       {
-        v15 = curanchor + 1 - num;
+        return curanchor + 1 - num;
       }
       else
       {
         while ( a && !a->number )
           a = a->next;
         if ( a )
-          v16 = a->number - num;
+          return a->number - num;
         else
-          v16 = 0;
-        v15 = v16;
+          return 0;
       }
     }
     else
     {
-      v15 = num;
+      return num;
     }
   }
-  return v15;
 }
 
 //----- (08067DDA) --------------------------------------------------------
 int __cdecl HTGetLinkInfo(int number, int want_go, int *go_line, int *linknum, char **hightext, char **lname)
 {
-  int v7; // [esp+14h] [ebp-24h]
   char *cp_freeme; // [esp+18h] [ebp-20h]
   int max_offset; // [esp+1Ch] [ebp-1Ch]
   int prev_prev_anchor_line; // [esp+20h] [ebp-18h]
@@ -57133,11 +57060,11 @@ int __cdecl HTGetLinkInfo(int number, int want_go, int *go_line, int *linknum, c
         if ( linknum )
           *linknum = anchors_this_screen - 1;
       }
-      v7 = 8;
+      return 8;
     }
     else
     {
-      v7 = 0;
+      return 0;
     }
   }
   else
@@ -57151,9 +57078,8 @@ int __cdecl HTGetLinkInfo(int number, int want_go, int *go_line, int *linknum, c
     HTSACopy(lname, cp_freeme);
     if ( cp_freeme )
       free(cp_freeme);
-    v7 = 2;
+    return 2;
   }
-  return v7;
 }
 
 //----- (08068058) --------------------------------------------------------
@@ -57176,21 +57102,18 @@ BOOLEAN __cdecl same_anchor_or_field(int numberA, FormInfo *formA, int numberB, 
     return 0;
   if ( formA->type != formB->type || formA->type != 9 || formB->type != 9 )
     return 0;
-  if ( formA->number != formB->number )
-    return 0;
-  if ( formA->name && formB->name )
-    return strcmp(formA->name, formB->name) == 0;
-  return 1;
+  if ( formA->number == formB->number )
+    return !formA->name || !formB->name || strcmp(formA->name, formB->name) == 0;
+  return 0;
 }
 
 //----- (08068152) --------------------------------------------------------
 BOOLEAN __cdecl HText_TAHasMoreLines(int curlink, int direction)
 {
-  BOOLEAN v3; // [esp+17h] [ebp-31h]
-  bool v4; // [esp+18h] [ebp-30h]
+  BOOLEAN v4; // [esp+18h] [ebp-30h]
   FormInfo *formB; // [esp+1Ch] [ebp-2Ch]
   FormInfo *formA; // [esp+24h] [ebp-24h]
-  bool v7; // [esp+28h] [ebp-20h]
+  BOOLEAN v7; // [esp+28h] [ebp-20h]
   FormInfo *v8; // [esp+2Ch] [ebp-1Ch]
   FormInfo *v9; // [esp+34h] [ebp-14h]
   TextAnchor *prev_a; // [esp+40h] [ebp-8h]
@@ -57217,9 +57140,9 @@ BOOLEAN __cdecl HText_TAHasMoreLines(int curlink, int direction)
       v8 = aa->next->link_type == 2 ? aa->next->input_field : 0;
       v9 = aa->link_type == 2 ? aa->input_field : 0;
       if ( same_anchor_or_field(aa->number, v9, aa->next->number, v8, 1) )
-        v7 = 1;
+        return 1;
     }
-    v3 = v7;
+    return v7;
   }
   else
   {
@@ -57239,14 +57162,13 @@ BOOLEAN __cdecl HText_TAHasMoreLines(int curlink, int direction)
       formB = prev_a->link_type == 2 ? prev_a->input_field : 0;
       formA = a->link_type == 2 ? a->input_field : 0;
       if ( same_anchor_or_field(a->number, formA, prev_a->number, formB, 1) )
-        v4 = 1;
+        return 1;
     }
-    v3 = v4;
+    return v4;
   }
-  return v3;
 }
-// 80681C2: conditional instruction was optimized away because of '%a.4!=0'
-// 80682F8: conditional instruction was optimized away because of '%a.4!=0'
+// 80681C2: conditional instruction was optimized away because %a.4!=0
+// 80682F8: conditional instruction was optimized away because %a.4!=0
 
 //----- (080683EC) --------------------------------------------------------
 int __cdecl HTGetLinkOrFieldStart(int curlink, int *go_line, int *linknum, int direction, BOOLEAN ta_skip)
@@ -57255,8 +57177,8 @@ int __cdecl HTGetLinkOrFieldStart(int curlink, int *go_line, int *linknum, int d
   int v7; // [esp+20h] [ebp-88h]
   FormInfo *formB; // [esp+34h] [ebp-74h]
   FormInfo *formA; // [esp+3Ch] [ebp-6Ch]
-  FormInfo *v11; // [esp+44h] [ebp-64h]
-  _FormInfo *v12; // [esp+4Ch] [ebp-5Ch]
+  FormInfo *input_field; // [esp+44h] [ebp-64h]
+  _FormInfo *l_form; // [esp+4Ch] [ebp-5Ch]
   FormInfo *v13; // [esp+54h] [ebp-54h]
   _FormInfo *v14; // [esp+5Ch] [ebp-4Ch]
   HTGetLinkOrFieldStart::agroup current; // [esp+64h] [ebp-44h] BYREF
@@ -57342,14 +57264,14 @@ int __cdecl HTGetLinkOrFieldStart(int curlink, int *go_line, int *linknum, int d
       else
       {
         if ( a->link_type == 2 )
-          v11 = a->input_field;
+          input_field = a->input_field;
         else
-          v11 = 0;
+          input_field = 0;
         if ( links[curlink].type == 1 )
-          v12 = links[curlink].l_form;
+          l_form = links[curlink].l_form;
         else
-          v12 = 0;
-        if ( same_anchor_or_field(links[curlink].anchor_number, v12, a->number, v11, ta_skip) )
+          l_form = 0;
+        if ( same_anchor_or_field(links[curlink].anchor_number, l_form, a->number, input_field, ta_skip) )
         {
           if ( direction == -1 )
           {
@@ -57445,13 +57367,20 @@ int __cdecl HTGetLinkOrFieldStart(int curlink, int *go_line, int *linknum, int d
     *linknum = group_to_go->anchors_this_line - 1;
   return 8;
 }
-// 80684D2: conditional instruction was optimized away because of '%a.4!=0'
-// 8068596: conditional instruction was optimized away because of '%curlink.4>=0'
-// 80685A0: conditional instruction was optimized away because of '%a.4!=0'
-// 8068679: conditional instruction was optimized away because of '%curlink.4>=0'
+// 80684D2: conditional instruction was optimized away because %a.4!=0
+// 8068596: conditional instruction was optimized away because %curlink.4>=0
+// 80685A0: conditional instruction was optimized away because %a.4!=0
+// 8068679: conditional instruction was optimized away because %curlink.4>=0
 
 //----- (08068A53) --------------------------------------------------------
-BOOLEAN __cdecl HText_getFirstTargetInLine(HText *text, int line_num, BOOLEAN utf_flag, int *offset, int *tLen, char **data, const char *target)
+BOOLEAN __cdecl HText_getFirstTargetInLine(
+        HText *text,
+        int line_num,
+        BOOLEAN utf_flag,
+        int *offset,
+        int *tLen,
+        char **data,
+        const char *target)
 {
   const char *v9; // [esp+28h] [ebp-30h]
   int v10; // [esp+30h] [ebp-28h]
@@ -57494,13 +57423,10 @@ BOOLEAN __cdecl HText_getFirstTargetInLine(HText *text, int line_num, BOOLEAN ut
 //----- (08068BFC) --------------------------------------------------------
 int HText_getNumOfLines()
 {
-  int v1; // [esp+0h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTMainText->Lines;
+    return HTMainText->Lines;
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (08068C27) --------------------------------------------------------
@@ -57521,37 +57447,28 @@ int HText_getNumOfBytes()
 //----- (08068C89) --------------------------------------------------------
 const char *HText_getTitle()
 {
-  const char *v1; // [esp+4h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTAnchor_title(HTMainText->node_anchor);
+    return HTAnchor_title(HTMainText->node_anchor);
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (08068CB8) --------------------------------------------------------
 const char *HText_getStyle()
 {
-  const char *v1; // [esp+4h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTAnchor_style(HTMainText->node_anchor);
+    return HTAnchor_style(HTMainText->node_anchor);
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (08068CE7) --------------------------------------------------------
 const char *HText_getSugFname()
 {
-  const char *v1; // [esp+4h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTAnchor_SugFname(HTMainText->node_anchor);
+    return HTAnchor_SugFname(HTMainText->node_anchor);
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (08068D16) --------------------------------------------------------
@@ -57632,37 +57549,28 @@ LABEL_22:
 //----- (08068F21) --------------------------------------------------------
 const char *HText_getLastModified()
 {
-  const char *v1; // [esp+4h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTAnchor_last_modified(HTMainText->node_anchor);
+    return HTAnchor_last_modified(HTMainText->node_anchor);
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (08068F50) --------------------------------------------------------
 const char *HText_getDate()
 {
-  const char *v1; // [esp+4h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTAnchor_date(HTMainText->node_anchor);
+    return HTAnchor_date(HTMainText->node_anchor);
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (08068F7F) --------------------------------------------------------
 const char *HText_getServer()
 {
-  const char *v1; // [esp+4h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTAnchor_server(HTMainText->node_anchor);
+    return HTAnchor_server(HTMainText->node_anchor);
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (08068FAE) --------------------------------------------------------
@@ -57701,13 +57609,10 @@ void __cdecl HText_pageDisplay(int line_num, char *target)
 //----- (080690D2) --------------------------------------------------------
 int HText_pageHasPrevTarget()
 {
-  unsigned __int8 v1; // [esp+3h] [ebp-1h]
-
   if ( HTMainText )
-    v1 = HTMainText->page_has_target;
+    return (unsigned __int8)HTMainText->page_has_target;
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (080690FC) --------------------------------------------------------
@@ -57737,7 +57642,7 @@ int __cdecl HText_closestAnchor(HText *text, int offset)
     }
   }
   if ( result < 0 && closest )
-    result = closest->number;
+    return closest->number;
   return result;
 }
 
@@ -57765,7 +57670,7 @@ BOOLEAN __cdecl anchor_is_numbered(TextAnchor *Anchor_ptr)
   if ( Anchor_ptr->show_anchor && (Anchor_ptr->link_type & 1) != 0 )
     return 1;
   if ( Anchor_ptr->link_type == 2 && Anchor_ptr->input_field->type != 8 )
-    result = 1;
+    return 1;
   return result;
 }
 
@@ -57846,13 +57751,10 @@ void __cdecl HText_refresh(HText *text)
 //----- (080693F5) --------------------------------------------------------
 int __cdecl HText_sourceAnchors(HText *text)
 {
-  int v2; // [esp+0h] [ebp-4h]
-
   if ( text )
-    v2 = text->last_anchor_number;
+    return text->last_anchor_number;
   else
-    v2 = -1;
-  return v2;
+    return -1;
 }
 
 //----- (0806941B) --------------------------------------------------------
@@ -57926,7 +57828,7 @@ BOOLEAN __cdecl HText_select(HText *text)
 //----- (08069626) --------------------------------------------------------
 BOOLEAN __cdecl HText_POSTReplyLoaded(DocInfo *doc)
 {
-  void *v3; // [esp+14h] [ebp-24h]
+  void *object; // [esp+14h] [ebp-24h]
   const char *address; // [esp+24h] [ebp-14h]
   bstring *post_data; // [esp+28h] [ebp-10h]
   HTList *cur; // [esp+2Ch] [ebp-Ch]
@@ -57945,17 +57847,17 @@ BOOLEAN __cdecl HText_POSTReplyLoaded(DocInfo *doc)
   while ( 1 )
   {
     if ( cur && (cur = cur->next) != 0 )
-      v3 = cur->object;
+      object = cur->object;
     else
-      v3 = 0;
-    if ( !v3 )
+      object = 0;
+    if ( !object )
       break;
-    if ( *(_DWORD *)v3
-      && *(_DWORD *)(*(_DWORD *)v3 + 20)
-      && HTSABEql(post_data, *(bstring **)(*(_DWORD *)v3 + 20))
-      && *(_DWORD *)(*(_DWORD *)v3 + 16)
-      && !strcmp(address, *(const char **)(*(_DWORD *)v3 + 16))
-      && *(_BYTE *)(*(_DWORD *)v3 + 85) == is_head )
+    if ( *(_DWORD *)object
+      && *(_DWORD *)(*(_DWORD *)object + 20)
+      && HTSABEql(post_data, *(bstring **)(*(_DWORD *)object + 20))
+      && *(_DWORD *)(*(_DWORD *)object + 16)
+      && !strcmp(address, *(const char **)(*(_DWORD *)object + 16))
+      && *(_BYTE *)(*(_DWORD *)object + 85) == is_head )
     {
       return 1;
     }
@@ -57968,7 +57870,7 @@ BOOLEAN __cdecl HTFindPoundSelector(const char *selector)
 {
   FILE *v1; // eax
   int v2; // ebx
-  int v3; // esi
+  int number; // esi
   FILE *v4; // eax
   TextAnchor *a; // [esp+2Ch] [ebp-Ch]
 
@@ -57988,9 +57890,9 @@ BOOLEAN __cdecl HTFindPoundSelector(const char *selector)
   if ( WWW_TraceFlag[0] )
   {
     v2 = www_search_result;
-    v3 = a->number;
+    number = a->number;
     v4 = TraceFP();
-    fprintf(v4, "FindPound: Selecting anchor [%d] at line %d\n", v3, v2);
+    fprintf(v4, "FindPound: Selecting anchor [%d] at line %d\n", number, v2);
   }
   if ( !strcmp(selector, LYToolbarName) )
     --www_search_result;
@@ -58001,9 +57903,8 @@ BOOLEAN __cdecl HTFindPoundSelector(const char *selector)
 BOOLEAN __cdecl HText_selectAnchor(HText *text, HTChildAnchor *anchor)
 {
   FILE *v2; // eax
-  int v3; // ebx
+  int number; // ebx
   FILE *v4; // edx
-  BOOLEAN v6; // [esp+23h] [ebp-15h]
   int l; // [esp+2Ch] [ebp-Ch]
   TextAnchor *a; // [esp+30h] [ebp-8h]
 
@@ -58019,18 +57920,18 @@ BOOLEAN __cdecl HText_selectAnchor(HText *text, HTChildAnchor *anchor)
     l = a->line_num;
     if ( WWW_TraceFlag[0] )
     {
-      v3 = a->number;
+      number = a->number;
       v4 = TraceFP();
-      fprintf(v4, "HText: Selecting anchor [%d] at line %d\n", v3, l);
+      fprintf(v4, "HText: Selecting anchor [%d] at line %d\n", number, l);
     }
     if ( text->stale || text->top_of_screen > l || text->top_of_screen + display_lines + 1 <= l )
     {
       www_search_result = l - display_lines / 3;
-      v6 = 1;
+      return 1;
     }
     else
     {
-      v6 = 1;
+      return 1;
     }
   }
   else
@@ -58040,9 +57941,8 @@ BOOLEAN __cdecl HText_selectAnchor(HText *text, HTChildAnchor *anchor)
       v2 = TraceFP();
       fprintf(v2, "HText: No such anchor in this text!\n");
     }
-    v6 = 0;
+    return 0;
   }
-  return v6;
 }
 
 //----- (0806996A) --------------------------------------------------------
@@ -58096,13 +57996,10 @@ HTAnchor *__cdecl HText_referenceSelected(HText *me)
 //----- (0806999C) --------------------------------------------------------
 int HText_getTopOfScreen()
 {
-  int v1; // [esp+0h] [ebp-14h]
-
   if ( HTMainText )
-    v1 = HTMainText->top_of_screen;
+    return HTMainText->top_of_screen;
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (080699CA) --------------------------------------------------------
@@ -58119,7 +58016,7 @@ int __cdecl HText_getPreferredTopLine(HText *text, int line_number)
   if ( text->Lines < line_number )
     return text->Lines + 2 - display_lines;
   if ( line_number < 0 )
-    line_number = 0;
+    return 0;
   return line_number;
 }
 
@@ -58139,7 +58036,7 @@ void HTSearchQueries_free()
 //----- (08069A66) --------------------------------------------------------
 void __cdecl HTAddSearchQuery(char *query)
 {
-  void *v1; // [esp+14h] [ebp-14h]
+  void *object; // [esp+14h] [ebp-14h]
   HTList *cur; // [esp+1Ch] [ebp-Ch]
   char *new_query; // [esp+24h] [ebp-4h] BYREF
 
@@ -58153,15 +58050,15 @@ void __cdecl HTAddSearchQuery(char *query)
       while ( 1 )
       {
         if ( cur && (cur = cur->next) != 0 )
-          v1 = cur->object;
+          object = cur->object;
         else
-          v1 = 0;
-        if ( !v1 )
+          object = 0;
+        if ( !object )
           break;
-        if ( !strcmp((const char *)v1, new_query) )
+        if ( !strcmp((const char *)object, new_query) )
         {
-          HTList_removeObject(search_queries, v1);
-          free(v1);
+          HTList_removeObject(search_queries, object);
+          free(object);
           break;
         }
       }
@@ -58174,7 +58071,7 @@ void __cdecl HTAddSearchQuery(char *query)
     }
   }
 }
-// 8069B03: conditional instruction was optimized away because of '%var_14.4!=0'
+// 8069B03: conditional instruction was optimized away because %var_14.4!=0
 
 //----- (08069B62) --------------------------------------------------------
 int __cdecl do_www_search(DocInfo *doc)
@@ -58188,11 +58085,10 @@ int __cdecl do_www_search(DocInfo *doc)
   char *v7; // eax
   char *v8; // ebx
   char *v9; // eax
-  char *v10; // ebx
+  char *address; // ebx
   FILE *v11; // eax
   int v13; // [esp+14h] [ebp-244h]
   _BOOL4 v14; // [esp+18h] [ebp-240h]
-  int v15; // [esp+1Ch] [ebp-23Ch]
   char *cp_freeme; // [esp+30h] [ebp-228h]
   int QueryNum; // [esp+34h] [ebp-224h]
   int ch_0; // [esp+40h] [ebp-218h]
@@ -58356,24 +58252,23 @@ LABEL_63:
         free(cp_freeme);
       if ( WWW_TraceFlag[0] )
       {
-        v10 = doc->address;
+        address = doc->address;
         v11 = TraceFP();
-        fprintf(v11, "\ndo_www_search: newfile: %s\n", v10);
+        fprintf(v11, "\ndo_www_search: newfile: %s\n", address);
       }
-      v15 = 1;
+      return 1;
     }
     else
     {
-      v15 = 0;
+      return 0;
     }
   }
   else
   {
     v7 = gettext("Use Control-R to resubmit the current query.");
     HTUserMsg(v7);
-    v15 = 3;
+    return 3;
   }
-  return v15;
 }
 
 //----- (0806A2F6) --------------------------------------------------------
@@ -58439,7 +58334,7 @@ int __cdecl TrimmedLength(char *string)
         src = srca + 1;
       }
       while ( !v1 );
-      result = dst - string - 1;
+      return dst - string - 1;
     }
   }
   return result;
@@ -58666,7 +58561,7 @@ LABEL_19:
     }
   }
 }
-// 806A9C5: conditional instruction was optimized away because of '%goal.4==4'
+// 806A9C5: conditional instruction was optimized away because %goal.4==4
 
 //----- (0806ABCF) --------------------------------------------------------
 BOOLEAN __cdecl anchor_has_target(TextAnchor *a, char *target)
@@ -58978,13 +58873,10 @@ void __cdecl user_message(const char *message, const char *argument)
 //----- (0806B4CE) --------------------------------------------------------
 const char *HText_getOwner()
 {
-  const char *v1; // [esp+4h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTAnchor_owner(HTMainText->node_anchor);
+    return HTAnchor_owner(HTMainText->node_anchor);
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (0806B4FD) --------------------------------------------------------
@@ -58997,49 +58889,37 @@ void __cdecl HText_setMainTextOwner(const char *owner)
 //----- (0806B524) --------------------------------------------------------
 const char *HText_getRevTitle()
 {
-  const char *v1; // [esp+4h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTAnchor_RevTitle(HTMainText->node_anchor);
+    return HTAnchor_RevTitle(HTMainText->node_anchor);
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (0806B553) --------------------------------------------------------
 const char *HText_getContentBase()
 {
-  const char *v1; // [esp+4h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTAnchor_content_base(HTMainText->node_anchor);
+    return HTAnchor_content_base(HTMainText->node_anchor);
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (0806B582) --------------------------------------------------------
 const char *HText_getContentLocation()
 {
-  const char *v1; // [esp+4h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTAnchor_content_location(HTMainText->node_anchor);
+    return HTAnchor_content_location(HTMainText->node_anchor);
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (0806B5B1) --------------------------------------------------------
 const char *HText_getMessageID()
 {
-  const char *v1; // [esp+4h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTAnchor_messageID(HTMainText->node_anchor);
+    return HTAnchor_messageID(HTMainText->node_anchor);
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (0806B5E0) --------------------------------------------------------
@@ -59048,7 +58928,7 @@ void HTuncache_current_document()
   FILE *v0; // eax
   FILE *v1; // eax
   const char *v2; // [esp+10h] [ebp-18h]
-  const char *v3; // [esp+14h] [ebp-14h]
+  const char *address; // [esp+14h] [ebp-14h]
   HTParentAnchor *htmain_anchor; // [esp+24h] [ebp-4h]
 
   if ( HTMainText )
@@ -59066,11 +58946,11 @@ void HTuncache_current_document()
       else
         v2 = &byte_814CBAC;
       if ( htmain_anchor && htmain_anchor->address )
-        v3 = htmain_anchor->address;
+        address = htmain_anchor->address;
       else
-        v3 = "unknown anchor";
+        address = "unknown anchor";
       v0 = TraceFP();
-      fprintf(v0, "\nHTuncache.. freeing document for '%s'%s\n", v3, v2);
+      fprintf(v0, "\nHTuncache.. freeing document for '%s'%s\n", address, v2);
     }
     HTList_removeObject(loaded_texts, HTMainText);
     HText_free(HTMainText);
@@ -59135,10 +59015,10 @@ _BOOL4 useMemoryCache()
 _BOOL4 HTreparse_document()
 {
   FILE *v0; // eax
-  char *v1; // ebx
+  char *source_cache_file; // ebx
   FILE *v2; // eax
   HTAtom *v3; // eax
-  const char *v4; // ebx
+  const char *name; // ebx
   FILE *v5; // eax
   char *v6; // ebx
   FILE *v7; // eax
@@ -59147,7 +59027,7 @@ _BOOL4 HTreparse_document()
   char *v10; // ebx
   FILE *v11; // eax
   FILE *v12; // eax
-  HTChunk *v13; // ebx
+  HTChunk *source_cache_chunk; // ebx
   FILE *v14; // eax
   char *v15; // eax
   FILE *v16; // eax
@@ -59178,9 +59058,9 @@ _BOOL4 HTreparse_document()
       format_0 = HTAtom_for("text/html");
       if ( WWW_TraceFlag[0] )
       {
-        v13 = HTMainAnchor->source_cache_chunk;
+        source_cache_chunk = HTMainAnchor->source_cache_chunk;
         v14 = TraceFP();
-        fprintf(v14, "SourceCache: Reparsing from memory chunk %p\n", v13);
+        fprintf(v14, "SourceCache: Reparsing from memory chunk %p\n", source_cache_chunk);
       }
       if ( (!HTOutputFormat || HTOutputFormat != WWW_SOURCE) && HTMainAnchor->UCStages )
       {
@@ -59212,9 +59092,9 @@ _BOOL4 HTreparse_document()
   }
   if ( WWW_TraceFlag[0] )
   {
-    v1 = HTMainAnchor->source_cache_file;
+    source_cache_file = HTMainAnchor->source_cache_file;
     v2 = TraceFP();
-    fprintf(v2, "SourceCache: Reparsing file %s\n", v1);
+    fprintf(v2, "SourceCache: Reparsing file %s\n", source_cache_file);
   }
   if ( (!HTOutputFormat || HTOutputFormat != WWW_SOURCE) && HTMainAnchor->UCStages )
   {
@@ -59232,9 +59112,9 @@ _BOOL4 HTreparse_document()
   }
   if ( WWW_TraceFlag[0] )
   {
-    v4 = format->name;
+    name = format->name;
     v5 = TraceFP();
-    fprintf(v5, "  Content type is \"%s\"\n", v4);
+    fprintf(v5, "  Content type is \"%s\"\n", name);
   }
   fp = (FILE *)fopen64(HTMainAnchor->source_cache_file, "r");
   if ( fp )
@@ -59340,8 +59220,8 @@ void __cdecl trace_setting_change(const char *name, int prev_setting, int new_se
 //----- (0806BD69) --------------------------------------------------------
 _BOOL4 HTdocument_settings_changed()
 {
-  int v0; // ebx
-  int v1; // esi
+  int disp_lines; // ebx
+  int disp_cols; // esi
   FILE *v2; // eax
   int v5; // [esp+28h] [ebp-20h]
   int v6; // [esp+2Ch] [ebp-1Ch]
@@ -59349,63 +59229,71 @@ _BOOL4 HTdocument_settings_changed()
   bool v8; // [esp+34h] [ebp-14h]
   int v9; // [esp+3Ch] [ebp-Ch]
 
-  if ( !HTMainText || !(unsigned __int8)HTcan_reparse_document() )
-    return 0;
-  if ( WWW_TraceFlag[0] )
+  if ( HTMainText && (unsigned __int8)HTcan_reparse_document() )
   {
-    trace_setting_change("CLICKABLE_IMAGES", HTMainText->clickable_images, clickable_images);
-    trace_setting_change("PSEUDO_INLINE_ALTS", HTMainText->pseudo_inline_alts, pseudo_inline_alts);
-    trace_setting_change("VERBOSE_IMG", HTMainText->verbose_img, verbose_img);
-    trace_setting_change("RAW_MODE", HTMainText->raw_mode, LYUseDefaultRawMode);
-    trace_setting_change("HISTORICAL_COMMENTS", HTMainText->historical_comments, historical_comments);
-    trace_setting_change("MINIMAL_COMMENTS", HTMainText->minimal_comments, minimal_comments);
-    trace_setting_change("SOFT_DQUOTES", HTMainText->soft_dquotes, soft_dquotes);
-    trace_setting_change("OLD_DTD", HTMainText->old_dtd, Old_DTD);
-    trace_setting_change("KEYPAD_MODE", HTMainText->keypad_mode, keypad_mode);
-    if ( HTMainText->disp_lines != LYlines || (LYwideLines ? (v5 = 1014) : (v5 = LYcols), HTMainText->disp_cols != v5) )
+    if ( WWW_TraceFlag[0] )
     {
-      if ( WWW_TraceFlag[0] )
+      trace_setting_change("CLICKABLE_IMAGES", HTMainText->clickable_images, clickable_images);
+      trace_setting_change("PSEUDO_INLINE_ALTS", HTMainText->pseudo_inline_alts, pseudo_inline_alts);
+      trace_setting_change("VERBOSE_IMG", HTMainText->verbose_img, verbose_img);
+      trace_setting_change("RAW_MODE", HTMainText->raw_mode, LYUseDefaultRawMode);
+      trace_setting_change("HISTORICAL_COMMENTS", HTMainText->historical_comments, historical_comments);
+      trace_setting_change("MINIMAL_COMMENTS", HTMainText->minimal_comments, minimal_comments);
+      trace_setting_change("SOFT_DQUOTES", HTMainText->soft_dquotes, soft_dquotes);
+      trace_setting_change("OLD_DTD", HTMainText->old_dtd, Old_DTD);
+      trace_setting_change("KEYPAD_MODE", HTMainText->keypad_mode, keypad_mode);
+      if ( HTMainText->disp_lines != LYlines || (LYwideLines ? (v5 = 1014) : (v5 = LYcols), HTMainText->disp_cols != v5) )
       {
-        v6 = LYlines;
-        if ( LYwideLines )
-          v7 = 1014;
-        else
-          v7 = LYcols;
-        v0 = HTMainText->disp_lines;
-        v1 = HTMainText->disp_cols;
-        v2 = TraceFP();
-        fprintf(v2, "HTdocument_settings_changed: Screen size has changed (was %dx%d, now %dx%d)\n", v1, v0, v7, v6);
+        if ( WWW_TraceFlag[0] )
+        {
+          v6 = LYlines;
+          if ( LYwideLines )
+            v7 = 1014;
+          else
+            v7 = LYcols;
+          disp_lines = HTMainText->disp_lines;
+          disp_cols = HTMainText->disp_cols;
+          v2 = TraceFP();
+          fprintf(
+            v2,
+            "HTdocument_settings_changed: Screen size has changed (was %dx%d, now %dx%d)\n",
+            disp_cols,
+            disp_lines,
+            v7,
+            v6);
+        }
       }
     }
+    v8 = 1;
+    if ( HTMainText->clickable_images == clickable_images
+      && HTMainText->pseudo_inline_alts == pseudo_inline_alts
+      && HTMainText->verbose_img == verbose_img
+      && HTMainText->raw_mode == LYUseDefaultRawMode
+      && HTMainText->historical_comments == historical_comments
+      && (HTMainText->minimal_comments == minimal_comments || historical_comments)
+      && HTMainText->soft_dquotes == soft_dquotes
+      && HTMainText->old_dtd == Old_DTD
+      && HTMainText->keypad_mode == keypad_mode )
+    {
+      v9 = LYwideLines ? 1014 : LYcols;
+      if ( HTMainText->disp_cols == v9 )
+        return 0;
+    }
+    return v8;
   }
-  v8 = 1;
-  if ( HTMainText->clickable_images == clickable_images
-    && HTMainText->pseudo_inline_alts == pseudo_inline_alts
-    && HTMainText->verbose_img == verbose_img
-    && HTMainText->raw_mode == LYUseDefaultRawMode
-    && HTMainText->historical_comments == historical_comments
-    && (HTMainText->minimal_comments == minimal_comments || historical_comments)
-    && HTMainText->soft_dquotes == soft_dquotes
-    && HTMainText->old_dtd == Old_DTD
-    && HTMainText->keypad_mode == keypad_mode )
+  else
   {
-    v9 = LYwideLines ? 1014 : LYcols;
-    if ( HTMainText->disp_cols == v9 )
-      v8 = 0;
+    return 0;
   }
-  return v8;
 }
 
 //----- (0806C12B) --------------------------------------------------------
 int HTisDocumentSource()
 {
-  int v1; // [esp+0h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTMainText->source;
+    return HTMainText->source;
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (0806C15A) --------------------------------------------------------
@@ -59421,13 +59309,10 @@ char *HTLoadedDocumentURL()
 //----- (0806C1A6) --------------------------------------------------------
 bstring *HTLoadedDocumentPost_data()
 {
-  bstring *v1; // [esp+0h] [ebp-4h]
-
   if ( HTMainText && HTMainText->node_anchor && HTMainText->node_anchor->post_data )
-    v1 = HTMainText->node_anchor->post_data;
+    return HTMainText->node_anchor->post_data;
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (0806C1E9) --------------------------------------------------------
@@ -59443,21 +59328,33 @@ char *HTLoadedDocumentTitle()
 //----- (0806C235) --------------------------------------------------------
 int HTLoadedDocumentIsHEAD()
 {
-  if ( !HTMainText )
+  if ( HTMainText )
+  {
+    if ( HTMainText->node_anchor && HTMainText->node_anchor->isHEAD )
+      return (unsigned __int8)HTMainText->node_anchor->isHEAD;
+    else
+      return 0;
+  }
+  else
+  {
     return 0;
-  if ( HTMainText->node_anchor && HTMainText->node_anchor->isHEAD )
-    return (unsigned __int8)HTMainText->node_anchor->isHEAD;
-  return 0;
+  }
 }
 
 //----- (0806C27E) --------------------------------------------------------
 int HTLoadedDocumentIsSafe()
 {
-  if ( !HTMainText )
+  if ( HTMainText )
+  {
+    if ( HTMainText->node_anchor && HTMainText->node_anchor->safe )
+      return (unsigned __int8)HTMainText->node_anchor->safe;
+    else
+      return 0;
+  }
+  else
+  {
     return 0;
-  if ( HTMainText->node_anchor && HTMainText->node_anchor->safe )
-    return (unsigned __int8)HTMainText->node_anchor->safe;
-  return 0;
+  }
 }
 
 //----- (0806C2C7) --------------------------------------------------------
@@ -59473,13 +59370,10 @@ char *HTLoadedDocumentCharset()
 //----- (0806C313) --------------------------------------------------------
 int HTLoadedDocumentEightbit()
 {
-  unsigned __int8 v1; // [esp+3h] [ebp-1h]
-
   if ( HTMainText )
-    v1 = HTMainText->have_8bit_chars;
+    return (unsigned __int8)HTMainText->have_8bit_chars;
   else
-    v1 = 0;
-  return v1;
+    return 0;
 }
 
 //----- (0806C33D) --------------------------------------------------------
@@ -59505,69 +59399,56 @@ char *HTLoadedDocumentBookmark()
 //----- (0806C3BB) --------------------------------------------------------
 int __cdecl HText_LastLineSize(HText *text, BOOLEAN IgnoreSpaces)
 {
-  int v3; // [esp+10h] [ebp-8h]
-
   if ( text && text->last_line && text->last_line->size )
-    v3 = HText_TrueLineSize(text->last_line, text, IgnoreSpaces);
+    return HText_TrueLineSize(text->last_line, text, IgnoreSpaces);
   else
-    v3 = 0;
-  return v3;
+    return 0;
 }
 
 //----- (0806C414) --------------------------------------------------------
 BOOLEAN __cdecl HText_LastLineEmpty(HText *text, BOOLEAN IgnoreSpaces)
 {
-  BOOLEAN v3; // [esp+13h] [ebp-5h]
-
   if ( text && text->last_line && text->last_line->size )
-    v3 = HText_TrueEmptyLine(text->last_line, text, IgnoreSpaces);
+    return HText_TrueEmptyLine(text->last_line, text, IgnoreSpaces);
   else
-    v3 = 1;
-  return v3;
+    return 1;
 }
 
 //----- (0806C46B) --------------------------------------------------------
 int __cdecl HText_LastLineOffset(HText *text)
 {
-  int v2; // [esp+0h] [ebp-4h]
-
   if ( text && text->last_line )
-    v2 = text->last_line->offset;
+    return text->last_line->offset;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (0806C49F) --------------------------------------------------------
 int __cdecl HText_PreviousLineSize(HText *text, BOOLEAN IgnoreSpaces)
 {
-  int v3; // [esp+10h] [ebp-18h]
   _line *line; // [esp+24h] [ebp-4h]
 
   if ( !text || !text->last_line )
     return 0;
   line = text->last_line->prev;
   if ( line )
-    v3 = HText_TrueLineSize(line, text, IgnoreSpaces);
+    return HText_TrueLineSize(line, text, IgnoreSpaces);
   else
-    v3 = 0;
-  return v3;
+    return 0;
 }
 
 //----- (0806C501) --------------------------------------------------------
 BOOLEAN __cdecl HText_PreviousLineEmpty(HText *text, BOOLEAN IgnoreSpaces)
 {
-  BOOLEAN v3; // [esp+13h] [ebp-15h]
   _line *line; // [esp+24h] [ebp-4h]
 
   if ( !text || !text->last_line )
     return 1;
   line = text->last_line->prev;
   if ( line )
-    v3 = HText_TrueEmptyLine(line, text, IgnoreSpaces);
+    return HText_TrueEmptyLine(line, text, IgnoreSpaces);
   else
-    v3 = 1;
-  return v3;
+    return 1;
 }
 
 //----- (0806C55E) --------------------------------------------------------
@@ -59654,13 +59535,10 @@ void __cdecl HText_NegateLineOne(HText *text)
 //----- (0806C88F) --------------------------------------------------------
 BOOLEAN __cdecl HText_inLineOne(HText *text)
 {
-  BOOLEAN v2; // [esp+3h] [ebp-1h]
-
   if ( text )
-    v2 = text->in_line_1;
+    return text->in_line_1;
   else
-    v2 = 1;
-  return v2;
+    return 1;
 }
 
 //----- (0806C8B4) --------------------------------------------------------
@@ -59683,17 +59561,17 @@ void __cdecl HText_RemovePreviousLine(HText *text)
 //----- (0806C911) --------------------------------------------------------
 int __cdecl HText_getCurrentColumn(HText *text)
 {
-  HTCoord v2; // [esp+14h] [ebp-14h]
+  HTCoord indent1st; // [esp+14h] [ebp-14h]
   int column; // [esp+20h] [ebp-8h]
 
   column = 0;
   if ( text )
   {
     if ( text->in_line_1 )
-      v2 = text->style->indent1st;
+      indent1st = text->style->indent1st;
     else
-      v2 = text->style->leftIndent;
-    column = HText_LastLineSize(text, 0) + v2 + text->last_line->offset;
+      indent1st = text->style->leftIndent;
+    return HText_LastLineSize(text, 0) + indent1st + text->last_line->offset;
   }
   return column;
 }
@@ -59710,14 +59588,14 @@ int __cdecl HText_getMaximumColumn(HText *text)
     v2 = LYcols;
   column = v2;
   if ( text )
-    column = v2 - text->style->rightIndent;
+    return v2 - text->style->rightIndent;
   return column;
 }
 
 //----- (0806C9C6) --------------------------------------------------------
 void __cdecl HText_setTabID(HText *text, const char *name)
 {
-  const char **v2; // [esp+14h] [ebp-14h]
+  const char **object; // [esp+14h] [ebp-14h]
   HTList *last; // [esp+1Ch] [ebp-Ch]
   HTList *cur; // [esp+20h] [ebp-8h]
   HTTabID *Tab; // [esp+24h] [ebp-4h]
@@ -59731,12 +59609,12 @@ void __cdecl HText_setTabID(HText *text, const char *name)
       while ( 1 )
       {
         if ( cur && (cur = cur->next) != 0 )
-          v2 = (const char **)cur->object;
+          object = (const char **)cur->object;
         else
-          v2 = 0;
-        if ( !v2 )
+          object = 0;
+        if ( !object )
           break;
-        if ( *v2 && !strcmp(*v2, name) )
+        if ( *object && !strcmp(*object, name) )
           return;
         last = cur;
       }
@@ -59756,12 +59634,12 @@ void __cdecl HText_setTabID(HText *text, const char *name)
     Tab->column = HText_getCurrentColumn(text);
   }
 }
-// 806CA99: conditional instruction was optimized away because of '%Tab.4==0'
+// 806CA99: conditional instruction was optimized away because %Tab.4==0
 
 //----- (0806CB05) --------------------------------------------------------
 int __cdecl HText_getTabIDColumn(HText *text, const char *name)
 {
-  void *v3; // [esp+14h] [ebp-14h]
+  void *object; // [esp+14h] [ebp-14h]
   HTList *cur; // [esp+1Ch] [ebp-Ch]
   int column; // [esp+24h] [ebp-4h]
 
@@ -59772,13 +59650,13 @@ int __cdecl HText_getTabIDColumn(HText *text, const char *name)
     do
     {
       if ( cur && (cur = cur->next) != 0 )
-        v3 = cur->object;
+        object = cur->object;
       else
-        v3 = 0;
+        object = 0;
     }
-    while ( v3 && (!*(_DWORD *)v3 || strcmp(*(const char **)v3, name)) );
-    if ( v3 )
-      column = *((_DWORD *)v3 + 1);
+    while ( object && (!*(_DWORD *)object || strcmp(*(const char **)object, name)) );
+    if ( object )
+      return *((_DWORD *)object + 1);
   }
   return column;
 }
@@ -59809,7 +59687,7 @@ int __cdecl HText_HiddenLinkCount(HText *text)
 
   count = 0;
   if ( text && text->hidden_links )
-    count = HTList_count(text->hidden_links);
+    return HTList_count(text->hidden_links);
   return count;
 }
 
@@ -59820,7 +59698,7 @@ const char *__cdecl HText_HiddenLinkAt(HText *text, int number)
 
   href = 0;
   if ( text && text->hidden_links && number >= 0 )
-    href = (char *)HTList_objectAt(text->hidden_links, number);
+    return (const char *)HTList_objectAt(text->hidden_links, number);
   return href;
 }
 
@@ -60011,7 +59889,7 @@ void __cdecl HText_beginSelect(char *name, int name_cs, BOOLEAN multiple, char *
   const char *v7; // [esp+20h] [ebp-18h]
   int v8; // [esp+24h] [ebp-14h]
   const char *v9; // [esp+28h] [ebp-10h]
-  const char *v10; // [esp+2Ch] [ebp-Ch]
+  const char *MIMEname; // [esp+2Ch] [ebp-Ch]
 
   HTSACopy(&HTCurSelectGroup, name);
   HTCurSelectGroupCharset = name_cs;
@@ -60037,12 +59915,12 @@ void __cdecl HText_beginSelect(char *name, int name_cs, BOOLEAN multiple, char *
   if ( WWW_TraceFlag[0] )
   {
     if ( HTCurSelectGroupCharset < 0 )
-      v10 = "<UNKNOWN>";
+      MIMEname = "<UNKNOWN>";
     else
-      v10 = LYCharSet_UC[HTCurSelectGroupCharset].MIMEname;
+      MIMEname = LYCharSet_UC[HTCurSelectGroupCharset].MIMEname;
     v5 = HTCurSelectGroupCharset;
     v6 = TraceFP();
-    fprintf(v6, "HText_beginSelect: name_cs=%d \"%s\"\n", v5, v10);
+    fprintf(v6, "HText_beginSelect: name_cs=%d \"%s\"\n", v5, MIMEname);
   }
 }
 
@@ -60106,19 +59984,26 @@ char *__cdecl HText_skipOptionNumPrefix(char *opname)
   for ( i = cpb - opname; i <= 4 && *cpb == 95; ++i )
     ++cpb;
   if ( i <= 4 )
-    cpb = opname;
+    return opname;
   return cpb;
 }
 
 //----- (0806D5C2) --------------------------------------------------------
-char *__cdecl HText_setLastOptionValue(HText *text, char *value, char *submit_value, int order, BOOLEAN checked, int val_cs, int submit_val_cs)
+char *__cdecl HText_setLastOptionValue(
+        HText *text,
+        char *value,
+        char *submit_value,
+        int order,
+        BOOLEAN checked,
+        int val_cs,
+        int submit_val_cs)
 {
   FILE *v7; // eax
   FILE *v8; // eax
   FILE *v9; // eax
-  int v10; // ebx
+  int type; // ebx
   FILE *v11; // eax
-  FormInfo *v12; // ebx
+  FormInfo *input_field; // ebx
   size_t v13; // eax
   FormInfo *v14; // ebx
   FILE *v15; // eax
@@ -60134,7 +60019,7 @@ char *__cdecl HText_setLastOptionValue(HText *text, char *value, char *submit_va
   signed int v27; // [esp+40h] [ebp-68h]
   signed int v28; // [esp+48h] [ebp-60h]
   const char *v29; // [esp+50h] [ebp-58h]
-  const char *v30; // [esp+54h] [ebp-54h]
+  const char *MIMEname; // [esp+54h] [ebp-54h]
   const char *v31; // [esp+58h] [ebp-50h]
   const char *v32; // [esp+5Ch] [ebp-4Ch]
   FormInfo *last_input_0; // [esp+64h] [ebp-44h]
@@ -60236,11 +60121,11 @@ LABEL_129:
       if ( WWW_TraceFlag[0] )
       {
         if ( val_cs < 0 )
-          v30 = "<UNKNOWN>";
+          MIMEname = "<UNKNOWN>";
         else
-          v30 = LYCharSet_UC[val_cs].MIMEname;
+          MIMEname = LYCharSet_UC[val_cs].MIMEname;
         v16 = TraceFP();
-        fprintf(v16, "            val_cs=%d \"%s\"", val_cs, v30);
+        fprintf(v16, "            val_cs=%d \"%s\"", val_cs, MIMEname);
       }
       if ( submit_value )
       {
@@ -60300,9 +60185,9 @@ LABEL_129:
   }
   if ( text->last_anchor->input_field->type == 7 )
   {
-    v12 = text->last_anchor->input_field;
-    v12->select_list = (OptionType *)calloc(1u, 0x10u);
-    new_ptr = v12->select_list;
+    input_field = text->last_anchor->input_field;
+    input_field->select_list = (OptionType *)calloc(1u, 0x10u);
+    new_ptr = input_field->select_list;
     if ( !new_ptr )
       outofmem("./GridText.c", "HText_setLastOptionValue");
     first_option = 1;
@@ -60453,13 +60338,13 @@ LABEL_69:
   }
   if ( WWW_TraceFlag[0] )
   {
-    v10 = text->last_anchor->input_field->type;
+    type = text->last_anchor->input_field->type;
     v11 = TraceFP();
-    fprintf(v11, "                          but %d, ignoring!\n", v10);
+    fprintf(v11, "                          but %d, ignoring!\n", type);
   }
   return 0;
 }
-// 806DC69: conditional instruction was optimized away because of '%tmp.4!=0'
+// 806DC69: conditional instruction was optimized away because %tmp.4!=0
 
 //----- (0806E0C9) --------------------------------------------------------
 int __cdecl HText_beginInput(HText *text, BOOLEAN underline, InputFieldData *I)
@@ -60473,13 +60358,13 @@ int __cdecl HText_beginInput(HText *text, BOOLEAN underline, InputFieldData *I)
   int v9; // eax
   int v10; // eax
   FILE *v11; // eax
-  char *v12; // ebx
+  char *name; // ebx
   FILE *v13; // eax
   int v14; // ebx
   FILE *v15; // eax
   int v16; // ebx
   FILE *v17; // eax
-  const char *v19; // [esp+20h] [ebp-A8h]
+  const char *type; // [esp+20h] [ebp-A8h]
   int v20; // [esp+24h] [ebp-A4h]
   unsigned int v22; // [esp+30h] [ebp-98h]
   char *str; // [esp+34h] [ebp-94h]
@@ -60487,13 +60372,13 @@ int __cdecl HText_beginInput(HText *text, BOOLEAN underline, InputFieldData *I)
   int v25; // [esp+3Ch] [ebp-8Ch]
   int v26; // [esp+40h] [ebp-88h]
   unsigned int v27; // [esp+44h] [ebp-84h]
-  int v28; // [esp+48h] [ebp-80h]
-  char *v29; // [esp+4Ch] [ebp-7Ch]
-  const char *v30; // [esp+50h] [ebp-78h]
-  int v31; // [esp+54h] [ebp-74h]
+  int size; // [esp+48h] [ebp-80h]
+  char *value; // [esp+4Ch] [ebp-7Ch]
+  const char *MIMEname; // [esp+50h] [ebp-78h]
+  int name_cs; // [esp+54h] [ebp-74h]
   const char *v32; // [esp+58h] [ebp-70h]
   const char *v33; // [esp+5Ch] [ebp-6Ch]
-  int v34; // [esp+60h] [ebp-68h]
+  int value_cs; // [esp+60h] [ebp-68h]
   const char *v35; // [esp+64h] [ebp-64h]
   int i2; // [esp+80h] [ebp-48h]
   TextAnchor *b; // [esp+84h] [ebp-44h]
@@ -60518,11 +60403,11 @@ int __cdecl HText_beginInput(HText *text, BOOLEAN underline, InputFieldData *I)
   if ( WWW_TraceFlag[0] )
   {
     if ( I->type )
-      v19 = I->type;
+      type = I->type;
     else
-      v19 = &byte_814CBAC;
+      type = &byte_814CBAC;
     v3 = TraceFP();
-    fprintf(v3, "GridText: Entering HText_beginInput type=%s\n", v19);
+    fprintf(v3, "GridText: Entering HText_beginInput type=%s\n", type);
   }
   a = (TextAnchor *)ALLOC_IN_POOL(&HTMainText->pool, 0x34u);
   f = (FormInfo *)ALLOC_IN_POOL(&HTMainText->pool, 0x60u);
@@ -60944,29 +60829,29 @@ LABEL_113:
     }
     if ( WWW_TraceFlag[0] )
     {
-      v28 = f->size;
+      size = f->size;
       if ( f->value )
-        v29 = f->value;
+        value = f->value;
       else
-        v29 = (char *)&byte_814CBAC;
-      v12 = f->name;
+        value = (char *)&byte_814CBAC;
+      name = f->name;
       v13 = TraceFP();
-      fprintf(v13, "Input link: name=%s\nvalue=%s\nsize=%d\n", v12, v29, v28);
+      fprintf(v13, "Input link: name=%s\nvalue=%s\nsize=%d\n", name, value, size);
     }
     if ( WWW_TraceFlag[0] )
     {
       if ( I->name_cs < 0 )
-        v30 = "<UNKNOWN>";
+        MIMEname = "<UNKNOWN>";
       else
-        v30 = LYCharSet_UC[I->name_cs].MIMEname;
-      v31 = I->name_cs;
+        MIMEname = LYCharSet_UC[I->name_cs].MIMEname;
+      name_cs = I->name_cs;
       if ( f->name_cs < 0 )
         v32 = "<UNKNOWN>";
       else
         v32 = LYCharSet_UC[f->name_cs].MIMEname;
       v14 = f->name_cs;
       v15 = TraceFP();
-      fprintf(v15, "Input link: name_cs=%d \"%s\" (from %d \"%s\")\n", v14, v32, v31, v30);
+      fprintf(v15, "Input link: name_cs=%d \"%s\" (from %d \"%s\")\n", v14, v32, name_cs, MIMEname);
     }
     if ( WWW_TraceFlag[0] )
     {
@@ -60974,14 +60859,14 @@ LABEL_113:
         v33 = "<UNKNOWN>";
       else
         v33 = LYCharSet_UC[I->value_cs].MIMEname;
-      v34 = I->value_cs;
+      value_cs = I->value_cs;
       if ( f->value_cs < 0 )
         v35 = "<UNKNOWN>";
       else
         v35 = LYCharSet_UC[f->value_cs].MIMEname;
       v16 = f->value_cs;
       v17 = TraceFP();
-      fprintf(v17, "            value_cs=%d \"%s\" (from %d \"%s\")\n", v16, v35, v34, v33);
+      fprintf(v17, "            value_cs=%d \"%s\" (from %d \"%s\")\n", v16, v35, value_cs, v33);
     }
     if ( I->size && f->size > adjust_marker )
       f->size -= adjust_marker;
@@ -61004,7 +60889,7 @@ LABEL_113:
   }
   return 0;
 }
-// 806E560: conditional instruction was optimized away because of '%tmp.4!=0'
+// 806E560: conditional instruction was optimized away because %tmp.4!=0
 
 //----- (0806F29D) --------------------------------------------------------
 void __cdecl HText_endInput(HText *text)
@@ -61038,47 +60923,61 @@ double __cdecl get_trans_q(int cs_from, char *givenmime)
   BOOLEAN tq; // [esp+37h] [ebp-1h]
 
   df_0 = 1.0;
-  if ( !givenmime || !*givenmime )
-    return 0.0;
-  p = strchr(givenmime, 59);
-  if ( p )
-    *p++ = 0;
-  if ( !strcmp(givenmime, "*") )
-    v3 = UCGetLYhndl_byMIME("utf-8");
-  else
-    v3 = UCGetLYhndl_byMIME(givenmime);
-  tq = UCCanTranslateFromTo(cs_from, v3);
-  if ( !tq )
-    return 0.0;
-  if ( !p || !*p )
-    return (double)tq;
-  field = p;
-  while ( 1 )
+  if ( givenmime && *givenmime )
   {
-    pair = HTNextTok(&field, &aQ[4], &aQ[2], 0);
-    if ( !pair )
-      break;
-    ptok = HTNextTok(&pair, "= ", 0, 0);
-    if ( ptok )
+    p = strchr(givenmime, 59);
+    if ( p )
+      *p++ = 0;
+    if ( !strcmp(givenmime, "*") )
+      v3 = UCGetLYhndl_byMIME("utf-8");
+    else
+      v3 = UCGetLYhndl_byMIME(givenmime);
+    tq = UCCanTranslateFromTo(cs_from, v3);
+    if ( tq )
     {
-      pval = HTNextField(&pair);
-      if ( pval )
+      if ( p && *p )
       {
-        if ( !strcasecomp(ptok, aQ) )
+        field = p;
+        while ( 1 )
         {
-          df_0 = strtod(pval, 0);
-          break;
+          pair = HTNextTok(&field, &aQ[4], &aQ[2], 0);
+          if ( !pair )
+            break;
+          ptok = HTNextTok(&pair, "= ", 0, 0);
+          if ( ptok )
+          {
+            pval = HTNextField(&pair);
+            if ( pval )
+            {
+              if ( !strcasecomp(ptok, aQ) )
+              {
+                df_0 = strtod(pval, 0);
+                return (long double)tq * df_0;
+              }
+            }
+          }
         }
+        return (long double)tq * df_0;
+      }
+      else
+      {
+        return (double)tq;
       }
     }
+    else
+    {
+      return 0.0;
+    }
   }
-  return (long double)tq * df_0;
+  else
+  {
+    return 0.0;
+  }
 }
 
 //----- (0806F4EA) --------------------------------------------------------
 int __cdecl find_best_target_cs(char **best_csname, int cs_from, const char *acceptstring)
 {
-  int v4; // [esp+14h] [ebp-24h]
   double q; // [esp+18h] [ebp-20h]
   double bestq; // [esp+20h] [ebp-18h]
   char *nextfield; // [esp+28h] [ebp-10h] BYREF
@@ -61118,9 +61017,9 @@ int __cdecl find_best_target_cs(char **best_csname, int cs_from, const char *acc
       paccept = 0;
     }
     if ( bestq <= 0.0 )
-      v4 = -1;
+      return -1;
     else
-      v4 = UCGetLYhndl_byMIME(*best_csname);
+      return UCGetLYhndl_byMIME(*best_csname);
   }
   else
   {
@@ -61129,9 +61028,8 @@ int __cdecl find_best_target_cs(char **best_csname, int cs_from, const char *acc
       free(paccept);
       paccept = 0;
     }
-    v4 = -1;
+    return -1;
   }
-  return v4;
 }
 
 //----- (0806F634) --------------------------------------------------------
@@ -61176,17 +61074,15 @@ void __cdecl load_a_file(const char *val_used, bstring **result)
 //----- (0806F74C) --------------------------------------------------------
 const char *__cdecl guess_content_type(const char *filename)
 {
-  const char *v2; // [esp+14h] [ebp-14h]
   HTFormat format; // [esp+1Ch] [ebp-Ch]
   const char *desc; // [esp+20h] [ebp-8h] BYREF
   HTAtom *encoding; // [esp+24h] [ebp-4h] BYREF
 
   format = HTFileFormat(filename, &encoding, &desc);
   if ( format && format->name && *format->name )
-    v2 = format->name;
+    return format->name;
   else
-    v2 = "text/plain";
-  return v2;
+    return "text/plain";
 }
 
 //----- (0806F7A2) --------------------------------------------------------
@@ -61233,8 +61129,8 @@ unsigned int __cdecl check_form_specialchars(const char *value)
 //----- (0806F85C) --------------------------------------------------------
 void __cdecl UpdateBoundary(char **Boundary, bstring *data)
 {
-  int v2; // [esp+Ch] [ebp-2Ch]
-  char *v3; // [esp+10h] [ebp-28h]
+  int len; // [esp+Ch] [ebp-2Ch]
+  char *str; // [esp+10h] [ebp-28h]
   char v4; // [esp+17h] [ebp-21h]
   char *want; // [esp+20h] [ebp-18h] BYREF
   char *text; // [esp+24h] [ebp-14h]
@@ -61245,15 +61141,15 @@ void __cdecl UpdateBoundary(char **Boundary, bstring *data)
 
   have = strlen(*Boundary);
   if ( data )
-    v2 = data->len;
+    len = data->len;
   else
-    v2 = 0;
-  last = v2;
+    len = 0;
+  last = len;
   if ( data )
-    v3 = data->str;
+    str = data->str;
   else
-    v3 = 0;
-  text = v3;
+    str = 0;
+  text = str;
   want = *Boundary;
   for ( j = 0; last - have >= j; ++j )
   {
@@ -61347,7 +61243,7 @@ char *__cdecl escape_or_quote_name(const char *name, QuoteData quoting, const ch
   if ( (unsigned int)quoting > QUOTE_BASE64 )
   {
     if ( quoting == QUOTE_SPECIAL )
-      escaped1 = HTEscapeSP(name, 1u);
+      return HTEscapeSP(name, 1u);
   }
   else if ( quoting )
   {
@@ -61376,7 +61272,7 @@ char *__cdecl escape_or_quote_value(const char *value, QuoteData quoting)
   if ( quoting == QUOTE_BASE64 )
   {
     v3 = strlen(value);
-    escaped2 = convert_to_base64(value, v3);
+    return convert_to_base64(value, v3);
   }
   else if ( (unsigned int)quoting < QUOTE_BASE64 )
   {
@@ -61387,7 +61283,7 @@ char *__cdecl escape_or_quote_value(const char *value, QuoteData quoting)
   }
   else if ( quoting == QUOTE_SPECIAL )
   {
-    escaped2 = HTEscapeSP(value, 1u);
+    return HTEscapeSP(value, 1u);
   }
   return escaped2;
 }
@@ -61396,8 +61292,8 @@ char *__cdecl escape_or_quote_value(const char *value, QuoteData quoting)
 int __cdecl check_if_base64_needed(int submit_method, bstring *data)
 {
   FILE *v2; // edx
-  char *v4; // [esp+1Ch] [ebp-2Ch]
-  int v5; // [esp+20h] [ebp-28h]
+  char *str; // [esp+1Ch] [ebp-2Ch]
+  int len; // [esp+20h] [ebp-28h]
   int ch_0; // [esp+2Ch] [ebp-1Ch]
   int n; // [esp+34h] [ebp-14h]
   int col; // [esp+38h] [ebp-10h]
@@ -61407,20 +61303,20 @@ int __cdecl check_if_base64_needed(int submit_method, bstring *data)
   width = 0;
   printable = 1;
   if ( data )
-    v4 = data->str;
+    str = data->str;
   else
-    v4 = 0;
-  if ( v4 )
+    str = 0;
+  if ( str )
   {
     col = 0;
     if ( data )
-      v5 = data->len;
+      len = data->len;
     else
-      v5 = 0;
-    for ( n = 0; n < v5; ++n )
+      len = 0;
+    for ( n = 0; n < len; ++n )
     {
-      ch_0 = (unsigned __int8)v4[n];
-      if ( (ch_0 & 0x80u) != 0 || (unsigned __int8)v4[n] <= 0x1Fu && ch_0 != 10 )
+      ch_0 = (unsigned __int8)str[n];
+      if ( (ch_0 & 0x80u) != 0 || (unsigned __int8)str[n] <= 0x1Fu && ch_0 != 10 )
       {
         if ( WWW_TraceFlag[0] )
         {
@@ -61451,7 +61347,7 @@ int __cdecl HText_SubmitForm(FormInfo *submit_item, DocInfo *doc, char *link_nam
 {
   FILE *v4; // edx
   FILE *v5; // eax
-  int v6; // ebx
+  int number; // ebx
   FILE *v7; // eax
   FILE *v8; // eax
   char *v9; // eax
@@ -61467,24 +61363,23 @@ int __cdecl HText_SubmitForm(FormInfo *submit_item, DocInfo *doc, char *link_nam
   FILE *v19; // eax
   FILE *v20; // eax
   FILE *v21; // eax
-  int v22; // ebx
+  int type; // ebx
   FILE *v23; // eax
   FILE *v24; // eax
   int v25; // ebx
   FILE *v26; // eax
   FILE *v27; // eax
   FILE *v28; // eax
-  char *v29; // ebx
+  char *submit_action; // ebx
   char *v30; // eax
   char *v31; // eax
   char *v32; // ebx
   FILE *v33; // eax
-  int v35; // [esp+28h] [ebp-190h]
-  char *v36; // [esp+2Ch] [ebp-18Ch]
+  char *cp_submit_value; // [esp+2Ch] [ebp-18Ch]
   QuoteData v37; // [esp+30h] [ebp-188h]
   int v38; // [esp+34h] [ebp-184h]
-  char *v39; // [esp+38h] [ebp-180h]
-  char *v40; // [esp+40h] [ebp-178h]
+  char *name; // [esp+38h] [ebp-180h]
+  char *value; // [esp+40h] [ebp-178h]
   const char *v41; // [esp+44h] [ebp-174h]
   char *v42; // [esp+48h] [ebp-170h]
   char *v43; // [esp+4Ch] [ebp-16Ch]
@@ -61492,23 +61387,23 @@ int __cdecl HText_SubmitForm(FormInfo *submit_item, DocInfo *doc, char *link_nam
   char *v45; // [esp+54h] [ebp-164h]
   const char *v46; // [esp+58h] [ebp-160h]
   const char *v47; // [esp+5Ch] [ebp-15Ch]
-  const char *v48; // [esp+60h] [ebp-158h]
-  int v49; // [esp+64h] [ebp-154h]
+  const char *MIMEname; // [esp+60h] [ebp-158h]
+  int value_cs; // [esp+64h] [ebp-154h]
   char *v50; // [esp+68h] [ebp-150h]
   const char *v51; // [esp+6Ch] [ebp-14Ch]
   char *v52; // [esp+70h] [ebp-148h]
   const char *v53; // [esp+74h] [ebp-144h]
   const char *v54; // [esp+78h] [ebp-140h]
   const char *v55; // [esp+7Ch] [ebp-13Ch]
-  int v56; // [esp+80h] [ebp-138h]
+  int name_cs; // [esp+80h] [ebp-138h]
   char *v57; // [esp+84h] [ebp-134h]
   const char *v58; // [esp+88h] [ebp-130h]
   char *v59; // [esp+8Ch] [ebp-12Ch]
   int len; // [esp+94h] [ebp-124h]
   const char *src; // [esp+98h] [ebp-120h]
-  bstring *v62; // [esp+9Ch] [ebp-11Ch]
+  bstring *data; // [esp+9Ch] [ebp-11Ch]
   char *v63; // [esp+A0h] [ebp-118h]
-  int v64; // [esp+A4h] [ebp-114h]
+  int first; // [esp+A4h] [ebp-114h]
   char *v65; // [esp+A8h] [ebp-110h]
   const char *v66; // [esp+B0h] [ebp-108h]
   const char *v67; // [esp+B4h] [ebp-104h]
@@ -61535,8 +61430,8 @@ int __cdecl HText_SubmitForm(FormInfo *submit_item, DocInfo *doc, char *link_nam
   const char *mailto_type; // [esp+10Ch] [ebp-ACh]
   const char *mailto_content; // [esp+110h] [ebp-A8h]
   const char *mailto_subject; // [esp+114h] [ebp-A4h]
-  const char *v91; // [esp+118h] [ebp-A0h]
-  const char *v92; // [esp+11Ch] [ebp-9Ch]
+  const char *Title; // [esp+118h] [ebp-A0h]
+  const char *str; // [esp+11Ch] [ebp-9Ch]
   char *copied_fname; // [esp+120h] [ebp-98h] BYREF
   const char *t; // [esp+124h] [ebp-94h]
   const char *marker; // [esp+128h] [ebp-90h]
@@ -61619,9 +61514,9 @@ int __cdecl HText_SubmitForm(FormInfo *submit_item, DocInfo *doc, char *link_nam
     {
       if ( WWW_TraceFlag[0] )
       {
-        v6 = thisform->number;
+        number = thisform->number;
         v7 = TraceFP();
-        fprintf(v7, "SubmitForm: failed sanity check, %d!=%d !\n", v6, form_number);
+        fprintf(v7, "SubmitForm: failed sanity check, %d!=%d !\n", number, form_number);
       }
       thisform = 0;
     }
@@ -61637,7 +61532,7 @@ int __cdecl HText_SubmitForm(FormInfo *submit_item, DocInfo *doc, char *link_nam
     {
       v9 = gettext("Malformed mailto form submission!  Cancelled!");
       HTAlert(v9);
-      v35 = 0;
+      return 0;
     }
     else
     {
@@ -61698,11 +61593,11 @@ int __cdecl HText_SubmitForm(FormInfo *submit_item, DocInfo *doc, char *link_nam
           {
             form_ptr = anchor_ptr->input_field;
             if ( form_ptr->cp_submit_value )
-              v36 = form_ptr->cp_submit_value;
+              cp_submit_value = form_ptr->cp_submit_value;
             else
-              v36 = form_ptr->value;
-            val = v36;
-            field_is_special = check_form_specialchars(v36);
+              cp_submit_value = form_ptr->value;
+            val = cp_submit_value;
+            field_is_special = check_form_specialchars(cp_submit_value);
             name_is_special = check_form_specialchars(form_ptr->name);
             form_is_special = name_is_special | field_is_special;
             if ( field_is_special
@@ -61844,10 +61739,10 @@ int __cdecl HText_SubmitForm(FormInfo *submit_item, DocInfo *doc, char *link_nam
               fprintf(v11, "SubmitForm[%d/%d]: ", v10, anchor_limit);
             }
             if ( form_ptr_0->name )
-              v39 = form_ptr_0->name;
+              name = form_ptr_0->name;
             else
-              v39 = (char *)&byte_814CBAC;
-            name_used = v39;
+              name = (char *)&byte_814CBAC;
+            name_used = name;
             switch ( form_ptr_0->type )
             {
               case 1:
@@ -61886,16 +61781,16 @@ LABEL_170:
                         else
                           v47 = "???";
                         if ( form_ptr_0->value_cs < 0 )
-                          v48 = "???";
+                          MIMEname = "???";
                         else
-                          v48 = LYCharSet_UC[form_ptr_0->value_cs].MIMEname;
-                        v49 = form_ptr_0->value_cs;
+                          MIMEname = LYCharSet_UC[form_ptr_0->value_cs].MIMEname;
+                        value_cs = form_ptr_0->value_cs;
                         if ( form_ptr_0->name )
                           v50 = form_ptr_0->name;
                         else
                           v50 = (char *)&byte_814CBAC;
                         v18 = TraceFP();
-                        fprintf(v18, "field \"%s\" %d %s -> %d %s %s\n", v50, v49, v48, target_cs, v47, v46);
+                        fprintf(v18, "field \"%s\" %d %s -> %d %s %s\n", v50, value_cs, MIMEname, target_cs, v47, v46);
                       }
                       if ( success )
                         val_used = copied_val_used;
@@ -61978,13 +61873,13 @@ LABEL_170:
                             v55 = "???";
                           else
                             v55 = LYCharSet_UC[form_ptr_0->name_cs].MIMEname;
-                          v56 = form_ptr_0->name_cs;
+                          name_cs = form_ptr_0->name_cs;
                           if ( form_ptr_0->name )
                             v57 = form_ptr_0->name;
                           else
                             v57 = (char *)&byte_814CBAC;
                           v20 = TraceFP();
-                          fprintf(v20, "name \"%s\" %d %s -> %d %s %s\n", v57, v56, v55, target_cs, v54, v53);
+                          fprintf(v20, "name \"%s\" %d %s -> %d %s %s\n", v57, name_cs, v55, target_cs, v54, v53);
                         }
                         if ( success )
                           name_used = copied_name_used;
@@ -62087,10 +61982,10 @@ LABEL_170:
                 break;
               case 0xB:
                 if ( form_ptr_0->value )
-                  v40 = form_ptr_0->value;
+                  value = form_ptr_0->value;
                 else
-                  v40 = (char *)&byte_814CBAC;
-                val_used = v40;
+                  value = (char *)&byte_814CBAC;
+                val_used = value;
                 if ( WWW_TraceFlag[0] )
                 {
                   v13 = TraceFP();
@@ -62100,9 +61995,9 @@ LABEL_170:
               default:
                 if ( WWW_TraceFlag[0] )
                 {
-                  v22 = form_ptr_0->type;
+                  type = form_ptr_0->type;
                   v23 = TraceFP();
-                  fprintf(v23, "What type is %d?\n", v22);
+                  fprintf(v23, "What type is %d?\n", type);
                 }
                 break;
             }
@@ -62223,12 +62118,12 @@ LABEL_170:
           {
             if ( WWW_TraceFlag[0] )
             {
-              v62 = my_data[anchor_count].data;
+              data = my_data[anchor_count].data;
               if ( my_data[anchor_count].value )
                 v63 = my_data[anchor_count].value;
               else
                 v63 = (char *)&byte_814CBAC;
-              v64 = my_data[anchor_count].first;
+              first = my_data[anchor_count].first;
               if ( my_data[anchor_count].name )
                 v65 = my_data[anchor_count].name;
               else
@@ -62241,9 +62136,9 @@ LABEL_170:
                 v25,
                 anchor_limit,
                 v65,
-                v64,
+                first,
                 v63,
-                v62);
+                data);
             }
             if ( my_data[anchor_count].first )
             {
@@ -62531,9 +62426,9 @@ LABEL_170:
       }
       if ( submit_item->submit_method == 3 )
       {
-        v29 = submit_item->submit_action;
+        submit_action = submit_item->submit_action;
         v30 = gettext("Submitting %s");
-        HTUserMsg2(v30, v29);
+        HTUserMsg2(v30, submit_action);
         HTSABCat(&my_query, &byte_814CBAC, 1);
         mailto_type = content_type_out;
         if ( my_query )
@@ -62547,10 +62442,10 @@ LABEL_170:
         else
         {
           if ( HText_getTitle() )
-            v91 = HText_getTitle();
+            Title = HText_getTitle();
           else
-            v91 = &byte_814CBAC;
-          mailto_subject = v91;
+            Title = &byte_814CBAC;
+          mailto_subject = Title;
         }
         mailform((const char *)submit_item->submit_action + 7, mailto_subject, mailto_content, mailto_type);
         result = 0;
@@ -62583,10 +62478,10 @@ LABEL_170:
         {
           HTSABCat(&my_query, &byte_814CBAC, 1);
           if ( my_query )
-            v92 = my_query->str;
+            str = my_query->str;
           else
-            v92 = 0;
-          HTSACopy(&doc->address, v92);
+            str = 0;
+          HTSACopy(&doc->address, str);
           LYFreePostData(doc);
           if ( content_type_out )
           {
@@ -62633,7 +62528,7 @@ LABEL_170:
           my_data = 0;
         }
       }
-      v35 = result;
+      return result;
     }
   }
   else
@@ -62643,9 +62538,8 @@ LABEL_170:
       v8 = TraceFP();
       fprintf(v8, "SubmitForm: no action given\n");
     }
-    v35 = 0;
+    return 0;
   }
-  return v35;
 }
 
 //----- (080724E9) --------------------------------------------------------
@@ -62887,7 +62781,7 @@ void __cdecl HText_setBreakPoint(HText *text)
 //----- (08072C7E) --------------------------------------------------------
 BOOLEAN __cdecl HText_AreDifferent(HTParentAnchor *anchor, const char *full_address)
 {
-  char *v4; // [esp+14h] [ebp-14h]
+  char *address; // [esp+14h] [ebp-14h]
   char *MTpound; // [esp+1Ch] [ebp-Ch]
   HTParentAnchor *MTanc; // [esp+24h] [ebp-4h]
 
@@ -62903,15 +62797,15 @@ BOOLEAN __cdecl HText_AreDifferent(HTParentAnchor *anchor, const char *full_addr
   if ( MTanc->isHEAD != anchor->isHEAD )
     return 1;
   if ( strncasecomp(MTanc->address, "LYNXIMGMAP:", 11) )
-    v4 = MTanc->address;
+    address = MTanc->address;
   else
-    v4 = MTanc->address + 11;
-  MTpound = trimPoundSelector(v4);
-  if ( !strcmp(v4, anchor->address) )
+    address = MTanc->address + 11;
+  MTpound = trimPoundSelector(address);
+  if ( !strcmp(address, anchor->address) )
   {
     if ( MTpound )
       *MTpound = 35;
-    if ( MTanc->address == v4 )
+    if ( MTanc->address == address )
     {
       if ( MTanc->post_data )
       {
@@ -63513,14 +63407,13 @@ LABEL_11:
 int __cdecl HText_ExtEditForm(LinkInfo *form_link)
 {
   FILE *v1; // eax
-  const char *v2; // ebx
+  const char *name; // ebx
   FILE *v3; // eax
   const char *v4; // ebx
   FILE *v5; // eax
   const char *v6; // ebx
   FILE *v7; // eax
   FILE *v8; // eax
-  int v10; // [esp+1Ch] [ebp-4Ch]
   _FormInfo *form; // [esp+30h] [ebp-38h]
   int offset; // [esp+34h] [ebp-34h]
   int orig_cnt; // [esp+38h] [ebp-30h]
@@ -63572,9 +63465,9 @@ int __cdecl HText_ExtEditForm(LinkInfo *form_link)
     LYCloseTempFP(fp);
     if ( WWW_TraceFlag[0] )
     {
-      v2 = form->name;
+      name = form->name;
       v3 = TraceFP();
-      fprintf(v3, "GridText: TEXTAREA name=|%s| dumped to tempfile\n", v2);
+      fprintf(v3, "GridText: TEXTAREA name=|%s| dumped to tempfile\n", name);
     }
     if ( WWW_TraceFlag[0] )
     {
@@ -63604,22 +63497,21 @@ int __cdecl HText_ExtEditForm(LinkInfo *form_link)
       v8 = TraceFP();
       fprintf(v8, "GridText: exiting HText_ExtEditForm()\n");
     }
-    v10 = offset;
+    return offset;
   }
   else
   {
     if ( ed_temp )
       free(ed_temp);
-    v10 = 0;
+    return 0;
   }
-  return v10;
 }
 
 //----- (080746D4) --------------------------------------------------------
 void __cdecl HText_ExpandTextarea(LinkInfo *form_link, int newlines)
 {
   FILE *v2; // eax
-  char *v3; // ebx
+  char *name; // ebx
   FILE *v4; // edx
   FILE *v5; // eax
   int i; // [esp+18h] [ebp-20h]
@@ -63664,9 +63556,9 @@ void __cdecl HText_ExpandTextarea(LinkInfo *form_link, int newlines)
     }
     if ( WWW_TraceFlag[0] )
     {
-      v3 = form->name;
+      name = form->name;
       v4 = TraceFP();
-      fprintf(v4, "GridText: %d blank line(s) added to TEXTAREA name=|%s|\n", newlines, v3);
+      fprintf(v4, "GridText: %d blank line(s) added to TEXTAREA name=|%s|\n", newlines, name);
     }
     update_subsequent_anchors(newlines, end_anchor, htline, match_tag);
     if ( WWW_TraceFlag[0] )
@@ -63691,7 +63583,6 @@ int __cdecl HText_InsertFile(LinkInfo *form_link)
   char *v9; // eax
   FILE *v10; // eax
   FILE *v11; // eax
-  int v13; // [esp+20h] [ebp-C8h]
   int v14; // [esp+24h] [ebp-C4h]
   stat stat_info; // [esp+30h] [ebp-B8h] BYREF
   int i; // [esp+90h] [ebp-58h]
@@ -63742,7 +63633,7 @@ int __cdecl HText_InsertFile(LinkInfo *form_link)
     {
       v4 = gettext("File name may not begin with a dot.");
       HTUserMsg(v4);
-      v13 = 0;
+      return 0;
     }
     else if ( stat64((int)fn, (int)&stat_info) >= 0 && (size = stat_info.st_size) != 0 )
     {
@@ -63887,7 +63778,7 @@ int __cdecl HText_InsertFile(LinkInfo *form_link)
             v11 = TraceFP();
             fprintf(v11, "GridText: exiting HText_InsertFile()\n");
           }
-          v13 = newlines;
+          return newlines;
         }
         else
         {
@@ -63895,7 +63786,7 @@ int __cdecl HText_InsertFile(LinkInfo *form_link)
           free(fn);
           v8 = gettext("Can't open file for reading.");
           HTAlert(v8);
-          v13 = 0;
+          return 0;
         }
       }
       else
@@ -63903,7 +63794,7 @@ int __cdecl HText_InsertFile(LinkInfo *form_link)
         free(fn);
         v7 = gettext("Not enough memory for file!");
         HTAlert(v7);
-        v13 = 0;
+        return 0;
       }
     }
     else
@@ -63920,7 +63811,7 @@ int __cdecl HText_InsertFile(LinkInfo *form_link)
         free(fn);
         fn = 0;
       }
-      v13 = 0;
+      return 0;
     }
   }
   else
@@ -63932,47 +63823,43 @@ int __cdecl HText_InsertFile(LinkInfo *form_link)
       v3 = TraceFP();
       fprintf(v3, "GridText: file insert cancelled - no filename provided\n");
     }
-    v13 = 0;
+    return 0;
   }
-  return v13;
 }
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
 //----- (0807503A) --------------------------------------------------------
 int GetColumn()
 {
-  int v1; // [esp+4h] [ebp-14h]
-
   if ( LYwin )
-    v1 = LYwin->_curx;
+    return LYwin->_curx;
   else
-    v1 = -1;
-  return v1;
+    return -1;
 }
 
 //----- (08075094) --------------------------------------------------------
 BOOLEAN __cdecl DidWrap(int y0, int x0)
 {
-  int v3; // [esp+0h] [ebp-1Ch]
-  int v4; // [esp+4h] [ebp-18h]
+  int cury; // [esp+0h] [ebp-1Ch]
+  int curx; // [esp+4h] [ebp-18h]
   int v5; // [esp+8h] [ebp-14h]
   BOOLEAN result; // [esp+1Bh] [ebp-1h]
 
   result = 0;
   if ( LYwin )
-    v3 = LYwin->_cury;
+    cury = LYwin->_cury;
   else
-    v3 = -1;
+    cury = -1;
   if ( LYwin )
-    v4 = LYwin->_curx;
+    curx = LYwin->_curx;
   else
-    v4 = -1;
+    curx = -1;
   if ( LYwideLines )
     v5 = 1014;
   else
     v5 = LYcols;
-  if ( v5 <= v4 || !v4 && v3 != y0 )
-    result = 1;
+  if ( v5 <= curx || !curx && cury != y0 )
+    return 1;
   return result;
 }
 
@@ -63982,8 +63869,8 @@ void __cdecl redraw_part_of_line(HTLine *line, const char *str, int len, HText *
   size_t v4; // eax
   size_t v5; // eax
   size_t v6; // eax
-  int v7; // [esp+14h] [ebp-44h]
-  int v8; // [esp+18h] [ebp-40h]
+  int cury; // [esp+14h] [ebp-44h]
+  int curx; // [esp+18h] [ebp-40h]
   int v9; // [esp+20h] [ebp-38h]
   int i; // [esp+24h] [ebp-34h]
   char buffer[7]; // [esp+2Dh] [ebp-2Bh] BYREF
@@ -64001,21 +63888,21 @@ void __cdecl redraw_part_of_line(HTLine *line, const char *str, int len, HText *
   current_style = 0;
   LastDisplayChar = 32;
   if ( LYwin )
-    v7 = LYwin->_cury;
+    cury = LYwin->_cury;
   else
-    v7 = -1;
-  YP = v7;
+    cury = -1;
+  YP = cury;
   if ( LYwin )
-    v8 = LYwin->_curx;
+    curx = LYwin->_curx;
   else
-    v8 = -1;
-  XP = v8;
+    curx = -1;
+  XP = curx;
   buffer[2] = 0;
   buffer[1] = 0;
   buffer[0] = 0;
   data = str;
   end_of_data = &str[len];
-  i = v8 + 1;
+  i = curx + 1;
   while ( data < end_of_data )
   {
     buffer[0] = *data++;
@@ -64167,20 +64054,17 @@ void __cdecl HText_updateSpecifiedKcode(HText *text, HTkcode kcode)
 //----- (0807565E) --------------------------------------------------------
 int HTMainText_Get_UCLYhndl()
 {
-  int v1; // [esp+14h] [ebp-4h]
-
   if ( HTMainText )
-    v1 = HTAnchor_getUCLYhndl(HTMainText->node_anchor, 0);
+    return HTAnchor_getUCLYhndl(HTMainText->node_anchor, 0);
   else
-    v1 = -1;
-  return v1;
+    return -1;
 }
 
 //----- (08075698) --------------------------------------------------------
 int __cdecl getfile(DocInfo *doc, int *target)
 {
   FILE *v2; // eax
-  char *v3; // ebx
+  char *address; // ebx
   FILE *v4; // eax
   char *v5; // eax
   char *v6; // eax
@@ -64245,11 +64129,10 @@ int __cdecl getfile(DocInfo *doc, int *target)
   const char *v65; // eax
   char *v66; // eax
   bstring *v67; // eax
-  BOOLEAN v68; // bl
+  BOOLEAN isHEAD; // bl
   char *v69; // ebx
   char *v70; // eax
   FILE *v71; // eax
-  int v73; // [esp+10h] [ebp-68h]
   const char *refid; // [esp+14h] [ebp-64h]
   char *name; // [esp+1Ch] [ebp-5Ch]
   const char *v76; // [esp+20h] [ebp-58h]
@@ -64299,9 +64182,9 @@ int __cdecl getfile(DocInfo *doc, int *target)
       HTNoDataOK = 0;
       if ( WWW_TraceFlag[0] )
       {
-        v3 = doc->address;
+        address = doc->address;
         v4 = TraceFP();
-        fprintf(v4, "getfile: getting %s\n\n", v3);
+        fprintf(v4, "getfile: getting %s\n\n", address);
       }
       temp = HTParse(doc->address, &byte_814EF17, 8);
       if ( temp && strlen(temp) > 3 )
@@ -64540,15 +64423,14 @@ LABEL_134:
           {
             v26 = gettext("File management support is disabled!");
             HTUserMsg(v26);
-            v73 = 3;
+            return 3;
           }
           else
           {
             local_dired(doc);
             WWWDoc = *(DocAddress *)&doc->address;
-            v73 = HTLoadAbsolute(&WWWDoc) != 0;
+            return HTLoadAbsolute(&WWWDoc) != 0;
           }
-          return v73;
       }
       if ( LYNoRefererHeader || LYNoRefererForThis )
       {
@@ -64789,7 +64671,7 @@ LABEL_134:
         {
           LYpop(doc);
           WWWDoc = *(DocAddress *)&doc->address;
-          status = HTLoadAbsolute(&WWWDoc);
+          return HTLoadAbsolute(&WWWDoc);
         }
         else
         {
@@ -64957,10 +64839,9 @@ LABEL_282:
     if ( !use_this_url_instead )
     {
       if ( HTNoDataOK )
-        v73 = 3;
+        return 3;
       else
-        v73 = 0;
-      return v73;
+        return 0;
     }
     if ( is_url(use_this_url_instead) == NOT_A_URL_TYPE_0 )
     {
@@ -65094,7 +64975,7 @@ LABEL_282:
       doc->safe = 0;
       WWWDoc.safe = doc->safe;
       HTOutputFormat = HTAtom_for("www/present");
-      v73 = HTLoadAbsolute(&WWWDoc) != 0;
+      return HTLoadAbsolute(&WWWDoc) != 0;
     }
     else
     {
@@ -65103,7 +64984,7 @@ LABEL_282:
         free(fname);
         fname = 0;
       }
-      v73 = 0;
+      return 0;
     }
   }
   else
@@ -65113,7 +64994,7 @@ LABEL_282:
       v66 = HTLoadedDocumentURL();
       if ( strcmp(doc->address, v66)
         || (v67 = HTLoadedDocumentPost_data(), !HTSABEql(doc->post_data, v67))
-        || (v68 = doc->isHEAD, v68 != (unsigned __int8)HTLoadedDocumentIsHEAD()) )
+        || (isHEAD = doc->isHEAD, isHEAD != (unsigned __int8)HTLoadedDocumentIsHEAD()) )
       {
         LYAddVisitedLink(doc);
         return 3;
@@ -65129,9 +65010,8 @@ LABEL_282:
         doc->link = -1;
       }
     }
-    v73 = 1;
+    return 1;
   }
-  return v73;
 }
 
 //----- (0807770E) --------------------------------------------------------
@@ -65173,7 +65053,6 @@ int __cdecl follow_link_number(int c, int cur, DocInfo *doc, int *num)
   int v9; // ebx
   FILE *v10; // eax
   FILE *v11; // eax
-  int v13; // [esp+34h] [ebp-D4h]
   int v14; // [esp+38h] [ebp-D0h]
   int v15; // [esp+3Ch] [ebp-CCh]
   int v16; // [esp+40h] [ebp-C8h]
@@ -65238,7 +65117,7 @@ int __cdecl follow_link_number(int c, int cur, DocInfo *doc, int *num)
         v10 = TraceFP();
         fprintf(v10, " curline=%d, LYlines=%d, display too small!\n", curline, v9);
       }
-      v13 = 5;
+      return 5;
     }
     else if ( ca == 112 || ca == 80 )
     {
@@ -65281,7 +65160,7 @@ int __cdecl follow_link_number(int c, int cur, DocInfo *doc, int *num)
         v16 = v17;
       }
       doc->line = v16;
-      v13 = 3;
+      return 3;
     }
     else
     {
@@ -65291,7 +65170,7 @@ int __cdecl follow_link_number(int c, int cur, DocInfo *doc, int *num)
         *num = HTGetRelLinkNum(*num, rel, cur);
       if ( *num <= 0 )
       {
-        v13 = 5;
+        return 5;
       }
       else
       {
@@ -65302,22 +65181,22 @@ int __cdecl follow_link_number(int c, int cur, DocInfo *doc, int *num)
         if ( info == 6 )
         {
           links[cur].type = 6;
-          v13 = 1;
+          return 1;
         }
         else if ( info == 8 )
         {
           doc->line = new_top + 1;
           doc->link = new_link;
-          v13 = 2;
+          return 2;
         }
         else if ( info )
         {
           links[cur].type = 2;
-          v13 = 1;
+          return 1;
         }
         else
         {
-          v13 = 5;
+          return 5;
         }
       }
     }
@@ -65326,9 +65205,8 @@ int __cdecl follow_link_number(int c, int cur, DocInfo *doc, int *num)
   {
     v6 = gettext("Cancelled!!!");
     HTInfoMsg(v6);
-    v13 = 270;
+    return 270;
   }
-  return v13;
 }
 
 //----- (08077DA8) --------------------------------------------------------
@@ -65397,14 +65275,13 @@ BOOLEAN __cdecl exec_ok(const char *source, const char *linktext, int type)
   char *v4; // eax
   int v5; // ebx
   char *v6; // eax
-  char *v7; // ebx
+  char *src; // ebx
   FILE *v8; // edx
-  char *v9; // ebx
+  char *path; // ebx
   FILE *v10; // edx
   size_t v11; // edx
   size_t v12; // edx
   char *v13; // eax
-  BOOLEAN v15; // [esp+13h] [ebp-25h]
   const char *command; // [esp+1Ch] [ebp-1Ch]
   char *buf; // [esp+20h] [ebp-18h] BYREF
   int Type; // [esp+24h] [ebp-14h]
@@ -65440,7 +65317,7 @@ BOOLEAN __cdecl exec_ok(const char *source, const char *linktext, int type)
   {
     v4 = gettext("Executable link rejected due to relative path string ('../').");
     HTAlert(v4);
-    v15 = 0;
+    return 0;
   }
   else
   {
@@ -65476,15 +65353,15 @@ BOOLEAN __cdecl exec_ok(const char *source, const char *linktext, int type)
             command = linktext + 2;
           if ( WWW_TraceFlag[0] )
           {
-            v7 = tp->src;
+            src = tp->src;
             v8 = TraceFP();
-            fprintf(v8, "comparing source\n\t'%s'\n\t'%s'\n", source, v7);
+            fprintf(v8, "comparing source\n\t'%s'\n\t'%s'\n", source, src);
           }
           if ( WWW_TraceFlag[0] )
           {
-            v9 = tp->path;
+            path = tp->path;
             v10 = TraceFP();
-            fprintf(v10, "comparing command\n\t'%s'\n\t'%s'\n", command, v9);
+            fprintf(v10, "comparing command\n\t'%s'\n\t'%s'\n", command, path);
           }
           v11 = strlen(tp->src);
           if ( !strncmp(source, tp->src, v11) )
@@ -65506,16 +65383,15 @@ BOOLEAN __cdecl exec_ok(const char *source, const char *linktext, int type)
       v13 = gettext("Executable link rejected due to location or path.");
       HTAlert(v13);
     }
-    v15 = 0;
+    return 0;
   }
-  return v15;
 }
 
 //----- (080781E2) --------------------------------------------------------
 int __cdecl fix_httplike_urls(DocInfo *doc, UrlTypes type)
 {
   char *v2; // ebx
-  char *v3; // ebx
+  char *address; // ebx
   FILE *v4; // eax
   char *v5; // ebx
   FILE *v6; // eax
@@ -65562,9 +65438,9 @@ int __cdecl fix_httplike_urls(DocInfo *doc, UrlTypes type)
       return 0;
     if ( WWW_TraceFlag[0] )
     {
-      v3 = doc->address;
+      address = doc->address;
       v4 = TraceFP();
-      fprintf(v4, "fix_httplike_urls: URL '%s'\n", v3);
+      fprintf(v4, "fix_httplike_urls: URL '%s'\n", address);
     }
     LYTrimHtmlSep(doc->address);
     if ( WWW_TraceFlag[0] )
@@ -65666,7 +65542,6 @@ BOOLEAN __cdecl GetStdin(char **buf, BOOLEAN marker)
   char *v2; // ebx
   FILE *v3; // eax
   FILE *v4; // eax
-  BOOLEAN v6; // [esp+1Bh] [ebp-Dh]
   char *v7; // [esp+1Ch] [ebp-Ch]
 
   if ( !LYSafeGets(buf, stdin) || marker && !strncmp(*buf, "---", 3u) )
@@ -65680,7 +65555,7 @@ BOOLEAN __cdecl GetStdin(char **buf, BOOLEAN marker)
       v4 = TraceFP();
       fprintf(v4, "...mark: %s\n", v7);
     }
-    v6 = 0;
+    return 0;
   }
   else
   {
@@ -65691,9 +65566,8 @@ BOOLEAN __cdecl GetStdin(char **buf, BOOLEAN marker)
       v3 = TraceFP();
       fprintf(v3, "...data: %s\n", v2);
     }
-    v6 = 1;
+    return 1;
   }
-  return v6;
 }
 
 //----- (08078739) --------------------------------------------------------
@@ -65746,7 +65620,7 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
   int v34; // edi
   int v35; // ebx
   FILE *v36; // eax
-  char *v37; // [esp+4h] [ebp-2DCh]
+  char *object; // [esp+4h] [ebp-2DCh]
   _BOOL4 fd; // [esp+8h] [ebp-2D8h]
   bool v39; // [esp+Ch] [ebp-2D4h]
   bool v40; // [esp+10h] [ebp-2D0h]
@@ -65775,9 +65649,9 @@ int __cdecl __noreturn main(int argc, const char **argv, const char **envp)
   char result[256]; // [esp+CCh] [ebp-214h] BYREF
   char pathname[256]; // [esp+1CCh] [ebp-114h] BYREF
   unsigned int v65; // [esp+2CCh] [ebp-14h]
-  int *v66; // [esp+2D0h] [ebp-10h]
+  int *p_argc; // [esp+2D0h] [ebp-10h]
 
-  v66 = &argc;
+  p_argc = &argc;
   v47 = (char **)argv;
   v65 = __readgsdword(0x14u);
   code = 0;
@@ -66064,11 +65938,11 @@ LABEL_32:
     while ( 1 )
     {
       if ( v54 && (v54 = v54->next) != 0 )
-        v37 = (char *)v54->object;
+        object = (char *)v54->object;
       else
-        v37 = 0;
-      v49 = v37;
-      if ( !v37 )
+        object = 0;
+      v49 = object;
+      if ( !object )
         break;
       parse_arg(&v49, 4u, 0);
     }
@@ -66492,8 +66366,8 @@ void reload_read_cfg()
     }
   }
 }
-// 807A52F: conditional instruction was optimized away because of '%tempfile.4!=0'
-// 807A59E: conditional instruction was optimized away because of '%tempfile.4!=0'
+// 807A52F: conditional instruction was optimized away because %tempfile.4!=0
+// 807A59E: conditional instruction was optimized away because %tempfile.4!=0
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
 //----- (0807A78D) --------------------------------------------------------
@@ -66868,12 +66742,12 @@ int __cdecl post_data_fun(char *next_arg)
 //----- (0807AE36) --------------------------------------------------------
 const char *__cdecl show_restriction(const char *name)
 {
-  int v2; // [esp+14h] [ebp-14h]
+  int restriction; // [esp+14h] [ebp-14h]
 
-  v2 = find_restriction(name, -1);
-  if ( !v2 )
+  restriction = find_restriction(name, -1);
+  if ( !restriction )
     return "off";
-  if ( v2 == 1 )
+  if ( restriction == 1 )
     return "on";
   return "?";
 }
@@ -67247,12 +67121,11 @@ BOOLEAN __cdecl parse_arg(char **argv, unsigned int mask, int *countp)
   FILE *v7; // eax
   int v8; // ebx
   FILE *v9; // edx
-  int *v10; // ebx
+  int *def_value; // ebx
   char *v11; // ebx
   const char *v12; // esi
   char *v13; // eax
   int v15; // [esp+14h] [ebp-44h]
-  bool v16; // [esp+1Bh] [ebp-3Dh]
   char *v17; // [esp+1Ch] [ebp-3Ch]
   int v18; // [esp+20h] [ebp-38h]
   int v19; // [esp+24h] [ebp-34h]
@@ -67288,7 +67161,7 @@ BOOLEAN __cdecl parse_arg(char **argv, unsigned int mask, int *countp)
     if ( !strcmp(src, "--") )
     {
       no_options_further_12842 = 1;
-      v16 = 1;
+      return 1;
     }
     else if ( *++src )
     {
@@ -67356,8 +67229,8 @@ BOOLEAN __cdecl parse_arg(char **argv, unsigned int mask, int *countp)
           {
             if ( q->def_value && next_arg )
             {
-              v10 = (int *)q->def_value;
-              *v10 = strtol(next_arg, &temp_ptr, 0);
+              def_value = (int *)q->def_value;
+              *def_value = strtol(next_arg, &temp_ptr, 0);
             }
           }
           else if ( (p->type & 0xFF0u) > 0x60 )
@@ -67414,7 +67287,7 @@ BOOLEAN __cdecl parse_arg(char **argv, unsigned int mask, int *countp)
           }
         }
         Old_DTD = DTD_recovery;
-        v16 = 1;
+        return 1;
       }
       else
       {
@@ -67424,12 +67297,12 @@ BOOLEAN __cdecl parse_arg(char **argv, unsigned int mask, int *countp)
           v9 = TraceFP();
           fprintf(v9, "...skip (mask %u/%d)\n", mask, v8);
         }
-        v16 = 0;
+        return 0;
       }
     }
     else
     {
-      v16 = 1;
+      return 1;
     }
   }
   else
@@ -67456,9 +67329,8 @@ BOOLEAN __cdecl parse_arg(char **argv, unsigned int mask, int *countp)
       v5 = TraceFP();
       fprintf(v5, "parse_arg startfile:%s\n", v4);
     }
-    v16 = countp != 0;
+    return countp != 0;
   }
-  return v16;
 }
 
 //----- (0807BEBF) --------------------------------------------------------
@@ -67509,13 +67381,7 @@ void __cdecl __noreturn FatalProblem(int sig)
 //----- (0807C0A0) --------------------------------------------------------
 int __cdecl sametext(char *een, char *twee)
 {
-  int v3; // [esp+14h] [ebp-4h]
-
-  if ( een && twee )
-    v3 = strcmp(een, twee) == 0;
-  else
-    v3 = 1;
-  return v3;
+  return !een || !twee || strcmp(een, twee) == 0;
 }
 
 //----- (0807C0DD) --------------------------------------------------------
@@ -67539,7 +67405,6 @@ void TracelogOpenFailed()
 BOOLEAN __cdecl LYReopenTracelog(BOOLEAN *trace_flag_ptr)
 {
   FILE *v1; // eax
-  BOOLEAN v3; // [esp+17h] [ebp-1h]
 
   if ( WWW_TraceFlag[0] )
   {
@@ -67555,14 +67420,13 @@ BOOLEAN __cdecl LYReopenTracelog(BOOLEAN *trace_flag_ptr)
       WWW_TraceFlag[0] = 0;
       *trace_flag_ptr = 1;
     }
-    v3 = 1;
+    return 1;
   }
   else
   {
     TracelogOpenFailed();
-    v3 = 0;
+    return 0;
   }
-  return v3;
 }
 
 //----- (0807C1B4) --------------------------------------------------------
@@ -67582,13 +67446,10 @@ void __cdecl turn_trace_back_on(BOOLEAN *trace_flag_ptr)
 //----- (0807C1F8) --------------------------------------------------------
 FILE *TraceFP()
 {
-  FILE *v1; // [esp+0h] [ebp-4h]
-
   if ( LYTraceLogFP )
-    v1 = LYTraceLogFP;
+    return LYTraceLogFP;
   else
-    v1 = stderr;
-  return v1;
+    return stderr;
 }
 
 //----- (0807C21E) --------------------------------------------------------
@@ -67909,7 +67770,7 @@ int do_change_link()
 void __cdecl do_check_goto_URL(char *user_input_buffer, char **old_user_input, BOOLEAN *force_load)
 {
   size_t v3; // edx
-  const char *v4; // ebx
+  const char *name; // ebx
   char *v5; // eax
   char *v6; // eax
   char *v7; // eax
@@ -67947,9 +67808,9 @@ void __cdecl do_check_goto_URL(char *user_input_buffer, char **old_user_input, B
         if ( !strncmp(user_input_buffer, table_11782[n].name, v3) )
         {
           found = 1;
-          v4 = table_11782[n].name;
+          name = table_11782[n].name;
           v5 = gettext("You are not allowed to goto \"%s\" URLs");
-          HTUserMsg2(v5, v4);
+          HTUserMsg2(v5, name);
           break;
         }
       }
@@ -67989,7 +67850,14 @@ void __cdecl do_check_goto_URL(char *user_input_buffer, char **old_user_input, B
 }
 
 //----- (0807CBB7) --------------------------------------------------------
-BOOLEAN __cdecl do_check_recall(int ch_0, char *user_input_buffer, char **old_user_input, int URLTotal, int *URLNum, RecallType recall, BOOLEAN *FirstURLRecall)
+BOOLEAN __cdecl do_check_recall(
+        int ch_0,
+        char *user_input_buffer,
+        char **old_user_input,
+        int URLTotal,
+        int *URLNum,
+        RecallType recall,
+        BOOLEAN *FirstURLRecall)
 {
   char *v7; // eax
   char *v8; // eax
@@ -68196,7 +68064,7 @@ int __cdecl DoTraversal(int c, BOOLEAN *crawl_ok)
   bool v6; // [esp+18h] [ebp-20h]
   char *v7; // [esp+1Ch] [ebp-1Ch]
   int v8; // [esp+20h] [ebp-18h]
-  int v9; // [esp+24h] [ebp-14h]
+  int link; // [esp+24h] [ebp-14h]
   bool rlink_allowed; // [esp+35h] [ebp-3h]
   int ca; // [esp+40h] [ebp+8h]
 
@@ -68282,26 +68150,32 @@ int __cdecl DoTraversal(int c, BOOLEAN *crawl_ok)
     v7 = LYKeycodeToString(ca, 0);
     v8 = nlinks;
     if ( nlinks <= 0 )
-      v9 = 0;
+      link = 0;
     else
-      v9 = curdoc.link;
+      link = curdoc.link;
     v4 = TraceFP();
-    fprintf(v4, "DoTraversal(%d:%d) -> %s\n", v9, v8, v7);
+    fprintf(v4, "DoTraversal(%d:%d) -> %s\n", link, v8, v7);
   }
   return ca;
 }
 
 //----- (0807D548) --------------------------------------------------------
-int __cdecl handle_LYK_ACTIVATE(int *c, int cmd, BOOLEAN *try_internal, BOOLEAN *refresh_screen, BOOLEAN *force_load, int real_cmd)
+int __cdecl handle_LYK_ACTIVATE(
+        int *c,
+        int cmd,
+        BOOLEAN *try_internal,
+        BOOLEAN *refresh_screen,
+        BOOLEAN *force_load,
+        int real_cmd)
 {
   char *v6; // eax
   char *v7; // eax
   char *v8; // eax
   char *v9; // eax
-  char *v10; // ebx
+  char *submit_action; // ebx
   FILE *v11; // eax
   const char *v12; // eax
-  const char *v13; // eax
+  const char *Title; // eax
   char *v14; // eax
   char *v15; // eax
   size_t v16; // eax
@@ -68507,9 +68381,9 @@ LABEL_17:
       HTAlert(v9);
       if ( WWW_TraceFlag[0] )
       {
-        v10 = links[curdoc.link].l_form->submit_action;
+        submit_action = links[curdoc.link].l_form->submit_action;
         v11 = TraceFP();
-        fprintf(v11, "LYMainLoop: Rejected '%s'\n", v10);
+        fprintf(v11, "LYMainLoop: Rejected '%s'\n", submit_action);
       }
       goto LABEL_17;
     }
@@ -68549,8 +68423,8 @@ LABEL_17:
     {
       if ( HText_getTitle() )
       {
-        v13 = HText_getTitle();
-        HTSACopy(&newdoc.title, v13);
+        Title = HText_getTitle();
+        HTSACopy(&newdoc.title, Title);
       }
       else if ( curdoc.title )
       {
@@ -68808,8 +68682,7 @@ void __cdecl handle_LYK_CLEAR_AUTH(int *old_c, int real_c)
 int __cdecl handle_LYK_COMMAND(char *user_input_buffer)
 {
   FILE *v1; // edx
-  int v3; // [esp+1Ch] [ebp-1Ch]
-  int v5; // [esp+24h] [ebp-14h]
+  int code; // [esp+1Ch] [ebp-1Ch]
   char *tmp; // [esp+28h] [ebp-10h]
   char *src; // [esp+2Ch] [ebp-Ch]
   Kcmd *mp; // [esp+30h] [ebp-8h]
@@ -68824,21 +68697,20 @@ int __cdecl handle_LYK_COMMAND(char *user_input_buffer)
   *tmp = 0;
   mp = LYStringToKcmd(src);
   if ( mp )
-    v3 = mp->code;
+    code = mp->code;
   else
-    v3 = 0;
+    code = 0;
   if ( WWW_TraceFlag[0] )
   {
     v1 = TraceFP();
-    fprintf(v1, "LYK_COMMAND(%s.%s) = %d\n", src, tmp, v3);
+    fprintf(v1, "LYK_COMMAND(%s.%s) = %d\n", src, tmp, code);
   }
-  if ( v3 )
-    return v3;
+  if ( code )
+    return code;
   if ( *src )
-    v5 = -1;
+    return -1;
   else
-    v5 = 0;
-  return v5;
+    return 0;
 }
 
 //----- (0807F182) --------------------------------------------------------
@@ -68990,8 +68862,6 @@ LABEL_27:
 //----- (0807F599) --------------------------------------------------------
 BOOLEAN __cdecl handle_LYK_COOKIE_JAR(int *cmd)
 {
-  BOOLEAN v2; // [esp+17h] [ebp-1h]
-
   if ( strncasecomp(curdoc.address, "LYNXCOOKIE:", 11) )
   {
     set_address(&newdoc, "LYNXCOOKIE:/");
@@ -69007,14 +68877,13 @@ BOOLEAN __cdecl handle_LYK_COOKIE_JAR(int *cmd)
     LYforce_no_cache = 1;
     if ( LYValidate || check_realm )
       LYPermitURL = 1;
-    v2 = 0;
+    return 0;
   }
   else
   {
     *cmd = 37;
-    v2 = 1;
+    return 1;
   }
-  return v2;
 }
 
 //----- (0807F652) --------------------------------------------------------
@@ -69106,7 +68975,6 @@ int __cdecl handle_LYK_DOWNLOAD(int *cmd, int *old_c, int real_c)
   char *v18; // eax
   const char *v19; // eax
   char *v20; // eax
-  int v22; // [esp+Ch] [ebp-1Ch]
   int len; // [esp+10h] [ebp-18h]
   int number; // [esp+24h] [ebp-4h]
 
@@ -69319,14 +69187,14 @@ int __cdecl handle_LYK_DOWNLOAD(int *cmd, int *old_c, int real_c)
       v4 = gettext("Form has a mailto action!  Cannot download.");
       HTUserMsg(v4);
     }
-    v22 = 0;
+    return 0;
   }
   else if ( strncasecomp(links[curdoc.link].l_form->submit_action, "LYNXOPTIONS:", 12) )
   {
     HTOutputFormat = HTAtom_for("www/download");
     LYforce_no_cache = 1;
     *cmd = 39;
-    v22 = 2;
+    return 2;
   }
   else
   {
@@ -69336,9 +69204,8 @@ int __cdecl handle_LYK_DOWNLOAD(int *cmd, int *old_c, int real_c)
       v5 = gettext("This special URL cannot be downloaded!");
       HTUserMsg(v5);
     }
-    v22 = 0;
+    return 0;
   }
-  return v22;
 }
 
 //----- (080803EA) --------------------------------------------------------
@@ -69437,18 +69304,17 @@ int __cdecl handle_LYK_DWIMEDIT(int *cmd, int *old_c, int real_c)
 {
   char *v3; // eax
   char *v4; // eax
-  int v6; // [esp+4h] [ebp-4h]
 
   if ( nlinks > 0 && links[curdoc.link].type == 1 && links[curdoc.link].l_form->type == 9 )
   {
     *cmd = 86;
-    v6 = 2;
+    return 2;
   }
   else if ( nlinks > 0 && links[curdoc.link].type == 1 && links[curdoc.link].l_form->type == 1 )
   {
     v3 = gettext("This field cannot be (e)dited with an external editor.");
     HTUserMsg(v3);
-    v6 = 1;
+    return 1;
   }
   else if ( no_editor )
   {
@@ -69458,13 +69324,12 @@ int __cdecl handle_LYK_DWIMEDIT(int *cmd, int *old_c, int real_c)
       v4 = gettext("External editing is currently disabled.");
       HTUserMsg(v4);
     }
-    v6 = 1;
+    return 1;
   }
   else
   {
-    v6 = 0;
+    return 0;
   }
-  return v6;
 }
 
 //----- (08080728) --------------------------------------------------------
@@ -69475,7 +69340,6 @@ int __cdecl handle_LYK_ECGOTO(int *ch_0, char *user_input_buffer, char **old_use
   char *v7; // eax
   char *v8; // eax
   char *v9; // eax
-  int v11; // [esp+14h] [ebp-4h]
 
   if ( !no_goto || LYValidate )
   {
@@ -69489,7 +69353,7 @@ int __cdecl handle_LYK_ECGOTO(int *ch_0, char *user_input_buffer, char **old_use
         v6 = gettext("You cannot edit File Management URLs");
         HTUserMsg(v6);
       }
-      v11 = 0;
+      return 0;
     }
     else
     {
@@ -69509,7 +69373,7 @@ int __cdecl handle_LYK_ECGOTO(int *ch_0, char *user_input_buffer, char **old_use
         && strcmp(user_input_buffer, curdoc.address)
         && (LYTrimAllStartfile(user_input_buffer), *user_input_buffer) )
       {
-        v11 = 2;
+        return 2;
       }
       else
       {
@@ -69521,7 +69385,7 @@ int __cdecl handle_LYK_ECGOTO(int *ch_0, char *user_input_buffer, char **old_use
           free(*old_user_input);
           *old_user_input = 0;
         }
-        v11 = 0;
+        return 0;
       }
     }
   }
@@ -69533,9 +69397,8 @@ int __cdecl handle_LYK_ECGOTO(int *ch_0, char *user_input_buffer, char **old_use
       v5 = gettext("Goto a random URL is disallowed!");
       HTUserMsg(v5);
     }
-    v11 = 0;
+    return 0;
   }
-  return v11;
 }
 
 //----- (0808093F) --------------------------------------------------------
@@ -69684,7 +69547,6 @@ int __cdecl handle_LYK_ELGOTO(int *ch_0, char *user_input_buffer, char **old_use
   char *v8; // eax
   char *v9; // eax
   char *v10; // eax
-  int v12; // [esp+1Ch] [ebp-Ch]
   const char *src; // [esp+20h] [ebp-8h]
   const char *s2; // [esp+24h] [ebp-4h]
 
@@ -69711,7 +69573,7 @@ int __cdecl handle_LYK_ELGOTO(int *ch_0, char *user_input_buffer, char **old_use
             v8 = gettext("You cannot edit File Management URLs");
             HTUserMsg(v8);
           }
-          v12 = 0;
+          return 0;
         }
         else
         {
@@ -69730,7 +69592,7 @@ int __cdecl handle_LYK_ELGOTO(int *ch_0, char *user_input_buffer, char **old_use
             && (links[curdoc.link].type != 1 ? (s2 = links[curdoc.link].lname) : (s2 = links[curdoc.link].l_form->submit_action),
                 strcmp(user_input_buffer, s2) && (LYTrimAllStartfile(user_input_buffer), *user_input_buffer)) )
           {
-            v12 = 2;
+            return 2;
           }
           else
           {
@@ -69742,7 +69604,7 @@ int __cdecl handle_LYK_ELGOTO(int *ch_0, char *user_input_buffer, char **old_use
               free(*old_user_input);
               *old_user_input = 0;
             }
-            v12 = 0;
+            return 0;
           }
         }
       }
@@ -69754,7 +69616,7 @@ int __cdecl handle_LYK_ELGOTO(int *ch_0, char *user_input_buffer, char **old_use
           v7 = gettext("** Bad HTML!!  No form action defined. **");
           HTUserMsg(v7);
         }
-        v12 = 0;
+        return 0;
       }
     }
     else
@@ -69765,7 +69627,7 @@ int __cdecl handle_LYK_ELGOTO(int *ch_0, char *user_input_buffer, char **old_use
         v6 = gettext("You are not on a form submission button or normal link.");
         HTUserMsg(v6);
       }
-      v12 = 0;
+      return 0;
     }
   }
   else
@@ -69776,9 +69638,8 @@ int __cdecl handle_LYK_ELGOTO(int *ch_0, char *user_input_buffer, char **old_use
       v5 = gettext("Goto a random URL is disallowed!");
       HTUserMsg(v5);
     }
-    v12 = 0;
+    return 0;
   }
-  return v12;
 }
 
 //----- (080811EA) --------------------------------------------------------
@@ -69912,7 +69773,7 @@ BOOLEAN __cdecl handle_LYK_FASTBACKW_LINK(int *cmd, int *old_c, int real_c)
       if ( nlinks > 0 )
         curdoc.link = 0;
       *cmd = 26;
-      code = 1;
+      return 1;
     }
     else
     {
@@ -70015,12 +69876,20 @@ void handle_LYK_FIRST_LINK()
 }
 
 //----- (08081AAE) --------------------------------------------------------
-BOOLEAN __cdecl handle_LYK_GOTO(int *ch_0, char *user_input_buffer, char **old_user_input, RecallType *recall, int *URLTotal, int *URLNum, BOOLEAN *FirstURLRecall, int *old_c, int real_c)
+BOOLEAN __cdecl handle_LYK_GOTO(
+        int *ch_0,
+        char *user_input_buffer,
+        char **old_user_input,
+        RecallType *recall,
+        int *URLTotal,
+        int *URLNum,
+        BOOLEAN *FirstURLRecall,
+        int *old_c,
+        int real_c)
 {
   char *v9; // eax
   char *v10; // eax
   char *v11; // eax
-  BOOLEAN v13; // [esp+13h] [ebp-5h]
   int v14; // [esp+14h] [ebp-4h]
 
   if ( !no_goto || LYValidate )
@@ -70051,7 +69920,7 @@ BOOLEAN __cdecl handle_LYK_GOTO(int *ch_0, char *user_input_buffer, char **old_u
     *ch_0 = LYgetstr(user_input_buffer, 0, 0x400u, *recall);
     if ( *ch_0 >= 0 )
     {
-      v13 = 1;
+      return 1;
     }
     else
     {
@@ -70063,7 +69932,7 @@ BOOLEAN __cdecl handle_LYK_GOTO(int *ch_0, char *user_input_buffer, char **old_u
       }
       v11 = gettext("Cancelled!!!");
       HTInfoMsg(v11);
-      v13 = 0;
+      return 0;
     }
   }
   else
@@ -70074,9 +69943,8 @@ BOOLEAN __cdecl handle_LYK_GOTO(int *ch_0, char *user_input_buffer, char **old_u
       v9 = gettext("Goto a random URL is disallowed!");
       HTUserMsg(v9);
     }
-    v13 = 0;
+    return 0;
   }
-  return v13;
 }
 
 //----- (08081C4F) --------------------------------------------------------
@@ -70110,7 +69978,7 @@ BOOLEAN __cdecl handle_LYK_HEAD(int *cmd)
   char *v9; // eax
   char *v10; // eax
   char *v12; // [esp+Ch] [ebp-1Ch]
-  char *v14; // [esp+14h] [ebp-14h]
+  char *address; // [esp+14h] [ebp-14h]
   int c; // [esp+24h] [ebp-4h]
   int ca; // [esp+24h] [ebp-4h]
 
@@ -70143,10 +70011,10 @@ BOOLEAN __cdecl handle_LYK_HEAD(int *cmd)
     if ( ca != 68 )
       return 0;
     if ( strncasecomp(curdoc.address, "LYNXIMGMAP:", 11) )
-      v14 = curdoc.address;
+      address = curdoc.address;
     else
-      v14 = curdoc.address + 11;
-    if ( LYCanDoHEAD(v14) != 1 )
+      address = curdoc.address + 11;
+    if ( LYCanDoHEAD(address) != 1 )
       goto LABEL_11;
     HEAD_request = 1;
     LYforce_no_cache = 1;
@@ -70320,7 +70188,6 @@ void handle_LYK_HISTORICAL()
 BOOLEAN __cdecl handle_LYK_HISTORY(BOOLEAN ForcePush)
 {
   char *v1; // eax
-  BOOLEAN v3; // [esp+13h] [ebp-5h]
 
   if ( !curdoc.title || LYIsUIPage3(curdoc.address, UIP_HISTORY_0, 1) )
     return 0;
@@ -70348,14 +70215,13 @@ BOOLEAN __cdecl handle_LYK_HISTORY(BOOLEAN ForcePush)
     free_address(&curdoc);
     if ( LYValidate || check_realm )
       LYPermitURL = 1;
-    v3 = 1;
+    return 1;
   }
   else
   {
     LYpop(&curdoc);
-    v3 = 1;
+    return 1;
   }
-  return v3;
 }
 
 //----- (0808266C) --------------------------------------------------------
@@ -70413,7 +70279,7 @@ void __cdecl handle_LYK_INDEX_SEARCH(BOOLEAN *force_load, BOOLEAN ForcePush, int
   int len; // [esp+10h] [ebp-18h]
   const char *src; // [esp+14h] [ebp-14h]
   int v9; // [esp+18h] [ebp-10h]
-  const char *v10; // [esp+1Ch] [ebp-Ch]
+  const char *str; // [esp+1Ch] [ebp-Ch]
 
   if ( is_www_index )
   {
@@ -70473,10 +70339,10 @@ void __cdecl handle_LYK_INDEX_SEARCH(BOOLEAN *force_load, BOOLEAN ForcePush, int
       else
         v9 = 0;
       if ( curdoc.post_data )
-        v10 = curdoc.post_data->str;
+        str = curdoc.post_data->str;
       else
-        v10 = 0;
-      HTSABCopy(&newdoc.post_data, v10, v9);
+        str = 0;
+      HTSABCopy(&newdoc.post_data, str, v9);
       HTSACopy(&newdoc.post_content_type, curdoc.post_content_type);
       HTSACopy(&newdoc.bookmark, curdoc.bookmark);
       newdoc.isHEAD = curdoc.isHEAD;
@@ -70496,12 +70362,11 @@ void __cdecl handle_LYK_INDEX_SEARCH(BOOLEAN *force_load, BOOLEAN ForcePush, int
 BOOLEAN __cdecl handle_LYK_INFO(int *cmd)
 {
   char *v1; // eax
-  BOOLEAN v3; // [esp+17h] [ebp-1h]
 
   if ( LYIsUIPage3(curdoc.address, UIP_SHOWINFO_0, 1) )
   {
     *cmd = 37;
-    v3 = 1;
+    return 1;
   }
   else
   {
@@ -70523,9 +70388,8 @@ BOOLEAN __cdecl handle_LYK_INFO(int *cmd)
       if ( LYValidate || check_realm )
         LYPermitURL = 1;
     }
-    v3 = 0;
+    return 0;
   }
-  return v3;
 }
 
 //----- (08082B8E) --------------------------------------------------------
@@ -70585,7 +70449,17 @@ void __cdecl handle_LYK_INSERT_FILE(BOOLEAN *refresh_screen, int *old_c, int rea
 }
 
 //----- (08082D01) --------------------------------------------------------
-BOOLEAN __cdecl handle_LYK_JUMP(int c, char *user_input_buffer, char **old_user_input, RecallType *recall, BOOLEAN *FirstURLRecall, int *URLNum, int *URLTotal, int *ch_0, int *old_c, int real_c)
+BOOLEAN __cdecl handle_LYK_JUMP(
+        int c,
+        char *user_input_buffer,
+        char **old_user_input,
+        RecallType *recall,
+        BOOLEAN *FirstURLRecall,
+        int *URLNum,
+        int *URLTotal,
+        int *ch_0,
+        int *old_c,
+        int real_c)
 {
   char *v10; // eax
   const char *ret; // [esp+24h] [ebp-4h]
@@ -70689,7 +70563,6 @@ BOOLEAN __cdecl handle_LYK_LIST(int *cmd)
   char *v1; // eax
   const char *s2; // [esp+Ch] [ebp-Ch]
   const char *s1; // [esp+10h] [ebp-8h]
-  BOOLEAN v5; // [esp+17h] [ebp-1h]
 
   s2 = gettext("List Page");
   if ( curdoc.title )
@@ -70699,7 +70572,7 @@ BOOLEAN __cdecl handle_LYK_LIST(int *cmd)
   if ( !strcmp(s1, s2) && LYIsUIPage3(curdoc.address, UIP_LIST_PAGE_0, 1) )
   {
     *cmd = 37;
-    v5 = 1;
+    return 1;
   }
   else if ( showlist(&newdoc, 1) >= 0 )
   {
@@ -70710,13 +70583,12 @@ BOOLEAN __cdecl handle_LYK_LIST(int *cmd)
       LYPermitURL = 1;
       HTSACopy(&lynxlistfile, newdoc.address);
     }
-    v5 = 0;
+    return 0;
   }
   else
   {
-    v5 = 0;
+    return 0;
   }
-  return v5;
 }
 
 //----- (080830DF) --------------------------------------------------------
@@ -70865,7 +70737,6 @@ BOOLEAN __cdecl handle_LYK_OPTIONS(int *cmd, BOOLEAN *refresh_screen)
   char *v11; // [esp+38h] [ebp-30h]
   char *v12; // [esp+3Ch] [ebp-2Ch]
   int v13; // [esp+40h] [ebp-28h]
-  BOOLEAN v14; // [esp+47h] [ebp-21h]
   char *CurrentNegoCharset; // [esp+48h] [ebp-20h] BYREF
   char *CurrentNegoLanguage; // [esp+4Ch] [ebp-1Ch] BYREF
   char *CurrentUserAgent; // [esp+50h] [ebp-18h] BYREF
@@ -70885,7 +70756,7 @@ BOOLEAN __cdecl handle_LYK_OPTIONS(int *cmd, BOOLEAN *refresh_screen)
     if ( LYIsUIPage3(curdoc.address, UIP_OPTIONS_MENU_0, 1) )
     {
       *cmd = 37;
-      v14 = 1;
+      return 1;
     }
     else
     {
@@ -70902,7 +70773,7 @@ BOOLEAN __cdecl handle_LYK_OPTIONS(int *cmd, BOOLEAN *refresh_screen)
       LYforce_no_cache = 1;
       if ( LYValidate || check_realm )
         LYPermitURL = 1;
-      v14 = 0;
+      return 0;
     }
   }
   else
@@ -70946,13 +70817,13 @@ BOOLEAN __cdecl handle_LYK_OPTIONS(int *cmd, BOOLEAN *refresh_screen)
       && LYUseDefaultRawMode_flag == LYUseDefaultRawMode
       && LYSelectPopups_flag == LYSelectPopups )
     {
-      s2 = LYUserAgent ? LYUserAgent : &byte_81534E7;
+      s2 = LYUserAgent ? LYUserAgent : (char *)&byte_81534E7;
       if ( !strcmp(CurrentUserAgent, s2) )
       {
-        v8 = language ? language : &byte_81534E7;
+        v8 = language ? language : (char *)&byte_81534E7;
         if ( !strcmp(CurrentNegoLanguage, v8) )
         {
-          v9 = pref_charset ? pref_charset : &byte_81534E7;
+          v9 = pref_charset ? pref_charset : (char *)&byte_81534E7;
           if ( !strcmp(CurrentNegoCharset, v9) )
             goto LABEL_90;
         }
@@ -71042,7 +70913,7 @@ LABEL_90:
         free(CurrentNegoCharset);
         CurrentNegoCharset = 0;
       }
-      v14 = 0;
+      return 0;
     }
     else
     {
@@ -71061,10 +70932,9 @@ LABEL_90:
         free(CurrentNegoCharset);
         CurrentNegoCharset = 0;
       }
-      v14 = 0;
+      return 0;
     }
   }
-  return v14;
 }
 
 //----- (08083B4B) --------------------------------------------------------
@@ -71225,7 +71095,7 @@ void __cdecl handle_LYK_PREV_LINK(int *arrowup, int *old_c, int real_c)
 int __cdecl handle_PREV_DOC(int *cmd, int *old_c, int real_c)
 {
   char *v3; // eax
-  char *v4; // ebx
+  char *address; // ebx
   char *v5; // eax
   char *v6; // eax
   DocAddress WWWDoc; // [esp+14h] [ebp-24h] BYREF
@@ -71276,9 +71146,9 @@ int __cdecl handle_PREV_DOC(int *cmd, int *old_c, int real_c)
         *cmd = 69;
         return 2;
       }
-      v4 = WWWDoc.address;
+      address = WWWDoc.address;
       v5 = gettext("Skipping %s");
-      HTUserMsg2(v5, v4);
+      HTUserMsg2(v5, address);
       do
         LYpop(&curdoc);
       while ( nhist > 1 && !are_different(&history[nhist - 1].hdoc, &curdoc) );
@@ -71336,7 +71206,7 @@ void __cdecl handle_LYK_PREV_PAGE(int *old_c, int real_c)
 void __cdecl handle_LYK_PRINT(BOOLEAN *ForcePush, int *old_c, int real_c)
 {
   char *v3; // eax
-  int v4; // eax
+  int NumOfLines; // eax
   char *v5; // eax
 
   if ( LYValidate )
@@ -71350,8 +71220,8 @@ void __cdecl handle_LYK_PRINT(BOOLEAN *ForcePush, int *old_c, int real_c)
   }
   else if ( !LYIsUIPage3(curdoc.address, UIP_PRINT_OPTIONS_0, 1) )
   {
-    v4 = HText_getNumOfLines();
-    if ( print_options(&newdoc.address, curdoc.address, v4) >= 0 )
+    NumOfLines = HText_getNumOfLines();
+    if ( print_options(&newdoc.address, curdoc.address, NumOfLines) >= 0 )
     {
       LYRegisterUIPage(newdoc.address, UIP_PRINT_OPTIONS_0);
       v5 = gettext("Printing Options");
@@ -71407,14 +71277,13 @@ LABEL_10:
 BOOLEAN __cdecl handle_LYK_RAW_TOGGLE(int *cmd)
 {
   char *v1; // eax
-  BOOLEAN v3; // [esp+13h] [ebp-5h]
   const char *Msg; // [esp+14h] [ebp-4h]
 
   if ( HTLoadedDocumentCharset() )
   {
     v1 = gettext("charset for this document specified explicitly, sorry...");
     HTUserMsg(v1);
-    v3 = 0;
+    return 0;
   }
   else
   {
@@ -71425,9 +71294,8 @@ BOOLEAN __cdecl handle_LYK_RAW_TOGGLE(int *cmd)
       Msg = gettext("Raw 8-bit or CJK mode toggled ON!  Reloading...");
     HTUserMsg(Msg);
     HTMLSetCharacterHandling(current_char_set);
-    v3 = reparse_or_reload(cmd);
+    return reparse_or_reload(cmd);
   }
-  return v3;
 }
 
 //----- (0808463F) --------------------------------------------------------
@@ -71555,16 +71423,16 @@ void handle_LYK_SOFT_DQUOTES()
 //----- (0808492D) --------------------------------------------------------
 int wrap_reparse_document()
 {
-  int v0; // ebx
+  int link; // ebx
   FILE *v1; // eax
   bool v2; // al
   FILE *v3; // eax
   FILE *v4; // eax
-  int v5; // ebx
+  int Anchor; // ebx
   int v6; // esi
   FILE *v7; // eax
-  int v9; // [esp+18h] [ebp-30h]
-  int v10; // [esp+1Ch] [ebp-2Ch]
+  int anchor_number; // [esp+18h] [ebp-30h]
+  int sgml_offset; // [esp+1Ch] [ebp-2Ch]
   int top_lineno; // [esp+20h] [ebp-28h]
   int new_lineno; // [esp+24h] [ebp-24h]
   int new_anchor; // [esp+28h] [ebp-20h]
@@ -71573,31 +71441,31 @@ int wrap_reparse_document()
   int result; // [esp+3Ch] [ebp-Ch]
 
   if ( nlinks <= 0 || curdoc.link < 0 )
-    v9 = -1;
+    anchor_number = -1;
   else
-    v9 = links[curdoc.link].anchor_number;
-  old_line_num = HText_getAbsLineNumber(HTMainText, v9);
+    anchor_number = links[curdoc.link].anchor_number;
+  old_line_num = HText_getAbsLineNumber(HTMainText, anchor_number);
   old_from_top = old_line_num - Newline + 1;
   if ( nlinks <= 0 || curdoc.link < 0 )
-    v10 = -1;
+    sgml_offset = -1;
   else
-    v10 = links[curdoc.link].sgml_offset;
+    sgml_offset = links[curdoc.link].sgml_offset;
   if ( WWW_TraceFlag[0] )
   {
-    v0 = curdoc.link;
+    link = curdoc.link;
     v1 = TraceFP();
-    fprintf(v1, "original anchor %d, topline %d, link %d, offset %d\n", v9, old_line_num, v0, v10);
+    fprintf(v1, "original anchor %d, topline %d, link %d, offset %d\n", anchor_number, old_line_num, link, sgml_offset);
   }
   v2 = reparse_document();
   result = v2;
-  if ( v2 && v10 >= 0 )
+  if ( v2 && sgml_offset >= 0 )
   {
-    new_anchor = HText_closestAnchor(HTMainText, v10);
+    new_anchor = HText_closestAnchor(HTMainText, sgml_offset);
     new_lineno = HText_getAbsLineNumber(HTMainText, new_anchor);
     if ( WWW_TraceFlag[0] )
     {
       v3 = TraceFP();
-      fprintf(v3, "old anchor %d -> new anchor %d\n", v9, new_anchor);
+      fprintf(v3, "old anchor %d -> new anchor %d\n", anchor_number, new_anchor);
     }
     if ( new_lineno - old_from_top < 0 )
       old_from_top = new_lineno;
@@ -71618,10 +71486,10 @@ int wrap_reparse_document()
       curdoc.link = newdoc.link;
       if ( WWW_TraceFlag[0] )
       {
-        v5 = HText_locateAnchor(HTMainText, new_anchor);
+        Anchor = HText_locateAnchor(HTMainText, new_anchor);
         v6 = curdoc.link;
         v7 = TraceFP();
-        fprintf(v7, "adjusted anchor %d, topline %d, link %d, offset %d\n", new_anchor, top_lineno, v6, v5);
+        fprintf(v7, "adjusted anchor %d, topline %d, link %d, offset %d\n", new_anchor, top_lineno, v6, Anchor);
       }
     }
   }
@@ -71633,7 +71501,7 @@ void __cdecl handle_LYK_SOURCE(char **ownerS_address_p)
 {
   char *v1; // eax
   char *v2; // eax
-  const char *v3; // [esp+4h] [ebp-24h]
+  const char *Owner; // [esp+4h] [ebp-24h]
   bool v4; // [esp+17h] [ebp-11h]
   BOOLEAN canreparse_post; // [esp+27h] [ebp-1h]
 
@@ -71653,8 +71521,8 @@ void __cdecl handle_LYK_SOURCE(char **ownerS_address_p)
     {
       if ( HText_getOwner() )
       {
-        v3 = HText_getOwner();
-        HTSACopy(ownerS_address_p, v3);
+        Owner = HText_getOwner();
+        HTSACopy(ownerS_address_p, Owner);
       }
       LYUCPushAssumed(HTMainAnchor);
       srcmode_for_next_retrieval(1);
@@ -71740,7 +71608,7 @@ void handle_LYK_TAG_LINK()
   const char *v0; // eax
   const char *v1; // eax
   const char *v2; // eax
-  char *v3; // [esp+14h] [ebp-14h]
+  char *object; // [esp+14h] [ebp-14h]
   char *tagname; // [esp+1Ch] [ebp-Ch] BYREF
   HTList *t1; // [esp+20h] [ebp-8h]
   BOOLEAN found; // [esp+27h] [ebp-1h]
@@ -71770,11 +71638,11 @@ void handle_LYK_TAG_LINK()
         while ( 1 )
         {
           if ( t1 && (t1 = t1->next) != 0 )
-            v3 = (char *)t1->object;
+            object = (char *)t1->object;
           else
-            v3 = 0;
-          tagname = v3;
-          if ( !v3 )
+            object = 0;
+          tagname = object;
+          if ( !object )
             break;
           if ( !strcmp(links[curdoc.link].lname, tagname) )
           {
@@ -71925,7 +71793,7 @@ void handle_LYK_UPLOAD()
 //----- (080853F2) --------------------------------------------------------
 void __cdecl handle_LYK_UP_xxx(int *arrowup, int *old_c, int real_c, int scroll_by)
 {
-  int v4; // ebx
+  int link; // ebx
   char *v5; // eax
 
   if ( Newline <= 1 )
@@ -71950,8 +71818,8 @@ void __cdecl handle_LYK_UP_xxx(int *arrowup, int *old_c, int real_c, int scroll_
       }
       else
       {
-        v4 = curdoc.link;
-        newdoc.link = v4 + HText_LinksInLines(HTMainText, Newline, scroll_by);
+        link = curdoc.link;
+        newdoc.link = link + HText_LinksInLines(HTMainText, Newline, scroll_by);
       }
     }
   }
@@ -72027,7 +71895,7 @@ void __cdecl handle_LYK_UP_LINK(int *follow_col, int *arrowup, int *old_c, int r
 }
 
 //----- (080856FF) --------------------------------------------------------
-void __cdecl _ZN18CScriptUnitDisplay21ClearSpellStateVisualEii(int *arrowup, int *old_c, int real_c)
+void __cdecl handle_LYK_UP_TWO(int *arrowup, int *old_c, int real_c)
 {
   handle_LYK_UP_xxx(arrowup, old_c, real_c, 2);
 }
@@ -72088,13 +71956,12 @@ BOOLEAN __cdecl handle_LYK_VLINKS(int *cmd, BOOLEAN *newdoc_link_is_absolute)
 {
   char *v2; // eax
   char *v3; // eax
-  BOOLEAN v5; // [esp+17h] [ebp-11h]
   int c; // [esp+24h] [ebp-4h]
 
   if ( LYIsUIPage3(curdoc.address, UIP_VLINKS_0, 1) )
   {
     *cmd = 37;
-    v5 = 1;
+    return 1;
   }
   else
   {
@@ -72122,16 +71989,15 @@ BOOLEAN __cdecl handle_LYK_VLINKS(int *cmd, BOOLEAN *newdoc_link_is_absolute)
         LYPermitURL = 1;
         HTSACopy(&lynxlinksfile, newdoc.address);
       }
-      v5 = 0;
+      return 0;
     }
     else
     {
       v2 = gettext("No previously visited links available!");
       HTUserMsg(v2);
-      v5 = 0;
+      return 0;
     }
   }
-  return v5;
 }
 
 //----- (08085987) --------------------------------------------------------
@@ -72205,10 +72071,16 @@ void __cdecl handle_LYK_WHEREIS(int cmd, BOOLEAN *refresh_screen)
   if ( remember_old_target )
     free(remember_old_target);
 }
-// 8085A95: conditional instruction was optimized away because of '%found.1!=0'
+// 8085A95: conditional instruction was optimized away because %found.1!=0
 
 //----- (08085B7B) --------------------------------------------------------
-void __cdecl handle_LYK_digit(int c, BOOLEAN *force_load, char *user_input_buffer, int *old_c, int real_c, BOOLEAN *try_internal)
+void __cdecl handle_LYK_digit(
+        int c,
+        BOOLEAN *force_load,
+        char *user_input_buffer,
+        int *old_c,
+        int real_c,
+        BOOLEAN *try_internal)
 {
   const char *v6; // eax
   int v7; // ebx
@@ -72218,20 +72090,20 @@ void __cdecl handle_LYK_digit(int c, BOOLEAN *force_load, char *user_input_buffe
   char *v11; // eax
   char *v12; // [esp+4h] [ebp-34h]
   char *v13; // [esp+4h] [ebp-34h]
-  int v14; // [esp+1Ch] [ebp-1Ch]
+  int link; // [esp+1Ch] [ebp-1Ch]
   int v15; // [esp+20h] [ebp-18h]
   char *temp; // [esp+28h] [ebp-10h] BYREF
   int number; // [esp+2Ch] [ebp-Ch] BYREF
   int lindx; // [esp+30h] [ebp-8h]
 
   if ( nlinks <= 0 )
-    v14 = 0;
+    link = 0;
   else
-    v14 = curdoc.link;
-  lindx = v14;
+    link = curdoc.link;
+  lindx = link;
   temp = 0;
   number = curdoc.line;
-  v15 = follow_link_number(c, v14, &newdoc, &number);
+  v15 = follow_link_number(c, link, &newdoc, &number);
   if ( v15 == 2 )
   {
     Newline = newdoc.line;
@@ -72514,7 +72386,7 @@ _BOOL4 mainloop()
   char *v3; // eax
   char *v4; // eax
   char *v5; // eax
-  char *v6; // ebx
+  char *address; // ebx
   FILE *v7; // eax
   char *v8; // eax
   char *v9; // eax
@@ -72528,9 +72400,9 @@ _BOOL4 mainloop()
   char *v17; // eax
   char *v18; // ebx
   FILE *v19; // eax
-  const char *v20; // eax
+  const char *Style; // eax
   const char *v21; // eax
-  const char *v22; // eax
+  const char *Owner; // eax
   char *v23; // eax
   HTAtom *v24; // ebx
   const char *v25; // ebx
@@ -72541,7 +72413,7 @@ _BOOL4 mainloop()
   FILE *v30; // eax
   char *v31; // eax
   const char *v32; // eax
-  int v33; // ebx
+  int link; // ebx
   FILE *v34; // eax
   char *v35; // eax
   char *v36; // eax
@@ -72569,16 +72441,16 @@ _BOOL4 mainloop()
   char *v59; // [esp+7Ch] [ebp-61Ch]
   char *v60; // [esp+80h] [ebp-618h]
   char *v61; // [esp+84h] [ebp-614h]
-  char *v62; // [esp+88h] [ebp-610h]
-  char *v63; // [esp+8Ch] [ebp-60Ch]
+  char *target; // [esp+88h] [ebp-610h]
+  char *lname; // [esp+8Ch] [ebp-60Ch]
   int v65; // [esp+94h] [ebp-604h]
   char *src; // [esp+98h] [ebp-600h]
   int v67; // [esp+9Ch] [ebp-5FCh]
-  char *v68; // [esp+A0h] [ebp-5F8h]
+  char *str; // [esp+A0h] [ebp-5F8h]
   char *s2; // [esp+A4h] [ebp-5F4h]
   char *v70; // [esp+A8h] [ebp-5F0h]
   char *v71; // [esp+ACh] [ebp-5ECh]
-  char *v72; // [esp+B0h] [ebp-5E8h]
+  char *title; // [esp+B0h] [ebp-5E8h]
   int v73; // [esp+B4h] [ebp-5E4h]
   char *v74; // [esp+B8h] [ebp-5E0h]
   bool v75; // [esp+BFh] [ebp-5D9h]
@@ -72592,20 +72464,21 @@ _BOOL4 mainloop()
   int v83; // [esp+DCh] [ebp-5BCh]
   int v84; // [esp+E0h] [ebp-5B8h]
   int v85; // [esp+E4h] [ebp-5B4h]
-  char v86; // [esp+EAh] [ebp-5AEh]
-  char v87; // [esp+EBh] [ebp-5ADh]
+  bool v86; // [esp+EAh] [ebp-5AEh]
+  bool v87; // [esp+EBh] [ebp-5ADh]
   int v88; // [esp+ECh] [ebp-5ACh]
-  __int64 v89; // [esp+F0h] [ebp-5A8h]
-  int v90; // [esp+F8h] [ebp-5A0h]
-  int v91; // [esp+FCh] [ebp-59Ch]
-  char v92; // [esp+102h] [ebp-596h]
-  char v93; // [esp+103h] [ebp-595h]
-  int v94; // [esp+104h] [ebp-594h]
-  int v95; // [esp+108h] [ebp-590h]
-  int v96; // [esp+10Ch] [ebp-58Ch]
-  int v97; // [esp+110h] [ebp-588h]
-  int v98; // [esp+114h] [ebp-584h]
-  int v99; // [esp+118h] [ebp-580h]
+  unsigned int v89; // [esp+F0h] [ebp-5A8h]
+  int v90; // [esp+F4h] [ebp-5A4h]
+  int v91; // [esp+F8h] [ebp-5A0h]
+  int v92; // [esp+FCh] [ebp-59Ch]
+  bool v93; // [esp+102h] [ebp-596h]
+  bool v94; // [esp+103h] [ebp-595h]
+  int v95; // [esp+104h] [ebp-594h]
+  int v96; // [esp+108h] [ebp-590h]
+  int v97; // [esp+10Ch] [ebp-58Ch]
+  int v98; // [esp+110h] [ebp-588h]
+  int v99; // [esp+114h] [ebp-584h]
+  int v100; // [esp+118h] [ebp-580h]
   DocInfo tmpDocInfo; // [esp+124h] [ebp-574h]
   DocAddress WWWDoc; // [esp+14Ch] [ebp-54Ch] BYREF
   unsigned __int8 *s1; // [esp+160h] [ebp-538h]
@@ -72664,9 +72537,9 @@ _BOOL4 mainloop()
   BOOLEAN first_file; // [esp+207h] [ebp-491h]
   char user_input_buffer[1024]; // [esp+208h] [ebp-490h] BYREF
   char cfile[128]; // [esp+608h] [ebp-90h] BYREF
-  unsigned int v158; // [esp+688h] [ebp-10h]
+  unsigned int v159; // [esp+688h] [ebp-10h]
 
-  v158 = __readgsdword(0x14u);
+  v159 = __readgsdword(0x14u);
   c = 0;
   real_c = 0;
   old_c = 0;
@@ -72772,9 +72645,9 @@ _BOOL4 mainloop()
         newdoc.safe = 0;
         if ( WWW_TraceFlag[0] )
         {
-          v6 = newdoc.address;
+          address = newdoc.address;
           v7 = TraceFP();
-          fprintf(v7, "Using bookmarks=%s\n", v6);
+          fprintf(v7, "Using bookmarks=%s\n", address);
         }
         break;
       }
@@ -72914,10 +72787,10 @@ LABEL_24:
               && nlinks > 0
               && curdoc.link < nlinks )
             {
-              a = newdoc.address ? newdoc.address : &byte_81534E7;
+              a = newdoc.address ? newdoc.address : (char *)&byte_81534E7;
               if ( strncasecomp(a, "LYNXHIST:", 9) )
               {
-                v58 = newdoc.address ? newdoc.address : &byte_81534E7;
+                v58 = newdoc.address ? newdoc.address : (char *)&byte_81534E7;
                 if ( strncasecomp(v58, "LYNXCOOKIE:", 11) )
                 {
                   mail_owner = 0;
@@ -72943,12 +72816,12 @@ LABEL_24:
               }
               if ( nhist <= 0 )
               {
-                v62 = links[curdoc.link].target;
+                target = links[curdoc.link].target;
                 if ( popped_doc )
-                  v63 = newdoc.address;
+                  lname = newdoc.address;
                 else
-                  v63 = links[curdoc.link].lname;
-                fprintf(ofp, "%s %s\t\n", v63, v62);
+                  lname = links[curdoc.link].lname;
+                fprintf(ofp, "%s %s\t\n", lname, target);
               }
               else
               {
@@ -73020,10 +72893,10 @@ LABEL_24:
                 else
                   v67 = 0;
                 if ( curdoc.post_data )
-                  v68 = curdoc.post_data->str;
+                  str = curdoc.post_data->str;
                 else
-                  v68 = 0;
-                HTSABCopy(&newdoc.post_data, v68, v67);
+                  str = 0;
+                HTSABCopy(&newdoc.post_data, str, v67);
                 HTSACopy(&newdoc.post_content_type, curdoc.post_content_type);
                 newdoc.isHEAD = curdoc.isHEAD;
                 newdoc.safe = curdoc.safe;
@@ -73208,10 +73081,10 @@ LABEL_200:
     {
       copy_address(&newdoc, &curdoc);
       if ( curdoc.title )
-        v72 = curdoc.title;
+        title = curdoc.title;
       else
-        v72 = (char *)&byte_81534E7;
-      HTSACopy(&newdoc.title, v72);
+        title = (char *)&byte_81534E7;
+      HTSACopy(&newdoc.title, title);
       HTSACopy(&newdoc.bookmark, curdoc.bookmark);
       newdoc.line = curdoc.line;
       newdoc.link = curdoc.link;
@@ -73236,8 +73109,8 @@ LABEL_224:
     HTSABCopy(&curdoc.post_data, v74, v73);
     HTSACopy(&curdoc.post_content_type, newdoc.post_content_type);
     HTSACopy(&curdoc.bookmark, newdoc.bookmark);
-    v20 = HText_getStyle();
-    HTSACopy(&curdoc.style, v20);
+    Style = HText_getStyle();
+    HTSACopy(&curdoc.style, Style);
     if ( curdoc.style )
       style_readFromFile(curdoc.style);
     curdoc.isHEAD = newdoc.isHEAD;
@@ -73265,8 +73138,8 @@ LABEL_224:
     {
       HTSACopy(&curdoc.title, newdoc.title);
     }
-    v22 = HText_getOwner();
-    HTSACopy(&owner_address, v22);
+    Owner = HText_getOwner();
+    HTSACopy(&owner_address, Owner);
     curdoc.safe = HTLoadedDocumentIsSafe();
     if ( !dump_output_immediately )
       LYAddVisitedLink(&curdoc);
@@ -73474,8 +73347,8 @@ LABEL_224:
       newdoc_link_is_absolute = 0;
       if ( curdoc.line > 1 )
       {
-        v33 = newdoc.link;
-        newdoc.link = v33 - HText_LinksInLines(HTMainText, 1, curdoc.line - 1);
+        link = newdoc.link;
+        newdoc.link = link - HText_LinksInLines(HTMainText, 1, curdoc.line - 1);
       }
     }
     if ( arrowup )
@@ -73575,12 +73448,12 @@ LABEL_224:
       }
       if ( c >= 0 && (c & 0x8000) == 0 && (c & 0x2000) != 0 && EditBinding(c) != 6 )
       {
-        LODWORD(v89) = c & 0xFFFFF800;
+        v89 = c & 0xFFFFF800;
         if ( LYReverseKeymap(0) < 0 )
-          HIDWORD(v89) = 2048;
+          v90 = 2048;
         else
-          HIDWORD(v89) = LYReverseKeymap(0);
-        c = HIDWORD(v89) | v89;
+          v90 = LYReverseKeymap(0);
+        c = v90 | v89;
       }
       if ( old_c != real_c )
         old_c = 0;
@@ -73775,7 +73648,6 @@ LABEL_508:
         {
           goto LABEL_533;
         }
-        goto LABEL_515;
       }
     }
     else if ( keymap[(real_c & 0x7FF) + 1] != 28 )
@@ -73883,43 +73755,43 @@ new_keyboard_input:
   {
     if ( c == -1 )
     {
-      v90 = keymap[0];
+      v91 = keymap[0];
     }
     else
     {
       if ( (c & 0x8800) != 0 )
-        v91 = (unsigned __int8)c;
+        v92 = (unsigned __int8)c;
       else
-        v91 = keymap[(c & 0x7FF) + 1];
-      v90 = v91;
+        v92 = keymap[(c & 0x7FF) + 1];
+      v91 = v92;
     }
-    cmd = v90;
+    cmd = v91;
     if ( lynx_edit_mode && !no_dired_support[0] )
     {
       if ( c == -1 )
       {
-        v92 = key_override[0] != 0;
+        v93 = key_override[0] != 0;
       }
       else
       {
-        v93 = (c & 0x8800) != 0 ? (unsigned __int8)c != 0 : key_override[(c & 0x7FF) + 1] != 0;
-        v92 = v93;
+        v94 = (c & 0x8800) != 0 ? (unsigned __int8)c != 0 : key_override[(c & 0x7FF) + 1] != 0;
+        v93 = v94;
       }
-      if ( v92 )
+      if ( v93 )
       {
         if ( c == -1 )
         {
-          v94 = key_override[0];
+          v95 = key_override[0];
         }
         else
         {
           if ( (c & 0x8800) != 0 )
-            v95 = (unsigned __int8)c;
+            v96 = (unsigned __int8)c;
           else
-            v95 = key_override[(c & 0x7FF) + 1];
-          v94 = v95;
+            v96 = key_override[(c & 0x7FF) + 1];
+          v95 = v96;
         }
-        cmd = v94;
+        cmd = v95;
       }
     }
     real_cmd = cmd;
@@ -73972,7 +73844,7 @@ new_cmd:
           handle_LYK_PREV_PAGE(&old_c, real_c);
           goto LABEL_24;
         case 17:
-          _ZN18CScriptUnitDisplay21ClearSpellStateVisualEii(&arrowup, &old_c, real_c);
+          handle_LYK_UP_TWO(&arrowup, &old_c, real_c);
           goto LABEL_24;
         case 18:
           handle_LYK_DOWN_TWO(&old_c, real_c);
@@ -74044,10 +73916,10 @@ new_cmd:
           goto LABEL_24;
         case 37:
 LABEL_731:
-          v96 = handle_PREV_DOC(&cmd, &old_c, real_c);
-          if ( v96 == 1 )
+          v97 = handle_PREV_DOC(&cmd, &old_c, real_c);
+          if ( v97 == 1 )
             return 0;
-          if ( v96 != 2 )
+          if ( v97 != 2 )
             goto LABEL_24;
           continue;
         case 38:
@@ -74090,10 +73962,10 @@ LABEL_748:
           if ( !handle_LYK_NOCACHE(&old_c, real_c) )
             goto LABEL_24;
 LABEL_737:
-          v97 = handle_LYK_ACTIVATE(&c, cmd, &try_internal, &refresh_screen, &force_load, real_cmd);
-          if ( v97 == 2 )
+          v98 = handle_LYK_ACTIVATE(&c, cmd, &try_internal, &refresh_screen, &force_load, real_cmd);
+          if ( v98 == 2 )
             goto new_keyboard_input;
-          if ( v97 == 3 )
+          if ( v98 == 3 )
             pending_form_c = c;
           goto LABEL_24;
         case 47:
@@ -74143,8 +74015,8 @@ LABEL_737:
           handle_LYK_SHELL(&refresh_screen, &old_c, real_c);
           goto LABEL_24;
         case 63:
-          v99 = handle_LYK_DOWNLOAD(&cmd, &old_c, real_c);
-          if ( v99 == 1 || v99 != 2 )
+          v100 = handle_LYK_DOWNLOAD(&cmd, &old_c, real_c);
+          if ( v100 == 1 || v100 != 2 )
             goto LABEL_24;
           continue;
         case 64:
@@ -74232,10 +74104,10 @@ LABEL_801:
           do_change_link();
           goto LABEL_24;
         case 85:
-          v98 = handle_LYK_DWIMEDIT(&cmd, &old_c, real_c);
-          if ( v98 == 1 )
+          v99 = handle_LYK_DWIMEDIT(&cmd, &old_c, real_c);
+          if ( v99 == 1 )
             goto LABEL_24;
-          if ( v98 == 2 )
+          if ( v99 == 2 )
             continue;
 LABEL_763:
           handle_LYK_EDIT(&old_c, real_c);
@@ -74511,7 +74383,7 @@ int __cdecl are_different(DocInfo *doc1, DocInfo *doc2)
 void __cdecl HTAddGotoURL(char *url)
 {
   FILE *v1; // eax
-  void *v2; // [esp+14h] [ebp-14h]
+  void *object; // [esp+14h] [ebp-14h]
   HTList *cur; // [esp+1Ch] [ebp-Ch]
   char *copy; // [esp+24h] [ebp-4h] BYREF
 
@@ -74530,15 +74402,15 @@ void __cdecl HTAddGotoURL(char *url)
       while ( 1 )
       {
         if ( cur && (cur = cur->next) != 0 )
-          v2 = cur->object;
+          object = cur->object;
         else
-          v2 = 0;
-        if ( !v2 )
+          object = 0;
+        if ( !object )
           break;
-        if ( !strcmp((const char *)v2, copy) )
+        if ( !strcmp((const char *)object, copy) )
         {
-          HTList_removeObject(Goto_URLs, v2);
-          free(v2);
+          HTList_removeObject(Goto_URLs, object);
+          free(object);
           break;
         }
       }
@@ -74551,7 +74423,7 @@ void __cdecl HTAddGotoURL(char *url)
     }
   }
 }
-// 808AF59: conditional instruction was optimized away because of '%var_14.4!=0'
+// 808AF59: conditional instruction was optimized away because %var_14.4!=0
 
 //----- (0808AFB8) --------------------------------------------------------
 void __cdecl show_main_statusline(const LinkInfo curlink, int for_what)
@@ -74895,13 +74767,10 @@ void __cdecl status_link(char *curlink_name, BOOLEAN show_more, BOOLEAN show_ind
 //----- (0808BB66) --------------------------------------------------------
 char *LYDownLoadAddress()
 {
-  char *v1; // [esp+0h] [ebp-4h]
-
   if ( newdoc.address )
-    v1 = newdoc.address;
+    return newdoc.address;
   else
-    v1 = (char *)&byte_81534E7;
-  return v1;
+    return (char *)&byte_81534E7;
 }
 
 //----- (0808BB8C) --------------------------------------------------------
@@ -74934,7 +74803,7 @@ char *__cdecl attr_to_string(int code)
   pair = (unsigned __int16)(code & 0xFF00) >> 8;
   v4 = pair && (code & 0x200000) != 0;
   if ( v4 )
-    code &= 0xFFDFFFFF;
+    code &= ~0x200000u;
   result_10340[0] = 0;
   for ( i = 0; i <= 6; ++i )
   {
@@ -75072,12 +74941,12 @@ void __cdecl curses_w_style(WINDOW *win, int style, int dir)
   const char *v8; // ebx
   FILE *v9; // edx
   bucket *v10; // [esp+28h] [ebp-30h]
-  int v11; // [esp+2Ch] [ebp-2Ch]
-  int v12; // [esp+30h] [ebp-28h]
-  const char *v13; // [esp+34h] [ebp-24h]
+  int color; // [esp+2Ch] [ebp-2Ch]
+  int code; // [esp+30h] [ebp-28h]
+  const char *name; // [esp+34h] [ebp-24h]
   const char *v14; // [esp+38h] [ebp-20h]
-  int v15; // [esp+3Ch] [ebp-1Ch]
-  int v16; // [esp+40h] [ebp-18h]
+  int cury; // [esp+3Ch] [ebp-1Ch]
+  int curx; // [esp+40h] [ebp-18h]
 
   if ( style == -1 )
     v10 = &nostyle_bucket;
@@ -75097,29 +74966,29 @@ void __cdecl curses_w_style(WINDOW *win, int style, int dir)
   }
   if ( WWW_TraceFlag[0] && (WWW_TraceMask & 2) != 0 )
   {
-    v11 = v10->color;
-    v12 = v10->code;
-    v13 = v10->name;
+    color = v10->color;
+    code = v10->code;
+    name = v10->name;
     if ( dir )
       v14 = (const char *)&unk_815571C;
     else
       v14 = "/";
     v4 = TraceFP();
-    fprintf(v4, "CSS.CS:<%s%s> style %d code %#x, color %#x\n", v14, v13, style, v12, v11);
+    fprintf(v4, "CSS.CS:<%s%s> style %d code %#x, color %#x\n", v14, name, style, code, color);
   }
   if ( win )
-    v15 = win->_cury;
+    cury = win->_cury;
   else
-    v15 = -1;
+    cury = -1;
   if ( win )
-    v16 = win->_curx;
+    curx = win->_curx;
   else
-    v16 = -1;
+    curx = -1;
   if ( style == s_normal && dir )
   {
     LYAttrset(win, v10->color, v10->mono);
     if ( win == LYwin )
-      SetCachedStyle(v15, v16, s_normal);
+      SetCachedStyle(cury, curx, s_normal);
     return;
   }
   if ( dir == 1 )
@@ -75170,10 +75039,10 @@ void __cdecl curses_w_style(WINDOW *win, int style, int dir)
     {
       v8 = v10->name;
       v9 = TraceFP();
-      fprintf(v9, "CACHED: <%s> @(%d,%d)\n", v8, v15, v16);
+      fprintf(v9, "CACHED: <%s> @(%d,%d)\n", v8, cury, curx);
     }
     if ( win == LYwin )
-      SetCachedStyle(v15, v16, style);
+      SetCachedStyle(cury, curx, style);
   }
   LYAttrset(win, v10->color, v10->mono);
 }
@@ -75242,13 +75111,10 @@ void __cdecl curses_style(int style, int dir)
 //----- (0808C5FC) --------------------------------------------------------
 int __cdecl get_color_pair(int n)
 {
-  int v2; // [esp+0h] [ebp-4h]
-
   if ( n <= 24 && lynx_color_pairs[n].fg == default_fg && lynx_color_pairs[n].bg == default_bg )
-    v2 = 0;
+    return 0;
   else
-    v2 = n << 8;
-  return v2;
+    return n << 8;
 }
 
 //----- (0808C647) --------------------------------------------------------
@@ -75262,7 +75128,7 @@ int __cdecl lynx_color_cfg_attr(int code)
   {
     fg = lynx_color_cfg[code].fg;
     if ( COLORS - 1 < fg && (fg & COLORS) != 0 )
-      result = 0x200000;
+      return 0x200000;
   }
   return result;
 }
@@ -75281,7 +75147,7 @@ int __cdecl encode_color_attr(int color_attr)
     code |= 4u;
   result = lynx_color_cfg_attr(code);
   if ( code + 1 < COLOR_PAIRS )
-    result |= get_color_pair(code + 1);
+    return get_color_pair(code + 1) | result;
   return result;
 }
 // 81AB39C: using guessed type int COLOR_PAIRS;
@@ -75297,7 +75163,7 @@ int __cdecl decode_mono_code(int mono_code)
   if ( (mono_code & 2) != 0 )
     result |= 0x40000u;
   if ( (mono_code & 4) != 0 )
-    result |= 0x20000u;
+    return result | 0x20000;
   return result;
 }
 
@@ -75436,17 +75302,17 @@ void __cdecl lynx_set_color(int a)
 {
   WINDOW *v1; // [esp+4h] [ebp-Ch]
   int v2; // [esp+8h] [ebp-8h]
-  int v3; // [esp+Ch] [ebp-4h]
+  int color_pair; // [esp+Ch] [ebp-4h]
 
   if ( lynx_has_color && LYShowColor > 1 )
   {
     v1 = LYwin;
     v2 = lynx_color_cfg_attr(a);
     if ( a + 1 >= COLOR_PAIRS )
-      v3 = 0;
+      color_pair = 0;
     else
-      v3 = get_color_pair(a + 1);
-    v1->_attrs = v3 | v2;
+      color_pair = get_color_pair(a + 1);
+    v1->_attrs = color_pair | v2;
   }
 }
 // 81AB39C: using guessed type int COLOR_PAIRS;
@@ -75540,8 +75406,8 @@ void start_curses()
   int v7; // ebx
   int v8; // esi
   FILE *v9; // eax
-  int v10; // esi
-  int v11; // ebx
+  int bg; // esi
+  int fg; // ebx
   FILE *v12; // eax
   FILE *v13; // eax
   unsigned int n; // [esp+24h] [ebp-14h]
@@ -75636,10 +75502,10 @@ void start_curses()
               lynx_color_cfg[n].bg = default_bg;
             if ( WWW_TraceFlag[0] )
             {
-              v10 = lynx_color_cfg[n].bg;
-              v11 = lynx_color_cfg[n].fg;
+              bg = lynx_color_cfg[n].bg;
+              fg = lynx_color_cfg[n].fg;
               v12 = TraceFP();
-              fprintf(v12, "color_cfg[%u] = %d/%d\n", n, v11, v10);
+              fprintf(v12, "color_cfg[%u] = %d/%d\n", n, fg, bg);
             }
           }
           lynx_setup_colors();
@@ -75840,7 +75706,7 @@ int __cdecl dumbterm(char *terminal)
     || !strcasecomp(terminal, "switch")
     || !strcasecomp(terminal, "ethernet") )
   {
-    dumb = 1;
+    return 1;
   }
   return dumb;
 }
@@ -75848,17 +75714,17 @@ int __cdecl dumbterm(char *terminal)
 //----- (0808D72D) --------------------------------------------------------
 void __cdecl LYpaddstr(WINDOW *the_window, int width, const char *the_string)
 {
-  int v4; // [esp+10h] [ebp-18h]
-  signed int actual; // [esp+18h] [ebp-10h]
+  int curx; // [esp+10h] [ebp-18h]
+  int actual; // [esp+18h] [ebp-10h]
   int widtha; // [esp+34h] [ebp+Ch]
 
   actual = strlen(the_string);
   if ( the_window )
-    v4 = the_window->_curx;
+    curx = the_window->_curx;
   else
-    v4 = -1;
-  if ( width + v4 > LYcols - (LYShowScrollbar != 0) )
-    width = LYcols - (LYShowScrollbar != 0) - v4;
+    curx = -1;
+  if ( width + curx > LYcols - (LYShowScrollbar != 0) )
+    width = LYcols - (LYShowScrollbar != 0) - curx;
   if ( actual > width )
     actual = width;
   LYwaddnstr(the_window, the_string, actual);
@@ -75898,13 +75764,10 @@ void __cdecl LYsubwindow(WINDOW *param)
 //----- (0808D932) --------------------------------------------------------
 WINDOW *LYtopwindow()
 {
-  WINDOW *v1; // [esp+0h] [ebp-4h]
-
   if ( my_subwindow )
-    v1 = my_subwindow;
+    return my_subwindow;
   else
-    v1 = LYwin;
-  return v1;
+    return LYwin;
 }
 
 //----- (0808D958) --------------------------------------------------------
@@ -75983,8 +75846,8 @@ void __cdecl LYtouchline(int row)
 void __cdecl LYwaddnstr(WINDOW *w, const char *src, size_t len)
 {
   FILE *v3; // edx
-  int v4; // [esp+1Ch] [ebp-4Ch]
-  int v5; // [esp+20h] [ebp-48h]
+  int cury; // [esp+1Ch] [ebp-4Ch]
+  int curx; // [esp+20h] [ebp-48h]
   int v6; // [esp+24h] [ebp-44h]
   int v7; // [esp+28h] [ebp-40h]
   int v8; // [esp+2Ch] [ebp-3Ch]
@@ -75996,19 +75859,19 @@ void __cdecl LYwaddnstr(WINDOW *w, const char *src, size_t len)
   int x; // [esp+54h] [ebp-14h]
 
   if ( LYwin )
-    v4 = LYwin->_cury;
+    cury = LYwin->_cury;
   else
-    v4 = -1;
+    cury = -1;
   if ( LYwin )
-    v5 = LYwin->_curx;
+    curx = LYwin->_curx;
   else
-    v5 = -1;
+    curx = -1;
   if ( !LYuseCursesPads
     || LYwin != w
     || LYshiftWin
     || LYwideLines
-    || (int)len <= LYcols - (LYShowScrollbar != 0) - v5
-    || LYcols - (LYShowScrollbar != 0) <= v5 )
+    || (int)len <= LYcols - (LYShowScrollbar != 0) - curx
+    || LYcols - (LYShowScrollbar != 0) <= curx )
   {
     if ( WWW_TraceFlag[0] )
     {
@@ -76048,7 +75911,7 @@ void __cdecl LYwaddnstr(WINDOW *w, const char *src, size_t len)
     sub = derwin(LYwin, LYlines, LYcols - (LYShowScrollbar != 0), 0, 0);
     if ( sub )
     {
-      wmove(sub, v4, v5);
+      wmove(sub, cury, curx);
       LYwideLines = 1;
       LYwaddnstr(sub, src, len);
       v6 = sub->_cury;
@@ -76059,14 +75922,14 @@ void __cdecl LYwaddnstr(WINDOW *w, const char *src, size_t len)
     LYwideLines = 0;
   }
 }
-// 808DCD0: conditional instruction was optimized away because of '%sub.4!=0'
-// 808DCEF: conditional instruction was optimized away because of '%sub.4!=0'
+// 808DCD0: conditional instruction was optimized away because %sub.4!=0
+// 808DCEF: conditional instruction was optimized away because %sub.4!=0
 
 //----- (0808DF0D) --------------------------------------------------------
 int __cdecl LYstrExtent(const char *string, int len, int maxCells)
 {
-  int v4; // [esp+10h] [ebp-28h]
-  int v5; // [esp+14h] [ebp-24h]
+  int cury; // [esp+10h] [ebp-28h]
+  int curx; // [esp+14h] [ebp-24h]
   int n; // [esp+2Ch] [ebp-Ch]
   int used; // [esp+30h] [ebp-8h]
   int result; // [esp+34h] [ebp-4h]
@@ -76099,22 +75962,22 @@ int __cdecl LYstrExtent(const char *string, int len, int maxCells)
         {
           waddch(fake_win_11683, (unsigned __int8)string[n]);
           if ( fake_win_11683 )
-            v4 = fake_win_11683->_cury;
+            cury = fake_win_11683->_cury;
           else
-            v4 = -1;
+            cury = -1;
           if ( fake_win_11683 )
-            v5 = fake_win_11683->_curx;
+            curx = fake_win_11683->_curx;
           else
-            v5 = -1;
-          if ( v4 > 0 || v5 > maxCells )
+            curx = -1;
+          if ( cury > 0 || curx > maxCells )
             break;
-          result = v5;
+          result = curx;
         }
       }
     }
   }
   if ( result > maxCells )
-    result = maxCells;
+    return maxCells;
   return result;
 }
 
@@ -76140,7 +76003,7 @@ int LYscreenHeight()
 
   result = LINES;
   if ( LINES <= 0 )
-    result = 24;
+    return 24;
   return result;
 }
 // 81AAAE0: using guessed type int LINES;
@@ -76152,7 +76015,7 @@ int LYscreenWidth()
 
   result = COLS;
   if ( COLS <= 0 )
-    result = 80;
+    return 80;
   return result;
 }
 // 81AAAE4: using guessed type int COLS;
@@ -76197,8 +76060,8 @@ void __cdecl LYmove(int y, int x)
 void LYrefresh()
 {
   int v0; // eax
-  int v1; // [esp+28h] [ebp-20h]
-  int v2; // [esp+2Ch] [ebp-1Ch]
+  int cury; // [esp+28h] [ebp-20h]
+  int curx; // [esp+2Ch] [ebp-1Ch]
   int x; // [esp+3Ch] [ebp-Ch]
 
   if ( LYwin == stdscr )
@@ -76208,17 +76071,17 @@ void LYrefresh()
   else
   {
     if ( LYwin )
-      v1 = LYwin->_cury;
+      cury = LYwin->_cury;
     else
-      v1 = -1;
+      cury = -1;
     if ( LYwin )
-      v2 = LYwin->_curx;
+      curx = LYwin->_curx;
     else
-      v2 = -1;
-    x = v2;
-    if ( LYcols - (LYShowScrollbar != 0) < v2 )
+      curx = -1;
+    x = curx;
+    if ( LYcols - (LYShowScrollbar != 0) < curx )
       x = LYcols - (LYShowScrollbar != 0);
-    wmove(stdscr, v1, x);
+    wmove(stdscr, cury, x);
     wnoutrefresh(stdscr);
     v0 = LYscreenWidth();
     pnoutrefresh(LYwin, 0, LYshiftWin, 0, 0, LYlines, v0 - 1);
@@ -76444,20 +76307,16 @@ int __cdecl LYgetattrs(WINDOW *win)
 //----- (0808E780) --------------------------------------------------------
 int __cdecl LYindex2MBM(int n)
 {
-  int v2; // [esp+0h] [ebp-4h]
-
   if ( n < 0 || n > 25 )
-    v2 = 63;
+    return 63;
   else
-    v2 = MBMcodes_10881[n];
-  return v2;
+    return MBMcodes_10881[n];
 }
 
 //----- (0808E7B0) --------------------------------------------------------
 int __cdecl LYMBM2index(int ch_0)
 {
   int v2; // [esp+10h] [ebp-18h]
-  int v3; // [esp+14h] [ebp-14h]
   char *result; // [esp+20h] [ebp-8h]
 
   if ( ((*__ctype_b_loc())[(unsigned __int8)ch_0] & 0x200) != 0 )
@@ -76465,10 +76324,9 @@ int __cdecl LYMBM2index(int ch_0)
   else
     v2 = (unsigned __int8)ch_0;
   if ( v2 > 0 && (result = strchr("ABCDEFGHIJKLMNOPQRSTUVWXYZ", v2)) != 0 && result - "ABCDEFGHIJKLMNOPQRSTUVWXYZ" <= 25 )
-    v3 = result - "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    return result - "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   else
-    v3 = -1;
-  return v3;
+    return -1;
 }
 
 //----- (0808E849) --------------------------------------------------------
@@ -76493,7 +76351,6 @@ const char *__cdecl get_bookmark_filename(char **URL)
   const char *v1; // ebx
   FILE *v2; // eax
   const char *v4; // [esp+4h] [ebp-24h]
-  const char *v5; // [esp+10h] [ebp-18h]
   int MBM_tmp; // [esp+18h] [ebp-10h]
   FILE *fp; // [esp+1Ch] [ebp-Ch]
   char *string_buffer; // [esp+20h] [ebp-8h] BYREF
@@ -76505,7 +76362,7 @@ const char *__cdecl get_bookmark_filename(char **URL)
   if ( MBM_tmp == -1 )
   {
     show_bookmark_not_defined();
-    v5 = " ";
+    return " ";
   }
   else
   {
@@ -76539,14 +76396,13 @@ const char *__cdecl get_bookmark_filename(char **URL)
         string_buffer = 0;
       }
       LYCloseInput(fp);
-      v5 = filename_buffer_10939;
+      return filename_buffer_10939;
     }
     else
     {
-      v5 = 0;
+      return 0;
     }
   }
-  return v5;
 }
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
@@ -76556,7 +76412,6 @@ const char *__cdecl convert_mosaic_bookmark_file(const char *filename_buffer)
   char *v1; // eax
   char *v2; // eax
   char *v3; // eax
-  const char *v5; // [esp+14h] [ebp-14h]
   int line; // [esp+18h] [ebp-10h]
   char *buf; // [esp+1Ch] [ebp-Ch] BYREF
   FILE *nfp; // [esp+20h] [ebp-8h]
@@ -76598,11 +76453,11 @@ const char *__cdecl convert_mosaic_bookmark_file(const char *filename_buffer)
       }
       LYCloseTempFP(nfp);
       LYCloseInput(fp);
-      v5 = newfile_10985;
+      return newfile_10985;
     }
     else
     {
-      v5 = &byte_8155B15;
+      return &byte_8155B15;
     }
   }
   else
@@ -76610,9 +76465,8 @@ const char *__cdecl convert_mosaic_bookmark_file(const char *filename_buffer)
     v1 = gettext("Unable to open tempfile for X Mosaic hotlist conversion.");
     LYMBM_statusline(v1);
     LYSleepAlert();
-    v5 = &byte_8155B15;
+    return &byte_8155B15;
   }
-  return v5;
 }
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
@@ -77114,9 +76968,6 @@ failure:
 int select_multi_bookmarks()
 {
   char *v0; // eax
-  int v2; // [esp+Ch] [ebp-1Ch]
-  int v3; // [esp+10h] [ebp-18h]
-  int v4; // [esp+14h] [ebp-14h]
   int c; // [esp+24h] [ebp-4h]
   int ca; // [esp+24h] [ebp-4h]
 
@@ -77141,37 +76992,33 @@ int select_multi_bookmarks()
         if ( LYisNonAlnumKeyname(c, 39) )
         {
           if ( MBM_A_subbookmark[0] )
-            v3 = 0;
+            return 0;
           else
-            v3 = -1;
-          return v3;
+            return -1;
         }
         if ( c == 61 )
-          goto LABEL_26;
+          return select_menu_multi_bookmarks();
         ca = LYMBM2index(c);
       }
       while ( ca < 0 );
       if ( MBM_A_subbookmark[ca] )
-        v4 = ca;
+        return ca;
       else
-        v4 = -1;
-      v2 = v4;
+        return -1;
     }
     else
     {
-LABEL_26:
-      v2 = select_menu_multi_bookmarks();
+      return select_menu_multi_bookmarks();
     }
   }
   else if ( MBM_A_subbookmark[0] )
   {
-    v2 = 0;
+    return 0;
   }
   else
   {
-    v2 = -1;
+    return -1;
   }
-  return v2;
 }
 
 //----- (0808FE01) --------------------------------------------------------
@@ -77194,8 +77041,6 @@ int select_menu_multi_bookmarks()
   char *v14; // eax
   char *v15; // eax
   char *v16; // eax
-  int v18; // [esp+1Ch] [ebp-3Ch]
-  int v19; // [esp+20h] [ebp-38h]
   char *shead_buffer; // [esp+30h] [ebp-28h] BYREF
   int MBM_current; // [esp+34h] [ebp-24h]
   int MBM_to; // [esp+38h] [ebp-20h]
@@ -77331,18 +77176,16 @@ LABEL_6:
       }
     }
     if ( MBM_A_subbookmark[0] )
-      v19 = 0;
+      return 0;
     else
-      v19 = -1;
-    v18 = v19;
+      return -1;
   }
   else
   {
     v0 = gettext("Screen too small! (8x35 min)");
     HTAlert(v0);
-    v18 = -2;
+    return -2;
   }
-  return v18;
 }
 
 //----- (08090388) --------------------------------------------------------
@@ -77551,15 +77394,13 @@ LY_TEMP *__cdecl FindTempfileByFP(FILE *fp)
 //----- (0809095A) --------------------------------------------------------
 char *__cdecl LYGetEnv(const char *name)
 {
-  char *v2; // [esp+4h] [ebp-14h]
   char *result; // [esp+14h] [ebp-4h]
 
   result = getenv(name);
   if ( result && *result )
-    v2 = result;
+    return result;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08090992) --------------------------------------------------------
@@ -77595,7 +77436,7 @@ size_t __cdecl utf8_length(BOOLEAN utf_flag, const char *data)
       utf_extra = 0;
     }
     if ( strlen(data + 1) < utf_extra )
-      utf_extra = 0;
+      return 0;
   }
   return utf_extra;
 }
@@ -77668,7 +77509,13 @@ int __cdecl LYGetHilitePos(int cur, int count)
 }
 
 //----- (08090D16) --------------------------------------------------------
-BOOLEAN __cdecl show_whereis_targets(int flag, int cur, int count, const char *target, BOOLEAN TargetEmphasisON, BOOLEAN utf_flag)
+BOOLEAN __cdecl show_whereis_targets(
+        int flag,
+        int cur,
+        int count,
+        const char *target,
+        BOOLEAN TargetEmphasisON,
+        BOOLEAN utf_flag)
 {
   int v6; // ebx
   size_t v7; // eax
@@ -77705,8 +77552,8 @@ BOOLEAN __cdecl show_whereis_targets(int flag, int cur, int count, const char *t
   int v39; // [esp+6Ch] [ebp-4CCh]
   int v40; // [esp+74h] [ebp-4C4h]
   const char *v41; // [esp+78h] [ebp-4C0h]
-  int v42; // [esp+7Ch] [ebp-4BCh]
-  int v43; // [esp+80h] [ebp-4B8h]
+  int cury; // [esp+7Ch] [ebp-4BCh]
+  int curx; // [esp+80h] [ebp-4B8h]
   int v44; // [esp+84h] [ebp-4B4h]
   int v45; // [esp+88h] [ebp-4B0h]
   int v46; // [esp+8Ch] [ebp-4ACh]
@@ -77897,16 +77744,16 @@ highlight_hit_within_hightext:
                 LYstopTargetEmphasis();
                 TargetEmphasisON = 0;
                 if ( LYwin )
-                  v42 = LYwin->_cury;
+                  cury = LYwin->_cury;
                 else
-                  v42 = -1;
-                y = v42;
+                  cury = -1;
+                y = cury;
                 if ( LYwin )
-                  v43 = LYwin->_curx;
+                  curx = LYwin->_curx;
                 else
-                  v43 = -1;
-                offset = v43;
-                LYmove(hLine, v43 + 1);
+                  curx = -1;
+                offset = curx;
+                LYmove(hLine, curx + 1);
               }
               tmp[1] = 0;
               written += utf_extra + 1;
@@ -78313,8 +78160,8 @@ int __cdecl find_cached_style(int cur, int flag)
   FILE *v7; // eax
   FILE *v8; // eax
   FILE *v9; // eax
-  int v10; // esi
-  int v11; // ebx
+  int lx; // esi
+  int ly; // ebx
   FILE *v12; // eax
   int x; // [esp+18h] [ebp-10h]
   int s; // [esp+1Ch] [ebp-Ch]
@@ -78334,10 +78181,10 @@ int __cdecl find_cached_style(int cur, int flag)
   {
     if ( WWW_TraceFlag[0] && (WWW_TraceMask & 2) != 0 )
     {
-      v10 = links[cur].lx;
-      v11 = links[cur].ly;
+      lx = links[cur].lx;
+      ly = links[cur].ly;
       v12 = TraceFP();
-      fprintf(v12, "STYLE.highlight.on: @(%d,%d).\n", v11, v10);
+      fprintf(v12, "STYLE.highlight.on: @(%d,%d).\n", ly, lx);
     }
   }
   else if ( ValidCachedStyle(links[cur].ly, links[cur].lx) )
@@ -78382,7 +78229,7 @@ int __cdecl find_cached_style(int cur, int flag)
           v7 = TraceFP();
           fprintf(v7, "not found, assume <a>.\n");
         }
-        s = s_a;
+        return s_a;
       }
     }
   }
@@ -78393,7 +78240,7 @@ int __cdecl find_cached_style(int cur, int flag)
       v9 = TraceFP();
       fprintf(v9, "STYLE.highlight.off: can't use cache.\n");
     }
-    s = s_a;
+    return s_a;
   }
   return s;
 }
@@ -78402,10 +78249,10 @@ int __cdecl find_cached_style(int cur, int flag)
 void __cdecl LYhighlight(int flag, int cur, const char *target)
 {
   FILE *v3; // eax
-  int v4; // esi
-  int v5; // ebx
+  int lx; // esi
+  int ly; // ebx
   FILE *v6; // edx
-  int v7; // eax
+  int cached_style; // eax
   const char *v8; // eax
   int v10; // esi
   int v11; // ebx
@@ -78416,7 +78263,7 @@ void __cdecl LYhighlight(int flag, int cur, const char *target)
   size_t v16; // eax
   int v17; // [esp+24h] [ebp-474h]
   const char *v18; // [esp+28h] [ebp-470h]
-  int v19; // [esp+2Ch] [ebp-46Ch]
+  int anchor_number; // [esp+2Ch] [ebp-46Ch]
   const char *v20; // [esp+30h] [ebp-468h]
   int n_glyphs; // [esp+38h] [ebp-460h]
   char *src; // [esp+3Ch] [ebp-45Ch]
@@ -78470,23 +78317,23 @@ void __cdecl LYhighlight(int flag, int cur, const char *target)
       v18 = target;
     else
       v18 = "(null)";
-    v19 = links[cur].anchor_number;
+    anchor_number = links[cur].anchor_number;
     if ( flag )
       v20 = "on";
     else
       v20 = "off";
-    v4 = links[cur].lx;
-    v5 = links[cur].ly;
+    lx = links[cur].lx;
+    ly = links[cur].ly;
     v6 = TraceFP();
-    fprintf(v6, "LYhighlight at(%2d,%2d) %s %d [%d]:%s\n", v5, v4, v20, cur, v19, v18);
+    fprintf(v6, "LYhighlight at(%2d,%2d) %s %d [%d]:%s\n", ly, lx, v20, cur, anchor_number, v18);
   }
   if ( nlinks > 0 )
   {
     if ( flag == 1 || links[cur].type == 1 )
     {
       LYmove(title_adjust + links[cur].ly, links[cur].lx);
-      v7 = find_cached_style(cur, flag);
-      curses_style(v7, 1);
+      cached_style = find_cached_style(cur, flag);
+      curses_style(cached_style, 1);
     }
     if ( links[cur].type == 1 )
     {
@@ -78595,7 +78442,7 @@ void __cdecl LYhighlight(int flag, int cur, const char *target)
       LYrefresh();
   }
 }
-// 809310E: conditional instruction was optimized away because of '%hl1_drawn.1==0'
+// 809310E: conditional instruction was optimized away because %hl1_drawn.1==0
 
 //----- (08093603) --------------------------------------------------------
 void __cdecl free_and_clear(char **pointer)
@@ -78700,7 +78547,7 @@ void __cdecl statusline(const char *text)
   int v4; // [esp+10h] [ebp-848h]
   int v5; // [esp+14h] [ebp-844h]
   int v6; // [esp+18h] [ebp-840h]
-  int v7; // [esp+1Ch] [ebp-83Ch]
+  int cury; // [esp+1Ch] [ebp-83Ch]
   int at_lineno; // [esp+38h] [ebp-820h]
   int j; // [esp+3Ch] [ebp-81Ch]
   int ja; // [esp+3Ch] [ebp-81Ch]
@@ -78837,10 +78684,10 @@ void __cdecl statusline(const char *text)
         v6 = 32;
       wbkgdset(LYwin, v6);
       if ( LYwin )
-        v7 = LYwin->_cury;
+        cury = LYwin->_cury;
       else
-        v7 = -1;
-      if ( v7 == at_lineno )
+        cury = -1;
+      if ( cury == at_lineno )
         LYclrtoeol();
       if ( lynx_has_color && LYShowColor > 1 )
       {
@@ -78858,7 +78705,7 @@ void __cdecl statusline(const char *text)
     LYrefresh();
   }
 }
-// 8093AF0: conditional instruction was optimized away because of '%temp.4!=0'
+// 8093AF0: conditional instruction was optimized away because %temp.4!=0
 
 //----- (08093EC6) --------------------------------------------------------
 const char *__cdecl novice_lines(int lineno)
@@ -78988,7 +78835,7 @@ int LYReopenInput()
     }
     if ( new_fd < 0 )
     {
-      result = -1;
+      return -1;
     }
     else
     {
@@ -79007,7 +78854,7 @@ int LYReopenInput()
           v6,
           v5);
       }
-      result = 1;
+      return 1;
     }
   }
   return result;
@@ -79292,11 +79139,11 @@ LABEL_76:
 //----- (08094A52) --------------------------------------------------------
 BOOLEAN __cdecl LYisAbsPath(const char *path)
 {
-  bool result; // [esp+Fh] [ebp-1h]
+  BOOLEAN result; // [esp+Fh] [ebp-1h]
 
   result = 0;
   if ( path && *path )
-    result = *path == 47;
+    return *path == 47;
   return result;
 }
 
@@ -79310,7 +79157,6 @@ BOOLEAN __cdecl LYisRootPath(const char *path)
 BOOLEAN __cdecl LYisLocalFile(const char *filename)
 {
   char *v2; // [esp+4h] [ebp-24h]
-  BOOLEAN v3; // [esp+17h] [ebp-11h]
   char *cp; // [esp+1Ch] [ebp-Ch]
   char *acc_method; // [esp+20h] [ebp-8h]
   char *host; // [esp+24h] [ebp-4h]
@@ -79332,33 +79178,31 @@ BOOLEAN __cdecl LYisLocalFile(const char *filename)
     {
       free(host);
       free(acc_method);
-      v3 = 1;
+      return 1;
     }
     else
     {
       free(host);
       if ( acc_method )
         free(acc_method);
-      v3 = 0;
+      return 0;
     }
   }
   else
   {
     free(host);
-    v3 = 0;
+    return 0;
   }
-  return v3;
 }
-// 8094B14: conditional instruction was optimized away because of '%host.4!=0'
-// 8094BC1: conditional instruction was optimized away because of '%host.4!=0'
-// 8094BD9: conditional instruction was optimized away because of '%acc_method.4!=0'
-// 8094BF7: conditional instruction was optimized away because of '%host.4!=0'
+// 8094B14: conditional instruction was optimized away because %host.4!=0
+// 8094BC1: conditional instruction was optimized away because %host.4!=0
+// 8094BD9: conditional instruction was optimized away because %acc_method.4!=0
+// 8094BF7: conditional instruction was optimized away because %host.4!=0
 
 //----- (08094C2D) --------------------------------------------------------
 BOOLEAN __cdecl LYisLocalHost(const char *filename)
 {
   char *v2; // [esp+4h] [ebp-24h]
-  BOOLEAN v3; // [esp+17h] [ebp-11h]
   char *cp; // [esp+20h] [ebp-8h]
   char *host; // [esp+24h] [ebp-4h]
 
@@ -79375,24 +79219,23 @@ BOOLEAN __cdecl LYisLocalHost(const char *filename)
   if ( !strcmp(host, "localhost") || !strcmp(host, LYHostName) || (v2 = HTHostName(), !strcmp(host, v2)) )
   {
     free(host);
-    v3 = 1;
+    return 1;
   }
   else
   {
 LABEL_12:
     free(host);
-    v3 = 0;
+    return 0;
   }
-  return v3;
 }
-// 8094C84: conditional instruction was optimized away because of '%host.4!=0'
-// 8094D0E: conditional instruction was optimized away because of '%host.4!=0'
-// 8094D2C: conditional instruction was optimized away because of '%host.4!=0'
+// 8094C84: conditional instruction was optimized away because %host.4!=0
+// 8094D0E: conditional instruction was optimized away because %host.4!=0
+// 8094D2C: conditional instruction was optimized away because %host.4!=0
 
 //----- (08094D4A) --------------------------------------------------------
 void __cdecl LYFreeStringList(HTList *list)
 {
-  void *v1; // [esp+4h] [ebp-14h]
+  void *object; // [esp+4h] [ebp-14h]
   HTList *cur; // [esp+10h] [ebp-8h]
 
   if ( list )
@@ -79401,12 +79244,12 @@ void __cdecl LYFreeStringList(HTList *list)
     while ( 1 )
     {
       if ( cur && (cur = cur->next) != 0 )
-        v1 = cur->object;
+        object = cur->object;
       else
-        v1 = 0;
-      if ( !v1 )
+        object = 0;
+      if ( !object )
         break;
-      free(v1);
+      free(object);
     }
     HTList_delete(list);
   }
@@ -79437,7 +79280,7 @@ void __cdecl LYAddLocalhostAlias(char *alias)
 //----- (08094E2D) --------------------------------------------------------
 BOOLEAN __cdecl LYisLocalAlias(const char *filename)
 {
-  const char *v3; // [esp+14h] [ebp-14h]
+  const char *object; // [esp+14h] [ebp-14h]
   HTList *cur; // [esp+18h] [ebp-10h]
   char *cp; // [esp+1Ch] [ebp-Ch]
   char *host; // [esp+24h] [ebp-4h]
@@ -79456,12 +79299,12 @@ BOOLEAN __cdecl LYisLocalAlias(const char *filename)
     while ( 1 )
     {
       if ( cur && (cur = cur->next) != 0 )
-        v3 = (const char *)cur->object;
+        object = (const char *)cur->object;
       else
-        v3 = 0;
-      if ( !v3 )
+        object = 0;
+      if ( !object )
         break;
-      if ( !strcmp(host, v3) )
+      if ( !strcmp(host, object) )
       {
         free(host);
         return 1;
@@ -79471,9 +79314,9 @@ BOOLEAN __cdecl LYisLocalAlias(const char *filename)
   free(host);
   return 0;
 }
-// 8094E92: conditional instruction was optimized away because of '%host.4!=0'
-// 8094EED: conditional instruction was optimized away because of '%host.4!=0'
-// 8094F3D: conditional instruction was optimized away because of '%host.4!=0'
+// 8094E92: conditional instruction was optimized away because %host.4!=0
+// 8094EED: conditional instruction was optimized away because %host.4!=0
+// 8094F3D: conditional instruction was optimized away because %host.4!=0
 
 //----- (08094F5B) --------------------------------------------------------
 UrlTypes __cdecl LYCheckForProxyURL(char *filename)
@@ -79722,7 +79565,7 @@ UrlTypes __cdecl is_url(char *filename)
           result = GOPHER_URL_TYPE_0;
 LABEL_117:
           if ( result == NOT_A_URL_TYPE_0 )
-            result = LYCheckForProxyURL(filename);
+            return LYCheckForProxyURL(filename);
           return result;
         }
         if ( ((*__ctype_b_loc())[(unsigned __int8)cp1a[1]] & 0x200) != 0 )
@@ -79746,14 +79589,12 @@ LABEL_94:
               }
               goto LABEL_117;
             }
-            goto LABEL_95;
           }
         }
         else if ( cp1a[1] != 72 )
         {
           goto LABEL_94;
         }
-LABEL_95:
         result = HTML_GOPHER_URL_TYPE_0;
         goto LABEL_117;
       case 'H':
@@ -79992,7 +79833,7 @@ BOOLEAN __cdecl LYCloseInput(FILE *fp)
     err = ferror(fp);
     fclose(fp);
     if ( !err )
-      v2 = 1;
+      return 1;
   }
   return v2;
 }
@@ -80020,36 +79861,32 @@ BOOLEAN __cdecl LYCanWriteFile(const char *filename)
 {
   FILE *v1; // eax
   char *v2; // eax
-  BOOLEAN v4; // [esp+17h] [ebp-1h]
 
   v1 = (FILE *)fopen64(filename, "w");
   if ( LYCloseOutput(v1) )
   {
     remove(filename);
-    v4 = 1;
+    return 1;
   }
   else
   {
     mustshow[0] = 1;
     v2 = gettext("Enter a new filename: ");
     statusline(v2);
-    v4 = 0;
+    return 0;
   }
-  return v4;
 }
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
 //----- (080960E9) --------------------------------------------------------
 BOOLEAN __cdecl LYCanReadFile(const char *filename)
 {
-  BOOLEAN v2; // [esp+17h] [ebp-11h]
   FILE *fp; // [esp+24h] [ebp-4h]
 
   if ( filename && *filename && (fp = (FILE *)fopen64(filename, "r")) != 0 )
-    v2 = LYCloseInput(fp);
+    return LYCloseInput(fp);
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
@@ -80109,11 +79946,11 @@ int inlocaldomain()
       if ( v0 > strlen(LYLocalDomain)
         && (v1 = strlen(me.ut_host), v2 = strlen(LYLocalDomain), !strcmp(LYLocalDomain, &me.ut_host[v1 - v2])) )
       {
-        result = 1;
+        return 1;
       }
       else if ( !me.ut_host[0] )
       {
-        result = 1;
+        return 1;
       }
     }
   }
@@ -80147,7 +79984,7 @@ void __cdecl LYExtSignal(int sig, LYSigHandlerFunc_t *handler)
     signal(sig, handler);
   }
 }
-// 80963ED: conditional instruction was optimized away because of '%sig.4==1C'
+// 80963ED: conditional instruction was optimized away because %sig.4==1C
 
 //----- (0809642D) --------------------------------------------------------
 BOOLEAN __cdecl LYToggleSigDfl(int sig, sigaction *where, int to_dfl)
@@ -80239,7 +80076,7 @@ void HTSugFilenames_free()
 //----- (0809666B) --------------------------------------------------------
 void __cdecl HTAddSugFilename(char *fname)
 {
-  void *v1; // [esp+14h] [ebp-14h]
+  void *object; // [esp+14h] [ebp-14h]
   HTList *cur; // [esp+1Ch] [ebp-Ch]
   char *tmp; // [esp+24h] [ebp-4h] BYREF
 
@@ -80253,15 +80090,15 @@ void __cdecl HTAddSugFilename(char *fname)
       while ( 1 )
       {
         if ( cur && (cur = cur->next) != 0 )
-          v1 = cur->object;
+          object = cur->object;
         else
-          v1 = 0;
-        if ( !v1 )
+          object = 0;
+        if ( !object )
           break;
-        if ( !strcmp((const char *)v1, tmp) )
+        if ( !strcmp((const char *)object, tmp) )
         {
-          HTList_removeObject(sug_filenames, v1);
-          free(v1);
+          HTList_removeObject(sug_filenames, object);
+          free(object);
           break;
         }
       }
@@ -80274,7 +80111,7 @@ void __cdecl HTAddSugFilename(char *fname)
     }
   }
 }
-// 8096708: conditional instruction was optimized away because of '%var_14.4!=0'
+// 8096708: conditional instruction was optimized away because %var_14.4!=0
 
 //----- (08096767) --------------------------------------------------------
 void __cdecl change_sug_filename(char *fname)
@@ -80523,13 +80360,10 @@ BOOLEAN __cdecl strn_dash_equ(const char *p1, const char *p2, int len)
 //----- (08096E6B) --------------------------------------------------------
 const char *__cdecl index_to_restriction(int inx)
 {
-  const char *v2; // [esp+0h] [ebp-4h]
-
   if ( inx < 0 || inx > 57 )
-    v2 = 0;
+    return 0;
   else
-    v2 = restrictions[inx].name;
-  return v2;
+    return restrictions[inx].name;
 }
 
 //----- (08096EA4) --------------------------------------------------------
@@ -81053,8 +80887,8 @@ LABEL_82:
       sleep(AlertSecs);
   }
 }
-// 80979E4: conditional instruction was optimized away because of '%fragment.4!=0'
-// 8097B49: conditional instruction was optimized away because of '%fragment.4!=0'
+// 80979E4: conditional instruction was optimized away because %fragment.4!=0
+// 8097B49: conditional instruction was optimized away because %fragment.4!=0
 
 //----- (08098073) --------------------------------------------------------
 BOOLEAN __cdecl LYExpandHostForURL(char **AllocatedString, char *prefix_list, char *suffix_list)
@@ -81357,7 +81191,6 @@ cleanup:
 //----- (08098BB3) --------------------------------------------------------
 BOOLEAN __cdecl LYAddSchemeForURL(char **AllocatedString, const char *default_scheme)
 {
-  BOOLEAN v3; // [esp+17h] [ebp-11h]
   char *Str; // [esp+20h] [ebp-8h] BYREF
   BOOLEAN GotScheme; // [esp+27h] [ebp-1h]
 
@@ -81443,7 +81276,7 @@ BOOLEAN __cdecl LYAddSchemeForURL(char **AllocatedString, const char *default_sc
       free(Str);
       Str = 0;
     }
-    v3 = GotScheme;
+    return GotScheme;
   }
   else if ( default_scheme && *default_scheme )
   {
@@ -81456,13 +81289,12 @@ BOOLEAN __cdecl LYAddSchemeForURL(char **AllocatedString, const char *default_sc
       free(Str);
       Str = 0;
     }
-    v3 = GotScheme;
+    return GotScheme;
   }
   else
   {
-    v3 = GotScheme;
+    return GotScheme;
   }
-  return v3;
 }
 
 //----- (08098F49) --------------------------------------------------------
@@ -81537,7 +81369,7 @@ char *__cdecl CheckDir(char *path)
   stat stat_info; // [esp+8h] [ebp-60h] BYREF
 
   if ( !LYisAbsPath(path) || HTStat(path, &stat_info) < 0 || (stat_info.st_mode & 0xF000) != 0x4000 )
-    path = 0;
+    return 0;
   return path;
 }
 
@@ -81555,7 +81387,7 @@ const char *Home_Dir()
 {
   __uid_t v0; // eax
   char *v1; // eax
-  passwd *pw; // [esp+10h] [ebp-8h]
+  struct passwd *pw; // [esp+10h] [ebp-8h]
   char *cp; // [esp+14h] [ebp-4h]
 
   if ( !homedir_15738 )
@@ -81588,23 +81420,20 @@ const char *Home_Dir()
 //----- (08099259) --------------------------------------------------------
 char *__cdecl LYPathLeaf(char *pathname)
 {
-  char *v2; // [esp+14h] [ebp-14h]
   char *leaf; // [esp+24h] [ebp-4h]
 
   leaf = strrchr(pathname, 47);
   if ( leaf )
     ++leaf;
   if ( leaf )
-    v2 = leaf;
+    return leaf;
   else
-    v2 = pathname;
-  return v2;
+    return pathname;
 }
 
 //----- (08099298) --------------------------------------------------------
 BOOLEAN __cdecl LYPathOffHomeOK(char *fbuffer, size_t fbuffer_size)
 {
-  BOOLEAN v3; // [esp+17h] [ebp-11h]
   char *cp1; // [esp+1Ch] [ebp-Ch]
   char *cp; // [esp+20h] [ebp-8h]
   char *file; // [esp+24h] [ebp-4h] BYREF
@@ -81631,7 +81460,7 @@ BOOLEAN __cdecl LYPathOffHomeOK(char *fbuffer, size_t fbuffer_size)
       free(file);
       file = 0;
     }
-    v3 = 0;
+    return 0;
   }
   else if ( file[1] && (cp1 = strchr(file + 1, 47)) != 0 )
   {
@@ -81650,7 +81479,7 @@ LABEL_26:
           free(file);
           file = 0;
         }
-        v3 = 0;
+        return 0;
       }
       else
       {
@@ -81664,7 +81493,7 @@ LABEL_26:
             free(file);
             file = 0;
           }
-          v3 = 0;
+          return 0;
         }
         else
         {
@@ -81686,17 +81515,16 @@ LABEL_26:
             free(file);
             file = 0;
           }
-          v3 = 1;
+          return 1;
         }
       }
-      return v3;
     }
     if ( file )
     {
       free(file);
       file = 0;
     }
-    v3 = 0;
+    return 0;
   }
   else
   {
@@ -81705,9 +81533,8 @@ LABEL_26:
       free(file);
       file = 0;
     }
-    v3 = 0;
+    return 0;
   }
-  return v3;
 }
 
 //----- (080995FE) --------------------------------------------------------
@@ -81731,7 +81558,7 @@ char *__cdecl FindLeadingTilde(char *pathname, BOOLEAN embedded)
       }
     }
     if ( *pathname == 126 )
-      result = pathname;
+      return pathname;
   }
   return result;
 }
@@ -81861,11 +81688,8 @@ void __cdecl LYAddPathToHome(char *fbuffer, size_t fbuffer_size, const char *fna
       v4 = file;
     sprintf(fbuffer, "%s/%.*s", home, len, v4);
     if ( home )
-    {
 LABEL_16:
       free(home);
-      return;
-    }
   }
 }
 
@@ -81967,7 +81791,7 @@ BOOLEAN __cdecl IsOurSymlink(const char *name)
 //----- (08099C3B) --------------------------------------------------------
 BOOLEAN __cdecl IsOurFile(const char *name)
 {
-  __uid_t v1; // ebx
+  __uid_t st_uid; // ebx
   int v2; // ebx
   FILE *v3; // edx
   char *v5; // [esp+10h] [ebp-78h]
@@ -81983,7 +81807,7 @@ BOOLEAN __cdecl IsOurFile(const char *name)
     if ( (data.st_mode & 0xF000) == 0x8000
       && (data.st_mode & 0x12) == 0
       && data.st_nlink == 1
-      && (v1 = data.st_uid, v1 == getuid())
+      && (st_uid = data.st_uid, st_uid == getuid())
       || (data.st_mode & 0xF000) == 40960 && IsOurSymlink(name) )
     {
       linked = 0;
@@ -82057,7 +81881,7 @@ FILE *__cdecl OpenHiddenFile(const char *name, const char *mode)
       fd = open64(name, 193);
     }
     if ( fd >= 0 )
-      fp = fdopen(fd, mode);
+      return fdopen(fd, mode);
   }
   else if ( *mode == 97 )
   {
@@ -82069,12 +81893,12 @@ FILE *__cdecl OpenHiddenFile(const char *name, const char *mode)
           v3 = "wb";
         else
           v3 = "w";
-        fp = OpenHiddenFile(name, v3);
+        return OpenHiddenFile(name, v3);
       }
     }
     else
     {
-      fp = (FILE *)fopen64(name, mode);
+      return (FILE *)fopen64(name, mode);
     }
   }
   else
@@ -82147,7 +81971,7 @@ FILE *__cdecl LYOpenTemp(char *result, const char *suffix, const char *mode)
 {
   FILE *v3; // edx
   FILE *v4; // eax
-  __uid_t v5; // ebx
+  __uid_t st_uid; // ebx
   int v6; // edi
   __uid_t v7; // ebx
   const char *v8; // esi
@@ -82219,8 +82043,8 @@ FILE *__cdecl LYOpenTemp(char *result, const char *suffix, const char *mode)
     }
     else
     {
-      v5 = sb.st_uid;
-      if ( v5 != getuid() || (sb.st_mode & 0x12) != 0 )
+      st_uid = sb.st_uid;
+      if ( st_uid != getuid() || (sb.st_mode & 0x12) != 0 )
       {
         make_it = 1;
         if ( WWW_TraceFlag[0] )
@@ -82319,7 +82143,7 @@ FILE *__cdecl LYReopenTemp(char *name)
   if ( p )
   {
     p->file = LYAppendToTxtFile(name);
-    fp = p->file;
+    return p->file;
   }
   return fp;
 }
@@ -82551,7 +82375,7 @@ void __cdecl LYCloseTemp(char *name)
 void __cdecl LYCloseTempFP(FILE *fp)
 {
   FILE *v1; // eax
-  const char *v2; // ebx
+  const char *name; // ebx
   FILE *v3; // eax
   LY_TEMP *p; // [esp+20h] [ebp-8h]
 
@@ -82566,9 +82390,9 @@ void __cdecl LYCloseTempFP(FILE *fp)
     LY_close_temp(p);
     if ( WWW_TraceFlag[0] )
     {
-      v2 = p->name;
+      name = p->name;
       v3 = TraceFP();
-      fprintf(v3, "...LYCloseTempFP(%s)\n", v2);
+      fprintf(v3, "...LYCloseTempFP(%s)\n", name);
     }
   }
 }
@@ -82632,7 +82456,7 @@ int __cdecl LYRemoveTemp(char *name)
   }
   return code;
 }
-// 809AD48: conditional instruction was optimized away because of '%p.4!=0'
+// 809AD48: conditional instruction was optimized away because %p.4!=0
 
 //----- (0809AD7B) --------------------------------------------------------
 void LYCleanupTemp()
@@ -82683,11 +82507,7 @@ void LYCheckBibHost()
   bibhostIcon.address = 0;
   HTSACopy(&bibhostIcon.address, BibP_bibhost);
   HTSACat(&bibhostIcon.address, "bibp1.0/bibpicon.jpg");
-  bibhostIcon.post_data = 0;
-  bibhostIcon.post_content_type = 0;
-  bibhostIcon.bookmark = 0;
-  bibhostIcon.isHEAD = 0;
-  bibhostIcon.safe = 0;
+  memset(&bibhostIcon.post_data, 0, 14);
   saveFlag = traversal;
   traversal = 1;
   BibP_bibhost_available = HTLoadAbsolute(&bibhostIcon) == 1;
@@ -82702,7 +82522,7 @@ BOOLEAN __cdecl LYIsUIPage3(const char *url, UIP_t type, int flagparam)
   bool v6; // [esp+18h] [ebp-20h]
   bool v7; // [esp+1Fh] [ebp-19h]
   bool v8; // [esp+20h] [ebp-18h]
-  const char *v9; // [esp+24h] [ebp-14h]
+  const char *object; // [esp+24h] [ebp-14h]
   HTList *l0; // [esp+28h] [ebp-10h]
   size_t l; // [esp+30h] [ebp-8h]
   size_t la; // [esp+30h] [ebp-8h]
@@ -82737,20 +82557,20 @@ BOOLEAN __cdecl LYIsUIPage3(const char *url, UIP_t type, int flagparam)
     while ( 1 )
     {
       if ( l0 && (l0 = l0->next) != 0 )
-        v9 = (const char *)l0->object;
+        object = (const char *)l0->object;
       else
-        v9 = 0;
-      if ( !v9 )
+        object = 0;
+      if ( !object )
         break;
       if ( (flagparam & 1) != 0 )
       {
-        la = strlen(v9);
-        v8 = !strncmp(v9, url, la) && (!url[la] || url[la] == 35);
+        la = strlen(object);
+        v8 = !strncmp(object, url, la) && (!url[la] || url[la] == 35);
         v7 = v8;
       }
       else
       {
-        v7 = strcmp(v9, url) == 0;
+        v7 = strcmp(object, url) == 0;
       }
       if ( v7 )
         return 1;
@@ -82762,7 +82582,7 @@ BOOLEAN __cdecl LYIsUIPage3(const char *url, UIP_t type, int flagparam)
 //----- (0809B164) --------------------------------------------------------
 void __cdecl LYRegisterUIPage(const char *url, UIP_t type)
 {
-  const char *v2; // [esp+10h] [ebp-18h]
+  const char *object; // [esp+10h] [ebp-18h]
   HTList *l0; // [esp+14h] [ebp-14h]
   int n; // [esp+18h] [ebp-10h]
   unsigned int i; // [esp+20h] [ebp-8h]
@@ -82780,14 +82600,14 @@ void __cdecl LYRegisterUIPage(const char *url, UIP_t type)
           while ( 1 )
           {
             if ( l0 && (l0 = l0->next) != 0 )
-              v2 = (const char *)l0->object;
+              object = (const char *)l0->object;
             else
-              v2 = 0;
-            if ( !v2 )
+              object = 0;
+            if ( !object )
               break;
-            if ( !strcmp(v2, url) )
+            if ( !strcmp(object, url) )
               return;
-            if ( !strcmp(v2, ly_uip[i].url) )
+            if ( !strcmp(object, ly_uip[i].url) )
               goto LABEL_13;
             ++n;
           }
@@ -82845,7 +82665,6 @@ BOOLEAN __cdecl LYValidateFilename(char *result, char *given)
   const char *v3; // eax
   size_t v4; // ebx
   size_t v5; // ebx
-  BOOLEAN v7; // [esp+13h] [ebp-15h]
   const char *cp2; // [esp+1Ch] [ebp-Ch]
   char *cp; // [esp+20h] [ebp-8h]
   char *cpa; // [esp+20h] [ebp-8h]
@@ -82858,12 +82677,12 @@ BOOLEAN __cdecl LYValidateFilename(char *result, char *given)
     {
       v2 = gettext("Spawning is currently disabled.");
       HTUserMsg(v2);
-      v7 = 0;
+      return 0;
     }
     else
     {
       LYstrncpy(result, given, 256);
-      v7 = 1;
+      return 1;
     }
   }
   else
@@ -82903,14 +82722,13 @@ BOOLEAN __cdecl LYValidateFilename(char *result, char *given)
     if ( v5 + strlen(given) <= 0xFE )
     {
       strcat(result, given);
-      v7 = 1;
+      return 1;
     }
     else
     {
-      v7 = 0;
+      return 0;
     }
   }
-  return v7;
 }
 
 //----- (0809B6DE) --------------------------------------------------------
@@ -83379,7 +83197,6 @@ char *get_clip_grab()
 //----- (0809C3B8) --------------------------------------------------------
 int __cdecl put_clip(const char *s)
 {
-  int v2; // [esp+14h] [ebp-14h]
   int res; // [esp+18h] [ebp-10h]
   int l; // [esp+1Ch] [ebp-Ch]
   FILE *fh; // [esp+20h] [ebp-8h]
@@ -83394,10 +83211,9 @@ int __cdecl put_clip(const char *s)
     return -1;
   res = fwrite(s, 1u, l, fh);
   if ( !pclose(fh) && res == l )
-    v2 = 0;
+    return 0;
   else
-    v2 = -1;
-  return v2;
+    return -1;
 }
 
 //----- (0809C45F) --------------------------------------------------------
@@ -85941,7 +85757,14 @@ LABEL_44:
 }
 
 //----- (080A1E83) --------------------------------------------------------
-int __cdecl popup_choice(int cur_choice, int line, int column, const char **choices, int i_length, int disabled, BOOLEAN for_mouse)
+int __cdecl popup_choice(
+        int cur_choice,
+        int line,
+        int column,
+        const char **choices,
+        int i_length,
+        int disabled,
+        BOOLEAN for_mouse)
 {
   char *v7; // eax
   char *v8; // eax
@@ -86014,8 +85837,8 @@ BOOLEAN __cdecl GetOptValues(OptValues *table, char *value, int *result)
 PostPair *__cdecl break_data(bstring *data)
 {
   FILE *v1; // eax
-  const char *v2; // esi
-  const char *v3; // ebx
+  const char *value; // esi
+  const char *tag; // ebx
   FILE *v4; // edx
   size_t len; // [esp+2Ch] [ebp-1Ch]
   size_t i; // [esp+30h] [ebp-18h]
@@ -86059,10 +85882,10 @@ PostPair *__cdecl break_data(bstring *data)
     HTUnEscape(q[count].value);
     if ( WWW_TraceFlag[0] )
     {
-      v2 = q[count].value;
-      v3 = q[count].tag;
+      value = q[count].value;
+      tag = q[count].tag;
       v4 = TraceFP();
-      fprintf(v4, "...item[%d] tag=%s, value=%s\n", count, v3, v2);
+      fprintf(v4, "...item[%d] tag=%s, value=%s\n", count, tag, value);
     }
     q = (PostPair *)realloc(q, 8 * (++count + 1));
     if ( !q )
@@ -86072,8 +85895,8 @@ PostPair *__cdecl break_data(bstring *data)
   while ( p && *p );
   return q;
 }
-// 80A205F: conditional instruction was optimized away because of '%data.4!=0'
-// 80A207B: conditional instruction was optimized away because of '%data.4!=0'
+// 80A205F: conditional instruction was optimized away because %data.4!=0
+// 80A207B: conditional instruction was optimized away because %data.4!=0
 
 //----- (080A22E7) --------------------------------------------------------
 BOOLEAN __cdecl isLynxOptionsPage(const char *address, const char *portion)
@@ -86088,7 +85911,7 @@ BOOLEAN __cdecl isLynxOptionsPage(const char *address, const char *portion)
     len = strlen(portion);
     addressa = address + 12;
     if ( !strncasecomp(addressa, portion, len) && (!addressa[len] || addressa[len] == 47) )
-      result = 1;
+      return 1;
   }
   return result;
 }
@@ -86115,7 +85938,6 @@ int __cdecl postoptions(DocInfo *newdoc)
   FILE *v17; // eax
   char *v18; // eax
   FILE *v19; // eax
-  int v21; // [esp+10h] [ebp-68h]
   const char *src; // [esp+14h] [ebp-64h]
   const char *v23; // [esp+18h] [ebp-60h]
   const char *v24; // [esp+1Ch] [ebp-5Ch]
@@ -86161,18 +85983,17 @@ int __cdecl postoptions(DocInfo *newdoc)
     {
       v1 = gettext("You are not allowed to change the bookmark file!");
       HTAlert(v1);
-      v21 = 3;
+      return 3;
     }
     else if ( dump_output_immediately )
     {
-      v21 = 0;
+      return 0;
     }
     else
     {
       edit_bookmarks();
-      v21 = 3;
+      return 3;
     }
-    return v21;
   }
   if ( !isLynxOptionsPage(newdoc->address, "/") )
   {
@@ -86191,11 +86012,11 @@ int __cdecl postoptions(DocInfo *newdoc)
       {
         LYRegisterUIPage(newdoc->address, UIP_OPTIONS_MENU_0);
         lynx_edit_mode = 0;
-        v21 = 1;
+        return 1;
       }
       else
       {
-        v21 = 0;
+        return 0;
       }
     }
     else
@@ -86206,9 +86027,8 @@ int __cdecl postoptions(DocInfo *newdoc)
         free(newdoc->address);
         newdoc->address = 0;
       }
-      v21 = status;
+      return status;
     }
-    return v21;
   }
   v3 = HTLoadedDocumentURL();
   if ( !LYIsUIPage3(v3, UIP_OPTIONS_MENU_0, 0) )
@@ -86342,7 +86162,7 @@ int __cdecl postoptions(DocInfo *newdoc)
               v19 = TraceFP();
               fprintf(v19, "LYOptions.c/postoptions(): now really exit.\n\n");
             }
-            v21 = 3;
+            return 3;
           }
           else
           {
@@ -86350,7 +86170,7 @@ int __cdecl postoptions(DocInfo *newdoc)
             HTInfoMsg(v18);
             if ( HTisDocumentSource() )
               srcmode_for_next_retrieval(0);
-            v21 = 1;
+            return 1;
           }
         }
         else
@@ -86362,7 +86182,7 @@ int __cdecl postoptions(DocInfo *newdoc)
             v17 = TraceFP();
             fprintf(v17, "LYOptions.c/postoptions(): now really exit.\n\n");
           }
-          v21 = 1;
+          return 1;
         }
       }
       else
@@ -86372,9 +86192,8 @@ int __cdecl postoptions(DocInfo *newdoc)
           v16 = TraceFP();
           fprintf(v16, "LYOptions.c/postoptions(): now really exit.\n\n");
         }
-        v21 = 1;
+        return 1;
       }
-      return v21;
     }
     if ( !strcmp(data[i].tag, secure_string) )
       break;
@@ -87686,7 +87505,7 @@ void __cdecl free_item_list(lynx_list_item_type **ptr)
   }
   *ptr = 0;
 }
-// 80A6460: conditional instruction was optimized away because of '%cur.4!=0'
+// 80A6460: conditional instruction was optimized away because %cur.4!=0
 
 //----- (080A648B) --------------------------------------------------------
 void free_all_item_lists()
@@ -87815,7 +87634,7 @@ int __cdecl match_item_by_name(lynx_list_item_type *ptr, char *name, BOOLEAN onl
   {
     v4 = strlen(ptr->name);
     if ( !strncasecomp(ptr->name, name, v4) && (!only_overriders || ptr->override_primary_action) )
-      v5 = 1;
+      return 1;
   }
   return v5;
 }
@@ -87827,7 +87646,6 @@ int __cdecl check_color(char *color, int the_default)
   FILE *v3; // eax
   FILE *v4; // eax
   FILE *v5; // eax
-  int v7; // [esp+14h] [ebp-14h]
   int i; // [esp+24h] [ebp-4h]
 
   if ( WWW_TraceFlag[0] && (WWW_TraceMask & 2) != 0 )
@@ -87858,11 +87676,11 @@ int __cdecl check_color(char *color, int the_default)
         v4 = TraceFP();
         fprintf(v4, "=> %d\n", i);
       }
-      v7 = i;
+      return i;
     }
     else
     {
-      v7 = -2;
+      return -2;
     }
   }
   else
@@ -87874,9 +87692,8 @@ int __cdecl check_color(char *color, int the_default)
       v3 = TraceFP();
       fprintf(v3, "=> default %d\n", the_default);
     }
-    v7 = the_default;
+    return the_default;
   }
-  return v7;
 }
 
 //----- (080A6A0C) --------------------------------------------------------
@@ -88566,7 +88383,6 @@ int __cdecl viewer_fun(char *value)
         return 0;
       }
       HTSetPresentation(value, viewera, 0, 1.0, 3.0, 0.0, 0, mediaCFG_0);
-      return 0;
     }
   }
   return 0;
@@ -88839,7 +88655,7 @@ FILE *__cdecl LYOpenCFG(const char *cfg_filename, const char *parent_filename, c
 //----- (080A852F) --------------------------------------------------------
 void __cdecl LYSetConfigValue(char *name, char *value)
 {
-  BOOLEAN *v2; // ebx
+  BOOLEAN *def_value; // ebx
   _DWORD *v3; // ebx
   char *my_value; // [esp+24h] [ebp-14h] BYREF
   char *temp; // [esp+28h] [ebp-10h] BYREF
@@ -88854,8 +88670,8 @@ void __cdecl LYSetConfigValue(char *name, char *value)
     case CONF_BOOL:
       if ( q->def_value )
       {
-        v2 = (BOOLEAN *)q->def_value;
-        *v2 = is_true(value);
+        def_value = (BOOLEAN *)q->def_value;
+        *def_value = is_true(value);
       }
       break;
     case CONF_FUN:
@@ -88922,7 +88738,12 @@ void __cdecl LYSetConfigValue(char *name, char *value)
 }
 
 //----- (080A880E) --------------------------------------------------------
-void __cdecl do_read_cfg(const char *cfg_filename, const char *parent_filename, int nesting_level, FILE *fp0, optidx_set_t *allowed)
+void __cdecl do_read_cfg(
+        const char *cfg_filename,
+        const char *parent_filename,
+        int nesting_level,
+        FILE *fp0,
+        optidx_set_t *allowed)
 {
   FILE *v5; // eax
   char *v6; // eax
@@ -88934,7 +88755,7 @@ void __cdecl do_read_cfg(const char *cfg_filename, const char *parent_filename, 
   FILE *v12; // eax
   FILE *v13; // eax
   size_t v14; // eax
-  Conf_Types v15; // [esp+18h] [ebp-220h]
+  Conf_Types type; // [esp+18h] [ebp-220h]
   bool v16; // [esp+20h] [ebp-218h]
   lynx_list_item_type *cur_download; // [esp+40h] [ebp-1F8h]
   char *cp1_0; // [esp+44h] [ebp-1F4h] BYREF
@@ -89037,16 +88858,16 @@ void __cdecl do_read_cfg(const char *cfg_filename, const char *parent_filename, 
             {
               q = (ParseUnion *)&tbl->value;
               if ( fp0 && tbl->type != CONF_INCLUDE )
-                v15 = CONF_NIL;
+                type = CONF_NIL;
               else
-                v15 = tbl->type;
-              if ( (unsigned int)v15 > CONF_ADD_TRUSTED )
+                type = tbl->type;
+              if ( (unsigned int)type > CONF_ADD_TRUSTED )
                 goto LABEL_97;
-              if ( ((1 << v15) & 0x3BFE) != 0 )
+              if ( ((1 << type) & 0x3BFE) != 0 )
               {
                 LYSetConfigValue(name, value);
               }
-              else if ( ((1 << v15) & 0x400) != 0 )
+              else if ( ((1 << type) & 0x400) != 0 )
               {
                 resultant_set = 0;
                 any_optname_found = 0;
@@ -89226,7 +89047,7 @@ void __cdecl read_cfg(const char *cfg_filename, const char *parent_filename, int
 }
 
 //----- (080A9428) --------------------------------------------------------
-void __cdecl _Z9vsoprintfPcPKcS_(FILE *fp, const char *href, const char *name)
+void __cdecl extra_cfg_link(FILE *fp, const char *href, const char *name)
 {
   fprintf(fp, "<a href=\"%s\">%s</a>", href, name);
 }
@@ -89236,7 +89057,7 @@ int __cdecl lynx_cfg_infopage(DocInfo *newdoc)
 {
   char *v1; // ebx
   char *v2; // eax
-  char *v3; // ebx
+  char *address; // ebx
   char *v4; // eax
   const char *v5; // ebx
   char *v6; // eax
@@ -89276,9 +89097,9 @@ int __cdecl lynx_cfg_infopage(DocInfo *newdoc)
         v2 = HTLoadedDocumentTitle();
         if ( !strcmp(v2, v1) )
         {
-          v3 = history[nhist - 1].hdoc.address;
+          address = history[nhist - 1].hdoc.address;
           v4 = HTLoadedDocumentURL();
-          if ( !strcmp(v4, v3) )
+          if ( !strcmp(v4, address) )
           {
             if ( LYIsUIPage3(history[nhist - 1].hdoc.address, UIP_LYNXCFG_0, 1) )
             {
@@ -89365,13 +89186,13 @@ LABEL_23:
         if ( !no_compileopts_info )
         {
           v18 = gettext("compile time options");
-          _Z9vsoprintfPcPKcS_(fp0, "LYNXCOMPILEOPTS:", v18);
+          extra_cfg_link(fp0, "LYNXCOMPILEOPTS:", v18);
         }
         if ( !no_lynxcfg_xinfo )
         {
           LYLocalFileToURL(temp, lynx_lss_file);
           v19 = gettext("color-style configuration");
-          _Z9vsoprintfPcPKcS_(fp0, temp[0], v19);
+          extra_cfg_link(fp0, temp[0], v19);
         }
         fwrite("\n\n", 1u, 2u, fp0);
       }
@@ -89380,11 +89201,11 @@ LABEL_23:
         v14 = gettext("See also");
         fprintf(fp0, "%s</pre><ul><li>", v14);
         v15 = gettext("compile time options");
-        _Z9vsoprintfPcPKcS_(fp0, "LYNXCOMPILEOPTS:", v15);
+        extra_cfg_link(fp0, "LYNXCOMPILEOPTS:", v15);
         fwrite("<li>", 1u, 4u, fp0);
         LYLocalFileToURL(temp, lynx_lss_file);
         v16 = gettext("color-style configuration");
-        _Z9vsoprintfPcPKcS_(fp0, temp[0], v16);
+        extra_cfg_link(fp0, temp[0], v16);
         fwrite("</ul><pre>\n", 1u, 0xBu, fp0);
       }
       if ( user_mode == 2 )
@@ -89863,10 +89684,10 @@ void __cdecl trace_history(const char *tag)
 //----- (080AA9E5) --------------------------------------------------------
 void __cdecl LYAddVisitedLink(DocInfo *doc)
 {
-  char *v1; // [esp+18h] [ebp-30h]
+  char *title; // [esp+18h] [ebp-30h]
   const char *s2; // [esp+1Ch] [ebp-2Ch]
   char *s1; // [esp+20h] [ebp-28h]
-  _VisitedLink *v4; // [esp+24h] [ebp-24h]
+  _VisitedLink *object; // [esp+24h] [ebp-24h]
   _VisitedLink *b; // [esp+30h] [ebp-18h]
   VisitedLink *a; // [esp+34h] [ebp-14h]
   int related; // [esp+38h] [ebp-10h]
@@ -89874,9 +89695,9 @@ void __cdecl LYAddVisitedLink(DocInfo *doc)
   VisitedLink *tmp; // [esp+44h] [ebp-4h]
 
   if ( doc->title )
-    v1 = doc->title;
+    title = doc->title;
   else
-    v1 = gettext("(No title.)");
+    title = gettext("(No title.)");
   if ( doc->address && *doc->address )
   {
     if ( (doc->post_data
@@ -89921,16 +89742,16 @@ void __cdecl LYAddVisitedLink(DocInfo *doc)
       do
       {
         if ( cur && (cur = cur->next) != 0 )
-          v4 = (_VisitedLink *)cur->object;
+          object = (_VisitedLink *)cur->object;
         else
-          v4 = 0;
-        if ( !v4 )
+          object = 0;
+        if ( !object )
         {
           tmp = (VisitedLink *)calloc(1u, 0x1Cu);
           if ( !tmp )
             outofmem("./LYHistory.c", "LYAddVisitedLink");
           HTSACopy(&tmp->address, doc->address);
-          LYformTitle(&tmp->title, v1);
+          LYformTitle(&tmp->title, title);
           HTList_appendObject(Visited_Links, tmp);
           tmp->prev_first = Last_by_first;
           Last_by_first = tmp;
@@ -89967,22 +89788,22 @@ void __cdecl LYAddVisitedLink(DocInfo *doc)
           s2 = doc->address;
         else
           s2 = (const char *)&unk_815DFD2;
-        if ( v4->address )
-          s1 = v4->address;
+        if ( object->address )
+          s1 = object->address;
         else
           s1 = (char *)&unk_815DFD2;
       }
       while ( strcmp(s1, s2) );
-      PrevActiveVisitedLink = v4;
-      PrevVisitedLink = v4;
-      if ( v4->next_latest != &Latest_last )
+      PrevActiveVisitedLink = object;
+      PrevVisitedLink = object;
+      if ( object->next_latest != &Latest_last )
       {
-        v4->prev_latest->next_latest = v4->next_latest;
-        v4->next_latest->prev_latest = v4->prev_latest;
-        Latest_last.prev_latest->next_latest = v4;
-        v4->prev_latest = Latest_last.prev_latest;
-        v4->next_latest = &Latest_last;
-        Latest_last.prev_latest = v4;
+        object->prev_latest->next_latest = object->next_latest;
+        object->next_latest->prev_latest = object->prev_latest;
+        Latest_last.prev_latest->next_latest = object;
+        object->prev_latest = Latest_last.prev_latest;
+        object->next_latest = &Latest_last;
+        Latest_last.prev_latest = object;
       }
     }
   }
@@ -90000,10 +89821,8 @@ BOOLEAN __cdecl LYwouldPush(const char *title, const char *docurl)
   char *v5; // [esp+4h] [ebp-24h]
   char *v6; // [esp+4h] [ebp-24h]
   char *v7; // [esp+4h] [ebp-24h]
-  bool v9; // [esp+10h] [ebp-18h]
-  bool v10; // [esp+14h] [ebp-14h]
+  BOOLEAN v10; // [esp+14h] [ebp-14h]
   size_t ulen; // [esp+20h] [ebp-8h]
-  BOOLEAN rc; // [esp+27h] [ebp-1h]
 
   if ( docurl )
   {
@@ -90015,12 +89834,11 @@ BOOLEAN __cdecl LYwouldPush(const char *title, const char *docurl)
   }
   if ( docurl )
   {
-    v9 = !LYIsUIPage3(docurl, UIP_HISTORY_0, 1)
-      && !LYIsUIPage3(docurl, UIP_PRINT_OPTIONS_0, 1)
-      && !LYIsUIPage3(docurl, UIP_DIRED_MENU_0, 1)
-      && !LYIsUIPage3(docurl, UIP_UPLOAD_OPTIONS_0, 1)
-      && !LYIsUIPage3(docurl, UIP_PERMIT_OPTIONS_0, 1);
-    rc = v9;
+    return !LYIsUIPage3(docurl, UIP_HISTORY_0, 1)
+        && !LYIsUIPage3(docurl, UIP_PRINT_OPTIONS_0, 1)
+        && !LYIsUIPage3(docurl, UIP_DIRED_MENU_0, 1)
+        && !LYIsUIPage3(docurl, UIP_UPLOAD_OPTIONS_0, 1)
+        && !LYIsUIPage3(docurl, UIP_PERMIT_OPTIONS_0, 1);
   }
   else
   {
@@ -90039,14 +89857,13 @@ BOOLEAN __cdecl LYwouldPush(const char *title, const char *docurl)
           {
             v7 = gettext("File Permission Options");
             if ( strcmp(title, v7) )
-              v10 = 1;
+              return 1;
           }
         }
       }
     }
-    rc = v10;
+    return v10;
   }
-  return rc;
 }
 
 //----- (080AB1ED) --------------------------------------------------------
@@ -90104,10 +89921,10 @@ int __cdecl are_identical(HistInfo *doc, DocInfo *doc1)
   v3 = 0;
   if ( !strcmp(doc1->address, doc->hdoc.address) && HTSABEql(doc1->post_data, doc->hdoc.post_data) )
   {
-    s2 = doc->hdoc.bookmark ? doc->hdoc.bookmark : &unk_815DFD2;
-    s1 = doc1->bookmark ? doc1->bookmark : &unk_815DFD2;
+    s2 = doc->hdoc.bookmark ? doc->hdoc.bookmark : (char *)&unk_815DFD2;
+    s1 = doc1->bookmark ? doc1->bookmark : (char *)&unk_815DFD2;
     if ( !strcmp(s1, s2) && doc1->isHEAD == doc->hdoc.isHEAD )
-      v3 = 1;
+      return 1;
   }
   return v3;
 }
@@ -90159,11 +89976,10 @@ int __cdecl LYpush(DocInfo *doc, BOOLEAN force_push)
 {
   FILE *v2; // eax
   FILE *v3; // eax
-  char *v4; // edi
-  char *v5; // ebx
+  char *title; // edi
+  char *address; // ebx
   int v6; // esi
   FILE *v7; // eax
-  int v9; // [esp+14h] [ebp-44h]
   int len; // [esp+18h] [ebp-40h]
   const char *src; // [esp+1Ch] [ebp-3Ch]
   int v12; // [esp+24h] [ebp-34h]
@@ -90182,7 +89998,7 @@ int __cdecl LYpush(DocInfo *doc, BOOLEAN force_push)
     {
       history[nhist - 1].hdoc.link = doc->link;
       history[nhist - 1].hdoc.line = doc->line;
-      v9 = 0;
+      return 0;
     }
     else if ( nhist_extra > 0 && are_identical(&history[nhist], doc) )
     {
@@ -90192,7 +90008,7 @@ int __cdecl LYpush(DocInfo *doc, BOOLEAN force_push)
       LYAllocHistory(nhist);
       ++nhist;
       trace_history("LYpush: just move the cursor");
-      v9 = 1;
+      return 1;
     }
     else
     {
@@ -90291,30 +90107,29 @@ int __cdecl LYpush(DocInfo *doc, BOOLEAN force_push)
       }
       if ( WWW_TraceFlag[0] )
       {
-        v4 = doc->title;
-        v5 = doc->address;
+        title = doc->title;
+        address = doc->address;
         v6 = nhist;
         v7 = TraceFP();
-        fprintf(v7, "\nLYpush[%d]: address:%s\n        title:%s\n", v6, v5, v4);
+        fprintf(v7, "\nLYpush[%d]: address:%s\n        title:%s\n", v6, address, title);
       }
       ++nhist;
-      v9 = 1;
+      return 1;
     }
   }
   else
   {
     if ( !LYforce_no_cache )
       LYoverride_no_cache = 1;
-    v9 = 0;
+    return 0;
   }
-  return v9;
 }
 
 //----- (080ABCCF) --------------------------------------------------------
 void __cdecl LYpop(DocInfo *doc)
 {
-  char *v1; // edi
-  char *v2; // ebx
+  char *title; // edi
+  char *address; // ebx
   int v3; // esi
   FILE *v4; // eax
 
@@ -90327,11 +90142,11 @@ void __cdecl LYpop(DocInfo *doc)
     LYSetNewline(doc->line);
     if ( WWW_TraceFlag[0] )
     {
-      v1 = doc->title;
-      v2 = doc->address;
+      title = doc->title;
+      address = doc->address;
       v3 = nhist;
       v4 = TraceFP();
-      fprintf(v4, "LYpop[%d]: address:%s\n     title:%s\n", v3, v2, v1);
+      fprintf(v4, "LYpop[%d]: address:%s\n     title:%s\n", v3, address, title);
     }
   }
 }
@@ -90387,16 +90202,16 @@ int __cdecl LYhist_next(DocInfo *doc, DocInfo *newdoc)
 void __cdecl LYpop_num(int number, DocInfo *doc)
 {
   FILE *v2; // eax
-  int v3; // ebx
+  int link; // ebx
   FILE *v4; // eax
-  int v5; // ebx
+  int line; // ebx
   FILE *v6; // eax
   FILE *v7; // eax
   FILE *v8; // eax
   int len; // [esp+14h] [ebp-14h]
   char *src; // [esp+18h] [ebp-10h]
-  char *v11; // [esp+1Ch] [ebp-Ch]
-  char *v12; // [esp+20h] [ebp-8h]
+  char *title; // [esp+1Ch] [ebp-Ch]
+  char *address; // [esp+20h] [ebp-8h]
 
   if ( number >= 0 && nhist_extra + nhist > number )
   {
@@ -90419,33 +90234,33 @@ void __cdecl LYpop_num(int number, DocInfo *doc)
       fprintf(v2, "LYpop_num(%d)\n", number);
       if ( WWW_TraceFlag[0] )
       {
-        v3 = doc->link;
+        link = doc->link;
         v4 = TraceFP();
-        fprintf(v4, "  link    %d\n", v3);
+        fprintf(v4, "  link    %d\n", link);
       }
       if ( WWW_TraceFlag[0] )
       {
-        v5 = doc->line;
+        line = doc->line;
         v6 = TraceFP();
-        fprintf(v6, "  line    %d\n", v5);
+        fprintf(v6, "  line    %d\n", line);
       }
       if ( WWW_TraceFlag[0] )
       {
         if ( doc->title )
-          v11 = doc->title;
+          title = doc->title;
         else
-          v11 = (char *)&unk_815DFD2;
+          title = (char *)&unk_815DFD2;
         v7 = TraceFP();
-        fprintf(v7, "  title   %s\n", v11);
+        fprintf(v7, "  title   %s\n", title);
       }
       if ( WWW_TraceFlag[0] )
       {
         if ( doc->address )
-          v12 = doc->address;
+          address = doc->address;
         else
-          v12 = (char *)&unk_815DFD2;
+          address = (char *)&unk_815DFD2;
         v8 = TraceFP();
-        fprintf(v8, "  address %s\n", v12);
+        fprintf(v8, "  address %s\n", address);
       }
     }
   }
@@ -90542,7 +90357,7 @@ BOOLEAN __cdecl historytarget(DocInfo *newdoc)
   char *v1; // ebx
   char *v2; // eax
   char *v3; // eax
-  char *v4; // ebx
+  char *address; // ebx
   char *v5; // eax
   char *v6; // eax
   char *v7; // eax
@@ -90575,9 +90390,9 @@ BOOLEAN __cdecl historytarget(DocInfo *newdoc)
         v3 = HTLoadedDocumentURL();
         if ( LYIsUIPage3(v3, UIP_HISTORY_0, 0) )
         {
-          v4 = history[nhist - 1].hdoc.address;
+          address = history[nhist - 1].hdoc.address;
           v5 = HTLoadedDocumentURL();
-          if ( strcmp(v5, v4) )
+          if ( strcmp(v5, address) )
             HTuncache_current_document();
         }
       }
@@ -90629,7 +90444,7 @@ int __cdecl LYShowVisitedLinks(char **newfile)
   char *v1; // eax
   char *v3; // [esp+4h] [ebp-74h]
   char *v4; // [esp+8h] [ebp-70h]
-  _VisitedLink *v6; // [esp+30h] [ebp-48h]
+  _VisitedLink *object; // [esp+30h] [ebp-48h]
   const char *v7; // [esp+34h] [ebp-44h]
   int v8; // [esp+38h] [ebp-40h]
   int v9; // [esp+3Ch] [ebp-3Ch]
@@ -90700,10 +90515,10 @@ int __cdecl LYShowVisitedLinks(char **newfile)
   else
   {
     if ( cur && (cur = cur->next) != 0 )
-      v6 = (_VisitedLink *)cur->object;
+      object = (_VisitedLink *)cur->object;
     else
-      v6 = 0;
-    vl = v6;
+      object = 0;
+    vl = object;
   }
   while ( vl )
   {
@@ -90906,10 +90721,10 @@ void __cdecl LYstore_message(const char *message)
 //----- (080AD116) --------------------------------------------------------
 int __cdecl LYLoadMESSAGES(const char *arg, HTParentAnchor *anAnchor, HTFormat format_out, HTStream *sink)
 {
-  char *v4; // esi
+  char *name; // esi
   char *v5; // ebx
   char *v6; // eax
-  void (*v7)(HTStream *, const char *, int); // ebx
+  void (*put_block)(HTStream *, const char *, int); // ebx
   size_t v8; // eax
   void (*v9)(HTStream *, const char *, int); // ebx
   size_t v10; // eax
@@ -90925,7 +90740,6 @@ int __cdecl LYLoadMESSAGES(const char *arg, HTParentAnchor *anAnchor, HTFormat f
   char *v20; // eax
   void (*v21)(HTStream *, const char *, int); // ebx
   size_t v22; // eax
-  int v24; // [esp+1Ch] [ebp-2Ch]
   char *temp; // [esp+28h] [ebp-20h] BYREF
   int i; // [esp+2Ch] [ebp-1Ch]
   int nummsg; // [esp+30h] [ebp-18h]
@@ -90949,9 +90763,9 @@ int __cdecl LYLoadMESSAGES(const char *arg, HTParentAnchor *anAnchor, HTFormat f
   {
     anAnchor->no_cache = 1;
     HTSprintf0(&buf, "<html>\n<head>\n");
-    v7 = target->isa->put_block;
+    put_block = target->isa->put_block;
     v8 = strlen(buf);
-    v7(target, buf, v8);
+    put_block(target, buf, v8);
     HTSprintf0(
       &buf,
       "<META %s content=\"text/html;charset=%s\">\n",
@@ -91018,23 +90832,22 @@ int __cdecl LYLoadMESSAGES(const char *arg, HTParentAnchor *anAnchor, HTFormat f
       free(buf);
       buf = 0;
     }
-    v24 = 200;
+    return 200;
   }
   else
   {
-    v4 = format_out->name;
+    name = format_out->name;
     v5 = format_in->name;
     v6 = gettext("Sorry, no known way of converting %s to %s.");
-    HTSprintf0(&buf, v6, v5, v4);
+    HTSprintf0(&buf, v6, v5, name);
     HTAlert(buf);
     if ( buf )
     {
       free(buf);
       buf = 0;
     }
-    v24 = -29999;
+    return -29999;
   }
-  return v24;
 }
 
 //----- (080AD510) --------------------------------------------------------
@@ -91066,7 +90879,13 @@ char **__cdecl options_list(OptionType *opt_ptr)
 }
 
 //----- (080AD5A0) --------------------------------------------------------
-int __cdecl change_form_link_ex(int cur, DocInfo *newdoc, BOOLEAN *refresh_screen, BOOLEAN use_last_tfpos, BOOLEAN immediate_submit, BOOLEAN redraw_only)
+int __cdecl change_form_link_ex(
+        int cur,
+        DocInfo *newdoc,
+        BOOLEAN *refresh_screen,
+        BOOLEAN use_last_tfpos,
+        BOOLEAN immediate_submit,
+        BOOLEAN redraw_only)
 {
   char *v6; // eax
   char *v7; // eax
@@ -91075,7 +90894,7 @@ int __cdecl change_form_link_ex(int cur, DocInfo *newdoc, BOOLEAN *refresh_scree
   char *v10; // eax
   int v12; // [esp+20h] [ebp-68h]
   char *text; // [esp+2Ch] [ebp-5Ch]
-  char *v15; // [esp+38h] [ebp-50h]
+  char *value; // [esp+38h] [ebp-50h]
   char *v16; // [esp+3Ch] [ebp-4Ch]
   int i_0; // [esp+4Ch] [ebp-3Ch]
   int i; // [esp+50h] [ebp-38h]
@@ -91113,13 +90932,13 @@ int __cdecl change_form_link_ex(int cur, DocInfo *newdoc, BOOLEAN *refresh_scree
           v16 = star_string;
         else
           v16 = (char *)(1023 - LYstrCells(form->value) + 136025696);
-        v15 = v16;
+        value = v16;
       }
       else
       {
-        v15 = form->value;
+        value = form->value;
       }
-      LYSetHilite(cur, v15);
+      LYSetHilite(cur, value);
       break;
     case 3:
       if ( form->disabled != 1 )
@@ -91329,7 +91148,12 @@ int __cdecl change_form_link_ex(int cur, DocInfo *newdoc, BOOLEAN *refresh_scree
 }
 
 //----- (080ADDF9) --------------------------------------------------------
-int __cdecl change_form_link(int cur, DocInfo *newdoc, BOOLEAN *refresh_screen, BOOLEAN use_last_tfpos, BOOLEAN immediate_submit)
+int __cdecl change_form_link(
+        int cur,
+        DocInfo *newdoc,
+        BOOLEAN *refresh_screen,
+        BOOLEAN use_last_tfpos,
+        BOOLEAN immediate_submit)
 {
   return change_form_link_ex(cur, newdoc, refresh_screen, use_last_tfpos, immediate_submit, 0);
 }
@@ -91345,7 +91169,7 @@ int __cdecl form_getstr(int cur, BOOLEAN use_last_tfpos, BOOLEAN redraw_only)
 {
   int v3; // eax
   char *v4; // eax
-  int v5; // eax
+  int current_modifiers; // eax
   int v6; // eax
   int v7; // eax
   char *v8; // eax
@@ -91358,7 +91182,7 @@ int __cdecl form_getstr(int cur, BOOLEAN use_last_tfpos, BOOLEAN redraw_only)
   char *v16; // eax
   int v18; // [esp+20h] [ebp-44D8h]
   int v19; // [esp+24h] [ebp-44D4h]
-  unsigned int v20; // [esp+28h] [ebp-44D0h]
+  unsigned int maxlength; // [esp+28h] [ebp-44D0h]
   int for_what; // [esp+2Ch] [ebp-44CCh]
   int v23; // [esp+34h] [ebp-44C4h]
   int v24; // [esp+38h] [ebp-44C0h]
@@ -91417,11 +91241,11 @@ int __cdecl form_getstr(int cur, BOOLEAN use_last_tfpos, BOOLEAN redraw_only)
     v3 = LYcols - (LYShowScrollbar != 0);
   far_col = v3;
   if ( form->maxlength && form->maxlength <= 0x3FF )
-    v20 = form->maxlength;
+    maxlength = form->maxlength;
   else
-    v20 = 1023;
-  max_length = v20;
-  if ( strlen(form->value) > v20 )
+    maxlength = 1023;
+  max_length = maxlength;
+  if ( strlen(form->value) > maxlength )
   {
     value += strlen(form->value) - max_length;
     if ( !form->disabled && (form->submit_method != 3 || !no_mail) )
@@ -91521,13 +91345,13 @@ again:
           else
           {
             last_xlkc = ch_0;
-            action &= 0xFFFFFF7F;
+            action &= ~0x80u;
           }
           if ( action != 29 )
             break;
-          v5 = MyEdit.current_modifiers;
-          BYTE1(v5) = BYTE1(MyEdit.current_modifiers) | 0x40;
-          MyEdit.current_modifiers = v5;
+          current_modifiers = MyEdit.current_modifiers;
+          BYTE1(current_modifiers) = BYTE1(MyEdit.current_modifiers) | 0x40;
+          MyEdit.current_modifiers = current_modifiers;
         }
         if ( action != 30 )
           break;
@@ -92041,7 +91865,7 @@ void __cdecl set_environ(int name, const char *value, const char *no_value)
 //----- (080AF48F) --------------------------------------------------------
 char *__cdecl suggested_filename(DocInfo *newdoc)
 {
-  const char *v1; // eax
+  const char *SugFname; // eax
   const char *v2; // ebx
   FILE *v3; // eax
   int rootlen; // [esp+1Ch] [ebp-Ch] BYREF
@@ -92050,8 +91874,8 @@ char *__cdecl suggested_filename(DocInfo *newdoc)
   sug_filename[0] = 0;
   if ( HText_getSugFname() )
   {
-    v1 = HText_getSugFname();
-    HTSACopy(sug_filename, v1);
+    SugFname = HText_getSugFname();
+    HTSACopy(sug_filename, SugFname);
   }
   else
   {
@@ -92071,7 +91895,7 @@ char *__cdecl suggested_filename(DocInfo *newdoc)
 //----- (080AF52D) --------------------------------------------------------
 void __cdecl SetupFilename(char *filename, const char *sug_filename)
 {
-  char *v2; // ebx
+  char *name; // ebx
   FILE *v3; // eax
   HTAtom *v4; // eax
   HTAtom *v5; // eax
@@ -92094,9 +91918,9 @@ void __cdecl SetupFilename(char *filename, const char *sug_filename)
         format = HTFileFormat(filename, &encoding, 0);
         if ( WWW_TraceFlag[0] )
         {
-          v2 = format->name;
+          name = format->name;
           v3 = TraceFP();
-          fprintf(v3, "... format %s\n", v2);
+          fprintf(v3, "... format %s\n", name);
         }
         if ( !strcasecomp(format->name, "text/html")
           || encoding
@@ -92267,15 +92091,14 @@ void __cdecl send_file_to_file(DocInfo *newdoc, char *content_base, char *sug_fi
   char *v12; // eax
   int v13; // ebx
   FILE *v14; // eax
-  const char *v15; // eax
+  const char *Date; // eax
   const char *v16; // ebx
-  const char *v17; // eax
+  const char *LastModified; // eax
   const char *v18; // eax
   const char *v19; // eax
   int v20; // [esp+18h] [ebp-240h]
   int v21; // [esp+1Ch] [ebp-23Ch]
   FILE *v22; // [esp+20h] [ebp-238h]
-  bool v23; // [esp+27h] [ebp-231h]
   int FnameTotal; // [esp+3Ch] [ebp-21Ch] BYREF
   int FnameNum; // [esp+40h] [ebp-218h] BYREF
   FILE *outfile_fp; // [esp+44h] [ebp-214h]
@@ -92358,11 +92181,7 @@ void __cdecl send_file_to_file(DocInfo *newdoc, char *content_base, char *sug_fi
         }
         else
         {
-          if ( (**__ctype_b_loc() & 0x200) != 0 )
-            v23 = toupper(0) == 65;
-          else
-            v23 = 0;
-          if ( v23 )
+          if ( (**__ctype_b_loc() & 0x200) != 0 && toupper(0) == 65 )
             v22 = LYAppendToTxtFile(buffer);
           else
             v22 = LYNewTxtFile(buffer);
@@ -92375,13 +92194,13 @@ LABEL_32:
               fprintf(outfile_fp, "<!-- X-URL: %s -->\n", newdoc->address);
               if ( HText_getDate() )
               {
-                v15 = HText_getDate();
-                fprintf(outfile_fp, "<!-- Date: %s -->\n", v15);
+                Date = HText_getDate();
+                fprintf(outfile_fp, "<!-- Date: %s -->\n", Date);
                 if ( HText_getLastModified() )
                 {
                   v16 = HText_getDate();
-                  v17 = HText_getLastModified();
-                  if ( strcmp(v17, v16) )
+                  LastModified = HText_getLastModified();
+                  if ( strcmp(LastModified, v16) )
                   {
                     v18 = HText_getLastModified();
                     if ( strcmp(v18, "Thu, 01 Jan 1970 00:00:01 GMT") )
@@ -92583,9 +92402,9 @@ void __cdecl send_file_to_printer(DocInfo *newdoc, char *content_base, char *sug
   char *v11; // ebx
   FILE *v12; // eax
   char *v13; // eax
-  const char *v14; // eax
-  const char *v15; // eax
-  const char *v16; // eax
+  const char *Title; // eax
+  const char *Date; // eax
+  const char *LastModified; // eax
   int v17; // [esp+24h] [ebp-234h]
   int count; // [esp+34h] [ebp-224h]
   lynx_list_item_type *cur_printer; // [esp+38h] [ebp-220h]
@@ -92640,13 +92459,13 @@ LABEL_29:
         }
         v13 = gettext("Printing file.  Please wait...");
         printf(v13);
-        v14 = HText_getTitle();
-        set_environ(0, v14, &::sug_filename);
+        Title = HText_getTitle();
+        set_environ(0, Title, &::sug_filename);
         set_environ(1, newdoc->address, &::sug_filename);
-        v15 = HText_getDate();
-        set_environ(2, v15, &::sug_filename);
-        v16 = HText_getLastModified();
-        set_environ(3, v16, &::sug_filename);
+        Date = HText_getDate();
+        set_environ(2, Date, &::sug_filename);
+        LastModified = HText_getLastModified();
+        set_environ(3, LastModified, &::sug_filename);
         LYSystem(the_command);
         if ( the_command )
         {
@@ -92768,8 +92587,8 @@ void __cdecl send_file_to_screen(DocInfo *newdoc, char *content_base, BOOLEAN Lp
 //----- (080B0D5C) --------------------------------------------------------
 int __cdecl printfile(DocInfo *newdoc)
 {
-  const char *v1; // eax
-  const char *v2; // eax
+  const char *ContentBase; // eax
+  const char *ContentLocation; // eax
   int v3; // ebx
   char *v4; // eax
   char *v5; // eax
@@ -92802,8 +92621,8 @@ int __cdecl printfile(DocInfo *newdoc)
     return 0;
   if ( HText_getContentBase() )
   {
-    v1 = HText_getContentBase();
-    HTSACopy(&content_base, v1);
+    ContentBase = HText_getContentBase();
+    HTSACopy(&content_base, ContentBase);
     LYRemoveBlanks(content_base);
     if ( !content_base || !*content_base )
     {
@@ -92818,8 +92637,8 @@ int __cdecl printfile(DocInfo *newdoc)
   {
     if ( HText_getContentLocation() )
     {
-      v2 = HText_getContentLocation();
-      HTSACopy(&content_location, v2);
+      ContentLocation = HText_getContentLocation();
+      HTSACopy(&content_location, ContentLocation);
       LYRemoveBlanks(content_location);
       if ( !content_location || !*content_location )
       {
@@ -93340,7 +93159,7 @@ void __cdecl read_rc(FILE *fp)
   FILE *v4; // eax
   int v5; // eax
   FILE *v6; // eax
-  BOOLEAN *v7; // ebx
+  BOOLEAN *def_value; // ebx
   int v8; // eax
   size_t v9; // eax
   FILE *fpa; // [esp+20h] [ebp-238h]
@@ -93424,8 +93243,8 @@ LABEL_62:
             case CONF_BOOL_0:
               if ( q->def_value )
               {
-                v7 = (BOOLEAN *)q->def_value;
-                *v7 = getBool(value);
+                def_value = (BOOLEAN *)q->def_value;
+                *def_value = getBool(value);
               }
               break;
             case CONF_FUN_0:
@@ -94271,7 +94090,6 @@ BOOLEAN __cdecl message_has_content(const char *filename, BOOLEAN *nonspaces)
 {
   FILE *v2; // eax
   const char *v4; // [esp+10h] [ebp-18h]
-  BOOLEAN v5; // [esp+17h] [ebp-11h]
   char *cp; // [esp+18h] [ebp-10h]
   char *buffer; // [esp+1Ch] [ebp-Ch] BYREF
   FILE *fp; // [esp+20h] [ebp-8h]
@@ -94322,7 +94140,7 @@ BOOLEAN __cdecl message_has_content(const char *filename, BOOLEAN *nonspaces)
       free(buffer);
       buffer = 0;
     }
-    v5 = 1;
+    return 1;
   }
   else
   {
@@ -94335,9 +94153,8 @@ BOOLEAN __cdecl message_has_content(const char *filename, BOOLEAN *nonspaces)
       v2 = TraceFP();
       fprintf(v2, "Failed to open file %s for reading!\n", v4);
     }
-    v5 = 0;
+    return 0;
   }
-  return v5;
 }
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
@@ -94817,7 +94634,6 @@ Kcmd *__cdecl LYKeycodeToKcmd(LYKeymapCode code)
 //----- (080B5266) --------------------------------------------------------
 Kcmd *__cdecl LYStringToKcmd(const char *name)
 {
-  Kcmd *v2; // [esp+14h] [ebp-24h]
   Kcmd *maybe; // [esp+24h] [ebp-14h]
   Kcmd *result; // [esp+28h] [ebp-10h]
   unsigned int j; // [esp+2Ch] [ebp-Ch]
@@ -94855,10 +94671,9 @@ Kcmd *__cdecl LYStringToKcmd(const char *name)
     }
   }
   if ( result )
-    v2 = result;
+    return result;
   else
-    v2 = maybe;
-  return v2;
+    return maybe;
 }
 
 //----- (080B53AA) --------------------------------------------------------
@@ -95014,7 +94829,7 @@ char *__cdecl format_binding(LYKeymap_t *table, int i)
 //----- (080B580F) --------------------------------------------------------
 void __cdecl print_binding(HTStream *target, int i, BOOLEAN both)
 {
-  void (*v3)(HTStream *, const char *, int); // ebx
+  void (*put_block)(HTStream *, const char *, int); // ebx
   void (*v4)(HTStream *, const char *, int); // ebx
   void (*v5)(HTStream *, const char *, int); // ebx
   void (*v6)(HTStream *, const char *, int); // ebx
@@ -95033,9 +94848,9 @@ void __cdecl print_binding(HTStream *target, int i, BOOLEAN both)
     buf = format_binding(key_override, i);
     if ( !buf )
       goto LABEL_10;
-    v3 = target->isa->put_block;
+    put_block = target->isa->put_block;
     v7 = strlen(buf);
-    v3(target, buf, v7);
+    put_block(target, buf, v7);
   }
   else
   {
@@ -95076,27 +94891,24 @@ LABEL_10:
       v6(target, bufa, v10);
 LABEL_21:
       free(bufa);
-      return;
     }
   }
 }
-// 80B589E: conditional instruction was optimized away because of '%buf.4!=0'
-// 80B590B: conditional instruction was optimized away because of '%buf.4!=0'
-// 80B59BC: conditional instruction was optimized away because of '%buf.4!=0'
-// 80B5A2F: conditional instruction was optimized away because of '%buf.4!=0'
+// 80B589E: conditional instruction was optimized away because %buf.4!=0
+// 80B590B: conditional instruction was optimized away because %buf.4!=0
+// 80B59BC: conditional instruction was optimized away because %buf.4!=0
+// 80B5A2F: conditional instruction was optimized away because %buf.4!=0
 
 //----- (080B5A49) --------------------------------------------------------
 int __cdecl lacname_to_lac(const char *func)
 {
-  int v2; // [esp+4h] [ebp-14h]
   Kcmd *mp; // [esp+14h] [ebp-4h]
 
   mp = LYStringToKcmd(func);
   if ( mp )
-    v2 = mp->code;
+    return mp->code;
   else
-    v2 = -1;
-  return v2;
+    return -1;
 }
 
 //----- (080B5A79) --------------------------------------------------------
@@ -95122,7 +94934,6 @@ int __cdecl lecname_to_lec(const char *func)
 int __cdecl lkcstring_to_lkc(const char *src)
 {
   int v1; // eax
-  int v3; // [esp+14h] [ebp-14h]
   int c; // [esp+24h] [ebp-4h] BYREF
 
   c = -1;
@@ -95154,26 +94965,24 @@ int __cdecl lkcstring_to_lkc(const char *src)
   if ( c == 27 )
     escape_bound = 1;
   if ( c >= -1 )
-    v3 = c;
+    return c;
   else
-    v3 = -1;
-  return v3;
+    return -1;
 }
 
 //----- (080B5C0E) --------------------------------------------------------
 int __cdecl LYLoadKeymap(const char *arg, HTParentAnchor *anAnchor, HTFormat format_out, HTStream *sink)
 {
-  char *v4; // esi
+  char *name; // esi
   char *v5; // ebx
   char *v6; // eax
   char *v7; // eax
-  void (*v8)(HTStream *, const char *, int); // ebx
+  void (*put_block)(HTStream *, const char *, int); // ebx
   size_t v9; // eax
   void (*v10)(HTStream *, const char *, int); // ebx
   size_t v11; // eax
   void (*v12)(HTStream *, const char *, int); // ebx
   size_t v13; // eax
-  int v15; // [esp+1Ch] [ebp-1Ch]
   int i; // [esp+20h] [ebp-18h]
   int ia; // [esp+20h] [ebp-18h]
   char *buf; // [esp+24h] [ebp-14h] BYREF
@@ -95188,9 +94997,9 @@ int __cdecl LYLoadKeymap(const char *arg, HTParentAnchor *anAnchor, HTFormat for
     anAnchor->no_cache = 1;
     v7 = gettext("Current Key Map");
     HTSprintf0(&buf, "<html>\n<head>\n<title>%s</title>\n</head>\n<body>\n", v7);
-    v8 = target->isa->put_block;
+    put_block = target->isa->put_block;
     v9 = strlen(buf);
-    v8(target, buf, v9);
+    put_block(target, buf, v9);
     HTSprintf0(&buf, "<pre>\n");
     v10 = target->isa->put_block;
     v11 = strlen(buf);
@@ -95212,29 +95021,28 @@ int __cdecl LYLoadKeymap(const char *arg, HTParentAnchor *anAnchor, HTFormat for
       free(buf);
       buf = 0;
     }
-    v15 = 200;
+    return 200;
   }
   else
   {
-    v4 = format_out->name;
+    name = format_out->name;
     v5 = format_in->name;
     v6 = gettext("Sorry, no known way of converting %s to %s.");
-    HTSprintf0(&buf, v6, v5, v4);
+    HTSprintf0(&buf, v6, v5, name);
     HTAlert(buf);
     if ( buf )
     {
       free(buf);
       buf = 0;
     }
-    v15 = -29999;
+    return -29999;
   }
-  return v15;
 }
 
 //----- (080B5E62) --------------------------------------------------------
 int __cdecl remap(char *key, const char *func, BOOLEAN for_dired)
 {
-  int v3; // eax
+  int code; // eax
   int c; // [esp+20h] [ebp-8h]
   Kcmd *mp; // [esp+24h] [ebp-4h]
 
@@ -95258,9 +95066,9 @@ int __cdecl remap(char *key, const char *func, BOOLEAN for_dired)
     keymap[c + 1] = mp->code;
   if ( c )
     return c;
-  v3 = mp->code;
-  BYTE1(v3) = ((unsigned __int16)mp->code >> 8) | 8;
-  return v3;
+  code = mp->code;
+  BYTE1(code) = ((unsigned __int16)mp->code >> 8) | 8;
+  return code;
 }
 
 //----- (080B5F57) --------------------------------------------------------
@@ -95495,14 +95303,13 @@ int __cdecl best_reverse_keymap(int lac)
   }
   return -1;
 }
-// 80B636C: conditional instruction was optimized away because of '%c.4>=0'
-// 80B63CC: conditional instruction was optimized away because of '%c.4>=0'
+// 80B636C: conditional instruction was optimized away because %c.4>=0
+// 80B63CC: conditional instruction was optimized away because %c.4>=0
 
 //----- (080B64CB) --------------------------------------------------------
 char *__cdecl key_for_func_ext(int lac, int context_code)
 {
   int v2; // eax
-  char *v4; // [esp+14h] [ebp-14h]
   int modkey; // [esp+20h] [ebp-8h] BYREF
   int lkc; // [esp+24h] [ebp-4h]
 
@@ -95528,20 +95335,18 @@ char *__cdecl key_for_func_ext(int lac, int context_code)
     return fmt_keys(lkc, -1);
   modkey = LYKeyForEditAction(23);
   if ( modkey >= 0 )
-    v4 = fmt_keys(modkey, lkc);
+    return fmt_keys(modkey, lkc);
   else
-    v4 = 0;
-  return v4;
+    return 0;
 }
 
 //----- (080B65AE) --------------------------------------------------------
 BOOLEAN __cdecl LYisNonAlnumKeyname(int ch_0, int KeyName)
 {
-  if ( ch_0 < 0 || ch_0 > 660 )
-    return 0;
-  if ( ch_0 > 0 && strchr("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", ch_0) )
-    return 0;
-  return keymap[ch_0 + 1] == KeyName;
+  return ch_0 >= 0
+      && ch_0 <= 660
+      && (ch_0 <= 0 || !strchr("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz", ch_0))
+      && keymap[ch_0 + 1] == KeyName;
 }
 
 //----- (080B660A) --------------------------------------------------------
@@ -95578,8 +95383,8 @@ void __cdecl strtolower(char *i)
 //----- (080B66BA) --------------------------------------------------------
 void __cdecl actually_set_style(HTStructured *me)
 {
-  LYUCcharset *v1; // esi
-  int v2; // eax
+  LYUCcharset *UCInfoStage; // esi
+  int UCLYhndl; // eax
 
   if ( me->text )
   {
@@ -95588,9 +95393,9 @@ void __cdecl actually_set_style(HTStructured *me)
   else
   {
     LYGetChartransInfo((HTStructured_0 *)me);
-    v1 = HTAnchor_getUCInfoStage(me->node_anchor, 3);
-    v2 = HTAnchor_getUCLYhndl(me->node_anchor, 3);
-    UCSetTransParams(&me->T, me->UCLYhndl, me->UCI, v2, v1);
+    UCInfoStage = HTAnchor_getUCInfoStage(me->node_anchor, 3);
+    UCLYhndl = HTAnchor_getUCLYhndl(me->node_anchor, 3);
+    UCSetTransParams(&me->T, me->UCLYhndl, me->UCI, UCLYhndl, UCInfoStage);
     me->text = HText_new2(me->node_anchor, (HTStream *)me->target);
     HText_beginAppend(me->text);
     HText_setStyle(me->text, me->new_style);
@@ -95628,7 +95433,7 @@ BOOLEAN __cdecl LYBadHTML(HTStructured *me)
 //----- (080B685B) --------------------------------------------------------
 void __cdecl HTML_put_character(HTStructured *me, char c)
 {
-  int v2; // [esp+10h] [ebp-8h]
+  int tag_number; // [esp+10h] [ebp-8h]
   char ca; // [esp+14h] [ebp-4h]
 
   ca = c;
@@ -95680,12 +95485,12 @@ LABEL_21:
         HTChunkPutc(&me->option, ca);
         return;
       }
-      v2 = me->sp->tag_number;
-      if ( v2 == 85 )
+      tag_number = me->sp->tag_number;
+      if ( tag_number == 85 )
         goto LABEL_36;
-      if ( v2 > 85 )
+      if ( tag_number > 85 )
       {
-        if ( v2 == 86 )
+        if ( tag_number == 86 )
         {
           if ( (ca != 10 || !me->inLABEL || me->inP) && (ca != 10 || me->inPRE) )
           {
@@ -95696,7 +95501,7 @@ LABEL_21:
           me->inPRE = 1;
           goto LABEL_63;
         }
-        if ( v2 == 117 )
+        if ( tag_number == 117 )
         {
 LABEL_36:
           me->inP = 1;
@@ -95705,7 +95510,7 @@ LABEL_36:
           goto LABEL_63;
         }
       }
-      else if ( v2 == 70 )
+      else if ( tag_number == 70 )
       {
         goto LABEL_36;
       }
@@ -95768,13 +95573,13 @@ LABEL_63:
       return;
   }
 }
-// 80B6906: conditional instruction was optimized away because of '%c.1 in (<7u|==8|B..C|>=Eu)'
-// 80B6A6E: conditional instruction was optimized away because of '%c.1!=D'
-// 80B6AE3: conditional instruction was optimized away because of '%c.1!=D'
-// 80B6B2F: conditional instruction was optimized away because of '%c.1!=D'
-// 80B6BCA: conditional instruction was optimized away because of '%c.1!=D'
-// 80B6CEB: conditional instruction was optimized away because of '%c.1 in (<9u|B..C|E..1F|>=21u)'
-// 80B6D49: conditional instruction was optimized away because of '%c.1 in (<9u|B..C|>=Eu)'
+// 80B6906: conditional instruction was optimized away because %c.1 is in (<7u|==8|B..C|>=Eu)
+// 80B6A6E: conditional instruction was optimized away because %c.1!=D
+// 80B6AE3: conditional instruction was optimized away because %c.1!=D
+// 80B6B2F: conditional instruction was optimized away because %c.1!=D
+// 80B6BCA: conditional instruction was optimized away because %c.1!=D
+// 80B6CEB: conditional instruction was optimized away because %c.1 is in (<9u|B..C|E..1F|>=21u)
+// 80B6D49: conditional instruction was optimized away because %c.1 is in (<9u|B..C|>=Eu)
 
 //----- (080B6D8D) --------------------------------------------------------
 void __cdecl HTML_put_string(HTStructured *me, const char *s)
@@ -96006,7 +95811,17 @@ void __cdecl LYStartArea(HTStructured *obj, const char *href, const char *alt, c
 }
 
 //----- (080B7565) --------------------------------------------------------
-void __cdecl LYHandleFIG(HTStructured *me, const BOOLEAN *present, const char **value, BOOLEAN isobject, BOOLEAN imagemap, const char *id, const char *src, BOOLEAN convert, BOOLEAN start, BOOLEAN *intern_flag)
+void __cdecl LYHandleFIG(
+        HTStructured *me,
+        const BOOLEAN *present,
+        const char **value,
+        BOOLEAN isobject,
+        BOOLEAN imagemap,
+        const char *id,
+        const char *src,
+        BOOLEAN convert,
+        BOOLEAN start,
+        BOOLEAN *intern_flag)
 {
   bool v10; // [esp+14h] [ebp-34h]
   HTLinkType *ltype; // [esp+18h] [ebp-30h]
@@ -96075,7 +95890,7 @@ void __cdecl LYHandleFIG(HTStructured *me, const BOOLEAN *present, const char **
         HTML_put_string(me, s);
         if ( !me->inBoldH )
           HText_appendCharacter(me->text, 6);
-        _ZN10Fl_Browser10bottomlineEi(me->text, 0);
+        HText_endAnchor(me->text, 0);
         HTML_put_character(me, 45);
         HTML_put_character(me, 32);
         me->in_word = 0;
@@ -96172,12 +95987,12 @@ int __cdecl HTML_end_element(HTStructured *me, int element_number, char **includ
 {
   const char *v3; // ebx
   FILE *v4; // eax
-  int v5; // ebx
+  int skip_stack; // ebx
   FILE *v6; // eax
-  int v7; // esi
+  int objects_mixed_open; // esi
   int v8; // ebx
   FILE *v9; // eax
-  int v10; // esi
+  int objects_figged_open; // esi
   int v11; // ebx
   FILE *v12; // eax
   int v13; // ebx
@@ -96191,7 +96006,7 @@ int __cdecl HTML_end_element(HTStructured *me, int element_number, char **includ
   FILE *v21; // eax
   FILE *v22; // eax
   FILE *v23; // eax
-  int v24; // ebx
+  int Underline_Level; // ebx
   FILE *v25; // eax
   int v26; // ebx
   FILE *v27; // eax
@@ -96223,7 +96038,7 @@ int __cdecl HTML_end_element(HTStructured *me, int element_number, char **includ
   char *v54; // [esp+4h] [ebp-224h]
   const char *v56; // [esp+30h] [ebp-1F8h]
   const char *v57; // [esp+34h] [ebp-1F4h]
-  const char *v58; // [esp+38h] [ebp-1F0h]
+  const char *name; // [esp+38h] [ebp-1F0h]
   char *v59; // [esp+3Ch] [ebp-1ECh]
   char *v60; // [esp+40h] [ebp-1E8h]
   char *v61; // [esp+44h] [ebp-1E4h]
@@ -96240,7 +96055,7 @@ int __cdecl HTML_end_element(HTStructured *me, int element_number, char **includ
   const char *v72; // [esp+70h] [ebp-1B8h]
   const char *v73; // [esp+74h] [ebp-1B4h]
   const char *v74; // [esp+78h] [ebp-1B0h]
-  int v75; // [esp+7Ch] [ebp-1ACh]
+  int List_Nesting_Level; // [esp+7Ch] [ebp-1ACh]
   const char *v76; // [esp+80h] [ebp-1A8h]
   char v77; // [esp+8Bh] [ebp-19Dh]
   char v78; // [esp+93h] [ebp-195h]
@@ -96328,10 +96143,10 @@ int __cdecl HTML_end_element(HTStructured *me, int element_number, char **includ
       else
       {
         if ( me->sp->tag_number > 117 )
-          v58 = "special tag";
+          name = "special tag";
         else
-          v58 = HTML_dtd.tags[me->sp->tag_number].name;
-        v57 = v58;
+          name = HTML_dtd.tags[me->sp->tag_number].name;
+        v57 = name;
       }
       v56 = v57;
     }
@@ -96411,7 +96226,7 @@ int __cdecl HTML_end_element(HTStructured *me, int element_number, char **includ
                 v61 = me->sp->style->name;
               else
                 v61 = "(null)";
-              v10 = me->objects_figged_open;
+              objects_figged_open = me->objects_figged_open;
               v11 = &me->stack[799] - me->sp;
               v12 = TraceFP();
               fprintf(
@@ -96419,7 +96234,7 @@ int __cdecl HTML_end_element(HTStructured *me, int element_number, char **includ
                 "HTML:end_element[%d]: %s (level %d), %s - %s\n",
                 v11,
                 "Special OBJECT->FIG handling",
-                v10,
+                objects_figged_open,
                 "treating as end FIG",
                 v61);
             }
@@ -96447,7 +96262,7 @@ int __cdecl HTML_end_element(HTStructured *me, int element_number, char **includ
             v60 = me->sp->style->name;
           else
             v60 = "(null)";
-          v7 = me->objects_mixed_open;
+          objects_mixed_open = me->objects_mixed_open;
           v8 = &me->stack[799] - me->sp;
           v9 = TraceFP();
           fprintf(
@@ -96455,7 +96270,7 @@ int __cdecl HTML_end_element(HTStructured *me, int element_number, char **includ
             "HTML:end_element[%d]: %s (level %d), %s - %s\n",
             v8,
             "Special OBJECT handling",
-            v7,
+            objects_mixed_open,
             "leaving on stack",
             v60);
         }
@@ -96470,9 +96285,9 @@ int __cdecl HTML_end_element(HTStructured *me, int element_number, char **includ
           v59 = me->sp->style->name;
         else
           v59 = "(null)";
-        v5 = me->skip_stack;
+        skip_stack = me->skip_stack;
         v6 = TraceFP();
-        fprintf(v6, "HTML:end_element: Internal call (level %d), leaving on stack - %s\n", v5, v59);
+        fprintf(v6, "HTML:end_element: Internal call (level %d), leaving on stack - %s\n", skip_stack, v59);
       }
       --me->skip_stack;
     }
@@ -96496,17 +96311,13 @@ int __cdecl HTML_end_element(HTStructured *me, int element_number, char **includ
       if ( me->inA )
       {
         me->inA = 0;
-        if ( hidden_link_marker
-          && *hidden_link_marker
-          && _ZN25idRenderModelManagerLocal10CheckModelEPKc(me->text, me->CurrentANum) )
-        {
+        if ( hidden_link_marker && *hidden_link_marker && HText_isAnchorBlank(me->text, me->CurrentANum) )
           HText_appendText(me->text, hidden_link_marker);
-        }
         if ( me->style_change )
           actually_set_style(me);
         if ( me->inBoldA == 1 && !me->inBoldH )
           HText_appendCharacter(me->text, 6);
-        _ZN10Fl_Browser10bottomlineEi(me->text, me->CurrentANum);
+        HText_endAnchor(me->text, me->CurrentANum);
         me->CurrentANum = 0;
         me->inBoldA = 0;
         if ( me->Underline_Level > 0 && !me->inUnderline )
@@ -96584,9 +96395,9 @@ int __cdecl HTML_end_element(HTStructured *me, int element_number, char **includ
         }
         else if ( WWW_TraceFlag[0] )
         {
-          v24 = me->Underline_Level;
+          Underline_Level = me->Underline_Level;
           v25 = TraceFP();
-          fprintf(v25, "Underline Level is %d\n", v24);
+          fprintf(v25, "Underline Level is %d\n", Underline_Level);
         }
       }
       goto LABEL_689;
@@ -97270,10 +97081,10 @@ LABEL_689:
       }
       return status;
     case 80:
-      v75 = me->List_Nesting_Level;
-      if ( v75 > 11 )
-        v75 = 11;
-      me->OL_Counter[v75] = OL_VOID;
+      List_Nesting_Level = me->List_Nesting_Level;
+      if ( List_Nesting_Level > 11 )
+        List_Nesting_Level = 11;
+      me->OL_Counter[List_Nesting_Level] = OL_VOID;
 LABEL_292:
       --me->List_Nesting_Level;
       if ( WWW_TraceFlag[0] )
@@ -97745,7 +97556,7 @@ void __cdecl HTML_free(HTStructured *me)
   FILE *v1; // eax
   FILE *v2; // eax
   FILE *v3; // eax
-  char *v4; // ebx
+  char *data; // ebx
   FILE *v5; // eax
   FILE *v6; // eax
   char *v7; // ebx
@@ -97809,9 +97620,9 @@ void __cdecl HTML_free(HTStructured *me)
         HTChunkTerminate(&me->option);
         if ( WWW_TraceFlag[0] )
         {
-          v4 = me->option.data;
+          data = me->option.data;
           v5 = TraceFP();
-          fprintf(v5, "HTML_free: ***** leftover option data: %s\n", v4);
+          fprintf(v5, "HTML_free: ***** leftover option data: %s\n", data);
         }
         HTML_put_string(me, me->option.data);
         HTChunkClear(&me->option);
@@ -97958,7 +97769,7 @@ void __cdecl HTML_free(HTStructured *me)
 void __cdecl HTML_abort(HTStructured *me, HTError e)
 {
   FILE *v2; // eax
-  char *v3; // ebx
+  char *data; // ebx
   FILE *v4; // eax
   FILE *v5; // eax
   char *v6; // ebx
@@ -98000,9 +97811,9 @@ void __cdecl HTML_abort(HTStructured *me, HTError e)
       HTChunkTerminate(&me->option);
       if ( WWW_TraceFlag[0] )
       {
-        v3 = me->option.data;
+        data = me->option.data;
         v4 = TraceFP();
-        fprintf(v4, "HTML_abort: ***** leftover option data: %s\n", v3);
+        fprintf(v4, "HTML_abort: ***** leftover option data: %s\n", data);
       }
     }
     HTChunkClear(&me->option);
@@ -98156,8 +97967,7 @@ HTStructured *__cdecl HTML_new(HTParentAnchor *anchor, HTFormat format_out, HTSt
 {
   FILE *v3; // eax
   HTAtom *v4; // edx
-  LYUCcharset *v5; // edx
-  HTStructured *v7; // [esp+14h] [ebp-14h]
+  LYUCcharset *UCInfoStage; // edx
   HTStream_0 *intermediate; // [esp+20h] [ebp-8h]
   HTStructured_0 *me; // [esp+24h] [ebp-4h]
 
@@ -98262,20 +98072,20 @@ HTStructured *__cdecl HTML_new(HTParentAnchor *anchor, HTFormat format_out, HTSt
     me->inUCLYhndl = HTAnchor_getUCLYhndl(me->node_anchor, 1);
     if ( me->inUCLYhndl >= 0 )
     {
-      v5 = HTAnchor_getUCInfoStage(me->node_anchor, 1);
+      UCInfoStage = HTAnchor_getUCInfoStage(me->node_anchor, 1);
     }
     else
     {
       me->inUCLYhndl = HTAnchor_getUCLYhndl(me->node_anchor, 0);
-      v5 = HTAnchor_getUCInfoStage(me->node_anchor, 0);
+      UCInfoStage = HTAnchor_getUCInfoStage(me->node_anchor, 0);
     }
-    me->inUCI = v5;
+    me->inUCI = UCInfoStage;
     me->outUCI = HTAnchor_getUCInfoStage(me->node_anchor, 2);
     me->outUCLYhndl = HTAnchor_getUCLYhndl(me->node_anchor, 2);
     me->target = (HTStream *)stream;
     if ( stream )
       me->targetClass = *stream->isa;
-    v7 = (HTStructured *)me;
+    return (HTStructured *)me;
   }
   else
   {
@@ -98286,22 +98096,21 @@ HTStructured *__cdecl HTML_new(HTParentAnchor *anchor, HTFormat format_out, HTSt
       fprintf(stderr, "\n** Internal error: can't parse HTML to %s\n", format_out->name);
       exit_immediately(1);
     }
-    v7 = (HTStructured *)HTMLGenerator((HTStream_4 *)intermediate);
+    return (HTStructured *)HTMLGenerator((HTStream_4 *)intermediate);
   }
-  return v7;
 }
 
 //----- (080CEDA8) --------------------------------------------------------
 void __cdecl CacheThru_do_free(HTStream_0 *me)
 {
-  char *v1; // ebx
+  char *source_cache_file; // ebx
   FILE *v2; // eax
-  HTChunk *v3; // ebx
+  HTChunk *source_cache_chunk; // ebx
   FILE *v4; // eax
-  char *v5; // ebx
+  char *filename; // ebx
   FILE *v6; // edx
   char *v7; // eax
-  HTChunk *v8; // ebx
+  HTChunk *chunk; // ebx
   FILE *v9; // eax
   char *v10; // eax
   HTChunk *v11; // ebx
@@ -98313,9 +98122,9 @@ void __cdecl CacheThru_do_free(HTStream_0 *me)
   {
     if ( WWW_TraceFlag[0] )
     {
-      v1 = me->anchor->source_cache_file;
+      source_cache_file = me->anchor->source_cache_file;
       v2 = TraceFP();
-      fprintf(v2, "SourceCacheWriter: Removing previous file %s\n", v1);
+      fprintf(v2, "SourceCacheWriter: Removing previous file %s\n", source_cache_file);
     }
     LYRemoveTemp(me->anchor->source_cache_file);
     if ( me->anchor->source_cache_file )
@@ -98328,9 +98137,9 @@ void __cdecl CacheThru_do_free(HTStream_0 *me)
   {
     if ( WWW_TraceFlag[0] )
     {
-      v3 = me->anchor->source_cache_chunk;
+      source_cache_chunk = me->anchor->source_cache_chunk;
       v4 = TraceFP();
-      fprintf(v4, "SourceCacheWriter: Removing previous memory chunk %p\n", v3);
+      fprintf(v4, "SourceCacheWriter: Removing previous memory chunk %p\n", source_cache_chunk);
     }
     HTChunkFree(me->anchor->source_cache_chunk);
     me->anchor->source_cache_chunk = 0;
@@ -98359,9 +98168,9 @@ void __cdecl CacheThru_do_free(HTStream_0 *me)
       if ( WWW_TraceFlag[0] )
       {
         cp_freeme = HTAnchor_address((HTAnchor *)me->anchor);
-        v5 = me->filename;
+        filename = me->filename;
         v6 = TraceFP();
-        fprintf(v6, "SourceCacheWriter: Committing file %s for URL %s to anchor\n", v5, cp_freeme);
+        fprintf(v6, "SourceCacheWriter: Committing file %s for URL %s to anchor\n", filename, cp_freeme);
       }
       if ( cp_freeme )
         free(cp_freeme);
@@ -98373,9 +98182,9 @@ void __cdecl CacheThru_do_free(HTStream_0 *me)
     {
       if ( WWW_TraceFlag[0] )
       {
-        v8 = me->chunk;
+        chunk = me->chunk;
         v9 = TraceFP();
-        fprintf(v9, "SourceCacheWriter: memory chunk %p had errors.\n", v8);
+        fprintf(v9, "SourceCacheWriter: memory chunk %p had errors.\n", chunk);
       }
       HTChunkFree(me->chunk);
       me->last_chunk = 0;
@@ -98412,9 +98221,9 @@ void __cdecl CacheThru_free(HTStream_0 *me)
 //----- (080CF0CC) --------------------------------------------------------
 void __cdecl CacheThru_abort(HTStream_0 *me, HTError e)
 {
-  char *v2; // ebx
+  char *filename; // ebx
   FILE *v3; // eax
-  HTChunk *v4; // ebx
+  HTChunk *chunk; // ebx
   FILE *v5; // eax
 
   if ( me->fp )
@@ -98430,9 +98239,9 @@ void __cdecl CacheThru_abort(HTStream_0 *me, HTError e)
     {
       if ( WWW_TraceFlag[0] )
       {
-        v2 = me->filename;
+        filename = me->filename;
         v3 = TraceFP();
-        fprintf(v3, "SourceCacheWriter: Removing active file %s\n", v2);
+        fprintf(v3, "SourceCacheWriter: Removing active file %s\n", filename);
       }
       LYRemoveTemp(me->filename);
       if ( me->filename )
@@ -98445,9 +98254,9 @@ void __cdecl CacheThru_abort(HTStream_0 *me, HTError e)
     {
       if ( WWW_TraceFlag[0] )
       {
-        v4 = me->chunk;
+        chunk = me->chunk;
         v5 = TraceFP();
-        fprintf(v5, "SourceCacheWriter: Removing active memory chunk %p\n", v4);
+        fprintf(v5, "SourceCacheWriter: Removing active memory chunk %p\n", chunk);
       }
       HTChunkFree(me->chunk);
     }
@@ -98519,16 +98328,16 @@ void __cdecl CacheThru_write(HTStream_0 *me, const char *str, int l)
 //----- (080CF404) --------------------------------------------------------
 HTStream_0 *__cdecl CacheThru_new(HTParentAnchor *anchor, HTStream_0 *target)
 {
-  const char *v2; // ebx
+  const char *name; // ebx
   FILE *v3; // eax
   FILE *v4; // eax
-  char *v5; // ebx
+  char *source_cache_file; // ebx
   FILE *v6; // eax
   FILE *v7; // edx
   FILE *v8; // edx
-  HTChunk *v9; // ebx
+  HTChunk *source_cache_chunk; // ebx
   FILE *v10; // eax
-  HTChunk *v11; // ebx
+  HTChunk *chunk; // ebx
   FILE *v12; // edx
   HTProtocol *p; // [esp+24h] [ebp-114h]
   HTStream_0 *stream; // [esp+28h] [ebp-110h]
@@ -98545,9 +98354,9 @@ HTStream_0 *__cdecl CacheThru_new(HTParentAnchor *anchor, HTStream_0 *target)
   {
     if ( WWW_TraceFlag[0] )
     {
-      v2 = p->name;
+      name = p->name;
       v3 = TraceFP();
-      fprintf(v3, "SourceCacheWriter: Protocol is \"%s\"; not cached\n", v2);
+      fprintf(v3, "SourceCacheWriter: Protocol is \"%s\"; not cached\n", name);
     }
     return target;
   }
@@ -98571,9 +98380,9 @@ HTStream_0 *__cdecl CacheThru_new(HTParentAnchor *anchor, HTStream_0 *target)
   {
     if ( anchor->source_cache_file && WWW_TraceFlag[0] )
     {
-      v5 = anchor->source_cache_file;
+      source_cache_file = anchor->source_cache_file;
       v6 = TraceFP();
-      fprintf(v6, "SourceCacheWriter: If successful, will replace source cache file %s\n", v5);
+      fprintf(v6, "SourceCacheWriter: If successful, will replace source cache file %s\n", source_cache_file);
     }
     stream->fp = LYOpenTemp(filename, ".html", "wb");
     if ( !stream->fp )
@@ -98606,9 +98415,9 @@ HTStream_0 *__cdecl CacheThru_new(HTParentAnchor *anchor, HTStream_0 *target)
   {
     if ( anchor->source_cache_chunk && WWW_TraceFlag[0] )
     {
-      v9 = anchor->source_cache_chunk;
+      source_cache_chunk = anchor->source_cache_chunk;
       v10 = TraceFP();
-      fprintf(v10, "SourceCacheWriter: If successful, will replace memory chunk %p\n", v9);
+      fprintf(v10, "SourceCacheWriter: If successful, will replace memory chunk %p\n", source_cache_chunk);
     }
     stream->last_chunk = HTChunkCreateMayFail(4096, 1);
     stream->chunk = stream->last_chunk;
@@ -98616,17 +98425,17 @@ HTStream_0 *__cdecl CacheThru_new(HTParentAnchor *anchor, HTStream_0 *target)
       stream->status = -1;
     if ( WWW_TraceFlag[0] )
     {
-      v11 = stream->chunk;
+      chunk = stream->chunk;
       cp_freeme = HTAnchor_address((HTAnchor *)anchor);
       v12 = TraceFP();
-      fprintf(v12, "SourceCacheWriter: Caching source for URL %s in memory chunk %p\n", cp_freeme, v11);
+      fprintf(v12, "SourceCacheWriter: Caching source for URL %s in memory chunk %p\n", cp_freeme, chunk);
     }
     if ( cp_freeme )
       free(cp_freeme);
   }
   return stream;
 }
-// 80CF66C: conditional instruction was optimized away because of '%stream.4!=0'
+// 80CF66C: conditional instruction was optimized away because %stream.4!=0
 
 //----- (080CF871) --------------------------------------------------------
 HTStream_0 *__cdecl HTMLToPlain(HTPresentation *pres, HTParentAnchor *anchor, HTStream_0 *sink)
@@ -98648,7 +98457,7 @@ HTStream_0 *__cdecl HTMLToPlain(HTPresentation *pres, HTParentAnchor *anchor, HT
 //----- (080CF8DD) --------------------------------------------------------
 HTStream_0 *__cdecl HTMLParsedPresent(HTPresentation *pres, HTParentAnchor *anchor, HTStream_0 *sink)
 {
-  HTAtom *v3; // ebx
+  HTAtom *rep_out; // ebx
   HTAtom *v4; // edx
   FILE *v5; // eax
   HTStream_0 *v7; // [esp+4h] [ebp-24h]
@@ -98668,11 +98477,11 @@ HTStream_0 *__cdecl HTMLParsedPresent(HTPresentation *pres, HTParentAnchor *anch
       structured_cset = current_char_set;
     HTAnchor_setUCInfoStage(anchor, structured_cset, 1, 5);
     if ( pres->rep_out == WWW_SOURCE )
-      v3 = HTAtom_for("www/present");
+      rep_out = HTAtom_for("www/present");
     else
-      v3 = pres->rep_out;
+      rep_out = pres->rep_out;
     v4 = HTAtom_for("text/plain");
-    intermediate = (HTStream_0 *)HTStreamStack(v4, v3, 0, anchor);
+    intermediate = (HTStream_0 *)HTStreamStack(v4, rep_out, 0, anchor);
     if ( old_parser_cset != structured_cset )
     {
       HTAnchor_resetUCInfoStage(anchor, old_parser_cset, 1, 0);
@@ -98849,11 +98658,11 @@ void __cdecl HTFWriter_write(HTStream_1 *me, const char *s, int l)
 //----- (080CFF57) --------------------------------------------------------
 void __cdecl HTFWriter_free(HTStream_1 *me)
 {
-  HTAtom *v1; // ebx
+  HTAtom *input_format; // ebx
   char *v2; // eax
   char *v3; // ebx
   char *v4; // eax
-  HTAtom *v5; // ebx
+  HTAtom *output_format; // ebx
   char *addr; // [esp+24h] [ebp-14h] BYREF
   char *path; // [esp+28h] [ebp-10h] BYREF
   int len; // [esp+2Ch] [ebp-Ch]
@@ -98870,8 +98679,8 @@ void __cdecl HTFWriter_free(HTStream_1 *me)
   if ( me->end_command )
   {
     LYCloseTempFP(me->fp);
-    v1 = me->input_format;
-    if ( v1 == HTAtom_for("www/compressed") )
+    input_format = me->input_format;
+    if ( input_format == HTAtom_for("www/compressed") )
     {
       if ( me->anchor->FileCache )
       {
@@ -98985,8 +98794,8 @@ void __cdecl HTFWriter_free(HTStream_1 *me)
           }
           if ( dump_output_immediately )
           {
-            v5 = me->output_format;
-            if ( v5 == HTAtom_for("www/present") )
+            output_format = me->output_format;
+            if ( output_format == HTAtom_for("www/present") )
             {
               if ( addr )
               {
@@ -99095,7 +98904,7 @@ void __cdecl HTFWriter_abort(HTStream_1 *me, HTError e)
   FILE *v3; // eax
   int *v4; // eax
   char *v5; // esi
-  char *v6; // ebx
+  char *remove_command; // ebx
   char *v7; // eax
   char buf[560]; // [esp+2Ch] [ebp-23Ch] BYREF
   unsigned int v9; // [esp+25Ch] [ebp-Ch]
@@ -99131,9 +98940,9 @@ void __cdecl HTFWriter_abort(HTStream_1 *me, HTError e)
       {
         v4 = __errno_location();
         v5 = strerror(*v4);
-        v6 = me->remove_command;
+        remove_command = me->remove_command;
         v7 = gettext("Error deleting file");
-        sprintf(buf, "%.60s '%.400s': %.60s", v7, v6, v5);
+        sprintf(buf, "%.60s '%.400s': %.60s", v7, remove_command, v5);
         HTAlert(buf);
       }
       if ( me->remove_command )
@@ -99188,7 +98997,7 @@ char *__cdecl mailcap_substitute(HTParentAnchor *anchor, HTPresentation *pres, c
       free(result);
       result = 0;
     }
-    result = prepend;
+    return prepend;
   }
   return result;
 }
@@ -99200,7 +99009,6 @@ HTStream_1 *__cdecl HTSaveAndExecute(HTPresentation *pres, HTParentAnchor *ancho
   char *v4; // ebx
   char *v5; // eax
   char *v6; // eax
-  HTStream_1 *v8; // [esp+14h] [ebp-124h]
   char *buf; // [esp+24h] [ebp-114h] BYREF
   HTStream_1 *me; // [esp+28h] [ebp-110h]
   const char *suffix; // [esp+2Ch] [ebp-10Ch]
@@ -99211,7 +99019,7 @@ HTStream_1 *__cdecl HTSaveAndExecute(HTPresentation *pres, HTParentAnchor *ancho
   if ( traversal )
   {
     LYCancelledFetch = 1;
-    v8 = 0;
+    return 0;
   }
   else
   {
@@ -99234,7 +99042,7 @@ HTStream_1 *__cdecl HTSaveAndExecute(HTPresentation *pres, HTParentAnchor *ancho
 LABEL_15:
       if ( dump_output_immediately )
       {
-        v8 = HTSaveToFile(pres, anchor, sink);
+        return HTSaveToFile(pres, anchor, sink);
       }
       else
       {
@@ -99284,7 +99092,7 @@ LABEL_15:
           HTAddParam(&me->remove_command, "%s", 1, fnam);
           HTEndParam(&me->remove_command, "%s", 1);
           HTSACopy(&anchor->FileCache, fnam);
-          v8 = me;
+          return me;
         }
         else
         {
@@ -99295,7 +99103,7 @@ LABEL_15:
             free(me);
             me = 0;
           }
-          v8 = 0;
+          return 0;
         }
       }
     }
@@ -99311,17 +99119,16 @@ LABEL_15:
         free(buf);
         buf = 0;
       }
-      v8 = (HTStream_1 *)HTPlainPresent(pres, anchor, (HTStream_3 *)sink);
+      return (HTStream_1 *)HTPlainPresent(pres, anchor, (HTStream_3 *)sink);
     }
   }
-  return v8;
 }
 
 //----- (080D0F0B) --------------------------------------------------------
 HTStream_1 *__cdecl HTSaveToFile(HTPresentation *pres, HTParentAnchor *anchor, HTStream_1 *sink)
 {
   char *v3; // eax
-  char *v4; // ebx
+  char *name; // ebx
   char *v5; // eax
   char *v6; // eax
   char *v7; // eax
@@ -99329,7 +99136,7 @@ HTStream_1 *__cdecl HTSaveToFile(HTPresentation *pres, HTParentAnchor *anchor, H
   char *v9; // ebx
   char *v10; // eax
   char *v11; // eax
-  char *v14; // [esp+14h] [ebp-134h]
+  char *address; // [esp+14h] [ebp-134h]
   char *temp; // [esp+28h] [ebp-120h] BYREF
   int c; // [esp+2Ch] [ebp-11Ch]
   char *cp; // [esp+30h] [ebp-118h]
@@ -99383,9 +99190,9 @@ HTStream_1 *__cdecl HTSaveToFile(HTPresentation *pres, HTParentAnchor *anchor, H
   if ( cp && strstr(cp + 1, "charset") || *pres->rep->name )
   {
     mustshow[0] = 1;
-    v4 = pres->rep->name;
+    name = pres->rep->name;
     v5 = gettext("%s  D)ownload, or C)ancel");
-    user_message(v5, v4);
+    user_message(v5, name);
   }
   else
   {
@@ -99532,10 +99339,10 @@ Prepend_BASE:
         }
       }
       if ( temp )
-        v14 = temp;
+        address = temp;
       else
-        v14 = anchor->address;
-      fprintf(ret_obj->fp, "<BASE HREF=\"%s\">\n\n", v14);
+        address = anchor->address;
+      fprintf(ret_obj->fp, "<BASE HREF=\"%s\">\n\n", address);
       if ( temp )
       {
         free(temp);
@@ -99572,12 +99379,11 @@ Prepend_BASE:
 //----- (080D199D) --------------------------------------------------------
 HTStream_1 *__cdecl HTCompressed(HTPresentation *pres, HTParentAnchor *anchor, HTStream_1 *sink)
 {
-  HTAtom *v3; // ebx
+  HTAtom *rep_out; // ebx
   HTAtom *v4; // eax
   size_t v5; // eax
   FILE *v6; // eax
   char *v7; // eax
-  HTStream_1 *v9; // [esp+20h] [ebp-258h]
   CompressFileType v10; // [esp+24h] [ebp-254h]
   const char *program; // [esp+3Ch] [ebp-23Ch]
   const char *programa; // [esp+3Ch] [ebp-23Ch]
@@ -99617,8 +99423,8 @@ HTStream_1 *__cdecl HTCompressed(HTPresentation *pres, HTParentAnchor *anchor, H
     Pnow = (HTPresentation *)HTList_objectAt(HTPresentations, i);
     if ( !strcasecomp(Pnow->rep->name, anchor->content_type) )
     {
-      v3 = Pnow->rep_out;
-      if ( v3 == HTAtom_for("www/present") )
+      rep_out = Pnow->rep_out;
+      if ( rep_out == HTAtom_for("www/present") )
       {
         if ( Pres )
         {
@@ -99708,8 +99514,7 @@ HTStream_1 *__cdecl HTCompressed(HTPresentation *pres, HTParentAnchor *anchor, H
       free(uncompress_mask);
       uncompress_mask = 0;
     }
-    me = (HTStream_1 *)HTStreamStack(format, pres->rep_out, (HTStream_5 *)sink, anchor);
-    v9 = me;
+    return (HTStream_1 *)HTStreamStack(format, pres->rep_out, (HTStream_5 *)sink, anchor);
   }
   else
   {
@@ -99797,7 +99602,7 @@ HTStream_1 *__cdecl HTCompressed(HTPresentation *pres, HTParentAnchor *anchor, H
       HTAddParam(&me->remove_command, "%s", 1, fnam);
       HTEndParam(&me->remove_command, "%s", 1);
       HTSACopy(&anchor->FileCache, fnam);
-      v9 = me;
+      return me;
     }
     else
     {
@@ -99813,10 +99618,9 @@ HTStream_1 *__cdecl HTCompressed(HTPresentation *pres, HTParentAnchor *anchor, H
         free(me);
         me = 0;
       }
-      v9 = 0;
+      return 0;
     }
   }
-  return v9;
 }
 
 //----- (080D2408) --------------------------------------------------------
@@ -100086,9 +99890,9 @@ void __cdecl TrimCommand(char *command)
   }
   *d = 0;
 }
-// 80D3659: conditional instruction was optimized away because of '%escape.1==0'
-// 80D36AD: conditional instruction was optimized away because of '%dquote.1==0'
-// 80D36B7: conditional instruction was optimized away because of '%escape.1==0'
+// 80D3659: conditional instruction was optimized away because %escape.1==0
+// 80D36AD: conditional instruction was optimized away because %dquote.1==0
+// 80D36B7: conditional instruction was optimized away because %escape.1==0
 
 //----- (080D3719) --------------------------------------------------------
 int __cdecl ProcessMailcapEntry(FILE *fp, MailcapEntry *mc, AcceptMedia media)
@@ -100098,13 +99902,12 @@ int __cdecl ProcessMailcapEntry(FILE *fp, MailcapEntry *mc, AcceptMedia media)
   char *v5; // eax
   FILE *v6; // eax
   FILE *v7; // eax
-  char *v8; // ebx
+  char *testcommand; // ebx
   FILE *v9; // eax
   FILE *v10; // eax
-  char *v11; // ebx
-  char *v12; // esi
+  char *command; // ebx
+  char *contenttype; // esi
   FILE *v13; // eax
-  int v15; // [esp+38h] [ebp-40h]
   float v16; // [esp+3Ch] [ebp-3Ch]
   char *mallocd_string; // [esp+48h] [ebp-30h] BYREF
   char *eq; // [esp+4Ch] [ebp-2Ch]
@@ -100211,9 +100014,9 @@ int __cdecl ProcessMailcapEntry(FILE *fp, MailcapEntry *mc, AcceptMedia media)
                 TrimCommand(mc->testcommand);
                 if ( WWW_TraceFlag[0] && (WWW_TraceMask & 8) != 0 )
                 {
-                  v8 = mc->testcommand;
+                  testcommand = mc->testcommand;
                   v9 = TraceFP();
-                  fprintf(v9, "ProcessMailcapEntry: Found testcommand:%s\n", v8);
+                  fprintf(v9, "ProcessMailcapEntry: Found testcommand:%s\n", testcommand);
                 }
               }
               else if ( eq && !strcmp(arg, "description") )
@@ -100266,10 +100069,10 @@ int __cdecl ProcessMailcapEntry(FILE *fp, MailcapEntry *mc, AcceptMedia media)
         {
           if ( WWW_TraceFlag[0] && (WWW_TraceMask & 8) != 0 )
           {
-            v11 = mc->command;
-            v12 = mc->contenttype;
+            command = mc->command;
+            contenttype = mc->contenttype;
             v13 = TraceFP();
-            fprintf(v13, "ProcessMailcapEntry Setting up conversion %s : %s\n", v12, v11);
+            fprintf(v13, "ProcessMailcapEntry Setting up conversion %s : %s\n", contenttype, command);
           }
           HTSetPresentation(mc->contenttype, mc->command, mc->testcommand, mc->quality, 3.0, 0.0, mc->maxbytes, media);
         }
@@ -100288,7 +100091,7 @@ int __cdecl ProcessMailcapEntry(FILE *fp, MailcapEntry *mc, AcceptMedia media)
           free(mc->contenttype);
           mc->contenttype = 0;
         }
-        v15 = 1;
+        return 1;
       }
       else
       {
@@ -100303,7 +100106,7 @@ int __cdecl ProcessMailcapEntry(FILE *fp, MailcapEntry *mc, AcceptMedia media)
           free(rawentry);
           rawentry = 0;
         }
-        v15 = 0;
+        return 0;
       }
     }
     else
@@ -100318,7 +100121,7 @@ int __cdecl ProcessMailcapEntry(FILE *fp, MailcapEntry *mc, AcceptMedia media)
         free(rawentry);
         rawentry = 0;
       }
-      v15 = 0;
+      return 0;
     }
   }
   else
@@ -100328,9 +100131,8 @@ int __cdecl ProcessMailcapEntry(FILE *fp, MailcapEntry *mc, AcceptMedia media)
       free(rawentry);
       rawentry = 0;
     }
-    v15 = 0;
+    return 0;
   }
-  return v15;
 }
 
 //----- (080D3EE5) --------------------------------------------------------
@@ -100370,13 +100172,10 @@ const char *__cdecl LYSkipToken(const char *s)
 //----- (080D3F7F) --------------------------------------------------------
 const char *__cdecl LYSkipValue(const char *s)
 {
-  const char *sa; // [esp+10h] [ebp+8h]
-
   if ( *s == 34 )
-    sa = LYSkipQuoted(s);
+    return LYSkipQuoted(s);
   else
-    sa = LYSkipToken(s);
-  return sa;
+    return LYSkipToken(s);
 }
 
 //----- (080D3FB2) --------------------------------------------------------
@@ -100644,14 +100443,14 @@ LABEL_17:
   HTChunkTerminate(cmd);
   return result;
 }
-// 80D440E: conditional instruction was optimized away because of '%value.4!=0'
-// 80D44E2: conditional instruction was optimized away because of '%value.4!=0'
+// 80D440E: conditional instruction was optimized away because %value.4!=0
+// 80D44E2: conditional instruction was optimized away because %value.4!=0
 
 //----- (080D4611) --------------------------------------------------------
 int __cdecl LYTestMailcapCommand(const char *testcommand, const char *params)
 {
   char *v2; // eax
-  const char *v3; // ebx
+  const char *data; // ebx
   FILE *v4; // eax
   const char *v5; // ebx
   FILE *v6; // eax
@@ -100682,9 +100481,9 @@ int __cdecl LYTestMailcapCommand(const char *testcommand, const char *params)
     result = 1;
     if ( WWW_TraceFlag[0] && (WWW_TraceMask & 8) != 0 )
     {
-      v3 = expanded->data;
+      data = expanded->data;
       v4 = TraceFP();
-      fprintf(v4, "PassesTest: Deferring test command: %s\n", v3);
+      fprintf(v4, "PassesTest: Deferring test command: %s\n", data);
     }
   }
   else
@@ -100733,7 +100532,6 @@ char *__cdecl LYMakeMailcapCommand(const char *command, const char *params, cons
 //----- (080D48A7) --------------------------------------------------------
 int __cdecl RememberTestResult(int mode, char *cmd, int result)
 {
-  int v4; // [esp+14h] [ebp-14h]
   RememberTestResult::cmdlist_s *cur; // [esp+24h] [ebp-4h]
   RememberTestResult::cmdlist_s *cura; // [esp+24h] [ebp-4h]
   RememberTestResult::cmdlist_s *curb; // [esp+24h] [ebp-4h]
@@ -100745,7 +100543,7 @@ int __cdecl RememberTestResult(int mode, char *cmd, int result)
       if ( !strcmp(cmd, cura->cmd) )
         return cura->result;
     }
-    v4 = -1;
+    return -1;
   }
   else
   {
@@ -100777,9 +100575,8 @@ int __cdecl RememberTestResult(int mode, char *cmd, int result)
         cmdlist_10828 = cur;
       }
     }
-    v4 = 0;
+    return 0;
   }
-  return v4;
 }
 
 //----- (080D49E5) --------------------------------------------------------
@@ -100797,7 +100594,6 @@ int __cdecl PassesTest(MailcapEntry *mc)
   FILE *v10; // eax
   FILE *v11; // eax
   FILE *v12; // eax
-  int v14; // [esp+14h] [ebp-14h]
   int result; // [esp+24h] [ebp-4h]
 
   if ( !mc->testcommand )
@@ -100823,7 +100619,7 @@ int __cdecl PassesTest(MailcapEntry *mc)
         v2 = TraceFP();
         fprintf(v2, "PassesTest: Test passed!\n");
       }
-      v14 = 1;
+      return 1;
     }
     else
     {
@@ -100832,7 +100628,7 @@ int __cdecl PassesTest(MailcapEntry *mc)
         v3 = TraceFP();
         fprintf(v3, "PassesTest: Test failed!\n");
       }
-      v14 = 0;
+      return 0;
     }
   }
   else if ( !strcmp(mc->testcommand, "test -z \"$DISPLAY\"") )
@@ -100854,7 +100650,7 @@ int __cdecl PassesTest(MailcapEntry *mc)
         v6 = TraceFP();
         fprintf(v6, "PassesTest: Test failed!\n");
       }
-      v14 = 0;
+      return 0;
     }
     else
     {
@@ -100863,7 +100659,7 @@ int __cdecl PassesTest(MailcapEntry *mc)
         v5 = TraceFP();
         fprintf(v5, "PassesTest: Test passed!\n");
       }
-      v14 = 1;
+      return 1;
     }
   }
   else if ( !strcmp(mc->testcommand, "test -n \"$LYNX_VERSION\"") )
@@ -100883,7 +100679,7 @@ int __cdecl PassesTest(MailcapEntry *mc)
       v8 = TraceFP();
       fprintf(v8, "PassesTest: Test passed!\n");
     }
-    v14 = 1;
+    return 1;
   }
   else if ( !strcmp(mc->testcommand, "test -z \"$LYNX_VERSION\"") )
   {
@@ -100902,7 +100698,7 @@ int __cdecl PassesTest(MailcapEntry *mc)
       v10 = TraceFP();
       fprintf(v10, "PassesTest: Test failed!\n");
     }
-    v14 = 0;
+    return 0;
   }
   else
   {
@@ -100930,9 +100726,8 @@ int __cdecl PassesTest(MailcapEntry *mc)
       v11 = TraceFP();
       fprintf(v11, "PassesTest: Test failed!\n");
     }
-    v14 = result >= 0;
+    return result >= 0;
   }
-  return v14;
 }
 
 //----- (080D4E63) --------------------------------------------------------
@@ -100940,7 +100735,6 @@ int __cdecl ProcessMailcapFile(char *file, AcceptMedia media)
 {
   FILE *v2; // eax
   FILE *v3; // eax
-  int v5; // [esp+14h] [ebp-34h]
   MailcapEntry mc; // [esp+18h] [ebp-30h] BYREF
   FILE *fp; // [esp+44h] [ebp-4h]
 
@@ -100956,7 +100750,7 @@ int __cdecl ProcessMailcapFile(char *file, AcceptMedia media)
       ProcessMailcapEntry(fp, &mc, media);
     LYCloseInput(fp);
     RememberTestResult(0, 0, 0);
-    v5 = 1;
+    return 1;
   }
   else
   {
@@ -100965,9 +100759,8 @@ int __cdecl ProcessMailcapFile(char *file, AcceptMedia media)
       v3 = TraceFP();
       fprintf(v3, "ProcessMailcapFile: Could not open '%s'.\n", file);
     }
-    v5 = 0;
+    return 0;
   }
-  return v5;
 }
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
@@ -101247,7 +101040,6 @@ int __cdecl HTLoadExtensionsConfigFile(char *fn)
   char *v3; // ebx
   char *v4; // esi
   FILE *v5; // eax
-  int v7; // [esp+18h] [ebp-230h]
   char *ext; // [esp+2Ch] [ebp-21Ch] BYREF
   int count; // [esp+30h] [ebp-218h]
   FILE *f; // [esp+34h] [ebp-214h]
@@ -101317,7 +101109,7 @@ int __cdecl HTLoadExtensionsConfigFile(char *fn)
       }
     }
     LYCloseInput(f);
-    v7 = count;
+    return count;
   }
   else
   {
@@ -101326,9 +101118,8 @@ int __cdecl HTLoadExtensionsConfigFile(char *fn)
       v2 = TraceFP();
       fprintf(v2, "HTLoadExtensionsConfigFile: Could not open '%s'.\n", fn);
     }
-    v7 = count;
+    return count;
   }
-  return v7;
 }
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
@@ -101336,7 +101127,7 @@ int __cdecl HTLoadExtensionsConfigFile(char *fn)
 HTStyleSheet *__cdecl DefaultStyle(HTStyle ***result_array)
 {
   HTStyleSheet *v1; // eax
-  HTStyle *v2; // edx
+  HTStyle *styles; // edx
   HTStyle *r; // [esp+24h] [ebp-14h]
   HTStyle *q; // [esp+28h] [ebp-10h]
   HTStyle *qa; // [esp+28h] [ebp-10h]
@@ -101367,9 +101158,9 @@ HTStyleSheet *__cdecl DefaultStyle(HTStyle ***result_array)
   {
     v1 = HTStyleSheetNew();
     result = v1;
-    v2 = sheet.styles;
+    styles = sheet.styles;
     v1->name = sheet.name;
-    v1->styles = v2;
+    v1->styles = styles;
     result->styles = 0;
     for ( p = sheet.styles; p; p = p->next )
     {
@@ -101407,7 +101198,6 @@ int __cdecl LYUpload(char *line)
   char *v12; // eax
   char *v13; // eax
   int v15; // [esp+18h] [ebp-140h]
-  int v16; // [esp+1Ch] [ebp-13Ch]
   char *the_command; // [esp+30h] [ebp-128h] BYREF
   lynx_list_item_type *upload_command; // [esp+34h] [ebp-124h]
   char *filename; // [esp+38h] [ebp-120h] BYREF
@@ -101511,7 +101301,7 @@ failed:
     }
     v13 = gettext("Cancelling!");
     HTInfoMsg(v13);
-    v16 = 0;
+    return 0;
   }
   else
   {
@@ -101546,9 +101336,8 @@ LABEL_27:
       free(filename);
       filename = 0;
     }
-    v16 = 1;
+    return 1;
   }
-  return v16;
 }
 
 //----- (080D7456) --------------------------------------------------------
@@ -101618,7 +101407,6 @@ void no_leak_checking()
 int __cdecl LYatexit(void (*function)(void))
 {
   FILE *v1; // eax
-  int v3; // [esp+14h] [ebp-4h]
 
   if ( topOfStack_0 == 50 )
   {
@@ -101627,14 +101415,13 @@ int __cdecl LYatexit(void (*function)(void))
       v1 = TraceFP();
       fprintf(v1, "(LY)atexit: Too many functions, ignoring one!\n");
     }
-    v3 = -1;
+    return -1;
   }
   else
   {
     callstack[topOfStack_0++] = function;
-    v3 = 0;
+    return 0;
   }
-  return v3;
 }
 
 //----- (080D7728) --------------------------------------------------------
@@ -101734,12 +101521,12 @@ void LYJumpTable_free()
   }
   JThead = 0;
 }
-// 80D79D4: conditional instruction was optimized away because of '%cur.4!=0'
+// 80D79D4: conditional instruction was optimized away because %cur.4!=0
 
 //----- (080D7A04) --------------------------------------------------------
 void __cdecl LYAddJumpShortcut(HTList *historyp, char *shortcut)
 {
-  void *v2; // [esp+14h] [ebp-14h]
+  void *object; // [esp+14h] [ebp-14h]
   HTList *cur; // [esp+1Ch] [ebp-Ch]
   char *tmp; // [esp+24h] [ebp-4h] BYREF
 
@@ -101751,28 +101538,27 @@ void __cdecl LYAddJumpShortcut(HTList *historyp, char *shortcut)
     while ( 1 )
     {
       if ( cur && (cur = cur->next) != 0 )
-        v2 = cur->object;
+        object = cur->object;
       else
-        v2 = 0;
-      if ( !v2 )
+        object = 0;
+      if ( !object )
         break;
-      if ( !strcmp((const char *)v2, tmp) )
+      if ( !strcmp((const char *)object, tmp) )
       {
-        HTList_removeObject(historyp, v2);
-        free(v2);
+        HTList_removeObject(historyp, object);
+        free(object);
         break;
       }
     }
     HTList_addObject(historyp, tmp);
   }
 }
-// 80D7A79: conditional instruction was optimized away because of '%var_14.4!=0'
+// 80D7A79: conditional instruction was optimized away because %var_14.4!=0
 
 //----- (080D7AD5) --------------------------------------------------------
 BOOLEAN __cdecl LYJumpInit(char *config)
 {
-  const char *v1; // ebx
-  BOOLEAN v3; // [esp+13h] [ebp-15h]
+  const char *msg; // ebx
   JumpTable *jtptmp; // [esp+18h] [ebp-10h]
   const char *cp; // [esp+1Ch] [ebp-Ch]
   char *cpa; // [esp+1Ch] [ebp-Ch]
@@ -101809,13 +101595,13 @@ BOOLEAN __cdecl LYJumpInit(char *config)
       }
       if ( !cpa )
         HTSACopy(&jtp->msg, jumpprompt);
-      v1 = jtp->msg;
-      if ( v1[strlen(v1) - 1] != 32 )
+      msg = jtp->msg;
+      if ( msg[strlen(msg) - 1] != 32 )
         HTSACat(&jtp->msg, " ");
       jtp->history = HTList_new();
       jtp->next = JThead;
       JThead = jtp;
-      v3 = 1;
+      return 1;
     }
     else
     {
@@ -101828,24 +101614,23 @@ BOOLEAN __cdecl LYJumpInit(char *config)
       {
         HTSACopy(&jtptmp->file, jumpfile);
         HTSACopy(&jtptmp->msg, jumpprompt);
-        v3 = 1;
+        return 1;
       }
       else
       {
-        v3 = 0;
+        return 0;
       }
     }
   }
   else
   {
     free(jtp);
-    v3 = 0;
+    return 0;
   }
-  return v3;
 }
-// 80D7B2D: conditional instruction was optimized away because of '%jtp.4!=0'
-// 80D7B6B: conditional instruction was optimized away because of '%jtp.4!=0'
-// 80D7BE2: conditional instruction was optimized away because of '%jtp.4!=0'
+// 80D7B2D: conditional instruction was optimized away because %jtp.4!=0
+// 80D7B6B: conditional instruction was optimized away because %jtp.4!=0
+// 80D7BE2: conditional instruction was optimized away because %jtp.4!=0
 
 //----- (080D7DED) --------------------------------------------------------
 char *__cdecl LYJump(int key)
@@ -101859,10 +101644,8 @@ char *__cdecl LYJump(int key)
   char *v7; // eax
   char *v8; // eax
   char *v9; // eax
-  char *v11; // [esp+18h] [ebp-40h]
   int v12; // [esp+1Ch] [ebp-3Ch]
   bool v13; // [esp+23h] [ebp-35h]
-  char *v14; // [esp+24h] [ebp-34h]
   JumpDatum seeking; // [esp+28h] [ebp-30h] BYREF
   char *msg; // [esp+30h] [ebp-28h] BYREF
   int ShortcutNum; // [esp+34h] [ebp-24h]
@@ -101923,7 +101706,7 @@ char *__cdecl LYJump(int key)
 LABEL_83:
         v9 = gettext("Cancelled!!!");
         HTInfoMsg(v9);
-        v11 = 0;
+        return 0;
       }
       else
       {
@@ -102036,15 +101819,14 @@ LABEL_84:
         HTSACopy(&jtp->shortcut, bp_0);
         LYAddJumpShortcut(jtp->history, jtp->shortcut);
         if ( found )
-          v14 = found->url;
+          return found->url;
         else
-          v14 = 0;
-        v11 = v14;
+          return 0;
       }
     }
     else
     {
-      v11 = 0;
+      return 0;
     }
   }
   else
@@ -102058,25 +101840,23 @@ LABEL_84:
       free(msg);
       msg = 0;
     }
-    v11 = 0;
+    return 0;
   }
-  return v11;
 }
 
 //----- (080D8478) --------------------------------------------------------
 unsigned int __cdecl LYRead_Jumpfile(JumpTable *jtp)
 {
-  char *v1; // ebx
+  char *file; // ebx
   FILE *v2; // eax
   char *v3; // eax
   char *v4; // eax
   char *v5; // eax
   char *v6; // eax
   char *v7; // eax
-  char *v8; // esi
-  char *v9; // ebx
+  char *url; // esi
+  char *key; // ebx
   FILE *v10; // eax
-  unsigned int v12; // [esp+1Ch] [ebp-9Ch]
   ssize_t v13; // [esp+20h] [ebp-98h]
   stat st; // [esp+3Ch] [ebp-7Ch] BYREF
   unsigned int i; // [esp+9Ch] [ebp-1Ch]
@@ -102089,9 +101869,9 @@ unsigned int __cdecl LYRead_Jumpfile(JumpTable *jtp)
     return 0;
   if ( WWW_TraceFlag[0] )
   {
-    v1 = jtp->file;
+    file = jtp->file;
     v2 = TraceFP();
-    fprintf(v2, "Read Jumpfile %s\n", v1);
+    fprintf(v2, "Read Jumpfile %s\n", file);
   }
   if ( stat64((int)jtp->file, (int)&st) >= 0 )
   {
@@ -102126,47 +101906,47 @@ unsigned int __cdecl LYRead_Jumpfile(JumpTable *jtp)
               {
                 cp = strchr(cp, 10);
                 if ( !cp )
-                  break;
+                  return i;
                 ++cp;
               }
               else
               {
                 cp = LYstrstr(cp, "<dt>");
                 if ( !cp )
-                  break;
+                  return i;
                 cp += 4;
                 jtp->table[i].key = cp;
                 cp = LYstrstr(cp, "<dd>");
                 if ( !cp )
-                  break;
+                  return i;
                 *cp = 0;
                 cp += 4;
                 cp = LYstrstr(cp, "href=\"");
                 if ( !cp )
-                  break;
+                  return i;
                 cp += 6;
                 jtp->table[i].url = cp;
                 cp = strchr(cp, 34);
                 if ( !cp )
-                  break;
+                  return i;
                 *cp++ = 0;
                 cp = strchr(cp, 10);
                 if ( !cp )
-                  break;
+                  return i;
                 ++cp;
                 if ( WWW_TraceFlag[0] )
                 {
-                  v8 = jtp->table[i].url;
-                  v9 = jtp->table[i].key;
+                  url = jtp->table[i].url;
+                  key = jtp->table[i].key;
                   v10 = TraceFP();
-                  fprintf(v10, "Read jumpfile[%u] key='%s', url='%s'\n", i, v9, v8);
+                  fprintf(v10, "Read jumpfile[%u] key='%s', url='%s'\n", i, key, url);
                 }
                 ++i;
                 if ( !cp )
-                  break;
+                  return i;
               }
             }
-            v12 = i;
+            return i;
           }
           else
           {
@@ -102177,7 +101957,7 @@ unsigned int __cdecl LYRead_Jumpfile(JumpTable *jtp)
               free(mp);
               mp = 0;
             }
-            v12 = 0;
+            return 0;
           }
         }
         else
@@ -102189,7 +101969,7 @@ unsigned int __cdecl LYRead_Jumpfile(JumpTable *jtp)
             free(mp);
             mp = 0;
           }
-          v12 = 0;
+          return 0;
         }
       }
       else
@@ -102201,23 +101981,22 @@ unsigned int __cdecl LYRead_Jumpfile(JumpTable *jtp)
           free(mp);
           mp = 0;
         }
-        v12 = 0;
+        return 0;
       }
     }
     else
     {
       v4 = gettext("Out of memory reading jump file!");
       HTAlert(v4);
-      v12 = 0;
+      return 0;
     }
   }
   else
   {
     v3 = gettext("Cannot locate jump file!");
     HTAlert(v3);
-    v12 = 0;
+    return 0;
   }
-  return v12;
 }
 
 //----- (080D88E6) --------------------------------------------------------
@@ -102470,10 +102249,10 @@ int __cdecl showlist(DocInfo *newdoc, BOOLEAN titles)
   newdoc->safe = 0;
   return 0;
 }
-// 80D8C2B: conditional instruction was optimized away because of '%dest_intl.4==0'
-// 80D8C61: conditional instruction was optimized away because of '%dest_intl.4==0'
-// 80D8CD9: conditional instruction was optimized away because of '%dest_intl.4==0'
-// 80D8EA5: conditional instruction was optimized away because of '%dest_intl.4==0'
+// 80D8C2B: conditional instruction was optimized away because %dest_intl.4==0
+// 80D8C61: conditional instruction was optimized away because %dest_intl.4==0
+// 80D8CD9: conditional instruction was optimized away because %dest_intl.4==0
+// 80D8EA5: conditional instruction was optimized away because %dest_intl.4==0
 
 //----- (080D9132) --------------------------------------------------------
 void __cdecl print_refs(FILE *fp, BOOLEAN titles, int refs)
@@ -102723,7 +102502,7 @@ int __cdecl LYLoadCGI(const char *arg, HTParentAnchor *anAnchor, HTFormat format
   FILE *v24; // eax
   char *v25; // eax
   char *v26; // eax
-  char *v27; // esi
+  char *name; // esi
   char *v28; // ebx
   char *v29; // eax
   char *v30; // eax
@@ -102735,7 +102514,7 @@ int __cdecl LYLoadCGI(const char *arg, HTParentAnchor *anAnchor, HTFormat format
   char *v36; // ebx
   FILE *v37; // eax
   FILE *v38; // eax
-  char *v39; // ebx
+  char *post_content_type; // ebx
   FILE *v40; // eax
   FILE *v41; // eax
   FILE *v42; // eax
@@ -102768,7 +102547,7 @@ int __cdecl LYLoadCGI(const char *arg, HTParentAnchor *anAnchor, HTFormat format
   char *v70; // [esp+4h] [ebp-524h]
   int v72; // [esp+20h] [ebp-508h]
   char *v73; // [esp+28h] [ebp-500h]
-  int v74; // [esp+2Ch] [ebp-4FCh]
+  int len; // [esp+2Ch] [ebp-4FCh]
   stat stat_buf; // [esp+48h] [ebp-4E0h] BYREF
   int fd2[2]; // [esp+A8h] [ebp-480h] BYREF
   int fd1[2]; // [esp+B0h] [ebp-478h] BYREF
@@ -103026,10 +102805,10 @@ LABEL_196:
                     close(fd1[0]);
                     add_environment_value("REQUEST_METHOD=POST");
                     if ( anAnchor->post_data )
-                      v74 = anAnchor->post_data->len;
+                      len = anAnchor->post_data->len;
                     else
-                      v74 = 0;
-                    HTSprintf0(&post_len, "CONTENT_LENGTH=%d", v74);
+                      len = 0;
+                    HTSprintf0(&post_len, "CONTENT_LENGTH=%d", len);
                     add_environment_value(post_len);
                   }
                   else
@@ -103167,9 +102946,9 @@ LABEL_196:
                   close(fd1[0]);
                   if ( WWW_TraceFlag[0] )
                   {
-                    v39 = anAnchor->post_content_type;
+                    post_content_type = anAnchor->post_content_type;
                     v40 = TraceFP();
-                    fprintf(v40, "LYNXCGI: Doing post, content-type '%s'\n", v39);
+                    fprintf(v40, "LYNXCGI: Doing post, content-type '%s'\n", post_content_type);
                     if ( WWW_TraceFlag[0] )
                     {
                       v41 = TraceFP();
@@ -103291,10 +103070,10 @@ LABEL_196:
           else
           {
             tmp = 0;
-            v27 = format_out->name;
+            name = format_out->name;
             v28 = format_in->name;
             v29 = gettext("Sorry, no known way of converting %s to %s.");
-            HTSprintf0(&tmp, v29, v28, v27);
+            HTSprintf0(&tmp, v29, v28, name);
             HTAlert(tmp);
             if ( tmp )
             {
@@ -103395,8 +103174,7 @@ void __cdecl __noreturn exit_with_perror(const char *msg)
 BOOLEAN __cdecl lookup_link(char *target)
 {
   char *v1; // eax
-  BOOLEAN v3; // [esp+17h] [ebp-11h]
-  char result; // [esp+18h] [ebp-10h]
+  BOOLEAN result; // [esp+18h] [ebp-10h]
   char *line; // [esp+1Ch] [ebp-Ch] BYREF
   char *buffer; // [esp+20h] [ebp-8h] BYREF
   FILE *ifp; // [esp+24h] [ebp-4h]
@@ -103427,7 +103205,7 @@ BOOLEAN __cdecl lookup_link(char *target)
       buffer = 0;
     }
     LYCloseInput(ifp);
-    v3 = result;
+    return result;
   }
   else
   {
@@ -103438,9 +103216,8 @@ BOOLEAN __cdecl lookup_link(char *target)
       exit_with_perror(v1);
     }
     LYCloseOutput(ifp);
-    v3 = 0;
+    return 0;
   }
-  return v3;
 }
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
@@ -103589,7 +103366,6 @@ int __cdecl EditBinding(int xlkc)
   int v5; // [esp+10h] [ebp-14h]
   int c; // [esp+18h] [ebp-Ch]
   int xleac; // [esp+1Ch] [ebp-8h]
-  int editaction; // [esp+20h] [ebp-4h]
 
   c = xlkc & 0x7FF;
   if ( xlkc == -1 )
@@ -103625,17 +103401,15 @@ int __cdecl EditBinding(int xlkc)
     xleac = LYLineEditors[current_lineedit][c];
   }
   if ( xleac == 31 )
-    editaction = LYLineEditors[current_lineedit][c];
+    return LYLineEditors[current_lineedit][c];
   else
-    editaction = xleac;
-  return editaction;
+    return xleac;
 }
-// 80DB3F6: conditional instruction was optimized away because of '%xlkc.4!=FFFFFFFF'
+// 80DB3F6: conditional instruction was optimized away because %xlkc.4!=FFFFFFFF
 
 //----- (080DB525) --------------------------------------------------------
 BOOLEAN __cdecl LYRemapEditBinding(int xlkc, int lec, int select_edi)
 {
-  BOOLEAN v4; // [esp+3h] [ebp-11h]
   int c; // [esp+8h] [ebp-Ch]
   int j; // [esp+Ch] [ebp-8h]
   BOOLEAN success; // [esp+13h] [ebp-1h]
@@ -103649,11 +103423,11 @@ BOOLEAN __cdecl LYRemapEditBinding(int xlkc, int lec, int select_edi)
     if ( (xlkc & 0x7FFu) <= 0x111 )
     {
       Mod1Binding[c] = lec;
-      v4 = 1;
+      return 1;
     }
     else
     {
-      v4 = 0;
+      return 0;
     }
   }
   else if ( (xlkc & 0x2000) != 0 )
@@ -103661,11 +103435,11 @@ BOOLEAN __cdecl LYRemapEditBinding(int xlkc, int lec, int select_edi)
     if ( (xlkc & 0x7FFu) <= 0x111 )
     {
       Mod2Binding[c] = lec;
-      v4 = 1;
+      return 1;
     }
     else
     {
-      v4 = 0;
+      return 0;
     }
   }
   else if ( (xlkc & 0x1000) != 0 )
@@ -103673,11 +103447,11 @@ BOOLEAN __cdecl LYRemapEditBinding(int xlkc, int lec, int select_edi)
     if ( (xlkc & 0x7FFu) <= 0x111 )
     {
       Mod3Binding[c] = lec;
-      v4 = 1;
+      return 1;
     }
     else
     {
-      v4 = 0;
+      return 0;
     }
   }
   else if ( (unsigned int)lec <= 0xFF )
@@ -103694,15 +103468,14 @@ BOOLEAN __cdecl LYRemapEditBinding(int xlkc, int lec, int select_edi)
     else if ( (unsigned int)select_edi <= 2 )
     {
       LYLineEditors[select_edi - 1][c] = lec;
-      success = 1;
+      return 1;
     }
-    v4 = success;
+    return success;
   }
   else
   {
-    v4 = 0;
+    return 0;
   }
-  return v4;
 }
 
 //----- (080DB695) --------------------------------------------------------
@@ -104211,14 +103984,14 @@ int __cdecl LYEditKeyForAction(int lac, int *pmodkey)
     *pmodkey = -1;
   return -1;
 }
-// 80DB819: conditional instruction was optimized away because of '%c.4>=0'
-// 80DB88E: conditional instruction was optimized away because of '%c.4>=0'
-// 80DBB25: conditional instruction was optimized away because of '%c.4>=0'
-// 80DBB9F: conditional instruction was optimized away because of '%c.4>=0'
-// 80DBDA9: conditional instruction was optimized away because of '%c.4>=0'
-// 80DBE11: conditional instruction was optimized away because of '%c.4>=0'
-// 80DBFF9: conditional instruction was optimized away because of '%c.4>=0'
-// 80DC061: conditional instruction was optimized away because of '%c.4>=0'
+// 80DB819: conditional instruction was optimized away because %c.4>=0
+// 80DB88E: conditional instruction was optimized away because %c.4>=0
+// 80DBB25: conditional instruction was optimized away because %c.4>=0
+// 80DBB9F: conditional instruction was optimized away because %c.4>=0
+// 80DBDA9: conditional instruction was optimized away because %c.4>=0
+// 80DBE11: conditional instruction was optimized away because %c.4>=0
+// 80DBFF9: conditional instruction was optimized away because %c.4>=0
+// 80DC061: conditional instruction was optimized away because %c.4>=0
 
 //----- (080DC1E3) --------------------------------------------------------
 int LYEditmapDeclared()
@@ -104293,10 +104066,7 @@ void __cdecl HTMLSetCharacterHandling(int i)
       HTPassEightBitRaw = LYlowest_eightbit[i] <= 160;
     else
       HTPassEightBitRaw = 0;
-    if ( LYRawMode[0] || i == chndl )
-      HTPassHighCtrlRaw = LYlowest_eightbit[i] <= 130;
-    else
-      HTPassHighCtrlRaw = 0;
+    HTPassHighCtrlRaw = (LYRawMode[0] || i == chndl) && LYlowest_eightbit[i] <= 130;
     HTPassHighCtrlNum = 0;
   }
   if ( LYRawMode[0] )
@@ -104412,10 +104182,9 @@ void __cdecl HTMLSetDisplayCharsetMatchLocale(int i)
   }
   else
   {
-    if ( strncasecomp(LYCharSet_UC[i].MIMEname, "cp", 2) || strncasecomp(LYCharSet_UC[i].MIMEname, "windows", 7) )
-      match = 0;
-    else
-      match = UCForce8bitTOUPPER == 0;
+    match = !strncasecomp(LYCharSet_UC[i].MIMEname, "cp", 2)
+         && !strncasecomp(LYCharSet_UC[i].MIMEname, "windows", 7)
+         && UCForce8bitTOUPPER == 0;
     DisplayCharsetMatchLocale = match;
   }
 }
@@ -104451,13 +104220,10 @@ int __cdecl UCGetLYhndl_byAnyName(char *value)
 //----- (080DC908) --------------------------------------------------------
 const char *__cdecl HTMLGetEntityName(UCode_t code)
 {
-  const char *v2; // [esp+0h] [ebp-14h]
-
   if ( code >= 0 && code <= 95 )
-    v2 = LYEntityNames[code];
+    return LYEntityNames[code];
   else
-    v2 = (const char *)&unk_816A0B7;
-  return v2;
+    return (const char *)&unk_816A0B7;
 }
 
 //----- (080DC93E) --------------------------------------------------------
@@ -104719,7 +104485,6 @@ LABEL_81:
         *str = 0;
       }
       *str = cp;
-      return;
     }
   }
 }
@@ -104816,7 +104581,7 @@ char *__cdecl LYFindEndOfComment(char *str)
   }
   return cp1;
 }
-// 80DD1AD: conditional instruction was optimized away because of '%state.4==3'
+// 80DD1AD: conditional instruction was optimized away because %state.4==3
 
 //----- (080DD25E) --------------------------------------------------------
 void __cdecl LYFillLocalFileURL(char **href, const char *base)
@@ -105449,7 +105214,16 @@ char *__cdecl UCPutUtf8ToBuffer(char *q, UCode_t code, BOOLEAN terminate)
 }
 
 //----- (080DEA10) --------------------------------------------------------
-char **__cdecl LYUCFullyTranslateString(char **str, int cs_from, int cs_to, BOOLEAN do_ent, BOOLEAN use_lynx_specials, BOOLEAN plain_space, BOOLEAN hidden, BOOLEAN Back, CharUtil_st stype)
+char **__cdecl LYUCFullyTranslateString(
+        char **str,
+        int cs_from,
+        int cs_to,
+        BOOLEAN do_ent,
+        BOOLEAN use_lynx_specials,
+        BOOLEAN plain_space,
+        BOOLEAN hidden,
+        BOOLEAN Back,
+        CharUtil_st stype)
 {
   int v9; // eax
   FILE *v10; // eax
@@ -106338,12 +106112,19 @@ LABEL_426:
   }
   return str;
 }
-// 80DF61E: conditional instruction was optimized away because of '%code.4==AD'
-// 80DFE3E: conditional instruction was optimized away because of '%code.4 in (A1..FF)'
-// 80E0627: conditional instruction was optimized away because of '%chunk.4!=0'
+// 80DF61E: conditional instruction was optimized away because %code.4==AD
+// 80DFE3E: conditional instruction was optimized away because %code.4 is in (A1..FF)
+// 80E0627: conditional instruction was optimized away because %chunk.4!=0
 
 //----- (080E0715) --------------------------------------------------------
-BOOLEAN __cdecl LYUCTranslateHTMLString(char **str, int cs_from, int cs_to, BOOLEAN use_lynx_specials, BOOLEAN plain_space, BOOLEAN hidden, CharUtil_st stype)
+BOOLEAN __cdecl LYUCTranslateHTMLString(
+        char **str,
+        int cs_from,
+        int cs_to,
+        BOOLEAN use_lynx_specials,
+        BOOLEAN plain_space,
+        BOOLEAN hidden,
+        CharUtil_st stype)
 {
   return LYUCFullyTranslateString(str, cs_from, cs_to, 1, use_lynx_specials, plain_space, hidden, 0, stype) != 0;
 }
@@ -106444,9 +106225,9 @@ void __cdecl LYHandleMETA(HTStructured_0 *me, const BOOLEAN *present, const char
 {
   FILE *v4; // eax
   time_t v5; // ebx
-  int v6; // eax
+  int UCLYhndl; // eax
   int v7; // eax
-  char *v8; // ebx
+  char *charset; // ebx
   FILE *v9; // eax
   char *v10; // eax
   char *v11; // [esp+28h] [ebp-90h]
@@ -106589,7 +106370,7 @@ void __cdecl LYHandleMETA(HTStructured_0 *me, const BOOLEAN *present, const char
     }
     if ( !me->node_anchor->cache_control )
     {
-      v16 = http_equiv ? http_equiv : byte_816D938;
+      v16 = http_equiv ? http_equiv : (char *)byte_816D938;
       if ( !strcasecomp(v16, "Cache-Control") )
       {
         LYLowerCase(content);
@@ -106648,7 +106429,7 @@ void __cdecl LYHandleMETA(HTStructured_0 *me, const BOOLEAN *present, const char
   {
     if ( !me->node_anchor->charset || !*me->node_anchor->charset )
     {
-      v18 = http_equiv ? http_equiv : byte_816D938;
+      v18 = http_equiv ? http_equiv : (char *)byte_816D938;
       if ( !strcasecomp(v18, "Content-Type") )
       {
         p_in = 0;
@@ -106694,8 +106475,8 @@ void __cdecl LYHandleMETA(HTStructured_0 *me, const BOOLEAN *present, const char
             if ( !strcmp(p_in->MIMEname, "x-transparent") )
             {
               HTPassEightBitRaw = 1;
-              v6 = HTAnchor_getUCLYhndl(me->node_anchor, 3);
-              HTAnchor_setUCInfoStage(me->node_anchor, v6, 1, 1);
+              UCLYhndl = HTAnchor_getUCLYhndl(me->node_anchor, 3);
+              HTAnchor_setUCInfoStage(me->node_anchor, UCLYhndl, 1, 1);
             }
             if ( !strcmp(p_out->MIMEname, "x-transparent") )
             {
@@ -106757,9 +106538,9 @@ void __cdecl LYHandleMETA(HTStructured_0 *me, const BOOLEAN *present, const char
           }
           if ( me->node_anchor->charset && WWW_TraceFlag[0] )
           {
-            v8 = me->node_anchor->charset;
+            charset = me->node_anchor->charset;
             v9 = TraceFP();
-            fprintf(v9, "LYHandleMETA: New charset: %s\n", v8);
+            fprintf(v9, "LYHandleMETA: New charset: %s\n", charset);
           }
         }
         HText_setKcode(me->text, me->node_anchor->charset, p_in);
@@ -106821,7 +106602,7 @@ void __cdecl LYHandleMETA(HTStructured_0 *me, const BOOLEAN *present, const char
           if ( me->inBoldA == 1 && !me->inBoldH )
             HText_appendCharacter(me->text, 6);
           me->inBoldA = 0;
-          _ZN10Fl_Browser10bottomlineEi(me->text, me->CurrentANum);
+          HText_endAnchor(me->text, me->CurrentANum);
           me->inA = 0;
           me->CurrentANum = 0;
         }
@@ -106859,7 +106640,7 @@ void __cdecl LYHandleMETA(HTStructured_0 *me, const BOOLEAN *present, const char
         }
         if ( !me->inBoldH )
           HText_appendCharacter(me->text, 6);
-        _ZN10Fl_Browser10bottomlineEi(me->text, 0);
+        HText_endAnchor(me->text, 0);
         LYEnsureSingleSpace(me);
       }
       goto free_META_copies;
@@ -106912,7 +106693,6 @@ void __cdecl LYHandleMETA(HTStructured_0 *me, const BOOLEAN *present, const char
 LABEL_228:
         free(me->node_anchor->SugFname);
         me->node_anchor->SugFname = 0;
-        goto LABEL_229;
       }
     }
 LABEL_229:
@@ -106964,9 +106744,15 @@ free_META_copies:
 }
 
 //----- (080E20B0) --------------------------------------------------------
-void __cdecl LYHandlePlike(HTStructured_0 *me, const BOOLEAN *present, const char **value, char **include, int align_idx, BOOLEAN start)
+void __cdecl LYHandlePlike(
+        HTStructured_0 *me,
+        const BOOLEAN *present,
+        const char **value,
+        char **include,
+        int align_idx,
+        BOOLEAN start)
 {
-  HTStyle *v6; // ebx
+  HTStyle *style; // ebx
 
   if ( start )
   {
@@ -107024,8 +106810,8 @@ void __cdecl LYHandlePlike(HTStructured_0 *me, const BOOLEAN *present, const cha
   me->in_word = 0;
   if ( LYoverride_default_alignment(me) )
   {
-    v6 = me->sp->style;
-    v6->alignment = LYstyles(me->sp->tag_number)->alignment;
+    style = me->sp->style;
+    style->alignment = LYstyles(me->sp->tag_number)->alignment;
   }
   else if ( me->List_Nesting_Level >= 0 && (me->sp->style->id == 1 || me->sp->style->id == 2 || me->sp->style->id == 3)
          || me->Division_Level < 0 && (!me->sp->style->id || me->sp->style->id == 37) )
@@ -107059,7 +106845,12 @@ void __cdecl LYHandlePlike(HTStructured_0 *me, const BOOLEAN *present, const cha
 }
 
 //----- (080E2490) --------------------------------------------------------
-void __cdecl LYHandleSELECT(HTStructured_0 *me, const BOOLEAN *present, const char **value, char **include, BOOLEAN start)
+void __cdecl LYHandleSELECT(
+        HTStructured_0 *me,
+        const BOOLEAN *present,
+        const char **value,
+        char **include,
+        BOOLEAN start)
 {
   FILE *v5; // eax
   FILE *v6; // eax
@@ -107213,7 +107004,7 @@ void __cdecl LYHandleSELECT(HTStructured_0 *me, const BOOLEAN *present, const ch
     fprintf(v9, "Bad HTML: Unmatched SELECT end tag\n");
   }
 }
-// 80E2843: conditional instruction was optimized away because of '%size.4==0'
+// 80E2843: conditional instruction was optimized away because %size.4==0
 
 //----- (080E2B71) --------------------------------------------------------
 int __cdecl LYLegitimizeHREF(HTStructured_0 *me, char **href, BOOLEAN force_slash, BOOLEAN strip_dots)
@@ -107222,7 +107013,7 @@ int __cdecl LYLegitimizeHREF(HTStructured_0 *me, char **href, BOOLEAN force_slas
   FILE *v5; // edx
   FILE *v6; // eax
   char *v7; // eax
-  char *v10; // [esp+28h] [ebp-30h]
+  char *base_href; // [esp+28h] [ebp-30h]
   const char *str; // [esp+34h] [ebp-24h]
   char *cp; // [esp+38h] [ebp-20h]
   char *path; // [esp+3Ch] [ebp-1Ch]
@@ -107265,29 +107056,33 @@ int __cdecl LYLegitimizeHREF(HTStructured_0 *me, char **href, BOOLEAN force_slas
     return 0;
   LYUCTranslateHTMLString(href, me->tag_charset, me->tag_charset, 0, 0, 1, st_URL_0);
   if ( me->inBASE )
-    v10 = me->base_href;
+    base_href = me->base_href;
   else
-    v10 = me->node_anchor->address;
+    base_href = me->node_anchor->address;
   url_type = is_url(*href);
   if ( url_type == NOT_A_URL_TYPE_0
     && force_slash
     && **href == 46
     && (!strcmp(*href, ".") || !strcmp(*href, ".."))
-    && (*v10 != 102 && *v10 != 70 || strncasecomp(v10, "file:", 5)) )
+    && (*base_href != 102 && *base_href != 70 || strncasecomp(base_href, "file:", 5)) )
   {
     HTSACat(href, "/");
   }
-  if ( url_type == NOT_A_URL_TYPE_0 && LYStripDotDotURLs && strip_dots && **href == 46 && !strncasecomp(v10, "http", 4) )
+  if ( url_type == NOT_A_URL_TYPE_0
+    && LYStripDotDotURLs
+    && strip_dots
+    && **href == 46
+    && !strncasecomp(base_href, "http", 4) )
   {
     str = byte_816D938;
-    temp = HTParse(*href, v10, 31);
+    temp = HTParse(*href, base_href, 31);
     path = HTParse(temp, byte_816D938, 5);
     if ( !strncmp(path, "/..", 3u) )
     {
       cp = path + 3;
       if ( path[3] == 47 || !*cp )
       {
-        if ( v10[4] == 115 )
+        if ( base_href[4] == 115 )
           str = "s";
         if ( WWW_TraceFlag[0] )
         {
@@ -107386,7 +107181,6 @@ void __cdecl LYCheckForContentBase(HTStructured_0 *me)
 LABEL_10:
       free(cp);
       cp = 0;
-      return;
     }
   }
 }
@@ -107409,7 +107203,7 @@ void __cdecl LYCheckForID(HTStructured_0 *me, const BOOLEAN *present, const char
       if ( ID_A )
       {
         HText_beginAnchor(me->text, me->inUnderline, ID_A);
-        _ZN10Fl_Browser10bottomlineEi(me->text, 0);
+        HText_endAnchor(me->text, 0);
       }
     }
     if ( temp )
@@ -107428,7 +107222,7 @@ void __cdecl LYHandleID(HTStructured_0 *me, const char *id)
     if ( ID_A )
     {
       HText_beginAnchor(me->text, me->inUnderline, ID_A);
-      _ZN10Fl_Browser10bottomlineEi(me->text, 0);
+      HText_endAnchor(me->text, 0);
     }
   }
 }
@@ -107436,19 +107230,19 @@ void __cdecl LYHandleID(HTStructured_0 *me, const char *id)
 //----- (080E33DC) --------------------------------------------------------
 BOOLEAN __cdecl LYoverride_default_alignment(HTStructured_0 *me)
 {
-  int v3; // [esp+4h] [ebp-4h]
+  int tag_number; // [esp+4h] [ebp-4h]
 
   if ( me )
   {
-    v3 = me->sp->tag_number;
-    if ( v3 != 19 )
+    tag_number = me->sp->tag_number;
+    if ( tag_number != 19 )
     {
-      if ( v3 > 19 )
+      if ( tag_number > 19 )
       {
-        if ( v3 != 42 && v3 != 78 )
+        if ( tag_number != 42 && tag_number != 78 )
           return 0;
       }
-      else if ( v3 != 3 && v3 != 16 )
+      else if ( tag_number != 3 && tag_number != 16 )
       {
         return 0;
       }
@@ -107534,7 +107328,6 @@ BOOLEAN __cdecl LYCheckForCSI(HTParentAnchor *anchor, char **url)
 //----- (080E36BE) --------------------------------------------------------
 BOOLEAN __cdecl LYCommentHacks(HTParentAnchor *anchor, const char *comment)
 {
-  BOOLEAN v3; // [esp+27h] [ebp-21h]
   char *p_0; // [esp+34h] [ebp-14h]
   char *p_0a; // [esp+34h] [ebp-14h]
   char *subject; // [esp+38h] [ebp-10h] BYREF
@@ -107581,7 +107374,7 @@ BOOLEAN __cdecl LYCommentHacks(HTParentAnchor *anchor, const char *comment)
                   free(subject);
                   subject = 0;
                 }
-                v3 = 1;
+                return 1;
               }
               else
               {
@@ -107590,7 +107383,7 @@ BOOLEAN __cdecl LYCommentHacks(HTParentAnchor *anchor, const char *comment)
                   free(subject);
                   subject = 0;
                 }
-                v3 = 0;
+                return 0;
               }
             }
             else
@@ -107600,7 +107393,7 @@ BOOLEAN __cdecl LYCommentHacks(HTParentAnchor *anchor, const char *comment)
                 free(subject);
                 subject = 0;
               }
-              v3 = 0;
+              return 0;
             }
           }
           else
@@ -107610,7 +107403,7 @@ BOOLEAN __cdecl LYCommentHacks(HTParentAnchor *anchor, const char *comment)
               free(subject);
               subject = 0;
             }
-            v3 = 0;
+            return 0;
           }
         }
         else
@@ -107620,17 +107413,17 @@ BOOLEAN __cdecl LYCommentHacks(HTParentAnchor *anchor, const char *comment)
             free(subject);
             subject = 0;
           }
-          v3 = 0;
+          return 0;
         }
       }
       else
       {
-        v3 = 0;
+        return 0;
       }
     }
     else
     {
-      v3 = 0;
+      return 0;
     }
   }
   else if ( !strncmp(comment, "!--X-Subject: ", 0xEu) )
@@ -107661,7 +107454,7 @@ BOOLEAN __cdecl LYCommentHacks(HTParentAnchor *anchor, const char *comment)
                 free(subject);
                 subject = 0;
               }
-              v3 = 1;
+              return 1;
             }
             else
             {
@@ -107670,7 +107463,7 @@ BOOLEAN __cdecl LYCommentHacks(HTParentAnchor *anchor, const char *comment)
                 free(subject);
                 subject = 0;
               }
-              v3 = 0;
+              return 0;
             }
           }
           else
@@ -107680,9 +107473,8 @@ BOOLEAN __cdecl LYCommentHacks(HTParentAnchor *anchor, const char *comment)
               free(subject);
               subject = 0;
             }
-            v3 = 0;
+            return 0;
           }
-          return v3;
         }
         if ( (unsigned __int8)*p_0 > 0x7Eu || ((*__ctype_b_loc())[(unsigned __int8)*p_0] & 0x4000) == 0 )
           break;
@@ -107692,18 +107484,17 @@ BOOLEAN __cdecl LYCommentHacks(HTParentAnchor *anchor, const char *comment)
         free(subject);
         subject = 0;
       }
-      v3 = 0;
+      return 0;
     }
     else
     {
-      v3 = 0;
+      return 0;
     }
   }
   else
   {
-    v3 = 0;
+    return 0;
   }
-  return v3;
 }
 
 //----- (080E3B66) --------------------------------------------------------
@@ -107744,13 +107535,13 @@ void __cdecl LYformTitle(char **dst, const char *src)
     HTSACopy(dst, src);
   }
 }
-// 80E3C3C: conditional instruction was optimized away because of '%tmp_buffer.4!=0'
+// 80E3C3C: conditional instruction was optimized away because %tmp_buffer.4!=0
 
 //----- (080E3C68) --------------------------------------------------------
 void __cdecl ImageMapList_free(HTList *theList)
 {
   void **v1; // [esp+10h] [ebp-18h]
-  void *v2; // [esp+14h] [ebp-14h]
+  void *object; // [esp+14h] [ebp-14h]
   HTList *current; // [esp+18h] [ebp-10h]
   HTList *cur; // [esp+1Ch] [ebp-Ch]
 
@@ -107760,24 +107551,24 @@ void __cdecl ImageMapList_free(HTList *theList)
     while ( 1 )
     {
       if ( cur && (cur = cur->next) != 0 )
-        v2 = cur->object;
+        object = cur->object;
       else
-        v2 = 0;
-      if ( !v2 )
+        object = 0;
+      if ( !object )
         break;
-      if ( *(_DWORD *)v2 )
+      if ( *(_DWORD *)object )
       {
-        free(*(void **)v2);
-        *(_DWORD *)v2 = 0;
+        free(*(void **)object);
+        *(_DWORD *)object = 0;
       }
-      if ( *((_DWORD *)v2 + 1) )
+      if ( *((_DWORD *)object + 1) )
       {
-        free(*((void **)v2 + 1));
-        *((_DWORD *)v2 + 1) = 0;
+        free(*((void **)object + 1));
+        *((_DWORD *)object + 1) = 0;
       }
-      if ( *((_DWORD *)v2 + 2) )
+      if ( *((_DWORD *)object + 2) )
       {
-        current = (HTList *)*((_DWORD *)v2 + 2);
+        current = (HTList *)*((_DWORD *)object + 2);
         while ( 1 )
         {
           if ( current && (current = current->next) != 0 )
@@ -107798,23 +107589,23 @@ void __cdecl ImageMapList_free(HTList *theList)
           }
           free(v1);
         }
-        HTList_delete(*((HTList **)v2 + 2));
-        *((_DWORD *)v2 + 2) = 0;
+        HTList_delete(*((HTList **)object + 2));
+        *((_DWORD *)object + 2) = 0;
       }
-      free(v2);
+      free(object);
     }
     HTList_delete(theList);
   }
 }
-// 80E3D22: conditional instruction was optimized away because of '%var_18.4!=0'
-// 80E3D88: conditional instruction was optimized away because of '%var_14.4!=0'
+// 80E3D22: conditional instruction was optimized away because %var_18.4!=0
+// 80E3D88: conditional instruction was optimized away because %var_14.4!=0
 
 //----- (080E3DDF) --------------------------------------------------------
 BOOLEAN __cdecl LYAddImageMap(char *address, char *title, HTParentAnchor *node_anchor)
 {
   void **v5; // [esp+Ch] [ebp-2Ch]
-  LYImageMap *v6; // [esp+10h] [ebp-28h]
-  char **v7; // [esp+14h] [ebp-24h]
+  LYImageMap *object; // [esp+10h] [ebp-28h]
+  char **p_address; // [esp+14h] [ebp-24h]
   HTList *curele; // [esp+24h] [ebp-14h]
   HTList *theList; // [esp+28h] [ebp-10h]
   HTList *cur; // [esp+2Ch] [ebp-Ch]
@@ -107834,27 +107625,27 @@ BOOLEAN __cdecl LYAddImageMap(char *address, char *title, HTParentAnchor *node_a
     while ( 1 )
     {
       if ( cur && (cur = cur->next) != 0 )
-        v6 = (LYImageMap *)cur->object;
+        object = (LYImageMap *)cur->object;
       else
-        v6 = 0;
-      old = v6;
-      if ( !v6 )
+        object = 0;
+      old = object;
+      if ( !object )
         break;
-      if ( v6->address && !strcmp(v6->address, address) )
+      if ( object->address && !strcmp(object->address, address) )
       {
-        if ( v6->address )
+        if ( object->address )
         {
-          free(v6->address);
-          v6->address = 0;
+          free(object->address);
+          object->address = 0;
         }
-        if ( v6->title )
+        if ( object->title )
         {
-          free(v6->title);
-          v6->title = 0;
+          free(object->title);
+          object->title = 0;
         }
-        if ( v6->elements )
+        if ( object->elements )
         {
-          curele = v6->elements;
+          curele = object->elements;
           while ( 1 )
           {
             if ( curele && (curele = curele->next) != 0 )
@@ -107875,34 +107666,38 @@ BOOLEAN __cdecl LYAddImageMap(char *address, char *title, HTParentAnchor *node_a
             }
             free(v5);
           }
-          HTList_delete(v6->elements);
-          v6->elements = 0;
+          HTList_delete(object->elements);
+          object->elements = 0;
         }
         break;
       }
     }
   }
   if ( old )
-    v7 = &old->address;
+    p_address = &old->address;
   else
-    v7 = (char **)calloc(1u, 0xCu);
-  if ( !v7 )
+    p_address = (char **)calloc(1u, 0xCu);
+  if ( !p_address )
     outofmem("./LYMap.c", "LYAddImageMap");
-  HTSACopy(v7, address);
+  HTSACopy(p_address, address);
   if ( title && *title )
-    HTSACopy(v7 + 1, title);
-  if ( v7 != (char **)old )
-    HTList_addObject(theList, v7);
+    HTSACopy(p_address + 1, title);
+  if ( p_address != (char **)old )
+    HTList_addObject(theList, p_address);
   return 1;
 }
-// 80E3F39: conditional instruction was optimized away because of '%var_2C.4!=0'
+// 80E3F39: conditional instruction was optimized away because %var_2C.4!=0
 
 //----- (080E4079) --------------------------------------------------------
-BOOLEAN __cdecl LYAddMapElement(char *map, char *address, char *title, HTParentAnchor *node_anchor, BOOLEAN intern_flag)
+BOOLEAN __cdecl LYAddMapElement(
+        char *map,
+        char *address,
+        char *title,
+        HTParentAnchor *node_anchor,
+        BOOLEAN intern_flag)
 {
   FILE *v5; // eax
-  BOOLEAN v7; // [esp+1Fh] [ebp-29h]
-  void *v8; // [esp+20h] [ebp-28h]
+  void *object; // [esp+20h] [ebp-28h]
   void **v9; // [esp+24h] [ebp-24h]
   char *v10; // [esp+28h] [ebp-20h]
   HTList *cur; // [esp+38h] [ebp-10h]
@@ -107919,16 +107714,16 @@ BOOLEAN __cdecl LYAddMapElement(char *map, char *address, char *title, HTParentA
   do
   {
     if ( cur && (cur = cur->next) != 0 )
-      v8 = cur->object;
+      object = cur->object;
     else
-      v8 = 0;
+      object = 0;
   }
-  while ( v8 && strcmp(*(const char **)v8, map) );
-  if ( !v8 )
+  while ( object && strcmp(*(const char **)object, map) );
+  if ( !object )
     return 0;
-  if ( !*((_DWORD *)v8 + 2) )
-    *((_DWORD *)v8 + 2) = HTList_new();
-  cura = (HTList *)*((_DWORD *)v8 + 2);
+  if ( !*((_DWORD *)object + 2) )
+    *((_DWORD *)object + 2) = HTList_new();
+  cura = (HTList *)*((_DWORD *)object + 2);
   while ( 1 )
   {
     if ( cura && (cura = cura->next) != 0 )
@@ -107949,7 +107744,7 @@ BOOLEAN __cdecl LYAddMapElement(char *map, char *address, char *title, HTParentA
         free(v9[1]);
         v9[1] = 0;
       }
-      HTList_removeObject(*((HTList **)v8 + 2), v9);
+      HTList_removeObject(*((HTList **)object + 2), v9);
       free(v9);
       break;
     }
@@ -107962,7 +107757,7 @@ BOOLEAN __cdecl LYAddMapElement(char *map, char *address, char *title, HTParentA
       HTSACopy(&tmp->title, title);
     else
       HTSACopy(&tmp->title, address);
-    HTList_appendObject(*((HTList **)v8 + 2), tmp);
+    HTList_appendObject(*((HTList **)object + 2), tmp);
     if ( WWW_TraceFlag[0] )
     {
       if ( title )
@@ -107972,23 +107767,22 @@ BOOLEAN __cdecl LYAddMapElement(char *map, char *address, char *title, HTParentA
       v5 = TraceFP();
       fprintf(v5, "LYAddMapElement\n\tmap     %s\n\taddress %s\n\ttitle   %s)\n", map, address, v10);
     }
-    v7 = 1;
+    return 1;
   }
   else
   {
     perror("Out of memory in LYAddMapElement");
-    v7 = 0;
+    return 0;
   }
-  return v7;
 }
-// 80E430B: conditional instruction was optimized away because of '%address.4!=0'
-// 80E4320: conditional instruction was optimized away because of '%map.4!=0'
-// 80E4206: conditional instruction was optimized away because of '%var_24.4!=0'
+// 80E430B: conditional instruction was optimized away because %address.4!=0
+// 80E4320: conditional instruction was optimized away because %map.4!=0
+// 80E4206: conditional instruction was optimized away because %var_24.4!=0
 
 //----- (080E4367) --------------------------------------------------------
 BOOLEAN __cdecl LYHaveImageMap(char *address)
 {
-  const char **v3; // [esp+14h] [ebp-14h]
+  const char **object; // [esp+14h] [ebp-14h]
   HTList *cur; // [esp+20h] [ebp-8h]
 
   cur = LynxMaps;
@@ -107997,12 +107791,12 @@ BOOLEAN __cdecl LYHaveImageMap(char *address)
   while ( 1 )
   {
     if ( cur && (cur = cur->next) != 0 )
-      v3 = (const char **)cur->object;
+      object = (const char **)cur->object;
     else
-      v3 = 0;
-    if ( !v3 )
+      object = 0;
+    if ( !object )
       break;
-    if ( !strcmp(*v3, address) )
+    if ( !strcmp(*object, address) )
       return 1;
   }
   return 0;
@@ -108043,22 +107837,19 @@ void __cdecl fill_DocAddress(DocAddress *wwwdoc, char *address, HTParentAnchor *
 //----- (080E44AE) --------------------------------------------------------
 HTList *__cdecl get_the_list(DocAddress *wwwdoc, char *address, HTParentAnchor *anchor, HTParentAnchor **punderlying)
 {
-  HTList *v5; // [esp+14h] [ebp-4h]
-
   if ( anchor && anchor->post_data )
   {
     fill_DocAddress(wwwdoc, address, anchor, punderlying);
     if ( punderlying && *punderlying )
-      v5 = (*punderlying)->imaps;
+      return (*punderlying)->imaps;
     else
-      v5 = anchor->imaps;
+      return anchor->imaps;
   }
   else
   {
     fill_DocAddress(wwwdoc, address, 0, punderlying);
-    v5 = LynxMaps;
+    return LynxMaps;
   }
-  return v5;
 }
 
 //----- (080E453F) --------------------------------------------------------
@@ -108071,10 +107862,10 @@ int __cdecl LYLoadIMGmap(const char *arg, HTParentAnchor *anAnchor, HTFormat for
   char *v8; // eax
   char *v9; // eax
   char *v10; // eax
-  char *v11; // esi
+  char *name; // esi
   char *v12; // ebx
   char *v13; // eax
-  void (*v14)(HTStream *, const char *, int); // ebx
+  void (*put_block)(HTStream *, const char *, int); // ebx
   size_t v15; // eax
   void (*v16)(HTStream *, const char *, int); // ebx
   size_t v17; // eax
@@ -108094,8 +107885,7 @@ int __cdecl LYLoadIMGmap(const char *arg, HTParentAnchor *anAnchor, HTFormat for
   size_t v31; // eax
   void (*v32)(HTStream *, const char *, int); // ebx
   size_t v33; // eax
-  int v35; // [esp+18h] [ebp-70h]
-  LYImageMap *v36; // [esp+1Ch] [ebp-6Ch]
+  LYImageMap *object; // [esp+1Ch] [ebp-6Ch]
   LYImageMap *v37; // [esp+20h] [ebp-68h]
   LYMapElement *v38; // [esp+28h] [ebp-60h]
   DocAddress WWWDoc; // [esp+34h] [ebp-54h] BYREF
@@ -108171,12 +107961,12 @@ int __cdecl LYLoadIMGmap(const char *arg, HTParentAnchor *anAnchor, HTFormat for
   do
   {
     if ( cur && (cur = cur->next) != 0 )
-      v36 = (LYImageMap *)cur->object;
+      object = (LYImageMap *)cur->object;
     else
-      v36 = 0;
-    theMap = v36;
+      object = 0;
+    theMap = object;
   }
-  while ( v36 && strcmp(theMap->address, address) );
+  while ( object && strcmp(theMap->address, address) );
   if ( theMap && !HTList_count(theMap->elements) )
   {
     if ( !anAnchor->post_data )
@@ -108267,9 +108057,9 @@ LABEL_17:
     else
       HTSACopy(&MapTitle, "[USEMAP]");
     HTSprintf0(&buf, "<html>\n<head>\n");
-    v14 = target->isa->put_block;
+    put_block = target->isa->put_block;
     v15 = strlen(buf);
-    v14(target, buf, v15);
+    put_block(target, buf, v15);
     HTSprintf0(
       &buf,
       "<META %s content=\"text/html;charset=%s\">\n",
@@ -108351,23 +108141,22 @@ LABEL_17:
       free(buf);
       buf = 0;
     }
-    v35 = 200;
+    return 200;
   }
   else
   {
-    v11 = format_out->name;
+    name = format_out->name;
     v12 = format_in->name;
     v13 = gettext("Sorry, no known way of converting %s to %s.");
-    HTSprintf0(&buf, v13, v12, v11);
+    HTSprintf0(&buf, v13, v12, name);
     HTAlert(buf);
     if ( buf )
     {
       free(buf);
       buf = 0;
     }
-    v35 = -29999;
+    return -29999;
   }
-  return v35;
 }
 
 //----- (080E5004) --------------------------------------------------------
@@ -108375,7 +108164,7 @@ void __cdecl LYPrintImgMaps(FILE *fp)
 {
   const char *v1; // [esp+1Ch] [ebp-2Ch]
   const char **v2; // [esp+20h] [ebp-28h]
-  const char **v3; // [esp+24h] [ebp-24h]
+  const char **object; // [esp+24h] [ebp-24h]
   int count; // [esp+2Ch] [ebp-1Ch]
   HTList *inner; // [esp+38h] [ebp-10h]
   HTList *outer; // [esp+3Ch] [ebp-Ch]
@@ -108390,20 +108179,20 @@ void __cdecl LYPrintImgMaps(FILE *fp)
     while ( 1 )
     {
       if ( outer && (outer = outer->next) != 0 )
-        v3 = (const char **)outer->object;
+        object = (const char **)outer->object;
       else
-        v3 = 0;
-      if ( !v3 )
+        object = 0;
+      if ( !object )
         break;
-      if ( !only_len || !strncmp(only, *v3, only_len) && (!(*v3)[only_len] || (*v3)[only_len] == 35) )
+      if ( !only_len || !strncmp(only, *object, only_len) && (!(*object)[only_len] || (*object)[only_len] == 35) )
       {
-        if ( v3[1] && *v3[1] )
-          v1 = v3[1];
+        if ( object[1] && *object[1] )
+          v1 = object[1];
         else
           v1 = "[USEMAP]";
         fprintf(fp, "\n%s\n", v1);
-        fprintf(fp, "%s\n", *v3);
-        inner = (HTList *)v3[2];
+        fprintf(fp, "%s\n", *object);
+        inner = (HTList *)object[2];
         count = 0;
         while ( 1 )
         {
@@ -108440,7 +108229,7 @@ void __cdecl MemAllocCopy(char **dest, const char *start, const char *end)
     HTSACopy(dest, &byte_816DF60);
   }
 }
-// 80E524E: conditional instruction was optimized away because of '%temp.4!=0'
+// 80E524E: conditional instruction was optimized away because %temp.4!=0
 
 //----- (080E5264) --------------------------------------------------------
 cookie *newCookie()
@@ -108503,7 +108292,7 @@ void __cdecl freeCookie(cookie *co)
     free(co);
   }
 }
-// 80E53E5: conditional instruction was optimized away because of '%co.4!=0'
+// 80E53E5: conditional instruction was optimized away because %co.4!=0
 
 //----- (080E53FB) --------------------------------------------------------
 BOOLEAN __cdecl host_matches(const char *A, const char *B)
@@ -108512,21 +108301,26 @@ BOOLEAN __cdecl host_matches(const char *A, const char *B)
   BOOLEAN v4; // [esp+13h] [ebp-15h]
   int diff; // [esp+20h] [ebp-8h]
 
-  if ( *B != 46 && !strcasecomp(A, B) )
-    return 1;
-  v4 = 0;
-  if ( *B == 46 )
+  if ( *B == 46 || strcasecomp(A, B) )
   {
-    if ( B[1] )
+    v4 = 0;
+    if ( *B == 46 )
     {
-      if ( B[1] != 46 && *A != 46 )
+      if ( B[1] )
       {
-        v2 = strlen(A);
-        diff = v2 - strlen(B);
-        if ( diff > 0 && !strcasecomp(&A[diff], B) )
-          v4 = 1;
+        if ( B[1] != 46 && *A != 46 )
+        {
+          v2 = strlen(A);
+          diff = v2 - strlen(B);
+          if ( diff > 0 && !strcasecomp(&A[diff], B) )
+            return 1;
+        }
       }
     }
+  }
+  else
+  {
+    return 1;
   }
   return v4;
 }
@@ -108579,9 +108373,9 @@ BOOLEAN __cdecl is_prefix(const char *a, const char *b)
 //----- (080E563B) --------------------------------------------------------
 domain_entry *__cdecl find_domain_entry(const char *name)
 {
-  invcheck_behaviour_t v1; // esi
-  behaviour_t v2; // edi
-  const char *v3; // ebx
+  invcheck_behaviour_t invcheck_bv; // esi
+  behaviour_t bv; // edi
+  const char *domain; // ebx
   FILE *v4; // eax
   FILE *v5; // eax
   int v7; // [esp+14h] [ebp-24h]
@@ -108599,11 +108393,11 @@ domain_entry *__cdecl find_domain_entry(const char *name)
       {
         if ( WWW_TraceFlag[0] && (WWW_TraceMask & 0x20) != 0 )
         {
-          v1 = de->invcheck_bv;
-          v2 = de->bv;
-          v3 = de->domain;
+          invcheck_bv = de->invcheck_bv;
+          bv = de->bv;
+          domain = de->domain;
           v4 = TraceFP();
-          fprintf(v4, "...test_domain_entry(%s) bv:%u, invcheck_bv:%u\n", v3, v2, v1);
+          fprintf(v4, "...test_domain_entry(%s) bv:%u, invcheck_bv:%u\n", domain, bv, invcheck_bv);
         }
         if ( !strcasecomp(name, de->domain) )
           break;
@@ -108633,7 +108427,7 @@ void __cdecl store_cookie(cookie *co, const char *hostname, const char *path)
   char *v3; // ebx
   FILE *v4; // edx
   FILE *v5; // eax
-  char *v6; // ebx
+  char *domain; // ebx
   FILE *v7; // eax
   char *v8; // ebx
   FILE *v9; // eax
@@ -108723,9 +108517,9 @@ LABEL_50:
     {
       if ( WWW_TraceFlag[0] && (WWW_TraceMask & 0x20) != 0 )
       {
-        v6 = co->domain;
+        domain = co->domain;
         v7 = TraceFP();
-        fprintf(v7, "store_cookie: Rejecting domain '%s'.\n", v6);
+        fprintf(v7, "store_cookie: Rejecting domain '%s'.\n", domain);
       }
       goto LABEL_50;
     }
@@ -108913,13 +108707,13 @@ char *__cdecl scan_cookie_sublist(char *hostname, char *path, int port, HTList *
   size_t v11; // eax
   size_t v12; // eax
   size_t v13; // eax
-  char *v15; // [esp+24h] [ebp-54h]
-  char *v16; // [esp+28h] [ebp-50h]
+  char *value; // [esp+24h] [ebp-54h]
+  char *name; // [esp+28h] [ebp-50h]
   const char *v17; // [esp+2Ch] [ebp-4Ch]
   _BOOL4 v18; // [esp+30h] [ebp-48h]
   char *v19; // [esp+34h] [ebp-44h]
   int v20; // [esp+38h] [ebp-40h]
-  char *v21; // [esp+3Ch] [ebp-3Ch]
+  char *domain; // [esp+3Ch] [ebp-3Ch]
   char *headera; // [esp+44h] [ebp-34h] BYREF
   HTList *sublista; // [esp+48h] [ebp-30h]
   char *patha; // [esp+4Ch] [ebp-2Ch]
@@ -108951,15 +108745,15 @@ char *__cdecl scan_cookie_sublist(char *hostname, char *path, int port, HTList *
       if ( WWW_TraceFlag[0] && (WWW_TraceMask & 0x20) != 0 )
       {
         if ( co->value )
-          v15 = co->value;
+          value = co->value;
         else
-          v15 = "(no value)";
+          value = "(no value)";
         if ( co->name )
-          v16 = co->name;
+          name = co->name;
         else
-          v16 = "(no name)";
+          name = "(no name)";
         v6 = TraceFP();
-        fprintf(v6, "Checking cookie %p %s=%s\n", hl, v16, v15);
+        fprintf(v6, "Checking cookie %p %s=%s\n", hl, name, value);
       }
       if ( WWW_TraceFlag[0] && (WWW_TraceMask & 0x20) != 0 )
       {
@@ -108971,11 +108765,11 @@ char *__cdecl scan_cookie_sublist(char *hostname, char *path, int port, HTList *
         v19 = co->path;
         v20 = host_matches(hostnamea, co->domain);
         if ( co->domain )
-          v21 = co->domain;
+          domain = co->domain;
         else
-          v21 = "(no domain)";
+          domain = "(no domain)";
         v7 = TraceFP();
-        fprintf(v7, "\t%s %s %d %s %s %d%s\n", hostnamea, v21, v20, patha, v19, v18, v17);
+        fprintf(v7, "\t%s %s %d %s %s %d%s\n", hostnamea, domain, v20, patha, v19, v18, v17);
       }
     }
     if ( co && (co->flags & 4) != 0 && co->expires <= now )
@@ -109083,11 +108877,20 @@ char *__cdecl alloc_attr_value(const char *value_start, const char *value_end)
 }
 
 //----- (080E66F8) --------------------------------------------------------
-unsigned int __cdecl parse_attribute(unsigned int flags, cookie *cur_cookie, int *cookie_len, const char *attr_start, int attr_len, char *value, const char *address, char *hostname, int port)
+unsigned int __cdecl parse_attribute(
+        unsigned int flags,
+        cookie *cur_cookie,
+        int *cookie_len,
+        const char *attr_start,
+        int attr_len,
+        char *value,
+        const char *address,
+        char *hostname,
+        int port)
 {
   int v9; // ebx
   int v10; // ebx
-  char *v11; // ebx
+  char *commentURL; // ebx
   FILE *v12; // eax
   int v13; // ebx
   FILE *v14; // eax
@@ -109100,7 +108903,7 @@ unsigned int __cdecl parse_attribute(unsigned int flags, cookie *cur_cookie, int
   time_t v21; // esi
   FILE *v22; // eax
   char *v23; // ebx
-  time_t v24; // esi
+  time_t expires; // esi
   FILE *v25; // eax
   int temp_0; // [esp+18h] [ebp-20h]
   int temp; // [esp+1Ch] [ebp-1Ch]
@@ -109145,9 +108948,9 @@ unsigned int __cdecl parse_attribute(unsigned int flags, cookie *cur_cookie, int
                             if ( cur_cookie->expires > 0 && WWW_TraceFlag[0] && (WWW_TraceMask & 0x20) != 0 )
                             {
                               v23 = ctime(&cur_cookie->expires);
-                              v24 = cur_cookie->expires;
+                              expires = cur_cookie->expires;
                               v25 = TraceFP();
-                              fprintf(v25, "LYSetCookie: expires %d, %s", v24, v23);
+                              fprintf(v25, "LYSetCookie: expires %d, %s", expires, v23);
                             }
                           }
                         }
@@ -109307,9 +109110,9 @@ LABEL_53:
             {
               if ( WWW_TraceFlag[0] && (WWW_TraceMask & 0x20) != 0 )
               {
-                v11 = cur_cookie->commentURL;
+                commentURL = cur_cookie->commentURL;
                 v12 = TraceFP();
-                fprintf(v12, "LYProcessSetCookies: Rejecting commentURL value '%s'\n", v11);
+                fprintf(v12, "LYProcessSetCookies: Rejecting commentURL value '%s'\n", commentURL);
               }
               if ( cur_cookie->commentURL )
               {
@@ -109358,7 +109161,13 @@ LABEL_53:
 }
 
 //----- (080E7022) --------------------------------------------------------
-void __cdecl LYProcessSetCookies(const char *SetCookie, const char *SetCookie2, const char *address, char *hostname, char *path, int port)
+void __cdecl LYProcessSetCookies(
+        const char *SetCookie,
+        const char *SetCookie2,
+        const char *address,
+        char *hostname,
+        char *path,
+        int port)
 {
   FILE *v6; // eax
   FILE *v7; // eax
@@ -109382,13 +109191,13 @@ void __cdecl LYProcessSetCookies(const char *SetCookie, const char *SetCookie2, 
   FILE *v25; // eax
   FILE *v26; // eax
   char *v27; // ebx
-  time_t v28; // esi
+  time_t expires; // esi
   FILE *v29; // eax
   FILE *v30; // eax
   const char *v31; // [esp+30h] [ebp-C8h]
   bool v32; // [esp+34h] [ebp-C4h]
   char *v33; // [esp+38h] [ebp-C0h]
-  char *v34; // [esp+3Ch] [ebp-BCh]
+  char *name; // [esp+3Ch] [ebp-BCh]
   char *format; // [esp+40h] [ebp-B8h]
   char *v36; // [esp+44h] [ebp-B4h]
   char *v37; // [esp+48h] [ebp-B0h]
@@ -109408,7 +109217,7 @@ void __cdecl LYProcessSetCookies(const char *SetCookie, const char *SetCookie2, 
   const char *v51; // [esp+80h] [ebp-78h]
   char *v52; // [esp+84h] [ebp-74h]
   char *v53; // [esp+88h] [ebp-70h]
-  cookie *v54; // [esp+8Ch] [ebp-6Ch]
+  cookie *object; // [esp+8Ch] [ebp-6Ch]
   char *value_0; // [esp+9Ch] [ebp-5Ch]
   const char *cp1_0; // [esp+A0h] [ebp-58h]
   const char *cp1_0a; // [esp+A0h] [ebp-58h]
@@ -109620,11 +109429,11 @@ LABEL_69:
               else
                 v33 = "[no value]";
               if ( cur_cookie->name )
-                v34 = cur_cookie->name;
+                name = cur_cookie->name;
               else
-                v34 = "[no name]";
+                name = "[no name]";
               v7 = TraceFP();
-              fprintf(v7, "LYProcessSetCookies: Rejecting Set-Cookie2: %s=%s\n", v34, v33);
+              fprintf(v7, "LYProcessSetCookies: Rejecting Set-Cookie2: %s=%s\n", name, v33);
             }
             if ( WWW_TraceFlag[0] && (WWW_TraceMask & 0x20) != 0 )
             {
@@ -110011,11 +109820,11 @@ LABEL_256:
   while ( 1 )
   {
     if ( cl_0 && (cl_0 = cl_0->next) != 0 )
-      v54 = (cookie *)cl_0->object;
+      object = (cookie *)cl_0->object;
     else
-      v54 = 0;
-    co = v54;
-    if ( !v54 )
+      object = 0;
+    co = object;
+    if ( !object )
       break;
     if ( WWW_TraceFlag[0] && (WWW_TraceMask & 0x20) != 0 )
     {
@@ -110033,9 +109842,9 @@ LABEL_256:
     if ( co->expires > 0 && WWW_TraceFlag[0] && (WWW_TraceMask & 0x20) != 0 )
     {
       v27 = ctime(&co->expires);
-      v28 = co->expires;
+      expires = co->expires;
       v29 = TraceFP();
-      fprintf(v29, "                    expires: %d, %s\n", v28, v27);
+      fprintf(v29, "                    expires: %d, %s\n", expires, v27);
     }
     if ( !strncasecomp(address, "https:", 6) && LYForceSSLCookiesSecure == 1 && (co->flags & 1) == 0 )
     {
@@ -110137,11 +109946,8 @@ void __cdecl LYSetCookie(const char *SetCookie, const char *SetCookie2, const ch
     if ( hostname )
       free(hostname);
     if ( path )
-    {
 LABEL_47:
       free(path);
-      return;
-    }
   }
 }
 
@@ -110151,7 +109957,6 @@ char *__cdecl LYAddCookieHeader(char *hostname, char *path, int port, BOOLEAN se
   FILE *v4; // eax
   char *v6; // [esp+18h] [ebp-20h]
   char *v7; // [esp+1Ch] [ebp-1Ch]
-  char *v8; // [esp+20h] [ebp-18h]
   domain_entry *de; // [esp+28h] [ebp-10h]
   HTList *next; // [esp+2Ch] [ebp-Ch]
   HTList *hl; // [esp+30h] [ebp-8h]
@@ -110199,10 +110004,9 @@ char *__cdecl LYAddCookieHeader(char *hostname, char *path, int port, BOOLEAN se
     hl = next;
   }
   if ( header )
-    v8 = header;
+    return header;
   else
-    v8 = 0;
-  return v8;
+    return 0;
 }
 
 //----- (080E8E48) --------------------------------------------------------
@@ -110335,14 +110139,14 @@ FILE *__cdecl NewCookieFile(char *cookie_file)
 //----- (080E9284) --------------------------------------------------------
 void __cdecl LYStoreCookies(char *cookie_file)
 {
-  time_t v1; // ebx
+  time_t expires; // ebx
   FILE *v2; // edx
   FILE *v3; // eax
   FILE *v4; // eax
   FILE *v5; // eax
   FILE *v6; // eax
   const char *v7; // [esp+34h] [ebp-44h]
-  const char *v8; // [esp+38h] [ebp-40h]
+  const char *value; // [esp+38h] [ebp-40h]
   const char *v9; // [esp+3Ch] [ebp-3Ch]
   const char *v10; // [esp+48h] [ebp-30h]
   const char *v11; // [esp+50h] [ebp-28h]
@@ -110373,9 +110177,9 @@ void __cdecl LYStoreCookies(char *cookie_file)
           {
             if ( WWW_TraceFlag[0] && (WWW_TraceMask & 0x20) != 0 )
             {
-              v1 = co->expires;
+              expires = co->expires;
               v2 = TraceFP();
-              fprintf(v2, "LYStoreCookies: %d cf %d ", now, v1);
+              fprintf(v2, "LYStoreCookies: %d cf %d ", now, expires);
             }
             if ( (co->flags & 2) != 0 )
             {
@@ -110400,9 +110204,9 @@ void __cdecl LYStoreCookies(char *cookie_file)
                 else
                   v7 = &byte_816DF60;
                 if ( co->value )
-                  v8 = co->value;
+                  value = co->value;
                 else
-                  v8 = &byte_816DF60;
+                  value = &byte_816DF60;
                 if ( co->quoted )
                   v9 = "\"";
                 else
@@ -110425,7 +110229,7 @@ void __cdecl LYStoreCookies(char *cookie_file)
                   co->expires,
                   co->name,
                   v9,
-                  v8,
+                  value,
                   v7);
                 if ( WWW_TraceFlag[0] && (WWW_TraceMask & 0x20) != 0 )
                 {
@@ -110479,7 +110283,7 @@ int __cdecl LYHandleCookies(const char *arg, HTParentAnchor *anAnchor, HTFormat 
   char *v24; // ebx
   char *v25; // eax
   char *v26; // eax
-  void (*v27)(HTStream *, const char *, int); // ebx
+  void (*put_block)(HTStream *, const char *, int); // ebx
   size_t v28; // eax
   char *v29; // ebx
   const char *v30; // esi
@@ -110525,8 +110329,7 @@ int __cdecl LYHandleCookies(const char *arg, HTParentAnchor *anAnchor, HTFormat 
   size_t v70; // eax
   void (*v71)(HTStream *, const char *, int); // ebx
   size_t v72; // eax
-  int v74; // [esp+28h] [ebp-70h]
-  behaviour_t v75; // [esp+2Ch] [ebp-6Ch]
+  behaviour_t bv; // [esp+2Ch] [ebp-6Ch]
   const char *v76; // [esp+30h] [ebp-68h]
   const char *v77; // [esp+34h] [ebp-64h]
   const char *v78; // [esp+38h] [ebp-60h]
@@ -110779,7 +110582,7 @@ LABEL_75:
         free(lynxID);
         lynxID = 0;
       }
-      v74 = -204;
+      return -204;
     }
     else
     {
@@ -110788,9 +110591,9 @@ LABEL_75:
       {
         v26 = gettext("Cookie Jar");
         HTSprintf0(&buf, "<html>\n<head>\n<title>%s</title>\n</head>\n<body>\n", v26);
-        v27 = target->isa->put_block;
+        put_block = target->isa->put_block;
         v28 = strlen(buf);
-        v27(target, buf, v28);
+        put_block(target, buf, v28);
         v29 = gettext("Cookie Jar");
         v30 = helpfilepath;
         v31 = gettext(", help on ");
@@ -110835,15 +110638,15 @@ LABEL_75:
             v42 = target->isa->put_block;
             v43 = strlen(buf);
             v42(target, buf, v43);
-            v75 = de->bv;
-            if ( v75 == REJECT_ALWAYS )
+            bv = de->bv;
+            if ( bv == REJECT_ALWAYS )
             {
               v45 = gettext("(Cookies never allowed.)");
               HTSprintf0(&buf, v45);
             }
-            else if ( v75 )
+            else if ( bv )
             {
-              if ( v75 == QUERY_USER )
+              if ( bv == QUERY_USER )
               {
                 v46 = gettext("(Cookies allowed via prompt.)");
                 HTSprintf0(&buf, v46);
@@ -111014,7 +110817,7 @@ LABEL_75:
           free(buf);
           buf = 0;
         }
-        v74 = 200;
+        return 200;
       }
       else
       {
@@ -111028,7 +110831,7 @@ LABEL_75:
           free(buf);
           buf = 0;
         }
-        v74 = -29999;
+        return -29999;
       }
     }
   }
@@ -111038,22 +110841,21 @@ LABEL_75:
     HTProgress(v4);
     LYSleepMsg();
     HTNoDataOK = 1;
-    v74 = -204;
+    return -204;
   }
-  return v74;
 }
-// 80E9748: conditional instruction was optimized away because of '%domain.4!=0'
-// 80E97BE: conditional instruction was optimized away because of '%lynxID.4!=0'
-// 80E96C6: conditional instruction was optimized away because of '%domain.4!=0'
-// 80E970E: conditional instruction was optimized away because of '%lynxID.4!=0'
+// 80E9748: conditional instruction was optimized away because %domain.4!=0
+// 80E97BE: conditional instruction was optimized away because %lynxID.4!=0
+// 80E96C6: conditional instruction was optimized away because %domain.4!=0
+// 80E970E: conditional instruction was optimized away because %lynxID.4!=0
 
 //----- (080EA65E) --------------------------------------------------------
 void __cdecl cookie_domain_flag_set(char *domainstr, int flag)
 {
   char *v2; // ebx
   char *v3; // eax
-  invcheck_behaviour_t v4; // ebx
-  behaviour_t v5; // esi
+  invcheck_behaviour_t invcheck_bv; // ebx
+  behaviour_t bv; // esi
   FILE *v6; // edx
   const char *strsmall; // [esp+20h] [ebp-18h]
   char *dstr; // [esp+24h] [ebp-14h] BYREF
@@ -111144,10 +110946,10 @@ void __cdecl cookie_domain_flag_set(char *domainstr, int flag)
       }
       if ( WWW_TraceFlag[0] && (WWW_TraceMask & 0x20) != 0 )
       {
-        v4 = de->invcheck_bv;
-        v5 = de->bv;
+        invcheck_bv = de->invcheck_bv;
+        bv = de->bv;
         v6 = TraceFP();
-        fprintf(v6, "cookie_domain_flag_set (%s, bv=%u, invcheck_bv=%u)\n", strsmall, v5, v4);
+        fprintf(v6, "cookie_domain_flag_set (%s, bv=%u, invcheck_bv=%u)\n", strsmall, bv, invcheck_bv);
       }
     }
   }
@@ -111357,9 +111159,10 @@ void __cdecl parse_attributes(char *mono, char *fg, char *bg, int style, char *e
     }
   }
 }
-// 80EADD3: conditional instruction was optimized away because of '%curPair.4==0'
+// 80EADD3: conditional instruction was optimized away because %curPair.4==0
 // 81AA440: using guessed type int COLORS;
 // 81AB39C: using guessed type int COLOR_PAIRS;
+// 80EAAE0: using guessed type int mA[4];
 
 //----- (080EAFF2) --------------------------------------------------------
 void __cdecl parse_style(char *param)
@@ -111369,7 +111172,7 @@ void __cdecl parse_style(char *param)
   char *v3; // eax
   int v4; // ebx
   FILE *v5; // edx
-  int *v6; // ebx
+  int *set_hash; // ebx
   const char *v7; // [esp+20h] [ebp-38h]
   HTTag *t; // [esp+2Ch] [ebp-2Ch]
   int element_number; // [esp+30h] [ebp-28h]
@@ -111452,8 +111255,8 @@ void __cdecl parse_style(char *param)
           parse_attributes(mono, fg, bg, table_10468[n].style, table_10468[n].name);
           if ( table_10468[n].set_hash )
           {
-            v6 = table_10468[n].set_hash;
-            *v6 = hash_code(table_10468[n].name);
+            set_hash = table_10468[n].set_hash;
+            *set_hash = hash_code(table_10468[n].name);
           }
           found = 1;
           break;
@@ -111607,7 +111410,7 @@ void style_initialiseHashTable()
 void parse_userstyles()
 {
   FILE *v0; // eax
-  char *v1; // [esp+14h] [ebp-14h]
+  char *object; // [esp+14h] [ebp-14h]
   HTList *cur; // [esp+20h] [ebp-8h]
 
   cur = lss_styles;
@@ -111618,17 +111421,17 @@ void parse_userstyles()
     while ( 1 )
     {
       if ( cur && (cur = cur->next) != 0 )
-        v1 = (char *)cur->object;
+        object = (char *)cur->object;
       else
-        v1 = 0;
-      if ( !v1 )
+        object = 0;
+      if ( !object )
         break;
       if ( WWW_TraceFlag[0] && (WWW_TraceMask & 2) != 0 )
       {
         v0 = TraceFP();
-        fprintf(v0, "LSS:%s\n", v1);
+        fprintf(v0, "LSS:%s\n", object);
       }
-      parse_style(v1);
+      parse_style(object);
     }
   }
   else
@@ -111664,8 +111467,8 @@ void parse_userstyles()
   if ( s_menu_active == -1 )
     s_menu_active = s_alink;
 }
-// 80EB7CD: conditional instruction was optimized away because of '%var_14.4!=0'
-// 80EB800: conditional instruction was optimized away because of '%var_14.4!=0'
+// 80EB7CD: conditional instruction was optimized away because %var_14.4!=0
+// 80EB800: conditional instruction was optimized away because %var_14.4!=0
 
 //----- (080EB95D) --------------------------------------------------------
 void __cdecl HStyle_addStyle(char *buffer)
@@ -111728,7 +111531,6 @@ int __cdecl style_readFromFileREC(char *lss_filename, char *parent_filename)
   FILE *v3; // eax
   char *v4; // edx
   char *v6; // [esp+10h] [ebp-18h]
-  int v7; // [esp+14h] [ebp-14h]
   char *buffer; // [esp+20h] [ebp-8h] BYREF
   FILE *fh; // [esp+24h] [ebp-4h]
 
@@ -111768,7 +111570,7 @@ int __cdecl style_readFromFileREC(char *lss_filename, char *parent_filename)
     LYCloseInput(fh);
     if ( !parent_filename && LYCursesON[0] )
       parse_userstyles();
-    v7 = 0;
+    return 0;
   }
   else
   {
@@ -111777,9 +111579,8 @@ int __cdecl style_readFromFileREC(char *lss_filename, char *parent_filename)
       v3 = TraceFP();
       fprintf(v3, "CSS:Can't open style file '%s', using defaults\n", lss_filename);
     }
-    v7 = -1;
+    return -1;
   }
-  return v7;
 }
 
 //----- (080EBCAC) --------------------------------------------------------
@@ -111824,7 +111625,12 @@ void __cdecl TrimColorClass(const char *tagname, char *styleclassname, int *phco
 }
 
 //----- (080EBDAC) --------------------------------------------------------
-void __cdecl FastTrimColorClass(const char *tag_name, int name_len, char *stylename, char **pstylename_end, int *phcode)
+void __cdecl FastTrimColorClass(
+        const char *tag_name,
+        int name_len,
+        char *stylename,
+        char **pstylename_end,
+        int *phcode)
 {
   FILE *v5; // edx
   FILE *v6; // eax
@@ -111896,7 +111702,7 @@ unsigned int *__cdecl RefCachedStyle(int y, int x)
     cached_styles_ptr = calloc(display_lines * LYcols, 4u);
   }
   if ( y >= 0 && x >= 0 && y < cached_styles_rows && x < cached_styles_cols )
-    result = (unsigned int *)((char *)cached_styles_ptr + 4 * y * cached_styles_cols + 4 * x);
+    return (unsigned int *)((char *)cached_styles_ptr + 4 * y * cached_styles_cols + 4 * x);
   return result;
 }
 
@@ -111915,7 +111721,7 @@ unsigned int __cdecl GetCachedStyle(int y, int x)
   value = 0;
   cache = RefCachedStyle(y, x);
   if ( cache )
-    value = *cache;
+    return *cache;
   return value;
 }
 
@@ -112004,15 +111810,13 @@ int __cdecl hash_code_aggregate_lower_str(const char *string, int hash_was)
 //----- (080EC340) --------------------------------------------------------
 int __cdecl html_src_tag_index(char *tagname)
 {
-  int v2; // [esp+14h] [ebp-14h]
   HTTag *tag; // [esp+24h] [ebp-4h]
 
   tag = SGMLFindTag(&HTML_dtd, tagname);
   if ( !tag || tag == &HTTag_unrecognized )
-    v2 = -1;
+    return -1;
   else
-    v2 = -1227133513 * (((char *)tag - (char *)HTML_dtd.tags) >> 3);
-  return v2;
+    return -1227133513 * (((char *)tag - (char *)HTML_dtd.tags) >> 3);
 }
 
 //----- (080EC393) --------------------------------------------------------
@@ -112358,7 +112162,7 @@ void __cdecl html_src_clean_item(HTlexeme l)
     }
   }
 }
-// 80ECC56: conditional instruction was optimized away because of '%cur.4!=0'
+// 80ECC56: conditional instruction was optimized away because %cur.4!=0
 
 //----- (080ECC84) --------------------------------------------------------
 void html_src_clean_data()
@@ -112561,12 +112365,21 @@ void __cdecl Stbl_free(STable_info *me)
 }
 
 //----- (080ED1EB) --------------------------------------------------------
-int __cdecl Stbl_addCellToRow(STable_rowinfo *me, STable_cellinfo *colinfo, int ncolinfo, STable_states *s, int colspan, int alignment, int isheader, int lineno, int *ppos)
+int __cdecl Stbl_addCellToRow(
+        STable_rowinfo *me,
+        STable_cellinfo *colinfo,
+        int ncolinfo,
+        STable_states *s,
+        int colspan,
+        int alignment,
+        int isheader,
+        int lineno,
+        int *ppos)
 {
   int v9; // ebx
   FILE *v10; // edx
   const char *v11; // ebx
-  int v12; // esi
+  int pending_len; // esi
   int v13; // edi
   FILE *v14; // eax
   const char *v15; // ebx
@@ -112575,7 +112388,7 @@ int __cdecl Stbl_addCellToRow(STable_rowinfo *me, STable_cellinfo *colinfo, int 
   unsigned __int32 v19; // [esp+30h] [ebp-48h]
   int v20; // [esp+34h] [ebp-44h]
   const char *v21; // [esp+38h] [ebp-40h]
-  int v22; // [esp+3Ch] [ebp-3Ch]
+  int ncells; // [esp+3Ch] [ebp-3Ch]
   int v23; // [esp+48h] [ebp-30h]
   int growby; // [esp+54h] [ebp-24h]
   int ret; // [esp+58h] [ebp-20h]
@@ -112599,11 +112412,11 @@ int __cdecl Stbl_addCellToRow(STable_rowinfo *me, STable_cellinfo *colinfo, int 
   {
     v21 = cellstate_s(s->state);
     v11 = cellstate_s(s->prev_state);
-    v12 = s->pending_len;
+    pending_len = s->pending_len;
     v13 = s->lineno;
-    v22 = me->ncells;
+    ncells = me->ncells;
     v14 = TraceFP();
-    fprintf(v14, " ncells=%d, stateLine=%d, pending_len=%d, pstate=%s, state=%s\n", v22, v13, v12, v11, v21);
+    fprintf(v14, " ncells=%d, stateLine=%d, pending_len=%d, pstate=%s, state=%s\n", ncells, v13, pending_len, v11, v21);
   }
   if ( me->ncells )
   {
@@ -112828,12 +112641,12 @@ int __cdecl Stbl_reserveCellsInRow(STable_rowinfo *me, int icell, int colspan)
 //----- (080EDD3B) --------------------------------------------------------
 int __cdecl Stbl_finishCellInRow(STable_rowinfo *me, STable_states *s, int end_td, int lineno, int pos)
 {
-  int v5; // ebx
-  int v6; // esi
+  int pending_len; // ebx
+  int ncells; // esi
   FILE *v7; // edx
   const char *v8; // edi
   const char *v9; // ebx
-  int v10; // esi
+  int cLine; // esi
   FILE *v11; // edx
   const char *v12; // ebx
   const char *v13; // esi
@@ -112872,7 +112685,7 @@ int __cdecl Stbl_finishCellInRow(STable_rowinfo *me, STable_states *s, int end_t
   int v48; // [esp+B8h] [ebp-40h]
   int v49; // [esp+BCh] [ebp-3Ch]
   cellstate_t v50; // [esp+C0h] [ebp-38h]
-  int v51; // [esp+C4h] [ebp-34h]
+  int len; // [esp+C4h] [ebp-34h]
   int v52; // [esp+C8h] [ebp-30h]
   int ret; // [esp+D8h] [ebp-20h]
   cellstate_t newstate; // [esp+E4h] [ebp-14h]
@@ -112881,8 +112694,8 @@ int __cdecl Stbl_finishCellInRow(STable_rowinfo *me, STable_states *s, int end_t
   newstate = CS_invalid;
   if ( WWW_TraceFlag[0] && (WWW_TraceMask & 4) != 0 )
   {
-    v5 = s->pending_len;
-    v6 = me->ncells;
+    pending_len = s->pending_len;
+    ncells = me->ncells;
     v7 = TraceFP();
     fprintf(
       v7,
@@ -112890,8 +112703,8 @@ int __cdecl Stbl_finishCellInRow(STable_rowinfo *me, STable_states *s, int end_t
       lineno,
       pos,
       end_td,
-      v6,
-      v5);
+      ncells,
+      pending_len);
   }
   if ( me->ncells <= 0 )
     return -1;
@@ -112906,9 +112719,9 @@ int __cdecl Stbl_finishCellInRow(STable_rowinfo *me, STable_states *s, int end_t
     v8 = cellstate_s(s->state);
     v9 = cellstate_s(s->prev_state);
     v19 = s->lineno;
-    v10 = lastcell->cLine;
+    cLine = lastcell->cLine;
     v11 = TraceFP();
-    fprintf(v11, " [lines: lastCell=%d state=%d multi=%d] empty=%d (prev)state=(%s) %s\n", v10, v19, v17, v18, v9, v8);
+    fprintf(v11, " [lines: lastCell=%d state=%d multi=%d] empty=%d (prev)state=(%s) %s\n", cLine, v19, v17, v18, v9, v8);
   }
   if ( v17 )
   {
@@ -113300,10 +113113,10 @@ LABEL_245:
           v50 = CS__cf;
         s->state = v50;
         if ( me->fixed_line && me->Line != lineno )
-          v51 = -1;
+          len = -1;
         else
-          v51 = lastcell->len;
-        ret = v51;
+          len = lastcell->len;
+        ret = len;
         break;
       case CS__0new:
 LABEL_229:
@@ -113442,8 +113255,8 @@ trace_and_return:
   }
   return ret;
 }
-// 80EE21B: conditional instruction was optimized away because of '%empty.4 in (1..FF)'
-// 80EE653: conditional instruction was optimized away because of '%empty.4 in (1..FF)'
+// 80EE21B: conditional instruction was optimized away because %empty.4 is in (1..FF)
+// 80EE653: conditional instruction was optimized away because %empty.4 is in (1..FF)
 
 //----- (080EEBA1) --------------------------------------------------------
 int __cdecl Stbl_reserveCellsInTable(STable_info *me, int icell, int colspan, int rowspan)
@@ -113451,7 +113264,6 @@ int __cdecl Stbl_reserveCellsInTable(STable_info *me, int icell, int colspan, in
   FILE *v4; // eax
   FILE *v5; // eax
   FILE *v6; // edx
-  int v8; // [esp+14h] [ebp-24h]
   int nmemb; // [esp+18h] [ebp-20h]
   STable_rowinfo *v10; // [esp+1Ch] [ebp-1Ch]
   int v11; // [esp+20h] [ebp-18h]
@@ -113537,11 +113349,11 @@ int __cdecl Stbl_reserveCellsInTable(STable_info *me, int icell, int colspan, in
           }
           Stbl_reserveCellsInRow(&me->rows[ia], icell, colspan);
         }
-        v8 = 0;
+        return 0;
       }
       else
       {
-        v8 = -1;
+        return -1;
       }
     }
     else
@@ -113551,7 +113363,7 @@ int __cdecl Stbl_reserveCellsInTable(STable_info *me, int icell, int colspan, in
         v5 = TraceFP();
         fprintf(v5, "TRST:*** ROWSPAN=%d is too large, ignored!\n", rowspan);
       }
-      v8 = -1;
+      return -1;
     }
   }
   else
@@ -113561,9 +113373,8 @@ int __cdecl Stbl_reserveCellsInTable(STable_info *me, int icell, int colspan, in
       v4 = TraceFP();
       fprintf(v4, "TRST:*** COLSPAN=%d is too large, ignored!\n", colspan);
     }
-    v8 = -1;
+    return -1;
   }
-  return v8;
 }
 
 //----- (080EEFAD) --------------------------------------------------------
@@ -113597,7 +113408,7 @@ void __cdecl Stbl_cancelRowSpans(STable_info *me)
 int __cdecl Stbl_addRowToTable(STable_info *me, int alignment, int lineno)
 {
   FILE *v3; // edx
-  int v6; // [esp+20h] [ebp-28h]
+  int rowgroup_align; // [esp+20h] [ebp-28h]
   int growby; // [esp+30h] [ebp-18h]
   int i; // [esp+34h] [ebp-14h]
   STable_rowinfo *row; // [esp+3Ch] [ebp-Ch]
@@ -113668,10 +113479,10 @@ int __cdecl Stbl_addRowToTable(STable_info *me, int alignment, int lineno)
   if ( alignment == -1 )
   {
     if ( me->rowgroup_align == -1 )
-      v6 = me->alignment;
+      rowgroup_align = me->alignment;
     else
-      v6 = me->rowgroup_align;
-    me->rows[me->nrows].alignment = v6;
+      rowgroup_align = me->rowgroup_align;
+    me->rows[me->nrows].alignment = rowgroup_align;
   }
   else
   {
@@ -113687,7 +113498,7 @@ int __cdecl Stbl_addRowToTable(STable_info *me, int alignment, int lineno)
   me->rows[me->nrows].ended = ROW_not_ended;
   return me->nrows - 1;
 }
-// 80EF353: conditional instruction was optimized away because of '%rows.4!=0'
+// 80EF353: conditional instruction was optimized away because %rows.4!=0
 
 //----- (080EF510) --------------------------------------------------------
 int __cdecl Stbl_finishRowInTable(STable_info *me)
@@ -113720,7 +113531,14 @@ int __cdecl Stbl_finishRowInTable(STable_info *me)
 }
 
 //----- (080EF675) --------------------------------------------------------
-void __cdecl update_sumcols0(STable_cellinfo *sumcols, STable_rowinfo *lastrow, int pos, int len, int icell, int ispan, int allocated_sumcols)
+void __cdecl update_sumcols0(
+        STable_cellinfo *sumcols,
+        STable_rowinfo *lastrow,
+        int pos,
+        int len,
+        int icell,
+        int ispan,
+        int allocated_sumcols)
 {
   int v7; // [esp+4h] [ebp-14h]
   int advance; // [esp+8h] [ebp-10h]
@@ -113769,7 +113587,12 @@ void __cdecl update_sumcols0(STable_cellinfo *sumcols, STable_rowinfo *lastrow, 
 }
 
 //----- (080EF8E7) --------------------------------------------------------
-int __cdecl get_remaining_colspan(STable_rowinfo *me, STable_cellinfo *colinfo, int ncolinfo, int colspan, int ncols_sofar)
+int __cdecl get_remaining_colspan(
+        STable_rowinfo *me,
+        STable_cellinfo *colinfo,
+        int ncolinfo,
+        int colspan,
+        int ncols_sofar)
 {
   FILE *v5; // eax
   int v7; // [esp+10h] [ebp-18h]
@@ -113936,7 +113759,7 @@ int __cdecl Stbl_fakeFinishCellInTable(STable_info *me, STable_rowinfo *lastrow,
       colspan = 1;
     if ( Stbl_addCellToTable(me, colspan, 1, al_0, 0, lineno, 0, 0) < 0 )
       return -1;
-    lastrowa->content &= 0xFFFFFFFD;
+    lastrowa->content &= ~2u;
     if ( (!finishing || ic != ncells) && Stbl_finishCellInRow(lastrowa, &me->s, 3, lineno, 0) < 0 )
       return -1;
   }
@@ -113949,11 +113772,18 @@ int __cdecl Stbl_fakeFinishCellInTable(STable_info *me, STable_rowinfo *lastrow,
 }
 
 //----- (080EFFCE) --------------------------------------------------------
-int __cdecl Stbl_addCellToTable(STable_info *me, int colspan, int rowspan, int alignment, int isheader, int lineno, int offset_not_used_yet, int pos)
+int __cdecl Stbl_addCellToTable(
+        STable_info *me,
+        int colspan,
+        int rowspan,
+        int alignment,
+        int isheader,
+        int lineno,
+        int offset_not_used_yet,
+        int pos)
 {
   int v8; // ebx
   FILE *v9; // edx
-  int v11; // [esp+28h] [ebp-40h]
   int v12; // [esp+30h] [ebp-38h]
   int growby; // [esp+3Ch] [ebp-2Ch]
   int rc; // [esp+40h] [ebp-28h]
@@ -114047,10 +113877,9 @@ int __cdecl Stbl_addCellToTable(STable_info *me, int colspan, int rowspan, int a
   else
     v12 = LYcols - (LYShowScrollbar != 0);
   if ( me->maxpos <= v12 )
-    v11 = 0;
+    return 0;
   else
-    v11 = -1;
-  return v11;
+    return -1;
 }
 
 //----- (080F0573) --------------------------------------------------------
@@ -114058,8 +113887,7 @@ int __cdecl Stbl_finishCellInTable(STable_info *me, int end_td, int lineno, int 
 {
   FILE *v5; // edx
   int v7; // [esp+20h] [ebp-58h]
-  int v8; // [esp+24h] [ebp-54h]
-  int v9; // [esp+28h] [ebp-50h]
+  int pending_len; // [esp+28h] [ebp-50h]
   int v10; // [esp+30h] [ebp-48h]
   int v11; // [esp+38h] [ebp-40h]
   int v12; // [esp+40h] [ebp-38h]
@@ -114086,7 +113914,7 @@ int __cdecl Stbl_finishCellInTable(STable_info *me, int end_td, int lineno, int 
   {
     if ( (end_td & 1) == 0 )
       lastrow->ended = ROW_ended_by_splitline;
-    v8 = 0;
+    return 0;
   }
   else
   {
@@ -114107,16 +113935,16 @@ int __cdecl Stbl_finishCellInTable(STable_info *me, int end_td, int lineno, int 
     len = Stbl_finishCellInRow(lastrow, &me->s, end_td, lineno, pos);
     if ( len == -1 )
     {
-      v8 = -1;
+      return -1;
     }
     else
     {
       if ( len > 0 )
-        v9 = len;
+        pending_len = len;
       else
-        v9 = me->s.pending_len;
+        pending_len = me->s.pending_len;
       if ( lastrow->Line == lineno )
-        len = v9;
+        len = pending_len;
       if ( lastrow->cells[icell].colspan <= 1 )
       {
         if ( me->sumcols[icell].len < len )
@@ -114176,7 +114004,7 @@ int __cdecl Stbl_finishCellInTable(STable_info *me, int end_td, int lineno, int 
           v11 = 1013;
         else
           v11 = LYcols - (LYShowScrollbar != 0);
-        if ( v9 - len + me->maxlen > v11 )
+        if ( pending_len - len + me->maxlen > v11 )
           return -1;
       }
       if ( LYwideLines )
@@ -114184,12 +114012,11 @@ int __cdecl Stbl_finishCellInTable(STable_info *me, int end_td, int lineno, int 
       else
         v12 = LYcols - (LYShowScrollbar != 0);
       if ( me->maxpos <= v12 )
-        v8 = 0;
+        return 0;
       else
-        v8 = -1;
+        return -1;
     }
   }
-  return v8;
 }
 
 //----- (080F0AA9) --------------------------------------------------------
@@ -114301,13 +114128,12 @@ int __cdecl Stbl_addRowGroup(STable_info *me, __int16 alignment)
 int __cdecl Stbl_finishTABLE(STable_info *me)
 {
   FILE *v1; // eax
-  ended_state v2; // esi
-  int v3; // ebx
+  ended_state ended; // esi
+  int offset; // ebx
   FILE *v4; // edx
   ended_state v5; // ebx
   int v6; // esi
   FILE *v7; // edx
-  int v10; // [esp+28h] [ebp-50h]
   int v11; // [esp+2Ch] [ebp-4Ch]
   int curcell; // [esp+40h] [ebp-38h]
   int max_width; // [esp+44h] [ebp-34h]
@@ -114356,10 +114182,10 @@ int __cdecl Stbl_finishTABLE(STable_info *me)
       minoffset = nextrow[-1].offset;
       if ( WWW_TraceFlag[0] && (WWW_TraceMask & 4) != 0 )
       {
-        v2 = nextrow[-1].ended;
-        v3 = nextrow[-1].offset;
+        ended = nextrow[-1].ended;
+        offset = nextrow[-1].offset;
         v4 = TraceFP();
-        fprintf(v4, "TRST:Stbl_finishTABLE, l=%d, offset=%d, ended=%u.\n", i, v3, v2);
+        fprintf(v4, "TRST:Stbl_finishTABLE, l=%d, offset=%d, ended=%u.\n", i, offset, ended);
       }
       while ( me->nrows > j && (nextrow->content & 0x26) == 36 )
       {
@@ -114457,30 +114283,26 @@ int __cdecl Stbl_finishTABLE(STable_info *me)
   else
     v11 = LYcols - (LYShowScrollbar != 0);
   if ( v11 < curpos )
-    v10 = -1;
+    return -1;
   else
-    v10 = me->ncols;
-  return v10;
+    return me->ncols;
 }
 
 //----- (080F143A) --------------------------------------------------------
 __int16 __cdecl Stbl_getAlignment(STable_info *me)
 {
-  __int16 v2; // [esp+2h] [ebp-2h]
-
   if ( me )
-    v2 = me->alignment;
+    return me->alignment;
   else
-    v2 = -1;
-  return v2;
+    return -1;
 }
 
 //----- (080F145F) --------------------------------------------------------
 int __cdecl get_fixup_positions(STable_rowinfo *me, int *oldpos, int *newpos, STable_cellinfo *sumcols)
 {
   int v4; // eax
-  int v6; // [esp+4h] [ebp-34h]
-  int v8; // [esp+Ch] [ebp-2Ch]
+  int len; // [esp+4h] [ebp-34h]
+  int colspan; // [esp+Ch] [ebp-2Ch]
   int offset; // [esp+18h] [ebp-20h]
   int ip_0; // [esp+28h] [ebp-10h]
   int i; // [esp+2Ch] [ebp-Ch]
@@ -114491,9 +114313,9 @@ int __cdecl get_fixup_positions(STable_rowinfo *me, int *oldpos, int *newpos, ST
     return -1;
   while ( me->ncells > i )
   {
-    v8 = me->cells[i].colspan;
-    if ( v8 <= 0 )
-      v8 = 1;
+    colspan = me->cells[i].colspan;
+    if ( colspan <= 0 )
+      colspan = 1;
     if ( me->cells[i].cLine == me->Line )
     {
       oldpos[ip_0] = me->cells[i].pos;
@@ -114504,26 +114326,26 @@ int __cdecl get_fixup_positions(STable_rowinfo *me, int *oldpos, int *newpos, ST
       newpos[ip_0] = offset + sumcols[i].pos;
       if ( (me->cells[i].alignment == 3 || me->cells[i].alignment == 2) && me->cells[i].len > 0 )
       {
-        v6 = sumcols[i].len;
-        if ( v6 < sumcols[i + v8].pos - newpos[ip_0] - 1 )
-          v6 = sumcols[i + v8].pos - newpos[ip_0] - 1;
-        if ( me->cells[i].len < v6 )
+        len = sumcols[i].len;
+        if ( len < sumcols[i + colspan].pos - newpos[ip_0] - 1 )
+          len = sumcols[i + colspan].pos - newpos[ip_0] - 1;
+        if ( me->cells[i].len < len )
         {
           if ( me->cells[i].alignment == 2 )
-            v4 = newpos[ip_0] + v6 - me->cells[i].len;
+            v4 = newpos[ip_0] + len - me->cells[i].len;
           else
-            v4 = newpos[ip_0] + (v6 - me->cells[i].len) / 2;
+            v4 = newpos[ip_0] + (len - me->cells[i].len) / 2;
           newpos[ip_0] = v4;
         }
       }
       ++ip_0;
-      i += v8;
+      i += colspan;
     }
     else
     {
       if ( me->cells[i].cLine > me->Line )
         return ip_0;
-      i += v8;
+      i += colspan;
     }
   }
   return ip_0;
@@ -114551,13 +114373,10 @@ int __cdecl Stbl_getFixupPositions(STable_info *me, int lineno, int *oldpos, int
 //----- (080F17D0) --------------------------------------------------------
 int __cdecl Stbl_getStartLine(STable_info *me)
 {
-  int v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->startline;
+    return me->startline;
   else
-    v2 = -1;
-  return v2;
+    return -1;
 }
 
 //----- (080F17F3) --------------------------------------------------------
@@ -114573,7 +114392,7 @@ int __cdecl Stbl_getStartLineDeep(STable_info *me)
 //----- (080F1827) --------------------------------------------------------
 void __cdecl Stbl_update_enclosing(STable_info *me, int max_width, int last_lineno)
 {
-  int v3; // ebx
+  int startline; // ebx
   FILE *v4; // edx
   FILE *v5; // eax
   STable_info *enclosing; // [esp+18h] [ebp-10h]
@@ -114584,9 +114403,9 @@ void __cdecl Stbl_update_enclosing(STable_info *me, int max_width, int last_line
   {
     if ( WWW_TraceFlag[0] && (WWW_TraceMask & 4) != 0 )
     {
-      v3 = me->startline;
+      startline = me->startline;
       v4 = TraceFP();
-      fprintf(v4, "TRST:Stbl_update_enclosing, width=%d, lines=%d...%d.\n", max_width, v3, last_lineno);
+      fprintf(v4, "TRST:Stbl_update_enclosing, width=%d, lines=%d...%d.\n", max_width, startline, last_lineno);
     }
     for ( l = me->startline; l <= last_lineno; ++l )
     {
@@ -114612,7 +114431,10 @@ void __cdecl Stbl_update_enclosing(STable_info *me, int max_width, int last_line
 }
 
 //----- (080F194C) --------------------------------------------------------
-void __cdecl Stbl_set_enclosing(STable_info *me, STable_info *enclosing, _TextAnchor *enclosing_last_anchor_before_stbl)
+void __cdecl Stbl_set_enclosing(
+        STable_info *me,
+        STable_info *enclosing,
+        _TextAnchor *enclosing_last_anchor_before_stbl)
 {
   if ( me )
   {
@@ -114624,25 +114446,19 @@ void __cdecl Stbl_set_enclosing(STable_info *me, STable_info *enclosing, _TextAn
 //----- (080F1968) --------------------------------------------------------
 STable_info *__cdecl Stbl_get_enclosing(STable_info *me)
 {
-  STable_info *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->enclosing;
+    return me->enclosing;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (080F198A) --------------------------------------------------------
 _TextAnchor *__cdecl Stbl_get_last_anchor_before(STable_info *me)
 {
-  _TextAnchor *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->enclosing_last_anchor_before_stbl;
+    return me->enclosing_last_anchor_before_stbl;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (080F19B0) --------------------------------------------------------
@@ -114676,7 +114492,15 @@ time_t __cdecl ToSeconds(time_t Hours, time_t Minutes, time_t Seconds, MERIDIAN 
 }
 
 //----- (080F1A52) --------------------------------------------------------
-time_t __cdecl Convert(time_t Month, time_t Day, time_t Year, time_t Hours, time_t Minutes, time_t Seconds, MERIDIAN Meridian, DSTMODE dst)
+time_t __cdecl Convert(
+        time_t Month,
+        time_t Day,
+        time_t Year,
+        time_t Hours,
+        time_t Minutes,
+        time_t Seconds,
+        MERIDIAN Meridian,
+        DSTMODE dst)
 {
   time_t tod; // [esp+24h] [ebp-14h] BYREF
   time_t Julian; // [esp+28h] [ebp-10h]
@@ -114722,6 +114546,7 @@ time_t __cdecl Convert(time_t Month, time_t Day, time_t Year, time_t Hours, time
     Julian -= 3600;
   return Julian;
 }
+// 8170D64: using guessed type int dword_8170D64[7];
 
 //----- (080F1BEA) --------------------------------------------------------
 time_t __cdecl DSTcorrect(time_t Start, time_t Future)
@@ -114739,7 +114564,7 @@ time_t __cdecl RelativeMonth(time_t Start, time_t RelMonth)
 {
   time_t v2; // eax
   time_t Month; // [esp+38h] [ebp-10h]
-  tm *tm; // [esp+3Ch] [ebp-Ch]
+  struct tm *tm; // [esp+3Ch] [ebp-Ch]
 
   tm = localtime(&Start);
   Month = RelMonth + 12 * tm->tm_year + tm->tm_mon;
@@ -114857,6 +114682,7 @@ int __cdecl LookupWord(char *buff, int length)
   yylval.Number = 0;
   return 265;
 }
+// 8170D14: using guessed type TABLE stru_8170D14;
 
 //----- (080F213E) --------------------------------------------------------
 int date_lex()
@@ -114864,7 +114690,6 @@ int date_lex()
   int v1; // [esp+14h] [ebp-44h]
   int v2; // [esp+18h] [ebp-40h]
   YYSTYPE v3; // [esp+1Ch] [ebp-3Ch]
-  int v4; // [esp+20h] [ebp-38h]
   char v5; // [esp+27h] [ebp-31h]
   int nesting; // [esp+2Ch] [ebp-2Ch]
   int i; // [esp+30h] [ebp-28h]
@@ -114942,10 +114767,9 @@ int date_lex()
       v3.Number = -i;
     yylval.Number = v3.Number;
     if ( sign )
-      v4 = 263;
+      return 263;
     else
-      v4 = 264;
-    v1 = v4;
+      return 264;
   }
   else if ( (c & 0x80u) == 0 && ((*__ctype_b_loc())[c] & 0x400) != 0 )
   {
@@ -114966,13 +114790,12 @@ int date_lex()
     }
     *p = 0;
     --yyInput;
-    v1 = LookupWord(buff, p - buff);
+    return LookupWord(buff, p - buff);
   }
   else
   {
-    v1 = *yyInput++;
+    return *yyInput++;
   }
-  return v1;
 }
 
 //----- (080F2508) --------------------------------------------------------
@@ -115003,7 +114826,6 @@ int __cdecl GetTimeInfo(TIMEINFO *Now)
 time_t __cdecl parsedate(char *p, TIMEINFO *now)
 {
   time_t v2; // eax
-  time_t v5; // [esp+38h] [ebp-30h]
   TIMEINFO ti; // [esp+48h] [ebp-20h] BYREF
   time_t Start; // [esp+54h] [ebp-14h]
   tm *tm; // [esp+58h] [ebp-10h]
@@ -115052,10 +114874,9 @@ time_t __cdecl parsedate(char *p, TIMEINFO *now)
     Start += v2;
   }
   if ( Start == -1 )
-    v5 = 0;
+    return 0;
   else
-    v5 = Start;
-  return v5;
+    return Start;
 }
 
 //----- (080F27F3) --------------------------------------------------------
@@ -115650,8 +115471,8 @@ void __cdecl con_clear_unimap(int fordefault)
     hashtable_contents_valid = 1;
   }
 }
-// 80F3AD1: conditional instruction was optimized away because of '%p1.4!=0'
-// 80F3B77: conditional instruction was optimized away because of '%p1.4!=0'
+// 80F3AD1: conditional instruction was optimized away because %p1.4!=0
+// 80F3B77: conditional instruction was optimized away because %p1.4!=0
 
 //----- (080F3BB3) --------------------------------------------------------
 void __cdecl con_clear_unimap_str(int fordefault)
@@ -115706,8 +115527,8 @@ void __cdecl con_clear_unimap_str(int fordefault)
     hashtable_str_contents_valid = 1;
   }
 }
-// 80F3C2A: conditional instruction was optimized away because of '%p1.4!=0'
-// 80F3CD0: conditional instruction was optimized away because of '%p1.4!=0'
+// 80F3C2A: conditional instruction was optimized away because %p1.4!=0
+// 80F3CD0: conditional instruction was optimized away because %p1.4!=0
 
 //----- (080F3D0C) --------------------------------------------------------
 void con_set_default_unimap()
@@ -115738,7 +115559,6 @@ int __cdecl UC_con_set_unimap(int UC_charset_out_hndl, int update_flag)
 {
   FILE *v2; // eax
   unsigned __int16 v3; // ax
-  int v5; // [esp+14h] [ebp-14h]
   const unsigned __int16 *p; // [esp+1Ch] [ebp-Ch]
   int j; // [esp+20h] [ebp-8h]
   int i; // [esp+24h] [ebp-4h]
@@ -115749,7 +115569,7 @@ int __cdecl UC_con_set_unimap(int UC_charset_out_hndl, int update_flag)
     p = UCInfo[UC_charset_out_hndl].unitable;
     if ( p == UC_current_unitable )
     {
-      v5 = update_flag;
+      return update_flag;
     }
     else
     {
@@ -115768,7 +115588,7 @@ int __cdecl UC_con_set_unimap(int UC_charset_out_hndl, int update_flag)
         for ( ia = 0; ia <= 3; ++ia )
           set_inverse_transl(ia);
       }
-      v5 = 0;
+      return 0;
     }
   }
   else
@@ -115778,9 +115598,8 @@ int __cdecl UC_con_set_unimap(int UC_charset_out_hndl, int update_flag)
       v2 = TraceFP();
       fprintf(v2, "UC_con_set_unimap: Invalid charset handle %d.\n", UC_charset_out_hndl);
     }
-    v5 = -1;
+    return -1;
   }
-  return v5;
 }
 
 //----- (080F3EEE) --------------------------------------------------------
@@ -115810,7 +115629,6 @@ int __cdecl UC_con_set_unimap_str(unsigned __int16 ct, unipair_str *list, int fo
 //----- (080F3F71) --------------------------------------------------------
 int __cdecl conv_uni_to_pc(int ucs, int usedefault)
 {
-  int v3; // [esp+0h] [ebp-14h]
   unsigned __int16 *p2; // [esp+8h] [ebp-Ch]
   unsigned __int16 **p1; // [esp+Ch] [ebp-8h]
 
@@ -115840,10 +115658,9 @@ int __cdecl conv_uni_to_pc(int ucs, int usedefault)
     p1 = uni_pagedir[ucs >> 11];
   }
   if ( p1 && (p2 = p1[(ucs >> 6) & 0x1F]) != 0 && p2[ucs & 0x3F] <= 0x1FFu )
-    v3 = p2[ucs & 0x3F];
+    return p2[ucs & 0x3F];
   else
-    v3 = -4;
-  return v3;
+    return -4;
 }
 
 //----- (080F408D) --------------------------------------------------------
@@ -115898,7 +115715,6 @@ void UCconsole_map_init()
 //----- (080F41B5) --------------------------------------------------------
 int __cdecl UCTransUniChar(int unicode, int charset_out)
 {
-  int v4; // [esp+14h] [ebp-24h]
   int trydefault; // [esp+28h] [ebp-10h]
   int isdefault; // [esp+2Ch] [ebp-Ch]
   int UChndl_out; // [esp+30h] [ebp-8h]
@@ -115918,10 +115734,9 @@ int __cdecl UCTransUniChar(int unicode, int charset_out)
     if ( LYCharSet_UC[charset_out].codepage < 0 )
     {
       if ( unicode <= 127 )
-        v4 = unicode;
+        return unicode;
       else
-        v4 = LYCharSet_UC[charset_out].codepage;
-      return v4;
+        return LYCharSet_UC[charset_out].codepage;
     }
     UChndl_out = default_UChndl;
     if ( default_UChndl < 0 )
@@ -115949,7 +115764,7 @@ int __cdecl UCTransUniChar(int unicode, int charset_out)
   if ( !isdefault && rc == -4 )
     rc = conv_uni_to_pc(65533, 0);
   if ( (isdefault || trydefault) && rc == -4 )
-    rc = conv_uni_to_pc(65533, 1);
+    return conv_uni_to_pc(65533, 1);
   return rc;
 }
 
@@ -115957,7 +115772,6 @@ int __cdecl UCTransUniChar(int unicode, int charset_out)
 int __cdecl UCTransUniCharStr(char *outbuf, int buflen, int unicode, int charset_out, int chk_single_flag)
 {
   FILE *v5; // eax
-  int v7; // [esp+14h] [ebp-44h]
   char *tocode; // [esp+1Ch] [ebp-3Ch] BYREF
   size_t outleft; // [esp+20h] [ebp-38h] BYREF
   size_t inleft; // [esp+24h] [ebp-34h] BYREF
@@ -116031,7 +115845,7 @@ LABEL_65:
   {
     *outbuf = src;
     outbuf[1] = 0;
-    v7 = 1;
+    return 1;
   }
   else
   {
@@ -116098,27 +115912,26 @@ LABEL_65:
         rc = conv_uni_to_pc(65533, 1);
       if ( rc <= 31 )
       {
-        v7 = rc;
+        return rc;
       }
       else
       {
         *outbuf = rc;
         outbuf[1] = 0;
-        v7 = 1;
+        return 1;
       }
     }
     else
     {
-      v7 = -4;
+      return -4;
     }
   }
-  return v7;
 }
 
 //----- (080F489E) --------------------------------------------------------
 int __cdecl UC_MapGN(int UChndl, int update_flag)
 {
-  const char *v2; // ebx
+  const char *MIMEname; // ebx
   FILE *v3; // edx
   int found; // [esp+28h] [ebp-10h]
   int Gn; // [esp+2Ch] [ebp-Ch]
@@ -116161,9 +115974,9 @@ int __cdecl UC_MapGN(int UChndl, int update_flag)
   }
   if ( WWW_TraceFlag[0] )
   {
-    v2 = UCInfo[UChndl].MIMEname;
+    MIMEname = UCInfo[UChndl].MIMEname;
     v3 = TraceFP();
-    fprintf(v3, "UC_MapGN: Using %d <- %d (%s)\n", Gn, UChndl, v2);
+    fprintf(v3, "UC_MapGN: Using %d <- %d (%s)\n", Gn, UChndl, MIMEname);
   }
   UC_con_set_trans(UChndl, Gn, update_flag);
   return Gn;
@@ -116228,11 +116041,8 @@ int __cdecl UCTransChar(char ch_in, int charset_in, int charset_out)
       goto LABEL_21;
     }
     if ( upd )
-    {
 LABEL_21:
       set_inverse_transl(Gn);
-      goto LABEL_25;
-    }
   }
 LABEL_25:
   UC_translate = set_translate(Gn);
@@ -116248,14 +116058,13 @@ LABEL_25:
   if ( rc == -4 && !isdefault )
     rc = conv_uni_to_pc(65533, 0);
   if ( rc == -4 && (isdefault || trydefault) )
-    rc = conv_uni_to_pc(65533, 1);
+    return conv_uni_to_pc(65533, 1);
   return rc;
 }
 
 //----- (080F4CCE) --------------------------------------------------------
 UCode_t __cdecl UCTransJPToUni(char *inbuf, int buflen, int charset_in)
 {
-  UCode_t v4; // [esp+14h] [ebp-24h]
   iconv_t cd; // [esp+1Ch] [ebp-1Ch]
   size_t olen; // [esp+20h] [ebp-18h] BYREF
   size_t ilen; // [esp+24h] [ebp-14h] BYREF
@@ -116272,10 +116081,9 @@ UCode_t __cdecl UCTransJPToUni(char *inbuf, int buflen, int charset_in)
   rc = iconv(cd, &pin, &ilen, &pout, &olen);
   iconv_close(cd);
   if ( ilen || olen )
-    v4 = -11;
+    return -11;
   else
-    v4 = (unsigned __int8)outbuf[1] + ((unsigned __int8)outbuf[0] << 8);
-  return v4;
+    return (unsigned __int8)outbuf[1] + ((unsigned __int8)outbuf[0] << 8);
 }
 
 //----- (080F4D75) --------------------------------------------------------
@@ -116374,7 +116182,6 @@ UCode_t __cdecl UCTransToUni(char ch_in, int charset_in)
 //----- (080F5138) --------------------------------------------------------
 int __cdecl UCReverseTransChar(char ch_out, int charset_in, int charset_out)
 {
-  int v4; // [esp+10h] [ebp-28h]
   int isdefault; // [esp+24h] [ebp-14h]
   int UChndl_out; // [esp+28h] [ebp-10h]
   int UChndl_in; // [esp+2Ch] [ebp-Ch]
@@ -116408,7 +116215,7 @@ int __cdecl UCReverseTransChar(char ch_out, int charset_in, int charset_out)
     isdefault = 1;
   }
   if ( isdefault || UCInfo[UChndl_out].unitable != UC_current_unitable )
-    goto LABEL_26;
+    return UCTransChar(ch_out, charset_out, charset_in);
   Gn = UCInfo[UChndl_in].GN;
   if ( Gn < 0 )
     Gn = UC_MapGN(UChndl_in, 1);
@@ -116416,17 +116223,14 @@ int __cdecl UCReverseTransChar(char ch_out, int charset_in, int charset_out)
   if ( inv_translate )
     rc = inv_translate[(unsigned __int8)ch_out];
   if ( rc <= 31 )
-LABEL_26:
-    v4 = UCTransChar(ch_out, charset_out, charset_in);
+    return UCTransChar(ch_out, charset_out, charset_in);
   else
-    v4 = rc;
-  return v4;
+    return rc;
 }
 
 //----- (080F5310) --------------------------------------------------------
 int __cdecl UCTransCharStr(char *outbuf, int buflen, char ch_in, int charset_in, int charset_out, int chk_single_flag)
 {
-  int v7; // [esp+10h] [ebp-38h]
   int upd; // [esp+18h] [ebp-30h]
   int trydefault; // [esp+24h] [ebp-24h]
   int isdefault; // [esp+28h] [ebp-20h]
@@ -116559,15 +116363,14 @@ LABEL_29:
   {
     if ( rc <= 0 )
       *outbuf = 0;
-    v7 = rc;
+    return rc;
   }
   else
   {
     *outbuf = rc;
     outbuf[1] = 0;
-    v7 = 1;
+    return 1;
   }
-  return v7;
 }
 
 //----- (080F57E7) --------------------------------------------------------
@@ -116586,13 +116389,10 @@ int __cdecl UC_FindGN_byMIME(const char *UC_MIMEcharset)
 //----- (080F5831) --------------------------------------------------------
 int __cdecl UCGetRawUniMode_byLYhndl(int i)
 {
-  int v2; // [esp+0h] [ebp-4h]
-
   if ( i >= 0 )
-    v2 = LYCharSet_UC[i].enc;
+    return LYCharSet_UC[i].enc;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (080F585A) --------------------------------------------------------
@@ -116623,7 +116423,6 @@ int __cdecl UCGetLYhndl_byMIME(const char *value)
 {
   FILE *v1; // eax
   FILE *v2; // eax
-  int v4; // [esp+14h] [ebp-14h]
   int LYhndl; // [esp+20h] [ebp-8h]
   int i; // [esp+24h] [ebp-4h]
 
@@ -116670,16 +116469,16 @@ int __cdecl UCGetLYhndl_byMIME(const char *value)
                         {
                           LYhndl = getLYhndl_byCP("cp", value + 3);
                           if ( LYhndl < 0 )
-                            v4 = getLYhndl_byCP("windows-", value + 3);
+                            return getLYhndl_byCP("windows-", value + 3);
                           else
-                            v4 = LYhndl;
+                            return LYhndl;
                         }
                         else if ( !strncasecomp(value, "windows-", 8)
                                && ((*__ctype_b_loc())[*((unsigned __int8 *)value + 8)] & 0x800) != 0
                                && ((*__ctype_b_loc())[*((unsigned __int8 *)value + 9)] & 0x800) != 0
                                && ((*__ctype_b_loc())[*((unsigned __int8 *)value + 10)] & 0x800) != 0 )
                         {
-                          v4 = getLYhndl_byCP("cp", value + 8);
+                          return getLYhndl_byCP("cp", value + 8);
                         }
                         else if ( strcasecomp(value, "koi-8") )
                         {
@@ -116690,66 +116489,66 @@ int __cdecl UCGetLYhndl_byMIME(const char *value)
                               v2 = TraceFP();
                               fprintf(v2, "UCGetLYhndl_byMIME: unrecognized MIME name \"%s\"\n", value);
                             }
-                            v4 = -1;
+                            return -1;
                           }
                           else
                           {
-                            v4 = US_ASCII;
+                            return US_ASCII;
                           }
                         }
                         else
                         {
-                          v4 = UCGetLYhndl_byMIME("koi8-r");
+                          return UCGetLYhndl_byMIME("koi8-r");
                         }
                       }
                       else
                       {
-                        v4 = UCGetLYhndl_byMIME("windows-1250");
+                        return UCGetLYhndl_byMIME("windows-1250");
                       }
                     }
                     else
                     {
-                      v4 = UCGetLYhndl_byMIME("windows-1252");
+                      return UCGetLYhndl_byMIME("windows-1252");
                     }
                   }
                   else
                   {
-                    v4 = UCGetLYhndl_byMIME("next");
+                    return UCGetLYhndl_byMIME("next");
                   }
                 }
                 else
                 {
-                  v4 = UCGetLYhndl_byMIME("macintosh");
+                  return UCGetLYhndl_byMIME("macintosh");
                 }
               }
               else
               {
-                v4 = UCGetLYhndl_byMIME("big5");
+                return UCGetLYhndl_byMIME("big5");
               }
             }
             else
             {
-              v4 = UCGetLYhndl_byMIME("euc-cn");
+              return UCGetLYhndl_byMIME("euc-cn");
             }
           }
           else
           {
-            v4 = UCGetLYhndl_byMIME("euc-kr");
+            return UCGetLYhndl_byMIME("euc-kr");
           }
         }
         else
         {
-          v4 = UCGetLYhndl_byMIME("shift_jis");
+          return UCGetLYhndl_byMIME("shift_jis");
         }
       }
       else
       {
-        v4 = UCGetLYhndl_byMIME("euc-jp");
+        return UCGetLYhndl_byMIME("euc-jp");
       }
     }
     else
     {
-      v4 = UCGetLYhndl_byMIME("utf-8");
+      return UCGetLYhndl_byMIME("utf-8");
     }
   }
   else
@@ -116759,9 +116558,8 @@ int __cdecl UCGetLYhndl_byMIME(const char *value)
       v1 = TraceFP();
       fprintf(v1, "UCGetLYhndl_byMIME: NULL argument instead of MIME name.\n");
     }
-    v4 = -1;
+    return -1;
   }
-  return v4;
 }
 
 //----- (080F5EBD) --------------------------------------------------------
@@ -116776,7 +116574,6 @@ void UCreset_allocated_LYCharSets()
 //----- (080F5EE6) --------------------------------------------------------
 const char **__cdecl UC_setup_LYCharSets_repl(int UC_charset_in_hndl, unsigned int lowest8)
 {
-  const char **v4; // [esp+14h] [ebp-44h]
   unipair_str *list; // [esp+24h] [ebp-34h]
   unsigned __int8 *ti; // [esp+28h] [ebp-30h]
   int changed; // [esp+2Ch] [ebp-2Ch]
@@ -116874,37 +116671,40 @@ const char **__cdecl UC_setup_LYCharSets_repl(int UC_charset_in_hndl, unsigned i
       free(ti);
       if ( changed )
       {
-        v4 = (const char **)prepl;
+        return (const char **)prepl;
       }
       else
       {
         free(prepl);
-        v4 = 0;
+        return 0;
       }
     }
     else
     {
       free(tp);
       free(ti);
-      v4 = 0;
+      return 0;
     }
   }
   else
   {
     free(tp);
-    v4 = 0;
+    return 0;
   }
-  return v4;
 }
-// 80F5F50: conditional instruction was optimized away because of '%tp.4!=0'
-// 80F60E9: conditional instruction was optimized away because of '%tp.4!=0'
-// 80F6101: conditional instruction was optimized away because of '%ti.4!=0'
-// 80F62B3: conditional instruction was optimized away because of '%tp.4!=0'
-// 80F62CB: conditional instruction was optimized away because of '%ti.4!=0'
-// 80F62E9: conditional instruction was optimized away because of '%prepl.4!=0'
+// 80F5F50: conditional instruction was optimized away because %tp.4!=0
+// 80F60E9: conditional instruction was optimized away because %tp.4!=0
+// 80F6101: conditional instruction was optimized away because %ti.4!=0
+// 80F62B3: conditional instruction was optimized away because %tp.4!=0
+// 80F62CB: conditional instruction was optimized away because %ti.4!=0
+// 80F62E9: conditional instruction was optimized away because %prepl.4!=0
 
 //----- (080F6311) --------------------------------------------------------
-int __cdecl UC_Register_with_LYCharSets(int s, const char *UC_MIMEcharset, const char *UC_LYNXcharset, int lowest_eightbit)
+int __cdecl UC_Register_with_LYCharSets(
+        int s,
+        const char *UC_MIMEcharset,
+        const char *UC_LYNXcharset,
+        int lowest_eightbit)
 {
   FILE *v4; // edx
   const char **repl; // [esp+18h] [ebp-10h]
@@ -116972,7 +116772,16 @@ int __cdecl UC_Register_with_LYCharSets(int s, const char *UC_MIMEcharset, const
 }
 
 //----- (080F657C) --------------------------------------------------------
-void __cdecl UC_Charset_Setup(const char *UC_MIMEcharset, const char *UC_LYNXcharset, const unsigned __int8 *unicount, const unsigned __int16 *unitable, int nnuni, unimapdesc_str replacedesc, int lowest_eight, int UC_rawuni, int codepage)
+void __cdecl UC_Charset_Setup(
+        const char *UC_MIMEcharset,
+        const char *UC_LYNXcharset,
+        const unsigned __int8 *unicount,
+        const unsigned __int16 *unitable,
+        int nnuni,
+        unimapdesc_str replacedesc,
+        int lowest_eight,
+        int UC_rawuni,
+        int codepage)
 {
   FILE *v9; // edx
   int found; // [esp+20h] [ebp-18h]
@@ -117026,10 +116835,14 @@ LABEL_13:
 }
 
 //----- (080F67FF) --------------------------------------------------------
-int __cdecl UC_NoUctb_Register_with_LYCharSets(const char *UC_MIMEcharset, const char *UC_LYNXcharset, int lowest_eightbit, int UC_rawuni, int codepage)
+int __cdecl UC_NoUctb_Register_with_LYCharSets(
+        const char *UC_MIMEcharset,
+        const char *UC_LYNXcharset,
+        int lowest_eightbit,
+        int UC_rawuni,
+        int codepage)
 {
   FILE *v5; // edx
-  int v7; // [esp+14h] [ebp-14h]
   int LYhndl; // [esp+20h] [ebp-8h]
   int i; // [esp+24h] [ebp-4h]
   int ia; // [esp+24h] [ebp-4h]
@@ -117055,7 +116868,7 @@ int __cdecl UC_NoUctb_Register_with_LYCharSets(const char *UC_MIMEcharset, const
     LYCharSet_UC[LYhndl].MIMEname = UC_MIMEcharset;
     LYCharSet_UC[LYhndl].enc = UC_rawuni;
     LYCharSet_UC[LYhndl].codepage = codepage;
-    v7 = LYhndl;
+    return LYhndl;
   }
   else
   {
@@ -117064,14 +116877,19 @@ int __cdecl UC_NoUctb_Register_with_LYCharSets(const char *UC_MIMEcharset, const
       v5 = TraceFP();
       fprintf(v5, "UC_NoUctb_Register_with_LYCharSets: Too many.  Ignoring %s/%s.", UC_MIMEcharset, UC_LYNXcharset);
     }
-    v7 = -1;
+    return -1;
   }
-  return v7;
 }
-// 80F68A1: conditional instruction was optimized away because of '%LYhndl.4==FFFFFFFF'
+// 80F68A1: conditional instruction was optimized away because %LYhndl.4==FFFFFFFF
 
 //----- (080F6987) --------------------------------------------------------
-void __cdecl UC_Charset_NoUctb_Setup(const char *UC_MIMEcharset, const char *UC_LYNXcharset, int trydefault, int lowest_eight, int UC_rawuni, int codepage)
+void __cdecl UC_Charset_NoUctb_Setup(
+        const char *UC_MIMEcharset,
+        const char *UC_LYNXcharset,
+        int trydefault,
+        int lowest_eight,
+        int UC_rawuni,
+        int codepage)
 {
   int i; // [esp+24h] [ebp-4h]
 
@@ -117601,13 +117419,7 @@ void LYFindLocaleCharset()
 //----- (080F7E44) --------------------------------------------------------
 BOOLEAN __cdecl UCCanUniTranslateFrom(int from)
 {
-  bool v2; // [esp+17h] [ebp-1h]
-
-  if ( from >= 0 )
-    v2 = strcmp(LYCharSet_UC[from].MIMEname, "x-transparent") != 0;
-  else
-    v2 = 0;
-  return v2;
+  return from >= 0 && strcmp(LYCharSet_UC[from].MIMEname, "x-transparent") != 0;
 }
 
 //----- (080F7E86) --------------------------------------------------------
@@ -117676,13 +117488,18 @@ BOOLEAN __cdecl UCNeedNotTranslate(int from, int to)
 }
 
 //----- (080F81C6) --------------------------------------------------------
-void __cdecl UCSetTransParams(UCTransParams *pT, int cs_in, const LYUCcharset *p_in, int cs_out, const LYUCcharset *p_out)
+void __cdecl UCSetTransParams(
+        UCTransParams *pT,
+        int cs_in,
+        const LYUCcharset *p_in,
+        int cs_out,
+        const LYUCcharset *p_out)
 {
   int v5; // edi
   int v6; // ebx
   const char *v7; // esi
   FILE *v8; // eax
-  const char *v9; // [esp+20h] [ebp-48h]
+  const char *MIMEname; // [esp+20h] [ebp-48h]
   bool v10; // [esp+24h] [ebp-44h]
   bool v11; // [esp+28h] [ebp-40h]
   bool v12; // [esp+2Ch] [ebp-3Ch]
@@ -117697,11 +117514,11 @@ void __cdecl UCSetTransParams(UCTransParams *pT, int cs_in, const LYUCcharset *p
   if ( WWW_TraceFlag[0] )
   {
     v5 = UCGetLYhndl_byMIME(p_out->MIMEname);
-    v9 = p_out->MIMEname;
+    MIMEname = p_out->MIMEname;
     v6 = UCGetLYhndl_byMIME(p_in->MIMEname);
     v7 = p_in->MIMEname;
     v8 = TraceFP();
-    fprintf(v8, "UCSetTransParams: from %s(%d) to %s(%d)\n", v7, v6, v9, v5);
+    fprintf(v8, "UCSetTransParams: from %s(%d) to %s(%d)\n", v7, v6, MIMEname, v5);
   }
   pT->trans_C0_to_uni = 0;
   v10 = !strcmp(p_in->MIMEname, "x-transparent") || !strcmp(p_out->MIMEname, "x-transparent");
@@ -117830,7 +117647,6 @@ BOOLEAN __cdecl UCPutUtf8_charstring(HTStream *target, putc_func_t *myPutc, int 
 //----- (080F8868) --------------------------------------------------------
 BOOLEAN __cdecl UCConvertUniToUtf8(UCode_t code, char *buffer)
 {
-  BOOLEAN v3; // [esp+3h] [ebp-11h]
   char *ch_0; // [esp+10h] [ebp-4h]
   char *ch_0a; // [esp+10h] [ebp-4h]
 
@@ -117885,14 +117701,13 @@ BOOLEAN __cdecl UCConvertUniToUtf8(UCode_t code, char *buffer)
       buffer[1] = code & 0x3F | 0x80;
       buffer[2] = 0;
     }
-    v3 = 1;
+    return 1;
   }
   else
   {
     *buffer = 0;
-    v3 = 0;
+    return 0;
   }
-  return v3;
 }
 
 //----- (080F8AA6) --------------------------------------------------------
@@ -117997,13 +117812,13 @@ char *__cdecl format_command(char *command, char *param)
 //----- (080F8E5F) --------------------------------------------------------
 char *__cdecl lookup_external(char *param, BOOLEAN only_overriders)
 {
-  const char *v2; // ebx
+  const char *name; // ebx
   FILE *v3; // edx
   char *v4; // eax
   FILE *v5; // edx
   char *v6; // eax
-  int v8; // [esp+28h] [ebp-40h]
-  int v9; // [esp+2Ch] [ebp-3Ch]
+  int cury; // [esp+28h] [ebp-40h]
+  int curx; // [esp+2Ch] [ebp-3Ch]
   lynx_list_item_type *ptr; // [esp+40h] [ebp-28h]
   char **choices; // [esp+44h] [ebp-24h]
   char *cmdbuf; // [esp+48h] [ebp-20h]
@@ -118030,9 +117845,9 @@ char *__cdecl lookup_external(char *param, BOOLEAN only_overriders)
         ++num_matched;
         if ( WWW_TraceFlag[0] )
         {
-          v2 = ptr->name;
+          name = ptr->name;
           v3 = TraceFP();
-          fprintf(v3, "EXTERNAL: '%s' <==> '%s'\n", v2, param);
+          fprintf(v3, "EXTERNAL: '%s' <==> '%s'\n", name, param);
         }
         if ( !no_externals || ptr->always_enabled || only_overriders )
         {
@@ -118070,15 +117885,15 @@ char *__cdecl lookup_external(char *param, BOOLEAN only_overriders)
   else if ( num_choices > 1 )
   {
     if ( LYwin )
-      v8 = LYwin->_cury;
+      cury = LYwin->_cury;
     else
-      v8 = -1;
+      cury = -1;
     if ( LYwin )
-      v9 = LYwin->_curx;
+      curx = LYwin->_curx;
     else
-      v9 = -1;
-    cur_choice = LYhandlePopupList(-1, 0, v9, (const char **)choices, -1, -1, 0, 1);
-    wmove(LYwin, v8, v9);
+      curx = -1;
+    cur_choice = LYhandlePopupList(-1, 0, curx, (const char **)choices, -1, -1, 0, 1);
+    wmove(LYwin, cury, curx);
     if ( WWW_TraceFlag[0] )
     {
       v5 = TraceFP();
@@ -118107,7 +117922,7 @@ char *__cdecl lookup_external(char *param, BOOLEAN only_overriders)
   }
   return cmdbuf;
 }
-// 80F8F42: conditional instruction was optimized away because of '%pass.4 in (==1|<0)'
+// 80F8F42: conditional instruction was optimized away because %pass.4 is in (==1|<0)
 // 80F8FD0: variable 'num_disabled' is possibly undefined
 // 80F8FD8: variable 'num_matched' is possibly undefined
 // 80F8FF7: variable 'num_choices' is possibly undefined
@@ -118136,9 +117951,9 @@ BOOLEAN __cdecl run_external(char *param, BOOLEAN only_overriders)
     free(cmdbuf);
   return found;
 }
-// 80F91F0: conditional instruction was optimized away because of '%confirmed.4==1'
-// 80F91F6: conditional instruction was optimized away because of '%redraw_flag.4==1'
-// 80F9219: conditional instruction was optimized away because of '%redraw_flag.4==1'
+// 80F91F0: conditional instruction was optimized away because %confirmed.4==1
+// 80F91F6: conditional instruction was optimized away because %redraw_flag.4==1
+// 80F9219: conditional instruction was optimized away because %redraw_flag.4==1
 
 //----- (080F9254) --------------------------------------------------------
 BOOLEAN __cdecl cannot_stat(const char *name)
@@ -118162,7 +117977,6 @@ BOOLEAN __cdecl cannot_stat(const char *name)
 BOOLEAN __cdecl ok_stat(const char *name, stat *sb)
 {
   FILE *v2; // edx
-  BOOLEAN v4; // [esp+17h] [ebp-1h]
 
   if ( WWW_TraceFlag[0] )
   {
@@ -118170,17 +117984,15 @@ BOOLEAN __cdecl ok_stat(const char *name, stat *sb)
     fprintf(v2, "testing ok_stat(%s)\n", name);
   }
   if ( stat64((int)name, (int)sb) )
-    v4 = cannot_stat(name);
+    return cannot_stat(name);
   else
-    v4 = 1;
-  return v4;
+    return 1;
 }
 
 //----- (080F9311) --------------------------------------------------------
 BOOLEAN __cdecl ok_lstat(char *name, stat *sb)
 {
   FILE *v2; // eax
-  BOOLEAN v4; // [esp+17h] [ebp-1h]
 
   if ( WWW_TraceFlag[0] )
   {
@@ -118188,10 +118000,9 @@ BOOLEAN __cdecl ok_lstat(char *name, stat *sb)
     fprintf(v2, "testing ok_lstat(%s)\n", name);
   }
   if ( lstat64((int)name, (int)sb) >= 0 )
-    v4 = 1;
+    return 1;
   else
-    v4 = cannot_stat(name);
-  return v4;
+    return cannot_stat(name);
 }
 
 //----- (080F9370) --------------------------------------------------------
@@ -118282,7 +118093,6 @@ int __cdecl LYExecv(const char *path, char **argv, char *msg)
 int __cdecl make_directory(char *path)
 {
   int v2; // [esp+10h] [ebp-28h]
-  int v3; // [esp+14h] [ebp-24h]
   char *args[5]; // [esp+18h] [ebp-20h] BYREF
   char *msg; // [esp+2Ch] [ebp-Ch] BYREF
   const char *program; // [esp+30h] [ebp-8h]
@@ -118307,13 +118117,13 @@ int __cdecl make_directory(char *path)
       msg = 0;
     }
   }
+  else if ( mkdir(path, 0x1FFu) )
+  {
+    return -1;
+  }
   else
   {
-    if ( mkdir(path, 0x1FFu) )
-      v3 = -1;
-    else
-      v3 = 1;
-    code = v3;
+    return 1;
   }
   return code;
 }
@@ -118322,7 +118132,6 @@ int __cdecl make_directory(char *path)
 int __cdecl remove_file(char *path)
 {
   char *v1; // eax
-  int v3; // [esp+14h] [ebp-24h]
   char *args[5]; // [esp+18h] [ebp-20h] BYREF
   char *tmpbuf; // [esp+2Ch] [ebp-Ch] BYREF
   const char *program; // [esp+30h] [ebp-8h]
@@ -118345,13 +118154,13 @@ int __cdecl remove_file(char *path)
       tmpbuf = 0;
     }
   }
+  else if ( remove(path) )
+  {
+    return -1;
+  }
   else
   {
-    if ( remove(path) )
-      v3 = -1;
-    else
-      v3 = 1;
-    code = v3;
+    return 1;
   }
   return code;
 }
@@ -118360,7 +118169,6 @@ int __cdecl remove_file(char *path)
 int __cdecl remove_directory(char *path)
 {
   char *v1; // eax
-  int v3; // [esp+14h] [ebp-24h]
   char *args[5]; // [esp+18h] [ebp-20h] BYREF
   char *tmpbuf; // [esp+2Ch] [ebp-Ch] BYREF
   const char *program; // [esp+30h] [ebp-8h]
@@ -118382,13 +118190,13 @@ int __cdecl remove_directory(char *path)
       tmpbuf = 0;
     }
   }
+  else if ( rmdir(path) )
+  {
+    return -1;
+  }
   else
   {
-    if ( rmdir(path) )
-      v3 = -1;
-    else
-      v3 = 1;
-    code = v3;
+    return 1;
   }
   return code;
 }
@@ -118430,11 +118238,11 @@ int __cdecl touch_file(char *path)
     if ( fp )
     {
       fclose(fp);
-      code = 1;
+      return 1;
     }
     else
     {
-      code = -1;
+      return -1;
     }
   }
   return code;
@@ -118473,7 +118281,6 @@ int __cdecl move_file(char *source, char *target)
 LABEL_19:
       free(actual);
       actual = 0;
-      return code;
     }
   }
   else
@@ -118562,7 +118369,7 @@ BOOLEAN __cdecl dir_has_same_owner(stat *info, int owner)
 int remove_tagged()
 {
   char *v0; // eax
-  char *v3; // [esp+14h] [ebp-84h]
+  char *object; // [esp+14h] [ebp-84h]
   stat dir_info; // [esp+1Ch] [ebp-7Ch] BYREF
   HTList *tag; // [esp+7Ch] [ebp-1Ch]
   int count; // [esp+80h] [ebp-18h]
@@ -118584,11 +118391,11 @@ int remove_tagged()
   while ( ans == 1 )
   {
     if ( tag && (tag = tag->next) != 0 )
-      v3 = (char *)tag->object;
+      object = (char *)tag->object;
     else
-      v3 = 0;
-    cp = v3;
-    if ( !v3 )
+      object = 0;
+    cp = object;
+    if ( !object )
       break;
     if ( is_url(cp) == FILE_URL_TYPE_0 )
     {
@@ -118638,8 +118445,7 @@ int __cdecl modify_tagged(char *testpath)
   const char *v3; // eax
   char *v4; // eax
   char *v5; // eax
-  int v7; // [esp+18h] [ebp-4A0h]
-  char *v8; // [esp+1Ch] [ebp-49Ch]
+  char *object; // [esp+1Ch] [ebp-49Ch]
   char *v9; // [esp+20h] [ebp-498h]
   char *testpatha; // [esp+24h] [ebp-494h]
   stat dir_info; // [esp+28h] [ebp-490h] BYREF
@@ -118675,10 +118481,10 @@ int __cdecl modify_tagged(char *testpath)
   else
   {
     if ( tagged && tagged->next )
-      v8 = (char *)tagged->next->object;
+      object = (char *)tagged->next->object;
     else
-      v8 = 0;
-    cp = v8;
+      object = 0;
+    cp = object;
     testpatha = 0;
   }
   if ( testpatha )
@@ -118769,7 +118575,7 @@ int __cdecl modify_tagged(char *testpath)
         free(savepath);
         savepath = 0;
       }
-      v7 = 0;
+      return 0;
     }
     else
     {
@@ -118812,7 +118618,7 @@ int __cdecl modify_tagged(char *testpath)
         free(savepath);
         savepath = 0;
       }
-      v7 = count;
+      return count;
     }
   }
   else
@@ -118822,9 +118628,8 @@ int __cdecl modify_tagged(char *testpath)
       free(savepath);
       savepath = 0;
     }
-    v7 = 0;
+    return 0;
   }
-  return v7;
 }
 
 //----- (080FA429) --------------------------------------------------------
@@ -119151,7 +118956,6 @@ int __cdecl create_directory(char *current_location)
 int __cdecl local_create(DocInfo *doc)
 {
   char *v1; // eax
-  int v3; // [esp+10h] [ebp-218h]
   char *cp; // [esp+1Ch] [ebp-20Ch]
   int ans; // [esp+20h] [ebp-208h]
   char testpath[512]; // [esp+24h] [ebp-204h] BYREF
@@ -119170,24 +118974,23 @@ int __cdecl local_create(DocInfo *doc)
     ans = LYgetch_single();
     if ( ans == 70 )
     {
-      v3 = create_file(testpath);
+      return create_file(testpath);
     }
     else if ( ans == 68 )
     {
-      v3 = create_directory(testpath);
+      return create_directory(testpath);
     }
     else
     {
-      v3 = 0;
+      return 0;
     }
   }
   else
   {
     if ( cp )
       free(cp);
-    v3 = 0;
+    return 0;
   }
-  return v3;
 }
 
 //----- (080FB290) --------------------------------------------------------
@@ -119364,7 +119167,6 @@ int __cdecl permit_location(char *destpath, char *srcpath, char **newpath)
   FILE *v16; // eax
   char *v17; // eax
   char *v18; // eax
-  int v20; // [esp+20h] [ebp-1F8h]
   const char *v21; // [esp+24h] [ebp-1F4h]
   const char *v22; // [esp+2Ch] [ebp-1ECh]
   const char *v23; // [esp+34h] [ebp-1E4h]
@@ -119500,15 +119302,14 @@ int __cdecl permit_location(char *destpath, char *srcpath, char **newpath)
       fwrite("</Body></Html>", 1u, 0xEu, fp0);
       LYCloseTempFP(fp0);
       LYforce_no_cache = 1;
-      v20 = -99;
+      return -99;
     }
     else
     {
       v3 = gettext("Unable to open permit options file");
       HTAlert(v3);
-      v20 = 0;
+      return 0;
     }
-    return v20;
   }
   new_mode = 0;
   if ( !LYValidPermitFile[0] )
@@ -119626,8 +119427,8 @@ LABEL_110:
   }
   return -1;
 }
-// 80FC059: conditional instruction was optimized away because of '%destpath.4!=0'
-// 80FC0A1: conditional instruction was optimized away because of '%destpath.4!=0'
+// 80FC059: conditional instruction was optimized away because %destpath.4!=0
+// 80FC0A1: conditional instruction was optimized away because %destpath.4!=0
 
 //----- (080FC45C) --------------------------------------------------------
 void __cdecl tagflag(int flag, int cur)
@@ -119651,7 +119452,7 @@ void __cdecl tagflag(int flag, int cur)
 //----- (080FC541) --------------------------------------------------------
 void __cdecl showtags(HTList *t)
 {
-  const char *v1; // [esp+14h] [ebp-14h]
+  const char *object; // [esp+14h] [ebp-14h]
   HTList *s; // [esp+20h] [ebp-8h]
   int i; // [esp+24h] [ebp-4h]
 
@@ -119661,12 +119462,12 @@ void __cdecl showtags(HTList *t)
     while ( 1 )
     {
       if ( s && (s = s->next) != 0 )
-        v1 = (const char *)s->object;
+        object = (const char *)s->object;
       else
-        v1 = 0;
-      if ( !v1 )
+        object = 0;
+      if ( !object )
         break;
-      if ( !strcmp(links[i].lname, v1) )
+      if ( !strcmp(links[i].lname, object) )
       {
         tagflag(1, i);
         break;
@@ -119699,15 +119500,13 @@ char *__cdecl DirectoryOf(char *pathname)
 //----- (080FC65A) --------------------------------------------------------
 char *__cdecl match_op(const char *prefix, char *data)
 {
-  char *v3; // [esp+14h] [ebp-14h]
   int len; // [esp+24h] [ebp-4h]
 
   len = strlen(prefix);
   if ( !strncmp("LYNXDIRED://", data, 0xCu) && !strncmp(prefix, data + 12, len) )
-    v3 = &data[len + 12];
+    return &data[len + 12];
   else
-    v3 = 0;
-  return v3;
+    return 0;
 }
 
 //----- (080FC6CA) --------------------------------------------------------
@@ -119722,7 +119521,6 @@ char *__cdecl build_command(char *line, char *dirname, char *arg)
   char *v9; // eax
   char *v10; // eax
   char *v11; // eax
-  char *v13; // [esp+14h] [ebp-14h]
   const char *tar_path; // [esp+1Ch] [ebp-Ch]
   const char *program; // [esp+20h] [ebp-8h]
   const char *programa; // [esp+20h] [ebp-8h]
@@ -119901,7 +119699,7 @@ char *__cdecl build_command(char *line, char *dirname, char *arg)
       HTAddParam(&buffer, "%s -q %s", 2, argi);
       HTEndParam(&buffer, "%s -q %s", 2);
     }
-    v13 = buffer;
+    return buffer;
   }
   else
   {
@@ -119915,7 +119713,7 @@ char *__cdecl build_command(char *line, char *dirname, char *arg)
         HTAddParam(&buffer, "%s -d %s", 2, argj);
         HTEndParam(&buffer, "%s -d %s", 2);
       }
-      v13 = buffer;
+      return buffer;
     }
     else
     {
@@ -119934,7 +119732,7 @@ char *__cdecl build_command(char *line, char *dirname, char *arg)
           HTAddParam(&buffer, "cd %s; %s -rq %s.zip %s", 4, v11);
           HTEndParam(&buffer, "cd %s; %s -rq %s.zip %s", 4);
         }
-        v13 = buffer;
+        return buffer;
       }
       else
       {
@@ -119950,7 +119748,7 @@ char *__cdecl build_command(char *line, char *dirname, char *arg)
             HTAddParam(&buffer, "cd %s; %s -q %s", 3, argl);
             HTEndParam(&buffer, "cd %s; %s -q %s", 3);
           }
-          v13 = buffer;
+          return buffer;
         }
         else
         {
@@ -119964,17 +119762,16 @@ char *__cdecl build_command(char *line, char *dirname, char *arg)
               HTAddParam(&buffer, "%s %s", 2, argm);
               HTEndParam(&buffer, "%s %s", 2);
             }
-            v13 = buffer;
+            return buffer;
           }
           else
           {
-            v13 = 0;
+            return 0;
           }
         }
       }
     }
   }
-  return v13;
 }
 
 //----- (080FD395) --------------------------------------------------------
@@ -120161,7 +119958,7 @@ LABEL_53:
   }
   return 0;
 }
-// 80FD852: conditional instruction was optimized away because of '%dirname.4==0'
+// 80FD852: conditional instruction was optimized away because %dirname.4==0
 
 //----- (080FD8EA) --------------------------------------------------------
 int __cdecl dired_options(DocInfo *doc, char **newfile)
@@ -120522,7 +120319,7 @@ void reset_dired_menu()
     menu_head = 0;
   }
 }
-// 80FE6C4: conditional instruction was optimized away because of '%mp.4!=0'
+// 80FE6C4: conditional instruction was optimized away because %mp.4!=0
 
 //----- (080FE6F4) --------------------------------------------------------
 char *__cdecl render_item(const char *s, const char *path, const char *dir, char *buf, int bufsize, BOOLEAN url_syntax)
@@ -120535,11 +120332,11 @@ char *__cdecl render_item(const char *s, const char *path, const char *dir, char
   char *v12; // [esp+24h] [ebp-44h]
   char *v13; // [esp+28h] [ebp-40h]
   char *v14; // [esp+2Ch] [ebp-3Ch]
-  const char *v15; // [esp+30h] [ebp-38h]
+  const char *object; // [esp+30h] [ebp-38h]
   char *v16; // [esp+34h] [ebp-34h]
   char *v17; // [esp+38h] [ebp-30h]
   char *v18; // [esp+3Ch] [ebp-2Ch]
-  char *v19; // [esp+40h] [ebp-28h]
+  char *p_overrun; // [esp+40h] [ebp-28h]
   HTList *cur; // [esp+54h] [ebp-14h]
   char *taglist; // [esp+58h] [ebp-10h] BYREF
   char *bp_0; // [esp+5Ch] [ebp-Ch]
@@ -120554,10 +120351,10 @@ char *__cdecl render_item(const char *s, const char *path, const char *dir, char
     if ( *s != 37 )
     {
       if ( &buf[bufsize - 2] >= bp_0 )
-        v19 = bp_0++;
+        p_overrun = bp_0++;
       else
-        v19 = &overrun;
-      *v19 = *s;
+        p_overrun = &overrun;
+      *p_overrun = *s;
       goto LABEL_81;
     }
     v8 = *++s;
@@ -120589,15 +120386,15 @@ LABEL_47:
           while ( !overrun )
           {
             if ( cur && (cur = cur->next) != 0 )
-              v15 = (const char *)cur->object;
+              object = (const char *)cur->object;
             else
-              v15 = 0;
-            if ( !v15 )
+              object = 0;
+            if ( !object )
               break;
-            if ( *s == 108 && (cp = strrchr(v15, 47)) != 0 )
+            if ( *s == 108 && (cp = strrchr(object, 47)) != 0 )
               ++cp;
             else
-              cp = v15;
+              cp = object;
             HTSACat(&taglist, cp);
             HTSACat(&taglist, " ");
           }
@@ -120810,7 +120607,7 @@ char *__cdecl strchr_or_end(char *string, int ch_0)
 
   result = strchr(string, ch_0);
   if ( !result )
-    result = &string[strlen(string)];
+    return &string[strlen(string)];
   return result;
 }
 
@@ -120872,7 +120669,7 @@ char *__cdecl HTParse(const char *aName, const char *relatedName, int wanted)
   void *v6; // esp
   size_t v7; // eax
   FILE *v8; // eax
-  char *v9; // ebx
+  char *relative; // ebx
   char *v10; // eax
   char *v11; // ebx
   char *v12; // eax
@@ -120896,8 +120693,8 @@ char *__cdecl HTParse(const char *aName, const char *relatedName, int wanted)
   const char *v31; // [esp+3Ch] [ebp-ACh]
   const char *v32; // [esp+40h] [ebp-A8h]
   const char *v33; // [esp+44h] [ebp-A4h]
-  char *v34; // [esp+48h] [ebp-A0h]
-  char *v35; // [esp+4Ch] [ebp-9Ch]
+  const char **v34; // [esp+48h] [ebp-A0h]
+  char *access; // [esp+4Ch] [ebp-9Ch]
   char *src; // [esp+50h] [ebp-98h]
   int v37; // [esp+54h] [ebp-94h]
   UrlTypes v38; // [esp+58h] [ebp-90h]
@@ -120986,10 +120783,10 @@ char *__cdecl HTParse(const char *aName, const char *relatedName, int wanted)
   len2 = strlen(relatedNamea) + 1;
   len = len2 + len1 + 8;
   v6 = alloca(16 * ((len2 + len1 + 2 * len + 30) >> 4));
-  v34 = (char *)(16 * (((unsigned int)&v28 + 3) >> 4));
-  tail = v34;
-  result = v34;
-  if ( !v34 )
+  v34 = &v28;
+  tail = (char *)&v28;
+  result = (char *)&v28;
+  if ( !&v28 )
     outofmem("../../../WWW/Library/Implementation/HTParse.c", "HTParse");
   *result = 0;
   name = &result[len];
@@ -120998,12 +120795,7 @@ char *__cdecl HTParse(const char *aName, const char *relatedName, int wanted)
   scan(name, &given);
   if ( given.access && given.host && given.absolute || !*relatedNamea )
   {
-    related.access = 0;
-    related.host = 0;
-    related.absolute = 0;
-    related.relative = 0;
-    related.search = 0;
-    related.anchor = 0;
+    memset(&related, 0, sizeof(related));
   }
   else
   {
@@ -121019,10 +120811,10 @@ char *__cdecl HTParse(const char *aName, const char *relatedName, int wanted)
     given.absolute = empty_string_8447;
   }
   if ( given.access )
-    v35 = given.access;
+    access = given.access;
   else
-    v35 = related.access;
-  acc_method = v35;
+    access = related.access;
+  acc_method = access;
   if ( (wanted & 0x10) != 0 )
   {
     if ( acc_method )
@@ -121038,13 +120830,7 @@ char *__cdecl HTParse(const char *aName, const char *relatedName, int wanted)
     }
   }
   if ( given.access && related.access && strcmp(given.access, related.access) )
-  {
-    related.host = 0;
-    related.absolute = 0;
-    related.relative = 0;
-    related.search = 0;
-    related.anchor = 0;
-  }
+    memset(&related.host, 0, 20);
   if ( (wanted & 8) != 0 && (given.host || related.host) )
   {
     if ( (wanted & 1) != 0 )
@@ -121160,9 +120946,9 @@ LABEL_145:
             {
               if ( *given.relative == 59 )
               {
-                v9 = given.relative;
+                relative = given.relative;
                 v10 = strchr_or_end(tail, 59);
-                strcpy(v10, v9);
+                strcpy(v10, relative);
               }
               else if ( *given.relative == 63 )
               {
@@ -121351,22 +121137,23 @@ LABEL_190:
 const char *__cdecl HTParseAnchor(const char *aName)
 {
   void *v1; // esp
-  char v3; // [esp+17h] [ebp-31h] BYREF
+  const char *aNamea[4]; // [esp+10h] [ebp-38h] BYREF
   struct_parts given; // [esp+20h] [ebp-28h] BYREF
   char *name; // [esp+38h] [ebp-10h]
   const char *p; // [esp+3Ch] [ebp-Ch]
   unsigned int v7; // [esp+40h] [ebp-8h]
 
+  aNamea[0] = aName;
   v7 = __readgsdword(0x14u);
   for ( p = aName; *p && *p != 35; ++p )
     ;
   if ( *p == 35 )
   {
-    v1 = alloca(16 * ((p - aName + strlen(p) + 31) >> 4));
-    name = (char *)(16 * ((unsigned int)&v3 >> 4));
-    if ( !name )
+    v1 = alloca(16 * ((p - aNamea[0] + strlen(p) + 31) >> 4));
+    name = (char *)aNamea;
+    if ( !aNamea )
       outofmem("../../../WWW/Library/Implementation/HTParse.c", "HTParseAnchor");
-    strcpy(name, aName);
+    strcpy(name, aNamea[0]);
     scan(name, &given);
     ++p;
     if ( !given.anchor )
@@ -121692,15 +121479,12 @@ char *__cdecl HTEscapeSP(const char *str, unsigned __int8 mask)
 //----- (081009AA) --------------------------------------------------------
 char __cdecl from_hex(char c)
 {
-  char v3; // [esp+3h] [ebp-5h]
-
   if ( c > 47 && c <= 57 )
     return c - 48;
   if ( c <= 64 || c > 70 )
-    v3 = c - 87;
+    return c - 87;
   else
-    v3 = c - 55;
-  return v3;
+    return c - 55;
 }
 
 //----- (081009FD) --------------------------------------------------------
@@ -122068,15 +121852,15 @@ BOOLEAN __cdecl override_proxy(const char *addr)
   }
   return 0;
 }
-// 81010AC: conditional instruction was optimized away because of '%host.4!=0'
-// 810116E: conditional instruction was optimized away because of '%host.4!=0'
-// 8101186: conditional instruction was optimized away because of '%acc_method.4!=0'
-// 81011A7: conditional instruction was optimized away because of '%acc_method.4!=0'
-// 81011C5: conditional instruction was optimized away because of '%host.4!=0'
-// 8101489: conditional instruction was optimized away because of '%acc_method.4!=0'
-// 81015A7: conditional instruction was optimized away because of '%host.4!=0'
-// 8101625: conditional instruction was optimized away because of '%host.4!=0'
-// 8101664: conditional instruction was optimized away because of '%host.4!=0'
+// 81010AC: conditional instruction was optimized away because %host.4!=0
+// 810116E: conditional instruction was optimized away because %host.4!=0
+// 8101186: conditional instruction was optimized away because %acc_method.4!=0
+// 81011A7: conditional instruction was optimized away because %acc_method.4!=0
+// 81011C5: conditional instruction was optimized away because %host.4!=0
+// 8101489: conditional instruction was optimized away because %acc_method.4!=0
+// 81015A7: conditional instruction was optimized away because %host.4!=0
+// 8101625: conditional instruction was optimized away because %host.4!=0
+// 8101664: conditional instruction was optimized away because %host.4!=0
 
 //----- (08101682) --------------------------------------------------------
 int __cdecl get_physical(const char *addr, HTParentAnchor *anchor)
@@ -122089,7 +121873,6 @@ int __cdecl get_physical(const char *addr, HTParentAnchor *anchor)
   FILE *v7; // eax
   char *v8; // eax
   char *v9; // eax
-  int v11; // [esp+14h] [ebp-54h]
   HTProtocol *p; // [esp+24h] [ebp-44h]
   int n; // [esp+28h] [ebp-40h]
   int i; // [esp+2Ch] [ebp-3Ch]
@@ -122306,20 +122089,19 @@ int __cdecl get_physical(const char *addr, HTParentAnchor *anchor)
       free(acc_method);
       acc_method = 0;
     }
-    v11 = result;
+    return result;
   }
   else if ( redirecting_url )
   {
-    v11 = 399;
+    return 399;
   }
   else
   {
-    v11 = -403;
+    return -403;
   }
-  return v11;
 }
-// 81018C3: conditional instruction was optimized away because of '%host.4!=0'
-// 81019D3: conditional instruction was optimized away because of '%host_0.4!=0'
+// 81018C3: conditional instruction was optimized away because %host.4!=0
+// 81019D3: conditional instruction was optimized away because %host_0.4!=0
 
 //----- (08101E41) --------------------------------------------------------
 void __cdecl LYUCPushAssumed(HTParentAnchor *anchor)
@@ -122398,7 +122180,7 @@ int LYUCPopAssumed()
 //----- (08102033) --------------------------------------------------------
 int __cdecl HTLoad(const char *addr, HTParentAnchor *anchor, HTFormat format_out, HTStream *sink)
 {
-  int (*v4)(const char *, HTParentAnchor *, HTFormat, HTStream *); // ebx
+  int (*load)(const char *, HTParentAnchor *, HTFormat, HTStream *); // ebx
   char *v5; // edx
   char *v7; // [esp+4h] [ebp-24h]
   char *v8; // [esp+8h] [ebp-20h]
@@ -122410,7 +122192,7 @@ int __cdecl HTLoad(const char *addr, HTParentAnchor *anchor, HTFormat format_out
   {
     LYFixCursesOn("show alert:");
     v8 = gettext("Access forbidden by rule");
-    status = HTLoadError((HTStream_0 *)sink, 500, v8);
+    return HTLoadError((HTStream_0 *)sink, 500, v8);
   }
   else if ( status != 399 && status >= 0 )
   {
@@ -122418,9 +122200,9 @@ int __cdecl HTLoad(const char *addr, HTParentAnchor *anchor, HTFormat format_out
     LYFixCursesOnForAccess(addr, v7);
     p = (HTProtocol *)HTAnchor_protocol(anchor);
     anchor->parent->underway = 1;
-    v4 = p->load;
+    load = p->load;
     v5 = HTAnchor_physical(anchor);
-    status = v4(v5, anchor, format_out, sink);
+    status = load(v5, anchor, format_out, sink);
     anchor->parent->underway = 0;
     LYUCPopAssumed();
   }
@@ -122430,15 +122212,13 @@ int __cdecl HTLoad(const char *addr, HTParentAnchor *anchor, HTFormat format_out
 //----- (08102113) --------------------------------------------------------
 HTStream *__cdecl HTSaveStream(HTParentAnchor *anchor)
 {
-  HTStream *v2; // [esp+4h] [ebp-14h]
   HTProtocol *p; // [esp+14h] [ebp-4h]
 
   p = (HTProtocol *)HTAnchor_protocol(anchor);
   if ( p )
-    v2 = p->saveStream(anchor);
+    return p->saveStream(anchor);
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (0810214C) --------------------------------------------------------
@@ -122447,7 +122227,7 @@ BOOLEAN __cdecl HTLoadDocument(const char *full_address, HTParentAnchor *anchor,
   FILE *v4; // eax
   char *v5; // eax
   char *v6; // eax
-  char *v7; // ebx
+  char *address; // ebx
   FILE *v8; // eax
   const char *v9; // ebx
   FILE *v10; // eax
@@ -122479,7 +122259,6 @@ BOOLEAN __cdecl HTLoadDocument(const char *full_address, HTParentAnchor *anchor,
   char *v36; // eax
   FILE *v37; // eax
   char *v39; // [esp+8h] [ebp-60h]
-  BOOLEAN v40; // [esp+23h] [ebp-45h]
   const char *v41; // [esp+24h] [ebp-44h]
   const char *v42; // [esp+28h] [ebp-40h]
   const char *v43; // [esp+2Ch] [ebp-3Ch]
@@ -122540,9 +122319,9 @@ BOOLEAN __cdecl HTLoadDocument(const char *full_address, HTParentAnchor *anchor,
         break;
       if ( WWW_TraceFlag[0] )
       {
-        v7 = anchor->address;
+        address = anchor->address;
         v8 = TraceFP();
-        fprintf(v8, "HTAccess: '%s' is a redirection URL.\n", v7);
+        fprintf(v8, "HTAccess: '%s' is a redirection URL.\n", address);
       }
       if ( WWW_TraceFlag[0] )
       {
@@ -122637,7 +122416,7 @@ BOOLEAN __cdecl HTLoadDocument(const char *full_address, HTParentAnchor *anchor,
     if ( v20 == HTAtom_for("www/dired") )
       lynx_edit_mode = 1;
     redirection_attempts = 0;
-    v40 = 1;
+    return 1;
   }
   else
   {
@@ -122686,7 +122465,7 @@ BOOLEAN __cdecl HTLoadDocument(const char *full_address, HTParentAnchor *anchor,
           redirecting_url = 0;
         }
         permanent_redirection = 0;
-        v40 = 1;
+        return 1;
       }
       else
       {
@@ -122705,7 +122484,7 @@ BOOLEAN __cdecl HTLoadDocument(const char *full_address, HTParentAnchor *anchor,
           redirecting_url = 0;
         }
         permanent_redirection = 0;
-        v40 = 0;
+        return 0;
       }
     }
     else
@@ -122725,8 +122504,7 @@ BOOLEAN __cdecl HTLoadDocument(const char *full_address, HTParentAnchor *anchor,
             v27 = TraceFP();
             fprintf(v27, "HTAccess: `%s' has been accessed.\n", full_address);
           }
-          v40 = 1;
-          break;
+          return 1;
         case 206:
           v28 = gettext("Loading incomplete.");
           HTAlert(v28);
@@ -122735,32 +122513,28 @@ BOOLEAN __cdecl HTLoadDocument(const char *full_address, HTParentAnchor *anchor,
             v29 = TraceFP();
             fprintf(v29, "HTAccess: `%s' has been accessed, partial content.\n", full_address);
           }
-          v40 = 1;
-          break;
+          return 1;
         case -204:
           if ( WWW_TraceFlag[0] )
           {
             v30 = TraceFP();
             fprintf(v30, "HTAccess: `%s' has been accessed, No data left.\n", full_address);
           }
-          v40 = 0;
-          break;
+          return 0;
         case -29999:
           if ( WWW_TraceFlag[0] )
           {
             v31 = TraceFP();
             fprintf(v31, "HTAccess: `%s' has been accessed, No data loaded.\n", full_address);
           }
-          v40 = 0;
-          break;
+          return 0;
         case -29998:
           if ( WWW_TraceFlag[0] )
           {
             v32 = TraceFP();
             fprintf(v32, "HTAccess: `%s' has been accessed, transfer interrupted.\n", full_address);
           }
-          v40 = 0;
-          break;
+          return 0;
         default:
           if ( status > 0 )
           {
@@ -122792,18 +122566,16 @@ BOOLEAN __cdecl HTLoadDocument(const char *full_address, HTParentAnchor *anchor,
           }
           v39 = gettext("Unable to access document.");
           HTLoadError((HTStream_0 *)sink, 500, v39);
-          v40 = 0;
-          break;
+          return 0;
       }
     }
   }
-  return v40;
 }
 
 //----- (08102B34) --------------------------------------------------------
 BOOLEAN __cdecl HTLoadAbsolute(const DocAddress *docaddr)
 {
-  HTParentAnchor *v1; // eax
+  HTParentAnchor *Address; // eax
   HTStream *sink; // [esp+10h] [ebp-8h]
   HTFormat format_out; // [esp+14h] [ebp-4h]
 
@@ -122812,8 +122584,8 @@ BOOLEAN __cdecl HTLoadAbsolute(const DocAddress *docaddr)
     format_out = HTOutputFormat;
   else
     format_out = HTAtom_for("www/present");
-  v1 = HTAnchor_findAddress(docaddr);
-  return HTLoadDocument(docaddr->address, v1, format_out, sink);
+  Address = HTAnchor_findAddress(docaddr);
+  return HTLoadDocument(docaddr->address, Address, format_out, sink);
 }
 
 //----- (08102B93) --------------------------------------------------------
@@ -122825,12 +122597,7 @@ BOOLEAN __cdecl HTLoadRelative(const char *relative_name, HTParentAnchor *here)
   BOOLEAN result; // [esp+37h] [ebp-1h]
 
   mycopy = 0;
-  full_address.address = 0;
-  full_address.post_data = 0;
-  full_address.post_content_type = 0;
-  full_address.bookmark = 0;
-  full_address.isHEAD = 0;
-  full_address.safe = 0;
+  memset(&full_address, 0, 18);
   HTSACopy(&mycopy, relative_name);
   stripped = HTStrip(mycopy);
   full_address.address = HTParse(stripped, here->address, 29);
@@ -122958,7 +122725,7 @@ BOOLEAN __cdecl HTSearch(const char *keywords, HTParentAnchor *here)
   }
   return result;
 }
-// 8102F1F: conditional instruction was optimized away because of '%escaped.4!=0'
+// 8102F1F: conditional instruction was optimized away because %escaped.4!=0
 
 //----- (08102F67) --------------------------------------------------------
 BOOLEAN __cdecl HTSearchAbsolute(const char *keywords, char *indexname)
@@ -122967,11 +122734,7 @@ BOOLEAN __cdecl HTSearchAbsolute(const char *keywords, char *indexname)
   HTParentAnchor *anchor; // [esp+24h] [ebp-4h]
 
   abs_doc.address = indexname;
-  abs_doc.post_data = 0;
-  abs_doc.post_content_type = 0;
-  abs_doc.bookmark = 0;
-  abs_doc.isHEAD = 0;
-  abs_doc.safe = 0;
+  memset(&abs_doc.post_data, 0, 14);
   anchor = HTAnchor_findAddress(&abs_doc);
   return HTSearch(keywords, anchor);
 }
@@ -123024,7 +122787,7 @@ void __cdecl strip_userid(char *host)
 BOOLEAN __cdecl acceptEncoding(int code)
 {
   const char *program; // [esp+10h] [ebp-8h]
-  bool result; // [esp+17h] [ebp-1h]
+  BOOLEAN result; // [esp+17h] [ebp-1h]
 
   result = 0;
   if ( (code & LYAcceptEncoding) != 0 )
@@ -123049,7 +122812,7 @@ BOOLEAN __cdecl acceptEncoding(int code)
     {
       program = HTGetProgramPath(ppGZIP_0);
     }
-    result = program != 0;
+    return program != 0;
   }
   return result;
 }
@@ -123111,7 +122874,7 @@ int __cdecl HTLoadHTTP(const char *arg, HTParentAnchor *anAnchor, HTFormat forma
   char *v55; // eax
   char *v56; // eax
   char *v57; // eax
-  char *v58; // ebx
+  char *name; // ebx
   FILE *v59; // eax
   const char *v60; // ebx
   FILE *v61; // eax
@@ -123155,7 +122918,7 @@ int __cdecl HTLoadHTTP(const char *arg, HTParentAnchor *anAnchor, HTFormat forma
   int v100; // [esp+64h] [ebp-194h]
   char *format; // [esp+68h] [ebp-190h]
   char *v102; // [esp+6Ch] [ebp-18Ch]
-  char *v103; // [esp+70h] [ebp-188h]
+  char *post_content_type; // [esp+70h] [ebp-188h]
   int v104; // [esp+78h] [ebp-180h]
   int v105; // [esp+7Ch] [ebp-17Ch]
   int v106; // [esp+80h] [ebp-178h]
@@ -123728,11 +123491,11 @@ try_again:
       if ( WWW_TraceFlag[0] )
       {
         if ( anAnchor->post_content_type )
-          v103 = anAnchor->post_content_type;
+          post_content_type = anAnchor->post_content_type;
         else
-          v103 = "lose";
+          post_content_type = "lose";
         v26 = TraceFP();
-        fprintf(v26, "HTTP: Doing post, content-type '%s'\n", v103);
+        fprintf(v26, "HTTP: Doing post, content-type '%s'\n", post_content_type);
       }
       if ( anAnchor->post_content_type )
         HTBprintf(&command, "Content-type: %s%c%c", anAnchor->post_content_type, 13, 10);
@@ -124049,9 +123812,9 @@ LABEL_312:
             {
               if ( WWW_TraceFlag[0] )
               {
-                v58 = format_in->name;
+                name = format_in->name;
                 v59 = TraceFP();
-                fprintf(v59, "HTTP: format_in is '%s',\n", v58);
+                fprintf(v59, "HTTP: format_in is '%s',\n", name);
               }
               HTSACopy(&anAnchor->content_type, format_in->name);
               HTSACopy(&anAnchor->content_encoding, *((const char **)buffer + 1));
@@ -124822,7 +124585,12 @@ LABEL_84:
 }
 
 //----- (081071F5) --------------------------------------------------------
-void __cdecl HTSetSuffix5(const char *suffix, const char *representation, const char *encoding, const char *desc, double value)
+void __cdecl HTSetSuffix5(
+        const char *suffix,
+        const char *representation,
+        const char *encoding,
+        const char *desc,
+        double value)
 {
   HTAtom *v5; // ebx
   HTAtom *v6; // ebx
@@ -124833,7 +124601,7 @@ void __cdecl HTSetSuffix5(const char *suffix, const char *representation, const 
   HTAtom *v11; // ebx
   HTAtom *v12; // ebx
   bool v13; // [esp+Ch] [ebp-2Ch]
-  HTSuffix *v14; // [esp+10h] [ebp-28h]
+  HTSuffix *object; // [esp+10h] [ebp-28h]
   float v15; // [esp+14h] [ebp-24h]
   HTList *cur; // [esp+24h] [ebp-14h]
   HTSuffix *suff; // [esp+28h] [ebp-10h]
@@ -124858,46 +124626,46 @@ void __cdecl HTSetSuffix5(const char *suffix, const char *representation, const 
     while ( 1 )
     {
       if ( cur && (cur = cur->next) != 0 )
-        v14 = (HTSuffix *)cur->object;
+        object = (HTSuffix *)cur->object;
       else
-        v14 = 0;
-      suff = v14;
-      if ( !v14 )
+        object = 0;
+      suff = object;
+      if ( !object )
         break;
-      if ( v14->suffix && !strcmp(v14->suffix, suffix) )
+      if ( object->suffix && !strcmp(object->suffix, suffix) )
       {
         if ( v13 )
         {
-          if ( !v14->encoding )
+          if ( !object->encoding )
             break;
-          v5 = v14->encoding;
+          v5 = object->encoding;
           if ( v5 == HTAtom_for("identity") )
             break;
-          v6 = v14->encoding;
+          v6 = object->encoding;
           if ( v6 == HTAtom_for("8bit") )
             break;
-          v7 = v14->encoding;
+          v7 = object->encoding;
           if ( v7 == HTAtom_for("binary") )
             break;
-          v8 = v14->encoding;
+          v8 = object->encoding;
           if ( v8 == HTAtom_for("7bit") )
             break;
         }
         if ( !v13 )
         {
-          if ( v14->encoding )
+          if ( object->encoding )
           {
-            v9 = v14->encoding;
+            v9 = object->encoding;
             if ( v9 != HTAtom_for("identity") )
             {
-              v10 = v14->encoding;
+              v10 = object->encoding;
               if ( v10 != HTAtom_for("8bit") )
               {
-                v11 = v14->encoding;
+                v11 = object->encoding;
                 if ( v11 != HTAtom_for("binary") )
                 {
-                  v12 = v14->encoding;
-                  if ( v12 != HTAtom_for("7bit") && !strcmp(encoding, v14->encoding->name) )
+                  v12 = object->encoding;
+                  if ( v12 != HTAtom_for("7bit") && !strcmp(encoding, object->encoding->name) )
                     break;
                 }
               }
@@ -124906,7 +124674,7 @@ void __cdecl HTSetSuffix5(const char *suffix, const char *representation, const 
         }
       }
     }
-    if ( !v14 )
+    if ( !object )
     {
       suff = (HTSuffix *)calloc(1u, 0x14u);
       if ( !suff )
@@ -125097,7 +124865,7 @@ char *__cdecl WWW_nameOfFile(const char *name)
 //----- (08107A1C) --------------------------------------------------------
 const char *__cdecl HTFileSuffix(HTAtom *rep, const char *enc)
 {
-  HTAtom *v2; // ebx
+  HTAtom *encoding; // ebx
   HTAtom *v3; // ebx
   HTAtom *v4; // ebx
   HTAtom *v5; // ebx
@@ -125126,8 +124894,8 @@ const char *__cdecl HTFileSuffix(HTAtom *rep, const char *enc)
       {
         if ( !suff->encoding )
           return suff->suffix;
-        v2 = suff->encoding;
-        if ( v2 == HTAtom_for("identity") )
+        encoding = suff->encoding;
+        if ( encoding == HTAtom_for("identity") )
           return suff->suffix;
         v3 = suff->encoding;
         if ( v3 == HTAtom_for("8bit") )
@@ -125173,15 +124941,13 @@ HTFormat __cdecl HTFileFormat(const char *filename, HTAtom **pencoding, const ch
   HTAtom *v5; // ebx
   HTAtom *v6; // ebx
   HTAtom *v7; // ebx
-  HTAtom *v8; // ebx
+  HTAtom *encoding; // ebx
   HTAtom *v9; // ebx
   HTAtom *v10; // ebx
   HTAtom *v11; // ebx
-  HTAtom *v13; // [esp+10h] [ebp-38h]
   HTSuffix *v14; // [esp+14h] [ebp-34h]
   HTSuffix *v15; // [esp+18h] [ebp-30h]
   HTAtom *v16; // [esp+1Ch] [ebp-2Ch]
-  HTAtom *v17; // [esp+20h] [ebp-28h]
   size_t ls2; // [esp+28h] [ebp-20h]
   int j; // [esp+2Ch] [ebp-1Ch]
   int ls; // [esp+30h] [ebp-18h]
@@ -125199,7 +124965,7 @@ HTFormat __cdecl HTFileFormat(const char *filename, HTAtom **pencoding, const ch
   {
     if ( pencoding )
       *pencoding = HTAtom_for("8bit");
-    v13 = HTAtom_for("text/html");
+    return HTAtom_for("text/html");
   }
   else
   {
@@ -125238,8 +125004,8 @@ HTFormat __cdecl HTFileFormat(const char *filename, HTAtom **pencoding, const ch
                 {
                   if ( suffa->encoding )
                   {
-                    v8 = suffa->encoding;
-                    if ( v8 != HTAtom_for("identity") )
+                    encoding = suffa->encoding;
+                    if ( encoding != HTAtom_for("identity") )
                     {
                       v9 = suffa->encoding;
                       if ( v9 != HTAtom_for("8bit") )
@@ -125283,20 +125049,18 @@ HTFormat __cdecl HTFileFormat(const char *filename, HTAtom **pencoding, const ch
       *pencoding = v16;
     }
     if ( v14->rep )
-      v17 = v14->rep;
+      return v14->rep;
     else
-      v17 = HTAtom_for("application/octet-stream");
-    v13 = v17;
+      return HTAtom_for("application/octet-stream");
   }
-  return v13;
 }
 
 //----- (08107FA7) --------------------------------------------------------
 HTFormat __cdecl HTCharsetFormat(HTFormat format, HTParentAnchor *anchor, int default_LYhndl)
 {
-  char *v3; // ebx
+  char *name; // ebx
   FILE *v4; // eax
-  int v6; // [esp+4h] [ebp-54h]
+  int UCLYhndl; // [esp+4h] [ebp-54h]
   int v7; // [esp+4h] [ebp-54h]
   bool v8; // [esp+14h] [ebp-44h]
   bool v9; // [esp+18h] [ebp-40h]
@@ -125331,9 +125095,9 @@ HTFormat __cdecl HTCharsetFormat(HTFormat format, HTParentAnchor *anchor, int de
   {
     if ( WWW_TraceFlag[0] )
     {
-      v3 = format->name;
+      name = format->name;
       v4 = TraceFP();
-      fprintf(v4, "HTCharsetFormat: Extended MIME Content-Type is %s\n", v3);
+      fprintf(v4, "HTCharsetFormat: Extended MIME Content-Type is %s\n", name);
     }
     for ( cp2 += 7; *cp2 == 32 || *cp2 == 61; ++cp2 )
       ;
@@ -125371,8 +125135,8 @@ HTFormat __cdecl HTCharsetFormat(HTFormat format, HTParentAnchor *anchor, int de
       if ( !strcmp(p_in->MIMEname, "x-transparent") )
       {
         HTPassEightBitRaw = 1;
-        v6 = HTAnchor_getUCLYhndl(anchor, 3);
-        HTAnchor_setUCInfoStage(anchor, v6, 0, 1);
+        UCLYhndl = HTAnchor_getUCLYhndl(anchor, 3);
+        HTAnchor_setUCInfoStage(anchor, UCLYhndl, 0, 1);
       }
       if ( !strcmp(p_out->MIMEname, "x-transparent") )
       {
@@ -125447,10 +125211,17 @@ HTFormat __cdecl HTCharsetFormat(HTFormat format, HTParentAnchor *anchor, int de
 }
 
 //----- (081085C6) --------------------------------------------------------
-void __cdecl LYGetFileInfo(const char *filename, HTParentAnchor **pfile_anchor, HTFormat *pformat, HTAtom **pencoding, const char **pdesc, const char **pcharset, int *pfile_cs)
+void __cdecl LYGetFileInfo(
+        const char *filename,
+        HTParentAnchor **pfile_anchor,
+        HTFormat *pformat,
+        HTAtom **pencoding,
+        const char **pdesc,
+        const char **pcharset,
+        int *pfile_cs)
 {
   FILE *v7; // edx
-  char *v8; // [esp+24h] [ebp-34h]
+  char *name; // [esp+24h] [ebp-34h]
   char *v9; // [esp+28h] [ebp-30h]
   const char *v10; // [esp+2Ch] [ebp-2Ch]
   const char *v11; // [esp+30h] [ebp-28h]
@@ -125481,7 +125252,7 @@ void __cdecl LYGetFileInfo(const char *filename, HTParentAnchor **pfile_anchor, 
   }
   if ( WWW_TraceFlag[0] )
   {
-    v8 = format->name;
+    name = format->name;
     if ( myEnc )
       v9 = myEnc->name;
     else
@@ -125507,7 +125278,15 @@ void __cdecl LYGetFileInfo(const char *filename, HTParentAnchor **pfile_anchor, 
       v10 = v11;
     }
     v7 = TraceFP();
-    fprintf(v7, "GetFileInfo: '%s' is a%s %s %s file, charset=%s (%d).\n", filename, v10, v9, v8, file_csname, file_cs);
+    fprintf(
+      v7,
+      "GetFileInfo: '%s' is a%s %s %s file, charset=%s (%d).\n",
+      filename,
+      v10,
+      v9,
+      name,
+      file_csname,
+      file_cs);
   }
   if ( Afn )
   {
@@ -125535,7 +125314,7 @@ void __cdecl LYGetFileInfo(const char *filename, HTParentAnchor **pfile_anchor, 
 float __cdecl HTFileValue(const char *filename)
 {
   FILE *v1; // edx
-  double v3; // [esp+18h] [ebp-30h]
+  double quality; // [esp+18h] [ebp-30h]
   int ls; // [esp+34h] [ebp-14h]
   int lf; // [esp+38h] [ebp-10h]
   int i; // [esp+3Ch] [ebp-Ch]
@@ -125555,9 +125334,9 @@ float __cdecl HTFileValue(const char *filename)
   }
   if ( WWW_TraceFlag[0] )
   {
-    v3 = suff->quality;
+    quality = suff->quality;
     v1 = TraceFP();
-    fprintf(v1, "File: Value of %s is %.3f\n", filename, v3);
+    fprintf(v1, "File: Value of %s is %.3f\n", filename, quality);
   }
   return suff->quality;
 }
@@ -125666,7 +125445,7 @@ CompressFileType __cdecl HTEncodingToCompressType(const char *coding)
   if ( !strcasecomp(coding, "bzip2") || !strcasecomp(coding, "x-bzip2") )
     return 3;
   if ( !strcasecomp(coding, "deflate") || !strcasecomp(coding, "x-deflate") )
-    result = cftDeflate;
+    return 4;
   return result;
 }
 
@@ -125683,7 +125462,7 @@ CompressFileType __cdecl HTContentTypeToCompressType(const char *ct)
   if ( !strncasecomp(ct, "application/compress", 20) || !strncasecomp(ct, "application/x-compress", 22) )
     return 1;
   if ( !strncasecomp(ct, "application/bzip2", 17) || !strncasecomp(ct, "application/x-bzip2", 19) )
-    method = cftBzip2;
+    return 3;
   return method;
 }
 
@@ -125700,7 +125479,7 @@ CompressFileType __cdecl HTContentToCompressType(HTParentAnchor *anchor)
   if ( !ce && ct )
     return HTContentTypeToCompressType(ct);
   if ( ce )
-    method = HTEncodingToCompressType(ce);
+    return HTEncodingToCompressType(ce);
   return method;
 }
 
@@ -125708,14 +125487,14 @@ CompressFileType __cdecl HTContentToCompressType(HTParentAnchor *anchor)
 BOOLEAN __cdecl HTEditable(const char *filename)
 {
   uid_t v1; // ebx
-  __gid_t v2; // esi
-  __uid_t v3; // edi
+  __gid_t st_gid; // esi
+  __uid_t st_uid; // edi
   FILE *v4; // edx
   gid_t v5; // ebx
   FILE *v6; // eax
   FILE *v7; // eax
   FILE *v8; // eax
-  __mode_t v11; // [esp+28h] [ebp-40080h]
+  __mode_t st_mode; // [esp+28h] [ebp-40080h]
   gid_t groups[65536]; // [esp+2Ch] [ebp-4007Ch] BYREF
   stat fileStatus; // [esp+4002Ch] [ebp-7Ch] BYREF
   int i2; // [esp+4008Ch] [ebp-1Ch]
@@ -125730,11 +125509,11 @@ BOOLEAN __cdecl HTEditable(const char *filename)
   if ( WWW_TraceFlag[0] )
   {
     v1 = myUid;
-    v2 = fileStatus.st_gid;
-    v3 = fileStatus.st_uid;
-    v11 = fileStatus.st_mode;
+    st_gid = fileStatus.st_gid;
+    st_uid = fileStatus.st_uid;
+    st_mode = fileStatus.st_mode;
     v4 = TraceFP();
-    fprintf(v4, "File mode is 0%o, uid=%d, gid=%d. My uid=%d, %d groups (", v11, v3, v2, v1, ngroups);
+    fprintf(v4, "File mode is 0%o, uid=%d, gid=%d. My uid=%d, %d groups (", st_mode, st_uid, st_gid, v1, ngroups);
     for ( i2 = 0; i2 < ngroups; ++i2 )
     {
       v5 = groups[i2];
@@ -125767,7 +125546,6 @@ BOOLEAN __cdecl HTEditable(const char *filename)
 //----- (08108F37) --------------------------------------------------------
 HTStream *__cdecl HTFileSaveStream(HTParentAnchor *anchor)
 {
-  HTStream *v2; // [esp+14h] [ebp-14h]
   FILE *fp; // [esp+1Ch] [ebp-Ch]
   char *localname; // [esp+20h] [ebp-8h]
 
@@ -125776,10 +125554,9 @@ HTStream *__cdecl HTFileSaveStream(HTParentAnchor *anchor)
   if ( localname )
     free(localname);
   if ( fp )
-    v2 = (HTStream *)HTFWriter_new(fp);
+    return (HTStream *)HTFWriter_new(fp);
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
@@ -125802,10 +125579,12 @@ void __cdecl HTDirEntry(HTStructured_1 *target, const char *tail, const char *en
     stripped = escaped;
     escaped = HTEscape(escaped, 2u);
     len = strlen(escaped);
-    if ( len > 2 && escaped[len - 3] == 37 && escaped[len - 2] == 50 )
+    if ( len > 2
+      && escaped[len - 3] == 37
+      && escaped[len - 2] == 50
+      && (((*__ctype_b_loc())[(unsigned __int8)escaped[len - 1]] & 0x200) != 0 ? toupper((unsigned __int8)escaped[len - 1]) == 70 : escaped[len - 1] == 70) )
     {
-      if ( ((*__ctype_b_loc())[(unsigned __int8)escaped[len - 1]] & 0x200) != 0 ? toupper((unsigned __int8)escaped[len - 1]) == 70 : escaped[len - 1] == 70 )
-        escaped[len - 3] = 0;
+      escaped[len - 3] = 0;
     }
   }
   if ( tail && *tail )
@@ -125846,7 +125625,7 @@ BOOLEAN __cdecl view_structured(HTFormat format_out)
 
   result = 0;
   if ( psrc_view || HTAtom_for("www/dump") == format_out )
-    result = 1;
+    return 1;
   return result;
 }
 
@@ -125876,13 +125655,12 @@ BOOLEAN __cdecl HTDirTitles(HTStructured_1 *target, HTParentAnchor *anchor, HTFo
   char *v7; // [esp+4h] [ebp-74h]
   char *v8; // [esp+4h] [ebp-74h]
   const char *name; // [esp+1Ch] [ebp-5Ch]
-  void (*v10)(HTStructured *, const char *); // [esp+20h] [ebp-58h]
+  void (*put_string)(HTStructured *, const char *); // [esp+20h] [ebp-58h]
   char *v11; // [esp+24h] [ebp-54h]
   void (*v12)(HTStructured *, const char *); // [esp+28h] [ebp-50h]
   char *v13; // [esp+2Ch] [ebp-4Ch]
   void (*v14)(HTStructured *, const char *); // [esp+30h] [ebp-48h]
   char *v15; // [esp+34h] [ebp-44h]
-  BOOLEAN v16; // [esp+3Bh] [ebp-3Dh]
   char *printable; // [esp+4Ch] [ebp-2Ch] BYREF
   DIR *dp; // [esp+50h] [ebp-28h]
   char *relative; // [esp+54h] [ebp-24h] BYREF
@@ -125941,11 +125719,8 @@ BOOLEAN __cdecl HTDirTitles(HTStructured_1 *target, HTParentAnchor *anchor, HTFo
         goto LABEL_23;
       }
       if ( cp[6] == 73 )
-      {
 LABEL_23:
         *cp = 0;
-        goto LABEL_24;
-      }
     }
 LABEL_24:
     cp = 0;
@@ -125971,12 +125746,12 @@ LABEL_24:
   target->isa->start_element((HTStructured *)target, 53, 0, 0, -1, 0);
   target->isa->put_character((HTStructured *)target, 10);
   target->isa->start_element((HTStructured *)target, 110, 0, 0, -1, 0);
-  v10 = target->isa->put_string;
+  put_string = target->isa->put_string;
   if ( *relative )
     v11 = relative;
   else
     v11 = gettext("Welcome");
-  v10((HTStructured *)target, v11);
+  put_string((HTStructured *)target, v11);
   v4 = target->isa->put_string;
   v7 = gettext(" directory");
   v4((HTStructured *)target, v7);
@@ -126076,7 +125851,7 @@ LABEL_24:
           free(relative);
           relative = 0;
         }
-        v16 = need_parent_link;
+        return need_parent_link;
       }
       else
       {
@@ -126095,9 +125870,8 @@ LABEL_24:
           free(path);
           path = 0;
         }
-        v16 = need_parent_link;
+        return need_parent_link;
       }
-      return v16;
     }
     HTStartAnchor(target, &entry, relative);
     if ( relative )
@@ -126195,7 +125969,7 @@ const char *__cdecl file_type(const char *path)
     ++path;
   type = strchr(path, 46);
   if ( !type )
-    type = (char *)&entry;
+    return &entry;
   return type;
 }
 
@@ -126262,7 +126036,7 @@ int __cdecl dired_cmp(void *a, void *b)
     }
   }
   if ( !code )
-    code = strcmp((const char *)a + 97, (const char *)b + 97);
+    return strcmp((const char *)a + 97, (const char *)b + 97);
   return code;
 }
 
@@ -126270,7 +126044,7 @@ int __cdecl dired_cmp(void *a, void *b)
 int __cdecl print_local_dir(DIR *dp, char *localname, HTParentAnchor *anchor, HTFormat format_out, HTStream *sink)
 {
   FILE *v5; // eax
-  const HTStructuredClass *v6; // edx
+  const HTStructuredClass *isa; // edx
   char *v7; // eax
   size_t v8; // eax
   char *v9; // eax
@@ -126280,7 +126054,7 @@ int __cdecl print_local_dir(DIR *dp, char *localname, HTParentAnchor *anchor, HT
   int v14; // [esp+20h] [ebp-118h]
   char v15; // [esp+26h] [ebp-112h]
   char v16; // [esp+27h] [ebp-111h]
-  void (*v17)(HTStructured *, const char *); // [esp+28h] [ebp-110h]
+  void (*put_string)(HTStructured *, const char *); // [esp+28h] [ebp-110h]
   char *v18; // [esp+2Ch] [ebp-10Ch]
   int v19; // [esp+30h] [ebp-108h]
   stat link_info; // [esp+54h] [ebp-E4h] BYREF
@@ -126332,16 +126106,16 @@ int __cdecl print_local_dir(DIR *dp, char *localname, HTParentAnchor *anchor, HT
   if ( UCLYhndl_HTFile_for_unspec >= 0 )
     HTAnchor_setUCInfoStage(anchor, UCLYhndl_HTFile_for_unspec, 1, 1);
   target = (HTStructured_1 *)HTML_new(anchor, format_out, (HTStream_0 *)sink);
-  v6 = target->isa;
+  isa = target->isa;
   targetClass.name = target->isa->name;
-  targetClass._free = v6->_free;
-  targetClass._abort = v6->_abort;
-  targetClass.put_character = v6->put_character;
-  targetClass.put_string = v6->put_string;
-  targetClass.put_block = v6->put_block;
-  targetClass.start_element = v6->start_element;
-  targetClass.end_element = v6->end_element;
-  targetClass.put_entity = v6->put_entity;
+  targetClass._free = isa->_free;
+  targetClass._abort = isa->_abort;
+  targetClass.put_character = isa->put_character;
+  targetClass.put_string = isa->put_string;
+  targetClass.put_block = isa->put_block;
+  targetClass.start_element = isa->start_element;
+  targetClass.end_element = isa->end_element;
+  targetClass.put_entity = isa->put_entity;
   for ( i = 0; i <= 24; ++i )
     present[i] = i == 6;
   need_parent_link = HTDirTitles(target, anchor, format_out, 0);
@@ -126481,12 +126255,12 @@ int __cdecl print_local_dir(DIR *dp, char *localname, HTParentAnchor *anchor, HT
         if ( dir_list_style != 2 )
         {
           target->isa->start_element((HTStructured *)target, 38, 0, 0, -1, 0);
-          v17 = target->isa->put_string;
+          put_string = target->isa->put_string;
           if ( state == 68 )
             v18 = gettext("Subdirectories:");
           else
             v18 = gettext("Files:");
-          v17((HTStructured *)target, v18);
+          put_string((HTStructured *)target, v18);
           target->isa->end_element((HTStructured *)target, 38, 0);
         }
         target->isa->end_element((HTStructured *)target, 48, 0);
@@ -126580,7 +126354,15 @@ int __cdecl HTStat(const char *filename, stat *data)
 }
 
 //----- (0810AB5E) --------------------------------------------------------
-int __cdecl decompressAndParse(HTParentAnchor *anchor, HTFormat format_out, HTStream *sink, char *nodename, char *filename, HTAtom *myEncoding, HTFormat format, int *statusp)
+int __cdecl decompressAndParse(
+        HTParentAnchor *anchor,
+        HTFormat format_out,
+        HTStream *sink,
+        char *nodename,
+        char *filename,
+        HTAtom *myEncoding,
+        HTFormat format,
+        int *statusp)
 {
   CompressFileType v8; // eax
   FILE *v9; // eax
@@ -126739,17 +126521,9 @@ int __cdecl decompressAndParse(HTParentAnchor *anchor, HTFormat format_out, HTSt
   if ( internal_decompress )
   {
     if ( (unsigned int)internal_decompress <= cftGzip )
-    {
       failed_decompress = gzfp == 0;
-    }
-    else if ( internal_decompress == cftDeflate )
-    {
-      failed_decompress = zzfp == 0;
-    }
     else
-    {
-      failed_decompress = 1;
-    }
+      failed_decompress = internal_decompress != cftDeflate || zzfp == 0;
     if ( failed_decompress )
     {
       v15 = gettext("Could not open file for decompression!");
@@ -126803,7 +126577,7 @@ int __cdecl decompressAndParse(HTParentAnchor *anchor, HTFormat format_out, HTSt
   }
   return 1;
 }
-// 810B06F: conditional instruction was optimized away because of '%internal_decompress.4!=0'
+// 810B06F: conditional instruction was optimized away because %internal_decompress.4!=0
 // 804A924: using guessed type int __cdecl gzopen64(_DWORD, _DWORD);
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
@@ -126813,7 +126587,7 @@ int __cdecl HTLoadFile(const char *addr, HTParentAnchor *anchor, HTFormat format
   char *v4; // eax
   size_t v5; // eax
   unsigned int v6; // eax
-  char *v7; // ebx
+  char *name; // ebx
   FILE *v8; // eax
   char *v9; // ebx
   FILE *v10; // eax
@@ -126830,7 +126604,6 @@ int __cdecl HTLoadFile(const char *addr, HTParentAnchor *anchor, HTFormat format
   char *v22; // [esp+8h] [ebp-180h]
   char *v23; // [esp+8h] [ebp-180h]
   char *v24; // [esp+8h] [ebp-180h]
-  int v25; // [esp+3Ch] [ebp-14Ch]
   double v26; // [esp+40h] [ebp-148h]
   stat file_info; // [esp+50h] [ebp-138h] BYREF
   stat dir_info; // [esp+B0h] [ebp-D8h] BYREF
@@ -126958,7 +126731,7 @@ LABEL_127:
         fprintf(v17, "Can't open `%s', errno=%d\n", addr, v16);
       }
       v24 = gettext("Can't access requested file.");
-      v25 = HTLoadError((HTStream_0 *)sink, 403, v24);
+      return HTLoadError((HTStream_0 *)sink, 403, v24);
     }
     else
     {
@@ -126969,10 +126742,9 @@ LABEL_127:
         nodename = 0;
       }
       if ( strncmp(addr, "file://localhost", 0x10u) )
-        status = HTFTPLoad(addr, anchor, format_out, sink);
-      v25 = status;
+        return HTFTPLoad(addr, anchor, format_out, sink);
+      return status;
     }
-    return v25;
   }
   localname = HTnameOfFile_WWW(addr, 1, 1);
   if ( strlen(localname) > 6 )
@@ -127085,9 +126857,9 @@ LABEL_127:
               if ( WWW_TraceFlag[0] )
               {
                 v26 = value;
-                v7 = rep->name;
+                name = rep->name;
                 v8 = TraceFP();
-                fprintf(v8, "HTLoadFile: value of presenting %s is %f\n", v7, v26);
+                fprintf(v8, "HTLoadFile: value of presenting %s is %f\n", name, v26);
               }
               if ( value > (long double)best )
               {
@@ -127193,7 +126965,7 @@ LABEL_119:
         enable_file_name = 0;
       }
       v22 = gettext("Selective access is not enabled for this directory");
-      v25 = HTLoadError((HTStream_0 *)sink, 403, v22);
+      return HTLoadError((HTStream_0 *)sink, 403, v22);
     }
     else
     {
@@ -127218,7 +126990,7 @@ LABEL_119:
           free(nodename);
           nodename = 0;
         }
-        v25 = status;
+        return status;
       }
       else
       {
@@ -127233,7 +127005,7 @@ LABEL_119:
           nodename = 0;
         }
         v23 = gettext("This directory is not readable.");
-        v25 = HTLoadError((HTStream_0 *)sink, 403, v23);
+        return HTLoadError((HTStream_0 *)sink, 403, v23);
       }
     }
   }
@@ -127250,9 +127022,8 @@ LABEL_119:
       nodename = 0;
     }
     v21 = gettext("Directory browsing is not allowed.");
-    v25 = HTLoadError((HTStream_0 *)sink, 403, v21);
+    return HTLoadError((HTStream_0 *)sink, 403, v21);
   }
-  return v25;
 }
 // 804AE14: using guessed type int __cdecl readdir64(_DWORD);
 
@@ -127263,7 +127034,7 @@ const char *__cdecl HTGetProgramPath(ProgramPaths code)
 
   result = 0;
   if ( code && (unsigned int)code <= ppZIP_0 )
-    result = program_paths[code];
+    return program_paths[code];
   return result;
 }
 
@@ -127374,7 +127145,7 @@ void __cdecl HTBTElement_free(HTBTElement *element)
     free(element);
   }
 }
-// 810C1BE: conditional instruction was optimized away because of '%element.4!=0'
+// 810C1BE: conditional instruction was optimized away because %element.4!=0
 
 //----- (0810C1D4) --------------------------------------------------------
 void __cdecl HTBTree_free(HTBTree *tree)
@@ -127401,7 +127172,7 @@ void __cdecl HTBTElementAndObject_free(HTBTElement *element)
     free(element);
   }
 }
-// 810C261: conditional instruction was optimized away because of '%element.4!=0'
+// 810C261: conditional instruction was optimized away because %element.4!=0
 
 //----- (0810C277) --------------------------------------------------------
 void __cdecl HTBTreeAndObject_free(HTBTree *tree)
@@ -127439,8 +127210,8 @@ void *__cdecl HTBTree_search(HTBTree *tree, void *object)
 //----- (0810C311) --------------------------------------------------------
 void __cdecl HTBTree_add(HTBTree *tree, void *object)
 {
-  int v2; // [esp+Ch] [ebp-8Ch]
-  int v3; // [esp+14h] [ebp-84h]
+  int left_depth; // [esp+Ch] [ebp-8Ch]
+  int right_depth; // [esp+14h] [ebp-84h]
   int v4; // [esp+1Ch] [ebp-7Ch]
   int v5; // [esp+24h] [ebp-74h]
   int v6; // [esp+2Ch] [ebp-6Ch]
@@ -127529,19 +127300,19 @@ void __cdecl HTBTree_add(HTBTree *tree, void *object)
       if ( father_of_forefather->left == forefather_of_element )
       {
         depth = father_of_forefather->left_depth;
-        v2 = forefather_of_element->left_depth;
-        if ( v2 < forefather_of_element->right_depth )
-          v2 = forefather_of_element->right_depth;
-        father_of_forefather->left_depth = v2 + 1;
+        left_depth = forefather_of_element->left_depth;
+        if ( left_depth < forefather_of_element->right_depth )
+          left_depth = forefather_of_element->right_depth;
+        father_of_forefather->left_depth = left_depth + 1;
         depth2 = father_of_forefather->left_depth;
       }
       else
       {
         depth = father_of_forefather->right_depth;
-        v3 = forefather_of_element->left_depth;
-        if ( v3 < forefather_of_element->right_depth )
-          v3 = forefather_of_element->right_depth;
-        father_of_forefather->right_depth = v3 + 1;
+        right_depth = forefather_of_element->left_depth;
+        if ( right_depth < forefather_of_element->right_depth )
+          right_depth = forefather_of_element->right_depth;
+        father_of_forefather->right_depth = right_depth + 1;
         depth2 = father_of_forefather->right_depth;
       }
       forefather_of_element = father_of_forefather;
@@ -127789,7 +127560,7 @@ HTBTElement *__cdecl HTBTree_next(HTBTree *tree, HTBTElement *ele)
       {
         father_of_elementa = father_of_forefather;
       }
-      father_of_element = father_of_forefather;
+      return father_of_forefather;
     }
   }
   else
@@ -127889,8 +127660,8 @@ char *__cdecl HTVMS_name(const char *nn, const char *fn)
   free(filename);
   return vmsname_10181;
 }
-// 810CF4E: conditional instruction was optimized away because of '%nodename.4!=0'
-// 810CF66: conditional instruction was optimized away because of '%filename.4!=0'
+// 810CF4E: conditional instruction was optimized away because %nodename.4!=0
+// 810CF66: conditional instruction was optimized away because %filename.4!=0
 
 //----- (0810CF81) --------------------------------------------------------
 int next_data_char()
@@ -127914,20 +127685,19 @@ int next_data_char()
 //----- (0810D00B) --------------------------------------------------------
 int __cdecl close_connection(connection *con)
 {
-  int v1; // ebx
+  int socket; // ebx
   FILE *v2; // eax
   int *v3; // eax
   char *v4; // ebx
   FILE *v5; // eax
-  int v7; // [esp+10h] [ebp-18h]
   int status; // [esp+1Ch] [ebp-Ch]
   connection *scan; // [esp+20h] [ebp-8h]
 
   if ( WWW_TraceFlag[0] )
   {
-    v1 = con->socket;
+    socket = con->socket;
     v2 = TraceFP();
-    fprintf(v2, "HTFTP: Closing control socket %d\n", v1);
+    fprintf(v2, "HTFTP: Closing control socket %d\n", socket);
   }
   status = close(con->socket);
   if ( WWW_TraceFlag[0] && status && WWW_TraceFlag[0] )
@@ -127941,7 +127711,7 @@ int __cdecl close_connection(connection *con)
   if ( connections == con )
   {
     connections = con->next;
-    v7 = status;
+    return status;
   }
   else
   {
@@ -127955,9 +127725,8 @@ int __cdecl close_connection(connection *con)
     scan->next = con->next;
     if ( control == con )
       control = 0;
-    v7 = status;
+    return status;
   }
-  return v7;
 }
 
 //----- (0810D115) --------------------------------------------------------
@@ -128003,16 +127772,15 @@ int __cdecl write_cmd(const char *cmd)
 {
   FILE *v1; // eax
   FILE *v2; // eax
-  int v3; // ebx
+  int socket; // ebx
   FILE *v4; // edx
   size_t v6; // [esp+8h] [ebp-20h]
-  int v7; // [esp+10h] [ebp-18h]
-  int status; // [esp+20h] [ebp-8h]
+  ssize_t status; // [esp+20h] [ebp-8h]
 
   if ( control )
   {
     if ( !cmd )
-      goto LABEL_12;
+      return 1;
     if ( WWW_TraceFlag[0] )
     {
       v2 = TraceFP();
@@ -128024,17 +127792,16 @@ int __cdecl write_cmd(const char *cmd)
     {
       if ( WWW_TraceFlag[0] )
       {
-        v3 = control->socket;
+        socket = control->socket;
         v4 = TraceFP();
-        fprintf(v4, "HTFTP: Error %d sending command: closing socket %d\n", status, v3);
+        fprintf(v4, "HTFTP: Error %d sending command: closing socket %d\n", status, socket);
       }
       close_connection(control);
-      v7 = status;
+      return status;
     }
     else
     {
-LABEL_12:
-      v7 = 1;
+      return 1;
     }
   }
   else
@@ -128044,27 +127811,26 @@ LABEL_12:
       v1 = TraceFP();
       fprintf(v1, "HTFTP: No control connection set up!!\n");
     }
-    v7 = -99;
+    return -99;
   }
-  return v7;
 }
 
 //----- (0810D2B1) --------------------------------------------------------
 BOOLEAN __cdecl find_response(HTList *list)
 {
-  const char *v2; // [esp+14h] [ebp-14h]
+  const char *object; // [esp+14h] [ebp-14h]
   BOOLEAN result; // [esp+27h] [ebp-1h]
 
   result = 0;
   while ( 1 )
   {
     if ( list && (list = list->next) != 0 )
-      v2 = (const char *)list->object;
+      object = (const char *)list->object;
     else
-      v2 = 0;
-    if ( !v2 )
+      object = 0;
+    if ( !object )
       break;
-    if ( LYstrstr(response_text, v2) )
+    if ( LYstrstr(response_text, object) )
       return 1;
   }
   return result;
@@ -128081,9 +127847,8 @@ int __cdecl response(const char *cmd)
   FILE *v6; // eax
   int v7; // ebx
   FILE *v8; // eax
-  int v9; // ebx
+  int socket; // ebx
   FILE *v10; // eax
-  int v12; // [esp+20h] [ebp-28h]
   int ich; // [esp+2Ch] [ebp-1Ch]
   char *p; // [esp+30h] [ebp-18h]
   int status; // [esp+34h] [ebp-14h]
@@ -128168,20 +127933,19 @@ LABEL_9:
         {
           if ( WWW_TraceFlag[0] )
           {
-            v9 = control->socket;
+            socket = control->socket;
             v10 = TraceFP();
-            fprintf(v10, "HTFTP: They close so we close socket %d\n", v9);
+            fprintf(v10, "HTFTP: They close so we close socket %d\n", socket);
           }
           close_connection(control);
-          v12 = -1;
+          return -1;
         }
         else
         {
           if ( result == 255 && server_type == CMS_SERVER && (!strncasecomp(cmd, "CWD", 3) || !strcasecomp(cmd, "CDUP")) )
             result = 555;
-          v12 = result / 100;
+          return result / 100;
         }
-        return v12;
       }
       goto LABEL_3;
     }
@@ -128238,13 +128002,10 @@ int __cdecl send_cmd_2(const char *verb, const char *param)
 //----- (0810D7B3) --------------------------------------------------------
 int __cdecl set_mac_binary(eServerType ServerType)
 {
-  int v2; // [esp+4h] [ebp-4h]
-
   if ( ServerType == APPLESHARE_SERVER || ServerType == NETPRESENZ_SERVER )
-    v2 = response("MACB E\r\n") == 2;
+    return response("MACB E\r\n") == 2;
   else
-    v2 = response("MACB\r\n") == 2;
-  return v2;
+    return response("MACB\r\n") == 2;
 }
 
 //----- (0810D7FC) --------------------------------------------------------
@@ -128367,7 +128128,7 @@ int __cdecl get_connection(const char *arg, HTParentAnchor *anchor)
   FILE *v5; // eax
   char *v6; // eax
   char *v7; // eax
-  int v8; // ebx
+  int socket; // ebx
   FILE *v9; // eax
   FILE *v10; // eax
   FILE *v11; // eax
@@ -128528,9 +128289,9 @@ int __cdecl get_connection(const char *arg, HTParentAnchor *anchor)
   }
   if ( WWW_TraceFlag[0] )
   {
-    v8 = con->socket;
+    socket = con->socket;
     v9 = TraceFP();
-    fprintf(v9, "FTP connected, socket %d  control %p\n", v8, con);
+    fprintf(v9, "FTP connected, socket %d  control %p\n", socket, con);
   }
   control = con;
   HTInitInput(con->socket);
@@ -128880,7 +128641,7 @@ int close_master_socket()
 }
 
 //----- (0810EA6E) --------------------------------------------------------
-int get_listen_socket()
+unsigned int get_listen_socket()
 {
   char *v0; // eax
   FILE *v1; // eax
@@ -128891,7 +128652,6 @@ int get_listen_socket()
   int v6; // ebx
   FILE *v7; // eax
   FILE *v8; // eax
-  int v10; // [esp+2Ch] [ebp-14Ch]
   socklen_t address_length; // [esp+48h] [ebp-130h] BYREF
   int status; // [esp+4Ch] [ebp-12Ch]
   fd_set *__arr; // [esp+50h] [ebp-128h]
@@ -128931,7 +128691,7 @@ int get_listen_socket()
     address_length = 128;
     status = getsockname(control->socket, (struct sockaddr *)&soc_address, &address_length);
     if ( status < 0 )
-      goto LABEL_14;
+      return HTInetStatus("getsockname");
     if ( WWW_TraceFlag[0] )
     {
       v2 = HTInetString((SockA *)soc_in);
@@ -128950,8 +128710,7 @@ int get_listen_socket()
     status = getsockname(new_socket, (struct sockaddr *)&soc_address, &address_length);
     if ( status < 0 )
     {
-LABEL_14:
-      v10 = HTInetStatus("getsockname");
+      return HTInetStatus("getsockname");
     }
     else
     {
@@ -129002,21 +128761,20 @@ LABEL_14:
         open_sockets.fds_bits[master_socket >> 5] |= 1 << (master_socket & 0x1F);
         if ( master_socket + 1 > num_sockets )
           num_sockets = master_socket + 1;
-        v10 = master_socket;
+        return master_socket;
       }
       else
       {
         reset_master_socket();
-        v10 = HTInetStatus("listen");
+        return HTInetStatus("listen");
       }
     }
   }
   else
   {
     v0 = gettext("socket for master socket");
-    v10 = HTInetStatus(v0);
+    return HTInetStatus(v0);
   }
-  return v10;
 }
 
 //----- (0810F074) --------------------------------------------------------
@@ -129143,11 +128901,7 @@ BOOLEAN __cdecl is_ls_date(char *s)
   sk = sg + 1;
   v7 = ((*__ctype_b_loc())[(unsigned __int8)*sk] & 0x800) == 0;
   sh = sk + 1;
-  if ( v7 )
-    return 0;
-  if ( *sh == 32 || ((*__ctype_b_loc())[(unsigned __int8)*sh] & 0x800) != 0 )
-    return sh[1] == 32;
-  return 0;
+  return !v7 && (*sh == 32 || ((*__ctype_b_loc())[(unsigned __int8)*sh] & 0x800) != 0) && sh[1] == 32;
 }
 
 //----- (0810F4E6) --------------------------------------------------------
@@ -129168,11 +128922,7 @@ void __cdecl parse_eplf_line(char *line, EntryInfo *info)
   if ( !flagbase_11668 )
   {
     t.tm_year = 70;
-    t.tm_mon = 0;
-    t.tm_mday = 0;
-    t.tm_hour = 0;
-    t.tm_min = 0;
-    t.tm_sec = 0;
+    memset(&t, 0, 20);
     t.tm_isdst = -1;
     base_11667 = mktime(&t);
     flagbase_11668 = 1;
@@ -129262,7 +129012,7 @@ void __cdecl parse_ls_line(char *line, EntryInfo *entry_info)
 //----- (0810F877) --------------------------------------------------------
 void __cdecl parse_dls_line(char *line, EntryInfo *entry_info, char **pspilledname)
 {
-  char *v3; // ebx
+  char *filename; // ebx
   char *v4; // eax
   char *v5; // eax
   char *v6; // eax
@@ -129355,8 +129105,8 @@ void __cdecl parse_dls_line(char *line, EntryInfo *entry_info, char **pspilledna
     {
       entry_info->filename = *pspilledname;
       *pspilledname = 0;
-      v3 = entry_info->filename;
-      if ( v3[strlen(entry_info->filename) - 1] == 47 )
+      filename = entry_info->filename;
+      if ( filename[strlen(entry_info->filename) - 1] == 47 )
       {
         v4 = gettext("Directory");
         HTSACopy(&entry_info->type, v4);
@@ -129382,7 +129132,6 @@ void __cdecl parse_dls_line(char *line, EntryInfo *entry_info, char **pspilledna
 LABEL_47:
       free(*pspilledname);
       *pspilledname = 0;
-      return;
     }
   }
 }
@@ -129390,11 +129139,11 @@ LABEL_47:
 //----- (0810FCA0) --------------------------------------------------------
 void __cdecl parse_vms_dir_entry(char *line, EntryInfo *entry_info)
 {
-  char *v2; // ebx
+  char *filename; // ebx
   FILE *v3; // eax
   char v4; // [esp+1Bh] [ebp-4Dh]
   char v5; // [esp+23h] [ebp-45h]
-  unsigned int v6; // [esp+24h] [ebp-44h]
+  unsigned int size; // [esp+24h] [ebp-44h]
   char *v7; // [esp+28h] [ebp-40h]
   char *cps; // [esp+38h] [ebp-30h]
   char *cpsa; // [esp+38h] [ebp-30h]
@@ -129527,14 +129276,14 @@ void __cdecl parse_vms_dir_entry(char *line, EntryInfo *entry_info)
     }
     if ( WWW_TraceFlag[0] )
     {
-      v6 = entry_info->size;
+      size = entry_info->size;
       if ( entry_info->date )
         v7 = entry_info->date;
       else
         v7 = (char *)&nn;
-      v2 = entry_info->filename;
+      filename = entry_info->filename;
       v3 = TraceFP();
-      fprintf(v3, "HTFTP: VMS filename: %s  date: %s  size: %u\n", v2, v7, v6);
+      fprintf(v3, "HTFTP: VMS filename: %s  date: %s  size: %u\n", filename, v7, size);
     }
   }
   else
@@ -129549,9 +129298,9 @@ void __cdecl parse_ms_windows_dir_entry(char *line, EntryInfo *entry_info)
   char *v2; // eax
   char *v3; // eax
   char *v4; // eax
-  char *v5; // ebx
+  char *filename; // ebx
   FILE *v6; // eax
-  unsigned int v7; // [esp+14h] [ebp-44h]
+  unsigned int size; // [esp+14h] [ebp-44h]
   char *v8; // [esp+18h] [ebp-40h]
   char *end; // [esp+30h] [ebp-28h]
   char *cpd; // [esp+34h] [ebp-24h]
@@ -129613,14 +129362,14 @@ void __cdecl parse_ms_windows_dir_entry(char *line, EntryInfo *entry_info)
     }
     if ( WWW_TraceFlag[0] )
     {
-      v7 = entry_info->size;
+      size = entry_info->size;
       if ( entry_info->date )
         v8 = entry_info->date;
       else
         v8 = (char *)&nn;
-      v5 = entry_info->filename;
+      filename = entry_info->filename;
       v6 = TraceFP();
-      fprintf(v6, "HTFTP: MS Windows filename: %s  date: %s  size: %u\n", v5, v8, v7);
+      fprintf(v6, "HTFTP: MS Windows filename: %s  date: %s  size: %u\n", filename, v8, size);
     }
   }
   else
@@ -129638,9 +129387,9 @@ void __cdecl parse_cms_dir_entry(char *line, EntryInfo *entry_info)
   char *v5; // eax
   char *v6; // eax
   char *v7; // eax
-  char *v8; // ebx
+  char *filename; // ebx
   FILE *v9; // eax
-  unsigned int v10; // [esp+14h] [ebp-44h]
+  unsigned int size; // [esp+14h] [ebp-44h]
   char *v11; // [esp+18h] [ebp-40h]
   int i; // [esp+24h] [ebp-34h]
   int ia; // [esp+24h] [ebp-34h]
@@ -129774,14 +129523,14 @@ void __cdecl parse_cms_dir_entry(char *line, EntryInfo *entry_info)
         }
         if ( WWW_TraceFlag[0] )
         {
-          v10 = entry_info->size;
+          size = entry_info->size;
           if ( entry_info->date )
             v11 = entry_info->date;
           else
             v11 = (char *)&nn;
-          v8 = entry_info->filename;
+          filename = entry_info->filename;
           v9 = TraceFP();
-          fprintf(v9, "HTFTP: VM/CMS filename: %s  date: %s  size: %u\n", v8, v11, v10);
+          fprintf(v9, "HTFTP: VM/CMS filename: %s  date: %s  size: %u\n", filename, v11, size);
         }
       }
       else
@@ -130046,7 +129795,6 @@ LABEL_76:
 //----- (0811138B) --------------------------------------------------------
 int __cdecl compare_EntryInfo_structs(EntryInfo *entry1, EntryInfo *entry2)
 {
-  int v3; // [esp+1Ch] [ebp-4Ch]
   char month[4]; // [esp+28h] [ebp-40h] BYREF
   int status; // [esp+2Ch] [ebp-3Ch]
   int i; // [esp+30h] [ebp-38h]
@@ -130146,10 +129894,9 @@ int __cdecl compare_EntryInfo_structs(EntryInfo *entry1, EntryInfo *entry2)
   if ( entry1->size == entry2->size )
     return strcmp(entry1->filename, entry2->filename);
   if ( entry1->size <= entry2->size )
-    v3 = -1;
+    return -1;
   else
-    v3 = 1;
-  return v3;
+    return 1;
 }
 
 //----- (08111885) --------------------------------------------------------
@@ -130159,7 +129906,7 @@ int __cdecl read_directory(HTParentAnchor *parent, const char *address, HTFormat
   FILE *v5; // eax
   FILE *v6; // eax
   char *v7; // eax
-  char *v8; // ebx
+  char *data; // ebx
   char *v9; // esi
   FILE *v10; // eax
   char *v11; // ebx
@@ -130369,10 +130116,10 @@ LABEL_60:
       {
         if ( WWW_TraceFlag[0] )
         {
-          v8 = chunk->data;
+          data = chunk->data;
           v9 = lastpath;
           v10 = TraceFP();
-          fprintf(v10, "HTFTP: Line in %s is %s\n", v9, v8);
+          fprintf(v10, "HTFTP: Line in %s is %s\n", v9, data);
         }
         entry_info = parse_dir_entry(chunk->data, &first, &spilledname);
         if ( entry_info->display )
@@ -130774,10 +130521,9 @@ int __cdecl HTFTPLoad(const char *name, HTParentAnchor *anchor, HTFormat format_
   FILE *v44; // eax
   int v45; // ebx
   FILE *v46; // eax
-  int v47; // ebx
+  int socket; // ebx
   FILE *v48; // eax
   const char *v50; // [esp+18h] [ebp-120h]
-  int v51; // [esp+1Ch] [ebp-11Ch]
   int v53; // [esp+24h] [ebp-114h]
   BOOLEAN v54; // [esp+28h] [ebp-110h]
   const char *v55; // [esp+2Ch] [ebp-10Ch]
@@ -131299,10 +131045,9 @@ LABEL_215:
       close(control->socket);
       control->socket = -1;
       if ( status >= 0 )
-        v51 = -status;
+        return -status;
       else
-        v51 = status;
-      return v51;
+        return status;
     }
     goto listen;
   }
@@ -131547,9 +131292,9 @@ listen:
   {
     if ( WWW_TraceFlag[0] )
     {
-      v47 = control->socket;
+      socket = control->socket;
       v48 = TraceFP();
-      fprintf(v48, "closing control socket %d\n", v47);
+      fprintf(v48, "closing control socket %d\n", socket);
     }
     status = close(control->socket);
     if ( status == -1 )
@@ -131565,8 +131310,8 @@ listen:
   init_help_message_cache();
   return final_status;
 }
-// 8114661: conditional instruction was optimized away because of '%type.4!=0'
-// 8114C71: conditional instruction was optimized away because of '%cft.4==1'
+// 8114661: conditional instruction was optimized away because %type.4!=0
+// 8114C71: conditional instruction was optimized away because %cft.4==1
 
 //----- (0811506E) --------------------------------------------------------
 void HTClearFTPPassword()
@@ -131603,7 +131348,6 @@ int __cdecl HTInetStatus(const char *where)
 //----- (08115117) --------------------------------------------------------
 unsigned int __cdecl HTCardinal(int *pstatus, char **pp, unsigned int max_value)
 {
-  unsigned int v4; // [esp+0h] [ebp-14h]
   unsigned int n; // [esp+10h] [ebp-4h]
 
   if ( **pp > 47 && **pp <= 57 )
@@ -131613,20 +131357,19 @@ unsigned int __cdecl HTCardinal(int *pstatus, char **pp, unsigned int max_value)
       n = 10 * n + *(*pp)++ - 48;
     if ( n <= max_value )
     {
-      v4 = n;
+      return n;
     }
     else
     {
       *pstatus = -4;
-      v4 = 0;
+      return 0;
     }
   }
   else
   {
     *pstatus = -3;
-    v4 = 0;
+    return 0;
   }
-  return v4;
 }
 
 //----- (081151B7) --------------------------------------------------------
@@ -131687,22 +131430,22 @@ void __cdecl __noreturn quench(int sig)
 void __cdecl dump_hostent(const char *msgprefix, const hostent *phost)
 {
   FILE *v2; // edx
-  char *v3; // ebx
+  char *h_name; // ebx
   FILE *v4; // eax
   char *v5; // ebx
   FILE *v6; // eax
   FILE *v7; // eax
-  char **v8; // ebx
+  char **h_aliases; // ebx
   FILE *v9; // eax
   FILE *v10; // eax
   FILE *v11; // eax
   FILE *v12; // eax
   FILE *v13; // eax
-  int v14; // ebx
+  int h_addrtype; // ebx
   FILE *v15; // eax
-  int v16; // ebx
+  int h_length; // ebx
   FILE *v17; // eax
-  char **v18; // ebx
+  char **h_addr_list; // ebx
   FILE *v19; // eax
   FILE *v20; // eax
   FILE *v21; // eax
@@ -131733,9 +131476,9 @@ void __cdecl dump_hostent(const char *msgprefix, const hostent *phost)
     {
       if ( WWW_TraceFlag[0] )
       {
-        v3 = phost->h_name;
+        h_name = phost->h_name;
         v4 = TraceFP();
-        fprintf(v4, "{ h_name = %p", v3);
+        fprintf(v4, "{ h_name = %p", h_name);
       }
       if ( phost->h_name )
       {
@@ -131753,9 +131496,9 @@ void __cdecl dump_hostent(const char *msgprefix, const hostent *phost)
       }
       if ( WWW_TraceFlag[0] )
       {
-        v8 = phost->h_aliases;
+        h_aliases = phost->h_aliases;
         v9 = TraceFP();
-        fprintf(v9, "\n\t h_aliases = %p", v8);
+        fprintf(v9, "\n\t h_aliases = %p", h_aliases);
       }
       if ( phost->h_aliases )
       {
@@ -131795,21 +131538,21 @@ void __cdecl dump_hostent(const char *msgprefix, const hostent *phost)
       }
       if ( WWW_TraceFlag[0] )
       {
-        v14 = phost->h_addrtype;
+        h_addrtype = phost->h_addrtype;
         v15 = TraceFP();
-        fprintf(v15, " h_addrtype = %d,", v14);
+        fprintf(v15, " h_addrtype = %d,", h_addrtype);
       }
       if ( WWW_TraceFlag[0] )
       {
-        v16 = phost->h_length;
+        h_length = phost->h_length;
         v17 = TraceFP();
-        fprintf(v17, " h_length = %d,\n\t", v16);
+        fprintf(v17, " h_length = %d,\n\t", h_length);
       }
       if ( WWW_TraceFlag[0] )
       {
-        v18 = phost->h_addr_list;
+        h_addr_list = phost->h_addr_list;
         v19 = TraceFP();
-        fprintf(v19, " h_addr_list = %p", v18);
+        fprintf(v19, " h_addr_list = %p", h_addr_list);
       }
       if ( phost->h_addr_list )
       {
@@ -132052,7 +131795,6 @@ hostent *__cdecl LYGetHostByName(char *str)
   FILE *v12; // eax
   FILE *v13; // eax
   FILE *v14; // eax
-  hostent *v16; // [esp+20h] [ebp-218h]
   fd_set readfds; // [esp+28h] [ebp-210h] BYREF
   sigset_t new_sigset; // [esp+A8h] [ebp-190h] BYREF
   sigset_t old_sigset; // [esp+128h] [ebp-110h] BYREF
@@ -132105,7 +131847,7 @@ hostent *__cdecl LYGetHostByName(char *str)
         fprintf(v3, "LYGetHostByName: INTERRUPTED for '%s'.\n", str);
       }
       lynx_nsl_status = -29998;
-      v16 = 0;
+      return 0;
     }
     else if ( valid_hostname(host) )
     {
@@ -132335,13 +132077,13 @@ hostent *__cdecl LYGetHostByName(char *str)
         v14 = TraceFP();
         fprintf(v14, "LYGetHostByName: Can't find internet node name `%s'.\n", host);
       }
-      v16 = 0;
+      return 0;
     }
     else
     {
       lynx_nsl_status = -406;
       my_errno = 3;
-      v16 = 0;
+      return 0;
     }
   }
   else
@@ -132352,9 +132094,8 @@ hostent *__cdecl LYGetHostByName(char *str)
       fprintf(v1, "LYGetHostByName: Can't parse `NULL'.\n");
     }
     lynx_nsl_status = -900;
-    v16 = 0;
+    return 0;
   }
-  return v16;
 }
 
 //----- (0811656F) --------------------------------------------------------
@@ -132473,14 +132214,13 @@ int __cdecl HTDoConnect(const char *url, const char *protocol, int default_port,
   char *v7; // eax
   char *v8; // ebx
   char *v9; // eax
-  int v10; // ebx
+  int ai_family; // ebx
   char *v11; // eax
   char *v12; // eax
   bool v13; // al
   char *v14; // eax
   FILE *v15; // eax
   char *v16; // eax
-  int v18; // [esp+24h] [ebp-8E4h]
   fd_set writefds; // [esp+40h] [ebp-8C8h] BYREF
   timeval select_timeout; // [esp+C0h] [ebp-848h] BYREF
   int ret_1; // [esp+C8h] [ebp-840h]
@@ -132547,9 +132287,9 @@ int __cdecl HTDoConnect(const char *url, const char *protocol, int default_port,
       if ( *s == -1 )
       {
         getnameinfo(res->ai_addr, res->ai_addrlen, hostbuf, 0x400u, portbuf, 0x400u, 3u);
-        v10 = res->ai_family;
+        ai_family = res->ai_family;
         v11 = gettext("socket failed: family %d addr %s port %s.");
-        HTSprintf0(&line, v11, v10, hostbuf, portbuf);
+        HTSprintf0(&line, v11, ai_family, hostbuf, portbuf);
         mustshow[0] = 1;
         HTProgress(line);
         if ( line )
@@ -132674,7 +132414,7 @@ int __cdecl HTDoConnect(const char *url, const char *protocol, int default_port,
     }
     if ( res0 )
       freeaddrinfo(res0);
-    v18 = status;
+    return status;
   }
   else
   {
@@ -132693,9 +132433,8 @@ int __cdecl HTDoConnect(const char *url, const char *protocol, int default_port,
       free(line);
       line = 0;
     }
-    v18 = -204;
+    return -204;
   }
-  return v18;
 }
 
 //----- (081170D7) --------------------------------------------------------
@@ -132709,7 +132448,6 @@ int __cdecl HTDoRead(int fildes, void *buf, unsigned int nbyte)
   int v8; // ebx
   int v9; // esi
   FILE *v10; // eax
-  int v12; // [esp+1Ch] [ebp-BCh]
   fd_set readfds; // [esp+20h] [ebp-B8h] BYREF
   timeval select_timeout; // [esp+A0h] [ebp-38h] BYREF
   fd_set *__arr; // [esp+A8h] [ebp-30h]
@@ -132755,7 +132493,7 @@ int __cdecl HTDoRead(int fildes, void *buf, unsigned int nbyte)
       v5 = TraceFP();
       fprintf(v5, "HTDoRead - interrupted before starting!\n");
     }
-    v12 = result;
+    return result;
   }
   else
   {
@@ -132828,9 +132566,8 @@ int __cdecl HTDoRead(int fildes, void *buf, unsigned int nbyte)
       v10 = TraceFP();
       fprintf(v10, "...HTDoRead returns %d (%d seconds)\n", v9, v8);
     }
-    v12 = result;
+    return result;
   }
-  return v12;
 }
 
 //----- (08117408) --------------------------------------------------------
@@ -132985,13 +132722,10 @@ const char *__cdecl state_name(sgml_state n)
 //----- (08117615) --------------------------------------------------------
 HTElement *pool_alloc()
 {
-  void *v1; // [esp+4h] [ebp-4h]
-
   if ( ++depth <= 10 )
-    v1 = (void *)(-8 * (1 - depth) + 136004096);
+    return (HTElement *)(-8 * (1 - depth) + 136004096);
   else
-    v1 = malloc(8u);
-  return (HTElement *)v1;
+    return (HTElement *)malloc(8u);
 }
 
 //----- (08117663) --------------------------------------------------------
@@ -133121,7 +132855,7 @@ void __cdecl handle_attribute_name(HTStream_2 *context, const char *s)
   int v7; // [esp+24h] [ebp-34h]
   int v8; // [esp+28h] [ebp-30h]
   int v9; // [esp+2Ch] [ebp-2Ch]
-  const char *v10; // [esp+30h] [ebp-28h]
+  const char *name; // [esp+30h] [ebp-28h]
   int i; // [esp+40h] [ebp-18h]
   int low; // [esp+44h] [ebp-14h]
   int high; // [esp+48h] [ebp-10h]
@@ -133151,11 +132885,11 @@ void __cdecl handle_attribute_name(HTStream_2 *context, const char *s)
         if ( WWW_TraceFlag[0] )
         {
           if ( context->current_tag->name )
-            v10 = context->current_tag->name;
+            name = context->current_tag->name;
           else
-            v10 = (const char *)&unk_8182AE5;
+            name = (const char *)&unk_8182AE5;
           v4 = TraceFP();
-          fprintf(v4, "SGML: Unknown attribute %s for tag %s\n", s, v10);
+          fprintf(v4, "SGML: Unknown attribute %s for tag %s\n", s, name);
         }
         context->current_attribute_number = -1;
         return;
@@ -133256,11 +132990,8 @@ BOOLEAN __cdecl put_special_unicodes(HTStream_2 *context, UCode_t code)
       case 8194:
       case 8201:
         if ( !psrc_view )
-        {
 LABEL_12:
           context->actions->put_character(context->target, 2);
-          return 1;
-        }
         break;
       case 8195:
         if ( !psrc_view )
@@ -133577,33 +133308,23 @@ void __cdecl handle_sgmlatt(HTStream_2 *context)
 //----- (08118A40) --------------------------------------------------------
 BOOLEAN __cdecl element_valid_within(HTTag *new_tag, HTTag *stacked_tag, BOOLEAN direct)
 {
-  BOOLEAN v4; // [esp+3h] [ebp-25h]
-  TagClass v5; // [esp+4h] [ebp-24h]
-  TagClass v6; // [esp+8h] [ebp-20h]
-  bool v7; // [esp+Ch] [ebp-1Ch]
-  bool v8; // [esp+10h] [ebp-18h]
+  TagClass contains; // [esp+4h] [ebp-24h]
+  TagClass contained; // [esp+8h] [ebp-20h]
 
   if ( !stacked_tag || !new_tag )
     return 1;
   if ( direct )
-    v5 = stacked_tag->contains;
+    contains = stacked_tag->contains;
   else
-    v5 = stacked_tag->icontains;
+    contains = stacked_tag->icontains;
   if ( direct )
-    v6 = new_tag->contained;
+    contained = new_tag->contained;
   else
-    v6 = new_tag->icontained;
+    contained = new_tag->icontained;
   if ( new_tag == stacked_tag )
-  {
-    v7 = (v5 & 0x80000) != 0 && (v6 & 0x80000) != 0;
-    v4 = v7;
-  }
+    return (contains & 0x80000) != 0 && (contained & 0x80000) != 0;
   else
-  {
-    v8 = (v5 & new_tag->tagclass) != 0 && (v6 & stacked_tag->tagclass) != 0;
-    v4 = v8;
-  }
-  return v4;
+    return (contains & new_tag->tagclass) != 0 && (contained & stacked_tag->tagclass) != 0;
 }
 
 //----- (08118B11) --------------------------------------------------------
@@ -133686,7 +133407,7 @@ void __cdecl end_element(HTStream_2 *context, HTTag *old_tag)
   const char *v8; // edi
   const char *v9; // ebx
   FILE *v10; // eax
-  const char *v11; // ebx
+  const char *name; // ebx
   FILE *v12; // eax
   const char *v13; // ebx
   FILE *v14; // eax
@@ -133712,7 +133433,7 @@ void __cdecl end_element(HTStream_2 *context, HTTag *old_tag)
   const char *v34; // [esp+20h] [ebp-58h]
   const char *v35; // [esp+24h] [ebp-54h]
   const char *v36; // [esp+28h] [ebp-50h]
-  HTTag *v37; // [esp+2Ch] [ebp-4Ch]
+  HTTag *tag; // [esp+2Ch] [ebp-4Ch]
   int v38; // [esp+34h] [ebp-44h]
   int v39; // [esp+38h] [ebp-40h]
   int v40; // [esp+44h] [ebp-34h]
@@ -133735,9 +133456,9 @@ LABEL_30:
       {
         if ( WWW_TraceFlag[0] )
         {
-          v11 = old_tag->name;
+          name = old_tag->name;
           v12 = TraceFP();
-          fprintf(v12, "SGML: ***Ignoring end tag </%s> in SELECT block.\n", v11);
+          fprintf(v12, "SGML: ***Ignoring end tag </%s> in SELECT block.\n", name);
         }
         return;
       }
@@ -133765,7 +133486,7 @@ LABEL_30:
       N = context->element_stack;
       if ( N->tag == old_tag )
       {
-        v37 = N->tag;
+        tag = N->tag;
       }
       else
       {
@@ -133773,16 +133494,16 @@ LABEL_30:
           v38 = 4424;
         else
           v38 = 8 * (((char *)N->tag - (char *)context->dtd->tags) >> 3);
-        v37 = (HTTag *)((char *)context->dtd->tags + v38);
+        tag = (HTTag *)((char *)context->dtd->tags + v38);
       }
-      if ( old_tag != v37 )
+      if ( old_tag != tag )
       {
         if ( !context->element_stack->next )
         {
           if ( WWW_TraceFlag[0] )
           {
             v21 = old_tag->name;
-            v22 = v37->name;
+            v22 = tag->name;
             v23 = old_tag->name;
             v24 = TraceFP();
             fprintf(v24, "SGML: Found </%s> when expecting </%s>. </%s> ***Ignored.\n", v23, v22, v21);
@@ -133791,21 +133512,21 @@ LABEL_30:
         }
         if ( WWW_TraceFlag[0] )
         {
-          v17 = v37->name;
-          v18 = v37->name;
+          v17 = tag->name;
+          v18 = tag->name;
           v19 = old_tag->name;
           v20 = TraceFP();
           fprintf(v20, "SGML: Found </%s> when expecting </%s>. </%s> ***assumed.\n", v19, v18, v17);
         }
       }
-      if ( (char *)v37 - (char *)context->dtd->tags > 6607 )
+      if ( (char *)tag - (char *)context->dtd->tags > 6607 )
         v39 = 79;
       else
-        v39 = -1227133513 * (((char *)v37 - (char *)context->dtd->tags) >> 3);
+        v39 = -1227133513 * (((char *)tag - (char *)context->dtd->tags) >> 3);
       if ( WWW_TraceFlag[0] && (WWW_TraceMask & 1) != 0 )
       {
         v25 = TraceFP();
-        fprintf(v25, "tagnum(%p) = %d\n", v37, v39);
+        fprintf(v25, "tagnum(%p) = %d\n", tag, v39);
       }
       if ( !psrc_view )
         status = context->actions->end_element(context->target, v39, &context->include);
@@ -133813,7 +133534,7 @@ LABEL_30:
       {
         if ( WWW_TraceFlag[0] )
         {
-          v26 = v37->name;
+          v26 = tag->name;
           v27 = TraceFP();
           fprintf(v27, "SGML: Restart <%s>\n", v26);
         }
@@ -133823,7 +133544,7 @@ LABEL_30:
       {
         if ( WWW_TraceFlag[0] )
         {
-          v28 = v37->name;
+          v28 = tag->name;
           v29 = TraceFP();
           fprintf(v29, "SGML: Continue with other content model for <%s>\n", v28);
         }
@@ -133937,7 +133658,7 @@ void __cdecl start_element(HTStream_2 *context)
   const char *v20; // ebx
   FILE *v21; // eax
   HTTag *v22; // [esp+4h] [ebp-74h]
-  const char *v23; // [esp+24h] [ebp-54h]
+  const char *name; // [esp+24h] [ebp-54h]
   const char *v24; // [esp+28h] [ebp-50h]
   bool v25; // [esp+2Fh] [ebp-49h]
   int v26; // [esp+30h] [ebp-48h]
@@ -133976,14 +133697,14 @@ void __cdecl start_element(HTStream_2 *context)
       {
         if ( WWW_TraceFlag[0] )
         {
-          v23 = new_tag->name;
+          name = new_tag->name;
           if ( canclose_check == close_valid )
             v24 = "supplied,";
           else
             v24 = "***forced by";
           v1 = context->element_stack->tag->name;
           v2 = TraceFP();
-          fprintf(v2, "SGML: End </%s> \t<- %s start <%s>\n", v1, v24, v23);
+          fprintf(v2, "SGML: End </%s> \t<- %s start <%s>\n", v1, v24, name);
         }
         do_close_stacked(context);
         extra_action_taken = 1;
@@ -134164,7 +133885,6 @@ LABEL_73:
 //----- (08119B0B) --------------------------------------------------------
 HTTag *__cdecl SGMLFindTag(const SGML_dtd *dtd, const char *s)
 {
-  HTTag *v3; // [esp+Ch] [ebp-3Ch]
   int v4; // [esp+10h] [ebp-38h]
   int v5; // [esp+14h] [ebp-34h]
   int v6; // [esp+18h] [ebp-30h]
@@ -134223,10 +133943,9 @@ HTTag *__cdecl SGMLFindTag(const SGML_dtd *dtd, const char *s)
       low = i + 1;
   }
   if ( ((*__ctype_b_loc())[*(unsigned __int8 *)s] & 0x400) != 0 )
-    v3 = &HTTag_unrecognized;
+    return &HTTag_unrecognized;
   else
-    v3 = 0;
-  return v3;
+    return 0;
 }
 
 //----- (08119E2F) --------------------------------------------------------
@@ -134365,7 +134084,7 @@ void __cdecl transform_tag(HTStream_2 *context, HTChunk *string)
 BOOLEAN __cdecl ignore_when_empty(HTTag *tag)
 {
   FILE *v1; // eax
-  const char *v3; // [esp+10h] [ebp-18h]
+  const char *name; // [esp+10h] [ebp-18h]
   const char *v4; // [esp+14h] [ebp-14h]
   BOOLEAN result; // [esp+27h] [ebp-1h]
 
@@ -134383,15 +134102,15 @@ BOOLEAN __cdecl ignore_when_empty(HTTag *tag)
   if ( WWW_TraceFlag[0] )
   {
     if ( tag->name )
-      v3 = tag->name;
+      name = tag->name;
     else
-      v3 = (const char *)&unk_8182AE5;
+      name = (const char *)&unk_8182AE5;
     if ( result )
       v4 = (const char *)&unk_8182AE5;
     else
       v4 = " not";
     v1 = TraceFP();
-    fprintf(v1, "SGML Do%s ignore_when_empty:%s\n", v4, v3);
+    fprintf(v1, "SGML Do%s ignore_when_empty:%s\n", v4, name);
   }
   return result;
 }
@@ -134401,16 +134120,16 @@ void __cdecl discard_empty(HTStream_2 *context)
 {
   FILE *v1; // eax
   FILE *v2; // eax
-  const char *v3; // [esp+14h] [ebp-4h]
+  const char *name; // [esp+14h] [ebp-4h]
 
   if ( WWW_TraceFlag[0] )
   {
     if ( context->current_tag->name )
-      v3 = context->current_tag->name;
+      name = context->current_tag->name;
     else
-      v3 = (const char *)&unk_8182AE5;
+      name = (const char *)&unk_8182AE5;
     v1 = TraceFP();
-    fprintf(v1, "SGML discarding empty %s\n", v3);
+    fprintf(v1, "SGML discarding empty %s\n", name);
   }
   if ( WWW_TraceFlag[0] )
   {
@@ -134457,7 +134176,7 @@ BOOLEAN __cdecl end_if_prettysrc(HTStream_2 *context, HTChunk *string, char end_
 //----- (0811A549) --------------------------------------------------------
 void __cdecl SGML_character(HTStream_2 *context, char c_in)
 {
-  int v2; // ebx
+  int size; // ebx
   const char *v3; // esi
   FILE *v4; // eax
   int v5; // ecx
@@ -134465,9 +134184,9 @@ void __cdecl SGML_character(HTStream_2 *context, char c_in)
   FILE *v7; // eax
   int v8; // eax
   FILE *v9; // eax
-  int v10; // ebx
+  int leading_spaces; // ebx
   FILE *v11; // eax
-  int v12; // ebx
+  int trailing_spaces; // ebx
   FILE *v13; // eax
   FILE *v14; // eax
   FILE *v15; // eax
@@ -134515,10 +134234,10 @@ void __cdecl SGML_character(HTStream_2 *context, char c_in)
   FILE *v57; // eax
   HTTag *v58; // [esp+4h] [ebp-114h]
   int v59; // [esp+1Ch] [ebp-FCh]
-  char *v60; // [esp+20h] [ebp-F8h]
+  char *data; // [esp+20h] [ebp-F8h]
   HTTag *v61; // [esp+28h] [ebp-F0h]
   bool v62; // [esp+2Ch] [ebp-ECh]
-  HTTag *v63; // [esp+30h] [ebp-E8h]
+  HTTag *tag; // [esp+30h] [ebp-E8h]
   int v64; // [esp+34h] [ebp-E4h]
   int v65; // [esp+38h] [ebp-E0h]
   bool v66; // [esp+3Fh] [ebp-D9h]
@@ -134783,13 +134502,13 @@ top0a:
       {
         v59 = c;
         if ( string->data )
-          v60 = string->data;
+          data = string->data;
         else
-          v60 = (char *)&unk_8182AE5;
-        v2 = string->size;
+          data = (char *)&unk_8182AE5;
+        size = string->size;
         v3 = state_name(context->state);
         v4 = TraceFP();
-        fprintf(v4, "SGML before %s|%.*s|%c|\n", v3, v2, v60, v59);
+        fprintf(v4, "SGML before %s|%.*s|%c|\n", v3, size, data, v59);
       }
       switch ( context->state )
       {
@@ -136220,10 +135939,10 @@ case_S_litteral:
           else
           {
             if ( context->element_stack )
-              v63 = context->element_stack->tag;
+              tag = context->element_stack->tag;
             else
-              v63 = 0;
-            testtag = v63;
+              tag = 0;
+            testtag = tag;
           }
           if ( testtag && testtag->name )
           {
@@ -136273,9 +135992,9 @@ case_S_litteral:
                 ++context->leading_spaces;
                 if ( WWW_TraceFlag[0] && (WWW_TraceMask & 1) != 0 )
                 {
-                  v10 = context->leading_spaces;
+                  leading_spaces = context->leading_spaces;
                   v11 = TraceFP();
-                  fprintf(v11, "leading spaces: %d\n", v10);
+                  fprintf(v11, "leading spaces: %d\n", leading_spaces);
                 }
                 goto LABEL_1128;
               }
@@ -136284,9 +136003,9 @@ case_S_litteral:
                 ++context->trailing_spaces;
                 if ( WWW_TraceFlag[0] && (WWW_TraceMask & 1) != 0 )
                 {
-                  v12 = context->trailing_spaces;
+                  trailing_spaces = context->trailing_spaces;
                   v13 = TraceFP();
-                  fprintf(v13, "trailing spaces: %d\n", v12);
+                  fprintf(v13, "trailing spaces: %d\n", trailing_spaces);
                 }
                 goto LABEL_1128;
               }
@@ -136982,10 +136701,10 @@ LABEL_180:
     }
   }
 }
-// 811E182: conditional instruction was optimized away because of 'eax.4 in (F001..F0FF)'
-// 811F3BD: conditional instruction was optimized away because of 'eax.4 in (F001..F0FF)'
-// 811F5F6: conditional instruction was optimized away because of 'eax.4 in (F001..F0FF)'
-// 811F84D: conditional instruction was optimized away because of 'eax.4 in (F001..F0FF)'
+// 811E182: conditional instruction was optimized away because eax.4 is in (F001..F0FF)
+// 811F3BD: conditional instruction was optimized away because eax.4 is in (F001..F0FF)
+// 811F5F6: conditional instruction was optimized away because eax.4 is in (F001..F0FF)
+// 811F84D: conditional instruction was optimized away because eax.4 is in (F001..F0FF)
 
 //----- (08120C29) --------------------------------------------------------
 void __cdecl SGML_string(HTStream_2 *context, const char *str)
@@ -137168,16 +136887,18 @@ unsigned __int8 *__cdecl JIS_TO_SJIS1(unsigned __int8 HI, unsigned __int8 LO, un
 //----- (081210E2) --------------------------------------------------------
 unsigned __int8 *__cdecl EUC_TO_SJIS1(unsigned __int8 HI, unsigned __int8 LO, unsigned __int8 *SJCODE)
 {
-  unsigned __int8 LOa[4]; // [esp+10h] [ebp-8h] BYREF
-  unsigned __int8 HIa[4]; // [esp+14h] [ebp-4h] BYREF
+  char LOa[4]; // [esp+10h] [ebp-8h] BYREF
+  char HIa[4]; // [esp+14h] [ebp-4h] BYREF
 
   HIa[0] = HI;
   LOa[0] = LO;
   if ( HI == 0x8E )
-    JISx0201TO0208_EUC(0x8Eu, LOa[0], HIa, LOa);
+    JISx0201TO0208_EUC(0x8Eu, LOa[0], (unsigned __int8 *)HIa, (unsigned __int8 *)LOa);
   JIS_TO_SJIS1(HIa[0] & 0x7F, LOa[0] & 0x7F, SJCODE);
   return SJCODE;
 }
+// 81210E2: using guessed type unsigned __int8 HI[4];
+// 81210E2: using guessed type unsigned __int8 LO[4];
 
 //----- (08121152) --------------------------------------------------------
 void __cdecl JISx0201TO0208_SJIS(unsigned __int8 a1, unsigned __int8 *a2, unsigned __int8 *a3)
@@ -137494,8 +137215,8 @@ LABEL_25:
   *d = 0;
   return euc;
 }
-// 8121844: conditional instruction was optimized away because of '%c.1 in (21..7E)'
-// 812184A: conditional instruction was optimized away because of '%c.1 in (21..7E)'
+// 8121844: conditional instruction was optimized away because %c.1 is in (21..7E)
+// 812184A: conditional instruction was optimized away because %c.1 is in (21..7E)
 
 //----- (081218E5) --------------------------------------------------------
 int __cdecl is_EUC_JP(unsigned __int8 *euc)
@@ -137609,7 +137330,12 @@ void __cdecl HTStartAnchor(HTStructured_1 *obj, const char *name, const char *hr
 }
 
 //----- (08121C23) --------------------------------------------------------
-void __cdecl HTStartAnchor5(HTStructured_1 *obj, const char *name, const char *href, const char *linktype, int tag_charset)
+void __cdecl HTStartAnchor5(
+        HTStructured_1 *obj,
+        const char *name,
+        const char *href,
+        const char *linktype,
+        int tag_charset)
 {
   const char *value[25]; // [esp+30h] [ebp-88h] BYREF
   int i; // [esp+94h] [ebp-24h]
@@ -137685,7 +137411,6 @@ HTChunk *__cdecl HTChunkCreate(int grow)
 //----- (08121E5D) --------------------------------------------------------
 HTChunk *__cdecl HTChunkCreateMayFail(int grow, int failok)
 {
-  HTChunk *v3; // [esp+14h] [ebp-14h]
   HTChunk *ch_0; // [esp+24h] [ebp-4h]
 
   ch_0 = (HTChunk *)calloc(1u, 0x18u);
@@ -137693,21 +137418,20 @@ HTChunk *__cdecl HTChunkCreateMayFail(int grow, int failok)
   {
     HTChunkInit(ch_0, grow);
     ch_0->failok = failok;
-    v3 = ch_0;
+    return ch_0;
   }
   else
   {
     if ( !failok )
       outofmem("../../../WWW/Library/Implementation/HTChunk.c", "creation of chunk");
-    v3 = 0;
+    return 0;
   }
-  return v3;
 }
 
 //----- (08121ECA) --------------------------------------------------------
 HTChunk *__cdecl HTChunkCreate2(int grow, size_t needed)
 {
-  int v2; // ebx
+  int allocated; // ebx
   FILE *v3; // eax
   HTChunk *ch_0; // [esp+2Ch] [ebp-Ch]
 
@@ -137720,9 +137444,9 @@ HTChunk *__cdecl HTChunkCreate2(int grow, size_t needed)
     ch_0->allocated = needed - (needed - 1) % ch_0->growby + ch_0->growby - 1;
     if ( WWW_TraceFlag[0] )
     {
-      v2 = ch_0->allocated;
+      allocated = ch_0->allocated;
       v3 = TraceFP();
-      fprintf(v3, "HTChunkCreate2: requested %d, allocate %d\n", needed, v2);
+      fprintf(v3, "HTChunkCreate2: requested %d, allocate %d\n", needed, allocated);
     }
     ch_0->data = (char *)calloc(ch_0->allocated, 1u);
     if ( !ch_0->data )
@@ -137767,7 +137491,6 @@ void __cdecl HTChunkFree(HTChunk *ch_0)
 BOOLEAN __cdecl HTChunkRealloc(HTChunk *ch_0, int growby)
 {
   char *v3; // [esp+10h] [ebp-18h]
-  BOOLEAN v4; // [esp+17h] [ebp-11h]
 
   ch_0->allocated += growby;
   if ( ch_0->data )
@@ -137777,53 +137500,50 @@ BOOLEAN __cdecl HTChunkRealloc(HTChunk *ch_0, int growby)
   if ( v3 )
   {
     ch_0->data = v3;
-    v4 = 1;
+    return 1;
   }
   else
   {
     if ( !ch_0->failok )
       outofmem("../../../WWW/Library/Implementation/HTChunk.c", "HTChunkRealloc");
     HTChunkClear(ch_0);
-    v4 = 0;
+    return 0;
   }
-  return v4;
 }
 
 //----- (0812210B) --------------------------------------------------------
 void __cdecl HTChunkPutc(HTChunk *ch_0, char c)
 {
-  int v2; // ecx
+  int size; // ecx
 
   if ( ch_0->size < ch_0->allocated || HTChunkRealloc(ch_0, ch_0->growby) )
   {
-    v2 = ch_0->size;
+    size = ch_0->size;
     ch_0->data[ch_0->size] = c;
-    ch_0->size = v2 + 1;
+    ch_0->size = size + 1;
   }
 }
 
 //----- (0812215E) --------------------------------------------------------
 HTChunk *__cdecl HTChunkPutc2(HTChunk *ch_0, char c)
 {
-  int v2; // ecx
-  HTChunk *v4; // [esp+10h] [ebp-18h]
+  int size; // ecx
   HTChunk *chunk; // [esp+24h] [ebp-4h]
 
   if ( ch_0->size < ch_0->allocated )
   {
-    v2 = ch_0->size;
+    size = ch_0->size;
     ch_0->data[ch_0->size] = c;
-    ch_0->size = v2 + 1;
-    v4 = ch_0;
+    ch_0->size = size + 1;
+    return ch_0;
   }
   else
   {
     chunk = HTChunkCreateMayFail(ch_0->growby, ch_0->failok);
     ch_0->next = chunk;
     HTChunkPutc(chunk, c);
-    v4 = chunk;
+    return chunk;
   }
-  return v4;
 }
 
 //----- (081221E0) --------------------------------------------------------
@@ -137857,7 +137577,6 @@ void __cdecl HTChunkPutb(HTChunk *ch_0, const char *b, int l)
 //----- (08122328) --------------------------------------------------------
 HTChunk *__cdecl HTChunkPutb2(HTChunk *ch_0, const char *b, int l)
 {
-  HTChunk *v4; // [esp+14h] [ebp-14h]
   int m; // [esp+20h] [ebp-8h]
   HTChunk *chunk; // [esp+24h] [ebp-4h]
 
@@ -137867,7 +137586,7 @@ HTChunk *__cdecl HTChunkPutb2(HTChunk *ch_0, const char *b, int l)
   {
     memcpy(&ch_0->data[ch_0->size], b, l);
     ch_0->size += l;
-    v4 = ch_0;
+    return ch_0;
   }
   else
   {
@@ -137877,15 +137596,14 @@ HTChunk *__cdecl HTChunkPutb2(HTChunk *ch_0, const char *b, int l)
     chunk = HTChunkCreateMayFail(ch_0->growby, ch_0->failok);
     ch_0->next = chunk;
     HTChunkPutb(chunk, &b[m], l - m);
-    v4 = chunk;
+    return chunk;
   }
-  return v4;
 }
 
 //----- (0812242B) --------------------------------------------------------
 void __cdecl HTChunkPutUtf8Char(HTChunk *ch_0, UCode_t code)
 {
-  int v2; // ecx
+  int size; // ecx
   int v3; // ecx
   int v4; // ecx
   int v5; // ecx
@@ -137896,7 +137614,7 @@ void __cdecl HTChunkPutUtf8Char(HTChunk *ch_0, UCode_t code)
   int v10; // ecx
   int v11; // ecx
   int v12; // ecx
-  int v13; // [esp+14h] [ebp-14h]
+  int growby; // [esp+14h] [ebp-14h]
   int utflen; // [esp+24h] [ebp-4h]
 
   if ( code > 127 )
@@ -137933,10 +137651,10 @@ void __cdecl HTChunkPutUtf8Char(HTChunk *ch_0, UCode_t code)
   }
   if ( utflen + ch_0->size <= ch_0->allocated )
     goto LABEL_16;
-  v13 = ch_0->growby;
-  if ( v13 < utflen )
-    v13 = utflen;
-  if ( HTChunkRealloc(ch_0, v13) )
+  growby = ch_0->growby;
+  if ( growby < utflen )
+    growby = utflen;
+  if ( HTChunkRealloc(ch_0, growby) )
   {
 LABEL_16:
     switch ( utflen )
@@ -137944,9 +137662,9 @@ LABEL_16:
       case 0:
         return;
       case 1:
-        v2 = ch_0->size;
+        size = ch_0->size;
         ch_0->data[ch_0->size] = code;
-        ch_0->size = v2 + 1;
+        ch_0->size = size + 1;
         return;
       case 2:
         v3 = ch_0->size;
@@ -138023,16 +137741,16 @@ void __cdecl HTChunkTerminate(HTChunk *ch_0)
 //----- (081226B9) --------------------------------------------------------
 void __cdecl HTChunkPuts(HTChunk *ch_0, const char *s)
 {
-  int v2; // ecx
+  int size; // ecx
   char *p; // [esp+14h] [ebp-4h]
 
   if ( s )
   {
     for ( p = (char *)s; *p && (ch_0->size < ch_0->allocated || HTChunkRealloc(ch_0, ch_0->growby)); ++p )
     {
-      v2 = ch_0->size;
+      size = ch_0->size;
       ch_0->data[ch_0->size] = *p;
-      ch_0->size = v2 + 1;
+      ch_0->size = size + 1;
     }
   }
 }
@@ -138040,7 +137758,7 @@ void __cdecl HTChunkPuts(HTChunk *ch_0, const char *s)
 //----- (08122724) --------------------------------------------------------
 HTChunk *__cdecl HTChunkPuts2(HTChunk *ch_0, const char *s)
 {
-  int v2; // ecx
+  int size; // ecx
   HTChunk *chunk; // [esp+20h] [ebp-8h]
   const char *p; // [esp+24h] [ebp-4h]
 
@@ -138055,9 +137773,9 @@ HTChunk *__cdecl HTChunkPuts2(HTChunk *ch_0, const char *s)
         HTChunkPuts(chunk, p);
         return chunk;
       }
-      v2 = ch_0->size;
+      size = ch_0->size;
       ch_0->data[ch_0->size] = *p;
-      ch_0->size = v2 + 1;
+      ch_0->size = size + 1;
     }
   }
   return ch_0;
@@ -138117,11 +137835,12 @@ LABEL_11:
     HText_appendCharacter(me->text, ca[0]);
   }
 }
-// 81229C3: conditional instruction was optimized away because of '%c.1 in (<8u|9..C|E..5E|60..7E)'
-// 81229FC: conditional instruction was optimized away because of '%c.1 in (<8u|9..C|E..5E|60..7E)'
-// 8122A1F: conditional instruction was optimized away because of '%c.1 in (<8u|9..C|E..5E|60..7E)'
-// 8122A33: conditional instruction was optimized away because of '%c.1 in (20..5E|60..7E)'
-// 8122A69: conditional instruction was optimized away because of '%c.1 in (<8u|B..C|E..1F)'
+// 81229C3: conditional instruction was optimized away because %c.1 is in (<8u|9..C|E..5E|60..7E)
+// 81229FC: conditional instruction was optimized away because %c.1 is in (<8u|9..C|E..5E|60..7E)
+// 8122A1F: conditional instruction was optimized away because %c.1 is in (<8u|9..C|E..5E|60..7E)
+// 8122A33: conditional instruction was optimized away because %c.1 is in (20..5E|60..7E)
+// 8122A69: conditional instruction was optimized away because %c.1 is in (<8u|B..C|E..1F)
+// 81228DB: using guessed type char c[8];
 
 //----- (08122BC1) --------------------------------------------------------
 void __cdecl HTPlain_put_string(HTStream_3 *me, const char *s)
@@ -138140,7 +137859,7 @@ void __cdecl HTPlain_write(HTStream_3 *me, const char *s, int l)
 {
   FILE *v3; // edx
   int v4; // eax
-  int v5; // ebx
+  int outUCLYhndl; // ebx
   int v6; // eax
   int v7; // eax
   FILE *v8; // eax
@@ -138435,10 +138154,10 @@ LABEL_169:
         HText_appendCharacter(me->text, c);
         continue;
       }
-      v5 = me->outUCLYhndl;
+      outUCLYhndl = me->outUCLYhndl;
       v6 = UCGetLYhndl_byMIME("us-ascii");
-      chk = v5 != v6;
-      if ( v5 != v6 )
+      chk = outUCLYhndl != v6;
+      if ( outUCLYhndl != v6 )
       {
         v9 = UCGetLYhndl_byMIME("us-ascii");
         uck = UCTransUniChar(code, v9);
@@ -138467,7 +138186,7 @@ LABEL_163:
     }
   }
 }
-// 81237F4: conditional instruction was optimized away because of '%c_unsign.4 in (1..FF)'
+// 81237F4: conditional instruction was optimized away because %c_unsign.4 is in (1..FF)
 
 //----- (08123822) --------------------------------------------------------
 void __cdecl HTPlain_free(HTStream_3 *me)
@@ -138487,7 +138206,7 @@ void __cdecl HTPlain_abort(HTStream_3 *me, HTError e)
 //----- (08123875) --------------------------------------------------------
 HTStream_3 *__cdecl HTPlainPresent(HTPresentation *pres, HTParentAnchor *anchor, HTStream_3 *sink)
 {
-  LYUCcharset *v3; // eax
+  LYUCcharset *UCInfoStage; // eax
   HTStyle *v4; // eax
   HTStream_3 *me; // [esp+2Ch] [ebp-Ch]
 
@@ -138505,8 +138224,8 @@ HTStream_3 *__cdecl HTPlainPresent(HTPresentation *pres, HTParentAnchor *anchor,
   me->outUCLYhndl = HTAnchor_getUCLYhndl(anchor, 3);
   me->inUCLYhndl = HTAnchor_getUCLYhndl(anchor, 1);
   HTPlain_getChartransInfo(me, anchor);
-  v3 = HTAnchor_getUCInfoStage(anchor, 3);
-  UCSetTransParams(&me->T, me->inUCLYhndl, me->inUCI, me->outUCLYhndl, v3);
+  UCInfoStage = HTAnchor_getUCInfoStage(anchor, 3);
+  UCSetTransParams(&me->T, me->inUCLYhndl, me->inUCI, me->outUCLYhndl, UCInfoStage);
   me->text = HText_new(anchor);
   v4 = LYstyles(117);
   HText_setStyle(me->text, v4);
@@ -138545,17 +138264,17 @@ void __cdecl do_cstyle_flush(HTStructured_2 *me)
 //----- (08123AB3) --------------------------------------------------------
 void __cdecl allow_break(HTStructured_2 *me, int new_cleanness, BOOLEAN dlbc)
 {
-  char *v3; // [esp+4h] [ebp-8h]
+  char *write_pointer; // [esp+4h] [ebp-8h]
   BOOLEAN dlbca; // [esp+8h] [ebp-4h]
 
   dlbca = dlbc;
   if ( dlbc && me->write_pointer == me->buffer )
     dlbca = 0;
   if ( dlbca )
-    v3 = me->write_pointer - 1;
+    write_pointer = me->write_pointer - 1;
   else
-    v3 = me->write_pointer;
-  me->line_break[new_cleanness] = v3;
+    write_pointer = me->write_pointer;
+  me->line_break[new_cleanness] = write_pointer;
   me->delete_line_break_char[new_cleanness] = dlbca;
   if ( me->cleanness <= new_cleanness && (me->overflowed || me->line_break[new_cleanness] > me->buffer) )
     me->cleanness = new_cleanness;
@@ -138564,7 +138283,7 @@ void __cdecl allow_break(HTStructured_2 *me, int new_cleanness, BOOLEAN dlbc)
 //----- (08123B67) --------------------------------------------------------
 void __cdecl HTMLGen_put_character(HTStructured_2 *me, char c)
 {
-  char *v2; // edx
+  char *write_pointer; // edx
   char ca; // [esp+1Ch] [ebp-3Ch]
   char delims[5]; // [esp+2Fh] [ebp-29h] BYREF
   int i; // [esp+34h] [ebp-24h]
@@ -138600,9 +138319,9 @@ void __cdecl HTMLGen_put_character(HTStructured_2 *me, char c)
     }
     ca = 59;
   }
-  v2 = me->write_pointer;
-  *v2 = ca;
-  me->write_pointer = v2 + 1;
+  write_pointer = me->write_pointer;
+  *write_pointer = ca;
+  me->write_pointer = write_pointer + 1;
   if ( ca == 10 )
   {
     HTMLGen_flush(me);
@@ -138683,7 +138402,13 @@ void __cdecl HTMLGen_write(HTStructured_2 *me, const char *s, int l)
 }
 
 //----- (08124060) --------------------------------------------------------
-int __cdecl HTMLGen_start_element(HTStructured_2 *me, int element_number, const BOOLEAN *present, const char **value, int charset, char **insert)
+int __cdecl HTMLGen_start_element(
+        HTStructured_2 *me,
+        int element_number,
+        const BOOLEAN *present,
+        const char **value,
+        int charset,
+        char **insert)
 {
   int v6; // ebx
   FILE *v7; // eax
@@ -138692,9 +138417,9 @@ int __cdecl HTMLGen_start_element(HTStructured_2 *me, int element_number, const 
   FILE *v10; // eax
   int v11; // ebx
   FILE *v12; // eax
-  int v13; // ebx
+  int color; // ebx
   FILE *v14; // eax
-  const char *v15; // ebx
+  const char *name; // ebx
   FILE *v16; // eax
   char *v17; // ebx
   FILE *v18; // eax
@@ -138738,9 +138463,9 @@ int __cdecl HTMLGen_start_element(HTStructured_2 *me, int element_number, const 
       fprintf(v7, "CSSTRIM:%s -> %d", myHash, v6);
       if ( hashStyles[hcode_0].code == hcode_0 )
       {
-        v13 = hashStyles[hcode_0].color;
+        color = hashStyles[hcode_0].color;
         v14 = TraceFP();
-        fprintf(v14, " ca=%d\n", v13);
+        fprintf(v14, " ca=%d\n", color);
       }
       else
       {
@@ -138771,9 +138496,9 @@ int __cdecl HTMLGen_start_element(HTStructured_2 *me, int element_number, const 
     {
       if ( WWW_TraceFlag[0] && (WWW_TraceMask & 2) != 0 )
       {
-        v15 = HTML_dtd.tags[element_number].name;
+        name = HTML_dtd.tags[element_number].name;
         v16 = TraceFP();
-        fprintf(v16, "CSSTRIM: start_element: top <%s>\n", v15);
+        fprintf(v16, "CSSTRIM: start_element: top <%s>\n", name);
       }
       do_cstyle_flush(me);
       internal_HTC(me->text, hcode_0, 1);
@@ -139010,7 +138735,7 @@ void __cdecl PlainToHTML_abort(HTStructured_2 *me, HTError e)
 //----- (08124DCE) --------------------------------------------------------
 HTStructured_2 *__cdecl HTMLGenerator(HTStream_4 *output)
 {
-  const HTStreamClass *v1; // edx
+  const HTStreamClass *isa; // edx
   HTStructured_2 *me; // [esp+14h] [ebp-4h]
 
   me = (HTStructured_2 *)malloc(0x16Cu);
@@ -139018,13 +138743,13 @@ HTStructured_2 *__cdecl HTMLGenerator(HTStream_4 *output)
     outofmem("../../../WWW/Library/Implementation/HTMLGen.c", "HTMLGenerator");
   me->isa = &HTMLGeneration;
   me->target = output;
-  v1 = me->target->isa;
-  me->targetClass.name = v1->name;
-  me->targetClass._free = v1->_free;
-  me->targetClass._abort = v1->_abort;
-  me->targetClass.put_character = v1->put_character;
-  me->targetClass.put_string = v1->put_string;
-  me->targetClass.put_block = v1->put_block;
+  isa = me->target->isa;
+  me->targetClass.name = isa->name;
+  me->targetClass._free = isa->_free;
+  me->targetClass._abort = isa->_abort;
+  me->targetClass.put_character = isa->put_character;
+  me->targetClass.put_string = isa->put_string;
+  me->targetClass.put_block = isa->put_block;
   me->write_pointer = me->buffer;
   flush_breaks(me);
   me->line_break[0] = me->buffer;
@@ -139075,7 +138800,7 @@ HTStructured_2 *__cdecl HTMLGenerator(HTStream_4 *output)
 //----- (08124FAF) --------------------------------------------------------
 HTStream_4 *__cdecl HTPlainToHTML(HTPresentation *pres, HTParentAnchor *anchor, HTStream_4 *sink)
 {
-  const HTStreamClass *v3; // edx
+  const HTStreamClass *isa; // edx
   int v5; // [esp+14h] [ebp-14h]
   HTStructured_2 *me; // [esp+24h] [ebp-4h]
 
@@ -139084,13 +138809,13 @@ HTStream_4 *__cdecl HTPlainToHTML(HTPresentation *pres, HTParentAnchor *anchor, 
     outofmem("../../../WWW/Library/Implementation/HTMLGen.c", "PlainToHTML");
   me->isa = &PlainToHTMLConversion;
   me->target = sink;
-  v3 = me->target->isa;
-  me->targetClass.name = v3->name;
-  me->targetClass._free = v3->_free;
-  me->targetClass._abort = v3->_abort;
-  me->targetClass.put_character = v3->put_character;
-  me->targetClass.put_string = v3->put_string;
-  me->targetClass.put_block = v3->put_block;
+  isa = me->target->isa;
+  me->targetClass.name = isa->name;
+  me->targetClass._free = isa->_free;
+  me->targetClass._abort = isa->_abort;
+  me->targetClass.put_character = isa->put_character;
+  me->targetClass.put_string = isa->put_string;
+  me->targetClass.put_block = isa->put_block;
   me->write_pointer = me->buffer;
   flush_breaks(me);
   me->cleanness = 0;
@@ -139290,11 +139015,11 @@ BOOLEAN __cdecl HTBEquivalent(const bstring *s, const bstring *t)
   }
   return 1;
 }
-// 8125629: conditional instruction was optimized away because of '%s.4!=0'
-// 8125641: conditional instruction was optimized away because of '%t.4!=0'
-// 8125665: conditional instruction was optimized away because of '%s.4!=0'
-// 812568C: conditional instruction was optimized away because of '%s.4!=0'
-// 81256AF: conditional instruction was optimized away because of '%t.4!=0'
+// 8125629: conditional instruction was optimized away because %s.4!=0
+// 8125641: conditional instruction was optimized away because %t.4!=0
+// 8125665: conditional instruction was optimized away because %s.4!=0
+// 812568C: conditional instruction was optimized away because %s.4!=0
+// 81256AF: conditional instruction was optimized away because %t.4!=0
 
 //----- (081256F8) --------------------------------------------------------
 int __cdecl compare_anchors(void *l, void *r)
@@ -139308,7 +139033,6 @@ HTChildAnchor *__cdecl HTAnchor_findNamedChild(HTParentAnchor0 *parent, const ch
   FILE *v2; // eax
   FILE *v3; // eax
   FILE *v4; // eax
-  HTChildAnchor *v6; // [esp+1Ch] [ebp-3Ch]
   HTParentAnchor0 *v7; // [esp+20h] [ebp-38h]
   HTChildAnchor sample; // [esp+34h] [ebp-24h] BYREF
   HTChildAnchor *child; // [esp+54h] [ebp-4h]
@@ -139342,7 +139066,7 @@ HTChildAnchor *__cdecl HTAnchor_findNamedChild(HTParentAnchor0 *parent, const ch
     }
     HTSACopy(&child->tag, tag);
     HTBTree_add(parent->children, child);
-    v6 = child;
+    return child;
   }
   else
   {
@@ -139351,11 +139075,10 @@ HTChildAnchor *__cdecl HTAnchor_findNamedChild(HTParentAnchor0 *parent, const ch
       v4 = TraceFP();
       fprintf(v4, "HTAnchor_findNamedChild called with NULL parent.\n");
     }
-    v6 = 0;
+    return 0;
   }
-  return v6;
 }
-// 81257F7: conditional instruction was optimized away because of '%tag.4!=0'
+// 81257F7: conditional instruction was optimized away because %tag.4!=0
 
 //----- (08125894) --------------------------------------------------------
 HTChildAnchor *__cdecl HTAnchor_addChild(HTParentAnchor *parent)
@@ -139363,7 +139086,6 @@ HTChildAnchor *__cdecl HTAnchor_addChild(HTParentAnchor *parent)
   FILE *v1; // eax
   HTParentAnchor0 *v2; // ebx
   FILE *v3; // edx
-  HTChildAnchor *v5; // [esp+10h] [ebp-18h]
   HTChildAnchor *child; // [esp+20h] [ebp-8h]
 
   if ( parent )
@@ -139377,7 +139099,7 @@ HTChildAnchor *__cdecl HTAnchor_addChild(HTParentAnchor *parent)
     }
     child->tag = 0;
     HTList_linkObject(&parent->children_notag, child, &child->_add_children_notag);
-    v5 = child;
+    return child;
   }
   else
   {
@@ -139386,13 +139108,16 @@ HTChildAnchor *__cdecl HTAnchor_addChild(HTParentAnchor *parent)
       v1 = TraceFP();
       fprintf(v1, "HTAnchor_addChild called with NULL parent.\n");
     }
-    v5 = 0;
+    return 0;
   }
-  return v5;
 }
 
 //----- (08125946) --------------------------------------------------------
-HTChildAnchor *__cdecl HTAnchor_findChildAndLink(HTParentAnchor *parent, const char *tag, const char *href, HTLinkType *ltype)
+HTChildAnchor *__cdecl HTAnchor_findChildAndLink(
+        HTParentAnchor *parent,
+        const char *tag,
+        const char *href,
+        HTLinkType *ltype)
 {
   FILE *v4; // eax
   FILE *v5; // eax
@@ -139401,7 +139126,7 @@ HTChildAnchor *__cdecl HTAnchor_findChildAndLink(HTParentAnchor *parent, const c
   const char *v9; // [esp+20h] [ebp-48h]
   const char *v10; // [esp+24h] [ebp-44h]
   const char *v11; // [esp+28h] [ebp-40h]
-  char *v12; // [esp+2Ch] [ebp-3Ch]
+  char *address; // [esp+2Ch] [ebp-3Ch]
   const char *v13; // [esp+30h] [ebp-38h]
   DocAddress parsed_doc; // [esp+40h] [ebp-28h] BYREF
   const char *relative_to; // [esp+54h] [ebp-14h]
@@ -139440,11 +139165,11 @@ HTChildAnchor *__cdecl HTAnchor_findChildAndLink(HTParentAnchor *parent, const c
     else
     {
       if ( !parent->inBASE || *href == 35 )
-        v12 = parent->address;
+        address = parent->address;
       else
-        v12 = parent->content_base;
-      relative_to = v12;
-      parsed_doc.address = HTParse(href, v12, 29);
+        address = parent->content_base;
+      relative_to = address;
+      parsed_doc.address = HTParse(href, address, 29);
       parsed_doc.post_data = 0;
       parsed_doc.post_content_type = 0;
       if ( ltype && parent->post_data && ltype == HTInternalLink )
@@ -139496,8 +139221,7 @@ HTChildAnchor *__cdecl HTAnchor_findChildAndLink(HTParentAnchor *parent, const c
 HTParentAnchor *__cdecl HTAnchor_findAddress(const DocAddress *newdoc)
 {
   FILE *v1; // eax
-  HTParentAnchor0 *v2; // eax
-  HTParentAnchor *v4; // [esp+14h] [ebp-24h]
+  HTParentAnchor0 *Address_in_adult_table; // eax
   DocAddress parsed_doc; // [esp+18h] [ebp-20h] BYREF
   HTChildAnchor *foundAnchor; // [esp+2Ch] [ebp-Ch]
   HTParentAnchor0 *foundParent; // [esp+30h] [ebp-8h]
@@ -139524,14 +139248,13 @@ HTParentAnchor *__cdecl HTAnchor_findAddress(const DocAddress *newdoc)
       free(parsed_doc.address);
       parsed_doc.address = 0;
     }
-    v4 = HTAnchor_parent((HTAnchor *)foundParent);
+    return HTAnchor_parent((HTAnchor *)foundParent);
   }
   else
   {
-    v2 = HTAnchor_findAddress_in_adult_table(newdoc);
-    v4 = HTAnchor_parent((HTAnchor *)v2);
+    Address_in_adult_table = HTAnchor_findAddress_in_adult_table(newdoc);
+    return HTAnchor_parent((HTAnchor *)Address_in_adult_table);
   }
-  return v4;
 }
 
 //----- (08125D0E) --------------------------------------------------------
@@ -139539,10 +139262,10 @@ HTParentAnchor0 *__cdecl HTAnchor_findAddress_in_adult_table(const DocAddress *n
 {
   char *v1; // ebx
   FILE *v2; // edx
-  char *v3; // ebx
+  char *address; // ebx
   FILE *v4; // edx
   bool v6; // [esp+1Ch] [ebp-3Ch]
-  HTParentAnchor0 *v8; // [esp+24h] [ebp-34h]
+  HTParentAnchor0 *object; // [esp+24h] [ebp-34h]
   int len; // [esp+28h] [ebp-30h]
   HTParentAnchor *p; // [esp+3Ch] [ebp-1Ch]
   HTParentAnchor0 *foundAnchor; // [esp+40h] [ebp-18h]
@@ -139555,17 +139278,17 @@ HTParentAnchor0 *__cdecl HTAnchor_findAddress_in_adult_table(const DocAddress *n
   do
   {
     if ( grownups && (grownups = grownups->next) != 0 )
-      v8 = (HTParentAnchor0 *)grownups->object;
+      object = (HTParentAnchor0 *)grownups->object;
     else
-      v8 = 0;
-    if ( !v8 )
+      object = 0;
+    if ( !object )
     {
       foundAnchor = HTParentAnchor0_new(newdoc->address, hash);
       if ( WWW_TraceFlag[0] )
       {
-        v3 = newdoc->address;
+        address = newdoc->address;
         v4 = TraceFP();
-        fprintf(v4, "New anchor %p has hash %d and address `%s'\n", foundAnchor, hash, v3);
+        fprintf(v4, "New anchor %p has hash %d and address `%s'\n", foundAnchor, hash, address);
       }
       if ( v6 )
       {
@@ -139589,16 +139312,18 @@ HTParentAnchor0 *__cdecl HTAnchor_findAddress_in_adult_table(const DocAddress *n
       return foundAnchor;
     }
   }
-  while ( !HTSEquivalent(v8->address, newdoc->address)
-       || (v8->info || v6)
-       && (!v8->info || !HTBEquivalent(v8->info->post_data, newdoc->post_data) || v8->info->isHEAD != newdoc->isHEAD) );
+  while ( !HTSEquivalent(object->address, newdoc->address)
+       || (object->info || v6)
+       && (!object->info
+        || !HTBEquivalent(object->info->post_data, newdoc->post_data)
+        || object->info->isHEAD != newdoc->isHEAD) );
   if ( WWW_TraceFlag[0] )
   {
     v1 = newdoc->address;
     v2 = TraceFP();
-    fprintf(v2, "Anchor %p with address `%s' already exists.\n", v8, v1);
+    fprintf(v2, "Anchor %p with address `%s' already exists.\n", object, v1);
   }
-  return v8;
+  return object;
 }
 
 //----- (08125FC7) --------------------------------------------------------
@@ -139607,11 +139332,7 @@ HTParentAnchor *__cdecl HTAnchor_findSimpleAddress(const char *url)
   DocAddress urldoc; // [esp+14h] [ebp-14h] BYREF
 
   urldoc.address = (char *)url;
-  urldoc.post_data = 0;
-  urldoc.post_content_type = 0;
-  urldoc.bookmark = 0;
-  urldoc.isHEAD = 0;
-  urldoc.safe = 0;
+  memset(&urldoc.post_data, 0, 14);
   return HTAnchor_findAddress(&urldoc);
 }
 
@@ -139620,7 +139341,6 @@ BOOLEAN __cdecl HTAnchor_link(HTChildAnchor *child, HTAnchor *destination, HTLin
 {
   FILE *v3; // edx
   FILE *v4; // eax
-  BOOLEAN v6; // [esp+17h] [ebp-1h]
 
   if ( !child || !destination )
     return 0;
@@ -139636,7 +139356,7 @@ BOOLEAN __cdecl HTAnchor_link(HTChildAnchor *child, HTAnchor *destination, HTLin
       v4 = TraceFP();
       fprintf(v4, "*** child anchor already has destination, exiting!\n");
     }
-    v6 = 0;
+    return 0;
   }
   else
   {
@@ -139644,9 +139364,8 @@ BOOLEAN __cdecl HTAnchor_link(HTChildAnchor *child, HTAnchor *destination, HTLin
     child->type = type;
     if ( child->parent != destination->parent )
       HTList_linkObject(&destination->parent->sources, child, &child->_add_sources);
-    v6 = 1;
+    return 1;
   }
-  return v6;
 }
 
 //----- (081260C7) --------------------------------------------------------
@@ -139722,7 +139441,7 @@ BOOLEAN __cdecl HTAnchor_delete(HTParentAnchor0 *me)
   free(me);
   return 1;
 }
-// 8126330: conditional instruction was optimized away because of '%me.4!=0'
+// 8126330: conditional instruction was optimized away because %me.4!=0
 
 //----- (0812634E) --------------------------------------------------------
 void __cdecl HTAnchor_delete_links(HTParentAnchor *me)
@@ -139924,18 +139643,18 @@ void __cdecl HTParentAnchor_free(HTParentAnchor *me)
 //----- (081268AA) --------------------------------------------------------
 void __cdecl HTAnchor_clearSourceCache(HTParentAnchor *me)
 {
-  char *v1; // ebx
+  char *source_cache_file; // ebx
   FILE *v2; // eax
-  HTChunk *v3; // ebx
+  HTChunk *source_cache_chunk; // ebx
   FILE *v4; // eax
 
   if ( me->source_cache_file )
   {
     if ( WWW_TraceFlag[0] )
     {
-      v1 = me->source_cache_file;
+      source_cache_file = me->source_cache_file;
       v2 = TraceFP();
-      fprintf(v2, "SourceCache: Removing file %s\n", v1);
+      fprintf(v2, "SourceCache: Removing file %s\n", source_cache_file);
     }
     LYRemoveTemp(me->source_cache_file);
     if ( me->source_cache_file )
@@ -139948,9 +139667,9 @@ void __cdecl HTAnchor_clearSourceCache(HTParentAnchor *me)
   {
     if ( WWW_TraceFlag[0] )
     {
-      v3 = me->source_cache_chunk;
+      source_cache_chunk = me->source_cache_chunk;
       v4 = TraceFP();
-      fprintf(v4, "SourceCache: Removing memory chunk %p\n", v3);
+      fprintf(v4, "SourceCache: Removing memory chunk %p\n", source_cache_chunk);
     }
     HTChunkFree(me->source_cache_chunk);
     me->source_cache_chunk = 0;
@@ -139977,13 +139696,10 @@ void __cdecl HTAnchor_setDocument(HTParentAnchor *me, HyperDoc *doc)
 //----- (081269C2) --------------------------------------------------------
 HyperDoc *__cdecl HTAnchor_document(HTParentAnchor *me)
 {
-  HyperDoc *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->document;
+    return me->document;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (081269E5) --------------------------------------------------------
@@ -140012,13 +139728,10 @@ void __cdecl HTAnchor_setFormat(HTParentAnchor *me, HTFormat form)
 //----- (08126A78) --------------------------------------------------------
 HTFormat __cdecl HTAnchor_format(HTParentAnchor *me)
 {
-  HTAtom *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->format;
+    return me->format;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126A9B) --------------------------------------------------------
@@ -140041,37 +139754,28 @@ void __cdecl HTAnchor_setPrompt(HTParentAnchor *me, const char *prompt)
 //----- (08126AE8) --------------------------------------------------------
 BOOLEAN __cdecl HTAnchor_isIndex(HTParentAnchor *me)
 {
-  BOOLEAN v2; // [esp+3h] [ebp-1h]
-
   if ( me )
-    v2 = me->isIndex;
+    return me->isIndex;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126B0A) --------------------------------------------------------
 BOOLEAN __cdecl HTAnchor_isISMAPScript(HTAnchor *me)
 {
-  BOOLEAN v2; // [esp+3h] [ebp-1h]
-
   if ( me && me->parent->info )
-    v2 = me->parent->info->isISMAPScript;
+    return me->parent->info->isISMAPScript;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126B3D) --------------------------------------------------------
 const char *__cdecl HTAnchor_style(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->style;
+    return me->style;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126B60) --------------------------------------------------------
@@ -140084,13 +139788,10 @@ void __cdecl HTAnchor_setStyle(HTParentAnchor *me, const char *style)
 //----- (08126B83) --------------------------------------------------------
 const char *__cdecl HTAnchor_title(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->title;
+    return me->title;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126BA6) --------------------------------------------------------
@@ -140162,13 +139863,10 @@ void __cdecl HTAnchor_appendTitle(HTParentAnchor *me, const char *title)
 //----- (08126D48) --------------------------------------------------------
 const char *__cdecl HTAnchor_bookmark(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->bookmark;
+    return me->bookmark;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126D6B) --------------------------------------------------------
@@ -140181,13 +139879,10 @@ void __cdecl HTAnchor_setBookmark(HTParentAnchor *me, const char *bookmark)
 //----- (08126D8E) --------------------------------------------------------
 const char *__cdecl HTAnchor_owner(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->owner;
+    return me->owner;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126DB1) --------------------------------------------------------
@@ -140200,13 +139895,10 @@ void __cdecl HTAnchor_setOwner(HTParentAnchor *me, const char *owner)
 //----- (08126DD4) --------------------------------------------------------
 const char *__cdecl HTAnchor_RevTitle(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->RevTitle;
+    return me->RevTitle;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126DF7) --------------------------------------------------------
@@ -140228,13 +139920,10 @@ void __cdecl HTAnchor_setRevTitle(HTParentAnchor *me, const char *title)
 //----- (08126E6F) --------------------------------------------------------
 const char *__cdecl HTAnchor_citehost(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->citehost;
+    return me->citehost;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126E92) --------------------------------------------------------
@@ -140247,133 +139936,100 @@ void __cdecl HTAnchor_setCitehost(HTParentAnchor *me, const char *citehost)
 //----- (08126EB5) --------------------------------------------------------
 const char *__cdecl HTAnchor_SugFname(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->SugFname;
+    return me->SugFname;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126ED8) --------------------------------------------------------
 const char *__cdecl HTAnchor_content_type_params(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->content_type_params;
+    return me->content_type_params;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126EFB) --------------------------------------------------------
 const char *__cdecl HTAnchor_content_encoding(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->content_encoding;
+    return me->content_encoding;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126F1E) --------------------------------------------------------
 const char *__cdecl HTAnchor_content_type(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->content_type;
+    return me->content_type;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126F41) --------------------------------------------------------
 const char *__cdecl HTAnchor_last_modified(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->last_modified;
+    return me->last_modified;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126F67) --------------------------------------------------------
 const char *__cdecl HTAnchor_date(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->date;
+    return me->date;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126F8D) --------------------------------------------------------
 const char *__cdecl HTAnchor_server(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->server;
+    return me->server;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126FB3) --------------------------------------------------------
 BOOLEAN __cdecl HTAnchor_safe(HTParentAnchor *me)
 {
-  BOOLEAN v2; // [esp+3h] [ebp-1h]
-
   if ( me )
-    v2 = me->safe;
+    return me->safe;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126FD5) --------------------------------------------------------
 const char *__cdecl HTAnchor_content_base(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->content_base;
+    return me->content_base;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08126FFB) --------------------------------------------------------
 const char *__cdecl HTAnchor_content_location(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->content_location;
+    return me->content_location;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08127021) --------------------------------------------------------
 const char *__cdecl HTAnchor_messageID(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->message_id;
+    return me->message_id;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (08127047) --------------------------------------------------------
@@ -140388,13 +140044,10 @@ BOOLEAN __cdecl HTAnchor_setMessageID(HTParentAnchor *me, const char *messageid)
 //----- (0812708B) --------------------------------------------------------
 const char *__cdecl HTAnchor_subject(HTParentAnchor *me)
 {
-  char *v2; // [esp+0h] [ebp-4h]
-
   if ( me )
-    v2 = me->subject;
+    return me->subject;
   else
-    v2 = 0;
-  return v2;
+    return 0;
 }
 
 //----- (081270B1) --------------------------------------------------------
@@ -140415,13 +140068,10 @@ HTAnchor *__cdecl HTAnchor_followLink(HTChildAnchor *me)
 //----- (08127100) --------------------------------------------------------
 HTAnchor *__cdecl HTAnchor_followTypedLink(HTChildAnchor *me, HTLinkType *type)
 {
-  HTAnchor *v3; // [esp+0h] [ebp-4h]
-
   if ( me->type == type )
-    v3 = me->dest;
+    return me->dest;
   else
-    v3 = 0;
-  return v3;
+    return 0;
 }
 
 //----- (08127128) --------------------------------------------------------
@@ -140460,7 +140110,6 @@ void __cdecl HTAnchor_setPhysical(HTParentAnchor *me, char *physical)
 //----- (08127194) --------------------------------------------------------
 LYUCcharset *__cdecl HTAnchor_getUCInfoStage(HTParentAnchor *me, int which_stage)
 {
-  LYUCcharset *v3; // [esp+14h] [ebp-14h]
   UCAnchorInfo *stages; // [esp+1Ch] [ebp-Ch]
   int chndl; // [esp+20h] [ebp-8h]
   int i; // [esp+24h] [ebp-4h]
@@ -140490,27 +140139,22 @@ LYUCcharset *__cdecl HTAnchor_getUCInfoStage(HTParentAnchor *me, int which_stage
     me->UCStages = stages;
   }
   if ( me )
-    v3 = &me->UCStages->s[which_stage].C;
+    return &me->UCStages->s[which_stage].C;
   else
-    v3 = 0;
-  return v3;
+    return 0;
 }
 
 //----- (081272E7) --------------------------------------------------------
 int __cdecl HTAnchor_getUCLYhndl(HTParentAnchor *me, int which_stage)
 {
-  int v3; // [esp+14h] [ebp-4h]
-
   if ( !me )
-    goto LABEL_6;
+    return -1;
   if ( !me->UCStages )
     HTAnchor_getUCInfoStage(me, which_stage);
   if ( me->UCStages->s[which_stage].lock > 0 )
-    v3 = me->UCStages->s[which_stage].LYhndl;
+    return me->UCStages->s[which_stage].LYhndl;
   else
-LABEL_6:
-    v3 = -1;
-  return v3;
+    return -1;
 }
 
 //----- (0812735E) --------------------------------------------------------
@@ -140646,13 +140290,12 @@ HTStyleSheet *__cdecl HTStyleSheetAddStyle(HTStyleSheet *self, HTStyle *style)
 //----- (08127793) --------------------------------------------------------
 HTStyleSheet *__cdecl HTStyleSheetRemoveStyle(HTStyleSheet *self, HTStyle *style)
 {
-  HTStyleSheet *v3; // [esp+0h] [ebp-14h]
   HTStyle *scan; // [esp+10h] [ebp-4h]
 
   if ( self->styles == style )
   {
     self->styles = style->next;
-    v3 = self;
+    return self;
   }
   else
   {
@@ -140664,9 +140307,8 @@ HTStyleSheet *__cdecl HTStyleSheetRemoveStyle(HTStyleSheet *self, HTStyle *style
         return self;
       }
     }
-    v3 = 0;
+    return 0;
   }
-  return v3;
 }
 
 //----- (081277F8) --------------------------------------------------------
@@ -140755,7 +140397,6 @@ HTList *__cdecl HTList_reverse(HTList *start)
 HTList *__cdecl HTList_appendList(HTList *start, HTList *tail)
 {
   FILE *v2; // edx
-  HTList *v4; // [esp+14h] [ebp-14h]
   HTList *temp; // [esp+24h] [ebp-4h]
 
   temp = start;
@@ -140767,11 +140408,11 @@ HTList *__cdecl HTList_appendList(HTList *start, HTList *tail)
         temp = temp->next;
       temp->next = tail->next;
       tail->next = 0;
-      v4 = start;
+      return start;
     }
     else
     {
-      v4 = start;
+      return start;
     }
   }
   else
@@ -140781,9 +140422,8 @@ HTList *__cdecl HTList_appendList(HTList *start, HTList *tail)
       v2 = TraceFP();
       fprintf(v2, "HTList: Trying to append list %p to a nonexisting list\n", tail);
     }
-    v4 = 0;
+    return 0;
   }
-  return v4;
 }
 
 //----- (08127A04) --------------------------------------------------------
@@ -140909,7 +140549,7 @@ void __cdecl HTList_insertObjectAt(HTList *me, void *newObject, int pos)
     fprintf(v3, "HTList: Trying to add object %p to a nonexisting list\n", newObject);
   }
 }
-// 8127C66: conditional instruction was optimized away because of '%prevNode.4!=0'
+// 8127C66: conditional instruction was optimized away because %prevNode.4!=0
 
 //----- (08127CA6) --------------------------------------------------------
 BOOLEAN __cdecl HTList_unlinkObject(HTList *me, void *oldObject)
@@ -140987,7 +140627,7 @@ void *__cdecl HTList_removeObjectAt(HTList *me, int position)
   free(temp);
   return temp->object;
 }
-// 8127DCE: conditional instruction was optimized away because of '%temp.4!=0'
+// 8127DCE: conditional instruction was optimized away because %temp.4!=0
 
 //----- (08127E11) --------------------------------------------------------
 void *__cdecl HTList_unlinkLastObject(HTList *me)
@@ -141366,7 +141006,6 @@ char *__cdecl HTSACopy_extra(char **dest, const char *src)
 //----- (081287FB) --------------------------------------------------------
 char *__cdecl HTNextField(char **pstr)
 {
-  char *v2; // [esp+0h] [ebp-14h]
   char *start; // [esp+Ch] [ebp-8h]
   char *p; // [esp+10h] [ebp-4h]
 
@@ -141393,14 +141032,13 @@ char *__cdecl HTNextField(char **pstr)
     if ( *p )
       *p++ = 0;
     *pstr = p;
-    v2 = start;
+    return start;
   }
   else
   {
     *pstr = p;
-    v2 = 0;
+    return 0;
   }
-  return v2;
 }
 
 //----- (081288D3) --------------------------------------------------------
@@ -142020,18 +141658,18 @@ void __cdecl HTSABCat0(bstring **dest, const char *src)
 //----- (08129A67) --------------------------------------------------------
 BOOLEAN __cdecl HTSABEql(bstring *a, bstring *b)
 {
-  int v3; // [esp+Ch] [ebp-1Ch]
+  int len; // [esp+Ch] [ebp-1Ch]
   int v4; // [esp+10h] [ebp-18h]
 
   if ( a )
-    v3 = a->len;
+    len = a->len;
   else
-    v3 = 0;
+    len = 0;
   if ( b )
     v4 = b->len;
   else
     v4 = 0;
-  return v3 == v4 && (!v3 || !memcmp(a->str, b->str, a->len));
+  return len == v4 && (!len || !memcmp(a->str, b->str, a->len));
 }
 
 //----- (08129AED) --------------------------------------------------------
@@ -142270,12 +141908,11 @@ void HTClearRules()
 //----- (0812A069) --------------------------------------------------------
 BOOLEAN __cdecl rule_cond_ok(rule *r)
 {
-  char *v1; // ebx
+  char *condition_op; // ebx
   FILE *v2; // eax
   char *v3; // ebx
   FILE *v4; // eax
-  bool v6; // [esp+1Fh] [ebp-19h]
-  char *v7; // [esp+20h] [ebp-18h]
+  char *condition; // [esp+20h] [ebp-18h]
   BOOLEAN result; // [esp+33h] [ebp-5h]
 
   if ( !r->condition_op )
@@ -142284,9 +141921,9 @@ BOOLEAN __cdecl rule_cond_ok(rule *r)
   {
     if ( WWW_TraceFlag[0] )
     {
-      v1 = r->condition_op;
+      condition_op = r->condition_op;
       v2 = TraceFP();
-      fprintf(v2, "....... rule ignored, unrecognized `%s'!\n", v1);
+      fprintf(v2, "....... rule ignored, unrecognized `%s'!\n", condition_op);
     }
     return 0;
   }
@@ -142300,20 +141937,19 @@ BOOLEAN __cdecl rule_cond_ok(rule *r)
     result = LYUserSpecifiedURL;
 LABEL_18:
     if ( !strcmp(r->condition_op, "if") )
-      v6 = result;
+      return result;
     else
-      v6 = result == 0;
-    return v6;
+      return result == 0;
   }
   if ( WWW_TraceFlag[0] )
   {
     if ( r->condition )
-      v7 = r->condition;
+      condition = r->condition;
     else
-      v7 = "(null)";
+      condition = "(null)";
     v3 = r->condition_op;
     v4 = TraceFP();
-    fprintf(v4, "....... rule ignored, unrecognized `%s %s'!\n", v3, v7);
+    fprintf(v4, "....... rule ignored, unrecognized `%s %s'!\n", v3, condition);
   }
   return 0;
 }
@@ -142327,7 +141963,7 @@ char *__cdecl HTTranslate(const char *required)
   FILE *v4; // eax
   char *v5; // ebx
   FILE *v6; // eax
-  char *v7; // ebx
+  char *equiv; // ebx
   char *v8; // esi
   FILE *v9; // eax
   char *v10; // ebx
@@ -142355,7 +141991,7 @@ char *__cdecl HTTranslate(const char *required)
   const char *Msg2; // [esp+34h] [ebp-64h]
   char *v34; // [esp+38h] [ebp-60h]
   const char *v35; // [esp+3Ch] [ebp-5Ch]
-  HTRuleOp v36; // [esp+40h] [ebp-58h]
+  HTRuleOp op; // [esp+40h] [ebp-58h]
   char *v38; // [esp+48h] [ebp-50h]
   char *v39; // [esp+4Ch] [ebp-4Ch]
   char *temp; // [esp+58h] [ebp-40h] BYREF
@@ -142461,10 +142097,10 @@ LABEL_68:
         {
           if ( WWW_TraceFlag[0] )
           {
-            v7 = r->equiv;
+            equiv = r->equiv;
             v8 = current;
             v9 = TraceFP();
-            fprintf(v9, "For `%s' using `%s'\n", v8, v7);
+            fprintf(v9, "For `%s' using `%s'\n", v8, equiv);
           }
           HTSACopy(&current, r->equiv);
         }
@@ -142630,23 +142266,23 @@ LABEL_37:
           HTSprintf0(&msgtmp, pMsg, current);
           pMsg = msgtmp;
         }
-        v36 = r->op;
-        if ( v36 == HT_InfoMsg )
+        op = r->op;
+        if ( op == HT_InfoMsg )
         {
           HTInfoMsg(pMsg);
         }
-        else if ( (unsigned int)v36 > HT_InfoMsg )
+        else if ( (unsigned int)op > HT_InfoMsg )
         {
-          if ( v36 == HT_Alert )
+          if ( op == HT_Alert )
           {
             HTAlert(pMsg);
           }
-          else if ( v36 == HT_AlwaysAlert )
+          else if ( op == HT_AlwaysAlert )
           {
             HTAlwaysAlert("Rule alert:", pMsg);
           }
         }
-        else if ( v36 == HT_Progress )
+        else if ( op == HT_Progress )
         {
           HTProgress(pMsg);
         }
@@ -143127,7 +142763,6 @@ LABEL_151:
 int __cdecl HTLoadRules(const char *filename)
 {
   FILE *v1; // eax
-  int v3; // [esp+10h] [ebp-118h]
   FILE *fp; // [esp+1Ch] [ebp-10Ch]
   char line[257]; // [esp+23h] [ebp-105h] BYREF
   unsigned int v6; // [esp+124h] [ebp-4h]
@@ -143139,7 +142774,7 @@ int __cdecl HTLoadRules(const char *filename)
     while ( fgets(line, 257, fp) )
       HTSetConfiguration(line);
     fclose(fp);
-    v3 = 0;
+    return 0;
   }
   else
   {
@@ -143148,14 +142783,21 @@ int __cdecl HTLoadRules(const char *filename)
       v1 = TraceFP();
       fprintf(v1, "HTRules: Can't open rules file %s\n", filename);
     }
-    v3 = -1;
+    return -1;
   }
-  return v3;
 }
 // 804AB04: using guessed type int __cdecl fopen64(_DWORD, _DWORD);
 
 //----- (0812B744) --------------------------------------------------------
-void __cdecl HTSetPresentation(const char *representation, const char *command, const char *testcommand, double quality, double secs, double secs_per_byte, int maxbytes, AcceptMedia media)
+void __cdecl HTSetPresentation(
+        const char *representation,
+        const char *command,
+        const char *testcommand,
+        double quality,
+        double secs,
+        double secs_per_byte,
+        int maxbytes,
+        AcceptMedia media)
 {
   FILE *v8; // eax
   const char *v9; // [esp+20h] [ebp-38h]
@@ -143220,7 +142862,15 @@ void __cdecl HTSetPresentation(const char *representation, const char *command, 
 }
 
 //----- (0812B94F) --------------------------------------------------------
-void __cdecl HTSetConversion(const char *representation_in, const char *representation_out, HTConverter *converter, float quality, float secs, float secs_per_byte, int maxbytes, AcceptMedia media)
+void __cdecl HTSetConversion(
+        const char *representation_in,
+        const char *representation_out,
+        HTConverter *converter,
+        float quality,
+        float secs,
+        float secs_per_byte,
+        int maxbytes,
+        AcceptMedia media)
 {
   FILE *v8; // eax
   const char *v9; // [esp+20h] [ebp-18h]
@@ -143272,7 +142922,6 @@ int HTGetCharacter()
 {
   FILE *v0; // eax
   FILE *v1; // eax
-  int v3; // [esp+14h] [ebp-14h]
   int status; // [esp+20h] [ebp-8h]
   unsigned __int8 ch_0; // [esp+27h] [ebp-1h]
 
@@ -143301,7 +142950,7 @@ LABEL_14:
       fprintf(v0, "HTFormat: Interrupted in HTGetCharacter\n");
     }
     interrupted_in_htgetcharacter = 1;
-    v3 = -1;
+    return -1;
   }
   else
   {
@@ -143310,9 +142959,8 @@ LABEL_14:
       v1 = TraceFP();
       fprintf(v1, "HTFormat: File read error %d\n", status);
     }
-    v3 = -1;
+    return -1;
   }
-  return v3;
 }
 
 //----- (0812BBD4) --------------------------------------------------------
@@ -143339,9 +142987,13 @@ BOOLEAN __cdecl failsMailcap(HTPresentation *pres, HTParentAnchor *anchor)
 }
 
 //----- (0812BCB8) --------------------------------------------------------
-HTPresentation *__cdecl HTFindPresentation(HTFormat rep_in, HTFormat rep_out, HTPresentation *fill_in, HTParentAnchor *anchor)
+HTPresentation *__cdecl HTFindPresentation(
+        HTFormat rep_in,
+        HTFormat rep_out,
+        HTPresentation *fill_in,
+        HTParentAnchor *anchor)
 {
-  char *v4; // ebx
+  char *name; // ebx
   char *v5; // esi
   FILE *v6; // eax
   const char *v7; // esi
@@ -143374,10 +143026,10 @@ HTPresentation *__cdecl HTFindPresentation(HTFormat rep_in, HTFormat rep_out, HT
   strong_subtype_wildcard_match = 0;
   if ( WWW_TraceFlag[0] )
   {
-    v4 = rep_out->name;
+    name = rep_out->name;
     v5 = rep_in->name;
     v6 = TraceFP();
-    fprintf(v6, "HTFormat: Looking up presentation for %s to %s\n", v5, v4);
+    fprintf(v6, "HTFormat: Looking up presentation for %s to %s\n", v5, name);
   }
   n = HTList_count(HTPresentations);
   for ( i = 0; ; ++i )
@@ -143495,7 +143147,7 @@ LABEL_40:
 //----- (0812C072) --------------------------------------------------------
 HTStream_5 *__cdecl HTStreamStack(HTFormat rep_in, HTFormat rep_out, HTStream_5 *sink, HTParentAnchor *anchor)
 {
-  char *v4; // esi
+  char *name; // esi
   char *v5; // ebx
   FILE *v6; // eax
   char *v7; // ebx
@@ -143508,7 +143160,7 @@ HTStream_5 *__cdecl HTStreamStack(HTFormat rep_in, HTFormat rep_out, HTStream_5 
   FILE *v14; // eax
   FILE *v15; // eax
   FILE *v16; // eax
-  char *v18; // [esp+1Ch] [ebp-4Ch]
+  char *content_type_params; // [esp+1Ch] [ebp-4Ch]
   HTPresentation temp; // [esp+28h] [ebp-40h] BYREF
   HTStream_5 *result; // [esp+58h] [ebp-10h]
   HTPresentation *match; // [esp+5Ch] [ebp-Ch]
@@ -143516,13 +143168,13 @@ HTStream_5 *__cdecl HTStreamStack(HTFormat rep_in, HTFormat rep_out, HTStream_5 
   if ( WWW_TraceFlag[0] )
   {
     if ( anchor->content_type_params )
-      v18 = anchor->content_type_params;
+      content_type_params = anchor->content_type_params;
     else
-      v18 = "(null)";
-    v4 = rep_out->name;
+      content_type_params = "(null)";
+    name = rep_out->name;
     v5 = rep_in->name;
     v6 = TraceFP();
-    fprintf(v6, "HTFormat: Constructing stream stack for %s to %s (%s)\n", v5, v4, v18);
+    fprintf(v6, "HTFormat: Constructing stream stack for %s to %s (%s)\n", v5, name, content_type_params);
   }
   if ( rep_out == rep_in )
   {
@@ -143610,7 +143262,7 @@ void HTFilterPresentations()
 {
   int v0; // ebx
   FILE *v1; // eax
-  HTAtom *v2; // ebx
+  HTAtom *rep_out; // ebx
   FILE *v3; // eax
   char *t; // [esp+14h] [ebp-24h]
   char *s; // [esp+18h] [ebp-20h]
@@ -143634,8 +143286,8 @@ void HTFilterPresentations()
     p->get_accept = 0;
     if ( (p->accept_opt & LYAcceptMedia) != 0 )
     {
-      v2 = p->rep_out;
-      if ( v2 == HTAtom_for("www/present")
+      rep_out = p->rep_out;
+      if ( rep_out == HTAtom_for("www/present")
         && p->rep != WWW_SOURCE
         && strcasecomp(s, "www/mime")
         && strcasecomp(s, "www/compressed")
@@ -143666,7 +143318,7 @@ void HTFilterPresentations()
 //----- (0812C495) --------------------------------------------------------
 float __cdecl HTStackValue(HTFormat rep_in, HTFormat rep_out, float initial_value, int length)
 {
-  char *v4; // esi
+  char *name; // esi
   char *v5; // ebx
   FILE *v6; // eax
   float value; // [esp+3Ch] [ebp-1Ch]
@@ -143678,26 +143330,31 @@ float __cdecl HTStackValue(HTFormat rep_in, HTFormat rep_out, float initial_valu
   wildcard = HTAtom_for("*");
   if ( WWW_TraceFlag[0] )
   {
-    v4 = rep_out->name;
+    name = rep_out->name;
     v5 = rep_in->name;
     v6 = TraceFP();
-    fprintf(v6, "HTFormat: Evaluating stream stack for %s worth %.3f to %s\n", v5, initial_value, v4);
+    fprintf(v6, "HTFormat: Evaluating stream stack for %s worth %.3f to %s\n", v5, initial_value, name);
   }
   if ( rep_out == WWW_SOURCE || rep_out == rep_in )
-    return 0.0;
-  n = HTList_count(HTPresentations);
-  for ( i = 0; ; ++i )
   {
-    if ( i >= n )
-      return -1.0e30;
-    pres = (HTPresentation *)HTList_objectAt(HTPresentations, i);
-    if ( pres->rep == rep_in && (pres->rep_out == rep_out || pres->rep_out == wildcard) )
-      break;
+    return 0.0;
   }
-  value = pres->quality * initial_value;
-  if ( HTMaxSecs > 0.0 )
-    value = value - ((long double)length * pres->secs_per_byte + pres->secs) / HTMaxSecs;
-  return value;
+  else
+  {
+    n = HTList_count(HTPresentations);
+    for ( i = 0; ; ++i )
+    {
+      if ( i >= n )
+        return -1.0e30;
+      pres = (HTPresentation *)HTList_objectAt(HTPresentations, i);
+      if ( pres->rep == rep_in && (pres->rep_out == rep_out || pres->rep_out == wildcard) )
+        break;
+    }
+    value = pres->quality * initial_value;
+    if ( HTMaxSecs > 0.0 )
+      return value - ((long double)length * pres->secs_per_byte + pres->secs) / HTMaxSecs;
+    return value;
+  }
 }
 
 //----- (0812C5CA) --------------------------------------------------------
@@ -144010,7 +143667,7 @@ const char *__cdecl LynxZError(int status)
 //----- (0812CE48) --------------------------------------------------------
 int __cdecl HTZzFileCopy(FILE *zzfp, HTStream_5 *sink)
 {
-  const HTStreamClass *v2; // edx
+  const HTStreamClass *isa; // edx
   const char *v3; // ebx
   FILE *v4; // eax
   const char *v6; // ebx
@@ -144036,16 +143693,14 @@ int __cdecl HTZzFileCopy(FILE *zzfp, HTStream_5 *sink)
   rv = 0;
   retry = 0;
   len = 0;
-  v2 = sink->isa;
+  isa = sink->isa;
   targetClass.name = sink->isa->name;
-  targetClass._free = v2->_free;
-  targetClass._abort = v2->_abort;
-  targetClass.put_character = v2->put_character;
-  targetClass.put_string = v2->put_string;
-  targetClass.put_block = v2->put_block;
-  s.zalloc = 0;
-  s.zfree = 0;
-  s.opaque = 0;
+  targetClass._free = isa->_free;
+  targetClass._abort = isa->_abort;
+  targetClass.put_character = isa->put_character;
+  targetClass.put_string = isa->put_string;
+  targetClass.put_block = isa->put_block;
+  memset(&s.zalloc, 0, 12);
   status = inflateInit_(&s, "1.2.3.3", 56);
   if ( status )
   {
@@ -144174,9 +143829,14 @@ void __cdecl HTCopyNoCR(HTParentAnchor *anchor, int file_number, HTStream_5 *sin
 }
 
 //----- (0812D3A4) --------------------------------------------------------
-int __cdecl HTParseSocket(HTFormat rep_in, HTFormat format_out, HTParentAnchor *anchor, int file_number, HTStream_5 *sink)
+int __cdecl HTParseSocket(
+        HTFormat rep_in,
+        HTFormat format_out,
+        HTParentAnchor *anchor,
+        int file_number,
+        HTStream_5 *sink)
 {
-  char *v5; // esi
+  char *name; // esi
   char *v6; // ebx
   char *v7; // eax
   char *v8; // ebx
@@ -144198,10 +143858,10 @@ int __cdecl HTParseSocket(HTFormat rep_in, HTFormat format_out, HTParentAnchor *
   buffer = 0;
   if ( !LYCancelDownload[0] )
   {
-    v5 = format_out->name;
+    name = format_out->name;
     v6 = rep_in->name;
     v7 = gettext("Sorry, no known way of converting %s to %s.");
-    HTSprintf0(&buffer, v7, v6, v5);
+    HTSprintf0(&buffer, v7, v6, name);
     if ( WWW_TraceFlag[0] )
     {
       v8 = buffer;
@@ -144223,12 +143883,11 @@ int __cdecl HTParseSocket(HTFormat rep_in, HTFormat format_out, HTParentAnchor *
 //----- (0812D504) --------------------------------------------------------
 int __cdecl HTParseFile(HTFormat rep_in, HTFormat format_out, HTParentAnchor *anchor, FILE *fp, HTStream_5 *sink)
 {
-  char *v5; // esi
+  char *name; // esi
   char *v6; // ebx
   char *v7; // eax
   char *v8; // ebx
   FILE *v9; // eax
-  int v11; // [esp+1Ch] [ebp-3Ch]
   void (*targetClass_4)(HTStream *); // [esp+30h] [ebp-28h]
   void (*targetClass_8)(HTStream *, HTError); // [esp+34h] [ebp-24h]
   char *buffer; // [esp+44h] [ebp-14h] BYREF
@@ -144247,15 +143906,15 @@ int __cdecl HTParseFile(HTFormat rep_in, HTFormat format_out, HTParentAnchor *an
       targetClass_4((HTStream *)stream);
     if ( rv == -1 )
     {
-      v11 = -204;
+      return -204;
     }
     else if ( rv != -29998 && (rv <= 0 || rv == 200) )
     {
-      v11 = 200;
+      return 200;
     }
     else
     {
-      v11 = 206;
+      return 206;
     }
   }
   else
@@ -144264,14 +143923,14 @@ int __cdecl HTParseFile(HTFormat rep_in, HTFormat format_out, HTParentAnchor *an
     if ( LYCancelDownload[0] )
     {
       LYCancelDownload[0] = 0;
-      v11 = -1;
+      return -1;
     }
     else
     {
-      v5 = format_out->name;
+      name = format_out->name;
       v6 = rep_in->name;
       v7 = gettext("Sorry, no known way of converting %s to %s.");
-      HTSprintf0(&buffer, v7, v6, v5);
+      HTSprintf0(&buffer, v7, v6, name);
       if ( WWW_TraceFlag[0] )
       {
         v8 = buffer;
@@ -144284,21 +143943,19 @@ int __cdecl HTParseFile(HTFormat rep_in, HTFormat format_out, HTParentAnchor *an
         free(buffer);
         buffer = 0;
       }
-      v11 = rv;
+      return rv;
     }
   }
-  return v11;
 }
 
 //----- (0812D6A4) --------------------------------------------------------
 int __cdecl HTParseMem(HTFormat rep_in, HTFormat format_out, HTParentAnchor *anchor, HTChunk *chunk, HTStream_5 *sink)
 {
-  char *v5; // esi
+  char *name; // esi
   char *v6; // ebx
   char *v7; // eax
   char *v8; // ebx
   FILE *v9; // eax
-  int v11; // [esp+1Ch] [ebp-3Ch]
   void (*targetClass_4)(HTStream *); // [esp+30h] [ebp-28h]
   char *buffer; // [esp+44h] [ebp-14h] BYREF
   int rv; // [esp+48h] [ebp-10h]
@@ -144310,15 +143967,15 @@ int __cdecl HTParseMem(HTFormat rep_in, HTFormat format_out, HTParentAnchor *anc
     targetClass_4 = stream->isa->_free;
     rv = HTMemCopy(chunk, stream);
     targetClass_4((HTStream *)stream);
-    v11 = 200;
+    return 200;
   }
   else
   {
     buffer = 0;
-    v5 = format_out->name;
+    name = format_out->name;
     v6 = rep_in->name;
     v7 = gettext("Sorry, no known way of converting %s to %s.");
-    HTSprintf0(&buffer, v7, v6, v5);
+    HTSprintf0(&buffer, v7, v6, name);
     if ( WWW_TraceFlag[0] )
     {
       v8 = buffer;
@@ -144331,9 +143988,8 @@ int __cdecl HTParseMem(HTFormat rep_in, HTFormat format_out, HTParentAnchor *anc
       free(buffer);
       buffer = 0;
     }
-    v11 = rv;
+    return rv;
   }
-  return v11;
 }
 
 //----- (0812D7CF) --------------------------------------------------------
@@ -144363,12 +144019,11 @@ int __cdecl HTCloseGzFile(gzFile gzfp)
 //----- (0812D84B) --------------------------------------------------------
 int __cdecl HTParseGzFile(HTFormat rep_in, HTFormat format_out, HTParentAnchor *anchor, gzFile gzfp, HTStream_5 *sink)
 {
-  char *v5; // esi
+  char *name; // esi
   char *v6; // ebx
   char *v7; // eax
   char *v8; // ebx
   FILE *v9; // eax
-  int v11; // [esp+1Ch] [ebp-3Ch]
   void (*targetClass_4)(HTStream *); // [esp+30h] [ebp-28h]
   void (*targetClass_8)(HTStream *, HTError); // [esp+34h] [ebp-24h]
   char *buffer; // [esp+44h] [ebp-14h] BYREF
@@ -144388,15 +144043,15 @@ int __cdecl HTParseGzFile(HTFormat rep_in, HTFormat format_out, HTParentAnchor *
     HTCloseGzFile(gzfp);
     if ( rv == -1 )
     {
-      v11 = -204;
+      return -204;
     }
     else if ( rv != -29998 && (rv <= 0 || rv == 200) )
     {
-      v11 = 200;
+      return 200;
     }
     else
     {
-      v11 = 206;
+      return 206;
     }
   }
   else
@@ -144406,14 +144061,14 @@ int __cdecl HTParseGzFile(HTFormat rep_in, HTFormat format_out, HTParentAnchor *
     if ( LYCancelDownload[0] )
     {
       LYCancelDownload[0] = 0;
-      v11 = -1;
+      return -1;
     }
     else
     {
-      v5 = format_out->name;
+      name = format_out->name;
       v6 = rep_in->name;
       v7 = gettext("Sorry, no known way of converting %s to %s.");
-      HTSprintf0(&buffer, v7, v6, v5);
+      HTSprintf0(&buffer, v7, v6, name);
       if ( WWW_TraceFlag[0] )
       {
         v8 = buffer;
@@ -144426,21 +144081,19 @@ int __cdecl HTParseGzFile(HTFormat rep_in, HTFormat format_out, HTParentAnchor *
         free(buffer);
         buffer = 0;
       }
-      v11 = rv;
+      return rv;
     }
   }
-  return v11;
 }
 
 //----- (0812DA01) --------------------------------------------------------
 int __cdecl HTParseZzFile(HTFormat rep_in, HTFormat format_out, HTParentAnchor *anchor, FILE *zzfp, HTStream_5 *sink)
 {
-  char *v5; // esi
+  char *name; // esi
   char *v6; // ebx
   char *v7; // eax
   char *v8; // ebx
   FILE *v9; // eax
-  int v11; // [esp+1Ch] [ebp-3Ch]
   void (*targetClass_4)(HTStream *); // [esp+30h] [ebp-28h]
   void (*targetClass_8)(HTStream *, HTError); // [esp+34h] [ebp-24h]
   char *buffer; // [esp+44h] [ebp-14h] BYREF
@@ -144460,15 +144113,15 @@ int __cdecl HTParseZzFile(HTFormat rep_in, HTFormat format_out, HTParentAnchor *
     fclose(zzfp);
     if ( rv == -1 )
     {
-      v11 = -204;
+      return -204;
     }
     else if ( rv != -29998 && (rv <= 0 || rv == 200) )
     {
-      v11 = 200;
+      return 200;
     }
     else
     {
-      v11 = 206;
+      return 206;
     }
   }
   else
@@ -144478,14 +144131,14 @@ int __cdecl HTParseZzFile(HTFormat rep_in, HTFormat format_out, HTParentAnchor *
     if ( LYCancelDownload[0] )
     {
       LYCancelDownload[0] = 0;
-      v11 = -1;
+      return -1;
     }
     else
     {
-      v5 = format_out->name;
+      name = format_out->name;
       v6 = rep_in->name;
       v7 = gettext("Sorry, no known way of converting %s to %s.");
-      HTSprintf0(&buffer, v7, v6, v5);
+      HTSprintf0(&buffer, v7, v6, name);
       if ( WWW_TraceFlag[0] )
       {
         v8 = buffer;
@@ -144498,10 +144151,9 @@ int __cdecl HTParseZzFile(HTFormat rep_in, HTFormat format_out, HTParentAnchor *
         free(buffer);
         buffer = 0;
       }
-      v11 = rv;
+      return rv;
     }
   }
-  return v11;
 }
 
 //----- (0812DBB7) --------------------------------------------------------
@@ -144703,7 +144355,7 @@ const char *__cdecl UncompressedContentType(HTStream_6 *me, CompressFileType met
     pencoding = 0;
     description = 0;
     format = HTFileFormat(address, &pencoding, &description);
-    result = format->name;
+    return format->name;
   }
   return result;
 }
@@ -144712,15 +144364,15 @@ const char *__cdecl UncompressedContentType(HTStream_6 *me, CompressFileType met
 int __cdecl pumpData(HTStream_6 *me)
 {
   FILE *v1; // eax
-  char *v2; // ebx
+  char *address; // ebx
   FILE *v3; // eax
   FILE *v4; // eax
-  char *v5; // ebx
+  char *name; // ebx
   FILE *v6; // eax
-  int v7; // eax
+  int UCLYhndl; // eax
   int v8; // eax
   time_t v9; // ebx
-  HTAtom *v10; // ebx
+  HTAtom *targetRep; // ebx
   FILE *v11; // eax
   FILE *v12; // eax
   FILE *v13; // eax
@@ -144733,8 +144385,8 @@ int __cdecl pumpData(HTStream_6 *me)
   char *v20; // ebx
   FILE *v21; // eax
   FILE *v22; // eax
-  const HTStreamClass *v23; // edx
-  HTAtom *v24; // ebx
+  const HTStreamClass *isa; // edx
+  HTAtom *format; // ebx
   FILE *v25; // eax
   char *v26; // eax
   char *v27; // ebx
@@ -144769,9 +144421,9 @@ int __cdecl pumpData(HTStream_6 *me)
   }
   if ( WWW_TraceFlag[0] )
   {
-    v2 = me->anchor->address;
+    address = me->anchor->address;
     v3 = TraceFP();
-    fprintf(v3, "...address{%s}\n", v2);
+    fprintf(v3, "...address{%s}\n", address);
   }
   method = HTContentTypeToCompressType(me->anchor->content_type_params);
   if ( method && (!me->anchor->content_encoding || !*me->anchor->content_encoding) )
@@ -144803,9 +144455,9 @@ int __cdecl pumpData(HTStream_6 *me)
     url = 0;
     if ( WWW_TraceFlag[0] )
     {
-      v5 = me->format->name;
+      name = me->format->name;
       v6 = TraceFP();
-      fprintf(v6, "HTMIME: Extended MIME Content-Type is %s\n", v5);
+      fprintf(v6, "HTMIME: Extended MIME Content-Type is %s\n", name);
     }
     HTSACopy(&num, me->format->name);
     LYLowerCase(num);
@@ -144861,8 +144513,8 @@ int __cdecl pumpData(HTStream_6 *me)
           if ( !strcmp(p_in->MIMEname, "x-transparent") )
           {
             HTPassEightBitRaw = 1;
-            v7 = HTAnchor_getUCLYhndl(me->anchor, 3);
-            HTAnchor_setUCInfoStage(me->anchor, v7, 0, 1);
+            UCLYhndl = HTAnchor_getUCLYhndl(me->anchor, 3);
+            HTAnchor_setUCInfoStage(me->anchor, UCLYhndl, 0, 1);
           }
           if ( !strcmp(p_out->MIMEname, "x-transparent") )
           {
@@ -144969,8 +144621,8 @@ int __cdecl pumpData(HTStream_6 *me)
     {
       redirecting_url = me->location;
       me->location = 0;
-      v10 = me->targetRep;
-      if ( v10 != HTAtom_for("www/debug") || me->sink )
+      targetRep = me->targetRep;
+      if ( targetRep != HTAtom_for("www/debug") || me->sink )
         me->head_only = 1;
     }
     else
@@ -145060,13 +144712,13 @@ int __cdecl pumpData(HTStream_6 *me)
     }
     if ( me->target )
     {
-      v23 = me->target->isa;
-      me->targetClass.name = v23->name;
-      me->targetClass._free = v23->_free;
-      me->targetClass._abort = v23->_abort;
-      me->targetClass.put_character = v23->put_character;
-      me->targetClass.put_string = v23->put_string;
-      me->targetClass.put_block = v23->put_block;
+      isa = me->target->isa;
+      me->targetClass.name = isa->name;
+      me->targetClass._free = isa->_free;
+      me->targetClass._abort = isa->_abort;
+      me->targetClass.put_character = isa->put_character;
+      me->targetClass.put_string = isa->put_string;
+      me->targetClass.put_block = isa->put_block;
       me->state = me->chunked_encoding != 0;
     }
     else
@@ -145081,8 +144733,8 @@ int __cdecl pumpData(HTStream_6 *me)
       LYParseRefreshURL(me->refresh_url, &num, &url);
       if ( url )
       {
-        v24 = me->format;
-        if ( v24 == HTAtom_for("text/html") )
+        format = me->format;
+        if ( format == HTAtom_for("text/html") )
         {
           if ( WWW_TraceFlag[0] )
           {
@@ -145143,8 +144795,8 @@ int __cdecl dispatchField(HTStream_6 *me)
   FILE *v12; // eax
   FILE *v13; // eax
   FILE *v14; // eax
-  HTParentAnchor *v15; // ebx
-  int v16; // ebx
+  HTParentAnchor *anchor; // ebx
+  int content_length; // ebx
   FILE *v17; // eax
   FILE *v18; // eax
   FILE *v19; // eax
@@ -145418,15 +145070,15 @@ LABEL_79:
       }
       if ( me->value[0] )
       {
-        v15 = me->anchor;
-        v15->content_length = atoi(me->value);
+        anchor = me->anchor;
+        anchor->content_length = atoi(me->value);
         if ( me->anchor->content_length < 0 )
           me->anchor->content_length = 0;
         if ( WWW_TraceFlag[0] )
         {
-          v16 = me->anchor->content_length;
+          content_length = me->anchor->content_length;
           v17 = TraceFP();
-          fprintf(v17, "        Converted to integer: '%d'\n", v16);
+          fprintf(v17, "        Converted to integer: '%d'\n", content_length);
         }
       }
       return 0;
@@ -145801,7 +145453,7 @@ void __cdecl HTMIME_put_character(HTStream_6 *me, char c)
   FILE *v45; // eax
   const char *v46; // ebx
   FILE *v47; // eax
-  const char *v48; // ebx
+  const char *check_pointer; // ebx
   FILE *v49; // eax
   FILE *v50; // eax
   FILE *v51; // eax
@@ -145848,9 +145500,9 @@ void __cdecl HTMIME_put_character(HTStream_6 *me, char c)
   FILE *v92; // eax
   FILE *v93; // eax
   FILE *v94; // eax
-  char *v95; // edx
+  char *value_pointer; // edx
   FILE *v96; // eax
-  int v97; // [esp+34h] [ebp-64h]
+  int chunked_size; // [esp+34h] [ebp-64h]
   int v98; // [esp+38h] [ebp-60h]
   MIME_state v99; // [esp+3Ch] [ebp-5Ch]
   int v100; // [esp+84h] [ebp-14h]
@@ -145904,12 +145556,12 @@ LABEL_10:
               }
               else
               {
-                v97 = me->chunked_size;
+                chunked_size = me->chunked_size;
                 if ( ((*__ctype_b_loc())[(unsigned __int8)c] & 0x200) != 0 )
                   v98 = toupper((unsigned __int8)c) - 55;
                 else
                   v98 = (unsigned __int8)c - 55;
-                me->chunked_size = v98 + v97;
+                me->chunked_size = v98 + chunked_size;
               }
             }
           }
@@ -146605,9 +146257,9 @@ LABEL_195:
             me->state = miCHECK;
             if ( WWW_TraceFlag[0] )
             {
-              v48 = me->check_pointer;
+              check_pointer = me->check_pointer;
               v49 = TraceFP();
-              fprintf(v49, "HTMIME: Was RE, found T, checking for '%s'\n", v48);
+              fprintf(v49, "HTMIME: Was RE, found T, checking for '%s'\n", check_pointer);
             }
             return;
           }
@@ -147092,9 +146744,9 @@ LABEL_348:
       }
       if ( me->value_pointer < &me->value[5119] )
       {
-        v95 = me->value_pointer;
-        *v95 = ca;
-        me->value_pointer = v95 + 1;
+        value_pointer = me->value_pointer;
+        *value_pointer = ca;
+        me->value_pointer = value_pointer + 1;
         return;
       }
       if ( WWW_TraceFlag[0] )
@@ -147198,7 +146850,7 @@ void __cdecl HTMIME_free(HTStream_6 *me)
     free(me);
   }
 }
-// 81324A0: conditional instruction was optimized away because of '%me.4!=0'
+// 81324A0: conditional instruction was optimized away because %me.4!=0
 
 //----- (081324B6) --------------------------------------------------------
 void __cdecl HTMIME_abort(HTStream_6 *me, HTError e)
@@ -147220,7 +146872,7 @@ void __cdecl HTMIME_abort(HTStream_6 *me, HTError e)
     free(me);
   }
 }
-// 813254B: conditional instruction was optimized away because of '%me.4!=0'
+// 813254B: conditional instruction was optimized away because %me.4!=0
 
 //----- (08132561) --------------------------------------------------------
 HTStream_6 *__cdecl HTMIMEConvert(HTPresentation *pres, HTParentAnchor *anchor, HTStream_6 *sink)
@@ -147342,15 +146994,15 @@ HTStream_6 *__cdecl HTNetMIME(HTPresentation *pres, HTParentAnchor *anchor, HTSt
 //----- (08132A73) --------------------------------------------------------
 HTStream_6 *__cdecl HTMIMERedirect(HTPresentation *pres, HTParentAnchor *anchor, HTStream_6 *sink)
 {
-  HTAtom *v3; // ebx
+  HTAtom *targetRep; // ebx
   HTStream_6 *me; // [esp+20h] [ebp-8h]
 
   me = HTMIMEConvert(pres, anchor, sink);
   if ( !me )
     return 0;
   me->pickup_redirection = 1;
-  v3 = me->targetRep;
-  if ( v3 == HTAtom_for("www/debug") && sink )
+  targetRep = me->targetRep;
+  if ( targetRep == HTAtom_for("www/debug") && sink )
     me->no_streamstack = 1;
   return me;
 }
@@ -147464,7 +147116,7 @@ void __cdecl HTmmdec_quote(char **t, char *s)
   HTSACopy(t, buf);
   free(buf);
 }
-// 8132E12: conditional instruction was optimized away because of '%buf.4!=0'
+// 8132E12: conditional instruction was optimized away because %buf.4!=0
 
 //----- (08132E28) --------------------------------------------------------
 void __cdecl HTmmdecode(char **target, char *source)
@@ -147550,7 +147202,6 @@ end:
 int __cdecl HTrjis(char **t, char *s)
 {
   size_t v2; // eax
-  int v4; // [esp+14h] [ebp-14h]
   int kanji; // [esp+1Ch] [ebp-Ch]
   char *buf; // [esp+20h] [ebp-8h]
   char *p; // [esp+24h] [ebp-4h]
@@ -147604,17 +147255,16 @@ int __cdecl HTrjis(char **t, char *s)
     *p = *s;
     HTSACopy(t, buf);
     free(buf);
-    v4 = 0;
+    return 0;
   }
   else
   {
     if ( *t != s )
       HTSACopy(t, s);
-    v4 = 1;
+    return 1;
   }
-  return v4;
 }
-// 81332D6: conditional instruction was optimized away because of '%buf.4!=0'
+// 81332D6: conditional instruction was optimized away because %buf.4!=0
 
 //----- (081332F6) --------------------------------------------------------
 int __cdecl HTmaybekanji(int c1, int c2)
@@ -147748,7 +147398,7 @@ LABEL_55:
 //----- (081334DC) --------------------------------------------------------
 void free_NNTP_AuthInfo()
 {
-  void **v0; // [esp+4h] [ebp-14h]
+  void **object; // [esp+4h] [ebp-14h]
   HTList *cur; // [esp+14h] [ebp-4h]
 
   cur = NNTP_AuthInfo;
@@ -147757,33 +147407,33 @@ void free_NNTP_AuthInfo()
     while ( 1 )
     {
       if ( cur && (cur = cur->next) != 0 )
-        v0 = (void **)cur->object;
+        object = (void **)cur->object;
       else
-        v0 = 0;
-      if ( !v0 )
+        object = 0;
+      if ( !object )
         break;
-      if ( *v0 )
+      if ( *object )
       {
-        free(*v0);
-        *v0 = 0;
+        free(*object);
+        *object = 0;
       }
-      if ( v0[1] )
+      if ( object[1] )
       {
-        free(v0[1]);
-        v0[1] = 0;
+        free(object[1]);
+        object[1] = 0;
       }
-      if ( v0[2] )
+      if ( object[2] )
       {
-        free(v0[2]);
-        v0[2] = 0;
+        free(object[2]);
+        object[2] = 0;
       }
-      free(v0);
+      free(object);
     }
     HTList_delete(NNTP_AuthInfo);
     NNTP_AuthInfo = 0;
   }
 }
-// 8133564: conditional instruction was optimized away because of '%var_14.4!=0'
+// 8133564: conditional instruction was optimized away because %var_14.4!=0
 
 //----- (081335C7) --------------------------------------------------------
 void load_NNTP_AuthInfo()
@@ -147896,9 +147546,8 @@ int __cdecl response_0(char *command)
   FILE *v6; // eax
   int v7; // ebx
   FILE *v8; // eax
-  int v10; // [esp+10h] [ebp-28h]
   int length; // [esp+20h] [ebp-18h]
-  int status; // [esp+24h] [ebp-14h]
+  ssize_t status; // [esp+24h] [ebp-14h]
   int ich; // [esp+28h] [ebp-10h]
   char *p; // [esp+2Ch] [ebp-Ch]
   int result; // [esp+30h] [ebp-8h] BYREF
@@ -147922,7 +147571,7 @@ int __cdecl response_0(char *command)
     }
     close(s);
     s = -1;
-    v10 = status;
+    return status;
   }
   else
   {
@@ -147966,14 +147615,13 @@ LABEL_13:
     if ( interrupted_in_htgetcharacter )
     {
       interrupted_in_htgetcharacter = 0;
-      v10 = -29998;
+      return -29998;
     }
     else
     {
-      v10 = -1;
+      return -1;
     }
   }
-  return v10;
 }
 
 //----- (08133AF4) --------------------------------------------------------
@@ -148004,7 +147652,7 @@ NNTPAuthResult __cdecl HTHandleAuthInfo(char *host)
   char *v7; // eax
   char *v8; // eax
   char *v9; // eax
-  NNTPAuth *v12; // [esp+20h] [ebp-228h]
+  NNTPAuth *object; // [esp+20h] [ebp-228h]
   int tries; // [esp+28h] [ebp-220h]
   int triesa; // [esp+28h] [ebp-220h]
   int status; // [esp+2Ch] [ebp-21Ch]
@@ -148034,11 +147682,11 @@ NNTPAuthResult __cdecl HTHandleAuthInfo(char *host)
   while ( 1 )
   {
     if ( cur && (cur = cur->next) != 0 )
-      v12 = (NNTPAuth *)cur->object;
+      object = (NNTPAuth *)cur->object;
     else
-      v12 = 0;
-    auth = v12;
-    if ( !v12 )
+      object = 0;
+    auth = object;
+    if ( !object )
       break;
     if ( !strcmp(auth->host, host) )
     {
@@ -148352,9 +148000,9 @@ NNTPAuthResult __cdecl HTHandleAuthInfo(char *host)
   }
   return 0;
 }
-// 81340E8: conditional instruction was optimized away because of '%tries.4>=1'
-// 81340F8: conditional instruction was optimized away because of '%status.4==17D'
-// 81346AE: conditional instruction was optimized away because of '%tries.4>=1'
+// 81340E8: conditional instruction was optimized away because %tries.4>=1
+// 81340F8: conditional instruction was optimized away because %status.4==17D
+// 81346AE: conditional instruction was optimized away because %tries.4>=1
 
 //----- (081346D7) --------------------------------------------------------
 char *__cdecl author_name(char *email)
@@ -148363,7 +148011,6 @@ char *__cdecl author_name(char *email)
   FILE *v2; // eax
   bool v3; // al
   bool v4; // al
-  char *v6; // [esp+10h] [ebp-18h]
   char *e; // [esp+1Ch] [ebp-Ch]
   char *ea; // [esp+1Ch] [ebp-Ch]
   char *eb; // [esp+1Ch] [ebp-Ch]
@@ -148381,7 +148028,7 @@ char *__cdecl author_name(char *email)
   if ( p && (e = strrchr(name, 41)) != 0 && e > p )
   {
     *e = 0;
-    v6 = HTStrip(p + 1);
+    return HTStrip(p + 1);
   }
   else
   {
@@ -148405,9 +148052,8 @@ char *__cdecl author_name(char *email)
         }
       }
     }
-    v6 = HTStrip(name);
+    return HTStrip(name);
   }
-  return v6;
 }
 
 //----- (08134817) --------------------------------------------------------
@@ -148415,7 +148061,6 @@ char *__cdecl author_address(char *email)
 {
   const char *v1; // ebx
   FILE *v2; // eax
-  char *v4; // [esp+10h] [ebp-18h]
   char *e; // [esp+18h] [ebp-10h]
   char *ea; // [esp+18h] [ebp-10h]
   char *eb; // [esp+18h] [ebp-10h]
@@ -148439,7 +148084,7 @@ char *__cdecl author_address(char *email)
   if ( p && (e = strrchr(p, 62)) != 0 && (at = strrchr(p, 64)) != 0 && at < e )
   {
     *e = 0;
-    v4 = HTStrip(p + 1);
+    return HTStrip(p + 1);
   }
   else
   {
@@ -148447,7 +148092,7 @@ char *__cdecl author_address(char *email)
     if ( pa && (ea = strrchr(address, 41)) != 0 && (ata = strchr(address, 64)) != 0 && ea > pa && ata < ea )
     {
       *pa = 0;
-      v4 = HTStrip(address);
+      return HTStrip(address);
     }
     else
     {
@@ -148461,7 +148106,7 @@ char *__cdecl author_address(char *email)
         while ( *eb && ((*__ctype_b_loc())[(unsigned __int8)*eb] & 0x2000) == 0 )
           ++eb;
         *eb = 0;
-        v4 = HTStrip(pb);
+        return HTStrip(pb);
       }
       else
       {
@@ -148470,11 +148115,10 @@ char *__cdecl author_address(char *email)
         for ( ec = pc; ((*__ctype_b_loc())[(unsigned __int8)*ec] & 0x2000) == 0 && *ec; ++ec )
           ;
         *ec = 0;
-        v4 = pc;
+        return pc;
       }
     }
   }
-  return v4;
 }
 
 //----- (08134A9D) --------------------------------------------------------
@@ -148747,14 +148391,11 @@ LABEL_24:
 //----- (0813550D) --------------------------------------------------------
 char *__cdecl decode_mime(char **str)
 {
-  char *v2; // [esp+14h] [ebp-4h]
-
   HTmmdecode(str, *str);
   if ( HTrjis(str, *str) )
-    v2 = *str;
+    return *str;
   else
-    v2 = empty_11029;
-  return v2;
+    return empty_11029;
 }
 
 //----- (08135555) --------------------------------------------------------
@@ -148780,7 +148421,7 @@ int __cdecl read_article(HTParentAnchor *thisanchor)
   char *v18; // eax
   char *v19; // eax
   char *v20; // eax
-  void (*v21)(HTStructured *, const char *); // ebx
+  void (*put_string)(HTStructured *, const char *); // ebx
   char *v22; // eax
   int v23; // ebx
   FILE *v24; // eax
@@ -148791,7 +148432,6 @@ int __cdecl read_article(HTParentAnchor *thisanchor)
   char v29; // dl
   char *v30; // eax
   char v31; // dl
-  int v33; // [esp+20h] [ebp-288h]
   char *email; // [esp+24h] [ebp-284h]
   const char *s; // [esp+2Ch] [ebp-27Ch]
   char *at; // [esp+40h] [ebp-268h]
@@ -149010,12 +148650,12 @@ LABEL_260:
       }
       close(::s);
       ::s = -1;
-      v33 = -29998;
+      return -29998;
     }
     else
     {
       abort_socket();
-      v33 = 200;
+      return 200;
     }
   }
   else
@@ -149138,12 +148778,12 @@ LABEL_50:
               targetClass.end_element((HTStructured *)target, 8, 0);
               targetClass.put_character((HTStructured *)target, 32);
               start_anchor(href);
-              v21 = targetClass.put_string;
+              put_string = targetClass.put_string;
               if ( *replyto == 60 )
                 v22 = author_address(replyto);
               else
                 v22 = author_name(replyto);
-              v21((HTStructured *)target, v22);
+              put_string((HTStructured *)target, v22);
               targetClass.end_element((HTStructured *)target, 0, 0);
               targetClass.start_element((HTStructured *)target, 20, 0, 0, -1, 0);
               if ( HTML_dtd.tags[37].contents )
@@ -149436,19 +149076,18 @@ LABEL_50:
       }
       close(::s);
       ::s = -1;
-      v33 = -29998;
+      return -29998;
     }
     else
     {
       abort_socket();
-      v33 = 200;
+      return 200;
     }
   }
-  return v33;
 }
-// 8135F16: conditional instruction was optimized away because of '%subject.4!=0'
-// 813662F: conditional instruction was optimized away because of '%newsgroups.4!=0'
-// 81366C5: conditional instruction was optimized away because of '%followupto.4!=0'
+// 8135F16: conditional instruction was optimized away because %subject.4!=0
+// 813662F: conditional instruction was optimized away because %newsgroups.4!=0
+// 81366C5: conditional instruction was optimized away because %followupto.4!=0
 
 //----- (08137C00) --------------------------------------------------------
 int __cdecl read_list(char *arg)
@@ -149461,7 +149100,6 @@ int __cdecl read_list(char *arg)
   FILE *v6; // eax
   FILE *v7; // eax
   char *v8; // eax
-  int v10; // [esp+1Ch] [ebp-23Ch]
   char *msg; // [esp+2Ch] [ebp-22Ch] BYREF
   int i; // [esp+30h] [ebp-228h]
   int ich; // [esp+34h] [ebp-224h]
@@ -149680,7 +149318,7 @@ LABEL_72:
     }
     close(s);
     s = -1;
-    v10 = -29998;
+    return -29998;
   }
   else
   {
@@ -149690,9 +149328,8 @@ LABEL_72:
       free(pattern);
       pattern = 0;
     }
-    v10 = 200;
+    return 200;
   }
-  return v10;
 }
 
 //----- (08138713) --------------------------------------------------------
@@ -149702,7 +149339,7 @@ int __cdecl read_group(const char *groupName, int first_required, int last_requi
   int v4; // esi
   int v5; // edi
   FILE *v6; // edx
-  void (*v7)(HTStructured *, const char *); // ebx
+  void (*put_string)(HTStructured *, const char *); // ebx
   char *v8; // eax
   void (*v9)(HTStructured *, const char *); // ebx
   char *v10; // eax
@@ -149790,9 +149427,9 @@ int __cdecl read_group(const char *groupName, int first_required, int last_requi
   }
   if ( !last )
   {
-    v7 = targetClass.put_string;
+    put_string = targetClass.put_string;
     v8 = gettext("\nNo articles in this group.\n");
-    v7((HTStructured *)target, v8);
+    put_string((HTStructured *)target, v8);
 add_post:
     if ( HTCanPost )
     {
@@ -150131,7 +149768,7 @@ int __cdecl HTLoadNews(const char *arg, HTParentAnchor *anAnchor, HTFormat forma
   size_t v11; // eax
   HTAtom *v12; // edx
   char *v13; // eax
-  const HTStreamClass *v14; // edx
+  const HTStreamClass *isa; // edx
   const HTStructuredClass *v15; // edx
   FILE *v16; // eax
   char *v17; // eax
@@ -150686,13 +150323,13 @@ LABEL_230:
       HTAlert(v13);
       return -29999;
     }
-    v14 = rawtarget->isa;
+    isa = rawtarget->isa;
     rawtargetClass.name = rawtarget->isa->name;
-    rawtargetClass._free = v14->_free;
-    rawtargetClass._abort = v14->_abort;
-    rawtargetClass.put_character = v14->put_character;
-    rawtargetClass.put_string = v14->put_string;
-    rawtargetClass.put_block = v14->put_block;
+    rawtargetClass._free = isa->_free;
+    rawtargetClass._abort = isa->_abort;
+    rawtargetClass.put_character = isa->put_character;
+    rawtargetClass.put_string = isa->put_string;
+    rawtargetClass.put_block = isa->put_block;
   }
   else if ( !post_wanted && !reply_wanted && !spost_wanted && !sreply_wanted )
   {
@@ -151316,13 +150953,13 @@ LABEL_500:
   }
   return status;
 }
-// 813B66A: conditional instruction was optimized away because of '%postfile.4!=0'
-// 813B831: conditional instruction was optimized away because of '%postfile.4!=0'
-// 813BAA2: conditional instruction was optimized away because of '%postfile.4!=0'
-// 813BD70: conditional instruction was optimized away because of '%postfile.4!=0'
-// 813BEA6: conditional instruction was optimized away because of '%postfile.4!=0'
-// 813C7B9: conditional instruction was optimized away because of '%postfile.4!=0'
-// 813C91D: conditional instruction was optimized away because of '%postfile.4!=0'
+// 813B66A: conditional instruction was optimized away because %postfile.4!=0
+// 813B831: conditional instruction was optimized away because %postfile.4!=0
+// 813BAA2: conditional instruction was optimized away because %postfile.4!=0
+// 813BD70: conditional instruction was optimized away because %postfile.4!=0
+// 813BEA6: conditional instruction was optimized away because %postfile.4!=0
+// 813C7B9: conditional instruction was optimized away because %postfile.4!=0
+// 813C91D: conditional instruction was optimized away because %postfile.4!=0
 
 //----- (0813C961) --------------------------------------------------------
 void HTClearNNTPAuthInfo()
@@ -151347,17 +150984,14 @@ void init_acceptable()
 //----- (0813C9C6) --------------------------------------------------------
 char __cdecl from_hex_0(char c)
 {
-  char v4; // [esp+3h] [ebp-5h]
-
   if ( c > 47 && c <= 57 )
     return c - 48;
   if ( c > 64 && c <= 70 )
     return c - 55;
   if ( c <= 96 || c > 102 )
-    v4 = 0;
+    return 0;
   else
-    v4 = c - 87;
-  return v4;
+    return c - 87;
 }
 
 //----- (0813CA32) --------------------------------------------------------
@@ -151390,7 +151024,7 @@ void __cdecl write_anchor_0(const char *text, const char *addr)
 //----- (0813CB5A) --------------------------------------------------------
 void __cdecl parse_menu(const char *arg, HTParentAnchor *anAnchor)
 {
-  void (*v2)(HTStructured *, const char *); // ebx
+  void (*put_string)(HTStructured *, const char *); // ebx
   char *v3; // eax
   void (*v4)(HTStructured *, const char *); // ebx
   char *v5; // eax
@@ -151436,9 +151070,9 @@ void __cdecl parse_menu(const char *arg, HTParentAnchor *anAnchor)
   }
   else
   {
-    v2 = targetClass_0.put_string;
+    put_string = targetClass_0.put_string;
     v3 = gettext("Gopher Menu");
-    v2((HTStructured *)target_0, v3);
+    put_string((HTStructured *)target_0, v3);
   }
   targetClass_0.end_element((HTStructured *)target_0, 110, 0);
   targetClass_0.put_character((HTStructured *)target_0, 10);
@@ -151662,7 +151296,7 @@ void __cdecl parse_menu(const char *arg, HTParentAnchor *anAnchor)
 //----- (0813D7F3) --------------------------------------------------------
 void __cdecl parse_cso(const char *arg, HTParentAnchor *anAnchor)
 {
-  void (*v2)(HTStructured *, const char *); // ebx
+  void (*put_string)(HTStructured *, const char *); // ebx
   char *v3; // eax
   void (*v4)(HTStructured *, const char *); // ebx
   char *v5; // eax
@@ -151689,9 +151323,9 @@ void __cdecl parse_cso(const char *arg, HTParentAnchor *anAnchor)
   }
   else
   {
-    v2 = targetClass_0.put_string;
+    put_string = targetClass_0.put_string;
     v3 = gettext("CSO Search Results");
-    v2((HTStructured *)target_0, v3);
+    put_string((HTStructured *)target_0, v3);
   }
   targetClass_0.end_element((HTStructured *)target_0, 110, 0);
   targetClass_0.put_character((HTStructured *)target_0, 10);
@@ -151772,7 +151406,7 @@ LABEL_24:
 //----- (0813DDAC) --------------------------------------------------------
 void __cdecl display_cso(const char *arg, HTParentAnchor *anAnchor)
 {
-  void (*v2)(HTStructured *, const char *); // ebx
+  void (*put_string)(HTStructured *, const char *); // ebx
   char *v3; // eax
   void (*v4)(HTStructured *, const char *); // ebx
   char *v5; // eax
@@ -151797,9 +151431,9 @@ void __cdecl display_cso(const char *arg, HTParentAnchor *anAnchor)
   }
   else
   {
-    v2 = targetClass_0.put_string;
+    put_string = targetClass_0.put_string;
     v3 = gettext("CSO index");
-    v2((HTStructured *)target_0, v3);
+    put_string((HTStructured *)target_0, v3);
   }
   targetClass_0.end_element((HTStructured *)target_0, 110, 0);
   targetClass_0.put_character((HTStructured *)target_0, 10);
@@ -151843,7 +151477,7 @@ void __cdecl display_cso(const char *arg, HTParentAnchor *anAnchor)
 //----- (0813E134) --------------------------------------------------------
 void __cdecl display_index(const char *arg, HTParentAnchor *anAnchor)
 {
-  void (*v2)(HTStructured *, const char *); // ebx
+  void (*put_string)(HTStructured *, const char *); // ebx
   char *v3; // eax
   void (*v4)(HTStructured *, const char *); // ebx
   char *v5; // eax
@@ -151865,9 +151499,9 @@ void __cdecl display_index(const char *arg, HTParentAnchor *anAnchor)
   }
   else
   {
-    v2 = targetClass_0.put_string;
+    put_string = targetClass_0.put_string;
     v3 = gettext("Gopher index");
-    v2((HTStructured *)target_0, v3);
+    put_string((HTStructured *)target_0, v3);
   }
   targetClass_0.end_element((HTStructured *)target_0, 110, 0);
   targetClass_0.put_character((HTStructured *)target_0, 10);
@@ -151963,17 +151597,17 @@ void free_CSOfields()
     free(prev);
   }
 }
-// 813E5DD: conditional instruction was optimized away because of '%prev.4!=0'
+// 813E5DD: conditional instruction was optimized away because %prev.4!=0
 
 //----- (0813E5FD) --------------------------------------------------------
 void __cdecl interpret_cso_key(const char *key, char *buf, int *length, CSOformgen_context *ctx, HTStream *Target)
 {
-  void (*v5)(HTStream *, const char *, int); // ebx
+  void (*put_block)(HTStream *, const char *, int); // ebx
   size_t v6; // [esp+8h] [ebp-40h]
   char *src; // [esp+1Ch] [ebp-2Ch]
   char *v8; // [esp+20h] [ebp-28h]
-  int v9; // [esp+28h] [ebp-20h]
-  int v10; // [esp+2Ch] [ebp-1Ch]
+  int max_size; // [esp+28h] [ebp-20h]
+  int field_select; // [esp+2Ch] [ebp-1Ch]
   int v11; // [esp+30h] [ebp-18h]
   size_t out; // [esp+38h] [ebp-10h]
   int error; // [esp+3Ch] [ebp-Ch]
@@ -151995,20 +151629,20 @@ void __cdecl interpret_cso_key(const char *key, char *buf, int *length, CSOformg
     }
     else if ( !strncmp(key, "$(FDEF)", 7u) )
     {
-      src = fld->defreturn ? " checked" : &byte_818FA9B;
+      src = fld->defreturn ? " checked" : (char *)&byte_818FA9B;
       strcpy(buf, src);
     }
     else if ( !strncmp(key, "$(FNDX)", 7u) )
     {
-      v8 = fld->indexed ? "*" : &byte_818FA9B;
+      v8 = fld->indexed ? "*" : (char *)&byte_818FA9B;
       strcpy(buf, v8);
     }
     else if ( !strncmp(key, "$(FSIZE)", 8u) )
     {
-      v9 = fld->max_size;
-      if ( v9 > 55 )
-        v9 = 55;
-      sprintf(buf, " size=%d maxlength=%d", v9, fld->max_size);
+      max_size = fld->max_size;
+      if ( max_size > 55 )
+        max_size = 55;
+      sprintf(buf, " size=%d maxlength=%d", max_size, fld->max_size);
     }
     else if ( !strncmp(key, "$(FSIZE2)", 9u) )
     {
@@ -152028,8 +151662,8 @@ void __cdecl interpret_cso_key(const char *key, char *buf, int *length, CSOformg
       flda = ctx->fld->next;
     else
       flda = CSOfields;
-    v10 = ctx->field_select;
-    switch ( v10 )
+    field_select = ctx->field_select;
+    switch ( field_select )
     {
       case 1:
         while ( flda && flda->lookup != 1 )
@@ -152100,9 +151734,9 @@ LABEL_73:
     if ( out > 2 )
     {
       buf[out] = 0;
-      v5 = Target->isa->put_block;
+      put_block = Target->isa->put_block;
       v6 = strlen(buf);
-      v5(Target, buf, v6);
+      put_block(Target, buf, v6);
       out = 0;
     }
   }
@@ -152296,8 +151930,8 @@ LABEL_46:
 //----- (0813F0CD) --------------------------------------------------------
 int __cdecl generate_cso_form(char *host, int port, char *buf, HTStream *Target)
 {
-  void (*v4)(HTStream *, const char *, int); // ebx
-  char *v5; // ebx
+  void (*put_block)(HTStream *, const char *, int); // ebx
+  char *seek; // ebx
   char *v6; // eax
   void (*v7)(HTStream *, const char *, int); // ebx
   bool v8; // cf
@@ -152338,9 +151972,9 @@ int __cdecl generate_cso_form(char *host, int port, char *buf, HTStream *Target)
         buf[out] = 0;
         if ( out )
         {
-          v4 = Target->isa->put_block;
+          put_block = Target->isa->put_block;
           v12 = strlen(buf);
-          v4(Target, buf, v12);
+          put_block(Target, buf, v12);
         }
         out = 0;
         key = &line[j];
@@ -152381,9 +152015,9 @@ int __cdecl generate_cso_form(char *host, int port, char *buf, HTStream *Target)
           if ( ctx.seek )
           {
             temp = 0;
-            v5 = ctx.seek;
+            seek = ctx.seek;
             v6 = gettext("Seek fail on %s\n");
-            HTSprintf0(&temp, v6, v5);
+            HTSprintf0(&temp, v6, seek);
             v7 = Target->isa->put_block;
             v13 = strlen(temp);
             v7(Target, temp, v13);
@@ -152426,7 +152060,7 @@ int __cdecl generate_cso_report(HTStream *Target)
 {
   FILE *v1; // eax
   char *v2; // eax
-  void (*v3)(HTStream *, const char *, int); // ebx
+  void (*put_block)(HTStream *, const char *, int); // ebx
   void (*v4)(HTStream *, const char *, int); // ebx
   void (*v5)(HTStream *, const char *, int); // ebx
   void (*v6)(HTStream *, const char *, int); // ebx
@@ -152529,9 +152163,9 @@ int __cdecl generate_cso_report(HTStream *Target)
           if ( prev_ndx != -100 )
           {
             HTSprintf0(&buf, "</DL></DL>\n");
-            v3 = Target->isa->put_block;
+            put_block = Target->isa->put_block;
             v19 = strlen(buf);
-            v3(Target, buf, v19);
+            put_block(Target, buf, v19);
           }
           if ( ndx )
             HTSprintf0(&buf, "<HR><DL><DT>Entry %d:<DD><DL COMPACT><DT>\n", ndx);
@@ -152763,10 +152397,10 @@ int __cdecl HTLoadCSO(const char *arg, HTParentAnchor *anAnchor, HTFormat format
   char *v13; // eax
   char *v14; // eax
   char *v15; // eax
-  char *v16; // esi
+  char *name; // esi
   char *v17; // ebx
   char *v18; // eax
-  void (*v19)(HTStream *, const char *, int); // ebx
+  void (*put_block)(HTStream *, const char *, int); // ebx
   size_t v20; // eax
   void (*v21)(HTStream *, const char *, int); // ebx
   size_t v22; // eax
@@ -152780,9 +152414,8 @@ int __cdecl HTLoadCSO(const char *arg, HTParentAnchor *anAnchor, HTFormat format
   int v30; // ebx
   FILE *v31; // eax
   FILE *v32; // eax
-  int v34; // [esp+14h] [ebp-8C4h]
   int n; // [esp+18h] [ebp-8C0h]
-  char *v36; // [esp+1Ch] [ebp-8BCh]
+  char *str; // [esp+1Ch] [ebp-8BCh]
   int v37; // [esp+24h] [ebp-8B4h]
   char *v38; // [esp+28h] [ebp-8B0h]
   int v39; // [esp+2Ch] [ebp-8ACh]
@@ -152848,7 +152481,7 @@ int __cdecl HTLoadCSO(const char *arg, HTParentAnchor *anAnchor, HTFormat format
     mustshow[0] = 1;
     v6 = gettext("Connection interrupted.");
     HTProgress(v6);
-    v34 = -29999;
+    return -29999;
   }
   else if ( status >= 0 )
   {
@@ -152874,10 +152507,10 @@ int __cdecl HTLoadCSO(const char *arg, HTParentAnchor *anAnchor, HTFormat format
     else
       n = 0;
     if ( command )
-      v36 = command->str;
+      str = command->str;
     else
-      v36 = 0;
-    status = write(s_0, v36, n);
+      str = 0;
+    status = write(s_0, str, n);
     HTSABFree(&command);
     if ( status >= 0 )
     {
@@ -152903,7 +152536,7 @@ int __cdecl HTLoadCSO(const char *arg, HTParentAnchor *anAnchor, HTFormat format
           v15 = gettext("No response from server!");
           HTAlert(v15);
         }
-        v34 = -29999;
+        return -29999;
       }
       else
       {
@@ -153024,9 +152657,9 @@ int __cdecl HTLoadCSO(const char *arg, HTParentAnchor *anAnchor, HTFormat format
                               else
                               {
                                 memcpy(buf, "Warning: non-lookup field ignored<BR>\n", 0x27u);
-                                v19 = Target->isa->put_block;
+                                put_block = Target->isa->put_block;
                                 v20 = strlen(buf);
-                                v19(Target, buf, v20);
+                                put_block(Target, buf, v20);
                               }
                             }
                             else if ( data[start] == 114 )
@@ -153122,7 +152755,7 @@ int __cdecl HTLoadCSO(const char *arg, HTParentAnchor *anAnchor, HTFormat format
                   host = 0;
                 }
                 free_CSOfields();
-                v34 = 200;
+                return 200;
               }
               else
               {
@@ -153132,7 +152765,7 @@ int __cdecl HTLoadCSO(const char *arg, HTParentAnchor *anAnchor, HTFormat format
                   fprintf(v32, "HTLoadCSO: Unable to send command.\n");
                 }
                 free_CSOfields();
-                v34 = HTInetStatus("send");
+                return HTInetStatus("send");
               }
             }
             else
@@ -153148,7 +152781,7 @@ int __cdecl HTLoadCSO(const char *arg, HTParentAnchor *anAnchor, HTFormat format
               v23(Target, buf, v24);
               Target->isa->_free(Target);
               free_CSOfields();
-              v34 = 200;
+              return 200;
             }
           }
           else
@@ -153162,16 +152795,16 @@ int __cdecl HTLoadCSO(const char *arg, HTParentAnchor *anAnchor, HTFormat format
             }
             close(s_0);
             free_CSOfields();
-            v34 = 200;
+            return 200;
           }
         }
         else
         {
           temp = 0;
-          v16 = format_out->name;
+          name = format_out->name;
           v17 = format_in->name;
           v18 = gettext("Sorry, no known way of converting %s to %s.");
-          HTSprintf0(&temp, v18, v17, v16);
+          HTSprintf0(&temp, v18, v17, name);
           HTAlert(temp);
           if ( temp )
           {
@@ -153179,7 +152812,7 @@ int __cdecl HTLoadCSO(const char *arg, HTParentAnchor *anAnchor, HTFormat format
             temp = 0;
           }
           close(s_0);
-          v34 = -29999;
+          return -29999;
         }
       }
     }
@@ -153190,7 +152823,7 @@ int __cdecl HTLoadCSO(const char *arg, HTParentAnchor *anAnchor, HTFormat format
         v12 = TraceFP();
         fprintf(v12, "HTLoadCSO: Unable to send command.\n");
       }
-      v34 = HTInetStatus("send");
+      return HTInetStatus("send");
     }
   }
   else
@@ -153200,12 +152833,11 @@ int __cdecl HTLoadCSO(const char *arg, HTParentAnchor *anAnchor, HTFormat format
       v7 = TraceFP();
       fprintf(v7, "HTLoadCSO: Unable to connect to remote host for `%s'.\n", arg);
     }
-    v34 = HTInetStatus("connect");
+    return HTInetStatus("connect");
   }
-  return v34;
 }
-// 8140EB9: conditional instruction was optimized away because of '%command.4!=0'
-// 81410B6: conditional instruction was optimized away because of '%command.4!=0'
+// 8140EB9: conditional instruction was optimized away because %command.4!=0
+// 81410B6: conditional instruction was optimized away because %command.4!=0
 
 //----- (08141554) --------------------------------------------------------
 int __cdecl HTLoadGopher(const char *arg, HTParentAnchor *anAnchor, HTFormat format_out, HTStream *sink)
@@ -153213,7 +152845,7 @@ int __cdecl HTLoadGopher(const char *arg, HTParentAnchor *anAnchor, HTFormat for
   FILE *v4; // eax
   FILE *v5; // eax
   FILE *v6; // eax
-  const HTStructuredClass *v7; // edx
+  const HTStructuredClass *isa; // edx
   size_t v8; // ebx
   size_t v9; // eax
   size_t v10; // eax
@@ -153248,7 +152880,6 @@ int __cdecl HTLoadGopher(const char *arg, HTParentAnchor *anAnchor, HTFormat for
   int v39; // ebx
   HTAtom *v40; // edx
   size_t v42; // [esp+8h] [ebp-50h]
-  int v43; // [esp+20h] [ebp-38h]
   char *p_0; // [esp+2Ch] [ebp-2Ch]
   char *query_0; // [esp+30h] [ebp-28h]
   char *query_0a; // [esp+30h] [ebp-28h]
@@ -153282,7 +152913,7 @@ int __cdecl HTLoadGopher(const char *arg, HTParentAnchor *anAnchor, HTFormat for
       v5 = TraceFP();
       fprintf(v5, "HTGopher: Passing to CSO/PH gateway.\n");
     }
-    v43 = HTLoadCSO(arg, anAnchor, format_out, sink);
+    return HTLoadCSO(arg, anAnchor, format_out, sink);
   }
   else if ( strstr(arg, ":79/0") )
   {
@@ -153291,7 +152922,7 @@ int __cdecl HTLoadGopher(const char *arg, HTParentAnchor *anAnchor, HTFormat for
       v6 = TraceFP();
       fprintf(v6, "HTGopher: Passing to finger gateway.\n");
     }
-    v43 = HTLoadFinger(arg, anAnchor, format_out, sink);
+    return HTLoadFinger(arg, anAnchor, format_out, sink);
   }
   else
   {
@@ -153310,16 +152941,16 @@ int __cdecl HTLoadGopher(const char *arg, HTParentAnchor *anAnchor, HTFormat for
       if ( !query || !query[1] )
       {
         target_0 = (HTStructured_1 *)HTML_new(anAnchor, format_out, (HTStream_0 *)sink);
-        v7 = target_0->isa;
+        isa = target_0->isa;
         targetClass_0.name = target_0->isa->name;
-        targetClass_0._free = v7->_free;
-        targetClass_0._abort = v7->_abort;
-        targetClass_0.put_character = v7->put_character;
-        targetClass_0.put_string = v7->put_string;
-        targetClass_0.put_block = v7->put_block;
-        targetClass_0.start_element = v7->start_element;
-        targetClass_0.end_element = v7->end_element;
-        targetClass_0.put_entity = v7->put_entity;
+        targetClass_0._free = isa->_free;
+        targetClass_0._abort = isa->_abort;
+        targetClass_0.put_character = isa->put_character;
+        targetClass_0.put_string = isa->put_string;
+        targetClass_0.put_block = isa->put_block;
+        targetClass_0.start_element = isa->start_element;
+        targetClass_0.end_element = isa->end_element;
+        targetClass_0.put_entity = isa->put_entity;
         display_index(arg, anAnchor);
         return 200;
       }
@@ -153403,7 +153034,7 @@ int __cdecl HTLoadGopher(const char *arg, HTParentAnchor *anAnchor, HTFormat for
       v18 = gettext("Connection interrupted.");
       HTProgress(v18);
       free(command);
-      v43 = -29999;
+      return -29999;
     }
     else if ( status >= 0 )
     {
@@ -153497,7 +153128,7 @@ int __cdecl HTLoadGopher(const char *arg, HTParentAnchor *anAnchor, HTFormat for
             break;
         }
         close(s_0);
-        v43 = 200;
+        return 200;
       }
       else
       {
@@ -153506,7 +153137,7 @@ int __cdecl HTLoadGopher(const char *arg, HTParentAnchor *anAnchor, HTFormat for
           v23 = TraceFP();
           fprintf(v23, "HTGopher: Unable to send command.\n");
         }
-        v43 = HTInetStatus("send");
+        return HTInetStatus("send");
       }
     }
     else
@@ -153517,14 +153148,13 @@ int __cdecl HTLoadGopher(const char *arg, HTParentAnchor *anAnchor, HTFormat for
         fprintf(v19, "HTGopher: Unable to connect to remote host for `%s'.\n", arg);
       }
       free(command);
-      v43 = HTInetStatus("connect");
+      return HTInetStatus("connect");
     }
   }
-  return v43;
 }
-// 8141B12: conditional instruction was optimized away because of '%command.4!=0'
-// 8141B65: conditional instruction was optimized away because of '%command.4!=0'
-// 8141C15: conditional instruction was optimized away because of '%command.4!=0'
+// 8141B12: conditional instruction was optimized away because %command.4!=0
+// 8141B65: conditional instruction was optimized away because %command.4!=0
+// 8141C15: conditional instruction was optimized away because %command.4!=0
 
 //----- (08141F50) --------------------------------------------------------
 void __cdecl do_system(char *command)
@@ -153542,7 +153172,7 @@ void __cdecl do_system(char *command)
     free(command);
   }
 }
-// 8141FA0: conditional instruction was optimized away because of '%command.4!=0'
+// 8141FA0: conditional instruction was optimized away because %command.4!=0
 
 //----- (08141FB6) --------------------------------------------------------
 int __cdecl remote_session(char *acc_method, char *host)
@@ -153721,7 +153351,6 @@ int __cdecl HTLoadTelnet(const char *addr, HTParentAnchor *anchor, HTFormat form
 {
   FILE *v4; // eax
   FILE *v5; // eax
-  int v7; // [esp+14h] [ebp-14h]
   int status; // [esp+1Ch] [ebp-Ch]
   char *host; // [esp+20h] [ebp-8h]
   char *acc_method; // [esp+24h] [ebp-4h]
@@ -153733,7 +153362,7 @@ int __cdecl HTLoadTelnet(const char *addr, HTParentAnchor *anchor, HTFormat form
       v4 = TraceFP();
       fprintf(v4, "HTTelnet: Can't output a live session -- must be interactive!\n");
     }
-    v7 = -204;
+    return -204;
   }
   else
   {
@@ -153756,9 +153385,8 @@ int __cdecl HTLoadTelnet(const char *addr, HTParentAnchor *anchor, HTFormat form
       free(host);
     if ( acc_method )
       free(acc_method);
-    v7 = status;
+    return status;
   }
-  return v7;
 }
 
 //----- (081426D0) --------------------------------------------------------
@@ -153788,14 +153416,13 @@ int __cdecl response_1(char *command, char *sitename, HTParentAnchor *anAnchor, 
 {
   FILE *v5; // edx
   FILE *v6; // eax
-  const HTStructuredClass *v7; // edx
+  const HTStructuredClass *isa; // edx
   FILE *v8; // eax
   FILE *v9; // eax
   char *v10; // eax
   char v11; // dl
   char *v12; // eax
   char v13; // dl
-  int v15; // [esp+20h] [ebp-448h]
   char *href; // [esp+44h] [ebp-424h] BYREF
   char *p; // [esp+48h] [ebp-420h]
   char *cmd; // [esp+4Ch] [ebp-41Ch] BYREF
@@ -153824,16 +153451,16 @@ int __cdecl response_1(char *command, char *sitename, HTParentAnchor *anAnchor, 
   if ( status >= 0 )
   {
     target_1 = (HTStructured_1 *)HTML_new(anAnchor, format_out, (HTStream_0 *)sink);
-    v7 = target_1->isa;
+    isa = target_1->isa;
     targetClass_1.name = target_1->isa->name;
-    targetClass_1._free = v7->_free;
-    targetClass_1._abort = v7->_abort;
-    targetClass_1.put_character = v7->put_character;
-    targetClass_1.put_string = v7->put_string;
-    targetClass_1.put_block = v7->put_block;
-    targetClass_1.start_element = v7->start_element;
-    targetClass_1.end_element = v7->end_element;
-    targetClass_1.put_entity = v7->put_entity;
+    targetClass_1._free = isa->_free;
+    targetClass_1._abort = isa->_abort;
+    targetClass_1.put_character = isa->put_character;
+    targetClass_1.put_string = isa->put_string;
+    targetClass_1.put_block = isa->put_block;
+    targetClass_1.start_element = isa->start_element;
+    targetClass_1.end_element = isa->end_element;
+    targetClass_1.put_entity = isa->put_entity;
     if ( WWW_TraceFlag[0] )
     {
       v8 = TraceFP();
@@ -153954,7 +153581,7 @@ end_html:
     targetClass_1.end_element((HTStructured *)target_1, 55, 0);
     targetClass_1.put_character((HTStructured *)target_1, 10);
     targetClass_1._free((HTStructured *)target_1);
-    v15 = 0;
+    return 0;
   }
   else
   {
@@ -153965,9 +153592,8 @@ end_html:
     }
     close(finger_fd);
     finger_fd = -1;
-    v15 = status;
+    return status;
   }
-  return v15;
 }
 
 //----- (0814327F) --------------------------------------------------------
@@ -154221,17 +153847,14 @@ LABEL_82:
 //----- (081439E8) --------------------------------------------------------
 char __cdecl from_hex_1(char c)
 {
-  char v4; // [esp+3h] [ebp-5h]
-
   if ( c > 47 && c <= 57 )
     return c - 48;
   if ( c > 64 && c <= 70 )
     return c - 55;
   if ( c <= 96 || c > 102 )
-    v4 = 0;
+    return 0;
   else
-    v4 = c - 87;
-  return v4;
+    return c - 87;
 }
 
 //----- (08143A54) --------------------------------------------------------
@@ -154239,7 +153862,7 @@ void __cdecl WSRCParser_put_character(HTStream_7 *me, char c)
 {
   int v2; // edx
   FILE *v3; // eax
-  int v4; // ecx
+  int param_count; // ecx
   int v5; // ecx
   int v6; // ecx
   int v7; // ecx
@@ -154268,9 +153891,9 @@ void __cdecl WSRCParser_put_character(HTStream_7 *me, char c)
       {
         if ( me->param_count <= 9999 )
         {
-          v4 = me->param_count;
-          me->param[v4] = c;
-          me->param_count = v4 + 1;
+          param_count = me->param_count;
+          me->param[param_count] = c;
+          me->param_count = param_count + 1;
         }
       }
       else
@@ -154374,12 +153997,12 @@ LABEL_40:
       return;
   }
 }
-// 8143C46: conditional instruction was optimized away because of '%c.1 in (==21|23..28|>=2Au)'
+// 8143C46: conditional instruction was optimized away because %c.1 is in (==21|23..28|>=2Au)
 
 //----- (08143E45) --------------------------------------------------------
 void __cdecl give_parameter(HTStream_7 *me, int p)
 {
-  void (*v2)(HTStructured *, const char *); // ebx
+  void (*put_string)(HTStructured *, const char *); // ebx
   char *v3; // eax
 
   me->target->isa->put_string((HTStructured *)me->target, par_name[p]);
@@ -154391,9 +154014,9 @@ void __cdecl give_parameter(HTStream_7 *me, int p)
   }
   else
   {
-    v2 = me->target->isa->put_string;
+    put_string = me->target->isa->put_string;
     v3 = gettext(" NOT GIVEN in source file; ");
-    v2((HTStructured *)me->target, v3);
+    put_string((HTStructured *)me->target, v3);
   }
 }
 
@@ -154410,7 +154033,7 @@ void __cdecl WSRC_gen_html(HTStream_7 *me, BOOLEAN source_file)
   char *v9; // eax
   void (*v10)(HTStructured *, const char *); // ebx
   char *v11; // eax
-  void (*v12)(HTStructured *, const char *); // [esp+28h] [ebp-30h]
+  void (*put_string)(HTStructured *, const char *); // [esp+28h] [ebp-30h]
   char *v13; // [esp+2Ch] [ebp-2Ch]
   void (*v14)(HTStructured *, const char *); // [esp+30h] [ebp-28h]
   char *v15; // [esp+34h] [ebp-24h]
@@ -154430,12 +154053,12 @@ void __cdecl WSRC_gen_html(HTStream_7 *me, BOOLEAN source_file)
     me->target->isa->put_character((HTStructured *)me->target, 10);
     me->target->isa->start_element((HTStructured *)me->target, 110, 0, 0, -1, 0);
     me->target->isa->put_string((HTStructured *)me->target, WSRC_address);
-    v12 = me->target->isa->put_string;
+    put_string = me->target->isa->put_string;
     if ( source_file )
       v13 = gettext(" WAIS source file");
     else
       v13 = gettext(" index");
-    v12((HTStructured *)me->target, v13);
+    put_string((HTStructured *)me->target, v13);
     me->target->isa->end_element((HTStructured *)me->target, 110, 0);
     me->target->isa->put_character((HTStructured *)me->target, 10);
     me->target->isa->end_element((HTStructured *)me->target, 53, 0);
@@ -154672,7 +154295,7 @@ HTAAServer *__cdecl HTAAServer_new(const char *hostname, int portnumber, BOOLEAN
 //----- (08144BC3) --------------------------------------------------------
 void __cdecl HTAAServer_delete(HTAAServer *killme)
 {
-  void **v1; // [esp+14h] [ebp-24h]
+  void **object; // [esp+14h] [ebp-24h]
   HTList *cur; // [esp+24h] [ebp-14h]
   HTAASetup *setup; // [esp+2Ch] [ebp-Ch]
   int i; // [esp+30h] [ebp-8h]
@@ -154694,27 +154317,27 @@ void __cdecl HTAAServer_delete(HTAAServer *killme)
     while ( 1 )
     {
       if ( cur && (cur = cur->next) != 0 )
-        v1 = (void **)cur->object;
+        object = (void **)cur->object;
       else
-        v1 = 0;
-      if ( !v1 )
+        object = 0;
+      if ( !object )
         break;
-      if ( *v1 )
+      if ( *object )
       {
-        free(*v1);
-        *v1 = 0;
+        free(*object);
+        *object = 0;
       }
-      if ( v1[1] )
+      if ( object[1] )
       {
-        free(v1[1]);
-        v1[1] = 0;
+        free(object[1]);
+        object[1] = 0;
       }
-      if ( v1[2] )
+      if ( object[2] )
       {
-        free(v1[2]);
-        v1[2] = 0;
+        free(object[2]);
+        object[2] = 0;
       }
-      free(v1);
+      free(object);
     }
     HTList_delete(killme->realms);
     killme->realms = 0;
@@ -154727,13 +154350,13 @@ void __cdecl HTAAServer_delete(HTAAServer *killme)
     free(killme);
   }
 }
-// 8144D57: conditional instruction was optimized away because of '%killme.4!=0'
-// 8144CBD: conditional instruction was optimized away because of '%var_24.4!=0'
+// 8144D57: conditional instruction was optimized away because %killme.4!=0
+// 8144CBD: conditional instruction was optimized away because %var_24.4!=0
 
 //----- (08144D6D) --------------------------------------------------------
 HTAAServer *__cdecl HTAAServer_lookup(const char *hostname, int portnumber, BOOLEAN IsProxy)
 {
-  HTAAServer *v5; // [esp+10h] [ebp-18h]
+  HTAAServer *object; // [esp+10h] [ebp-18h]
   HTList *cur; // [esp+24h] [ebp-4h]
 
   if ( hostname )
@@ -154744,13 +154367,13 @@ HTAAServer *__cdecl HTAAServer_lookup(const char *hostname, int portnumber, BOOL
     while ( 1 )
     {
       if ( cur && (cur = cur->next) != 0 )
-        v5 = (HTAAServer *)cur->object;
+        object = (HTAAServer *)cur->object;
       else
-        v5 = 0;
-      if ( !v5 )
+        object = 0;
+      if ( !object )
         break;
-      if ( v5->portnumber == portnumber && !strcmp(v5->hostname, hostname) && v5->IsProxy == IsProxy )
-        return v5;
+      if ( object->portnumber == portnumber && !strcmp(object->hostname, hostname) && object->IsProxy == IsProxy )
+        return object;
     }
   }
   return 0;
@@ -154760,13 +154383,13 @@ HTAAServer *__cdecl HTAAServer_lookup(const char *hostname, int portnumber, BOOL
 HTAASetup *__cdecl HTAASetup_lookup(const char *hostname, int portnumber, const char *docname, BOOLEAN IsProxy)
 {
   FILE *v4; // edx
-  const char *v5; // ebx
+  const char *ctemplate; // ebx
   FILE *v6; // edx
   const char *v7; // ebx
   FILE *v8; // edx
   FILE *v9; // eax
   const char *v11; // [esp+20h] [ebp-28h]
-  HTAASetup *v13; // [esp+28h] [ebp-20h]
+  HTAASetup *object; // [esp+28h] [ebp-20h]
   const char *v14; // [esp+2Ch] [ebp-1Ch]
   HTList *cur; // [esp+38h] [ebp-10h]
   HTAAServer *server; // [esp+40h] [ebp-8h]
@@ -154804,24 +154427,24 @@ HTAASetup *__cdecl HTAASetup_lookup(const char *hostname, int portnumber, const 
             while ( 1 )
             {
               if ( cur && (cur = cur->next) != 0 )
-                v13 = (HTAASetup *)cur->object;
+                object = (HTAASetup *)cur->object;
               else
-                v13 = 0;
-              if ( !v13 )
+                object = 0;
+              if ( !object )
                 break;
-              if ( HTAA_templateMatch(v13->ctemplate, docname) )
+              if ( HTAA_templateMatch(object->ctemplate, docname) )
               {
                 if ( WWW_TraceFlag[0] )
                 {
-                  v5 = v13->ctemplate;
+                  ctemplate = object->ctemplate;
                   v6 = TraceFP();
-                  fprintf(v6, "%s `%s' %s `%s'\n", "HTAASetup_lookup:", docname, "matched template", v5);
+                  fprintf(v6, "%s `%s' %s `%s'\n", "HTAASetup_lookup:", docname, "matched template", ctemplate);
                 }
-                return v13;
+                return object;
               }
               if ( WWW_TraceFlag[0] )
               {
-                v7 = v13->ctemplate;
+                v7 = object->ctemplate;
                 v8 = TraceFP();
                 fprintf(v8, "%s `%s' %s `%s'\n", "HTAASetup_lookup:", docname, "did NOT match template", v7);
               }
@@ -154844,7 +154467,11 @@ HTAASetup *__cdecl HTAASetup_lookup(const char *hostname, int portnumber, const 
 }
 
 //----- (08145032) --------------------------------------------------------
-HTAASetup *__cdecl HTAASetup_new(HTAAServer *server, char *ctemplate, HTList *valid_schemes, HTAssocList **scheme_specifics)
+HTAASetup *__cdecl HTAASetup_new(
+        HTAAServer *server,
+        char *ctemplate,
+        HTList *valid_schemes,
+        HTAssocList **scheme_specifics)
 {
   HTAASetup *setup; // [esp+24h] [ebp-4h]
 
@@ -154862,7 +154489,7 @@ HTAASetup *__cdecl HTAASetup_new(HTAAServer *server, char *ctemplate, HTList *va
   HTList_addObject(server->setups, setup);
   return setup;
 }
-// 81450A8: conditional instruction was optimized away because of '%ctemplate.4!=0'
+// 81450A8: conditional instruction was optimized away because %ctemplate.4!=0
 
 //----- (081450F1) --------------------------------------------------------
 void __cdecl HTAASetup_delete(HTAASetup *killme)
@@ -154894,7 +154521,7 @@ void __cdecl HTAASetup_delete(HTAASetup *killme)
     free(killme);
   }
 }
-// 81451AC: conditional instruction was optimized away because of '%killme.4!=0'
+// 81451AC: conditional instruction was optimized away because %killme.4!=0
 
 //----- (081451C2) --------------------------------------------------------
 void __cdecl HTAASetup_updateSpecifics(HTAASetup *setup, HTAssocList **specifics)
@@ -154923,7 +154550,7 @@ void __cdecl HTAASetup_updateSpecifics(HTAASetup *setup, HTAssocList **specifics
 //----- (08145246) --------------------------------------------------------
 HTAARealm *__cdecl HTAARealm_lookup(HTList *realm_table, const char *realmname)
 {
-  HTAARealm *v4; // [esp+14h] [ebp-14h]
+  HTAARealm *object; // [esp+14h] [ebp-14h]
   HTList *cur; // [esp+24h] [ebp-4h]
 
   if ( realm_table && realmname )
@@ -154932,20 +154559,24 @@ HTAARealm *__cdecl HTAARealm_lookup(HTList *realm_table, const char *realmname)
     while ( 1 )
     {
       if ( cur && (cur = cur->next) != 0 )
-        v4 = (HTAARealm *)cur->object;
+        object = (HTAARealm *)cur->object;
       else
-        v4 = 0;
-      if ( !v4 )
+        object = 0;
+      if ( !object )
         break;
-      if ( !strcmp(v4->realmname, realmname) )
-        return v4;
+      if ( !strcmp(object->realmname, realmname) )
+        return object;
     }
   }
   return 0;
 }
 
 //----- (081452BE) --------------------------------------------------------
-HTAARealm *__cdecl HTAARealm_new(HTList *realm_table, const char *realmname, const char *username, const char *password)
+HTAARealm *__cdecl HTAARealm_new(
+        HTList *realm_table,
+        const char *realmname,
+        const char *username,
+        const char *password)
 {
   HTAARealm *realm; // [esp+14h] [ebp-4h]
 
@@ -155481,7 +155112,6 @@ BOOLEAN __cdecl HTAA_shouldRetryWithAuth(char *start_of_headers, int length, int
   const char *v18; // [esp+2Ch] [ebp-5Ch]
   const char *v19; // [esp+30h] [ebp-58h]
   const char *v20; // [esp+34h] [ebp-54h]
-  BOOLEAN v21; // [esp+3Fh] [ebp-49h]
   HTAAServer *server_0; // [esp+4Ch] [ebp-3Ch]
   HTAAServer *server; // [esp+50h] [ebp-38h]
   int i; // [esp+54h] [ebp-34h]
@@ -155623,12 +155253,12 @@ BOOLEAN __cdecl HTAA_shouldRetryWithAuth(char *start_of_headers, int length, int
         if ( HTConfirm(v11) )
         {
           proxy_setup->retry = 1;
-          v21 = 1;
+          return 1;
         }
         else
         {
           proxy_setup = 0;
-          v21 = 0;
+          return 0;
         }
       }
       else
@@ -155646,13 +155276,13 @@ BOOLEAN __cdecl HTAA_shouldRetryWithAuth(char *start_of_headers, int length, int
         }
         v12 = gettext("Proxy authorization required -- retrying");
         HTAlert(v12);
-        v21 = 1;
+        return 1;
       }
     }
     else
     {
       proxy_setup = 0;
-      v21 = 0;
+      return 0;
     }
   }
   else if ( num_schemes )
@@ -155664,12 +155294,12 @@ BOOLEAN __cdecl HTAA_shouldRetryWithAuth(char *start_of_headers, int length, int
       if ( HTConfirm(v13) )
       {
         current_setup->retry = 1;
-        v21 = 1;
+        return 1;
       }
       else
       {
         current_setup = 0;
-        v21 = 0;
+        return 0;
       }
     }
     else
@@ -155687,17 +155317,16 @@ BOOLEAN __cdecl HTAA_shouldRetryWithAuth(char *start_of_headers, int length, int
       }
       v14 = gettext("Access without authorization denied -- retrying");
       HTAlert(v14);
-      v21 = 1;
+      return 1;
     }
   }
   else
   {
     current_setup = 0;
-    v21 = 0;
+    return 0;
   }
-  return v21;
 }
-// 8146627: conditional instruction was optimized away because of '%arg1.4!=0'
+// 8146627: conditional instruction was optimized away because %arg1.4!=0
 
 //----- (081469C0) --------------------------------------------------------
 void HTClearHTTPAuthInfo()
@@ -155728,7 +155357,6 @@ BOOLEAN __cdecl isNumber(const char *s)
 //----- (08146A38) --------------------------------------------------------
 int HTAA_getUid()
 {
-  int v1; // [esp+4h] [ebp-14h]
   int uid; // [esp+14h] [ebp-4h]
   int uida; // [esp+14h] [ebp-4h]
   int uidb; // [esp+14h] [ebp-4h]
@@ -155750,16 +155378,14 @@ int HTAA_getUid()
   }
   uidb = HTAA_NameToUid("nobody");
   if ( uidb == 65533 )
-    v1 = 65534;
+    return 65534;
   else
-    v1 = uidb;
-  return v1;
+    return uidb;
 }
 
 //----- (08146AE4) --------------------------------------------------------
 int HTAA_getGid()
 {
-  int v1; // [esp+4h] [ebp-14h]
   int gid; // [esp+14h] [ebp-4h]
   int gida; // [esp+14h] [ebp-4h]
   int gidb; // [esp+14h] [ebp-4h]
@@ -155781,10 +155407,9 @@ int HTAA_getGid()
   }
   gidb = HTAA_NameToGid("nogroup");
   if ( gidb == 65533 )
-    v1 = 65534;
+    return 65534;
   else
-    v1 = gidb;
-  return v1;
+    return gidb;
 }
 
 //----- (08146B90) --------------------------------------------------------
@@ -155955,7 +155580,7 @@ HTAAProt *__cdecl HTAAProt_new(const char *cur_docname, const char *prot_filenam
   FILE *v3; // eax
   FILE *v4; // eax
   FILE *v5; // eax
-  void *v7; // [esp+10h] [ebp-18h]
+  void *object; // [esp+10h] [ebp-18h]
   const char *v8; // [esp+14h] [ebp-14h]
   FILE *fp; // [esp+18h] [ebp-10h]
   HTAAProt *prot; // [esp+1Ch] [ebp-Ch]
@@ -155968,14 +155593,14 @@ HTAAProt *__cdecl HTAAProt_new(const char *cur_docname, const char *prot_filenam
   do
   {
     if ( cur && (cur = cur->next) != 0 )
-      v7 = cur->object;
+      object = cur->object;
     else
-      v7 = 0;
+      object = 0;
   }
-  while ( v7 && strcmp(*(const char **)v7, prot_filename) );
-  if ( v7 )
+  while ( object && strcmp(*(const char **)object, prot_filename) );
+  if ( object )
   {
-    prot = (HTAAProt *)*((_DWORD *)v7 + 1);
+    prot = (HTAAProt *)*((_DWORD *)object + 1);
     if ( WWW_TraceFlag[0] )
     {
       v3 = TraceFP();
@@ -156154,11 +155779,11 @@ void __cdecl save_uid_info(const char *name, int user)
 //----- (0814750A) --------------------------------------------------------
 const char *__cdecl HTAA_UidToName(int uid)
 {
-  __uid_t v1; // ebx
-  const char *v2; // esi
+  __uid_t pw_uid; // ebx
+  const char *pw_name; // esi
   FILE *v3; // edx
   HTList *me; // [esp+28h] [ebp-10h]
-  passwd *pw; // [esp+2Ch] [ebp-Ch]
+  struct passwd *pw; // [esp+2Ch] [ebp-Ch]
 
   me = known_pwd;
   while ( me )
@@ -156174,10 +155799,10 @@ const char *__cdecl HTAA_UidToName(int uid)
     return (const char *)&unk_81918B7;
   if ( WWW_TraceFlag[0] )
   {
-    v1 = pw->pw_uid;
-    v2 = pw->pw_name;
+    pw_uid = pw->pw_uid;
+    pw_name = pw->pw_name;
     v3 = TraceFP();
-    fprintf(v3, "%s(%d) returned (%s:%d:...)\n", "HTAA_UidToName: getpwuid", uid, v2, v1);
+    fprintf(v3, "%s(%d) returned (%s:%d:...)\n", "HTAA_UidToName: getpwuid", uid, pw_name, pw_uid);
   }
   save_uid_info(pw->pw_name, pw->pw_uid);
   return pw->pw_name;
@@ -156186,12 +155811,12 @@ const char *__cdecl HTAA_UidToName(int uid)
 //----- (081475F3) --------------------------------------------------------
 int __cdecl HTAA_NameToUid(const char *name)
 {
-  __uid_t v1; // ebx
-  const char *v2; // esi
+  __uid_t pw_uid; // ebx
+  const char *pw_name; // esi
   FILE *v3; // edx
   USER_DATA *data; // [esp+24h] [ebp-14h]
   HTList *me; // [esp+28h] [ebp-10h]
-  passwd *pw; // [esp+2Ch] [ebp-Ch]
+  struct passwd *pw; // [esp+2Ch] [ebp-Ch]
 
   me = known_pwd;
   while ( me )
@@ -156208,10 +155833,10 @@ int __cdecl HTAA_NameToUid(const char *name)
     return 65533;
   if ( WWW_TraceFlag[0] )
   {
-    v1 = pw->pw_uid;
-    v2 = pw->pw_name;
+    pw_uid = pw->pw_uid;
+    pw_name = pw->pw_name;
     v3 = TraceFP();
-    fprintf(v3, "%s(%s) returned (%s:%d:...)\n", "HTAA_NameToUid: getpwnam", name, v2, v1);
+    fprintf(v3, "%s(%s) returned (%s:%d:...)\n", "HTAA_NameToUid: getpwnam", name, pw_name, pw_uid);
   }
   save_uid_info(pw->pw_name, pw->pw_uid);
   return pw->pw_uid;
@@ -156220,11 +155845,11 @@ int __cdecl HTAA_NameToUid(const char *name)
 //----- (081476E2) --------------------------------------------------------
 const char *__cdecl HTAA_GidToName(int gid)
 {
-  __gid_t v1; // ebx
-  const char *v2; // esi
+  __gid_t gr_gid; // ebx
+  const char *gr_name; // esi
   FILE *v3; // edx
   HTList *me; // [esp+28h] [ebp-10h]
-  group *gr; // [esp+2Ch] [ebp-Ch]
+  struct group *gr; // [esp+2Ch] [ebp-Ch]
 
   me = known_grp;
   while ( me )
@@ -156240,10 +155865,10 @@ const char *__cdecl HTAA_GidToName(int gid)
     return (const char *)&unk_81918B7;
   if ( WWW_TraceFlag[0] )
   {
-    v1 = gr->gr_gid;
-    v2 = gr->gr_name;
+    gr_gid = gr->gr_gid;
+    gr_name = gr->gr_name;
     v3 = TraceFP();
-    fprintf(v3, "%s(%d) returned (%s:%d:...)\n", "HTAA_GidToName: getgrgid", gid, v2, v1);
+    fprintf(v3, "%s(%d) returned (%s:%d:...)\n", "HTAA_GidToName: getgrgid", gid, gr_name, gr_gid);
   }
   save_gid_info(gr->gr_name, gr->gr_gid);
   return gr->gr_name;
@@ -156252,12 +155877,12 @@ const char *__cdecl HTAA_GidToName(int gid)
 //----- (081477CB) --------------------------------------------------------
 int __cdecl HTAA_NameToGid(const char *name)
 {
-  __gid_t v1; // ebx
-  const char *v2; // esi
+  __gid_t gr_gid; // ebx
+  const char *gr_name; // esi
   FILE *v3; // edx
   USER_DATA *data; // [esp+24h] [ebp-14h]
   HTList *me; // [esp+28h] [ebp-10h]
-  group *gr; // [esp+2Ch] [ebp-Ch]
+  struct group *gr; // [esp+2Ch] [ebp-Ch]
 
   me = known_grp;
   while ( me )
@@ -156274,10 +155899,10 @@ int __cdecl HTAA_NameToGid(const char *name)
     return 65533;
   if ( WWW_TraceFlag[0] )
   {
-    v1 = gr->gr_gid;
-    v2 = gr->gr_name;
+    gr_gid = gr->gr_gid;
+    gr_name = gr->gr_name;
     v3 = TraceFP();
-    fprintf(v3, "%s(%s) returned (%s:%d:...)\n", "HTAA_NameToGid: getgrnam", name, v2, v1);
+    fprintf(v3, "%s(%s) returned (%s:%d:...)\n", "HTAA_NameToGid: getgrnam", name, gr_name, gr_gid);
   }
   save_gid_info(gr->gr_name, gr->gr_gid);
   return gr->gr_gid;
@@ -156292,7 +155917,7 @@ HTAssocList *HTAssocList_new()
 //----- (081478C9) --------------------------------------------------------
 void __cdecl HTAssocList_delete(HTAssocList *alist)
 {
-  void **v1; // [esp+4h] [ebp-14h]
+  void **object; // [esp+4h] [ebp-14h]
   HTAssocList *cur; // [esp+14h] [ebp-4h]
 
   if ( alist )
@@ -156301,27 +155926,27 @@ void __cdecl HTAssocList_delete(HTAssocList *alist)
     while ( 1 )
     {
       if ( cur && (cur = cur->next) != 0 )
-        v1 = (void **)cur->object;
+        object = (void **)cur->object;
       else
-        v1 = 0;
-      if ( !v1 )
+        object = 0;
+      if ( !object )
         break;
-      if ( *v1 )
+      if ( *object )
       {
-        free(*v1);
-        *v1 = 0;
+        free(*object);
+        *object = 0;
       }
-      if ( v1[1] )
+      if ( object[1] )
       {
-        free(v1[1]);
-        v1[1] = 0;
+        free(object[1]);
+        object[1] = 0;
       }
-      free(v1);
+      free(object);
     }
     HTList_delete(alist);
   }
 }
-// 8147926: conditional instruction was optimized away because of '%var_14.4!=0'
+// 8147926: conditional instruction was optimized away because %var_14.4!=0
 
 //----- (08147984) --------------------------------------------------------
 void __cdecl HTAssocList_add(HTAssocList *alist, const char *name, const char *value)
@@ -156353,19 +155978,19 @@ void __cdecl HTAssocList_add(HTAssocList *alist, const char *name, const char *v
 char *__cdecl HTAssocList_lookup(HTAssocList *alist, const char *name)
 {
   int v3; // [esp+8h] [ebp-20h]
-  void *v5; // [esp+14h] [ebp-14h]
+  void *object; // [esp+14h] [ebp-14h]
 
   while ( 1 )
   {
     if ( alist && (alist = alist->next) != 0 )
-      v5 = alist->object;
+      object = alist->object;
     else
-      v5 = 0;
-    if ( !v5 )
+      object = 0;
+    if ( !object )
       break;
     v3 = strlen(name);
-    if ( !strncasecomp(*(const char **)v5, name, v3) )
-      return (char *)*((_DWORD *)v5 + 1);
+    if ( !strncasecomp(*(const char **)object, name, v3) )
+      return (char *)*((_DWORD *)object + 1);
   }
   return 0;
 }
@@ -156393,7 +156018,7 @@ LexItem __cdecl lex(FILE *fp)
   {
     ret = lex_pushed_back;
     lex_pushed_back = LEX_NONE;
-    v3 = ret;
+    return ret;
   }
   else
   {
@@ -156601,7 +156226,6 @@ int __cdecl HTUU_decode(char *bufcoded, unsigned __int8 *bufplain, int outbufsiz
 //----- (0814803C) --------------------------------------------------------
 HTAAScheme __cdecl HTAAScheme_enum(const char *name)
 {
-  HTAAScheme v2; // [esp+14h] [ebp-14h]
   char *upcased; // [esp+24h] [ebp-4h] BYREF
 
   upcased = 0;
@@ -156616,7 +156240,7 @@ HTAAScheme __cdecl HTAAScheme_enum(const char *name)
       free(upcased);
       upcased = 0;
     }
-    v2 = HTAA_NONE;
+    return 1;
   }
   else if ( !strncmp(upcased, "BASIC", 5u) )
   {
@@ -156625,7 +156249,7 @@ HTAAScheme __cdecl HTAAScheme_enum(const char *name)
       free(upcased);
       upcased = 0;
     }
-    v2 = HTAA_BASIC;
+    return 2;
   }
   else if ( !strncmp(upcased, "PUBKEY", 6u) )
   {
@@ -156634,7 +156258,7 @@ HTAAScheme __cdecl HTAAScheme_enum(const char *name)
       free(upcased);
       upcased = 0;
     }
-    v2 = HTAA_PUBKEY;
+    return 3;
   }
   else if ( !strncmp(upcased, "KERBEROSV4", 0xAu) )
   {
@@ -156643,7 +156267,7 @@ HTAAScheme __cdecl HTAAScheme_enum(const char *name)
       free(upcased);
       upcased = 0;
     }
-    v2 = HTAA_KERBEROS_V4;
+    return 4;
   }
   else if ( !strncmp(upcased, "KERBEROSV5", 0xAu) )
   {
@@ -156652,7 +156276,7 @@ HTAAScheme __cdecl HTAAScheme_enum(const char *name)
       free(upcased);
       upcased = 0;
     }
-    v2 = HTAA_KERBEROS_V5;
+    return 5;
   }
   else
   {
@@ -156661,9 +156285,8 @@ HTAAScheme __cdecl HTAAScheme_enum(const char *name)
       free(upcased);
       upcased = 0;
     }
-    v2 = HTAA_UNKNOWN;
+    return 0;
   }
-  return v2;
 }
 
 //----- (081481EB) --------------------------------------------------------
@@ -156729,22 +156352,22 @@ const char *__cdecl HTAAMethod_name(HTAAMethod method)
 BOOLEAN __cdecl HTAAMethod_inList(HTAAMethod method, HTList *list)
 {
   FILE *v2; // edx
-  const char *v5; // [esp+14h] [ebp-14h]
+  const char *object; // [esp+14h] [ebp-14h]
 
   while ( 1 )
   {
     if ( list && (list = list->next) != 0 )
-      v5 = (const char *)list->object;
+      object = (const char *)list->object;
     else
-      v5 = 0;
-    if ( !v5 )
+      object = 0;
+    if ( !object )
       break;
     if ( WWW_TraceFlag[0] )
     {
       v2 = TraceFP();
-      fprintf(v2, " %s", v5);
+      fprintf(v2, " %s", object);
     }
-    if ( HTAAMethod_enum(v5) == method )
+    if ( HTAAMethod_enum(object) == method )
       return 1;
   }
   return 0;
@@ -156754,7 +156377,6 @@ BOOLEAN __cdecl HTAAMethod_inList(HTAAMethod method, HTList *list)
 BOOLEAN __cdecl HTAA_templateMatch(const char *ctemplate, const char *filename)
 {
   size_t v2; // ebx
-  bool v4; // [esp+13h] [ebp-15h]
   int m; // [esp+18h] [ebp-10h]
   const char *pa; // [esp+20h] [ebp-8h]
 
@@ -156770,11 +156392,7 @@ BOOLEAN __cdecl HTAA_templateMatch(const char *ctemplate, const char *filename)
   pa = ctemplate + 1;
   v2 = strlen(filename);
   m = v2 - strlen(pa);
-  if ( m >= 0 )
-    v4 = strcmp(pa, &filename[m]) == 0;
-  else
-    v4 = 0;
-  return v4;
+  return m >= 0 && strcmp(pa, &filename[m]) == 0;
 }
 
 //----- (08148443) --------------------------------------------------------
@@ -156783,7 +156401,6 @@ BOOLEAN __cdecl HTAA_templateCaseMatch(const char *ctemplate, const char *filena
   size_t v2; // ebx
   int v4; // [esp+8h] [ebp-20h]
   int v5; // [esp+Ch] [ebp-1Ch]
-  bool v6; // [esp+13h] [ebp-15h]
   int m; // [esp+18h] [ebp-10h]
   const char *pa; // [esp+20h] [ebp-8h]
 
@@ -156803,11 +156420,7 @@ BOOLEAN __cdecl HTAA_templateCaseMatch(const char *ctemplate, const char *filena
   pa = ctemplate + 1;
   v2 = strlen(filename);
   m = v2 - strlen(pa);
-  if ( m >= 0 )
-    v6 = strcasecomp(pa, &filename[m]) == 0;
-  else
-    v6 = 0;
-  return v6;
+  return m >= 0 && strcasecomp(pa, &filename[m]) == 0;
 }
 
 //----- (0814859C) --------------------------------------------------------
@@ -157155,7 +156768,6 @@ UserDefList *__cdecl parse_user_part(FILE *fp)
 //----- (08148F38) --------------------------------------------------------
 Item *__cdecl parse_item(FILE *fp)
 {
-  Item *v2; // [esp+14h] [ebp-14h]
   LexItem lex_item; // [esp+18h] [ebp-10h]
   AddressDefList *address_def_list; // [esp+1Ch] [ebp-Ch]
   HTList *user_def_list; // [esp+20h] [ebp-8h]
@@ -157188,14 +156800,13 @@ LABEL_13:
         outofmem("../../../WWW/Library/Implementation/HTGroup.c", "parse_item");
       item->user_def_list = user_def_list;
       item->address_def_list = address_def_list;
-      v2 = item;
+      return item;
     }
     else
     {
       syntax_error(fp, "Empty item not allowed", lex_item);
-      v2 = 0;
+      return 0;
     }
-    return v2;
   }
   if ( user_def_list )
     HTList_delete(user_def_list);
@@ -157270,7 +156881,7 @@ void __cdecl print_item(Item *item)
   FILE *v11; // eax
   FILE *v12; // eax
   FILE *v13; // eax
-  const char **v14; // [esp+1Ch] [ebp-2Ch]
+  const char **object; // [esp+1Ch] [ebp-2Ch]
   const char **v15; // [esp+20h] [ebp-28h]
   const char *v16; // [esp+24h] [ebp-24h]
   const char *v17; // [esp+28h] [ebp-20h]
@@ -157284,20 +156895,20 @@ void __cdecl print_item(Item *item)
     cur1 = item->user_def_list;
     cur2 = item->address_def_list;
     if ( item->user_def_list && (cur1 = cur1->next) != 0 )
-      v14 = (const char **)cur1->object;
+      object = (const char **)cur1->object;
     else
-      v14 = 0;
+      object = 0;
     if ( cur2 && (cur2 = cur2->next) != 0 )
       v15 = (const char **)cur2->object;
     else
       v15 = 0;
-    if ( v14 )
+    if ( object )
     {
-      if ( v14[1] )
+      if ( object[1] )
         v16 = "*REF*";
       else
         v16 = (const char *)&unk_8192001;
-      v2 = *v14;
+      v2 = *object;
       v3 = TraceFP();
       fprintf(v3, "\t[%s%s", v2, v16);
       while ( 1 )
@@ -157361,7 +156972,7 @@ void __cdecl print_item(Item *item)
 void __cdecl print_item_list(ItemList *item_list)
 {
   FILE *v1; // eax
-  Item *v2; // [esp+14h] [ebp-14h]
+  Item *object; // [esp+14h] [ebp-14h]
   ItemList *cur; // [esp+24h] [ebp-4h]
 
   cur = item_list;
@@ -157370,12 +156981,12 @@ void __cdecl print_item_list(ItemList *item_list)
     while ( 1 )
     {
       if ( cur && (cur = cur->next) != 0 )
-        v2 = (Item *)cur->object;
+        object = (Item *)cur->object;
       else
-        v2 = 0;
-      if ( !v2 )
+        object = 0;
+      if ( !object )
         break;
-      print_item(v2);
+      print_item(object);
     }
   }
   else
@@ -157391,16 +157002,16 @@ void __cdecl HTAA_printGroupDef(GroupDef *group_def)
   FILE *v1; // eax
   FILE *v2; // eax
   FILE *v3; // eax
-  char *v4; // [esp+14h] [ebp-4h]
+  char *group_name; // [esp+14h] [ebp-4h]
 
   if ( group_def )
   {
     if ( group_def->group_name )
-      v4 = group_def->group_name;
+      group_name = group_def->group_name;
     else
-      v4 = "NULL";
+      group_name = "NULL";
     v2 = TraceFP();
-    fprintf(v2, "\nGroup %s:\n", v4);
+    fprintf(v2, "\nGroup %s:\n", group_name);
     print_item_list(group_def->item_list);
     v3 = TraceFP();
     fputc(10, v3);
@@ -157410,18 +157021,6 @@ void __cdecl HTAA_printGroupDef(GroupDef *group_def)
     v1 = TraceFP();
     fwrite("\nNULL RECORD\n", 1u, 0xDu, v1);
   }
-}
-
-//----- (081496F0) --------------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (08149700) --------------------------------------------------------
-void _libc_csu_init(void)
-{
-  init_proc();
 }
 
 //----- (08149760) --------------------------------------------------------
@@ -157438,33 +157037,5 @@ int __cdecl lstat64(int a1, int a2)
 }
 // 804AC84: using guessed type int __cdecl __lxstat64(_DWORD, _DWORD, _DWORD);
 
-//----- (081497E0) --------------------------------------------------------
-void (*_do_global_ctors_aux())(void)
-{
-  void (*result)(void); // eax
-  void (**v1)(void); // ebx
-
-  result = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    v1 = (void (**)(void))&_CTOR_LIST__;
-    do
-    {
-      --v1;
-      result();
-      result = *v1;
-    }
-    while ( *v1 != (void (*)(void))-1 );
-  }
-  return result;
-}
-// 8193EFC: using guessed type int _CTOR_LIST__;
-
-//----- (0814980C) --------------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=2237 queued=1829 decompiled=1829 lumina nreq=0 worse=0 better=0
-#error "There were 1 decompilation failure(s) on 1829 function(s)"
+// nfuncs=2237 queued=1821 decompiled=1821 lumina nreq=0 worse=0 better=0
+#error "There were 1 decompilation failure(s) on 1821 function(s)"

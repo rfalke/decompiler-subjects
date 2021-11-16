@@ -10,26 +10,14 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// __int64 (**init_proc())(void);
 __int64 __fastcall sub_401020(); // weak
 // int printf(const char *format, ...);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// void dl_relocate_static_pie();
-// void *deregister_tm_clones();
-// __int64 register_tm_clones();
-// void *_do_global_dtors_aux();
-// __int64 frame_dummy();
-bool __fastcall divisibleBy3(int a1);
-unsigned __int64 __fastcall divideByThree(unsigned int a1);
+bool __fastcall divisibleBy3(int);
+unsigned __int64 __fastcall divideByThree(unsigned int);
 __int64 __fastcall countSetBits(int _EDI);
-__int64 __fastcall isWhitespace(unsigned __int8 a1);
-bool __fastcall isWhitespace2(char a1);
+unsigned __int64 __fastcall isWhitespace(unsigned __int8);
+bool __fastcall isWhitespace2(char);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-// void _libc_csu_fini(void); idb
-// void term_proc();
-// int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -76,17 +64,13 @@ __int64 __fastcall countSetBits(int _EDI)
 }
 
 //----- (0000000000401157) ----------------------------------------------------
-__int64 __fastcall isWhitespace(unsigned __int8 a1)
+unsigned __int64 __fastcall isWhitespace(unsigned __int8 a1)
 {
-  __int64 result; // rax
+  unsigned __int64 result; // rax
 
   result = 0LL;
   if ( a1 <= 0x20u )
-  {
-    _RAX = 0x100002600LL;
-    __asm { shrx    rax, rax, rdi }
-    result = _RAX & 1;
-  }
+    return (0x100002600uLL >> a1) & 1;
   return result;
 }
 
@@ -97,7 +81,7 @@ bool __fastcall isWhitespace2(char a1)
 
   result = a1 == 10 || a1 == 32;
   if ( !result )
-    result = (a1 & 0xFB) == 9;
+    return (a1 & 0xFB) == 9;
   return result;
 }
 

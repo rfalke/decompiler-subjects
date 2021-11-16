@@ -1,0 +1,55 @@
+
+Database SUBJECTS/from_internet/fizzbuzz/answer_from_kamila-szewczyk/x64_elf/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+   311296    38 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+  1097728            total memory allocated
+
+Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
+Autoanalysis subsystem has been initialized.
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
+  Please check the Edit/Plugins menu for more informaton.
+=== start of cleanup script -> OK
+  function at 00401000  LIB  with name '.init_proc'
+  function at 00401020       with name 'sub_401020'
+  function at 00401030       with name '.write'
+  function at 00401040       with name '.memcpy'
+  function at 00401050       with name '.sprintf'
+  function at 00401060       with name 'main'
+  function at 004018B0  LIB  with name '_start'
+  function at 004018E0  LIB  with name '_dl_relocate_static_pie'
+  function at 004018F0  LIB  with name 'deregister_tm_clones'
+  function at 00401920  LIB  with name 'register_tm_clones'
+  function at 00401960  LIB  with name '__do_global_dtors_aux'
+  function at 00401990  LIB  with name 'frame_dummy'
+  function at 004019A0  LIB  with name '__libc_csu_init'
+  function at 00401A10  LIB  with name '__libc_csu_fini'
+  function at 00401A18  LIB  with name '.term_proc'
+  function at 00415188       with name 'write'
+  function at 00415190  LIB  with name '__libc_start_main'
+  function at 00415198       with name 'memcpy'
+  function at 004151A0       with name 'sprintf'
+  function at 004151A8       with name '__gmon_start__'
+finished -> OK
+TIMESTAMP decompiling 401020 size=000000000000000C times=0...
+The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 401060 size=0000000000000842 times=0...
+TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
+Unloading IDP module IDADIR/procs/pc64.so...

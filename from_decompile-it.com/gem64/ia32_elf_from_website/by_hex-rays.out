@@ -1,77 +1,205 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+
+Database SUBJECTS/from_decompile-it.com/gem64/ia32_elf_from_website/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   450560    55 8192 allocating memory for virtual array...
+   278528    34 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  1236992            total memory allocated
+  1064960            total memory allocated
 
-Loading file 'SUBJECTS/from_decompile-it.com/gem64/ia32_elf_from_website/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-08057E4C) ... ... OK
-  1. Creating a new segment  (08058F10-0806CAE8) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (08048A44-08048A74) ... ... OK
-  3. Creating a new segment  (08048A74-08057E4C) ... ... OK
-  4. Creating a new segment  (08048A74-08048DC4) ... ... OK
-     Deleting segment        (08048DC4-08057E4C) ...
-  4. Creating a new segment  (08048DC4-08057E4C) ... ... OK
-  5. Creating a new segment  (08048DD0-080547FC) ... ... OK
-  6. Creating a new segment  (080547FC-08057E4C) ... ... OK
-  7. Creating a new segment  (080547FC-08054818) ... ... OK
-     Deleting segment        (08054818-08057E4C) ...
-  7. Creating a new segment  (08054818-08057E4C) ... ... OK
-  8. Creating a new segment  (08054818-08057E48) ... ... OK
-     Deleting segment        (08057E48-08057E4C) ...
-  8. Creating a new segment  (08057E48-08057E4C) ... ... OK
-     Deleting segment        (08057E48-08057E4C) ...
-  8. Creating a new segment  (08057E48-08057E4C) ... ... OK
-  9. Creating a new segment  (08058F10-08058F18) ... ... OK
-     Deleting segment        (08058F18-0806CAE8) ...
-  9. Creating a new segment  (08058F18-0806CAE8) ... ... OK
- 10. Creating a new segment  (08058F18-08058F20) ... ... OK
-     Deleting segment        (08058F20-0806CAE8) ...
- 10. Creating a new segment  (08058F20-0806CAE8) ... ... OK
- 11. Creating a new segment  (08058F20-08058F24) ... ... OK
-     Deleting segment        (08058F24-0806CAE8) ...
- 11. Creating a new segment  (08058F24-0806CAE8) ... ... OK
- 12. Creating a new segment  (08058FEC-08058FF4) ... ... OK
- 13. Creating a new segment  (08058FF4-0806CAE8) ... ... OK
- 14. Creating a new segment  (08058FF4-080590D0) ... ... OK
-     Deleting segment        (080590D0-0806CAE8) ...
- 14. Creating a new segment  (080590D0-0806CAE8) ... ... OK
- 15. Creating a new segment  (080590E0-08059240) ... ... OK
- 16. Creating a new segment  (08059240-0806CAE8) ... ... OK
-     Deleting segment        (08059240-0806CAE8) ...
- 16. Creating a new segment  (08059240-0806CAE8) ... ... OK
- 17. Creating a new segment  (0806CAE8-0806CAE9) ... ... OK
- 18. Creating a new segment  (0806CAEC-0806CBBC) ... ... OK
- 19. Creating a new segment  (0806CBBC-0806CBF0) ... ... OK
-Processing relocations...
-DWARF: File "SUBJECTS/from_decompile-it.com/gem64/ia32_elf_from_website/subject.exe" contains DWARF information.
-DWARF: Functions: 64 symbols applied
-DWARF: Globals: 48 symbols applied
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_decompile-it.com/gem64/ia32_elf_from_website/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 5 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08048A44  LIB  with name '.init_proc'
+  function at 08048A74       with name 'sub_8048A74'
+  function at 08048A84       with name '.fputs'
+  function at 08048A94       with name '.__errno_location'
+  function at 08048AA4       with name '.sprintf'
+  function at 08048AB4       with name '.srand'
+  function at 08048AC4       with name '.open'
+  function at 08048AD4       with name '.strerror'
+  function at 08048AE4       with name '.__cxa_atexit'
+  function at 08048AF4       with name '.__isoc99_fscanf'
+  function at 08048B04       with name '.__xstat'
+  function at 08048B14       with name '.__gmon_start__'
+  function at 08048B24       with name '.rewind'
+  function at 08048B34       with name '.__isoc99_sscanf'
+  function at 08048B44       with name '.vsprintf'
+  function at 08048B54       with name '.strchr'
+  function at 08048B64       with name '.getenv'
+  function at 08048B74       with name '.calloc'
+  function at 08048B84       with name '.system'
+  function at 08048B94       with name '.strncpy'
+  function at 08048BA4       with name '.fgets'
+  function at 08048BB4  LIB  with name '.__libc_start_main'
+  function at 08048BC4       with name '.strrchr'
+  function at 08048BD4       with name '.readdir'
+  function at 08048BE4       with name '.strtol'
+  function at 08048BF4       with name '.free'
+  function at 08048C04       with name '.fflush'
+  function at 08048C14       with name '.mkstemp'
+  function at 08048C24       with name '.opendir'
+  function at 08048C34       with name '.getopt_long'
+  function at 08048C44       with name '.fclose'
+  function at 08048C54       with name '.memcpy'
+  function at 08048C64       with name '.strlen'
+  function at 08048C74       with name '.fopen'
+  function at 08048C84       with name '.strcpy'
+  function at 08048C94       with name '.chdir'
+  function at 08048CA4       with name '.putenv'
+  function at 08048CB4       with name '.closedir'
+  function at 08048CC4       with name '.close'
+  function at 08048CD4       with name '.fwrite'
+  function at 08048CE4       with name '.fprintf'
+  function at 08048CF4       with name '.strstr'
+  function at 08048D04       with name '.setvbuf'
+  function at 08048D14       with name '.remove'
+  function at 08048D24       with name '.malloc'
+  function at 08048D34       with name '.__stack_chk_fail'
+  function at 08048D44       with name '.fputc'
+  function at 08048D54       with name '.strtok'
+  function at 08048D64       with name '.strcat'
+  function at 08048D74       with name '.getcwd'
+  function at 08048D84       with name '.rand'
+  function at 08048D94       with name '.strdup'
+  function at 08048DA4       with name '.strcmp'
+  function at 08048DB4       with name '.exit'
+  function at 08048DD0  LIB  with name '_start'
+  function at 08048E00  LIB  with name '__do_global_dtors_aux'
+  function at 08048E60  LIB  with name 'frame_dummy'
+  function at 08048E84       with name 'exit_env'
+  function at 08048E89       with name 'exit_tmp'
+  function at 08048FC2       with name 'exit_db'
+  function at 08049390       with name 'exit_msg'
+  function at 08049420       with name 'print_error'
+  function at 0804949B       with name 'print_warning'
+  function at 08049523       with name 'print_done'
+  function at 08049554       with name 'basename'
+  function at 0804961D       with name 'mkdir_s'
+  function at 0804968F       with name 'chop'
+  function at 08049737       with name 'insert_str'
+  function at 08049A5E       with name 'delete_str'
+  function at 08049B5F       with name 'find_pos'
+  function at 08049BD9       with name 'dump_str'
+  function at 08049C27       with name 'get_package_name'
+  function at 08049D41       with name 'nc_fgets'
+  function at 08049E14       with name 'nc_fgets_html'
+  function at 0804A146       with name 'is_text'
+  function at 0804A1C8       with name 'nc_fgets_nb'
+  function at 0804A2C8       with name 'dump_ascii'
+  function at 0804A3DB       with name 'dump_plain'
+  function at 0804A51B       with name 'dump_html'
+  function at 0804A6DA       with name 'list_binaries'
+  function at 0804A92C       with name 'binaries_exist'
+  function at 0804AAA8       with name 'check_filetype'
+  function at 0804AB6C       with name 'wget_extension'
+  function at 0804AC6E       with name 'su'
+  function at 0804AD9B       with name 'vercmp'
+  function at 0804AE20       with name 'depstr'
+  function at 0804B014       with name 'register_extension'
+  function at 0804B5E3       with name 'deregister_extension'
+  function at 0804B961       with name 'check_dependencies'
+  function at 0804BE84       with name 'is_submenu'
+  function at 0804BF05       with name 'check_ext_menu'
+  function at 0804C009       with name 'new_submenu'
+  function at 0804C41B       with name 'new_item'
+  function at 0804C5F0       with name 'register_entries_gisman'
+  function at 0804CD6C       with name 'register_entries_gisman2'
+  function at 0804CEC7       with name 'deregister_entries_gisman'
+  function at 0804D743       with name 'deregister_entries_gisman2'
+  function at 0804D896       with name 'restore_entries_gisman'
+  function at 0804E100       with name 'new_ext_html'
+  function at 0804E56F       with name 'delete_ext_html'
+  function at 0804E7F3       with name 'register_html'
+  function at 0804EC17       with name 'deregister_html'
+  function at 0804F026       with name 'restore_html'
+  function at 0804F7E8       with name 'check_extension'
+  function at 0804FAAB       with name 'unpack_extension'
+  function at 0804FF43       with name 'query_extension'
+  function at 0805014E       with name 'print_cfg'
+  function at 08050220       with name 'source_install'
+  function at 08050C67       with name 'bin_install'
+  function at 0805148A       with name 'test_install'
+  function at 08051CF4       with name 'uninstall'
+  function at 080521A4       with name 'source_clean'
+  function at 08052334       with name 'restore'
+  function at 080525FC       with name 'list_extensions'
+  function at 08052748       with name 'run_post'
+  function at 08052A50       with name 'show_help'
+  function at 08053002       with name 'show_details'
+  function at 080530B9       with name 'show_license'
+  function at 08053170       with name 'show_version'
+  function at 08053242       with name 'get_configure_options'
+  function at 0805331E       with name 'main'
+  function at 080546E0  LIB  with name '__libc_csu_fini'
+  function at 080546F0  LIB  with name '__libc_csu_init'
+  function at 0805474A       with name '__i686.get_pc_thunk.bx'
+  function at 08054750       with name 'atexit'
+  function at 08054790       with name 'stat_0'
+  function at 080547D0  LIB  with name '__do_global_ctors_aux'
+  function at 080547FC  LIB  with name '.term_proc'
+  function at 0806CAEC       with name 'fputs'
+  function at 0806CAF0       with name '__errno_location'
+  function at 0806CAF4       with name 'sprintf'
+  function at 0806CAF8       with name 'srand'
+  function at 0806CAFC       with name 'open'
+  function at 0806CB00       with name 'strerror'
+  function at 0806CB04       with name '__cxa_atexit'
+  function at 0806CB08       with name '__isoc99_fscanf'
+  function at 0806CB0C       with name '__xstat'
+  function at 0806CB10       with name 'rewind'
+  function at 0806CB14       with name '__isoc99_sscanf'
+  function at 0806CB18       with name 'vsprintf'
+  function at 0806CB1C       with name 'strchr'
+  function at 0806CB20       with name 'getenv'
+  function at 0806CB24       with name 'calloc'
+  function at 0806CB28       with name 'system'
+  function at 0806CB2C       with name 'strncpy'
+  function at 0806CB30       with name 'fgets'
+  function at 0806CB34  LIB  with name '__libc_start_main'
+  function at 0806CB38       with name 'strrchr'
+  function at 0806CB3C       with name 'readdir'
+  function at 0806CB40       with name 'strtol'
+  function at 0806CB44       with name 'free'
+  function at 0806CB48       with name 'fflush'
+  function at 0806CB4C       with name 'mkstemp'
+  function at 0806CB50       with name 'opendir'
+  function at 0806CB54       with name 'getopt_long'
+  function at 0806CB58       with name 'fclose'
+  function at 0806CB5C       with name 'memcpy'
+  function at 0806CB60       with name 'strlen'
+  function at 0806CB64       with name 'fopen'
+  function at 0806CB68       with name 'strcpy'
+  function at 0806CB6C       with name 'chdir'
+  function at 0806CB70       with name 'putenv'
+  function at 0806CB74       with name 'closedir'
+  function at 0806CB78       with name 'close'
+  function at 0806CB7C       with name 'fwrite'
+  function at 0806CB80       with name 'fprintf'
+  function at 0806CB84       with name 'strstr'
+  function at 0806CB88       with name 'setvbuf'
+  function at 0806CB8C       with name 'remove'
+  function at 0806CB90       with name 'malloc'
+  function at 0806CB94       with name '__stack_chk_fail'
+  function at 0806CB98       with name 'fputc'
+  function at 0806CB9C       with name 'strtok'
+  function at 0806CBA0       with name 'strcat'
+  function at 0806CBA4       with name 'getcwd'
+  function at 0806CBA8       with name 'rand'
+  function at 0806CBAC       with name 'strdup'
+  function at 0806CBB0       with name 'strcmp'
+  function at 0806CBB4       with name 'exit'
+  function at 0806CBB8       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 8048A74 size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -81,8 +209,6 @@ If the segment is not read-only, please change the segment NAME.
 In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
-TIMESTAMP decompiling 8048E00 size=00000055 times=0...
-TIMESTAMP decompiling 8048E60 size=00000023 times=0...
 TIMESTAMP decompiling 8048E84 size=00000005 times=0...
 TIMESTAMP decompiling 8049390 size=0000008F times=0...
 The decompiler assumes that the segment '.rodata' is read-only because of its NAME.
@@ -110,7 +236,6 @@ TIMESTAMP decompiling 804BE84 size=00000081 times=0...
 TIMESTAMP decompiling 805014E size=000000D2 times=0...
 TIMESTAMP decompiling 8052A50 size=000005B2 times=0...
 TIMESTAMP decompiling 8053170 size=000000D2 times=0...
-TIMESTAMP decompiling 80546E0 size=00000005 times=0...
 TIMESTAMP decompiling 8054750 size=0000003B times=0...
 The decompiler assumes that the segment '.got' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -121,8 +246,8 @@ In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
 TIMESTAMP decompiling 8054790 size=00000032 times=0...
-TIMESTAMP decompiling 80547D0 size=0000002A times=0...
 TIMESTAMP decompiling 804A1C8 size=00000100 times=0...
+TIMESTAMP decompiling 8053242 size=000000DC times=0...
 TIMESTAMP decompiling 8049C27 size=0000011A times=0...
 TIMESTAMP decompiling 804A92C size=0000017C times=0...
 TIMESTAMP decompiling 804AB6C size=00000102 times=0...
@@ -166,10 +291,6 @@ TIMESTAMP decompiling 8052748 size=00000308 times=0...
 TIMESTAMP decompiling 8053002 size=000000B7 times=0...
 TIMESTAMP decompiling 80530B9 size=000000B7 times=0...
 TIMESTAMP decompiling 805331E size=000013BF times=0...
-TIMESTAMP decompiling 8048A44 size=00000030 times=0...
-TIMESTAMP decompiling 80546F0 size=0000005A times=0...
-TIMESTAMP decompiling 8048DD0 size=00000022 times=0...
-TIMESTAMP decompiling 8053242 size=000000DC times=0...
-TIMESTAMP decompiling 80547FC size=0000001C times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

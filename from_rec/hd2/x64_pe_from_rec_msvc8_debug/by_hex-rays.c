@@ -11,28 +11,21 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-__int64 __fastcall sub_14000100A(_QWORD, _QWORD, _QWORD); // weak
+int __fastcall sub_14000100A(__int64, unsigned int, int);
 __int64 __fastcall sub_14000100F(_QWORD, _QWORD, _QWORD); // weak
-int __fastcall sub_140001030(__int64 a1, unsigned int a2, int a3);
-__int64 __fastcall sub_1400012E0(const char *a1);
-int __fastcall sub_140001430(const char *a1, struct _stat64i32 *a2);
+int __fastcall sub_140001030(__int64, unsigned int, int);
+__int64 __fastcall sub_1400012E0(const char *);
+int __fastcall sub_140001430(const char *, struct _stat64i32 *);
 int __cdecl main_0(int argc, const char **argv, const char **envp);
 // char *__cdecl strcpy(char *Destination, const char *Source);
 // size_t __cdecl strlen(const char *Str);
 // char *__cdecl strcat(char *Destination, const char *Source);
-__int64 __fastcall sub_140002840(__int64 a1);
+__int64 __fastcall sub_140002840(__int64);
 __int64 sub_140002860();
 __int64 sub_140002870();
 __int64 sub_140002940();
 void sub_140002950();
 void __fastcall sub_140002990();
-// int __cdecl stat64i32(const char *FileName, struct _stat64i32 *Stat);
-// void __cdecl perror(const char *ErrMsg);
-// FILE *__cdecl fopen(const char *FileName, const char *Mode);
-// size_t __cdecl fread(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
-// int __cdecl fclose(FILE *Stream);
-// int sprintf(char *const Buffer, const char *const Format, ...);
-// int printf(const char *const Format, ...);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -75,7 +68,7 @@ void (*qword_1400077D8[35])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
 _UNKNOWN unk_1400078F0; // weak
 void (*qword_140007B08[33])(void) =
 {
@@ -112,9 +105,16 @@ void (*qword_140007B08[33])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
 __int64 qword_1400096F8; // weak
 __int64 qword_140009700; // weak
+// extern int (__cdecl *stat64i32)(const char *FileName, struct _stat64i32 *Stat);
+// extern void (__cdecl *perror)(const char *ErrMsg);
+// extern FILE *(__cdecl *fopen)(const char *FileName, const char *Mode);
+// extern size_t (__cdecl *fread)(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
+// extern int (__cdecl *fclose)(FILE *Stream);
+// extern int (*sprintf)(char *const Buffer, const char *const Format, ...);
+// extern int (*printf)(const char *const Format, ...);
 
 
 //----- (0000000140001030) ----------------------------------------------------
@@ -174,13 +174,12 @@ __int64 __fastcall sub_1400012E0(const char *a1)
 {
   __int64 *v1; // rdi
   __int64 i; // rcx
-  __int64 result; // rax
   __int64 v4; // [rsp+0h] [rbp-B8h] BYREF
   char Buffer[28]; // [rsp+28h] [rbp-90h] BYREF
   unsigned int j; // [rsp+44h] [rbp-74h]
   FILE *Stream; // [rsp+48h] [rbp-70h]
   struct _stat64i32 v8; // [rsp+58h] [rbp-60h] BYREF
-  unsigned int v9; // [rsp+94h] [rbp-24h]
+  int v9; // [rsp+94h] [rbp-24h]
 
   v1 = &v4;
   for ( i = 44i64; i; --i )
@@ -191,7 +190,7 @@ __int64 __fastcall sub_1400012E0(const char *a1)
   if ( sub_140001430(a1, &v8) || (Stream = fopen(a1, "rb")) == 0i64 )
   {
     perror(a1);
-    result = 1i64;
+    return 1i64;
   }
   else
   {
@@ -200,14 +199,12 @@ __int64 __fastcall sub_1400012E0(const char *a1)
       v9 = fread(Buffer, 1ui64, 0x10ui64, Stream);
       if ( !v9 )
         break;
-      sub_14000100A(Buffer, j, v9);
+      sub_14000100A((__int64)Buffer, j, v9);
     }
     fclose(Stream);
-    result = 0i64;
+    return 0i64;
   }
-  return result;
 }
-// 14000100A: using guessed type __int64 __fastcall sub_14000100A(_QWORD, _QWORD, _QWORD);
 
 //----- (0000000140001430) ----------------------------------------------------
 int __fastcall sub_140001430(const char *a1, struct _stat64i32 *a2)
@@ -303,6 +300,7 @@ void sub_140002950()
     while ( v0 < qword_1400077D8 );
   }
 }
+// 1400077D8: using guessed type void (*qword_1400077D8[35])(void);
 
 //----- (0000000140002990) ----------------------------------------------------
 void __fastcall sub_140002990()
@@ -321,6 +319,7 @@ void __fastcall sub_140002990()
     while ( v0 < qword_140007B08 );
   }
 }
+// 140007B08: using guessed type void (*qword_140007B08[33])(void);
 
 // nfuncs=67 queued=10 decompiled=10 lumina nreq=0 worse=0 better=0
 // ALL OK, 10 function(s) have been successfully decompiled

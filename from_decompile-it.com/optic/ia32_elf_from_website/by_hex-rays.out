@@ -1,81 +1,150 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+
+Database SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
-  1032192   126 8192 allocating memory for b-tree...
-  1032192   126 8192 allocating memory for virtual array...
+   524288    64 8192 allocating memory for b-tree...
+   737280    90 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  2326528            total memory allocated
+  1523712            total memory allocated
 
-Loading file 'SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-080743E8) ... ... OK
-  1. Creating a new segment  (08075EEC-0807B650) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (08048AD0-08048B00) ... ... OK
-  3. Creating a new segment  (08048B00-080743E8) ... ... OK
-  4. Creating a new segment  (08048B00-08048DA0) ... ... OK
-     Deleting segment        (08048DA0-080743E8) ...
-  4. Creating a new segment  (08048DA0-080743E8) ... ... OK
-  5. Creating a new segment  (08048DA0-080708BC) ... ... OK
-     Deleting segment        (080708BC-080743E8) ...
-  5. Creating a new segment  (080708BC-080743E8) ... ... OK
-  6. Creating a new segment  (080708BC-080708D8) ... ... OK
-     Deleting segment        (080708D8-080743E8) ...
-  6. Creating a new segment  (080708D8-080743E8) ... ... OK
-  7. Creating a new segment  (080708E0-080743E4) ... ... OK
-  8. Creating a new segment  (080743E4-080743E8) ... ... OK
-     Deleting segment        (080743E4-080743E8) ...
-  8. Creating a new segment  (080743E4-080743E8) ... ... OK
-  9. Creating a new segment  (08075EEC-08075EF4) ... ... OK
-     Deleting segment        (08075EF4-0807B650) ...
-  9. Creating a new segment  (08075EF4-0807B650) ... ... OK
- 10. Creating a new segment  (08075EF4-08075EFC) ... ... OK
-     Deleting segment        (08075EFC-0807B650) ...
- 10. Creating a new segment  (08075EFC-0807B650) ... ... OK
- 11. Creating a new segment  (08075EFC-08075F00) ... ... OK
-     Deleting segment        (08075F00-0807B650) ...
- 11. Creating a new segment  (08075F00-0807B650) ... ... OK
- 12. Creating a new segment  (08075FF0-08075FF4) ... ... OK
- 13. Creating a new segment  (08075FF4-0807B650) ... ... OK
- 14. Creating a new segment  (08075FF4-080760A4) ... ... OK
-     Deleting segment        (080760A4-0807B650) ...
- 14. Creating a new segment  (080760A4-0807B650) ... ... OK
- 15. Creating a new segment  (080760C0-080761C4) ... ... OK
- 16. Creating a new segment  (080761C4-0807B650) ... ... OK
- 17. Creating a new segment  (080761E0-0807B650) ... ... OK
- 18. Creating a new segment  (0807B650-0807B651) ... ... OK
- 19. Creating a new segment  (0807B654-0807B6FC) ... ... OK
- 20. Creating a new segment  (0807B6FC-0807B794) ... ... OK
-Processing relocations...
-DWARF: File "SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe" contains DWARF information.
-hdr_type.gap4C failed to add member, offset=4C size=24 flags=400 errcode -2
-DWARF: Functions: 32 symbols applied
-DWARF: Globals: 0 symbols applied
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-hdr_type.gap4C failed to add member, offset=4C size=24 flags=400 errcode -2
-hdr_type.gap4C failed to add member, offset=4C size=24 flags=400 errcode -2
-hdr_type.gap4C failed to add member, offset=4C size=24 flags=400 errcode -2
-hdr_type.gap4C failed to add member, offset=4C size=24 flags=400 errcode -2
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 5 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08048AD0  LIB  with name '.init_proc'
+  function at 08048B00       with name 'sub_8048B00'
+  function at 08048B10       with name '._gfortran_os_error'
+  function at 08048B20       with name '._gfortran_exit_i4'
+  function at 08048B30       with name '._gfortran_st_open'
+  function at 08048B40       with name '.dgemm_'
+  function at 08048B50       with name '._gfortran_st_write_done'
+  function at 08048B60       with name '.__gmon_start__'
+  function at 08048B70       with name '._gfortran_date_and_time'
+  function at 08048B80       with name '._gfortran_st_inquire'
+  function at 08048B90       with name '.memset'
+  function at 08048BA0       with name '._gfortran_transfer_complex'
+  function at 08048BB0  LIB  with name '.__libc_start_main'
+  function at 08048BC0       with name '.free'
+  function at 08048BD0       with name '._gfortran_transfer_array'
+  function at 08048BE0       with name '._gfortran_st_read_done'
+  function at 08048BF0       with name '._gfortran_set_options'
+  function at 08048C00       with name '._gfortran_set_args'
+  function at 08048C10       with name '._gfortran_internal_unpack'
+  function at 08048C20       with name '._gfortran_concat_string'
+  function at 08048C30       with name '._gfortran_runtime_error_at'
+  function at 08048C40       with name '.acos'
+  function at 08048C50       with name '._gfortran_transfer_integer'
+  function at 08048C60       with name '._gfortran_system_clock_4'
+  function at 08048C70       with name '._gfortran_st_close'
+  function at 08048C80       with name '._gfortran_runtime_error'
+  function at 08048C90       with name '._gfortran_st_backspace'
+  function at 08048CA0       with name '._gfortran_string_trim'
+  function at 08048CB0       with name '.cabs'
+  function at 08048CC0       with name '._gfortran_transfer_character'
+  function at 08048CD0       with name '._gfortran_st_write'
+  function at 08048CE0       with name '.malloc'
+  function at 08048CF0       with name '._gfortran_internal_pack'
+  function at 08048D00       with name '._gfortran_string_index'
+  function at 08048D10       with name '.memmove'
+  function at 08048D20       with name '._gfortran_st_rewind'
+  function at 08048D30       with name '._gfortran_st_read'
+  function at 08048D40       with name '.dgemv_'
+  function at 08048D50       with name '._gfortran_transfer_real'
+  function at 08048D60       with name '._gfortran_stop_numeric'
+  function at 08048D70       with name '._gfortran_compare_string'
+  function at 08048D80       with name '._gfortran_pow_i4_i4'
+  function at 08048D90       with name '._gfortran_store_exe_path'
+  function at 08048DA0  LIB  with name '_start'
+  function at 08048DD0  LIB  with name '__do_global_dtors_aux'
+  function at 08048E30  LIB  with name 'frame_dummy'
+  function at 08048E54       with name 'optic'
+  function at 0804DDD8       with name 'linopt'
+  function at 08050B5C       with name 'nlinopt'
+  function at 0805ACD4       with name 'hdr_clean'
+  function at 0805B598       with name 'wffreadeigk'
+  function at 0805B8D4       with name 'getwtk'
+  function at 0805C23C       with name 'pmat2cart'
+  function at 0805CAA0       with name 'hdr_io_wfftype'
+  function at 0805CB14       with name 'hdr_io_int'
+  function at 08067A9C       with name 'hdr_skip_int'
+  function at 08067ADF       with name 'hdr_skip_wfftype'
+  function at 08067F38       with name 'rwwf'
+  function at 0806A30D       with name 'writewf'
+  function at 0806AEAC       with name 'wffclose'
+  function at 0806AF3C       with name 'wffopen'
+  function at 0806B330       with name 'wffreadnpwrec'
+  function at 0806B428       with name 'wffreadskiprec'
+  function at 0806B480       with name 'wffwritenpwrec'
+  function at 0806B578       with name 'metric'
+  function at 0806C41C       with name 'sym2cart'
+  function at 0806C6EC       with name 'canon9'
+  function at 0806C7B0       with name 'int2char4'
+  function at 0806CBE4       with name 'mati3inv'
+  function at 0806D008       with name 'matr3inv'
+  function at 0806D1A4       with name 'mvrecord'
+  function at 0806D2A0       with name 'print_ij'
+  function at 0806E304       with name 'herald'
+  function at 0806EDD8       with name 'leave_new'
+  function at 0806EECC       with name 'timab'
+  function at 0806F560       with name 'timein'
+  function at 0806F9A4       with name 'wrtout'
+  function at 08070748       with name 'leave_myproc'
+  function at 080707E0       with name 'main'
+  function at 08070820  LIB  with name '__libc_csu_fini'
+  function at 08070830  LIB  with name '__libc_csu_init'
+  function at 0807088A       with name '__i686.get_pc_thunk.bx'
+  function at 08070890  LIB  with name '__do_global_ctors_aux'
+  function at 080708BC  LIB  with name '.term_proc'
+  function at 0807B654       with name '_gfortran_os_error'
+  function at 0807B658       with name '_gfortran_exit_i4'
+  function at 0807B65C       with name '_gfortran_st_open'
+  function at 0807B660       with name 'dgemm_'
+  function at 0807B664       with name '_gfortran_st_write_done'
+  function at 0807B668       with name '_gfortran_date_and_time'
+  function at 0807B66C       with name '_gfortran_st_inquire'
+  function at 0807B670       with name 'memset'
+  function at 0807B674       with name '_gfortran_transfer_complex'
+  function at 0807B678  LIB  with name '__libc_start_main'
+  function at 0807B67C       with name 'free'
+  function at 0807B680       with name '_gfortran_transfer_array'
+  function at 0807B684       with name '_gfortran_st_read_done'
+  function at 0807B688       with name '_gfortran_set_options'
+  function at 0807B68C       with name '_gfortran_set_args'
+  function at 0807B690       with name '_gfortran_internal_unpack'
+  function at 0807B694       with name '_gfortran_concat_string'
+  function at 0807B698       with name '_gfortran_runtime_error_at'
+  function at 0807B69C       with name 'acos'
+  function at 0807B6A0       with name '_gfortran_transfer_integer'
+  function at 0807B6A4       with name '_gfortran_system_clock_4'
+  function at 0807B6A8       with name '_gfortran_st_close'
+  function at 0807B6AC       with name '_gfortran_runtime_error'
+  function at 0807B6B0       with name '_gfortran_st_backspace'
+  function at 0807B6B4       with name '_gfortran_string_trim'
+  function at 0807B6B8       with name 'cabs'
+  function at 0807B6BC       with name '_gfortran_transfer_character'
+  function at 0807B6C0       with name '_gfortran_st_write'
+  function at 0807B6C4       with name 'malloc'
+  function at 0807B6C8       with name '_gfortran_internal_pack'
+  function at 0807B6CC       with name '_gfortran_string_index'
+  function at 0807B6D0       with name 'memmove'
+  function at 0807B6D4       with name '_gfortran_st_rewind'
+  function at 0807B6D8       with name '_gfortran_st_read'
+  function at 0807B6DC       with name 'dgemv_'
+  function at 0807B6E0       with name '_gfortran_transfer_real'
+  function at 0807B6E4       with name '_gfortran_stop_numeric'
+  function at 0807B6E8       with name '_gfortran_compare_string'
+  function at 0807B6EC       with name '_gfortran_pow_i4_i4'
+  function at 0807B6F0       with name '_gfortran_store_exe_path'
+  function at 0807B6F4       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 8048B00 size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -85,8 +154,6 @@ If the segment is not read-only, please change the segment NAME.
 In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
-TIMESTAMP decompiling 8048DD0 size=00000055 times=0...
-TIMESTAMP decompiling 8048E30 size=00000023 times=0...
 TIMESTAMP decompiling 804DDD8 size=00002D82 times=0...
 The decompiler assumes that the segment '.rodata' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -110,8 +177,7 @@ TIMESTAMP decompiling 806D1A4 size=000000FB times=0...
 TIMESTAMP decompiling 806E304 size=00000AD1 times=0...
 TIMESTAMP decompiling 806F9A4 size=00000DA4 times=0...
 TIMESTAMP decompiling 8070748 size=00000091 times=0...
-TIMESTAMP decompiling 8070820 size=00000005 times=0...
-TIMESTAMP decompiling 8070890 size=0000002A times=0...
+TIMESTAMP decompiling 8067A9C size=00000043 times=0...
 TIMESTAMP decompiling 806EDD8 size=000000F2 times=0...
 TIMESTAMP decompiling 806A30D size=00000B9D times=0...
 TIMESTAMP decompiling 806B428 size=00000055 times=0...
@@ -129,18 +195,6 @@ TIMESTAMP decompiling 806C7B0 size=00000432 times=0...
 TIMESTAMP decompiling 806CBE4 size=00000422 times=0...
 TIMESTAMP decompiling 8048E54 size=00004F84 times=0...
 TIMESTAMP decompiling 80707E0 size=00000035 times=0...
-TIMESTAMP decompiling 8048AD0 size=00000030 times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
-
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
-TIMESTAMP decompiling 8070830 size=0000005A times=0...
-TIMESTAMP decompiling 8048DA0 size=00000022 times=0...
-TIMESTAMP decompiling 8067A9C size=00000043 times=0...
-TIMESTAMP decompiling 80708BC size=0000001C times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

@@ -10,8 +10,8 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void __fastcall __noreturn start(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, const char *a7);
-void *__fastcall dumpline(unsigned __int8 *a1, __int64 a2, int a3);
+void __fastcall __noreturn start(__int64, __int64, __int64, __int64, __int64, __int64, const char *);
+void *__fastcall dumpline(unsigned __int8 *, __int64, int);
 __int64 __fastcall hexdump(char *); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
 // int __sprintf_chk(char *, int, size_t, const char *, ...);
@@ -32,7 +32,14 @@ int __cdecl main(int argc, const char **argv, const char **envp);
 
 
 //----- (0000000100000AB0) ----------------------------------------------------
-void __fastcall __noreturn start(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, const char *a7)
+void __fastcall __noreturn start(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6,
+        const char *a7)
 {
   _QWORD *i; // rcx
   int v8; // eax
@@ -59,11 +66,9 @@ void *__fastcall dumpline(unsigned __int8 *a1, __int64 a2, int a3)
   int v13; // edx
   int v14; // ecx
   int v15; // ecx
-  char v16; // dl
-  unsigned __int8 *v18; // [rsp+8h] [rbp-98h]
+  unsigned __int8 v16; // dl
   char v19[88]; // [rsp+10h] [rbp-90h] BYREF
 
-  v18 = a1;
   __sprintf_chk(v19, 0, 0x50uLL, "%08lX:", a2);
   v4 = 16;
   if ( a3 <= 16 )
@@ -113,7 +118,7 @@ LABEL_12:
   v15 = v9 + 3;
   do
   {
-    v16 = v18[v12];
+    v16 = a1[v12];
     if ( (unsigned __int8)(v16 - 32) >= 0x5Fu )
       v16 = 46;
     v19[v15 + (int)v12] = v16;
@@ -140,11 +145,11 @@ LABEL_11:
   return &__stack_chk_guard;
 }
 // 100000E14: using guessed type __int64 __fastcall __strcat_chk(_QWORD, _QWORD, _QWORD);
+// 100000AEC: using guessed type char var_90[88];
 
 //----- (0000000100000CD9) ----------------------------------------------------
 __int64 __fastcall hexdump(char *a1)
 {
-  __int64 result; // rax
   FILE *v2; // r13
   unsigned __int64 i; // r12
   int v4; // eax
@@ -156,7 +161,7 @@ __int64 __fastcall hexdump(char *a1)
   if ( (unsigned int)stat_INODE64(a1, v6, 0LL) || (v2 = fopen(a1, "rb")) == 0LL )
   {
     perror(a1);
-    result = 1LL;
+    return 1LL;
   }
   else
   {
@@ -169,11 +174,11 @@ __int64 __fastcall hexdump(char *a1)
       dumpline(v8, i, v4);
     }
     fclose(v2);
-    result = 0LL;
+    return 0LL;
   }
-  return result;
 }
 // 100000E44: using guessed type __int64 __fastcall stat_INODE64(_QWORD, _QWORD, _QWORD);
+// 100000CD9: using guessed type char var_D0[96];
 
 //----- (0000000100000DBC) ----------------------------------------------------
 int __cdecl main(int argc, const char **argv, const char **envp)

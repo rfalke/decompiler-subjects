@@ -10,18 +10,10 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void __usercall init_proc(int a1@<eax>);
 void sub_80482B4();
 // int scanf(const char *format, ...);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // size_t fwrite(const void *ptr, size_t size, size_t n, FILE *s);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void *__usercall call_gmon_start@<eax>(int a1@<eax>);
-// void _do_global_dtors_aux();
-// int frame_dummy();
 int __cdecl main(int argc, const char **argv, const char **envp);
-// int _do_global_ctors_aux();
-// void term_proc(void); idb
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -70,7 +62,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
     result = v6;
   }
   if ( 5 - result < 0 )
-    result = fwrite("Plus\n", 1u, 5u, stdout);
+    return fwrite("Plus\n", 1u, 5u, stdout);
   return result;
 }
 

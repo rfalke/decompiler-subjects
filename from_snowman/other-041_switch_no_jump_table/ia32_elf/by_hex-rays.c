@@ -10,14 +10,12 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-const char *__cdecl do_switch(int a1);
+const char *__cdecl do_switch(int);
 
 
 //----- (080480D8) --------------------------------------------------------
 const char *__cdecl do_switch(int a1)
 {
-  const char *result; // eax
-
   if ( a1 == 5 )
     return "five";
   if ( a1 > 5 )
@@ -35,9 +33,9 @@ const char *__cdecl do_switch(int a1)
       return "many";
     }
     if ( a1 == 6 )
-      result = "six";
+      return "six";
     else
-      result = "seven";
+      return "seven";
   }
   else
   {
@@ -52,14 +50,13 @@ const char *__cdecl do_switch(int a1)
       return "many";
     }
     if ( a1 == 3 )
-      result = "three";
+      return "three";
     else
-      result = "four";
+      return "four";
   }
-  return result;
 }
-// 8048108: conditional instruction was optimized away because of '%arg_0.4==4'
-// 804811E: conditional instruction was optimized away because of '%arg_0.4==7'
+// 8048108: conditional instruction was optimized away because %arg_0.4==4
+// 804811E: conditional instruction was optimized away because %arg_0.4==7
 
 // nfuncs=1 queued=1 decompiled=1 lumina nreq=0 worse=0 better=0
 // ALL OK, 1 function(s) have been successfully decompiled

@@ -10,28 +10,16 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8048310();
 // int puts(const char *s);
 // void exit(int status);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int putchar(int c);
-// int _gmon_start__(void); weak
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _x86_get_pc_thunk_bx();
-// int deregister_tm_clones();
-// int register_tm_clones();
-// int _do_global_dtors_aux();
-// int frame_dummy();
 int intermediate_1_cmp_with_are_constant();
-int __cdecl intermediate_2_cmp_with_extra(int a1);
-int __cdecl intermediate_3_division_by_multiplication(int a1);
-int __cdecl intermediate_4_swap_with_xor(int a1, int a2);
-_BOOL4 __cdecl advanced_1_boolean_minization(int a1, int a2, int a3);
-// void _libc_csu_init(void); idb
-// void _libc_csu_fini(void); idb
-// void term_proc();
+int __cdecl intermediate_2_cmp_with_extra(int);
+int __cdecl intermediate_3_division_by_multiplication(int);
+int __cdecl intermediate_4_swap_with_xor(int, int);
+_BOOL4 __cdecl advanced_1_boolean_minization(int, int, int);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -68,7 +56,7 @@ int intermediate_1_cmp_with_are_constant()
 {
   return 0;
 }
-// 804852F: conditional instruction was optimized away because of '%arg_0.4==1'
+// 804852F: conditional instruction was optimized away because %arg_0.4==1
 
 //----- (08048551) --------------------------------------------------------
 int __cdecl intermediate_2_cmp_with_extra(int a1)
@@ -81,8 +69,8 @@ int __cdecl intermediate_2_cmp_with_extra(int a1)
     puts(">9 is always true");
   return 0;
 }
-// 8048567: conditional instruction was optimized away because of '%arg_0.4 in (B..13)'
-// 80485A3: conditional instruction was optimized away because of '%arg_0.4>=B'
+// 8048567: conditional instruction was optimized away because %arg_0.4 is in (B..13)
+// 80485A3: conditional instruction was optimized away because %arg_0.4>=B
 
 //----- (080485BE) --------------------------------------------------------
 int __cdecl intermediate_3_division_by_multiplication(int a1)

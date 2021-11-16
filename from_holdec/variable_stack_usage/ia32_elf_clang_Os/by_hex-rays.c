@@ -10,25 +10,13 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_80482D0();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void *memset(void *s, int c, size_t n);
-// int _gmon_start__(void); weak
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _x86_get_pc_thunk_bx();
-// int deregister_tm_clones();
-// int register_tm_clones();
-// int _do_global_dtors_aux();
-// int frame_dummy();
 void __cdecl use(int *x);
 void fill(int *dest, int n); // idb
 void __cdecl with_array(int n);
 void __cdecl with_alloca(int n);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void _libc_csu_init(void); idb
-// void _libc_csu_fini(void); idb
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -70,6 +58,7 @@ void __cdecl with_array(int n)
   use((int *)((char *)&v1 - ((4 * n + 15) & 0xFFFFFFF0)));
   use(&v2);
 }
+// 8048436: using guessed type int x[4];
 
 //----- (0804849B) --------------------------------------------------------
 void __cdecl with_alloca(int n)
@@ -85,6 +74,7 @@ void __cdecl with_alloca(int n)
   use((int *)((char *)&v1 - ((4 * n + 15) & 0xFFFFFFF0)));
   use(v3);
 }
+// 804849B: using guessed type int var_10[4];
 
 //----- (080484F6) --------------------------------------------------------
 int __cdecl main(int argc, const char **argv, const char **envp)

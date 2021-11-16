@@ -10,22 +10,11 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int __fastcall init_proc(int a1);
 int sub_8048374();
 // int xf86GetPciVideoInfo(void); weak
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int printf(const char *format, ...);
-// int __gmon_start__(void); weak
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// int __fastcall call_gmon_start(int a1);
-// void _do_global_dtors_aux();
-// int frame_dummy();
-int __cdecl getDevice(int a1);
+int __cdecl getDevice(int);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall _libc_csu_init(int a1);
-// void _libc_csu_fini(void); idb
-// int _do_global_ctors_aux();
-// void __spoils<edx,ecx> term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -50,13 +39,13 @@ int __cdecl getDevice(int a1)
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
   void *v3; // esp
-  int v4; // eax
-  int *v6; // [esp+14h] [ebp-4h]
+  int Device; // eax
+  int *PciVideoInfo; // [esp+14h] [ebp-4h]
 
   v3 = alloca(16);
-  v6 = (int *)xf86GetPciVideoInfo();
-  v4 = getDevice(*v6);
-  printf("%i\n", v4);
+  PciVideoInfo = (int *)xf86GetPciVideoInfo();
+  Device = getDevice(*PciVideoInfo);
+  printf("%i\n", Device);
   return 0;
 }
 // 8048384: using guessed type int xf86GetPciVideoInfo(void);

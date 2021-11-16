@@ -10,17 +10,8 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_80482D0();
 // int puts(const char *s);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// int _gmon_start__(void); weak
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _x86_get_pc_thunk_bx();
-// int deregister_tm_clones();
-// int register_tm_clones();
-// int _do_global_dtors_aux();
-// int frame_dummy();
 // int __usercall initConditions@<eax>(int result@<eax>);
 int test_1_blocks_1_targets_direct_variant_0();
 int test_1_blocks_2_targets_variant_0();
@@ -2537,9 +2528,6 @@ int test_4_blocks_3_targets_variant_915();
 int test_4_blocks_3_targets_variant_916();
 int test_4_blocks_3_targets_variant_917();
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void _libc_csu_init(void); idb
-// void _libc_csu_fini(void); idb
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -2860,17 +2848,13 @@ int test_3_blocks_1_targets_direct_variant_4()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0AC )
-    {
 LABEL_7:
       puts("then/else block 5");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0A8 )
   {
     goto LABEL_7;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -3662,9 +3646,7 @@ int test_3_blocks_2_targets_direct_variant_26()
   {
 LABEL_8:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -3809,9 +3791,7 @@ int test_3_blocks_2_targets_direct_variant_34()
   {
 LABEL_9:
     puts("then/else block 5");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -3991,9 +3971,7 @@ int test_3_blocks_2_targets_direct_variant_44()
   {
 LABEL_9:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -5249,17 +5227,13 @@ int test_4_blocks_1_targets_direct_variant_4()
   if ( !dword_808A0A4 && dword_808A0A8 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_8:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0AC )
   {
     goto LABEL_8;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -5429,17 +5403,13 @@ int test_4_blocks_1_targets_direct_variant_14()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0AC )
-    {
 LABEL_9:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0A8 || dword_808A0B0 )
   {
     goto LABEL_9;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -5613,17 +5583,13 @@ int test_4_blocks_1_targets_direct_variant_24()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0AC )
-    {
 LABEL_9:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0A8 && dword_808A0B0 )
   {
     goto LABEL_9;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -5667,17 +5633,13 @@ int test_4_blocks_1_targets_direct_variant_27()
   if ( dword_808A0A4 && dword_808A0AC )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_8:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0A8 )
   {
     goto LABEL_8;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -5737,9 +5699,7 @@ int test_4_blocks_1_targets_direct_variant_30()
   {
 LABEL_8:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -5801,9 +5761,7 @@ int test_4_blocks_1_targets_direct_variant_33()
   {
 LABEL_8:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -5876,17 +5834,13 @@ int test_4_blocks_1_targets_direct_variant_38()
   if ( dword_808A0A4 || dword_808A0A8 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_8:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0AC )
   {
     goto LABEL_8;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -6029,17 +5983,13 @@ int test_4_blocks_1_targets_direct_variant_46()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_8:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0A8 || dword_808A0AC )
   {
     goto LABEL_8;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -6213,17 +6163,13 @@ int test_4_blocks_1_targets_direct_variant_56()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_8:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0A8 && dword_808A0AC )
   {
     goto LABEL_8;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -6376,9 +6322,7 @@ int test_4_blocks_1_targets_direct_variant_65()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -6399,9 +6343,7 @@ int test_4_blocks_1_targets_direct_variant_66()
   {
 LABEL_9:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -6422,9 +6364,7 @@ int test_4_blocks_1_targets_direct_variant_67()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -6493,17 +6433,13 @@ int test_4_blocks_1_targets_direct_variant_72()
   if ( dword_808A0A8 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_8:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0AC )
   {
     goto LABEL_8;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -6800,13 +6736,9 @@ int test_4_blocks_1_targets_direct_variant_91()
   {
 LABEL_9:
     if ( dword_808A0B0 )
-    {
 LABEL_10:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -6866,17 +6798,13 @@ int test_4_blocks_1_targets_direct_variant_95()
   if ( dword_808A0A4 || dword_808A0AC )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_9:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0A8 )
   {
     goto LABEL_9;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -6981,17 +6909,13 @@ int test_4_blocks_1_targets_direct_variant_101()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_10:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0AC || dword_808A0A8 )
   {
     goto LABEL_10;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -7124,17 +7048,13 @@ int test_4_blocks_1_targets_direct_variant_109()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_10:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0AC && dword_808A0A8 )
   {
     goto LABEL_10;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -7175,17 +7095,13 @@ int test_4_blocks_1_targets_direct_variant_112()
   if ( dword_808A0A4 && !dword_808A0B0 )
   {
     if ( dword_808A0A8 )
-    {
 LABEL_11:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0AC )
   {
     goto LABEL_11;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -7206,9 +7122,7 @@ int test_4_blocks_1_targets_direct_variant_113()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -7229,9 +7143,7 @@ int test_4_blocks_1_targets_direct_variant_114()
   {
 LABEL_11:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -7352,17 +7264,13 @@ int test_4_blocks_1_targets_direct_variant_123()
   if ( dword_808A0AC )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_9:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0A8 )
   {
     goto LABEL_9;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -7593,9 +7501,7 @@ int test_4_blocks_1_targets_direct_variant_140()
   {
 LABEL_11:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -7670,18 +7576,14 @@ int test_4_blocks_1_targets_direct_variant_145()
     if ( dword_808A0A8 )
     {
       if ( dword_808A0B0 )
-      {
 LABEL_8:
         puts("then/else block 6");
-        goto LABEL_2;
-      }
     }
     else if ( dword_808A0AC )
     {
       goto LABEL_8;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -7912,18 +7814,14 @@ int test_4_blocks_1_targets_direct_variant_162()
     if ( dword_808A0AC )
     {
       if ( dword_808A0B0 )
-      {
 LABEL_9:
         puts("then/else block 6");
-        goto LABEL_2;
-      }
     }
     else if ( dword_808A0A8 )
     {
       goto LABEL_9;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -8160,10 +8058,8 @@ int test_4_blocks_1_targets_direct_variant_179()
     {
 LABEL_11:
       puts("then/else block 6");
-      goto LABEL_2;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -11939,9 +11835,7 @@ int test_4_blocks_2_targets_direct_variant_26()
   {
 LABEL_9:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -12143,9 +12037,7 @@ int test_4_blocks_2_targets_direct_variant_37()
   {
 LABEL_9:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -12822,9 +12714,7 @@ int test_4_blocks_2_targets_direct_variant_65()
   {
 LABEL_9:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -14610,11 +14500,8 @@ int test_4_blocks_2_targets_direct_variant_140()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0AC )
-    {
 LABEL_9:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0A8 )
   {
@@ -14695,7 +14582,6 @@ int test_4_blocks_2_targets_direct_variant_143()
     }
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
 LABEL_2:
   puts("return block");
@@ -14980,7 +14866,6 @@ int test_4_blocks_2_targets_direct_variant_155()
   {
 LABEL_8:
     puts("then/else block 6");
-    goto LABEL_2;
   }
 LABEL_2:
   puts("return block");
@@ -15054,7 +14939,6 @@ int test_4_blocks_2_targets_direct_variant_158()
   {
 LABEL_8:
     puts("then/else block 6");
-    goto LABEL_2;
   }
 LABEL_2:
   puts("return block");
@@ -15206,9 +15090,7 @@ int test_4_blocks_2_targets_direct_variant_165()
   {
 LABEL_9:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -15280,9 +15162,7 @@ int test_4_blocks_2_targets_direct_variant_168()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -15334,9 +15214,7 @@ int test_4_blocks_2_targets_direct_variant_170()
   {
 LABEL_9:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -16103,11 +15981,8 @@ int test_4_blocks_2_targets_direct_variant_206()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_10:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
   else
   {
@@ -16115,7 +15990,6 @@ LABEL_10:
       goto LABEL_10;
     puts("then/else block 6");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -16322,9 +16196,7 @@ int test_4_blocks_2_targets_direct_variant_215()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -16499,9 +16371,7 @@ int test_4_blocks_2_targets_direct_variant_222()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -16824,11 +16694,8 @@ int test_4_blocks_2_targets_direct_variant_237()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_10:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
   else
   {
@@ -16836,7 +16703,6 @@ LABEL_10:
       goto LABEL_10;
     puts("then/else block 6");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -17091,11 +16957,8 @@ int test_4_blocks_2_targets_direct_variant_248()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_8:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else
   {
@@ -17300,9 +17163,7 @@ int test_4_blocks_2_targets_direct_variant_257()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -17496,9 +17357,7 @@ int test_4_blocks_2_targets_direct_variant_267()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -18896,9 +18755,7 @@ int test_4_blocks_2_targets_direct_variant_326()
   {
 LABEL_9:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -19003,9 +18860,7 @@ int test_4_blocks_2_targets_direct_variant_330()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -19233,9 +19088,7 @@ int test_4_blocks_2_targets_direct_variant_340()
   {
 LABEL_11:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -19257,9 +19110,7 @@ int test_4_blocks_2_targets_direct_variant_341()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -19281,9 +19132,7 @@ int test_4_blocks_2_targets_direct_variant_342()
   {
 LABEL_11:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -19308,9 +19157,7 @@ int test_4_blocks_2_targets_direct_variant_343()
   {
 LABEL_11:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -19449,9 +19296,7 @@ int test_4_blocks_2_targets_direct_variant_349()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -19797,9 +19642,7 @@ int test_4_blocks_2_targets_direct_variant_365()
   {
 LABEL_9:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -19936,9 +19779,7 @@ int test_4_blocks_2_targets_direct_variant_371()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -20343,9 +20184,7 @@ int test_4_blocks_2_targets_direct_variant_391()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -20982,9 +20821,7 @@ int test_4_blocks_2_targets_direct_variant_420()
   {
 LABEL_9:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -21306,11 +21143,8 @@ int test_4_blocks_2_targets_direct_variant_435()
   if ( dword_808A0A8 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_8:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0AC )
   {
@@ -21413,9 +21247,7 @@ int test_4_blocks_2_targets_direct_variant_439()
   {
 LABEL_9:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -21471,9 +21303,7 @@ int test_4_blocks_2_targets_direct_variant_442()
   {
 LABEL_9:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -21538,9 +21368,7 @@ int test_4_blocks_2_targets_direct_variant_445()
   {
 LABEL_9:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -21608,9 +21436,7 @@ int test_4_blocks_2_targets_direct_variant_448()
   {
 LABEL_9:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -21666,9 +21492,7 @@ int test_4_blocks_2_targets_direct_variant_451()
   {
 LABEL_9:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -22067,9 +21891,7 @@ int test_4_blocks_2_targets_direct_variant_471()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -22136,10 +21958,8 @@ int test_4_blocks_2_targets_direct_variant_474()
     {
 LABEL_9:
       puts("then/else block 7");
-      goto LABEL_2;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -22560,13 +22380,9 @@ int test_4_blocks_2_targets_direct_variant_493()
   {
 LABEL_6:
     if ( dword_808A0AC )
-    {
 LABEL_11:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -22929,17 +22745,13 @@ int test_4_blocks_2_targets_direct_variant_510()
   {
 LABEL_9:
     if ( dword_808A0B0 )
-    {
 LABEL_10:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
   else
   {
     puts("then/else block 6");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -23077,17 +22889,13 @@ int test_4_blocks_2_targets_direct_variant_516()
   {
 LABEL_9:
     if ( dword_808A0B0 )
-    {
 LABEL_10:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else
   {
     puts("then/else block 7");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -23515,11 +23323,8 @@ int test_4_blocks_2_targets_direct_variant_536()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_10:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else
   {
@@ -23527,7 +23332,6 @@ LABEL_10:
       goto LABEL_10;
     puts("then/else block 7");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -23542,11 +23346,8 @@ int test_4_blocks_2_targets_direct_variant_537()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_12:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
   else
   {
@@ -23554,7 +23355,6 @@ LABEL_12:
       goto LABEL_12;
     puts("then/else block 6");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -23765,11 +23565,8 @@ int test_4_blocks_2_targets_direct_variant_547()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_12:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
   else
   {
@@ -23777,7 +23574,6 @@ LABEL_12:
       goto LABEL_12;
     puts("then/else block 6");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -24442,9 +24238,7 @@ int test_4_blocks_2_targets_direct_variant_576()
   {
 LABEL_11:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -24466,9 +24260,7 @@ int test_4_blocks_2_targets_direct_variant_577()
   {
 LABEL_12:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -25029,9 +24821,7 @@ int test_4_blocks_2_targets_direct_variant_601()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -25139,11 +24929,8 @@ int test_4_blocks_2_targets_direct_variant_606()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_10:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0AC )
   {
@@ -25153,7 +24940,6 @@ LABEL_10:
   {
     goto LABEL_10;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -25168,11 +24954,8 @@ int test_4_blocks_2_targets_direct_variant_607()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_10:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
   else
   {
@@ -25181,7 +24964,6 @@ LABEL_10:
     if ( dword_808A0A8 )
       puts("then/else block 6");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -25497,11 +25279,8 @@ int test_4_blocks_2_targets_direct_variant_621()
       goto LABEL_2;
     }
     if ( dword_808A0A8 )
-    {
 LABEL_11:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0AC )
   {
@@ -25773,9 +25552,7 @@ int test_4_blocks_2_targets_direct_variant_633()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -25863,11 +25640,8 @@ int test_4_blocks_2_targets_direct_variant_637()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_10:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else
   {
@@ -25876,7 +25650,6 @@ LABEL_10:
     if ( dword_808A0A8 )
       puts("then/else block 7");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -25891,11 +25664,8 @@ int test_4_blocks_2_targets_direct_variant_638()
   if ( dword_808A0A4 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_10:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0AC )
   {
@@ -25905,7 +25675,6 @@ LABEL_10:
   {
     goto LABEL_10;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -26090,11 +25859,8 @@ int test_4_blocks_2_targets_direct_variant_647()
   if ( dword_808A0A4 && !dword_808A0B0 )
   {
     if ( dword_808A0A8 )
-    {
 LABEL_12:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
   else
   {
@@ -26102,7 +25868,6 @@ LABEL_12:
       goto LABEL_12;
     puts("then/else block 6");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -26403,11 +26168,8 @@ int test_4_blocks_2_targets_direct_variant_660()
       goto LABEL_2;
     }
     if ( dword_808A0A8 )
-    {
 LABEL_11:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0AC )
   {
@@ -26518,9 +26280,7 @@ int test_4_blocks_2_targets_direct_variant_666()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -26629,17 +26389,13 @@ int test_4_blocks_2_targets_direct_variant_671()
   if ( dword_808A0AC || !dword_808A0A8 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_9:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else
   {
     puts("then/else block 7");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -26695,9 +26451,7 @@ int test_4_blocks_2_targets_direct_variant_674()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -26823,10 +26577,8 @@ int test_4_blocks_2_targets_direct_variant_680()
     {
 LABEL_10:
       puts("then/else block 6");
-      goto LABEL_2;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -27315,9 +27067,7 @@ int test_4_blocks_2_targets_direct_variant_702()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -27404,9 +27154,7 @@ int test_4_blocks_2_targets_direct_variant_706()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -27455,9 +27203,7 @@ int test_4_blocks_2_targets_direct_variant_708()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -27569,10 +27315,8 @@ int test_4_blocks_2_targets_direct_variant_713()
     {
 LABEL_10:
       puts("then/else block 6");
-      goto LABEL_2;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -27675,17 +27419,13 @@ int test_4_blocks_2_targets_direct_variant_718()
   if ( dword_808A0AC )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_9:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0A8 )
   {
     puts("then/else block 7");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -27946,17 +27686,13 @@ int test_4_blocks_2_targets_direct_variant_731()
   if ( dword_808A0AC || !dword_808A0A8 )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_9:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
   else
   {
     puts("then/else block 6");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -28012,9 +27748,7 @@ int test_4_blocks_2_targets_direct_variant_734()
   {
 LABEL_12:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -28070,9 +27804,7 @@ int test_4_blocks_2_targets_direct_variant_737()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -28139,10 +27871,8 @@ int test_4_blocks_2_targets_direct_variant_740()
     {
 LABEL_10:
       puts("then/else block 7");
-      goto LABEL_2;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -28238,9 +27968,7 @@ int test_4_blocks_2_targets_direct_variant_745()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -28754,9 +28482,7 @@ int test_4_blocks_2_targets_direct_variant_769()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -28971,17 +28697,13 @@ int test_4_blocks_2_targets_direct_variant_779()
   if ( dword_808A0AC )
   {
     if ( dword_808A0B0 )
-    {
 LABEL_9:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0A8 )
   {
     puts("then/else block 6");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -29186,9 +28908,7 @@ int test_4_blocks_2_targets_direct_variant_789()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -29238,9 +28958,7 @@ int test_4_blocks_2_targets_direct_variant_791()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -29262,9 +28980,7 @@ int test_4_blocks_2_targets_direct_variant_792()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -29286,9 +29002,7 @@ int test_4_blocks_2_targets_direct_variant_793()
   {
 LABEL_11:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -29310,9 +29024,7 @@ int test_4_blocks_2_targets_direct_variant_794()
   {
 LABEL_11:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -29358,10 +29070,8 @@ int test_4_blocks_2_targets_direct_variant_796()
     {
 LABEL_10:
       puts("then/else block 7");
-      goto LABEL_2;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -29452,9 +29162,7 @@ int test_4_blocks_2_targets_direct_variant_801()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -30232,9 +29940,7 @@ int test_4_blocks_2_targets_direct_variant_837()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -30333,9 +30039,7 @@ int test_4_blocks_2_targets_direct_variant_842()
   {
 LABEL_11:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -30357,9 +30061,7 @@ int test_4_blocks_2_targets_direct_variant_843()
   {
 LABEL_11:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -30381,9 +30083,7 @@ int test_4_blocks_2_targets_direct_variant_844()
   {
 LABEL_10:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -30429,10 +30129,8 @@ int test_4_blocks_2_targets_direct_variant_846()
     {
 LABEL_11:
       puts("then/else block 6");
-      goto LABEL_2;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -30481,9 +30179,7 @@ int test_4_blocks_2_targets_direct_variant_848()
   {
 LABEL_11:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -30506,9 +30202,7 @@ int test_4_blocks_2_targets_direct_variant_849()
   {
 LABEL_11:
     puts("then/else block 6");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -30794,17 +30488,13 @@ int test_4_blocks_2_targets_direct_variant_863()
   if ( dword_808A0B0 )
   {
     if ( dword_808A0AC )
-    {
 LABEL_11:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0A8 )
   {
     puts("then/else block 7");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -30998,9 +30688,7 @@ int test_4_blocks_2_targets_direct_variant_873()
   {
 LABEL_11:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -31022,9 +30710,7 @@ int test_4_blocks_2_targets_direct_variant_874()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -31046,9 +30732,7 @@ int test_4_blocks_2_targets_direct_variant_875()
   {
 LABEL_11:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -31072,10 +30756,8 @@ int test_4_blocks_2_targets_direct_variant_876()
     {
 LABEL_11:
       puts("then/else block 7");
-      goto LABEL_2;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -31254,9 +30936,7 @@ int test_4_blocks_2_targets_direct_variant_885()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -31773,9 +31453,7 @@ int test_4_blocks_2_targets_direct_variant_909()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -32087,17 +31765,13 @@ int test_4_blocks_2_targets_direct_variant_924()
   if ( dword_808A0B0 )
   {
     if ( dword_808A0AC )
-    {
 LABEL_11:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
   else if ( dword_808A0A8 )
   {
     puts("then/else block 6");
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -32119,9 +31793,7 @@ int test_4_blocks_2_targets_direct_variant_925()
   {
 LABEL_11:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -32143,9 +31815,7 @@ int test_4_blocks_2_targets_direct_variant_926()
   {
 LABEL_11:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -32167,9 +31837,7 @@ int test_4_blocks_2_targets_direct_variant_927()
   {
 LABEL_10:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -32193,10 +31861,8 @@ int test_4_blocks_2_targets_direct_variant_928()
     {
 LABEL_11:
       puts("then/else block 7");
-      goto LABEL_2;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -32218,9 +31884,7 @@ int test_4_blocks_2_targets_direct_variant_929()
   {
 LABEL_11:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -32244,9 +31908,7 @@ int test_4_blocks_2_targets_direct_variant_930()
   {
 LABEL_12:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -32268,9 +31930,7 @@ int test_4_blocks_2_targets_direct_variant_931()
   {
 LABEL_11:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -32293,9 +31953,7 @@ int test_4_blocks_2_targets_direct_variant_932()
   {
 LABEL_11:
     puts("then/else block 7");
-    goto LABEL_2;
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -32578,11 +32236,8 @@ int test_4_blocks_2_targets_direct_variant_945()
       goto LABEL_8;
     }
     if ( dword_808A0AC )
-    {
 LABEL_8:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
 LABEL_2:
   puts("return block");
@@ -32972,7 +32627,6 @@ int test_4_blocks_2_targets_direct_variant_962()
       }
 LABEL_8:
       puts("then/else block 7");
-      goto LABEL_2;
     }
   }
 LABEL_2:
@@ -33654,10 +33308,8 @@ int test_4_blocks_2_targets_direct_variant_994()
     {
 LABEL_10:
       puts("then/else block 7");
-      goto LABEL_2;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -33780,10 +33432,8 @@ int test_4_blocks_2_targets_direct_variant_1000()
     {
 LABEL_10:
       puts("then/else block 6");
-      goto LABEL_2;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -34388,11 +34038,8 @@ int test_4_blocks_2_targets_direct_variant_1028()
       goto LABEL_9;
     }
     if ( dword_808A0A8 )
-    {
 LABEL_9:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
 LABEL_2:
   puts("return block");
@@ -34439,11 +34086,8 @@ int test_4_blocks_2_targets_direct_variant_1030()
       goto LABEL_2;
     }
     if ( dword_808A0A8 )
-    {
 LABEL_10:
       puts("then/else block 6");
-      goto LABEL_2;
-    }
   }
 LABEL_2:
   puts("return block");
@@ -34694,11 +34338,8 @@ int test_4_blocks_2_targets_direct_variant_1041()
       goto LABEL_2;
     }
     if ( dword_808A0A8 )
-    {
 LABEL_10:
       puts("then/else block 7");
-      goto LABEL_2;
-    }
   }
 LABEL_2:
   puts("return block");
@@ -34884,10 +34525,8 @@ int test_4_blocks_2_targets_direct_variant_1050()
     {
 LABEL_11:
       puts("then/else block 7");
-      goto LABEL_2;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }
@@ -35880,10 +35519,8 @@ int test_4_blocks_2_targets_direct_variant_1095()
     {
 LABEL_12:
       puts("then/else block 7");
-      goto LABEL_2;
     }
   }
-LABEL_2:
   puts("return block");
   return 0;
 }

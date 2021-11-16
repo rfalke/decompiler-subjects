@@ -10,19 +10,10 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049207();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// char *deregister_tm_clones();
-// int register_tm_clones();
-// char *_do_global_dtors_aux();
-// int frame_dummy();
 int inst_0_values_var_0();
 int inst_0_flags_var_0();
 int inst_1_values_var_0();
@@ -67,9 +58,6 @@ int inst_20_values_var_0();
 int inst_20_flags_var_0();
 unsigned int inst_21_values_var_0();
 int inst_21_flags_var_0();
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -353,64 +341,48 @@ int inst_10_flags_var_0()
 //----- (08049AA9) --------------------------------------------------------
 int inst_11_values_var_0()
 {
-  _EDX = 1149586349;
-  __asm { rorx    ebx, edx, 37h ; '7' }
-  return _EBX - 177691273;
+  return __ROR4__(1149586349, 55) - 177691273;
 }
 
 //----- (08049AF2) --------------------------------------------------------
 int inst_11_flags_var_0()
 {
-  _EAX = -848104206;
-  __asm { rorx    edx, eax, 83h }
   return 0;
 }
 
 //----- (08049B52) --------------------------------------------------------
 int inst_12_values_var_0()
 {
-  _EBX = -1921826626;
-  __asm { sarx    eax, ebx, edx }
-  return _EAX + 1921826626;
+  return 0;
 }
 
 //----- (08049B9A) --------------------------------------------------------
 int inst_12_flags_var_0()
 {
-  _EBP = -499244090;
-  __asm { sarx    ebp, ebp, ecx }
   return 0;
 }
 
 //----- (08049BF9) --------------------------------------------------------
 int inst_13_values_var_0()
 {
-  _EDX = -1492275047;
-  __asm { shlx    eax, edx, esi }
-  return _EAX + 1016322496;
+  return 0;
 }
 
 //----- (08049C41) --------------------------------------------------------
 int inst_13_flags_var_0()
 {
-  _EBX = 372815352;
-  __asm { shlx    edx, ebx, edi }
   return 0;
 }
 
 //----- (08049CA0) --------------------------------------------------------
 int inst_14_values_var_0()
 {
-  _EBP = -1264045333;
-  __asm { shrx    ebx, ebp, edx }
-  return _EBX - 1766201592 + 1766201502;
+  return 0;
 }
 
 //----- (08049CE8) --------------------------------------------------------
 int inst_14_flags_var_0()
 {
-  _EDI = -1212442342;
-  __asm { shrx    ebx, edi, esi }
   return 0;
 }
 

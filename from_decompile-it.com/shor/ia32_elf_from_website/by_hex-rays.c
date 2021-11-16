@@ -13,18 +13,15 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int init_proc();
 int sub_8048814();
 // void abort(void);
 // void srand(unsigned int seed);
 // int __cdecl __cxa_atexit(void (__cdecl *lpfunc)(void *), void *obj, void *lpdso_handle);
-// int __gmon_start__(void); weak
 // void *realloc(void *ptr, size_t size);
 // char *getenv(const char *name);
 // void *calloc(size_t nmemb, size_t size);
 // int putchar(int c);
 // double pow(double x, double y);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void perror(const char *s);
 // void free(void *ptr);
 // int fflush(FILE *stream);
@@ -46,9 +43,6 @@ int sub_8048814();
 // int rand(void);
 // size_t fread(void *ptr, size_t size, size_t n, FILE *stream);
 // double sin(double x);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-void _do_global_dtors_aux();
-int frame_dummy();
 int __cdecl quantum_ipow(int a, int b);
 int __cdecl quantum_gcd(int u, int v);
 void __cdecl quantum_frac_approx(int *a, int *b, int width);
@@ -196,29 +190,19 @@ void __cdecl quantum_print_timeop(int width, void (*f)(quantum_reg *));
 int __cdecl main(int argc, const char **argv, const char **envp);
 const char *quantum_get_version(); // idb
 int __cdecl _mulsc3(float, float, float, float); // idb
-// double *__userpurge _muldc3@<eax>(double *a1, double a2, double a3, double a4, double a5);
+// double *__userpurge _muldc3@<eax>(double *, double, double, double, double);
 int __cdecl _divsc3(float, float, float, float); // idb
-// double *__userpurge _divdc3@<eax>(double *a1, double a2, double a3, double a4, double a5);
-void _libc_csu_fini(void); // idb
-void _libc_csu_init(void); // idb
+// double *__userpurge _divdc3@<eax>(double *, double, double, double, double);
 int __cdecl atexit(void (__cdecl *lpfunc)(void *)); // idb
-void (*_do_global_ctors_aux())(void);
-void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-int _CTOR_LIST__ = -1; // weak
-int _DTOR_LIST__[] = { -1 }; // weak
-int _DTOR_END__ = 0; // weak
-int _JCR_LIST__ = 0; // weak
 int (*dword_8055FFC)(void) = NULL; // weak
-_DWORD _dso_handle = 0; // idb
+_DWORD _dso_handle = 0; // weak
 int freq_2127 = 1073741824; // idb
 FILE *stderr; // idb
 FILE *stdout; // idb
-char completed_6635; // weak
-int dtor_idx_6637; // weak
 int quantum_status; // idb
 float quantum_lambda; // idb
 void *errfunc_2059; // idb
@@ -233,22 +217,7 @@ int type; // idb
 int width; // idb
 int counter_2126; // idb
 char *globalfile; // idb
-// extern _UNKNOWN _gmon_start__; weak
 
-
-//----- (080487E4) --------------------------------------------------------
-int init_proc()
-{
-  int v1; // [esp+0h] [ebp-8h]
-
-  if ( &_gmon_start__ )
-    __gmon_start__();
-  frame_dummy();
-  _do_global_ctors_aux();
-  return v1;
-}
-// 8048810: variable 'v1' is possibly undefined
-// 8048854: using guessed type int __gmon_start__(void);
 
 //----- (08048814) --------------------------------------------------------
 int sub_8048814()
@@ -256,55 +225,6 @@ int sub_8048814()
   return dword_8055FFC();
 }
 // 8055FFC: using guessed type int (*dword_8055FFC)(void);
-
-//----- (08048A30) --------------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>)
-{
-  int v2; // esi
-  int v3; // [esp-4h] [ebp-4h] BYREF
-  char *retaddr; // [esp+0h] [ebp+0h] BYREF
-
-  v2 = v3;
-  v3 = a1;
-  __libc_start_main((int (__cdecl *)(int, char **, char **))main, v2, &retaddr, _libc_csu_init, _libc_csu_fini, a2, &v3);
-  __halt();
-}
-// 8048A33: positive sp value 4 has been found
-
-//----- (08048A60) --------------------------------------------------------
-void _do_global_dtors_aux()
-{
-  int v0; // edx
-  unsigned int i; // ebx
-
-  if ( !completed_6635 )
-  {
-    v0 = dtor_idx_6637;
-    for ( i = &_DTOR_END__ - _DTOR_LIST__ - 1; dtor_idx_6637 < i; v0 = dtor_idx_6637 )
-    {
-      dtor_idx_6637 = v0 + 1;
-      ((void (*)(void))_DTOR_LIST__[v0 + 1])();
-    }
-    completed_6635 = 1;
-  }
-}
-// 8055F08: using guessed type int _DTOR_LIST__[];
-// 8055F0C: using guessed type int _DTOR_END__;
-// 80560C4: using guessed type char completed_6635;
-// 80560C8: using guessed type int dtor_idx_6637;
-
-//----- (08048AC0) --------------------------------------------------------
-int frame_dummy()
-{
-  int result; // eax
-
-  result = _JCR_LIST__;
-  if ( _JCR_LIST__ )
-    result = 0;
-  return result;
-}
-// 8055F10: using guessed type int _JCR_LIST__;
 
 //----- (08048AE4) --------------------------------------------------------
 int __cdecl quantum_ipow(int a, int b)
@@ -489,15 +409,15 @@ void __cdecl quantum_decohere(quantum_reg *reg)
   long double v1; // fst7
   long double v2; // fst7
   quantum_reg_node *v3; // eax
-  unsigned int v4; // edx
+  unsigned int state_high; // edx
   int v5; // eax
   unsigned int v6; // edx
   long double v7; // fst7
   quantum_reg_node *v8; // edi
-  float v9; // esi
+  float real; // esi
   complex_float v10; // rax
   float v11; // edx
-  float v12; // [esp+40h] [ebp-38h]
+  float imag; // [esp+40h] [ebp-38h]
   int j; // [esp+48h] [ebp-30h]
   int i; // [esp+4Ch] [ebp-2Ch]
   int ia; // [esp+4Ch] [ebp-2Ch]
@@ -537,9 +457,9 @@ void __cdecl quantum_decohere(quantum_reg *reg)
       for ( j = 0; reg->width > j; ++j )
       {
         v3 = &reg->node[ia];
-        v4 = HIDWORD(v3->state);
+        state_high = HIDWORD(v3->state);
         v5 = v3->state >> j;
-        v6 = v4 >> j;
+        v6 = state_high >> j;
         if ( (j & 0x20) != 0 )
           LOBYTE(v5) = v6;
         if ( (v5 & 1) != 0 )
@@ -549,10 +469,10 @@ void __cdecl quantum_decohere(quantum_reg *reg)
         angle = v7;
       }
       v8 = &reg->node[ia];
-      v9 = v8->amplitude.real;
-      v12 = v8->amplitude.imag;
+      real = v8->amplitude.real;
+      imag = v8->amplitude.imag;
       v10 = quantum_cexp(angle);
-      LODWORD(v8->amplitude.real) = _mulsc3(v9, v12, v10.real, v10.imag);
+      LODWORD(v8->amplitude.real) = _mulsc3(real, imag, v10.real, v10.imag);
       v8->amplitude.imag = v11;
     }
     free(nrands);
@@ -562,7 +482,11 @@ void __cdecl quantum_decohere(quantum_reg *reg)
 // 80490E1: variable 'v11' is possibly undefined
 
 //----- (0804911C) --------------------------------------------------------
-quantum_density_op *__userpurge quantum_new_density_op@<eax>(quantum_density_op *retstr, int num, float *prob, quantum_reg *reg)
+quantum_density_op *__userpurge quantum_new_density_op@<eax>(
+        quantum_density_op *retstr,
+        int num,
+        float *prob,
+        quantum_reg *reg)
 {
   quantum_reg *v4; // ecx
   quantum_reg *v5; // edx
@@ -712,8 +636,8 @@ quantum_matrix *quantum_density_matrix(quantum_matrix *retstr, quantum_density_o
   float v8; // eax
   float v10; // [esp+1Ch] [ebp-4Ch]
   float v11; // [esp+1Ch] [ebp-4Ch]
-  float v12; // [esp+20h] [ebp-48h]
-  float v13; // [esp+24h] [ebp-44h]
+  float imag; // [esp+20h] [ebp-48h]
+  float real; // [esp+24h] [ebp-44h]
   float v14; // [esp+28h] [ebp-40h]
   quantum_matrix m; // [esp+38h] [ebp-30h] BYREF
   int dim; // [esp+44h] [ebp-24h]
@@ -739,15 +663,15 @@ quantum_matrix *quantum_density_matrix(quantum_matrix *retstr, quantum_density_o
         if ( l1 >= 0 && l2 >= 0 )
         {
           v2 = &m.t[i + j * m.cols];
-          v13 = v2->real;
-          v12 = v2->imag;
+          real = v2->real;
+          imag = v2->imag;
           v3 = &rho->reg[k].node[l2];
           v4 = COERCE_FLOAT(_mulsc3(rho->prob[k], 0.0, v3->amplitude.real, v3->amplitude.imag));
           v14 = v5;
           v6 = quantum_conj(rho->reg[k].node[l1].amplitude);
-          v10 = v13 + COERCE_FLOAT(_mulsc3(v4, v14, v6.real, v6.imag));
+          v10 = real + COERCE_FLOAT(_mulsc3(v4, v14, v6.real, v6.imag));
           v8 = v10;
-          v11 = v12 + v7;
+          v11 = imag + v7;
           v2->real = v8;
           v2->imag = v11;
         }
@@ -920,46 +844,43 @@ void *__cdecl quantum_error_handler(void *(*f)(int))
 //----- (08049F7C) --------------------------------------------------------
 const char *__cdecl quantum_strerr(int errno)
 {
-  const char *v2; // [esp+4h] [ebp-4h]
-
   if ( errno == 3 )
     return "matrix too large";
   if ( errno > 3 )
   {
     if ( errno == 5 )
     {
-      v2 = "hash table full";
+      return "hash table full";
     }
     else if ( errno < 5 )
     {
-      v2 = "wrong matrix size";
+      return "wrong matrix size";
     }
     else if ( errno == 0x10000 )
     {
-      v2 = "single-column matrix expected";
+      return "single-column matrix expected";
     }
     else
     {
       if ( errno != 65537 )
         return "unknown error code";
-      v2 = "unknown opcode";
+      return "unknown opcode";
     }
   }
   else if ( errno == 1 )
   {
-    v2 = "failure";
+    return "failure";
   }
   else if ( errno > 1 )
   {
-    v2 = "malloc failed";
+    return "malloc failed";
   }
   else
   {
     if ( errno )
       return "unknown error code";
-    v2 = "success";
+    return "success";
   }
-  return v2;
 }
 
 //----- (0804A01C) --------------------------------------------------------
@@ -1001,7 +922,7 @@ void __cdecl quantum_exp_mod_n(int N, int x, int width_input, int width, quantum
 void __cdecl quantum_cnot(int control, int target, quantum_reg *reg)
 {
   quantum_reg_node *v3; // eax
-  unsigned int v4; // edx
+  unsigned int state_high; // edx
   int v5; // eax
   unsigned int v6; // edx
   int v7; // edi
@@ -1019,9 +940,9 @@ void __cdecl quantum_cnot(int control, int target, quantum_reg *reg)
     for ( i = 0; reg->size > i; ++i )
     {
       v3 = &reg->node[i];
-      v4 = HIDWORD(v3->state);
+      state_high = HIDWORD(v3->state);
       v5 = v3->state >> control;
-      v6 = v4 >> control;
+      v6 = state_high >> control;
       if ( (control & 0x20) != 0 )
         LOBYTE(v5) = v6;
       if ( (v5 & 1) != 0 )
@@ -1040,7 +961,7 @@ void __cdecl quantum_cnot(int control, int target, quantum_reg *reg)
 void __cdecl quantum_toffoli(int control1, int control2, int target, quantum_reg *reg)
 {
   quantum_reg_node *v4; // eax
-  unsigned int v5; // edx
+  unsigned int state_high; // edx
   int v6; // eax
   unsigned int v7; // edx
   quantum_reg_node *v8; // eax
@@ -1062,9 +983,9 @@ void __cdecl quantum_toffoli(int control1, int control2, int target, quantum_reg
     for ( i = 0; reg->size > i; ++i )
     {
       v4 = &reg->node[i];
-      v5 = HIDWORD(v4->state);
+      state_high = HIDWORD(v4->state);
       v6 = v4->state >> control1;
-      v7 = v5 >> control1;
+      v7 = state_high >> control1;
       if ( (control1 & 0x20) != 0 )
         LOBYTE(v6) = v7;
       if ( (v6 & 1) != 0 )
@@ -1091,10 +1012,10 @@ void __cdecl quantum_toffoli(int control1, int control2, int target, quantum_reg
 //----- (0804A3B3) --------------------------------------------------------
 void quantum_unbounded_toffoli(int controlling, quantum_reg *reg, ...)
 {
-  _DWORD *v2; // edx
+  int v2; // kr00_4
   int v3; // ecx
   unsigned __int64 v4; // rax
-  int v5; // edi
+  int state_high; // edi
   quantum_reg_node *v6; // [esp+14h] [ebp-34h]
   int j; // [esp+24h] [ebp-24h]
   int i; // [esp+28h] [ebp-20h]
@@ -1112,9 +1033,8 @@ void quantum_unbounded_toffoli(int controlling, quantum_reg *reg, ...)
   va_copy(bits, va);
   for ( i = 0; i < controlling; ++i )
   {
-    v2 = bits;
-    bits += 4;
-    controls[i] = *v2;
+    v2 = va_arg(bits, _DWORD);
+    controls[i] = v2;
   }
   target = *(_DWORD *)bits;
   for ( ia = 0; reg->size > ia; ++ia )
@@ -1131,9 +1051,9 @@ void quantum_unbounded_toffoli(int controlling, quantum_reg *reg, ...)
     if ( j == controlling )
     {
       v6 = &reg->node[ia];
-      v5 = HIDWORD(v6->state);
+      state_high = HIDWORD(v6->state);
       LODWORD(v6->state) ^= 1LL << target;
-      HIDWORD(v6->state) = ((unsigned __int64)(1LL << target) >> 32) ^ v5;
+      HIDWORD(v6->state) = ((unsigned __int64)(1LL << target) >> 32) ^ state_high;
     }
   }
   free(controls);
@@ -1144,7 +1064,7 @@ void quantum_unbounded_toffoli(int controlling, quantum_reg *reg, ...)
 //----- (0804A535) --------------------------------------------------------
 void __cdecl quantum_sigma_x(int target, quantum_reg *reg)
 {
-  int v2; // edi
+  int state_high; // edi
   quantum_reg_node *v3; // [esp+14h] [ebp-24h]
   int qec; // [esp+20h] [ebp-18h] BYREF
   int i; // [esp+24h] [ebp-14h]
@@ -1159,9 +1079,9 @@ void __cdecl quantum_sigma_x(int target, quantum_reg *reg)
     for ( i = 0; reg->size > i; ++i )
     {
       v3 = &reg->node[i];
-      v2 = HIDWORD(v3->state);
+      state_high = HIDWORD(v3->state);
       LODWORD(v3->state) ^= 1LL << target;
-      HIDWORD(v3->state) = ((unsigned __int64)(1LL << target) >> 32) ^ v2;
+      HIDWORD(v3->state) = ((unsigned __int64)(1LL << target) >> 32) ^ state_high;
     }
     quantum_decohere(reg);
   }
@@ -1170,7 +1090,7 @@ void __cdecl quantum_sigma_x(int target, quantum_reg *reg)
 //----- (0804A615) --------------------------------------------------------
 void __cdecl quantum_sigma_y(int target, quantum_reg *reg)
 {
-  int v2; // edi
+  int state_high; // edi
   quantum_reg_node *v3; // eax
   unsigned int v4; // edx
   int v5; // eax
@@ -1185,9 +1105,9 @@ void __cdecl quantum_sigma_y(int target, quantum_reg *reg)
     for ( i = 0; reg->size > i; ++i )
     {
       v9 = &reg->node[i];
-      v2 = HIDWORD(v9->state);
+      state_high = HIDWORD(v9->state);
       LODWORD(v9->state) ^= 1LL << target;
-      HIDWORD(v9->state) = ((unsigned __int64)(1LL << target) >> 32) ^ v2;
+      HIDWORD(v9->state) = ((unsigned __int64)(1LL << target) >> 32) ^ state_high;
       v3 = &reg->node[i];
       v4 = HIDWORD(v3->state);
       v5 = v3->state >> target;
@@ -1210,7 +1130,7 @@ void __cdecl quantum_sigma_y(int target, quantum_reg *reg)
 void __cdecl quantum_sigma_z(int target, quantum_reg *reg)
 {
   quantum_reg_node *v2; // eax
-  unsigned int v3; // edx
+  unsigned int state_high; // edx
   int v4; // eax
   unsigned int v5; // edx
   quantum_reg_node *v6; // ecx
@@ -1224,9 +1144,9 @@ void __cdecl quantum_sigma_z(int target, quantum_reg *reg)
     for ( i = 0; reg->size > i; ++i )
     {
       v2 = &reg->node[i];
-      v3 = HIDWORD(v2->state);
+      state_high = HIDWORD(v2->state);
       v4 = v2->state >> target;
-      v5 = v3 >> target;
+      v5 = state_high >> target;
       if ( (target & 0x20) != 0 )
         LOBYTE(v4) = v5;
       if ( (v4 & 1) != 0 )
@@ -1323,7 +1243,7 @@ void __cdecl quantum_gate1(int target, quantum_matrix m, quantum_reg *reg)
   float v22; // edx
   float v23; // edx
   quantum_reg_node *v24; // eax
-  int v25; // edi
+  int state_high; // edi
   quantum_reg_node *v26; // esi
   float v27; // edx
   quantum_reg_node *v28; // ecx
@@ -1331,8 +1251,8 @@ void __cdecl quantum_gate1(int target, quantum_matrix m, quantum_reg *reg)
   int v30; // edx
   quantum_reg_node *v31; // ecx
   quantum_reg_node *v32; // eax
-  float v33; // edx
-  float v34; // eax
+  float real; // edx
+  float imag; // eax
   float v35; // [esp+2Ch] [ebp-9Ch]
   float v36; // [esp+2Ch] [ebp-9Ch]
   float v37; // [esp+2Ch] [ebp-9Ch]
@@ -1440,9 +1360,9 @@ void __cdecl quantum_gate1(int target, quantum_matrix m, quantum_reg *reg)
           break;
         v46 = &reg->node[k];
         v24 = &reg->node[ib];
-        v25 = HIDWORD(v24->state);
+        state_high = HIDWORD(v24->state);
         LODWORD(v46->state) = (1LL << target) ^ LODWORD(v24->state);
-        HIDWORD(v46->state) = ((unsigned __int64)(1LL << target) >> 32) ^ v25;
+        HIDWORD(v46->state) = ((unsigned __int64)(1LL << target) >> 32) ^ state_high;
         v26 = &reg->node[k];
         if ( iset )
           LODWORD(v26->amplitude.real) = _mulsc3(m.t[1].real, m.t[1].imag, t, t_4);
@@ -1498,10 +1418,10 @@ void __cdecl quantum_gate1(int target, quantum_matrix m, quantum_reg *reg)
           HIDWORD(v28->state) = v30;
           v31 = &reg->node[ic - ja];
           v32 = &reg->node[ic];
-          v33 = v32->amplitude.real;
-          v34 = v32->amplitude.imag;
-          v31->amplitude.real = v33;
-          v31->amplitude.imag = v34;
+          real = v32->amplitude.real;
+          imag = v32->amplitude.imag;
+          v31->amplitude.real = real;
+          v31->amplitude.imag = imag;
         }
       }
       else
@@ -1623,15 +1543,15 @@ void __cdecl quantum_gate2(int target1, int target2, quantum_matrix m, quantum_r
   quantum_reg_node *v4; // eax
   quantum_reg_node *v5; // edx
   quantum_reg_node *v6; // eax
-  int v7; // edi
+  int state_high; // edi
   int v8; // eax
   int v9; // esi
   int v10; // ebx
   unsigned __int64 v11; // rcx
   int v12; // ecx
   quantum_reg_node *v13; // eax
-  float v14; // edx
-  float v15; // eax
+  float real; // edx
+  float imag; // eax
   quantum_reg_node *v16; // edx
   quantum_reg_node *v17; // edi
   float v18; // edx
@@ -1710,7 +1630,7 @@ void __cdecl quantum_gate2(int target1, int target2, quantum_matrix m, quantum_r
       v31 = j ^ 2;
       base[v31] = quantum_get_state_0((1LL << target1) ^ reg->node[i].state, *reg);
       v6 = &reg->node[i];
-      v7 = HIDWORD(v6->state);
+      state_high = HIDWORD(v6->state);
       v8 = (1LL << target1) ^ LODWORD(v6->state);
       v9 = (unsigned __int64)(1LL << target2) >> 32;
       v10 = 1 << target2;
@@ -1720,7 +1640,7 @@ void __cdecl quantum_gate2(int target1, int target2, quantum_matrix m, quantum_r
         v10 = 0;
       }
       LODWORD(v11) = v8 ^ v10;
-      HIDWORD(v11) = ((unsigned __int64)(1LL << target1) >> 32) ^ v7 ^ v9;
+      HIDWORD(v11) = ((unsigned __int64)(1LL << target1) >> 32) ^ state_high ^ v9;
       v32 = j ^ 3;
       base[v32] = quantum_get_state_0(v11, *reg);
       for ( j = 0; j <= 3; ++j )
@@ -1729,10 +1649,10 @@ void __cdecl quantum_gate2(int target1, int target2, quantum_matrix m, quantum_r
           base[j] = l++;
         v12 = j;
         v13 = &reg->node[base[j]];
-        v14 = v13->amplitude.real;
-        v15 = v13->amplitude.imag;
-        psi_sub[j].real = v14;
-        psi_sub[v12].imag = v15;
+        real = v13->amplitude.real;
+        imag = v13->amplitude.imag;
+        psi_sub[j].real = real;
+        psi_sub[v12].imag = imag;
       }
       for ( j = 0; j <= 3; ++j )
       {
@@ -1823,7 +1743,7 @@ int __cdecl quantum_bitmask(unsigned __int64 a, int width, int *bits)
 //----- (0804C0BF) --------------------------------------------------------
 void __cdecl quantum_hadamard(int target, quantum_reg *reg)
 {
-  complex_float *v2; // edx
+  complex_float *t; // edx
   complex_float *v3; // edx
   complex_float *v4; // edx
   complex_float *v5; // edx
@@ -1834,9 +1754,9 @@ void __cdecl quantum_hadamard(int target, quantum_reg *reg)
   {
     quantum_new_matrix(&v6, 2, 2);
     m = v6;
-    v2 = v6.t;
+    t = v6.t;
     v6.t->real = 0.70710677;
-    v2->imag = 0.0;
+    t->imag = 0.0;
     v3 = m.t + 1;
     m.t[1].real = 0.70710677;
     v3->imag = 0.0;
@@ -1863,7 +1783,7 @@ void __cdecl quantum_walsh(int width, quantum_reg *reg)
 //----- (0804C1C4) --------------------------------------------------------
 void __cdecl quantum_r_x(int target, float gamma, quantum_reg *reg)
 {
-  complex_float *v3; // ebx
+  complex_float *t; // ebx
   complex_float *v4; // ebx
   long double v5; // fst7
   long double v6; // fst7
@@ -1885,10 +1805,10 @@ void __cdecl quantum_r_x(int target, float gamma, quantum_reg *reg)
   {
     quantum_new_matrix(&v18, 2, 2);
     m = v18;
-    v3 = v18.t;
+    t = v18.t;
     v17 = cos(gamma / 2.0);
-    v3->real = v17;
-    v3->imag = 0.0;
+    t->real = v17;
+    t->imag = 0.0;
     v4 = m.t + 1;
     v5 = sin(gamma / 2.0);
     _muldc3(&v15, v5, 0.0, 0.0, -1.0);
@@ -1921,7 +1841,7 @@ void __cdecl quantum_r_x(int target, float gamma, quantum_reg *reg)
 //----- (0804C382) --------------------------------------------------------
 void __cdecl quantum_r_y(int target, float gamma, quantum_reg *reg)
 {
-  complex_float *v3; // ebx
+  complex_float *t; // ebx
   complex_float *v4; // ebx
   complex_float *v5; // ebx
   complex_float *v6; // ebx
@@ -1936,10 +1856,10 @@ void __cdecl quantum_r_y(int target, float gamma, quantum_reg *reg)
   {
     quantum_new_matrix(&v11, 2, 2);
     m = v11;
-    v3 = v11.t;
+    t = v11.t;
     v7 = cos(gamma / 2.0);
-    v3->real = v7;
-    v3->imag = 0.0;
+    t->real = v7;
+    t->imag = 0.0;
     v4 = m.t + 1;
     v8 = sin(gamma / -2.0);
     v4->real = v8;
@@ -1961,7 +1881,7 @@ void __cdecl quantum_r_y(int target, float gamma, quantum_reg *reg)
 void __cdecl quantum_r_z(int target, float gamma, quantum_reg *reg)
 {
   quantum_reg_node *v3; // eax
-  unsigned int v4; // edx
+  unsigned int state_high; // edx
   int v5; // eax
   unsigned int v6; // edx
   quantum_reg_node *v7; // esi
@@ -1977,9 +1897,9 @@ void __cdecl quantum_r_z(int target, float gamma, quantum_reg *reg)
     for ( i = 0; reg->size > i; ++i )
     {
       v3 = &reg->node[i];
-      v4 = HIDWORD(v3->state);
+      state_high = HIDWORD(v3->state);
       v5 = v3->state >> target;
-      v6 = v4 >> target;
+      v6 = state_high >> target;
       if ( (target & 0x20) != 0 )
         LOBYTE(v5) = v6;
       v7 = &reg->node[i];
@@ -2020,7 +1940,7 @@ void __cdecl quantum_phase_scale(int target, float gamma, quantum_reg *reg)
 void __cdecl quantum_phase_kick(int target, float gamma, quantum_reg *reg)
 {
   quantum_reg_node *v3; // eax
-  unsigned int v4; // edx
+  unsigned int state_high; // edx
   int v5; // eax
   unsigned int v6; // edx
   quantum_reg_node *v7; // esi
@@ -2034,9 +1954,9 @@ void __cdecl quantum_phase_kick(int target, float gamma, quantum_reg *reg)
     for ( i = 0; reg->size > i; ++i )
     {
       v3 = &reg->node[i];
-      v4 = HIDWORD(v3->state);
+      state_high = HIDWORD(v3->state);
       v5 = v3->state >> target;
-      v6 = v4 >> target;
+      v6 = state_high >> target;
       if ( (target & 0x20) != 0 )
         LOBYTE(v5) = v6;
       if ( (v5 & 1) != 0 )
@@ -2055,7 +1975,7 @@ void __cdecl quantum_phase_kick(int target, float gamma, quantum_reg *reg)
 void __cdecl quantum_cond_phase(int control, int target, quantum_reg *reg)
 {
   quantum_reg_node *v3; // eax
-  unsigned int v4; // edx
+  unsigned int state_high; // edx
   int v5; // eax
   unsigned int v6; // edx
   quantum_reg_node *v7; // eax
@@ -2075,9 +1995,9 @@ void __cdecl quantum_cond_phase(int control, int target, quantum_reg *reg)
     for ( i = 0; reg->size > i; ++i )
     {
       v3 = &reg->node[i];
-      v4 = HIDWORD(v3->state);
+      state_high = HIDWORD(v3->state);
       v5 = v3->state >> control;
-      v6 = v4 >> control;
+      v6 = state_high >> control;
       if ( (control & 0x20) != 0 )
         LOBYTE(v5) = v6;
       if ( (v5 & 1) != 0 )
@@ -2105,7 +2025,7 @@ void __cdecl quantum_cond_phase(int control, int target, quantum_reg *reg)
 void __cdecl quantum_cond_phase_inv(int control, int target, quantum_reg *reg)
 {
   quantum_reg_node *v3; // eax
-  unsigned int v4; // edx
+  unsigned int state_high; // edx
   int v5; // eax
   unsigned int v6; // edx
   quantum_reg_node *v7; // eax
@@ -2123,9 +2043,9 @@ void __cdecl quantum_cond_phase_inv(int control, int target, quantum_reg *reg)
   for ( i = 0; reg->size > i; ++i )
   {
     v3 = &reg->node[i];
-    v4 = HIDWORD(v3->state);
+    state_high = HIDWORD(v3->state);
     v5 = v3->state >> control;
-    v6 = v4 >> control;
+    v6 = state_high >> control;
     if ( (control & 0x20) != 0 )
       LOBYTE(v5) = v6;
     if ( (v5 & 1) != 0 )
@@ -2152,7 +2072,7 @@ void __cdecl quantum_cond_phase_inv(int control, int target, quantum_reg *reg)
 void __cdecl quantum_cond_phase_kick(int control, int target, float gamma, quantum_reg *reg)
 {
   quantum_reg_node *v4; // eax
-  unsigned int v5; // edx
+  unsigned int state_high; // edx
   int v6; // eax
   unsigned int v7; // edx
   quantum_reg_node *v8; // eax
@@ -2170,9 +2090,9 @@ void __cdecl quantum_cond_phase_kick(int control, int target, float gamma, quant
     for ( i = 0; reg->size > i; ++i )
     {
       v4 = &reg->node[i];
-      v5 = HIDWORD(v4->state);
+      state_high = HIDWORD(v4->state);
       v6 = v4->state >> control;
-      v7 = v5 >> control;
+      v7 = state_high >> control;
       if ( (control & 0x20) != 0 )
         LOBYTE(v6) = v7;
       if ( (v6 & 1) != 0 )
@@ -2284,12 +2204,12 @@ float __cdecl quantum_real_2(complex_float a)
 quantum_matrix *__userpurge quantum_mmult@<eax>(quantum_matrix *retstr, quantum_matrix A, quantum_matrix B)
 {
   complex_float *v3; // esi
-  float v4; // edi
+  float real; // edi
   float v5; // edx
   float v6; // eax
   float v8; // [esp+14h] [ebp-34h]
   float v9; // [esp+14h] [ebp-34h]
-  float v10; // [esp+18h] [ebp-30h]
+  float imag; // [esp+18h] [ebp-30h]
   quantum_matrix C; // [esp+24h] [ebp-24h] BYREF
   int k; // [esp+30h] [ebp-18h]
   int j; // [esp+34h] [ebp-14h]
@@ -2305,9 +2225,9 @@ quantum_matrix *__userpurge quantum_mmult@<eax>(quantum_matrix *retstr, quantum_
       for ( k = 0; B.rows > k; ++k )
       {
         v3 = &C.t[i + j * C.cols];
-        v4 = v3->real;
-        v10 = v3->imag;
-        v8 = v4
+        real = v3->real;
+        imag = v3->imag;
+        v8 = real
            + COERCE_FLOAT(
                _mulsc3(
                  A.t[k + j * A.cols].real,
@@ -2315,7 +2235,7 @@ quantum_matrix *__userpurge quantum_mmult@<eax>(quantum_matrix *retstr, quantum_
                  B.t[i + k * B.cols].real,
                  B.t[i + k * B.cols].imag));
         v6 = v8;
-        v9 = v10 + v5;
+        v9 = imag + v5;
         v3->real = v6;
         v3->imag = v9;
       }
@@ -2410,7 +2330,7 @@ int __cdecl quantum_bmeasure_bitpreserve(int pos, quantum_reg *reg)
   quantum_reg_node *v4; // eax
   quantum_reg_node *v5; // ecx
   quantum_reg_node *v6; // eax
-  int v7; // edx
+  int state_high; // edx
   int v8; // eax
   int *v9; // ecx
   int v10; // edx
@@ -2481,9 +2401,9 @@ int __cdecl quantum_bmeasure_bitpreserve(int pos, quantum_reg *reg)
     {
       v5 = &out_12[j];
       v6 = &reg->node[ib];
-      v7 = HIDWORD(v6->state);
+      state_high = HIDWORD(v6->state);
       LODWORD(v5->state) = v6->state;
-      HIDWORD(v5->state) = v7;
+      HIDWORD(v5->state) = state_high;
       v13 = sqrt(d);
       v8 = _divsc3(reg->node[ib].amplitude.real, reg->node[ib].amplitude.imag, v13, 0.0);
       v9 = (int *)&out_12[j];
@@ -2884,7 +2804,7 @@ int quantum_objcode_put(unsigned __int8 operation, ...)
   va_list va; // [esp+B4h] [ebp+1Ch] BYREF
 
   va_start(va, operation);
-  v7 = va_arg(va, _OWORD);
+  v7 = va_arg(va, __int128);
   v6 = __readgsdword(0x14u);
   size = 0;
   if ( !opstatus )
@@ -2964,12 +2884,11 @@ LABEL_26:
     objcode[position++] = buf[i];
   return 1;
 }
-// 804E73B: conditional instruction was optimized away because of '%var_78.4==1'
+// 804E73B: conditional instruction was optimized away because %var_78.4==1
 
 //----- (0804EA7D) --------------------------------------------------------
 int __cdecl quantum_objcode_write(char *file)
 {
-  int v2; // [esp+14h] [ebp-14h]
   FILE *fhd; // [esp+24h] [ebp-4h]
 
   if ( opstatus )
@@ -2981,19 +2900,18 @@ int __cdecl quantum_objcode_write(char *file)
     {
       fwrite(objcode, position, 1u, fhd);
       fclose(fhd);
-      v2 = 0;
+      return 0;
     }
     else
     {
-      v2 = -1;
+      return -1;
     }
   }
   else
   {
     fwrite("Object code generation not active! Forgot to call quantum_objcode_start?\n", 1u, 0x49u, stderr);
-    v2 = 1;
+    return 1;
   }
-  return v2;
 }
 
 //----- (0804EB2B) --------------------------------------------------------
@@ -3199,7 +3117,7 @@ LABEL_55:
   }
   fclose(fhd);
 }
-// 804EC47: conditional instruction was optimized away because of '%var_C8.4==1'
+// 804EC47: conditional instruction was optimized away because %var_C8.4==1
 
 //----- (0804F2F4) --------------------------------------------------------
 void __cdecl emul(int a, int L, int width, quantum_reg *reg)
@@ -3409,7 +3327,7 @@ void __cdecl quantum_toffoli_ft(int control1, int control2, int target, quantum_
   int v4; // esi
   int v5; // ebx
   quantum_reg_node *v6; // eax
-  unsigned int v7; // edx
+  unsigned int state_high; // edx
   int v8; // eax
   unsigned int v9; // edx
   unsigned __int64 v10; // rax
@@ -3442,9 +3360,9 @@ void __cdecl quantum_toffoli_ft(int control1, int control2, int target, quantum_
     c1 = 0;
     c2 = 0;
     v6 = &reg->node[i];
-    v7 = HIDWORD(v6->state);
+    state_high = HIDWORD(v6->state);
     v8 = v6->state >> control1;
-    v9 = v7 >> control1;
+    v9 = state_high >> control1;
     if ( (control1 & 0x20) != 0 )
       LOBYTE(v8) = v9;
     if ( (v8 & 1) != 0 )
@@ -3515,7 +3433,11 @@ void __cdecl quantum_qft_inv(int width, quantum_reg *reg)
 }
 
 //----- (0804FEA4) --------------------------------------------------------
-void __cdecl quantum_rk4(quantum_reg *reg, double t, double dt, quantum_reg *(*H)(quantum_reg *__return_ptr __struct_ptr retstr, unsigned __int64, double))
+void __cdecl quantum_rk4(
+        quantum_reg *reg,
+        double t,
+        double dt,
+        quantum_reg *(*H)(quantum_reg *__return_ptr __struct_ptr retstr, unsigned __int64, double))
 {
   long double v4; // fst7
   long double v5; // fst7
@@ -3622,11 +3544,16 @@ void __cdecl quantum_rk4(quantum_reg *reg, double t, double dt, quantum_reg *(*H
 }
 
 //----- (0805057C) --------------------------------------------------------
-double __cdecl quantum_rk4a(quantum_reg *reg, double t, double *dt, double epsilon, quantum_reg *(*H)(quantum_reg *__return_ptr __struct_ptr retstr, unsigned __int64, double))
+double __cdecl quantum_rk4a(
+        quantum_reg *reg,
+        double t,
+        double *dt,
+        double epsilon,
+        quantum_reg *(*H)(quantum_reg *__return_ptr __struct_ptr retstr, unsigned __int64, double))
 {
   quantum_reg_node *v5; // eax
-  float v6; // ecx
-  float v7; // ebx
+  float real; // ecx
+  float imag; // ebx
   quantum_reg_node *v8; // eax
   long double v9; // fst7
   float v10; // eax
@@ -3703,11 +3630,11 @@ double __cdecl quantum_rk4a(quantum_reg *reg, double t, double *dt, double epsil
     for ( i = 0; reg->size > i; ++i )
     {
       v5 = &reg->node[i];
-      v6 = v5->amplitude.real;
-      v7 = v5->amplitude.imag;
+      real = v5->amplitude.real;
+      imag = v5->amplitude.imag;
       v8 = &reg2.node[i];
-      v9 = v7 - v8->amplitude.imag;
-      a = v6 - v8->amplitude.real;
+      v9 = imag - v8->amplitude.imag;
+      a = real - v8->amplitude.real;
       v10 = a;
       *(float *)&aa = v9;
       v56 = quantum_real_4((complex_float)__PAIR64__(aa, LODWORD(v10)));
@@ -3801,10 +3728,10 @@ quantum_reg *__userpurge quantum_matrix2qureg@<eax>(quantum_reg *retstr, quantum
 {
   complex_float *v3; // eax
   complex_float *v4; // eax
-  float *v5; // ecx
+  float *p_real; // ecx
   complex_float *v6; // eax
-  float v7; // edx
-  float v8; // eax
+  float real; // edx
+  float imag; // eax
   int reg_8; // [esp+20h] [ebp-18h]
   quantum_reg_node *reg_12; // [esp+24h] [ebp-14h]
   int *reg_16; // [esp+28h] [ebp-10h]
@@ -3839,12 +3766,12 @@ quantum_reg *__userpurge quantum_matrix2qureg@<eax>(quantum_reg *retstr, quantum
     if ( v4->real != 0.0 || v4->imag != 0.0 )
     {
       reg_12[j].state = ia;
-      v5 = &reg_12[j].amplitude.real;
+      p_real = &reg_12[j].amplitude.real;
       v6 = &m->t[ia];
-      v7 = v6->real;
-      v8 = v6->imag;
-      *v5 = v7;
-      v5[1] = v8;
+      real = v6->real;
+      imag = v6->imag;
+      *p_real = real;
+      p_real[1] = imag;
       ++j;
     }
     ++ia;
@@ -3915,8 +3842,8 @@ quantum_matrix *__userpurge quantum_qureg2matrix@<eax>(quantum_matrix *retstr, q
 {
   complex_float *v2; // ecx
   quantum_reg_node *v3; // eax
-  float v4; // edx
-  float v5; // eax
+  float real; // edx
+  float imag; // eax
   quantum_matrix m; // [esp+18h] [ebp-10h] BYREF
   int i; // [esp+24h] [ebp-4h]
 
@@ -3925,10 +3852,10 @@ quantum_matrix *__userpurge quantum_qureg2matrix@<eax>(quantum_matrix *retstr, q
   {
     v2 = &m.t[LODWORD(reg.node[i].state)];
     v3 = &reg.node[i];
-    v4 = v3->amplitude.real;
-    v5 = v3->amplitude.imag;
-    v2->real = v4;
-    v2->imag = v5;
+    real = v3->amplitude.real;
+    imag = v3->amplitude.imag;
+    v2->real = real;
+    v2->imag = imag;
   }
   *retstr = m;
   return retstr;
@@ -3982,8 +3909,8 @@ void __cdecl quantum_copy_qureg(quantum_reg *src, quantum_reg *dst)
 void __cdecl quantum_print_qureg(quantum_reg reg)
 {
   quantum_reg_node *v1; // eax
-  unsigned int v2; // ebx
-  unsigned int v3; // esi
+  unsigned int state; // ebx
+  unsigned int state_high; // esi
   long double v4; // fst7
   quantum_reg_node *v5; // eax
   unsigned int v6; // edx
@@ -3998,11 +3925,11 @@ void __cdecl quantum_print_qureg(quantum_reg reg)
   {
     v9 = quantum_prob_inline_3(reg.node[i].amplitude);
     v1 = &reg.node[i];
-    v2 = v1->state;
-    v3 = HIDWORD(v1->state);
+    state = v1->state;
+    state_high = HIDWORD(v1->state);
     v10 = quantum_imag_5(v1->amplitude);
     v4 = quantum_real_5(reg.node[i].amplitude);
-    printf("% f %+fi|%lli> (%e) (|", (double)v4, v10, __PAIR64__(v3, v2), v9);
+    printf("% f %+fi|%lli> (%e) (|", (double)v4, v10, __PAIR64__(state_high, state), v9);
     for ( j = reg.width - 1; j >= 0; --j )
     {
       if ( j % 4 == 3 )
@@ -4078,12 +4005,12 @@ void __cdecl quantum_print_hash(quantum_reg reg)
 quantum_reg *__userpurge quantum_kronecker@<eax>(quantum_reg *retstr, quantum_reg *reg1, quantum_reg *reg2)
 {
   quantum_reg_node *v3; // eax
-  int v4; // ebx
+  int state; // ebx
   int v5; // edi
   int v6; // esi
   quantum_reg_node *v7; // eax
-  int v8; // ebx
-  _DWORD *v9; // edi
+  int state_high; // ebx
+  _DWORD *p_real; // edi
   int v10; // edx
   int v12; // [esp+18h] [ebp-30h]
   quantum_reg reg; // [esp+20h] [ebp-28h]
@@ -4107,25 +4034,25 @@ quantum_reg *__userpurge quantum_kronecker@<eax>(quantum_reg *retstr, quantum_re
     {
       v12 = (int)&reg.node[j + i * reg2->size];
       v3 = &reg1->node[i];
-      v4 = v3->state;
+      state = v3->state;
       v5 = v3->state << reg2->width >> 32;
-      v6 = v4 << reg2->width;
+      v6 = state << reg2->width;
       if ( (reg2->width & 0x20) != 0 )
       {
-        v5 = v4 << reg2->width;
+        v5 = state << reg2->width;
         v6 = 0;
       }
       v7 = &reg2->node[j];
-      v8 = HIDWORD(v7->state);
+      state_high = HIDWORD(v7->state);
       *(_DWORD *)(v12 + 8) = LODWORD(v7->state) | v6;
-      *(_DWORD *)(v12 + 12) = v8 | v5;
-      v9 = (_DWORD *)&reg.node[j + i * reg2->size].amplitude.real;
-      *v9 = _mulsc3(
-              reg1->node[i].amplitude.real,
-              reg1->node[i].amplitude.imag,
-              reg2->node[j].amplitude.real,
-              reg2->node[j].amplitude.imag);
-      v9[1] = v10;
+      *(_DWORD *)(v12 + 12) = state_high | v5;
+      p_real = (_DWORD *)&reg.node[j + i * reg2->size].amplitude.real;
+      *p_real = _mulsc3(
+                  reg1->node[i].amplitude.real,
+                  reg1->node[i].amplitude.imag,
+                  reg2->node[j].amplitude.real,
+                  reg2->node[j].amplitude.imag);
+      p_real[1] = v10;
     }
   }
   *retstr = reg;
@@ -4136,7 +4063,7 @@ quantum_reg *__userpurge quantum_kronecker@<eax>(quantum_reg *retstr, quantum_re
 //----- (0805165E) --------------------------------------------------------
 quantum_reg *__userpurge quantum_state_collapse@<eax>(quantum_reg *retstr, int pos, int value, quantum_reg reg)
 {
-  _DWORD *v4; // esi
+  _DWORD *p_real; // esi
   int v5; // edx
   float v7; // [esp+2Ch] [ebp-5Ch]
   quantum_reg_node *out_12; // [esp+48h] [ebp-40h]
@@ -4184,12 +4111,12 @@ quantum_reg *__userpurge quantum_state_collapse@<eax>(quantum_reg *retstr, int p
       while ( ka > pos )
         lpat += 1LL << ka--;
       lpata = reg.node[ia].state & lpat;
-      v4 = (_DWORD *)&out_12[j].amplitude.real;
-      v4[2] = rpata | (lpata >> 1);
-      v4[3] = HIDWORD(rpata) | (HIDWORD(lpata) >> 1);
+      p_real = (_DWORD *)&out_12[j].amplitude.real;
+      p_real[2] = rpata | (lpata >> 1);
+      p_real[3] = HIDWORD(rpata) | (HIDWORD(lpata) >> 1);
       v7 = sqrt(d);
-      *v4 = _divsc3(reg.node[ia].amplitude.real, reg.node[ia].amplitude.imag, v7, 0.0);
-      v4[1] = v5;
+      *p_real = _divsc3(reg.node[ia].amplitude.real, reg.node[ia].amplitude.imag, v7, 0.0);
+      p_real[1] = v5;
       ++j;
     }
     ++ia;
@@ -4341,11 +4268,11 @@ quantum_reg *__userpurge quantum_vectoradd@<eax>(quantum_reg *retstr, quantum_re
   float v6; // eax
   quantum_reg_node *v7; // ecx
   quantum_reg_node *v8; // eax
-  int v9; // edx
+  int state_high; // edx
   quantum_reg_node *v10; // ecx
   quantum_reg_node *v11; // eax
-  float v12; // edx
-  float v13; // eax
+  float real; // edx
+  float imag; // eax
   float v15; // [esp+1Ch] [ebp-3Ch]
   float v16; // [esp+1Ch] [ebp-3Ch]
   quantum_reg reg; // [esp+2Ch] [ebp-2Ch] BYREF
@@ -4379,15 +4306,15 @@ quantum_reg *__userpurge quantum_vectoradd@<eax>(quantum_reg *retstr, quantum_re
     {
       v7 = &reg.node[k];
       v8 = &reg2->node[i];
-      v9 = HIDWORD(v8->state);
+      state_high = HIDWORD(v8->state);
       LODWORD(v7->state) = v8->state;
-      HIDWORD(v7->state) = v9;
+      HIDWORD(v7->state) = state_high;
       v10 = &reg.node[k];
       v11 = &reg2->node[i];
-      v12 = v11->amplitude.real;
-      v13 = v11->amplitude.imag;
-      v10->amplitude.real = v12;
-      v10->amplitude.imag = v13;
+      real = v11->amplitude.real;
+      imag = v11->amplitude.imag;
+      v10->amplitude.real = real;
+      v10->amplitude.imag = imag;
       ++k;
     }
     else
@@ -4415,11 +4342,11 @@ void __cdecl quantum_vectoradd_inplace(quantum_reg *reg1, quantum_reg *reg2)
   float v5; // eax
   quantum_reg_node *v6; // ecx
   quantum_reg_node *v7; // eax
-  int v8; // edx
+  int state_high; // edx
   quantum_reg_node *v9; // ecx
   quantum_reg_node *v10; // eax
-  float v11; // edx
-  float v12; // eax
+  float real; // edx
+  float imag; // eax
   float v13; // [esp+1Ch] [ebp-1Ch]
   float v14; // [esp+1Ch] [ebp-1Ch]
   int addsize; // [esp+20h] [ebp-18h]
@@ -4450,15 +4377,15 @@ void __cdecl quantum_vectoradd_inplace(quantum_reg *reg1, quantum_reg *reg2)
     {
       v6 = &reg1->node[k];
       v7 = &reg2->node[ia];
-      v8 = HIDWORD(v7->state);
+      state_high = HIDWORD(v7->state);
       LODWORD(v6->state) = v7->state;
-      HIDWORD(v6->state) = v8;
+      HIDWORD(v6->state) = state_high;
       v9 = &reg1->node[k];
       v10 = &reg2->node[ia];
-      v11 = v10->amplitude.real;
-      v12 = v10->amplitude.imag;
-      v9->amplitude.real = v11;
-      v9->amplitude.imag = v12;
+      real = v10->amplitude.real;
+      imag = v10->amplitude.imag;
+      v9->amplitude.real = real;
+      v9->amplitude.imag = imag;
       ++k;
     }
     else
@@ -4477,7 +4404,11 @@ void __cdecl quantum_vectoradd_inplace(quantum_reg *reg1, quantum_reg *reg2)
 }
 
 //----- (080522D8) --------------------------------------------------------
-quantum_reg *__userpurge quantum_matrix_qureg@<eax>(quantum_reg *retstr, quantum_reg *(*A)(quantum_reg *__return_ptr __struct_ptr retstr, unsigned __int64, double), double t, quantum_reg *reg)
+quantum_reg *__userpurge quantum_matrix_qureg@<eax>(
+        quantum_reg *retstr,
+        quantum_reg *(*A)(quantum_reg *__return_ptr __struct_ptr retstr, unsigned __int64, double),
+        double t,
+        quantum_reg *reg)
 {
   quantum_reg_node *v4; // ecx
   int v5; // edx
@@ -4534,8 +4465,8 @@ void __cdecl quantum_print_timeop(int width, void (*f)(quantum_reg *))
 {
   complex_float *v2; // ecx
   quantum_reg_node *v3; // eax
-  float v4; // edx
-  float v5; // eax
+  float real; // edx
+  float imag; // eax
   quantum_reg v6; // [esp+10h] [ebp-68h] BYREF
   quantum_matrix v7; // [esp+30h] [ebp-48h] BYREF
   quantum_reg tmp; // [esp+48h] [ebp-30h] BYREF
@@ -4554,10 +4485,10 @@ void __cdecl quantum_print_timeop(int width, void (*f)(quantum_reg *))
     {
       v2 = &m.t[LODWORD(tmp.node[j].state) + i * m.cols];
       v3 = &tmp.node[j];
-      v4 = v3->amplitude.real;
-      v5 = v3->amplitude.imag;
-      v2->real = v4;
-      v2->imag = v5;
+      real = v3->amplitude.real;
+      imag = v3->amplitude.imag;
+      v2->real = real;
+      v2->imag = imag;
     }
     quantum_delete_qureg(&tmp);
   }
@@ -4571,7 +4502,6 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   unsigned int v3; // eax
   int v4; // eax
   int v5; // eax
-  int v7; // [esp+4Ch] [ebp-6Ch]
   quantum_reg v8; // [esp+50h] [ebp-68h] BYREF
   quantum_reg qr; // [esp+74h] [ebp-44h] BYREF
   int factor; // [esp+88h] [ebp-30h]
@@ -4591,7 +4521,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   if ( argc == 1 )
   {
     puts("Usage: shor [number]\n");
-    v7 = 3;
+    return 3;
   }
   else
   {
@@ -4625,7 +4555,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
       if ( c == -1 )
       {
         puts("Impossible Measurement!");
-        v7 = 1;
+        return 1;
       }
       else if ( c )
       {
@@ -4641,7 +4571,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
         if ( q % 2 == 1 )
         {
           puts("Odd period, try again.");
-          v7 = 2;
+          return 2;
         }
         else
         {
@@ -4659,29 +4589,28 @@ int __cdecl main(int argc, const char **argv, const char **envp)
           if ( factor >= N || factor <= 1 )
           {
             puts("Unable to determine factors, try again.");
-            v7 = 2;
+            return 2;
           }
           else
           {
             printf("%i = %i * %i\n", N, factor, N / factor);
             quantum_delete_qureg(&qr);
-            v7 = 0;
+            return 0;
           }
         }
       }
       else
       {
         puts("Measured zero, try again.");
-        v7 = 2;
+        return 2;
       }
     }
     else
     {
       puts("Invalid number\n");
-      v7 = 3;
+      return 3;
     }
   }
-  return v7;
 }
 
 //----- (08052B30) --------------------------------------------------------
@@ -4775,18 +4704,6 @@ double *__userpurge _divdc3@<eax>(double *a1, double a2, double a3, double a4, d
   return result;
 }
 
-//----- (08054170) --------------------------------------------------------
-void _libc_csu_fini(void)
-{
-  ;
-}
-
-//----- (08054180) --------------------------------------------------------
-void _libc_csu_init(void)
-{
-  init_proc();
-}
-
 //----- (080541E0) --------------------------------------------------------
 int __cdecl atexit(void (__cdecl *lpfunc)(void *))
 {
@@ -4797,34 +4714,7 @@ int __cdecl atexit(void (__cdecl *lpfunc)(void *))
     v1 = (void *)_dso_handle;
   return __cxa_atexit(lpfunc, 0, v1);
 }
+// 8056084: using guessed type _DWORD _dso_handle;
 
-//----- (08054220) --------------------------------------------------------
-void (*_do_global_ctors_aux())(void)
-{
-  void (*result)(void); // eax
-  void (**v1)(void); // ebx
-
-  result = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    v1 = (void (**)(void))&_CTOR_LIST__;
-    do
-    {
-      --v1;
-      result();
-      result = *v1;
-    }
-    while ( *v1 != (void (*)(void))-1 );
-  }
-  return result;
-}
-// 8055F00: using guessed type int _CTOR_LIST__;
-
-//----- (0805424C) --------------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=226 queued=160 decompiled=160 lumina nreq=0 worse=0 better=0
-// ALL OK, 160 function(s) have been successfully decompiled
+// nfuncs=226 queued=152 decompiled=152 lumina nreq=0 worse=0 better=0
+// ALL OK, 152 function(s) have been successfully decompiled

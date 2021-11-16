@@ -10,32 +10,20 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
 // int printf(const char *format, ...);
 // int puts(const char *s);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 int __cdecl main(int argc, const char **argv, const char **envp);
-int __cdecl modify(_BYTE *a1);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
+int __cdecl modify(_BYTE *);
 void sub_80490E7();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// char *deregister_tm_clones();
-// int register_tm_clones();
-// char *_do_global_dtors_aux();
-// int frame_dummy();
 int test1();
 int test2();
 int test3();
 int test4();
 int test5();
 int test6();
-int __cdecl dump1(int a1);
-int __cdecl dump2(int a1, int a2);
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
+int __cdecl dump1(int);
+int __cdecl dump2(int, int);
 
 //-------------------------------------------------------------------------
 // Data declarations

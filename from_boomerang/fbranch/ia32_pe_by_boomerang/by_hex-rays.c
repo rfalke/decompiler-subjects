@@ -19,17 +19,17 @@ void __cdecl sub_403B21(); // idb
 // _DWORD __cdecl flsall(_DWORD); weak
 int sub_403F1D();
 // _DWORD __cdecl _ld12cvt(_DWORD, _DWORD, _DWORD); weak
-int __cdecl sub_404B31(int a1, int a2);
-int __cdecl sub_404B47(int a1, int a2);
-int __cdecl sub_404B5D(int a1, int a2);
-int __cdecl sub_404B9A(int a1, int a2);
+int __cdecl sub_404B31(int, int);
+int __cdecl sub_404B47(int, int);
+int __cdecl sub_404B5D(int, int);
+int __cdecl sub_404B9A(int, int);
 // _DWORD __cdecl __strgtold12(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
 
-void (*dword_409DFC[2])(void) = { NULL, NULL }; // idb
-void (*dword_409E04)(void) = NULL; // idb
+void (*dword_409DFC[2])(void) = { NULL, NULL }; // weak
+void (*dword_409E04)(void) = NULL; // weak
 _UNKNOWN unk_40B4B0; // weak
 _UNKNOWN unk_40B4C8; // weak
 
@@ -69,6 +69,7 @@ void sub_403ADD()
       (*i)();
   }
 }
+// 409DFC: using guessed type void (*dword_409DFC[2])(void);
 
 //----- (00403B21) --------------------------------------------------------
 void __cdecl sub_403B21()
@@ -81,6 +82,7 @@ void __cdecl sub_403B21()
       (*i)();
   }
 }
+// 409E04: using guessed type void (*dword_409E04)(void);
 
 //----- (00403F1D) --------------------------------------------------------
 int sub_403F1D()
@@ -113,6 +115,7 @@ int __cdecl sub_404B5D(int a1, int a2)
   return sub_404B31((int)v4, a1);
 }
 // 4079C9: using guessed type _DWORD __cdecl __strgtold12(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
+// 404B5D: using guessed type char var_14[4];
 
 //----- (00404B9A) --------------------------------------------------------
 int __cdecl sub_404B9A(int a1, int a2)
@@ -124,6 +127,7 @@ int __cdecl sub_404B9A(int a1, int a2)
   return sub_404B47((int)v4, a1);
 }
 // 4079C9: using guessed type _DWORD __cdecl __strgtold12(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
+// 404B9A: using guessed type char var_14[4];
 
 // nfuncs=159 queued=8 decompiled=8 lumina nreq=0 worse=0 better=0
 // ALL OK, 8 function(s) have been successfully decompiled

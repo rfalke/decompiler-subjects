@@ -1,0 +1,84 @@
+
+Database SUBJECTS/from_internet/MarsAnalytica/x64_elf_decompressed/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+  6905856   843 8192 allocating memory for b-tree...
+ 43491328  5309 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+ 50659328            total memory allocated
+
+Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
+Autoanalysis subsystem has been initialized.
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
+  Please check the Edit/Plugins menu for more informaton.
+=== start of cleanup script -> OK
+  function at 00400828  LIB  with name '.init_proc'
+  function at 00400850       with name '.free'
+  function at 00400860       with name '.putchar'
+  function at 00400870       with name '.puts'
+  function at 00400880       with name '.__stack_chk_fail'
+  function at 00400890       with name '.srand'
+  function at 004008A0       with name '.getchar'
+  function at 004008B0       with name '.memcpy'
+  function at 004008C0       with name '.time'
+  function at 004008D0       with name '.malloc'
+  function at 004008E0       with name '.fflush'
+  function at 004008F0       with name '.exit'
+  function at 00400900  LIB  with name '_start'
+  function at 00400930       with name 'sub_400930'
+  function at 00400960       with name 'sub_400960'
+  function at 004009A0       with name 'sub_4009A0'
+  function at 004009D0       with name 'sub_4009D0'
+  function at 004009D7       with name 'sub_4009D7'
+  function at 00400A52       with name 'sub_400A52'
+  function at 00400AAE       with name 'sub_400AAE'
+  function at 00400B14       with name 'sub_400B14'
+  function at 00400BBF       with name 'sub_400BBF'
+  function at 00400C33       with name 'sub_400C33'
+  function at 00400CB5       with name 'sub_400CB5'
+  function at 00400CE9       with name 'sub_400CE9'
+  function at 00400D08       with name 'sub_400D08'
+  function at 00400D55       with name 'sub_400D55'
+  function at 00400DA9       with name 'main'
+  function at 00E4DB40  LIB  with name '__libc_csu_init'
+  function at 00E4DBB0  LIB  with name '__libc_csu_fini'
+  function at 00E4DBB4  LIB  with name '.term_proc'
+  function at 0105E098       with name 'free'
+  function at 0105E0A0       with name 'putchar'
+  function at 0105E0A8       with name 'puts'
+  function at 0105E0B0       with name '__stack_chk_fail'
+  function at 0105E0B8  LIB  with name '__libc_start_main'
+  function at 0105E0C0       with name 'srand'
+  function at 0105E0C8       with name 'getchar'
+  function at 0105E0D0       with name 'memcpy'
+  function at 0105E0D8       with name 'time'
+  function at 0105E0E0       with name 'malloc'
+  function at 0105E0E8       with name 'fflush'
+  function at 0105E0F0       with name 'exit'
+  function at 0105E0F8       with name '__gmon_start__'
+finished -> OK
+TIMESTAMP decompiling 400930 size=000000000000002A times=0...
+TIMESTAMP decompiling 400960 size=000000000000003A times=0...
+TIMESTAMP decompiling 4009D7 size=000000000000007B times=0...
+TIMESTAMP decompiling 400A52 size=000000000000005C times=0...
+TIMESTAMP decompiling 400AAE size=0000000000000066 times=0...
+TIMESTAMP decompiling 400B14 size=00000000000000AB times=0...
+TIMESTAMP decompiling 400BBF size=0000000000000074 times=0...
+TIMESTAMP decompiling 400C33 size=0000000000000082 times=0...
+TIMESTAMP decompiling 400CB5 size=0000000000000034 times=0...
+TIMESTAMP decompiling 400DA9 size=00000000000003A1 times=0...
+TIMESTAMP decompiling 4009A0 size=0000000000000022 times=0...
+TIMESTAMP decompiling 4009D0 size=0000000000000007 times=0...
+TIMESTAMP decompiling 400CE9 size=000000000000001F times=0...
+TIMESTAMP decompiling 400D08 size=000000000000004D times=0...
+TIMESTAMP decompiling 400D55 size=0000000000000054 times=0...
+TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
+Unloading IDP module IDADIR/procs/pc64.so...

@@ -10,20 +10,9 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int __fastcall init_proc(int a1);
 int sub_8048298();
 // int puts(const char *s);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// int __gmon_start__(void); weak
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// int __fastcall call_gmon_start(int a1);
-// void _do_global_dtors_aux();
-// int frame_dummy();
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall _libc_csu_init(int a1);
-// void _libc_csu_fini(void); idb
-// int __fastcall _do_global_ctors_aux(int a1, int a2);
-// void __spoils<edx,ecx> term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations

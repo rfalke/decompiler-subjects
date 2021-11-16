@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-long double __cdecl f(double a1, double a2);
+long double __cdecl f(double, double);
 
 
 //----- (08000000) --------------------------------------------------------

@@ -10,18 +10,9 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8048300();
 // int printf(const char *format, ...);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
-// int _gmon_start__(void); weak
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _x86_get_pc_thunk_bx();
-// int deregister_tm_clones();
-// int register_tm_clones();
-// int _do_global_dtors_aux();
-// int frame_dummy();
 int __cdecl test_2_blocks_base(int c0);
 int __cdecl test_2_blocks_variant_0(int c0);
 void test_2_blocks(); // idb
@@ -900,9 +891,6 @@ int __cdecl test_6_blocks_variant_717(int c0, int c1, int c2, int c3, int c4);
 int __cdecl test_6_blocks_variant_718(int c0, int c1, int c2, int c3, int c4);
 void test_6_blocks(); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void _libc_csu_init(void); idb
-// void _libc_csu_fini(void); idb
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -920,25 +908,19 @@ int sub_8048300()
 //----- (0804844B) --------------------------------------------------------
 int __cdecl test_2_blocks_base(int c0)
 {
-  int result; // eax
-
   if ( c0 )
-    result = 200;
+    return 200;
   else
-    result = 201;
-  return result;
+    return 201;
 }
 
 //----- (08048462) --------------------------------------------------------
 int __cdecl test_2_blocks_variant_0(int c0)
 {
-  int result; // eax
-
   if ( c0 )
-    result = 200;
+    return 200;
   else
-    result = 201;
-  return result;
+    return 201;
 }
 
 //----- (08048479) --------------------------------------------------------

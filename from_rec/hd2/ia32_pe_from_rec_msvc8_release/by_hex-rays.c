@@ -13,7 +13,7 @@
 
 #define __thiscall __cdecl // Test compile in C mode
 
-int __cdecl sub_401000(int a1, int a2);
+int __cdecl sub_401000(int, int);
 int __thiscall sub_401140(char *FileName); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
 // LONG __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo); idb
@@ -22,18 +22,18 @@ void *sub_40170E();
 void __cdecl sub_401734(); // idb
 int __cdecl UserMathErrorFunction();
 // void *__cdecl memset(void *, int Val, size_t Size);
-// LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
-// int __cdecl stat64i32(const char *FileName, struct _stat64i32 *Stat);
-// int __cdecl fclose(FILE *Stream);
-// size_t __cdecl fread(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
-// FILE *__cdecl fopen(const char *FileName, const char *Mode);
-// int printf(const char *const Format, ...);
-// void __cdecl perror(const char *ErrMsg);
-// int sprintf(char *const Buffer, const char *const Format, ...);
 
 //-------------------------------------------------------------------------
 // Data declarations
 
+// extern LPTOP_LEVEL_EXCEPTION_FILTER (__stdcall *SetUnhandledExceptionFilter)(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
+// extern int (__cdecl *stat64i32)(const char *FileName, struct _stat64i32 *Stat);
+// extern int (__cdecl *fclose)(FILE *Stream);
+// extern size_t (__cdecl *fread)(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
+// extern FILE *(__cdecl *fopen)(const char *FileName, const char *Mode);
+// extern int (*printf)(const char *const Format, ...);
+// extern void (__cdecl *perror)(const char *ErrMsg);
+// extern int (*sprintf)(char *const Buffer, const char *const Format, ...);
 _UNKNOWN unk_4021C8; // weak
 
 
@@ -116,7 +116,6 @@ LABEL_17:
 //----- (00401140) --------------------------------------------------------
 int __thiscall sub_401140(char *FileName)
 {
-  int result; // eax
   FILE *v3; // edi
   unsigned int i; // ebp
   int v5; // eax
@@ -127,7 +126,7 @@ int __thiscall sub_401140(char *FileName)
   if ( stat64i32(FileName, &v7) || (v3 = fopen(FileName, "rb")) == 0 )
   {
     perror(FileName);
-    result = 1;
+    return 1;
   }
   else
   {
@@ -140,9 +139,8 @@ int __thiscall sub_401140(char *FileName)
       sub_401000((int)Buffer, v5);
     }
     fclose(v3);
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (00401200) --------------------------------------------------------

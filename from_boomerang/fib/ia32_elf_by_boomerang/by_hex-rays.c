@@ -10,18 +10,10 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void __usercall init_proc(int a1@<eax>);
 void sub_8048248();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int printf(const char *format, ...);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void *__usercall call_gmon_start@<eax>(int a1@<eax>);
-// void _do_global_dtors_aux();
-// int frame_dummy();
-int __cdecl fib(int a1);
+int __cdecl fib(int);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// int _do_global_ctors_aux();
-// void term_proc(void); idb
 
 
 //----- (08048248) --------------------------------------------------------

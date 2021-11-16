@@ -10,28 +10,16 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
 // int printf(const char *format, ...);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049327();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// char *deregister_tm_clones();
-// int register_tm_clones();
-// char *_do_global_dtors_aux();
-// int frame_dummy();
-_BOOL4 __cdecl carry(unsigned __int8 a1, char a2);
-int __cdecl signed_carry(int a1, int a2);
-int __cdecl adc_simu(unsigned __int8 a1, unsigned __int8 a2, unsigned __int8 a3);
-int __cdecl add(char a1, char a2);
-int __cdecl adc_set(char a1, char a2);
-int __cdecl adc_clear(char a1, char a2);
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
+_BOOL4 __cdecl carry(unsigned __int8, char);
+int __cdecl signed_carry(int, int);
+int __cdecl adc_simu(unsigned __int8, unsigned __int8, unsigned __int8);
+int __cdecl add(char, char);
+int __cdecl adc_set(char, char);
+int __cdecl adc_clear(char, char);
 
 //-------------------------------------------------------------------------
 // Data declarations

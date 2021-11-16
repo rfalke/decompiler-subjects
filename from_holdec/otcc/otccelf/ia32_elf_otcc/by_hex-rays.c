@@ -11,33 +11,33 @@
 // Function declarations
 
 void __noreturn start(); // weak
-int __cdecl sub_8048261(int a1);
+int __cdecl sub_8048261(int);
 int sub_8048283();
 int sub_8048311();
 int sub_804835A();
 int sub_80483B9();
-_BOOL4 __cdecl sub_80489E7(int a1);
-int __cdecl sub_8048A71(int *a1, int a2);
-int __cdecl sub_8048AF6(unsigned __int16 *a1);
-unsigned __int16 *__cdecl sub_8048B93(unsigned __int16 *a1, int a2);
-unsigned __int16 *__cdecl sub_8048D31(unsigned __int16 *a1);
-int __cdecl sub_8048D67(int a1, int a2);
-int __cdecl sub_8048DE7(int a1);
-int __cdecl sub_8048E1C(int a1);
-int __cdecl sub_8048E56(int a1, int a2);
-_BOOL4 __cdecl sub_8048EB7(int a1);
-int __cdecl sub_8048F5D(int a1, int *a2);
-int __cdecl sub_804905B(unsigned __int8 a1);
-int __cdecl sub_8049882(int a1);
+_BOOL4 __cdecl sub_80489E7(int);
+int __cdecl sub_8048A71(int *, int);
+int __cdecl sub_8048AF6(unsigned __int16 *);
+unsigned __int16 *__cdecl sub_8048B93(unsigned __int16 *, int);
+unsigned __int16 *__cdecl sub_8048D31(unsigned __int16 *);
+int __cdecl sub_8048D67(int, int);
+int __cdecl sub_8048DE7(int);
+int __cdecl sub_8048E1C(int);
+int __cdecl sub_8048E56(int, int);
+_BOOL4 __cdecl sub_8048EB7(int);
+int __cdecl sub_8048F5D(int, int *);
+int __cdecl sub_804905B(unsigned __int8);
+int __cdecl sub_8049882(int);
 int sub_8049BBD();
 int sub_8049BE5();
-unsigned __int16 *__cdecl sub_8049C29(int *a1);
-_BOOL4 __cdecl sub_804A170(int a1);
-char *__cdecl sub_804A46F(int a1);
-char *__cdecl sub_804A4BA(int a1, int a2);
-_BOOL4 __cdecl sub_804A570(int a1);
+unsigned __int16 *__cdecl sub_8049C29(int *);
+_BOOL4 __cdecl sub_804A170(int);
+char *__cdecl sub_804A46F(int);
+char *__cdecl sub_804A4BA(int, int);
+_BOOL4 __cdecl sub_804A570(int);
 int __cdecl sub_804A9F0(char *filename); // idb
-int __cdecl sub_804B4A3(int a1, int a2);
+int __cdecl sub_804B4A3(int, int);
 // int fgetc(FILE *stream);
 // int isalnum(int);
 // int isspace(int);
@@ -234,7 +234,7 @@ int sub_80483B9()
           dword_8048130 = *(_DWORD *)(dword_80480FC + 4);
           dword_8048134 = dword_8048108;
           sub_8048283();
-          result = sub_80483B9();
+          return sub_80483B9();
         }
       }
     }
@@ -248,7 +248,7 @@ int sub_80483B9()
       sub_804835A();
       dword_8048100 = dword_8048108;
       sub_8048283();
-      result = sub_8048283();
+      return sub_8048283();
     }
     else if ( dword_80480FC == 47 && dword_8048108 == 42 )
     {
@@ -262,7 +262,7 @@ int sub_80483B9()
           dword_8048108 = 0;
       }
       sub_8048283();
-      result = sub_80483B9();
+      return sub_80483B9();
     }
     else
     {
@@ -573,7 +573,7 @@ int __cdecl sub_804905B(unsigned __int8 a1)
     }
     result = v8;
     if ( v8 )
-      result = sub_8048D67(50305, v8);
+      return sub_8048D67(50305, v8);
   }
   return result;
 }
@@ -632,7 +632,7 @@ int __cdecl sub_8049882(int a1)
     sub_8048DE7(v6 ^ 1);
     sub_8048E1C(5);
     sub_8048D31(v4);
-    result = sub_8048DE7(v6);
+    return sub_8048DE7(v6);
   }
   return result;
 }
@@ -656,7 +656,6 @@ int sub_8049BE5()
 //----- (08049C29) --------------------------------------------------------
 unsigned __int16 *__cdecl sub_8049C29(int *a1)
 {
-  unsigned __int16 *result; // eax
   int v2; // [esp+0h] [ebp-Ch]
   unsigned __int16 *v3; // [esp+0h] [ebp-Ch]
   unsigned __int16 *v4; // [esp+4h] [ebp-8h]
@@ -676,11 +675,11 @@ unsigned __int16 *__cdecl sub_8049C29(int *a1)
       v4 = (unsigned __int16 *)sub_8048E1C(0);
       sub_8048D31(v6);
       sub_8049C29(a1);
-      result = sub_8048D31(v4);
+      return sub_8048D31(v4);
     }
     else
     {
-      result = sub_8048D31(v6);
+      return sub_8048D31(v6);
     }
   }
   else if ( dword_80480FC == 352 || dword_80480FC == 504 )
@@ -715,7 +714,7 @@ unsigned __int16 *__cdecl sub_8049C29(int *a1)
     sub_80483B9();
     sub_8049C29((int *)&v6);
     sub_8048E1C(v5 - dword_8048118 - 5);
-    result = sub_8048D31(v6);
+    return sub_8048D31(v6);
   }
   else
   {
@@ -742,9 +741,8 @@ unsigned __int16 *__cdecl sub_8049C29(int *a1)
           sub_8049BBD();
         break;
     }
-    result = (unsigned __int16 *)sub_80483B9();
+    return (unsigned __int16 *)sub_80483B9();
   }
-  return result;
 }
 // 8048110: using guessed type int dword_8048110;
 // 8048118: using guessed type int dword_8048118;

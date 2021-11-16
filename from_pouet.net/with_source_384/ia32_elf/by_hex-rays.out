@@ -1,4 +1,6 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+
+Database SUBJECTS/from_pouet.net/with_source_384/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,68 +10,81 @@ Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_pouet.net/with_source_384/ia32_elf/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-080494A8) ... ... OK
-  1. Creating a new segment  (0804A000-08120F18) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (08048774-080487A4) ... ... OK
-  3. Creating a new segment  (080487A4-080494A8) ... ... OK
-  4. Creating a new segment  (080487A4-08048954) ... ... OK
-     Deleting segment        (08048954-080494A8) ...
-  4. Creating a new segment  (08048954-080494A8) ... ... OK
-  5. Creating a new segment  (08048960-0804943C) ... ... OK
-  6. Creating a new segment  (0804943C-080494A8) ... ... OK
-  7. Creating a new segment  (0804943C-08049458) ... ... OK
-     Deleting segment        (08049458-080494A8) ...
-  7. Creating a new segment  (08049458-080494A8) ... ... OK
-  8. Creating a new segment  (08049458-080494A4) ... ... OK
-     Deleting segment        (080494A4-080494A8) ...
-  8. Creating a new segment  (080494A4-080494A8) ... ... OK
-     Deleting segment        (080494A4-080494A8) ...
-  8. Creating a new segment  (080494A4-080494A8) ... ... OK
-  9. Creating a new segment  (0804A000-0804A008) ... ... OK
-     Deleting segment        (0804A008-08120F18) ...
-  9. Creating a new segment  (0804A008-08120F18) ... ... OK
- 10. Creating a new segment  (0804A008-0804A010) ... ... OK
-     Deleting segment        (0804A010-08120F18) ...
- 10. Creating a new segment  (0804A010-08120F18) ... ... OK
- 11. Creating a new segment  (0804A010-0804A014) ... ... OK
-     Deleting segment        (0804A014-08120F18) ...
- 11. Creating a new segment  (0804A014-08120F18) ... ... OK
- 12. Creating a new segment  (0804A104-0804A108) ... ... OK
- 13. Creating a new segment  (0804A108-08120F18) ... ... OK
- 14. Creating a new segment  (0804A108-0804A17C) ... ... OK
-     Deleting segment        (0804A17C-08120F18) ...
- 14. Creating a new segment  (0804A17C-08120F18) ... ... OK
- 15. Creating a new segment  (0804A17C-0804A188) ... ... OK
-     Deleting segment        (0804A188-08120F18) ...
- 15. Creating a new segment  (0804A188-08120F18) ... ... OK
-     Deleting segment        (0804A188-08120F18) ...
- 15. Creating a new segment  (0804A188-08120F18) ... ... OK
- 16. Creating a new segment  (08120F18-08120F19) ... ... OK
- 17. Creating a new segment  (08120F1C-08120F88) ... ... OK
- 18. Creating a new segment  (08120F88-08120F94) ... ... OK
-Processing relocations...
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_pouet.net/with_source_384/ia32_elf/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 3 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08048774  LIB  with name '.init_proc'
+  function at 080487A4       with name 'sub_80487A4'
+  function at 080487B4       with name '.glEnable'
+  function at 080487C4       with name '.glEnableClientState'
+  function at 080487D4       with name '.glMatrixMode'
+  function at 080487E4       with name '.__gmon_start__'
+  function at 080487F4       with name '.glClear'
+  function at 08048804       with name '.SDL_ShowCursor'
+  function at 08048814       with name '.SDL_PollEvent'
+  function at 08048824  LIB  with name '.__libc_start_main'
+  function at 08048834       with name '.SDL_GL_SwapBuffers'
+  function at 08048844       with name '.glLoadIdentity'
+  function at 08048854       with name '.glClearColor'
+  function at 08048864       with name '.SDL_SetVideoMode'
+  function at 08048874       with name '.glNormalPointer'
+  function at 08048884       with name '.SDL_Init'
+  function at 08048894       with name '.memcpy'
+  function at 080488A4       with name '.cosf'
+  function at 080488B4       with name '.glOrtho'
+  function at 080488C4       with name '.glDrawElements'
+  function at 080488D4       with name '.glColor4f'
+  function at 080488E4       with name '.glRotatef'
+  function at 080488F4       with name '.glLightfv'
+  function at 08048904       with name '.glPushMatrix'
+  function at 08048914       with name '.sinf'
+  function at 08048924       with name '.SDL_Quit'
+  function at 08048934       with name '.glVertexPointer'
+  function at 08048944       with name '.glPopMatrix'
+  function at 08048960       with name 'start'
+  function at 08048990       with name 'sub_8048990'
+  function at 080489C0       with name 'sub_80489C0'
+  function at 080489E4       with name 'sub_80489E4'
+  function at 0804908A       with name 'sub_804908A'
+  function at 0804922C       with name 'main'
+  function at 080493A0       with name 'fini'
+  function at 080493B0       with name 'init'
+  function at 0804940A       with name 'sub_804940A'
+  function at 08049410       with name 'sub_8049410'
+  function at 0804943C  LIB  with name '.term_proc'
+  function at 08120F1C       with name 'glEnable'
+  function at 08120F20       with name 'glEnableClientState'
+  function at 08120F24       with name 'glMatrixMode'
+  function at 08120F28       with name 'glClear'
+  function at 08120F2C       with name 'SDL_ShowCursor'
+  function at 08120F30       with name 'SDL_PollEvent'
+  function at 08120F34  LIB  with name '__libc_start_main'
+  function at 08120F38       with name 'SDL_GL_SwapBuffers'
+  function at 08120F3C       with name 'glLoadIdentity'
+  function at 08120F40       with name 'glClearColor'
+  function at 08120F44       with name 'SDL_SetVideoMode'
+  function at 08120F48       with name 'glNormalPointer'
+  function at 08120F4C       with name 'SDL_Init'
+  function at 08120F50       with name 'memcpy'
+  function at 08120F54       with name 'cosf'
+  function at 08120F58       with name 'glOrtho'
+  function at 08120F5C       with name 'glDrawElements'
+  function at 08120F60       with name 'glColor4f'
+  function at 08120F64       with name 'glRotatef'
+  function at 08120F68       with name 'glLightfv'
+  function at 08120F6C       with name 'glPushMatrix'
+  function at 08120F70       with name 'sinf'
+  function at 08120F74       with name 'SDL_Quit'
+  function at 08120F78       with name 'glVertexPointer'
+  function at 08120F7C       with name 'glPopMatrix'
+  function at 08120F80       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 80487A4 size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -95,17 +110,8 @@ TIMESTAMP decompiling 804940A size=00000004 times=0...
 TIMESTAMP decompiling 8049410 size=00000029 times=0...
 TIMESTAMP decompiling 804908A size=000001A2 times=0...
 TIMESTAMP decompiling 804922C size=0000016D times=0...
-TIMESTAMP decompiling 8048774 size=00000030 times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
-
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
 TIMESTAMP decompiling 80493B0 size=0000005A times=0...
 TIMESTAMP decompiling 8048960 size=00000022 times=0...
-TIMESTAMP decompiling 804943C size=0000001C times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

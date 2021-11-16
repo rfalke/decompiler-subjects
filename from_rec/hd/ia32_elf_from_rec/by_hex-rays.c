@@ -25,13 +25,11 @@ void sub_80484A8();
 // void exit(int status);
 // size_t strlen(const char *s);
 void __noreturn __crt_dummy__(); // weak
-// int _do_global_dtors_aux();
 void fini_dummy();
-int __cdecl dumpline(int a1, int a2, int a3);
+int __cdecl dumpline(int, int, int);
 int __cdecl hexdump(char *s); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
-int __cdecl stat(int a1, int a2);
-// int _do_global_ctors_aux();
+int __cdecl stat(int, int);
 void init_dummy();
 // void term_proc(void); idb
 
@@ -121,11 +119,11 @@ int __cdecl dumpline(int a1, int a2, int a3)
   strcpy(&s[v6 + j], "|");
   return printf("%s\n", s);
 }
+// 8048660: using guessed type char s[80];
 
 //----- (080487F0) --------------------------------------------------------
 int __cdecl hexdump(char *s)
 {
-  int result; // eax
   int v2; // [esp+0h] [ebp-5Ch]
   char v3[20]; // [esp+4h] [ebp-58h] BYREF
   unsigned int v4; // [esp+18h] [ebp-44h]
@@ -143,15 +141,15 @@ int __cdecl hexdump(char *s)
       dumpline((int)ptr, i, v2);
     }
     fclose(stream);
-    result = 0;
+    return 0;
   }
   else
   {
     perror(s);
-    result = 1;
+    return 1;
   }
-  return result;
 }
+// 80487F0: using guessed type char var_58[20];
 
 //----- (080488E0) --------------------------------------------------------
 int __cdecl main(int argc, const char **argv, const char **envp)

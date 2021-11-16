@@ -11,33 +11,33 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void __usercall __noreturn sub_401000(const WCHAR *a1@<eax>, int a2);
-// int __usercall sub_4010A0@<eax>(const WCHAR *a1@<edi>);
-int __stdcall start(int a1, int a2, int a3, int a4);
-// void __stdcall __noreturn ExitProcess(UINT uExitCode);
-// LPWSTR __stdcall GetCommandLineW();
-// HANDLE __stdcall FindFirstFileW(LPCWSTR lpFileName, LPWIN32_FIND_DATAW lpFindFileData);
-// BOOL __stdcall CreateProcessW(LPCWSTR lpApplicationName, LPWSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes, LPSECURITY_ATTRIBUTES lpThreadAttributes, BOOL bInheritHandles, DWORD dwCreationFlags, LPVOID lpEnvironment, LPCWSTR lpCurrentDirectory, LPSTARTUPINFOW lpStartupInfo, LPPROCESS_INFORMATION lpProcessInformation);
-// HANDLE __stdcall OpenProcess(DWORD dwDesiredAccess, BOOL bInheritHandle, DWORD dwProcessId);
-// void __stdcall Sleep(DWORD dwMilliseconds);
-// DWORD __stdcall FormatMessageW(DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPWSTR lpBuffer, DWORD nSize, va_list *Arguments);
-// BOOL __stdcall TerminateProcess(HANDLE hProcess, UINT uExitCode);
-// int __stdcall lstrlenW(LPCWSTR lpString);
-// DWORD __stdcall GetLastError();
-// BOOL __stdcall MoveFileW(LPCWSTR lpExistingFileName, LPCWSTR lpNewFileName);
-// BOOL __stdcall FindClose(HANDLE hFindFile);
-// HLOCAL __stdcall LocalAlloc(UINT uFlags, SIZE_T uBytes);
-// BOOL __stdcall CloseHandle(HANDLE hObject);
-// BOOL __stdcall DeleteFileW(LPCWSTR lpFileName);
-// HLOCAL __stdcall LocalFree(HLOCAL hMem);
-// BOOL __stdcall SetFileAttributesW(LPCWSTR lpFileName, DWORD dwFileAttributes);
-// LPWSTR *__stdcall CommandLineToArgvW(LPCWSTR lpCmdLine, int *pNumArgs);
-// int wsprintfW(LPWSTR, LPCWSTR, ...);
-// int __stdcall MessageBoxW(HWND hWnd, LPCWSTR lpText, LPCWSTR lpCaption, UINT uType);
+// void __usercall __noreturn sub_401000(const WCHAR *@<eax>, int);
+// int __usercall sub_4010A0@<eax>(const WCHAR *@<edi>);
+int __stdcall start(int, int, int, int);
 
 //-------------------------------------------------------------------------
 // Data declarations
 
+// extern void (__stdcall __noreturn *ExitProcess)(UINT uExitCode);
+// extern LPWSTR (__stdcall *GetCommandLineW)();
+// extern HANDLE (__stdcall *FindFirstFileW)(LPCWSTR lpFileName, LPWIN32_FIND_DATAW lpFindFileData);
+// extern BOOL (__stdcall *CreateProcessW)(LPCWSTR lpApplicationName, LPWSTR lpCommandLine, LPSECURITY_ATTRIBUTES lpProcessAttributes, LPSECURITY_ATTRIBUTES lpThreadAttributes, BOOL bInheritHandles, DWORD dwCreationFlags, LPVOID lpEnvironment, LPCWSTR lpCurrentDirectory, LPSTARTUPINFOW lpStartupInfo, LPPROCESS_INFORMATION lpProcessInformation);
+// extern HANDLE (__stdcall *OpenProcess)(DWORD dwDesiredAccess, BOOL bInheritHandle, DWORD dwProcessId);
+// extern void (__stdcall *Sleep)(DWORD dwMilliseconds);
+// extern DWORD (__stdcall *FormatMessageW)(DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPWSTR lpBuffer, DWORD nSize, va_list *Arguments);
+// extern BOOL (__stdcall *TerminateProcess)(HANDLE hProcess, UINT uExitCode);
+// extern int (__stdcall *lstrlenW)(LPCWSTR lpString);
+// extern DWORD (__stdcall *GetLastError)();
+// extern BOOL (__stdcall *MoveFileW)(LPCWSTR lpExistingFileName, LPCWSTR lpNewFileName);
+// extern BOOL (__stdcall *FindClose)(HANDLE hFindFile);
+// extern HLOCAL (__stdcall *LocalAlloc)(UINT uFlags, SIZE_T uBytes);
+// extern BOOL (__stdcall *CloseHandle)(HANDLE hObject);
+// extern BOOL (__stdcall *DeleteFileW)(LPCWSTR lpFileName);
+// extern HLOCAL (__stdcall *LocalFree)(HLOCAL hMem);
+// extern BOOL (__stdcall *SetFileAttributesW)(LPCWSTR lpFileName, DWORD dwFileAttributes);
+// extern LPWSTR *(__stdcall *CommandLineToArgvW)(LPCWSTR lpCmdLine, int *pNumArgs);
+// extern int (*wsprintfW)(LPWSTR, LPCWSTR, ...);
+// extern int (__stdcall *MessageBoxW)(HWND hWnd, LPCWSTR lpText, LPCWSTR lpCaption, UINT uType);
 _UNKNOWN unk_40207C; // weak
 const WCHAR word_402080 = 1055u; // idb
 
@@ -45,30 +45,30 @@ const WCHAR word_402080 = 1055u; // idb
 //----- (00401000) --------------------------------------------------------
 void __usercall __noreturn sub_401000(const WCHAR *a1@<eax>, int a2)
 {
-  DWORD v3; // edi
+  DWORD LastError; // edi
   int v4; // eax
   WCHAR *v5; // esi
   int v6; // [esp+Ch] [ebp-8h]
   WCHAR Buffer[2]; // [esp+10h] [ebp-4h] BYREF
 
-  v3 = GetLastError();
-  FormatMessageW(0x1300u, 0, v3, 0x400u, Buffer, 0, 0);
+  LastError = GetLastError();
+  FormatMessageW(0x1300u, 0, LastError, 0x400u, Buffer, 0, 0);
   v6 = lstrlenW(*(LPCWSTR *)Buffer);
   v4 = lstrlenW(a1);
   v5 = (WCHAR *)LocalAlloc(0x40u, 2 * (v4 + v6) + 0x2000);
-  wsprintfW(v5, &word_402080, a1, a2, v3, *(_DWORD *)Buffer);
+  wsprintfW(v5, &word_402080, a1, a2, LastError, *(_DWORD *)Buffer);
   v5[1024] = 0;
   MessageBoxW(0, v5, L"Error", 0);
   LocalFree(*(HLOCAL *)Buffer);
   LocalFree(v5);
-  ExitProcess(v3);
+  ExitProcess(LastError);
 }
 
 //----- (004010A0) --------------------------------------------------------
 int __usercall sub_4010A0@<eax>(const WCHAR *a1@<edi>)
 {
   int v1; // esi
-  HANDLE v3; // eax
+  HANDLE FirstFileW; // eax
   struct _WIN32_FIND_DATAW FindFileData; // [esp+8h] [ebp-250h] BYREF
 
   v1 = 0;
@@ -79,15 +79,15 @@ int __usercall sub_4010A0@<eax>(const WCHAR *a1@<edi>)
     {
       while ( !DeleteFileW(a1) )
       {
-        v3 = FindFirstFileW(a1, &FindFileData);
-        if ( v3 == (HANDLE)-1 )
+        FirstFileW = FindFirstFileW(a1, &FindFileData);
+        if ( FirstFileW == (HANDLE)-1 )
         {
           if ( GetLastError() == 2 )
             return 1;
         }
         else
         {
-          FindClose(v3);
+          FindClose(FirstFileW);
         }
         Sleep(0x64u);
         if ( ++v1 >= 10 )
@@ -101,7 +101,7 @@ int __usercall sub_4010A0@<eax>(const WCHAR *a1@<edi>)
 //----- (00401130) --------------------------------------------------------
 int __stdcall start(int a1, int a2, int a3, int a4)
 {
-  const WCHAR *v4; // eax
+  const WCHAR *CommandLineW; // eax
   LPWSTR *v5; // ebx
   LPWSTR v7; // edi
   DWORD v8; // ecx
@@ -114,16 +114,16 @@ int __stdcall start(int a1, int a2, int a3, int a4)
   void *v15; // esi
   WCHAR *v16; // esi
   int v17; // ecx
-  struct _STARTUPINFOW *v18; // eax
+  struct _STARTUPINFOW *p_StartupInfo; // eax
   int v19; // ecx
-  struct _PROCESS_INFORMATION *v20; // eax
+  struct _PROCESS_INFORMATION *p_ProcessInformation; // eax
   int v21; // esi
   int pNumArgs; // [esp+Ch] [ebp-5Ch] BYREF
   struct _PROCESS_INFORMATION ProcessInformation; // [esp+10h] [ebp-58h] BYREF
   struct _STARTUPINFOW StartupInfo; // [esp+20h] [ebp-48h] BYREF
 
-  v4 = GetCommandLineW();
-  v5 = CommandLineToArgvW(v4, &pNumArgs);
+  CommandLineW = GetCommandLineW();
+  v5 = CommandLineToArgvW(CommandLineW, &pNumArgs);
   if ( !v5 )
     sub_401000(L"CommandLineToArgvW", (int)&unk_40207C);
   if ( pNumArgs != 5 )
@@ -163,21 +163,21 @@ LABEL_9:
   if ( !MoveFileW(v5[2], v16) )
     sub_401000(L"MoveFileW", (int)v5[2]);
   v17 = 68;
-  v18 = &StartupInfo;
+  p_StartupInfo = &StartupInfo;
   do
   {
-    LOBYTE(v18->cb) = 0;
-    v18 = (struct _STARTUPINFOW *)((char *)v18 + 1);
+    LOBYTE(p_StartupInfo->cb) = 0;
+    p_StartupInfo = (struct _STARTUPINFOW *)((char *)p_StartupInfo + 1);
     --v17;
   }
   while ( v17 );
   StartupInfo.cb = 68;
   v19 = 16;
-  v20 = &ProcessInformation;
+  p_ProcessInformation = &ProcessInformation;
   do
   {
-    LOBYTE(v20->hProcess) = 0;
-    v20 = (struct _PROCESS_INFORMATION *)((char *)v20 + 1);
+    LOBYTE(p_ProcessInformation->hProcess) = 0;
+    p_ProcessInformation = (struct _PROCESS_INFORMATION *)((char *)p_ProcessInformation + 1);
     --v19;
   }
   while ( v19 );
@@ -195,7 +195,7 @@ LABEL_9:
   }
   return 0;
 }
-// 4011D1: conditional instruction was optimized away because of 'esi.4!=0'
+// 4011D1: conditional instruction was optimized away because esi.4!=0
 // 402240: using guessed type wchar_t aCommandlinetoa[19];
 // 402268: using guessed type wchar_t aOpenprocess[12];
 // 402280: using guessed type wchar_t aTerminateproce[17];

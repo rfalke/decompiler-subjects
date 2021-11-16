@@ -11,27 +11,27 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int sub_80480B7(void); // weak
-int sub_80480C1(void); // weak
-int sub_80480CB(void); // weak
 void __noreturn start_0(); // weak
 unsigned __int8 sub_804827E();
-// unsigned __int8 __usercall sub_804828D@<al>(unsigned __int8 result@<al>, unsigned int a2@<ecx>, unsigned __int8 *a3@<esi>);
-// int __usercall sub_8048297@<eax>(int a1@<esi>);
-// int __usercall sub_80483FC@<eax>(unsigned int a1@<ebx>);
-// int __usercall sub_804841F@<eax>(int *a1@<ebx>, int a2@<edi>, int a3@<esi>);
+// unsigned __int8 __usercall sub_804828D@<al>(unsigned __int8 result@<al>, unsigned int@<ecx>, unsigned __int8 *@<esi>);
+// int __usercall sub_8048297@<eax>(__int16 *a1@<esi>);
+// int __usercall sub_80483FC@<eax>(unsigned int@<ebx>);
+// int __usercall sub_804841F@<eax>(int *@<ebx>, int@<edi>, int@<esi>);
 int sub_8048588();
 int sub_80485EC();
-// char __usercall sub_804875F@<al>(_BYTE *a1@<edi>, unsigned __int8 *a2@<esi>);
+// char __usercall sub_804875F@<al>(_BYTE *@<edi>, unsigned __int8 *@<esi>);
 unsigned __int8 sub_8048798();
-// int __usercall sub_8048897@<eax>(int a1@<edx>, int a2@<ecx>, int a3@<edi>, unsigned __int8 *a4@<esi>);
+// int __usercall sub_8048897@<eax>(int@<edx>, int@<ecx>, int@<edi>, unsigned __int8 *@<esi>);
 // __int64 __usercall sub_80488FD@<edx:eax>(__int64 result@<edx:eax>);
-// int __usercall sub_80489EA@<eax>(int a1@<edx>, _BYTE *a2@<edi>, int a3@<esi>);
+// int __usercall sub_80489EA@<eax>(int a1@<edx>, _BYTE *a2@<edi>, __int16 *a3@<esi>, int a4@<ecx>);
 void sub_8048C00();
 
 //-------------------------------------------------------------------------
 // Data declarations
 
+_UNKNOWN loc_80480B7; // weak
+_UNKNOWN loc_80480C1; // weak
+_UNKNOWN loc_80480CB; // weak
 __int16 word_8048C16 = 768; // weak
 int dword_8048C28 = 0; // weak
 int dword_8048C2C = 136951653; // weak
@@ -96,7 +96,7 @@ void __noreturn start_0()
   __int64 v1; // rax
   int (*v2)(void); // eax
   int v3; // edx
-  char *v4; // esi
+  __int16 *v4; // esi
   int i; // ecx
   int v6; // ecx
   unsigned __int16 v7; // ax
@@ -108,28 +108,28 @@ void __noreturn start_0()
 
   v0 = sys_brk((void *)(sys_brk(0) + 5000000));
   memset((void *)0x8049B91, 0, 0x3D0900u);
-  sub_80480B7();
-  sub_80480C1();
-  dword_8048C28 = sub_80480CB();
+  ((void (*)(void))loc_80480B7)();
+  ((void (*)(void))loc_80480C1)();
+  dword_8048C28 = ((int (*)(void))loc_80480CB)();
   __asm { finit }
   sub_8048588();
   sub_804875F((_BYTE *)0x827B765, (unsigned __int8 *)&byte_804927B);
   LOBYTE(v1) = sub_804875F((_BYTE *)0x828B765, (unsigned __int8 *)&byte_8048D0B);
   v2 = (int (*)(void))sys_open(filename, 1, (unsigned __int64)sub_80488FD(v1) >> 32);
   fd = (int)v2;
-  v4 = &byte_80499EB;
+  v4 = (__int16 *)&byte_80499EB;
   for ( i = 1; ; i = v12 )
   {
     v6 = i - 1;
     if ( !v6 )
     {
-      v7 = *(_WORD *)v4;
-      v8 = (int (**)(void))(v4 + 2);
+      v7 = *v4;
+      v8 = (int (**)(void))(v4 + 1);
       v6 = v7;
       v9 = *v8++;
       off_80499E7 = v9;
       v2 = *v8;
-      v4 = (char *)(v8 + 1);
+      v4 = (__int16 *)(v8 + 1);
       off_80499E3 = v2;
     }
     MEMORY[0x8088695] = v6;
@@ -137,7 +137,7 @@ void __noreturn start_0()
     v11 = v3;
     v10 = v2;
     off_80499E7();
-    sub_8048297((int)v4);
+    sub_8048297(v4);
     sub_804827E();
     off_80499E3();
     qmemcpy((void *)dword_8048C28, (const void *)dword_8048C2C, 0xFA00u);
@@ -146,14 +146,11 @@ void __noreturn start_0()
   }
 }
 // 80481FE: variable 'v1' is possibly undefined
-// 80480B7: using guessed type int sub_80480B7(void);
-// 80480C1: using guessed type int sub_80480C1(void);
-// 80480CB: using guessed type int sub_80480CB(void);
 // 8048197: using guessed type void __noreturn start_0();
 // 8048C28: using guessed type int dword_8048C28;
 // 8048C2C: using guessed type int dword_8048C2C;
 // 8048D0B: using guessed type char byte_8048D0B;
-// 804927B: using guessed type char;
+// 804927B: using guessed type char byte_804927B;
 // 80499E3: using guessed type int (*off_80499E3)(void);
 // 80499E7: using guessed type int (*off_80499E7)(void);
 // 80499EB: using guessed type char byte_80499EB;
@@ -174,7 +171,10 @@ unsigned __int8 sub_804827E()
 }
 
 //----- (0804828D) --------------------------------------------------------
-unsigned __int8 __usercall sub_804828D@<al>(unsigned __int8 result@<al>, unsigned int a2@<ecx>, unsigned __int8 *a3@<esi>)
+unsigned __int8 __usercall sub_804828D@<al>(
+        unsigned __int8 result@<al>,
+        unsigned int a2@<ecx>,
+        unsigned __int8 *a3@<esi>)
 {
   __outbyte(0x3C8u, result);
   __outbytestring(0x3C9u, a3, a2);
@@ -182,7 +182,7 @@ unsigned __int8 __usercall sub_804828D@<al>(unsigned __int8 result@<al>, unsigne
 }
 
 //----- (08048297) --------------------------------------------------------
-int __usercall sub_8048297@<eax>(int a1@<esi>)
+int __usercall sub_8048297@<eax>(__int16 *a1@<esi>)
 {
   int v1; // eax
   int result; // eax
@@ -196,7 +196,7 @@ int __usercall sub_8048297@<eax>(int a1@<esi>)
     if ( !MEMORY[0x80886A1] )
       break;
     v4 = MEMORY[0x80886A9];
-    sub_80489EA(MEMORY[0x80886A9], (_BYTE *)0x8049E95, a1);
+    sub_80489EA(MEMORY[0x80886A9], (_BYTE *)0x8049E95, a1, MEMORY[0x80886A9]);
     v3 = sys_write(fd, (const void *)0x8049E95, v4);
   }
   return result;
@@ -574,20 +574,19 @@ __int64 __usercall sub_80488FD@<edx:eax>(__int64 result@<edx:eax>)
 // 80488FD: could not find valid save-restore pair for ebp
 
 //----- (080489EA) --------------------------------------------------------
-int __usercall sub_80489EA@<eax>(int a1@<edx>, _BYTE *a2@<edi>, int a3@<esi>)
+int __usercall sub_80489EA@<eax>(int a1@<edx>, _BYTE *a2@<edi>, __int16 *a3@<esi>, int a4@<ecx>)
 {
-  char (*v3)[3]; // eax
-  int v4; // edi
-  int v5; // edx
-  int v6; // edi
-  char v7; // bl
-  int v8; // eax
-  unsigned __int8 v9; // al
-  char v10; // cl
-  __int16 *v11; // edi
-  __int16 v12; // ax
-  int v13; // edi
-  char v14; // cl
+  char (*v4)[3]; // eax
+  int v5; // edi
+  int v6; // edx
+  int v7; // edi
+  char v8; // bl
+  int v9; // eax
+  unsigned __int8 v10; // al
+  char v11; // cl
+  __int16 *v12; // edi
+  __int16 v13; // ax
+  int v14; // edi
   __int16 v15; // ax
   __int16 *v16; // esi
   __int16 v17; // dx
@@ -610,68 +609,68 @@ int __usercall sub_80489EA@<eax>(int a1@<edx>, _BYTE *a2@<edi>, int a3@<esi>)
   do
   {
     ++dword_8049B31;
-    v3 = off_8049B35;
+    v4 = off_8049B35;
     if ( dword_8049B31 == *(_DWORD *)off_8049B35 )
     {
       off_8049B35 = (char (*)[3])((char *)off_8049B35 + 8);
-      (*(void (**)(void))&(*v3)[4])();
+      (*(void (__fastcall **)(int, int))&(*v4)[4])(a4, a1);
     }
     v32 = a1;
     v31 = a2;
-    v4 = 0;
+    v5 = 0;
     if ( byte_8049B90 == 1 )
     {
       if ( !--*(_DWORD *)&byte_80497EF )
       {
         *(_DWORD *)&byte_80497EF = 1257;
-        v5 = *(_DWORD *)&byte_80497EB + 1;
+        v6 = *(_DWORD *)&byte_80497EB + 1;
         if ( byte_80497EB != -65 )
           ++*(_DWORD *)&byte_80497EB;
-        v6 = 134776653;
-        v7 = 4;
+        v7 = 134776653;
+        v8 = 4;
         do
         {
-          v8 = 0;
-          if ( v7 == 4 )
+          v9 = 0;
+          if ( v8 == 4 )
           {
-            v9 = byte_80497F3[v5];
-            v5 >>= 1;
+            v10 = byte_80497F3[v6];
+            v6 >>= 1;
           }
           else
           {
-            v9 = byte_80498B3[v5];
-            v5 += 96;
+            v10 = byte_80498B3[v6];
+            v6 += 96;
           }
-          v10 = v9 >> 3;
-          LOBYTE(v8) = v9 & 7;
-          if ( (_BYTE)v8 == 7 )
+          v11 = v10 >> 3;
+          LOBYTE(v9) = v10 & 7;
+          if ( (_BYTE)v9 == 7 )
           {
-            a3 += 6;
-            v6 += 6;
+            a3 += 3;
+            v7 += 6;
           }
           else
           {
-            LOWORD(v8) = word_80499D3[v8];
-            *(_WORD *)v6 = v8 << v10;
-            v11 = (__int16 *)(v6 + 2);
-            v12 = 5000;
-            if ( v7 == 4 )
-              v12 = 15000;
-            *v11 = v12;
-            a3 += 2;
-            v6 = (int)(v11 + 2);
+            LOWORD(v9) = word_80499D3[v9];
+            *(_WORD *)v7 = v9 << v11;
+            v12 = (__int16 *)(v7 + 2);
+            v13 = 5000;
+            if ( v8 == 4 )
+              v13 = 15000;
+            *v12 = v13;
+            ++a3;
+            v7 = (int)(v12 + 2);
           }
-          --v7;
+          --v8;
         }
-        while ( v7 );
+        while ( v8 );
       }
-      a3 = 134776653;
-      v13 = 0;
-      v14 = 4;
+      a3 = (__int16 *)134776653;
+      v14 = 0;
+      LOBYTE(a4) = 4;
       do
       {
-        v15 = *(_WORD *)a3;
-        v16 = (__int16 *)(a3 + 2);
+        v15 = *a3;
+        v16 = a3 + 1;
         v17 = v15;
         v18 = *v16;
         v19 = v16 + 1;
@@ -683,12 +682,12 @@ int __usercall sub_80489EA@<eax>(int a1@<edx>, _BYTE *a2@<edi>, int a3@<esi>)
         v20 = (unsigned __int16)*v19;
         LOWORD(v20) = v17 + v20;
         *v19 = v20;
-        a3 = (int)(v19 + 1);
-        v13 += (__int16)((unsigned int)(*(__int16 *)(4 * v20 + 0x823B765) * v18) >> 16);
-        --v14;
+        a3 = v19 + 1;
+        v14 += (__int16)((unsigned int)(*(__int16 *)(4 * v20 + 0x823B765) * v18) >> 16);
+        LOBYTE(a4) = a4 - 1;
       }
-      while ( v14 );
-      v4 = v13 >> 8;
+      while ( (_BYTE)a4 );
+      v5 = v14 >> 8;
     }
     v21 = 0;
     if ( byte_8049B8D == 1 )
@@ -709,19 +708,19 @@ int __usercall sub_80489EA@<eax>(int a1@<edx>, _BYTE *a2@<edi>, int a3@<esi>)
         v29 = v21;
         sub_80483FC(v24 + 1);
         v21 = v29;
-        v4 += v25 >> 12;
+        v5 += v25 >> 12;
       }
     }
-    v26 = v4 + v21;
+    v26 = v5 + v21;
     if ( byte_8049B8F == 1 )
     {
       dword_8049B29 -= 1177348;
       v30 = v26;
       sub_80483FC(HIWORD(dword_8049B29) + 1);
       v26 = v30;
-      v4 += v27 >> 12;
+      v5 += v27 >> 12;
     }
-    result = v4 + v26;
+    result = v5 + v26;
     LOBYTE(result) = result + 127;
     *v31 = result;
     a2 = v31 + 1;
@@ -730,11 +729,12 @@ int __usercall sub_80489EA@<eax>(int a1@<edx>, _BYTE *a2@<edi>, int a3@<esi>)
   while ( v32 != 1 );
   return result;
 }
+// 8048A09: variable 'a4' is possibly undefined
 // 8048A0B: variable 'a1' is possibly undefined
 // 8048AE8: variable 'v22' is possibly undefined
 // 8048B4D: variable 'v25' is possibly undefined
 // 8048B7A: variable 'v27' is possibly undefined
-// 80497EB: using guessed type char;
+// 80497EB: using guessed type char byte_80497EB;
 // 80497EF: using guessed type char byte_80497EF;
 // 80499D3: using guessed type __int16 word_80499D3[];
 // 8049B23: using guessed type __int16 word_8049B23;
@@ -755,5 +755,5 @@ void sub_8048C00()
 }
 // 8048C2C: using guessed type int dword_8048C2C;
 
-// nfuncs=18 queued=14 decompiled=14 lumina nreq=0 worse=0 better=0
+// nfuncs=15 queued=14 decompiled=14 lumina nreq=0 worse=0 better=0
 // ALL OK, 14 function(s) have been successfully decompiled

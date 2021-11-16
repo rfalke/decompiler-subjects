@@ -10,8 +10,8 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void __fastcall __noreturn start(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, const char *a7);
-void __fastcall func(__int64 a1);
+void __fastcall __noreturn start(__int64, __int64, __int64, __int64, __int64, __int64, const char *);
+void __fastcall func(__int64);
 void *func2();
 int __cdecl main(int argc, const char **argv, const char **envp);
 // void __cdecl __noreturn exit(int);
@@ -23,7 +23,14 @@ _UNKNOWN gs1; // weak
 
 
 //----- (0000000100000E4C) ----------------------------------------------------
-void __fastcall __noreturn start(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, const char *a7)
+void __fastcall __noreturn start(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6,
+        const char *a7)
 {
   _QWORD *i; // rcx
   int v8; // eax

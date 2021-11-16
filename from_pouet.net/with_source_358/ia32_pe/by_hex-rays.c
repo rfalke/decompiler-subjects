@@ -11,7 +11,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void __stdcall __noreturn start(int a1, int a2, int a3, int a4);
+void __stdcall __noreturn start(int, int, int, int);
 // int __stdcall MessageBoxA(HWND hWnd, LPCSTR lpText, LPCSTR lpCaption, UINT uType);
 // BOOL __stdcall CloseHandle(HANDLE hObject);
 // HANDLE __stdcall CreateFileA(LPCSTR lpFileName, DWORD dwDesiredAccess, DWORD dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes, DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes, HANDLE hTemplateFile);
@@ -21,10 +21,6 @@ void __stdcall __noreturn start(int a1, int a2, int a3, int a4);
 // HMODULE __stdcall LoadLibraryA(LPCSTR lpLibFileName);
 // DWORD __stdcall SetFilePointer(HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod);
 // BOOL __stdcall WriteFile(HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped);
-HMODULE __stdcall LoadLibraryA_0(LPCSTR lpLibFileName);
-HDC __stdcall GetDC(HWND hWnd);
-COLORREF __stdcall SetPixel(HDC hdc, int x, int y, COLORREF color);
-int __stdcall ReleaseDC(HWND hWnd, HDC hDC);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -32,50 +28,54 @@ int __stdcall ReleaseDC(HWND hWnd, HDC hDC);
 CHAR LibFileName[] = "kernel32"; // idb
 CHAR aUser32[] = "user32"; // idb
 CHAR aGdi32[] = "gdi32"; // idb
-HMODULE hModule = NULL; // idb
+HMODULE hLibModule = NULL; // idb
 HMODULE dword_40301A = NULL; // idb
 HMODULE dword_40301E = NULL; // idb
 CHAR ProcName[] = "LoadLibraryA"; // idb
 CHAR aGetdc[] = "GetDC"; // idb
 CHAR aSetpixel[] = "SetPixel"; // idb
 CHAR aReleasedc[] = "ReleaseDC"; // idb
+HMODULE (__stdcall *LoadLibraryA_0)(LPCSTR lpLibFileName) = NULL;
+HDC (__stdcall *GetDC)(HWND hWnd) = NULL;
+COLORREF (__stdcall *SetPixel)(HDC hdc, int x, int y, COLORREF color) = NULL;
+int (__stdcall *ReleaseDC)(HWND hWnd, HDC hDC) = NULL;
 CHAR Caption[] = "ROXOR-2A SETUP"; // idb
 CHAR aDone[] = "DONE! (^_^)"; // idb
 CHAR Text[] = "ERROR! (>_<)"; // idb
 CHAR FileName[] = "ROXOR-2A.exe"; // idb
-HANDLE hFile = NULL; // idb
+HANDLE hObject = NULL; // idb
 DWORD NumberOfBytesWritten = 0u; // idb
 
 
 //----- (00401000) --------------------------------------------------------
 void __stdcall __noreturn start(int a1, int a2, int a3, int a4)
 {
-  hModule = LoadLibraryA(LibFileName);
-  if ( hModule
+  hLibModule = LoadLibraryA(LibFileName);
+  if ( hLibModule
     && (dword_40301A = LoadLibraryA(aUser32)) != 0
     && (dword_40301E = LoadLibraryA(aGdi32)) != 0
-    && (*(_DWORD *)LoadLibraryA_0 = GetProcAddress(hModule, ProcName)) != 0
-    && (*(_DWORD *)GetDC = GetProcAddress(dword_40301A, aGetdc)) != 0
-    && (*(_DWORD *)SetPixel = GetProcAddress(dword_40301E, aSetpixel)) != 0
-    && (*(_DWORD *)ReleaseDC = GetProcAddress(dword_40301A, aReleasedc)) != 0
-    && (hFile = CreateFileA(FileName, 0x40000000u, 0, 0, 3u, 0x80u, 0), hFile != (HANDLE)-1) )
+    && (LoadLibraryA_0 = (HMODULE (__stdcall *)(LPCSTR))GetProcAddress(hLibModule, ProcName)) != 0
+    && (GetDC = (HDC (__stdcall *)(HWND))GetProcAddress(dword_40301A, aGetdc)) != 0
+    && (SetPixel = (COLORREF (__stdcall *)(HDC, int, int, COLORREF))GetProcAddress(dword_40301E, aSetpixel)) != 0
+    && (ReleaseDC = (int (__stdcall *)(HWND, HDC))GetProcAddress(dword_40301A, aReleasedc)) != 0
+    && (hObject = CreateFileA(FileName, 0x40000000u, 0, 0, 3u, 0x80u, 0), hObject != (HANDLE)-1) )
   {
-    SetFilePointer(hFile, 186, 0, 0);
-    WriteFile(hFile, LoadLibraryA_0, 4u, &NumberOfBytesWritten, 0);
-    SetFilePointer(hFile, 196, 0, 0);
-    WriteFile(hFile, GetDC, 4u, &NumberOfBytesWritten, 0);
-    SetFilePointer(hFile, 221, 0, 0);
-    WriteFile(hFile, SetPixel, 4u, &NumberOfBytesWritten, 0);
-    SetFilePointer(hFile, 247, 0, 0);
-    WriteFile(hFile, ReleaseDC, 4u, &NumberOfBytesWritten, 0);
-    CloseHandle(hFile);
+    SetFilePointer(hObject, 186, 0, 0);
+    WriteFile(hObject, &LoadLibraryA_0, 4u, &NumberOfBytesWritten, 0);
+    SetFilePointer(hObject, 196, 0, 0);
+    WriteFile(hObject, &GetDC, 4u, &NumberOfBytesWritten, 0);
+    SetFilePointer(hObject, 221, 0, 0);
+    WriteFile(hObject, &SetPixel, 4u, &NumberOfBytesWritten, 0);
+    SetFilePointer(hObject, 247, 0, 0);
+    WriteFile(hObject, &ReleaseDC, 4u, &NumberOfBytesWritten, 0);
+    CloseHandle(hObject);
     MessageBoxA(0, aDone, Caption, 0);
   }
   else
   {
     MessageBoxA(0, Text, Caption, 0);
   }
-  FreeLibrary(hModule);
+  FreeLibrary(hLibModule);
   FreeLibrary(dword_40301A);
   FreeLibrary(dword_40301E);
   ExitProcess(0);

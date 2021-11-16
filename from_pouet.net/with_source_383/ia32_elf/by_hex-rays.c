@@ -40,22 +40,22 @@
 // int rand(void);
 // void glPopMatrix(void);
 // void glViewport(GLint x, GLint y, GLsizei width, GLsizei height);
-int __cdecl sub_8048903(__int64 a1, int a2);
-int __cdecl sub_80489C3(int a1, char a2, unsigned int a3, unsigned int a4, int a5);
-int __cdecl sub_8048AA8(int a1);
-int __cdecl sub_8048B68(int a1, int a2, int a3, int a4, int a5);
-int __cdecl sub_8048BE1(int a1, int a2);
-int __cdecl sub_8048C24(int a1, int a2);
-float *__cdecl sub_8048C67(float *a1, int a2, int a3);
-float *__cdecl sub_8048EB5(float *a1, int a2, int a3);
-float *__cdecl sub_80490D5(float *a1, int a2, int a3);
-float *__cdecl sub_80492D1(float *a1, int a2, int a3);
-int __cdecl sub_8049330(char a1, int a2, int a3);
-_DWORD *__cdecl sub_8049363(int a1, int a2);
+int __cdecl sub_8048903(__int64, int);
+int __cdecl sub_80489C3(int, char, unsigned int, unsigned int, int);
+int __cdecl sub_8048AA8(int);
+int __cdecl sub_8048B68(int, int, int, int, int);
+int __cdecl sub_8048BE1(int, int);
+int __cdecl sub_8048C24(int, int);
+float *__cdecl sub_8048C67(float *, int, int);
+float *__cdecl sub_8048EB5(float *, int, int);
+float *__cdecl sub_80490D5(float *, int, int);
+float *__cdecl sub_80492D1(float *, int, int);
+int __cdecl sub_8049330(char, int, int);
+_DWORD *__cdecl sub_8049363(int, int);
 _DWORD *sub_804937F();
 int sub_8049394();
-void __cdecl sub_8049444(int a1);
-void __cdecl sub_804993D(GLfloat *a1);
+void __cdecl sub_8049444(int);
+void __cdecl sub_804993D(GLfloat *);
 int start();
 
 
@@ -300,8 +300,7 @@ int __cdecl sub_8048BE1(int a1, int a2)
     case 3:
       return sub_8048B68(a1, 1, 5, 4, 0);
     case 1:
-      result = sub_8048B68(a1, 1, 2, 4, 3);
-      break;
+      return sub_8048B68(a1, 1, 2, 4, 3);
   }
   return result;
 }
@@ -319,8 +318,7 @@ int __cdecl sub_8048C24(int a1, int a2)
     case 3:
       return sub_8048B68(a1, 0, 4, 5, 1);
     case 1:
-      result = sub_8048B68(a1, 3, 4, 2, 1);
-      break;
+      return sub_8048B68(a1, 3, 4, 2, 1);
   }
   return result;
 }
@@ -1241,6 +1239,7 @@ LABEL_14:
 // 80487CC: using guessed type int __cdecl SDL_SetVideoMode(_DWORD, _DWORD, _DWORD, _DWORD);
 // 804888C: using guessed type int __cdecl SDL_Delay(_DWORD);
 // 804889C: using guessed type int SDL_Quit(void);
+// 8049B18: using guessed type int var_120[60];
 
 // nfuncs=77 queued=17 decompiled=17 lumina nreq=0 worse=0 better=0
 // ALL OK, 17 function(s) have been successfully decompiled

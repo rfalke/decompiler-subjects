@@ -11,17 +11,11 @@
 // Function declarations
 
 void PROCEDURE_LINKAGE_TABLE_();
-// int atexit(void (*func)(void));
-// int __fpstart(void); weak
-// void exit(int status);
 // int printf(const char *format, ...);
-// void __usercall __noreturn start(void (*a1)(void)@<edx>, const char *a2);
 void _fsr();
-int __cdecl addem(int a1, int a2, int a3, _DWORD *a4);
-int __cdecl passem(int a1, int a2, int a3, _DWORD *a4);
+int __cdecl addem(int, int, int, _DWORD *);
+int __cdecl passem(int, int, int, _DWORD *);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// int init_proc();
-// void term_proc(void); idb
 
 
 //----- (080487C8) --------------------------------------------------------

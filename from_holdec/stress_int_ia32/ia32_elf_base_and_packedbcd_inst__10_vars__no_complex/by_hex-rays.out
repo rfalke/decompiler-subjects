@@ -1,22 +1,23 @@
+
 Database SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_base_and_packedbcd_inst__10_vars__no_complex/subject.exe.idb already exists.
 Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
-  1695744   207 8192 allocating memory for b-tree...
+  1687552   206 8192 allocating memory for b-tree...
   2310144   282 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  4268032            total memory allocated
+  4259840            total memory allocated
 
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
 Loading type libraries...
 Autoanalysis subsystem has been initialized.
 Database for file 'subject.exe' has been loaded.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
 === start of cleanup script -> OK
   function at 08049000  LIB  with name '.init_proc'
   function at 08049030       with name 'sub_8049030'

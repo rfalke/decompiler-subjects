@@ -15,45 +15,46 @@
 
 LONG __stdcall TopLevelExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo); // idb
 void __noreturn sub_401140(); // weak
-int __cdecl sub_4012A0(void (__cdecl *a1)());
+int __cdecl sub_4012A0(void (__cdecl *)());
 void sub_4012C0();
 int sub_4012F0();
-int __cdecl sub_401310(int a1, int a2);
+int __cdecl sub_401310(int, int);
 void __noreturn sub_401385();
-int *__cdecl sub_4013A3(char *Buffer, int a2);
+int *__cdecl sub_4013A3(char *Buffer, int);
 void __cdecl __noreturn sub_40141A(char *, int); // idb
-void __cdecl __noreturn sub_4014DE(int a1, int a2, int a3);
-int _pei386_runtime_relocator();
+void __cdecl __noreturn sub_4014DE(int, int, int);
+int sub_401550();
 void sub_401580();
-void __cdecl __do_global_dtors(); // idb
-int __do_global_ctors();
+int (**sub_401590())();
+int sub_4015C0();
 int sub_401620();
-// int __usercall sub_401640@<eax>(char a1@<al>);
-// char *__usercall read_uleb128@<eax>(char *a1@<eax>, _DWORD *a2@<edx>);
-// char *__usercall read_sleb128@<eax>(char *a1@<eax>, _DWORD *a2@<edx>);
-// char *__usercall sub_401750@<eax>(char a1@<al>, int a2@<edx>, char *a3, int *a4);
+// int __usercall sub_401640@<eax>(char@<al>);
+// char *__usercall sub_401690@<eax>(char *@<eax>, _DWORD *@<edx>);
+// char *__usercall sub_4016E0@<eax>(char *@<eax>, _DWORD *@<edx>);
+// char *__usercall sub_401750@<eax>(char@<al>, int@<edx>, char *, int *);
 HANDLE sub_401820();
 HANDLE sub_401870();
-void __cdecl sub_401900(_DWORD *a1, _DWORD *a2, int a3, int a4);
-void __cdecl sub_4019F0(_DWORD *a1, _DWORD *a2);
-LONG __cdecl sub_401A60(int a1, _DWORD *a2, int a3, int a4);
-LONG __cdecl sub_401B60(int a1, _DWORD *a2);
-int __cdecl sub_401BC0(_DWORD *a1);
-int __cdecl sub_401D50(_DWORD *a1);
-// int __usercall sub_401D90@<eax>(char a1@<al>, int a2@<edx>);
-// int __usercall sub_401DF0@<eax>(int a1@<eax>);
-int __cdecl sub_401E80(int a1, int a2, int a3);
-int __cdecl sub_401EA0(int a1, int a2, int a3);
-int __cdecl sub_401F20(int a1, int a2, int a3);
-// int __usercall sub_401FB0@<eax>(int result@<eax>, int (__cdecl *a2)(int, _DWORD, _DWORD)@<edx>, int a3, int a4, int a5);
-// unsigned int __usercall sub_402040@<eax>(int a1@<eax>, int (__cdecl *a2)(int, _DWORD, _DWORD)@<edx>, int a3);
-// int __usercall sub_4020B0@<eax>(int a1@<eax>, char *a2@<edx>);
-// int __usercall sub_4021D0@<eax>(int a1@<eax>, int *a2@<edx>, char *a3);
-// int __usercall sub_4022D0@<eax>(int a1@<eax>, int a2@<edx>, int a3);
-// int __usercall search_object@<eax>(int a1@<eax>, unsigned int a2@<edx>);
+void __cdecl sub_401900(_DWORD *, _DWORD *, int, int);
+void __cdecl sub_4019F0(_DWORD *, _DWORD *);
+LONG __cdecl sub_401A60(int, _DWORD *, int, int);
+LONG __cdecl sub_401B60(int, _DWORD *);
+int __cdecl sub_401BC0(_DWORD *);
+int __cdecl sub_401D50(_DWORD *);
+// int __usercall sub_401D90@<eax>(char@<al>, int@<edx>);
+// int __usercall sub_401DF0@<eax>(int@<eax>);
+int __cdecl sub_401E80(int, int, int);
+int __cdecl sub_401EA0(int, int, int);
+int __cdecl sub_401F20(int, int, int);
+// int __usercall sub_401FB0@<eax>(int result@<eax>, int (__cdecl *)(int, _DWORD, _DWORD)@<edx>, int, int, int);
+// unsigned int __usercall sub_402040@<eax>(int@<eax>, int (__cdecl *)(int, _DWORD, _DWORD)@<edx>, int);
+// int __usercall sub_4020B0@<eax>(int@<eax>, char *@<edx>);
+// int __usercall sub_4021D0@<eax>(int@<eax>, int *@<edx>, char *);
+// int __usercall sub_4022D0@<eax>(int@<eax>, int@<edx>, int);
+// int __usercall sub_4023F0@<eax>(int@<eax>, unsigned int@<edx>);
 int sub_402B50();
 // unsigned int __usercall sub_402B60@<eax>(ATOM nAtom@<ax>);
-void __w32_sharedptr_initialize();
+void sub_402C00();
+// int __usercall sub_402E20@<eax>(unsigned int@<eax>, int@<ecx>, int);
 // int *__cdecl _p__fmode();
 // int __cdecl _getmainargs(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD); weak
 // int scanf(const char *const Format, ...);
@@ -65,7 +66,7 @@ void __w32_sharedptr_initialize();
 // void __cdecl free(void *Block);
 // void *__cdecl malloc(size_t Size);
 // void __cdecl __noreturn abort();
-// int __thiscall assert(_DWORD, _DWORD, _DWORD, _DWORD); weak
+// void __thiscall __noreturn assert(_DWORD, _DWORD, _DWORD, _DWORD); weak
 // LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
 // BOOL __stdcall ReleaseSemaphore(HANDLE hSemaphore, LONG lReleaseCount, LPLONG lpPreviousCount);
 // LONG __stdcall InterlockedDecrement(volatile LONG *lpAddend);
@@ -78,10 +79,6 @@ void __w32_sharedptr_initialize();
 // ATOM __stdcall FindAtomA(LPCSTR lpString);
 void sub_403010();
 int sub_403020();
-// char ***__cdecl _p__environ();
-// int __cdecl setmode(int FileHandle, int Mode);
-// int __cdecl atexit(void (__cdecl *)());
-// _crt_signal_t __cdecl signal(int Signal, _crt_signal_t Function);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -205,8 +202,8 @@ _DWORD dword_405160[108] =
   1191413569,
   75892099,
   0
-}; // idb
-_DWORD dword_405310[828] =
+}; // weak
+_DWORD dword_405310[60] =
 {
   0,
   0,
@@ -267,12 +264,11 @@ _DWORD dword_405310[828] =
   0,
   0,
   0,
-  0,
-  
-}; // idb
+  0
+}; // weak
 int dword_406000; // weak
 int dword_406004; // weak
-_DWORD dword_406010[8]; // idb
+_DWORD dword_406010[8]; // weak
 int dword_406030; // weak
 int Mode; // idb
 int dword_406050; // weak
@@ -285,7 +281,11 @@ int dword_4060A0; // weak
 int dword_4060B0; // weak
 int dword_4060C0; // weak
 int dword_4060D0; // weak
+// extern char ***(__cdecl *_p__environ)();
 // extern FILE iob[];
+// extern int (__cdecl *setmode)(int FileHandle, int Mode);
+// extern int (__cdecl *atexit)(void (__cdecl *)());
+// extern _crt_signal_t (__cdecl *signal)(int Signal, _crt_signal_t Function);
 
 
 //----- (00401000) --------------------------------------------------------
@@ -293,7 +293,7 @@ LONG __stdcall TopLevelExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo
 {
   int v1; // ebx
   int v2; // esi
-  DWORD v3; // eax
+  DWORD ExceptionCode; // eax
   _crt_signal_t v4; // eax
   bool v6; // zf
   _crt_signal_t v7; // eax
@@ -301,16 +301,16 @@ LONG __stdcall TopLevelExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo
 
   v1 = 0;
   v2 = 0;
-  v3 = ExceptionInfo->ExceptionRecord->ExceptionCode;
-  if ( v3 <= 0xC0000091 )
+  ExceptionCode = ExceptionInfo->ExceptionRecord->ExceptionCode;
+  if ( ExceptionCode <= 0xC0000091 )
   {
-    if ( v3 >= 0xC000008D )
+    if ( ExceptionCode >= 0xC000008D )
     {
 LABEL_3:
       v2 = 1;
       goto LABEL_4;
     }
-    if ( v3 == -1073741819 )
+    if ( ExceptionCode == -1073741819 )
     {
       v8 = signal(11, 0);
       if ( v8 == (_crt_signal_t)1 )
@@ -325,7 +325,7 @@ LABEL_3:
       }
       return -1;
     }
-    v6 = v3 == -1073741795;
+    v6 = ExceptionCode == -1073741795;
 LABEL_15:
     if ( !v6 )
       return v1;
@@ -342,7 +342,7 @@ LABEL_15:
     }
     return -1;
   }
-  if ( v3 == -1073741676 )
+  if ( ExceptionCode == -1073741676 )
   {
 LABEL_4:
     v4 = signal(8, 0);
@@ -360,12 +360,12 @@ LABEL_4:
     }
     return -1;
   }
-  if ( v3 > 0xC0000094 )
+  if ( ExceptionCode > 0xC0000094 )
   {
-    v6 = v3 == -1073741674;
+    v6 = ExceptionCode == -1073741674;
     goto LABEL_15;
   }
-  if ( v3 == -1073741677 )
+  if ( ExceptionCode == -1073741677 )
     goto LABEL_3;
   return 0;
 }
@@ -373,7 +373,7 @@ LABEL_4:
 //----- (00401140) --------------------------------------------------------
 void __noreturn sub_401140()
 {
-  char *v0; // edx
+  char *ptr; // edx
   int *v1; // eax
   char v2[4]; // [esp+1Ch] [ebp-Ch] BYREF
   int v3; // [esp+20h] [ebp-8h] BYREF
@@ -385,22 +385,22 @@ void __noreturn sub_401140()
   if ( Mode )
   {
     dword_404010 = Mode;
-    v0 = iob[0]._ptr;
+    ptr = iob[0]._ptr;
     if ( iob[0]._ptr )
     {
       setmode(iob[0]._file, Mode);
-      v0 = iob[0]._ptr;
+      ptr = iob[0]._ptr;
     }
-    if ( v0 != (char *)-32 )
+    if ( ptr != (char *)-32 )
     {
       setmode(iob[1]._file, Mode);
-      v0 = iob[0]._ptr;
+      ptr = iob[0]._ptr;
     }
-    if ( v0 != (char *)-64 )
+    if ( ptr != (char *)-64 )
       setmode(iob[2]._file, Mode);
   }
   *_p__fmode() = dword_404010;
-  _pei386_runtime_relocator();
+  sub_401550();
   v1 = (int *)_p__environ();
   sub_4014DE(dword_406004, dword_406000, *v1);
 }
@@ -410,6 +410,7 @@ void __noreturn sub_401140()
 // 404010: using guessed type int dword_404010;
 // 406000: using guessed type int dword_406000;
 // 406004: using guessed type int dword_406004;
+// 401140: using guessed type char var_C[4];
 
 //----- (004012A0) --------------------------------------------------------
 int __cdecl sub_4012A0(void (__cdecl *a1)())
@@ -420,15 +421,18 @@ int __cdecl sub_4012A0(void (__cdecl *a1)())
 //----- (004012C0) --------------------------------------------------------
 void sub_4012C0()
 {
-  __w32_sharedptr_initialize();
+  sub_402C00();
   sub_4019F0(dword_405160, dword_406010);
 }
+// 405160: using guessed type _DWORD dword_405160[108];
+// 406010: using guessed type _DWORD dword_406010[8];
 
 //----- (004012F0) --------------------------------------------------------
 int sub_4012F0()
 {
   return sub_401D50(dword_405160);
 }
+// 405160: using guessed type _DWORD dword_405160[108];
 
 //----- (00401310) --------------------------------------------------------
 int __cdecl sub_401310(int a1, int a2)
@@ -485,22 +489,18 @@ int *__cdecl sub_4013A3(char *Buffer, int a2)
 //----- (0040141A) --------------------------------------------------------
 void __cdecl __noreturn sub_40141A(char *Str, int a2)
 {
-  size_t v2; // eax
   char Buffer; // [esp+1Bh] [ebp-Dh] BYREF
-  unsigned int i; // [esp+1Ch] [ebp-Ch]
-  int v5; // [esp+20h] [ebp-8h]
-  int v6; // [esp+24h] [ebp-4h] BYREF
+  size_t i; // [esp+1Ch] [ebp-Ch]
+  int v4; // [esp+20h] [ebp-8h]
+  int v5; // [esp+24h] [ebp-4h] BYREF
 
-  v5 = 0;
-  for ( i = 0; ; ++i )
+  v4 = 0;
+  for ( i = 0; i < strlen(Str); ++i )
   {
-    v2 = strlen(Str);
-    if ( i >= v2 )
-      break;
     Buffer = Str[i];
-    sscanf(&Buffer, "%d", &v6);
-    v5 += v6;
-    if ( v5 == 16 )
+    sscanf(&Buffer, "%d", &v5);
+    v4 += v5;
+    if ( v4 == 16 )
       sub_4013A3(Str, a2);
   }
   sub_401385();
@@ -509,19 +509,22 @@ void __cdecl __noreturn sub_40141A(char *Str, int a2)
 //----- (004014DE) --------------------------------------------------------
 void __cdecl __noreturn sub_4014DE(int a1, int a2, int a3)
 {
-  void *v3; // esp
-  char v4[120]; // [esp+20h] [ebp-78h] BYREF
+  int v3; // ecx
+  char *Format; // [esp+0h] [ebp-98h]
+  char v5[120]; // [esp+20h] [ebp-78h] BYREF
 
-  v3 = alloca(16);
+  sub_402E20(0x10u, v3, (int)Format);
   sub_401620();
   printf("IOLI Crackme Level 0x09\n");
   printf("Password: ");
-  scanf("%s", v4);
-  sub_40141A(v4, a3);
+  scanf("%s", v5);
+  sub_40141A(v5, a3);
 }
+// 401501: variable 'v3' is possibly undefined
+// 401501: variable 'Format' is possibly undefined
 
 //----- (00401550) --------------------------------------------------------
-int _pei386_runtime_relocator()
+int sub_401550()
 {
   int *i; // ecx
   int v1; // edx
@@ -535,6 +538,7 @@ int _pei386_runtime_relocator()
   }
   return result;
 }
+// 405310: using guessed type _DWORD dword_405310[60];
 
 //----- (00401580) --------------------------------------------------------
 void sub_401580()
@@ -543,28 +547,29 @@ void sub_401580()
 }
 
 //----- (00401590) --------------------------------------------------------
-void __cdecl __do_global_dtors()
+int (**sub_401590())()
 {
-  int (**v0)(); // eax
+  int (**result)(); // eax
   int (*v1)(); // edx
 
-  v0 = off_404020;
+  result = off_404020;
   if ( *off_404020 )
   {
     do
     {
-      (*v0)();
-      v0 = off_404020 + 1;
+      (*result)();
+      result = off_404020 + 1;
       v1 = off_404020[1];
       ++off_404020;
     }
     while ( v1 );
   }
+  return result;
 }
 // 404020: using guessed type int (**off_404020)();
 
 //----- (004015C0) --------------------------------------------------------
-int __do_global_ctors()
+int sub_4015C0()
 {
   int j; // ebx
   int v2; // eax
@@ -575,7 +580,7 @@ int __do_global_ctors()
     ++v2;
   for ( j = v2; j; --j )
     ((void (*)(void))dword_403030[j])();
-  return sub_4012A0(__do_global_dtors);
+  return sub_4012A0((void (__cdecl *)())sub_401590);
 }
 // 403030: using guessed type int dword_403030[];
 // 403034: using guessed type int (*off_403034)();
@@ -589,7 +594,7 @@ int sub_401620()
   if ( !dword_406050 )
   {
     dword_406050 = 1;
-    result = __do_global_ctors();
+    return sub_4015C0();
   }
   return result;
 }
@@ -624,7 +629,7 @@ LABEL_6:
 }
 
 //----- (00401690) --------------------------------------------------------
-char *__usercall read_uleb128@<eax>(char *a1@<eax>, _DWORD *a2@<edx>)
+char *__usercall sub_401690@<eax>(char *a1@<eax>, _DWORD *a2@<edx>)
 {
   int v3; // esi
   int v4; // ebx
@@ -646,7 +651,7 @@ char *__usercall read_uleb128@<eax>(char *a1@<eax>, _DWORD *a2@<edx>)
 }
 
 //----- (004016E0) --------------------------------------------------------
-char *__usercall read_sleb128@<eax>(char *a1@<eax>, _DWORD *a2@<edx>)
+char *__usercall sub_4016E0@<eax>(char *a1@<eax>, _DWORD *a2@<edx>)
 {
   int v2; // edi
   unsigned int v3; // esi
@@ -674,7 +679,6 @@ char *__usercall sub_401750@<eax>(char a1@<al>, int a2@<edx>, char *a3, int *a4)
 {
   int v6; // edx
   char *v7; // ecx
-  char *result; // eax
   int *v9; // eax
   char *v10; // eax
   char *v11; // eax
@@ -685,7 +689,7 @@ char *__usercall sub_401750@<eax>(char a1@<al>, int a2@<edx>, char *a3, int *a4)
   {
     v9 = (int *)((unsigned int)(a3 + 3) & 0xFFFFFFFC);
     *a4 = *v9;
-    result = (char *)(v9 + 1);
+    return (char *)(v9 + 1);
   }
   else
   {
@@ -698,7 +702,7 @@ char *__usercall sub_401750@<eax>(char a1@<al>, int a2@<edx>, char *a3, int *a4)
         v7 = a3 + 4;
         break;
       case 1:
-        v10 = read_uleb128(a3, &v13);
+        v10 = sub_401690(a3, &v13);
         v6 = v13;
         v7 = v10;
         break;
@@ -712,7 +716,7 @@ char *__usercall sub_401750@<eax>(char a1@<al>, int a2@<edx>, char *a3, int *a4)
         v7 = a3 + 8;
         break;
       case 9:
-        v11 = read_sleb128(a3, &v12);
+        v11 = sub_4016E0(a3, &v12);
         v6 = v12;
         v7 = v11;
         break;
@@ -733,9 +737,8 @@ char *__usercall sub_401750@<eax>(char a1@<al>, int a2@<edx>, char *a3, int *a4)
         v6 = *(_DWORD *)v6;
     }
     *a4 = v6;
-    result = v7;
+    return v7;
   }
-  return result;
 }
 
 //----- (00401820) --------------------------------------------------------
@@ -894,7 +897,7 @@ LONG __cdecl sub_401A60(int a1, _DWORD *a2, int a3, int a4)
 LABEL_6:
     result = InterlockedDecrement((volatile LONG *)lpAddend);
     if ( result >= 0 )
-      result = ReleaseSemaphore(*(HANDLE *)(lpAddend + 4), 1, 0);
+      return ReleaseSemaphore(*(HANDLE *)(lpAddend + 4), 1, 0);
   }
   return result;
 }
@@ -1045,17 +1048,17 @@ int __usercall sub_401DF0@<eax>(int a1@<eax>)
   char v9; // al
   int v10; // [esp+14h] [ebp-14h] BYREF
   int v11; // [esp+18h] [ebp-10h] BYREF
-  _DWORD v12[3]; // [esp+1Ch] [ebp-Ch] BYREF
+  int v12[3]; // [esp+1Ch] [ebp-Ch] BYREF
 
   Str = (const char *)(a1 + 9);
   result = 0;
   if ( *(_BYTE *)(a1 + 9) == 122 )
   {
     v4 = strlen(Str);
-    v5 = read_uleb128((char *)&Str[v4 + 1], v12);
+    v5 = sub_401690((char *)&Str[v4 + 1], v12);
     v6 = (char *)(a1 + 10);
-    v7 = read_sleb128(v5, &v11);
-    for ( i = read_uleb128(v7 + 1, v12); ; ++i )
+    v7 = sub_4016E0(v5, &v11);
+    for ( i = sub_401690(v7 + 1, v12); ; ++i )
     {
       while ( 1 )
       {
@@ -1071,10 +1074,11 @@ int __usercall sub_401DF0@<eax>(int a1@<eax>)
         break;
       ++v6;
     }
-    result = 0;
+    return 0;
   }
   return result;
 }
+// 401DF0: using guessed type _DWORD var_C[3];
 
 //----- (00401E80) --------------------------------------------------------
 int __cdecl sub_401E80(int a1, int a2, int a3)
@@ -1085,7 +1089,7 @@ int __cdecl sub_401E80(int a1, int a2, int a3)
   v3 = 1;
   v4 = *(_DWORD *)(a3 + 8);
   if ( *(_DWORD *)(a2 + 8) <= v4 )
-    v3 = -(*(_DWORD *)(a2 + 8) < v4);
+    return -(*(_DWORD *)(a2 + 8) < v4);
   return v3;
 }
 
@@ -1095,16 +1099,17 @@ int __cdecl sub_401EA0(int a1, int a2, int a3)
   int v3; // esi
   int v4; // edx
   unsigned int v6; // [esp+8h] [ebp-10h] BYREF
-  unsigned int v7[3]; // [esp+Ch] [ebp-Ch] BYREF
+  int v7[3]; // [esp+Ch] [ebp-Ch] BYREF
 
   v3 = sub_401D90(*(unsigned __int16 *)(a1 + 16) >> 3, a1);
-  sub_401750(*(unsigned __int16 *)(a1 + 16) >> 3, v3, (char *)(a2 + 8), (int *)v7);
+  sub_401750(*(unsigned __int16 *)(a1 + 16) >> 3, v3, (char *)(a2 + 8), v7);
   sub_401750(*(unsigned __int16 *)(a1 + 16) >> 3, v3, (char *)(a3 + 8), (int *)&v6);
   v4 = 1;
   if ( v7[0] <= v6 )
-    v4 = -(v7[0] < v6);
+    return -(v7[0] < v6);
   return v4;
 }
+// 401EA0: using guessed type unsigned int var_C[3];
 
 //----- (00401F20) --------------------------------------------------------
 int __cdecl sub_401F20(int a1, int a2, int a3)
@@ -1115,19 +1120,20 @@ int __cdecl sub_401F20(int a1, int a2, int a3)
   int v6; // eax
   int v7; // edx
   unsigned int v9; // [esp+14h] [ebp-14h] BYREF
-  unsigned int v10[4]; // [esp+18h] [ebp-10h] BYREF
+  int v10[4]; // [esp+18h] [ebp-10h] BYREF
 
   v3 = sub_401DF0(a2 - *(_DWORD *)(a2 + 4) + 4);
   v4 = sub_401D90(v3, a1);
-  sub_401750(v3, v4, (char *)(a2 + 8), (int *)v10);
+  sub_401750(v3, v4, (char *)(a2 + 8), v10);
   v5 = sub_401DF0(a3 - *(_DWORD *)(a3 + 4) + 4);
   v6 = sub_401D90(v5, a1);
   sub_401750(v5, v6, (char *)(a3 + 8), (int *)&v9);
   v7 = 1;
   if ( v10[0] <= v9 )
-    v7 = -(v10[0] < v9);
+    return -(v10[0] < v9);
   return v7;
 }
+// 401F20: using guessed type unsigned int var_10[4];
 
 //----- (00401FB0) --------------------------------------------------------
 int __usercall sub_401FB0@<eax>(int result@<eax>, int (__cdecl *a2)(int, _DWORD, _DWORD)@<edx>, int a3, int a4, int a5)
@@ -1198,7 +1204,7 @@ int __usercall sub_4020B0@<eax>(int a1@<eax>, char *a2@<edx>)
   int v14; // [esp+Ch] [ebp-1Ch]
   int v15; // [esp+10h] [ebp-18h]
   int v16; // [esp+14h] [ebp-14h]
-  unsigned int v17[4]; // [esp+18h] [ebp-10h] BYREF
+  int v17[4]; // [esp+18h] [ebp-10h] BYREF
 
   v3 = a2;
   v4 = *(_DWORD *)a2 == 0;
@@ -1229,7 +1235,7 @@ int __usercall sub_4020B0@<eax>(int a1@<eax>, char *a2@<edx>)
           *(_BYTE *)(a1 + 16) |= 4u;
         }
       }
-      sub_401750(v14, v13, v3 + 8, (int *)v17);
+      sub_401750(v14, v13, v3 + 8, v17);
       v10 = sub_401640(v14);
       if ( v10 > 3 )
         v11 = -1;
@@ -1247,6 +1253,7 @@ int __usercall sub_4020B0@<eax>(int a1@<eax>, char *a2@<edx>)
   }
   return v15;
 }
+// 4020B0: using guessed type unsigned int var_10[4];
 
 //----- (004021D0) --------------------------------------------------------
 int __usercall sub_4021D0@<eax>(int a1@<eax>, int *a2@<edx>, char *a3)
@@ -1318,6 +1325,7 @@ int __usercall sub_4021D0@<eax>(int a1@<eax>, int *a2@<edx>, char *a3)
   }
   return result;
 }
+// 4021D0: using guessed type int var_10[4];
 
 //----- (004022D0) --------------------------------------------------------
 int __usercall sub_4022D0@<eax>(int a1@<eax>, int a2@<edx>, int a3)
@@ -1390,9 +1398,10 @@ LABEL_2:
   }
   return 0;
 }
+// 4022D0: using guessed type int var_10[4];
 
 //----- (004023F0) --------------------------------------------------------
-int __usercall search_object@<eax>(int a1@<eax>, unsigned int a2@<edx>)
+int __usercall sub_4023F0@<eax>(int a1@<eax>, unsigned int a2@<edx>)
 {
   char v2; // dl
   int result; // eax
@@ -1737,16 +1746,16 @@ int sub_402B50()
 unsigned int __usercall sub_402B60@<eax>(ATOM nAtom@<ax>)
 {
   unsigned int v1; // ebx
-  UINT v2; // eax
+  UINT AtomNameA; // eax
   int v3; // edx
   int v4; // ecx
-  CHAR Buffer[68]; // [esp+10h] [ebp-48h] BYREF
+  char Buffer[68]; // [esp+10h] [ebp-48h] BYREF
 
   v1 = 0;
-  v2 = GetAtomNameA(nAtom, Buffer, 61);
+  AtomNameA = GetAtomNameA(nAtom, Buffer, 61);
   v3 = 31;
   v4 = 1;
-  if ( !v2 )
+  if ( !AtomNameA )
     assert(
       "../../gcc-3.4.5-20060117-1/gcc/config/i386/w32-shared-ptr.c",
       "GetAtomNameA (atom, s, sizeof(s)) != 0",
@@ -1774,12 +1783,13 @@ LABEL_6:
       247);
   return v1;
 }
-// 402F50: using guessed type int __thiscall assert(_DWORD, _DWORD, _DWORD, _DWORD);
+// 402F50: using guessed type void __thiscall __noreturn assert(_DWORD, _DWORD, _DWORD, _DWORD);
+// 402B60: using guessed type CHAR Buffer[68];
 
 //----- (00402C00) --------------------------------------------------------
-void __w32_sharedptr_initialize()
+void sub_402C00()
 {
-  ATOM v0; // ax
+  ATOM AtomA; // ax
   _DWORD *v1; // eax
   unsigned int v2; // ebx
   int v3; // ecx
@@ -1798,16 +1808,16 @@ void __w32_sharedptr_initialize()
   int v16; // edx
   unsigned int v17; // eax
   int v18; // [esp+1Ch] [ebp-9Ch]
-  CHAR lpString[32]; // [esp+20h] [ebp-98h] BYREF
+  char lpString[32]; // [esp+20h] [ebp-98h] BYREF
   char v20[32]; // [esp+40h] [ebp-78h] BYREF
   CHAR String[88]; // [esp+60h] [ebp-58h] BYREF
 
   if ( !dword_4060C0 )
   {
     strcpy(String, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-LIBGCCW32-EH-3-GTHR-MINGW32");
-    v0 = FindAtomA(String);
-    v18 = v0;
-    if ( !v0 )
+    AtomA = FindAtomA(String);
+    v18 = AtomA;
+    if ( !AtomA )
     {
       v1 = malloc(0x40u);
       v2 = (unsigned int)v1;
@@ -1852,9 +1862,9 @@ void __w32_sharedptr_initialize()
       if ( v16 )
         goto LABEL_11;
       free((void *)v2);
-      v0 = FindAtomA(String);
+      AtomA = FindAtomA(String);
     }
-    v2 = sub_402B60(v0);
+    v2 = sub_402B60(AtomA);
 LABEL_11:
     dword_4060C0 = v2;
     dword_4060B0 = v2 + 4;
@@ -1873,6 +1883,26 @@ LABEL_11:
 // 4060B0: using guessed type int dword_4060B0;
 // 4060C0: using guessed type int dword_4060C0;
 // 4060D0: using guessed type int dword_4060D0;
+// 402C00: using guessed type CHAR var_98[32];
+
+//----- (00402E20) --------------------------------------------------------
+int __usercall sub_402E20@<eax>(unsigned int a1@<eax>, int a2@<ecx>, int a3)
+{
+  int *v3; // ecx
+  int v5; // [esp-4h] [ebp-4h]
+  int (__thiscall *retaddr)(int); // [esp+0h] [ebp+0h]
+
+  v5 = a2;
+  v3 = &a3;
+  while ( a1 >= 0x1000 )
+  {
+    v3 -= 1024;
+    *v3 = *v3;
+    a1 -= 4096;
+  }
+  *(int *)((char *)v3 - a1) = *(int *)((char *)v3 - a1);
+  return retaddr(v5);
+}
 
 //----- (00403010) --------------------------------------------------------
 void sub_403010()
@@ -1886,5 +1916,5 @@ int sub_403020()
   return sub_4012F0();
 }
 
-// nfuncs=68 queued=43 decompiled=43 lumina nreq=0 worse=0 better=0
-// ALL OK, 43 function(s) have been successfully decompiled
+// nfuncs=68 queued=44 decompiled=44 lumina nreq=0 worse=0 better=0
+// ALL OK, 44 function(s) have been successfully decompiled

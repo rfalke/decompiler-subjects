@@ -10,28 +10,18 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int init_proc();
 int sub_8048480();
 // int __xstat(int ver, const char *filename, struct stat *stat_buf);
-// int __gmon_start__(void); weak
 // int __printf_chk(_DWORD, const char *, ...); weak
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void perror(const char *s);
 // int __cdecl __strcat_chk(_DWORD, _DWORD, _DWORD); weak
 // int fclose(FILE *stream);
 // FILE *fopen(const char *filename, const char *modes);
 // int __sprintf_chk(_DWORD, _DWORD, _DWORD, const char *, ...); weak
 // size_t fread(void *ptr, size_t size, size_t n, FILE *stream);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _do_global_dtors_aux();
-// int frame_dummy();
-unsigned int __cdecl dumpline(int a1, int a2, int a3);
+unsigned int __cdecl dumpline(int, int, int);
 int __cdecl hexdump(char *filename); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void _libc_csu_fini(void); idb
-// void _libc_csu_init(void); idb
-// void (*_do_global_ctors_aux())(void);
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -133,11 +123,11 @@ LABEL_19:
 // 80484B0: using guessed type int __printf_chk(_DWORD, const char *, ...);
 // 80484E0: using guessed type int __cdecl __strcat_chk(_DWORD, _DWORD, _DWORD);
 // 8048520: using guessed type int __sprintf_chk(_DWORD, _DWORD, _DWORD, const char *, ...);
+// 8048600: using guessed type char var_6C[9];
 
 //----- (080487AF) --------------------------------------------------------
 int __cdecl hexdump(char *filename)
 {
-  int result; // eax
   unsigned int i; // esi
   int v3; // eax
   int v4; // ebx
@@ -150,7 +140,7 @@ int __cdecl hexdump(char *filename)
   if ( __xstat(3, filename, &stat_buf) || (stream = fopen(filename, "rb")) == 0 )
   {
     perror(filename);
-    result = 1;
+    return 1;
   }
   else
   {
@@ -163,9 +153,8 @@ int __cdecl hexdump(char *filename)
       dumpline((int)ptr, i, v3);
     }
     fclose(stream);
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (080488A0) --------------------------------------------------------

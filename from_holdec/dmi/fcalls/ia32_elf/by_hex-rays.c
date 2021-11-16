@@ -12,50 +12,38 @@
 
 #define __thiscall __cdecl // Test compile in C mode
 
-// void *init_proc();
 int sub_8048390();
 // time_t time(time_t *timer);
 // int puts(const char *s);
 // void exit(int status);
 // size_t strlen(const char *s);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int putchar(int c);
 // int fputs(const char *s, FILE *stream);
-// int _gmon_start__(void); weak
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _x86_get_pc_thunk_bx();
-// int deregister_tm_clones();
-// int register_tm_clones();
-// int _do_global_dtors_aux();
-// int frame_dummy();
-int __cdecl sum3_cdecl(int a1, int a2, int a3);
-int __fastcall sum3_fastcall(int a1, int a2, int a3);
-int __thiscall sum3_thiscall(void *this, int a2, int a3);
-int __cdecl sum3_ms_abi(int a1, int a2, int a3);
-int __cdecl sum3_sysv_abi(int a1, int a2, int a3);
-int __stdcall sum3_stdcall(int a1, int a2, int a3);
-int __cdecl basic_1_multiple_calling_conventions_3_ints(void *a1);
+int __cdecl sum3_cdecl(int, int, int);
+int __fastcall sum3_fastcall(int, int, int);
+int __thiscall sum3_thiscall(void *this, int, int);
+int __cdecl sum3_ms_abi(int, int, int);
+int __cdecl sum3_sysv_abi(int, int, int);
+int __stdcall sum3_stdcall(int, int, int);
+int __cdecl basic_1_multiple_calling_conventions_3_ints(void *);
 int a_vararg();
 int basic_2_calling_varargs();
 time_t __cdecl basic_4_tail_call();
-int __cdecl crude_printf(char *a1, char a2);
-size_t __cdecl even_more_crude(int a1, char a2, char *s);
+int __cdecl crude_printf(char *, char);
+size_t __cdecl even_more_crude(int, char, char *s);
 int intermediate_1_accessing_varargs();
-int __cdecl intermediate_4_asm_instr_with_multiple_results(int a1);
-// int __usercall basic_3_accessing_all_registers@<eax>(int a1@<ecx>, int a2@<ebp>);
-// int __usercall sum3_uncommon@<eax>(int a1@<ebp>, int a2@<edi>, int a3@<esi>);
-int __cdecl intermediate_2_use_uncommon_registers_for_parameters(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
+int __cdecl intermediate_4_asm_instr_with_multiple_results(int);
+// int __usercall basic_3_accessing_all_registers@<eax>(int@<ecx>, int@<ebp>);
+// int __usercall sum3_uncommon@<eax>(int@<ebp>, int@<edi>, int@<esi>);
+int __cdecl intermediate_2_use_uncommon_registers_for_parameters(int, int, int, int, int, int, int);
 void __noreturn intermediate_3_calling_noreturn();
-int __cdecl intermediate_5_pushs_in_different_blocks(int a1, int a2, int a3, int a4);
-// int __usercall advanced_1_pass_in_flags_reg_helper@<eax>(char a1@<zf>, char a2@<sf>, char a3@<of>);
-int __cdecl advanced_1_pass_in_flags_reg(int a1);
+int __cdecl intermediate_5_pushs_in_different_blocks(int, int, int, int);
+// int __usercall advanced_1_pass_in_flags_reg_helper@<eax>(char@<zf>, char@<sf>, char@<of>);
+int __cdecl advanced_1_pass_in_flags_reg(int);
 int advanced_2_return_in_flags_reg_helper();
 int advanced_2_return_in_flags_reg();
 _DWORD __cdecl advanced_3_uneven_stack(_DWORD, _DWORD, _DWORD); // weak
-// void _libc_csu_init(void); idb
-// void _libc_csu_fini(void); idb
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -280,7 +268,14 @@ int __usercall sum3_uncommon@<eax>(int a1@<ebp>, int a2@<edi>, int a3@<esi>)
 }
 
 //----- (080489D0) --------------------------------------------------------
-int __cdecl intermediate_2_use_uncommon_registers_for_parameters(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
+int __cdecl intermediate_2_use_uncommon_registers_for_parameters(
+        int a1,
+        int a2,
+        int a3,
+        int a4,
+        int a5,
+        int a6,
+        int a7)
 {
   int v7; // eax
 

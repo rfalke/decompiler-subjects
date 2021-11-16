@@ -169,7 +169,7 @@ signed __int32 dword_4001AA[16277] =
   -221827628,
   -1790391182,
   
-}; // idb
+}; // weak
 int dword_420000[309]; // weak
 __int16 word_4204D6[]; // weak
 
@@ -383,6 +383,7 @@ LABEL_20:
 // 4000DC: variable 'v29' is possibly undefined
 // 4000DC: variable 'v30' is possibly undefined
 // 4000DD: variable 'v31' is possibly undefined
+// 4001AA: using guessed type signed __int32 dword_4001AA[16277];
 // 420000: using guessed type int dword_420000[309];
 // 4204D6: using guessed type __int16 word_4204D6[];
 

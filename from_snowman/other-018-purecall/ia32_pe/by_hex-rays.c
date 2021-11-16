@@ -20,7 +20,6 @@ int (*sub_4015C4())(void);
 void __cdecl sub_4015EA(); // idb
 int __cdecl UserMathErrorFunction();
 int sub_401867();
-// LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -95,7 +94,7 @@ int (*dword_403E38[66])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
 _UNKNOWN unk_403F40; // weak
 void (*dword_404040[66])(void) =
 {
@@ -165,7 +164,8 @@ void (*dword_404040[66])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
+// extern LPTOP_LEVEL_EXCEPTION_FILTER (__stdcall *SetUnhandledExceptionFilter)(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
 
 
 //----- (00401050) --------------------------------------------------------
@@ -216,6 +216,7 @@ int (*sub_4015C4())(void)
   }
   return result;
 }
+// 403E38: using guessed type int (*dword_403E38[66])(void);
 
 //----- (004015EA) --------------------------------------------------------
 void __cdecl sub_4015EA()
@@ -234,6 +235,7 @@ void __cdecl sub_4015EA()
     while ( v0 < dword_404040 );
   }
 }
+// 404040: using guessed type void (*dword_404040[66])(void);
 
 //----- (00401864) --------------------------------------------------------
 int __cdecl UserMathErrorFunction()

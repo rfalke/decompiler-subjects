@@ -1,44 +1,371 @@
-Possible file format: MS-DOS executable (EXE) (IDADIR/loaders/dos.so)
-Possible file format: Linear Executable (LE) (IDADIR/loaders/lx.so)
+
+Database SUBJECTS/from_pouet.net/with_source_397/ia32_le/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   245760    30 8192 allocating memory for virtual array...
+   212992    26 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  1032192            total memory allocated
+   999424            total memory allocated
 
-Loading file 'SUBJECTS/from_pouet.net/with_source_397/ia32_le/subject.exe' into database...
-Detected file format: Linear Executable (LE)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (00010000-0001A000) ... ... OK
-  1. Creating a new segment  (00020000-000222A0) ... ... OK
-Applying fixup records...
-Plan  FLIRT signature: Watcom v9-*1.5  32bit DOS runtime
-autoload.cfg: wa32rtd.sig autoloads w32dos.til
-Assuming __cdecl calling convention by default
-Type library 'w32dos' loaded. Applying types...
-Types applied to 1 names.
-Plan  FLIRT signature: Watcom v9-*1.5  32bit common runtime
-main() function at 10010, named "main_"
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_pouet.net/with_source_397/ia32_le/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Using FLIRT signature: Watcom v9-*1.5  32bit DOS runtime
-Using FLIRT signature: Watcom v9-*1.5  32bit common runtime
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 6 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 00010000       with name 'sub_10000'
+  function at 00010010       with name 'main_'
+  function at 000104AE       with name 'sub_104AE'
+  function at 000104B6       with name '__CHK'
+  function at 000104C6       with name '__GRO'
+  function at 000104C9       with name '__STK'
+  function at 000104F6       with name 'sub_104F6'
+  function at 00010611       with name 'sub_10611'
+  function at 000106ED       with name 'sub_106ED'
+  function at 00010731       with name 'sub_10731'
+  function at 0001073B       with name 'sub_1073B'
+  function at 000107F4       with name 'sub_107F4'
+  function at 000109D5       with name 'j_W?$nwn(ui)pnv'
+  function at 000109DA       with name 'sub_109DA'
+  function at 00010A07       with name 'sub_10A07'
+  function at 00010A1C       with name 'sub_10A1C'
+  function at 00010A28       with name 'sub_10A28'
+  function at 00010AD2       with name 'sub_10AD2'
+  function at 00010B70       with name '__CHP'
+  function at 00010B8D       with name 'sub_10B8D'
+  function at 00010D6D       with name 'getch_'
+  function at 00010D8A       with name 'sub_10D8A'
+  function at 00010D94       with name 'start'
+  function at 00011094       with name 'j___sys_init_387_emulator'
+  function at 00011099       with name 'j___sys_fini_387_emulator'
+  function at 000110AB       with name '__fatal_runtime_error_'
+  function at 000110C8       with name 'nullsub_3'
+  function at 000110D4       with name 'sub_110D4'
+  function at 000110E7       with name 'sub_110E7'
+  function at 000110FE       with name 'sub_110FE'
+  function at 0001110A       with name 'tolower_'
+  function at 0001113C       with name 'sub_1113C'
+  function at 00011163       with name 'sub_11163'
+  function at 000113DF       with name 'sub_113DF'
+  function at 00011488       with name 'sub_11488'
+  function at 000114DF       with name 'sub_114DF'
+  function at 0001151E       with name 'sub_1151E'
+  function at 00011534       with name 'sub_11534'
+  function at 00011643       with name '__chktty_'
+  function at 00011674       with name '__ioalloc_'
+  function at 000116FB       with name '__qread_'
+  function at 000117C2       with name 'sub_117C2'
+  function at 000117F1       with name 'sub_117F1'
+  function at 000118A5       with name 'W?$nwn(ui)pnv'
+  function at 000118E7       with name 'sub_118E7'
+  function at 000119E0       with name 'sub_119E0'
+  function at 00011AA8       with name 'sub_11AA8'
+  function at 00011BA6       with name 'ftell_'
+  function at 00011BE9       with name 'lseek_'
+  function at 00011C4E       with name '__close_'
+  function at 00011C83       with name 'sub_11C83'
+  function at 00011D7E       with name 'j_unlink_'
+  function at 00011D83       with name '__qwrite_'
+  function at 00011DF7       with name 'sub_11DF7'
+  function at 00011DFD       with name 'sub_11DFD'
+  function at 00011E03       with name 'sub_11E03'
+  function at 00011EC6       with name '__CMain'
+  function at 00011F23       with name 'sub_11F23'
+  function at 00011F2F       with name 'sub_11F2F'
+  function at 00011F7B       with name 'sub_11F7B'
+  function at 00011FCC       with name '__setEFGfmt_'
+  function at 00011FE7       with name 'sub_11FE7'
+  function at 00011FF9       with name '__cnvs2d_'
+  function at 00012007       with name '__cnvd2f_'
+  function at 0001207B       with name 'CalcScaleFactor_'
+  function at 000120D8       with name '_do_LDScale10x_'
+  function at 00012159       with name '_LDScale10x_'
+  function at 000121B3       with name '__LDcvt_'
+  function at 00012487       with name 'sub_12487'
+  function at 0001249D       with name 'sub_1249D'
+  function at 000124B4       with name 'sub_124B4'
+  function at 000125F5       with name 'DoFFormat_'
+  function at 00012813       with name 'DoEFormat_'
+  function at 00012B70       with name '__sys_init_387_emulator'
+  function at 00012BA0       with name 'sub_12BA0'
+  function at 00012C6B       with name 'sub_12C6B'
+  function at 00012C88       with name 'sub_12C88'
+  function at 00012CD5       with name 'sub_12CD5'
+  function at 00012CF5       with name '__sys_fini_387_emulator'
+  function at 00012D6F       with name 'sub_12D6F'
+  function at 00012DAA       with name 'sub_12DAA'
+  function at 00012DCB       with name 'sub_12DCB'
+  function at 00012DD0       with name 'sub_12DD0'
+  function at 00012DD4       with name 'sub_12DD4'
+  function at 00012E0F       with name 'sub_12E0F'
+  function at 00012E53       with name '__EnterWVIDEO_'
+  function at 00012E79       with name 'sub_12E79'
+  function at 00012F0B       with name '__full_io_exit_'
+  function at 00012F1C       with name 'docloseall_'
+  function at 00012F74       with name 'sub_12F74'
+  function at 00012FC9       with name 'sub_12FC9'
+  function at 00012FEA       with name 'isatty_'
+  function at 00013008       with name 'sub_13008'
+  function at 00013013       with name 'sub_13013'
+  function at 00013077       with name '_nmalloc_'
+  function at 00013158       with name 'memset_'
+  function at 00013170       with name 'tell_'
+  function at 00013181       with name 'flushall_'
+  function at 00013186       with name '__flushall_'
+  function at 000131B5       with name 'getche_'
+  function at 000131D2       with name 'access_'
+  function at 0001320D       with name 'rename_'
+  function at 0001323B       with name 'getenv_'
+  function at 00013295       with name '_fullpath_'
+  function at 00013564       with name 'sub_13564'
+  function at 000135F4       with name 'j__dos_commit_'
+  function at 000135F9       with name 'fflush_'
+  function at 00013610       with name '__MemAllocator'
+  function at 000136C0       with name '__MemFree'
+  function at 000137F0       with name 'unlink_'
+  function at 00013811       with name 'sub_13811'
+  function at 0001381A       with name '__CommonInit_'
+  function at 00013875       with name 'nullsub_2'
+  function at 00013876       with name 'sub_13876'
+  function at 00013899       with name 'sub_13899'
+  function at 000138B0       with name '_EFG_Format_'
+  function at 000139C4       with name 'W?_no_support_loaded$n()v'
+  function at 000139D6       with name '__Strtold_'
+  function at 00013B6A       with name 'strtod_'
+  function at 00013BE9       with name '__LDClass_'
+  function at 00013C39       with name 'fixup_'
+  function at 00013C71       with name 'ecvt_'
+  function at 00013CAA       with name 'fcvt_'
+  function at 00014110       with name '__int7'
+  function at 00014134       with name 'sub_14134'
+  function at 00014247       with name 'nullsub_4'
+  function at 00014248       with name 'sub_14248'
+  function at 00014284       with name 'sub_14284'
+  function at 00014328       with name 'sub_14328'
+  function at 00014332       with name 'sub_14332'
+  function at 0001433C       with name 'sub_1433C'
+  function at 00014346       with name 'sub_14346'
+  function at 00014394       with name 'sub_14394'
+  function at 0001439A       with name 'sub_1439A'
+  function at 000143A0       with name 'sub_143A0'
+  function at 000143A6       with name 'sub_143A6'
+  function at 000143AC       with name 'sub_143AC'
+  function at 000143B4       with name 'sub_143B4'
+  function at 000143BA       with name 'sub_143BA'
+  function at 000143C0       with name 'sub_143C0'
+  function at 000143C6       with name 'sub_143C6'
+  function at 000143CE       with name 'sub_143CE'
+  function at 000143D6       with name 'sub_143D6'
+  function at 000143DE       with name 'sub_143DE'
+  function at 000143E6       with name 'sub_143E6'
+  function at 000143F0       with name 'sub_143F0'
+  function at 000143FA       with name 'sub_143FA'
+  function at 00014402       with name 'sub_14402'
+  function at 0001440A       with name 'sub_1440A'
+  function at 00014413       with name 'sub_14413'
+  function at 0001441C       with name 'sub_1441C'
+  function at 00014425       with name 'sub_14425'
+  function at 0001442E       with name 'sub_1442E'
+  function at 00014439       with name 'sub_14439'
+  function at 00014444       with name 'sub_14444'
+  function at 0001444D       with name 'sub_1444D'
+  function at 00014456       with name 'sub_14456'
+  function at 0001448E       with name 'sub_1448E'
+  function at 00014493       with name 'sub_14493'
+  function at 000144B2       with name 'sub_144B2'
+  function at 000144D1       with name 'sub_144D1'
+  function at 000144ED       with name 'sub_144ED'
+  function at 00014509       with name 'sub_14509'
+  function at 00014528       with name 'sub_14528'
+  function at 00014547       with name 'sub_14547'
+  function at 00014566       with name 'sub_14566'
+  function at 00014585       with name 'sub_14585'
+  function at 000145C3       with name 'sub_145C3'
+  function at 000145D4       with name 'sub_145D4'
+  function at 000145E5       with name 'sub_145E5'
+  function at 00014603       with name 'sub_14603'
+  function at 00014643       with name 'sub_14643'
+  function at 00014657       with name 'sub_14657'
+  function at 00014665       with name 'sub_14665'
+  function at 00014684       with name 'sub_14684'
+  function at 000146A3       with name 'sub_146A3'
+  function at 000146BF       with name 'sub_146BF'
+  function at 000146DB       with name 'sub_146DB'
+  function at 000146FA       with name 'sub_146FA'
+  function at 00014719       with name 'sub_14719'
+  function at 00014738       with name 'sub_14738'
+  function at 00014757       with name 'sub_14757'
+  function at 00014795       with name 'sub_14795'
+  function at 000147D1       with name 'sub_147D1'
+  function at 000147F5       with name 'sub_147F5'
+  function at 00014818       with name 'sub_14818'
+  function at 0001483B       with name 'sub_1483B'
+  function at 0001485B       with name 'sub_1485B'
+  function at 0001487B       with name 'sub_1487B'
+  function at 0001489E       with name 'sub_1489E'
+  function at 000148C1       with name 'sub_148C1'
+  function at 000148E4       with name 'sub_148E4'
+  function at 00014907       with name 'sub_14907'
+  function at 00014952       with name 'sub_14952'
+  function at 00014994       with name 'sub_14994'
+  function at 000149A9       with name 'sub_149A9'
+  function at 000149C7       with name 'sub_149C7'
+  function at 000149DC       with name 'sub_149DC'
+  function at 00014A27       with name 'sub_14A27'
+  function at 00014A52       with name 'sub_14A52'
+  function at 00014A60       with name 'sub_14A60'
+  function at 00014A81       with name 'sub_14A81'
+  function at 00014AA2       with name 'sub_14AA2'
+  function at 00014AC0       with name 'sub_14AC0'
+  function at 00014ADE       with name 'sub_14ADE'
+  function at 00014AFF       with name 'sub_14AFF'
+  function at 00014B20       with name 'sub_14B20'
+  function at 00014B41       with name 'sub_14B41'
+  function at 00014B62       with name 'sub_14B62'
+  function at 00014BA2       with name 'sub_14BA2'
+  function at 00014BEA       with name 'sub_14BEA'
+  function at 00014C1A       with name 'sub_14C1A'
+  function at 00014C1F       with name 'sub_14C1F'
+  function at 00014C5D       with name 'sub_14C5D'
+  function at 00014C62       with name 'sub_14C62'
+  function at 00014C86       with name 'sub_14C86'
+  function at 00014CB8       with name 'sub_14CB8'
+  function at 000158AA       with name 'sub_158AA'
+  function at 000158D4       with name 'sub_158D4'
+  function at 000158FE       with name 'sub_158FE'
+  function at 0001592E       with name 'sub_1592E'
+  function at 000159B3       with name 'sub_159B3'
+  function at 00015B45       with name 'sub_15B45'
+  function at 00015BDE       with name 'sub_15BDE'
+  function at 00015C7E       with name 'sub_15C7E'
+  function at 00015E39       with name 'sub_15E39'
+  function at 00015EFF       with name 'sub_15EFF'
+  function at 00016070       with name 'sub_16070'
+  function at 00016075       with name 'sub_16075'
+  function at 000160DF       with name 'sub_160DF'
+  function at 000160F0       with name 'sub_160F0'
+  function at 00016125       with name 'sub_16125'
+  function at 000161A3       with name 'sub_161A3'
+  function at 00016222       with name 'sub_16222'
+  function at 000162EC       with name 'sub_162EC'
+  function at 000163B1       with name 'sub_163B1'
+  function at 0001653E       with name 'sub_1653E'
+  function at 000165F4       with name 'sub_165F4'
+  function at 00016757       with name 'sub_16757'
+  function at 000167BD       with name 'sub_167BD'
+  function at 00016838       with name 'sub_16838'
+  function at 00016926       with name 'sub_16926'
+  function at 0001693F       with name 'sub_1693F'
+  function at 00016982       with name 'sub_16982'
+  function at 00016C1A       with name 'sub_16C1A'
+  function at 00016E11       with name 'sub_16E11'
+  function at 00016E1B       with name 'sub_16E1B'
+  function at 00016E28       with name 'sub_16E28'
+  function at 00016E36       with name 'sub_16E36'
+  function at 00016E5E       with name 'sub_16E5E'
+  function at 00017032       with name 'sub_17032'
+  function at 0001711E       with name 'sub_1711E'
+  function at 00017170       with name 'sub_17170'
+  function at 000171B8       with name 'sub_171B8'
+  function at 00017282       with name 'sub_17282'
+  function at 000172DB       with name 'nullsub_6'
+  function at 000172DC       with name '__init_80x87'
+  function at 00017303       with name 'sub_17303'
+  function at 0001736E       with name 'sub_1736E'
+  function at 000174C1       with name 'sub_174C1'
+  function at 00017535       with name 'sub_17535'
+  function at 00017584       with name 'sub_17584'
+  function at 00017655       with name 'sub_17655'
+  function at 00017702       with name 'sub_17702'
+  function at 0001784C       with name 'sub_1784C'
+  function at 000178C3       with name 'sub_178C3'
+  function at 000178D0       with name '__STOSB'
+  function at 00017907       with name '__STOSD'
+  function at 00017973       with name 'sub_17973'
+  function at 000179E5       with name 'strncpy_'
+  function at 00017A0A       with name '_dos_close_'
+  function at 00017A19       with name '_dos_commit_'
+  function at 00017A38       with name 'sub_17A38'
+  function at 00017ACD       with name 'sub_17ACD'
+  function at 00017B45       with name 'sub_17B45'
+  function at 00017BD0       with name 'sub_17BD0'
+  function at 00017DC0       with name 'sub_17DC0'
+  function at 00017DC5       with name 'sub_17DC5'
+  function at 00017DE6       with name 'sub_17DE6'
+  function at 00017F2E       with name 'sub_17F2E'
+  function at 000180A0       with name '__ZBuf2LD'
+  function at 00018102       with name 'sub_18102'
+  function at 00018143       with name 'sub_18143'
+  function at 00018149       with name '__cvt_'
+  function at 000181CE       with name '_dos_setvect_'
+  function at 00018209       with name 'sbrk_'
+  function at 000182C9       with name '__brk_'
+  function at 00018393       with name 'sub_18393'
+  function at 00018467       with name '_mbterm_'
+  function at 000184A3       with name '_mbcicmp_'
+  function at 000184FA       with name '_mbsinc_'
+  function at 00018528       with name '__doserror_'
+  function at 0001853B       with name 'sub_1853B'
+  function at 00018545       with name 'sub_18545'
+  function at 00018657       with name 'sub_18657'
+  function at 0001870A       with name '_chain_intr_'
+  function at 00018723       with name '__nonIBM_'
+  function at 00018770       with name 'sub_18770'
+  function at 0001877B       with name '_dos_getvect_'
+  function at 000187B9       with name 'sub_187B9'
+  function at 000187C0       with name '_mbccpy_'
+  function at 000187F1       with name '_mbclen_'
+  function at 0001881C       with name '_mbsupr_'
+  function at 0001886B       with name '_mbccmp_'
+  function at 000188C9       with name '__terminate_'
+  function at 000188DB       with name '_control87_'
+  function at 00018927       with name 'j___GrabFP87_'
+  function at 0001892C       with name 'sub_1892C'
+  function at 00018A10       with name 'sub_18A10'
+  function at 00018A33       with name 'sub_18A33'
+  function at 00018B7A       with name 'sub_18B7A'
+  function at 00018C7C       with name 'sub_18C7C'
+  function at 00018DE1       with name '_mbsnextc_'
+  function at 00018E1C       with name '_mbctoupper_'
+  function at 00018EB1       with name '_mbvtop_'
+  function at 00018ECB       with name '__GrabFP87_'
+  function at 00018F47       with name 'j__DoINTR_'
+  function at 00018F4C       with name '_mbdtoupper_'
+  function at 00018F5F       with name 'toupper_'
+  function at 00018F6E       with name 'sub_18F6E'
+  function at 00018FCB       with name 'sub_18FCB'
+  function at 00019028       with name 'sub_19028'
+  function at 0001903D       with name 'sub_1903D'
+  function at 0001904A       with name 'sub_1904A'
+  function at 0001914D       with name 'sub_1914D'
+  function at 000191DA       with name 'sub_191DA'
+  function at 0001922C       with name 'sub_1922C'
+  function at 00019252       with name 'sub_19252'
+  function at 00019277       with name 'sub_19277'
+  function at 00019286       with name '__int386x_'
+  function at 000192BE       with name 'sub_192BE'
+  function at 000192E3       with name '_DoINTR_'
+  function at 00019330       with name 'sub_19330'
+  function at 00019664       with name 'sub_19664'
+  function at 000196A8       with name '__Phar_hook_init_'
+  function at 0001976B       with name '__Phar_hook_fini_'
+  function at 00019798       with name '__DOS4G_hook_init_'
+  function at 000197C5       with name '__DOS4G_hook_fini_'
+  function at 000197DE       with name '__Ergo_hook_init_'
+  function at 0001981C       with name '__Ergo_hook_fini_'
+  function at 00019836       with name '__Intel_hook_init_'
+  function at 0001988E       with name '__Intel_hook_fini_'
+  function at 0001988F       with name '_ismbclegal_'
+  function at 000198CE       with name 'init_on_startup_'
+  function at 0001992D       with name '_ismbbtrail_'
+finished -> OK
+TIMESTAMP decompiling 10000 size=00000003 times=0...
 TIMESTAMP decompiling 104AE size=00000008 times=0...
 TIMESTAMP decompiling 10A1C size=0000000C times=0...
 TIMESTAMP decompiling 11488 size=00000039 times=0...
@@ -62,7 +389,6 @@ TIMESTAMP decompiling 12FC9 size=00000021 times=0...
 TIMESTAMP decompiling 13008 size=0000000B times=0...
 TIMESTAMP decompiling 13811 size=00000009 times=0...
 TIMESTAMP decompiling 13899 size=00000016 times=0...
-TIMESTAMP decompiling 1420F size=00000008 times=0...
 TIMESTAMP decompiling 14346 size=0000004E times=0...
 TIMESTAMP decompiling 14394 size=00000006 times=0...
 TIMESTAMP decompiling 1439A size=00000006 times=0...
@@ -90,21 +416,18 @@ TIMESTAMP decompiling 14444 size=00000009 times=0...
 TIMESTAMP decompiling 1444D size=00000009 times=0...
 TIMESTAMP decompiling 149A9 size=0000001E times=0...
 TIMESTAMP decompiling 14A27 size=0000002B times=0...
-TIMESTAMP decompiling 1546E size=0000002C times=0...
 TIMESTAMP decompiling 1592E size=0000000B times=0...
-TIMESTAMP decompiling 159B3 size=0000020C times=0...
 TIMESTAMP decompiling 15B45 size=00000099 times=0...
-TIMESTAMP decompiling 15EFF size=000001B8 times=0...
 TIMESTAMP decompiling 16070 size=00000005 times=0...
 TIMESTAMP decompiling 16075 size=0000006A times=0...
 TIMESTAMP decompiling 160DF size=00000011 times=0...
 TIMESTAMP decompiling 160F0 size=00000035 times=0...
-TIMESTAMP decompiling 160DF size=00000011 times=1;usedcpu 00:00:00 ...int __fastcall(int a1)
 TIMESTAMP decompiling 161A3 size=0000007F times=0...
 TIMESTAMP decompiling 162EC size=00000045 times=0...
 TIMESTAMP decompiling 163B1 size=00000133 times=0...
 TIMESTAMP decompiling 167BD size=0000007B times=0...
 TIMESTAMP decompiling 16838 size=000000A7 times=0...
+TIMESTAMP decompiling 16E36 size=00000006 times=0...
 TIMESTAMP decompiling 17032 size=000000CC times=0...
 TIMESTAMP decompiling 171B8 size=000000CA times=0...
 TIMESTAMP decompiling 17282 size=00000059 times=0...
@@ -127,7 +450,6 @@ TIMESTAMP decompiling 18FCB size=0000005C times=0...
 TIMESTAMP decompiling 19028 size=00000015 times=0...
 TIMESTAMP decompiling 1903D size=0000000D times=0...
 TIMESTAMP decompiling 1904A size=0000001B times=0...
-TIMESTAMP decompiling 1903D size=0000000D times=1;usedcpu 00:00:00 ...void __noreturn()
 TIMESTAMP decompiling 1922C size=00000026 times=0...
 TIMESTAMP decompiling 19252 size=00000025 times=0...
 TIMESTAMP decompiling 19277 size=0000000E times=0...
@@ -138,7 +460,6 @@ TIMESTAMP decompiling 110D4 size=0000000C times=0...
 TIMESTAMP decompiling 104F6 size=0000011B times=0...
 TIMESTAMP decompiling 110FE size=0000000C times=0...
 TIMESTAMP decompiling 13013 size=00000064 times=0...
-TIMESTAMP decompiling 13008 size=0000000B times=1;usedcpu 00:00:00 ...int __fastcall(int a1, int a2)
 TIMESTAMP decompiling 11163 size=00000217 times=0...
 TIMESTAMP decompiling 1113C size=00000027 times=0...
 TIMESTAMP decompiling 11AA8 size=000000FE times=0...
@@ -167,25 +488,45 @@ TIMESTAMP decompiling 12DD4 size=00000031 times=0...
 TIMESTAMP decompiling 12E0F size=00000044 times=0...
 TIMESTAMP decompiling 11F7B size=00000051 times=0...
 TIMESTAMP decompiling 13876 size=00000020 times=0...
+TIMESTAMP decompiling 159B3 size=0000020C times=0...
+TIMESTAMP decompiling 158FE size=00000030 times=0...
+TIMESTAMP decompiling 14328 size=0000000A times=0...
+TIMESTAMP decompiling 14332 size=0000000A times=0...
+TIMESTAMP decompiling 15C7E size=00000231 times=0...
+TIMESTAMP decompiling 15BDE size=0000002A times=0...
+TIMESTAMP decompiling 15EFF size=000001B8 times=0...
+TIMESTAMP decompiling 1711E size=00000052 times=0...
+TIMESTAMP decompiling 17170 size=00000048 times=0...
+TIMESTAMP decompiling 165F4 size=00000163 times=0...
+TIMESTAMP decompiling 1653E size=000000B6 times=0...
+TIMESTAMP decompiling 16757 size=00000066 times=0...
+TIMESTAMP decompiling 16926 size=00000019 times=0...
+TIMESTAMP decompiling 15E39 size=0000002A times=0...
+TIMESTAMP decompiling 16982 size=000001D1 times=0...
+TIMESTAMP decompiling 1693F size=00000043 times=0...
+TIMESTAMP decompiling 16C1A size=000001F7 times=0...
+TIMESTAMP decompiling 16E11 size=0000000A times=0...
+TIMESTAMP decompiling 16E1B size=0000000D times=0...
+TIMESTAMP decompiling 16E28 size=0000000D times=0...
+TIMESTAMP decompiling 16E5E size=000001D4 times=0...
 TIMESTAMP decompiling 1736E size=0000005C times=0...
 TIMESTAMP decompiling 17584 size=000000D1 times=0...
 TIMESTAMP decompiling 1784C size=00000077 times=0...
 TIMESTAMP decompiling 17655 size=000000AD times=0...
 TIMESTAMP decompiling 17702 size=0000014A times=0...
 TIMESTAMP decompiling 17DC5 size=0000011F times=0...
-TIMESTAMP decompiling 171B8 size=000000CA times=1;usedcpu 00:00:00 ...char __fastcall(int a1, __int16 a2)
+TIMESTAMP decompiling 171B8 size=000000CA times=1;usedcpu 00:00:00 ...char __fastcall(int, __int16)
 TIMESTAMP decompiling 17DC5 size=0000011F times=1;usedcpu 00:00:00 ...__int16()
-TIMESTAMP decompiling 171B8 size=000000CA times=2;usedcpu 00:00:00 ...char __fastcall(int a1, __int16 a2)
+TIMESTAMP decompiling 171B8 size=000000CA times=2;usedcpu 00:00:00 ...char __fastcall(int, __int16)
 TIMESTAMP decompiling 17DC5 size=0000011F times=2;usedcpu 00:00:00 ...__int16()
-TIMESTAMP decompiling 171B8 size=000000CA times=3;usedcpu 00:00:00 ...char __fastcall(int a1, __int16 a2)
+TIMESTAMP decompiling 171B8 size=000000CA times=3;usedcpu 00:00:00 ...char __fastcall(int, __int16)
 TIMESTAMP decompiling 17DC5 size=0000011F times=3;usedcpu 00:00:00 ...__int16()
-TIMESTAMP decompiling 171B8 size=000000CA times=4;usedcpu 00:00:00 ...char __fastcall(int a1, __int16 a2)
+TIMESTAMP decompiling 171B8 size=000000CA times=4;usedcpu 00:00:00 ...char __fastcall(int, __int16)
 TIMESTAMP decompiling 17DC5 size=0000011F times=4;usedcpu 00:00:00 ...__int16()
 TIMESTAMP decompiling 17BD0 size=000000F2 times=0...
-TIMESTAMP decompiling 17DC5 size=0000011F times=5;usedcpu 00:00:00 ...__int16()
 TIMESTAMP decompiling 17DE6 size=00000148 times=0...
 TIMESTAMP decompiling 17F2E size=00000171 times=0...
-TIMESTAMP decompiling 17DE6 size=00000148 times=1;usedcpu 00:00:00 ...void __fastcall(int a1, int a2, unsigned int a3)
+TIMESTAMP decompiling 17DE6 size=00000148 times=1;usedcpu 00:00:00 ...void __fastcall(int, int, unsigned int)
 TIMESTAMP decompiling 18393 size=000000D4 times=0...
 TIMESTAMP decompiling 18657 size=000000B3 times=0...
 TIMESTAMP decompiling 1853B size=0000000A times=0...
@@ -197,17 +538,12 @@ TIMESTAMP decompiling 191DA size=00000052 times=0...
 TIMESTAMP decompiling 158D4 size=0000002A times=0...
 TIMESTAMP decompiling 14493 size=0000001F times=0...
 TIMESTAMP decompiling 14456 size=00000038 times=0...
-TIMESTAMP decompiling 15E39 size=0000002A times=0...
 TIMESTAMP decompiling 144B2 size=0000001F times=0...
 TIMESTAMP decompiling 144D1 size=00000038 times=0...
 TIMESTAMP decompiling 144ED size=00000072 times=0...
 TIMESTAMP decompiling 158AA size=0000002A times=0...
 TIMESTAMP decompiling 14509 size=0000001F times=0...
 TIMESTAMP decompiling 14528 size=0000001F times=0...
-TIMESTAMP decompiling 14328 size=0000000A times=0...
-TIMESTAMP decompiling 14332 size=0000000A times=0...
-TIMESTAMP decompiling 15C7E size=00000231 times=0...
-TIMESTAMP decompiling 15BDE size=0000002A times=0...
 TIMESTAMP decompiling 14547 size=0000001F times=0...
 TIMESTAMP decompiling 14566 size=0000001F times=0...
 TIMESTAMP decompiling 14585 size=0000003E times=0...
@@ -260,92 +596,8 @@ TIMESTAMP decompiling 14BA2 size=00000048 times=0...
 TIMESTAMP decompiling 14BEA size=00000030 times=0...
 TIMESTAMP decompiling 14C1F size=0000003E times=0...
 TIMESTAMP decompiling 14C62 size=00000024 times=0...
-TIMESTAMP decompiling 14C8B size=0000002D times=0...
 TIMESTAMP decompiling 14CB8 size=00000015 times=0...
-TIMESTAMP decompiling 14CCD size=00000015 times=0...
-TIMESTAMP decompiling 14CE2 size=0000002E times=0...
-TIMESTAMP decompiling 14CF4 size=00000068 times=0...
-TIMESTAMP decompiling 14D06 size=00000015 times=0...
-TIMESTAMP decompiling 14D1B size=00000015 times=0...
-TIMESTAMP decompiling 14D30 size=00000015 times=0...
-TIMESTAMP decompiling 14D45 size=00000015 times=0...
-TIMESTAMP decompiling 14D5A size=0000004C times=0...
-TIMESTAMP decompiling 14DA6 size=00000028 times=0...
-TIMESTAMP decompiling 14DCE size=0000009D times=0...
-The decompiler assumes that the segment 'cseg01' is read-only because of its CLASS.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment CLASS.
-
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
-TIMESTAMP decompiling 14E4F size=00000237 times=0...
-TIMESTAMP decompiling 1711E size=00000052 times=0...
-TIMESTAMP decompiling 16982 size=000001D1 times=0...
-TIMESTAMP decompiling 1693F size=00000043 times=0...
-TIMESTAMP decompiling 158FE size=00000030 times=0...
-TIMESTAMP decompiling 17170 size=00000048 times=0...
-TIMESTAMP decompiling 16C1A size=000001F7 times=0...
-TIMESTAMP decompiling 16E28 size=0000000D times=0...
-TIMESTAMP decompiling 16E5E size=000001D4 times=0...
-TIMESTAMP decompiling 15086 size=0000011A times=0...
-TIMESTAMP decompiling 16926 size=00000019 times=0...
-TIMESTAMP decompiling 16E11 size=0000000A times=0...
-TIMESTAMP decompiling 16E1B size=0000000D times=0...
-TIMESTAMP decompiling 151A0 size=000000F6 times=0...
-15217: call analysis failed
-TIMESTAMP decompiling 15296 size=000000E3 times=0...
-TIMESTAMP decompiling 15323 size=0000005E times=0...
-TIMESTAMP decompiling 15381 size=00000015 times=0...
-TIMESTAMP decompiling 15396 size=00000015 times=0...
-TIMESTAMP decompiling 153AB size=00000015 times=0...
-TIMESTAMP decompiling 153C0 size=00000015 times=0...
-TIMESTAMP decompiling 153D5 size=00000015 times=0...
-TIMESTAMP decompiling 153EA size=00000015 times=0...
-TIMESTAMP decompiling 153FF size=0000001F times=0...
-TIMESTAMP decompiling 1541E size=0000002C times=0...
-TIMESTAMP decompiling 1544A size=0000002E times=0...
-TIMESTAMP decompiling 1545C size=00000068 times=0...
-TIMESTAMP decompiling 1549A size=0000004F times=0...
-TIMESTAMP decompiling 154E9 size=0000004F times=0...
-TIMESTAMP decompiling 15538 size=000000E3 times=0...
-TIMESTAMP decompiling 155C5 size=0000004F times=0...
-TIMESTAMP decompiling 15614 size=0000004F times=0...
-TIMESTAMP decompiling 15663 size=0000004F times=0...
-TIMESTAMP decompiling 156B2 size=0000004F times=0...
-TIMESTAMP decompiling 165F4 size=00000163 times=0...
-TIMESTAMP decompiling 1653E size=000000B6 times=0...
-TIMESTAMP decompiling 16757 size=00000066 times=0...
-TIMESTAMP decompiling 15701 size=000001A9 times=0...
 TIMESTAMP decompiling 14134 size=000000DB times=0...
-TIMESTAMP decompiling 15701 size=000001A9 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebx>, int a2@<ebp>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
-TIMESTAMP decompiling 14134 size=000000DB times=1;usedcpu 00:00:00 ...int __cdecl(int a1, __int16 a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, __int16 a15)
-TIMESTAMP decompiling 14C1F size=0000003E times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, unsigned int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 14BA2 size=00000048 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_WORD *a1@<ebp>, int a2@<edi>, _WORD *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 14B62 size=00000040 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 14AC0 size=00000074 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 14AA2 size=0000003A times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, __int16 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 14A52 size=0000000E times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, _WORD *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
-TIMESTAMP decompiling 149DC size=0000004B times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *a1@<ebp>, _DWORD *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
-TIMESTAMP decompiling 14994 size=00000015 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<edx>, _BYTE *a2@<ebp>, int a3@<edi>, int *a4@<esi>, int a5, __int16 a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, __int16 a19)
-TIMESTAMP decompiling 14952 size=00000042 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 14907 size=0000004B times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, int a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 1485B size=00000076 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 1483B size=0000003C times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, __int64 *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 14795 size=0000003C times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_WORD *a1@<ebp>, int a2@<edi>, _DWORD *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 14757 size=0000003E times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 146BF size=00000072 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 146A3 size=00000038 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 14657 size=0000000E times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_WORD *a1@<ebp>, _WORD *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
-TIMESTAMP decompiling 14643 size=00000014 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(const void *a1@<ebp>, void *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
-TIMESTAMP decompiling 14603 size=00000040 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, __int16 *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
-TIMESTAMP decompiling 145E5 size=0000001E times=1;usedcpu 00:00:00 ...int __usercall@<eax>(void *a1@<ebp>, const void *a2@<esi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
-TIMESTAMP decompiling 145C3 size=00000011 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, unsigned int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 14585 size=0000003E times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 144ED size=00000072 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 144D1 size=00000038 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, signed int *a3@<esi>, int a4, __int16 a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, __int16 a18)
-TIMESTAMP decompiling 14284 size=00000032 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
-TIMESTAMP decompiling 14248 size=0000003C times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<ebp>, int a2@<edi>, int a3, __int16 a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, __int16 a17)
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

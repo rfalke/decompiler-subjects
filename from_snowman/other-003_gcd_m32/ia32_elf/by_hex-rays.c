@@ -10,19 +10,16 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int __cdecl gcd(int a1, int a2);
+int __cdecl gcd(int, int);
 
 
 //----- (08048094) --------------------------------------------------------
 int __cdecl gcd(int a1, int a2)
 {
-  int result; // eax
-
   if ( a2 )
-    result = gcd(a2, a1 % a2);
+    return gcd(a2, a1 % a2);
   else
-    result = a1;
-  return result;
+    return a1;
 }
 
 // nfuncs=1 queued=1 decompiled=1 lumina nreq=0 worse=0 better=0

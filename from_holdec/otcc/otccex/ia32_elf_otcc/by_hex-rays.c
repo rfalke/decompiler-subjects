@@ -11,11 +11,11 @@
 // Function declarations
 
 void __noreturn start(); // weak
-int __cdecl sub_80481A9(int a1);
-int __cdecl sub_804823D(int a1);
-void __cdecl sub_80482BC(int a1, int a2);
-int __cdecl sub_8048450(int a1, const char **a2);
-int __cdecl sub_804876B(const char *a1);
+int __cdecl sub_80481A9(int);
+int __cdecl sub_804823D(int);
+void __cdecl sub_80482BC(int, int);
+int __cdecl sub_8048450(int, const char **);
+int __cdecl sub_804876B(const char *);
 // void *malloc(size_t size);
 // int printf(const char *format, ...);
 // void free(void *ptr);
@@ -95,7 +95,6 @@ void __cdecl sub_80482BC(int a1, int a2)
 //----- (08048450) --------------------------------------------------------
 int __cdecl sub_8048450(int a1, const char **a2)
 {
-  int result; // eax
   int v4; // eax
   int v5; // eax
   int v6; // eax
@@ -104,7 +103,7 @@ int __cdecl sub_8048450(int a1, const char **a2)
   if ( a1 != 2 && a1 != 3 )
   {
     sub_804876B(*a2);
-    result = 1;
+    return 1;
   }
   else
   {
@@ -113,7 +112,7 @@ int __cdecl sub_8048450(int a1, const char **a2)
     if ( a1 >= 3 && ((dword_80480FC = atoi(a2[2]), dword_80480FC < 2) || dword_80480FC > 36 ? (v4 = 1) : (v4 = 0), v4) )
     {
       fprintf(stderr, "Invalid base\n");
-      result = 1;
+      return 1;
     }
     else
     {
@@ -132,10 +131,9 @@ int __cdecl sub_8048450(int a1, const char **a2)
         printf("Overflow");
       }
       printf("\n");
-      result = 0;
+      return 0;
     }
   }
-  return result;
 }
 // 80480FC: using guessed type int dword_80480FC;
 

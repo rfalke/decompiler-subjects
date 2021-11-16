@@ -10,26 +10,14 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
 // int printf(const char *format, ...);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049207();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// char *deregister_tm_clones();
-// int register_tm_clones();
-// char *_do_global_dtors_aux();
-// int frame_dummy();
-_BOOL4 __cdecl do_cmp(char a1, char a2);
-_BOOL4 __cdecl do_signed(char a1, char a2);
-_BOOL4 __cdecl do_cmp_const(char a1);
-_BOOL4 __cdecl do_signed_const(char a1);
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
+_BOOL4 __cdecl do_cmp(char, char);
+_BOOL4 __cdecl do_signed(char, char);
+_BOOL4 __cdecl do_cmp_const(char);
+_BOOL4 __cdecl do_signed_const(char);
 
 //-------------------------------------------------------------------------
 // Data declarations

@@ -10,12 +10,9 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int init_proc();
 int sub_8048498();
 // int sprintf(char *s, const char *format, ...);
 // int __xstat(int ver, const char *filename, struct stat *stat_buf);
-// int __gmon_start__(void); weak
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void perror(const char *s);
 // int fclose(FILE *stream);
 // void *memcpy(void *dest, const void *src, size_t n);
@@ -24,17 +21,10 @@ int sub_8048498();
 // char *strcat(char *dest, const char *src);
 // int puts(const char *s);
 // size_t fread(void *ptr, size_t size, size_t n, FILE *stream);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _do_global_dtors_aux();
-// int frame_dummy();
 void __cdecl dumpline(unsigned __int8 *p, unsigned int offset, int cnt);
 int __cdecl hexdump(char *fname);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void _libc_csu_fini(void); idb
-// void _libc_csu_init(void); idb
 int __cdecl stat_0(char *filename, int); // idb
-// void (*_do_global_ctors_aux())(void);
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -91,7 +81,6 @@ void __cdecl dumpline(unsigned __int8 *p, unsigned int offset, int cnt)
 //----- (080487C6) --------------------------------------------------------
 int __cdecl hexdump(char *fname)
 {
-  int result; // eax
   stat st; // [esp+28h] [ebp-80h] BYREF
   int cnt; // [esp+80h] [ebp-28h]
   FILE *fp; // [esp+84h] [ebp-24h]
@@ -103,7 +92,7 @@ int __cdecl hexdump(char *fname)
   if ( stat_0(fname, (int)&st) || (fp = fopen(fname, "rb")) == 0 )
   {
     perror(fname);
-    result = 1;
+    return 1;
   }
   else
   {
@@ -115,9 +104,8 @@ int __cdecl hexdump(char *fname)
       dumpline(buff, offset, cnt);
     }
     fclose(fp);
-    result = 0;
+    return 0;
   }
-  return result;
 }
 
 //----- (080488CA) --------------------------------------------------------

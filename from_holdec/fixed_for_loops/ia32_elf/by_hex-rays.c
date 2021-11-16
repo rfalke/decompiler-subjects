@@ -10,21 +10,12 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
 // int puts(const char *s);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int putchar(int c);
 // int fputs(const char *s, FILE *stream);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_80490D7();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// FILE **deregister_tm_clones();
-// int register_tm_clones();
-// FILE **_do_global_dtors_aux();
-// int frame_dummy();
 int var0000_0123456789();
 int var0001_0123456789();
 int var0002_0123456789();
@@ -795,9 +786,6 @@ int var0766_empty();
 int var0767_empty();
 int var0768_empty();
 int call_all();
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -3250,7 +3238,7 @@ int var0171_0()
   puts("<");
   return 0;
 }
-// 804BE15: conditional instruction was optimized away because of 'ebx.4==30'
+// 804BE15: conditional instruction was optimized away because ebx.4==30
 
 //----- (0804BE2C) --------------------------------------------------------
 int var0172_0()
@@ -3260,7 +3248,7 @@ int var0172_0()
   puts("<");
   return 0;
 }
-// 804BE52: conditional instruction was optimized away because of 'ebx.4==30'
+// 804BE52: conditional instruction was optimized away because ebx.4==30
 
 //----- (0804BE69) --------------------------------------------------------
 int var0173_0()
@@ -3270,7 +3258,7 @@ int var0173_0()
   puts("<");
   return 0;
 }
-// 804BE8F: conditional instruction was optimized away because of 'ebx.4==30'
+// 804BE8F: conditional instruction was optimized away because ebx.4==30
 
 //----- (0804BEA6) --------------------------------------------------------
 int var0174_0()
@@ -3460,7 +3448,7 @@ int var0189_0()
   puts("<");
   return 0;
 }
-// 804C267: conditional instruction was optimized away because of 'ebx.4==0'
+// 804C267: conditional instruction was optimized away because ebx.4==0
 
 //----- (0804C27E) --------------------------------------------------------
 int var0190_0()
@@ -3470,7 +3458,7 @@ int var0190_0()
   puts("<");
   return 0;
 }
-// 804C2A9: conditional instruction was optimized away because of 'ebx.4==0'
+// 804C2A9: conditional instruction was optimized away because ebx.4==0
 
 //----- (0804C2C0) --------------------------------------------------------
 int var0191_0()
@@ -3480,7 +3468,7 @@ int var0191_0()
   puts("<");
   return 0;
 }
-// 804C2EB: conditional instruction was optimized away because of 'ebx.4==0'
+// 804C2EB: conditional instruction was optimized away because ebx.4==0
 
 //----- (0804C302) --------------------------------------------------------
 int var0192_0()
@@ -3700,7 +3688,7 @@ int var0209_0()
   puts("<");
   return 0;
 }
-// 804C795: conditional instruction was optimized away because of 'ebx.4==10'
+// 804C795: conditional instruction was optimized away because ebx.4==10
 
 //----- (0804C7AE) --------------------------------------------------------
 int var0210_0()
@@ -3710,7 +3698,7 @@ int var0210_0()
   puts("<");
   return 0;
 }
-// 804C7DB: conditional instruction was optimized away because of 'ebx.4==10'
+// 804C7DB: conditional instruction was optimized away because ebx.4==10
 
 //----- (0804C7F4) --------------------------------------------------------
 int var0211_0()
@@ -3720,7 +3708,7 @@ int var0211_0()
   puts("<");
   return 0;
 }
-// 804C821: conditional instruction was optimized away because of 'ebx.4==10'
+// 804C821: conditional instruction was optimized away because ebx.4==10
 
 //----- (0804C83A) --------------------------------------------------------
 int var0212_0()
@@ -3730,7 +3718,7 @@ int var0212_0()
   puts("<");
   return 0;
 }
-// 804C867: conditional instruction was optimized away because of 'ebx.4==10'
+// 804C867: conditional instruction was optimized away because ebx.4==10
 
 //----- (0804C880) --------------------------------------------------------
 int var0213_0()
@@ -3740,7 +3728,7 @@ int var0213_0()
   puts("<");
   return 0;
 }
-// 804C8AD: conditional instruction was optimized away because of 'ebx.4==10'
+// 804C8AD: conditional instruction was optimized away because ebx.4==10
 
 //----- (0804C8C6) --------------------------------------------------------
 int var0214_0()
@@ -4046,7 +4034,7 @@ int var0237_9()
   puts("<");
   return 0;
 }
-// 804CF0B: conditional instruction was optimized away because of 'ebx.4==39'
+// 804CF0B: conditional instruction was optimized away because ebx.4==39
 
 //----- (0804CF22) --------------------------------------------------------
 int var0238_9()
@@ -4056,7 +4044,7 @@ int var0238_9()
   puts("<");
   return 0;
 }
-// 804CF48: conditional instruction was optimized away because of 'ebx.4==39'
+// 804CF48: conditional instruction was optimized away because ebx.4==39
 
 //----- (0804CF5F) --------------------------------------------------------
 int var0239_9()
@@ -4066,7 +4054,7 @@ int var0239_9()
   puts("<");
   return 0;
 }
-// 804CF85: conditional instruction was optimized away because of 'ebx.4==39'
+// 804CF85: conditional instruction was optimized away because ebx.4==39
 
 //----- (0804CF9C) --------------------------------------------------------
 int var0240_9()
@@ -4280,7 +4268,7 @@ int var0257_9()
   puts("<");
   return 0;
 }
-// 804D3F3: conditional instruction was optimized away because of 'ebx.4==64'
+// 804D3F3: conditional instruction was optimized away because ebx.4==64
 
 //----- (0804D40C) --------------------------------------------------------
 int var0258_9()
@@ -4290,7 +4278,7 @@ int var0258_9()
   puts("<");
   return 0;
 }
-// 804D439: conditional instruction was optimized away because of 'ebx.4==64'
+// 804D439: conditional instruction was optimized away because ebx.4==64
 
 //----- (0804D452) --------------------------------------------------------
 int var0259_9()
@@ -4300,7 +4288,7 @@ int var0259_9()
   puts("<");
   return 0;
 }
-// 804D47F: conditional instruction was optimized away because of 'ebx.4==64'
+// 804D47F: conditional instruction was optimized away because ebx.4==64
 
 //----- (0804D498) --------------------------------------------------------
 int var0260_9()
@@ -4310,7 +4298,7 @@ int var0260_9()
   puts("<");
   return 0;
 }
-// 804D4C5: conditional instruction was optimized away because of 'ebx.4==64'
+// 804D4C5: conditional instruction was optimized away because ebx.4==64
 
 //----- (0804D4DE) --------------------------------------------------------
 int var0261_9()
@@ -4320,7 +4308,7 @@ int var0261_9()
   puts("<");
   return 0;
 }
-// 804D50B: conditional instruction was optimized away because of 'ebx.4==64'
+// 804D50B: conditional instruction was optimized away because ebx.4==64
 
 //----- (0804D524) --------------------------------------------------------
 int var0262_9()
@@ -4647,7 +4635,7 @@ int var0285_0()
   puts("<");
   return 0;
 }
-// 804DB89: conditional instruction was optimized away because of 'ebx.4==0'
+// 804DB89: conditional instruction was optimized away because ebx.4==0
 
 //----- (0804DBA0) --------------------------------------------------------
 int var0286_0()
@@ -4657,7 +4645,7 @@ int var0286_0()
   puts("<");
   return 0;
 }
-// 804DBCE: conditional instruction was optimized away because of 'ebx.4==0'
+// 804DBCE: conditional instruction was optimized away because ebx.4==0
 
 //----- (0804DBE5) --------------------------------------------------------
 int var0287_0()
@@ -4667,7 +4655,7 @@ int var0287_0()
   puts("<");
   return 0;
 }
-// 804DC13: conditional instruction was optimized away because of 'ebx.4==0'
+// 804DC13: conditional instruction was optimized away because ebx.4==0
 
 //----- (0804DC2A) --------------------------------------------------------
 int var0288_0()
@@ -4941,7 +4929,7 @@ int var0303_0()
   puts("<");
   return 0;
 }
-// 804E057: conditional instruction was optimized away because of 'ebx.4==A'
+// 804E057: conditional instruction was optimized away because ebx.4==A
 
 //----- (0804E06E) --------------------------------------------------------
 int var0304_0()
@@ -4951,7 +4939,7 @@ int var0304_0()
   puts("<");
   return 0;
 }
-// 804E09C: conditional instruction was optimized away because of 'ebx.4==A'
+// 804E09C: conditional instruction was optimized away because ebx.4==A
 
 //----- (0804E0B3) --------------------------------------------------------
 int var0305_0()
@@ -4961,7 +4949,7 @@ int var0305_0()
   puts("<");
   return 0;
 }
-// 804E0E1: conditional instruction was optimized away because of 'ebx.4==A'
+// 804E0E1: conditional instruction was optimized away because ebx.4==A
 
 //----- (0804E0F8) --------------------------------------------------------
 int var0306_0()
@@ -5224,7 +5212,7 @@ int var0321_0()
   puts("<");
   return 0;
 }
-// 804E519: conditional instruction was optimized away because of 'ebx.4==FFFFFFEC'
+// 804E519: conditional instruction was optimized away because ebx.4==FFFFFFEC
 
 //----- (0804E530) --------------------------------------------------------
 int var0322_0()
@@ -5234,7 +5222,7 @@ int var0322_0()
   puts("<");
   return 0;
 }
-// 804E55B: conditional instruction was optimized away because of 'ebx.4==FFFFFFEC'
+// 804E55B: conditional instruction was optimized away because ebx.4==FFFFFFEC
 
 //----- (0804E572) --------------------------------------------------------
 int var0323_0()
@@ -5244,7 +5232,7 @@ int var0323_0()
   puts("<");
   return 0;
 }
-// 804E59D: conditional instruction was optimized away because of 'ebx.4==FFFFFFEC'
+// 804E59D: conditional instruction was optimized away because ebx.4==FFFFFFEC
 
 //----- (0804E5B4) --------------------------------------------------------
 int var0324_0()
@@ -5437,7 +5425,7 @@ int var0339_empty()
   puts("<");
   return 0;
 }
-// 804E99A: conditional instruction was optimized away because of 'ebx.4==30'
+// 804E99A: conditional instruction was optimized away because ebx.4==30
 
 //----- (0804E9BA) --------------------------------------------------------
 int var0340_empty()
@@ -5446,7 +5434,7 @@ int var0340_empty()
   puts("<");
   return 0;
 }
-// 804E9D7: conditional instruction was optimized away because of 'ebx.4==30'
+// 804E9D7: conditional instruction was optimized away because ebx.4==30
 
 //----- (0804E9F7) --------------------------------------------------------
 int var0341_empty()
@@ -5455,7 +5443,7 @@ int var0341_empty()
   puts("<");
   return 0;
 }
-// 804EA14: conditional instruction was optimized away because of 'ebx.4==30'
+// 804EA14: conditional instruction was optimized away because ebx.4==30
 
 //----- (0804EA34) --------------------------------------------------------
 int var0342_empty()
@@ -5464,7 +5452,7 @@ int var0342_empty()
   puts("<");
   return 0;
 }
-// 804EA51: conditional instruction was optimized away because of 'ebx.4==2F'
+// 804EA51: conditional instruction was optimized away because ebx.4==2F
 
 //----- (0804EA71) --------------------------------------------------------
 int var0343_empty()
@@ -5473,7 +5461,7 @@ int var0343_empty()
   puts("<");
   return 0;
 }
-// 804EA8E: conditional instruction was optimized away because of 'ebx.4==2F'
+// 804EA8E: conditional instruction was optimized away because ebx.4==2F
 
 //----- (0804EAAE) --------------------------------------------------------
 int var0344_empty()
@@ -5482,7 +5470,7 @@ int var0344_empty()
   puts("<");
   return 0;
 }
-// 804EACB: conditional instruction was optimized away because of 'ebx.4==2F'
+// 804EACB: conditional instruction was optimized away because ebx.4==2F
 
 //----- (0804EAEB) --------------------------------------------------------
 int var0345_empty()
@@ -5527,7 +5515,7 @@ int var0348_empty()
   puts("<");
   return 0;
 }
-// 804EBCE: conditional instruction was optimized away because of 'ebx.4==0'
+// 804EBCE: conditional instruction was optimized away because ebx.4==0
 
 //----- (0804EBF3) --------------------------------------------------------
 int var0349_empty()
@@ -5536,7 +5524,7 @@ int var0349_empty()
   puts("<");
   return 0;
 }
-// 804EC10: conditional instruction was optimized away because of 'ebx.4==0'
+// 804EC10: conditional instruction was optimized away because ebx.4==0
 
 //----- (0804EC35) --------------------------------------------------------
 int var0350_empty()
@@ -5545,7 +5533,7 @@ int var0350_empty()
   puts("<");
   return 0;
 }
-// 804EC52: conditional instruction was optimized away because of 'ebx.4==0'
+// 804EC52: conditional instruction was optimized away because ebx.4==0
 
 //----- (0804EC77) --------------------------------------------------------
 int var0351_empty()
@@ -5554,7 +5542,7 @@ int var0351_empty()
   puts("<");
   return 0;
 }
-// 804EC94: conditional instruction was optimized away because of 'ebx.4==FFFFFFFF'
+// 804EC94: conditional instruction was optimized away because ebx.4==FFFFFFFF
 
 //----- (0804ECB9) --------------------------------------------------------
 int var0352_empty()
@@ -5563,7 +5551,7 @@ int var0352_empty()
   puts("<");
   return 0;
 }
-// 804ECD6: conditional instruction was optimized away because of 'ebx.4==FFFFFFFF'
+// 804ECD6: conditional instruction was optimized away because ebx.4==FFFFFFFF
 
 //----- (0804ECFB) --------------------------------------------------------
 int var0353_empty()
@@ -5572,7 +5560,7 @@ int var0353_empty()
   puts("<");
   return 0;
 }
-// 804ED18: conditional instruction was optimized away because of 'ebx.4==FFFFFFFF'
+// 804ED18: conditional instruction was optimized away because ebx.4==FFFFFFFF
 
 //----- (0804ED3D) --------------------------------------------------------
 int var0354_empty()
@@ -5661,7 +5649,7 @@ int var0359_empty()
   puts("<");
   return 0;
 }
-// 804EEB8: conditional instruction was optimized away because of 'ebx.4==10'
+// 804EEB8: conditional instruction was optimized away because ebx.4==10
 
 //----- (0804EEE1) --------------------------------------------------------
 int var0360_empty()
@@ -5670,7 +5658,7 @@ int var0360_empty()
   puts("<");
   return 0;
 }
-// 804EEFE: conditional instruction was optimized away because of 'ebx.4==10'
+// 804EEFE: conditional instruction was optimized away because ebx.4==10
 
 //----- (0804EF27) --------------------------------------------------------
 int var0361_empty()
@@ -5679,7 +5667,7 @@ int var0361_empty()
   puts("<");
   return 0;
 }
-// 804EF44: conditional instruction was optimized away because of 'ebx.4==10'
+// 804EF44: conditional instruction was optimized away because ebx.4==10
 
 //----- (0804EF6D) --------------------------------------------------------
 int var0362_empty()
@@ -5688,7 +5676,7 @@ int var0362_empty()
   puts("<");
   return 0;
 }
-// 804EF8A: conditional instruction was optimized away because of 'ebx.4==10'
+// 804EF8A: conditional instruction was optimized away because ebx.4==10
 
 //----- (0804EFB3) --------------------------------------------------------
 int var0363_empty()
@@ -5697,7 +5685,7 @@ int var0363_empty()
   puts("<");
   return 0;
 }
-// 804EFD0: conditional instruction was optimized away because of 'ebx.4==10'
+// 804EFD0: conditional instruction was optimized away because ebx.4==10
 
 //----- (0804EFF9) --------------------------------------------------------
 int var0364_empty()
@@ -5706,7 +5694,7 @@ int var0364_empty()
   puts("<");
   return 0;
 }
-// 804F016: conditional instruction was optimized away because of 'ebx.4==E'
+// 804F016: conditional instruction was optimized away because ebx.4==E
 
 //----- (0804F03F) --------------------------------------------------------
 int var0365_empty()
@@ -5715,7 +5703,7 @@ int var0365_empty()
   puts("<");
   return 0;
 }
-// 804F05C: conditional instruction was optimized away because of 'ebx.4==E'
+// 804F05C: conditional instruction was optimized away because ebx.4==E
 
 //----- (0804F085) --------------------------------------------------------
 int var0366_empty()
@@ -5724,7 +5712,7 @@ int var0366_empty()
   puts("<");
   return 0;
 }
-// 804F0A2: conditional instruction was optimized away because of 'ebx.4==E'
+// 804F0A2: conditional instruction was optimized away because ebx.4==E
 
 //----- (0804F0CB) --------------------------------------------------------
 int var0367_empty()
@@ -5733,7 +5721,7 @@ int var0367_empty()
   puts("<");
   return 0;
 }
-// 804F0E8: conditional instruction was optimized away because of 'ebx.4==E'
+// 804F0E8: conditional instruction was optimized away because ebx.4==E
 
 //----- (0804F111) --------------------------------------------------------
 int var0368_empty()
@@ -5742,7 +5730,7 @@ int var0368_empty()
   puts("<");
   return 0;
 }
-// 804F12E: conditional instruction was optimized away because of 'ebx.4==E'
+// 804F12E: conditional instruction was optimized away because ebx.4==E
 
 //----- (0804F157) --------------------------------------------------------
 int var0369_empty()
@@ -5787,7 +5775,7 @@ int var0372_empty()
   puts("<");
   return 0;
 }
-// 804F22B: conditional instruction was optimized away because of 'ebx.4==39'
+// 804F22B: conditional instruction was optimized away because ebx.4==39
 
 //----- (0804F24B) --------------------------------------------------------
 int var0373_empty()
@@ -5796,7 +5784,7 @@ int var0373_empty()
   puts("<");
   return 0;
 }
-// 804F268: conditional instruction was optimized away because of 'ebx.4==39'
+// 804F268: conditional instruction was optimized away because ebx.4==39
 
 //----- (0804F288) --------------------------------------------------------
 int var0374_empty()
@@ -5805,7 +5793,7 @@ int var0374_empty()
   puts("<");
   return 0;
 }
-// 804F2A5: conditional instruction was optimized away because of 'ebx.4==39'
+// 804F2A5: conditional instruction was optimized away because ebx.4==39
 
 //----- (0804F2C5) --------------------------------------------------------
 int var0375_empty()
@@ -5814,7 +5802,7 @@ int var0375_empty()
   puts("<");
   return 0;
 }
-// 804F2E2: conditional instruction was optimized away because of 'ebx.4==3A'
+// 804F2E2: conditional instruction was optimized away because ebx.4==3A
 
 //----- (0804F302) --------------------------------------------------------
 int var0376_empty()
@@ -5823,7 +5811,7 @@ int var0376_empty()
   puts("<");
   return 0;
 }
-// 804F31F: conditional instruction was optimized away because of 'ebx.4==3A'
+// 804F31F: conditional instruction was optimized away because ebx.4==3A
 
 //----- (0804F33F) --------------------------------------------------------
 int var0377_empty()
@@ -5832,7 +5820,7 @@ int var0377_empty()
   puts("<");
   return 0;
 }
-// 804F35C: conditional instruction was optimized away because of 'ebx.4==3A'
+// 804F35C: conditional instruction was optimized away because ebx.4==3A
 
 //----- (0804F37C) --------------------------------------------------------
 int var0378_empty()
@@ -5921,7 +5909,7 @@ int var0383_empty()
   puts("<");
   return 0;
 }
-// 804F4F7: conditional instruction was optimized away because of 'ebx.4==64'
+// 804F4F7: conditional instruction was optimized away because ebx.4==64
 
 //----- (0804F520) --------------------------------------------------------
 int var0384_empty()
@@ -5930,7 +5918,7 @@ int var0384_empty()
   puts("<");
   return 0;
 }
-// 804F53D: conditional instruction was optimized away because of 'ebx.4==64'
+// 804F53D: conditional instruction was optimized away because ebx.4==64
 
 //----- (0804F566) --------------------------------------------------------
 int var0385_empty()
@@ -5939,7 +5927,7 @@ int var0385_empty()
   puts("<");
   return 0;
 }
-// 804F583: conditional instruction was optimized away because of 'ebx.4==64'
+// 804F583: conditional instruction was optimized away because ebx.4==64
 
 //----- (0804F5AC) --------------------------------------------------------
 int var0386_empty()
@@ -5948,7 +5936,7 @@ int var0386_empty()
   puts("<");
   return 0;
 }
-// 804F5C9: conditional instruction was optimized away because of 'ebx.4==64'
+// 804F5C9: conditional instruction was optimized away because ebx.4==64
 
 //----- (0804F5F2) --------------------------------------------------------
 int var0387_empty()
@@ -5957,7 +5945,7 @@ int var0387_empty()
   puts("<");
   return 0;
 }
-// 804F60F: conditional instruction was optimized away because of 'ebx.4==64'
+// 804F60F: conditional instruction was optimized away because ebx.4==64
 
 //----- (0804F638) --------------------------------------------------------
 int var0388_empty()
@@ -5966,7 +5954,7 @@ int var0388_empty()
   puts("<");
   return 0;
 }
-// 804F655: conditional instruction was optimized away because of 'ebx.4==66'
+// 804F655: conditional instruction was optimized away because ebx.4==66
 
 //----- (0804F67E) --------------------------------------------------------
 int var0389_empty()
@@ -5975,7 +5963,7 @@ int var0389_empty()
   puts("<");
   return 0;
 }
-// 804F69B: conditional instruction was optimized away because of 'ebx.4==66'
+// 804F69B: conditional instruction was optimized away because ebx.4==66
 
 //----- (0804F6C4) --------------------------------------------------------
 int var0390_empty()
@@ -5984,7 +5972,7 @@ int var0390_empty()
   puts("<");
   return 0;
 }
-// 804F6E1: conditional instruction was optimized away because of 'ebx.4==66'
+// 804F6E1: conditional instruction was optimized away because ebx.4==66
 
 //----- (0804F70A) --------------------------------------------------------
 int var0391_empty()
@@ -5993,7 +5981,7 @@ int var0391_empty()
   puts("<");
   return 0;
 }
-// 804F727: conditional instruction was optimized away because of 'ebx.4==66'
+// 804F727: conditional instruction was optimized away because ebx.4==66
 
 //----- (0804F750) --------------------------------------------------------
 int var0392_empty()
@@ -6002,7 +5990,7 @@ int var0392_empty()
   puts("<");
   return 0;
 }
-// 804F76D: conditional instruction was optimized away because of 'ebx.4==66'
+// 804F76D: conditional instruction was optimized away because ebx.4==66
 
 //----- (0804F796) --------------------------------------------------------
 int var0393_empty()
@@ -6053,7 +6041,7 @@ int var0396_empty()
   puts("<");
   return 0;
 }
-// 804F887: conditional instruction was optimized away because of 'ebx.4==0'
+// 804F887: conditional instruction was optimized away because ebx.4==0
 
 //----- (0804F8AA) --------------------------------------------------------
 int var0397_empty()
@@ -6062,7 +6050,7 @@ int var0397_empty()
   puts("<");
   return 0;
 }
-// 804F8CC: conditional instruction was optimized away because of 'ebx.4==0'
+// 804F8CC: conditional instruction was optimized away because ebx.4==0
 
 //----- (0804F8EF) --------------------------------------------------------
 int var0398_empty()
@@ -6071,7 +6059,7 @@ int var0398_empty()
   puts("<");
   return 0;
 }
-// 804F911: conditional instruction was optimized away because of 'ebx.4==0'
+// 804F911: conditional instruction was optimized away because ebx.4==0
 
 //----- (0804F934) --------------------------------------------------------
 int var0399_empty()
@@ -6080,7 +6068,7 @@ int var0399_empty()
   puts("<");
   return 0;
 }
-// 804F956: conditional instruction was optimized away because of 'ebx.4==FFFFFFFF'
+// 804F956: conditional instruction was optimized away because ebx.4==FFFFFFFF
 
 //----- (0804F979) --------------------------------------------------------
 int var0400_empty()
@@ -6089,7 +6077,7 @@ int var0400_empty()
   puts("<");
   return 0;
 }
-// 804F99B: conditional instruction was optimized away because of 'ebx.4==FFFFFFFF'
+// 804F99B: conditional instruction was optimized away because ebx.4==FFFFFFFF
 
 //----- (0804F9BE) --------------------------------------------------------
 int var0401_empty()
@@ -6098,7 +6086,7 @@ int var0401_empty()
   puts("<");
   return 0;
 }
-// 804F9E0: conditional instruction was optimized away because of 'ebx.4==FFFFFFFF'
+// 804F9E0: conditional instruction was optimized away because ebx.4==FFFFFFFF
 
 //----- (0804FA03) --------------------------------------------------------
 int var0402_empty()
@@ -6149,7 +6137,7 @@ int var0405_empty()
   puts("<");
   return 0;
 }
-// 804FAF4: conditional instruction was optimized away because of 'ebx.4==A'
+// 804FAF4: conditional instruction was optimized away because ebx.4==A
 
 //----- (0804FB17) --------------------------------------------------------
 int var0406_empty()
@@ -6158,7 +6146,7 @@ int var0406_empty()
   puts("<");
   return 0;
 }
-// 804FB39: conditional instruction was optimized away because of 'ebx.4==A'
+// 804FB39: conditional instruction was optimized away because ebx.4==A
 
 //----- (0804FB5C) --------------------------------------------------------
 int var0407_empty()
@@ -6167,7 +6155,7 @@ int var0407_empty()
   puts("<");
   return 0;
 }
-// 804FB7E: conditional instruction was optimized away because of 'ebx.4==A'
+// 804FB7E: conditional instruction was optimized away because ebx.4==A
 
 //----- (0804FBA1) --------------------------------------------------------
 int var0408_empty()
@@ -6176,7 +6164,7 @@ int var0408_empty()
   puts("<");
   return 0;
 }
-// 804FBC3: conditional instruction was optimized away because of 'ebx.4==B'
+// 804FBC3: conditional instruction was optimized away because ebx.4==B
 
 //----- (0804FBE6) --------------------------------------------------------
 int var0409_empty()
@@ -6185,7 +6173,7 @@ int var0409_empty()
   puts("<");
   return 0;
 }
-// 804FC08: conditional instruction was optimized away because of 'ebx.4==B'
+// 804FC08: conditional instruction was optimized away because ebx.4==B
 
 //----- (0804FC2B) --------------------------------------------------------
 int var0410_empty()
@@ -6194,7 +6182,7 @@ int var0410_empty()
   puts("<");
   return 0;
 }
-// 804FC4D: conditional instruction was optimized away because of 'ebx.4==B'
+// 804FC4D: conditional instruction was optimized away because ebx.4==B
 
 //----- (0804FC70) --------------------------------------------------------
 int var0411_empty()
@@ -6239,7 +6227,7 @@ int var0414_empty()
   puts("<");
   return 0;
 }
-// 804FD53: conditional instruction was optimized away because of 'ebx.4==FFFFFFEC'
+// 804FD53: conditional instruction was optimized away because ebx.4==FFFFFFEC
 
 //----- (0804FD78) --------------------------------------------------------
 int var0415_empty()
@@ -6248,7 +6236,7 @@ int var0415_empty()
   puts("<");
   return 0;
 }
-// 804FD95: conditional instruction was optimized away because of 'ebx.4==FFFFFFEC'
+// 804FD95: conditional instruction was optimized away because ebx.4==FFFFFFEC
 
 //----- (0804FDBA) --------------------------------------------------------
 int var0416_empty()
@@ -6257,7 +6245,7 @@ int var0416_empty()
   puts("<");
   return 0;
 }
-// 804FDD7: conditional instruction was optimized away because of 'ebx.4==FFFFFFEC'
+// 804FDD7: conditional instruction was optimized away because ebx.4==FFFFFFEC
 
 //----- (0804FDFC) --------------------------------------------------------
 int var0417_empty()
@@ -6266,7 +6254,7 @@ int var0417_empty()
   puts("<");
   return 0;
 }
-// 804FE19: conditional instruction was optimized away because of 'ebx.4==FFFFFFEB'
+// 804FE19: conditional instruction was optimized away because ebx.4==FFFFFFEB
 
 //----- (0804FE3E) --------------------------------------------------------
 int var0418_empty()
@@ -6275,7 +6263,7 @@ int var0418_empty()
   puts("<");
   return 0;
 }
-// 804FE5B: conditional instruction was optimized away because of 'ebx.4==FFFFFFEB'
+// 804FE5B: conditional instruction was optimized away because ebx.4==FFFFFFEB
 
 //----- (0804FE80) --------------------------------------------------------
 int var0419_empty()
@@ -6284,7 +6272,7 @@ int var0419_empty()
   puts("<");
   return 0;
 }
-// 804FE9D: conditional instruction was optimized away because of 'ebx.4==FFFFFFEB'
+// 804FE9D: conditional instruction was optimized away because ebx.4==FFFFFFEB
 
 //----- (0804FEC2) --------------------------------------------------------
 int var0420_0123456789()
@@ -8337,7 +8325,7 @@ int var0565_0()
   puts("<");
   return 0;
 }
-// 8052471: conditional instruction was optimized away because of 'ebx.4==30'
+// 8052471: conditional instruction was optimized away because ebx.4==30
 
 //----- (08052488) --------------------------------------------------------
 int var0566_0()
@@ -8347,7 +8335,7 @@ int var0566_0()
   puts("<");
   return 0;
 }
-// 80524AE: conditional instruction was optimized away because of 'ebx.4==30'
+// 80524AE: conditional instruction was optimized away because ebx.4==30
 
 //----- (080524C5) --------------------------------------------------------
 int var0567_0()
@@ -8357,7 +8345,7 @@ int var0567_0()
   puts("<");
   return 0;
 }
-// 80524EB: conditional instruction was optimized away because of 'ebx.4==30'
+// 80524EB: conditional instruction was optimized away because ebx.4==30
 
 //----- (08052502) --------------------------------------------------------
 int var0568_0()
@@ -8557,7 +8545,7 @@ int var0583_0()
   puts("<");
   return 0;
 }
-// 80528C3: conditional instruction was optimized away because of 'ebx.4==0'
+// 80528C3: conditional instruction was optimized away because ebx.4==0
 
 //----- (080528DA) --------------------------------------------------------
 int var0584_0()
@@ -8745,7 +8733,7 @@ int var0599_0()
   puts("<");
   return 0;
 }
-// 8052CEB: conditional instruction was optimized away because of 'ebx.4==10'
+// 8052CEB: conditional instruction was optimized away because ebx.4==10
 
 //----- (08052D04) --------------------------------------------------------
 int var0600_0()
@@ -8755,7 +8743,7 @@ int var0600_0()
   puts("<");
   return 0;
 }
-// 8052D31: conditional instruction was optimized away because of 'ebx.4==10'
+// 8052D31: conditional instruction was optimized away because ebx.4==10
 
 //----- (08052D4A) --------------------------------------------------------
 int var0601_0()
@@ -8765,7 +8753,7 @@ int var0601_0()
   puts("<");
   return 0;
 }
-// 8052D77: conditional instruction was optimized away because of 'ebx.4==10'
+// 8052D77: conditional instruction was optimized away because ebx.4==10
 
 //----- (08052D90) --------------------------------------------------------
 int var0602_0()
@@ -8775,7 +8763,7 @@ int var0602_0()
   puts("<");
   return 0;
 }
-// 8052DBD: conditional instruction was optimized away because of 'ebx.4==10'
+// 8052DBD: conditional instruction was optimized away because ebx.4==10
 
 //----- (08052DD6) --------------------------------------------------------
 int var0603_0()
@@ -8785,7 +8773,7 @@ int var0603_0()
   puts("<");
   return 0;
 }
-// 8052E03: conditional instruction was optimized away because of 'ebx.4==10'
+// 8052E03: conditional instruction was optimized away because ebx.4==10
 
 //----- (08052E1C) --------------------------------------------------------
 int var0604_0()
@@ -9091,7 +9079,7 @@ int var0627_9()
   puts("<");
   return 0;
 }
-// 8053461: conditional instruction was optimized away because of 'ebx.4==39'
+// 8053461: conditional instruction was optimized away because ebx.4==39
 
 //----- (08053478) --------------------------------------------------------
 int var0628_9()
@@ -9101,7 +9089,7 @@ int var0628_9()
   puts("<");
   return 0;
 }
-// 805349E: conditional instruction was optimized away because of 'ebx.4==39'
+// 805349E: conditional instruction was optimized away because ebx.4==39
 
 //----- (080534B5) --------------------------------------------------------
 int var0629_9()
@@ -9111,7 +9099,7 @@ int var0629_9()
   puts("<");
   return 0;
 }
-// 80534DB: conditional instruction was optimized away because of 'ebx.4==39'
+// 80534DB: conditional instruction was optimized away because ebx.4==39
 
 //----- (080534F2) --------------------------------------------------------
 int var0630_9()
@@ -9325,7 +9313,7 @@ int var0647_9()
   puts("<");
   return 0;
 }
-// 8053949: conditional instruction was optimized away because of 'ebx.4==64'
+// 8053949: conditional instruction was optimized away because ebx.4==64
 
 //----- (08053962) --------------------------------------------------------
 int var0648_9()
@@ -9335,7 +9323,7 @@ int var0648_9()
   puts("<");
   return 0;
 }
-// 805398F: conditional instruction was optimized away because of 'ebx.4==64'
+// 805398F: conditional instruction was optimized away because ebx.4==64
 
 //----- (080539A8) --------------------------------------------------------
 int var0649_9()
@@ -9345,7 +9333,7 @@ int var0649_9()
   puts("<");
   return 0;
 }
-// 80539D5: conditional instruction was optimized away because of 'ebx.4==64'
+// 80539D5: conditional instruction was optimized away because ebx.4==64
 
 //----- (080539EE) --------------------------------------------------------
 int var0650_9()
@@ -9355,7 +9343,7 @@ int var0650_9()
   puts("<");
   return 0;
 }
-// 8053A1B: conditional instruction was optimized away because of 'ebx.4==64'
+// 8053A1B: conditional instruction was optimized away because ebx.4==64
 
 //----- (08053A34) --------------------------------------------------------
 int var0651_9()
@@ -9365,7 +9353,7 @@ int var0651_9()
   puts("<");
   return 0;
 }
-// 8053A61: conditional instruction was optimized away because of 'ebx.4==64'
+// 8053A61: conditional instruction was optimized away because ebx.4==64
 
 //----- (08053A7A) --------------------------------------------------------
 int var0652_9()
@@ -9692,7 +9680,7 @@ int var0675_0()
   puts("<");
   return 0;
 }
-// 80540DF: conditional instruction was optimized away because of 'ebx.4==0'
+// 80540DF: conditional instruction was optimized away because ebx.4==0
 
 //----- (080540F6) --------------------------------------------------------
 int var0676_0()
@@ -9910,7 +9898,7 @@ int var0689_0()
   puts("<");
   return 0;
 }
-// 805449B: conditional instruction was optimized away because of 'ebx.4==A'
+// 805449B: conditional instruction was optimized away because ebx.4==A
 
 //----- (080544B2) --------------------------------------------------------
 int var0690_0()
@@ -9920,7 +9908,7 @@ int var0690_0()
   puts("<");
   return 0;
 }
-// 80544E0: conditional instruction was optimized away because of 'ebx.4==A'
+// 80544E0: conditional instruction was optimized away because ebx.4==A
 
 //----- (080544F7) --------------------------------------------------------
 int var0691_0()
@@ -9930,7 +9918,7 @@ int var0691_0()
   puts("<");
   return 0;
 }
-// 8054525: conditional instruction was optimized away because of 'ebx.4==A'
+// 8054525: conditional instruction was optimized away because ebx.4==A
 
 //----- (0805453C) --------------------------------------------------------
 int var0692_0()
@@ -10182,7 +10170,7 @@ int var0707_empty()
   puts("<");
   return 0;
 }
-// 8054946: conditional instruction was optimized away because of 'ebx.4==30'
+// 8054946: conditional instruction was optimized away because ebx.4==30
 
 //----- (08054966) --------------------------------------------------------
 int var0708_empty()
@@ -10191,7 +10179,7 @@ int var0708_empty()
   puts("<");
   return 0;
 }
-// 8054983: conditional instruction was optimized away because of 'ebx.4==30'
+// 8054983: conditional instruction was optimized away because ebx.4==30
 
 //----- (080549A3) --------------------------------------------------------
 int var0709_empty()
@@ -10200,7 +10188,7 @@ int var0709_empty()
   puts("<");
   return 0;
 }
-// 80549C0: conditional instruction was optimized away because of 'ebx.4==30'
+// 80549C0: conditional instruction was optimized away because ebx.4==30
 
 //----- (080549E0) --------------------------------------------------------
 int var0710_empty()
@@ -10209,7 +10197,7 @@ int var0710_empty()
   puts("<");
   return 0;
 }
-// 80549FD: conditional instruction was optimized away because of 'ebx.4==2F'
+// 80549FD: conditional instruction was optimized away because ebx.4==2F
 
 //----- (08054A1D) --------------------------------------------------------
 int var0711_empty()
@@ -10218,7 +10206,7 @@ int var0711_empty()
   puts("<");
   return 0;
 }
-// 8054A3A: conditional instruction was optimized away because of 'ebx.4==2F'
+// 8054A3A: conditional instruction was optimized away because ebx.4==2F
 
 //----- (08054A5A) --------------------------------------------------------
 int var0712_empty()
@@ -10227,7 +10215,7 @@ int var0712_empty()
   puts("<");
   return 0;
 }
-// 8054A77: conditional instruction was optimized away because of 'ebx.4==2F'
+// 8054A77: conditional instruction was optimized away because ebx.4==2F
 
 //----- (08054A97) --------------------------------------------------------
 int var0713_empty()
@@ -10256,7 +10244,7 @@ int var0715_empty()
   puts("<");
   return 0;
 }
-// 8054B38: conditional instruction was optimized away because of 'ebx.4==0'
+// 8054B38: conditional instruction was optimized away because ebx.4==0
 
 //----- (08054B5D) --------------------------------------------------------
 int var0716_empty()
@@ -10353,7 +10341,7 @@ int var0722_empty()
   puts("<");
   return 0;
 }
-// 8054D1A: conditional instruction was optimized away because of 'ebx.4==10'
+// 8054D1A: conditional instruction was optimized away because ebx.4==10
 
 //----- (08054D43) --------------------------------------------------------
 int var0723_empty()
@@ -10362,7 +10350,7 @@ int var0723_empty()
   puts("<");
   return 0;
 }
-// 8054D60: conditional instruction was optimized away because of 'ebx.4==10'
+// 8054D60: conditional instruction was optimized away because ebx.4==10
 
 //----- (08054D89) --------------------------------------------------------
 int var0724_empty()
@@ -10371,7 +10359,7 @@ int var0724_empty()
   puts("<");
   return 0;
 }
-// 8054DA6: conditional instruction was optimized away because of 'ebx.4==10'
+// 8054DA6: conditional instruction was optimized away because ebx.4==10
 
 //----- (08054DCF) --------------------------------------------------------
 int var0725_empty()
@@ -10380,7 +10368,7 @@ int var0725_empty()
   puts("<");
   return 0;
 }
-// 8054DEC: conditional instruction was optimized away because of 'ebx.4==10'
+// 8054DEC: conditional instruction was optimized away because ebx.4==10
 
 //----- (08054E15) --------------------------------------------------------
 int var0726_empty()
@@ -10389,7 +10377,7 @@ int var0726_empty()
   puts("<");
   return 0;
 }
-// 8054E32: conditional instruction was optimized away because of 'ebx.4==10'
+// 8054E32: conditional instruction was optimized away because ebx.4==10
 
 //----- (08054E5B) --------------------------------------------------------
 int var0727_empty()
@@ -10398,7 +10386,7 @@ int var0727_empty()
   puts("<");
   return 0;
 }
-// 8054E78: conditional instruction was optimized away because of 'ebx.4==E'
+// 8054E78: conditional instruction was optimized away because ebx.4==E
 
 //----- (08054EA1) --------------------------------------------------------
 int var0728_empty()
@@ -10407,7 +10395,7 @@ int var0728_empty()
   puts("<");
   return 0;
 }
-// 8054EBE: conditional instruction was optimized away because of 'ebx.4==E'
+// 8054EBE: conditional instruction was optimized away because ebx.4==E
 
 //----- (08054EE7) --------------------------------------------------------
 int var0729_empty()
@@ -10416,7 +10404,7 @@ int var0729_empty()
   puts("<");
   return 0;
 }
-// 8054F04: conditional instruction was optimized away because of 'ebx.4==E'
+// 8054F04: conditional instruction was optimized away because ebx.4==E
 
 //----- (08054F2D) --------------------------------------------------------
 int var0730_empty()
@@ -10425,7 +10413,7 @@ int var0730_empty()
   puts("<");
   return 0;
 }
-// 8054F4A: conditional instruction was optimized away because of 'ebx.4==E'
+// 8054F4A: conditional instruction was optimized away because ebx.4==E
 
 //----- (08054F73) --------------------------------------------------------
 int var0731_empty()
@@ -10434,7 +10422,7 @@ int var0731_empty()
   puts("<");
   return 0;
 }
-// 8054F90: conditional instruction was optimized away because of 'ebx.4==E'
+// 8054F90: conditional instruction was optimized away because ebx.4==E
 
 //----- (08054FB9) --------------------------------------------------------
 int var0732_empty()
@@ -10479,7 +10467,7 @@ int var0735_empty()
   puts("<");
   return 0;
 }
-// 805508D: conditional instruction was optimized away because of 'ebx.4==39'
+// 805508D: conditional instruction was optimized away because ebx.4==39
 
 //----- (080550AD) --------------------------------------------------------
 int var0736_empty()
@@ -10488,7 +10476,7 @@ int var0736_empty()
   puts("<");
   return 0;
 }
-// 80550CA: conditional instruction was optimized away because of 'ebx.4==39'
+// 80550CA: conditional instruction was optimized away because ebx.4==39
 
 //----- (080550EA) --------------------------------------------------------
 int var0737_empty()
@@ -10497,7 +10485,7 @@ int var0737_empty()
   puts("<");
   return 0;
 }
-// 8055107: conditional instruction was optimized away because of 'ebx.4==39'
+// 8055107: conditional instruction was optimized away because ebx.4==39
 
 //----- (08055127) --------------------------------------------------------
 int var0738_empty()
@@ -10506,7 +10494,7 @@ int var0738_empty()
   puts("<");
   return 0;
 }
-// 8055144: conditional instruction was optimized away because of 'ebx.4==3A'
+// 8055144: conditional instruction was optimized away because ebx.4==3A
 
 //----- (08055164) --------------------------------------------------------
 int var0739_empty()
@@ -10515,7 +10503,7 @@ int var0739_empty()
   puts("<");
   return 0;
 }
-// 8055181: conditional instruction was optimized away because of 'ebx.4==3A'
+// 8055181: conditional instruction was optimized away because ebx.4==3A
 
 //----- (080551A1) --------------------------------------------------------
 int var0740_empty()
@@ -10524,7 +10512,7 @@ int var0740_empty()
   puts("<");
   return 0;
 }
-// 80551BE: conditional instruction was optimized away because of 'ebx.4==3A'
+// 80551BE: conditional instruction was optimized away because ebx.4==3A
 
 //----- (080551DE) --------------------------------------------------------
 int var0741_empty()
@@ -10613,7 +10601,7 @@ int var0746_empty()
   puts("<");
   return 0;
 }
-// 8055359: conditional instruction was optimized away because of 'ebx.4==64'
+// 8055359: conditional instruction was optimized away because ebx.4==64
 
 //----- (08055382) --------------------------------------------------------
 int var0747_empty()
@@ -10622,7 +10610,7 @@ int var0747_empty()
   puts("<");
   return 0;
 }
-// 805539F: conditional instruction was optimized away because of 'ebx.4==64'
+// 805539F: conditional instruction was optimized away because ebx.4==64
 
 //----- (080553C8) --------------------------------------------------------
 int var0748_empty()
@@ -10631,7 +10619,7 @@ int var0748_empty()
   puts("<");
   return 0;
 }
-// 80553E5: conditional instruction was optimized away because of 'ebx.4==64'
+// 80553E5: conditional instruction was optimized away because ebx.4==64
 
 //----- (0805540E) --------------------------------------------------------
 int var0749_empty()
@@ -10640,7 +10628,7 @@ int var0749_empty()
   puts("<");
   return 0;
 }
-// 805542B: conditional instruction was optimized away because of 'ebx.4==64'
+// 805542B: conditional instruction was optimized away because ebx.4==64
 
 //----- (08055454) --------------------------------------------------------
 int var0750_empty()
@@ -10649,7 +10637,7 @@ int var0750_empty()
   puts("<");
   return 0;
 }
-// 8055471: conditional instruction was optimized away because of 'ebx.4==64'
+// 8055471: conditional instruction was optimized away because ebx.4==64
 
 //----- (0805549A) --------------------------------------------------------
 int var0751_empty()
@@ -10658,7 +10646,7 @@ int var0751_empty()
   puts("<");
   return 0;
 }
-// 80554B7: conditional instruction was optimized away because of 'ebx.4==66'
+// 80554B7: conditional instruction was optimized away because ebx.4==66
 
 //----- (080554E0) --------------------------------------------------------
 int var0752_empty()
@@ -10667,7 +10655,7 @@ int var0752_empty()
   puts("<");
   return 0;
 }
-// 80554FD: conditional instruction was optimized away because of 'ebx.4==66'
+// 80554FD: conditional instruction was optimized away because ebx.4==66
 
 //----- (08055526) --------------------------------------------------------
 int var0753_empty()
@@ -10676,7 +10664,7 @@ int var0753_empty()
   puts("<");
   return 0;
 }
-// 8055543: conditional instruction was optimized away because of 'ebx.4==66'
+// 8055543: conditional instruction was optimized away because ebx.4==66
 
 //----- (0805556C) --------------------------------------------------------
 int var0754_empty()
@@ -10685,7 +10673,7 @@ int var0754_empty()
   puts("<");
   return 0;
 }
-// 8055589: conditional instruction was optimized away because of 'ebx.4==66'
+// 8055589: conditional instruction was optimized away because ebx.4==66
 
 //----- (080555B2) --------------------------------------------------------
 int var0755_empty()
@@ -10694,7 +10682,7 @@ int var0755_empty()
   puts("<");
   return 0;
 }
-// 80555CF: conditional instruction was optimized away because of 'ebx.4==66'
+// 80555CF: conditional instruction was optimized away because ebx.4==66
 
 //----- (080555F8) --------------------------------------------------------
 int var0756_empty()
@@ -10725,7 +10713,7 @@ int var0758_empty()
   puts("<");
   return 0;
 }
-// 80556A4: conditional instruction was optimized away because of 'ebx.4==0'
+// 80556A4: conditional instruction was optimized away because ebx.4==0
 
 //----- (080556C7) --------------------------------------------------------
 int var0759_empty()
@@ -10784,7 +10772,7 @@ int var0763_empty()
   puts("<");
   return 0;
 }
-// 80557FD: conditional instruction was optimized away because of 'ebx.4==A'
+// 80557FD: conditional instruction was optimized away because ebx.4==A
 
 //----- (08055820) --------------------------------------------------------
 int var0764_empty()
@@ -10793,7 +10781,7 @@ int var0764_empty()
   puts("<");
   return 0;
 }
-// 8055842: conditional instruction was optimized away because of 'ebx.4==A'
+// 8055842: conditional instruction was optimized away because ebx.4==A
 
 //----- (08055865) --------------------------------------------------------
 int var0765_empty()
@@ -10802,7 +10790,7 @@ int var0765_empty()
   puts("<");
   return 0;
 }
-// 8055887: conditional instruction was optimized away because of 'ebx.4==A'
+// 8055887: conditional instruction was optimized away because ebx.4==A
 
 //----- (080558AA) --------------------------------------------------------
 int var0766_empty()
@@ -10811,7 +10799,7 @@ int var0766_empty()
   puts("<");
   return 0;
 }
-// 80558CC: conditional instruction was optimized away because of 'ebx.4==B'
+// 80558CC: conditional instruction was optimized away because ebx.4==B
 
 //----- (080558EF) --------------------------------------------------------
 int var0767_empty()
@@ -10820,7 +10808,7 @@ int var0767_empty()
   puts("<");
   return 0;
 }
-// 8055911: conditional instruction was optimized away because of 'ebx.4==B'
+// 8055911: conditional instruction was optimized away because ebx.4==B
 
 //----- (08055934) --------------------------------------------------------
 int var0768_empty()
@@ -10829,7 +10817,7 @@ int var0768_empty()
   puts("<");
   return 0;
 }
-// 8055956: conditional instruction was optimized away because of 'ebx.4==B'
+// 8055956: conditional instruction was optimized away because ebx.4==B
 
 //----- (08055979) --------------------------------------------------------
 int call_all()

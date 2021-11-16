@@ -23,18 +23,18 @@ void sub_8048440();
 // int __stdcall SDL_ShowCursor(_DWORD); weak
 // int __stdcall SDL_SetVideoMode(_DWORD, _DWORD, _DWORD, _DWORD); weak
 // void *dlopen(const char *file, int mode);
-char __fastcall sub_80486E2(int a1);
-// int __usercall sub_8048706@<eax>(int a1@<eax>);
-void __spoils<ecx> sub_8048714();
-// int __usercall sub_80487CB@<eax>(_DWORD *a1@<ebp>);
+char __fastcall sub_80486E2(int);
+// int __usercall sub_8048706@<eax>(int@<eax>);
+void sub_8048714();
+// int __usercall sub_80487CB@<eax>(_DWORD *@<ebp>);
 int __fastcall sub_804888C(_DWORD); // weak
-// int __usercall sub_8048891@<eax>(int a1@<ecx>, int *a2@<edi>, int a3@<esi>);
+// int __usercall sub_8048891@<eax>(int@<ecx>, int *@<edi>, int@<esi>);
 int sub_804890C();
 void __noreturn start(); // weak
-// int __usercall sub_80489C8@<eax>(int a1@<edi>);
+// int __usercall sub_80489C8@<eax>(int@<edi>);
 int __cdecl sub_8048A31(float, int, int); // idb
 int __cdecl sub_8048B1E(float); // idb
-int __cdecl sub_8048E99(int a1);
+int __cdecl sub_8048E99(int);
 void sub_80491C0();
 
 //-------------------------------------------------------------------------
@@ -48,13 +48,13 @@ _UNKNOWN unk_804A6A0; // weak
 _UNKNOWN unk_804A6B8; // weak
 int dword_804A6E6 = -1; // weak
 int dword_804A712 = 0; // weak
-double dbl_804A716 =  0.0374; // weak
-double dbl_804A71E =  0.0; // weak
-double dbl_804A726 =  32767.0; // weak
+double dbl_804A716 = 0.0374; // weak
+double dbl_804A71E = 0.0; // weak
+double dbl_804A726 = 32767.0; // weak
 int dword_804A72E = 0; // weak
 _UNKNOWN unk_804A734; // weak
 char byte_804A74C = '\0'; // weak
-char byte_804A760[9] = { '\0', '\x7F', 'f', '\0', '\0', '\xFB', '\x0F', '\0', '\x17' }; // idb
+char byte_804A760[9] = { '\0', '\x7F', 'f', '\0', '\0', '\xFB', '\x0F', '\0', '\x17' }; // weak
 char byte_804A769[151] =
 {
   '\b',
@@ -208,39 +208,39 @@ char byte_804A769[151] =
   '\0',
   '\0',
   '\0'
-}; // idb
+}; // weak
 _UNKNOWN unk_804A800; // weak
 int dword_804A8B4 = 1000; // weak
 _UNKNOWN unk_804A8B8; // weak
-float flt_804A8C8 =  0.0000061035157; // weak
-float flt_804A8CC =  0.000010681152; // weak
-float flt_804A8D0 =  0.64999998; // weak
-float flt_804A8D4 =  3.0; // weak
+float flt_804A8C8 = 0.0000061035157; // weak
+float flt_804A8CC = 0.000010681152; // weak
+float flt_804A8D0 = 0.64999998; // weak
+float flt_804A8D4 = 3.0; // weak
 float flt_804A8D8 = -2.0; // weak
-float flt_804A8DC =  0.5; // weak
-float flt_804A8E0 =  0.0625; // weak
-float flt_804A8E4 =  1.0; // weak
-float flt_804A8E8 =  0.049087387; // weak
-float flt_804A8EC =  0.07; // weak
-float flt_804A8F0 =  0.0060000001; // weak
-float flt_804A8F4 =  0.60000002; // weak
-float flt_804A8F8 =  0.050000001; // weak
-float flt_804A8FC =  0.0020000001; // weak
-float flt_804A900 =  0.001; // weak
-float flt_804A904 =  0.94999999; // weak
-float flt_804A908 =  0.87; // weak
-float flt_804A90C =  0.81999999; // weak
-float flt_804A910 =  1.1; // weak
-float flt_804A914 =  0.000047241123; // weak
-float flt_804A918 =  0.30000001; // weak
-float flt_804A91C =  0.25; // weak
-float flt_804A920 =  0.075000003; // weak
-float flt_804A924 =  0.97000003; // weak
-float flt_804A928 =  0.0011718749; // weak
-float flt_804A92C =  18.0; // weak
-float flt_804A930 =  1.5; // weak
-float flt_804A934 =  0.0030679617; // weak
-float flt_804A938 =  0.0009765625; // weak
+float flt_804A8DC = 0.5; // weak
+float flt_804A8E0 = 0.0625; // weak
+float flt_804A8E4 = 1.0; // weak
+float flt_804A8E8 = 0.049087387; // weak
+float flt_804A8EC = 0.07; // weak
+float flt_804A8F0 = 0.0060000001; // weak
+float flt_804A8F4 = 0.60000002; // weak
+float flt_804A8F8 = 0.050000001; // weak
+float flt_804A8FC = 0.0020000001; // weak
+float flt_804A900 = 0.001; // weak
+float flt_804A904 = 0.94999999; // weak
+float flt_804A908 = 0.87; // weak
+float flt_804A90C = 0.81999999; // weak
+float flt_804A910 = 1.1; // weak
+float flt_804A914 = 0.000047241123; // weak
+float flt_804A918 = 0.30000001; // weak
+float flt_804A91C = 0.25; // weak
+float flt_804A920 = 0.075000003; // weak
+float flt_804A924 = 0.97000003; // weak
+float flt_804A928 = 0.0011718749; // weak
+float flt_804A92C = 18.0; // weak
+float flt_804A930 = 1.5; // weak
+float flt_804A934 = 0.0030679617; // weak
+float flt_804A938 = 0.0009765625; // weak
 char file[] = "libGL.so"; // idb
 char *off_804A945[16] =
 {
@@ -270,22 +270,22 @@ int dword_804AB60; // weak
 int dword_804AB64; // weak
 int dword_804AB68; // weak
 _UNKNOWN unk_804AB70; // weak
-int dword_808AB70[589824]; // idb
+int dword_808AB70[589824]; // weak
 _UNKNOWN unk_82CAB70; // weak
 int dword_87CAB98; // weak
 int dword_87CABE8; // weak
 char byte_87CABEC; // weak
-float flt_87D4840[1]; // idb
+float flt_87D4840[1]; // weak
 float flt_87D4844; // weak
 float flt_87D4848; // weak
 float flt_87D484C; // weak
 float flt_87D4850; // weak
-_UNKNOWN dword_87D4854; // weak
+int dword_87D4854; // weak
 float flt_87D4858; // weak
 float flt_87D485C; // weak
 float flt_87D4860; // weak
 float flt_87D4864[]; // weak
-float flt_87D4870[3]; // idb
+float flt_87D4870[3]; // weak
 float flt_87D487C; // weak
 float flt_87D4880; // weak
 float flt_87D4884; // weak
@@ -294,7 +294,7 @@ float flt_87D48A4[]; // weak
 float flt_87D48A8[]; // weak
 float flt_87D48AC[]; // weak
 float flt_87D48B0[]; // weak
-float flt_87D48B4[811]; // idb
+float flt_87D48B4[811]; // weak
 float flt_87D5560; // weak
 int (__cdecl *dword_87D5564)(_DWORD); // weak
 int (*dword_87D5568)(void); // weak
@@ -315,7 +315,7 @@ int (__cdecl *dword_87D55A0)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DW
 float flt_87D55C0; // weak
 int dword_87D55C4; // weak
 float flt_87D55C8; // weak
-float flt_87D55E0[1024]; // idb
+float flt_87D55E0[1024]; // weak
 
 
 //----- (08048440) --------------------------------------------------------
@@ -344,7 +344,7 @@ int __usercall sub_8048706@<eax>(int a1@<eax>)
 }
 
 //----- (08048714) --------------------------------------------------------
-void __spoils<ecx> sub_8048714()
+void sub_8048714()
 {
   unsigned __int16 *v0; // esi
   _WORD *v1; // edi
@@ -427,7 +427,7 @@ int __usercall sub_80487CB@<eax>(_DWORD *a1@<ebp>)
   }
   v2 = (int *)((char *)&unk_82CAB70 + 0x40000 * *a1);
   v3 = (char *)&unk_804AB70 + 0x40000 * a1[1];
-  ((void (*)(void))sub_804888C)();
+  sub_804888C(a1[2]);
   dword_804AB54 = -dword_804AB54;
   sub_8048891(a1[3], v2, (int)v3);
   sub_804888C(a1[4]);
@@ -473,6 +473,7 @@ int __usercall sub_8048891@<eax>(int a1@<ecx>, int *a2@<edi>, int a3@<esi>)
 // 804AB60: using guessed type int dword_804AB60;
 // 804AB64: using guessed type int dword_804AB64;
 // 804AB68: using guessed type int dword_804AB68;
+// 808AB70: using guessed type int dword_808AB70[589824];
 
 //----- (0804890C) --------------------------------------------------------
 int sub_804890C()
@@ -488,7 +489,7 @@ int sub_804890C()
 //----- (08048930) --------------------------------------------------------
 void __noreturn start()
 {
-  int v0; // eax
+  int Ticks; // eax
 
   sub_8048714();
   SDL_Init(49);
@@ -500,8 +501,8 @@ void __noreturn start()
   dword_87CABE8 = SDL_GetTicks();
   do
   {
-    v0 = SDL_GetTicks();
-    sub_8048E99(v0 - dword_87CABE8);
+    Ticks = SDL_GetTicks();
+    sub_8048E99(Ticks - dword_87CABE8);
     SDL_GL_SwapBuffers();
     if ( byte_804A74C )
       break;
@@ -559,6 +560,7 @@ int __usercall sub_80489C8@<eax>(int a1@<edi>)
 // 804A8D0: using guessed type float flt_804A8D0;
 // 87D55C0: using guessed type float flt_87D55C0;
 // 87D55C4: using guessed type int dword_87D55C4;
+// 87D55E0: using guessed type float flt_87D55E0[1024];
 
 //----- (08048A31) --------------------------------------------------------
 int __cdecl sub_8048A31(float a1, int a2, int a3)
@@ -668,7 +670,7 @@ int __cdecl sub_8048B1E(float a1)
                       * flt_87D55C0))
                     + flt_87D48A4[3 * v21];
     flt_87D48A8[v5] = sin(v6 * flt_804A8F8 + v7 * flt_804A8FC) * flt_87D55C0 * (v6 + 1.0) * flt_804A900
-                    + flt_87D48A8[3 * v21];
+                    + flt_87D48A8[v5];
     dword_87D558C(2896);
     dword_87D558C(2977);
     dword_87D558C(2929);
@@ -703,7 +705,6 @@ int __cdecl sub_8048B1E(float a1)
   }
   return result;
 }
-// 87D5564: invalid function type has been ignored
 // 804A8DC: using guessed type float flt_804A8DC;
 // 804A8E0: using guessed type float flt_804A8E0;
 // 804A8E4: using guessed type float flt_804A8E4;
@@ -720,6 +721,7 @@ int __cdecl sub_8048B1E(float a1)
 // 804A910: using guessed type float flt_804A910;
 // 87D4850: using guessed type float flt_87D4850;
 // 87D4864: using guessed type float flt_87D4864[];
+// 87D4870: using guessed type float flt_87D4870[3];
 // 87D487C: using guessed type float flt_87D487C;
 // 87D4880: using guessed type float flt_87D4880;
 // 87D4884: using guessed type float flt_87D4884;
@@ -728,6 +730,7 @@ int __cdecl sub_8048B1E(float a1)
 // 87D48A8: using guessed type float flt_87D48A8[];
 // 87D48AC: using guessed type float flt_87D48AC[];
 // 87D48B0: using guessed type float flt_87D48B0[];
+// 87D48B4: using guessed type float flt_87D48B4[811];
 // 87D5564: using guessed type int (__cdecl *dword_87D5564)(_DWORD);
 // 87D5568: using guessed type int (*dword_87D5568)(void);
 // 87D556C: using guessed type int (__cdecl *dword_87D556C)(_DWORD, _DWORD, _DWORD);
@@ -750,7 +753,7 @@ int __cdecl sub_8048E99(int a1)
   int k; // ebx
   long double v8; // fst7
   long double v9; // fst7
-  int l; // ebx
+  int m; // ebx
   float v11; // [esp-20h] [ebp-38h]
   float v12; // [esp-10h] [ebp-28h]
   float v13; // [esp-10h] [ebp-28h]
@@ -824,7 +827,7 @@ LABEL_10:
     dword_87D558C(0x4000);
     dword_87D558C(2903);
     dword_87D5584(1097859072, 0, 0, 1065353216);
-    for ( l = 0; l <= 11; ++l )
+    for ( m = 0; m <= 11; ++m )
     {
       dword_87D5584(1106247680, 0, 0, 1065353216);
       v13 = sin(flt_804A900 * (long double)a1) * flt_804A8DC + flt_804A8DC;
@@ -849,6 +852,7 @@ LABEL_10:
 // 804A930: using guessed type float flt_804A930;
 // 804A934: using guessed type float flt_804A934;
 // 804A938: using guessed type float flt_804A938;
+// 87D4840: using guessed type float flt_87D4840[1];
 // 87D4854: using guessed type int dword_87D4854;
 // 87D4858: using guessed type float flt_87D4858;
 // 87D485C: using guessed type float flt_87D485C;
@@ -871,6 +875,7 @@ LABEL_10:
 // 87D55A0: using guessed type int (__cdecl *dword_87D55A0)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
 // 87D55C4: using guessed type int dword_87D55C4;
 // 87D55C8: using guessed type float flt_87D55C8;
+// 87D55E0: using guessed type float flt_87D55E0[1024];
 
 //----- (080491C0) --------------------------------------------------------
 void sub_80491C0()

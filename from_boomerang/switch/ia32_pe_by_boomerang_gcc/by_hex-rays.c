@@ -15,20 +15,20 @@ void __noreturn _RUNTIME_PSEUDO_RELOC_LIST_END__(); // weak
 int __do_sjlj_init();
 int __cdecl main(int argc, const char **argv, const char **envp);
 int __w32_sharedptr_default_unexpected();
-int __cdecl __w32_eh_shared_initialize(_DWORD *a1);
+int __cdecl __w32_eh_shared_initialize(_DWORD *);
 int __w32_sharedptr_initialize();
-int __cdecl __w32_sharedptr_set(int a1);
+int __cdecl __w32_sharedptr_set(int);
 unsigned int __cdecl __w32_sharedptr_get(ATOM nAtom);
 int __w32_sharedptr_fixup_after_fork();
-void __cdecl __noreturn cygwin_crt0(int a1);
+void __cdecl __noreturn cygwin_crt0(int);
 // int __main(void); weak
 // int __cdecl puts(const char *Buffer);
 // void __cdecl free(void *Block);
 // int __cdecl pthread_atfork(_DWORD, _DWORD, _DWORD); weak
 // void *__cdecl malloc(size_t Size);
 // void __cdecl __noreturn abort();
-int __stdcall _cygwin_crt0_common(int a1, _DWORD *a2);
-int __cdecl do_pseudo_reloc(int *a1, unsigned int a2, int a3);
+int __stdcall _cygwin_crt0_common(int, _DWORD *);
+int __cdecl do_pseudo_reloc(int *, unsigned int, int);
 int _pei386_runtime_relocator();
 // void *__cdecl calloc(size_t Count, size_t Size);
 // void *__cdecl realloc(void *Block, size_t Size);
@@ -155,7 +155,7 @@ int __cdecl __w32_eh_shared_initialize(_DWORD *a1)
 int __w32_sharedptr_initialize()
 {
   int result; // eax
-  ATOM v1; // ax
+  ATOM AtomA; // ax
   _DWORD *v2; // eax
   void *v3; // esi
   CHAR String[64]; // [esp+10h] [ebp-48h] BYREF
@@ -164,8 +164,8 @@ int __w32_sharedptr_initialize()
   if ( !__w32_sharedptr )
   {
     strcpy(String, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-LIBGCCW32-EH-SJLJ-GTHR-CYGWIN");
-    v1 = FindAtomA(String);
-    if ( !v1 )
+    AtomA = FindAtomA(String);
+    if ( !AtomA )
     {
       v2 = malloc(0x30u);
       v3 = v2;
@@ -183,9 +183,9 @@ LABEL_6:
         return result;
       }
       free(v3);
-      v1 = FindAtomA(String);
+      AtomA = FindAtomA(String);
     }
-    v3 = (void *)__w32_sharedptr_get(v1);
+    v3 = (void *)__w32_sharedptr_get(AtomA);
     goto LABEL_6;
   }
   return result;
@@ -200,12 +200,12 @@ int __cdecl __w32_sharedptr_set(int a1)
 {
   int v1; // eax
   int v2; // edx
-  CHAR v3; // cl
+  char v3; // cl
   ATOM v4; // ax
   int v5; // esi
   int v6; // edx
   unsigned int v8; // eax
-  CHAR String[32]; // [esp+10h] [ebp-58h] BYREF
+  char String[32]; // [esp+10h] [ebp-58h] BYREF
   char v10[32]; // [esp+30h] [ebp-38h] BYREF
 
   v1 = 31;
@@ -223,10 +223,15 @@ int __cdecl __w32_sharedptr_set(int a1)
   strcpy(v10, "-LIBGCCW32-EH-SJLJ-GTHR-CYGWIN");
   v4 = AddAtomA(String);
   v5 = v4;
-  if ( !v4 || (v8 = __w32_sharedptr_get(v4), v6 = v5, v8 != a1) )
-    v6 = 0;
+  if ( !v4 )
+    return 0;
+  v8 = __w32_sharedptr_get(v4);
+  v6 = v5;
+  if ( v8 != a1 )
+    return 0;
   return v6;
 }
+// 401310: using guessed type CHAR String[32];
 
 //----- (004013A0) --------------------------------------------------------
 unsigned int __cdecl __w32_sharedptr_get(ATOM nAtom)
@@ -234,7 +239,7 @@ unsigned int __cdecl __w32_sharedptr_get(ATOM nAtom)
   unsigned int v1; // ebx
   int v2; // eax
   int v3; // edx
-  CHAR Buffer[68]; // [esp+10h] [ebp-48h] BYREF
+  char Buffer[68]; // [esp+10h] [ebp-48h] BYREF
 
   v1 = 0;
   if ( !GetAtomNameA(nAtom, Buffer, 63) )
@@ -254,6 +259,7 @@ LABEL_8:
     abort();
   return v1;
 }
+// 4013A0: using guessed type CHAR Buffer[68];
 
 //----- (00401410) --------------------------------------------------------
 int __w32_sharedptr_fixup_after_fork()
@@ -285,6 +291,7 @@ LABEL_4:
   }
 }
 // 404098: using guessed type int __cdecl dll_crt0(_DWORD);
+// 401470: using guessed type int var_C0[42];
 
 //----- (00401530) --------------------------------------------------------
 int __stdcall _cygwin_crt0_common(int a1, _DWORD *a2)

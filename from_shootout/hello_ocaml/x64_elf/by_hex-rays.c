@@ -11,7 +11,6 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void (*init_proc())(void);
 __int64 __fastcall sub_4077F8(); // weak
 // double log10(double x);
 // int chmod(const char *file, __mode_t mode);
@@ -52,7 +51,6 @@ __int64 __fastcall sub_4077F8(); // weak
 // int gettimeofday(struct timeval *tv, __timezone_ptr_t tz);
 // ssize_t read(int fd, void *buf, size_t nbytes);
 // void *malloc(size_t size);
-// int __fastcall __libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int tcsendbreak(int fd, int duration);
 // int setitimer(__itimer_which_t which, const struct itimerval *new, struct itimerval *old);
 // int dup(int fd);
@@ -185,182 +183,178 @@ __int64 __fastcall sub_4077F8(); // weak
 // int fflush(FILE *stream);
 // double sinh(double x);
 // struct servent *getservbyname(const char *name, const char *proto);
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-__int64 (**call_gmon_start())(void);
-void _do_global_dtors_aux();
-void frame_dummy();
-__int64 __fastcall caml_startup__code_begin(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry7(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry7_1(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry7_2(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry7_3(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry7_4(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry7_5(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall caml_startup__code_begin(__int64, const char *, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry7(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry7_1(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry7_2(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry7_3(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry7_4(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry7_5(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall caml_curry7_6(); // weak
-_QWORD *__fastcall caml_curry6(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry6_1(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry6_2(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry6_3(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry6_4(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+_QWORD *__fastcall caml_curry6(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry6_1(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry6_2(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry6_3(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry6_4(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall caml_curry6_5(); // weak
-_QWORD *__fastcall caml_curry5(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry5_1(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry5_2(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry5_3(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+_QWORD *__fastcall caml_curry5(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry5_1(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry5_2(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry5_3(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall caml_curry5_4(); // weak
-_QWORD *__fastcall caml_curry4(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry4_1(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry4_2(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+_QWORD *__fastcall caml_curry4(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry4_1(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry4_2(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall caml_curry4_3(); // weak
-_QWORD *__fastcall caml_curry3(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall caml_curry3_1(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+_QWORD *__fastcall caml_curry3(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall caml_curry3_1(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall caml_curry3_2(); // weak
-_QWORD *__fastcall caml_curry2(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+_QWORD *__fastcall caml_curry2(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall caml_curry2_1(); // weak
 __int64 __fastcall caml_tuplify2(); // weak
 __int64 __fastcall caml_tuplify3(); // weak
-__int64 __fastcall caml_apply3(__int64 a1, __int64 a2);
-__int64 __fastcall caml_apply2(__int64 a1);
+__int64 __fastcall caml_apply3(__int64, __int64);
+__int64 __fastcall caml_apply2(__int64);
 __int64 camlStd_exit__code_begin();
 __int64 camlSource__code_begin();
-_QWORD *__fastcall camlUnix__code_begin(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlUnix__fun_1847(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlUnix__get_port_765(__int64 a1);
+_QWORD *__fastcall camlUnix__code_begin(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlUnix__fun_1847(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlUnix__get_port_765(__int64);
 _QWORD *__fastcall sub_408F38();
-_QWORD *__fastcall sub_408FB4(__int64 a1, const char *a2);
-_QWORD *__fastcall camlUnix__fun_1852(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlUnix__fun_1855(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-void __fastcall camlUnix__fun_1876(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1882(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1585(__int64 a1, const char *a2);
+_QWORD *__fastcall sub_408FB4(__int64, const char *);
+_QWORD *__fastcall camlUnix__fun_1852(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlUnix__fun_1855(__int64, __int64, __int64, __int64, __int64, __int64);
+void __fastcall camlUnix__fun_1876(__int64, const char *);
+void __fastcall camlUnix__fun_1882(__int64, const char *);
+void __fastcall camlUnix__fun_1585(__int64, const char *);
 void __fastcall camlUnix__fun_1587();
 void __fastcall camlUnix__fun_1589();
-void __fastcall camlUnix__fun_1591(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1591(__int64, const char *);
 void __fastcall camlUnix__fun_1593();
 void __fastcall camlUnix__fun_1595();
-void __fastcall camlUnix__fun_1597(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1597(__int64, const char *);
 void __fastcall camlUnix__fun_1599();
 void __fastcall camlUnix__fun_1601();
-void __fastcall camlUnix__fun_1603(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1605(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1607(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1609(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1611(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1613(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1615(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1603(__int64, const char *);
+void __fastcall camlUnix__fun_1605(__int64, const char *);
+void __fastcall camlUnix__fun_1607(__int64, const char *);
+void __fastcall camlUnix__fun_1609(__int64, const char *);
+void __fastcall camlUnix__fun_1611(__int64, const char *);
+void __fastcall camlUnix__fun_1613(__int64, const char *);
+void __fastcall camlUnix__fun_1615(__int64, const char *);
 void __fastcall camlUnix__fun_1617();
 void __fastcall camlUnix__fun_1619();
 void __fastcall camlUnix__fun_1621();
 void __fastcall camlUnix__fun_1623();
-void __fastcall camlUnix__fun_1625(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1625(__int64, const char *);
 void __fastcall camlUnix__fun_1627();
 void __fastcall camlUnix__fun_1629();
-void __fastcall camlUnix__fun_1631(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1633(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1635(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1637(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1639(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1641(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1643(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1645(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1647(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1649(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1651(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1653(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1655(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1657(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1631(__int64, const char *);
+void __fastcall camlUnix__fun_1633(__int64, const char *);
+void __fastcall camlUnix__fun_1635(__int64, const char *);
+void __fastcall camlUnix__fun_1637(__int64, const char *);
+void __fastcall camlUnix__fun_1639(__int64, const char *);
+void __fastcall camlUnix__fun_1641(__int64, const char *);
+void __fastcall camlUnix__fun_1643(__int64, const char *);
+void __fastcall camlUnix__fun_1645(__int64, const char *);
+void __fastcall camlUnix__fun_1647(__int64, const char *);
+void __fastcall camlUnix__fun_1649(__int64, const char *);
+void __fastcall camlUnix__fun_1651(__int64, const char *);
+void __fastcall camlUnix__fun_1653(__int64, const char *);
+void __fastcall camlUnix__fun_1655(__int64, const char *);
+void __fastcall camlUnix__fun_1657(__int64, const char *);
 void __fastcall camlUnix__fun_1659();
-void __fastcall camlUnix__fun_1661(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1661(__int64, const char *);
 void __fastcall camlUnix__fun_1663();
-void __fastcall camlUnix__fun_1665(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1667(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1669(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1671(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1673(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1675(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1677(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1679(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1681(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1683(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1665(__int64, const char *);
+void __fastcall camlUnix__fun_1667(__int64, const char *);
+void __fastcall camlUnix__fun_1669(__int64, const char *);
+void __fastcall camlUnix__fun_1671(__int64, const char *);
+void __fastcall camlUnix__fun_1673(__int64, const char *);
+void __fastcall camlUnix__fun_1675(__int64, const char *);
+void __fastcall camlUnix__fun_1677(__int64, const char *);
+void __fastcall camlUnix__fun_1679(__int64, const char *);
+void __fastcall camlUnix__fun_1681(__int64, const char *);
+void __fastcall camlUnix__fun_1683(__int64, const char *);
 void __fastcall camlUnix__fun_1685();
 void __fastcall camlUnix__fun_1687();
 void __fastcall camlUnix__fun_1689();
 void __fastcall camlUnix__fun_1691();
-void __fastcall camlUnix__fun_1693(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1693(__int64, const char *);
 void __fastcall camlUnix__fun_1695();
 void __fastcall camlUnix__fun_1697();
-void __fastcall camlUnix__fun_1699(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1701(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1703(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1705(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1707(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1709(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1711(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1713(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1715(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1699(__int64, const char *);
+void __fastcall camlUnix__fun_1701(__int64, const char *);
+void __fastcall camlUnix__fun_1703(__int64, const char *);
+void __fastcall camlUnix__fun_1705(__int64, const char *);
+void __fastcall camlUnix__fun_1707(__int64, const char *);
+void __fastcall camlUnix__fun_1709(__int64, const char *);
+void __fastcall camlUnix__fun_1711(__int64, const char *);
+void __fastcall camlUnix__fun_1713(__int64, const char *);
+void __fastcall camlUnix__fun_1715(__int64, const char *);
 void __fastcall camlUnix__fun_1717();
-void __fastcall camlUnix__fun_1719(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1721(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1723(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1725(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1719(__int64, const char *);
+void __fastcall camlUnix__fun_1721(__int64, const char *);
+void __fastcall camlUnix__fun_1723(__int64, const char *);
+void __fastcall camlUnix__fun_1725(__int64, const char *);
 void __fastcall camlUnix__fun_1727();
-void __fastcall camlUnix__fun_1729(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1729(__int64, const char *);
 void __fastcall camlUnix__fun_1731();
-void __fastcall camlUnix__fun_1733(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1733(__int64, const char *);
 void __fastcall camlUnix__fun_1735();
 void __fastcall camlUnix__fun_1737();
 void __fastcall camlUnix__fun_1739();
 void __fastcall camlUnix__fun_1741();
 void __fastcall camlUnix__fun_1743();
 void __fastcall camlUnix__fun_1745();
-void __fastcall camlUnix__fun_1747(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1749(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1751(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1753(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1755(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1747(__int64, const char *);
+void __fastcall camlUnix__fun_1749(__int64, const char *);
+void __fastcall camlUnix__fun_1751(__int64, const char *);
+void __fastcall camlUnix__fun_1753(__int64, const char *);
+void __fastcall camlUnix__fun_1755(__int64, const char *);
 void __fastcall camlUnix__fun_1757();
 void __fastcall camlUnix__fun_1759();
 void __fastcall camlUnix__fun_1761();
-void __fastcall camlUnix__fun_1763(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1765(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1767(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1769(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1771(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1763(__int64, const char *);
+void __fastcall camlUnix__fun_1765(__int64, const char *);
+void __fastcall camlUnix__fun_1767(__int64, const char *);
+void __fastcall camlUnix__fun_1769(__int64, const char *);
+void __fastcall camlUnix__fun_1771(__int64, const char *);
 void __fastcall camlUnix__fun_1773();
-void __fastcall camlUnix__fun_1775(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1777(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1779(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1775(__int64, const char *);
+void __fastcall camlUnix__fun_1777(__int64, const char *);
+void __fastcall camlUnix__fun_1779(__int64, const char *);
 void __fastcall camlUnix__fun_1781();
-void __fastcall camlUnix__fun_1783(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1785(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1783(__int64, const char *);
+void __fastcall camlUnix__fun_1785(__int64, const char *);
 void __fastcall camlUnix__fun_1787();
 void __fastcall camlUnix__fun_1789();
 void __fastcall camlUnix__fun_1791();
 void __fastcall camlUnix__fun_1793();
 void __fastcall camlUnix__fun_1795();
-void __fastcall camlUnix__fun_1797(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1799(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1801(__int64 a1, const char *a2);
-void __fastcall camlUnix__handle_unix_error_199(__int64 a1);
-__int64 __fastcall sub_40A060(__int64 a1, __int64 (**a2)(void));
-void __fastcall camlUnix__read_265(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-void __fastcall camlUnix__write_270(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-void __fastcall camlUnix__single_write_275(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-void __fastcall camlUnix__fun_1823(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1821(__int64 a1, const char *a2);
-void __fastcall camlUnix__fun_1819(__int64 a1, const char *a2);
+void __fastcall camlUnix__fun_1797(__int64, const char *);
+void __fastcall camlUnix__fun_1799(__int64, const char *);
+void __fastcall camlUnix__fun_1801(__int64, const char *);
+void __fastcall camlUnix__handle_unix_error_199(__int64);
+__int64 __fastcall sub_40A060(__int64, __int64 (**)(void));
+void __fastcall camlUnix__read_265(__int64, __int64, __int64, __int64, __int64, __int64);
+void __fastcall camlUnix__write_270(__int64, __int64, __int64, __int64, __int64, __int64);
+void __fastcall camlUnix__single_write_275(__int64, __int64, __int64, __int64, __int64, __int64);
+void __fastcall camlUnix__fun_1823(__int64, const char *);
+void __fastcall camlUnix__fun_1821(__int64, const char *);
+void __fastcall camlUnix__fun_1819(__int64, const char *);
 void __fastcall camlUnix__fun_1817();
 void __fastcall camlUnix__fun_1815();
 void __fastcall camlUnix__fun_1813();
-__int64 __fastcall camlUnix__try_set_close_on_exec_394(__int64 a1, const char *a2);
-__int64 __fastcall sub_40A2BC(__int64 a1, const char *a2);
+__int64 __fastcall camlUnix__try_set_close_on_exec_394(__int64, const char *);
+__int64 __fastcall sub_40A2BC(__int64, const char *);
 void camlUnix__pause_436();
 __int64 __fastcall camlUnix__is_inet6_addr_526(); // weak
 __int64 __fastcall camlUnix__domain_of_sockaddr_555();
-void __fastcall camlUnix__recv_584(__int64 a1, __int64 a2, __int64 a3);
-void __fastcall camlUnix__recvfrom_590(__int64 a1, __int64 a2, __int64 a3);
-void __fastcall camlUnix__send_596(__int64 a1, __int64 a2, __int64 a3);
-void __fastcall camlUnix__sendto_602(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
+void __fastcall camlUnix__recv_584(__int64, __int64, __int64);
+void __fastcall camlUnix__recvfrom_590(__int64, __int64, __int64);
+void __fastcall camlUnix__send_596(__int64, __int64, __int64);
+void __fastcall camlUnix__sendto_602(__int64, __int64, __int64, __int64);
 void __fastcall camlUnix__fun_1835();
 void __fastcall camlUnix__fun_1833();
 void __fastcall camlUnix__getsockopt_669();
@@ -372,111 +366,111 @@ void __fastcall camlUnix__setsockopt_optint_686();
 void __fastcall camlUnix__getsockopt_float_690();
 void __fastcall camlUnix__setsockopt_float_693();
 void __fastcall camlUnix__getsockopt_error_697();
-void __fastcall camlUnix__getaddrinfo_emulation_756(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, int a7, __int64 a8, const char *a9);
-void __fastcall sub_40AAB0(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, int a7, __int64 a8, const char *a9);
-__int64 __fastcall sub_40AB2C(__int64 a1, const char *a2);
-void __fastcall camlUnix__getaddrinfo_777(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, int a7, __int64 a8, const char *a9);
+void __fastcall camlUnix__getaddrinfo_emulation_756(__int64, __int64, __int64, __int64, __int64, __int64, int, __int64, const char *);
+void __fastcall sub_40AAB0(__int64, const char *, __int64, __int64, __int64, __int64, int, __int64, const char *);
+__int64 __fastcall sub_40AB2C(__int64, const char *);
+void __fastcall camlUnix__getaddrinfo_777(__int64, __int64, __int64, __int64, __int64, __int64, int, __int64, const char *);
 _QWORD *__fastcall sub_40AC88();
-void __fastcall camlUnix__getnameinfo_emulation_798(__int64 a1, const char *a2);
-_QWORD *__fastcall sub_40AD68(__int64 a1, const char *a2);
-_QWORD *__fastcall sub_40AE00(__int64 a1, __int64 a2);
-void __fastcall camlUnix__getnameinfo_807(__int64 a1, const char *a2);
+void __fastcall camlUnix__getnameinfo_emulation_798(__int64, const char *);
+_QWORD *__fastcall sub_40AD68(__int64, const char *);
+_QWORD *__fastcall sub_40AE00(__int64, __int64);
+void __fastcall camlUnix__getnameinfo_807(__int64, const char *);
 void __fastcall sub_40AF5C();
-void __fastcall camlUnix__system_917(__int64 a1, const char *a2);
-void __fastcall sub_40AFDC(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-void __fastcall camlUnix__safe_dup_920(__int64 a1, const char *a2);
-void __fastcall camlUnix__safe_close_924(__int64 a1, const char *a2);
-void __fastcall sub_40B0C0(__int64 a1, const char *a2);
-void __fastcall camlUnix__perform_redirections_926(__int64 a1, const char *a2);
-void __fastcall camlUnix__create_process_933(__int64 a1, const char *a2);
-void __fastcall sub_40B214(__int64 a1, const char *a2);
-void __fastcall camlUnix__create_process_env_940(__int64 a1, const char *a2);
-void __fastcall sub_40B2A8(__int64 a1, const char *a2);
-void __fastcall camlUnix__open_proc_975(const char *a1, __int64 a2);
-void __fastcall sub_40B3F8(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlUnix__open_process_in_983(__int64 a1, const char *a2);
-__int64 __fastcall camlUnix__open_process_out_988(__int64 a1, const char *a2);
-_QWORD *__fastcall camlUnix__open_process_993(__int64 a1, const char *a2);
-void __fastcall camlUnix__open_proc_full_1001(__int64 a1, const char *a2, const char *a3, const char *a4);
-void __fastcall sub_40B868(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlUnix__open_process_full_1011(__int64 a1, const char *a2);
-__int64 __fastcall camlUnix__find_proc_id_1023(__int64 a1, __int64 a2);
-__int64 __fastcall sub_40BB38(__int64 a1, __int64 a2);
+void __fastcall camlUnix__system_917(__int64, const char *);
+void __fastcall sub_40AFDC(__int64, __int64, __int64, __int64, __int64, __int64);
+void __fastcall camlUnix__safe_dup_920(__int64, const char *);
+void __fastcall camlUnix__safe_close_924(__int64, const char *);
+void __fastcall sub_40B0C0(__int64, const char *);
+void __fastcall camlUnix__perform_redirections_926(__int64, const char *);
+void __fastcall camlUnix__create_process_933(__int64, const char *);
+void __fastcall sub_40B214(__int64, const char *);
+void __fastcall camlUnix__create_process_env_940(__int64, const char *);
+void __fastcall sub_40B2A8(__int64, const char *);
+void __fastcall camlUnix__open_proc_975(const char *, __int64);
+void __fastcall sub_40B3F8(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlUnix__open_process_in_983(__int64, const char *);
+__int64 __fastcall camlUnix__open_process_out_988(__int64, const char *);
+_QWORD *__fastcall camlUnix__open_process_993(__int64, const char *);
+void __fastcall camlUnix__open_proc_full_1001(__int64, const char *, const char *, const char *);
+void __fastcall sub_40B868(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlUnix__open_process_full_1011(__int64, const char *);
+__int64 __fastcall camlUnix__find_proc_id_1023(__int64, __int64);
+__int64 __fastcall sub_40BB38(__int64, __int64);
 void __fastcall camlUnix__waitpid_non_intr_1027();
 void __fastcall sub_40BBCC();
-__int64 __fastcall camlUnix__close_process_in_1029(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlUnix__close_process_out_1032(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlUnix__close_process_1035(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall sub_40BD50(__int64 a1, const char *a2);
-__int64 __fastcall camlUnix__close_process_full_1039(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall sub_40BE10(__int64 a1, const char *a2);
-_QWORD *__fastcall camlUnix__open_connection_1044(__int64 a1);
+__int64 __fastcall camlUnix__close_process_in_1029(__int64, const char *, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlUnix__close_process_out_1032(__int64, const char *, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlUnix__close_process_1035(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall sub_40BD50(__int64, const char *);
+__int64 __fastcall camlUnix__close_process_full_1039(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall sub_40BE10(__int64, const char *);
+_QWORD *__fastcall camlUnix__open_connection_1044();
 _QWORD *__fastcall sub_40BEB4();
-void __fastcall camlUnix__shutdown_connection_1048(__int64 a1, const char *a2);
-void __fastcall camlUnix__accept_non_intr_1050(__int64 a1, const char *a2);
-void __fastcall sub_40BFAC(__int64 a1, const char *a2);
+void __fastcall camlUnix__shutdown_connection_1048(__int64, const char *);
+void __fastcall camlUnix__accept_non_intr_1050(__int64, const char *);
+void __fastcall sub_40BFAC(__int64, const char *);
 void __fastcall __noreturn camlUnix__establish_server_1052(); // weak
-__int64 __fastcall camlUnix__entry(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall sub_40CC0C(__int64 a1, const char *a2);
-__int64 __fastcall sub_40CC61(__int64 a1, const char *a2);
+__int64 __fastcall camlUnix__entry(__int64, const char *, __int64, __int64, __int64, __int64);
+__int64 __fastcall sub_40CC0C(__int64, const char *);
+__int64 __fastcall sub_40CC61(__int64, const char *);
 __int64 camlUnixLabels__code_begin();
 __int64 __fastcall camlPervasives__code_begin();
-__int64 __fastcall camlPervasives__iter_210(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-void __fastcall sub_40DD3C(const char *a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7);
-__int64 __fastcall camlPervasives__build_result_267(__int64 *a1);
-__int64 __fastcall camlPervasives__scan_1249(__int64 a1, const char *a2);
-__int64 __fastcall camlPervasives__fun_1735(); // weak
+__int64 __fastcall camlPervasives__iter_210(__int64, const char *, __int64, __int64, __int64, __int64);
+void __fastcall sub_40DD3C(const char *, const char *, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlPervasives__build_result_267(__int64 *);
+const char *__fastcall camlPervasives__scan_273(__int64 a1, const char *a2);
+__int64 __fastcall camlPervasives__fun_524(); // weak
 void __fastcall camlPervasives__fun_416();
-void __fastcall camlPervasives__fun_418(__int64 a1, const char *a2);
-void __fastcall camlPervasives__fun_420(__int64 a1, const char *a2);
-void __fastcall camlPervasives__fun_422(__int64 a1, const char *a2);
+void __fastcall camlPervasives__fun_418(__int64, const char *);
+void __fastcall camlPervasives__fun_420(__int64, const char *);
+void __fastcall camlPervasives__fun_422(__int64, const char *);
 void __fastcall camlPervasives__fun_424();
-void __fastcall camlPervasives__fun_426(__int64 a1, const char *a2);
-void __fastcall camlPervasives__fun_428(__int64 a1, const char *a2);
-void __fastcall camlPervasives__fun_430(__int64 a1, const char *a2);
-void __fastcall camlPervasives__fun_432(__int64 a1, const char *a2);
+void __fastcall camlPervasives__fun_426(__int64, const char *);
+void __fastcall camlPervasives__fun_428(__int64, const char *);
+void __fastcall camlPervasives__fun_430(__int64, const char *);
+void __fastcall camlPervasives__fun_432(__int64, const char *);
 void __fastcall camlPervasives__fun_434();
-void __fastcall camlPervasives__fun_436(__int64 a1, const char *a2);
-void __fastcall camlPervasives__fun_438(__int64 a1, const char *a2);
+void __fastcall camlPervasives__fun_436(__int64, const char *);
+void __fastcall camlPervasives__fun_438(__int64, const char *);
 void __fastcall camlPervasives__fun_440();
 void __fastcall camlPervasives__fun_442();
 void __fastcall camlPervasives__fun_444();
 void __fastcall camlPervasives__fun_446();
-void __fastcall camlPervasives__fun_448(__int64 a1, const char *a2);
-void __fastcall __noreturn camlPervasives__failwith_38(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-void __fastcall __noreturn camlPervasives__invalid_arg_40(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-void __fastcall __spoils<rdx,rcx,r8,r9,r10,r11,xmm4,xmm5> camlPervasives__min_50();
-void __fastcall __spoils<rdx,rcx,r8,r9,r10,r11,xmm4,xmm5> camlPervasives__max_53();
+void __fastcall camlPervasives__fun_448(__int64, const char *);
+void __fastcall __noreturn camlPervasives__failwith_38(__int64, __int64, __int64, __int64, __int64, __int64);
+void __fastcall __noreturn camlPervasives__invalid_arg_40(__int64, __int64, __int64, __int64, __int64, __int64);
+void __fastcall camlPervasives__min_50();
+void __fastcall camlPervasives__max_53();
 __int64 __fastcall camlPervasives__abs_71(); // weak
 __int64 __fastcall camlPervasives__lnot_76(); // weak
 __int64 __fastcall camlPervasives___5e_136();
-__int64 __fastcall camlPervasives__char_of_int_144(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlPervasives__char_of_int_144(__int64, __int64, __int64, __int64, __int64, __int64);
 char *__fastcall camlPervasives__string_of_bool_151();
 __int64 __fastcall camlPervasives__bool_of_string_153(); // weak
 void __fastcall camlPervasives__string_of_int_154();
-__int64 __fastcall camlPervasives__valid_float_lexem_159(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlPervasives__valid_float_lexem_159(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall camlPervasives__string_of_float_164();
 _QWORD *__fastcall camlPervasives___40_167();
-void __fastcall camlPervasives__open_out_gen_199(const char *a1);
+void __fastcall camlPervasives__open_out_gen_199(const char *);
 void __fastcall camlPervasives__open_out_203();
 void __fastcall camlPervasives__open_out_bin_205();
-__int64 __fastcall camlPervasives__flush_all_209(__int64 a1, const char *a2);
+__int64 __fastcall camlPervasives__flush_all_209(__int64, const char *);
 void __fastcall camlPervasives__output_string_215();
-void __fastcall camlPervasives__output_218(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+void __fastcall camlPervasives__output_218(__int64, __int64, __int64, __int64, __int64, __int64);
 void __fastcall camlPervasives__output_value_226();
-void __fastcall camlPervasives__close_out_233(__int64 a1, const char *a2);
-void __fastcall camlPervasives__close_out_noerr_235(__int64 a1, const char *a2);
-__int64 __fastcall sub_40E7C0(__int64 a1, const char *a2);
-void __fastcall sub_40E7EC(__int64 a1, const char *a2);
-void __fastcall camlPervasives__open_in_gen_238(const char *a1);
+void __fastcall camlPervasives__close_out_233(__int64, const char *);
+void __fastcall camlPervasives__close_out_noerr_235(__int64, const char *);
+__int64 __fastcall sub_40E7C0(__int64, const char *);
+void __fastcall sub_40E7EC(__int64, const char *);
+void __fastcall camlPervasives__open_in_gen_238(const char *);
 void __fastcall camlPervasives__open_in_242();
 void __fastcall camlPervasives__open_in_bin_244();
-void __fastcall camlPervasives__input_248(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlPervasives__unsafe_really_input_253(__int64 a1, __int64 a2);
-__int64 __fastcall camlPervasives__really_input_259(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlPervasives__input_line_265(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlPervasives__close_in_noerr_287(__int64 a1, const char *a2);
-void __fastcall sub_40EA68(__int64 a1, const char *a2);
+void __fastcall camlPervasives__input_248(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlPervasives__unsafe_really_input_253(__int64, __int64);
+__int64 __fastcall camlPervasives__really_input_259(__int64, __int64, __int64, __int64, __int64, __int64);
+const char *__fastcall camlPervasives__input_line_265(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlPervasives__close_in_noerr_287(__int64, const char *);
+void __fastcall sub_40EA68(__int64, const char *);
 void __fastcall camlPervasives__print_char_290();
 void camlPervasives__print_string_292();
 void camlPervasives__print_int_294();
@@ -489,830 +483,820 @@ void camlPervasives__prerr_int_305();
 void camlPervasives__prerr_float_307();
 void camlPervasives__prerr_endline_309();
 void camlPervasives__prerr_newline_311();
-__int64 __fastcall camlPervasives__read_line_312(__int64 a1, const char *a2);
-void __fastcall camlPervasives__read_int_313(__int64 a1, const char *a2);
-void __fastcall camlPervasives__read_float_314(__int64 a1, const char *a2);
-void __fastcall camlPervasives__fun_519(__int64 a1, const char *a2);
-void __fastcall camlPervasives__fun_517(__int64 a1, const char *a2);
+const char *__fastcall camlPervasives__read_line_312(__int64 a1, const char *a2);
+void __fastcall camlPervasives__read_int_313(__int64, const char *);
+void __fastcall camlPervasives__read_float_314(__int64, const char *);
+void __fastcall camlPervasives__fun_519(__int64, const char *);
+void __fastcall camlPervasives__fun_517(__int64, const char *);
 void __fastcall camlPervasives__fun_515();
-void __fastcall camlPervasives__fun_513(__int64 a1, const char *a2);
-void __fastcall camlPervasives__fun_511(__int64 a1, const char *a2);
+void __fastcall camlPervasives__fun_513(__int64, const char *);
+void __fastcall camlPervasives__fun_511(__int64, const char *);
 void __fastcall camlPervasives__fun_509();
 __int64 __fastcall camlPervasives___5e_5e_336(); // weak
-__int64 __fastcall camlPervasives__string_of_format_339(__int64 a1, const char *a2);
-__int64 __fastcall camlPervasives__at_exit_346(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlPervasives__string_of_format_339(__int64, const char *);
+__int64 __fastcall camlPervasives__at_exit_346(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall camlPervasives__do_at_exit_349(); // weak
-void __fastcall camlPervasives__exit_350(__int64 a1, const char *a2);
-__int64 __fastcall camlPervasives__entry(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__code_begin(unsigned __int64 a1, const char *a2, unsigned __int64 a3, __int64 a4);
+void __fastcall camlPervasives__exit_350(__int64, const char *);
+__int64 __fastcall camlPervasives__entry(__int64, const char *, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__code_begin(unsigned __int64, const char *, unsigned __int64, __int64);
 __int64 __fastcall camlArray__size_93();
-__int64 __fastcall camlArray__fill_98(float a1, __int64 a2, double *a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7);
-__int64 (__fastcall **__fastcall camlArray__find_init_105(double a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7))();
-unsigned __int64 __fastcall camlArray__tolist_150(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__fill_162(__int64 a1);
-unsigned __int64 __fastcall camlArray__maxson_182(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__trickledown_187(double *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__trickle_192(double *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall sub_410494(double *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__bubbledown_197(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__bubble_201(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall sub_4105F0(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__trickleup_205(unsigned __int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__merge_218(const char *a1, unsigned __int64 a2, __int64 a3, __int64 a4, unsigned __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__isortto_236(signed __int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__sortto_244(unsigned __int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlArray__fill_98(float, __int64, double *, __int64, __int64, __int64, __int64);
+__int64 (__fastcall **__fastcall camlArray__find_init_105(double, __int64, __int64, __int64, __int64, __int64, __int64))();
+unsigned __int64 __fastcall camlArray__tolist_150(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__fill_162(__int64);
+__int64 __fastcall camlArray__maxson_182(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlArray__trickledown_187(double *, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__trickle_192(double *, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall sub_410494(double *, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__bubbledown_197(__int64, const char *, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__bubble_201(__int64, const char *, __int64, __int64, __int64, __int64);
+__int64 __fastcall sub_4105F0(__int64, const char *, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__trickleup_205(unsigned __int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__merge_218(const char *, unsigned __int64, __int64, __int64, unsigned __int64, __int64);
+__int64 __fastcall camlArray__isortto_236(signed __int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__sortto_244(unsigned __int64, __int64, __int64, __int64, __int64, __int64);
 void *__fastcall camlArray__init_65();
-__int64 __fastcall camlArray__make_matrix_70(const char *a1);
-void *__fastcall camlArray__copy_77(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-void *__fastcall camlArray__append_82(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__concat_aux_90(float a1);
-__int64 (__fastcall **__fastcall camlArray__concat_103(double a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7))();
-void *__fastcall camlArray__sub_108(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__fill_114(__int64 a1, double *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__blit_120(unsigned __int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__iter_128(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-void *__fastcall camlArray__map_132(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__iteri_138(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-void *__fastcall camlArray__mapi_142(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-unsigned __int64 __fastcall camlArray__to_list_148(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlArray__make_matrix_70(const char *);
+void *__fastcall camlArray__copy_77(__int64, __int64, __int64, __int64, __int64, __int64);
+void *__fastcall camlArray__append_82(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__concat_aux_90(float);
+__int64 (__fastcall **__fastcall camlArray__concat_103(double, __int64, __int64, __int64, __int64, __int64, __int64))();
+void *__fastcall camlArray__sub_108(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__fill_114(__int64, double *, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__blit_120(unsigned __int64 *, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__iter_128(__int64, __int64, __int64, __int64, __int64, __int64);
+void *__fastcall camlArray__map_132(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__iteri_138(__int64, __int64, __int64, __int64, __int64, __int64);
+void *__fastcall camlArray__mapi_142(__int64, __int64, __int64, __int64, __int64, __int64);
+unsigned __int64 __fastcall camlArray__to_list_148(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall camlArray__list_length_153();
 void *__fastcall camlArray__of_list_157();
-unsigned __int64 __fastcall camlArray__fold_left_166(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-unsigned __int64 __fastcall camlArray__fold_right_172(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__sort_179(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__stable_sort_215(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlArray__entry(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlList__code_begin(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlList__rmap_f_98(__int64 a1, __int64 a2);
-_QWORD *__fastcall camlList__rmap2_f_131(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlList__find_235(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlList__part_243(__int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlList__rev_merge_279(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlList__rev_merge_rev_289(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlList__rev_sort_1272(__int64 a1, __int64 *a2, __int64 *a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlList__sort_1271(__int64 a1, __int64 *a2, __int64 *a3, __int64 a4, __int64 a5, __int64 a6);
+unsigned __int64 __fastcall camlArray__fold_left_166(__int64, __int64, __int64, __int64, __int64, __int64);
+unsigned __int64 __fastcall camlArray__fold_right_172(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__sort_179(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__stable_sort_215(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlArray__entry(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlList__code_begin(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlList__rmap_f_98(__int64, __int64);
+_QWORD *__fastcall camlList__rmap2_f_131(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlList__find_235(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlList__part_243(__int64 *, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlList__rev_merge_279(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlList__rev_merge_rev_289(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlList__rev_sort_300(__int64, __int64 *, __int64 *, __int64, __int64, __int64);
+_QWORD *__fastcall camlList__sort_299(__int64, __int64 *, __int64 *, __int64, __int64, __int64);
 __int64 __fastcall camlList__length_aux_58();
 __int64 __fastcall camlList__length_62(); // weak
-__int64 __fastcall camlList__hd_64(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlList__tl_67(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlList__nth_70(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlList__rev_append_79(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlList__rev_84(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlList__hd_64(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlList__tl_67(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlList__nth_70(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlList__rev_append_79(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlList__rev_84(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall camlList__flatten_86();
 __int64 __fastcall camlList__map_90();
-_QWORD *__fastcall camlList__rev_map_95(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+_QWORD *__fastcall camlList__rev_map_95(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall camlList__iter_102();
-__int64 __fastcall camlList__fold_left_106(__int64 a1);
-__int64 __fastcall camlList__fold_right_112(__int64 a1);
-__int64 __fastcall camlList__map2_118(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlList__rev_map2_127(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlList__iter2_139(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlList__fold_left2_147(__int64 a1, __int64 *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlList__fold_right2_156(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlList__fold_left_106(__int64);
+__int64 __fastcall camlList__fold_right_112(__int64);
+__int64 __fastcall camlList__map2_118(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlList__rev_map2_127(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlList__iter2_139(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlList__fold_left2_147(__int64, __int64 *, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlList__fold_right2_156(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall camlList__for_all_165();
 __int64 __fastcall camlList__exists_169(); // weak
-__int64 __fastcall camlList__for_all2_173(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlList__exists2_181(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlList__for_all2_173(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlList__exists2_181(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall camlList__mem_189();
 __int64 __fastcall camlList__memq_193(); // weak
-const char *__fastcall camlList__assoc_197(const char *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlList__assq_202(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+const char *__fastcall camlList__assoc_197(const char *, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlList__assq_202(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall camlList__mem_assoc_207(); // weak
 __int64 __fastcall camlList__mem_assq_212(); // weak
 __int64 __fastcall camlList__remove_assoc_217();
 __int64 __fastcall camlList__remove_assq_223();
-__int64 __fastcall camlList__find_229(__int64 (*a1)(void), __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlList__find_all_233(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlList__partition_240(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlList__find_229(__int64 (*)(void), __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlList__find_all_233(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlList__partition_240(__int64, __int64, __int64, __int64, __int64, __int64);
 void *__fastcall camlList__split_248();
-__int64 __fastcall camlList__combine_254(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 *__fastcall camlList__merge_261(__int64 *a1);
-__int64 __fastcall camlList__chop_271(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlList__stable_sort_276(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlList__combine_254(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 *__fastcall camlList__merge_261(__int64 *);
+__int64 __fastcall camlList__chop_271(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlList__stable_sort_276(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 camlList__entry();
-void __fastcall __noreturn camlSys__code_begin(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+void __fastcall __noreturn camlSys__code_begin(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall camlSys__set_signal_85();
-__int64 __fastcall camlSys__catch_break_110(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlSys__entry(__int64 a1, const char *a2);
-__int64 __fastcall camlHashtbl__code_begin(__int64 a1, __int64 a2);
-__int64 __fastcall camlHashtbl__find_in_bucket_241(__int64 a1, __int64 a2);
-_QWORD *__fastcall camlHashtbl__replace_bucket_249(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlSys__catch_break_110(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlSys__entry(__int64, const char *);
+__int64 __fastcall camlHashtbl__code_begin(__int64, __int64);
+__int64 __fastcall camlHashtbl__find_in_bucket_241(__int64, __int64);
+_QWORD *__fastcall camlHashtbl__replace_bucket_249(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall camlHashtbl__mem_in_bucket_258();
 __int64 __fastcall camlHashtbl__insert_bucket_96();
 __int64 __fastcall camlHashtbl__remove_bucket_111();
 __int64 __fastcall camlHashtbl__find_in_bucket_136();
-_QWORD *__fastcall camlHashtbl__replace_bucket_144(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+_QWORD *__fastcall camlHashtbl__replace_bucket_144(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall camlHashtbl__mem_in_bucket_153();
 __int64 __fastcall camlHashtbl__do_bucket_160();
-__int64 __fastcall camlHashtbl__do_bucket_170(__int64 a1);
+__int64 __fastcall camlHashtbl__do_bucket_170(__int64);
 __int64 __fastcall camlHashtbl__safehash_205(); // weak
-__int64 __fastcall camlHashtbl__add_207(__int64 (*a1)(void), __int64 (**a2)(void));
-__int64 __fastcall camlHashtbl__remove_213(__int64 (*a1)(void), __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlHashtbl__find_rec_221(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlHashtbl__find_1198(__int64 (*a1)(void));
-__int64 __fastcall camlHashtbl__find_all_238(__int64 (*a1)(void), __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlHashtbl__replace_245(__int64 a1, __int64 a2);
-__int64 __fastcall sub_415F68(const char *a1, const char *a2, unsigned __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlHashtbl__mem_255(__int64 (*a1)(void), __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlHashtbl__add_207(__int64 (*)(void), __int64 (**)(void));
+__int64 __fastcall camlHashtbl__remove_213(__int64 (*)(void), __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlHashtbl__find_rec_221(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlHashtbl__find_226(__int64 (*)(void));
+__int64 __fastcall camlHashtbl__find_all_238(__int64 (*)(void), __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlHashtbl__replace_245(__int64, __int64);
+__int64 __fastcall sub_415F68(const char *, const char *, unsigned __int64, __int64, __int64, __int64);
+__int64 __fastcall camlHashtbl__mem_255(__int64 (*)(void), __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall camlHashtbl__hash_59();
 _QWORD *__fastcall camlHashtbl__create_79();
-__int64 __fastcall camlHashtbl__clear_82(__int64 a1, __int64 a2);
-_QWORD *__fastcall camlHashtbl__copy_85(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlHashtbl__clear_82(__int64, __int64);
+_QWORD *__fastcall camlHashtbl__copy_85(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 __fastcall camlHashtbl__length_87(); // weak
 __int64 __fastcall camlHashtbl__resize_89();
-__int64 __fastcall camlHashtbl__add_102(__int64 a1, __int64 a2);
-__int64 __fastcall camlHashtbl__remove_108(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlHashtbl__find_rec_116(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlHashtbl__find_1093(__int64 a1, __int64 a2);
-__int64 __fastcall camlHashtbl__find_all_133(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlHashtbl__replace_140(__int64 a1);
-__int64 __fastcall sub_416A78(const char *a1, const char *a2, unsigned __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlHashtbl__mem_150(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-__int64 __fastcall camlHashtbl__iter_157(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlHashtbl__fold_166(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-_QWORD *__fastcall camlHashtbl__Make_279(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+__int64 __fastcall camlHashtbl__add_102(__int64, __int64);
+__int64 __fastcall camlHashtbl__remove_108(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlHashtbl__find_rec_116(__int64, const char *, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlHashtbl__find_121(__int64, __int64);
+__int64 __fastcall camlHashtbl__find_all_133(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlHashtbl__replace_140(__int64);
+__int64 __fastcall sub_416A78(const char *, const char *, unsigned __int64, __int64, __int64, __int64);
+__int64 __fastcall camlHashtbl__mem_150(__int64, __int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall camlHashtbl__iter_157(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlHashtbl__fold_166(__int64, __int64, __int64, __int64, __int64, __int64);
+_QWORD *__fastcall camlHashtbl__Make_279(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 camlHashtbl__entry();
 void __fastcall camlCallback__code_begin();
-void __fastcall camlCallback__register_exception_62(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+void __fastcall camlCallback__register_exception_62(__int64, __int64, __int64, __int64, __int64, __int64);
 __int64 camlCallback__entry();
-_QWORD *__fastcall unix_accept(__int64 a1);
-__int64 __fastcall unix_access(char *name, __int64 *a2);
+_QWORD *__fastcall unix_accept(__int64);
+__int64 __fastcall unix_access(char *name, __int64 *);
 _QWORD *__fastcall unix_inet_addr_of_string(char *cp);
-__int64 __fastcall unix_alarm(__int64 a1);
-__int64 __fastcall unix_bind(__int64 a1, __int64 *a2);
-__int64 __fastcall unix_chdir(void *a1);
-__int64 __fastcall unix_chmod(void *a1, __int64 a2);
-__int64 __fastcall unix_chown(void *a1, __int64 a2, __int64 a3);
-__int64 __fastcall unix_chroot(void *a1);
-__int64 __fastcall unix_close(__int64 a1);
-__int64 __fastcall unix_closedir(DIR **a1);
-__int64 __fastcall unix_connect(__int64 a1, __int64 *a2);
-__int64 __fastcall unix_dup(__int64 a1);
-__int64 __fastcall unix_dup2(__int64 a1, __int64 a2);
+__int64 __fastcall unix_alarm(__int64);
+__int64 __fastcall unix_bind(__int64, __int64 *);
+__int64 __fastcall unix_chdir(void *);
+__int64 __fastcall unix_chmod(void *, __int64);
+__int64 __fastcall unix_chown(void *, __int64, __int64);
+__int64 __fastcall unix_chroot(void *);
+__int64 __fastcall unix_close(__int64);
+__int64 __fastcall unix_closedir(DIR **);
+__int64 __fastcall unix_connect(__int64, __int64 *);
+__int64 __fastcall unix_dup(__int64);
+__int64 __fastcall unix_dup2(__int64, __int64);
 char *unix_environment();
-void *__fastcall unix_error_message(__int64 a1);
-void __fastcall __noreturn unix_execv(char *path, __int64 a2);
-void __fastcall __noreturn unix_execve(char *path, __int64 a2, __int64 a3);
-void __fastcall __noreturn unix_execvpe(char *file, __int64 a2, __int64 a3);
-void __fastcall __noreturn unix_execvp(char *file, __int64 a2);
-__int64 __fastcall unix_fchmod(__int64 a1, __int64 a2);
-__int64 __fastcall unix_fchown(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall unix_clear_close_on_exec(__int64 a1);
-__int64 __fastcall unix_set_close_on_exec(__int64 a1);
-__int64 __fastcall unix_clear_nonblock(__int64 a1);
-__int64 __fastcall unix_set_nonblock(__int64 a1);
+_QWORD *__fastcall unix_error_message(__int64 a1);
+void __fastcall __noreturn unix_execv(char *path, __int64);
+void __fastcall __noreturn unix_execve(char *path, __int64, __int64);
+void __fastcall __noreturn unix_execvpe(char *file, __int64, __int64);
+void __fastcall __noreturn unix_execvp(char *file, __int64);
+__int64 __fastcall unix_fchmod(__int64, __int64);
+__int64 __fastcall unix_fchown(__int64, __int64, __int64);
+__int64 __fastcall unix_clear_close_on_exec(__int64);
+__int64 __fastcall unix_set_close_on_exec(__int64);
+__int64 __fastcall unix_clear_nonblock(__int64);
+__int64 __fastcall unix_set_nonblock(__int64);
 __int64 __fastcall unix_fork(); // weak
-__int64 __fastcall unix_ftruncate_64(__int64 a1, __int64 a2);
-__int64 __fastcall unix_ftruncate(__int64 a1, __int64 a2);
-__int64 __fastcall unix_getaddrinfo(char *a1, char *a2, __int64 a3);
-void *unix_getcwd();
+__int64 __fastcall unix_ftruncate_64(__int64, __int64);
+__int64 __fastcall unix_ftruncate(__int64, __int64);
+__int64 __fastcall unix_getaddrinfo(char *, char *, __int64);
+_QWORD *unix_getcwd();
 __int64 __fastcall unix_getegid(); // weak
 __int64 __fastcall unix_geteuid(); // weak
 __int64 __fastcall unix_getgid(); // weak
-_QWORD *__fastcall alloc_group_entry(__int64 a1);
-_QWORD *__fastcall unix_getgrgid(__int64 a1);
-_QWORD *__fastcall unix_getgrnam(const char *a1);
+_QWORD *__fastcall alloc_group_entry(__int64);
+_QWORD *__fastcall unix_getgrgid(__int64);
+_QWORD *__fastcall unix_getgrnam(const char *);
 char *unix_getgroups();
-_QWORD *__fastcall alloc_host_entry(__int64 a1);
+_QWORD *__fastcall alloc_host_entry(__int64);
 _QWORD *__fastcall unix_gethostbyname(char *src);
-_QWORD *__fastcall unix_gethostbyaddr(int *a1);
-void *__fastcall alloc_one_addr(void *src);
-void *unix_gethostname();
-void *unix_getlogin();
-_QWORD *__fastcall unix_getnameinfo(__int64 *a1, __int64 *a2);
-_QWORD *__fastcall unix_getpeername(__int64 a1);
+_QWORD *__fastcall unix_gethostbyaddr(int *);
+_QWORD *__fastcall alloc_one_addr(void *src);
+_QWORD *unix_gethostname();
+_QWORD *unix_getlogin();
+_QWORD *__fastcall unix_getnameinfo(__int64 *, __int64 *);
+_QWORD *__fastcall unix_getpeername(__int64);
 __int64 __fastcall unix_getpid(); // weak
 __int64 __fastcall unix_getppid(); // weak
-_QWORD *__fastcall alloc_proto_entry(__int64 a1);
-_QWORD *__fastcall unix_getprotobynumber(__int64 a1);
-_QWORD *__fastcall unix_getprotobyname(const char *a1);
-_QWORD *__fastcall alloc_passwd_entry(__int64 a1);
-_QWORD *__fastcall unix_getpwuid(__int64 a1);
-_QWORD *__fastcall unix_getpwnam(const char *a1);
+_QWORD *__fastcall alloc_proto_entry(__int64);
+_QWORD *__fastcall unix_getprotobynumber(__int64);
+_QWORD *__fastcall unix_getprotobyname(const char *);
+_QWORD *__fastcall alloc_passwd_entry(__int64);
+_QWORD *__fastcall unix_getpwuid(__int64);
+_QWORD *__fastcall unix_getpwnam(const char *);
 __int64 __fastcall unix_gettimeofday(); // weak
-_QWORD *__fastcall alloc_service_entry(__int64 a1);
-_QWORD *__fastcall unix_getservbyport(__int64 a1, const char *a2);
-_QWORD *__fastcall unix_getservbyname(const char *a1, const char *a2);
-_QWORD *__fastcall unix_getsockname(__int64 a1);
+_QWORD *__fastcall alloc_service_entry(__int64);
+_QWORD *__fastcall unix_getservbyport(__int64, const char *);
+_QWORD *__fastcall unix_getservbyname(const char *, const char *);
+_QWORD *__fastcall unix_getsockname(__int64);
 __int64 __fastcall unix_getuid(); // weak
-_QWORD *__fastcall alloc_tm(int *a1);
-_QWORD *__fastcall unix_mktime(__int64 *a1);
-_QWORD *__fastcall unix_localtime(double *a1);
-_QWORD *__fastcall unix_gmtime(double *a1);
-unsigned __int64 __fastcall unix_isatty(__int64 a1);
-double *__fastcall unix_convert_itimer(_QWORD *a1);
-double *__fastcall unix_getitimer(__int64 a1);
-unsigned __int64 __fastcall unix_set_timeval(_QWORD *a1, double a2);
-double *__fastcall unix_setitimer(__int64 a1, double *a2);
-__int64 __fastcall unix_kill(__int64 a1, __int64 a2);
-__int64 __fastcall unix_link(const char *a1, void *a2);
-__int64 __fastcall unix_listen(__int64 a1, __int64 a2);
-__int64 __fastcall unix_lockf(unsigned __int64 a1, __int64 a2, __int64 a3);
-_QWORD *__fastcall unix_lseek_64(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall unix_lseek(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall unix_mkdir(void *a1, __int64 a2);
-__int64 __fastcall unix_mkfifo(void *a1, __int64 a2);
-__int64 __fastcall unix_nice(__int64 a1);
-__int64 __fastcall unix_open(char *a1, __int64 *a2, __int64 a3);
-_QWORD *__fastcall unix_opendir(char *a1);
+_QWORD *__fastcall alloc_tm(int *);
+_QWORD *__fastcall unix_mktime(__int64 *);
+_QWORD *__fastcall unix_localtime(double *);
+_QWORD *__fastcall unix_gmtime(double *);
+unsigned __int64 __fastcall unix_isatty(__int64);
+double *__fastcall unix_convert_itimer(_QWORD *);
+double *__fastcall unix_getitimer(__int64);
+unsigned __int64 __fastcall unix_set_timeval(_QWORD *, double);
+double *__fastcall unix_setitimer(__int64, double *);
+__int64 __fastcall unix_kill(__int64, __int64);
+__int64 __fastcall unix_link(const char *, void *);
+__int64 __fastcall unix_listen(__int64, __int64);
+__int64 __fastcall unix_lockf(unsigned __int64, __int64, __int64);
+_QWORD *__fastcall unix_lseek_64(__int64, __int64, __int64);
+__off64_t __fastcall unix_lseek(__int64 a1, __int64 a2, __int64 a3);
+__int64 __fastcall unix_mkdir(void *, __int64);
+__int64 __fastcall unix_mkfifo(void *, __int64);
+__int64 __fastcall unix_nice(__int64);
+__int64 __fastcall unix_open(char *, __int64 *, __int64);
+_QWORD *__fastcall unix_opendir(char *);
 _QWORD *unix_pipe();
 __int64 __fastcall unix_putenv(void *src, void *); // idb
-__int64 __fastcall unix_read(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
-void *__fastcall unix_readdir(DIR **a1);
-void *__fastcall unix_readlink(char *a1);
-__int64 __fastcall unix_rename(void *a1, const char *a2);
-__int64 __fastcall unix_rewinddir(DIR **a1);
-__int64 __fastcall unix_rmdir(void *a1);
-__int64 __fastcall fdlist_to_fdset(_QWORD *a1, void *a2, _DWORD *a3);
-__int64 __fastcall fdset_to_fdlist(_QWORD *a1, __int64 a2);
-_QWORD *__fastcall unix_select(_QWORD *a1, _QWORD *a2, _QWORD *a3, double *a4);
-__int64 __fastcall unix_sendto_native(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 *a5, __int64 *a6);
-__int64 __fastcall unix_sendto(__int64 a1);
-__int64 __fastcall unix_send(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 *a5);
-_QWORD *__fastcall unix_recvfrom(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 *a5);
-__int64 __fastcall unix_recv(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 *a5);
-__int64 __fastcall unix_setgid(__int64 a1);
+__int64 __fastcall unix_read(__int64, __int64, __int64, __int64);
+_QWORD *__fastcall unix_readdir(DIR **a1);
+_QWORD *__fastcall unix_readlink(char *a1);
+__int64 __fastcall unix_rename(void *, const char *);
+__int64 __fastcall unix_rewinddir(DIR **);
+__int64 __fastcall unix_rmdir(void *);
+__int64 __fastcall fdlist_to_fdset(_QWORD *, void *, _DWORD *);
+__int64 __fastcall fdset_to_fdlist(_QWORD *, __int64);
+_QWORD *__fastcall unix_select(_QWORD *, _QWORD *, _QWORD *, double *);
+__int64 __fastcall unix_sendto_native(__int64, __int64, __int64, __int64, __int64 *, __int64 *);
+__int64 __fastcall unix_sendto(__int64);
+__int64 __fastcall unix_send(__int64, __int64, __int64, __int64, __int64 *);
+_QWORD *__fastcall unix_recvfrom(__int64, __int64, __int64, __int64, __int64 *);
+__int64 __fastcall unix_recv(__int64, __int64, __int64, __int64, __int64 *);
+__int64 __fastcall unix_setgid(__int64);
 __int64 __fastcall unix_setsid(); // weak
-__int64 __fastcall unix_setuid(__int64 a1);
-__int64 __fastcall unix_shutdown(__int64 a1, __int64 a2);
-int __fastcall decode_sigset(__int64 *a1, sigset_t *a2);
-__int64 __fastcall unix_sigsuspend(__int64 *a1);
+__int64 __fastcall unix_setuid(__int64);
+__int64 __fastcall unix_shutdown(__int64, __int64);
+int __fastcall decode_sigset(__int64 *, sigset_t *);
+__int64 __fastcall unix_sigsuspend(__int64 *);
 __int64 __fastcall encode_sigset(sigset_t *set); // idb
 __int64 __fastcall unix_sigpending(); // weak
-__int64 __fastcall unix_sigprocmask(__int64 a1, __int64 *a2);
-__int64 __fastcall unix_sleep(__int64 a1);
-__int64 __fastcall unix_socket(__int64 a1, __int64 a2, __int64 a3);
-unsigned __int16 __fastcall get_sockaddr(__int64 *a1, __int64 a2, _DWORD *a3);
-_QWORD *__fastcall alloc_inet6_addr(_QWORD *a1);
-_DWORD *__fastcall alloc_inet_addr(_DWORD *a1);
-_QWORD *__fastcall alloc_sockaddr(__int16 *a1, __int64 a2, int a3);
-_QWORD *__fastcall unix_socketpair(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall unix_setsockopt_aux(void *a1, unsigned int a2, int a3, int a4, __int64 a5, double *a6);
-__int64 __fastcall unix_setsockopt(__int64 a1, __int64 a2, __int64 a3, double *a4);
-__int64 __fastcall unix_getsockopt_aux(void *a1, int a2, int a3, int a4, __int64 a5);
-__int64 __fastcall unix_getsockopt(__int64 a1, __int64 a2, __int64 a3);
-_QWORD *__fastcall stat_aux(int a1, __int64 a2);
-_QWORD *__fastcall unix_fstat_64(__int64 a1);
+__int64 __fastcall unix_sigprocmask(__int64, __int64 *);
+__int64 __fastcall unix_sleep(__int64);
+__int64 __fastcall unix_socket(__int64, __int64, __int64);
+unsigned __int16 __fastcall get_sockaddr(__int64 *, __int64, _DWORD *);
+_QWORD *__fastcall alloc_inet6_addr(_QWORD *);
+_DWORD *__fastcall alloc_inet_addr(_DWORD *);
+_QWORD *__fastcall alloc_sockaddr(__int16 *, __int64, int);
+_QWORD *__fastcall unix_socketpair(__int64, __int64, __int64);
+__int64 __fastcall unix_setsockopt_aux(void *, unsigned int, int, int, __int64, double *);
+__int64 __fastcall unix_setsockopt(__int64, __int64, __int64, double *);
+__int64 __fastcall unix_getsockopt_aux(void *, int, int, int, __int64);
+__int64 __fastcall unix_getsockopt(__int64, __int64, __int64);
+_QWORD *__fastcall stat_aux(int, __int64);
+_QWORD *__fastcall unix_fstat_64(__int64);
 _QWORD *__fastcall unix_lstat_64(char *filename);
 _QWORD *__fastcall unix_stat_64(char *filename);
-_QWORD *__fastcall unix_fstat(__int64 a1);
+_QWORD *__fastcall unix_fstat(__int64);
 _QWORD *__fastcall unix_lstat(char *filename);
 _QWORD *__fastcall unix_stat(char *filename);
-void *__fastcall unix_string_of_inet_addr(void *cp);
-__int64 __fastcall unix_symlink(const char *a1, void *a2);
-__int64 __fastcall unix_tcflow(__int64 a1, __int64 a2);
-__int64 __fastcall unix_tcflush(__int64 a1, __int64 a2);
-__int64 __fastcall unix_tcdrain(__int64 a1);
-__int64 __fastcall unix_tcsendbreak(__int64 a1, __int64 a2);
-__int64 __fastcall unix_tcsetattr(__int64 a1, __int64 a2, __int64 *a3);
-char *__fastcall unix_tcgetattr(__int64 a1);
+_QWORD *__fastcall unix_string_of_inet_addr(void *cp);
+__int64 __fastcall unix_symlink(const char *, void *);
+__int64 __fastcall unix_tcflow(__int64, __int64);
+__int64 __fastcall unix_tcflush(__int64, __int64);
+__int64 __fastcall unix_tcdrain(__int64);
+__int64 __fastcall unix_tcsendbreak(__int64, __int64);
+__int64 __fastcall unix_tcsetattr(__int64, __int64, __int64 *);
+char *__fastcall unix_tcgetattr(__int64);
 __int64 __fastcall unix_time(); // weak
 double *unix_times();
-__int64 __fastcall unix_truncate_64(void *a1, __int64 a2);
-__int64 __fastcall unix_truncate(void *a1, __int64 a2);
-__int64 __fastcall unix_umask(__int64 a1);
-_QWORD *__fastcall unix_error_of_code(int a1);
-void __fastcall __noreturn unix_error(int a1, void *a2, void *a3);
-void __fastcall __noreturn uerror(void *a1, void *a2);
-__int64 __fastcall unix_unlink(void *a1);
-__int64 __fastcall unix_utimes(char *file, double *a2, double *a3);
-_QWORD *__fastcall alloc_process_status(int a1, __int16 a2);
-_QWORD *__fastcall unix_waitpid(__int64 *a1, __int64 a2);
+__int64 __fastcall unix_truncate_64(void *, __int64);
+__int64 __fastcall unix_truncate(void *, __int64);
+__int64 __fastcall unix_umask(__int64);
+_QWORD *__fastcall unix_error_of_code(int);
+void __fastcall __noreturn unix_error(int, void *, void *);
+void __fastcall __noreturn uerror(void *, void *);
+__int64 __fastcall unix_unlink(void *);
+__int64 __fastcall unix_utimes(char *file, double *, double *);
+_QWORD *__fastcall alloc_process_status(int, __int16);
+_QWORD *__fastcall unix_waitpid(__int64 *, __int64);
 _QWORD *unix_wait();
-__int64 __fastcall unix_single_write(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
-__int64 __fastcall unix_write(unsigned __int64 a1, __int64 a2, __int64 a3, __int64 a4);
-__int64 __fastcall cst_to_constr(int a1, _DWORD *a2, int a3, int a4);
-_QWORD *__fastcall cstringvect(__int64 a1);
-__int64 __fastcall scanmult(__int64 a1, __int64 *a2);
-__int64 __fastcall caml_main(const char **a1);
+__int64 __fastcall unix_single_write(__int64, __int64, __int64, __int64);
+__int64 __fastcall unix_write(unsigned __int64, __int64, __int64, __int64);
+__int64 __fastcall cst_to_constr(int, _DWORD *, int, int);
+_QWORD *__fastcall cstringvect(__int64);
+__int64 __fastcall scanmult(__int64, __int64 *);
+__int64 __fastcall caml_main(const char **);
 int __cdecl main(int argc, const char **argv, const char **envp);
-void __fastcall __noreturn caml_raise(__int64 a1);
+void __fastcall __noreturn caml_raise(__int64);
 void __noreturn caml_array_bound_error();
 void __noreturn caml_raise_stack_overflow();
 void __noreturn caml_raise_out_of_memory();
-void __fastcall __noreturn caml_raise_with_args(__int64 a1, int a2, __int64 a3);
-void __fastcall __noreturn caml_raise_with_arg(__int64 a1, __int64 a2);
-void __fastcall __noreturn caml_raise_sys_error(__int64 a1);
-void __fastcall __noreturn caml_raise_with_string(__int64 a1, void *a2);
-void __fastcall __noreturn caml_invalid_argument(void *a1);
-void __fastcall __noreturn caml_failwith(void *a1);
-void __fastcall __noreturn caml_raise_constant(__int64 a1);
+void __fastcall __noreturn caml_raise_with_args(__int64, int, __int64);
+void __fastcall __noreturn caml_raise_with_arg(__int64, __int64);
+void __fastcall __noreturn caml_raise_sys_error(__int64);
+void __fastcall __noreturn caml_raise_with_string(__int64, void *);
+void __fastcall __noreturn caml_invalid_argument(void *);
+void __fastcall __noreturn caml_failwith(void *);
+void __fastcall __noreturn caml_raise_constant(__int64);
 void __noreturn caml_raise_sys_blocked_io();
 void __noreturn caml_raise_not_found();
 void __noreturn caml_raise_zero_divide();
 void __noreturn caml_raise_end_of_file();
-void __fastcall caml_do_local_roots(void (__fastcall *a1)(_QWORD, _QWORD *), __int64 a2, unsigned __int64 a3, __int64 a4, _QWORD *a5);
-_QWORD *__fastcall caml_register_dyn_global(__int64 a1);
-void __fastcall caml_register_frametable(__int64 a1);
+void __fastcall caml_do_local_roots(void (__fastcall *)(_QWORD, _QWORD *), __int64, unsigned __int64, __int64, _QWORD *);
+_QWORD *__fastcall caml_register_dyn_global(__int64);
+void __fastcall caml_register_frametable(__int64);
 char *caml_init_frame_descriptors();
-__int64 (__fastcall *__fastcall caml_do_roots(void (__fastcall *a1)(__int64, __int64 *)))(_QWORD);
+__int64 (__fastcall *__fastcall caml_do_roots(void (__fastcall *)(__int64, __int64 *)))(_QWORD);
 __int64 (__fastcall *caml_darken_all_roots())(_QWORD);
 __int64 (__fastcall *caml_oldify_local_roots())(_QWORD);
-__int64 __fastcall caml_iterate_global_roots(__int64 (__fastcall *a1)(_QWORD, _QWORD), __int64 a2);
-__int64 __fastcall caml_scan_global_roots(__int64 (__fastcall *a1)(_QWORD, _QWORD));
-_QWORD *__fastcall caml_insert_global_root(__int64 a1, unsigned __int64 a2);
-_QWORD *__fastcall caml_register_global_root(unsigned __int64 a1);
-void __fastcall caml_scan_global_young_roots(__int64 (__fastcall *a1)(_QWORD, _QWORD));
-void __fastcall caml_delete_global_root(__int64 a1, unsigned __int64 a2);
-void __fastcall caml_remove_global_root(unsigned __int64 a1);
-void __fastcall caml_modify_generational_global_root(unsigned __int64 *a1, unsigned __int64 a2);
-void __fastcall caml_remove_generational_global_root(unsigned __int64 *a1);
-void __fastcall caml_register_generational_global_root(unsigned __int64 *a1);
-__int64 __fastcall caml_record_signal(int a1);
+__int64 __fastcall caml_iterate_global_roots(__int64 (__fastcall *)(_QWORD, _QWORD), __int64);
+__int64 __fastcall caml_scan_global_roots(__int64 (__fastcall *)(_QWORD, _QWORD));
+_QWORD *__fastcall caml_insert_global_root(__int64, unsigned __int64);
+_QWORD *__fastcall caml_register_global_root(unsigned __int64);
+void __fastcall caml_scan_global_young_roots(__int64 (__fastcall *)(_QWORD, _QWORD));
+void __fastcall caml_delete_global_root(__int64, unsigned __int64);
+void __fastcall caml_remove_global_root(unsigned __int64);
+void __fastcall caml_modify_generational_global_root(unsigned __int64 *, unsigned __int64);
+void __fastcall caml_remove_generational_global_root(unsigned __int64 *);
+void __fastcall caml_register_generational_global_root(unsigned __int64 *);
+__int64 __fastcall caml_record_signal(int);
 void caml_enter_blocking_section_default();
 void caml_leave_blocking_section_default();
 __int64 __fastcall caml_try_leave_blocking_section_default(); // weak
 __int64 caml_urge_major_slice();
-__int64 __fastcall caml_convert_signal_number(unsigned int a1);
-__int64 __fastcall caml_rev_convert_signal_number(unsigned int a1);
-__int64 __fastcall caml_execute_signal(int signo, int a2);
+__int64 __fastcall caml_convert_signal_number(unsigned int);
+__int64 __fastcall caml_rev_convert_signal_number(unsigned int);
+__int64 __fastcall caml_execute_signal(int signo, int);
 __int64 caml_process_pending_signals();
-__int64 __fastcall caml_install_signal_handler(__int64 a1, __int64 a2);
+__int64 __fastcall caml_install_signal_handler(__int64, __int64);
 __int64 caml_leave_blocking_section();
 __int64 caml_enter_blocking_section();
 int caml_init_signals();
-int __fastcall caml_set_signal_action(int sig, int a2);
-int __fastcall segv_handler(__int64 a1, __int64 a2, _QWORD *a3);
-void __fastcall handle_signal(unsigned int a1);
+int __fastcall caml_set_signal_action(int sig, int);
+int __fastcall segv_handler(__int64, __int64, _QWORD *);
+void __fastcall handle_signal(unsigned int);
 __int64 caml_garbage_collection();
-void __fastcall caml_ext_table_free(__int64 a1, int a2);
-__int64 __fastcall caml_ext_table_add(void **a1, __int64 a2);
-void *__fastcall caml_ext_table_init(__int64 a1, int a2);
-unsigned __int64 __fastcall caml_aligned_malloc(__int64 a1, int a2, _QWORD *a3);
-void __fastcall __noreturn caml_fatal_error_arg2(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
-void __fastcall __noreturn caml_fatal_error_arg(__int64 a1, __int64 a2);
-void __fastcall __noreturn caml_fatal_error(__int64 a1);
-int __fastcall caml_gc_message(int a1, __int64 a2, __int64 a3);
-__int64 *__fastcall allocate_block(__int64 a1, int a2, __int64 *a3, __int64 *a4);
+void __fastcall caml_ext_table_free(__int64, int);
+__int64 __fastcall caml_ext_table_add(void **, __int64);
+void *__fastcall caml_ext_table_init(__int64, int);
+unsigned __int64 __fastcall caml_aligned_malloc(__int64, int, _QWORD *);
+void __fastcall __noreturn caml_fatal_error_arg2(const char *a1, __int64 a2, const char *a3, __int64 a4);
+void __fastcall __noreturn caml_fatal_error_arg(const char *a1, __int64 a2);
+void __fastcall __noreturn caml_fatal_error(const char *a1);
+int __fastcall caml_gc_message(int a1, const char *a2, __int64 a3);
+__int64 *__fastcall allocate_block(__int64, int, __int64 *, __int64 *);
 void caml_fl_init_merge();
 __int64 caml_fl_reset();
-__int64 *__fastcall caml_fl_merge_block(__int64 *a1);
-__int64 __fastcall caml_fl_add_blocks(__int64 *a1);
-__int64 *__fastcall caml_make_free_blocks(__int64 **a1, unsigned __int64 a2, int a3);
-void __fastcall caml_set_allocation_policy(__int64 a1);
-__int64 *__fastcall caml_fl_allocate(unsigned __int64 a1);
-__int64 __fastcall caml_init_major_heap(unsigned __int64 a1);
-unsigned __int64 __fastcall caml_round_heap_chunk_size(unsigned __int64 a1);
+__int64 *__fastcall caml_fl_merge_block(__int64 *);
+__int64 __fastcall caml_fl_add_blocks(__int64 *);
+__int64 *__fastcall caml_make_free_blocks(__int64 **, unsigned __int64, int);
+void __fastcall caml_set_allocation_policy(__int64);
+__int64 *__fastcall caml_fl_allocate(unsigned __int64);
+__int64 __fastcall caml_init_major_heap(unsigned __int64);
+unsigned __int64 __fastcall caml_round_heap_chunk_size(unsigned __int64);
 __int64 (__fastcall *start_cycle())(_QWORD);
 __int64 realloc_gray_vals();
-void __fastcall mark_slice(__int64 a1);
-void __fastcall caml_darken(unsigned __int64 a1);
-int __fastcall sweep_slice(__int64 a1);
+void __fastcall mark_slice(__int64);
+void __fastcall caml_darken(unsigned __int64);
+int __fastcall sweep_slice(__int64);
 __int64 caml_finish_major_cycle();
-__int64 __fastcall caml_major_collection_slice(__int64 a1);
-void __fastcall caml_oldify_one(unsigned __int64 a1, _QWORD *a2);
+__int64 __fastcall caml_major_collection_slice(__int64);
+void __fastcall caml_oldify_one(unsigned __int64, _QWORD *);
 unsigned __int64 caml_oldify_mopup();
 __int64 caml_empty_minor_heap();
 __int64 caml_minor_collection();
-__int64 __fastcall caml_check_urgent_gc(__int64 a1);
-void __fastcall caml_set_minor_heap_size(__int64 a1);
-char *__fastcall caml_alloc_table(__int64 a1, __int64 a2, __int64 a3);
-char *__fastcall caml_realloc_ref_table(__int64 a1);
-__int64 __fastcall caml_page_table_lookup(unsigned __int64 a1);
-__int64 __fastcall caml_allocation_color(unsigned __int64 a1);
-void __fastcall caml_alloc_dependent_memory(unsigned __int64 a1);
-__int64 __fastcall caml_free_dependent_memory(unsigned __int64 a1);
-void *__fastcall caml_stat_resize(void *a1, size_t a2);
+__int64 __fastcall caml_check_urgent_gc(__int64);
+void __fastcall caml_set_minor_heap_size(__int64);
+char *__fastcall caml_alloc_table(__int64, __int64, __int64);
+char *__fastcall caml_realloc_ref_table(__int64);
+__int64 __fastcall caml_page_table_lookup(unsigned __int64);
+__int64 __fastcall caml_allocation_color(unsigned __int64);
+void __fastcall caml_alloc_dependent_memory(unsigned __int64);
+unsigned __int64 __fastcall caml_free_dependent_memory(unsigned __int64 a1);
+void *__fastcall caml_stat_resize(void *, size_t);
 void caml_stat_free(void *ptr);
-void __fastcall caml_free_for_heap(__int64 a1);
-void *__fastcall caml_stat_alloc(size_t a1);
-void __fastcall caml_modify(unsigned __int64 *a1, unsigned __int64 a2);
-void __fastcall caml_initialize(unsigned __int64 *a1, unsigned __int64 a2);
-unsigned __int64 __fastcall caml_adjust_gc_speed(unsigned __int64 a1, unsigned __int64 a2);
-unsigned __int64 __fastcall caml_alloc_for_heap(__int64 a1);
-__int64 __fastcall caml_page_table_modify(unsigned __int64 a1, int a2, int a3);
-__int64 __fastcall caml_page_table_remove(int a1, __int64 a2, __int64 a3);
-void __fastcall caml_shrink_heap(_QWORD *a1);
-__int64 __fastcall caml_page_table_add(int a1, __int64 a2, __int64 a3);
-__int64 __fastcall caml_add_to_heap(unsigned __int64 a1);
-__int64 *__fastcall caml_alloc_shr(unsigned __int64 a1, unsigned int a2);
-__int64 __fastcall caml_page_table_initialize(unsigned __int64 a1);
-__int64 __fastcall caml_convert_flag_list(__int64 *a1, __int64 a2);
-__int64 __fastcall caml_update_dummy(unsigned __int64 *a1, __int64 a2);
-_QWORD *__fastcall caml_alloc_final(__int64 a1, __int64 a2, unsigned __int64 a3, unsigned __int64 a4);
-_QWORD *__fastcall caml_alloc_small(__int64 a1, unsigned int a2);
-__int64 __fastcall caml_alloc_string(__int64 a1);
-void *__fastcall caml_copy_string(void *src);
-char *__fastcall caml_alloc(unsigned __int64 a1, unsigned int a2);
-char *__fastcall caml_alloc_dummy_float(__int64 a1);
-char *__fastcall caml_alloc_dummy(__int64 a1);
-char *__fastcall caml_alloc_array(__int64 (__fastcall *a1)(_QWORD), _QWORD *a2);
-char *__fastcall caml_copy_string_array(_QWORD *a1);
-char *__fastcall caml_alloc_tuple(unsigned __int64 a1);
+void __fastcall caml_free_for_heap(__int64);
+void *__fastcall caml_stat_alloc(size_t);
+void __fastcall caml_modify(unsigned __int64 *, unsigned __int64);
+void __fastcall caml_initialize(unsigned __int64 *, unsigned __int64);
+__int64 __fastcall caml_adjust_gc_speed(unsigned __int64, unsigned __int64);
+unsigned __int64 __fastcall caml_alloc_for_heap(__int64);
+__int64 __fastcall caml_page_table_modify(unsigned __int64, int, int);
+__int64 __fastcall caml_page_table_remove(int, __int64, __int64);
+void __fastcall caml_shrink_heap(_QWORD *);
+__int64 __fastcall caml_page_table_add(int, __int64, __int64);
+__int64 __fastcall caml_add_to_heap(unsigned __int64);
+__int64 *__fastcall caml_alloc_shr(unsigned __int64, unsigned int);
+__int64 __fastcall caml_page_table_initialize(unsigned __int64);
+__int64 __fastcall caml_convert_flag_list(__int64 *, __int64);
+__int64 __fastcall caml_update_dummy(unsigned __int64 *, __int64);
+_QWORD *__fastcall caml_alloc_final(__int64, __int64, unsigned __int64, unsigned __int64);
+_QWORD *__fastcall caml_alloc_small(__int64, unsigned int);
+_QWORD *__fastcall caml_alloc_string(__int64 a1);
+_QWORD *__fastcall caml_copy_string(void *src);
+char *__fastcall caml_alloc(unsigned __int64, unsigned int);
+char *__fastcall caml_alloc_dummy_float(__int64);
+char *__fastcall caml_alloc_dummy(__int64);
+char *__fastcall caml_alloc_array(__int64 (__fastcall *)(_QWORD), _QWORD *);
+char *__fastcall caml_copy_string_array(_QWORD *);
+char *__fastcall caml_alloc_tuple(unsigned __int64);
 void compare_free_stack();
 void __noreturn compare_stack_overflow();
-unsigned __int64 __fastcall compare_val(signed __int64 a1, __int64 a2, int a3);
-unsigned __int64 __fastcall caml_greaterequal(signed __int64 a1, __int64 a2);
-__int64 __fastcall caml_greaterthan(signed __int64 a1, __int64 a2);
-__int64 __fastcall caml_lessequal(signed __int64 a1, __int64 a2);
-unsigned __int64 __fastcall caml_lessthan(signed __int64 a1, __int64 a2);
-unsigned __int64 __fastcall caml_notequal(signed __int64 a1, __int64 a2);
-__int64 __fastcall caml_equal(signed __int64 a1, __int64 a2);
-unsigned __int64 __fastcall caml_compare(signed __int64 a1, __int64 a2);
-__int64 __fastcall caml_int_compare(__int64 a1, __int64 a2);
-__int64 __fastcall int32_cmp(__int64 a1, __int64 a2);
-__int64 __fastcall int32_hash(__int64 a1);
-__int64 __fastcall caml_int32_to_int(__int64 a1);
-__int64 __fastcall caml_int32_compare(__int64 a1, __int64 a2);
-__int64 __fastcall int64_cmp(__int64 a1, __int64 a2);
-__int64 __fastcall int64_hash(__int64 a1);
-__int64 __fastcall caml_int64_to_int(__int64 a1);
-__int64 __fastcall caml_int64_compare(__int64 a1, __int64 a2);
-__int64 __fastcall nativeint_cmp(__int64 a1, __int64 a2);
-__int64 __fastcall nativeint_hash(__int64 a1);
-__int64 __fastcall caml_nativeint_to_int(__int64 a1);
-__int64 __fastcall caml_nativeint_compare(__int64 a1, __int64 a2);
-__int64 __fastcall int32_deserialize(_DWORD *a1);
-__int64 __fastcall int64_deserialize(_QWORD *a1);
-__int64 __fastcall nativeint_deserialize(__int64 *a1);
-_BYTE *__fastcall int32_serialize(__int64 a1, _QWORD *a2, _QWORD *a3);
-_BYTE *__fastcall nativeint_serialize(__int64 a1, _QWORD *a2, _QWORD *a3);
-char *__fastcall int64_serialize(__int64 a1, _QWORD *a2, _QWORD *a3);
-unsigned __int64 __fastcall parse_intnat(char *a1, unsigned int a2);
-unsigned __int64 __fastcall caml_int_of_string(char *a1);
-void *__fastcall parse_format(char *nptr, void *src, void *dest, __int64 a4, unsigned __int8 *a5);
-void *__fastcall caml_nativeint_format(char *a1, __int64 a2);
-void *__fastcall caml_int64_format(char *a1, __int64 a2);
-void *__fastcall caml_int32_format(char *a1, __int64 a2);
-void *__fastcall caml_format_int(char *a1, __int64 a2);
-__int64 __fastcall caml_nativeint_to_float(__int64 a1);
-__int64 __fastcall caml_int64_float_of_bits(__int64 a1);
-__int64 __fastcall caml_int64_to_float(__int64 a1);
-__int64 __fastcall caml_int32_float_of_bits(__int64 a1);
-__int64 __fastcall caml_int32_to_float(__int64 a1);
-_QWORD *__fastcall caml_copy_nativeint(__int64 a1);
-_QWORD *__fastcall caml_nativeint_of_string(char *a1);
-_QWORD *__fastcall caml_nativeint_of_int32(__int64 a1);
-_QWORD *__fastcall caml_nativeint_of_float(double *a1);
-_QWORD *__fastcall caml_nativeint_of_int(__int64 a1);
-_QWORD *__fastcall caml_nativeint_shift_right_unsigned(__int64 a1, unsigned __int64 a2);
-_QWORD *__fastcall caml_nativeint_shift_right(__int64 a1, unsigned __int64 a2);
-_QWORD *__fastcall caml_nativeint_shift_left(__int64 a1, unsigned __int64 a2);
-_QWORD *__fastcall caml_nativeint_xor(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_nativeint_or(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_nativeint_and(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_nativeint_mod(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_nativeint_div(_QWORD *a1, __int64 a2);
-_QWORD *__fastcall caml_nativeint_mul(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_nativeint_sub(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_nativeint_add(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_nativeint_neg(__int64 a1);
-_QWORD *__fastcall caml_int64_to_nativeint(__int64 a1);
-_QWORD *__fastcall caml_copy_int64(__int64 a1);
-_QWORD *__fastcall caml_int64_bits_of_float(__int64 *a1);
-_QWORD *__fastcall caml_int64_of_string(char *a1);
-_QWORD *__fastcall caml_int64_of_nativeint(__int64 a1);
-_QWORD *__fastcall caml_int64_of_int32(__int64 a1);
-_QWORD *__fastcall caml_int64_of_float(double *a1);
-_QWORD *__fastcall caml_int64_of_int(__int64 a1);
-_QWORD *__fastcall caml_int64_shift_right_unsigned(__int64 a1, unsigned __int64 a2);
-_QWORD *__fastcall caml_int64_shift_right(__int64 a1, unsigned __int64 a2);
-_QWORD *__fastcall caml_int64_shift_left(__int64 a1, unsigned __int64 a2);
-_QWORD *__fastcall caml_int64_xor(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int64_or(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int64_and(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int64_mod(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int64_div(_QWORD *a1, __int64 a2);
-_QWORD *__fastcall caml_int64_mul(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int64_sub(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int64_add(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int64_neg(__int64 a1);
-_QWORD *__fastcall caml_copy_int32(int a1);
-_QWORD *__fastcall caml_nativeint_to_int32(__int64 a1);
-_QWORD *__fastcall caml_int64_to_int32(__int64 a1);
-_QWORD *__fastcall caml_int32_bits_of_float(double *a1);
-_QWORD *__fastcall caml_int32_of_string(char *a1);
-_QWORD *__fastcall caml_int32_of_float(double *a1);
-_QWORD *__fastcall caml_int32_of_int(__int64 a1);
-_QWORD *__fastcall caml_int32_shift_right_unsigned(__int64 a1, unsigned __int64 a2);
-_QWORD *__fastcall caml_int32_shift_right(__int64 a1, unsigned __int64 a2);
-_QWORD *__fastcall caml_int32_shift_left(__int64 a1, unsigned __int64 a2);
-_QWORD *__fastcall caml_int32_xor(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int32_or(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int32_and(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int32_mod(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int32_div(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int32_mul(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int32_sub(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int32_add(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_int32_neg(__int64 a1);
-__int64 __fastcall caml_int_of_float(double *a1);
-__int64 __fastcall caml_eq_float(double *a1, double *a2);
-__int64 __fastcall caml_neq_float(double *a1, double *a2);
-unsigned __int64 __fastcall caml_le_float(double *a1, double *a2);
-__int64 __fastcall caml_lt_float(double *a1, double *a2);
-unsigned __int64 __fastcall caml_ge_float(double *a1, double *a2);
-__int64 __fastcall caml_gt_float(double *a1, double *a2);
-__int64 __fastcall caml_float_compare(double *a1, double *a2);
+unsigned __int64 __fastcall compare_val(__int64, __int64, int);
+unsigned __int64 __fastcall caml_greaterequal(__int64, __int64);
+__int64 __fastcall caml_greaterthan(__int64, __int64);
+__int64 __fastcall caml_lessequal(__int64, __int64);
+unsigned __int64 __fastcall caml_lessthan(__int64, __int64);
+unsigned __int64 __fastcall caml_notequal(__int64, __int64);
+__int64 __fastcall caml_equal(__int64, __int64);
+unsigned __int64 __fastcall caml_compare(__int64, __int64);
+__int64 __fastcall caml_int_compare(__int64, __int64);
+__int64 __fastcall int32_cmp(__int64, __int64);
+__int64 __fastcall int32_hash(__int64);
+__int64 __fastcall caml_int32_to_int(__int64);
+__int64 __fastcall caml_int32_compare(__int64, __int64);
+__int64 __fastcall int64_cmp(__int64, __int64);
+__int64 __fastcall int64_hash(__int64);
+__int64 __fastcall caml_int64_to_int(__int64);
+__int64 __fastcall caml_int64_compare(__int64, __int64);
+__int64 __fastcall nativeint_cmp(__int64, __int64);
+__int64 __fastcall nativeint_hash(__int64);
+__int64 __fastcall caml_nativeint_to_int(__int64);
+__int64 __fastcall caml_nativeint_compare(__int64, __int64);
+__int64 __fastcall int32_deserialize(_DWORD *);
+__int64 __fastcall int64_deserialize(_QWORD *);
+__int64 __fastcall nativeint_deserialize(__int64 *);
+_BYTE *__fastcall int32_serialize(__int64, _QWORD *, _QWORD *);
+_BYTE *__fastcall nativeint_serialize(__int64, _QWORD *, _QWORD *);
+char *__fastcall int64_serialize(__int64, _QWORD *, _QWORD *);
+unsigned __int64 __fastcall parse_intnat(char *, unsigned int);
+unsigned __int64 __fastcall caml_int_of_string(char *);
+void *__fastcall parse_format(char *nptr, void *src, void *dest, __int64, unsigned __int8 *);
+_QWORD *__fastcall caml_nativeint_format(char *a1, __int64 a2);
+_QWORD *__fastcall caml_int64_format(char *a1, __int64 a2);
+_QWORD *__fastcall caml_int32_format(char *a1, __int64 a2);
+_QWORD *__fastcall caml_format_int(char *a1, __int64 a2);
+__int64 __fastcall caml_nativeint_to_float(__int64);
+__int64 __fastcall caml_int64_float_of_bits(__int64);
+__int64 __fastcall caml_int64_to_float(__int64);
+__int64 __fastcall caml_int32_float_of_bits(__int64);
+__int64 __fastcall caml_int32_to_float(__int64);
+_QWORD *__fastcall caml_copy_nativeint(__int64);
+_QWORD *__fastcall caml_nativeint_of_string(char *);
+_QWORD *__fastcall caml_nativeint_of_int32(__int64);
+_QWORD *__fastcall caml_nativeint_of_float(double *);
+_QWORD *__fastcall caml_nativeint_of_int(__int64);
+_QWORD *__fastcall caml_nativeint_shift_right_unsigned(__int64, unsigned __int64);
+_QWORD *__fastcall caml_nativeint_shift_right(__int64, unsigned __int64);
+_QWORD *__fastcall caml_nativeint_shift_left(__int64, unsigned __int64);
+_QWORD *__fastcall caml_nativeint_xor(__int64, __int64);
+_QWORD *__fastcall caml_nativeint_or(__int64, __int64);
+_QWORD *__fastcall caml_nativeint_and(__int64, __int64);
+_QWORD *__fastcall caml_nativeint_mod(__int64, __int64);
+_QWORD *__fastcall caml_nativeint_div(__int64, __int64);
+_QWORD *__fastcall caml_nativeint_mul(__int64, __int64);
+_QWORD *__fastcall caml_nativeint_sub(__int64, __int64);
+_QWORD *__fastcall caml_nativeint_add(__int64, __int64);
+_QWORD *__fastcall caml_nativeint_neg(__int64);
+_QWORD *__fastcall caml_int64_to_nativeint(__int64);
+_QWORD *__fastcall caml_copy_int64(__int64);
+_QWORD *__fastcall caml_int64_bits_of_float(__int64 *);
+_QWORD *__fastcall caml_int64_of_string(char *);
+_QWORD *__fastcall caml_int64_of_nativeint(__int64);
+_QWORD *__fastcall caml_int64_of_int32(__int64);
+_QWORD *__fastcall caml_int64_of_float(double *);
+_QWORD *__fastcall caml_int64_of_int(__int64);
+_QWORD *__fastcall caml_int64_shift_right_unsigned(__int64, unsigned __int64);
+_QWORD *__fastcall caml_int64_shift_right(__int64, unsigned __int64);
+_QWORD *__fastcall caml_int64_shift_left(__int64, unsigned __int64);
+_QWORD *__fastcall caml_int64_xor(__int64, __int64);
+_QWORD *__fastcall caml_int64_or(__int64, __int64);
+_QWORD *__fastcall caml_int64_and(__int64, __int64);
+_QWORD *__fastcall caml_int64_mod(__int64, __int64);
+_QWORD *__fastcall caml_int64_div(__int64, __int64);
+_QWORD *__fastcall caml_int64_mul(__int64, __int64);
+_QWORD *__fastcall caml_int64_sub(__int64, __int64);
+_QWORD *__fastcall caml_int64_add(__int64, __int64);
+_QWORD *__fastcall caml_int64_neg(__int64);
+_QWORD *__fastcall caml_copy_int32(int);
+_QWORD *__fastcall caml_nativeint_to_int32(__int64);
+_QWORD *__fastcall caml_int64_to_int32(__int64);
+_QWORD *__fastcall caml_int32_bits_of_float(double *);
+_QWORD *__fastcall caml_int32_of_string(char *);
+_QWORD *__fastcall caml_int32_of_float(double *);
+_QWORD *__fastcall caml_int32_of_int(__int64);
+_QWORD *__fastcall caml_int32_shift_right_unsigned(__int64, unsigned __int64);
+_QWORD *__fastcall caml_int32_shift_right(__int64, unsigned __int64);
+_QWORD *__fastcall caml_int32_shift_left(__int64, unsigned __int64);
+_QWORD *__fastcall caml_int32_xor(__int64, __int64);
+_QWORD *__fastcall caml_int32_or(__int64, __int64);
+_QWORD *__fastcall caml_int32_and(__int64, __int64);
+_QWORD *__fastcall caml_int32_mod(__int64, __int64);
+_QWORD *__fastcall caml_int32_div(__int64, __int64);
+_QWORD *__fastcall caml_int32_mul(__int64, __int64);
+_QWORD *__fastcall caml_int32_sub(__int64, __int64);
+_QWORD *__fastcall caml_int32_add(__int64, __int64);
+_QWORD *__fastcall caml_int32_neg(__int64);
+__int64 __fastcall caml_int_of_float(double *);
+__int64 __fastcall caml_eq_float(double *, double *);
+__int64 __fastcall caml_neq_float(double *, double *);
+unsigned __int64 __fastcall caml_le_float(double *, double *);
+__int64 __fastcall caml_lt_float(double *, double *);
+unsigned __int64 __fastcall caml_ge_float(double *, double *);
+__int64 __fastcall caml_gt_float(double *, double *);
+__int64 __fastcall caml_float_compare(double *, double *);
 __int64 caml_init_ieee_floats(void); // weak
-__int64 __fastcall caml_classify_float(double *a1);
-void *__fastcall caml_format_float(char *nptr, __int64 a2, __int64 a3, __int64 a4, __int64 a5);
-__int64 __fastcall caml_copy_double(double a1);
-__int64 __fastcall caml_ceil_float(double *a1);
-__int64 __fastcall caml_atan2_float(double *a1, double *a2);
-__int64 __fastcall caml_atan_float(double *a1);
-__int64 __fastcall caml_acos_float(double *a1);
-__int64 __fastcall caml_asin_float(double *a1);
-__int64 __fastcall caml_tanh_float(double *a1);
-__int64 __fastcall caml_tan_float(double *a1);
-__int64 __fastcall caml_cosh_float(double *a1);
-__int64 __fastcall caml_cos_float(double *a1);
-__int64 __fastcall caml_sinh_float(double *a1);
-__int64 __fastcall caml_sin_float(double *a1);
-__int64 __fastcall caml_power_float(double *a1, double *a2);
-__int64 __fastcall caml_sqrt_float(double *a1);
-char *__fastcall caml_modf_float(double *a1);
-__int64 __fastcall caml_log10_float(double *a1);
-__int64 __fastcall caml_log_float(double *a1);
-__int64 __fastcall caml_ldexp_float(double *a1, __int64 a2);
-char *__fastcall caml_frexp_float(double *a1);
-__int64 __fastcall caml_fmod_float(double *a1, double *a2);
-__int64 __fastcall caml_floor_float(double *a1);
-__int64 __fastcall caml_exp_float(double *a1);
-__int64 __fastcall caml_div_float(double *a1, double *a2);
-__int64 __fastcall caml_mul_float(double *a1, double *a2);
-__int64 __fastcall caml_sub_float(double *a1, double *a2);
-__int64 __fastcall caml_add_float(double *a1, double *a2);
-__int64 __fastcall caml_abs_float(double *a1);
-__int64 __fastcall caml_neg_float(double *a1);
-__int64 __fastcall caml_float_of_int(__int64 a1);
-__int64 __fastcall caml_float_of_string(__int64 a1);
-__int64 __fastcall caml_float_of_substring(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall caml_string_length(__int64 a1);
-__int64 __fastcall caml_ml_string_length(__int64 a1);
-__int64 __fastcall caml_string_equal(_QWORD *a1, _QWORD *a2);
-__int64 __fastcall caml_string_notequal(_QWORD *a1, _QWORD *a2);
-__int64 __fastcall caml_bitvect_test(__int64 a1, unsigned __int64 a2);
-unsigned __int64 __fastcall caml_is_printable(__int64 a1);
-__int64 __fastcall caml_fill_string(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
-__int64 __fastcall caml_blit_string(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5);
-__int64 __fastcall caml_string_compare(_QWORD *a1, _QWORD *a2);
-__int64 __fastcall caml_string_greaterequal(_QWORD *a1, _QWORD *a2);
-__int64 __fastcall caml_string_greaterthan(_QWORD *a1, _QWORD *a2);
-__int64 __fastcall caml_string_lessequal(_QWORD *a1, _QWORD *a2);
-__int64 __fastcall caml_string_lessthan(_QWORD *a1, _QWORD *a2);
-__int64 __fastcall caml_string_set(__int64 a1, __int64 a2, __int64 a3);
-__int64 __fastcall caml_string_get(__int64 a1, __int64 a2);
-__int64 __fastcall caml_create_string(__int64 a1);
-__int64 __fastcall caml_array_unsafe_set_float(__int64 a1, __int64 a2, _QWORD *a3);
-unsigned __int64 *__fastcall caml_make_array(unsigned __int64 *a1);
-_QWORD *__fastcall caml_array_unsafe_get_float(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_array_unsafe_get(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_make_vect(__int64 a1, unsigned __int64 a2);
-__int64 __fastcall caml_array_unsafe_set_addr(__int64 a1, __int64 a2, unsigned __int64 a3);
-__int64 __fastcall caml_array_unsafe_set(__int64 a1, __int64 a2, _QWORD *a3);
-__int64 __fastcall caml_array_set_float(__int64 a1, __int64 a2, _QWORD *a3);
-__int64 __fastcall caml_array_set_addr(__int64 a1, __int64 a2, unsigned __int64 a3);
-__int64 __fastcall caml_array_set(__int64 a1, __int64 a2, unsigned __int64 a3);
-_QWORD *__fastcall caml_array_get_float(__int64 a1, __int64 a2);
-__int64 __fastcall caml_array_get_addr(__int64 a1, __int64 a2);
-__int64 __fastcall caml_array_get(__int64 a1, __int64 a2);
+__int64 __fastcall caml_classify_float(double *);
+_QWORD *__fastcall caml_format_float(char *nptr, __int64 a2, __int64 a3, __int64 a4, __int64 a5);
+__int64 __fastcall caml_copy_double(double);
+__int64 __fastcall caml_ceil_float(double *);
+__int64 __fastcall caml_atan2_float(double *, double *);
+__int64 __fastcall caml_atan_float(double *);
+__int64 __fastcall caml_acos_float(double *);
+__int64 __fastcall caml_asin_float(double *);
+__int64 __fastcall caml_tanh_float(double *);
+__int64 __fastcall caml_tan_float(double *);
+__int64 __fastcall caml_cosh_float(double *);
+__int64 __fastcall caml_cos_float(double *);
+__int64 __fastcall caml_sinh_float(double *);
+__int64 __fastcall caml_sin_float(double *);
+__int64 __fastcall caml_power_float(double *, double *);
+__int64 __fastcall caml_sqrt_float(double *);
+char *__fastcall caml_modf_float(double *);
+__int64 __fastcall caml_log10_float(double *);
+__int64 __fastcall caml_log_float(double *);
+__int64 __fastcall caml_ldexp_float(double *, __int64);
+char *__fastcall caml_frexp_float(double *);
+__int64 __fastcall caml_fmod_float(double *, double *);
+__int64 __fastcall caml_floor_float(double *);
+__int64 __fastcall caml_exp_float(double *);
+__int64 __fastcall caml_div_float(double *, double *);
+__int64 __fastcall caml_mul_float(double *, double *);
+__int64 __fastcall caml_sub_float(double *, double *);
+__int64 __fastcall caml_add_float(double *, double *);
+__int64 __fastcall caml_abs_float(double *);
+__int64 __fastcall caml_neg_float(double *);
+__int64 __fastcall caml_float_of_int(__int64);
+__int64 __fastcall caml_float_of_string(__int64);
+__int64 __fastcall caml_float_of_substring(__int64, __int64, __int64);
+__int64 __fastcall caml_string_length(__int64);
+__int64 __fastcall caml_ml_string_length(__int64);
+__int64 __fastcall caml_string_equal(_QWORD *, _QWORD *);
+__int64 __fastcall caml_string_notequal(_QWORD *, _QWORD *);
+__int64 __fastcall caml_bitvect_test(__int64, unsigned __int64);
+unsigned __int64 __fastcall caml_is_printable(__int64);
+__int64 __fastcall caml_fill_string(__int64, __int64, __int64, __int64);
+__int64 __fastcall caml_blit_string(__int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall caml_string_compare(_QWORD *, _QWORD *);
+__int64 __fastcall caml_string_greaterequal(_QWORD *, _QWORD *);
+__int64 __fastcall caml_string_greaterthan(_QWORD *, _QWORD *);
+__int64 __fastcall caml_string_lessequal(_QWORD *, _QWORD *);
+__int64 __fastcall caml_string_lessthan(_QWORD *, _QWORD *);
+__int64 __fastcall caml_string_set(__int64, __int64, __int64);
+__int64 __fastcall caml_string_get(__int64, __int64);
+_QWORD *__fastcall caml_create_string(__int64 a1);
+__int64 __fastcall caml_array_unsafe_set_float(__int64, __int64, _QWORD *);
+unsigned __int64 *__fastcall caml_make_array(unsigned __int64 *);
+_QWORD *__fastcall caml_array_unsafe_get_float(__int64, __int64);
+_QWORD *__fastcall caml_array_unsafe_get(__int64, __int64);
+_QWORD *__fastcall caml_make_vect(__int64, unsigned __int64);
+__int64 __fastcall caml_array_unsafe_set_addr(__int64, __int64, unsigned __int64);
+__int64 __fastcall caml_array_unsafe_set(__int64, __int64, _QWORD *);
+__int64 __fastcall caml_array_set_float(__int64, __int64, _QWORD *);
+__int64 __fastcall caml_array_set_addr(__int64, __int64, unsigned __int64);
+__int64 __fastcall caml_array_set(__int64 a1, __int64 a2, _QWORD *a3);
+_QWORD *__fastcall caml_array_get_float(__int64, __int64);
+__int64 __fastcall caml_array_get_addr(__int64, __int64);
+_QWORD *__fastcall caml_array_get(__int64, __int64);
 __int64 caml_channel_binary_mode();
-__int64 __fastcall caml_pos_out(__int64 a1);
-__int64 __fastcall caml_pos_in(_QWORD *a1);
-__int64 __fastcall compare_channel(__int64 a1, __int64 a2);
+__int64 __fastcall caml_pos_out(__int64);
+__int64 __fastcall caml_pos_in(_QWORD *);
+__int64 __fastcall compare_channel(__int64, __int64);
 __int64 __fastcall caml_ml_set_binary_mode(); // weak
-_QWORD *__fastcall caml_ml_pos_in_64(__int64 a1);
-_QWORD *__fastcall caml_ml_pos_out_64(__int64 a1);
-__int64 __fastcall caml_ml_pos_in(__int64 a1);
-__int64 __fastcall caml_ml_pos_out(__int64 a1);
-__int64 __fastcall caml_channel_descriptor(__int64 a1);
-__int64 __fastcall caml_ml_close_channel(__int64 a1);
-_QWORD *__fastcall caml_alloc_channel(__int64 a1);
+_QWORD *__fastcall caml_ml_pos_in_64(__int64);
+_QWORD *__fastcall caml_ml_pos_out_64(__int64);
+__int64 __fastcall caml_ml_pos_in(__int64);
+__int64 __fastcall caml_ml_pos_out(__int64);
+__int64 __fastcall caml_channel_descriptor(__int64);
+__int64 __fastcall caml_ml_close_channel(__int64);
+_QWORD *__fastcall caml_alloc_channel(__int64);
 __int64 __fastcall caml_ml_out_channels_list(); // weak
-void __fastcall caml_finalize_channel(__int64 a1);
+void __fastcall caml_finalize_channel(__int64);
 void __fastcall caml_close_channel(void *ptr);
-__off64_t __fastcall caml_seek_in(__int64 a1, __off64_t a2);
-__int64 __fastcall caml_ml_seek_in_64(__int64 a1, __int64 a2);
-__int64 __fastcall caml_ml_seek_in(__int64 a1, __int64 a2);
-__off64_t __fastcall caml_channel_size(__int64 a1);
-_QWORD *__fastcall caml_ml_channel_size_64(__int64 a1);
-__int64 __fastcall caml_ml_channel_size(__int64 a1);
+__off64_t __fastcall caml_seek_in(__int64, __off64_t);
+__int64 __fastcall caml_ml_seek_in_64(__int64, __int64);
+__int64 __fastcall caml_ml_seek_in(__int64, __int64);
+__off64_t __fastcall caml_channel_size(__int64);
+_QWORD *__fastcall caml_ml_channel_size_64(__int64);
+__off64_t __fastcall caml_ml_channel_size(__int64 a1);
 __int64 __fastcall caml_do_read(int fd, void *buf, size_t nbytes); // idb
-size_t __fastcall caml_ml_input(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
-signed __int64 __fastcall caml_input_scan_line(__int64 a1);
-__int64 __fastcall caml_ml_input_scan_line(__int64 a1);
-__int64 __fastcall caml_getblock(__int64 a1, void *a2, __int64 a3);
-_BOOL8 __fastcall caml_really_getblock(__int64 a1, char *a2, __int64 a3);
-__int64 __fastcall caml_refill(__int64 a1);
-__int64 __fastcall caml_ml_input_char(__int64 a1);
-__int64 __fastcall caml_getword(__int64 a1);
-__int64 __fastcall caml_ml_input_int(__int64 a1);
-__int64 __fastcall do_write(int fd, void *buf, int a3);
-__int64 __fastcall caml_putblock(__int64 a1, const void *a2, __int64 a3);
-__int64 __fastcall caml_ml_output(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
-__int64 __fastcall caml_ml_output_partial(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
-void __fastcall caml_really_putblock(__int64 a1, char *a2, __int64 a3);
-_BOOL8 __fastcall caml_flush_partial(__int64 a1);
-__int64 __fastcall caml_ml_output_char(__int64 a1, __int64 a2);
-unsigned __int64 __fastcall caml_ml_flush_partial(__int64 a1);
-_BYTE *__fastcall caml_putword(__int64 a1, int a2);
-__int64 __fastcall caml_ml_output_int(__int64 a1, __int64 a2);
-_BOOL8 __fastcall caml_flush(__int64 a1);
-__int64 __fastcall caml_ml_flush(__int64 a1);
-__off64_t __fastcall caml_seek_out(__int64 a1, __off64_t a2);
-__int64 __fastcall caml_ml_seek_out_64(__int64 a1, __int64 a2);
-__int64 __fastcall caml_ml_seek_out(__int64 a1, __int64 a2);
+__int64 __fastcall caml_ml_input(__int64 a1, __int64 a2, __int64 a3, __int64 a4);
+signed __int64 __fastcall caml_input_scan_line(__int64);
+__int64 __fastcall caml_ml_input_scan_line(__int64);
+__int64 __fastcall caml_getblock(__int64, void *, __int64);
+_BOOL8 __fastcall caml_really_getblock(__int64, char *, __int64);
+__int64 __fastcall caml_refill(__int64);
+__int64 __fastcall caml_ml_input_char(__int64);
+__int64 __fastcall caml_getword(__int64);
+__int64 __fastcall caml_ml_input_int(__int64);
+__int64 __fastcall do_write(int fd, void *buf, int);
+__int64 __fastcall caml_putblock(__int64, const void *, __int64);
+__int64 __fastcall caml_ml_output(__int64, __int64, __int64, __int64);
+__int64 __fastcall caml_ml_output_partial(__int64, __int64, __int64, __int64);
+void __fastcall caml_really_putblock(__int64, char *, __int64);
+_BOOL8 __fastcall caml_flush_partial(__int64);
+__int64 __fastcall caml_ml_output_char(__int64, __int64);
+unsigned __int64 __fastcall caml_ml_flush_partial(__int64);
+_BYTE *__fastcall caml_putword(__int64, int);
+__int64 __fastcall caml_ml_output_int(__int64, __int64);
+_BOOL8 __fastcall caml_flush(__int64);
+__int64 __fastcall caml_ml_flush(__int64);
+__off64_t __fastcall caml_seek_out(__int64, __off64_t);
+__int64 __fastcall caml_ml_seek_out_64(__int64, __int64);
+__int64 __fastcall caml_ml_seek_out(__int64, __int64);
 _QWORD *__fastcall caml_open_descriptor_in(int fd);
-_QWORD *__fastcall caml_ml_open_descriptor_in(__int64 a1);
-_QWORD *__fastcall caml_open_descriptor_out(int a1);
-_QWORD *__fastcall caml_ml_open_descriptor_out(__int64 a1);
+_QWORD *__fastcall caml_ml_open_descriptor_in(__int64);
+_QWORD *__fastcall caml_open_descriptor_out(int);
+_QWORD *__fastcall caml_ml_open_descriptor_out(__int64);
 void extern_replay_trail();
 void free_extern_output();
 void __noreturn extern_out_of_memory();
-__int64 __fastcall grow_extern_output(__int64 a1);
-char *__fastcall caml_serialize_block_8(char *a1, __int64 a2);
-char *__fastcall caml_serialize_int_8(__int64 a1);
-char *__fastcall caml_serialize_block_4(__int64 a1, __int64 a2);
-char *__fastcall caml_serialize_float_4(float a1);
-char *__fastcall caml_serialize_block_2(__int64 a1, __int64 a2);
-_BYTE *__fastcall caml_serialize_int_4(int a1);
-_BYTE *__fastcall caml_serialize_int_2(__int16 a1);
-_BYTE *__fastcall caml_serialize_int_1(char a1);
-_BYTE *__fastcall writecode8(char a1, char a2);
-_BYTE *__fastcall writecode32(char a1, int a2);
-_BYTE *__fastcall write32(int a1);
-__int64 __fastcall extern_record_location(unsigned __int64 a1);
+__int64 __fastcall grow_extern_output(__int64);
+char *__fastcall caml_serialize_block_8(char *, __int64);
+char *__fastcall caml_serialize_int_8(__int64);
+char *__fastcall caml_serialize_block_4(__int64, __int64);
+char *__fastcall caml_serialize_float_4(float);
+char *__fastcall caml_serialize_block_2(__int64, __int64);
+_BYTE *__fastcall caml_serialize_int_4(int);
+_BYTE *__fastcall caml_serialize_int_2(__int16);
+_BYTE *__fastcall caml_serialize_int_1(char);
+_BYTE *__fastcall writecode8(char, char);
+_BYTE *__fastcall writecode32(char, int);
+_BYTE *__fastcall write32(int);
+__int64 __fastcall extern_record_location(unsigned __int64);
 __int64 init_extern_output();
-void *__fastcall caml_serialize_block_float_8(void *src, __int64 a2);
-void *__fastcall caml_serialize_float_8(double a1);
+void *__fastcall caml_serialize_block_float_8(void *src, __int64);
+void *__fastcall caml_serialize_float_8(double);
 void *__fastcall caml_serialize_block_1(void *src, size_t n);
 void *__fastcall writeblock(void *src, size_t n);
-void __fastcall __noreturn extern_invalid_argument(void *a1);
-_BYTE *__fastcall extern_rec(__int64 a1);
-__int64 __fastcall extern_value(__int64 a1, __int64 *a2);
-__int64 __fastcall caml_output_value_to_block(__int64 a1, __int64 *a2, void *a3, __int64 a4);
-void __fastcall caml_output_value_to_malloc(__int64 a1, __int64 *a2, char **a3, __int64 *a4);
-__int64 __fastcall caml_output_value_to_buffer(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 *a5);
-__int64 __fastcall caml_output_value_to_string(__int64 a1, __int64 *a2);
-void __fastcall caml_output_val(__int64 a1, __int64 a2, __int64 *a3);
-__int64 __fastcall caml_output_value(__int64 a1, __int64 a2, __int64 *a3);
+void __fastcall __noreturn extern_invalid_argument(void *);
+_BYTE *__fastcall extern_rec(__int64);
+__int64 __fastcall extern_value(__int64, __int64 *);
+__int64 __fastcall caml_output_value_to_block(__int64, __int64 *, void *, __int64);
+void __fastcall caml_output_value_to_malloc(__int64, __int64 *, char **, __int64 *);
+__int64 __fastcall caml_output_value_to_buffer(__int64, __int64, __int64, __int64, __int64 *);
+_QWORD *__fastcall caml_output_value_to_string(__int64 a1, __int64 *a2);
+void __fastcall caml_output_val(__int64, __int64, __int64 *);
+__int64 __fastcall caml_output_value(__int64, __int64, __int64 *);
 __int64 caml_deserialize_uint_1();
 __int64 __fastcall caml_deserialize_sint_1(); // weak
 __int64 __fastcall caml_deserialize_uint_2(); // weak
 __int64 __fastcall caml_deserialize_sint_2(); // weak
 unsigned __int64 caml_deserialize_uint_4();
 __int64 caml_deserialize_sint_4();
-void __fastcall caml_deserialize_block_2(__int64 a1, __int64 a2);
-void __fastcall caml_deserialize_block_4(__int64 a1, __int64 a2);
+void __fastcall caml_deserialize_block_2(__int64, __int64);
+void __fastcall caml_deserialize_block_4(__int64, __int64);
 float caml_deserialize_float_4();
-void __fastcall caml_deserialize_block_8(_BYTE *a1, __int64 a2);
+void __fastcall caml_deserialize_block_8(_BYTE *, __int64);
 __int64 caml_deserialize_sint_8();
 __int64 __fastcall caml_deserialize_uint_8(); // weak
-unsigned __int64 __fastcall caml_marshal_data_size(__int64 a1, __int64 a2);
+unsigned __int64 __fastcall caml_marshal_data_size(__int64, __int64);
 void intern_cleanup();
-void __fastcall __noreturn caml_deserialize_error(void *a1);
-void *__fastcall caml_deserialize_block_float_8(void *a1, __int64 a2);
+void __fastcall __noreturn caml_deserialize_error(void *);
+void *__fastcall caml_deserialize_block_float_8(void *, __int64);
 double caml_deserialize_float_8();
-void *__fastcall caml_deserialize_block_1(void *a1, size_t a2);
+void *__fastcall caml_deserialize_block_1(void *, size_t);
 _QWORD *caml_code_checksum();
-void __fastcall intern_alloc(__int64 a1, __int64 a2);
-__int64 __fastcall intern_add_to_heap(__int64 a1);
-unsigned __int64 __fastcall intern_rec(const char ****a1);
+void __fastcall intern_alloc(__int64, __int64);
+__int64 __fastcall intern_add_to_heap(__int64);
+unsigned __int64 __fastcall intern_rec(const char ****);
 const char ***input_val_from_block();
-const char ***__fastcall caml_input_value_from_block(unsigned __int8 *a1, unsigned __int64 a2);
-const char ***__fastcall caml_input_value_from_malloc(char *a1, __int64 a2);
-const char ***__fastcall caml_input_val_from_string(__int64 a1, __int64 a2);
-const char ***__fastcall caml_input_value_from_string(__int64 a1, __int64 a2);
-const char ***__fastcall caml_input_val(__int64 a1);
-const char ***__fastcall caml_input_value(__int64 a1);
-__int64 __fastcall caml_hash_variant(_BYTE *a1);
-__int64 __fastcall hash_aux(__int64 a1);
-__int64 __fastcall caml_hash_univ_param(__int64 a1, __int64 a2, __int64 a3);
-void __fastcall caml_sys_init(void *a1, __int64 a2);
+const char ***__fastcall caml_input_value_from_block(unsigned __int8 *, unsigned __int64);
+const char ***__fastcall caml_input_value_from_malloc(char *, __int64);
+const char ***__fastcall caml_input_val_from_string(__int64, __int64);
+const char ***__fastcall caml_input_value_from_string(__int64, __int64);
+const char ***__fastcall caml_input_val(__int64);
+const char ***__fastcall caml_input_value(__int64);
+__int64 __fastcall caml_hash_variant(_BYTE *);
+__int64 __fastcall hash_aux(__int64);
+__int64 __fastcall caml_hash_univ_param(__int64, __int64, __int64);
+void __fastcall caml_sys_init(void *, __int64);
 _QWORD *caml_sys_get_config();
 _QWORD *caml_sys_get_argv();
 __int64 __fastcall caml_sys_random_seed(); // weak
 __int64 __fastcall caml_sys_time(); // weak
-void *__fastcall caml_sys_getenv(const char *a1);
+_QWORD *__fastcall caml_sys_getenv(const char *a1);
 __int64 __fastcall caml_sys_file_exists(char *filename); // idb
-__int64 __fastcall caml_sys_close(__int64 a1);
-void __fastcall __noreturn caml_sys_exit(__int64 a1);
-void __fastcall __noreturn caml_sys_error(void *a1);
-char *__fastcall caml_sys_read_directory(void *a1);
-__int64 __fastcall caml_sys_system_command(void *a1);
-void *caml_sys_getcwd();
-__int64 __fastcall caml_sys_chdir(void *a1);
-__int64 __fastcall caml_sys_rename(const char *a1, const char *a2);
-__int64 __fastcall caml_sys_remove(void *a1);
+__int64 __fastcall caml_sys_close(__int64);
+void __fastcall __noreturn caml_sys_exit(__int64);
+void __fastcall __noreturn caml_sys_error(void *);
+char *__fastcall caml_sys_read_directory(void *);
+__int64 __fastcall caml_sys_system_command(void *);
+_QWORD *caml_sys_getcwd();
+__int64 __fastcall caml_sys_chdir(void *);
+__int64 __fastcall caml_sys_rename(const char *, const char *);
+__int64 __fastcall caml_sys_remove(void *);
 __int64 __fastcall caml_sys_is_directory(char *filename); // idb
-__int64 __fastcall caml_sys_open(char *a1, __int64 *a2, __int64 a3);
-void __fastcall __noreturn caml_sys_io_error(void *a1);
-unsigned __int64 __fastcall caml_set_parser_trace(__int64 a1);
-__int64 __fastcall caml_parse_engine(_QWORD *a1, _QWORD *a2, __int64 a3, signed __int64 a4, __int64 a5, __int64 a6);
-int __fastcall caml_init_gc(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5);
-int __fastcall test_and_compact(__m128d a1);
+__int64 __fastcall caml_sys_open(char *, __int64 *, __int64);
+void __fastcall __noreturn caml_sys_io_error(void *);
+unsigned __int64 __fastcall caml_set_parser_trace(__int64);
+__int64 __fastcall caml_parse_engine(_QWORD *, _QWORD *, __int64, signed __int64, __int64, __int64);
+int __fastcall caml_init_gc(__int64, __int64, __int64, __int64, __int64);
+int __fastcall test_and_compact(__m128d);
 __int64 __fastcall caml_gc_compaction(); // weak
-__int64 __fastcall caml_gc_full_major(__m128d a1);
-__int64 __fastcall caml_gc_major(__m128d a1);
-__int64 __fastcall caml_gc_major_slice(__int64 a1);
+__int64 __fastcall caml_gc_full_major(__m128d);
+__int64 __fastcall caml_gc_major(__m128d);
+__int64 __fastcall caml_gc_major_slice(__int64);
 __int64 __fastcall caml_gc_minor(); // weak
-__int64 __fastcall caml_gc_set(__int64 *a1);
+__int64 __fastcall caml_gc_set(__int64 *);
 unsigned __int64 *caml_gc_get();
 unsigned __int64 *caml_gc_counters();
 unsigned __int64 *caml_gc_quick_stat();
 unsigned __int64 *caml_gc_stat();
-void __fastcall Z8MD5_InitP7MD5_CTX(_DWORD *a1);
-void __fastcall MD5_Transform(cmsUInt32Number *buf, cmsUInt32Number *in);
-void *__fastcall caml_MD5Update(__int64 a1, char *a2, size_t a3);
-__int64 __fastcall caml_MD5Final(_QWORD *a1, __int64 a2);
-_QWORD *__fastcall caml_md5_chan(__int64 a1, __int64 a2);
-_QWORD *__fastcall caml_md5_string(__int64 a1, __int64 a2, __int64 a3);
-size_t __fastcall add_string(char **a1, const char *a2);
-void *__fastcall caml_format_exception(__int64 a1);
-void __fastcall __noreturn caml_fatal_uncaught_exception(__int64 a1);
+void __fastcall caml_MD5Init(_DWORD *);
+__int64 __fastcall caml_MD5Transform(_DWORD *, int *);
+void *__fastcall caml_MD5Update(__int64, char *, size_t);
+__int64 __fastcall caml_MD5Final(_QWORD *, __int64);
+_QWORD *__fastcall caml_md5_chan(__int64, __int64);
+_QWORD *__fastcall caml_md5_string(__int64, __int64, __int64);
+size_t __fastcall add_string(char **, const char *);
+void *__fastcall caml_format_exception(__int64);
+void __fastcall __noreturn caml_fatal_uncaught_exception(__int64);
 __int64 __fastcall caml_named_value(char *s1); // idb
-__int64 __fastcall caml_register_named_value(char *src, __int64 a2);
+__int64 __fastcall caml_register_named_value(char *src, __int64);
 void caml_callback3();
 void caml_callback2();
 void caml_callback();
-void __fastcall caml_callbackN_exn(__int64 a1, int a2, __int64 a3);
-void __fastcall caml_callbackN(__int64 a1, int a2, __int64 a3);
-__int64 __fastcall caml_weak_check(__int64 a1, __int64 a2);
-void __fastcall do_set(__int64 a1, __int64 a2, unsigned __int64 a3);
-__int64 __fastcall caml_weak_blit(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5);
-__int64 __fastcall caml_weak_set(__int64 a1, __int64 a2, unsigned __int64 *a3);
-__int64 __fastcall caml_weak_get(__int64 a1, __int64 a2);
-__int64 __fastcall caml_weak_get_copy(__int64 a1, __int64 a2);
-__int64 *__fastcall caml_weak_create(__int64 a1);
-void __fastcall invert_pointer_at(__int64 a1);
-void __fastcall invert_root(__int64 a1, __int64 a2);
+void __fastcall caml_callbackN_exn(__int64, int, __int64);
+void __fastcall caml_callbackN(__int64, int, __int64);
+__int64 __fastcall caml_weak_check(__int64, __int64);
+void __fastcall do_set(__int64, __int64, unsigned __int64);
+__int64 __fastcall caml_weak_blit(__int64, __int64, __int64, __int64, __int64);
+__int64 __fastcall caml_weak_set(__int64, __int64, unsigned __int64 *);
+__int64 __fastcall caml_weak_get(__int64, __int64);
+__int64 __fastcall caml_weak_get_copy(__int64, __int64);
+__int64 *__fastcall caml_weak_create(__int64);
+void __fastcall invert_pointer_at(__int64);
+void __fastcall invert_root(__int64, __int64);
 int caml_compact_heap();
-int __fastcall caml_compact_heap_maybe(__m128d a1, double a2, __m128 a3);
-unsigned __int64 __fastcall caml_final_do_strong_roots(__int64 (__fastcall *a1)(void *, void **));
-__int64 __fastcall caml_final_do_weak_roots(__int64 (__fastcall *a1)(_QWORD, __int64));
-__int64 __fastcall caml_final_do_young_roots(void (__fastcall *a1)(_QWORD, __int64));
+int __fastcall caml_compact_heap_maybe(__m128d, double, __m128);
+unsigned __int64 __fastcall caml_final_do_strong_roots(__int64 (__fastcall *)(void *, void **));
+__int64 __fastcall caml_final_do_weak_roots(__int64 (__fastcall *)(_QWORD, __int64));
+__int64 __fastcall caml_final_do_young_roots(void (__fastcall *)(_QWORD, __int64));
 __int64 caml_final_empty_young();
 __int64 __fastcall caml_final_release(); // weak
-__int64 __fastcall caml_final_register(__int64 a1, unsigned __int64 a2);
+__int64 __fastcall caml_final_register(__int64, unsigned __int64);
 void caml_final_do_calls();
 void caml_final_update();
-_QWORD *__fastcall caml_final_custom_operations(__int64 a1);
-_QWORD *__fastcall caml_register_custom_operations(__int64 a1);
+_QWORD *__fastcall caml_final_custom_operations(__int64);
+_QWORD *__fastcall caml_register_custom_operations(__int64);
 _QWORD *caml_init_custom_operations();
 const char **__fastcall caml_find_custom_operations(char *s2);
-_QWORD *__fastcall caml_alloc_custom(__int64 a1, __int64 a2, unsigned __int64 a3, unsigned __int64 a4);
-int __fastcall caml_executable_name(char *filename, int a2);
-__int64 __fastcall caml_read_directory(const char *a1, void **a2);
-char *__fastcall caml_decompose_path(void **a1, const char *a2);
+_QWORD *__fastcall caml_alloc_custom(__int64, __int64, unsigned __int64, unsigned __int64);
+int __fastcall caml_executable_name(char *filename, int);
+__int64 __fastcall caml_read_directory(const char *, void **);
+char *__fastcall caml_decompose_path(void **, const char *);
 void *caml_dlsym(void *handle, const char *name);
 void *__fastcall caml_globalsym(char *name);
-void *__fastcall caml_dlopen(const char *a1, __int64 a2, int a3);
-char *__fastcall caml_search_in_path(__int64 a1, const char *a2);
-char *__fastcall caml_search_dll_in_path(__int64 a1, const char *a2);
-char *__fastcall caml_search_exe_in_path(const char *a1);
+void *__fastcall caml_dlopen(const char *, __int64, int);
+char *__fastcall caml_search_in_path(__int64, const char *);
+char *__fastcall caml_search_dll_in_path(__int64, const char *);
+char *__fastcall caml_search_exe_in_path(const char *);
 unsigned __int64 caml_backtrace_status();
 _QWORD *caml_get_exception_backtrace();
 void caml_print_exception_backtrace();
-__int64 __fastcall caml_stash_backtrace(__int64 a1, unsigned __int64 a2, unsigned __int64 a3, unsigned __int64 a4);
-__int64 __fastcall caml_record_backtrace(__int64 a1);
-void __fastcall caml_call_gc(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, char a7);
-void __fastcall sub_42D05B(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
-void __fastcall caml_alloc1(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, char a7);
-void __fastcall caml_alloc2(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, char a7);
-void __fastcall caml_alloc3(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, char a7);
-__int64 __fastcall caml_allocN(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, char a7);
-void __fastcall caml_c_call(const char *a1, const char *a2);
-__int64 __fastcall caml_start_program(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6);
+unsigned __int64 __fastcall caml_stash_backtrace(__int64 a1, unsigned __int64 a2, unsigned __int64 a3, unsigned __int64 a4);
+__int64 __fastcall caml_record_backtrace(__int64);
+void __fastcall caml_call_gc(__int64, __int64, __int64, __int64, __int64, __int64, char);
+void __fastcall sub_42D05B(__int64, __int64, __int64, __int64, __int64, __int64);
+void __fastcall caml_alloc1(__int64, __int64, __int64, __int64, __int64, __int64, char);
+void __fastcall caml_alloc2(__int64, __int64, __int64, __int64, __int64, __int64, char);
+void __fastcall caml_alloc3(__int64, __int64, __int64, __int64, __int64, __int64, char);
+__int64 __fastcall caml_allocN(__int64, __int64, __int64, __int64, __int64, __int64, char);
+void __fastcall caml_c_call(const char *, const char *);
+__int64 __fastcall caml_start_program(__int64, const char *, __int64, __int64, __int64, __int64);
 void sub_42D311();
 __int64 __fastcall caml_raise_exn();
-__int64 __fastcall caml_raise_exception(__int64 a1);
+__int64 __fastcall caml_raise_exception(__int64);
 void caml_callback_exn();
 void caml_callback2_exn();
 void caml_callback3_exn();
-void __fastcall caml_ml_array_bound_error(const char *a1, const char *a2);
-void _libc_csu_fini(void); // idb
-void _libc_csu_init(void); // idb
-void (*_do_global_ctors_aux())(void);
-void term_proc();
-// __int64 _gmon_start__(void); weak
+void __fastcall caml_ml_array_bound_error(const char *, const char *);
 
 //-------------------------------------------------------------------------
 // Data declarations
 
 _UNKNOWN unk_42D6D8; // weak
 _UNKNOWN unk_42D6DF; // weak
-__itimer_which_t itimers[3] = { ITIMER_REAL, ITIMER_VIRTUAL, ITIMER_PROF }; // idb
-_DWORD seek_command_table[3] = { 0, 1, 2 }; // idb
+__itimer_which_t itimers[3] = { ITIMER_REAL, ITIMER_VIRTUAL, ITIMER_PROF }; // weak
+_DWORD seek_command_table[3] = { 0, 1, 2 }; // weak
 _UNKNOWN unk_42D834; // weak
-_DWORD shutdown_command_table[3] = { 0, 1, 2 }; // idb
-_DWORD sigprocmask_cmd[3] = { 2, 0, 1 }; // idb
-_DWORD action_flag_table[4] = { 0, 1, 2, 3 }; // idb
-_DWORD queue_flag_table[3] = { 0, 1, 2 }; // idb
-_DWORD when_flag_table[9] = { 0, 1, 2, 0, 0, 0, 0, 0, 0 }; // idb
+_DWORD shutdown_command_table[3] = { 0, 1, 2 }; // weak
+_DWORD sigprocmask_cmd[3] = { 2, 0, 1 }; // weak
+_DWORD action_flag_table[4] = { 0, 1, 2, 3 }; // weak
+_DWORD queue_flag_table[3] = { 0, 1, 2 }; // weak
+_DWORD when_flag_table[9] = { 0, 1, 2, 0, 0, 0, 0, 0, 0 }; // weak
 _UNKNOWN speedtable; // weak
 _UNKNOWN unk_42DA68; // weak
 _UNKNOWN unk_42DA6C; // weak
 int posix_signals[] = { 6 }; // weak
 _UNKNOWN unk_42DD44; // weak
-int CSWTCH_33[3] = { 0, 2, 1 }; // idb
-const char aS[] = "%s"; // idb
-_UNKNOWN unk_42DFA8; // weak
-__int64 CSWTCH_118[4] = { 9LL, 7LL, 5LL, 3LL }; // idb
+int CSWTCH_33[3] = { 0, 2, 1 }; // weak
+__int64 CSWTCH_118[4] = { 9LL, 7LL, 5LL, 3LL }; // weak
 void *__ptr32 off_42E637 = &unk_646C25; // weak
-__int64 _CTOR_LIST__ = -1LL; // weak
-__int64 _DTOR_LIST__[] = { -1LL }; // weak
-__int64 _DTOR_END__ = 0LL; // weak
 void *sockopt_table = &sockopt_bool; // weak
 char *setsockopt_fun_name[5] =
 {
@@ -1511,7 +1495,7 @@ _QWORD camlUnix[168] =
   0LL,
   0LL,
   3319LL
-}; // idb
+}; // weak
 __int64 (__fastcall *camlUnix__1)() = &caml_curry2; // weak
 __int64 (__fastcall *camlUnix__2)() = &camlUnix__accept_non_intr_1050; // weak
 __int64 (__fastcall *camlUnix__3)() = &camlUnix__shutdown_connection_1048; // weak
@@ -1713,8 +1697,8 @@ char camlUnix__195[16] =
   '\0',
   '\0',
   '\0'
-}; // idb
-_QWORD camlUnix__200[2] = { 504403158265495552LL, 2300LL }; // idb
+}; // weak
+_QWORD camlUnix__200[2] = { 504403158265495552LL, 2300LL }; // weak
 char camlUnix__213[1016] =
 {
   '\0',
@@ -2733,7 +2717,7 @@ char camlUnix__213[1016] =
   '\0',
   '\0',
   '\0'
-}; // idb
+}; // weak
 _QWORD camlUnixLabels[153] =
 {
   0LL,
@@ -2889,7 +2873,7 @@ _QWORD camlUnixLabels[153] =
   0LL,
   0LL,
   0LL
-}; // idb
+}; // weak
 _QWORD camlPervasives[84] =
 {
   0LL,
@@ -2976,7 +2960,7 @@ _QWORD camlPervasives[84] =
   0LL,
   0LL,
   2295LL
-}; // idb
+}; // weak
 __int64 (__fastcall *camlPervasives__2)() = &camlPervasives__exit_350; // weak
 __int64 (__fastcall *camlPervasives__3)() = &camlPervasives__do_at_exit_349; // weak
 __int64 (__fastcall *camlPervasives__4)() = &camlPervasives__at_exit_346; // weak
@@ -3093,7 +3077,7 @@ _QWORD camlArray[25] =
   0LL,
   0LL,
   3319LL
-}; // idb
+}; // weak
 __int64 (__fastcall *camlArray__1)() = &caml_curry2; // weak
 __int64 (__fastcall *camlArray__2)() = &caml_curry2; // weak
 __int64 (__fastcall *camlArray__4)() = &caml_curry3; // weak
@@ -3121,7 +3105,7 @@ _UNKNOWN camlArray__24; // weak
 _UNKNOWN camlArray__28; // weak
 _UNKNOWN camlArray__30; // weak
 _UNKNOWN camlArray__31; // weak
-char camlArray__32[8] = { '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0' }; // idb
+char camlArray__32[8] = { '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0' }; // weak
 _UNKNOWN camlArray__33; // weak
 char *camlArray__34 = "array.ml"; // weak
 __int64 (__fastcall *camlArray__35[2])() = { &caml_make_vect, &caml_make_vect }; // weak
@@ -3171,7 +3155,7 @@ _QWORD camlList[44] =
   0LL,
   0LL,
   3319LL
-}; // idb
+}; // weak
 __int64 (__fastcall *camlList__1)() = &caml_curry2; // weak
 __int64 (__fastcall *camlList__2)() = &caml_curry2; // weak
 __int64 (__fastcall *camlList__3)() = &caml_curry3; // weak
@@ -3248,7 +3232,7 @@ __int64 camlSys[33] =
   0LL,
   0LL,
   2295LL
-}; // idb
+}; // weak
 __int64 (__fastcall *camlSys__2)() = &camlSys__catch_break_110; // weak
 __int64 (__fastcall *camlSys__4)() = &caml_curry2; // weak
 void (__fastcall __noreturn *camlSys__5)() = &camlSys__code_begin; // weak
@@ -3273,7 +3257,7 @@ _QWORD camlHashtbl[17] =
   0LL,
   0LL,
   2295LL
-}; // idb
+}; // weak
 __int64 (__fastcall *camlHashtbl__1)() = &camlHashtbl__Make_279; // weak
 __int64 (__fastcall *camlHashtbl__2)() = &caml_curry3; // weak
 __int64 (__fastcall *camlHashtbl__3)() = &caml_curry2; // weak
@@ -3290,16 +3274,16 @@ __int64 (__fastcall *camlHashtbl__13)() = &camlHashtbl__copy_85; // weak
 __int64 (__fastcall *camlHashtbl__14)() = &camlHashtbl__clear_82; // weak
 __int64 (__fastcall *camlHashtbl__15)() = &camlHashtbl__create_79; // weak
 __int64 (__fastcall *camlHashtbl__16)() = &camlHashtbl__hash_59; // weak
-_QWORD camlCallback[3] = { 0LL, 0LL, 3319LL }; // idb
+_QWORD camlCallback[3] = { 0LL, 0LL, 3319LL }; // weak
 __int64 (__fastcall *camlCallback__1)() = &caml_curry2; // weak
 __int64 (__fastcall *camlCallback__2)() = &caml_curry2; // weak
 _UNKNOWN access_permission_table; // weak
 _UNKNOWN getnameinfo_flag_table; // weak
 _UNKNOWN open_flag_table; // weak
 _UNKNOWN msg_flag_table; // weak
-_DWORD socket_domain_table[4] = { 1, 2, 10, 0 }; // idb
-_DWORD socket_type_table[4] = { 1, 2, 3, 5 }; // idb
-_DWORD file_kind_table[8] = { 32768, 16384, 8192, 24576, 40960, 4096, 49152, 0 }; // idb
+_DWORD socket_domain_table[4] = { 1, 2, 10, 0 }; // weak
+_DWORD socket_type_table[4] = { 1, 2, 3, 5 }; // weak
+_DWORD file_kind_table[8] = { 32768, 16384, 8192, 24576, 40960, 4096, 49152, 0 }; // weak
 __int64 terminal_io_descr = 0LL; // weak
 _DWORD error_table[68] =
 {
@@ -3371,7 +3355,7 @@ _DWORD error_table[68] =
   113,
   40,
   75
-}; // idb
+}; // weak
 _UNKNOWN wait_flag_table; // weak
 __int64 max_percent_free_init = 500LL; // weak
 __int64 percent_free_init = 80LL; // weak
@@ -3399,8 +3383,6 @@ _UNKNOWN sys_open_flags; // weak
 void *caml_weak_none = &weak_dummy; // weak
 __int64 caml_backtrace_last_exn = 1LL; // weak
 FILE *stderr; // idb
-char completed_6338; // weak
-__int64 dtor_idx_6340; // weak
 int entry_h_length; // weak
 struct termios terminal_status; // idb
 __int64 unix_error_exn; // weak
@@ -3501,7 +3483,7 @@ __int64 extern_limit; // weak
 void *extern_output_first; // idb
 __int64 extern_output_block; // weak
 int checksum_computed_4045; // weak
-_QWORD checksum_4044[2]; // idb
+_QWORD checksum_4044[2]; // weak
 void *intern_src; // idb
 void *intern_input; // idb
 int intern_input_malloced; // weak
@@ -3526,7 +3508,7 @@ __int64 caml_stat_heap_size; // weak
 __int64 caml_stat_top_heap_size; // weak
 __int64 caml_stat_compactions; // weak
 __int64 caml_stat_heap_chunks; // weak
-__int64 named_value_table[13]; // idb
+__int64 named_value_table[13]; // weak
 __int64 caml_weak_list_head; // weak
 __int64 compact_fl; // weak
 int running_finalisation_function; // weak
@@ -3544,12 +3526,12 @@ __int64 caml_backtrace_buffer; // weak
 __int64 caml_code_area_start; // weak
 struct __jmp_buf_tag caml_termination_jmpbuf; // idb
 __int64 caml_code_area_end; // weak
-_QWORD caml_atom_table[1]; // idb
+_QWORD caml_atom_table[1]; // weak
 _UNKNOWN unk_64C4E8; // weak
 _UNKNOWN unk_64CCC8; // weak
 int caml_frame_descriptors_mask; // weak
 __int64 caml_gc_regs; // weak
-__int64 caml_pending_signals[65]; // idb
+__int64 caml_pending_signals[65]; // weak
 int caml_gc_subphase; // weak
 __int64 caml_gc_sweep_hp; // weak
 __int64 caml_percent_free; // weak
@@ -3567,14 +3549,6 @@ __int64 caml_percent_max; // weak
 // extern char **environ;
 
 
-//----- (00000000004077E0) ----------------------------------------------------
-void (*init_proc())(void)
-{
-  call_gmon_start();
-  frame_dummy();
-  return _do_global_ctors_aux();
-}
-
 //----- (00000000004077F8) ----------------------------------------------------
 __int64 sub_4077F8()
 {
@@ -3582,70 +3556,6 @@ __int64 sub_4077F8()
 }
 // 4077F8: using guessed type __int64 __fastcall sub_4077F8();
 // 637848: using guessed type __int64 (*qword_637848)(void);
-
-//----- (0000000000408310) ----------------------------------------------------
-// positive sp value has been detected, the output may be wrong!
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void))
-{
-  __int64 v3; // rax
-  int v4; // esi
-  __int64 v5; // [rsp-8h] [rbp-8h] BYREF
-  char *retaddr; // [rsp+0h] [rbp+0h] BYREF
-
-  v4 = v5;
-  v5 = v3;
-  __libc_start_main(
-    (int (__fastcall *)(int, char **, char **))main,
-    v4,
-    &retaddr,
-    _libc_csu_init,
-    _libc_csu_fini,
-    a3,
-    &v5);
-  __halt();
-}
-// 408316: positive sp value 8 has been found
-// 40831D: variable 'v3' is possibly undefined
-
-//----- (000000000040833C) ----------------------------------------------------
-__int64 (**call_gmon_start())(void)
-{
-  __int64 (**result)(void); // rax
-
-  result = &_gmon_start__;
-  if ( &_gmon_start__ )
-    result = (__int64 (**)(void))_gmon_start__();
-  return result;
-}
-// 64D518: using guessed type __int64 _gmon_start__(void);
-
-//----- (0000000000408360) ----------------------------------------------------
-void _do_global_dtors_aux()
-{
-  __int64 v0; // rax
-  unsigned __int64 i; // rbx
-
-  if ( !completed_6338 )
-  {
-    v0 = dtor_idx_6340;
-    for ( i = &_DTOR_END__ - _DTOR_LIST__ - 1; dtor_idx_6340 < i; v0 = dtor_idx_6340 )
-    {
-      dtor_idx_6340 = v0 + 1;
-      ((void (*)(void))_DTOR_LIST__[v0 + 1])();
-    }
-    completed_6338 = 1;
-  }
-}
-// 636010: using guessed type __int64 _DTOR_LIST__[];
-// 636018: using guessed type __int64 _DTOR_END__;
-// 642428: using guessed type char completed_6338;
-// 642430: using guessed type __int64 dtor_idx_6340;
-
-//----- (00000000004083D0) ----------------------------------------------------
-void frame_dummy()
-{
-  ;
-}
 
 //----- (0000000000408400) ----------------------------------------------------
 __int64 __fastcall caml_startup__code_begin(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
@@ -4558,6 +4468,7 @@ __int64 camlStd_exit__code_begin()
   (**(void (***)(void))camlPervasives[82])();
   return 1LL;
 }
+// 63C9D0: using guessed type _QWORD camlPervasives[84];
 
 //----- (0000000000408D50) ----------------------------------------------------
 __int64 camlSource__code_begin()
@@ -4611,7 +4522,6 @@ __int64 __fastcall camlUnix__fun_1847(__int64 a1, __int64 a2, __int64 a3, __int6
   unsigned __int64 **v7; // rbx
   _QWORD *v8; // r15
   _QWORD *v9; // rdi
-  __int64 result; // rax
   __int64 v11; // rax
   __int64 i; // rdi
   char v13; // [rsp+0h] [rbp-8h]
@@ -4632,7 +4542,7 @@ __int64 __fastcall camlUnix__fun_1847(__int64 a1, __int64 a2, __int64 a3, __int6
   if ( v11 > 1 )
   {
     *v7[3] = *v9;
-    result = 1LL;
+    return 1LL;
   }
   else
   {
@@ -4645,9 +4555,8 @@ __int64 __fastcall camlUnix__fun_1847(__int64 a1, __int64 a2, __int64 a3, __int6
     *v8 = 1024LL;
     v8[1] = i;
     caml_modify(v7[2], (unsigned __int64)(v8 + 1));
-    result = 1LL;
+    return 1LL;
   }
-  return result;
 }
 // 408DE4: variable 'v6' is possibly undefined
 // 408DF6: variable 'v7' is possibly undefined
@@ -4681,18 +4590,18 @@ __int64 __fastcall camlUnix__get_port_765(__int64 a1)
     {
       if ( (char **)*sub_408F38() == &caml_exn_Not_found )
       {
-        result = 1LL;
+        return 1LL;
       }
       else
       {
         caml_raise_exn();
-        result = (__int64)sub_408F38();
+        return (__int64)sub_408F38();
       }
     }
     else
     {
       caml_raise_exn();
-      result = (__int64)sub_408FB4((__int64)&caml_exn_Failure, camlUnix__213);
+      return (__int64)sub_408FB4((__int64)&caml_exn_Failure, camlUnix__213);
     }
   }
   else
@@ -6016,6 +5925,8 @@ void __fastcall camlUnix__handle_unix_error_199(__int64 a1)
 // 40A07E: variable 'v7' is possibly undefined
 // 40A07E: variable 'v8' is possibly undefined
 // 40A07E: variable 'v9' is possibly undefined
+// 638778: using guessed type _QWORD camlUnix[168];
+// 640958: using guessed type __int64 camlSys[33];
 
 //----- (000000000040A060) ----------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
@@ -6209,17 +6120,15 @@ __int64 __fastcall camlUnix__domain_of_sockaddr_555()
   _QWORD *v0; // rax
   __int64 v1; // rbx
   __int64 v2; // rax
-  __int64 result; // rax
 
   if ( !*((_BYTE *)v0 - 8) )
     return 1LL;
   v1 = *v0;
   v2 = 8LL * (*(_QWORD *)(*v0 - 8LL) >> 10) - 1;
   if ( 2 * (v2 - *(unsigned __int8 *)(v1 + v2)) == 32 )
-    result = 5LL;
+    return 5LL;
   else
-    result = 3LL;
-  return result;
+    return 3LL;
 }
 // 40A370: variable 'v0' is possibly undefined
 
@@ -6415,7 +6324,16 @@ void __fastcall camlUnix__getsockopt_error_697()
 // 40A77C: variable 'v0' is possibly undefined
 
 //----- (000000000040A790) ----------------------------------------------------
-void __fastcall camlUnix__getaddrinfo_emulation_756(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, int a7, __int64 a8, const char *a9)
+void __fastcall camlUnix__getaddrinfo_emulation_756(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6,
+        int a7,
+        __int64 a8,
+        const char *a9)
 {
   _QWORD *v9; // rax
   _QWORD *v10; // rbx
@@ -6447,7 +6365,7 @@ void __fastcall camlUnix__getaddrinfo_emulation_756(__int64 a1, __int64 a2, __in
   __int64 v36; // r9
   _QWORD *i; // [rsp+0h] [rbp-28h]
   unsigned int v38; // [rsp+0h] [rbp-28h]
-  __int64 **v39; // [rsp+8h] [rbp-20h]
+  __int64 **port_765; // [rsp+8h] [rbp-20h]
   const char *v40; // [rsp+10h] [rbp-18h]
   _QWORD *v41; // [rsp+18h] [rbp-10h]
 
@@ -6458,7 +6376,7 @@ void __fastcall camlUnix__getaddrinfo_emulation_756(__int64 a1, __int64 a2, __in
     if ( (unsigned __int64)v11 >= caml_young_limit )
       break;
   }
-  v39 = (__int64 **)(v11 + 1);
+  port_765 = (__int64 **)(v11 + 1);
   *v11 = 1024LL;
   v11[1] = 1LL;
   v40 = (const char *)(v11 + 3);
@@ -6486,10 +6404,10 @@ void __fastcall camlUnix__getaddrinfo_emulation_756(__int64 a1, __int64 a2, __in
   v11[2] = 5LL;
   v11[3] = camlUnix__get_port_765;
   v11[4] = i;
-  v17 = *v39;
-  if ( *v39 == (__int64 *)1 )
+  v17 = *port_765;
+  if ( *port_765 == (__int64 *)1 )
   {
-    v39 = (__int64 **)camlUnix__get_port_765(v16);
+    port_765 = (__int64 **)camlUnix__get_port_765(v16);
     camlUnix__get_port_765(v16);
     v38 = (unsigned int)camlPervasives___40_167();
   }
@@ -6565,7 +6483,7 @@ LABEL_30:
   }
   if ( *(char ***)sub_40AB2C((__int64)v41, camlUnix__195) == &caml_exn_Failure )
   {
-    sub_40AAB0((__int64)&caml_exn_Failure, camlUnix__195, v28, v29, v30, v31, v38, (__int64)v39, v40);
+    sub_40AAB0((__int64)&caml_exn_Failure, camlUnix__195, v28, v29, v30, v31, v38, (__int64)port_765, v40);
     if ( *v32 == &caml_exn_Not_found )
       goto LABEL_30;
     caml_raise_exn();
@@ -6610,11 +6528,22 @@ LABEL_30:
 // 40AC27: variable 'a6' is possibly undefined
 // 637E60: using guessed type char *caml_exn_Failure;
 // 637F48: using guessed type char *caml_exn_Not_found;
+// 638778: using guessed type _QWORD camlUnix[168];
+// 63A0F8: using guessed type _QWORD camlUnix__200[2];
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (000000000040AAB0) ----------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
-void __fastcall sub_40AAB0(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, int a7, __int64 a8, const char *a9)
+void __fastcall sub_40AAB0(
+        __int64 a1,
+        const char *a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6,
+        int a7,
+        __int64 a8,
+        const char *a9)
 {
   _QWORD *v9; // r15
   __int64 v10; // rax
@@ -6725,7 +6654,16 @@ __int64 __fastcall sub_40AB2C(__int64 a1, const char *a2)
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (000000000040AC40) ----------------------------------------------------
-void __fastcall camlUnix__getaddrinfo_777(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, int a7, __int64 a8, const char *a9)
+void __fastcall camlUnix__getaddrinfo_777(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6,
+        int a7,
+        __int64 a8,
+        const char *a9)
 {
   __int64 v9; // rdx
   __int64 v10; // rcx
@@ -7035,19 +6973,21 @@ void __fastcall sub_40AFDC(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int
 void __fastcall camlUnix__safe_dup_920(__int64 a1, const char *a2)
 {
   const char *v2; // rax
-  __int64 v3; // rax
-  const char *v4; // [rsp+8h] [rbp-10h]
+  __int64 v3; // rdi
+  __int64 v4; // rax
+  const char *v5; // [rsp+8h] [rbp-10h]
 
+  v3 = (__int64)v2;
   caml_c_call(v2, a2);
-  if ( v3 < 7 )
+  if ( v4 < 7 )
   {
-    v4 = (const char *)v3;
-    camlUnix__safe_dup_920();
-    caml_c_call(v4, a2);
+    v5 = (const char *)v4;
+    camlUnix__safe_dup_920(v3, a2);
+    caml_c_call(v5, a2);
   }
 }
-// 40B052: variable 'v2' is possibly undefined
-// 40B05B: variable 'v3' is possibly undefined
+// 40B048: variable 'v2' is possibly undefined
+// 40B05B: variable 'v4' is possibly undefined
 
 //----- (000000000040B090) ----------------------------------------------------
 void __fastcall camlUnix__safe_close_924(__int64 a1, const char *a2)
@@ -7064,6 +7004,7 @@ void __fastcall camlUnix__safe_close_924(__int64 a1, const char *a2)
   }
 }
 // 40B0A3: variable 'v3' is possibly undefined
+// 638778: using guessed type _QWORD camlUnix[168];
 
 //----- (000000000040B0C0) ----------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
@@ -7637,6 +7578,7 @@ __int64 __fastcall camlUnix__find_proc_id_1023(__int64 a1, __int64 a2)
 // 40BB7C: variable 'v7' is possibly undefined
 // 40BB7C: variable 'v9' is possibly undefined
 // 637F48: using guessed type char *caml_exn_Not_found;
+// 638778: using guessed type _QWORD camlUnix[168];
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (000000000040BB38) ----------------------------------------------------
@@ -7647,11 +7589,11 @@ __int64 __fastcall sub_40BB38(__int64 a1, __int64 a2)
   __int64 v3; // rcx
   __int64 v4; // r8
   __int64 v5; // r9
-  __int64 v7; // [rsp-10h] [rbp-18h]
+  __int64 _121; // [rsp-10h] [rbp-18h]
 
-  v7 = camlHashtbl__find_1093(a1, a2);
+  _121 = camlHashtbl__find_121(a1, a2);
   camlHashtbl__remove_108(a1, a2, v2, v3, v4, v5);
-  return v7;
+  return _121;
 }
 // 40BB7B: positive sp value 20 has been found
 // 40BB38: could not find valid save-restore pair for rbx
@@ -7684,6 +7626,7 @@ void __fastcall camlUnix__waitpid_non_intr_1027()
 }
 // 40BB94: variable 'v0' is possibly undefined
 // 40BBA7: variable 'v1' is possibly undefined
+// 638778: using guessed type _QWORD camlUnix[168];
 
 //----- (000000000040BBCC) ----------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
@@ -7697,7 +7640,13 @@ void __fastcall sub_40BBCC()
 // 40BBE2: variable 'v0' is possibly undefined
 
 //----- (000000000040BC00) ----------------------------------------------------
-__int64 __fastcall camlUnix__close_process_in_1029(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlUnix__close_process_in_1029(
+        __int64 a1,
+        const char *a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   const char *v6; // rax
   _QWORD *v7; // r15
@@ -7730,7 +7679,13 @@ __int64 __fastcall camlUnix__close_process_in_1029(__int64 a1, const char *a2, _
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (000000000040BC70) ----------------------------------------------------
-__int64 __fastcall camlUnix__close_process_out_1032(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlUnix__close_process_out_1032(
+        __int64 a1,
+        const char *a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   _QWORD *v7; // r15
@@ -7814,7 +7769,13 @@ __int64 __fastcall sub_40BD50(__int64 a1, const char *a2)
 // 40BD6F: variable 'v2' is possibly undefined
 
 //----- (000000000040BD90) ----------------------------------------------------
-__int64 __fastcall camlUnix__close_process_full_1039(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlUnix__close_process_full_1039(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   const char *v6; // rax
   __int64 v7; // rbx
@@ -7871,21 +7832,21 @@ __int64 __fastcall sub_40BE10(__int64 a1, const char *a2)
 // 40BE40: variable 'v2' is possibly undefined
 
 //----- (000000000040BE60) ----------------------------------------------------
-_QWORD *__fastcall camlUnix__open_connection_1044(__int64 a1)
+_QWORD *__fastcall camlUnix__open_connection_1044()
 {
+  const char *v0; // rax
   const char *v1; // rax
-  const char *v2; // rax
-  const char *v4; // [rsp+8h] [rbp-10h]
+  const char *v3; // [rsp+8h] [rbp-10h]
 
-  v1 = (const char *)camlUnix__domain_of_sockaddr_555();
-  caml_c_call(v1, (const char *)1);
-  v4 = v2;
+  v0 = (const char *)camlUnix__domain_of_sockaddr_555();
+  caml_c_call(v0, (const char *)1);
+  v3 = v1;
   sub_40BEB4();
-  caml_c_call(v4, (const char *)1);
+  caml_c_call(v3, (const char *)1);
   caml_raise_exn();
   return sub_40BEB4();
 }
-// 40BE8A: variable 'v2' is possibly undefined
+// 40BE8A: variable 'v1' is possibly undefined
 
 //----- (000000000040BEB4) ----------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
@@ -7981,6 +7942,7 @@ void __fastcall camlUnix__accept_non_intr_1050(__int64 a1, const char *a2)
 }
 // 40BF74: variable 'v2' is possibly undefined
 // 40BF87: variable 'v3' is possibly undefined
+// 638778: using guessed type _QWORD camlUnix[168];
 
 //----- (000000000040BFAC) ----------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
@@ -8228,6 +8190,7 @@ __int64 __fastcall camlUnix__entry(__int64 a1, const char *a2, __int64 a3, __int
 // 40CBBB: variable 'v15' is possibly undefined
 // 40CBDC: variable 'v16' is possibly undefined
 // 637E60: using guessed type char *caml_exn_Failure;
+// 638778: using guessed type _QWORD camlUnix[168];
 // 639188: using guessed type __int64 (__fastcall *camlUnix__47)();
 // 6391A0: using guessed type __int64 (__fastcall *camlUnix__48)();
 // 6391B8: using guessed type __int64 (__fastcall *camlUnix__49)();
@@ -8368,6 +8331,7 @@ __int64 __fastcall sub_40CC0C(__int64 a1, const char *a2)
 // 40CC5A: control flows out of bounds to 40CC7F
 // 40CC31: variable 'v2' is possibly undefined
 // 637E60: using guessed type char *caml_exn_Failure;
+// 638778: using guessed type _QWORD camlUnix[168];
 
 //----- (000000000040CC61) ----------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
@@ -8444,6 +8408,7 @@ __int64 __fastcall sub_40CC61(__int64 a1, const char *a2)
 // 40CCFD: variable 'v7' is possibly undefined
 // 40CCFD: variable 'v9' is possibly undefined
 // 40CD06: variable 'v2' is possibly undefined
+// 638778: using guessed type _QWORD camlUnix[168];
 // 638CB8: using guessed type __int64 (__fastcall *camlUnix__1)();
 // 638CD8: using guessed type __int64 (__fastcall *camlUnix__2)();
 // 638CF0: using guessed type __int64 (__fastcall *camlUnix__3)();
@@ -8645,6 +8610,8 @@ __int64 camlUnixLabels__code_begin()
   camlUnixLabels[152] = camlUnix[152];
   return 1LL;
 }
+// 638778: using guessed type _QWORD camlUnix[168];
+// 63C4F0: using guessed type _QWORD camlUnixLabels[153];
 
 //----- (000000000040DCA0) ----------------------------------------------------
 __int64 __fastcall camlPervasives__code_begin()
@@ -8753,7 +8720,7 @@ __int64 __fastcall camlPervasives__build_result_267(__int64 *a1)
 // 40DDA7: variable 'v2' is possibly undefined
 
 //----- (000000000040DDE0) ----------------------------------------------------
-__int64 __fastcall camlPervasives__scan_1249(__int64 a1, const char *a2)
+const char *__fastcall camlPervasives__scan_273(__int64 a1, const char *a2)
 {
   __int64 *v2; // rax
   const char *v3; // rbx
@@ -8794,7 +8761,7 @@ __int64 __fastcall camlPervasives__scan_1249(__int64 a1, const char *a2)
       if ( v29 != (__int64 *)1 )
       {
         caml_c_call(v3, a2);
-        return camlPervasives__build_result_267(v29);
+        return (const char *)camlPervasives__build_result_267(v29);
       }
       while ( 1 )
       {
@@ -8835,7 +8802,7 @@ __int64 __fastcall camlPervasives__scan_1249(__int64 a1, const char *a2)
   caml_c_call(*(const char **)(v27 + 24), v12);
   caml_c_call(*(const char **)(v27 + 24), v13);
   if ( v29 == (__int64 *)1 )
-    return (__int64)v26;
+    return v26;
   for ( i = &v3[v28 - 3]; ; caml_call_gc((__int64)v29, (__int64)i, v14, v15, v16, v17, (char)v26) )
   {
     v4 -= 3;
@@ -8846,7 +8813,7 @@ __int64 __fastcall camlPervasives__scan_1249(__int64 a1, const char *a2)
   v4[1] = v26;
   v4[2] = v29;
   caml_c_call(i, i);
-  return camlPervasives__build_result_267(v4 + 1);
+  return (const char *)camlPervasives__build_result_267(v4 + 1);
 }
 // 40DDE0: could not find valid save-restore pair for rbx
 // 40DDE4: variable 'v2' is possibly undefined
@@ -8873,7 +8840,7 @@ __int64 __fastcall camlPervasives__scan_1249(__int64 a1, const char *a2)
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (000000000040E000) ----------------------------------------------------
-__int64 __fastcall camlPervasives__fun_1735()
+__int64 __fastcall camlPervasives__fun_524()
 {
   __int64 v0; // rbx
 
@@ -8881,7 +8848,7 @@ __int64 __fastcall camlPervasives__fun_1735()
   return (**(__int64 (***)(void))(v0 + 24))();
 }
 // 40E008: variable 'v0' is possibly undefined
-// 40E000: using guessed type __int64 __fastcall camlPervasives__fun_1735();
+// 40E000: using guessed type __int64 __fastcall camlPervasives__fun_524();
 
 //----- (000000000040E030) ----------------------------------------------------
 void __fastcall camlPervasives__fun_416()
@@ -9051,7 +9018,13 @@ void __fastcall camlPervasives__fun_448(__int64 a1, const char *a2)
 // 40E23E: variable 'v2' is possibly undefined
 
 //----- (000000000040E250) ----------------------------------------------------
-void __fastcall __noreturn camlPervasives__failwith_38(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+void __fastcall __noreturn camlPervasives__failwith_38(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   _QWORD *v7; // r15
@@ -9081,7 +9054,13 @@ void __fastcall __noreturn camlPervasives__failwith_38(__int64 a1, __int64 a2, _
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (000000000040E290) ----------------------------------------------------
-void __fastcall __noreturn camlPervasives__invalid_arg_40(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+void __fastcall __noreturn camlPervasives__invalid_arg_40(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   _QWORD *v7; // r15
@@ -9111,7 +9090,7 @@ void __fastcall __noreturn camlPervasives__invalid_arg_40(__int64 a1, __int64 a2
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (000000000040E2D0) ----------------------------------------------------
-void __fastcall __spoils<rdx,rcx,r8,r9,r10,r11,xmm4,xmm5> camlPervasives__min_50()
+void __fastcall camlPervasives__min_50()
 {
   const char *v0; // rax
   const char *v1; // rbx
@@ -9122,7 +9101,7 @@ void __fastcall __spoils<rdx,rcx,r8,r9,r10,r11,xmm4,xmm5> camlPervasives__min_50
 // 40E2EA: variable 'v1' is possibly undefined
 
 //----- (000000000040E310) ----------------------------------------------------
-void __fastcall __spoils<rdx,rcx,r8,r9,r10,r11,xmm4,xmm5> camlPervasives__max_53()
+void __fastcall camlPervasives__max_53()
 {
   const char *v0; // rax
   const char *v1; // rbx
@@ -9138,7 +9117,7 @@ __int64 __fastcall camlPervasives__abs_71()
   __int64 result; // rax
 
   if ( result < 1 )
-    result = 2 - result;
+    return 2 - result;
   return result;
 }
 // 40E354: variable 'result' is possibly undefined
@@ -9190,7 +9169,13 @@ __int64 __fastcall camlPervasives___5e_136()
 // 40E3E5: variable 'v6' is possibly undefined
 
 //----- (000000000040E430) ----------------------------------------------------
-__int64 __fastcall camlPervasives__char_of_int_144(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlPervasives__char_of_int_144(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 result; // rax
 
@@ -9204,13 +9189,11 @@ __int64 __fastcall camlPervasives__char_of_int_144(__int64 a1, __int64 a2, __int
 char *__fastcall camlPervasives__string_of_bool_151()
 {
   __int64 v0; // rax
-  char *result; // rax
 
   if ( v0 == 1 )
-    result = camlPervasives__100;
+    return camlPervasives__100;
   else
-    result = camlPervasives__101;
-  return result;
+    return camlPervasives__101;
 }
 // 40E454: variable 'v0' is possibly undefined
 
@@ -9248,7 +9231,13 @@ void __fastcall camlPervasives__string_of_int_154()
 // 40E4E5: variable 'v0' is possibly undefined
 
 //----- (000000000040E4F0) ----------------------------------------------------
-__int64 __fastcall camlPervasives__valid_float_lexem_159(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlPervasives__valid_float_lexem_159(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   _QWORD *v7; // r15
@@ -9310,7 +9299,7 @@ _QWORD *__fastcall camlPervasives___40_167()
   __int64 v3; // rsi
   __int64 v4; // rdx
   __int64 v5; // rcx
-  __int64 i; // rdi
+  _QWORD *i; // rdi
   __int64 v7; // r8
   __int64 v8; // r9
   _QWORD *result; // rax
@@ -9320,7 +9309,7 @@ _QWORD *__fastcall camlPervasives___40_167()
     return (_QWORD *)v1;
   v3 = v0[1];
   v10 = *v0;
-  for ( i = camlPervasives___40_167(); ; caml_call_gc(i, v3, v4, v5, v7, v8, v10) )
+  for ( i = camlPervasives___40_167(); ; caml_call_gc((__int64)i, v3, v4, v5, v7, v8, v10) )
   {
     v2 -= 3;
     if ( (unsigned __int64)v2 >= caml_young_limit )
@@ -9593,7 +9582,13 @@ __int64 __fastcall camlPervasives__unsafe_really_input_253(__int64 a1, __int64 a
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (000000000040E990) ----------------------------------------------------
-__int64 __fastcall camlPervasives__really_input_259(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlPervasives__really_input_259(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rbx
   __int64 v7; // rdx
@@ -9612,7 +9607,13 @@ __int64 __fastcall camlPervasives__really_input_259(__int64 a1, __int64 a2, __in
 // 40E99C: variable 'v6' is possibly undefined
 
 //----- (000000000040E9E0) ----------------------------------------------------
-__int64 __fastcall camlPervasives__input_line_265(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+const char *__fastcall camlPervasives__input_line_265(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   const char *v6; // rax
   _QWORD *v7; // r15
@@ -9628,10 +9629,10 @@ __int64 __fastcall camlPervasives__input_line_265(__int64 a1, __int64 a2, __int6
   *v7 = 5367LL;
   v7[1] = caml_curry2;
   v7[2] = 5LL;
-  v7[3] = camlPervasives__scan_1249;
+  v7[3] = camlPervasives__scan_273;
   v7[4] = i;
   v7[5] = &camlPervasives__86;
-  return camlPervasives__scan_1249((__int64)(v7 + 1), i);
+  return camlPervasives__scan_273((__int64)(v7 + 1), i);
 }
 // 40E9E4: variable 'v6' is possibly undefined
 // 40E9EE: variable 'v7' is possibly undefined
@@ -9669,6 +9670,7 @@ void __fastcall camlPervasives__print_char_290()
   caml_c_call((const char *)camlPervasives[23], v0);
 }
 // 40EAAC: variable 'v0' is possibly undefined
+// 63C9D0: using guessed type _QWORD camlPervasives[84];
 
 //----- (000000000040EAC0) ----------------------------------------------------
 void camlPervasives__print_string_292()
@@ -9697,6 +9699,7 @@ void camlPervasives__print_endline_298()
   caml_c_call((const char *)camlPervasives[23], (const char *)0x15);
   caml_c_call((const char *)camlPervasives[23], (const char *)0x15);
 }
+// 63C9D0: using guessed type _QWORD camlPervasives[84];
 
 //----- (000000000040EBA0) ----------------------------------------------------
 void camlPervasives__print_newline_300()
@@ -9704,6 +9707,7 @@ void camlPervasives__print_newline_300()
   caml_c_call((const char *)camlPervasives[23], (const char *)0x15);
   caml_c_call((const char *)camlPervasives[23], (const char *)0x15);
 }
+// 63C9D0: using guessed type _QWORD camlPervasives[84];
 
 //----- (000000000040EBF0) ----------------------------------------------------
 void __fastcall camlPervasives__prerr_char_301()
@@ -9713,6 +9717,7 @@ void __fastcall camlPervasives__prerr_char_301()
   caml_c_call((const char *)camlPervasives[24], v0);
 }
 // 40EC0C: variable 'v0' is possibly undefined
+// 63C9D0: using guessed type _QWORD camlPervasives[84];
 
 //----- (000000000040EC20) ----------------------------------------------------
 void camlPervasives__prerr_string_303()
@@ -9741,6 +9746,7 @@ void camlPervasives__prerr_endline_309()
   caml_c_call((const char *)camlPervasives[24], (const char *)0x15);
   caml_c_call((const char *)camlPervasives[24], (const char *)0x15);
 }
+// 63C9D0: using guessed type _QWORD camlPervasives[84];
 
 //----- (000000000040ED00) ----------------------------------------------------
 void camlPervasives__prerr_newline_311()
@@ -9748,9 +9754,10 @@ void camlPervasives__prerr_newline_311()
   caml_c_call((const char *)camlPervasives[24], (const char *)0x15);
   caml_c_call((const char *)camlPervasives[24], (const char *)0x15);
 }
+// 63C9D0: using guessed type _QWORD camlPervasives[84];
 
 //----- (000000000040ED50) ----------------------------------------------------
-__int64 __fastcall camlPervasives__read_line_312(__int64 a1, const char *a2)
+const char *__fastcall camlPervasives__read_line_312(__int64 a1, const char *a2)
 {
   const char *v2; // rdi
   __int64 v3; // rdx
@@ -9766,23 +9773,24 @@ __int64 __fastcall camlPervasives__read_line_312(__int64 a1, const char *a2)
 // 40ED80: variable 'v4' is possibly undefined
 // 40ED80: variable 'v5' is possibly undefined
 // 40ED80: variable 'v6' is possibly undefined
+// 63C9D0: using guessed type _QWORD camlPervasives[84];
 
 //----- (000000000040ED90) ----------------------------------------------------
 void __fastcall camlPervasives__read_int_313(__int64 a1, const char *a2)
 {
-  const char *v2; // rax
+  const char *line_312; // rax
 
-  v2 = (const char *)camlPervasives__read_line_312(a1, a2);
-  caml_c_call(v2, a2);
+  line_312 = camlPervasives__read_line_312(a1, a2);
+  caml_c_call(line_312, a2);
 }
 
 //----- (000000000040EDC0) ----------------------------------------------------
 void __fastcall camlPervasives__read_float_314(__int64 a1, const char *a2)
 {
-  const char *v2; // rax
+  const char *line_312; // rax
 
-  v2 = (const char *)camlPervasives__read_line_312(a1, a2);
-  caml_c_call(v2, a2);
+  line_312 = camlPervasives__read_line_312(a1, a2);
+  caml_c_call(line_312, a2);
 }
 
 //----- (000000000040EDF0) ----------------------------------------------------
@@ -9891,7 +9899,7 @@ __int64 __fastcall camlPervasives__at_exit_346(__int64 a1, __int64 a2, __int64 a
     caml_call_gc(v8, a2, a3, a4, a5, a6, v11);
   }
   *v7 = 4343LL;
-  v7[1] = camlPervasives__fun_1735;
+  v7[1] = camlPervasives__fun_524;
   v7[2] = 3LL;
   v7[3] = v8;
   v7[4] = v9;
@@ -9905,7 +9913,8 @@ __int64 __fastcall camlPervasives__at_exit_346(__int64 a1, __int64 a2, __int64 a
 // 40EFBD: variable 'a5' is possibly undefined
 // 40EFBD: variable 'a6' is possibly undefined
 // 40EFBD: variable 'v11' is possibly undefined
-// 40E000: using guessed type __int64 __fastcall camlPervasives__fun_1735();
+// 40E000: using guessed type __int64 __fastcall camlPervasives__fun_524();
+// 63C9D0: using guessed type _QWORD camlPervasives[84];
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (000000000040EFD0) ----------------------------------------------------
@@ -9914,6 +9923,7 @@ __int64 camlPervasives__do_at_exit_349()
   return (**(__int64 (***)(void))camlPervasives[82])();
 }
 // 40EFD0: using guessed type __int64 __fastcall camlPervasives__do_at_exit_349();
+// 63C9D0: using guessed type _QWORD camlPervasives[84];
 
 //----- (000000000040EFF0) ----------------------------------------------------
 void __fastcall camlPervasives__exit_350(__int64 a1, const char *a2)
@@ -9922,10 +9932,11 @@ void __fastcall camlPervasives__exit_350(__int64 a1, const char *a2)
   const char *v3; // [rsp+0h] [rbp-8h]
 
   v3 = v2;
-  (**(void (***)(void))camlPervasives[82])();
+  (**(void (__fastcall ***)(_QWORD, const char *))camlPervasives[82])(**(_QWORD **)camlPervasives[82], a2);
   caml_c_call(v3, a2);
 }
 // 40EFF4: variable 'v2' is possibly undefined
+// 63C9D0: using guessed type _QWORD camlPervasives[84];
 
 //----- (000000000040F030) ----------------------------------------------------
 __int64 __fastcall camlPervasives__entry(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
@@ -10071,6 +10082,7 @@ __int64 __fastcall camlPervasives__entry(__int64 a1, const char *a2, __int64 a3,
 // 40F6DD: variable 'v18' is possibly undefined
 // 40F6DD: variable 'v19' is possibly undefined
 // 40F6DD: variable 'v22' is possibly undefined
+// 63C9D0: using guessed type _QWORD camlPervasives[84];
 // 63CC70: using guessed type __int64 (__fastcall *camlPervasives__2)();
 // 63CC88: using guessed type __int64 (__fastcall *camlPervasives__3)();
 // 63CCA0: using guessed type __int64 (__fastcall *camlPervasives__4)();
@@ -10420,7 +10432,14 @@ __int64 __fastcall camlArray__fill_98(float a1, __int64 a2, double *a3, __int64 
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (000000000040FBF0) ----------------------------------------------------
-__int64 (__fastcall **__fastcall camlArray__find_init_105(double a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7))()
+__int64 (__fastcall **__fastcall camlArray__find_init_105(
+        double a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6,
+        __int64 a7))()
 {
   __int64 v7; // rax
   unsigned __int64 v8; // r15
@@ -10466,7 +10485,13 @@ __int64 (__fastcall **__fastcall camlArray__find_init_105(double a1, __int64 a2,
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (000000000040FC80) ----------------------------------------------------
-unsigned __int64 __fastcall camlArray__tolist_150(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+unsigned __int64 __fastcall camlArray__tolist_150(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   unsigned __int64 v7; // rbx
@@ -10556,7 +10581,7 @@ __int64 __fastcall camlArray__fill_162(__int64 a1)
 // 40FD2E: variable 'v2' is possibly undefined
 
 //----- (000000000040FD80) ----------------------------------------------------
-unsigned __int64 __fastcall camlArray__maxson_182(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlArray__maxson_182(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
 {
   __int64 v6; // rax
   __int64 v7; // rbx
@@ -10579,7 +10604,7 @@ unsigned __int64 __fastcall camlArray__maxson_182(__int64 a1, __int64 a2, __int6
   unsigned __int64 v24; // rcx
   __int64 v25; // rdx
   unsigned __int64 v26; // rax
-  unsigned __int64 result; // rax
+  __int64 result; // rax
   unsigned __int64 v28; // rcx
   __int64 v29; // rdx
   unsigned __int64 v30; // rbx
@@ -10842,6 +10867,7 @@ LABEL_48:
 // 4101CC: variable 'v34' is possibly undefined
 // 4101CC: variable 'v35' is possibly undefined
 // 4101CC: variable 'v36' is possibly undefined
+// 63E250: using guessed type _QWORD camlArray[25];
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (00000000004101D0) ----------------------------------------------------
@@ -11016,7 +11042,6 @@ __int64 __fastcall camlArray__trickle_192(double *a1, __int64 a2, __int64 a3, __
   const char *v8; // rsi
   const char *v9; // rdi
   unsigned __int64 v10; // rax
-  __int64 result; // rax
   __int64 v12; // rdx
   __int64 v13; // rcx
   __int64 v14; // r8
@@ -11048,14 +11073,13 @@ __int64 __fastcall camlArray__trickle_192(double *a1, __int64 a2, __int64 a3, __
       return 1LL;
     }
     caml_ml_array_bound_error(v9, v8);
-    result = camlArray__bubbledown_197((__int64)v9, v8, v16, v17, v18, v19);
+    return camlArray__bubbledown_197((__int64)v9, v8, v16, v17, v18, v19);
   }
   else
   {
     caml_raise_exn();
-    result = sub_410494(v7, a2, v12, v13, v14, v15);
+    return sub_410494(v7, a2, v12, v13, v14, v15);
   }
-  return result;
 }
 // 410492: variable 'v12' is possibly undefined
 // 410492: variable 'v13' is possibly undefined
@@ -11065,6 +11089,7 @@ __int64 __fastcall camlArray__trickle_192(double *a1, __int64 a2, __int64 a3, __
 // 4104B8: variable 'v17' is possibly undefined
 // 4104B8: variable 'v18' is possibly undefined
 // 4104B8: variable 'v19' is possibly undefined
+// 63E250: using guessed type _QWORD camlArray[25];
 
 //----- (0000000000410494) ----------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
@@ -11075,7 +11100,13 @@ __int64 __fastcall sub_410494(double *a1, __int64 a2, __int64 a3, __int64 a4, __
 // 4104AC: positive sp value 20 has been found
 
 //----- (00000000004104C0) ----------------------------------------------------
-__int64 __fastcall camlArray__bubbledown_197(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlArray__bubbledown_197(
+        __int64 a1,
+        const char *a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   unsigned __int64 v7; // rbx
@@ -11188,6 +11219,7 @@ __int64 __fastcall camlArray__bubble_201(__int64 a1, const char *a2, __int64 a3,
 // 4105EE: variable 'v10' is possibly undefined
 // 4105EE: variable 'v11' is possibly undefined
 // 4105EE: variable 'v12' is possibly undefined
+// 63E250: using guessed type _QWORD camlArray[25];
 
 //----- (00000000004105F0) ----------------------------------------------------
 // positive sp value has been detected, the output may be wrong!
@@ -11198,7 +11230,13 @@ __int64 __fastcall sub_4105F0(__int64 a1, const char *a2, __int64 a3, __int64 a4
 // 410608: positive sp value 10 has been found
 
 //----- (0000000000410610) ----------------------------------------------------
-__int64 __fastcall camlArray__trickleup_205(unsigned __int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlArray__trickleup_205(
+        unsigned __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   double *v7; // rbx
@@ -11410,14 +11448,21 @@ LABEL_49:
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000410900) ----------------------------------------------------
-__int64 __fastcall camlArray__merge_218(const char *a1, unsigned __int64 a2, __int64 a3, __int64 a4, unsigned __int64 a5, __int64 a6)
+__int64 __fastcall camlArray__merge_218(
+        const char *a1,
+        unsigned __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        unsigned __int64 a5,
+        __int64 a6)
 {
   unsigned __int64 v6; // rax
   __int64 v7; // rbx
   _QWORD *v8; // r15
   unsigned __int64 v9; // r11
+  unsigned __int64 v10; // r10
   const char *v12; // rsi
-  unsigned __int64 v13; // rbx
+  __int64 v13; // rbx
   __int64 v14; // rcx
   unsigned __int64 v15; // rax
   unsigned __int64 v16; // rax
@@ -11428,8 +11473,9 @@ __int64 __fastcall camlArray__merge_218(const char *a1, unsigned __int64 a2, __i
   char v22; // [rsp+0h] [rbp-8h]
 
   v9 = v6;
+  v10 = a2;
   v12 = (const char *)(v6 + v7 - 1);
-  v13 = a2 + a3 - 1;
+  v13 = v10 + a3 - 1;
   while ( 1 )
   {
     v8 -= 10;
@@ -11451,7 +11497,7 @@ __int64 __fastcall camlArray__merge_218(const char *a1, unsigned __int64 a2, __i
   v15 = *((_QWORD *)a1 - 1);
   if ( (unsigned __int8)v15 == 254LL )
   {
-    if ( v15 >> 9 <= a2 )
+    if ( v15 >> 9 <= v10 )
     {
 LABEL_21:
       caml_ml_array_bound_error(a1, v12);
@@ -11466,7 +11512,7 @@ LABEL_21:
     }
     v12 = (const char *)(v8 + 1);
     *v8 = 1277LL;
-    *((double *)v8 + 1) = *(double *)&a1[4 * a2 - 4];
+    *((double *)v8 + 1) = *(double *)&a1[4 * v10 - 4];
 LABEL_9:
     a1 = *(const char **)(a6 + 32);
     v16 = *((_QWORD *)a1 - 1);
@@ -11483,20 +11529,20 @@ LABEL_9:
         }
         *v8 = 1277LL;
         *((double *)v8 + 1) = *(double *)&a1[4 * v9 - 4];
-        return camlArray__code_begin(a2, v12, a5, v14);
+        return camlArray__code_begin(v10, v12, a5, v14);
       }
       caml_ml_array_bound_error(a1, v12);
     }
     else if ( v16 >> 9 > v9 )
     {
-      return camlArray__code_begin(a2, v12, a5, v14);
+      return camlArray__code_begin(v10, v12, a5, v14);
     }
     caml_ml_array_bound_error(a1, v12);
     goto LABEL_21;
   }
-  if ( v15 >> 9 > a2 )
+  if ( v15 >> 9 > v10 )
   {
-    v12 = *(const char **)&a1[4 * a2 - 4];
+    v12 = *(const char **)&a1[4 * v10 - 4];
     goto LABEL_9;
   }
 LABEL_22:
@@ -11507,7 +11553,7 @@ LABEL_22:
 // 41090D: variable 'v7' is possibly undefined
 // 410917: variable 'v8' is possibly undefined
 // 410954: variable 'a6' is possibly undefined
-// 410992: variable 'a2' is possibly undefined
+// 410992: variable 'v10' is possibly undefined
 // 4109FA: variable 'v9' is possibly undefined
 // 410A41: variable 'a5' is possibly undefined
 // 410A41: variable 'v14' is possibly undefined
@@ -11521,7 +11567,13 @@ LABEL_22:
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000410A80) ----------------------------------------------------
-__int64 __fastcall camlArray__isortto_236(signed __int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlArray__isortto_236(
+        signed __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   __int64 v7; // rbx
@@ -11726,31 +11778,41 @@ LABEL_49:
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000410DC0) ----------------------------------------------------
-__int64 __fastcall camlArray__sortto_244(unsigned __int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlArray__sortto_244(
+        unsigned __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   const char *v7; // rbx
-  __int64 v8; // rcx
   __int64 v10; // rdx
-  __int64 v12; // [rsp+8h] [rbp-30h]
-  __int64 v13; // [rsp+18h] [rbp-20h]
-  __int64 v14; // [rsp+20h] [rbp-18h]
+  __int64 v11; // rcx
+  __int64 v12; // r8
+  __int64 v13; // r9
+  __int64 v15; // [rsp+8h] [rbp-30h]
+  __int64 v16; // [rsp+18h] [rbp-20h]
+  __int64 v17; // [rsp+20h] [rbp-18h]
 
-  v8 = a3;
   if ( a2 <= 11 )
     return camlArray__isortto_236(a1, a2, *(_QWORD *)(a3 + 40), a3, v6, a6);
-  v14 = v6;
+  v17 = v6;
   v10 = (a2 >> 1) + 1;
   if ( a2 >> 1 >= 0 )
     v10 = a2 >> 1;
-  v12 = 2 * (v10 >> 1) + 1;
-  v13 = a2 - 2 * (v10 >> 1);
-  camlArray__sortto_244(a1 + 2 * (v10 >> 1), v13, v8);
-  camlArray__sortto_244(v14 + v13 - 1, v12, a3);
-  return camlArray__merge_218(v7, a1 + v12 - 1, v13, (__int64)v7, a1, *(_QWORD *)(a3 + 32));
+  v15 = 2 * (v10 >> 1) + 1;
+  v16 = a2 - 2 * (v10 >> 1);
+  camlArray__sortto_244(a1 + 2 * (v10 >> 1), v16, a3, a3, v6, a6);
+  camlArray__sortto_244(v17 + v16 - 1, v15, a3, v11, v12, v13);
+  return camlArray__merge_218(v7, a1 + v15 - 1, v16, (__int64)v7, a1, *(_QWORD *)(a3 + 32));
 }
 // 410DC0: could not find valid save-restore pair for rbx
 // 410DDB: variable 'v6' is possibly undefined
+// 410E4D: variable 'v11' is possibly undefined
+// 410E4D: variable 'v12' is possibly undefined
+// 410E4D: variable 'v13' is possibly undefined
 // 410E84: variable 'v7' is possibly undefined
 
 //----- (0000000000410E90) ----------------------------------------------------
@@ -12129,7 +12191,14 @@ __int64 __fastcall camlArray__concat_aux_90(float a1)
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (00000000004113D0) ----------------------------------------------------
-__int64 (__fastcall **__fastcall camlArray__concat_103(double a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6, __int64 a7))()
+__int64 (__fastcall **__fastcall camlArray__concat_103(
+        double a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6,
+        __int64 a7))()
 {
   __int64 v7; // rax
   _QWORD *v8; // r15
@@ -12175,6 +12244,7 @@ void *__fastcall camlArray__sub_108(__int64 a1, __int64 a2, __int64 a3, __int64 
   __int64 v19; // rsi
   double *v20; // rsi
   __int64 v21; // rdi
+  __int64 v22; // [rsp+0h] [rbp-18h]
   __int64 v23; // [rsp+0h] [rbp-18h]
   __int64 v24; // [rsp+8h] [rbp-10h]
   __int64 v25; // [rsp+10h] [rbp-8h]
@@ -12184,6 +12254,7 @@ void *__fastcall camlArray__sub_108(__int64 a1, __int64 a2, __int64 a3, __int64 
     camlPervasives__invalid_arg_40(a1, v6, a3, a4, a5, a6);
   if ( a1 == 1 )
     return &camlArray__28;
+  v22 = a1;
   v24 = v7;
   v25 = v6;
   if ( *(unsigned __int8 *)(v6 - 8) == 254LL )
@@ -12193,7 +12264,7 @@ void *__fastcall camlArray__sub_108(__int64 a1, __int64 a2, __int64 a3, __int64 
       v8 -= 16LL;
       if ( v8 >= caml_young_limit )
         break;
-      caml_call_gc(a1, v9, a3, a4, a5, a6, a1);
+      caml_call_gc(a1, v9, a3, a4, a5, a6, v22);
     }
     v11 = (const char *)(v8 + 8);
     *(_QWORD *)v8 = 1277LL;
@@ -12206,9 +12277,9 @@ void *__fastcall camlArray__sub_108(__int64 a1, __int64 a2, __int64 a3, __int64 
   caml_c_call((const char *)a1, v11);
   v17 = v16;
   v18 = 3LL;
-  if ( a1 - 2 >= 3 )
+  if ( v22 - 2 >= 3 )
   {
-    v23 = a1 - 2;
+    v23 = v22 - 2;
     do
     {
       v19 = v24 + v18 - 1;
@@ -12244,7 +12315,7 @@ void *__fastcall camlArray__sub_108(__int64 a1, __int64 a2, __int64 a3, __int64 
 // 41142B: variable 'v7' is possibly undefined
 // 41148C: variable 'v8' is possibly undefined
 // 4114C5: variable 'v16' is possibly undefined
-// 4114D3: variable 'a1' is possibly undefined
+// 4114D3: variable 'v22' is possibly undefined
 // 41156E: variable 'v23' is possibly undefined
 // 41158C: variable 'v12' is possibly undefined
 // 41158C: variable 'v13' is possibly undefined
@@ -12290,7 +12361,13 @@ __int64 __fastcall camlArray__fill_114(__int64 a1, double *a2, __int64 a3, __int
 // 4115AE: variable 'v7' is possibly undefined
 
 //----- (0000000000411640) ----------------------------------------------------
-__int64 __fastcall camlArray__blit_120(unsigned __int64 *a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlArray__blit_120(
+        unsigned __int64 *a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   __int64 v7; // rbx
@@ -12301,7 +12378,6 @@ __int64 __fastcall camlArray__blit_120(unsigned __int64 *a1, __int64 a2, __int64
   __int64 v12; // rbx
   __int64 v13; // rbx
   __int64 v14; // rbx
-  __int64 result; // rax
   __int64 v16; // rdi
   __int64 v17; // rbx
   __int64 v18; // rbx
@@ -12363,7 +12439,7 @@ __int64 __fastcall camlArray__blit_120(unsigned __int64 *a1, __int64 a2, __int64
       }
       while ( v19 != v24 );
     }
-    result = 1LL;
+    return 1LL;
   }
   else
   {
@@ -12406,9 +12482,8 @@ __int64 __fastcall camlArray__blit_120(unsigned __int64 *a1, __int64 a2, __int64
       }
       while ( v14 != 1 );
     }
-    result = 1LL;
+    return 1LL;
   }
-  return result;
 }
 // 411644: variable 'v6' is possibly undefined
 // 41165B: variable 'v7' is possibly undefined
@@ -12734,7 +12809,13 @@ void *__fastcall camlArray__mapi_142(__int64 a1, __int64 a2, __int64 a3, __int64
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000411CD0) ----------------------------------------------------
-unsigned __int64 __fastcall camlArray__to_list_148(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+unsigned __int64 __fastcall camlArray__to_list_148(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   _QWORD *v7; // r15
@@ -12826,7 +12907,13 @@ void *__fastcall camlArray__of_list_157()
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000411E10) ----------------------------------------------------
-unsigned __int64 __fastcall camlArray__fold_left_166(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+unsigned __int64 __fastcall camlArray__fold_left_166(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   __int64 v7; // rbx
@@ -12838,6 +12925,7 @@ unsigned __int64 __fastcall camlArray__fold_left_166(__int64 a1, __int64 a2, __i
   __int64 v13; // rax
   __int64 v14; // rbx
   char v16; // [rsp+0h] [rbp-28h]
+  __int64 v17; // [rsp+0h] [rbp-28h]
   __int64 v18; // [rsp+8h] [rbp-20h]
   unsigned __int64 *v19; // [rsp+10h] [rbp-18h]
   __int64 v20; // [rsp+18h] [rbp-10h]
@@ -12858,18 +12946,19 @@ unsigned __int64 __fastcall camlArray__fold_left_166(__int64 a1, __int64 a2, __i
     v21 = ((*(_QWORD *)(a1 - 8) >> 9) | 1LL) - 2;
     v20 = 1LL;
     v19 = v8 + 1;
+    v17 = a1;
     v18 = i;
     do
     {
-      v12 = a1;
-      if ( *(unsigned __int8 *)(a1 - 8) == 254LL )
+      v12 = v17;
+      if ( *(unsigned __int8 *)(v17 - 8) == 254LL )
       {
         while ( 1 )
         {
           v8 -= 2;
           if ( (unsigned __int64)v8 >= caml_young_limit )
             break;
-          caml_call_gc(v12, v11, i, a4, a5, a6, a1);
+          caml_call_gc(v12, v11, i, a4, a5, a6, v17);
         }
         *v8 = 1277LL;
         *((double *)v8 + 1) = *(double *)(v12 + 4 * v11 - 4);
@@ -12889,7 +12978,7 @@ unsigned __int64 __fastcall camlArray__fold_left_166(__int64 a1, __int64 a2, __i
 // 411E17: variable 'v8' is possibly undefined
 // 411E37: variable 'v7' is possibly undefined
 // 411E6E: variable 'i' is possibly undefined
-// 411E73: variable 'a1' is possibly undefined
+// 411E73: variable 'v17' is possibly undefined
 // 411EF4: variable 'a4' is possibly undefined
 // 411EF4: variable 'a5' is possibly undefined
 // 411EF4: variable 'a6' is possibly undefined
@@ -12897,7 +12986,13 @@ unsigned __int64 __fastcall camlArray__fold_left_166(__int64 a1, __int64 a2, __i
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000411F10) ----------------------------------------------------
-unsigned __int64 __fastcall camlArray__fold_right_172(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+unsigned __int64 __fastcall camlArray__fold_right_172(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   __int64 v7; // rbx
@@ -13486,6 +13581,7 @@ __int64 __fastcall camlArray__entry(__int64 a1, __int64 a2, __int64 a3, __int64 
 }
 // 412956: variable 'v8' is possibly undefined
 // 41295F: variable 'v6' is possibly undefined
+// 63E250: using guessed type _QWORD camlArray[25];
 // 63E318: using guessed type __int64 (__fastcall *camlArray__1)();
 // 63E338: using guessed type __int64 (__fastcall *camlArray__2)();
 // 63E358: using guessed type __int64 (__fastcall *camlArray__4)();
@@ -13701,7 +13797,7 @@ _QWORD *__fastcall camlList__part_243(__int64 *a1, __int64 a2, __int64 a3, __int
   __int64 v18; // r9
   _QWORD *result; // rax
   __int64 v20; // [rsp+0h] [rbp-28h]
-  _QWORD *v21; // [rsp+0h] [rbp-28h]
+  _QWORD *appended; // [rsp+0h] [rbp-28h]
   _QWORD *v22; // [rsp+8h] [rbp-20h]
   _QWORD *v23; // [rsp+10h] [rbp-18h]
   __int64 *v24; // [rsp+18h] [rbp-10h]
@@ -13747,19 +13843,19 @@ _QWORD *__fastcall camlList__part_243(__int64 *a1, __int64 a2, __int64 a3, __int
       a1 = v24;
     }
   }
-  v21 = camlList__rev_append_79(1LL, a2, a3, a4, a5, a6);
+  appended = camlList__rev_append_79(1LL, a2, a3, a4, a5, a6);
   v16 = camlList__rev_append_79(1LL, a2, v10, v11, v12, v13);
   while ( 1 )
   {
     v8 -= 3;
     if ( (unsigned __int64)v8 >= caml_young_limit )
       break;
-    caml_call_gc(1LL, a2, v14, v15, v17, v18, (char)v21);
+    caml_call_gc(1LL, a2, v14, v15, v17, v18, (char)appended);
   }
   result = v8 + 1;
   *v8 = 2048LL;
   v8[1] = v16;
-  v8[2] = v21;
+  v8[2] = appended;
   return result;
 }
 // 412BD0: could not find valid save-restore pair for rbx
@@ -13775,7 +13871,7 @@ _QWORD *__fastcall camlList__part_243(__int64 *a1, __int64 a2, __int64 a3, __int
 // 412CB6: variable 'v11' is possibly undefined
 // 412CB6: variable 'v12' is possibly undefined
 // 412CB6: variable 'v13' is possibly undefined
-// 412CE1: variable 'v21' is possibly undefined
+// 412CE1: variable 'appended' is possibly undefined
 // 412CEA: variable 'v14' is possibly undefined
 // 412CEA: variable 'v15' is possibly undefined
 // 412CEA: variable 'v17' is possibly undefined
@@ -13917,7 +14013,7 @@ _QWORD *__fastcall camlList__rev_merge_rev_289(__int64 a1, __int64 a2, __int64 a
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000412F30) ----------------------------------------------------
-_QWORD *__fastcall camlList__rev_sort_1272(__int64 a1, __int64 *a2, __int64 *a3, __int64 a4, __int64 a5, __int64 a6)
+_QWORD *__fastcall camlList__rev_sort_300(__int64 a1, __int64 *a2, __int64 *a3, __int64 a4, __int64 a5, __int64 a6)
 {
   __int64 v6; // rax
   __int64 *v7; // rbx
@@ -13928,7 +14024,6 @@ _QWORD *__fastcall camlList__rev_sort_1272(__int64 a1, __int64 *a2, __int64 *a3,
   __int64 v12; // rcx
   __int64 v13; // r8
   __int64 v14; // r9
-  _QWORD *result; // rax
   __int64 v16; // rdi
   __int64 v17; // rdx
   __int64 v18; // rcx
@@ -14008,7 +14103,7 @@ _QWORD *__fastcall camlList__rev_sort_1272(__int64 a1, __int64 *a2, __int64 *a3,
                 v8[6] = 2048LL;
                 v8[7] = v49;
                 v8[8] = v8 + 4;
-                result = v8 + 7;
+                return v8 + 7;
               }
               else
               {
@@ -14028,7 +14123,7 @@ _QWORD *__fastcall camlList__rev_sort_1272(__int64 a1, __int64 *a2, __int64 *a3,
                 v8[6] = 2048LL;
                 v8[7] = v51;
                 v8[8] = v8 + 4;
-                result = v8 + 7;
+                return v8 + 7;
               }
             }
             else
@@ -14049,7 +14144,7 @@ _QWORD *__fastcall camlList__rev_sort_1272(__int64 a1, __int64 *a2, __int64 *a3,
               v8[6] = 2048LL;
               v8[7] = v51;
               v8[8] = v8 + 4;
-              result = v8 + 7;
+              return v8 + 7;
             }
           }
           else
@@ -14076,7 +14171,7 @@ _QWORD *__fastcall camlList__rev_sort_1272(__int64 a1, __int64 *a2, __int64 *a3,
                 v8[6] = 2048LL;
                 v8[7] = v49;
                 v8[8] = v8 + 4;
-                result = v8 + 7;
+                return v8 + 7;
               }
               else
               {
@@ -14096,7 +14191,7 @@ _QWORD *__fastcall camlList__rev_sort_1272(__int64 a1, __int64 *a2, __int64 *a3,
                 v8[6] = 2048LL;
                 v8[7] = v53;
                 v8[8] = v8 + 4;
-                result = v8 + 7;
+                return v8 + 7;
               }
             }
             else
@@ -14117,17 +14212,16 @@ _QWORD *__fastcall camlList__rev_sort_1272(__int64 a1, __int64 *a2, __int64 *a3,
               v8[6] = 2048LL;
               v8[7] = v53;
               v8[8] = v8 + 4;
-              result = v8 + 7;
+              return v8 + 7;
             }
           }
-          return result;
         }
       }
     }
 LABEL_32:
     camlList__chop_271((v6 >> 1) | 1, (__int64)a2, (__int64)a3, a4, a5, a6);
-    camlList__sort_1271(v54 - 32, a2, v37, v38, v39, v40);
-    camlList__sort_1271(v54 - 32, a2, v41, v42, v43, v44);
+    camlList__sort_299(v54 - 32, a2, v37, v38, v39, v40);
+    camlList__sort_299(v54 - 32, a2, v41, v42, v43, v44);
     return camlList__rev_merge_279(1LL, *(_QWORD *)(v54 + 32), v45, v46, v47, v48);
   }
   if ( v7 == (__int64 *)1 )
@@ -14160,7 +14254,7 @@ LABEL_32:
     v8[3] = 2048LL;
     v8[4] = v50;
     v8[5] = v8 + 1;
-    result = v8 + 4;
+    return v8 + 4;
   }
   else
   {
@@ -14177,9 +14271,8 @@ LABEL_32:
     v8[3] = 2048LL;
     v8[4] = v52;
     v8[5] = v8 + 1;
-    result = v8 + 4;
+    return v8 + 4;
   }
-  return result;
 }
 // 412F38: variable 'v6' is possibly undefined
 // 412F51: variable 'v7' is possibly undefined
@@ -14221,7 +14314,7 @@ LABEL_32:
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000413440) ----------------------------------------------------
-_QWORD *__fastcall camlList__sort_1271(__int64 a1, __int64 *a2, __int64 *a3, __int64 a4, __int64 a5, __int64 a6)
+_QWORD *__fastcall camlList__sort_299(__int64 a1, __int64 *a2, __int64 *a3, __int64 a4, __int64 a5, __int64 a6)
 {
   __int64 v6; // rax
   __int64 *v7; // rbx
@@ -14232,7 +14325,6 @@ _QWORD *__fastcall camlList__sort_1271(__int64 a1, __int64 *a2, __int64 *a3, __i
   __int64 v12; // rcx
   __int64 v13; // r8
   __int64 v14; // r9
-  _QWORD *result; // rax
   __int64 v16; // rdi
   __int64 v17; // rdx
   __int64 v18; // rcx
@@ -14312,7 +14404,7 @@ _QWORD *__fastcall camlList__sort_1271(__int64 a1, __int64 *a2, __int64 *a3, __i
                 v8[6] = 2048LL;
                 v8[7] = v49;
                 v8[8] = v8 + 4;
-                result = v8 + 7;
+                return v8 + 7;
               }
               else
               {
@@ -14332,7 +14424,7 @@ _QWORD *__fastcall camlList__sort_1271(__int64 a1, __int64 *a2, __int64 *a3, __i
                 v8[6] = 2048LL;
                 v8[7] = v51;
                 v8[8] = v8 + 4;
-                result = v8 + 7;
+                return v8 + 7;
               }
             }
             else
@@ -14353,7 +14445,7 @@ _QWORD *__fastcall camlList__sort_1271(__int64 a1, __int64 *a2, __int64 *a3, __i
               v8[6] = 2048LL;
               v8[7] = v51;
               v8[8] = v8 + 4;
-              result = v8 + 7;
+              return v8 + 7;
             }
           }
           else
@@ -14380,7 +14472,7 @@ _QWORD *__fastcall camlList__sort_1271(__int64 a1, __int64 *a2, __int64 *a3, __i
                 v8[6] = 2048LL;
                 v8[7] = v49;
                 v8[8] = v8 + 4;
-                result = v8 + 7;
+                return v8 + 7;
               }
               else
               {
@@ -14400,7 +14492,7 @@ _QWORD *__fastcall camlList__sort_1271(__int64 a1, __int64 *a2, __int64 *a3, __i
                 v8[6] = 2048LL;
                 v8[7] = v53;
                 v8[8] = v8 + 4;
-                result = v8 + 7;
+                return v8 + 7;
               }
             }
             else
@@ -14421,17 +14513,16 @@ _QWORD *__fastcall camlList__sort_1271(__int64 a1, __int64 *a2, __int64 *a3, __i
               v8[6] = 2048LL;
               v8[7] = v53;
               v8[8] = v8 + 4;
-              result = v8 + 7;
+              return v8 + 7;
             }
           }
-          return result;
         }
       }
     }
 LABEL_32:
     camlList__chop_271((v6 >> 1) | 1, (__int64)a2, (__int64)a3, a4, a5, a6);
-    camlList__rev_sort_1272(v54 + 32, a2, v37, v38, v39, v40);
-    camlList__rev_sort_1272(v54 + 32, a2, v41, v42, v43, v44);
+    camlList__rev_sort_300(v54 + 32, a2, v37, v38, v39, v40);
+    camlList__rev_sort_300(v54 + 32, a2, v41, v42, v43, v44);
     return camlList__rev_merge_rev_289(1LL, *(_QWORD *)(v54 + 72), v45, v46, v47, v48);
   }
   if ( v7 == (__int64 *)1 )
@@ -14464,7 +14555,7 @@ LABEL_32:
     v8[3] = 2048LL;
     v8[4] = v50;
     v8[5] = v8 + 1;
-    result = v8 + 4;
+    return v8 + 4;
   }
   else
   {
@@ -14481,9 +14572,8 @@ LABEL_32:
     v8[3] = 2048LL;
     v8[4] = v52;
     v8[5] = v8 + 1;
-    result = v8 + 4;
+    return v8 + 4;
   }
-  return result;
 }
 // 413448: variable 'v6' is possibly undefined
 // 413461: variable 'v7' is possibly undefined
@@ -14768,7 +14858,7 @@ __int64 __fastcall camlList__fold_right_112(__int64 a1)
   if ( v2 == 1 )
     return a1;
   v4 = v1;
-  camlList__fold_right_112();
+  camlList__fold_right_112(a1);
   return caml_apply2(v4);
 }
 // 413BF8: variable 'v2' is possibly undefined
@@ -14783,13 +14873,17 @@ __int64 __fastcall camlList__map2_118(__int64 a1, __int64 a2, __int64 a3, __int6
   __int64 v9; // rsi
   __int64 v10; // rdx
   __int64 v11; // rcx
+  __int64 v12; // r8
+  __int64 v13; // r9
+  __int64 v14; // rdx
+  __int64 v15; // rcx
   __int64 i; // rdi
-  __int64 v13; // r8
-  __int64 v14; // r9
+  __int64 v17; // r8
+  __int64 v18; // r9
   __int64 result; // rax
-  char v16; // [rsp+0h] [rbp-28h]
-  __int64 v17; // [rsp+10h] [rbp-18h]
-  __int64 v18; // [rsp+18h] [rbp-10h]
+  char v20; // [rsp+0h] [rbp-28h]
+  __int64 v21; // [rsp+10h] [rbp-18h]
+  __int64 v22; // [rsp+18h] [rbp-10h]
 
   v9 = v6;
   if ( v7 == 1 )
@@ -14801,10 +14895,10 @@ LABEL_8:
   }
   if ( a1 == 1 )
     goto LABEL_8;
-  v16 = v6;
-  v17 = *(_QWORD *)(a1 + 8);
-  v18 = caml_apply2(v6);
-  for ( i = camlList__map2_118(v17); ; caml_call_gc(i, v9, v10, v11, v13, v14, v16) )
+  v20 = v6;
+  v21 = *(_QWORD *)(a1 + 8);
+  v22 = caml_apply2(v6);
+  for ( i = camlList__map2_118(v21, v9, v10, v11, v12, v13); ; caml_call_gc(i, v9, v14, v15, v17, v18, v20) )
   {
     v8 -= 3;
     if ( (unsigned __int64)v8 >= caml_young_limit )
@@ -14812,18 +14906,22 @@ LABEL_8:
   }
   result = (__int64)(v8 + 1);
   *v8 = 2048LL;
-  v8[1] = v18;
+  v8[1] = v22;
   v8[2] = i;
   return result;
 }
 // 413C34: variable 'v6' is possibly undefined
 // 413C3B: variable 'v7' is possibly undefined
+// 413C81: variable 'v10' is possibly undefined
+// 413C81: variable 'v11' is possibly undefined
+// 413C81: variable 'v12' is possibly undefined
+// 413C81: variable 'v13' is possibly undefined
 // 413C89: variable 'v8' is possibly undefined
-// 413CDC: variable 'v10' is possibly undefined
-// 413CDC: variable 'v11' is possibly undefined
-// 413CDC: variable 'v13' is possibly undefined
 // 413CDC: variable 'v14' is possibly undefined
-// 413CDC: variable 'v16' is possibly undefined
+// 413CDC: variable 'v15' is possibly undefined
+// 413CDC: variable 'v17' is possibly undefined
+// 413CDC: variable 'v18' is possibly undefined
+// 413CDC: variable 'v20' is possibly undefined
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000413CF0) ----------------------------------------------------
@@ -14925,16 +15023,16 @@ LABEL_6:
 __int64 __fastcall camlList__fold_right2_156(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
 {
   __int64 v6; // rax
-  __int64 v7; // rbx
+  __int64 *v7; // rbx
   __int64 v8; // rax
   __int64 v10; // [rsp+10h] [rbp-8h]
 
-  if ( v7 != 1 )
+  if ( v7 != (__int64 *)1 )
   {
     if ( a1 != 1 )
     {
       v10 = v6;
-      v8 = camlList__fold_right2_156(*(_QWORD *)(a1 + 8));
+      v8 = camlList__fold_right2_156(*(_QWORD *)(a1 + 8), a2, *v7, v7[1], *(_QWORD *)(a1 + 8), a6);
       return caml_apply3(v8, v10);
     }
 LABEL_6:
@@ -15527,7 +15625,7 @@ LABEL_8:
   v17 = *v7;
   v9 = v6[1];
   v16 = *v6;
-  for ( i = camlList__combine_254(); ; caml_call_gc(i, v9, v10, v11, v13, v14, v16) )
+  for ( i = camlList__combine_254(*v6, v9, v7[1], a4, a5, a6); ; caml_call_gc(i, v9, v10, v11, v13, v14, v16) )
   {
     v8 -= 6;
     if ( (unsigned __int64)v8 >= caml_young_limit )
@@ -15561,17 +15659,16 @@ __int64 *__fastcall camlList__merge_261(__int64 *a1)
   __int64 v4; // rsi
   __int64 v5; // rdx
   __int64 v6; // rcx
-  __int64 j; // rdi
+  __int64 *j; // rdi
   __int64 v8; // r8
   __int64 v9; // r9
-  __int64 *result; // rax
   __int64 v11; // rdx
   __int64 v12; // rcx
-  __int64 i; // rdi
+  __int64 *i; // rdi
   __int64 v14; // r8
   __int64 v15; // r9
   char v16; // [rsp+0h] [rbp-38h]
-  __int64 v17; // [rsp+8h] [rbp-30h]
+  __int64 *v17; // [rsp+8h] [rbp-30h]
   __int64 v18; // [rsp+10h] [rbp-28h]
   __int64 v19; // [rsp+30h] [rbp-8h]
 
@@ -15580,13 +15677,13 @@ __int64 *__fastcall camlList__merge_261(__int64 *a1)
   if ( a1 == (__int64 *)1 )
     return v2;
   v16 = (char)v2;
-  v17 = a1[1];
+  v17 = (__int64 *)a1[1];
   v4 = *a1;
   v18 = *a1;
   v19 = *v2;
   if ( caml_apply2(v1) > 1 )
   {
-    for ( i = camlList__merge_261(v17); ; caml_call_gc(i, v4, v11, v12, v14, v15, v16) )
+    for ( i = camlList__merge_261(v17); ; caml_call_gc((__int64)i, v4, v11, v12, v14, v15, v16) )
     {
       v3 -= 3;
       if ( (unsigned __int64)v3 >= caml_young_limit )
@@ -15595,11 +15692,11 @@ __int64 *__fastcall camlList__merge_261(__int64 *a1)
     *v3 = 2048LL;
     v3[1] = v18;
     v3[2] = i;
-    result = v3 + 1;
+    return v3 + 1;
   }
   else
   {
-    for ( j = camlList__merge_261(a1); ; caml_call_gc(j, v4, v5, v6, v8, v9, v16) )
+    for ( j = camlList__merge_261(a1); ; caml_call_gc((__int64)j, v4, v5, v6, v8, v9, v16) )
     {
       v3 -= 3;
       if ( (unsigned __int64)v3 >= caml_young_limit )
@@ -15608,9 +15705,8 @@ __int64 *__fastcall camlList__merge_261(__int64 *a1)
     *v3 = 2048LL;
     v3[1] = v19;
     v3[2] = j;
-    result = v3 + 1;
+    return v3 + 1;
   }
-  return result;
 }
 // 41464B: variable 'v2' is possibly undefined
 // 414691: variable 'v1' is possibly undefined
@@ -15678,9 +15774,8 @@ _QWORD *__fastcall camlList__stable_sort_276(__int64 a1, __int64 a2, __int64 a3,
   __int64 v10; // rcx
   __int64 v11; // r8
   __int64 v12; // r9
-  _QWORD *result; // rax
   char v14; // [rsp+0h] [rbp-18h]
-  _QWORD *v15; // [rsp+8h] [rbp-10h]
+  __int64 v15; // [rsp+8h] [rbp-10h]
 
   for ( i = v6; ; caml_call_gc(i, a2, a3, a4, a5, a6, v14) )
   {
@@ -15701,19 +15796,18 @@ _QWORD *__fastcall camlList__stable_sort_276(__int64 a1, __int64 a2, __int64 a3,
   v7[10] = 10487LL;
   v7[11] = caml_curry2;
   v7[12] = 5LL;
-  v7[13] = camlList__sort_1271;
+  v7[13] = camlList__sort_299;
   v7[14] = 4345LL;
   v7[15] = caml_curry2;
   v7[16] = 5LL;
-  v7[17] = camlList__rev_sort_1272;
+  v7[17] = camlList__rev_sort_300;
   v7[18] = i;
   v7[19] = v7 + 1;
   v7[20] = v7 + 6;
   if ( camlList__length_aux_58() >= 5 )
-    result = camlList__sort_1271((__int64)(v7 + 11), v7 + 11, v9, v10, v11, v12);
+    return camlList__sort_299((__int64)(v7 + 11), v7 + 11, v9, v10, v11, v12);
   else
-    result = v15;
-  return result;
+    return (_QWORD *)v15;
 }
 // 4147D4: variable 'v6' is possibly undefined
 // 4147DC: variable 'v7' is possibly undefined
@@ -15777,6 +15871,8 @@ __int64 camlList__entry()
   camlList[39] = camlList[38];
   return 1LL;
 }
+// 63C9D0: using guessed type _QWORD camlPervasives[84];
+// 63F800: using guessed type _QWORD camlList[44];
 // 63F960: using guessed type __int64 (__fastcall *camlList__1)();
 // 63F980: using guessed type __int64 (__fastcall *camlList__2)();
 // 63F9A0: using guessed type __int64 (__fastcall *camlList__3)();
@@ -15840,6 +15936,7 @@ void __fastcall __noreturn camlSys__code_begin(__int64 a1, __int64 a2, __int64 a
 // 414CA6: variable 'a5' is possibly undefined
 // 414CA6: variable 'a6' is possibly undefined
 // 414CA6: variable 'v7' is possibly undefined
+// 640958: using guessed type __int64 camlSys[33];
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000414CB0) ----------------------------------------------------
@@ -15956,6 +16053,7 @@ __int64 __fastcall camlSys__entry(__int64 a1, const char *a2)
 // 414E1A: variable 'v6' is possibly undefined
 // 414E1A: variable 'v14' is possibly undefined
 // 414E23: variable 'v2' is possibly undefined
+// 640958: using guessed type __int64 camlSys[33];
 // 640A60: using guessed type __int64 (__fastcall *camlSys__2)();
 // 640A78: using guessed type __int64 (__fastcall *camlSys__4)();
 
@@ -15965,24 +16063,26 @@ __int64 __fastcall camlHashtbl__code_begin(__int64 a1, __int64 a2)
   __int64 *v2; // rax
   __int64 v3; // rbx
   _QWORD *v4; // r15
+  __int64 v5; // rdi
   __int64 result; // rax
-  __int64 v6; // rdx
-  __int64 v7; // rcx
+  __int64 v7; // rdx
+  __int64 v8; // rcx
   __int64 i; // rdi
-  __int64 v9; // r8
-  __int64 v10; // r9
-  __int64 v11; // [rsp+0h] [rbp-28h]
-  __int64 v12; // [rsp+8h] [rbp-20h]
-  __int64 v13; // [rsp+18h] [rbp-10h]
+  __int64 v10; // r8
+  __int64 v11; // r9
+  __int64 v12; // [rsp+0h] [rbp-28h]
+  __int64 v13; // [rsp+8h] [rbp-20h]
+  __int64 v14; // [rsp+18h] [rbp-10h]
 
   if ( v2 == (__int64 *)1 )
     return 1LL;
-  v13 = v2[2];
-  v12 = v2[1];
-  v11 = *v2;
-  if ( caml_apply2(**(_QWORD **)(v3 + 16)) == 1 )
+  v14 = v2[2];
+  v13 = v2[1];
+  v12 = *v2;
+  v5 = **(_QWORD **)(v3 + 16);
+  if ( caml_apply2(v5) == 1 )
   {
-    for ( i = camlHashtbl__code_begin(); ; caml_call_gc(i, a2, v6, v7, v9, v10, v11) )
+    for ( i = camlHashtbl__code_begin(v5, a2); ; caml_call_gc(i, a2, v7, v8, v10, v11, v12) )
     {
       v4 -= 4;
       if ( (unsigned __int64)v4 >= caml_young_limit )
@@ -15990,25 +16090,25 @@ __int64 __fastcall camlHashtbl__code_begin(__int64 a1, __int64 a2)
     }
     result = (__int64)(v4 + 1);
     *v4 = 3072LL;
-    v4[1] = v11;
-    v4[2] = v12;
+    v4[1] = v12;
+    v4[2] = v13;
     v4[3] = i;
   }
   else
   {
     **(_QWORD **)(v3 + 24) -= 2LL;
-    result = v13;
+    return v14;
   }
   return result;
 }
 // 415018: variable 'v2' is possibly undefined
 // 41503C: variable 'v3' is possibly undefined
 // 41507E: variable 'v4' is possibly undefined
-// 41509E: variable 'v11' is possibly undefined
-// 4150C0: variable 'v6' is possibly undefined
+// 41509E: variable 'v12' is possibly undefined
 // 4150C0: variable 'v7' is possibly undefined
-// 4150C0: variable 'v9' is possibly undefined
+// 4150C0: variable 'v8' is possibly undefined
 // 4150C0: variable 'v10' is possibly undefined
+// 4150C0: variable 'v11' is possibly undefined
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (00000000004150D0) ----------------------------------------------------
@@ -16017,26 +16117,28 @@ __int64 __fastcall camlHashtbl__find_in_bucket_241(__int64 a1, __int64 a2)
   __int64 v2; // rax
   __int64 v3; // rbx
   _QWORD *v4; // r15
-  __int64 v5; // rdx
-  __int64 v6; // rcx
+  __int64 v5; // rdi
+  __int64 v6; // rdx
+  __int64 v7; // rcx
   __int64 i; // rdi
-  __int64 v8; // r8
-  __int64 v9; // r9
+  __int64 v9; // r8
+  __int64 v10; // r9
   __int64 result; // rax
-  __int64 v11; // [rsp+0h] [rbp-18h]
-  __int64 v12; // [rsp+10h] [rbp-8h]
+  __int64 v12; // [rsp+0h] [rbp-18h]
+  __int64 v13; // [rsp+10h] [rbp-8h]
 
   while ( 1 )
   {
     if ( v2 == 1 )
       return 1LL;
-    v11 = *(_QWORD *)(v2 + 16);
-    v12 = *(_QWORD *)(v2 + 8);
-    if ( caml_apply2(**(_QWORD **)(v3 + 16)) != 1 )
+    v12 = *(_QWORD *)(v2 + 16);
+    v13 = *(_QWORD *)(v2 + 8);
+    v5 = **(_QWORD **)(v3 + 16);
+    if ( caml_apply2(v5) != 1 )
       break;
-    v2 = v11;
+    v2 = v12;
   }
-  for ( i = camlHashtbl__find_in_bucket_241(); ; caml_call_gc(i, a2, v5, v6, v8, v9, v11) )
+  for ( i = camlHashtbl__find_in_bucket_241(v5, a2); ; caml_call_gc(i, a2, v6, v7, v9, v10, v12) )
   {
     v4 -= 3;
     if ( (unsigned __int64)v4 >= caml_young_limit )
@@ -16044,22 +16146,28 @@ __int64 __fastcall camlHashtbl__find_in_bucket_241(__int64 a1, __int64 a2)
   }
   result = (__int64)(v4 + 1);
   *v4 = 2048LL;
-  v4[1] = v12;
+  v4[1] = v13;
   v4[2] = i;
   return result;
 }
 // 4150D8: variable 'v2' is possibly undefined
 // 4150F3: variable 'v3' is possibly undefined
 // 41511A: variable 'v4' is possibly undefined
-// 415160: variable 'v5' is possibly undefined
 // 415160: variable 'v6' is possibly undefined
-// 415160: variable 'v8' is possibly undefined
+// 415160: variable 'v7' is possibly undefined
 // 415160: variable 'v9' is possibly undefined
-// 415160: variable 'v11' is possibly undefined
+// 415160: variable 'v10' is possibly undefined
+// 415160: variable 'v12' is possibly undefined
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000415170) ----------------------------------------------------
-_QWORD *__fastcall camlHashtbl__replace_bucket_249(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+_QWORD *__fastcall camlHashtbl__replace_bucket_249(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 *v6; // rax
   __int64 v7; // rbx
@@ -16072,7 +16180,7 @@ _QWORD *__fastcall camlHashtbl__replace_bucket_249(__int64 a1, __int64 a2, __int
   _QWORD *result; // rax
   __int64 v15; // rdx
   __int64 v16; // rcx
-  __int64 i; // rdi
+  _QWORD *i; // rdi
   __int64 v18; // r8
   __int64 v19; // r9
   char v20; // [rsp+0h] [rbp-28h]
@@ -16100,7 +16208,9 @@ _QWORD *__fastcall camlHashtbl__replace_bucket_249(__int64 a1, __int64 a2, __int
   v9 = **(_QWORD **)(v7 + 16);
   if ( caml_apply2(v9) == 1 )
   {
-    for ( i = camlHashtbl__replace_bucket_249(); ; caml_call_gc(i, a2, v15, v16, v18, v19, v21) )
+    for ( i = camlHashtbl__replace_bucket_249(v9, a2, v10, v11, v12, v13);
+          ;
+          caml_call_gc((__int64)i, a2, v15, v16, v18, v19, v21) )
     {
       v8 -= 4;
       if ( (unsigned __int64)v8 >= caml_young_limit )
@@ -16133,6 +16243,10 @@ _QWORD *__fastcall camlHashtbl__replace_bucket_249(__int64 a1, __int64 a2, __int
 // 415178: variable 'v6' is possibly undefined
 // 41519C: variable 'v7' is possibly undefined
 // 4151B2: variable 'v8' is possibly undefined
+// 415202: variable 'v10' is possibly undefined
+// 415202: variable 'v11' is possibly undefined
+// 415202: variable 'v12' is possibly undefined
+// 415202: variable 'v13' is possibly undefined
 // 415232: variable 'v21' is possibly undefined
 // 41526B: variable 'a3' is possibly undefined
 // 41526B: variable 'a4' is possibly undefined
@@ -16143,10 +16257,6 @@ _QWORD *__fastcall camlHashtbl__replace_bucket_249(__int64 a1, __int64 a2, __int
 // 415272: variable 'v16' is possibly undefined
 // 415272: variable 'v18' is possibly undefined
 // 415272: variable 'v19' is possibly undefined
-// 415279: variable 'v10' is possibly undefined
-// 415279: variable 'v11' is possibly undefined
-// 415279: variable 'v12' is possibly undefined
-// 415279: variable 'v13' is possibly undefined
 // 637F48: using guessed type char *caml_exn_Not_found;
 // 646878: using guessed type __int64 caml_young_limit;
 
@@ -16273,7 +16383,7 @@ __int64 __fastcall camlHashtbl__remove_bucket_111()
   if ( v4 == 1 )
   {
     **(_QWORD **)(v1 + 16) -= 2LL;
-    result = v13;
+    return v13;
   }
   else
   {
@@ -16356,7 +16466,13 @@ __int64 __fastcall camlHashtbl__find_in_bucket_136()
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000415560) ----------------------------------------------------
-_QWORD *__fastcall camlHashtbl__replace_bucket_144(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+_QWORD *__fastcall camlHashtbl__replace_bucket_144(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   __int64 v7; // rbx
@@ -16371,7 +16487,7 @@ _QWORD *__fastcall camlHashtbl__replace_bucket_144(__int64 a1, __int64 a2, __int
   _QWORD *result; // rax
   __int64 v17; // rdx
   __int64 v18; // rcx
-  __int64 i; // rdi
+  _QWORD *i; // rdi
   __int64 v20; // r8
   __int64 v21; // r9
   char v22; // [rsp+0h] [rbp-28h]
@@ -16416,7 +16532,9 @@ _QWORD *__fastcall camlHashtbl__replace_bucket_144(__int64 a1, __int64 a2, __int
   }
   else
   {
-    for ( i = camlHashtbl__replace_bucket_144(); ; caml_call_gc(i, (__int64)v10, v17, v18, v20, v21, v23) )
+    for ( i = camlHashtbl__replace_bucket_144((__int64)v9, (__int64)v10, v11, v12, v13, v14);
+          ;
+          caml_call_gc((__int64)i, (__int64)v10, v17, v18, v20, v21, v23) )
     {
       v8 -= 4;
       if ( (unsigned __int64)v8 >= caml_young_limit )
@@ -16435,6 +16553,10 @@ _QWORD *__fastcall camlHashtbl__replace_bucket_144(__int64 a1, __int64 a2, __int
 // 41558C: variable 'v7' is possibly undefined
 // 4155A0: variable 'v15' is possibly undefined
 // 4155A2: variable 'v8' is possibly undefined
+// 4155F2: variable 'v11' is possibly undefined
+// 4155F2: variable 'v12' is possibly undefined
+// 4155F2: variable 'v13' is possibly undefined
+// 4155F2: variable 'v14' is possibly undefined
 // 415622: variable 'v23' is possibly undefined
 // 41565B: variable 'a3' is possibly undefined
 // 41565B: variable 'a4' is possibly undefined
@@ -16445,10 +16567,6 @@ _QWORD *__fastcall camlHashtbl__replace_bucket_144(__int64 a1, __int64 a2, __int
 // 415662: variable 'v18' is possibly undefined
 // 415662: variable 'v20' is possibly undefined
 // 415662: variable 'v21' is possibly undefined
-// 415669: variable 'v11' is possibly undefined
-// 415669: variable 'v12' is possibly undefined
-// 415669: variable 'v13' is possibly undefined
-// 415669: variable 'v14' is possibly undefined
 // 637F48: using guessed type char *caml_exn_Not_found;
 // 646878: using guessed type __int64 caml_young_limit;
 
@@ -16534,7 +16652,6 @@ __int64 __fastcall camlHashtbl__add_207(__int64 (*a1)(void), __int64 (**a2)(void
   unsigned __int64 i; // rdx
   const char *v11; // rsi
   char *v12; // rdi
-  __int64 result; // rax
   __int64 v14; // rdx
   __int64 v15; // rcx
   __int64 v16; // r8
@@ -16585,10 +16702,9 @@ LABEL_13:
   caml_modify((unsigned __int64 *)&v12[4 * i - 4], (unsigned __int64)v11);
   *v20 += 2LL;
   if ( *v20 <= 2 * ((*(_QWORD *)(v20[1] - 8LL) >> 9) | 1LL) - 1 )
-    result = 1LL;
+    return 1LL;
   else
-    result = camlHashtbl__resize_89();
-  return result;
+    return camlHashtbl__resize_89();
 }
 // 4157B0: could not find valid save-restore pair for rbx
 // 4157B4: variable 'v2' is possibly undefined
@@ -16609,7 +16725,13 @@ LABEL_13:
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (00000000004158E0) ----------------------------------------------------
-__int64 __fastcall camlHashtbl__remove_213(__int64 (*a1)(void), __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlHashtbl__remove_213(
+        __int64 (*a1)(void),
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   __int64 v7; // rbx
@@ -16648,14 +16770,7 @@ __int64 __fastcall camlHashtbl__remove_213(__int64 (*a1)(void), __int64 a2, __in
     v20 = i;
     v10 = *(__int64 (***)(void))(*(_QWORD *)(*((_QWORD *)a1 + 4) + 16LL) + 8LL);
     a1 = *v10;
-    v11 = ((((__int64 (__fastcall *)(__int64 (*)(void), __int64 (**)(void), __int64, __int64, __int64, __int64))*v10)(
-              *v10,
-              v10,
-              i,
-              a4,
-              a5,
-              a6) & 0x7FFFFFFFFFFFFFFFLL) >> 1)
-        % v22;
+    v11 = (((*v10)() & 0x7FFFFFFFFFFFFFFFLL) >> 1) % v22;
   }
   else
   {
@@ -16682,11 +16797,11 @@ __int64 __fastcall camlHashtbl__remove_213(__int64 (*a1)(void), __int64 a2, __in
 // 4158E7: variable 'v8' is possibly undefined
 // 415921: variable 'i' is possibly undefined
 // 415925: variable 'v7' is possibly undefined
-// 41595D: variable 'a4' is possibly undefined
-// 41595D: variable 'a5' is possibly undefined
-// 41595D: variable 'a6' is possibly undefined
 // 415988: variable 'v11' is possibly undefined
 // 415993: variable 'v20' is possibly undefined
+// 4159EE: variable 'a4' is possibly undefined
+// 4159EE: variable 'a5' is possibly undefined
+// 4159EE: variable 'a6' is possibly undefined
 // 415A03: variable 'v16' is possibly undefined
 // 415A03: variable 'v17' is possibly undefined
 // 415A03: variable 'v18' is possibly undefined
@@ -16740,7 +16855,7 @@ __int64 __fastcall camlHashtbl__find_rec_221(__int64 a1, __int64 a2, __int64 a3,
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000415AA0) ----------------------------------------------------
-__int64 __fastcall camlHashtbl__find_1198(__int64 (*a1)(void))
+__int64 __fastcall camlHashtbl__find_226(__int64 (*a1)(void))
 {
   __int64 v1; // rax
   _QWORD *v2; // r15
@@ -16757,7 +16872,6 @@ __int64 __fastcall camlHashtbl__find_1198(__int64 (*a1)(void))
   __int64 v13; // rcx
   __int64 v14; // r8
   __int64 v15; // r9
-  __int64 result; // rax
   __int64 v17; // rax
   __int64 v18; // rdx
   __int64 v19; // rcx
@@ -16859,10 +16973,9 @@ LABEL_17:
   }
   v35 = *(_QWORD *)(v30 + 8);
   if ( caml_apply2(**((_QWORD **)v31 + 3)) == 1 )
-    result = camlHashtbl__find_rec_221(*((_QWORD *)v31 + 5), (__int64)v3, v22, v23, v24, v25);
+    return camlHashtbl__find_rec_221(*((_QWORD *)v31 + 5), (__int64)v3, v22, v23, v24, v25);
   else
-    result = v35;
-  return result;
+    return v35;
 }
 // 415AA4: variable 'v1' is possibly undefined
 // 415B08: variable 'v8' is possibly undefined
@@ -16893,7 +17006,13 @@ LABEL_17:
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000415CD0) ----------------------------------------------------
-__int64 __fastcall camlHashtbl__find_all_238(__int64 (*a1)(void), __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlHashtbl__find_all_238(
+        __int64 (*a1)(void),
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   __int64 v7; // rbx
@@ -16922,14 +17041,7 @@ __int64 __fastcall camlHashtbl__find_all_238(__int64 (*a1)(void), __int64 a2, __
     v13 = i;
     v10 = *(__int64 (***)(void))(*(_QWORD *)(*((_QWORD *)a1 + 4) + 16LL) + 8LL);
     a1 = *v10;
-    v11 = ((((__int64 (__fastcall *)(__int64 (*)(void), __int64 (**)(void), __int64, __int64, __int64, __int64))*v10)(
-              *v10,
-              v10,
-              i,
-              a4,
-              a5,
-              a6) & 0x7FFFFFFFFFFFFFFFLL) >> 1)
-        % v14;
+    v11 = (((*v10)() & 0x7FFFFFFFFFFFFFFFLL) >> 1) % v14;
   }
   else
   {
@@ -16944,11 +17056,11 @@ __int64 __fastcall camlHashtbl__find_all_238(__int64 (*a1)(void), __int64 a2, __
 // 415CD7: variable 'v8' is possibly undefined
 // 415D11: variable 'v7' is possibly undefined
 // 415D15: variable 'i' is possibly undefined
-// 415D49: variable 'a4' is possibly undefined
-// 415D49: variable 'a5' is possibly undefined
-// 415D49: variable 'a6' is possibly undefined
 // 415D7E: variable 'v13' is possibly undefined
 // 415D74: variable 'v11' is possibly undefined
+// 415DA2: variable 'a4' is possibly undefined
+// 415DA2: variable 'a5' is possibly undefined
+// 415DA2: variable 'a6' is possibly undefined
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000415DC0) ----------------------------------------------------
@@ -16967,13 +17079,13 @@ __int64 __fastcall camlHashtbl__replace_245(__int64 a1, __int64 a2)
   const char *v12; // rdi
   __int64 v13; // rdx
   _QWORD *v14; // r15
-  __int64 result; // rax
   unsigned __int64 v16; // rdx
   __int64 v17; // rcx
   __int64 v18; // r8
   __int64 v19; // r9
   _QWORD *v20; // [rsp+0h] [rbp-48h]
   __int64 v21; // [rsp+8h] [rbp-40h]
+  __int64 v22; // [rsp+10h] [rbp-38h]
   __int64 v23; // [rsp+18h] [rbp-30h]
   __int64 v24; // [rsp+18h] [rbp-30h]
   unsigned __int64 v25; // [rsp+38h] [rbp-10h]
@@ -16990,6 +17102,7 @@ __int64 __fastcall camlHashtbl__replace_245(__int64 a1, __int64 a2)
   if ( *(_QWORD *)(v2[1] - 8LL) >> 10 )
   {
     v23 = *(_QWORD *)(v2[1] - 8LL) >> 10;
+    v22 = a1;
     v21 = v3;
     v20 = v2;
     a2 = *(_QWORD *)(*(_QWORD *)(*(_QWORD *)(a2 + 32) + 16LL) + 8LL);
@@ -17017,21 +17130,20 @@ __int64 __fastcall camlHashtbl__replace_245(__int64 a1, __int64 a2)
       JUMPOUT(0x415FB6LL);
     *v14 = 3072LL;
     v14[1] = v21;
-    v14[2] = a1;
+    v14[2] = v22;
     v14[3] = v24;
     caml_modify((unsigned __int64 *)(v13 + 4 * v25 - 4), (unsigned __int64)(v14 + 1));
     *v20 += 2LL;
     if ( *v20 <= 2 * ((*(_QWORD *)(v20[1] - 8LL) >> 9) | 1LL) - 1 )
-      result = 1LL;
+      return 1LL;
     else
-      result = camlHashtbl__resize_89();
+      return camlHashtbl__resize_89();
   }
   else
   {
     caml_raise_exn();
-    result = sub_415F68((const char *)&caml_exn_Not_found, (const char *)a2, v16, v17, v18, v19);
+    return sub_415F68((const char *)&caml_exn_Not_found, (const char *)a2, v16, v17, v18, v19);
   }
-  return result;
 }
 // 415DD5: control flows out of bounds to 415FC0
 // 415E96: control flows out of bounds to 415FD4
@@ -17046,7 +17158,7 @@ __int64 __fastcall camlHashtbl__replace_245(__int64 a1, __int64 a2)
 // 415EA6: variable 'v7' is possibly undefined
 // 415EA6: variable 'v8' is possibly undefined
 // 415F01: variable 'v21' is possibly undefined
-// 415F09: variable 'a1' is possibly undefined
+// 415F09: variable 'v22' is possibly undefined
 // 415F66: variable 'v16' is possibly undefined
 // 415F66: variable 'v17' is possibly undefined
 // 415F66: variable 'v18' is possibly undefined
@@ -17060,7 +17172,6 @@ __int64 __fastcall sub_415F68(const char *a1, const char *a2, unsigned __int64 a
 {
   __int64 v6; // rbx
   _QWORD *v7; // rax
-  __int64 result; // rax
   __int64 v9; // rdx
   __int64 v10; // rcx
   __int64 v11; // r8
@@ -17074,15 +17185,14 @@ __int64 __fastcall sub_415F68(const char *a1, const char *a2, unsigned __int64 a
     caml_ml_array_bound_error(a1, a2);
     caml_ml_array_bound_error(a1, a2);
     caml_ml_array_bound_error(a1, a2);
-    result = camlHashtbl__mem_255((__int64 (*)(void))a1, (__int64)a2, v9, v10, v11, v12);
+    return camlHashtbl__mem_255((__int64 (*)(void))a1, (__int64)a2, v9, v10, v11, v12);
   }
   else
   {
     v7 = camlHashtbl__replace_bucket_249((__int64)a1, (__int64)a2, a3, a4, a5, a6);
     caml_modify((unsigned __int64 *)(v13 + 4 * v14 - 4), (unsigned __int64)v7);
-    result = 1LL;
+    return 1LL;
   }
-  return result;
 }
 // 415FB5: positive sp value 50 has been found
 // 415F6D: variable 'v6' is possibly undefined
@@ -17093,7 +17203,13 @@ __int64 __fastcall sub_415F68(const char *a1, const char *a2, unsigned __int64 a
 // 415FDA: variable 'v12' is possibly undefined
 
 //----- (0000000000415FE0) ----------------------------------------------------
-__int64 __fastcall camlHashtbl__mem_255(__int64 (*a1)(void), __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlHashtbl__mem_255(
+        __int64 (*a1)(void),
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   __int64 v6; // rax
   __int64 v7; // rbx
@@ -17122,14 +17238,7 @@ __int64 __fastcall camlHashtbl__mem_255(__int64 (*a1)(void), __int64 a2, __int64
     v13 = i;
     v10 = *(__int64 (***)(void))(*(_QWORD *)(*((_QWORD *)a1 + 4) + 16LL) + 8LL);
     a1 = *v10;
-    v11 = ((((__int64 (__fastcall *)(__int64 (*)(void), __int64 (**)(void), __int64, __int64, __int64, __int64))*v10)(
-              *v10,
-              v10,
-              i,
-              a4,
-              a5,
-              a6) & 0x7FFFFFFFFFFFFFFFLL) >> 1)
-        % v14;
+    v11 = (((*v10)() & 0x7FFFFFFFFFFFFFFFLL) >> 1) % v14;
   }
   else
   {
@@ -17144,11 +17253,11 @@ __int64 __fastcall camlHashtbl__mem_255(__int64 (*a1)(void), __int64 a2, __int64
 // 415FE7: variable 'v8' is possibly undefined
 // 416021: variable 'v7' is possibly undefined
 // 416025: variable 'i' is possibly undefined
-// 416059: variable 'a4' is possibly undefined
-// 416059: variable 'a5' is possibly undefined
-// 416059: variable 'a6' is possibly undefined
 // 41608E: variable 'v13' is possibly undefined
 // 416084: variable 'v11' is possibly undefined
+// 4160B2: variable 'a4' is possibly undefined
+// 4160B2: variable 'a5' is possibly undefined
+// 4160B2: variable 'a6' is possibly undefined
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (00000000004160D0) ----------------------------------------------------
@@ -17164,39 +17273,43 @@ __int64 __fastcall camlHashtbl__hash_59()
 _QWORD *__fastcall camlHashtbl__create_79()
 {
   _QWORD *v0; // r15
-  __int64 v1; // rdx
-  __int64 v2; // rcx
-  __int64 v3; // r8
-  __int64 v4; // r9
-  __int64 v5; // rax
-  __int64 v6; // rbx
+  const char *v1; // rax
+  __int64 v2; // rdi
+  __int64 v3; // rdx
+  __int64 v4; // rcx
+  __int64 v5; // r8
+  __int64 v6; // r9
+  __int64 v7; // rax
+  __int64 v8; // rbx
   _QWORD *result; // rax
-  char v8; // [rsp+0h] [rbp-8h]
+  char v10; // [rsp+0h] [rbp-8h]
 
   camlPervasives__max_53();
   camlPervasives__min_50();
-  caml_c_call((const char *)3, (const char *)1);
-  v6 = v5;
+  v2 = (__int64)v1;
+  caml_c_call(v1, (const char *)1);
+  v8 = v7;
   while ( 1 )
   {
     v0 -= 3;
     if ( (unsigned __int64)v0 >= caml_young_limit )
       break;
-    caml_call_gc(3LL, 1LL, v1, v2, v3, v4, v8);
+    caml_call_gc(v2, 1LL, v3, v4, v5, v6, v10);
   }
   result = v0 + 1;
   *v0 = 2048LL;
   v0[1] = 1LL;
-  v0[2] = v6;
+  v0[2] = v8;
   return result;
 }
-// 416129: variable 'v5' is possibly undefined
+// 41611A: variable 'v1' is possibly undefined
+// 416129: variable 'v7' is possibly undefined
 // 41612C: variable 'v0' is possibly undefined
-// 416158: variable 'v1' is possibly undefined
-// 416158: variable 'v2' is possibly undefined
 // 416158: variable 'v3' is possibly undefined
 // 416158: variable 'v4' is possibly undefined
-// 416158: variable 'v8' is possibly undefined
+// 416158: variable 'v5' is possibly undefined
+// 416158: variable 'v6' is possibly undefined
+// 416158: variable 'v10' is possibly undefined
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000416160) ----------------------------------------------------
@@ -17208,7 +17321,6 @@ __int64 __fastcall camlHashtbl__clear_82(__int64 a1, __int64 a2)
   __int64 v5; // rbp
   const char *v6; // rdi
   unsigned __int64 v7; // rax
-  __int64 result; // rax
   __int64 v9; // rdx
   __int64 v10; // rcx
   __int64 v11; // r8
@@ -17221,7 +17333,7 @@ __int64 __fastcall camlHashtbl__clear_82(__int64 a1, __int64 a2)
   {
 LABEL_4:
     *v3 = 1LL;
-    result = 1LL;
+    return 1LL;
   }
   else
   {
@@ -17238,9 +17350,8 @@ LABEL_4:
         goto LABEL_4;
     }
     caml_ml_array_bound_error(v6, (const char *)a2);
-    result = (__int64)camlHashtbl__copy_85((__int64)v6, a2, v9, v10, v11, v12);
+    return (__int64)camlHashtbl__copy_85((__int64)v6, a2, v9, v10, v11, v12);
   }
-  return result;
 }
 // 416164: variable 'v2' is possibly undefined
 // 4161CC: variable 'v9' is possibly undefined
@@ -17300,85 +17411,87 @@ __int64 __fastcall camlHashtbl__resize_89()
   __int64 v1; // rbx
   _QWORD *v2; // r15
   const char *v3; // rax
-  __int64 v4; // rdx
-  __int64 v5; // rcx
-  __int64 v6; // r8
-  __int64 v7; // r9
-  unsigned __int64 v8; // rax
-  unsigned __int64 v9; // rbx
+  __int64 v4; // rdi
+  __int64 v5; // rdx
+  __int64 v6; // rcx
+  __int64 v7; // r8
+  __int64 v8; // r9
+  unsigned __int64 v9; // rax
   unsigned __int64 v10; // rbx
-  const char *v11; // rdi
-  __int64 v12; // rdi
-  __int64 result; // rax
-  __int64 v14; // [rsp+0h] [rbp-38h]
-  __int64 v15; // [rsp+8h] [rbp-30h]
-  __int64 v16; // [rsp+10h] [rbp-28h]
-  __int64 v17; // [rsp+10h] [rbp-28h]
-  __int64 v18; // [rsp+18h] [rbp-20h]
-  unsigned __int64 v19; // [rsp+20h] [rbp-18h]
-  __int64 v20; // [rsp+28h] [rbp-10h]
+  unsigned __int64 v11; // rbx
+  const char *v12; // rdi
+  __int64 v13; // rdi
+  __int64 v15; // [rsp+0h] [rbp-38h]
+  const char *v16; // [rsp+8h] [rbp-30h]
+  __int64 v17; // [rsp+8h] [rbp-30h]
+  __int64 v18; // [rsp+10h] [rbp-28h]
+  __int64 v19; // [rsp+10h] [rbp-28h]
+  __int64 v20; // [rsp+18h] [rbp-20h]
+  unsigned __int64 v21; // [rsp+20h] [rbp-18h]
+  __int64 v22; // [rsp+28h] [rbp-10h]
 
-  v14 = v0;
-  v18 = v1;
-  v20 = *(_QWORD *)(v1 + 8);
-  v16 = (*(_QWORD *)(v20 - 8) >> 9) | 1LL;
-  v3 = (const char *)(4 * (v16 >> 1) + 3);
+  v15 = v0;
+  v20 = v1;
+  v22 = *(_QWORD *)(v1 + 8);
+  v18 = (*(_QWORD *)(v22 - 8) >> 9) | 1LL;
   camlPervasives__min_50();
-  if ( v3 == (const char *)v16 )
+  if ( v3 == (const char *)v18 )
     return 1LL;
+  v16 = v3;
+  v4 = (__int64)v3;
   caml_c_call(v3, (const char *)1);
-  v9 = v8;
-  v19 = v8;
+  v10 = v9;
+  v21 = v9;
   while ( 1 )
   {
     v2 -= 6;
     if ( (unsigned __int64)v2 >= caml_young_limit )
       break;
-    caml_call_gc(4 * (v16 >> 1) + 3, 1LL, v4, v5, v6, v7, v14);
+    caml_call_gc(v4, 1LL, v5, v6, v7, v8, v15);
   }
   *v2 = 5367LL;
   v2[1] = camlHashtbl__insert_bucket_96;
   v2[2] = 3LL;
-  v2[3] = v14;
-  v2[4] = 4 * (v16 >> 1) + 3;
-  v2[5] = v9;
-  v10 = 1LL;
-  if ( v16 - 2 < 1 )
+  v2[3] = v15;
+  v2[4] = v16;
+  v2[5] = v10;
+  v11 = 1LL;
+  if ( v18 - 2 < 1 )
   {
 LABEL_8:
-    caml_modify((unsigned __int64 *)(v18 + 8), v19);
-    result = 1LL;
+    caml_modify((unsigned __int64 *)(v20 + 8), v21);
+    return 1LL;
   }
   else
   {
-    v17 = v16 - 2;
-    v15 = 1LL;
+    v19 = v18 - 2;
+    v17 = 1LL;
     while ( 1 )
     {
-      v11 = (const char *)(*(_QWORD *)(v20 - 8) >> 9);
-      if ( (unsigned __int64)v11 <= v10 )
+      v12 = (const char *)(*(_QWORD *)(v22 - 8) >> 9);
+      if ( (unsigned __int64)v12 <= v11 )
         break;
       camlHashtbl__insert_bucket_96();
-      v12 = v15;
-      v10 = v15 + 2;
-      v15 += 2LL;
-      if ( v12 == v17 )
+      v13 = v17;
+      v11 = v17 + 2;
+      v17 += 2LL;
+      if ( v13 == v19 )
         goto LABEL_8;
     }
-    caml_ml_array_bound_error(v11, (const char *)1);
-    result = camlHashtbl__add_102((__int64)v11, 1LL);
+    caml_ml_array_bound_error(v12, (const char *)1);
+    return camlHashtbl__add_102((__int64)v12, 1LL);
   }
-  return result;
 }
 // 416234: variable 'v0' is possibly undefined
 // 416238: variable 'v1' is possibly undefined
-// 4162A0: variable 'v8' is possibly undefined
+// 41627A: variable 'v3' is possibly undefined
+// 4162A0: variable 'v9' is possibly undefined
 // 4162A8: variable 'v2' is possibly undefined
-// 4162DE: variable 'v14' is possibly undefined
-// 416378: variable 'v4' is possibly undefined
+// 4162DE: variable 'v15' is possibly undefined
 // 416378: variable 'v5' is possibly undefined
 // 416378: variable 'v6' is possibly undefined
 // 416378: variable 'v7' is possibly undefined
+// 416378: variable 'v8' is possibly undefined
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000416390) ----------------------------------------------------
@@ -17398,7 +17511,6 @@ __int64 __fastcall camlHashtbl__add_102(__int64 a1, __int64 a2)
   const char *v13; // rsi
   __int64 v14; // rbx
   __int64 v15; // rbx
-  __int64 result; // rax
   __int64 v17; // rdx
   __int64 v18; // rcx
   __int64 v19; // r8
@@ -17445,10 +17557,9 @@ LABEL_13:
   caml_modify((unsigned __int64 *)(v15 + 4 * i - 4), (unsigned __int64)v13);
   *v5 += 2LL;
   if ( *v5 <= 2 * ((*(_QWORD *)(v5[1] - 8LL) >> 9) | 1LL) - 1 )
-    result = 1LL;
+    return 1LL;
   else
-    result = camlHashtbl__resize_89();
-  return result;
+    return camlHashtbl__resize_89();
 }
 // 416394: variable 'v2' is possibly undefined
 // 4163BE: variable 'v3' is possibly undefined
@@ -17541,7 +17652,13 @@ __int64 __fastcall camlHashtbl__remove_108(__int64 a1, __int64 a2, __int64 a3, _
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (00000000004165A0) ----------------------------------------------------
-__int64 __fastcall camlHashtbl__find_rec_116(__int64 a1, const char *a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+__int64 __fastcall camlHashtbl__find_rec_116(
+        __int64 a1,
+        const char *a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   const char *v6; // rax
   __int64 v7; // rbx
@@ -17593,7 +17710,7 @@ __int64 __fastcall camlHashtbl__find_rec_116(__int64 a1, const char *a2, __int64
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000416630) ----------------------------------------------------
-__int64 __fastcall camlHashtbl__find_1093(__int64 a1, __int64 a2)
+__int64 __fastcall camlHashtbl__find_121(__int64 a1, __int64 a2)
 {
   __int64 v2; // rax
   const char *v3; // rbx
@@ -17613,7 +17730,6 @@ __int64 __fastcall camlHashtbl__find_1093(__int64 a1, __int64 a2)
   __int64 v17; // r8
   __int64 v18; // r9
   __int64 v19; // rax
-  __int64 result; // rax
   __int64 *v21; // rax
   __int64 v22; // rdx
   __int64 v23; // rcx
@@ -17719,10 +17835,9 @@ LABEL_17:
   v27 = (const char *)*v37;
   caml_c_call(v3, (const char *)*v37);
   if ( v32 == 1 )
-    result = v40;
+    return v40;
   else
-    result = camlHashtbl__find_rec_116((__int64)v3, v27, v28, v29, v30, v31);
-  return result;
+    return camlHashtbl__find_rec_116((__int64)v3, v27, v28, v29, v30, v31);
 }
 // 416634: variable 'v2' is possibly undefined
 // 41665A: variable 'v3' is possibly undefined
@@ -17825,7 +17940,6 @@ __int64 __fastcall camlHashtbl__replace_140(__int64 a1)
   __int64 v14; // rbx
   __int64 v15; // rdx
   _QWORD *v16; // r15
-  __int64 result; // rax
   unsigned __int64 v18; // rdx
   __int64 v19; // rcx
   __int64 v20; // r8
@@ -17883,16 +17997,15 @@ __int64 __fastcall camlHashtbl__replace_140(__int64 a1)
     caml_modify((unsigned __int64 *)(v15 + 4 * v26 - 4), (unsigned __int64)(v16 + 1));
     *v22 += 2LL;
     if ( *v22 <= 2 * ((*(_QWORD *)(v22[1] - 8LL) >> 9) | 1LL) - 1 )
-      result = 1LL;
+      return 1LL;
     else
-      result = camlHashtbl__resize_89();
+      return camlHashtbl__resize_89();
   }
   else
   {
     caml_raise_exn();
-    result = sub_416A78((const char *)&caml_exn_Not_found, (const char *)v6, v18, v19, v20, v21);
+    return sub_416A78((const char *)&caml_exn_Not_found, (const char *)v6, v18, v19, v20, v21);
   }
-  return result;
 }
 // 416905: control flows out of bounds to 416AD1
 // 4169A3: control flows out of bounds to 416AE5
@@ -17921,7 +18034,6 @@ __int64 __fastcall sub_416A78(const char *a1, const char *a2, unsigned __int64 a
 {
   __int64 v6; // r12
   _QWORD *v7; // rax
-  __int64 result; // rax
   __int64 v9; // rdx
   __int64 v10; // rcx
   __int64 v11; // r8
@@ -17935,15 +18047,14 @@ __int64 __fastcall sub_416A78(const char *a1, const char *a2, unsigned __int64 a
     caml_ml_array_bound_error(a1, a2);
     caml_ml_array_bound_error(a1, a2);
     caml_ml_array_bound_error(a1, a2);
-    result = camlHashtbl__mem_150((__int64)a1, (__int64)a2, v9, v10, v11, v12);
+    return camlHashtbl__mem_150((__int64)a1, (__int64)a2, v9, v10, v11, v12);
   }
   else
   {
     v7 = camlHashtbl__replace_bucket_144((__int64)a1, (__int64)a2, a3, a4, a5, a6);
     caml_modify((unsigned __int64 *)(v13 + 4 * v14 - 4), (unsigned __int64)v7);
-    result = 1LL;
+    return 1LL;
   }
-  return result;
 }
 // 416AC6: positive sp value 40 has been found
 // 416A7D: variable 'v6' is possibly undefined
@@ -18213,7 +18324,7 @@ _QWORD *__fastcall camlHashtbl__Make_279(__int64 a1, __int64 a2, __int64 a3, __i
   v7[20] = 6391LL;
   v7[21] = caml_curry2;
   v7[22] = 5LL;
-  v7[23] = camlHashtbl__find_1198;
+  v7[23] = camlHashtbl__find_226;
   v7[24] = v8;
   v7[25] = v7 + 1;
   v7[26] = v7 + 16;
@@ -18273,6 +18384,7 @@ _QWORD *__fastcall camlHashtbl__Make_279(__int64 a1, __int64 a2, __int64 a3, __i
 // 416FBB: variable 'a4' is possibly undefined
 // 416FBB: variable 'a6' is possibly undefined
 // 415780: using guessed type __int64 __fastcall camlHashtbl__safehash_205();
+// 640BE0: using guessed type _QWORD camlHashtbl[17];
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000416FD0) ----------------------------------------------------
@@ -18296,6 +18408,7 @@ __int64 camlHashtbl__entry()
   camlHashtbl[12] = &camlHashtbl__1;
   return 1LL;
 }
+// 640BE0: using guessed type _QWORD camlHashtbl[17];
 // 640C68: using guessed type __int64 (__fastcall *camlHashtbl__1)();
 // 640C80: using guessed type __int64 (__fastcall *camlHashtbl__2)();
 // 640CA0: using guessed type __int64 (__fastcall *camlHashtbl__3)();
@@ -18325,7 +18438,13 @@ void __fastcall camlCallback__code_begin()
 // 417111: variable 'v1' is possibly undefined
 
 //----- (0000000000417120) ----------------------------------------------------
-void __fastcall camlCallback__register_exception_62(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+void __fastcall camlCallback__register_exception_62(
+        __int64 a1,
+        __int64 a2,
+        __int64 a3,
+        __int64 a4,
+        __int64 a5,
+        __int64 a6)
 {
   const char *v6; // rax
   double *v7; // rbx
@@ -18371,6 +18490,7 @@ __int64 camlCallback__entry()
   camlCallback[1] = &camlCallback__1;
   return 1LL;
 }
+// 641AC8: using guessed type _QWORD camlCallback[3];
 // 641AE0: using guessed type __int64 (__fastcall *camlCallback__1)();
 // 641B00: using guessed type __int64 (__fastcall *camlCallback__2)();
 
@@ -18548,7 +18668,7 @@ char *unix_environment()
 }
 
 //----- (00000000004175F0) ----------------------------------------------------
-void *__fastcall unix_error_message(__int64 a1)
+_QWORD *__fastcall unix_error_message(__int64 a1)
 {
   char *v1; // rax
 
@@ -18559,6 +18679,7 @@ void *__fastcall unix_error_message(__int64 a1)
   v1 = strerror(a1);
   return caml_copy_string(v1);
 }
+// 6420A0: using guessed type _DWORD error_table[68];
 
 //----- (0000000000417624) ----------------------------------------------------
 void __fastcall __noreturn unix_execv(char *path, __int64 a2)
@@ -18724,8 +18845,8 @@ __int64 __fastcall unix_getaddrinfo(char *a1, char *a2, __int64 a3)
   int v11; // er12
   struct addrinfo *j; // rbx
   __int64 v13; // r12
-  unsigned int v14; // ebp
-  char *v15; // rdi
+  unsigned int ai_addrlen; // ebp
+  char *ai_canonname; // rdi
   __int64 *v16; // rbp
   __int64 v18; // [rsp+20h] [rbp-208h]
   __int64 v19; // [rsp+28h] [rbp-200h] BYREF
@@ -18735,7 +18856,7 @@ __int64 __fastcall unix_getaddrinfo(char *a1, char *a2, __int64 a3)
   __int64 v23[8]; // [rsp+80h] [rbp-1A8h] BYREF
   __int64 v24[8]; // [rsp+C0h] [rbp-168h] BYREF
   struct addrinfo req; // [rsp+100h] [rbp-128h] BYREF
-  void *v26; // [rsp+138h] [rbp-F0h] BYREF
+  _QWORD *v26; // [rsp+138h] [rbp-F0h] BYREF
   _QWORD *v27; // [rsp+140h] [rbp-E8h] BYREF
   _QWORD *v28; // [rsp+148h] [rbp-E0h] BYREF
   struct addrinfo *pai; // [rsp+150h] [rbp-D8h] BYREF
@@ -18843,15 +18964,15 @@ __int64 __fastcall unix_getaddrinfo(char *a1, char *a2, __int64 a3)
       v22[3] = (__int64)&v28;
       v22[4] = (__int64)&v27;
       v22[5] = (__int64)&v26;
-      v14 = j->ai_addrlen;
-      if ( v14 > 0x70 )
-        v14 = 112;
-      __memcpy_chk(v33, j->ai_addr, v14, 112LL);
-      v27 = alloc_sockaddr(v33, v14, -1);
-      v15 = j->ai_canonname;
-      if ( !v15 )
-        v15 = "";
-      v26 = caml_copy_string(v15);
+      ai_addrlen = j->ai_addrlen;
+      if ( ai_addrlen > 0x70 )
+        ai_addrlen = 112;
+      __memcpy_chk(v33, j->ai_addr, ai_addrlen, 112LL);
+      v27 = alloc_sockaddr(v33, ai_addrlen, -1);
+      ai_canonname = j->ai_canonname;
+      if ( !ai_canonname )
+        ai_canonname = "";
+      v26 = caml_copy_string(ai_canonname);
       v28 = caml_alloc_small(5LL, 0);
       *v28 = cst_to_constr(j->ai_family, socket_domain_table, 3, 0);
       v16 = v28 + 1;
@@ -18872,10 +18993,13 @@ __int64 __fastcall unix_getaddrinfo(char *a1, char *a2, __int64 a3)
   return v32;
 }
 // 407B08: using guessed type __int64 __fastcall __memcpy_chk(_QWORD, _QWORD, _QWORD, _QWORD);
+// 641C00: using guessed type _DWORD socket_domain_table[4];
+// 641C10: using guessed type _DWORD socket_type_table[4];
 // 6425E8: using guessed type __int64 caml_local_roots;
+// 4179D0: using guessed type __int16 var_B8[60];
 
 //----- (0000000000417EC0) ----------------------------------------------------
-void *unix_getcwd()
+_QWORD *unix_getcwd()
 {
   char v1[4104]; // [rsp+0h] [rbp-1018h] BYREF
   unsigned __int64 v2; // [rsp+1008h] [rbp-10h]
@@ -19034,6 +19158,7 @@ _QWORD *__fastcall alloc_host_entry(__int64 a1)
 }
 // 642438: using guessed type int entry_h_length;
 // 6425E8: using guessed type __int64 caml_local_roots;
+// 64C4E0: using guessed type _QWORD caml_atom_table[1];
 
 //----- (000000000041822B) ----------------------------------------------------
 _QWORD *__fastcall unix_gethostbyname(char *src)
@@ -19042,7 +19167,7 @@ _QWORD *__fastcall unix_gethostbyname(char *src)
   char *v2; // rbx
   int *v3; // rax
   int v4; // ebp
-  struct hostent v6; // [rsp+0h] [rbp-2768h] BYREF
+  hostent v6; // [rsp+0h] [rbp-2768h] BYREF
   struct hostent *result; // [rsp+28h] [rbp-2740h] BYREF
   char buf[10008]; // [rsp+30h] [rbp-2738h] BYREF
   unsigned __int64 v9; // [rsp+2748h] [rbp-20h]
@@ -19062,6 +19187,8 @@ _QWORD *__fastcall unix_gethostbyname(char *src)
     caml_raise_not_found();
   return alloc_host_entry((__int64)result);
 }
+// 41822B: using guessed type char buf[10008];
+// 41822B: using guessed type struct hostent anonymous_0;
 
 //----- (00000000004182E1) ----------------------------------------------------
 _QWORD *__fastcall unix_gethostbyaddr(int *a1)
@@ -19089,11 +19216,12 @@ LABEL_4:
     caml_raise_not_found();
   return alloc_host_entry((__int64)v4);
 }
+// 4182E1: using guessed type int addr[4];
+// 4182E1: using guessed type char buf[10008];
 
 //----- (000000000041838E) ----------------------------------------------------
-void *__fastcall alloc_one_addr(void *src)
+_QWORD *__fastcall alloc_one_addr(void *src)
 {
-  void *result; // rax
   _DWORD v2[4]; // [rsp+0h] [rbp-38h] BYREF
   _QWORD dest[5]; // [rsp+10h] [rbp-28h] BYREF
 
@@ -19101,19 +19229,18 @@ void *__fastcall alloc_one_addr(void *src)
   if ( entry_h_length == 16 )
   {
     memmove(dest, src, 0x10uLL);
-    result = alloc_inet6_addr(dest);
+    return alloc_inet6_addr(dest);
   }
   else
   {
     memmove(v2, src, 4uLL);
-    result = alloc_inet_addr(v2);
+    return alloc_inet_addr(v2);
   }
-  return result;
 }
 // 642438: using guessed type int entry_h_length;
 
 //----- (0000000000418400) ----------------------------------------------------
-void *unix_gethostname()
+_QWORD *unix_gethostname()
 {
   char v1[72]; // [rsp+0h] [rbp-58h] BYREF
   unsigned __int64 v2; // [rsp+48h] [rbp-10h]
@@ -19125,7 +19252,7 @@ void *unix_gethostname()
 }
 
 //----- (000000000041844C) ----------------------------------------------------
-void *unix_getlogin()
+_QWORD *unix_getlogin()
 {
   char *v0; // rax
 
@@ -19143,8 +19270,8 @@ _QWORD *__fastcall unix_getnameinfo(__int64 *a1, __int64 *a2)
   int v4; // ebp
   __int64 v6[8]; // [rsp+10h] [rbp-14F8h] BYREF
   _QWORD *v7; // [rsp+50h] [rbp-14B8h] BYREF
-  void *v8; // [rsp+58h] [rbp-14B0h] BYREF
-  void *v9; // [rsp+60h] [rbp-14A8h] BYREF
+  _QWORD *v8; // [rsp+58h] [rbp-14B0h] BYREF
+  _QWORD *v9; // [rsp+60h] [rbp-14A8h] BYREF
   socklen_t salen; // [rsp+6Ch] [rbp-149Ch] BYREF
   char host[4096]; // [rsp+70h] [rbp-1498h] BYREF
   char serv[1024]; // [rsp+1070h] [rbp-498h] BYREF
@@ -19520,6 +19647,7 @@ double *__fastcall unix_getitimer(__int64 a1)
     uerror("getitimer", 0LL);
   return unix_convert_itimer(&v2);
 }
+// 42D7B0: using guessed type __itimer_which_t itimers[3];
 
 //----- (0000000000418E10) ----------------------------------------------------
 unsigned __int64 __fastcall unix_set_timeval(_QWORD *a1, double a2)
@@ -19541,6 +19669,7 @@ unsigned __int64 __fastcall unix_set_timeval(_QWORD *a1, double a2)
   }
   return result;
 }
+// 418E10: using guessed type double iptr[2];
 
 //----- (0000000000418E71) ----------------------------------------------------
 double *__fastcall unix_setitimer(__int64 a1, double *a2)
@@ -19554,6 +19683,7 @@ double *__fastcall unix_setitimer(__int64 a1, double *a2)
     uerror("setitimer", 0LL);
   return unix_convert_itimer(&v3);
 }
+// 42D7B0: using guessed type __itimer_which_t itimers[3];
 
 //----- (0000000000418EF8) ----------------------------------------------------
 __int64 __fastcall unix_kill(__int64 a1, __int64 a2)
@@ -19659,9 +19789,10 @@ _QWORD *__fastcall unix_lseek_64(__int64 a1, __int64 a2, __int64 a3)
     uerror("lseek", 0LL);
   return caml_copy_int64(v3);
 }
+// 42D7F0: using guessed type _DWORD seek_command_table[3];
 
 //----- (0000000000419130) ----------------------------------------------------
-__int64 __fastcall unix_lseek(__int64 a1, __int64 a2, __int64 a3)
+__off64_t __fastcall unix_lseek(__int64 a1, __int64 a2, __int64 a3)
 {
   __off64_t v3; // rax
 
@@ -19672,6 +19803,7 @@ __int64 __fastcall unix_lseek(__int64 a1, __int64 a2, __int64 a3)
     unix_error(75, "lseek", 0LL);
   return 2 * v3 + 1;
 }
+// 42D7F0: using guessed type _DWORD seek_command_table[3];
 
 //----- (0000000000419198) ----------------------------------------------------
 __int64 __fastcall unix_mkdir(void *a1, __int64 a2)
@@ -19793,7 +19925,7 @@ __int64 __fastcall unix_putenv(void *src, void *a2)
 __int64 __fastcall unix_read(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
 {
   __int64 v5; // rbx
-  int v6; // ebx
+  int chk; // ebx
   __int64 v8; // [rsp+8h] [rbp-4070h] BYREF
   __int64 v9[8]; // [rsp+10h] [rbp-4068h] BYREF
   char src[16392]; // [rsp+50h] [rbp-4028h] BYREF
@@ -19810,19 +19942,19 @@ __int64 __fastcall unix_read(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
   caml_enter_blocking_section();
   if ( v5 > 0x4000 )
     LODWORD(v5) = 0x4000;
-  v6 = __read_chk(a1 >> 1, src, (int)v5, 0x4000LL);
+  chk = __read_chk(a1 >> 1, src, (int)v5, 0x4000LL);
   caml_leave_blocking_section();
-  if ( v6 == -1 )
+  if ( chk == -1 )
     uerror("read", 0LL);
-  memmove((void *)(v8 + (a3 >> 1)), src, v6);
+  memmove((void *)(v8 + (a3 >> 1)), src, chk);
   caml_local_roots = v9[0];
-  return 2LL * v6 + 1;
+  return 2LL * chk + 1;
 }
 // 407CC8: using guessed type __int64 __fastcall __read_chk(_QWORD, _QWORD, _QWORD, _QWORD);
 // 6425E8: using guessed type __int64 caml_local_roots;
 
 //----- (0000000000419590) ----------------------------------------------------
-void *__fastcall unix_readdir(DIR **a1)
+_QWORD *__fastcall unix_readdir(DIR **a1)
 {
   DIR *v1; // rdi
   struct dirent64 *v2; // rax
@@ -19837,7 +19969,7 @@ void *__fastcall unix_readdir(DIR **a1)
 }
 
 //----- (00000000004195D0) ----------------------------------------------------
-void *__fastcall unix_readlink(char *a1)
+_QWORD *__fastcall unix_readlink(char *a1)
 {
   int v1; // eax
   char v3[4104]; // [rsp+0h] [rbp-1018h] BYREF
@@ -19850,6 +19982,7 @@ void *__fastcall unix_readlink(char *a1)
   v3[v1] = 0;
   return caml_copy_string(v3);
 }
+// 4195D0: using guessed type char var_1018[4104];
 
 //----- (0000000000419640) ----------------------------------------------------
 __int64 __fastcall unix_rename(void *a1, const char *a2)
@@ -20107,6 +20240,7 @@ _QWORD *__fastcall unix_recvfrom(__int64 a1, __int64 a2, __int64 a3, __int64 a4,
 }
 // 407F38: using guessed type __int64 __fastcall __recvfrom_chk(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
 // 6425E8: using guessed type __int64 caml_local_roots;
+// 419C38: using guessed type __int16 var_A8[60];
 
 //----- (0000000000419DB2) ----------------------------------------------------
 __int64 __fastcall unix_recv(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 *a5)
@@ -20172,6 +20306,7 @@ __int64 __fastcall unix_shutdown(__int64 a1, __int64 a2)
     uerror("shutdown", 0LL);
   return 1LL;
 }
+// 42D89C: using guessed type _DWORD shutdown_command_table[3];
 
 //----- (0000000000419FA0) ----------------------------------------------------
 int __fastcall decode_sigset(__int64 *a1, sigset_t *a2)
@@ -20261,6 +20396,7 @@ __int64 __fastcall unix_sigprocmask(__int64 a1, __int64 *a2)
     uerror("sigprocmask", 0LL);
   return encode_sigset(&v5);
 }
+// 42D8CC: using guessed type _DWORD sigprocmask_cmd[3];
 
 //----- (000000000041A17C) ----------------------------------------------------
 __int64 __fastcall unix_sleep(__int64 a1)
@@ -20281,6 +20417,8 @@ __int64 __fastcall unix_socket(__int64 a1, __int64 a2, __int64 a3)
     uerror("socket", 0LL);
   return 2LL * v3 + 1;
 }
+// 641C00: using guessed type _DWORD socket_domain_table[4];
+// 641C10: using guessed type _DWORD socket_type_table[4];
 
 //----- (000000000041A1EC) ----------------------------------------------------
 unsigned __int16 __fastcall get_sockaddr(__int64 *a1, __int64 a2, _DWORD *a3)
@@ -20341,7 +20479,7 @@ _QWORD *__fastcall alloc_inet6_addr(_QWORD *a1)
 {
   _QWORD *result; // rax
 
-  result = (_QWORD *)caml_alloc_string(16LL);
+  result = caml_alloc_string(16LL);
   *result = *a1;
   result[1] = a1[1];
   return result;
@@ -20352,7 +20490,7 @@ _DWORD *__fastcall alloc_inet_addr(_DWORD *a1)
 {
   _DWORD *result; // rax
 
-  result = (_DWORD *)caml_alloc_string(4LL);
+  result = caml_alloc_string(4LL);
   *result = *a1;
   return result;
 }
@@ -20430,6 +20568,8 @@ _QWORD *__fastcall unix_socketpair(__int64 a1, __int64 a2, __int64 a3)
   result[1] = 2LL * v4[1] + 1;
   return result;
 }
+// 641C00: using guessed type _DWORD socket_domain_table[4];
+// 641C10: using guessed type _DWORD socket_type_table[4];
 
 //----- (000000000041A550) ----------------------------------------------------
 __int64 __fastcall unix_setsockopt_aux(void *a1, unsigned int a2, int a3, int a4, __int64 a5, double *a6)
@@ -20482,10 +20622,9 @@ __int64 __fastcall unix_getsockopt_aux(void *a1, int a2, int a3, int a4, __int64
 {
   __int64 result; // rax
   __int64 v6[8]; // [rsp+0h] [rbp-78h] BYREF
-  __int64 optval; // [rsp+40h] [rbp-38h] BYREF
-  __int64 v8; // [rsp+48h] [rbp-30h]
-  _QWORD *v9; // [rsp+50h] [rbp-28h] BYREF
-  socklen_t optlen[7]; // [rsp+5Ch] [rbp-1Ch] BYREF
+  int optval[4]; // [rsp+40h] [rbp-38h] BYREF
+  _QWORD *v8; // [rsp+50h] [rbp-28h] BYREF
+  int optlen[7]; // [rsp+5Ch] [rbp-1Ch] BYREF
 
   switch ( a2 )
   {
@@ -20503,32 +20642,32 @@ __int64 __fastcall unix_getsockopt_aux(void *a1, int a2, int a3, int a4, __int64
     default:
       unix_error(22, a1, 0LL);
   }
-  if ( getsockopt(a5 >> 1, a3, a4, &optval, optlen) == -1 )
+  if ( getsockopt(a5 >> 1, a3, a4, optval, (socklen_t *)optlen) == -1 )
     uerror(a1, 0LL);
   switch ( a2 )
   {
     case 0:
     case 1:
-      return 2LL * (int)optval + 1;
+      return 2LL * optval[0] + 1;
     case 2:
-      if ( !(_DWORD)optval )
+      if ( !optval[0] )
         goto LABEL_16;
       result = (__int64)caml_alloc_small(1LL, 0);
-      *(_QWORD *)result = 2LL * SHIDWORD(optval) + 1;
+      *(_QWORD *)result = 2LL * optval[1] + 1;
       break;
     case 3:
-      return caml_copy_double((double)(int)v8 / 1000000.0 + (double)(int)optval);
+      return caml_copy_double((double)optval[2] / 1000000.0 + (double)optval[0]);
     case 4:
-      if ( (_DWORD)optval )
+      if ( optval[0] )
       {
-        v9 = unix_error_of_code(optval);
+        v8 = unix_error_of_code(optval[0]);
         v6[0] = caml_local_roots;
         caml_local_roots = (__int64)v6;
         v6[2] = 1LL;
         v6[1] = 1LL;
-        v6[3] = (__int64)&v9;
+        v6[3] = (__int64)&v8;
         result = (__int64)caml_alloc_small(1LL, 0);
-        *(_QWORD *)result = v9;
+        *(_QWORD *)result = v8;
         caml_local_roots = v6[0];
       }
       else
@@ -20543,6 +20682,7 @@ LABEL_16:
   return result;
 }
 // 6425E8: using guessed type __int64 caml_local_roots;
+// 41A656: using guessed type socklen_t optlen[7];
 
 //----- (000000000041A7C9) ----------------------------------------------------
 __int64 __fastcall unix_getsockopt(__int64 a1, __int64 a2, __int64 a3)
@@ -20610,6 +20750,7 @@ _QWORD *__fastcall stat_aux(int a1, __int64 a2)
   caml_local_roots = v2;
   return v7;
 }
+// 641CE0: using guessed type _DWORD file_kind_table[8];
 // 6425E8: using guessed type __int64 caml_local_roots;
 
 //----- (000000000041A9EF) ----------------------------------------------------
@@ -20679,7 +20820,7 @@ _QWORD *__fastcall unix_stat(char *filename)
 }
 
 //----- (000000000041AC30) ----------------------------------------------------
-void *__fastcall unix_string_of_inet_addr(void *cp)
+_QWORD *__fastcall unix_string_of_inet_addr(void *cp)
 {
   char *v1; // rax
   char v3[72]; // [rsp+0h] [rbp-58h] BYREF
@@ -20710,6 +20851,7 @@ __int64 __fastcall unix_tcflow(__int64 a1, __int64 a2)
     uerror("tcflow", 0LL);
   return 1LL;
 }
+// 42DA20: using guessed type _DWORD action_flag_table[4];
 
 //----- (000000000041AD1C) ----------------------------------------------------
 __int64 __fastcall unix_tcflush(__int64 a1, __int64 a2)
@@ -20718,6 +20860,7 @@ __int64 __fastcall unix_tcflush(__int64 a1, __int64 a2)
     uerror("tcflush", 0LL);
   return 1LL;
 }
+// 42DA30: using guessed type _DWORD queue_flag_table[3];
 
 //----- (000000000041AD58) ----------------------------------------------------
 __int64 __fastcall unix_tcdrain(__int64 a1)
@@ -20833,6 +20976,7 @@ __int64 __fastcall unix_tcsetattr(__int64 a1, __int64 a2, __int64 *a3)
     uerror("tcsetattr", 0LL);
   return 1LL;
 }
+// 42DA3C: using guessed type _DWORD when_flag_table[9];
 // 641D00: using guessed type __int64 terminal_io_descr;
 
 //----- (000000000041AFDD) ----------------------------------------------------
@@ -21012,6 +21156,7 @@ _QWORD *__fastcall unix_error_of_code(int a1)
   }
   return result;
 }
+// 6420A0: using guessed type _DWORD error_table[68];
 
 //----- (000000000041B32E) ----------------------------------------------------
 void __fastcall __noreturn unix_error(int a1, void *a2, void *a3)
@@ -21141,6 +21286,7 @@ _QWORD *__fastcall unix_waitpid(__int64 *a1, __int64 a2)
     uerror("waitpid", 0LL);
   return alloc_process_status(v3, stat_loc[0]);
 }
+// 41B5E7: using guessed type int stat_loc[7];
 
 //----- (000000000041B643) ----------------------------------------------------
 _QWORD *unix_wait()
@@ -21346,7 +21492,7 @@ __int64 __fastcall caml_main(const char **a1)
   __int64 (__fastcall *v14)(); // rbp
   int i; // ecx
   unsigned __int64 v16; // rdx
-  const char *v17; // rbp
+  char *v17; // rbp
   char *v18; // rdi
   __int64 v19; // rdx
   __int64 v20; // rcx
@@ -21390,7 +21536,7 @@ __int64 __fastcall caml_main(const char **a1)
         goto LABEL_11;
     }
 LABEL_32:
-    caml_fatal_error((__int64)"Fatal error: not enough memory for the initial page table");
+    caml_fatal_error("Fatal error: not enough memory for the initial page table");
   }
 LABEL_11:
   v10 = off_6383C0;
@@ -21420,7 +21566,7 @@ LABEL_11:
     caml_code_area_end = v16;
   }
   caml_init_signals();
-  v17 = *a1;
+  v17 = (char *)*a1;
   if ( !*a1 )
     v17 = "";
   v18 = proc_self_exe_3682;
@@ -21431,7 +21577,7 @@ LABEL_11:
   {
     result = (__int64)caml_termination_hook;
     if ( caml_termination_hook )
-      result = caml_termination_hook(0LL);
+      return caml_termination_hook(0LL);
   }
   else
   {
@@ -21459,6 +21605,7 @@ LABEL_11:
 // 6424A0: using guessed type __int64 (__fastcall *caml_termination_hook)(_QWORD);
 // 64C3E0: using guessed type __int64 caml_code_area_start;
 // 64C4C8: using guessed type __int64 caml_code_area_end;
+// 64C4E0: using guessed type _QWORD caml_atom_table[1];
 // 64CCE0: using guessed type int caml_frame_descriptors_mask;
 
 //----- (000000000041BD60) ----------------------------------------------------
@@ -21614,7 +21761,7 @@ void __fastcall __noreturn caml_raise_sys_error(__int64 a1)
 //----- (000000000041C030) ----------------------------------------------------
 void __fastcall __noreturn caml_raise_with_string(__int64 a1, void *a2)
 {
-  void *v2; // rax
+  _QWORD *v2; // rax
 
   v2 = caml_copy_string(a2);
   caml_raise_with_arg(a1, (__int64)v2);
@@ -21688,7 +21835,12 @@ void __noreturn caml_raise_end_of_file()
 // 637ED0: using guessed type char *caml_exn_End_of_file;
 
 //----- (000000000041C170) ----------------------------------------------------
-void __fastcall caml_do_local_roots(void (__fastcall *a1)(_QWORD, _QWORD *), __int64 a2, unsigned __int64 a3, __int64 a4, _QWORD *a5)
+void __fastcall caml_do_local_roots(
+        void (__fastcall *a1)(_QWORD, _QWORD *),
+        __int64 a2,
+        unsigned __int64 a3,
+        __int64 a4,
+        _QWORD *a5)
 {
   __int64 v6; // rcx
   __int64 v7; // r15
@@ -21829,7 +21981,7 @@ char *caml_init_frame_descriptors()
   __int64 v13; // rsi
   __int64 v14; // rdi
   __int64 v15; // rdx
-  __int64 *j; // rcx
+  char *j; // rcx
   __int64 v17; // rdx
   unsigned __int64 v18; // rdx
 
@@ -21896,10 +22048,10 @@ LABEL_27:
         while ( 1 )
         {
           v15 = v11 & (*(_QWORD *)v13 >> 3);
-          for ( j = (__int64 *)&result[8 * v15]; *j; j = (__int64 *)&result[8 * v15] )
+          for ( j = &result[8 * v15]; *(_QWORD *)j; j = &result[8 * v15] )
             v15 = v11 & (v15 + 1);
           v17 = *(unsigned __int16 *)(v13 + 10);
-          *j = v13;
+          *(_QWORD *)j = v13;
           v18 = (v13 + 2 * v17 + 19) & 0xFFFFFFFFFFFFFFF8LL;
           if ( (*(_BYTE *)(v13 + 8) & 1) != 0 )
             v18 += 8LL;
@@ -21974,7 +22126,7 @@ __int64 (__fastcall *__fastcall caml_do_roots(void (__fastcall *a1)(__int64, __i
   caml_final_do_strong_roots((__int64 (__fastcall *)(void *, void **))a1);
   result = caml_scan_roots_hook;
   if ( caml_scan_roots_hook )
-    result = (__int64 (__fastcall *)(_QWORD))caml_scan_roots_hook(a1);
+    return (__int64 (__fastcall *)(_QWORD))caml_scan_roots_hook(a1);
   return result;
 }
 // 6380A0: using guessed type __int64 (*caml_globals)[84];
@@ -22181,7 +22333,7 @@ __int64 (__fastcall *caml_oldify_local_roots())(_QWORD)
   caml_final_do_young_roots((void (__fastcall *)(_QWORD, __int64))caml_oldify_one);
   result = caml_scan_roots_hook;
   if ( caml_scan_roots_hook )
-    result = (__int64 (__fastcall *)(_QWORD))caml_scan_roots_hook(caml_oldify_one);
+    return (__int64 (__fastcall *)(_QWORD))caml_scan_roots_hook(caml_oldify_one);
   return result;
 }
 // 6380A0: using guessed type __int64 (*caml_globals)[84];
@@ -22295,6 +22447,7 @@ _QWORD *__fastcall caml_insert_global_root(__int64 a1, unsigned __int64 a2)
   return result;
 }
 // 642818: using guessed type int random_seed;
+// 41C9E0: using guessed type __int64 var_A8[21];
 
 //----- (000000000041CB00) ----------------------------------------------------
 _QWORD *__fastcall caml_register_global_root(unsigned __int64 a1)
@@ -22431,6 +22584,7 @@ LABEL_16:
     }
   }
 }
+// 41CBB0: using guessed type __int64 var_98[19];
 
 //----- (000000000041CCB0) ----------------------------------------------------
 void __fastcall caml_remove_global_root(unsigned __int64 a1)
@@ -22552,6 +22706,7 @@ __int64 __fastcall caml_record_signal(int a1)
 // 642820: using guessed type __int64 caml_signals_are_pending;
 // 646868: using guessed type __int64 caml_young_end;
 // 646878: using guessed type __int64 caml_young_limit;
+// 64CD00: using guessed type __int64 caml_pending_signals[65];
 
 //----- (000000000041CEC0) ----------------------------------------------------
 void caml_enter_blocking_section_default()
@@ -22596,10 +22751,10 @@ __int64 __fastcall caml_convert_signal_number(unsigned int a1)
 
   result = a1;
   if ( a1 > 0xFFFFFFEA )
-    result = (unsigned int)posix_signals[~a1];
+    return (unsigned int)posix_signals[~a1];
   return result;
 }
-// 41CF19: conditional instruction was optimized away because of 'edi.4>=FFFFFFEBu'
+// 41CF19: conditional instruction was optimized away because edi.4>=FFFFFFEBu
 // 42DD40: using guessed type int posix_signals[];
 
 //----- (000000000041CF30) ----------------------------------------------------
@@ -22699,6 +22854,7 @@ __int64 caml_process_pending_signals()
   return result;
 }
 // 642820: using guessed type __int64 caml_signals_are_pending;
+// 64CD00: using guessed type __int64 caml_pending_signals[65];
 
 //----- (000000000041D0D0) ----------------------------------------------------
 __int64 __fastcall caml_install_signal_handler(__int64 a1, __int64 a2)
@@ -22781,6 +22937,7 @@ LABEL_10:
   return v13;
 }
 // 42DD40: using guessed type int posix_signals[];
+// 42DD94: using guessed type int CSWTCH_33[3];
 // 6425E8: using guessed type __int64 caml_local_roots;
 // 642838: using guessed type __int64 caml_signal_handlers;
 
@@ -22828,7 +22985,7 @@ int caml_init_signals()
   system_stack_top = (__int64)&v1;
   result = sigaltstack(&v2, 0LL);
   if ( !result )
-    result = sigaction(11, &v1, 0LL);
+    return sigaction(11, &v1, 0LL);
   return result;
 }
 // 642840: using guessed type __int64 system_stack_top;
@@ -22837,7 +22994,7 @@ int caml_init_signals()
 int __fastcall caml_set_signal_action(int sig, int a2)
 {
   int result; // eax
-  void (__fastcall *v3[20])(unsigned int); // [rsp+0h] [rbp-158h] BYREF
+  void *v3[20]; // [rsp+0h] [rbp-158h] BYREF
   struct sigaction v4; // [rsp+A0h] [rbp-B8h] BYREF
 
   if ( a2 )
@@ -22864,10 +23021,11 @@ int __fastcall caml_set_signal_action(int sig, int a2)
   {
     result = 2;
     if ( v3[0] != handle_signal )
-      result = v3[0] == (void (__fastcall *)(unsigned int))1;
+      return v3[0] == (void *)1;
   }
   return result;
 }
+// 41D3A0: using guessed type void (__fastcall *var_158[20])(unsigned int a1);
 
 //----- (000000000041D450) ----------------------------------------------------
 int __fastcall segv_handler(__int64 a1, __int64 a2, _QWORD *a3)
@@ -22961,7 +23119,7 @@ __int64 __fastcall caml_ext_table_add(void **a1, __int64 a2)
 {
   __int64 result; // rax
   int v3; // edx
-  _QWORD *v4; // rdx
+  void *v4; // rdx
   int v5; // edx
 
   result = *(unsigned int *)a1;
@@ -22979,7 +23137,7 @@ __int64 __fastcall caml_ext_table_add(void **a1, __int64 a2)
     v4 = a1[1];
   }
   ++*(_DWORD *)a1;
-  v4[(int)result] = a2;
+  *((_QWORD *)v4 + (int)result) = a2;
   return result;
 }
 
@@ -23006,45 +23164,45 @@ unsigned __int64 __fastcall caml_aligned_malloc(__int64 a1, int a2, _QWORD *a3)
   if ( v4 )
   {
     *a3 = v4;
-    result = (((unsigned __int64)v4 + a2) & 0xFFFFFFFFFFFFF000LL) + 4096 - a2;
+    return (((unsigned __int64)v4 + a2) & 0xFFFFFFFFFFFFF000LL) + 4096 - a2;
   }
   return result;
 }
 
 //----- (000000000041D700) ----------------------------------------------------
-void __fastcall __noreturn caml_fatal_error_arg2(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
+void __fastcall __noreturn caml_fatal_error_arg2(const char *a1, __int64 a2, const char *a3, __int64 a4)
 {
-  __fprintf_chk(stderr, 1LL, (const char *)a1, a2);
-  __fprintf_chk(stderr, 1LL, (const char *)a3, a4);
+  __fprintf_chk(stderr, 1LL, a1, a2);
+  __fprintf_chk(stderr, 1LL, a3, a4);
   exit(2);
 }
 // 4079B8: using guessed type __int64 __fprintf_chk(_QWORD, _QWORD, const char *, ...);
 
 //----- (000000000041D750) ----------------------------------------------------
-void __fastcall __noreturn caml_fatal_error_arg(__int64 a1, __int64 a2)
+void __fastcall __noreturn caml_fatal_error_arg(const char *a1, __int64 a2)
 {
-  __fprintf_chk(stderr, 1LL, (const char *)a1, a2);
+  __fprintf_chk(stderr, 1LL, a1, a2);
   exit(2);
 }
 // 4079B8: using guessed type __int64 __fprintf_chk(_QWORD, _QWORD, const char *, ...);
 
 //----- (000000000041D780) ----------------------------------------------------
-void __fastcall __noreturn caml_fatal_error(__int64 a1)
+void __fastcall __noreturn caml_fatal_error(const char *a1)
 {
-  __fprintf_chk(stderr, 1LL, "%s", (const char *)a1);
+  __fprintf_chk(stderr, 1LL, "%s", a1);
   exit(2);
 }
 // 4079B8: using guessed type __int64 __fprintf_chk(_QWORD, _QWORD, const char *, ...);
 
 //----- (000000000041D7B0) ----------------------------------------------------
-int __fastcall caml_gc_message(int a1, __int64 a2, __int64 a3)
+int __fastcall caml_gc_message(int a1, const char *a2, __int64 a3)
 {
   int result; // eax
 
   if ( a1 < 0 || (a1 & (unsigned __int64)caml_verb_gc) != 0 )
   {
-    __fprintf_chk(stderr, 1LL, (const char *)a2, a3);
-    result = fflush(stderr);
+    __fprintf_chk(stderr, 1LL, a2, a3);
+    return fflush(stderr);
   }
   return result;
 }
@@ -23458,7 +23616,7 @@ __int64 *__fastcall caml_fl_allocate(unsigned __int64 a1)
   __int64 *v16; // rdx
   __int64 *v17; // rax
   unsigned __int64 v18; // rbx
-  __int64 *v19; // rax
+  __int64 *block; // rax
   int v20; // er8
   unsigned __int64 v21; // rsi
   int v22; // er9
@@ -23494,9 +23652,9 @@ __int64 *__fastcall caml_fl_allocate(unsigned __int64 a1)
       if ( a1 <= v13 )
       {
 LABEL_39:
-        v19 = allocate_block(a1 + 1, v10, v9, v12);
+        block = allocate_block(a1 + 1, v10, v9, v12);
         v20 = flp_size;
-        v6 = v19;
+        v6 = block;
         if ( v10 < flp_size )
         {
           v21 = 0LL;
@@ -23681,6 +23839,7 @@ LABEL_22:
 // 6448A0: using guessed type __int64 fl_last;
 // 6448C0: using guessed type __int64 flp[];
 // 6467F8: using guessed type __int64 qword_6467F8;
+// 41DE90: using guessed type __int64 var_1F68[1005];
 
 //----- (000000000041E360) ----------------------------------------------------
 __int64 __fastcall caml_init_major_heap(unsigned __int64 a1)
@@ -23704,12 +23863,12 @@ __int64 __fastcall caml_init_major_heap(unsigned __int64 a1)
   v4 = (void *)caml_alloc_for_heap(v2);
   caml_heap_start = v4;
   if ( !v4 )
-    caml_fatal_error((__int64)"Fatal error: not enough memory for the initial heap.\n");
+    caml_fatal_error("Fatal error: not enough memory for the initial heap.\n");
   v5 = (__int64)v4 + caml_stat_heap_size;
   *((_QWORD *)v4 - 1) = 0LL;
   caml_stat_heap_chunks = 1LL;
   if ( (unsigned int)caml_page_table_add(1, (__int64)v4, v5) )
-    caml_fatal_error((__int64)"Fatal error: not enough memory for the initial page table.\n");
+    caml_fatal_error("Fatal error: not enough memory for the initial page table.\n");
   caml_fl_init_merge();
   caml_make_free_blocks((__int64 **)caml_heap_start, (unsigned __int64)caml_stat_heap_size >> 3, 1);
   caml_gc_phase = 2;
@@ -23717,7 +23876,7 @@ __int64 __fastcall caml_init_major_heap(unsigned __int64 a1)
   v6 = malloc(0x4000uLL);
   gray_vals = v6;
   if ( !v6 )
-    caml_fatal_error((__int64)"Fatal error: not enough memory for the gray cache.\n");
+    caml_fatal_error("Fatal error: not enough memory for the gray cache.\n");
   gray_vals_cur = (__int64)v6;
   heap_is_pure = 1;
   caml_allocated_words = 0LL;
@@ -23760,7 +23919,7 @@ __int64 (__fastcall *start_cycle())(_QWORD)
 {
   __int64 (__fastcall *result)(_QWORD); // rax
 
-  caml_gc_message(1, (__int64)"Starting new major GC cycle\n", 0LL);
+  caml_gc_message(1, "Starting new major GC cycle\n", 0LL);
   result = caml_darken_all_roots();
   caml_gc_phase = 0;
   caml_gc_subphase = 10;
@@ -23780,7 +23939,7 @@ __int64 realloc_gray_vals()
   result = caml_stat_heap_size / 128;
   if ( caml_stat_heap_size / 128 > (unsigned __int64)gray_vals_size )
   {
-    caml_gc_message(8, (__int64)"Growing gray_vals to %luk bytes\n", (unsigned __int64)(8 * gray_vals_size) >> 9);
+    caml_gc_message(8, "Growing gray_vals to %luk bytes\n", (unsigned __int64)(8 * gray_vals_size) >> 9);
     v1 = realloc(gray_vals, 16 * gray_vals_size);
     if ( v1 )
     {
@@ -23792,7 +23951,7 @@ __int64 realloc_gray_vals()
     }
     else
     {
-      caml_gc_message(8, (__int64)"No room for growing gray_vals\n", 0LL);
+      caml_gc_message(8, "No room for growing gray_vals\n", 0LL);
       result = (__int64)gray_vals;
       heap_is_pure = 0;
       gray_vals_cur = (__int64)gray_vals;
@@ -23840,8 +23999,8 @@ void __fastcall mark_slice(__int64 a1)
   unsigned __int64 v24; // [rsp+18h] [rbp-40h]
 
   v1 = a1;
-  caml_gc_message(64, (__int64)"Marking %ld words\n", a1);
-  caml_gc_message(64, (__int64)"Subphase = %ld\n", caml_gc_subphase);
+  caml_gc_message(64, "Marking %ld words\n", a1);
+  caml_gc_message(64, "Subphase = %ld\n", caml_gc_subphase);
   v2 = (_QWORD *)gray_vals_cur;
   while ( v1 > 0 )
   {
@@ -24093,7 +24252,7 @@ int __fastcall sweep_slice(__int64 a1)
   void (__fastcall *v6)(__int64 *); // rax
 
   v1 = a1;
-  LODWORD(v2) = caml_gc_message(64, (__int64)"Sweeping %ld words\n", a1);
+  LODWORD(v2) = caml_gc_message(64, "Sweeping %ld words\n", a1);
 LABEL_2:
   while ( 2 )
   {
@@ -24275,19 +24434,19 @@ LABEL_22:
   v7 = v16 / v17 / v4;
 LABEL_11:
   v23 = fmax(*(double *)&caml_extra_heap_resources, fmax(v7, v6));
-  caml_gc_message(64, (__int64)"allocated_words = %lu\n", caml_allocated_words);
+  caml_gc_message(64, "allocated_words = %lu\n", caml_allocated_words);
   v8 = *(double *)&caml_extra_heap_resources * 1000000.0;
   if ( *(double *)&caml_extra_heap_resources * 1000000.0 >= 9.223372036854776e18 )
     v9 = (unsigned int)(int)(v8 - 9.223372036854776e18) ^ 0x8000000000000000LL;
   else
     v9 = (unsigned int)(int)v8;
-  caml_gc_message(64, (__int64)"extra_heap_resources = %luu\n", v9);
+  caml_gc_message(64, "extra_heap_resources = %luu\n", v9);
   v10 = 1000000.0 * v23;
   if ( 1000000.0 * v23 >= 9.223372036854776e18 )
     v11 = (unsigned int)(int)(v10 - 9.223372036854776e18) ^ 0x8000000000000000LL;
   else
     v11 = (unsigned int)(int)v10;
-  caml_gc_message(64, (__int64)"amount of work to do = %luu\n", v11);
+  caml_gc_message(64, "amount of work to do = %luu\n", v11);
   v12 = (__m128d)*(unsigned __int64 *)&v23;
   if ( caml_gc_phase )
   {
@@ -24309,14 +24468,14 @@ LABEL_11:
     v14 = (double)(int)((unsigned __int64)caml_stat_heap_size >> 3) * v23 * 250.0 / v12.m128d_f64[0];
     v15 = (unsigned int)(int)v14;
   }
-  caml_gc_message(64, (__int64)"ordered work = %ld words\n", a1);
-  caml_gc_message(64, (__int64)"computed work = %ld words\n", v15);
+  caml_gc_message(64, "ordered work = %ld words\n", a1);
+  caml_gc_message(64, "computed work = %ld words\n", v15);
   if ( !a1 )
     v1 = v15;
   if ( !caml_gc_phase )
   {
     mark_slice(v1);
-    caml_gc_message(2, (__int64)"!", 0LL);
+    caml_gc_message(2, "!", 0LL);
     if ( caml_gc_phase != 2 )
       goto LABEL_28;
 LABEL_34:
@@ -24329,7 +24488,7 @@ LABEL_35:
     goto LABEL_30;
   }
   sweep_slice(v1);
-  caml_gc_message(2, (__int64)"$", 0LL);
+  caml_gc_message(2, "$", 0LL);
   if ( caml_gc_phase == 2 )
     goto LABEL_34;
 LABEL_28:
@@ -24370,7 +24529,7 @@ void __fastcall caml_oldify_one(unsigned __int64 a1, _QWORD *a2)
   __int64 *v13; // rax
   unsigned __int64 v14; // rbp
   __int64 *v15; // rax
-  unsigned __int64 v16; // rdx
+  unsigned __int64 i; // rdx
   __int64 v17; // rbp
 
   while ( 1 )
@@ -24446,13 +24605,8 @@ LABEL_10:
   v15 = caml_alloc_shr(v14, v6);
   if ( v14 )
   {
-    v16 = 0LL;
-    do
-    {
-      v15[v16] = *(_QWORD *)(a1 + 8 * v16);
-      ++v16;
-    }
-    while ( v14 > v16 );
+    for ( i = 0LL; i < v14; ++i )
+      v15[i] = *(_QWORD *)(a1 + 8 * i);
   }
   *v5 = 0LL;
   *(_QWORD *)a1 = v15;
@@ -24529,7 +24683,7 @@ __int64 caml_empty_minor_heap()
   if ( caml_young_ptr != caml_young_end )
   {
     caml_in_minor_collection = 1;
-    caml_gc_message(2, (__int64)&unk_42DFA8, 0LL);
+    caml_gc_message(2, "<", 0LL);
     caml_oldify_local_roots();
     v0 = (unsigned __int64 **)caml_ref_table;
     if ( (unsigned __int64)caml_ref_table < qword_646898 )
@@ -24579,7 +24733,7 @@ __int64 caml_empty_minor_heap()
     qword_6468A0 = qword_646890;
     qword_6468E0 = qword_6468D0;
     *(double *)&caml_stat_minor_words = (double)(int)((v5 - v9) >> 3) + *(double *)&caml_stat_minor_words;
-    caml_gc_message(2, (__int64)">", 0LL);
+    caml_gc_message(2, ">", 0LL);
     caml_in_minor_collection = 0;
   }
   return caml_final_empty_young();
@@ -24762,9 +24916,9 @@ char *__fastcall caml_realloc_ref_table(__int64 a1)
     return caml_alloc_table(a1, (unsigned __int64)caml_minor_heap_size >> 6, 256LL);
   if ( *(_QWORD *)(a1 + 32) == *(_QWORD *)(a1 + 16) )
   {
-    caml_gc_message(8, (__int64)"ref_table threshold crossed\n", 0LL);
+    caml_gc_message(8, "ref_table threshold crossed\n", 0LL);
     *(_QWORD *)(a1 + 32) = *(_QWORD *)(a1 + 8);
-    result = (char *)caml_urge_major_slice();
+    return (char *)caml_urge_major_slice();
   }
   else
   {
@@ -24772,11 +24926,11 @@ char *__fastcall caml_realloc_ref_table(__int64 a1)
     v3 = 2LL * *(_QWORD *)(a1 + 40);
     *(_QWORD *)(a1 + 40) = v3;
     v4 = 8 * (*(_QWORD *)(a1 + 48) + v3);
-    caml_gc_message(8, (__int64)"Growing ref_table to %ldk bytes\n", v4 / 1024);
+    caml_gc_message(8, "Growing ref_table to %ldk bytes\n", v4 / 1024);
     result = (char *)realloc(*(void **)a1, v4);
     *(_QWORD *)a1 = result;
     if ( !result )
-      caml_fatal_error((__int64)"Fatal error: ref_table overflow\n");
+      caml_fatal_error("Fatal error: ref_table overflow\n");
     v6 = *(_QWORD *)(a1 + 40);
     v7 = &result[8 * v6 + 8 * *(_QWORD *)(a1 + 48)];
     *(_QWORD *)(a1 + 24) = &result[(v2 - (_QWORD)v1) & 0xFFFFFFFFFFFFFFF8LL];
@@ -24821,13 +24975,10 @@ __int64 __fastcall caml_page_table_lookup(unsigned __int64 a1)
 //----- (000000000041F9D0) ----------------------------------------------------
 __int64 __fastcall caml_allocation_color(unsigned __int64 a1)
 {
-  __int64 result; // rax
-
   if ( caml_gc_phase && (caml_gc_phase != 1 || a1 < caml_gc_sweep_hp) )
-    result = 0LL;
+    return 0LL;
   else
-    result = 768LL;
-  return result;
+    return 768LL;
 }
 // 64CF10: using guessed type __int64 caml_gc_sweep_hp;
 // 64CF30: using guessed type int caml_gc_phase;
@@ -24845,9 +24996,9 @@ void __fastcall caml_alloc_dependent_memory(unsigned __int64 a1)
 // 64CF50: using guessed type __int64 caml_dependent_allocated;
 
 //----- (000000000041FA20) ----------------------------------------------------
-__int64 __fastcall caml_free_dependent_memory(unsigned __int64 a1)
+unsigned __int64 __fastcall caml_free_dependent_memory(unsigned __int64 a1)
 {
-  __int64 result; // rax
+  unsigned __int64 result; // rax
   unsigned __int64 v2; // rdi
 
   result = caml_dependent_size;
@@ -24965,12 +25116,12 @@ void __fastcall caml_initialize(unsigned __int64 *a1, unsigned __int64 a2)
 // 6468A0: using guessed type __int64 qword_6468A0;
 
 //----- (000000000041FBF0) ----------------------------------------------------
-unsigned __int64 __fastcall caml_adjust_gc_speed(unsigned __int64 a1, unsigned __int64 a2)
+__int64 __fastcall caml_adjust_gc_speed(unsigned __int64 a1, unsigned __int64 a2)
 {
   double v2; // xmm0_8
   double v3; // xmm1_8
   double v4; // xmm0_8
-  unsigned __int64 result; // rax
+  __int64 result; // rax
 
   if ( !a2 )
     a2 = 1LL;
@@ -24996,7 +25147,7 @@ unsigned __int64 __fastcall caml_adjust_gc_speed(unsigned __int64 a1, unsigned _
   if ( v4 > (double)(int)((unsigned __int64)caml_minor_heap_size >> 3)
           * 0.5
           / (double)(int)((unsigned __int64)caml_stat_heap_size >> 3) )
-    result = caml_urge_major_slice();
+    return caml_urge_major_slice();
   return result;
 }
 // 64C2E0: using guessed type __int64 caml_stat_heap_size;
@@ -25045,12 +25196,12 @@ __int64 __fastcall caml_page_table_modify(unsigned __int64 a1, int a2, int a3)
   {
     v12 = ptr;
     v19 = dword_646928;
-    caml_gc_message(8, (__int64)"Growing page table to %lu entries\n", caml_page_table);
+    caml_gc_message(8, "Growing page table to %lu entries\n", caml_page_table);
     v18 = 2 * v7;
     v13 = (char *)calloc(2 * v7, 8uLL);
     if ( !v13 )
     {
-      caml_gc_message(8, (__int64)"No room for growing page table\n", 0LL);
+      caml_gc_message(8, "No room for growing page table\n", 0LL);
       return 0xFFFFFFFFLL;
     }
     caml_page_table = 2 * v7;
@@ -25131,7 +25282,7 @@ void __fastcall caml_shrink_heap(_QWORD *a1)
   if ( a1 != caml_heap_start )
   {
     caml_stat_heap_size -= *(a1 - 2);
-    caml_gc_message(4, (__int64)"Shrinking heap to %luk bytes\n", (unsigned __int64)caml_stat_heap_size >> 10);
+    caml_gc_message(4, "Shrinking heap to %luk bytes\n", (unsigned __int64)caml_stat_heap_size >> 10);
     v1 = caml_heap_start;
     --caml_stat_heap_chunks;
     v2 = &caml_heap_start;
@@ -25184,7 +25335,7 @@ __int64 __fastcall caml_add_to_heap(unsigned __int64 a1)
 
   caml_gc_message(
     4,
-    (__int64)"Growing heap to %luk bytes\n",
+    "Growing heap to %luk bytes\n",
     (unsigned __int64)(*(_QWORD *)(a1 - 16) + caml_stat_heap_size) >> 10);
   v1 = caml_page_table_add(1, a1, *(_QWORD *)(a1 - 16) + a1);
   result = 0xFFFFFFFFLL;
@@ -25283,10 +25434,10 @@ __int64 *__fastcall caml_alloc_shr(unsigned __int64 a1, unsigned int a2)
     }
     else
     {
-      caml_gc_message(4, (__int64)"No room for growing heap\n", 0LL);
+      caml_gc_message(4, "No room for growing heap\n", 0LL);
     }
     if ( caml_in_minor_collection )
-      caml_fatal_error((__int64)"Fatal error: out of memory.\n");
+      caml_fatal_error("Fatal error: out of memory.\n");
 LABEL_28:
     caml_raise_out_of_memory();
   }
@@ -25426,11 +25577,11 @@ _QWORD *__fastcall caml_alloc_small(__int64 a1, unsigned int a2)
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000420580) ----------------------------------------------------
-__int64 __fastcall caml_alloc_string(__int64 a1)
+_QWORD *__fastcall caml_alloc_string(__int64 a1)
 {
   unsigned __int64 v1; // rbx
   _QWORD *v2; // rax
-  __int64 result; // rax
+  _QWORD *result; // rax
   __int64 v4; // rbx
   __int64 *v5; // rax
 
@@ -25438,7 +25589,7 @@ __int64 __fastcall caml_alloc_string(__int64 a1)
   if ( v1 > 0x100 )
   {
     v5 = caml_alloc_shr((unsigned __int64)(a1 + 8) >> 3, 0xFCu);
-    result = caml_check_urgent_gc((__int64)v5);
+    result = (_QWORD *)caml_check_urgent_gc((__int64)v5);
   }
   else
   {
@@ -25452,24 +25603,24 @@ __int64 __fastcall caml_alloc_string(__int64 a1)
       caml_young_ptr = (__int64)v2;
     }
     *v2 = (v1 << 10) + 1020;
-    result = (__int64)(v2 + 1);
+    result = v2 + 1;
   }
-  v4 = 8 * v1;
-  *(_QWORD *)(result + v4 - 8) = 0LL;
-  *(_BYTE *)(result + v4 - 1) = v4 - 1 - a1;
+  v4 = v1;
+  result[v4 - 1] = 0LL;
+  HIBYTE(result[v4 - 1]) = v4 * 8 - 1 - a1;
   return result;
 }
 // 646870: using guessed type __int64 caml_young_ptr;
 // 646878: using guessed type __int64 caml_young_limit;
 
 //----- (0000000000420660) ----------------------------------------------------
-void *__fastcall caml_copy_string(void *src)
+_QWORD *__fastcall caml_copy_string(void *src)
 {
   size_t v1; // r12
-  void *v2; // rbx
+  _QWORD *v2; // rbx
 
   v1 = (int)strlen((const char *)src);
-  v2 = (void *)caml_alloc_string(v1);
+  v2 = caml_alloc_string(v1);
   memmove(v2, src, v1);
   return v2;
 }
@@ -25478,7 +25629,7 @@ void *__fastcall caml_copy_string(void *src)
 char *__fastcall caml_alloc(unsigned __int64 a1, unsigned int a2)
 {
   char *result; // rax
-  _QWORD *v3; // rcx
+  __int64 v3; // rcx
   __int64 i; // rdx
   __int64 *v5; // rax
   __int64 v6; // rbx
@@ -25492,25 +25643,25 @@ char *__fastcall caml_alloc(unsigned __int64 a1, unsigned int a2)
       v6 = (__int64)v5;
       if ( a2 <= 0xFA )
         memset(v5, 0, 8 * a1);
-      result = (char *)caml_check_urgent_gc(v6);
+      return (char *)caml_check_urgent_gc(v6);
     }
     else
     {
       caml_young_ptr -= 8 * a1 + 8;
-      v3 = (_QWORD *)caml_young_ptr;
+      v3 = caml_young_ptr;
       if ( caml_young_ptr < (unsigned __int64)caml_young_limit )
       {
         caml_young_ptr += 8 * a1 + 8;
         caml_minor_collection();
-        v3 = (_QWORD *)(caml_young_ptr - (8 * a1 + 8));
-        caml_young_ptr = (__int64)v3;
+        v3 = caml_young_ptr - (8 * a1 + 8);
+        caml_young_ptr = v3;
       }
-      *v3 = (a1 << 10) + a2 + 768;
-      result = (char *)(v3 + 1);
+      *(_QWORD *)v3 = (a1 << 10) + a2 + 768;
+      result = (char *)(v3 + 8);
       if ( a2 <= 0xFA )
       {
         for ( i = 0LL; i != a1; ++i )
-          v3[i + 1] = 0LL;
+          *(_QWORD *)(v3 + 8 * i + 8) = 0LL;
       }
     }
   }
@@ -25523,28 +25674,24 @@ char *__fastcall caml_alloc(unsigned __int64 a1, unsigned int a2)
 char *__fastcall caml_alloc_dummy_float(__int64 a1)
 {
   unsigned __int64 v1; // rdi
-  char *result; // rax
 
   v1 = (int)(a1 >> 1);
   if ( v1 )
-    result = caml_alloc(v1, 0);
+    return caml_alloc(v1, 0);
   else
-    result = (char *)&unk_64C4E8;
-  return result;
+    return (char *)&unk_64C4E8;
 }
 
 //----- (00000000004207F0) ----------------------------------------------------
 char *__fastcall caml_alloc_dummy(__int64 a1)
 {
   unsigned __int64 v1; // rdi
-  char *result; // rax
 
   v1 = (int)(a1 >> 1);
   if ( v1 )
-    result = caml_alloc(v1, 0);
+    return caml_alloc(v1, 0);
   else
-    result = (char *)&unk_64C4E8;
-  return result;
+    return (char *)&unk_64C4E8;
 }
 
 //----- (0000000000420810) ----------------------------------------------------
@@ -25553,7 +25700,6 @@ char *__fastcall caml_alloc_array(__int64 (__fastcall *a1)(_QWORD), _QWORD *a2)
   bool v3; // zf
   __int64 v4; // r14
   unsigned __int64 v5; // rbx
-  char *result; // rax
   unsigned __int64 v7; // rbp
   unsigned __int64 v8; // rax
   unsigned __int64 *v9; // rdi
@@ -25590,15 +25736,14 @@ char *__fastcall caml_alloc_array(__int64 (__fastcall *a1)(_QWORD), _QWORD *a2)
     }
     while ( v5 > v7 );
     caml_local_roots = v4;
-    result = v11;
+    return v11;
   }
   else
   {
 LABEL_5:
     caml_local_roots = v4;
-    result = (char *)&unk_64C4E8;
+    return (char *)&unk_64C4E8;
   }
-  return result;
 }
 // 6425E8: using guessed type __int64 caml_local_roots;
 
@@ -25630,13 +25775,13 @@ void compare_free_stack()
 //----- (0000000000420970) ----------------------------------------------------
 void __noreturn compare_stack_overflow()
 {
-  caml_gc_message(4, (__int64)"Stack overflow in structural comparison\n", 0LL);
+  caml_gc_message(4, "Stack overflow in structural comparison\n", 0LL);
   compare_free_stack();
   caml_raise_out_of_memory();
 }
 
 //----- (0000000000420990) ----------------------------------------------------
-unsigned __int64 __fastcall compare_val(signed __int64 a1, __int64 a2, int a3)
+unsigned __int64 __fastcall compare_val(__int64 a1, __int64 a2, int a3)
 {
   char *v6; // r12
   bool v7; // r13
@@ -25651,7 +25796,7 @@ unsigned __int64 __fastcall compare_val(signed __int64 a1, __int64 a2, int a3)
   unsigned __int8 v17; // si
   unsigned __int8 v18; // cl
   __int64 v19; // rdx
-  __int64 (__fastcall *v20)(signed __int64, __int64, bool, _QWORD, _QWORD *); // rax
+  __int64 (__fastcall *v20)(__int64, __int64, bool, _QWORD, _QWORD *); // rax
   unsigned __int64 v21; // rax
   double v22; // xmm1_8
   double v23; // xmm0_8
@@ -25800,7 +25945,7 @@ LABEL_71:
         return 0x8000000000000000LL;
       return 1LL;
     case 8u:
-      v20 = *(__int64 (__fastcall **)(signed __int64, __int64, bool, _QWORD, _QWORD *))(*(_QWORD *)a1 + 16LL);
+      v20 = *(__int64 (__fastcall **)(__int64, __int64, bool, _QWORD, _QWORD *))(*(_QWORD *)a1 + 16LL);
       if ( !v20 )
       {
 LABEL_65:
@@ -25875,7 +26020,7 @@ LABEL_12:
 // 64CF60: using guessed type int caml_compare_unordered;
 
 //----- (0000000000420EE0) ----------------------------------------------------
-unsigned __int64 __fastcall caml_greaterequal(signed __int64 a1, __int64 a2)
+unsigned __int64 __fastcall caml_greaterequal(__int64 a1, __int64 a2)
 {
   signed __int64 v2; // rbx
 
@@ -25886,7 +26031,7 @@ unsigned __int64 __fastcall caml_greaterequal(signed __int64 a1, __int64 a2)
 }
 
 //----- (0000000000420F10) ----------------------------------------------------
-__int64 __fastcall caml_greaterthan(signed __int64 a1, __int64 a2)
+__int64 __fastcall caml_greaterthan(__int64 a1, __int64 a2)
 {
   signed __int64 v2; // rbx
 
@@ -25897,7 +26042,7 @@ __int64 __fastcall caml_greaterthan(signed __int64 a1, __int64 a2)
 }
 
 //----- (0000000000420F40) ----------------------------------------------------
-__int64 __fastcall caml_lessequal(signed __int64 a1, __int64 a2)
+__int64 __fastcall caml_lessequal(__int64 a1, __int64 a2)
 {
   signed __int64 v2; // rbx
 
@@ -25908,7 +26053,7 @@ __int64 __fastcall caml_lessequal(signed __int64 a1, __int64 a2)
 }
 
 //----- (0000000000420F90) ----------------------------------------------------
-unsigned __int64 __fastcall caml_lessthan(signed __int64 a1, __int64 a2)
+unsigned __int64 __fastcall caml_lessthan(__int64 a1, __int64 a2)
 {
   unsigned __int64 v2; // rbx
 
@@ -25919,7 +26064,7 @@ unsigned __int64 __fastcall caml_lessthan(signed __int64 a1, __int64 a2)
 }
 
 //----- (0000000000420FD0) ----------------------------------------------------
-unsigned __int64 __fastcall caml_notequal(signed __int64 a1, __int64 a2)
+unsigned __int64 __fastcall caml_notequal(__int64 a1, __int64 a2)
 {
   unsigned __int64 v2; // rbx
 
@@ -25930,7 +26075,7 @@ unsigned __int64 __fastcall caml_notequal(signed __int64 a1, __int64 a2)
 }
 
 //----- (0000000000421000) ----------------------------------------------------
-__int64 __fastcall caml_equal(signed __int64 a1, __int64 a2)
+__int64 __fastcall caml_equal(__int64 a1, __int64 a2)
 {
   unsigned __int64 v2; // rbx
 
@@ -25941,7 +26086,7 @@ __int64 __fastcall caml_equal(signed __int64 a1, __int64 a2)
 }
 
 //----- (0000000000421030) ----------------------------------------------------
-unsigned __int64 __fastcall caml_compare(signed __int64 a1, __int64 a2)
+unsigned __int64 __fastcall caml_compare(__int64 a1, __int64 a2)
 {
   signed __int64 v2; // rbx
   unsigned __int64 result; // rax
@@ -25951,7 +26096,7 @@ unsigned __int64 __fastcall caml_compare(signed __int64 a1, __int64 a2)
     compare_free_stack();
   result = -1LL;
   if ( v2 >= 0 )
-    result = (-(__int64)(v2 == 0) & 0xFFFFFFFFFFFFFFFELL) + 3;
+    return (-(__int64)(v2 == 0) & 0xFFFFFFFFFFFFFFFELL) + 3;
   return result;
 }
 
@@ -26051,22 +26196,20 @@ __int64 __fastcall int64_deserialize(_QWORD *a1)
 __int64 __fastcall nativeint_deserialize(__int64 *a1)
 {
   int v1; // eax
-  __int64 result; // rax
 
   v1 = caml_deserialize_uint_1();
   if ( v1 == 1 )
   {
     *a1 = (int)caml_deserialize_sint_4();
-    result = 8LL;
+    return 8LL;
   }
   else
   {
     if ( v1 != 2 )
       caml_deserialize_error("input_value: ill-formed native integer");
     *a1 = caml_deserialize_sint_8();
-    result = 8LL;
+    return 8LL;
   }
-  return result;
 }
 
 //----- (0000000000421260) ----------------------------------------------------
@@ -26253,7 +26396,7 @@ LABEL_35:
 LABEL_28:
   result = -(__int64)v11;
   if ( v3 != -1 )
-    result = v11;
+    return v11;
   return result;
 }
 
@@ -26313,10 +26456,10 @@ LABEL_12:
 }
 
 //----- (00000000004216F0) ----------------------------------------------------
-void *__fastcall caml_nativeint_format(char *a1, __int64 a2)
+_QWORD *__fastcall caml_nativeint_format(char *a1, __int64 a2)
 {
   char *v2; // rbx
-  void *v3; // r12
+  _QWORD *v3; // r12
   unsigned __int8 v5; // [rsp+Fh] [rbp-79h] BYREF
   char v6[32]; // [rsp+10h] [rbp-78h] BYREF
   char dest[40]; // [rsp+30h] [rbp-58h] BYREF
@@ -26333,10 +26476,10 @@ void *__fastcall caml_nativeint_format(char *a1, __int64 a2)
 // 4080C8: using guessed type __int64 __fastcall __sprintf_chk(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
 
 //----- (00000000004217B0) ----------------------------------------------------
-void *__fastcall caml_int64_format(char *a1, __int64 a2)
+_QWORD *__fastcall caml_int64_format(char *a1, __int64 a2)
 {
   char *v2; // rbx
-  void *v3; // r12
+  _QWORD *v3; // r12
   unsigned __int8 v5; // [rsp+Fh] [rbp-79h] BYREF
   char v6[32]; // [rsp+10h] [rbp-78h] BYREF
   char dest[40]; // [rsp+30h] [rbp-58h] BYREF
@@ -26353,10 +26496,10 @@ void *__fastcall caml_int64_format(char *a1, __int64 a2)
 // 4080C8: using guessed type __int64 __fastcall __sprintf_chk(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
 
 //----- (0000000000421870) ----------------------------------------------------
-void *__fastcall caml_int32_format(char *a1, __int64 a2)
+_QWORD *__fastcall caml_int32_format(char *a1, __int64 a2)
 {
   char *v2; // rbx
-  void *v3; // r12
+  _QWORD *v3; // r12
   unsigned __int8 v5; // [rsp+Fh] [rbp-79h] BYREF
   char v6[32]; // [rsp+10h] [rbp-78h] BYREF
   char dest[40]; // [rsp+30h] [rbp-58h] BYREF
@@ -26373,11 +26516,11 @@ void *__fastcall caml_int32_format(char *a1, __int64 a2)
 // 4080C8: using guessed type __int64 __fastcall __sprintf_chk(_QWORD, _QWORD, _QWORD, _QWORD, _QWORD);
 
 //----- (0000000000421930) ----------------------------------------------------
-void *__fastcall caml_format_int(char *a1, __int64 a2)
+_QWORD *__fastcall caml_format_int(char *a1, __int64 a2)
 {
   char *v2; // rbx
   unsigned __int64 v3; // r8
-  void *v4; // r12
+  _QWORD *v4; // r12
   unsigned __int8 v6; // [rsp+Fh] [rbp-79h] BYREF
   char v7[32]; // [rsp+10h] [rbp-78h] BYREF
   char dest[40]; // [rsp+30h] [rbp-58h] BYREF
@@ -26506,33 +26649,29 @@ _QWORD *__fastcall caml_nativeint_mod(__int64 a1, __int64 a2)
 {
   __int64 v2; // rcx
   __int64 v3; // rdi
-  _QWORD *result; // rax
 
   v2 = *(_QWORD *)(a2 + 8);
   v3 = *(_QWORD *)(a1 + 8);
   if ( !v2 )
     caml_raise_zero_divide();
   if ( v2 == -1 && v3 == 0x8000000000000000LL )
-    result = caml_copy_nativeint(0LL);
+    return caml_copy_nativeint(0LL);
   else
-    result = caml_copy_nativeint(v3 % v2);
-  return result;
+    return caml_copy_nativeint(v3 % v2);
 }
 
 //----- (0000000000421BD0) ----------------------------------------------------
-_QWORD *__fastcall caml_nativeint_div(_QWORD *a1, __int64 a2)
+_QWORD *__fastcall caml_nativeint_div(__int64 a1, __int64 a2)
 {
   __int64 v2; // rsi
-  _QWORD *result; // rax
 
   v2 = *(_QWORD *)(a2 + 8);
   if ( !v2 )
     caml_raise_zero_divide();
-  if ( v2 == -1 && a1[1] == 0x8000000000000000LL )
-    result = a1;
+  if ( v2 == -1 && *(_QWORD *)(a1 + 8) == 0x8000000000000000LL )
+    return (_QWORD *)a1;
   else
-    result = caml_copy_nativeint(a1[1] / v2);
-  return result;
+    return caml_copy_nativeint(*(_QWORD *)(a1 + 8) / v2);
 }
 
 //----- (0000000000421C20) ----------------------------------------------------
@@ -26781,33 +26920,29 @@ _QWORD *__fastcall caml_int64_mod(__int64 a1, __int64 a2)
 {
   __int64 v2; // rcx
   __int64 v3; // rdi
-  _QWORD *result; // rax
 
   v2 = *(_QWORD *)(a2 + 8);
   v3 = *(_QWORD *)(a1 + 8);
   if ( !v2 )
     caml_raise_zero_divide();
   if ( v2 == -1 && v3 == 0x8000000000000000LL )
-    result = caml_copy_int64(0LL);
+    return caml_copy_int64(0LL);
   else
-    result = caml_copy_int64(v3 % v2);
-  return result;
+    return caml_copy_int64(v3 % v2);
 }
 
 //----- (0000000000421FF0) ----------------------------------------------------
-_QWORD *__fastcall caml_int64_div(_QWORD *a1, __int64 a2)
+_QWORD *__fastcall caml_int64_div(__int64 a1, __int64 a2)
 {
   __int64 v2; // rsi
-  _QWORD *result; // rax
 
   v2 = *(_QWORD *)(a2 + 8);
   if ( !v2 )
     caml_raise_zero_divide();
-  if ( v2 == -1 && a1[1] == 0x8000000000000000LL )
-    result = a1;
+  if ( v2 == -1 && *(_QWORD *)(a1 + 8) == 0x8000000000000000LL )
+    return (_QWORD *)a1;
   else
-    result = caml_copy_int64(a1[1] / v2);
-  return result;
+    return caml_copy_int64(*(_QWORD *)(a1 + 8) / v2);
 }
 
 //----- (0000000000422040) ----------------------------------------------------
@@ -26928,17 +27063,15 @@ _QWORD *__fastcall caml_int32_mod(__int64 a1, __int64 a2)
 {
   int v2; // ecx
   int v3; // edi
-  _QWORD *result; // rax
 
   v2 = *(_DWORD *)(a2 + 8);
   v3 = *(_DWORD *)(a1 + 8);
   if ( !v2 )
     caml_raise_zero_divide();
   if ( v2 == -1 && v3 == 0x80000000 )
-    result = caml_copy_int32(0);
+    return caml_copy_int32(0);
   else
-    result = caml_copy_int32(v3 % v2);
-  return result;
+    return caml_copy_int32(v3 % v2);
 }
 
 //----- (00000000004221E0) ----------------------------------------------------
@@ -26946,17 +27079,15 @@ _QWORD *__fastcall caml_int32_div(__int64 a1, __int64 a2)
 {
   int v2; // ecx
   int v3; // edx
-  _QWORD *result; // rax
 
   v2 = *(_DWORD *)(a2 + 8);
   v3 = *(_DWORD *)(a1 + 8);
   if ( !v2 )
     caml_raise_zero_divide();
   if ( v2 == -1 && v3 == 0x80000000 )
-    result = (_QWORD *)a1;
+    return (_QWORD *)a1;
   else
-    result = caml_copy_int32(v3 / v2);
-  return result;
+    return caml_copy_int32(v3 / v2);
 }
 
 //----- (0000000000422220) ----------------------------------------------------
@@ -27044,12 +27175,13 @@ __int64 __fastcall caml_classify_float(double *a1)
   v1 = __fpclassify(*a1);
   result = 1LL;
   if ( v1 <= 3 )
-    result = CSWTCH_118[v1];
+    return CSWTCH_118[v1];
   return result;
 }
+// 42E200: using guessed type __int64 CSWTCH_118[4];
 
 //----- (00000000004223C0) ----------------------------------------------------
-void *__fastcall caml_format_float(char *nptr, __int64 a2, __int64 a3, __int64 a4, __int64 a5)
+_QWORD *__fastcall caml_format_float(char *nptr, __int64 a2, __int64 a3, __int64 a4, __int64 a5)
 {
   char *v5; // rbx
   char v6; // al
@@ -27059,7 +27191,7 @@ void *__fastcall caml_format_float(char *nptr, __int64 a2, __int64 a3, __int64 a
   unsigned int v10; // edx
   _QWORD *v11; // rbx
   __int64 v12; // r8
-  void *v13; // rbp
+  _QWORD *v13; // rbp
   _QWORD v15[53]; // [rsp+0h] [rbp-1A8h] BYREF
 
   v5 = nptr;
@@ -27110,7 +27242,7 @@ LABEL_18:
   {
 LABEL_16:
     __sprintf_chk(v15, 1LL, 370LL, nptr, a5);
-    v13 = caml_copy_string(v15);
+    return caml_copy_string(v15);
   }
   return v13;
 }
@@ -27298,6 +27430,7 @@ char *__fastcall caml_modf_float(double *a1)
   return v10;
 }
 // 6425E8: using guessed type __int64 caml_local_roots;
+// 422740: using guessed type double iptr[2];
 
 //----- (0000000000422870) ----------------------------------------------------
 __int64 __fastcall caml_log10_float(double *a1)
@@ -27363,6 +27496,7 @@ char *__fastcall caml_frexp_float(double *a1)
   return v9;
 }
 // 6425E8: using guessed type __int64 caml_local_roots;
+// 4228D0: using guessed type int exponent[3];
 
 //----- (00000000004229D0) ----------------------------------------------------
 __int64 __fastcall caml_fmod_float(double *a1, double *a2)
@@ -27695,7 +27829,7 @@ __int64 __fastcall caml_string_get(__int64 a1, __int64 a2)
 }
 
 //----- (0000000000423070) ----------------------------------------------------
-__int64 __fastcall caml_create_string(__int64 a1)
+_QWORD *__fastcall caml_create_string(__int64 a1)
 {
   unsigned __int64 v1; // rdi
 
@@ -27719,14 +27853,14 @@ unsigned __int64 *__fastcall caml_make_array(unsigned __int64 *a1)
   __int64 v2; // rbp
   unsigned __int64 v3; // rbx
   unsigned __int64 v4; // rbx
-  unsigned __int64 v5; // rdi
-  __int64 v6; // rsi
+  __int64 v5; // rdi
+  unsigned __int64 *v6; // rsi
   unsigned __int64 i; // rdx
   unsigned __int64 *v8; // [rsp+8h] [rbp-B0h] BYREF
   __int64 v9[8]; // [rsp+10h] [rbp-A8h] BYREF
   __int64 v10[8]; // [rsp+50h] [rbp-68h] BYREF
   unsigned __int64 *v11; // [rsp+90h] [rbp-28h] BYREF
-  unsigned __int64 v12; // [rsp+98h] [rbp-20h] BYREF
+  __int64 v12; // [rsp+98h] [rbp-20h] BYREF
 
   result = a1;
   v2 = caml_local_roots;
@@ -27754,10 +27888,10 @@ unsigned __int64 *__fastcall caml_make_array(unsigned __int64 *a1)
       if ( (caml_page_table_lookup(v5) & 7) != 0 && *(_BYTE *)(v12 - 8) == 0xFD )
       {
         result = caml_alloc_small(v4, 0xFEu);
-        v6 = (__int64)v8;
+        v6 = v8;
         v11 = result;
         for ( i = 0LL; i < v4; ++i )
-          result[i] = **(_QWORD **)(v6 + 8 * i);
+          result[i] = *(_QWORD *)v6[i];
       }
       else
       {
@@ -27800,13 +27934,10 @@ _QWORD *__fastcall caml_array_unsafe_get_float(__int64 a1, __int64 a2)
 //----- (0000000000423240) ----------------------------------------------------
 _QWORD *__fastcall caml_array_unsafe_get(__int64 a1, __int64 a2)
 {
-  _QWORD *result; // rax
-
   if ( *(_BYTE *)(a1 - 8) == 0xFE )
-    result = caml_array_unsafe_get_float(a1, a2);
+    return caml_array_unsafe_get_float(a1, a2);
   else
-    result = *(_QWORD **)(a1 + 8 * (a2 >> 1));
-  return result;
+    return *(_QWORD **)(a1 + 8 * (a2 >> 1));
 }
 
 //----- (0000000000423260) ----------------------------------------------------
@@ -28036,15 +28167,12 @@ __int64 __fastcall caml_array_set_addr(__int64 a1, __int64 a2, unsigned __int64 
 // 64CF30: using guessed type int caml_gc_phase;
 
 //----- (00000000004236C0) ----------------------------------------------------
-__int64 __fastcall caml_array_set(__int64 a1, __int64 a2, unsigned __int64 a3)
+__int64 __fastcall caml_array_set(__int64 a1, __int64 a2, _QWORD *a3)
 {
-  __int64 result; // rax
-
   if ( *(_BYTE *)(a1 - 8) == 0xFE )
-    result = caml_array_set_float(a1, a2, (_QWORD *)a3);
+    return caml_array_set_float(a1, a2, a3);
   else
-    result = caml_array_set_addr(a1, a2, a3);
-  return result;
+    return caml_array_set_addr(a1, a2, (unsigned __int64)a3);
 }
 
 //----- (00000000004236E0) ----------------------------------------------------
@@ -28090,15 +28218,12 @@ __int64 __fastcall caml_array_get_addr(__int64 a1, __int64 a2)
 }
 
 //----- (0000000000423780) ----------------------------------------------------
-__int64 __fastcall caml_array_get(__int64 a1, __int64 a2)
+_QWORD *__fastcall caml_array_get(__int64 a1, __int64 a2)
 {
-  __int64 result; // rax
-
   if ( *(_BYTE *)(a1 - 8) == 0xFE )
-    result = (__int64)caml_array_get_float(a1, a2);
+    return caml_array_get_float(a1, a2);
   else
-    result = caml_array_get_addr(a1, a2);
-  return result;
+    return (_QWORD *)caml_array_get_addr(a1, a2);
 }
 
 //----- (00000000004237A0) ----------------------------------------------------
@@ -28128,7 +28253,7 @@ __int64 __fastcall compare_channel(__int64 a1, __int64 a2)
   result = 0LL;
   v3 = *(_QWORD *)(a2 + 8);
   if ( *(_QWORD *)(a1 + 8) != v3 )
-    result = *(_QWORD *)(a1 + 8) < v3 ? -1 : 1;
+    return *(_QWORD *)(a1 + 8) < v3 ? -1 : 1;
   return result;
 }
 
@@ -28208,7 +28333,6 @@ __int64 __fastcall caml_ml_close_channel(__int64 a1)
   __int64 v1; // rbx
   int v2; // eax
   __int64 v3; // rdx
-  __int64 result; // rax
   __int64 v5; // rax
 
   v1 = *(_QWORD *)(a1 + 8);
@@ -28217,7 +28341,7 @@ __int64 __fastcall caml_ml_close_channel(__int64 a1)
     v5 = *(_QWORD *)(v1 + 16);
     *(_QWORD *)(v1 + 32) = v5;
     *(_QWORD *)(v1 + 24) = v5;
-    result = 1LL;
+    return 1LL;
   }
   else
   {
@@ -28228,9 +28352,8 @@ __int64 __fastcall caml_ml_close_channel(__int64 a1)
     *(_QWORD *)(v1 + 24) = v3;
     if ( v2 == -1 )
       caml_sys_error((void *)1);
-    result = 1LL;
+    return 1LL;
   }
-  return result;
 }
 
 //----- (0000000000423960) ----------------------------------------------------
@@ -28472,7 +28595,7 @@ _QWORD *__fastcall caml_ml_channel_size_64(__int64 a1)
 }
 
 //----- (0000000000423DA0) ----------------------------------------------------
-__int64 __fastcall caml_ml_channel_size(__int64 a1)
+__off64_t __fastcall caml_ml_channel_size(__int64 a1)
 {
   __off64_t v1; // rbx
 
@@ -28506,7 +28629,7 @@ __int64 __fastcall caml_do_read(int fd, void *buf, size_t nbytes)
 }
 
 //----- (0000000000423E40) ----------------------------------------------------
-size_t __fastcall caml_ml_input(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
+__int64 __fastcall caml_ml_input(__int64 a1, __int64 a2, __int64 a3, __int64 a4)
 {
   __int64 v4; // r13
   __int64 v5; // rbx
@@ -28687,7 +28810,7 @@ __int64 __fastcall caml_getblock(__int64 a1, void *a2, __int64 a3)
   {
     memmove(a2, v5, v6);
     *(_QWORD *)(a1 + 24) += v6;
-    v3 = v6;
+    return (unsigned int)v6;
   }
   return (unsigned int)v3;
 }
@@ -29066,7 +29189,6 @@ unsigned __int64 __fastcall caml_ml_flush_partial(__int64 a1)
   __int64 v2; // rbp
   bool v3; // zf
   _BOOL4 v4; // er12
-  unsigned __int64 result; // rax
   __int64 v6; // [rsp+8h] [rbp-60h] BYREF
   __int64 v7[8]; // [rsp+10h] [rbp-58h] BYREF
 
@@ -29078,7 +29200,7 @@ unsigned __int64 __fastcall caml_ml_flush_partial(__int64 a1)
   if ( v3 )
   {
     caml_local_roots = v2;
-    result = 3LL;
+    return 3LL;
   }
   else
   {
@@ -29092,11 +29214,9 @@ unsigned __int64 __fastcall caml_ml_flush_partial(__int64 a1)
     if ( caml_channel_mutex_unlock )
       caml_channel_mutex_unlock(v1);
     caml_local_roots = v2;
-    result = (-(__int64)!v4 & 0xFFFFFFFFFFFFFFFELL) + 3;
+    return (-(__int64)!v4 & 0xFFFFFFFFFFFFFFFELL) + 3;
   }
-  return result;
 }
-// 648170: invalid function type has been ignored
 // 6425E8: using guessed type __int64 caml_local_roots;
 // 648170: using guessed type __int64 (__fastcall *caml_channel_mutex_lock)(_QWORD);
 // 648178: using guessed type __int64 (__fastcall *caml_channel_mutex_unlock)(_QWORD);
@@ -29580,6 +29700,7 @@ char *__fastcall caml_serialize_float_4(float a1)
   v2[0] = a1;
   return caml_serialize_block_4((__int64)v2, 1LL);
 }
+// 425120: using guessed type float var_C[3];
 
 //----- (0000000000425140) ----------------------------------------------------
 char *__fastcall caml_serialize_block_2(__int64 a1, __int64 a2)
@@ -29842,6 +29963,7 @@ void *__fastcall caml_serialize_float_8(double a1)
   src[0] = a1;
   return caml_serialize_block_float_8(src, 1LL);
 }
+// 425550: using guessed type double src[2];
 
 //----- (0000000000425570) ----------------------------------------------------
 void *__fastcall caml_serialize_block_1(void *src, size_t n)
@@ -29896,7 +30018,7 @@ _BYTE *__fastcall extern_rec(__int64 a1)
   _BYTE *v5; // rax
   signed __int64 v6; // r13
   _BYTE *v7; // rdx
-  int v8; // ecx
+  int i; // ecx
   __int64 v9; // rsi
   char **v10; // r13
   char **v11; // r12
@@ -29904,31 +30026,32 @@ _BYTE *__fastcall extern_rec(__int64 a1)
   _BYTE *v13; // rax
   size_t v14; // rax
   _BYTE *result; // rax
-  unsigned __int64 v16; // rax
-  size_t v17; // rbp
-  _BYTE *v18; // rax
-  size_t v19; // rax
-  unsigned __int64 v20; // rbp
-  _BYTE *v21; // rax
+  __int64 v16; // r12
+  unsigned __int64 v17; // rax
+  size_t v18; // rbp
+  _BYTE *v19; // rax
+  size_t v20; // rax
+  unsigned __int64 v21; // rbp
   _BYTE *v22; // rax
-  char v23; // al
-  char **v24; // rdi
-  unsigned __int64 v25; // r12
-  unsigned __int64 v26; // r13
-  __int64 v27; // rax
-  __int64 v28; // rdi
-  __int64 v29; // rbx
-  _BYTE *v30; // rax
-  _QWORD *v31; // rax
-  _BYTE *v32; // rax
-  unsigned __int64 v33; // rbp
-  char *v34; // rdx
+  _BYTE *v23; // rax
+  char v24; // al
+  __int64 v25; // rdi
+  unsigned __int64 v26; // r12
+  unsigned __int64 v27; // r13
+  __int64 v28; // rax
+  __int64 v29; // rdi
+  __int64 v30; // rbx
+  _BYTE *v31; // rax
+  _QWORD *v32; // rax
+  _BYTE *v33; // rax
+  unsigned __int64 v34; // rbp
   char *v35; // rdx
-  _BYTE *v36; // rdx
-  int v37; // ecx
-  __int64 v38; // rsi
-  __int64 v39; // [rsp+0h] [rbp-48h] BYREF
-  __int64 v40; // [rsp+8h] [rbp-40h] BYREF
+  char *v36; // rdx
+  _BYTE *v37; // rdx
+  int j; // ecx
+  __int64 v39; // rsi
+  __int64 v40; // [rsp+0h] [rbp-48h] BYREF
+  __int64 v41; // [rsp+8h] [rbp-40h] BYREF
 
 LABEL_1:
   while ( (a1 & 1) == 0 )
@@ -29940,17 +30063,17 @@ LABEL_1:
       if ( !extern_closures )
         extern_invalid_argument("output_value: functional value");
       writecode32(16, a1 - caml_code_area_start);
-      v31 = caml_code_checksum();
-      return writeblock(v31, 0x10uLL);
+      v32 = caml_code_checksum();
+      return writeblock(v32, 0x10uLL);
     }
     v2 = *(_QWORD *)(a1 - 8);
     v3 = (_QWORD *)(a1 - 8);
     if ( (unsigned __int8)v2 != 250
       || (v11 = *(char ***)a1, (*(_QWORD *)a1 & 1) == 0)
       && ((caml_page_table_lookup(*(_QWORD *)a1) & 7) == 0
-       || (v23 = *((_BYTE *)v11 - 8), v23 == -6)
-       || v23 == -10
-       || v23 == -3) )
+       || (v24 = *((_BYTE *)v11 - 8), v24 == -6)
+       || v24 == -10
+       || v24 == -3) )
     {
       v4 = v2 >> 10;
       if ( v2 >> 10 )
@@ -29960,59 +30083,60 @@ LABEL_1:
           switch ( (char)v2 )
           {
             case -7:
-              writecode32(17, 8 * v4);
-              return (_BYTE *)extern_rec(a1 - 8 * v4);
+              v16 = 8 * v4;
+              writecode32(17, v16);
+              return extern_rec(a1 - v16);
             case -5:
               extern_invalid_argument("output_value: abstract value (Abstract)");
             case -4:
-              v16 = caml_string_length(a1);
-              v17 = v16;
-              if ( v16 > 0x1F )
+              v17 = caml_string_length(a1);
+              v18 = v17;
+              if ( v17 > 0x1F )
               {
-                if ( v16 > 0xFF )
-                  writecode32(10, v16);
+                if ( v17 > 0xFF )
+                  writecode32(10, v17);
                 else
-                  writecode8(9, v16);
+                  writecode8(9, v17);
               }
               else
               {
-                v18 = extern_ptr;
+                v19 = extern_ptr;
                 if ( (unsigned __int64)extern_ptr >= extern_limit )
                 {
                   grow_extern_output(1LL);
-                  v18 = extern_ptr;
+                  v19 = extern_ptr;
                 }
-                *v18 = v17 + 32;
-                extern_ptr = v18 + 1;
+                *v19 = v18 + 32;
+                extern_ptr = v19 + 1;
               }
-              writeblock((void *)a1, v17);
-              v19 = v17 + 4;
-              v20 = (v17 + 8) >> 3;
-              size_32 += (v19 >> 2) + 1;
+              writeblock((void *)a1, v18);
+              v20 = v18 + 4;
+              v21 = (v18 + 8) >> 3;
+              size_32 += (v20 >> 2) + 1;
               goto LABEL_31;
             case -3:
-              v21 = extern_ptr;
+              v22 = extern_ptr;
               if ( (unsigned __int64)extern_ptr >= extern_limit )
               {
                 grow_extern_output(1LL);
-                v21 = extern_ptr;
+                v22 = extern_ptr;
               }
-              *v21 = 12;
-              extern_ptr = v21 + 1;
+              *v22 = 12;
+              extern_ptr = v22 + 1;
               writeblock((void *)a1, 8uLL);
               size_32 += 3LL;
               size_64 += 2LL;
               return (_BYTE *)extern_record_location(a1);
             case -2:
-              v20 = *v3 >> 10;
-              if ( v20 > 0xFF )
+              v21 = *v3 >> 10;
+              if ( v21 > 0xFF )
                 writecode32(7, *v3 >> 10);
               else
                 writecode8(14, *v3 >> 10);
-              writeblock((void *)a1, 8 * v20);
-              size_32 += 2 * v20 + 1;
+              writeblock((void *)a1, 8 * v21);
+              size_32 += 2 * v21 + 1;
 LABEL_31:
-              size_64 += v20 + 1;
+              size_64 += v21 + 1;
               return (_BYTE *)extern_record_location(a1);
             case -1:
               v12 = **(char ***)a1;
@@ -30028,9 +30152,9 @@ LABEL_31:
               extern_ptr = v13 + 1;
               v14 = strlen(v12);
               writeblock(v12, v14 + 1);
-              (*(void (__fastcall **)(__int64, __int64 *, __int64 *))(*(_QWORD *)a1 + 32LL))(a1, &v40, &v39);
-              size_32 += ((unsigned __int64)(v40 + 3) >> 2) + 2;
-              size_64 += ((unsigned __int64)(v39 + 7) >> 3) + 2;
+              (*(void (__fastcall **)(__int64, __int64 *, __int64 *))(*(_QWORD *)a1 + 32LL))(a1, &v41, &v40);
+              size_32 += ((unsigned __int64)(v41 + 3) >> 2) + 2;
+              size_64 += ((unsigned __int64)(v40 + 7) >> 3) + 2;
               return (_BYTE *)extern_record_location(a1);
             default:
               if ( (unsigned __int8)v2 > 0xFu || v4 > 7 )
@@ -30050,27 +30174,24 @@ LABEL_31:
                   }
                   v7 = v5 + 1;
                   *v5 = 19;
-                  v8 = 56;
-                  do
+                  for ( i = 56; i != -8; i -= 8 )
                   {
-                    v9 = v6 >> v8;
-                    v8 -= 8;
+                    v9 = v6 >> i;
                     *++v5 = v9;
                   }
-                  while ( v8 != -8 );
                   extern_ptr = v7 + 8;
                 }
               }
               else
               {
-                v22 = extern_ptr;
+                v23 = extern_ptr;
                 if ( (unsigned __int64)extern_ptr >= extern_limit )
                 {
                   grow_extern_output(1LL);
-                  v22 = extern_ptr;
+                  v23 = extern_ptr;
                 }
-                *v22 = 16 * v4 + v2 + 0x80;
-                extern_ptr = v22 + 1;
+                *v23 = 16 * v4 + v2 + 0x80;
+                extern_ptr = v23 + 1;
               }
               size_32 += v4 + 1;
               size_64 += v4 + 1;
@@ -30082,83 +30203,83 @@ LABEL_31:
               }
               else
               {
-                v24 = v10;
-                v25 = v4 - 1;
-                v26 = 1LL;
-                extern_rec(v24);
-                v27 = 8LL;
-                if ( v25 > 1 )
+                v25 = (__int64)v10;
+                v26 = v4 - 1;
+                v27 = 1LL;
+                extern_rec(v25);
+                v28 = 8LL;
+                if ( v26 > 1 )
                 {
                   do
                   {
-                    v28 = *(_QWORD *)(a1 + 8 * v26++);
-                    extern_rec(v28);
+                    v29 = *(_QWORD *)(a1 + 8 * v27++);
+                    extern_rec(v29);
                   }
-                  while ( v26 < v25 );
-                  v27 = 8 * v25;
+                  while ( v27 < v26 );
+                  v28 = 8 * v26;
                 }
-                a1 = *(_QWORD *)(v27 + a1);
+                a1 = *(_QWORD *)(v28 + a1);
               }
               goto LABEL_1;
           }
         }
-        v33 = obj_counter - *(_QWORD *)a1;
-        if ( v33 <= 0xFF )
+        v34 = obj_counter - *(_QWORD *)a1;
+        if ( v34 <= 0xFF )
         {
-          result = writecode8(4, (unsigned __int8)obj_counter - *(_BYTE *)a1);
+          return writecode8(4, (unsigned __int8)obj_counter - *(_BYTE *)a1);
         }
-        else if ( v33 > 0xFFFF )
+        else if ( v34 > 0xFFFF )
         {
-          result = writecode32(6, (int)obj_counter - *(_DWORD *)a1);
+          return writecode32(6, (int)obj_counter - *(_DWORD *)a1);
         }
         else
         {
           result = extern_ptr;
-          v34 = (char *)extern_ptr + 3;
+          v35 = (char *)extern_ptr + 3;
           if ( (unsigned __int64)extern_ptr + 3 > extern_limit )
           {
             grow_extern_output(3LL);
             result = extern_ptr;
-            v34 = (char *)extern_ptr + 3;
+            v35 = (char *)extern_ptr + 3;
           }
           *result = 5;
-          result[2] = v33;
-          result[1] = BYTE1(v33);
-          extern_ptr = v34;
+          result[2] = v34;
+          result[1] = BYTE1(v34);
+          extern_ptr = v35;
         }
       }
       else if ( (unsigned __int8)v2 > 0xFu )
       {
-        result = writecode32(8, v2);
+        return writecode32(8, v2);
       }
       else
       {
-        v32 = extern_ptr;
+        v33 = extern_ptr;
         if ( (unsigned __int64)extern_ptr >= extern_limit )
         {
           grow_extern_output(1LL);
-          v32 = extern_ptr;
+          v33 = extern_ptr;
         }
-        *v32 = v2 + 0x80;
-        result = v32 + 1;
+        *v33 = v2 + 0x80;
+        result = v33 + 1;
         extern_ptr = result;
       }
       return result;
     }
     a1 = (__int64)v11;
   }
-  v29 = a1 >> 1;
-  if ( (unsigned __int64)v29 > 0x3F )
+  v30 = a1 >> 1;
+  if ( (unsigned __int64)v30 > 0x3F )
   {
-    if ( (unsigned __int64)(v29 + 128) <= 0xFF )
+    if ( (unsigned __int64)(v30 + 128) <= 0xFF )
     {
-      result = writecode8(0, v29);
+      return writecode8(0, v30);
     }
-    else if ( (unsigned __int64)(v29 + 0x8000) > 0xFFFF )
+    else if ( (unsigned __int64)(v30 + 0x8000) > 0xFFFF )
     {
-      if ( (unsigned __int64)(v29 + 0x80000000LL) <= 0xFFFFFFFF )
+      if ( (unsigned __int64)(v30 + 0x80000000LL) <= 0xFFFFFFFF )
       {
-        result = writecode32(2, v29);
+        return writecode32(2, v30);
       }
       else
       {
@@ -30168,45 +30289,42 @@ LABEL_31:
           grow_extern_output(9LL);
           result = extern_ptr;
         }
-        v36 = result + 1;
+        v37 = result + 1;
         *result = 3;
-        v37 = 56;
-        do
+        for ( j = 56; j != -8; j -= 8 )
         {
-          v38 = v29 >> v37;
-          v37 -= 8;
-          *++result = v38;
+          v39 = v30 >> j;
+          *++result = v39;
         }
-        while ( v37 != -8 );
-        extern_ptr = v36 + 8;
+        extern_ptr = v37 + 8;
       }
     }
     else
     {
       result = extern_ptr;
-      v35 = (char *)extern_ptr + 3;
+      v36 = (char *)extern_ptr + 3;
       if ( (unsigned __int64)extern_ptr + 3 > extern_limit )
       {
         grow_extern_output(3LL);
         result = extern_ptr;
-        v35 = (char *)extern_ptr + 3;
+        v36 = (char *)extern_ptr + 3;
       }
       *result = 1;
-      result[2] = v29;
-      result[1] = BYTE1(v29);
-      extern_ptr = v35;
+      result[2] = v30;
+      result[1] = BYTE1(v30);
+      extern_ptr = v36;
     }
   }
   else
   {
-    v30 = extern_ptr;
+    v31 = extern_ptr;
     if ( (unsigned __int64)extern_ptr >= extern_limit )
     {
       grow_extern_output(1LL);
-      v30 = extern_ptr;
+      v31 = extern_ptr;
     }
-    *v30 = v29 + 64;
-    result = v30 + 1;
+    *v31 = v30 + 64;
+    result = v31 + 1;
     extern_ptr = result;
   }
   return result;
@@ -30346,13 +30464,13 @@ __int64 __fastcall caml_output_value_to_buffer(__int64 a1, __int64 a2, __int64 a
 // 64C200: using guessed type __int64 extern_limit;
 
 //----- (0000000000426100) ----------------------------------------------------
-__int64 __fastcall caml_output_value_to_string(__int64 a1, __int64 *a2)
+_QWORD *__fastcall caml_output_value_to_string(__int64 a1, __int64 *a2)
 {
   __int64 v2; // rax
   _QWORD *v3; // rbx
-  __int64 v4; // r13
+  _QWORD *v4; // r13
   __int64 v5; // rbp
-  void *v6; // rdi
+  char *v6; // rdi
   size_t v7; // rdx
   _QWORD *v8; // r12
 
@@ -30365,7 +30483,7 @@ __int64 __fastcall caml_output_value_to_string(__int64 a1, __int64 *a2)
     v5 = 0LL;
     do
     {
-      v6 = (void *)(v5 + v4);
+      v6 = (char *)v4 + v5;
       v7 = (int)(v3[1] - ((_DWORD)v3 + 16));
       v5 += v7;
       memmove(v6, v3 + 2, v7);
@@ -30698,6 +30816,7 @@ double caml_deserialize_float_8()
   caml_deserialize_block_float_8(v1, 1LL);
   return v1[0];
 }
+// 4266A0: using guessed type double var_10[2];
 
 //----- (00000000004266C0) ----------------------------------------------------
 void *__fastcall caml_deserialize_block_1(void *a1, size_t a2)
@@ -30718,7 +30837,7 @@ _QWORD *caml_code_checksum()
   v2 = __readfsqword(0x28u);
   if ( !checksum_computed_4045 )
   {
-    Z8MD5_InitP7MD5_CTX(v1);
+    caml_MD5Init(v1);
     caml_MD5Update((__int64)v1, (char *)caml_code_area_start, caml_code_area_end - caml_code_area_start);
     caml_MD5Final(checksum_4044, (__int64)v1);
     checksum_computed_4045 = 1;
@@ -30726,6 +30845,7 @@ _QWORD *caml_code_checksum()
   return checksum_4044;
 }
 // 64C220: using guessed type int checksum_computed_4045;
+// 64C230: using guessed type _QWORD checksum_4044[2];
 // 64C3E0: using guessed type __int64 caml_code_area_start;
 // 64C4C8: using guessed type __int64 caml_code_area_end;
 
@@ -30821,7 +30941,7 @@ __int64 __fastcall intern_add_to_heap(__int64 a1)
       v2 = intern_extra_block;
     }
     caml_allocated_words += (v4 - v2) >> 3;
-    result = caml_add_to_heap(v2);
+    return caml_add_to_heap(v2);
   }
   return result;
 }
@@ -30838,14 +30958,14 @@ unsigned __int64 __fastcall intern_rec(const char ****a1)
   int v5; // ebp
   unsigned int v6; // esi
   unsigned __int64 v7; // rbp
-  _QWORD *v8; // rax
+  __int64 v8; // rax
   _QWORD *v9; // rdx
   __int64 v10; // rcx
   bool v11; // zf
   __int64 v12; // rbx
   unsigned __int64 v13; // r13
-  _QWORD *v14; // r12
-  _QWORD *v15; // rdi
+  const char ****v14; // r12
+  const char ****v15; // rdi
   char *v16; // rcx
   unsigned __int64 v17; // rbp
   __int64 v18; // rdx
@@ -30891,7 +31011,7 @@ unsigned __int64 __fastcall intern_rec(const char ****a1)
   int v58; // er13
   int v59; // er12
   __int64 v60; // r14
-  const char **v61; // rbp
+  const char **custom_operations; // rbp
   char *v62; // rax
   char v63; // dl
   __int64 v64; // rax
@@ -30903,7 +31023,7 @@ unsigned __int64 __fastcall intern_rec(const char ****a1)
   int v70; // er12
   __int16 v71; // r15
   unsigned __int8 v72; // r13
-  __int64 v73; // [rsp+8h] [rbp-60h] BYREF
+  const char ***v73; // [rsp+8h] [rbp-60h] BYREF
   char dest[24]; // [rsp+10h] [rbp-58h] BYREF
   unsigned __int64 v75; // [rsp+28h] [rbp-40h]
 
@@ -30930,7 +31050,7 @@ LABEL_5:
       v20 = (const char ***)((char *)&unk_64C4E8 + 8 * v6);
       goto LABEL_20;
     }
-    v8 = (_QWORD *)intern_dest;
+    v8 = intern_dest;
     v9 = intern_obj_table;
     v10 = intern_dest + 8;
     v11 = intern_obj_table == 0LL;
@@ -30941,13 +31061,13 @@ LABEL_5:
       v9[obj_counter_0] = v10;
       obj_counter_0 = v12 + 1;
     }
-    a1 = (const char ****)(v8 + 1);
-    *v8 = (unsigned int)intern_color + (v7 << 10) + v6;
+    a1 = (const char ****)(v8 + 8);
+    *(_QWORD *)v8 = (unsigned int)intern_color + (v7 << 10) + v6;
     intern_dest += 8 * v7 + 8;
     if ( v7 != 1 )
     {
       v13 = v7;
-      v14 = v8 + 1;
+      v14 = (const char ****)(v8 + 8);
       do
       {
         v15 = v14;
@@ -31126,11 +31246,11 @@ LABEL_31:
         v59 = v4[2];
         v60 = v4[3];
         intern_rec(&v73);
-        v20 = (const char ***)(v73 + v60 + (v57 << 24) + (v58 << 16) + (v59 << 8));
+        v20 = (const char ***)((char *)&(&(&v73[0x200000 * v57])[0x2000 * v58])[32 * v59] + v60);
         goto LABEL_20;
       case 0x12u:
-        v61 = caml_find_custom_operations((char *)v4);
-        if ( !v61 )
+        custom_operations = caml_find_custom_operations((char *)v4);
+        if ( !custom_operations )
         {
           intern_cleanup();
           caml_failwith("input_value: unknown custom block identifier");
@@ -31142,7 +31262,7 @@ LABEL_31:
           intern_src = v62;
         }
         while ( v63 );
-        v64 = ((__int64 (__fastcall *)(__int64))v61[5])(intern_dest + 16);
+        v64 = ((__int64 (__fastcall *)(__int64))custom_operations[5])(intern_dest + 16);
         v65 = (_QWORD *)intern_dest;
         v66 = ((unsigned __int64)(v64 + 7) >> 3) + 1;
         v20 = (const char ***)(intern_dest + 8);
@@ -31153,7 +31273,7 @@ LABEL_31:
           obj_counter_0 = v67 + 1;
         }
         v68 = (unsigned int)intern_color;
-        *v20 = v61;
+        *v20 = custom_operations;
         intern_dest += 8 * v66 + 8;
         *v65 = v68 + (v66 << 10) + 255;
         goto LABEL_20;
@@ -31413,7 +31533,7 @@ __int64 __fastcall caml_hash_variant(_BYTE *a1)
       v1 = 2LL * (int)(v3 + 223 * (v1 >> 1)) + 1;
     }
     while ( *a1 );
-    result = (int)v1;
+    return (int)v1;
   }
   return result;
 }
@@ -31601,7 +31721,7 @@ _QWORD *caml_sys_get_config()
 {
   __int64 v0; // rbx
   __int64 v2[8]; // [rsp+0h] [rbp-58h] BYREF
-  void *v3; // [rsp+40h] [rbp-18h] BYREF
+  _QWORD *v3; // [rsp+40h] [rbp-18h] BYREF
   _QWORD *v4; // [rsp+48h] [rbp-10h] BYREF
 
   v0 = caml_local_roots;
@@ -31629,7 +31749,7 @@ _QWORD *caml_sys_get_argv()
   __int64 v2[9]; // [rsp+0h] [rbp-68h] BYREF
   _QWORD *v3; // [rsp+48h] [rbp-20h] BYREF
   char *v4; // [rsp+50h] [rbp-18h] BYREF
-  void *v5; // [rsp+58h] [rbp-10h] BYREF
+  _QWORD *v5; // [rsp+58h] [rbp-10h] BYREF
 
   v0 = caml_local_roots;
   v5 = 0LL;
@@ -31682,7 +31802,7 @@ __int64 caml_sys_time()
 // 427B70: using guessed type __int64 __fastcall caml_sys_time();
 
 //----- (0000000000427BD0) ----------------------------------------------------
-void *__fastcall caml_sys_getenv(const char *a1)
+_QWORD *__fastcall caml_sys_getenv(const char *a1)
 {
   char *v1; // rax
 
@@ -31695,10 +31815,11 @@ void *__fastcall caml_sys_getenv(const char *a1)
 //----- (0000000000427BF0) ----------------------------------------------------
 __int64 __fastcall caml_sys_file_exists(char *filename)
 {
-  struct stat64 v2; // [rsp+0h] [rbp-98h] BYREF
+  stat64 v2; // [rsp+0h] [rbp-98h] BYREF
 
   return __xstat64(1, filename, &v2) == 0 ? 3LL : 1LL;
 }
+// 427BF0: using guessed type struct stat64 anonymous_0;
 
 //----- (0000000000427C20) ----------------------------------------------------
 __int64 __fastcall caml_sys_close(__int64 a1)
@@ -31723,11 +31844,11 @@ void __fastcall __noreturn caml_sys_error(void *a1)
   int v5; // er12
   int v6; // eax
   size_t v7; // rbx
-  char *v8; // rdi
+  _QWORD *v8; // rdi
   void *src; // [rsp+8h] [rbp-B0h] BYREF
   __int64 v10[8]; // [rsp+10h] [rbp-A8h] BYREF
   __int64 v11[9]; // [rsp+50h] [rbp-68h] BYREF
-  char *v12; // [rsp+98h] [rbp-20h] BYREF
+  _QWORD *v12; // [rsp+98h] [rbp-20h] BYREF
 
   src = a1;
   v11[2] = 1LL;
@@ -31746,7 +31867,7 @@ void __fastcall __noreturn caml_sys_error(void *a1)
   v4 = v2;
   if ( src == (void *)1 )
   {
-    v8 = (char *)caml_copy_string(v2);
+    v8 = caml_copy_string(v2);
     v12 = v8;
   }
   else
@@ -31754,10 +31875,10 @@ void __fastcall __noreturn caml_sys_error(void *a1)
     v5 = strlen(v2);
     v6 = caml_string_length((__int64)v3);
     v7 = v6;
-    v12 = (char *)caml_alloc_string(v6 + v5 + 2);
+    v12 = caml_alloc_string(v6 + v5 + 2);
     memmove(v12, src, v7);
-    *(_WORD *)&v12[v7] = 8250;
-    memmove(&v12[v7 + 2], v4, v5);
+    *(_WORD *)((char *)v12 + v7) = 8250;
+    memmove((char *)v12 + v7 + 2, v4, v5);
     v8 = v12;
   }
   caml_raise_sys_error((__int64)v8);
@@ -31836,7 +31957,7 @@ __int64 __fastcall caml_sys_system_command(void *a1)
 // 6425E8: using guessed type __int64 caml_local_roots;
 
 //----- (0000000000427F60) ----------------------------------------------------
-void *caml_sys_getcwd()
+_QWORD *caml_sys_getcwd()
 {
   char v1[4104]; // [rsp+0h] [rbp-1018h] BYREF
   unsigned __int64 v2; // [rsp+1008h] [rbp-10h]
@@ -31948,7 +32069,6 @@ unsigned __int64 __fastcall caml_set_parser_trace(__int64 a1)
 __int64 __fastcall caml_parse_engine(_QWORD *a1, _QWORD *a2, __int64 a3, signed __int64 a4, __int64 a5, __int64 a6)
 {
   __int64 v6; // rdx
-  __int64 result; // rax
   __int64 v10; // r15
   unsigned __int64 v11; // r13
   __int64 v12; // r14
@@ -32296,16 +32416,15 @@ LABEL_36:
     a2[13] = 2 * v24 + 1;
     a2[14] = 2LL * (int)v29 + 1;
     a2[15] = 2LL * (int)v12 + 1;
-    result = 9LL;
+    return 9LL;
   }
   else
   {
     a2[13] = 2 * v24 + 1;
     a2[14] = 2LL * (int)v29 + 1;
     a2[15] = 2LL * (int)v12 + 1;
-    result = 7LL;
+    return 7LL;
   }
-  return result;
 }
 // 42870B: variable 'v32' is possibly undefined
 // 42870B: variable 'a5' is possibly undefined
@@ -32355,15 +32474,12 @@ LABEL_6:
     a4 = 1LL;
   caml_percent_free = a4;
   caml_init_major_heap(v10);
-  caml_gc_message(32, (__int64)"Initial minor heap size: %luk bytes\n", (unsigned __int64)caml_minor_heap_size >> 10);
-  caml_gc_message(32, (__int64)"Initial major heap size: %luk bytes\n", v9);
-  caml_gc_message(32, (__int64)"Initial space overhead: %lu%%\n", caml_percent_free);
-  caml_gc_message(32, (__int64)"Initial max overhead: %lu%%\n", caml_percent_max);
-  caml_gc_message(
-    32,
-    (__int64)"Initial heap increment: %luk bytes\n",
-    (unsigned __int64)caml_major_heap_increment >> 10);
-  return caml_gc_message(32, (__int64)"Initial allocation policy: %d\n", caml_allocation_policy);
+  caml_gc_message(32, "Initial minor heap size: %luk bytes\n", (unsigned __int64)caml_minor_heap_size >> 10);
+  caml_gc_message(32, "Initial major heap size: %luk bytes\n", v9);
+  caml_gc_message(32, "Initial space overhead: %lu%%\n", caml_percent_free);
+  caml_gc_message(32, "Initial max overhead: %lu%%\n", caml_percent_max);
+  caml_gc_message(32, "Initial heap increment: %luk bytes\n", (unsigned __int64)caml_major_heap_increment >> 10);
+  return caml_gc_message(32, "Initial allocation policy: %d\n", caml_allocation_policy);
 }
 // 644888: using guessed type __int64 caml_allocation_policy;
 // 64CF18: using guessed type __int64 caml_percent_free;
@@ -32413,7 +32529,7 @@ int __fastcall test_and_compact(__m128d a1)
     v5 = 999999LL;
     v4 = 999999.0;
   }
-  caml_gc_message(512, (__int64)"Estimated overhead (lower bound) = %lu%%\n", v5);
+  caml_gc_message(512, "Estimated overhead (lower bound) = %lu%%\n", v5);
   result = caml_percent_max;
   if ( caml_percent_max < 0 )
   {
@@ -32427,8 +32543,8 @@ int __fastcall test_and_compact(__m128d a1)
   }
   if ( v4 >= v7 && caml_stat_heap_chunks > 1 )
   {
-    caml_gc_message(512, (__int64)"Automatic compaction triggered.\n", 0LL);
-    result = caml_compact_heap();
+    caml_gc_message(512, "Automatic compaction triggered.\n", 0LL);
+    return caml_compact_heap();
   }
   return result;
 }
@@ -32452,7 +32568,7 @@ __int64 caml_gc_compaction()
 //----- (0000000000428DE0) ----------------------------------------------------
 __int64 __fastcall caml_gc_full_major(__m128d a1)
 {
-  caml_gc_message(1, (__int64)"Full major GC cycle requested\n", 0LL);
+  caml_gc_message(1, "Full major GC cycle requested\n", 0LL);
   caml_empty_minor_heap();
   caml_finish_major_cycle();
   caml_final_do_calls();
@@ -32466,7 +32582,7 @@ __int64 __fastcall caml_gc_full_major(__m128d a1)
 //----- (0000000000428E30) ----------------------------------------------------
 __int64 __fastcall caml_gc_major(__m128d a1)
 {
-  caml_gc_message(1, (__int64)"Major GC cycle requested\n", 0LL);
+  caml_gc_message(1, "Major GC cycle requested\n", 0LL);
   caml_empty_minor_heap();
   caml_finish_major_cycle();
   test_and_compact(a1);
@@ -32506,13 +32622,13 @@ __int64 __fastcall caml_gc_set(__int64 *a1)
   if ( caml_percent_free != v1 )
   {
     caml_percent_free = v1;
-    caml_gc_message(32, (__int64)"New space overhead: %d%%\n", v1);
+    caml_gc_message(32, "New space overhead: %d%%\n", v1);
   }
   v2 = a1[4] >> 1;
   if ( v2 != caml_percent_max )
   {
     caml_percent_max = a1[4] >> 1;
-    caml_gc_message(32, (__int64)"New max overhead: %d%%\n", v2);
+    caml_gc_message(32, "New max overhead: %d%%\n", v2);
   }
   v3 = 0x2000LL;
   v4 = (unsigned __int64)((a1[1] >> 1) + 511) >> 9;
@@ -32521,12 +32637,12 @@ __int64 __fastcall caml_gc_set(__int64 *a1)
   if ( caml_major_heap_increment != v3 )
   {
     caml_major_heap_increment = v3;
-    caml_gc_message(32, (__int64)"New heap increment size: %luk bytes\n", v3 >> 10);
+    caml_gc_message(32, "New heap increment size: %luk bytes\n", v3 >> 10);
   }
   v5 = a1[6] >> 1 != 0;
   if ( caml_allocation_policy != v5 )
   {
-    caml_gc_message(32, (__int64)"New allocation policy: %d\n", v5);
+    caml_gc_message(32, "New allocation policy: %d\n", v5);
     caml_set_allocation_policy(v5);
   }
   v6 = 8 * (*a1 >> 1);
@@ -32541,7 +32657,7 @@ __int64 __fastcall caml_gc_set(__int64 *a1)
   }
   if ( caml_minor_heap_size != v6 )
   {
-    caml_gc_message(32, (__int64)"New minor heap size: %luk bytes\n", (unsigned __int64)v6 >> 10);
+    caml_gc_message(32, "New minor heap size: %luk bytes\n", (unsigned __int64)v6 >> 10);
     caml_set_minor_heap_size(v6);
   }
   return 1LL;
@@ -32915,7 +33031,7 @@ LABEL_16:
 // 64CF40: using guessed type __int64 caml_allocated_words;
 
 //----- (0000000000429970) ----------------------------------------------------
-void __fastcall Z8MD5_InitP7MD5_CTX(_DWORD *a1)
+void __fastcall caml_MD5Init(_DWORD *a1)
 {
   *a1 = 1732584193;
   a1[1] = -271733879;
@@ -32926,7 +33042,7 @@ void __fastcall Z8MD5_InitP7MD5_CTX(_DWORD *a1)
 }
 
 //----- (00000000004299A0) ----------------------------------------------------
-void __fastcall MD5_Transform(cmsUInt32Number *buf, cmsUInt32Number *in)
+__int64 __fastcall caml_MD5Transform(_DWORD *a1, int *a2)
 {
   int v2; // edx
   int v3; // ecx
@@ -33008,82 +33124,83 @@ void __fastcall MD5_Transform(cmsUInt32Number *buf, cmsUInt32Number *in)
   int v79; // edx
   int v80; // eax
   int v81; // ecx
-  int v82; // [rsp+0h] [rbp-50h]
-  int v83; // [rsp+4h] [rbp-4Ch]
-  int v84; // [rsp+8h] [rbp-48h]
-  int v85; // [rsp+Ch] [rbp-44h]
-  int v86; // [rsp+10h] [rbp-40h]
-  int v87; // [rsp+14h] [rbp-3Ch]
-  int v88; // [rsp+18h] [rbp-38h]
+  __int64 result; // rax
+  int v83; // [rsp+0h] [rbp-50h]
+  int v84; // [rsp+4h] [rbp-4Ch]
+  int v85; // [rsp+8h] [rbp-48h]
+  int v86; // [rsp+Ch] [rbp-44h]
+  int v87; // [rsp+10h] [rbp-40h]
+  int v88; // [rsp+14h] [rbp-3Ch]
+  int v89; // [rsp+18h] [rbp-38h]
 
-  v2 = *((_DWORD *)buf + 3);
-  v3 = *((_DWORD *)buf + 2);
-  v4 = *((_DWORD *)buf + 1);
-  v5 = *(_DWORD *)in;
-  v6 = *((_DWORD *)in + 1);
-  v7 = *((_DWORD *)in + 3);
-  v8 = *((_DWORD *)in + 7);
-  v9 = *((_DWORD *)in + 10);
-  v10 = *((_DWORD *)in + 12);
-  v87 = *((_DWORD *)in + 4);
-  v11 = v4 + __ROR4__(*(_DWORD *)buf + *(_DWORD *)in - 680876936 + (v2 ^ v4 & (v3 ^ v2)), 25);
+  v2 = a1[3];
+  v3 = a1[2];
+  v4 = a1[1];
+  v5 = *a2;
+  v6 = a2[1];
+  v7 = a2[3];
+  v8 = a2[7];
+  v9 = a2[10];
+  v10 = a2[12];
+  v88 = a2[4];
+  v11 = v4 + __ROR4__(*a1 + *a2 - 680876936 + (v2 ^ v4 & (v3 ^ v2)), 25);
   v12 = v11 + __ROR4__((v3 ^ v11 & (v4 ^ v3)) + v2 + v6 - 389564586, 20);
-  v88 = *((_DWORD *)in + 2);
-  v13 = *((_DWORD *)in + 5);
-  v14 = __ROR4__(v3 + v88 + 606105819 + (v4 ^ v12 & (v4 ^ v11)), 15);
+  v89 = a2[2];
+  v13 = a2[5];
+  v14 = __ROR4__(v3 + v89 + 606105819 + (v4 ^ v12 & (v4 ^ v11)), 15);
   v15 = v14 + v12;
   v16 = v14 + v12 + __ROR4__((v11 ^ (v14 + v12) & (v11 ^ v12)) + v4 + v7 - 1044525330, 10);
-  v85 = *((_DWORD *)in + 8);
-  v17 = v16 + __ROR4__((v12 ^ v16 & (v12 ^ (v14 + v12))) + v11 + v87 - 176418897, 25);
+  v86 = a2[8];
+  v17 = v16 + __ROR4__((v12 ^ v16 & (v12 ^ (v14 + v12))) + v11 + v88 - 176418897, 25);
   v18 = v17 + __ROR4__((v15 ^ v17 & (v15 ^ v16)) + v12 + v13 + 1200080426, 20);
-  v86 = *((_DWORD *)in + 6);
-  v19 = v18 + __ROR4__((v16 ^ v18 & (v16 ^ v17)) + v15 + v86 - 1473231341, 15);
+  v87 = a2[6];
+  v19 = v18 + __ROR4__((v16 ^ v18 & (v16 ^ v17)) + v15 + v87 - 1473231341, 15);
   v20 = v19 + __ROR4__((v17 ^ v19 & (v17 ^ v18)) + v16 + v8 - 45705983, 10);
-  v83 = *((_DWORD *)in + 11);
-  v21 = v20 + __ROR4__((v18 ^ v20 & (v18 ^ v19)) + v17 + v85 + 1770035416, 25);
-  v84 = *((_DWORD *)in + 9);
-  v22 = v21 + __ROR4__((v19 ^ v21 & (v19 ^ v20)) + v18 + v84 - 1958414417, 20);
-  v23 = *((_DWORD *)in + 14);
+  v84 = a2[11];
+  v21 = v20 + __ROR4__((v18 ^ v20 & (v18 ^ v19)) + v17 + v86 + 1770035416, 25);
+  v85 = a2[9];
+  v22 = v21 + __ROR4__((v19 ^ v21 & (v19 ^ v20)) + v18 + v85 - 1958414417, 20);
+  v23 = a2[14];
   v24 = v22 + __ROR4__((v20 ^ v22 & (v20 ^ v21)) + v19 + v9 - 42063, 15);
-  v25 = v24 + __ROR4__((v21 ^ v24 & (v21 ^ v22)) + v20 + v83 - 1990404162, 10);
+  v25 = v24 + __ROR4__((v21 ^ v24 & (v21 ^ v22)) + v20 + v84 - 1990404162, 10);
   v26 = v25 + __ROR4__((v22 ^ v25 & (v22 ^ v24)) + v21 + v10 + 1804603682, 25);
-  v82 = *((_DWORD *)in + 13);
-  v27 = v26 + __ROR4__((v24 ^ v26 & (v24 ^ v25)) + v22 + v82 - 40341101, 20);
-  v28 = *((_DWORD *)in + 15);
+  v83 = a2[13];
+  v27 = v26 + __ROR4__((v24 ^ v26 & (v24 ^ v25)) + v22 + v83 - 40341101, 20);
+  v28 = a2[15];
   v29 = v27 + __ROR4__((v25 ^ v27 & (v25 ^ v26)) + v24 + v23 - 1502002290, 15);
   v30 = v29 + __ROR4__((v26 ^ v29 & (v26 ^ v27)) + v25 + v28 + 1236535329, 10);
   v31 = v30 + __ROR4__((v29 ^ v27 & (v29 ^ v30)) + v26 + v6 - 165796510, 27);
-  v32 = v31 + __ROR4__((v30 ^ v29 & (v30 ^ v31)) + v27 + v86 - 1069501632, 23);
-  v33 = v32 + __ROR4__(v29 + v83 + 643717713 + (v31 ^ v30 & (v31 ^ v32)), 18);
+  v32 = v31 + __ROR4__((v30 ^ v29 & (v30 ^ v31)) + v27 + v87 - 1069501632, 23);
+  v33 = v32 + __ROR4__(v29 + v84 + 643717713 + (v31 ^ v30 & (v31 ^ v32)), 18);
   v34 = v33 + __ROR4__((v32 ^ v31 & (v32 ^ v33)) + v30 + v5 - 373897302, 12);
   v35 = v34 + __ROR4__((v33 ^ v32 & (v33 ^ v34)) + v31 + v13 - 701558691, 27);
   v36 = v35 + __ROR4__((v34 ^ v33 & (v34 ^ v35)) + v32 + v9 + 38016083, 23);
   v37 = v36 + __ROR4__((v35 ^ v34 & (v35 ^ v36)) + v33 + v28 - 660478335, 18);
-  v38 = v37 + __ROR4__((v36 ^ v35 & (v36 ^ v37)) + v34 + v87 - 405537848, 12);
-  v39 = v38 + __ROR4__((v37 ^ v36 & (v37 ^ v38)) + v35 + v84 + 568446438, 27);
+  v38 = v37 + __ROR4__((v36 ^ v35 & (v36 ^ v37)) + v34 + v88 - 405537848, 12);
+  v39 = v38 + __ROR4__((v37 ^ v36 & (v37 ^ v38)) + v35 + v85 + 568446438, 27);
   v40 = v39 + __ROR4__((v38 ^ v37 & (v38 ^ v39)) + v36 + v23 - 1019803690, 23);
   v41 = v40 + __ROR4__((v39 ^ v38 & (v39 ^ v40)) + v37 + v7 - 187363961, 18);
-  v42 = v41 + __ROR4__((v40 ^ v39 & (v40 ^ v41)) + v38 + v85 + 1163531501, 12);
-  v43 = v42 + __ROR4__((v41 ^ v40 & (v41 ^ v42)) + v39 + v82 - 1444681467, 27);
-  v44 = v43 + __ROR4__((v42 ^ v41 & (v42 ^ v43)) + v40 + v88 - 51403784, 23);
+  v42 = v41 + __ROR4__((v40 ^ v39 & (v40 ^ v41)) + v38 + v86 + 1163531501, 12);
+  v43 = v42 + __ROR4__((v41 ^ v40 & (v41 ^ v42)) + v39 + v83 - 1444681467, 27);
+  v44 = v43 + __ROR4__((v42 ^ v41 & (v42 ^ v43)) + v40 + v89 - 51403784, 23);
   v45 = v44 + __ROR4__((v43 ^ v42 & (v43 ^ v44)) + v41 + v8 + 1735328473, 18);
   v46 = v45 + __ROR4__(v42 + v10 - 1926607734 + (v44 ^ v43 & (v44 ^ v45)), 12);
   v47 = v46 + __ROR4__(v43 + v13 - 378558 + (v46 ^ v44 ^ v45), 28);
-  v48 = v47 + __ROR4__((v47 ^ v45 ^ v46) + v44 + v85 - 2022574463, 21);
-  v49 = v48 + __ROR4__((v48 ^ v46 ^ v47) + v45 + v83 + 1839030562, 16);
+  v48 = v47 + __ROR4__((v47 ^ v45 ^ v46) + v44 + v86 - 2022574463, 21);
+  v49 = v48 + __ROR4__((v48 ^ v46 ^ v47) + v45 + v84 + 1839030562, 16);
   v50 = v49 + __ROR4__((v49 ^ v47 ^ v48) + v46 + v23 - 35309556, 9);
   v51 = v50 + __ROR4__((v50 ^ v48 ^ v49) + v47 + v6 - 1530992060, 28);
-  v52 = v51 + __ROR4__(v48 + v87 + 1272893353 + (v51 ^ v49 ^ v50), 21);
+  v52 = v51 + __ROR4__(v48 + v88 + 1272893353 + (v51 ^ v49 ^ v50), 21);
   v53 = v52 + __ROR4__(v49 + v8 - 155497632 + (v52 ^ v50 ^ v51), 16);
   v54 = v53 + __ROR4__((v53 ^ v51 ^ v52) + v50 + v9 - 1094730640, 9);
-  v55 = v54 + __ROR4__(v51 + v82 + 681279174 + (v54 ^ v52 ^ v53), 28);
+  v55 = v54 + __ROR4__(v51 + v83 + 681279174 + (v54 ^ v52 ^ v53), 28);
   v56 = v55 + __ROR4__(v52 + v5 - 358537222 + (v55 ^ v53 ^ v54), 21);
   v57 = v56 + __ROR4__(v53 + v7 - 722521979 + (v56 ^ v54 ^ v55), 16);
-  v58 = v57 + __ROR4__(v54 + v86 + 76029189 + (v57 ^ v55 ^ v56), 9);
-  v59 = v58 + __ROR4__((v58 ^ v56 ^ v57) + v55 + v84 - 640364487, 28);
+  v58 = v57 + __ROR4__(v54 + v87 + 76029189 + (v57 ^ v55 ^ v56), 9);
+  v59 = v58 + __ROR4__((v58 ^ v56 ^ v57) + v55 + v85 - 640364487, 28);
   v60 = v59 + __ROR4__((v59 ^ v57 ^ v58) + v56 + v10 - 421815835, 21);
   v61 = v60 + __ROR4__((v60 ^ v58 ^ v59) + v57 + v28 + 530742520, 16);
-  v62 = v61 + __ROR4__((v61 ^ v59 ^ v60) + v58 + v88 - 995338651, 9);
+  v62 = v61 + __ROR4__((v61 ^ v59 ^ v60) + v58 + v89 - 995338651, 9);
   v63 = v62 + __ROR4__((v61 ^ (v62 | ~v60)) + v59 + v5 - 198630844, 26);
   v64 = v63 + __ROR4__((v62 ^ (v63 | ~v61)) + v60 + v8 + 1126891415, 22);
   v65 = v64 + __ROR4__((v63 ^ (v64 | ~v62)) + v61 + v23 - 1416354905, 17);
@@ -33092,21 +33209,23 @@ void __fastcall MD5_Transform(cmsUInt32Number *buf, cmsUInt32Number *in)
   v68 = v67 + __ROR4__((v66 ^ (v67 | ~v65)) + v64 + v7 - 1894986606, 22);
   v69 = v68 + __ROR4__((v67 ^ (v68 | ~v66)) + v65 + v9 - 1051523, 17);
   v70 = v69 + __ROR4__((v68 ^ (v69 | ~v67)) + v66 + v6 - 2054922799, 11);
-  v71 = v70 + __ROR4__((v69 ^ (v70 | ~v68)) + v67 + v85 + 1873313359, 26);
+  v71 = v70 + __ROR4__((v69 ^ (v70 | ~v68)) + v67 + v86 + 1873313359, 26);
   v72 = v71 + __ROR4__((v70 ^ (v71 | ~v69)) + v68 + v28 - 30611744, 22);
-  v73 = v72 + __ROR4__((v71 ^ (v72 | ~v70)) + v69 + v86 - 1560198380, 17);
-  v74 = v73 + __ROR4__((v72 ^ (v73 | ~v71)) + v70 + v82 + 1309151649, 11);
-  v75 = v74 + __ROR4__((v73 ^ (v74 | ~v72)) + v71 + v87 - 145523070, 26);
-  v76 = v75 + __ROR4__(v72 + v83 - 1120210379 + (v74 ^ (v75 | ~v73)), 22);
-  *((_DWORD *)buf + 3) += v76;
-  v77 = v73 + v88 + 718787259 + (v75 ^ (v76 | ~v74));
-  v78 = v74 + v84 - 343485551;
+  v73 = v72 + __ROR4__((v71 ^ (v72 | ~v70)) + v69 + v87 - 1560198380, 17);
+  v74 = v73 + __ROR4__((v72 ^ (v73 | ~v71)) + v70 + v83 + 1309151649, 11);
+  v75 = v74 + __ROR4__((v73 ^ (v74 | ~v72)) + v71 + v88 - 145523070, 26);
+  v76 = v75 + __ROR4__(v72 + v84 - 1120210379 + (v74 ^ (v75 | ~v73)), 22);
+  a1[3] += v76;
+  v77 = v73 + v89 + 718787259 + (v75 ^ (v76 | ~v74));
+  v78 = v74 + v85 - 343485551;
   v79 = v75;
-  v80 = *(_DWORD *)buf + v75;
+  v80 = *a1 + v75;
   v81 = v76 + __ROR4__(v77, 17);
-  *((_DWORD *)buf + 2) += v81;
-  *(_DWORD *)buf = v80;
-  *((_DWORD *)buf + 1) += v81 + __ROR4__(v78 + (v76 ^ (v81 | ~v79)), 11);
+  a1[2] += v81;
+  *a1 = v80;
+  result = (unsigned int)(v81 + a1[1]);
+  a1[1] = result + __ROR4__(v78 + (v76 ^ (v81 | ~v79)), 11);
+  return result;
 }
 
 //----- (000000000042A120) ----------------------------------------------------
@@ -33153,7 +33272,7 @@ void *__fastcall caml_MD5Update(__int64 a1, char *a2, size_t a3)
     v3 = &a2[v12];
     memcpy(v11, a2, v12);
     v5 -= v13;
-    MD5_Transform((cmsUInt32Number *)a1, (cmsUInt32Number *)(a1 + 24));
+    caml_MD5Transform((_DWORD *)a1, (int *)(a1 + 24));
   }
   if ( v5 > 0x3F )
   {
@@ -33170,7 +33289,7 @@ void *__fastcall caml_MD5Update(__int64 a1, char *a2, size_t a3)
       *(_QWORD *)(a1 + 64) = *((_QWORD *)v15 + 5);
       *(_QWORD *)(a1 + 72) = *((_QWORD *)v15 + 6);
       *(_QWORD *)(a1 + 80) = *((_QWORD *)v15 + 7);
-      MD5_Transform((cmsUInt32Number *)a1, (cmsUInt32Number *)(a1 + 24));
+      caml_MD5Transform((_DWORD *)a1, (int *)(a1 + 24));
     }
     while ( v5 - v14 > 0x3F );
     v16 = v5 - 64;
@@ -33189,7 +33308,7 @@ __int64 __fastcall caml_MD5Final(_QWORD *a1, __int64 a2)
   unsigned int v3; // eax
   void *v4; // rdi
   unsigned int v5; // edx
-  __int64 v6; // r12
+  int *v6; // r12
   __int64 result; // rax
   _WORD *v8; // rdi
   unsigned int v9; // edx
@@ -33202,9 +33321,9 @@ __int64 __fastcall caml_MD5Final(_QWORD *a1, __int64 a2)
   v5 = 63 - v3;
   if ( 63 - v3 <= 7 )
   {
-    v6 = a2 + 24;
+    v6 = (int *)(a2 + 24);
     memset(v4, 0, v5);
-    MD5_Transform((cmsUInt32Number *)a2, (cmsUInt32Number *)(a2 + 24));
+    caml_MD5Transform((_DWORD *)a2, (int *)(a2 + 24));
     v8 = (_WORD *)(a2 + 24);
     v9 = 56;
     if ( (((_BYTE)a2 + 24) & 1) != 0 )
@@ -33251,12 +33370,12 @@ LABEL_13:
       goto LABEL_3;
     goto LABEL_13;
   }
-  v6 = a2 + 24;
+  v6 = (int *)(a2 + 24);
   memset(v4, 0, v5 - 8);
 LABEL_3:
-  *(_DWORD *)(v6 + 56) = *(_DWORD *)(a2 + 16);
-  *(_DWORD *)(v6 + 60) = *(_DWORD *)(a2 + 20);
-  MD5_Transform((cmsUInt32Number *)a2, (cmsUInt32Number *)v6);
+  v6[14] = *(_DWORD *)(a2 + 16);
+  v6[15] = *(_DWORD *)(a2 + 20);
+  caml_MD5Transform((_DWORD *)a2, v6);
   *a1 = *(_QWORD *)a2;
   result = *(_QWORD *)(a2 + 8);
   a1[1] = result;
@@ -33328,7 +33447,7 @@ _QWORD *__fastcall caml_md5_chan(__int64 a1, __int64 a2)
     }
     while ( v3 > 0 );
   }
-  v6 = (_QWORD *)caml_alloc_string(16LL);
+  v6 = caml_alloc_string(16LL);
   caml_MD5Final(v6, (__int64)v15);
   if ( caml_channel_mutex_unlock )
     caml_channel_mutex_unlock(v2);
@@ -33354,7 +33473,7 @@ _QWORD *__fastcall caml_md5_string(__int64 a1, __int64 a2, __int64 a3)
   v5[4] = 0;
   v5[5] = 0;
   caml_MD5Update((__int64)v5, (char *)(a1 + (a2 >> 1)), a3 >> 1);
-  v3 = (_QWORD *)caml_alloc_string(16LL);
+  v3 = caml_alloc_string(16LL);
   caml_MD5Final(v3, (__int64)v5);
   return v3;
 }
@@ -33365,15 +33484,15 @@ size_t __fastcall add_string(char **a1, const char *a2)
   size_t result; // rax
   char *v4; // rdi
   size_t v5; // rbp
-  unsigned __int64 v6; // rdx
+  char *v6; // rdx
 
   result = strlen(a2);
   v4 = *a1;
   v5 = (int)result;
-  v6 = (unsigned __int64)a1[1];
-  if ( v6 < (unsigned __int64)&(*a1)[(int)result] )
+  v6 = a1[1];
+  if ( v6 < &(*a1)[(int)result] )
   {
-    result = (unsigned int)(v6 - (_DWORD)v4);
+    result = (unsigned int)((_DWORD)v6 - (_DWORD)v4);
     v5 = (int)result;
   }
   if ( (int)result > 0 )
@@ -33562,6 +33681,7 @@ __int64 __fastcall caml_named_value(char *s1)
   }
   return v5;
 }
+// 64C300: using guessed type __int64 named_value_table[13];
 
 //----- (000000000042AA20) ----------------------------------------------------
 __int64 __fastcall caml_register_named_value(char *src, __int64 a2)
@@ -33572,7 +33692,6 @@ __int64 __fastcall caml_register_named_value(char *src, __int64 a2)
   char v6; // al
   __int64 v7; // r13
   __int64 v8; // r12
-  __int64 result; // rax
   size_t v10; // rax
   char *v11; // r12
   __int64 v12; // rax
@@ -33603,7 +33722,7 @@ __int64 __fastcall caml_register_named_value(char *src, __int64 a2)
         goto LABEL_9;
     }
     *(_QWORD *)v8 = a2;
-    result = 1LL;
+    return 1LL;
   }
   else
   {
@@ -33616,10 +33735,10 @@ LABEL_9:
     *((_QWORD *)v11 + 1) = v12;
     named_value_table[v7] = (__int64)v11;
     caml_register_global_root((unsigned __int64)v11);
-    result = 1LL;
+    return 1LL;
   }
-  return result;
 }
+// 64C300: using guessed type __int64 named_value_table[13];
 
 //----- (000000000042AB20) ----------------------------------------------------
 void caml_callback3()
@@ -33878,7 +33997,6 @@ __int64 __fastcall caml_weak_blit(__int64 a1, __int64 a2, __int64 a3, __int64 a4
 __int64 __fastcall caml_weak_set(__int64 a1, __int64 a2, unsigned __int64 *a3)
 {
   unsigned __int64 v3; // rsi
-  __int64 result; // rax
 
   v3 = (a2 >> 1) + 1;
   if ( !v3 || v3 >= *(_QWORD *)(a1 - 8) >> 10 )
@@ -33886,14 +34004,13 @@ __int64 __fastcall caml_weak_set(__int64 a1, __int64 a2, unsigned __int64 *a3)
   if ( a3 == (unsigned __int64 *)1 || ((unsigned __int8)a3 & 1) != 0 )
   {
     *(_QWORD *)(a1 + 8 * v3) = caml_weak_none;
-    result = 1LL;
+    return 1LL;
   }
   else
   {
     do_set(a1, v3, *a3);
-    result = 1LL;
+    return 1LL;
   }
-  return result;
 }
 // 6423E8: using guessed type void *caml_weak_none;
 
@@ -34139,18 +34256,18 @@ int caml_compact_heap()
   unsigned int v9; // eax
   unsigned __int64 v10; // r12
   _QWORD **v11; // rbp
-  unsigned __int64 m; // rbx
+  unsigned __int64 n; // rbx
   __int64 v13; // rdi
   _QWORD *v14; // r13
   __int64 *v15; // r14
-  unsigned __int64 n; // r12
+  unsigned __int64 ii; // r12
   unsigned __int64 v17; // r12
   void **v18; // rbx
-  unsigned __int64 ii; // rbp
+  unsigned __int64 jj; // rbp
   __int64 v20; // rdi
   _QWORD *v21; // rbp
   _QWORD *v22; // rax
-  _QWORD *jj; // rcx
+  _QWORD *kk; // rcx
   unsigned __int64 *v24; // rdi
   unsigned __int64 *v25; // r10
   char *v26; // r9
@@ -34172,7 +34289,7 @@ int caml_compact_heap()
   unsigned __int64 v42; // rdx
   __int64 v43; // rbx
   _QWORD *v44; // rdx
-  unsigned __int64 l; // rax
+  unsigned __int64 m; // rax
   unsigned __int64 v46; // r12
   unsigned __int64 v47; // r13
   _QWORD *v48; // rax
@@ -34200,7 +34317,7 @@ int caml_compact_heap()
   unsigned __int64 v70; // rsi
   unsigned __int64 v71; // rdi
 
-  caml_gc_message(16, (__int64)"Compacting heap...\n", 0LL);
+  caml_gc_message(16, "Compacting heap...\n", 0LL);
   v0 = (__int64 *)caml_heap_start;
   if ( caml_heap_start )
   {
@@ -34243,16 +34360,16 @@ LABEL_7:
         v10 = (v8 >> 10) + 1;
         if ( v9 == 249 )
         {
-          for ( l = (unsigned __int64)v4[v10]; (l & 3) != 3; l = *(_QWORD *)(l & 0xFFFFFFFFFFFFFFFCLL) )
+          for ( m = (unsigned __int64)v4[v10]; (m & 3) != 3; m = *(_QWORD *)(m & 0xFFFFFFFFFFFFFFFCLL) )
             ;
-          v46 = l >> 10;
-          v9 = (unsigned __int8)(l >> 2);
+          v46 = m >> 10;
+          v9 = (unsigned __int8)(m >> 2);
           v10 = v46 + 1;
         }
         if ( v9 <= 0xFA && v10 > 1 )
         {
           v11 = v4 + 1;
-          for ( m = 1LL; m < v10; ++m )
+          for ( n = 1LL; n < v10; ++n )
           {
             v13 = (__int64)v11++;
             invert_pointer_at(v13);
@@ -34269,13 +34386,13 @@ LABEL_7:
     v15 = &caml_weak_list_head;
     do
     {
-      for ( n = *(v14 - 1); (n & 3) == 0; n = *(_QWORD *)n )
+      for ( ii = *(v14 - 1); (ii & 3) == 0; ii = *(_QWORD *)ii )
         ;
-      v17 = n >> 10;
+      v17 = ii >> 10;
       if ( v17 > 1 )
       {
         v18 = (void **)(v14 + 1);
-        for ( ii = 1LL; ii < v17; ++ii )
+        for ( jj = 1LL; jj < v17; ++jj )
         {
           if ( *v18 != caml_weak_none )
             invert_pointer_at((__int64)v18);
@@ -34302,7 +34419,7 @@ LABEL_7:
     v22 = (_QWORD *)*(v22 - 1);
   }
   while ( v22 );
-  jj = v21;
+  kk = v21;
   v24 = v21;
   do
   {
@@ -34316,7 +34433,7 @@ LABEL_7:
         v27 = v29 >> 2;
         if ( (unsigned __int8)(v29 >> 2) != 0xF9 )
         {
-          v28 = jj;
+          v28 = kk;
           *v24 = (*v24 & 0xFFFFFFFFFFFFFC00LL) + (unsigned __int8)v27 + 512;
           v24 += (v29 >> 10) + 1;
           goto LABEL_36;
@@ -34346,17 +34463,17 @@ LABEL_7:
         LODWORD(v27) = (unsigned __int8)(v27 >> 2);
         v30 = v47 + 1;
       }
-      v32 = *(jj - 3);
+      v32 = *(kk - 3);
       v33 = 8 * v30;
-      v34 = jj - 4;
-      v35 = *(jj - 2) - v32;
+      v34 = kk - 4;
+      v35 = *(kk - 2) - v32;
       if ( v35 <= 0x20 )
       {
-        v28 = (_QWORD *)*(jj - 1);
+        v28 = (_QWORD *)*(kk - 1);
         v36 = v28 - 4;
         if ( *(v28 - 2) - *(v28 - 3) <= 0x20uLL )
         {
-          for ( jj = (_QWORD *)*(jj - 1); ; jj = v37 )
+          for ( kk = (_QWORD *)*(kk - 1); ; kk = v37 )
           {
             v37 = (_QWORD *)v36[3];
             v36 = v37 - 4;
@@ -34367,16 +34484,16 @@ LABEL_7:
           goto LABEL_49;
         }
       }
-      v28 = jj;
+      v28 = kk;
       while ( v33 > v35 )
       {
-        jj = (_QWORD *)v34[3];
+        kk = (_QWORD *)v34[3];
 LABEL_49:
-        v32 = *(jj - 3);
-        v34 = jj - 4;
-        v35 = *(jj - 2) - v32;
+        v32 = *(kk - 3);
+        v34 = kk - 4;
+        v35 = *(kk - 2) - v32;
       }
-      v38 = (char *)jj + v32;
+      v38 = (char *)kk + v32;
       v34[1] = v33 + v32;
       v39 = (_QWORD *)*v24;
       if ( (*v24 & 3) == 0 )
@@ -34419,7 +34536,7 @@ LABEL_49:
       }
       v24 = (unsigned __int64 *)((char *)v24 + v33);
 LABEL_36:
-      jj = v28;
+      kk = v28;
     }
     v24 = (unsigned __int64 *)v25[3];
   }
@@ -34537,7 +34654,7 @@ LABEL_103:
   }
 LABEL_104:
   ++caml_stat_compactions;
-  return caml_gc_message(16, (__int64)"done.\n", 0LL);
+  return caml_gc_message(16, "done.\n", 0LL);
 }
 // 6423E8: using guessed type void *caml_weak_none;
 // 64C2F0: using guessed type __int64 caml_stat_compactions;
@@ -34607,8 +34724,8 @@ int __fastcall caml_compact_heap_maybe(__m128d a1, double a2, __m128 a3)
     {
       v10 = (unsigned int)(int)(float)(v9 - 9.223372e18) ^ 0x8000000000000000LL;
     }
-    caml_gc_message(512, (__int64)"FL size at phase change = %lu\n", caml_fl_size_at_phase_change);
-    caml_gc_message(512, (__int64)"Estimated overhead = %lu%%\n", v10);
+    caml_gc_message(512, "FL size at phase change = %lu\n", caml_fl_size_at_phase_change);
+    caml_gc_message(512, "Estimated overhead = %lu%%\n", v10);
     result = caml_percent_max;
     if ( caml_percent_max < 0 )
     {
@@ -34622,7 +34739,7 @@ int __fastcall caml_compact_heap_maybe(__m128d a1, double a2, __m128 a3)
     }
     if ( v9 >= v12 )
     {
-      caml_gc_message(512, (__int64)"Automatic compaction triggered.\n", 0LL);
+      caml_gc_message(512, "Automatic compaction triggered.\n", 0LL);
       caml_finish_major_cycle();
       if ( caml_fl_cur_size < 0 )
         a3.m128_f32[0] = (float)(caml_fl_cur_size & 1 | (unsigned int)((unsigned __int64)caml_fl_cur_size >> 1))
@@ -34639,8 +34756,8 @@ int __fastcall caml_compact_heap_maybe(__m128d a1, double a2, __m128 a3)
         v16 = (unsigned int)(int)(float)(v15 - 9.223372e18) ^ 0x8000000000000000LL;
       else
         v16 = (unsigned int)(int)v15;
-      caml_gc_message(512, (__int64)"Measured overhead: %lu%%\n", v16);
-      result = caml_compact_heap();
+      caml_gc_message(512, "Measured overhead: %lu%%\n", v16);
+      return caml_compact_heap();
     }
   }
   return result;
@@ -34663,7 +34780,7 @@ unsigned __int64 __fastcall caml_final_do_strong_roots(__int64 (__fastcall *a1)(
   unsigned __int64 v7; // rbx
   void **v8; // rbp
   __int64 v9; // rax
-  __int64 v10; // r12
+  void **v10; // r12
   void *v11; // rdi
 
   if ( old )
@@ -34692,11 +34809,11 @@ unsigned __int64 __fastcall caml_final_do_strong_roots(__int64 (__fastcall *a1)(
         do
         {
           v9 = 3 * v7++;
-          v10 = (__int64)&v6[v9 + 2];
-          a1(v8[2], (void **)v10);
+          v10 = &v6[v9 + 2];
+          a1(v8[2], v10);
           v11 = v8[3];
           v8 += 3;
-          a1(v11, (void **)(v10 + 8));
+          a1(v11, v10 + 1);
           result = *((int *)v6 + 2);
         }
         while ( result > v7 );
@@ -34853,7 +34970,7 @@ void caml_final_do_calls()
 
   if ( !running_finalisation_function && to_do_hd )
   {
-    caml_gc_message(128, (__int64)"Calling finalisation functions.\n", 0LL);
+    caml_gc_message(128, "Calling finalisation functions.\n", 0LL);
     for ( i = to_do_hd; i; i = v1 )
     {
       v2 = i[2];
@@ -34874,7 +34991,7 @@ void caml_final_do_calls()
           to_do_tl = 0LL;
       }
     }
-    caml_gc_message(128, (__int64)"Done calling finalisation functions.\n", 0LL);
+    caml_gc_message(128, "Done calling finalisation functions.\n", 0LL);
   }
 }
 // 64C380: using guessed type int running_finalisation_function;
@@ -34921,7 +35038,7 @@ void caml_final_update()
     return;
   v3 = malloc(24LL * (int)v1 + 40);
   if ( !v3 )
-    caml_fatal_error((__int64)"out of memory");
+    caml_fatal_error("out of memory");
   v4 = (_QWORD *)to_do_tl;
   *(_QWORD *)v3 = 0LL;
   v3[2] = v1;
@@ -35013,7 +35130,6 @@ LABEL_16:
 _QWORD *__fastcall caml_final_custom_operations(__int64 a1)
 {
   _QWORD *v1; // rax
-  _QWORD *result; // rax
   _QWORD *v3; // rax
   _QWORD *v4; // rbx
   _QWORD *v5; // rax
@@ -35028,7 +35144,7 @@ _QWORD *__fastcall caml_final_custom_operations(__int64 a1)
       if ( !v1 )
         goto LABEL_6;
     }
-    result = (_QWORD *)*v1;
+    return (_QWORD *)*v1;
   }
   else
   {
@@ -35046,9 +35162,8 @@ LABEL_6:
     *v5 = v4;
     v5[1] = v6;
     custom_ops_final_table = (__int64)v5;
-    result = v4;
+    return v4;
   }
-  return result;
 }
 // 64C3B8: using guessed type __int64 custom_ops_final_table;
 
@@ -35113,7 +35228,7 @@ _QWORD *__fastcall caml_alloc_custom(__int64 a1, __int64 a2, unsigned __int64 a3
     v9 = caml_alloc_shr(v5, 0xFFu);
     *v9 = a1;
     caml_adjust_gc_speed(a3, a4);
-    result = (_QWORD *)caml_check_urgent_gc((__int64)v9);
+    return (_QWORD *)caml_check_urgent_gc((__int64)v9);
   }
   else
   {
@@ -35131,13 +35246,14 @@ int __fastcall caml_executable_name(char *filename, int a2)
   struct stat64 v4; // [rsp+0h] [rbp-A8h] BYREF
 
   v2 = readlink("/proc/self/exe", filename, a2);
-  if ( v2 >= a2
-    || v2 == -1
-    || (filename[v2] = 0, (result = __xstat64(1, filename, &v4)) != 0)
-    || (v4.st_mode & 0xF000) != 0x8000 )
-  {
-    result = -1;
-  }
+  if ( v2 >= a2 )
+    return -1;
+  if ( v2 == -1 )
+    return -1;
+  filename[v2] = 0;
+  result = __xstat64(1, filename, &v4);
+  if ( result || (v4.st_mode & 0xF000) != 0x8000 )
+    return -1;
   return result;
 }
 
@@ -35147,7 +35263,7 @@ __int64 __fastcall caml_read_directory(const char *a1, void **a2)
   DIR *v2; // rbx
   __int64 result; // rax
   struct dirent64 *v4; // rax
-  char *v5; // r13
+  char *d_name; // r13
   int v6; // eax
   size_t v7; // rax
   char *v8; // rbp
@@ -35163,15 +35279,15 @@ __int64 __fastcall caml_read_directory(const char *a1, void **a2)
         break;
       while ( 1 )
       {
-        v5 = v4->d_name;
+        d_name = v4->d_name;
         v6 = (unsigned __int8)v4->d_name[0];
-        if ( v6 == 46 && !v5[1] )
+        if ( v6 == 46 && !d_name[1] )
           break;
-        if ( v6 == 46 && v5[1] == 46 && !v5[2] )
+        if ( v6 == 46 && d_name[1] == 46 && !d_name[2] )
           break;
-        v7 = strlen(v5);
+        v7 = strlen(d_name);
         v8 = (char *)caml_stat_alloc(v7 + 1);
-        strcpy(v8, v5);
+        strcpy(v8, d_name);
         caml_ext_table_add(a2, (__int64)v8);
         v4 = readdir64(v2);
         if ( !v4 )
@@ -35180,7 +35296,7 @@ __int64 __fastcall caml_read_directory(const char *a1, void **a2)
     }
 LABEL_7:
     closedir(v2);
-    result = 0LL;
+    return 0LL;
   }
   return result;
 }
@@ -35357,7 +35473,7 @@ _QWORD *caml_get_exception_backtrace()
   unsigned __int64 *v6; // rdi
   __int64 v7; // rax
   __int64 v9[8]; // [rsp+0h] [rbp-88h] BYREF
-  void *v10; // [rsp+40h] [rbp-48h] BYREF
+  _QWORD *v10; // [rsp+40h] [rbp-48h] BYREF
   _QWORD *v11; // [rsp+48h] [rbp-40h] BYREF
   char *v12; // [rsp+50h] [rbp-38h] BYREF
   _QWORD *v13; // [rsp+58h] [rbp-30h] BYREF
@@ -35474,13 +35590,17 @@ void caml_print_exception_backtrace()
 // 64C3D0: using guessed type __int64 caml_backtrace_buffer;
 
 //----- (000000000042CEA0) ----------------------------------------------------
-__int64 __fastcall caml_stash_backtrace(__int64 a1, unsigned __int64 a2, unsigned __int64 a3, unsigned __int64 a4)
+unsigned __int64 __fastcall caml_stash_backtrace(
+        __int64 a1,
+        unsigned __int64 a2,
+        unsigned __int64 a3,
+        unsigned __int64 a4)
 {
   _QWORD *v4; // r8
   __int64 v5; // r9
   __int64 v6; // r11
   int v7; // er10
-  __int64 result; // rax
+  unsigned __int64 result; // rax
   __int64 v9; // rdi
   __int64 v10; // rax
   unsigned __int64 v11; // [rsp+8h] [rbp-20h]
@@ -35496,7 +35616,7 @@ __int64 __fastcall caml_stash_backtrace(__int64 a1, unsigned __int64 a2, unsigne
   if ( caml_backtrace_buffer
     || (v14 = a3,
         v12 = a4,
-        result = (__int64)malloc(0x2000uLL),
+        result = (unsigned __int64)malloc(0x2000uLL),
         caml_backtrace_buffer = result,
         a3 = v14,
         a4 = v12,
@@ -35749,6 +35869,7 @@ void __fastcall caml_c_call(const char *a1, const char *a2)
   __asm { retn }
 }
 // 42D266: positive sp value 8 has been found
+// 42D28D: unbalanced stack, ignored a potential tail call
 // 42D266: variable 'v5' is possibly undefined
 // 42D274: variable 'v4' is possibly undefined
 // 42D27B: variable 'v3' is possibly undefined
@@ -35808,7 +35929,7 @@ __int64 __fastcall caml_raise_exn()
   {
     v2 = result;
     caml_stash_backtrace(result, v3, (unsigned __int64)&retaddr, v1);
-    result = v2;
+    return v2;
   }
   return result;
 }
@@ -35860,39 +35981,5 @@ void __fastcall caml_ml_array_bound_error(const char *a1, const char *a2)
   caml_c_call(a1, a2);
 }
 
-//----- (000000000042D420) ----------------------------------------------------
-void _libc_csu_init(void)
-{
-  init_proc();
-}
-
-//----- (000000000042D4B0) ----------------------------------------------------
-void (*_do_global_ctors_aux())(void)
-{
-  void (*result)(void); // rax
-  void (**v1)(void); // rbx
-
-  result = (void (*)(void))_CTOR_LIST__;
-  if ( _CTOR_LIST__ != -1 )
-  {
-    v1 = (void (**)(void))&_CTOR_LIST__;
-    do
-    {
-      --v1;
-      result();
-      result = *v1;
-    }
-    while ( *v1 != (void (*)(void))-1LL );
-  }
-  return result;
-}
-// 636000: using guessed type __int64 _CTOR_LIST__;
-
-//----- (000000000042D4E8) ----------------------------------------------------
-void term_proc()
-{
-  _do_global_dtors_aux();
-}
-
-// nfuncs=1458 queued=1098 decompiled=1098 lumina nreq=0 worse=0 better=0
-// ALL OK, 1098 function(s) have been successfully decompiled
+// nfuncs=1458 queued=1090 decompiled=1090 lumina nreq=0 worse=0 better=0
+// ALL OK, 1090 function(s) have been successfully decompiled

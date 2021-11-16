@@ -1,89 +1,1689 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+
+Database SUBJECTS/from_shootout/matrix_ocaml/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
-  1187840   145 8192 allocating memory for b-tree...
-  1187840   145 8192 allocating memory for virtual array...
+   835584   102 8192 allocating memory for b-tree...
+   851968   104 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  2637824            total memory allocated
+  1949696            total memory allocated
 
-Loading file 'SUBJECTS/from_shootout/matrix_ocaml/ia32_elf/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-08071ED8) ... ... OK
-  1. Creating a new segment  (08072000-08082FB0) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (08049D84-08049DB4) ... ... OK
-  3. Creating a new segment  (08049DB4-08071ED8) ... ... OK
-  4. Creating a new segment  (08049DB4-0804A904) ... ... OK
-     Deleting segment        (0804A904-08071ED8) ...
-  4. Creating a new segment  (0804A904-08071ED8) ... ... OK
-  5. Creating a new segment  (0804A910-080709CC) ... ... OK
-  6. Creating a new segment  (080709CC-08071ED8) ... ... OK
-  7. Creating a new segment  (080709CC-080709E8) ... ... OK
-     Deleting segment        (080709E8-08071ED8) ...
-  7. Creating a new segment  (080709E8-08071ED8) ... ... OK
-  8. Creating a new segment  (08070A00-08071D8C) ... ... OK
-  9. Creating a new segment  (08071D8C-08071ED8) ... ... OK
- 10. Creating a new segment  (08071D8C-08071DC0) ... ... OK
-     Deleting segment        (08071DC0-08071ED8) ...
- 10. Creating a new segment  (08071DC0-08071ED8) ... ... OK
-     Deleting segment        (08071DC0-08071ED8) ...
- 10. Creating a new segment  (08071DC0-08071ED8) ... ... OK
- 11. Creating a new segment  (08072000-08072008) ... ... OK
-     Deleting segment        (08072008-08082FB0) ...
- 11. Creating a new segment  (08072008-08082FB0) ... ... OK
- 12. Creating a new segment  (08072008-08072010) ... ... OK
-     Deleting segment        (08072010-08082FB0) ...
- 12. Creating a new segment  (08072010-08082FB0) ... ... OK
- 13. Creating a new segment  (08072010-08072014) ... ... OK
-     Deleting segment        (08072014-08082FB0) ...
- 13. Creating a new segment  (08072014-08082FB0) ... ... OK
- 14. Creating a new segment  (08072014-08072050) ... ... OK
-     Deleting segment        (08072050-08082FB0) ...
- 14. Creating a new segment  (08072050-08082FB0) ... ... OK
- 15. Creating a new segment  (08072128-0807214C) ... ... OK
- 16. Creating a new segment  (0807214C-08082FB0) ... ... OK
- 17. Creating a new segment  (0807214C-08072428) ... ... OK
-     Deleting segment        (08072428-08082FB0) ...
- 17. Creating a new segment  (08072428-08082FB0) ... ... OK
- 18. Creating a new segment  (08072440-0807B89C) ... ... OK
- 19. Creating a new segment  (0807B89C-08082FB0) ... ... OK
- 20. Creating a new segment  (0807B8A0-08082FB0) ... ... OK
- 21. Creating a new segment  (08082FB0-08082FB1) ... ... OK
- 22. Creating a new segment  (08082FB4-08083294) ... ... OK
- 23. Creating a new segment  (08083294-080834AC) ... ... OK
-Processing relocations...
-DWARF: Looking for GNU DWARF file at "/usr/lib/debug/.build-id/a3/dd57854755925933a80face81caa1bf6ce7511.debug"... no.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_shootout/matrix_ocaml/ia32_elf/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-failed to add structure type 'sigaltstack': name is already used
-failed to add structure type 'sigaltstack': name is already used
-failed to add structure type 'sigaction': name is already used
-failed to add structure type 'sigaction': name is already used
-failed to add structure type 'sigaction': name is already used
-failed to add structure type 'sigaction': name is already used
-failed to add structure type 'sigaction': name is already used
-failed to add structure type 'sigaction': name is already used
-failed to add structure type 'sigaction': name is already used
-failed to add structure type 'sigaction': name is already used
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 36 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08049D84  LIB  with name '.init_proc'
+  function at 08049DB4       with name 'sub_8049DB4'
+  function at 08049DC4       with name '.ldexp'
+  function at 08049DD4       with name '.fputs'
+  function at 08049DE4       with name '.fmod'
+  function at 08049DF4       with name '.__errno_location'
+  function at 08049E04       with name '.sigemptyset'
+  function at 08049E14       with name '.inet_ntop'
+  function at 08049E24       with name '.sprintf'
+  function at 08049E34       with name '.tcflow'
+  function at 08049E44       with name '.connect'
+  function at 08049E54       with name '.setgroups'
+  function at 08049E64       with name '.getpid'
+  function at 08049E74       with name '.mkdir'
+  function at 08049E84       with name '.strerror'
+  function at 08049E94       with name '.getsockname'
+  function at 08049EA4       with name '.memcmp'
+  function at 08049EB4       with name '.log1p'
+  function at 08049EC4       with name '.freeaddrinfo'
+  function at 08049ED4       with name '.asin'
+  function at 08049EE4       with name '.shutdown'
+  function at 08049EF4       with name '.open64'
+  function at 08049F04       with name '.sigismember'
+  function at 08049F14       with name '.__gmon_start__'
+  function at 08049F24       with name '.realloc'
+  function at 08049F34       with name '.sinh'
+  function at 08049F44       with name '.__isoc99_sscanf'
+  function at 08049F54       with name '.__xstat64'
+  function at 08049F64       with name '.localtime'
+  function at 08049F74       with name '.cfgetispeed'
+  function at 08049F84       with name '.getgrnam'
+  function at 08049F94       with name '.strtod'
+  function at 08049FA4       with name '.socketpair'
+  function at 08049FB4       with name '.recv'
+  function at 08049FC4       with name '.getenv'
+  function at 08049FD4       with name '.calloc'
+  function at 08049FE4       with name '.system'
+  function at 08049FF4       with name '.fchown'
+  function at 0804A004       with name '.write'
+  function at 0804A014       with name '.sendto'
+  function at 0804A024       with name '.pow'
+  function at 0804A034       with name '.listen'
+  function at 0804A044       with name '.dlclose'
+  function at 0804A054       with name '.rename'
+  function at 0804A064       with name '.getlogin'
+  function at 0804A074       with name '.memset'
+  function at 0804A084       with name '.setitimer'
+  function at 0804A094       with name '.setsid'
+  function at 0804A0A4       with name '.getprotobyname'
+  function at 0804A0B4  LIB  with name '.__libc_start_main'
+  function at 0804A0C4       with name '.wait'
+  function at 0804A0D4       with name '.floor'
+  function at 0804A0E4       with name '.modf'
+  function at 0804A0F4       with name '.tcgetattr'
+  function at 0804A104       with name '.chmod'
+  function at 0804A114       with name '.read'
+  function at 0804A124       with name '.tcdrain'
+  function at 0804A134       with name '.sigaltstack'
+  function at 0804A144       with name '.exp'
+  function at 0804A154       with name '.getrusage'
+  function at 0804A164       with name '.gettimeofday'
+  function at 0804A174       with name '.expm1'
+  function at 0804A184       with name '.strtol'
+  function at 0804A194       with name '.getservbyport'
+  function at 0804A1A4       with name '.free'
+  function at 0804A1B4       with name '.inet_pton'
+  function at 0804A1C4       with name '.__lxstat64'
+  function at 0804A1D4       with name '.atan'
+  function at 0804A1E4       with name '.__fpclassify'
+  function at 0804A1F4       with name '.getprotobynumber'
+  function at 0804A204       with name '.access'
+  function at 0804A214       with name '.dlsym'
+  function at 0804A224       with name '.truncate64'
+  function at 0804A234       with name '.sigaction'
+  function at 0804A244       with name '.fflush'
+  function at 0804A254       with name '.sqrt'
+  function at 0804A264       with name '.opendir'
+  function at 0804A274       with name '.gethostbyaddr_r'
+  function at 0804A284       with name '.accept'
+  function at 0804A294       with name '.tcflush'
+  function at 0804A2A4       with name '.symlink'
+  function at 0804A2B4       with name '.socket'
+  function at 0804A2C4       with name '.dup2'
+  function at 0804A2D4       with name '.__ctype_b_loc'
+  function at 0804A2E4       with name '.isatty'
+  function at 0804A2F4       with name '.getaddrinfo'
+  function at 0804A304       with name '.umask'
+  function at 0804A314       with name '.tanh'
+  function at 0804A324       with name '.setuid'
+  function at 0804A334       with name '.dup'
+  function at 0804A344       with name '.mktime'
+  function at 0804A354       with name '.readdir64'
+  function at 0804A364       with name '.acos'
+  function at 0804A374       with name '.memcpy'
+  function at 0804A384       with name '.cfsetospeed'
+  function at 0804A394       with name '.utime'
+  function at 0804A3A4       with name '.execv'
+  function at 0804A3B4       with name '.execvp'
+  function at 0804A3C4       with name '.cos'
+  function at 0804A3D4       with name '.alarm'
+  function at 0804A3E4       with name '.unlink'
+  function at 0804A3F4       with name '.getpwuid'
+  function at 0804A404       with name '.nice'
+  function at 0804A414       with name '.getppid'
+  function at 0804A424       with name '.setlocale'
+  function at 0804A434       with name '.waitpid'
+  function at 0804A444       with name '.sigdelset'
+  function at 0804A454       with name '.__h_errno_location'
+  function at 0804A464       with name '.strcpy'
+  function at 0804A474       with name '.chroot'
+  function at 0804A484       with name '.getegid'
+  function at 0804A494       with name '.dlopen'
+  function at 0804A4A4       with name '.mkfifo'
+  function at 0804A4B4       with name '.chdir'
+  function at 0804A4C4       with name '.bind'
+  function at 0804A4D4       with name '.getuid'
+  function at 0804A4E4       with name '.putenv'
+  function at 0804A4F4       with name '.sigpending'
+  function at 0804A504       with name '.select'
+  function at 0804A514       with name '.closedir'
+  function at 0804A524       with name '.close'
+  function at 0804A534       with name '.fwrite'
+  function at 0804A544       with name '.rewinddir'
+  function at 0804A554       with name '.frexp'
+  function at 0804A564       with name '.initgroups'
+  function at 0804A574       with name '.fprintf'
+  function at 0804A584       with name '.time'
+  function at 0804A594       with name '.log10'
+  function at 0804A5A4       with name '.execve'
+  function at 0804A5B4       with name '.ftruncate64'
+  function at 0804A5C4       with name '.malloc'
+  function at 0804A5D4       with name '.sigprocmask'
+  function at 0804A5E4       with name '.chown'
+  function at 0804A5F4       with name '.gethostname'
+  function at 0804A604       with name '.atan2'
+  function at 0804A614       with name '.fputc'
+  function at 0804A624       with name '.rmdir'
+  function at 0804A634       with name '.dlerror'
+  function at 0804A644       with name '.getgrgid'
+  function at 0804A654       with name '.sleep'
+  function at 0804A664       with name '.sigaddset'
+  function at 0804A674       with name '.readlink'
+  function at 0804A684       with name '.memmove'
+  function at 0804A694       with name '.cfgetospeed'
+  function at 0804A6A4       with name '.getnameinfo'
+  function at 0804A6B4       with name '.strcat'
+  function at 0804A6C4       with name '.send'
+  function at 0804A6D4       with name '.getcwd'
+  function at 0804A6E4       with name '.log'
+  function at 0804A6F4       with name '.gethostbyname_r'
+  function at 0804A704       with name '.fork'
+  function at 0804A714       with name '.__fxstat64'
+  function at 0804A724       with name '.setsockopt'
+  function at 0804A734       with name '.tcsetattr'
+  function at 0804A744       with name '.fcntl'
+  function at 0804A754       with name '.getrlimit64'
+  function at 0804A764       with name '.gmtime'
+  function at 0804A774       with name '.getgroups'
+  function at 0804A784       with name '.link'
+  function at 0804A794       with name '.pipe'
+  function at 0804A7A4       with name '.tan'
+  function at 0804A7B4       with name '.getsockopt'
+  function at 0804A7C4       with name '.setgid'
+  function at 0804A7D4       with name '.cosh'
+  function at 0804A7E4       with name '.kill'
+  function at 0804A7F4       with name '.sin'
+  function at 0804A804       with name '.getpeername'
+  function at 0804A814       with name '.tcsendbreak'
+  function at 0804A824       with name '.recvfrom'
+  function at 0804A834       with name '.getpwnam'
+  function at 0804A844       with name '.lseek64'
+  function at 0804A854       with name '.getitimer'
+  function at 0804A864       with name '.strcmp'
+  function at 0804A874       with name '.__sigsetjmp'
+  function at 0804A884       with name '.getservbyname'
+  function at 0804A894       with name '.exit'
+  function at 0804A8A4       with name '.cfsetispeed'
+  function at 0804A8B4       with name '.fchmod'
+  function at 0804A8C4       with name '.sigsuspend'
+  function at 0804A8D4       with name '.getgid'
+  function at 0804A8E4       with name '.ceil'
+  function at 0804A8F4       with name '.geteuid'
+  function at 0804A910  LIB  with name '_start'
+  function at 0804A940  LIB  with name '__do_global_dtors_aux'
+  function at 0804A9A0  LIB  with name 'frame_dummy'
+  function at 0804A9D0       with name 'caml_startup__code_begin'
+  function at 0804AA80       with name 'caml_curry9'
+  function at 0804AAC0       with name 'caml_curry9_1'
+  function at 0804AB00       with name 'caml_curry9_2'
+  function at 0804AB40       with name 'caml_curry9_3'
+  function at 0804AB80       with name 'caml_curry9_4'
+  function at 0804ABC0       with name 'caml_curry9_5'
+  function at 0804AC00       with name 'caml_curry9_6'
+  function at 0804AC40       with name 'caml_curry9_7'
+  function at 0804AC80       with name 'caml_curry9_8'
+  function at 0804AD50       with name 'caml_curry7'
+  function at 0804AD90       with name 'caml_curry7_1'
+  function at 0804ADD0       with name 'caml_curry7_2'
+  function at 0804AE10       with name 'caml_curry7_3'
+  function at 0804AE50       with name 'caml_curry7_4'
+  function at 0804AE90       with name 'caml_curry7_5'
+  function at 0804AED0       with name 'caml_curry7_6'
+  function at 0804AF40       with name 'caml_curry6'
+  function at 0804AF80       with name 'caml_curry6_1'
+  function at 0804AFC0       with name 'caml_curry6_2'
+  function at 0804B000       with name 'caml_curry6_3'
+  function at 0804B040       with name 'caml_curry6_4'
+  function at 0804B080       with name 'caml_curry6_5'
+  function at 0804B0D0       with name 'caml_curry5'
+  function at 0804B110       with name 'caml_curry5_1'
+  function at 0804B150       with name 'caml_curry5_2'
+  function at 0804B190       with name 'caml_curry5_3'
+  function at 0804B1D0       with name 'caml_curry5_4'
+  function at 0804B1F0       with name 'caml_curry4'
+  function at 0804B230       with name 'caml_curry4_1'
+  function at 0804B270       with name 'caml_curry4_2'
+  function at 0804B2B0       with name 'caml_curry4_3'
+  function at 0804B2D0       with name 'caml_curry3'
+  function at 0804B310       with name 'caml_curry3_1'
+  function at 0804B350       with name 'caml_curry3_2'
+  function at 0804B370       with name 'caml_curry2'
+  function at 0804B3B0       with name 'caml_curry2_1'
+  function at 0804B3C0       with name 'caml_tuplify2'
+  function at 0804B3D0       with name 'caml_tuplify3'
+  function at 0804B3E0       with name 'caml_apply6'
+  function at 0804B490       with name 'caml_apply4'
+  function at 0804B4F0       with name 'caml_apply3'
+  function at 0804B540       with name 'caml_apply2'
+  function at 0804B580       with name 'camlStd_exit__code_begin'
+  function at 0804B5A0       with name 'camlSource__code_begin'
+  function at 0804B620       with name 'camlSource__inner_loop_1039'
+  function at 0804B650       with name 'camlSource__mmult_1045'
+  function at 0804B700       with name 'camlSource__entry'
+  function at 0804B860       with name 'camlUnix__code_begin'
+  function at 0804B8C0       with name 'camlUnix__fun_2828'
+  function at 0804B940       with name 'camlUnix__get_port_1739'
+  function at 0804B9F0       with name 'sub_804B9F0'
+  function at 0804BA80       with name 'sub_804BA80'
+  function at 0804BB10       with name 'camlUnix__fun_2833'
+  function at 0804BB50       with name 'camlUnix__fun_2836'
+  function at 0804BBA0       with name 'camlUnix__fun_2857'
+  function at 0804BBB0       with name 'camlUnix__fun_2863'
+  function at 0804BBC0       with name 'camlUnix__fun_2562'
+  function at 0804BBD0       with name 'camlUnix__fun_2564'
+  function at 0804BBE0       with name 'camlUnix__fun_2566'
+  function at 0804BBF0       with name 'camlUnix__fun_2568'
+  function at 0804BC00       with name 'camlUnix__fun_2570'
+  function at 0804BC10       with name 'camlUnix__fun_2572'
+  function at 0804BC30       with name 'camlUnix__fun_2574'
+  function at 0804BC40       with name 'camlUnix__fun_2576'
+  function at 0804BC50       with name 'camlUnix__fun_2578'
+  function at 0804BC60       with name 'camlUnix__fun_2580'
+  function at 0804BC70       with name 'camlUnix__fun_2582'
+  function at 0804BC80       with name 'camlUnix__fun_2584'
+  function at 0804BC90       with name 'camlUnix__fun_2586'
+  function at 0804BCA0       with name 'camlUnix__fun_2588'
+  function at 0804BCB0       with name 'camlUnix__fun_2590'
+  function at 0804BCC0       with name 'camlUnix__fun_2592'
+  function at 0804BCD0       with name 'camlUnix__fun_2594'
+  function at 0804BCE0       with name 'camlUnix__fun_2596'
+  function at 0804BCF0       with name 'camlUnix__fun_2598'
+  function at 0804BD00       with name 'camlUnix__fun_2600'
+  function at 0804BD10       with name 'camlUnix__fun_2602'
+  function at 0804BD20       with name 'camlUnix__fun_2604'
+  function at 0804BD40       with name 'camlUnix__fun_2606'
+  function at 0804BD60       with name 'camlUnix__fun_2608'
+  function at 0804BD70       with name 'camlUnix__fun_2610'
+  function at 0804BD80       with name 'camlUnix__fun_2612'
+  function at 0804BD90       with name 'camlUnix__fun_2614'
+  function at 0804BDA0       with name 'camlUnix__fun_2616'
+  function at 0804BDB0       with name 'camlUnix__fun_2618'
+  function at 0804BDC0       with name 'camlUnix__fun_2620'
+  function at 0804BDD0       with name 'camlUnix__fun_2622'
+  function at 0804BDE0       with name 'camlUnix__fun_2624'
+  function at 0804BDF0       with name 'camlUnix__fun_2626'
+  function at 0804BE00       with name 'camlUnix__fun_2628'
+  function at 0804BE10       with name 'camlUnix__fun_2630'
+  function at 0804BE20       with name 'camlUnix__fun_2632'
+  function at 0804BE30       with name 'camlUnix__fun_2634'
+  function at 0804BE40       with name 'camlUnix__fun_2636'
+  function at 0804BE50       with name 'camlUnix__fun_2638'
+  function at 0804BE60       with name 'camlUnix__fun_2640'
+  function at 0804BE70       with name 'camlUnix__fun_2642'
+  function at 0804BE80       with name 'camlUnix__fun_2644'
+  function at 0804BEA0       with name 'camlUnix__fun_2646'
+  function at 0804BEB0       with name 'camlUnix__fun_2648'
+  function at 0804BEC0       with name 'camlUnix__fun_2650'
+  function at 0804BED0       with name 'camlUnix__fun_2652'
+  function at 0804BEE0       with name 'camlUnix__fun_2654'
+  function at 0804BEF0       with name 'camlUnix__fun_2656'
+  function at 0804BF00       with name 'camlUnix__fun_2658'
+  function at 0804BF10       with name 'camlUnix__fun_2660'
+  function at 0804BF20       with name 'camlUnix__fun_2662'
+  function at 0804BF30       with name 'camlUnix__fun_2664'
+  function at 0804BF40       with name 'camlUnix__fun_2666'
+  function at 0804BF50       with name 'camlUnix__fun_2668'
+  function at 0804BF60       with name 'camlUnix__fun_2670'
+  function at 0804BF80       with name 'camlUnix__fun_2672'
+  function at 0804BFA0       with name 'camlUnix__fun_2674'
+  function at 0804BFB0       with name 'camlUnix__fun_2676'
+  function at 0804BFC0       with name 'camlUnix__fun_2678'
+  function at 0804BFD0       with name 'camlUnix__fun_2680'
+  function at 0804BFE0       with name 'camlUnix__fun_2682'
+  function at 0804BFF0       with name 'camlUnix__fun_2684'
+  function at 0804C000       with name 'camlUnix__fun_2686'
+  function at 0804C010       with name 'camlUnix__fun_2688'
+  function at 0804C020       with name 'camlUnix__fun_2690'
+  function at 0804C030       with name 'camlUnix__fun_2692'
+  function at 0804C040       with name 'camlUnix__fun_2694'
+  function at 0804C050       with name 'camlUnix__fun_2696'
+  function at 0804C060       with name 'camlUnix__fun_2698'
+  function at 0804C070       with name 'camlUnix__fun_2700'
+  function at 0804C080       with name 'camlUnix__fun_2702'
+  function at 0804C090       with name 'camlUnix__fun_2704'
+  function at 0804C0A0       with name 'camlUnix__fun_2706'
+  function at 0804C0B0       with name 'camlUnix__fun_2708'
+  function at 0804C0C0       with name 'camlUnix__fun_2710'
+  function at 0804C0D0       with name 'camlUnix__fun_2712'
+  function at 0804C0E0       with name 'camlUnix__fun_2714'
+  function at 0804C0F0       with name 'camlUnix__fun_2716'
+  function at 0804C110       with name 'camlUnix__fun_2718'
+  function at 0804C130       with name 'camlUnix__fun_2720'
+  function at 0804C140       with name 'camlUnix__fun_2722'
+  function at 0804C150       with name 'camlUnix__fun_2724'
+  function at 0804C160       with name 'camlUnix__fun_2726'
+  function at 0804C170       with name 'camlUnix__fun_2728'
+  function at 0804C180       with name 'camlUnix__fun_2730'
+  function at 0804C190       with name 'camlUnix__fun_2732'
+  function at 0804C1A0       with name 'camlUnix__fun_2734'
+  function at 0804C1B0       with name 'camlUnix__fun_2736'
+  function at 0804C1C0       with name 'camlUnix__fun_2738'
+  function at 0804C1D0       with name 'camlUnix__fun_2740'
+  function at 0804C1E0       with name 'camlUnix__fun_2742'
+  function at 0804C200       with name 'camlUnix__fun_2744'
+  function at 0804C210       with name 'camlUnix__fun_2746'
+  function at 0804C220       with name 'camlUnix__fun_2748'
+  function at 0804C230       with name 'camlUnix__fun_2750'
+  function at 0804C240       with name 'camlUnix__fun_2752'
+  function at 0804C250       with name 'camlUnix__fun_2754'
+  function at 0804C270       with name 'camlUnix__fun_2756'
+  function at 0804C280       with name 'camlUnix__fun_2758'
+  function at 0804C290       with name 'camlUnix__fun_2760'
+  function at 0804C2A0       with name 'camlUnix__fun_2762'
+  function at 0804C2B0       with name 'camlUnix__fun_2764'
+  function at 0804C2C0       with name 'camlUnix__fun_2766'
+  function at 0804C2D0       with name 'camlUnix__fun_2768'
+  function at 0804C2F0       with name 'camlUnix__fun_2770'
+  function at 0804C300       with name 'camlUnix__fun_2772'
+  function at 0804C320       with name 'camlUnix__fun_2774'
+  function at 0804C330       with name 'camlUnix__fun_2776'
+  function at 0804C340       with name 'camlUnix__fun_2778'
+  function at 0804C350       with name 'camlUnix__fun_2780'
+  function at 0804C360       with name 'camlUnix__fun_2782'
+  function at 0804C370       with name 'camlUnix__handle_unix_error_1171'
+  function at 0804C480       with name 'sub_804C480'
+  function at 0804C4B0       with name 'camlUnix__read_1237'
+  function at 0804C500       with name 'camlUnix__write_1242'
+  function at 0804C550       with name 'camlUnix__single_write_1247'
+  function at 0804C5A0       with name 'camlUnix__fun_2804'
+  function at 0804C5B0       with name 'camlUnix__fun_2802'
+  function at 0804C5C0       with name 'camlUnix__fun_2800'
+  function at 0804C5D0       with name 'camlUnix__fun_2798'
+  function at 0804C5E0       with name 'camlUnix__fun_2796'
+  function at 0804C5F0       with name 'camlUnix__fun_2794'
+  function at 0804C610       with name 'camlUnix__try_set_close_on_exec_1366'
+  function at 0804C640       with name 'sub_804C640'
+  function at 0804C670       with name 'camlUnix__pause_1408'
+  function at 0804C690       with name 'camlUnix__is_inet6_addr_1500'
+  function at 0804C6C0       with name 'camlUnix__domain_of_sockaddr_1529'
+  function at 0804C710       with name 'camlUnix__recv_1558'
+  function at 0804C760       with name 'camlUnix__recvfrom_1564'
+  function at 0804C7B0       with name 'camlUnix__send_1570'
+  function at 0804C800       with name 'camlUnix__sendto_1576'
+  function at 0804C860       with name 'camlUnix__fun_2816'
+  function at 0804C880       with name 'camlUnix__fun_2814'
+  function at 0804C8A0       with name 'camlUnix__getsockopt_1643'
+  function at 0804C8C0       with name 'camlUnix__setsockopt_1646'
+  function at 0804C8E0       with name 'camlUnix__getsockopt_int_1650'
+  function at 0804C900       with name 'camlUnix__setsockopt_int_1653'
+  function at 0804C920       with name 'camlUnix__getsockopt_optint_1657'
+  function at 0804C940       with name 'camlUnix__setsockopt_optint_1660'
+  function at 0804C960       with name 'camlUnix__getsockopt_float_1664'
+  function at 0804C980       with name 'camlUnix__setsockopt_float_1667'
+  function at 0804C9A0       with name 'camlUnix__getsockopt_error_1671'
+  function at 0804C9C0       with name 'camlUnix__getaddrinfo_emulation_1730'
+  function at 0804CCA0       with name 'sub_804CCA0'
+  function at 0804CD30       with name 'sub_804CD30'
+  function at 0804CE30       with name 'camlUnix__getaddrinfo_1751'
+  function at 0804CE80       with name 'sub_804CE80'
+  function at 0804CEC0       with name 'camlUnix__getnameinfo_emulation_1772'
+  function at 0804CF70       with name 'sub_804CF70'
+  function at 0804D020       with name 'sub_804D020'
+  function at 0804D140       with name 'camlUnix__getnameinfo_1781'
+  function at 0804D180       with name 'sub_804D180'
+  function at 0804D1B0       with name 'camlUnix__system_1891'
+  function at 0804D210       with name 'sub_804D210'
+  function at 0804D280       with name 'camlUnix__safe_dup_1894'
+  function at 0804D2D0       with name 'camlUnix__safe_close_1898'
+  function at 0804D300       with name 'sub_804D300'
+  function at 0804D330       with name 'camlUnix__perform_redirections_1900'
+  function at 0804D400       with name 'camlUnix__create_process_1907'
+  function at 0804D450       with name 'sub_804D450'
+  function at 0804D4A0       with name 'camlUnix__create_process_env_1914'
+  function at 0804D500       with name 'sub_804D500'
+  function at 0804D550       with name 'camlUnix__open_proc_1949'
+  function at 0804D630       with name 'sub_804D630'
+  function at 0804D6A0       with name 'camlUnix__open_process_in_1957'
+  function at 0804D740       with name 'camlUnix__open_process_out_1962'
+  function at 0804D7E0       with name 'camlUnix__open_process_1967'
+  function at 0804D920       with name 'camlUnix__open_proc_full_1975'
+  function at 0804DA20       with name 'sub_804DA20'
+  function at 0804DA90       with name 'camlUnix__open_process_full_1985'
+  function at 0804DC50       with name 'camlUnix__find_proc_id_1997'
+  function at 0804DCC0       with name 'sub_804DCC0'
+  function at 0804DD10       with name 'camlUnix__waitpid_non_intr_2001'
+  function at 0804DD50       with name 'sub_804DD50'
+  function at 0804DD80       with name 'camlUnix__close_process_in_2003'
+  function at 0804DDF0       with name 'camlUnix__close_process_out_2006'
+  function at 0804DE50       with name 'camlUnix__close_process_2009'
+  function at 0804DEC0       with name 'sub_804DEC0'
+  function at 0804DF00       with name 'camlUnix__close_process_full_2013'
+  function at 0804DF80       with name 'sub_804DF80'
+  function at 0804DFD0       with name 'camlUnix__open_connection_2018'
+  function at 0804E020       with name 'sub_804E020'
+  function at 0804E0B0       with name 'camlUnix__shutdown_connection_2022'
+  function at 0804E0D0       with name 'camlUnix__accept_non_intr_2024'
+  function at 0804E110       with name 'sub_804E110'
+  function at 0804E140       with name 'camlUnix__establish_server_2026'
+  function at 0804E280       with name 'camlUnix__entry'
+  function at 0804E81A       with name 'sub_804E81A'
+  function at 0804E862       with name 'sub_804E862'
+  function at 0804EA80       with name 'camlUnixLabels__code_begin'
+  function at 0804F170       with name 'camlUnixLabels__code_end'
+  function at 0804F1F0       with name 'camlPervasives__iter_1186'
+  function at 0804F210       with name 'sub_804F210'
+  function at 0804F250       with name 'camlPervasives__build_result_1243'
+  function at 0804F2A0       with name 'camlPervasives__scan_1249'
+  function at 0804F4A0       with name 'camlPervasives__fun_1500'
+  function at 0804F4D0       with name 'camlPervasives__fun_1392'
+  function at 0804F4E0       with name 'camlPervasives__fun_1394'
+  function at 0804F4F0       with name 'camlPervasives__fun_1396'
+  function at 0804F500       with name 'camlPervasives__fun_1398'
+  function at 0804F510       with name 'camlPervasives__fun_1400'
+  function at 0804F520       with name 'camlPervasives__fun_1402'
+  function at 0804F530       with name 'camlPervasives__fun_1404'
+  function at 0804F540       with name 'camlPervasives__fun_1406'
+  function at 0804F550       with name 'camlPervasives__fun_1408'
+  function at 0804F560       with name 'camlPervasives__fun_1410'
+  function at 0804F570       with name 'camlPervasives__fun_1412'
+  function at 0804F580       with name 'camlPervasives__fun_1414'
+  function at 0804F590       with name 'camlPervasives__fun_1416'
+  function at 0804F5A0       with name 'camlPervasives__fun_1418'
+  function at 0804F5B0       with name 'camlPervasives__fun_1420'
+  function at 0804F5C0       with name 'camlPervasives__fun_1422'
+  function at 0804F5D0       with name 'camlPervasives__fun_1424'
+  function at 0804F5E0       with name 'camlPervasives__failwith_1010'
+  function at 0804F620       with name 'camlPervasives__invalid_arg_1012'
+  function at 0804F660       with name 'camlPervasives__min_1022'
+  function at 0804F6A0       with name 'camlPervasives__max_1025'
+  function at 0804F6E0       with name 'camlPervasives__abs_1044'
+  function at 0804F700       with name 'camlPervasives__lnot_1049'
+  function at 0804F710       with name 'camlPervasives__$5e_1112'
+  function at 0804F7A0       with name 'camlPervasives__char_of_int_1120'
+  function at 0804F7C0       with name 'camlPervasives__string_of_bool_1127'
+  function at 0804F7E0       with name 'camlPervasives__bool_of_string_1129'
+  function at 0804F840       with name 'camlPervasives__string_of_int_1130'
+  function at 0804F860       with name 'camlPervasives__valid_float_lexem_1135'
+  function at 0804F8C0       with name 'camlPervasives__string_of_float_1140'
+  function at 0804F8E0       with name 'camlPervasives__$40_1143'
+  function at 0804F940       with name 'camlPervasives__open_out_gen_1175'
+  function at 0804F960       with name 'camlPervasives__open_out_1179'
+  function at 0804F980       with name 'camlPervasives__open_out_bin_1181'
+  function at 0804F9A0       with name 'camlPervasives__flush_all_1185'
+  function at 0804F9C0       with name 'camlPervasives__output_string_1191'
+  function at 0804F9F0       with name 'camlPervasives__output_1194'
+  function at 0804FA40       with name 'camlPervasives__output_value_1202'
+  function at 0804FA60       with name 'camlPervasives__close_out_1209'
+  function at 0804FA90       with name 'camlPervasives__close_out_noerr_1211'
+  function at 0804FAA0       with name 'sub_804FAA0'
+  function at 0804FAE0       with name 'sub_804FAE0'
+  function at 0804FB10       with name 'camlPervasives__open_in_gen_1214'
+  function at 0804FB30       with name 'camlPervasives__open_in_1218'
+  function at 0804FB50       with name 'camlPervasives__open_in_bin_1220'
+  function at 0804FB70       with name 'camlPervasives__input_1224'
+  function at 0804FBC0       with name 'camlPervasives__unsafe_really_input_1229'
+  function at 0804FC60       with name 'camlPervasives__really_input_1235'
+  function at 0804FCA0       with name 'camlPervasives__input_line_1241'
+  function at 0804FD00       with name 'camlPervasives__close_in_noerr_1263'
+  function at 0804FD10       with name 'sub_804FD10'
+  function at 0804FD40       with name 'camlPervasives__print_char_1266'
+  function at 0804FD60       with name 'camlPervasives__print_string_1268'
+  function at 0804FD70       with name 'camlPervasives__print_int_1270'
+  function at 0804FD90       with name 'camlPervasives__print_float_1272'
+  function at 0804FDB0       with name 'camlPervasives__print_endline_1274'
+  function at 0804FDF0       with name 'camlPervasives__print_newline_1276'
+  function at 0804FE20       with name 'camlPervasives__prerr_char_1277'
+  function at 0804FE40       with name 'camlPervasives__prerr_string_1279'
+  function at 0804FE50       with name 'camlPervasives__prerr_int_1281'
+  function at 0804FE70       with name 'camlPervasives__prerr_float_1283'
+  function at 0804FE90       with name 'camlPervasives__prerr_endline_1285'
+  function at 0804FED0       with name 'camlPervasives__prerr_newline_1287'
+  function at 0804FF00       with name 'camlPervasives__read_line_1288'
+  function at 0804FF20       with name 'camlPervasives__read_int_1289'
+  function at 0804FF40       with name 'camlPervasives__read_float_1290'
+  function at 0804FF60       with name 'camlPervasives__fun_1495'
+  function at 0804FF70       with name 'camlPervasives__fun_1493'
+  function at 0804FF80       with name 'camlPervasives__fun_1491'
+  function at 0804FF90       with name 'camlPervasives__fun_1489'
+  function at 0804FFA0       with name 'camlPervasives__fun_1487'
+  function at 0804FFB0       with name 'camlPervasives__fun_1485'
+  function at 0804FFC0       with name 'camlPervasives__$5e$5e_1312'
+  function at 0804FFE0       with name 'camlPervasives__string_of_format_1315'
+  function at 08050030       with name 'camlPervasives__at_exit_1322'
+  function at 08050090       with name 'camlPervasives__do_at_exit_1325'
+  function at 080500A0       with name 'camlPervasives__exit_1326'
+  function at 080500D0       with name 'camlPervasives__entry'
+  function at 08050500       with name 'camlArray__code_begin'
+  function at 08050760       with name 'camlArray__size_1065'
+  function at 080507B0       with name 'camlArray__fill_1070'
+  function at 080508E0       with name 'camlArray__find_init_1077'
+  function at 08050980       with name 'camlArray__tolist_1123'
+  function at 08050A10       with name 'camlArray__fill_1135'
+  function at 08050A70       with name 'camlArray__maxson_1155'
+  function at 08050E60       with name 'camlArray__trickledown_1160'
+  function at 08051070       with name 'camlArray__trickle_1165'
+  function at 08051100       with name 'sub_8051100'
+  function at 08051130       with name 'camlArray__bubbledown_1170'
+  function at 08051230       with name 'camlArray__bubble_1174'
+  function at 08051260       with name 'sub_8051260'
+  function at 08051280       with name 'camlArray__trickleup_1178'
+  function at 08051550       with name 'camlArray__merge_1191'
+  function at 080516E0       with name 'camlArray__isortto_1209'
+  function at 080519E0       with name 'camlArray__sortto_1217'
+  function at 08051AA0       with name 'camlArray__init_1037'
+  function at 08051B60       with name 'camlArray__make_matrix_1042'
+  function at 08051BE0       with name 'camlArray__copy_1049'
+  function at 08051D10       with name 'camlArray__append_1054'
+  function at 08051F50       with name 'camlArray__concat_aux_1062'
+  function at 08051FE0       with name 'camlArray__concat_1075'
+  function at 08051FF0       with name 'camlArray__sub_1081'
+  function at 080521A0       with name 'camlArray__fill_1087'
+  function at 08052240       with name 'camlArray__blit_1093'
+  function at 080524A0       with name 'camlArray__iter_1101'
+  function at 08052550       with name 'camlArray__map_1105'
+  function at 080526C0       with name 'camlArray__iteri_1111'
+  function at 08052770       with name 'camlArray__mapi_1115'
+  function at 080528F0       with name 'camlArray__to_list_1121'
+  function at 08052960       with name 'camlArray__list_length_1126'
+  function at 08052980       with name 'camlArray__of_list_1130'
+  function at 08052A10       with name 'camlArray__fold_left_1139'
+  function at 08052B10       with name 'camlArray__fold_right_1145'
+  function at 08052C00       with name 'camlArray__sort_1152'
+  function at 08053130       with name 'camlArray__stable_sort_1188'
+  function at 08053320       with name 'camlArray__entry'
+  function at 08053430       with name 'camlList__code_begin'
+  function at 08053460       with name 'camlList__rmap_f_1070'
+  function at 080534D0       with name 'camlList__rmap2_f_1103'
+  function at 08053570       with name 'camlList__find_1207'
+  function at 08053600       with name 'camlList__part_1215'
+  function at 08053720       with name 'camlList__rev_merge_1251'
+  function at 08053820       with name 'camlList__rev_merge_rev_1261'
+  function at 08053920       with name 'camlList__rev_sort_1272'
+  function at 08053DE0       with name 'camlList__sort_1271'
+  function at 080542A0       with name 'camlList__length_aux_1030'
+  function at 080542C0       with name 'camlList__length_1034'
+  function at 080542D0       with name 'camlList__hd_1036'
+  function at 080542F0       with name 'camlList__tl_1039'
+  function at 08054310       with name 'camlList__nth_1042'
+  function at 08054330       with name 'camlList__rev_append_1051'
+  function at 08054380       with name 'camlList__rev_1056'
+  function at 08054390       with name 'camlList__flatten_1058'
+  function at 080543D0       with name 'camlList__map_1062'
+  function at 08054440       with name 'camlList__rev_map_1067'
+  function at 08054490       with name 'camlList__iter_1074'
+  function at 080544D0       with name 'camlList__fold_left_1078'
+  function at 08054510       with name 'camlList__fold_right_1084'
+  function at 08054550       with name 'camlList__map2_1090'
+  function at 080545F0       with name 'camlList__rev_map2_1099'
+  function at 08054640       with name 'camlList__iter2_1111'
+  function at 080546A0       with name 'camlList__fold_left2_1119'
+  function at 08054700       with name 'camlList__fold_right2_1128'
+  function at 08054760       with name 'camlList__for_all_1137'
+  function at 080547B0       with name 'camlList__exists_1141'
+  function at 08054800       with name 'camlList__for_all2_1145'
+  function at 08054870       with name 'camlList__exists2_1153'
+  function at 080548E0       with name 'camlList__mem_1161'
+  function at 08054940       with name 'camlList__memq_1165'
+  function at 08054980       with name 'camlList__assoc_1169'
+  function at 08054A10       with name 'camlList__assq_1174'
+  function at 08054A80       with name 'camlList__mem_assoc_1179'
+  function at 08054AE0       with name 'camlList__mem_assq_1184'
+  function at 08054B20       with name 'camlList__remove_assoc_1189'
+  function at 08054BB0       with name 'camlList__remove_assq_1195'
+  function at 08054C20       with name 'camlList__find_1201'
+  function at 08054CA0       with name 'camlList__find_all_1205'
+  function at 08054CF0       with name 'camlList__partition_1212'
+  function at 08054D40       with name 'camlList__split_1220'
+  function at 08054DD0       with name 'camlList__combine_1226'
+  function at 08054E70       with name 'camlList__merge_1233'
+  function at 08054F70       with name 'camlList__chop_1243'
+  function at 08054FD0       with name 'camlList__stable_sort_1248'
+  function at 080550C0       with name 'camlList__entry'
+  function at 08055280       with name 'camlChar__code_begin'
+  function at 080552A0       with name 'camlChar__escaped_1038'
+  function at 080553D0       with name 'camlChar__lowercase_1043'
+  function at 08055410       with name 'camlChar__uppercase_1045'
+  function at 08055450       with name 'camlChar__compare_1048'
+  function at 08055460       with name 'camlChar__entry'
+  function at 080554A0       with name 'camlString__code_begin'
+  function at 080554D0       with name 'camlString__fun_1163'
+  function at 08055580       with name 'camlString__make_1038'
+  function at 080555C0       with name 'camlString__copy_1042'
+  function at 08055610       with name 'camlString__sub_1046'
+  function at 08055690       with name 'camlString__fill_1051'
+  function at 080556E0       with name 'camlString__blit_1056'
+  function at 08055750       with name 'camlString__iter_1062'
+  function at 080557C0       with name 'camlString__concat_1066'
+  function at 08055940       with name 'camlString__escaped_1080'
+  function at 08055CC0       with name 'camlString__map_1090'
+  function at 08055D60       with name 'camlString__uppercase_1096'
+  function at 08055D70       with name 'camlString__lowercase_1098'
+  function at 08055D80       with name 'camlString__apply1_1100'
+  function at 08055DF0       with name 'camlString__capitalize_1104'
+  function at 08055E00       with name 'camlString__uncapitalize_1106'
+  function at 08055E10       with name 'camlString__index_rec_1108'
+  function at 08055E70       with name 'camlString__index_1113'
+  function at 08055EA0       with name 'camlString__index_from_1116'
+  function at 08055EE0       with name 'camlString__rindex_rec_1121'
+  function at 08055F40       with name 'camlString__rindex_1125'
+  function at 08055F60       with name 'camlString__rindex_from_1128'
+  function at 08055FA0       with name 'camlString__contains_from_1132'
+  function at 08055FF0       with name 'sub_8055FF0'
+  function at 08056030       with name 'camlString__contains_1137'
+  function at 08056040       with name 'camlString__rcontains_from_1140'
+  function at 08056090       with name 'sub_8056090'
+  function at 080560C0       with name 'camlString__compare_1145'
+  function at 080560D0       with name 'camlString__entry'
+  function at 080561D0       with name 'camlSys__code_begin'
+  function at 08056210       with name 'camlSys__set_signal_1057'
+  function at 08056230       with name 'camlSys__catch_break_1082'
+  function at 08056290       with name 'camlSys__entry'
+  function at 08056440       with name 'camlHashtbl__code_begin'
+  function at 080564F0       with name 'camlHashtbl__find_in_bucket_1213'
+  function at 08056580       with name 'camlHashtbl__replace_bucket_1221'
+  function at 080566A0       with name 'camlHashtbl__mem_in_bucket_1230'
+  function at 080566F0       with name 'camlHashtbl__insert_bucket_1068'
+  function at 080567E0       with name 'camlHashtbl__remove_bucket_1083'
+  function at 08056890       with name 'camlHashtbl__find_in_bucket_1108'
+  function at 08056920       with name 'camlHashtbl__replace_bucket_1116'
+  function at 08056A40       with name 'camlHashtbl__mem_in_bucket_1125'
+  function at 08056AA0       with name 'camlHashtbl__do_bucket_1132'
+  function at 08056AE0       with name 'camlHashtbl__do_bucket_1142'
+  function at 08056B20       with name 'camlHashtbl__safehash_1177'
+  function at 08056B40       with name 'camlHashtbl__add_1179'
+  function at 08056C50       with name 'camlHashtbl__remove_1185'
+  function at 08056D50       with name 'camlHashtbl__find_rec_1193'
+  function at 08056DE0       with name 'camlHashtbl__find_1198'
+  function at 08056FF0       with name 'camlHashtbl__find_all_1210'
+  function at 080570C0       with name 'camlHashtbl__replace_1217'
+  function at 08057240       with name 'sub_8057240'
+  function at 080572C0       with name 'camlHashtbl__mem_1227'
+  function at 08057390       with name 'camlHashtbl__hash_1031'
+  function at 080573B0       with name 'camlHashtbl__create_1051'
+  function at 08057410       with name 'camlHashtbl__clear_1054'
+  function at 08057460       with name 'camlHashtbl__copy_1057'
+  function at 080574B0       with name 'camlHashtbl__length_1059'
+  function at 080574C0       with name 'camlHashtbl__resize_1061'
+  function at 080575F0       with name 'camlHashtbl__add_1074'
+  function at 080576E0       with name 'camlHashtbl__remove_1080'
+  function at 080577C0       with name 'camlHashtbl__find_rec_1088'
+  function at 08057850       with name 'camlHashtbl__find_1093'
+  function at 08057A20       with name 'camlHashtbl__find_all_1105'
+  function at 08057AC0       with name 'camlHashtbl__replace_1112'
+  function at 08057C20       with name 'sub_8057C20'
+  function at 08057CA0       with name 'camlHashtbl__mem_1122'
+  function at 08057D40       with name 'camlHashtbl__iter_1129'
+  function at 08057DF0       with name 'camlHashtbl__fold_1138'
+  function at 08057EC0       with name 'camlHashtbl__Make_1251'
+  function at 08058090       with name 'camlHashtbl__entry'
+  function at 08058140       with name 'camlBuffer__code_begin'
+  function at 08058250       with name 'camlBuffer__advance_1111'
+  function at 080582F0       with name 'camlBuffer__subst_1127'
+  function at 08058480       with name 'camlBuffer__create_1039'
+  function at 08058500       with name 'camlBuffer__contents_1044'
+  function at 08058510       with name 'camlBuffer__sub_1046'
+  function at 08058580       with name 'camlBuffer__blit_1051'
+  function at 080585D0       with name 'camlBuffer__nth_1057'
+  function at 08058610       with name 'camlBuffer__length_1060'
+  function at 08058620       with name 'camlBuffer__clear_1062'
+  function at 08058630       with name 'camlBuffer__reset_1064'
+  function at 08058670       with name 'camlBuffer__resize_1066'
+  function at 08058770       with name 'camlBuffer__add_char_1072'
+  function at 080587E0       with name 'camlBuffer__add_substring_1076'
+  function at 08058870       with name 'camlBuffer__add_string_1082'
+  function at 080588E0       with name 'camlBuffer__add_buffer_1087'
+  function at 080588F0       with name 'camlBuffer__add_channel_1090'
+  function at 08058970       with name 'camlBuffer__output_buffer_1094'
+  function at 08058980       with name 'camlBuffer__closing_1097'
+  function at 080589E0       with name 'camlBuffer__advance_to_closing_1098'
+  function at 08058A50       with name 'camlBuffer__advance_to_non_alpha_1108'
+  function at 08058AB0       with name 'camlBuffer__find_ident_1114'
+  function at 08058C30       with name 'camlBuffer__add_substitute_1122'
+  function at 08058CA0       with name 'camlBuffer__entry'
+  function at 08058D70       with name 'camlPrintf__code_begin'
+  function at 08058D80       with name 'camlPrintf__skip_int_literal_1092'
+  function at 08058DC0       with name 'camlPrintf__sub_sub_1129'
+  function at 08058EA0       with name 'camlPrintf__sub_1128'
+  function at 08058F00       with name 'camlPrintf__loop_1159'
+  function at 08058F60       with name 'camlPrintf__fun_1565'
+  function at 08058FC0       with name 'camlPrintf__fun_1568'
+  function at 08059000       with name 'camlPrintf__got_spec_1304'
+  function at 08059090       with name 'camlPrintf__got_spec_1297'
+  function at 080590B0       with name 'camlPrintf__cont_m_1365'
+  function at 08059140       with name 'camlPrintf__cont_f_1364'
+  function at 08059170       with name 'camlPrintf__cont_t_1363'
+  function at 080591D0       with name 'camlPrintf__cont_a_1362'
+  function at 08059230       with name 'camlPrintf__cont_s_1361'
+  function at 08059260       with name 'camlPrintf__doprn_1360'
+  function at 08059320       with name 'camlPrintf__fun_1686'
+  function at 08059330       with name 'camlPrintf__parse_1069'
+  function at 08059460       with name 'camlPrintf__skip_positional_spec_1090'
+  function at 080594D0       with name 'camlPrintf__fill_format_1096'
+  function at 080595C0       with name 'camlPrintf__sub_fmt_1124'
+  function at 08059650       with name 'camlPrintf__scan_fmt_1144'
+  function at 080596D0       with name 'camlPrintf__scan_conv_1143'
+  function at 08059910       with name 'camlPrintf__scan_flags_1142'
+  function at 080599D0       with name 'camlPrintf__add_char_1166'
+  function at 080599F0       with name 'camlPrintf__add_conv_1169'
+  function at 08059A50       with name 'camlPrintf__incr_ac_1187'
+  function at 08059AB0       with name 'camlPrintf__add_conv_1191'
+  function at 08059AE0       with name 'camlPrintf__add_char_1192'
+  function at 08059AF0       with name 'camlPrintf__loop_1204'
+  function at 08059B50       with name 'camlPrintf__loop_1240'
+  function at 08059C40       with name 'camlPrintf__fun_1587'
+  function at 08059EA0       with name 'camlPrintf__fun_1584'
+  function at 0805A0A0       with name 'camlPrintf__fun_1581'
+  function at 0805A240       with name 'camlPrintf__fun_1578'
+  function at 0805A380       with name 'camlPrintf__fun_1575'
+  function at 0805A450       with name 'camlPrintf__fun_1572'
+  function at 0805A4D0       with name 'camlPrintf__get_int_literal_1258'
+  function at 0805A590       with name 'camlPrintf__valid_float_loop_1273'
+  function at 0805A610       with name 'camlPrintf__get_arg_1288'
+  function at 0805A690       with name 'camlPrintf__scan_conv_1293'
+  function at 0805AE30       with name 'camlPrintf__scan_flags_1292'
+  function at 0805AEF0       with name 'camlPrintf__scan_positional_1291'
+  function at 0805AF50       with name 'camlPrintf__pr_1354'
+  function at 0805B090       with name 'camlPrintf__fun_1680'
+  function at 0805B0A0       with name 'camlPrintf__fun_1684'
+  function at 0805B0B0       with name 'camlPrintf__fun_1689'
+  function at 0805B0C0       with name 'camlPrintf__fun_1697'
+  function at 0805B0D0       with name 'camlPrintf__fun_1694'
+  function at 0805B0E0       with name 'camlPrintf__fun_1700'
+  function at 0805B0F0       with name 'camlPrintf__fun_1707'
+  function at 0805B100       with name 'camlPrintf__fun_1710'
+  function at 0805B110       with name 'camlPrintf__index_of_int_1037'
+  function at 0805B140       with name 'camlPrintf__add_int_index_1040'
+  function at 0805B150       with name 'camlPrintf__index_of_literal_position_1044'
+  function at 0805B160       with name 'camlPrintf__sub_1050'
+  function at 0805B170       with name 'camlPrintf__to_string_1054'
+  function at 0805B1A0       with name 'camlPrintf__bad_conversion_1057'
+  function at 0805B210       with name 'camlPrintf__bad_conversion_format_1061'
+  function at 0805B250       with name 'camlPrintf__incomplete_format_1065'
+  function at 0805B290       with name 'camlPrintf__parse_string_conversion_1067'
+  function at 0805B310       with name 'sub_805B310'
+  function at 0805B350       with name 'camlPrintf__pad_string_1072'
+  function at 0805B400       with name 'camlPrintf__format_string_1080'
+  function at 0805B440       with name 'camlPrintf__extract_format_1085'
+  function at 0805B550       with name 'camlPrintf__extract_format_int_1103'
+  function at 0805B5D0       with name 'camlPrintf__extract_format_float_1110'
+  function at 0805B650       with name 'camlPrintf__sub_format_1117'
+  function at 0805B6D0       with name 'camlPrintf__sub_format_for_printf_1135'
+  function at 0805B6F0       with name 'camlPrintf__iter_on_format_args_1137'
+  function at 0805B7A0       with name 'camlPrintf__summarize_format_type_1162'
+  function at 0805B850       with name 'camlPrintf__ac_of_format_1184'
+  function at 0805B8F0       with name 'camlPrintf__count_arguments_of_format_1198'
+  function at 0805B900       with name 'camlPrintf__list_iter_i_1201'
+  function at 0805B950       with name 'camlPrintf__kapr_1209'
+  function at 0805BC20       with name 'camlPrintf__scan_positional_spec_1252'
+  function at 0805BCA0       with name 'camlPrintf__next_index_1262'
+  function at 0805BCD0       with name 'camlPrintf__get_index_1265'
+  function at 0805BCF0       with name 'camlPrintf__make_valid_float_lexeme_1270'
+  function at 0805BD50       with name 'camlPrintf__fun_1600'
+  function at 0805BDA0       with name 'camlPrintf__scan_format_1278'
+  function at 0805BEB0       with name 'camlPrintf__mkprintf_1345'
+  function at 0805BF60       with name 'camlPrintf__kfprintf_1386'
+  function at 0805BFD0       with name 'camlPrintf__ifprintf_1389'
+  function at 0805BFE0       with name 'camlPrintf__fprintf_1391'
+  function at 0805BFF0       with name 'camlPrintf__printf_1393'
+  function at 0805C010       with name 'camlPrintf__eprintf_1395'
+  function at 0805C030       with name 'camlPrintf__kbprintf_1397'
+  function at 0805C0A0       with name 'camlPrintf__bprintf_1400'
+  function at 0805C0B0       with name 'camlPrintf__get_buff_1402'
+  function at 0805C0E0       with name 'camlPrintf__get_contents_1405'
+  function at 0805C110       with name 'camlPrintf__get_cont_1408'
+  function at 0805C140       with name 'camlPrintf__ksprintf_1411'
+  function at 0805C180       with name 'camlPrintf__sprintf_1413'
+  function at 0805C1A0       with name 'camlPrintf__entry'
+  function at 0805C480       with name 'camlCallback__code_begin'
+  function at 0805C490       with name 'camlCallback__register_exception_1034'
+  function at 0805C4F0       with name 'camlCallback__entry'
+  function at 0805C50C       with name 'unix_accept'
+  function at 0805C5FA       with name '__i686.get_pc_thunk.bx'
+  function at 0805C600       with name 'unix_access'
+  function at 0805C664       with name 'unix_inet_addr_of_string'
+  function at 0805C6E8       with name 'unix_alarm'
+  function at 0805C714       with name 'unix_bind'
+  function at 0805C78C       with name 'unix_chdir'
+  function at 0805C7D4       with name 'unix_chmod'
+  function at 0805C828       with name 'unix_chown'
+  function at 0805C884       with name 'unix_chroot'
+  function at 0805C8CC       with name 'unix_close'
+  function at 0805C914       with name 'unix_closedir'
+  function at 0805C970       with name 'unix_connect'
+  function at 0805C9F0       with name 'unix_dup'
+  function at 0805CA34       with name 'unix_dup2'
+  function at 0805CA84       with name 'unix_environment'
+  function at 0805CAAC       with name 'unix_error_message'
+  function at 0805CAEC       with name 'unix_execv'
+  function at 0805CB3C       with name 'unix_execve'
+  function at 0805CBA8       with name 'unix_execvpe'
+  function at 0805CC22       with name 'unix_execvp'
+  function at 0805CC74       with name 'unix_fchmod'
+  function at 0805CCC4       with name 'unix_fchown'
+  function at 0805CD1C       with name 'unix_clear_close_on_exec'
+  function at 0805CD96       with name 'unix_set_close_on_exec'
+  function at 0805CE10       with name 'unix_clear_nonblock'
+  function at 0805CE8A       with name 'unix_set_nonblock'
+  function at 0805CF10       with name 'unix_fork'
+  function at 0805CF84       with name 'unix_ftruncate_64'
+  function at 0805CFDA       with name 'unix_ftruncate'
+  function at 0805D040       with name 'unix_getaddrinfo'
+  function at 0805D44C       with name 'unix_getcwd'
+  function at 0805D4A8       with name 'unix_getegid'
+  function at 0805D4CC       with name 'unix_geteuid'
+  function at 0805D4F0       with name 'unix_getgid'
+  function at 0805D520       with name 'alloc_group_entry'
+  function at 0805D5E0       with name 'unix_getgrgid'
+  function at 0805D613       with name 'unix_getgrnam'
+  function at 0805D644       with name 'unix_getgroups'
+  function at 0805D6C4       with name 'alloc_host_entry'
+  function at 0805D7D3       with name 'unix_gethostbyname'
+  function at 0805D882       with name 'alloc_one_addr'
+  function at 0805D8EF       with name 'unix_gethostbyaddr'
+  function at 0805D988       with name 'unix_gethostname'
+  function at 0805D9C8       with name 'unix_getlogin'
+  function at 0805DA10       with name 'unix_getnameinfo'
+  function at 0805DB58       with name 'unix_getpeername'
+  function at 0805DBD0       with name 'unix_getpid'
+  function at 0805DBF4       with name 'unix_getppid'
+  function at 0805DC20       with name 'alloc_proto_entry'
+  function at 0805DCCA       with name 'unix_getprotobynumber'
+  function at 0805DCFD       with name 'unix_getprotobyname'
+  function at 0805DD30       with name 'alloc_passwd_entry'
+  function at 0805DE3C       with name 'unix_getpwuid'
+  function at 0805DE6F       with name 'unix_getpwnam'
+  function at 0805DEA0       with name 'unix_gettimeofday'
+  function at 0805DF00       with name 'alloc_service_entry'
+  function at 0805DFC7       with name 'unix_getservbyport'
+  function at 0805E00B       with name 'unix_getservbyname'
+  function at 0805E044       with name 'unix_getsockname'
+  function at 0805E0BC       with name 'unix_getuid'
+  function at 0805E0E0       with name 'alloc_tm'
+  function at 0805E16D       with name 'unix_mktime'
+  function at 0805E27E       with name 'unix_localtime'
+  function at 0805E2E3       with name 'unix_gmtime'
+  function at 0805E348       with name 'unix_initgroups'
+  function at 0805E394       with name 'unix_isatty'
+  function at 0805E3C4       with name 'unix_convert_itimer'
+  function at 0805E41D       with name 'unix_getitimer'
+  function at 0805E473       with name 'unix_set_timeval'
+  function at 0805E509       with name 'unix_setitimer'
+  function at 0805E594       with name 'unix_kill'
+  function at 0805E5EC       with name 'unix_link'
+  function at 0805E63C       with name 'unix_listen'
+  function at 0805E68C       with name 'unix_lockf'
+  function at 0805E848       with name 'unix_lseek_64'
+  function at 0805E8D6       with name 'unix_lseek'
+  function at 0805E98C       with name 'unix_mkdir'
+  function at 0805E9E0       with name 'unix_mkfifo'
+  function at 0805EA34       with name 'unix_nice'
+  function at 0805EA94       with name 'unix_open'
+  function at 0805EB78       with name 'unix_opendir'
+  function at 0805EBD8       with name 'unix_pipe'
+  function at 0805EC40       with name 'unix_putenv'
+  function at 0805ECF4       with name 'unix_read'
+  function at 0805EDCC       with name 'unix_readdir'
+  function at 0805EE28       with name 'unix_readlink'
+  function at 0805EE98       with name 'unix_rename'
+  function at 0805EEE8       with name 'unix_rewinddir'
+  function at 0805EF34       with name 'unix_rmdir'
+  function at 0805EF7C       with name 'fdlist_to_fdset'
+  function at 0805EFE5       with name 'fdset_to_fdlist'
+  function at 0805F0A4       with name 'unix_select'
+  function at 0805F280       with name 'unix_sendto_native'
+  function at 0805F371       with name 'unix_sendto'
+  function at 0805F3B9       with name 'unix_send'
+  function at 0805F479       with name 'unix_recvfrom'
+  function at 0805F5E7       with name 'unix_recv'
+  function at 0805F6DC       with name 'unix_setgid'
+  function at 0805F724       with name 'unix_setgroups'
+  function at 0805F7B0       with name 'unix_setsid'
+  function at 0805F7D4       with name 'unix_setuid'
+  function at 0805F81C       with name 'unix_shutdown'
+  function at 0805F880       with name 'decode_sigset'
+  function at 0805F8CD       with name 'unix_sigsuspend'
+  function at 0805F93F       with name 'encode_sigset'
+  function at 0805F9E4       with name 'unix_sigpending'
+  function at 0805FA36       with name 'unix_sigprocmask'
+  function at 0805FAC4       with name 'unix_sleep'
+  function at 0805FAF8       with name 'unix_socket'
+  function at 0805FB60       with name 'get_sockaddr'
+  function at 0805FC9D       with name 'alloc_inet6_addr'
+  function at 0805FCE3       with name 'alloc_inet_addr'
+  function at 0805FD0E       with name 'alloc_sockaddr'
+  function at 0805FEA4       with name 'unix_socketpair'
+  function at 0805FF40       with name 'unix_setsockopt_aux'
+  function at 0806003B       with name 'unix_setsockopt'
+  function at 08060095       with name 'unix_getsockopt_aux'
+  function at 08060248       with name 'unix_getsockopt'
+  function at 0806029C       with name 'stat_aux'
+  function at 08060443       with name 'unix_fstat_64'
+  function at 0806049F       with name 'unix_lstat_64'
+  function at 080604FE       with name 'unix_stat_64'
+  function at 0806055D       with name 'unix_fstat'
+  function at 080605FB       with name 'unix_lstat'
+  function at 08060691       with name 'unix_stat'
+  function at 08060728       with name 'unix_string_of_inet_addr'
+  function at 080607B4       with name 'unix_symlink'
+  function at 08060810       with name 'unix_tcflow'
+  function at 08060865       with name 'unix_tcflush'
+  function at 080608BA       with name 'unix_tcdrain'
+  function at 080608FF       with name 'unix_tcsendbreak'
+  function at 0806094D       with name 'unix_tcsetattr'
+  function at 08060B81       with name 'unix_tcgetattr'
+  function at 08060D3C       with name 'unix_time'
+  function at 08060D70       with name 'unix_times'
+  function at 08060E14       with name 'unix_truncate_64'
+  function at 08060E6D       with name 'unix_truncate'
+  function at 08060EC8       with name 'unix_umask'
+  function at 08060EF4       with name 'unix_error_of_code'
+  function at 08060F5F       with name 'unix_error'
+  function at 0806105C       with name 'uerror'
+  function at 0806108C       with name 'unix_unlink'
+  function at 080610D4       with name 'unix_utimes'
+  function at 0806115C       with name 'alloc_process_status'
+  function at 0806125F       with name 'unix_waitpid'
+  function at 080612D9       with name 'unix_wait'
+  function at 08061338       with name 'unix_single_write'
+  function at 0806141D       with name 'unix_write'
+  function at 08061570       with name 'cst_to_constr'
+  function at 080615A8       with name 'cstringvect'
+  function at 08061610       with name 'scanmult'
+  function at 080616AE       with name 'caml_main'
+  function at 08061969       with name 'caml_startup'
+  function at 0806197C       with name 'main'
+  function at 080619B0       with name 'caml_raise'
+  function at 080619FD       with name 'caml_array_bound_error'
+  function at 08061A77       with name 'caml_raise_stack_overflow'
+  function at 08061A89       with name 'caml_raise_out_of_memory'
+  function at 08061A9B       with name 'caml_raise_with_args'
+  function at 08061B17       with name 'caml_raise_with_arg'
+  function at 08061B98       with name 'caml_raise_sys_error'
+  function at 08061BB1       with name 'caml_raise_with_string'
+  function at 08061BD1       with name 'caml_invalid_argument'
+  function at 08061BEA       with name 'caml_failwith'
+  function at 08061C03       with name 'caml_raise_constant'
+  function at 08061C75       with name 'caml_raise_sys_blocked_io'
+  function at 08061C87       with name 'caml_raise_not_found'
+  function at 08061C99       with name 'caml_raise_zero_divide'
+  function at 08061CAB       with name 'caml_raise_end_of_file'
+  function at 08061CC0       with name 'caml_do_local_roots'
+  function at 08061DE7       with name 'caml_stack_usage'
+  function at 08061E12       with name 'cons'
+  function at 08061E3D       with name 'caml_register_dyn_global'
+  function at 08061E58       with name 'caml_register_frametable'
+  function at 08061E8E       with name 'caml_init_frame_descriptors'
+  function at 08061FE5       with name 'caml_do_roots'
+  function at 08062106       with name 'caml_darken_all_roots'
+  function at 0806211A       with name 'caml_oldify_local_roots'
+  function at 080623A0       with name 'caml_iterate_global_roots'
+  function at 080623CC       with name 'caml_scan_global_roots'
+  function at 08062400       with name 'caml_insert_global_root'
+  function at 080624E7       with name 'caml_register_generational_global_root'
+  function at 0806253A       with name 'caml_register_global_root'
+  function at 0806254F       with name 'caml_scan_global_young_roots'
+  function at 080625DC       with name 'caml_delete_global_root'
+  function at 08062679       with name 'caml_modify_generational_global_root'
+  function at 08062786       with name 'caml_remove_generational_global_root'
+  function at 080627D9       with name 'caml_remove_global_root'
+  function at 080627F0       with name 'caml_record_signal'
+  function at 08062817       with name 'caml_enter_blocking_section_default'
+  function at 08062826       with name 'caml_leave_blocking_section_default'
+  function at 08062835       with name 'caml_try_leave_blocking_section_default'
+  function at 08062842       with name 'caml_urge_major_slice'
+  function at 0806285B       with name 'caml_convert_signal_number'
+  function at 08062875       with name 'caml_rev_convert_signal_number'
+  function at 080628A3       with name 'caml_execute_signal'
+  function at 0806297C       with name 'caml_process_pending_signals'
+  function at 080629CE       with name 'caml_install_signal_handler'
+  function at 08062B1A       with name 'caml_leave_blocking_section'
+  function at 08062B2D       with name 'caml_enter_blocking_section'
+  function at 08062B60       with name 'caml_init_signals'
+  function at 08062BE2       with name 'caml_set_signal_action'
+  function at 08062C8F       with name 'segv_handler'
+  function at 08062D19       with name 'handle_signal'
+  function at 08062D5B       with name 'caml_garbage_collection'
+  function at 08062D88       with name 'caml_ext_table_free'
+  function at 08062DCA       with name 'caml_ext_table_add'
+  function at 08062E0A       with name 'caml_ext_table_init'
+  function at 08062E34       with name 'caml_aligned_malloc'
+  function at 08062E74       with name 'caml_fatal_error_arg2'
+  function at 08062EBC       with name 'caml_fatal_error_arg'
+  function at 08062EE9       with name 'caml_fatal_error'
+  function at 08062F0F       with name 'caml_gc_message'
+  function at 08062F50       with name 'allocate_block'
+  function at 08063022       with name 'caml_fl_init_merge'
+  function at 0806303B       with name 'truncate_flp'
+  function at 080630B0       with name 'caml_fl_reset'
+  function at 080630F4       with name 'caml_fl_merge_block'
+  function at 08063259       with name 'caml_fl_add_blocks'
+  function at 08063319       with name 'caml_make_free_blocks'
+  function at 08063364       with name 'caml_set_allocation_policy'
+  function at 0806339C       with name 'caml_fl_allocate'
+  function at 08063820       with name 'clip_heap_chunk_size'
+  function at 0806383C       with name 'caml_init_major_heap'
+  function at 0806393F       with name 'caml_round_heap_chunk_size'
+  function at 08063967       with name 'start_cycle'
+  function at 080639AE       with name 'realloc_gray_vals'
+  function at 08063A83       with name 'mark_slice'
+  function at 08063ED0       with name 'caml_darken'
+  function at 08063F60       with name 'sweep_slice'
+  function at 08064041       with name 'caml_finish_major_cycle'
+  function at 080640B8       with name 'caml_major_collection_slice'
+  function at 0806438C       with name 'clear_table'
+  function at 0806439C       with name 'caml_oldify_one'
+  function at 0806452B       with name 'caml_oldify_mopup'
+  function at 080645C9       with name 'caml_empty_minor_heap'
+  function at 08064713       with name 'caml_minor_collection'
+  function at 0806477C       with name 'caml_check_urgent_gc'
+  function at 080647C5       with name 'reset_table'
+  function at 08064812       with name 'caml_set_minor_heap_size'
+  function at 080648E4       with name 'caml_alloc_table'
+  function at 0806493A       with name 'caml_realloc_ref_table'
+  function at 08064A40       with name 'caml_page_table_initialize'
+  function at 08064A64       with name 'caml_allocation_color'
+  function at 08064A8E       with name 'caml_alloc_dependent_memory'
+  function at 08064AA5       with name 'caml_free_dependent_memory'
+  function at 08064ACE       with name 'caml_stat_resize'
+  function at 08064AF1       with name 'caml_stat_free'
+  function at 08064B04       with name 'caml_free_for_heap'
+  function at 08064B1A       with name 'caml_stat_alloc'
+  function at 08064B3F       with name 'caml_modify'
+  function at 08064BEC       with name 'caml_initialize'
+  function at 08064C58       with name 'caml_adjust_gc_speed'
+  function at 08064CFB       with name 'caml_alloc_for_heap'
+  function at 08064D37       with name 'caml_page_table_modify'
+  function at 08064DB2       with name 'caml_page_table_remove'
+  function at 08064E07       with name 'caml_shrink_heap'
+  function at 08064E91       with name 'caml_page_table_add'
+  function at 08064EE6       with name 'caml_add_to_heap'
+  function at 08064F92       with name 'caml_alloc_shr'
+  function at 08065134       with name 'caml_convert_flag_list'
+  function at 0806515A       with name 'caml_update_dummy'
+  function at 080651CE       with name 'caml_alloc_final'
+  function at 08065201       with name 'caml_alloc_small'
+  function at 0806526A       with name 'caml_alloc_string'
+  function at 08065314       with name 'caml_copy_string'
+  function at 08065363       with name 'caml_alloc'
+  function at 0806543D       with name 'caml_alloc_dummy_float'
+  function at 08065462       with name 'caml_alloc_dummy'
+  function at 08065486       with name 'caml_alloc_array'
+  function at 0806554A       with name 'caml_copy_string_array'
+  function at 08065565       with name 'caml_alloc_tuple'
+  function at 08065580       with name 'compare_free_stack'
+  function at 080655B0       with name 'compare_stack_overflow'
+  function at 080655DC       with name 'compare_val'
+  function at 08065BD2       with name 'caml_greaterequal'
+  function at 08065C0D       with name 'caml_greaterthan'
+  function at 08065C49       with name 'caml_lessequal'
+  function at 08065C91       with name 'caml_lessthan'
+  function at 08065CD5       with name 'caml_notequal'
+  function at 08065D10       with name 'caml_equal'
+  function at 08065D4B       with name 'caml_compare'
+  function at 08065D90       with name 'parse_sign_and_base'
+  function at 08065DE9       with name 'parse_digit'
+  function at 08065E23       with name 'caml_int_compare'
+  function at 08065E46       with name 'int32_cmp'
+  function at 08065E69       with name 'int32_hash'
+  function at 08065E74       with name 'caml_int32_to_int'
+  function at 08065E83       with name 'caml_int32_compare'
+  function at 08065EAC       with name 'int64_cmp'
+  function at 08065F08       with name 'int64_hash'
+  function at 08065F13       with name 'caml_int64_to_int'
+  function at 08065F22       with name 'caml_int64_compare'
+  function at 08065F82       with name 'nativeint_cmp'
+  function at 08065FA5       with name 'nativeint_hash'
+  function at 08065FB0       with name 'caml_nativeint_to_int'
+  function at 08065FBF       with name 'caml_nativeint_compare'
+  function at 08065FE8       with name 'int32_deserialize'
+  function at 08065FFF       with name 'nativeint_deserialize'
+  function at 08066043       with name 'nativeint_serialize'
+  function at 0806607C       with name 'int32_serialize'
+  function at 080660A4       with name 'int64_deserialize'
+  function at 080660C7       with name 'int64_serialize'
+  function at 080660F6       with name 'parse_intnat'
+  function at 08066224       with name 'caml_int_of_string'
+  function at 0806623D       with name 'parse_format'
+  function at 08066346       with name 'caml_nativeint_format'
+  function at 080663B1       with name 'caml_int64_format'
+  function at 08066423       with name 'caml_int32_format'
+  function at 0806648E       with name 'caml_format_int'
+  function at 08066524       with name 'caml_nativeint_to_float'
+  function at 0806653A       with name 'caml_int64_float_of_bits'
+  function at 08066550       with name 'caml_int64_to_float'
+  function at 08066566       with name 'caml_int32_float_of_bits'
+  function at 0806657C       with name 'caml_int32_to_float'
+  function at 08066592       with name 'caml_copy_nativeint'
+  function at 080665C4       with name 'caml_nativeint_of_string'
+  function at 080665E1       with name 'caml_nativeint_of_int32'
+  function at 080665F7       with name 'caml_nativeint_of_float'
+  function at 0806661F       with name 'caml_nativeint_of_int'
+  function at 08066634       with name 'caml_nativeint_shift_right_unsigned'
+  function at 08066651       with name 'caml_nativeint_shift_right'
+  function at 0806666E       with name 'caml_nativeint_shift_left'
+  function at 0806668B       with name 'caml_nativeint_xor'
+  function at 080666A7       with name 'caml_nativeint_or'
+  function at 080666C3       with name 'caml_nativeint_and'
+  function at 080666DF       with name 'caml_nativeint_mod'
+  function at 08066726       with name 'caml_nativeint_div'
+  function at 0806675F       with name 'caml_nativeint_mul'
+  function at 0806677C       with name 'caml_nativeint_sub'
+  function at 08066798       with name 'caml_nativeint_add'
+  function at 080667B4       with name 'caml_nativeint_neg'
+  function at 080667CC       with name 'caml_int64_to_nativeint'
+  function at 080667E2       with name 'caml_copy_int64'
+  function at 08066828       with name 'caml_int64_bits_of_float'
+  function at 08066844       with name 'caml_int64_of_string'
+  function at 080669C1       with name 'caml_int64_of_nativeint'
+  function at 080669E0       with name 'caml_int64_of_int32'
+  function at 080669FF       with name 'caml_int64_of_float'
+  function at 08066A27       with name 'caml_int64_of_int'
+  function at 08066A45       with name 'caml_int64_shift_right_unsigned'
+  function at 08066A75       with name 'caml_int64_shift_right'
+  function at 08066AA6       with name 'caml_int64_shift_left'
+  function at 08066AD6       with name 'caml_int64_xor'
+  function at 08066AFC       with name 'caml_int64_or'
+  function at 08066B22       with name 'caml_int64_and'
+  function at 08066B48       with name 'caml_int64_mod'
+  function at 08066BBD       with name 'caml_int64_div'
+  function at 08066C29       with name 'caml_int64_mul'
+  function at 08066C61       with name 'caml_int64_sub'
+  function at 08066C9F       with name 'caml_int64_add'
+  function at 08066CCE       with name 'caml_int64_neg'
+  function at 08066CF2       with name 'caml_copy_int32'
+  function at 08066D24       with name 'caml_nativeint_to_int32'
+  function at 08066D3A       with name 'caml_int64_to_int32'
+  function at 08066D50       with name 'caml_int32_bits_of_float'
+  function at 08066D6B       with name 'caml_int32_of_string'
+  function at 08066D88       with name 'caml_int32_of_float'
+  function at 08066DB0       with name 'caml_int32_of_int'
+  function at 08066DC5       with name 'caml_int32_shift_right_unsigned'
+  function at 08066DE2       with name 'caml_int32_shift_right'
+  function at 08066DFF       with name 'caml_int32_shift_left'
+  function at 08066E1C       with name 'caml_int32_xor'
+  function at 08066E38       with name 'caml_int32_or'
+  function at 08066E54       with name 'caml_int32_and'
+  function at 08066E70       with name 'caml_int32_mod'
+  function at 08066EB7       with name 'caml_int32_div'
+  function at 08066EF0       with name 'caml_int32_mul'
+  function at 08066F0D       with name 'caml_int32_sub'
+  function at 08066F29       with name 'caml_int32_add'
+  function at 08066F45       with name 'caml_int32_neg'
+  function at 08066F60       with name 'caml_int_of_float'
+  function at 08066F8A       with name 'caml_eq_float'
+  function at 08066FAC       with name 'caml_neq_float'
+  function at 08066FCE       with name 'caml_le_float'
+  function at 08066FE9       with name 'caml_lt_float'
+  function at 08067006       with name 'caml_ge_float'
+  function at 08067023       with name 'caml_gt_float'
+  function at 08067042       with name 'caml_float_compare'
+  function at 080670A7       with name 'caml_init_ieee_floats'
+  function at 080670AC       with name 'caml_classify_float'
+  function at 080670D4       with name 'caml_log1p'
+  function at 080670E7       with name 'caml_expm1'
+  function at 080670FA       with name 'caml_format_float'
+  function at 0806721A       with name 'caml_copy_double'
+  function at 08067268       with name 'caml_log1p_float'
+  function at 08067285       with name 'caml_expm1_float'
+  function at 080672A2       with name 'caml_ceil_float'
+  function at 080672BF       with name 'caml_atan2_float'
+  function at 080672E5       with name 'caml_atan_float'
+  function at 08067302       with name 'caml_acos_float'
+  function at 0806731F       with name 'caml_asin_float'
+  function at 0806733C       with name 'caml_tanh_float'
+  function at 08067359       with name 'caml_tan_float'
+  function at 08067376       with name 'caml_cosh_float'
+  function at 08067393       with name 'caml_cos_float'
+  function at 080673B0       with name 'caml_sinh_float'
+  function at 080673CD       with name 'caml_sin_float'
+  function at 080673EA       with name 'caml_power_float'
+  function at 08067410       with name 'caml_sqrt_float'
+  function at 08067441       with name 'caml_modf_float'
+  function at 08067501       with name 'caml_log10_float'
+  function at 0806751E       with name 'caml_log_float'
+  function at 0806753B       with name 'caml_ldexp_float'
+  function at 08067561       with name 'caml_frexp_float'
+  function at 0806760A       with name 'caml_fmod_float'
+  function at 08067650       with name 'caml_floor_float'
+  function at 0806766D       with name 'caml_exp_float'
+  function at 0806768A       with name 'caml_div_float'
+  function at 080676A4       with name 'caml_mul_float'
+  function at 080676BE       with name 'caml_sub_float'
+  function at 080676D8       with name 'caml_add_float'
+  function at 080676F2       with name 'caml_abs_float'
+  function at 08067709       with name 'caml_neg_float'
+  function at 08067720       with name 'caml_float_of_int'
+  function at 0806773B       with name 'caml_float_of_string'
+  function at 080677DE       with name 'caml_float_of_substring'
+  function at 080678B0       with name 'caml_string_length'
+  function at 080678CB       with name 'caml_ml_string_length'
+  function at 080678EA       with name 'caml_string_equal'
+  function at 08067934       with name 'caml_string_notequal'
+  function at 08067957       with name 'caml_bitvect_test'
+  function at 0806797D       with name 'caml_is_printable'
+  function at 080679CC       with name 'caml_fill_string'
+  function at 080679FB       with name 'caml_blit_string'
+  function at 08067A2D       with name 'caml_string_compare'
+  function at 08067AA6       with name 'caml_string_greaterequal'
+  function at 08067ACC       with name 'caml_string_greaterthan'
+  function at 08067AF3       with name 'caml_string_lessequal'
+  function at 08067B1A       with name 'caml_string_lessthan'
+  function at 08067B40       with name 'caml_string_set'
+  function at 08067B7E       with name 'caml_string_get'
+  function at 08067BB7       with name 'caml_create_string'
+  function at 08067BE0       with name 'caml_array_unsafe_set_float'
+  function at 08067BFA       with name 'caml_make_array'
+  function at 08067CEC       with name 'caml_array_unsafe_get_float'
+  function at 08067D42       with name 'caml_array_unsafe_get'
+  function at 08067D69       with name 'caml_make_vect'
+  function at 08067F41       with name 'caml_array_unsafe_set_addr'
+  function at 08067FFB       with name 'caml_array_unsafe_set'
+  function at 08068034       with name 'caml_array_set_float'
+  function at 08068062       with name 'caml_array_set_addr'
+  function at 0806812D       with name 'caml_array_set'
+  function at 08068166       with name 'caml_array_get_float'
+  function at 080681CD       with name 'caml_array_get_addr'
+  function at 080681F1       with name 'caml_array_get'
+  function at 08068220       with name 'unlink_channel'
+  function at 08068259       with name 'caml_channel_binary_mode'
+  function at 08068263       with name 'caml_pos_out'
+  function at 08068284       with name 'caml_pos_in'
+  function at 080682B6       with name 'compare_channel'
+  function at 080682D7       with name 'caml_ml_set_binary_mode'
+  function at 080682E1       with name 'caml_ml_pos_in_64'
+  function at 08068303       with name 'caml_ml_pos_out_64'
+  function at 08068325       with name 'caml_ml_pos_in'
+  function at 0806836C       with name 'caml_ml_pos_out'
+  function at 080683B3       with name 'caml_channel_descriptor'
+  function at 080683E8       with name 'caml_ml_close_channel'
+  function at 08068446       with name 'caml_alloc_channel'
+  function at 08068481       with name 'caml_ml_out_channels_list'
+  function at 0806852C       with name 'caml_finalize_channel'
+  function at 08068569       with name 'caml_close_channel'
+  function at 080685A6       with name 'caml_seek_in'
+  function at 08068671       with name 'caml_ml_seek_in_64'
+  function at 080686F1       with name 'caml_ml_seek_in'
+  function at 08068772       with name 'caml_channel_size'
+  function at 08068811       with name 'caml_ml_channel_size_64'
+  function at 08068833       with name 'caml_ml_channel_size'
+  function at 0806887A       with name 'caml_do_read'
+  function at 080688CD       with name 'caml_ml_input'
+  function at 080689F8       with name 'caml_input_scan_line'
+  function at 08068A9A       with name 'caml_ml_input_scan_line'
+  function at 08068B11       with name 'caml_getblock'
+  function at 08068BCE       with name 'caml_really_getblock'
+  function at 08068C12       with name 'caml_refill'
+  function at 08068C61       with name 'caml_ml_input_char'
+  function at 08068CF1       with name 'caml_getword'
+  function at 08068D55       with name 'caml_ml_input_int'
+  function at 08068DCC       with name 'do_write'
+  function at 08068E33       with name 'caml_putblock'
+  function at 08068EDF       with name 'caml_ml_output'
+  function at 08068F83       with name 'caml_ml_output_partial'
+  function at 08069021       with name 'caml_really_putblock'
+  function at 08069057       with name 'caml_flush_partial'
+  function at 080690CA       with name 'caml_ml_output_char'
+  function at 08069151       with name 'caml_ml_flush_partial'
+  function at 080691E1       with name 'caml_putword'
+  function at 08069282       with name 'caml_ml_output_int'
+  function at 080692FA       with name 'caml_flush'
+  function at 08069316       with name 'caml_ml_flush'
+  function at 0806938C       with name 'caml_seek_out'
+  function at 080693FC       with name 'caml_ml_seek_out_64'
+  function at 0806947C       with name 'caml_ml_seek_out'
+  function at 080694FD       with name 'caml_open_descriptor_in'
+  function at 080695A7       with name 'caml_ml_open_descriptor_in'
+  function at 080695C4       with name 'caml_open_descriptor_out'
+  function at 080695DE       with name 'caml_ml_open_descriptor_out'
+  function at 08069600       with name 'extern_replay_trail'
+  function at 08069686       with name 'free_extern_output'
+  function at 080696C1       with name 'extern_out_of_memory'
+  function at 080696D6       with name 'grow_extern_output'
+  function at 0806975B       with name 'caml_serialize_block_float_8'
+  function at 080697A3       with name 'caml_serialize_float_8'
+  function at 080697CA       with name 'caml_serialize_block_8'
+  function at 0806986D       with name 'caml_serialize_int_8'
+  function at 08069894       with name 'caml_serialize_block_4'
+  function at 08069915       with name 'caml_serialize_float_4'
+  function at 08069930       with name 'caml_serialize_block_2'
+  function at 0806999D       with name 'caml_serialize_block_1'
+  function at 080699E2       with name 'caml_serialize_int_4'
+  function at 08069A33       with name 'caml_serialize_int_2'
+  function at 08069A74       with name 'caml_serialize_int_1'
+  function at 08069AA8       with name 'writecode16'
+  function at 08069AFA       with name 'writecode8'
+  function at 08069B44       with name 'writecode32'
+  function at 08069BA6       with name 'writeblock'
+  function at 08069BF2       with name 'write32'
+  function at 08069C42       with name 'extern_record_location'
+  function at 08069CE2       with name 'init_extern_output'
+  function at 08069D2C       with name 'extern_invalid_argument'
+  function at 08069D47       with name 'extern_rec'
+  function at 0806A23D       with name 'extern_value'
+  function at 0806A35A       with name 'caml_output_value_to_block'
+  function at 0806A382       with name 'caml_output_value_to_malloc'
+  function at 0806A3F1       with name 'caml_output_value_to_buffer'
+  function at 0806A426       with name 'caml_output_value_to_string'
+  function at 0806A496       with name 'caml_output_val'
+  function at 0806A506       with name 'caml_output_value'
+  function at 0806A58C       with name 'caml_deserialize_uint_1'
+  function at 0806A5A3       with name 'caml_deserialize_sint_1'
+  function at 0806A5BA       with name 'caml_deserialize_uint_2'
+  function at 0806A5DA       with name 'caml_deserialize_sint_2'
+  function at 0806A5F9       with name 'caml_deserialize_uint_4'
+  function at 0806A62E       with name 'caml_deserialize_sint_4'
+  function at 0806A663       with name 'caml_deserialize_block_2'
+  function at 0806A6B8       with name 'caml_deserialize_block_4'
+  function at 0806A71E       with name 'caml_deserialize_float_4'
+  function at 0806A73C       with name 'caml_deserialize_block_8'
+  function at 0806A7C4       with name 'caml_deserialize_sint_8'
+  function at 0806A7E5       with name 'caml_deserialize_uint_8'
+  function at 0806A806       with name 'caml_marshal_data_size'
+  function at 0806A887       with name 'intern_cleanup'
+  function at 0806A8DB       with name 'caml_deserialize_error'
+  function at 0806A8F1       with name 'caml_deserialize_block_float_8'
+  function at 0806A922       with name 'caml_deserialize_float_8'
+  function at 0806A940       with name 'caml_deserialize_block_1'
+  function at 0806A96E       with name 'caml_code_checksum'
+  function at 0806A9CB       with name 'intern_alloc'
+  function at 0806AAE0       with name 'intern_rec'
+  function at 0806B146       with name 'intern_add_to_heap'
+  function at 0806B1A6       with name 'input_val_from_block'
+  function at 0806B230       with name 'caml_input_value_from_block'
+  function at 0806B2C7       with name 'caml_input_value_from_malloc'
+  function at 0806B343       with name 'caml_input_val_from_string'
+  function at 0806B442       with name 'caml_input_value_from_string'
+  function at 0806B45E       with name 'caml_input_val'
+  function at 0806B551       with name 'caml_input_value'
+  function at 0806B5F0       with name 'caml_hash_variant'
+  function at 0806B61B       with name 'hash_aux'
+  function at 0806B85F       with name 'caml_hash_univ_param'
+  function at 0806B8A0       with name 'caml_sys_init'
+  function at 0806B8B5       with name 'caml_sys_get_config'
+  function at 0806B939       with name 'caml_sys_get_argv'
+  function at 0806B9DA       with name 'caml_sys_random_seed'
+  function at 0806BA2C       with name 'caml_sys_time'
+  function at 0806BA6D       with name 'caml_sys_getenv'
+  function at 0806BA91       with name 'caml_sys_file_exists'
+  function at 0806BABE       with name 'caml_sys_close'
+  function at 0806BAD8       with name 'caml_sys_exit'
+  function at 0806BAEB       with name 'caml_sys_error'
+  function at 0806BBCA       with name 'caml_sys_read_directory'
+  function at 0806BC9B       with name 'caml_sys_system_command'
+  function at 0806BD56       with name 'caml_sys_getcwd'
+  function at 0806BD95       with name 'caml_sys_chdir'
+  function at 0806BDBE       with name 'caml_sys_rename'
+  function at 0806BDED       with name 'caml_sys_remove'
+  function at 0806BE16       with name 'caml_sys_is_directory'
+  function at 0806BE61       with name 'caml_sys_open'
+  function at 0806BF52       with name 'caml_sys_io_error'
+  function at 0806BF74       with name 'caml_set_parser_trace'
+  function at 0806BF93       with name 'token_name'
+  function at 0806BFD4       with name 'caml_parse_engine'
+  function at 0806C640       with name 'norm_pfree'
+  function at 0806C64F       with name 'norm_pmax'
+  function at 0806C654       with name 'norm_heapincr'
+  function at 0806C670       with name 'norm_minsize'
+  function at 0806C68F       with name 'caml_init_gc'
+  function at 0806C7C1       with name 'caml_gc_compaction'
+  function at 0806C811       with name 'test_and_compact'
+  function at 0806C8DB       with name 'caml_gc_full_major'
+  function at 0806C92C       with name 'caml_gc_major'
+  function at 0806C96C       with name 'caml_gc_major_slice'
+  function at 0806C98A       with name 'caml_gc_minor'
+  function at 0806C99C       with name 'caml_gc_set'
+  function at 0806CAC3       with name 'caml_gc_get'
+  function at 0806CBCD       with name 'caml_gc_counters'
+  function at 0806CCBC       with name 'caml_gc_quick_stat'
+  function at 0806CF11       with name 'caml_gc_stat'
+  function at 0806D308       with name 'caml_MD5Init'
+  function at 0806D339       with name 'caml_MD5Transform'
+  function at 0806DA98       with name 'caml_MD5Final'
+  function at 0806DB86       with name 'caml_MD5Update'
+  function at 0806DCEA       with name 'caml_md5_chan'
+  function at 0806DE3D       with name 'caml_md5_string'
+  function at 0806DE98       with name 'add_char'
+  function at 0806DEAB       with name 'add_string'
+  function at 0806DF02       with name 'caml_format_exception'
+  function at 0806E0A9       with name 'caml_fatal_uncaught_exception'
+  function at 0806E150       with name 'hash_value_name'
+  function at 0806E190       with name 'caml_named_value'
+  function at 0806E1D7       with name 'caml_register_named_value'
+  function at 0806E270       with name 'caml_callback3'
+  function at 0806E2AD       with name 'caml_callback2'
+  function at 0806E2E3       with name 'caml_callback'
+  function at 0806E312       with name 'caml_callbackN_exn'
+  function at 0806E474       with name 'caml_callbackN'
+  function at 0806E4B0       with name 'caml_weak_check'
+  function at 0806E4EE       with name 'do_set'
+  function at 0806E557       with name 'caml_weak_blit'
+  function at 0806E6AB       with name 'caml_weak_set'
+  function at 0806E709       with name 'caml_weak_get_copy'
+  function at 0806E97B       with name 'caml_weak_get'
+  function at 0806EA7B       with name 'caml_weak_create'
+  function at 0806EAE0       with name 'invert_pointer_at'
+  function at 0806EBCF       with name 'invert_root'
+  function at 0806EBDC       with name 'init_compact_allocate'
+  function at 0806EC05       with name 'compact_allocate'
+  function at 0806EC80       with name 'caml_compact_heap'
+  function at 0806F115       with name 'caml_compact_heap_maybe'
+  function at 0806F2F0       with name 'caml_final_do_strong_roots'
+  function at 0806F399       with name 'caml_final_do_weak_roots'
+  function at 0806F3E5       with name 'caml_final_do_young_roots'
+  function at 0806F445       with name 'caml_final_empty_young'
+  function at 0806F454       with name 'caml_final_release'
+  function at 0806F468       with name 'caml_final_register'
+  function at 0806F559       with name 'caml_final_do_calls'
+  function at 0806F634       with name 'caml_final_update'
+  function at 0806F864       with name 'caml_final_custom_operations'
+  function at 0806F8E7       with name 'caml_register_custom_operations'
+  function at 0806F90E       with name 'caml_init_custom_operations'
+  function at 0806F93A       with name 'caml_find_custom_operations'
+  function at 0806F97A       with name 'caml_alloc_custom'
+  function at 0806F9F0       with name 'caml_executable_name'
+  function at 0806FA5E       with name 'caml_decompose_path'
+  function at 0806FAE4       with name 'caml_read_directory'
+  function at 0806FBAD       with name 'caml_dlerror'
+  function at 0806FBBA       with name 'caml_dlsym'
+  function at 0806FBD4       with name 'caml_globalsym'
+  function at 0806FBEF       with name 'caml_dlclose'
+  function at 0806FC02       with name 'caml_dlopen'
+  function at 0806FC28       with name 'caml_search_in_path'
+  function at 0806FD5F       with name 'caml_search_dll_in_path'
+  function at 0806FDDC       with name 'caml_search_exe_in_path'
+  function at 0806FE50       with name 'caml_backtrace_status'
+  function at 0806FE64       with name 'extract_location_info'
+  function at 0806FEF7       with name 'caml_get_exception_backtrace'
+  function at 08070078       with name 'caml_print_exception_backtrace'
+  function at 08070109       with name 'caml_stash_backtrace'
+  function at 080701E4       with name 'caml_record_backtrace'
+  function at 0807022C       with name 'caml_debugger_init'
+  function at 08070231       with name 'caml_debugger'
+  function at 08070236       with name 'caml_debugger_cleanup_fork'
+  function at 0807023C       with name 'caml_call_gc'
+  function at 0807024D       with name 'sub_807024D'
+  function at 08070268       with name 'caml_alloc1'
+  function at 080702D0       with name 'caml_alloc3'
+  function at 08070304       with name 'caml_allocN'
+  function at 08070348       with name 'caml_c_call'
+  function at 08070360       with name 'caml_start_program'
+  function at 080703AE       with name 'sub_80703AE'
+  function at 080703B4       with name 'caml_raise_exn'
+  function at 080703F0       with name 'caml_raise_exception'
+  function at 08070438       with name 'caml_callback_exn'
+  function at 0807044C       with name 'caml_callback2_exn'
+  function at 08070468       with name 'caml_callback3_exn'
+  function at 08070488       with name 'caml_ml_array_bound_error'
+  function at 080704B0       with name '__divdi3'
+  function at 08070630       with name '__moddi3'
+  function at 08070800       with name '__udivdi3'
+  function at 08070930  LIB  with name '__libc_csu_fini'
+  function at 08070940  LIB  with name '__libc_csu_init'
+  function at 080709A0  LIB  with name '__do_global_ctors_aux'
+  function at 080709CC  LIB  with name '.term_proc'
+  function at 08082FB4       with name 'ldexp'
+  function at 08082FB8       with name 'fputs'
+  function at 08082FBC       with name '__errno_location'
+  function at 08082FC0       with name 'sigemptyset'
+  function at 08082FC4       with name 'inet_ntop'
+  function at 08082FC8       with name 'sprintf'
+  function at 08082FCC       with name 'tcflow'
+  function at 08082FD0       with name 'connect'
+  function at 08082FD4       with name 'setgroups'
+  function at 08082FD8       with name 'getpid'
+  function at 08082FDC       with name 'mkdir'
+  function at 08082FE0       with name 'strerror'
+  function at 08082FE4       with name 'getsockname'
+  function at 08082FE8       with name 'memcmp'
+  function at 08082FEC       with name 'log1p'
+  function at 08082FF0       with name 'freeaddrinfo'
+  function at 08082FF4       with name 'shutdown'
+  function at 08082FF8       with name 'open64'
+  function at 08082FFC       with name 'sigismember'
+  function at 08083000       with name 'realloc'
+  function at 08083004       with name '__isoc99_sscanf'
+  function at 08083008       with name '__xstat64'
+  function at 0808300C       with name 'localtime'
+  function at 08083010       with name 'cfgetispeed'
+  function at 08083014       with name 'getgrnam'
+  function at 08083018       with name 'strtod'
+  function at 0808301C       with name 'socketpair'
+  function at 08083020       with name 'recv'
+  function at 08083024       with name 'getenv'
+  function at 08083028       with name 'calloc'
+  function at 0808302C       with name 'system'
+  function at 08083030       with name 'fchown'
+  function at 08083034       with name 'write'
+  function at 08083038       with name 'sendto'
+  function at 0808303C       with name 'listen'
+  function at 08083040       with name 'dlclose'
+  function at 08083044       with name 'rename'
+  function at 08083048       with name 'getlogin'
+  function at 0808304C       with name 'memset'
+  function at 08083050       with name 'setitimer'
+  function at 08083054       with name 'setsid'
+  function at 08083058       with name 'getprotobyname'
+  function at 0808305C  LIB  with name '__libc_start_main'
+  function at 08083060       with name 'wait'
+  function at 08083064       with name 'modf'
+  function at 08083068       with name 'tcgetattr'
+  function at 0808306C       with name 'chmod'
+  function at 08083070       with name 'read'
+  function at 08083074       with name 'tcdrain'
+  function at 08083078       with name 'sigaltstack'
+  function at 0808307C       with name 'getrusage'
+  function at 08083080       with name 'gettimeofday'
+  function at 08083084       with name 'expm1'
+  function at 08083088       with name 'strtol'
+  function at 0808308C       with name 'getservbyport'
+  function at 08083090       with name 'free'
+  function at 08083094       with name 'inet_pton'
+  function at 08083098       with name '__lxstat64'
+  function at 0808309C       with name '__fpclassify'
+  function at 080830A0       with name 'getprotobynumber'
+  function at 080830A4       with name 'access'
+  function at 080830A8       with name 'dlsym'
+  function at 080830AC       with name 'truncate64'
+  function at 080830B0       with name 'sigaction'
+  function at 080830B4       with name 'fflush'
+  function at 080830B8       with name 'opendir'
+  function at 080830BC       with name 'gethostbyaddr_r'
+  function at 080830C0       with name 'accept'
+  function at 080830C4       with name 'tcflush'
+  function at 080830C8       with name 'symlink'
+  function at 080830CC       with name 'socket'
+  function at 080830D0       with name 'dup2'
+  function at 080830D4       with name '__ctype_b_loc'
+  function at 080830D8       with name 'isatty'
+  function at 080830DC       with name 'getaddrinfo'
+  function at 080830E0       with name 'umask'
+  function at 080830E4       with name 'setuid'
+  function at 080830E8       with name 'dup'
+  function at 080830EC       with name 'mktime'
+  function at 080830F0       with name 'readdir64'
+  function at 080830F4       with name 'memcpy'
+  function at 080830F8       with name 'cfsetospeed'
+  function at 080830FC       with name 'utime'
+  function at 08083100       with name 'execv'
+  function at 08083104       with name 'execvp'
+  function at 08083108       with name 'alarm'
+  function at 0808310C       with name 'unlink'
+  function at 08083110       with name 'getpwuid'
+  function at 08083114       with name 'nice'
+  function at 08083118       with name 'getppid'
+  function at 0808311C       with name 'setlocale'
+  function at 08083120       with name 'waitpid'
+  function at 08083124       with name 'sigdelset'
+  function at 08083128       with name '__h_errno_location'
+  function at 0808312C       with name 'strcpy'
+  function at 08083130       with name 'chroot'
+  function at 08083134       with name 'getegid'
+  function at 08083138       with name 'dlopen'
+  function at 0808313C       with name 'mkfifo'
+  function at 08083140       with name 'chdir'
+  function at 08083144       with name 'bind'
+  function at 08083148       with name 'getuid'
+  function at 08083150       with name 'putenv'
+  function at 08083154       with name 'sigpending'
+  function at 08083158       with name 'select'
+  function at 0808315C       with name 'closedir'
+  function at 08083160       with name 'close'
+  function at 08083164       with name 'fwrite'
+  function at 08083168       with name 'rewinddir'
+  function at 0808316C       with name 'frexp'
+  function at 08083170       with name 'initgroups'
+  function at 08083174       with name 'fprintf'
+  function at 08083178       with name 'time'
+  function at 0808317C       with name 'execve'
+  function at 08083180       with name 'ftruncate64'
+  function at 08083184       with name 'malloc'
+  function at 08083188       with name 'sigprocmask'
+  function at 0808318C       with name 'chown'
+  function at 08083190       with name 'gethostname'
+  function at 08083194       with name 'fputc'
+  function at 08083198       with name 'rmdir'
+  function at 0808319C       with name 'dlerror'
+  function at 080831A4       with name 'getgrgid'
+  function at 080831A8       with name 'sleep'
+  function at 080831AC       with name 'sigaddset'
+  function at 080831B0       with name 'readlink'
+  function at 080831B4       with name 'memmove'
+  function at 080831B8       with name 'cfgetospeed'
+  function at 080831BC       with name 'getnameinfo'
+  function at 080831C0       with name 'strcat'
+  function at 080831C4       with name 'send'
+  function at 080831C8       with name 'getcwd'
+  function at 080831CC       with name 'gethostbyname_r'
+  function at 080831D0       with name 'fork'
+  function at 080831D4       with name '__fxstat64'
+  function at 080831D8       with name 'setsockopt'
+  function at 080831DC       with name 'tcsetattr'
+  function at 080831E0       with name 'fcntl'
+  function at 080831E4       with name 'getrlimit64'
+  function at 080831E8       with name 'gmtime'
+  function at 080831EC       with name 'getgroups'
+  function at 080831F4       with name 'link'
+  function at 080831F8       with name 'pipe'
+  function at 080831FC       with name 'getsockopt'
+  function at 08083200       with name 'setgid'
+  function at 08083204       with name 'kill'
+  function at 08083208       with name 'getpeername'
+  function at 0808320C       with name 'tcsendbreak'
+  function at 08083210       with name 'recvfrom'
+  function at 08083214       with name 'getpwnam'
+  function at 08083218       with name 'lseek64'
+  function at 0808321C       with name 'getitimer'
+  function at 08083220       with name 'strcmp'
+  function at 08083224       with name '__sigsetjmp'
+  function at 08083228       with name 'getservbyname'
+  function at 0808322C       with name 'exit'
+  function at 08083230       with name 'cfsetispeed'
+  function at 08083234       with name 'fchmod'
+  function at 08083238       with name 'sigsuspend'
+  function at 0808323C       with name 'getgid'
+  function at 08083240       with name 'geteuid'
+  function at 08083244       with name 'tanh'
+  function at 08083248       with name 'tan'
+  function at 0808324C       with name 'fmod'
+  function at 08083250       with name 'atan'
+  function at 08083254       with name 'log'
+  function at 08083258       with name 'log10'
+  function at 0808325C       with name 'sqrt'
+  function at 08083260       with name 'sinh'
+  function at 08083264       with name 'pow'
+  function at 08083268       with name 'cos'
+  function at 0808326C       with name 'cosh'
+  function at 08083270       with name 'sin'
+  function at 08083274       with name 'atan2'
+  function at 08083278       with name 'ceil'
+  function at 0808327C       with name 'asin'
+  function at 08083280       with name 'acos'
+  function at 08083284       with name 'floor'
+  function at 08083288       with name 'exp'
+  function at 0808328C       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 8049DB4 size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -93,8 +1693,6 @@ If the segment is not read-only, please change the segment NAME.
 In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
-TIMESTAMP decompiling 804A940 size=00000055 times=0...
-TIMESTAMP decompiling 804A9A0 size=00000023 times=0...
 TIMESTAMP decompiling 804AC80 size=000000C3 times=0...
 TIMESTAMP decompiling 804AED0 size=00000067 times=0...
 TIMESTAMP decompiling 804B080 size=0000004F times=0...
@@ -302,195 +1900,6 @@ TIMESTAMP decompiling 807023C size=00000011 times=0...
 TIMESTAMP decompiling 8070348 size=00000015 times=0...
 TIMESTAMP decompiling 80703AE size=00000005 times=0...
 TIMESTAMP decompiling 8070438 size=00000013 times=0...
-TIMESTAMP decompiling 8070930 size=00000005 times=0...
-TIMESTAMP decompiling 80709A0 size=0000002A times=0...
-TIMESTAMP decompiling 806DF02 size=000001A7 times=0...
-TIMESTAMP decompiling 806E190 size=00000047 times=0...
-TIMESTAMP decompiling 8070078 size=00000091 times=0...
-TIMESTAMP decompiling 806E0A9 size=0000009B times=0...
-TIMESTAMP decompiling 8061A89 size=00000012 times=0...
-TIMESTAMP decompiling 8064B1A size=00000025 times=0...
-TIMESTAMP decompiling 8061E12 size=0000002B times=0...
-TIMESTAMP decompiling 8061E58 size=00000036 times=0...
-TIMESTAMP decompiling 8061E8E size=00000157 times=0...
-TIMESTAMP decompiling 8070109 size=000000DB times=0...
-TIMESTAMP decompiling 80703F0 size=00000048 times=0...
-TIMESTAMP decompiling 80619B0 size=0000004D times=0...
-TIMESTAMP decompiling 8061A89 size=00000012 times=1;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3)
-TIMESTAMP decompiling 8061A77 size=00000012 times=0...
-TIMESTAMP decompiling 8062C8F size=0000008A times=0...
-TIMESTAMP decompiling 8062B60 size=00000082 times=0...
-TIMESTAMP decompiling 8064E91 size=00000055 times=0...
-TIMESTAMP decompiling 80630F4 size=00000165 times=0...
-TIMESTAMP decompiling 8063319 size=0000004B times=0...
-TIMESTAMP decompiling 8064CFB size=0000003C times=0...
-TIMESTAMP decompiling 806383C size=00000103 times=0...
-TIMESTAMP decompiling 80623CC size=00000034 times=0...
-TIMESTAMP decompiling 8061FE5 size=00000121 times=0...
-TIMESTAMP decompiling 80639AE size=000000D5 times=0...
-TIMESTAMP decompiling 8063ED0 size=00000090 times=0...
-TIMESTAMP decompiling 8062106 size=00000014 times=0...
-TIMESTAMP decompiling 8063967 size=00000047 times=0...
-TIMESTAMP decompiling 806F634 size=0000022F times=0...
-TIMESTAMP decompiling 8063A83 size=0000044D times=0...
-TIMESTAMP decompiling 8063F60 size=000000E1 times=0...
-TIMESTAMP decompiling 8064041 size=00000077 times=0...
-TIMESTAMP decompiling 80630B0 size=00000044 times=0...
-TIMESTAMP decompiling 8064DB2 size=00000055 times=0...
-TIMESTAMP decompiling 8064E07 size=0000008A times=0...
-TIMESTAMP decompiling 806EBCF size=0000000D times=0...
-TIMESTAMP decompiling 806EC80 size=00000495 times=0...
-TIMESTAMP decompiling 806F115 size=000001D5 times=0...
-TIMESTAMP decompiling 80640B8 size=000002D3 times=0...
-TIMESTAMP decompiling 8062400 size=000000E7 times=0...
-TIMESTAMP decompiling 806254F size=0000008D times=0...
-TIMESTAMP decompiling 8063259 size=000000C0 times=0...
-TIMESTAMP decompiling 806339C size=0000047C times=0...
-TIMESTAMP decompiling 806393F size=00000028 times=0...
-TIMESTAMP decompiling 8064EE6 size=000000AC times=0...
-TIMESTAMP decompiling 8064F92 size=0000019F times=0...
-TIMESTAMP decompiling 806439C size=0000018F times=0...
-TIMESTAMP decompiling 806211A size=0000027D times=0...
-TIMESTAMP decompiling 806452B size=0000009E times=0...
-TIMESTAMP decompiling 80645C9 size=0000014A times=0...
-TIMESTAMP decompiling 806F559 size=000000DB times=0...
-TIMESTAMP decompiling 8064713 size=00000069 times=0...
-TIMESTAMP decompiling 80647C5 size=0000004D times=0...
-TIMESTAMP decompiling 8064812 size=000000D2 times=0...
-TIMESTAMP decompiling 806C68F size=00000132 times=0...
-TIMESTAMP decompiling 806F8E7 size=00000027 times=0...
-TIMESTAMP decompiling 806F90E size=0000002C times=0...
-TIMESTAMP decompiling 8062D88 size=00000042 times=0...
-TIMESTAMP decompiling 8062E0A size=0000002A times=0...
-TIMESTAMP decompiling 8064ACE size=00000023 times=0...
-TIMESTAMP decompiling 8062DCA size=00000040 times=0...
-TIMESTAMP decompiling 806FA5E size=00000086 times=0...
-TIMESTAMP decompiling 806FC28 size=00000137 times=0...
-TIMESTAMP decompiling 806FDDC size=00000074 times=0...
-TIMESTAMP decompiling 806253A size=00000015 times=0...
-TIMESTAMP decompiling 80625DC size=0000009D times=0...
-TIMESTAMP decompiling 80627D9 size=00000015 times=0...
-TIMESTAMP decompiling 80701E4 size=00000047 times=0...
-TIMESTAMP decompiling 80648E4 size=00000056 times=0...
-TIMESTAMP decompiling 806493A size=000000FA times=0...
-TIMESTAMP decompiling 8064B3F size=000000AD times=0...
-TIMESTAMP decompiling 8065201 size=00000069 times=0...
-TIMESTAMP decompiling 8061B17 size=00000081 times=0...
-TIMESTAMP decompiling 806477C size=00000049 times=0...
-TIMESTAMP decompiling 806526A size=000000AA times=0...
-TIMESTAMP decompiling 8065314 size=0000004F times=0...
-TIMESTAMP decompiling 8061BB1 size=00000020 times=0...
-TIMESTAMP decompiling 8061BD1 size=00000019 times=0...
-TIMESTAMP decompiling 8061BB1 size=00000020 times=1;usedcpu 00:00:00 ...int __cdecl(int a1, void *src)
-TIMESTAMP decompiling 8064BEC size=0000006C times=0...
-TIMESTAMP decompiling 8065363 size=000000DA times=0...
-TIMESTAMP decompiling 8067D69 size=000001D8 times=0...
-TIMESTAMP decompiling 8051B60 size=00000080 times=0...
-TIMESTAMP decompiling 804B5A0 size=00000073 times=0...
-TIMESTAMP decompiling 804B650 size=000000AE times=0...
-TIMESTAMP decompiling 805BF60 size=00000062 times=0...
-805BFBB: call analysis failed
-TIMESTAMP decompiling 805BFE0 size=0000000C times=0...
-TIMESTAMP decompiling 805BFF0 size=0000001C times=0...
-TIMESTAMP decompiling 8061BEA size=00000019 times=0...
-TIMESTAMP decompiling 8061BD1 size=00000019 times=1;usedcpu 00:00:00 ...int __cdecl(void *a1)
-TIMESTAMP decompiling 80660F6 size=0000012E times=0...
-TIMESTAMP decompiling 8066224 size=00000019 times=0...
-TIMESTAMP decompiling 804B700 size=00000155 times=0...
-TIMESTAMP decompiling 80655B0 size=0000002C times=0...
-TIMESTAMP decompiling 80655DC size=000005F6 times=0...
-TIMESTAMP decompiling 80655B0 size=0000002C times=1;usedcpu 00:00:00 ...int()
-TIMESTAMP decompiling 8065C49 size=00000048 times=0...
-TIMESTAMP decompiling 804F660 size=00000037 times=0...
-TIMESTAMP decompiling 8065BD2 size=0000003B times=0...
-TIMESTAMP decompiling 804F6A0 size=00000037 times=0...
-TIMESTAMP decompiling 80573B0 size=00000059 times=0...
-8057402: call analysis failed
-TIMESTAMP decompiling 805FC9D size=00000046 times=0...
-TIMESTAMP decompiling 805FCE3 size=0000002B times=0...
-TIMESTAMP decompiling 805C664 size=00000082 times=0...
-TIMESTAMP decompiling 80628A3 size=000000D9 times=0...
-TIMESTAMP decompiling 806297C size=00000052 times=0...
-TIMESTAMP decompiling 8062D5B size=0000002D times=0...
-TIMESTAMP decompiling 807024D size=0000001A times=0...
-TIMESTAMP decompiling 807023C size=00000011 times=1;usedcpu 00:00:00 ...int __cdecl(char a1)
-TIMESTAMP decompiling 8070304 size=00000042 times=0...
-TIMESTAMP decompiling 804E862 size=0000021A times=0...
-804E8C5: call analysis failed
-TIMESTAMP decompiling 80703B4 size=0000003C times=0...
-TIMESTAMP decompiling 804E81A size=00000048 times=0...
-TIMESTAMP decompiling 806E1D7 size=00000099 times=0...
-TIMESTAMP decompiling 805C490 size=0000005D times=0...
-TIMESTAMP decompiling 804E280 size=0000059A times=0...
-804E6DB: call analysis failed
-TIMESTAMP decompiling 806721A size=0000004E times=0...
-TIMESTAMP decompiling 806653A size=00000016 times=0...
-TIMESTAMP decompiling 8064C58 size=000000A3 times=0...
-TIMESTAMP decompiling 806F97A size=0000006D times=0...
-TIMESTAMP decompiling 8068446 size=0000003B times=0...
-TIMESTAMP decompiling 8062B1A size=00000013 times=0...
-TIMESTAMP decompiling 8062B2D size=00000024 times=0...
-TIMESTAMP decompiling 80694FD size=000000AA times=0...
-TIMESTAMP decompiling 80695A7 size=0000001D times=0...
-TIMESTAMP decompiling 80695C4 size=0000001A times=0...
-TIMESTAMP decompiling 80695DE size=0000001D times=0...
-TIMESTAMP decompiling 8070268 size=00000031 times=0...
-TIMESTAMP decompiling 80500D0 size=00000428 times=0...
-805018E: call analysis failed
-TIMESTAMP decompiling 8053320 size=00000106 times=0...
-80533DE: call analysis failed
-TIMESTAMP decompiling 806B8B5 size=00000084 times=0...
-TIMESTAMP decompiling 8065486 size=000000C4 times=0...
-TIMESTAMP decompiling 806554A size=0000001B times=0...
-TIMESTAMP decompiling 806B939 size=000000A1 times=0...
-TIMESTAMP decompiling 80702D0 size=00000031 times=0...
-TIMESTAMP decompiling 8056290 size=000001AA times=0...
-8056314: call analysis failed
-TIMESTAMP decompiling 804B370 size=0000003C times=0...
-804B3A5: call analysis failed
-TIMESTAMP decompiling 804F5E0 size=00000036 times=0...
-804F60F: call analysis failed
-TIMESTAMP decompiling 8067BB7 size=00000028 times=0...
-TIMESTAMP decompiling 804F710 size=00000088 times=0...
-TIMESTAMP decompiling 804F840 size=00000014 times=0...
-TIMESTAMP decompiling 805B110 size=00000026 times=0...
-TIMESTAMP decompiling 805B140 size=00000009 times=0...
-TIMESTAMP decompiling 805B150 size=00000008 times=0...
-TIMESTAMP decompiling 804F620 size=00000036 times=0...
-804F64F: call analysis failed
-TIMESTAMP decompiling 8055610 size=0000007D times=0...
-TIMESTAMP decompiling 805B170 size=00000021 times=0...
-TIMESTAMP decompiling 80619FD size=0000007A times=0...
-TIMESTAMP decompiling 80619B0 size=0000004D times=1;usedcpu 00:00:00 ...int __cdecl(int a1)
-TIMESTAMP decompiling 806F559 size=000000DB times=1;usedcpu 00:00:00 ...void()
-TIMESTAMP decompiling 80628A3 size=000000D9 times=1;usedcpu 00:00:00 ...int __cdecl(int signo, int)
-TIMESTAMP decompiling 8061B17 size=00000081 times=1;usedcpu 00:00:00 ...int __cdecl(int a1, int a2)
-TIMESTAMP decompiling 8061A89 size=00000012 times=2;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3)
-TIMESTAMP decompiling 8061A77 size=00000012 times=1;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3)
-TIMESTAMP decompiling 80619FD size=0000007A times=1;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3)
-TIMESTAMP decompiling 8070488 size=00000028 times=0...
-80704AB: call analysis failed
-TIMESTAMP decompiling 805A590 size=00000080 times=0...
-805A604: call analysis failed
-TIMESTAMP decompiling 805BCF0 size=0000005C times=0...
-805BD45: call analysis failed
-TIMESTAMP decompiling 805BD50 size=0000004C times=0...
-TIMESTAMP decompiling 805C1A0 size=000002D9 times=0...
-TIMESTAMP decompiling 804A9D0 size=000000AE times=0...
-TIMESTAMP decompiling 8070360 size=0000004E times=0...
-TIMESTAMP decompiling 80616AE size=000002BB times=0...
-TIMESTAMP decompiling 806197C size=00000020 times=0...
-TIMESTAMP decompiling 8049D84 size=00000030 times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
-
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
-TIMESTAMP decompiling 8070940 size=0000005A times=0...
-TIMESTAMP decompiling 804A910 size=00000022 times=0...
 TIMESTAMP decompiling 804AC40 size=0000003C times=0...
 804AC75: call analysis failed
 TIMESTAMP decompiling 804AC00 size=0000003C times=0...
@@ -507,10 +1916,71 @@ TIMESTAMP decompiling 804AAC0 size=0000003C times=0...
 804AAF5: call analysis failed
 TIMESTAMP decompiling 804AA80 size=0000003C times=0...
 804AAB5: call analysis failed
+TIMESTAMP decompiling 806DF02 size=000001A7 times=0...
+TIMESTAMP decompiling 806E190 size=00000047 times=0...
+TIMESTAMP decompiling 8070078 size=00000091 times=0...
+TIMESTAMP decompiling 806E0A9 size=0000009B times=0...
+TIMESTAMP decompiling 8070109 size=000000DB times=0...
+TIMESTAMP decompiling 80703F0 size=00000048 times=0...
+TIMESTAMP decompiling 80619B0 size=0000004D times=0...
+TIMESTAMP decompiling 8061A89 size=00000012 times=0...
+TIMESTAMP decompiling 8064B1A size=00000025 times=0...
+TIMESTAMP decompiling 8061E12 size=0000002B times=0...
+TIMESTAMP decompiling 8061E58 size=00000036 times=0...
+TIMESTAMP decompiling 8061E8E size=00000157 times=0...
+TIMESTAMP decompiling 80623CC size=00000034 times=0...
+TIMESTAMP decompiling 8061FE5 size=00000121 times=0...
+TIMESTAMP decompiling 80639AE size=000000D5 times=0...
+TIMESTAMP decompiling 8063ED0 size=00000090 times=0...
+TIMESTAMP decompiling 8062106 size=00000014 times=0...
+TIMESTAMP decompiling 8063967 size=00000047 times=0...
+TIMESTAMP decompiling 806F634 size=0000022F times=0...
+TIMESTAMP decompiling 8063A83 size=0000044D times=0...
+TIMESTAMP decompiling 80630F4 size=00000165 times=0...
+TIMESTAMP decompiling 8063F60 size=000000E1 times=0...
+TIMESTAMP decompiling 8064041 size=00000077 times=0...
+TIMESTAMP decompiling 80630B0 size=00000044 times=0...
+TIMESTAMP decompiling 8063319 size=0000004B times=0...
+TIMESTAMP decompiling 8064DB2 size=00000055 times=0...
+TIMESTAMP decompiling 8064E07 size=0000008A times=0...
+TIMESTAMP decompiling 806EBCF size=0000000D times=0...
+TIMESTAMP decompiling 806EC80 size=00000495 times=0...
+TIMESTAMP decompiling 806F115 size=000001D5 times=0...
+TIMESTAMP decompiling 80640B8 size=000002D3 times=0...
+TIMESTAMP decompiling 8062400 size=000000E7 times=0...
+TIMESTAMP decompiling 806254F size=0000008D times=0...
+TIMESTAMP decompiling 8063259 size=000000C0 times=0...
+TIMESTAMP decompiling 806339C size=0000047C times=0...
+TIMESTAMP decompiling 806393F size=00000028 times=0...
+806395C: call analysis failed
+TIMESTAMP decompiling 8064CFB size=0000003C times=0...
+TIMESTAMP decompiling 8064E91 size=00000055 times=0...
+TIMESTAMP decompiling 8064EE6 size=000000AC times=0...
+TIMESTAMP decompiling 8064F92 size=0000019F times=0...
+TIMESTAMP decompiling 806439C size=0000018F times=0...
+TIMESTAMP decompiling 806211A size=0000027D times=0...
+TIMESTAMP decompiling 806452B size=0000009E times=0...
+TIMESTAMP decompiling 80645C9 size=0000014A times=0...
+TIMESTAMP decompiling 806F559 size=000000DB times=0...
+TIMESTAMP decompiling 8064713 size=00000069 times=0...
+TIMESTAMP decompiling 8065201 size=00000069 times=0...
 TIMESTAMP decompiling 8060EF4 size=0000006B times=0...
+The decompiler assumes that the segment '.got' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 8061B17 size=00000081 times=0...
+TIMESTAMP decompiling 806477C size=00000049 times=0...
+TIMESTAMP decompiling 806526A size=000000AA times=0...
+TIMESTAMP decompiling 8065314 size=0000004F times=0...
+TIMESTAMP decompiling 8061BB1 size=00000020 times=0...
+TIMESTAMP decompiling 8061BD1 size=00000019 times=0...
 TIMESTAMP decompiling 8060F5F size=000000FD times=0...
 TIMESTAMP decompiling 806105C size=00000030 times=0...
-TIMESTAMP decompiling 8060F5F size=000000FD times=1;usedcpu 00:00:00 ...int __cdecl(int a1, void *src, void *a3)
 TIMESTAMP decompiling 805C8CC size=00000045 times=0...
 TIMESTAMP decompiling 804BBA0 size=0000000F times=0...
 TIMESTAMP decompiling 804BBB0 size=0000000F times=0...
@@ -525,13 +1995,17 @@ TIMESTAMP decompiling 80608FF size=0000004E times=0...
 TIMESTAMP decompiling 804BC00 size=00000010 times=0...
 TIMESTAMP decompiling 806094D size=00000234 times=0...
 TIMESTAMP decompiling 804BC10 size=00000011 times=0...
+TIMESTAMP decompiling 8065363 size=000000DA times=0...
 TIMESTAMP decompiling 8065565 size=0000001B times=0...
 TIMESTAMP decompiling 8060B81 size=000001BB times=0...
-TIMESTAMP decompiling 806094D size=00000234 times=1;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int *a3)
 TIMESTAMP decompiling 804BC30 size=0000000F times=0...
+TIMESTAMP decompiling 80648E4 size=00000056 times=0...
+TIMESTAMP decompiling 806493A size=000000FA times=0...
+TIMESTAMP decompiling 8064B3F size=000000AD times=0...
+TIMESTAMP decompiling 8065486 size=000000C4 times=0...
+TIMESTAMP decompiling 806554A size=0000001B times=0...
 TIMESTAMP decompiling 805DF00 size=000000C7 times=0...
 TIMESTAMP decompiling 8061C03 size=00000072 times=0...
-TIMESTAMP decompiling 8061BEA size=00000019 times=1;usedcpu 00:00:00 ...int __cdecl(void *a1)
 TIMESTAMP decompiling 8061C87 size=00000012 times=0...
 TIMESTAMP decompiling 805DFC7 size=00000044 times=0...
 TIMESTAMP decompiling 804BC40 size=00000010 times=0...
@@ -542,8 +2016,14 @@ TIMESTAMP decompiling 805DCCA size=00000033 times=0...
 TIMESTAMP decompiling 804BC60 size=0000000F times=0...
 TIMESTAMP decompiling 805DCFD size=00000031 times=0...
 TIMESTAMP decompiling 804BC70 size=0000000F times=0...
+TIMESTAMP decompiling 805FC9D size=00000046 times=0...
+TIMESTAMP decompiling 805FCE3 size=0000002B times=0...
 TIMESTAMP decompiling 805D882 size=0000006D times=0...
 TIMESTAMP decompiling 805D6C4 size=0000010F times=0...
+TIMESTAMP decompiling 80628A3 size=000000D9 times=0...
+TIMESTAMP decompiling 806297C size=00000052 times=0...
+TIMESTAMP decompiling 8062B1A size=00000013 times=0...
+TIMESTAMP decompiling 8062B2D size=00000024 times=0...
 TIMESTAMP decompiling 805D8EF size=00000097 times=0...
 TIMESTAMP decompiling 804BC80 size=0000000F times=0...
 TIMESTAMP decompiling 805D7D3 size=000000AF times=0...
@@ -572,6 +2052,8 @@ TIMESTAMP decompiling 805FAF8 size=00000068 times=0...
 TIMESTAMP decompiling 804BD40 size=00000011 times=0...
 TIMESTAMP decompiling 8060728 size=0000008C times=0...
 TIMESTAMP decompiling 804BD60 size=0000000F times=0...
+TIMESTAMP decompiling 8061BEA size=00000019 times=0...
+TIMESTAMP decompiling 805C664 size=00000082 times=0...
 TIMESTAMP decompiling 804BD70 size=0000000F times=0...
 TIMESTAMP decompiling 805D520 size=000000C0 times=0...
 TIMESTAMP decompiling 805D5E0 size=00000033 times=0...
@@ -612,6 +2094,7 @@ TIMESTAMP decompiling 805FAC4 size=00000034 times=0...
 TIMESTAMP decompiling 804BEB0 size=0000000F times=0...
 TIMESTAMP decompiling 804BEC0 size=0000000F times=0...
 TIMESTAMP decompiling 805E0E0 size=0000008D times=0...
+TIMESTAMP decompiling 806721A size=0000004E times=0...
 TIMESTAMP decompiling 805E16D size=00000111 times=0...
 TIMESTAMP decompiling 804BED0 size=0000000F times=0...
 TIMESTAMP decompiling 805E27E size=00000065 times=0...
@@ -694,6 +2177,8 @@ TIMESTAMP decompiling 804C160 size=00000010 times=0...
 TIMESTAMP decompiling 806108C size=00000048 times=0...
 TIMESTAMP decompiling 804C170 size=0000000F times=0...
 TIMESTAMP decompiling 804C180 size=0000000F times=0...
+TIMESTAMP decompiling 8064C58 size=000000A3 times=0...
+TIMESTAMP decompiling 806F97A size=0000006D times=0...
 TIMESTAMP decompiling 80667E2 size=00000046 times=0...
 TIMESTAMP decompiling 806029C size=000001A7 times=0...
 TIMESTAMP decompiling 806055D size=0000009E times=0...
@@ -709,12 +2194,16 @@ TIMESTAMP decompiling 804C1D0 size=00000010 times=0...
 TIMESTAMP decompiling 805E8D6 size=000000B5 times=0...
 TIMESTAMP decompiling 804C1E0 size=00000011 times=0...
 TIMESTAMP decompiling 8061B98 size=00000019 times=0...
-TIMESTAMP decompiling 8061B17 size=00000081 times=2;usedcpu 00:00:00 ...int __cdecl(int a1, int a2)
 TIMESTAMP decompiling 806BAEB size=000000DF times=0...
 TIMESTAMP decompiling 80683B3 size=00000035 times=0...
 TIMESTAMP decompiling 804C200 size=0000000F times=0...
 TIMESTAMP decompiling 804C210 size=0000000F times=0...
+TIMESTAMP decompiling 8068446 size=0000003B times=0...
+TIMESTAMP decompiling 80694FD size=000000AA times=0...
+TIMESTAMP decompiling 80695C4 size=0000001A times=0...
+TIMESTAMP decompiling 80695DE size=0000001D times=0...
 TIMESTAMP decompiling 804C220 size=0000000F times=0...
+TIMESTAMP decompiling 80695A7 size=0000001D times=0...
 TIMESTAMP decompiling 804C230 size=0000000F times=0...
 TIMESTAMP decompiling 804C240 size=0000000F times=0...
 TIMESTAMP decompiling 805EA94 size=000000E2 times=0...
@@ -748,7 +2237,6 @@ TIMESTAMP decompiling 804C350 size=0000000F times=0...
 TIMESTAMP decompiling 805CAAC size=00000040 times=0...
 TIMESTAMP decompiling 804C360 size=0000000F times=0...
 TIMESTAMP decompiling 8061C75 size=00000012 times=0...
-TIMESTAMP decompiling 8061C03 size=00000072 times=1;usedcpu 00:00:00 ...int __cdecl(int a1)
 TIMESTAMP decompiling 806BF52 size=00000022 times=0...
 TIMESTAMP decompiling 8068DCC size=00000067 times=0...
 TIMESTAMP decompiling 8068E33 size=000000AC times=0...
@@ -760,10 +2248,15 @@ TIMESTAMP decompiling 80692FA size=0000001C times=0...
 TIMESTAMP decompiling 8069316 size=00000076 times=0...
 TIMESTAMP decompiling 804FE90 size=00000035 times=0...
 TIMESTAMP decompiling 80500A0 size=0000002B times=0...
+TIMESTAMP decompiling 80703B4 size=0000003C times=0...
+TIMESTAMP decompiling 80619FD size=0000007A times=0...
+TIMESTAMP decompiling 8070488 size=00000028 times=0...
+80704AB: call analysis failed
 TIMESTAMP decompiling 804C370 size=00000121 times=0...
+TIMESTAMP decompiling 804F620 size=00000036 times=0...
+804F64F: call analysis failed
 TIMESTAMP decompiling 805ECF4 size=000000D8 times=0...
 TIMESTAMP decompiling 804C4B0 size=0000004A times=0...
-TIMESTAMP decompiling 804C370 size=00000121 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int (**a1)(void)@<eax>, int a2@<ecx>)
 TIMESTAMP decompiling 806141D size=0000014B times=0...
 TIMESTAMP decompiling 804C500 size=0000004A times=0...
 TIMESTAMP decompiling 8061338 size=000000E5 times=0...
@@ -803,9 +2296,13 @@ TIMESTAMP decompiling 804C940 size=00000013 times=0...
 TIMESTAMP decompiling 804C960 size=00000012 times=0...
 TIMESTAMP decompiling 804C980 size=00000013 times=0...
 TIMESTAMP decompiling 804C9A0 size=00000013 times=0...
+TIMESTAMP decompiling 804B370 size=0000003C times=0...
+804B3A5: call analysis failed
 TIMESTAMP decompiling 804B8C0 size=0000007D times=0...
 804B936: call analysis failed
 TIMESTAMP decompiling 804B9F0 size=00000080 times=0...
+TIMESTAMP decompiling 80660F6 size=0000012E times=0...
+TIMESTAMP decompiling 8066224 size=00000019 times=0...
 TIMESTAMP decompiling 804BA80 size=0000006D times=0...
 TIMESTAMP decompiling 804B940 size=000000CA times=0...
 TIMESTAMP decompiling 804BB10 size=00000033 times=0...
@@ -822,6 +2319,9 @@ TIMESTAMP decompiling 804BB50 size=00000050 times=0...
 TIMESTAMP decompiling 804F8E0 size=0000005D times=0...
 TIMESTAMP decompiling 8054390 size=00000039 times=0...
 TIMESTAMP decompiling 804CD30 size=000000C2 times=0...
+TIMESTAMP decompiling 80655B0 size=0000002C times=0...
+TIMESTAMP decompiling 80655DC size=000005F6 times=0...
+TIMESTAMP decompiling 80655B0 size=0000002C times=1;usedcpu 00:00:00 ...int()
 TIMESTAMP decompiling 8065D4B size=00000045 times=0...
 TIMESTAMP decompiling 80548E0 size=00000059 times=0...
 TIMESTAMP decompiling 804C9C0 size=00000322 times=0...
@@ -831,6 +2331,9 @@ TIMESTAMP decompiling 805D040 size=0000040B times=0...
 TIMESTAMP decompiling 804CE80 size=00000033 times=0...
 TIMESTAMP decompiling 804CE30 size=00000050 times=0...
 TIMESTAMP decompiling 804D020 size=00000106 times=0...
+TIMESTAMP decompiling 806623D size=00000109 times=0...
+TIMESTAMP decompiling 806648E size=00000096 times=0...
+TIMESTAMP decompiling 804F840 size=00000014 times=0...
 TIMESTAMP decompiling 804CF70 size=000000BA times=0...
 TIMESTAMP decompiling 804CEC0 size=000000AF times=0...
 TIMESTAMP decompiling 805DA10 size=00000148 times=0...
@@ -847,12 +2350,15 @@ TIMESTAMP decompiling 804D400 size=00000042 times=0...
 TIMESTAMP decompiling 804D500 size=00000046 times=0...
 TIMESTAMP decompiling 804D4A0 size=00000052 times=0...
 TIMESTAMP decompiling 804D630 size=00000066 times=0...
+TIMESTAMP decompiling 8065C49 size=00000048 times=0...
+TIMESTAMP decompiling 804F660 size=00000037 times=0...
 TIMESTAMP decompiling 80566F0 size=000000F0 times=0...
+TIMESTAMP decompiling 8064BEC size=0000006C times=0...
+TIMESTAMP decompiling 8067D69 size=000001D8 times=0...
 TIMESTAMP decompiling 80574C0 size=00000130 times=0...
 TIMESTAMP decompiling 806B61B size=00000244 times=0...
 TIMESTAMP decompiling 806B85F size=0000003C times=0...
 TIMESTAMP decompiling 80575F0 size=000000F0 times=0...
-TIMESTAMP decompiling 80574C0 size=00000130 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ebx>)
 TIMESTAMP decompiling 804D550 size=000000D6 times=0...
 TIMESTAMP decompiling 804D6A0 size=000000A0 times=0...
 TIMESTAMP decompiling 804D740 size=000000A0 times=0...
@@ -861,17 +2367,11 @@ TIMESTAMP decompiling 804DA20 size=0000006B times=0...
 TIMESTAMP decompiling 804D920 size=000000FA times=0...
 TIMESTAMP decompiling 804DA90 size=000001B3 times=0...
 TIMESTAMP decompiling 80567E0 size=000000B0 times=0...
-TIMESTAMP decompiling 80566F0 size=000000F0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int *a1@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 80566F0 size=000000F0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int *a1@<eax>, unsigned int a2@<ebx>)
+TIMESTAMP decompiling 80574C0 size=00000130 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ebx>)
 TIMESTAMP decompiling 80576E0 size=000000E0 times=0...
-TIMESTAMP decompiling 80575F0 size=000000F0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *a1@<eax>, unsigned int a2@<ecx>, unsigned int a3@<ebx>)
 TIMESTAMP decompiling 80577C0 size=00000081 times=0...
-TIMESTAMP decompiling 80576E0 size=000000E0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, unsigned int a2@<ebx>)
 TIMESTAMP decompiling 8057850 size=000001D0 times=0...
-TIMESTAMP decompiling 80576E0 size=000000E0 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, unsigned int a2@<ebx>)
-TIMESTAMP decompiling 80575F0 size=000000F0 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *a1@<eax>, unsigned int a2@<ecx>, unsigned int a3@<ebx>)
-TIMESTAMP decompiling 80574C0 size=00000130 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ebx>)
-TIMESTAMP decompiling 80566F0 size=000000F0 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int *a1@<eax>, int a2@<ebx>)
-TIMESTAMP decompiling 804C370 size=00000121 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int (**a1)(void)@<eax>, int a2@<ecx>)
 TIMESTAMP decompiling 804DCC0 size=00000038 times=0...
 TIMESTAMP decompiling 804DC50 size=0000007A times=0...
 TIMESTAMP decompiling 804DD50 size=00000029 times=0...
@@ -950,8 +2450,8 @@ TIMESTAMP decompiling 804F9A0 size=00000019 times=0...
 TIMESTAMP decompiling 8069021 size=00000036 times=0...
 TIMESTAMP decompiling 8069CE2 size=0000004A times=0...
 TIMESTAMP decompiling 80696C1 size=00000015 times=0...
+80696D1: call analysis failed
 TIMESTAMP decompiling 80696D6 size=00000085 times=0...
-TIMESTAMP decompiling 80696C1 size=00000015 times=1;usedcpu 00:00:00 ...int()
 TIMESTAMP decompiling 8069BF2 size=00000050 times=0...
 TIMESTAMP decompiling 8069AA8 size=00000052 times=0...
 TIMESTAMP decompiling 8069AFA size=0000004A times=0...
@@ -960,8 +2460,6 @@ TIMESTAMP decompiling 8069BA6 size=0000004C times=0...
 TIMESTAMP decompiling 8069C42 size=000000A0 times=0...
 TIMESTAMP decompiling 8069D2C size=0000001B times=0...
 TIMESTAMP decompiling 8069D47 size=000004F6 times=0...
-TIMESTAMP decompiling 8069D2C size=0000001B times=1;usedcpu 00:00:00 ...int __usercall@<eax>(void *a1@<eax>)
-TIMESTAMP decompiling 8069D47 size=000004F6 times=1;usedcpu 00:00:00 ...void *__usercall@<eax>(unsigned int a1@<eax>)
 TIMESTAMP decompiling 806A23D size=0000011D times=0...
 TIMESTAMP decompiling 806A496 size=00000070 times=0...
 TIMESTAMP decompiling 806A506 size=00000083 times=0...
@@ -979,9 +2477,12 @@ TIMESTAMP decompiling 804FD00 size=0000000B times=0...
 TIMESTAMP decompiling 804FD40 size=00000015 times=0...
 TIMESTAMP decompiling 804FD60 size=0000000C times=0...
 TIMESTAMP decompiling 804FD70 size=00000011 times=0...
+TIMESTAMP decompiling 8067BB7 size=00000028 times=0...
+TIMESTAMP decompiling 804F710 size=00000088 times=0...
 TIMESTAMP decompiling 804F170 size=00000080 times=0...
 TIMESTAMP decompiling 804F860 size=0000005C times=0...
 804F8B5: call analysis failed
+TIMESTAMP decompiling 80670FA size=00000120 times=0...
 TIMESTAMP decompiling 804F8C0 size=00000018 times=0...
 TIMESTAMP decompiling 804FD90 size=00000011 times=0...
 TIMESTAMP decompiling 804FDB0 size=00000035 times=0...
@@ -1023,19 +2524,6 @@ TIMESTAMP decompiling 8051F50 size=00000082 times=0...
 TIMESTAMP decompiling 80508E0 size=000000A0 times=0...
 TIMESTAMP decompiling 8051FE0 size=0000000A times=0...
 TIMESTAMP decompiling 8051FF0 size=000001A1 times=0...
-TIMESTAMP decompiling 8055610 size=0000007D times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
-TIMESTAMP decompiling 805B170 size=00000021 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>)
-TIMESTAMP decompiling 805C1A0 size=000002D9 times=1;usedcpu 00:00:00 ...int()
-TIMESTAMP decompiling 804FB70 size=0000004A times=1;usedcpu 00:00:00 ...int __usercall@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
-TIMESTAMP decompiling 804F7E0 size=00000056 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *a1@<eax>)
-TIMESTAMP decompiling 804F7A0 size=0000001A times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int result@<eax>)
-TIMESTAMP decompiling 804C800 size=0000005D times=1;usedcpu 00:00:00 ...int __usercall@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
-TIMESTAMP decompiling 804C7B0 size=0000004A times=1;usedcpu 00:00:00 ...int __usercall@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
-TIMESTAMP decompiling 804C760 size=0000004A times=1;usedcpu 00:00:00 ...int __usercall@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
-TIMESTAMP decompiling 804C710 size=0000004A times=1;usedcpu 00:00:00 ...int __usercall@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
-TIMESTAMP decompiling 804C550 size=0000004A times=1;usedcpu 00:00:00 ...int __usercall@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
-TIMESTAMP decompiling 804C500 size=0000004A times=1;usedcpu 00:00:00 ...int __usercall@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
-TIMESTAMP decompiling 804C4B0 size=0000004A times=1;usedcpu 00:00:00 ...int __usercall@<eax>(char a1@<al>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
 TIMESTAMP decompiling 80521A0 size=0000009D times=0...
 TIMESTAMP decompiling 80524A0 size=000000A2 times=0...
 TIMESTAMP decompiling 8052550 size=00000166 times=0...
@@ -1051,16 +2539,11 @@ TIMESTAMP decompiling 804B2D0 size=0000003C times=0...
 804B305: call analysis failed
 TIMESTAMP decompiling 8050A70 size=000003F0 times=0...
 TIMESTAMP decompiling 8050E60 size=00000210 times=0...
-TIMESTAMP decompiling 8050A70 size=000003F0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(signed int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
-TIMESTAMP decompiling 8050E60 size=00000210 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(signed int a1@<eax>, int a2@<edx>, double *a3@<ecx>, unsigned int a4@<ebx>)
 TIMESTAMP decompiling 8051100 size=00000021 times=0...
 TIMESTAMP decompiling 8051070 size=0000009F times=0...
-TIMESTAMP decompiling 8050E60 size=00000210 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(signed int a1@<eax>, int a2@<edx>, double *a3@<ecx>, unsigned int a4@<ebx>)
 TIMESTAMP decompiling 8051130 size=00000100 times=0...
-TIMESTAMP decompiling 8051070 size=0000009F times=1;usedcpu 00:00:00 ...int __usercall@<eax>(signed int a1@<eax>, int a2@<edx>, double *a3@<ecx>, unsigned int a4@<ebx>)
 TIMESTAMP decompiling 8051260 size=0000001E times=0...
 TIMESTAMP decompiling 8051230 size=00000030 times=0...
-TIMESTAMP decompiling 8051130 size=00000100 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(signed int a1@<eax>, int a2@<ecx>, unsigned int a3@<ebx>)
 TIMESTAMP decompiling 8051280 size=000002D0 times=0...
 TIMESTAMP decompiling 8052C00 size=00000530 times=0...
 TIMESTAMP decompiling 804AE90 size=0000003C times=0...
@@ -1092,20 +2575,18 @@ TIMESTAMP decompiling 804B0D0 size=0000003C times=0...
 TIMESTAMP decompiling 8052240 size=00000251 times=0...
 TIMESTAMP decompiling 8050500 size=00000260 times=0...
 TIMESTAMP decompiling 8051550 size=00000190 times=0...
-TIMESTAMP decompiling 8051280 size=000002D0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ecx>, double *a3@<ebx>)
 TIMESTAMP decompiling 80516E0 size=00000300 times=0...
-TIMESTAMP decompiling 8051550 size=00000190 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(unsigned int a1@<eax>, unsigned int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<edi>, int a6@<esi>)
+TIMESTAMP decompiling 8051550 size=00000190 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(unsigned int@<eax>, unsigned int@<edx>, int@<ecx>, int@<ebx>, int@<edi>, int@<esi>)
 TIMESTAMP decompiling 80519E0 size=000000B8 times=0...
-TIMESTAMP decompiling 80516E0 size=00000300 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<esi>)
 TIMESTAMP decompiling 8053130 size=000001F0 times=0...
-TIMESTAMP decompiling 8052C00 size=00000530 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ebx>)
 TIMESTAMP decompiling 80542C0 size=0000000C times=0...
+TIMESTAMP decompiling 804F5E0 size=00000036 times=0...
+804F60F: call analysis failed
 TIMESTAMP decompiling 80542D0 size=0000001A times=0...
 TIMESTAMP decompiling 80542F0 size=0000001A times=0...
 TIMESTAMP decompiling 8053430 size=0000002A times=0...
 TIMESTAMP decompiling 8054310 size=0000001A times=0...
 TIMESTAMP decompiling 8054380 size=0000000A times=0...
-TIMESTAMP decompiling 804CE80 size=00000033 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(char a1@<al>)
 TIMESTAMP decompiling 8053460 size=0000006B times=0...
 TIMESTAMP decompiling 8054440 size=00000049 times=0...
 8054482: call analysis failed
@@ -1128,6 +2609,8 @@ TIMESTAMP decompiling 8054B20 size=00000090 times=0...
 TIMESTAMP decompiling 8054BB0 size=00000070 times=0...
 TIMESTAMP decompiling 8054C20 size=00000071 times=0...
 TIMESTAMP decompiling 8053570 size=00000084 times=0...
+TIMESTAMP decompiling 8054380 size=0000000A times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 804CE80 size=00000033 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(char@<al>)
 TIMESTAMP decompiling 8054CA0 size=00000048 times=0...
 8054CE1: call analysis failed
 TIMESTAMP decompiling 8053600 size=00000117 times=0...
@@ -1142,9 +2625,6 @@ TIMESTAMP decompiling 8054F70 size=00000058 times=0...
 8054FC1: call analysis failed
 TIMESTAMP decompiling 8053DE0 size=000004B7 times=0...
 TIMESTAMP decompiling 8053920 size=000004B7 times=0...
-TIMESTAMP decompiling 8053DE0 size=000004B7 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<ebx>)
-TIMESTAMP decompiling 8053920 size=000004B7 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<ebx>)
-TIMESTAMP decompiling 8053DE0 size=000004B7 times=2;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int a1@<eax>, int a2@<ecx>, int *a3@<ebx>)
 TIMESTAMP decompiling 8054FD0 size=000000E9 times=0...
 TIMESTAMP decompiling 8055280 size=0000001A times=0...
 TIMESTAMP decompiling 8055690 size=0000004A times=0...
@@ -1174,6 +2654,7 @@ TIMESTAMP decompiling 8067A2D size=00000079 times=0...
 TIMESTAMP decompiling 80560C0 size=0000000B times=0...
 TIMESTAMP decompiling 80561D0 size=00000033 times=0...
 80561FC: call analysis failed
+TIMESTAMP decompiling 806253A size=00000015 times=0...
 TIMESTAMP decompiling 8062D19 size=00000042 times=0...
 TIMESTAMP decompiling 8062BE2 size=000000AD times=0...
 TIMESTAMP decompiling 80629CE size=0000014C times=0...
@@ -1184,7 +2665,6 @@ TIMESTAMP decompiling 8057390 size=00000011 times=0...
 TIMESTAMP decompiling 8057410 size=00000050 times=0...
 TIMESTAMP decompiling 8051BE0 size=00000126 times=0...
 TIMESTAMP decompiling 8057460 size=00000044 times=0...
-TIMESTAMP decompiling 8057410 size=00000050 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *a1@<eax>)
 TIMESTAMP decompiling 8056890 size=00000090 times=0...
 TIMESTAMP decompiling 8057A20 size=000000A0 times=0...
 8057AA9: call analysis failed
@@ -1198,26 +2678,21 @@ TIMESTAMP decompiling 8056AA0 size=00000039 times=0...
 TIMESTAMP decompiling 8057D40 size=000000B0 times=0...
 TIMESTAMP decompiling 8056AE0 size=00000036 times=0...
 TIMESTAMP decompiling 8057DF0 size=000000D0 times=0...
-TIMESTAMP decompiling 8057D40 size=000000B0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ebx>)
 TIMESTAMP decompiling 8056B40 size=00000110 times=0...
 TIMESTAMP decompiling 8056440 size=000000B0 times=0...
 TIMESTAMP decompiling 8056C50 size=00000100 times=0...
-TIMESTAMP decompiling 8056B40 size=00000110 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>)
 TIMESTAMP decompiling 8056D50 size=00000081 times=0...
-TIMESTAMP decompiling 8056C50 size=00000100 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ecx>, int (__usercall *a3)@<eax>(int *a1@<eax>, int a2@<ebx>)@<ebx>)
 TIMESTAMP decompiling 8056DE0 size=00000210 times=0...
 TIMESTAMP decompiling 80564F0 size=00000090 times=0...
 TIMESTAMP decompiling 8056FF0 size=000000D0 times=0...
-TIMESTAMP decompiling 8056DE0 size=00000210 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 TIMESTAMP decompiling 8056580 size=00000112 times=0...
 TIMESTAMP decompiling 80566A0 size=00000049 times=0...
 TIMESTAMP decompiling 80572C0 size=000000D0 times=0...
 TIMESTAMP decompiling 8057240 size=00000073 times=0...
 TIMESTAMP decompiling 80570C0 size=00000180 times=0...
-TIMESTAMP decompiling 8056FF0 size=000000D0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ecx>, int (__usercall *a3)@<eax>(int a1@<eax>, int a2@<ebx>)@<ebx>)
+TIMESTAMP decompiling 8056FF0 size=000000D0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, int (__usercall *)@<eax>(int a1@<eax>, int a2@<ebx>)@<ebx>)
 TIMESTAMP decompiling 8057EC0 size=000001CD times=0...
-TIMESTAMP decompiling 8057DF0 size=000000D0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
-TIMESTAMP decompiling 8057D40 size=000000B0 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 8055610 size=0000007D times=0...
 TIMESTAMP decompiling 8058500 size=0000000F times=0...
 TIMESTAMP decompiling 80556E0 size=0000006A times=0...
 TIMESTAMP decompiling 8058510 size=0000006D times=0...
@@ -1240,12 +2715,10 @@ TIMESTAMP decompiling 8058140 size=00000110 times=0...
 TIMESTAMP decompiling 80589E0 size=00000069 times=0...
 8058A42: call analysis failed
 TIMESTAMP decompiling 8058250 size=000000A0 times=0...
-TIMESTAMP decompiling 8058140 size=00000110 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, _DWORD *a2@<edx>, int a3@<ecx>, int a4@<ebx>)
 TIMESTAMP decompiling 8058A50 size=0000005F times=0...
 8058AA8: call analysis failed
 TIMESTAMP decompiling 8058AB0 size=00000180 times=0...
 TIMESTAMP decompiling 80582F0 size=00000190 times=0...
-TIMESTAMP decompiling 8058250 size=000000A0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int result@<eax>, int a2@<ecx>, int a3@<ebx>)
 TIMESTAMP decompiling 8058C30 size=00000070 times=0...
 8058C99: call analysis failed
 TIMESTAMP decompiling 8059AB0 size=00000029 times=0...
@@ -1257,9 +2730,7 @@ TIMESTAMP decompiling 805B250 size=0000003C times=0...
 TIMESTAMP decompiling 805B6D0 size=00000018 times=0...
 TIMESTAMP decompiling 80596D0 size=00000240 times=0...
 TIMESTAMP decompiling 8059910 size=000000B8 times=0...
-TIMESTAMP decompiling 80596D0 size=00000240 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 TIMESTAMP decompiling 8059650 size=00000080 times=0...
-TIMESTAMP decompiling 80596D0 size=00000240 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 TIMESTAMP decompiling 805B6F0 size=000000A8 times=0...
 805B78E: call analysis failed
 TIMESTAMP decompiling 805B850 size=0000009A times=0...
@@ -1272,14 +2743,12 @@ TIMESTAMP decompiling 805B290 size=0000008A times=0...
 TIMESTAMP decompiling 805B350 size=000000B0 times=0...
 TIMESTAMP decompiling 805B400 size=0000003C times=0...
 TIMESTAMP decompiling 8058480 size=0000007F times=0...
-TIMESTAMP decompiling 80582F0 size=00000190 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
 TIMESTAMP decompiling 8059460 size=00000068 times=0...
 80594C1: call analysis failed
 TIMESTAMP decompiling 80594D0 size=000000F0 times=0...
 TIMESTAMP decompiling 805B440 size=0000010E times=0...
 TIMESTAMP decompiling 8058EA0 size=00000060 times=0...
 TIMESTAMP decompiling 8058DC0 size=000000E0 times=0...
-TIMESTAMP decompiling 8058EA0 size=00000060 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<ebx>)
 TIMESTAMP decompiling 80595C0 size=00000085 times=0...
 805963E: call analysis failed
 TIMESTAMP decompiling 805B650 size=00000074 times=0...
@@ -1288,11 +2757,17 @@ TIMESTAMP decompiling 805B550 size=00000073 times=0...
 TIMESTAMP decompiling 80599D0 size=00000018 times=0...
 TIMESTAMP decompiling 80599F0 size=0000005A times=0...
 TIMESTAMP decompiling 805B7A0 size=000000A9 times=0...
+TIMESTAMP decompiling 805A590 size=00000080 times=0...
+TIMESTAMP decompiling 805BCF0 size=0000005C times=0...
+805BD45: call analysis failed
+TIMESTAMP decompiling 805BD50 size=0000004C times=0...
+TIMESTAMP decompiling 8066346 size=0000006B times=0...
+TIMESTAMP decompiling 80663B1 size=00000072 times=0...
+TIMESTAMP decompiling 8066423 size=0000006B times=0...
 TIMESTAMP decompiling 805A690 size=00000797 times=0...
 TIMESTAMP decompiling 805A610 size=00000073 times=0...
-TIMESTAMP decompiling 805A690 size=00000797 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int *a4@<esi>)
-TIMESTAMP decompiling 805A610 size=00000073 times=1;usedcpu 00:00:00 ...double *__usercall@<eax>(unsigned int *a1@<eax>, int a2@<ecx>, unsigned int a3@<ebx>, int *a4@<esi>)
 TIMESTAMP decompiling 8059000 size=00000090 times=0...
+TIMESTAMP decompiling 805B110 size=00000026 times=0...
 TIMESTAMP decompiling 805A4D0 size=000000BC times=0...
 TIMESTAMP decompiling 805BC20 size=00000080 times=0...
 805BC99: call analysis failed
@@ -1310,7 +2785,6 @@ TIMESTAMP decompiling 8059170 size=0000005D times=0...
 TIMESTAMP decompiling 80591D0 size=00000060 times=0...
 TIMESTAMP decompiling 8059230 size=0000002F times=0...
 TIMESTAMP decompiling 805AF50 size=00000132 times=0...
-TIMESTAMP decompiling 80590B0 size=00000088 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<edx>, int (__usercall *a3)@<eax>(int *a1@<ebx>)@<ecx>, int a4@<ebx>)
 TIMESTAMP decompiling 804B040 size=0000003C times=0...
 804B075: call analysis failed
 TIMESTAMP decompiling 804B000 size=0000003C times=0...
@@ -1322,7 +2796,6 @@ TIMESTAMP decompiling 804AF80 size=0000003C times=0...
 TIMESTAMP decompiling 804AF40 size=0000003C times=0...
 804AF75: call analysis failed
 TIMESTAMP decompiling 8058F60 size=00000060 times=0...
-TIMESTAMP decompiling 8058F00 size=00000060 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, _DWORD *a2@<ebx>)
 TIMESTAMP decompiling 8058FC0 size=00000040 times=0...
 8058FF9: call analysis failed
 TIMESTAMP decompiling 8059AF0 size=00000059 times=0...
@@ -1331,17 +2804,15 @@ TIMESTAMP decompiling 805B900 size=00000049 times=0...
 TIMESTAMP decompiling 8059B50 size=000000EA times=0...
 TIMESTAMP decompiling 8059C40 size=00000260 times=0...
 TIMESTAMP decompiling 8059EA0 size=00000200 times=0...
-TIMESTAMP decompiling 8059C40 size=00000260 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(double *a1@<eax>, double *a2@<edx>, double *a3@<ecx>, double *a4@<ebx>, double *a5@<edi>, double *a6@<esi>)
 TIMESTAMP decompiling 805A0A0 size=000001A0 times=0...
-TIMESTAMP decompiling 8059EA0 size=00000200 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(double *a1@<eax>, double *a2@<edx>, double *a3@<ecx>, double *a4@<ebx>, int a5@<edi>, double *a6@<esi>)
 TIMESTAMP decompiling 805A240 size=00000140 times=0...
-TIMESTAMP decompiling 805A0A0 size=000001A0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(double *a1@<eax>, double *a2@<edx>, double *a3@<ecx>, double *a4@<ebx>, int a5@<esi>)
 TIMESTAMP decompiling 805A380 size=000000D0 times=0...
-TIMESTAMP decompiling 805A240 size=00000140 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(double *a1@<eax>, int a2@<edx>, double *a3@<ecx>, double *a4@<ebx>)
 TIMESTAMP decompiling 805A450 size=00000080 times=0...
-TIMESTAMP decompiling 805A380 size=000000D0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(double *a1@<eax>, int a2@<ecx>, double *a3@<ebx>)
 TIMESTAMP decompiling 805B950 size=000002C7 times=0...
 TIMESTAMP decompiling 805BEB0 size=000000A9 times=0...
+TIMESTAMP decompiling 805BF60 size=00000062 times=0...
+805BFBB: call analysis failed
+TIMESTAMP decompiling 805BFE0 size=0000000C times=0...
 TIMESTAMP decompiling 805C010 size=0000001C times=0...
 TIMESTAMP decompiling 805C030 size=00000061 times=0...
 805C08A: call analysis failed
@@ -1351,11 +2822,207 @@ TIMESTAMP decompiling 805C0E0 size=00000023 times=0...
 TIMESTAMP decompiling 805C110 size=00000030 times=0...
 TIMESTAMP decompiling 805C140 size=00000039 times=0...
 TIMESTAMP decompiling 805C180 size=0000001C times=0...
+TIMESTAMP decompiling 806E1D7 size=00000099 times=0...
 TIMESTAMP decompiling 805C480 size=00000010 times=0...
 TIMESTAMP decompiling 805F371 size=00000048 times=0...
+TIMESTAMP decompiling 8061A77 size=00000012 times=0...
+TIMESTAMP decompiling 8062C8F size=0000008A times=0...
+TIMESTAMP decompiling 8062B60 size=00000082 times=0...
+TIMESTAMP decompiling 806383C size=00000103 times=0...
+TIMESTAMP decompiling 80647C5 size=0000004D times=0...
+TIMESTAMP decompiling 8064812 size=000000D2 times=0...
+TIMESTAMP decompiling 806C68F size=00000132 times=0...
+TIMESTAMP decompiling 806F8E7 size=00000027 times=0...
+TIMESTAMP decompiling 806F90E size=0000002C times=0...
+TIMESTAMP decompiling 8062D88 size=00000042 times=0...
+TIMESTAMP decompiling 8062E0A size=0000002A times=0...
+TIMESTAMP decompiling 8064ACE size=00000023 times=0...
+TIMESTAMP decompiling 8062DCA size=00000040 times=0...
+TIMESTAMP decompiling 806FA5E size=00000086 times=0...
+TIMESTAMP decompiling 806FC28 size=00000137 times=0...
+TIMESTAMP decompiling 806FDDC size=00000074 times=0...
+TIMESTAMP decompiling 80625DC size=0000009D times=0...
+TIMESTAMP decompiling 80627D9 size=00000015 times=0...
+TIMESTAMP decompiling 80701E4 size=00000047 times=0...
+TIMESTAMP decompiling 8051B60 size=00000080 times=0...
+TIMESTAMP decompiling 804B5A0 size=00000073 times=0...
+TIMESTAMP decompiling 804B650 size=000000AE times=0...
+TIMESTAMP decompiling 805BFF0 size=0000001C times=0...
+TIMESTAMP decompiling 804B700 size=00000155 times=0...
+TIMESTAMP decompiling 8065BD2 size=0000003B times=0...
+TIMESTAMP decompiling 804F6A0 size=00000037 times=0...
+TIMESTAMP decompiling 80573B0 size=00000059 times=0...
+8057402: call analysis failed
+TIMESTAMP decompiling 8062D5B size=0000002D times=0...
+TIMESTAMP decompiling 807024D size=0000001A times=0...
+TIMESTAMP decompiling 807023C size=00000011 times=1;usedcpu 00:00:00 ...char *__cdecl(char)
+TIMESTAMP decompiling 805BEB0 size=000000A9 times=1;usedcpu 00:00:00 ...int (__usercall **__usercall@<eax>(int@<eax>, int@<edx>, int@<ecx>, int (**)(void)@<ebx>, int@<esi>))@<eax>(double *a1@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 805BDA0 size=00000104 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<edx>, int@<ebx>, int@<edi>, int@<esi>)
+TIMESTAMP decompiling 8059260 size=000000B1 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 805B950 size=000002C7 times=1;usedcpu 00:00:00 ...int (__usercall **__usercall@<eax>(int (__usercall *a1)@<eax>(double *a1@<eax>, int a2@<ebx>)@<eax>, int (__usercall *a2)@<eax>(double *a1@<eax>, int a2@<ebx>)@<ebx>))@<eax>(double *a1@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 805B850 size=0000009A times=1;usedcpu 00:00:00 ..._DWORD *()
+TIMESTAMP decompiling 805B950 size=000002C7 times=2;usedcpu 00:00:00 ...int (__usercall **__usercall@<eax>(int (__usercall *a1)@<eax>(double *a1@<eax>, int a2@<ebx>)@<eax>, int (__usercall *a2)@<eax>(double *a1@<eax>, int a2@<ebx>)@<ebx>))@<eax>(double *a1@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 805BEB0 size=000000A9 times=2;usedcpu 00:00:00 ...int (__usercall **__usercall@<eax>(int@<eax>, int@<edx>, int@<ecx>, int (**)(void)@<ebx>, int@<esi>))@<eax>(double *a1@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 805B8F0 size=00000008 times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 805B7A0 size=000000A9 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>)
+TIMESTAMP decompiling 805B650 size=00000074 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<edx>, int@<ebx>)
+TIMESTAMP decompiling 805B440 size=0000010E times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>)
+TIMESTAMP decompiling 805B5D0 size=00000073 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<edx>, int@<ebx>)
+TIMESTAMP decompiling 805B550 size=00000073 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<edx>, int@<ebx>)
+TIMESTAMP decompiling 805A690 size=00000797 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(unsigned int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int *a4@<esi>, unsigned int a5@<ebx>)
+TIMESTAMP decompiling 805B290 size=0000008A times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int@<eax>)
+TIMESTAMP decompiling 805B400 size=0000003C times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ebx>)
+TIMESTAMP decompiling 805A690 size=00000797 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(unsigned int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int *a4@<esi>, unsigned int a5@<ebx>)
+TIMESTAMP decompiling 805AF50 size=00000132 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<edx>, int@<ecx>, int@<ebx>, _DWORD *@<esi>)
+TIMESTAMP decompiling 805A610 size=00000073 times=1;usedcpu 00:00:00 ...double *__usercall@<eax>(unsigned int *@<eax>, int@<ecx>, unsigned int@<ebx>, int *@<esi>)
+TIMESTAMP decompiling 805A4D0 size=000000BC times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8059B50 size=000000EA times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 80596D0 size=00000240 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int *a2@<ecx>, int a3@<ebx>)
+TIMESTAMP decompiling 80594D0 size=000000F0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8059330 size=0000012B times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 80590B0 size=00000088 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<edx>, int (__usercall *)@<eax>(int *a1@<ebx>)@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8059000 size=00000090 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(unsigned int *@<eax>, _DWORD *@<ecx>, int@<ebx>, int *@<esi>)
+TIMESTAMP decompiling 8058AB0 size=00000180 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 80582F0 size=00000190 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8058670 size=000000F7 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int *@<eax>, int@<ebx>)
+TIMESTAMP decompiling 8058480 size=0000007F times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int@<eax>)
+TIMESTAMP decompiling 8058140 size=00000110 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, _DWORD *@<edx>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8057EC0 size=000001CD times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int (__usercall *)@<eax>(int a1@<ebx>)@<eax>)
+TIMESTAMP decompiling 8057DF0 size=000000D0 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8057D40 size=000000B0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ebx>)
+TIMESTAMP decompiling 8057850 size=000001D0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, char@<bl>)
+TIMESTAMP decompiling 80577C0 size=00000081 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ebx>)
+TIMESTAMP decompiling 8057850 size=000001D0 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, char@<bl>)
+TIMESTAMP decompiling 80576E0 size=000000E0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, unsigned int@<ebx>)
+TIMESTAMP decompiling 804DCC0 size=00000038 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(char@<bl>)
+TIMESTAMP decompiling 80575F0 size=000000F0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *@<eax>, unsigned int@<ecx>, unsigned int@<ebx>)
+TIMESTAMP decompiling 80574C0 size=00000130 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ebx>)
+TIMESTAMP decompiling 8057460 size=00000044 times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int@<eax>)
+TIMESTAMP decompiling 80572C0 size=000000D0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, int (__usercall *)@<eax>(int a1@<eax>, int a2@<ebx>)@<ebx>)
+TIMESTAMP decompiling 8056FF0 size=000000D0 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, int (__usercall *)@<eax>(int a1@<eax>, int a2@<ebx>)@<ebx>)
+TIMESTAMP decompiling 8056DE0 size=00000210 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8056D50 size=00000081 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8057EC0 size=000001CD times=2;usedcpu 00:00:00 ...int *__usercall@<eax>(int (__usercall *a1)@<eax>(int a1@<ebx>)@<eax>, int a2@<edx>, int a3@<ecx>)
+TIMESTAMP decompiling 8056DE0 size=00000210 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8056C50 size=00000100 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, int (__usercall *)@<eax>(int *a1@<eax>, int a2@<ebx>)@<ebx>)
+TIMESTAMP decompiling 8056B40 size=00000110 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *@<eax>, int@<edx>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8056920 size=00000112 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int *a1@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 8057C20 size=00000073 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int *@<eax>, unsigned int@<edx>, int@<edi>)
+TIMESTAMP decompiling 8057AC0 size=00000160 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *a1@<eax>, int a2@<ecx>, unsigned int a3@<ebx>)
+TIMESTAMP decompiling 8056890 size=00000090 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(_DWORD *a1@<eax>)
+TIMESTAMP decompiling 80567E0 size=000000B0 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int *a1@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 80566F0 size=000000F0 times=2;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int *a1@<eax>, unsigned int a2@<ebx>)
+TIMESTAMP decompiling 8056580 size=00000112 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int *a1@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 8057240 size=00000073 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int *@<eax>, unsigned int@<edx>, int@<ebx>)
+TIMESTAMP decompiling 80570C0 size=00000180 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *a1@<eax>, int a2@<edx>, int *(__usercall *a3)@<eax>(int *a1@<eax>, int a2@<ebx>)@<ecx>, int *(__usercall *a4)@<eax>(int *a1@<eax>, int a2@<ebx>)@<ebx>)
+TIMESTAMP decompiling 80564F0 size=00000090 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int a1@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 8056440 size=000000B0 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int *a1@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 8055940 size=00000379 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>)
+TIMESTAMP decompiling 805A690 size=00000797 times=3;usedcpu 00:00:00 ...int __usercall@<eax>(unsigned int *a1@<eax>, int a2@<edx>, int a3@<ecx>, int *a4@<esi>, unsigned int a5@<ebx>)
+TIMESTAMP decompiling 80557C0 size=0000017D times=1;usedcpu 00:00:00 ...void *__usercall@<eax>(void (*)(void)@<eax>, int *@<ebx>)
+TIMESTAMP decompiling 8054FD0 size=000000E9 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int@<eax>, int *@<ebx>)
+TIMESTAMP decompiling 8054E70 size=000000F7 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int@<eax>, int *@<ecx>, int *@<ebx>)
+TIMESTAMP decompiling 8054DD0 size=00000094 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int *@<eax>, int@<edx>, int@<ecx>, int *@<ebx>)
+TIMESTAMP decompiling 8054D40 size=00000090 times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int **@<eax>)
+TIMESTAMP decompiling 8054C20 size=00000071 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int (**)(void)@<eax>, int *@<ebx>)
+TIMESTAMP decompiling 8054BB0 size=00000070 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int a1@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 8054B20 size=00000090 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(char a1@<al>, _DWORD *a2@<ebx>)
+TIMESTAMP decompiling 8054980 size=00000081 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, _DWORD *@<ebx>)
+TIMESTAMP decompiling 8054550 size=00000094 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
+TIMESTAMP decompiling 80543D0 size=00000070 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int (**a1)(void)@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 8053DE0 size=000004B7 times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int@<eax>, int@<ecx>, int *@<ebx>)
+TIMESTAMP decompiling 8053920 size=000004B7 times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int@<eax>, int@<ecx>, int *@<ebx>)
+TIMESTAMP decompiling 8053820 size=000000FD times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *@<eax>, int@<edx>, _DWORD *@<ecx>, int *@<ebx>)
+TIMESTAMP decompiling 8053720 size=000000FD times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *@<eax>, int@<edx>, _DWORD *@<ecx>, int *@<ebx>)
+TIMESTAMP decompiling 8053600 size=00000117 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(_DWORD *@<eax>, int@<edx>, int *@<ecx>, _DWORD *@<ebx>)
+TIMESTAMP decompiling 8053570 size=00000084 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *@<eax>, int@<ecx>, int *@<ebx>)
+TIMESTAMP decompiling 80534D0 size=00000094 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int *result@<eax>, int@<edx>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8053460 size=0000006B times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int *result@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8053130 size=000001F0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, double *@<ebx>)
+TIMESTAMP decompiling 8052C00 size=00000530 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, unsigned int a2@<ebx>)
+TIMESTAMP decompiling 8052B10 size=000000E7 times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8052A10 size=000000FA times=1;usedcpu 00:00:00 ...unsigned int __usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8052980 size=00000090 times=1;usedcpu 00:00:00 ...void *__usercall@<eax>(int *@<eax>)
+TIMESTAMP decompiling 8052770 size=00000179 times=1;usedcpu 00:00:00 ...void *__usercall@<eax>(int@<eax>, double *@<ebx>)
+TIMESTAMP decompiling 80526C0 size=000000A5 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ebx>)
+TIMESTAMP decompiling 8052550 size=00000166 times=1;usedcpu 00:00:00 ...void *__usercall@<eax>(void (**)(void)@<eax>, double *@<ebx>)
+TIMESTAMP decompiling 80524A0 size=000000A2 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(void (**)(void)@<eax>, int@<ebx>)
+TIMESTAMP decompiling 8052240 size=00000251 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<edx>, unsigned int@<ecx>, int@<ebx>, int@<esi>)
+TIMESTAMP decompiling 8051FF0 size=000001A1 times=1;usedcpu 00:00:00 ...void *__usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 8051F50 size=00000082 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int *@<ebx>)
+TIMESTAMP decompiling 8051D10 size=00000233 times=1;usedcpu 00:00:00 ...void *__usercall@<eax>(double *@<eax>, double *@<ebx>)
+TIMESTAMP decompiling 8051BE0 size=00000126 times=1;usedcpu 00:00:00 ...void *__usercall@<eax>(double *@<eax>)
+TIMESTAMP decompiling 8057460 size=00000044 times=2;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int@<eax>)
+TIMESTAMP decompiling 8057410 size=00000050 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_DWORD *@<eax>)
+TIMESTAMP decompiling 80516E0 size=00000300 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, _DWORD *a5@<esi>)
+TIMESTAMP decompiling 8051550 size=00000190 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(unsigned int@<eax>, unsigned int@<edx>, int@<ecx>, int@<ebx>, int@<edi>, int@<esi>)
+TIMESTAMP decompiling 8051280 size=000002D0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, double *@<ebx>)
+TIMESTAMP decompiling 8051130 size=00000100 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(signed int@<eax>, int@<ecx>, unsigned int@<ebx>)
+TIMESTAMP decompiling 8050E60 size=00000210 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(signed int@<eax>, int@<edx>, double *@<ecx>, unsigned int@<ebx>)
+TIMESTAMP decompiling 8050A70 size=000003F0 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(signed int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
+TIMESTAMP decompiling 8052C00 size=00000530 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, unsigned int a2@<ebx>, int a3@<edx>)
+TIMESTAMP decompiling 8051130 size=00000100 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(signed int@<eax>, int@<ecx>, unsigned int@<ebx>)
+TIMESTAMP decompiling 8050E60 size=00000210 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(signed int@<eax>, int@<edx>, double *@<ecx>, unsigned int@<ebx>)
+TIMESTAMP decompiling 8050980 size=00000090 times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int@<eax>, int@<ecx>, _DWORD *@<ebx>)
+TIMESTAMP decompiling 80508E0 size=000000A0 times=1;usedcpu 00:00:00 ...int (__cdecl **__usercall@<eax>(int *@<eax>))(int, int)
+TIMESTAMP decompiling 80507B0 size=00000123 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, int *@<ebx>)
+TIMESTAMP decompiling 8051F50 size=00000082 times=2;usedcpu 00:00:00 ...int __usercall@<eax>(int *@<ebx>)
+TIMESTAMP decompiling 8050500 size=00000260 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, double *@<edx>, unsigned int@<ecx>, double *@<ebx>, _DWORD *@<edi>, unsigned int@<esi>)
+TIMESTAMP decompiling 804FBC0 size=00000092 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<edx>, int@<ecx>)
+TIMESTAMP decompiling 804F8E0 size=0000005D times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(int *a1@<eax>, int a2@<ebx>)
+TIMESTAMP decompiling 804F2A0 size=000001F5 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int *@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 804E020 size=0000008E times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(char@<al>)
+TIMESTAMP decompiling 804DF00 size=0000007D times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>, int@<ebx>)
+TIMESTAMP decompiling 804DE50 size=0000007A times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ebx>)
+TIMESTAMP decompiling 804DDF0 size=00000058 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>)
+TIMESTAMP decompiling 804DD80 size=00000061 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>)
+TIMESTAMP decompiling 804DC50 size=0000007A times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, char@<bl>)
+TIMESTAMP decompiling 804DA90 size=000001B3 times=1;usedcpu 00:00:00 ...int *()
+TIMESTAMP decompiling 804DA20 size=0000006B times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 804D920 size=000000FA times=1;usedcpu 00:00:00 ...int __usercall@<eax>(char@<dl>, unsigned int@<ecx>, char@<dil>, char@<sil>)
+TIMESTAMP decompiling 804D7E0 size=0000013C times=1;usedcpu 00:00:00 ...int *()
+TIMESTAMP decompiling 804D740 size=000000A0 times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 804D6A0 size=000000A0 times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 804D630 size=00000066 times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 804D550 size=000000D6 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<edx>, int@<ecx>, unsigned int@<ebx>, int@<esi>)
+TIMESTAMP decompiling 804D210 size=00000066 times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 804D1B0 size=00000052 times=1;usedcpu 00:00:00 ...int()
+TIMESTAMP decompiling 804D020 size=00000106 times=1;usedcpu 00:00:00 ..._DWORD *()
+TIMESTAMP decompiling 804CF70 size=000000BA times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(_DWORD *@<ebx>)
+TIMESTAMP decompiling 804CEC0 size=000000AF times=1;usedcpu 00:00:00 ...void __usercall(_DWORD *@<eax>, _DWORD *@<ebx>)
+TIMESTAMP decompiling 804CD30 size=000000C2 times=1;usedcpu 00:00:00 ...int *__usercall@<eax>(char a1@<bl>)
+TIMESTAMP decompiling 804CCA0 size=0000007F times=1;usedcpu 00:00:00 ...void __cdecl(int, int, char)
+TIMESTAMP decompiling 804C9C0 size=00000322 times=1;usedcpu 00:00:00 ...void __usercall(_DWORD *@<eax>, _DWORD *@<ecx>, _DWORD *@<ebx>, int, int, char)
+TIMESTAMP decompiling 804CE30 size=00000050 times=1;usedcpu 00:00:00 ...void __usercall(_DWORD *@<eax>, _DWORD *@<ecx>, _DWORD *@<ebx>, int, int, char)
+TIMESTAMP decompiling 804BA80 size=0000006D times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int@<edi>)
+TIMESTAMP decompiling 804B9F0 size=00000080 times=1;usedcpu 00:00:00 ..._DWORD *()
+TIMESTAMP decompiling 804B940 size=000000CA times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int@<eax>, int@<ecx>)
+TIMESTAMP decompiling 8070304 size=00000042 times=0...
+TIMESTAMP decompiling 804E862 size=0000021A times=0...
+TIMESTAMP decompiling 804E81A size=00000048 times=0...
+TIMESTAMP decompiling 805C490 size=0000005D times=0...
+TIMESTAMP decompiling 804E280 size=0000059A times=0...
+TIMESTAMP decompiling 806653A size=00000016 times=0...
+TIMESTAMP decompiling 8070268 size=00000031 times=0...
+TIMESTAMP decompiling 80500D0 size=00000428 times=0...
+805018E: call analysis failed
+TIMESTAMP decompiling 8053320 size=00000106 times=0...
+80533DE: call analysis failed
+TIMESTAMP decompiling 806B8B5 size=00000084 times=0...
+TIMESTAMP decompiling 806B939 size=000000A1 times=0...
+TIMESTAMP decompiling 80702D0 size=00000031 times=0...
+TIMESTAMP decompiling 8056290 size=000001AA times=0...
+8056314: call analysis failed
+TIMESTAMP decompiling 805B140 size=00000009 times=0...
+TIMESTAMP decompiling 805B150 size=00000008 times=0...
+TIMESTAMP decompiling 805B170 size=00000021 times=0...
+TIMESTAMP decompiling 805C1A0 size=000002D9 times=0...
+TIMESTAMP decompiling 804A9D0 size=000000AE times=0...
+TIMESTAMP decompiling 8070360 size=0000004E times=0...
+TIMESTAMP decompiling 80616AE size=000002BB times=0...
 TIMESTAMP decompiling 8061969 size=00000013 times=0...
+TIMESTAMP decompiling 806197C size=00000020 times=0...
 TIMESTAMP decompiling 8061A9B size=0000007C times=0...
-TIMESTAMP decompiling 8061A89 size=00000012 times=3;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3)
 TIMESTAMP decompiling 8061E3D size=0000001B times=0...
 TIMESTAMP decompiling 80624E7 size=00000053 times=0...
 TIMESTAMP decompiling 8062679 size=0000010D times=0...
@@ -1381,7 +3048,6 @@ TIMESTAMP decompiling 80660A4 size=00000023 times=0...
 TIMESTAMP decompiling 80697CA size=000000A3 times=0...
 TIMESTAMP decompiling 806986D size=00000027 times=0...
 TIMESTAMP decompiling 80660C7 size=0000002F times=0...
-TIMESTAMP decompiling 806623D size=00000109 times=0...
 TIMESTAMP decompiling 8066524 size=00000016 times=0...
 TIMESTAMP decompiling 8066550 size=00000016 times=0...
 TIMESTAMP decompiling 8066566 size=00000016 times=0...
@@ -1398,85 +3064,6 @@ TIMESTAMP decompiling 806668B size=0000001C times=0...
 TIMESTAMP decompiling 80666A7 size=0000001C times=0...
 TIMESTAMP decompiling 80666C3 size=0000001C times=0...
 TIMESTAMP decompiling 8061C99 size=00000012 times=0...
-TIMESTAMP decompiling 8061C87 size=00000012 times=1;usedcpu 00:00:00 ...int()
-TIMESTAMP decompiling 806BA6D size=00000024 times=1;usedcpu 00:00:00 ...void *__cdecl(char *name)
-TIMESTAMP decompiling 8061C75 size=00000012 times=1;usedcpu 00:00:00 ...int()
-TIMESTAMP decompiling 806BF52 size=00000022 times=1;usedcpu 00:00:00 ...int __cdecl(void *src)
-TIMESTAMP decompiling 8061C03 size=00000072 times=2;usedcpu 00:00:00 ...int __cdecl(int a1)
-TIMESTAMP decompiling 8061CAB size=00000015 times=1;usedcpu 00:00:00 ...int __cdecl(void (__cdecl *a1)(_DWORD, _DWORD *), int a2, unsigned int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 8061C99 size=00000012 times=1;usedcpu 00:00:00 ...int __cdecl(void (__cdecl *a1)(_DWORD, _DWORD *), int a2, unsigned int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 8061C87 size=00000012 times=2;usedcpu 00:00:00 ...int __cdecl(void (__cdecl *a1)(_DWORD, _DWORD *), int a2, unsigned int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 8061C75 size=00000012 times=2;usedcpu 00:00:00 ...int __cdecl(void (__cdecl *a1)(_DWORD, _DWORD *), int a2, unsigned int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 8061BEA size=00000019 times=2;usedcpu 00:00:00 ...int __cdecl(void *a1)
-TIMESTAMP decompiling 806B45E size=000000F3 times=1;usedcpu 00:00:00 ...void **__cdecl(int a1)
-TIMESTAMP decompiling 806AAE0 size=00000666 times=1;usedcpu 00:00:00 ...char *__usercall@<eax>(void ***a1@<eax>)
-TIMESTAMP decompiling 806A8DB size=00000016 times=1;usedcpu 00:00:00 ...void *__cdecl(void *a1, int a2)
-TIMESTAMP decompiling 806A496 size=00000070 times=1;usedcpu 00:00:00 ...void __cdecl(int a1, unsigned int a2, int *a3)
-TIMESTAMP decompiling 80696D6 size=00000085 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>)
-TIMESTAMP decompiling 80691E1 size=000000A1 times=1;usedcpu 00:00:00 ..._BYTE *__cdecl(int a1, int a2)
-TIMESTAMP decompiling 8068CF1 size=00000064 times=1;usedcpu 00:00:00 ...int __cdecl(int a1)
-TIMESTAMP decompiling 806773B size=000000A3 times=1;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3)
-TIMESTAMP decompiling 80660F6 size=0000012E times=1;usedcpu 00:00:00 ...int __usercall@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx>)
-TIMESTAMP decompiling 80665C4 size=0000001D times=1;usedcpu 00:00:00 ...int *__cdecl(_BYTE *a1)
-TIMESTAMP decompiling 8066224 size=00000019 times=1;usedcpu 00:00:00 ...int __cdecl(_BYTE *a1)
-TIMESTAMP decompiling 8059330 size=0000012B times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int a1@<eax>, int a2@<ecx>, int a3@<ebx>)
-TIMESTAMP decompiling 804FF20 size=00000019 times=1;usedcpu 00:00:00 ...int()
-TIMESTAMP decompiling 804BA80 size=0000006D times=1;usedcpu 00:00:00 ..._DWORD *__usercall@<eax>(int a1@<edi>)
-TIMESTAMP decompiling 804B700 size=00000155 times=1;usedcpu 00:00:00 ...int()
-TIMESTAMP decompiling 8061BD1 size=00000019 times=2;usedcpu 00:00:00 ...int __cdecl(void *a1)
-TIMESTAMP decompiling 8069D2C size=0000001B times=2;usedcpu 00:00:00 ...void *__usercall@<eax>(void *a1@<eax>)
-TIMESTAMP decompiling 8067D69 size=000001D8 times=1;usedcpu 00:00:00 ...double *__cdecl(int a1, unsigned int a2)
-TIMESTAMP decompiling 8067BB7 size=00000028 times=1;usedcpu 00:00:00 ...int __cdecl(int a1)
-TIMESTAMP decompiling 806623D size=00000109 times=1;usedcpu 00:00:00 ...void *__usercall@<eax>(_BYTE *a1@<eax>, const char *a2@<edx>, char *a3@<ecx>, void *a4, char *a5)
-TIMESTAMP decompiling 80655DC size=000005F6 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int a1@<eax>, int a2@<edx>, int a3@<ecx>)
-TIMESTAMP decompiling 80629CE size=0000014C times=1;usedcpu 00:00:00 ...int __cdecl(int a1, unsigned int *a2)
-TIMESTAMP decompiling 8061BB1 size=00000020 times=2;usedcpu 00:00:00 ...int __cdecl(int a1, void *src)
-TIMESTAMP decompiling 8061BEA size=00000019 times=3;usedcpu 00:00:00 ...int __cdecl(void *a1, int a2, unsigned int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 8061BD1 size=00000019 times=3;usedcpu 00:00:00 ...int __cdecl(void *a1, int a2, unsigned int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 8061B98 size=00000019 times=1;usedcpu 00:00:00 ...int __cdecl(int a1, void *a2)
-TIMESTAMP decompiling 806BAEB size=000000DF times=1;usedcpu 00:00:00 ...int __cdecl(void *src)
-TIMESTAMP decompiling 8061B17 size=00000081 times=3;usedcpu 00:00:00 ...int __cdecl(int a1, int a2)
-TIMESTAMP decompiling 8061BB1 size=00000020 times=3;usedcpu 00:00:00 ...int __cdecl(int a1, void *src, unsigned int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 8061B98 size=00000019 times=2;usedcpu 00:00:00 ...int __cdecl(int a1, void *a2, unsigned int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 8061A9B size=0000007C times=1;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3)
-TIMESTAMP decompiling 8061A89 size=00000012 times=4;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3)
-TIMESTAMP decompiling 806A9CB size=00000115 times=1;usedcpu 00:00:00 ...int __usercall@<eax>(int result@<eax>, int a2@<edx>)
-TIMESTAMP decompiling 8069CE2 size=0000004A times=1;usedcpu 00:00:00 ...int()
-TIMESTAMP decompiling 806A496 size=00000070 times=2;usedcpu 00:00:00 ...void __cdecl(int a1, unsigned int a2, int *a3)
-TIMESTAMP decompiling 80696C1 size=00000015 times=2;usedcpu 00:00:00 ...int()
-80696D1: call analysis failed
-TIMESTAMP decompiling 80655B0 size=0000002C times=2;usedcpu 00:00:00 ...int()
-TIMESTAMP decompiling 8064F92 size=0000019F times=1;usedcpu 00:00:00 ...int *__cdecl(unsigned int a1, int a2)
-TIMESTAMP decompiling 8064B1A size=00000025 times=1;usedcpu 00:00:00 ...void *__cdecl(size_t size)
-TIMESTAMP decompiling 8064ACE size=00000023 times=1;usedcpu 00:00:00 ...void *__cdecl(void *ptr, size_t size)
-TIMESTAMP decompiling 8064812 size=000000D2 times=1;usedcpu 00:00:00 ...void __cdecl(int a1)
-TIMESTAMP decompiling 806393F size=00000028 times=1;usedcpu 00:00:00 ...unsigned int __cdecl(unsigned int a1)
-806395C: call analysis failed
-TIMESTAMP decompiling 8061A77 size=00000012 times=2;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3)
-TIMESTAMP decompiling 8062C8F size=0000008A times=1;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11, int a12, int a13, int a14, int a15, int a16, int a17, int a18, int a19, int a20, int a21, int a22, unsigned int a23)
-TIMESTAMP decompiling 80619FD size=0000007A times=2;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3)
-TIMESTAMP decompiling 80619B0 size=0000004D times=2;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3)
-TIMESTAMP decompiling 806F559 size=000000DB times=2;usedcpu 00:00:00 ...void()
-TIMESTAMP decompiling 80628A3 size=000000D9 times=2;usedcpu 00:00:00 ...int __cdecl(int signo, int)
-TIMESTAMP decompiling 8061C03 size=00000072 times=3;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, unsigned int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 8061B17 size=00000081 times=4;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, unsigned int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 8061A9B size=0000007C times=2;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 8061A89 size=00000012 times=5;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 8061A77 size=00000012 times=3;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 80619FD size=0000007A times=3;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3, int a4, _DWORD *a5)
-TIMESTAMP decompiling 8060F5F size=000000FD times=2;usedcpu 00:00:00 ...int __cdecl(int a1, void *src, void *a3)
-TIMESTAMP decompiling 805C664 size=00000082 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(char *cp)
-TIMESTAMP decompiling 805E00B size=00000038 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(char *name, char *proto)
-TIMESTAMP decompiling 805DFC7 size=00000044 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(int a1, char *proto)
-TIMESTAMP decompiling 805DE6F size=00000031 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(char *name)
-TIMESTAMP decompiling 805DE3C size=00000033 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(int a1)
-TIMESTAMP decompiling 805DCFD size=00000031 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(char *name)
-TIMESTAMP decompiling 805DCCA size=00000033 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(int a1)
-TIMESTAMP decompiling 805DA10 size=00000148 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(int *a1, int *a2)
-TIMESTAMP decompiling 805D8EF size=00000097 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(int *a1)
-TIMESTAMP decompiling 805D7D3 size=000000AF times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(char *src)
-TIMESTAMP decompiling 805D613 size=00000031 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(char *name)
-TIMESTAMP decompiling 805D5E0 size=00000033 times=1;usedcpu 00:00:00 ..._DWORD *__cdecl(int a1)
 TIMESTAMP decompiling 80666DF size=00000047 times=0...
 TIMESTAMP decompiling 8066726 size=00000039 times=0...
 TIMESTAMP decompiling 806675F size=0000001D times=0...
@@ -1552,7 +3139,6 @@ TIMESTAMP decompiling 80676F2 size=00000017 times=0...
 TIMESTAMP decompiling 8067709 size=00000017 times=0...
 TIMESTAMP decompiling 8067720 size=0000001B times=0...
 TIMESTAMP decompiling 80677DE size=000000D2 times=0...
-TIMESTAMP decompiling 806773B size=000000A3 times=2;usedcpu 00:00:00 ...int __cdecl(int a1, int a2, int a3)
 TIMESTAMP decompiling 8067AA6 size=00000026 times=0...
 TIMESTAMP decompiling 8067ACC size=00000027 times=0...
 TIMESTAMP decompiling 8067AF3 size=00000027 times=0...
@@ -1598,23 +3184,7 @@ TIMESTAMP decompiling 806B343 size=000000FF times=0...
 TIMESTAMP decompiling 806B442 size=0000001C times=0...
 TIMESTAMP decompiling 806BA2C size=00000041 times=0...
 TIMESTAMP decompiling 806FAE4 size=000000C9 times=0...
-TIMESTAMP decompiling 805EDCC size=0000005B times=1;usedcpu 00:00:00 ...void *__cdecl(int *a1)
 TIMESTAMP decompiling 806BBCA size=000000D1 times=0...
-TIMESTAMP decompiling 806BAEB size=000000DF times=2;usedcpu 00:00:00 ...int __cdecl(void *src)
-TIMESTAMP decompiling 806BF52 size=00000022 times=2;usedcpu 00:00:00 ...int __cdecl(void *src)
-TIMESTAMP decompiling 8068DCC size=00000067 times=1;usedcpu 00:00:00 ...ssize_t __usercall@<eax>(size_t n@<ecx>, int a2@<eax>, const void *a3@<edx>)
-TIMESTAMP decompiling 806887A size=00000053 times=1;usedcpu 00:00:00 ...ssize_t __cdecl(int fd, void *buf, size_t nbytes)
-TIMESTAMP decompiling 806BE61 size=000000F1 times=1;usedcpu 00:00:00 ...int __cdecl(char *src, int, int)
-TIMESTAMP decompiling 806BBCA size=000000D1 times=1;usedcpu 00:00:00 ...char *__cdecl(void *src)
-TIMESTAMP decompiling 806938C size=00000070 times=1;usedcpu 00:00:00 ...int __cdecl(int a1, __int64 a2)
-TIMESTAMP decompiling 8068833 size=00000047 times=1;usedcpu 00:00:00 ...int __cdecl(int a1)
-TIMESTAMP decompiling 8068772 size=0000009F times=1;usedcpu 00:00:00 ...int __cdecl(int *a1)
-TIMESTAMP decompiling 80685A6 size=000000CB times=1;usedcpu 00:00:00 ...int __cdecl(int a1, __int64 a2)
-TIMESTAMP decompiling 80683E8 size=0000005E times=1;usedcpu 00:00:00 ...int __cdecl(int a1)
-TIMESTAMP decompiling 80683B3 size=00000035 times=1;usedcpu 00:00:00 ...int __cdecl(int a1)
-TIMESTAMP decompiling 806836C size=00000047 times=1;usedcpu 00:00:00 ...int __cdecl(int a1)
-TIMESTAMP decompiling 8068325 size=00000047 times=1;usedcpu 00:00:00 ...int __cdecl(int a1)
-TIMESTAMP decompiling 80629CE size=0000014C times=2;usedcpu 00:00:00 ...int __cdecl(int a1, unsigned int *a2)
 TIMESTAMP decompiling 806BC9B size=000000BB times=0...
 TIMESTAMP decompiling 806BD56 size=0000003F times=0...
 TIMESTAMP decompiling 806BD95 size=00000029 times=0...
@@ -1653,6 +3223,6 @@ TIMESTAMP decompiling 806F468 size=000000F1 times=0...
 TIMESTAMP decompiling 806FBD4 size=0000001B times=0...
 TIMESTAMP decompiling 806FD5F size=0000007D times=0...
 TIMESTAMP decompiling 806FEF7 size=00000181 times=0...
-TIMESTAMP decompiling 80709CC size=0000001C times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

@@ -21,7 +21,7 @@ rd2=$(echo $IDADIR | sed 's,/,.,g')
 function cleanup {
   IN=$1
   OUT=$2
-  sed <$IN -e "s;$IDADIR;IDADIR;" -e "s;$rd2;IDADIR;" -e "s;$root;SUBJECTS;g" -e 's/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]/TIMESTAMP/g' | grep -v License >$OUT
+  sed <$IN -e "s;$IDADIR;IDADIR;" -e "s;$rd2;IDADIR;" -e "s;$root;SUBJECTS;g" -e 's/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9]/TIMESTAMP/g' | grep -v License | sed -e '/Raimar Falke/,+7d' >$OUT
   rm $IN
 }
 

@@ -21,40 +21,40 @@ void __noreturn start(); // weak
 // HMODULE __stdcall LoadLibraryA(LPCSTR lpLibFileName);
 // DWORD __stdcall SetFilePointer(HANDLE hFile, LONG lDistanceToMove, PLONG lpDistanceToMoveHigh, DWORD dwMoveMethod);
 // BOOL __stdcall WriteFile(HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped);
-UINT __stdcall WinExec(LPCSTR lpCmdLine, UINT uCmdShow);
 
 //-------------------------------------------------------------------------
 // Data declarations
 
 CHAR LibFileName[] = "kernel32"; // idb
-HMODULE hModule = NULL; // idb
+HMODULE hLibModule = NULL; // idb
 CHAR ProcName[] = "WinExec"; // idb
+UINT (__stdcall *WinExec)(LPCSTR lpCmdLine, UINT uCmdShow) = NULL;
 CHAR Caption[] = "XOROX-KO SETUP"; // idb
 CHAR aDone[] = "DONE! (^_^)"; // idb
 CHAR Text[] = "ERROR! (>_<)"; // idb
 CHAR FileName[] = "XOROX-KO.exe"; // idb
-HANDLE hFile = NULL; // idb
+HANDLE hObject = NULL; // idb
 DWORD NumberOfBytesWritten = 0u; // idb
 
 
 //----- (00401000) --------------------------------------------------------
 void __noreturn start()
 {
-  hModule = LoadLibraryA(LibFileName);
-  if ( hModule
-    && (*(_DWORD *)WinExec = GetProcAddress(hModule, ProcName)) != 0
-    && (hFile = CreateFileA(FileName, 0x40000000u, 0, 0, 3u, 0x80u, 0), hFile != (HANDLE)-1) )
+  hLibModule = LoadLibraryA(LibFileName);
+  if ( hLibModule
+    && (WinExec = (UINT (__stdcall *)(LPCSTR, UINT))GetProcAddress(hLibModule, ProcName)) != 0
+    && (hObject = CreateFileA(FileName, 0x40000000u, 0, 0, 3u, 0x80u, 0), hObject != (HANDLE)-1) )
   {
-    SetFilePointer(hFile, 49, 0, 0);
-    WriteFile(hFile, WinExec, 4u, &NumberOfBytesWritten, 0);
-    CloseHandle(hFile);
+    SetFilePointer(hObject, 49, 0, 0);
+    WriteFile(hObject, &WinExec, 4u, &NumberOfBytesWritten, 0);
+    CloseHandle(hObject);
     MessageBoxA(0, aDone, Caption, 0);
   }
   else
   {
     MessageBoxA(0, Text, Caption, 0);
   }
-  FreeLibrary(hModule);
+  FreeLibrary(hLibModule);
   ExitProcess(0);
 }
 // 401000: using guessed type void __noreturn start();

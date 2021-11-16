@@ -16,31 +16,31 @@ ATOM __cdecl sub_4010C0(HINSTANCE hInstance);
 HWND __cdecl sub_401150(HINSTANCE hInstance, int nCmdShow);
 LRESULT __stdcall sub_4011B0(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 INT_PTR __stdcall DialogFunc(HWND, UINT, WPARAM, LPARAM); // idb
-// BOOL __stdcall EndDialog(HWND hDlg, INT_PTR nResult);
-// LRESULT __stdcall DefWindowProcA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
-// BOOL __stdcall DestroyWindow(HWND hWnd);
-// INT_PTR __stdcall DialogBoxParamA(HINSTANCE hInstance, LPCSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
-// HDC __stdcall BeginPaint(HWND hWnd, LPPAINTSTRUCT lpPaint);
-// BOOL __stdcall GetClientRect(HWND hWnd, LPRECT lpRect);
-// int __stdcall DrawTextA(HDC hdc, LPCSTR lpchText, int cchText, LPRECT lprc, UINT format);
-// BOOL __stdcall EndPaint(HWND hWnd, const PAINTSTRUCT *lpPaint);
-// void __stdcall PostQuitMessage(int nExitCode);
-// HWND __stdcall CreateWindowExA(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam);
-// BOOL __stdcall ShowWindow(HWND hWnd, int nCmdShow);
-// BOOL __stdcall UpdateWindow(HWND hWnd);
-// HICON __stdcall LoadIconA(HINSTANCE hInstance, LPCSTR lpIconName);
-// HCURSOR __stdcall LoadCursorA(HINSTANCE hInstance, LPCSTR lpCursorName);
-// ATOM __stdcall RegisterClassExA(const WNDCLASSEXA *);
-// int __stdcall LoadStringA(HINSTANCE hInstance, UINT uID, LPSTR lpBuffer, int cchBufferMax);
-// HACCEL __stdcall LoadAcceleratorsA(HINSTANCE hInstance, LPCSTR lpTableName);
-// BOOL __stdcall GetMessageA(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax);
-// int __stdcall TranslateAcceleratorA(HWND hWnd, HACCEL hAccTable, LPMSG lpMsg);
-// BOOL __stdcall TranslateMessage(const MSG *lpMsg);
-// LRESULT __stdcall DispatchMessageA(const MSG *lpMsg);
 
 //-------------------------------------------------------------------------
 // Data declarations
 
+// extern BOOL (__stdcall *EndDialog)(HWND hDlg, INT_PTR nResult);
+// extern LRESULT (__stdcall *DefWindowProcA)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+// extern BOOL (__stdcall *DestroyWindow)(HWND hWnd);
+// extern INT_PTR (__stdcall *DialogBoxParamA)(HINSTANCE hInstance, LPCSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
+// extern HDC (__stdcall *BeginPaint)(HWND hWnd, LPPAINTSTRUCT lpPaint);
+// extern BOOL (__stdcall *GetClientRect)(HWND hWnd, LPRECT lpRect);
+// extern int (__stdcall *DrawTextA)(HDC hdc, LPCSTR lpchText, int cchText, LPRECT lprc, UINT format);
+// extern BOOL (__stdcall *EndPaint)(HWND hWnd, const PAINTSTRUCT *lpPaint);
+// extern void (__stdcall *PostQuitMessage)(int nExitCode);
+// extern HWND (__stdcall *CreateWindowExA)(DWORD dwExStyle, LPCSTR lpClassName, LPCSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam);
+// extern BOOL (__stdcall *ShowWindow)(HWND hWnd, int nCmdShow);
+// extern BOOL (__stdcall *UpdateWindow)(HWND hWnd);
+// extern HICON (__stdcall *LoadIconA)(HINSTANCE hInstance, LPCSTR lpIconName);
+// extern HCURSOR (__stdcall *LoadCursorA)(HINSTANCE hInstance, LPCSTR lpCursorName);
+// extern ATOM (__stdcall *RegisterClassExA)(const WNDCLASSEXA *);
+// extern int (__stdcall *LoadStringA)(HINSTANCE hInstance, UINT uID, LPSTR lpBuffer, int cchBufferMax);
+// extern HACCEL (__stdcall *LoadAcceleratorsA)(HINSTANCE hInstance, LPCSTR lpTableName);
+// extern BOOL (__stdcall *GetMessageA)(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax);
+// extern int (__stdcall *TranslateAcceleratorA)(HWND hWnd, HACCEL hAccTable, LPMSG lpMsg);
+// extern BOOL (__stdcall *TranslateMessage)(const MSG *lpMsg);
+// extern LRESULT (__stdcall *DispatchMessageA)(const MSG *lpMsg);
 CHAR ClassName[100] =
 {
   '\0',
@@ -254,7 +254,7 @@ HINSTANCE hInstance = NULL; // idb
 int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
   int result; // eax
-  HACCEL v5; // esi
+  HACCEL AcceleratorsA; // esi
   struct tagMSG Msg; // [esp+8h] [ebp-1Ch] BYREF
 
   LoadStringA(hInstance, 0x67u, WindowName, 100);
@@ -263,16 +263,16 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
   result = (int)sub_401150(hInstance, nShowCmd);
   if ( result )
   {
-    v5 = LoadAcceleratorsA(hInstance, (LPCSTR)0x6D);
+    AcceleratorsA = LoadAcceleratorsA(hInstance, (LPCSTR)0x6D);
     while ( GetMessageA(&Msg, 0, 0, 0) )
     {
-      if ( !TranslateAcceleratorA(Msg.hwnd, v5, &Msg) )
+      if ( !TranslateAcceleratorA(Msg.hwnd, AcceleratorsA, &Msg) )
       {
         TranslateMessage(&Msg);
         DispatchMessageA(&Msg);
       }
     }
-    result = Msg.wParam;
+    return Msg.wParam;
   }
   return result;
 }
@@ -310,7 +310,7 @@ HWND __cdecl sub_401150(HINSTANCE hInstance, int nCmdShow)
   {
     ShowWindow(result, nCmdShow);
     UpdateWindow(v3);
-    result = (HWND)1;
+    return (HWND)1;
   }
   return result;
 }
@@ -318,7 +318,6 @@ HWND __cdecl sub_401150(HINSTANCE hInstance, int nCmdShow)
 //----- (004011B0) --------------------------------------------------------
 LRESULT __stdcall sub_4011B0(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
 {
-  LRESULT result; // eax
   HDC v5; // ebx
   struct tagRECT Rect; // [esp+0h] [ebp-B4h] BYREF
   struct tagPAINTSTRUCT Paint; // [esp+10h] [ebp-A4h] BYREF
@@ -329,36 +328,31 @@ LRESULT __stdcall sub_4011B0(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
   {
     case 2u:
       PostQuitMessage(0);
-      result = 0;
-      break;
+      return 0;
     case 0xFu:
       v5 = BeginPaint(hWnd, &Paint);
       GetClientRect(hWnd, &Rect);
       DrawTextA(v5, Buffer, strlen(Buffer), &Rect, 1u);
       EndPaint(hWnd, &Paint);
-      result = 0;
-      break;
+      return 0;
     case 0x111u:
       if ( (unsigned __int16)wParam == 104 )
       {
         DialogBoxParamA(hInstance, (LPCSTR)0x67, hWnd, DialogFunc, 0);
-        result = 0;
+        return 0;
       }
       else if ( (unsigned __int16)wParam == 105 )
       {
         DestroyWindow(hWnd);
-        result = 0;
+        return 0;
       }
       else
       {
-        result = DefWindowProcA(hWnd, 0x111u, wParam, lParam);
+        return DefWindowProcA(hWnd, 0x111u, wParam, lParam);
       }
-      break;
     default:
-      result = DefWindowProcA(hWnd, Msg, wParam, lParam);
-      break;
+      return DefWindowProcA(hWnd, Msg, wParam, lParam);
   }
-  return result;
 }
 
 //----- (00401310) --------------------------------------------------------

@@ -10,17 +10,9 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void __usercall init_proc(int a1@<eax>);
 void sub_8048270();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int _IO_putc(int c, _IO_FILE *fp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void *__usercall call_gmon_start@<eax>(int a1@<eax>);
-// void _do_global_dtors_aux();
-// int frame_dummy();
 int __cdecl main(int argc, const char **argv, const char **envp);
-// int __fastcall _do_global_ctors_aux(int a1, int a2);
-// void term_proc(void); idb
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -39,7 +31,6 @@ void sub_8048270()
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
   int v3; // ebx
-  int v5; // eax
   int v6; // eax
   int v7; // eax
   const char **v8; // eax
@@ -81,17 +72,16 @@ int __cdecl main(int argc, const char **argv, const char **envp)
       v9 = argc;
       if ( *(_BYTE *)envp == 47 )
         v9 = argc + 1;
-      v5 = main(v9, argv, (const char **)((char *)envp + 1));
+      return main(v9, argv, (const char **)((char *)envp + 1));
     }
     else if ( argv == (const char **)*(char *)envp )
     {
-      v5 = _IO_putc(*((char *)envp + 31), stdout);
+      return _IO_putc(*((char *)envp + 31), stdout);
     }
     else
     {
-      v5 = main(-65, argv, (const char **)((char *)envp + 1));
+      return main(-65, argv, (const char **)((char *)envp + 1));
     }
-    return v5;
   }
   if ( argc > 0 )
   {
@@ -100,15 +90,14 @@ int __cdecl main(int argc, const char **argv, const char **envp)
     return main(2, (const char **)v10, (const char **)v11);
   }
   v3 = 0;
-  if ( *(_BYTE *)envp == 47
-    || (v8 = (const char **)main(
-                              -61,
-                              (const char **)*(char *)envp,
-                              (const char **)"!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry"),
-        main(0, v8, (const char **)((char *)envp + 1))) )
-  {
-    v3 = 1;
-  }
+  if ( *(_BYTE *)envp == 47 )
+    return 1;
+  v8 = (const char **)main(
+                        -61,
+                        (const char **)*(char *)envp,
+                        (const char **)"!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry");
+  if ( main(0, v8, (const char **)((char *)envp + 1)) )
+    return 1;
   return v3;
 }
 

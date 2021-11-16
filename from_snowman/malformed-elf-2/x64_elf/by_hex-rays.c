@@ -31,7 +31,6 @@ void sub_400786();
 void sub_400796();
 // void srand(unsigned int seed);
 void sub_4007A6();
-// __int64 __gmon_start__(void); weak
 void sub_4007B6();
 // time_t time(time_t *timer);
 void sub_4007C6();
@@ -41,16 +40,15 @@ void sub_4007D6();
 void sub_4007E6();
 // int rand(void);
 void sub_4007F6();
-void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
+void __fastcall __noreturn start(__int64, __int64, void (*)(void));
 __int64 sub_400830();
 __int64 sub_400860();
 __int64 __fastcall sub_4008A0(); // weak
 __int64 sub_4008C0();
 __int64 __fastcall main(int a1, char **a2, char **a3);
 unsigned __int64 sub_400996();
-void __fastcall init(unsigned int a1, __int64 a2, __int64 a3);
+void init(void); // idb
 void fini(void); // idb
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -169,7 +167,7 @@ void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void))
 
   v4 = v5;
   v5 = v3;
-  __libc_start_main((int (__fastcall *)(int, char **, char **))main, v4, &retaddr, (void (*)(void))init, fini, a3, &v5);
+  __libc_start_main((int (__fastcall *)(int, char **, char **))main, v4, &retaddr, init, fini, a3, &v5);
   __halt();
 }
 // 400806: positive sp value 8 has been found
@@ -182,7 +180,7 @@ __int64 sub_400830()
 
   result = 6295719LL - (_QWORD)&stdout;
   if ( (unsigned __int64)(6295719LL - (_QWORD)&stdout) > 0xE )
-    result = 0LL;
+    return 0LL;
   return result;
 }
 
@@ -212,6 +210,7 @@ __int64 sub_4008C0()
 {
   return sub_400860();
 }
+// 0: invalid function type has been ignored
 // 4008C0: could not find valid save-restore pair for rbp
 // 0: using guessed type __int64 (__fastcall *aOff64T)(_QWORD);
 
@@ -265,21 +264,22 @@ unsigned __int64 sub_400996()
   fputs(dest, stdout);
   return __readfsqword(0x28u) ^ v10;
 }
+// 400996: using guessed type char anonymous_0[8];
 
 //----- (0000000000400B10) ----------------------------------------------------
-void __fastcall init(unsigned int a1, __int64 a2, __int64 a3)
+void init(void)
 {
-  signed __int64 v3; // rbp
-  __int64 v4; // rbx
+  signed __int64 v0; // rbp
+  __int64 v1; // rbx
 
-  v3 = &off_600E18 - funcs_400B69;
-  v4 = 0LL;
+  v0 = &off_600E18 - funcs_400B69;
+  v1 = 0LL;
   init_proc();
-  if ( v3 )
+  if ( v0 )
   {
     do
-      funcs_400B69[v4++]();
-    while ( v4 != v3 );
+      funcs_400B69[v1++]();
+    while ( v1 != v0 );
   }
 }
 // 600E10: using guessed type __int64 (__fastcall *funcs_400B69[2])();

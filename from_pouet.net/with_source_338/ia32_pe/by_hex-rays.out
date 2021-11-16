@@ -1,4 +1,6 @@
-Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
+
+Database SUBJECTS/from_pouet.net/with_source_338/ia32_pe/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,47 +10,16 @@ Possible file format: Portable executable for 80386 (PE) (IDADIR/loaders/pe.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_pouet.net/with_source_338/ia32_pe/subject.exe' into database...
-Detected file format: Portable executable for 80386 (PE)
-Warning: image directories are covered by the section table, some entries will be ignored
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-The input file has unaligned section pointers.
-Usually it means that it has been modified to hide its contents.
- -> OK
-  0. Creating a new segment  (00410000-00830000) ... ... OK
-Truncated section 'd3dx9_30' at file offsets 0x0..0x400
-Will read 0x3E1 bytes -> OK
-Reading exports directory...
-Number of exported names 893246 is incorrect, maximum possible value is 848. Do you want to continue with the new value? -> ~Y~es
-Can't find translation for relative virtual address 8D244BFE, continue? -> ~Y~es
-Reading imports directory...
-  1. Creating a new segment  (00410098-00830000) ... ... OK
-The imports segment seems to be destroyed. This MAY mean that
-the file was packed or otherwise modified in order to make it
-more difficult to analyze. If you want to see the imports
-segment in the original form, please reload it with the
-'make imports section' checkbox cleared. -> OK
-  2. Creating a new segment  (00410094-00410098) ... ... OK
-41009C: export table is corrupted
-Number of exported names 893246 is incorrect, maximum possible value is 848. Do you want to continue with the new value? -> ~Y~es
-Type library 'mssdk_win7' loaded. Applying types...
-Types applied to 0 names.
-Plan  FLIRT signature: SEH for vc7-14
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_pouet.net/with_source_338/ia32_pe/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Using FLIRT signature: SEH for vc7-14
-Propagating type information...
-Function argument information has been propagated
-lumina: No functions
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+finished -> OK
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

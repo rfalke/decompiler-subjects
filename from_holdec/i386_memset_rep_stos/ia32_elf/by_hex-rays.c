@@ -10,34 +10,22 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
 // int printf(const char *format, ...);
 // int puts(const char *s);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int putc(int c, FILE *stream);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049467();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// FILE **deregister_tm_clones();
-// int register_tm_clones();
-// FILE **_do_global_dtors_aux();
-// int frame_dummy();
-int __cdecl print(const char *a1);
-int __cdecl i386_memset_forward_b(void *a1, char a2, unsigned int a3);
-int __cdecl i386_memset_forward_w(_WORD *a1, __int16 a2, int a3);
-int __cdecl i386_memset_forward_l(void *a1, int a2, unsigned int a3);
-int __cdecl i386_memset_backward_b(_BYTE *a1, char a2, int a3);
-int __cdecl i386_memset_backward_w(_WORD *a1, __int16 a2, int a3);
-int __cdecl i386_memset_backward_l(_DWORD *a1, int a2, int a3);
-int __cdecl i386_memset_both_b(void *a1, char a2, unsigned int a3);
-int __cdecl i386_memset_both_w(_WORD *a1, __int16 a2, int a3);
-int __cdecl i386_memset_both_l(void *a1, int a2, unsigned int a3);
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
+int __cdecl print(const char *);
+int __cdecl i386_memset_forward_b(void *, char, unsigned int);
+int __cdecl i386_memset_forward_w(_WORD *, __int16, int);
+int __cdecl i386_memset_forward_l(void *, int, unsigned int);
+int __cdecl i386_memset_backward_b(_BYTE *, char, int);
+int __cdecl i386_memset_backward_w(_WORD *, __int16, int);
+int __cdecl i386_memset_backward_l(_DWORD *, int, int);
+int __cdecl i386_memset_both_b(void *, char, unsigned int);
+int __cdecl i386_memset_both_w(_WORD *, __int16, int);
+int __cdecl i386_memset_both_l(void *, int, unsigned int);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -63,7 +51,7 @@ int sub_8049030()
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
   unsigned int i; // ebx
-  unsigned int v4; // ecx
+  unsigned int v4; // eax
 
   for ( i = 0; i != 30; ++i )
   {

@@ -13,10 +13,10 @@
 
 #define __thiscall __cdecl // Test compile in C mode
 
-int __cdecl sub_401000(int *a1);
-// unsigned int __usercall sub_4011C0@<eax>(_BYTE *a1@<edx>, unsigned __int8 *a2@<ecx>, _DWORD *a3);
-// void __usercall sub_401780(__m128i *a1@<edx>, int a2@<ecx>, unsigned int a3, _DWORD *a4, __m128i *a5);
-char __fastcall sub_401960(char *Source, int a2);
+int __cdecl sub_401000(int *);
+// unsigned int __usercall sub_4011C0@<eax>(_BYTE *@<edx>, unsigned __int8 *@<ecx>, _DWORD *);
+// void __usercall sub_401780(__m128i *a1@<edx>, const __m128i *a2@<ecx>, unsigned int a3, _DWORD *a4, __m128i *a5);
+char __fastcall sub_401960(char *Source, int);
 int __thiscall sub_4019E0(char *this);
 int __cdecl main(int argc, const char **argv, const char **envp);
 // char *__cdecl strncpy(char *Destination, const char *Source, size_t Count);
@@ -29,45 +29,45 @@ int __cdecl main(int argc, const char **argv, const char **envp);
 // void *__cdecl malloc(size_t Size);
 // size_t __cdecl fread(void *Buffer, size_t ElementSize, size_t ElementCount, FILE *Stream);
 // void __cdecl free(void *Block);
-void *__cdecl sub_402C3F(void *a1);
+void *__cdecl sub_402C3F(void *);
 // void __cdecl _invalid_parameter_noinfo();
 // int *__cdecl _errno();
 void **sub_404114();
 int sub_404B55();
 // _DWORD __cdecl flsall(_DWORD); weak
 // void *__cdecl memmove(void *, const void *Src, size_t Size);
-void *__cdecl sub_406BFE(void *a1);
+void *__cdecl sub_406BFE(void *);
 // void *__cdecl memset(void *, int Val, size_t Size);
 // int __stdcall __CxxUnhandledExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo); idb
 int sub_407461();
-int __cdecl sub_407BDC(int a1);
+int __cdecl sub_407BDC(int);
 void sub_407CC5();
 void __cdecl sub_407CE5(); // idb
 // int __crtIsPackagedApp(void); weak
 // int __cdecl __crtSetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter); idb
 void __cdecl sub_408119(DWORD dwMilliseconds);
 void sub_408152();
-int __cdecl sub_40A38F(int a1);
+int __cdecl sub_40A38F(int);
 PVOID sub_40A39C();
-int __cdecl sub_40A5BA(int a1);
-int __cdecl sub_40A766(const WCHAR *a1, int a2, int a3);
+int __cdecl sub_40A5BA(int);
+int __cdecl sub_40A766(const WCHAR *, int, int);
 HANDLE sub_40BF74();
-int __cdecl sub_40C332(_DWORD *a1);
-int __cdecl sub_40C860(unsigned __int16 *a1, _DWORD *a2);
-int __cdecl sub_40CDD2(unsigned __int16 *a1, _DWORD *a2);
-// DWORD __stdcall GetLastError();
-// BOOL __stdcall IsDebuggerPresent();
-// PVOID __stdcall EncodePointer(PVOID Ptr);
-// PVOID __stdcall DecodePointer(PVOID Ptr);
-// BOOL __stdcall CloseHandle(HANDLE hObject);
-// FARPROC __stdcall GetProcAddress(HMODULE hModule, LPCSTR lpProcName);
-// void __stdcall Sleep(DWORD dwMilliseconds);
-// HMODULE __stdcall LoadLibraryExW(LPCWSTR lpLibFileName, HANDLE hFile, DWORD dwFlags);
-// void __stdcall OutputDebugStringW(LPCWSTR lpOutputString);
+int __cdecl sub_40C332(_DWORD *);
+int __cdecl sub_40C860(unsigned __int16 *, _DWORD *);
+int __cdecl sub_40CDD2(unsigned __int16 *, _DWORD *);
 
 //-------------------------------------------------------------------------
 // Data declarations
 
+// extern DWORD (__stdcall *GetLastError)();
+// extern BOOL (__stdcall *IsDebuggerPresent)();
+// extern PVOID (__stdcall *EncodePointer)(PVOID Ptr);
+// extern PVOID (__stdcall *DecodePointer)(PVOID Ptr);
+// extern BOOL (__stdcall *CloseHandle)(HANDLE hObject);
+// extern FARPROC (__stdcall *GetProcAddress)(HMODULE hModule, LPCSTR lpProcName);
+// extern void (__stdcall *Sleep)(DWORD dwMilliseconds);
+// extern HMODULE (__stdcall *LoadLibraryExW)(LPCWSTR lpLibFileName, HANDLE hFile, DWORD dwFlags);
+// extern void (__stdcall *OutputDebugStringW)(LPCWSTR lpOutputString);
 _UNKNOWN unk_414D04; // weak
 _UNKNOWN unk_414D28; // weak
 int dword_416130[256] =
@@ -328,7 +328,7 @@ int dword_416130[256] =
   1414812756,
   -1145324613,
   370546198
-}; // idb
+}; // weak
 int dword_416530[256] =
 {
   1667474886,
@@ -587,7 +587,7 @@ int dword_416530[256] =
   1414855848,
   -1145317779,
   370555436
-}; // idb
+}; // weak
 int dword_416930[256] =
 {
   1671808611,
@@ -846,7 +846,7 @@ int dword_416930[256] =
   1425844308,
   -1143575109,
   372911126
-}; // idb
+}; // weak
 int dword_416D30[256] =
 {
   -1513725085,
@@ -1105,7 +1105,7 @@ int dword_416D30[256] =
   -56077228,
   -697451589,
   975967766
-}; // idb
+}; // weak
 int dword_417130[256] =
 {
   -966564955,
@@ -1364,11 +1364,11 @@ int dword_417130[256] =
   -1470868228,
   1841019862,
   739644986
-}; // idb
+}; // weak
 _UNKNOWN unk_417530; // weak
 __int128 xmmword_41753C = 0x6373726576206C6C6F74206C61746F54i64; // weak
-void (*dword_4175B0[2])(void) = { NULL, NULL }; // idb
-void (*dword_4175B8[2])(void) = { NULL, NULL }; // idb
+void (*dword_4175B0[2])(void) = { NULL, NULL }; // weak
+void (*dword_4175B8[2])(void) = { NULL, NULL }; // weak
 void *off_418170 = &unk_41A000; // weak
 HANDLE hObject = (HANDLE)0xFFFFFFFE; // idb
 int dword_418E98 = 1024; // weak
@@ -1448,6 +1448,7 @@ int __cdecl sub_401000(int *a1)
   return 0;
 }
 // 401009: variable 'v1' is possibly undefined
+// 416130: using guessed type int dword_416130[256];
 
 //----- (004011C0) --------------------------------------------------------
 unsigned int __usercall sub_4011C0@<eax>(_BYTE *a1@<edx>, unsigned __int8 *a2@<ecx>, _DWORD *a3)
@@ -1531,9 +1532,14 @@ unsigned int __usercall sub_4011C0@<eax>(_BYTE *a1@<edx>, unsigned __int8 *a2@<e
   a1[14] = BYTE1(v17);
   return result;
 }
+// 416130: using guessed type int dword_416130[256];
+// 416530: using guessed type int dword_416530[256];
+// 416930: using guessed type int dword_416930[256];
+// 416D30: using guessed type int dword_416D30[256];
+// 417130: using guessed type int dword_417130[256];
 
 //----- (00401780) --------------------------------------------------------
-void __usercall sub_401780(__m128i *a1@<edx>, int a2@<ecx>, unsigned int a3, _DWORD *a4, __m128i *a5)
+void __usercall sub_401780(__m128i *a1@<edx>, const __m128i *a2@<ecx>, unsigned int a3, _DWORD *a4, __m128i *a5)
 {
   unsigned int v5; // edi
   const __m128i *v6; // ebx
@@ -1571,13 +1577,13 @@ void __usercall sub_401780(__m128i *a1@<edx>, int a2@<ecx>, unsigned int a3, _DW
   __m128i *v38; // [esp+30h] [ebp-4h]
 
   v5 = a3;
-  v6 = (const __m128i *)a2;
+  v6 = a2;
   v38 = a1;
   v7 = a5;
-  v36 = (const __m128i *)a2;
+  v36 = a2;
   if ( a3 >= 0x10 )
   {
-    v8 = a2 - (_DWORD)a5;
+    v8 = (char *)a2 - (char *)a5;
     v37 = a3 >> 4;
     do
     {
@@ -1675,7 +1681,7 @@ void __usercall sub_401780(__m128i *a1@<edx>, int a2@<ecx>, unsigned int a3, _DW
     *v32 = v31;
   }
 }
-// 40184A: conditional instruction was optimized away because of 'edi.4!=0'
+// 40184A: conditional instruction was optimized away because edi.4!=0
 
 //----- (00401960) --------------------------------------------------------
 char __fastcall sub_401960(char *Source, int a2)
@@ -1701,7 +1707,7 @@ char __fastcall sub_401960(char *Source, int a2)
       if ( ++v5 >= 16 )
         return 1;
     }
-    result = 0;
+    return 0;
   }
   return result;
 }
@@ -1725,7 +1731,6 @@ int __thiscall sub_4019E0(char *this)
 //----- (00401A00) --------------------------------------------------------
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
-  int result; // eax
   const char **v4; // esi
   int i; // ecx
   FILE *v6; // edi
@@ -1781,27 +1786,28 @@ int __cdecl main(int argc, const char **argv, const char **envp)
       v14.m128i_i8[j] = j ^ v11;
     if ( sub_401000(v13) )
     {
-      result = 4;
+      return 4;
     }
     else
     {
-      sub_401780(v10, (int)Stream, v7, v13, &v14);
+      sub_401780(v10, (const __m128i *)Stream, v7, v13, &v14);
       fwrite(v10, v7, 1u, v8);
       free(Stream);
       free(v10);
       fclose(v8);
-      result = 0;
+      return 0;
     }
   }
   else
   {
     fclose(v6);
-    result = 4;
+    return 4;
   }
-  return result;
 }
 // 401B39: variable 'v9' is possibly undefined
 // 41753C: using guessed type __int128 xmmword_41753C;
+// 401A00: using guessed type char var_14[16];
+// 401A00: using guessed type int var_134[61];
 
 //----- (00402C3F) --------------------------------------------------------
 void *__cdecl sub_402C3F(void *a1)
@@ -1866,6 +1872,7 @@ void sub_407CC5()
       (*i)();
   }
 }
+// 4175B0: using guessed type void (*dword_4175B0[2])(void);
 
 //----- (00407CE5) --------------------------------------------------------
 void __cdecl sub_407CE5()
@@ -1878,6 +1885,7 @@ void __cdecl sub_407CE5()
       (*i)();
   }
 }
+// 4175B8: using guessed type void (*dword_4175B8[2])(void);
 
 //----- (00408119) --------------------------------------------------------
 void __cdecl sub_408119(DWORD dwMilliseconds)
@@ -1925,7 +1933,7 @@ int __cdecl sub_40A766(const WCHAR *a1, int a2, int a3)
 {
   int v3; // esi
   PVOID v4; // edi
-  HMODULE v5; // edi
+  HMODULE Library; // edi
   int (__stdcall *MessageBoxW)(HWND, LPCWSTR, LPCWSTR, UINT); // eax
   HWND (__stdcall *GetActiveWindow)(); // eax
   HWND (__stdcall *GetLastActivePopup)(HWND); // eax
@@ -1941,7 +1949,7 @@ int __cdecl sub_40A766(const WCHAR *a1, int a2, int a3)
   int v20; // [esp+10h] [ebp-20h]
   LPCWSTR lpOutputString; // [esp+14h] [ebp-1Ch]
   int (__stdcall *v22)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD); // [esp+18h] [ebp-18h]
-  int (*v23)(void); // [esp+1Ch] [ebp-14h]
+  int (*IsPackagedApp)(void); // [esp+1Ch] [ebp-14h]
   char v24[12]; // [esp+20h] [ebp-10h] BYREF
 
   lpOutputString = a1;
@@ -1949,33 +1957,33 @@ int __cdecl sub_40A766(const WCHAR *a1, int a2, int a3)
   v20 = a2;
   v4 = EncodePointer(0);
   v22 = (int (__stdcall *)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD))v4;
-  v23 = (int (*)(void))__crtIsPackagedApp();
+  IsPackagedApp = (int (*)(void))__crtIsPackagedApp();
   if ( !dword_419F18 )
   {
-    v5 = LoadLibraryExW(L"USER32.DLL", 0, 0x800u);
-    if ( !v5 )
+    Library = LoadLibraryExW(L"USER32.DLL", 0, 0x800u);
+    if ( !Library )
     {
       if ( GetLastError() != 87 )
         return 0;
-      v5 = LoadLibraryExW(L"USER32.DLL", 0, 0);
-      if ( !v5 )
+      Library = LoadLibraryExW(L"USER32.DLL", 0, 0);
+      if ( !Library )
         return 0;
     }
-    MessageBoxW = (int (__stdcall *)(HWND, LPCWSTR, LPCWSTR, UINT))GetProcAddress(v5, "MessageBoxW");
+    MessageBoxW = (int (__stdcall *)(HWND, LPCWSTR, LPCWSTR, UINT))GetProcAddress(Library, "MessageBoxW");
     if ( !MessageBoxW )
       return 0;
     dword_419F18 = EncodePointer(MessageBoxW);
-    GetActiveWindow = (HWND (__stdcall *)())GetProcAddress(v5, "GetActiveWindow");
+    GetActiveWindow = (HWND (__stdcall *)())GetProcAddress(Library, "GetActiveWindow");
     dword_419F1C = EncodePointer(GetActiveWindow);
-    GetLastActivePopup = (HWND (__stdcall *)(HWND))GetProcAddress(v5, "GetLastActivePopup");
+    GetLastActivePopup = (HWND (__stdcall *)(HWND))GetProcAddress(Library, "GetLastActivePopup");
     dword_419F20 = EncodePointer(GetLastActivePopup);
     GetUserObjectInformationW = (BOOL (__stdcall *)(HANDLE, int, PVOID, DWORD, LPDWORD))GetProcAddress(
-                                                                                          v5,
+                                                                                          Library,
                                                                                           "GetUserObjectInformationW");
     dword_419F28 = EncodePointer(GetUserObjectInformationW);
     if ( dword_419F28 )
     {
-      GetProcessWindowStation = (HWINSTA (__stdcall *)())GetProcAddress(v5, "GetProcessWindowStation");
+      GetProcessWindowStation = (HWINSTA (__stdcall *)())GetProcAddress(Library, "GetProcessWindowStation");
       dword_419F24 = EncodePointer(GetProcessWindowStation);
     }
     v4 = v22;
@@ -1984,22 +1992,22 @@ int __cdecl sub_40A766(const WCHAR *a1, int a2, int a3)
   {
     if ( lpOutputString )
       OutputDebugStringW(lpOutputString);
-    if ( v23 )
+    if ( IsPackagedApp )
       return 4;
   }
-  else if ( v23 )
+  else if ( IsPackagedApp )
   {
     DecodePointer(dword_419F18);
     return 3;
   }
   if ( dword_419F24 == v4
     || dword_419F28 == v4
-    || (v23 = (int (*)(void))DecodePointer(dword_419F24),
+    || (IsPackagedApp = (int (*)(void))DecodePointer(dword_419F24),
         v12 = DecodePointer(dword_419F28),
         v22 = (int (__stdcall *)(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD))v12,
-        !v23)
+        !IsPackagedApp)
     || !v12
-    || (v13 = v23()) != 0 && v22(v13, 1, v24, 12, v19) && (v24[8] & 1) != 0 )
+    || (v13 = IsPackagedApp()) != 0 && v22(v13, 1, v24, 12, v19) && (v24[8] & 1) != 0 )
   {
     if ( dword_419F1C != v4 )
     {
@@ -2030,6 +2038,7 @@ int __cdecl sub_40A766(const WCHAR *a1, int a2, int a3)
   return 0;
 }
 // 407E3E: using guessed type int __crtIsPackagedApp(void);
+// 40A766: using guessed type char var_24[4];
 
 //----- (0040BF74) --------------------------------------------------------
 HANDLE sub_40BF74()
@@ -2038,27 +2047,24 @@ HANDLE sub_40BF74()
 
   result = hObject;
   if ( hObject != (HANDLE)-1 && hObject != (HANDLE)-2 )
-    result = (HANDLE)CloseHandle(hObject);
+    return (HANDLE)CloseHandle(hObject);
   return result;
 }
 
 //----- (0040C332) --------------------------------------------------------
 int __cdecl sub_40C332(_DWORD *a1)
 {
-  int result; // eax
-
   if ( a1 )
   {
     *a1 = dword_419F3C;
-    result = 0;
+    return 0;
   }
   else
   {
     *_errno() = 22;
     _invalid_parameter_noinfo();
-    result = 22;
+    return 22;
   }
-  return result;
 }
 // 419F3C: using guessed type int dword_419F3C;
 
@@ -2087,15 +2093,15 @@ int __cdecl sub_40C860(unsigned __int16 *a1, _DWORD *a2)
   unsigned int v21; // eax
   int *v22; // edx
   int v23; // eax
-  int n; // ecx
+  int ii; // ecx
   int v25; // edx
   char v26; // cl
-  bool ii; // zf
+  bool jj; // zf
   int v28; // edx
   unsigned int v29; // eax
   int v30; // ecx
   unsigned int v31; // eax
-  int jj; // edx
+  int kk; // edx
   unsigned int v33; // eax
   int v34; // eax
   int v35; // edx
@@ -2103,18 +2109,18 @@ int __cdecl sub_40C860(unsigned __int16 *a1, _DWORD *a2)
   int v37; // eax
   unsigned int v38; // eax
   int *v39; // edx
-  int kk; // ecx
+  int mm; // ecx
   int v41; // ecx
   int v42; // edi
   unsigned int v43; // eax
   int v44; // edx
   int *v45; // edx
-  int m; // ecx
+  int n; // ecx
   int v47; // ecx
   int k; // esi
   unsigned int v49; // eax
   int *v50; // edx
-  int l; // ecx
+  int m; // ecx
   unsigned int v52; // esi
   int v53; // eax
   int v55; // [esp+Ch] [ebp-44h]
@@ -2231,7 +2237,7 @@ LABEL_24:
       {
         if ( v18 < dword_418E98 )
         {
-          v81 &= 0x7FFFFFFFu;
+          v81 &= ~0x80000000;
           v61 = v18 + dword_418EAC;
           v70 = dword_418EA4 / 32;
           v47 = dword_418EA4 % 32;
@@ -2245,12 +2251,12 @@ LABEL_24:
           v5 = v61;
           v50 = &v83 - v70;
           v2 = 0;
-          for ( l = 2; l >= 0; --l )
+          for ( m = 2; m >= 0; --m )
           {
-            if ( l < v70 )
-              *(&v81 + l) = 0;
+            if ( m < v70 )
+              *(&v81 + m) = 0;
             else
-              *(&v81 + l) = *v50;
+              *(&v81 + m) = *v50;
             --v50;
           }
         }
@@ -2275,12 +2281,12 @@ LABEL_24:
           }
           while ( v2 < 3 );
           v45 = &v83 - v64;
-          for ( m = 2; m >= 0; --m )
+          for ( n = 2; n >= 0; --n )
           {
-            if ( m < v64 )
-              *(&v81 + m) = 0;
+            if ( n < v64 )
+              *(&v81 + n) = 0;
             else
-              *(&v81 + m) = *v45;
+              *(&v81 + n) = *v45;
             --v45;
           }
           v5 = dword_418E98 + dword_418EAC;
@@ -2306,15 +2312,15 @@ LABEL_24:
       while ( v2 < 3 );
       v22 = &v83 - v57;
       v23 = v57;
-      for ( n = 2; n >= 0; --n )
+      for ( ii = 2; ii >= 0; --ii )
       {
-        if ( n < v23 )
+        if ( ii < v23 )
         {
-          *(&v81 + n) = 0;
+          *(&v81 + ii) = 0;
         }
         else
         {
-          *(&v81 + n) = *v22;
+          *(&v81 + ii) = *v22;
           v23 = v57;
         }
         --v22;
@@ -2323,7 +2329,7 @@ LABEL_24:
       v26 = 31 - (v62 + 1) % 32;
       if ( ((1 << v26) & *(&v81 + v25)) != 0 )
       {
-        for ( ii = (~(-1 << v26) & *(&v81 + v25)) == 0; ii; ii = *(&v81 + v25) == 0 )
+        for ( jj = (~(-1 << v26) & *(&v81 + v25)) == 0; jj; jj = *(&v81 + v25) == 0 )
         {
           if ( ++v25 >= 3 )
             goto LABEL_56;
@@ -2337,11 +2343,11 @@ LABEL_24:
         if ( v12 || v31 < v72 )
           v30 = 1;
         *(&v81 + v28) = v31;
-        for ( jj = v28 - 1; jj >= 0; *(&v81 + jj--) = v34 )
+        for ( kk = v28 - 1; kk >= 0; *(&v81 + kk--) = v34 )
         {
           if ( !v30 )
             break;
-          v33 = *(&v81 + jj);
+          v33 = *(&v81 + kk);
           v30 = 0;
           v12 = v33 + 1 < v33;
           v34 = v33 + 1;
@@ -2371,12 +2377,12 @@ LABEL_56:
       }
       while ( v37 < 3 );
       v39 = &v83 - v68;
-      for ( kk = 2; kk >= 0; --kk )
+      for ( mm = 2; mm >= 0; --mm )
       {
-        if ( kk < v68 )
-          *(&v81 + kk) = 0;
+        if ( mm < v68 )
+          *(&v81 + mm) = 0;
         else
-          *(&v81 + kk) = *v39;
+          *(&v81 + mm) = *v39;
         --v39;
       }
     }
@@ -2437,15 +2443,15 @@ int __cdecl sub_40CDD2(unsigned __int16 *a1, _DWORD *a2)
   unsigned int v21; // eax
   int *v22; // edx
   int v23; // eax
-  int n; // ecx
+  int ii; // ecx
   int v25; // edx
   char v26; // cl
-  bool ii; // zf
+  bool jj; // zf
   int v28; // edx
   unsigned int v29; // eax
   int v30; // ecx
   unsigned int v31; // eax
-  int jj; // edx
+  int kk; // edx
   unsigned int v33; // eax
   int v34; // eax
   int v35; // edx
@@ -2453,18 +2459,18 @@ int __cdecl sub_40CDD2(unsigned __int16 *a1, _DWORD *a2)
   int v37; // eax
   unsigned int v38; // eax
   int *v39; // edx
-  int kk; // ecx
+  int mm; // ecx
   int v41; // ecx
   int v42; // edi
   unsigned int v43; // eax
   int v44; // edx
   int *v45; // edx
-  int m; // ecx
+  int n; // ecx
   int v47; // ecx
   int k; // esi
   unsigned int v49; // eax
   int *v50; // edx
-  int l; // ecx
+  int m; // ecx
   unsigned int v52; // esi
   int v53; // eax
   int v55; // [esp+Ch] [ebp-44h]
@@ -2581,7 +2587,7 @@ LABEL_24:
       {
         if ( v18 < dword_418EB0 )
         {
-          v81 &= 0x7FFFFFFFu;
+          v81 &= ~0x80000000;
           v61 = v18 + dword_418EC4;
           v70 = dword_418EBC / 32;
           v47 = dword_418EBC % 32;
@@ -2595,12 +2601,12 @@ LABEL_24:
           v5 = v61;
           v50 = &v83 - v70;
           v2 = 0;
-          for ( l = 2; l >= 0; --l )
+          for ( m = 2; m >= 0; --m )
           {
-            if ( l < v70 )
-              *(&v81 + l) = 0;
+            if ( m < v70 )
+              *(&v81 + m) = 0;
             else
-              *(&v81 + l) = *v50;
+              *(&v81 + m) = *v50;
             --v50;
           }
         }
@@ -2625,12 +2631,12 @@ LABEL_24:
           }
           while ( v2 < 3 );
           v45 = &v83 - v64;
-          for ( m = 2; m >= 0; --m )
+          for ( n = 2; n >= 0; --n )
           {
-            if ( m < v64 )
-              *(&v81 + m) = 0;
+            if ( n < v64 )
+              *(&v81 + n) = 0;
             else
-              *(&v81 + m) = *v45;
+              *(&v81 + n) = *v45;
             --v45;
           }
           v5 = dword_418EB0 + dword_418EC4;
@@ -2656,15 +2662,15 @@ LABEL_24:
       while ( v2 < 3 );
       v22 = &v83 - v57;
       v23 = v57;
-      for ( n = 2; n >= 0; --n )
+      for ( ii = 2; ii >= 0; --ii )
       {
-        if ( n < v23 )
+        if ( ii < v23 )
         {
-          *(&v81 + n) = 0;
+          *(&v81 + ii) = 0;
         }
         else
         {
-          *(&v81 + n) = *v22;
+          *(&v81 + ii) = *v22;
           v23 = v57;
         }
         --v22;
@@ -2673,7 +2679,7 @@ LABEL_24:
       v26 = 31 - (v62 + 1) % 32;
       if ( ((1 << v26) & *(&v81 + v25)) != 0 )
       {
-        for ( ii = (~(-1 << v26) & *(&v81 + v25)) == 0; ii; ii = *(&v81 + v25) == 0 )
+        for ( jj = (~(-1 << v26) & *(&v81 + v25)) == 0; jj; jj = *(&v81 + v25) == 0 )
         {
           if ( ++v25 >= 3 )
             goto LABEL_56;
@@ -2687,11 +2693,11 @@ LABEL_24:
         if ( v12 || v31 < v72 )
           v30 = 1;
         *(&v81 + v28) = v31;
-        for ( jj = v28 - 1; jj >= 0; *(&v81 + jj--) = v34 )
+        for ( kk = v28 - 1; kk >= 0; *(&v81 + kk--) = v34 )
         {
           if ( !v30 )
             break;
-          v33 = *(&v81 + jj);
+          v33 = *(&v81 + kk);
           v30 = 0;
           v12 = v33 + 1 < v33;
           v34 = v33 + 1;
@@ -2721,12 +2727,12 @@ LABEL_56:
       }
       while ( v37 < 3 );
       v39 = &v83 - v68;
-      for ( kk = 2; kk >= 0; --kk )
+      for ( mm = 2; mm >= 0; --mm )
       {
-        if ( kk < v68 )
-          *(&v81 + kk) = 0;
+        if ( mm < v68 )
+          *(&v81 + mm) = 0;
         else
-          *(&v81 + kk) = *v39;
+          *(&v81 + mm) = *v39;
         --v39;
       }
     }

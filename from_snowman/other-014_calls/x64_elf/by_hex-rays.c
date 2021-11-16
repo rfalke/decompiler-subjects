@@ -11,7 +11,7 @@
 // Function declarations
 
 __int64 h();
-__int64 __fastcall g(int a1, int a2, int a3, int a4);
+__int64 __fastcall g(int, int, int, int);
 __int64 __fastcall f(); // weak
 
 

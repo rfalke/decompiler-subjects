@@ -19,7 +19,6 @@ int (*sub_4016F4())(void);
 void __cdecl sub_40171A(); // idb
 int __cdecl UserMathErrorFunction();
 int sub_401997();
-// LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -93,7 +92,7 @@ int (*dword_404D70[66])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
 _UNKNOWN unk_404E78; // weak
 void (*dword_404F78[66])(void) =
 {
@@ -163,8 +162,9 @@ void (*dword_404F78[66])(void) =
   NULL,
   NULL,
   NULL
-}; // idb
+}; // weak
 const _ThrowInfo PA.deinit = { 0u, NULL, NULL, &_CTA2PAD }; // idb
+// extern LPTOP_LEVEL_EXCEPTION_FILTER (__stdcall *SetUnhandledExceptionFilter)(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
 
 
 //----- (00401010) --------------------------------------------------------
@@ -208,6 +208,7 @@ int (*sub_4016F4())(void)
   }
   return result;
 }
+// 404D70: using guessed type int (*dword_404D70[66])(void);
 
 //----- (0040171A) --------------------------------------------------------
 void __cdecl sub_40171A()
@@ -226,6 +227,7 @@ void __cdecl sub_40171A()
     while ( v0 < dword_404F78 );
   }
 }
+// 404F78: using guessed type void (*dword_404F78[66])(void);
 
 //----- (00401994) --------------------------------------------------------
 int __cdecl UserMathErrorFunction()

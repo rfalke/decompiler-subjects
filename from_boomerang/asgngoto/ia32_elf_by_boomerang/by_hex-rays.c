@@ -10,7 +10,6 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int __fastcall init_proc(int a1, int a2);
 int sub_8048554();
 // int __cdecl do_lio(_DWORD, _DWORD, _DWORD, _DWORD); weak
 // int e_wsle(void); weak
@@ -18,24 +17,15 @@ int sub_8048554();
 // int __cdecl s_rsle(_DWORD); weak
 // int __cdecl __cxa_atexit(void (__cdecl *lpfunc)(void *), void *obj, void *lpdso_handle);
 // int e_rsle(void); weak
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int f_init(void); weak
 // int f_setsig(void); weak
 // void exit(int status);
 // int __cdecl f_setarg(_DWORD, _DWORD); weak
 // int __cdecl s_wsle(_DWORD); weak
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// int __fastcall call_gmon_start(int a1, int a2);
-// void _do_global_dtors_aux();
-// int frame_dummy();
 void MAIN__();
 int sub_8048760();
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall _libc_csu_init(int a1, int a2);
-// void _libc_csu_fini(void); idb
 int __cdecl atexit(void (__cdecl *lpfunc)(void *)); // idb
-// int __fastcall _do_global_ctors_aux(int a1, int a2);
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -47,7 +37,7 @@ _UNKNOWN unk_80489A8; // weak
 _UNKNOWN unk_80489AC; // weak
 _UNKNOWN unk_80489B0; // weak
 int (*dword_8049ABC)(void) = NULL; // weak
-_DWORD _dso_handle = 0; // idb
+_DWORD _dso_handle = 0; // weak
 _UNKNOWN _g77_cilist_0_0; // weak
 _UNKNOWN _g77_cilist_1_1; // weak
 _UNKNOWN _g77_cilist_2_2; // weak
@@ -81,6 +71,7 @@ void MAIN__()
     v0 = (int (*)())&loc_80487F3;
   __asm { jmp     eax }
 }
+// 804875E: unbalanced stack, ignored a potential tail call
 // 8048564: using guessed type int __cdecl do_lio(_DWORD, _DWORD, _DWORD, _DWORD);
 // 8048574: using guessed type int e_wsle(void);
 // 8048594: using guessed type int __cdecl s_rsle(_DWORD);
@@ -124,6 +115,7 @@ int __cdecl atexit(void (__cdecl *lpfunc)(void *))
     v1 = (void *)_dso_handle;
   return __cxa_atexit(lpfunc, 0, v1);
 }
+// 8049AF4: using guessed type _DWORD _dso_handle;
 
 // nfuncs=38 queued=5 decompiled=5 lumina nreq=0 worse=0 better=0
 // ALL OK, 5 function(s) have been successfully decompiled

@@ -10,20 +10,10 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int __usercall init_proc@<eax>(int a1@<eax>);
 int sub_8048290();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int printf(const char *format, ...);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void *__usercall call_gmon_start@<eax>(int a1@<eax>);
-// void _do_global_dtors_aux();
-// int frame_dummy();
-unsigned __int32 __cdecl bswap(unsigned int a1);
+unsigned __int32 __cdecl bswap(unsigned int);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall _libc_csu_init(int a1@<eax>);
-// void _libc_csu_fini(void); idb
-// int __fastcall _do_global_ctors_aux(int a1, int a2);
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations

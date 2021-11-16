@@ -10,24 +10,14 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int __usercall init_proc@<eax>(int a1@<eax>);
 void sub_8048314();
 // char *strchr(const char *s, int c);
 // char *fgets(char *s, int n, FILE *stream);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // int printf(const char *format, ...);
 // int fclose(FILE *stream);
 // FILE *fopen(const char *filename, const char *modes);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void *__usercall call_gmon_start@<eax>(int a1@<eax>);
-// void _do_global_dtors_aux();
-// int frame_dummy();
 const char *__cdecl chomp(char *s, int n, FILE *stream);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall _libc_csu_init(int a1@<eax>);
-// void _libc_csu_fini(void); idb
-// int _do_global_ctors_aux();
-// void term_proc();
 
 
 //----- (08048314) --------------------------------------------------------

@@ -1,0 +1,61 @@
+
+Database SUBJECTS/from_internet/fizzbuzz/answer_from_toby-speight/x64_elf/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
+Autoanalysis subsystem has been initialized.
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
+  Please check the Edit/Plugins menu for more informaton.
+=== start of cleanup script -> OK
+  function at 00401000  LIB  with name '.init_proc'
+  function at 00401020       with name 'sub_401020'
+  function at 00401030       with name '.write'
+  function at 00401040       with name '.omp_get_thread_num'
+  function at 00401050       with name '.omp_get_num_threads'
+  function at 00401060       with name '.sprintf'
+  function at 00401070       with name '.GOMP_parallel'
+  function at 00401080       with name 'main'
+  function at 00401260  LIB  with name '_start'
+  function at 00401290  LIB  with name '_dl_relocate_static_pie'
+  function at 004012A0  LIB  with name 'deregister_tm_clones'
+  function at 004012D0  LIB  with name 'register_tm_clones'
+  function at 00401310  LIB  with name '__do_global_dtors_aux'
+  function at 00401340  LIB  with name 'frame_dummy'
+  function at 00401350       with name 'main._omp_fn.0'
+  function at 00401410  LIB  with name '__libc_csu_init'
+  function at 00401480  LIB  with name '__libc_csu_fini'
+  function at 00401488  LIB  with name '.term_proc'
+  function at 00434618       with name 'write'
+  function at 00434620       with name 'omp_get_thread_num'
+  function at 00434628  LIB  with name '__libc_start_main'
+  function at 00434630       with name 'omp_get_num_threads'
+  function at 00434638       with name 'sprintf'
+  function at 00434640       with name 'GOMP_parallel'
+  function at 00434648       with name '__gmon_start__'
+finished -> OK
+TIMESTAMP decompiling 401020 size=000000000000000C times=0...
+The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 401350 size=00000000000000B9 times=0...
+TIMESTAMP decompiling 401080 size=00000000000001DE times=0...
+TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
+Unloading IDP module IDADIR/procs/pc64.so...

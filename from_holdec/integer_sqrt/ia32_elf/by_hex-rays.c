@@ -11,23 +11,13 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int init_proc();
 int sub_804831C();
-// int __gmon_start__(void); weak
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void __assert_fail(const char *assertion, const char *file, unsigned int line, const char *function);
 // int printf(const char *format, ...);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void _do_global_dtors_aux();
-// int frame_dummy();
 void integer_sqrt_in_asm();
 unsigned int __cdecl integer_sqrt_in_c(unsigned int n);
 unsigned int __cdecl integer_sqrt_in_c_cleaned_up(unsigned int n);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void _libc_csu_fini(void); idb
-// void _libc_csu_init(void); idb
-// void (*_do_global_ctors_aux())(void);
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations

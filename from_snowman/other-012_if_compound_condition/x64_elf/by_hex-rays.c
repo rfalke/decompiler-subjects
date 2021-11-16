@@ -12,7 +12,7 @@
 
 void g();
 void h();
-void __fastcall f(int a1, int a2, int a3);
+void __fastcall f(int, int, int);
 
 
 //----- (00000000004000E8) ----------------------------------------------------

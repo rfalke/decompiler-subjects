@@ -1,4 +1,6 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+
+Database SUBJECTS/from_pouet.net/with_source_382/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,33 +10,50 @@ Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_pouet.net/with_source_382/ia32_elf/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-08049ACA) ... ... OK
-  1. Creating a new segment  (0804A000-0988CD20) ... ... OK
-  2. Creating a new segment  (0988CD20-0988CD21) ... ... OK
-  3. Creating a new segment  (0988CD24-0988CD4C) ... ... OK
-  4. Creating a new segment  (0988CD4C-0988CD58) ... ... OK
-Processing relocations...
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 8 names.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_pouet.net/with_source_382/ia32_elf/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 0 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 08048398       with name '.srand'
+  function at 080483A8       with name '.SDL_ShowCursor'
+  function at 080483B8       with name '.SDL_GetTicks'
+  function at 080483C8       with name '.SDL_PollEvent'
+  function at 080483D8       with name '.SDL_SetVideoMode'
+  function at 080483E8       with name '.memcpy'
+  function at 080483F8       with name '.SDL_Flip'
+  function at 08048408       with name '.SDL_Quit'
+  function at 08048418       with name '.rand'
+  function at 08048428       with name '.powf'
+  function at 08048438       with name 'sub_8048438'
+  function at 0804844D       with name 'sub_804844D'
+  function at 0804847F       with name 'sub_804847F'
+  function at 08048498       with name 'sub_8048498'
+  function at 080484A2       with name 'sub_80484A2'
+  function at 080484CA       with name 'sub_80484CA'
+  function at 08048613       with name 'sub_8048613'
+  function at 080486BA       with name 'sub_80486BA'
+  function at 08048775       with name 'sub_8048775'
+  function at 0804881D       with name 'sub_804881D'
+  function at 08048C66       with name 'sub_8048C66'
+  function at 08048EBE       with name 'sub_8048EBE'
+  function at 0804938F       with name 'sub_804938F'
+  function at 080494A7       with name 'start'
+  function at 0988CD24       with name 'srand'
+  function at 0988CD28       with name 'SDL_ShowCursor'
+  function at 0988CD2C       with name 'SDL_GetTicks'
+  function at 0988CD30       with name 'SDL_PollEvent'
+  function at 0988CD34       with name 'SDL_SetVideoMode'
+  function at 0988CD38       with name 'memcpy'
+  function at 0988CD3C       with name 'SDL_Flip'
+  function at 0988CD40       with name 'SDL_Quit'
+  function at 0988CD44       with name 'rand'
+  function at 0988CD48       with name 'powf'
+finished -> OK
 TIMESTAMP decompiling 8048438 size=00000015 times=0...
 TIMESTAMP decompiling 804844D size=00000032 times=0...
 TIMESTAMP decompiling 804847F size=00000019 times=0...
@@ -58,4 +77,5 @@ TIMESTAMP decompiling 8048EBE size=000004D1 times=0...
 TIMESTAMP decompiling 804938F size=00000118 times=0...
 TIMESTAMP decompiling 80494A7 size=0000054B times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

@@ -12,7 +12,7 @@
 
 void g();
 void h();
-void __cdecl f(int a1, int a2, int a3, int a4);
+void __cdecl f(int, int, int, int);
 
 
 //----- (080480D8) --------------------------------------------------------
@@ -86,8 +86,8 @@ void __cdecl f(int a1, int a2, int a3, int a4)
     while ( v11 );
   }
 }
-// 804810A: conditional instruction was optimized away because of '%arg_0.4==0'
-// 804819D: conditional instruction was optimized away because of '%arg_0.4==0'
+// 804810A: conditional instruction was optimized away because %arg_0.4==0
+// 804819D: conditional instruction was optimized away because %arg_0.4==0
 // 8048119: variable 'v4' is possibly undefined
 // 8048128: variable 'v5' is possibly undefined
 // 8048131: variable 'v6' is possibly undefined

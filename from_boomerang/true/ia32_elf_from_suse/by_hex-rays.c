@@ -12,7 +12,6 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int __fastcall init_proc(int a1, int a2);
 int sub_80487C8();
 // size_t __fpending(FILE *fp);
 // int __overflow(_IO_FILE *, int);
@@ -29,7 +28,6 @@ int sub_80487C8();
 // char *bindtextdomain(const char *domainname, const char *dirname);
 // size_t strlen(const char *s);
 // size_t mbrtowc(wchar_t *pwc, const char *s, size_t n, mbstate_t *p);
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
 // void *realloc(void *ptr, size_t size);
 // char *textdomain(const char *domainname);
 // int printf(const char *format, ...);
@@ -44,54 +42,46 @@ int sub_80487C8();
 // int mbsinit(const mbstate_t *ps);
 // void error(int status, int errnum, const char *format, ...);
 // const unsigned __int16 **__ctype_b_loc(void);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// int __fastcall call_gmon_start(int a1, int a2);
-// int *__usercall _do_global_dtors_aux@<eax>(int *result@<eax>);
-// int frame_dummy();
 void __cdecl __noreturn usage(int status); // idb
 int __cdecl main(int argc, const char **argv, const char **envp);
-int __cdecl close_stdout_set_file_name(int a1);
+int __cdecl close_stdout_set_file_name(int);
 void __cdecl close_stdout();
-int __cdecl get_quoting_style(int *a1);
-int __cdecl set_quoting_style(int *a1, int a2);
-int __cdecl set_char_quoting(int a1, unsigned __int8 a2, char a3);
-_DWORD *__cdecl clone_quoting_options(int *a1);
-// _DWORD *__usercall quoting_options_from_style@<eax>(_DWORD *result@<eax>, int a2@<edx>);
+int __cdecl get_quoting_style(int);
+int __cdecl set_quoting_style(int *, int);
+int __cdecl set_char_quoting(int, unsigned __int8, char);
+_DWORD *__cdecl clone_quoting_options(int *);
+// _DWORD *__usercall quoting_options_from_style@<eax>(_DWORD *result@<eax>, int@<edx>);
 // char *__usercall gettext_quote@<eax>(const char *a1@<eax>, int a2@<edx>);
-// unsigned int __usercall quotearg_buffer_restyled@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx>, const char *a3@<ecx>, size_t a4, int a5, int a6);
-unsigned int __cdecl quotearg_buffer(_BYTE *a1, unsigned int a2, const char *a3, size_t a4, int *a5);
-// _BYTE *__usercall quotearg_n_options@<eax>(int a1@<eax>, const char *a2@<edx>, size_t a3@<ecx>, int *a4);
-_BYTE *__cdecl quotearg_char(const char *a1, unsigned __int8 a2);
-_BYTE *__cdecl quotearg_colon(const char *a1);
-_BYTE *__cdecl quotearg_n_style_mem(int a1, int a2, const char *a3, size_t a4);
-_BYTE *__cdecl quotearg_n_style(int a1, int a2, const char *a3);
-_BYTE *__cdecl quotearg_style(int a1, const char *a2);
-_BYTE *__cdecl quotearg_n(int a1, const char *a2);
-_BYTE *__cdecl quotearg(const char *a1);
+// unsigned int __usercall quotearg_buffer_restyled@<eax>(_BYTE *@<eax>, unsigned int@<edx>, const char *@<ecx>, size_t, int, int);
+unsigned int __cdecl quotearg_buffer(_BYTE *, unsigned int, const char *, size_t, int *);
+// _BYTE *__usercall quotearg_n_options@<eax>(unsigned int a1@<eax>, const char *a2@<edx>, size_t a3@<ecx>, int *a4);
+_BYTE *__cdecl quotearg_char(const char *, unsigned __int8);
+_BYTE *__cdecl quotearg_colon(const char *);
+_BYTE *__cdecl quotearg_n_style_mem(int, int, const char *, size_t);
+_BYTE *__cdecl quotearg_n_style(int, int, const char *);
+_BYTE *__cdecl quotearg_style(int, const char *);
+_BYTE *__cdecl quotearg_n(int, const char *);
+_BYTE *__cdecl quotearg(const char *);
 int __cdecl version_etc_va(FILE *stream, int, int, int, __gnuc_va_list __varargs); // idb
 int version_etc(FILE *stream, int, int, int, ...); // idb
 void __noreturn xalloc_die();
 void *__cdecl xcalloc(size_t nmemb, size_t size);
 void *__cdecl xrealloc(void *ptr, size_t size);
-void *__cdecl x2realloc(void *a1, signed int *a2);
-void *__cdecl x2nrealloc(void *a1, unsigned int *a2, unsigned int a3);
-void *__cdecl xnrealloc(void *ptr, int a2, int a3);
+void *__cdecl x2realloc(void *, signed int *);
+void *__cdecl x2nrealloc(void *, unsigned int *, unsigned int);
+void *__cdecl xnrealloc(void *ptr, int, int);
 void *__cdecl xmalloc(size_t size);
 void *__cdecl xclone(void *src, size_t n);
 void *__cdecl xzalloc(size_t n);
-void *__cdecl xnmalloc(unsigned int a1, unsigned int a2);
-// void _libc_csu_fini(void); idb
-// void __fastcall _libc_csu_init(int a1, int a2);
+void *__cdecl xnmalloc(unsigned int, unsigned int);
 int __cdecl atexit(void (__cdecl *lpfunc)(void *)); // idb
-// int __fastcall _do_global_ctors_aux(int a1, int a2);
-// int *__usercall term_proc@<eax>(int *a1@<eax>);
 
 //-------------------------------------------------------------------------
 // Data declarations
 
 _UNKNOWN unk_804A099; // weak
 int (*dword_804B74C)(void) = NULL; // weak
-_DWORD _dso_handle = 0; // idb
+_DWORD _dso_handle = 0; // weak
 int exit_failure = 1; // idb
 int nslots_1 = 1; // weak
 int slotvec0_2 = 256; // weak
@@ -217,15 +207,12 @@ void __cdecl close_stdout()
 // 804B808: using guessed type int file_name;
 
 //----- (08048D50) --------------------------------------------------------
-int __cdecl get_quoting_style(int *a1)
+int __cdecl get_quoting_style(int a1)
 {
-  int result; // eax
-
   if ( a1 )
-    result = *a1;
+    return *(_DWORD *)a1;
   else
-    result = default_quoting_options;
-  return result;
+    return default_quoting_options;
 }
 // 804B920: using guessed type int default_quoting_options;
 
@@ -326,13 +313,19 @@ char *__usercall gettext_quote@<eax>(const char *a1@<eax>, int a2@<edx>)
 
   v4 = dcgettext(0, a1, 5);
   if ( v4 == a1 && a2 == 6 )
-    v4 = (char *)L"\"`'";
+    return (char *)L"\"`'";
   return v4;
 }
 // 804A3BC: using guessed type __int16 asc_804A3BC[4];
 
 //----- (08048F20) --------------------------------------------------------
-unsigned int __usercall quotearg_buffer_restyled@<eax>(_BYTE *a1@<eax>, unsigned int a2@<edx>, const char *a3@<ecx>, size_t a4, int a5, int a6)
+unsigned int __usercall quotearg_buffer_restyled@<eax>(
+        _BYTE *a1@<eax>,
+        unsigned int a2@<edx>,
+        const char *a3@<ecx>,
+        size_t a4,
+        int a5,
+        int a6)
 {
   unsigned int v6; // ecx
   int v7; // edx
@@ -742,9 +735,9 @@ unsigned int __cdecl quotearg_buffer(_BYTE *a1, unsigned int a2, const char *a3,
 // 804B920: using guessed type int default_quoting_options;
 
 //----- (080495C0) --------------------------------------------------------
-_BYTE *__usercall quotearg_n_options@<eax>(int a1@<eax>, const char *a2@<edx>, size_t a3@<ecx>, int *a4)
+_BYTE *__usercall quotearg_n_options@<eax>(unsigned int a1@<eax>, const char *a2@<edx>, size_t a3@<ecx>, int *a4)
 {
-  int v4; // esi
+  unsigned int v4; // esi
   int *v5; // ebx
   _DWORD *v6; // edi
   unsigned int v7; // eax
@@ -757,12 +750,12 @@ _BYTE *__usercall quotearg_n_options@<eax>(int a1@<eax>, const char *a2@<edx>, s
   int v15; // [esp+1Ch] [ebp-1Ch]
 
   v15 = *__errno_location();
-  if ( a1 < 0 )
+  if ( (a1 & 0x80000000) != 0 )
     abort();
-  if ( nslots_1 <= (unsigned int)a1 )
+  if ( nslots_1 <= a1 )
   {
     v4 = a1 + 1;
-    if ( (unsigned int)(a1 + 1) > 0x1FFFFFFF )
+    if ( a1 + 1 > 0x1FFFFFFF )
       xalloc_die();
     v5 = (int *)slotvec_3;
     if ( slotvec_3 == &slotvec0_2 )
@@ -850,6 +843,7 @@ _BYTE *__cdecl quotearg_n_style_mem(int a1, int a2, const char *a3, size_t a4)
   quoting_options_from_style(v5, a2);
   return quotearg_n_options(a1, a3, a4, v5);
 }
+// 8049800: using guessed type int var_38[14];
 
 //----- (08049830) --------------------------------------------------------
 _BYTE *__cdecl quotearg_n_style(int a1, int a2, const char *a3)
@@ -859,6 +853,7 @@ _BYTE *__cdecl quotearg_n_style(int a1, int a2, const char *a3)
   quoting_options_from_style(v4, a2);
   return quotearg_n_options(a1, a3, 0xFFFFFFFF, v4);
 }
+// 8049830: using guessed type int var_38[14];
 
 //----- (08049860) --------------------------------------------------------
 _BYTE *__cdecl quotearg_style(int a1, const char *a2)
@@ -886,7 +881,7 @@ int __cdecl version_etc_va(FILE *stream, int a2, int a3, int a4, __gnuc_va_list 
   _DWORD *v6; // edx
   const char *v8; // eax
   char *v9; // eax
-  char *v10; // eax
+  char *IO_write_ptr; // eax
   char *v11; // eax
   char *v12; // eax
   int result; // eax
@@ -941,14 +936,14 @@ LABEL_7:
       v9 = dcgettext(0, v8, 5);
 LABEL_8:
       vfprintf(stream, v9, __varargs);
-      v10 = stream->_IO_write_ptr;
-      if ( v10 >= stream->_IO_write_end )
+      IO_write_ptr = stream->_IO_write_ptr;
+      if ( IO_write_ptr >= stream->_IO_write_end )
       {
         __overflow(stream, 10);
       }
       else
       {
-        *v10 = 10;
+        *IO_write_ptr = 10;
         ++stream->_IO_write_ptr;
       }
       fputs_unlocked(version_etc_copyright, stream);
@@ -1115,6 +1110,7 @@ int __cdecl atexit(void (__cdecl *lpfunc)(void *))
     v1 = (void *)_dso_handle;
   return __cxa_atexit(lpfunc, 0, v1);
 }
+// 804B7CC: using guessed type _DWORD _dso_handle;
 
 // nfuncs=104 queued=34 decompiled=34 lumina nreq=0 worse=0 better=0
 // ALL OK, 34 function(s) have been successfully decompiled

@@ -10,18 +10,8 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// int __usercall init_proc@<eax>(int a1@<eax>);
 void sub_8048224();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
-// void *__usercall call_gmon_start@<eax>(int a1@<eax>);
-// void _do_global_dtors_aux();
-// int frame_dummy();
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __usercall _libc_csu_init(int a1@<eax>);
-// void _libc_csu_fini(void); idb
-// int __fastcall _do_global_ctors_aux(int a1, int a2);
-// void term_proc();
 
 
 //----- (08048224) --------------------------------------------------------
@@ -65,7 +55,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
   }
   return 13;
 }
-// 8048345: conditional instruction was optimized away because of '%argc.4==2'
+// 8048345: conditional instruction was optimized away because %argc.4==2
 
 // nfuncs=13 queued=2 decompiled=2 lumina nreq=0 worse=0 better=0
 // ALL OK, 2 function(s) have been successfully decompiled

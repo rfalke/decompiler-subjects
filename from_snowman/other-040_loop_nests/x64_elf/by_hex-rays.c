@@ -12,7 +12,7 @@
 
 void g();
 void h();
-__int64 __fastcall f(int a1, int a2, int a3, int a4);
+__int64 __fastcall f(int, int, int, int);
 
 
 //----- (0000000000400144) ----------------------------------------------------

@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-void __fastcall __noreturn start(_DWORD *a1, _DWORD *a2, __int64 a3, __int64 a4);
+void __fastcall __noreturn start(_DWORD *, _DWORD *, __int64, __int64);
 
 
 //----- (00000000004000D4) ----------------------------------------------------

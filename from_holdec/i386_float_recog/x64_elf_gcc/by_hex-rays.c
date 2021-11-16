@@ -10,25 +10,13 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// __int64 (**init_proc())(void);
 __int64 __fastcall sub_401020(); // weak
 // int printf(const char *format, ...);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// void dl_relocate_static_pie();
-// void *deregister_tm_clones();
-// __int64 register_tm_clones();
-// void *_do_global_dtors_aux();
-// __int64 frame_dummy();
-__int64 __fastcall unknown_to_unknown(__m128i a1);
-__int64 __fastcall double_to_unknown(__m128i a1);
-__int64 __fastcall unknown_to_double(double a1);
-__int64 __fastcall double_to_double(double a1);
-// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-// void _libc_csu_fini(void); idb
-// void term_proc();
-// int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// __int64 _gmon_start__(void); weak
+__int64 __fastcall unknown_to_unknown(__m128i);
+__int64 __fastcall double_to_unknown(__m128i);
+__int64 __fastcall unknown_to_double(double);
+__int64 __fastcall double_to_double(double);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -47,17 +35,11 @@ __int64 sub_401020()
 //----- (0000000000401040) ----------------------------------------------------
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
-  long double v4; // [rsp+10h] [rbp-38h]
-  long double v5; // [rsp+20h] [rbp-28h]
-
   unknown_to_unknown((__m128i)0x3FF35C28F5C28F5CuLL);
   double_to_unknown((__m128i)COERCE_UNSIGNED_INT64((double)argc + 1.22));
   unknown_to_double(1.23);
   double_to_double((double)argc + 1.24);
-  v5 = 2.32;
-  *((_QWORD *)&v4 + 1) = DWORD2(v5);
-  *(_QWORD *)&v4 = *(_QWORD *)&v5;
-  printf("unknown: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n", 100LL, 2.31, 101LL, v4, 102LL);
+  printf("unknown: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n", 100LL, 2.31, 101LL, 2.32, 102LL);
   printf(
     "double: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n",
     200LL,

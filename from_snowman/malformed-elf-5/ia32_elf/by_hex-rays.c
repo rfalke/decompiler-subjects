@@ -12,9 +12,8 @@
 
 // void (*init_proc())(void);
 // int puts(const char *s);
-// int __gmon_start__(void); weak
 // int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
+// void __usercall __noreturn start(int@<eax>, void (*)(void)@<edx>);
 void sub_8048350();
 int sub_80483B0();
 int __cdecl main();
@@ -22,7 +21,6 @@ void __cdecl init(int a1, int a2, int a3);
 void fini(void); // idb
 void sub_8048462();
 void (*sub_8048470())(void);
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -79,7 +77,7 @@ int sub_80483B0()
 
   result = dword_8049F24;
   if ( dword_8049F24 )
-    result = 0;
+    return 0;
   return result;
 }
 // 8049F24: using guessed type int dword_8049F24;

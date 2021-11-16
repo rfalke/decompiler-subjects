@@ -1,4 +1,6 @@
-Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
+
+Database SUBJECTS/from_internet/ioli_crackmes/crackme0x03/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
@@ -8,66 +10,38 @@ Possible file format: ELF for Intel 386 (Executable) (IDADIR/loaders/elf.so)
 -----------------------------------------------------------------
    851968            total memory allocated
 
-Loading file 'SUBJECTS/from_internet/ioli_crackmes/crackme0x03/ia32_elf/subject.exe' into database...
-Detected file format: ELF for Intel 386 (Executable)
 Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-Assuming __cdecl calling convention by default
-  0. Creating a new segment  (08048000-0804863C) ... ... OK
-  1. Creating a new segment  (08049F0C-0804A020) ... ... OK
-Assuming __cdecl calling convention by default
-Type library 'gnulnx_x86' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (080482F8-0804830F) ... ... OK
-  3. Creating a new segment  (0804830F-0804863C) ... ... OK
-  4. Creating a new segment  (08048310-08048360) ... ... OK
-  5. Creating a new segment  (08048360-0804863C) ... ... OK
-  6. Creating a new segment  (08048360-080485C4) ... ... OK
-     Deleting segment        (080485C4-0804863C) ...
-  6. Creating a new segment  (080485C4-0804863C) ... ... OK
-  7. Creating a new segment  (080485C4-080485DE) ... ... OK
-     Deleting segment        (080485DE-0804863C) ...
-  7. Creating a new segment  (080485DE-0804863C) ... ... OK
-  8. Creating a new segment  (080485E0-08048637) ... ... OK
-  9. Creating a new segment  (08048637-0804863C) ... ... OK
- 10. Creating a new segment  (08048638-0804863C) ... ... OK
- 11. Creating a new segment  (08049F0C-08049F14) ... ... OK
-     Deleting segment        (08049F14-0804A020) ...
- 11. Creating a new segment  (08049F14-0804A020) ... ... OK
- 12. Creating a new segment  (08049F14-08049F1C) ... ... OK
-     Deleting segment        (08049F1C-0804A020) ...
- 12. Creating a new segment  (08049F1C-0804A020) ... ... OK
- 13. Creating a new segment  (08049F1C-08049F20) ... ... OK
-     Deleting segment        (08049F20-0804A020) ...
- 13. Creating a new segment  (08049F20-0804A020) ... ... OK
- 14. Creating a new segment  (08049FF0-08049FF4) ... ... OK
- 15. Creating a new segment  (08049FF4-0804A020) ... ... OK
- 16. Creating a new segment  (08049FF4-0804A010) ... ... OK
-     Deleting segment        (0804A010-0804A020) ...
- 16. Creating a new segment  (0804A010-0804A020) ... ... OK
- 17. Creating a new segment  (0804A010-0804A01C) ... ... OK
-     Deleting segment        (0804A01C-0804A020) ...
- 17. Creating a new segment  (0804A01C-0804A020) ... ... OK
-     Deleting segment        (0804A01C-0804A020) ...
- 17. Creating a new segment  (0804A01C-0804A020) ... ... OK
- 18. Creating a new segment  (0804A020-0804A021) ... ... OK
- 19. Creating a new segment  (0804A024-0804A038) ... ... OK
- 20. Creating a new segment  (0804A038-0804A050) ... ... OK
-Processing relocations...
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_internet/ioli_crackmes/crackme0x03/ia32_elf/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
   Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 1 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
+=== start of cleanup script -> OK
+  function at 080482F8  LIB  with name '.init_proc'
+  function at 08048310       with name 'sub_8048310'
+  function at 08048320  LIB  with name '.__libc_start_main'
+  function at 08048330       with name '.scanf'
+  function at 08048340       with name '.strlen'
+  function at 08048350       with name '.printf'
+  function at 08048360  LIB  with name '_start'
+  function at 08048384       with name 'sub_8048384'
+  function at 080483B0  LIB  with name '__do_global_dtors_aux'
+  function at 080483E0  LIB  with name 'frame_dummy'
+  function at 08048414       with name 'shift'
+  function at 0804846E       with name 'test'
+  function at 08048498       with name 'main'
+  function at 08048520  LIB  with name '__libc_csu_init'
+  function at 08048590  LIB  with name '__libc_csu_fini'
+  function at 08048595       with name '__i686.get_pc_thunk.bx'
+  function at 080485A0  LIB  with name '__do_global_ctors_aux'
+  function at 080485C4  LIB  with name '.term_proc'
+  function at 0804A024  LIB  with name '__libc_start_main'
+  function at 0804A028       with name 'scanf'
+  function at 0804A02C       with name 'strlen'
+  function at 0804A030       with name 'printf'
+finished -> OK
 TIMESTAMP decompiling 8048310 size=0000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -86,16 +60,9 @@ If the segment is not read-only, please change the segment NAME.
 In general, the decompiler checks the segment permissions, class, and name
 to determine if it is read-only.
  -> OK
-TIMESTAMP decompiling 80483B0 size=0000002F times=0...
-TIMESTAMP decompiling 80483E0 size=00000032 times=0...
 TIMESTAMP decompiling 8048414 size=0000005A times=0...
-TIMESTAMP decompiling 8048590 size=00000005 times=0...
-TIMESTAMP decompiling 80485A0 size=00000023 times=0...
 TIMESTAMP decompiling 804846E size=0000002A times=0...
 TIMESTAMP decompiling 8048498 size=00000080 times=0...
-TIMESTAMP decompiling 80482F8 size=00000017 times=0...
-TIMESTAMP decompiling 8048520 size=00000063 times=0...
-TIMESTAMP decompiling 8048360 size=00000022 times=0...
-TIMESTAMP decompiling 80485C4 size=0000001A times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc.so...

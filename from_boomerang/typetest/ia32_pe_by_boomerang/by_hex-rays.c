@@ -15,24 +15,24 @@
 
 int sub_401000();
 int (**sub_401010())();
-void *__thiscall sub_401040(void *this, char a2);
+void *__thiscall sub_401040(void *this, char);
 void __thiscall CWinApp::~CWinApp(CWinApp *__hidden this); // idb
 int sub_401070();
 // int unknown_libname_1(void); weak
 // void __cdecl unknown_libname_2(); idb
 int __thiscall sub_4010B0(CWinApp *this);
 void __thiscall CDialog::~CDialog(CDialog *__hidden this); // idb
-CDialog *__thiscall sub_401150(CDialog *this, struct CWnd *a2);
-void *__thiscall sub_4011C0(void *this, char a2);
+CDialog *__thiscall sub_401150(CDialog *this, struct CWnd *);
+void *__thiscall sub_4011C0(void *this, char);
 int sub_4011F0();
 int (**sub_401200())();
 int __thiscall sub_401210(int this);
 void __thiscall sub_401250(struct CWnd *this);
-void *__thiscall sub_4015A0(void *this, char a2);
+void *__thiscall sub_4015A0(void *this, char);
 int __thiscall sub_4015C0(CGdiObject *this);
 int __thiscall sub_401610(CGdiObject *this);
 int __thiscall sub_401660(CGdiObject *this);
-void *__thiscall sub_4016B0(void *this, char a2);
+void *__thiscall sub_4016B0(void *this, char);
 int __thiscall sub_4016D0(CGdiObject *this);
 BOOL __thiscall sub_401720(HWND *this);
 BOOL __thiscall sub_401730(HWND *this);
@@ -61,14 +61,6 @@ BOOL __thiscall sub_401730(HWND *this);
 int __cdecl UserMathErrorFunction();
 // _AFX_TERM_APP_STATE *__thiscall _AFX_TERM_APP_STATE::_AFX_TERM_APP_STATE(_AFX_TERM_APP_STATE *__hidden this); idb
 _AFX_TERM_APP_STATE *sub_401C55();
-// BOOL __stdcall GetTextExtentPointA(HDC hdc, LPCSTR lpString, int c, LPSIZE lpsz);
-// BOOL __stdcall TextOutA(HDC hdc, int x, int y, LPCSTR lpString, int c);
-// HFONT __stdcall CreateFontA(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, DWORD bItalic, DWORD bUnderline, DWORD bStrikeOut, DWORD iCharSet, DWORD iOutPrecision, DWORD iClipPrecision, DWORD iQuality, DWORD iPitchAndFamily, LPCSTR pszFaceName);
-// HGDIOBJ __stdcall SelectObject(HDC hdc, HGDIOBJ h);
-// BOOL __stdcall EnableWindow(HWND hWnd, BOOL bEnable);
-// LRESULT __stdcall SendMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
-// int __stdcall FillRect(HDC hDC, const RECT *lprc, HBRUSH hbr);
-// HICON __stdcall LoadIconA(HINSTANCE hInstance, LPCSTR lpIconName);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -82,8 +74,16 @@ struct CRuntimeClass *(__thiscall *off_402240)(CFont *__hidden this) = &CFont::G
 char aFading[10] = "Fading..."; // weak
 CHAR pszFaceName[] = "Arial"; // idb
 _UNKNOWN unk_403124; // weak
+// extern BOOL (__stdcall *GetTextExtentPointA)(HDC hdc, LPCSTR lpString, int c, LPSIZE lpsz);
+// extern BOOL (__stdcall *TextOutA)(HDC hdc, int x, int y, LPCSTR lpString, int c);
+// extern HFONT (__stdcall *CreateFontA)(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, DWORD bItalic, DWORD bUnderline, DWORD bStrikeOut, DWORD iCharSet, DWORD iOutPrecision, DWORD iClipPrecision, DWORD iQuality, DWORD iPitchAndFamily, LPCSTR pszFaceName);
+// extern HGDIOBJ (__stdcall *SelectObject)(HDC hdc, HGDIOBJ h);
 // extern _UNKNOWN CDialog::messageMap; weak
 // extern _UNKNOWN CWinApp::messageMap; weak
+// extern BOOL (__stdcall *EnableWindow)(HWND hWnd, BOOL bEnable);
+// extern LRESULT (__stdcall *SendMessageA)(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+// extern int (__stdcall *FillRect)(HDC hDC, const RECT *lprc, HBRUSH hbr);
+// extern HICON (__stdcall *LoadIconA)(HINSTANCE hInstance, LPCSTR lpIconName);
 
 
 //----- (00401000) --------------------------------------------------------
@@ -135,13 +135,13 @@ int __thiscall sub_4010B0(CWinApp *this)
 //----- (00401150) --------------------------------------------------------
 CDialog *__thiscall sub_401150(CDialog *this, struct CWnd *a2)
 {
-  HINSTANCE v3; // eax
+  HINSTANCE ResourceHandle; // eax
 
   CDialog::CDialog(this, 0x66u, a2);
   *(_DWORD *)this = &off_402138;
   AfxGetModuleState();
-  v3 = AfxFindResourceHandle((const char *)0x80, (const char *)0xE);
-  *((_DWORD *)this + 24) = LoadIconA(v3, (LPCSTR)0x80);
+  ResourceHandle = AfxFindResourceHandle((const char *)0x80, (const char *)0xE);
+  *((_DWORD *)this + 24) = LoadIconA(ResourceHandle, (LPCSTR)0x80);
   return this;
 }
 // 402138: using guessed type struct CRuntimeClass *(__thiscall *off_402138)(CDialog *__hidden this);
@@ -185,7 +185,7 @@ void __thiscall sub_401250(struct CWnd *this)
   int v3; // ebp
   int v4; // edi
   int i; // ebp
-  HFONT v6; // eax
+  HFONT FontA; // eax
   _BYTE v7[16]; // [esp+0h] [ebp-A4h] BYREF
   int v8[2]; // [esp+10h] [ebp-94h] BYREF
   float v9; // [esp+18h] [ebp-8Ch]
@@ -208,7 +208,7 @@ void __thiscall sub_401250(struct CWnd *this)
   rc.top = -100;
   rc.right = 600;
   rc.bottom = -600;
-  FillRect(hDC, &rc, (HBRUSH)(v10 != 0 ? v10[1] : 0));
+  FillRect(hDC, &rc, v10 != 0 ? (HBRUSH)v10[1] : 0);
   v1 = 100;
   v2 = -100;
   v3 = 11;
@@ -242,8 +242,8 @@ void __thiscall sub_401250(struct CWnd *this)
     v8[1] = 0;
     v8[0] = (int)&off_402240;
     LOBYTE(v18) = 3;
-    v6 = CreateFontA((__int64)-v9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x22u, pszFaceName);
-    CGdiObject::Attach((CGdiObject *)v8, v6);
+    FontA = CreateFontA((__int64)-v9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x22u, pszFaceName);
+    CGdiObject::Attach((CGdiObject *)v8, FontA);
     v11 = CDC::SelectObject((CDC *)v15, (struct CFont *)v8);
     TextOutA(hDC, v4, -600, &aFading[i], 1);
     GetTextExtentPointA(hdc, &aFading[i], 1, (LPSIZE)&rc);
@@ -271,6 +271,7 @@ void __thiscall sub_401250(struct CWnd *this)
 // 402210: using guessed type struct CRuntimeClass *(__thiscall *off_402210)(CObject *__hidden this);
 // 402228: using guessed type struct CRuntimeClass *(__thiscall *off_402228)(CGdiObject *__hidden this);
 // 402240: using guessed type struct CRuntimeClass *(__thiscall *off_402240)(CFont *__hidden this);
+// 401250: using guessed type char var_60[4];
 
 //----- (004015A0) --------------------------------------------------------
 void *__thiscall sub_4015A0(void *this, char a2)

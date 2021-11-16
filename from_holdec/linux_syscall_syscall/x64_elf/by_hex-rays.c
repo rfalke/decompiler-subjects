@@ -21,9 +21,7 @@ void __noreturn start()
 
   v0 = sys_write(1u, "Hello, world!\n", 0xEuLL);
   v1 = sys_exit(0);
-  JUMPOUT(0x401027LL);
 }
-// 401025: control flows out of bounds to 401027
 // 401000: using guessed type void __fastcall __noreturn start();
 
 // nfuncs=1 queued=1 decompiled=1 lumina nreq=0 worse=0 better=0

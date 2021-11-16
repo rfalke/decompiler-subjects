@@ -10,72 +10,63 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// void *init_proc();
 int sub_8049030();
-// int __cdecl __libc_start_main(int (__cdecl *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// void __usercall __noreturn start(int a1@<eax>, void (*a2)(void)@<edx>);
 void sub_8049087();
-// void dl_relocate_static_pie();
-// void _x86_get_pc_thunk_bx();
-// char *deregister_tm_clones();
-// int register_tm_clones();
-// char *_do_global_dtors_aux();
-// int frame_dummy();
 int bswap_plain();
-// int __usercall bswap_allregs@<eax>(char a1@<pf>);
-// int __usercall bswap_constant_simple@<eax>(char a1@<pf>);
-// int __usercall bswap_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall bswap_constant_complex2@<eax>(char a1@<pf>);
+int bswap_allregs();
+int bswap_constant_simple();
+int bswap_constant_complex1();
+int bswap_constant_complex2();
 int cmpxchg1_mv_plain();
-// int __usercall cmpxchg1_mv_allregs@<eax>(char a1@<pf>);
-// int __usercall cmpxchg1_mv_constant_simple@<eax>(char a1@<pf>);
-// int __usercall cmpxchg1_mv_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall cmpxchg1_mv_constant_complex2@<eax>(char a1@<pf>);
+int cmpxchg1_mv_allregs();
+int cmpxchg1_mv_constant_simple();
+int cmpxchg1_mv_constant_complex1();
+int cmpxchg1_mv_constant_complex2();
 int cmpxchg2_mv_plain();
-// int __usercall cmpxchg2_mv_allregs@<eax>(char a1@<pf>);
-// int __usercall cmpxchg2_mv_constant_simple@<eax>(char a1@<pf>);
-// int __usercall cmpxchg2_mv_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall cmpxchg2_mv_constant_complex2@<eax>(char a1@<pf>);
+int cmpxchg2_mv_allregs();
+int cmpxchg2_mv_constant_simple();
+int cmpxchg2_mv_constant_complex1();
+int cmpxchg2_mv_constant_complex2();
 int cmpxchg3_plain();
-// int __usercall cmpxchg3_allregs@<eax>(char a1@<pf>);
-// int __usercall cmpxchg3_constant_simple@<eax>(char a1@<pf>);
-// int __usercall cmpxchg3_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall cmpxchg3_constant_complex2@<eax>(char a1@<pf>);
+int cmpxchg3_allregs();
+int cmpxchg3_constant_simple();
+int cmpxchg3_constant_complex1();
+int cmpxchg3_constant_complex2();
 int cmpxchg4_mv_plain();
-// int __usercall cmpxchg4_mv_allregs@<eax>(char a1@<pf>);
-// int __usercall cmpxchg4_mv_constant_simple@<eax>(char a1@<pf>);
-// int __usercall cmpxchg4_mv_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall cmpxchg4_mv_constant_complex2@<eax>(char a1@<pf>);
+int cmpxchg4_mv_allregs();
+int cmpxchg4_mv_constant_simple();
+int cmpxchg4_mv_constant_complex1();
+int cmpxchg4_mv_constant_complex2();
 int cmpxchg5_mv_plain();
-// int __usercall cmpxchg5_mv_allregs@<eax>(char a1@<pf>);
-// int __usercall cmpxchg5_mv_constant_simple@<eax>(char a1@<pf>);
-// int __usercall cmpxchg5_mv_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall cmpxchg5_mv_constant_complex2@<eax>(char a1@<pf>);
-// int __usercall cmpxchg_locked_mv_plain@<eax>(signed __int32 a1@<eax>, volatile signed __int32 *a2@<ebx>);
+int cmpxchg5_mv_allregs();
+int cmpxchg5_mv_constant_simple();
+int cmpxchg5_mv_constant_complex1();
+int cmpxchg5_mv_constant_complex2();
+// int __usercall cmpxchg_locked_mv_plain@<eax>(signed __int32@<eax>, volatile signed __int32 *@<ebx>);
 int cmpxchg_locked_mv_allregs();
 int cmpxchg_locked_mv_constant_simple();
 int cmpxchg_locked_mv_constant_complex1();
 int cmpxchg_locked_mv_constant_complex2();
 int cpuid_plain();
-// int __usercall cpuid_allregs@<eax>(char a1@<pf>);
-// int __usercall cpuid_constant_simple@<eax>(char a1@<pf>);
-// int __usercall cpuid_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall cpuid_constant_complex2@<eax>(char a1@<pf>);
+int cpuid_allregs();
+int cpuid_constant_simple();
+int cpuid_constant_complex1();
+int cpuid_constant_complex2();
 int invd_plain();
-// int __usercall invd_allregs@<eax>(char a1@<pf>);
-// int __usercall invd_constant_simple@<eax>(char a1@<pf>);
-// int __usercall invd_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall invd_constant_complex2@<eax>(char a1@<pf>);
-// int __usercall invlpg_plain@<eax>(void *a1@<eax>);
-// int __usercall invlpg_allregs@<eax>(char a1@<pf>);
-// int __usercall invlpg_constant_simple@<eax>(char a1@<pf>);
-// int __usercall invlpg_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall invlpg_constant_complex2@<eax>(char a1@<pf>);
+int invd_allregs();
+int invd_constant_simple();
+int invd_constant_complex1();
+int invd_constant_complex2();
+// int __usercall invlpg_plain@<eax>(void *@<eax>);
+int invlpg_allregs();
+int invlpg_constant_simple();
+int invlpg_constant_complex1();
+int invlpg_constant_complex2();
 int wbinvd_plain();
-// int __usercall wbinvd_allregs@<eax>(char a1@<pf>);
-// int __usercall wbinvd_constant_simple@<eax>(char a1@<pf>);
-// int __usercall wbinvd_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall wbinvd_constant_complex2@<eax>(char a1@<pf>);
+int wbinvd_allregs();
+int wbinvd_constant_simple();
+int wbinvd_constant_complex1();
+int wbinvd_constant_complex2();
 int xadd1_mv_plain();
 int xadd1_mv_allregs();
 int xadd1_mv_constant_simple();
@@ -91,7 +82,7 @@ int xadd3_allregs();
 int xadd3_constant_simple();
 int xadd3_constant_complex1();
 int xadd3_constant_complex2();
-// int __usercall xadd4_mv_plain@<eax>(int a1@<eax>, _DWORD *a2@<ebx>);
+// int __usercall xadd4_mv_plain@<eax>(int@<eax>, _DWORD *@<ebx>);
 int xadd4_mv_allregs();
 int xadd4_mv_constant_simple();
 int xadd4_mv_constant_complex1();
@@ -101,61 +92,61 @@ int xadd5_mv_allregs();
 int xadd5_mv_constant_simple();
 int xadd5_mv_constant_complex1();
 int xadd5_mv_constant_complex2();
-// int __usercall xadd_locked_mv_plain@<eax>(unsigned int a1@<eax>, volatile signed __int32 *a2@<ebx>);
+// int __usercall xadd_locked_mv_plain@<eax>(unsigned int@<eax>, volatile signed __int32 *@<ebx>);
 int xadd_locked_mv_allregs();
 int xadd_locked_mv_constant_simple();
 int xadd_locked_mv_constant_complex1();
 int xadd_locked_mv_constant_complex2();
 int cmpxchg8b_plain();
-// int __usercall cmpxchg8b_allregs@<eax>(char a1@<pf>);
-// int __usercall cmpxchg8b_constant_simple@<eax>(char a1@<pf>);
-// int __usercall cmpxchg8b_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall cmpxchg8b_constant_complex2@<eax>(char a1@<pf>);
-// int __usercall cmpxchg8b_locked_mv_plain@<eax>(signed __int64 a1@<edx:eax>, unsigned int a2@<ecx>, unsigned int a3@<ebx>);
-// int __usercall cmpxchg8b_locked_mv_allregs@<eax>(char a1@<pf>);
-// int __usercall cmpxchg8b_locked_mv_constant_simple@<eax>(char a1@<pf>);
-// int __usercall cmpxchg8b_locked_mv_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall cmpxchg8b_locked_mv_constant_complex2@<eax>(char a1@<pf>);
+int cmpxchg8b_allregs();
+int cmpxchg8b_constant_simple();
+int cmpxchg8b_constant_complex1();
+int cmpxchg8b_constant_complex2();
+// int __usercall cmpxchg8b_locked_mv_plain@<eax>(signed __int64@<edx:eax>, unsigned int@<ecx>, unsigned int@<ebx>);
+int cmpxchg8b_locked_mv_allregs();
+int cmpxchg8b_locked_mv_constant_simple();
+int cmpxchg8b_locked_mv_constant_complex1();
+int cmpxchg8b_locked_mv_constant_complex2();
 int rdtsc_plain();
-// int __usercall rdtsc_allregs@<eax>(char a1@<pf>);
-// int __usercall rdtsc_constant_simple@<eax>(char a1@<pf>);
-// int __usercall rdtsc_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall rdtsc_constant_complex2@<eax>(char a1@<pf>);
-int __fastcall rdmsr_plain(unsigned int a1);
-// int __usercall rdmsr_allregs@<eax>(char a1@<pf>);
-// int __usercall rdmsr_constant_simple@<eax>(char a1@<pf>);
-// int __usercall rdmsr_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall rdmsr_constant_complex2@<eax>(char a1@<pf>);
-// int __usercall wrmsr_plain@<eax>(unsigned __int64 a1@<edx:eax>, unsigned int a2@<ecx>);
-// int __usercall wrmsr_allregs@<eax>(char a1@<pf>);
-// int __usercall wrmsr_constant_simple@<eax>(char a1@<pf>);
-// int __usercall wrmsr_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall wrmsr_constant_complex2@<eax>(char a1@<pf>);
+int rdtsc_allregs();
+int rdtsc_constant_simple();
+int rdtsc_constant_complex1();
+int rdtsc_constant_complex2();
+int __fastcall rdmsr_plain(unsigned int);
+int rdmsr_allregs();
+int rdmsr_constant_simple();
+int rdmsr_constant_complex1();
+int rdmsr_constant_complex2();
+// int __usercall wrmsr_plain@<eax>(unsigned __int64@<edx:eax>, unsigned int@<ecx>);
+int wrmsr_allregs();
+int wrmsr_constant_simple();
+int wrmsr_constant_complex1();
+int wrmsr_constant_complex2();
 int cmov1_mv_plain();
-// int __usercall cmov1_mv_allregs@<eax>(char a1@<pf>);
-// int __usercall cmov1_mv_constant_simple@<eax>(char a1@<pf>);
-// int __usercall cmov1_mv_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall cmov1_mv_constant_complex2@<eax>(char a1@<pf>);
+int cmov1_mv_allregs();
+int cmov1_mv_constant_simple();
+int cmov1_mv_constant_complex1();
+int cmov1_mv_constant_complex2();
 int cmov2_mv_plain();
-// int __usercall cmov2_mv_allregs@<eax>(char a1@<pf>);
-// int __usercall cmov2_mv_constant_simple@<eax>(char a1@<pf>);
-// int __usercall cmov2_mv_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall cmov2_mv_constant_complex2@<eax>(char a1@<pf>);
+int cmov2_mv_allregs();
+int cmov2_mv_constant_simple();
+int cmov2_mv_constant_complex1();
+int cmov2_mv_constant_complex2();
 int cmov3_plain();
-// int __usercall cmov3_allregs@<eax>(char a1@<pf>);
-// int __usercall cmov3_constant_simple@<eax>(char a1@<pf>);
-// int __usercall cmov3_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall cmov3_constant_complex2@<eax>(char a1@<pf>);
+int cmov3_allregs();
+int cmov3_constant_simple();
+int cmov3_constant_complex1();
+int cmov3_constant_complex2();
 int cmov4_mv_plain();
-// int __usercall cmov4_mv_allregs@<eax>(char a1@<pf>);
-// int __usercall cmov4_mv_constant_simple@<eax>(char a1@<pf>);
-// int __usercall cmov4_mv_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall cmov4_mv_constant_complex2@<eax>(char a1@<pf>);
+int cmov4_mv_allregs();
+int cmov4_mv_constant_simple();
+int cmov4_mv_constant_complex1();
+int cmov4_mv_constant_complex2();
 int cmov5_mv_plain();
-// int __usercall cmov5_mv_allregs@<eax>(char a1@<pf>);
-// int __usercall cmov5_mv_constant_simple@<eax>(char a1@<pf>);
-// int __usercall cmov5_mv_constant_complex1@<eax>(char a1@<pf>);
-// int __usercall cmov5_mv_constant_complex2@<eax>(char a1@<pf>);
+int cmov5_mv_allregs();
+int cmov5_mv_constant_simple();
+int cmov5_mv_constant_complex1();
+int cmov5_mv_constant_complex2();
 int cmov_w_with_code_0_plain();
 int cmov_w_with_code_0_allregs();
 int cmov_w_with_code_0_constant_simple();
@@ -316,11 +307,8 @@ int cmov_l_with_code_f_mv_allregs();
 int cmov_l_with_code_f_mv_constant_simple();
 int cmov_l_with_code_f_mv_constant_complex1();
 int cmov_l_with_code_f_mv_constant_complex2();
-// int __usercall callAll@<eax>(volatile signed __int32 *a1@<ebx>, int argc, const char **argv, const char **envp);
+// int __usercall callAll@<eax>(volatile signed __int32 *@<ebx>, int argc, const char **argv, const char **envp);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// int (**_libc_csu_init())();
-// void _libc_csu_fini();
-// void term_proc();
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -348,7 +336,7 @@ int bswap_plain()
 }
 
 //----- (0804916E) --------------------------------------------------------
-int __usercall bswap_allregs@<eax>(char a1@<pf>)
+int bswap_allregs()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -371,8 +359,8 @@ int __usercall bswap_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -384,7 +372,7 @@ int __usercall bswap_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804925F) --------------------------------------------------------
-int __usercall bswap_constant_simple@<eax>(char a1@<pf>)
+int bswap_constant_simple()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -407,8 +395,8 @@ int __usercall bswap_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -420,7 +408,7 @@ int __usercall bswap_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (08049345) --------------------------------------------------------
-int __usercall bswap_constant_complex1@<eax>(char a1@<pf>)
+int bswap_constant_complex1()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -443,8 +431,8 @@ int __usercall bswap_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -456,7 +444,7 @@ int __usercall bswap_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804942B) --------------------------------------------------------
-int __usercall bswap_constant_complex2@<eax>(char a1@<pf>)
+int bswap_constant_complex2()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -479,8 +467,8 @@ int __usercall bswap_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -499,7 +487,7 @@ int cmpxchg1_mv_plain()
 }
 
 //----- (0804951B) --------------------------------------------------------
-int __usercall cmpxchg1_mv_allregs@<eax>(char a1@<pf>)
+int cmpxchg1_mv_allregs()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -525,8 +513,8 @@ int __usercall cmpxchg1_mv_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -538,7 +526,7 @@ int __usercall cmpxchg1_mv_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804960D) --------------------------------------------------------
-int __usercall cmpxchg1_mv_constant_simple@<eax>(char a1@<pf>)
+int cmpxchg1_mv_constant_simple()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -564,8 +552,8 @@ int __usercall cmpxchg1_mv_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -577,7 +565,7 @@ int __usercall cmpxchg1_mv_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (080496F4) --------------------------------------------------------
-int __usercall cmpxchg1_mv_constant_complex1@<eax>(char a1@<pf>)
+int cmpxchg1_mv_constant_complex1()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -603,8 +591,8 @@ int __usercall cmpxchg1_mv_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -616,7 +604,7 @@ int __usercall cmpxchg1_mv_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (080497DB) --------------------------------------------------------
-int __usercall cmpxchg1_mv_constant_complex2@<eax>(char a1@<pf>)
+int cmpxchg1_mv_constant_complex2()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -642,8 +630,8 @@ int __usercall cmpxchg1_mv_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -662,7 +650,7 @@ int cmpxchg2_mv_plain()
 }
 
 //----- (080498CD) --------------------------------------------------------
-int __usercall cmpxchg2_mv_allregs@<eax>(char a1@<pf>)
+int cmpxchg2_mv_allregs()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -688,8 +676,8 @@ int __usercall cmpxchg2_mv_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -701,7 +689,7 @@ int __usercall cmpxchg2_mv_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (080499C0) --------------------------------------------------------
-int __usercall cmpxchg2_mv_constant_simple@<eax>(char a1@<pf>)
+int cmpxchg2_mv_constant_simple()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -727,8 +715,8 @@ int __usercall cmpxchg2_mv_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -740,7 +728,7 @@ int __usercall cmpxchg2_mv_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (08049AA8) --------------------------------------------------------
-int __usercall cmpxchg2_mv_constant_complex1@<eax>(char a1@<pf>)
+int cmpxchg2_mv_constant_complex1()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -766,8 +754,8 @@ int __usercall cmpxchg2_mv_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -779,7 +767,7 @@ int __usercall cmpxchg2_mv_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (08049B90) --------------------------------------------------------
-int __usercall cmpxchg2_mv_constant_complex2@<eax>(char a1@<pf>)
+int cmpxchg2_mv_constant_complex2()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -805,8 +793,8 @@ int __usercall cmpxchg2_mv_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -825,7 +813,7 @@ int cmpxchg3_plain()
 }
 
 //----- (08049C82) --------------------------------------------------------
-int __usercall cmpxchg3_allregs@<eax>(char a1@<pf>)
+int cmpxchg3_allregs()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -851,8 +839,8 @@ int __usercall cmpxchg3_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -864,7 +852,7 @@ int __usercall cmpxchg3_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (08049D74) --------------------------------------------------------
-int __usercall cmpxchg3_constant_simple@<eax>(char a1@<pf>)
+int cmpxchg3_constant_simple()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -890,8 +878,8 @@ int __usercall cmpxchg3_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -903,7 +891,7 @@ int __usercall cmpxchg3_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (08049E5B) --------------------------------------------------------
-int __usercall cmpxchg3_constant_complex1@<eax>(char a1@<pf>)
+int cmpxchg3_constant_complex1()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -929,8 +917,8 @@ int __usercall cmpxchg3_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -942,7 +930,7 @@ int __usercall cmpxchg3_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (08049F42) --------------------------------------------------------
-int __usercall cmpxchg3_constant_complex2@<eax>(char a1@<pf>)
+int cmpxchg3_constant_complex2()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -968,8 +956,8 @@ int __usercall cmpxchg3_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -988,7 +976,7 @@ int cmpxchg4_mv_plain()
 }
 
 //----- (0804A033) --------------------------------------------------------
-int __usercall cmpxchg4_mv_allregs@<eax>(char a1@<pf>)
+int cmpxchg4_mv_allregs()
 {
   int v7; // ecx
   int v8; // edx
@@ -1026,8 +1014,8 @@ int __usercall cmpxchg4_mv_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1039,7 +1027,7 @@ int __usercall cmpxchg4_mv_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804A125) --------------------------------------------------------
-int __usercall cmpxchg4_mv_constant_simple@<eax>(char a1@<pf>)
+int cmpxchg4_mv_constant_simple()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1065,8 +1053,8 @@ int __usercall cmpxchg4_mv_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1078,7 +1066,7 @@ int __usercall cmpxchg4_mv_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804A20C) --------------------------------------------------------
-int __usercall cmpxchg4_mv_constant_complex1@<eax>(char a1@<pf>)
+int cmpxchg4_mv_constant_complex1()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1104,8 +1092,8 @@ int __usercall cmpxchg4_mv_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1117,7 +1105,7 @@ int __usercall cmpxchg4_mv_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804A2F3) --------------------------------------------------------
-int __usercall cmpxchg4_mv_constant_complex2@<eax>(char a1@<pf>)
+int cmpxchg4_mv_constant_complex2()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1143,8 +1131,8 @@ int __usercall cmpxchg4_mv_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1163,7 +1151,7 @@ int cmpxchg5_mv_plain()
 }
 
 //----- (0804A3E4) --------------------------------------------------------
-int __usercall cmpxchg5_mv_allregs@<eax>(char a1@<pf>)
+int cmpxchg5_mv_allregs()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1188,8 +1176,8 @@ int __usercall cmpxchg5_mv_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1201,7 +1189,7 @@ int __usercall cmpxchg5_mv_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804A4D6) --------------------------------------------------------
-int __usercall cmpxchg5_mv_constant_simple@<eax>(char a1@<pf>)
+int cmpxchg5_mv_constant_simple()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1226,8 +1214,8 @@ int __usercall cmpxchg5_mv_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1239,7 +1227,7 @@ int __usercall cmpxchg5_mv_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804A5BD) --------------------------------------------------------
-int __usercall cmpxchg5_mv_constant_complex1@<eax>(char a1@<pf>)
+int cmpxchg5_mv_constant_complex1()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1264,8 +1252,8 @@ int __usercall cmpxchg5_mv_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1277,7 +1265,7 @@ int __usercall cmpxchg5_mv_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804A6A4) --------------------------------------------------------
-int __usercall cmpxchg5_mv_constant_complex2@<eax>(char a1@<pf>)
+int cmpxchg5_mv_constant_complex2()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1302,8 +1290,8 @@ int __usercall cmpxchg5_mv_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1324,39 +1312,39 @@ int __usercall cmpxchg_locked_mv_plain@<eax>(signed __int32 a1@<eax>, volatile s
 //----- (0804A796) --------------------------------------------------------
 int cmpxchg_locked_mv_allregs()
 {
-  int v4; // ecx
-  int v5; // edx
-  int v6; // ebp
-  int v7; // esi
-  int v8; // edi
-  unsigned __int32 v9; // eax
-  int v10; // ett
-  int v11; // eoff
-  __int16 v13; // [esp-2h] [ebp-2h]
+  int v5; // ecx
+  int v6; // edx
+  int v7; // ebp
+  int v8; // esi
+  int v9; // edi
+  unsigned __int32 v10; // eax
+  int v11; // ett
+  int v12; // eoff
+  __int16 v14; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
-  v13 = MEMORY[0x1100];
+  v14 = MEMORY[0x1100];
   __asm { popfw }
-  v4 = MEMORY[0x1008];
-  v5 = MEMORY[0x100C];
-  v6 = MEMORY[0x1010];
-  v7 = MEMORY[0x1014];
-  v8 = MEMORY[0x1018];
+  v5 = MEMORY[0x1008];
+  v6 = MEMORY[0x100C];
+  v7 = MEMORY[0x1010];
+  v8 = MEMORY[0x1014];
+  v9 = MEMORY[0x1018];
   MEMORY[0x2050] = &retaddr;
-  v11 = MEMORY[0x1004];
-  v10 = MEMORY[0x1000];
-  v9 = _InterlockedCompareExchange(MEMORY[0x1004], MEMORY[0x1000], MEMORY[0x1000]);
-  _ZF = v10 == v9;
-  _CF = v10 < v9;
-  _OF = __OFSUB__(v10, v9);
-  v10 -= v9;
-  MEMORY[0x2000] = v9;
-  MEMORY[0x2004] = v11;
-  MEMORY[0x2008] = v4;
-  MEMORY[0x200C] = v5;
-  MEMORY[0x2010] = v6;
-  MEMORY[0x2014] = v7;
-  MEMORY[0x2018] = v8;
+  v12 = MEMORY[0x1004];
+  v11 = MEMORY[0x1000];
+  v10 = _InterlockedCompareExchange(MEMORY[0x1004], MEMORY[0x1000], MEMORY[0x1000]);
+  _ZF = v11 == v10;
+  _CF = v11 < v10;
+  _OF = __OFSUB__(v11, v10);
+  v11 -= v10;
+  MEMORY[0x2000] = v10;
+  MEMORY[0x2004] = v12;
+  MEMORY[0x2008] = v5;
+  MEMORY[0x200C] = v6;
+  MEMORY[0x2010] = v7;
+  MEMORY[0x2014] = v8;
+  MEMORY[0x2018] = v9;
   MEMORY[0x2200] = _OF;
   MEMORY[0x2201] = !_OF;
   MEMORY[0x2202] = _CF;
@@ -1365,16 +1353,16 @@ int cmpxchg_locked_mv_allregs()
   MEMORY[0x2205] = !_ZF;
   MEMORY[0x2206] = _CF || _ZF;
   MEMORY[0x2207] = !_CF && !_ZF;
-  MEMORY[0x2208] = v10 < 0;
-  MEMORY[0x2209] = v10 >= 0;
-  MEMORY[0x220A] = __SETP__(v10, 0);
-  MEMORY[0x220B] = !__SETP__(v10, 0);
-  MEMORY[0x220C] = (v10 < 0) ^ _OF;
-  MEMORY[0x220D] = v10 < 0 == _OF;
-  MEMORY[0x220E] = (v10 < 0) ^ _OF | _ZF;
-  MEMORY[0x220F] = !((v10 < 0) ^ _OF | _ZF);
+  MEMORY[0x2208] = v11 < 0;
+  MEMORY[0x2209] = v11 >= 0;
+  MEMORY[0x220A] = __SETP__(v11, 0);
+  MEMORY[0x220B] = !__SETP__(v11, 0);
+  MEMORY[0x220C] = (v11 < 0) ^ _OF;
+  MEMORY[0x220D] = v11 < 0 == _OF;
+  MEMORY[0x220E] = (v11 < 0) ^ _OF | _ZF;
+  MEMORY[0x220F] = !((v11 < 0) ^ _OF | _ZF);
   __asm { pushfw }
-  MEMORY[0x2100] = v13;
+  MEMORY[0x2100] = v14;
   MEMORY[0x2020] = MEMORY[0x2050] - (_DWORD)&retaddr;
   return 0;
 }
@@ -1495,7 +1483,7 @@ int cpuid_plain()
 }
 
 //----- (0804AB4A) --------------------------------------------------------
-int __usercall cpuid_allregs@<eax>(char a1@<pf>)
+int cpuid_allregs()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1520,8 +1508,8 @@ int __usercall cpuid_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1533,7 +1521,7 @@ int __usercall cpuid_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804AC3B) --------------------------------------------------------
-int __usercall cpuid_constant_simple@<eax>(char a1@<pf>)
+int cpuid_constant_simple()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1558,8 +1546,8 @@ int __usercall cpuid_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1571,7 +1559,7 @@ int __usercall cpuid_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804AD21) --------------------------------------------------------
-int __usercall cpuid_constant_complex1@<eax>(char a1@<pf>)
+int cpuid_constant_complex1()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1596,8 +1584,8 @@ int __usercall cpuid_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1609,7 +1597,7 @@ int __usercall cpuid_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804AE07) --------------------------------------------------------
-int __usercall cpuid_constant_complex2@<eax>(char a1@<pf>)
+int cpuid_constant_complex2()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1634,8 +1622,8 @@ int __usercall cpuid_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1654,7 +1642,7 @@ int invd_plain()
 }
 
 //----- (0804AEF6) --------------------------------------------------------
-int __usercall invd_allregs@<eax>(char a1@<pf>)
+int invd_allregs()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1678,8 +1666,8 @@ int __usercall invd_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1691,7 +1679,7 @@ int __usercall invd_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804AFE7) --------------------------------------------------------
-int __usercall invd_constant_simple@<eax>(char a1@<pf>)
+int invd_constant_simple()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1715,8 +1703,8 @@ int __usercall invd_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1728,7 +1716,7 @@ int __usercall invd_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804B0CD) --------------------------------------------------------
-int __usercall invd_constant_complex1@<eax>(char a1@<pf>)
+int invd_constant_complex1()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1752,8 +1740,8 @@ int __usercall invd_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1765,7 +1753,7 @@ int __usercall invd_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804B1B3) --------------------------------------------------------
-int __usercall invd_constant_complex2@<eax>(char a1@<pf>)
+int invd_constant_complex2()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -1789,8 +1777,8 @@ int __usercall invd_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1809,7 +1797,7 @@ int __usercall invlpg_plain@<eax>(void *a1@<eax>)
 }
 
 //----- (0804B2A3) --------------------------------------------------------
-int __usercall invlpg_allregs@<eax>(char a1@<pf>)
+int invlpg_allregs()
 {
   int v5; // ebx
   int v6; // ecx
@@ -1849,8 +1837,8 @@ int __usercall invlpg_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1862,7 +1850,7 @@ int __usercall invlpg_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804B395) --------------------------------------------------------
-int __usercall invlpg_constant_simple@<eax>(char a1@<pf>)
+int invlpg_constant_simple()
 {
   unsigned __int8 v6; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -1888,8 +1876,8 @@ int __usercall invlpg_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1901,7 +1889,7 @@ int __usercall invlpg_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804B47C) --------------------------------------------------------
-int __usercall invlpg_constant_complex1@<eax>(char a1@<pf>)
+int invlpg_constant_complex1()
 {
   unsigned __int8 v6; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -1927,8 +1915,8 @@ int __usercall invlpg_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1940,7 +1928,7 @@ int __usercall invlpg_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804B563) --------------------------------------------------------
-int __usercall invlpg_constant_complex2@<eax>(char a1@<pf>)
+int invlpg_constant_complex2()
 {
   __int16 v6; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -1966,8 +1954,8 @@ int __usercall invlpg_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -1986,7 +1974,7 @@ int wbinvd_plain()
 }
 
 //----- (0804B653) --------------------------------------------------------
-int __usercall wbinvd_allregs@<eax>(char a1@<pf>)
+int wbinvd_allregs()
 {
   int v5; // eax
   int v6; // ebx
@@ -2026,8 +2014,8 @@ int __usercall wbinvd_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -2039,7 +2027,7 @@ int __usercall wbinvd_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804B744) --------------------------------------------------------
-int __usercall wbinvd_constant_simple@<eax>(char a1@<pf>)
+int wbinvd_constant_simple()
 {
   unsigned __int8 v6; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -2065,8 +2053,8 @@ int __usercall wbinvd_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -2078,7 +2066,7 @@ int __usercall wbinvd_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804B82A) --------------------------------------------------------
-int __usercall wbinvd_constant_complex1@<eax>(char a1@<pf>)
+int wbinvd_constant_complex1()
 {
   unsigned __int8 v6; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -2104,8 +2092,8 @@ int __usercall wbinvd_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -2117,7 +2105,7 @@ int __usercall wbinvd_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804B910) --------------------------------------------------------
-int __usercall wbinvd_constant_complex2@<eax>(char a1@<pf>)
+int wbinvd_constant_complex2()
 {
   __int16 v6; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -2143,8 +2131,8 @@ int __usercall wbinvd_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -2164,18 +2152,18 @@ int xadd1_mv_plain()
 //----- (0804BA00) --------------------------------------------------------
 int xadd1_mv_allregs()
 {
-  int v4; // eax
-  int v5; // ebx
+  int v5; // eax
+  int v6; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v4 = MEMORY[0x1000];
-  v5 = MEMORY[0x1004];
+  v5 = MEMORY[0x1000];
+  v6 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
-  LOBYTE(v5) = MEMORY[0x1004] + MEMORY[0x1000];
-  LOBYTE(v4) = MEMORY[0x1004];
-  MEMORY[0x2000] = v4;
-  MEMORY[0x2004] = v5;
+  LOBYTE(v6) = MEMORY[0x1004] + MEMORY[0x1000];
+  LOBYTE(v5) = MEMORY[0x1004];
+  MEMORY[0x2000] = v5;
+  MEMORY[0x2004] = v6;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -2320,18 +2308,18 @@ int xadd2_mv_plain()
 //----- (0804BDB2) --------------------------------------------------------
 int xadd2_mv_allregs()
 {
-  int v4; // eax
-  int v5; // ebx
+  int v5; // eax
+  int v6; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  HIWORD(v4) = MEMORY[0x1002];
-  HIWORD(v5) = MEMORY[0x1006];
+  HIWORD(v5) = MEMORY[0x1002];
+  HIWORD(v6) = MEMORY[0x1006];
   MEMORY[0x2050] = &retaddr;
-  LOWORD(v5) = MEMORY[0x1004] + MEMORY[0x1000];
-  LOWORD(v4) = MEMORY[0x1004];
-  MEMORY[0x2000] = v4;
-  MEMORY[0x2004] = v5;
+  LOWORD(v6) = MEMORY[0x1004] + MEMORY[0x1000];
+  LOWORD(v5) = MEMORY[0x1004];
+  MEMORY[0x2000] = v5;
+  MEMORY[0x2004] = v6;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -2627,40 +2615,39 @@ int __usercall xadd4_mv_plain@<eax>(int a1@<eax>, _DWORD *a2@<ebx>)
 //----- (0804C518) --------------------------------------------------------
 int xadd4_mv_allregs()
 {
-  int v4; // ebx
-  int v5; // ecx
-  int v6; // edx
-  int v7; // ebp
-  int v8; // esi
-  int v9; // edi
-  bool v10; // pf
+  int v5; // ebx
+  int v6; // ecx
+  int v7; // edx
+  int v8; // ebp
+  int v9; // esi
+  int v10; // edi
   int v11; // eax
   __int16 v13; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   v13 = MEMORY[0x1100];
   __asm { popfw }
-  v4 = MEMORY[0x1004];
-  v5 = MEMORY[0x1008];
-  v6 = MEMORY[0x100C];
-  v7 = MEMORY[0x1010];
-  v8 = MEMORY[0x1014];
-  v9 = MEMORY[0x1018];
+  v5 = MEMORY[0x1004];
+  v6 = MEMORY[0x1008];
+  v7 = MEMORY[0x100C];
+  v8 = MEMORY[0x1010];
+  v9 = MEMORY[0x1014];
+  v10 = MEMORY[0x1018];
   MEMORY[0x2050] = &retaddr;
   _CF = __CFADD__(*MEMORY[0x1004], MEMORY[0x1000]);
   _OF = __OFADD__(*MEMORY[0x1004], MEMORY[0x1000]);
   _ZF = *MEMORY[0x1004] + MEMORY[0x1000] == 0;
-  v10 = __SETP__(*MEMORY[0x1004] + MEMORY[0x1000], 0);
+  _PF = __SETP__(*MEMORY[0x1004] + MEMORY[0x1000], 0);
   _SF = *MEMORY[0x1004] + MEMORY[0x1000] < 0;
   v11 = *MEMORY[0x1004];
   *MEMORY[0x1004] += MEMORY[0x1000];
   MEMORY[0x2000] = v11;
-  MEMORY[0x2004] = v4;
-  MEMORY[0x2008] = v5;
-  MEMORY[0x200C] = v6;
-  MEMORY[0x2010] = v7;
-  MEMORY[0x2014] = v8;
-  MEMORY[0x2018] = v9;
+  MEMORY[0x2004] = v5;
+  MEMORY[0x2008] = v6;
+  MEMORY[0x200C] = v7;
+  MEMORY[0x2010] = v8;
+  MEMORY[0x2014] = v9;
+  MEMORY[0x2018] = v10;
   MEMORY[0x2200] = _OF;
   MEMORY[0x2201] = !_OF;
   MEMORY[0x2202] = _CF;
@@ -2671,8 +2658,8 @@ int xadd4_mv_allregs()
   MEMORY[0x2207] = !_CF && !_ZF;
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = v10;
-  MEMORY[0x220B] = !v10;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -2686,7 +2673,6 @@ int xadd4_mv_allregs()
 //----- (0804C60A) --------------------------------------------------------
 int xadd4_mv_constant_simple()
 {
-  bool v4; // pf
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -2695,7 +2681,7 @@ int xadd4_mv_constant_simple()
   _CF = __CFADD__(MEMORY[3], 2);
   _OF = __OFADD__(MEMORY[3], 2);
   _ZF = MEMORY[3] == -2;
-  v4 = __SETP__(MEMORY[3] + 2, 0);
+  _PF = __SETP__(MEMORY[3] + 2, 0);
   _SF = MEMORY[3] + 2 < 0;
   v5 = MEMORY[3];
   MEMORY[3] += 2;
@@ -2716,8 +2702,8 @@ int xadd4_mv_constant_simple()
   MEMORY[0x2207] = !_CF && !_ZF;
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = v4;
-  MEMORY[0x220B] = !v4;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -2731,7 +2717,6 @@ int xadd4_mv_constant_simple()
 //----- (0804C6F1) --------------------------------------------------------
 int xadd4_mv_constant_complex1()
 {
-  bool v4; // pf
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -2740,7 +2725,7 @@ int xadd4_mv_constant_complex1()
   _CF = __CFADD__(MEMORY[0x6671AD7], -1548650108);
   _OF = __OFADD__(MEMORY[0x6671AD7], -1548650108);
   _ZF = MEMORY[0x6671AD7] == 1548650108;
-  v4 = __SETP__(MEMORY[0x6671AD7], 1548650108);
+  _PF = __SETP__(MEMORY[0x6671AD7], 1548650108);
   _SF = MEMORY[0x6671AD7] - 1548650108 < 0;
   v5 = MEMORY[0x6671AD7];
   MEMORY[0x6671AD7] -= 1548650108;
@@ -2761,8 +2746,8 @@ int xadd4_mv_constant_complex1()
   MEMORY[0x2207] = !_CF && !_ZF;
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = v4;
-  MEMORY[0x220B] = !v4;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -2776,7 +2761,6 @@ int xadd4_mv_constant_complex1()
 //----- (0804C7D8) --------------------------------------------------------
 int xadd4_mv_constant_complex2()
 {
-  bool v4; // pf
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -2785,7 +2769,7 @@ int xadd4_mv_constant_complex2()
   _CF = __CFADD__(MEMORY[0x496E81C3], 826196200);
   _OF = __OFADD__(MEMORY[0x496E81C3], 826196200);
   _ZF = MEMORY[0x496E81C3] == -826196200;
-  v4 = __SETP__(MEMORY[0x496E81C3] + 826196200, 0);
+  _PF = __SETP__(MEMORY[0x496E81C3] + 826196200, 0);
   _SF = MEMORY[0x496E81C3] + 826196200 < 0;
   v5 = MEMORY[0x496E81C3];
   MEMORY[0x496E81C3] += 826196200;
@@ -2806,8 +2790,8 @@ int xadd4_mv_constant_complex2()
   MEMORY[0x2207] = !_CF && !_ZF;
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = v4;
-  MEMORY[0x220B] = !v4;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -2827,14 +2811,14 @@ int xadd5_mv_plain()
 //----- (0804C8C9) --------------------------------------------------------
 int xadd5_mv_allregs()
 {
-  int v4; // eax
+  int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v4 = MEMORY[0x1000];
+  v5 = MEMORY[0x1000];
   MEMORY[0x2050] = &retaddr;
-  LOBYTE(v4) = MEMORY[0x1000];
-  MEMORY[0x2000] = v4;
+  LOBYTE(v5) = MEMORY[0x1000];
+  MEMORY[0x2000] = v5;
   MEMORY[0x2004] = MEMORY[0x1004];
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
@@ -2981,31 +2965,31 @@ int __usercall xadd_locked_mv_plain@<eax>(unsigned int a1@<eax>, volatile signed
 //----- (0804CC7B) --------------------------------------------------------
 int xadd_locked_mv_allregs()
 {
-  int v4; // ecx
-  int v5; // edx
-  int v6; // ebp
-  int v7; // esi
-  int v8; // edi
-  int v9; // eoff
-  __int16 v11; // [esp-2h] [ebp-2h]
+  int v5; // ecx
+  int v6; // edx
+  int v7; // ebp
+  int v8; // esi
+  int v9; // edi
+  int v10; // eoff
+  __int16 v12; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
-  v11 = MEMORY[0x1100];
+  v12 = MEMORY[0x1100];
   __asm { popfw }
-  v4 = MEMORY[0x1008];
-  v5 = MEMORY[0x100C];
-  v6 = MEMORY[0x1010];
-  v7 = MEMORY[0x1014];
-  v8 = MEMORY[0x1018];
+  v5 = MEMORY[0x1008];
+  v6 = MEMORY[0x100C];
+  v7 = MEMORY[0x1010];
+  v8 = MEMORY[0x1014];
+  v9 = MEMORY[0x1018];
   MEMORY[0x2050] = &retaddr;
-  v9 = MEMORY[0x1004];
+  v10 = MEMORY[0x1004];
   MEMORY[0x2000] = _InterlockedExchangeAdd(MEMORY[0x1004], MEMORY[0x1000]);
-  MEMORY[0x2004] = v9;
-  MEMORY[0x2008] = v4;
-  MEMORY[0x200C] = v5;
-  MEMORY[0x2010] = v6;
-  MEMORY[0x2014] = v7;
-  MEMORY[0x2018] = v8;
+  MEMORY[0x2004] = v10;
+  MEMORY[0x2008] = v5;
+  MEMORY[0x200C] = v6;
+  MEMORY[0x2010] = v7;
+  MEMORY[0x2014] = v8;
+  MEMORY[0x2018] = v9;
   MEMORY[0x2200] = _OF;
   MEMORY[0x2201] = !_OF;
   MEMORY[0x2202] = _CF;
@@ -3023,7 +3007,7 @@ int xadd_locked_mv_allregs()
   MEMORY[0x220E] = (MEMORY[0x2000] < 0) ^ _OF | (MEMORY[0x2000] == 0);
   MEMORY[0x220F] = !MEMORY[0x220E];
   __asm { pushfw }
-  MEMORY[0x2100] = v11;
+  MEMORY[0x2100] = v12;
   MEMORY[0x2020] = MEMORY[0x2050] - (_DWORD)&retaddr;
   return 0;
 }
@@ -3144,7 +3128,7 @@ int cmpxchg8b_plain()
 }
 
 //----- (0804D030) --------------------------------------------------------
-int __usercall cmpxchg8b_allregs@<eax>(char a1@<pf>)
+int cmpxchg8b_allregs()
 {
   int v6; // ebx
   int v7; // ecx
@@ -3183,8 +3167,8 @@ int __usercall cmpxchg8b_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3196,7 +3180,7 @@ int __usercall cmpxchg8b_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804D122) --------------------------------------------------------
-int __usercall cmpxchg8b_constant_simple@<eax>(char a1@<pf>)
+int cmpxchg8b_constant_simple()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -3221,8 +3205,8 @@ int __usercall cmpxchg8b_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3234,7 +3218,7 @@ int __usercall cmpxchg8b_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804D209) --------------------------------------------------------
-int __usercall cmpxchg8b_constant_complex1@<eax>(char a1@<pf>)
+int cmpxchg8b_constant_complex1()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -3259,8 +3243,8 @@ int __usercall cmpxchg8b_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3272,7 +3256,7 @@ int __usercall cmpxchg8b_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804D2F0) --------------------------------------------------------
-int __usercall cmpxchg8b_constant_complex2@<eax>(char a1@<pf>)
+int cmpxchg8b_constant_complex2()
 {
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
@@ -3297,8 +3281,8 @@ int __usercall cmpxchg8b_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3310,14 +3294,17 @@ int __usercall cmpxchg8b_constant_complex2@<eax>(char a1@<pf>)
 }
 
 //----- (0804D3D8) --------------------------------------------------------
-int __usercall cmpxchg8b_locked_mv_plain@<eax>(signed __int64 a1@<edx:eax>, unsigned int a2@<ecx>, unsigned int a3@<ebx>)
+int __usercall cmpxchg8b_locked_mv_plain@<eax>(
+        signed __int64 a1@<edx:eax>,
+        unsigned int a2@<ecx>,
+        unsigned int a3@<ebx>)
 {
   _InterlockedCompareExchange64((volatile signed __int64 *)a1, __SPAIR64__(a2, a3), a1);
   return 0;
 }
 
 //----- (0804D3E2) --------------------------------------------------------
-int __usercall cmpxchg8b_locked_mv_allregs@<eax>(char a1@<pf>)
+int cmpxchg8b_locked_mv_allregs()
 {
   int v5; // ebx
   int v6; // ecx
@@ -3356,8 +3343,8 @@ int __usercall cmpxchg8b_locked_mv_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | (v11 == v10));
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | (v11 == v10);
@@ -3369,7 +3356,7 @@ int __usercall cmpxchg8b_locked_mv_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804D4D5) --------------------------------------------------------
-int __usercall cmpxchg8b_locked_mv_constant_simple@<eax>(char a1@<pf>)
+int cmpxchg8b_locked_mv_constant_simple()
 {
   signed __int64 v5; // rax
   unsigned __int8 v7; // [esp-2h] [ebp-2h]
@@ -3396,8 +3383,8 @@ int __usercall cmpxchg8b_locked_mv_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | (v5 == 0x500000002LL));
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | (v5 == 0x500000002LL);
@@ -3409,7 +3396,7 @@ int __usercall cmpxchg8b_locked_mv_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804D5BD) --------------------------------------------------------
-int __usercall cmpxchg8b_locked_mv_constant_complex1@<eax>(char a1@<pf>)
+int cmpxchg8b_locked_mv_constant_complex1()
 {
   signed __int64 v5; // rax
   unsigned __int8 v7; // [esp-2h] [ebp-2h]
@@ -3436,8 +3423,8 @@ int __usercall cmpxchg8b_locked_mv_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | (v5 == 0x392456C4A3B17984LL));
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | (v5 == 0x392456C4A3B17984LL);
@@ -3449,7 +3436,7 @@ int __usercall cmpxchg8b_locked_mv_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804D6A5) --------------------------------------------------------
-int __usercall cmpxchg8b_locked_mv_constant_complex2@<eax>(char a1@<pf>)
+int cmpxchg8b_locked_mv_constant_complex2()
 {
   signed __int64 v5; // rax
   __int16 v7; // [esp-2h] [ebp-2h]
@@ -3476,8 +3463,8 @@ int __usercall cmpxchg8b_locked_mv_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | (v5 == 0x4E6925B3313EC0E8LL));
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | (v5 == 0x4E6925B3313EC0E8LL);
@@ -3496,7 +3483,7 @@ int rdtsc_plain()
 }
 
 //----- (0804D796) --------------------------------------------------------
-int __usercall rdtsc_allregs@<eax>(char a1@<pf>)
+int rdtsc_allregs()
 {
   int v5; // ebx
   int v6; // ecx
@@ -3533,8 +3520,8 @@ int __usercall rdtsc_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3546,7 +3533,7 @@ int __usercall rdtsc_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804D887) --------------------------------------------------------
-int __usercall rdtsc_constant_simple@<eax>(char a1@<pf>)
+int rdtsc_constant_simple()
 {
   unsigned __int64 v5; // rax
   unsigned __int8 v7; // [esp-2h] [ebp-2h]
@@ -3573,8 +3560,8 @@ int __usercall rdtsc_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3586,7 +3573,7 @@ int __usercall rdtsc_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804D96D) --------------------------------------------------------
-int __usercall rdtsc_constant_complex1@<eax>(char a1@<pf>)
+int rdtsc_constant_complex1()
 {
   unsigned __int64 v5; // rax
   unsigned __int8 v7; // [esp-2h] [ebp-2h]
@@ -3613,8 +3600,8 @@ int __usercall rdtsc_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3626,7 +3613,7 @@ int __usercall rdtsc_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804DA53) --------------------------------------------------------
-int __usercall rdtsc_constant_complex2@<eax>(char a1@<pf>)
+int rdtsc_constant_complex2()
 {
   unsigned __int64 v5; // rax
   __int16 v7; // [esp-2h] [ebp-2h]
@@ -3653,8 +3640,8 @@ int __usercall rdtsc_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3673,7 +3660,7 @@ int __fastcall rdmsr_plain(unsigned int a1)
 }
 
 //----- (0804DB42) --------------------------------------------------------
-int __usercall rdmsr_allregs@<eax>(char a1@<pf>)
+int rdmsr_allregs()
 {
   int v5; // ebx
   int v6; // ecx
@@ -3710,8 +3697,8 @@ int __usercall rdmsr_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3723,7 +3710,7 @@ int __usercall rdmsr_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804DC33) --------------------------------------------------------
-int __usercall rdmsr_constant_simple@<eax>(char a1@<pf>)
+int rdmsr_constant_simple()
 {
   unsigned __int64 v5; // rax
   unsigned __int8 v7; // [esp-2h] [ebp-2h]
@@ -3750,8 +3737,8 @@ int __usercall rdmsr_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3763,7 +3750,7 @@ int __usercall rdmsr_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804DD19) --------------------------------------------------------
-int __usercall rdmsr_constant_complex1@<eax>(char a1@<pf>)
+int rdmsr_constant_complex1()
 {
   unsigned __int64 v5; // rax
   unsigned __int8 v7; // [esp-2h] [ebp-2h]
@@ -3790,8 +3777,8 @@ int __usercall rdmsr_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3803,7 +3790,7 @@ int __usercall rdmsr_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804DDFF) --------------------------------------------------------
-int __usercall rdmsr_constant_complex2@<eax>(char a1@<pf>)
+int rdmsr_constant_complex2()
 {
   unsigned __int64 v5; // rax
   __int16 v7; // [esp-2h] [ebp-2h]
@@ -3830,8 +3817,8 @@ int __usercall rdmsr_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3850,7 +3837,7 @@ int __usercall wrmsr_plain@<eax>(unsigned __int64 a1@<edx:eax>, unsigned int a2@
 }
 
 //----- (0804DEEE) --------------------------------------------------------
-int __usercall wrmsr_allregs@<eax>(char a1@<pf>)
+int wrmsr_allregs()
 {
   unsigned __int64 v5; // rax
   int v6; // ebx
@@ -3888,8 +3875,8 @@ int __usercall wrmsr_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3901,7 +3888,7 @@ int __usercall wrmsr_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804DFDF) --------------------------------------------------------
-int __usercall wrmsr_constant_simple@<eax>(char a1@<pf>)
+int wrmsr_constant_simple()
 {
   unsigned __int8 v6; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -3927,8 +3914,8 @@ int __usercall wrmsr_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3940,7 +3927,7 @@ int __usercall wrmsr_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804E0C5) --------------------------------------------------------
-int __usercall wrmsr_constant_complex1@<eax>(char a1@<pf>)
+int wrmsr_constant_complex1()
 {
   unsigned __int8 v6; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -3966,8 +3953,8 @@ int __usercall wrmsr_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -3979,7 +3966,7 @@ int __usercall wrmsr_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804E1AB) --------------------------------------------------------
-int __usercall wrmsr_constant_complex2@<eax>(char a1@<pf>)
+int wrmsr_constant_complex2()
 {
   __int16 v6; // [esp-2h] [ebp-2h]
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4005,8 +3992,8 @@ int __usercall wrmsr_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4024,7 +4011,7 @@ int cmov1_mv_plain()
 }
 
 //----- (0804E29C) --------------------------------------------------------
-int __usercall cmov1_mv_allregs@<eax>(char a1@<pf>)
+int cmov1_mv_allregs()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4051,8 +4038,8 @@ int __usercall cmov1_mv_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4064,7 +4051,7 @@ int __usercall cmov1_mv_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804E38F) --------------------------------------------------------
-int __usercall cmov1_mv_constant_simple@<eax>(char a1@<pf>)
+int cmov1_mv_constant_simple()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4091,8 +4078,8 @@ int __usercall cmov1_mv_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4104,7 +4091,7 @@ int __usercall cmov1_mv_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804E477) --------------------------------------------------------
-int __usercall cmov1_mv_constant_complex1@<eax>(char a1@<pf>)
+int cmov1_mv_constant_complex1()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4131,8 +4118,8 @@ int __usercall cmov1_mv_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4144,7 +4131,7 @@ int __usercall cmov1_mv_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804E55F) --------------------------------------------------------
-int __usercall cmov1_mv_constant_complex2@<eax>(char a1@<pf>)
+int cmov1_mv_constant_complex2()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4171,8 +4158,8 @@ int __usercall cmov1_mv_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4190,7 +4177,7 @@ int cmov2_mv_plain()
 }
 
 //----- (0804E651) --------------------------------------------------------
-int __usercall cmov2_mv_allregs@<eax>(char a1@<pf>)
+int cmov2_mv_allregs()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4217,8 +4204,8 @@ int __usercall cmov2_mv_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4230,7 +4217,7 @@ int __usercall cmov2_mv_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804E743) --------------------------------------------------------
-int __usercall cmov2_mv_constant_simple@<eax>(char a1@<pf>)
+int cmov2_mv_constant_simple()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4257,8 +4244,8 @@ int __usercall cmov2_mv_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4270,7 +4257,7 @@ int __usercall cmov2_mv_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804E82A) --------------------------------------------------------
-int __usercall cmov2_mv_constant_complex1@<eax>(char a1@<pf>)
+int cmov2_mv_constant_complex1()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4297,8 +4284,8 @@ int __usercall cmov2_mv_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4310,7 +4297,7 @@ int __usercall cmov2_mv_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804E911) --------------------------------------------------------
-int __usercall cmov2_mv_constant_complex2@<eax>(char a1@<pf>)
+int cmov2_mv_constant_complex2()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4337,8 +4324,8 @@ int __usercall cmov2_mv_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4356,7 +4343,7 @@ int cmov3_plain()
 }
 
 //----- (0804EA02) --------------------------------------------------------
-int __usercall cmov3_allregs@<eax>(char a1@<pf>)
+int cmov3_allregs()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4383,8 +4370,8 @@ int __usercall cmov3_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4396,7 +4383,7 @@ int __usercall cmov3_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804EAF4) --------------------------------------------------------
-int __usercall cmov3_constant_simple@<eax>(char a1@<pf>)
+int cmov3_constant_simple()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4423,8 +4410,8 @@ int __usercall cmov3_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4436,7 +4423,7 @@ int __usercall cmov3_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804EBDB) --------------------------------------------------------
-int __usercall cmov3_constant_complex1@<eax>(char a1@<pf>)
+int cmov3_constant_complex1()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4463,8 +4450,8 @@ int __usercall cmov3_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4476,7 +4463,7 @@ int __usercall cmov3_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804ECC2) --------------------------------------------------------
-int __usercall cmov3_constant_complex2@<eax>(char a1@<pf>)
+int cmov3_constant_complex2()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4503,8 +4490,8 @@ int __usercall cmov3_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4522,7 +4509,7 @@ int cmov4_mv_plain()
 }
 
 //----- (0804EDB5) --------------------------------------------------------
-int __usercall cmov4_mv_allregs@<eax>(char a1@<pf>)
+int cmov4_mv_allregs()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4549,8 +4536,8 @@ int __usercall cmov4_mv_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4562,7 +4549,7 @@ int __usercall cmov4_mv_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804EEA9) --------------------------------------------------------
-int __usercall cmov4_mv_constant_simple@<eax>(char a1@<pf>)
+int cmov4_mv_constant_simple()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4589,8 +4576,8 @@ int __usercall cmov4_mv_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4602,7 +4589,7 @@ int __usercall cmov4_mv_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804EF92) --------------------------------------------------------
-int __usercall cmov4_mv_constant_complex1@<eax>(char a1@<pf>)
+int cmov4_mv_constant_complex1()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4629,8 +4616,8 @@ int __usercall cmov4_mv_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4642,7 +4629,7 @@ int __usercall cmov4_mv_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804F07B) --------------------------------------------------------
-int __usercall cmov4_mv_constant_complex2@<eax>(char a1@<pf>)
+int cmov4_mv_constant_complex2()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4669,8 +4656,8 @@ int __usercall cmov4_mv_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4688,7 +4675,7 @@ int cmov5_mv_plain()
 }
 
 //----- (0804F16F) --------------------------------------------------------
-int __usercall cmov5_mv_allregs@<eax>(char a1@<pf>)
+int cmov5_mv_allregs()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4715,8 +4702,8 @@ int __usercall cmov5_mv_allregs@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4728,7 +4715,7 @@ int __usercall cmov5_mv_allregs@<eax>(char a1@<pf>)
 }
 
 //----- (0804F262) --------------------------------------------------------
-int __usercall cmov5_mv_constant_simple@<eax>(char a1@<pf>)
+int cmov5_mv_constant_simple()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4755,8 +4742,8 @@ int __usercall cmov5_mv_constant_simple@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4768,7 +4755,7 @@ int __usercall cmov5_mv_constant_simple@<eax>(char a1@<pf>)
 }
 
 //----- (0804F34A) --------------------------------------------------------
-int __usercall cmov5_mv_constant_complex1@<eax>(char a1@<pf>)
+int cmov5_mv_constant_complex1()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4795,8 +4782,8 @@ int __usercall cmov5_mv_constant_complex1@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4808,7 +4795,7 @@ int __usercall cmov5_mv_constant_complex1@<eax>(char a1@<pf>)
 }
 
 //----- (0804F432) --------------------------------------------------------
-int __usercall cmov5_mv_constant_complex2@<eax>(char a1@<pf>)
+int cmov5_mv_constant_complex2()
 {
   int v5; // eax
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
@@ -4835,8 +4822,8 @@ int __usercall cmov5_mv_constant_complex2@<eax>(char a1@<pf>)
   MEMORY[0x2207] = !(_CF | _ZF);
   MEMORY[0x2208] = _SF;
   MEMORY[0x2209] = !_SF;
-  MEMORY[0x220A] = a1;
-  MEMORY[0x220B] = !a1;
+  MEMORY[0x220A] = _PF;
+  MEMORY[0x220B] = !_PF;
   MEMORY[0x220C] = _SF ^ _OF;
   MEMORY[0x220D] = _SF == _OF;
   MEMORY[0x220E] = _SF ^ _OF | _ZF;
@@ -4856,20 +4843,20 @@ int cmov_w_with_code_0_plain()
 //----- (0804F527) --------------------------------------------------------
 int cmov_w_with_code_0_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( __OFSUB__(MEMORY[0x1000], 2) )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -5026,20 +5013,20 @@ int cmov_w_with_code_1_mv_plain()
 //----- (0804F8E7) --------------------------------------------------------
 int cmov_w_with_code_1_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( !__OFSUB__(MEMORY[0x1000], 2) )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -5196,20 +5183,20 @@ int cmov_w_with_code_2_mv_plain()
 //----- (0804FCA7) --------------------------------------------------------
 int cmov_w_with_code_2_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] < 2u )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -5366,20 +5353,20 @@ int cmov_w_with_code_3_mv_plain()
 //----- (08050067) --------------------------------------------------------
 int cmov_w_with_code_3_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] >= 2u )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -5536,20 +5523,20 @@ int cmov_w_with_code_4_mv_plain()
 //----- (08050427) --------------------------------------------------------
 int cmov_w_with_code_4_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] == 2 )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -5706,20 +5693,20 @@ int cmov_w_with_code_5_mv_plain()
 //----- (080507E7) --------------------------------------------------------
 int cmov_w_with_code_5_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] != 2 )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -5876,20 +5863,20 @@ int cmov_w_with_code_6_mv_plain()
 //----- (08050BA7) --------------------------------------------------------
 int cmov_w_with_code_6_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] <= 2u )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -6046,20 +6033,20 @@ int cmov_w_with_code_7_mv_plain()
 //----- (08050F67) --------------------------------------------------------
 int cmov_w_with_code_7_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] > 2u )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -6216,20 +6203,20 @@ int cmov_w_with_code_8_mv_plain()
 //----- (08051327) --------------------------------------------------------
 int cmov_w_with_code_8_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( (char)(MEMORY[0x1000] - 2) < 0 )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -6386,20 +6373,20 @@ int cmov_w_with_code_9_mv_plain()
 //----- (080516E7) --------------------------------------------------------
 int cmov_w_with_code_9_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( (char)(MEMORY[0x1000] - 2) >= 0 )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -6556,20 +6543,20 @@ int cmov_w_with_code_a_mv_plain()
 //----- (08051AA7) --------------------------------------------------------
 int cmov_w_with_code_a_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( __SETP__(MEMORY[0x1000], 2) )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -6600,20 +6587,20 @@ int cmov_w_with_code_a_mv_allregs()
 //----- (08051B9C) --------------------------------------------------------
 int cmov_w_with_code_a_mv_constant_simple()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = 3;
+  v1 = 3;
   MEMORY[0x2050] = &retaddr;
   _CF = 0;
   _OF = 0;
   _ZF = 1;
   _SF = 0;
   if ( __SETP__(2, 2) )
-    LOWORD(v0) = 2;
+    LOWORD(v1) = 2;
   MEMORY[0x2000] = 2;
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = 4;
   MEMORY[0x200C] = 5;
   MEMORY[0x2010] = 6;
@@ -6644,20 +6631,20 @@ int cmov_w_with_code_a_mv_constant_simple()
 //----- (08051C86) --------------------------------------------------------
 int cmov_w_with_code_a_mv_constant_complex1()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = 107420375;
+  v1 = 107420375;
   MEMORY[0x2050] = &retaddr;
   _CF = 0;
   _OF = 0;
   _ZF = 0;
   _SF = 1;
   if ( __SETP__(-124, 2) )
-    LOWORD(v0) = 31108;
+    LOWORD(v1) = 31108;
   MEMORY[0x2000] = -1548650108;
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = 1181241928;
   MEMORY[0x200C] = 958682820;
   MEMORY[0x2010] = -1131847516;
@@ -6688,20 +6675,20 @@ int cmov_w_with_code_a_mv_constant_complex1()
 //----- (08051D70) --------------------------------------------------------
 int cmov_w_with_code_a_mv_constant_complex2()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = 1231978947;
+  v1 = 1231978947;
   MEMORY[0x2050] = &retaddr;
   _CF = 0;
   _OF = 0;
   _ZF = 0;
   _SF = 1;
   if ( __SETP__(-24, 2) )
-    LOWORD(v0) = -16152;
+    LOWORD(v1) = -16152;
   MEMORY[0x2000] = 826196200;
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = 507473074;
   MEMORY[0x200C] = 1315513779;
   MEMORY[0x2010] = 1328621072;
@@ -6738,20 +6725,20 @@ int cmov_w_with_code_b_mv_plain()
 //----- (08051E67) --------------------------------------------------------
 int cmov_w_with_code_b_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( !__SETP__(MEMORY[0x1000], 2) )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -6782,20 +6769,20 @@ int cmov_w_with_code_b_mv_allregs()
 //----- (08051F5C) --------------------------------------------------------
 int cmov_w_with_code_b_mv_constant_simple()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = 3;
+  v1 = 3;
   MEMORY[0x2050] = &retaddr;
   _CF = 0;
   _OF = 0;
   _ZF = 1;
   _SF = 0;
   if ( !__SETP__(2, 2) )
-    LOWORD(v0) = 2;
+    LOWORD(v1) = 2;
   MEMORY[0x2000] = 2;
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = 4;
   MEMORY[0x200C] = 5;
   MEMORY[0x2010] = 6;
@@ -6826,20 +6813,20 @@ int cmov_w_with_code_b_mv_constant_simple()
 //----- (08052046) --------------------------------------------------------
 int cmov_w_with_code_b_mv_constant_complex1()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = 107420375;
+  v1 = 107420375;
   MEMORY[0x2050] = &retaddr;
   _CF = 0;
   _OF = 0;
   _ZF = 0;
   _SF = 1;
   if ( !__SETP__(-124, 2) )
-    LOWORD(v0) = 31108;
+    LOWORD(v1) = 31108;
   MEMORY[0x2000] = -1548650108;
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = 1181241928;
   MEMORY[0x200C] = 958682820;
   MEMORY[0x2010] = -1131847516;
@@ -6870,20 +6857,20 @@ int cmov_w_with_code_b_mv_constant_complex1()
 //----- (08052130) --------------------------------------------------------
 int cmov_w_with_code_b_mv_constant_complex2()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = 1231978947;
+  v1 = 1231978947;
   MEMORY[0x2050] = &retaddr;
   _CF = 0;
   _OF = 0;
   _ZF = 0;
   _SF = 1;
   if ( !__SETP__(-24, 2) )
-    LOWORD(v0) = -16152;
+    LOWORD(v1) = -16152;
   MEMORY[0x2000] = 826196200;
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = 507473074;
   MEMORY[0x200C] = 1315513779;
   MEMORY[0x2010] = 1328621072;
@@ -6920,20 +6907,20 @@ int cmov_w_with_code_c_mv_plain()
 //----- (08052227) --------------------------------------------------------
 int cmov_w_with_code_c_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] < 2 )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -7090,20 +7077,20 @@ int cmov_w_with_code_d_mv_plain()
 //----- (080525E7) --------------------------------------------------------
 int cmov_w_with_code_d_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] >= 2 )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -7260,20 +7247,20 @@ int cmov_w_with_code_e_mv_plain()
 //----- (080529A7) --------------------------------------------------------
 int cmov_w_with_code_e_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] <= 2 )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -7430,20 +7417,20 @@ int cmov_w_with_code_f_mv_plain()
 //----- (08052D67) --------------------------------------------------------
 int cmov_w_with_code_f_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] > 2 )
-    LOWORD(v0) = MEMORY[0x1000];
+    LOWORD(v1) = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -7600,20 +7587,20 @@ int cmov_l_with_code_0_plain()
 //----- (08053126) --------------------------------------------------------
 int cmov_l_with_code_0_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( __OFSUB__(MEMORY[0x1000], 2) )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -7770,20 +7757,20 @@ int cmov_l_with_code_1_mv_plain()
 //----- (080534E1) --------------------------------------------------------
 int cmov_l_with_code_1_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( !__OFSUB__(MEMORY[0x1000], 2) )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -7940,20 +7927,20 @@ int cmov_l_with_code_2_mv_plain()
 //----- (0805389C) --------------------------------------------------------
 int cmov_l_with_code_2_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] < 2u )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -8110,20 +8097,20 @@ int cmov_l_with_code_3_mv_plain()
 //----- (08053C57) --------------------------------------------------------
 int cmov_l_with_code_3_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] >= 2u )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -8280,20 +8267,20 @@ int cmov_l_with_code_4_mv_plain()
 //----- (08054012) --------------------------------------------------------
 int cmov_l_with_code_4_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] == 2 )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -8450,20 +8437,20 @@ int cmov_l_with_code_5_mv_plain()
 //----- (080543CD) --------------------------------------------------------
 int cmov_l_with_code_5_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] != 2 )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -8620,20 +8607,20 @@ int cmov_l_with_code_6_mv_plain()
 //----- (08054788) --------------------------------------------------------
 int cmov_l_with_code_6_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] <= 2u )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -8790,20 +8777,20 @@ int cmov_l_with_code_7_mv_plain()
 //----- (08054B43) --------------------------------------------------------
 int cmov_l_with_code_7_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] > 2u )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -8960,20 +8947,20 @@ int cmov_l_with_code_8_mv_plain()
 //----- (08054EFE) --------------------------------------------------------
 int cmov_l_with_code_8_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( (char)(MEMORY[0x1000] - 2) < 0 )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -9130,20 +9117,20 @@ int cmov_l_with_code_9_mv_plain()
 //----- (080552B9) --------------------------------------------------------
 int cmov_l_with_code_9_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( (char)(MEMORY[0x1000] - 2) >= 0 )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -9300,20 +9287,20 @@ int cmov_l_with_code_a_mv_plain()
 //----- (08055674) --------------------------------------------------------
 int cmov_l_with_code_a_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( __SETP__(MEMORY[0x1000], 2) )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -9344,20 +9331,20 @@ int cmov_l_with_code_a_mv_allregs()
 //----- (08055768) --------------------------------------------------------
 int cmov_l_with_code_a_mv_constant_simple()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = 3;
+  v1 = 3;
   MEMORY[0x2050] = &retaddr;
   _CF = 0;
   _OF = 0;
   _ZF = 1;
   _SF = 0;
   if ( __SETP__(2, 2) )
-    v0 = 2;
+    v1 = 2;
   MEMORY[0x2000] = 2;
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = 4;
   MEMORY[0x200C] = 5;
   MEMORY[0x2010] = 6;
@@ -9388,20 +9375,20 @@ int cmov_l_with_code_a_mv_constant_simple()
 //----- (08055851) --------------------------------------------------------
 int cmov_l_with_code_a_mv_constant_complex1()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = 107420375;
+  v1 = 107420375;
   MEMORY[0x2050] = &retaddr;
   _CF = 0;
   _OF = 0;
   _ZF = 0;
   _SF = 1;
   if ( __SETP__(-124, 2) )
-    v0 = -1548650108;
+    v1 = -1548650108;
   MEMORY[0x2000] = -1548650108;
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = 1181241928;
   MEMORY[0x200C] = 958682820;
   MEMORY[0x2010] = -1131847516;
@@ -9432,20 +9419,20 @@ int cmov_l_with_code_a_mv_constant_complex1()
 //----- (0805593A) --------------------------------------------------------
 int cmov_l_with_code_a_mv_constant_complex2()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = 1231978947;
+  v1 = 1231978947;
   MEMORY[0x2050] = &retaddr;
   _CF = 0;
   _OF = 0;
   _ZF = 0;
   _SF = 1;
   if ( __SETP__(-24, 2) )
-    v0 = 826196200;
+    v1 = 826196200;
   MEMORY[0x2000] = 826196200;
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = 507473074;
   MEMORY[0x200C] = 1315513779;
   MEMORY[0x2010] = 1328621072;
@@ -9482,20 +9469,20 @@ int cmov_l_with_code_b_mv_plain()
 //----- (08055A2F) --------------------------------------------------------
 int cmov_l_with_code_b_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( !__SETP__(MEMORY[0x1000], 2) )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -9526,20 +9513,20 @@ int cmov_l_with_code_b_mv_allregs()
 //----- (08055B23) --------------------------------------------------------
 int cmov_l_with_code_b_mv_constant_simple()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = 3;
+  v1 = 3;
   MEMORY[0x2050] = &retaddr;
   _CF = 0;
   _OF = 0;
   _ZF = 1;
   _SF = 0;
   if ( !__SETP__(2, 2) )
-    v0 = 2;
+    v1 = 2;
   MEMORY[0x2000] = 2;
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = 4;
   MEMORY[0x200C] = 5;
   MEMORY[0x2010] = 6;
@@ -9570,20 +9557,20 @@ int cmov_l_with_code_b_mv_constant_simple()
 //----- (08055C0C) --------------------------------------------------------
 int cmov_l_with_code_b_mv_constant_complex1()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = 107420375;
+  v1 = 107420375;
   MEMORY[0x2050] = &retaddr;
   _CF = 0;
   _OF = 0;
   _ZF = 0;
   _SF = 1;
   if ( !__SETP__(-124, 2) )
-    v0 = -1548650108;
+    v1 = -1548650108;
   MEMORY[0x2000] = -1548650108;
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = 1181241928;
   MEMORY[0x200C] = 958682820;
   MEMORY[0x2010] = -1131847516;
@@ -9614,20 +9601,20 @@ int cmov_l_with_code_b_mv_constant_complex1()
 //----- (08055CF5) --------------------------------------------------------
 int cmov_l_with_code_b_mv_constant_complex2()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = 1231978947;
+  v1 = 1231978947;
   MEMORY[0x2050] = &retaddr;
   _CF = 0;
   _OF = 0;
   _ZF = 0;
   _SF = 1;
   if ( !__SETP__(-24, 2) )
-    v0 = 826196200;
+    v1 = 826196200;
   MEMORY[0x2000] = 826196200;
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = 507473074;
   MEMORY[0x200C] = 1315513779;
   MEMORY[0x2010] = 1328621072;
@@ -9664,20 +9651,20 @@ int cmov_l_with_code_c_mv_plain()
 //----- (08055DEA) --------------------------------------------------------
 int cmov_l_with_code_c_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] < 2 )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -9834,20 +9821,20 @@ int cmov_l_with_code_d_mv_plain()
 //----- (080561A5) --------------------------------------------------------
 int cmov_l_with_code_d_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] >= 2 )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -10004,20 +9991,20 @@ int cmov_l_with_code_e_mv_plain()
 //----- (08056560) --------------------------------------------------------
 int cmov_l_with_code_e_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] <= 2 )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -10174,20 +10161,20 @@ int cmov_l_with_code_f_mv_plain()
 //----- (0805691B) --------------------------------------------------------
 int cmov_l_with_code_f_mv_allregs()
 {
-  int v0; // ebx
+  int v1; // ebx
   void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
   __asm { popfw }
-  v0 = MEMORY[0x1004];
+  v1 = MEMORY[0x1004];
   MEMORY[0x2050] = &retaddr;
   _CF = MEMORY[0x1000] < 2u;
   _OF = __OFSUB__(MEMORY[0x1000], 2);
   _ZF = MEMORY[0x1000] == 2;
   _SF = (char)(MEMORY[0x1000] - 2) < 0;
   if ( MEMORY[0x1000] > 2 )
-    v0 = MEMORY[0x1000];
+    v1 = MEMORY[0x1000];
   MEMORY[0x2000] = MEMORY[0x1000];
-  MEMORY[0x2004] = v0;
+  MEMORY[0x2004] = v1;
   MEMORY[0x2008] = MEMORY[0x1008];
   MEMORY[0x200C] = MEMORY[0x100C];
   MEMORY[0x2010] = MEMORY[0x1010];
@@ -10338,72 +10325,71 @@ int cmov_l_with_code_f_mv_constant_complex2()
 //----- (08056CCB) --------------------------------------------------------
 int __usercall callAll@<eax>(volatile signed __int32 *a1@<ebx>, int argc, const char **argv, const char **envp)
 {
-  char v4; // pf
-  int v5; // eax
-  void *v6; // eax
+  int v4; // eax
+  void *v5; // eax
+  int v6; // eax
   int v7; // eax
-  int v8; // eax
-  signed __int64 v9; // rax
+  signed __int64 v8; // rax
+  unsigned int v9; // ecx
   unsigned int v10; // ecx
-  unsigned int v11; // ecx
-  unsigned __int64 v12; // rax
-  unsigned int v13; // ecx
+  unsigned __int64 v11; // rax
+  unsigned int v12; // ecx
 
   bswap_plain();
-  bswap_allregs(v4);
-  bswap_constant_simple(v4);
-  bswap_constant_complex1(v4);
-  bswap_constant_complex2(v4);
+  bswap_allregs();
+  bswap_constant_simple();
+  bswap_constant_complex1();
+  bswap_constant_complex2();
   cmpxchg1_mv_plain();
-  cmpxchg1_mv_allregs(v4);
-  cmpxchg1_mv_constant_simple(v4);
-  cmpxchg1_mv_constant_complex1(v4);
-  cmpxchg1_mv_constant_complex2(v4);
+  cmpxchg1_mv_allregs();
+  cmpxchg1_mv_constant_simple();
+  cmpxchg1_mv_constant_complex1();
+  cmpxchg1_mv_constant_complex2();
   cmpxchg2_mv_plain();
-  cmpxchg2_mv_allregs(v4);
-  cmpxchg2_mv_constant_simple(v4);
-  cmpxchg2_mv_constant_complex1(v4);
-  cmpxchg2_mv_constant_complex2(v4);
+  cmpxchg2_mv_allregs();
+  cmpxchg2_mv_constant_simple();
+  cmpxchg2_mv_constant_complex1();
+  cmpxchg2_mv_constant_complex2();
   cmpxchg3_plain();
-  cmpxchg3_allregs(v4);
-  cmpxchg3_constant_simple(v4);
-  cmpxchg3_constant_complex1(v4);
-  cmpxchg3_constant_complex2(v4);
+  cmpxchg3_allregs();
+  cmpxchg3_constant_simple();
+  cmpxchg3_constant_complex1();
+  cmpxchg3_constant_complex2();
   cmpxchg4_mv_plain();
-  cmpxchg4_mv_allregs(v4);
-  cmpxchg4_mv_constant_simple(v4);
-  cmpxchg4_mv_constant_complex1(v4);
-  cmpxchg4_mv_constant_complex2(v4);
+  cmpxchg4_mv_allregs();
+  cmpxchg4_mv_constant_simple();
+  cmpxchg4_mv_constant_complex1();
+  cmpxchg4_mv_constant_complex2();
   cmpxchg5_mv_plain();
-  cmpxchg5_mv_allregs(v4);
-  cmpxchg5_mv_constant_simple(v4);
-  cmpxchg5_mv_constant_complex1(v4);
-  v5 = cmpxchg5_mv_constant_complex2(v4);
-  cmpxchg_locked_mv_plain(v5, a1);
+  cmpxchg5_mv_allregs();
+  cmpxchg5_mv_constant_simple();
+  cmpxchg5_mv_constant_complex1();
+  v4 = cmpxchg5_mv_constant_complex2();
+  cmpxchg_locked_mv_plain(v4, a1);
   cmpxchg_locked_mv_allregs();
   cmpxchg_locked_mv_constant_simple();
   cmpxchg_locked_mv_constant_complex1();
   cmpxchg_locked_mv_constant_complex2();
   cpuid_plain();
-  cpuid_allregs(v4);
-  cpuid_constant_simple(v4);
-  cpuid_constant_complex1(v4);
-  cpuid_constant_complex2(v4);
+  cpuid_allregs();
+  cpuid_constant_simple();
+  cpuid_constant_complex1();
+  cpuid_constant_complex2();
   invd_plain();
-  invd_allregs(v4);
-  invd_constant_simple(v4);
-  invd_constant_complex1(v4);
-  v6 = (void *)invd_constant_complex2(v4);
-  invlpg_plain(v6);
-  invlpg_allregs(v4);
-  invlpg_constant_simple(v4);
-  invlpg_constant_complex1(v4);
-  invlpg_constant_complex2(v4);
+  invd_allregs();
+  invd_constant_simple();
+  invd_constant_complex1();
+  v5 = (void *)invd_constant_complex2();
+  invlpg_plain(v5);
+  invlpg_allregs();
+  invlpg_constant_simple();
+  invlpg_constant_complex1();
+  invlpg_constant_complex2();
   wbinvd_plain();
-  wbinvd_allregs(v4);
-  wbinvd_constant_simple(v4);
-  wbinvd_constant_complex1(v4);
-  wbinvd_constant_complex2(v4);
+  wbinvd_allregs();
+  wbinvd_constant_simple();
+  wbinvd_constant_complex1();
+  wbinvd_constant_complex2();
   xadd1_mv_plain();
   xadd1_mv_allregs();
   xadd1_mv_constant_simple();
@@ -10418,8 +10404,8 @@ int __usercall callAll@<eax>(volatile signed __int32 *a1@<ebx>, int argc, const 
   xadd3_allregs();
   xadd3_constant_simple();
   xadd3_constant_complex1();
-  v7 = xadd3_constant_complex2();
-  xadd4_mv_plain(v7, a1);
+  v6 = xadd3_constant_complex2();
+  xadd4_mv_plain(v6, a1);
   xadd4_mv_allregs();
   xadd4_mv_constant_simple();
   xadd4_mv_constant_complex1();
@@ -10428,62 +10414,62 @@ int __usercall callAll@<eax>(volatile signed __int32 *a1@<ebx>, int argc, const 
   xadd5_mv_allregs();
   xadd5_mv_constant_simple();
   xadd5_mv_constant_complex1();
-  v8 = xadd5_mv_constant_complex2();
-  xadd_locked_mv_plain(v8, a1);
+  v7 = xadd5_mv_constant_complex2();
+  xadd_locked_mv_plain(v7, a1);
   xadd_locked_mv_allregs();
   xadd_locked_mv_constant_simple();
   xadd_locked_mv_constant_complex1();
   xadd_locked_mv_constant_complex2();
   cmpxchg8b_plain();
-  cmpxchg8b_allregs(v4);
-  cmpxchg8b_constant_simple(v4);
-  cmpxchg8b_constant_complex1(v4);
-  LODWORD(v9) = cmpxchg8b_constant_complex2(v4);
-  cmpxchg8b_locked_mv_plain(v9, v10, (unsigned int)a1);
-  cmpxchg8b_locked_mv_allregs(v4);
-  cmpxchg8b_locked_mv_constant_simple(v4);
-  cmpxchg8b_locked_mv_constant_complex1(v4);
-  cmpxchg8b_locked_mv_constant_complex2(v4);
+  cmpxchg8b_allregs();
+  cmpxchg8b_constant_simple();
+  cmpxchg8b_constant_complex1();
+  LODWORD(v8) = cmpxchg8b_constant_complex2();
+  cmpxchg8b_locked_mv_plain(v8, v9, (unsigned int)a1);
+  cmpxchg8b_locked_mv_allregs();
+  cmpxchg8b_locked_mv_constant_simple();
+  cmpxchg8b_locked_mv_constant_complex1();
+  cmpxchg8b_locked_mv_constant_complex2();
   rdtsc_plain();
-  rdtsc_allregs(v4);
-  rdtsc_constant_simple(v4);
-  rdtsc_constant_complex1(v4);
-  rdtsc_constant_complex2(v4);
-  rdmsr_plain(v11);
-  rdmsr_allregs(v4);
-  rdmsr_constant_simple(v4);
-  rdmsr_constant_complex1(v4);
-  LODWORD(v12) = rdmsr_constant_complex2(v4);
-  wrmsr_plain(v12, v13);
-  wrmsr_allregs(v4);
-  wrmsr_constant_simple(v4);
-  wrmsr_constant_complex1(v4);
-  wrmsr_constant_complex2(v4);
+  rdtsc_allregs();
+  rdtsc_constant_simple();
+  rdtsc_constant_complex1();
+  rdtsc_constant_complex2();
+  rdmsr_plain(v10);
+  rdmsr_allregs();
+  rdmsr_constant_simple();
+  rdmsr_constant_complex1();
+  LODWORD(v11) = rdmsr_constant_complex2();
+  wrmsr_plain(v11, v12);
+  wrmsr_allregs();
+  wrmsr_constant_simple();
+  wrmsr_constant_complex1();
+  wrmsr_constant_complex2();
   cmov1_mv_plain();
-  cmov1_mv_allregs(v4);
-  cmov1_mv_constant_simple(v4);
-  cmov1_mv_constant_complex1(v4);
-  cmov1_mv_constant_complex2(v4);
+  cmov1_mv_allregs();
+  cmov1_mv_constant_simple();
+  cmov1_mv_constant_complex1();
+  cmov1_mv_constant_complex2();
   cmov2_mv_plain();
-  cmov2_mv_allregs(v4);
-  cmov2_mv_constant_simple(v4);
-  cmov2_mv_constant_complex1(v4);
-  cmov2_mv_constant_complex2(v4);
+  cmov2_mv_allregs();
+  cmov2_mv_constant_simple();
+  cmov2_mv_constant_complex1();
+  cmov2_mv_constant_complex2();
   cmov3_plain();
-  cmov3_allregs(v4);
-  cmov3_constant_simple(v4);
-  cmov3_constant_complex1(v4);
-  cmov3_constant_complex2(v4);
+  cmov3_allregs();
+  cmov3_constant_simple();
+  cmov3_constant_complex1();
+  cmov3_constant_complex2();
   cmov4_mv_plain();
-  cmov4_mv_allregs(v4);
-  cmov4_mv_constant_simple(v4);
-  cmov4_mv_constant_complex1(v4);
-  cmov4_mv_constant_complex2(v4);
+  cmov4_mv_allregs();
+  cmov4_mv_constant_simple();
+  cmov4_mv_constant_complex1();
+  cmov4_mv_constant_complex2();
   cmov5_mv_plain();
-  cmov5_mv_allregs(v4);
-  cmov5_mv_constant_simple(v4);
-  cmov5_mv_constant_complex1(v4);
-  cmov5_mv_constant_complex2(v4);
+  cmov5_mv_allregs();
+  cmov5_mv_constant_simple();
+  cmov5_mv_constant_complex1();
+  cmov5_mv_constant_complex2();
   cmov_w_with_code_0_plain();
   cmov_w_with_code_0_allregs();
   cmov_w_with_code_0_constant_simple();
@@ -10646,12 +10632,11 @@ int __usercall callAll@<eax>(volatile signed __int32 *a1@<ebx>, int argc, const 
   cmov_l_with_code_f_mv_constant_complex2();
   return main(argc, argv, envp);
 }
-// 8056CD0: variable 'v4' is possibly undefined
+// 8056E8D: variable 'v8' is possibly undefined
 // 8056E8D: variable 'v9' is possibly undefined
-// 8056E8D: variable 'v10' is possibly undefined
-// 8056EBF: variable 'v11' is possibly undefined
+// 8056EBF: variable 'v10' is possibly undefined
+// 8056ED8: variable 'v11' is possibly undefined
 // 8056ED8: variable 'v12' is possibly undefined
-// 8056ED8: variable 'v13' is possibly undefined
 
 //----- (0805728E) --------------------------------------------------------
 #error "8057294: call analysis failed (funcsize=7)"

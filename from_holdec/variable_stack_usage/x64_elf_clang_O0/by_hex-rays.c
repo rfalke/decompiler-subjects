@@ -10,24 +10,13 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// __int64 (**init_proc())(void);
 __int64 __fastcall sub_4003E0(); // weak
 // void *memset(void *s, int c, size_t n);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// signed __int64 deregister_tm_clones();
-// __int64 register_tm_clones();
-// signed __int64 _do_global_dtors_aux();
-// __int64 frame_dummy();
 void __cdecl use(int *x);
 void __cdecl fill(int *dest, int n);
 void __cdecl with_array(int n);
 void __cdecl with_alloca(int n);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-// void _libc_csu_fini(void); idb
-// void term_proc();
-// int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -61,13 +50,13 @@ void __cdecl with_array(int n)
 {
   int *x; // [rsp+0h] [rbp-20h] BYREF
   int fixed2; // [rsp+Ch] [rbp-14h] BYREF
-  int **v3; // [rsp+10h] [rbp-10h]
+  int **p_x; // [rsp+10h] [rbp-10h]
   int fixed1; // [rsp+18h] [rbp-8h] BYREF
   int na; // [rsp+1Ch] [rbp-4h]
 
   na = n;
   fixed1 = 7;
-  v3 = &x;
+  p_x = &x;
   fixed2 = 8;
   x = (int *)((char *)&x - ((4LL * (unsigned int)n + 15) & 0x7FFFFFFF0LL));
   fill(x, n);

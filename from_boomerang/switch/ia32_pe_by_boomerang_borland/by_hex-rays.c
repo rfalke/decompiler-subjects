@@ -25,7 +25,7 @@ void sub_4014B4();
 // _DWORD __cdecl __InitExceptBlockLDTC();
 int sub_4025DB();
 FARPROC sub_402C78();
-int __cdecl sub_403564(signed int *a1);
+int __cdecl sub_403564(signed int *);
 // int printf(const char *const Format, ...);
 // _DWORD __cdecl _getLocaleNumericInfo(_DWORD); weak
 // int __cdecl iswspace(wint_t C);
@@ -37,21 +37,21 @@ void __noreturn sub_405004(); // weak
 // int __cdecl __ldtrunc(int, long double, int, int); idb
 // _DWORD __cdecl _qmul10(_DWORD, _DWORD); weak
 // _DWORD __cdecl sub_4053B8(_DWORD, _DWORD, _DWORD); weak
-char *__cdecl sub_4053FC(int a1, int a2, void *a3, char a4, char a5, int a6);
-int __cdecl sub_405684(int a1, int a2);
+char *__cdecl sub_4053FC(int, int, void *, char, char, int);
+int __cdecl sub_405684(int, int);
 // _DWORD __cdecl sub_4056B4(_DWORD, _DWORD, _DWORD); weak
-wchar_t *__cdecl sub_405700(int a1, int a2, wchar_t *Destination, __int16 a4, __int16 a5, int a6);
-int __cdecl sub_4059B8(int a1, int a2);
-__int16 __cdecl sub_4059E8(int a1, int (__cdecl *a2)(int), void (__cdecl *a3)(int, int), int a4, int a5, _DWORD *a6, _DWORD *a7);
-// void __usercall sub_405E34(long double fst6_0@<st1>, int a2, int a3, int a4);
+wchar_t *__cdecl sub_405700(int, int, wchar_t *Destination, __int16, __int16, int);
+int __cdecl sub_4059B8(int, int);
+__int16 __cdecl sub_4059E8(int, int (__cdecl *)(int), void (__cdecl *)(int, int), int, int, _DWORD *, _DWORD *);
+// void __usercall sub_405E34(long double a1@<st1>, int a2, int a3, int a4);
 void sub_405EB4();
-__int16 __cdecl sub_405ECC(int a1, int (__cdecl *a2)(int), void (__cdecl *a3)(int, int), int a4, int a5, _DWORD *a6, _DWORD *a7);
-// void __usercall sub_406314(long double fst6_0@<st1>, int a2, int a3, int a4);
+__int16 __cdecl sub_405ECC(int, int (__cdecl *)(int), void (__cdecl *)(int, int), int, int, _DWORD *, _DWORD *);
+// void __usercall sub_406314(long double a1@<st1>, int a2, int a3, int a4);
 // int __cdecl __xcvt(int, size_t Size, int, void *, int); idb
 // int __cdecl __xcvtw(int, size_t n, int, void *s, int); idb
 // int __cdecl _ismbcspace(unsigned int C);
 // void __cdecl __noreturn _ErrorExit(LPCSTR lpText); idb
-void *__cdecl sub_4070A0(char *Str, int a2);
+void *__cdecl sub_4070A0(char *Str, int);
 void sub_407598();
 void *sub_4075A8();
 // int _expandblock(void); weak
@@ -59,7 +59,7 @@ void *sub_407728();
 void __cdecl __noreturn sub_407A40(UINT uExitCode); // idb
 int sub_407A50();
 int sub_407A54();
-int __cdecl sub_407A58(_DWORD *a1, int a2);
+int __cdecl sub_407A58(_DWORD *, int);
 void sub_407B2C();
 int sub_407D1C();
 // int __stdcall __CRTL_TLS_GetValue(DWORD dwTlsIndex); idb
@@ -199,7 +199,7 @@ int dword_40C4A8[259] =
   0,
   0,
   
-}; // idb
+}; // weak
 int dword_40C8B4; // weak
 HANDLE Src; // idb
 void *dword_40CC7C; // idb
@@ -208,7 +208,7 @@ void *dword_40CC90; // idb
 char *dword_40CC94; // idb
 int dword_40CCA8; // weak
 int dword_40CCB4; // weak
-_DWORD dword_40CCB8[2]; // idb
+_DWORD dword_40CCB8[2]; // weak
 int dword_40CCD4; // weak
 int dword_40CCE4; // weak
 
@@ -225,16 +225,16 @@ void __noreturn sub_40106C()
 void *sub_4010F3()
 {
   void *result; // eax
-  HANDLE v1; // eax
+  HANDLE ProcessHeap; // eax
   void *v2; // [esp-4h] [ebp-4h]
 
   result = (void *)__CRTL_TLS_GetValue(TlsIndex);
   if ( result )
   {
     v2 = result;
-    v1 = GetProcessHeap();
-    HeapFree(v1, 8u, v2);
-    result = (void *)__CRTL_TLS_ExitThread(TlsIndex);
+    ProcessHeap = GetProcessHeap();
+    HeapFree(ProcessHeap, 8u, v2);
+    return (void *)__CRTL_TLS_ExitThread(TlsIndex);
   }
   return result;
 }
@@ -302,16 +302,17 @@ int sub_4025DB()
   }
   return result;
 }
-// 4025FC: conditional instruction was optimized away because of 'eax.4!=0'
+// 4025FC: conditional instruction was optimized away because eax.4!=0
+// 40C4A8: using guessed type int dword_40C4A8[259];
 
 //----- (00402C78) --------------------------------------------------------
 FARPROC sub_402C78()
 {
-  HMODULE v0; // eax
+  HMODULE ModuleHandleA; // eax
   FARPROC result; // eax
 
-  v0 = GetModuleHandleA(0);
-  result = GetProcAddress(v0, aCppdebughook);
+  ModuleHandleA = GetModuleHandleA(0);
+  result = GetProcAddress(ModuleHandleA, aCppdebughook);
   dword_40C8B4 = (int)result;
   if ( !result )
     dword_40C8B4 = (int)&__CPPdebugHook;
@@ -324,7 +325,6 @@ int __cdecl sub_403564(signed int *a1)
 {
   signed int v1; // eax
   UINT *v2; // edx
-  int result; // eax
   signed int *v4; // esi
   char v5; // cl
   int v6; // edx
@@ -364,17 +364,16 @@ int __cdecl sub_403564(signed int *a1)
       ++v8;
     }
     memcpy(v4, &Src, 4 * v1);
-    result = 0;
+    return 0;
   }
   else if ( v1 )
   {
-    result = 5 * v1 + 4;
+    return 5 * v1 + 4;
   }
   else
   {
-    result = 0;
+    return 0;
   }
-  return result;
 }
 // 40AB6C: using guessed type int dword_40AB6C;
 
@@ -585,7 +584,7 @@ char *__cdecl sub_4053FC(int a1, int a2, void *a3, char a4, char a5, int a6)
   }
   return result;
 }
-// 405657: conditional instruction was optimized away because of 'edi.4 in (2..4)'
+// 405657: conditional instruction was optimized away because edi.4 is in (2..4)
 // 4055AB: variable 'v8' is possibly undefined
 // 4055F9: variable 'v9' is possibly undefined
 // 404434: using guessed type _DWORD __cdecl _getLocaleNumericInfo(_DWORD);
@@ -594,13 +593,10 @@ char *__cdecl sub_4053FC(int a1, int a2, void *a3, char a4, char a5, int a6)
 //----- (00405684) --------------------------------------------------------
 int __cdecl sub_405684(int a1, int a2)
 {
-  int result; // eax
-
   if ( a2 )
-    result = a1 + 12;
+    return a1 + 12;
   else
-    result = a1 + 8;
-  return result;
+    return a1 + 8;
 }
 
 //----- (00405700) --------------------------------------------------------
@@ -675,7 +671,7 @@ wchar_t *__cdecl sub_405700(int a1, int a2, wchar_t *Destination, __int16 a4, __
       v12 = Source;
     else
       v12 = (const wchar_t *)asc_40B8FE;
-    result = wcscpy(Destination, v12);
+    return wcscpy(Destination, v12);
   }
   else if ( v7 == 32766 )
   {
@@ -683,7 +679,7 @@ wchar_t *__cdecl sub_405700(int a1, int a2, wchar_t *Destination, __int16 a4, __
       v14 = aNan_1;
     else
       v14 = (const wchar_t *)asc_40B912;
-    result = wcscpy(Destination, v14);
+    return wcscpy(Destination, v14);
   }
   else
   {
@@ -794,7 +790,7 @@ wchar_t *__cdecl sub_405700(int a1, int a2, wchar_t *Destination, __int16 a4, __
   }
   return result;
 }
-// 405989: conditional instruction was optimized away because of 'edi.4 in (2..4)'
+// 405989: conditional instruction was optimized away because edi.4 is in (2..4)
 // 4058AA: variable 'v8' is possibly undefined
 // 405916: variable 'v9' is possibly undefined
 // 404434: using guessed type _DWORD __cdecl _getLocaleNumericInfo(_DWORD);
@@ -803,17 +799,21 @@ wchar_t *__cdecl sub_405700(int a1, int a2, wchar_t *Destination, __int16 a4, __
 //----- (004059B8) --------------------------------------------------------
 int __cdecl sub_4059B8(int a1, int a2)
 {
-  int result; // eax
-
   if ( a2 )
-    result = a1 + 12;
+    return a1 + 12;
   else
-    result = a1 + 8;
-  return result;
+    return a1 + 8;
 }
 
 //----- (004059E8) --------------------------------------------------------
-__int16 __cdecl sub_4059E8(int a1, int (__cdecl *a2)(int), void (__cdecl *a3)(int, int), int a4, int a5, _DWORD *a6, _DWORD *a7)
+__int16 __cdecl sub_4059E8(
+        int a1,
+        int (__cdecl *a2)(int),
+        void (__cdecl *a3)(int, int),
+        int a4,
+        int a5,
+        _DWORD *a6,
+        _DWORD *a7)
 {
   int v7; // esi
   unsigned int v8; // eax
@@ -1110,7 +1110,7 @@ LABEL_74:
 // 40B93A: using guessed type long double tbyte_40B93A;
 
 //----- (00405E34) --------------------------------------------------------
-void __usercall sub_405E34(long double fst6_0@<st1>, int a2, int a3, int a4)
+void __usercall sub_405E34(long double a1@<st1>, int a2, int a3, int a4)
 {
   long double v5; // fst6
   long double v6; // [esp-14h] [ebp-24h]
@@ -1121,7 +1121,7 @@ void __usercall sub_405E34(long double fst6_0@<st1>, int a2, int a3, int a4)
     HIWORD(v6) = *(_WORD *)(a2 + 8);
     *(_QWORD *)&v6 = *(_QWORD *)a2;
     __ldtrunc(1, v6, dword_40B858, dword_40B85C);
-    *(double *)a3 = fst6_0;
+    *(double *)a3 = a1;
   }
   else if ( (a4 & 8) != 0 )
   {
@@ -1150,7 +1150,14 @@ void sub_405EB4()
 // 40B78C: using guessed type void (__noreturn *off_40B78C)();
 
 //----- (00405ECC) --------------------------------------------------------
-__int16 __cdecl sub_405ECC(int a1, int (__cdecl *a2)(int), void (__cdecl *a3)(int, int), int a4, int a5, _DWORD *a6, _DWORD *a7)
+__int16 __cdecl sub_405ECC(
+        int a1,
+        int (__cdecl *a2)(int),
+        void (__cdecl *a3)(int, int),
+        int a4,
+        int a5,
+        _DWORD *a6,
+        _DWORD *a7)
 {
   int v7; // esi
   int v8; // eax
@@ -1447,7 +1454,7 @@ LABEL_73:
 // 40B962: using guessed type long double tbyte_40B962;
 
 //----- (00406314) --------------------------------------------------------
-void __usercall sub_406314(long double fst6_0@<st1>, int a2, int a3, int a4)
+void __usercall sub_406314(long double a1@<st1>, int a2, int a3, int a4)
 {
   long double v5; // fst6
   long double v6; // [esp-14h] [ebp-24h]
@@ -1458,7 +1465,7 @@ void __usercall sub_406314(long double fst6_0@<st1>, int a2, int a3, int a4)
     HIWORD(v6) = *(_WORD *)(a2 + 8);
     *(_QWORD *)&v6 = *(_QWORD *)a2;
     __ldtrunc(1, v6, dword_40B858, dword_40B85C);
-    *(double *)a3 = fst6_0;
+    *(double *)a3 = a1;
   }
   else if ( (a4 & 8) != 0 )
   {
@@ -1670,30 +1677,29 @@ void sub_407B2C()
   }
 }
 // 40BBF8: using guessed type int dword_40BBF8;
+// 40CCB8: using guessed type _DWORD dword_40CCB8[2];
 // 40CCD4: using guessed type int dword_40CCD4;
 
 //----- (00407D1C) --------------------------------------------------------
 int sub_407D1C()
 {
-  int result; // eax
   struct _STARTUPINFOA v1; // [esp+0h] [ebp-44h] BYREF
 
   GetStartupInfoA(&v1);
   if ( (v1.dwFlags & 1) != 0 )
-    result = v1.wShowWindow;
+    return v1.wShowWindow;
   else
-    result = 10;
-  return result;
+    return 10;
 }
 
 //----- (00407D8C) --------------------------------------------------------
 FARPROC sub_407D8C()
 {
-  HMODULE v0; // eax
+  HMODULE ModuleHandleA; // eax
   FARPROC result; // eax
 
-  v0 = GetModuleHandleA(0);
-  result = GetProcAddress(v0, aCppdebughook_0);
+  ModuleHandleA = GetModuleHandleA(0);
+  result = GetProcAddress(ModuleHandleA, aCppdebughook_0);
   dword_40CCE4 = (int)result;
   if ( !result )
     dword_40CCE4 = (int)&__CPPdebugHook;

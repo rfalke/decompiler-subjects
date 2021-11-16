@@ -170,7 +170,7 @@ signed __int32 dword_4001A8[16278] =
   -1794196910,
   2106154863,
   
-}; // idb
+}; // weak
 int dword_420000[338]; // weak
 char byte_42054B[]; // weak
 int dword_42054C[1676608]; // weak
@@ -385,8 +385,9 @@ LABEL_20:
 // 4000DC: variable 'v29' is possibly undefined
 // 4000DC: variable 'v30' is possibly undefined
 // 4000DD: variable 'v31' is possibly undefined
+// 4001A8: using guessed type signed __int32 dword_4001A8[16278];
 // 420000: using guessed type int dword_420000[338];
-// 42054C: using guessed type int[1676608];
+// 42054C: using guessed type int dword_42054C[1676608];
 
 // nfuncs=1 queued=1 decompiled=1 lumina nreq=0 worse=0 better=0
 // ALL OK, 1 function(s) have been successfully decompiled

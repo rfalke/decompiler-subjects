@@ -10,24 +10,13 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// __int64 (**init_proc())(void);
 __int64 __fastcall sub_4003E0(); // weak
 // void *memset(void *s, int c, size_t n);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// signed __int64 deregister_tm_clones();
-// __int64 register_tm_clones();
-// signed __int64 _do_global_dtors_aux();
-// __int64 frame_dummy();
 void __fastcall use(int *x);
 void __fastcall fill(int *dest, int n);
 void __fastcall with_array(int n);
 void __fastcall with_alloca(int n);
 int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-// void _libc_csu_fini(void); idb
-// void term_proc();
-// int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -72,6 +61,7 @@ void __fastcall with_array(int n)
   use(&v2);
   use(&fixed2);
 }
+// 400519: using guessed type int fixed1[3];
 
 //----- (000000000040056C) ----------------------------------------------------
 void __fastcall with_alloca(int n)
@@ -89,6 +79,7 @@ void __fastcall with_alloca(int n)
   use(&v2);
   use(&fixed2);
 }
+// 40056C: using guessed type int fixed1[3];
 
 //----- (00000000004005C8) ----------------------------------------------------
 int __cdecl main(int argc, const char **argv, const char **envp)

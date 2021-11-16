@@ -1,85 +1,190 @@
-Possible file format: ELF64 for x86-64 (Executable) (IDADIR/loaders/elf64.so)
+
+Database SUBJECTS/from_fcd/csaw-wyvern/x64_elf/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
 
   bytes   pages size description
 --------- ----- ---- --------------------------------------------
    524288    64 8192 allocating memory for b-tree...
-   335872    41 8192 allocating memory for virtual array...
+   270336    33 8192 allocating memory for virtual array...
    262144    32 8192 allocating memory for name pointers...
 -----------------------------------------------------------------
-  1122304            total memory allocated
+  1056768            total memory allocated
 
-Loading file 'SUBJECTS/from_fcd/csaw-wyvern/x64_elf/subject.exe' into database...
-Detected file format: ELF64 for x86-64 (Executable)
 Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
 Autoanalysis subsystem has been initialized.
-  0. Creating a new segment  (0000000000400000-000000000040FAA8) ... ... OK
-  1. Creating a new segment  (000000000060FDD0-00000000006105B0) ... ... OK
-Assuming __fastcall calling convention by default
-Type library 'gnulnx_x64' loaded. Applying types...
-Types applied to 0 names.
-  2. Creating a new segment  (0000000000400E40-0000000000400E5A) ... ... OK
-  3. Creating a new segment  (0000000000400E5A-000000000040FAA8) ... ... OK
-  4. Creating a new segment  (0000000000400E60-0000000000401090) ... ... OK
-  5. Creating a new segment  (0000000000401090-000000000040FAA8) ... ... OK
-  6. Creating a new segment  (0000000000401090-000000000040E622) ... ... OK
-     Deleting segment        (000000000040E622-000000000040FAA8) ...
-  6. Creating a new segment  (000000000040E622-000000000040FAA8) ... ... OK
-  7. Creating a new segment  (000000000040E624-000000000040E62D) ... ... OK
-  8. Creating a new segment  (000000000040E62D-000000000040FAA8) ... ... OK
-  9. Creating a new segment  (000000000040E630-000000000040E7AB) ... ... OK
- 10. Creating a new segment  (000000000040E7AB-000000000040FAA8) ... ... OK
- 11. Creating a new segment  (000000000040E7AC-000000000040EA90) ... ... OK
- 12. Creating a new segment  (000000000040EA90-000000000040FAA8) ... ... OK
- 13. Creating a new segment  (000000000040EA90-000000000040F70C) ... ... OK
-     Deleting segment        (000000000040F70C-000000000040FAA8) ...
- 13. Creating a new segment  (000000000040F70C-000000000040FAA8) ... ... OK
-     Deleting segment        (000000000040F70C-000000000040FAA8) ...
- 13. Creating a new segment  (000000000040F70C-000000000040FAA8) ... ... OK
- 14. Creating a new segment  (000000000060FDD0-000000000060FDE8) ... ... OK
-     Deleting segment        (000000000060FDE8-00000000006105B0) ...
- 14. Creating a new segment  (000000000060FDE8-00000000006105B0) ... ... OK
- 15. Creating a new segment  (000000000060FDE8-000000000060FDF0) ... ... OK
-     Deleting segment        (000000000060FDF0-00000000006105B0) ...
- 15. Creating a new segment  (000000000060FDF0-00000000006105B0) ... ... OK
- 16. Creating a new segment  (000000000060FDF0-000000000060FDF8) ... ... OK
-     Deleting segment        (000000000060FDF8-00000000006105B0) ...
- 16. Creating a new segment  (000000000060FDF8-00000000006105B0) ... ... OK
- 17. Creating a new segment  (000000000060FFF8-0000000000610000) ... ... OK
- 18. Creating a new segment  (0000000000610000-00000000006105B0) ... ... OK
- 19. Creating a new segment  (0000000000610000-0000000000610128) ... ... OK
-     Deleting segment        (0000000000610128-00000000006105B0) ...
- 19. Creating a new segment  (0000000000610128-00000000006105B0) ... ... OK
- 20. Creating a new segment  (0000000000610128-00000000006101AC) ... ... OK
-     Deleting segment        (00000000006101AC-00000000006105B0) ...
- 20. Creating a new segment  (00000000006101AC-00000000006105B0) ... ... OK
- 21. Creating a new segment  (00000000006101C0-00000000006105B0) ... ... OK
- 22. Creating a new segment  (00000000006105B0-00000000006105B1) ... ... OK
- 23. Creating a new segment  (00000000006105B8-00000000006106E0) ... ... OK
-Processing relocations...
-DWARF: Looking for GNU DWARF file at "/usr/lib/debug/.build-id/45/f9b5b50d013fe43405dc5c7fe651c91a7a7ee8.debug"... no.
-Marking typical code sequences...
-Flushing buffers, please wait...ok
-File 'SUBJECTS/from_fcd/csaw-wyvern/x64_elf/subject.exe' has been successfully loaded into the database.
-Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
   The hotkeys are F5: decompile, Ctrl-F5: decompile all.
-  Please check the Edit/Plugins menu for more informaton.
-IDAPython Hex-Rays bindings initialized.
-IDA is analysing the input file...
-You may start to explore the input file right now.
-Propagating type information...
-Function argument information has been propagated
-lumina: applied metadata to 25 functions.
-The initial autoanalysis has been finished.
-Flushing buffers, please wait...ok
-TIMESTAMP decompiling 400E40 size=000000000000001A times=0...
-The decompiler assumes that the segment '.got' is read-only because of its NAME.
-All data references to the segment will be replaced by constant values.
-This may lead to drastic changes in the decompiler output.
-If the segment is not read-only, please change the segment NAME.
 
-In general, the decompiler checks the segment permissions, class, and name
-to determine if it is read-only.
- -> OK
+  Please check the Edit/Plugins menu for more informaton.
+=== start of cleanup script -> OK
+  function at 00400E40  LIB  with name '.init_proc'
+  function at 00400E60       with name 'sub_400E60'
+  function at 00400E70       with name '._ZNSs6appendEPKcm'
+  function at 00400E80       with name '._ZSt20__throw_length_errorPKc'
+  function at 00400E90       with name '._ZNSsC1Ev'
+  function at 00400EA0       with name '._ZNKSs6substrEmm'
+  function at 00400EB0       with name '.__gmon_start__'
+  function at 00400EC0       with name '._ZdlPv'
+  function at 00400ED0       with name '._ZNSs7reserveEm'
+  function at 00400EE0       with name '.__cxa_rethrow'
+  function at 00400EF0       with name '._ZNKSs4sizeEv'
+  function at 00400F00       with name '._ZNSt8ios_base4InitC1Ev'
+  function at 00400F10  LIB  with name '.__libc_start_main'
+  function at 00400F20       with name '._ZNSsC1ERKSs'
+  function at 00400F30       with name '.__cxa_atexit'
+  function at 00400F40       with name '.fgets'
+  function at 00400F50       with name '._ZNKSs6lengthEv'
+  function at 00400F60       with name '._ZNSt8ios_base4InitD1Ev'
+  function at 00400F70       with name '._ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc'
+  function at 00400F80       with name '._ZNSsD1Ev'
+  function at 00400F90       with name '.strlen'
+  function at 00400FA0       with name '._ZNSsC1EPKcRKSaIcE'
+  function at 00400FB0       with name '._ZSt9terminatev'
+  function at 00400FC0       with name '._ZNSsixEm'
+  function at 00400FD0       with name '.memmove'
+  function at 00400FE0       with name '._ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E'
+  function at 00400FF0       with name '._ZNSaIcED1Ev'
+  function at 00401000       with name '._ZNSs6appendEPKc'
+  function at 00401010       with name '.__cxa_end_catch'
+  function at 00401020       with name '._ZSt17__throw_bad_allocv'
+  function at 00401030       with name '.__cxa_begin_catch'
+  function at 00401040       with name '._ZNSaIcEC1Ev'
+  function at 00401060       with name '._Znwm'
+  function at 00401070       with name '._Unwind_Resume'
+  function at 00401080       with name '._ZNSs6appendERKSs'
+  function at 00401090       with name '__cxx_global_var_init'
+  function at 004011A0       with name '__cxx_global_var_init1'
+  function at 004012B0       with name '_GLOBAL__sub_I_wyvern.cpp'
+  function at 00401360       with name '__cxx_global_var_init_0'
+  function at 004013B0       with name '_GLOBAL__sub_I_domain.cpp'
+  function at 004013BB  LIB  with name '_start'
+  function at 004013F0  LIB  with name 'deregister_tm_clones'
+  function at 00401420  LIB  with name 'register_tm_clones'
+  function at 00401460  LIB  with name '__do_global_dtors_aux'
+  function at 00401480  LIB  with name 'frame_dummy'
+  function at 004014B0       with name '_Z15transform_inputSt6vectorIiSaIiEE'
+  function at 00401CC0       with name '_Z14sanitize_inputSs'
+  function at 00404350       with name '_Z11start_questSs'
+  function at 00404F60       with name '_ZNSt6vectorIiSaIiEEC2Ev'
+  function at 00405040       with name '_ZNSt6vectorIiSaIiEED2Ev'
+  function at 00405560       with name '_ZNKSt6vectorIiSaIiEE4sizeEv'
+  function at 00405640       with name '_ZNSt6vectorIiSaIiEEixEm'
+  function at 00405750       with name '_ZNSt6vectorIiSaIiEE9push_backERKi'
+  function at 00405AE0       with name '_ZNSt6vectorIiSaIiEEC2ERKS1_'
+  function at 004062F0       with name '__clang_call_terminate'
+  function at 004063B0       with name '_ZN9__gnu_cxx14__alloc_traitsISaIiEE17_S_select_on_copyERKS1_'
+  function at 00406480       with name '_ZNKSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv'
+  function at 00406550       with name '_ZNSt12_Vector_baseIiSaIiEEC2EmRKS0_'
+  function at 004068D0       with name '_ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiiET0_T_SA_S9_RSaIT1_E'
+  function at 00406A90       with name '_ZNKSt6vectorIiSaIiEE5beginEv'
+  function at 00406BC0       with name '_ZNKSt6vectorIiSaIiEE3endEv'
+  function at 00406CF0       with name '_ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv'
+  function at 00406DC0       with name '_ZNSt12_Vector_baseIiSaIiEED2Ev'
+  function at 004070F0       with name '_ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPim'
+  function at 004073A0       with name '_ZNSt12_Vector_baseIiSaIiEE12_Vector_implD2Ev'
+  function at 00407480       with name '_ZNSaIiED2Ev'
+  function at 00407560       with name '_ZN9__gnu_cxx13new_allocatorIiED2Ev'
+  function at 00407620       with name '_ZN9__gnu_cxx13new_allocatorIiE10deallocateEPim'
+  function at 00407750       with name '_ZN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEC2ERKS2_'
+  function at 00407860       with name '_ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiET0_T_SA_S9_'
+  function at 00407A00       with name '_ZNSt20__uninitialized_copyILb1EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiEET0_T_SC_SB_'
+  function at 00407BA0       with name '_ZSt4copyIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiET0_T_SA_S9_'
+  function at 00407E00       with name '_ZSt14__copy_move_a2ILb0EN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEPiET1_T0_SA_S9_'
+  function at 00408020       with name '_ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEENSt11_Miter_baseIT_E13iterator_typeES9_'
+  function at 00408150       with name '_ZNSt10_Iter_baseIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEELb0EE7_S_baseES7_'
+  function at 00408240       with name '_ZSt13__copy_move_aILb0EPKiPiET1_T0_S4_S3_'
+  function at 004083B0       with name '_ZSt12__niter_baseIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEENSt11_Niter_baseIT_E13iterator_typeES9_'
+  function at 004084C0       with name '_ZSt12__niter_baseIPiENSt11_Niter_baseIT_E13iterator_typeES2_'
+  function at 004085A0       with name '_ZNSt10_Iter_baseIPiLb0EE7_S_baseES0_'
+  function at 00408670       with name '_ZNSt10_Iter_baseIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEELb1EE7_S_baseES7_'
+  function at 00408760       with name '_ZNK9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEE4baseEv'
+  function at 00408830       with name '_ZNSt11__copy_moveILb0ELb1ESt26random_access_iterator_tagE8__copy_mIiEEPT_PKS3_S6_S4_'
+  function at 00408B50       with name '_ZNSt12_Vector_baseIiSaIiEE12_Vector_implC2ERKS0_'
+  function at 00408CA0       with name '_ZNSt12_Vector_baseIiSaIiEE17_M_create_storageEm'
+  function at 00408E10       with name '_ZNSt12_Vector_baseIiSaIiEE11_M_allocateEm'
+  function at 00409140       with name '_ZN9__gnu_cxx13new_allocatorIiE8allocateEmPKv'
+  function at 00409400       with name '_ZNK9__gnu_cxx13new_allocatorIiE8max_sizeEv'
+  function at 004094D0       with name '_ZNSaIiEC2ERKS_'
+  function at 004095F0       with name '_ZN9__gnu_cxx13new_allocatorIiEC2ERKS1_'
+  function at 004096E0       with name '_ZN9__gnu_cxx14__alloc_traitsISaIiEE9constructIiEEvRS1_PiRKT_'
+  function at 00409820       with name '_ZNSt6vectorIiSaIiEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPiS1_EERKi'
+  function at 0040AF70       with name '_ZNSt6vectorIiSaIiEE3endEv'
+  function at 0040B090       with name '_ZN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEC2ERKS1_'
+  function at 0040B1A0       with name '_ZSt13copy_backwardIPiS0_ET0_T_S2_S1_'
+  function at 0040B330       with name '_ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEE4baseEv'
+  function at 0040B400       with name '_ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEdeEv'
+  function at 0040B4D0       with name '_ZNKSt6vectorIiSaIiEE12_M_check_lenEmPKc'
+  function at 0040BB70       with name '_ZN9__gnu_cxxmiIPiSt6vectorIiSaIiEEEENS_17__normal_iteratorIT_T0_E15difference_typeERKS8_SB_'
+  function at 0040BCC0       with name '_ZNSt6vectorIiSaIiEE5beginEv'
+  function at 0040BDD0       with name '_ZSt34__uninitialized_move_if_noexcept_aIPiS0_SaIiEET0_T_S3_S2_RT1_'
+  function at 0040BF50       with name '_ZN9__gnu_cxx14__alloc_traitsISaIiEE7destroyERS1_Pi'
+  function at 0040C060       with name '_ZSt8_DestroyIPiiEvT_S1_RSaIT0_E'
+  function at 0040C1A0       with name '_ZSt8_DestroyIPiEvT_S1_'
+  function at 0040C2B0       with name '_ZNSt12_Destroy_auxILb1EE9__destroyIPiEEvT_S3_'
+  function at 0040C3A0       with name '_ZN9__gnu_cxx13new_allocatorIiE7destroyEPi'
+  function at 0040C490       with name '_ZSt22__uninitialized_copy_aIPiS0_iET0_T_S2_S1_RSaIT1_E'
+  function at 0040C610       with name '_ZSt18uninitialized_copyIPiS0_ET0_T_S2_S1_'
+  function at 0040C760       with name '_ZNSt20__uninitialized_copyILb1EE13__uninit_copyIPiS2_EET0_T_S4_S3_'
+  function at 0040C8B0       with name '_ZSt4copyIPiS0_ET0_T_S2_S1_'
+  function at 0040CA40       with name '_ZSt14__copy_move_a2ILb0EPiS0_ET1_T0_S2_S1_'
+  function at 0040CBF0       with name '_ZSt12__miter_baseIPiENSt11_Miter_baseIT_E13iterator_typeES2_'
+  function at 0040CCD0       with name '_ZSt13__copy_move_aILb0EPiS0_ET1_T0_S2_S1_'
+  function at 0040CE40       with name '_ZNKSt6vectorIiSaIiEE8max_sizeEv'
+  function at 0040CF40       with name '_ZSt3maxImERKT_S2_S2_'
+  function at 0040D280       with name '_ZN9__gnu_cxx14__alloc_traitsISaIiEE8max_sizeERKS1_'
+  function at 0040D370       with name '_ZSt23__copy_move_backward_a2ILb0EPiS0_ET1_T0_S2_S1_'
+  function at 0040D520       with name '_ZSt22__copy_move_backward_aILb0EPiS0_ET1_T0_S2_S1_'
+  function at 0040D690       with name '_ZNSt20__copy_move_backwardILb0ELb1ESt26random_access_iterator_tagE13__copy_move_bIiEEPT_PKS3_S6_S4_'
+  function at 0040D9D0       with name '_ZN9__gnu_cxx13new_allocatorIiE9constructEPiRKi'
+  function at 0040DC60       with name '_ZNSt12_Vector_baseIiSaIiEEC2Ev'
+  function at 0040DD40       with name '_ZNSt12_Vector_baseIiSaIiEE12_Vector_implC2Ev'
+  function at 0040DE60       with name '_ZNSaIiEC2Ev'
+  function at 0040DF40       with name '_ZN9__gnu_cxx13new_allocatorIiEC2Ev'
+  function at 0040E000       with name '_Z15reward_strengthSs'
+  function at 0040E120       with name 'main'
+  function at 0040E3F0       with name '_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_'
+  function at 0040E490       with name '_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_RKS6_'
+  function at 0040E590       with name '_ZNSt11char_traitsIcE6lengthEPKc'
+  function at 0040E5B0  LIB  with name '__libc_csu_init'
+  function at 0040E620  LIB  with name '__libc_csu_fini'
+  function at 0040E624  LIB  with name '.term_proc'
+  function at 006105B8       with name '_ZNSs6appendEPKcm'
+  function at 006105C0       with name '_ZSt20__throw_length_errorPKc'
+  function at 006105C8       with name '_ZNSsC1Ev'
+  function at 006105D0       with name '_ZNKSs6substrEmm'
+  function at 006105D8       with name '_ZdlPv'
+  function at 006105E0       with name '_ZNSs7reserveEm'
+  function at 006105E8       with name '__cxa_rethrow'
+  function at 006105F0       with name '_ZNKSs4sizeEv'
+  function at 006105F8       with name '_ZNSt8ios_base4InitC1Ev'
+  function at 00610600  LIB  with name '__libc_start_main'
+  function at 00610608       with name '_ZNSsC1ERKSs'
+  function at 00610610       with name '__cxa_atexit'
+  function at 00610618       with name 'fgets'
+  function at 00610620       with name '_ZNKSs6lengthEv'
+  function at 00610628       with name '_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc'
+  function at 00610630       with name '_ZNSsD1Ev'
+  function at 00610638       with name 'strlen'
+  function at 00610640       with name '_ZNSsC1EPKcRKSaIcE'
+  function at 00610648       with name '_ZSt9terminatev'
+  function at 00610650       with name '_ZNSsixEm'
+  function at 00610658       with name 'memmove'
+  function at 00610660       with name '_ZStlsIcSt11char_traitsIcESaIcEERSt13basic_ostreamIT_T0_ES7_RKSbIS4_S5_T1_E'
+  function at 00610668       with name '_ZNSaIcED1Ev'
+  function at 00610670       with name '_ZNSs6appendEPKc'
+  function at 00610678       with name '__cxa_end_catch'
+  function at 00610680       with name '_ZSt17__throw_bad_allocv'
+  function at 00610688       with name '__cxa_begin_catch'
+  function at 00610690       with name '_ZNSaIcEC1Ev'
+  function at 00610698       with name '_Znwm'
+  function at 006106A0       with name '_Unwind_Resume'
+  function at 006106A8       with name '_ZNSs6appendERKSs'
+  function at 006106B0       with name '_ZNSt8ios_base4InitD1Ev'
+  function at 006106B8       with name '__gxx_personality_v0'
+  function at 006106C0       with name '__gmon_start__'
+finished -> OK
 TIMESTAMP decompiling 400E60 size=000000000000000C times=0...
 The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
 All data references to the segment will be replaced by constant values.
@@ -91,8 +196,6 @@ to determine if it is read-only.
  -> OK
 TIMESTAMP decompiling 401090 size=000000000000010A times=0...
 TIMESTAMP decompiling 401360 size=0000000000000043 times=0...
-TIMESTAMP decompiling 4013F0 size=0000000000000029 times=0...
-TIMESTAMP decompiling 401420 size=0000000000000039 times=0...
 TIMESTAMP decompiling 405560 size=00000000000000DC times=0...
 TIMESTAMP decompiling 405640 size=0000000000000103 times=0...
 TIMESTAMP decompiling 4062F0 size=00000000000000B8 times=0...
@@ -118,8 +221,6 @@ TIMESTAMP decompiling 40D690 size=0000000000000337 times=0...
 TIMESTAMP decompiling 40D9D0 size=000000000000028C times=0...
 TIMESTAMP decompiling 40DF40 size=00000000000000C0 times=0...
 TIMESTAMP decompiling 40E590 size=000000000000001B times=0...
-TIMESTAMP decompiling 40E624 size=0000000000000009 times=0...
-TIMESTAMP decompiling 4014B0 size=000000000000080A times=0...
 TIMESTAMP decompiling 40DE60 size=00000000000000D9 times=0...
 TIMESTAMP decompiling 40DD40 size=000000000000011F times=0...
 TIMESTAMP decompiling 40DC60 size=00000000000000D3 times=0...
@@ -131,6 +232,10 @@ TIMESTAMP decompiling 406DC0 size=0000000000000330 times=0...
 TIMESTAMP decompiling 40C1A0 size=0000000000000106 times=0...
 TIMESTAMP decompiling 40C060 size=0000000000000132 times=0...
 TIMESTAMP decompiling 405040 size=000000000000051A times=0...
+TIMESTAMP decompiling 4011A0 size=0000000000000110 times=0...
+TIMESTAMP decompiling 4012B0 size=00000000000000A5 times=0...
+TIMESTAMP decompiling 4013B0 size=000000000000000B times=0...
+TIMESTAMP decompiling 4014B0 size=000000000000080A times=0...
 TIMESTAMP decompiling 4096E0 size=000000000000013E times=0...
 TIMESTAMP decompiling 409140 size=00000000000002B6 times=0...
 TIMESTAMP decompiling 408E10 size=0000000000000322 times=0...
@@ -185,16 +290,6 @@ TIMESTAMP decompiling 40E3F0 size=000000000000009D times=0...
 TIMESTAMP decompiling 40E490 size=00000000000000FD times=0...
 TIMESTAMP decompiling 40E000 size=0000000000000118 times=0...
 TIMESTAMP decompiling 40E120 size=00000000000002CB times=0...
-TIMESTAMP decompiling 4011A0 size=0000000000000110 times=0...
-TIMESTAMP decompiling 4012B0 size=00000000000000A5 times=0...
-TIMESTAMP decompiling 4013B0 size=000000000000000B times=0...
-TIMESTAMP decompiling 401480 size=000000000000002D times=0...
-TIMESTAMP decompiling 401420 size=0000000000000039 times=1;usedcpu 00:00:00 ...__int64(void)
-TIMESTAMP decompiling 401480 size=000000000000002D times=1;usedcpu 00:00:00 ...__int64 __fastcall()
-TIMESTAMP decompiling 40E5B0 size=0000000000000065 times=0...
-TIMESTAMP decompiling 4012B0 size=00000000000000A5 times=1;usedcpu 00:00:00 ...__int64 __fastcall(_QWORD, _QWORD, _QWORD)
-TIMESTAMP decompiling 40E5B0 size=0000000000000065 times=1;usedcpu 00:00:00 ...void __fastcall(unsigned int a1, __int64 a2, __int64 a3)
-TIMESTAMP decompiling 4013BB size=000000000000002A times=0...
-TIMESTAMP decompiling 401460 size=000000000000001C times=0...
 TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
 Unloading IDP module IDADIR/procs/pc64.so...

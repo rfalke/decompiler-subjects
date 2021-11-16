@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-__int64 __fastcall f(int a1);
+__int64 __fastcall f(int);
 
 
 //----- (0000000000000000) ----------------------------------------------------
@@ -34,7 +34,7 @@ __int64 __fastcall f(int a1)
       --v2;
     }
     while ( a1 );
-    result = v2 + v4;
+    return v2 + v4;
   }
   return result;
 }

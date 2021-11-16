@@ -10,15 +10,7 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-// __int64 (**init_proc())(void);
 __int64 __fastcall sub_401020(); // weak
-int __cdecl main(int argc, const char **argv, const char **envp);
-// void __fastcall __noreturn start(__int64 a1, __int64 a2, void (*a3)(void));
-// void dl_relocate_static_pie();
-// void *deregister_tm_clones();
-// __int64 register_tm_clones();
-// void *_do_global_dtors_aux();
-// __int64 frame_dummy();
 __int64 __fastcall inst_0_values_var_0(); // weak
 __int64 __fastcall inst_0_flags_var_0(); // weak
 __int64 __fastcall inst_0_values_var_1(); // weak
@@ -8419,11 +8411,6 @@ __int64 __fastcall inst_419_values_var_8(); // weak
 __int64 __fastcall inst_419_flags_var_8(); // weak
 __int64 __fastcall inst_419_values_var_9(); // weak
 __int64 __fastcall inst_419_flags_var_9(); // weak
-// void __fastcall _libc_csu_init(unsigned int a1, __int64 a2, __int64 a3);
-// void _libc_csu_fini(void); idb
-// void term_proc();
-// int __fastcall _libc_start_main(int (__fastcall *main)(int, char **, char **), int argc, char **ubp_av, void (*init)(void), void (*fini)(void), void (*rtld_fini)(void), void *stack_end);
-// __int64 _gmon_start__(void); weak
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -8793,7 +8780,7 @@ __int64 inst_1_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(69, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 41384C: using guessed type __int64 __fastcall inst_1_flags_var_5();
@@ -8969,7 +8956,7 @@ __int64 inst_2_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(100, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 414913: using guessed type __int64 __fastcall inst_2_flags_var_3();
@@ -9371,7 +9358,7 @@ __int64 inst_4_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-23759, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 416F1B: using guessed type __int64 __fastcall inst_4_flags_var_1();
@@ -9666,7 +9653,7 @@ __int64 inst_5_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-864260812, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 418A95: using guessed type __int64 __fastcall inst_5_flags_var_4();
@@ -9777,7 +9764,7 @@ __int64 inst_5_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-1452586847, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 41953C: using guessed type __int64 __fastcall inst_5_flags_var_9();
@@ -9834,7 +9821,7 @@ __int64 inst_6_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-1906572406, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 419B8D: using guessed type __int64 __fastcall inst_6_flags_var_2();
@@ -9872,7 +9859,7 @@ __int64 inst_6_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-268384105, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 419FC1: using guessed type __int64 __fastcall inst_6_flags_var_4();
@@ -9929,7 +9916,7 @@ __int64 inst_6_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-1045524765, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 41A60C: using guessed type __int64 __fastcall inst_6_flags_var_7();
@@ -9967,7 +9954,7 @@ __int64 inst_6_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-1472799511, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 41AA3F: using guessed type __int64 __fastcall inst_6_flags_var_9();
@@ -10216,7 +10203,7 @@ __int64 inst_8_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0xBDABADBA54046740LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 41C1AC: using guessed type __int64 __fastcall inst_8_flags_var_0();
@@ -10235,7 +10222,7 @@ __int64 inst_8_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(0xDC139CC34AF73757LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 41C3C6: using guessed type __int64 __fastcall inst_8_flags_var_1();
@@ -10254,7 +10241,7 @@ __int64 inst_8_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(0xFD16B2592E3D908FLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 41C5E0: using guessed type __int64 __fastcall inst_8_flags_var_2();
@@ -10368,7 +10355,7 @@ __int64 inst_8_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(0x422EBD019BE23467LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 41D27C: using guessed type __int64 __fastcall inst_8_flags_var_8();
@@ -10387,7 +10374,7 @@ __int64 inst_8_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(0x84E3E611A6E0FAB0LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 41D496: using guessed type __int64 __fastcall inst_8_flags_var_9();
@@ -11069,7 +11056,7 @@ __int64 inst_11_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(127, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4213D7: using guessed type __int64 __fastcall inst_11_flags_var_9();
@@ -11341,7 +11328,7 @@ __int64 inst_13_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-17071, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 422D61: using guessed type __int64 __fastcall inst_13_flags_var_1();
@@ -11563,7 +11550,7 @@ __int64 inst_14_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(2053986931, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 42428E: using guessed type __int64 __fastcall inst_14_flags_var_1();
@@ -11758,7 +11745,7 @@ __int64 inst_15_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(641003231, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4255CD: using guessed type __int64 __fastcall inst_15_flags_var_0();
@@ -11796,7 +11783,7 @@ __int64 inst_15_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(141394563, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 425A03: using guessed type __int64 __fastcall inst_15_flags_var_2();
@@ -11834,7 +11821,7 @@ __int64 inst_15_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(929578087, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 425E3B: using guessed type __int64 __fastcall inst_15_flags_var_4();
@@ -11853,7 +11840,7 @@ __int64 inst_15_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(975156839, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 426056: using guessed type __int64 __fastcall inst_15_flags_var_5();
@@ -11891,7 +11878,7 @@ __int64 inst_15_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-130032865, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 42648D: using guessed type __int64 __fastcall inst_15_flags_var_7();
@@ -11929,7 +11916,7 @@ __int64 inst_15_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(1499994396, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4268C4: using guessed type __int64 __fastcall inst_15_flags_var_9();
@@ -12197,7 +12184,7 @@ __int64 inst_17_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(0xC2D5F7C879ED11B6LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 428263: using guessed type __int64 __fastcall inst_17_flags_var_1();
@@ -12216,7 +12203,7 @@ __int64 inst_17_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(0x449B4035035C2383LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 42847F: using guessed type __int64 __fastcall inst_17_flags_var_2();
@@ -12235,7 +12222,7 @@ __int64 inst_17_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(0xC0220CBAFAAFB223LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 42869B: using guessed type __int64 __fastcall inst_17_flags_var_3();
@@ -12254,7 +12241,7 @@ __int64 inst_17_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(0x3345B7D8C238F40BLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4288B7: using guessed type __int64 __fastcall inst_17_flags_var_4();
@@ -12311,7 +12298,7 @@ __int64 inst_17_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(0x37DEC9462B32C7F8LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 428F0B: using guessed type __int64 __fastcall inst_17_flags_var_7();
@@ -12330,7 +12317,7 @@ __int64 inst_17_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(0xC6FE535CE1C206DCLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 429127: using guessed type __int64 __fastcall inst_17_flags_var_8();
@@ -12349,7 +12336,7 @@ __int64 inst_17_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(0x87526EED86DFB77ALL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 429343: using guessed type __int64 __fastcall inst_17_flags_var_9();
@@ -12755,7 +12742,7 @@ __int64 inst_19_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-74, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 42B937: using guessed type __int64 __fastcall inst_19_flags_var_7();
@@ -14909,7 +14896,7 @@ __int64 inst_29_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-89, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 438015: using guessed type __int64 __fastcall inst_29_flags_var_1();
@@ -16492,7 +16479,7 @@ __int64 inst_36_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(64, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4411E8: using guessed type __int64 __fastcall inst_36_flags_var_0();
@@ -16511,7 +16498,7 @@ __int64 inst_36_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(35, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 441404: using guessed type __int64 __fastcall inst_36_flags_var_1();
@@ -16549,7 +16536,7 @@ __int64 inst_36_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-83, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 441838: using guessed type __int64 __fastcall inst_36_flags_var_3();
@@ -16568,7 +16555,7 @@ __int64 inst_36_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(8, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 441A53: using guessed type __int64 __fastcall inst_36_flags_var_4();
@@ -16625,7 +16612,7 @@ __int64 inst_36_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(16, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4420A5: using guessed type __int64 __fastcall inst_36_flags_var_7();
@@ -16644,7 +16631,7 @@ __int64 inst_36_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(16, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4422C1: using guessed type __int64 __fastcall inst_36_flags_var_8();
@@ -16701,7 +16688,7 @@ __int64 inst_37_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(64, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44290F: using guessed type __int64 __fastcall inst_37_flags_var_1();
@@ -16720,7 +16707,7 @@ __int64 inst_37_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(64, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 442B27: using guessed type __int64 __fastcall inst_37_flags_var_2();
@@ -16796,7 +16783,7 @@ __int64 inst_37_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(2, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 443387: using guessed type __int64 __fastcall inst_37_flags_var_6();
@@ -16815,7 +16802,7 @@ __int64 inst_37_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(0x80, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44359F: using guessed type __int64 __fastcall inst_37_flags_var_7();
@@ -16834,7 +16821,7 @@ __int64 inst_37_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(-122, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4437B7: using guessed type __int64 __fastcall inst_37_flags_var_8();
@@ -16967,7 +16954,7 @@ __int64 inst_38_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(98, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44466A: using guessed type __int64 __fastcall inst_38_flags_var_5();
@@ -17024,7 +17011,7 @@ __int64 inst_38_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(16, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 444CB7: using guessed type __int64 __fastcall inst_38_flags_var_8();
@@ -17081,7 +17068,7 @@ __int64 inst_39_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-32480, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44530C: using guessed type __int64 __fastcall inst_39_flags_var_1();
@@ -17100,7 +17087,7 @@ __int64 inst_39_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(25, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44552A: using guessed type __int64 __fastcall inst_39_flags_var_2();
@@ -17119,7 +17106,7 @@ __int64 inst_39_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-16126, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 445747: using guessed type __int64 __fastcall inst_39_flags_var_3();
@@ -17157,7 +17144,7 @@ __int64 inst_39_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(4615, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 445B86: using guessed type __int64 __fastcall inst_39_flags_var_5();
@@ -17271,7 +17258,7 @@ __int64 inst_40_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-28158, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 446839: using guessed type __int64 __fastcall inst_40_flags_var_1();
@@ -17309,7 +17296,7 @@ __int64 inst_40_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(1040, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 446C70: using guessed type __int64 __fastcall inst_40_flags_var_3();
@@ -17328,7 +17315,7 @@ __int64 inst_40_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-32192, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 446E8B: using guessed type __int64 __fastcall inst_40_flags_var_4();
@@ -17347,7 +17334,7 @@ __int64 inst_40_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(-20464, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4470A6: using guessed type __int64 __fastcall inst_40_flags_var_5();
@@ -17442,7 +17429,7 @@ __int64 inst_41_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(538985488, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 447B33: using guessed type __int64 __fastcall inst_41_flags_var_0();
@@ -17461,7 +17448,7 @@ __int64 inst_41_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(1292895396, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 447D53: using guessed type __int64 __fastcall inst_41_flags_var_1();
@@ -17556,7 +17543,7 @@ __int64 inst_41_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(14696033, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4487F7: using guessed type __int64 __fastcall inst_41_flags_var_6();
@@ -17575,7 +17562,7 @@ __int64 inst_41_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(1392510769, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 448A19: using guessed type __int64 __fastcall inst_41_flags_var_7();
@@ -17594,7 +17581,7 @@ __int64 inst_41_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(221578349, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 448C38: using guessed type __int64 __fastcall inst_41_flags_var_8();
@@ -17632,7 +17619,7 @@ __int64 inst_42_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-1067935568, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 449075: using guessed type __int64 __fastcall inst_42_flags_var_0();
@@ -17689,7 +17676,7 @@ __int64 inst_42_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-2130048940, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4496BF: using guessed type __int64 __fastcall inst_42_flags_var_3();
@@ -17708,7 +17695,7 @@ __int64 inst_42_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(671520088, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4498D9: using guessed type __int64 __fastcall inst_42_flags_var_4();
@@ -17784,7 +17771,7 @@ __int64 inst_42_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(325132296, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44A140: using guessed type __int64 __fastcall inst_42_flags_var_8();
@@ -17803,7 +17790,7 @@ __int64 inst_42_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(3074, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44A35A: using guessed type __int64 __fastcall inst_42_flags_var_9();
@@ -17898,7 +17885,7 @@ __int64 inst_43_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(0x3300A5D4F40038CLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44ADFF: using guessed type __int64 __fastcall inst_43_flags_var_4();
@@ -17917,7 +17904,7 @@ __int64 inst_43_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(0x4CAD16E8A30C5110LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44B021: using guessed type __int64 __fastcall inst_43_flags_var_5();
@@ -17955,7 +17942,7 @@ __int64 inst_43_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(1321992196LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44B465: using guessed type __int64 __fastcall inst_43_flags_var_7();
@@ -17974,7 +17961,7 @@ __int64 inst_43_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(1083971LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44B687: using guessed type __int64 __fastcall inst_43_flags_var_8();
@@ -18050,7 +18037,7 @@ __int64 inst_44_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(0xA13A50B84881880LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44BEFA: using guessed type __int64 __fastcall inst_44_flags_var_2();
@@ -18069,7 +18056,7 @@ __int64 inst_44_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(0x1780069409600EB0LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44C114: using guessed type __int64 __fastcall inst_44_flags_var_3();
@@ -18088,7 +18075,7 @@ __int64 inst_44_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(0x4BB355BD401C88BALL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44C32E: using guessed type __int64 __fastcall inst_44_flags_var_4();
@@ -18145,7 +18132,7 @@ __int64 inst_44_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(0x8040A02C22008207LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44C97C: using guessed type __int64 __fastcall inst_44_flags_var_7();
@@ -18164,7 +18151,7 @@ __int64 inst_44_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(0x3028080003870216LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44CB96: using guessed type __int64 __fastcall inst_44_flags_var_8();
@@ -18183,7 +18170,7 @@ __int64 inst_44_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(0x9041144F0113C940LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 44CDB0: using guessed type __int64 __fastcall inst_44_flags_var_9();
@@ -19506,10 +19493,7 @@ __int64 inst_53_values_var_0()
 //----- (0000000000456E6F) ----------------------------------------------------
 __int64 inst_53_flags_var_0()
 {
-  __int16 v0; // r11
-
-  v0 = 7736;
-  return _bittest(&v0, 0xE251u);
+  return 0LL;
 }
 // 456E6F: using guessed type __int64 __fastcall inst_53_flags_var_0();
 
@@ -19523,10 +19507,7 @@ __int64 inst_53_values_var_1()
 //----- (0000000000457075) ----------------------------------------------------
 __int64 inst_53_flags_var_1()
 {
-  __int16 v0; // dx
-
-  v0 = 21568;
-  return _bittest(&v0, 0xAF0Fu);
+  return 0LL;
 }
 // 457075: using guessed type __int64 __fastcall inst_53_flags_var_1();
 
@@ -19540,10 +19521,7 @@ __int64 inst_53_values_var_2()
 //----- (000000000045727B) ----------------------------------------------------
 __int64 inst_53_flags_var_2()
 {
-  __int16 v0; // r9
-
-  v0 = 10579;
-  return _bittest(&v0, 0x25DCu);
+  return 0LL;
 }
 // 45727B: using guessed type __int64 __fastcall inst_53_flags_var_2();
 
@@ -19557,10 +19535,7 @@ __int64 inst_53_values_var_3()
 //----- (0000000000457481) ----------------------------------------------------
 __int64 inst_53_flags_var_3()
 {
-  __int16 v0; // si
-
-  v0 = -17272;
-  return _bittest(&v0, 0x33FCu) - 1LL;
+  return 0LL;
 }
 // 457481: using guessed type __int64 __fastcall inst_53_flags_var_3();
 
@@ -19574,10 +19549,7 @@ __int64 inst_53_values_var_4()
 //----- (0000000000457686) ----------------------------------------------------
 __int64 inst_53_flags_var_4()
 {
-  __int16 v0; // bx
-
-  v0 = -8190;
-  return _bittest(&v0, 0xFDBAu);
+  return 0LL;
 }
 // 457686: using guessed type __int64 __fastcall inst_53_flags_var_4();
 
@@ -19591,10 +19563,7 @@ __int64 inst_53_values_var_5()
 //----- (000000000045788B) ----------------------------------------------------
 __int64 inst_53_flags_var_5()
 {
-  __int16 v0; // bx
-
-  v0 = 3130;
-  return _bittest(&v0, 0x9B69u);
+  return 0LL;
 }
 // 45788B: using guessed type __int64 __fastcall inst_53_flags_var_5();
 
@@ -19608,10 +19577,7 @@ __int64 inst_53_values_var_6()
 //----- (0000000000457A8F) ----------------------------------------------------
 __int64 inst_53_flags_var_6()
 {
-  __int16 v0; // dx
-
-  v0 = 29534;
-  return _bittest(&v0, 0x1BEDu) - 1LL;
+  return 0LL;
 }
 // 457A8F: using guessed type __int64 __fastcall inst_53_flags_var_6();
 
@@ -19625,10 +19591,7 @@ __int64 inst_53_values_var_7()
 //----- (0000000000457C95) ----------------------------------------------------
 __int64 inst_53_flags_var_7()
 {
-  __int16 v0; // r8
-
-  v0 = 20564;
-  return _bittest(&v0, 0x588Fu);
+  return 0LL;
 }
 // 457C95: using guessed type __int64 __fastcall inst_53_flags_var_7();
 
@@ -19642,10 +19605,7 @@ __int64 inst_53_values_var_8()
 //----- (0000000000457E9B) ----------------------------------------------------
 __int64 inst_53_flags_var_8()
 {
-  __int16 v0; // r8
-
-  v0 = 17292;
-  return _bittest(&v0, 0xEDE2u) - 1LL;
+  return 0LL;
 }
 // 457E9B: using guessed type __int64 __fastcall inst_53_flags_var_8();
 
@@ -19659,27 +19619,21 @@ __int64 inst_53_values_var_9()
 //----- (00000000004580A1) ----------------------------------------------------
 __int64 inst_53_flags_var_9()
 {
-  __int16 v0; // si
-
-  v0 = -8379;
-  return _bittest(&v0, 0x7BB1u);
+  return 0LL;
 }
 // 4580A1: using guessed type __int64 __fastcall inst_53_flags_var_9();
 
 //----- (00000000004581A7) ----------------------------------------------------
 __int64 inst_54_values_var_0()
 {
-  return -32768LL;
+  return 0LL;
 }
 // 4581A7: using guessed type __int64 __fastcall inst_54_values_var_0();
 
 //----- (00000000004582A6) ----------------------------------------------------
 __int64 inst_54_flags_var_0()
 {
-  __int16 v0; // r11
-
-  v0 = -14341;
-  return (char)_bittestandcomplement(&v0, 0x497Du);
+  return 0LL;
 }
 // 4582A6: using guessed type __int64 __fastcall inst_54_flags_var_0();
 
@@ -19693,12 +19647,7 @@ __int64 inst_54_values_var_1()
 //----- (00000000004584AC) ----------------------------------------------------
 __int64 inst_54_flags_var_1()
 {
-  __int16 v0; // r13
-  unsigned __int8 v1; // cf
-
-  v0 = -18650;
-  v1 = _bittestandcomplement(&v0, 0xC5CDu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 4584AC: using guessed type __int64 __fastcall inst_54_flags_var_1();
 
@@ -19712,10 +19661,7 @@ __int64 inst_54_values_var_2()
 //----- (00000000004586B1) ----------------------------------------------------
 __int64 inst_54_flags_var_2()
 {
-  __int16 v0; // ax
-
-  v0 = 13319;
-  return (char)_bittestandcomplement(&v0, 0x44A3u);
+  return 0LL;
 }
 // 4586B1: using guessed type __int64 __fastcall inst_54_flags_var_2();
 
@@ -19729,29 +19675,21 @@ __int64 inst_54_values_var_3()
 //----- (00000000004588B5) ----------------------------------------------------
 __int64 inst_54_flags_var_3()
 {
-  __int16 v0; // r15
-  unsigned __int8 v1; // cf
-
-  v0 = 15090;
-  v1 = _bittestandcomplement(&v0, 0xE31Cu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 4588B5: using guessed type __int64 __fastcall inst_54_flags_var_3();
 
 //----- (00000000004589BB) ----------------------------------------------------
 __int64 inst_54_values_var_4()
 {
-  return -8LL;
+  return 0LL;
 }
 // 4589BB: using guessed type __int64 __fastcall inst_54_values_var_4();
 
 //----- (0000000000458ABB) ----------------------------------------------------
 __int64 inst_54_flags_var_4()
 {
-  __int16 v0; // ax
-
-  v0 = 6712;
-  return (char)_bittestandcomplement(&v0, 0x8837u);
+  return 0LL;
 }
 // 458ABB: using guessed type __int64 __fastcall inst_54_flags_var_4();
 
@@ -19765,10 +19703,7 @@ __int64 inst_54_values_var_5()
 //----- (0000000000458CBF) ----------------------------------------------------
 __int64 inst_54_flags_var_5()
 {
-  __int16 v0; // r15
-
-  v0 = -6138;
-  return (char)_bittestandcomplement(&v0, 0x1C67u);
+  return 0LL;
 }
 // 458CBF: using guessed type __int64 __fastcall inst_54_flags_var_5();
 
@@ -19782,10 +19717,7 @@ __int64 inst_54_values_var_6()
 //----- (0000000000458EC5) ----------------------------------------------------
 __int64 inst_54_flags_var_6()
 {
-  __int16 v0; // r9
-
-  v0 = -3982;
-  return (char)_bittestandcomplement(&v0, 0xA352u);
+  return 0LL;
 }
 // 458EC5: using guessed type __int64 __fastcall inst_54_flags_var_6();
 
@@ -19799,10 +19731,7 @@ __int64 inst_54_values_var_7()
 //----- (00000000004590CB) ----------------------------------------------------
 __int64 inst_54_flags_var_7()
 {
-  __int16 v0; // r8
-
-  v0 = -8141;
-  return (char)_bittestandcomplement(&v0, 0x3639u);
+  return 0LL;
 }
 // 4590CB: using guessed type __int64 __fastcall inst_54_flags_var_7();
 
@@ -19816,27 +19745,21 @@ __int64 inst_54_values_var_8()
 //----- (00000000004592D1) ----------------------------------------------------
 __int64 inst_54_flags_var_8()
 {
-  __int16 v0; // r8
-
-  v0 = 29000;
-  return (char)_bittestandcomplement(&v0, 0xC974u);
+  return 0LL;
 }
 // 4592D1: using guessed type __int64 __fastcall inst_54_flags_var_8();
 
 //----- (00000000004593D7) ----------------------------------------------------
 __int64 inst_54_values_var_9()
 {
-  return -4LL;
+  return 0LL;
 }
 // 4593D7: using guessed type __int64 __fastcall inst_54_values_var_9();
 
 //----- (00000000004594D6) ----------------------------------------------------
 __int64 inst_54_flags_var_9()
 {
-  __int16 v0; // r11
-
-  v0 = -18791;
-  return (char)_bittestandcomplement(&v0, 0x7EF5u);
+  return 0LL;
 }
 // 4594D6: using guessed type __int64 __fastcall inst_54_flags_var_9();
 
@@ -19850,10 +19773,7 @@ __int64 inst_55_values_var_0()
 //----- (00000000004596DB) ----------------------------------------------------
 __int64 inst_55_flags_var_0()
 {
-  __int16 v0; // bx
-
-  v0 = -8531;
-  return (char)_bittestandreset(&v0, 0x8E88u);
+  return 0LL;
 }
 // 4596DB: using guessed type __int64 __fastcall inst_55_flags_var_0();
 
@@ -19867,10 +19787,7 @@ __int64 inst_55_values_var_1()
 //----- (00000000004598E1) ----------------------------------------------------
 __int64 inst_55_flags_var_1()
 {
-  __int16 v0; // r8
-
-  v0 = -1452;
-  return (char)_bittestandreset(&v0, 0x921Au);
+  return 0LL;
 }
 // 4598E1: using guessed type __int64 __fastcall inst_55_flags_var_1();
 
@@ -19884,12 +19801,7 @@ __int64 inst_55_values_var_2()
 //----- (0000000000459AE7) ----------------------------------------------------
 __int64 inst_55_flags_var_2()
 {
-  __int16 v0; // r15
-  unsigned __int8 v1; // cf
-
-  v0 = -27137;
-  v1 = _bittestandreset(&v0, 0x2A96u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 459AE7: using guessed type __int64 __fastcall inst_55_flags_var_2();
 
@@ -19903,31 +19815,21 @@ __int64 inst_55_values_var_3()
 //----- (0000000000459CED) ----------------------------------------------------
 __int64 inst_55_flags_var_3()
 {
-  __int16 v0; // r8
-  unsigned __int8 v1; // cf
-
-  v0 = -23105;
-  v1 = _bittestandreset(&v0, 0x5874u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 459CED: using guessed type __int64 __fastcall inst_55_flags_var_3();
 
 //----- (0000000000459DF3) ----------------------------------------------------
 __int64 inst_55_values_var_4()
 {
-  return 1024LL;
+  return 0LL;
 }
 // 459DF3: using guessed type __int64 __fastcall inst_55_values_var_4();
 
 //----- (0000000000459EF3) ----------------------------------------------------
 __int64 inst_55_flags_var_4()
 {
-  __int16 v0; // bx
-  unsigned __int8 v1; // cf
-
-  v0 = -23725;
-  v1 = _bittestandreset(&v0, 0x9AE9u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 459EF3: using guessed type __int64 __fastcall inst_55_flags_var_4();
 
@@ -19941,10 +19843,7 @@ __int64 inst_55_values_var_5()
 //----- (000000000045A0F7) ----------------------------------------------------
 __int64 inst_55_flags_var_5()
 {
-  __int16 v0; // r15
-
-  v0 = -21616;
-  return (char)_bittestandreset(&v0, 0xF91Cu);
+  return 0LL;
 }
 // 45A0F7: using guessed type __int64 __fastcall inst_55_flags_var_5();
 
@@ -19958,10 +19857,7 @@ __int64 inst_55_values_var_6()
 //----- (000000000045A2FD) ----------------------------------------------------
 __int64 inst_55_flags_var_6()
 {
-  __int16 v0; // bx
-
-  v0 = -18273;
-  return (char)_bittestandreset(&v0, 0x44DEu);
+  return 0LL;
 }
 // 45A2FD: using guessed type __int64 __fastcall inst_55_flags_var_6();
 
@@ -19975,31 +19871,21 @@ __int64 inst_55_values_var_7()
 //----- (000000000045A503) ----------------------------------------------------
 __int64 inst_55_flags_var_7()
 {
-  __int16 v0; // r13
-  unsigned __int8 v1; // cf
-
-  v0 = 18133;
-  v1 = _bittestandreset(&v0, 0x254u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45A503: using guessed type __int64 __fastcall inst_55_flags_var_7();
 
 //----- (000000000045A609) ----------------------------------------------------
 __int64 inst_55_values_var_8()
 {
-  return 256LL;
+  return 0LL;
 }
 // 45A609: using guessed type __int64 __fastcall inst_55_values_var_8();
 
 //----- (000000000045A709) ----------------------------------------------------
 __int64 inst_55_flags_var_8()
 {
-  __int16 v0; // r8
-  unsigned __int8 v1; // cf
-
-  v0 = -8073;
-  v1 = _bittestandreset(&v0, 0xFAF4u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45A709: using guessed type __int64 __fastcall inst_55_flags_var_8();
 
@@ -20013,29 +19899,21 @@ __int64 inst_55_values_var_9()
 //----- (000000000045A90F) ----------------------------------------------------
 __int64 inst_55_flags_var_9()
 {
-  __int16 v0; // r10
-  unsigned __int8 v1; // cf
-
-  v0 = 30458;
-  v1 = _bittestandreset(&v0, 0x3C37u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45A90F: using guessed type __int64 __fastcall inst_55_flags_var_9();
 
 //----- (000000000045AA15) ----------------------------------------------------
 __int64 inst_56_values_var_0()
 {
-  return -16384LL;
+  return 0LL;
 }
 // 45AA15: using guessed type __int64 __fastcall inst_56_values_var_0();
 
 //----- (000000000045AB15) ----------------------------------------------------
 __int64 inst_56_flags_var_0()
 {
-  __int16 v0; // si
-
-  v0 = -30656;
-  return (char)_bittestandset(&v0, 0xD693u);
+  return 0LL;
 }
 // 45AB15: using guessed type __int64 __fastcall inst_56_flags_var_0();
 
@@ -20049,10 +19927,7 @@ __int64 inst_56_values_var_1()
 //----- (000000000045AD1B) ----------------------------------------------------
 __int64 inst_56_flags_var_1()
 {
-  __int16 v0; // bp
-
-  v0 = 23073;
-  return (char)_bittestandset(&v0, 0xE126u);
+  return 0LL;
 }
 // 45AD1B: using guessed type __int64 __fastcall inst_56_flags_var_1();
 
@@ -20066,31 +19941,21 @@ __int64 inst_56_values_var_2()
 //----- (000000000045AF20) ----------------------------------------------------
 __int64 inst_56_flags_var_2()
 {
-  __int16 v0; // bx
-  unsigned __int8 v1; // cf
-
-  v0 = 7851;
-  v1 = _bittestandset(&v0, 0xC0C5u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45AF20: using guessed type __int64 __fastcall inst_56_flags_var_2();
 
 //----- (000000000045B026) ----------------------------------------------------
 __int64 inst_56_values_var_3()
 {
-  return -16384LL;
+  return 0LL;
 }
 // 45B026: using guessed type __int64 __fastcall inst_56_values_var_3();
 
 //----- (000000000045B125) ----------------------------------------------------
 __int64 inst_56_flags_var_3()
 {
-  __int16 v0; // r8
-  unsigned __int8 v1; // cf
-
-  v0 = -28189;
-  v1 = _bittestandset(&v0, 0xDF31u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45B125: using guessed type __int64 __fastcall inst_56_flags_var_3();
 
@@ -20104,10 +19969,7 @@ __int64 inst_56_values_var_4()
 //----- (000000000045B32B) ----------------------------------------------------
 __int64 inst_56_flags_var_4()
 {
-  __int16 v0; // dx
-
-  v0 = 26899;
-  return (char)_bittestandset(&v0, 0x7373u);
+  return 0LL;
 }
 // 45B32B: using guessed type __int64 __fastcall inst_56_flags_var_4();
 
@@ -20121,12 +19983,7 @@ __int64 inst_56_values_var_5()
 //----- (000000000045B531) ----------------------------------------------------
 __int64 inst_56_flags_var_5()
 {
-  __int16 v0; // si
-  unsigned __int8 v1; // cf
-
-  v0 = 7541;
-  v1 = _bittestandset(&v0, 0x83A6u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45B531: using guessed type __int64 __fastcall inst_56_flags_var_5();
 
@@ -20140,12 +19997,7 @@ __int64 inst_56_values_var_6()
 //----- (000000000045B737) ----------------------------------------------------
 __int64 inst_56_flags_var_6()
 {
-  __int16 v0; // dx
-  unsigned __int8 v1; // cf
-
-  v0 = 15294;
-  v1 = _bittestandset(&v0, 0x190Cu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45B737: using guessed type __int64 __fastcall inst_56_flags_var_6();
 
@@ -20159,12 +20011,7 @@ __int64 inst_56_values_var_7()
 //----- (000000000045B93C) ----------------------------------------------------
 __int64 inst_56_flags_var_7()
 {
-  __int16 v0; // ax
-  unsigned __int8 v1; // cf
-
-  v0 = 7998;
-  v1 = _bittestandset(&v0, 0x97D9u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45B93C: using guessed type __int64 __fastcall inst_56_flags_var_7();
 
@@ -20178,12 +20025,7 @@ __int64 inst_56_values_var_8()
 //----- (000000000045BB42) ----------------------------------------------------
 __int64 inst_56_flags_var_8()
 {
-  __int16 v0; // si
-  unsigned __int8 v1; // cf
-
-  v0 = -28311;
-  v1 = _bittestandset(&v0, 0x90BCu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45BB42: using guessed type __int64 __fastcall inst_56_flags_var_8();
 
@@ -20197,10 +20039,7 @@ __int64 inst_56_values_var_9()
 //----- (000000000045BD48) ----------------------------------------------------
 __int64 inst_56_flags_var_9()
 {
-  __int16 v0; // r8
-
-  v0 = -19441;
-  return (char)_bittestandset(&v0, 0x272Bu);
+  return 0LL;
 }
 // 45BD48: using guessed type __int64 __fastcall inst_56_flags_var_9();
 
@@ -20214,10 +20053,7 @@ __int64 inst_57_values_var_0()
 //----- (000000000045BF4D) ----------------------------------------------------
 __int64 inst_57_flags_var_0()
 {
-  int v0; // ebx
-
-  v0 = -1099981886;
-  return _bittest(&v0, 0xF8258969) - 1LL;
+  return 0LL;
 }
 // 45BF4D: using guessed type __int64 __fastcall inst_57_flags_var_0();
 
@@ -20231,10 +20067,7 @@ __int64 inst_57_values_var_1()
 //----- (000000000045C150) ----------------------------------------------------
 __int64 inst_57_flags_var_1()
 {
-  int v0; // er9
-
-  v0 = -1194005193;
-  return _bittest(&v0, 0xE1C74E6C);
+  return 0LL;
 }
 // 45C150: using guessed type __int64 __fastcall inst_57_flags_var_1();
 
@@ -20248,10 +20081,7 @@ __int64 inst_57_values_var_2()
 //----- (000000000045C354) ----------------------------------------------------
 __int64 inst_57_flags_var_2()
 {
-  int v0; // er12
-
-  v0 = 10060917;
-  return _bittest(&v0, 0xDBA810AE);
+  return 0LL;
 }
 // 45C354: using guessed type __int64 __fastcall inst_57_flags_var_2();
 
@@ -20282,10 +20112,7 @@ __int64 inst_57_values_var_4()
 //----- (000000000045C75B) ----------------------------------------------------
 __int64 inst_57_flags_var_4()
 {
-  int v0; // ebp
-
-  v0 = 1784792674;
-  return _bittest(&v0, 0x9CB591EB);
+  return 0LL;
 }
 // 45C75B: using guessed type __int64 __fastcall inst_57_flags_var_4();
 
@@ -20299,10 +20126,7 @@ __int64 inst_57_values_var_5()
 //----- (000000000045C95F) ----------------------------------------------------
 __int64 inst_57_flags_var_5()
 {
-  int v0; // ebp
-
-  v0 = -793452071;
-  return _bittest(&v0, 0x5F814C95u) - 1LL;
+  return 0LL;
 }
 // 45C95F: using guessed type __int64 __fastcall inst_57_flags_var_5();
 
@@ -20316,10 +20140,7 @@ __int64 inst_57_values_var_6()
 //----- (000000000045CB63) ----------------------------------------------------
 __int64 inst_57_flags_var_6()
 {
-  int v0; // er9
-
-  v0 = -432653567;
-  return _bittest(&v0, 0x64138D23u);
+  return 0LL;
 }
 // 45CB63: using guessed type __int64 __fastcall inst_57_flags_var_6();
 
@@ -20333,10 +20154,7 @@ __int64 inst_57_values_var_7()
 //----- (000000000045CD67) ----------------------------------------------------
 __int64 inst_57_flags_var_7()
 {
-  int v0; // er13
-
-  v0 = -680126406;
-  return _bittest(&v0, 0xE4EA6BBD);
+  return 0LL;
 }
 // 45CD67: using guessed type __int64 __fastcall inst_57_flags_var_7();
 
@@ -20350,10 +20168,7 @@ __int64 inst_57_values_var_8()
 //----- (000000000045CF6B) ----------------------------------------------------
 __int64 inst_57_flags_var_8()
 {
-  int v0; // ebx
-
-  v0 = -1477058508;
-  return _bittest(&v0, 0x7C47CA34u) - 1LL;
+  return 0LL;
 }
 // 45CF6B: using guessed type __int64 __fastcall inst_57_flags_var_8();
 
@@ -20367,10 +20182,7 @@ __int64 inst_57_values_var_9()
 //----- (000000000045D16E) ----------------------------------------------------
 __int64 inst_57_flags_var_9()
 {
-  int v0; // er14
-
-  v0 = -33282315;
-  return _bittest(&v0, 0x4C1D701Cu) - 1LL;
+  return 0LL;
 }
 // 45D16E: using guessed type __int64 __fastcall inst_57_flags_var_9();
 
@@ -20384,12 +20196,7 @@ __int64 inst_58_values_var_0()
 //----- (000000000045D372) ----------------------------------------------------
 __int64 inst_58_flags_var_0()
 {
-  int v0; // edx
-  unsigned __int8 v1; // cf
-
-  v0 = 654991347;
-  v1 = _bittestandcomplement(&v0, 0x9D7BF307);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45D372: using guessed type __int64 __fastcall inst_58_flags_var_0();
 
@@ -20403,12 +20210,7 @@ __int64 inst_58_values_var_1()
 //----- (000000000045D575) ----------------------------------------------------
 __int64 inst_58_flags_var_1()
 {
-  int v0; // er12
-  unsigned __int8 v1; // cf
-
-  v0 = -933513987;
-  v1 = _bittestandcomplement(&v0, 0xF9162FB3);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45D575: using guessed type __int64 __fastcall inst_58_flags_var_1();
 
@@ -20421,12 +20223,7 @@ unsigned __int64 inst_58_values_var_2()
 //----- (000000000045D778) ----------------------------------------------------
 __int64 inst_58_flags_var_2()
 {
-  int v0; // edi
-  unsigned __int8 v1; // cf
-
-  v0 = -1665276994;
-  v1 = _bittestandcomplement(&v0, 0x48A58381u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45D778: using guessed type __int64 __fastcall inst_58_flags_var_2();
 
@@ -20440,10 +20237,7 @@ __int64 inst_58_values_var_3()
 //----- (000000000045D97C) ----------------------------------------------------
 __int64 inst_58_flags_var_3()
 {
-  int v0; // ebx
-
-  v0 = -1595271767;
-  return (char)_bittestandcomplement(&v0, 0xBB758259);
+  return 0LL;
 }
 // 45D97C: using guessed type __int64 __fastcall inst_58_flags_var_3();
 
@@ -20457,12 +20251,7 @@ __int64 inst_58_values_var_4()
 //----- (000000000045DB7F) ----------------------------------------------------
 __int64 inst_58_flags_var_4()
 {
-  int v0; // edx
-  unsigned __int8 v1; // cf
-
-  v0 = 33983964;
-  v1 = _bittestandcomplement(&v0, 0xB3A29311);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45DB7F: using guessed type __int64 __fastcall inst_58_flags_var_4();
 
@@ -20475,10 +20264,7 @@ unsigned __int64 inst_58_values_var_5()
 //----- (000000000045DD81) ----------------------------------------------------
 __int64 inst_58_flags_var_5()
 {
-  int v0; // er15
-
-  v0 = 1705424098;
-  return (char)_bittestandcomplement(&v0, 0x9BD4FBC2);
+  return 0LL;
 }
 // 45DD81: using guessed type __int64 __fastcall inst_58_flags_var_5();
 
@@ -20491,12 +20277,7 @@ unsigned __int64 inst_58_values_var_6()
 //----- (000000000045DF84) ----------------------------------------------------
 __int64 inst_58_flags_var_6()
 {
-  int v0; // eax
-  unsigned __int8 v1; // cf
-
-  v0 = 512433083;
-  v1 = _bittestandcomplement(&v0, 0x692BF043u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45DF84: using guessed type __int64 __fastcall inst_58_flags_var_6();
 
@@ -20509,12 +20290,7 @@ unsigned __int64 inst_58_values_var_7()
 //----- (000000000045E187) ----------------------------------------------------
 __int64 inst_58_flags_var_7()
 {
-  int v0; // ebx
-  unsigned __int8 v1; // cf
-
-  v0 = 108303039;
-  v1 = _bittestandcomplement(&v0, 0x242306E4u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45E187: using guessed type __int64 __fastcall inst_58_flags_var_7();
 
@@ -20528,10 +20304,7 @@ __int64 inst_58_values_var_8()
 //----- (000000000045E38A) ----------------------------------------------------
 __int64 inst_58_flags_var_8()
 {
-  int v0; // ecx
-
-  v0 = 809384095;
-  return (char)_bittestandcomplement(&v0, 0xF02D9FF9);
+  return 0LL;
 }
 // 45E38A: using guessed type __int64 __fastcall inst_58_flags_var_8();
 
@@ -20544,10 +20317,7 @@ unsigned __int64 inst_58_values_var_9()
 //----- (000000000045E58D) ----------------------------------------------------
 __int64 inst_58_flags_var_9()
 {
-  int v0; // er15
-
-  v0 = -315252749;
-  return (char)_bittestandcomplement(&v0, 0xAA17EBAD);
+  return 0LL;
 }
 // 45E58D: using guessed type __int64 __fastcall inst_58_flags_var_9();
 
@@ -20561,10 +20331,7 @@ __int64 inst_59_values_var_0()
 //----- (000000000045E790) ----------------------------------------------------
 __int64 inst_59_flags_var_0()
 {
-  int v0; // eax
-
-  v0 = -2132200847;
-  return (char)_bittestandreset(&v0, 0xBBA1D9A3);
+  return 0LL;
 }
 // 45E790: using guessed type __int64 __fastcall inst_59_flags_var_0();
 
@@ -20577,12 +20344,7 @@ unsigned __int64 inst_59_values_var_1()
 //----- (000000000045E992) ----------------------------------------------------
 __int64 inst_59_flags_var_1()
 {
-  int v0; // eax
-  unsigned __int8 v1; // cf
-
-  v0 = -294226517;
-  v1 = _bittestandreset(&v0, 0x66D4D96Du);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45E992: using guessed type __int64 __fastcall inst_59_flags_var_1();
 
@@ -20595,10 +20357,7 @@ unsigned __int64 inst_59_values_var_2()
 //----- (000000000045EB96) ----------------------------------------------------
 __int64 inst_59_flags_var_2()
 {
-  int v0; // er13
-
-  v0 = 1897991537;
-  return (char)_bittestandreset(&v0, 0x5AFAD98Cu);
+  return 0LL;
 }
 // 45EB96: using guessed type __int64 __fastcall inst_59_flags_var_2();
 
@@ -20612,12 +20371,7 @@ __int64 inst_59_values_var_3()
 //----- (000000000045ED99) ----------------------------------------------------
 __int64 inst_59_flags_var_3()
 {
-  int v0; // er13
-  unsigned __int8 v1; // cf
-
-  v0 = -286429314;
-  v1 = _bittestandreset(&v0, 0xE9D9FE6B);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45ED99: using guessed type __int64 __fastcall inst_59_flags_var_3();
 
@@ -20647,12 +20401,7 @@ unsigned __int64 inst_59_values_var_5()
 //----- (000000000045F1A0) ----------------------------------------------------
 __int64 inst_59_flags_var_5()
 {
-  int v0; // er10
-  unsigned __int8 v1; // cf
-
-  v0 = 2053620233;
-  v1 = _bittestandreset(&v0, 0x5AB3EDEEu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45F1A0: using guessed type __int64 __fastcall inst_59_flags_var_5();
 
@@ -20666,12 +20415,7 @@ __int64 inst_59_values_var_6()
 //----- (000000000045F3A4) ----------------------------------------------------
 __int64 inst_59_flags_var_6()
 {
-  int v0; // edi
-  unsigned __int8 v1; // cf
-
-  v0 = 1258476836;
-  v1 = _bittestandreset(&v0, 0xF5AF8345);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45F3A4: using guessed type __int64 __fastcall inst_59_flags_var_6();
 
@@ -20684,10 +20428,7 @@ unsigned __int64 inst_59_values_var_7()
 //----- (000000000045F5A8) ----------------------------------------------------
 __int64 inst_59_flags_var_7()
 {
-  int v0; // er13
-
-  v0 = 1373622836;
-  return (char)_bittestandreset(&v0, 0xE2018620);
+  return 0LL;
 }
 // 45F5A8: using guessed type __int64 __fastcall inst_59_flags_var_7();
 
@@ -20700,10 +20441,7 @@ unsigned __int64 inst_59_values_var_8()
 //----- (000000000045F7AC) ----------------------------------------------------
 __int64 inst_59_flags_var_8()
 {
-  int v0; // ebp
-
-  v0 = -502758268;
-  return (char)_bittestandreset(&v0, 0x30ABC7E9u);
+  return 0LL;
 }
 // 45F7AC: using guessed type __int64 __fastcall inst_59_flags_var_8();
 
@@ -20717,12 +20455,7 @@ __int64 inst_59_values_var_9()
 //----- (000000000045F9AF) ----------------------------------------------------
 __int64 inst_59_flags_var_9()
 {
-  int v0; // edi
-  unsigned __int8 v1; // cf
-
-  v0 = 1944598494;
-  v1 = _bittestandreset(&v0, 0xA8E1B313);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45F9AF: using guessed type __int64 __fastcall inst_59_flags_var_9();
 
@@ -20735,12 +20468,7 @@ unsigned __int64 inst_60_values_var_0()
 //----- (000000000045FBB2) ----------------------------------------------------
 __int64 inst_60_flags_var_0()
 {
-  int v0; // er9
-  unsigned __int8 v1; // cf
-
-  v0 = -386054698;
-  v1 = _bittestandset(&v0, 0xC9CB2144);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45FBB2: using guessed type __int64 __fastcall inst_60_flags_var_0();
 
@@ -20754,10 +20482,7 @@ __int64 inst_60_values_var_1()
 //----- (000000000045FDB6) ----------------------------------------------------
 __int64 inst_60_flags_var_1()
 {
-  int v0; // ebx
-
-  v0 = 1465348877;
-  return (char)_bittestandset(&v0, 0x595136Au);
+  return 0LL;
 }
 // 45FDB6: using guessed type __int64 __fastcall inst_60_flags_var_1();
 
@@ -20770,12 +20495,7 @@ unsigned __int64 inst_60_values_var_2()
 //----- (000000000045FFB9) ----------------------------------------------------
 __int64 inst_60_flags_var_2()
 {
-  int v0; // er14
-  unsigned __int8 v1; // cf
-
-  v0 = 1630338099;
-  v1 = _bittestandset(&v0, 0x32A09C35u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 45FFB9: using guessed type __int64 __fastcall inst_60_flags_var_2();
 
@@ -20788,12 +20508,7 @@ unsigned __int64 inst_60_values_var_3()
 //----- (00000000004601BD) ----------------------------------------------------
 __int64 inst_60_flags_var_3()
 {
-  int v0; // eax
-  unsigned __int8 v1; // cf
-
-  v0 = -1312866680;
-  v1 = _bittestandset(&v0, 0x57E41FE3u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 4601BD: using guessed type __int64 __fastcall inst_60_flags_var_3();
 
@@ -20807,10 +20522,7 @@ __int64 inst_60_values_var_4()
 //----- (00000000004603C1) ----------------------------------------------------
 __int64 inst_60_flags_var_4()
 {
-  int v0; // ecx
-
-  v0 = -993400647;
-  return (char)_bittestandset(&v0, 0x8E8FA479);
+  return 0LL;
 }
 // 4603C1: using guessed type __int64 __fastcall inst_60_flags_var_4();
 
@@ -20823,10 +20535,7 @@ unsigned __int64 inst_60_values_var_5()
 //----- (00000000004605C5) ----------------------------------------------------
 __int64 inst_60_flags_var_5()
 {
-  int v0; // er10
-
-  v0 = -264994161;
-  return (char)_bittestandset(&v0, 0xA81F6B1A);
+  return 0LL;
 }
 // 4605C5: using guessed type __int64 __fastcall inst_60_flags_var_5();
 
@@ -20840,10 +20549,7 @@ __int64 inst_60_values_var_6()
 //----- (00000000004607C9) ----------------------------------------------------
 __int64 inst_60_flags_var_6()
 {
-  int v0; // ecx
-
-  v0 = 547768723;
-  return (char)_bittestandset(&v0, 0x3670263Au);
+  return 0LL;
 }
 // 4607C9: using guessed type __int64 __fastcall inst_60_flags_var_6();
 
@@ -20857,12 +20563,7 @@ __int64 inst_60_values_var_7()
 //----- (00000000004609CC) ----------------------------------------------------
 __int64 inst_60_flags_var_7()
 {
-  int v0; // ebx
-  unsigned __int8 v1; // cf
-
-  v0 = 287831225;
-  v1 = _bittestandset(&v0, 0xAABF84B8);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 4609CC: using guessed type __int64 __fastcall inst_60_flags_var_7();
 
@@ -20876,10 +20577,7 @@ __int64 inst_60_values_var_8()
 //----- (0000000000460BD0) ----------------------------------------------------
 __int64 inst_60_flags_var_8()
 {
-  int v0; // er15
-
-  v0 = -1851196517;
-  return (char)_bittestandset(&v0, 0x2356C22u);
+  return 0LL;
 }
 // 460BD0: using guessed type __int64 __fastcall inst_60_flags_var_8();
 
@@ -20893,12 +20591,7 @@ __int64 inst_60_values_var_9()
 //----- (0000000000460DD4) ----------------------------------------------------
 __int64 inst_60_flags_var_9()
 {
-  int v0; // ebx
-  unsigned __int8 v1; // cf
-
-  v0 = 1296737150;
-  v1 = _bittestandset(&v0, 0x96B56F86);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 460DD4: using guessed type __int64 __fastcall inst_60_flags_var_9();
 
@@ -20912,10 +20605,7 @@ __int64 inst_61_values_var_0()
 //----- (0000000000460FD8) ----------------------------------------------------
 __int64 inst_61_flags_var_0()
 {
-  unsigned __int64 v0; // rax
-
-  v0 = 0xB62C550003C17C2BLL;
-  return _bittest64((const __int64 *)&v0, 0x8F1B8A6BDAD39A81LL) - 1LL;
+  return 0LL;
 }
 // 460FD8: using guessed type __int64 __fastcall inst_61_flags_var_0();
 
@@ -20929,10 +20619,7 @@ __int64 inst_61_values_var_1()
 //----- (00000000004611DC) ----------------------------------------------------
 __int64 inst_61_flags_var_1()
 {
-  __int64 v0; // r12
-
-  v0 = 0x431E31D6E73616B6LL;
-  return _bittest64(&v0, 0x3E68E34C2BDCF1EFuLL);
+  return 0LL;
 }
 // 4611DC: using guessed type __int64 __fastcall inst_61_flags_var_1();
 
@@ -20946,10 +20633,7 @@ __int64 inst_61_values_var_2()
 //----- (00000000004613E0) ----------------------------------------------------
 __int64 inst_61_flags_var_2()
 {
-  unsigned __int64 v0; // r15
-
-  v0 = 0xC6C529744264073ELL;
-  return _bittest64((const __int64 *)&v0, 0xAD1A72E0D007A66DLL) - 1LL;
+  return 0LL;
 }
 // 4613E0: using guessed type __int64 __fastcall inst_61_flags_var_2();
 
@@ -20963,10 +20647,7 @@ __int64 inst_61_values_var_3()
 //----- (00000000004615E4) ----------------------------------------------------
 __int64 inst_61_flags_var_3()
 {
-  __int64 v0; // rbx
-
-  v0 = 0x5C9AD03F6F1BCF29LL;
-  return _bittest64(&v0, 0xDD6F77F5C4F6C7AuLL) - 1LL;
+  return 0LL;
 }
 // 4615E4: using guessed type __int64 __fastcall inst_61_flags_var_3();
 
@@ -20980,10 +20661,7 @@ __int64 inst_61_values_var_4()
 //----- (00000000004617E8) ----------------------------------------------------
 __int64 inst_61_flags_var_4()
 {
-  unsigned __int64 v0; // rax
-
-  v0 = 0xE58159517D98A884LL;
-  return _bittest64((const __int64 *)&v0, 0x2EA4FBCB5335089FuLL);
+  return 0LL;
 }
 // 4617E8: using guessed type __int64 __fastcall inst_61_flags_var_4();
 
@@ -20997,10 +20675,7 @@ __int64 inst_61_values_var_5()
 //----- (00000000004619EC) ----------------------------------------------------
 __int64 inst_61_flags_var_5()
 {
-  unsigned __int64 v0; // rdi
-
-  v0 = 0xD0357D8A3675744BLL;
-  return _bittest64((const __int64 *)&v0, 0x11B567F8FE24AAE5uLL);
+  return 0LL;
 }
 // 4619EC: using guessed type __int64 __fastcall inst_61_flags_var_5();
 
@@ -21014,10 +20689,7 @@ __int64 inst_61_values_var_6()
 //----- (0000000000461BF0) ----------------------------------------------------
 __int64 inst_61_flags_var_6()
 {
-  unsigned __int64 v0; // rcx
-
-  v0 = 0x8E9AF1F6C5728C2ALL;
-  return _bittest64((const __int64 *)&v0, 0x7620182E7086CE55uLL) - 1LL;
+  return 0LL;
 }
 // 461BF0: using guessed type __int64 __fastcall inst_61_flags_var_6();
 
@@ -21031,10 +20703,7 @@ __int64 inst_61_values_var_7()
 //----- (0000000000461DF4) ----------------------------------------------------
 __int64 inst_61_flags_var_7()
 {
-  unsigned __int64 v0; // r11
-
-  v0 = 0x8E962D0EBB39E949LL;
-  return _bittest64((const __int64 *)&v0, 0x85E5A11C2F5CC0D0LL) - 1LL;
+  return 0LL;
 }
 // 461DF4: using guessed type __int64 __fastcall inst_61_flags_var_7();
 
@@ -21048,10 +20717,7 @@ __int64 inst_61_values_var_8()
 //----- (0000000000461FF8) ----------------------------------------------------
 __int64 inst_61_flags_var_8()
 {
-  __int64 v0; // rcx
-
-  v0 = 0x14CEEC29F52E0F9ELL;
-  return _bittest64(&v0, 0x83A0027354AC192CLL);
+  return 0LL;
 }
 // 461FF8: using guessed type __int64 __fastcall inst_61_flags_var_8();
 
@@ -21065,10 +20731,7 @@ __int64 inst_61_values_var_9()
 //----- (00000000004621FC) ----------------------------------------------------
 __int64 inst_61_flags_var_9()
 {
-  unsigned __int64 v0; // r14
-
-  v0 = 0xAA3C208A57A271FELL;
-  return _bittest64((const __int64 *)&v0, 0xD3F7E3F13CC3D45FLL);
+  return 0LL;
 }
 // 4621FC: using guessed type __int64 __fastcall inst_61_flags_var_9();
 
@@ -21082,10 +20745,7 @@ __int64 inst_62_values_var_0()
 //----- (0000000000462400) ----------------------------------------------------
 __int64 inst_62_flags_var_0()
 {
-  __int64 v0; // rbx
-
-  v0 = 0x27041A489AF37CC1LL;
-  return (char)_bittestandcomplement64(&v0, 0x6F9764FDF7268EA4uLL);
+  return 0LL;
 }
 // 462400: using guessed type __int64 __fastcall inst_62_flags_var_0();
 
@@ -21099,12 +20759,7 @@ __int64 inst_62_values_var_1()
 //----- (0000000000462604) ----------------------------------------------------
 __int64 inst_62_flags_var_1()
 {
-  __int64 v0; // rax
-  unsigned __int8 v1; // cf
-
-  v0 = 0x498E084E8A422804LL;
-  v1 = _bittestandcomplement64(&v0, 0xBE150481805F338BLL);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 462604: using guessed type __int64 __fastcall inst_62_flags_var_1();
 
@@ -21118,10 +20773,7 @@ __int64 inst_62_values_var_2()
 //----- (0000000000462808) ----------------------------------------------------
 __int64 inst_62_flags_var_2()
 {
-  __int64 v0; // r9
-
-  v0 = 0x29551C130CA5F7E2LL;
-  return (char)_bittestandcomplement64(&v0, 0xBB163D0FFCBD4204LL);
+  return 0LL;
 }
 // 462808: using guessed type __int64 __fastcall inst_62_flags_var_2();
 
@@ -21135,12 +20787,7 @@ __int64 inst_62_values_var_3()
 //----- (0000000000462A0C) ----------------------------------------------------
 __int64 inst_62_flags_var_3()
 {
-  __int64 v0; // r13
-  unsigned __int8 v1; // cf
-
-  v0 = 0x24D2F9F0BA862C33LL;
-  v1 = _bittestandcomplement64(&v0, 0x7B287FC82C7A84E8uLL);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 462A0C: using guessed type __int64 __fastcall inst_62_flags_var_3();
 
@@ -21154,10 +20801,7 @@ __int64 inst_62_values_var_4()
 //----- (0000000000462C10) ----------------------------------------------------
 __int64 inst_62_flags_var_4()
 {
-  unsigned __int64 v0; // r13
-
-  v0 = 0xC29A98B0732AC034LL;
-  return (char)_bittestandcomplement64((__int64 *)&v0, 0xD5007EE40A193BA9LL);
+  return 0LL;
 }
 // 462C10: using guessed type __int64 __fastcall inst_62_flags_var_4();
 
@@ -21171,12 +20815,7 @@ __int64 inst_62_values_var_5()
 //----- (0000000000462E14) ----------------------------------------------------
 __int64 inst_62_flags_var_5()
 {
-  unsigned __int64 v0; // r9
-  unsigned __int8 v1; // cf
-
-  v0 = 0xF24479CA11EDE410LL;
-  v1 = _bittestandcomplement64((__int64 *)&v0, 0x2BA77DDBD71F9E8DuLL);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 462E14: using guessed type __int64 __fastcall inst_62_flags_var_5();
 
@@ -21190,12 +20829,7 @@ __int64 inst_62_values_var_6()
 //----- (0000000000463018) ----------------------------------------------------
 __int64 inst_62_flags_var_6()
 {
-  __int64 v0; // rdi
-  unsigned __int8 v1; // cf
-
-  v0 = 0x1EF05113AEFB005LL;
-  v1 = _bittestandcomplement64(&v0, 0xA6F1AA5CBF7F9BF2LL);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 463018: using guessed type __int64 __fastcall inst_62_flags_var_6();
 
@@ -21209,12 +20843,7 @@ __int64 inst_62_values_var_7()
 //----- (000000000046321C) ----------------------------------------------------
 __int64 inst_62_flags_var_7()
 {
-  unsigned __int64 v0; // r14
-  unsigned __int8 v1; // cf
-
-  v0 = 0x8DA7D407EBA06E6DLL;
-  v1 = _bittestandcomplement64((__int64 *)&v0, 0xD799A6F523E62DF1LL);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46321C: using guessed type __int64 __fastcall inst_62_flags_var_7();
 
@@ -21228,10 +20857,7 @@ __int64 inst_62_values_var_8()
 //----- (0000000000463420) ----------------------------------------------------
 __int64 inst_62_flags_var_8()
 {
-  __int64 v0; // rcx
-
-  v0 = 0x410F2A42859A538LL;
-  return (char)_bittestandcomplement64(&v0, 0x612EDE1F9DF5561AuLL);
+  return 0LL;
 }
 // 463420: using guessed type __int64 __fastcall inst_62_flags_var_8();
 
@@ -21245,10 +20871,7 @@ __int64 inst_62_values_var_9()
 //----- (0000000000463624) ----------------------------------------------------
 __int64 inst_62_flags_var_9()
 {
-  unsigned __int64 v0; // rcx
-
-  v0 = 0x85A2250F0655E1F0LL;
-  return (char)_bittestandcomplement64((__int64 *)&v0, 0xAFEF04F774247F5DLL);
+  return 0LL;
 }
 // 463624: using guessed type __int64 __fastcall inst_62_flags_var_9();
 
@@ -21262,12 +20885,7 @@ __int64 inst_63_values_var_0()
 //----- (0000000000463828) ----------------------------------------------------
 __int64 inst_63_flags_var_0()
 {
-  unsigned __int64 v0; // r13
-  unsigned __int8 v1; // cf
-
-  v0 = 0xED91890E1C3B9A87LL;
-  v1 = _bittestandreset64((__int64 *)&v0, 0xCB68349C9B4BC28uLL);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 463828: using guessed type __int64 __fastcall inst_63_flags_var_0();
 
@@ -21281,12 +20899,7 @@ __int64 inst_63_values_var_1()
 //----- (0000000000463A2C) ----------------------------------------------------
 __int64 inst_63_flags_var_1()
 {
-  unsigned __int64 v0; // r14
-  unsigned __int8 v1; // cf
-
-  v0 = 0xE13F62BA70448F16LL;
-  v1 = _bittestandreset64((__int64 *)&v0, 0xA72FACC116673323LL);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 463A2C: using guessed type __int64 __fastcall inst_63_flags_var_1();
 
@@ -21300,10 +20913,7 @@ __int64 inst_63_values_var_2()
 //----- (0000000000463C30) ----------------------------------------------------
 __int64 inst_63_flags_var_2()
 {
-  __int64 v0; // rax
-
-  v0 = 0x7723ECF41CAA99A0LL;
-  return (char)_bittestandreset64(&v0, 0xC4458B94E2E01EF4LL);
+  return 0LL;
 }
 // 463C30: using guessed type __int64 __fastcall inst_63_flags_var_2();
 
@@ -21317,12 +20927,7 @@ __int64 inst_63_values_var_3()
 //----- (0000000000463E34) ----------------------------------------------------
 __int64 inst_63_flags_var_3()
 {
-  __int64 v0; // rsi
-  unsigned __int8 v1; // cf
-
-  v0 = 0x627EAE77AF5EF654LL;
-  v1 = _bittestandreset64(&v0, 0x8A7883331B4AA056LL);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 463E34: using guessed type __int64 __fastcall inst_63_flags_var_3();
 
@@ -21336,10 +20941,7 @@ __int64 inst_63_values_var_4()
 //----- (0000000000464038) ----------------------------------------------------
 __int64 inst_63_flags_var_4()
 {
-  __int64 v0; // rsi
-
-  v0 = 0xB50609D64C1BB6CLL;
-  return (char)_bittestandreset64(&v0, 0x7EFC0438403F8131uLL);
+  return 0LL;
 }
 // 464038: using guessed type __int64 __fastcall inst_63_flags_var_4();
 
@@ -21353,10 +20955,7 @@ __int64 inst_63_values_var_5()
 //----- (000000000046423C) ----------------------------------------------------
 __int64 inst_63_flags_var_5()
 {
-  __int64 v0; // r10
-
-  v0 = 0x21AA1803736CF011LL;
-  return (char)_bittestandreset64(&v0, 0x9027497624C3883uLL);
+  return 0LL;
 }
 // 46423C: using guessed type __int64 __fastcall inst_63_flags_var_5();
 
@@ -21370,10 +20969,7 @@ __int64 inst_63_values_var_6()
 //----- (0000000000464440) ----------------------------------------------------
 __int64 inst_63_flags_var_6()
 {
-  __int64 v0; // rdi
-
-  v0 = 0x45D2BDCB111DBA0BLL;
-  return (char)_bittestandreset64(&v0, 0xE1BDA634F874CCB3LL);
+  return 0LL;
 }
 // 464440: using guessed type __int64 __fastcall inst_63_flags_var_6();
 
@@ -21387,12 +20983,7 @@ __int64 inst_63_values_var_7()
 //----- (0000000000464644) ----------------------------------------------------
 __int64 inst_63_flags_var_7()
 {
-  __int64 v0; // rdx
-  unsigned __int8 v1; // cf
-
-  v0 = 0x33B0A3AF11ADCBF9LL;
-  v1 = _bittestandreset64(&v0, 0xC09D9832A7AD1790LL);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 464644: using guessed type __int64 __fastcall inst_63_flags_var_7();
 
@@ -21406,10 +20997,7 @@ __int64 inst_63_values_var_8()
 //----- (0000000000464848) ----------------------------------------------------
 __int64 inst_63_flags_var_8()
 {
-  unsigned __int64 v0; // r10
-
-  v0 = 0xF8A77BF56F97144BLL;
-  return (char)_bittestandreset64((__int64 *)&v0, 0x82409416D37A7388LL);
+  return 0LL;
 }
 // 464848: using guessed type __int64 __fastcall inst_63_flags_var_8();
 
@@ -21423,12 +21011,7 @@ __int64 inst_63_values_var_9()
 //----- (0000000000464A4C) ----------------------------------------------------
 __int64 inst_63_flags_var_9()
 {
-  __int64 v0; // rdx
-  unsigned __int8 v1; // cf
-
-  v0 = 0x5C09ADE2C7DAA46ELL;
-  v1 = _bittestandreset64(&v0, 0xA74313AC594790A7LL);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 464A4C: using guessed type __int64 __fastcall inst_63_flags_var_9();
 
@@ -21442,10 +21025,7 @@ __int64 inst_64_values_var_0()
 //----- (0000000000464C50) ----------------------------------------------------
 __int64 inst_64_flags_var_0()
 {
-  unsigned __int64 v0; // rcx
-
-  v0 = 0xB11C493C30032BA2LL;
-  return (char)_bittestandset64((__int64 *)&v0, 0x63E3B167BDD9C6DFuLL);
+  return 0LL;
 }
 // 464C50: using guessed type __int64 __fastcall inst_64_flags_var_0();
 
@@ -21459,12 +21039,7 @@ __int64 inst_64_values_var_1()
 //----- (0000000000464E54) ----------------------------------------------------
 __int64 inst_64_flags_var_1()
 {
-  unsigned __int64 v0; // r15
-  unsigned __int8 v1; // cf
-
-  v0 = 0xD9C957640AEA2F1BLL;
-  v1 = _bittestandset64((__int64 *)&v0, 0xDE140E9E15437125LL);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 464E54: using guessed type __int64 __fastcall inst_64_flags_var_1();
 
@@ -21495,12 +21070,7 @@ __int64 inst_64_values_var_3()
 //----- (000000000046525C) ----------------------------------------------------
 __int64 inst_64_flags_var_3()
 {
-  __int64 v0; // rbx
-  unsigned __int8 v1; // cf
-
-  v0 = 0x47358CDEC6B2356CLL;
-  v1 = _bittestandset64(&v0, 0x66745CDBFE8E2402uLL);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46525C: using guessed type __int64 __fastcall inst_64_flags_var_3();
 
@@ -21514,10 +21084,7 @@ __int64 inst_64_values_var_4()
 //----- (0000000000465460) ----------------------------------------------------
 __int64 inst_64_flags_var_4()
 {
-  unsigned __int64 v0; // r12
-
-  v0 = 0xFB17027FB1729841LL;
-  return (char)_bittestandset64((__int64 *)&v0, 0x574E249F5C4AC184uLL);
+  return 0LL;
 }
 // 465460: using guessed type __int64 __fastcall inst_64_flags_var_4();
 
@@ -21531,10 +21098,7 @@ __int64 inst_64_values_var_5()
 //----- (0000000000465664) ----------------------------------------------------
 __int64 inst_64_flags_var_5()
 {
-  unsigned __int64 v0; // r15
-
-  v0 = 0xD56DE16DFD900EA3LL;
-  return (char)_bittestandset64((__int64 *)&v0, 0x8F199A5E14C5E7D0LL);
+  return 0LL;
 }
 // 465664: using guessed type __int64 __fastcall inst_64_flags_var_5();
 
@@ -21548,10 +21112,7 @@ __int64 inst_64_values_var_6()
 //----- (0000000000465868) ----------------------------------------------------
 __int64 inst_64_flags_var_6()
 {
-  unsigned __int64 v0; // r15
-
-  v0 = 0xD4DC455628C93F71LL;
-  return (char)_bittestandset64((__int64 *)&v0, 0x955C17275300B01FLL);
+  return 0LL;
 }
 // 465868: using guessed type __int64 __fastcall inst_64_flags_var_6();
 
@@ -21565,12 +21126,7 @@ __int64 inst_64_values_var_7()
 //----- (0000000000465A6C) ----------------------------------------------------
 __int64 inst_64_flags_var_7()
 {
-  unsigned __int64 v0; // rdi
-  unsigned __int8 v1; // cf
-
-  v0 = 0x88EB118CD9306BD7LL;
-  v1 = _bittestandset64((__int64 *)&v0, 0x9652B9632E7CCAB5LL);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 465A6C: using guessed type __int64 __fastcall inst_64_flags_var_7();
 
@@ -21584,10 +21140,7 @@ __int64 inst_64_values_var_8()
 //----- (0000000000465C70) ----------------------------------------------------
 __int64 inst_64_flags_var_8()
 {
-  unsigned __int64 v0; // rsi
-
-  v0 = 0xE465D2026231FA64LL;
-  return (char)_bittestandset64((__int64 *)&v0, 0x93C85CA40EA3458uLL);
+  return 0LL;
 }
 // 465C70: using guessed type __int64 __fastcall inst_64_flags_var_8();
 
@@ -21618,10 +21171,7 @@ __int64 inst_65_values_var_0()
 //----- (0000000000466079) ----------------------------------------------------
 __int64 inst_65_flags_var_0()
 {
-  __int16 v0; // r15
-
-  v0 = -26777;
-  return _bittest(&v0, 0x64u);
+  return 0LL;
 }
 // 466079: using guessed type __int64 __fastcall inst_65_flags_var_0();
 
@@ -21635,10 +21185,7 @@ __int64 inst_65_values_var_1()
 //----- (0000000000466281) ----------------------------------------------------
 __int64 inst_65_flags_var_1()
 {
-  __int16 v0; // cx
-
-  v0 = 19468;
-  return _bittest(&v0, 0x54u);
+  return 0LL;
 }
 // 466281: using guessed type __int64 __fastcall inst_65_flags_var_1();
 
@@ -21652,10 +21199,7 @@ __int64 inst_65_values_var_2()
 //----- (0000000000466487) ----------------------------------------------------
 __int64 inst_65_flags_var_2()
 {
-  __int16 v0; // r11
-
-  v0 = -27788;
-  return _bittest(&v0, 0xDu);
+  return 0LL;
 }
 // 466487: using guessed type __int64 __fastcall inst_65_flags_var_2();
 
@@ -21669,10 +21213,7 @@ __int64 inst_65_values_var_3()
 //----- (000000000046668F) ----------------------------------------------------
 __int64 inst_65_flags_var_3()
 {
-  __int16 v0; // r14
-
-  v0 = -21339;
-  return _bittest(&v0, 0x84u);
+  return 0LL;
 }
 // 46668F: using guessed type __int64 __fastcall inst_65_flags_var_3();
 
@@ -21686,10 +21227,7 @@ __int64 inst_65_values_var_4()
 //----- (0000000000466896) ----------------------------------------------------
 __int64 inst_65_flags_var_4()
 {
-  __int16 v0; // r12
-
-  v0 = -1784;
-  return _bittest(&v0, 0x7Eu) - 1LL;
+  return 0LL;
 }
 // 466896: using guessed type __int64 __fastcall inst_65_flags_var_4();
 
@@ -21703,10 +21241,7 @@ __int64 inst_65_values_var_5()
 //----- (0000000000466A9E) ----------------------------------------------------
 __int64 inst_65_flags_var_5()
 {
-  __int16 v0; // bx
-
-  v0 = -23160;
-  return _bittest(&v0, 0x1Eu);
+  return 0LL;
 }
 // 466A9E: using guessed type __int64 __fastcall inst_65_flags_var_5();
 
@@ -21720,10 +21255,7 @@ __int64 inst_65_values_var_6()
 //----- (0000000000466CA4) ----------------------------------------------------
 __int64 inst_65_flags_var_6()
 {
-  __int16 v0; // si
-
-  v0 = -32014;
-  return _bittest(&v0, 0x6Au);
+  return 0LL;
 }
 // 466CA4: using guessed type __int64 __fastcall inst_65_flags_var_6();
 
@@ -21737,10 +21269,7 @@ __int64 inst_65_values_var_7()
 //----- (0000000000466EAA) ----------------------------------------------------
 __int64 inst_65_flags_var_7()
 {
-  __int16 v0; // r9
-
-  v0 = -8175;
-  return _bittest(&v0, 0x6Au);
+  return 0LL;
 }
 // 466EAA: using guessed type __int64 __fastcall inst_65_flags_var_7();
 
@@ -21754,10 +21283,7 @@ __int64 inst_65_values_var_8()
 //----- (00000000004670B2) ----------------------------------------------------
 __int64 inst_65_flags_var_8()
 {
-  __int16 v0; // si
-
-  v0 = -28087;
-  return _bittest(&v0, 0xC1u);
+  return 0LL;
 }
 // 4670B2: using guessed type __int64 __fastcall inst_65_flags_var_8();
 
@@ -21771,10 +21297,7 @@ __int64 inst_65_values_var_9()
 //----- (00000000004672B9) ----------------------------------------------------
 __int64 inst_65_flags_var_9()
 {
-  __int16 v0; // cx
-
-  v0 = 6559;
-  return _bittest(&v0, 0x51u) - 1LL;
+  return 0LL;
 }
 // 4672B9: using guessed type __int64 __fastcall inst_65_flags_var_9();
 
@@ -21788,67 +21311,49 @@ __int64 inst_66_values_var_0()
 //----- (00000000004674BF) ----------------------------------------------------
 __int64 inst_66_flags_var_0()
 {
-  __int16 v0; // r11
-
-  v0 = 16392;
-  return (char)_bittestandcomplement(&v0, 0xD2u);
+  return 0LL;
 }
 // 4674BF: using guessed type __int64 __fastcall inst_66_flags_var_0();
 
 //----- (00000000004675C6) ----------------------------------------------------
 __int64 inst_66_values_var_1()
 {
-  return 128LL;
+  return 0LL;
 }
 // 4675C6: using guessed type __int64 __fastcall inst_66_values_var_1();
 
 //----- (00000000004676C6) ----------------------------------------------------
 __int64 inst_66_flags_var_1()
 {
-  __int16 v0; // r8
-  unsigned __int8 v1; // cf
-
-  v0 = 16271;
-  v1 = _bittestandcomplement(&v0, 0x2Cu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 4676C6: using guessed type __int64 __fastcall inst_66_flags_var_1();
 
 //----- (00000000004677CD) ----------------------------------------------------
 __int64 inst_66_values_var_2()
 {
-  return -2048LL;
+  return 0LL;
 }
 // 4677CD: using guessed type __int64 __fastcall inst_66_values_var_2();
 
 //----- (00000000004678CE) ----------------------------------------------------
 __int64 inst_66_flags_var_2()
 {
-  __int16 v0; // dx
-  unsigned __int8 v1; // cf
-
-  v0 = -8942;
-  v1 = _bittestandcomplement(&v0, 0xBCu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 4678CE: using guessed type __int64 __fastcall inst_66_flags_var_2();
 
 //----- (00000000004679D4) ----------------------------------------------------
 __int64 inst_66_values_var_3()
 {
-  return 2LL;
+  return 0LL;
 }
 // 4679D4: using guessed type __int64 __fastcall inst_66_values_var_3();
 
 //----- (0000000000467AD5) ----------------------------------------------------
 __int64 inst_66_flags_var_3()
 {
-  __int16 v0; // r13
-  unsigned __int8 v1; // cf
-
-  v0 = -9067;
-  v1 = _bittestandcomplement(&v0, 0x10u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 467AD5: using guessed type __int64 __fastcall inst_66_flags_var_3();
 
@@ -21862,12 +21367,7 @@ __int64 inst_66_values_var_4()
 //----- (0000000000467CDD) ----------------------------------------------------
 __int64 inst_66_flags_var_4()
 {
-  __int16 v0; // r10
-  unsigned __int8 v1; // cf
-
-  v0 = -13807;
-  v1 = _bittestandcomplement(&v0, 0xC9u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 467CDD: using guessed type __int64 __fastcall inst_66_flags_var_4();
 
@@ -21881,29 +21381,21 @@ __int64 inst_66_values_var_5()
 //----- (0000000000467EE5) ----------------------------------------------------
 __int64 inst_66_flags_var_5()
 {
-  __int16 v0; // dx
-  unsigned __int8 v1; // cf
-
-  v0 = 9636;
-  v1 = _bittestandcomplement(&v0, 0x6Au);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 467EE5: using guessed type __int64 __fastcall inst_66_flags_var_5();
 
 //----- (0000000000467FEB) ----------------------------------------------------
 __int64 inst_66_values_var_6()
 {
-  return 4096LL;
+  return 0LL;
 }
 // 467FEB: using guessed type __int64 __fastcall inst_66_values_var_6();
 
 //----- (00000000004680EB) ----------------------------------------------------
 __int64 inst_66_flags_var_6()
 {
-  __int16 v0; // si
-
-  v0 = 5012;
-  return (char)_bittestandcomplement(&v0, 0x26u);
+  return 0LL;
 }
 // 4680EB: using guessed type __int64 __fastcall inst_66_flags_var_6();
 
@@ -21917,12 +21409,7 @@ __int64 inst_66_values_var_7()
 //----- (00000000004682F1) ----------------------------------------------------
 __int64 inst_66_flags_var_7()
 {
-  __int16 v0; // r12
-  unsigned __int8 v1; // cf
-
-  v0 = 27095;
-  v1 = _bittestandcomplement(&v0, 0x6Eu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 4682F1: using guessed type __int64 __fastcall inst_66_flags_var_7();
 
@@ -21936,12 +21423,7 @@ __int64 inst_66_values_var_8()
 //----- (00000000004684F8) ----------------------------------------------------
 __int64 inst_66_flags_var_8()
 {
-  __int16 v0; // r10
-  unsigned __int8 v1; // cf
-
-  v0 = -16614;
-  v1 = _bittestandcomplement(&v0, 0x99u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 4684F8: using guessed type __int64 __fastcall inst_66_flags_var_8();
 
@@ -21955,10 +21437,7 @@ __int64 inst_66_values_var_9()
 //----- (00000000004686FF) ----------------------------------------------------
 __int64 inst_66_flags_var_9()
 {
-  __int16 v0; // di
-
-  v0 = 8708;
-  return (char)_bittestandcomplement(&v0, 0x14u);
+  return 0LL;
 }
 // 4686FF: using guessed type __int64 __fastcall inst_66_flags_var_9();
 
@@ -21972,10 +21451,7 @@ __int64 inst_67_values_var_0()
 //----- (0000000000468906) ----------------------------------------------------
 __int64 inst_67_flags_var_0()
 {
-  __int16 v0; // si
-
-  v0 = -20323;
-  return (char)_bittestandreset(&v0, 0xBEu);
+  return 0LL;
 }
 // 468906: using guessed type __int64 __fastcall inst_67_flags_var_0();
 
@@ -21989,27 +21465,21 @@ __int64 inst_67_values_var_1()
 //----- (0000000000468B0C) ----------------------------------------------------
 __int64 inst_67_flags_var_1()
 {
-  __int16 v0; // cx
-
-  v0 = 29337;
-  return (char)_bittestandreset(&v0, 0xDAu);
+  return 0LL;
 }
 // 468B0C: using guessed type __int64 __fastcall inst_67_flags_var_1();
 
 //----- (0000000000468C12) ----------------------------------------------------
 __int64 inst_67_values_var_2()
 {
-  return 4096LL;
+  return 0LL;
 }
 // 468C12: using guessed type __int64 __fastcall inst_67_values_var_2();
 
 //----- (0000000000468D12) ----------------------------------------------------
 __int64 inst_67_flags_var_2()
 {
-  __int16 v0; // di
-
-  v0 = 10010;
-  return (char)_bittestandreset(&v0, 0x60u);
+  return 0LL;
 }
 // 468D12: using guessed type __int64 __fastcall inst_67_flags_var_2();
 
@@ -22023,12 +21493,7 @@ __int64 inst_67_values_var_3()
 //----- (0000000000468F19) ----------------------------------------------------
 __int64 inst_67_flags_var_3()
 {
-  __int16 v0; // bp
-  unsigned __int8 v1; // cf
-
-  v0 = 29006;
-  v1 = _bittestandreset(&v0, 0x86u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 468F19: using guessed type __int64 __fastcall inst_67_flags_var_3();
 
@@ -22042,46 +21507,35 @@ __int64 inst_67_values_var_4()
 //----- (000000000046911F) ----------------------------------------------------
 __int64 inst_67_flags_var_4()
 {
-  __int16 v0; // r10
-
-  v0 = 16479;
-  return (char)_bittestandreset(&v0, 0xFDu);
+  return 0LL;
 }
 // 46911F: using guessed type __int64 __fastcall inst_67_flags_var_4();
 
 //----- (0000000000469226) ----------------------------------------------------
 __int64 inst_67_values_var_5()
 {
-  return 0x8000LL;
+  return 0LL;
 }
 // 469226: using guessed type __int64 __fastcall inst_67_values_var_5();
 
 //----- (0000000000469327) ----------------------------------------------------
 __int64 inst_67_flags_var_5()
 {
-  __int16 v0; // r14
-
-  v0 = -19997;
-  return (char)_bittestandreset(&v0, 0x74u);
+  return 0LL;
 }
 // 469327: using guessed type __int64 __fastcall inst_67_flags_var_5();
 
 //----- (000000000046942E) ----------------------------------------------------
 __int64 inst_67_values_var_6()
 {
-  return 0x2000LL;
+  return 0LL;
 }
 // 46942E: using guessed type __int64 __fastcall inst_67_values_var_6();
 
 //----- (000000000046952F) ----------------------------------------------------
 __int64 inst_67_flags_var_6()
 {
-  __int16 v0; // si
-  unsigned __int8 v1; // cf
-
-  v0 = 27647;
-  v1 = _bittestandreset(&v0, 0xA3u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46952F: using guessed type __int64 __fastcall inst_67_flags_var_6();
 
@@ -22095,10 +21549,7 @@ __int64 inst_67_values_var_7()
 //----- (0000000000469736) ----------------------------------------------------
 __int64 inst_67_flags_var_7()
 {
-  __int16 v0; // ax
-
-  v0 = 19020;
-  return (char)_bittestandreset(&v0, 0x84u);
+  return 0LL;
 }
 // 469736: using guessed type __int64 __fastcall inst_67_flags_var_7();
 
@@ -22112,12 +21563,7 @@ __int64 inst_67_values_var_8()
 //----- (000000000046993D) ----------------------------------------------------
 __int64 inst_67_flags_var_8()
 {
-  __int16 v0; // r14
-  unsigned __int8 v1; // cf
-
-  v0 = 11239;
-  v1 = _bittestandreset(&v0, 0xE5u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46993D: using guessed type __int64 __fastcall inst_67_flags_var_8();
 
@@ -22131,27 +21577,21 @@ __int64 inst_67_values_var_9()
 //----- (0000000000469B45) ----------------------------------------------------
 __int64 inst_67_flags_var_9()
 {
-  __int16 v0; // bx
-
-  v0 = -26718;
-  return (char)_bittestandreset(&v0, 0x32u);
+  return 0LL;
 }
 // 469B45: using guessed type __int64 __fastcall inst_67_flags_var_9();
 
 //----- (0000000000469C4B) ----------------------------------------------------
 __int64 inst_68_values_var_0()
 {
-  return -256LL;
+  return 0LL;
 }
 // 469C4B: using guessed type __int64 __fastcall inst_68_values_var_0();
 
 //----- (0000000000469D4C) ----------------------------------------------------
 __int64 inst_68_flags_var_0()
 {
-  __int16 v0; // cx
-
-  v0 = 5519;
-  return (char)_bittestandset(&v0, 0x8Du);
+  return 0LL;
 }
 // 469D4C: using guessed type __int64 __fastcall inst_68_flags_var_0();
 
@@ -22165,10 +21605,7 @@ __int64 inst_68_values_var_1()
 //----- (0000000000469F53) ----------------------------------------------------
 __int64 inst_68_flags_var_1()
 {
-  __int16 v0; // r9
-
-  v0 = -19837;
-  return (char)_bittestandset(&v0, 0x86u);
+  return 0LL;
 }
 // 469F53: using guessed type __int64 __fastcall inst_68_flags_var_1();
 
@@ -22182,29 +21619,21 @@ __int64 inst_68_values_var_2()
 //----- (000000000046A15A) ----------------------------------------------------
 __int64 inst_68_flags_var_2()
 {
-  __int16 v0; // r9
-
-  v0 = -13488;
-  return (char)_bittestandset(&v0, 0x55u);
+  return 0LL;
 }
 // 46A15A: using guessed type __int64 __fastcall inst_68_flags_var_2();
 
 //----- (000000000046A261) ----------------------------------------------------
 __int64 inst_68_values_var_3()
 {
-  return -64LL;
+  return 0LL;
 }
 // 46A261: using guessed type __int64 __fastcall inst_68_values_var_3();
 
 //----- (000000000046A362) ----------------------------------------------------
 __int64 inst_68_flags_var_3()
 {
-  __int16 v0; // r12
-  unsigned __int8 v1; // cf
-
-  v0 = 8938;
-  v1 = _bittestandset(&v0, 0xBDu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46A362: using guessed type __int64 __fastcall inst_68_flags_var_3();
 
@@ -22218,10 +21647,7 @@ __int64 inst_68_values_var_4()
 //----- (000000000046A56A) ----------------------------------------------------
 __int64 inst_68_flags_var_4()
 {
-  __int16 v0; // ax
-
-  v0 = -6751;
-  return (char)_bittestandset(&v0, 0x32u);
+  return 0LL;
 }
 // 46A56A: using guessed type __int64 __fastcall inst_68_flags_var_4();
 
@@ -22235,12 +21661,7 @@ __int64 inst_68_values_var_5()
 //----- (000000000046A771) ----------------------------------------------------
 __int64 inst_68_flags_var_5()
 {
-  __int16 v0; // r10
-  unsigned __int8 v1; // cf
-
-  v0 = 5311;
-  v1 = _bittestandset(&v0, 0x90u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46A771: using guessed type __int64 __fastcall inst_68_flags_var_5();
 
@@ -22254,10 +21675,7 @@ __int64 inst_68_values_var_6()
 //----- (000000000046A979) ----------------------------------------------------
 __int64 inst_68_flags_var_6()
 {
-  __int16 v0; // si
-
-  v0 = 12727;
-  return (char)_bittestandset(&v0, 0x63u);
+  return 0LL;
 }
 // 46A979: using guessed type __int64 __fastcall inst_68_flags_var_6();
 
@@ -22271,12 +21689,7 @@ __int64 inst_68_values_var_7()
 //----- (000000000046AB7F) ----------------------------------------------------
 __int64 inst_68_flags_var_7()
 {
-  __int16 v0; // r15
-  unsigned __int8 v1; // cf
-
-  v0 = 16827;
-  v1 = _bittestandset(&v0, 0x65u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46AB7F: using guessed type __int64 __fastcall inst_68_flags_var_7();
 
@@ -22290,12 +21703,7 @@ __int64 inst_68_values_var_8()
 //----- (000000000046AD87) ----------------------------------------------------
 __int64 inst_68_flags_var_8()
 {
-  __int16 v0; // bx
-  unsigned __int8 v1; // cf
-
-  v0 = 23542;
-  v1 = _bittestandset(&v0, 0xFEu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46AD87: using guessed type __int64 __fastcall inst_68_flags_var_8();
 
@@ -22309,12 +21717,7 @@ __int64 inst_68_values_var_9()
 //----- (000000000046AF8D) ----------------------------------------------------
 __int64 inst_68_flags_var_9()
 {
-  __int16 v0; // di
-  unsigned __int8 v1; // cf
-
-  v0 = -2781;
-  v1 = _bittestandset(&v0, 0xFEu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46AF8D: using guessed type __int64 __fastcall inst_68_flags_var_9();
 
@@ -22328,10 +21731,7 @@ __int64 inst_69_values_var_0()
 //----- (000000000046B193) ----------------------------------------------------
 __int64 inst_69_flags_var_0()
 {
-  int v0; // ebx
-
-  v0 = -1337908662;
-  return _bittest(&v0, 0x36u) - 1LL;
+  return 0LL;
 }
 // 46B193: using guessed type __int64 __fastcall inst_69_flags_var_0();
 
@@ -22345,10 +21745,7 @@ __int64 inst_69_values_var_1()
 //----- (000000000046B397) ----------------------------------------------------
 __int64 inst_69_flags_var_1()
 {
-  int v0; // edi
-
-  v0 = -563982860;
-  return _bittest(&v0, 0x6Eu) - 1LL;
+  return 0LL;
 }
 // 46B397: using guessed type __int64 __fastcall inst_69_flags_var_1();
 
@@ -22362,10 +21759,7 @@ __int64 inst_69_values_var_2()
 //----- (000000000046B59B) ----------------------------------------------------
 __int64 inst_69_flags_var_2()
 {
-  int v0; // er11
-
-  v0 = 1364067675;
-  return _bittest(&v0, 0x7Du);
+  return 0LL;
 }
 // 46B59B: using guessed type __int64 __fastcall inst_69_flags_var_2();
 
@@ -22379,10 +21773,7 @@ __int64 inst_69_values_var_3()
 //----- (000000000046B7A1) ----------------------------------------------------
 __int64 inst_69_flags_var_3()
 {
-  int v0; // er15
-
-  v0 = 570531035;
-  return _bittest(&v0, 0x52u);
+  return 0LL;
 }
 // 46B7A1: using guessed type __int64 __fastcall inst_69_flags_var_3();
 
@@ -22396,10 +21787,7 @@ __int64 inst_69_values_var_4()
 //----- (000000000046B9A7) ----------------------------------------------------
 __int64 inst_69_flags_var_4()
 {
-  int v0; // er13
-
-  v0 = -911745844;
-  return _bittest(&v0, 0x74u);
+  return 0LL;
 }
 // 46B9A7: using guessed type __int64 __fastcall inst_69_flags_var_4();
 
@@ -22413,10 +21801,7 @@ __int64 inst_69_values_var_5()
 //----- (000000000046BBAC) ----------------------------------------------------
 __int64 inst_69_flags_var_5()
 {
-  int v0; // esi
-
-  v0 = -1745666688;
-  return _bittest(&v0, 0x1Fu) - 1LL;
+  return 0LL;
 }
 // 46BBAC: using guessed type __int64 __fastcall inst_69_flags_var_5();
 
@@ -22430,10 +21815,7 @@ __int64 inst_69_values_var_6()
 //----- (000000000046BDB1) ----------------------------------------------------
 __int64 inst_69_flags_var_6()
 {
-  int v0; // er13
-
-  v0 = -1428634106;
-  return _bittest(&v0, 0xB1u);
+  return 0LL;
 }
 // 46BDB1: using guessed type __int64 __fastcall inst_69_flags_var_6();
 
@@ -22447,10 +21829,7 @@ __int64 inst_69_values_var_7()
 //----- (000000000046BFB7) ----------------------------------------------------
 __int64 inst_69_flags_var_7()
 {
-  int v0; // er12
-
-  v0 = -388151052;
-  return _bittest(&v0, 0x81u);
+  return 0LL;
 }
 // 46BFB7: using guessed type __int64 __fastcall inst_69_flags_var_7();
 
@@ -22464,10 +21843,7 @@ __int64 inst_69_values_var_8()
 //----- (000000000046C1BC) ----------------------------------------------------
 __int64 inst_69_flags_var_8()
 {
-  int v0; // esi
-
-  v0 = 1203358541;
-  return _bittest(&v0, 0xCCu);
+  return 0LL;
 }
 // 46C1BC: using guessed type __int64 __fastcall inst_69_flags_var_8();
 
@@ -22481,10 +21857,7 @@ __int64 inst_69_values_var_9()
 //----- (000000000046C3C0) ----------------------------------------------------
 __int64 inst_69_flags_var_9()
 {
-  int v0; // er14
-
-  v0 = 958769867;
-  return _bittest(&v0, 0xC3u) - 1LL;
+  return 0LL;
 }
 // 46C3C0: using guessed type __int64 __fastcall inst_69_flags_var_9();
 
@@ -22498,12 +21871,7 @@ __int64 inst_70_values_var_0()
 //----- (000000000046C5C6) ----------------------------------------------------
 __int64 inst_70_flags_var_0()
 {
-  int v0; // ecx
-  unsigned __int8 v1; // cf
-
-  v0 = -210574289;
-  v1 = _bittestandcomplement(&v0, 0x40u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46C5C6: using guessed type __int64 __fastcall inst_70_flags_var_0();
 
@@ -22516,12 +21884,7 @@ unsigned __int64 inst_70_values_var_1()
 //----- (000000000046C7CB) ----------------------------------------------------
 __int64 inst_70_flags_var_1()
 {
-  int v0; // er14
-  unsigned __int8 v1; // cf
-
-  v0 = 377247673;
-  v1 = _bittestandcomplement(&v0, 0x43u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46C7CB: using guessed type __int64 __fastcall inst_70_flags_var_1();
 
@@ -22535,10 +21898,7 @@ __int64 inst_70_values_var_2()
 //----- (000000000046C9D0) ----------------------------------------------------
 __int64 inst_70_flags_var_2()
 {
-  int v0; // eax
-
-  v0 = -1416127042;
-  return (char)_bittestandcomplement(&v0, 0x96u);
+  return 0LL;
 }
 // 46C9D0: using guessed type __int64 __fastcall inst_70_flags_var_2();
 
@@ -22551,12 +21911,7 @@ unsigned __int64 inst_70_values_var_3()
 //----- (000000000046CBD4) ----------------------------------------------------
 __int64 inst_70_flags_var_3()
 {
-  int v0; // edi
-  unsigned __int8 v1; // cf
-
-  v0 = -1649333358;
-  v1 = _bittestandcomplement(&v0, 0x30u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46CBD4: using guessed type __int64 __fastcall inst_70_flags_var_3();
 
@@ -22570,10 +21925,7 @@ __int64 inst_70_values_var_4()
 //----- (000000000046CDD8) ----------------------------------------------------
 __int64 inst_70_flags_var_4()
 {
-  int v0; // esi
-
-  v0 = -677903993;
-  return (char)_bittestandcomplement(&v0, 0xD0u);
+  return 0LL;
 }
 // 46CDD8: using guessed type __int64 __fastcall inst_70_flags_var_4();
 
@@ -22587,10 +21939,7 @@ __int64 inst_70_values_var_5()
 //----- (000000000046CFDD) ----------------------------------------------------
 __int64 inst_70_flags_var_5()
 {
-  int v0; // er11
-
-  v0 = -2060637527;
-  return (char)_bittestandcomplement(&v0, 0x48u);
+  return 0LL;
 }
 // 46CFDD: using guessed type __int64 __fastcall inst_70_flags_var_5();
 
@@ -22603,12 +21952,7 @@ unsigned __int64 inst_70_values_var_6()
 //----- (000000000046D1E3) ----------------------------------------------------
 __int64 inst_70_flags_var_6()
 {
-  int v0; // er15
-  unsigned __int8 v1; // cf
-
-  v0 = -695227682;
-  v1 = _bittestandcomplement(&v0, 0xDFu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46D1E3: using guessed type __int64 __fastcall inst_70_flags_var_6();
 
@@ -22622,10 +21966,7 @@ __int64 inst_70_values_var_7()
 //----- (000000000046D3E8) ----------------------------------------------------
 __int64 inst_70_flags_var_7()
 {
-  int v0; // er10
-
-  v0 = -1316619888;
-  return (char)_bittestandcomplement(&v0, 0x36u);
+  return 0LL;
 }
 // 46D3E8: using guessed type __int64 __fastcall inst_70_flags_var_7();
 
@@ -22638,12 +21979,7 @@ unsigned __int64 inst_70_values_var_8()
 //----- (000000000046D5ED) ----------------------------------------------------
 __int64 inst_70_flags_var_8()
 {
-  int v0; // ecx
-  unsigned __int8 v1; // cf
-
-  v0 = -1827310349;
-  v1 = _bittestandcomplement(&v0, 4u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46D5ED: using guessed type __int64 __fastcall inst_70_flags_var_8();
 
@@ -22657,12 +21993,7 @@ __int64 inst_70_values_var_9()
 //----- (000000000046D7F1) ----------------------------------------------------
 __int64 inst_70_flags_var_9()
 {
-  int v0; // er11
-  unsigned __int8 v1; // cf
-
-  v0 = -342887861;
-  v1 = _bittestandcomplement(&v0, 0x50u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46D7F1: using guessed type __int64 __fastcall inst_70_flags_var_9();
 
@@ -22675,10 +22006,7 @@ unsigned __int64 inst_71_values_var_0()
 //----- (000000000046D9F7) ----------------------------------------------------
 __int64 inst_71_flags_var_0()
 {
-  int v0; // esi
-
-  v0 = 2018437741;
-  return (char)_bittestandreset(&v0, 0x30u);
+  return 0LL;
 }
 // 46D9F7: using guessed type __int64 __fastcall inst_71_flags_var_0();
 
@@ -22692,12 +22020,7 @@ __int64 inst_71_values_var_1()
 //----- (000000000046DBFC) ----------------------------------------------------
 __int64 inst_71_flags_var_1()
 {
-  int v0; // er13
-  unsigned __int8 v1; // cf
-
-  v0 = -121714767;
-  v1 = _bittestandreset(&v0, 0x87u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46DBFC: using guessed type __int64 __fastcall inst_71_flags_var_1();
 
@@ -22711,12 +22034,7 @@ __int64 inst_71_values_var_2()
 //----- (000000000046DE02) ----------------------------------------------------
 __int64 inst_71_flags_var_2()
 {
-  int v0; // edi
-  unsigned __int8 v1; // cf
-
-  v0 = 237147614;
-  v1 = _bittestandreset(&v0, 0x42u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46DE02: using guessed type __int64 __fastcall inst_71_flags_var_2();
 
@@ -22729,12 +22047,7 @@ unsigned __int64 inst_71_values_var_3()
 //----- (000000000046E007) ----------------------------------------------------
 __int64 inst_71_flags_var_3()
 {
-  int v0; // er14
-  unsigned __int8 v1; // cf
-
-  v0 = -249367311;
-  v1 = _bittestandreset(&v0, 0x8Du);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46E007: using guessed type __int64 __fastcall inst_71_flags_var_3();
 
@@ -22748,12 +22061,7 @@ __int64 inst_71_values_var_4()
 //----- (000000000046E20D) ----------------------------------------------------
 __int64 inst_71_flags_var_4()
 {
-  int v0; // ecx
-  unsigned __int8 v1; // cf
-
-  v0 = -28762297;
-  v1 = _bittestandreset(&v0, 0xCBu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46E20D: using guessed type __int64 __fastcall inst_71_flags_var_4();
 
@@ -22766,12 +22074,7 @@ unsigned __int64 inst_71_values_var_5()
 //----- (000000000046E411) ----------------------------------------------------
 __int64 inst_71_flags_var_5()
 {
-  int v0; // ebx
-  unsigned __int8 v1; // cf
-
-  v0 = 449644190;
-  v1 = _bittestandreset(&v0, 0x37u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46E411: using guessed type __int64 __fastcall inst_71_flags_var_5();
 
@@ -22785,12 +22088,7 @@ __int64 inst_71_values_var_6()
 //----- (000000000046E615) ----------------------------------------------------
 __int64 inst_71_flags_var_6()
 {
-  int v0; // er15
-  unsigned __int8 v1; // cf
-
-  v0 = -523436804;
-  v1 = _bittestandreset(&v0, 0xCBu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46E615: using guessed type __int64 __fastcall inst_71_flags_var_6();
 
@@ -22803,12 +22101,7 @@ unsigned __int64 inst_71_values_var_7()
 //----- (000000000046E81B) ----------------------------------------------------
 __int64 inst_71_flags_var_7()
 {
-  int v0; // er13
-  unsigned __int8 v1; // cf
-
-  v0 = 1987201205;
-  v1 = _bittestandreset(&v0, 0x3Au);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46E81B: using guessed type __int64 __fastcall inst_71_flags_var_7();
 
@@ -22821,10 +22114,7 @@ unsigned __int64 inst_71_values_var_8()
 //----- (000000000046EA21) ----------------------------------------------------
 __int64 inst_71_flags_var_8()
 {
-  int v0; // esi
-
-  v0 = -123866046;
-  return (char)_bittestandreset(&v0, 0x64u);
+  return 0LL;
 }
 // 46EA21: using guessed type __int64 __fastcall inst_71_flags_var_8();
 
@@ -22838,12 +22128,7 @@ __int64 inst_71_values_var_9()
 //----- (000000000046EC25) ----------------------------------------------------
 __int64 inst_71_flags_var_9()
 {
-  int v0; // er13
-  unsigned __int8 v1; // cf
-
-  v0 = 1264719939;
-  v1 = _bittestandreset(&v0, 0x8Cu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46EC25: using guessed type __int64 __fastcall inst_71_flags_var_9();
 
@@ -22856,12 +22141,7 @@ unsigned __int64 inst_72_values_var_0()
 //----- (000000000046EE2B) ----------------------------------------------------
 __int64 inst_72_flags_var_0()
 {
-  int v0; // er9
-  unsigned __int8 v1; // cf
-
-  v0 = 1631955722;
-  v1 = _bittestandset(&v0, 0x8Fu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46EE2B: using guessed type __int64 __fastcall inst_72_flags_var_0();
 
@@ -22874,12 +22154,7 @@ unsigned __int64 inst_72_values_var_1()
 //----- (000000000046F031) ----------------------------------------------------
 __int64 inst_72_flags_var_1()
 {
-  int v0; // edx
-  unsigned __int8 v1; // cf
-
-  v0 = -680506883;
-  v1 = _bittestandset(&v0, 0x5Au);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46F031: using guessed type __int64 __fastcall inst_72_flags_var_1();
 
@@ -22893,12 +22168,7 @@ __int64 inst_72_values_var_2()
 //----- (000000000046F236) ----------------------------------------------------
 __int64 inst_72_flags_var_2()
 {
-  int v0; // edx
-  unsigned __int8 v1; // cf
-
-  v0 = -498117649;
-  v1 = _bittestandset(&v0, 0xC3u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46F236: using guessed type __int64 __fastcall inst_72_flags_var_2();
 
@@ -22911,12 +22181,7 @@ unsigned __int64 inst_72_values_var_3()
 //----- (000000000046F43A) ----------------------------------------------------
 __int64 inst_72_flags_var_3()
 {
-  int v0; // edx
-  unsigned __int8 v1; // cf
-
-  v0 = -1284321934;
-  v1 = _bittestandset(&v0, 0xCFu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46F43A: using guessed type __int64 __fastcall inst_72_flags_var_3();
 
@@ -22930,12 +22195,7 @@ __int64 inst_72_values_var_4()
 //----- (000000000046F63F) ----------------------------------------------------
 __int64 inst_72_flags_var_4()
 {
-  int v0; // er14
-  unsigned __int8 v1; // cf
-
-  v0 = 1348266224;
-  v1 = _bittestandset(&v0, 0x25u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46F63F: using guessed type __int64 __fastcall inst_72_flags_var_4();
 
@@ -22949,12 +22209,7 @@ __int64 inst_72_values_var_5()
 //----- (000000000046F845) ----------------------------------------------------
 __int64 inst_72_flags_var_5()
 {
-  int v0; // ecx
-  unsigned __int8 v1; // cf
-
-  v0 = -2033313372;
-  v1 = _bittestandset(&v0, 0xB6u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 46F845: using guessed type __int64 __fastcall inst_72_flags_var_5();
 
@@ -22967,10 +22222,7 @@ unsigned __int64 inst_72_values_var_6()
 //----- (000000000046FA4A) ----------------------------------------------------
 __int64 inst_72_flags_var_6()
 {
-  int v0; // ebx
-
-  v0 = -908966736;
-  return (char)_bittestandset(&v0, 0x61u);
+  return 0LL;
 }
 // 46FA4A: using guessed type __int64 __fastcall inst_72_flags_var_6();
 
@@ -22984,10 +22236,7 @@ __int64 inst_72_values_var_7()
 //----- (000000000046FC4F) ----------------------------------------------------
 __int64 inst_72_flags_var_7()
 {
-  int v0; // er12
-
-  v0 = 1222577837;
-  return (char)_bittestandset(&v0, 0xDAu);
+  return 0LL;
 }
 // 46FC4F: using guessed type __int64 __fastcall inst_72_flags_var_7();
 
@@ -23001,10 +22250,7 @@ __int64 inst_72_values_var_8()
 //----- (000000000046FE55) ----------------------------------------------------
 __int64 inst_72_flags_var_8()
 {
-  int v0; // eax
-
-  v0 = -61723855;
-  return (char)_bittestandset(&v0, 0xF9u);
+  return 0LL;
 }
 // 46FE55: using guessed type __int64 __fastcall inst_72_flags_var_8();
 
@@ -23017,10 +22263,7 @@ unsigned __int64 inst_72_values_var_9()
 //----- (000000000047005A) ----------------------------------------------------
 __int64 inst_72_flags_var_9()
 {
-  int v0; // er14
-
-  v0 = 148975412;
-  return (char)_bittestandset(&v0, 0x4Eu);
+  return 0LL;
 }
 // 47005A: using guessed type __int64 __fastcall inst_72_flags_var_9();
 
@@ -23034,10 +22277,7 @@ __int64 inst_73_values_var_0()
 //----- (0000000000470260) ----------------------------------------------------
 __int64 inst_73_flags_var_0()
 {
-  __int64 v0; // rsi
-
-  v0 = 0xE8D5BAE1A85AC8FLL;
-  return _bittest64(&v0, 0x5Cu) - 1LL;
+  return 0LL;
 }
 // 470260: using guessed type __int64 __fastcall inst_73_flags_var_0();
 
@@ -23051,10 +22291,7 @@ __int64 inst_73_values_var_1()
 //----- (0000000000470466) ----------------------------------------------------
 __int64 inst_73_flags_var_1()
 {
-  unsigned __int64 v0; // rbp
-
-  v0 = 0xCCFD3C52C5EAFCBELL;
-  return _bittest64((const __int64 *)&v0, 0x4Fu) - 1LL;
+  return 0LL;
 }
 // 470466: using guessed type __int64 __fastcall inst_73_flags_var_1();
 
@@ -23068,10 +22305,7 @@ __int64 inst_73_values_var_2()
 //----- (000000000047066C) ----------------------------------------------------
 __int64 inst_73_flags_var_2()
 {
-  __int64 v0; // rdi
-
-  v0 = 0x6B5B7D00EE276743LL;
-  return _bittest64(&v0, 0x8Cu);
+  return 0LL;
 }
 // 47066C: using guessed type __int64 __fastcall inst_73_flags_var_2();
 
@@ -23085,10 +22319,7 @@ __int64 inst_73_values_var_3()
 //----- (0000000000470872) ----------------------------------------------------
 __int64 inst_73_flags_var_3()
 {
-  __int64 v0; // r9
-
-  v0 = 0x436D58F695F92043LL;
-  return _bittest64(&v0, 0xACu) - 1LL;
+  return 0LL;
 }
 // 470872: using guessed type __int64 __fastcall inst_73_flags_var_3();
 
@@ -23102,10 +22333,7 @@ __int64 inst_73_values_var_4()
 //----- (0000000000470A78) ----------------------------------------------------
 __int64 inst_73_flags_var_4()
 {
-  __int64 v0; // r9
-
-  v0 = 0x180235434EBE529LL;
-  return _bittest64(&v0, 9u);
+  return 0LL;
 }
 // 470A78: using guessed type __int64 __fastcall inst_73_flags_var_4();
 
@@ -23119,10 +22347,7 @@ __int64 inst_73_values_var_5()
 //----- (0000000000470C7E) ----------------------------------------------------
 __int64 inst_73_flags_var_5()
 {
-  __int64 v0; // r11
-
-  v0 = 0x6B8680A6D379FF5LL;
-  return _bittest64(&v0, 0xC9u) - 1LL;
+  return 0LL;
 }
 // 470C7E: using guessed type __int64 __fastcall inst_73_flags_var_5();
 
@@ -23136,10 +22361,7 @@ __int64 inst_73_values_var_6()
 //----- (0000000000470E84) ----------------------------------------------------
 __int64 inst_73_flags_var_6()
 {
-  __int64 v0; // rbx
-
-  v0 = 0x22DDF45573542BEELL;
-  return _bittest64(&v0, 0xC2u) - 1LL;
+  return 0LL;
 }
 // 470E84: using guessed type __int64 __fastcall inst_73_flags_var_6();
 
@@ -23153,10 +22375,7 @@ __int64 inst_73_values_var_7()
 //----- (000000000047108A) ----------------------------------------------------
 __int64 inst_73_flags_var_7()
 {
-  __int64 v0; // r13
-
-  v0 = 0x2F1DC646E7CDD15CLL;
-  return _bittest64(&v0, 0xE4u);
+  return 0LL;
 }
 // 47108A: using guessed type __int64 __fastcall inst_73_flags_var_7();
 
@@ -23170,10 +22389,7 @@ __int64 inst_73_values_var_8()
 //----- (0000000000471290) ----------------------------------------------------
 __int64 inst_73_flags_var_8()
 {
-  __int64 v0; // rbx
-
-  v0 = 0x6AD3012BE9082019LL;
-  return _bittest64(&v0, 0xEBu);
+  return 0LL;
 }
 // 471290: using guessed type __int64 __fastcall inst_73_flags_var_8();
 
@@ -23187,10 +22403,7 @@ __int64 inst_73_values_var_9()
 //----- (0000000000471496) ----------------------------------------------------
 __int64 inst_73_flags_var_9()
 {
-  __int64 v0; // rcx
-
-  v0 = 0x6F88975C91CAD492LL;
-  return _bittest64(&v0, 0x59u);
+  return 0LL;
 }
 // 471496: using guessed type __int64 __fastcall inst_73_flags_var_9();
 
@@ -23204,10 +22417,7 @@ __int64 inst_74_values_var_0()
 //----- (000000000047169C) ----------------------------------------------------
 __int64 inst_74_flags_var_0()
 {
-  __int64 v0; // r12
-
-  v0 = 0x12A32EC2CE25D50CLL;
-  return (char)_bittestandcomplement64(&v0, 0x63u);
+  return 0LL;
 }
 // 47169C: using guessed type __int64 __fastcall inst_74_flags_var_0();
 
@@ -23221,12 +22431,7 @@ __int64 inst_74_values_var_1()
 //----- (00000000004718A2) ----------------------------------------------------
 __int64 inst_74_flags_var_1()
 {
-  __int64 v0; // r9
-  unsigned __int8 v1; // cf
-
-  v0 = 0x7DB10BB7E5659B0DLL;
-  v1 = _bittestandcomplement64(&v0, 0xBu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 4718A2: using guessed type __int64 __fastcall inst_74_flags_var_1();
 
@@ -23240,12 +22445,7 @@ __int64 inst_74_values_var_2()
 //----- (0000000000471AA8) ----------------------------------------------------
 __int64 inst_74_flags_var_2()
 {
-  unsigned __int64 v0; // rbx
-  unsigned __int8 v1; // cf
-
-  v0 = 0xF1849403FD8F20D2LL;
-  v1 = _bittestandcomplement64((__int64 *)&v0, 0xBCu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 471AA8: using guessed type __int64 __fastcall inst_74_flags_var_2();
 
@@ -23259,10 +22459,7 @@ __int64 inst_74_values_var_3()
 //----- (0000000000471CAE) ----------------------------------------------------
 __int64 inst_74_flags_var_3()
 {
-  unsigned __int64 v0; // r12
-
-  v0 = 0xDF482EE85DDFE6D0LL;
-  return (char)_bittestandcomplement64((__int64 *)&v0, 0x2Cu);
+  return 0LL;
 }
 // 471CAE: using guessed type __int64 __fastcall inst_74_flags_var_3();
 
@@ -23276,10 +22473,7 @@ __int64 inst_74_values_var_4()
 //----- (0000000000471EB4) ----------------------------------------------------
 __int64 inst_74_flags_var_4()
 {
-  unsigned __int64 v0; // r14
-
-  v0 = 0xE61A432D77A41491LL;
-  return (char)_bittestandcomplement64((__int64 *)&v0, 0x8Bu);
+  return 0LL;
 }
 // 471EB4: using guessed type __int64 __fastcall inst_74_flags_var_4();
 
@@ -23293,10 +22487,7 @@ __int64 inst_74_values_var_5()
 //----- (00000000004720BA) ----------------------------------------------------
 __int64 inst_74_flags_var_5()
 {
-  unsigned __int64 v0; // r11
-
-  v0 = 0xA80C859F52A0A364LL;
-  return (char)_bittestandcomplement64((__int64 *)&v0, 0xCu);
+  return 0LL;
 }
 // 4720BA: using guessed type __int64 __fastcall inst_74_flags_var_5();
 
@@ -23310,10 +22501,7 @@ __int64 inst_74_values_var_6()
 //----- (00000000004722C0) ----------------------------------------------------
 __int64 inst_74_flags_var_6()
 {
-  __int64 v0; // r15
-
-  v0 = 0x41B42505021C23FLL;
-  return (char)_bittestandcomplement64(&v0, 0xAFu);
+  return 0LL;
 }
 // 4722C0: using guessed type __int64 __fastcall inst_74_flags_var_6();
 
@@ -23327,10 +22515,7 @@ __int64 inst_74_values_var_7()
 //----- (00000000004724C6) ----------------------------------------------------
 __int64 inst_74_flags_var_7()
 {
-  unsigned __int64 v0; // rdx
-
-  v0 = 0xF20B9B891294C73BLL;
-  return (char)_bittestandcomplement64((__int64 *)&v0, 0xB6u);
+  return 0LL;
 }
 // 4724C6: using guessed type __int64 __fastcall inst_74_flags_var_7();
 
@@ -23344,10 +22529,7 @@ __int64 inst_74_values_var_8()
 //----- (00000000004726CC) ----------------------------------------------------
 __int64 inst_74_flags_var_8()
 {
-  unsigned __int64 v0; // r8
-
-  v0 = 0x9D301CE69FF73D8ALL;
-  return (char)_bittestandcomplement64((__int64 *)&v0, 0x2Du);
+  return 0LL;
 }
 // 4726CC: using guessed type __int64 __fastcall inst_74_flags_var_8();
 
@@ -23361,10 +22543,7 @@ __int64 inst_74_values_var_9()
 //----- (00000000004728D2) ----------------------------------------------------
 __int64 inst_74_flags_var_9()
 {
-  __int64 v0; // r9
-
-  v0 = 0x6FF76FA1FCC2112CLL;
-  return (char)_bittestandcomplement64(&v0, 0x19u);
+  return 0LL;
 }
 // 4728D2: using guessed type __int64 __fastcall inst_74_flags_var_9();
 
@@ -23378,12 +22557,7 @@ __int64 inst_75_values_var_0()
 //----- (0000000000472AD8) ----------------------------------------------------
 __int64 inst_75_flags_var_0()
 {
-  unsigned __int64 v0; // r9
-  unsigned __int8 v1; // cf
-
-  v0 = 0xF5A4C9F2E8F0EE4ALL;
-  v1 = _bittestandreset64((__int64 *)&v0, 0x72u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 472AD8: using guessed type __int64 __fastcall inst_75_flags_var_0();
 
@@ -23397,12 +22571,7 @@ __int64 inst_75_values_var_1()
 //----- (0000000000472CDE) ----------------------------------------------------
 __int64 inst_75_flags_var_1()
 {
-  unsigned __int64 v0; // r9
-  unsigned __int8 v1; // cf
-
-  v0 = 0xAA952F5D4CC8B0B8LL;
-  v1 = _bittestandreset64((__int64 *)&v0, 0xBDu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 472CDE: using guessed type __int64 __fastcall inst_75_flags_var_1();
 
@@ -23416,10 +22585,7 @@ __int64 inst_75_values_var_2()
 //----- (0000000000472EE4) ----------------------------------------------------
 __int64 inst_75_flags_var_2()
 {
-  unsigned __int64 v0; // r11
-
-  v0 = 0xBAA583D83F93F24ELL;
-  return (char)_bittestandreset64((__int64 *)&v0, 0x5Fu);
+  return 0LL;
 }
 // 472EE4: using guessed type __int64 __fastcall inst_75_flags_var_2();
 
@@ -23433,10 +22599,7 @@ __int64 inst_75_values_var_3()
 //----- (00000000004730EA) ----------------------------------------------------
 __int64 inst_75_flags_var_3()
 {
-  unsigned __int64 v0; // r9
-
-  v0 = 0xF39A6E5645644B04LL;
-  return (char)_bittestandreset64((__int64 *)&v0, 0xBBu);
+  return 0LL;
 }
 // 4730EA: using guessed type __int64 __fastcall inst_75_flags_var_3();
 
@@ -23450,10 +22613,7 @@ __int64 inst_75_values_var_4()
 //----- (00000000004732F0) ----------------------------------------------------
 __int64 inst_75_flags_var_4()
 {
-  __int64 v0; // rsi
-
-  v0 = 0x3F20C517F328F611LL;
-  return (char)_bittestandreset64(&v0, 0xD2u);
+  return 0LL;
 }
 // 4732F0: using guessed type __int64 __fastcall inst_75_flags_var_4();
 
@@ -23467,10 +22627,7 @@ __int64 inst_75_values_var_5()
 //----- (00000000004734F6) ----------------------------------------------------
 __int64 inst_75_flags_var_5()
 {
-  unsigned __int64 v0; // r8
-
-  v0 = 0xC3A0623FACBE37F7LL;
-  return (char)_bittestandreset64((__int64 *)&v0, 0x16u);
+  return 0LL;
 }
 // 4734F6: using guessed type __int64 __fastcall inst_75_flags_var_5();
 
@@ -23484,12 +22641,7 @@ __int64 inst_75_values_var_6()
 //----- (00000000004736FC) ----------------------------------------------------
 __int64 inst_75_flags_var_6()
 {
-  __int64 v0; // rsi
-  unsigned __int8 v1; // cf
-
-  v0 = 0xD461434D637BCC6LL;
-  v1 = _bittestandreset64(&v0, 0x55u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 4736FC: using guessed type __int64 __fastcall inst_75_flags_var_6();
 
@@ -23503,12 +22655,7 @@ __int64 inst_75_values_var_7()
 //----- (0000000000473902) ----------------------------------------------------
 __int64 inst_75_flags_var_7()
 {
-  unsigned __int64 v0; // r14
-  unsigned __int8 v1; // cf
-
-  v0 = 0xEA5AD183156DF4BELL;
-  v1 = _bittestandreset64((__int64 *)&v0, 0x9Cu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 473902: using guessed type __int64 __fastcall inst_75_flags_var_7();
 
@@ -23522,12 +22669,7 @@ __int64 inst_75_values_var_8()
 //----- (0000000000473B08) ----------------------------------------------------
 __int64 inst_75_flags_var_8()
 {
-  unsigned __int64 v0; // r13
-  unsigned __int8 v1; // cf
-
-  v0 = 0xC568BF618CD74F95LL;
-  v1 = _bittestandreset64((__int64 *)&v0, 0x2Fu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 473B08: using guessed type __int64 __fastcall inst_75_flags_var_8();
 
@@ -23541,10 +22683,7 @@ __int64 inst_75_values_var_9()
 //----- (0000000000473D0E) ----------------------------------------------------
 __int64 inst_75_flags_var_9()
 {
-  __int64 v0; // rbx
-
-  v0 = 0x6D8931288A1736E8LL;
-  return (char)_bittestandreset64(&v0, 0x1Cu);
+  return 0LL;
 }
 // 473D0E: using guessed type __int64 __fastcall inst_75_flags_var_9();
 
@@ -23558,12 +22697,7 @@ __int64 inst_76_values_var_0()
 //----- (0000000000473F14) ----------------------------------------------------
 __int64 inst_76_flags_var_0()
 {
-  unsigned __int64 v0; // r15
-  unsigned __int8 v1; // cf
-
-  v0 = 0xCDEF6BD4A895CD30LL;
-  v1 = _bittestandset64((__int64 *)&v0, 0xF7u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 473F14: using guessed type __int64 __fastcall inst_76_flags_var_0();
 
@@ -23577,12 +22711,7 @@ __int64 inst_76_values_var_1()
 //----- (000000000047411A) ----------------------------------------------------
 __int64 inst_76_flags_var_1()
 {
-  unsigned __int64 v0; // rcx
-  unsigned __int8 v1; // cf
-
-  v0 = 0xAAFDB56CC53C88F3LL;
-  v1 = _bittestandset64((__int64 *)&v0, 0xC0u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 47411A: using guessed type __int64 __fastcall inst_76_flags_var_1();
 
@@ -23596,10 +22725,7 @@ __int64 inst_76_values_var_2()
 //----- (0000000000474320) ----------------------------------------------------
 __int64 inst_76_flags_var_2()
 {
-  __int64 v0; // r9
-
-  v0 = 0x224CCFFD0A4688A1LL;
-  return (char)_bittestandset64(&v0, 0x7Fu);
+  return 0LL;
 }
 // 474320: using guessed type __int64 __fastcall inst_76_flags_var_2();
 
@@ -23613,10 +22739,7 @@ __int64 inst_76_values_var_3()
 //----- (0000000000474526) ----------------------------------------------------
 __int64 inst_76_flags_var_3()
 {
-  unsigned __int64 v0; // r14
-
-  v0 = 0xED0EF5F3DBB6115FLL;
-  return (char)_bittestandset64((__int64 *)&v0, 0x8Au);
+  return 0LL;
 }
 // 474526: using guessed type __int64 __fastcall inst_76_flags_var_3();
 
@@ -23630,12 +22753,7 @@ __int64 inst_76_values_var_4()
 //----- (000000000047472C) ----------------------------------------------------
 __int64 inst_76_flags_var_4()
 {
-  unsigned __int64 v0; // r9
-  unsigned __int8 v1; // cf
-
-  v0 = 0xB002A5F58A98E555LL;
-  v1 = _bittestandset64((__int64 *)&v0, 0xFCu);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 47472C: using guessed type __int64 __fastcall inst_76_flags_var_4();
 
@@ -23649,10 +22767,7 @@ __int64 inst_76_values_var_5()
 //----- (0000000000474932) ----------------------------------------------------
 __int64 inst_76_flags_var_5()
 {
-  unsigned __int64 v0; // rcx
-
-  v0 = 0xD977B130F5ED7A28LL;
-  return (char)_bittestandset64((__int64 *)&v0, 0x3Au);
+  return 0LL;
 }
 // 474932: using guessed type __int64 __fastcall inst_76_flags_var_5();
 
@@ -23666,10 +22781,7 @@ __int64 inst_76_values_var_6()
 //----- (0000000000474B38) ----------------------------------------------------
 __int64 inst_76_flags_var_6()
 {
-  __int64 v0; // rax
-
-  v0 = 0x48FA7521CB081EDELL;
-  return (char)_bittestandset64(&v0, 0xDAu);
+  return 0LL;
 }
 // 474B38: using guessed type __int64 __fastcall inst_76_flags_var_6();
 
@@ -23683,10 +22795,7 @@ __int64 inst_76_values_var_7()
 //----- (0000000000474D3E) ----------------------------------------------------
 __int64 inst_76_flags_var_7()
 {
-  __int64 v0; // r15
-
-  v0 = 0x31D0934C6535AE9BLL;
-  return (char)_bittestandset64(&v0, 0x2Au);
+  return 0LL;
 }
 // 474D3E: using guessed type __int64 __fastcall inst_76_flags_var_7();
 
@@ -23700,12 +22809,7 @@ __int64 inst_76_values_var_8()
 //----- (0000000000474F44) ----------------------------------------------------
 __int64 inst_76_flags_var_8()
 {
-  __int64 v0; // r10
-  unsigned __int8 v1; // cf
-
-  v0 = 0x391990F05B5463FELL;
-  v1 = _bittestandset64(&v0, 0x38u);
-  return v1 - 1LL;
+  return 0LL;
 }
 // 474F44: using guessed type __int64 __fastcall inst_76_flags_var_8();
 
@@ -23719,10 +22823,7 @@ __int64 inst_76_values_var_9()
 //----- (000000000047514A) ----------------------------------------------------
 __int64 inst_76_flags_var_9()
 {
-  unsigned __int64 v0; // r15
-
-  v0 = 0xA290B87DF3972EE2LL;
-  return (char)_bittestandset64((__int64 *)&v0, 0x2Eu);
+  return 0LL;
 }
 // 47514A: using guessed type __int64 __fastcall inst_76_flags_var_9();
 
@@ -31681,7 +30782,7 @@ __int64 inst_132_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-18, 95) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4B96A8: using guessed type __int64 __fastcall inst_132_flags_var_0();
@@ -31719,7 +30820,7 @@ __int64 inst_132_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-73, 68) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4B9ADE: using guessed type __int64 __fastcall inst_132_flags_var_2();
@@ -31738,7 +30839,7 @@ __int64 inst_132_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-120, 80) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4B9CF9: using guessed type __int64 __fastcall inst_132_flags_var_3();
@@ -31852,7 +30953,7 @@ __int64 inst_132_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(53, 21) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BA999: using guessed type __int64 __fastcall inst_132_flags_var_9();
@@ -31871,7 +30972,7 @@ __int64 inst_133_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-56, 76) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BABB3: using guessed type __int64 __fastcall inst_133_flags_var_0();
@@ -31947,7 +31048,7 @@ __int64 inst_133_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-4, 97) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BB413: using guessed type __int64 __fastcall inst_133_flags_var_4();
@@ -31985,7 +31086,7 @@ __int64 inst_133_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-104, 71) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BB843: using guessed type __int64 __fastcall inst_133_flags_var_6();
@@ -32004,7 +31105,7 @@ __int64 inst_133_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-76, 43) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BBA5B: using guessed type __int64 __fastcall inst_133_flags_var_7();
@@ -32023,7 +31124,7 @@ __int64 inst_133_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(-59, 39) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BBC73: using guessed type __int64 __fastcall inst_133_flags_var_8();
@@ -32042,7 +31143,7 @@ __int64 inst_133_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(70, 106) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BBE8B: using guessed type __int64 __fastcall inst_133_flags_var_9();
@@ -32061,7 +31162,7 @@ __int64 inst_134_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-19, -11) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BC0A4: using guessed type __int64 __fastcall inst_134_flags_var_0();
@@ -32175,7 +31276,7 @@ __int64 inst_134_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(85, -121) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BCD3E: using guessed type __int64 __fastcall inst_134_flags_var_6();
@@ -32194,7 +31295,7 @@ __int64 inst_134_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(108, 27) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BCF58: using guessed type __int64 __fastcall inst_134_flags_var_7();
@@ -32308,7 +31409,7 @@ __int64 inst_135_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(13669, 10749) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BDC06: using guessed type __int64 __fastcall inst_135_flags_var_3();
@@ -32346,7 +31447,7 @@ __int64 inst_135_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(-13793, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BE045: using guessed type __int64 __fastcall inst_135_flags_var_5();
@@ -32365,7 +31466,7 @@ __int64 inst_135_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(9178, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BE264: using guessed type __int64 __fastcall inst_135_flags_var_6();
@@ -32403,7 +31504,7 @@ __int64 inst_135_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(1268, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BE6A2: using guessed type __int64 __fastcall inst_135_flags_var_8();
@@ -32422,7 +31523,7 @@ __int64 inst_135_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-11803, 25255) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BE8C1: using guessed type __int64 __fastcall inst_135_flags_var_9();
@@ -32441,7 +31542,7 @@ __int64 inst_136_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-7976, 24655) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BEADF: using guessed type __int64 __fastcall inst_136_flags_var_0();
@@ -32460,7 +31561,7 @@ __int64 inst_136_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-13557, -8345) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BECFA: using guessed type __int64 __fastcall inst_136_flags_var_1();
@@ -32612,7 +31713,7 @@ __int64 inst_136_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-10902, -14009) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BFDD6: using guessed type __int64 __fastcall inst_136_flags_var_9();
@@ -32631,7 +31732,7 @@ __int64 inst_137_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-2120613078, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4BFFF4: using guessed type __int64 __fastcall inst_137_flags_var_0();
@@ -32669,7 +31770,7 @@ __int64 inst_137_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(1440759644, 144559469) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C0437: using guessed type __int64 __fastcall inst_137_flags_var_2();
@@ -32707,7 +31808,7 @@ __int64 inst_137_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-78351305, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C087A: using guessed type __int64 __fastcall inst_137_flags_var_4();
@@ -32745,7 +31846,7 @@ __int64 inst_137_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(958333001, 799461963) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C0CBB: using guessed type __int64 __fastcall inst_137_flags_var_6();
@@ -32821,7 +31922,7 @@ __int64 inst_138_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-220217797, 1568169988) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C153B: using guessed type __int64 __fastcall inst_138_flags_var_0();
@@ -32897,7 +31998,7 @@ __int64 inst_138_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(539676720, 1339506762) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C1DA0: using guessed type __int64 __fastcall inst_138_flags_var_4();
@@ -32916,7 +32017,7 @@ __int64 inst_138_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(1826534869, -1019352300) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C1FBA: using guessed type __int64 __fastcall inst_138_flags_var_5();
@@ -32935,7 +32036,7 @@ __int64 inst_138_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(1186727369, 282539674) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C21D4: using guessed type __int64 __fastcall inst_138_flags_var_6();
@@ -32954,7 +32055,7 @@ __int64 inst_138_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-890783585, -247875745) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C23EE: using guessed type __int64 __fastcall inst_138_flags_var_7();
@@ -32973,7 +32074,7 @@ __int64 inst_138_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(-54708985, -498520253) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C2607: using guessed type __int64 __fastcall inst_138_flags_var_8();
@@ -32992,7 +32093,7 @@ __int64 inst_138_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-1603389691, 1095914057) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C2820: using guessed type __int64 __fastcall inst_138_flags_var_9();
@@ -33106,7 +32207,7 @@ __int64 inst_139_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(0x68CBD8ECC5319AC4LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C34E8: using guessed type __int64 __fastcall inst_139_flags_var_5();
@@ -33163,7 +32264,7 @@ __int64 inst_139_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(0xFD0FA0EA15B9AE0BLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C3B4E: using guessed type __int64 __fastcall inst_139_flags_var_8();
@@ -33315,7 +32416,7 @@ __int64 inst_140_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(0x465062269D284BEFLL, 0xE3784E0197525BE4LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C4C2A: using guessed type __int64 __fastcall inst_140_flags_var_6();
@@ -33353,7 +32454,7 @@ __int64 inst_140_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(0xBD4A577BD4D1E575LL, 0xA5073B2224444973LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C505E: using guessed type __int64 __fastcall inst_140_flags_var_8();
@@ -33372,7 +32473,7 @@ __int64 inst_140_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(0xA0AAA2165D0AE9ECLL, 0x2C3DE021A43CD469LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4C5278: using guessed type __int64 __fastcall inst_140_flags_var_9();
@@ -33491,7 +32592,7 @@ __int64 inst_141_flags_var_4()
   __asm { cmpxchg ah, bl }
   v3 = 0LL;
   if ( __SETP__(0xFB063CFE48C5F9BALL, 0LL) )
-    v3 = 4LL;
+    return 4LL;
   return v3;
 }
 // 4C5CFA: using guessed type __int64 __fastcall inst_141_flags_var_4();
@@ -33874,7 +32975,7 @@ __int64 inst_143_flags_var_0()
   __asm { cmpxchg r9w, cx }
   v3 = 0LL;
   if ( __SETP__(0x777C437515E31BE9LL, 0LL) )
-    v3 = 4LL;
+    return 4LL;
   return v3;
 }
 // 4C7EAD: using guessed type __int64 __fastcall inst_143_flags_var_0();
@@ -34071,7 +33172,7 @@ __int64 inst_143_flags_var_8()
   __asm { cmpxchg r8w, si }
   v3 = 0LL;
   if ( __SETP__(0x6720ABA459C90DAELL, 0LL) )
-    v3 = 4LL;
+    return 4LL;
   return v3;
 }
 // 4C8F99: using guessed type __int64 __fastcall inst_143_flags_var_8();
@@ -34219,7 +33320,7 @@ __int64 inst_144_flags_var_4()
   __asm { cmpxchg r12d, edi }
   v3 = 0LL;
   if ( __SETP__(0x7A7B9A7064AFF69ALL, 0LL) )
-    v3 = 4LL;
+    return 4LL;
   return v3;
 }
 // 4C9C41: using guessed type __int64 __fastcall inst_144_flags_var_4();
@@ -34268,7 +33369,7 @@ __int64 inst_144_flags_var_6()
   __asm { cmpxchg r8d, r9d }
   v3 = 0LL;
   if ( __SETP__(0xEFABDD5887F71886LL, 0LL) )
-    v3 = 4LL;
+    return 4LL;
   return v3;
 }
 // 4CA078: using guessed type __int64 __fastcall inst_144_flags_var_6();
@@ -34648,7 +33749,7 @@ __int64 inst_146_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(25, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4CC21F: using guessed type __int64 __fastcall inst_146_flags_var_2();
@@ -34667,7 +33768,7 @@ __int64 inst_146_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(19, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4CC431: using guessed type __int64 __fastcall inst_146_flags_var_3();
@@ -34762,7 +33863,7 @@ __int64 inst_146_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(-111, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4CCE84: using guessed type __int64 __fastcall inst_146_flags_var_8();
@@ -34857,7 +33958,7 @@ __int64 inst_147_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-2142, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4CD8DF: using guessed type __int64 __fastcall inst_147_flags_var_3();
@@ -34876,7 +33977,7 @@ __int64 inst_147_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(10766, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4CDAF1: using guessed type __int64 __fastcall inst_147_flags_var_4();
@@ -34933,7 +34034,7 @@ __int64 inst_147_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(27372, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4CE12B: using guessed type __int64 __fastcall inst_147_flags_var_7();
@@ -34952,7 +34053,7 @@ __int64 inst_147_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(6873, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4CE33F: using guessed type __int64 __fastcall inst_147_flags_var_8();
@@ -34971,7 +34072,7 @@ __int64 inst_147_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(23174, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4CE552: using guessed type __int64 __fastcall inst_147_flags_var_9();
@@ -35028,7 +34129,7 @@ __int64 inst_148_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(702489682, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4CEB87: using guessed type __int64 __fastcall inst_148_flags_var_2();
@@ -35066,7 +34167,7 @@ __int64 inst_148_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-1813850174, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4CEFA9: using guessed type __int64 __fastcall inst_148_flags_var_4();
@@ -35161,7 +34262,7 @@ __int64 inst_148_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-1126349597, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4CF9FE: using guessed type __int64 __fastcall inst_148_flags_var_9();
@@ -35294,7 +34395,7 @@ __int64 inst_149_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(0x576DAC8C48248D16LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4D087B: using guessed type __int64 __fastcall inst_149_flags_var_6();
@@ -35332,7 +34433,7 @@ __int64 inst_149_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(0x74BF1E5116626134LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4D0C9F: using guessed type __int64 __fastcall inst_149_flags_var_8();
@@ -35351,7 +34452,7 @@ __int64 inst_149_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(0x1274D5EF28ED2B94LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 4D0EB1: using guessed type __int64 __fastcall inst_149_flags_var_9();
@@ -43566,7 +42667,7 @@ __int64 inst_203_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-104, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 51403A: using guessed type __int64 __fastcall inst_203_flags_var_1();
@@ -43585,7 +42686,7 @@ __int64 inst_203_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-123, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 514254: using guessed type __int64 __fastcall inst_203_flags_var_2();
@@ -43623,7 +42724,7 @@ __int64 inst_203_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-62, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 514687: using guessed type __int64 __fastcall inst_203_flags_var_4();
@@ -43661,7 +42762,7 @@ __int64 inst_203_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-104, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 514ABA: using guessed type __int64 __fastcall inst_203_flags_var_6();
@@ -43699,7 +42800,7 @@ __int64 inst_203_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(55, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 514EEC: using guessed type __int64 __fastcall inst_203_flags_var_8();
@@ -43718,7 +42819,7 @@ __int64 inst_203_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-39, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 515105: using guessed type __int64 __fastcall inst_203_flags_var_9();
@@ -43737,7 +42838,7 @@ __int64 inst_204_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(21644, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 51531F: using guessed type __int64 __fastcall inst_204_flags_var_0();
@@ -43775,7 +42876,7 @@ __int64 inst_204_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-6083, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 515755: using guessed type __int64 __fastcall inst_204_flags_var_2();
@@ -43813,7 +42914,7 @@ __int64 inst_204_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-28487, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 515B8B: using guessed type __int64 __fastcall inst_204_flags_var_4();
@@ -43832,7 +42933,7 @@ __int64 inst_204_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(-24459, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 515DA6: using guessed type __int64 __fastcall inst_204_flags_var_5();
@@ -43851,7 +42952,7 @@ __int64 inst_204_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(15864, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 515FC0: using guessed type __int64 __fastcall inst_204_flags_var_6();
@@ -43946,7 +43047,7 @@ __int64 inst_205_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-387284937, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 516A47: using guessed type __int64 __fastcall inst_205_flags_var_1();
@@ -44003,7 +43104,7 @@ __int64 inst_205_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-1778667602, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 517092: using guessed type __int64 __fastcall inst_205_flags_var_4();
@@ -44041,7 +43142,7 @@ __int64 inst_205_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-982731577, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5174C5: using guessed type __int64 __fastcall inst_205_flags_var_6();
@@ -44060,7 +43161,7 @@ __int64 inst_205_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(786808186, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5176DE: using guessed type __int64 __fastcall inst_205_flags_var_7();
@@ -44117,7 +43218,7 @@ __int64 inst_206_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0xBAAB1096D761EBEALL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 517D29: using guessed type __int64 __fastcall inst_206_flags_var_0();
@@ -44155,7 +43256,7 @@ __int64 inst_206_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(0xBFE5076F5288D5D0LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 51815D: using guessed type __int64 __fastcall inst_206_flags_var_2();
@@ -44174,7 +43275,7 @@ __int64 inst_206_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(0x3CCE30005EBD981FLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 518377: using guessed type __int64 __fastcall inst_206_flags_var_3();
@@ -45007,7 +44108,7 @@ __int64 inst_212_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-65, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 51F4D0: using guessed type __int64 __fastcall inst_212_flags_var_0();
@@ -45064,7 +44165,7 @@ __int64 inst_212_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(31, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 51FB21: using guessed type __int64 __fastcall inst_212_flags_var_3();
@@ -45083,7 +44184,7 @@ __int64 inst_212_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-65, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 51FD3C: using guessed type __int64 __fastcall inst_212_flags_var_4();
@@ -45121,7 +44222,7 @@ __int64 inst_212_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(94, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 520174: using guessed type __int64 __fastcall inst_212_flags_var_6();
@@ -45159,7 +44260,7 @@ __int64 inst_212_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(-33, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5205AA: using guessed type __int64 __fastcall inst_212_flags_var_8();
@@ -45197,7 +44298,7 @@ __int64 inst_213_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-89, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5209DD: using guessed type __int64 __fastcall inst_213_flags_var_0();
@@ -45292,7 +44393,7 @@ __int64 inst_213_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(-14, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 521455: using guessed type __int64 __fastcall inst_213_flags_var_5();
@@ -45368,7 +44469,7 @@ __int64 inst_213_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-80, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 521CB5: using guessed type __int64 __fastcall inst_213_flags_var_9();
@@ -45387,7 +44488,7 @@ __int64 inst_214_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(127, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 521ECE: using guessed type __int64 __fastcall inst_214_flags_var_0();
@@ -45406,7 +44507,7 @@ __int64 inst_214_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-3, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5220E8: using guessed type __int64 __fastcall inst_214_flags_var_1();
@@ -45444,7 +44545,7 @@ __int64 inst_214_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-77, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 52251C: using guessed type __int64 __fastcall inst_214_flags_var_3();
@@ -45501,7 +44602,7 @@ __int64 inst_214_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-17, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 522B6A: using guessed type __int64 __fastcall inst_214_flags_var_6();
@@ -45520,7 +44621,7 @@ __int64 inst_214_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-5, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 522D84: using guessed type __int64 __fastcall inst_214_flags_var_7();
@@ -45558,7 +44659,7 @@ __int64 inst_214_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-23, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5231B8: using guessed type __int64 __fastcall inst_214_flags_var_9();
@@ -45596,7 +44697,7 @@ __int64 inst_215_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(20915, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5235F5: using guessed type __int64 __fastcall inst_215_flags_var_1();
@@ -45634,7 +44735,7 @@ __int64 inst_215_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-7645, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 523A32: using guessed type __int64 __fastcall inst_215_flags_var_3();
@@ -45653,7 +44754,7 @@ __int64 inst_215_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(31983, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 523C50: using guessed type __int64 __fastcall inst_215_flags_var_4();
@@ -45748,7 +44849,7 @@ __int64 inst_215_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-65, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5246EA: using guessed type __int64 __fastcall inst_215_flags_var_9();
@@ -45767,7 +44868,7 @@ __int64 inst_216_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-4113, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 524907: using guessed type __int64 __fastcall inst_216_flags_var_0();
@@ -45805,7 +44906,7 @@ __int64 inst_216_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-6146, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 524D3F: using guessed type __int64 __fastcall inst_216_flags_var_2();
@@ -45824,7 +44925,7 @@ __int64 inst_216_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(13689, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 524F5A: using guessed type __int64 __fastcall inst_216_flags_var_3();
@@ -45843,7 +44944,7 @@ __int64 inst_216_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-17, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 525175: using guessed type __int64 __fastcall inst_216_flags_var_4();
@@ -45862,7 +44963,7 @@ __int64 inst_216_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(22219, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 525390: using guessed type __int64 __fastcall inst_216_flags_var_5();
@@ -45881,7 +44982,7 @@ __int64 inst_216_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-15443, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5255AA: using guessed type __int64 __fastcall inst_216_flags_var_6();
@@ -45957,7 +45058,7 @@ __int64 inst_217_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(534713279, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 525E1B: using guessed type __int64 __fastcall inst_217_flags_var_0();
@@ -45976,7 +45077,7 @@ __int64 inst_217_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-275697923, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 52603A: using guessed type __int64 __fastcall inst_217_flags_var_1();
@@ -45995,7 +45096,7 @@ __int64 inst_217_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(2143154894, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 52625B: using guessed type __int64 __fastcall inst_217_flags_var_2();
@@ -46014,7 +45115,7 @@ __int64 inst_217_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-1611694471, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 52647C: using guessed type __int64 __fastcall inst_217_flags_var_3();
@@ -46033,7 +45134,7 @@ __int64 inst_217_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-1363382289, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 52669D: using guessed type __int64 __fastcall inst_217_flags_var_4();
@@ -46052,7 +45153,7 @@ __int64 inst_217_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(-1447399553, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5268BD: using guessed type __int64 __fastcall inst_217_flags_var_5();
@@ -46071,7 +45172,7 @@ __int64 inst_217_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-18915393, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 526ADD: using guessed type __int64 __fastcall inst_217_flags_var_6();
@@ -46128,7 +45229,7 @@ __int64 inst_217_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-1077149954, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 52713F: using guessed type __int64 __fastcall inst_217_flags_var_9();
@@ -46185,7 +45286,7 @@ __int64 inst_218_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-964689937, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 52778E: using guessed type __int64 __fastcall inst_218_flags_var_2();
@@ -46242,7 +45343,7 @@ __int64 inst_218_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(2010500093, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 527DDB: using guessed type __int64 __fastcall inst_218_flags_var_5();
@@ -46261,7 +45362,7 @@ __int64 inst_218_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-279315521, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 527FF5: using guessed type __int64 __fastcall inst_218_flags_var_6();
@@ -46280,7 +45381,7 @@ __int64 inst_218_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(1304911355, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 52820E: using guessed type __int64 __fastcall inst_218_flags_var_7();
@@ -46299,7 +45400,7 @@ __int64 inst_218_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(2147070287, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 528428: using guessed type __int64 __fastcall inst_218_flags_var_8();
@@ -46318,7 +45419,7 @@ __int64 inst_218_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(2048781659, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 528642: using guessed type __int64 __fastcall inst_218_flags_var_9();
@@ -46337,7 +45438,7 @@ __int64 inst_219_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-641731855LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 528860: using guessed type __int64 __fastcall inst_219_flags_var_0();
@@ -46413,7 +45514,7 @@ __int64 inst_219_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(0xA7C716BB6D5BF7DFLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5290E8: using guessed type __int64 __fastcall inst_219_flags_var_4();
@@ -46432,7 +45533,7 @@ __int64 inst_219_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(0xB71EFAF3EFFD571FLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 52930A: using guessed type __int64 __fastcall inst_219_flags_var_5();
@@ -46451,7 +45552,7 @@ __int64 inst_219_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-1611172122LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 52952B: using guessed type __int64 __fastcall inst_219_flags_var_6();
@@ -46508,7 +45609,7 @@ __int64 inst_219_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-161234052LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 529B8F: using guessed type __int64 __fastcall inst_219_flags_var_9();
@@ -46527,7 +45628,7 @@ __int64 inst_220_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0xBFFFDDDF3FBD7FEFLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 529DAD: using guessed type __int64 __fastcall inst_220_flags_var_0();
@@ -46546,7 +45647,7 @@ __int64 inst_220_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(0xAE7323FF644D67DFLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 529FC7: using guessed type __int64 __fastcall inst_220_flags_var_1();
@@ -46584,7 +45685,7 @@ __int64 inst_220_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(0xB3B4FF7AAFEBEFEFLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 52A3FB: using guessed type __int64 __fastcall inst_220_flags_var_3();
@@ -46622,7 +45723,7 @@ __int64 inst_220_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(0xBD0434CB204DD25LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 52A82F: using guessed type __int64 __fastcall inst_220_flags_var_5();
@@ -46641,7 +45742,7 @@ __int64 inst_220_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(0xFB7EBDE78F5BFFFDLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 52AA49: using guessed type __int64 __fastcall inst_220_flags_var_6();
@@ -46970,7 +46071,7 @@ __int64 inst_222_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52C7D7: variable 'v0' is possibly undefined
@@ -46995,7 +46096,7 @@ __int64 inst_222_flags_var_1()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52C9E0: variable 'v0' is possibly undefined
@@ -47020,7 +46121,7 @@ __int64 inst_222_flags_var_2()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52CBEA: variable 'v0' is possibly undefined
@@ -47045,7 +46146,7 @@ __int64 inst_222_flags_var_3()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52CDF3: variable 'v0' is possibly undefined
@@ -47070,7 +46171,7 @@ __int64 inst_222_flags_var_4()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52CFFB: variable 'v0' is possibly undefined
@@ -47095,7 +46196,7 @@ __int64 inst_222_flags_var_5()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52D203: variable 'v0' is possibly undefined
@@ -47216,7 +46317,7 @@ __int64 inst_223_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52DC34: variable 'v0' is possibly undefined
@@ -47237,7 +46338,7 @@ __int64 inst_223_flags_var_1()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52DE3D: variable 'v0' is possibly undefined
@@ -47258,7 +46359,7 @@ __int64 inst_223_flags_var_2()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52E046: variable 'v0' is possibly undefined
@@ -47279,7 +46380,7 @@ __int64 inst_223_flags_var_3()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52E24F: variable 'v0' is possibly undefined
@@ -47300,7 +46401,7 @@ __int64 inst_223_flags_var_4()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52E458: variable 'v0' is possibly undefined
@@ -47321,7 +46422,7 @@ __int64 inst_223_flags_var_5()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52E661: variable 'v0' is possibly undefined
@@ -47342,7 +46443,7 @@ __int64 inst_223_flags_var_6()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52E86A: variable 'v0' is possibly undefined
@@ -47363,7 +46464,7 @@ __int64 inst_223_flags_var_7()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52EA74: variable 'v0' is possibly undefined
@@ -47384,7 +46485,7 @@ __int64 inst_223_flags_var_8()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52EC7E: variable 'v0' is possibly undefined
@@ -47405,7 +46506,7 @@ __int64 inst_223_flags_var_9()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 52EE88: variable 'v0' is possibly undefined
@@ -47636,7 +46737,7 @@ __int64 inst_225_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 5304EB: variable 'v0' is possibly undefined
@@ -47699,7 +46800,7 @@ __int64 inst_225_flags_var_3()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 530B07: variable 'v0' is possibly undefined
@@ -47720,7 +46821,7 @@ __int64 inst_225_flags_var_4()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 530D11: variable 'v0' is possibly undefined
@@ -47741,7 +46842,7 @@ __int64 inst_225_flags_var_5()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 530F1B: variable 'v0' is possibly undefined
@@ -47783,7 +46884,7 @@ __int64 inst_225_flags_var_7()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53132D: variable 'v0' is possibly undefined
@@ -48171,7 +47272,7 @@ __int64 inst_227_flags_var_3()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 5333E0: variable 'v0' is possibly undefined
@@ -48195,7 +47296,7 @@ __int64 inst_227_flags_var_4()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 5335EA: variable 'v0' is possibly undefined
@@ -48220,7 +47321,7 @@ __int64 inst_227_flags_var_5()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 5337F4: variable 'v0' is possibly undefined
@@ -48244,7 +47345,7 @@ __int64 inst_227_flags_var_6()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 5339FF: variable 'v0' is possibly undefined
@@ -48339,7 +47440,7 @@ __int64 inst_228_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53422A: variable 'v0' is possibly undefined
@@ -48360,7 +47461,7 @@ __int64 inst_228_flags_var_1()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 534434: variable 'v0' is possibly undefined
@@ -48381,7 +47482,7 @@ __int64 inst_228_flags_var_2()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53463E: variable 'v0' is possibly undefined
@@ -48402,7 +47503,7 @@ __int64 inst_228_flags_var_3()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53484A: variable 'v0' is possibly undefined
@@ -48423,7 +47524,7 @@ __int64 inst_228_flags_var_4()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 534A54: variable 'v0' is possibly undefined
@@ -48444,7 +47545,7 @@ __int64 inst_228_flags_var_5()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 534C5E: variable 'v0' is possibly undefined
@@ -48465,7 +47566,7 @@ __int64 inst_228_flags_var_6()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 534E68: variable 'v0' is possibly undefined
@@ -48486,7 +47587,7 @@ __int64 inst_228_flags_var_7()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 535074: variable 'v0' is possibly undefined
@@ -48507,7 +47608,7 @@ __int64 inst_228_flags_var_8()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53527F: variable 'v0' is possibly undefined
@@ -48528,7 +47629,7 @@ __int64 inst_228_flags_var_9()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53548A: variable 'v0' is possibly undefined
@@ -48759,7 +47860,7 @@ __int64 inst_230_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 536B02: variable 'v0' is possibly undefined
@@ -48843,7 +47944,7 @@ __int64 inst_230_flags_var_4()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53732D: variable 'v0' is possibly undefined
@@ -48864,7 +47965,7 @@ __int64 inst_230_flags_var_5()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 537538: variable 'v0' is possibly undefined
@@ -48885,7 +47986,7 @@ __int64 inst_230_flags_var_6()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 537743: variable 'v0' is possibly undefined
@@ -48948,7 +48049,7 @@ __int64 inst_230_flags_var_9()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 537D64: variable 'v0' is possibly undefined
@@ -49179,7 +48280,7 @@ __int64 inst_232_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 5393C8: variable 'v0' is possibly undefined
@@ -49263,7 +48364,7 @@ __int64 inst_232_flags_var_4()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 539BEB: variable 'v0' is possibly undefined
@@ -49284,7 +48385,7 @@ __int64 inst_232_flags_var_5()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 539DF5: variable 'v0' is possibly undefined
@@ -49305,7 +48406,7 @@ __int64 inst_232_flags_var_6()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 539FFE: variable 'v0' is possibly undefined
@@ -49389,7 +48490,7 @@ __int64 inst_233_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53A822: variable 'v0' is possibly undefined
@@ -49410,7 +48511,7 @@ __int64 inst_233_flags_var_1()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53AA2B: variable 'v0' is possibly undefined
@@ -49431,7 +48532,7 @@ __int64 inst_233_flags_var_2()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53AC34: variable 'v0' is possibly undefined
@@ -49452,7 +48553,7 @@ __int64 inst_233_flags_var_3()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53AE3D: variable 'v0' is possibly undefined
@@ -49473,7 +48574,7 @@ __int64 inst_233_flags_var_4()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53B045: variable 'v0' is possibly undefined
@@ -49494,7 +48595,7 @@ __int64 inst_233_flags_var_5()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53B24D: variable 'v0' is possibly undefined
@@ -49515,7 +48616,7 @@ __int64 inst_233_flags_var_6()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53B455: variable 'v0' is possibly undefined
@@ -49536,7 +48637,7 @@ __int64 inst_233_flags_var_7()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53B65F: variable 'v0' is possibly undefined
@@ -49557,7 +48658,7 @@ __int64 inst_233_flags_var_8()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53B869: variable 'v0' is possibly undefined
@@ -49578,7 +48679,7 @@ __int64 inst_233_flags_var_9()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53BA72: variable 'v0' is possibly undefined
@@ -49830,7 +48931,7 @@ __int64 inst_235_flags_var_1()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53D2DC: variable 'v0' is possibly undefined
@@ -49851,7 +48952,7 @@ __int64 inst_235_flags_var_2()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53D4E4: variable 'v0' is possibly undefined
@@ -49893,7 +48994,7 @@ __int64 inst_235_flags_var_4()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53D8F5: variable 'v0' is possibly undefined
@@ -49914,7 +49015,7 @@ __int64 inst_235_flags_var_5()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53DAFF: variable 'v0' is possibly undefined
@@ -50250,7 +49351,7 @@ __int64 inst_237_flags_var_1()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 53FB9A: variable 'v0' is possibly undefined
@@ -50313,7 +49414,7 @@ __int64 inst_237_flags_var_4()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 5401B8: variable 'v0' is possibly undefined
@@ -50334,7 +49435,7 @@ __int64 inst_237_flags_var_5()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 5403C2: variable 'v0' is possibly undefined
@@ -50418,7 +49519,7 @@ __int64 inst_237_flags_var_9()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 540BEA: variable 'v0' is possibly undefined
@@ -50439,7 +49540,7 @@ __int64 inst_238_flags_var_0()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 540DF4: variable 'v0' is possibly undefined
@@ -50460,7 +49561,7 @@ __int64 inst_238_flags_var_1()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 540FFE: variable 'v0' is possibly undefined
@@ -50481,7 +49582,7 @@ __int64 inst_238_flags_var_2()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 541208: variable 'v0' is possibly undefined
@@ -50502,7 +49603,7 @@ __int64 inst_238_flags_var_3()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 541412: variable 'v0' is possibly undefined
@@ -50523,7 +49624,7 @@ __int64 inst_238_flags_var_4()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 54161C: variable 'v0' is possibly undefined
@@ -50544,7 +49645,7 @@ __int64 inst_238_flags_var_5()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 541826: variable 'v0' is possibly undefined
@@ -50565,7 +49666,7 @@ __int64 inst_238_flags_var_6()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 541A30: variable 'v0' is possibly undefined
@@ -50586,7 +49687,7 @@ __int64 inst_238_flags_var_7()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 541C3A: variable 'v0' is possibly undefined
@@ -50607,7 +49708,7 @@ __int64 inst_238_flags_var_8()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 541E44: variable 'v0' is possibly undefined
@@ -50628,7 +49729,7 @@ __int64 inst_238_flags_var_9()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 54204E: variable 'v0' is possibly undefined
@@ -50901,7 +50002,7 @@ __int64 inst_240_flags_var_2()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 543AD0: variable 'v0' is possibly undefined
@@ -50985,7 +50086,7 @@ __int64 inst_240_flags_var_6()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 5442F8: variable 'v0' is possibly undefined
@@ -51006,7 +50107,7 @@ __int64 inst_240_flags_var_7()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 544502: variable 'v0' is possibly undefined
@@ -51027,7 +50128,7 @@ __int64 inst_240_flags_var_8()
 
   v1 = 0LL;
   if ( v0 )
-    v1 = 2LL;
+    return 2LL;
   return v1;
 }
 // 54470C: variable 'v0' is possibly undefined
@@ -63885,7 +62986,7 @@ __int64 inst_322_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-17, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5A9E1F: using guessed type __int64 __fastcall inst_322_flags_var_0();
@@ -63904,7 +63005,7 @@ __int64 inst_322_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-48, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AA03A: using guessed type __int64 __fastcall inst_322_flags_var_1();
@@ -64018,7 +63119,7 @@ __int64 inst_322_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(94, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AACDD: using guessed type __int64 __fastcall inst_322_flags_var_7();
@@ -64037,7 +63138,7 @@ __int64 inst_322_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(-42, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AAEF8: using guessed type __int64 __fastcall inst_322_flags_var_8();
@@ -64056,7 +63157,7 @@ __int64 inst_322_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(79, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AB112: using guessed type __int64 __fastcall inst_322_flags_var_9();
@@ -64075,7 +63176,7 @@ __int64 inst_323_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(117, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AB32C: using guessed type __int64 __fastcall inst_323_flags_var_0();
@@ -64094,7 +63195,7 @@ __int64 inst_323_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-32, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AB544: using guessed type __int64 __fastcall inst_323_flags_var_1();
@@ -64132,7 +63233,7 @@ __int64 inst_323_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(84, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AB974: using guessed type __int64 __fastcall inst_323_flags_var_3();
@@ -64151,7 +63252,7 @@ __int64 inst_323_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(127, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5ABB8C: using guessed type __int64 __fastcall inst_323_flags_var_4();
@@ -64189,7 +63290,7 @@ __int64 inst_323_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-26, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5ABFBC: using guessed type __int64 __fastcall inst_323_flags_var_6();
@@ -64227,7 +63328,7 @@ __int64 inst_323_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(13, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AC3EC: using guessed type __int64 __fastcall inst_323_flags_var_8();
@@ -64303,7 +63404,7 @@ __int64 inst_324_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-15, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5ACC51: using guessed type __int64 __fastcall inst_324_flags_var_2();
@@ -64322,7 +63423,7 @@ __int64 inst_324_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(104, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5ACE6B: using guessed type __int64 __fastcall inst_324_flags_var_3();
@@ -64360,7 +63461,7 @@ __int64 inst_324_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(-23, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AD29F: using guessed type __int64 __fastcall inst_324_flags_var_5();
@@ -64436,7 +63537,7 @@ __int64 inst_324_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-110, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5ADB06: using guessed type __int64 __fastcall inst_324_flags_var_9();
@@ -64569,7 +63670,7 @@ __int64 inst_325_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(17240, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AE9DE: using guessed type __int64 __fastcall inst_325_flags_var_6();
@@ -64588,7 +63689,7 @@ __int64 inst_325_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-27084, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AEBFD: using guessed type __int64 __fastcall inst_325_flags_var_7();
@@ -64607,7 +63708,7 @@ __int64 inst_325_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(9686, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AEE1C: using guessed type __int64 __fastcall inst_325_flags_var_8();
@@ -64645,7 +63746,7 @@ __int64 inst_326_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(20429, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AF25A: using guessed type __int64 __fastcall inst_326_flags_var_0();
@@ -64683,7 +63784,7 @@ __int64 inst_326_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(22134, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5AF691: using guessed type __int64 __fastcall inst_326_flags_var_2();
@@ -64816,7 +63917,7 @@ __int64 inst_326_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-23334, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B0553: using guessed type __int64 __fastcall inst_326_flags_var_9();
@@ -64835,7 +63936,7 @@ __int64 inst_327_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-756214610, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B0770: using guessed type __int64 __fastcall inst_327_flags_var_0();
@@ -64873,7 +63974,7 @@ __int64 inst_327_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(1212716040, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B0BB3: using guessed type __int64 __fastcall inst_327_flags_var_2();
@@ -64968,7 +64069,7 @@ __int64 inst_327_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-1061626457, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B1656: using guessed type __int64 __fastcall inst_327_flags_var_7();
@@ -65006,7 +64107,7 @@ __int64 inst_327_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-933380027, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B1A97: using guessed type __int64 __fastcall inst_327_flags_var_9();
@@ -65025,7 +64126,7 @@ __int64 inst_328_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(702567570, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B1CB4: using guessed type __int64 __fastcall inst_328_flags_var_0();
@@ -65044,7 +64145,7 @@ __int64 inst_328_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(1934722033, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B1ECE: using guessed type __int64 __fastcall inst_328_flags_var_1();
@@ -65063,7 +64164,7 @@ __int64 inst_328_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-92894331, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B20E8: using guessed type __int64 __fastcall inst_328_flags_var_2();
@@ -65101,7 +64202,7 @@ __int64 inst_328_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-1942511775, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B251C: using guessed type __int64 __fastcall inst_328_flags_var_4();
@@ -65120,7 +64221,7 @@ __int64 inst_328_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(-664614457, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B2736: using guessed type __int64 __fastcall inst_328_flags_var_5();
@@ -65177,7 +64278,7 @@ __int64 inst_328_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(1726062907, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B2D84: using guessed type __int64 __fastcall inst_328_flags_var_8();
@@ -65215,7 +64316,7 @@ __int64 inst_329_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0x4A1BA5CAD475F2A4LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B31BB: using guessed type __int64 __fastcall inst_329_flags_var_0();
@@ -65234,7 +64335,7 @@ __int64 inst_329_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(0xAF5F3CE4F881CDB5LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B33DD: using guessed type __int64 __fastcall inst_329_flags_var_1();
@@ -65253,7 +64354,7 @@ __int64 inst_329_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(0xF13A551F36E08D26LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B35FF: using guessed type __int64 __fastcall inst_329_flags_var_2();
@@ -65272,7 +64373,7 @@ __int64 inst_329_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(0x714851A0196E023ELL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B3820: using guessed type __int64 __fastcall inst_329_flags_var_3();
@@ -65310,7 +64411,7 @@ __int64 inst_329_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(0x64F35684BDE11E80LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B3C64: using guessed type __int64 __fastcall inst_329_flags_var_5();
@@ -65367,7 +64468,7 @@ __int64 inst_329_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(0xC81CCB8307B598F2LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B42CA: using guessed type __int64 __fastcall inst_329_flags_var_8();
@@ -65386,7 +64487,7 @@ __int64 inst_329_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(0xFFEEECD75E1589F2LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B44EB: using guessed type __int64 __fastcall inst_329_flags_var_9();
@@ -65462,7 +64563,7 @@ __int64 inst_330_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(0x4D5AC54A42502562LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B4D57: using guessed type __int64 __fastcall inst_330_flags_var_3();
@@ -65538,7 +64639,7 @@ __int64 inst_330_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(0x23F2B55348024B73LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B55BF: using guessed type __int64 __fastcall inst_330_flags_var_7();
@@ -65557,7 +64658,7 @@ __int64 inst_330_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(0xE2BB98EFF6BA7376LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B57D9: using guessed type __int64 __fastcall inst_330_flags_var_8();
@@ -65576,7 +64677,7 @@ __int64 inst_330_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(0x6E26F24050A0DF5BLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B59F3: using guessed type __int64 __fastcall inst_330_flags_var_9();
@@ -65614,7 +64715,7 @@ __int64 inst_331_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-83, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B5E2C: using guessed type __int64 __fastcall inst_331_flags_var_1();
@@ -65633,7 +64734,7 @@ __int64 inst_331_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-82, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B604A: using guessed type __int64 __fastcall inst_331_flags_var_2();
@@ -65652,7 +64753,7 @@ __int64 inst_331_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(104, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B6267: using guessed type __int64 __fastcall inst_331_flags_var_3();
@@ -65690,7 +64791,7 @@ __int64 inst_331_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(0x80, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B66A0: using guessed type __int64 __fastcall inst_331_flags_var_5();
@@ -65728,7 +64829,7 @@ __int64 inst_331_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(25, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B6ADB: using guessed type __int64 __fastcall inst_331_flags_var_7();
@@ -65747,7 +64848,7 @@ __int64 inst_331_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(38, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B6CF6: using guessed type __int64 __fastcall inst_331_flags_var_8();
@@ -65766,7 +64867,7 @@ __int64 inst_331_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-56, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B6F13: using guessed type __int64 __fastcall inst_331_flags_var_9();
@@ -65804,7 +64905,7 @@ __int64 inst_332_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(26, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B7349: using guessed type __int64 __fastcall inst_332_flags_var_1();
@@ -65842,7 +64943,7 @@ __int64 inst_332_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-85, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B777D: using guessed type __int64 __fastcall inst_332_flags_var_3();
@@ -65861,7 +64962,7 @@ __int64 inst_332_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(42, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B7997: using guessed type __int64 __fastcall inst_332_flags_var_4();
@@ -65899,7 +65000,7 @@ __int64 inst_332_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(97, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B7DCB: using guessed type __int64 __fastcall inst_332_flags_var_6();
@@ -65994,7 +65095,7 @@ __int64 inst_333_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(67, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B8850: using guessed type __int64 __fastcall inst_333_flags_var_1();
@@ -66013,7 +65114,7 @@ __int64 inst_333_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(127, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B8A6C: using guessed type __int64 __fastcall inst_333_flags_var_2();
@@ -66051,7 +65152,7 @@ __int64 inst_333_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-83, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B8EA4: using guessed type __int64 __fastcall inst_333_flags_var_4();
@@ -66184,7 +65285,7 @@ __int64 inst_334_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-1289, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B9D6E: using guessed type __int64 __fastcall inst_334_flags_var_1();
@@ -66203,7 +65304,7 @@ __int64 inst_334_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(28204, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5B9F90: using guessed type __int64 __fastcall inst_334_flags_var_2();
@@ -66279,7 +65380,7 @@ __int64 inst_334_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(14786, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BA814: using guessed type __int64 __fastcall inst_334_flags_var_6();
@@ -66298,7 +65399,7 @@ __int64 inst_334_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-361, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BAA35: using guessed type __int64 __fastcall inst_334_flags_var_7();
@@ -66317,7 +65418,7 @@ __int64 inst_334_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(12302, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BAC57: using guessed type __int64 __fastcall inst_334_flags_var_8();
@@ -66469,7 +65570,7 @@ __int64 inst_335_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-19936, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BBD48: using guessed type __int64 __fastcall inst_335_flags_var_6();
@@ -66488,7 +65589,7 @@ __int64 inst_335_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-28804, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BBF65: using guessed type __int64 __fastcall inst_335_flags_var_7();
@@ -66507,7 +65608,7 @@ __int64 inst_335_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(3116, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BC182: using guessed type __int64 __fastcall inst_335_flags_var_8();
@@ -66564,7 +65665,7 @@ __int64 inst_336_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-980951729, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BC7E4: using guessed type __int64 __fastcall inst_336_flags_var_1();
@@ -66621,7 +65722,7 @@ __int64 inst_336_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(1981272191, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BCE4E: using guessed type __int64 __fastcall inst_336_flags_var_4();
@@ -66640,7 +65741,7 @@ __int64 inst_336_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(-2019861316, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BD071: using guessed type __int64 __fastcall inst_336_flags_var_5();
@@ -66659,7 +65760,7 @@ __int64 inst_336_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(287114474, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BD294: using guessed type __int64 __fastcall inst_336_flags_var_6();
@@ -66678,7 +65779,7 @@ __int64 inst_336_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(228689515, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BD4B7: using guessed type __int64 __fastcall inst_336_flags_var_7();
@@ -66773,7 +65874,7 @@ __int64 inst_337_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-873083, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BDF53: using guessed type __int64 __fastcall inst_337_flags_var_2();
@@ -66792,7 +65893,7 @@ __int64 inst_337_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-1949802032, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BE16D: using guessed type __int64 __fastcall inst_337_flags_var_3();
@@ -66811,7 +65912,7 @@ __int64 inst_337_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-1254575830, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BE389: using guessed type __int64 __fastcall inst_337_flags_var_4();
@@ -66849,7 +65950,7 @@ __int64 inst_337_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(1041530908, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BE7C1: using guessed type __int64 __fastcall inst_337_flags_var_6();
@@ -66887,7 +65988,7 @@ __int64 inst_337_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(1666163925, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BEBF7: using guessed type __int64 __fastcall inst_337_flags_var_8();
@@ -66925,7 +66026,7 @@ __int64 inst_338_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0x6BFFB3823C833A3ELL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BF032: using guessed type __int64 __fastcall inst_338_flags_var_0();
@@ -67020,7 +66121,7 @@ __int64 inst_338_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(0x9B2B72F0C93211ABLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BFAE6: using guessed type __int64 __fastcall inst_338_flags_var_5();
@@ -67039,7 +66140,7 @@ __int64 inst_338_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(0x45AD09DE0790F2D9LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5BFD0A: using guessed type __int64 __fastcall inst_338_flags_var_6();
@@ -67077,7 +66178,7 @@ __int64 inst_338_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(0x3641121B2DF4E568LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C0152: using guessed type __int64 __fastcall inst_338_flags_var_8();
@@ -67153,7 +66254,7 @@ __int64 inst_339_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(0x56A50A1169124A43LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C09CE: using guessed type __int64 __fastcall inst_339_flags_var_2();
@@ -67172,7 +66273,7 @@ __int64 inst_339_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(0x149076EDE225C2ADLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C0BEA: using guessed type __int64 __fastcall inst_339_flags_var_3();
@@ -67229,7 +66330,7 @@ __int64 inst_339_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(0xAA324545C7770A75LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C123E: using guessed type __int64 __fastcall inst_339_flags_var_6();
@@ -67305,7 +66406,7 @@ __int64 inst_340_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(7, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C1AAF: using guessed type __int64 __fastcall inst_340_flags_var_0();
@@ -67419,7 +66520,7 @@ __int64 inst_340_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-83, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C275C: using guessed type __int64 __fastcall inst_340_flags_var_6();
@@ -67476,7 +66577,7 @@ __int64 inst_340_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(25, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C2DB1: using guessed type __int64 __fastcall inst_340_flags_var_9();
@@ -67571,7 +66672,7 @@ __int64 inst_341_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-60, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C3835: using guessed type __int64 __fastcall inst_341_flags_var_4();
@@ -67590,7 +66691,7 @@ __int64 inst_341_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(-45, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C3A4F: using guessed type __int64 __fastcall inst_341_flags_var_5();
@@ -67609,7 +66710,7 @@ __int64 inst_341_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-12, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C3C69: using guessed type __int64 __fastcall inst_341_flags_var_6();
@@ -67704,7 +66805,7 @@ __int64 inst_342_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(37, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C46ED: using guessed type __int64 __fastcall inst_342_flags_var_1();
@@ -67723,7 +66824,7 @@ __int64 inst_342_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-99, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C4909: using guessed type __int64 __fastcall inst_342_flags_var_2();
@@ -67761,7 +66862,7 @@ __int64 inst_342_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-27, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C4D41: using guessed type __int64 __fastcall inst_342_flags_var_4();
@@ -67875,7 +66976,7 @@ __int64 inst_343_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-16513, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C59EC: using guessed type __int64 __fastcall inst_343_flags_var_0();
@@ -67894,7 +66995,7 @@ __int64 inst_343_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(13313, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C5C0D: using guessed type __int64 __fastcall inst_343_flags_var_1();
@@ -67913,7 +67014,7 @@ __int64 inst_343_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(10479, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C5E2D: using guessed type __int64 __fastcall inst_343_flags_var_2();
@@ -67951,7 +67052,7 @@ __int64 inst_343_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(30847, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C6271: using guessed type __int64 __fastcall inst_343_flags_var_4();
@@ -67970,7 +67071,7 @@ __int64 inst_343_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(-8857, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C6490: using guessed type __int64 __fastcall inst_343_flags_var_5();
@@ -67989,7 +67090,7 @@ __int64 inst_343_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-16540, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C66B2: using guessed type __int64 __fastcall inst_343_flags_var_6();
@@ -68027,7 +67128,7 @@ __int64 inst_343_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(-30366, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C6AF4: using guessed type __int64 __fastcall inst_343_flags_var_8();
@@ -68065,7 +67166,7 @@ __int64 inst_344_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(20515, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C6F34: using guessed type __int64 __fastcall inst_344_flags_var_0();
@@ -68084,7 +67185,7 @@ __int64 inst_344_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(459, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C7152: using guessed type __int64 __fastcall inst_344_flags_var_1();
@@ -68141,7 +67242,7 @@ __int64 inst_344_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(19143, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C77AC: using guessed type __int64 __fastcall inst_344_flags_var_4();
@@ -68179,7 +67280,7 @@ __int64 inst_344_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-15329, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C7BE5: using guessed type __int64 __fastcall inst_344_flags_var_6();
@@ -68217,7 +67318,7 @@ __int64 inst_344_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(18077, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C8020: using guessed type __int64 __fastcall inst_344_flags_var_8();
@@ -68274,7 +67375,7 @@ __int64 inst_345_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-251631313, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C8683: using guessed type __int64 __fastcall inst_345_flags_var_1();
@@ -68293,7 +67394,7 @@ __int64 inst_345_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-744070819, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C88A6: using guessed type __int64 __fastcall inst_345_flags_var_2();
@@ -68331,7 +67432,7 @@ __int64 inst_345_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-1826926672, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C8CEC: using guessed type __int64 __fastcall inst_345_flags_var_4();
@@ -68369,7 +67470,7 @@ __int64 inst_345_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(993545449, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C9131: using guessed type __int64 __fastcall inst_345_flags_var_6();
@@ -68407,7 +67508,7 @@ __int64 inst_345_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(974096623, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C9577: using guessed type __int64 __fastcall inst_345_flags_var_8();
@@ -68426,7 +67527,7 @@ __int64 inst_345_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-1858606799, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C9799: using guessed type __int64 __fastcall inst_345_flags_var_9();
@@ -68445,7 +67546,7 @@ __int64 inst_346_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-1753040812, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5C99B8: using guessed type __int64 __fastcall inst_346_flags_var_0();
@@ -68597,7 +67698,7 @@ __int64 inst_346_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(647153668, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5CAA92: using guessed type __int64 __fastcall inst_346_flags_var_8();
@@ -68616,7 +67717,7 @@ __int64 inst_346_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-1816953448, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5CACAD: using guessed type __int64 __fastcall inst_346_flags_var_9();
@@ -68635,7 +67736,7 @@ __int64 inst_347_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0x9AF08F82A11E76BCLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5CAECD: using guessed type __int64 __fastcall inst_347_flags_var_0();
@@ -68654,7 +67755,7 @@ __int64 inst_347_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(0x8474D09C3E45CE3LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5CB0F1: using guessed type __int64 __fastcall inst_347_flags_var_1();
@@ -68730,7 +67831,7 @@ __int64 inst_347_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(0xB190DA455E9C9E6ELL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5CB980: using guessed type __int64 __fastcall inst_347_flags_var_5();
@@ -68749,7 +67850,7 @@ __int64 inst_347_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(0x8836B1080940C9D3LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5CBBA4: using guessed type __int64 __fastcall inst_347_flags_var_6();
@@ -68768,7 +67869,7 @@ __int64 inst_347_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(0x6153C75FFC0E9A8LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5CBDC8: using guessed type __int64 __fastcall inst_347_flags_var_7();
@@ -68825,7 +67926,7 @@ __int64 inst_348_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0x481E11589926F558LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5CC430: using guessed type __int64 __fastcall inst_348_flags_var_0();
@@ -68863,7 +67964,7 @@ __int64 inst_348_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(0x26547A7BF25A67EALL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5CC868: using guessed type __int64 __fastcall inst_348_flags_var_2();
@@ -68882,7 +67983,7 @@ __int64 inst_348_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(0x152A666F05A6CBF2LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5CCA84: using guessed type __int64 __fastcall inst_348_flags_var_3();
@@ -68901,7 +68002,7 @@ __int64 inst_348_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(0xF7926F6AD0A110E6LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5CCCA0: using guessed type __int64 __fastcall inst_348_flags_var_4();
@@ -68996,7 +68097,7 @@ __int64 inst_348_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(0xC9D06C372206E02LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5CD72C: using guessed type __int64 __fastcall inst_348_flags_var_9();
@@ -71498,7 +70599,7 @@ __int64 inst_365_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(0xAB4CAC7147598C65LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5E2951: using guessed type __int64 __fastcall inst_365_flags_var_9();
@@ -71631,7 +70732,7 @@ __int64 inst_366_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(0x899825DF8A3C708ELL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5E3822: using guessed type __int64 __fastcall inst_366_flags_var_6();
@@ -71956,7 +71057,7 @@ __int64 inst_368_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(0xC7F0B3A4CE78D24FLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5E57E4: using guessed type __int64 __fastcall inst_368_flags_var_1();
@@ -72321,7 +71422,7 @@ __int64 inst_370_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0xEACEF01E7805F40FLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5E8023: using guessed type __int64 __fastcall inst_370_flags_var_0();
@@ -72459,7 +71560,7 @@ __int64 inst_370_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(0xCE0516721F2CDB71LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5E8CD7: using guessed type __int64 __fastcall inst_370_flags_var_6();
@@ -74298,7 +73399,7 @@ __int64 inst_383_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(76, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5F8489: using guessed type __int64 __fastcall inst_383_flags_var_0();
@@ -74317,7 +73418,7 @@ __int64 inst_383_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-63, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5F86A4: using guessed type __int64 __fastcall inst_383_flags_var_1();
@@ -74450,7 +73551,7 @@ __int64 inst_383_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(-8, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5F9561: using guessed type __int64 __fastcall inst_383_flags_var_8();
@@ -74469,7 +73570,7 @@ __int64 inst_383_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(49, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5F977B: using guessed type __int64 __fastcall inst_383_flags_var_9();
@@ -74488,7 +73589,7 @@ __int64 inst_384_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(100, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5F9995: using guessed type __int64 __fastcall inst_384_flags_var_0();
@@ -74507,7 +73608,7 @@ __int64 inst_384_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(69, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5F9BAD: using guessed type __int64 __fastcall inst_384_flags_var_1();
@@ -74526,7 +73627,7 @@ __int64 inst_384_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-57, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5F9DC5: using guessed type __int64 __fastcall inst_384_flags_var_2();
@@ -74697,7 +73798,7 @@ __int64 inst_385_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-68, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FB0A0: using guessed type __int64 __fastcall inst_385_flags_var_1();
@@ -74716,7 +73817,7 @@ __int64 inst_385_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-57, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FB2BA: using guessed type __int64 __fastcall inst_385_flags_var_2();
@@ -74754,7 +73855,7 @@ __int64 inst_385_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(62, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FB6ED: using guessed type __int64 __fastcall inst_385_flags_var_4();
@@ -74773,7 +73874,7 @@ __int64 inst_385_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(117, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FB907: using guessed type __int64 __fastcall inst_385_flags_var_5();
@@ -74792,7 +73893,7 @@ __int64 inst_385_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-123, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FBB21: using guessed type __int64 __fastcall inst_385_flags_var_6();
@@ -74868,7 +73969,7 @@ __int64 inst_386_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-20418, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FC38A: using guessed type __int64 __fastcall inst_386_flags_var_0();
@@ -74887,7 +73988,7 @@ __int64 inst_386_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-30302, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FC5A9: using guessed type __int64 __fastcall inst_386_flags_var_1();
@@ -74906,7 +74007,7 @@ __int64 inst_386_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-15392, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FC7C8: using guessed type __int64 __fastcall inst_386_flags_var_2();
@@ -74925,7 +74026,7 @@ __int64 inst_386_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-31424, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FC9E6: using guessed type __int64 __fastcall inst_386_flags_var_3();
@@ -74963,7 +74064,7 @@ __int64 inst_386_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(17695, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FCE23: using guessed type __int64 __fastcall inst_386_flags_var_5();
@@ -75001,7 +74102,7 @@ __int64 inst_386_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-28421, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FD25F: using guessed type __int64 __fastcall inst_386_flags_var_7();
@@ -75020,7 +74121,7 @@ __int64 inst_386_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(-10522, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FD47F: using guessed type __int64 __fastcall inst_386_flags_var_8();
@@ -75058,7 +74159,7 @@ __int64 inst_387_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-71, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FD8BB: using guessed type __int64 __fastcall inst_387_flags_var_0();
@@ -75077,7 +74178,7 @@ __int64 inst_387_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(394, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FDAD6: using guessed type __int64 __fastcall inst_387_flags_var_1();
@@ -75115,7 +74216,7 @@ __int64 inst_387_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(9260, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FDF0D: using guessed type __int64 __fastcall inst_387_flags_var_3();
@@ -75172,7 +74273,7 @@ __int64 inst_387_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-20901, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FE55F: using guessed type __int64 __fastcall inst_387_flags_var_6();
@@ -75229,7 +74330,7 @@ __int64 inst_387_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(28640, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FEBB2: using guessed type __int64 __fastcall inst_387_flags_var_9();
@@ -75248,7 +74349,7 @@ __int64 inst_388_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(-366126468, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FEDD0: using guessed type __int64 __fastcall inst_388_flags_var_0();
@@ -75286,7 +74387,7 @@ __int64 inst_388_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(1992757290, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FF214: using guessed type __int64 __fastcall inst_388_flags_var_2();
@@ -75305,7 +74406,7 @@ __int64 inst_388_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-713068934, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FF434: using guessed type __int64 __fastcall inst_388_flags_var_3();
@@ -75324,7 +74425,7 @@ __int64 inst_388_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-1363050917, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FF656: using guessed type __int64 __fastcall inst_388_flags_var_4();
@@ -75362,7 +74463,7 @@ __int64 inst_388_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-2043030596, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FFA99: using guessed type __int64 __fastcall inst_388_flags_var_6();
@@ -75400,7 +74501,7 @@ __int64 inst_388_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(1991233483, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 5FFEDA: using guessed type __int64 __fastcall inst_388_flags_var_8();
@@ -75419,7 +74520,7 @@ __int64 inst_388_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(1869280118, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6000FB: using guessed type __int64 __fastcall inst_388_flags_var_9();
@@ -75457,7 +74558,7 @@ __int64 inst_389_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(1923488340, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 600533: using guessed type __int64 __fastcall inst_389_flags_var_1();
@@ -75533,7 +74634,7 @@ __int64 inst_389_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(1143283337, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 600D98: using guessed type __int64 __fastcall inst_389_flags_var_5();
@@ -75685,7 +74786,7 @@ __int64 inst_390_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(0xC7FC3FA599A45457LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 601E81: using guessed type __int64 __fastcall inst_390_flags_var_3();
@@ -75723,7 +74824,7 @@ __int64 inst_390_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(0x9D22A4F2470130E0LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6022C4: using guessed type __int64 __fastcall inst_390_flags_var_5();
@@ -75799,7 +74900,7 @@ __int64 inst_390_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(0xB7963AA3AF93AB2ALL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 602B4A: using guessed type __int64 __fastcall inst_390_flags_var_9();
@@ -75818,7 +74919,7 @@ __int64 inst_391_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0xEC54FCDC3DC33ADLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 602D68: using guessed type __int64 __fastcall inst_391_flags_var_0();
@@ -75837,7 +74938,7 @@ __int64 inst_391_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(0x153E1F9CE81B2664LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 602F82: using guessed type __int64 __fastcall inst_391_flags_var_1();
@@ -75875,7 +74976,7 @@ __int64 inst_391_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(0xA236DC78B8DC4DB9LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6033B6: using guessed type __int64 __fastcall inst_391_flags_var_3();
@@ -75894,7 +74995,7 @@ __int64 inst_391_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(0xF386A37F97EAF4CELL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6035D0: using guessed type __int64 __fastcall inst_391_flags_var_4();
@@ -75970,7 +75071,7 @@ __int64 inst_391_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(0x48B2DC957B68F708LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 603E38: using guessed type __int64 __fastcall inst_391_flags_var_8();
@@ -76008,7 +75109,7 @@ __int64 inst_392_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(64, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60426D: using guessed type __int64 __fastcall inst_392_flags_var_0();
@@ -76027,7 +75128,7 @@ __int64 inst_392_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(44, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 604487: using guessed type __int64 __fastcall inst_392_flags_var_1();
@@ -76179,7 +75280,7 @@ __int64 inst_392_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(115, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60555D: using guessed type __int64 __fastcall inst_392_flags_var_9();
@@ -76217,7 +75318,7 @@ __int64 inst_393_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(19, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60598F: using guessed type __int64 __fastcall inst_393_flags_var_1();
@@ -76255,7 +75356,7 @@ __int64 inst_393_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(32, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 605DBF: using guessed type __int64 __fastcall inst_393_flags_var_3();
@@ -76293,7 +75394,7 @@ __int64 inst_393_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(88, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6061EF: using guessed type __int64 __fastcall inst_393_flags_var_5();
@@ -76312,7 +75413,7 @@ __int64 inst_393_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-111, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 606407: using guessed type __int64 __fastcall inst_393_flags_var_6();
@@ -76350,7 +75451,7 @@ __int64 inst_393_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(8, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 606837: using guessed type __int64 __fastcall inst_393_flags_var_8();
@@ -76388,7 +75489,7 @@ __int64 inst_394_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(73, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 606C68: using guessed type __int64 __fastcall inst_394_flags_var_0();
@@ -76445,7 +75546,7 @@ __int64 inst_394_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(4, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6072B6: using guessed type __int64 __fastcall inst_394_flags_var_3();
@@ -76464,7 +75565,7 @@ __int64 inst_394_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(70, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6074CF: using guessed type __int64 __fastcall inst_394_flags_var_4();
@@ -76502,7 +75603,7 @@ __int64 inst_394_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(4, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 607903: using guessed type __int64 __fastcall inst_394_flags_var_6();
@@ -76521,7 +75622,7 @@ __int64 inst_394_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(2, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 607B1D: using guessed type __int64 __fastcall inst_394_flags_var_7();
@@ -76540,7 +75641,7 @@ __int64 inst_394_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(-88, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 607D37: using guessed type __int64 __fastcall inst_394_flags_var_8();
@@ -76559,7 +75660,7 @@ __int64 inst_394_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(0x80, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 607F51: using guessed type __int64 __fastcall inst_394_flags_var_9();
@@ -76597,7 +75698,7 @@ __int64 inst_395_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-27640, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60838C: using guessed type __int64 __fastcall inst_395_flags_var_1();
@@ -76616,7 +75717,7 @@ __int64 inst_395_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(16488, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6085AA: using guessed type __int64 __fastcall inst_395_flags_var_2();
@@ -76654,7 +75755,7 @@ __int64 inst_395_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(24640, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6089E8: using guessed type __int64 __fastcall inst_395_flags_var_4();
@@ -76673,7 +75774,7 @@ __int64 inst_395_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(13193, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 608C08: using guessed type __int64 __fastcall inst_395_flags_var_5();
@@ -76692,7 +75793,7 @@ __int64 inst_395_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(64, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 608E26: using guessed type __int64 __fastcall inst_395_flags_var_6();
@@ -76749,7 +75850,7 @@ __int64 inst_395_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(12326, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 609485: using guessed type __int64 __fastcall inst_395_flags_var_9();
@@ -76806,7 +75907,7 @@ __int64 inst_396_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(5169, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 609ADA: using guessed type __int64 __fastcall inst_396_flags_var_2();
@@ -76825,7 +75926,7 @@ __int64 inst_396_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-1254, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 609CF6: using guessed type __int64 __fastcall inst_396_flags_var_3();
@@ -76844,7 +75945,7 @@ __int64 inst_396_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(4200, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 609F11: using guessed type __int64 __fastcall inst_396_flags_var_4();
@@ -76863,7 +75964,7 @@ __int64 inst_396_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(1344, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60A12D: using guessed type __int64 __fastcall inst_396_flags_var_5();
@@ -76920,7 +76021,7 @@ __int64 inst_396_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(16, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60A780: using guessed type __int64 __fastcall inst_396_flags_var_8();
@@ -76977,7 +76078,7 @@ __int64 inst_397_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(46238752, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60ADDA: using guessed type __int64 __fastcall inst_397_flags_var_1();
@@ -77034,7 +76135,7 @@ __int64 inst_397_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-2076794364, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60B43D: using guessed type __int64 __fastcall inst_397_flags_var_4();
@@ -77110,7 +76211,7 @@ __int64 inst_397_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(1162815570, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60BCC4: using guessed type __int64 __fastcall inst_397_flags_var_8();
@@ -77148,7 +76249,7 @@ __int64 inst_398_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(1124610112, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60C104: using guessed type __int64 __fastcall inst_398_flags_var_0();
@@ -77167,7 +76268,7 @@ __int64 inst_398_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(1661327767, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60C31E: using guessed type __int64 __fastcall inst_398_flags_var_1();
@@ -77205,7 +76306,7 @@ __int64 inst_398_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(822214657, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60C752: using guessed type __int64 __fastcall inst_398_flags_var_3();
@@ -77243,7 +76344,7 @@ __int64 inst_398_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(1447428640, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60CB86: using guessed type __int64 __fastcall inst_398_flags_var_5();
@@ -77281,7 +76382,7 @@ __int64 inst_398_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(2081732672, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60CFBA: using guessed type __int64 __fastcall inst_398_flags_var_7();
@@ -77300,7 +76401,7 @@ __int64 inst_398_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(1409838225, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60D1D4: using guessed type __int64 __fastcall inst_398_flags_var_8();
@@ -77433,7 +76534,7 @@ __int64 inst_399_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(0x81C86C8089C0280LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60E0B5: using guessed type __int64 __fastcall inst_399_flags_var_5();
@@ -77452,7 +76553,7 @@ __int64 inst_399_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(0x88BC5F4E83040480LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60E2D7: using guessed type __int64 __fastcall inst_399_flags_var_6();
@@ -77471,7 +76572,7 @@ __int64 inst_399_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(0xB41870E9A100A40LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60E4F8: using guessed type __int64 __fastcall inst_399_flags_var_7();
@@ -77490,7 +76591,7 @@ __int64 inst_399_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(0xFF199D4A80100880LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60E71A: using guessed type __int64 __fastcall inst_399_flags_var_8();
@@ -77528,7 +76629,7 @@ __int64 inst_400_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(0x912080480030021CLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60EB5A: using guessed type __int64 __fastcall inst_400_flags_var_0();
@@ -77547,7 +76648,7 @@ __int64 inst_400_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(0x1200408011240120LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60ED74: using guessed type __int64 __fastcall inst_400_flags_var_1();
@@ -77566,7 +76667,7 @@ __int64 inst_400_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(0x10000B8E45099610LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60EF8E: using guessed type __int64 __fastcall inst_400_flags_var_2();
@@ -77604,7 +76705,7 @@ __int64 inst_400_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(0x183C008769800A2LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60F3C2: using guessed type __int64 __fastcall inst_400_flags_var_4();
@@ -77642,7 +76743,7 @@ __int64 inst_400_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(0xA6804041222002LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60F7F6: using guessed type __int64 __fastcall inst_400_flags_var_6();
@@ -77661,7 +76762,7 @@ __int64 inst_400_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(0x8080000B28A9105ELL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60FA10: using guessed type __int64 __fastcall inst_400_flags_var_7();
@@ -77680,7 +76781,7 @@ __int64 inst_400_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(0x2610000214900CC2LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60FC2A: using guessed type __int64 __fastcall inst_400_flags_var_8();
@@ -77699,7 +76800,7 @@ __int64 inst_400_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(0x1300040500884008LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 60FE44: using guessed type __int64 __fastcall inst_400_flags_var_9();
@@ -79625,7 +78726,7 @@ __int64 inst_411_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(37, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 61D2D7: using guessed type __int64 __fastcall inst_411_flags_var_3();
@@ -79644,7 +78745,7 @@ __int64 inst_411_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(19, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 61D4F3: using guessed type __int64 __fastcall inst_411_flags_var_4();
@@ -79663,7 +78764,7 @@ __int64 inst_411_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(-5, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 61D70F: using guessed type __int64 __fastcall inst_411_flags_var_5();
@@ -79701,7 +78802,7 @@ __int64 inst_411_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(109, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 61DB45: using guessed type __int64 __fastcall inst_411_flags_var_7();
@@ -79777,7 +78878,7 @@ __int64 inst_412_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(84, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 61E3AC: using guessed type __int64 __fastcall inst_412_flags_var_1();
@@ -79796,7 +78897,7 @@ __int64 inst_412_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-51, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 61E5C4: using guessed type __int64 __fastcall inst_412_flags_var_2();
@@ -79834,7 +78935,7 @@ __int64 inst_412_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-119, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 61E9F4: using guessed type __int64 __fastcall inst_412_flags_var_4();
@@ -79891,7 +78992,7 @@ __int64 inst_412_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-68, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 61F03C: using guessed type __int64 __fastcall inst_412_flags_var_7();
@@ -79967,7 +79068,7 @@ __int64 inst_413_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(32, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 61F89F: using guessed type __int64 __fastcall inst_413_flags_var_1();
@@ -80005,7 +79106,7 @@ __int64 inst_413_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(-118, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 61FCD3: using guessed type __int64 __fastcall inst_413_flags_var_3();
@@ -80024,7 +79125,7 @@ __int64 inst_413_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(79, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 61FEED: using guessed type __int64 __fastcall inst_413_flags_var_4();
@@ -80081,7 +79182,7 @@ __int64 inst_413_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-122, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 62053A: using guessed type __int64 __fastcall inst_413_flags_var_7();
@@ -80100,7 +79201,7 @@ __int64 inst_413_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(-111, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 620754: using guessed type __int64 __fastcall inst_413_flags_var_8();
@@ -80157,7 +79258,7 @@ __int64 inst_414_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(24272, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 620DAA: using guessed type __int64 __fastcall inst_414_flags_var_1();
@@ -80176,7 +79277,7 @@ __int64 inst_414_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-14840, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 620FC8: using guessed type __int64 __fastcall inst_414_flags_var_2();
@@ -80195,7 +79296,7 @@ __int64 inst_414_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(18375, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6211E7: using guessed type __int64 __fastcall inst_414_flags_var_3();
@@ -80214,7 +79315,7 @@ __int64 inst_414_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-30998, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 621406: using guessed type __int64 __fastcall inst_414_flags_var_4();
@@ -80271,7 +79372,7 @@ __int64 inst_414_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-1221, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 621A62: using guessed type __int64 __fastcall inst_414_flags_var_7();
@@ -80347,7 +79448,7 @@ __int64 inst_415_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(-6316, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6222D8: using guessed type __int64 __fastcall inst_415_flags_var_1();
@@ -80366,7 +79467,7 @@ __int64 inst_415_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-29336, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6224F4: using guessed type __int64 __fastcall inst_415_flags_var_2();
@@ -80404,7 +79505,7 @@ __int64 inst_415_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(28513, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 62292B: using guessed type __int64 __fastcall inst_415_flags_var_4();
@@ -80423,7 +79524,7 @@ __int64 inst_415_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(-2944, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 622B46: using guessed type __int64 __fastcall inst_415_flags_var_5();
@@ -80442,7 +79543,7 @@ __int64 inst_415_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(-14387, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 622D62: using guessed type __int64 __fastcall inst_415_flags_var_6();
@@ -80461,7 +79562,7 @@ __int64 inst_415_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(9816, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 622F7E: using guessed type __int64 __fastcall inst_415_flags_var_7();
@@ -80480,7 +79581,7 @@ __int64 inst_415_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(17511, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 62319A: using guessed type __int64 __fastcall inst_415_flags_var_8();
@@ -80689,7 +79790,7 @@ __int64 inst_416_flags_var_9()
 
   v0 = 0LL;
   if ( __SETP__(-1689745287, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6248FC: using guessed type __int64 __fastcall inst_416_flags_var_9();
@@ -80708,7 +79809,7 @@ __int64 inst_417_flags_var_0()
 
   v0 = 0LL;
   if ( __SETP__(400231753, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 624B18: using guessed type __int64 __fastcall inst_417_flags_var_0();
@@ -80746,7 +79847,7 @@ __int64 inst_417_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(-1871876444, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 624F4C: using guessed type __int64 __fastcall inst_417_flags_var_2();
@@ -80784,7 +79885,7 @@ __int64 inst_417_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(-1803017468, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 625380: using guessed type __int64 __fastcall inst_417_flags_var_4();
@@ -80803,7 +79904,7 @@ __int64 inst_417_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(-1161547267, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 62559A: using guessed type __int64 __fastcall inst_417_flags_var_5();
@@ -80822,7 +79923,7 @@ __int64 inst_417_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(540302352, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6257B4: using guessed type __int64 __fastcall inst_417_flags_var_6();
@@ -80841,7 +79942,7 @@ __int64 inst_417_flags_var_7()
 
   v0 = 0LL;
   if ( __SETP__(-723208378, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6259CD: using guessed type __int64 __fastcall inst_417_flags_var_7();
@@ -80860,7 +79961,7 @@ __int64 inst_417_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(1941149531, 0) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 625BE7: using guessed type __int64 __fastcall inst_417_flags_var_8();
@@ -80917,7 +80018,7 @@ __int64 inst_418_flags_var_1()
 
   v0 = 0LL;
   if ( __SETP__(0xF227D26A05D3981ALL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 626241: using guessed type __int64 __fastcall inst_418_flags_var_1();
@@ -80955,7 +80056,7 @@ __int64 inst_418_flags_var_3()
 
   v0 = 0LL;
   if ( __SETP__(0xBEFA23518F0CD415LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 626685: using guessed type __int64 __fastcall inst_418_flags_var_3();
@@ -80974,7 +80075,7 @@ __int64 inst_418_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(0x69DD18C81BC120C7LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6268A7: using guessed type __int64 __fastcall inst_418_flags_var_4();
@@ -81012,7 +80113,7 @@ __int64 inst_418_flags_var_6()
 
   v0 = 0LL;
   if ( __SETP__(0x7E054ECC885965B9LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 626CEB: using guessed type __int64 __fastcall inst_418_flags_var_6();
@@ -81126,7 +80227,7 @@ __int64 inst_419_flags_var_2()
 
   v0 = 0LL;
   if ( __SETP__(0x63002A318714D107LL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 6279A2: using guessed type __int64 __fastcall inst_419_flags_var_2();
@@ -81164,7 +80265,7 @@ __int64 inst_419_flags_var_4()
 
   v0 = 0LL;
   if ( __SETP__(0x614BB226B7F85ECBLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 627DD6: using guessed type __int64 __fastcall inst_419_flags_var_4();
@@ -81183,7 +80284,7 @@ __int64 inst_419_flags_var_5()
 
   v0 = 0LL;
   if ( __SETP__(0x463D35B18456D7ADLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 627FF0: using guessed type __int64 __fastcall inst_419_flags_var_5();
@@ -81240,7 +80341,7 @@ __int64 inst_419_flags_var_8()
 
   v0 = 0LL;
   if ( __SETP__(0xD84675DDF8E8620BLL, 0LL) )
-    v0 = 4LL;
+    return 4LL;
   return v0;
 }
 // 62863E: using guessed type __int64 __fastcall inst_419_flags_var_8();

@@ -10,9 +10,9 @@
 //-------------------------------------------------------------------------
 // Function declarations
 
-int __cdecl sub_401000(int a1);
-char __cdecl sub_401050(unsigned int a1, _BYTE *a2, int a3);
-char __stdcall start(int a1, int a2, int a3, int a4);
+int __cdecl sub_401000(int);
+char __cdecl sub_401050(unsigned int, _BYTE *, int);
+char __stdcall start(int, int, int, int);
 
 
 //----- (00401000) --------------------------------------------------------
@@ -31,12 +31,12 @@ char __cdecl sub_401050(unsigned int a1, _BYTE *a2, int a3)
 {
   _BYTE *v3; // ecx
   char result; // al
-  unsigned int v5; // edi
+  _BYTE *v5; // edi
 
   v3 = a2;
   result = a3;
-  v5 = (unsigned int)&a2[a3 - 1];
-  if ( (unsigned int)a2 < v5 )
+  v5 = &a2[a3 - 1];
+  if ( a2 < v5 )
   {
     do
     {
@@ -44,7 +44,7 @@ char __cdecl sub_401050(unsigned int a1, _BYTE *a2, int a3)
       *v3++ = result;
       a1 /= 0xAu;
     }
-    while ( (unsigned int)v3 < v5 );
+    while ( v3 < v5 );
   }
   *v3 = 0;
   return result;
@@ -62,6 +62,7 @@ char __stdcall start(int a1, int a2, int a3, int a4)
   return sub_401050(v4 + v5, v7, 100);
 }
 // 4010BF: variable 'v5' is possibly undefined
+// 4010A0: using guessed type char var_64[100];
 
 // nfuncs=3 queued=3 decompiled=3 lumina nreq=0 worse=0 better=0
 // ALL OK, 3 function(s) have been successfully decompiled

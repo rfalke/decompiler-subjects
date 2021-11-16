@@ -1,0 +1,119 @@
+
+Database SUBJECTS/from_internet/fizzbuzz/answer_from_upkajdt/x64_elf/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
+Autoanalysis subsystem has been initialized.
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
+  Please check the Edit/Plugins menu for more informaton.
+=== start of cleanup script -> OK
+  function at 00401000  LIB  with name '.init_proc'
+  function at 00401020       with name 'sub_401020'
+  function at 00401030       with name '._Znam'
+  function at 00401040       with name '._ZSt9terminatev'
+  function at 00401050       with name '.write'
+  function at 00401060       with name '.__cxa_begin_catch'
+  function at 00401070       with name '._ZNSt6thread6_StateD2Ev'
+  function at 00401080       with name '._ZSt20__throw_length_errorPKc'
+  function at 00401090       with name '.pthread_create'
+  function at 004010A0       with name '._ZNSo9_M_insertImEERSoT_'
+  function at 004010B0       with name '.memcpy'
+  function at 004010C0       with name '.__cxa_atexit'
+  function at 004010D0       with name '._ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE'
+  function at 004010E0       with name '._Znwm'
+  function at 004010F0       with name '._ZdlPvm'
+  function at 00401100       with name '._ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l'
+  function at 00401110       with name '._ZNSt6thread20hardware_concurrencyEv'
+  function at 00401120       with name '.__cxa_rethrow'
+  function at 00401130       with name '._ZNSt8ios_base4InitC1Ev'
+  function at 00401140       with name '.memmove'
+  function at 00401150       with name '.__cxa_end_catch'
+  function at 00401160       with name '.__gxx_personality_v0'
+  function at 00401170       with name '._ZNSt6thread4joinEv'
+  function at 00401180       with name '._Unwind_Resume'
+  function at 00401190       with name '._ZNSt8ios_base4InitD1Ev'
+  function at 004011A0       with name 'main.cold'
+  function at 00401220       with name 'main'
+  function at 004014C0       with name '_GLOBAL__sub_I__Z4taskP6worker'
+  function at 004014F0  LIB  with name '_start'
+  function at 00401520  LIB  with name '_dl_relocate_static_pie'
+  function at 00401530  LIB  with name 'deregister_tm_clones'
+  function at 00401560  LIB  with name 'register_tm_clones'
+  function at 004015A0  LIB  with name '__do_global_dtors_aux'
+  function at 004015D0  LIB  with name 'frame_dummy'
+  function at 004015E0       with name '_Z4taskP6worker'
+  function at 00401C40       with name '_ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvP6workerES4_EEEEE6_M_runEv'
+  function at 00401C50       with name '_ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvP6workerES4_EEEEED2Ev'
+  function at 00401C60       with name '_ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvP6workerES4_EEEEED0Ev'
+  function at 00401C80       with name '_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJRFvP6workerERS5_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_'
+  function at 00401E90       with name '_ZNSt6vectorIP6workerSaIS1_EE17_M_realloc_insertIJS1_EEEvN9__gnu_cxx17__normal_iteratorIPS1_S3_EEDpOT_'
+  function at 00401FF0  LIB  with name '__libc_csu_init'
+  function at 00402060  LIB  with name '__libc_csu_fini'
+  function at 00402068  LIB  with name '.term_proc'
+  function at 00405200       with name '_Znam'
+  function at 00405208       with name '_ZSt9terminatev'
+  function at 00405210       with name 'write'
+  function at 00405218       with name '__cxa_begin_catch'
+  function at 00405220       with name '_ZNSt6thread6_StateD2Ev'
+  function at 00405228       with name '_ZSt20__throw_length_errorPKc'
+  function at 00405230       with name '_ZNSo9_M_insertImEERSoT_'
+  function at 00405238       with name 'memcpy'
+  function at 00405240       with name '__cxa_atexit'
+  function at 00405248       with name '_ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE'
+  function at 00405250       with name '_Znwm'
+  function at 00405258       with name '_ZdlPvm'
+  function at 00405260       with name '_ZSt16__ostream_insertIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_PKS3_l'
+  function at 00405268       with name '_ZNSt6thread20hardware_concurrencyEv'
+  function at 00405270       with name '__cxa_rethrow'
+  function at 00405278       with name '_ZNSt8ios_base4InitC1Ev'
+  function at 00405280       with name 'memmove'
+  function at 00405288       with name '__cxa_end_catch'
+  function at 00405290       with name '_ZNSt6thread4joinEv'
+  function at 00405298       with name '_Unwind_Resume'
+  function at 004052A0  LIB  with name '__libc_start_main'
+  function at 004052A8       with name 'pthread_create'
+  function at 004052B0       with name '__gxx_personality_v0'
+  function at 004052B8       with name '_ZNSt8ios_base4InitD1Ev'
+  function at 004052C0       with name '__gmon_start__'
+finished -> OK
+TIMESTAMP decompiling 401020 size=000000000000000C times=0...
+The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 4011A0 size=000000000000002F times=0...
+TIMESTAMP decompiling 4014C0 size=0000000000000026 times=0...
+TIMESTAMP decompiling 4015E0 size=0000000000000653 times=0...
+The decompiler assumes that the segment '.rodata' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 401C40 size=000000000000000D times=0...
+TIMESTAMP decompiling 401C50 size=000000000000000C times=0...
+TIMESTAMP decompiling 401C60 size=000000000000001E times=0...
+TIMESTAMP decompiling 401C80 size=0000000000000201 times=0...
+TIMESTAMP decompiling 401E90 size=0000000000000155 times=0...
+TIMESTAMP decompiling 401220 size=00000000000002E5 times=0...
+TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
+Unloading IDP module IDADIR/procs/pc64.so...

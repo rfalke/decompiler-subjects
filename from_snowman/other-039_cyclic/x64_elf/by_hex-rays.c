@@ -12,7 +12,7 @@
 
 void g();
 void h();
-void __fastcall f(unsigned int a1, unsigned int a2, unsigned int a3, unsigned int a4);
+void __fastcall f(unsigned int, unsigned int, unsigned int, unsigned int);
 
 
 //----- (0000000000400144) ----------------------------------------------------
@@ -88,8 +88,8 @@ void __fastcall f(unsigned int a1, unsigned int a2, unsigned int a3, unsigned in
     while ( v11 );
   }
 }
-// 400186: conditional instruction was optimized away because of '%var_4.4==0'
-// 40021D: conditional instruction was optimized away because of '%var_4.4==0'
+// 400186: conditional instruction was optimized away because %var_4.4==0
+// 40021D: conditional instruction was optimized away because %var_4.4==0
 // 40019A: variable 'v4' is possibly undefined
 // 4001AE: variable 'v5' is possibly undefined
 // 4001BC: variable 'v6' is possibly undefined
