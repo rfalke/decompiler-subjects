@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400530: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400530: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400560, qwArg00, (char *) fp + 8, g_ptr400568, g_ptr400570, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400560, (int32) qwArg00, (char *) fp + 8, g_ptr400568, g_ptr400570, x0, fp);
 	abort();
 }
 
@@ -124,25 +124,22 @@ void __do_global_dtors_aux()
 // 0000000000400640: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400678 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400678;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400678 = null; // 0000000000400678
-// 0000000000400680: void main()
-void main()
+word64 g_qw400678 = 0x00; // 0000000000400678
+// 0000000000400680: void main(Register int32 w0)
+void main(int32 w0)
 {
-	x0_24 = (uint64) putchar(SEQ(SLICE((uint64) puts("Figure 19.2"), word32, 32), 0x31));
-	x0_41 = (uint64) printf("C is %d\n", 0x00);
+	x0_19 = (uint64) puts("Figure 19.2");
+	x0_24 = (uint64) putchar(0x31);
+	x0_43 = (uint64) printf("C is %d\n", (w0 < 0x04 ? w0 : 0x00) + w0);
 }
 
 // 00000000004006C8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

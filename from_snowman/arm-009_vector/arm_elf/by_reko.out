@@ -1,5 +1,4 @@
 === Using options:--aggressive-branch-removal
-00009F14: warning: Multiple different values of stack delta in procedure new_allocator<prim(SignedInt,4)>::max_size when processing RET instruction; was 4 previously.
 0000878C: warning: Call target address 00000000 is invalid.
 0000A0DC: warning: Expected sizes of arrays to have been determined by now
 000082F0: warning: Expected sizes of arrays to have been determined by now

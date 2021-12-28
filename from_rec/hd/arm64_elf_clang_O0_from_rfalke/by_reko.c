@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400770: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400770: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4007A0, qwArg00, (char *) fp + 8, g_ptr4007A8, g_ptr4007B0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4007A0, (int32) qwArg00, (char *) fp + 8, g_ptr4007A8, g_ptr4007B0, x0, fp);
 	abort();
 }
 
@@ -124,20 +124,16 @@ void __do_global_dtors_aux()
 // 0000000000400880: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4008B8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4008B8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4008B8 = null; // 00000000004008B8
+word64 g_qw4008B8 = 0x00; // 00000000004008B8
 // 00000000004008C0: Register word64 dumpline(Register (arr byte) x0, Register int32 w2)
 // Called from:
 //      hexdump
@@ -145,28 +141,28 @@ word64 dumpline(byte x0[], int32 w2)
 {
 	int32 dwLoc1C_193 = w2;
 	x0_22 = (uint64) sprintf(fp - 0x6C, "%08lX:", 0x00);
-	struct Eq_114 * sp_160 = fp - 0xC0;
+	struct Eq_117 * sp_160 = fp - 0xC0;
 	if (w2 > 0x10)
 		dwLoc1C_193 = 0x10;
 	while (sp_160[9] < dwLoc1C_193)
 	{
-		sp_160 = (struct Eq_114 *) ((char *) sp_160 - 8);
+		sp_160 = (struct Eq_117 *) ((char *) sp_160 - 8);
 		sp_160->dw003C = sprintf((char *) (&sp_160->dw0048 + 1 + (int64) (sp_160[9] *32 0x03) /64 8) + 9, " %02lX", 0x00);
-		sp_160[9] = (struct Eq_114) ((word64) sp_160[9] + 1);
+		sp_160[9] = (struct Eq_117) ((word64) sp_160[9] + 1);
 	}
 	while (true)
 	{
 		int32 w8_42 = sp_160[9];
-		sp_160[9] = (struct Eq_114) (w8_42 + 0x01);
+		sp_160[9] = (struct Eq_117) (w8_42 + 0x01);
 		if (w8_42 >= 0x10)
 			break;
-		sp_160 = (struct Eq_114 *) ((char *) sp_160 - 8);
-		sp_160[6] = (struct Eq_114) strcat(&sp_160->dw0048 + 1, "   ");
+		sp_160 = (struct Eq_117 *) ((char *) sp_160 - 8);
+		sp_160[6] = (struct Eq_117) strcat(&sp_160->dw0048 + 1, "   ");
 	}
 	char * x8_47 = &sp_160->dw0048 + 1;
-	sp_160[5] = (struct Eq_114) x8_47;
-	struct Eq_169 * sp_51 = (char *) sp_160 - 8;
-	sp_51->t0044 = (word32) (uint64) strlen(x8_47);
+	sp_160[5] = (struct Eq_117) x8_47;
+	struct Eq_172 * sp_51 = (char *) sp_160 - 8;
+	sp_51->t0044.u0 = (word32) strlen(x8_47);
 	char * x0_61 = strcpy(sp_51->qw0028 + (int64) sp_51->dw0022, "  |");
 	sp_51->dw0040 = 0x00;
 	sp_51->ptr0018 = x0_61;
@@ -176,7 +172,7 @@ word64 dumpline(byte x0[], int32 w2)
 			sp_51->t0014.u1 = (word32) x0[(int64) sp_51->dw001C];
 		else
 			sp_51->t0014.u1 = 0x2E;
-		*((char *) &sp_51->t0044 + (int64) (sp_51->dw003C + sp_51->dw0040)) = (union Eq_177 *) sp_51->t0014;
+		*((char *) &sp_51->t0044 + (int64) (sp_51->dw003C + sp_51->dw0040)) = (union Eq_179 *) sp_51->t0014;
 		++sp_51->dw0040;
 	}
 	while (sp_51->dw0040 < 0x10)
@@ -184,12 +180,12 @@ word64 dumpline(byte x0[], int32 w2)
 		word32 w10_107 = sp_51->dw003C;
 		int32 w11_108 = sp_51->dw0040;
 		sp_51->dw0040 = w11_108 + 0x01;
-		*((char *) &sp_51->t0044 + (int64) (w10_107 + w11_108)) = (union Eq_177 *) 0x20;
+		*((char *) &sp_51->t0044 + (int64) (w10_107 + w11_108)) = (union Eq_179 *) 0x20;
 	}
 	char * x0_83 = (char *) &sp_51->t0044 + (int64) sp_51->dw001A + (int64) sp_51->dw001C;
 	sp_51->ptr0008 = (word32 *) &sp_51->t0044;
 	sp_51->ptrFFFFFFF8 = strcpy(x0_83, "|");
-	sp_51->dwFFFFFFEC = printf("%s\n", 0x00);
+	sp_51->dwFFFFFFEC = printf("%s\n", sp_51->ptr0000);
 	return x30;
 }
 
@@ -198,14 +194,14 @@ word64 dumpline(byte x0[], int32 w2)
 //      main
 word32 hexdump(char * x0, ptr64 & x29Out)
 {
-	struct Eq_336 * x29_41 = fp + -8;
+	struct Eq_341 * x29_41 = fp + -8;
 	if (stat(x0, fp - 0xB8) == 0x00)
 		perror(x0);
 	else
 	{
 		FILE * x0_25 = fopen(x0, "rb");
 		qwLocD0->ptr0000 = x0_25;
-		struct Eq_360 * sp_26 = fp - 0xE0;
+		struct Eq_365 * sp_26 = fp - 0xE0;
 		if (x0_25 == null)
 		{
 			char * x0_85 = qwLocD0->ptr0020;
@@ -216,13 +212,13 @@ word32 hexdump(char * x0, ptr64 & x29Out)
 			qwLocD0->qw0008 = 0x00;
 			while (sp_26->ptr0010->qw0008 - sp_26->qw0050 < 0x00)
 			{
-				sp_26 = (struct Eq_360 *) ((char *) sp_26 - 8);
-				sp_26->dw001C = (word32) (uint64) fread(x29_41 - 0x20, 0x00, 0x00, sp_26->ptr0010->a0000[0]);
+				sp_26 = (struct Eq_365 *) ((char *) sp_26 - 8);
+				sp_26->dw001C = (word32) fread(x29_41 - 0x20, (size_t) 0x00, (size_t) 0x00, sp_26->ptr0010->a0000[0]);
 				if (sp_26->dw001C == 0x00)
 					break;
 				x29_41 = dumpline(x29_41 - 0x20, sp_26->dw001C);
-				sp_26 = (struct Eq_360 *) <invalid>;
-				struct Eq_391 * x0_70 = sp_26->ptr0010;
+				sp_26 = (struct Eq_365 *) <invalid>;
+				struct Eq_396 * x0_70 = sp_26->ptr0010;
 				x0_70->qw0008 += (int64) sp_26->dw000E;
 			}
 			uint64 x0_78 = (uint64) fclose(sp_26->ptr0010->a0000[0]);
@@ -237,11 +233,11 @@ word32 hexdump(char * x0, ptr64 & x29Out)
 // 0000000000400C08: void main()
 void main()
 {
-	struct Eq_470 * x29_22 = fp + -8;
-	struct Eq_360 * sp_10 = fp - 0x28;
+	struct Eq_476 * x29_22 = fp + -8;
+	struct Eq_365 * sp_10 = fp - 0x28;
 	while (sp_10->dw000C < x29_22->dwFFFFFFF8)
 	{
-		sp_10 = (struct Eq_360 *) <invalid>;
+		sp_10 = (struct Eq_365 *) <invalid>;
 		sp_10->dw0008 += hexdump(sp_10->ptr0010[(int64) sp_10->dw0006 *64 0], out x29_22);
 		++sp_10->dw000C;
 	}
@@ -276,12 +272,11 @@ void __libc_csu_fini()
 {
 }
 
-// 0000000000400D08: Register int32 stat(Register (ptr64 char) x0, Register (ptr64 Eq_343) x1)
+// 0000000000400D08: Register int32 stat(Register (ptr64 char) x0, Register (ptr64 Eq_348) x1)
 // Called from:
 //      hexdump
 int32 stat(char * x0, struct stat * x1)
 {
-	word32 x0_32_32_8 = SLICE(x0, word32, 32);
-	return __xstat(SEQ(x0_32_32_8, 0x00), x0, x1);
+	return __xstat(0x00, x0, x1);
 }
 

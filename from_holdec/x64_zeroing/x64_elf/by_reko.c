@@ -80,14 +80,14 @@ char g_str402023[] = "mov  ax: 0x%016lx\n"; // 0000000000402023
 void main()
 {
 	printf("mov eax: 0x%016lx\n", 30292);
-	printf("mov  ax: 0x%016lx\n", 1234605616436508244);
+	printf("mov  ax: 0x%016lx\n", 0x55667654);
 }
 
-// 0000000000401080: void _start(Register (ptr64 Eq_20) rdx, Stack Eq_21 qwArg00)
-void _start(void (* rdx)(), Eq_21 qwArg00)
+// 0000000000401080: void _start(Register (ptr64 Eq_20) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t401040, qwArg00, (char *) fp + 8, &g_t401170, &g_t4011E0, rdx, fp);
+	__libc_start_main(&g_t401040, (int32) qwArg00, (char *) fp + 8, &g_t401170, &g_t4011E0, rdx, fp);
 	__hlt();
 }
 
@@ -120,6 +120,8 @@ void __do_global_dtors_aux()
 }
 
 // 0000000000401160: void frame_dummy()
+// Called from:
+//      __libc_csu_init
 void frame_dummy()
 {
 	register_tm_clones();
@@ -133,7 +135,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_31 = 4210200 - 0x00403E10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_75 rbx_43 = 0x00;
+		Eq_77 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a403E10 + rbx_43 * 0x08))();

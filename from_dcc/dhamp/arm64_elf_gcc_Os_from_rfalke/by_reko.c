@@ -5,7 +5,7 @@
 #include "subject.h"
 
 byte g_b12060 = 0x00; // 0000000000012060
-Eq_17 g_t12068 = // 0000000000012068
+Eq_18 g_t12068 = // 0000000000012068
 	{
 		0x00,
 		0x00,
@@ -40,7 +40,7 @@ word64 g_qw11FB0 = 0x00; // 0000000000011FB0
 word64 g_qw11FB8 = 0x00; // 0000000000011FB8
 <anonymous> * __libc_csu_init_GOT = __libc_csu_init; // 0000000000011FC0
 <anonymous> * main_GOT = main; // 0000000000011FC8
-struct Eq_17 * g_ptr11FD0 = &g_t12068; // 0000000000011FD0
+struct Eq_18 * g_ptr11FD0 = &g_t12068; // 0000000000011FD0
 <anonymous> * g_ptr11FD8 = null; // 0000000000011FD8
 <anonymous> * g_ptr11FE0 = null; // 0000000000011FE0
 // subject_got_plt.c
@@ -49,7 +49,7 @@ struct Eq_17 * g_ptr11FD0 = &g_t12068; // 0000000000011FD0
 
 #include "subject.h"
 
-struct Eq_144 g_t12000 = // 0000000000012000
+struct Eq_156 g_t12000 = // 0000000000012000
 	{
 		0x00,
 	};
@@ -91,7 +91,7 @@ word64 g_qw11DB0 = 0x00; // 0000000000011DB0
 
 #include "subject.h"
 
-Eq_34 g_t0EC0 = // 0000000000000EC0
+Eq_35 g_t0EC0 = // 0000000000000EC0
 	{
 		
 		{
@@ -106,21 +106,21 @@ Eq_34 g_t0EC0 = // 0000000000000EC0
 // 0000000000000870: void main()
 void main()
 {
-	x0_36 = (uint64) printf("Start...%c\n\n", 0x00);
-	struct Eq_17 * x23_38 = g_ptr11FD0;
-	word32 w20_106;
-	for (w20_106 = 0x00; w20_106 != 0x06; ++w20_106)
+	x0_38 = (uint64) printf("Start...%c\n\n", '\a');
+	struct Eq_18 * x23_40 = g_ptr11FD0;
+	word32 w20_115;
+	for (w20_115 = 0x00; w20_115 != 0x06; ++w20_115)
 	{
-		char * x0_64;
-		byte (* x0_49)[];
-		word32 w0_60;
-		byte (* x1_47)[];
-		up32 w1_43 = w20_106 - 0x01;
-		if (w1_43 <= 0x04)
+		byte (* x1_100)[];
+		char * x0_66;
+		byte (* x0_51)[];
+		word32 w0_62;
+		up32 w1_45 = w20_115 - 0x01;
+		if (w1_45 <= 0x04)
 		{
-			x0_49 = 0x08D8 + (int64) (&g_t0EC0)[(uint64) w1_43];
-			x1_47 = g_a08D8;
-			w0_60 = (word32) x0_49;
+			x0_51 = 0x08D8 + (int64) (&g_t0EC0)[(uint64) w1_45];
+			x1_100 = g_a08D8;
+			w0_62 = (word32) x0_51;
 			switch ((word32) 0x08D8)
 			{
 			case 0x00:
@@ -130,38 +130,41 @@ void main()
 			case 0x02:
 				goto l00000000000008F0;
 			case 0x03:
-				x0_64 = (char *) (x0_49 + 3885);
+				x0_66 = (char *) (x0_51 + 3885);
 				break;
 			case 0x04:
-				g_ptr11FD0->dw000C = w0_60;
-				x0_64 = (char *) "\nuresult = %u\n";
+				struct Eq_18 * x1_61 = g_ptr11FD0;
+				x1_61->dw000C = w0_62;
+				x0_66 = (char *) "\nuresult = %u\n";
+				x1_100 = SEQ(SLICE(x1_61, word32, 32), w0_62);
 				break;
 			}
 		}
 		else
 		{
-			x1_47 = fp + ~0x5F;
-			x0_49 = fp + ~0xC7;
+			x1_100 = fp + ~0x5F;
+			x0_51 = fp + ~0xC7;
 l00000000000008E0:
-			w0_60 = stest(x0_49, x1_47);
+			w0_62 = stest(x0_51, x1_100);
+			x1_100 = SEQ(SLICE(x1_100, word32, 32), w0_62);
 l00000000000008E8:
-			x23_38->dw0000 = w0_60;
-			x0_49 = null;
+			x23_40->dw0000 = w0_62;
+			x0_51 = null;
 l00000000000008F0:
-			x0_64 = (char *) (x0_49 + 0x0F1E);
+			x0_66 = (char *) (x0_51 + 0x0F1E);
 		}
-		x0_96 = (uint64) printf(x0_64, 0x00);
+		x0_105 = (uint64) printf(x0_66, (uint32) x1_100);
 	}
-	x0_112 = (uint64) printf("\n\n...End%c", 0x00);
+	x0_123 = (uint64) printf("\n\n...End%c", '\a');
 }
 
 byte g_a08D8[] = // 00000000000008D8
 	{
 	};
-// 0000000000000A18: void _start(Register (ptr64 Eq_81) x0, Stack Eq_82 qwArg00)
-void _start(void (* x0)(), Eq_82 qwArg00)
+// 0000000000000A18: void _start(Register (ptr64 Eq_91) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -206,7 +209,7 @@ void register_tm_clones()
 // 0000000000000AE0: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_144 * x19_12 = &g_t12000;
+	struct Eq_156 * x19_12 = &g_t12000;
 	if ((word32) g_b12060 == 0x00)
 	{
 		if (g_qw11FB0 != 0x00)
@@ -251,7 +254,7 @@ void sq(word64 x0)
 void sroot(real64 d0)
 {
 	real64 d2_12 = d0;
-	real64 d5_7 = g_r0C08;
+	real64 d5_7 = 1e-06;
 	real64 d1_22 = d0 * 0.5;
 	while (d2_12 > d1_22 * d5_7)
 	{
@@ -276,10 +279,10 @@ void dply()
 		;
 }
 
-// 0000000000000C9C: Register int32 fib(Register int32 w0, Register out Eq_222 w19Out, Register out Eq_222 w20Out)
+// 0000000000000C9C: Register int32 fib(Register int32 w0, Register out Eq_234 w19Out, Register out Eq_234 w20Out)
 // Called from:
 //      fib
-int32 fib(int32 w0, union Eq_222 & w19Out, union Eq_222 & w20Out)
+int32 fib(int32 w0, union Eq_234 & w19Out, union Eq_234 & w20Out)
 {
 	word32 x20_32_32_55 = SLICE(x20, word32, 32);
 	int32 w19_17 = w0;
@@ -353,7 +356,7 @@ word32 stest(byte (* x0)[], byte (* x1)[])
 void mcopy()
 {
 	mstrcpy(fp + ~0x5F, 0x0EE7);
-	union Eq_316 * x0_32 = fopen("zyxw.vut", "w");
+	union Eq_328 * x0_32 = fopen("zyxw.vut", "w");
 	if (x0_32 != null)
 	{
 		word32 w21_35 = 1000;
@@ -366,18 +369,19 @@ void mcopy()
 			while (true)
 			{
 				++x20_60;
-				struct Eq_354 * x0_64 = fp + ~0x5F + x20_60;
-				word32 w0_67 = (word32) x0_64->bFFFFFFFF;
-				Eq_362 x0_71 = SEQ(SLICE(x0_64, word32, 32), w0_67);
+				int32 w0_67 = (word32) (fp + ~0x5F + x20_60)->bFFFFFFFF;
 				if (w0_67 == 0x00)
 					break;
-				x0_72 = (uint64) _IO_putc(x0_71, x0_32);
+				x0_72 = (uint64) _IO_putc(w0_67, x0_32);
 			}
 		}
 		x0_42 = (uint64) fclose(x0_32);
 	}
 	else
-		exit(SEQ(SLICE((uint64) printf("Cannot open file", 0x00), word32, 32), ~0x00));
+	{
+		x0_77 = (uint64) printf("Cannot open file");
+		exit(~0x00);
+	}
 }
 
 // 0000000000000E24: void intest()

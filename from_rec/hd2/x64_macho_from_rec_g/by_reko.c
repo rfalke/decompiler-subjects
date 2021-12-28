@@ -63,7 +63,7 @@ void ___progname(byte * rax)
 void _pvars(byte * rax, byte * rcx)
 {
 	byte al_5 = (byte) rax;
-	Eq_247 eax_10 = (word32) rax;
+	Eq_248 eax_10 = (word32) rax;
 	word56 rax_56_8_22 = SLICE(rax, word56, 8);
 	word24 eax_24_8_26 = SLICE(rax, word24, 8);
 	*rax += al_5;
@@ -205,14 +205,14 @@ void _strlen()
 
 #include "subject.h"
 
-// 00000001000009F0: void start(Stack Eq_2 qwArg04)
-void start(Eq_2 qwArg04)
+// 00000001000009F0: void start(Stack word64 qwArg04)
+void start(word64 qwArg04)
 {
 	__align(fp - 4);
 	word64 * rcx_19 = (uint64) ((word32) qwArg04 + 0x01 << 0x03) + (fp + 0x0C);
 	while (*rcx_19 != 0x00)
 		++rcx_19;
-	_main(qwArg04);
+	_main((word32) qwArg04);
 	_exit();
 	__hlt();
 }
@@ -251,16 +251,16 @@ void _dumpline(int32 edx, ptr64 rdi)
 	int32 dwLoc6C_276;
 	for (dwLoc6C_276 = 0x00; dwLoc6C_276 < dwLoc8C_263; ++dwLoc6C_276)
 	{
-		Eq_86 bLoc8D_282;
+		Eq_87 bLoc8D_282;
 		word32 edx_150 = eax_102 + 0x03 + dwLoc6C_276;
 		if ((int64) dwLoc6C_276 + rdi > 0x1F && (int64) dwLoc6C_276 + rdi <= 0x7E)
-			bLoc8D_282 = (Eq_86) ((int64) dwLoc6C_276 + rdi);
+			bLoc8D_282 = (Eq_87) ((int64) dwLoc6C_276 + rdi);
 		else
-			bLoc8D_282 = (Eq_86) 0x2E;
+			bLoc8D_282 = (Eq_87) 0x2E;
 		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x68)[(int64) edx_150].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = bLoc8D_282;
 	}
 	for (; dwLoc6C_276 <= 0x0F; ++dwLoc6C_276)
-		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x68)[(int64) (eax_102 + 0x03 + dwLoc6C_276)].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_115) 0x20;
+		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x68)[(int64) (eax_102 + 0x03 + dwLoc6C_276)].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_116) 0x20;
 	___inline_strcpy_chk();
 	_puts();
 	if ((rdx_15 ^ *g_ptr1010) != 0x00)
@@ -321,17 +321,14 @@ word32 _hexdump()
 	return (word32) rax_78;
 }
 
-// 0000000100000D9D: void _main(Register Eq_2 edi)
+// 0000000100000D9D: void _main(Register int32 edi)
 // Called from:
 //      start
-void _main(Eq_2 edi)
+void _main(int32 edi)
 {
-	Eq_2 edi = (word32) rdi;
-	Eq_2 dwLoc0C_56 = 0x01;
-	while (dwLoc0C_56 < edi)
-	{
+	int32 edi = (word32) rdi;
+	int32 dwLoc0C_56;
+	for (dwLoc0C_56 = 0x01; dwLoc0C_56 < edi; ++dwLoc0C_56)
 		_hexdump();
-		dwLoc0C_56 = (word32) dwLoc0C_56.u0 + 1;
-	}
 }
 

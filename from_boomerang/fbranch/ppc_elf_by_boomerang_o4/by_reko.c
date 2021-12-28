@@ -183,8 +183,8 @@ void main()
 	real64 f0_30;
 	__crxor(0x06, 0x06, 0x06);
 	scanf("%f", fp + ~0x17);
-	real64 f1_19 = g_r10000978;
-	real64 f31_23 = (real64) g_r10000980;
+	real64 f1_19 = 5.0;
+	real64 f31_23 = (real64) 5.0F;
 	__creqv(0x06, 0x06, 0x06);
 	printf("a is %f, b is %f\n", f1_19, (real64) rLoc18);
 	if (f31_23 == (real64) rLoc18)

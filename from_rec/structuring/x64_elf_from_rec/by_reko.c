@@ -89,11 +89,11 @@ word64 g_qw6007B8 = 0x00; // 00000000006007B8
 
 #include "subject.h"
 
-// 0000000000400390: void _start(Register (ptr64 Eq_11) rdx, Stack Eq_12 qwArg00)
-void _start(void (* rdx)(), Eq_12 qwArg00)
+// 0000000000400390: void _start(Register (ptr64 Eq_11) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t40047C, qwArg00, (char *) fp + 8, &g_t400560, &g_t400550, rdx, fp);
+	__libc_start_main(&g_t40047C, (int32) qwArg00, (char *) fp + 8, &g_t400560, &g_t400550, rdx, fp);
 	__hlt();
 }
 
@@ -196,7 +196,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_19 = 6293396 - 6293396;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
-		Eq_145 rbx_40 = 0x00;
+		Eq_147 rbx_40 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 6293396)[rbx_40]();

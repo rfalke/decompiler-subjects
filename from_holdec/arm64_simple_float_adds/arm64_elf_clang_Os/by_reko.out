@@ -1,16 +1,12 @@
 === Using options:--aggressive-branch-removal
 0000000000000610: warning: Unable to resolve imported reference __register_frame_info.
-00000000000007A8: warning: Unable to determine format string for call to 'printf'.
-00000000000007C0: warning: Unable to determine format string for call to 'printf'.
-00000000000007D8: warning: Unable to determine format string for call to 'printf'.
 00000000000005E0: warning: Unable to resolve imported reference __cxa_finalize.
 00000000000005F0: warning: Unable to resolve imported reference __deregister_frame_info.
 __addtf3: error: An internal error occurred while building the expressions of __addtf3
     The given key 'w0_1004' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 166
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
 l0000000000000860: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
-__addtf3: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko

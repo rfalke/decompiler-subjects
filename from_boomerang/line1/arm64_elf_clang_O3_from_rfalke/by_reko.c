@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004005D0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004005D0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400600, qwArg00, (char *) fp + 8, g_ptr400608, g_ptr400610, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400600, (int32) qwArg00, (char *) fp + 8, g_ptr400608, g_ptr400610, x0, fp);
 	abort();
 }
 
@@ -124,46 +124,40 @@ void __do_global_dtors_aux()
 // 00000000004006E0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400718 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400718;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400718 = null; // 0000000000400718
-// 0000000000400720: void chomp(Register (ptr64 char) x0, Register Eq_99 x1, Register (ptr64 Eq_100) x2)
-void chomp(char * x0, Eq_99 x1, FILE * x2)
+word64 g_qw400718 = 0x00; // 0000000000400718
+// 0000000000400720: void chomp(Register (ptr64 char) x0, Register word32 w1, Register (ptr64 Eq_103) x2)
+void chomp(char * x0, word32 w1, FILE * x2)
 {
-	word32 x1_32_32_24 = SLICE(x1, word32, 32);
-	char * x0_19 = fgets(x0, x1, x2);
+	char * x0_19 = fgets(x0, (int32) x1, x2);
 	if (x0_19 != null)
 	{
-		char * x0_26 = strchr(x0_19, SEQ(x1_32_32_24, 0x0A));
+		char * x0_26 = strchr(x0_19, '\n');
 		if (x0_26 != null)
 			*x0_26 = 0x00;
 	}
 }
 
-// 000000000040075C: void main(Register int32 w0, Register (ptr64 Eq_127) x1)
-void main(int32 w0, struct Eq_127 * x1)
+// 000000000040075C: void main(Register int32 w0, Register (ptr64 Eq_129) x1)
+void main(int32 w0, struct Eq_129 * x1)
 {
 	if (w0 >= 0x02)
 	{
-		word32 x1_32_32_31 = SLICE(0x00400878, word32, 32);
 		FILE * x0_24 = fopen(x1->ptr0008, "r");
 		if (x0_24 != null)
 		{
-			char * x0_33 = fgets(fp - 0x0420, SEQ(x1_32_32_31, 0x0400), x0_24);
+			char * x0_33 = fgets(fp - 0x0420, 0x0400, x0_24);
 			if (x0_33 != null)
 			{
-				char * x0_37 = strchr(x0_33, SEQ(x1_32_32_31, 0x0A));
+				char * x0_37 = strchr(x0_33, '\n');
 				if (x0_37 != null)
 					*x0_37 = 0x00;
 				x0_42 = (uint64) puts(fp - 0x0430);

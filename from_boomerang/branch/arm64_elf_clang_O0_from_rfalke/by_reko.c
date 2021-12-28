@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,73 +124,69 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
+word64 g_qw400638 = 0x00; // 0000000000400638
 // 0000000000400640: void main()
 void main()
 {
-	x0_17 = (uint64) __isoc99_scanf("%d", 0x00);
-	x0_26 = (uint64) __isoc99_scanf("%d", 0x00);
-	struct Eq_112 * sp_101 = fp - 0x68;
+	x0_18 = (uint64) __isoc99_scanf("%d", fp - 0x14);
+	x0_27 = (uint64) __isoc99_scanf("%d", fp - 0x1C);
+	struct Eq_121 * sp_102 = fp - 0x68;
 	if (dwLoc14 == 0x05)
 	{
-		x0_36 = (uint64) printf("Equal\n", 0x00);
-		sp_101 = fp - 0x70;
+		x0_37 = (uint64) printf("Equal\n");
+		sp_102 = fp - 0x70;
 	}
 	if (dwLoc14 != 0x05)
 	{
-		x0_48 = (uint64) printf("Not Equal\n", 0x00);
-		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
+		x0_49 = (uint64) printf("Not Equal\n");
+		sp_102 = (struct Eq_121 *) ((char *) sp_102 - 8);
 	}
 	if (dwLoc14 < 0x05)
 	{
-		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw0028 = printf("Greater\n", 0x00);
+		sp_102 = (struct Eq_121 *) ((char *) sp_102 - 8);
+		sp_102->dw0028 = printf("Greater\n");
 	}
 	if (dwLoc14 >= 0x05)
 	{
-		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw0024 = printf("Less or Equal\n", 0x00);
+		sp_102 = (struct Eq_121 *) ((char *) sp_102 - 8);
+		sp_102->dw0024 = printf("Less or Equal\n");
 	}
 	if (dwLoc14 <= 0x05)
 	{
-		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw0020 = printf("Greater or Equal\n", 0x00);
+		sp_102 = (struct Eq_121 *) ((char *) sp_102 - 8);
+		sp_102->dw0020 = printf("Greater or Equal\n");
 	}
 	if (dwLoc14 > 0x05)
 	{
-		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw001C = printf("Less\n", 0x00);
+		sp_102 = (struct Eq_121 *) ((char *) sp_102 - 8);
+		sp_102->dw001C = printf("Less\n");
 	}
 	if (dwLoc1C < 0x05)
 	{
-		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw0018 = printf("Greater Unsigned\n", 0x00);
+		sp_102 = (struct Eq_121 *) ((char *) sp_102 - 8);
+		sp_102->dw0018 = printf("Greater Unsigned\n");
 	}
 	if (dwLoc1C >= 0x05)
 	{
-		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw0014 = printf("Less or Equal Unsigned\n", 0x00);
+		sp_102 = (struct Eq_121 *) ((char *) sp_102 - 8);
+		sp_102->dw0014 = printf("Less or Equal Unsigned\n");
 	}
 	if (dwLoc1C <= 0x05)
 	{
-		sp_101 = (struct Eq_112 *) ((char *) sp_101 - 8);
-		sp_101->dw0010 = printf("Carry Clear\n", 0x00);
+		sp_102 = (struct Eq_121 *) ((char *) sp_102 - 8);
+		sp_102->dw0010 = printf("Carry Clear\n");
 	}
 	if (dwLoc1C > 0x05)
-		sp_101->dw0004 = printf("Carry Set\n", 0x00);
+		sp_102->dw0004 = printf("Carry Set\n");
 }
 
 // 0000000000400820: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

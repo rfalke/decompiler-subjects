@@ -1,109 +1,155 @@
 === Using options:--aggressive-branch-removal
 000000000040BF5C: warning: Call target address 0000000000000000 is invalid.
 000000000040BFE1: warning: Call target address 0000000000000000 is invalid.
-000000000040CAA5: warning: Procedure fn000000000040CA67 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000040CFC7: warning: Procedure fn000000000040CFD5 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000040CEB3: warning: Procedure fn000000000040CEAE previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000000401CD2: warning: Procedure fn0000000000404CC3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000000401CE8: warning: Procedure fn0000000000404CC3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000000404D23: warning: Procedure fn0000000000404CC3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000000404D3D: warning: Procedure fn0000000000404CC3 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000000004385F9: warning: Expected a use of FPU status. Last test instruction at 00000000004385F9
 00000000004385CE: warning: Unexpected 2 fstsw mask for jnz mnemonic.
 00000000004392B6: warning: Call target address 0000000000000000 is invalid.
-000000000043AD60: warning: Procedure fn000000000043AD53 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000040CFD3: warning: Procedure fn000000000040460F previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000040CFDE: warning: Procedure fn000000000040CFD5 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00000000004050B5: warning: Procedure fn0000000000405057 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-0000000000404633: warning: Procedure fn000000000040460F previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000040796E: warning: Procedure fn0000000000407963 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000040E633: warning: Procedure fn000000000040E629 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000040469D: warning: Procedure fn0000000000407DE7 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-0000000000420566: warning: Procedure fn0000000000420529 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000000401CFD: warning: Procedure fn0000000000401CED previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000042048C: warning: Procedure fn000000000042045D previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-00000000004075E6: warning: Procedure fn00000000004074D7 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000040517E: warning: Procedure fn00000000004096A4 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000040E221: warning: Procedure fn000000000040DF53 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-0000000000408400: warning: Procedure fn000000000042048D previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00000000004082F7: warning: Procedure fn000000000042048D previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00000000004089E9: warning: Procedure fn00000000004089B9 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000000408D05: warning: Procedure fn0000000000408E52 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000040CA64: warning: Procedure fn000000000040459D previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-0000000000406C44: warning: Procedure fn0000000000408E52 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000040CAF6: warning: Procedure fn000000000040CAE2 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000041214A: warning: Procedure fn00000000004121FB previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000040CFEC: warning: Procedure fn000000000040DCFB previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000000407E9A: warning: Procedure fn0000000000407E10 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-0000000000404C43: warning: Procedure fn0000000000404BCC previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000000404BC7: warning: Procedure fn0000000000404B20 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00000000004213B2: warning: Procedure fn000000000041DA64 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000000421BA9: warning: Procedure fn0000000000421B56 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000041DA83: warning: Procedure fn000000000041DA64 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00000000004205DC: warning: Procedure fn000000000042056C previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000000422509: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
-0000000000404721: warning: Procedure fn0000000000406FB2 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000040B993: warning: Procedure fn00000000004205E2 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000042FB28: error: Value was either too large or too small for a UInt64.
 000000000040975D: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
-000000000040B999: warning: Procedure fn000000000040B994 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00000000004204CE: warning: Procedure fn000000000042048D previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000040DD18: warning: Procedure fn000000000040DCFB previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000000403F4D: warning: Procedure fn0000000000403F77 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-0000000000405B87: warning: Procedure fn0000000000405B55 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-0000000000406EB1: warning: Procedure fn0000000000406EB2 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-0000000000408468: warning: Procedure fn0000000000408491 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00000000004200E1: warning: Procedure fn00000000004200FB previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000040C260: warning: Procedure fn000000000040C214 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000040CCF2: warning: Procedure fn000000000040CAF7 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000040CE9A: warning: Procedure fn000000000040CAF7 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000040CAE1: warning: Procedure fn000000000040CAA6 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000040D482: warning: Procedure fn000000000040D473 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000041CE22: warning: Procedure fn000000000041CE22 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000000411C1E: warning: Unable to determine size of call or jump table; there may be more than 2 entries.
-000000000041D6A4: warning: Procedure fn000000000041D69F previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000000437BAF: warning: Procedure fn0000000000437B3E previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-000000000040287D: warning: Procedure fn0000000000437B3E previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
-0000000000402E14: warning: Procedure fn0000000000402E03 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000000437A84: warning: Call target address 0000000000000000 is invalid.
 0000000000438045: warning: Call target address 0000000000000000 is invalid.
 00000000004380A5: warning: Call target address 0000000000000000 is invalid.
 0000000000437F84: warning: Call target address 0000000000000000 is invalid.
-0000000000401F87: warning: Procedure fn0000000000401F82 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000000040342E: warning: Procedure fn0000000000403420 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 fn0000000000401000: error: An internal error occurred while building the expressions of fn0000000000401000
     The given key 'l0000000000401091' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms) in /Users/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 192
-   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode) in /Users/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 45
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 397
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
+   at Reko.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms) in /home/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 192
+   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode) in /home/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 45
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 397
 fn0000000000408E52: error: An internal error occurred while building the expressions of fn0000000000408E52
     The given key 'rsp_55' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 166
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
 fn0000000000437DD1: error: An internal error occurred while building the expressions of fn0000000000437DD1
     The given key 'ymm3_247' was not present in the dictionary.
-       at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 166
-   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 137
-   at Reko.Analysis.UnreachableBlockRemover.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
-   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
-Error: An error occurred during decompilation.
-    Unable to cast object of type 'System.Numerics.BigInteger' to type 'System.IConvertible'.
-       at System.Convert.ToUInt64(Object value)
-   at Reko.Core.Output.CodeFormatter.FormatStrings(PrimitiveType type, Object value) in /Users/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 954
-   at Reko.Core.Output.CodeFormatter.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 325
-   at Reko.Core.Output.CodeFormatter.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 201
-   at Reko.Core.Output.CodeFormatter.WriteExpression(Expression expr) in /Users/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 1117
-   at Reko.Core.Output.CodeFormatter.VisitConversion(Conversion conversion) in /Users/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 370
-   at Reko.Core.Output.CodeFormatter.VisitAssignment(Assignment a) in /Users/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 548
-   at Reko.Core.Block.WriteStatements(TextWriter writer) in /Users/runner/work/reko/reko/src/Core/Block.cs:line 183
-   at Reko.Core.Block.Write(TextWriter sb) in /Users/runner/work/reko/reko/src/Core/Block.cs:line 172
-   at Reko.Decompiler.EmitProgram(Program program, IEnumerable`1 objects, DataFlowAnalysis dfa, String filename, TextWriter output) in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 161
-   at Reko.Decompiler.<>c__DisplayClass14_0.<AnalyzeDataFlow>b__0(String name, IEnumerable`1 procs, TextWriter writer) in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 114
-   at Reko.DecompiledFileService.WriteIntermediateCode(Program program, Action`3 writer) in /Users/runner/work/reko/reko/src/Decompiler/IDecompiledFileService.cs:line 147
-   at Reko.Decompiler.AnalyzeDataFlow() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 114
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /Users/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 209
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
+   at Reko.Analysis.UnreachableBlockRemover.RemoveFromPhiFunctions(Block block, HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 168
+   at Reko.Analysis.UnreachableBlockRemover.RemoveDeadBlocks(HashSet`1 deadBlocks) in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 139
+   at Reko.Analysis.UnreachableBlockRemover.Transform() in /home/runner/work/reko/reko/src/Decompiler/Analysis/UnreachableBlockRemover.cs:line 75
+   at Reko.Analysis.DataFlowAnalysis.BuildExpressionTrees() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 381
+l0000000000401091: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+0000000000406D5A: error: An error occurred while processing the statement fn0000000000406B69(r15_13 + 1<64> - (fp - 0x2DD<64>), fp - 0x2DD<64>, rdi, out rbp_247, out r9_248, out r11d_249, out r12_250, out r13d_251, out r15d_252, out ymm0_253, out ymm1_254, out ymm3_255, out xmm4_256, out xmm5_257, out xmm6_258, out xmm7_259, out xmm8_260, out xmm9_261, out xmm10_262, out xmm11_263, out xmm12_264, out xmm13_265, out xmm14_266, out xmm15_267).
+    Not handling ptr64 and (union ((ptr64 (struct 0001 (0 byte b0000))) u1) (ptr64 u0)) yet.
+       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType(DataType dtDiff, DataType dtSub) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 403
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 255
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
+   at Reko.Typing.ExpressionTypeDescender.VisitApplication(Application appl, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 87
+   at Reko.Core.Expressions.Application.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/Application.cs:line 50
+   at Reko.Typing.TypeCollector.VisitSideEffect(SideEffect side) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 278
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+fn0000000000401000: error: An error occurred while rewriting procedure to high-level language.
+    The given key 'l0000000000401091' was not present in the dictionary.
+       at System.Collections.Generic.Dictionary`2.get_Item(TKey key) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/Dictionary.cs:line 181
+   at Reko.Core.Lib.DominatorGraph`1.BuildDominanceFrontiers(DirectedGraph`1 graph, Dictionary`2 idoms) in /home/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 192
+   at Reko.Core.Lib.DominatorGraph`1..ctor(DirectedGraph`1 graph, T entryNode) in /home/runner/work/reko/reko/src/Core/Lib/DominatorGraph.cs:line 46
+   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 144
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 81
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
+l00000000004224F8: warning: Non-integral switch expression
+fn0000000000431925: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 148
+   at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
+   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
+fn0000000000437DD1: error: An error occurred while rewriting procedure to high-level language.
+    Index was outside the bounds of the array.
+       at Reko.Structure.StructureAnalysis.ReduceIfRegion(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 323
+   at Reko.Structure.StructureAnalysis.ReduceAcyclic(Region n) in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 233
+   at Reko.Structure.StructureAnalysis.Execute() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 155
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 81
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
+0000000000434FC2: warning: Expected sizes of arrays to have been determined by now
+000000000043B032: error: Failed to write global variable g_n43B032.
+    Primitive type word48 not supported.
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
+   at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 218
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 200
+   at Reko.Core.Memory.LeImageReader.TryRead(PrimitiveType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/EndianImageReader.cs:line 240
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
+000000000043C350: warning: Expected sizes of arrays to have been determined by now
+000000000043C380: warning: Expected sizes of arrays to have been determined by now
+000000000043C400: warning: Expected sizes of arrays to have been determined by now
+000000000043C4E0: warning: Expected sizes of arrays to have been determined by now
+000000000043C528: warning: Expected sizes of arrays to have been determined by now
+000000000043D410: warning: Expected sizes of arrays to have been determined by now
+000000000043D4F8: warning: Expected sizes of arrays to have been determined by now
+000000000043D4F9: warning: Expected sizes of arrays to have been determined by now
+000000000043D4FA: warning: Expected sizes of arrays to have been determined by now
+000000000043D4FB: warning: Expected sizes of arrays to have been determined by now
+000000000043D4FC: warning: Expected sizes of arrays to have been determined by now
+000000000043D960: warning: Expected sizes of arrays to have been determined by now
+000000000043D962: warning: Expected sizes of arrays to have been determined by now
+000000000043DA00: warning: Expected sizes of arrays to have been determined by now
+000000000043DD30: warning: Expected sizes of arrays to have been determined by now
+0000000000440780: warning: Expected sizes of arrays to have been determined by now
+0000000000446F20: warning: Expected sizes of arrays to have been determined by now
+0000000000446F74: warning: Expected sizes of arrays to have been determined by now
+0000000000446F85: warning: Expected sizes of arrays to have been determined by now
+0000000000446FC5: warning: Expected sizes of arrays to have been determined by now
+0000000000447006: warning: Expected sizes of arrays to have been determined by now
+0000000000447100: warning: Expected sizes of arrays to have been determined by now
+0000000000447300: warning: Expected sizes of arrays to have been determined by now
+0000000000447E08: warning: Expected sizes of arrays to have been determined by now
+0000000000449020: warning: Expected sizes of arrays to have been determined by now
+000000000044E078: warning: Expected sizes of arrays to have been determined by now
+000000000044E948: warning: Expected sizes of arrays to have been determined by now
+000000000044EA50: warning: Expected sizes of arrays to have been determined by now
+0000000000452098: warning: Expected sizes of arrays to have been determined by now
+00000000004520A0: warning: Expected sizes of arrays to have been determined by now
+0000000000452508: warning: Expected sizes of arrays to have been determined by now
+0000000000452804: warning: Expected sizes of arrays to have been determined by now
+0000000000452808: warning: Expected sizes of arrays to have been determined by now
+000000000045280C: warning: Expected sizes of arrays to have been determined by now
+0000000000453168: warning: Expected sizes of arrays to have been determined by now
+0000000000453AF8: warning: Expected sizes of arrays to have been determined by now
+0000000000434FC2: warning: Expected sizes of arrays to have been determined by now
+000000000043B032: error: Failed to write global variable g_n43B032.
+    Primitive type word48 not supported.
+       at Reko.Core.Memory.ByteMemoryArea.TryReadLe(Byte[] abImage, Int64 imageOffset, DataType type, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteMemoryArea.cs:line 288
+   at Reko.Core.Memory.ByteImageReader.TryReadLe(DataType dataType, Constant& c) in /home/runner/work/reko/reko/src/Core/Memory/ByteImageReader.cs:line 203
+   at Reko.Core.Output.GlobalDataWriter.VisitPrimitive(PrimitiveType pt) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 273
+   at Reko.Core.Output.GlobalDataWriter.WriteGlobalVariable(Address address, DataType dataType, String name) in /home/runner/work/reko/reko/src/Core/Output/GlobalDataWriter.cs:line 146
+000000000043C350: warning: Expected sizes of arrays to have been determined by now
+000000000043C380: warning: Expected sizes of arrays to have been determined by now
+000000000043C400: warning: Expected sizes of arrays to have been determined by now
+000000000043C4E0: warning: Expected sizes of arrays to have been determined by now
+000000000043C528: warning: Expected sizes of arrays to have been determined by now
+000000000043D410: warning: Expected sizes of arrays to have been determined by now
+000000000043D4F8: warning: Expected sizes of arrays to have been determined by now
+000000000043D4F9: warning: Expected sizes of arrays to have been determined by now
+000000000043D4FA: warning: Expected sizes of arrays to have been determined by now
+000000000043D4FB: warning: Expected sizes of arrays to have been determined by now
+000000000043D4FC: warning: Expected sizes of arrays to have been determined by now
+000000000043D960: warning: Expected sizes of arrays to have been determined by now
+000000000043D962: warning: Expected sizes of arrays to have been determined by now
+000000000043DA00: warning: Expected sizes of arrays to have been determined by now
+000000000043DD30: warning: Expected sizes of arrays to have been determined by now
+0000000000440780: warning: Expected sizes of arrays to have been determined by now
+0000000000446F20: warning: Expected sizes of arrays to have been determined by now
+0000000000446F74: warning: Expected sizes of arrays to have been determined by now
+0000000000446F85: warning: Expected sizes of arrays to have been determined by now
+0000000000446FC5: warning: Expected sizes of arrays to have been determined by now
+0000000000447006: warning: Expected sizes of arrays to have been determined by now
+0000000000447100: warning: Expected sizes of arrays to have been determined by now
+0000000000447300: warning: Expected sizes of arrays to have been determined by now
+0000000000447E08: warning: Expected sizes of arrays to have been determined by now
+0000000000449020: warning: Expected sizes of arrays to have been determined by now
+000000000044E078: warning: Expected sizes of arrays to have been determined by now
+000000000044E948: warning: Expected sizes of arrays to have been determined by now
+000000000044EA50: warning: Expected sizes of arrays to have been determined by now
+0000000000452098: warning: Expected sizes of arrays to have been determined by now
+00000000004520A0: warning: Expected sizes of arrays to have been determined by now
+0000000000452508: warning: Expected sizes of arrays to have been determined by now
+0000000000452804: warning: Expected sizes of arrays to have been determined by now
+0000000000452808: warning: Expected sizes of arrays to have been determined by now
+000000000045280C: warning: Expected sizes of arrays to have been determined by now
+0000000000453168: warning: Expected sizes of arrays to have been determined by now
+0000000000453AF8: warning: Expected sizes of arrays to have been determined by now

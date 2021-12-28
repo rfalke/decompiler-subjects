@@ -1,32 +1,12 @@
 === Using options:--aggressive-branch-removal
-0000120C: warning: Procedure fn00001198 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-000012B6: warning: Procedure fn0000120E previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-000077C6: warning: Procedure fn00007622 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-00007EBC: warning: Procedure fn00007B46 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-000013B0: warning: Procedure fn0000138E previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-000013F8: warning: Procedure fn000013D2 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-00006E78: warning: Procedure fn00006D74 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-000059F6: warning: Procedure fn00005954 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-000056B6: warning: Procedure fn00005640 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0000584A: warning: Procedure fn000057E2 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-00007984: warning: Procedure fn00007848 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-000049E8: warning: Procedure fn000049AC previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000551A: warning: Procedure fn000054DE previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-00004788: warning: Procedure fn00004764 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0000542C: warning: Procedure fn000053BE previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000FF14: warning: Procedure fn0000FEF8 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-00005B4C: warning: Procedure fn00005AA0 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-00005C0A: warning: Procedure fn00005B6E previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00006B56: warning: Procedure fn00006B20 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-00005DF4: warning: Procedure fn00005CD2 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 fn00005CD2: error: An error occurred while rewriting procedure to high-level language.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at Reko.Core.Block.get_ThenBlock() in /Users/runner/work/reko/reko/src/Core/Block.cs:line 91
-   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
-   at Reko.Decompiler.StructureProgram() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 628
+       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 150
+   at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
+   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
 fn0000C028: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
 0000163C: warning: Expected sizes of arrays to have been determined by now
 00014FCA: warning: Expected sizes of arrays to have been determined by now

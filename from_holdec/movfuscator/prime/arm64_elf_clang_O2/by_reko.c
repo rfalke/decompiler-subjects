@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400530: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400530: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400560, qwArg00, (char *) fp + 8, g_ptr400568, g_ptr400570, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400560, (int32) qwArg00, (char *) fp + 8, g_ptr400568, g_ptr400570, x0, fp);
 	abort();
 }
 
@@ -124,20 +124,16 @@ void __do_global_dtors_aux()
 // 0000000000400640: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400678 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400678;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400678 = null; // 0000000000400678
+word64 g_qw400678 = 0x00; // 0000000000400678
 // 0000000000400680: void is_prime(Register int32 w0)
 void is_prime(int32 w0)
 {
@@ -157,30 +153,30 @@ void is_prime(int32 w0)
 // 00000000004006D0: void main()
 void main()
 {
-	word32 x0_32_32_68 = SLICE((uint64) puts("primes, 1-100000: "), word32, 32);
+	x0_24 = (uint64) puts("primes, 1-100000: ");
 	int32 w8_27 = 0x01;
 	do
 	{
 		do
 		{
 			w8_27 = 0x02;
-			w8_140 = w8_27;
-		} while (w8_140 == 0x01);
-		if (w8_140 != 0x02 && w8_140 >= 0x04)
+			w8_147 = w8_27;
+		} while (w8_147 == 0x01);
+		if (w8_147 != 0x02 && w8_147 >= 0x04)
 		{
 			int32 w8_39 = 0x02;
 			do
 			{
-				if (w8_140 - (w8_140 / w8_39) * w8_39 == 0x00)
+				if (w8_147 - (w8_147 / w8_39) * w8_39 == 0x00)
 					goto l0000000000400748;
 				++w8_39;
-			} while (w8_39 * w8_39 <= w8_140);
+			} while (w8_39 * w8_39 <= w8_147);
 		}
-		x0_32_32_68 = SLICE((uint64) printf("%d ", 0x00), word32, 32);
+		x0_58 = (uint64) printf("%d ", w8_147);
 l0000000000400748:
-		w8_27 = w8_140 + 0x01;
+		w8_27 = w8_147 + 0x01;
 	} while (w8_27 != 10000);
-	x0_74 = (uint64) putchar(SEQ(x0_32_32_68, 0x0A));
+	x0_78 = (uint64) putchar(0x0A);
 }
 
 // 0000000000400770: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

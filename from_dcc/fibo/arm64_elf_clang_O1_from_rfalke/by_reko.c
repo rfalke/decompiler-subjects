@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400540: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400540: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400570, qwArg00, (char *) fp + 8, g_ptr400578, g_ptr400580, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400570, (int32) qwArg00, (char *) fp + 8, g_ptr400578, g_ptr400580, x0, fp);
 	abort();
 }
 
@@ -124,50 +124,46 @@ void __do_global_dtors_aux()
 // 0000000000400650: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400688 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400688;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400688 = null; // 0000000000400688
+word64 g_qw400688 = 0x00; // 0000000000400688
 // 0000000000400690: void main()
 void main()
 {
-	x0_31 = (uint64) printf("Input number of iterations: ", 0x00);
-	word32 x0_32_32_80 = SLICE((uint64) __isoc99_scanf("%d", 0x00), word32, 32);
+	x0_31 = (uint64) printf("Input number of iterations: ");
+	x0_36 = (uint64) __isoc99_scanf("%d", fp + ~0x43);
 	ptr64 sp_37 = fp + ~0x57;
 	if (dwLoc4C >= 0x01)
 	{
 		int32 w23_44 = 0x00;
 		do
 		{
-			x0_50 = (uint64) printf("Input number: ", 0x00);
-			struct Eq_136 * sp_52 = sp_37 + ~0x07;
-			x0_56 = (uint64) __isoc99_scanf("%d", 0x00);
-			word32 w19_93;
-			word32 w20_94;
-			fib(sp_52->dw0000, out w19_93, out w20_94);
-			x0_32_32_80 = SLICE((uint64) printf("fibonacci(%d) = %u\n", 0x00), word32, 32);
+			x0_50 = (uint64) printf("Input number: ");
+			struct Eq_138 * sp_52 = sp_37 + ~0x07;
+			x0_56 = (uint64) __isoc99_scanf("%d", &sp_52->dw0000 + 2);
+			int32 w22_59 = sp_52->dw0000;
+			word32 w19_98;
+			word32 w20_99;
+			x0_76 = (uint64) printf("fibonacci(%d) = %u\n", w22_59, fib(w22_59, out w19_98, out w20_99));
 			sp_37 = (char *) sp_52 - 16;
 			++w23_44;
 		} while (w23_44 < sp_52->dwFFFFFFFC);
 	}
-	exit(SEQ(x0_32_32_80, 0x00));
+	exit(0x00);
 }
 
-// 0000000000400734: Register int32 fib(Register int32 w0, Register out Eq_150 w19Out, Register out Eq_150 w20Out)
+// 0000000000400734: Register int32 fib(Register int32 w0, Register out Eq_164 w19Out, Register out Eq_164 w20Out)
 // Called from:
 //      main
 //      fib
-int32 fib(int32 w0, union Eq_150 & w19Out, union Eq_150 & w20Out)
+int32 fib(int32 w0, union Eq_164 & w19Out, union Eq_164 & w20Out)
 {
 	word32 x20_32_32_59 = SLICE(x20, word32, 32);
 	int32 w19_19;

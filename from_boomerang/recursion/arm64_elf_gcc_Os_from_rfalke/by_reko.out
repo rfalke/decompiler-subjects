@@ -1,17 +1,5 @@
 === Using options:--aggressive-branch-removal
 00000000000006C0: warning: Unable to resolve imported reference __gmon_start__.
 00000000000006A0: warning: Unable to resolve imported reference __cxa_finalize.
-0000000000000A4C: warning: Unable to determine format string for call to 'printf'.
-00000000000009B0: warning: Unable to determine format string for call to 'printf'.
-00000000000008D0: warning: Unable to determine format string for call to 'printf'.
-0000000000000AAC: warning: Unable to determine format string for call to 'printf'.
-000000000000088C: warning: Unable to determine format string for call to 'printf'.
-0000000000000A7C: warning: Unable to determine format string for call to 'printf'.
-0000000000000B34: warning: Unable to determine format string for call to 'printf'.
-0000000000000AF0: warning: Unable to determine format string for call to 'printf'.
-0000000000000968: warning: Unable to determine format string for call to 'printf'.
-0000000000000924: warning: Unable to determine format string for call to 'printf'.
-0000000000000904: warning: Unable to determine format string for call to 'printf'.
-000000000000070C: warning: Unable to determine format string for call to 'printf'.
 0000000000010DA8: warning: Expected sizes of arrays to have been determined by now
 0000000000010DA8: warning: Expected sizes of arrays to have been determined by now

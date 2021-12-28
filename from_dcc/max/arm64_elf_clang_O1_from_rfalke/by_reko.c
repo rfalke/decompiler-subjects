@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,37 +124,32 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
+word64 g_qw400638 = 0x00; // 0000000000400638
 // 0000000000400640: void main(Register word64 x29)
 void main(word64 x29)
 {
-	x0_13 = (uint64) printf("Enter 2 numbers: ", 0x00);
-	x0_19 = (uint64) scanf("%d %d", 0x00);
-	if (SLICE(x29, word32, 32) != dwLoc20)
-	{
-		max();
-		x0_33 = (uint64) printf("Maximum: %d\n", 0x00);
-	}
+	x0_13 = (uint64) printf("Enter 2 numbers: ");
+	int32 dwLoc0C_48 = SLICE(x29, word32, 32);
+	x0_19 = (uint64) scanf("%d %d", fp + ~0x0B, fp - 0x18);
+	if (dwLoc0C_48 != dwLoc20)
+		x0_35 = (uint64) printf("Maximum: %d\n", max(dwLoc0C_48, dwLoc20));
 }
 
-// 00000000004006A0: void max()
+// 00000000004006A0: Register int32 max(Register int32 w0, Register int32 w1)
 // Called from:
 //      main
-void max()
+int32 max(int32 w0, int32 w1)
 {
+	return w0 > w1 ? w0 : w1;
 }
 
 // 00000000004006B0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

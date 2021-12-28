@@ -15,7 +15,7 @@ Eq_67 g_t0009;
 Eq_67 g_t000A;
 Eq_67 g_t000C;
 Eq_6664 g_t000E;
-Eq_52654 g_t000F;
+Eq_51344 g_t000F;
 Eq_46 g_t1000;
 word24 g_n1001; // 00001001
 word16 g_w1002; // 00001002
@@ -35,7 +35,7 @@ union Eq_67 * g_ptr1018; // 00001018
 word16 g_w101A; // 0000101A
 Eq_46 g_t1100;
 bu8 g_b1237; // 00001237
-Eq_54230 g_t17B4;
+Eq_52920 g_t17B4;
 Eq_46 g_t1AD7;
 byte g_b1B5B; // 00001B5B
 Eq_46 g_t2000;
@@ -64,11 +64,11 @@ int8 g_b220C; // 0000220C
 int8 g_b220D; // 0000220D
 int8 g_b220E; // 0000220E
 int8 g_b220F; // 0000220F
-Eq_54083 g_t2D78;
+Eq_52773 g_t2D78;
 Eq_46 g_t81C3;
 byte g_b82AB; // 000082AB
-Eq_54230 g_tA4A5;
-Eq_54083 g_tE152;
+Eq_52920 g_tA4A5;
+Eq_52773 g_tE152;
 Eq_46 g_t6671AD7;
 byte g_b6671B5B; // 06671B5B
 bu8 g_b6672D0B; // 06672D0B
@@ -83,8 +83,8 @@ Eq_61 g_t4F310006;
 struct Eq_61 * g_ptr4F312610; // 4F312610
 Eq_46 g_t4F312612;
 Eq_7050 g_t4F312618;
-Eq_52784 g_t603ADA2F;
-Eq_52916 g_t806FE6FF;
+Eq_51474 g_t603ADA2F;
+Eq_51606 g_t806FE6FF;
 Eq_67 g_t91A90008;
 Eq_46 g_a91A917B4[];
 Eq_67 g_t91A917B5;

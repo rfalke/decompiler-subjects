@@ -36,7 +36,7 @@ word64 g_qw11FC0 = 0x00; // 0000000000011FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t12000 = // 0000000000012000
+struct Eq_74 g_t12000 = // 0000000000012000
 	{
 		0x00,
 	};
@@ -87,10 +87,10 @@ word16 g_w0DC8 = 0x7C; // 0000000000000DC8
 
 #include "subject.h"
 
-// 00000000000008E0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000000008E0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -135,7 +135,7 @@ void register_tm_clones()
 // 00000000000009A8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t12000;
+	struct Eq_74 * x19_12 = &g_t12000;
 	if ((word32) g_b12070 == 0x00)
 	{
 		if (g_qw11FB8 != 0x00)
@@ -164,10 +164,10 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000A28: Register ptr64 dumpline(Register (ptr64 void) x0, Register int32 w2, Register ptr64 x5, Register out ptr64 x19Out, Register out Eq_113 w20Out, Register out ptr64 x21Out, Register out (ptr64 Eq_115) x22Out, Register out ptr64 x23Out, Register out ptr64 x24Out)
+// 0000000000000A28: Register ptr64 dumpline(Register (ptr64 void) x0, Register int32 w2, Register ptr64 x5, Register out ptr64 x19Out, Register out Eq_115 w20Out, Register out ptr64 x21Out, Register out (ptr64 Eq_117) x22Out)
 // Called from:
 //      hexdump
-ptr64 dumpline(void * x0, int32 w2, ptr64 x5, ptr64 & x19Out, union Eq_113 & w20Out, ptr64 & x21Out, FILE & x22Out, ptr64 & x23Out, ptr64 & x24Out)
+ptr64 dumpline(void * x0, int32 w2, ptr64 x5, ptr64 & x19Out, union Eq_115 & w20Out, ptr64 & x21Out, FILE & x22Out)
 {
 	word32 x5_32_32 = SLICE(x5, word32, 32);
 	ptr64 x5_136;
@@ -187,7 +187,7 @@ ptr64 dumpline(void * x0, int32 w2, ptr64 x5, ptr64 & x19Out, union Eq_113 & w20
 		w21_107 = w19_127 + 0x01;
 		if (w19_127 > 0x0F)
 		{
-			w0_117 = SLICE(CONVERT(strlen(fp + ~0x47), size_t, uint64), word32, 0);
+			w0_117 = CONVERT(strlen(fp + ~0x47), size_t, word32);
 			x8_118 = (int64) w0_117;
 			Mem93[fp + ~0x47 + x8_118:word32] = Mem33[0x0000000000000DC0<p64>:word32];
 			goto l0000000000000B10;
@@ -201,7 +201,7 @@ ptr64 dumpline(void * x0, int32 w2, ptr64 x5, ptr64 & x19Out, union Eq_113 & w20
 		Mem106[fp + ~0x47 + CONVERT(strlen(fp + ~0x47), size_t, uint64):word32] = w23_99;
 		++w21_107;
 	} while (w21_107 <= 0x10);
-	w0_117 = SLICE(CONVERT(strlen(fp + ~0x47), size_t, uint64), word32, 0);
+	w0_117 = CONVERT(strlen(fp + ~0x47), size_t, word32);
 	x8_118 = (int64) w0_117;
 	Mem122[fp + ~0x47 + x8_118:word32] = Mem106[0x0000000000000DC0<p64>:word32];
 	x5_136 = x5;
@@ -216,12 +216,12 @@ l0000000000000B10:
 	int64 x1_399 = 0x00;
 	do
 	{
-		word32 w1_141 = (word32) x1_408;
-		word32 w2_149 = (word32) *((char *) x0 + x1_408);
+		word32 w1_141 = (word32) x1_406;
+		word32 w2_149 = (word32) *((char *) x0 + x1_406);
 		Mem157[fp + ~0x47 + CONVERT(w1_141 + w0_117, word32, int64):byte] = SLICE(CONVERT(SLICE(w2_149, uint8, 0) - 0x20, uint8, uint32) <=u 0x5E ? w2_149 : 0x2E, byte, 0);
-		x1_399 = SEQ(SLICE(x1_408 + 0x01, word32, 32), w1_141 + 0x01);
-		x1_408 = x1_399;
-	} while (x1_408 + 0x01 - (x5_135 + 0x01) != 0x00);
+		x1_399 = SEQ(SLICE(x1_406 + 0x01, word32, 32), w1_141 + 0x01);
+		x1_406 = x1_399;
+	} while (x1_406 + 0x01 - (x5_135 + 0x01) != 0x00);
 	if (w19_127 > 0x0F)
 	{
 l0000000000000B74:
@@ -231,8 +231,6 @@ l0000000000000B74:
 		w20Out.u0 = <invalid>;
 		x21Out = x20;
 		x22Out = x21;
-		x23Out = x22;
-		x24Out = x23;
 		return x5_136;
 	}
 l0000000000000B54:
@@ -244,14 +242,13 @@ l0000000000000B54:
 	goto l0000000000000B74;
 }
 
-// 0000000000000BDC: Register word32 hexdump(Register (ptr64 char) x0, Register ptr64 x5, Register out ptr64 x5Out, Register out ptr64 x19Out, Register out Eq_113 w20Out, Register out ptr64 x21Out)
+// 0000000000000BDC: Register word32 hexdump(Register (ptr64 char) x0, Register ptr64 x5, Register out ptr64 x5Out, Register out ptr64 x19Out, Register out Eq_115 w20Out, Register out ptr64 x21Out)
 // Called from:
 //      main
-word32 hexdump(char * x0, ptr64 x5, ptr64 & x5Out, ptr64 & x19Out, union Eq_113 & w20Out, ptr64 & x21Out)
+word32 hexdump(char * x0, ptr64 x5, ptr64 & x5Out, ptr64 & x19Out, union Eq_115 & w20Out, ptr64 & x21Out)
 {
-	word32 x0_32_32_33 = SLICE(x0, word32, 32);
 	word64 x0_163;
-	if (__xstat(SEQ(x0_32_32_33, 0x00), x0, fp + ~0x87) != 0x00)
+	if (__xstat(0x00, x0, fp + ~0x87) != 0x00)
 	{
 		FILE * x0_44 = fopen(x0, "rb");
 		FILE * x22_103 = x0_44;
@@ -260,17 +257,19 @@ word32 hexdump(char * x0, ptr64 x5, ptr64 & x5Out, ptr64 & x19Out, union Eq_113 
 			if (qwLoc58 != 0x00)
 			{
 				void * x21_52 = fp + ~0x07;
-				Eq_172 x24_53 = 0x10;
-				Eq_172 x23_54 = 0x01;
+				word64 x24_53 = 0x10;
+				word64 x23_54 = 0x01;
 				do
 				{
-					int32 w0_67 = (word32) (uint64) fread(x21_52, x23_54, x24_53, x22_103);
+					int32 w0_67 = (word32) fread(x21_52, (size_t) x23_54, (size_t) x24_53, x22_103);
 					if (w0_67 == 0x00)
 						break;
 					word64 x20_77 = <invalid>;
 					up64 x19_75;
 					word32 w20_233;
-					x5 = dumpline(x21_52, w0_67, x5, out x19_75, out w20_233, out x21_52, out x22_103, out x23_54, out x24_53);
+					x5 = dumpline(x21_52, w0_67, x5, out x19_75, out w20_233, out x21_52, out x22_103);
+					x24_53 = x24_81;
+					x23_54 = x23_80;
 				} while (qwLoc58 - (x19_75 + (int64) ((word32) x20_77)) > 0x00);
 			}
 			x0_163 = SEQ(SLICE((uint64) fclose(x22_103), word32, 32), 0x00);

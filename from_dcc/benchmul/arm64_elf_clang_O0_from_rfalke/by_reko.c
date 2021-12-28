@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,38 +124,34 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
+word64 g_qw400638 = 0x00; // 0000000000400638
 // 0000000000400640: void main()
 void main()
 {
-	x0_18 = (uint64) printf("enter number of iterations\n", 0x00);
-	x0_26 = (uint64) __isoc99_scanf("%ld", 0x00);
-	int32 w0_39 = printf("executing %ld iterations\n", 0x00);
-	x0_42 = (uint64) __isoc99_scanf("%d", 0x00);
-	x0_50 = (uint64) __isoc99_scanf("%d", 0x00);
-	int64 qwLoc58_156 = 0x00;
-	int64 qwLoc60_173 = SEQ(w0_39, dwLoc60);
-	while (qwLoc58_156 - qwLoc60_173 <= 0x00)
+	x0_18 = (uint64) printf("enter number of iterations\n");
+	x0_27 = (uint64) __isoc99_scanf("%ld", fp - 0x40);
+	int32 w0_40 = printf("executing %ld iterations\n", dwLoc48);
+	x0_44 = (uint64) __isoc99_scanf("%d", fp - 0x1C);
+	x0_53 = (uint64) __isoc99_scanf("%d", fp - 0x20);
+	int64 qwLoc58_163 = 0x00;
+	int64 qwLoc60_180 = SEQ(w0_40, dwLoc60);
+	while (qwLoc58_163 - qwLoc60_180 <= 0x00)
 	{
-		int32 dwLoc24_165;
-		for (dwLoc24_165 = 0x01; dwLoc24_165 <= 0x28; ++dwLoc24_165)
-			;
-		++qwLoc58_156;
+		int32 dwLoc24_172;
+		for (dwLoc24_172 = 0x01; dwLoc24_172 <= 0x28; ++dwLoc24_172)
+			dwLoc1C = dwLoc1C * 0x03 * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C * dwLoc1C;
+		++qwLoc58_163;
 	}
-	x0_67 = (uint64) printf("a=%d\n", 0x00);
+	x0_72 = (uint64) printf("a=%d\n", dwLoc1C);
 }
 
 // 0000000000400820: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

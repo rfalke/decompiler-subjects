@@ -1,7 +1,5 @@
 === Using options:--aggressive-branch-removal
 0000000000000730: warning: Unable to resolve imported reference __gmon_start__.
-00000000000008DC: warning: Unable to determine format string for call to '__isoc99_scanf'.
-00000000000008F4: warning: Unable to determine format string for call to 'printf'.
 0000000000000710: warning: Unable to resolve imported reference __cxa_finalize.
 0000000000010DA8: warning: Expected sizes of arrays to have been determined by now
 0000000000010DA8: warning: Expected sizes of arrays to have been determined by now

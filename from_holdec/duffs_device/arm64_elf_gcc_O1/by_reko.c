@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t11000 = // 0000000000011000
+struct Eq_74 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,19 +78,19 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-Eq_143 g_t0C98 = // 0000000000000C98
+Eq_146 g_t0C98 = // 0000000000000C98
 	{
 		
 		{
 		},
 	};
-Eq_227 g_t0C9C = // 0000000000000C9C
+Eq_229 g_t0C9C = // 0000000000000C9C
 	{
 		
 		{
 		},
 	};
-Eq_456 g_t0CA4 = // 0000000000000CA4
+Eq_458 g_t0CA4 = // 0000000000000CA4
 	{
 		
 		{
@@ -102,10 +102,10 @@ Eq_456 g_t0CA4 = // 0000000000000CA4
 
 #include "subject.h"
 
-// 0000000000000730: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000730: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -150,7 +150,7 @@ void register_tm_clones()
 // 00000000000007F8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t11000;
+	struct Eq_74 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -179,10 +179,10 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000878: void copy1_four_times(Register (ptr64 Eq_109) x0, Register (ptr64 int16) x1, Register int32 w2)
+// 0000000000000878: void copy1_four_times(Register (ptr64 Eq_111) x0, Register (ptr64 int16) x1, Register int32 w2)
 // Called from:
 //      main
-void copy1_four_times(union Eq_109 * x0, int16 * x1, int32 w2)
+void copy1_four_times(union Eq_111 * x0, int16 * x1, int32 w2)
 {
 	int32 w4_10 = 0x00 - w2;
 	int32 w3_44 = (w2 < 0x03 ? w2 + 0x06 : w2 + 0x03) >> 2;
@@ -190,7 +190,7 @@ void copy1_four_times(union Eq_109 * x0, int16 * x1, int32 w2)
 	if (w2_15 <= 0x03)
 	{
 		word16 * x4_23 = &g_w08B8;
-		word32 w2_25 = (word32) (2232 + (int64) (&g_t0C98)[(uint64) w2_15]);
+		word32 w2_25 = (word32) 2232 + (word32) (&g_t0C98)[(uint64) w2_15];
 		switch (w2_25)
 		{
 		case 0x00:
@@ -198,8 +198,8 @@ void copy1_four_times(union Eq_109 * x0, int16 * x1, int32 w2)
 		case 0x01:
 			while (true)
 			{
-				*x0 = (union Eq_109 *) *x1;
-				struct Eq_157 * x2_32 = x1 + 1;
+				*x0 = (union Eq_111 *) *x1;
+				struct Eq_159 * x2_32 = x1 + 1;
 				*x4_23 = x2_32->w0000;
 				--w3_44;
 				if (w3_44 <= 0x00)
@@ -207,14 +207,14 @@ void copy1_four_times(union Eq_109 * x0, int16 * x1, int32 w2)
 				int16 * x0_49 = x4_23 + 1;
 				*x0_49 = x2_32->w0002;
 				x1 = (int16 *) (&x2_32->w0002 + 1);
-				x0 = (union Eq_109 *) (x0_49 + 1);
+				x0 = (union Eq_111 *) (x0_49 + 1);
 l00000000000008B8:
 				w2_25 = (word32) *x1;
 l00000000000008BC:
-				*x0 = (union Eq_109 *) (word16) w2_25;
+				*x0 = (union Eq_111 *) (word16) w2_25;
 				++x1;
 l00000000000008C4:
-				x0 = (union Eq_109 *) ((char *) x0 + 2);
+				x0 = (union Eq_111 *) ((char *) x0 + 2);
 				x4_23 = (word16 *) ((char *) x0 + 2);
 			}
 			break;
@@ -227,10 +227,10 @@ l00000000000008C4:
 }
 
 word16 g_w08B8 = 0x22; // 00000000000008B8
-// 0000000000000918: void copy1_eight_times(Register (ptr64 Eq_109) x0, Register (ptr64 int16) x1, Register int32 w2)
+// 0000000000000918: void copy1_eight_times(Register (ptr64 Eq_111) x0, Register (ptr64 int16) x1, Register int32 w2)
 // Called from:
 //      main
-void copy1_eight_times(union Eq_109 * x0, int16 * x1, int32 w2)
+void copy1_eight_times(union Eq_111 * x0, int16 * x1, int32 w2)
 {
 	word32 w1_26 = (word32) x1;
 	int32 w4_10 = 0x00 - w2;
@@ -249,9 +249,9 @@ void copy1_eight_times(union Eq_109 * x0, int16 * x1, int32 w2)
 			while (true)
 			{
 				*x2_100 = *x4_23;
-				*x0 = (union Eq_109 *) *x1;
-				struct Eq_252 * x4_48 = x1 + 1;
-				struct Eq_255 * x2_45 = (char *) x0 + 2;
+				*x0 = (union Eq_111 *) *x1;
+				struct Eq_254 * x4_48 = x1 + 1;
+				struct Eq_257 * x2_45 = (char *) x0 + 2;
 				x2_45->w0000 = x4_48->w0000;
 				x2_45->w0002 = x4_48->w0002;
 				x2_45->w0004 = x4_48->w0004;
@@ -260,21 +260,21 @@ void copy1_eight_times(union Eq_109 * x0, int16 * x1, int32 w2)
 					break;
 				x2_45->w0006 = x4_48->w0006;
 				x1 = (int16 *) (&x4_48->w0006 + 1);
-				x0 = (union Eq_109 *) (&x2_45->w0006 + 1);
+				x0 = (union Eq_111 *) (&x2_45->w0006 + 1);
 l0000000000000958:
 				w2_25 = (word32) *x1;
 l000000000000095C:
-				*x0 = (union Eq_109 *) (word16) w2_25;
+				*x0 = (union Eq_111 *) (word16) w2_25;
 				++x1;
 l0000000000000964:
-				x0 = (union Eq_109 *) ((char *) x0 + 2);
+				x0 = (union Eq_111 *) ((char *) x0 + 2);
 				x2_100 = (word16 *) ((char *) x0 + 2);
 l000000000000096C:
 				x4_23 = x1 + 1;
 				w1_26 = (word32) *x1;
 l0000000000000974:
-				*x0 = (union Eq_109 *) (word16) w1_26;
-				x0 = (union Eq_109 *) (x2_100 + 1);
+				*x0 = (union Eq_111 *) (word16) w1_26;
+				x0 = (union Eq_111 *) (x2_100 + 1);
 l000000000000097C:
 				x1 = x4_23 + 1;
 			}
@@ -295,10 +295,10 @@ l000000000000097C:
 }
 
 int16 g_w0958 = 0x0022; // 0000000000000958
-// 0000000000000A10: void copy2_four_times(Register (ptr64 Eq_109) x0, Register (ptr64 int16) x1, Register int32 w2)
+// 0000000000000A10: void copy2_four_times(Register (ptr64 Eq_111) x0, Register (ptr64 int16) x1, Register int32 w2)
 // Called from:
 //      main
-void copy2_four_times(union Eq_109 * x0, int16 * x1, int32 w2)
+void copy2_four_times(union Eq_111 * x0, int16 * x1, int32 w2)
 {
 	if (w2 > 0x00)
 	{
@@ -306,20 +306,20 @@ void copy2_four_times(union Eq_109 * x0, int16 * x1, int32 w2)
 		do
 		{
 			int16 * x5_14;
-			union Eq_109 * x4_16;
+			union Eq_111 * x4_16;
 			if (w3_52 != 0x02)
 			{
 				if (w3_52 != 0x03)
 				{
 					if (w3_52 != 0x01)
 					{
-						*x0 = (union Eq_109 *) *x1;
+						*x0 = (union Eq_111 *) *x1;
 						++x1;
-						x0 = (union Eq_109 *) ((char *) x0 + 2);
+						x0 = (union Eq_111 *) ((char *) x0 + 2);
 					}
-					*x0 = (union Eq_109 *) *x1;
+					*x0 = (union Eq_111 *) *x1;
 					++x1;
-					x0 = (union Eq_109 *) ((char *) x0 + 2);
+					x0 = (union Eq_111 *) ((char *) x0 + 2);
 					goto l0000000000000A34;
 				}
 				x5_14 = x1;
@@ -328,12 +328,12 @@ void copy2_four_times(union Eq_109 * x0, int16 * x1, int32 w2)
 			else
 			{
 l0000000000000A34:
-				*x0 = (union Eq_109 *) *x1;
-				x4_16 = (union Eq_109 *) ((char *) x0 + 2);
+				*x0 = (union Eq_111 *) *x1;
+				x4_16 = (union Eq_111 *) ((char *) x0 + 2);
 				x5_14 = x1 + 1;
 			}
-			*x4_16 = (union Eq_109 *) *x5_14;
-			x0 = (union Eq_109 *) ((char *) x4_16 + 2);
+			*x4_16 = (union Eq_111 *) *x5_14;
+			x0 = (union Eq_111 *) ((char *) x4_16 + 2);
 			x1 = x5_14 + 1;
 			w3_52 += 0x04;
 			w2 -= 0x04;
@@ -341,10 +341,10 @@ l0000000000000A34:
 	}
 }
 
-// 0000000000000A9C: void copy2_eight_times(Register (ptr64 Eq_109) x0, Register (ptr64 int16) x1, Register int32 w2)
+// 0000000000000A9C: void copy2_eight_times(Register (ptr64 Eq_111) x0, Register (ptr64 int16) x1, Register int32 w2)
 // Called from:
 //      main
-void copy2_eight_times(union Eq_109 * x0, int16 * x1, int32 w2)
+void copy2_eight_times(union Eq_111 * x0, int16 * x1, int32 w2)
 {
 	if (w2 > 0x00)
 	{
@@ -363,9 +363,9 @@ void copy2_eight_times(union Eq_109 * x0, int16 * x1, int32 w2)
 				x4_66();
 				return;
 			}
-			*x0 = (union Eq_109 *) *x1;
-			struct Eq_393 * x1_20 = x1 + 1;
-			struct Eq_396 * x0_21 = (char *) x0 + 2;
+			*x0 = (union Eq_111 *) *x1;
+			struct Eq_395 * x1_20 = x1 + 1;
+			struct Eq_398 * x0_21 = (char *) x0 + 2;
 			x0_21->w0000 = x1_20->w0000;
 			x0_21->w0002 = x1_20->w0002;
 			x0_21->w0004 = x1_20->w0004;
@@ -373,7 +373,7 @@ void copy2_eight_times(union Eq_109 * x0, int16 * x1, int32 w2)
 			x0_21->w0008 = x1_20->w0008;
 			x0_21->w000A = x1_20->w000A;
 			x0_21->w000C = x1_20->w000C;
-			x0 = (union Eq_109 *) (&x0_21->w000C + 1);
+			x0 = (union Eq_111 *) (&x0_21->w000C + 1);
 			x1 = (int16 *) (&x1_20->w000C + 1);
 			w3_10 += 0x08;
 			w2 -= 0x08;
@@ -384,13 +384,13 @@ void copy2_eight_times(union Eq_109 * x0, int16 * x1, int32 w2)
 // 0000000000000B88: void main()
 void main()
 {
-	int16 * x0_17 = malloc(200);
-	union Eq_109 * x0_21 = malloc(200);
+	int16 * x0_17 = malloc((size_t) 200);
+	union Eq_111 * x0_21 = malloc((size_t) 200);
 	copy1_four_times(x0_21, x0_17, 100);
 	copy1_eight_times(x0_21, x0_17, 100);
 	copy2_four_times(x0_21, x0_17, 100);
 	copy2_eight_times(x0_21, x0_17, 100);
-	x0_77 = (uint64) memcmp(x0_17, x0_21, 200);
+	x0_77 = (uint64) memcmp(x0_17, x0_21, (size_t) 200);
 }
 
 // 0000000000000C08: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

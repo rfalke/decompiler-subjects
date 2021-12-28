@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_146 g_t11000 = // 0000000000011000
+struct Eq_151 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,23 +81,22 @@ word64 g_qw10DA8 = 0x00; // 0000000000010DA8
 // 0000000000000720: void main()
 void main()
 {
-	real32 s9_24 = g_r0804;
-	real32 s11_32 = g_r0818;
+	real32 s9_24 = -3.1415927F;
+	real32 s11_32 = 42.0F;
 	word32 w19_39;
-	real32 s13_40 = g_r0810;
-	real32 s12_47 = g_r0814;
-	real32 s15_48 = g_r0808;
-	real32 s14_49 = g_r080C;
-	real32 s10_50 = g_r081C;
+	real32 s13_40 = 110.0F;
+	real32 s12_47 = 362880.0F;
+	real32 s15_48 = 210.0F;
+	real32 s14_49 = 6.227021e+09F;
+	real32 s10_50 = 120.0F;
 	for (w19_39 = 33; w19_39 != 0x00; --w19_39)
 	{
 		real32 s1_52 = s9_24 * s9_24;
 		real32 s6_59 = s1_52 * s1_52;
 		real32 s16_65 = s6_59 * s9_24;
 		real32 s17_66 = s6_59 * s16_65;
-		__fmaddf(1.0F - s1_52 / 6.0F, s9_24, (1.0F - s1_52 / s11_32) * s16_65 / s10_50 + (((1.0F - s1_52 / s15_48) * (s6_59 * s17_66)) / s14_49 + ((1.0F - s1_52 / s13_40) * s17_66) / s12_47));
-		x0_86 = (uint64) printf("sin(%.4f): %.4f\n", 0x00);
-		s9_24 += g_r0820;
+		x0_90 = (uint64) printf("sin(%.4f): %.4f\n", (real64) s9_24, (real64) __fmaddf(1.0F - s1_52 / 6.0F, s9_24, (1.0F - s1_52 / s11_32) * s16_65 / s10_50 + (((1.0F - s1_52 / s15_48) * (s6_59 * s17_66)) / s14_49 + ((1.0F - s1_52 / s13_40) * s17_66) / s12_47)));
+		s9_24 += 0.19634955F;
 	}
 }
 
@@ -109,10 +108,10 @@ real32 g_r0814 = 362880.0F; // 0000000000000814
 real32 g_r0818 = 42.0F; // 0000000000000818
 real32 g_r081C = 120.0F; // 000000000000081C
 real32 g_r0820 = 0.19634955F; // 0000000000000820
-// 0000000000000824: void _start(Register (ptr64 Eq_83) x0, Stack Eq_84 qwArg00)
-void _start(void (* x0)(), Eq_84 qwArg00)
+// 0000000000000824: void _start(Register (ptr64 Eq_86) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -157,7 +156,7 @@ void register_tm_clones()
 // 00000000000008E8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_146 * x19_12 = &g_t11000;
+	struct Eq_151 * x19_12 = &g_t11000;
 	if ((word32) g_b11038 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -193,7 +192,7 @@ void sin(real32 s0)
 	real32 s1_18 = s1_4 * s1_4;
 	real32 s6_19 = s0 * s1_18;
 	real32 s6_24 = s1_18 * s6_19;
-	__fmaddf(s0, 1.0F - s1_4 / 6.0F, (1.0F - s1_4 / g_r09F4) * s6_19 / g_r09F8 + (((1.0F - s1_4 / g_r09E4) * (s1_18 * s6_24)) / g_r09E8 + ((1.0F - s1_4 / g_r09EC) * s6_24) / g_r09F0));
+	__fmaddf(s0, 1.0F - s1_4 / 6.0F, (1.0F - s1_4 / 42.0F) * s6_19 / 120.0F + (((1.0F - s1_4 / 210.0F) * (s1_18 * s6_24)) / 6.227021e+09F + ((1.0F - s1_4 / 110.0F) * s6_24) / 362880.0F));
 }
 
 real32 g_r09E4 = 210.0F; // 00000000000009E4

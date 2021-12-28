@@ -32,7 +32,6 @@
 0804A6E4: warning: Unable to resolve imported reference log.
 0804A594: warning: Unable to resolve imported reference log10.
 0804A0E4: warning: Unable to resolve imported reference modf.
-0804A254: warning: Unable to resolve imported reference sqrt.
 0804A024: warning: Unable to resolve imported reference pow.
 0804A7F4: warning: Unable to resolve imported reference sin.
 08049F34: warning: Unable to resolve imported reference sinh.
@@ -135,141 +134,13 @@
 0804A4B4: warning: Unable to resolve imported reference chdir.
 0804A3D4: warning: Unable to resolve imported reference alarm.
 08059851: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-080595A9: warning: Procedure camlPrintf__scan_fmt_1144 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08059A16: warning: Procedure camlPrintf__list_iter_i_1201 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08059B08: warning: Procedure camlPrintf__mkprintf_1345 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0805A4E9: warning: Procedure camlPrintf__fun_1600 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805BC77: warning: Procedure camlPrintf__fun_1600 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805BFAC: warning: Procedure camlPrintf__get_buff_1402 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08058D72: warning: Procedure camlPrintf__sub_fmt_1124 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08055625: warning: Procedure camlString__blit_1056 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805B011: warning: Procedure camlPrintf__index_of_int_1037 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-080586B9: warning: Procedure camlBuffer__add_char_1072 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805B521: warning: Procedure camlPrintf__extract_format_float_1110 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805B1E9: warning: Procedure camlPrintf__parse_string_conversion_1067 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0805B317: warning: Procedure camlPrintf__format_string_1080 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805A561: warning: Procedure camlPrintf__get_arg_1288 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805B81D: warning: Procedure camlPrintf__list_iter_i_1201 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 08058F4B: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-08058E9B: warning: Procedure camlPrintf__fun_1565 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08059519: warning: Procedure camlPrintf__sub_fmt_1124 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805939C: warning: Procedure camlPrintf__skip_positional_spec_1090 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805835E: warning: Procedure camlBuffer__add_substitute_1122 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-080581CD: warning: Procedure camlBuffer__advance_to_non_alpha_1108 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 080581A8: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-080580EA: warning: Procedure camlBuffer__advance_to_closing_1098 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0804F915: warning: Procedure camlBuffer__output_buffer_1094 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08055568: warning: Procedure camlString__sub_1046 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804FAB0: warning: Procedure camlPervasives__really_input_1235 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-080584E5: warning: Procedure camlBuffer__nth_1057 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-080584A5: warning: Procedure camlBuffer__blit_1051 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08058458: warning: Procedure camlBuffer__sub_1046 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08058B74: warning: Procedure camlBuffer__add_substitute_1122 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08058983: warning: Procedure camlBuffer__advance_to_non_alpha_1108 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08057B67: warning: Procedure fn08057B00 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08057AE8: warning: Procedure camlHashtbl__replace_1112 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-08057AF9: warning: Procedure camlHashtbl__replace_1112 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-080566BA: warning: Procedure camlHashtbl__insert_bucket_1068 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-080574A3: warning: Procedure camlHashtbl__replace_1112 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-080574B8: warning: Procedure camlHashtbl__replace_1112 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-080578F9: warning: Procedure camlHashtbl__find_1093 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805784A: warning: Procedure camlHashtbl__find_1093 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-080575A8: warning: Procedure camlHashtbl__add_1074 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-080575BD: warning: Procedure camlHashtbl__add_1074 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 08057205: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
 08057014: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-08057187: warning: Procedure fn08057120 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08057108: warning: Procedure camlHashtbl__replace_1217 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-08057119: warning: Procedure camlHashtbl__replace_1217 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
 08056F35: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-08056EC9: warning: Procedure camlHashtbl__find_1198 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08056E11: warning: Procedure camlHashtbl__find_1198 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 08056B98: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-08056C29: warning: Procedure camlHashtbl__remove_1185 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08056B18: warning: Procedure camlHashtbl__add_1179 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-08056B2D: warning: Procedure camlHashtbl__add_1179 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-08057C04: warning: Procedure camlHashtbl__mem_1122 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805724E: warning: Procedure camlHashtbl__mem_1227 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805613F: warning: Procedure camlSys__catch_break_1082 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805615A: warning: Procedure camlSys__catch_break_1082 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08055F95: warning: Procedure camlString__rcontains_from_1140 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08055F05: warning: Procedure camlString__contains_1137 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08055F17: warning: Procedure camlString__contains_1137 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08055E75: warning: Procedure camlString__rindex_from_1128 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08055DB5: warning: Procedure camlString__index_from_1116 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08055CE7: warning: Procedure camlString__uncapitalize_1106 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08055C57: warning: Procedure camlString__lowercase_1098 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 08055940: error: Parameter 'low' mustn't be larger than 'high'.
-080555B5: warning: Procedure camlString__fill_1051 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08055175: warning: Procedure camlChar__chr_1032 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08054F8A: warning: Procedure camlList__stable_sort_1248 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08054D38: warning: Procedure camlList__combine_1226 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-080547B8: warning: Procedure camlList__exists2_1153 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08054748: warning: Procedure camlList__for_all2_1145 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805462A: warning: Procedure camlList__fold_right2_1128 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-080545D8: warning: Procedure camlList__fold_left2_1119 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08054578: warning: Procedure camlList__iter2_1111 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08053438: warning: Procedure camlList__rev_map2_1099 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-080544B8: warning: Procedure camlList__map2_1090 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08054425: warning: Procedure camlList__fold_right_1084 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0805428F: warning: Procedure camlList__flatten_1058 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805331F: warning: Procedure camlList__nth_1042 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-080541E5: warning: Procedure camlList__tl_1039 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-080541C5: warning: Procedure camlList__hd_1036 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08054122: warning: Procedure camlList__sort_1271 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08053C62: warning: Procedure camlList__rev_sort_1272 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08054C14: warning: Procedure camlList__partition_1212 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805450D: warning: Procedure camlList__rev_map2_1099 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805435D: warning: Procedure camlList__rev_map_1067 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08052274: warning: Procedure camlArray__sortto_1217 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-08052349: warning: Procedure camlArray__sortto_1217 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-080531D5: warning: Procedure camlArray__stable_sort_1188 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-080518BD: warning: Procedure camlArray__stable_sort_1188 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08050B77: warning: Procedure camlArray__maxson_1155 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-08050C7E: warning: Procedure camlArray__maxson_1155 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-08050C69: warning: Procedure camlArray__maxson_1155 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-08050F0D: warning: Procedure camlArray__trickledown_1160 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0805100C: warning: Procedure camlArray__trickle_1165 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-080513DD: warning: Procedure camlArray__trickleup_1178 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0805137E: warning: Procedure camlArray__trickleup_1178 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-080528E8: warning: Procedure camlArray__of_list_1130 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0805210B: warning: Procedure camlArray__fill_1087 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-08051F20: warning: Procedure camlArray__sub_1081 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-08052040: warning: Procedure camlArray__sub_1081 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-08050836: warning: Procedure camlArray__find_init_1077 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-080530D8: warning: Procedure camlArray__stable_sort_1188 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804F0CA: warning: Procedure camlPervasives__string_of_float_1140 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804FDF8: warning: Procedure camlPervasives__read_line_1288 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804FA95: warning: Procedure camlPervasives__input_1224 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804FA3C: warning: Procedure camlPervasives__open_in_bin_1220 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0805885A: warning: Procedure camlBuffer__output_buffer_1094 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804F86C: warning: Procedure camlPervasives__open_out_bin_1181 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804F7B3: warning: Procedure camlPervasives__string_of_float_1140 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804F715: warning: Procedure camlPervasives__bool_of_string_1129 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0804F705: warning: Procedure camlPervasives__bool_of_string_1129 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0804F695: warning: Procedure camlPervasives__char_of_int_1120 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804E6F5: warning: Procedure camlUnix__entry previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0804E734: warning: Procedure fn0804E6FA previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804E734: warning: Procedure fn0804E6FA previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804E71E: warning: Procedure fn0804E6FA previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804D8F5: warning: Procedure camlUnix__open_proc_full_1975 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0804D501: warning: Procedure camlUnix__open_proc_1949 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0804CFBD: warning: Procedure fn0804CF00 previously had a return address of 0 bytes on the stack, but now seems to have a return address of 4 bytes on the stack.
-0804CE43: warning: Procedure camlUnix__getnameinfo_1781 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804D044: warning: Procedure camlUnix__getnameinfo_1781 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804CAD6: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804CB24: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804CB5D: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804CB79: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804CC09: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804CD3C: warning: Procedure camlUnix__getaddrinfo_1751 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804C738: warning: Procedure camlUnix__sendto_1576 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804C6D5: warning: Procedure camlUnix__send_1570 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804C685: warning: Procedure camlUnix__recvfrom_1564 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804C635: warning: Procedure camlUnix__recv_1558 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804C475: warning: Procedure camlUnix__single_write_1247 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804C425: warning: Procedure camlUnix__write_1242 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0804C3D5: warning: Procedure camlUnix__read_1237 previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0804A8E4: warning: Unable to resolve imported reference ceil.
 0804A8C4: warning: Unable to resolve imported reference sigsuspend.
 0804A8B4: warning: Unable to resolve imported reference fchmod.
@@ -330,7 +201,6 @@
 0804A2A4: warning: Unable to resolve imported reference symlink.
 0804A294: warning: Unable to resolve imported reference tcflush.
 0804A274: warning: Unable to resolve imported reference gethostbyaddr_r.
-0804A254: warning: Unable to resolve imported reference sqrt.
 0804A224: warning: Unable to resolve imported reference truncate64.
 0804A1F4: warning: Unable to resolve imported reference getprotobynumber.
 0804A1E4: warning: Unable to resolve imported reference __fpclassify.
@@ -367,17 +237,85 @@
 08049E34: warning: Unable to resolve imported reference tcflow.
 08049DE4: warning: Unable to resolve imported reference fmod.
 08049DC4: warning: Unable to resolve imported reference ldexp.
-Error: An error occurred during decompilation.
+/home/hawk/kza/decompiler-subjects.clean/from_shootout/sieve_ocaml/ia32_elf/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_shootout/sieve_ocaml/ia32_elf/subject.exe.
     Offsets not matching? SP(0)
-       at Reko.Analysis.CallApplicationBuilder.VisitFpuStackStorage(FpuStackStorage fpu) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 116
-   at Reko.Analysis.CallApplicationBuilder.With(Dictionary`2 map, Storage stg) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 93
-   at Reko.Analysis.CallApplicationBuilder.WithUses(Storage stg) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 81
-   at Reko.Analysis.CallApplicationBuilder.Bind(Identifier id) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 64
-   at Reko.Core.ApplicationBuilder.BindArguments(Identifier[] parameters, Boolean isVariadic, ProcedureCharacteristics chr) in /Users/runner/work/reko/reko/src/Core/ApplicationBuilder.cs:line 143
-   at Reko.Core.ApplicationBuilder.CreateInstruction(FunctionType sigCallee, ProcedureCharacteristics chr) in /Users/runner/work/reko/reko/src/Core/ApplicationBuilder.cs:line 93
-   at Reko.Analysis.CallRewriter.RewriteCall(SsaState ssaCaller, Statement stm, CallInstruction call) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 378
-   at Reko.Analysis.CallRewriter.RewriteCalls(SsaState ssaCaller) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 421
-   at Reko.Analysis.CallRewriter.Rewrite(IPlatform platform, List`1 ssts, ProgramDataFlow summaries, DecompilerEventListener eventListener) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 84
-   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 156
-   at Reko.Decompiler.AnalyzeDataFlow() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 110
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /Users/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 209
+       at Reko.Analysis.CallApplicationBuilder.VisitFpuStackStorage(FpuStackStorage fpu) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 116
+   at Reko.Analysis.CallApplicationBuilder.With(Dictionary`2 map, Storage stg) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 93
+   at Reko.Analysis.CallApplicationBuilder.WithUses(Storage stg) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 81
+   at Reko.Analysis.CallApplicationBuilder.Bind(Identifier id) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallApplicationBuilder.cs:line 64
+   at Reko.Core.ApplicationBuilder.BindArguments(Identifier[] parameters, Boolean isVariadic, ProcedureCharacteristics chr) in /home/runner/work/reko/reko/src/Core/ApplicationBuilder.cs:line 143
+   at Reko.Core.ApplicationBuilder.CreateInstruction(FunctionType sigCallee, ProcedureCharacteristics chr) in /home/runner/work/reko/reko/src/Core/ApplicationBuilder.cs:line 93
+   at Reko.Analysis.CallRewriter.RewriteCall(SsaState ssaCaller, Statement stm, CallInstruction call) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 378
+   at Reko.Analysis.CallRewriter.RewriteCalls(SsaState ssaCaller) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 421
+   at Reko.Analysis.CallRewriter.Rewrite(IPlatform platform, List`1 ssts, ProgramDataFlow summaries, DecompilerEventListener eventListener) in /home/runner/work/reko/reko/src/Decompiler/Analysis/CallRewriter.cs:line 84
+   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /home/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 156
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 112
+l0804A970: warning: Phi functions will be ignored by type analysis. This may be caused by a failure in a previous stage of the decompilation.
+08049E0A: warning: Expected sizes of arrays to have been determined by now
+08049E1A: warning: Expected sizes of arrays to have been determined by now
+0805E5E0: warning: Expected sizes of arrays to have been determined by now
+0805FFA8: warning: Expected sizes of arrays to have been determined by now
+08070A30: warning: Expected sizes of arrays to have been determined by now
+08070A54: warning: Expected sizes of arrays to have been determined by now
+08070AFC: warning: Expected sizes of arrays to have been determined by now
+08070C60: warning: Expected sizes of arrays to have been determined by now
+08070C70: warning: Expected sizes of arrays to have been determined by now
+08070E08: warning: Expected sizes of arrays to have been determined by now
+08070EE0: warning: Expected sizes of arrays to have been determined by now
+08070F30: warning: Expected sizes of arrays to have been determined by now
+0807124C: warning: Expected sizes of arrays to have been determined by now
+08071270: warning: Expected sizes of arrays to have been determined by now
+08071704: warning: Expected sizes of arrays to have been determined by now
+08071754: warning: Expected sizes of arrays to have been determined by now
+08072008: warning: Expected sizes of arrays to have been determined by now
+0807225C: warning: Expected sizes of arrays to have been determined by now
+08072270: warning: Expected sizes of arrays to have been determined by now
+08072298: warning: Expected sizes of arrays to have been determined by now
+080728E4: warning: Expected sizes of arrays to have been determined by now
+08077E58: warning: Expected sizes of arrays to have been determined by now
+080790D4: warning: Expected sizes of arrays to have been determined by now
+080799A8: warning: Expected sizes of arrays to have been determined by now
+08079C24: warning: Expected sizes of arrays to have been determined by now
+08079C8C: warning: Expected sizes of arrays to have been determined by now
+08079F00: warning: Expected sizes of arrays to have been determined by now
+08079F68: warning: Expected sizes of arrays to have been determined by now
+0807DB9C: warning: Expected sizes of arrays to have been determined by now
+0807DBA4: warning: Expected sizes of arrays to have been determined by now
+080820C0: warning: Expected sizes of arrays to have been determined by now
+08082200: warning: Expected sizes of arrays to have been determined by now
+08082620: warning: Expected sizes of arrays to have been determined by now
+08082760: warning: Expected sizes of arrays to have been determined by now
+08049E0A: warning: Expected sizes of arrays to have been determined by now
+08049E1A: warning: Expected sizes of arrays to have been determined by now
+0805E5E0: warning: Expected sizes of arrays to have been determined by now
+0805FFA8: warning: Expected sizes of arrays to have been determined by now
+08070A30: warning: Expected sizes of arrays to have been determined by now
+08070A54: warning: Expected sizes of arrays to have been determined by now
+08070AFC: warning: Expected sizes of arrays to have been determined by now
+08070C60: warning: Expected sizes of arrays to have been determined by now
+08070C70: warning: Expected sizes of arrays to have been determined by now
+08070E08: warning: Expected sizes of arrays to have been determined by now
+08070EE0: warning: Expected sizes of arrays to have been determined by now
+08070F30: warning: Expected sizes of arrays to have been determined by now
+0807124C: warning: Expected sizes of arrays to have been determined by now
+08071270: warning: Expected sizes of arrays to have been determined by now
+08071704: warning: Expected sizes of arrays to have been determined by now
+08071754: warning: Expected sizes of arrays to have been determined by now
+08072008: warning: Expected sizes of arrays to have been determined by now
+0807225C: warning: Expected sizes of arrays to have been determined by now
+08072270: warning: Expected sizes of arrays to have been determined by now
+08072298: warning: Expected sizes of arrays to have been determined by now
+080728E4: warning: Expected sizes of arrays to have been determined by now
+08077E58: warning: Expected sizes of arrays to have been determined by now
+080790D4: warning: Expected sizes of arrays to have been determined by now
+080799A8: warning: Expected sizes of arrays to have been determined by now
+08079C24: warning: Expected sizes of arrays to have been determined by now
+08079C8C: warning: Expected sizes of arrays to have been determined by now
+08079F00: warning: Expected sizes of arrays to have been determined by now
+08079F68: warning: Expected sizes of arrays to have been determined by now
+0807DB9C: warning: Expected sizes of arrays to have been determined by now
+0807DBA4: warning: Expected sizes of arrays to have been determined by now
+080820C0: warning: Expected sizes of arrays to have been determined by now
+08082200: warning: Expected sizes of arrays to have been determined by now
+08082620: warning: Expected sizes of arrays to have been determined by now
+08082760: warning: Expected sizes of arrays to have been determined by now

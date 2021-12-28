@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -124,46 +124,43 @@ void __do_global_dtors_aux()
 // 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4005D8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4005D8 = null; // 00000000004005D8
-// 00000000004005E0: void f(Register up32 w0, Register up32 w1)
-void f(up32 w0, up32 w1)
+word64 g_qw4005D8 = 0x00; // 00000000004005D8
+// 00000000004005E0: void f(Register Eq_101 w0, Register Eq_102 w1)
+void f(Eq_101 w0, Eq_102 w1)
 {
-	up32 w0 = (word32) x0;
+	Eq_101 w0 = (word32) x0;
+	Eq_102 w1 = (word32) x1;
 	if (w0 <= 0x07)
-		x0_26 = (uint64) printf("%d signed in range\n", 0x00);
+		x0_28 = (uint64) printf("%d signed in range\n", w0);
 	if (w1 > 0x07)
 		return;
-	x0_55 = (uint64) printf("%d unsigned in range\n", 0x00);
+	x0_59 = (uint64) printf("%d unsigned in range\n", w1);
 }
 
 // 0000000000400640: void main()
 void main()
 {
-	x0_18 = (uint64) printf("%d signed in range\n", 0x00);
-	x0_23 = (uint64) printf("%d unsigned in range\n", 0x00);
-	x0_26 = (uint64) printf("%d signed in range\n", 0x00);
-	x0_29 = (uint64) printf("%d unsigned in range\n", 0x00);
-	x0_32 = (uint64) printf("%d signed in range\n", 0x00);
-	x0_35 = (uint64) printf("%d unsigned in range\n", 0x00);
-	x0_38 = (uint64) printf("%d signed in range\n", 0x00);
-	x0_41 = (uint64) printf("%d unsigned in range\n", 0x00);
-	x0_44 = (uint64) printf("%d signed in range\n", 0x00);
-	x0_47 = (uint64) printf("%d unsigned in range\n", 0x00);
-	x0_50 = (uint64) printf("%d signed in range\n", 0x00);
-	x0_54 = (uint64) printf("%d unsigned in range\n", 0x00);
+	x0_21 = (uint64) printf("%d signed in range\n", 0x02);
+	x0_28 = (uint64) printf("%d unsigned in range\n", 0x02);
+	x0_33 = (uint64) printf("%d signed in range\n", 0x03);
+	x0_38 = (uint64) printf("%d unsigned in range\n", 0x03);
+	x0_43 = (uint64) printf("%d signed in range\n", 0x04);
+	x0_48 = (uint64) printf("%d unsigned in range\n", 0x04);
+	x0_53 = (uint64) printf("%d signed in range\n", 0x05);
+	x0_58 = (uint64) printf("%d unsigned in range\n", 0x05);
+	x0_63 = (uint64) printf("%d signed in range\n", 0x06);
+	x0_68 = (uint64) printf("%d unsigned in range\n", 0x06);
+	x0_73 = (uint64) printf("%d signed in range\n", 0x07);
+	x0_78 = (uint64) printf("%d unsigned in range\n", 0x07);
 }
 
 // 0000000000400700: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

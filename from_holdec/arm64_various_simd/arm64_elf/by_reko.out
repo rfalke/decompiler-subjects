@@ -1,15 +1,6 @@
 === Using options:--aggressive-branch-removal
 00000000000006B0: warning: Unable to resolve imported reference __register_frame_info.
-0000000000000820: warning: Unable to determine format string for call to 'printf'.
-0000000000000848: warning: Unable to determine format string for call to 'printf'.
-0000000000000854: warning: Unable to determine format string for call to 'printf'.
-00000000000008D0: warning: Unable to determine format string for call to 'printf'.
-000000000000087C: warning: Unable to determine format string for call to 'printf'.
-0000000000000894: warning: Unable to determine format string for call to 'printf'.
-000000000000093C: warning: Unable to determine format string for call to 'printf'.
-0000000000000900: warning: Unable to determine format string for call to 'printf'.
-0000000000000968: warning: Unable to determine format string for call to 'printf'.
-0000000000000A60: warning: Unable to determine format string for call to 'printf'.
-0000000000000A74: warning: Unable to determine format string for call to 'printf'.
 0000000000000680: warning: Unable to resolve imported reference __cxa_finalize.
 0000000000000690: warning: Unable to resolve imported reference __deregister_frame_info.
+0000000000012008: warning: Expected sizes of arrays to have been determined by now
+0000000000012008: warning: Expected sizes of arrays to have been determined by now

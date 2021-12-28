@@ -2,5 +2,3 @@
 080483A3: warning: Call target address 00000000 is invalid.
 08048430: warning: Call target address 00000000 is invalid.
 080483DD: warning: Call target address 00000000 is invalid.
-0804841B: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08048436: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.

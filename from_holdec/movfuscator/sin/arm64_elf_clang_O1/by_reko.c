@@ -70,10 +70,10 @@ word32 g_dw4008D8 = 0x4049B3B2; // 00000000004008D8
 
 #include "subject.h"
 
-// 00000000004005E0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004005E0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400610, qwArg00, (char *) fp + 8, g_ptr400618, g_ptr400620, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400610, (int32) qwArg00, (char *) fp + 8, g_ptr400618, g_ptr400620, x0, fp);
 	abort();
 }
 
@@ -133,42 +133,40 @@ void __do_global_dtors_aux()
 // 00000000004006F0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DE0 != 0x00)
+	if (g_qw410DE0 != 0x00 && g_qw400728 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400728;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400728 = null; // 0000000000400728
-// 0000000000400730: void main(Register word64 x20, Register word64 x30, Register word64 d8, Register word64 q8_64_64, Register word64 q9_64_64, Register word64 d10, Register word64 d11)
-void main(word64 x20, word64 x30, word64 d8, word64 q8_64_64, word64 q9_64_64, word64 d10, word64 d11)
+word64 g_qw400728 = 0x00; // 0000000000400728
+// 0000000000400730: void main(Register word64 x20, Register word64 x30, Register word64 q1_64_64, Register word64 d8, Register word64 q8_64_64, Register word64 q9_64_64, Register word64 d10, Register word64 d11)
+void main(word64 x20, word64 x30, word64 q1_64_64, word64 d8, word64 q8_64_64, word64 q9_64_64, word64 d10, word64 d11)
 {
-	word32 d11_32_32_102 = SLICE(d11, word32, 32);
-	word32 d10_32_32_104 = SLICE(d10, word32, 32);
-	word32 d8_32_32_97 = SLICE(d8, word32, 32);
+	word32 d11_32_32_104 = SLICE(d11, word32, 32);
+	word32 d10_32_32_106 = SLICE(d10, word32, 32);
+	word32 d8_32_32_99 = SLICE(d8, word32, 32);
 	ptr64 x29_27 = fp + ~0x07;
 	char * x19_35 = "sin(%.4f): %.4f\n";
-	word128 q8_36 = SEQ(q8_64_64, d8_32_32_97, g_dw4008D0);
-	word64 d11_103 = SEQ(d11_32_32_102, g_dw4008D8);
-	word64 d10_105 = SEQ(d10_32_32_104, g_dw4008D4);
+	word128 q8_100 = SEQ(q8_64_64, d8_32_32_99, g_dw4008D0);
+	word64 d11_105 = SEQ(d11_32_32_104, g_dw4008D8);
+	word64 d10_107 = SEQ(d10_32_32_106, g_dw4008D4);
 	do
 	{
-		q8_101 = SEQ(q8_64_64_99, d8_32_32_100, s8_73);
-		word64 q8_64_64_99 = SLICE(q8_36, word64, 64);
+		q8_103 = SEQ(q8_64_64_101, d8_32_32_102, s8_75);
+		word64 q8_64_64_101 = SLICE(q8_100, word64, 64);
+		real64 d9_51;
 		word64 d8_52;
+		word32 s0_60;
 		sinf();
-		word32 d8_32_32_100 = SLICE(d8_52, word32, 32);
-		x0_69 = (uint64) printf(x19_35, 0x00);
-		Eq_131 s8_73 = (word32) d8_52 + (word32) d10_105;
-		q8_36 = q8_101;
-	} while (s8_73 <= (word32) d11_103);
+		word32 d8_32_32_102 = SLICE(d8_52, word32, 32);
+		x0_71 = (uint64) printf(x19_35, d9_51, (real64) s0_60);
+		Eq_135 s8_75 = (word32) d8_52 + (word32) d10_107;
+		q8_100 = q8_103;
+	} while (s8_75 <= (word32) d11_105);
 }
 
 // 00000000004007A4: void sin()

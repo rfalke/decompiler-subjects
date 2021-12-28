@@ -9,8 +9,8 @@ void EH_frame0(byte al, word56 rax_56_8, ci8 * rcx, struct Eq_5 * rdx, byte bl, 
 {
 	Eq_8 edx_28 = (word32) rdx;
 	byte dl_33 = (byte) rdx;
-	byte al_5 = (bool) C + al;
-	struct Eq_15 * rax_7 = SEQ(rax_56_8, al_5);
+	byte al_5 = al + (byte) C;
+	struct Eq_16 * rax_7 = SEQ(rax_56_8, al_5);
 	rax_7->b0000 += al_5;
 	rax_7->b0000 += al_5;
 	rax_7->b0000 += al_5;
@@ -22,7 +22,7 @@ void EH_frame0(byte al, word56 rax_56_8, ci8 * rcx, struct Eq_5 * rdx, byte bl, 
 	else
 	{
 		rax_7->b0000 = (byte) ((word32) edx_28 + rax_7->b0000);
-		struct Eq_70 * rax_32 = SEQ(rax_56_8, al_5 | 0x07);
+		struct Eq_71 * rax_32 = SEQ(rax_56_8, al_5 | 0x07);
 		rax_32->b24000001 |= dl_33;
 		rax_32->b0000 += al_5 | 0x07;
 		null[rax_32].b0000 = null[rax_32].b0000 + bl;
@@ -37,7 +37,7 @@ void _f.eh(word56 rax_56_8)
 	cu8 * rax_6 = SEQ(rax_56_8, 0x00);
 	cu8 v7_8 = *rax_6;
 	*rax_6 = v7_8;
-	byte al_12 = 0x00 - (v7_8 < 0x00);
+	byte al_12 = 0x00 - (byte) (v7_8 < 0x00);
 	byte * rax_13 = SEQ(rax_56_8, al_12);
 	*rax_13 += al_12;
 	fn0000000000000080();

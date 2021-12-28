@@ -5,7 +5,7 @@
 #include "subject.h"
 
 byte g_b8050024 = 0x00; // 08050024
-Eq_1123 g_t8050028 = // 08050028
+Eq_1122 g_t8050028 = // 08050028
 	{
 		0x00
 	};
@@ -103,6 +103,7 @@ real64 g_r804C048 = 7757013.73512878; // 0804C048
 real64 g_r804C050 = 0.8; // 0804C050
 real64 g_r804C058 = 2.8; // 0804C058
 real64 g_r804C060 = 2.0; // 0804C060
+real64 g_r804C070 = 256.0; // 0804C070
 real64 g_r804C078 = 255.0; // 0804C078
 char g_str804C080[] = "F2XM1(-1):   should=   -0.500000/  -5.000000e-01 is=%12f/%15e\n"; // 0804C080
 char g_str804C0BF[] = "F2XM1(0):    should=    0.000000/   0.000000e+00 is=%12f/%15e\n"; // 0804C0BF
@@ -122,7 +123,7 @@ int16 g_w804C3D4 = 1000; // 0804C3D4
 char g_str804C3D8[] = "FBSTP(%f) should=0x44 0x33 0x22 0x11 0x90 0x78 0x56 0x34 0x12 0x80 is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n"; // 0804C3D8
 real64 g_r804C468 = 1.2345678901122334e+17; // 0804C468
 char g_str804C470[] = "FBLD(0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x): should=-123456789088776656.000000/  -1.234568e+17 is=%12f/%15e\n"; // 0804C470
-Eq_1177 g_t804C4FD = // 0804C4FD
+Eq_1176 g_t804C4FD = // 0804C4FD
 	{
 		0x55
 	};
@@ -354,8 +355,8 @@ void frame_dummy()
 	register_tm_clones();
 }
 
-// 080491A6: void main(Register cui16 FPUF, Stack word32 dwArg04, FpuStack real64 rArg0, FpuStack real64 rArg5)
-void main(cui16 FPUF, word32 dwArg04, real64 rArg0, real64 rArg5)
+// 080491A6: void main(Register cui16 FPUF, Stack word32 dwArg04, FpuStack real64 rArg10, FpuStack real64 rArg15)
+void main(cui16 FPUF, word32 dwArg04, real64 rArg10, real64 rArg15)
 {
 	__align(fp);
 	F2XM1();
@@ -367,7 +368,7 @@ void main(cui16 FPUF, word32 dwArg04, real64 rArg0, real64 rArg5)
 			__assert_fail("top==0", "source.c", 0x30, "main");
 	}
 	putchar(0x0A);
-	FABS(g_r804C030);
+	FABS(0.5);
 	int32 eax_75 = TOP(FPUF);
 	if (eax_75 != 0x00)
 	{
@@ -376,7 +377,7 @@ void main(cui16 FPUF, word32 dwArg04, real64 rArg0, real64 rArg5)
 			__assert_fail("top==0", "source.c", 0x34, "main");
 	}
 	putchar(0x0A);
-	FADD(g_r804C030);
+	FADD(0.5);
 	int32 eax_116 = TOP(FPUF);
 	if (eax_116 != 0x00)
 	{
@@ -403,7 +404,7 @@ void main(cui16 FPUF, word32 dwArg04, real64 rArg0, real64 rArg5)
 			__assert_fail("top==0", "source.c", 0x40, "main");
 	}
 	putchar(0x0A);
-	FCHS(g_r804C038);
+	FCHS(-0.5);
 	int32 eax_223 = TOP(FPUF);
 	if (eax_223 != 0x00)
 	{
@@ -428,240 +429,242 @@ void main(cui16 FPUF, word32 dwArg04, real64 rArg0, real64 rArg5)
 		if (eax_292 != 0x00)
 			__assert_fail("top==0", "source.c", 0x4A, "main");
 	}
-	cui16 FPUF_329 = FCOM(SLICE(putchar(0x0A), word16, 16), g_r804C030);
-	int32 eax_336 = TOP(FPUF_329);
-	if (eax_336 != 0x00)
+	putchar(0x0A);
+	cui16 FPUF_328 = FCOM(0.5);
+	int32 eax_335 = TOP(FPUF_328);
+	if (eax_335 != 0x00)
 	{
-		printf("top=%d\n", eax_336);
-		if (eax_336 != 0x00)
+		printf("top=%d\n", eax_335);
+		if (eax_335 != 0x00)
 			__assert_fail("top==0", "source.c", 0x4E, "main");
 	}
 	putchar(0x0A);
-	FCOMI(FPUF_329);
-	int32 eax_378 = TOP(FPUF_329);
-	if (eax_378 != 0x00)
+	FCOMI(0.5);
+	int32 eax_377 = TOP(FPUF_328);
+	if (eax_377 != 0x00)
 	{
-		printf("top=%d\n", eax_378);
-		if (eax_378 != 0x00)
+		printf("top=%d\n", eax_377);
+		if (eax_377 != 0x00)
 			__assert_fail("top==0", "source.c", 0x52, "main");
 	}
 	putchar(0x0A);
-	FCOS(g_r804C030);
-	int32 eax_419 = TOP(FPUF_329);
-	if (eax_419 != 0x00)
+	FCOS(0.5);
+	int32 eax_418 = TOP(FPUF_328);
+	if (eax_418 != 0x00)
 	{
-		printf("top=%d\n", eax_419);
-		if (eax_419 != 0x00)
+		printf("top=%d\n", eax_418);
+		if (eax_418 != 0x00)
 			__assert_fail("top==0", "source.c", 0x56, "main");
 	}
 	putchar(0x0A);
-	FDIV(g_r804C030);
-	int32 eax_460 = TOP(FPUF_329);
-	if (eax_460 != 0x00)
+	FDIV(0.5);
+	int32 eax_459 = TOP(FPUF_328);
+	if (eax_459 != 0x00)
 	{
-		printf("top=%d\n", eax_460);
-		if (eax_460 != 0x00)
+		printf("top=%d\n", eax_459);
+		if (eax_459 != 0x00)
 			__assert_fail("top==0", "source.c", 0x5A, "main");
 	}
 	putchar(0x0A);
-	FDIVR(g_r804C030);
-	int32 eax_501 = TOP(FPUF_329);
-	if (eax_501 != 0x00)
+	FDIVR(0.5);
+	int32 eax_500 = TOP(FPUF_328);
+	if (eax_500 != 0x00)
 	{
-		printf("top=%d\n", eax_501);
-		if (eax_501 != 0x00)
+		printf("top=%d\n", eax_500);
+		if (eax_500 != 0x00)
 			__assert_fail("top==0", "source.c", 0x5E, "main");
 	}
 	putchar(0x0A);
 	FILD();
-	int32 eax_533 = TOP(FPUF_329);
-	if (eax_533 != 0x00)
+	int32 eax_532 = TOP(FPUF_328);
+	if (eax_532 != 0x00)
 	{
-		printf("top=%d\n", eax_533);
-		if (eax_533 != 0x00)
+		printf("top=%d\n", eax_532);
+		if (eax_532 != 0x00)
 			__assert_fail("top==0", "source.c", 0x62, "main");
 	}
 	putchar(0x0A);
 	FIST();
-	int32 eax_575 = TOP(FPUF_329);
-	if (eax_575 != 0x00)
+	int32 eax_574 = TOP(FPUF_328);
+	if (eax_574 != 0x00)
 	{
-		printf("top=%d\n", eax_575);
-		if (eax_575 != 0x00)
+		printf("top=%d\n", eax_574);
+		if (eax_574 != 0x00)
 			__assert_fail("top==0", "source.c", 0x66, "main");
 	}
 	putchar(0x0A);
 	FLD();
-	int32 eax_607 = TOP(FPUF_329);
-	if (eax_607 != 0x00)
+	int32 eax_606 = TOP(FPUF_328);
+	if (eax_606 != 0x00)
 	{
-		printf("top=%d\n", eax_607);
-		if (eax_607 != 0x00)
+		printf("top=%d\n", eax_606);
+		if (eax_606 != 0x00)
 			__assert_fail("top==0", "source.c", 0x6A, "main");
 	}
 	putchar(0x0A);
 	FLDC();
-	int32 eax_639 = TOP(FPUF_329);
-	if (eax_639 != 0x00)
+	int32 eax_638 = TOP(FPUF_328);
+	if (eax_638 != 0x00)
 	{
-		printf("top=%d\n", eax_639);
-		if (eax_639 != 0x00)
+		printf("top=%d\n", eax_638);
+		if (eax_638 != 0x00)
 			__assert_fail("top==0", "source.c", 110, "main");
 	}
 	putchar(0x0A);
-	FMUL(g_r804C030);
-	int32 eax_682 = TOP(FPUF_329);
-	if (eax_682 != 0x00)
+	FMUL(0.5);
+	int32 eax_681 = TOP(FPUF_328);
+	if (eax_681 != 0x00)
 	{
-		printf("top=%d\n", eax_682);
-		if (eax_682 != 0x00)
+		printf("top=%d\n", eax_681);
+		if (eax_681 != 0x00)
 			__assert_fail("top==0", "source.c", 114, "main");
 	}
 	putchar(0x0A);
-	FPATAN(g_r804C030);
-	int32 eax_723 = TOP(FPUF_329);
-	if (eax_723 != 0x00)
+	FPATAN(0.5);
+	int32 eax_722 = TOP(FPUF_328);
+	if (eax_722 != 0x00)
 	{
-		printf("top=%d\n", eax_723);
-		if (eax_723 != 0x00)
+		printf("top=%d\n", eax_722);
+		if (eax_722 != 0x00)
 			__assert_fail("top==0", "source.c", 118, "main");
 	}
 	putchar(0x0A);
-	FPREM(g_r804C048);
-	int32 eax_764 = TOP(FPUF_329);
-	if (eax_764 != 0x00)
+	FPREM(7757013.73512878);
+	int32 eax_763 = TOP(FPUF_328);
+	if (eax_763 != 0x00)
 	{
-		printf("top=%d\n", eax_764);
-		if (eax_764 != 0x00)
+		printf("top=%d\n", eax_763);
+		if (eax_763 != 0x00)
 			__assert_fail("top==0", "source.c", 122, "main");
 	}
 	putchar(0x0A);
-	FPTAN(g_r804C030);
-	int32 eax_805 = TOP(FPUF_329);
-	if (eax_805 != 0x00)
+	FPTAN(0.5);
+	int32 eax_804 = TOP(FPUF_328);
+	if (eax_804 != 0x00)
 	{
-		printf("top=%d\n", eax_805);
-		if (eax_805 != 0x00)
+		printf("top=%d\n", eax_804);
+		if (eax_804 != 0x00)
 			__assert_fail("top==0", "source.c", 0x7E, "main");
 	}
 	putchar(0x0A);
-	FRNDINT(g_r804C050);
-	int32 eax_846 = TOP(FPUF_329);
-	if (eax_846 != 0x00)
+	FRNDINT(0.8);
+	int32 eax_845 = TOP(FPUF_328);
+	if (eax_845 != 0x00)
 	{
-		printf("top=%d\n", eax_846);
-		if (eax_846 != 0x00)
+		printf("top=%d\n", eax_845);
+		if (eax_845 != 0x00)
 			__assert_fail("top==0", "source.c", 0x82, "main");
 	}
 	putchar(0x0A);
-	FSCALE(g_r804C058);
-	int32 eax_887 = TOP(FPUF_329);
-	if (eax_887 != 0x00)
+	FSCALE(2.8);
+	int32 eax_886 = TOP(FPUF_328);
+	if (eax_886 != 0x00)
 	{
-		printf("top=%d\n", eax_887);
-		if (eax_887 != 0x00)
+		printf("top=%d\n", eax_886);
+		if (eax_886 != 0x00)
 			__assert_fail("top==0", "source.c", 0x86, "main");
 	}
 	putchar(0x0A);
-	FSIN(g_r804C030);
-	int32 eax_928 = TOP(FPUF_329);
-	if (eax_928 != 0x00)
+	FSIN(0.5);
+	int32 eax_927 = TOP(FPUF_328);
+	if (eax_927 != 0x00)
 	{
-		printf("top=%d\n", eax_928);
-		if (eax_928 != 0x00)
+		printf("top=%d\n", eax_927);
+		if (eax_927 != 0x00)
 			__assert_fail("top==0", "source.c", 0x8A, "main");
 	}
 	putchar(0x0A);
-	FSINCOS(g_r804C030);
-	int32 eax_969 = TOP(FPUF_329);
-	if (eax_969 != 0x00)
+	FSINCOS(0.5);
+	int32 eax_968 = TOP(FPUF_328);
+	if (eax_968 != 0x00)
 	{
-		printf("top=%d\n", eax_969);
-		if (eax_969 != 0x00)
+		printf("top=%d\n", eax_968);
+		if (eax_968 != 0x00)
 			__assert_fail("top==0", "source.c", 0x8E, "main");
 	}
 	putchar(0x0A);
-	FSQRT(g_r804C060);
-	int32 eax_1010 = TOP(FPUF_329);
-	if (eax_1010 != 0x00)
+	FSQRT(2.0);
+	int32 eax_1009 = TOP(FPUF_328);
+	if (eax_1009 != 0x00)
 	{
-		printf("top=%d\n", eax_1010);
-		if (eax_1010 != 0x00)
+		printf("top=%d\n", eax_1009);
+		if (eax_1009 != 0x00)
 			__assert_fail("top==0", "source.c", 0x92, "main");
 	}
 	putchar(0x0A);
 	FST();
-	int32 eax_1051 = TOP(FPUF_329);
-	if (eax_1051 != 0x00)
+	int32 eax_1050 = TOP(FPUF_328);
+	if (eax_1050 != 0x00)
 	{
-		printf("top=%d\n", eax_1051);
-		if (eax_1051 != 0x00)
+		printf("top=%d\n", eax_1050);
+		if (eax_1050 != 0x00)
 			__assert_fail("top==0", "source.c", 0x96, "main");
 	}
 	putchar(0x0A);
-	FSUB(g_r804C050);
-	int32 eax_1092 = TOP(FPUF_329);
-	if (eax_1092 != 0x00)
+	FSUB(0.8);
+	int32 eax_1091 = TOP(FPUF_328);
+	if (eax_1091 != 0x00)
 	{
-		printf("top=%d\n", eax_1092);
-		if (eax_1092 != 0x00)
+		printf("top=%d\n", eax_1091);
+		if (eax_1091 != 0x00)
 			__assert_fail("top==0", "source.c", 0x9A, "main");
 	}
-	FTST(SLICE(putchar(0x0A), word16, 16), FPUF_329);
-	int32 eax_1134 = TOP(FPUF_329);
-	if (eax_1134 != 0x00)
+	putchar(0x0A);
+	FTST(FPUF_328);
+	int32 eax_1133 = TOP(FPUF_328);
+	if (eax_1133 != 0x00)
 	{
-		printf("top=%d\n", eax_1134);
-		if (eax_1134 != 0x00)
+		printf("top=%d\n", eax_1133);
+		if (eax_1133 != 0x00)
 			__assert_fail("top==0", "source.c", 0x9E, "main");
 	}
-	cui16 FPUF_1169 = FXAM(SLICE(putchar(0x0A), word16, 16), g_r804C030, rArg0);
-	int32 eax_1176 = TOP(FPUF_1169);
-	if (eax_1176 != 0x00)
+	putchar(0x0A);
+	cui16 FPUF_1167 = FXAM(0.5, rArg10);
+	int32 eax_1175 = TOP(FPUF_1167);
+	if (eax_1175 != 0x00)
 	{
-		printf("top=%d\n", eax_1176);
-		if (eax_1176 != 0x00)
+		printf("top=%d\n", eax_1175);
+		if (eax_1175 != 0x00)
 			__assert_fail("top==0", "source.c", 0xA2, "main");
 	}
 	putchar(0x0A);
-	FXCH(g_r804C030);
-	int32 eax_1217 = TOP(FPUF_1169);
-	if (eax_1217 != 0x00)
+	FXCH(0.5);
+	int32 eax_1216 = TOP(FPUF_1167);
+	if (eax_1216 != 0x00)
 	{
-		printf("top=%d\n", eax_1217);
-		if (eax_1217 != 0x00)
+		printf("top=%d\n", eax_1216);
+		if (eax_1216 != 0x00)
 			__assert_fail("top==0", "source.c", 166, "main");
 	}
 	putchar(0x0A);
-	FXTRACT(g_r804C030);
-	int32 eax_1258 = TOP(FPUF_1169);
-	if (eax_1258 != 0x00)
+	FXTRACT(0.5);
+	int32 eax_1257 = TOP(FPUF_1167);
+	if (eax_1257 != 0x00)
 	{
-		printf("top=%d\n", eax_1258);
-		if (eax_1258 != 0x00)
+		printf("top=%d\n", eax_1257);
+		if (eax_1257 != 0x00)
 			__assert_fail("top==0", "source.c", 0xAA, "main");
 	}
 	putchar(0x0A);
-	FYL2X();
-	int32 eax_1299 = TOP(FPUF_1169);
-	if (eax_1299 != 0x00)
+	int32 eax_1298 = TOP(FYL2X(256.0));
+	if (eax_1298 != 0x00)
 	{
-		printf("top=%d\n", eax_1299);
-		if (eax_1299 != 0x00)
+		printf("top=%d\n", eax_1298);
+		if (eax_1298 != 0x00)
 			__assert_fail("top==0", "source.c", 0xAE, "main");
 	}
 	putchar(0x0A);
-	cui16 FPUF_1333 = FYL2XP1(g_r804C078);
-	int32 eax_1340 = TOP(FPUF_1333);
-	if (eax_1340 != 0x00)
+	cui16 FPUF_1332 = FYL2XP1(255.0);
+	int32 eax_1339 = TOP(FPUF_1332);
+	if (eax_1339 != 0x00)
 	{
-		printf("top=%d\n", eax_1340);
-		if (eax_1340 != 0x00)
+		printf("top=%d\n", eax_1339);
+		if (eax_1339 != 0x00)
 			__assert_fail("top==0", "source.c", 0xB2, "main");
 	}
 	putchar(0x0A);
 	if (dwArg04 == 0x2A)
-		NOT_EXECUTED(FPUF_1333, ptrLocA4, rArg5);
+		NOT_EXECUTED(FPUF_1332, ptrLocA4, rArg15);
 }
 
 // 08049EB0: void F2XM1()
@@ -700,7 +703,7 @@ void FABS(real64 rArg04)
 void FADD(real64 rArg04)
 {
 	printf("FADD(para+1):     should=                             is=%12f/%15e\n", rArg04 + 1.0, rArg04 + 1.0);
-	real64 rLoc1_89 = rArg04 + g_r804C3CC;
+	real64 rLoc1_89 = rArg04 + 12.34;
 	printf("FADD(para+12.34): should=                             is=%12f/%15e\n", rLoc1_89, rLoc1_89);
 	real64 rLoc1_95 = 1.0 / 3.141592653589793;
 	printf("FADD(pi+1/pi):    should=    3.459903/   3.459903e+00 is=%12f/%15e\n", rLoc1_95 + 3.141592653589793, rLoc1_95 + 3.141592653589793);
@@ -715,8 +718,8 @@ void FADD(real64 rArg04)
 //      main
 void FBSTP()
 {
-	g_t8050028.u2 = (80) -g_r804C468;
-	printf("FBSTP(%f) should=0x44 0x33 0x22 0x11 0x90 0x78 0x56 0x34 0x12 0x80 is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", -g_r804C468, (word32) g_t8050028, (word32) g_b8050029, (word32) g_b805002A, (word32) g_b805002B, (word32) g_b805002C, (word32) g_b805002D, (word32) g_b805002E, (word32) g_b805002F, (word32) g_b8050030, (word32) g_b8050031);
+	g_t8050028.u2 = (80) -1.2345678901122334e+17;
+	printf("FBSTP(%f) should=0x44 0x33 0x22 0x11 0x90 0x78 0x56 0x34 0x12 0x80 is=0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", -1.2345678901122334e+17, (word32) g_t8050028, (word32) g_b8050029, (word32) g_b805002A, (word32) g_b805002B, (word32) g_b805002C, (word32) g_b805002D, (word32) g_b805002E, (word32) g_b805002F, (word32) g_b8050030, (word32) g_b8050031);
 }
 
 // 0804A0E0: void FBLD()
@@ -741,10 +744,10 @@ void FCHS(real64 rArg04)
 	printf("FCHS(0-pi):  should=    3.141593/   3.141593e+00 is=%12f/%15e\n", rLoc1_59, rLoc1_59);
 }
 
-// 0804A1B0: void FCMOV(Stack Eq_205 nArg04)
+// 0804A1B0: void FCMOV(Stack word10 nArg04)
 // Called from:
 //      main
-void FCMOV(Eq_205 nArg04)
+void FCMOV(word10 nArg04)
 {
 	printf("using EFLAGS=0x%0x\n", (word32) SLICE(dwArg04, byte, 8));
 	real64 rLoc2_204 = 3.141592653589793;
@@ -781,44 +784,44 @@ void FCMOV(Eq_205 nArg04)
 	printf("  FCMOV(!unordered ? 1 : pi):      should=                             is=%12f/%15e\n", rLoc2_274, rLoc2_274);
 }
 
-// 0804A2F0: Register Eq_1354 FCOM(Register word16 eax_16_16, Stack real64 rArg04)
+// 0804A2F0: Register Eq_1353 FCOM(Stack real64 rArg04)
 // Called from:
 //      main
-Eq_1354 FCOM(word16 eax_16_16, real64 rArg04)
+Eq_1353 FCOM(real64 rArg04)
 {
 	real32 rArg04 = (real32) rArg04;
 	__wait();
-	word16 eax_16_16_28 = SLICE(printf("FCOM(1,para): should=0x0000 is=0x%04x\n", SEQ(eax_16_16, cond(1.0 - rArg04) << 8)), word16, 16);
+	printf("FCOM(1,para): should=0x0000 is=0x%04x\n", (word32) (cond(1.0 - rArg04) << 8 & 0x4500));
 	__wait();
-	word16 eax_16_16_44 = SLICE(printf("FCOM(para,1): should=0x0100 is=0x%04x\n", SEQ(eax_16_16_28, cond(rArg04 - 1.0) << 8)), word16, 16);
+	printf("FCOM(para,1): should=0x0100 is=0x%04x\n", (word32) (cond(rArg04 - 1.0) << 8 & 0x4500));
 	__wait();
-	word16 eax_16_16_60 = SLICE(printf("FCOM(pi,1):   should=0x0000 is=0x%04x\n", SEQ(eax_16_16_44, cond(3.141592653589793 - 1.0) << 8)), word16, 16);
+	printf("FCOM(pi,1):   should=0x0000 is=0x%04x\n", (word32) (cond(3.141592653589793 - 1.0) << 8 & 0x4500));
 	__wait();
-	word16 eax_16_16_76 = SLICE(printf("FCOM(1,pi):   should=0x0100 is=0x%04x\n", SEQ(eax_16_16_60, cond(1.0 - 3.141592653589793) << 8)), word16, 16);
+	printf("FCOM(1,pi):   should=0x0100 is=0x%04x\n", (word32) (cond(1.0 - 3.141592653589793) << 8 & 0x4500));
 	__wait();
-	word16 eax_16_16_96 = SLICE(printf("FCOM(1,1):    should=0x4000 is=0x%04x\n", SEQ(eax_16_16_76, cond(1.0 - 1.0) << 8)), word16, 16);
+	printf("FCOM(1,1):    should=0x4000 is=0x%04x\n", (word32) (cond(1.0 - 1.0) << 8 & 0x4500));
 	__wait();
-	word16 eax_16_16_110 = SLICE(printf("FCOM(1,nan):  should=0x4500 is=0x%04x\n", SEQ(eax_16_16_96, cond(1.0 - 0.0 / 0.0) << 8)), word16, 16);
-	Eq_1454 FPUF_106 = cond(3.141592653589793 - (real64) g_w804C9BC);
+	printf("FCOM(1,nan):  should=0x4500 is=0x%04x\n", (word32) (cond(1.0 - 0.0 / 0.0) << 8 & 0x4500));
+	Eq_1453 FPUF_106 = cond(3.141592653589793 - (real64) g_w804C9BC);
 	__wait();
-	word16 eax_16_16_124 = SLICE(printf("FICOM(pi,3):  should=0x0000 is=0x%04x\n", SEQ(eax_16_16_110, FPUF_106 << 8)), word16, 16);
-	Eq_1354 FPUF_120 = cond(3.141592653589793 - (real64) g_w804DB42);
+	printf("FICOM(pi,3):  should=0x0000 is=0x%04x\n", (word32) (FPUF_106 << 8 & 0x4500));
+	Eq_1353 FPUF_120 = cond(3.141592653589793 - (real64) g_w804DB42);
 	__wait();
-	printf("FICOM(pi,4):  should=0x0100 is=0x%04x\n", SEQ(eax_16_16_124, FPUF_120 << 8));
+	printf("FICOM(pi,4):  should=0x0100 is=0x%04x\n", (word32) (FPUF_120 << 8 & 0x4500));
 	return FPUF_120;
 }
 
-// 0804A410: void FCOMI(Register cui16 FPUF)
+// 0804A410: void FCOMI(Stack real64 rArg04)
 // Called from:
 //      main
-void FCOMI(cui16 FPUF)
+void FCOMI(real64 rArg04)
 {
-	printf("FCOMI(1,para): should=0x00 is=0x%02x\n", (word32) (FPUF & 0x45));
-	printf("FCOMI(para,1): should=0x01 is=0x%02x\n", (word32) (FPUF & 0x45));
-	printf("FCOMI(pi,1):   should=0x00 is=0x%02x\n", (word32) (FPUF & 0x45));
-	printf("FCOMI(1,pi):   should=0x01 is=0x%02x\n", (word32) (FPUF & 0x45));
-	printf("FCOMI(1,1):    should=0x40 is=0x%02x\n", (word32) (FPUF & 0x45));
-	printf("FCOMI(1,nan):  should=0x45 is=0x%02x\n", (word32) (FPUF & 0x45));
+	printf("FCOMI(1,para): should=0x00 is=0x%02x\n", (word32) (cond(1.0 - rArg04) & 0x45));
+	printf("FCOMI(para,1): should=0x01 is=0x%02x\n", (word32) (cond(rArg04 - 1.0) & 0x45));
+	printf("FCOMI(pi,1):   should=0x00 is=0x%02x\n", (word32) (cond(3.141592653589793 - 1.0) & 0x45));
+	printf("FCOMI(1,pi):   should=0x01 is=0x%02x\n", (word32) (cond(1.0 - 3.141592653589793) & 0x45));
+	printf("FCOMI(1,1):    should=0x40 is=0x%02x\n", (word32) (cond(1.0 - 1.0) & 0x45));
+	printf("FCOMI(1,nan):  should=0x45 is=0x%02x\n", (word32) (cond(1.0 - 0.0 / 0.0) & 0x45));
 }
 
 // 0804A4E0: void FCOS(Stack real64 rArg04)
@@ -843,7 +846,7 @@ void FDIV(real64 rArg04)
 {
 	real64 rLoc1_64 = 1.0 / rArg04;
 	printf("FDIV(1/para):     should=                             is=%12f/%15e\n", rLoc1_64, rLoc1_64);
-	real64 rLoc1_70 = rArg04 / g_r804C3CC;
+	real64 rLoc1_70 = rArg04 / 12.34;
 	printf("FDIV(para/12.34): should=                             is=%12f/%15e\n", rLoc1_70, rLoc1_70);
 	real64 rLoc1_76 = 1.0 / 3.141592653589793;
 	printf("FDIV(1/pi):       should=    0.318310/   3.183099e-01 is=%12f/%15e\n", rLoc1_76, rLoc1_76);
@@ -858,7 +861,7 @@ void FDIVR(real64 rArg04)
 {
 	real64 rLoc1_64 = 1.0 / rArg04;
 	printf("FDIVR(1/para):     should=                             is=%12f/%15e\n", rLoc1_64, rLoc1_64);
-	real64 rLoc1_70 = rArg04 / g_r804C3CC;
+	real64 rLoc1_70 = rArg04 / 12.34;
 	printf("FDIVR(para/12.34): should=                             is=%12f/%15e\n", rLoc1_70, rLoc1_70);
 	real64 rLoc1_76 = 1.0 / 3.141592653589793;
 	printf("FDIVR(1/pi):       should=    0.318310/   3.183099e-01 is=%12f/%15e\n", rLoc1_76, rLoc1_76);
@@ -885,45 +888,45 @@ void FILD()
 void FIST()
 {
 	puts("FIST:\n  RC=00: to nearest\n  RC=01: down to -inf\n  RC=10: up to +inf\n  RC=11: to zero\n");
-	printf("  FISTT(%f):        should=12 is=%d\n", g_r804D0BE, (int32) trunc(g_r804D0BE));
-	real64 rLoc1_174 = g_r804D0BE;
-	Eq_1123 ax_28 = __fstcw();
+	printf("  FISTT(%f):        should=12 is=%d\n", 12.7, (int32) trunc(12.7));
+	real64 rLoc1_174 = 12.7;
+	Eq_1122 ax_28 = __fstcw();
 	__fldcw(0x7F);
 	__fldcw(ax_28);
 	printf("  FIST(%f,RC=00):   should=13 is=%d\n", rLoc1_174, (int32) rLoc1_174);
-	real64 rLoc1_182 = g_r804D0BE;
-	Eq_1123 ax_44 = __fstcw();
+	real64 rLoc1_182 = 12.7;
+	Eq_1122 ax_44 = __fstcw();
 	__fldcw(1151);
 	__fldcw(ax_44);
 	printf("  FIST(%f,RC=01):   should=12 is=%d\n", rLoc1_182, (int32) rLoc1_182);
-	real64 rLoc1_190 = g_r804D0BE;
-	Eq_1123 ax_60 = __fstcw();
+	real64 rLoc1_190 = 12.7;
+	Eq_1122 ax_60 = __fstcw();
 	__fldcw(0x087F);
 	__fldcw(ax_60);
 	printf("  FIST(%f,RC=10):   should=13 is=%d\n", rLoc1_190, (int32) rLoc1_190);
-	real64 rLoc1_198 = g_r804D0BE;
-	Eq_1123 ax_76 = __fstcw();
+	real64 rLoc1_198 = 12.7;
+	Eq_1122 ax_76 = __fstcw();
 	__fldcw(3199);
 	__fldcw(ax_76);
 	printf("  FIST(%f,RC=11):   should=12 is=%d\n", rLoc1_198, (int32) rLoc1_198);
-	printf("  FISTT(%f):        should=-7 is=%d\n", g_r804D0C6, (int32) trunc(g_r804D0C6));
-	real64 rLoc1_212 = g_r804D0C6;
-	Eq_1123 ax_106 = __fstcw();
+	printf("  FISTT(%f):        should=-7 is=%d\n", -7.1, (int32) trunc(-7.1));
+	real64 rLoc1_212 = -7.1;
+	Eq_1122 ax_106 = __fstcw();
 	__fldcw(0x7F);
 	__fldcw(ax_106);
 	printf("  FIST(%f,RC=00):   should=-7 is=%d\n", rLoc1_212, (int32) rLoc1_212);
-	real64 rLoc1_220 = g_r804D0C6;
-	Eq_1123 ax_122 = __fstcw();
+	real64 rLoc1_220 = -7.1;
+	Eq_1122 ax_122 = __fstcw();
 	__fldcw(1151);
 	__fldcw(ax_122);
 	printf("  FIST(%f,RC=01):   should=-8 is=%d\n", rLoc1_220, (int32) rLoc1_220);
-	real64 rLoc1_228 = g_r804D0C6;
-	Eq_1123 ax_138 = __fstcw();
+	real64 rLoc1_228 = -7.1;
+	Eq_1122 ax_138 = __fstcw();
 	__fldcw(0x087F);
 	__fldcw(ax_138);
 	printf("  FIST(%f,RC=10):   should=-7 is=%d\n", rLoc1_228, (int32) rLoc1_228);
-	real64 rLoc1_236 = g_r804D0C6;
-	Eq_1123 ax_154 = __fstcw();
+	real64 rLoc1_236 = -7.1;
+	Eq_1122 ax_154 = __fstcw();
 	__fldcw(3199);
 	__fldcw(ax_154);
 	printf("  FIST(%f,RC=11):   should=-7 is=%d\n", rLoc1_236, (int32) rLoc1_236);
@@ -934,9 +937,9 @@ void FIST()
 //      main
 void FLD()
 {
-	real64 rLoc1_38 = (real64) g_r804D1B7;
+	real64 rLoc1_38 = (real64) 12.345679F;
 	printf("FLD(float=12.34...):       should=   12.345679/   1.234568e+01 is=%12f/%15e\n", rLoc1_38, rLoc1_38);
-	real64 rLoc1_42 = g_r804D1BB;
+	real64 rLoc1_42 = 12.345678901234567;
 	printf("FLD(double=12.34...):      should=   12.345679/   1.234568e+01 is=%12f/%15e\n", rLoc1_42, rLoc1_42);
 	real64 rLoc1_46 = (real64) g_r804D1C3;
 	printf("FLD(long double=12.34...): should=   12.345679/   1.234568e+01 is=%12f/%15e\n", rLoc1_46, rLoc1_46);
@@ -962,7 +965,7 @@ void FLDC()
 void FMUL(real64 rArg04)
 {
 	printf("FMUL(para*pi):  should=                             is=%12f/%15e\n", rArg04 * 3.141592653589793, rArg04 * 3.141592653589793);
-	real64 rLoc1_54 = g_r804C3CC;
+	real64 rLoc1_54 = 12.34;
 	printf("FMUL(12.34*pi): should=   38.767253/   3.876725e+01 is=%12f/%15e\n", rLoc1_54 * 3.141592653589793, rLoc1_54 * 3.141592653589793);
 	real64 rLoc1_61 = (real64) g_w804C3D4 * 3.141592653589793;
 	printf("FIMUL(1000*pi): should= 3141.592654/   3.141593e+03 is=%12f/%15e\n", rLoc1_61, rLoc1_61);
@@ -988,7 +991,7 @@ void FPREM(real64 rArg04)
 {
 	real64 rLoc2_73 = __fprem_x87((real64) g_w804D5E8, (real64) g_w804D5EA);
 	printf("FPREM(11 mod 7):          should=    4.000000/   4.000000e+00 is=%12f/%15e\n", rLoc2_73, rLoc2_73);
-	Eq_2048 rLoc2_80 = (real64) g_w804D5E8 % (real64) g_w804D5EA;
+	Eq_2073 rLoc2_80 = (real64) g_w804D5E8 % (real64) g_w804D5EA;
 	printf("FPREM1(11 mod 7):         should=   -3.000000/  -3.000000e+00 is=%12f/%15e\n", rLoc2_80, rLoc2_80);
 	real64 rLoc2_88 = 3.141592653589793 + 3.141592653589793;
 	real64 rLoc2_89 = rArg04;
@@ -1023,50 +1026,50 @@ void FRNDINT(real64 rArg04)
 	puts("FRNDINT:\n  RC=00: to nearest\n  RC=01: down to -inf\n  RC=10: up to +inf\n  RC=11: to zero\n");
 	real64 rLoc1_153 = __rndint(rArg04);
 	printf("  FRNDINT(para):              should=                             is=%12f/%15e\n", rLoc1_153, rLoc1_153);
-	real64 rLoc1_157 = g_r804D0BE;
-	Eq_1123 ax_26 = __fstcw();
+	real64 rLoc1_157 = 12.7;
+	Eq_1122 ax_26 = __fstcw();
 	__fldcw(0x7F);
 	real64 rLoc1_162 = __rndint(rLoc1_157);
 	__fldcw(ax_26);
 	printf("  FRNDINT(%f,RC=00):   should=   13.000000/   1.300000e+01 is=%12f/%15e\n", rLoc1_157, rLoc1_162, rLoc1_162);
-	real64 rLoc1_166 = g_r804D0BE;
-	Eq_1123 ax_42 = __fstcw();
+	real64 rLoc1_166 = 12.7;
+	Eq_1122 ax_42 = __fstcw();
 	__fldcw(1151);
 	real64 rLoc1_171 = __rndint(rLoc1_166);
 	__fldcw(ax_42);
 	printf("  FRNDINT(%f,RC=01):   should=   12.000000/   1.200000e+01 is=%12f/%15e\n", rLoc1_166, rLoc1_171, rLoc1_171);
-	real64 rLoc1_175 = g_r804D0BE;
-	Eq_1123 ax_58 = __fstcw();
+	real64 rLoc1_175 = 12.7;
+	Eq_1122 ax_58 = __fstcw();
 	__fldcw(0x087F);
 	real64 rLoc1_180 = __rndint(rLoc1_175);
 	__fldcw(ax_58);
 	printf("  FRNDINT(%f,RC=10):   should=   13.000000/   1.300000e+01 is=%12f/%15e\n", rLoc1_175, rLoc1_180, rLoc1_180);
-	real64 rLoc1_184 = g_r804D0BE;
-	Eq_1123 ax_74 = __fstcw();
+	real64 rLoc1_184 = 12.7;
+	Eq_1122 ax_74 = __fstcw();
 	__fldcw(3199);
 	real64 rLoc1_189 = __rndint(rLoc1_184);
 	__fldcw(ax_74);
 	printf("  FRNDINT(%f,RC=11):   should=   12.000000/   1.200000e+01 is=%12f/%15e\n", rLoc1_184, rLoc1_189, rLoc1_189);
-	real64 rLoc1_193 = g_r804D0C6;
-	Eq_1123 ax_90 = __fstcw();
+	real64 rLoc1_193 = -7.1;
+	Eq_1122 ax_90 = __fstcw();
 	__fldcw(0x7F);
 	real64 rLoc1_198 = __rndint(rLoc1_193);
 	__fldcw(ax_90);
 	printf("  FRNDINT(%f,RC=00):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", rLoc1_193, rLoc1_198, rLoc1_198);
-	real64 rLoc1_202 = g_r804D0C6;
-	Eq_1123 ax_106 = __fstcw();
+	real64 rLoc1_202 = -7.1;
+	Eq_1122 ax_106 = __fstcw();
 	__fldcw(1151);
 	real64 rLoc1_207 = __rndint(rLoc1_202);
 	__fldcw(ax_106);
 	printf("  FRNDINT(%f,RC=01):   should=   -8.000000/  -8.000000e+00 is=%12f/%15e\n", rLoc1_202, rLoc1_207, rLoc1_207);
-	real64 rLoc1_211 = g_r804D0C6;
-	Eq_1123 ax_122 = __fstcw();
+	real64 rLoc1_211 = -7.1;
+	Eq_1122 ax_122 = __fstcw();
 	__fldcw(0x087F);
 	real64 rLoc1_216 = __rndint(rLoc1_211);
 	__fldcw(ax_122);
 	printf("  FRNDINT(%f,RC=10):   should=   -7.000000/  -7.000000e+00 is=%12f/%15e\n", rLoc1_211, rLoc1_216, rLoc1_216);
-	real64 rLoc1_220 = g_r804D0C6;
-	Eq_1123 ax_138 = __fstcw();
+	real64 rLoc1_220 = -7.1;
+	Eq_1122 ax_138 = __fstcw();
 	__fldcw(3199);
 	real64 rLoc1_225 = __rndint(rLoc1_220);
 	__fldcw(ax_138);
@@ -1086,7 +1089,7 @@ void FSCALE(real64 rArg04)
 	printf("FSCALE(pi*2^4):     should=   50.265482/   5.026548e+01 is=%12f/%15e\n", rLoc2_101, rLoc2_101);
 	real64 rLoc2_109 = scalbn(3.141592653589793, -(real64) g_w804DB42);
 	printf("FSCALE(pi*2^-4):    should=    0.196350/   1.963495e-01 is=%12f/%15e\n", rLoc2_109, rLoc2_109);
-	real64 rLoc2_116 = scalbn(3.141592653589793, g_r804DB3A);
+	real64 rLoc2_116 = scalbn(3.141592653589793, 12.34);
 	printf("FSCALE(pi*2^12.34): should=12867.963509/   1.286796e+04 is=%12f/%15e\n", rLoc2_116, rLoc2_116);
 }
 
@@ -1129,7 +1132,7 @@ void FSQRT(real64 rArg04)
 	printf("FSQRT(para):     should=                             is=%12f/%15e\n", rLoc1_43, rLoc1_43);
 	real64 rLoc1_48 = sqrt(3.141592653589793);
 	printf("FSQRT(pi):       should=    1.772454/   1.772454e+00 is=%12f/%15e\n", rLoc1_48, rLoc1_48);
-	real64 rLoc1_53 = sqrt(g_r804DE39);
+	real64 rLoc1_53 = sqrt(152.2756);
 	printf("FSQRT(152.2756): should=   12.340000/   1.234000e+01 is=%12f/%15e\n", rLoc1_53, rLoc1_53);
 }
 
@@ -1153,7 +1156,7 @@ void FSUB(real64 rArg04)
 {
 	real64 rLoc1_64 = 1.0 - rArg04;
 	printf("FSUB(1-para):     should=                             is=%12f/%15e\n", rLoc1_64, rLoc1_64);
-	real64 rLoc1_70 = rArg04 - g_r804C3CC;
+	real64 rLoc1_70 = rArg04 - 12.34;
 	printf("FSUB(para-12.34): should=                             is=%12f/%15e\n", rLoc1_70, rLoc1_70);
 	real64 rLoc1_76 = 1.0 - 3.141592653589793;
 	printf("FSUB(1-pi):       should=   -2.141593/  -2.141593e+00 is=%12f/%15e\n", rLoc1_76, rLoc1_76);
@@ -1161,42 +1164,42 @@ void FSUB(real64 rArg04)
 	printf("FISUB(pi-1000):   should= -996.858407/  -9.968584e+02 is=%12f/%15e\n", rLoc1_81, rLoc1_81);
 }
 
-// 0804B290: void FTST(Register word16 eax_16_16, Register cui16 FPUF)
+// 0804B290: void FTST(Register cui16 FPUF)
 // Called from:
 //      main
-void FTST(word16 eax_16_16, cui16 FPUF)
+void FTST(cui16 FPUF)
 {
 	__wait();
-	word16 eax_16_16_29 = SLICE(printf("FTST(para): should=0x0100 is=0x%04x\n", SEQ(eax_16_16, FPUF << 8)), word16, 16);
+	printf("FTST(para): should=0x0100 is=0x%04x\n", (word32) (FPUF << 8 & 0x4500));
 	__wait();
-	word16 eax_16_16_45 = SLICE(printf("FTST(pi):   should=0x0000 is=0x%04x\n", SEQ(eax_16_16_29, FPUF << 8)), word16, 16);
+	printf("FTST(pi):   should=0x0000 is=0x%04x\n", (word32) (FPUF << 8 & 0x4500));
 	__wait();
-	word16 eax_16_16_60 = SLICE(printf("FTST(-pi):  should=0x0100 is=0x%04x\n", SEQ(eax_16_16_45, FPUF << 8)), word16, 16);
+	printf("FTST(-pi):  should=0x0100 is=0x%04x\n", (word32) (FPUF << 8 & 0x4500));
 	__wait();
-	word16 eax_16_16_79 = SLICE(printf("FTST(0.0):  should=0x4000 is=0x%04x\n", SEQ(eax_16_16_60, FPUF << 8)), word16, 16);
+	printf("FTST(0.0):  should=0x4000 is=0x%04x\n", (word32) (FPUF << 8 & 0x4500));
 	__wait();
-	printf("FTST(nan):  should=0x4500 is=0x%04x\n", SEQ(eax_16_16_79, FPUF << 8));
+	printf("FTST(nan):  should=0x4500 is=0x%04x\n", (word32) (FPUF << 8 & 0x4500));
 }
 
-// 0804B340: Register Eq_2701 FXAM(Register word16 eax_16_16, Stack real64 rArg04, FpuStack real64 rArg0)
+// 0804B340: Register Eq_2728 FXAM(Stack real64 rArg04, FpuStack real64 rArg5)
 // Called from:
 //      main
-Eq_2701 FXAM(word16 eax_16_16, real64 rArg04, real64 rArg0)
+Eq_2728 FXAM(real64 rArg04, real64 rArg5)
 {
 	__wait();
-	word16 eax_16_16_28 = SLICE(printf("FXAM(para):  should=0x0400 is=0x%04x\n", SEQ(eax_16_16, cond(rArg04) << 8)), word16, 16);
+	printf("FXAM(para):  should=0x0400 is=0x%04x\n", (word32) (cond(rArg04) << 8 & 0x4500));
 	__wait();
-	word16 eax_16_16_43 = SLICE(printf("FXAM(pi):    should=0x0400 is=0x%04x\n", SEQ(eax_16_16_28, cond(3.141592653589793) << 8)), word16, 16);
+	printf("FXAM(pi):    should=0x0400 is=0x%04x\n", (word32) (cond(3.141592653589793) << 8 & 0x4500));
 	__wait();
-	word16 eax_16_16_62 = SLICE(printf("FXAM(0.0):   should=0x4000 is=0x%04x\n", SEQ(eax_16_16_43, cond(0.0) << 8)), word16, 16);
+	printf("FXAM(0.0):   should=0x4000 is=0x%04x\n", (word32) (cond(0.0) << 8 & 0x4500));
 	__wait();
-	word16 eax_16_16_81 = SLICE(printf("FXAM(nan):   should=0x0100 is=0x%04x\n", SEQ(eax_16_16_62, cond(0.0 / 0.0) << 8)), word16, 16);
+	printf("FXAM(nan):   should=0x0100 is=0x%04x\n", (word32) (cond(0.0 / 0.0) << 8 & 0x4500));
 	__wait();
-	word16 eax_16_16_92 = SLICE(printf("FXAM(inf):   should=0x0500 is=0x%04x\n", SEQ(eax_16_16_81, cond(1.0 / 0.0) << 8)), word16, 16);
+	printf("FXAM(inf):   should=0x0500 is=0x%04x\n", (word32) (cond(1.0 / 0.0) << 8 & 0x4500));
 	__wait();
-	Eq_2701 FPUF_89 = cond(rArg0);
-	printf("FXAM(empty): should=0x4100 is=0x%04x\n", SEQ(eax_16_16_92, FPUF_89 << 8));
-	return FPUF_89;
+	Eq_2728 FPUF_99 = cond(rArg5);
+	printf("FXAM(empty): should=0x4100 is=0x%04x\n", (word32) (FPUF_99 << 8 & 0x4500));
+	return FPUF_99;
 }
 
 // 0804B410: void FXCH(Stack real64 rArg04)
@@ -1217,31 +1220,32 @@ void FXTRACT(real64 rArg04)
 	printf("FXTRACT(para)[0=signi]:  should=                             is=%12f/%15e\n", rLoc2_75, rLoc2_75);
 	real64 rLoc1_81 = __exponent(rArg04);
 	printf("FXTRACT(para)[1=exp]:    should=                             is=%12f/%15e\n", rLoc1_81, rLoc1_81);
-	real64 rLoc2_89 = __significand(g_r804E438);
+	real64 rLoc2_89 = __significand(12.34);
 	printf("FXTRACT(12.34)[0=signi]: should=    1.542500/   1.542500e+00 is=%12f/%15e\n", rLoc2_89, rLoc2_89);
-	real64 rLoc1_95 = __exponent(g_r804E438);
+	real64 rLoc1_95 = __exponent(12.34);
 	printf("FXTRACT(12.34)[1=exp]:   should=    3.000000/   3.000000e+00 is=%12f/%15e\n", rLoc1_95, rLoc1_95);
 }
 
-// 0804B4F0: void FYL2X()
+// 0804B4F0: Register Eq_2874 FYL2X(Stack real64 rArg04)
 // Called from:
 //      main
-void FYL2X()
+Eq_2874 FYL2X(real64 rArg04)
 {
-	real64 rLoc1_67 = lg2(1.0) * 1.0;
-	printf("FYL2X(para, base=2):  should=                             is=%12f/%15e\n", rLoc1_67, rLoc1_67);
-	real64 rLoc1_73 = lg2(1.0) * 1.0;
-	printf("FYL2X(1000, base=2):  should=    9.965784/   9.965784e+00 is=%12f/%15e\n", rLoc1_73, rLoc1_73);
-	real64 rLoc1_79 = lg2(0.6931471805599453) * 0.6931471805599453;
-	printf("FYL2X(1000, base=e):  should=    6.907755/   6.907755e+00 is=%12f/%15e\n", rLoc1_79, rLoc1_79);
-	real64 rLoc1_85 = lg2(0.3010299956639812) * 0.3010299956639812;
-	printf("FYL2X(1000, base=10): should=    3.000000/   3.000000e+00 is=%12f/%15e\n", rLoc1_85, rLoc1_85);
+	real64 rLoc1_71 = lg2(rArg04) * 1.0;
+	printf("FYL2X(para, base=2):  should=                             is=%12f/%15e\n", rLoc1_71, rLoc1_71);
+	real64 rLoc1_77 = lg2((real64) g_w804C3D4) * 1.0;
+	printf("FYL2X(1000, base=2):  should=    9.965784/   9.965784e+00 is=%12f/%15e\n", rLoc1_77, rLoc1_77);
+	real64 rLoc1_83 = lg2((real64) g_w804C3D4) * 0.6931471805599453;
+	printf("FYL2X(1000, base=e):  should=    6.907755/   6.907755e+00 is=%12f/%15e\n", rLoc1_83, rLoc1_83);
+	real64 rLoc1_89 = lg2((real64) g_w804C3D4) * 0.3010299956639812;
+	printf("FYL2X(1000, base=10): should=    3.000000/   3.000000e+00 is=%12f/%15e\n", rLoc1_89, rLoc1_89);
+	return cond(rLoc1_89);
 }
 
-// 0804B580: Register Eq_2895 FYL2XP1(Stack real64 rArg04)
+// 0804B580: Register Eq_2931 FYL2XP1(Stack real64 rArg04)
 // Called from:
 //      main
-Eq_2895 FYL2XP1(real64 rArg04)
+Eq_2931 FYL2XP1(real64 rArg04)
 {
 	real64 rLoc1_71 = lg2(rArg04 + 1.0) * 1.0;
 	printf("FYL2XP1(para, base=2): should=                             is=%12f/%15e\n", rLoc1_71, rLoc1_71);

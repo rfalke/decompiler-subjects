@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t11000 = // 0000000000011000
+struct Eq_74 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,10 +78,10 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 0000000000000730: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000730: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -126,7 +126,7 @@ void register_tm_clones()
 // 00000000000007F8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t11000;
+	struct Eq_74 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -155,27 +155,28 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000878: void proc1(Register int32 w0, Register (ptr64 char) x1)
+// 0000000000000878: Register int32 proc1(Register int32 w0, Register (ptr64 char) x1, Stack word32 dwArg04)
 // Called from:
 //      main
-void proc1(int32 w0, char * x1)
+int32 proc1(int32 w0, char * x1, word32 dwArg04)
 {
+	int32 dwLoc0C_65;
 	if (w0 > 0x02)
 	{
-		x0_23 = (uint64) strlen(x1);
-		x0_28 = (uint64) strlen(x1);
-		x0_37 = (uint64) printf("%d", 0x00);
+		int32 w0_25 = (word32) strlen(x1);
+		word32 w0_30 = (word32) strlen(x1);
+		dwLoc0C_65 = w0_25;
+		x0_39 = (uint64) printf("%d", w0_25 + w0_30);
 	}
 	else
-		x0_18 = (uint64) strlen(x1);
-	x0_45 = (uint64) printf("%d, %d", 0x00);
+		dwLoc0C_65 = (word32) strlen(x1);
+	return dwLoc0C_65;
 }
 
-// 00000000000008F4: void main(Register int32 w0, Register (ptr64 Eq_142) x1)
-void main(int32 w0, struct Eq_142 * x1)
+// 00000000000008F4: void main(Register int32 w0, Register (ptr64 Eq_140) x1, Register word64 x30)
+void main(int32 w0, struct Eq_140 * x1, word64 x30)
 {
-	proc1(w0, x1->ptr0008);
-	x0_30 = (uint64) printf("%d\n", 0x00);
+	x0_32 = (uint64) printf("%d\n", proc1(w0, x1->ptr0008, SLICE(x30, word32, 32)));
 }
 
 // 0000000000000938: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

@@ -878,7 +878,7 @@ void ___darwin_gcc3_preregister_frame_info(word32 lr)
 //      fn0000197C
 void _main()
 {
-	real64 f31_17 = (real64) g_r1FF0;
+	real64 f31_17 = (real64) 5.0F;
 	word32 lr_104 = _printf(_scanf(0x1BF0));
 	real64 f0_41 = (real64) rLoc30;
 	if (f31_17 == f0_41)

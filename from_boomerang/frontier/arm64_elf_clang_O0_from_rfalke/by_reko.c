@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400440: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400440: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400470, qwArg00, (char *) fp + 8, g_ptr400478, g_ptr400480, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400470, (int32) qwArg00, (char *) fp + 8, g_ptr400478, g_ptr400480, x0, fp);
 	abort();
 }
 
@@ -124,20 +124,16 @@ void __do_global_dtors_aux()
 // 0000000000400550: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400588 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400588;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400588 = null; // 0000000000400588
+word64 g_qw400588 = 0x00; // 0000000000400588
 // 0000000000400590: void main(Register int32 w0)
 void main(int32 w0)
 {

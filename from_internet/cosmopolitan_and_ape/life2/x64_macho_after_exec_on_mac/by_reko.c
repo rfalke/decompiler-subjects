@@ -154,10 +154,10 @@ void fn000000000040129E(word32 dwArg00)
 	fn000000000040153D(fn0000000000401460(), r13_100);
 }
 
-// 00000000004012F0: Register (ptr64 word64) fn00000000004012F0(Register Eq_235 ebx, Register (ptr64 word64) r13, Register (ptr64 word64) r15)
+// 00000000004012F0: Register (ptr64 word64) fn00000000004012F0(Register word32 ebx, Register (ptr64 word64) r13, Register (ptr64 word64) r15)
 // Called from:
 //      fn000000000040129E
-word64 * fn00000000004012F0(Eq_235 ebx, word64 * r13, word64 * r15)
+word64 * fn00000000004012F0(word32 ebx, word64 * r13, word64 * r15)
 {
 	Eq_286 ebx_331 = (word32) rbx;
 	word64 edx_eax_11 = __rdtsc();
@@ -171,7 +171,7 @@ word64 * fn00000000004012F0(Eq_235 ebx, word64 * r13, word64 * r15)
 l000000000040131D:
 	__cpuid(eax_41, 0x00, &eax_41, &ebx_331, &0x00, &edx_17);
 	rdi_20->qw0000 = (word64) eax_41;
-	struct Eq_427 * rdi_54 = (char *) &rdi_20->qw0000 + 4;
+	struct Eq_428 * rdi_54 = (char *) &rdi_20->qw0000 + 4;
 	rdi_54->t0000 = ebx_331;
 	rdi_54->dw0004 = 0x00;
 	rdi_54->t0008 = edx_17;
@@ -195,7 +195,7 @@ l000000000040131D:
 	rdi_20->qw0000 = r15;
 	struct Eq_317 * rdi_91;
 	union Eq_318 * rsi_92;
-	Eq_319 rbx_89 = fn00000000004014BA(rbx_78, fp - 8, 0x00404D28, &rdi_20->qw0000 + 1, out rsi_92, out rdi_91);
+	Eq_319 rbx_89 = fn00000000004014BA(rbx_78, (word32) fp - 0x08, 0x00404D28, &rdi_20->qw0000 + 1, out rsi_92, out rdi_91);
 	rdi_91->qw0000 = ~0x00;
 	rdi_91->qw0008 = ~0x00;
 	rdi_91->qw0010 = 4212270;
@@ -203,7 +203,7 @@ l000000000040131D:
 	word64 * rdi_118;
 	union Eq_318 * rsi_119 = fn000000000040150F(rsp_334->dw0004, 0x00404434, rsi_92, &rdi_91->qw0010 + 1, out rdi_118);
 	rsp_334[1] = (struct Eq_303) 0x20;
-	struct Eq_373 * rdi_136;
+	struct Eq_374 * rdi_136;
 	union Eq_318 * rsi_137 = fn000000000040150F(rsp_334[1], 4212092, rsi_119, rdi_118, out rdi_136);
 	rdi_136->qw0000 = *r13;
 	rdi_136->qw0008 = 0x00404690;
@@ -258,7 +258,7 @@ l000000000040131D:
 	for (rdi_212 = g_a4362E8; rdi_212 < &g_qw4363D8; ++rdi_212)
 	{
 		uint64 rdx_277 = 0x00;
-		Eq_566 ecx_371 = 0x00;
+		Eq_567 ecx_371 = 0x00;
 		do
 		{
 			ecx_371.u0 = (uint64) ((word64) ecx_371 + 7);
@@ -275,7 +275,7 @@ l000000000040131D:
 		*rdi_212 = rax_314;
 		rax_56_8_353 = SLICE(rax_314, word56, 8);
 	}
-	struct Eq_544 * rdi_239;
+	struct Eq_545 * rdi_239;
 	word64 r15_246;
 	word64 * r13_247;
 	g_ptr405080();
@@ -302,11 +302,11 @@ word64 fn0000000000401466()
 	return fn0000000000403CBB();
 }
 
-// 00000000004014BA: Register word64 fn00000000004014BA(Register word64 rbx, Register Eq_323 ebp, Register uint64 rsi, Register ptr64 rdi, Register out ptr64 rsiOut, Register out ptr64 rdiOut)
+// 00000000004014BA: Register word64 fn00000000004014BA(Register word64 rbx, Register word32 ebp, Register uint64 rsi, Register ptr64 rdi, Register out ptr64 rsiOut, Register out ptr64 rdiOut)
 // Called from:
 //      fn000000000040129E
 //      fn00000000004012F0
-word64 fn00000000004014BA(word64 rbx, Eq_323 ebp, uint64 rsi, ptr64 rdi, ptr64 & rsiOut, ptr64 & rdiOut)
+word64 fn00000000004014BA(word64 rbx, word32 ebp, uint64 rsi, ptr64 rdi, ptr64 & rsiOut, ptr64 & rdiOut)
 {
 	<anonymous> * rbp_24 = g_ptr405078;
 	g_dw437DE0 = 0x03;
@@ -316,27 +316,27 @@ word64 fn00000000004014BA(word64 rbx, Eq_323 ebp, uint64 rsi, ptr64 rdi, ptr64 &
 	g_dw437E20 = 0x01;
 	g_dw437E38 = 0x01;
 	word64 qwLoc48_98 = SEQ(dwLoc44, 0x01);
-	struct Eq_644 * rsp_42;
+	struct Eq_645 * rsp_42;
 	<anonymous> * rbp_43;
 	word64 rdi_45;
 	word64 rsi_46;
-	struct Eq_648 * rbx_47;
+	struct Eq_649 * rbx_47;
 	word64 rax_48;
 	rbp_24();
 	rsp_42->tFFFFFFFC.u1 = ~0x0A;
-	Eq_650 rcx_52 = rsp_42->tFFFFFFFC;
+	Eq_651 rcx_52 = rsp_42->tFFFFFFFC;
 	rbx_47->qw0018 = rax_48;
-	struct Eq_661 * rsp_55;
+	struct Eq_662 * rsp_55;
 	<anonymous> * rbp_56;
 	word64 rdi_58;
 	word64 rsi_59;
-	struct Eq_665 * rbx_60;
+	struct Eq_666 * rbx_60;
 	word64 rax_61;
 	rbp_43();
 	rsp_55->tFFFFFFFC.u1 = ~0x0B;
-	Eq_667 rcx_65 = rsp_55->tFFFFFFFC;
+	Eq_668 rcx_65 = rsp_55->tFFFFFFFC;
 	rbx_60->qw0030 = rax_61;
-	struct Eq_678 * rbx_73;
+	struct Eq_679 * rbx_73;
 	word64 rax_74;
 	rbp_56();
 	rbx_73->qw0048 = rax_74;
@@ -442,13 +442,13 @@ l0000000000404204:
 			}
 			word32 ecx_72 = __bsf(eax_71);
 			uint64 rdx_84 = (uint64) ~(ebx_73 << (byte) ecx_72);
-			Eq_827 rcx_81 = (uint64) ecx_72;
+			Eq_828 rcx_81 = (uint64) ecx_72;
 			ui32 edx_97 = (word32) rdx_84;
 			rax_31 &= rdx_84;
 			if (r12_127 != 0x00 && ((rdi_24->a0020))[rcx_81].qw0000 != r12_127)
 				continue;
 			rdi_24->dw0000 &= edx_97;
-			struct Eq_841 * rcx_101 = rdi_24 + (rcx_81 *s 0x18) /64 32;
+			struct Eq_842 * rcx_101 = rdi_24 + (rcx_81 *s 0x18) /64 32;
 			<anonymous> * rdx_102 = rcx_101->ptr0010;
 		} while (rdx_102 == null);
 		word64 rcx_132;

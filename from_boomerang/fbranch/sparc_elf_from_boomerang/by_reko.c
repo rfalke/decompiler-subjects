@@ -182,7 +182,7 @@ word32 main(Eq_45 l1, real32 f2, word32 q0_32_0, real32 q4_32_32, real32 f9, rea
 {
 	scanf("%f", fp + ~0x13);
 	real64 d0_33 = (real64) q0_32_0;
-	real32 f7_29 = g_r10938;
+	real32 f7_29 = 5.0F;
 	printf("a is %f, b is %f\n", (word32) d0_33, l1);
 	if (SLICE(d0_33, word32, 32) == rLoc14)
 	{

@@ -1,5 +1,4 @@
 === Using options:--aggressive-branch-removal
 00000000000006A0: warning: Unable to resolve imported reference __register_frame_info.
-0000000000000948: warning: Unable to determine format string for call to 'printf'.
 0000000000000660: warning: Unable to resolve imported reference __cxa_finalize.
 0000000000000680: warning: Unable to resolve imported reference __deregister_frame_info.

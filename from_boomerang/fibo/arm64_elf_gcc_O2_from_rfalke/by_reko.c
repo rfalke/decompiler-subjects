@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_117 g_t11000 = // 0000000000011000
+struct Eq_136 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,27 +81,32 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 0000000000000740: void main(Stack int32 dwArg04)
 void main(int32 dwArg04)
 {
-	x0_12 = (uint64) printf("Input number: ", 0x00);
-	x0_17 = (uint64) __isoc99_scanf("%d", 0x00);
+	x0_12 = (uint64) printf("Input number: ");
+	word32 x1_32_32_47 = SLICE(fp + 0x04, word32, 32);
+	x0_17 = (uint64) __isoc99_scanf("%d", fp + 0x04);
+	word32 w2_20 = 0x00;
 	int32 w3_22 = dwArg04;
+	word64 x1_46 = SEQ(x1_32_32_47, dwArg04);
 	if (dwArg04 > 0x01)
 	{
 		do
 		{
-			word32 w19_92;
-			word32 w20_93;
-			word32 w21_94;
-			fib(w3_22 - 0x01, out w19_92, out w20_93, out w21_94);
 			w3_22 -= 0x02;
+			word32 w19_96;
+			word32 w20_97;
+			word32 w21_98;
+			w2_20 += fib(w3_22 - 0x01, out w19_96, out w20_97, out w21_98);
 		} while (w3_22 > 0x01);
+		w3_22 = dwArg04 & 0x01;
+		x1_46 = SEQ(x1_32_32_47, dwArg04);
 	}
-	x0_46 = (uint64) printf("fibonacci(%d) = %d\n", 0x00);
+	x0_55 = (uint64) printf("fibonacci(%d) = %d\n", (int32) x1_46, w3_22 + w2_20);
 }
 
-// 00000000000007B0: void _start(Register (ptr64 Eq_54) x0, Stack Eq_55 qwArg00)
-void _start(void (* x0)(), Eq_55 qwArg00)
+// 00000000000007B0: void _start(Register (ptr64 Eq_71) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -146,7 +151,7 @@ void register_tm_clones()
 // 0000000000000878: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_117 * x19_12 = &g_t11000;
+	struct Eq_136 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -175,11 +180,11 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000000008F8: Register int32 fib(Register int32 w0, Register out Eq_41 w19Out, Register out Eq_41 w20Out, Register out Eq_41 w21Out)
+// 00000000000008F8: Register int32 fib(Register int32 w0, Register out Eq_56 w19Out, Register out Eq_56 w20Out, Register out Eq_56 w21Out)
 // Called from:
 //      main
 //      fib
-int32 fib(int32 w0, union Eq_41 & w19Out, union Eq_41 & w20Out, union Eq_41 & w21Out)
+int32 fib(int32 w0, union Eq_56 & w19Out, union Eq_56 & w20Out, union Eq_56 & w21Out)
 {
 	word32 w20_22;
 	int32 w21_14 = w0;

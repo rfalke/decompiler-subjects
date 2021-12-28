@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t11000 = // 0000000000011000
+struct Eq_74 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,10 +78,10 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 00000000000006F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000000006F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -126,7 +126,7 @@ void register_tm_clones()
 // 00000000000007B8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t11000;
+	struct Eq_74 * x19_12 = &g_t11000;
 	if ((word32) g_b11038 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -163,10 +163,10 @@ void test(int32 w0, int32 w1)
 // 0000000000000848: void main()
 void main()
 {
-	x0_11 = (uint64) printf("Result for 4, 5, 6: %d\n", 0x00);
-	x0_15 = (uint64) printf("Result for 6, 5, 4: %d\n", 0x00);
-	x0_19 = (uint64) printf("Result for 4, 6, 5: %d\n", 0x00);
-	x0_24 = (uint64) printf("Result for 6, 4, 5: %d\n", 0x00);
+	x0_14 = (uint64) printf("Result for 4, 5, 6: %d\n", 0x01);
+	x0_20 = (uint64) printf("Result for 6, 5, 4: %d\n", 0x00);
+	x0_26 = (uint64) printf("Result for 4, 6, 5: %d\n", 0x00);
+	x0_32 = (uint64) printf("Result for 6, 4, 5: %d\n", 0x00);
 }
 
 // 00000000000008A0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

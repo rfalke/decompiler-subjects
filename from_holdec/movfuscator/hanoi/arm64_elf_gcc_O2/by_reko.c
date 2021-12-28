@@ -5,7 +5,7 @@
 #include "subject.h"
 
 byte g_b12060 = 0x00; // 0000000000012060
-Eq_271 g_a12068[] = // 0000000000012068
+Eq_287 g_a12068[] = // 0000000000012068
 	{
 	};
 int32 g_dw12080 = 0; // 0000000000012080
@@ -29,7 +29,7 @@ void _fini()
 <anonymous> * __libc_csu_fini_GOT = __libc_csu_fini; // 0000000000011F90
 <anonymous> * g_ptr11F98 = null; // 0000000000011F98
 word64 g_qw11FA0 = 0x00; // 0000000000011FA0
-Eq_271 (* g_ptr11FA8)[] = &g_a12068; // 0000000000011FA8
+Eq_287 (* g_ptr11FA8)[] = &g_a12068; // 0000000000011FA8
 FILE ** g_ptr11FB0 = null; // 0000000000011FB0
 word64 g_qw11FB8 = 0x00; // 0000000000011FB8
 <anonymous> * __libc_csu_init_GOT = __libc_csu_init; // 0000000000011FC0
@@ -43,7 +43,7 @@ int32 * g_ptr11FD0 = &g_dw12080; // 0000000000011FD0
 
 #include "subject.h"
 
-struct Eq_181 g_t12000 = // 0000000000012000
+struct Eq_185 g_t12000 = // 0000000000012000
 	{
 		0x00,
 	};
@@ -100,34 +100,33 @@ void main(int32 w0, struct Eq_10 * x1, word64 x30)
 l0000000000000954:
 	int32 w19_56 = *g_ptr11FD0;
 	ptr64 x20_54;
-	Eq_271 x23_55[] = g_ptr11FA8;
-	Eq_53 x21_59 = (int64) w19_56 + 0x04 << 2;
+	Eq_287 x23_55[] = g_ptr11FA8;
+	ui64 x21_59 = (int64) w19_56 + 0x04 << 2;
 	for (x20_54 = 0x00; x20_54 != 0x18; x20_54 += 0x08)
 	{
-		ptr64 * x0_63 = calloc(0x01, x21_59);
-		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x23_55[x20_54 /64 8].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_271) x0_63;
+		ptr64 * x0_63 = calloc((size_t) 0x01, (size_t) x21_59);
+		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x23_55[x20_54 /64 8].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_287) x0_63;
 		*x0_63 = x0_63 + 2;
-		word32 x0_32_32_107 = SLICE(x0_63, word32, 32);
 	}
 	if (w19_56 != 0x00)
 	{
 		do
 		{
-			word32 w19_83;
-			x0_32_32_107 = SLICE(add_disk(0x00, w19_56, x30, out w19_83), word32, 32);
-			w19_56 = w19_83 - 0x01;
-		} while (w19_83 != 0x01);
+			word32 w19_82;
+			add_disk(0x00, w19_56, x30, out w19_82);
+			w19_56 = w19_82 - 0x01;
+		} while (w19_82 != 0x01);
 	}
-	word32 w22_224;
-	move(SEQ(x0_32_32_107, *g_ptr11FD0), out w22_224);
-	word32 w19_225;
-	text(0x01, 0x01, out w19_225);
+	word32 w22_222;
+	move(*g_ptr11FD0, out w22_222);
+	word32 w19_223;
+	text(0x01, 0x00, 0x01, "\n", out w19_223);
 }
 
-// 0000000000000A0C: void _start(Register (ptr64 Eq_118) x0, Stack Eq_119 qwArg00)
-void _start(void (* x0)(), Eq_119 qwArg00)
+// 0000000000000A0C: void _start(Register (ptr64 Eq_120) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -172,7 +171,7 @@ void register_tm_clones()
 // 0000000000000AD0: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_181 * x19_12 = &g_t12000;
+	struct Eq_185 * x19_12 = &g_t12000;
 	if ((word32) g_b12060 == 0x00)
 	{
 		if (g_qw11FA0 != 0x00)
@@ -204,32 +203,33 @@ void frame_dummy(word64 x29, word64 x30)
 // 0000000000000B50: void new_tower(Register word32 w0)
 void new_tower(word32 w0)
 {
-	ptr64 * x0_14 = calloc(0x01, (int64) w0 + 0x04 << 2);
+	ptr64 * x0_14 = calloc((size_t) 0x01, (size_t) ((int64) w0 + 0x04 << 2));
 	*x0_14 = x0_14 + 2;
 }
 
-// 0000000000000B80: Register word32 text(Register word32 w0, Register word32 w2, Register out Eq_85 w19Out)
+// 0000000000000B80: Register ui32 text(Register word32 w0, Register ui32 w1, Register word32 w2, Register (ptr64 char) x3, Register out Eq_85 w19Out)
 // Called from:
 //      main
 //      add_disk
 //      remove_disk
-word32 text(word32 w0, word32 w2, union Eq_85 & w19Out)
+ui32 text(word32 w0, ui32 w1, word32 w2, char * x3, union Eq_85 & w19Out)
 {
-	word32 w0_30 = *g_ptr11FD0 - w0;
+	int32 w4_23 = *g_ptr11FD0;
+	word32 w0_30 = w4_23 - w0;
 	word32 w19_22 = w2;
-	x0_35 = (uint64) printf("\x1B[%d;%dH", 0x00);
-	word64 x1_40 = SEQ(x1_32_32, w0_30 + 0x01);
+	char * x1_36 = SEQ(x1_32_32, w0_30 + 0x01);
+	x0_39 = (uint64) printf("\x1B[%d;%dH", w0_30 + 0x01, w4_23 + 0x01 + (w1 << 1) * (w4_23 + 0x01) - w2);
 	if (w2 != 0x00)
 	{
 		do
 		{
-			x1_40 = x3;
-			x0_43 = (uint64) printf("%s", 0x00);
+			x1_36 = x3;
+			x0_47 = (uint64) printf("%s", x3);
 			--w19_22;
 		} while (w19_22 != 0x00);
 	}
 	w19Out.u0 = <invalid>;
-	return (word32) x1_40;
+	return (word32) x1_36;
 }
 
 // 0000000000000BF8: Register uint64 add_disk(Register word32 w0, Register int32 w1, Register word64 x30, Register out Eq_85 w19Out)
@@ -238,10 +238,10 @@ word32 text(word32 w0, word32 w2, union Eq_85 & w19Out)
 //      move
 uint64 add_disk(word32 w0, int32 w1, word64 x30, union Eq_85 & w19Out)
 {
-	Eq_271 x0_19 = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&g_ptr11FA8[(int64) w0 /64 8].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
+	Eq_287 x0_19 = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&g_ptr11FA8[(int64) w0 /64 8].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
 	word32 w4_20 = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x0_19.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
 	int32 x6_21[] = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x0_19.a0000[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
-	(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x0_19.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_271) (w4_20 + 0x01);
+	(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x0_19.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_287) (w4_20 + 0x01);
 	x6_21[(int64) w4_20 /64 4] = w1;
 	usleep();
 	uint64 x0_65 = (uint64) fflush(*g_ptr11FB0);
@@ -249,29 +249,29 @@ uint64 add_disk(word32 w0, int32 w1, word64 x30, union Eq_85 & w19Out)
 	return x0_65;
 }
 
-// 0000000000000C60: Register word32 remove_disk(Register word32 w0, Register out ptr64 x30Out)
+// 0000000000000C60: Register ui32 remove_disk(Register ui32 w0, Register out ptr64 x30Out)
 // Called from:
 //      move
-word32 remove_disk(word32 w0, ptr64 & x30Out)
+ui32 remove_disk(ui32 w0, ptr64 & x30Out)
 {
-	Eq_271 x2_16 = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&g_ptr11FA8[(int64) w0 /64 8].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
+	Eq_287 x2_16 = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&g_ptr11FA8[(int64) w0 /64 8].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
 	word32 w0_17 = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x2_16.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
 	word32 x5_18[] = (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x2_16.a0000[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0];
-	(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x2_16.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_271) (w0_17 - 0x01);
-	word32 w19_57;
-	text(w0_17, x5_18[(int64) (w0_17 - 0x01) /64 4], out w19_57);
+	(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x2_16.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_287) (w0_17 - 0x01);
+	word32 w19_55;
+	text(w0_17, w0, x5_18[(int64) (w0_17 - 0x01) /64 4], "  ", out w19_55);
 	x30Out = qwLoc10;
-	word64 x19_29 = <invalid>;
-	return (word32) x19_29;
+	word64 x19_28 = <invalid>;
+	return (word32) x19_28;
 }
 
-// 0000000000000CB0: Register word32 move(Register Eq_84 w0, Register out Eq_85 w22Out)
+// 0000000000000CB0: Register word32 move(Register int32 w0, Register out Eq_85 w22Out)
 // Called from:
 //      main
 //      move
-word32 move(Eq_84 w0, union Eq_85 & w22Out)
+word32 move(int32 w0, union Eq_85 & w22Out)
 {
-	Eq_84 w0 = (word32) x0;
+	int32 w0 = (word32) x0;
 	if (w0 == 0x00)
 	{
 		w22Out.u0 = <invalid>;
@@ -283,10 +283,10 @@ word32 move(Eq_84 w0, union Eq_85 & w22Out)
 		{
 			word64 x22_57 = <invalid>;
 			word64 x30_71;
-			word32 w19_86;
+			word32 w19_85;
 			word32 w22_201;
-			add_disk((word32) x22_57, remove_disk(move(w0, out w22_201), out x30_71), x30_71, out w19_86);
-		} while (w19_86 != 0x00);
+			add_disk((word32) x22_57, remove_disk(move(w0, out w22_201), out x30_71), x30_71, out w19_85);
+		} while (w19_85 != 0x00);
 		w22Out.u0 = <invalid>;
 		return (word32) x19;
 	}

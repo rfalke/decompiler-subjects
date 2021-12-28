@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -124,20 +124,16 @@ void __do_global_dtors_aux()
 // 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4005D8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4005D8 = null; // 00000000004005D8
+word64 g_qw4005D8 = 0x00; // 00000000004005D8
 // 00000000004005E0: Register uint32 test_1(Register uint32 w0)
 // Called from:
 //      main
@@ -146,24 +142,24 @@ uint32 test_1(uint32 w0)
 	return w0 /u 0x07;
 }
 
-// 00000000004005FC: Register uint32 test_2(Sequence ui64 x8_32_32_w0, Register word32 x9_32_32, Register out Eq_104 x9Out)
+// 00000000004005FC: Register uint32 test_2(Sequence ui64 x8_32_32_w0, Register word32 x9_32_32, Register out Eq_107 x9Out)
 // Called from:
 //      main
-uint32 test_2(ui64 x8_32_32_w0, word32 x9_32_32, union Eq_104 & x9Out)
+uint32 test_2(ui64 x8_32_32_w0, word32 x9_32_32, union Eq_107 & x9Out)
 {
 	uint32 w0 = (word32) x8_32_32_w0;
-	Eq_104 x9_14 = SEQ(x9_32_32, 0x4925);
+	Eq_107 x9_14 = SEQ(x9_32_32, 0x4925);
 	x9Out = x9_14;
 	uint32 dwLoc0C_36 = SLICE(x8_32_32_w0 * x9_14, word32, 32);
 	return dwLoc0C_36 + (w0 - dwLoc0C_36 >> 1) >> 2;
 }
 
-// 000000000040065C: Register word32 test_3(Sequence ui64 x9_32_32_w0, Register out Eq_120 x8Out)
+// 000000000040065C: Register word32 test_3(Sequence ui64 x9_32_32_w0, Register out Eq_123 x8Out)
 // Called from:
 //      main
-word32 test_3(ui64 x9_32_32_w0, union Eq_120 & x8Out)
+word32 test_3(ui64 x9_32_32_w0, union Eq_123 & x8Out)
 {
-	Eq_120 qwLoc10_26 = x9_32_32_w0 * 0x24924925 >> 32;
+	Eq_123 qwLoc10_26 = x9_32_32_w0 * 0x24924925 >> 32;
 	x8Out = qwLoc10_26;
 	return (word32) qwLoc10_26;
 }
@@ -171,26 +167,26 @@ word32 test_3(ui64 x9_32_32_w0, union Eq_120 & x8Out)
 // 00000000004006A0: void main(Register word32 x8_32_32, Register word32 x9_32_32)
 void main(word32 x8_32_32, word32 x9_32_32)
 {
-	struct Eq_129 * sp_10 = fp - 0x28;
-	uint32 dwLoc10_112 = 0x00;
-	uint32 dwLoc14_113;
-	for (dwLoc14_113 = 0x00; dwLoc14_113 <= ~0x00; dwLoc14_113 += 0x4240)
+	struct Eq_132 * sp_10 = fp - 0x28;
+	uint32 dwLoc10_148 = 0x00;
+	uint32 dwLoc14_149;
+	for (dwLoc14_149 = 0x00; dwLoc14_149 <= ~0x00; dwLoc14_149 += 0x4240)
 	{
-		sp_10[2] = (struct Eq_129) test_1(dwLoc14_113);
+		sp_10[2] = (struct Eq_132) test_1(dwLoc14_149);
 		word64 x9_32;
-		sp_10->dw000C = test_2(SEQ(x8_32_32, dwLoc14_113), x9_32_32, out x9_32);
+		sp_10->dw000C = test_2(SEQ(x8_32_32, dwLoc14_149), x9_32_32, out x9_32);
 		x9_32_32 = SLICE(x9_32, word32, 32);
 		word64 x8_42;
-		sp_10[1] = (struct Eq_129) test_3(SEQ(x9_32_32, dwLoc14_113), out x8_42);
+		sp_10[1] = (struct Eq_132) test_3(SEQ(x9_32_32, dwLoc14_149), out x8_42);
 		x8_32_32 = SLICE(x8_42, word32, 32);
 		if (sp_10[2] != sp_10->dw000C || sp_10[2] != sp_10[1])
 		{
-			sp_10 = (struct Eq_129 *) ((char *) sp_10 - 8);
-			sp_10->dw0004 = printf("%u %u %u (diff=%d) %u (diff=%d)\n", 0x00);
+			sp_10 = (struct Eq_132 *) ((char *) sp_10 - 8);
+			sp_10->dw0004 = printf("%u %u %u (diff=%d) %u (diff=%d)\n", dwLoc14_149, sp_10[2], sp_10->dw000C, sp_10->dw000C - sp_10[2], sp_10[1], sp_10[1] - sp_10[2]);
 		}
-		if (dwLoc10_112 > 0x00 && dwLoc14_113 < dwLoc10_112)
+		if (dwLoc10_148 > 0x00 && dwLoc14_149 < dwLoc10_148)
 			return;
-		dwLoc10_112 = dwLoc14_113;
+		dwLoc10_148 = dwLoc14_149;
 	}
 }
 

@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_146 g_t11000 = // 0000000000011000
+struct Eq_171 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,24 +81,24 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 00000000000006F0: void main()
 void main()
 {
-	x0_20 = (uint64) printf("%d signed in range\n", 0x00);
-	x0_23 = (uint64) printf("%d unsigned in range\n", 0x00);
-	x0_26 = (uint64) printf("%d signed in range\n", 0x00);
-	x0_29 = (uint64) printf("%d unsigned in range\n", 0x00);
-	x0_32 = (uint64) printf("%d signed in range\n", 0x00);
-	x0_35 = (uint64) printf("%d unsigned in range\n", 0x00);
-	x0_38 = (uint64) printf("%d signed in range\n", 0x00);
-	x0_41 = (uint64) printf("%d unsigned in range\n", 0x00);
-	x0_44 = (uint64) printf("%d signed in range\n", 0x00);
-	x0_47 = (uint64) printf("%d unsigned in range\n", 0x00);
-	x0_50 = (uint64) printf("%d signed in range\n", 0x00);
-	x0_54 = (uint64) printf("%d unsigned in range\n", 0x00);
+	x0_23 = (uint64) printf("%d signed in range\n", 0x02);
+	x0_28 = (uint64) printf("%d unsigned in range\n", 0x02);
+	x0_33 = (uint64) printf("%d signed in range\n", 0x03);
+	x0_38 = (uint64) printf("%d unsigned in range\n", 0x03);
+	x0_43 = (uint64) printf("%d signed in range\n", 0x04);
+	x0_48 = (uint64) printf("%d unsigned in range\n", 0x04);
+	x0_53 = (uint64) printf("%d signed in range\n", 0x05);
+	x0_58 = (uint64) printf("%d unsigned in range\n", 0x05);
+	x0_63 = (uint64) printf("%d signed in range\n", 0x06);
+	x0_68 = (uint64) printf("%d unsigned in range\n", 0x06);
+	x0_73 = (uint64) printf("%d signed in range\n", 0x07);
+	x0_78 = (uint64) printf("%d unsigned in range\n", 0x07);
 }
 
-// 00000000000007AC: void _start(Register (ptr64 Eq_83) x0, Stack Eq_84 qwArg00)
-void _start(void (* x0)(), Eq_84 qwArg00)
+// 00000000000007AC: void _start(Register (ptr64 Eq_106) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -143,7 +143,7 @@ void register_tm_clones()
 // 0000000000000870: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_146 * x19_12 = &g_t11000;
+	struct Eq_171 * x19_12 = &g_t11000;
 	if ((word32) g_b11038 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -172,14 +172,15 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000000008F0: void f(Register up32 w0, Register up32 w1)
-void f(up32 w0, up32 w1)
+// 00000000000008F0: void f(Sequence word64 x1_32_32_w0, Register Eq_209 w1)
+void f(word64 x1_32_32_w0, Eq_209 w1)
 {
+	Eq_210 w0 = (word32) x1_32_32_w0;
 	if (w0 <= 0x07)
-		x0_21 = (uint64) printf("%d signed in range\n", 0x00);
+		x0_23 = (uint64) printf("%d signed in range\n", w0);
 	if (w1 > 0x07)
 		return;
-	x0_38 = (uint64) printf("%d unsigned in range\n", 0x00);
+	x0_42 = (uint64) printf("%d unsigned in range\n", w1);
 }
 
 // 0000000000000958: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

@@ -920,7 +920,7 @@ void _ZNSt12_Destroy_auxILb1EE9__destroyIPiEEvT_S3_()
 //      _ZNSt16allocator_traitsISaIiEE10deallocateERS0_Pij
 void new_allocator<prim(SignedInt,4)>::deallocate(struct Eq_114 * r0, Eq_133 r1)
 {
-	(r1, r2_r3, fp);
+	(SEQ(r1, r1), r2_r3, fp);
 }
 
 // 00009BC8: void _ZNSt20__uninitialized_copyILb0EE13__uninit_copyISt13move_iteratorIPiES3_EET0_T_S6_S5_()

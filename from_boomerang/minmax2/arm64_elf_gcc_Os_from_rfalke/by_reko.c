@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_83 g_t11000 = // 0000000000011000
+struct Eq_91 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,20 +78,20 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 00000000000006F0: void main()
-void main()
+// 00000000000006F0: void main(Register int32 w0)
+void main(int32 w0)
 {
-	test();
-	test();
-	test();
-	test();
-	test();
+	test(~0x04);
+	test(~0x01);
+	test(0x00);
+	test(w0);
+	test(0x05);
 }
 
-// 0000000000000738: void _start(Register (ptr64 Eq_20) x0, Stack Eq_21 qwArg00)
-void _start(void (* x0)(), Eq_21 qwArg00)
+// 0000000000000738: void _start(Register (ptr64 Eq_26) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -136,7 +136,7 @@ void register_tm_clones()
 // 0000000000000800: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_83 * x19_12 = &g_t11000;
+	struct Eq_91 * x19_12 = &g_t11000;
 	if ((word32) g_b11038 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -165,12 +165,13 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000880: void test()
+// 0000000000000880: void test(Register int32 w0)
 // Called from:
 //      main
-void test()
+void test(int32 w0)
 {
-	x0_15 = (uint64) printf("MinMax result %d\n", 0x00);
+	int32 w0_7 = w0 <= 0x03 ? w0 : 0x03;
+	x0_17 = (uint64) printf("MinMax result %d\n", w0_7 >= 0x02 ? w0_7 : ~0x01);
 }
 
 // 00000000000008A8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

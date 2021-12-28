@@ -5,18 +5,18 @@
 #include "subject.h"
 
 byte g_b0000; // 00000000
-Eq_22845 g_t0001;
-Eq_149049 g_t00FF;
+Eq_21880 g_t0001;
+Eq_146466 g_t00FF;
 Eq_2 g_t03EF;
 word32 _dl_random; // 080CDDA0
 union Eq_2 * _dl_argv; // 080CDDA4
 word32 __libc_stack_end; // 080CDDA8
-Eq_4928 __libc_enable_secure;
+Eq_4846 __libc_enable_secure;
 word32 max_capstrlen; // 080CDFBC
 word32 ncapstr; // 080CDFC0
 word32 capstr; // 080CDFC4
 word32 __stack_prot; // 080CDFD0
 <anonymous> * g_ptr80CE014; // 080CE014
-struct Eq_96804 * g_ptrCCCCCCC; // 0CCCCCCC
-Eq_4970 g_tFEFEFEFF;
+struct Eq_94931 * g_ptrCCCCCCC; // 0CCCCCCC
+Eq_4888 g_tFEFEFEFF;
 cu8 g_bFFFFFFFF; // FFFFFFFF

@@ -61,11 +61,11 @@ word64 g_qw410DE0 = 0x00; // 0000000000410DE0
 
 #include "subject.h"
 
-Eq_104 g_t400920 = // 0000000000400920
+Eq_105 g_t400920 = // 0000000000400920
 	{
 		-3.1415927F
 	};
-Eq_104 g_t400924 = // 0000000000400924
+Eq_105 g_t400924 = // 0000000000400924
 	{
 		3.1515927F
 	};
@@ -76,10 +76,10 @@ real32 g_r400928 = 0.19634955F; // 0000000000400928
 
 #include "subject.h"
 
-// 0000000000400570: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400570: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4005A0, qwArg00, (char *) fp + 8, g_ptr4005A8, g_ptr4005B0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4005A0, (int32) qwArg00, (char *) fp + 8, g_ptr4005A8, g_ptr4005B0, x0, fp);
 	abort();
 }
 
@@ -139,31 +139,27 @@ void __do_global_dtors_aux()
 // 0000000000400680: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DE0 != 0x00)
+	if (g_qw410DE0 != 0x00 && g_qw4006B8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4006B8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4006B8 = null; // 00000000004006B8
+word64 g_qw4006B8 = 0x00; // 00000000004006B8
 // 00000000004006C0: void main()
 void main()
 {
-	struct Eq_98 * sp_10 = fp - 0x28 + 16;
-	Eq_104 dwLoc10_69;
-	for (dwLoc10_69 = g_t400920; dwLoc10_69 <= g_t400924; dwLoc10_69 += g_r400928)
+	struct Eq_101 * sp_10 = fp - 0x28;
+	Eq_105 dwLoc10_72;
+	for (dwLoc10_72 = g_t400920; dwLoc10_72 <= g_t400924; dwLoc10_72 += 0.19634955F)
 	{
-		sp_10->qw0000 = (real64) dwLoc10_69;
+		sp_10[2] = (struct Eq_101) (real64) dwLoc10_72;
 		sin();
-		sp_10 = (struct Eq_98 *) ((char *) sp_10 - 8);
-		sp_10->dw000C = printf("sin(%.4f): %.4f\n", 0x00);
+		sp_10 = (struct Eq_101 *) ((char *) sp_10 - 8);
+		sp_10->dw000C = printf("sin(%.4f): %.4f\n", sp_10[2], (real64) dwLoc10_72);
 	}
 }
 

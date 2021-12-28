@@ -15,7 +15,7 @@ void _cpa(union Eq_370 * rax, real32 * rcx, byte dl, byte bl, struct Eq_359 * rd
 	ui32 eax_5 = (word32) rax;
 	Eq_364 al_9 = (byte) rax;
 	byte r8b_25 = (byte) r8;
-	*rax = (union Eq_370 *) (*rax - eax_5 - C);
+	*rax = (union Eq_370 *) (*rax - eax_5 - (word32) C);
 	Mem11[rax + 0x00:byte] = Mem8[rax + 0x00:byte] + al_9;
 	Mem13[rax + 0x00:byte] = Mem11[rax + 0x00:byte] + al_9;
 	rdi->b005F += bl;
@@ -92,7 +92,7 @@ void _f(union Eq_370 * rax, byte dl)
 void _gs1(union Eq_370 * rax, byte dl)
 {
 	byte al_5 = (byte) rax;
-	Eq_686 eax_10 = (word32) rax;
+	Eq_687 eax_10 = (word32) rax;
 	*rax = (union Eq_370 *) ((char *) *rax + al_5);
 	*rax = (union Eq_370 *) ((char *) *rax + al_5);
 	Mem12[rax + 0x00:word32] = Mem9[rax + 0x00:word32] + eax_10;
@@ -119,25 +119,25 @@ void _sc()
 {
 }
 
-// 0000000100001124: void _si(Register word32 eax, Register byte bl, Register (ptr64 Eq_805) rdi)
-void _si(word32 eax, byte bl, struct Eq_805 * rdi)
+// 0000000100001124: void _si(Register word32 eax, Register byte bl, Register (ptr64 Eq_806) rdi)
+void _si(word32 eax, byte bl, struct Eq_806 * rdi)
 {
 	byte * rax_5 = (uint64) (eax + 0x05000000);
 	fn0000000100001129(rax_5, bl, rdi);
 }
 
-// 0000000100001128: void _sl(Register word32 eax, Register byte bl, Register (ptr64 Eq_805) rdi)
-void _sl(word32 eax, byte bl, struct Eq_805 * rdi)
+// 0000000100001128: void _sl(Register word32 eax, Register byte bl, Register (ptr64 Eq_806) rdi)
+void _sl(word32 eax, byte bl, struct Eq_806 * rdi)
 {
 	byte * rax_5 = (uint64) eax;
 	fn0000000100001129(rax_5, bl, rdi);
 }
 
-// 0000000100001129: void fn0000000100001129(Register (ptr64 byte) rax, Register byte bl, Register (ptr64 Eq_805) rdi)
+// 0000000100001129: void fn0000000100001129(Register (ptr64 byte) rax, Register byte bl, Register (ptr64 Eq_806) rdi)
 // Called from:
 //      _si
 //      _sl
-void fn0000000100001129(byte * rax, byte bl, struct Eq_805 * rdi)
+void fn0000000100001129(byte * rax, byte bl, struct Eq_806 * rdi)
 {
 	byte al_10 = (byte) rax;
 	*rax += al_10;

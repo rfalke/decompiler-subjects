@@ -1,18 +1,5 @@
 === Using options:--aggressive-branch-removal
 00000000004004B0: warning: Unable to resolve imported reference __gmon_start__.
-0000000000400680: warning: Unable to determine format string for call to 'printf'.
-0000000000400698: warning: Unable to determine format string for call to 'printf'.
-00000000004006B0: warning: Unable to determine format string for call to 'printf'.
-00000000004006C8: warning: Unable to determine format string for call to 'printf'.
-00000000004006E0: warning: Unable to determine format string for call to 'printf'.
-00000000004006F8: warning: Unable to determine format string for call to 'printf'.
-0000000000400710: warning: Unable to determine format string for call to 'printf'.
-0000000000400728: warning: Unable to determine format string for call to 'printf'.
-0000000000400740: warning: Unable to determine format string for call to 'printf'.
-0000000000400758: warning: Unable to determine format string for call to 'printf'.
-0000000000400770: warning: Unable to determine format string for call to 'printf'.
-0000000000400788: warning: Unable to determine format string for call to 'printf'.
-00000000004007A0: warning: Unable to determine format string for call to 'printf'.
-00000000004007B8: warning: Unable to determine format string for call to 'printf'.
+0000000000400628: warning: Call target address 0000000000000000 is invalid.
 0000000000410DE0: warning: Expected sizes of arrays to have been determined by now
 0000000000410DE0: warning: Expected sizes of arrays to have been determined by now

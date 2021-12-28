@@ -171,10 +171,10 @@ void f()
 {
 }
 
-// 00008494: void g(Register Eq_76 r0)
+// 00008494: void g(Register bool r0)
 // Called from:
 //      main
-void g(Eq_76 r0)
+void g(bool r0)
 {
 }
 
@@ -187,7 +187,7 @@ void main(word32 r0)
 		r3_11 = 0x01;
 	if (r0 == 0x00)
 		r3_11 = 0x00;
-	g((uint32) (byte) r3_11);
+	g((bool) (uint32) (byte) r3_11);
 }
 
 // 000084F4: void __libc_csu_init(Register word32 r0, Register word32 r1, Register word32 r2, Register (ptr32 code) lr)

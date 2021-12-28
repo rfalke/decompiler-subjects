@@ -72,16 +72,16 @@ char g_str804D044[] = "main"; // 0804D044
 
 #include "subject.h"
 
-// 08049060: void main(Register word16 FPUF)
-void main(word16 FPUF)
+// 08049060: void main()
+void main()
 {
 	__align(fp);
-	if (log_size_4_var_000() + log_size_4_var_001() + log_size_4_var_002() + log_size_4_var_003() + log_size_4_var_004() + log_size_4_var_005() + log_size_4_var_006() + log_size_4_var_007() + log_size_4_var_008() + log_size_4_var_009() + log_size_4_var_010() + log_size_4_var_011() + log_size_4_var_012() + log_size_4_var_013() + log_size_4_var_014() + log_size_4_var_015() + log_size_4_var_016() + log_size_4_var_017(FPUF) + log_size_4_var_018() + log_size_4_var_019() + log_size_4_var_020() + log_size_4_var_021() + log_size_4_var_022() + log_size_4_var_023() + log_size_4_var_024() + log_size_4_var_025() + log_size_4_var_026() + log_size_4_var_027() + log_size_4_var_028(FPUF) + log_size_4_var_029() + log_size_4_var_030() + log_size_4_var_031() + log_size_4_var_032() + log_size_4_var_033() + log_size_4_var_034() + log_size_4_var_035() + log_size_4_var_036() + log_size_4_var_037() + log_size_4_var_038() + log_size_4_var_039() + log_size_4_var_040() + log_size_4_var_041() + log_size_4_var_042() + log_size_4_var_043() + log_size_4_var_044() + log_size_4_var_045() + log_size_4_var_046() + log_size_4_var_047() + log_size_4_var_048() + log_size_4_var_049() + log_size_4_var_050() + log_size_4_var_051() + log_size_4_var_052() + log_size_4_var_053() + log_size_4_var_054() + log_size_4_var_055() + log_size_4_var_056() + log_size_4_var_057() + log_size_4_var_058() + log_size_4_var_059() + log_size_4_var_060() + log_size_4_var_061() + log_size_4_var_062() + log_size_4_var_063() + log_size_4_var_064() + log_size_4_var_065() + log_size_4_var_066(FPUF) + log_size_4_var_067() + log_size_4_var_068() + log_size_4_var_069() + log_size_4_var_070() + log_size_4_var_071() + log_size_4_var_072() + log_size_4_var_073() + log_size_4_var_074() + log_size_4_var_075() + log_size_4_var_076() + log_size_4_var_077() + log_size_4_var_078() + log_size_4_var_079() + log_size_4_var_080() + log_size_4_var_081() + log_size_4_var_082() + log_size_4_var_083() + log_size_4_var_084() + log_size_4_var_085() + log_size_4_var_086() + log_size_4_var_087() + log_size_4_var_088() + log_size_4_var_089() + log_size_4_var_090() + log_size_4_var_091() + log_size_4_var_092() + log_size_4_var_093() + log_size_4_var_094() + log_size_4_var_095() + log_size_4_var_096() + log_size_4_var_097() + log_size_4_var_098() + log_size_4_var_099() == 0x00)
+	if (log_size_4_var_000() + log_size_4_var_001() + log_size_4_var_002() + log_size_4_var_003() + log_size_4_var_004() + log_size_4_var_005() + log_size_4_var_006() + log_size_4_var_007() + log_size_4_var_008() + log_size_4_var_009() + log_size_4_var_010() + log_size_4_var_011() + log_size_4_var_012() + log_size_4_var_013() + log_size_4_var_014() + log_size_4_var_015() + log_size_4_var_016() + log_size_4_var_017() + log_size_4_var_018() + log_size_4_var_019() + log_size_4_var_020() + log_size_4_var_021() + log_size_4_var_022() + log_size_4_var_023() + log_size_4_var_024() + log_size_4_var_025() + log_size_4_var_026() + log_size_4_var_027() + log_size_4_var_028() + log_size_4_var_029() + log_size_4_var_030() + log_size_4_var_031() + log_size_4_var_032() + log_size_4_var_033() + log_size_4_var_034() + log_size_4_var_035() + log_size_4_var_036() + log_size_4_var_037() + log_size_4_var_038() + log_size_4_var_039() + log_size_4_var_040() + log_size_4_var_041() + log_size_4_var_042() + log_size_4_var_043() + log_size_4_var_044() + log_size_4_var_045() + log_size_4_var_046() + log_size_4_var_047() + log_size_4_var_048() + log_size_4_var_049() + log_size_4_var_050() + log_size_4_var_051() + log_size_4_var_052() + log_size_4_var_053() + log_size_4_var_054() + log_size_4_var_055() + log_size_4_var_056() + log_size_4_var_057() + log_size_4_var_058() + log_size_4_var_059() + log_size_4_var_060() + log_size_4_var_061() + log_size_4_var_062() + log_size_4_var_063() + log_size_4_var_064() + log_size_4_var_065() + log_size_4_var_066() + log_size_4_var_067() + log_size_4_var_068() + log_size_4_var_069() + log_size_4_var_070() + log_size_4_var_071() + log_size_4_var_072() + log_size_4_var_073() + log_size_4_var_074() + log_size_4_var_075() + log_size_4_var_076() + log_size_4_var_077() + log_size_4_var_078() + log_size_4_var_079() + log_size_4_var_080() + log_size_4_var_081() + log_size_4_var_082() + log_size_4_var_083() + log_size_4_var_084() + log_size_4_var_085() + log_size_4_var_086() + log_size_4_var_087() + log_size_4_var_088() + log_size_4_var_089() + log_size_4_var_090() + log_size_4_var_091() + log_size_4_var_092() + log_size_4_var_093() + log_size_4_var_094() + log_size_4_var_095() + log_size_4_var_096() + log_size_4_var_097() + log_size_4_var_098() + log_size_4_var_099() == 0x00)
 		return;
 	__assert_fail("sum==0", "source_complex_with_base_100_funcs_of_size_16.c", 211, "main");
 }
 
-// 08049360: void _start(Register (ptr32 Eq_428) edx, Stack int32 dwArg00)
+// 08049360: void _start(Register (ptr32 Eq_424) edx, Stack int32 dwArg00)
 void _start(void (* edx)(), int32 dwArg00)
 {
 	__align((char *) fp + 4);
@@ -158,7 +158,7 @@ word32 log_size_4_var_001()
 	word24 ecx_24_8_57 = SLICE(ecx_48, word24, 8);
 	if (!P)
 		ebx_20 = SEQ(46818, dx_41);
-	Eq_567 eax_61 = SEQ(0xD303, -0x3ED3);
+	Eq_563 eax_61 = SEQ(0xD303, -0x3ED3);
 	int8 cl_52 = (int8) ((ecx_48 & 0xA1C1D071) >= 0x00);
 	int64 edx_eax_63 = (int64) eax_61;
 	return (word32) __xadd(ecx_48 & 0xA1C1D071, 0xE2945943) + (((word32) __shrd(SEQ(ecx_24_8_57, cl_52), eax_61, cl_52) + ((word32) edx_eax_63 + ebx_20)) + SLICE(edx_eax_63, word32, 32)) + esi_35 - 1568141852;
@@ -169,7 +169,7 @@ word32 log_size_4_var_001()
 //      main
 word32 log_size_4_var_002()
 {
-	Eq_606 dx_29 = __shrd(0x8792, 0x8792, 0x09);
+	Eq_602 dx_29 = __shrd(0x8792, 0x8792, 0x09);
 	cui16 si_27 = -0xBCC2;
 	ui16 di_33 = 0x3EAE;
 	word32 eax_46 = SEQ(23793, 0x3E, SLICE(dx_29, byte, 8));
@@ -189,10 +189,7 @@ word32 log_size_4_var_002()
 //      main
 word32 log_size_4_var_003()
 {
-	Eq_675 dx_28 = __ror(~0x6B44, 0x01);
-	word16 si_30;
-	__bts(~0x6662, 242, out si_30);
-	uint32 dx_ax_46 = SEQ(dx_28 *s 59555 & 0x3FFF, ~0x1C21);
+	uint32 dx_ax_46 = SEQ(__ror(~0x6B44, 0x01) *s 59555 & 0x3FFF, ~0x1C21);
 	word16 bp_51;
 	__btr(0x9507, 0x5E, out bp_51);
 	uint16 ax_49 = (uint16) (dx_ax_46 /u ~0x1C21);
@@ -206,10 +203,10 @@ word32 log_size_4_var_003()
 word32 log_size_4_var_004()
 {
 	uint8 dh_29 = __rol(0x80, 0x01);
-	Eq_567 esi_30 = __shld(1802557925, 3597711958, 0x01);
+	Eq_563 esi_30 = __shld(1802557925, 3597711958, 0x01);
 	uint32 edx_38 = __ror(SEQ(27268, __ror(SEQ(dh_29, ~0x2A), 0x10)), ~0x00);
-	Eq_606 bx_42 = __shrd(0xDE50, 47702, 0x01);
-	Eq_678 dx_47 = (word16) edx_38;
+	Eq_602 bx_42 = __shrd(0xDE50, 47702, 0x01);
+	Eq_674 dx_47 = (word16) edx_38;
 	return (word32) __shrd(esi_30, SEQ(0x0D9A, bx_42), 0x01) + ((((SEQ(0x0D9A, SLICE(bx_42, byte, 8) & ~0x14, (byte) bx_42) + 432925445) + SEQ(0xD670, __ror(47702, 0x56))) + SEQ(SLICE(edx_38, word16, 16), (int8) Z, (byte) __shld(dx_47, dx_47, 0x01))) + 0xD670BB11) + ~0x7EEBAE9F - 0x95D698C0;
 }
 
@@ -221,13 +218,12 @@ word32 log_size_4_var_005()
 	word32 edi_108 = 0x0DDFD8CC;
 	word16 edx_16_16_102 = SLICE(__bswap(2031910969), word16, 16);
 	bcu8 dl_84 = (byte) -0x00;
-	word24 ecx_24_8_96 = SEQ(0x7BBC, (int8) false);
 	int8 dh_60 = (int8) P;
 	if (Test(UGE,false))
 		edi_108 = 2946720927;
 	word32 eax_79;
 	__btc(SEQ(2595, dh_60 *s16 0x05), 581337793, out eax_79);
-	return eax_79 + 0x857B4A55 + SEQ(ecx_24_8_96, 0x4F) + SEQ(edx_16_16_102, dh_60, dl_84 >> 0x4F) + 3528058720 + edi_108 - 0xC6C697C8;
+	return eax_79 + 20400804 + SEQ(edx_16_16_102, dh_60, dl_84 >> 0x4F) + 3528058720 + edi_108 - 0xC6C697C8;
 }
 
 // 0804972B: Register word32 log_size_4_var_006()
@@ -258,7 +254,7 @@ word32 log_size_4_var_006()
 //      main
 word32 log_size_4_var_007()
 {
-	Eq_606 cx_33 = __rcl(11744, 0x01, SLICE(cond(11744), bool, 1));
+	Eq_602 cx_33 = __rcl(11744, 0x01, SLICE(cond(11744), bool, 1));
 	word16 bx_39 = SEQ(__xadd(~0x15, SLICE(cx_33, byte, 8)), 114);
 	byte bh_67 = SLICE(bx_39 + 0x01, byte, 8);
 	ui32 ecx_44 = SEQ(0xD1C5, cx_33);
@@ -286,7 +282,7 @@ word32 log_size_4_var_007()
 //      main
 ui32 log_size_4_var_008()
 {
-	Eq_588 eax_45 = __shrd(SEQ(~0x032E, 0x1F, -__ror(0xC9, 0x9A)), 1740787544, ~0x11);
+	Eq_584 eax_45 = __shrd(SEQ(~0x032E, 0x1F, -__ror(0xC9, 0x9A)), 1740787544, ~0x11);
 	word32 esi_46;
 	__btr(0x7FFFFFFF, 22, out esi_46);
 	return (eax_45 ^ 2156915994) + ~0x185C2C8F + esi_46 - 373092813;
@@ -297,13 +293,13 @@ ui32 log_size_4_var_008()
 //      main
 word32 log_size_4_var_009()
 {
-	Eq_588 ebx_27 = __shrd(~0x005A35EE, 0x88221D85, 0x01);
+	Eq_584 ebx_27 = __shrd(~0x005A35EE, 0x88221D85, 0x01);
 	word32 edi_46;
 	__btc(480626958, 0xC5, out edi_46);
 	int8 al_41 = (byte) ebx_27 *s 0xD0;
 	uint8 bl_53 = (byte) ebx_27;
 	int8 bh_45 = (int8) (al_41 >> 0x01 < 0x00);
-	return SEQ(SLICE(ebx_27 *s 2437506000, word24, 8), al_41 >> 0x01) + SEQ(SLICE(ebx_27, word16, 16), bh_45, bl_53) + SEQ(0x8822, SEQ(bh_45, bl_53) *s 0x17FB) + 0x22104BB4 + edi_46 - 3532559538;
+	return SEQ(SLICE(ebx_27 *s 2437506000, word24, 8), al_41 >> 0x01) + SEQ(SLICE(ebx_27, word16, 16), bh_45, bl_53) + SEQ(0x8822, SEQ(bh_45, bl_53) *s 0x17FB) + 1016186051 + edi_46 - 3532559538;
 }
 
 // 08049905: Register word32 log_size_4_var_010()
@@ -318,10 +314,10 @@ word32 log_size_4_var_010()
 //      main
 word32 log_size_4_var_011()
 {
-	Eq_610 di_53 = 0x6701;
-	Eq_610 dx_43;
+	Eq_606 di_53 = 0x6701;
+	Eq_606 dx_43;
 	__bts(0x356F, 0x5F, out dx_43);
-	Eq_606 cx_46 = __shrd(0x00, dx_43, 0x0C);
+	Eq_602 cx_46 = __shrd(0x00, dx_43, 0x0C);
 	byte ch_55 = SLICE(cx_46, byte, 8);
 	byte cl_57 = (byte) cx_46;
 	word32 edx_100 = SEQ(0x8383, dx_43);
@@ -330,7 +326,7 @@ word32 log_size_4_var_011()
 		di_53 = dx_43;
 		edx_100 = SEQ(0x8383, dx_43);
 	}
-	Eq_606 cx_69 = __shrd(SEQ(__rol(ch_55, cl_57), cl_57), di_53, 0x01);
+	Eq_602 cx_69 = __shrd(SEQ(__rol(ch_55, cl_57), cl_57), di_53, 0x01);
 	return SEQ(0xC6C4, cx_69) + 1763589917 + edx_100 + 1300738636 + SEQ(15127, __rcl(0xE120, (byte) cx_69, SLICE(cond(0x32), bool, 1))) + SEQ(0xAC6A, di_53) - ~0x178F6808;
 }
 
@@ -364,7 +360,7 @@ word32 log_size_4_var_014()
 	up32 ecx_26;
 	__btr(0xD1A392A1, 583619825, out ecx_26);
 	bcu8 ch_45 = SLICE(ecx_26 + ~0x016E1C87, byte, 8);
-	byte dl_34 = 0x49 - (ecx_26 < ~0x016E1C87);
+	byte dl_34 = 0x49 - (byte) (ecx_26 < ~0x016E1C87);
 	byte cl_42 = (byte) ecx_26 + 0x78;
 	ui32 eax_53 = __rcl(SEQ(44339, 101, dl_34 & 0x27), cl_42 + 0xAC, (ch_45 & 0x02) != 0x00);
 	word16 ecx_16_16_76 = SLICE(ecx_26 + ~0x016E1C87, word16, 16);
@@ -385,11 +381,11 @@ word32 log_size_4_var_015()
 {
 	word16 si_29;
 	__btc(62660, 29069, out si_29);
-	uip32 esi_35 = SEQ(0xC618, si_29 ^ 0xEF08);
+	uint32 esi_35 = SEQ(0xC618, si_29 ^ 0xEF08);
 	word32 eax_38;
 	__cmpxchg(esi_35, 0xE3FA0000, 0xE3FA0000, out eax_38);
 	word32 ebx_40;
-	word32 ecx_44 = 0xD94344C9 - __bts(2070645827, 2070645827, out ebx_40);
+	word32 ecx_44 = 0xD94344C9 - (word32) __bts(2070645827, 2070645827, out ebx_40);
 	word32 esi_47;
 	__btc(esi_35, 3778773986, out esi_47);
 	byte bl_56 = (byte) ebx_40;
@@ -408,7 +404,7 @@ word32 log_size_4_var_016()
 	word32 ebx_41;
 	__bts(SEQ(5000, (word16) ebp_33), 133, out ebx_41);
 	char bh_44 = SLICE(ebx_41, byte, 8);
-	up32 esi_50 = 2598885880 - SEQ(~0x0019D790, bh_44 + ~0x52) - (bh_44 < ~0x52);
+	up32 esi_50 = 2598885880 - SEQ(~0x0019D790, bh_44 + ~0x52) - (word32) (bh_44 < ~0x52);
 	int8 ah_53 = (int8) (esi_50 != 0x00);
 	byte bl_62 = (byte) ebx_41;
 	word24 eax_24_8_68 = SEQ(0xE628, ah_53);
@@ -419,22 +415,22 @@ word32 log_size_4_var_016()
 	return eax_75 + SEQ(SLICE((word32) ((byte) eax_75), word16, 16), 26844) + 0xA564005B + (word32) bl_62 + ebp_91 + esi_50 + edi_28 - 3351337083;
 }
 
-// 08049C15: Register word32 log_size_4_var_017(Register word16 FPUF)
+// 08049C15: Register word32 log_size_4_var_017()
 // Called from:
 //      main
-word32 log_size_4_var_017(word16 FPUF)
+word32 log_size_4_var_017()
 {
-	Eq_567 ebp_26 = __shld(712590771, 2310832300, 0x01);
-	Eq_610 dx_43 = __rol(0x033A, 229);
+	Eq_563 ebp_26 = __shld(712590771, 2310832300, 0x01);
+	Eq_606 dx_43 = __rol(0x033A, 229);
 	word32 esi_49 = 1603691614 - SEQ(62029, dx_43);
-	Eq_606 bx_56 = __rcl(33009, 229, SLICE(cond(esi_49), bool, 1));
+	Eq_602 bx_56 = __rcl(33009, 229, SLICE(cond(esi_49), bool, 1));
 	int64 edx_eax_60 = (int64) SEQ(19971, dx_43);
 	word32 ebx_68 = -SEQ(0x89BC, SLICE(bx_56, byte, 8) ^ SLICE(edx_eax_60, byte, 40), (byte) bx_56);
 	byte cl_70 = __xadd(229, (byte) ebx_68);
-	word32 edx_92 = SLICE(edx_eax_60, word32, 32);
-	word32 eax_83 = SEQ(SLICE(edx_eax_60, word16, 16), FPUF, (byte) edx_eax_60);
-	word32 ecx_89 = SEQ(~0x0014ECD8, cl_70);
-	return (word32) ebp_26 + (((eax_83 + ebx_68) + ecx_89) + edx_92) + esi_49 + ~0x71961596;
+	word32 edx_93 = SLICE(edx_eax_60, word32, 32);
+	word32 eax_84 = SEQ(SLICE(edx_eax_60, word16, 16), cond(cl_70) | SCZOP, (byte) edx_eax_60);
+	word32 ecx_90 = SEQ(~0x0014ECD8, cl_70);
+	return (word32) ebp_26 + (((eax_84 + ebx_68) + ecx_90) + edx_93) + esi_49 + ~0x71961596;
 }
 
 // 08049C7D: Register word32 log_size_4_var_018()
@@ -443,10 +439,10 @@ word32 log_size_4_var_017(word16 FPUF)
 word32 log_size_4_var_018()
 {
 	uint8 ch_30 = __rol(0x50, 0x6B);
-	Eq_1566 di_36 = __xadd(0x37B4, 0x37B4);
+	Eq_1553 di_36 = __xadd(0x37B4, 0x37B4);
 	ui32 edx_39 = __rcl(0x5F61F75F, 0x01, true);
 	word32 ebp_40 = __bsf(edx_39);
-	Eq_1566 bp_43 = __xadd((word16) ebp_40, 9818);
+	Eq_1553 bp_43 = __xadd((word16) ebp_40, 9818);
 	byte dl_48 = (byte) edx_39;
 	return __rol(SEQ(15714, (uint8) (9818 % (dl_48 | 0xC0)), (uint8) (9818 /u (dl_48 | 0xC0))), 0x14) + 0x57C0005F + SEQ(~0x1C66, ch_30, -0x6B) + SEQ(SLICE(edx_39, word24, 8), dl_48 | 0xC0) + SEQ(SLICE(ebp_40, word16, 16), bp_43) + SEQ(11143, __rcl(0xC782, 0x01, SLICE(cond(bp_43), bool, 1))) + SEQ(0x4463, di_36) - 1779199193;
 }
@@ -457,7 +453,7 @@ word32 log_size_4_var_018()
 word32 log_size_4_var_019()
 {
 	byte dl_40 = __ror(0x00, 0x8A);
-	Eq_567 edi_41 = __xadd(4053046445, 0x80665A8A);
+	Eq_563 edi_41 = __xadd(4053046445, 0x80665A8A);
 	word32 edx_45;
 	__btc(SEQ(0xBC84, 166, dl_40), 121, out edx_45);
 	return (word32) __shrd(edi_41, edi_41, ~0x28) + (edx_45 + 3887913800) - 223241649;
@@ -468,14 +464,14 @@ word32 log_size_4_var_019()
 //      main
 word32 log_size_4_var_020()
 {
-	uipr32 ebx_26;
+	uint32 ebx_26;
 	__btc(3073433670, 2312293681, out ebx_26);
 	word32 edx_28;
 	ui32 eax_31 = __rcr(791217770, 0x01, __btc(4127015550, ebx_26, out edx_28));
-	Eq_567 ebp_37 = __xadd(3810842943, 2312293681);
+	Eq_563 ebp_37 = __xadd(3810842943, 2312293681);
 	byte al_42;
 	__cmpxchg(0x18, 0xD1, (byte) eax_31, out al_42);
-	return SEQ(SLICE(eax_31, word16, 16), SEQ(SLICE(eax_31, byte, 8), al_42) - 53573) + SEQ(SLICE(ebx_26, word16, 16), SEQ(SLICE(ebx_26, byte, 8) + 0xAC, (byte) ebx_26 - true) + 0x01) + 2351950354 + ((ebp_37 - 0x8C2F18CE) - (ebp_37 < 0x00)) - 3574579739;
+	return SEQ(SLICE(eax_31, word16, 16), SEQ(SLICE(eax_31, byte, 8), al_42) - 53573) + SEQ(SLICE(ebx_26, word16, 16), SEQ(SLICE(ebx_26, byte, 8) + 0xAC, (byte) ebx_26 - true) + 0x01) + 2351950354 + ((ebp_37 - 0x8C2F18CE) - (word32) (ebp_37 < 0x00)) - 3574579739;
 }
 
 // 08049DC5: Register uint32 log_size_4_var_021()
@@ -487,7 +483,7 @@ uint32 log_size_4_var_021()
 	word32 edx_48;
 	__btr(SEQ(0x9495, SLICE(ax_39 *s32 19686, word16, 16)), 0x2F, out edx_48);
 	byte dh_54 = SLICE(edx_48, byte, 8);
-	return (uint32) (ax_39 *s 19686) + (SLICE(cond(dh_54 << 0x01), bool, 1) + 2670445278 << 0x01) + ~0x114284AE + SEQ(SLICE(edx_48, word16, 16), dh_54 << 0x01, (int8) true) + 0x3E5503E6;
+	return (uint32) (ax_39 *s 19686) + (SLICE(cond(dh_54 << 0x01), bool, 1) + 2670445278 << 0x01) + ~0x114284AE + SEQ(SLICE(edx_48, word16, 16), dh_54 << 0x01, 1) + 0x3E5503E6;
 }
 
 // 08049E39: Register word32 log_size_4_var_022()
@@ -523,11 +519,11 @@ word32 log_size_4_var_023()
 word32 log_size_4_var_024()
 {
 	uint8 bl_31 = __rol(~0x32, 0x3A);
-	Eq_678 cx_40 = __shld(52510, 48848, 0x00);
+	Eq_674 cx_40 = __shld(52510, 48848, 0x00);
 	byte cl_43 = (byte) cx_40;
 	int32 edx_47 = (int32) __shld(0x00, cx_40, 0x06);
 	int32 ebx_44 = SEQ(15949096, bl_31) >> cl_43;
-	Eq_567 ebp_48 = __xadd(3430175378, 763477712);
+	Eq_563 ebp_48 = __xadd(3430175378, 763477712);
 	return SEQ(SLICE(ebx_44, word24, 8), (byte) ebx_44 >> 0x30) + 0x08E299BB + SEQ(0x4196, cx_40) + edx_47 + SEQ(SLICE(ebp_48, word16, 16), (word16) ebp_48 << cl_43) + 480118322;
 }
 
@@ -536,7 +532,7 @@ word32 log_size_4_var_024()
 //      main
 word32 log_size_4_var_025()
 {
-	Eq_678 dx_31 = __shld(0x94AD, 0x94AD, 0x06);
+	Eq_674 dx_31 = __shld(0x94AD, 0x94AD, 0x06);
 	cu16 di_33;
 	__bts(0x0094, 0x04, out di_33);
 	byte dh_40 = SLICE(dx_31, byte, 8);
@@ -551,13 +547,12 @@ int32 log_size_4_var_026()
 {
 	word16 si_31 = __rcr(0x9C50, ~0x12, false);
 	uint64 edx_eax_40 = SEQ(SEQ(42419, __shrd(27284, 18401, 0x0D)) & 0x3FFFFFFF, 4191993752);
-	Eq_1988 edx_42 = (uint32) (edx_eax_40 % 4191993752);
+	Eq_1975 edx_42 = (uint32) (edx_eax_40 % 4191993752);
 	cu16 dx_57 = (word16) edx_42;
 	word16 edx_16_16_72 = SLICE(edx_42, word16, 16);
 	word16 ax_61 = (word16) (edx_eax_40 /u 4191993752);
-	Eq_2000 bx_53 = SEQ((int8) true, 0x17);
 	word32 esi_78 = SEQ(0x4B4D, si_31);
-	return (word32) __shrd(edx_42 *s 0xA07A8A64, edx_42 *s 0xA07A8A64, 0x01) + ((((int32) ax_61 + SEQ(0xE854, bx_53 >> 0x01)) + 3885638637) + SEQ(edx_16_16_72, dx_57 >> ~0x12)) + esi_78 + 358958800;
+	return (word32) __shrd(edx_42 *s 0xA07A8A64, edx_42 *s 0xA07A8A64, 0x01) + (((int32) ax_61 + 3488490616) + SEQ(edx_16_16_72, dx_57 >> ~0x12)) + esi_78 + 358958800;
 }
 
 // 0804A078: Register word32 log_size_4_var_027()
@@ -567,17 +562,17 @@ word32 log_size_4_var_027()
 {
 	word32 ebp_44;
 	__btr(0x5B6BECB6, 2499614871, out ebp_44);
-	Eq_606 ax_57 = __shrd(0xA911, 0x41D1, 0x0F);
+	Eq_602 ax_57 = __shrd(0xA911, 0x41D1, 0x0F);
 	return SEQ(38141, ax_57 * 0x00) + 765121221 + SEQ(37978, SLICE(ax_57 *32 0xEF, word16, 16)) + ebp_44 + 0x4DA23ED5;
 }
 
-// 0804A0EA: Register word32 log_size_4_var_028(Register word16 FPUF)
+// 0804A0EA: Register word32 log_size_4_var_028()
 // Called from:
 //      main
-word32 log_size_4_var_028(word16 FPUF)
+word32 log_size_4_var_028()
 {
 	int32 edi_25 = __bsr(3458008353);
-	return SEQ(47699, FPUF, 0x1B) + SEQ(52765, __ror(1313, 0x6D)) + 3462364781 + SEQ(0x00914551, __rcr(0x0F, 0x01, true)) + 4187865879 + SEQ(SLICE(edi_25, word16, 16), (word16) edi_25 >> ~0x58) - ~0x1E4D41D1;
+	return SEQ(47699, cond(0x00) | SCZOP, 0x1B) + SEQ(52765, __ror(1313, 0x6D)) + 3462364781 + SEQ(0x00914551, __rcr(0x0F, 0x01, true)) + 4187865879 + SEQ(SLICE(edi_25, word16, 16), (word16) edi_25 >> ~0x58) - ~0x1E4D41D1;
 }
 
 // 0804A14E: Register word32 log_size_4_var_029()
@@ -585,7 +580,7 @@ word32 log_size_4_var_028(word16 FPUF)
 //      main
 word32 log_size_4_var_029()
 {
-	Eq_675 dx_31 = __ror(64151, 0x04);
+	Eq_678 dx_31 = __ror(64151, 0x04);
 	byte dl_33 = (byte) dx_31;
 	byte dh_38 = SLICE(dx_31, byte, 8);
 	byte bl_26 = ~0x08;
@@ -609,12 +604,11 @@ word32 log_size_4_var_029()
 word32 log_size_4_var_030()
 {
 	word32 ebx_39 = SEQ(12835210, __rol(0x13, ~0x26));
-	int8 cl_47 = (int8) true;
 	uint8 dl_45 = __rol(0x00, ~0x13);
-	Eq_606 si_51 = __shrd(0x8881, SEQ(0x46, cl_47), 0x0C);
+	Eq_602 si_51 = __shrd(0x8881, 0x4601, 0x0C);
 	uint32 ebx_53 = __ror(ebx_39 - ~0x66360654, 0x01);
 	byte ah_34 = -0x4B;
-	return SEQ(20076, ah_34 + 0x46, 0x8C) + SEQ(SLICE(ebx_53, word16, 16), __shld((word16) ebx_53, 0x00, 0x08)) + SEQ(30132, 0x46, cl_47) + (uint32) dl_45 + (uint32) (SEQ(ah_34 + 0x46, 0x8C) *s 0x2808) + SEQ(43471, si_51) + ~4265392678 - 3503037063;
+	return SEQ(20076, ah_34 + 0x46, 0x8C) + SEQ(SLICE(ebx_53, word16, 16), __shld((word16) ebx_53, 0x00, 0x08)) + 0x75B44601 + (uint32) dl_45 + (uint32) (SEQ(ah_34 + 0x46, 0x8C) *s 0x2808) + SEQ(43471, si_51) + ~4265392678 - 3503037063;
 }
 
 // 0804A222: Register word32 log_size_4_var_031()
@@ -625,7 +619,7 @@ word32 log_size_4_var_031()
 	word16 bp_35;
 	__btc(24467, 0x953C, out bp_35);
 	ui32 eax_41 = __rcr(112421074, 0x3C, SLICE(cond(-659084810), bool, 1));
-	Eq_610 dx_45 = __rol(0xCA0F, 0x3C);
+	Eq_606 dx_45 = __rol(0xCA0F, 0x3C);
 	byte bl_48 = __ror(~0x09, 0x3C);
 	word32 edx_51;
 	__btr(SEQ(0x15F1, dx_45), eax_41, out edx_51);
@@ -656,16 +650,16 @@ word32 log_size_4_var_032()
 word32 log_size_4_var_033()
 {
 	ui32 ebx_31 = __rcr(640001234, 0x01, true);
-	Eq_675 ax_46 = __ror(0x77, 0x01);
-	Eq_675 bp_48 = 41686;
+	Eq_678 ax_46 = __ror(0x77, 0x01);
+	Eq_678 bp_48 = 41686;
 	cu16 bx_36 = (word16) ebx_31;
 	word16 ebx_16_16_77 = SLICE(ebx_31, word16, 16);
 	byte ah_58 = SLICE(ax_46, byte, 8);
 	byte al_65 = (byte) ax_46;
 	if (Test(UGE,true))
 		bp_48 = ax_46;
-	Eq_2337 bx_61 = (bx_36 >> 0x01) *s ~0x19C0;
-	Eq_567 ecx_53 = __shld(0x6F6DFCF2, ~0x19F806F0, 242);
+	Eq_2312 bx_61 = (bx_36 >> 0x01) *s ~0x19C0;
+	Eq_563 ecx_53 = __shld(0x6F6DFCF2, ~0x19F806F0, 242);
 	word16 ax_66 = SEQ(ah_58 - 0x3F, al_65);
 	word32 eax_69 = SEQ(18383, ah_58 - 0x3F, al_65);
 	word32 ebx_78 = SEQ(ebx_16_16_77, bx_61);
@@ -680,17 +674,17 @@ word32 log_size_4_var_033()
 //      main
 word32 log_size_4_var_034()
 {
-	Eq_610 cx_30 = __rol(46274, 0xC2);
-	Eq_481 ch_31 = SLICE(cx_30, byte, 8);
+	Eq_606 cx_30 = __rol(46274, 0xC2);
+	Eq_477 ch_31 = SLICE(cx_30, byte, 8);
 	byte cl_45 = (byte) cx_30;
 	bool C_38 = SLICE(cond(ch_31 *16 0x36), bool, 1);
 	uipr32 ecx_40 = SEQ(0x0237, cx_30);
-	uip32 eax_54 = SEQ(43994, ch_31 *16 0x36);
+	uint32 eax_54 = SEQ(43994, ch_31 *16 0x36);
 	uipr32 ebp_41 = 0x63454557;
 	if (ch_31 *16 0x36 < 0x00)
 		ebp_41 = ecx_40;
 	uint8 dl_48 = __rcr(0xC6, cl_45, C_38);
-	uipr32 edx_57 = SEQ(~0x000CC803, dl_48);
+	uint32 edx_57 = SEQ(~0x000CC803, dl_48);
 	word32 eax_58;
 	__btc(eax_54, edx_57, out eax_58);
 	uipr32 ebp_64 = ebp_41 - 3573172455;
@@ -704,8 +698,8 @@ word32 log_size_4_var_035()
 {
 	word16 ax_31;
 	__btc(~0x7485, ~0x13, out ax_31);
-	Eq_567 eax_35;
-	word32 ecx_39 = 4004988908 - __btc(SEQ(0xC412, ax_31), 126139455, out eax_35);
+	Eq_563 eax_35;
+	word32 ecx_39 = 4004988908 - (word32) __btc(SEQ(0xC412, ax_31), 126139455, out eax_35);
 	byte ch_41 = SLICE(ecx_39, byte, 8);
 	byte cl_48 = (byte) ecx_39;
 	ui32 ecx_51 = __rcl(SEQ(SLICE(ecx_39, word16, 16), __rcr(ch_41, 0x01, SLICE(cond(ecx_39), bool, 1)), cl_48), cl_48, (ch_41 & 0x02) != 0x00);
@@ -723,14 +717,14 @@ word32 log_size_4_var_036()
 	uint8 dl_28 = __rol(0xD8, 22);
 	byte ch_31 = __ror(0xB2, 0x01);
 	word32 edx_36 = SEQ(0x000C50ED, dl_28);
-	ci8 ch_43 = -(ch_31 | 0x25);
+	ci8 ch_44 = -(ch_31 | 0x25);
 	word32 edi_101 = 3159116241;
 	word32 ecx_33 = SEQ(45527, ch_31, 22);
 	byte dh_58 = SLICE(edx_36 + ~0x34F008DA, byte, 8);
 	word16 edx_16_16_88 = SLICE(edx_36 + ~0x34F008DA, word16, 16);
-	word16 cx_47 = SEQ(ch_43, 22);
-	word32 ecx_82 = SEQ(45527, ch_43, 22);
-	if (ch_43 < 0x00)
+	word16 cx_47 = SEQ(ch_44, 22);
+	word32 ecx_82 = SEQ(45527, ch_44, 22);
+	if (ch_44 < 0x00)
 		edi_101 = SEQ(0xBC4C, cx_47);
 	word32 edx_89 = SEQ(edx_16_16_88, dh_58 + ~0x11, dl_28 + 0x25);
 	if (!P)
@@ -752,10 +746,9 @@ word32 log_size_4_var_037()
 //      main
 int32 log_size_4_var_038()
 {
-	up32 ecx_42 = SEQ(0xE151, (int8) true, 0x87);
 	word32 eax_69;
 	word32 ebx_82 = SEQ(SLICE(__rol(SEQ(3354364, __rol(0x94, ~0x08)), 0x24), word24, 8), ~(int8) (__cmpxchg(0x74F0000D, 998195703, 0xAE9400C0, out eax_69) | SLICE(cond(14828), bool, 4)));
-	return (int32) (word16) eax_69 + ebx_82 + (ecx_42 + 3280594129) + ~4067772173 - ~0x1AAA9BA8;
+	return (int32) (word16) eax_69 + ebx_82 + 0xA4DAE658 + ~4067772173 - ~0x1AAA9BA8;
 }
 
 // 0804A5A8: Register word32 log_size_4_var_039()
@@ -764,7 +757,7 @@ int32 log_size_4_var_038()
 word32 log_size_4_var_039()
 {
 	word16 ebp_16_16_72 = SLICE(__rol(4236532630, ~0x34), word16, 16);
-	Eq_606 di_33 = __shrd(53000, 0xBA88, 11);
+	Eq_602 di_33 = __shrd(53000, 0xBA88, 11);
 	uint32 esi_36 = __ror(2607626689, 11);
 	word16 si_37 = (word16) esi_36;
 	uint8 dh_41 = __rol(~0x45, 0x01);
@@ -783,8 +776,8 @@ word32 log_size_4_var_040()
 {
 	word16 ax_57;
 	__cmpxchg(31373, 0x6336, 22080, out ax_57);
-	Eq_2704 C_64 = SLICE(cond(ax_57 - 64611), bool, 1);
-	word32 edx_80 = SEQ(~0x00431556, 191 - (C_64 < 0x0709DA96));
+	Eq_2671 C_64 = SLICE(cond(ax_57 - 64611), bool, 1);
+	word32 edx_80 = SEQ(~0x00431556, 191 - (byte) (C_64 < 0x0709DA96));
 	return SEQ(62641, ax_57 - 64611) + ((word32) C_64 + 0x0709DA96) + 0x10F0D126 + edx_80 + (edx_80 + ~0x0AD2A551) + 2219911152;
 }
 
@@ -811,7 +804,7 @@ ui32 log_size_4_var_041()
 word32 log_size_4_var_042()
 {
 	uint8 ah_27 = __rol(0x94, 0x01);
-	Eq_675 cx_33 = __ror(21624, ~0x24);
+	Eq_678 cx_33 = __ror(21624, ~0x24);
 	uint32 ecx_69 = SEQ(57770, cx_33);
 	byte cl_70 = (byte) cx_33;
 	word32 eax_80 = SEQ(0x1B9B, ah_27, 0x23);
@@ -825,7 +818,7 @@ word32 log_size_4_var_042()
 //      main
 uint32 log_size_4_var_043()
 {
-	Eq_678 di_28 = __shld(0x666F, 0x1ED1, 0x0C);
+	Eq_674 di_28 = __shld(0x666F, 0x1ED1, 0x0C);
 	ci16 bx_40 = SEQ(0x0F, __rcl(0xD1, 0x95, SLICE(cond(di_28 - ~0x0335), bool, 1)));
 	ui32 esi_54 = SEQ(0x1298, __ror(~0x0335, 0x95));
 	return (uint32) (3280664744535636510 /u (esi_54 | 0xC0000000)) + ~0x35 + SEQ(0x09AC, bx_40 >> 0x95) + ~0x35 + (uint32) (3280664744535636510 % (esi_54 | 0xC0000000)) + 2436156291 + (esi_54 | 0xC0000000) + __rol(SEQ(29689, di_28 - ~0x0335), 0x57) - 0x7D3D73F6;
@@ -836,12 +829,12 @@ uint32 log_size_4_var_043()
 //      main
 word32 log_size_4_var_044()
 {
-	Eq_675 bp_28 = __ror(38565, 100);
-	Eq_610 ax_34 = __rol(~0x3386, 100);
+	Eq_678 bp_28 = __ror(38565, 100);
+	Eq_606 ax_34 = __rol(~0x3386, 100);
 	word32 esi_43;
 	__bts(0xA71AE0E4, SEQ(22099, ax_34), out esi_43);
 	word32 edx_22 = 0xA90ADED8;
-	Eq_567 edi_48 = __shld(696052840, ~0x00D4E4ED, 0x01);
+	Eq_563 edi_48 = __shld(696052840, ~0x00D4E4ED, 0x01);
 	word32 eax_66 = SEQ(22099, (word16) ax_34.u0 + 0x0AF9);
 	if (ax_34 >= 0x0AF9)
 		edx_22 = esi_43;
@@ -856,7 +849,7 @@ word32 log_size_4_var_045()
 {
 	byte ch_27 = __xadd(0x95, 0x5F);
 	ui32 eax_39 = __rcl(1500002139, 0x53, false);
-	return SEQ(SLICE(eax_39, word16, 16), (word16) eax_39 + (word16) eax_39 * 0x04) + ~0x3E0204FF + SEQ(0x66E9, ch_27, (int8) true) - 3821103905;
+	return SEQ(SLICE(eax_39, word16, 16), (word16) eax_39 + (word16) eax_39 * 0x04) + ~0x3E0204FF + SEQ(0x66E9, ch_27, 1) - 3821103905;
 }
 
 // 0804A8CA: Register word32 log_size_4_var_046()
@@ -900,10 +893,10 @@ word32 log_size_4_var_049()
 //      main
 word32 log_size_4_var_050()
 {
-	Eq_610 bx_31 = __rol(~0x560D, 212);
+	Eq_606 bx_31 = __rol(~0x560D, 212);
 	ui32 ebx_42 = (SEQ(0x9A4E, __rol(SLICE(bx_31, byte, 8), 212), (byte) bx_31) << 0x01) + 0x7FABED05;
 	int16 bx_56;
-	__btc(SEQ(SLICE(ebx_42, byte, 8), (int8) true), 0x3551, out bx_56);
+	__btc(SEQ(SLICE(ebx_42, byte, 8), 1), 0x3551, out bx_56);
 	word16 bx_59;
 	__btc(bx_56, 31172, out bx_59);
 	return SEQ(3134263, (int8) (ebx_42 == 0x00)) + SEQ(SLICE(ebx_42, word16, 16), bx_59) + 467855867;
@@ -914,7 +907,7 @@ word32 log_size_4_var_050()
 //      main
 word32 log_size_4_var_051()
 {
-	Eq_610 cx_34 = __rol(~0x2470, 0x78);
+	Eq_606 cx_34 = __rol(~0x2470, 0x78);
 	byte cl_61 = (byte) cx_34;
 	word24 ecx_24_8_82 = SEQ(0x7674, SLICE(cx_34, byte, 8));
 	uipr32 esi_125 = 3440636844;
@@ -933,13 +926,13 @@ word32 log_size_4_var_052()
 	cui16 dx_31 = 0x4778;
 	if (OVERFLOW(0x08))
 		dx_31 = ~0x2971;
-	int32 eax_42 = -SEQ(0x5400, __rcr(0x28, 223, false), 0x99);
-	cui16 ax_48 = (word16) eax_42;
-	word16 eax_16_16_65 = SLICE(eax_42, word16, 16);
-	if (eax_42 < 0x00)
+	int32 eax_43 = -SEQ(0x5400, __rcr(0x28, 223, false), 0x99);
+	cui16 ax_48 = (word16) eax_43;
+	word16 eax_16_16_65 = SLICE(eax_43, word16, 16);
+	if (eax_43 < 0x00)
 		ax_48 = 0x3680;
-	Eq_610 dx_54 = dx_31 & ax_48;
-	Eq_606 cx_63 = __shrd(0x310F, dx_54, 0x0F);
+	Eq_606 dx_54 = dx_31 & ax_48;
+	Eq_602 cx_63 = __shrd(0x310F, dx_54, 0x0F);
 	ui32 eax_69 = __rol(SEQ(eax_16_16_65, ax_48), (byte) cx_63);
 	cui16 ax_73 = (word16) eax_69;
 	return SEQ(SLICE(eax_69, word16, 16), (uint8) ((ax_73 & 0x3FFF) % ~0x13), (uint8) ((ax_73 & 0x3FFF) /u ~0x13)) + 0x711E88EC + SEQ(0x6413, cx_63) + SEQ(~0x6316, SLICE(dx_54, byte, 8), (int8) ((ax_73 ^ 0x2508) < 0x00)) + __rcr(777967246, 0x6B, false) + SEQ(0x69F6, ax_73 ^ 0x2508) - 0x2B959689;
@@ -950,15 +943,15 @@ word32 log_size_4_var_052()
 //      main
 word32 log_size_4_var_053()
 {
-	Eq_606 bx_30;
+	Eq_602 bx_30;
 	__btr(0xB439, 99, out bx_30);
-	Eq_567 ecx_34 = __xadd(~0x0C0BCE10, SEQ(0x924A, bx_30));
+	Eq_563 ecx_34 = __xadd(~0x0C0BCE10, SEQ(0x924A, bx_30));
 	uipr32 edx_45 = -0x8DB30090;
 	ci8 dl_49 = (byte) edx_45 - SLICE(ecx_34, byte, 8);
-	Eq_864 C_57 = SLICE(cond(dl_49), bool, 1);
+	bool C_57 = SLICE(cond(dl_49), bool, 1);
 	word32 edx_80 = SEQ(SLICE(edx_45, word24, 8), dl_49);
 	ui32 ebp_58 = __rcr(2835828827, 0x01, C_57);
-	Eq_675 ax_61 = __ror(0x505B, 0x12);
+	Eq_678 ax_61 = __ror(0x505B, 0x12);
 	word16 bx_68;
 	__btr(bx_30, ~0x30, out bx_68);
 	return (word32) ecx_34 + (SEQ(0xA907, ax_61) + SEQ(0x924A, bx_68)) + edx_80 + ebp_58 + 1754671391 + ~747496969 - 2786265060;
@@ -969,22 +962,22 @@ word32 log_size_4_var_053()
 //      main
 word32 log_size_4_var_054()
 {
-	Eq_588 ebx_29 = __shrd(0x38F73C3E, 0x504534B4, 0xB4);
+	Eq_584 ebx_29 = __shrd(0x38F73C3E, 0x504534B4, 0xB4);
 	word32 edx_30;
 	__bts(~0x0037EA9C, 0x504534B4, out edx_30);
-	Eq_606 bx_72 = (word16) ebx_29 << ~0x25;
+	Eq_602 bx_72 = (word16) ebx_29 << ~0x25;
 	word16 ebx_16_16_103 = SLICE(ebx_29 << ~0x25, word16, 16);
-	Eq_610 dx_49 = (word16) edx_30;
+	Eq_606 dx_49 = (word16) edx_30;
 	word32 eax_66;
 	__cmpxchg(~0x75C28215, 2689060511, SEQ(0x2B44, __shrd(0x0620, dx_49, 0x01)), out eax_66);
-	Eq_1566 bx_73 = __xadd(bx_72, 0x445D);
+	Eq_1553 bx_73 = __xadd(bx_72, 0x445D);
 	cui16 cx_53 = 0x3400 - dx_49;
 	word16 edx_16_16_109 = SLICE(edx_30, word16, 16);
 	word16 eax_16_16_96 = SLICE(eax_66, word16, 16);
 	byte bh_78 = SLICE(bx_73, byte, 8);
 	byte bl_100 = (byte) bx_73;
 	uint32 ecx_90 = SEQ(0x5045, cx_53);
-	Eq_481 cl_91 = (byte) cx_53;
+	Eq_477 cl_91 = (byte) cx_53;
 	word32 edx_108 = edx_30;
 	if (bx_73 <= 0x00)
 		edx_108 = SEQ(edx_16_16_109, bx_73);
@@ -1010,16 +1003,16 @@ word32 log_size_4_var_055()
 //      main
 word32 log_size_4_var_056()
 {
-	Eq_567 ecx_27 = __shld(0xC75C079C, 3447051931, 0x9C);
+	Eq_563 ecx_27 = __shld(0xC75C079C, 3447051931, 0x9C);
 	word32 ecx_35 = SEQ(SLICE(ecx_27, word24, 8), __ror((byte) ecx_27, 0x01));
 	word32 ecx_41;
 	__btc(ecx_35 + 0x953BA038, ecx_35 + 0x953BA038, out ecx_41);
-	Eq_481 cl_46 = (byte) ecx_41 - 0x01;
+	Eq_477 cl_46 = (byte) ecx_41 - 0x01;
 	uint32 ebp_48 = __ror(3447051931, cl_46);
 	word24 ecx_24_8_64 = SLICE(ecx_41 - 0x01, word24, 8);
 	int32 ebx_49 = __bsr(ebp_48);
-	word32 ebp_50 = -ebp_48;
-	return ebx_49 + 0x7C8BB93E + SEQ(ecx_24_8_64, __rcl(cl_46, 0x5D, ebp_50 == 0x00)) + 91204060 + ebp_50 + 4016790994;
+	word32 ebp_51 = -ebp_48;
+	return ebx_49 + 0x7C8BB93E + SEQ(ecx_24_8_64, __rcl(cl_46, 0x5D, ebp_48 != 0x00)) + 91204060 + ebp_51 + 4016790994;
 }
 
 // 0804AD9D: Register word32 log_size_4_var_057()
@@ -1028,7 +1021,7 @@ word32 log_size_4_var_056()
 word32 log_size_4_var_057()
 {
 	word32 eax_27 = -3888260886;
-	return eax_27 + 468257650 + (__xadd(SEQ(0x00CB7063, (int8) false) >> 0x01, 1400142781) ^ eax_27) + (SEQ(6220, __shrd(0xAAF0, 0x5C44, 0x01) << 0xCC) >> 0x01) + 0x0C5DB00A;
+	return eax_27 + 468257650 + (__xadd(0xE5B83180, 1400142781) ^ eax_27) + (SEQ(6220, __shrd(0xAAF0, 0x5C44, 0x01) << 0xCC) >> 0x01) + 0x0C5DB00A;
 }
 
 // 0804AE08: Register word32 log_size_4_var_058()
@@ -1036,10 +1029,9 @@ word32 log_size_4_var_057()
 //      main
 word32 log_size_4_var_058()
 {
-	Eq_481 bh_28 = (int8) true;
 	byte al_40;
 	__cmpxchg(171, 0x00, 0x33, out al_40);
-	return SEQ(8313149, al_40) + SEQ(33605, SEQ(__rcl(bh_28, 0x01, SLICE(cond(27737), bool, 1)), 171) *s 11770) + 0x22C30000 + ~3921833049 + 3303048369;
+	return SEQ(8313149, al_40) + SEQ(33605, SEQ(__rcl(1, 0x01, SLICE(cond(27737), bool, 1)), 171) *s 11770) + 0x22C30000 + ~3921833049 + 3303048369;
 }
 
 // 0804AE7A: Register word32 log_size_4_var_059()
@@ -1048,7 +1040,7 @@ word32 log_size_4_var_058()
 word32 log_size_4_var_059()
 {
 	ui32 edx_53 = SEQ(20329, ~0x1E, ~0x00);
-	Eq_678 dx_62 = (word16) edx_53;
+	Eq_674 dx_62 = (word16) edx_53;
 	return SEQ(0x4C14, __shld(0x44, dx_62, 0x00)) + 1002899705 + edx_53 + (edx_53 | 777393529) + SEQ(0x6A1C, __shrd(9033, 0x1579, 0x0E)) + 0x4F1E8444;
 }
 
@@ -1066,7 +1058,7 @@ word32 log_size_4_var_060()
 word32 log_size_4_var_061()
 {
 	uint32 esi_26 = __bswap(2216268658);
-	Eq_678 di_37 = __shld(0x00, 0x0572, 0x05);
+	Eq_674 di_37 = __shld(0x00, 0x0572, 0x05);
 	byte al_40;
 	__cmpxchg(0x05, 0x05, ~0x44, out al_40);
 	return SEQ(22666, __shld(SEQ(222, al_40), (word16) esi_26, 0x05)) + 2923241669 + esi_26 + __ror((uint32) __rcr(di_37, 0x36, true), 0x05) - 2841312045;
@@ -1086,8 +1078,8 @@ word32 log_size_4_var_063()
 {
 	word16 ebp_16_16_68 = SLICE(__rol(402292039, 0x01), word16, 16);
 	word16 bx_30 = ~63682;
-	Eq_610 bp_41 = __rol(0x7BD0, 0x01);
-	Eq_606 ax_54 = SEQ(SLICE(bx_30, byte, 8), 0x7D);
+	Eq_606 bp_41 = __rol(0x7BD0, 0x01);
+	Eq_602 ax_54 = SEQ(SLICE(bx_30, byte, 8), 0x7D);
 	uint32 ebx_59 = SEQ(0x850B, __rcr(0xAC, 0x01, true), (byte) bx_30);
 	uint64 edx_eax_62 = ebx_59 *64 SEQ(~0x38A1, __xadd(ax_54, ax_54));
 	return (word32) edx_eax_62 + ebx_59 + 1612193318 + SLICE(edx_eax_62, word32, 32) + SEQ(ebp_16_16_68, bp_41) + 3667751105;
@@ -1098,11 +1090,10 @@ word32 log_size_4_var_063()
 //      main
 word32 log_size_4_var_064()
 {
-	Eq_675 cx_41 = __ror(22323, 0x33);
-	Eq_3603 bl_38 = (int8) true;
+	Eq_678 cx_41 = __ror(22323, 0x33);
 	bcu8 cl_49 = (byte) cx_41;
 	byte ch_51 = SLICE(cx_41, byte, 8);
-	return (word32) ((byte) (word16) __ror(3086338692, 0x47) + 118) + SEQ(0x48, ~0x4C, bl_38) + SEQ(8121, ch_51, cl_49 >> 0xA9) + (uint32) __ror(51425, ~0x09) + 0xEE494D03 + SEQ(54874, SEQ(~0x4C, bl_38) *s 0xD720 ^ SEQ(ch_51, cl_49 >> 0xA9)) - ~0x1B5B04CE;
+	return (word32) ((byte) (word16) __ror(3086338692, 0x47) + 118) + 4764417 + SEQ(8121, ch_51, cl_49 >> 0xA9) + (uint32) __ror(51425, ~0x09) + 0xEE494D03 + SEQ(54874, SEQ(ch_51, cl_49 >> 0xA9) ^ 14112) - ~0x1B5B04CE;
 }
 
 // 0804B11A: Register word32 log_size_4_var_065()
@@ -1117,11 +1108,28 @@ word32 log_size_4_var_065()
 	return SEQ(6770, ax_37 >> 0x1D) + SEQ(6226396, (int8) (ch_46 < 0x00) | 0xC9) + SEQ(0xD4D2, ch_46, ~0x00) + SEQ(8342974, __rcl(0xA5, 0x01, __btr(30757, 222, out ax_37))) *s 3164773124 + 1503865615 + SEQ(SLICE(SEQ(~0x7095, si_27) << 0x1D, word16, 16), ((si_27 << (word16) 0x1D) >> ~0x48) >> 0x01) + 3375505149;
 }
 
-// 0804B18E: Register word32 log_size_4_var_066(Register word16 FPUF)
+// 0804B18E: Register word32 log_size_4_var_066()
 // Called from:
 //      main
-word32 log_size_4_var_066(word16 FPUF)
+word32 log_size_4_var_066()
 {
+	Eq_3660 C_42 = SLICE(cond(62637), bool, 5);
+	byte SZO_38 = cond(~0x3B350B51);
+	byte SCZOP_43 = SZO_38 | C_42 | SCZOP;
+	Eq_3671 v43_113 = SZO_38 | C_42 | SCZOP;
+	word16 ax_47 = SEQ(SCZOP_43, ~0x00);
+	word32 eax_49 = SEQ(0x3C33, SCZOP_43, ~0x00);
+	if (!v43_113)
+		eax_49 = SEQ(0x3C33, ax_47);
+	word32 ecx_56 = eax_49 + 1421599546;
+	Eq_602 dx_62 = __shrd(0x00, 22296, 11);
+	uint32 ebx_69 = __bswap(3244159334);
+	word32 edi_78;
+	__btc(1373263640, 227, out edi_78);
+	word32 ebx_82;
+	__btc(ebx_69, ebx_69, out ebx_82);
+	int16 ax_66 = SLICE(ecx_56, byte, 8) *s16 (byte) eax_49;
+	return SEQ(SLICE(eax_49, word16, 16), -SLICE(ax_66, byte, 8), (byte) ax_66) + ebx_82 + ecx_56 + SEQ(~0x3200, dx_62) + 0x1310B29E + (4142019155 >> (byte) ecx_56) + edi_78 - 1727967807;
 }
 
 // 0804B1FC: Register word32 log_size_4_var_067()
@@ -1157,7 +1165,7 @@ word32 log_size_4_var_068()
 //      main
 word32 log_size_4_var_069()
 {
-	Eq_678 bx_38 = __shld(38996, 0x00, 0x01);
+	Eq_674 bx_38 = __shld(38996, 0x00, 0x01);
 	byte bh_51 = SLICE(bx_38, byte, 8);
 	return SEQ(0x00A54301, __ror(0xB4, 0x01)) + SEQ(0x040A, bx_38 >> 0x6D) + SEQ(0x003AC1D8, 0x06 - bh_51) + __rol(~0x252AD02A, 0x06) + 3635577817 + SEQ(0x2A5D, __shrd(0x3DFF, 33753, 0x0F)) - 2624215858;
 }
@@ -1204,7 +1212,7 @@ word32 log_size_4_var_072()
 {
 	uint8 ch_30 = __rol(0x70, 0x01);
 	int16 cx_37 = SEQ(ch_30, 0x6A);
-	return SEQ(10776, SLICE(cx_37 *s32 0x1056, byte, 8), ~0x34) + SEQ(0x004464CB, ~0x3F) + SEQ(19094, ch_30, 0x00) + SEQ(0x7F34, SLICE(cx_37 *s32 0x1056, byte, 24), (int8) false) + 1858950004;
+	return SEQ(10776, SLICE(cx_37 *s32 0x1056, byte, 8), ~0x34) + SEQ(0x004464CB, ~0x3F) + SEQ(19094, ch_30, 0x00) + SEQ(0x7F34, SLICE(cx_37 *s32 0x1056, byte, 24), 0) + 1858950004;
 }
 
 // 0804B498: Register word32 log_size_4_var_073()
@@ -1228,8 +1236,8 @@ uint32 log_size_4_var_074()
 {
 	uint32 esi_28 = __bswap(0xEAAB10B0);
 	byte cl_35 = ~~0x70;
-	Eq_567 ecx_45 = SEQ(1130, __shrd(SEQ(0xB8, cl_35 & 0x0F), (word16) (esi_28 >> 0x36), cl_35 & 0x0F));
-	Eq_588 eax_46 = __shrd(3555271699, ecx_45, 0xA4);
+	Eq_563 ecx_45 = SEQ(1130, __shrd(SEQ(0xB8, cl_35 & 0x0F), (word16) (esi_28 >> 0x36), cl_35 & 0x0F));
+	Eq_584 eax_46 = __shrd(3555271699, ecx_45, 0xA4);
 	word32 ecx_47;
 	__bts(ecx_45, 0xA0, out ecx_47);
 	return (eax_46 >> (byte) ecx_47) + __bswap(SEQ(0xA222, __ror(0x11, 0x01), 0x6D)) + ecx_47 + 0x7761C273 + ((esi_28 >> 0x36) - ~0x22E6209C) + SEQ(0x5686, ~28343 & 0x0AB3) - 0x69600993;
@@ -1247,14 +1255,12 @@ word32 log_size_4_var_075()
 //      main
 word32 log_size_4_var_076()
 {
-	Eq_567 edx_28 = __shld(1378556606, 0x0023412D, ~0x13);
-	word32 esi_29;
-	__bts(2882364245, ~0x01, out esi_29);
+	Eq_563 edx_28 = __shld(1378556606, 0x0023412D, ~0x13);
 	byte dh_41 = SLICE(edx_28, byte, 8);
 	byte al_43;
 	__cmpxchg(dh_41, dh_41, ~0x41, out al_43);
-	Eq_4073 edi_51 = (uint32) __shld(0x00, (word16) edx_28, 0x05);
-	return (word32) edi_51 + ((((word32) edx_28 + ((SEQ(0x001ED09A, al_43) + SEQ(11349222, (int8) false)) + ~0x4DE4F282)) + 3101710792) + __rcl(edi_51 *s 0x74D90751, 0x7D, false)) - 3505145105;
+	Eq_4086 edi_51 = (uint32) __shld(0x00, (word16) edx_28, 0x05);
+	return (word32) edi_51 + ((((word32) edx_28 + (SEQ(0x001ED09A, al_43) + 1598550909)) + 3101710792) + __rcl(edi_51 *s 0x74D90751, 0x7D, false)) - 3505145105;
 }
 
 // 0804B656: Register word32 log_size_4_var_077()
@@ -1264,12 +1270,8 @@ word32 log_size_4_var_077()
 {
 	uint16 si_27;
 	__bts(30308, ~0x0C, out si_27);
-	uint32 dx_ax_37 = SEQ(13766, SEQ(0x35, -0x4E));
-	uint16 ax_40 = (uint16) (dx_ax_37 /u ~0x10EB);
-	word32 eax_53;
-	__btr(SEQ(~0x4623, __ror(SLICE(ax_40, byte, 8), 0x01), (byte) ax_40), 0x34, out eax_53);
 	ui32 ebp_61 = SEQ(64869, ~15811);
-	return (word32) ((byte) (word16) __bsf(ebp_61) & ~0x0C) + 0x536AF003 + SEQ(42440, __rcr((uint16) (dx_ax_37 % ~0x10EB), 0x01, true)) + ebp_61 + (SEQ(0x01B0, si_27) & ~0x12F07966) - 4154031194;
+	return (word32) ((byte) (word16) __bsf(ebp_61) & ~0x0C) + 0x536AF003 + SEQ(42440, __rcr((uint16) (SEQ(13766, SEQ(0x35, -0x4E)) % ~0x10EB), 0x01, true)) + ebp_61 + (SEQ(0x01B0, si_27) & ~0x12F07966) - 4154031194;
 }
 
 // 0804B6CB: Register word32 log_size_4_var_078()
@@ -1286,11 +1288,11 @@ word32 log_size_4_var_078()
 //      main
 word32 log_size_4_var_079()
 {
-	Eq_675 si_31 = __ror(2254, 0x5E);
-	Eq_567 ecx_32;
+	Eq_678 si_31 = __ror(2254, 0x5E);
+	Eq_563 ecx_32;
 	__btc(1639080951, 0x47, out ecx_32);
 	cui16 cx_46 = (word16) ecx_32;
-	return __rol(3664674315, 0x40) + SEQ(SLICE(ecx_32, word16, 16), cx_46 << 0x01) + ((__ror(0x4A02E008, 0x01) - 3844983499) - (si_31 < 0x00)) + __rcr(__shrd(1140178368, ecx_32, (byte) ecx_32), (byte) cx_46 << 0x01, false) + SEQ(0x43C4, si_31) + 3423428475;
+	return __rol(3664674315, 0x40) + SEQ(SLICE(ecx_32, word16, 16), cx_46 << 0x01) + ((__ror(0x4A02E008, 0x01) - 3844983499) - (word32) (si_31 < 0x00)) + __rcr(__shrd(1140178368, ecx_32, (byte) ecx_32), (byte) cx_46 << 0x01, false) + SEQ(0x43C4, si_31) + 3423428475;
 }
 
 // 0804B7A8: Register word32 log_size_4_var_080()
@@ -1301,7 +1303,7 @@ word32 log_size_4_var_080()
 	uipr32 eax_34 = ~0x11EEBFF6;
 	int16 ax_38 = (word16) eax_34;
 	word16 eax_16_16_71 = SLICE(eax_34, word16, 16);
-	Eq_606 ax_41 = __shrd(ax_38, 47314, 0x01);
+	Eq_602 ax_41 = __shrd(ax_38, 47314, 0x01);
 	cui16 di_46;
 	__btc(0x01CD, ~0x20C2, out di_46);
 	ui32 edx_53 = __rcl(0x3D710000, 0x01, true);
@@ -1321,10 +1323,10 @@ word32 log_size_4_var_081()
 {
 	ui32 eax_28 = __rol(4149419969, 0x3C);
 	int32 edx_31 = __bsr(0xBA05A0A7);
-	Eq_606 ax_34 = __shrd((word16) eax_28, 42142, 0x0C);
-	Eq_487 dh_40 = __rcl(SLICE(edx_31, byte, 8), 0xD0, SLICE(cond(0x5A), bool, 1));
+	Eq_602 ax_34 = __shrd((word16) eax_28, 42142, 0x0C);
+	Eq_483 dh_40 = __rcl(SLICE(edx_31, byte, 8), 0xD0, SLICE(cond(0x5A), bool, 1));
 	uint32 esi_42 = __ror(0x12235639, 0x5A);
-	Eq_675 cx_46 = __ror(48986, 0x01);
+	Eq_678 cx_46 = __ror(48986, 0x01);
 	uint32 eax_48 = SEQ(SLICE(eax_28, word16, 16), ax_34);
 	ci16 si_51 = (word16) esi_42;
 	byte cl_53 = (byte) cx_46;
@@ -1337,11 +1339,11 @@ word32 log_size_4_var_081()
 //      main
 word32 log_size_4_var_082()
 {
-	Eq_610 bp_28 = __rol(~0x44A8, 0x01);
-	Eq_567 ebx_29 = __xadd(0x98988E70, 0x98988E70);
-	Eq_588 eax_37 = __shrd(SEQ(48855, __shrd(~0x01FC, bp_28, 0x05)) ^ 1925585278, 934452744, 0x05);
-	Eq_606 bx_43 = __shrd((word16) ebx_29, 5125, 0x01);
-	Eq_606 dx_47 = __rcl(22461, 0x05, SLICE(cond(0x022257BD), bool, 1));
+	Eq_606 bp_28 = __rol(~0x44A8, 0x01);
+	Eq_563 ebx_29 = __xadd(0x98988E70, 0x98988E70);
+	Eq_584 eax_37 = __shrd(SEQ(48855, __shrd(~0x01FC, bp_28, 0x05)) ^ 1925585278, 934452744, 0x05);
+	Eq_602 bx_43 = __shrd((word16) ebx_29, 5125, 0x01);
+	Eq_602 dx_47 = __rcl(22461, 0x05, SLICE(cond(0x022257BD), bool, 1));
 	word16 ax_52;
 	__btr((word16) (eax_37 >> ~0x53), 121, out ax_52);
 	return SEQ(SLICE(eax_37 >> ~0x53, word16, 16), SLICE(ax_52, byte, 8), (byte) bx_43) + SEQ(SLICE(ebx_29, word16, 16), bx_43) + 0xA1AE1405 + SEQ(0x0222, __xadd(dx_47, bx_43)) + (SEQ(0x2D30, bp_28) << 0x01) + 3499629683;
@@ -1352,13 +1354,13 @@ word32 log_size_4_var_082()
 //      main
 word32 log_size_4_var_083()
 {
-	Eq_678 di_31 = __shld(0x00, 0x00, 0x01);
-	Eq_678 cx_35 = __shld(0x3A0F, 0x3A0F, 0x0F);
+	Eq_674 di_31 = __shld(0x00, 0x00, 0x01);
+	Eq_674 cx_35 = __shld(0x3A0F, 0x3A0F, 0x0F);
 	int32 ebx_40 = __bsr(SEQ(2262, cx_35));
 	word32 eax_41;
 	__btc(0x00, 0x23, out eax_41);
 	bu8 cl_46 = (byte) cx_35;
-	Eq_678 ax_48 = cl_46 *16 (byte) eax_41;
+	Eq_674 ax_48 = cl_46 *16 (byte) eax_41;
 	return SEQ(SLICE(eax_41, word16, 16), ax_48) + ebx_40 + SEQ(2262, SLICE(cx_35, byte, 8) - 0x23, cl_46 & 0x0F) + 1415912764 + SEQ(29192, __shld(37400, ax_48, cl_46 & 0x0F)) + (uint32) di_31 - 3222592842;
 }
 
@@ -1373,7 +1375,7 @@ word32 log_size_4_var_084()
 	uint16 dx_48 = (uint16) (dx_ax_46 % 0xC000);
 	uint32 eax_53 = __ror(SEQ(35475, (uint16) (dx_ax_46 /u 0xC000)), 0x7F);
 	int16 ax_59 = SLICE(dx_48, byte, 8) *s16 (byte) eax_53;
-	return SEQ(SLICE(eax_53, word16, 16), ~0x26, (byte) ax_59) + SEQ(~0x0A48, SLICE(SEQ((int8) true, 0x84) + 0x4C55, byte, 8), SLICE(ax_59, byte, 8)) + SEQ(SLICE(edx_30, word16, 16), dx_48) - 1234101713;
+	return SEQ(SLICE(eax_53, word16, 16), ~0x26, (byte) ax_59) + SEQ(~0x0A48, 77, SLICE(ax_59, byte, 8)) + SEQ(SLICE(edx_30, word16, 16), dx_48) - 1234101713;
 }
 
 // 0804B9EC: Register word32 log_size_4_var_085()
@@ -1381,7 +1383,7 @@ word32 log_size_4_var_084()
 //      main
 word32 log_size_4_var_085()
 {
-	Eq_606 ax_34 = __rcl(0x1424, 0x0C, SLICE(cond(0x0C), bool, 1));
+	Eq_602 ax_34 = __rcl(0x1424, 0x0C, SLICE(cond(0x0C), bool, 1));
 	word16 bp_36;
 	__btc(0x02F9, 177, out bp_36);
 	uint64 edx_eax_42 = SEQ(837764268, SEQ(62599, ax_34));
@@ -1390,7 +1392,7 @@ word32 log_size_4_var_085()
 	__cmpxchg(0x784B680C, 0x44, eax_45, out eax_49);
 	uint32 edx_44 = (uint32) (edx_eax_42 % 3626769304);
 	byte dl_59 = (byte) edx_44;
-	byte dh_53 = SLICE(edx_44, byte, 8) - 122 - (eax_45 < 0x00);
+	byte dh_53 = SLICE(edx_44, byte, 8) - 122 - (byte) (eax_45 < 0x00);
 	word32 esi_24 = 0x16A3A6CA;
 	word16 dx_60 = SEQ(dh_53, dl_59);
 	word32 ecx_67 = SEQ(0x784B, dh_53 + 0x68, 0x0C);
@@ -1406,7 +1408,7 @@ word32 log_size_4_var_085()
 //      main
 word32 log_size_4_var_086()
 {
-	return SEQ(44673, __rol(0xB8, 0x01), ~0x05) + 3371834954 + SEQ(SLICE(__ror(SEQ(0xB4, (int8) false, 0x3E), 0x00), word16, 16), 0) + 1598919122 + SEQ(0x88D5, __ror(0x40EF, 0x8B)) - 1616003070;
+	return SEQ(44673, __rol(0xB8, 0x01), ~0x05) + 3371834954 + SEQ(SLICE(__ror(0x00B4003E, 0x00), word16, 16), 0) + 1598919122 + SEQ(0x88D5, __ror(0x40EF, 0x8B)) - 1616003070;
 }
 
 // 0804BACE: Register ui32 log_size_4_var_087()
@@ -1416,12 +1418,12 @@ ui32 log_size_4_var_087()
 {
 	ui32 ecx_27 = __rol(755037111, 0x01);
 	ui32 eax_29 = __rol(1974061664, 0x01);
-	Eq_606 bx_33 = __rcl(0x3EA0, 0x01, true);
-	Eq_678 dx_36 = __shld(0x019C, 12616, 0x01);
-	uint32 dx_ax_48 = SEQ(SEQ(SLICE(dx_36, byte, 8) - 0x86 - __bt(eax_29, ecx_27), (byte) dx_36) & 0x3FFF, (word16) eax_29);
+	Eq_602 bx_33 = __rcl(0x3EA0, 0x01, true);
+	Eq_674 dx_36 = __shld(0x019C, 12616, 0x01);
+	uint32 dx_ax_48 = SEQ(SEQ(SLICE(dx_36, byte, 8) - 0x86 - (byte) __bt(eax_29, ecx_27), (byte) dx_36) & 0x3FFF, (word16) eax_29);
 	uint16 ax_51 = (uint16) (dx_ax_48 /u ~0x0165);
 	word32 ebx_58 = SEQ(1189, bx_33);
-	Eq_606 cx_63 = __rcl((word16) ecx_27, 188, false);
+	Eq_602 cx_63 = __rcl((word16) ecx_27, 188, false);
 	return (SEQ(SLICE(eax_29, word16, 16), SLICE(ax_51, byte, 8), (byte) ax_51 - 0x01) ^ ebx_58) + ebx_58 + SEQ(SLICE(ecx_27, word16, 16), SLICE(cx_63, byte, 8) >> 0x01, (byte) cx_63) + SEQ(~0x7488, (uint16) (dx_ax_48 % ~0x0165)) + 3555738922 + SEQ(~0x5C25, 12616 >> (byte) ecx_27) - 0x51DEE628;
 }
 
@@ -1430,8 +1432,8 @@ ui32 log_size_4_var_087()
 //      main
 word32 log_size_4_var_088()
 {
-	Eq_588 esi_26 = __shrd(0x8C71617D, 1954939308, 0x01);
-	Eq_675 si_35 = __ror((word16) esi_26, 0xF0);
+	Eq_584 esi_26 = __shrd(0x8C71617D, 1954939308, 0x01);
+	Eq_678 si_35 = __ror((word16) esi_26, 0xF0);
 	uint32 dx_ax_50 = SEQ((uint16) (642253259 % (si_35 | 0xC000)) & 0x3FFF, (uint16) (642253259 /u (si_35 | 0xC000)));
 	return SEQ(0x7486, (int8) OVERFLOW(7237), (byte) (dx_ax_50 /u 0xD01C)) + 1300781109 + __ror(SEQ(25281, (uint16) (dx_ax_50 % 0xD01C)), 0x01) + 1273687536 + SEQ(SLICE(esi_26, word16, 16), si_35 | 0xC000) + 4201446609;
 }
@@ -1441,7 +1443,7 @@ word32 log_size_4_var_088()
 //      main
 word32 log_size_4_var_089()
 {
-	Eq_4765 C_39 = SLICE(cond(0xC0), bool, 1);
+	Eq_4749 C_39 = SLICE(cond(0xC0), bool, 1);
 	bool C_42 = SLICE(cond((byte) C_39 + 7), bool, 1);
 	uipr32 edx_48 = SEQ(~0x744A, 0xC0, (byte) C_39 + 7);
 	uipr32 ebx_49 = edx_48;
@@ -1456,13 +1458,12 @@ word32 log_size_4_var_089()
 //      main
 word32 log_size_4_var_090()
 {
-	Eq_606 dx_40 = __rcl(0x8630, ~0x01, SLICE(cond(0x30), bool, 1));
-	uipr32 ebx_45 = SEQ(0x5757, (int8) false, 0x15);
+	Eq_602 dx_40 = __rcl(0x8630, ~0x01, SLICE(cond(0x30), bool, 1));
 	word32 ecx_46;
-	__bts(~0x3E0D0401, ebx_45, out ecx_46);
+	__bts(~0x3E0D0401, 0x57570015, out ecx_46);
 	byte ch_50 = __ror(SLICE(ecx_46, byte, 8), 0x01);
 	ui32 edi_58 = __rcl(3898743178, 0x34, SLICE(cond(0x15C5FFE2), bool, 1));
-	return -SEQ(0x3D57, (int8) false, 0x81) + ebx_45 + SEQ(SLICE(ecx_46, word16, 16), ch_50, ((byte) ecx_46 - 0x56) - __bt(edi_58, 0x15C5FFE2)) + SEQ(11415, dx_40) + 1424224382 + edi_58 - 4128590125;
+	return -1029111937 + 0x57570015 + SEQ(SLICE(ecx_46, word16, 16), ch_50, ((byte) ecx_46 - 0x56) - (byte) __bt(edi_58, 0x15C5FFE2)) + SEQ(11415, dx_40) + 1424224382 + edi_58 - 4128590125;
 }
 
 // 0804BC8D: Register uint32 log_size_4_var_091()
@@ -1471,10 +1472,10 @@ word32 log_size_4_var_090()
 uint32 log_size_4_var_091()
 {
 	word32 ebx_30;
-	word16 bx_34 = (bool) __bts(0x673F0096, 1848846505, out ebx_30) + ((word16) ebx_30 + 41912);
-	Eq_606 di_38 = __shrd(16565, 26449, 0x01);
+	word16 bx_34 = (word16) ebx_30 + 41912 + (word16) __bts(0x673F0096, 1848846505, out ebx_30);
+	Eq_602 di_38 = __shrd(16565, 26449, 0x01);
 	byte dh_48 = __ror(0x00, 0x01);
-	Eq_610 ax_52 = __rol(0x2211, 0xA9);
+	Eq_606 ax_52 = __rol(0x2211, 0xA9);
 	word16 ax_59;
 	__cmpxchg(0x7874, ax_52, ax_52, out ax_59);
 	return (uint32) ax_59 + SEQ(SLICE(ebx_30, word16, 16), bx_34) + 1848846505 + SEQ(30800, dh_48, (int8) Test(NS,(bool) SLICE(ax_52, byte, 8))) + 2924727280 + SEQ(61676, di_38) - ~0x12FC4C49;
@@ -1488,7 +1489,7 @@ uint32 log_size_4_var_092()
 	cu16 bx_33;
 	__btc(42952, 0x482F, out bx_33);
 	ui32 ebx_43 = SEQ(0x9D51, bx_33 >> 0x08);
-	Eq_4923 edx_eax_50 = SEQ((uint32) __shld(0x00, 58292, 0x0A) & 0x3FFFFFFF, 0x77DB3D44);
+	Eq_4901 edx_eax_50 = SEQ((uint32) __shld(0x00, 58292, 0x0A) & 0x3FFFFFFF, 0x77DB3D44);
 	uint32 edx_52 = (uint32) (edx_eax_50 % (ebx_43 | 0xC0000000));
 	uint32 eax_53 = (uint32) (edx_eax_50 /u (ebx_43 | 0xC0000000));
 	word32 ebp_76 = SEQ(~0x4D46, ~0x482F);
@@ -1513,10 +1514,10 @@ word32 log_size_4_var_093()
 //      main
 word32 log_size_4_var_094()
 {
-	Eq_588 edx_40 = __shrd(0xE8350000, 0x0A07CF43, 0x43);
+	Eq_584 edx_40 = __shrd(0xE8350000, 0x0A07CF43, 0x43);
 	byte dl_43 = __xadd((byte) edx_40, 0x2D);
-	Eq_606 cx_47 = __rcl(53059, 0x01, true);
-	Eq_567 edi_48 = __shld(1977967991, 0x95C85FA0, 0x01);
+	Eq_602 cx_47 = __rcl(53059, 0x01, true);
+	Eq_563 edi_48 = __shld(1977967991, 0x95C85FA0, 0x01);
 	word16 ax_59;
 	word32 edx_71 = SEQ(SLICE(edx_40, word24, 8), (int8) __btr(__shrd(92, SEQ(SLICE(edx_40, byte, 8), dl_43 - SLICE(cx_47, byte, 8)), 0x03), 0x1C, out ax_59));
 	return (word32) edi_48 + ((((SEQ(~0x3032, ax_59) + 3733330956) + SEQ(0x0A07, cx_47)) + edx_71) + 3375832318) - 3932390089;
@@ -1528,11 +1529,11 @@ word32 log_size_4_var_094()
 word32 log_size_4_var_095()
 {
 	uint8 bh_28 = __rol(~0x22, 0x51);
-	Eq_588 edi_35 = __shrd(3999962318, 0x0B8EB6A7, 0x01);
+	Eq_584 edi_35 = __shrd(3999962318, 0x0B8EB6A7, 0x01);
 	word32 eax_36;
 	__btc(2800044222, 0xF0, out eax_36);
 	int32 eax_54 = SEQ(SLICE(eax_36, word16, 16), (word16) eax_36 + 15614);
-	Eq_5076 edx_eax_55 = eax_54 *s64 eax_54;
+	Eq_5054 edx_eax_55 = eax_54 *s64 eax_54;
 	return (word32) edi_35 + (((((word32) edx_eax_55 + SEQ(0x4031, bh_28, 118)) + -SEQ(0x0B8E, SLICE(__ror(__shld(~0x4958, (word16) edi_35, 0x0A), 0x01), byte, 8), (int8) (edx_eax_55 < 0x00))) + SLICE(edx_eax_55, word32, 32)) + 0x2B2C8520) - 3267738882;
 }
 
@@ -1551,8 +1552,6 @@ word32 log_size_4_var_096()
 //      main
 word32 log_size_4_var_097()
 {
-	word32 eax_33;
-	__btc(1061803445, 1821338320, out eax_33);
 }
 
 // 0804BFBE: Register word32 log_size_4_var_098()
@@ -1562,7 +1561,7 @@ word32 log_size_4_var_098()
 {
 	int32 ebp_32 = __bsr(0x5920C8A9);
 	word32 ecx_36 = SEQ(24550, -0x99, ~0x24);
-	Eq_567 ebx_49 = __xadd(0x592049E9, 0x592049E9);
+	Eq_563 ebx_49 = __xadd(0x592049E9, 0x592049E9);
 	return SEQ(SLICE(ebx_49, word16, 16), __rcr(SLICE(ebx_49, byte, 8), ~0x24, SLICE(cond(ebx_49), bool, 1)), (byte) ebx_49) + 3477311227 + ecx_36 + 2769712879 + SEQ(SLICE(ebp_32 >> ~0x20, word16, 16), (word16) (ebp_32 >> ~0x20) >> 0x68) + ~0x00 + (SEQ(SLICE(ecx_36 + 2451884879, word16, 16), (word16) ecx_36 - 38575) ^ ecx_36) - 1337374861;
 }
 

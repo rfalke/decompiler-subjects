@@ -1,3 +1,4 @@
 === Using options:--aggressive-branch-removal
 0000000000400420: warning: Unable to resolve imported reference __gmon_start__.
+0000000000400578: warning: Call target address 0000000000000000 is invalid.
 === Killed because of CPU time limit

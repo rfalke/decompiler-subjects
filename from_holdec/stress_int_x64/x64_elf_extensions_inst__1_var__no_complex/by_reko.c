@@ -85,11 +85,11 @@ void main()
 	__assert_fail("sum==0", "source_extensions_inst__1_var__no_complex.c", 0xB3, "main");
 }
 
-// 0000000000401300: void _start(Register (ptr64 Eq_355) rdx, Stack Eq_356 qwArg00)
-void _start(void (* rdx)(), Eq_356 qwArg00)
+// 0000000000401300: void _start(Register (ptr64 Eq_355) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t401040, qwArg00, (char *) fp + 8, &g_t406900, &g_t406970, rdx, fp);
+	__libc_start_main(&g_t401040, (int32) qwArg00, (char *) fp + 8, &g_t406900, &g_t406970, rdx, fp);
 	__hlt();
 }
 
@@ -122,6 +122,8 @@ void __do_global_dtors_aux()
 }
 
 // 00000000004013E0: void frame_dummy()
+// Called from:
+//      __libc_csu_init
 void frame_dummy()
 {
 	register_tm_clones();
@@ -141,7 +143,7 @@ word64 inst_0_values_var_0()
 uint64 inst_0_flags_var_0()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -160,7 +162,7 @@ word64 inst_1_values_var_0()
 uint64 inst_1_flags_var_0()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -179,7 +181,7 @@ word64 inst_2_values_var_0()
 uint64 inst_2_flags_var_0()
 {
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	return rbp_62;
 }
@@ -411,12 +413,12 @@ word64 inst_11_values_var_0()
 //      main
 uint64 inst_11_flags_var_0()
 {
-	word64 rax_58 = -16938009758284905090;
+	word64 rax_59 = -16938009758284905090;
 	uint64 rbp_66 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_66 = 0x01;
 	uint64 rdi_72 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_72 = 0x02;
 	return rbp_66 + rdi_72;
 }
@@ -435,12 +437,12 @@ word64 inst_12_values_var_0()
 //      main
 uint64 inst_12_flags_var_0()
 {
-	word64 rax_57 = -11920493419366799250;
+	word64 rax_58 = -11920493419366799250;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_69 = 0x02;
 	return rbp_63 + rdi_69;
 }
@@ -458,15 +460,15 @@ word64 inst_13_values_var_0()
 //      main
 uint64 inst_13_flags_var_0()
 {
-	int64 rax_58 = -14997386565965815751;
+	int64 rax_59 = -14997386565965815751;
 	uint64 rbp_65 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_65 = 0x01;
 	uint64 rdi_101 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_101 = 0x02;
 	uint64 rdx_105 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_105 = 0x08;
 	return rbp_65 + rdi_101 + rdx_105 - 0x01;
 }
@@ -484,15 +486,15 @@ word64 inst_14_values_var_0()
 //      main
 uint64 inst_14_flags_var_0()
 {
-	int64 rax_58 = -10049461800990491730;
+	int64 rax_59 = -10049461800990491730;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_69 = 0x02;
 	uint64 rdx_103 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_103 = 0x08;
 	return rbp_63 + rdi_69 + rdx_103 - 0x09;
 }
@@ -772,8 +774,7 @@ uint64 inst_30_flags_var_0()
 //      main
 word64 inst_31_values_var_0()
 {
-	word64 rax_58 = -0xA66A76A95745804E;
-	return rax_58 + 1646711092291404314 + SEQ(~0x4BA8425D, (rax_58 == 0x00) + 1741178885) - 8101927740229044690;
+	return -0xA66A76A95745804E + 6539847107086745678;
 }
 
 // 00000000004053EA: Register uint64 inst_31_flags_var_0()
@@ -781,10 +782,7 @@ word64 inst_31_values_var_0()
 //      main
 uint64 inst_31_flags_var_0()
 {
-	uint64 rbp_66 = 0x00;
-	if (true)
-		rbp_66 = 0x01;
-	return rbp_66;
+	return 0x00;
 }
 
 // 00000000004054F1: Register word64 inst_32_values_var_0()
@@ -792,8 +790,7 @@ uint64 inst_31_flags_var_0()
 //      main
 word64 inst_32_values_var_0()
 {
-	word64 rax_58 = -0xF0ED0B5D202A4125;
-	return rax_58 + ~0x6384C0F991262FEC + ((bool) (rax_58 == 0x00) + 0x1A5C4AE1) + 0xF9DD611496F42630;
+	return -0xF0ED0B5D202A4125 + 0xF0ED0B5D202A4125;
 }
 
 // 00000000004055F2: Register uint64 inst_32_flags_var_0()
@@ -801,10 +798,7 @@ word64 inst_32_values_var_0()
 //      main
 uint64 inst_32_flags_var_0()
 {
-	uint64 rbp_64 = 0x00;
-	if (true)
-		rbp_64 = 0x01;
-	return rbp_64;
+	return 0x00;
 }
 
 // 00000000004056F9: Register word64 inst_33_values_var_0()
@@ -967,7 +961,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_31 = 0x00408E18 - 0x00408E10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_1407 rbx_43 = 0x00;
+		Eq_1381 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a408E10 + rbx_43 * 0x08))();

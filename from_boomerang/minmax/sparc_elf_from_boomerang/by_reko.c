@@ -14,18 +14,18 @@ ptr32 ___Argv = 0x00; // 0002088C
 
 #include "subject.h"
 
-// 0001069C: void _fini(Register word32 o0, Register word32 o1, Register word32 o2, Register word32 o3, Register word32 o4, Register word32 o5, Register (ptr32 Eq_110) o7)
-void _fini(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, struct Eq_110 * o7)
+// 0001069C: void _fini(Register word32 o0, Register word32 o1, Register word32 o2, Register word32 o3, Register word32 o4, Register word32 o5, Register (ptr32 Eq_112) o7)
+void _fini(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, struct Eq_112 * o7)
 {
 	fn000106AC(o7, o0, o1, o2, o3, o4, o5, fp, o7);
 }
 
-// 000106AC: void fn000106AC(Register (ptr32 Eq_110) o7, Register word32 i0, Register word32 i1, Register word32 i2, Register word32 i3, Register word32 i4, Register word32 i5, Register ptr32 i6, Register (ptr32 Eq_110) i7)
+// 000106AC: void fn000106AC(Register (ptr32 Eq_112) o7, Register word32 i0, Register word32 i1, Register word32 i2, Register word32 i3, Register word32 i4, Register word32 i5, Register ptr32 i6, Register (ptr32 Eq_112) i7)
 // Called from:
 //      _fini
-void fn000106AC(struct Eq_110 * o7, word32 i0, word32 i1, word32 i2, word32 i3, word32 i4, word32 i5, ptr32 i6, struct Eq_110 * i7)
+void fn000106AC(struct Eq_112 * o7, word32 i0, word32 i1, word32 i2, word32 i3, word32 i4, word32 i5, ptr32 i6, struct Eq_112 * i7)
 {
-	struct Eq_124 * o0_6 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_126 * o0_6 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_7 = o0_6->ptrFFFFFFFC;
 	<anonymous> * l1_8 = o0_6->ptrFFFFFFF4;
 	if (l0_7 == null)
@@ -57,7 +57,7 @@ void _init(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, str
 //      _init
 void fn0001065C(struct Eq_7 * o7, word32 i0, word32 i1, word32 i2, word32 i3, word32 i4, word32 i5, ptr32 i6, struct Eq_7 * i7)
 {
-	struct Eq_87 * o0_6 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_89 * o0_6 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_7 = o0_6->ptrFFFFFFF8;
 	<anonymous> * l1_8 = o0_6->ptrFFFFFFF0;
 	if (l0_7 == null)
@@ -136,7 +136,7 @@ void _start(void (* g1)(), word32 o2, word32 o3, word32 o4, word32 o5, struct Eq
 void main(int32 o0)
 {
 	uint32 o0_22 = ~0x01 - o0;
-	Eq_48 g2_28 = ~0x01 - (o0_22 & (~0x00 - (o0 >> 0x1F)) - (o0_22 < 0x00));
-	printf("MinMax adjusted number of arguments is %d\n", (g2_28 - 0x03 & (g2_28 >> 0x1F) - (g2_28 < 0x03)) + 0x03);
+	Eq_48 g2_28 = ~0x01 - (o0_22 & (~0x00 - (o0 >> 0x1F)) - (word32) (o0_22 < 0x00));
+	printf("MinMax adjusted number of arguments is %d\n", (g2_28 - 0x03 & (g2_28 >> 0x1F) - (word32) (g2_28 < 0x03)) + 0x03);
 }
 

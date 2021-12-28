@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_95 g_t11000 = // 0000000000011000
+struct Eq_102 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,17 +78,18 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 0000000000000780: void main()
-void main()
+// 0000000000000780: void main(Register int32 w0)
+void main(int32 w0)
 {
-	x0_20 = (uint64) putchar(SEQ(SLICE((uint64) puts("Figure 19.2"), word32, 32), 0x31));
-	x0_34 = (uint64) printf("C is %d\n", 0x00);
+	x0_15 = (uint64) puts("Figure 19.2");
+	x0_20 = (uint64) putchar(0x31);
+	x0_36 = (uint64) printf("C is %d\n", (w0 <= 0x03 ? w0 : 0x00) + w0);
 }
 
-// 00000000000007C4: void _start(Register (ptr64 Eq_32) x0, Stack Eq_33 qwArg00)
-void _start(void (* x0)(), Eq_33 qwArg00)
+// 00000000000007C4: void _start(Register (ptr64 Eq_37) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -133,7 +134,7 @@ void register_tm_clones()
 // 0000000000000888: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_95 * x19_12 = &g_t11000;
+	struct Eq_102 * x19_12 = &g_t11000;
 	if ((word32) g_b11048 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)

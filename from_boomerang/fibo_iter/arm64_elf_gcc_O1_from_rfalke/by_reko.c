@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t11000 = // 0000000000011000
+struct Eq_74 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,10 +78,10 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 0000000000000740: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000740: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -126,7 +126,7 @@ void register_tm_clones()
 // 0000000000000808: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t11000;
+	struct Eq_74 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -155,28 +155,36 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000888: void fib(Register int32 w0)
+// 0000000000000888: Register int32 fib(Register int32 w0)
 // Called from:
 //      main
-void fib(int32 w0)
+int32 fib(int32 w0)
 {
 	if (w0 <= 0x01)
-		return;
+		return w0;
 	if (w0 <= 0x02)
-		return;
+		return 0x01;
+	int32 w3_10 = 0x01;
+	int32 w2_11 = 0x01;
 	int32 w1_12 = 0x02;
-	do
+	while (true)
+	{
+		int32 w0_15 = w2_11 + w3_10;
 		++w1_12;
-	while (w0 != w1_12);
+		w3_10 = w2_11;
+		if (w0 == w1_12)
+			break;
+		w2_11 = w0_15;
+	}
+	return w0_15;
 }
 
 // 00000000000008D4: void main(Stack int32 dwArg04)
 void main(int32 dwArg04)
 {
-	x0_14 = (uint64) printf("Input number: ", 0x00);
-	x0_19 = (uint64) __isoc99_scanf("%d", 0x00);
-	fib(dwArg04);
-	x0_33 = (uint64) printf("fibonacci(%d) = %d\n", 0x00);
+	x0_14 = (uint64) printf("Input number: ");
+	x0_19 = (uint64) __isoc99_scanf("%d", fp + 0x04);
+	x0_37 = (uint64) printf("fibonacci(%d) = %d\n", dwArg04, fib(dwArg04));
 }
 
 // 0000000000000930: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

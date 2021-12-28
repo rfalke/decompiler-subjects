@@ -1,14 +1,15 @@
 === Using options:--aggressive-branch-removal
 Error: An error occurred during decompilation.
     The address 00000000000459D0 is invalid.
-       at Reko.Core.Program.CreateImageReader(IProcessorArchitecture arch, Address addr) in /Users/runner/work/reko/reko/src/Core/Program.cs:line 415
-   at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.RelocateEntry(Program program, ElfSymbol sym, ElfSection referringSection, ElfRelocation rela) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/x86_64Relocator.cs:line 123
-   at Reko.ImageLoaders.Elf.Relocators.ElfRelocator.RelocationTable.RelocateEntries(Program program, UInt64 offStrtab, UInt64 offSymtab, UInt64 symEntrySize) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/ElfRelocator.cs:line 325
-   at Reko.ImageLoaders.Elf.Relocators.ElfRelocator.RelocateDynamicSymbols(Program program) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/ElfRelocator.cs:line 199
-   at Reko.ImageLoaders.Elf.Relocators.ElfRelocator64.Relocate(Program program) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/ElfRelocator.cs:line 527
-   at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.Relocate(Program program) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/x86_64Relocator.cs:line 52
-   at Reko.ImageLoaders.Elf.ElfLoader.Relocate(Program program, Address addrLoad) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader.cs:line 791
-   at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate(Program program, Address addrLoad) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/ElfImageLoader.cs:line 111
-   at Reko.Loading.Loader.LoadExecutable(String filename, Byte[] image, String loader, Address addrLoad) in /Users/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 131
-   at Reko.Decompiler.Load(String fileName, String loaderName, Address addrLoad) in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 194
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /Users/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 166
+       at Reko.Core.Program.CreateImageReader(IProcessorArchitecture arch, Address addr) in /home/runner/work/reko/reko/src/Core/Program.cs:line 445
+   at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.RelocateEntry(Program program, ElfSymbol sym, ElfSection referringSection, ElfRelocation rela) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/x86_64Relocator.cs:line 123
+   at Reko.ImageLoaders.Elf.Relocators.ElfRelocator.RelocationTable.RelocateEntries(Program program, UInt64 offStrtab, UInt64 offSymtab, UInt64 symEntrySize) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/ElfRelocator.cs:line 326
+   at Reko.ImageLoaders.Elf.Relocators.ElfRelocator.RelocateDynamicSymbols(Program program) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/ElfRelocator.cs:line 200
+   at Reko.ImageLoaders.Elf.Relocators.ElfRelocator64.Relocate(Program program) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/ElfRelocator.cs:line 528
+   at Reko.ImageLoaders.Elf.Relocators.x86_64Relocator.Relocate(Program program) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/Relocators/x86_64Relocator.cs:line 52
+   at Reko.ImageLoaders.Elf.ElfLoader.Relocate(Program program, Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader.cs:line 792
+   at Reko.ImageLoaders.Elf.ElfImageLoader.Relocate(Program program, Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfImageLoader.cs:line 112
+   at Reko.Loading.Loader.PostProcessProgram(ImageLocation imageLocation, Address addrLoad, ImageLoader imgLoader, Program program) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 194
+   at Reko.Loading.Loader.LoadBinaryImage(ImageLocation imageLocation, Byte[] image, String loader, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 174
+   at Reko.Loading.Loader.Load(ImageLocation imageLocation, String loaderName, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 117
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 166

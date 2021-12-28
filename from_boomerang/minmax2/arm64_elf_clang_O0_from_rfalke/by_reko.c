@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -124,54 +124,50 @@ void __do_global_dtors_aux()
 // 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4005D8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4005D8 = null; // 00000000004005D8
+word64 g_qw4005D8 = 0x00; // 00000000004005D8
 // 00000000004005E0: Register int32 test(Register int32 w0, Register out ptr64 x29Out)
 // Called from:
 //      main
 int32 test(int32 w0, ptr64 & x29Out)
 {
-	int32 dwLoc0C_52 = SLICE(x29, word32, 32);
-	struct Eq_103 * sp_19 = SEQ(SLICE(fp - 0x18, word32, 32), w0 + 0x02);
+	int32 dwLoc0C_56 = SLICE(x29, word32, 32);
+	struct Eq_106 * sp_19 = SEQ(SLICE(fp - 0x18, word32, 32), w0 + 0x02);
 	if (w0 < 0x02)
 		sp_19->dw0008 = ~0x01;
 	if (sp_19->dw0008 > 0x03)
 		sp_19->dw0008 = 0x03;
-	uint64 x0_33 = (uint64) printf("MinMax result %d\n", 0x00);
-	sp_19->dwFFFFFFFC = (word32) x0_33;
+	uint64 x0_37 = (uint64) printf("MinMax result %d\n", sp_19->dw0008);
+	sp_19->dwFFFFFFFC = (word32) x0_37;
 	x29Out = x30;
-	return dwLoc0C_52;
+	return dwLoc0C_56;
 }
 
 // 0000000000400640: void main()
 void main()
 {
-	struct Eq_139 * x29_20;
+	struct Eq_145 * x29_20;
 	x29_20->dwFFFFFFF4 = test(~0x04, out x29_20);
-	struct Eq_148 * sp_30 = (struct Eq_148 *) <invalid>;
+	struct Eq_154 * sp_30 = (struct Eq_154 *) <invalid>;
 	word64 x29_98;
 	sp_30->dw0010 = test(~0x01, out x29_98);
-	struct Eq_158 * x29_48;
+	struct Eq_164 * x29_48;
 	word32 w0_55 = test(0x00, out x29_48);
-	struct Eq_148 * sp_44 = (struct Eq_148 *) <invalid>;
+	struct Eq_154 * sp_44 = (struct Eq_154 *) <invalid>;
 	int32 w8_54 = x29_48->dwFFFFFFF8;
 	sp_44->dw000C = w0_55;
-	struct Eq_148 * sp_58 = (struct Eq_148 *) <invalid>;
+	struct Eq_154 * sp_58 = (struct Eq_154 *) <invalid>;
 	word64 x29_99;
 	sp_58->dw0008 = test(w8_54, out x29_99);
-	struct Eq_148 * sp_72 = (struct Eq_148 *) <invalid>;
+	struct Eq_154 * sp_72 = (struct Eq_154 *) <invalid>;
 	word64 x29_100;
 	sp_72->dw0004 = test(0x05, out x29_100);
 }

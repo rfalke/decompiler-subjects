@@ -12,7 +12,6 @@
 0000000000401E74: warning: Unable to resolve imported reference _Unwind_Resume.
 0000000000401C6B: warning: Unable to resolve imported reference _ZNSt6thread6_StateD2Ev.
 0000000000401C57: warning: Unable to resolve imported reference _ZNSt6thread6_StateD2Ev.
-00000000004015D0: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 000000000040122E: warning: Unable to resolve imported reference _ZNSt6thread20hardware_concurrencyEv.
 0000000000401273: warning: Unable to resolve imported reference _Znwm.
 0000000000401288: warning: Unable to resolve imported reference _Znam.

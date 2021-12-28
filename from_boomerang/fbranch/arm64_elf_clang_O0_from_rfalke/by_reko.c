@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,53 +124,49 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
+word64 g_qw400638 = 0x00; // 0000000000400638
 // 0000000000400640: void main()
 void main()
 {
-	x0_16 = (uint64) __isoc99_scanf("%f", 0x00);
-	x0_27 = (uint64) printf("a is %f, b is %f\n", 0x00);
-	struct Eq_114 * sp_102 = fp - 0x48;
+	x0_17 = (uint64) __isoc99_scanf("%f", fp - 0x14);
+	x0_32 = (uint64) printf("a is %f, b is %f\n", (real64) 7e-45F, (real64) dwLoc14);
+	struct Eq_125 * sp_107 = fp - 0x48;
 	if (dwLoc14 == 5.0F)
 	{
-		x0_37 = (uint64) printf("Equal\n", 0x00);
-		sp_102 = fp - 0x50;
+		x0_42 = (uint64) printf("Equal\n");
+		sp_107 = fp - 0x50;
 	}
 	if (dwLoc14 != 5.0F)
 	{
-		sp_102 = (struct Eq_114 *) ((char *) sp_102 - 8);
-		sp_102->dw0014 = printf("Not Equal\n", 0x00);
+		sp_107 = (struct Eq_125 *) ((char *) sp_107 - 8);
+		sp_107->dw0014 = printf("Not Equal\n");
 	}
 	if (dwLoc14 < 5.0F)
 	{
-		sp_102 = (struct Eq_114 *) ((char *) sp_102 - 8);
-		sp_102->dw0010 = printf("Greater\n", 0x00);
+		sp_107 = (struct Eq_125 *) ((char *) sp_107 - 8);
+		sp_107->dw0010 = printf("Greater\n");
 	}
 	if (dwLoc14 >= 5.0F)
 	{
-		sp_102 = (struct Eq_114 *) ((char *) sp_102 - 8);
-		sp_102->dw000C = printf("Less or Equal\n", 0x00);
+		sp_107 = (struct Eq_125 *) ((char *) sp_107 - 8);
+		sp_107->dw000C = printf("Less or Equal\n");
 	}
 	if (dwLoc14 <= 5.0F)
 	{
-		sp_102 = (struct Eq_114 *) ((char *) sp_102 - 8);
-		sp_102->dw0008 = printf("Greater or Equal\n", 0x00);
+		sp_107 = (struct Eq_125 *) ((char *) sp_107 - 8);
+		sp_107->dw0008 = printf("Greater or Equal\n");
 	}
 	if (dwLoc14 > 5.0F)
-		sp_102->dwFFFFFFFC = printf("Less\n", 0x00);
+		sp_107->dwFFFFFFFC = printf("Less\n");
 }
 
 // 0000000000400760: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

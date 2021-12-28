@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,31 +124,27 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
-// 0000000000400640: Register Eq_98 twofib(Register word32 w0, Register out ptr64 x29Out)
+word64 g_qw400638 = 0x00; // 0000000000400638
+// 0000000000400640: Register Eq_101 twofib(Register word32 w0, Register out ptr64 x29Out)
 // Called from:
 //      twofib
 //      main
-Eq_98 twofib(word32 w0, ptr64 & x29Out)
+Eq_101 twofib(word32 w0, ptr64 & x29Out)
 {
-	struct Eq_101 * x29_17 = fp + -8;
-	struct Eq_105 * sp_10 = fp - 0x38;
+	struct Eq_104 * x29_17 = fp + -8;
+	struct Eq_108 * sp_10 = fp - 0x38;
 	if (w0 != 0x00)
 	{
-		sp_10 = (struct Eq_105 *) <invalid>;
+		sp_10 = (struct Eq_108 *) <invalid>;
 		sp_10->t0010 = twofib(w0 - 0x01, out x29_17);
 		sp_10->t0018 = sp_10->t0010;
 		sp_10->t001C = sp_10->t0014;
@@ -158,7 +154,7 @@ Eq_98 twofib(word32 w0, ptr64 & x29Out)
 	}
 	x29_17->tFFFFFFF8 = sp_10->t0018;
 	x29_17->tFFFFFFFC = sp_10->t001C;
-	Eq_98 x0_45 = x29_17->tFFFFFFF8;
+	Eq_101 x0_45 = x29_17->tFFFFFFF8;
 	x29Out = x29_17->ptr0000;
 	return x0_45;
 }
@@ -166,12 +162,12 @@ Eq_98 twofib(word32 w0, ptr64 & x29Out)
 // 00000000004006C8: void main(Register word32 w29)
 void main(word32 w29)
 {
-	x0_14 = (uint64) printf("Enter number: ", 0x00);
-	x0_22 = (uint64) scanf("%d", 0x00);
-	struct Eq_105 * sp_30 = (struct Eq_105 *) <invalid>;
-	word64 x29_64;
-	sp_30->t0010 = twofib((word32) x29, out x29_64);
-	sp_30->dwFFFFFFF8 = printf("Fibonacci of %d is %d\n", 0x00);
+	x0_14 = (uint64) printf("Enter number: ");
+	x0_22 = (uint64) scanf("%d", fp - 0x10);
+	struct Eq_108 * sp_30 = (struct Eq_108 *) <invalid>;
+	word64 x29_66;
+	sp_30->t0010 = twofib((word32) x29, out x29_66);
+	sp_30->dwFFFFFFF8 = printf("Fibonacci of %d is %d\n", sp_30->dw0004, sp_30->t0010);
 }
 
 // 0000000000400748: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

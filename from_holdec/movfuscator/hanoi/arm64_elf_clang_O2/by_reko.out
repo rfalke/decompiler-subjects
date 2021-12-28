@@ -1,16 +1,7 @@
 === Using options:--aggressive-branch-removal
 0000000000411058: warning: Unimplemented PowerPC64 relocation type R_AARCH64_COPY.
 0000000000400600: warning: Unable to resolve imported reference __gmon_start__.
-00000000004008C4: warning: Unable to determine format string for call to 'printf'.
-00000000004008E8: warning: Unable to determine format string for call to 'printf'.
+00000000004007A8: warning: Call target address 0000000000000000 is invalid.
 0000000000400650: warning: Unable to resolve imported reference usleep.
-0000000000400A54: warning: Unable to determine format string for call to 'printf'.
-0000000000400A6C: warning: Unable to determine format string for call to 'printf'.
-0000000000400B8C: warning: Unable to determine format string for call to 'printf'.
-0000000000400BA0: warning: Unable to determine format string for call to 'printf'.
-000000000040096C: warning: Unable to determine format string for call to 'printf'.
-0000000000400994: warning: Unable to determine format string for call to 'printf'.
-000000000040082C: warning: Unable to determine format string for call to 'printf'.
-0000000000400848: warning: Unable to determine format string for call to 'printf'.
 0000000000410DE0: warning: Expected sizes of arrays to have been determined by now
 0000000000410DE0: warning: Expected sizes of arrays to have been determined by now

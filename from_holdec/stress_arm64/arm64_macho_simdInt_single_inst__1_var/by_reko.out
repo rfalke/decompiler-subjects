@@ -29,61 +29,8 @@
 000000010001510C: warning: AArch64 instruction Nyi is not supported yet.
 00000001000154DC: warning: AArch64 instruction Nyi is not supported yet.
 00000001000157B8: warning: AArch64 instruction Nyi is not supported yet.
+0000000100017AF0: error: Value was either too large or too small for an Int64.
 00000001000188C4: error: Value was either too large or too small for an Int64.
+0000000100018950: error: Value was either too large or too small for an Int64.
 0000000100019368: error: Value was either too large or too small for an Int64.
 0000000100026148: warning: AArch64 instruction Nyi is not supported yet.
-000000010000D404: error: An error occurred while processing the statement word64 d1_14 = ~0x08600000086000000<64> & 0xC7C1CF5D51C6CDCF<64>.
-    Value was either too large or too small for an Int32.
-       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
-   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 197
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.ExistingGlobalField(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 343
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 334
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
-   at Reko.Core.Expressions.UnaryExpression.Accept[T](ExpressionVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Expressions/UnaryExpression.cs:line 54
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 96
-   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 226
-   at Reko.Core.Code.Declaration.Accept(InstructionVisitor v) in /Users/runner/work/reko/reko/src/Core/Code/Declaration.cs:line 49
-   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-000000010000D4D0: error: An error occurred while processing the statement Mem33[0x0000000100044020<p64>:word64] = SEQ(q31_64_64, ~0x34003400340034<64> & 0xDF0236245013A459<64>)[1<i32>].
-    Value was either too large or too small for an Int32.
-       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
-   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 197
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.ExistingGlobalField(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 343
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 334
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitUnaryExpression(UnaryExpression unary) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 474
-   at Reko.Core.Expressions.UnaryExpression.Accept[T](ExpressionVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Expressions/UnaryExpression.cs:line 54
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 96
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.<VisitMkSequence>b__28_0(Expression e) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
-   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
-   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 283
-   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-0000000100017B58: error: An error occurred while processing the statement Mem33[0x0000000100044020<p64>:word64] = SEQ(q10_64_64, 0x0FFFFFF0DFFFFFF0D<64>)[1<i32>].
-    Value was either too large or too small for an Int32.
-       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
-   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 197
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.ExistingGlobalField(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 343
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 334
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.<VisitMkSequence>b__28_0(Expression e) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
-   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
-   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 283
-   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
-00000001000189B8: error: An error occurred while processing the statement Mem33[0x0000000100044020<p64>:word64] = SEQ(q31_64_64, 0x0FFFFFF59FFFFFF59<64>)[1<i32>].
-    Value was either too large or too small for an Int32.
-       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
-   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.GetPossibleFieldType(DataType dtLeft, DataType dtRight, Expression right) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 197
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.ExistingGlobalField(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 343
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitConstant(Constant c) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 334
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.<VisitMkSequence>b__28_0(Expression e) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
-   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitMkSequence(MkSequence seq) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 401
-   at Reko.Core.Expressions.ExpressionTypeAscenderBase.VisitArrayAccess(ArrayAccess acc) in /Users/runner/work/reko/reko/src/Core/Expressions/ExpressionTypeAscenderBase.cs:line 84
-   at Reko.Typing.TypeCollector.VisitStore(Store store) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 283
-   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75

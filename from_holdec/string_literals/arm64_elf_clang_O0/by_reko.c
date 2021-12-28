@@ -68,10 +68,10 @@ void g_v4038C9 = ??void??; // 00000000004038C9
 
 #include "subject.h"
 
-// 0000000000400630: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400630: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400660, qwArg00, (char *) fp + 8, g_ptr400668, g_ptr400670, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400660, (int32) qwArg00, (char *) fp + 8, g_ptr400668, g_ptr400670, x0, fp);
 	abort();
 }
 
@@ -131,30 +131,24 @@ void __do_global_dtors_aux()
 // 0000000000400740: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw413DF0 != 0x00)
+	if (g_qw413DF0 != 0x00 && g_qw400778 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400778;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400778 = null; // 0000000000400778
+word64 g_qw400778 = 0x00; // 0000000000400778
 // 0000000000400780: void main(Register (ptr64 (ptr64 char)) x1)
 void main(char ** x1)
 {
-	word32 x1_32_32_43 = SLICE(strchr(*x1, SEQ(SLICE(x1, word32, 32), 0x27)), word32, 32);
-	x0_35 = (uint64) printf("with single ' quote %p\n", 0x00);
-	strchr(*x1, SEQ(x1_32_32_43, 0x22));
-	x0_52 = (uint64) printf("with double \" quote %p\n", 0x00);
+	x0_35 = (uint64) printf("with single ' quote %p\n", strchr(*x1, '''));
+	x0_52 = (uint64) printf("with double \" quote %p\n", strchr(*x1, '\"'));
 	FILE * x0_62 = fopen("with-null-byte", "w");
-	x0_72 = (uint64) fwrite(&g_v4038C9, 0x11, 0x00, x0_62);
-	x0_84 = (uint64) fwrite(&g_v4038C9, 0x00, 0x11, x0_62);
+	x0_72 = (uint64) fwrite(&g_v4038C9, (size_t) 0x11, (size_t) 0x00, x0_62);
+	x0_84 = (uint64) fwrite(&g_v4038C9, (size_t) 0x00, (size_t) 0x11, x0_62);
 	x0_89 = (uint64) fclose(x0_62);
 	x0_96 = (uint64) puts("hex=0x01 dec=1 char=\x01FINI");
 	x0_103 = (uint64) puts("hex=0x02 dec=2 char=\x02FINI");

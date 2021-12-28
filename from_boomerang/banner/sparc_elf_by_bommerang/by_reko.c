@@ -181,7 +181,7 @@ void call_frame_dummy()
 //      _start
 word32 main()
 {
-	struct Eq_152 * o0_21 = malloc(0x0C);
+	struct Eq_152 * o0_21 = malloc((size_t) 0x0C);
 	o0_21->dw0004 = 0x00011F18;
 	word32 dwLoc14_234 = 0x02;
 	ptr32 * dwLoc18_235 = &o0_21->dw0004;
@@ -190,8 +190,8 @@ word32 main()
 		dwLoc14_234 += ~0x00;
 		if (dwLoc14_234 == ~0x00)
 			break;
-		Eq_167 o0_44 = (uint32) strlen(*dwLoc18_235);
-		Eq_167 dwLoc28_239 = o0_44;
+		Eq_168 o0_44 = (uint32) strlen(*dwLoc18_235);
+		Eq_168 dwLoc28_239 = o0_44;
 		if (o0_44 > 0x0A)
 			dwLoc28_239.u0 = 0x0A;
 		int32 dwLoc1C_241;
@@ -204,10 +204,10 @@ word32 main()
 				int32 dwLoc2C_247 = o0_74 + ~0x1F;
 				if (o0_74 < ~0x1F)
 					dwLoc2C_247 = 0x00;
-				Eq_229 dwLoc24_249 = 0x00;
+				Eq_230 dwLoc24_249 = 0x00;
 				while (dwLoc24_249 <= 0x06)
 				{
-					Eq_234 o0_100 = dwLoc2C_247 + ((dwLoc2C_247 >> 0x1F) >> 0x1D);
+					Eq_235 o0_100 = dwLoc2C_247 + ((dwLoc2C_247 >> 0x1F) >> 0x1D);
 					Mem123[(dwLoc20_243 << 0x03) + (fp + ~0x0F) + dwLoc24_249 + -112:byte] = Mem84[(dwLoc2C_247 - __align(dwLoc2C_247 + ((dwLoc2C_247 >> 0x1F) >> 0x1D), 8)) * 0x07 + dwLoc24_249 + 139444[((__align(o0_100, 8) - (o0_100 >> 0x03)) + dwLoc1C_241) * 0x04]:byte];
 					dwLoc24_249 = (word32) dwLoc24_249 + 1;
 				}
@@ -242,7 +242,7 @@ word32 fn000109B8(word32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o2, word32 o3, word32 o4, word32 o5, word32 o7)
 {
 	word32 * l0_31;
-	struct Eq_319 * o1_26 = fn000109B8(o7, 0x00011560)->ptr0018;
+	struct Eq_320 * o1_26 = fn000109B8(o7, 0x00011560)->ptr0018;
 	<anonymous> * o0_27 = o1_26->ptrFFFFFFFC;
 	if (o0_27 != (<anonymous> *) ~0x00)
 	{

@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t11000 = // 0000000000011000
+struct Eq_74 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,10 +78,10 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 0000000000000780: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000780: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -126,7 +126,7 @@ void register_tm_clones()
 // 0000000000000848: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t11000;
+	struct Eq_74 * x19_12 = &g_t11000;
 	if ((word32) g_b11048 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -155,31 +155,31 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000000008C8: void main(Stack Eq_109 dwArg04)
-void main(Eq_109 dwArg04)
+// 00000000000008C8: void main(Stack Eq_111 dwArg04)
+void main(Eq_111 dwArg04)
 {
-	x0_13 = (uint64) __isoc99_scanf("%f", 0x00);
-	x0_20 = (uint64) printf("a is %f, b is %f\n", 0x00);
+	x0_13 = (uint64) __isoc99_scanf("%f", fp + 0x04);
+	x0_24 = (uint64) printf("a is %f, b is %f\n", 5.0, (real64) dwArg04);
 	if (dwArg04 == 5.0F)
 	{
-		x0_28 = (uint64) puts("Equal");
+		x0_32 = (uint64) puts("Equal");
 		if (dwArg04 == 5.0F)
 			goto l000000000000097C;
 	}
-	x0_36 = (uint64) puts("Not Equal");
+	x0_40 = (uint64) puts("Not Equal");
 	if (dwArg04 < 5.0F)
-		x0_47 = (uint64) puts("Greater");
+		x0_51 = (uint64) puts("Greater");
 	if (dwArg04 < 5.0F)
 	{
 l0000000000000934:
 		if (dwArg04 <= 5.0F)
-			x0_71 = (uint64) puts("Greater or Equal");
+			x0_75 = (uint64) puts("Greater or Equal");
 		if (dwArg04 > 5.0F)
-			x0_82 = (uint64) puts("Less");
+			x0_86 = (uint64) puts("Less");
 		return;
 	}
 l000000000000097C:
-	x0_57 = (uint64) puts("Less or Equal");
+	x0_61 = (uint64) puts("Less or Equal");
 	goto l0000000000000934;
 }
 

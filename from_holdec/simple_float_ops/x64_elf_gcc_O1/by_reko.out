@@ -1,15 +1,5 @@
 === Using options:--aggressive-branch-removal
 00000000004003CC: warning: Unable to resolve imported reference __gmon_start__.
-000000000040085D: warning: The format specifier '%z' passed to *printf is not known.
-000000000040085D: warning: The format specifier '%z' passed to *printf is not known.
-000000000040085D: warning: The format specifier '%z' passed to *printf is not known.
-000000000040085D: warning: The format specifier '%z' passed to *printf is not known.
-000000000040085D: warning: The format specifier '%z' passed to *printf is not known.
-000000000040087B: warning: The format specifier '%z' passed to *printf is not known.
-000000000040087B: warning: The format specifier '%z' passed to *printf is not known.
-000000000040087B: warning: The format specifier '%z' passed to *printf is not known.
 00000000004004EE: warning: Call target address 0000000000000000 is invalid.
-00000000004004DB: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00000000004004F1: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000000600E08: warning: Expected sizes of arrays to have been determined by now
 0000000000600E08: warning: Expected sizes of arrays to have been determined by now

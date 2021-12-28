@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,38 +124,38 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
-// 0000000000400640: void main(Register word32 x0_32_32, Register (ptr64 Eq_99) x1)
-void main(word32 x0_32_32, struct Eq_99 * x1)
+word64 g_qw400638 = 0x00; // 0000000000400638
+// 0000000000400640: void main(Register (ptr64 Eq_101) x1)
+void main(struct Eq_101 * x1)
 {
-	x0_17 = (uint64) __xstat(SEQ(x0_32_32, 0x00), x1->ptr0008, fp - 0x88);
-	x0_21 = (uint64) printf("res: %i\n", 0x00);
-	x0_26 = (uint64) printf("dev: %i\n", 0x00);
-	x0_31 = (uint64) printf("ino: %i\n", 0x00);
-	x0_36 = (uint64) printf("mode: %i\n", 0x00);
-	x0_41 = (uint64) printf("nlink: %i\n", 0x00);
-	x0_46 = (uint64) printf("uid: %i\n", 0x00);
-	x0_51 = (uint64) printf("gid: %i\n", 0x00);
-	x0_56 = (uint64) printf("rdev: %i\n", 0x00);
-	x0_61 = (uint64) printf("size: %i\n", 0x00);
-	x0_66 = (uint64) printf("blksize: %i\n", 0x00);
-	x0_71 = (uint64) printf("blocks: %i\n", 0x00);
-	x0_76 = (uint64) printf("atime: %i\n", 0x00);
-	x0_81 = (uint64) printf("mtime: %i\n", 0x00);
-	x0_86 = (uint64) printf("ctime: %i\n", 0x00);
+	int32 dwLoc9C = SLICE(qwLocA0, word32, 32);
+	int32 dwLocA0 = (word32) qwLocA0;
+	int32 dwLocA4 = SLICE(qwLocA8, word32, 32);
+	int32 dwLocA8 = (word32) qwLocA8;
+	int32 dwLoc98_108 = (word32) qwLoc98;
+	x0_25 = (uint64) printf("res: %i\n", __xstat(0x00, x1->ptr0008, fp - 0x88));
+	x0_30 = (uint64) printf("dev: %i\n", (int32) qwLoc98);
+	x0_35 = (uint64) printf("ino: %i\n", (int32) qwLoc98);
+	x0_42 = (uint64) printf("mode: %i\n", dwLoc98_108);
+	x0_48 = (uint64) printf("nlink: %i\n", dwLoc9C);
+	x0_54 = (uint64) printf("uid: %i\n", dwLocA0);
+	x0_60 = (uint64) printf("gid: %i\n", dwLocA4);
+	x0_65 = (uint64) printf("rdev: %i\n", dwLocA8);
+	x0_70 = (uint64) printf("size: %i\n", dwLocA0);
+	x0_77 = (uint64) printf("blksize: %i\n", dwLocA0);
+	x0_82 = (uint64) printf("blocks: %i\n", dwLocA0);
+	x0_87 = (uint64) printf("atime: %i\n", dwLocA0);
+	x0_92 = (uint64) printf("mtime: %i\n", (int32) qwLoc98);
+	x0_97 = (uint64) printf("ctime: %i\n", (int32) qwLoc90);
 }
 
 // 0000000000400750: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

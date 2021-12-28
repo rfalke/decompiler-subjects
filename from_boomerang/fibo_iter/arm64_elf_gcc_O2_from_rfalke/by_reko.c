@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_104 g_t11000 = // 0000000000011000
+struct Eq_131 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,22 +81,44 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 0000000000000740: void main(Stack int32 dwArg04)
 void main(int32 dwArg04)
 {
-	x0_12 = (uint64) printf("Input number: ", 0x00);
-	x0_17 = (uint64) __isoc99_scanf("%d", 0x00);
-	if (dwArg04 > 0x01 && dwArg04 != 0x02)
+	word64 x2_47;
+	word64 x1_41;
+	x0_12 = (uint64) printf("Input number: ");
+	word32 x1_32_32_43 = SLICE(fp + 0x04, word32, 32);
+	x0_17 = (uint64) __isoc99_scanf("%d", fp + 0x04);
+	if (dwArg04 > 0x01)
 	{
-		int32 w3_27 = 0x02;
-		do
-			++w3_27;
-		while (dwArg04 != w3_27);
+		x1_41 = SEQ(x1_32_32_43, dwArg04);
+		if (dwArg04 != 0x02)
+		{
+			word32 w4_26 = 0x01;
+			int32 w3_27 = 0x02;
+			word32 w0_28 = 0x01;
+			do
+			{
+				word32 w2_33 = w0_28 + w4_26;
+				++w3_27;
+				w4_26 = w0_28;
+				w0_28 = w2_33;
+				x1_41 = SEQ(x1_32_32_43, dwArg04);
+				x2_47 = SEQ(x2_32_32, w2_33);
+			} while (dwArg04 != w3_27);
+		}
+		else
+			x2_47 = SEQ(x2_32_32, 0x01);
 	}
-	x0_41 = (uint64) printf("fibonacci(%d) = %d\n", 0x00);
+	else
+	{
+		x1_41 = SEQ(x1_32_32_43, dwArg04);
+		x2_47 = SEQ(x2_32_32, dwArg04);
+	}
+	x0_53 = (uint64) printf("fibonacci(%d) = %d\n", (int32) x1_41, (int32) x2_47);
 }
 
-// 00000000000007C4: void _start(Register (ptr64 Eq_41) x0, Stack Eq_42 qwArg00)
-void _start(void (* x0)(), Eq_42 qwArg00)
+// 00000000000007C4: void _start(Register (ptr64 Eq_66) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -141,7 +163,7 @@ void register_tm_clones()
 // 0000000000000888: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_104 * x19_12 = &g_t11000;
+	struct Eq_131 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)

@@ -5,9 +5,9 @@
 #include "subject.h"
 
 Eq_2 g_t0004;
-Eq_998 g_tDFF040;
+Eq_992 g_tDFF040;
 cui16 g_wDFF042; // 00DFF042
-Eq_798 g_tDFF044;
+Eq_792 g_tDFF044;
 word16 g_wDFF046; // 00DFF046
 Eq_2 g_tDFF048;
 Eq_2 g_tDFF04C;
@@ -18,4 +18,4 @@ word16 g_wDFF060; // 00DFF060
 uint16 g_wDFF062; // 00DFF062
 uint16 g_wDFF064; // 00DFF064
 uint16 g_wDFF066; // 00DFF066
-Eq_867 g_tDFF074;
+Eq_861 g_tDFF074;

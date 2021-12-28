@@ -36,7 +36,7 @@ word64 g_qw12FC0 = 0x00; // 0000000000012FC0
 
 #include "subject.h"
 
-struct Eq_134 g_t13000 = // 0000000000013000
+struct Eq_145 g_t13000 = // 0000000000013000
 	{
 		0x00,
 	};
@@ -81,30 +81,34 @@ word64 g_qw12DB8 = 0x00; // 0000000000012DB8
 // 0000000000000740: void main(Stack int32 dwArg04)
 void main(int32 dwArg04)
 {
-	x0_12 = (uint64) printf("Input number: ", 0x00);
-	x0_17 = (uint64) __isoc99_scanf("%d", 0x00);
+	word64 x2_50;
+	x0_12 = (uint64) printf("Input number: ");
+	x0_17 = (uint64) __isoc99_scanf("%d", fp + 0x04);
 	if (dwArg04 > 0x01)
 	{
-		word32 w19_102;
-		word32 w20_103;
-		word32 w21_104;
-		word32 w22_105;
-		word32 w23_106;
-		word32 w24_107;
-		word32 w25_108;
-		word32 w26_109;
-		word32 w27_110;
-		word32 w28_111;
-		word64 x29_112;
-		fib2.part.0(dwArg04, out w19_102, out w20_103, out w21_104, out w22_105, out w23_106, out w24_107, out w25_108, out w26_109, out w27_110, out w28_111, out x29_112);
+		word32 w19_105;
+		word32 w20_106;
+		word32 w21_107;
+		word32 w22_108;
+		word32 w23_109;
+		word32 w24_110;
+		word32 w25_111;
+		word32 w26_112;
+		word32 w27_113;
+		word32 w28_114;
+		word64 x29_115;
+		fib2.part.0(dwArg04, out w19_105, out w20_106, out w21_107, out w22_108, out w23_109, out w24_110, out w25_111, out w26_112, out w27_113, out w28_114, out x29_115);
+		x2_50 = SEQ(x2_32_32, dwArg04);
 	}
-	x0_47 = (uint64) printf("fibonacci(%d) = %d\n", 0x00);
+	else
+		x2_50 = SEQ(x2_32_32, dwArg04);
+	x0_54 = (uint64) printf("fibonacci(%d) = %d\n", dwArg04, (int32) x2_50);
 }
 
-// 00000000000007A0: void _start(Register (ptr64 Eq_71) x0, Stack Eq_72 qwArg00)
-void _start(void (* x0)(), Eq_72 qwArg00)
+// 00000000000007A0: void _start(Register (ptr64 Eq_80) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -149,7 +153,7 @@ void register_tm_clones()
 // 0000000000000868: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_134 * x19_12 = &g_t13000;
+	struct Eq_145 * x19_12 = &g_t13000;
 	if ((word32) g_b13040 == 0x00)
 	{
 		if (g_qw12FB8 != 0x00)
@@ -178,13 +182,13 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000000008E8: Register int32 fib2.part.0(Register int32 w0, Register out Eq_42 w19Out, Register out Eq_42 w20Out, Register out Eq_42 w21Out, Register out Eq_42 w22Out, Register out Eq_42 w23Out, Register out Eq_42 w24Out, Register out Eq_42 w25Out, Register out Eq_42 w26Out, Register out Eq_42 w27Out, Register out Eq_42 w28Out, Register out Eq_42 x29Out)
+// 00000000000008E8: Register int32 fib2.part.0(Register int32 w0, Register out Eq_47 w19Out, Register out Eq_47 w20Out, Register out Eq_47 w21Out, Register out Eq_47 w22Out, Register out Eq_47 w23Out, Register out Eq_47 w24Out, Register out Eq_47 w25Out, Register out Eq_47 w26Out, Register out Eq_47 w27Out, Register out Eq_47 w28Out, Register out Eq_47 x29Out)
 // Called from:
 //      main
 //      fib2.part.0
 //      fib1
 //      fib2
-int32 fib2.part.0(int32 w0, union Eq_42 & w19Out, union Eq_42 & w20Out, union Eq_42 & w21Out, union Eq_42 & w22Out, union Eq_42 & w23Out, union Eq_42 & w24Out, union Eq_42 & w25Out, union Eq_42 & w26Out, union Eq_42 & w27Out, union Eq_42 & w28Out, union Eq_42 & x29Out)
+int32 fib2.part.0(int32 w0, union Eq_47 & w19Out, union Eq_47 & w20Out, union Eq_47 & w21Out, union Eq_47 & w22Out, union Eq_47 & w23Out, union Eq_47 & w24Out, union Eq_47 & w25Out, union Eq_47 & w26Out, union Eq_47 & w27Out, union Eq_47 & w28Out, union Eq_47 & x29Out)
 {
 	word32 x19_32_32_2824 = SLICE(x19, word32, 32);
 	word32 x20_32_32_2828 = SLICE(x20, word32, 32);
@@ -196,7 +200,7 @@ int32 fib2.part.0(int32 w0, union Eq_42 & w19Out, union Eq_42 & w20Out, union Eq
 	word32 x28_32_32_2854 = SLICE(x28, word32, 32);
 	word32 x21_32_32_2860 = SLICE(x21, word32, 32);
 	word32 x22_32_32_2864 = SLICE(x22, word32, 32);
-	struct Eq_201 * x29_1042 = fp + -0x0078;
+	struct Eq_212 * x29_1042 = fp + -0x0078;
 	word64 x27_103 = SEQ(x27_32_32_2848, w0 - 0x06);
 	word64 x28_104 = SEQ(x28_32_32_2854, w0 - 0x07);
 	word64 x22_107 = SEQ(x22_32_32_2864, w0 - 0x08);
@@ -256,7 +260,7 @@ l000000000000092C:
 					x24_116 = x24_3787;
 					if (w23_77 > 0x01)
 					{
-						struct Eq_309 * v36_86 = &x29_1042->dw0070;
+						struct Eq_320 * v36_86 = &x29_1042->dw0070;
 						v36_86->dw0000 = w24_71;
 						v36_86->dw0004 = w25_63;
 						word32 w19_4048;
@@ -295,7 +299,7 @@ l000000000000092C:
 					word64 x21_32_32_w27_3954 = SEQ(SLICE(x21_106, word32, 32), w27_133);
 					if (w27_133 > 0x01)
 					{
-						struct Eq_352 * v39_140 = &x29_1042->dw006C;
+						struct Eq_363 * v39_140 = &x29_1042->dw006C;
 						v39_140->dw0000 = w5_128;
 						v39_140->dw0004 = w2_130;
 						x29_1042->dw0074 = w1_132;
@@ -349,7 +353,7 @@ l000000000000092C:
 					word64 x27_262 = SEQ(x27_32_32_158, w27_199);
 					if (w27_199 > 0x01)
 					{
-						struct Eq_1413 * v78_208 = &x29_1042->dw006C;
+						struct Eq_1424 * v78_208 = &x29_1042->dw006C;
 						v78_208->dw0000 = w5_192;
 						v78_208->dw0004 = w2_130;
 						x29_1042->dw0074 = w1_132;
@@ -385,7 +389,7 @@ l000000000000092C:
 					int32 w0_281 = w28_277;
 					if (w28_277 > 0x01)
 					{
-						struct Eq_1463 * v80_284 = &x29_1042->dw006C;
+						struct Eq_1474 * v80_284 = &x29_1042->dw006C;
 						v80_284->dw0000 = w5_192;
 						v80_284->dw0004 = w2_130;
 						x29_1042->dw0074 = w1_132;
@@ -449,7 +453,7 @@ l000000000000092C:
 					w2_366 = w27_361;
 					if (w27_361 > 0x01)
 					{
-						struct Eq_1541 * v82_377 = &x29_1042->dw0070;
+						struct Eq_1552 * v82_377 = &x29_1042->dw0070;
 						v82_377->dw0000 = w27_361;
 						v82_377->dw0004 = w1_132;
 						word32 w27_4246;
@@ -485,7 +489,7 @@ l000000000000092C:
 					int32 w0_463 = w28_459;
 					if (w28_459 > 0x01)
 					{
-						struct Eq_1582 * v84_466 = &x29_1042->dw006C;
+						struct Eq_1593 * v84_466 = &x29_1042->dw006C;
 						v84_466->dw0000 = w5_372;
 						v84_466->dw0004 = w2_366;
 						x29_1042->dw0074 = w1_132;
@@ -526,7 +530,7 @@ l000000000000092C:
 					int32 w2_527 = w28_523;
 					if (w28_523 > 0x01)
 					{
-						struct Eq_1774 * v90_532 = &x29_1042->dw0070;
+						struct Eq_1785 * v90_532 = &x29_1042->dw0070;
 						v90_532->dw0000 = w5_367;
 						v90_532->dw0004 = w1_132;
 						word32 w19_4278;
@@ -559,7 +563,7 @@ l000000000000092C:
 					int32 w0_596 = w22_592;
 					if (w22_592 > 0x01)
 					{
-						struct Eq_1863 * v94_599 = &x29_1042->dw006C;
+						struct Eq_1874 * v94_599 = &x29_1042->dw006C;
 						v94_599->dw0000 = w2_527;
 						v94_599->dw0004 = w5_367;
 						x29_1042->dw0074 = w1_132;
@@ -651,7 +655,7 @@ l0000000000000AB4:
 				x23_3968 = x23_3877;
 				if (w27_698 > 0x01)
 				{
-					struct Eq_1675 * v86_715 = &x29_1042->dw0070;
+					struct Eq_1686 * v86_715 = &x29_1042->dw0070;
 					v86_715->dw0000 = w27_698;
 					v86_715->dw0004 = w23_685;
 					word32 w23_4262;
@@ -687,7 +691,7 @@ l0000000000000AB4:
 				int32 w0_820 = w28_816;
 				if (w28_816 > 0x01)
 				{
-					struct Eq_1715 * v88_823 = &x29_1042->dw006C;
+					struct Eq_1726 * v88_823 = &x29_1042->dw006C;
 					v88_823->dw0000 = w5_709;
 					v88_823->dw0004 = w2_1008;
 					x29_1042->dw0074 = w1_1005;
@@ -733,7 +737,7 @@ l0000000000000AB4:
 				word64 x28_4016 = x28_104;
 				if (w28_881 > 0x01)
 				{
-					struct Eq_1823 * v92_890 = &x29_1042->dw0070;
+					struct Eq_1834 * v92_890 = &x29_1042->dw0070;
 					v92_890->dw0000 = w5_1004;
 					v92_890->dw0004 = w1_1005;
 					word32 w23_4292;
@@ -764,7 +768,7 @@ l0000000000000AB4:
 				int32 w0_1006 = w22_951;
 				if (w22_951 > 0x01)
 				{
-					struct Eq_1911 * v96_958 = &x29_1042->dw006C;
+					struct Eq_1922 * v96_958 = &x29_1042->dw006C;
 					v96_958->dw0000 = w2_1002;
 					v96_958->dw0004 = w5_1004;
 					x29_1042->dw0074 = w1_1005;
@@ -820,7 +824,7 @@ l0000000000000AB4:
 				w1_1034 = w28_1029;
 				if (w28_1029 > 0x01)
 				{
-					struct Eq_1987 * v98_1045 = &x29_1042->dw0070;
+					struct Eq_1998 * v98_1045 = &x29_1042->dw0070;
 					v98_1045->dw0000 = w28_1029;
 					v98_1045->dw0004 = w2_1014;
 					word32 w24_4323;
@@ -856,7 +860,7 @@ l0000000000000AB4:
 				int32 w0_1124 = w22_1120;
 				if (w22_1120 > 0x01)
 				{
-					struct Eq_2027 * v100_1127 = &x29_1042->dw006C;
+					struct Eq_2038 * v100_1127 = &x29_1042->dw006C;
 					v100_1127->dw0000 = w5_1040;
 					v100_1127->dw0004 = w1_1034;
 					x29_1042->dw0074 = w2_1014;
@@ -899,7 +903,7 @@ l0000000000000AB4:
 				int32 w1_1188 = w22_1184;
 				if (w22_1184 > 0x01)
 				{
-					struct Eq_2100 * v102_1193 = &x29_1042->dw0070;
+					struct Eq_2111 * v102_1193 = &x29_1042->dw0070;
 					v102_1193->dw0000 = w5_1035;
 					v102_1193->dw0004 = w2_1014;
 					word32 w19_4338;
@@ -935,7 +939,7 @@ l0000000000000AB4:
 				word64 x20_32_32_w24_4026 = SEQ(SLICE(x20_1056, word32, 32), (word32) x24_1066);
 				if (w3_1281 > 0x01)
 				{
-					struct Eq_2139 * v104_1285 = &x29_1042->dw006C;
+					struct Eq_2150 * v104_1285 = &x29_1042->dw006C;
 					v104_1285->dw0000 = w1_1188;
 					v104_1285->dw0004 = w5_1035;
 					x29_1042->dw0074 = w2_1014;
@@ -1022,7 +1026,7 @@ l0000000000000AB8:
 					x24_1541 = SEQ(x24_32_32_1465, w24_1383);
 					if (w27_1411 > 0x01)
 					{
-						struct Eq_455 * v41_1431 = &x29_1042->dw0070;
+						struct Eq_466 * v41_1431 = &x29_1042->dw0070;
 						v41_1431->dw0000 = w24_1383;
 						v41_1431->dw0004 = w23_1398;
 						word32 w22_4071;
@@ -1061,7 +1065,7 @@ l0000000000000AB8:
 					word64 x20_32_32_w28_3928 = SEQ(SLICE(x20_1455, word32, 32), w28_1558);
 					if (w28_1558 > 0x01)
 					{
-						struct Eq_496 * v43_1565 = &x29_1042->dw006C;
+						struct Eq_507 * v43_1565 = &x29_1042->dw006C;
 						v43_1565->dw0000 = w5_1424;
 						v43_1565->dw0004 = w1_1392;
 						x29_1042->dw0074 = w2_1406;
@@ -1114,7 +1118,7 @@ l0000000000000AB8:
 					word64 x28_1688 = SEQ(x28_32_32_1584, w28_1624);
 					if (w28_1624 > 0x01)
 					{
-						struct Eq_578 * v45_1633 = &x29_1042->dw006C;
+						struct Eq_589 * v45_1633 = &x29_1042->dw006C;
 						v45_1633->dw0000 = w5_1420;
 						v45_1633->dw0004 = w1_1392;
 						x29_1042->dw0074 = w2_1406;
@@ -1150,7 +1154,7 @@ l0000000000000AB8:
 					int32 w0_1706 = w22_1702;
 					if (w22_1702 > 0x01)
 					{
-						struct Eq_746 * v51_1709 = &x29_1042->dw006C;
+						struct Eq_757 * v51_1709 = &x29_1042->dw006C;
 						v51_1709->dw0000 = w5_1420;
 						v51_1709->dw0004 = w1_1392;
 						x29_1042->dw0074 = w2_1406;
@@ -1213,7 +1217,7 @@ l0000000000000AB8:
 					w2_1791 = w28_1786;
 					if (w28_1786 > 0x01)
 					{
-						struct Eq_654 * v47_1802 = &x29_1042->dw0070;
+						struct Eq_665 * v47_1802 = &x29_1042->dw0070;
 						v47_1802->dw0000 = w1_1392;
 						v47_1802->dw0004 = w28_1786;
 						word32 w23_4102;
@@ -1249,7 +1253,7 @@ l0000000000000AB8:
 					int32 w0_1888 = w22_1884;
 					if (w22_1884 > 0x01)
 					{
-						struct Eq_694 * v49_1891 = &x29_1042->dw006C;
+						struct Eq_705 * v49_1891 = &x29_1042->dw006C;
 						v49_1891->dw0000 = w5_1797;
 						v49_1891->dw0004 = w1_1392;
 						x29_1042->dw0074 = w2_1791;
@@ -1290,7 +1294,7 @@ l0000000000000AB8:
 					int32 w2_1952 = w22_1948;
 					if (w22_1948 > 0x01)
 					{
-						struct Eq_809 * v53_1957 = &x29_1042->dw0070;
+						struct Eq_820 * v53_1957 = &x29_1042->dw0070;
 						v53_1957->dw0000 = w5_1792;
 						v53_1957->dw0004 = w1_1392;
 						word32 w23_4132;
@@ -1323,7 +1327,7 @@ l0000000000000AB8:
 					int32 w0_2036 = w3_2034;
 					if (w3_2034 > 0x01)
 					{
-						struct Eq_848 * v56_2038 = &x29_1042->dw006C;
+						struct Eq_859 * v56_2038 = &x29_1042->dw006C;
 						v56_2038->dw0000 = w2_1952;
 						v56_2038->dw0004 = w5_1792;
 						x29_1042->dw0074 = w1_1392;
@@ -1391,7 +1395,7 @@ l0000000000000AB8:
 					x27_2237 = x27_103;
 					if (w28_2135 > 0x01)
 					{
-						struct Eq_921 * v58_2152 = &x29_1042->dw0070;
+						struct Eq_932 * v58_2152 = &x29_1042->dw0070;
 						v58_2152->dw0000 = w28_2135;
 						v58_2152->dw0004 = w27_2122;
 						word32 w26_4155;
@@ -1427,7 +1431,7 @@ l0000000000000AB8:
 					int32 w0_2255 = w22_2251;
 					if (w22_2251 > 0x01)
 					{
-						struct Eq_961 * v60_2258 = &x29_1042->dw006C;
+						struct Eq_972 * v60_2258 = &x29_1042->dw006C;
 						v60_2258->dw0000 = w5_2146;
 						v60_2258->dw0004 = w1_2141;
 						x29_1042->dw0074 = w2_2129;
@@ -1473,7 +1477,7 @@ l0000000000000AB8:
 					word64 x22_2375 = x22_107;
 					if (w22_2316 > 0x01)
 					{
-						struct Eq_1027 * v68_2325 = &x29_1042->dw0070;
+						struct Eq_1038 * v68_2325 = &x29_1042->dw0070;
 						v68_2325->dw0000 = w5_2142;
 						v68_2325->dw0004 = w2_2129;
 						word32 w21_4170;
@@ -1504,7 +1508,7 @@ l0000000000000AB8:
 					int32 w0_2397 = w3_2395;
 					if (w3_2395 > 0x01)
 					{
-						struct Eq_1200 * v74_2399 = &x29_1042->dw006C;
+						struct Eq_1211 * v74_2399 = &x29_1042->dw006C;
 						v74_2399->dw0000 = w1_2320;
 						v74_2399->dw0004 = w5_2142;
 						x29_1042->dw0074 = w2_2129;
@@ -1558,7 +1562,7 @@ l0000000000000AB8:
 					w2_2472 = w22_2467;
 					if (w22_2467 > 0x01)
 					{
-						struct Eq_1114 * v70_2483 = &x29_1042->dw0070;
+						struct Eq_1125 * v70_2483 = &x29_1042->dw0070;
 						v70_2483->dw0000 = w1_2130;
 						v70_2483->dw0004 = w22_2467;
 						word32 w26_4185;
@@ -1594,7 +1598,7 @@ l0000000000000AB8:
 					int32 w0_2565 = w3_2563;
 					if (w3_2563 > 0x01)
 					{
-						struct Eq_1154 * v72_2567 = &x29_1042->dw006C;
+						struct Eq_1165 * v72_2567 = &x29_1042->dw006C;
 						v72_2567->dw0000 = w5_2478;
 						v72_2567->dw0004 = w1_2130;
 						x29_1042->dw0074 = w2_2472;
@@ -1652,7 +1656,7 @@ l0000000000000AB8:
 					int32 w0_2627 = w2_2625;
 					if (w2_2625 > 0x01)
 					{
-						struct Eq_1291 * v76_2629 = &x29_1042->dw0070;
+						struct Eq_1302 * v76_2629 = &x29_1042->dw0070;
 						v76_2629->dw0000 = w5_2473;
 						v76_2629->dw0004 = w1_2130;
 						word64 x19_2666 = <invalid>;
@@ -1699,7 +1703,7 @@ l0000000000000AB8:
 						w5_2473 = x29_1042->dw0070;
 						w1_2130 = x29_1042->dw0074;
 					}
-					x29_1042[0x0C] = (struct Eq_201) (x29_1042[0x0C] - 0x0A);
+					x29_1042[0x0C] = (struct Eq_212) (x29_1042[0x0C] - 0x0A);
 					int32 w19_2689 = w19_2686 - 0x0A;
 					word32 w23_2705 = w23_2702 - 0x0A;
 					word32 w25_2714 = w25_2711 - 0x0A;

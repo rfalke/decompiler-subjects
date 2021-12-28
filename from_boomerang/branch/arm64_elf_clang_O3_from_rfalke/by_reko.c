@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,85 +124,81 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
+word64 g_qw400638 = 0x00; // 0000000000400638
 // 0000000000400640: void main()
 void main()
 {
-	x0_20 = (uint64) __isoc99_scanf("%d", 0x00);
-	x0_24 = (uint64) __isoc99_scanf("%d", 0x00);
-	struct Eq_112 * sp_100 = fp + ~0x37;
+	x0_21 = (uint64) __isoc99_scanf("%d", fp + ~0x1B);
+	x0_25 = (uint64) __isoc99_scanf("%d", fp + ~0x27);
+	struct Eq_121 * sp_101 = fp + ~0x37;
 	if (dwLoc2C == 0x05)
 	{
-		x0_31 = (uint64) puts("Equal");
-		sp_100 = fp + ~0x3F;
+		x0_32 = (uint64) puts("Equal");
+		sp_101 = fp + ~0x3F;
 		if (dwLoc34 == 0x05)
 		{
 l00000000004006C4:
-			x0_54 = (uint64) puts("Less or Equal");
-			sp_100 = (struct Eq_112 *) ((char *) sp_100 - 8);
-			if (sp_100->dw000C > 0x05)
+			x0_55 = (uint64) puts("Less or Equal");
+			sp_101 = (struct Eq_121 *) ((char *) sp_101 - 8);
+			if (sp_101->dw000C > 0x05)
 				goto l00000000004006F4;
 			goto l00000000004006DC;
 		}
 	}
-	x0_38 = (uint64) puts("Not Equal");
-	sp_100 = (struct Eq_112 *) ((char *) sp_100 - 8);
-	if (sp_100->dw000C < 0x05)
+	x0_39 = (uint64) puts("Not Equal");
+	sp_101 = (struct Eq_121 *) ((char *) sp_101 - 8);
+	if (sp_101->dw000C < 0x05)
 	{
-		x0_47 = (uint64) puts("Greater");
-		sp_100 = (struct Eq_112 *) ((char *) sp_100 - 8);
-		if (sp_100->dw0004 < 0x05)
+		x0_48 = (uint64) puts("Greater");
+		sp_101 = (struct Eq_121 *) ((char *) sp_101 - 8);
+		if (sp_101->dw0004 < 0x05)
 		{
 l00000000004006DC:
-			x0_63 = (uint64) puts("Greater or Equal");
-			sp_100 = (struct Eq_112 *) ((char *) sp_100 - 8);
-			if (sp_100->dw000C <= 0x05)
+			x0_64 = (uint64) puts("Greater or Equal");
+			sp_101 = (struct Eq_121 *) ((char *) sp_101 - 8);
+			if (sp_101->dw000C <= 0x05)
 				goto l0000000000400700;
 l00000000004006F4:
-			x0_72 = (uint64) puts("Less");
-			sp_100 = (struct Eq_112 *) ((char *) sp_100 - 8);
+			x0_73 = (uint64) puts("Less");
+			sp_101 = (struct Eq_121 *) ((char *) sp_101 - 8);
 l0000000000400700:
-			if (sp_100->dw0008 <= 0x04)
+			if (sp_101->dw0008 <= 0x04)
 			{
-				x0_83 = (uint64) puts("Greater Unsigned");
-				sp_100 = (struct Eq_112 *) ((char *) sp_100 - 8);
-				if (sp_100->dw0008 < 0x05)
+				x0_84 = (uint64) puts("Greater Unsigned");
+				sp_101 = (struct Eq_121 *) ((char *) sp_101 - 8);
+				if (sp_101->dw0008 < 0x05)
 				{
 l000000000040073C:
-					x0_99 = (uint64) puts("Carry Clear");
-					sp_100 = (struct Eq_112 *) ((char *) sp_100 - 8);
-					if (sp_100->dw0008 < 0x06)
+					x0_100 = (uint64) puts("Carry Clear");
+					sp_101 = (struct Eq_121 *) ((char *) sp_101 - 8);
+					if (sp_101->dw0008 < 0x06)
 						goto l0000000000400760;
 l0000000000400754:
-					x0_108 = (uint64) puts("Carry Set");
-					sp_100 = (struct Eq_112 *) ((char *) sp_100 - 8);
+					x0_109 = (uint64) puts("Carry Set");
+					sp_101 = (struct Eq_121 *) ((char *) sp_101 - 8);
 l0000000000400760:
-					if (sp_100->dw000C <= 0x05)
+					if (sp_101->dw000C <= 0x05)
 					{
-						x0_119 = (uint64) puts("Minus");
-						if (sp_100->dw0004 < 0x06)
+						x0_120 = (uint64) puts("Minus");
+						if (sp_101->dw0004 < 0x06)
 							return;
 					}
-					x0_126 = (uint64) puts("Plus");
+					x0_127 = (uint64) puts("Plus");
 					return;
 				}
 			}
-			x0_90 = (uint64) puts("Less or Equal Unsigned");
-			sp_100 = (struct Eq_112 *) ((char *) sp_100 - 8);
-			if (sp_100->dw0008 > 0x05)
+			x0_91 = (uint64) puts("Less or Equal Unsigned");
+			sp_101 = (struct Eq_121 *) ((char *) sp_101 - 8);
+			if (sp_101->dw0008 > 0x05)
 				goto l0000000000400754;
 			goto l000000000040073C;
 		}

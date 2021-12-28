@@ -16,7 +16,6 @@
 000000000040451A: warning: Unable to resolve imported reference memmove.
 00000000004045B8: warning: Unable to resolve imported reference _ZSt20__throw_length_errorPKc.
 0000000000404538: warning: Unable to resolve imported reference memset.
-0000000000404555: warning: Procedure _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14_M_replace_auxEmmmc previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000000404430: warning: Unable to resolve imported reference _ZSt17__throw_bad_allocv.
 0000000000404361: warning: Unable to resolve imported reference _Znwm.
 0000000000404393: warning: Unable to resolve imported reference memcpy.
@@ -24,7 +23,6 @@
 00000000004043C5: warning: Unable to resolve imported reference memcpy.
 00000000004043FA: warning: Unable to resolve imported reference memcpy.
 0000000000404414: warning: Unable to resolve imported reference _ZdlPvm.
-000000000040442E: warning: Procedure _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000000403007: warning: Unable to resolve imported reference pthread_mutex_unlock.
 000000000040306A: warning: Unable to resolve imported reference _ZSt20__throw_system_errori.
 00000000004042D3: warning: Unable to resolve imported reference _ZSt20__throw_length_errorPKc.
@@ -61,7 +59,6 @@
 0000000000402CDB: warning: Unable to resolve imported reference _ZNSt6thread6_StateD2Ev.
 0000000000402CE9: warning: Unable to resolve imported reference _ZdlPvm.
 0000000000402CC7: warning: Unable to resolve imported reference _ZNSt6thread6_StateD2Ev.
-0000000000402CB0: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000000402BA9: warning: Unable to resolve imported reference _ZNSt8ios_base4InitC1Ev.
 0000000000402BC1: warning: Unable to resolve imported reference __cxa_atexit.
 0000000000402233: warning: Unable to resolve imported reference get_nprocs.
@@ -97,18 +94,17 @@
 0000000000402AB1: warning: Unable to resolve imported reference _ZdlPvm.
 0000000000402AF8: warning: Unable to resolve imported reference _ZdlPvm.
 0000000000402ACB: warning: Unable to resolve imported reference _ZdlPvm.
-0000000000402B0D: warning: Procedure main previously had a return address of 0 bytes on the stack, but now seems to have a return address of 8 bytes on the stack.
 0000000000402AD8: warning: Unable to resolve imported reference _ZdlPvm.
 0000000000402200: warning: Unable to resolve imported reference _ZNSt8ios_base4InitD1Ev.
 00000000004020C0: warning: Unable to resolve imported reference pthread_create.
 main: error: An error occurred while rewriting procedure to high-level language.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at Reko.Core.Block.get_ThenBlock() in /Users/runner/work/reko/reko/src/Core/Block.cs:line 91
-   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
-   at Reko.Decompiler.StructureProgram() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 628
+       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 150
+   at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
+   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
 0000000000405140: warning: Expected sizes of arrays to have been determined by now
 0000000000405141: warning: Expected sizes of arrays to have been determined by now
 0000000000405220: warning: Expected sizes of arrays to have been determined by now

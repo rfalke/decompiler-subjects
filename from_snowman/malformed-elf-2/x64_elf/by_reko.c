@@ -112,11 +112,11 @@ char g_str400BC0[] = "And I'm happy. I live free ! :-)"; // 0000000000400BC0
 
 #include "subject.h"
 
-// 0000000000400800: void _start(Register (ptr64 Eq_8) rdx, Stack Eq_9 qwArg00)
-void _start(void (* rdx)(), Eq_9 qwArg00)
+// 0000000000400800: void _start(Register (ptr64 Eq_8) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t4008ED, qwArg00, (char *) fp + 8, &g_t400B10, &g_t400BA0, rdx, fp);
+	__libc_start_main(&g_t4008ED, (int32) qwArg00, (char *) fp + 8, &g_t400B10, &g_t400BA0, rdx, fp);
 	__hlt();
 }
 
@@ -150,17 +150,17 @@ void frame_dummy()
 	register_tm_clones();
 }
 
-// 00000000004008ED: void main(Register (ptr32 Eq_51) fs)
-void main(struct Eq_51 * fs)
+// 00000000004008ED: void main(Register (ptr32 Eq_53) fs)
+void main(struct Eq_53 * fs)
 {
-	struct Eq_52 * rax_11 = malloc(57005);
+	struct Eq_54 * rax_11 = malloc(57005);
 	rax_11->b0000 = (char) 0x45206E61206D2749;
 	rax_11->dw0008 = 975193676;
 	rax_11->w000C = 0x292D;
 	rax_11->b000E = 0x00;
 	printf("%s", rax_11);
 	puts("...\n");
-	srand((uint64) time(null));
+	srand(time(null));
 	if ((rand() & 0x01) == 0x00)
 	{
 		help(fs);
@@ -169,19 +169,19 @@ void main(struct Eq_51 * fs)
 	else
 	{
 		puts("And I'm happy. I live free ! :-)");
-		exit(0x00);
+		exit(0);
 	}
 }
 
-// 0000000000400996: void help(Register (ptr32 Eq_51) fs)
+// 0000000000400996: void help(Register (ptr32 Eq_53) fs)
 // Called from:
 //      main
-void help(struct Eq_51 * fs)
+void help(struct Eq_53 * fs)
 {
 	word64 rax_25 = fs->qw0028;
-	word64 rax_52 = strlen(fp - 0x88) + strlen(fp - 0x68);
+	size_t rax_52 = strlen(fp - 0x88) + strlen(fp - 0x68);
 	char * rsp_75 = fp - 0xA8 - (uint64) ((uint128) ((word64) rax_52 + 16) /u 0x10) *s 0x10;
-	strncpy(rsp_75, fp - 0x68, rax_52);
+	strncpy(rsp_75, fp - 0x68, (int32) rax_52);
 	strncat(rsp_75, fp - 0x88, rax_52);
 	fputs(rsp_75, stdout);
 	if ((rax_25 ^ fs->qw0028) == 0x00)
@@ -195,7 +195,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	word32 edi = (word32) rdi;
 	_init();
 	int64 rbp_19 = 0x00600E18 - 0x00600E10;
-	Eq_193 rbx_29 = 0x00;
+	Eq_195 rbx_29 = 0x00;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
 		do

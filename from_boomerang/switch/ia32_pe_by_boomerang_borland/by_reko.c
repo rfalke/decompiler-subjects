@@ -1006,9 +1006,8 @@ l00405134:
 	if (bArg14 != 0x00)
 	{
 		*dwArg0C = 0x2D;
-		uint32 eax_38 = -dwArg04;
 		esi_113 = dwArg0C + 1;
-		qwArg04_232 = SEQ(-(dwArg08 + (eax_38 == 0x00)), eax_38);
+		qwArg04_232 = SEQ(-(dwArg08 + (dwArg04 != 0x00)), -dwArg04);
 	}
 l004050DE:
 	byte * ebx_102 = fp - 0x48;

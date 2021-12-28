@@ -116,11 +116,11 @@ char g_str400B94[] = "rb"; // 0000000000400B94
 
 #include "subject.h"
 
-// 00000000004006B0: void _start(Register (ptr64 Eq_11) rdx, Stack Eq_12 qwArg00)
-void _start(void (* rdx)(), Eq_12 qwArg00)
+// 00000000004006B0: void _start(Register (ptr64 Eq_11) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t400A34, qwArg00, (char *) fp + 8, &g_t400A90, &g_t400A80, rdx, fp);
+	__libc_start_main(&g_t400A34, (int32) qwArg00, (char *) fp + 8, &g_t400A90, &g_t400A80, rdx, fp);
 	__hlt();
 }
 
@@ -159,16 +159,16 @@ void frame_dummy()
 {
 }
 
-// 0000000000400794: void dumpline(Register Eq_71 edx, Register ptr64 rdi)
+// 0000000000400794: void dumpline(Register Eq_73 edx, Register ptr64 rdi)
 // Called from:
 //      hexdump
-void dumpline(Eq_71 edx, ptr64 rdi)
+void dumpline(Eq_73 edx, ptr64 rdi)
 {
 	sprintf(fp - 0x78, "%08lX:", 0x00);
-	Eq_71 dwLoc8C_228 = edx;
+	Eq_73 dwLoc8C_228 = edx;
 	if (edx > 0x10)
 		dwLoc8C_228.u0 = 0x10;
-	Eq_71 dwLoc20_230 = 0x00;
+	Eq_73 dwLoc20_230 = 0x00;
 	while (dwLoc20_230 < dwLoc8C_228)
 	{
 		sprintf(fp - 0x78 + ((int64) (dwLoc20_230 *32 0x03) + 0x09), " %02lX", 0x00);
@@ -181,23 +181,23 @@ void dumpline(Eq_71 edx, ptr64 rdi)
 			break;
 		strcat(fp - 0x78, "   ");
 	}
-	Eq_119 eax_97 = (word32) strlen(fp - 0x78);
+	Eq_121 eax_97 = (word32) strlen(fp - 0x78);
 	memcpy(fp - 0x78 + (int64) eax_97, &g_v400B8E, 0x04);
-	Eq_71 dwLoc20_239 = 0x00;
+	Eq_73 dwLoc20_239 = 0x00;
 	while (dwLoc20_239 < dwLoc8C_228)
 	{
-		Eq_142 al_165;
+		Eq_144 al_165;
 		word32 edx_162 = (word64) dwLoc20_239 + ((word64) eax_97 + 3);
 		if ((int64) dwLoc20_239 + rdi > 0x1F && (int64) dwLoc20_239 + rdi <= 0x7E)
-			al_165 = (Eq_142) ((int64) dwLoc20_239 + rdi);
+			al_165 = (Eq_144) ((int64) dwLoc20_239 + rdi);
 		else
-			al_165 = (Eq_142) 0x2E;
+			al_165 = (Eq_144) 0x2E;
 		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x78)[(int64) edx_162].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = al_165;
 		dwLoc20_239 = (word64) dwLoc20_239 + 1;
 	}
 	while (dwLoc20_239 <= 0x0F)
 	{
-		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x78)[(int64) ((word64) dwLoc20_239 + ((word64) eax_97 + 3))].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_170) 0x20;
+		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x78)[(int64) ((word64) dwLoc20_239 + ((word64) eax_97 + 3))].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_172) 0x20;
 		dwLoc20_239 = (word64) dwLoc20_239 + 1;
 	}
 	memcpy(fp - 0x78 + ((word64) dwLoc20_239 + ((word64) eax_97 + 3)), &g_v400B92, 0x02);
@@ -228,7 +228,7 @@ word32 hexdump(char * rdi)
 			up64 qwLoc20_102;
 			for (qwLoc20_102 = 0x00; qwLoc98 > qwLoc20_102; qwLoc20_102 += (int64) eax_47)
 			{
-				Eq_71 eax_47 = (word32) fread(fp - 0x38, 0x01, 0x10, rax_28);
+				Eq_73 eax_47 = (word32) fread(fp - 0x38, 0x01, 0x10, rax_28);
 				if (eax_47 == 0x00)
 					break;
 				dumpline(eax_47, fp - 0x38);
@@ -261,7 +261,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_19 = 0x00600CAC - 0x00600CAC;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
-		Eq_287 rbx_39 = 0x00;
+		Eq_289 rbx_39 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x00600CAC)[rbx_39]();
@@ -270,12 +270,12 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	}
 }
 
-// 0000000000400B20: Register int32 stat(Register (ptr64 Eq_200) rsi, Register (ptr64 char) rdi)
+// 0000000000400B20: Register int32 stat(Register (ptr64 Eq_202) rsi, Register (ptr64 char) rdi)
 // Called from:
 //      hexdump
 int32 stat(struct stat * rsi, char * rdi)
 {
-	return __xstat(0x01, rdi, rsi);
+	return __xstat(1, rdi, rsi);
 }
 
 // 0000000000400B30: void __do_global_ctors_aux()

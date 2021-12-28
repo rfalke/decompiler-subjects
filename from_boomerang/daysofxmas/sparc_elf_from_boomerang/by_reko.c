@@ -321,7 +321,7 @@ l000107D8:
 		{
 			int32 o0_41 = (int32) o2->b0000;
 			o2_150 = &o2->b0000 + 1;
-			o0_151 = o0 - ~0x00 - ((o0_41 ^ 0x2F) > 0x00);
+			o0_151 = o0 - ~0x00 - (word32) ((o0_41 ^ 0x2F) > 0x00);
 			o1_152 = o1;
 			goto l00010718;
 		}
@@ -378,7 +378,7 @@ word32 fn00010890(ptr32 o7, word32 l7)
 word32 * __do_global_ctors_aux(word32 o2, word32 o3, ptr32 o4, ptr32 o5, ptr32 o7, ptr32 & i4Out, ptr32 & i5Out, ptr32 & i7Out)
 {
 	word32 * l0_31;
-	struct Eq_477 * o1_26 = fn00010890(o7, 66176)->ptr0018;
+	struct Eq_478 * o1_26 = fn00010890(o7, 66176)->ptr0018;
 	ptr32 i4_13 = o4;
 	ptr32 i5_15 = o5;
 	ptr32 i7_18 = o7;

@@ -8,35 +8,35 @@ byte g_b13070 = 0x00; // 0000000000013070
 word32 g_dw13074 = 0x00; // 0000000000013074
 word32 g_dw13078 = 0x00; // 0000000000013078
 word32 g_dw1307C = 0x00; // 000000000001307C
-Eq_110 g_t13080 = // 0000000000013080
+Eq_112 g_t13080 = // 0000000000013080
 	{
 		0
 	};
-Eq_110 g_t13084 = // 0000000000013084
+Eq_112 g_t13084 = // 0000000000013084
 	{
 		0
 	};
-Eq_110 g_t13088 = // 0000000000013088
+Eq_112 g_t13088 = // 0000000000013088
 	{
 		0
 	};
 word32 g_dw1308C = 0x00; // 000000000001308C
-Eq_110 g_t13090 = // 0000000000013090
+Eq_112 g_t13090 = // 0000000000013090
 	{
 		0
 	};
 word32 g_dw13094 = 0x00; // 0000000000013094
 int32 g_dw13098 = 0; // 0000000000013098
-Eq_110 g_t1309C = // 000000000001309C
+Eq_112 g_t1309C = // 000000000001309C
 	{
 		0
 	};
 word32 g_dw130A0 = 0x00; // 00000000000130A0
-Eq_110 g_t130A4 = // 00000000000130A4
+Eq_112 g_t130A4 = // 00000000000130A4
 	{
 		0
 	};
-Eq_110 g_t130A8 = // 00000000000130A8
+Eq_112 g_t130A8 = // 00000000000130A8
 	{
 		0
 	};
@@ -65,20 +65,20 @@ word32 * g_ptr12F30 = &g_dw13074; // 0000000000012F30
 word32 * g_ptr12F38 = &g_dw13078; // 0000000000012F38
 word32 * g_ptr12F40 = &g_dw1307C; // 0000000000012F40
 word64 g_qw12F48 = 0x00; // 0000000000012F48
-union Eq_110 * g_ptr12F50 = &g_t13080; // 0000000000012F50
-union Eq_110 * g_ptr12F58 = &g_t13084; // 0000000000012F58
-union Eq_110 * g_ptr12F60 = &g_t13088; // 0000000000012F60
+union Eq_112 * g_ptr12F50 = &g_t13080; // 0000000000012F50
+union Eq_112 * g_ptr12F58 = &g_t13084; // 0000000000012F58
+union Eq_112 * g_ptr12F60 = &g_t13088; // 0000000000012F60
 word32 * g_ptr12F68 = &g_dw1308C; // 0000000000012F68
-union Eq_110 * g_ptr12F70 = &g_t13090; // 0000000000012F70
+union Eq_112 * g_ptr12F70 = &g_t13090; // 0000000000012F70
 word32 * g_ptr12F78 = null; // 0000000000012F78
 word32 * g_ptr12F80 = &g_dw13094; // 0000000000012F80
 word64 g_qw12F88 = 0x00; // 0000000000012F88
 <anonymous> * __libc_csu_init_GOT = __libc_csu_init; // 0000000000012F90
 int32 * g_ptr12F98 = &g_dw13098; // 0000000000012F98
-union Eq_110 * g_ptr12FA0 = &g_t1309C; // 0000000000012FA0
+union Eq_112 * g_ptr12FA0 = &g_t1309C; // 0000000000012FA0
 word32 * g_ptr12FA8 = &g_dw130A0; // 0000000000012FA8
-union Eq_110 * g_ptr12FB0 = &g_t130A4; // 0000000000012FB0
-union Eq_110 * g_ptr12FB8 = &g_t130A8; // 0000000000012FB8
+union Eq_112 * g_ptr12FB0 = &g_t130A4; // 0000000000012FB0
+union Eq_112 * g_ptr12FB8 = &g_t130A8; // 0000000000012FB8
 word32 * g_ptr12FC0 = &g_dw130AC; // 0000000000012FC0
 word32 * g_ptr12FC8 = &g_dw130B0; // 0000000000012FC8
 <anonymous> * main_GOT = main; // 0000000000012FD0
@@ -90,7 +90,7 @@ word32 * g_ptr12FC8 = &g_dw130B0; // 0000000000012FC8
 
 #include "subject.h"
 
-struct Eq_72 g_t13000 = // 0000000000013000
+struct Eq_74 g_t13000 = // 0000000000013000
 	{
 		0x00,
 	};
@@ -145,10 +145,10 @@ byte g_b2670 = 0x00; // 0000000000002670
 
 #include "subject.h"
 
-// 0000000000000D10: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000D10: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -193,7 +193,7 @@ void register_tm_clones()
 // 0000000000000DD8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t13000;
+	struct Eq_74 * x19_12 = &g_t13000;
 	if ((word32) g_b13070 == 0x00)
 	{
 		if (g_qw12F48 != 0x00)
@@ -222,10 +222,10 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000E58: Register word64 E(Register Eq_110 w0)
+// 0000000000000E58: Register word64 E(Register Eq_112 w0)
 // Called from:
 //      ad
-word64 E(Eq_110 w0)
+word64 E(Eq_112 w0)
 {
 	word32 * x1_11 = g_ptr12F30;
 	word32 w0_8 = *g_ptr12F30;
@@ -249,37 +249,37 @@ word64 o()
 		word32 * x1_31 = g_ptr12F68;
 		word32 w0_28 = *g_ptr12F68;
 		*x1_31 = w0_28 + 0x01;
-		Eq_110 w0_35 = (word32) null[(int64) w0_28];
-		*g_ptr12F58 = (union Eq_110 *) w0_35;
+		Eq_112 w0_35 = (word32) null[(int64) w0_28];
+		*g_ptr12F58 = (union Eq_112 *) w0_35;
 		word32 x1_32_32_78 = SLICE(x1_31, word32, 32);
 		x1_77 = SEQ(x1_32_32_78, w0_35);
 		if (*g_ptr12F58 == 0x02)
 		{
 			*g_ptr12F68 = 0x00;
-			Eq_110 w1_50 = *g_ptr12FB8;
-			*g_ptr12F58 = (union Eq_110 *) w1_50;
+			Eq_112 w1_50 = *g_ptr12FB8;
+			*g_ptr12F58 = (union Eq_112 *) w1_50;
 			x1_77 = SEQ(x1_32_32_78, w1_50);
 		}
 	}
 	else
 	{
-		Eq_110 w0_21 = fgetc((int64) *g_ptr12FC0);
-		*g_ptr12F58 = (union Eq_110 *) w0_21;
+		Eq_112 w0_21 = fgetc((int64) *g_ptr12FC0);
+		*g_ptr12F58 = (union Eq_112 *) w0_21;
 		x1_77 = SEQ(x1_32_32, w0_21);
 	}
 	return x1_77;
 }
 
-// 0000000000000F54: Register ui32 X(Register (ptr64 Eq_216) x29, Register word64 x30)
+// 0000000000000F54: Register ui32 X(Register (ptr64 Eq_218) x29, Register word64 x30)
 // Called from:
 //      ad
-ui32 X(struct Eq_216 * x29, word64 x30)
+ui32 X(struct Eq_218 * x29, word64 x30)
 {
-	union Eq_110 * x0_11 = g_ptr12F58;
+	union Eq_112 * x0_11 = g_ptr12F58;
 	word64 x0_18;
 	isalnum();
-	union Eq_110 * x0_24 = g_ptr12F58;
-	return (word32) x0_18 | (uint32) ((uint8) ((word32) (*x0_24 == 0x5F)));
+	union Eq_112 * x0_24 = g_ptr12F58;
+	return (word32) x0_18 | (uint32) ((uint8) (*x0_24 == 0x5F));
 }
 
 // 0000000000000F94: Register word64 Y(Register out ptr64 x30Out)
@@ -292,13 +292,13 @@ word64 Y(ptr64 & x30Out)
 	{
 		o();
 		if (*g_ptr12F58 == 110)
-			*g_ptr12F58 = (union Eq_110 *) 0x0A;
+			*g_ptr12F58 = (union Eq_112 *) 0x0A;
 	}
 	x30Out = qwArg00;
 	return x30;
 }
 
-// 0000000000000FE4: Register word64 ad(Register word64 x30, Register out (ptr64 Eq_266) x29Out, Register out (ptr64 Eq_266) x30Out)
+// 0000000000000FE4: Register word64 ad(Register word64 x30, Register out (ptr64 Eq_267) x29Out, Register out (ptr64 Eq_267) x30Out)
 // Called from:
 //      ad
 //      T
@@ -306,15 +306,15 @@ word64 Y(ptr64 & x30Out)
 //      I
 //      ab
 //      main
-word64 ad(word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
+word64 ad(word64 x30, struct Eq_267 & x29Out, struct Eq_267 & x30Out)
 {
-	struct Eq_216 * x29_16 = fp + -24;
+	struct Eq_218 * x29_16 = fp + -24;
 	while (true)
 	{
-		union Eq_110 * x0_12 = g_ptr12F58;
+		union Eq_112 * x0_12 = g_ptr12F58;
 		word64 x0_22;
 		isspace();
-		if (((word32) x0_22 | (uint32) ((uint8) ((word32) (*g_ptr12F58 == 0x23)))) == 0x00)
+		if (((word32) x0_22 | (uint32) ((uint8) (*g_ptr12F58 == 0x23))) == 0x00)
 			break;
 		if (*g_ptr12F58 == 0x23)
 		{
@@ -352,24 +352,24 @@ word64 ad(word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
 		if (*g_ptr12F50 <= 0x39)
 		{
 			word32 * x0_508 = g_ptr12FA8;
-			*g_ptr12F70 = (union Eq_110 *) strtol(SEQ(SLICE(x0_508, word32, 32), *x0_508));
-			*g_ptr12F50 = (union Eq_110 *) 0x02;
+			*g_ptr12F70 = (union Eq_112 *) strtol(SEQ(SLICE(x0_508, word32, 32), *x0_508));
+			*g_ptr12F50 = (union Eq_112 *) 0x02;
 			x1_331 = SEQ(x1_32_32_582, 0x02);
 		}
 		else
 		{
 			null[(int64) *g_ptr12F30] = 0x20;
 			char * x0_428 = strstr((int64) *g_ptr12F40, (int64) (*g_ptr12FA8 - 0x01));
-			*g_ptr12F50 = (union Eq_110 *) ((word32) x0_428 + (0x00 - *g_ptr12F40));
+			*g_ptr12F50 = (union Eq_112 *) ((word32) x0_428 + (0x00 - *g_ptr12F40));
 			null[(int64) *g_ptr12F30] = 0x00;
-			Eq_110 w1_452 = (char *) *g_ptr12F50 + 32 << 3;
-			*g_ptr12F50 = (union Eq_110 *) w1_452;
+			Eq_112 w1_452 = (char *) *g_ptr12F50 + 32 << 3;
+			*g_ptr12F50 = (union Eq_112 *) w1_452;
 			word32 x1_32_32_586 = SLICE(x0_428, word32, 32);
 			x1_331 = SEQ(x1_32_32_586, w1_452);
 			if (*g_ptr12F50 > 0x0218)
 			{
-				Eq_110 w1_467 = (char *) *g_ptr12F50 + *g_ptr12F38;
-				*g_ptr12F50 = (union Eq_110 *) w1_467;
+				Eq_112 w1_467 = (char *) *g_ptr12F50 + *g_ptr12F38;
+				*g_ptr12F50 = (union Eq_112 *) w1_467;
 				x1_331 = SEQ(x1_32_32_586, w1_467);
 				if (null[(int64) *g_ptr12F50 /64 4] == 0x01)
 				{
@@ -388,14 +388,14 @@ word64 ad(word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
 		word32 x1_32_32_590 = SLICE(o(), word32, 32);
 		if (*g_ptr12F50 == 0x27)
 		{
-			*g_ptr12F50 = (union Eq_110 *) 0x02;
+			*g_ptr12F50 = (union Eq_112 *) 0x02;
 			word64 x30_643;
 			Y(out x30_643);
 			*g_ptr12F70 = *g_ptr12F58;
 			o();
 			x1_331 = o();
 		}
-		else if ((uint32) ((uint8) (word32) (*g_ptr12F50 == 0x2F) & (uint8) ((word32) (*g_ptr12F58 == 0x2A))) != 0x00)
+		else if ((uint32) ((uint8) (*g_ptr12F50 == 0x2F) & (uint8) (*g_ptr12F58 == 0x2A)) != 0x00)
 		{
 			o();
 			while (*g_ptr12F58 != 0x00)
@@ -404,7 +404,7 @@ word64 ad(word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
 					o();
 				o();
 				if (*g_ptr12F58 == 0x2F)
-					*g_ptr12F58 = (union Eq_110 *) 0x00;
+					*g_ptr12F58 = (union Eq_112 *) 0x00;
 			}
 			o();
 			word64 x30_645;
@@ -425,7 +425,7 @@ word64 ad(word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
 				word32 w0_190 = x29_16->dw001C;
 				x29_16->dw001C = w0_190 + 0x01;
 				x29_16->t0014 = (word32) null[(int64) w0_190];
-				*g_ptr12F70 = (union Eq_110 *) 0x00;
+				*g_ptr12F70 = (union Eq_112 *) 0x00;
 				while (true)
 				{
 					word32 w0_202 = x29_16->dw001C;
@@ -433,22 +433,22 @@ word64 ad(word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
 					*g_ptr12F98 = (word32) null[(int64) w0_202] - 0x62;
 					if (*g_ptr12F98 >= 0x00)
 						break;
-					*g_ptr12F70 = (union Eq_110 *) ((*g_ptr12F70 << 6) + *g_ptr12F98 + 0x40);
+					*g_ptr12F70 = (union Eq_112 *) ((*g_ptr12F70 << 6) + *g_ptr12F98 + 0x40);
 				}
-			} while (((uint32) (uint8) (word32) (x29_16->t0018 == *g_ptr12F50) & (uint32) ((uint8) ((word32) (x29_16->t0014 == *g_ptr12F58)) | (uint8) ((word32) (x29_16->t0014 == 0x40)))) == 0x00);
-			Eq_110 w1_259 = x29_16->t0014;
+			} while (((uint32) (uint8) (x29_16->t0018 == *g_ptr12F50) & (uint32) ((uint8) (x29_16->t0014 == *g_ptr12F58) | (uint8) (x29_16->t0014 == 0x40))) == 0x00);
+			Eq_112 w1_259 = x29_16->t0014;
 			x1_331 = SEQ(x1_32_32_590, w1_259);
 			if (w1_259 == *g_ptr12F58)
 			{
 				word32 x1_32_32_595 = SLICE(o(), word32, 32);
-				*g_ptr12F50 = (union Eq_110 *) 0x01;
+				*g_ptr12F50 = (union Eq_112 *) 0x01;
 				x1_331 = SEQ(x1_32_32_595, 0x01);
 			}
 		}
 	}
 l0000000000001558:
-	x29Out = (struct Eq_266 *) <invalid>;
-	x30Out = (struct Eq_266 *) <invalid>;
+	x29Out = (struct Eq_267 *) <invalid>;
+	x30Out = (struct Eq_267 *) <invalid>;
 	return x1_331;
 }
 
@@ -463,13 +463,13 @@ l0000000000001558:
 //      ab
 void ae()
 {
-	struct Eq_858 * sp_24 = fp - 0x10;
+	struct Eq_853 * sp_24 = fp - 0x10;
 	while (true)
 	{
 		word32 sp_32_32_23 = SLICE(sp_24, word32, 32);
 		if (sp_24->t000C == 0x00)
 			break;
-		Eq_866 w0_11 = sp_24->t000C;
+		Eq_861 w0_11 = sp_24->t000C;
 		sp_24 = SEQ(sp_32_32_23, (word32) w0_11 + 1);
 		if (w0_11 == 0x01)
 			return;
@@ -480,23 +480,23 @@ void ae()
 	}
 }
 
-// 00000000000015CC: void A(Register Eq_110 w0)
+// 00000000000015CC: void A(Register Eq_112 w0)
 // Called from:
 //      O
 //      I
 //      ab
-void A(Eq_110 w0)
+void A(Eq_112 w0)
 {
-	Eq_110 dwLoc14_28 = w0;
+	Eq_112 dwLoc14_28 = w0;
 	while (dwLoc14_28 != 0x00)
 	{
-		Eq_110 w0_13 = null[(int64) dwLoc1A /64 4];
+		Eq_112 w0_13 = null[(int64) dwLoc1A /64 4];
 		null[(int64) dwLoc1A /64 4] = *g_ptr12FC8 - dwLoc14_28 - 0x04;
 		dwLoc14_28 = w0_13;
 	}
 }
 
-// 0000000000001628: Register word32 s(Register Eq_110 w1, Register out (ptr64 Eq_930) x29Out, Register out ptr64 x30Out)
+// 0000000000001628: Register word32 s(Register Eq_112 w1, Register out (ptr64 Eq_925) x29Out, Register out ptr64 x30Out)
 // Called from:
 //      H
 //      B
@@ -504,7 +504,7 @@ void A(Eq_110 w0)
 //      N
 //      T
 //      ab
-word32 s(Eq_110 w1, struct Eq_930 & x29Out, ptr64 & x30Out)
+word32 s(Eq_112 w1, struct Eq_925 & x29Out, ptr64 & x30Out)
 {
 	ae();
 	null[(int64) *g_ptr12FC8 /64 4] = w1;
@@ -516,34 +516,34 @@ word32 s(Eq_110 w1, struct Eq_930 & x29Out, ptr64 & x30Out)
 	return w0_31;
 }
 
-// 0000000000001694: void H(Register Eq_110 w0)
+// 0000000000001694: void H(Register Eq_112 w0)
 // Called from:
 //      Z
 //      T
 //      O
-void H(Eq_110 w0)
+void H(Eq_112 w0)
 {
 	word64 x29_32;
 	word64 x30_33;
 	s(w0, out x29_32, out x30_33);
 }
 
-// 00000000000016B8: Register Eq_110 B(Register Eq_110 w0)
+// 00000000000016B8: Register Eq_112 B(Register Eq_112 w0)
 // Called from:
 //      O
 //      I
-Eq_110 B(Eq_110 w0)
+Eq_112 B(Eq_112 w0)
 {
 	word64 x29_32;
 	word64 x30_33;
 	return s(w0, out x29_32, out x30_33);
 }
 
-// 00000000000016D8: Register Eq_110 S(Register Eq_110 w1)
+// 00000000000016D8: Register Eq_112 S(Register Eq_112 w1)
 // Called from:
 //      O
 //      U
-Eq_110 S(Eq_110 w1)
+Eq_112 S(Eq_112 w1)
 {
 	ae();
 	word64 x29_45;
@@ -566,10 +566,10 @@ word64 Z(ptr64 & x30Out)
 	return x30;
 }
 
-// 0000000000001750: void N(Register Eq_110 w1)
+// 0000000000001750: void N(Register Eq_112 w1)
 // Called from:
 //      T
-void N(Eq_110 w1)
+void N(Eq_112 w1)
 {
 	ae();
 	word64 x30_54;
@@ -577,26 +577,26 @@ void N(Eq_110 w1)
 	s(w1, out x29_53, out x30_54);
 }
 
-// 0000000000001798: Register word64 T(Register ui32 w0, Register word64 x30, Register out (ptr64 Eq_266) x30Out)
+// 0000000000001798: Register word64 T(Register ui32 w0, Register word64 x30, Register out (ptr64 Eq_267) x30Out)
 // Called from:
 //      T
 //      O
-word64 T(ui32 w0, word64 x30, struct Eq_266 & x30Out)
+word64 T(ui32 w0, word64 x30, struct Eq_267 & x30Out)
 {
-	struct Eq_644 * x29_146 = fp + -56;
+	struct Eq_642 * x29_146 = fp + -56;
 	if (*g_ptr12F50 == 0x22)
 	{
 		H(*g_ptr12F60);
 		while (*g_ptr12F58 != 0x22)
 		{
 			x29_146 = Y(out x30);
-			Eq_110 w0_436 = *g_ptr12F60;
-			*g_ptr12F60 = (union Eq_110 *) ((word32) w0_436 + 1);
+			Eq_112 w0_436 = *g_ptr12F60;
+			*g_ptr12F60 = (union Eq_112 *) ((word32) w0_436 + 1);
 			null[(int64) w0_436].t0000 = *g_ptr12F58;
 			o();
 		}
 		null[(int64) *g_ptr12F60] = 0x00;
-		*g_ptr12F60 = (union Eq_110 *) ((char *) *g_ptr12F60 + 4 & ~0x03);
+		*g_ptr12F60 = (union Eq_112 *) ((char *) *g_ptr12F60 + 4 & ~0x03);
 		o();
 		word64 x30_808;
 		word64 x29_807;
@@ -605,8 +605,8 @@ word64 T(ui32 w0, word64 x30, struct Eq_266 & x30Out)
 	else
 	{
 		int32 w0_23 = *g_ptr12F98;
-		Eq_110 w0_27 = *g_ptr12F70;
-		Eq_110 w0_31 = *g_ptr12F50;
+		Eq_112 w0_27 = *g_ptr12F70;
+		Eq_112 w0_31 = *g_ptr12F50;
 		word64 x29_805;
 		word64 x30_806;
 		word32 x1_32_32_69 = SLICE(ad(x30, out x29_805, out x30_806), word32, 32);
@@ -695,14 +695,14 @@ word64 T(ui32 w0, word64 x30, struct Eq_266 & x30Out)
 		}
 		else
 		{
-			Eq_110 w0_57 = null[(int64) dwLoc1C /64 4];
-			Eq_110 dwArg04_697 = w0_57;
+			Eq_112 w0_57 = null[(int64) dwLoc1C /64 4];
+			Eq_112 dwArg04_697 = w0_57;
 			if (w0_57 == 0x00)
 			{
 				word32 * x0_63 = g_ptr12FA8;
 				dwArg04_697 = (word32) dlsym(SEQ(SLICE(x0_63, word32, 32), 0x00), SEQ(x1_32_32_69, *x0_63));
 			}
-			if (((uint32) (uint8) (word32) (*g_ptr12F50 == 0x3D) & w0) != 0x00)
+			if (((uint32) (uint8) (*g_ptr12F50 == 0x3D) & w0) != 0x00)
 			{
 				word64 x29_847;
 				word64 x30_848;
@@ -729,7 +729,7 @@ word64 T(ui32 w0, word64 x30, struct Eq_266 & x30Out)
 	{
 		if (x29_146->t003C == 0x01)
 			ae();
-		struct Eq_1150 * x29_511;
+		struct Eq_1145 * x29_511;
 		word64 x30_512;
 		x29_511->t0030 = s(0x00, out x29_511, out x30_512);
 		word64 x29_809;
@@ -748,7 +748,7 @@ word64 T(ui32 w0, word64 x30, struct Eq_266 & x30Out)
 			}
 			x29_511->t002C = (word32) x29_511->t002C + 4;
 		}
-		struct Eq_1225 * x29_605;
+		struct Eq_1220 * x29_605;
 		null[(int64) x29_511->dw0018 /64 4] = x29_511->t002C;
 		word64 x29_815;
 		word64 x30_816;
@@ -777,15 +777,15 @@ word64 T(ui32 w0, word64 x30, struct Eq_266 & x30Out)
 			s(x29_605->t002C, out x29_820, out x30_821);
 		}
 	}
-	x30Out = (struct Eq_266 *) <invalid>;
+	x30Out = (struct Eq_267 *) <invalid>;
 	return <invalid>;
 }
 
-// 0000000000001C60: Register word64 O(Register int32 w0, Register out (ptr64 Eq_266) x30Out)
+// 0000000000001C60: Register word64 O(Register int32 w0, Register out (ptr64 Eq_267) x30Out)
 // Called from:
 //      O
 //      w
-word64 O(int32 w0, struct Eq_266 & x30Out)
+word64 O(int32 w0, struct Eq_267 & x30Out)
 {
 	if (w0 == 0x01)
 	{
@@ -795,7 +795,7 @@ word64 O(int32 w0, struct Eq_266 & x30Out)
 	else
 	{
 		word64 x30_116;
-		struct Eq_644 * x29_115 = O(w0 - 0x01, out x30_116);
+		struct Eq_642 * x29_115 = O(w0 - 0x01, out x30_116);
 		x29_115->t0028.u0 = 0x00;
 		while (x29_115->dw001C == *g_ptr12F98)
 		{
@@ -814,7 +814,7 @@ word64 O(int32 w0, struct Eq_266 & x30Out)
 				ae();
 				x29_115 = O(x29_115->dw001C, out x30_116);
 				ae();
-				if ((uint32) ((uint8) (word32) (x29_115->dw001C == 0x04) | (uint8) ((word32) (x29_115->dw001C == 0x05))) != 0x00)
+				if ((uint32) ((uint8) (x29_115->dw001C == 0x04) | (uint8) (x29_115->dw001C == 0x05)) != 0x00)
 					x29_115 = Z(out x30_116);
 				else
 				{
@@ -833,20 +833,20 @@ word64 O(int32 w0, struct Eq_266 & x30Out)
 			H(x29_115->t002C);
 		}
 	}
-	x30Out = (struct Eq_266 *) <invalid>;
+	x30Out = (struct Eq_267 *) <invalid>;
 	return <invalid>;
 }
 
-// 0000000000001DC8: Register word64 w(Register out (ptr64 Eq_266) x30Out)
+// 0000000000001DC8: Register word64 w(Register out (ptr64 Eq_267) x30Out)
 // Called from:
 //      T
 //      U
 //      I
-word64 w(struct Eq_266 & x30Out)
+word64 w(struct Eq_267 & x30Out)
 {
 	word64 x30_24;
 	O(11, out x30_24);
-	x30Out = (struct Eq_266 *) <invalid>;
+	x30Out = (struct Eq_267 *) <invalid>;
 	return <invalid>;
 }
 
@@ -863,13 +863,13 @@ word32 U(ptr64 & x29Out, ptr64 & x30Out)
 	return (word32) x0_14;
 }
 
-// 0000000000001E04: Register word64 I(Register word64 x19, Register word64 x30, Register out (ptr64 Eq_266) x29Out, Register out (ptr64 Eq_266) x30Out)
+// 0000000000001E04: Register word64 I(Register word64 x19, Register word64 x30, Register out (ptr64 Eq_267) x29Out, Register out (ptr64 Eq_267) x30Out)
 // Called from:
 //      I
 //      ab
-word64 I(word64 x19, word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
+word64 I(word64 x19, word64 x30, struct Eq_267 & x29Out, struct Eq_267 & x30Out)
 {
-	struct Eq_1743 * x29_211 = fp + -56;
+	struct Eq_1735 * x29_211 = fp + -56;
 	int32 dwLoc22_445 = SEQ(wLoc20, SLICE(x19, word16, 48));
 	if (*g_ptr12F50 == 288)
 	{
@@ -879,13 +879,13 @@ word64 I(word64 x19, word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
 		word64 x29_499;
 		word64 x30_500;
 		ad(x30, out x29_499, out x30_500);
-		struct Eq_1792 * x29_349;
+		struct Eq_1782 * x29_349;
 		word64 x30_350;
 		x29_349->dw0034 = U(out x29_349, out x30_350);
 		word64 x30_502;
 		word64 x29_501;
 		ad(x30_350, out x29_501, out x30_502);
-		struct Eq_1808 * x29_366;
+		struct Eq_1798 * x29_366;
 		word64 x30_367;
 		word64 x19_368 = I(x19, x30_350, out x29_366, out x30_367);
 		if (*g_ptr12F50 == 0x0138)
@@ -895,7 +895,7 @@ word64 I(word64 x19, word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
 			ad(x30_367, out x29_503, out x30_504);
 			x29_366->t003C = B(0x00);
 			A(x29_366->t0034);
-			struct Eq_1845 * x29_413;
+			struct Eq_1835 * x29_413;
 			word64 x30_505;
 			I(x19_368, x30_367, out x29_413, out x30_505);
 			A(x29_413->t003C);
@@ -903,9 +903,9 @@ word64 I(word64 x19, word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
 		else
 			A(x29_366->t0034);
 	}
-	else if ((uint32) ((uint8) (word32) (*g_ptr12F50 == 0x0160) | (uint8) ((word32) (*g_ptr12F50 == 0x01F8))) != 0x00)
+	else if ((uint32) ((uint8) (*g_ptr12F50 == 0x0160) | (uint8) (*g_ptr12F50 == 0x01F8)) != 0x00)
 	{
-		Eq_110 w0_162 = *g_ptr12F50;
+		Eq_112 w0_162 = *g_ptr12F50;
 		word64 x29_506;
 		word64 x30_507;
 		ad(x30, out x29_506, out x30_507);
@@ -914,7 +914,7 @@ word64 I(word64 x19, word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
 		ad(x30, out x29_508, out x30_509);
 		if (w0_162 == 0x0160)
 		{
-			struct Eq_1891 * x29_277;
+			struct Eq_1881 * x29_277;
 			x29_277->dw0034 = U(out x29_277, out x30);
 		}
 		else
@@ -945,7 +945,7 @@ word64 I(word64 x19, word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
 		word64 x29_510;
 		word64 x30_511;
 		ad(x30, out x29_510, out x30_511);
-		struct Eq_1905 * x29_302;
+		struct Eq_1895 * x29_302;
 		word64 x30_512;
 		I(x19, x30, out x29_302, out x30_512);
 		B(x29_302->dw003C - *g_ptr12FC8 - 0x05);
@@ -980,7 +980,7 @@ word64 I(word64 x19, word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
 				word64 x30_523;
 				w(out x30_523);
 			}
-			*g_ptr12FB0 = (union Eq_110 *) B(*g_ptr12FB0);
+			*g_ptr12FB0 = (union Eq_112 *) B(*g_ptr12FB0);
 		}
 		else if (*g_ptr12F50 == 400)
 		{
@@ -998,8 +998,8 @@ word64 I(word64 x19, word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
 		word64 x30_529;
 		ad(x30, out x29_528, out x30_529);
 	}
-	x29Out = (struct Eq_266 *) <invalid>;
-	x30Out = (struct Eq_266 *) <invalid>;
+	x29Out = (struct Eq_267 *) <invalid>;
+	x30Out = (struct Eq_267 *) <invalid>;
 	return qwLoc30;
 }
 
@@ -1010,12 +1010,12 @@ word64 I(word64 x19, word64 x30, struct Eq_266 & x29Out, struct Eq_266 & x30Out)
 word64 ab(word64 x30, ptr64 & x29Out, ptr64 & x30Out)
 {
 	word32 sp_32_32_272 = SLICE(fp + -40, word32, 32);
-	struct Eq_2119 * x29_162 = fp + -40;
+	struct Eq_2109 * x29_162 = fp + -40;
 	while (true)
 	{
-		Eq_110 w0_23 = *g_ptr12F50;
-		struct Eq_2127 * sp_277 = SEQ(sp_32_32_272, (word32) w0_23 + 1);
-		if (((uint32) (uint8) (word32) (*g_ptr12F50 == 0x0100) | (uint32) ((uint8) ((word32) (w0_23 != 0x01)) & (uint8) ((word32) (x29_162->dw001C == 0x00)))) == 0x00)
+		Eq_112 w0_23 = *g_ptr12F50;
+		struct Eq_2117 * sp_277 = SEQ(sp_32_32_272, (word32) w0_23 + 1);
+		if (((uint32) (uint8) (*g_ptr12F50 == 0x0100) | (uint32) ((uint8) (w0_23 != 0x01) & (uint8) (x29_162->dw001C == 0x00))) == 0x00)
 			break;
 		if (*g_ptr12F50 == 0x0100)
 		{
@@ -1026,13 +1026,13 @@ word64 ab(word64 x30, ptr64 & x29Out, ptr64 & x30Out)
 			{
 				if (x29_162->dw001C != 0x00)
 				{
-					*g_ptr12FA0 = (union Eq_110 *) ((char *) *g_ptr12FA0 + 4);
+					*g_ptr12FA0 = (union Eq_112 *) ((char *) *g_ptr12FA0 + 4);
 					null[(int64) *g_ptr12F50 /64 4] = 0x00 - *g_ptr12FA0;
 				}
 				else
 				{
 					null[(int64) *g_ptr12F50 /64 4] = *g_ptr12F60;
-					*g_ptr12F60 = (union Eq_110 *) ((char *) *g_ptr12F60 + 4);
+					*g_ptr12F60 = (union Eq_112 *) ((char *) *g_ptr12F60 + 4);
 				}
 				word64 x29_318;
 				word64 x30_319;
@@ -1076,10 +1076,10 @@ word64 ab(word64 x30, ptr64 & x29Out, ptr64 & x30Out)
 			word64 x29_315;
 			word64 x30_316;
 			ad(x30, out x29_315, out x30_316);
-			*g_ptr12FA0 = (union Eq_110 *) 0x00;
+			*g_ptr12FA0 = (union Eq_112 *) 0x00;
 			*g_ptr12FB0 = *g_ptr12FA0;
 			ae();
-			struct Eq_2302 * x29_152;
+			struct Eq_2289 * x29_152;
 			word64 x30_153;
 			x29_152->t002C = s(0x00, out x29_152, out x30_153);
 			I(x19, x30_153, out x29_162, out x30);
@@ -1102,8 +1102,8 @@ void main(int32 w0, word64 x30)
 	*g_ptr12FC0 = *g_ptr12F78;
 	if (w0 > 0x01)
 		*g_ptr12FC0 = (word32) fopen((int64) null[(int64) dwLoc0C /64 4], "r");
-	*g_ptr12F40 = (word32) calloc(0x01, 99999);
-	struct Eq_2445 * x0_61 = (int64) *g_ptr12F40;
+	*g_ptr12F40 = (word32) calloc((size_t) 0x01, (size_t) 99999);
+	struct Eq_2434 * x0_61 = (int64) *g_ptr12F40;
 	word64 x3_69 = g_qw2648;
 	x0_61->qw0000 = g_qw2640;
 	x0_61->qw0008 = x3_69;
@@ -1115,10 +1115,10 @@ void main(int32 w0, word64 x30)
 	x0_61->qw0028 = x3_85;
 	x0_61->b0030 = g_b2670;
 	*g_ptr12F30 = (word32) x0_61 + 0x30;
-	*g_ptr12F60 = (union Eq_110 *) (word32) calloc(0x01, 99999);
-	*g_ptr12F80 = (word32) calloc(0x01, 99999);
+	*g_ptr12F60 = (union Eq_112 *) (word32) calloc((size_t) 0x01, (size_t) 99999);
+	*g_ptr12F80 = (word32) calloc((size_t) 0x01, (size_t) 99999);
 	*g_ptr12FC8 = *g_ptr12F80;
-	*g_ptr12F38 = (word32) calloc(0x01, 99999);
+	*g_ptr12F38 = (word32) calloc((size_t) 0x01, (size_t) 99999);
 	o();
 	word64 x30_203;
 	word64 x29_202;

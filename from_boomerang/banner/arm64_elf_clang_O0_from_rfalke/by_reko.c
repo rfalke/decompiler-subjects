@@ -11,7 +11,7 @@ byte g_b4122E0 = 0x00; // 00000000004122E0
 
 #include "subject.h"
 
-Eq_166 (* g_a412040[])[] = // 0000000000412040
+Eq_169 (* g_a412040[])[] = // 0000000000412040
 	{
 	};
 // subject_fini.c
@@ -70,7 +70,7 @@ word64 g_qw411DF0 = 0x00; // 0000000000411DF0
 
 #include "subject.h"
 
-union Eq_140 g_u4017A0 = // 00000000004017A0
+union Eq_143 g_u4017A0 = // 00000000004017A0
 	{
 		'\0'
 	};
@@ -80,10 +80,10 @@ union Eq_140 g_u4017A0 = // 00000000004017A0
 
 #include "subject.h"
 
-// 0000000000400530: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400530: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400560, qwArg00, (char *) fp + 8, g_ptr400568, g_ptr400570, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400560, (int32) qwArg00, (char *) fp + 8, g_ptr400568, g_ptr400570, x0, fp);
 	abort();
 }
 
@@ -143,26 +143,22 @@ void __do_global_dtors_aux()
 // 0000000000400640: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw411DF0 != 0x00)
+	if (g_qw411DF0 != 0x00 && g_qw400678 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400678;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400678 = null; // 0000000000400678
+word64 g_qw400678 = 0x00; // 0000000000400678
 // 0000000000400680: void main()
 void main()
 {
-	struct Eq_98 * x0_13 = malloc(0x00);
+	struct Eq_101 * x0_13 = malloc((size_t) 0x00);
 	x0_13->ptr0008 = 0x00401BDC;
-	struct Eq_108 * sp_14 = fp - 0x90;
+	struct Eq_112 * sp_14 = fp - 0x90;
 	word32 dwLoc10_189 = 0x02;
 	ptr64 * qwLoc18_190 = &x0_13->ptr0008;
 	while (true)
@@ -170,8 +166,8 @@ void main()
 		--dwLoc10_189;
 		if (dwLoc10_189 == 0x01)
 			break;
-		int32 w0_43 = (word32) (uint64) strlen(*qwLoc18_190);
-		struct Eq_127 * sp_102 = (char *) sp_14 - 8;
+		int32 w0_43 = (word32) strlen(*qwLoc18_190);
+		struct Eq_130 * sp_102 = (char *) sp_14 - 8;
 		int32 dwLoc28_196 = w0_43;
 		if (w0_43 > 0x0A)
 			dwLoc28_196 = 0x0A;
@@ -186,14 +182,14 @@ void main()
 				for (dwLoc24_215 = 0x00; dwLoc24_215 < 0x07; ++dwLoc24_215)
 				{
 					Mem177[sp_102 + 0x0C + CONVERT(dwLoc24_215 + (dwLoc20_202 << 3), word32, int64):byte] = Mem122[0x0000000000412040<p64>[CONVERT(((dwLoc2C_213 < 0x00 ? dwLoc2C_213 + 0x07 : dwLoc2C_213) >> 3) * 0x07 + dwLoc1C_198, word32, int64) * 0x00] + CONVERT((dwLoc2C_213 - (dwLoc2C_213 / 0x08) * 0x08) * 0x07 + dwLoc24_215, word32, int64):byte];
-					sp_102[1] = (struct Eq_127) 0x08;
+					sp_102[1] = (struct Eq_130) 0x08;
 				}
 				Mem135[sp_102 + 0x0C + CONVERT((dwLoc20_202 << 3) + 0x07, word32, int64):byte] = 0x20;
 			}
-			sp_102 = (struct Eq_127 *) ((char *) sp_102 - 8);
+			sp_102 = (struct Eq_130 *) ((char *) sp_102 - 8);
 			Mem104[sp_102 + 4:word32] = puts(sp_102 + 0x0C);
 		}
-		sp_14 = (struct Eq_108 *) ((char *) sp_102 - 8);
+		sp_14 = (struct Eq_112 *) ((char *) sp_102 - 8);
 		sp_14->dw0000 = puts(&g_u4017A0);
 		++qwLoc18_190;
 	}

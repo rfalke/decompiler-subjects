@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,28 +124,24 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
-// 0000000000400640: Register ui64 twofib(Register word32 w0, Register out Eq_100 x9Out)
+word64 g_qw400638 = 0x00; // 0000000000400638
+// 0000000000400640: Register ui64 twofib(Register int32 w0, Register out Eq_103 x9Out)
 // Called from:
 //      twofib
 //      main
-ui64 twofib(word32 w0, union Eq_100 & x9Out)
+ui64 twofib(int32 w0, union Eq_103 & x9Out)
 {
 	uint64 x8_20;
-	Eq_100 x9_26;
+	Eq_103 x9_26;
 	if (w0 != 0x00)
 	{
 		word64 x9_19;
@@ -165,11 +161,10 @@ ui64 twofib(word32 w0, union Eq_100 & x9Out)
 // 0000000000400678: void main()
 void main()
 {
-	x0_19 = (uint64) printf("Enter number: ", 0x00);
-	x0_24 = (uint64) scanf("%d", 0x00);
+	x0_19 = (uint64) printf("Enter number: ");
+	x0_24 = (uint64) scanf("%d", fp + ~0x23);
 	word64 x9_57;
-	twofib(dwLoc2C, out x9_57);
-	x0_35 = (uint64) printf("Fibonacci of %d is %d\n", 0x00);
+	x0_37 = (uint64) printf("Fibonacci of %d is %d\n", dwLoc2C, (int32) twofib(dwLoc2C, out x9_57));
 }
 
 // 00000000004006D8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

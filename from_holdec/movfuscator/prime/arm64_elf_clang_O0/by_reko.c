@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -124,20 +124,16 @@ void __do_global_dtors_aux()
 // 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4005D8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4005D8 = null; // 00000000004005D8
+word64 g_qw4005D8 = 0x00; // 00000000004005D8
 // 00000000004005E0: Register int32 is_prime(Register int32 w0)
 // Called from:
 //      main
@@ -168,18 +164,18 @@ int32 is_prime(int32 w0)
 // 0000000000400678: void main()
 void main()
 {
-	x0_14 = (uint64) printf("primes, 1-100000: \n", 0x00);
-	struct Eq_127 * sp_15 = fp - 0x30;
-	int32 dwLoc10_66;
-	for (dwLoc10_66 = 0x01; dwLoc10_66 < 10000; ++dwLoc10_66)
+	x0_14 = (uint64) printf("primes, 1-100000: \n");
+	struct Eq_129 * sp_15 = fp - 0x30;
+	int32 dwLoc10_70;
+	for (dwLoc10_70 = 0x01; dwLoc10_70 < 10000; ++dwLoc10_70)
 	{
-		if (is_prime(dwLoc10_66) != 0x00)
+		if (is_prime(dwLoc10_70) != 0x00)
 		{
-			sp_15 = (struct Eq_127 *) ((char *) sp_15 - 8);
-			sp_15[2] = (struct Eq_127) printf("%d ", 0x00);
+			sp_15 = (struct Eq_129 *) ((char *) sp_15 - 8);
+			sp_15[2] = (struct Eq_129) printf("%d ", dwLoc10_70);
 		}
 	}
-	sp_15->dw0004 = printf("\n", 0x00);
+	sp_15->dw0004 = printf("\n");
 }
 
 // 0000000000400708: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

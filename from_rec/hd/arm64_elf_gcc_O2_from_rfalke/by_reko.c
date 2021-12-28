@@ -36,7 +36,7 @@ word64 g_qw11FC0 = 0x00; // 0000000000011FC0
 
 #include "subject.h"
 
-struct Eq_103 g_t12000 = // 0000000000012000
+struct Eq_105 g_t12000 = // 0000000000012000
 	{
 		0x00,
 	};
@@ -103,10 +103,10 @@ void main(int32 w0, char * (* x1)[], ptr64 x4)
 	}
 }
 
-// 0000000000000940: void _start(Register (ptr64 Eq_40) x0, Stack Eq_41 qwArg00)
-void _start(void (* x0)(), Eq_41 qwArg00)
+// 0000000000000940: void _start(Register (ptr64 Eq_40) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -151,7 +151,7 @@ void register_tm_clones()
 // 0000000000000A08: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_103 * x19_12 = &g_t12000;
+	struct Eq_105 * x19_12 = &g_t12000;
 	if ((word32) g_b12070 == 0x00)
 	{
 		if (g_qw11FB8 != 0x00)
@@ -180,7 +180,7 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000A88: Register ptr64 dumpline(Register (ptr64 void) x0, Register int32 w2, Register ptr64 x4, Register out ptr64 x19Out, Register out (ptr64 void) x20Out, Register out (ptr64 Eq_145) x21Out, Register out ptr64 x22Out)
+// 0000000000000A88: Register ptr64 dumpline(Register (ptr64 void) x0, Register int32 w2, Register ptr64 x4, Register out ptr64 x19Out, Register out (ptr64 void) x20Out, Register out (ptr64 Eq_147) x21Out, Register out ptr64 x22Out)
 // Called from:
 //      hexdump
 ptr64 dumpline(void * x0, int32 w2, ptr64 x4, ptr64 & x19Out, void & x20Out, FILE & x21Out, ptr64 & x22Out)
@@ -206,7 +206,7 @@ ptr64 dumpline(void * x0, int32 w2, ptr64 x4, ptr64 & x19Out, void & x20Out, FIL
 		w22_204 = w19_113 + 0x01;
 		if (w19_113 == 0x10)
 		{
-			word32 w0_76 = SLICE(CONVERT(strlen(fp + ~0x47), size_t, uint64), word32, 0);
+			word32 w0_76 = CONVERT(strlen(fp + ~0x47), size_t, word32);
 			x7_105 = (int64) w0_76;
 			Mem83[fp + ~0x47 + x7_105:word32] = Mem37[0x0000000000000DA0<p64>:word32];
 			w3_104 = w0_76;
@@ -271,8 +271,7 @@ l0000000000000B98:
 //      main
 word32 hexdump(char * x0, ptr64 x4, ptr64 & x4Out, union Eq_24 & x19Out, union Eq_24 & w20Out, union Eq_24 & x21Out, ptr64 & x22Out)
 {
-	word32 x0_32_32_23 = SLICE(x0, word32, 32);
-	if (__xstat(SEQ(x0_32_32_23, 0x00), x0, fp + ~0x77) != 0x00)
+	if (__xstat(0x00, x0, fp + ~0x77) != 0x00)
 	{
 		FILE * x0_31 = fopen(x0, "rb");
 		FILE * x21_33 = x0_31;
@@ -283,7 +282,7 @@ word32 hexdump(char * x0, ptr64 x4, ptr64 & x4Out, union Eq_24 & x19Out, union E
 			{
 				do
 				{
-					uint64 x0_59 = (uint64) fread(x20_51, 0x01, 0x10, x21_33);
+					uint64 x0_59 = (uint64) fread(x20_51, (size_t) 0x01, (size_t) 0x10, x21_33);
 					int32 w0_65 = (word32) x0_59;
 					if ((word32) x0_59 == 0x00)
 						break;

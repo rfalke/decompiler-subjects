@@ -67,7 +67,6 @@ real64 g_r804A010 = 1.22; // 0804A010
 real64 g_r804A018 = 1.24; // 0804A018
 real64 g_r804A020 = 2.32; // 0804A020
 real64 g_r804A028 = 2.41; // 0804A028
-real64 g_r804A030 = 2.42; // 0804A030
 char g_str804A038[] = "got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n"; // 0804A038
 char g_str804A088[] = "got 2*x=%f\n"; // 0804A088
 char g_str804A094[] = "unknown: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n"; // 0804A094
@@ -162,12 +161,13 @@ void main(word32 dwArg04)
 {
 	unknown_to_unknown(~0x0A3D70A3, 0x3FF35C28);
 	real64 rLoc1_90 = (real64) dwArg04;
-	real64 rLoc1_92 = rLoc1_90 + g_r804A010;
+	real64 rLoc1_92 = rLoc1_90 + 1.22;
 	double_to_unknown((word32) rLoc1_92, SLICE(rLoc1_92, word32, 32));
 	unknown_to_double(1.23);
-	double_to_double(rLoc1_90 + g_r804A018);
-	printf("unknown: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n", 100, 2.31, 101, tLoc28, (int32) (real80) g_r804A020);
-	printf("double: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n", 200, rLoc1_90 + g_r804A028, 0xC9, tLoc28, (int32) (real80) (rLoc1_90 + g_r804A030));
+	double_to_double(rLoc1_90 + 1.24);
+	real128 rLoc28_112 = SEQ(0x66, wLoc1E, (real80) 2.32);
+	printf("unknown: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n", 100, 2.31, 101, rLoc28_112, dwLoc18);
+	printf("double: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n", 200, rLoc1_90 + 2.41, 0xC9, rLoc28_112, dwLoc18);
 }
 
 // 08049370: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)

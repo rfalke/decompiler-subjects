@@ -1,29 +1,13 @@
 === Using options:--aggressive-branch-removal
 Borland v2 detected
-09F4:0084: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:00D7: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:00B0: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:00AD: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:0112: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:01CE: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:02C5: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:01C8: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:0368: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:01CB: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:03CD: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 09F4:03F1: warning: Unable to determine the upper bound of an indirect call or jump; there may be more than 2 entries.
-09F4:02C2: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:024A: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:0452: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:0458: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-09F4:045D: warning: Procedure __scanner previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0967:0333: error: An error occurred while processing the statement word16 di_342 = di_327 - (fp - 0x8A<16>).
-    Not handling (memptr T_491 (struct (0 T_1216 t0000))) and (memptr T_84 <unknown>) yet.
-       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType(DataType dtDiff, DataType dtSub) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 409
-   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /Users/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 255
-   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /Users/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
-   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl) in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 228
-   at Reko.Core.Code.Declaration.Accept(InstructionVisitor v) in /Users/runner/work/reko/reko/src/Core/Code/Declaration.cs:line 49
-   at Reko.Typing.TypeCollector.CollectTypes() in /Users/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
+    Not handling (memptr T_491 (struct (0 T_1203 t0000))) and (memptr T_84 <unknown>) yet.
+       at Reko.Typing.ExpressionTypeDescender.PushMinuendDataType(DataType dtDiff, DataType dtSub) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 409
+   at Reko.Typing.ExpressionTypeDescender.VisitBinaryExpression(BinaryExpression binExp, TypeVariable tv) in /home/runner/work/reko/reko/src/Decompiler/Typing/ExpressionTypeDescender.cs:line 255
+   at Reko.Core.Expressions.BinaryExpression.Accept[T,C](ExpressionVisitor`2 v, C context) in /home/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 54
+   at Reko.Typing.TypeCollector.VisitDeclaration(Declaration decl) in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 228
+   at Reko.Core.Code.Declaration.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/Declaration.cs:line 49
+   at Reko.Typing.TypeCollector.CollectTypes() in /home/runner/work/reko/reko/src/Decompiler/Typing/TypeCollector.cs:line 75
 l0967_010B: warning: Non-integral switch expression
 l09F4_00DA: warning: Non-integral switch expression

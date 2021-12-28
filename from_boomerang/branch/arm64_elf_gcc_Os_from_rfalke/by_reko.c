@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_160 g_t11000 = // 0000000000011000
+struct Eq_166 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,34 +81,34 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 0000000000000730: void main(Stack int32 dwArg00, Stack up32 dwArg04)
 void main(int32 dwArg00, up32 dwArg04)
 {
-	x0_15 = (uint64) __isoc99_scanf("%d", 0x00);
-	x0_19 = (uint64) __isoc99_scanf("%d", 0x00);
+	x0_16 = (uint64) __isoc99_scanf("%d", fp);
+	x0_20 = (uint64) __isoc99_scanf("%d", (char *) fp + 4);
 	if (dwArg00 == 0x05)
-		x0_26 = (uint64) puts("Equal");
+		x0_27 = (uint64) puts("Equal");
 	if (dwArg00 != 0x05)
-		x0_35 = (uint64) puts("Not Equal");
+		x0_36 = (uint64) puts("Not Equal");
 	if (dwArg00 <= 0x04)
-		x0_45 = (uint64) puts("Greater");
+		x0_46 = (uint64) puts("Greater");
 	if (dwArg00 > 0x04)
-		x0_55 = (uint64) puts("Less or Equal");
+		x0_56 = (uint64) puts("Less or Equal");
 	if (dwArg00 <= 0x05)
-		x0_65 = (uint64) puts("Greater or Equal");
+		x0_66 = (uint64) puts("Greater or Equal");
 	if (dwArg00 > 0x05)
-		x0_75 = (uint64) puts("Less");
+		x0_76 = (uint64) puts("Less");
 	if (dwArg04 <= 0x04)
-		x0_85 = (uint64) puts("Greater Unsigned");
+		x0_86 = (uint64) puts("Greater Unsigned");
 	if (dwArg04 > 0x04)
-		x0_95 = (uint64) puts("Less or Equal Unsigned");
+		x0_96 = (uint64) puts("Less or Equal Unsigned");
 	if (dwArg04 <= 0x05)
-		x0_105 = (uint64) puts("Carry Clear");
+		x0_106 = (uint64) puts("Carry Clear");
 	if (dwArg04 > 0x05)
-		x0_115 = (uint64) puts("Carry Set");
+		x0_116 = (uint64) puts("Carry Set");
 }
 
-// 0000000000000894: void _start(Register (ptr64 Eq_97) x0, Stack Eq_98 qwArg00)
-void _start(void (* x0)(), Eq_98 qwArg00)
+// 0000000000000894: void _start(Register (ptr64 Eq_101) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -153,7 +153,7 @@ void register_tm_clones()
 // 0000000000000958: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_160 * x19_12 = &g_t11000;
+	struct Eq_166 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)

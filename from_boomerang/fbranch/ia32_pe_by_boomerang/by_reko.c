@@ -3009,24 +3009,24 @@ l00401E02:
 	if (al_36 == 0x00)
 	{
 l00402BDC:
-		struct Eq_152 * ebp_1900 = ebp_13;
+		struct Eq_152 * ebp_1901 = ebp_13;
 		if (ebp_13->dwFFFFFE28 == 0x01)
 		{
-			union Eq_3 * esp_1923 = esp_1143 - 4;
-			*esp_1923 = (union Eq_3 *) ebp_13->tFFFFFE44;
-			ebx = fn0040403C(*esp_1923, out ebp_1900, out edi);
+			union Eq_3 * esp_1924 = esp_1143 - 4;
+			*esp_1924 = (union Eq_3 *) ebp_13->tFFFFFE44;
+			ebx = fn0040403C(*esp_1924, out ebp_1901, out edi);
 		}
-		word32 eax_1939 = ebp_1900->dwFFFFFE48;
-		byte al_1945 = (byte) eax_1939;
-		if (ebp_1900->tFFFFFE6C == ~0x00 && eax_1939 == 0x00)
-			ebp_1900->bFFFFFE6B != al_1945;
-		fn004041A2(ebp_1900->tFFFFFFE4, ebx, esi_1017, edi);
-		word32 ebp_2727;
-		word32 esi_2728;
-		ptr32 edi_2122;
-		Eq_3 ebx_2120 = fn00403C0B(ebp_1900, ebp_1900->tFFFFFE14, out ebp_2727, out esi_2728, out edi_2122);
-		ediOut = edi_2122;
-		return ebx_2120;
+		word32 eax_1940 = ebp_1901->dwFFFFFE48;
+		byte al_1946 = (byte) eax_1940;
+		if (ebp_1901->tFFFFFE6C == ~0x00 && eax_1940 == 0x00)
+			ebp_1901->bFFFFFE6B != al_1946;
+		fn004041A2(ebp_1901->tFFFFFFE4, ebx, esi_1017, edi);
+		word32 ebp_2728;
+		word32 esi_2729;
+		ptr32 edi_2123;
+		Eq_3 ebx_2121 = fn00403C0B(ebp_1901, ebp_1901->tFFFFFE14, out ebp_2728, out esi_2729, out edi_2123);
+		ediOut = edi_2123;
+		return ebx_2121;
 	}
 	ui32 eax_45;
 	Eq_3 eax_40 = (word32) al_36;
@@ -3046,26 +3046,26 @@ l00402BDC:
 		do
 		{
 			++ebp_13->dwFFFFFE7C;
-			Eq_3 eax_2134 = fn00401DA6(ebp_13->t0008);
-			struct Eq_930 * esp_2142 = esp_1143 - 4;
-			esp_2142->t0000 = eax_2134;
-		} while (fn004044E0(esp_2142->t0000) != 0x00);
-		if (eax_2134 != ~0x00)
+			Eq_3 eax_2135 = fn00401DA6(ebp_13->t0008);
+			struct Eq_930 * esp_2143 = esp_1143 - 4;
+			esp_2143->t0000 = eax_2135;
+		} while (fn004044E0(esp_2143->t0000) != 0x00);
+		if (eax_2135 != ~0x00)
 		{
-			esp_2142->t0000 = ebp_13->t0008;
-			esp_2142->tFFFFFFFC = eax_2134;
-			fn00404474(esp_2142->tFFFFFFFC, esp_2142->t0000);
+			esp_2143->t0000 = ebp_13->t0008;
+			esp_2143->tFFFFFFFC = eax_2135;
+			fn00404474(esp_2143->tFFFFFFFC, esp_2143->t0000);
 		}
 		do
 		{
 			ebp_13->t000C = (word32) ebp_13->t000C + 1;
-			union Eq_3 * esp_2181 = esp_1143 - 4;
-			*esp_2181 = (word32) *ebp_13->t000C;
-			esp_1143 = (char *) esp_2181 + 4;
-		} while (fn004044E0(*esp_2181) != 0x00);
+			union Eq_3 * esp_2182 = esp_1143 - 4;
+			*esp_2182 = (word32) *ebp_13->t000C;
+			esp_1143 = (char *) esp_2182 + 4;
+		} while (fn004044E0(*esp_2182) != 0x00);
 		goto l00401DFF;
 	}
-	bool v131_2326;
+	bool v132_2327;
 	esi_1017 = ebp_13->t000C;
 	if (*esi_1017 != 0x25)
 	{
@@ -3099,7 +3099,7 @@ l00402BDC:
 				fn00404474(esp_118->tFFFFFFFC, esp_118->t0000);
 			}
 		}
-		v131_2326 = eax_77 == ~0x00;
+		v132_2327 = eax_77 == ~0x00;
 		goto l00402BA3;
 	}
 	ebp_13->dwFFFFFE60 = 0x00;
@@ -3248,19 +3248,19 @@ l00402045:
 	if (ecx_367 != 0x00 && ebp_13->tFFFFFE74 == 0x00)
 	{
 l004023DD:
-		v131_2326 = ebp_13->tFFFFFE6C == ~0x00;
+		v132_2327 = ebp_13->tFFFFFE6C == ~0x00;
 l00402BA3:
-		if (!v131_2326)
+		if (!v132_2327)
 		{
-			struct Eq_1540 * esp_1843 = esp_1143 - 4;
-			esp_1843->t0000 = ebp_13->t0008;
-			esp_1843->tFFFFFFFC = ebp_13->tFFFFFE6C;
-			fn00404474(esp_1843->tFFFFFFFC, esp_1843->t0000);
-			esp_1143 = (char *) &esp_1843->t0000 + 4;
+			struct Eq_1540 * esp_1844 = esp_1143 - 4;
+			esp_1844->t0000 = ebp_13->t0008;
+			esp_1844->tFFFFFFFC = ebp_13->tFFFFFE6C;
+			fn00404474(esp_1844->tFFFFFFFC, esp_1844->t0000);
+			esp_1143 = (char *) &esp_1844->t0000 + 4;
 		}
 		goto l00402BDC;
 	}
-	ui32 eax_1810;
+	ui32 eax_1811;
 	if ((edi_313 | 0x20) > 111)
 	{
 		ui32 eax_380 = (edi_313 | 0x20) - 0x70;
@@ -3372,10 +3372,10 @@ l00402515:
 						{
 							byte * eax_540 = (word32) ebx_416 + (esi_1017 >> 0x03);
 							*eax_540 |= 0x01 << ((byte) esi_1017 & 0x07);
-							word32 v98_553 = ebp_13->dwFFFFFE2C - 0x01;
-							ebp_13->dwFFFFFE2C = v98_553;
+							word32 v99_553 = ebp_13->dwFFFFFE2C - 0x01;
+							ebp_13->dwFFFFFE2C = v99_553;
 							esi_1017 = (word32) esi_1017 + 1;
-						} while (v98_553 != 0x00);
+						} while (v99_553 != 0x00);
 					}
 					dl_478 = 0x00;
 				}
@@ -3487,9 +3487,9 @@ l004027CF:
 			ebp_13->bFFFFFE69 = 0x01;
 		else if (ebx != 0x2B)
 			goto l00402813;
-		Eq_3 v81_825 = ebp_13->tFFFFFE74 - 0x01;
-		ebp_13->tFFFFFE74 = v81_825;
-		if (v81_825 != 0x00 || ecx_367 == 0x00)
+		Eq_3 v82_825 = ebp_13->tFFFFFE74 - 0x01;
+		ebp_13->tFFFFFE74 = v82_825;
+		if (v82_825 != 0x00 || ecx_367 == 0x00)
 		{
 			++ebp_13->dwFFFFFE7C;
 			ebx = fn00401DA6(ebp_13->t0008);
@@ -3506,57 +3506,57 @@ l00402813:
 				{
 					if (edi != 0x78 && edi != 0x70)
 					{
-						ui32 eax_1628;
+						ui32 eax_1629;
 						if (g_t40B4A0 > 0x01)
 						{
-							struct Eq_1852 * esp_1631 = esp_1143 - 4;
-							esp_1631->dw0000 = 0x04;
-							esp_1631->tFFFFFFFC = ebx;
-							eax_1628 = fn00404318(esp_1631->tFFFFFFFC, esp_1631->dw0000);
+							struct Eq_1852 * esp_1632 = esp_1143 - 4;
+							esp_1632->dw0000 = 0x04;
+							esp_1632->tFFFFFFFC = ebx;
+							eax_1629 = fn00404318(esp_1632->tFFFFFFFC, esp_1632->dw0000);
 						}
 						else
-							eax_1628 = (word32) g_ptr40B490[ebx].t0000 & 0x04;
-						if (eax_1628 == 0x00)
+							eax_1629 = (word32) g_ptr40B490[ebx].t0000 & 0x04;
+						if (eax_1629 == 0x00)
 							goto l00402908;
 						if (edi == 111)
 						{
 							if (ebx >= 0x38)
 								goto l00402908;
-							uint32 eax_1683 = ebp_13->dwFFFFFE54;
-							uint32 ecx_1685 = __shld(ebp_13->dwFFFFFE58, eax_1683, 0x03);
-							ebp_13->dwFFFFFE54 = eax_1683 << 0x03;
-							ebp_13->dwFFFFFE58 = ecx_1685;
+							uint32 eax_1684 = ebp_13->dwFFFFFE54;
+							uint32 ecx_1686 = __shld(ebp_13->dwFFFFFE58, eax_1684, 0x03);
+							ebp_13->dwFFFFFE54 = eax_1684 << 0x03;
+							ebp_13->dwFFFFFE58 = ecx_1686;
 						}
 						else
 						{
-							struct Eq_1898 * esp_1653 = esp_1143 - 4;
-							esp_1653->dw0000 = 0x00;
-							esp_1653->dwFFFFFFFC = 0x0A;
-							esp_1653->dwFFFFFFF8 = ebp_13->dwFFFFFE58;
-							esp_1653->dwFFFFFFF4 = ebp_13->dwFFFFFE54;
-							uint32 edx_1666;
-							ebp_13->dwFFFFFE54 = fn00404730(esp_1653->dwFFFFFFF4, esp_1653->dwFFFFFFF8, esp_1653->dwFFFFFFFC, esp_1653->dw0000, out edx_1666);
-							ebp_13->dwFFFFFE58 = edx_1666;
+							struct Eq_1898 * esp_1654 = esp_1143 - 4;
+							esp_1654->dw0000 = 0x00;
+							esp_1654->dwFFFFFFFC = 0x0A;
+							esp_1654->dwFFFFFFF8 = ebp_13->dwFFFFFE58;
+							esp_1654->dwFFFFFFF4 = ebp_13->dwFFFFFE54;
+							uint32 edx_1667;
+							ebp_13->dwFFFFFE54 = fn00404730(esp_1654->dwFFFFFFF4, esp_1654->dwFFFFFFF8, esp_1654->dwFFFFFFFC, esp_1654->dw0000, out edx_1667);
+							ebp_13->dwFFFFFE58 = edx_1667;
 						}
 					}
 					else
 					{
-						ui32 eax_1582;
+						ui32 eax_1583;
 						if (g_t40B4A0 > 0x01)
 						{
-							struct Eq_2081 * esp_1587 = esp_1143 - 4;
-							esp_1587->dw0000 = 0x80;
-							esp_1587->tFFFFFFFC = ebx;
-							eax_1582 = fn00404318(esp_1587->tFFFFFFFC, esp_1587->dw0000);
+							struct Eq_2081 * esp_1588 = esp_1143 - 4;
+							esp_1588->dw0000 = 0x80;
+							esp_1588->tFFFFFFFC = ebx;
+							eax_1583 = fn00404318(esp_1588->tFFFFFFFC, esp_1588->dw0000);
 						}
 						else
-							eax_1582 = (word32) g_ptr40B490[ebx].t0000 & 0x80;
-						if (eax_1582 != 0x00)
+							eax_1583 = (word32) g_ptr40B490[ebx].t0000 & 0x80;
+						if (eax_1583 != 0x00)
 						{
-							uint32 eax_1609 = ebp_13->dwFFFFFE54;
-							uint32 ecx_1611 = __shld(ebp_13->dwFFFFFE58, eax_1609, 0x04);
-							ebp_13->dwFFFFFE54 = eax_1609 << 0x04;
-							ebp_13->dwFFFFFE58 = ecx_1611;
+							uint32 eax_1610 = ebp_13->dwFFFFFE54;
+							uint32 ecx_1612 = __shld(ebp_13->dwFFFFFE58, eax_1610, 0x04);
+							ebp_13->dwFFFFFE54 = eax_1610 << 0x04;
+							ebp_13->dwFFFFFE58 = ecx_1612;
 							ebx = fn00401D74(ebx);
 						}
 						else
@@ -3568,14 +3568,14 @@ l00402908:
 					if (ebp_13->bFFFFFE83 == 0x00)
 					{
 						++ebp_13->dwFFFFFE64;
-						Eq_1997 v53_v52_2325 = ebp_13->dwFFFFFE54 + (int64) (ebx - 0x30);
-						ebp_13->dwFFFFFE54 = (word32) v53_v52_2325;
-						ebp_13->dwFFFFFE58 = SLICE(v53_v52_2325, word32, 32);
+						Eq_1997 v53_v52_2326 = ebp_13->dwFFFFFE54 + (int64) (ebx - 0x30);
+						ebp_13->dwFFFFFE54 = (word32) v53_v52_2326;
+						ebp_13->dwFFFFFE58 = SLICE(v53_v52_2326, word32, 32);
 						if (ebp_13->dwFFFFFE4C != 0x00)
 						{
-							Eq_3 v54_1733 = ebp_13->tFFFFFE74 - 0x01;
-							ebp_13->tFFFFFE74 = v54_1733;
-							if (v54_1733 != 0x00)
+							Eq_3 v54_1734 = ebp_13->tFFFFFE74 - 0x01;
+							ebp_13->tFFFFFE74 = v54_1734;
+							if (v54_1734 != 0x00)
 								goto l00402947;
 							ebp_13->bFFFFFE83 = 0x01;
 						}
@@ -3601,10 +3601,10 @@ l00402947:
 			}
 			if (ebp_13->bFFFFFE69 != 0x00)
 			{
-				uint32 eax_1762 = -ebp_13->dwFFFFFE54;
-				uint32 ecx_1766 = -((bool) (eax_1762 == 0x00) + ebp_13->dwFFFFFE58);
-				ebp_13->dwFFFFFE54 = eax_1762;
-				ebp_13->dwFFFFFE58 = ecx_1766;
+				uint32 eax_1762 = ebp_13->dwFFFFFE54;
+				uint32 ecx_1768 = -((bool) (eax_1762 != 0x00) + ebp_13->dwFFFFFE58);
+				ebp_13->dwFFFFFE54 = -eax_1762;
+				ebp_13->dwFFFFFE58 = ecx_1768;
 			}
 		}
 		else
@@ -3666,9 +3666,9 @@ l00402A4F:
 						ebp_13->dwFFFFFE60 = (word32) ebx + (ebp_13->dwFFFFFE60 - 0x30);
 						if (ebp_13->dwFFFFFE4C != 0x00)
 						{
-							Eq_3 v66_1532 = ebp_13->tFFFFFE74 - 0x01;
-							ebp_13->tFFFFFE74 = v66_1532;
-							if (v66_1532 != 0x00)
+							Eq_3 v67_1532 = ebp_13->tFFFFFE74 - 0x01;
+							ebp_13->tFFFFFE74 = v67_1532;
+							if (v67_1532 != 0x00)
 								goto l00402A8E;
 							ebp_13->bFFFFFE83 = 0x01;
 						}
@@ -3703,18 +3703,18 @@ l00402A8E:
 				goto l00402B38;
 			++ebp_13->dwFFFFFE48;
 			ebx = ebp_13->tFFFFFE50;
-			eax_1810 = ebp_13->dwFFFFFE60;
+			eax_1811 = ebp_13->dwFFFFFE60;
 l00402B0C:
-			Eq_1514 ax_1868 = (word16) eax_1810;
+			Eq_1514 ax_1869 = (word16) eax_1811;
 			if (ebp_13->dwFFFFFE38 != 0x00)
 			{
 				*ebx = ebp_13->dwFFFFFE54;
 				*((word32) ebx + 4) = ebp_13->dwFFFFFE58;
 			}
 			else if (ebp_13->bFFFFFE73 != 0x00)
-				*ebx = eax_1810;
+				*ebx = eax_1811;
 			else
-				*ebx = ax_1868;
+				*ebx = ax_1869;
 			goto l00402B38;
 		}
 		goto l00402BDC;
@@ -3735,7 +3735,7 @@ l00402B0C:
 					{
 						if ((edi_313 | 0x20) == 110)
 						{
-							eax_1810 = ebp_13->dwFFFFFE7C;
+							eax_1811 = ebp_13->dwFFFFFE7C;
 							if (ebp_13->bFFFFFE72 != 0x00)
 								goto l00402B38;
 							goto l00402B0C;
@@ -3819,7 +3819,7 @@ l0040280D:
 					ebp_13->tFFFFFE6C = ebx;
 					goto l00402813;
 				}
-				Eq_3 edi_2219;
+				Eq_3 edi_2220;
 				Eq_3 ebx_1238 = ebp_13->tFFFFFE6C;
 				esi_1017 = ebp_13 - 0x017C;
 				byte bl_858 = (byte) ebx_1238;
@@ -3830,7 +3830,7 @@ l0040280D:
 				}
 				else if (ebx_1238 != 0x2B)
 				{
-					edi_2219 = ebp_13->t0008;
+					edi_2220 = ebp_13->t0008;
 l00402168:
 					if (ebp_13->dwFFFFFE4C == 0x00 || ebp_13->tFFFFFE74 > 0x015D)
 						ebp_13->tFFFFFE74.u0 = 0x015D;
@@ -3856,7 +3856,7 @@ l00402168:
 						++ebp_13->dwFFFFFE64;
 						*esi_1017.u0 = bl_926;
 						++ebp_13->dwFFFFFE7C;
-						Eq_3 eax_1232 = fn00401DA6(edi_2219);
+						Eq_3 eax_1232 = fn00401DA6(edi_2220);
 						ebp_13->tFFFFFE6C = eax_1232;
 						esi_1017 = (byte) esi_1017.u0 + 1;
 						ebx_1238 = eax_1232;
@@ -3869,7 +3869,7 @@ l00402168:
 						if (eax_930 != 0x00)
 						{
 							++ebp_13->dwFFFFFE7C;
-							ebx = fn00401DA6(edi_2219);
+							ebx = fn00401DA6(edi_2220);
 							*esi_1017 = g_t40B4A4;
 							esi_1017 = (word32) esi_1017 + 1;
 							while (true)
@@ -3895,7 +3895,7 @@ l00402168:
 								*esi_1017 = bl_1210;
 								++ebp_13->dwFFFFFE7C;
 								esi_1017 = (word32) esi_1017 + 1;
-								ebx = fn00401DA6(edi_2219);
+								ebx = fn00401DA6(edi_2220);
 							}
 						}
 					}
@@ -3904,11 +3904,11 @@ l00402168:
 					{
 l00402324:
 						--ebp_13->dwFFFFFE7C;
-						edi = edi_2219;
+						edi = edi_2220;
 						if (ebx != ~0x00)
 						{
 							struct Eq_3343 * esp_1111 = esp_1067 - 4;
-							esp_1111->t0000 = edi_2219;
+							esp_1111->t0000 = edi_2220;
 							esp_1111->tFFFFFFFC = ebx;
 							fn00404474(esp_1111->tFFFFFFFC, esp_1111->t0000);
 						}
@@ -3939,7 +3939,7 @@ l00402324:
 						goto l00402324;
 					*esi_1017 = 101;
 					++ebp_13->dwFFFFFE7C;
-					Eq_3 eax_1030 = fn00401DA6(edi_2219);
+					Eq_3 eax_1030 = fn00401DA6(edi_2220);
 					ebp_13->tFFFFFE6C = eax_1030;
 					esi_1017 = (word32) esi_1017 + 1;
 					Eq_3257 al_1042 = (byte) eax_1030;
@@ -3979,7 +3979,7 @@ l004022E4:
 							esi_1017 = (word32) esi_1017 + 1;
 l004022CF:
 							++ebp_13->dwFFFFFE7C;
-							Eq_3 eax_1200 = fn00401DA6(edi_2219);
+							Eq_3 eax_1200 = fn00401DA6(edi_2220);
 							ebp_13->tFFFFFE6C = eax_1200;
 							ebx = eax_1200;
 							goto l004022E4;
@@ -3989,8 +3989,8 @@ l004022CF:
 				}
 				--ebp_13->tFFFFFE74;
 				++ebp_13->dwFFFFFE7C;
-				edi_2219 = ebp_13->t0008;
-				Eq_3 eax_870 = fn00401DA6(edi_2219);
+				edi_2220 = ebp_13->t0008;
+				Eq_3 eax_870 = fn00401DA6(edi_2220);
 				ebp_13->tFFFFFE6C = eax_870;
 				ebx_1238 = eax_870;
 				goto l00402168;
@@ -4676,7 +4676,7 @@ word32 fn00403932()
 				if (ebx_182 == 0x00)
 					eax_204.u0 = ~0x09;
 				else
-					eax_204 = 0x00 - (ebx_182 == 0x01) + ~0x0A;
+					eax_204 = 0x00 - (ebx_182 != 0x01) + ~0x0A;
 				Eq_3 eax_215 = GetStdHandle(eax_204);
 				if (eax_215 != ~0x00)
 				{
@@ -5107,7 +5107,7 @@ word32 fn00404396(Eq_3 dwArg04)
 		*((word32) dwArg04 + 4) = eax_50;
 		if (eax_50 == 0x00 || eax_50 == ~0x00)
 		{
-			*((word32) dwArg04 + 0x0C) |= (0x00 - (eax_50 == 0x00) & 0x10) + 0x10;
+			*((word32) dwArg04 + 0x0C) |= (0x00 - (eax_50 != 0x00) & 0x10) + 0x10;
 			*((word32) dwArg04 + 4) = 0x00;
 			return ~0x00;
 		}

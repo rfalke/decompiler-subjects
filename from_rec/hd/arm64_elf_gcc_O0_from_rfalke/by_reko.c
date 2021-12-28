@@ -36,7 +36,7 @@ word64 g_qw11FC0 = 0x00; // 0000000000011FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t12000 = // 0000000000012000
+struct Eq_74 g_t12000 = // 0000000000012000
 	{
 		0x00,
 	};
@@ -87,10 +87,10 @@ word16 g_w0E48 = 0x7C; // 0000000000000E48
 
 #include "subject.h"
 
-// 00000000000008E0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000000008E0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -135,7 +135,7 @@ void register_tm_clones()
 // 00000000000009A8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t12000;
+	struct Eq_74 * x19_12 = &g_t12000;
 	if ((word32) g_b12070 == 0x00)
 	{
 		if (g_qw11FB8 != 0x00)
@@ -189,7 +189,7 @@ void dumpline(byte x0[], int32 w2)
 			break;
 		Mem78[fp + ~0x4F + CONVERT(strlen(fp + ~0x4F), size_t, uint64):word32] = Mem65[0x0000000000000E38<p64>:word32];
 	}
-	word32 w0_82 = SLICE(CONVERT(strlen(fp + ~0x4F), size_t, uint64), word32, 0);
+	word32 w0_82 = CONVERT(strlen(fp + ~0x4F), size_t, word32);
 	Mem91[fp + ~0x4F + CONVERT(dwLoc44_195, int32, int64):word32] = Mem83[0x0000000000000E40<p64>:word32];
 	int32 dwArg04_196 = 0x00;
 	while (true)
@@ -239,7 +239,7 @@ word32 hexdump(char * x0)
 				int32 dwLoc6A_99 = SEQ(wLoc68, SLICE(qwLoc70, word16, 48));
 				if (qwLoc70 - qwArg00_100 <= 0x00)
 					break;
-				int32 w0_47 = (word32) (uint64) fread(fp + ~0x1F, 0x01, 0x10, x0_25);
+				int32 w0_47 = (word32) fread(fp + ~0x1F, (size_t) 0x01, (size_t) 0x10, x0_25);
 				if (w0_47 == 0x00)
 					break;
 				dumpline(fp + ~0x1F, w0_47);
@@ -289,12 +289,11 @@ void __libc_csu_fini()
 {
 }
 
-// 0000000000000E00: Register int32 __stat(Register (ptr64 char) x0, Register (ptr64 Eq_249) x1)
+// 0000000000000E00: Register int32 __stat(Register (ptr64 char) x0, Register (ptr64 Eq_250) x1)
 // Called from:
 //      hexdump
 int32 __stat(char * x0, struct stat * x1)
 {
-	word32 x0_32_32_8 = SLICE(x0, word32, 32);
-	return __xstat(SEQ(x0_32_32_8, 0x00), x0, x1);
+	return __xstat(0x00, x0, x1);
 }
 

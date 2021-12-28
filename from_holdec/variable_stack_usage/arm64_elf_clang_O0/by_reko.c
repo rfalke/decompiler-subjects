@@ -62,10 +62,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -125,20 +125,16 @@ void __do_global_dtors_aux()
 // 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4005D8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4005D8 = null; // 00000000004005D8
+word64 g_qw4005D8 = 0x00; // 00000000004005D8
 // 00000000004005E0: void use(Register (ptr64 word32) x0)
 // Called from:
 //      with_array
@@ -148,57 +144,50 @@ void use(word32 * x0)
 	g_dw411034 += *x0;
 }
 
-// 000000000040060C: Register Eq_107 fill(Register (ptr64 void) x0, Register word32 w1, Register word32 x1_32_32, Register out Eq_111 x9Out, Register out ptr64 x29Out)
+// 000000000040060C: Register int64 fill(Register (ptr64 void) x0, Register word32 w1, Register out ptr64 x29Out)
 // Called from:
 //      with_array
 //      with_alloca
-Eq_107 fill(void * x0, word32 w1, word32 x1_32_32, union Eq_111 & x9Out, ptr64 & x29Out)
+int64 fill(void * x0, word32 w1, ptr64 & x29Out)
 {
-	Eq_111 x9_18 = (int64) SEQ((word16) w1, wLoc16);
-	Eq_107 x1_22 = SEQ(x1_32_32, (uint32) 0x78);
-	memset(x0, x1_22, x9_18 << 2);
-	x9Out = x9_18;
+	int64 x9_18 = (int64) SEQ((word16) w1, wLoc16);
+	memset(x0, (uint32) 0x78, (size_t) (x9_18 << 2));
 	x29Out = x30;
-	return x1_22;
+	return x9_18;
 }
 
-// 0000000000400644: Register word64 with_array(Sequence word64 x9_32_32_w0, Register word32 x1_32_32)
+// 0000000000400644: Register word64 with_array(Sequence word64 x9_32_32_w0)
 // Called from:
 //      main
-word64 with_array(word64 x9_32_32_w0, word32 x1_32_32)
+word64 with_array(word64 x9_32_32_w0)
 {
 	word32 w0 = (word32) x9_32_32_w0;
-	struct Eq_136 * x29_39;
-	word64 x9_75;
-	fill(fp - 0x28, w0, x1_32_32, out x9_75, out x29_39);
-	use(x29_39 - 0x08);
-	use(x29_39->ptrFFFFFFE0);
-	use(x29_39 - 0x14);
-	return x29_39->qw0000;
+	struct Eq_135 * x29_38;
+	fill(fp - 0x28, w0, out x29_38);
+	use(x29_38 - 0x08);
+	use(x29_38->ptrFFFFFFE0);
+	use(x29_38 - 0x14);
+	return x29_38->qw0000;
 }
 
-// 00000000004006C8: Register word64 with_alloca(Register word32 w0, Register word32 x1_32_32, Register out ptr64 x9Out)
+// 00000000004006C8: Register word64 with_alloca(Register word32 w0)
 // Called from:
 //      main
-word64 with_alloca(word32 w0, word32 x1_32_32, ptr64 & x9Out)
+word64 with_alloca(word32 w0)
 {
-	struct Eq_167 * x29_35;
-	word64 x9_37;
-	word64 x1_33 = fill(fp - 0x28, w0, x1_32_32, out x9_37, out x29_35);
-	use(x29_35 - 0x08);
-	use(x29_35->ptrFFFFFFF0);
-	use(x29_35 - 0x14);
-	x9Out = SEQ(SLICE(x9_37, word32, 32), w9_48);
-	return x1_33;
+	struct Eq_162 * x29_34;
+	word32 x9_32_32_66 = SLICE(fill(fp - 0x28, w0, out x29_34), word32, 32);
+	use(x29_34 - 0x08);
+	use(x29_34->ptrFFFFFFF0);
+	use(x29_34 - 0x14);
+	return SEQ(x9_32_32_66, w9_47);
 }
 
-// 0000000000400738: void main(Register word32 w0, Register word64 x1)
-void main(word32 w0, word64 x1)
+// 0000000000400738: void main(Register word32 w0)
+void main(word32 w0)
 {
-	word32 x1_32_32_17 = SLICE(x1, word32, 32);
-	struct Eq_197 * sp_18 = (struct Eq_197 *) <invalid>;
-	word64 x9_26;
-	with_array(SEQ(SLICE(x9_26, word32, 32), sp_18->dw0008), SLICE(with_alloca(w0, x1_32_32_17, out x9_26), word32, 32));
+	struct Eq_187 * sp_17 = (struct Eq_187 *) <invalid>;
+	with_array(SEQ(SLICE(with_alloca(w0), word32, 32), sp_17->dw0008));
 }
 
 // 0000000000400770: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

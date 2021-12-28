@@ -36,7 +36,7 @@ word64 g_qw12FC0 = 0x00; // 0000000000012FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t13000 = // 0000000000013000
+struct Eq_74 g_t13000 = // 0000000000013000
 	{
 		0x00,
 	};
@@ -78,7 +78,7 @@ word64 g_qw12DB8 = 0x00; // 0000000000012DB8
 
 #include "subject.h"
 
-union Eq_150 g_u2848 = // 0000000000002848
+union Eq_152 g_u2848 = // 0000000000002848
 	{
 		'\0'
 	};
@@ -88,10 +88,10 @@ union Eq_150 g_u2848 = // 0000000000002848
 
 #include "subject.h"
 
-// 0000000000000F60: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000F60: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -136,7 +136,7 @@ void register_tm_clones()
 // 0000000000001028: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t13000;
+	struct Eq_74 * x19_12 = &g_t13000;
 	if ((word32) g_b132E8 == 0x00)
 	{
 		if (g_qw12FB8 != 0x00)
@@ -168,16 +168,16 @@ void frame_dummy(word64 x29, word64 x30)
 // 00000000000010A8: void main()
 void main()
 {
-	struct Eq_109 * x0_11 = malloc(0x0C);
+	struct Eq_111 * x0_11 = malloc((size_t) 0x0C);
 	x0_11->ptr0008 = 0x2838;
 	word32 dwArg04_184 = 0x02;
-	Eq_165 (** qwLoc08_185)[] = &x0_11->ptr0008;
+	Eq_167 (** qwLoc08_185)[] = &x0_11->ptr0008;
 	while (true)
 	{
 		--dwArg04_184;
 		if (dwArg04_184 == 0x00)
 			break;
-		int32 w0_37 = (word32) (uint64) strlen(*qwLoc08_185);
+		int32 w0_37 = (word32) strlen(*qwLoc08_185);
 		int32 dwLoc18_189 = w0_37;
 		if (w0_37 > 0x0A)
 			dwLoc18_189 = 0x0A;
@@ -209,7 +209,7 @@ void main()
 			x0_155 = CONVERT(puts(fp + ~0x6F), int32, uint64);
 		}
 		x0_169 = (uint64) puts(&g_u2848);
-		qwLoc08_185 = (Eq_165 (**)[]) ((char *) qwLoc08_185 + 8);
+		qwLoc08_185 = (Eq_167 (**)[]) ((char *) qwLoc08_185 + 8);
 	}
 }
 

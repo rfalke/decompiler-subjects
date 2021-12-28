@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t11000 = // 0000000000011000
+struct Eq_74 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,10 +78,10 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 00000000000006F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000000006F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -126,7 +126,7 @@ void register_tm_clones()
 // 00000000000007B8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t11000;
+	struct Eq_74 * x19_12 = &g_t11000;
 	if ((word32) g_b1103D == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -155,31 +155,36 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000838: void mid()
+// 0000000000000838: void mid(Register (ptr64 Eq_111) x0)
 // Called from:
 //      main
-void mid()
+void mid(struct Eq_111 * x0)
 {
-	x0_19 = (uint64) printf("Middle elment is %d\n", 0x00);
+	x0_21 = (uint64) printf("Middle elment is %d\n", (word32) x0->b0002);
 }
 
-// 000000000000086C: void fst()
+// 000000000000086C: void fst(Register (ptr64 Eq_124) x0)
 // Called from:
 //      main
-void fst()
+void fst(struct Eq_124 * x0)
 {
-	x0_19 = (uint64) printf("First element is %d\n", 0x00);
+	x0_21 = (uint64) printf("First element is %d\n", (word32) x0->b000A);
 }
 
 // 00000000000008A0: void main()
 void main()
 {
-	mid();
-	fst();
-	int32 dwArg04_56;
-	for (dwArg04_56 = 0x00; dwArg04_56 <= 0x04; ++dwArg04_56)
-		;
-	x0_43 = (uint64) printf("Sum is %d\n", 0x00);
+	mid((char *) &g_t11000 + 56);
+	fst((char *) &g_t11000 + 46);
+	int32 dwArg00_58 = 0x00;
+	byte * qwLoc08_59 = (char *) &g_t11000 + 56;
+	int32 dwArg04_60;
+	for (dwArg04_60 = 0x00; dwArg04_60 <= 0x04; ++dwArg04_60)
+	{
+		++qwLoc08_59;
+		dwArg00_58 += (word32) *qwLoc08_59;
+	}
+	x0_47 = (uint64) printf("Sum is %d\n", dwArg00_58);
 }
 
 // 0000000000000930: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

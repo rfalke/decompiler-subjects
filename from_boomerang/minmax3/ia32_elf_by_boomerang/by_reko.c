@@ -154,7 +154,7 @@ void test(Eq_76 dwArg04)
 {
 	ui64 ecx_ebx_39 = ~0x01 - SEQ(dwArg04 >> 0x1F, dwArg04);
 	Eq_83 edx_19 = ~0x01 - ((word32) ecx_ebx_39 & SLICE(ecx_ebx_39, word32, 32));
-	printf("MinMax result %d\n", (edx_19 - 0x03 & (edx_19 >> 0x1F) - (edx_19 < 0x03)) + 0x03);
+	printf("MinMax result %d\n", (edx_19 - 0x03 & (edx_19 >> 0x1F) - (word32) (edx_19 < 0x03)) + 0x03);
 }
 
 // 0804836F: void main(Stack Eq_76 dwArg04)

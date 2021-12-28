@@ -1,9 +1,10 @@
 === Using options:--aggressive-branch-removal
 Error: An error occurred during decompilation.
     Attempted to divide by zero.
-       at Reko.ImageLoaders.Elf.ElfLoader64.LoadSymbolsSection(ElfSection symSection) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader64.cs:line 508
-   at Reko.ImageLoaders.Elf.ElfLoader.LoadSymbolsFromSections() in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader.cs:line 765
-   at Reko.ImageLoaders.Elf.ElfImageLoader.Load(Address addrLoad) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/ElfImageLoader.cs:line 88
-   at Reko.Loading.Loader.LoadExecutable(String filename, Byte[] image, String loader, Address addrLoad) in /Users/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 119
-   at Reko.Decompiler.Load(String fileName, String loaderName, Address addrLoad) in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 194
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /Users/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 166
+       at Reko.ImageLoaders.Elf.ElfLoader64.LoadSymbolsSection(ElfSection symSection) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader64.cs:line 509
+   at Reko.ImageLoaders.Elf.ElfLoader.LoadSymbolsFromSections() in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader.cs:line 766
+   at Reko.ImageLoaders.Elf.ElfImageLoader.LoadProgram(Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfImageLoader.cs:line 89
+   at Reko.Core.Loading.ProgramImageLoader.Load(Address addrLoad) in /home/runner/work/reko/reko/src/Core/Loading/ProgramImageLoader.cs:line 46
+   at Reko.Loading.Loader.LoadBinaryImage(ImageLocation imageLocation, Byte[] image, String loader, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 171
+   at Reko.Loading.Loader.Load(ImageLocation imageLocation, String loaderName, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 117
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 166

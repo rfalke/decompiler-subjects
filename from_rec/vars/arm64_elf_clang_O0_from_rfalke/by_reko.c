@@ -8,7 +8,7 @@ byte g_b411028 = 0x00; // 0000000000411028
 word64 d = 0x00; // 0000000000411030
 word64 sl = 0x00; // 0000000000411038
 word32 g_dw411040 = 0x00; // 0000000000411040
-struct Eq_114 * g_ptr411048 = null; // 0000000000411048
+struct Eq_117 * g_ptr411048 = null; // 0000000000411048
 byte g_b411050 = 0x00; // 0000000000411050
 word64 g_qw411058 = 0x00; // 0000000000411058
 word64 ul = 0x00; // 00000000004110B8
@@ -68,10 +68,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400440: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400440: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400470, qwArg00, (char *) fp + 8, g_ptr400478, g_ptr400480, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400470, (int32) qwArg00, (char *) fp + 8, g_ptr400478, g_ptr400480, x0, fp);
 	abort();
 }
 
@@ -131,24 +131,20 @@ void __do_global_dtors_aux()
 // 0000000000400550: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400588 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400588;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400588 = null; // 0000000000400588
-// 0000000000400590: void func(Register (ptr64 Eq_98) x0)
+word64 g_qw400588 = 0x00; // 0000000000400588
+// 0000000000400590: void func(Register (ptr64 Eq_101) x0)
 // Called from:
 //      main
-void func(struct Eq_98 * x0)
+void func(struct Eq_101 * x0)
 {
 	x0->dw0000 = 0x01;
 	x0->b0010 = 0x6B;
@@ -161,7 +157,7 @@ void func(struct Eq_98 * x0)
 void func2()
 {
 	g_dw411040 = 0x01;
-	g_ptr411048 = (struct Eq_114 *) &g_dw411040;
+	g_ptr411048 = (struct Eq_117 *) &g_dw411040;
 	g_b411050 = 0x6B;
 	g_qw411058 = 0x0A;
 	g_ptr411048->dw0000 = 0x02;

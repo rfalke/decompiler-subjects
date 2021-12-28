@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_191 g_t11000 = // 0000000000011000
+struct Eq_214 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,62 +81,75 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 0000000000000780: void main(Stack int32 dwArg00)
 void main(int32 dwArg00)
 {
-	x0_28 = (uint64) printf("Input number of iterations: ", 0x00);
-	struct Eq_18 * x29_11 = fp + -72;
-	char * x20_152 = "%d";
-	word32 x0_32_32_142 = SLICE((uint64) __isoc99_scanf("%d", 0x00), word32, 32);
+	x0_28 = (uint64) printf("Input number of iterations: ");
+	struct Eq_17 * x29_11 = fp + -9;
+	char * x20_165 = "%d";
+	x0_32 = (uint64) __isoc99_scanf("%d", fp);
 	if (dwArg00 > 0x00)
 	{
-		char * x21_146 = "Input number: ";
+		int64 * x23_162 = (char *) fp + 4;
+		char * x21_159 = "Input number: ";
 		int32 w19_119 = 0x01;
 		ptr64 x22_114 = 0x00;
 		do
 		{
-			x0_44 = (uint64) printf(x21_146, 0x00);
-			x0_51 = (uint64) __isoc99_scanf(x20_152, 0x00);
+			word64 x2_131;
+			x0_44 = (uint64) printf(x21_159);
+			x0_51 = (uint64) __isoc99_scanf(x20_165, x23_162);
 			int32 w8_55 = x29_11[38];
 			if (w8_55 > 0x02)
 			{
 				int32 w5_101 = w8_55;
+				word32 w7_104 = 0x00;
 				do
 				{
+					word32 w4_105;
 					int32 w6_65;
 					if (w5_101 != 0x03)
 					{
 						w6_65 = w5_101 - 0x02;
 						int32 w5_67 = w5_101 & 0x01;
 						int32 w3_68 = w6_65;
+						word32 w4_69 = 0x00;
 						do
 						{
-							word32 w28_169;
-							word32 w24_165;
-							word32 w25_166;
-							word32 w27_168;
-							word32 w26_167;
-							word32 w23_164;
-							word32 w19_163;
-							fib(w3_68, out w19_163, out x20_152, out x21_146, out x22_114, out w23_164, out w24_165, out w25_166, out w26_167, out w27_168, out w28_169, out x29_11);
 							word64 x19_76 = <invalid>;
 							w3_68 -= 0x02;
 							w19_119 = (word32) x19_76;
+							word32 w28_183;
+							word32 w25_180;
+							word32 w27_182;
+							word32 w26_181;
+							word32 w24_179;
+							word32 w19_178;
+							w4_69 += fib(w3_68, out w19_178, out x20_165, out x21_159, out x22_114, out x23_162, out w24_179, out w25_180, out w26_181, out w27_182, out w28_183, out x29_11);
 						} while (w5_67 != w3_68);
+						w4_105 = w4_69 + 0x01;
 					}
 					else
+					{
+						w4_105 = 0x01;
 						w6_65 = 0x01;
+					}
 					w5_101 = w6_65;
+					w7_104 += w4_105;
 				} while (w6_65 > 0x02);
+				x2_131 = SEQ(x2_32_32, w7_104 + 0x01);
 			}
-			x0_32_32_142 = SLICE((uint64) printf(x22_114 + 3336, 0x00), word32, 32);
+			else
+				x2_131 = SEQ(x2_32_32, 0x01);
+			x0_138 = (uint64) printf(x22_114 + 3336, w8_55, (uint32) x2_131);
+			x2_32_32 = SLICE(x2_131, word32, 32);
 			++w19_119;
 		} while (x29_11[36] >= w19_119);
 	}
-	exit(SEQ(x0_32_32_142, 0x00));
+	exit(0x00);
 }
 
-// 000000000000087C: void _start(Register (ptr64 Eq_128) x0, Stack Eq_129 qwArg00)
-void _start(void (* x0)(), Eq_129 qwArg00)
+// 000000000000087C: void _start(Register (ptr64 Eq_149) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -181,7 +194,7 @@ void register_tm_clones()
 // 0000000000000940: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_191 * x19_12 = &g_t11000;
+	struct Eq_214 * x19_12 = &g_t11000;
 	if ((word32) g_b11048 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -210,11 +223,11 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000000009C0: Register int32 fib(Register int32 w0, Register out Eq_67 w19Out, Register out ptr64 x20Out, Register out ptr64 x21Out, Register out ptr64 x22Out, Register out Eq_67 w23Out, Register out Eq_67 w24Out, Register out Eq_67 w25Out, Register out Eq_67 w26Out, Register out Eq_67 w27Out, Register out Eq_67 w28Out, Register out Eq_67 x29Out)
+// 00000000000009C0: Register int32 fib(Register int32 w0, Register out Eq_81 w19Out, Register out ptr64 x20Out, Register out ptr64 x21Out, Register out ptr64 x22Out, Register out ptr64 x23Out, Register out Eq_81 w24Out, Register out Eq_81 w25Out, Register out Eq_81 w26Out, Register out Eq_81 w27Out, Register out Eq_81 w28Out, Register out Eq_81 x29Out)
 // Called from:
 //      main
 //      fib
-int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22Out, union Eq_67 & w23Out, union Eq_67 & w24Out, union Eq_67 & w25Out, union Eq_67 & w26Out, union Eq_67 & w27Out, union Eq_67 & w28Out, union Eq_67 & x29Out)
+int32 fib(int32 w0, union Eq_81 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22Out, ptr64 & x23Out, union Eq_81 & w24Out, union Eq_81 & w25Out, union Eq_81 & w26Out, union Eq_81 & w27Out, union Eq_81 & w28Out, union Eq_81 & x29Out)
 {
 	word32 x25_32_32_381 = SLICE(x25, word32, 32);
 	word32 x21_32_32_430 = SLICE(x21, word32, 32);
@@ -228,7 +241,7 @@ int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 		x20Out = x20;
 		x21Out = x21;
 		x22Out = x22;
-		w23Out.u0 = <invalid>;
+		x23Out = x23;
 		w24Out.u0 = <invalid>;
 		w25Out.u0 = <invalid>;
 		w26Out.u0 = <invalid>;
@@ -239,7 +252,7 @@ int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 	}
 	else
 	{
-		struct Eq_251 * x29_13 = fp + -0x0098;
+		struct Eq_274 * x29_13 = fp + -0x0098;
 		word64 x25_863 = SEQ(x25_32_32_381, w0 - 0x01);
 		do
 		{
@@ -249,34 +262,34 @@ int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 			int32 w1_262 = w25_273;
 			if (w25_273 != 0x02)
 			{
-				x29_13[74] = (struct Eq_251) 0x00;
+				x29_13[74] = (struct Eq_274) 0x00;
 				word64 x25_142 = x25_863;
 				do
 				{
 					word32 w0_258;
 					if (w1_262 != 0x03)
 					{
-						x29_13[56] = (struct Eq_251) (w1_262 & 0x01);
+						x29_13[56] = (struct Eq_274) (w1_262 & 0x01);
 						ui32 w0_63 = w1_262 - 0x02;
-						x29_13[60] = (struct Eq_251) w0_63;
-						x29_13[66] = (struct Eq_251) w0_63;
-						x29_13[78] = (struct Eq_251) 0x00;
+						x29_13[60] = (struct Eq_274) w0_63;
+						x29_13[66] = (struct Eq_274) w0_63;
+						x29_13[78] = (struct Eq_274) 0x00;
 						do
 						{
 							word32 w0_244;
 							int32 w0_240 = x29_13[66];
 							if (w0_240 != 0x02)
 							{
-								x29_13[72] = (struct Eq_251) 0x00;
+								x29_13[72] = (struct Eq_274) 0x00;
 								do
 								{
 									word32 w0_233;
 									if (w0_240 != 0x03)
 									{
-										x29_13[58] = (struct Eq_251) (w0_240 & 0x01);
+										x29_13[58] = (struct Eq_274) (w0_240 & 0x01);
 										ui32 w1_82 = w0_240 - 0x02;
-										x29_13[62] = (struct Eq_251) w1_82;
-										x29_13[70] = (struct Eq_251) 0x00;
+										x29_13[62] = (struct Eq_274) w1_82;
+										x29_13[70] = (struct Eq_274) 0x00;
 										word64 x27_847 = SEQ(x27_32_32_509, w1_82);
 										do
 										{
@@ -286,7 +299,7 @@ int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 											int32 w24_206 = w27_217;
 											if (w27_217 != 0x02)
 											{
-												x29_13[0x0044] = (struct Eq_251) 0x00;
+												x29_13[0x0044] = (struct Eq_274) 0x00;
 												word64 x27_150 = x27_847;
 												do
 												{
@@ -294,7 +307,7 @@ int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 													if (w24_206 != 0x03)
 													{
 														word32 w0_101 = w24_206 - 0x02;
-														x29_13[64] = (struct Eq_251) w0_101;
+														x29_13[64] = (struct Eq_274) w0_101;
 														word64 x22_818 = SEQ(x22_32_32_450, w0_101);
 														word64 x23_822 = SEQ(x23_32_32_469, 0x00);
 														word64 x24_149 = SEQ(x24_32_32_489, w24_206 & 0x01);
@@ -327,7 +340,6 @@ int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 																			word64 x19_144 = <invalid>;
 																			x27_150 = <invalid>;
 																			x24_149 = <invalid>;
-																			x23_148 = <invalid>;
 																			x25_142 = <invalid>;
 																			w26_119 = (word32) x26_143;
 																			w20_116 = (word32) x20_145;
@@ -335,14 +347,13 @@ int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 																			x21_32_32_430 = SLICE(x21_146, word32, 32);
 																			word64 x20_145;
 																			word64 x21_146;
-																			word32 w25_881;
-																			word32 w27_883;
-																			word32 w28_884;
-																			word32 w26_882;
+																			word32 w26_881;
+																			word32 w28_883;
+																			word32 w27_882;
 																			word32 w19_878;
-																			word32 w24_880;
-																			word32 w23_879;
-																			word32 w28_156 = (word32) x28_151 + fib(w26_119, out w19_878, out x20_145, out x21_146, out x22_147, out w23_879, out w24_880, out w25_881, out w26_882, out w27_883, out w28_884, out x29_13);
+																			word32 w25_880;
+																			word32 w24_879;
+																			word32 w28_156 = (word32) x28_151 + fib(w26_119, out w19_878, out x20_145, out x21_146, out x22_147, out x23_148, out w24_879, out w25_880, out w26_881, out w27_882, out w28_883, out x29_13);
 																		} while (w26_119 != (word32) x19_144);
 																		w2_115 = w28_156 + 0x01;
 																	}
@@ -373,12 +384,12 @@ int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 													}
 													else
 													{
-														x29_13[64] = (struct Eq_251) 0x01;
+														x29_13[64] = (struct Eq_274) 0x01;
 														w23_192 = 0x01;
 													}
 													int32 w0_204 = x29_13[64];
 													word32 w0_209 = (word16) x29_13[0x0044] + w23_192;
-													x29_13[0x0044] = (struct Eq_251) w0_209;
+													x29_13[0x0044] = (struct Eq_274) w0_209;
 													x27_32_32_509 = SLICE(x27_150, word32, 32);
 													w27_217 = (word32) x27_150;
 													w24_206 = w0_204;
@@ -387,7 +398,7 @@ int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 											}
 											else
 												w0_212 = 0x01;
-											x29_13[70] = (struct Eq_251) ((word16) x29_13[70] + w0_212);
+											x29_13[70] = (struct Eq_274) ((word16) x29_13[70] + w0_212);
 											word32 w27_225 = w27_217 - 0x02;
 											x27_847 = SEQ(x27_32_32_509, w27_225);
 										} while (x29_13[58] != w27_225);
@@ -395,10 +406,10 @@ int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 									}
 									else
 									{
-										x29_13[62] = (struct Eq_251) 0x01;
+										x29_13[62] = (struct Eq_274) 0x01;
 										w0_233 = 0x01;
 									}
-									x29_13[72] = (struct Eq_251) ((word16) x29_13[72] + w0_233);
+									x29_13[72] = (struct Eq_274) ((word16) x29_13[72] + w0_233);
 									w0_240 = (int32) x29_13[62];
 								} while (w0_240 > 0x02);
 								w0_244 = (word32) ((word16) x29_13[72] + 1);
@@ -406,20 +417,20 @@ int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 							else
 								w0_244 = 0x01;
 							word32 w1_248 = x29_13[66];
-							x29_13[78] = (struct Eq_251) ((word16) x29_13[78] + w0_244);
+							x29_13[78] = (struct Eq_274) ((word16) x29_13[78] + w0_244);
 							word32 w0_253 = x29_13[56];
-							x29_13[66] = (struct Eq_251) (w1_248 - 0x02);
+							x29_13[66] = (struct Eq_274) (w1_248 - 0x02);
 						} while (w0_253 != w1_248 - 0x02);
 						w0_258 = (word32) ((word16) x29_13[78] + 1);
 					}
 					else
 					{
-						x29_13[60] = (struct Eq_251) 0x01;
+						x29_13[60] = (struct Eq_274) 0x01;
 						w0_258 = 0x01;
 					}
 					w1_262 = (int32) x29_13[60];
 					word32 w0_264 = (word16) x29_13[74] + w0_258;
-					x29_13[74] = (struct Eq_251) w0_264;
+					x29_13[74] = (struct Eq_274) w0_264;
 					x25_32_32_380 = SLICE(x25_142, word32, 32);
 					w25_273 = (word32) x25_142;
 				} while (w1_262 > 0x02);
@@ -427,7 +438,7 @@ int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 			}
 			else
 				w0_268 = 0x01;
-			x29_13[76] = (struct Eq_251) ((word16) x29_13[76] + w0_268);
+			x29_13[76] = (struct Eq_274) ((word16) x29_13[76] + w0_268);
 			word32 w25_289 = w25_273 - 0x02;
 			x25_863 = SEQ(x25_32_32_380, w25_289);
 		} while (x29_13[54] != w25_289);
@@ -436,7 +447,7 @@ int32 fib(int32 w0, union Eq_67 & w19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 
 		x20Out = x19;
 		x21Out = x20;
 		x22Out = x21;
-		w23Out.u0 = <invalid>;
+		x23Out = x22;
 		w24Out.u0 = <invalid>;
 		w25Out.u0 = <invalid>;
 		w26Out.u0 = <invalid>;

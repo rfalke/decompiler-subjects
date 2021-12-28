@@ -1,12 +1,4 @@
 === Using options:--aggressive-branch-removal
 080483AD: warning: Call target address 00000000 is invalid.
-080487F5: warning: The format specifier '%z' passed to *printf is not known.
-080487F5: warning: The format specifier '%z' passed to *printf is not known.
-080487F5: warning: The format specifier '%z' passed to *printf is not known.
-080487F5: warning: The format specifier '%z' passed to *printf is not known.
-080487F5: warning: The format specifier '%z' passed to *printf is not known.
-08048808: warning: The format specifier '%z' passed to *printf is not known.
-08048808: warning: The format specifier '%z' passed to *printf is not known.
-08048808: warning: The format specifier '%z' passed to *printf is not known.
 08048400: warning: Call target address 00000000 is invalid.
 08048373: warning: Call target address 00000000 is invalid.

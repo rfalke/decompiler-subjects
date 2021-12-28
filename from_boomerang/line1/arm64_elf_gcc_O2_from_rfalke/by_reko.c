@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_118 g_t11000 = // 0000000000011000
+struct Eq_116 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -83,21 +83,20 @@ void main(int32 w0, struct Eq_10 * x1)
 {
 	if (w0 <= 0x01)
 		return;
-	word32 x1_32_32_33 = SLICE(0x0AA0, word32, 32);
 	FILE * x0_25 = fopen(x1->ptr0008, "r");
 	if (x0_25 != null)
 	{
-		FILE * x19_35 = chomp(fp - 1016, SEQ(x1_32_32_33, 0x0400), x0_25);
+		FILE * x19_35 = chomp(fp - 1016, 0x0400, x0_25);
 		if (fp != 1016)
 			x0_38 = (uint64) puts(fp - 1016);
 		x0_42 = (uint64) fclose(x19_35);
 	}
 }
 
-// 000000000000088C: void _start(Register (ptr64 Eq_55) x0, Stack Eq_56 qwArg00)
-void _start(void (* x0)(), Eq_56 qwArg00)
+// 000000000000088C: void _start(Register (ptr64 Eq_51) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -142,7 +141,7 @@ void register_tm_clones()
 // 0000000000000950: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_118 * x19_12 = &g_t11000;
+	struct Eq_116 * x19_12 = &g_t11000;
 	if ((word32) g_b11058 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -171,16 +170,15 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000000009D0: Register word64 chomp(Register (ptr64 char) x0, Register Eq_32 x1, Register (ptr64 Eq_16) x2)
+// 00000000000009D0: Register word64 chomp(Register (ptr64 char) x0, Register word32 w1, Register (ptr64 Eq_13) x2)
 // Called from:
 //      main
-word64 chomp(char * x0, Eq_32 x1, FILE * x2)
+word64 chomp(char * x0, word32 w1, FILE * x2)
 {
-	word32 x1_32_32_19 = SLICE(x1, word32, 32);
-	char * x0_15 = fgets(x0, x1, x2);
+	char * x0_15 = fgets(x0, (int32) x1, x2);
 	if (x0_15 != null)
 	{
-		char * x0_21 = strchr(x0_15, SEQ(x1_32_32_19, 0x0A));
+		char * x0_21 = strchr(x0_15, '\n');
 		if (x0_21 != null)
 			*x0_21 = 0x00;
 	}

@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_80 g_t11000 = // 0000000000011000
+struct Eq_92 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,16 +78,17 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 00000000000006F0: void main()
-void main()
+// 00000000000006F0: void main(Register int32 w0)
+void main(int32 w0)
 {
-	x0_21 = (uint64) printf("MinMax adjusted number of arguments is %d\n", 0x00);
+	int32 w0_7 = w0 <= 0x03 ? w0 : 0x03;
+	x0_23 = (uint64) printf("MinMax adjusted number of arguments is %d\n", w0_7 >= 0x02 ? w0_7 : ~0x01);
 }
 
-// 0000000000000728: void _start(Register (ptr64 Eq_17) x0, Stack Eq_18 qwArg00)
-void _start(void (* x0)(), Eq_18 qwArg00)
+// 0000000000000728: void _start(Register (ptr64 Eq_27) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -132,7 +133,7 @@ void register_tm_clones()
 // 00000000000007F0: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_80 * x19_12 = &g_t11000;
+	struct Eq_92 * x19_12 = &g_t11000;
 	if ((word32) g_b11038 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)

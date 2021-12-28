@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_90 g_t11000 = // 0000000000011000
+struct Eq_95 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,17 +78,16 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 0000000000000730: void main(Register int32 w0, Register (ptr64 Eq_10) x1)
-void main(int32 w0, struct Eq_10 * x1)
+// 0000000000000730: void main(Register int32 w0, Register (ptr64 Eq_10) x1, Register word64 x20)
+void main(int32 w0, struct Eq_10 * x1, word64 x20)
 {
-	proc1(w0, x1->ptr0008);
-	x0_26 = (uint64) printf("%d\n", 0x00);
+	x0_29 = (uint64) printf("%d\n", proc1(w0, x1->ptr0008, (word32) x20));
 }
 
-// 000000000000075C: void _start(Register (ptr64 Eq_27) x0, Stack Eq_28 qwArg00)
-void _start(void (* x0)(), Eq_28 qwArg00)
+// 000000000000075C: void _start(Register (ptr64 Eq_30) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -133,7 +132,7 @@ void register_tm_clones()
 // 0000000000000820: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_90 * x19_12 = &g_t11000;
+	struct Eq_95 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -162,19 +161,21 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000000008A0: void proc1(Register int32 w0, Register (ptr64 char) x1)
+// 00000000000008A0: Register int32 proc1(Register int32 w0, Register (ptr64 char) x1, Register word32 w20)
 // Called from:
 //      main
-void proc1(int32 w0, char * x1)
+int32 proc1(int32 w0, char * x1, word32 w20)
 {
+	int32 w19_26;
 	if (w0 <= 0x02)
-		x0_31 = (uint64) strlen(x1);
+		w19_26 = (word32) strlen(x1);
 	else
 	{
-		x0_21 = (uint64) strlen(x1);
-		x0_29 = (uint64) printf("%d", 0x00);
+		int32 w20_25 = (word32) strlen(x1);
+		w19_26 = w20_25;
+		x0_31 = (uint64) printf("%d", w20_25 << 1);
 	}
-	x0_42 = (uint64) printf("%d, %d", 0x00);
+	return w19_26;
 }
 
 // 0000000000000908: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

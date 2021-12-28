@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -124,27 +124,23 @@ void __do_global_dtors_aux()
 // 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4005D8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4005D8 = null; // 00000000004005D8
+word64 g_qw4005D8 = 0x00; // 00000000004005D8
 // 00000000004005E0: void main()
 void main()
 {
-	struct Eq_98 * sp_13 = (struct Eq_98 *) <invalid>;
-	word64 x29_44;
-	sp_13->dw0008 = fib(0x0A, out x29_44);
-	sp_13->dwFFFFFFFC = printf("%i\n", 0x00);
+	struct Eq_101 * sp_13 = (struct Eq_101 *) <invalid>;
+	word64 x29_47;
+	sp_13->dw0008 = fib(0x0A, out x29_47);
+	sp_13->dwFFFFFFFC = printf("%i\n", sp_13->dw0008);
 }
 
 // 0000000000400628: Register int32 fib(Register int32 w0, Register out ptr64 x29Out)
@@ -153,15 +149,15 @@ void main()
 //      fib
 int32 fib(int32 w0, ptr64 & x29Out)
 {
-	struct Eq_120 * x29_29 = fp + -8;
+	struct Eq_126 * x29_29 = fp + -8;
 	if (w0 > 0x01)
 	{
 		word64 x29_66;
-		word32 w0_21 = fib(w0 - 0x01, out x29_66);
-		struct Eq_98 * sp_18 = (struct Eq_98 *) <invalid>;
-		word32 w8_24 = sp_18->dw0008;
+		int32 w0_21 = fib(w0 - 0x01, out x29_66);
+		struct Eq_101 * sp_18 = (struct Eq_101 *) <invalid>;
+		int32 w8_24 = sp_18->dw0008;
 		sp_18->dw0004 = w0_21;
-		struct Eq_98 * sp_28 = (struct Eq_98 *) <invalid>;
+		struct Eq_101 * sp_28 = (struct Eq_101 *) <invalid>;
 		x29_29->dwFFFFFFFC = sp_28->dw0004 + fib(w8_24 - 0x02, out x29_29);
 	}
 	int32 w0_41 = x29_29->dwFFFFFFFC;

@@ -5,7 +5,7 @@
 #include "subject.h"
 
 byte g_b411038 = 0x00; // 0000000000411038
-Eq_107 g_a41103C[] = // 000000000041103C
+Eq_113 g_a41103C[] = // 000000000041103C
 	{
 	};
 word32 g_dw41143C = 0x00; // 000000000041143C
@@ -65,10 +65,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -128,31 +128,27 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
-// 0000000000400640: void rc_crc32(Register up64 x1, Register uint64 x2)
+word64 g_qw400638 = 0x00; // 0000000000400638
+// 0000000000400640: Register word32 rc_crc32(Register word32 w0, Register (ptr64 byte) x1, Register uint64 x2)
 // Called from:
 //      main
-void rc_crc32(up64 x1, uint64 x2)
+word32 rc_crc32(word32 w0, byte * x1, uint64 x2)
 {
 	if (g_dw41143C == 0x00)
 	{
-		Eq_107 dwLoc24_111 = 0x00;
+		Eq_113 dwLoc24_111 = 0x00;
 		while (dwLoc24_111 < 0x0100)
 		{
-			Eq_107 dwLoc1C_128 = dwLoc24_111;
+			Eq_113 dwLoc1C_128 = dwLoc24_111;
 			int32 dwLoc28_129;
 			for (dwLoc28_129 = 0x00; dwLoc28_129 < 0x08; ++dwLoc28_129)
 			{
@@ -161,22 +157,26 @@ void rc_crc32(up64 x1, uint64 x2)
 				else
 					dwLoc1C_128 >>= 1;
 			}
-			*((char *) g_a41103C + (int64) dwLoc32 * 0x00) = (union Eq_107 *) dwLoc1C_128;
+			*((char *) g_a41103C + (int64) dwLoc32 * 0x00) = (union Eq_113 *) dwLoc1C_128;
 			dwLoc24_111 = (word32) dwLoc24_111.u0 + 1;
 		}
 		g_dw41143C = 0x01;
 	}
-	up64 x10_31 = x1 + x2;
-	up64 qwLoc30_121 = x1;
+	uint32 dwLoc04_115 = ~w0;
+	ui64 x10_31 = x1 + x2;
+	byte * qwLoc30_121 = x1;
 	while (qwLoc30_121 - x10_31 < 0x00)
+	{
+		dwLoc04_115 = dwLoc04_115 >> 8 ^ *((char *) g_a41103C + (uint64) (dwLoc04_115 & 0xFF ^ (word32) (*qwLoc30_121)) * 0x00);
 		++qwLoc30_121;
+	}
+	return ~dwLoc04_115;
 }
 
 // 00000000004007BC: void main()
 void main()
 {
-	rc_crc32(qwLoc30, (uint64) strlen("The quick brown fox jumps over the lazy dog"));
-	x0_42 = (uint64) printf("%X\n", 0x00);
+	x0_44 = (uint64) printf("%X\n", rc_crc32(0x00, qwLoc30, (uint64) strlen("The quick brown fox jumps over the lazy dog")));
 }
 
 // 0000000000400838: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

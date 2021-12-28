@@ -11,12 +11,12 @@ byte g_b804A063 = 0x00; // 0804A063
 
 #include "subject.h"
 
-Eq_160 g_t804A030 = // 0804A030
+Eq_166 g_t804A030 = // 0804A030
 	{
 		0.0F
 	};
 real64 g_r804A040 = 11.0; // 0804A040
-Eq_160 global_float = // 0804A048
+Eq_166 global_float = // 0804A048
 	{
 		10.0F
 	};
@@ -129,11 +129,11 @@ real64 g_r8048948 = 12.345; // 08048948
 void main()
 {
 	__align(fp);
-	printf("%zu %zu %zu %zu %zu\n", tLoc2C, tLoc2C, tLoc2C, tLoc2C, tLoc2C);
-	printf("%zu %zu %zu\n", tLoc1C, tLoc1C, tLoc1C);
+	printf("%zu %zu %zu %zu %zu\n", 0x01, 0x02, 0x04, 0x04, 0x08);
+	printf("%zu %zu %zu\n", 0x04, 0x08, 0x0C);
 }
 
-// 08048355: void _start(Register (ptr32 Eq_35) edx, Stack int32 dwArg00)
+// 08048355: void _start(Register (ptr32 Eq_41) edx, Stack int32 dwArg00)
 void _start(void (* edx)(), int32 dwArg00)
 {
 	__align((char *) fp + 4);
@@ -191,7 +191,7 @@ void use_int(int32 dwArg04)
 // 08048490: void read_ints()
 void read_ints()
 {
-	printf("%f", (real64) (int16) g_b804A062 + (real64) g_r8048930 + (real64) g_w804A060 + (real64) global_int + (real64) global_long + (real64) g_qw804A050);
+	printf("%f", (real64) (int16) g_b804A062 + (real64) 0.0F + (real64) g_w804A060 + (real64) global_int + (real64) global_long + (real64) g_qw804A050);
 }
 
 // 080484E0: void write_ints(Stack real64 rArg04)
@@ -275,14 +275,14 @@ void basic_operations(real64 rArg04, real64 rArg0C)
 	printf("%f", -rArg04);
 }
 
-// 08048700: void compare_floats(Stack Eq_254 rArg04, Stack Eq_254 rArg0C)
-void compare_floats(Eq_254 rArg04, Eq_254 rArg0C)
+// 08048700: void compare_floats(Stack Eq_260 rArg04, Stack Eq_260 rArg0C)
+void compare_floats(Eq_260 rArg04, Eq_260 rArg0C)
 {
-	Eq_256 eax_20 = (uint32) (int8) !PARITY_EVEN(rArg0C - rArg04);
+	Eq_262 eax_20 = (uint32) (int8) !PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_20.u0 = 0x00;
 	printf("%d", eax_20);
-	Eq_271 eax_53 = (uint32) (int8) PARITY_EVEN(rArg0C - rArg04);
+	Eq_277 eax_53 = (uint32) (int8) PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_53.u0 = 0x01;
 	printf("%d", eax_53);
@@ -296,10 +296,10 @@ void compare_floats(Eq_254 rArg04, Eq_254 rArg0C)
 void constants(real64 rArg04)
 {
 	printf("%f", rArg04 + rArg04);
-	printf("%f", rArg04 * (real64) g_r8048934);
-	printf("%f", rArg04 * g_r8048940);
-	printf("%f", rArg04 * (real64) g_r8048938);
-	printf("%f", rArg04 * g_r8048948);
+	printf("%f", rArg04 * (real64) 3.0F);
+	printf("%f", rArg04 * 3.141592653589793);
+	printf("%f", rArg04 * (real64) 10.0F);
+	printf("%f", rArg04 * 12.345);
 }
 
 // 08048890: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)

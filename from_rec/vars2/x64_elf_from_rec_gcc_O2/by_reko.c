@@ -90,11 +90,11 @@ word64 g_qw600E38 = 0x00; // 0000000000600E38
 
 #include "subject.h"
 
-// 00000000004003C0: void _start(Register (ptr64 Eq_11) rdx, Stack Eq_12 qwArg00)
-void _start(void (* rdx)(), Eq_12 qwArg00)
+// 00000000004003C0: void _start(Register (ptr64 Eq_11) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t4004D0, qwArg00, (char *) fp + 8, &g_t400500, &g_t4004F0, rdx, fp);
+	__libc_start_main(&g_t4004D0, (int32) qwArg00, (char *) fp + 8, &g_t400500, &g_t4004F0, rdx, fp);
 	__hlt();
 }
 
@@ -133,8 +133,8 @@ void frame_dummy()
 {
 }
 
-// 00000000004004B0: void func(Register (ptr64 Eq_71) rdi)
-void func(struct Eq_71 * rdi)
+// 00000000004004B0: void func(Register (ptr64 Eq_73) rdi)
+void func(struct Eq_73 * rdi)
 {
 	rdi->dw0000 = 0x01;
 	rdi->b0008 = 0x6B;
@@ -161,7 +161,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_19 = 0x00600E14 - 0x00600E14;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
-		Eq_107 rbx_40 = 0x00;
+		Eq_109 rbx_40 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x00600E14)[rbx_40]();

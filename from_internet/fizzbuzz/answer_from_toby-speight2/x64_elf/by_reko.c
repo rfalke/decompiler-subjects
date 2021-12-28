@@ -143,13 +143,22 @@ void _ZNSt8ios_base4InitD1Ev()
 
 #include "subject.h"
 
-byte g_b405084 = 0x46; // 0000000000405084
-byte g_b405088 = 66; // 0000000000405088
-byte g_b40508E = 0x46; // 000000000040508E
-Eq_3315 g_a405140[] = // 0000000000405140
+word128 g_ow405084 = // 0000000000405084
+	{
+		0x46, 0x69, 0x7A, 0x7A, 0x42, 0x75, 0x7A, 0x7A, 0x0A, 0x00, 0x46, 0x69, 0x7A, 0x7A, 0x0A, 0x00, 
+	};
+word128 g_ow405088 = // 0000000000405088
+	{
+		0x42, 0x75, 0x7A, 0x7A, 0x0A, 0x00, 0x46, 0x69, 0x7A, 0x7A, 0x0A, 0x00, 0x25, 0x7A, 0x75, 0x00, 
+	};
+word128 g_ow40508E = // 000000000040508E
+	{
+		0x46, 0x69, 0x7A, 0x7A, 0x0A, 0x00, 0x25, 0x7A, 0x75, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
+	};
+Eq_3296 g_a405140[] = // 0000000000405140
 	{
 	};
-Eq_3316 g_a405141[] = // 0000000000405141
+Eq_3297 g_a405141[] = // 0000000000405141
 	{
 	};
 byte g_a405220[] = // 0000000000405220
@@ -182,7 +191,7 @@ l000000000040223F:
 	struct Eq_35 * rsp_1277
 	Eq_32 r12_112
 	snprintf()
-	int64 rcx_82 = (word64) ((word64) ((int64) (word32) rax_72 * 0x08) + 39)
+	int64 rcx_82 = (int64) (word32) rax_72 * 0x08 + 39
 	word32 ebx_130 = (word32) rbx_132
 	branch (uint64) ((uint128) (SLICE(r13_31 *128 (rcx_82 *s r12_112), word64, 64) >> 0x03) /u rbp_1282) > 0x00010000 l00000000004022D6
 l000000000040227E:
@@ -264,7 +273,7 @@ l00000000004023D8:
 	uint64 rbx_1815 = rbx_1817
 l00000000004023E0:
 	int32 edx_396 = (word32) ((uint64) ecx_1821 *s 1374389535 >> 0x25)
-	struct Eq_223 * rax_412 = (uint64) ((ecx_1821 - edx_396 *s 100) * 0x02)
+	struct Eq_222 * rax_412 = (uint64) ((ecx_1821 - edx_396 *s 100) * 0x02)
 	word32 ebx_407 = (word32) rbx_1815
 	byte al_429 = rax_412->b405220
 	rsi_385[(uint64) ebx_407 /64 2] = (struct Eq_39) g_a405220[(uint64) ((word32) rax_412 + 0x01)]
@@ -276,10 +285,10 @@ l00000000004023E0:
 	branch ecx_1821 > 9999 l00000000004023E0
 l0000000000402424:
 	uint32 ecx_438 = (word32) rcx_1461
-	Eq_207 al_455 = (byte) (word32) rcx_1461 + 0x30
+	Eq_206 al_455 = (byte) (word32) rcx_1461 + 0x30
 	branch ecx_438 <= 0x09 l0000000000402442
 l000000000040242C:
-	struct Eq_271 * rcx_442 = (uint64) (ecx_438 * 0x02)
+	struct Eq_270 * rcx_442 = (uint64) (ecx_438 * 0x02)
 	rsi_385->b0001 = g_a405220[(uint64) ((word32) rcx_442 + 0x01)]
 	al_455 = rcx_442->t405220
 l0000000000402442:
@@ -346,7 +355,7 @@ l0000000000402570:
 	rbx_1817 = (uint64) ((word32) rbx_1817 + 0x02)
 	goto l00000000004023A1
 l0000000000402580:
-	struct Eq_355 * rsp_1335
+	struct Eq_354 * rsp_1335
 	word64 r15_1336
 	word64 r14_1337
 	word64 r13_1338
@@ -379,17 +388,17 @@ l00000000004025F0:
 	word64 r15_767
 	word32 eax_785
 	word64 rbp_549
-	Eq_316 r12_548
+	Eq_315 r12_548
 	word64 r12_522
 	uint64 rbp_523
-	struct Eq_319 * rsp_518
+	struct Eq_318 * rsp_518
 	word64 r15_519
 	word64 r14_520
 	word64 r13_521
-	Eq_323 rbx_1473
+	Eq_322 rbx_1473
 	_ZNSo5flushEv()
 	rsp_518->qw0040 = 0x00
-	rsp_518->t0030.u0 = 0x00
+	rsp_518->t0030.u0 = 0
 	branch rbp_523 >> 0x3C != 0x00 l0000000000402B85
 l000000000040261A:
 	branch rbp_523 == 0x00 l0000000000402B0E
@@ -400,12 +409,12 @@ l0000000000402843:
 	_Znwm()
 l00000000004028F9:
 	r12_548 = rsp_518->t0038
-	Eq_316 rbp_576 = rsp_518->t0030
+	Eq_315 rbp_576 = rsp_518->t0030
 	branch r12_548 != rbp_576 l0000000000402929
 	goto l00000000004029CC
 l0000000000402910:
-	*rsi_675 = (union Eq_453 *) rbx_1473
-	rsp_518->ptr0058 = (union Eq_453 *) ((char *) rsi_675 + 8)
+	*rsi_675 = (union Eq_452 *) rbx_1473
+	rsp_518->ptr0058 = (union Eq_452 *) ((char *) rsi_675 + 8)
 l000000000040291C:
 	rbp_576 = rbp_549 + 0x08
 	branch r12_548 == rbp_576 l00000000004029CC
@@ -418,32 +427,32 @@ l0000000000402929:
 	word64 * rax_596
 	_Znwm()
 	*rax_596 = 0x00
-	struct Eq_485 * rsp_610
+	struct Eq_484 * rsp_610
 	word64 r15_611
 	word64 r14_612
 	word64 r13_613
 	word64 r12_614
 	word64 rbp_615
 	word64 rbx_616
-	struct Eq_492 * rax_617
+	struct Eq_491 * rax_617
 	_Znwm()
 	rax_617->qw0000 = 0x00405120
 	rax_617->qw0008 = r13_613
 	rsp_610->ptr0028 = rax_617
-	Eq_505 r8_648
+	Eq_504 r8_648
 	_ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE()
-	Eq_323 rdi_651 = rsp_518->t0028.ptr0000
+	Eq_322 rdi_651 = rsp_518->t0028.ptr0000
 	branch rdi_651 == 0x00 l000000000040297D
 l0000000000402977:
-	struct Eq_536 * rax_655 = *rdi_651.ptr0000
+	struct Eq_535 * rax_655 = *rdi_651.ptr0000
 	rax_655->ptr0008()
 l000000000040297D:
-	union Eq_453 * rsi_675 = rsp_518->ptr0058
-	rsp_518->t0028.ptr0000 = (struct Eq_536 **) rbx_1473
+	union Eq_452 * rsi_675 = rsp_518->ptr0058
+	rsp_518->t0028.ptr0000 = (struct Eq_535 **) rbx_1473
 	branch rsi_675 != rsp_518->ptr0060 l0000000000402910
 l000000000040298E:
 	rbx_1473 = _ZNSt6vectorISt10unique_ptrISt6threadSt14default_deleteIS1_EESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_(&rsp_518->t0028.ptr0000, rbx_1473, rsi_675, &rsp_518->ow0050, r8_648, r12_548, r13_521, r14_520, out rbp_549, out r12_548, out r13_521, out r14_520, out r15_519)
-	Eq_323 rdi_709 = rsp_518->t0028.ptr0000
+	Eq_322 rdi_709 = rsp_518->t0028.ptr0000
 	branch rdi_709 == 0x00 l000000000040291C
 l00000000004029AB:
 	branch *rdi_709.ptr0000 != null l0000000000402B8F
@@ -451,7 +460,7 @@ l00000000004029B5:
 	_ZdlPvm()
 	branch r12_548 != rbp_576 l0000000000402929
 l00000000004029CC:
-	Eq_316 rbx_750 = rsp_518->t0030
+	Eq_315 rbx_750 = rsp_518->t0030
 	word64 rax_753 = *rbx_750
 	word64 rax_773
 	pthread_mutex_lock()
@@ -463,7 +472,7 @@ l00000000004029F2:
 l0000000000402B0E:
 	*((word128) *((word128) rsp_518->t0038 - 8) + 0x00B8) = *rsp_518->t0030
 	rsp_518->ptr0060 = null
-	rsp_518->ow0050 = 0x00
+	rsp_518->ow0050 = 0
 	branch rbp_523 == 0x00 l00000000004028F9
 	goto l0000000000402843
 l0000000000402B85:
@@ -550,16 +559,16 @@ void _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ4mainEUlP6workerE_S4_EEEE
 	_ZdlPvm();
 }
 
-// 0000000000402CF0: Register (ptr64 Eq_654) _ZN6worker4loopEv(Register (ptr64 Eq_654) rdi, Register (ptr64 word64) r14, Register (ptr64 (arr byte)) r15)
+// 0000000000402CF0: Register (ptr64 Eq_653) _ZN6worker4loopEv(Register (ptr64 Eq_653) rdi, Register (ptr64 word64) r14, Register (ptr64 (arr byte)) r15)
 // Called from:
 //      _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ4mainEUlP6workerE_S4_EEEEE6_M_runEv
-union Eq_654 * _ZN6worker4loopEv(union Eq_654 * rdi, word64 * r14, byte (* r15)[])
+union Eq_653 * _ZN6worker4loopEv(union Eq_653 * rdi, word64 * r14, byte (* r15)[])
 {
-	union Eq_654 * r13_16 = rdi;
-	byte * r12_110 = (char *) rdi + 64;
-	byte * rbp_112 = &g_b4021C0;
-	union Eq_654 * rbx_114 = (char *) rdi + 0x0068;
-	struct Eq_666 * rsp_27 = fp - 88;
+	union Eq_653 * r13_16 = rdi;
+	word128 * r12_110 = (char *) rdi + 64;
+	word128 * rbp_112 = &g_ow4021C0;
+	union Eq_653 * rbx_114 = (char *) rdi + 0x0068;
+	struct Eq_665 * rsp_27 = fp - 88;
 	do
 	{
 l0000000000402D10:
@@ -579,7 +588,7 @@ l0000000000403068:
 			word64 * r14_353;
 			word64 r13_354;
 			word64 r12_355;
-			struct Eq_693 * rdi_356;
+			struct Eq_692 * rdi_356;
 			word64 rbp_357;
 			word64 rbx_358;
 			_ZSt20__throw_system_errori();
@@ -592,11 +601,11 @@ l0000000000402D2F:
 			_ZNSt18condition_variable4waitERSt11unique_lockISt5mutexE();
 		uint64 rax_99 = 0x00010000 - *((char *) r13_16 + 0x00A0);
 		*((char *) r13_16 + 0x00B0) = rax_99;
-		struct Eq_707 * rsp_117;
+		struct Eq_706 * rsp_117;
 		word64 rbx_124;
 		word64 r15_118;
 		word64 r14_119;
-		struct Eq_711 * r13_120;
+		struct Eq_710 * r13_120;
 		word64 r12_121;
 		word64 rbp_123;
 		writev();
@@ -622,7 +631,7 @@ l0000000000402D2F:
 				rax_184 = Mem132[r13_16 + 0x08:word64] + Mem132[r13_16 + 0x00:word64];
 			} while (rax_184 > r15_202 + 0x00010000);
 		}
-		struct Eq_759 * rdx_224 = *((char *) r13_16 + 0x00B8);
+		struct Eq_758 * rdx_224 = *((char *) r13_16 + 0x00B8);
 		r15 = (char *) rdx_224 + 64;
 		if (rbp_112 != null)
 		{
@@ -632,19 +641,19 @@ l0000000000402D2F:
 			if (eax_250 != 0x00)
 				goto l0000000000403068;
 			rax_184 = Mem132[r13_16 + 0x08:word64] + Mem132[r13_16 + 0x00:word64];
-			rdx_224 = (struct Eq_759 *) *((char *) r13_16 + 0x00B8);
+			rdx_224 = (struct Eq_758 *) *((char *) r13_16 + 0x00B8);
 		}
 		rdx_224->qw0098 = r14_183;
 		rdx_224->qw00A0 = rax_184 - r14_183;
 		if (rbp_112 != null)
 			pthread_mutex_unlock();
-		struct Eq_759 * rax_292 = *((char *) r13_16 + 0x00B8);
+		struct Eq_758 * rax_292 = *((char *) r13_16 + 0x00B8);
 		word64 r15_301;
 		word64 r14_302;
 		_ZNSt18condition_variable10notify_oneEv();
-		struct Eq_759 * rax_315 = *((char *) r13_16 + 0x00B8);
+		struct Eq_758 * rax_315 = *((char *) r13_16 + 0x00B8);
 		rsp_27->b0018 = 0x00;
-		rsp_27->ptr0010 = (char *) rax_315 + 64;
+		rsp_27->ptr0010 = (word128 *) ((char *) rax_315 + 64);
 		if (rbp_112 != null)
 		{
 			word64 rax_330;
@@ -652,7 +661,7 @@ l0000000000402D2F:
 			eax_250 = (word32) rax_330;
 			if (eax_250 != 0x00)
 				goto l0000000000403068;
-			rax_315 = (struct Eq_759 *) *((char *) r13_16 + 0x00B8);
+			rax_315 = (struct Eq_758 *) *((char *) r13_16 + 0x00B8);
 		}
 		rsp_27->b0018 = 0x01;
 		r15 = (char *) rax_315 + 0x0068;
@@ -665,7 +674,7 @@ l0000000000402D2F:
 			if (rsp_27->b0018 == 0x00)
 				goto l0000000000402EA7;
 		}
-		byte * rdi_422 = rsp_27->ptr0010;
+		word128 * rdi_422 = rsp_27->ptr0010;
 		if (rdi_422 != null && rbp_112 != null)
 			pthread_mutex_unlock();
 l0000000000402EA7:
@@ -676,99 +685,98 @@ l0000000000402EA7:
 			continue;
 		do
 		{
-			struct Eq_907 * rdx_464 = *rcx_457;
+			struct Eq_906 * rdx_464 = *rcx_457;
 			if (rdx_464->bFFFFFFFE != 122)
 			{
 				uint64 rax_471 = (uint64) *((char *) r13_16 + 60);
-				struct Eq_906 * rdx_469 = rdx_464 - (int64) (*((char *) r13_16 + 56));
+				struct Eq_905 * rdx_469 = rdx_464 - (int64) (*((char *) r13_16 + 56));
 				ci8 al_473 = (byte) rax_471 + rdx_469->b0000;
 				rdx_469->b0000 = al_473;
 				word32 eax_479 = SEQ(SLICE(rax_471, word24, 8), al_473);
 				while (al_473 > 0x39)
 				{
 					--rdx_469;
-					rdx_469[1] = (struct Eq_906) ((byte) eax_479 - 0x0A);
-					uint64 rax_488 = (uint64) ((word32) (uint64) rdx_469->b0000 + 0x01);
+					rdx_469[1] = (struct Eq_905) ((byte) eax_479 - 0x0A);
+					uint64 rax_488 = (uint64) ((word32) rdx_469->b0000 + 0x01);
 					al_473 = (byte) rax_488;
 					rdx_469->b0000 = al_473;
 					eax_479 = (word32) rax_488;
 				}
-				esi_500 += (word32) (uint64) (al_473 == 11);
+				esi_500 += (word32) (al_473 == 11);
 			}
 			++rcx_457;
 		} while (rdi_456 != rcx_457);
 		if (esi_500 == 0x00)
 			continue;
-		union Eq_966 * rcx_588;
-		byte (* r9_526)[] = *((char *) r13_16 + 8);
-		Eq_505 rcx_528 = (uint64) esi_500;
+		union Eq_963 * rcx_587;
+		Eq_751 r9_526 = *((char *) r13_16 + 8);
+		Eq_504 rcx_528 = (uint64) esi_500;
 		word64 rax_534 = rcx_528 + r9_526;
 		r14 = (word64 *) *((char *) r13_16 + 40);
 		r15 = (byte (*)[]) *r13_16;
-		uint64 rdx_592 = (uint64) (int8) (rax_534 < null);
+		uint64 rdx_591 = (uint64) (int8) (rax_534 < 0x00);
 		if (rax_534 <= r9_526)
 		{
-			rcx_588 = r15 + r9_526;
-			if (rdx_592 != 0x00)
+			rcx_587 = r15 + r9_526;
+			if (rdx_591 != 0x00)
 			{
-				*((char *) r13_16 + 8) = (union Eq_654 *) rax_534;
-				Mem597[r15 + rax_534:byte] = 0x00;
-				rcx_588 = Mem597[r13_16 + 0x08:word64] + Mem597[r13_16 + 0x00:word64];
+				*((char *) r13_16 + 8) = (union Eq_653 *) rax_534;
+				Mem596[r15 + rax_534:byte] = 0x00;
+				rcx_587 = Mem596[r13_16 + 0x08:word64] + Mem596[r13_16 + 0x00:word64];
 			}
 		}
 		else
 		{
-			rsp_27->ptr0008 = r9_526;
-			word64 rsi_697;
-			word64 r8_698;
-			word64 rcx_695;
-			word64 rdx_696;
-			_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14_M_replace_auxEmmmc(rcx_528, 0x00, rbx_114, rbp_112, r9_526, r13_16, 0x00, r12_110, r14, out rcx_695, out rdx_696, out rbx_114, out rbp_112, out rsi_697, out r8_698, out r12_110, out r13_16, out r14);
-			rsp_27 = (struct Eq_666 *) &rsp_27->ptr0008;
-			r9_526 = rsp_27->ptr0008;
-			rcx_588 = Mem554[r13_16 + 0x08:word64] + Mem554[r13_16 + 0x00:word64];
+			rsp_27->t0008 = r9_526;
+			word64 rsi_696;
+			word64 r8_697;
+			word64 rcx_694;
+			word64 rdx_695;
+			_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14_M_replace_auxEmmmc(rcx_528, 0x00, rbx_114, rbp_112, r9_526, r13_16, 0x00, r12_110, r14, out rcx_694, out rdx_695, out rbx_114, out rbp_112, out rsi_696, out r8_697, out r12_110, out r13_16, out r14);
+			r9_526 = rsp_27->t0008;
+			rcx_587 = Mem554[r13_16 + 0x08:word64] + Mem554[r13_16 + 0x00:word64];
 		}
-		union Eq_966 * rdx_602 = rcx_588 - 0x01;
-		word64 rax_605 = r15 - 0x01 + r9_526;
-		if (rax_605 >= rdx_602)
+		union Eq_963 * rdx_601 = rcx_587 - 0x01;
+		word64 rax_604 = r15 - 0x01 + r9_526;
+		if (rax_604 >= rdx_601)
 			continue;
 		while (true)
 		{
 l0000000000402F5D:
-			byte sil_612 = *rax_605;
-			if (sil_612 == 11)
+			byte sil_611 = *rax_604;
+			if (sil_611 == 11)
 			{
-				*rax_605 = (union Eq_966 *) 0x0A;
-				*((char *) rcx_588 - 1) = (union Eq_966 *) 0x31;
-				sil_612 = (byte) *rax_605;
-				rdx_602 = rcx_588 - 0x02;
+				*rax_604 = (union Eq_963 *) 0x0A;
+				*((char *) rcx_587 - 1) = (union Eq_963 *) 0x31;
+				sil_611 = (byte) *rax_604;
+				rdx_601 = rcx_587 - 0x02;
 			}
-			if (sil_612 != 0x0A)
+			if (sil_611 != 0x0A)
 				break;
-			*r14 = (char *) rdx_602 + 1;
-			--rax_605;
-			*rdx_602 = *((char *) rax_605 + 1);
-			word64 * rcx_632 = r14 - 0x08;
-			union Eq_966 * rsi_638 = rdx_602 - 0x01;
-			if (rsi_638 <= rax_605)
+			*r14 = (char *) rdx_601 + 1;
+			--rax_604;
+			*rdx_601 = *((char *) rax_604 + 1);
+			word64 * rcx_631 = r14 - 0x08;
+			union Eq_963 * rsi_637 = rdx_601 - 0x01;
+			if (rsi_637 <= rax_604)
 				goto l0000000000402D10;
-			r14 = rcx_632;
-			rcx_588 = rdx_602;
-			rdx_602 = rsi_638;
+			r14 = rcx_631;
+			rcx_587 = rdx_601;
+			rdx_601 = rsi_637;
 		}
-		*rdx_602 = (union Eq_966 *) sil_612;
-		--rax_605;
-		union Eq_966 * rsi_646 = rdx_602 - 0x01;
-	} while (rsi_646 <= rax_605);
-	rcx_588 = rdx_602;
-	rdx_602 = rsi_646;
+		*rdx_601 = (union Eq_963 *) sil_611;
+		--rax_604;
+		union Eq_963 * rsi_645 = rdx_601 - 0x01;
+	} while (rsi_645 <= rax_604);
+	rcx_587 = rdx_601;
+	rdx_601 = rsi_645;
 	goto l0000000000402F5D;
 }
 
-// 0000000000403070: Register (ptr64 Eq_693) _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ4mainEUlP6workerE_S4_EEEEE6_M_runEv(Register word64 rcx, Register word64 rdx, Register word64 rbx, Register word64 rbp, Register word64 rsi, Register (ptr64 Eq_693) rdi, Register word64 r12, Register word64 r13, Register (ptr64 word64) r14, Register (ptr64 (arr byte)) r15)
+// 0000000000403070: Register (ptr64 Eq_692) _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ4mainEUlP6workerE_S4_EEEEE6_M_runEv(Register word64 rcx, Register word64 rdx, Register word64 rbx, Register word64 rbp, Register word64 rsi, Register (ptr64 Eq_692) rdi, Register word64 r12, Register word64 r13, Register (ptr64 word64) r14, Register (ptr64 (arr byte)) r15)
 // Called from:
 //      _ZN6worker4loopEv
-struct Eq_693 * _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ4mainEUlP6workerE_S4_EEEEE6_M_runEv(word64 rcx, word64 rdx, word64 rbx, word64 rbp, word64 rsi, struct Eq_693 * rdi, word64 r12, word64 r13, word64 * r14, byte (* r15)[])
+struct Eq_692 * _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ4mainEUlP6workerE_S4_EEEEE6_M_runEv(word64 rcx, word64 rdx, word64 rbx, word64 rbp, word64 rsi, struct Eq_692 * rdi, word64 r12, word64 r13, word64 * r14, byte (* r15)[])
 {
 	struct Eq_38 * rdi_9 = _ZN6worker4loopEv(rdi->ptr0008, r14, r15);
 	return _ZN6workerC1Emmm(rcx, rdx, rbx, rbp, rsi, rdi_9, r12, r13, r14, r15);
@@ -779,163 +787,163 @@ struct Eq_693 * _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ4mainEUlP6work
 //      _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJZ4mainEUlP6workerE_S4_EEEEE6_M_runEv
 struct Eq_38 * _ZN6workerC1Emmm(word64 rcx, word64 rdx, word64 rbx, word64 rbp, word64 rsi, struct Eq_38 * rdi, word64 r12, word64 r13, word64 * r14, byte (* r15)[])
 {
-	uint64 rcx_1876;
-	struct Eq_1153 * rsi_1487;
-	byte * r14_115;
-	byte (* rax_178)[];
-	rdi->ow0020 = 0x00;
+	uint64 rcx_1871;
+	struct Eq_38 * rsi_1482;
+	Eq_1149 r14_115;
+	struct Eq_38 * rax_178;
+	rdi->ow0020 = 0;
 	rdi->t0000 = &rdi->b0010;
 	rdi->qw0008 = 0x00;
 	rdi->b0010 = 0x00;
 	rdi->qw0030 = 0x00;
 	rdi->dw0038 = 0x00;
 	rdi->b003C = 0x00;
-	rdi->ow0040 = 0x00;
-	rdi->ow0050 = 0x00;
+	rdi->ow0040 = 0;
+	rdi->ow0050 = 0;
 	rdi->qw0060 = 0x00;
 	uint64 rcx_100;
-	struct Eq_1198 * rsp_1069;
-	union Eq_1199 * r15_1044;
-	byte * r12_1052;
-	Eq_1201 rbp_1391;
-	union Eq_654 * rbx_1060;
-	uint64 r13_1481;
+	struct Eq_1193 * rsp_1091;
+	Eq_1194 r15_1039;
+	word128 * r12_1047;
+	Eq_1196 rbp_1386;
+	union Eq_653 * rbx_1055;
+	uint64 r13_1476;
 	_ZNSt18condition_variableC1Ev();
-	*((char *) rbx_1060 + 0x0098) = 0x00;
-	*((char *) rbx_1060 + 0x00A0) = 0x00;
-	*((char *) rbx_1060 + 0x00A8) = 0x00;
-	*((char *) rbx_1060 + 0x00B0) = 0x00;
-	*((char *) rbx_1060 + 0x00B8) = 0x00;
-	if (r13_1481 <= 0x09)
+	*((char *) rbx_1055 + 0x0098) = 0x00;
+	*((char *) rbx_1055 + 0x00A0) = 0x00;
+	*((char *) rbx_1055 + 0x00A8) = 0x00;
+	*((char *) rbx_1055 + 0x00B0) = 0x00;
+	*((char *) rbx_1055 + 0x00B8) = 0x00;
+	if (r13_1476 <= 0x09)
 	{
-		rsp_1069[1] = (struct Eq_1198) (rsp_1069 + 6);
-		rsp_1069[4] = (struct Eq_1198) (rsp_1069 + 6);
+		rsp_1091->ptr0008 = (struct Eq_38 *) &rsp_1091->t0030;
+		rsp_1091->ptr0020 = (struct Eq_38 *) &rsp_1091->t0030;
 		goto l0000000000403A76;
 	}
 	else
 	{
-		ptr64 rdi_168;
-		if (r13_1481 <= 99)
+		struct Eq_38 * rdi_168;
+		if (r13_1476 <= 99)
 		{
-			rsp_1069[4] = (struct Eq_1198) (rsp_1069 + 6);
-			rsp_1069[1] = (struct Eq_1198) (rsp_1069 + 6);
-			r14_115 = (byte *) 0x02;
-			rdi_168 = rsp_1069 + 6;
+			rsp_1091->ptr0020 = (struct Eq_38 *) &rsp_1091->t0030;
+			rsp_1091->ptr0008 = (struct Eq_38 *) &rsp_1091->t0030;
+			r14_115.u0 = 0x02;
+			rdi_168 = (struct Eq_38 *) &rsp_1091->t0030;
 			goto l0000000000403976;
 		}
-		if (r13_1481 <= 999)
+		if (r13_1476 <= 999)
 		{
-			rsp_1069[4] = (struct Eq_1198) (rsp_1069 + 6);
-			rsp_1069[1] = (struct Eq_1198) (rsp_1069 + 6);
-			r14_115 = (byte *) 0x03;
-			rdi_168 = rsp_1069 + 6;
+			rsp_1091->ptr0020 = (struct Eq_38 *) &rsp_1091->t0030;
+			rsp_1091->ptr0008 = (struct Eq_38 *) &rsp_1091->t0030;
+			r14_115.u0 = 0x03;
+			rdi_168 = (struct Eq_38 *) &rsp_1091->t0030;
 			goto l0000000000403976;
 		}
-		uint64 rdx_109 = r13_1481;
+		uint64 rdx_109 = r13_1476;
 		word32 esi_103 = 0x01;
-		if (r13_1481 <= 9999)
+		if (r13_1476 <= 9999)
 		{
-			rsp_1069[4] = (struct Eq_1198) (rsp_1069 + 6);
-			rsp_1069[1] = (struct Eq_1198) (rsp_1069 + 6);
-			r14_115 = (byte *) 0x04;
-			rdi_168 = rsp_1069 + 6;
+			rsp_1091->ptr0020 = (struct Eq_38 *) &rsp_1091->t0030;
+			rsp_1091->ptr0008 = (struct Eq_38 *) &rsp_1091->t0030;
+			r14_115.u0 = 0x04;
+			rdi_168 = (struct Eq_38 *) &rsp_1091->t0030;
 			goto l0000000000403976;
 		}
 		do
 		{
 			uint64 rsi_107 = (uint64) (esi_103 + 0x04);
-			uint64 rdx_108 = SLICE(rdx_1888 *128 3777893186295716171, word64, 64);
-			rcx_100 = rdx_1888;
+			uint64 rdx_108 = SLICE(rdx_1883 *128 3777893186295716171, word64, 64);
+			rcx_100 = rdx_1883;
 			uint64 rax_105 = (uint64) esi_103;
 			esi_103 = (word32) rsi_107;
 			rdx_109 = rdx_108 >> 11;
-			if (rdx_1888 <= 99999)
+			if (rdx_1883 <= 99999)
 			{
 				r14_115 = (uint64) esi_103;
 				goto l00000000004031B5;
 			}
-			if (rdx_1888 <= 999999)
+			if (rdx_1883 <= 999999)
 			{
 				r14_115 = (uint64) ((word32) rax_105 + 0x05);
 				goto l00000000004031B5;
 			}
-			if (rdx_1888 <= 9999999)
+			if (rdx_1883 <= 9999999)
 			{
 				r14_115 = (uint64) ((word32) rax_105 + 0x06);
 				goto l00000000004031B5;
 			}
-			rdx_1888 = rdx_109;
-		} while (rdx_1888 > 99999999);
+			rdx_1883 = rdx_109;
+		} while (rdx_1883 > 99999999);
 		r14_115 = (uint64) ((word32) rax_105 + 0x07);
 l00000000004031B5:
-		rsp_1069[1] = (struct Eq_1198) (rsp_1069 + 6);
-		rsp_1069[4] = (struct Eq_1198) (rsp_1069 + 6);
-		if (r14_115 <= (byte *) 0x0F)
+		rsp_1091->ptr0008 = (struct Eq_38 *) &rsp_1091->t0030;
+		rsp_1091->ptr0020 = (struct Eq_38 *) &rsp_1091->t0030;
+		if (r14_115 <= 0x0F)
 		{
-			if (r14_115 == null)
+			if (r14_115 == 0x00)
 			{
-				rsp_1069[5] = (struct Eq_1198) 0x00;
-				rsp_1069[6] = (struct Eq_1198) 0x00;
-				rsi_1487 = (struct Eq_1153 *) (rsp_1069 + 6);
-				rcx_1876 = 0xFFFFFFFF;
+				rsp_1091->t0028.u0 = 0x00;
+				rsp_1091->t0030.u0 = 0x00;
+				rsi_1482 = (struct Eq_38 *) &rsp_1091->t0030;
+				rcx_1871 = 0xFFFFFFFF;
 l00000000004031ED:
-				uint64 rcx_1872 = rcx_1876;
+				uint64 rcx_1867 = rcx_1871;
 				do
 				{
-					uint64 rdx_250 = SLICE((r13_1889 >> 0x02) *128 0x28F5C28F5C28F5C3, word64, 64);
-					uint64 rax_253 = r13_1889 - (rdx_250 >> 0x02) *s 100;
-					word32 ecx_256 = (word32) rcx_1872;
+					uint64 rdx_250 = SLICE((r13_1884 >> 0x02) *128 0x28F5C28F5C28F5C3, word64, 64);
+					uint64 rax_253 = r13_1884 - (rdx_250 >> 0x02) *s 100;
+					word32 ecx_256 = (word32) rcx_1867;
 					byte al_274 = g_a405140[rax_253];
-					rsi_1487[(uint64) ecx_256 /64 2] = g_a405141[rax_253];
-					rsi_1487[(uint64) (ecx_256 - 0x01) /64 2] = (struct Eq_1153) al_274;
-					r13_1481 = rdx_250 >> 0x02;
-					rcx_1872 = (uint64) (ecx_256 - 0x02);
-					r13_1889 = r13_1481;
-				} while (r13_1889 > 9999);
+					rsi_1482[(uint64) ecx_256 /64 0x0068] = g_a405141[rax_253];
+					rsi_1482[(uint64) (ecx_256 - 0x01) /64 0x0068] = (struct Eq_38) al_274;
+					r13_1476 = rdx_250 >> 0x02;
+					rcx_1867 = (uint64) (ecx_256 - 0x02);
+					r13_1884 = r13_1476;
+				} while (r13_1884 > 9999);
 l000000000040324B:
-				Eq_1392 al_293 = (byte) (word32) r13_1481 + 0x30;
-				if (r13_1481 > 0x09)
+				Eq_1387 al_293 = (byte) (word32) r13_1476 + 0x30;
+				if (r13_1476 > 0x09)
 				{
-					rsi_1487->b0001 = (byte) g_a405141[r13_1481];
-					al_293 = g_a405140[r13_1481];
+					rsi_1482->b0001 = (byte) g_a405141[r13_1476];
+					al_293 = g_a405140[r13_1476];
 				}
-				struct Eq_1399 * r13_340;
-				rsi_1487->t0000.u3 = al_293;
-				*((char *) rbx_1060 + 56) = (word64) rsp_1069[5].qw0000 + 1;
-				*((char *) rbx_1060 + 60) = (union Eq_654 *) ((byte) (word32) (uint64) *rsp_1069[4].qw0000 - 0x30);
-				byte * rcx_1020 = (byte *) 0x8888888888888889;
-				struct Eq_1399 * rdx_1000 = (SLICE(rbp_1391 *s 0xEF *128 0x8888888888888889, word64, 64) >> 0x03) + 0x01;
-				if (*rbx_1060 != rsp_1069->qw0000)
-					r13_340 = (struct Eq_1399 *) *((char *) rbx_1060 + 16);
+				struct Eq_1394 * r13_340;
+				rsi_1482->t0000.u5 = al_293;
+				*((char *) rbx_1055 + 56) = (word64) rsp_1091->t0028 + 1;
+				*((char *) rbx_1055 + 60) = (union Eq_653 *) (rsp_1091->ptr0020->t0000 - 0x30);
+				word128 * rcx_1015 = (word128 *) 0x8888888888888889;
+				struct Eq_1394 * rdx_1058 = (SLICE(rbp_1386 *s 0xEF *128 0x8888888888888889, word64, 64) >> 0x03) + 0x01;
+				if (*rbx_1055 != rsp_1091->t0000)
+					r13_340 = (struct Eq_1394 *) *((char *) rbx_1055 + 16);
 				else
-					r13_340 = (struct Eq_1399 *) 0x0F;
-				if (rdx_1000 > r13_340)
+					r13_340 = (struct Eq_1394 *) 0x0F;
+				if (rdx_1058 > r13_340)
 				{
-					struct Eq_1399 * r13_346 = r13_340 * 0x02;
-					if (r13_346 < rdx_1000)
-						r13_346 = rdx_1000;
-					byte * rax_390;
+					struct Eq_1394 * r13_346 = r13_340 * 0x02;
+					if (r13_346 < rdx_1058)
+						r13_346 = rdx_1058;
+					Eq_1149 rax_390;
 					_Znwm();
-					word64 rax_407 = *((char *) rbx_1060 + 8);
-					r15_1044 = (union Eq_1199 *) *rbx_1060;
+					word64 rax_407 = *((char *) rbx_1055 + 8);
+					r15_1039 = *rbx_1055;
 					r14_115 = rax_390;
-					rdx_1000 = rax_407 + 0x01;
+					rdx_1058 = rax_407 + 0x01;
 					if (rax_407 != 0x00)
 					{
 						if (rax_407 != 0x01)
 							memcpy();
 					}
 					else
-						*rax_390 = (byte) *r15_1044;
-					if (r15_1044 != rsp_1069->qw0000)
+						*rax_390 = *r15_1039;
+					if (r15_1039 != rsp_1091->t0000)
 					{
-						word64 rax_445 = *((char *) rbx_1060 + 16);
+						word64 rax_445 = *((char *) rbx_1055 + 16);
 						_ZdlPvm();
 					}
-					*rbx_1060 = (union Eq_654 *) r14_115;
-					*((char *) rbx_1060 + 16) = (union Eq_654 *) r13_340;
+					*rbx_1055 = (union Eq_653 *) r14_115;
+					*((char *) rbx_1055 + 16) = (union Eq_653 *) r13_340;
 				}
-				if (rbp_1391 >> 0x3C != 0x00)
+				if (rbp_1386 >> 0x3C != 0x00)
 				{
 					Eq_32 rdi_505;
 					Eq_32 rsi_510;
@@ -944,395 +952,390 @@ l000000000040324B:
 				}
 				else
 				{
-					struct Eq_1399 * rdi_1399 = *((char *) rbx_1060 + 32);
-					Eq_505 r8_1015 = *((char *) rbx_1060 + 48) - rdi_1399;
-					if (rbp_1391 <= r8_1015 >> 0x03)
+					struct Eq_1394 * rdi_1394 = *((char *) rbx_1055 + 32);
+					Eq_504 r8_1010 = *((char *) rbx_1055 + 48) - rdi_1394;
+					if (rbp_1386 <= r8_1010 >> 0x03)
 					{
-						word64 rbp_1059 = rbp_1391 + r12_1052;
-						word64 * r14_1054 = (word64 *) ~0x1111111111111110;
-						Eq_1526 r13_1053 = 0x1111111111111111;
-						while (r12_1052 < rbp_1059)
+						word64 rbp_1054 = rbp_1386 + r12_1047;
+						word64 * r14_1049 = (word64 *) ~0x1111111111111110;
+						Eq_1518 r13_1048 = 0x1111111111111111;
+						while (r12_1047 < rbp_1054)
 						{
-							uint64 rsi_1878;
-							union Eq_1199 * rdi_1498;
-							byte * rcx_882;
-							union Eq_1199 * rax_775;
-							Eq_1735 rdx_777;
-							union Eq_1199 * rdi_680;
-							uint64 rdx_678;
-							byte rsi_552[];
-							if (r12_1052 *s r14_1054 > r13_1053)
+							uint64 rsi_1873;
+							Eq_1194 rdi_1493;
+							word128 * rcx_878;
+							Eq_1194 rax_771;
+							Eq_751 rdx_773;
+							Eq_1194 rdi_676;
+							Eq_751 rdx_674;
+							Eq_751 rsi_552;
+							if (r12_1047 *s r14_1049 > r13_1048)
 							{
-								if (r12_1052 *s ~0x3333333333333332 > 0x3333333333333333)
+								if (r12_1047 *s ~0x3333333333333332 > 0x3333333333333333)
 								{
-									rdx_1000 = (struct Eq_1399 *) 0x5555555555555555;
-									if (r12_1052 *s ~0x5555555555555554 <= 0x5555555555555555)
+									rdx_1058 = (struct Eq_1394 *) 0x5555555555555555;
+									if (r12_1047 *s ~0x5555555555555554 <= 0x5555555555555555)
 									{
-										rsi_552 = (byte (*)[]) *((char *) rbx_1060 + 8);
+										rsi_552 = *((char *) rbx_1055 + 8);
 										if (0x7FFFFFFFFFFFFFFF - rsi_552 <= 0x04)
 											goto l0000000000403B4E;
-										word64 rax_1191 = *rbx_1060;
-										r15_1044 = (union Eq_1199 *) (rsi_552 + 5);
-										if (rsp_1069->qw0000 != rax_1191)
-											rdx_1000 = (struct Eq_1399 *) *((char *) rbx_1060 + 16);
+										Eq_1194 rax_1185 = *rbx_1055;
+										r15_1039 = (word64) rsi_552 + 5;
+										if (rsp_1091->t0000 != rax_1185)
+											rdx_1058 = (struct Eq_1394 *) *((char *) rbx_1055 + 16);
 										else
-											rdx_1000 = (struct Eq_1399 *) 0x0F;
-										if (rsi_552 + 5 <= rdx_1000)
+											rdx_1058 = (struct Eq_1394 *) 0x0F;
+										if ((word64) rsi_552 + 5 <= rdx_1058)
 										{
-											struct Eq_1675 * rax_1235 = rsi_552 + rax_1191;
-											rax_1235->dw0000 = 0x7A7A6946;
-											rax_1235->b0004 = 0x0A;
+											word64 rax_1227 = rax_1185 + rsi_552;
+											rax_1227->dw0000 = 0x7A7A6946;
+											rax_1227->b0004 = 0x0A;
 										}
 										else
 										{
-											word64 rsi_1880;
-											rcx_1020 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(&g_b40508E, 0x00, rsi_552, rbx_1060, 0x05, rsi_552 + 5, out rdx_1000, out rbx_1060, out rbp_1059, out rsi_1880, out r8_1015, out r12_1052, out r13_1053, out r14_1054, out r15_1044);
-											++rsp_1069;
+											word64 rsi_1875;
+											rcx_1015 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(&g_ow40508E, 0x00, rsi_552, rbx_1055, 0x05, (word64) rsi_552 + 5, out rdx_1058, out rbx_1055, out rbp_1054, out rsi_1875, out r8_1010, out r12_1047, out r13_1048, out r14_1049, out r15_1039);
 										}
 										goto l0000000000403480;
 									}
-									if (r12_1052 > (byte *) 0x09)
+									if (r12_1047 > (word128 *) 0x09)
 									{
-										if (r12_1052 > (byte *) 99)
+										if (r12_1047 > (word128 *) 99)
 										{
-											if (r12_1052 > (byte *) 999)
+											if (r12_1047 > (word128 *) 999)
 											{
-												byte * rdx_688 = r12_1052;
-												word32 esi_1492 = 0x01;
-												if (r12_1052 <= (byte *) 9999)
+												word128 * rdx_684 = r12_1047;
+												word32 esi_1487 = 0x01;
+												if (r12_1047 <= (word128 *) 9999)
 												{
-													r15_1044 = (union Eq_1199 *) (rsp_1069 + 0x0E);
-													rsp_1069[0x0C] = (struct Eq_1198) r15_1044;
-													rdx_678 = 0x04;
-													rdi_680 = r15_1044;
+													r15_1039 = &rsp_1091->t0070;
+													rsp_1091->t0060 = r15_1039;
+													rdx_674.u0 = 0x04;
+													rdi_676 = r15_1039;
 													goto l00000000004038D0;
 												}
 												do
 												{
-													uint64 rsi_703 = (uint64) (esi_1492 + 0x04);
-													rcx_1020 = rdx_1890;
-													uint64 rax_701 = (uint64) esi_1492;
-													esi_1492 = (word32) rsi_703;
-													rdx_688 = SLICE(rdx_1890 *128 3777893186295716171, word64, 64) >> 11;
-													if (rdx_1890 <= (byte *) 99999)
+													uint64 rsi_699 = (uint64) (esi_1487 + 0x04);
+													rcx_1015 = rdx_1885;
+													uint64 rax_697 = (uint64) esi_1487;
+													esi_1487 = (word32) rsi_699;
+													rdx_684 = SLICE(rdx_1885 *128 3777893186295716171, word64, 64) >> 11;
+													if (rdx_1885 <= (word128 *) 99999)
 													{
-														rdx_678 = (uint64) esi_1492;
+														rdx_674 = (uint64) esi_1487;
 														goto l00000000004035F4;
 													}
-													if (rdx_1890 <= (byte *) 999999)
+													if (rdx_1885 <= (word128 *) 999999)
 													{
-														rdx_678 = (uint64) ((word32) rax_701 + 0x05);
+														rdx_674 = (uint64) ((word32) rax_697 + 0x05);
 														goto l00000000004035F4;
 													}
-													if (rdx_1890 <= (byte *) 9999999)
+													if (rdx_1885 <= (word128 *) 9999999)
 													{
-														rdx_678 = (uint64) ((word32) rax_701 + 0x06);
+														rdx_674 = (uint64) ((word32) rax_697 + 0x06);
 														goto l00000000004035F4;
 													}
-													rdx_1890 = rdx_688;
-												} while (rdx_1890 > (byte *) 99999999);
-												rdx_678 = (uint64) ((word32) rax_701 + 0x07);
+													rdx_1885 = rdx_684;
+												} while (rdx_1885 > (word128 *) 99999999);
+												rdx_674 = (uint64) ((word32) rax_697 + 0x07);
 l00000000004035F4:
-												r15_1044 = (union Eq_1199 *) (rsp_1069 + 0x0E);
-												rsp_1069[0x0C] = (struct Eq_1198) r15_1044;
-												if (rdx_678 <= 0x0F)
+												r15_1039 = &rsp_1091->t0070;
+												rsp_1091->t0060 = r15_1039;
+												if (rdx_674 <= 0x0F)
 												{
-													if (rdx_678 == 0x00)
+													if (rdx_674 == 0x00)
 													{
-														rsp_1069[0x0D] = (struct Eq_1198) 0x00;
-														rsp_1069[0x0E] = (struct Eq_1198) 0x00;
-														rdi_1498 = r15_1044;
-														rsi_1878 = 0xFFFFFFFF;
+														rsp_1091->t0068.u0 = 0x00;
+														rsp_1091->t0070.u0 = 0x00;
+														rdi_1493 = r15_1039;
+														rsi_1873 = 0xFFFFFFFF;
 														goto l0000000000403627;
 													}
-													if (rdx_678 == 0x01)
+													if (rdx_674 == 0x01)
 														goto l0000000000403A4A;
 													goto l0000000000403B58;
 												}
-												rsp_1069[3] = (struct Eq_1198) rdx_678;
-												union Eq_1199 * rax_750;
+												rsp_1091->t0018 = rdx_674;
+												Eq_1194 rax_746;
 												_Znwm();
-												rdx_678 = (uint64) rsp_1069[3];
-												rsp_1069[0x0C] = (struct Eq_1198) rax_750;
-												rsp_1069[0x0E] = (struct Eq_1198) rdx_678;
-												rdi_680 = rax_750;
+												rdx_674 = rsp_1091->t0018;
+												rsp_1091->t0060 = rax_746;
+												rsp_1091->t0070 = rdx_674;
+												rdi_676 = rax_746;
 											}
 											else
 											{
-												r15_1044 = (union Eq_1199 *) (rsp_1069 + 0x0E);
-												rsp_1069[0x0C] = (struct Eq_1198) r15_1044;
-												rdx_678 = 0x03;
-												rdi_680 = r15_1044;
+												r15_1039 = &rsp_1091->t0070;
+												rsp_1091->t0060 = r15_1039;
+												rdx_674.u0 = 0x03;
+												rdi_676 = r15_1039;
 											}
 										}
 										else
 										{
-											r15_1044 = (union Eq_1199 *) (rsp_1069 + 0x0E);
-											rsp_1069[0x0C] = (struct Eq_1198) r15_1044;
-											rdx_678 = 0x02;
-											rdi_680 = r15_1044;
+											r15_1039 = &rsp_1091->t0070;
+											rsp_1091->t0060 = r15_1039;
+											rdx_674.u0 = 0x02;
+											rdi_676 = r15_1039;
 										}
 										goto l00000000004038D0;
 									}
-									r15_1044 = (union Eq_1199 *) (rsp_1069 + 0x0E);
-									rsp_1069[0x0C] = (struct Eq_1198) r15_1044;
+									r15_1039 = &rsp_1091->t0070;
+									rsp_1091->t0060 = r15_1039;
 l0000000000403A4A:
-									rsp_1069[0x0E] = (struct Eq_1198) 0x00;
-									rax_775 = r15_1044;
-									rdx_777.u1 = 0x01;
+									rsp_1091->t0070.u0 = 0x00;
+									rax_771 = r15_1039;
+									rdx_773.u0 = 0x01;
 									goto l00000000004038E6;
 								}
-								rsi_552 = (byte (*)[]) *((char *) rbx_1060 + 8);
+								rsi_552 = *((char *) rbx_1055 + 8);
 								if (0x7FFFFFFFFFFFFFFF - rsi_552 <= 0x04)
 									goto l0000000000403B4E;
-								int64 rax_617 = *rbx_1060;
-								r15_1044 = (union Eq_1199 *) (rsi_552 + 5);
-								if (rsp_1069->qw0000 != rax_617)
-									rdx_1000 = (struct Eq_1399 *) *((char *) rbx_1060 + 16);
+								Eq_1194 rax_615 = *rbx_1055;
+								r15_1039 = (word64) rsi_552 + 5;
+								if (rsp_1091->t0000 != rax_615)
+									rdx_1058 = (struct Eq_1394 *) *((char *) rbx_1055 + 16);
 								else
-									rdx_1000 = (struct Eq_1399 *) 0x0F;
-								if (rsi_552 + 5 <= rdx_1000)
+									rdx_1058 = (struct Eq_1394 *) 0x0F;
+								if ((word64) rsi_552 + 5 <= rdx_1058)
 								{
-									struct Eq_1855 * rax_661 = rsi_552 + rax_617;
-									rax_661->dw0000 = 0x7A7A7542;
-									rax_661->b0004 = 0x0A;
+									word64 rax_657 = rax_615 + rsi_552;
+									rax_657->dw0000 = 0x7A7A7542;
+									rax_657->b0004 = 0x0A;
 								}
 								else
 								{
-									word64 rsi_1881;
-									rcx_1020 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(&g_b405088, 0x00, rsi_552, rbx_1060, 0x05, rsi_552 + 5, out rdx_1000, out rbx_1060, out rbp_1059, out rsi_1881, out r8_1015, out r12_1052, out r13_1053, out r14_1054, out r15_1044);
-									++rsp_1069;
+									word64 rsi_1876;
+									rcx_1015 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(&g_ow405088, 0x00, rsi_552, rbx_1055, 0x05, (word64) rsi_552 + 5, out rdx_1058, out rbx_1055, out rbp_1054, out rsi_1876, out r8_1010, out r12_1047, out r13_1048, out r14_1049, out r15_1039);
 								}
 								goto l0000000000403480;
 							}
-							rsi_552 = (byte (*)[]) *((char *) rbx_1060 + 8);
+							rsi_552 = *((char *) rbx_1055 + 8);
 							if (0x7FFFFFFFFFFFFFFF - rsi_552 > 0x08)
 							{
-								int64 rax_557 = *rbx_1060;
-								r15_1044 = (union Eq_1199 *) (rsi_552 + 9);
-								if (rsp_1069->qw0000 != rax_557)
-									rdx_1000 = (struct Eq_1399 *) *((char *) rbx_1060 + 16);
+								Eq_1194 rax_557 = *rbx_1055;
+								r15_1039 = (word64) rsi_552 + 9;
+								if (rsp_1091->t0000 != rax_557)
+									rdx_1058 = (struct Eq_1394 *) *((char *) rbx_1055 + 16);
 								else
-									rdx_1000 = (struct Eq_1399 *) 0x0F;
-								if (rsi_552 + 9 <= rdx_1000)
+									rdx_1058 = (struct Eq_1394 *) 0x0F;
+								if ((word64) rsi_552 + 9 <= rdx_1058)
 								{
-									struct Eq_2225 * rax_602 = rsi_552 + rax_557;
-									rax_602->qw0000 = 0x7A7A75427A7A6946;
-									rax_602->b0008 = 0x0A;
+									word64 rax_600 = rax_557 + rsi_552;
+									rax_600->qw0000 = 0x7A7A75427A7A6946;
+									rax_600->b0008 = 0x0A;
 								}
 								else
 								{
-									word64 rsi_1887;
-									rcx_1020 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(&g_b405084, 0x00, rsi_552, rbx_1060, 0x09, rsi_552 + 9, out rdx_1000, out rbx_1060, out rbp_1059, out rsi_1887, out r8_1015, out r12_1052, out r13_1053, out r14_1054, out r15_1044);
-									++rsp_1069;
+									word64 rsi_1882;
+									rcx_1015 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(&g_ow405084, 0x00, rsi_552, rbx_1055, 0x09, (word64) rsi_552 + 9, out rdx_1058, out rbx_1055, out rbp_1054, out rsi_1882, out r8_1010, out r12_1047, out r13_1048, out r14_1049, out r15_1039);
 								}
 l0000000000403480:
-								*((char *) rbx_1060 + 8) = (union Eq_654 *) r15_1044;
-								Mem1243[Mem1241[rbx_1060 + 0x00:word64] + r15_1044:byte] = 0x00;
+								*((char *) rbx_1055 + 8) = (union Eq_653 *) r15_1039;
+								Mem1235[Mem1233[rbx_1055 + 0x00:word64] + r15_1039:byte] = 0x00;
 							}
 							else
 							{
 l0000000000403B4E:
 								_ZSt20__throw_length_errorPKc();
 l0000000000403B58:
-								rdi_680 = r15_1044;
+								rdi_676 = r15_1039;
 l00000000004038D0:
-								rsp_1069[3] = (struct Eq_1198) rdx_678;
+								rsp_1091->t0018 = rdx_674;
 								memset();
-								rax_775 = (union Eq_1199 *) rsp_1069[0x0C];
-								rdx_777 = rsp_1069[3];
+								rax_771 = rsp_1091->t0060;
+								rdx_773 = rsp_1091->t0018;
 l00000000004038E6:
-								rsp_1069[0x0D] = (struct Eq_1198) rdx_777;
-								Mem876[rax_775 + rdx_777:byte] = 0x00;
-								rdi_1498 = (union Eq_1199 *) rsp_1069[0x0C];
-								rcx_882 = r12_1052;
-								rsi_1878 = (uint64) (rsp_1069[0x0D] - 0x01);
-								if (r12_1052 > (byte *) 99)
+								rsp_1091->t0068 = rdx_773;
+								Mem872[rax_771 + rdx_773:byte] = 0x00;
+								rdi_1493 = rsp_1091->t0060;
+								rcx_878 = r12_1047;
+								rsi_1873 = (uint64) (rsp_1091->t0068 - 0x01);
+								if (r12_1047 > (word128 *) 99)
 								{
 l0000000000403627:
-									rcx_882 = r12_1052;
-									uint64 rsi_1874 = rsi_1878;
+									rcx_878 = r12_1047;
+									uint64 rsi_1869 = rsi_1873;
 									do
 									{
-										uint64 rdx_897 = SLICE((rcx_1891 >> 0x02) *128 0x28F5C28F5C28F5C3, word64, 64);
-										uint64 rax_900 = rcx_1891 - (rdx_897 >> 0x02) *s 100;
-										word32 esi_903 = (word32) rsi_1874;
-										byte al_921 = g_a405140[rax_900];
-										*((char *) rdi_1498 + (uint64) esi_903) = (union Eq_1199 *) g_a405141[rax_900];
-										*((char *) rdi_1498 + (uint64) (esi_903 - 0x01)) = (union Eq_1199 *) al_921;
-										rcx_882 = rdx_897 >> 0x02;
-										rsi_1874 = (uint64) (esi_903 - 0x02);
-										rcx_1891 = rcx_882;
-									} while (rcx_1891 > (byte *) 9999);
+										uint64 rdx_893 = SLICE((rcx_1886 >> 0x02) *128 0x28F5C28F5C28F5C3, word64, 64);
+										uint64 rax_896 = rcx_1886 - (rdx_893 >> 0x02) *s 100;
+										word32 esi_899 = (word32) rsi_1869;
+										byte al_917 = g_a405140[rax_896];
+										*((word64) rdi_1493 + (uint64) esi_899) = g_a405141[rax_896];
+										*((word64) rdi_1493 + (uint64) (esi_899 - 0x01)) = al_917;
+										rcx_878 = rdx_893 >> 0x02;
+										rsi_1869 = (uint64) (esi_899 - 0x02);
+										rcx_1886 = rcx_878;
+									} while (rcx_1886 > (word128 *) 9999);
 								}
-								byte al_940 = (byte) (word32) rcx_882 + 0x30;
-								if (rcx_882 > (byte *) 0x09)
+								byte al_936 = (byte) (word32) rcx_878 + 0x30;
+								if (rcx_878 > (word128 *) 0x09)
 								{
-									*((char *) rdi_1498 + 1) = (union Eq_1199 *) g_a405141[rcx_882];
-									al_940 = (byte) g_a405140[rcx_882];
+									*((word64) rdi_1493 + 1) = g_a405141[rcx_878];
+									al_936 = (byte) g_a405140[rcx_878];
 								}
-								*rdi_1498 = (union Eq_1199 *) al_940;
-								++rsp_1069;
-								word64 rsi_1884;
-								word64 r8_1885;
-								word64 rcx_1882;
-								word64 rdx_1883;
-								struct Eq_1025 * rax_985 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14_M_replace_auxEmmmc(0x01, 0x00, rbx_1060, rbp_1059, rsp_1069[0x0D], rsp_1069 + 0x0C, 0x0A, r12_1052, r14_1054, out rcx_1882, out rdx_1883, out rbx_1060, out rbp_1059, out rsi_1884, out r8_1885, out r12_1052, out r13_1053, out r14_1054);
-								rsp_1069[8] = (struct Eq_1198) (rsp_1069 + 0x0A);
-								word128 * r9_1070 = rsp_1069 + 0x0A;
-								word128 * rcx_999 = rax_985->ptr0000;
-								rdx_1000 = (struct Eq_1399 *) &rax_985->t0010;
-								if (rcx_999 != &rax_985->t0010)
+								*rdi_1493 = al_936;
+								word64 rsi_1879;
+								word64 r8_1880;
+								word64 rcx_1877;
+								word64 rdx_1878;
+								struct Eq_1022 * rax_981 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14_M_replace_auxEmmmc(0x01, 0x00, rbx_1055, rbp_1054, rsp_1091->t0068, &rsp_1091->t0060, 0x0A, r12_1047, r14_1049, out rcx_1877, out rdx_1878, out rbx_1055, out rbp_1054, out rsi_1879, out r8_1880, out r12_1047, out r13_1048, out r14_1049);
+								word128 * r9_1064 = &rsp_1091->t0050;
+								rsp_1091->ptr0040 = r9_1064;
+								word128 * rcx_994 = rax_981->ptr0000;
+								rdx_1058 = (struct Eq_1394 *) &rax_981->t0010;
+								if (rcx_994 != &rax_981->t0010)
 								{
-									rsp_1069[8] = (struct Eq_1198) rcx_999;
-									rsp_1069[0x0A] = (struct Eq_1198) rax_985->t0010;
+									rsp_1091->ptr0040 = rcx_994;
+									rsp_1091->t0050 = rax_981->t0010;
 								}
 								else
-									rsp_1069[0x0A] = (struct Eq_1198) rax_985->t0010;
-								union Eq_1161 * rax_1026;
-								word64 rcx_1010 = rax_985->qw0008;
-								rax_985->t0010.u0 = 0x00;
-								rsp_1069[9] = (struct Eq_1198) rcx_1010;
-								rax_985->qw0008 = 0x00;
-								r8_1015 = rsp_1069[9];
-								byte (* rsi_1017)[] = *((char *) rbx_1060 + 8);
-								rax_985->ptr0000 = (word128 *) &rax_985->t0010;
-								rcx_1020 = (byte *) rsp_1069[8];
-								int64 rdi_1021 = *rbx_1060;
-								word64 r10_1022 = r8_1015 + rsi_1017;
-								if (rsp_1069->qw0000 != rdi_1021)
-									rax_1026 = (union Eq_1161 *) *((char *) rbx_1060 + 16);
+									rsp_1091->t0050 = rax_981->t0010;
+								Eq_751 rax_1021;
+								Eq_504 rcx_1005 = rax_981->t0008;
+								rax_981->t0010.u0 = 0x00;
+								rsp_1091->t0048 = rcx_1005;
+								rax_981->t0008.u0 = 0x00;
+								r8_1010 = rsp_1091->t0048;
+								Eq_751 rsi_1012 = *((char *) rbx_1055 + 8);
+								rax_981->ptr0000 = (word128 *) &rax_981->t0010;
+								rcx_1015 = rsp_1091->ptr0040;
+								Eq_1194 rdi_1016 = *rbx_1055;
+								word64 r10_1017 = r8_1010 + rsi_1012;
+								if (rsp_1091->t0000 != rdi_1016)
+									rax_1021 = *((char *) rbx_1055 + 16);
 								else
-									rax_1026 = (union Eq_1161 *) 0x0F;
-								if (r10_1022 <= rax_1026)
+									rax_1021.u0 = 0x0F;
+								if (r10_1017 <= rax_1021)
 								{
-									if (r8_1015 != 0x00)
+									if (r8_1010 != 0x00)
 									{
-										byte * rdi_1077 = rsi_1017 + rdi_1021;
-										if (r8_1015 != 0x01)
+										word64 rdi_1071 = rdi_1016 + rsi_1012;
+										if (r8_1010 != 0x01)
 										{
-											rsp_1069[3] = (struct Eq_1198) r10_1022;
+											rsp_1091->t0018 = r10_1017;
 											memcpy();
-											r9_1070 = (word128 *) (rsp_1069 + 0x0A);
-											rdi_1021 = *rbx_1060;
-											r10_1022 = (union Eq_1161 *) rsp_1069[3];
+											r9_1064 = (word128 *) &rsp_1091->t0050;
+											rdi_1016 = *rbx_1055;
+											r10_1017 = rsp_1091->t0018;
 										}
 										else
 										{
-											*rdi_1077 = *rcx_1020;
-											rdi_1021 = *rbx_1060;
+											*rdi_1071 = *rcx_1015;
+											rdi_1016 = *rbx_1055;
 										}
 									}
 								}
 								else
 								{
-									rsp_1069[3] = (struct Eq_1198) r10_1022;
-									word64 rsi_1886;
-									rcx_1020 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(rcx_1020, 0x00, rsi_1017, rbx_1060, r8_1015, r15_1044, out rdx_1000, out rbx_1060, out rbp_1059, out rsi_1886, out r8_1015, out r12_1052, out r13_1053, out r14_1054, out r15_1044);
-									++rsp_1069;
-									r9_1070 = (word128 *) (rsp_1069 + 11);
-									rdi_1021 = *rbx_1060;
-									r10_1022 = (union Eq_1161 *) rsp_1069[4];
+									rsp_1091->t0018 = r10_1017;
+									word64 rsi_1881;
+									rcx_1015 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(rcx_1015, 0x00, rsi_1012, rbx_1055, r8_1010, r15_1039, out rdx_1058, out rbx_1055, out rbp_1054, out rsi_1881, out r8_1010, out r12_1047, out r13_1048, out r14_1049, out r15_1039);
+									r9_1064 = (word128 *) &rsp_1091->t0050;
+									rdi_1016 = *rbx_1055;
+									r10_1017 = rsp_1091->t0018;
 								}
-								*((char *) rbx_1060 + 8) = (union Eq_654 *) r10_1022;
-								*((char *) r10_1022 + rdi_1021) = (union Eq_1161 *) 0x00;
-								word128 * rdi_1124 = rsp_1069[8];
-								if (rdi_1124 != r9_1070)
+								*((char *) rbx_1055 + 8) = (union Eq_653 *) r10_1017;
+								Mem1116[rdi_1016 + r10_1017:byte] = 0x00;
+								word128 * rdi_1118 = rsp_1091->ptr0040;
+								if (rdi_1118 != r9_1064)
 								{
-									Eq_2091 rax_1130 = rsp_1069[0x0A];
+									Eq_1939 rax_1124 = rsp_1091->t0050;
 									_ZdlPvm();
 								}
-								union Eq_1199 * rdi_1160 = rsp_1069[0x0C];
-								if (rdi_1160 != r15_1044)
+								Eq_1194 rdi_1154 = rsp_1091->t0060;
+								if (rdi_1154 != r15_1039)
 								{
-									word64 rax_1164 = rsp_1069[0x0E];
+									Eq_751 rax_1158 = rsp_1091->t0070;
 									_ZdlPvm();
 								}
 							}
-							word64 rax_1247 = Mem1245[rbx_1060 + 0x08:word64] + Mem1245[rbx_1060 + 0x00:word64];
-							word64 * rsi_1248 = *((char *) rbx_1060 + 40);
-							rsp_1069[0x0C] = (struct Eq_1198) rax_1247;
-							if (rsi_1248 != *((char *) rbx_1060 + 48))
+							word64 rax_1239 = Mem1237[rbx_1055 + 0x08:word64] + Mem1237[rbx_1055 + 0x00:word64];
+							word64 * rsi_1240 = *((char *) rbx_1055 + 40);
+							rsp_1091->t0060 = rax_1239;
+							if (rsi_1240 != *((char *) rbx_1055 + 48))
 							{
-								*rsi_1248 = rax_1247;
-								*((char *) rbx_1060 + 40) = (union Eq_654 *) (rsi_1248 + 1);
-								++r12_1052;
-								if (rbp_1059 <= r12_1052)
+								*rsi_1240 = (word64) rax_1239;
+								*((char *) rbx_1055 + 40) = (union Eq_653 *) (rsi_1240 + 1);
+								r12_1047 = (word128 *) ((char *) r12_1047 + 1);
+								if (rbp_1054 <= r12_1047)
 									break;
 								continue;
 							}
-							rcx_1020 = _ZNSt6vectorIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESaIS9_EE17_M_realloc_insertIJS9_EEEvNS1_IPS9_SB_EEDpOT_(rsp_1069 + 0x0C, rbx_1060, rbp_1059, rsi_1248, rsp_1069[2], r8_1015, r13_1053, r14_1054, out rdx_1000, out rbx_1060, out rbp_1059, out r8_1015, out r12_1052, out r13_1053, out r14_1054, out r15_1044);
+							rcx_1015 = _ZNSt6vectorIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESaIS9_EE17_M_realloc_insertIJS9_EEEvNS1_IPS9_SB_EEDpOT_(&rsp_1091->t0060, rbx_1055, rbp_1054, rsi_1240, rsp_1091->ptr0010, r8_1010, r13_1048, r14_1049, out rdx_1058, out rbx_1055, out rbp_1054, out r8_1010, out r12_1047, out r13_1048, out r14_1049, out r15_1039);
 						}
-						struct Eq_38 * rdi_1316 = rsp_1069[4];
-						*((char *) rbx_1060 + 0x00A8) = *rbx_1060;
-						if (rdi_1316 != rsp_1069[1])
+						struct Eq_38 * rdi_1311 = rsp_1091->ptr0020;
+						*((char *) rbx_1055 + 0x00A8) = *rbx_1055;
+						if (rdi_1311 != rsp_1091->ptr0008)
 						{
-							Eq_1740 rax_1320 = rsp_1069[6];
+							Eq_1294 rax_1315 = rsp_1091->t0030;
 							_ZdlPvm();
 						}
-						return rdi_1316;
+						return rdi_1311;
 					}
 					else
 					{
-						struct Eq_1399 * rsi_1371 = *((char *) rbx_1060 + 40);
-						ui64 r14_1372 = rbp_1391 * 0x08;
-						struct Eq_1536 * r15_1374 = null;
-						word64 r13_1376 = rsi_1371 - rdi_1399;
-						if (rbp_1391 != 0x00)
+						struct Eq_1394 * rsi_1366 = *((char *) rbx_1055 + 40);
+						ui64 r14_1367 = rbp_1386 * 0x08;
+						struct Eq_1528 * r15_1369 = null;
+						word64 r13_1371 = rsi_1366 - rdi_1394;
+						if (rbp_1386 != 0x00)
 						{
-							struct Eq_1536 * rax_1386;
+							struct Eq_1528 * rax_1381;
 							_Znwm();
-							rdi_1399 = (struct Eq_1399 *) *((char *) rbx_1060 + 32);
-							rsi_1371 = (struct Eq_1399 *) *((char *) rbx_1060 + 40);
-							r15_1374 = rax_1386;
-							r8_1015 = *((char *) rbx_1060 + 48) - rdi_1399;
+							rdi_1394 = (struct Eq_1394 *) *((char *) rbx_1055 + 32);
+							rsi_1366 = (struct Eq_1394 *) *((char *) rbx_1055 + 40);
+							r15_1369 = rax_1381;
+							r8_1010 = *((char *) rbx_1055 + 48) - rdi_1394;
 						}
-						if (rdi_1399 != rsi_1371)
+						if (rdi_1394 != rsi_1366)
 						{
-							struct Eq_1536 * rax_1411 = r15_1374;
-							rdx_1000 = rdi_1399;
-							struct Eq_1536 * rsi_1413 = r15_1374 + (rsi_1371 - rdi_1399) /64 8;
+							struct Eq_1528 * rax_1406 = r15_1369;
+							rdx_1058 = rdi_1394;
+							struct Eq_1528 * rsi_1408 = r15_1369 + (rsi_1366 - rdi_1394) /64 8;
 							do
 							{
-								rcx_1020 = rdx_1000->qw0000;
-								++rax_1411;
-								rax_1411->qwFFFFFFF8 = rcx_1020;
-								rdx_1000 += 8;
-							} while (rax_1411 != rsi_1413);
+								rcx_1015 = rdx_1058->qw0000;
+								++rax_1406;
+								rax_1406->qwFFFFFFF8 = rcx_1015;
+								rdx_1058 += 8;
+							} while (rax_1406 != rsi_1408);
 						}
-						if (rdi_1399 != null)
+						if (rdi_1394 != null)
 							_ZdlPvm();
 					}
 				}
 			}
-			if (r14_115 == (byte *) 0x01)
+			if (r14_115 == 0x01)
 			{
 l0000000000403A76:
-				rax_178 = (byte (*)[]) rsp_1069[1];
-				rsp_1069[6] = (struct Eq_1198) 0x00;
-				r14_115 = (byte *) 0x01;
+				rax_178 = rsp_1091->ptr0008;
+				rsp_1091->t0030.u0 = 0x00;
+				r14_115.u0 = 0x01;
 				goto l0000000000403985;
 			}
-			rdi_168 = (ptr64) rsp_1069[1];
+			rdi_168 = rsp_1091->ptr0008;
 		}
 		else
 		{
-			struct Eq_1329 * rsp_149;
-			ptr64 rax_154;
+			struct Eq_1324 * rsp_149;
+			struct Eq_38 * rax_154;
 			_Znwm();
-			rsp_149->ptr0030 = r14_115;
+			rsp_149->t0030 = r14_115;
 			rsp_149->ptr0020 = rax_154;
 			rdi_168 = rax_154;
 		}
 l0000000000403976:
 		memset();
-		rax_178 = (byte (*)[]) rsp_1069[4];
+		rax_178 = rsp_1091->ptr0020;
 l0000000000403985:
-		rsp_1069[5] = (struct Eq_1198) r14_115;
+		rsp_1091->t0028 = r14_115;
 		Mem232[rax_178 + r14_115:byte] = 0x00;
-		rsi_1487 = (struct Eq_1153 *) rsp_1069[4];
-		rcx_1876 = (uint64) (rsp_1069[5] - 0x01);
-		if (r13_1481 <= 99)
+		rsi_1482 = rsp_1091->ptr0020;
+		rcx_1871 = (uint64) (rsp_1091->t0028 - 0x01);
+		if (r13_1476 <= 99)
 			goto l000000000040324B;
 		goto l00000000004031ED;
 	}
@@ -1347,7 +1350,7 @@ Eq_32 _ZNSt7__cxx119to_stringEm(Eq_32 rsi, Eq_32 rdi)
 	uint64 rcx_147;
 	Eq_32 rsi_107;
 	Eq_32 rax_101;
-	Eq_2269 rbp_104;
+	Eq_2250 rbp_104;
 	Eq_32 r12_120 = rdi;
 	Eq_32 rdi_11 = (word64) rdi + 16;
 	Eq_32 rbx_122 = rsi;
@@ -1358,7 +1361,7 @@ Eq_32 _ZNSt7__cxx119to_stringEm(Eq_32 rsi, Eq_32 rdi)
 	}
 	else
 	{
-		Eq_2281 rbp_112;
+		Eq_2262 rbp_112;
 		if (rsi <= 99)
 		{
 			*rdi = (word64) rdi + 16;
@@ -1429,7 +1432,7 @@ l0000000000403C32:
 					rbx_309 = rbx_122;
 				} while (rbx_309 > 9999);
 l0000000000403C8B:
-				Eq_2420 al_203 = (byte) (word32) rbx_122 + 0x30;
+				Eq_2401 al_203 = (byte) (word32) rbx_122 + 0x30;
 				if (rbx_122 > 0x09)
 				{
 					*((word64) rsi_107 + 1) = g_a405141[rbx_122];
@@ -1474,22 +1477,22 @@ l0000000000403CE3:
 	}
 }
 
-// 0000000000403D90: void _ZNSt6vectorISt10unique_ptrI6workerSt14default_deleteIS1_EESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_(Register (ptr64 word64) rdx, Register word64 rbx, Register (ptr64 Eq_2464) rsi, Register (ptr64 Eq_2465) rdi, Register word64 r12, Register word64 r13, Register word64 r14)
-void _ZNSt6vectorISt10unique_ptrI6workerSt14default_deleteIS1_EESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_(word64 * rdx, word64 rbx, union Eq_2464 * rsi, struct Eq_2465 * rdi, word64 r12, word64 r13, word64 r14)
+// 0000000000403D90: void _ZNSt6vectorISt10unique_ptrI6workerSt14default_deleteIS1_EESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_(Register (ptr64 word64) rdx, Register word64 rbx, Register (ptr64 Eq_2445) rsi, Register (ptr64 Eq_2446) rdi, Register word64 r12, Register word64 r13, Register word64 r14)
+void _ZNSt6vectorISt10unique_ptrI6workerSt14default_deleteIS1_EESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_(word64 * rdx, word64 rbx, union Eq_2445 * rsi, struct Eq_2446 * rdi, word64 r12, word64 r13, word64 r14)
 {
-	union Eq_2464 * r15_133 = rdi->ptr0008;
-	union Eq_2464 * rbp_138 = rdi->ptr0000;
+	union Eq_2445 * r15_133 = rdi->ptr0008;
+	union Eq_2445 * rbp_138 = rdi->ptr0000;
 	int64 rcx_27 = r15_133 - rbp_138;
 	if (rcx_27 >> 0x03 == 0xFFFFFFFFFFFFFFF)
 	{
 		word64 r14_35;
 		word64 r13_37;
-		Eq_316 r12_38;
-		Eq_323 rbx_40;
-		struct Eq_564 * rdi_41;
-		union Eq_453 * rsi_43;
+		Eq_315 r12_38;
+		Eq_322 rbx_40;
+		struct Eq_563 * rdi_41;
+		union Eq_452 * rsi_43;
 		word64 * rdx_44;
-		Eq_505 r8_45;
+		Eq_504 r8_45;
 		_ZSt20__throw_length_errorPKc();
 		word64 r15_312;
 		word64 r14_311;
@@ -1499,17 +1502,17 @@ void _ZNSt6vectorISt10unique_ptrI6workerSt14default_deleteIS1_EESaIS4_EE17_M_rea
 		_ZNSt6vectorISt10unique_ptrISt6threadSt14default_deleteIS1_EESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_(rdx_44, rbx_40, rsi_43, rdi_41, r8_45, r12_38, r13_37, r14_35, out rbp_308, out r12_309, out r13_310, out r14_311, out r15_312);
 		return;
 	}
-	Eq_2493 rax_70 = 0x01;
-	union Eq_2464 * r13_136 = rsi;
+	Eq_2474 rax_70 = 0x01;
+	union Eq_2445 * r13_136 = rsi;
 	word64 * rsi_150 = rdx;
 	if (rcx_27 >> 0x03 != 0x00)
 		rax_70 = rcx_27 >> 0x03;
 	uint64 r12_152;
 	word64 * rcx_154;
-	struct Eq_2502 * rbx_151;
+	struct Eq_2483 * rbx_151;
 	ui64 r12_105;
 	uint64 rax_103 = (word64) rax_70 + (rcx_27 >> 0x03);
-	struct Eq_2465 * r14_134 = rdi;
+	struct Eq_2446 * r14_134 = rdi;
 	word64 * r8_149 = rsi - rbp_138;
 	uint64 rdx_100 = (uint64) (int8) (rax_103 < 0x00);
 	if (rdx_100 == 0x00)
@@ -1528,8 +1531,8 @@ void _ZNSt6vectorISt10unique_ptrI6workerSt14default_deleteIS1_EESaIS4_EE17_M_rea
 	}
 	else
 		r12_105 = 0x7FFFFFFFFFFFFFF8;
-	struct Eq_2623 * rsp_132;
-	struct Eq_2502 * rax_135;
+	struct Eq_2604 * rsp_132;
+	struct Eq_2483 * rax_135;
 	word64 r12_137;
 	_Znwm();
 	r8_149 = rsp_132->ptr0000;
@@ -1547,7 +1550,7 @@ l0000000000403E01:
 		if (rbx_151 != (char *) rbp_138 + 8 && rcx_178 > (word64 *) 0x18)
 		{
 			uint64 rdx_200 = rcx_178 - 0x08 >> 0x03;
-			Eq_2556 rax_202 = 0x00;
+			Eq_2537 rax_202 = 0x00;
 			uint64 rsi_205 = rdx_200 + 0x01 >> 0x01;
 			do
 			{
@@ -1563,13 +1566,13 @@ l0000000000403E01:
 		else
 		{
 			word64 rdi_186 = rbx_151 + rcx_178;
-			union Eq_2464 * rdx_188 = rbp_138;
-			struct Eq_2502 * rax_189 = rbx_151;
+			union Eq_2445 * rdx_188 = rbp_138;
+			struct Eq_2483 * rax_189 = rbx_151;
 			do
 			{
 				++rax_189;
 				rax_189->qwFFFFFFF8 = *rdx_188;
-				rdx_188 = (union Eq_2464 *) ((char *) rdx_188 + 8);
+				rdx_188 = (union Eq_2445 *) ((char *) rdx_188 + 8);
 			} while (rax_189 != rdi_186);
 		}
 		rcx_154 = rbx_151 + 0x08 + rcx_178;
@@ -1581,31 +1584,31 @@ l0000000000403E01:
 	}
 }
 
-// 0000000000403F80: Register Eq_323 _ZNSt6vectorISt10unique_ptrISt6threadSt14default_deleteIS1_EESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_(Register (ptr64 word64) rdx, Register Eq_323 rbx, Register (ptr64 Eq_453) rsi, Register (ptr64 Eq_564) rdi, Register Eq_505 r8, Register Eq_316 r12, Register word64 r13, Register word64 r14, Register out ptr64 rbpOut, Register out (ptr64 Eq_570) r12Out, Register out ptr64 r13Out, Register out ptr64 r14Out, Register out ptr64 r15Out)
+// 0000000000403F80: Register Eq_322 _ZNSt6vectorISt10unique_ptrISt6threadSt14default_deleteIS1_EESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_(Register (ptr64 word64) rdx, Register Eq_322 rbx, Register (ptr64 Eq_452) rsi, Register (ptr64 Eq_563) rdi, Register Eq_504 r8, Register Eq_315 r12, Register word64 r13, Register word64 r14, Register out ptr64 rbpOut, Register out (ptr64 Eq_569) r12Out, Register out ptr64 r13Out, Register out ptr64 r14Out, Register out ptr64 r15Out)
 // Called from:
 //      main
 //      _ZNSt6vectorISt10unique_ptrI6workerSt14default_deleteIS1_EESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_
-Eq_323 _ZNSt6vectorISt10unique_ptrISt6threadSt14default_deleteIS1_EESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_(word64 * rdx, Eq_323 rbx, union Eq_453 * rsi, struct Eq_564 * rdi, Eq_505 r8, Eq_316 r12, word64 r13, word64 r14, ptr64 & rbpOut, struct Eq_570 & r12Out, ptr64 & r13Out, ptr64 & r14Out, ptr64 & r15Out)
+Eq_322 _ZNSt6vectorISt10unique_ptrISt6threadSt14default_deleteIS1_EESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_(word64 * rdx, Eq_322 rbx, union Eq_452 * rsi, struct Eq_563 * rdi, Eq_504 r8, Eq_315 r12, word64 r13, word64 r14, ptr64 & rbpOut, struct Eq_569 & r12Out, ptr64 & r13Out, ptr64 & r14Out, ptr64 & r15Out)
 {
-	union Eq_453 * r15_130 = rdi->ptr0008;
-	union Eq_453 * rbp_135 = rdi->ow0000;
+	union Eq_452 * r15_130 = rdi->ptr0008;
+	union Eq_452 * rbp_135 = rdi->ow0000;
 	int64 rax_27 = r15_130 - rbp_135;
 	if (rax_27 >> 0x03 == 0xFFFFFFFFFFFFFFF)
 	{
 		word64 * r14_35;
-		Eq_1526 r13_37;
-		byte * rbp_39;
-		union Eq_654 * rbx_40;
-		struct Eq_1691 * rdi_41;
+		Eq_1518 r13_37;
+		word128 * rbp_39;
+		union Eq_653 * rbx_40;
+		struct Eq_1681 * rdi_41;
 		word64 * rsi_43;
 		word64 * rdx_44;
 		_ZSt20__throw_length_errorPKc();
-		struct Eq_570 * r12_49;
+		struct Eq_569 * r12_49;
 		ptr64 r13_50;
 		ptr64 r14_51;
 		ptr64 r15_52;
 		ptr64 rbp_56;
-		Eq_323 rbx_57;
+		Eq_322 rbx_57;
 		word64 r8_318;
 		word64 rdx_317;
 		_ZNSt6vectorIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESaIS9_EE17_M_realloc_insertIJS9_EEEvNS1_IPS9_SB_EEDpOT_(rdx_44, rbx_40, rbp_39, rsi_43, rdi_41, r8, r13_37, r14_35, out rdx_317, out rbx_57, out rbp_56, out r8_318, out r12_49, out r13_50, out r14_51, out r15_52);
@@ -1616,14 +1619,14 @@ Eq_323 _ZNSt6vectorISt10unique_ptrISt6threadSt14default_deleteIS1_EESaIS4_EE17_M
 		r15Out = r15_52;
 		return rbx_57;
 	}
-	Eq_2660 rcx_69 = 0x01;
-	union Eq_453 * r13_133 = rsi;
-	struct Eq_564 * r14_131 = rdi;
+	Eq_2641 rcx_69 = 0x01;
+	union Eq_452 * r13_133 = rsi;
+	struct Eq_563 * r14_131 = rdi;
 	if (rax_27 >> 0x03 != 0x00)
 		rcx_69 = rax_27 >> 0x03;
 	uint64 rbx_149;
 	word64 * rcx_151;
-	struct Eq_2669 * r12_148;
+	struct Eq_2650 * r12_148;
 	ui64 rbx_89;
 	uint64 rax_77 = (word64) rcx_69 + (rax_27 >> 0x03);
 	word64 * rsi_146 = rsi - rbp_135;
@@ -1642,9 +1645,9 @@ Eq_323 _ZNSt6vectorISt10unique_ptrISt6threadSt14default_deleteIS1_EESaIS4_EE17_M
 	}
 	else
 		rbx_89 = 0x7FFFFFFFFFFFFFF8;
-	struct Eq_2792 * rsp_129;
+	struct Eq_2773 * rsp_129;
 	word64 rbx_136;
-	struct Eq_2669 * rax_138;
+	struct Eq_2650 * rax_138;
 	_Znwm();
 	rsi_146 = rsp_129->ptr0000;
 	rdx = rsp_129->ptr0018;
@@ -1661,7 +1664,7 @@ l0000000000403FEC:
 		if (r12_148 != (char *) rbp_135 + 8 && rcx_175 > (word64 *) 0x18)
 		{
 			uint64 rdx_197 = rcx_175 - 0x08 >> 0x03;
-			Eq_2725 rax_199 = 0x00;
+			Eq_2706 rax_199 = 0x00;
 			uint64 rsi_202 = rdx_197 + 0x01 >> 0x01;
 			do
 			{
@@ -1677,13 +1680,13 @@ l0000000000403FEC:
 		else
 		{
 			word64 rdi_183 = r12_148 + rcx_175;
-			union Eq_453 * rdx_185 = rbp_135;
-			struct Eq_2669 * rax_186 = r12_148;
+			union Eq_452 * rdx_185 = rbp_135;
+			struct Eq_2650 * rax_186 = r12_148;
 			do
 			{
 				++rax_186;
 				rax_186->qwFFFFFFF8 = *rdx_185;
-				rdx_185 = (union Eq_453 *) ((char *) rdx_185 + 8);
+				rdx_185 = (union Eq_452 *) ((char *) rdx_185 + 8);
 			} while (rax_186 != rdi_183);
 		}
 		rcx_151 = r12_148 + 0x08 + rcx_175;
@@ -1695,33 +1698,33 @@ l0000000000403FEC:
 	}
 }
 
-// 0000000000404170: Register (ptr64 byte) _ZNSt6vectorIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESaIS9_EE17_M_realloc_insertIJS9_EEEvNS1_IPS9_SB_EEDpOT_(Register (ptr64 word64) rdx, Register (ptr64 Eq_654) rbx, Register (ptr64 byte) rbp, Register (ptr64 word64) rsi, Register (ptr64 Eq_1691) rdi, Register Eq_505 r8, Register Eq_1526 r13, Register (ptr64 word64) r14, Register out (ptr64 Eq_1695) rdxOut, Register out (ptr64 Eq_1696) rbxOut, Register out (ptr64 Eq_1697) rbpOut, Register out Eq_1698 r8Out, Register out (ptr64 Eq_1699) r12Out, Register out ptr64 r13Out, Register out ptr64 r14Out, Register out (ptr64 byte) r15Out)
+// 0000000000404170: Register (ptr64 word128) _ZNSt6vectorIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESaIS9_EE17_M_realloc_insertIJS9_EEEvNS1_IPS9_SB_EEDpOT_(Register (ptr64 word64) rdx, Register (ptr64 Eq_653) rbx, Register (ptr64 word128) rbp, Register (ptr64 word64) rsi, Register (ptr64 Eq_1681) rdi, Register Eq_504 r8, Register Eq_1518 r13, Register (ptr64 word64) r14, Register out (ptr64 Eq_1685) rdxOut, Register out (ptr64 Eq_1686) rbxOut, Register out (ptr64 Eq_1687) rbpOut, Register out Eq_1688 r8Out, Register out (ptr64 Eq_1689) r12Out, Register out ptr64 r13Out, Register out ptr64 r14Out, Register out (ptr64 byte) r15Out)
 // Called from:
 //      _ZN6workerC1Emmm
 //      _ZNSt6vectorISt10unique_ptrISt6threadSt14default_deleteIS1_EESaIS4_EE17_M_realloc_insertIJS4_EEEvN9__gnu_cxx17__normal_iteratorIPS4_S6_EEDpOT_
-byte * _ZNSt6vectorIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESaIS9_EE17_M_realloc_insertIJS9_EEEvNS1_IPS9_SB_EEDpOT_(word64 * rdx, union Eq_654 * rbx, byte * rbp, word64 * rsi, struct Eq_1691 * rdi, Eq_505 r8, Eq_1526 r13, word64 * r14, struct Eq_1695 & rdxOut, struct Eq_1696 & rbxOut, struct Eq_1655 & rbpOut, union Eq_1698 & r8Out, struct Eq_1655 & r12Out, ptr64 & r13Out, ptr64 & r14Out, byte & r15Out)
+word128 * _ZNSt6vectorIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESaIS9_EE17_M_realloc_insertIJS9_EEEvNS1_IPS9_SB_EEDpOT_(word64 * rdx, union Eq_653 * rbx, word128 * rbp, word64 * rsi, struct Eq_1681 * rdi, Eq_504 r8, Eq_1518 r13, word64 * r14, struct Eq_1685 & rdxOut, struct Eq_1686 & rbxOut, struct Eq_1647 & rbpOut, union Eq_1688 & r8Out, struct Eq_1647 & r12Out, ptr64 & r13Out, ptr64 & r14Out, byte & r15Out)
 {
 	word64 * r15_129 = rdi->ptr0008;
 	word64 * r12_133 = rdi->ptr0000;
 	int64 rax_27 = r15_129 - r12_133;
 	if (rax_27 >> 0x03 == 0xFFFFFFFFFFFFFFF)
 	{
-		union Eq_1199 * r15_34;
-		byte * rcx_36;
-		union Eq_654 * rdi_41;
-		byte (* rsi_43)[];
-		Eq_505 rdx_44;
+		Eq_1194 r15_34;
+		word128 * rcx_36;
+		union Eq_653 * rdi_41;
+		Eq_751 rsi_43;
+		Eq_504 rdx_44;
 		_ZSt20__throw_length_errorPKc();
-		struct Eq_1655 * r12_48;
+		struct Eq_1647 * r12_48;
 		ptr64 r13_49;
 		ptr64 r14_50;
 		byte * r15_51;
-		Eq_1698 r8_52;
-		struct Eq_1655 * rbp_55;
-		struct Eq_1696 * rbx_56;
-		struct Eq_1695 * rdx_59;
+		Eq_1688 r8_52;
+		struct Eq_1647 * rbp_55;
+		struct Eq_1686 * rbx_56;
+		struct Eq_1685 * rdx_59;
 		word64 rsi_257;
-		byte * rcx_57 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(rcx_36, rdx_44, rsi_43, rdi_41, r8, r15_34, out rdx_59, out rbx_56, out rbp_55, out rsi_257, out r8_52, out r12_48, out r13_49, out r14_50, out r15_51);
+		word128 * rcx_57 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(rcx_36, rdx_44, rsi_43, rdi_41, r8, r15_34, out rdx_59, out rbx_56, out rbp_55, out rsi_257, out r8_52, out r12_48, out r13_49, out r14_50, out r15_51);
 		rdxOut = rdx_59;
 		rbxOut = rbx_56;
 		rbpOut = rbp_55;
@@ -1732,14 +1735,14 @@ byte * _ZNSt6vectorIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIc
 		r15Out = r15_51;
 		return rcx_57;
 	}
-	Eq_2828 rcx_68 = 0x01;
+	Eq_2809 rcx_68 = 0x01;
 	word64 * rbp_134 = rsi;
-	struct Eq_1691 * r13_132 = rdi;
+	struct Eq_1681 * r13_132 = rdi;
 	if (rax_27 >> 0x03 != 0x00)
 		rcx_68 = rax_27 >> 0x03;
 	uint64 rbx_147;
 	uint64 rcx_149;
-	struct Eq_2837 * r14_146;
+	struct Eq_2818 * r14_146;
 	ui64 rbx_88;
 	uint64 rax_76 = (word64) rcx_68 + (rax_27 >> 0x03);
 	int64 rsi_144 = rsi - r12_133;
@@ -1758,9 +1761,9 @@ byte * _ZNSt6vectorIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIc
 	}
 	else
 		rbx_88 = 0x7FFFFFFFFFFFFFF8;
-	struct Eq_2911 * rsp_128;
+	struct Eq_2892 * rsp_128;
 	word64 rbx_135;
-	struct Eq_2837 * rax_137;
+	struct Eq_2818 * rax_137;
 	_Znwm();
 	rsi_144 = rsp_128->qw0000;
 	rdx = rsp_128->ptr0018;
@@ -1768,12 +1771,12 @@ byte * _ZNSt6vectorIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIc
 	rbx_147 = rax_137 + rbx_135 /64 8;
 	rcx_149 = rax_137 + 1;
 l00000000004041DC:
-	r14_146[rsi_144 /64 8] = (struct Eq_2837) *rdx;
+	r14_146[rsi_144 /64 8] = (struct Eq_2818) *rdx;
 	if (rbp_134 != r12_133)
 	{
-		struct Eq_2837 * rax_171 = r14_146;
+		struct Eq_2818 * rax_171 = r14_146;
 		word64 * rdx_172 = r12_133;
-		struct Eq_2837 * rcx_174 = r14_146 + (rbp_134 - r12_133) /64 8;
+		struct Eq_2818 * rcx_174 = r14_146 + (rbp_134 - r12_133) /64 8;
 		do
 		{
 			++rax_171;
@@ -1789,23 +1792,23 @@ l00000000004041DC:
 	}
 }
 
-// 00000000004042E0: Register (ptr64 byte) _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(Register (ptr64 byte) rcx, Register Eq_505 rdx, Register (ptr64 (arr byte)) rsi, Register (ptr64 Eq_654) rdi, Register Eq_505 r8, Register (ptr64 Eq_1199) r15, Register out (ptr64 Eq_1650) rdxOut, Register out (ptr64 Eq_1651) rbxOut, Register out Eq_1652 rbpOut, Register out (ptr64 byte) rsiOut, Register out Eq_1654 r8Out, Register out (ptr64 Eq_1655) r12Out, Register out ptr64 r13Out, Register out Eq_1657 r14Out, Register out (ptr64 Eq_1658) r15Out)
+// 00000000004042E0: Register (ptr64 word128) _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(Register (ptr64 word128) rcx, Register Eq_504 rdx, Register Eq_751 rsi, Register (ptr64 Eq_653) rdi, Register Eq_504 r8, Register Eq_1194 r15, Register out (ptr64 Eq_1642) rdxOut, Register out (ptr64 Eq_1643) rbxOut, Register out Eq_1644 rbpOut, Register out (ptr64 byte) rsiOut, Register out Eq_1646 r8Out, Register out (ptr64 Eq_1647) r12Out, Register out ptr64 r13Out, Register out Eq_1649 r14Out, Register out (ptr64 Eq_1650) r15Out)
 // Called from:
 //      _ZN6workerC1Emmm
 //      _ZNSt6vectorIN9__gnu_cxx17__normal_iteratorIPcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEESaIS9_EE17_M_realloc_insertIJS9_EEEvNS1_IPS9_SB_EEDpOT_
 //      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14_M_replace_auxEmmmc
-byte * _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(byte * rcx, Eq_505 rdx, byte (* rsi)[], union Eq_654 * rdi, Eq_505 r8, union Eq_1199 * r15, struct Eq_1650 & rdxOut, struct Eq_1651 & rbxOut, union Eq_1652 & rbpOut, byte & rsiOut, union Eq_1654 & r8Out, struct Eq_1655 & r12Out, ptr64 & r13Out, union Eq_1657 & r14Out, union Eq_1658 & r15Out)
+word128 * _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(word128 * rcx, Eq_504 rdx, Eq_751 rsi, union Eq_653 * rdi, Eq_504 r8, Eq_1194 r15, struct Eq_1642 & rdxOut, struct Eq_1643 & rbxOut, union Eq_1644 & rbpOut, byte & rsiOut, union Eq_1646 & r8Out, struct Eq_1647 & r12Out, ptr64 & r13Out, union Eq_1649 & r14Out, union Eq_1650 & r15Out)
 {
-	Eq_2925 rax_147;
+	Eq_2906 rax_147;
 	word64 rax_33 = *((char *) rdi + 8);
 	word64 rcx_13 = rsi + rdx;
-	byte * r9_10 = rcx;
-	byte (* r12_138)[] = rsi;
-	Eq_505 r14_132 = r8;
-	union Eq_654 * rbx_141 = rdi;
-	struct Eq_2936 * rsp_130 = fp - 88;
+	word128 * r9_10 = rcx;
+	Eq_751 r12_138 = rsi;
+	Eq_504 r14_132 = r8;
+	union Eq_653 * rbx_141 = rdi;
+	struct Eq_2917 * rsp_130 = fp - 88;
 	ptr64 r13_137 = (char *) rdi + 16;
-	Eq_2925 rbp_101 = r8 - rdx + rax_33;
+	Eq_2906 rbp_101 = r8 - rdx + rax_33;
 	word64 rsi_135 = rax_33 - rcx_13;
 	if ((char *) rdi + 16 == *rdi)
 	{
@@ -1818,24 +1821,24 @@ l000000000040432B:
 	if (rbp_101 < 0x00)
 	{
 		word64 * r14_62;
-		Eq_505 rcx_64;
-		byte (* rsi_65)[];
-		Eq_505 rdx_66;
-		byte * r12_68;
+		Eq_504 rcx_64;
+		Eq_751 rsi_65;
+		Eq_504 rdx_66;
+		word128 * r12_68;
 		word64 r8_69;
-		byte * rbp_70;
-		union Eq_654 * rbx_71;
-		union Eq_654 * rdi_72;
+		word128 * rbp_70;
+		union Eq_653 * rbx_71;
+		union Eq_653 * rdi_72;
 		_ZSt20__throw_length_errorPKc();
-		Eq_1657 r14_78;
-		byte * rcx_80;
+		Eq_1649 r14_78;
+		word128 * rcx_80;
 		byte * rsi_81;
-		struct Eq_1650 * rdx_82;
+		struct Eq_1642 * rdx_82;
 		ptr64 r13_83;
-		struct Eq_1655 * r12_84;
-		Eq_1654 r8_85;
-		Eq_1652 rbp_86;
-		struct Eq_1651 * rbx_87;
+		struct Eq_1647 * r12_84;
+		Eq_1646 r8_85;
+		Eq_1644 rbp_86;
+		struct Eq_1643 * rbx_87;
 		_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14_M_replace_auxEmmmc(rcx_64, rdx_66, rbx_71, rbp_70, rsi_65, rdi_72, (word32) r8_69, r12_68, r14_62, out rcx_80, out rdx_82, out rbx_87, out rbp_86, out rsi_81, out r8_85, out r12_84, out r13_83, out r14_78);
 		rdxOut = rdx_82;
 		rbxOut = rbx_87;
@@ -1845,12 +1848,12 @@ l000000000040432B:
 		r12Out = r12_84;
 		r13Out = r13_83;
 		r14Out = r14_78;
-		r15Out = (union Eq_1658 *) <invalid>;
+		r15Out = (union Eq_1650 *) <invalid>;
 		return rcx_80;
 	}
 	if (rbp_101 > rax_147)
 	{
-		Eq_2925 rax_95 = rax_147 * 0x02;
+		Eq_2906 rax_95 = rax_147 * 0x02;
 		if (rbp_101 < rax_95)
 		{
 			if (rax_95 < 0x00)
@@ -1867,15 +1870,15 @@ l0000000000404430:
 	{
 		rsp_130->ptr0008 = r9_10;
 		byte * rax_165;
-		struct Eq_2987 * rsp_152;
+		struct Eq_2968 * rsp_152;
 		word64 r14_154;
 		byte * r13_159;
 		word64 r12_160;
-		struct Eq_2991 * rbx_163;
+		struct Eq_2972 * rbx_163;
 		word64 rbp_162;
-		Eq_1654 r8_161;
-		byte * rcx_156;
-		struct Eq_1650 * rdx_158;
+		Eq_1646 r8_161;
+		word128 * rcx_156;
+		struct Eq_1642 * rdx_158;
 		byte * rsi_157;
 		_Znwm();
 		byte * r10_170 = rbx_163->ptr0000;
@@ -1926,11 +1929,11 @@ l0000000000404419:
 					r12Out = r12;
 					r13Out = r13;
 					r14Out = r14;
-					r15Out = (union Eq_1658 *) <invalid>;
+					r15Out = (union Eq_1650 *) <invalid>;
 					return rcx_156;
 				}
 				rsp_152->ptr0008 = r10_170;
-				struct Eq_3105 * rsp_291;
+				struct Eq_3086 * rsp_291;
 				memcpy();
 				r10_170 = rsp_291->ptr0008;
 l0000000000404404:
@@ -1950,34 +1953,34 @@ l0000000000404404:
 	goto l0000000000404430;
 }
 
-// 00000000004044A0: Register (ptr64 Eq_654) _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14_M_replace_auxEmmmc(Register Eq_505 rcx, Register Eq_505 rdx, Register (ptr64 Eq_654) rbx, Register (ptr64 byte) rbp, Register (arr byte) rsi, Register (ptr64 Eq_654) rdi, Register word32 r8d, Register (ptr64 byte) r12, Register (ptr64 word64) r14, Register out (ptr64 byte) rcxOut, Register out Eq_505 rdxOut, Register out (ptr64 Eq_654) rbxOut, Register out (ptr64 byte) rbpOut, Register out (ptr64 (arr byte)) rsiOut, Register out ptr64 r8Out, Register out (ptr64 byte) r12Out, Register out (ptr64 Eq_1012) r13Out, Register out (ptr64 word64) r14Out)
+// 00000000004044A0: Register (ptr64 Eq_653) _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14_M_replace_auxEmmmc(Register Eq_504 rcx, Register Eq_504 rdx, Register (ptr64 Eq_653) rbx, Register (ptr64 word128) rbp, Register Eq_751 rsi, Register (ptr64 Eq_653) rdi, Register word32 r8d, Register (ptr64 word128) r12, Register (ptr64 word64) r14, Register out (ptr64 word128) rcxOut, Register out Eq_504 rdxOut, Register out (ptr64 Eq_653) rbxOut, Register out (ptr64 word128) rbpOut, Register out Eq_751 rsiOut, Register out ptr64 r8Out, Register out (ptr64 word128) r12Out, Register out (ptr64 Eq_1009) r13Out, Register out (ptr64 word64) r14Out)
 // Called from:
 //      _ZN6worker4loopEv
 //      _ZN6workerC1Emmm
 //      _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm
-union Eq_654 * _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14_M_replace_auxEmmmc(Eq_505 rcx, Eq_505 rdx, union Eq_654 * rbx, byte * rbp, byte rsi[], union Eq_654 * rdi, word32 r8d, byte * r12, word64 * r14, byte & rcxOut, union Eq_505 & rdxOut, union Eq_654 & rbxOut, byte & rbpOut, byte (& rsiOut, ptr64 & r8Out, byte & r12Out, struct Eq_1012 & r13Out, word64 & r14Out)
+union Eq_653 * _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14_M_replace_auxEmmmc(Eq_504 rcx, Eq_504 rdx, union Eq_653 * rbx, word128 * rbp, Eq_751 rsi, union Eq_653 * rdi, word32 r8d, word128 * r12, word64 * r14, word128 & rcxOut, union Eq_504 & rdxOut, union Eq_653 & rbxOut, word128 & rbpOut, union Eq_751 & rsiOut, ptr64 & r8Out, word128 & r12Out, struct Eq_1009 & r13Out, word64 & r14Out)
 {
 	word32 r8d = (word32) r8;
-	byte rcx_24[] = *((char *) rdi + 8);
-	Eq_505 r13_10 = rcx;
+	Eq_751 rcx_24 = *((char *) rdi + 8);
+	Eq_504 r13_10 = rcx;
 	if (rcx > ((word64) rdx - 1) - rcx_24)
 	{
 		word64 * r14_31;
-		struct Eq_1012 * r13_32;
-		byte * rcx_33;
-		byte * r12_35;
-		byte * rbp_36;
+		struct Eq_1009 * r13_32;
+		word128 * rcx_33;
+		word128 * r12_35;
+		word128 * rbp_36;
 		ptr64 rdx_37;
-		union Eq_654 * rbx_38;
+		union Eq_653 * rbx_38;
 		word64 rdi_39;
 		ptr64 rsi_40;
 		ptr64 r8_41;
 		_ZSt20__throw_length_errorPKc();
-		word32 r8_32_32_284 = SLICE(r8_41, word32, 32);
-		word32 r8d_226 = (word32) r8_41;
-		Eq_505 rdx_45;
-		byte (* rsi_46)[];
-		union Eq_654 * rax_43 = __libc_csu_init(rdx_37, rsi_40, (word32) rdi_39, out rdx_45, out rsi_46);
+		word32 r8_32_32_283 = SLICE(r8_41, word32, 32);
+		word32 r8d_225 = (word32) r8_41;
+		Eq_504 rdx_45;
+		Eq_751 rsi_46;
+		union Eq_653 * rax_43 = __libc_csu_init(rdx_37, rsi_40, (word32) rdi_39, out rdx_45, out rsi_46);
 		rcxOut = rcx_33;
 		rdxOut = rdx_45;
 		rbxOut = rbx_38;
@@ -1989,58 +1992,58 @@ union Eq_654 * _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14_M_replace
 		r14Out = r14_31;
 		return rax_43;
 	}
-	byte (* rax_65)[];
-	union Eq_654 * r12_132 = rdi;
-	byte (* rdi_100)[] = *rdi;
-	byte (* r14_128)[] = rsi;
-	uint64 rbp_133 = (uint64) r8d;
-	byte (* rbx_135)[] = rcx_24 + (rcx - rdx);
-	if (rdi_100 != (char *) rdi + 16)
-		rax_65 = (byte (*)[]) *((char *) rdi + 16);
+	Eq_751 rax_65;
+	union Eq_653 * r12_131 = rdi;
+	byte (* rdi_120)[] = *rdi;
+	Eq_751 r14_127 = rsi;
+	uint64 rbp_132 = (uint64) r8d;
+	Eq_751 rbx_134 = (word64) rcx_24 + (rcx - rdx);
+	if (rdi_120 != (char *) rdi + 16)
+		rax_65 = *((char *) rdi + 16);
 	else
-		rax_65 = (byte (*)[]) 0x0F;
-	byte * rcx_106;
-	if (rax_65 < rbx_135)
+		rax_65.u0 = 0x0F;
+	word128 * rcx_105;
+	if (rax_65 < rbx_134)
 	{
-		word64 r15_328;
-		rcx_106 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(null, rdx, rsi, rdi, rcx, r15, out rdx, out rbx_135, out rbp_133, out rsi, out r8, out r12_132, out r13_10, out r14_128, out r15_328);
-		rdi_100 = (byte (*)[]) *r12_132;
+		word64 r15_327;
+		rcx_105 = _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm(null, rdx, rsi, rdi, rcx, r15, out rdx, out rbx_134, out rbp_132, out rsi, out r8, out r12_131, out r13_10, out r14_127, out r15_327);
+		rdi_120 = (byte (*)[]) *r12_131;
 		if (r13_10 == 0x00)
 			goto l0000000000404541;
 		goto l0000000000404528;
 	}
-	rcx_106 = rcx_24 - (rdx + rsi);
-	if (rcx_106 != null && rdx != rcx)
+	rcx_105 = rcx_24 - (rdx + rsi);
+	if (rcx_105 != null && rdx != rcx)
 	{
-		word64 rdi_112 = rdi_100 + rsi;
-		rsi = (word64) rdx + rdi_112;
-		byte * rdi_114 = (word64) rcx + rdi_112;
-		if (rcx_106 == (byte *) 0x01)
+		word64 rdi_111 = rdi_120 + rsi;
+		rsi = (word64) rdx + rdi_111;
+		byte * rdi_113 = (word64) rcx + rdi_111;
+		if (rcx_105 == (word128 *) 0x01)
 		{
-			*rdi_114 = rsi[0];
-			rdi_100 = (byte (*)[]) *rdi;
+			*rdi_113 = (byte) *rsi;
+			rdi_120 = (byte (*)[]) *rdi;
 			if (rcx == 0x00)
 				goto l0000000000404541;
 l0000000000404528:
-			word32 r8d_182 = (word32) r8;
-			word32 rsi_32_32_164 = SLICE(rsi, word32, 32);
-			byte bpl_153 = (byte) rbp_133;
-			word64 rdi_149 = rdi_100 + r14_128;
+			word32 r8d_181 = (word32) r8;
+			word32 rsi_32_32_163 = SLICE(rsi, word32, 32);
+			byte bpl_152 = (byte) rbp_132;
+			word64 rdi_148 = rdi_120 + r14_127;
 			if (r13_10 != 0x01)
 			{
 				memset();
-				word32 r8_32_32_287 = SLICE(r8, word32, 32);
-				rdi_100 = (byte (*)[]) *r12_132;
+				word32 r8_32_32_286 = SLICE(r8, word32, 32);
+				rdi_120 = (byte (*)[]) *r12_131;
 			}
 			else
 			{
-				*rdi_149 = bpl_153;
-				rdi_100 = (byte (*)[]) *r12_132;
+				*rdi_148 = bpl_152;
+				rdi_120 = (byte (*)[]) *r12_131;
 			}
 l0000000000404541:
-			*((char *) r12_132 + 8) = (union Eq_654 *) rbx_135;
-			Mem209[rdi_100 + rbx_135:byte] = 0x00;
-			rcxOut = rcx_106;
+			*((char *) r12_131 + 8) = (union Eq_653 *) rbx_134;
+			Mem208[rdi_120 + rbx_134:byte] = 0x00;
+			rcxOut = rcx_105;
 			rdxOut = rdx;
 			rbxOut = rbx;
 			rbpOut = rbp;
@@ -2049,11 +2052,11 @@ l0000000000404541:
 			r12Out = r12;
 			r13Out = r13;
 			r14Out = r14;
-			return r12_132;
+			return r12_131;
 		}
 		memmove();
-		word32 r8_32_32_247 = SLICE(r8, word32, 32);
-		rdi_100 = (byte (*)[]) *r12_132;
+		word32 r8_32_32_246 = SLICE(r8, word32, 32);
+		rdi_120 = (byte (*)[]) *r12_131;
 	}
 	if (r13_10 == 0x00)
 		goto l0000000000404541;
