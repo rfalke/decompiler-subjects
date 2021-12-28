@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_132 g_t11000 = // 0000000000011000
+struct Eq_171 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -82,27 +82,30 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 void main(int64 qwArg00)
 {
 	x0_16 = (uint64) puts("enter number of iterations");
-	x0_20 = (uint64) __isoc99_scanf("%ld", 0x00);
-	x0_25 = (uint64) printf("executing %ld iterations\n", 0x00);
-	x0_28 = (uint64) __isoc99_scanf("%d", 0x00);
-	x0_32 = (uint64) __isoc99_scanf("%d", 0x00);
-	word32 w0_35 = 0x00;
-	int64 x2_37 = 0x01;
-	while (x2_37 - qwArg00 <= 0x00)
+	x0_21 = (uint64) __isoc99_scanf("%ld", fp);
+	x0_26 = (uint64) printf("executing %ld iterations\n", (int32) qwArg00);
+	x0_30 = (uint64) __isoc99_scanf("%d", fp + -2);
+	x0_34 = (uint64) __isoc99_scanf("%d", fp + -1);
+	int32 w1_36 = dwLoc08;
+	word32 w0_37 = 0x00;
+	int64 x2_39 = 0x01;
+	while (x2_39 - qwArg00 <= 0x00)
 	{
-		word32 w3_43;
-		for (w3_43 = 0x28; w3_43 != 0x00; --w3_43)
-			;
-		++x2_37;
-		w0_35 = 0x01;
+		word32 w3_45;
+		for (w3_45 = 0x28; w3_45 != 0x00; --w3_45)
+			w1_36 *= w1_36 * 0x03 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36 * w1_36;
+		++x2_39;
+		w0_37 = 0x01;
 	}
-	x0_89 = (uint64) printf("a=%d\n", 0x00);
+	if (w0_37 != 0x00)
+		dwLoc08 = w1_36;
+	x0_96 = (uint64) printf("a=%d\n", dwLoc08);
 }
 
-// 0000000000000894: void _start(Register (ptr64 Eq_69) x0, Stack Eq_70 qwArg00)
-void _start(void (* x0)(), Eq_70 qwArg00)
+// 0000000000000894: void _start(Register (ptr64 Eq_106) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -147,7 +150,7 @@ void register_tm_clones()
 // 0000000000000958: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_132 * x19_12 = &g_t11000;
+	struct Eq_171 * x19_12 = &g_t11000;
 	if ((word32) g_b11048 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)

@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_104 g_t11000 = // 0000000000011000
+struct Eq_124 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,20 +78,21 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 00000000000006F0: void main()
-void main()
+// 00000000000006F0: void main(Register int32 w0)
+void main(int32 w0)
 {
-	x0_23 = (uint64) printf("MinMax result %d\n", 0x00);
-	x0_26 = (uint64) printf("MinMax result %d\n", 0x00);
-	x0_29 = (uint64) printf("MinMax result %d\n", 0x00);
-	x0_37 = (uint64) printf("MinMax result %d\n", 0x00);
-	x0_41 = (uint64) printf("MinMax result %d\n", 0x00);
+	x0_26 = (uint64) printf("MinMax result %d\n", ~0x01);
+	x0_31 = (uint64) printf("MinMax result %d\n", ~0x01);
+	int32 w20_41 = w0 <= 0x03 ? w0 : 0x03;
+	x0_36 = (uint64) printf("MinMax result %d\n", 0x00);
+	x0_47 = (uint64) printf("MinMax result %d\n", w20_41 >= ~0x01 ? w20_41 : ~0x01);
+	x0_52 = (uint64) printf("MinMax result %d\n", 0x03);
 }
 
-// 0000000000000770: void _start(Register (ptr64 Eq_41) x0, Stack Eq_42 qwArg00)
-void _start(void (* x0)(), Eq_42 qwArg00)
+// 0000000000000770: void _start(Register (ptr64 Eq_59) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -136,7 +137,7 @@ void register_tm_clones()
 // 0000000000000838: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_104 * x19_12 = &g_t11000;
+	struct Eq_124 * x19_12 = &g_t11000;
 	if ((word32) g_b11038 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -165,10 +166,11 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000000008B8: void test()
-void test()
+// 00000000000008B8: void test(Register int32 w0)
+void test(int32 w0)
 {
-	x0_14 = (uint64) printf("MinMax result %d\n", 0x00);
+	int32 w1_8 = w0 <= 0x03 ? w0 : 0x03;
+	x0_16 = (uint64) printf("MinMax result %d\n", w1_8 >= ~0x01 ? w1_8 : ~0x01);
 }
 
 // 00000000000008E0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,20 +124,16 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
+word64 g_qw400638 = 0x00; // 0000000000400638
 // 0000000000400640: void fib(Register int32 w0)
 void fib(int32 w0)
 {
@@ -154,17 +150,33 @@ void fib(int32 w0)
 // 0000000000400678: void main(Register word64 x29)
 void main(word64 x29)
 {
-	x0_13 = (uint64) printf("Input number: ", 0x00);
-	int32 dwLoc0C_53 = SLICE(x29, word32, 32);
-	x0_18 = (uint64) __isoc99_scanf("%d", 0x00);
-	word32 w8_21 = dwLoc0C_53 - 0x02;
-	if (dwLoc0C_53 >= 0x02 && dwLoc0C_53 >= 0x03)
+	x0_13 = (uint64) printf("Input number: ");
+	int32 dwLoc0C_64 = SLICE(x29, word32, 32);
+	word32 x1_32_32_40 = SLICE(fp + ~0x0B, word32, 32);
+	x0_18 = (uint64) __isoc99_scanf("%d", fp + ~0x0B);
+	word32 w8_21 = dwLoc0C_64 - 0x02;
+	word64 x1_39 = SEQ(x1_32_32_40, dwLoc0C_64);
+	word64 x2_44 = SEQ(x2_32_32, dwLoc0C_64);
+	if (dwLoc0C_64 >= 0x02)
 	{
-		do
-			--w8_21;
-		while (w8_21 != 0x00);
+		x1_39 = SEQ(x1_32_32_40, dwLoc0C_64);
+		if (dwLoc0C_64 >= 0x03)
+		{
+			word32 w9_28 = 0x01;
+			word32 w10_29 = 0x01;
+			do
+			{
+				word32 w2_32 = w10_29 + w9_28;
+				--w8_21;
+				w9_28 = w10_29;
+				w10_29 = w2_32;
+				x2_44 = SEQ(x2_32_32, w2_32);
+			} while (w8_21 != 0x00);
+		}
+		else
+			x2_44 = SEQ(x2_32_32, 0x01);
 	}
-	x0_39 = (uint64) printf("fibonacci(%d) = %d\n", 0x00);
+	x0_50 = (uint64) printf("fibonacci(%d) = %d\n", (int32) x1_39, (int32) x2_44);
 }
 
 // 00000000004006F8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_170 g_t11000 = // 0000000000011000
+struct Eq_206 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,27 +81,26 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 0000000000000730: void main(Register (ptr64 Eq_9) x1)
 void main(struct Eq_9 * x1)
 {
-	__stat(x1->ptr0008, fp + ~0x77);
-	x0_19 = (uint64) printf("res: %i\n", 0x00);
-	x0_24 = (uint64) printf("dev: %i\n", 0x00);
-	x0_29 = (uint64) printf("ino: %i\n", 0x00);
-	x0_34 = (uint64) printf("mode: %i\n", 0x00);
-	x0_39 = (uint64) printf("nlink: %i\n", 0x00);
-	x0_44 = (uint64) printf("uid: %i\n", 0x00);
-	x0_49 = (uint64) printf("gid: %i\n", 0x00);
-	x0_54 = (uint64) printf("rdev: %i\n", 0x00);
-	x0_59 = (uint64) printf("size: %i\n", 0x00);
-	x0_64 = (uint64) printf("blksize: %i\n", 0x00);
-	x0_69 = (uint64) printf("blocks: %i\n", 0x00);
-	x0_74 = (uint64) printf("atime: %i\n", 0x00);
-	x0_79 = (uint64) printf("mtime: %i\n", 0x00);
-	x0_84 = (uint64) printf("ctime: %i\n", 0x00);
+	x0_23 = (uint64) printf("res: %i\n", __stat(x1->ptr0008, fp + ~0x77));
+	x0_28 = (uint64) printf("dev: %i\n", (int32) qwLoc78);
+	x0_33 = (uint64) printf("ino: %i\n", (int32) qwLoc70);
+	x0_40 = (uint64) printf("mode: %i\n", dwLoc68);
+	x0_46 = (uint64) printf("nlink: %i\n", dwLoc64);
+	x0_52 = (uint64) printf("uid: %i\n", dwLoc60);
+	x0_58 = (uint64) printf("gid: %i\n", dwLoc5C);
+	x0_63 = (uint64) printf("rdev: %i\n", (int32) qwLoc58);
+	x0_68 = (uint64) printf("size: %i\n", (int32) qwLoc48);
+	x0_75 = (uint64) printf("blksize: %i\n", dwLoc40);
+	x0_80 = (uint64) printf("blocks: %i\n", (int32) qwLoc38);
+	x0_85 = (uint64) printf("atime: %i\n", (int32) qwLoc30);
+	x0_90 = (uint64) printf("mtime: %i\n", (int32) qwLoc20);
+	x0_95 = (uint64) printf("ctime: %i\n", (int32) qwLoc10);
 }
 
-// 0000000000000834: void _start(Register (ptr64 Eq_107) x0, Stack Eq_108 qwArg00)
-void _start(void (* x0)(), Eq_108 qwArg00)
+// 0000000000000834: void _start(Register (ptr64 Eq_141) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -146,7 +145,7 @@ void register_tm_clones()
 // 00000000000008F8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_170 * x19_12 = &g_t11000;
+	struct Eq_206 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -204,12 +203,11 @@ void __libc_csu_fini()
 {
 }
 
-// 00000000000009F8: void __stat(Register (ptr64 char) x0, Register (ptr64 Eq_13) x1)
+// 00000000000009F8: Register int32 __stat(Register (ptr64 char) x0, Register (ptr64 Eq_18) x1)
 // Called from:
 //      main
-void __stat(char * x0, struct stat * x1)
+int32 __stat(char * x0, struct stat * x1)
 {
-	word32 x0_32_32_8 = SLICE(x0, word32, 32);
-	x0_10 = (uint64) __xstat(SEQ(x0_32_32_8, 0x00), x0, x1);
+	return __xstat(0x00, x0, x1);
 }
 

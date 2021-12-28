@@ -3,6 +3,4 @@
 08048580: warning: Call target address 00000000 is invalid.
 0804852D: warning: Call target address 00000000 is invalid.
 080484F3: warning: Call target address 00000000 is invalid.
-0804856B: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08048586: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 08048360: warning: Unable to resolve imported reference abs.

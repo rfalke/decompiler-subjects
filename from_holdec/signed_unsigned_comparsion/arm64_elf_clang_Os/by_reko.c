@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -124,42 +124,56 @@ void __do_global_dtors_aux()
 // 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4005D8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4005D8 = null; // 00000000004005D8
-// 00000000004005E0: Register uint64 f(Register Eq_99 w0, Register up32 w1)
+word64 g_qw4005D8 = 0x00; // 00000000004005D8
+// 00000000004005E0: Register uint64 f(Register Eq_102 w0, Register Eq_102 w1, Register out ptr64 x1Out)
 // Called from:
 //      main
-uint64 f(Eq_99 w0, up32 w1)
+uint64 f(Eq_102 w0, Eq_102 w1, ptr64 & x1Out)
 {
-	Eq_99 w0 = (word32) x0;
-	uint64 x0_26 = x0;
+	Eq_102 w0 = (word32) x0;
+	Eq_102 w1 = (word32) x1;
+	word32 x1_32_32 = SLICE(x1, word32, 32);
+	Eq_102 w1_25;
+	uint64 x0_28 = x0;
+	w1_25 = w1;
 	if (w0 <= 0x07)
-		x0_26 = (uint64) printf("%d signed in range\n", 0x00);
+	{
+		w1_25 = w0;
+		x0_28 = (uint64) printf("%d signed in range\n", w0);
+	}
+	ptr64 x1_80 = SEQ(x1_32_32, w1_25);
 	if (w1 > 0x07)
-		return x0_26;
-	return (uint64) printf("%d unsigned in range\n", 0x00);
+	{
+		x1Out = x1_80;
+		return x0_28;
+	}
+	else
+	{
+		uint64 x0_59 = (uint64) printf("%d unsigned in range\n", w1);
+		x1Out = x1;
+		return x0_59;
+	}
 }
 
-// 0000000000400640: void main(Register word32 x0_32_32)
-void main(word32 x0_32_32)
+// 0000000000400640: void main(Register word32 x0_32_32, Register word32 x1_32_32)
+void main(word32 x0_32_32, word32 x1_32_32)
 {
-	Eq_99 x0_32_32_w19_61 = SEQ(x0_32_32, 0x00);
+	word64 x1_32_32_w19_66 = SEQ(x1_32_32, 0x00);
 	do
 	{
-		up32 w19_17 = (word32) x0_32_32_w19_61;
-		x0_32_32_w19_61 = SEQ(SLICE(f(x0_32_32_w19_61, w19_17), word32, 32), w19_17 + 0x01);
+		Eq_102 w19_17 = (word32) x1_32_32_w19_66;
+		word64 x1_27;
+		f(w19_17, (word32) x1_32_32_w19_66, out x1_27);
+		x1_32_32_w19_66 = SEQ(SLICE(x1_27, word32, 32), (word32) w19_17 + 1);
 	} while (w19_17 != ~0x08);
 }
 

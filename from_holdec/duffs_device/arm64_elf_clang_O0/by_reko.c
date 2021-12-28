@@ -76,10 +76,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -139,20 +139,16 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
+word64 g_qw400638 = 0x00; // 0000000000400638
 // 0000000000400640: void copy1_four_times(Register (ptr64 word16) x0, Register (ptr64 word16) x1, Register int32 w2)
 // Called from:
 //      main
@@ -160,7 +156,7 @@ void copy1_four_times(word16 * x0, word16 * x1, int32 w2)
 {
 	word32 x0_32_32_31 = SLICE(x0, word32, 32);
 	ui32 w2_23 = w2 < 0x00 ? w2 + 0x03 : w2;
-	Eq_109 w8_25 = w2 - (w2_23 & ~0x03);
+	Eq_112 w8_25 = w2 - (w2_23 & ~0x03);
 	ui64 x0_32 = SEQ(x0_32_32_31, w8_25);
 	if (w8_25 > 0x03)
 		return;
@@ -175,7 +171,7 @@ void copy1_eight_times(word16 * x0, word16 * x1, int32 w2)
 {
 	word32 x0_32_32_31 = SLICE(x0, word32, 32);
 	ui32 w2_23 = w2 < 0x00 ? w2 + 0x07 : w2;
-	Eq_133 w8_25 = w2 - (w2_23 & ~0x07);
+	Eq_136 w8_25 = w2 - (w2_23 & ~0x07);
 	ui64 x0_32 = SEQ(x0_32_32_31, w8_25);
 	if (w8_25 > 0x07)
 		return;
@@ -248,8 +244,8 @@ void copy2_eight_times(word16 * x0, word16 * x1, int32 w2, word64 x10)
 				return;
 			}
 			*qwLoc08_120 = *qwLoc10_121;
-			struct Eq_235 * qwLoc10_127 = qwLoc10_121 + 1;
-			struct Eq_238 * qwLoc08_129 = qwLoc08_120 + 1;
+			struct Eq_238 * qwLoc10_127 = qwLoc10_121 + 1;
+			struct Eq_241 * qwLoc08_129 = qwLoc08_120 + 1;
 			qwLoc08_129->w0000 = qwLoc10_127->w0000;
 			qwLoc08_129->w0002 = qwLoc10_127->w0002;
 			qwLoc08_129->w0004 = qwLoc10_127->w0004;
@@ -266,12 +262,12 @@ void copy2_eight_times(word16 * x0, word16 * x1, int32 w2, word64 x10)
 // 0000000000400BA0: void main(Register word32 x10_32_32)
 void main(word32 x10_32_32)
 {
-	Eq_300 x0_19 = malloc(200);
-	word16 * x0_23 = malloc(qwLoc28);
+	void * x0_19 = malloc((size_t) 200);
+	word16 * x0_23 = malloc((size_t) qwLoc28);
 	copy1_four_times(x0_23, qwLoc38, 100);
 	copy1_eight_times(x0_23, qwLoc38, 100);
 	copy2_eight_times(x0_23, qwLoc38, 100, SEQ(x10_32_32, copy2_four_times(x0_23, qwLoc38, 100)));
-	x0_83 = (uint64) memcmp(qwLoc38, x0_23, x0_19);
+	x0_83 = (uint64) memcmp(qwLoc38, x0_23, (size_t) x0_19);
 }
 
 // 0000000000400C40: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

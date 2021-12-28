@@ -1,28 +1,4 @@
 === Using options:--aggressive-branch-removal
 0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
-0000000000401460: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-Error: An error occurred during decompilation.
-    Value was either too large or too small for an Int32.
-       at System.Numerics.BigInteger.op_Explicit(BigInteger value)
-   at Reko.Core.Expressions.BigConstant.ToInt32() in /Users/runner/work/reko/reko/src/Core/Expressions/BigConstant.cs:line 119
-   at Reko.Core.Operators.IModOperator.ApplyConstants(Constant c1, Constant c2) in /Users/runner/work/reko/reko/src/Core/Operators/IModOperator.cs:line 34
-   at Reko.Evaluation.ConstConstBin_Rule.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ConstConstBin_Rule.cs:line 79
-   at Reko.Evaluation.ExpressionSimplifier.PostVisitBinaryExpression(BinaryExpression binExp, ValueTuple`2[] simpExps) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 401
-   at Reko.Evaluation.ExpressionSimplifier.VisitBinaryExpression(BinaryExpression binExp) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 316
-   at Reko.Core.Expressions.BinaryExpression.Accept[T](ExpressionVisitor`1 v) in /Users/runner/work/reko/reko/src/Core/Expressions/BinaryExpression.cs:line 59
-   at Reko.Evaluation.ExpressionSimplifier.VisitConversion(Conversion conversion) in /Users/runner/work/reko/reko/src/Decompiler/Evaluation/ExpressionSimplifier.cs:line 678
-   at Reko.Core.Expressions.Conversion.Accept[T](ExpressionVisitor`1 visitor) in /Users/runner/work/reko/reko/src/Core/Expressions/Conversion.cs:line 82
-   at Reko.Analysis.ValuePropagator.VisitAssignment(Assignment a) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 106
-   at Reko.Core.Code.Assignment.Accept[T](InstructionVisitor`1 visitor) in /Users/runner/work/reko/reko/src/Core/Code/Assignment.cs:line 49
-   at Reko.Analysis.ValuePropagator.Transform(Statement stm) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 96
-   at Reko.Analysis.ValuePropagator.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/ValuePropagator.cs:line 85
-   at Reko.Analysis.DataFlowAnalysis.ConvertToSsa(Procedure proc) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 472
-   at System.Linq.Enumerable.SelectListIterator`2.ToArray()
-   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
-   at Reko.Analysis.DataFlowAnalysis.UntangleProcedureScc(IList`1 procs) in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 190
-   at Reko.Core.Lib.SccFinder`1.Dfs(Node node) in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 79
-   at Reko.Core.Lib.SccFinder`1.FindAll() in /Users/runner/work/reko/reko/src/Core/Lib/SccFinder.cs:line 115
-   at Reko.Analysis.DataFlowAnalysis.RewriteProceduresToSsa() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 170
-   at Reko.Analysis.DataFlowAnalysis.UntangleProcedures() in /Users/runner/work/reko/reko/src/Decompiler/Analysis/DataFlowAnalysis.cs:line 131
-   at Reko.Decompiler.AnalyzeDataFlow() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 110
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /Users/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 209
+000000000040AE10: warning: Expected sizes of arrays to have been determined by now
+000000000040AE10: warning: Expected sizes of arrays to have been determined by now

@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,36 +124,31 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
-// 0000000000400640: void proc1(Register int32 w0, Register (ptr64 char) x1)
+word64 g_qw400638 = 0x00; // 0000000000400638
+// 0000000000400640: Register int32 proc1(Register int32 w0, Register (ptr64 char) x1)
 // Called from:
 //      main
-void proc1(int32 w0, char * x1)
+int32 proc1(int32 w0, char * x1)
 {
-	x0_20 = (uint64) strlen(x1);
+	int32 w19_26 = (word32) strlen(x1);
 	if (w0 >= 0x03)
-		x0_29 = (uint64) printf("%d", 0x00);
-	x0_36 = (uint64) printf("%d, %d", 0x00);
+		x0_31 = (uint64) printf("%d", w19_26 << 1);
+	return w19_26;
 }
 
-// 0000000000400698: void main(Register int32 w0, Register (ptr64 Eq_123) x1)
-void main(int32 w0, struct Eq_123 * x1)
+// 0000000000400698: void main(Register int32 w0, Register (ptr64 Eq_122) x1)
+void main(int32 w0, struct Eq_122 * x1)
 {
-	proc1(w0, x1->ptr0008);
-	x0_26 = (uint64) printf("%d\n", 0x00);
+	x0_28 = (uint64) printf("%d\n", proc1(w0, x1->ptr0008));
 }
 
 // 00000000004006C8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

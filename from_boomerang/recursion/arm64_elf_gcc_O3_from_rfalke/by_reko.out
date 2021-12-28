@@ -1,74 +1,22 @@
 === Using options:--aggressive-branch-removal
 00000000000006C0: warning: Unable to resolve imported reference __gmon_start__.
 00000000000006A0: warning: Unable to resolve imported reference __cxa_finalize.
-0000000000001164: warning: Unable to determine format string for call to 'printf'.
-0000000000001184: warning: Unable to determine format string for call to 'printf'.
-00000000000013D8: warning: Unable to determine format string for call to 'printf'.
-00000000000013F0: warning: Unable to determine format string for call to 'printf'.
-0000000000001404: warning: Unable to determine format string for call to 'printf'.
 0000000000001444: warning: Unable to determine format string for call to 'printf'.
 0000000000001460: warning: Unable to determine format string for call to 'printf'.
-0000000000001238: warning: Unable to determine format string for call to 'printf'.
-0000000000001254: warning: Unable to determine format string for call to 'printf'.
-0000000000001268: warning: Unable to determine format string for call to 'printf'.
 00000000000012C4: warning: Unable to determine format string for call to 'printf'.
-00000000000012AC: warning: Unable to determine format string for call to 'printf'.
 00000000000012B8: warning: Unable to determine format string for call to 'printf'.
-0000000000000988: warning: Unable to determine format string for call to 'printf'.
 0000000000000A00: warning: Unable to determine format string for call to 'printf'.
 0000000000000A0C: warning: Unable to determine format string for call to 'printf'.
 0000000000000A20: warning: Unable to determine format string for call to 'printf'.
 00000000000009E4: warning: Unable to determine format string for call to 'printf'.
 00000000000009D8: warning: Unable to determine format string for call to 'printf'.
-00000000000009C8: warning: Unable to determine format string for call to 'printf'.
 00000000000009F0: warning: Unable to determine format string for call to 'printf'.
-00000000000011C4: warning: Unable to determine format string for call to 'printf'.
-00000000000011E0: warning: Unable to determine format string for call to 'printf'.
-00000000000011F0: warning: Unable to determine format string for call to 'printf'.
-00000000000011A4: warning: Unable to determine format string for call to 'printf'.
-0000000000000FC8: warning: Unable to determine format string for call to 'printf'.
-0000000000000FE4: warning: Unable to determine format string for call to 'printf'.
-0000000000000FF8: warning: Unable to determine format string for call to 'printf'.
 000000000000104C: warning: Unable to determine format string for call to 'printf'.
 0000000000001058: warning: Unable to determine format string for call to 'printf'.
-000000000000103C: warning: Unable to determine format string for call to 'printf'.
-0000000000000E64: warning: Unable to determine format string for call to 'printf'.
-0000000000000E78: warning: Unable to determine format string for call to 'printf'.
 0000000000000EC4: warning: Unable to determine format string for call to 'printf'.
-0000000000000EB4: warning: Unable to determine format string for call to 'printf'.
 0000000000000ED4: warning: Unable to determine format string for call to 'printf'.
-0000000000000C50: warning: Unable to determine format string for call to 'printf'.
-0000000000000C70: warning: Unable to determine format string for call to 'printf'.
-0000000000000C88: warning: Unable to determine format string for call to 'printf'.
-0000000000000CA0: warning: Unable to determine format string for call to 'printf'.
-0000000000000CB8: warning: Unable to determine format string for call to 'printf'.
-0000000000000CD0: warning: Unable to determine format string for call to 'printf'.
-0000000000000CE8: warning: Unable to determine format string for call to 'printf'.
-0000000000000D00: warning: Unable to determine format string for call to 'printf'.
-0000000000000D18: warning: Unable to determine format string for call to 'printf'.
-0000000000000D30: warning: Unable to determine format string for call to 'printf'.
-0000000000000D48: warning: Unable to determine format string for call to 'printf'.
-0000000000000D60: warning: Unable to determine format string for call to 'printf'.
-0000000000000D78: warning: Unable to determine format string for call to 'printf'.
-0000000000000D90: warning: Unable to determine format string for call to 'printf'.
-0000000000000DA8: warning: Unable to determine format string for call to 'printf'.
-0000000000000DC0: warning: Unable to determine format string for call to 'printf'.
-0000000000000DD8: warning: Unable to determine format string for call to 'printf'.
-0000000000000DF0: warning: Unable to determine format string for call to 'printf'.
-0000000000000E08: warning: Unable to determine format string for call to 'printf'.
-00000000000008C8: warning: Unable to determine format string for call to 'printf'.
-00000000000008DC: warning: Unable to determine format string for call to 'printf'.
-00000000000008F0: warning: Unable to determine format string for call to 'printf'.
-0000000000000904: warning: Unable to determine format string for call to 'printf'.
-0000000000000924: warning: Unable to determine format string for call to 'printf'.
-0000000000000940: warning: Unable to determine format string for call to 'printf'.
-0000000000000AE4: warning: Unable to determine format string for call to 'printf'.
-0000000000000AF8: warning: Unable to determine format string for call to 'printf'.
 0000000000000B44: warning: Unable to determine format string for call to 'printf'.
-0000000000000B34: warning: Unable to determine format string for call to 'printf'.
 0000000000000B50: warning: Unable to determine format string for call to 'printf'.
-000000000000070C: warning: Unable to determine format string for call to 'printf'.
-000000000000071C: warning: Unable to determine format string for call to 'printf'.
 l0000000000000B10: warning: Non-integral switch expression
 00000000000015B4: warning: Expected sizes of arrays to have been determined by now
 00000000000015BC: warning: Expected sizes of arrays to have been determined by now

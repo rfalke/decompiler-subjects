@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004005D0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004005D0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400600, qwArg00, (char *) fp + 8, g_ptr400608, g_ptr400610, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400600, (int32) qwArg00, (char *) fp + 8, g_ptr400608, g_ptr400610, x0, fp);
 	abort();
 }
 
@@ -124,31 +124,27 @@ void __do_global_dtors_aux()
 // 00000000004006E0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400718 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400718;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400718 = null; // 0000000000400718
-// 0000000000400720: Register (ptr64 char) chomp(Register (ptr64 char) x0, Register Eq_99 x1, Register (ptr64 Eq_100) x2, Register out ptr64 x29Out)
+word64 g_qw400718 = 0x00; // 0000000000400718
+// 0000000000400720: Register (ptr64 char) chomp(Register (ptr64 char) x0, Register int32 w1, Register (ptr64 Eq_103) x2, Register out ptr64 x29Out)
 // Called from:
 //      main
-char * chomp(char * x0, Eq_99 x1, FILE * x2, ptr64 & x29Out)
+char * chomp(char * x0, int32 w1, FILE * x2, ptr64 & x29Out)
 {
-	word32 x1_32_32 = SLICE(x1, word32, 32);
-	char * x0_22 = fgets(x0, x1, x2);
-	struct Eq_111 * sp_23 = fp - 0x40;
+	int32 w1 = (word32) x1;
+	char * x0_22 = fgets(x0, w1, x2);
+	struct Eq_114 * sp_23 = fp - 0x40;
 	if (x0_22 != null)
 	{
-		char * x0_29 = strchr(x0_22, SEQ(x1_32_32, 0x0A));
+		char * x0_29 = strchr(x0_22, '\n');
 		sp_23 = fp - 0x48;
 		if (x0_29 != null)
 			*x0_29 = 0x00;
@@ -158,21 +154,20 @@ char * chomp(char * x0, Eq_99 x1, FILE * x2, ptr64 & x29Out)
 	return x0_39;
 }
 
-// 0000000000400788: void main(Register int32 w0, Register (ptr64 Eq_139) x1)
-void main(int32 w0, struct Eq_139 * x1)
+// 0000000000400788: void main(Register int32 w0, Register (ptr64 Eq_141) x1)
+void main(int32 w0, struct Eq_141 * x1)
 {
 	if (w0 >= 0x02)
 	{
-		word32 x1_32_32_36 = SLICE(0x004008C0, word32, 32);
 		FILE * x0_29 = fopen(x1->ptr0008, "r");
 		if (x0_29 != null)
 		{
-			struct Eq_157 * sp_38 = (struct Eq_157 *) <invalid>;
-			struct Eq_159 * x29_40;
-			if (chomp(fp - 1080, SEQ(x1_32_32_36, 0x0400), x0_29, out x29_40) != 0x00)
+			struct Eq_156 * sp_38 = (struct Eq_156 *) <invalid>;
+			struct Eq_158 * x29_40;
+			if (chomp(fp - 1080, 0x0400, x0_29, out x29_40) != 0x00)
 			{
-				sp_38->dwFFFFFFFC = printf("%s\n", 0x00);
-				sp_38 = (struct Eq_157 *) &sp_38->dwFFFFFFF8;
+				sp_38->dwFFFFFFFC = printf("%s\n", &sp_38->dw0000 + 2);
+				sp_38 = (struct Eq_156 *) &sp_38->dwFFFFFFF8;
 			}
 			sp_38->dwFFFFFFF8 = fclose(x29_40->ptrFFFFFFD8);
 		}

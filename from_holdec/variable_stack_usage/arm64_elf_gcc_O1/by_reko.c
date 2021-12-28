@@ -37,7 +37,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t11000 = // 0000000000011000
+struct Eq_74 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -79,10 +79,10 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 00000000000006F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000000006F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -127,7 +127,7 @@ void register_tm_clones()
 // 00000000000007B8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t11000;
+	struct Eq_74 * x19_12 = &g_t11000;
 	if ((word32) g_b11038 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -172,8 +172,7 @@ ptr64 use(word32 * x0)
 //      with_alloca
 void fill(void * x0, word64 x1)
 {
-	word32 x1_32_32_13 = SLICE(x1, word32, 32);
-	memset(x0, SEQ(x1_32_32_13, 0x78), __sbfiz(x1, 2));
+	memset(x0, 0x78, (size_t) __sbfiz(x1, 2));
 }
 
 // 000000000000086C: void with_array(Register word64 x0, Register word32 x1_32_32)

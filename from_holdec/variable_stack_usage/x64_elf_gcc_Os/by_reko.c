@@ -69,11 +69,11 @@ void main(word32 edi)
 	with_array(edi);
 }
 
-// 00000000004003D0: void _start(Register (ptr64 Eq_16) rdx, Stack Eq_17 qwArg00)
-void _start(void (* rdx)(), Eq_17 qwArg00)
+// 00000000004003D0: void _start(Register (ptr64 Eq_16) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t4003B0, qwArg00, (char *) fp + 8, &g_t400590, &g_t400600, rdx, fp);
+	__libc_start_main(&g_t4003B0, (int32) qwArg00, (char *) fp + 8, &g_t400590, &g_t400600, rdx, fp);
 	__hlt();
 }
 
@@ -136,7 +136,7 @@ void fill(word32 esi, byte * rdi)
 void with_array(word32 edi)
 {
 	int64 rax_5 = (int64) edi;
-	byte * rsp_16 = fp - 0x18 - ((word64) ((word64) (rax_5 * 0x04) + 18) & ~0x0F);
+	byte * rsp_16 = fp - 0x18 - (rax_5 * 0x04 + 18 & ~0x0F);
 	fill((word32) rax_5, rsp_16);
 	use(fp - 0x10);
 	use(rsp_16);
@@ -149,7 +149,7 @@ void with_array(word32 edi)
 void with_alloca(word32 edi)
 {
 	int64 rax_5 = (int64) edi;
-	byte * rdx_18 = (word64) (fp - 0x18 - ((word64) ((word64) (rax_5 * 0x04) + 30) & ~0x0F)) + 0x0F & ~0x0F;
+	byte * rdx_18 = (word64) (fp - 0x18 - (rax_5 * 0x04 + 30 & ~0x0F)) + 0x0F & ~0x0F;
 	fill((word32) rax_5, rdx_18);
 	use(fp - 0x10);
 	use(rdx_18);

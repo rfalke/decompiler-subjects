@@ -62,22 +62,53 @@ void _putchar()
 // 0000000100001FCC: void _main(Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
 void _main(Eq_2 q1, Eq_2 q2, Eq_2 q3)
 {
-	Eq_2 q0_24 = __movi_i8(~0x1111111111111111);
+	word64 q1_64_64_75 = SLICE(q1, word64, 64);
+	word64 q2_64_64_77 = SLICE(q2, word64, 64);
+	word64 q3_64_64_79 = SLICE(q3, word64, 64);
+	Eq_11 q0_24 = __movi_i8(~0x1111111111111111);
 	g_t8090 = q0_24;
 	g_t80A0 = q0_24;
 	g_t80B0 = q0_24;
 	g_t80C0 = q0_24;
-	Eq_2 q2_43;
-	Eq_2 q3_44;
-	Eq_2 q1_42 = _full_load_with_ldr(&g_ptr8018, &g_t8090, &g_t80B0, q0_24, q1, q2, q3, out q2_43, out q3_44);
-	struct Eq_39 * x20_56;
-	struct Eq_40 * x19_55 = _dump(out x20_56);
-	Eq_2 q0_66 = __movi_i8(~0x1111111111111111);
-	x19_55->t0000 = q0_66;
-	x19_55->t0010 = q0_66;
-	x20_56->t0000 = q0_66;
-	x20_56->t0010 = q0_66;
-	_full_load_with_byte_wise_ld1(q0_66, q1_42, q2_43, q3_44);
+	word64 d2_43;
+	word64 d3_44;
+	word64 d1_42 = _full_load_with_ldr(&g_ptr8018, &g_t8090, &g_t80B0, q1, q2, q3, out d2_43, out d3_44);
+	struct Eq_44 * x20_53;
+	struct Eq_45 * x19_52 = _dump(out x20_53);
+	Eq_11 q0_63 = __movi_i8(~0x1111111111111111);
+	x19_52->t0000 = q0_63;
+	x19_52->t0010 = q0_63;
+	x20_53->t0000 = q0_63;
+	x20_53->t0010 = q0_63;
+	word64 d2_83;
+	word64 d3_84;
+	word64 d1_82 = _full_load_with_byte_wise_ld1(0x100008018, x19_52, x20_53, SEQ(q1_64_64_75, d1_42), SEQ(q2_64_64_77, d2_43), SEQ(q3_64_64_79, d3_44), out d2_83, out d3_84);
+	struct Eq_87 * x20_93;
+	struct Eq_45 * x19_92 = _dump(out x20_93);
+	Eq_11 q0_103 = __movi_i8(~0x1111111111111111);
+	x19_92->t0000 = q0_103;
+	x19_92->t0010 = q0_103;
+	x20_93->t0000 = q0_103;
+	x20_93->t0010 = q0_103;
+	word64 d2_120;
+	word64 d3_121;
+	word64 d1_119 = _full_load_with_8byte_wise_ld1(0x100008018, x19_92, x20_93, SEQ(q1_64_64_75, d1_82), SEQ(q2_64_64_77, d2_83), SEQ(q3_64_64_79, d3_84), out d2_120, out d3_121);
+	struct Eq_128 * x20_130;
+	struct Eq_45 * x19_129 = _dump(out x20_130);
+	Eq_11 q0_140 = __movi_i8(~0x1111111111111111);
+	x19_129->t0000 = q0_140;
+	x19_129->t0010 = q0_140;
+	x20_130->t0000 = q0_140;
+	x20_130->t0010 = q0_140;
+	_half_load_with_8byte_wise_ld1(0x100008018, x19_129, x20_130, SEQ(q1_64_64_75, d1_119), SEQ(q2_64_64_77, d2_120), SEQ(q3_64_64_79, d3_121));
+	struct Eq_162 * x20_167;
+	struct Eq_45 * x19_166 = _dump(out x20_167);
+	Eq_11 q0_177 = __movi_i8(~0x1111111111111111);
+	x19_166->t0000 = q0_177;
+	x19_166->t0010 = q0_177;
+	x20_167->t0000 = q0_177;
+	x20_167->t0010 = q0_177;
+	_full_load_2_regs_with_byte_wise_ld1();
 }
 
 // 0000000100002728: Register word64 _dump(Register out ptr64 x20Out)
@@ -86,10 +117,10 @@ void _main(Eq_2 q1, Eq_2 q2, Eq_2 q3)
 word64 _dump(ptr64 & x20Out)
 {
 	_printf();
-	Eq_2 x8_26 = g_t8090;
-	Eq_2 x9_28 = g_t80B0;
-	struct Eq_79 * x10_29 = x8_26 & x9_28;
-	if (x10_29 != (struct Eq_79 *) 0x01)
+	Eq_11 x8_26 = g_t8090;
+	Eq_11 x9_28 = g_t80B0;
+	struct Eq_196 * x10_29 = x8_26 & x9_28;
+	if (x10_29 != (struct Eq_196 *) 0x01)
 	{
 		x10_29->qw0001 = 0x00;
 		x10_29->qw0009 = 0x00;
@@ -100,8 +131,8 @@ word64 _dump(ptr64 & x20Out)
 	ui64 x8_45 = g_qw8098;
 	ui64 x9_47 = g_qw80B8;
 	word32 x8_32_32_58 = SLICE(x8_45, word32, 32);
-	struct Eq_91 * x10_48 = x8_45 & x9_47;
-	if (x10_48 != (struct Eq_91 *) 0x01)
+	struct Eq_208 * x10_48 = x8_45 & x9_47;
+	if (x10_48 != (struct Eq_208 *) 0x01)
 	{
 		x10_48->qw0011 = x8_45;
 		x10_48->qw0019 = x9_47;
@@ -110,11 +141,11 @@ word64 _dump(ptr64 & x20Out)
 		x10_48->qw0009 = x8_59;
 		_printf();
 	}
-	Eq_2 x8_67 = g_t80A0;
-	Eq_2 x9_69 = g_t80C0;
+	Eq_11 x8_67 = g_t80A0;
+	Eq_11 x9_69 = g_t80C0;
 	word32 x8_32_32_80 = SLICE(x8_67, word32, 32);
-	struct Eq_119 * x10_70 = x8_67 & x9_69;
-	if (x10_70 != (struct Eq_119 *) 0x01)
+	struct Eq_236 * x10_70 = x8_67 & x9_69;
+	if (x10_70 != (struct Eq_236 *) 0x01)
 	{
 		x10_70->t0011 = x8_67;
 		x10_70->t0019 = x9_69;
@@ -126,8 +157,8 @@ word64 _dump(ptr64 & x20Out)
 	ui64 x8_89 = g_qw80A8;
 	ui64 x9_91 = g_qw80C8;
 	word32 x8_32_32_102 = SLICE(x8_89, word32, 32);
-	struct Eq_148 * x10_92 = x8_89 & x9_91;
-	if (x10_92 != (struct Eq_148 *) 0x01)
+	struct Eq_265 * x10_92 = x8_89 & x9_91;
+	if (x10_92 != (struct Eq_265 *) 0x01)
 	{
 		x10_92->qw0011 = x8_89;
 		x10_92->qw0019 = x9_91;
@@ -143,637 +174,507 @@ word64 _dump(ptr64 & x20Out)
 	return x19_119;
 }
 
-// 0000000100002818: Register Eq_2 _full_load_with_ldr(Register (ptr64 (ptr128 (arr Eq_1346))) x0, Register (ptr64 Eq_25) x1, Register (ptr64 Eq_26) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3, Register out Eq_2 q2Out, Register out Eq_2 q3Out)
+// 0000000100002818: Register word64 _full_load_with_ldr(Register (ptr64 (ptr128 (arr Eq_1232))) x0, Register (ptr64 Eq_31) x1, Register (ptr64 Eq_32) x2, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3, Register out ptr64 d2Out, Register out ptr64 d3Out)
 // Called from:
 //      _main
-Eq_2 _full_load_with_ldr(Eq_1346 (** x0)[], struct Eq_25 * x1, struct Eq_26 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3, union Eq_2 & q2Out, union Eq_2 & q3Out)
+word64 _full_load_with_ldr(Eq_1232 (** x0)[], struct Eq_31 * x1, struct Eq_32 * x2, Eq_2 q1, Eq_2 q2, Eq_2 q3, ptr64 & d2Out, ptr64 & d3Out)
 {
-	__cmeq_i8(q0, q0);
-	Eq_2 q1_10 = __cmeq_i8(q1, q1);
-	Eq_2 q2_14 = __cmeq_i8(q2, q2);
-	Eq_2 q3_18 = __cmeq_i8(q3, q3);
-	Eq_1346 q0_21[] = *x0;
+	Eq_315 q1_10 = __cmeq_i8(q1, q1);
+	Eq_315 q2_14 = __cmeq_i8(q2, q2);
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1232 q0_21[] = *x0;
 	x1->qw0000 = q0_21[1].qw0000;
-	struct Eq_220 * d0_25 = (word64) q0_21;
-	x2->ptr0000 = d0_25;
-	word64 x0_29 = *((word128) q1_10 + 1);
-	x1->qw0008 = x0_29;
-	x2->qw0008 = x0_29;
-	word64 x0_33 = *((word128) q2_14 + 1);
-	d0_25->qw0010 = x0_33;
-	d0_25->qw0010 = x0_33;
-	word64 x0_37 = *((word128) q3_18 + 1);
-	d0_25->qw0018 = x0_37;
-	d0_25->qw0018 = x0_37;
-	q2Out = q2_14;
-	q3Out = q3_18;
-	return q1_10;
+	x2->qw0000 = (word64) q0_21;
+	x1->t0008 = *((word128) q1_10 + 1);
+	word64 d1_31 = (word64) q1_10;
+	x2->qw0008 = d1_31;
+	x1->t0010 = *((word128) q2_14 + 1);
+	ptr64 d2_36 = (word64) q2_14;
+	x2->ptr0010 = d2_36;
+	x1->t0018 = *((word128) q3_18 + 1);
+	ptr64 d3_41 = (word64) q3_18;
+	x2->ptr0018 = d3_41;
+	d2Out = d2_36;
+	d3Out = d3_41;
+	return d1_31;
 }
 
-// 0000000100002874: void _full_load_with_byte_wise_ld1(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002874: Register word64 _full_load_with_byte_wise_ld1(Register ptr64 x0, Register (ptr64 Eq_45) x1, Register (ptr64 Eq_44) x2, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3, Register out Eq_11 d2Out, Register out ptr64 d3Out)
 // Called from:
 //      _main
-void _full_load_with_byte_wise_ld1(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+word64 _full_load_with_byte_wise_ld1(ptr64 x0, struct Eq_45 * x1, struct Eq_44 * x2, Eq_2 q1, Eq_2 q2, Eq_2 q3, union Eq_11 & d2Out, ptr64 & d3Out)
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
+	Eq_315 q1_10 = __cmeq_i8(q1, q1);
+	Eq_315 q2_14 = __cmeq_i8(q2, q2);
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1236 v0_20[];
+	__ld1(x0, out v0_20);
+	x1->t0000 = v0_20[1].t0000;
+	x2->t0000 = (word64) v0_20;
+	x1->t0008 = *((word128) q1_10 + 1);
+	word64 d1_30 = (word64) q1_10;
+	x2->qw0008 = d1_30;
+	x1->t0010 = *((word128) q2_14 + 1);
+	Eq_11 d2_35 = (word64) q2_14;
+	x2->t0010 = d2_35;
+	x1->t0018 = *((word128) q3_18 + 1);
+	ptr64 d3_40 = (word64) q3_18;
+	x2->ptr0018 = d3_40;
+	d2Out = d2_35;
+	d3Out = d3_40;
+	return d1_30;
 }
 
-// 00000001000028D0: void _full_load_with_8byte_wise_ld1(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000028D0: Register word64 _full_load_with_8byte_wise_ld1(Register ptr64 x0, Register (ptr64 Eq_45) x1, Register (ptr64 Eq_87) x2, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3, Register out Eq_11 d2Out, Register out ptr64 d3Out)
 // Called from:
 //      _main
-void _full_load_with_8byte_wise_ld1(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+word64 _full_load_with_8byte_wise_ld1(ptr64 x0, struct Eq_45 * x1, struct Eq_87 * x2, Eq_2 q1, Eq_2 q2, Eq_2 q3, union Eq_11 & d2Out, ptr64 & d3Out)
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
+	Eq_315 q1_10 = __cmeq_i8(q1, q1);
+	Eq_315 q2_14 = __cmeq_i8(q2, q2);
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1240 v0_20[];
+	__ld1(x0, out v0_20);
+	x1->t0000 = v0_20[1].t0000;
+	x2->t0000 = (word64) v0_20;
+	x1->t0008 = *((word128) q1_10 + 1);
+	word64 d1_30 = (word64) q1_10;
+	x2->qw0008 = d1_30;
+	x1->t0010 = *((word128) q2_14 + 1);
+	Eq_11 d2_35 = (word64) q2_14;
+	x2->t0010 = d2_35;
+	x1->t0018 = *((word128) q3_18 + 1);
+	ptr64 d3_40 = (word64) q3_18;
+	x2->ptr0018 = d3_40;
+	d2Out = d2_35;
+	d3Out = d3_40;
+	return d1_30;
 }
 
-// 000000010000292C: void _half_load_with_8byte_wise_ld1(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 000000010000292C: void _half_load_with_8byte_wise_ld1(Register ptr64 x0, Register (ptr64 Eq_45) x1, Register (ptr64 Eq_128) x2, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
 // Called from:
 //      _main
-void _half_load_with_8byte_wise_ld1(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _half_load_with_8byte_wise_ld1(ptr64 x0, struct Eq_45 * x1, struct Eq_128 * x2, Eq_2 q1, Eq_2 q2, Eq_2 q3)
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
+	Eq_315 q1_10 = __cmeq_i8(q1, q1);
+	Eq_315 q2_14 = __cmeq_i8(q2, q2);
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1244 v0_20[];
+	__ld1(x0, out v0_20);
+	x1->t0000 = v0_20[1].t0000;
+	x2->t0000 = (word64) v0_20;
+	x1->t0008 = *((word128) q1_10 + 1);
+	x2->qw0008 = (word64) q1_10;
+	x1->t0010 = *((word128) q2_14 + 1);
+	x2->t0010 = (word64) q2_14;
+	x1->t0018 = *((word128) q3_18 + 1);
+	x2->qw0018 = (word64) q3_18;
 }
 
-// 0000000100002988: void _full_load_2_regs_with_byte_wise_ld1(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002988: void _full_load_2_regs_with_byte_wise_ld1()
 // Called from:
 //      _main
-void _full_load_2_regs_with_byte_wise_ld1(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _full_load_2_regs_with_byte_wise_ld1()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 00000001000029E4: void _full_load_4_regs_with_byte_wise_ld1(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000029E4: void _full_load_4_regs_with_byte_wise_ld1()
 // Called from:
 //      _main
-void _full_load_4_regs_with_byte_wise_ld1(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _full_load_4_regs_with_byte_wise_ld1()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100002A40: void _indexed_ld1__one_byte_at_index_0(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002A40: void _indexed_ld1__one_byte_at_index_0()
 // Called from:
 //      _main
-void _indexed_ld1__one_byte_at_index_0(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_ld1__one_byte_at_index_0()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100002A9C: void _indexed_ld1__one_byte_at_index_3(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002A9C: void _indexed_ld1__one_byte_at_index_3()
 // Called from:
 //      _main
-void _indexed_ld1__one_byte_at_index_3(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_ld1__one_byte_at_index_3()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100002AF8: void _indexed_ld1__8_bytes_to_low(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002AF8: void _indexed_ld1__8_bytes_to_low()
 // Called from:
 //      _main
-void _indexed_ld1__8_bytes_to_low(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_ld1__8_bytes_to_low()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100002B54: void _indexed_ld1__8_bytes_to_high(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002B54: void _indexed_ld1__8_bytes_to_high()
 // Called from:
 //      _main
-void _indexed_ld1__8_bytes_to_high(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_ld1__8_bytes_to_high()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100002BB0: void _repeating_ld1__repeat_first_byte_half(Register word64 x0, Register (ptr64 Eq_357) x1, Register (ptr64 Eq_358) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002BB0: void _repeating_ld1__repeat_first_byte_half(Register word64 x0, Register (ptr64 Eq_529) x1, Register (ptr64 Eq_530) x2, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
 // Called from:
 //      _main
-void _repeating_ld1__repeat_first_byte_half(word64 x0, struct Eq_357 * x1, struct Eq_358 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _repeating_ld1__repeat_first_byte_half(word64 x0, struct Eq_529 * x1, struct Eq_530 * x2, Eq_2 q1, Eq_2 q2, Eq_2 q3)
 {
-	__cmeq_i8(q0, q0);
-	Eq_2 q1_10 = __cmeq_i8(q1, q1);
-	Eq_2 q2_14 = __cmeq_i8(q2, q2);
-	Eq_2 q3_18 = __cmeq_i8(q3, q3);
-	Eq_1350 v0_20[];
+	Eq_315 q1_10 = __cmeq_i8(q1, q1);
+	Eq_315 q2_14 = __cmeq_i8(q2, q2);
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1248 v0_20[];
 	__ld1r(x0, out v0_20);
 	x1->qw0000 = v0_20[1].qw0000;
-	struct Eq_386 * d0_24 = (word64) v0_20;
-	x2->ptr0000 = d0_24;
-	word64 x0_28 = *((word128) q1_10 + 1);
-	x1->qw0008 = x0_28;
-	x2->qw0008 = x0_28;
-	word64 x0_32 = *((word128) q2_14 + 1);
-	d0_24->qw0010 = x0_32;
-	d0_24->qw0010 = x0_32;
-	word64 x0_36 = *((word128) q3_18 + 1);
-	d0_24->qw0018 = x0_36;
-	d0_24->qw0018 = x0_36;
+	x2->qw0000 = (word64) v0_20;
+	x1->t0008 = *((word128) q1_10 + 1);
+	x2->qw0008 = (word64) q1_10;
+	x1->t0010 = *((word128) q2_14 + 1);
+	x2->qw0010 = (word64) q2_14;
+	x1->t0018 = *((word128) q3_18 + 1);
+	x2->qw0018 = (word64) q3_18;
 }
 
-// 0000000100002C0C: void _repeating_ld1__repeat_first_byte_full(Register word64 x0, Register (ptr64 Eq_419) x1, Register (ptr64 Eq_420) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002C0C: void _repeating_ld1__repeat_first_byte_full(Register word64 x0, Register (ptr64 Eq_587) x1, Register (ptr64 Eq_588) x2, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
 // Called from:
 //      _main
-void _repeating_ld1__repeat_first_byte_full(word64 x0, struct Eq_419 * x1, struct Eq_420 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _repeating_ld1__repeat_first_byte_full(word64 x0, struct Eq_587 * x1, struct Eq_588 * x2, Eq_2 q1, Eq_2 q2, Eq_2 q3)
 {
-	__cmeq_i8(q0, q0);
-	Eq_2 q1_10 = __cmeq_i8(q1, q1);
-	Eq_2 q2_14 = __cmeq_i8(q2, q2);
-	Eq_2 q3_18 = __cmeq_i8(q3, q3);
-	Eq_1354 v0_20[];
+	Eq_315 q1_10 = __cmeq_i8(q1, q1);
+	Eq_315 q2_14 = __cmeq_i8(q2, q2);
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1252 v0_20[];
 	__ld1r(x0, out v0_20);
 	x1->qw0000 = v0_20[1].qw0000;
-	struct Eq_445 * d0_24 = (word64) v0_20;
-	x2->ptr0000 = d0_24;
-	word64 x0_28 = *((word128) q1_10 + 1);
-	x1->qw0008 = x0_28;
-	x2->qw0008 = x0_28;
-	word64 x0_32 = *((word128) q2_14 + 1);
-	d0_24->qw0010 = x0_32;
-	d0_24->qw0010 = x0_32;
-	word64 x0_36 = *((word128) q3_18 + 1);
-	d0_24->qw0018 = x0_36;
-	d0_24->qw0018 = x0_36;
+	x2->qw0000 = (word64) v0_20;
+	x1->t0008 = *((word128) q1_10 + 1);
+	x2->qw0008 = (word64) q1_10;
+	x1->t0010 = *((word128) q2_14 + 1);
+	x2->qw0010 = (word64) q2_14;
+	x1->t0018 = *((word128) q3_18 + 1);
+	x2->qw0018 = (word64) q3_18;
 }
 
-// 0000000100002C68: void _repeating_ld1__load_first_8_bytes_into_low(Register word64 x0, Register (ptr64 Eq_478) x1, Register (ptr64 Eq_479) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002C68: void _repeating_ld1__load_first_8_bytes_into_low(Register word64 x0, Register (ptr64 Eq_642) x1, Register (ptr64 Eq_643) x2, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
 // Called from:
 //      _main
-void _repeating_ld1__load_first_8_bytes_into_low(word64 x0, struct Eq_478 * x1, struct Eq_479 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _repeating_ld1__load_first_8_bytes_into_low(word64 x0, struct Eq_642 * x1, struct Eq_643 * x2, Eq_2 q1, Eq_2 q2, Eq_2 q3)
 {
-	__cmeq_i8(q0, q0);
-	Eq_2 q1_10 = __cmeq_i8(q1, q1);
-	Eq_2 q2_14 = __cmeq_i8(q2, q2);
-	Eq_2 q3_18 = __cmeq_i8(q3, q3);
-	Eq_1358 v0_20[];
+	Eq_315 q1_10 = __cmeq_i8(q1, q1);
+	Eq_315 q2_14 = __cmeq_i8(q2, q2);
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1256 v0_20[];
 	__ld1r(x0, out v0_20);
 	x1->qw0000 = v0_20[1].qw0000;
-	struct Eq_504 * d0_24 = (word64) v0_20;
-	x2->ptr0000 = d0_24;
-	word64 x0_28 = *((word128) q1_10 + 1);
-	x1->qw0008 = x0_28;
-	x2->qw0008 = x0_28;
-	word64 x0_32 = *((word128) q2_14 + 1);
-	d0_24->qw0010 = x0_32;
-	d0_24->qw0010 = x0_32;
-	word64 x0_36 = *((word128) q3_18 + 1);
-	d0_24->qw0018 = x0_36;
-	d0_24->qw0018 = x0_36;
+	x2->qw0000 = (word64) v0_20;
+	x1->t0008 = *((word128) q1_10 + 1);
+	x2->qw0008 = (word64) q1_10;
+	x1->t0010 = *((word128) q2_14 + 1);
+	x2->qw0010 = (word64) q2_14;
+	x1->t0018 = *((word128) q3_18 + 1);
+	x2->qw0018 = (word64) q3_18;
 }
 
-// 0000000100002CC4: void _repeating_ld1__repeat_8_bytes_to_high(Register word64 x0, Register (ptr64 Eq_537) x1, Register (ptr64 Eq_538) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002CC4: void _repeating_ld1__repeat_8_bytes_to_high(Register word64 x0, Register (ptr64 Eq_697) x1, Register (ptr64 Eq_698) x2, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
 // Called from:
 //      _main
-void _repeating_ld1__repeat_8_bytes_to_high(word64 x0, struct Eq_537 * x1, struct Eq_538 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _repeating_ld1__repeat_8_bytes_to_high(word64 x0, struct Eq_697 * x1, struct Eq_698 * x2, Eq_2 q1, Eq_2 q2, Eq_2 q3)
 {
-	__cmeq_i8(q0, q0);
-	Eq_2 q1_10 = __cmeq_i8(q1, q1);
-	Eq_2 q2_14 = __cmeq_i8(q2, q2);
-	Eq_2 q3_18 = __cmeq_i8(q3, q3);
-	Eq_1362 v0_20[];
+	Eq_315 q1_10 = __cmeq_i8(q1, q1);
+	Eq_315 q2_14 = __cmeq_i8(q2, q2);
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1260 v0_20[];
 	__ld1r(x0, out v0_20);
 	x1->qw0000 = v0_20[1].qw0000;
-	struct Eq_563 * d0_24 = (word64) v0_20;
-	x2->ptr0000 = d0_24;
-	word64 x0_28 = *((word128) q1_10 + 1);
-	x1->qw0008 = x0_28;
-	x2->qw0008 = x0_28;
-	word64 x0_32 = *((word128) q2_14 + 1);
-	d0_24->qw0010 = x0_32;
-	d0_24->qw0010 = x0_32;
-	word64 x0_36 = *((word128) q3_18 + 1);
-	d0_24->qw0018 = x0_36;
-	d0_24->qw0018 = x0_36;
+	x2->qw0000 = (word64) v0_20;
+	x1->t0008 = *((word128) q1_10 + 1);
+	x2->qw0008 = (word64) q1_10;
+	x1->t0010 = *((word128) q2_14 + 1);
+	x2->qw0010 = (word64) q2_14;
+	x1->t0018 = *((word128) q3_18 + 1);
+	x2->qw0018 = (word64) q3_18;
 }
 
-// 0000000100002D20: void _ld2_spread_bytes_to_2_regs(Register word64 x0, Register (ptr64 Eq_596) x1, Register (ptr64 Eq_597) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002D20: void _ld2_spread_bytes_to_2_regs(Register word64 x0, Register (ptr64 Eq_752) x1, Register (ptr64 Eq_753) x2, Register Eq_2 q2, Register Eq_2 q3)
 // Called from:
 //      _main
-void _ld2_spread_bytes_to_2_regs(word64 x0, struct Eq_596 * x1, struct Eq_597 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _ld2_spread_bytes_to_2_regs(word64 x0, struct Eq_752 * x1, struct Eq_753 * x2, Eq_2 q2, Eq_2 q3)
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	Eq_2 q2_14 = __cmeq_i8(q2, q2);
-	Eq_2 q3_18 = __cmeq_i8(q3, q3);
-	Eq_1366 v0_20[];
-	Eq_1367 v1_21[];
+	Eq_315 q2_14 = __cmeq_i8(q2, q2);
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1264 v0_20[];
+	Eq_1265 v1_21[];
 	__ld2(x0, out v0_20, out v1_21);
 	x1->qw0000 = v0_20[1].qw0000;
-	struct Eq_627 * d0_25 = (word64) v0_20;
-	x2->ptr0000 = d0_25;
-	word64 x0_29 = v1_21[1].qw0000;
-	x1->qw0008 = x0_29;
-	x2->qw0008 = x0_29;
-	word64 x0_33 = *((word128) q2_14 + 1);
-	d0_25->qw0010 = x0_33;
-	d0_25->qw0010 = x0_33;
-	word64 x0_37 = *((word128) q3_18 + 1);
-	d0_25->qw0018 = x0_37;
-	d0_25->qw0018 = x0_37;
+	x2->qw0000 = (word64) v0_20;
+	x1->qw0008 = v1_21[1].qw0000;
+	x2->qw0008 = (word64) v1_21;
+	x1->t0010 = *((word128) q2_14 + 1);
+	x2->qw0010 = (word64) q2_14;
+	x1->t0018 = *((word128) q3_18 + 1);
+	x2->qw0018 = (word64) q3_18;
 }
 
-// 0000000100002D7C: void _ld2_spread_bytes_to_2_regs__half_(Register word64 x0, Register (ptr64 Eq_660) x1, Register (ptr64 Eq_661) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002D7C: void _ld2_spread_bytes_to_2_regs__half_(Register word64 x0, Register (ptr64 Eq_809) x1, Register (ptr64 Eq_810) x2, Register Eq_2 q2, Register Eq_2 q3)
 // Called from:
 //      _main
-void _ld2_spread_bytes_to_2_regs__half_(word64 x0, struct Eq_660 * x1, struct Eq_661 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _ld2_spread_bytes_to_2_regs__half_(word64 x0, struct Eq_809 * x1, struct Eq_810 * x2, Eq_2 q2, Eq_2 q3)
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	Eq_2 q2_14 = __cmeq_i8(q2, q2);
-	Eq_2 q3_18 = __cmeq_i8(q3, q3);
-	Eq_1370 v0_20[];
-	Eq_1371 v1_21[];
+	Eq_315 q2_14 = __cmeq_i8(q2, q2);
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1268 v0_20[];
+	Eq_1269 v1_21[];
 	__ld2(x0, out v0_20, out v1_21);
 	x1->qw0000 = v0_20[1].qw0000;
-	struct Eq_687 * d0_25 = (word64) v0_20;
-	x2->ptr0000 = d0_25;
-	word64 x0_29 = v1_21[1].qw0000;
-	x1->qw0008 = x0_29;
-	x2->qw0008 = x0_29;
-	word64 x0_33 = *((word128) q2_14 + 1);
-	d0_25->qw0010 = x0_33;
-	d0_25->qw0010 = x0_33;
-	word64 x0_37 = *((word128) q3_18 + 1);
-	d0_25->qw0018 = x0_37;
-	d0_25->qw0018 = x0_37;
+	x2->qw0000 = (word64) v0_20;
+	x1->qw0008 = v1_21[1].qw0000;
+	x2->qw0008 = (word64) v1_21;
+	x1->t0010 = *((word128) q2_14 + 1);
+	x2->qw0010 = (word64) q2_14;
+	x1->t0018 = *((word128) q3_18 + 1);
+	x2->qw0018 = (word64) q3_18;
 }
 
-// 0000000100002DD8: void _ld2_spread_8_bytes_items_to_2_regs(Register word64 x0, Register (ptr64 Eq_720) x1, Register (ptr64 Eq_721) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002DD8: void _ld2_spread_8_bytes_items_to_2_regs(Register word64 x0, Register (ptr64 Eq_862) x1, Register (ptr64 Eq_863) x2, Register Eq_2 q2, Register Eq_2 q3)
 // Called from:
 //      _main
-void _ld2_spread_8_bytes_items_to_2_regs(word64 x0, struct Eq_720 * x1, struct Eq_721 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _ld2_spread_8_bytes_items_to_2_regs(word64 x0, struct Eq_862 * x1, struct Eq_863 * x2, Eq_2 q2, Eq_2 q3)
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	Eq_2 q2_14 = __cmeq_i8(q2, q2);
-	Eq_2 q3_18 = __cmeq_i8(q3, q3);
-	Eq_1374 v0_20[];
-	Eq_1375 v1_21[];
+	Eq_315 q2_14 = __cmeq_i8(q2, q2);
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1272 v0_20[];
+	Eq_1273 v1_21[];
 	__ld2(x0, out v0_20, out v1_21);
 	x1->qw0000 = v0_20[1].qw0000;
-	struct Eq_747 * d0_25 = (word64) v0_20;
-	x2->ptr0000 = d0_25;
-	word64 x0_29 = v1_21[1].qw0000;
-	x1->qw0008 = x0_29;
-	x2->qw0008 = x0_29;
-	word64 x0_33 = *((word128) q2_14 + 1);
-	d0_25->qw0010 = x0_33;
-	d0_25->qw0010 = x0_33;
-	word64 x0_37 = *((word128) q3_18 + 1);
-	d0_25->qw0018 = x0_37;
-	d0_25->qw0018 = x0_37;
+	x2->qw0000 = (word64) v0_20;
+	x1->qw0008 = v1_21[1].qw0000;
+	x2->qw0008 = (word64) v1_21;
+	x1->t0010 = *((word128) q2_14 + 1);
+	x2->qw0010 = (word64) q2_14;
+	x1->t0018 = *((word128) q3_18 + 1);
+	x2->qw0018 = (word64) q3_18;
 }
 
-// 0000000100002E34: void _indexed_ld2__first_2_bytes_to_2_regs(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002E34: void _indexed_ld2__first_2_bytes_to_2_regs()
 // Called from:
 //      _main
-void _indexed_ld2__first_2_bytes_to_2_regs(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_ld2__first_2_bytes_to_2_regs()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100002E90: void _indexed_ld2__8_bytes_into_lows(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002E90: void _indexed_ld2__8_bytes_into_lows()
 // Called from:
 //      _main
-void _indexed_ld2__8_bytes_into_lows(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_ld2__8_bytes_into_lows()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100002EEC: void _indexed_ld2__8_bytes_to_highs(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002EEC: void _indexed_ld2__8_bytes_to_highs()
 // Called from:
 //      _main
-void _indexed_ld2__8_bytes_to_highs(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_ld2__8_bytes_to_highs()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100002F48: void _repeating_ld2__first_bytes_full(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002F48: void _repeating_ld2__first_bytes_full()
 // Called from:
 //      _main
-void _repeating_ld2__first_bytes_full(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _repeating_ld2__first_bytes_full()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100002FA4: void _repeating_ld2__2_bytes_half(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002FA4: void _repeating_ld2__2_bytes_half()
 // Called from:
 //      _main
-void _repeating_ld2__2_bytes_half(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _repeating_ld2__2_bytes_half()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100003000: void _ld3_spread_bytes_to_3_regs(Register word64 x0, Register (ptr64 Eq_840) x1, Register (ptr64 Eq_841) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003000: void _ld3_spread_bytes_to_3_regs(Register word64 x0, Register (ptr64 Eq_915) x1, Register (ptr64 Eq_916) x2, Register Eq_2 q3)
 // Called from:
 //      _main
-void _ld3_spread_bytes_to_3_regs(word64 x0, struct Eq_840 * x1, struct Eq_841 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _ld3_spread_bytes_to_3_regs(word64 x0, struct Eq_915 * x1, struct Eq_916 * x2, Eq_2 q3)
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	Eq_2 q3_18 = __cmeq_i8(q3, q3);
-	Eq_1378 v0_20[];
-	Eq_1379 v1_21[];
-	Eq_1380 v2_22[];
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1276 v0_20[];
+	Eq_1277 v1_21[];
+	Eq_1278 v2_22[];
 	__ld3(x0, out v0_20, out v1_21, out v2_22);
 	x1->qw0000 = v0_20[1].qw0000;
-	struct Eq_873 * d0_26 = (word64) v0_20;
-	x2->ptr0000 = d0_26;
-	word64 x0_30 = v1_21[1].qw0000;
-	x1->qw0008 = x0_30;
-	x2->qw0008 = x0_30;
-	word64 x0_34 = v2_22[1].qw0000;
-	d0_26->qw0010 = x0_34;
-	d0_26->qw0010 = x0_34;
-	word64 x0_38 = *((word128) q3_18 + 1);
-	d0_26->qw0018 = x0_38;
-	d0_26->qw0018 = x0_38;
+	x2->qw0000 = (word64) v0_20;
+	x1->qw0008 = v1_21[1].qw0000;
+	x2->qw0008 = (word64) v1_21;
+	x1->qw0010 = v2_22[1].qw0000;
+	x2->qw0010 = (word64) v2_22;
+	x1->t0018 = *((word128) q3_18 + 1);
+	x2->qw0018 = (word64) q3_18;
 }
 
-// 000000010000305C: void _ld3_spread_bytes_to_3_regs__half_(Register word64 x0, Register (ptr64 Eq_906) x1, Register (ptr64 Eq_907) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 000000010000305C: void _ld3_spread_bytes_to_3_regs__half_(Register word64 x0, Register (ptr64 Eq_971) x1, Register (ptr64 Eq_972) x2, Register Eq_2 q3)
 // Called from:
 //      _main
-void _ld3_spread_bytes_to_3_regs__half_(word64 x0, struct Eq_906 * x1, struct Eq_907 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _ld3_spread_bytes_to_3_regs__half_(word64 x0, struct Eq_971 * x1, struct Eq_972 * x2, Eq_2 q3)
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	Eq_2 q3_18 = __cmeq_i8(q3, q3);
-	Eq_1382 v0_20[];
-	Eq_1383 v1_21[];
-	Eq_1384 v2_22[];
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1280 v0_20[];
+	Eq_1281 v1_21[];
+	Eq_1282 v2_22[];
 	__ld3(x0, out v0_20, out v1_21, out v2_22);
 	x1->qw0000 = v0_20[1].qw0000;
-	struct Eq_934 * d0_26 = (word64) v0_20;
-	x2->ptr0000 = d0_26;
-	word64 x0_30 = v1_21[1].qw0000;
-	x1->qw0008 = x0_30;
-	x2->qw0008 = x0_30;
-	word64 x0_34 = v2_22[1].qw0000;
-	d0_26->qw0010 = x0_34;
-	d0_26->qw0010 = x0_34;
-	word64 x0_38 = *((word128) q3_18 + 1);
-	d0_26->qw0018 = x0_38;
-	d0_26->qw0018 = x0_38;
+	x2->qw0000 = (word64) v0_20;
+	x1->qw0008 = v1_21[1].qw0000;
+	x2->qw0008 = (word64) v1_21;
+	x1->qw0010 = v2_22[1].qw0000;
+	x2->qw0010 = (word64) v2_22;
+	x1->t0018 = *((word128) q3_18 + 1);
+	x2->qw0018 = (word64) q3_18;
 }
 
-// 00000001000030B8: void _ld3_spread_8_bytes_items_to_3_regs(Register word64 x0, Register (ptr64 Eq_967) x1, Register (ptr64 Eq_968) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000030B8: void _ld3_spread_8_bytes_items_to_3_regs(Register word64 x0, Register (ptr64 Eq_1022) x1, Register (ptr64 Eq_1023) x2, Register Eq_2 q3)
 // Called from:
 //      _main
-void _ld3_spread_8_bytes_items_to_3_regs(word64 x0, struct Eq_967 * x1, struct Eq_968 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _ld3_spread_8_bytes_items_to_3_regs(word64 x0, struct Eq_1022 * x1, struct Eq_1023 * x2, Eq_2 q3)
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	Eq_2 q3_18 = __cmeq_i8(q3, q3);
-	Eq_1386 v0_20[];
-	Eq_1387 v1_21[];
-	Eq_1388 v2_22[];
+	Eq_315 q3_18 = __cmeq_i8(q3, q3);
+	Eq_1284 v0_20[];
+	Eq_1285 v1_21[];
+	Eq_1286 v2_22[];
 	__ld3(x0, out v0_20, out v1_21, out v2_22);
 	x1->qw0000 = v0_20[1].qw0000;
-	struct Eq_995 * d0_26 = (word64) v0_20;
-	x2->ptr0000 = d0_26;
-	word64 x0_30 = v1_21[1].qw0000;
-	x1->qw0008 = x0_30;
-	x2->qw0008 = x0_30;
-	word64 x0_34 = v2_22[1].qw0000;
-	d0_26->qw0010 = x0_34;
-	d0_26->qw0010 = x0_34;
-	word64 x0_38 = *((word128) q3_18 + 1);
-	d0_26->qw0018 = x0_38;
-	d0_26->qw0018 = x0_38;
+	x2->qw0000 = (word64) v0_20;
+	x1->qw0008 = v1_21[1].qw0000;
+	x2->qw0008 = (word64) v1_21;
+	x1->qw0010 = v2_22[1].qw0000;
+	x2->qw0010 = (word64) v2_22;
+	x1->t0018 = *((word128) q3_18 + 1);
+	x2->qw0018 = (word64) q3_18;
 }
 
-// 0000000100003114: void _indexed_ld3__first_2_bytes_to_3_regs(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003114: void _indexed_ld3__first_2_bytes_to_3_regs()
 // Called from:
 //      _main
-void _indexed_ld3__first_2_bytes_to_3_regs(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_ld3__first_2_bytes_to_3_regs()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100003170: void _indexed_ld3__8_bytes_into_lows(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003170: void _indexed_ld3__8_bytes_into_lows()
 // Called from:
 //      _main
-void _indexed_ld3__8_bytes_into_lows(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_ld3__8_bytes_into_lows()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 00000001000031CC: void _indexed_ld3__8_bytes_to_highs(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000031CC: void _indexed_ld3__8_bytes_to_highs()
 // Called from:
 //      _main
-void _indexed_ld3__8_bytes_to_highs(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_ld3__8_bytes_to_highs()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100003228: void _repeating_ld3__first_bytes_full(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003228: void _repeating_ld3__first_bytes_full()
 // Called from:
 //      _main
-void _repeating_ld3__first_bytes_full(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _repeating_ld3__first_bytes_full()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100003284: void _repeating_ld3__2_bytes_half(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003284: void _repeating_ld3__2_bytes_half()
 // Called from:
 //      _main
-void _repeating_ld3__2_bytes_half(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _repeating_ld3__2_bytes_half()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 00000001000032E0: void _ld4_spread_bytes_to_4_regs(Register word64 x0, Register (ptr64 Eq_1088) x1, Register (ptr64 Eq_1089) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000032E0: void _ld4_spread_bytes_to_4_regs(Register word64 x0, Register (ptr64 Eq_1073) x1, Register (ptr64 Eq_1074) x2)
 // Called from:
 //      _main
-void _ld4_spread_bytes_to_4_regs(word64 x0, struct Eq_1088 * x1, struct Eq_1089 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _ld4_spread_bytes_to_4_regs(word64 x0, struct Eq_1073 * x1, struct Eq_1074 * x2)
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_1390 v0_20[];
-	Eq_1391 v1_21[];
-	Eq_1392 v2_22[];
-	Eq_1393 v3_23[];
+	Eq_1288 v0_20[];
+	Eq_1289 v1_21[];
+	Eq_1290 v2_22[];
+	Eq_1291 v3_23[];
 	__ld4(x0, out v0_20, out v1_21, out v2_22, out v3_23);
 	x1->qw0000 = v0_20[1].qw0000;
-	struct Eq_1123 * d0_27 = (word64) v0_20;
-	x2->ptr0000 = d0_27;
-	word64 x0_31 = v1_21[1].qw0000;
-	x1->qw0008 = x0_31;
-	x2->qw0008 = x0_31;
-	word64 x0_35 = v2_22[1].qw0000;
-	d0_27->qw0010 = x0_35;
-	d0_27->qw0010 = x0_35;
-	word64 x0_39 = v3_23[1].qw0000;
-	d0_27->qw0018 = x0_39;
-	d0_27->qw0018 = x0_39;
+	x2->qw0000 = (word64) v0_20;
+	x1->qw0008 = v1_21[1].qw0000;
+	x2->qw0008 = (word64) v1_21;
+	x1->qw0010 = v2_22[1].qw0000;
+	x2->qw0010 = (word64) v2_22;
+	x1->qw0018 = v3_23[1].qw0000;
+	x2->qw0018 = (word64) v3_23;
 }
 
-// 000000010000333C: void _ld4_spread_bytes_to_4_regs__half_(Register word64 x0, Register (ptr64 Eq_1156) x1, Register (ptr64 Eq_1157) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 000000010000333C: void _ld4_spread_bytes_to_4_regs__half_(Register word64 x0, Register (ptr64 Eq_1128) x1, Register (ptr64 Eq_1129) x2)
 // Called from:
 //      _main
-void _ld4_spread_bytes_to_4_regs__half_(word64 x0, struct Eq_1156 * x1, struct Eq_1157 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _ld4_spread_bytes_to_4_regs__half_(word64 x0, struct Eq_1128 * x1, struct Eq_1129 * x2)
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_1394 v0_20[];
-	Eq_1395 v1_21[];
-	Eq_1396 v2_22[];
-	Eq_1397 v3_23[];
+	Eq_1292 v0_20[];
+	Eq_1293 v1_21[];
+	Eq_1294 v2_22[];
+	Eq_1295 v3_23[];
 	__ld4(x0, out v0_20, out v1_21, out v2_22, out v3_23);
 	x1->qw0000 = v0_20[1].qw0000;
-	struct Eq_1185 * d0_27 = (word64) v0_20;
-	x2->ptr0000 = d0_27;
-	word64 x0_31 = v1_21[1].qw0000;
-	x1->qw0008 = x0_31;
-	x2->qw0008 = x0_31;
-	word64 x0_35 = v2_22[1].qw0000;
-	d0_27->qw0010 = x0_35;
-	d0_27->qw0010 = x0_35;
-	word64 x0_39 = v3_23[1].qw0000;
-	d0_27->qw0018 = x0_39;
-	d0_27->qw0018 = x0_39;
+	x2->qw0000 = (word64) v0_20;
+	x1->qw0008 = v1_21[1].qw0000;
+	x2->qw0008 = (word64) v1_21;
+	x1->qw0010 = v2_22[1].qw0000;
+	x2->qw0010 = (word64) v2_22;
+	x1->qw0018 = v3_23[1].qw0000;
+	x2->qw0018 = (word64) v3_23;
 }
 
-// 0000000100003398: void _ld4_spread_8_bytes_items_to_4_regs(Register word64 x0, Register (ptr64 Eq_1218) x1, Register (ptr64 Eq_1219) x2, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003398: void _ld4_spread_8_bytes_items_to_4_regs(Register word64 x0, Register (ptr64 Eq_1177) x1, Register (ptr64 Eq_1178) x2)
 // Called from:
 //      _main
-void _ld4_spread_8_bytes_items_to_4_regs(word64 x0, struct Eq_1218 * x1, struct Eq_1219 * x2, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _ld4_spread_8_bytes_items_to_4_regs(word64 x0, struct Eq_1177 * x1, struct Eq_1178 * x2)
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_1398 v0_20[];
-	Eq_1399 v1_21[];
-	Eq_1400 v2_22[];
-	Eq_1401 v3_23[];
+	Eq_1296 v0_20[];
+	Eq_1297 v1_21[];
+	Eq_1298 v2_22[];
+	Eq_1299 v3_23[];
 	__ld4(x0, out v0_20, out v1_21, out v2_22, out v3_23);
 	x1->qw0000 = v0_20[1].qw0000;
-	struct Eq_1247 * d0_27 = (word64) v0_20;
-	x2->ptr0000 = d0_27;
-	word64 x0_31 = v1_21[1].qw0000;
-	x1->qw0008 = x0_31;
-	x2->qw0008 = x0_31;
-	word64 x0_35 = v2_22[1].qw0000;
-	d0_27->qw0010 = x0_35;
-	d0_27->qw0010 = x0_35;
-	word64 x0_39 = v3_23[1].qw0000;
-	d0_27->qw0018 = x0_39;
-	d0_27->qw0018 = x0_39;
+	x2->qw0000 = (word64) v0_20;
+	x1->qw0008 = v1_21[1].qw0000;
+	x2->qw0008 = (word64) v1_21;
+	x1->qw0010 = v2_22[1].qw0000;
+	x2->qw0010 = (word64) v2_22;
+	x1->qw0018 = v3_23[1].qw0000;
+	x2->qw0018 = (word64) v3_23;
 }
 
-// 00000001000033F4: void _indexed_ld4__first_2_bytes_to_4_regs(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000033F4: void _indexed_ld4__first_2_bytes_to_4_regs()
 // Called from:
 //      _main
-void _indexed_ld4__first_2_bytes_to_4_regs(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_ld4__first_2_bytes_to_4_regs()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100003450: void _indexed_ld4__8_bytes_into_lows(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003450: void _indexed_ld4__8_bytes_into_lows()
 // Called from:
 //      _main
-void _indexed_ld4__8_bytes_into_lows(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_ld4__8_bytes_into_lows()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 00000001000034AC: void _indexed_ld4__8_bytes_to_highs(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000034AC: void _indexed_ld4__8_bytes_to_highs()
 // Called from:
 //      _main
-void _indexed_ld4__8_bytes_to_highs(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_ld4__8_bytes_to_highs()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100003508: void _repeating_ld4__first_bytes_full(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003508: void _repeating_ld4__first_bytes_full()
 // Called from:
 //      _main
-void _repeating_ld4__first_bytes_full(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _repeating_ld4__first_bytes_full()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 
-// 0000000100003564: void _repeating_ld4__2_bytes_half(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003564: void _repeating_ld4__2_bytes_half()
 // Called from:
 //      _main
-void _repeating_ld4__2_bytes_half(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _repeating_ld4__2_bytes_half()
 {
-	__cmeq_i8(q0, q0);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
 }
 

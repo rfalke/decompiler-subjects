@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400540: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400540: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400570, qwArg00, (char *) fp + 8, g_ptr400578, g_ptr400580, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400570, (int32) qwArg00, (char *) fp + 8, g_ptr400578, g_ptr400580, x0, fp);
 	abort();
 }
 
@@ -124,20 +124,16 @@ void __do_global_dtors_aux()
 // 0000000000400650: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400688 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400688;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400688 = null; // 0000000000400688
+word64 g_qw400688 = 0x00; // 0000000000400688
 // 0000000000400690: void f3()
 void f3()
 {
@@ -161,10 +157,10 @@ void f0()
 // 00000000004006A0: void main()
 void main()
 {
-	x0_13 = (uint64) printf("enter number of iterations ", 0x00);
-	x0_17 = (uint64) __isoc99_scanf("%ld", 0x00);
-	x0_22 = (uint64) printf("executing %ld iterations\n", 0x00);
-	x0_26 = (uint64) puts("finished");
+	x0_13 = (uint64) printf("enter number of iterations ");
+	x0_18 = (uint64) __isoc99_scanf("%ld", fp - 0x18);
+	x0_23 = (uint64) printf("executing %ld iterations\n", (int32) qwLoc20);
+	x0_27 = (uint64) puts("finished");
 }
 
 // 00000000004006F8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

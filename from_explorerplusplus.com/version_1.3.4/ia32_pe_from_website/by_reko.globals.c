@@ -4,10 +4,10 @@
 
 #include "subject.h"
 
-struct Eq_16365 * g_ptr0000; // 00000000
-Eq_10506 g_t0004;
-Eq_12546 g_t0028;
-Eq_9948 g_t0100;
-struct Eq_16707 * g_ptr0104; // 00000104
+struct Eq_16296 * g_ptr0000; // 00000000
+Eq_10436 g_t0004;
+Eq_12477 g_t0028;
+Eq_9885 g_t0100;
+struct Eq_16638 * g_ptr0104; // 00000104
 word32 g_dw7FFFFFFF; // 7FFFFFFF
-Eq_10480 g_tFFB20CB0;
+Eq_10410 g_tFFB20CB0;

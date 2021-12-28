@@ -62,10 +62,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -125,20 +125,16 @@ void __do_global_dtors_aux()
 // 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4005D8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4005D8 = null; // 00000000004005D8
+word64 g_qw4005D8 = 0x00; // 00000000004005D8
 // 00000000004005E0: void use(Register (ptr64 word32) x0)
 void use(word32 * x0)
 {
@@ -148,43 +144,38 @@ void use(word32 * x0)
 // 00000000004005F8: void fill(Register (ptr64 void) x0, Register (ptr64 void) x1)
 void fill(void * x0, void * x1)
 {
-	word32 x1_32_32_7 = SLICE(x1, word32, 32);
-	memset(x0, SEQ(x1_32_32_7, 0x78), __sbfiz(x1, 2));
+	memset(x0, 0x78, (size_t) __sbfiz(x1, 2));
 }
 
-// 0000000000400604: void with_array(Sequence word64 x8_32_32_w0, Register word32 x0_32_32, Register word32 x1_32_32, Register Eq_128 w19)
+// 0000000000400604: void with_array(Sequence word64 x8_32_32_w0, Register word32 x0_32_32, Register word32 w19)
 // Called from:
 //      main
-void with_array(word64 x8_32_32_w0, word32 x0_32_32, word32 x1_32_32, Eq_128 w19)
+void with_array(word64 x8_32_32_w0, word32 x0_32_32, word32 w19)
 {
 	word32 w0 = (word32) x8_32_32_w0;
-	memset(fp + -24, SEQ(x1_32_32, 0x78), __sbfiz(SEQ(x0_32_32, w0), 2));
+	memset(fp + -24, 0x78, (size_t) __sbfiz(SEQ(x0_32_32, w0), 2));
 	g_dw411034 = g_dw411034 + (word32) x19 + 0x0F;
 }
 
-// 0000000000400664: Register (ptr64 void) with_alloca(Register (ptr64 void) x0, Register word32 x1_32_32, Register Eq_153 w19, Register out Eq_114 x1Out, Register out ptr64 x8Out, Register out ptr64 x19Out)
+// 0000000000400664: Register (ptr64 void) with_alloca(Register (ptr64 void) x0, Register word32 w19, Register out ptr64 x8Out, Register out ptr64 x19Out)
 // Called from:
 //      main
-void * with_alloca(void * x0, word32 x1_32_32, Eq_153 w19, union Eq_114 & x1Out, ptr64 & x8Out, ptr64 & x19Out)
+void * with_alloca(void * x0, word32 w19, ptr64 & x8Out, ptr64 & x19Out)
 {
-	Eq_114 x1_26 = SEQ(x1_32_32, 0x78);
-	void * x0_27 = memset(fp + -24, x1_26, __sbfiz(x0, 2));
+	void * x0_27 = memset(fp + -24, 0x78, (size_t) __sbfiz(x0, 2));
 	g_dw411034 = g_dw411034 + (word32) x19 + 0x0F;
-	x1Out = x1_26;
 	x8Out = 0x00411000;
 	x19Out = qwLoc10;
 	return x0_27;
 }
 
-// 00000000004006BC: void main(Register (ptr64 void) x0, Register word32 x1_32_32, Register word64 x19)
-void main(void * x0, word32 x1_32_32, word64 x19)
+// 00000000004006BC: void main(Register (ptr64 void) x0, Register word64 x19)
+void main(void * x0, word64 x19)
 {
-	word32 x19_32_32_18 = SLICE(x19, word32, 32);
 	word32 w0 = (word32) x0;
-	word64 x1_26;
-	Eq_128 x19_27;
-	word64 x8_30;
-	with_array(SEQ(SLICE(x8_30, word32, 32), (word32) x19_27), SLICE(with_alloca(x0, x1_32_32, SEQ(x19_32_32_18, w0), out x1_26, out x8_30, out x19_27), word32, 32), SLICE(x1_26, word32, 32), x19_27);
+	word64 x19_26;
+	word64 x8_29;
+	with_array(SEQ(SLICE(x8_29, word32, 32), (word32) x19_26), SLICE(with_alloca(x0, w0, out x8_29, out x19_26), word32, 32), (word32) x19_26);
 }
 
 // 00000000004006E8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

@@ -102,11 +102,11 @@ void main()
 	__assert_fail("sum==0", "source_extensions_inst__10_vars__no_complex.c", 1691, "main");
 }
 
-// 0000000000402AA0: void _start(Register (ptr64 Eq_3390) rdx, Stack Eq_3391 qwArg00)
-void _start(void (* rdx)(), Eq_3391 qwArg00)
+// 0000000000402AA0: void _start(Register (ptr64 Eq_3390) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t401040, qwArg00, (char *) fp + 8, &g_t437E00, &g_t437E70, rdx, fp);
+	__libc_start_main(&g_t401040, (int32) qwArg00, (char *) fp + 8, &g_t437E00, &g_t437E70, rdx, fp);
 	__hlt();
 }
 
@@ -139,6 +139,8 @@ void __do_global_dtors_aux()
 }
 
 // 0000000000402B80: void frame_dummy()
+// Called from:
+//      __libc_csu_init
 void frame_dummy()
 {
 	register_tm_clones();
@@ -158,7 +160,7 @@ word64 inst_0_values_var_0()
 uint64 inst_0_flags_var_0()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -177,7 +179,7 @@ word64 inst_0_values_var_1()
 uint64 inst_0_flags_var_1()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -196,7 +198,7 @@ word64 inst_0_values_var_2()
 uint64 inst_0_flags_var_2()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -215,7 +217,7 @@ word64 inst_0_values_var_3()
 uint64 inst_0_flags_var_3()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -234,7 +236,7 @@ word64 inst_0_values_var_4()
 uint64 inst_0_flags_var_4()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -253,7 +255,7 @@ word64 inst_0_values_var_5()
 uint64 inst_0_flags_var_5()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -272,7 +274,7 @@ word64 inst_0_values_var_6()
 uint64 inst_0_flags_var_6()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -291,7 +293,7 @@ word64 inst_0_values_var_7()
 uint64 inst_0_flags_var_7()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -310,7 +312,7 @@ word64 inst_0_values_var_8()
 uint64 inst_0_flags_var_8()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -329,7 +331,7 @@ word64 inst_0_values_var_9()
 uint64 inst_0_flags_var_9()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -348,7 +350,7 @@ word64 inst_1_values_var_0()
 uint64 inst_1_flags_var_0()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -367,7 +369,7 @@ word64 inst_1_values_var_1()
 uint64 inst_1_flags_var_1()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -386,7 +388,7 @@ word64 inst_1_values_var_2()
 uint64 inst_1_flags_var_2()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -405,7 +407,7 @@ word64 inst_1_values_var_3()
 uint64 inst_1_flags_var_3()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -425,7 +427,7 @@ word64 inst_1_values_var_4()
 uint64 inst_1_flags_var_4()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -444,7 +446,7 @@ word64 inst_1_values_var_5()
 uint64 inst_1_flags_var_5()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -463,7 +465,7 @@ word64 inst_1_values_var_6()
 uint64 inst_1_flags_var_6()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -482,7 +484,7 @@ word64 inst_1_values_var_7()
 uint64 inst_1_flags_var_7()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -501,7 +503,7 @@ word64 inst_1_values_var_8()
 uint64 inst_1_flags_var_8()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -520,7 +522,7 @@ word64 inst_1_values_var_9()
 uint64 inst_1_flags_var_9()
 {
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	return rbp_64;
 }
@@ -539,7 +541,7 @@ word64 inst_2_values_var_0()
 uint64 inst_2_flags_var_0()
 {
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	return rbp_62;
 }
@@ -558,7 +560,7 @@ word64 inst_2_values_var_1()
 uint64 inst_2_flags_var_1()
 {
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	return rbp_62;
 }
@@ -577,7 +579,7 @@ word64 inst_2_values_var_2()
 uint64 inst_2_flags_var_2()
 {
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	return rbp_62;
 }
@@ -596,7 +598,7 @@ word64 inst_2_values_var_3()
 uint64 inst_2_flags_var_3()
 {
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	return rbp_62;
 }
@@ -615,7 +617,7 @@ word64 inst_2_values_var_4()
 uint64 inst_2_flags_var_4()
 {
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	return rbp_62;
 }
@@ -634,7 +636,7 @@ word64 inst_2_values_var_5()
 uint64 inst_2_flags_var_5()
 {
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	return rbp_62;
 }
@@ -653,7 +655,7 @@ word64 inst_2_values_var_6()
 uint64 inst_2_flags_var_6()
 {
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	return rbp_62;
 }
@@ -672,7 +674,7 @@ word64 inst_2_values_var_7()
 uint64 inst_2_flags_var_7()
 {
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	return rbp_62;
 }
@@ -691,7 +693,7 @@ word64 inst_2_values_var_8()
 uint64 inst_2_flags_var_8()
 {
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	return rbp_63;
 }
@@ -710,7 +712,7 @@ word64 inst_2_values_var_9()
 uint64 inst_2_flags_var_9()
 {
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	return rbp_62;
 }
@@ -2876,12 +2878,12 @@ word64 inst_11_values_var_0()
 //      main
 uint64 inst_11_flags_var_0()
 {
-	word64 rax_58 = -4830040961098190233;
+	word64 rax_59 = -4830040961098190233;
 	uint64 rbp_66 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_66 = 0x01;
 	uint64 rdi_72 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_72 = 0x02;
 	return rbp_66 + rdi_72;
 }
@@ -2905,12 +2907,12 @@ word64 inst_11_values_var_1()
 //      main
 uint64 inst_11_flags_var_1()
 {
-	word64 rax_58 = -15647611341734334981;
+	word64 rax_59 = -15647611341734334981;
 	uint64 rbp_65 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_65 = 0x01;
 	uint64 rdi_71 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_71 = 0x02;
 	return rbp_65 + rdi_71;
 }
@@ -2928,12 +2930,12 @@ word64 inst_11_values_var_2()
 //      main
 uint64 inst_11_flags_var_2()
 {
-	word64 rax_58 = -5873796770604590692;
+	word64 rax_59 = -5873796770604590692;
 	uint64 rbp_65 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_65 = 0x01;
 	uint64 rdi_71 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_71 = 0x02;
 	return rbp_65 + rdi_71;
 }
@@ -2951,12 +2953,12 @@ word64 inst_11_values_var_3()
 //      main
 uint64 inst_11_flags_var_3()
 {
-	word64 rax_58 = -2594414677756980749;
+	word64 rax_59 = -2594414677756980749;
 	uint64 rbp_66 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_66 = 0x01;
 	uint64 rdi_72 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_72 = 0x02;
 	return rbp_66 + rdi_72;
 }
@@ -2974,12 +2976,12 @@ word64 inst_11_values_var_4()
 //      main
 uint64 inst_11_flags_var_4()
 {
-	word64 rax_58 = -10068482406367813227;
+	word64 rax_59 = -10068482406367813227;
 	uint64 rbp_66 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_66 = 0x01;
 	uint64 rdi_72 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_72 = 0x02;
 	return rbp_66 + rdi_72;
 }
@@ -2997,12 +2999,12 @@ word64 inst_11_values_var_5()
 //      main
 uint64 inst_11_flags_var_5()
 {
-	word64 rax_58 = -1255625835467287071;
+	word64 rax_59 = -1255625835467287071;
 	uint64 rbp_66 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_66 = 0x01;
 	uint64 rdi_72 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_72 = 0x02;
 	return rbp_66 + rdi_72;
 }
@@ -3020,12 +3022,12 @@ word64 inst_11_values_var_6()
 //      main
 uint64 inst_11_flags_var_6()
 {
-	word64 rax_58 = -2143709222547849864;
+	word64 rax_59 = -2143709222547849864;
 	uint64 rbp_66 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_66 = 0x01;
 	uint64 rdi_72 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_72 = 0x02;
 	return rbp_66 + rdi_72;
 }
@@ -3043,12 +3045,12 @@ word64 inst_11_values_var_7()
 //      main
 uint64 inst_11_flags_var_7()
 {
-	word64 rax_58 = -~0x12E1F6018605ED22;
+	word64 rax_59 = -~0x12E1F6018605ED22;
 	uint64 rbp_66 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_66 = 0x01;
 	uint64 rdi_72 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_72 = 0x02;
 	return rbp_66 + rdi_72;
 }
@@ -3066,12 +3068,12 @@ word64 inst_11_values_var_8()
 //      main
 uint64 inst_11_flags_var_8()
 {
-	word64 rax_58 = -4595288649430500167;
+	word64 rax_59 = -4595288649430500167;
 	uint64 rbp_66 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_66 = 0x01;
 	uint64 rdi_72 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_72 = 0x02;
 	return rbp_66 + rdi_72;
 }
@@ -3088,12 +3090,12 @@ void inst_11_values_var_9()
 //      main
 uint64 inst_11_flags_var_9()
 {
-	word64 rax_58 = -16586922241297129914;
+	word64 rax_59 = -16586922241297129914;
 	uint64 rbp_66 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_66 = 0x01;
 	uint64 rdi_72 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_72 = 0x02;
 	return rbp_66 + rdi_72;
 }
@@ -3110,12 +3112,12 @@ void inst_12_values_var_0()
 //      main
 uint64 inst_12_flags_var_0()
 {
-	word64 rax_57 = -12941744040676695718;
+	word64 rax_58 = -12941744040676695718;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_69 = 0x02;
 	return rbp_63 + rdi_69;
 }
@@ -3133,12 +3135,12 @@ word64 inst_12_values_var_1()
 //      main
 uint64 inst_12_flags_var_1()
 {
-	word64 rax_57 = -~0x4E3F4540747A803A;
+	word64 rax_58 = -~0x4E3F4540747A803A;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_69 = 0x02;
 	return rbp_63 + rdi_69;
 }
@@ -3156,12 +3158,12 @@ word64 inst_12_values_var_2()
 //      main
 uint64 inst_12_flags_var_2()
 {
-	word64 rax_57 = -0x1F1609BFB82F5012;
+	word64 rax_58 = -0x1F1609BFB82F5012;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_69 = 0x02;
 	return rbp_63 + rdi_69;
 }
@@ -3179,12 +3181,12 @@ word64 inst_12_values_var_3()
 //      main
 uint64 inst_12_flags_var_3()
 {
-	word64 rax_57 = -3940999003081152957;
+	word64 rax_58 = -3940999003081152957;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_69 = 0x02;
 	return rbp_63 + rdi_69;
 }
@@ -3202,12 +3204,12 @@ word64 inst_12_values_var_4()
 //      main
 uint64 inst_12_flags_var_4()
 {
-	word64 rax_57 = -2040539959548048526;
+	word64 rax_58 = -2040539959548048526;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_69 = 0x02;
 	return rbp_63 + rdi_69;
 }
@@ -3226,12 +3228,12 @@ word64 inst_12_values_var_5()
 //      main
 uint64 inst_12_flags_var_5()
 {
-	word64 rax_57 = -11043926414027182721;
+	word64 rax_58 = -11043926414027182721;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_69 = 0x02;
 	return rbp_63 + rdi_69;
 }
@@ -3249,12 +3251,12 @@ word64 inst_12_values_var_6()
 //      main
 uint64 inst_12_flags_var_6()
 {
-	word64 rax_57 = -11262350527876447816;
+	word64 rax_58 = -11262350527876447816;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_69 = 0x02;
 	return rbp_63 + rdi_69;
 }
@@ -3272,12 +3274,12 @@ word64 inst_12_values_var_7()
 //      main
 uint64 inst_12_flags_var_7()
 {
-	word64 rax_58 = -14146226429183798528;
+	word64 rax_59 = -14146226429183798528;
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	uint64 rdi_70 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_70 = 0x02;
 	return rbp_64 + rdi_70;
 }
@@ -3294,12 +3296,12 @@ void inst_12_values_var_8()
 //      main
 uint64 inst_12_flags_var_8()
 {
-	word64 rax_57 = -16267086765317211830;
+	word64 rax_58 = -16267086765317211830;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_69 = 0x02;
 	return rbp_63 + rdi_69;
 }
@@ -3317,12 +3319,12 @@ word64 inst_12_values_var_9()
 //      main
 uint64 inst_12_flags_var_9()
 {
-	word64 rax_57 = -11076319204226238295;
+	word64 rax_58 = -11076319204226238295;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_69 = 0x02;
 	return rbp_63 + rdi_69;
 }
@@ -3340,15 +3342,15 @@ word64 inst_13_values_var_0()
 //      main
 uint64 inst_13_flags_var_0()
 {
-	int64 rax_58 = -15865036328008016090;
+	int64 rax_59 = -15865036328008016090;
 	uint64 rbp_65 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_65 = 0x01;
 	uint64 rdi_101 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_101 = 0x02;
 	uint64 rdx_105 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_105 = 0x08;
 	return rbp_65 + rdi_101 + rdx_105 - 0x09;
 }
@@ -3366,15 +3368,15 @@ word64 inst_13_values_var_1()
 //      main
 uint64 inst_13_flags_var_1()
 {
-	int64 rax_58 = -16295086745515551685;
+	int64 rax_59 = -16295086745515551685;
 	uint64 rbp_65 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_65 = 0x01;
 	uint64 rdi_101 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_101 = 0x02;
 	uint64 rdx_105 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_105 = 0x08;
 	return rbp_65 + rdi_101 + rdx_105 - 0x09;
 }
@@ -3392,15 +3394,15 @@ word64 inst_13_values_var_2()
 //      main
 uint64 inst_13_flags_var_2()
 {
-	int64 rax_58 = -5425470256200523007;
+	int64 rax_59 = -5425470256200523007;
 	uint64 rbp_65 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_65 = 0x01;
 	uint64 rdi_101 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_101 = 0x02;
 	uint64 rdx_105 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_105 = 0x08;
 	return rbp_65 + rdi_101 + rdx_105 - 0x01;
 }
@@ -3418,15 +3420,15 @@ word64 inst_13_values_var_3()
 //      main
 uint64 inst_13_flags_var_3()
 {
-	int64 rax_58 = -257818618886123257;
+	int64 rax_59 = -257818618886123257;
 	uint64 rbp_65 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_65 = 0x01;
 	uint64 rdi_101 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_101 = 0x02;
 	uint64 rdx_105 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_105 = 0x08;
 	return rbp_65 + rdi_101 + rdx_105 - 0x01;
 }
@@ -3444,15 +3446,15 @@ word64 inst_13_values_var_4()
 //      main
 uint64 inst_13_flags_var_4()
 {
-	int64 rax_58 = -0x156A812982B89819;
+	int64 rax_59 = -0x156A812982B89819;
 	uint64 rbp_65 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_65 = 0x01;
 	uint64 rdi_101 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_101 = 0x02;
 	uint64 rdx_105 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_105 = 0x08;
 	return rbp_65 + rdi_101 + rdx_105 - 0x01;
 }
@@ -3471,15 +3473,15 @@ word64 inst_13_values_var_5()
 //      main
 uint64 inst_13_flags_var_5()
 {
-	int64 rax_58 = -3877814746942806691;
+	int64 rax_59 = -3877814746942806691;
 	uint64 rbp_65 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_65 = 0x01;
 	uint64 rdi_101 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_101 = 0x02;
 	uint64 rdx_105 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_105 = 0x08;
 	return rbp_65 + rdi_101 + rdx_105 - 0x01;
 }
@@ -3497,15 +3499,15 @@ word64 inst_13_values_var_6()
 //      main
 uint64 inst_13_flags_var_6()
 {
-	int64 rax_58 = -14761094450781918224;
+	int64 rax_59 = -14761094450781918224;
 	uint64 rbp_65 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_65 = 0x01;
 	uint64 rdi_101 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_101 = 0x02;
 	uint64 rdx_105 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_105 = 0x08;
 	return rbp_65 + rdi_101 + rdx_105 - 0x09;
 }
@@ -3523,15 +3525,15 @@ word64 inst_13_values_var_7()
 //      main
 uint64 inst_13_flags_var_7()
 {
-	int64 rax_58 = -2613069230762861669;
+	int64 rax_59 = -2613069230762861669;
 	uint64 rbp_65 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_65 = 0x01;
 	uint64 rdi_101 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_101 = 0x02;
 	uint64 rdx_105 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_105 = 0x08;
 	return rbp_65 + rdi_101 + rdx_105 - 0x09;
 }
@@ -3549,15 +3551,15 @@ word64 inst_13_values_var_8()
 //      main
 uint64 inst_13_flags_var_8()
 {
-	int64 rax_58 = -5484222346964020738;
+	int64 rax_59 = -5484222346964020738;
 	uint64 rbp_65 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_65 = 0x01;
 	uint64 rdi_101 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_101 = 0x02;
 	uint64 rdx_105 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_105 = 0x08;
 	return rbp_65 + rdi_101 + rdx_105 - 0x01;
 }
@@ -3575,15 +3577,15 @@ word64 inst_13_values_var_9()
 //      main
 uint64 inst_13_flags_var_9()
 {
-	int64 rax_58 = -2273137936859191891;
+	int64 rax_59 = -2273137936859191891;
 	uint64 rbp_64 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_64 = 0x01;
 	uint64 rdi_100 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_100 = 0x02;
 	uint64 rdx_104 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_104 = 0x08;
 	return rbp_64 + rdi_100 + rdx_104 - 0x09;
 }
@@ -3601,15 +3603,15 @@ word64 inst_14_values_var_0()
 //      main
 uint64 inst_14_flags_var_0()
 {
-	int64 rax_57 = -2479417392158052820;
+	int64 rax_58 = -2479417392158052820;
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	uint64 rdi_68 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_68 = 0x02;
 	uint64 rdx_102 = 0x00;
-	if (rax_57 < 0x00)
+	if (rax_58 < 0x00)
 		rdx_102 = 0x08;
 	return rbp_62 + rdi_68 + rdx_102;
 }
@@ -3627,15 +3629,15 @@ word64 inst_14_values_var_1()
 //      main
 uint64 inst_14_flags_var_1()
 {
-	int64 rax_58 = -14033189497660620435;
+	int64 rax_59 = -14033189497660620435;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_69 = 0x02;
 	uint64 rdx_103 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_103 = 0x08;
 	return rbp_63 + rdi_69 + rdx_103;
 }
@@ -3653,15 +3655,15 @@ word64 inst_14_values_var_2()
 //      main
 uint64 inst_14_flags_var_2()
 {
-	int64 rax_57 = -4131560293054752733;
+	int64 rax_58 = -4131560293054752733;
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	uint64 rdi_68 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_68 = 0x02;
 	uint64 rdx_102 = 0x00;
-	if (rax_57 < 0x00)
+	if (rax_58 < 0x00)
 		rdx_102 = 0x08;
 	return rbp_62 + rdi_68 + rdx_102;
 }
@@ -3679,15 +3681,15 @@ word64 inst_14_values_var_3()
 //      main
 uint64 inst_14_flags_var_3()
 {
-	int64 rax_57 = -17050928500485029432;
+	int64 rax_58 = -17050928500485029432;
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	uint64 rdi_68 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_68 = 0x02;
 	uint64 rdx_102 = 0x00;
-	if (rax_57 < 0x00)
+	if (rax_58 < 0x00)
 		rdx_102 = 0x08;
 	return rbp_62 + rdi_68 + rdx_102 - 0x09;
 }
@@ -3706,15 +3708,15 @@ word64 inst_14_values_var_4()
 //      main
 uint64 inst_14_flags_var_4()
 {
-	int64 rax_57 = -347416345223512481;
+	int64 rax_58 = -347416345223512481;
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	uint64 rdi_68 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_68 = 0x02;
 	uint64 rdx_102 = 0x00;
-	if (rax_57 < 0x00)
+	if (rax_58 < 0x00)
 		rdx_102 = 0x08;
 	return rbp_62 + rdi_68 + rdx_102 - 0x01;
 }
@@ -3732,15 +3734,15 @@ word64 inst_14_values_var_5()
 //      main
 uint64 inst_14_flags_var_5()
 {
-	int64 rax_58 = -14905833342930179642;
+	int64 rax_59 = -14905833342930179642;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_69 = 0x02;
 	uint64 rdx_103 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_103 = 0x08;
 	return rbp_63 + rdi_69 + rdx_103;
 }
@@ -3758,15 +3760,15 @@ word64 inst_14_values_var_6()
 //      main
 uint64 inst_14_flags_var_6()
 {
-	int64 rax_58 = -1519764404133057006;
+	int64 rax_59 = -1519764404133057006;
 	uint64 rbp_63 = 0x00;
-	if (Test(ULT,rax_58 == 0x00))
+	if (Test(ULT,true))
 		rbp_63 = 0x01;
 	uint64 rdi_69 = 0x00;
-	if (OVERFLOW(rax_58))
+	if (OVERFLOW(rax_59))
 		rdi_69 = 0x02;
 	uint64 rdx_103 = 0x00;
-	if (rax_58 < 0x00)
+	if (rax_59 < 0x00)
 		rdx_103 = 0x08;
 	return rbp_63 + rdi_69 + rdx_103;
 }
@@ -3784,15 +3786,15 @@ word64 inst_14_values_var_7()
 //      main
 uint64 inst_14_flags_var_7()
 {
-	int64 rax_57 = -1311130997896335185;
+	int64 rax_58 = -1311130997896335185;
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	uint64 rdi_68 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_68 = 0x02;
 	uint64 rdx_102 = 0x00;
-	if (rax_57 < 0x00)
+	if (rax_58 < 0x00)
 		rdx_102 = 0x08;
 	return rbp_62 + rdi_68 + rdx_102 - 0x09;
 }
@@ -3810,15 +3812,15 @@ word64 inst_14_values_var_8()
 //      main
 uint64 inst_14_flags_var_8()
 {
-	int64 rax_57 = -18064040443794575125;
+	int64 rax_58 = -18064040443794575125;
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	uint64 rdi_68 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_68 = 0x02;
 	uint64 rdx_102 = 0x00;
-	if (rax_57 < 0x00)
+	if (rax_58 < 0x00)
 		rdx_102 = 0x08;
 	return rbp_62 + rdi_68 + rdx_102;
 }
@@ -3837,15 +3839,15 @@ word64 inst_14_values_var_9()
 //      main
 uint64 inst_14_flags_var_9()
 {
-	int64 rax_57 = -8900062210531608370;
+	int64 rax_58 = -8900062210531608370;
 	uint64 rbp_62 = 0x00;
-	if (Test(ULT,rax_57 == 0x00))
+	if (Test(ULT,true))
 		rbp_62 = 0x01;
 	uint64 rdi_68 = 0x00;
-	if (OVERFLOW(rax_57))
+	if (OVERFLOW(rax_58))
 		rdi_68 = 0x02;
 	uint64 rdx_102 = 0x00;
-	if (rax_57 < 0x00)
+	if (rax_58 < 0x00)
 		rdx_102 = 0x08;
 	return rbp_62 + rdi_68 + rdx_102 - 0x09;
 }
@@ -6293,7 +6295,7 @@ uint64 inst_29_flags_var_6()
 word64 inst_29_values_var_7()
 {
 	up64 rax_58 = -7410518230510355023;
-	return rax_58 + 3412853165543057181 + SEQ(666819965, (bool) (rax_58 < 0x00) + ((word32) rax_58 + ~0x0A116036)) - 14449079011071033928;
+	return rax_58 + 3412853165543057181 + SEQ(666819965, ((word32) rax_58 + ~0x0A116036) + (word32) (rax_58 < 0x00)) - 14449079011071033928;
 }
 
 // 0000000000428838: Register uint64 inst_29_flags_var_7()
@@ -6473,7 +6475,7 @@ uint64 inst_30_flags_var_5()
 word64 inst_30_values_var_6()
 {
 	up64 rax_58 = -1768481539705085425;
-	return (bool) (rax_58 < 0x00) + (rax_58 + 17448809683876015075) + 2766415929538621966;
+	return rax_58 + 17448809683876015075 + (word64) (rax_58 < 0x00) + 2766415929538621966;
 }
 
 // 0000000000429A7F: Register uint64 inst_30_flags_var_6()
@@ -6521,9 +6523,9 @@ word64 inst_30_values_var_8()
 //      main
 uint64 inst_30_flags_var_8()
 {
-	up64 rax_58 = -13796299093415317583;
+	up64 rax_59 = -13796299093415317583;
 	uint64 rdi_67 = 0x00;
-	if (OVERFLOW((bool) (rax_58 < 0x00) + (rax_58 + 3192433952364280960)))
+	if (OVERFLOW(rax_59 + 3192433952364280960 + (word64) (rax_59 < 0x00)))
 		rdi_67 = 0x02;
 	return rdi_67;
 }
@@ -6553,8 +6555,8 @@ uint64 inst_30_flags_var_9()
 //      main
 word64 inst_31_values_var_0()
 {
-	word64 rax_58 = -15812264340953011706;
-	return rax_58 + 9406893438179804996 + SEQ(0x5333D836, (bool) (rax_58 == 0x00) + ((word32) rax_58 + 0x6A26B44B)) + 0x58E472E5D9597064;
+	word64 rax_59 = -15812264340953011706;
+	return rax_59 + 9406893438179804996 + SEQ(0x5333D836, (word32) rax_59 + 1780921420) + 0x58E472E5D9597064;
 }
 
 // 000000000042A29F: Register uint64 inst_31_flags_var_0()
@@ -6562,10 +6564,7 @@ word64 inst_31_values_var_0()
 //      main
 uint64 inst_31_flags_var_0()
 {
-	uint64 rbp_66 = 0x00;
-	if (true)
-		rbp_66 = 0x01;
-	return rbp_66;
+	return 0x00;
 }
 
 // 000000000042A3A6: Register word64 inst_31_values_var_1()
@@ -6573,8 +6572,7 @@ uint64 inst_31_flags_var_0()
 //      main
 word64 inst_31_values_var_1()
 {
-	word64 rax_58 = -13673857450815867840;
-	return rax_58 + 17612414887141843019 + SEQ(~0x559892A6, (rax_58 == 0x00) + 0x55D58AD9) + 14508186635943518363;
+	return -13673857450815867840 + 7506016515174779840;
 }
 
 // 000000000042A4A7: Register uint64 inst_31_flags_var_1()
@@ -6582,9 +6580,8 @@ word64 inst_31_values_var_1()
 //      main
 uint64 inst_31_flags_var_1()
 {
-	word64 rax_58 = -0x340A0E9BB4C0552B;
 	uint64 rbp_66 = 0x00;
-	if ((bool) (rax_58 == 0x00) + ((word32) rax_58 + 731810100) < 0x00)
+	if ((word32) -0x340A0E9BB4C0552B < 731810101)
 		rbp_66 = 0x01;
 	return rbp_66;
 }
@@ -6594,19 +6591,15 @@ uint64 inst_31_flags_var_1()
 //      main
 word64 inst_31_values_var_2()
 {
-	word64 rax_58 = -4475146927296721586;
-	return rax_58 + 792118710118788689 + SEQ(0x38EEA373, (rax_58 == 0x00) + 0x63BB27BF) + 3683028215504723105;
+	return -4475146927296721586 - 9869201121515162958;
 }
 
-// 000000000042A6AF: Register uint64 inst_31_flags_var_2()
+// 000000000042A6AF: Register word64 inst_31_flags_var_2()
 // Called from:
 //      main
-uint64 inst_31_flags_var_2()
+word64 inst_31_flags_var_2()
 {
-	uint64 rbp_66 = 0x00;
-	if (true)
-		rbp_66 = 0x01;
-	return rbp_66 - 0x01;
+	return ~0x00;
 }
 
 // 000000000042A7B6: Register word64 inst_31_values_var_3()
@@ -6614,19 +6607,15 @@ uint64 inst_31_flags_var_2()
 //      main
 word64 inst_31_values_var_3()
 {
-	word64 rax_58 = -0xBC6548000F59635F;
-	return rax_58 + 10962011001330444436 + SEQ(1064479742, (rax_58 == 0x00) + ~0x54566510) - ~0x2444651235761FDA;
+	return -0xBC6548000F59635F + 18147241496017462111;
 }
 
-// 000000000042A8B7: Register uint64 inst_31_flags_var_3()
+// 000000000042A8B7: Register word64 inst_31_flags_var_3()
 // Called from:
 //      main
-uint64 inst_31_flags_var_3()
+word64 inst_31_flags_var_3()
 {
-	uint64 rbp_66 = 0x00;
-	if (true)
-		rbp_66 = 0x01;
-	return rbp_66 - 0x01;
+	return ~0x00;
 }
 
 // 000000000042A9BE: Register word64 inst_31_values_var_4()
@@ -6634,19 +6623,15 @@ uint64 inst_31_flags_var_3()
 //      main
 word64 inst_31_values_var_4()
 {
-	word64 rax_58 = -12600215101027854683;
-	return rax_58 + 9825755410816756600 + SEQ(~0x1728B8CE, (rax_58 == 0x00) + 0x970B5193) - ~0x2680DC62DFA0EC4E;
+	return -12600215101027854683 - 7515315833820206757;
 }
 
-// 000000000042AABF: Register uint64 inst_31_flags_var_4()
+// 000000000042AABF: Register word64 inst_31_flags_var_4()
 // Called from:
 //      main
-uint64 inst_31_flags_var_4()
+word64 inst_31_flags_var_4()
 {
-	uint64 rbp_66 = 0x00;
-	if (true)
-		rbp_66 = 0x01;
-	return rbp_66 - 0x01;
+	return ~0x00;
 }
 
 // 000000000042ABC6: Register word64 inst_31_values_var_5()
@@ -6654,19 +6639,15 @@ uint64 inst_31_flags_var_4()
 //      main
 word64 inst_31_values_var_5()
 {
-	word64 rax_58 = -~0x10021F3555005A09;
-	return rax_58 + 17298977340947855622 + SEQ(~0x718F06C2, (rax_58 == 0x00) + 4147128222) - 5752039865514671;
+	return -~0x10021F3555005A09 - 0x819125F855005A0A;
 }
 
-// 000000000042ACC7: Register uint64 inst_31_flags_var_5()
+// 000000000042ACC7: Register word64 inst_31_flags_var_5()
 // Called from:
 //      main
-uint64 inst_31_flags_var_5()
+word64 inst_31_flags_var_5()
 {
-	uint64 rbp_66 = 0x00;
-	if (true)
-		rbp_66 = 0x01;
-	return rbp_66 - 0x01;
+	return ~0x00;
 }
 
 // 000000000042ADCE: Register word64 inst_31_values_var_6()
@@ -6674,19 +6655,16 @@ uint64 inst_31_flags_var_5()
 //      main
 word64 inst_31_values_var_6()
 {
-	word64 rax_58 = -0x61FFD3A573A26013;
-	return rax_58 + 11838320550412525857 + SEQ(~0x40005F84, (bool) (rax_58 == 0x00) + ((word32) rax_58 + 3027607423)) - 4776725103196799099;
+	word64 rax_59 = -0x61FFD3A573A26013;
+	return rax_59 + 11838320550412525857 + SEQ(~0x40005F84, (word32) rax_59 + 3027607424) - 4776725103196799099;
 }
 
-// 000000000042AECF: Register uint64 inst_31_flags_var_6()
+// 000000000042AECF: Register word64 inst_31_flags_var_6()
 // Called from:
 //      main
-uint64 inst_31_flags_var_6()
+word64 inst_31_flags_var_6()
 {
-	uint64 rbp_66 = 0x00;
-	if (true)
-		rbp_66 = 0x01;
-	return rbp_66 - 0x01;
+	return ~0x00;
 }
 
 // 000000000042AFD6: Register word64 inst_31_values_var_7()
@@ -6694,8 +6672,7 @@ uint64 inst_31_flags_var_6()
 //      main
 word64 inst_31_values_var_7()
 {
-	word64 rax_58 = -9638934842565990197;
-	return rax_58 + 0x90DCCD0C4085F91 + SEQ(811187886, (rax_58 == 0x00) + 1377825731) - 9460211950574124064;
+	return -9638934842565990197 - 5323783789862185163;
 }
 
 // 000000000042B0D7: Register uint64 inst_31_flags_var_7()
@@ -6703,9 +6680,8 @@ word64 inst_31_values_var_7()
 //      main
 uint64 inst_31_flags_var_7()
 {
-	word64 rax_58 = -17272526679004901830;
 	uint64 rbp_66 = 0x00;
-	if ((bool) (rax_58 == 0x00) + ((word32) rax_58 + 0x37C75803) < 0x00)
+	if ((word32) -17272526679004901830 < 0x37C75804)
 		rbp_66 = 0x01;
 	return rbp_66 - 0x01;
 }
@@ -6715,19 +6691,15 @@ uint64 inst_31_flags_var_7()
 //      main
 word64 inst_31_values_var_8()
 {
-	word64 rax_58 = -0xDFBD0620FA082F4C;
-	return rax_58 + 0x5C508E5DD4447002 + SEQ(1446781845, (rax_58 == 0x00) + 1763513434) - 8976668278983841041;
+	return -0xDFBD0620FA082F4C - 14557558458937757876;
 }
 
-// 000000000042B2DE: Register uint64 inst_31_flags_var_8()
+// 000000000042B2DE: Register word64 inst_31_flags_var_8()
 // Called from:
 //      main
-uint64 inst_31_flags_var_8()
+word64 inst_31_flags_var_8()
 {
-	uint64 rbp_66 = 0x00;
-	if (true)
-		rbp_66 = 0x01;
-	return rbp_66 - 0x01;
+	return ~0x00;
 }
 
 // 000000000042B3E5: Register word64 inst_31_values_var_9()
@@ -6735,19 +6707,15 @@ uint64 inst_31_flags_var_8()
 //      main
 word64 inst_31_values_var_9()
 {
-	word64 rax_58 = -0x333D06176AADBDEB;
-	return rax_58 + 1371077812731955822 + SEQ(0x64890DDE, (rax_58 == 0x00) + 4165789651) - ~0x2035FA14CF120BA8;
+	return -0x333D06176AADBDEB - 7510293383816036885;
 }
 
-// 000000000042B4E6: Register uint64 inst_31_flags_var_9()
+// 000000000042B4E6: Register word64 inst_31_flags_var_9()
 // Called from:
 //      main
-uint64 inst_31_flags_var_9()
+word64 inst_31_flags_var_9()
 {
-	uint64 rbp_66 = 0x00;
-	if (true)
-		rbp_66 = 0x01;
-	return rbp_66 - 0x01;
+	return ~0x00;
 }
 
 // 000000000042B5ED: Register word64 inst_32_values_var_0()
@@ -6755,8 +6723,7 @@ uint64 inst_31_flags_var_9()
 //      main
 word64 inst_32_values_var_0()
 {
-	word64 rax_58 = -16971733575965694061;
-	return rax_58 + 7546721947414626580 + ((bool) (rax_58 == 0x00) + 237868220) - 1338567858782158180;
+	return -16971733575965694061 - 1475010497743857555;
 }
 
 // 000000000042B6EE: Register uint64 inst_32_flags_var_0()
@@ -6764,10 +6731,7 @@ word64 inst_32_values_var_0()
 //      main
 uint64 inst_32_flags_var_0()
 {
-	uint64 rbp_64 = 0x00;
-	if (true)
-		rbp_64 = 0x01;
-	return rbp_64;
+	return 0x00;
 }
 
 // 000000000042B7F5: Register word64 inst_32_values_var_1()
@@ -6775,8 +6739,8 @@ uint64 inst_32_flags_var_0()
 //      main
 word64 inst_32_values_var_1()
 {
-	word64 rax_58 = -0x112462B56415BF6;
-	return rax_58 + 18145847160766671720 + ((bool) (rax_58 == 0x00) + (rax_58 + 17342739807757531300)) - 16887440303687887905;
+	word64 rax_59 = -0x112462B56415BF6;
+	return rax_59 + 18145847160766671720 + (rax_59 + 17342739807757531301) - 16887440303687887905;
 }
 
 // 000000000042B8F6: Register uint64 inst_32_flags_var_1()
@@ -6784,9 +6748,8 @@ word64 inst_32_values_var_1()
 //      main
 uint64 inst_32_flags_var_1()
 {
-	up64 rax_58 = -1327994220939123165;
 	uint64 rbp_64 = 0x00;
-	if ((bool) (rax_58 == 0x00) + (rax_58 + 9940707977821085472) < 0x00)
+	if (-1327994220939123165 < 9940707977821085473)
 		rbp_64 = 0x01;
 	return rbp_64 - 0x01;
 }
@@ -6796,8 +6759,7 @@ uint64 inst_32_flags_var_1()
 //      main
 word64 inst_32_values_var_2()
 {
-	word64 rax_58 = -12568552353046149193;
-	return rax_58 + 10726627442916296874 + ((bool) (rax_58 == 0x00) - 0x29EB0A9E) - 0x809E2D4472D945C4;
+	return -12568552353046149193 - 0x51938839D7C8C7B7;
 }
 
 // 000000000042BAFE: Register uint64 inst_32_flags_var_2()
@@ -6805,9 +6767,8 @@ word64 inst_32_values_var_2()
 //      main
 uint64 inst_32_flags_var_2()
 {
-	up64 rax_58 = -1166107143050074598;
 	uint64 rbp_64 = 0x00;
-	if ((bool) (rax_58 == 0x00) + (rax_58 + 7594630309190714578) < 0x00)
+	if (-1166107143050074598 < 7594630309190714579)
 		rbp_64 = 0x01;
 	return rbp_64 - 0x01;
 }
@@ -6817,8 +6778,7 @@ uint64 inst_32_flags_var_2()
 //      main
 word64 inst_32_values_var_3()
 {
-	word64 rax_58 = -4070055147835395644;
-	return rax_58 + 6087617971199755367 + ((bool) (rax_58 == 0x00) + 0x7190C77E) + 823918337250853462;
+	return -4070055147835395644 + 4070055147835395644;
 }
 
 // 000000000042BD06: Register uint64 inst_32_flags_var_3()
@@ -6826,10 +6786,7 @@ word64 inst_32_values_var_3()
 //      main
 uint64 inst_32_flags_var_3()
 {
-	uint64 rbp_64 = 0x00;
-	if (true)
-		rbp_64 = 0x01;
-	return rbp_64;
+	return 0x00;
 }
 
 // 000000000042BE0D: Register word64 inst_32_values_var_4()
@@ -6837,19 +6794,15 @@ uint64 inst_32_flags_var_3()
 //      main
 word64 inst_32_values_var_4()
 {
-	word64 rax_58 = -5626232621112914300;
-	return rax_58 + 13557017676014508210 + ((bool) (rax_58 == 0x00) - 0x0165D611) - 2208709931551232294;
+	return -5626232621112914300 + 5626232621112914300;
 }
 
-// 000000000042BF0E: Register uint64 inst_32_flags_var_4()
+// 000000000042BF0E: Register word64 inst_32_flags_var_4()
 // Called from:
 //      main
-uint64 inst_32_flags_var_4()
+word64 inst_32_flags_var_4()
 {
-	uint64 rbp_64 = 0x00;
-	if (true)
-		rbp_64 = 0x01;
-	return rbp_64 - 0x01;
+	return ~0x00;
 }
 
 // 000000000042C015: Register word64 inst_32_values_var_5()
@@ -6857,8 +6810,7 @@ uint64 inst_32_flags_var_4()
 //      main
 word64 inst_32_values_var_5()
 {
-	word64 rax_58 = -17939466149095586858;
-	return rax_58 + 1686809280977844298 + ((bool) (rax_58 == 0x00) + 1930774942) - 12465752395011114431;
+	return -17939466149095586858 - 0x70A3695B30343D6;
 }
 
 // 000000000042C116: Register uint64 inst_32_flags_var_5()
@@ -6866,10 +6818,7 @@ word64 inst_32_values_var_5()
 //      main
 uint64 inst_32_flags_var_5()
 {
-	uint64 rbp_64 = 0x00;
-	if (true)
-		rbp_64 = 0x01;
-	return rbp_64;
+	return 0x00;
 }
 
 // 000000000042C21D: Register word64 inst_32_values_var_6()
@@ -6877,19 +6826,16 @@ uint64 inst_32_flags_var_5()
 //      main
 word64 inst_32_values_var_6()
 {
-	word64 rax_58 = -4003883281950166939;
-	return rax_58 + 0x41A8011410A55B2E + ((bool) (rax_58 == 0x00) + (rax_58 + 12981876627148491663)) + 8741601416218441848;
+	word64 rax_59 = -4003883281950166939;
+	return rax_59 + 0x41A8011410A55B2E + (rax_59 + 12981876627148491664) + 8741601416218441848;
 }
 
-// 000000000042C31E: Register uint64 inst_32_flags_var_6()
+// 000000000042C31E: Register word64 inst_32_flags_var_6()
 // Called from:
 //      main
-uint64 inst_32_flags_var_6()
+word64 inst_32_flags_var_6()
 {
-	uint64 rbp_64 = 0x00;
-	if (true)
-		rbp_64 = 0x01;
-	return rbp_64 - 0x01;
+	return ~0x00;
 }
 
 // 000000000042C425: Register word64 inst_32_values_var_7()
@@ -6897,19 +6843,15 @@ uint64 inst_32_flags_var_6()
 //      main
 word64 inst_32_values_var_7()
 {
-	word64 rax_58 = -16845935372947516633;
-	return rax_58 + 2869596201168647446 + ((bool) (rax_58 == 0x00) - 1664241947) - 12462382600445228835;
+	return -16845935372947516633 + 16845935372947516633;
 }
 
-// 000000000042C526: Register uint64 inst_32_flags_var_7()
+// 000000000042C526: Register word64 inst_32_flags_var_7()
 // Called from:
 //      main
-uint64 inst_32_flags_var_7()
+word64 inst_32_flags_var_7()
 {
-	uint64 rbp_64 = 0x00;
-	if (true)
-		rbp_64 = 0x01;
-	return rbp_64 - 0x01;
+	return ~0x00;
 }
 
 // 000000000042C62D: Register word64 inst_32_values_var_8()
@@ -6917,19 +6859,15 @@ uint64 inst_32_flags_var_7()
 //      main
 word64 inst_32_values_var_8()
 {
-	word64 rax_58 = -0xE1BF71AC6034033A;
-	return rax_58 + 0x244005FC869605B + ((bool) (rax_58 == 0x00) + 0x450F522E) + 0x73B38DA752BB50B0;
+	return -0xE1BF71AC6034033A + 0xE1BF71AC6034033A;
 }
 
-// 000000000042C72E: Register uint64 inst_32_flags_var_8()
+// 000000000042C72E: Register word64 inst_32_flags_var_8()
 // Called from:
 //      main
-uint64 inst_32_flags_var_8()
+word64 inst_32_flags_var_8()
 {
-	uint64 rbp_64 = 0x00;
-	if (true)
-		rbp_64 = 0x01;
-	return rbp_64 - 0x01;
+	return ~0x00;
 }
 
 // 000000000042C835: Register word64 inst_32_values_var_9()
@@ -6937,19 +6875,15 @@ uint64 inst_32_flags_var_8()
 //      main
 word64 inst_32_values_var_9()
 {
-	word64 rax_58 = -8195852475978255046;
-	return rax_58 + 2275877467711762836 + ((bool) (rax_58 == 0x00) + 0x720FF0C6) - 4303650039922022293;
+	return -8195852475978255046 - 10250891597731296570;
 }
 
-// 000000000042C936: Register uint64 inst_32_flags_var_9()
+// 000000000042C936: Register word64 inst_32_flags_var_9()
 // Called from:
 //      main
-uint64 inst_32_flags_var_9()
+word64 inst_32_flags_var_9()
 {
-	uint64 rbp_64 = 0x00;
-	if (true)
-		rbp_64 = 0x01;
-	return rbp_64 - 0x01;
+	return ~0x00;
 }
 
 // 000000000042CA3D: Register word64 inst_33_values_var_0()
@@ -8470,7 +8404,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_31 = 4431384 - 4431376;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_12790 rbx_43 = 0x00;
+		Eq_12503 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a439E10 + rbx_43 * 0x08))();

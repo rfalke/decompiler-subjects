@@ -30,20 +30,20 @@
 00012148: warning: Unable to resolve imported reference atof.
 rd_L: error: An error occurred while rewriting procedure to high-level language.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at Reko.Core.Block.get_ThenBlock() in /Users/runner/work/reko/reko/src/Core/Block.cs:line 91
-   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
-   at Reko.Decompiler.StructureProgram() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 628
+       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 148
+   at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
+   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
 wrt_I: error: An error occurred while rewriting procedure to high-level language.
     Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-       at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at Reko.Core.Block.get_ThenBlock() in /Users/runner/work/reko/reko/src/Core/Block.cs:line 91
-   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
-   at Reko.Structure.CompoundConditionCoalescer.Transform() in /Users/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
-   at Reko.Structure.StructureAnalysis.Structure() in /Users/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 78
-   at Reko.Decompiler.StructureProgram() in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 628
+       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 148
+   at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
+   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 535
 0002AD30: warning: Expected sizes of arrays to have been determined by now
 0002AFB4: warning: Expected sizes of arrays to have been determined by now
 0002C278: warning: Expected sizes of arrays to have been determined by now

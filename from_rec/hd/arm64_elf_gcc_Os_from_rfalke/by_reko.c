@@ -36,7 +36,7 @@ word64 g_qw11FC0 = 0x00; // 0000000000011FC0
 
 #include "subject.h"
 
-struct Eq_103 g_t12000 = // 0000000000012000
+struct Eq_105 g_t12000 = // 0000000000012000
 	{
 		0x00,
 	};
@@ -97,10 +97,10 @@ void main(int32 w0, char * (* x1)[])
 	}
 }
 
-// 00000000000009C0: void _start(Register (ptr64 Eq_40) x0, Stack Eq_41 qwArg00)
-void _start(void (* x0)(), Eq_41 qwArg00)
+// 00000000000009C0: void _start(Register (ptr64 Eq_40) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -145,7 +145,7 @@ void register_tm_clones()
 // 0000000000000A88: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_103 * x19_12 = &g_t12000;
+	struct Eq_105 * x19_12 = &g_t12000;
 	if ((word32) g_b12080 == 0x00)
 	{
 		if (g_qw11FB8 != 0x00)
@@ -174,7 +174,7 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000B08: Register (ptr64 Eq_140) dumpline(Register (ptr64 void) x0, Register int32 w2, Register out (ptr64 Eq_140) x20Out, Register out (ptr64 void) x22Out)
+// 0000000000000B08: Register (ptr64 Eq_142) dumpline(Register (ptr64 void) x0, Register int32 w2, Register out (ptr64 Eq_142) x20Out, Register out (ptr64 void) x22Out)
 // Called from:
 //      hexdump
 FILE * dumpline(void * x0, int32 w2, FILE & x20Out, void & x22Out)
@@ -196,9 +196,9 @@ FILE * dumpline(void * x0, int32 w2, FILE & x20Out, void & x22Out)
 	int32 w19_72;
 	for (w19_72 = w24_70; w19_72 <= 0x0F; ++w19_72)
 		strcat(fp + ~0x47, "   ");
-	word32 w0_87 = (word32) (uint64) strlen(fp + ~0x47);
+	word32 w0_87 = (word32) strlen(fp + ~0x47);
 	int64 x22_88 = (int64) w0_87;
-	union Eq_207 * x0_94 = strcpy(fp + ~0x47 + x22_88, "  |");
+	union Eq_208 * x0_94 = strcpy(fp + ~0x47 + x22_88, "  |");
 	int64 x0_243 = 0x00;
 	while (true)
 	{
@@ -206,7 +206,7 @@ FILE * dumpline(void * x0, int32 w2, FILE & x20Out, void & x22Out)
 		if (w21_47 <= w0_100)
 			break;
 		word32 w1_108 = (word32) *((char *) x0 + x0_243);
-		*((char *) x0_94 + x0_243) = (union Eq_207 *) (byte) ((uint32) ((uint8) w1_108 - 0x20) <= 0x5E ? w1_108 : 0x2E);
+		*((char *) x0_94 + x0_243) = (union Eq_208 *) (byte) ((uint32) ((uint8) w1_108 - 0x20) <= 0x5E ? w1_108 : 0x2E);
 		x0_243 = SEQ(SLICE(x0_243 + 0x01, word32, 32), w0_100 + 0x01);
 	}
 	int64 x1_122 = (int64) w24_70;
@@ -242,7 +242,7 @@ word32 hexdump(char * x0, ptr64 & x19Out, union Eq_21 & w20Out, union Eq_21 & w2
 			up64 x19_36 = 0x00;
 			while (x19_36 - qwLoc48 < 0x00)
 			{
-				int32 w0_54 = (word32) (uint64) fread(x22_35, 0x01, 0x10, x20_34);
+				int32 w0_54 = (word32) fread(x22_35, (size_t) 0x01, (size_t) 0x10, x20_34);
 				if (w0_54 == 0x00)
 					break;
 				x19_36 = dumpline(x22_35, w0_54, out x20_34, out x22_35);
@@ -290,12 +290,11 @@ void __libc_csu_fini()
 {
 }
 
-// 0000000000000D90: Register int32 __stat(Register (ptr64 char) x0, Register (ptr64 Eq_288) x1)
+// 0000000000000D90: Register int32 __stat(Register (ptr64 char) x0, Register (ptr64 Eq_289) x1)
 // Called from:
 //      hexdump
 int32 __stat(char * x0, struct stat * x1)
 {
-	word32 x0_32_32_8 = SLICE(x0, word32, 32);
-	return __xstat(SEQ(x0_32_32_8, 0x00), x0, x1);
+	return __xstat(0x00, x0, x1);
 }
 

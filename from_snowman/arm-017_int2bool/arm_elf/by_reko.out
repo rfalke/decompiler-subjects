@@ -1,5 +1,4 @@
 === Using options:--aggressive-branch-removal
-00008490: warning: Multiple different values of stack delta in procedure f when processing RET instruction; was 4 previously.
 00008470: warning: Call target address 00000000 is invalid.
 00008514: warning: Expected sizes of arrays to have been determined by now
 00008514: warning: Expected sizes of arrays to have been determined by now

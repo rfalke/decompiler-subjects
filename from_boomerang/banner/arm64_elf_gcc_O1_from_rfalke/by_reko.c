@@ -11,7 +11,7 @@ byte g_b132E8 = 0x00; // 00000000000132E8
 
 #include "subject.h"
 
-Eq_178 g_t13048 = // 0000000000013048
+Eq_180 g_t13048 = // 0000000000013048
 	{
 		
 		{
@@ -48,7 +48,7 @@ word64 g_qw12FC0 = 0x00; // 0000000000012FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t13000 = // 0000000000013000
+struct Eq_74 g_t13000 = // 0000000000013000
 	{
 		0x00,
 	};
@@ -97,10 +97,10 @@ byte g_b12D0 = 0x48; // 00000000000012D0
 
 #include "subject.h"
 
-// 0000000000000F60: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000F60: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -145,7 +145,7 @@ void register_tm_clones()
 // 0000000000001028: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t13000;
+	struct Eq_74 * x19_12 = &g_t13000;
 	if ((word32) g_b132E8 == 0x00)
 	{
 		if (g_qw12FB8 != 0x00)
@@ -178,8 +178,8 @@ void frame_dummy(word64 x29, word64 x30)
 void main(word64 x22, word64 x24)
 {
 	word32 x22_32_32_54 = SLICE(x22, word32, 32);
-	malloc(0x0C)->ptr0008 = 0x12D0;
-	int32 w0_46 = (word32) (uint64) strlen("HelloWorld");
+	malloc((size_t) 0x0C)->ptr0008 = 0x12D0;
+	int32 w0_46 = (word32) strlen("HelloWorld");
 	int32 w23_50 = w0_46 <= 0x0A ? w0_46 : 0x0A;
 	int64 x22_57 = SEQ(x22_32_32_54, w23_50 - 0x01) + 0x01 << 3;
 	word32 w20_183;
@@ -196,7 +196,7 @@ void main(word64 x22, word64 x24)
 				int32 w0_85 = w1_81 < 0x00 ? w1_81 + 0x07 : w1_81;
 				ui32 w1_94 = ((w1_81 & 0x07) << 3) - (w1_81 & 0x07);
 				word32 w6_97 = (word32) x6_390;
-				Eq_178 x5_91 = (&g_t13048)[(int64) (w20_183 + __align(w0_85, 8) - (w0_85 >> 3)) /64 8];
+				Eq_180 x5_91 = (&g_t13048)[(int64) (w20_183 + __align(w0_85, 8) - (w0_85 >> 3)) /64 8];
 				ui32 w0_100 = w1_94;
 				word32 w1_98 = w6_97 - w1_94;
 				do

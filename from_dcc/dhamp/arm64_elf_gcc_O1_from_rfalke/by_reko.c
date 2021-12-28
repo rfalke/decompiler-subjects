@@ -44,7 +44,7 @@ word64 g_qw11FD0 = 73832; // 0000000000011FD0
 
 #include "subject.h"
 
-struct Eq_72 g_t12000 = // 0000000000012000
+struct Eq_74 g_t12000 = // 0000000000012000
 	{
 		0x00,
 	};
@@ -86,7 +86,7 @@ word64 g_qw11DB0 = 0x00; // 0000000000011DB0
 
 #include "subject.h"
 
-Eq_391 g_t0F4C = // 0000000000000F4C
+Eq_394 g_t0F4C = // 0000000000000F4C
 	{
 		
 		{
@@ -98,10 +98,10 @@ Eq_391 g_t0F4C = // 0000000000000F4C
 
 #include "subject.h"
 
-// 0000000000000870: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000870: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -146,7 +146,7 @@ void register_tm_clones()
 // 0000000000000938: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t12000;
+	struct Eq_74 * x19_12 = &g_t12000;
 	if ((word32) g_b12060 == 0x00)
 	{
 		if (g_qw11FB0 != 0x00)
@@ -202,9 +202,9 @@ void sq(word64 x0)
 void sroot(real64 d0)
 {
 	real64 d1_14 = d0 * 0.5;
-	if (d0 > (d0 * 0.5) * g_r0AB8)
+	if (d0 > (d0 * 0.5) * 1e-06)
 	{
-		real64 d4_12 = g_r0AB8;
+		real64 d4_12 = 1e-06;
 		do
 		{
 			real64 d3_15 = d0 / d1_14;
@@ -231,10 +231,10 @@ void dply()
 		;
 }
 
-// 0000000000000B44: Register int32 fib(Register int32 w0, Register out Eq_180 w19Out, Register out Eq_180 w20Out)
+// 0000000000000B44: Register int32 fib(Register int32 w0, Register out Eq_182 w19Out, Register out Eq_182 w20Out)
 // Called from:
 //      fib
-int32 fib(int32 w0, union Eq_180 & w19Out, union Eq_180 & w20Out)
+int32 fib(int32 w0, union Eq_182 & w19Out, union Eq_182 & w20Out)
 {
 	if (w0 > 0x02)
 	{
@@ -312,7 +312,7 @@ void stest(byte (* x0)[], byte (* x1)[])
 void mcopy()
 {
 	mstrcpy(fp + ~0x5F, 0x0F88);
-	union Eq_281 * x0_31 = fopen("zyxw.vut", "w");
+	union Eq_283 * x0_31 = fopen("zyxw.vut", "w");
 	word32 x0_32_32_92 = SLICE(x0_31, word32, 32);
 	word32 w21_34 = 999;
 	if (x0_31 != null)
@@ -321,14 +321,14 @@ void mcopy()
 		{
 			word32 x0_32_32_95;
 			word32 w0_39 = (word32) bLoc60;
-			Eq_299 x0_44 = SEQ(x0_32_32_92, w0_39);
+			word64 x0_44 = SEQ(x0_32_32_92, w0_39);
 			if (w0_39 != 0x00)
 			{
 				byte * x19_41 = fp + ~0x5E;
 				do
 				{
 					x0_97 = SEQ(x0_32_32_95, w0_51);
-					x0_32_32_95 = SLICE((uint64) _IO_putc(x0_44, x0_31), word32, 32);
+					x0_32_32_95 = SLICE((uint64) _IO_putc((int32) x0_44, x0_31), word32, 32);
 					word32 w0_51 = (word32) *x19_41;
 					++x19_41;
 					x0_44 = x0_97;
@@ -340,7 +340,10 @@ void mcopy()
 		x0_62 = (uint64) fclose(x0_31);
 	}
 	else
-		exit(SEQ(SLICE((uint64) printf("Cannot open file", 0x00), word32, 32), ~0x00));
+	{
+		x0_83 = (uint64) printf("Cannot open file");
+		exit(~0x00);
+	}
 }
 
 // 0000000000000D00: void intest()
@@ -358,25 +361,25 @@ void intest()
 // 0000000000000D24: void main(Register word64 x19, Register word64 x23, Register word64 x25, Register word64 x30)
 void main(word64 x19, word64 x23, word64 x25, word64 x30)
 {
-	word32 x19_32_32_83 = SLICE(x19, word32, 32);
-	x0_33 = (uint64) printf("Start...%c\n\n", 0x00);
-	int32 w19_35 = 0x01;
-	word64 x22_39 = g_qw11FD0;
+	word32 x19_32_32_87 = SLICE(x19, word32, 32);
+	x0_35 = (uint64) printf("Start...%c\n\n", '\a');
+	int32 w19_37 = 0x01;
+	word64 x22_41 = g_qw11FD0;
 	while (true)
 	{
-		up32 w0_42 = w19_35 - 0x01;
-		word64 x19_84 = SEQ(x19_32_32_83, w19_35);
-		if (w0_42 <= 0x05)
+		up32 w0_44 = w19_37 - 0x01;
+		word64 x19_88 = SEQ(x19_32_32_87, w19_37);
+		if (w0_44 <= 0x05)
 			break;
-		if (w19_35 > 0x05)
+		if (w19_37 > 0x05)
 		{
-			x0_51 = (uint64) printf("\n\n...End%c", 0x00);
+			x0_55 = (uint64) printf("\n\n...End%c", '\a');
 			return;
 		}
-		++w19_35;
+		++w19_37;
 	}
-	<anonymous> * x0_78 = 3500 + (int64) (&g_t0F4C)[(uint64) w0_42];
-	x0_78();
+	<anonymous> * x0_82 = 3500 + (int64) (&g_t0F4C)[(uint64) w0_44];
+	x0_82();
 }
 
 // 0000000000000EB8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

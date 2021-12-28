@@ -74,6 +74,7 @@ real64 g_r402020 = 1.23; // 0000000000402020
 real64 g_r402028 = 1.24; // 0000000000402028
 real64 g_r402038 = 2.31; // 0000000000402038
 real64 g_r402040 = 2.41; // 0000000000402040
+real64 g_r402048 = 2.42; // 0000000000402048
 char g_str402050[] = "got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n"; // 0000000000402050
 char g_str4020A0[] = "got 2*x=%f\n"; // 00000000004020A0
 char g_str4020AC[] = "unknown: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n"; // 00000000004020AC
@@ -84,11 +85,11 @@ char g_str4020EB[] = "double: int-a=%d double=%f int-b=%d long double=%Lf int-c=
 
 #include "subject.h"
 
-// 0000000000401040: void _start(Register (ptr64 Eq_7) rdx, Stack Eq_8 qwArg00)
-void _start(void (* rdx)(), Eq_8 qwArg00)
+// 0000000000401040: void _start(Register (ptr64 Eq_7) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t401250, qwArg00, (char *) fp + 8, &g_t401320, &g_t401390, rdx, fp);
+	__libc_start_main(&g_t401250, (int32) qwArg00, (char *) fp + 8, &g_t401320, &g_t401390, rdx, fp);
 	__hlt();
 }
 
@@ -121,6 +122,8 @@ void __do_global_dtors_aux()
 }
 
 // 0000000000401120: void frame_dummy()
+// Called from:
+//      __libc_csu_init
 void frame_dummy()
 {
 	register_tm_clones();
@@ -132,26 +135,24 @@ void frame_dummy()
 void unknown_to_unknown(uint128 xmm0)
 {
 	uint32 eax_18 = (word32) xmm0;
-	printf("got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", xmm0 >> 0x38, (uint64) (byte) (xmm0 >> 0x30), (uint64) (byte) (xmm0 >> 0x28), (uint64) (byte) (xmm0 >> 0x20), (uint64) (eax_18 >> 0x18), (uint64) (byte) (eax_18 >> 0x10), (uint64) SLICE(xmm0, byte, 8), (uint64) (byte) xmm0);
+	printf("got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", (uint32) (xmm0 >> 0x38), (uint32) (byte) (xmm0 >> 0x30), (uint32) (byte) (xmm0 >> 0x28), (uint32) (byte) (xmm0 >> 0x20), eax_18 >> 0x18, (uint32) (byte) (eax_18 >> 0x10), (uint32) SLICE(xmm0, byte, 8), (uint32) (byte) xmm0);
 }
 
-// 00000000004011A0: Register uint64 double_to_unknown(Register uint128 xmm0)
+// 00000000004011A0: void double_to_unknown(Register uint128 xmm0)
 // Called from:
 //      main
-uint64 double_to_unknown(uint128 xmm0)
+void double_to_unknown(uint128 xmm0)
 {
 	uint32 eax_18 = (word32) xmm0;
-	uint64 r8_42 = (uint64) (byte) (xmm0 >> 0x20);
-	printf("got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", xmm0 >> 0x38, (uint64) (byte) (xmm0 >> 0x30), (uint64) (byte) (xmm0 >> 0x28), r8_42, (uint64) (eax_18 >> 0x18), (uint64) (byte) (eax_18 >> 0x10), (uint64) SLICE(xmm0, byte, 8), (uint64) (byte) xmm0);
-	return r8_42;
+	printf("got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n", (uint32) (xmm0 >> 0x38), (uint32) (byte) (xmm0 >> 0x30), (uint32) (byte) (xmm0 >> 0x28), (uint32) (byte) (xmm0 >> 0x20), eax_18 >> 0x18, (uint32) (byte) (eax_18 >> 0x10), (uint32) SLICE(xmm0, byte, 8), (uint32) (byte) xmm0);
 }
 
-// 0000000000401210: void unknown_to_double(Register uint128 xmm0)
+// 0000000000401210: void unknown_to_double(Register word128 xmm0)
 // Called from:
 //      main
-void unknown_to_double(uint128 xmm0)
+void unknown_to_double(word128 xmm0)
 {
-	printf("got 2*x=%f\n", SEQ(SLICE(xmm0, word64, 64), (real64) xmm0 + (real64) xmm0));
+	printf("got 2*x=%f\n", (real64) xmm0 + (real64) xmm0);
 }
 
 // 0000000000401230: void double_to_double(Register word128 xmm0)
@@ -159,22 +160,19 @@ void unknown_to_double(uint128 xmm0)
 //      main
 void double_to_double(word128 xmm0)
 {
-	printf("got 2*x=%f\n", SEQ(SLICE(xmm0, word64, 64), (real64) xmm0 + (real64) xmm0));
+	printf("got 2*x=%f\n", (real64) xmm0 + (real64) xmm0);
 }
 
 // 0000000000401250: void main(Register word32 edi)
 void main(word32 edi)
 {
-	unknown_to_unknown((uint128) g_r402010);
+	unknown_to_unknown(SEQ(0x00, 1.21));
 	real64 v9_27 = (real64) edi;
-	uint128 xmm0_31 = (uint128) g_r402018;
-	int64 r8_37 = double_to_unknown(SEQ(SLICE(xmm0_31, word64, 64), (real64) xmm0_31 + v9_27));
-	unknown_to_double((uint128) g_r402020);
-	uint128 xmm0_57 = (uint128) g_r402028;
-	double_to_double(SEQ(SLICE(xmm0_57, word64, 64), (real64) xmm0_57 + v9_27));
-	printf("unknown: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n", 100, (uint128) g_r402038, 101, 0x66, r8_37);
-	uint128 xmm0_83 = (uint128) g_r402040;
-	printf("double: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n", 200, SEQ(SLICE(xmm0_83, word64, 64), (real64) xmm0_83 + (real64) ((uint128) v9_27)), 0xC9, 202, r8_37);
+	double_to_unknown(SEQ(0x00, 1.22 + v9_27));
+	unknown_to_double(SEQ(0x00, 1.23));
+	double_to_double(SEQ(0x00, 1.24 + v9_27));
+	printf("unknown: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n", 100, 2.31, 101, SEQ(SLICE(xmm1, word64, 64), v9_27), 0x0066);
+	printf("double: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n", 200, 2.41 + v9_27, 0x00C9, SEQ(0x00, v9_27 + 2.42), 202);
 }
 
 // 0000000000401320: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
@@ -185,7 +183,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_31 = 4210200 - 0x00403E10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_242 rbx_43 = 0x00;
+		Eq_233 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a403E10 + rbx_43 * 0x08))();

@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -124,45 +124,41 @@ void __do_global_dtors_aux()
 // 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4005D8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4005D8 = null; // 00000000004005D8
+word64 g_qw4005D8 = 0x00; // 00000000004005D8
 // 00000000004005E0: void main(Register up32 w0)
 void main(up32 w0)
 {
-	struct Eq_99 * sp_10 = fp - 0x28;
+	struct Eq_102 * sp_10 = fp - 0x28;
 	if (w0 >= 0x2800)
 	{
-		x0_21 = (uint64) printf("Population exceeds %u\n", 0x00);
+		x0_23 = (uint64) printf("Population exceeds %u\n", 0x2800);
 		sp_10 = fp - 0x30;
 	}
 	if (w0 < 0xF0000000)
 	{
-		sp_10 = (struct Eq_99 *) ((char *) sp_10 - 8);
-		sp_10->dw000C = printf("The mask is %x\n", 0x00);
+		sp_10 = (struct Eq_102 *) ((char *) sp_10 - 8);
+		sp_10->dw000C = printf("The mask is %x\n", 0xF0000000);
 	}
-	word32 sp_32_32_64 = SLICE(sp_10, word32, 32);
+	word32 sp_32_32_68 = SLICE(sp_10, word32, 32);
 	if (w0 >= 0x02)
 	{
-		struct Eq_139 * sp_50 = (char *) sp_10 - 8;
-		sp_50->dw0008 = printf("Arguments supplied\n", 0x00);
-		sp_32_32_64 = SLICE(sp_50, word32, 32);
+		struct Eq_145 * sp_54 = (char *) sp_10 - 8;
+		sp_54->dw0008 = printf("Arguments supplied\n");
+		sp_32_32_68 = SLICE(sp_54, word32, 32);
 	}
-	int32 w8_57 = 0x00 - w0;
-	struct Eq_133 * sp_67 = SEQ(sp_32_32_64, w8_57 + 0x02);
-	if (w8_57 < 0x02)
-		sp_67->dwFFFFFFFC = printf("Three or more arguments\n", 0x00);
+	int32 w8_61 = 0x00 - w0;
+	struct Eq_139 * sp_71 = SEQ(sp_32_32_68, w8_61 + 0x02);
+	if (w8_61 < 0x02)
+		sp_71->dwFFFFFFFC = printf("Three or more arguments\n");
 }
 
 // 00000000004006A0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

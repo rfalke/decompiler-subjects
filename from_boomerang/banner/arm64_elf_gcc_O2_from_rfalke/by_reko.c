@@ -11,7 +11,7 @@ byte g_b132E0 = 0x00; // 00000000000132E0
 
 #include "subject.h"
 
-Eq_69 g_t13040 = // 0000000000013040
+Eq_70 g_t13040 = // 0000000000013040
 	{
 		
 		{
@@ -48,7 +48,7 @@ word64 g_qw12FC0 = 0x00; // 0000000000012FC0
 
 #include "subject.h"
 
-struct Eq_181 g_t13000 = // 0000000000013000
+struct Eq_184 g_t13000 = // 0000000000013000
 	{
 		0x00,
 	};
@@ -100,7 +100,7 @@ byte g_b11F0 = 0x48; // 00000000000011F0
 // 0000000000000F10: void main()
 void main()
 {
-	malloc(0x0C)->ptr0008 = 0x11F0;
+	malloc((size_t) 0x0C)->ptr0008 = 0x11F0;
 	word32 w20_109;
 	for (w20_109 = 0x00; w20_109 != 0x07; ++w20_109)
 	{
@@ -118,7 +118,7 @@ void main()
 			++x4_45;
 			x3_153 = (word64) x3_153 + 8;
 		} while (0x11FA - x4_45 != 0x00);
-		Eq_78 x0_90 = (word64) fp + 7;
+		Eq_79 x0_90 = (word64) fp + 7;
 		while ((word32) *x0_90 == 0x20)
 		{
 			*x0_90 = 0x00;
@@ -131,10 +131,10 @@ void main()
 	x0_121 = (uint64) puts("");
 }
 
-// 0000000000001014: void _start(Register (ptr64 Eq_118) x0, Stack Eq_119 qwArg00)
-void _start(void (* x0)(), Eq_119 qwArg00)
+// 0000000000001014: void _start(Register (ptr64 Eq_119) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -179,7 +179,7 @@ void register_tm_clones()
 // 00000000000010D8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_181 * x19_12 = &g_t13000;
+	struct Eq_184 * x19_12 = &g_t13000;
 	if ((word32) g_b132E0 == 0x00)
 	{
 		if (g_qw12FB8 != 0x00)

@@ -76,11 +76,11 @@ word64 g_qw6007C0 = 0x00; // 00000000006007C0
 
 #include "subject.h"
 
-// 0000000000400480: void _start(Register (ptr64 Eq_8) rdx, Stack Eq_9 qwArg00)
-void _start(void (* rdx)(), Eq_9 qwArg00)
+// 0000000000400480: void _start(Register (ptr64 Eq_8) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t400583, qwArg00, (char *) fp + 8, &g_t4005B0, &g_t400640, rdx, fp);
+	__libc_start_main(&g_t400583, (int32) qwArg00, (char *) fp + 8, &g_t4005B0, &g_t400640, rdx, fp);
 	__hlt();
 }
 
@@ -121,10 +121,10 @@ void f()
 {
 }
 
-// 0000000000400578: void g(Register Eq_51 rdi)
+// 0000000000400578: void g(Register bool rdi)
 // Called from:
 //      main
-void g(Eq_51 rdi)
+void g(bool rdi)
 {
 }
 
@@ -132,7 +132,7 @@ void g(Eq_51 rdi)
 void main(word32 eax)
 {
 	f();
-	g((uint64) (word32) (uint64) (eax != 0x00));
+	g((bool) (uint64) (eax != 0x00));
 }
 
 // 00000000004005B0: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
@@ -141,7 +141,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	word32 edi = (word32) rdi;
 	_init();
 	int64 rbp_19 = 0x006007B8 - 0x006007B0;
-	Eq_76 rbx_29 = 0x00;
+	Eq_77 rbx_29 = 0x00;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
 		do

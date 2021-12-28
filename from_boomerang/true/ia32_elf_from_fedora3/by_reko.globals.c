@@ -4,4 +4,4 @@
 
 #include "subject.h"
 
-uint8 g_b0001; // 00000001
+Eq_177 g_t0001;

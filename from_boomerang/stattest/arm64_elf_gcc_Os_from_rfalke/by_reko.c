@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_89 g_t11000 = // 0000000000011000
+struct Eq_94 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,14 +81,13 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 0000000000000730: void main()
 void main()
 {
-	__stat("test/source/stattest.c", fp + ~0x77);
-	x0_24 = (uint64) printf("Stat returns %d; size of file is %d\n", 0x00);
+	x0_26 = (uint64) printf("Stat returns %d; size of file is %d\n", __stat("test/source/stattest.c", fp + ~0x77), (int32) qwLoc48);
 }
 
-// 0000000000000774: void _start(Register (ptr64 Eq_26) x0, Stack Eq_27 qwArg00)
-void _start(void (* x0)(), Eq_27 qwArg00)
+// 0000000000000774: void _start(Register (ptr64 Eq_29) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -133,7 +132,7 @@ void register_tm_clones()
 // 0000000000000838: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_89 * x19_12 = &g_t11000;
+	struct Eq_94 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -191,12 +190,11 @@ void __libc_csu_fini()
 {
 }
 
-// 0000000000000938: void __stat(Register (ptr64 char) x0, Register (ptr64 Eq_12) x1)
+// 0000000000000938: Register int32 __stat(Register (ptr64 char) x0, Register (ptr64 Eq_18) x1)
 // Called from:
 //      main
-void __stat(char * x0, struct stat * x1)
+int32 __stat(char * x0, struct stat * x1)
 {
-	word32 x0_32_32_8 = SLICE(x0, word32, 32);
-	x0_10 = (uint64) __xstat(SEQ(x0_32_32_8, 0x00), x0, x1);
+	return __xstat(0x00, x0, x1);
 }
 

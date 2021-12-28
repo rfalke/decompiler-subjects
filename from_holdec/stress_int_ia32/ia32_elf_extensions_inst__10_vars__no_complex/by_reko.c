@@ -2317,7 +2317,7 @@ void inst_15_values_var_3()
 //      main
 void inst_15_flags_var_3()
 {
-	up32 eax_24 = -2777726427;
+	up32 eax_25 = -2777726427;
 }
 
 // 0805083C: void inst_15_values_var_4()
@@ -2332,7 +2332,7 @@ void inst_15_values_var_4()
 //      main
 void inst_15_flags_var_4()
 {
-	up32 eax_24 = -26599303;
+	up32 eax_25 = -26599303;
 }
 
 // 080508EB: void inst_15_values_var_5()
@@ -2347,7 +2347,7 @@ void inst_15_values_var_5()
 //      main
 void inst_15_flags_var_5()
 {
-	up32 eax_24 = -~0x00F94178;
+	up32 eax_25 = -~0x00F94178;
 }
 
 // 0805099A: void inst_15_values_var_6()
@@ -2376,7 +2376,7 @@ void inst_15_values_var_7()
 //      main
 void inst_15_flags_var_7()
 {
-	up32 eax_24 = -0xA150DD03;
+	up32 eax_25 = -0xA150DD03;
 }
 
 // 08050AF8: void inst_15_values_var_8()
@@ -2461,7 +2461,6 @@ void inst_16_values_var_3()
 //      main
 void inst_16_flags_var_3()
 {
-	up32 eax_26 = -391910429;
 }
 
 // 08050F12: void inst_16_values_var_4()
@@ -2476,7 +2475,6 @@ void inst_16_values_var_4()
 //      main
 void inst_16_flags_var_4()
 {
-	up32 eax_26 = -560858935;
 }
 
 // 08050FC1: void inst_16_values_var_5()
@@ -2505,7 +2503,6 @@ void inst_16_values_var_6()
 //      main
 void inst_16_flags_var_6()
 {
-	up32 eax_25 = -2205542814;
 }
 
 // 0805111F: void inst_16_values_var_7()
@@ -2548,7 +2545,6 @@ void inst_16_values_var_9()
 //      main
 void inst_16_flags_var_9()
 {
-	up32 eax_25 = -0x092D64D9;
 }
 
 // 0805132C: void inst_17_values_var_0()

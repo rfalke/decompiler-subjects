@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400720: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400720: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400750, qwArg00, (char *) fp + 8, g_ptr400758, g_ptr400760, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400750, (int32) qwArg00, (char *) fp + 8, g_ptr400758, g_ptr400760, x0, fp);
 	abort();
 }
 
@@ -124,31 +124,23 @@ void __do_global_dtors_aux()
 // 0000000000400830: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400868 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400868;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400868 = null; // 0000000000400868
-// 0000000000400870: Register Eq_98 dumpline(Register ptr64 x0, Register Eq_98 x1, Register int32 w2, Register out Eq_98 x2Out)
+word64 g_qw400868 = 0x00; // 0000000000400868
+// 0000000000400870: void dumpline(Register ptr64 x0, Register up64 x1, Register int32 w2)
 // Called from:
 //      hexdump
-Eq_98 dumpline(ptr64 x0, Eq_98 x1, int32 w2, union Eq_98 & x2Out)
+void dumpline(ptr64 x0, up64 x1, int32 w2)
 {
-	Eq_98 x1_401;
-	Eq_98 x1_396;
 	int32 w26_61;
 	word32 x8_32_32_153 = SLICE(x1, word32, 32);
-	Eq_98 x2_161 = x1;
-	word32 x2_32_32_376 = SLICE(x1, word32, 32);
 	x0_53 = (uint64) sprintf(fp->aFFFFFF58, "%08lX:", 0x00);
 	char * sp_101 = (char *) fp - 0x00B0;
 	int32 w23_58 = w2 > 0x10 ? 0x10 : w2;
@@ -159,103 +151,83 @@ Eq_98 dumpline(ptr64 x0, Eq_98 x1, int32 w2, union Eq_98 & x2Out)
 		char * x20_65 = (char *) (fp->aFFFFFF58 + 2) + 1;
 		do
 		{
-			word32 w2_71 = (word32) (x0 + x26_63);
 			++x26_63;
 			x0_76 = (uint64) sprintf(x20_65, " %02lX", 0x00);
 			sp_101 += -8;
 			w26_61 = (word32) x26_63;
 			x20_65 += 3;
-			x2_161 = SEQ(x2_32_32_376, w2_71);
 		} while (x26_63 - x27_64 < 0x00);
-		x1_401.u1 = 0x00400B93;
 		if (w26_61 > 0x0F)
 		{
-			x1_396.u1 = 0x00400B93;
-			goto l000000000040092C;
+l000000000040092C:
+			int64 x8_119;
+			Eq_159 w8_118;
+			Eq_160 w0_106 = (word32) strlen(sp_101);
+			Eq_169 x20_107[] = sp_101 + (int64) w0_106;
+			x20_107[0].u1 = 0x005C2020;
+			char * sp_105 = sp_101 + -8;
+			if (w23_58 >= 0x01)
+			{
+				x8_119 = 0x00;
+				int64 x9_120 = (int64) w23_58;
+				byte x10_121[] = sp_101 + (int64) w0_106;
+				do
+				{
+					up32 w12_127 = (word32) (x0 + x8_119);
+					x10_121[x8_119] = (byte) (w12_127 < 0x7F ? w12_127 : 0x2E);
+					++x8_119;
+					w8_118 = (word32) x8_119;
+					x8_32_32_153 = SLICE(x8_119, word32, 32);
+				} while (x8_119 - x9_120 < 0x00);
+				if (w8_118 > 0x0F)
+				{
+l00000000004009B0:
+					x20_107[(int64) (word32) x8_119 /64 4].u0 = 0x7C;
+					x0_184 = (uint64) puts(sp_105);
+					return;
+				}
+			}
+			else
+				w8_118.u0 = 0x00;
+			memset(sp_101 + (w8_118 + w0_106), 0x20, SLICE(0x0F - w8_118 + 0x01, size_t, 0));
+			sp_105 += -8;
+			x8_119 = SEQ(x8_32_32_153, 0x10);
+			goto l00000000004009B0;
 		}
 	}
 	else
-	{
 		w26_61 = 0x00;
-		x1_401.u1 = 0x00400B8C;
-	}
 	word32 w20_91 = 0x10 - w26_61;
 	do
 	{
 		fp->aFFFFFF58[(uint64) strlen(sp_101) /64 4] = 0x2020;
 		sp_101 += -8;
 		--w20_91;
-		x1_396 = x1_401;
 	} while (w20_91 != 0x00);
-l000000000040092C:
-	Eq_98 x1_170;
-	int64 x8_119;
-	Eq_170 w8_118;
-	Eq_171 w0_106 = (word32) (uint64) strlen(sp_101);
-	Eq_181 x20_107[] = sp_101 + (int64) w0_106;
-	x20_107[0].u1 = 0x005C2020;
-	word32 x1_32_32_165 = SLICE(x1_396, word32, 32);
-	char * sp_105 = sp_101 + -8;
-	if (w23_58 >= 0x01)
-	{
-		x8_119 = 0x00;
-		int64 x9_120 = (int64) w23_58;
-		byte x10_121[] = sp_101 + (int64) w0_106;
-		do
-		{
-			up32 w12_127 = (word32) (x0 + x8_119);
-			x10_121[x8_119] = (byte) (w12_127 < 0x7F ? w12_127 : 0x2E);
-			++x8_119;
-			w8_118 = (word32) x8_119;
-			x8_32_32_153 = SLICE(x8_119, word32, 32);
-		} while (x8_119 - x9_120 < 0x00);
-		x1_170 = x1_396;
-		if (w8_118 > 0x0F)
-		{
-l00000000004009B0:
-			x20_107[(int64) (word32) x8_119 /64 4].u0 = 0x7C;
-			x0_184 = (uint64) puts(sp_105);
-			x2Out = x2_161;
-			return x1_170;
-		}
-	}
-	else
-		w8_118.u0 = 0x00;
-	word64 x8_160 = SEQ(x8_32_32_153, 0x0F - w8_118);
-	x1_170 = SEQ(x1_32_32_165, 0x20);
-	memset(sp_101 + (w8_118 + w0_106), x1_170, x8_160 + 0x01);
-	x2_161 = x8_160 + 0x01;
-	sp_105 += -8;
-	x8_119 = SEQ(x8_32_32_153, 0x10);
-	goto l00000000004009B0;
+	goto l000000000040092C;
 }
 
-// 00000000004009E0: Register word32 hexdump(Register (ptr64 char) x0, Register out Eq_266 w21Out)
+// 00000000004009E0: Register word32 hexdump(Register (ptr64 char) x0, Register out Eq_249 w21Out)
 // Called from:
 //      main
-word32 hexdump(char * x0, union Eq_266 & w21Out)
+word32 hexdump(char * x0, union Eq_249 & w21Out)
 {
 	word64 x0_179;
-	word32 x2_32_32_113 = SLICE(x2_28, word32, 32);
-	word64 x2_28;
-	if (stat(x0, fp - 0xB8, out x2_28) != 0x00)
+	if (stat(x0, fp - 0xB8) != 0x00)
 	{
-		word32 x1_32_32_111 = SLICE(0x00400B9A, word32, 32);
 		FILE * x0_33 = fopen(x0, "rb");
 		if (x0_33 != null)
 		{
 			if (qwLoc90 != 0x00)
 			{
-				Eq_98 x20_42 = 0x00;
+				up64 x20_42 = 0x00;
 				do
 				{
-					int32 w21_57 = (word32) (uint64) fread(fp - 0x38, SEQ(x1_32_32_111, 0x01), SEQ(x2_32_32_113, 0x10), x0_33);
+					int32 w21_57 = (word32) fread(fp - 0x38, (size_t) 0x01, (size_t) 0x10, x0_33);
 					if (w21_57 == 0x00)
 						break;
-					x20_42 = (word64) x20_42 + (int64) w21_57;
-					word64 x2_66;
-					x1_32_32_111 = SLICE(dumpline(fp - 0x38, x20_42, w21_57, out x2_66), word32, 32);
-					x2_32_32_113 = SLICE(x2_66, word32, 32);
+					dumpline(fp - 0x38, x20_42, w21_57);
+					x20_42 += (int64) w21_57;
 				} while (x20_42 - qwLoc90 < 0x00);
 			}
 			x0_179 = SEQ(SLICE((uint64) fclose(x0_33), word32, 32), 0x00);
@@ -314,14 +286,11 @@ void __libc_csu_fini()
 {
 }
 
-// 0000000000400B68: Register word32 stat(Register (ptr64 char) x0, Register (ptr64 Eq_274) x1, Register out (ptr64 Eq_274) x2Out)
+// 0000000000400B68: Register int32 stat(Register (ptr64 char) x0, Register (ptr64 Eq_254) x1)
 // Called from:
 //      hexdump
-word32 stat(char * x0, struct stat * x1, struct stat & x2Out)
+int32 stat(char * x0, struct stat * x1)
 {
-	word32 x0_32_32_8 = SLICE(x0, word32, 32);
-	uint64 x0_10 = (uint64) __xstat(SEQ(x0_32_32_8, 0x00), x0, x1);
-	x2Out = x1;
-	return (word32) x0_10;
+	return __xstat(0x00, x0, x1);
 }
 

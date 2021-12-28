@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -124,24 +124,20 @@ void __do_global_dtors_aux()
 // 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4005D8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4005D8 = null; // 00000000004005D8
-// 00000000004005E0: Register uint32 test_1(Sequence ui64 x8_32_32_w0, Register ui32 x9_32_32, Register out ptr64 x8Out, Register out Eq_102 x9Out)
+word64 g_qw4005D8 = 0x00; // 00000000004005D8
+// 00000000004005E0: Register uint32 test_1(Sequence ui64 x8_32_32_w0, Register ui32 x9_32_32, Register out ptr64 x8Out, Register out Eq_105 x9Out)
 // Called from:
 //      main
-uint32 test_1(ui64 x8_32_32_w0, ui32 x9_32_32, ptr64 & x8Out, union Eq_102 & x9Out)
+uint32 test_1(ui64 x8_32_32_w0, ui32 x9_32_32, ptr64 & x8Out, union Eq_105 & x9Out)
 {
 	uint32 w0 = (word32) x8_32_32_w0;
 	uint64 x8_10 = x8_32_32_w0 * SEQ(x9_32_32, 0x4925);
@@ -153,10 +149,10 @@ uint32 test_1(ui64 x8_32_32_w0, ui32 x9_32_32, ptr64 & x8Out, union Eq_102 & x9O
 	return w8_14 >> 2;
 }
 
-// 0000000000400604: Register uint32 test_2(Sequence ui64 x8_32_32_w0, Register ui32 x9_32_32, Register out ptr64 x8Out, Register out Eq_128 x9Out)
+// 0000000000400604: Register uint32 test_2(Sequence ui64 x8_32_32_w0, Register ui32 x9_32_32, Register out ptr64 x8Out, Register out Eq_131 x9Out)
 // Called from:
 //      main
-uint32 test_2(ui64 x8_32_32_w0, ui32 x9_32_32, ptr64 & x8Out, union Eq_128 & x9Out)
+uint32 test_2(ui64 x8_32_32_w0, ui32 x9_32_32, ptr64 & x8Out, union Eq_131 & x9Out)
 {
 	uint32 w0 = (word32) x8_32_32_w0;
 	uint64 x8_10 = x8_32_32_w0 * SEQ(x9_32_32, 0x4925);
@@ -168,13 +164,13 @@ uint32 test_2(ui64 x8_32_32_w0, ui32 x9_32_32, ptr64 & x8Out, union Eq_128 & x9O
 	return w8_14 >> 2;
 }
 
-// 0000000000400628: Register word32 test_3(Sequence ui64 x8_32_32_w0, Register word32 x9_32_32, Register out Eq_153 x8Out, Register out Eq_154 x9Out)
+// 0000000000400628: Register word32 test_3(Sequence ui64 x8_32_32_w0, Register word32 x9_32_32, Register out Eq_156 x8Out, Register out Eq_157 x9Out)
 // Called from:
 //      main
-word32 test_3(ui64 x8_32_32_w0, word32 x9_32_32, union Eq_153 & x8Out, union Eq_154 & x9Out)
+word32 test_3(ui64 x8_32_32_w0, word32 x9_32_32, union Eq_156 & x8Out, union Eq_157 & x9Out)
 {
-	Eq_154 x9_9 = SEQ(x9_32_32, 0x4925);
-	Eq_153 x8_10 = x8_32_32_w0 * x9_9;
+	Eq_157 x9_9 = SEQ(x9_32_32, 0x4925);
+	Eq_156 x8_10 = x8_32_32_w0 * x9_9;
 	x8Out = x8_10;
 	x9Out = x9_9;
 	return (word32) (x8_10 >> 32);
@@ -183,28 +179,29 @@ word32 test_3(ui64 x8_32_32_w0, word32 x9_32_32, union Eq_153 & x8Out, union Eq_
 // 0000000000400640: void main(Register word32 x8_32_32, Register ui32 x9_32_32)
 void main(word32 x8_32_32, ui32 x9_32_32)
 {
-	up32 w24_30 = 0x00;
-	ui64 x8_185 = SEQ(x8_32_32, 0x00);
+	uint32 w24_101 = 0x00;
+	ui64 x8_222 = SEQ(x8_32_32, 0x00);
 	do
 	{
-		up32 w8_33 = (word32) x8_185;
+		uint32 w8_33 = (word32) x8_222;
 		word64 x8_40;
 		word64 x9_41;
-		word32 w0_39 = test_1(x8_185, x9_32_32, out x8_40, out x9_41);
+		uint32 w0_39 = test_1(x8_222, x9_32_32, out x8_40, out x9_41);
 		word64 x8_48;
 		word64 x9_49;
-		word32 w0_47 = test_2(SEQ(SLICE(x8_40, word32, 32), w8_33), SLICE(x9_41, word32, 32), out x8_48, out x9_49);
+		uint32 w0_47 = test_2(SEQ(SLICE(x8_40, word32, 32), w8_33), SLICE(x9_41, word32, 32), out x8_48, out x9_49);
 		word64 x8_56;
 		word64 x9_57;
-		word32 w0_58 = test_3(SEQ(SLICE(x8_48, word32, 32), w8_33), SLICE(x9_49, word32, 32), out x8_56, out x9_57);
-		word32 x8_32_32_116 = SLICE(x8_56, word32, 32);
+		uint32 w0_58 = test_3(SEQ(SLICE(x8_48, word32, 32), w8_33), SLICE(x9_49, word32, 32), out x8_56, out x9_57);
+		word32 x8_32_32_134 = SLICE(x8_56, word32, 32);
 		x9_32_32 = SLICE(x9_57, word32, 32);
-		if (w0_47 - w0_39 != 0x00 || w0_58 != w0_39)
-			x0_77 = (uint64) printf("%u %u %u (diff=%d) %u (diff=%d)\n", 0x00);
-		w24_30 = w8_33;
-		x8_185 = SEQ(x8_32_32_116, w8_33 + 0x4240);
-		w24_188 = w24_30;
-	} while (w8_33 >= w24_188);
+		Eq_179 w4_60 = w0_47 - w0_39;
+		if (w4_60 != 0x00 || w0_58 != w0_39)
+			x0_95 = (uint64) printf("%u %u %u (diff=%d) %u (diff=%d)\n", w8_33, w0_39, w0_47, w4_60, w0_58, w0_58 - w0_39);
+		w24_101 = w8_33;
+		x8_222 = SEQ(x8_32_32_134, w8_33 + 0x4240);
+		w24_225 = w24_101;
+	} while (w8_33 >= w24_225);
 }
 
 // 00000000004006E8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

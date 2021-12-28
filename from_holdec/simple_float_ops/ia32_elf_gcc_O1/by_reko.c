@@ -190,7 +190,7 @@ void use_int(int32 dwArg04)
 // 08048439: void read_ints()
 void read_ints()
 {
-	use((real64) (int16) g_b804A062 + (real64) g_r8048840 + (real64) g_w804A060 + (real64) global_int + (real64) global_long + (real64) g_qw804A050);
+	use((real64) (int16) g_b804A062 + (real64) 0.0F + (real64) g_w804A060 + (real64) global_int + (real64) global_long + (real64) g_qw804A050);
 }
 
 // 08048484: void write_ints(Stack real64 rArg04)
@@ -295,18 +295,18 @@ void compare_floats(Eq_207 rArg04, Eq_207 rArg0C)
 void constants(real64 rArg04)
 {
 	use(rArg04 + rArg04);
-	use(rArg04 * (real64) g_r8048844);
-	use(rArg04 * g_r8048850);
-	use(rArg04 * (real64) g_r8048848);
-	use(rArg04 * g_r8048858);
+	use(rArg04 * (real64) 3.0F);
+	use(rArg04 * 3.141592653589793);
+	use(rArg04 * (real64) 10.0F);
+	use(rArg04 * 12.345);
 }
 
 // 0804874D: void main()
 void main()
 {
 	__align(fp);
-	printf("%zu %zu %zu %zu %zu\n", tLoc2C, tLoc2C, tLoc2C, tLoc2C, tLoc2C);
-	printf("%zu %zu %zu\n", tLoc1C, tLoc1C, tLoc1C);
+	printf("%zu %zu %zu %zu %zu\n", 0x01, 0x02, 0x04, 0x04, 0x08);
+	printf("%zu %zu %zu\n", 0x04, 0x08, 0x0C);
 }
 
 // 080487A0: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)

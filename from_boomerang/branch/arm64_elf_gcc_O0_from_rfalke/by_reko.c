@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t11000 = // 0000000000011000
+struct Eq_74 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,10 +78,10 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 0000000000000730: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000730: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -126,7 +126,7 @@ void register_tm_clones()
 // 00000000000007F8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t11000;
+	struct Eq_74 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -158,32 +158,32 @@ void frame_dummy(word64 x29, word64 x30)
 // 0000000000000878: void main()
 void main()
 {
-	x0_16 = (uint64) __isoc99_scanf("%d", 0x00);
-	x0_21 = (uint64) __isoc99_scanf("%d", 0x00);
+	x0_17 = (uint64) __isoc99_scanf("%d", fp + ~0x03);
+	x0_22 = (uint64) __isoc99_scanf("%d", fp + ~0x07);
 	if (dwLoc04 == 0x05)
-		x0_29 = (uint64) puts("Equal");
+		x0_30 = (uint64) puts("Equal");
 	if (dwLoc04 != 0x05)
-		x0_39 = (uint64) puts("Not Equal");
+		x0_40 = (uint64) puts("Not Equal");
 	if (dwLoc04 < 0x05)
-		x0_50 = (uint64) puts("Greater");
+		x0_51 = (uint64) puts("Greater");
 	if (dwLoc04 >= 0x05)
-		x0_61 = (uint64) puts("Less or Equal");
+		x0_62 = (uint64) puts("Less or Equal");
 	if (dwLoc04 <= 0x05)
-		x0_72 = (uint64) puts("Greater or Equal");
+		x0_73 = (uint64) puts("Greater or Equal");
 	if (dwLoc04 > 0x05)
-		x0_83 = (uint64) puts("Less");
+		x0_84 = (uint64) puts("Less");
 	if (dwLoc08 < 0x05)
-		x0_94 = (uint64) puts("Greater Unsigned");
+		x0_95 = (uint64) puts("Greater Unsigned");
 	if (dwLoc08 >= 0x05)
-		x0_105 = (uint64) puts("Less or Equal Unsigned");
+		x0_106 = (uint64) puts("Less or Equal Unsigned");
 	if (dwLoc08 <= 0x05)
-		x0_116 = (uint64) puts("Carry Clear");
+		x0_117 = (uint64) puts("Carry Clear");
 	if (dwLoc08 > 0x05)
-		x0_127 = (uint64) puts("Carry Set");
+		x0_128 = (uint64) puts("Carry Set");
 	if (dwLoc04 <= 0x05)
-		x0_139 = (uint64) puts("Minus");
+		x0_140 = (uint64) puts("Minus");
 	if (dwLoc04 > 0x05)
-		x0_151 = (uint64) puts("Plus");
+		x0_152 = (uint64) puts("Plus");
 }
 
 // 0000000000000A18: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

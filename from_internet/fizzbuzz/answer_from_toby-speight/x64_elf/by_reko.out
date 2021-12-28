@@ -2,7 +2,6 @@
 0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
 0000000000401359: warning: Unable to resolve imported reference omp_get_num_threads.
 0000000000401360: warning: Unable to resolve imported reference omp_get_thread_num.
-0000000000401340: warning: Procedure frame_dummy previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000000004011D0: warning: Unable to resolve imported reference GOMP_parallel.
 0000000000403DF0: warning: Expected sizes of arrays to have been determined by now
 0000000000404088: warning: Expected sizes of arrays to have been determined by now

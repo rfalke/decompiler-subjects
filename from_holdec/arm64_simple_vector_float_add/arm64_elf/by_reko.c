@@ -64,12 +64,12 @@ void _start(void * x6)
 	_start_c(fp, x6);
 }
 
-// 00000000000006CC: void _start_c(Register (ptr64 Eq_12) x0, Register (ptr64 void) x6)
+// 00000000000006CC: void _start_c(Register (ptr64 int32) x0, Register (ptr64 void) x6)
 // Called from:
 //      _start
-void _start_c(union Eq_12 * x0, void * x6)
+void _start_c(int32 * x0, void * x6)
 {
-	x0_16 = (uint64) __libc_start_main(main_GOT, *x0, (char *) x0 + 8, _init_GOT, _fini_GOT, null, x6);
+	x0_16 = (uint64) __libc_start_main(main_GOT, *x0, x0 + 2, _init_GOT, _fini_GOT, null, x6);
 }
 
 // 00000000000006F4: void deregister_tm_clones()
@@ -158,12 +158,20 @@ void add_float_neon3(ptr64 x0, ptr64 x1, ptr64 x2, int32 w3)
 	} while (w3_14 > 0x00);
 }
 
-// 0000000000000844: void main()
-void main()
+// 0000000000000844: void main(Register word64 x30)
+void main(word64 x30)
 {
 	add_float_neon3(fp + ~0x0F, fp + ~0x2F, fp + ~0x1F, 0x04);
-	while (dwLoc3C <= 0x03)
-		x0_88 = (uint64) printf("%f + %f = %f\n", 0x00);
+	int32 dwLoc46_144 = SLICE(x30, int32, 16);
+	while (true)
+	{
+		word16 wLoc44_146 = SLICE(dwLoc46_144, word16, 16);
+		uint16 wLoc46_157 = (word16) dwLoc46_144;
+		if (dwLoc3C > 0x03)
+			break;
+		x0_94 = (uint64) printf("%f + %f = %f\n", (real64) (fp - 0x38)[(int64) dwLoc46_144], (real64) (fp - 0x28)[(int64) dwLoc46_144], (real64) (fp - 0x18)[(int64) dwLoc46_144]);
+		dwLoc46_144 = SEQ(wLoc44_146 + 0x01, wLoc46_157);
+	}
 	if ((qwLoc08 ^ *g_ptr10FB8) == 0x00)
 		return;
 	__stack_chk_fail();

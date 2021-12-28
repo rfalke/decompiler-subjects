@@ -11,12 +11,12 @@ byte g_b804A063 = 0x00; // 0804A063
 
 #include "subject.h"
 
-Eq_156 g_t804A030 = // 0804A030
+Eq_162 g_t804A030 = // 0804A030
 	{
 		0.0F
 	};
 real64 g_r804A040 = 11.0; // 0804A040
-Eq_156 global_float = // 0804A048
+Eq_162 global_float = // 0804A048
 	{
 		10.0F
 	};
@@ -128,11 +128,11 @@ real64 g_r8048810 = 12.345; // 08048810
 void main()
 {
 	__align(fp);
-	printf("%zu %zu %zu %zu %zu\n", tLoc2C, tLoc2C, tLoc2C, tLoc2C, tLoc2C);
-	printf("%zu %zu %zu\n", tLoc1C, tLoc1C, tLoc1C);
+	printf("%zu %zu %zu %zu %zu\n", 0x01, 0x02, 0x04, 0x04, 0x08);
+	printf("%zu %zu %zu\n", 0x04, 0x08, 0x0C);
 }
 
-// 08048352: void _start(Register (ptr32 Eq_35) edx, Stack int32 dwArg00)
+// 08048352: void _start(Register (ptr32 Eq_41) edx, Stack int32 dwArg00)
 void _start(void (* edx)(), int32 dwArg00)
 {
 	__align((char *) fp + 4);
@@ -186,10 +186,10 @@ void use(real64 qwArg04)
 	printf("%f", qwArg04);
 }
 
-// 08048466: void use_int(Stack Eq_82 dwArg04)
+// 08048466: void use_int(Stack Eq_88 dwArg04)
 // Called from:
 //      compare_floats
-void use_int(Eq_82 dwArg04)
+void use_int(Eq_88 dwArg04)
 {
 	printf("%d", dwArg04);
 }
@@ -282,14 +282,14 @@ void basic_operations(real64 rArg04, real64 rArg0C)
 	use(-rArg04);
 }
 
-// 08048647: void compare_floats(Stack Eq_229 rArg04, Stack Eq_229 rArg0C)
-void compare_floats(Eq_229 rArg04, Eq_229 rArg0C)
+// 08048647: void compare_floats(Stack Eq_235 rArg04, Stack Eq_235 rArg0C)
+void compare_floats(Eq_235 rArg04, Eq_235 rArg0C)
 {
-	Eq_82 eax_26 = (uint32) (int8) !PARITY_EVEN(rArg0C - rArg04);
+	Eq_88 eax_26 = (uint32) (int8) !PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_26.u0 = 0x00;
 	use_int(eax_26);
-	Eq_82 eax_55 = (uint32) (int8) PARITY_EVEN(rArg0C - rArg04);
+	Eq_88 eax_55 = (uint32) (int8) PARITY_EVEN(rArg0C - rArg04);
 	if (rArg0C != rArg04)
 		eax_55.u0 = 0x01;
 	use_int(eax_55);
@@ -303,10 +303,10 @@ void compare_floats(Eq_229 rArg04, Eq_229 rArg0C)
 void constants(real64 rArg04)
 {
 	use(rArg04 + rArg04);
-	use(rArg04 * (real64) g_r8048800);
-	use(rArg04 * g_r8048808);
-	use(rArg04 * (real64) g_r8048804);
-	use(rArg04 * g_r8048810);
+	use(rArg04 * (real64) 3.0F);
+	use(rArg04 * 3.141592653589793);
+	use(rArg04 * (real64) 10.0F);
+	use(rArg04 * 12.345);
 }
 
 // 08048760: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)

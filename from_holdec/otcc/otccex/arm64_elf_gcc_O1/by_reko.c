@@ -5,7 +5,7 @@
 #include "subject.h"
 
 byte g_b12068 = 0x00; // 0000000000012068
-Eq_117 g_t1206C = // 000000000001206C
+Eq_123 g_t1206C = // 000000000001206C
 	{
 		0
 	};
@@ -27,7 +27,7 @@ void _fini()
 #include "subject.h"
 
 <anonymous> * __libc_csu_fini_GOT = __libc_csu_fini; // 0000000000011F98
-union Eq_117 * g_ptr11FA0 = &g_t1206C; // 0000000000011FA0
+union Eq_123 * g_ptr11FA0 = &g_t1206C; // 0000000000011FA0
 <anonymous> * g_ptr11FA8 = null; // 0000000000011FA8
 word64 g_qw11FB0 = 0x00; // 0000000000011FB0
 FILE ** g_ptr11FB8 = null; // 0000000000011FB8
@@ -42,7 +42,7 @@ word64 g_qw11FC0 = 0x00; // 0000000000011FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t12000 = // 0000000000012000
+struct Eq_74 g_t12000 = // 0000000000012000
 	{
 		0x00,
 	};
@@ -91,10 +91,10 @@ void g_v0DE0 = ??void??; // 0000000000000DE0
 
 #include "subject.h"
 
-// 0000000000000920: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000920: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -139,7 +139,7 @@ void register_tm_clones()
 // 00000000000009E8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t12000;
+	struct Eq_74 * x19_12 = &g_t12000;
 	if ((word32) g_b12068 == 0x00)
 	{
 		if (g_qw11FB0 != 0x00)
@@ -168,22 +168,28 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000A68: void fact(Register int32 w0)
-void fact(int32 w0)
+// 0000000000000A68: Register int32 fact(Register int32 w0)
+// Called from:
+//      main
+int32 fact(int32 w0)
 {
 	if (w0 <= 0x01)
-		return;
+		return 0x01;
+	int32 w0_10 = 0x01;
 	int32 w1_11 = 0x02;
 	do
+	{
+		w0_10 *= w1_11;
 		++w1_11;
-	while (w0 >= w1_11);
+	} while (w0 >= w1_11);
+	return w0_10;
 }
 
-// 0000000000000A98: Register Eq_117 fib(Register Eq_117 w0, Register out Eq_118 w19Out, Register out Eq_118 w20Out)
+// 0000000000000A98: Register Eq_123 fib(Register Eq_123 w0, Register out Eq_124 w19Out, Register out Eq_124 w20Out)
 // Called from:
 //      fib
 //      main
-Eq_117 fib(Eq_117 w0, union Eq_118 & w19Out, union Eq_118 & w20Out)
+Eq_123 fib(Eq_123 w0, union Eq_124 & w19Out, union Eq_124 & w20Out)
 {
 	if (w0 > 0x02)
 	{
@@ -194,7 +200,7 @@ Eq_117 fib(Eq_117 w0, union Eq_118 & w19Out, union Eq_118 & w20Out)
 		word64 x20_40 = <invalid>;
 		word32 w19_83;
 		word32 w20_84;
-		Eq_117 w0_43 = (word32) x20_40 + fib((word32) x19_27 - 0x02, out w19_83, out w20_84);
+		Eq_123 w0_43 = (word32) x20_40 + fib((word32) x19_27 - 0x02, out w19_83, out w20_84);
 		w19Out.u0 = <invalid>;
 		w20Out.u0 = <invalid>;
 		return w0_43;
@@ -207,12 +213,12 @@ Eq_117 fib(Eq_117 w0, union Eq_118 & w19Out, union Eq_118 & w20Out)
 	}
 }
 
-// 0000000000000ADC: Register (ptr64 void) print_num(Register int32 w0, Register Eq_117 w1, Register out Eq_151 w2Out, Register out ptr64 x19Out, Register out ptr64 x20Out, Register out ptr64 x21Out, Register out ptr64 x22Out, Register out ptr64 x23Out)
+// 0000000000000ADC: Register word32 print_num(Register int32 w0, Register Eq_123 w1)
 // Called from:
 //      main
-void * print_num(int32 w0, Eq_117 w1, union Eq_151 & w2Out, ptr64 & x19Out, ptr64 & x20Out, ptr64 & x21Out, ptr64 & x22Out, ptr64 & x23Out)
+word32 print_num(int32 w0, Eq_123 w1)
 {
-	void * x0_29 = malloc(0x0100);
+	void * x0_29 = malloc((size_t) 0x0100);
 	word32 w0_32 = (word32) x0_29;
 	int32 w20_25 = w0;
 	word32 w23_50 = (word32) x0_29;
@@ -229,85 +235,56 @@ void * print_num(int32 w0, Eq_117 w1, union Eq_151 & w2Out, ptr64 & x19Out, ptr6
 		do
 		{
 			--w19_34;
-			byte * x0_55 = (int64) w19_34;
-			x0_61 = (uint64) putchar(SEQ(SLICE(x0_55, word32, 32), (word32) *x0_55));
+			x0_61 = (uint64) putchar((word32) null[(int64) w19_34]);
 		} while (w0_32 != w19_34);
 	}
-	void * x0_69 = (int64) w23_50;
-	free(x0_69);
-	w2Out = w0_38 + 0x57;
-	x19Out = qwLoc30;
-	x20Out = x19;
-	x21Out = x20;
-	x22Out = x21;
-	x23Out = x22;
-	return x0_69;
+	free((int64) w23_50);
+	return (word32) x20;
 }
 
-// 0000000000000B74: void help()
+// 0000000000000B74: void help(Sequence (ptr64 char) x1_32_32_w0)
 // Called from:
 //      main
-void help()
+void help(char * x1_32_32_w0)
 {
-	x0_13 = (uint64) printf("usage: %s n [base]\n", 0x00);
-	x0_17 = (uint64) puts("Compute fib(n) and fact(n) and output the result in base 'base'");
+	x0_15 = (uint64) printf("usage: %s n [base]\n", x1_32_32_w0);
+	x0_19 = (uint64) puts("Compute fib(n) and fact(n) and output the result in base 'base'");
 }
 
-// 0000000000000BA0: void main(Register Eq_235 w0, Register word32 w1, Register word64 x30)
-void main(Eq_235 w0, word32 w1, word64 x30)
+// 0000000000000BA0: void main(Register Eq_229 w0, Register word32 w1, Register word32 x1_32_32)
+void main(Eq_229 w0, word32 w1, word32 x1_32_32)
 {
 	if (w0 <= 0x03)
 	{
 		word32 * x0_26 = (int64) (w1 + 0x04);
-		Eq_117 w0_32 = atoi(SEQ(SLICE(x0_26, word32, 32), *x0_26));
-		union Eq_117 * x0_36 = g_ptr11FA0;
-		*x0_36 = (union Eq_117 *) 0x0A;
+		Eq_123 w0_32 = atoi(SEQ(SLICE(x0_26, word32, 32), *x0_26));
+		union Eq_123 * x0_36 = g_ptr11FA0;
+		*x0_36 = (union Eq_123 *) 0x0A;
 		word32 x0_32_32_43 = SLICE(x0_36, word32, 32);
 		if (w0 > 0x02)
 		{
-			Eq_117 w0_49 = atoi(SEQ(x0_32_32_43, null[(int64) (w1 + 0x08) /64 4]));
-			*g_ptr11FA0 = (union Eq_117 *) w0_49;
+			Eq_123 w0_49 = atoi(SEQ(x0_32_32_43, null[(int64) (w1 + 0x08) /64 4]));
+			*g_ptr11FA0 = (union Eq_123 *) w0_49;
 			if (w0_49 > 0x24)
 			{
-				x0_61 = (uint64) fwrite(&g_v0DE0, 0x01, 0x0D, *g_ptr11FB8);
+				x0_61 = (uint64) fwrite(&g_v0DE0, (size_t) 0x01, (size_t) 0x0D, *g_ptr11FB8);
 				return;
 			}
 		}
-		word32 x0_32_32_149;
-		x0_68 = (uint64) printf("fib(%d) = ", 0x00);
-		word64 x19_86;
-		word64 x20_87;
-		word64 x21_88;
-		word64 x22_253;
-		word64 x23_254;
-		word32 w19_250;
-		word32 w20_251;
-		word32 w2_252;
-		x0_98 = (uint64) putchar(SEQ(SLICE(print_num(fib(w0_32, out w19_250, out w20_251), *g_ptr11FA0, out w2_252, out x19_86, out x20_87, out x21_88, out x22_253, out x23_254), word32, 32), 0x0A));
-		int32 w21_100 = (word32) x21_88;
-		x0_104 = (uint64) printf("fact(%d) = ", 0x00);
-		if (w21_100 > 0x0C)
-			x0_32_32_149 = SLICE((uint64) printf("Overflow", 0x00), word32, 32);
+		x0_72 = (uint64) printf("fib(%d) = ", w0_32);
+		word32 w19_242;
+		word32 w20_243;
+		int32 w21_104 = print_num(fib(w0_32, out w19_242, out w20_243), *g_ptr11FA0);
+		x0_102 = (uint64) putchar(0x0A);
+		x0_110 = (uint64) printf("fact(%d) = ", w21_104);
+		if (w21_104 > 0x0C)
+			x0_142 = (uint64) printf("Overflow");
 		else
-		{
-			<anonymous> * x1_111 = (int64) (word32) 2664;
-			word64 x0_121;
-			word64 x3_123;
-			word64 x2_124;
-			x1_111();
-			word32 w2_132;
-			word64 x22_138;
-			word64 x23_139;
-			word64 x20_256;
-			word64 x21_257;
-			word64 x19_255;
-			x0_32_32_149 = SLICE(print_num((word32) x0_121, *g_ptr11FA0, out w2_132, out x19_255, out x20_256, out x21_257, out x22_138, out x23_139), word32, 32);
-			word64 x2_218 = SEQ(SLICE(x2_124, word32, 32), w2_132);
-		}
-		x0_153 = (uint64) putchar(SEQ(x0_32_32_149, 0x0A));
+			print_num(fact(w21_104), *g_ptr11FA0);
+		x0_149 = (uint64) putchar(0x0A);
 	}
 	else
-		help();
+		help(SEQ(x1_32_32, null[(int64) w1 /64 4]));
 }
 
 // 0000000000000CF0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

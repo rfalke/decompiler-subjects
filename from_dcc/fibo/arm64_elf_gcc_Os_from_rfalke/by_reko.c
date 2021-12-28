@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_133 g_t11000 = // 0000000000011000
+struct Eq_135 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,10 +81,10 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 0000000000000780: void main(Stack int32 dwArg00, Stack int32 dwArg04)
 void main(int32 dwArg00, int32 dwArg04)
 {
-	x0_29 = (uint64) printf("Input number of iterations: ", 0x00);
+	x0_29 = (uint64) printf("Input number of iterations: ");
 	ptr64 x19_18 = 0x00;
 	int32 w20_36 = 0x01;
-	word32 x0_32_32_72 = SLICE((uint64) __isoc99_scanf("%d", 0x00), word32, 32);
+	x0_37 = (uint64) __isoc99_scanf("%d", fp);
 	while (w20_36 <= dwArg00)
 	{
 		x0_48 = (uint64) printf("Input number: ", 0x00);
@@ -93,15 +93,15 @@ void main(int32 dwArg00, int32 dwArg04)
 		fib(dwArg04, out x19_18, out w20_88);
 		word64 x20_61 = <invalid>;
 		w20_36 = (word32) x20_61;
-		x0_32_32_72 = SLICE((uint64) printf("fibonacci(%d) = %u\n", 0x00), word32, 32);
+		x0_69 = (uint64) printf("fibonacci(%d) = %u\n", 0x00);
 	}
-	exit(SEQ(x0_32_32_72, 0x00));
+	exit(0x00);
 }
 
-// 0000000000000810: void _start(Register (ptr64 Eq_70) x0, Stack Eq_71 qwArg00)
-void _start(void (* x0)(), Eq_71 qwArg00)
+// 0000000000000810: void _start(Register (ptr64 Eq_70) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -146,7 +146,7 @@ void register_tm_clones()
 // 00000000000008D8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_133 * x19_12 = &g_t11000;
+	struct Eq_135 * x19_12 = &g_t11000;
 	if ((word32) g_b11048 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -175,11 +175,11 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000958: Register int32 fib(Register int32 w0, Register out ptr64 x19Out, Register out Eq_50 w20Out)
+// 0000000000000958: Register int32 fib(Register int32 w0, Register out ptr64 x19Out, Register out Eq_51 w20Out)
 // Called from:
 //      main
 //      fib
-int32 fib(int32 w0, ptr64 & x19Out, union Eq_50 & w20Out)
+int32 fib(int32 w0, ptr64 & x19Out, union Eq_51 & w20Out)
 {
 	word32 x20_32_32_55 = SLICE(x20, word32, 32);
 	int32 w19_17 = w0;

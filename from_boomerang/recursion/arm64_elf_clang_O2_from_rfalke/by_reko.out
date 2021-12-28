@@ -1,40 +1,6 @@
 === Using options:--aggressive-branch-removal
 0000000000400460: warning: Unable to resolve imported reference __gmon_start__.
-0000000000400968: warning: Unable to determine format string for call to 'printf'.
-0000000000400980: warning: Unable to determine format string for call to 'printf'.
-0000000000400678: warning: Unable to determine format string for call to 'printf'.
-00000000004006E4: warning: Unable to determine format string for call to 'printf'.
-00000000004006F4: warning: Unable to determine format string for call to 'printf'.
-00000000004007A0: warning: Unable to determine format string for call to 'printf'.
-00000000004007B0: warning: Unable to determine format string for call to 'printf'.
-0000000000400730: warning: Unable to determine format string for call to 'printf'.
-0000000000400740: warning: Unable to determine format string for call to 'printf'.
-0000000000400754: warning: Unable to determine format string for call to 'printf'.
-0000000000400768: warning: Unable to determine format string for call to 'printf'.
-0000000000400778: warning: Unable to determine format string for call to 'printf'.
-0000000000400784: warning: Unable to determine format string for call to 'printf'.
-0000000000400710: warning: Unable to determine format string for call to 'printf'.
-00000000004007C8: warning: Unable to determine format string for call to 'printf'.
-00000000004006A4: warning: Unable to determine format string for call to 'printf'.
-00000000004006B4: warning: Unable to determine format string for call to 'printf'.
-0000000000400A44: warning: Unable to determine format string for call to 'printf'.
-0000000000400A60: warning: Unable to determine format string for call to 'printf'.
-0000000000400A24: warning: Unable to determine format string for call to 'printf'.
-00000000004009EC: warning: Unable to determine format string for call to 'printf'.
-0000000000400844: warning: Unable to determine format string for call to 'printf'.
-000000000040086C: warning: Unable to determine format string for call to 'printf'.
-0000000000400880: warning: Unable to determine format string for call to 'printf'.
-00000000004009BC: warning: Unable to determine format string for call to 'printf'.
-0000000000400900: warning: Unable to determine format string for call to 'printf'.
-0000000000400918: warning: Unable to determine format string for call to 'printf'.
-000000000040092C: warning: Unable to determine format string for call to 'printf'.
-00000000004008B8: warning: Unable to determine format string for call to 'printf'.
-00000000004008D4: warning: Unable to determine format string for call to 'printf'.
-00000000004007E8: warning: Unable to determine format string for call to 'printf'.
-0000000000400804: warning: Unable to determine format string for call to 'printf'.
-0000000000400648: warning: Unable to determine format string for call to 'printf'.
-00000000004005FC: warning: Unable to determine format string for call to 'printf'.
-0000000000400610: warning: Unable to determine format string for call to 'printf'.
+00000000004005C8: warning: Call target address 0000000000000000 is invalid.
 l0000000000400688: warning: Non-integral switch expression
 0000000000400B18: warning: Expected sizes of arrays to have been determined by now
 0000000000410DE0: warning: Expected sizes of arrays to have been determined by now

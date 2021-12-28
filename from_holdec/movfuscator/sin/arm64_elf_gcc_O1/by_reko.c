@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t11000 = // 0000000000011000
+struct Eq_74 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,10 +78,10 @@ word64 g_qw10DA8 = 0x00; // 0000000000010DA8
 
 #include "subject.h"
 
-// 0000000000000720: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000720: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -126,7 +126,7 @@ void register_tm_clones()
 // 00000000000007E8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t11000;
+	struct Eq_74 * x19_12 = &g_t11000;
 	if ((word32) g_b11038 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -164,7 +164,7 @@ real32 sin(real32 s0)
 	real32 s5_5 = s4_4 * s4_4;
 	real32 s6_6 = s0 * s5_5;
 	real32 s7_7 = s5_5 * s6_6;
-	return (1.0F - s4_4 / 6.0F) * s0 + (((1.0F - s4_4 / g_r08F8) * s6_6) / g_r08FC + (((1.0F - s4_4 / g_r08E8) * (s5_5 * s7_7)) / g_r08EC + ((1.0F - s4_4 / g_r08F0) * s7_7) / g_r08F4));
+	return (1.0F - s4_4 / 6.0F) * s0 + (((1.0F - s4_4 / 42.0F) * s6_6) / 120.0F + (((1.0F - s4_4 / 210.0F) * (s5_5 * s7_7)) / 6.227021e+09F + ((1.0F - s4_4 / 110.0F) * s7_7) / 362880.0F));
 }
 
 real32 g_r08E8 = 210.0F; // 00000000000008E8
@@ -177,12 +177,11 @@ real32 g_r08FC = 120.0F; // 00000000000008FC
 void main()
 {
 	word32 w19_22;
-	real32 s8_23 = g_r095C;
-	real32 s9_26 = g_r0960;
+	real32 s8_23 = -3.1415927F;
+	real32 s9_26 = 0.19634955F;
 	for (w19_22 = 33; w19_22 != 0x00; --w19_22)
 	{
-		sin(s8_23);
-		x0_41 = (uint64) printf("sin(%.4f): %.4f\n", 0x00);
+		x0_45 = (uint64) printf("sin(%.4f): %.4f\n", (real64) s8_23, (real64) sin(s8_23));
 		s8_23 += s9_26;
 	}
 }

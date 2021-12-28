@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t11000 = // 0000000000011000
+struct Eq_74 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,10 +78,10 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 0000000000000730: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000730: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -126,7 +126,7 @@ void register_tm_clones()
 // 00000000000007F8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t11000;
+	struct Eq_74 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -156,26 +156,26 @@ void frame_dummy(word64 x29, word64 x30)
 }
 
 // 0000000000000878: void hello()
+// Called from:
+//      main
 void hello()
 {
-	x0_11 = (uint64) printf("Hello, ", 0x00);
+	x0_11 = (uint64) printf("Hello, ");
 }
 
 // 0000000000000898: void world()
+// Called from:
+//      main
 void world()
 {
 	x0_11 = (uint64) puts("world!");
 }
 
-// 00000000000008B8: void main(Register word64 x29, Register word64 x30)
-void main(word64 x29, word64 x30)
+// 00000000000008B8: void main()
+void main()
 {
-	struct Eq_126 * x29_15;
-	word64 x30_16;
-	g_t0878();
-	x29_15->ptr0018 = &g_t0898;
-	<anonymous> * x0_21 = x29_15->ptr0018;
-	x0_21();
+	hello();
+	world();
 }
 
 // 00000000000008F8: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

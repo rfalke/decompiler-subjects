@@ -305,18 +305,18 @@ void compare_floats(Eq_221 qwArg04, Eq_221 qwArg0C)
 void constants(real64 qwArg04)
 {
 	use(qwArg04 + qwArg04);
-	use(qwArg04 * g_r80489F0);
-	use(qwArg04 * g_r80489F8);
-	use(qwArg04 * g_r8048A00);
-	use(qwArg04 * g_r8048A08);
+	use(qwArg04 * 3.0);
+	use(qwArg04 * 3.141592653589793);
+	use(qwArg04 * 10.0);
+	use(qwArg04 * 12.345);
 }
 
 // 080488F4: void main()
 void main()
 {
 	__align(fp);
-	printf("%zu %zu %zu %zu %zu\n", tLoc2C, tLoc2C, tLoc2C, tLoc2C, tLoc2C);
-	printf("%zu %zu %zu\n", tLoc1C, tLoc1C, tLoc1C);
+	printf("%zu %zu %zu %zu %zu\n", 0x01, 0x02, 0x04, 0x04, 0x08);
+	printf("%zu %zu %zu\n", 0x04, 0x08, 0x0C);
 }
 
 // 08048940: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)

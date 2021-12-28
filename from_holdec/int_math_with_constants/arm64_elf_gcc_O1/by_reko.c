@@ -5,7 +5,7 @@
 #include "subject.h"
 
 byte g_b10D030 = 0x00; // 000000000010D030
-Eq_109 g_t10D038 = // 000000000010D038
+Eq_111 g_t10D038 = // 000000000010D038
 	{
 		0x00,
 		0,
@@ -4910,7 +4910,7 @@ Eq_385726 g_t10F438 = // 000000000010F438
 		0x00,
 		0x00,
 	};
-Eq_61916 g_t111438 = // 0000000000111438
+Eq_61918 g_t111438 = // 0000000000111438
 	{
 		0x00,
 		0x00,
@@ -7994,7 +7994,7 @@ Eq_437295 g_t113838 = // 0000000000113838
 		0,
 		0,
 	};
-Eq_61919 g_t115838 = // 0000000000115838
+Eq_61921 g_t115838 = // 0000000000115838
 	{
 		0x00,
 		0x00,
@@ -12108,7 +12108,7 @@ Eq_280607 g_t118C38 = // 0000000000118C38
 		0x00,
 		0x00,
 	};
-Eq_107231 g_t119C38 = // 0000000000119C38
+Eq_107233 g_t119C38 = // 0000000000119C38
 	{
 		0x00,
 		0,
@@ -13135,7 +13135,7 @@ Eq_107231 g_t119C38 = // 0000000000119C38
 		0,
 		0,
 	};
-Eq_112 g_t11A438 = // 000000000011A438
+Eq_114 g_t11A438 = // 000000000011A438
 	{
 		0x00,
 		0x00,
@@ -14162,7 +14162,7 @@ Eq_112 g_t11A438 = // 000000000011A438
 		0x00,
 		0,
 	};
-Eq_107234 g_t11A838 = // 000000000011A838
+Eq_107236 g_t11A838 = // 000000000011A838
 	{
 		0x00,
 		0x00,
@@ -16216,7 +16216,7 @@ Eq_280610 g_t11B038 = // 000000000011B038
 		0x00,
 		0x00,
 	};
-Eq_167746 g_t11C038 = // 000000000011C038
+Eq_167748 g_t11C038 = // 000000000011C038
 	{
 		0x00,
 		0x00,
@@ -18280,7 +18280,7 @@ Eq_332910 g_t11C838 = // 000000000011C838
 
 #include "subject.h"
 
-Eq_167749 g_t11E838 = // 000000000011E838
+Eq_167751 g_t11E838 = // 000000000011E838
 	{
 		0x00,
 		0x00,
@@ -24234,28 +24234,28 @@ void _fini()
 
 <anonymous> * __libc_csu_fini_GOT = __libc_csu_fini; // 000000000010CF08
 <anonymous> * g_ptr10CF10 = null; // 000000000010CF10
-struct Eq_109 * g_ptr10CF18 = &g_t10D038; // 000000000010CF18
+struct Eq_111 * g_ptr10CF18 = &g_t10D038; // 000000000010CF18
 word64 g_qw10CF20 = 0x00; // 000000000010CF20
 struct Eq_490114 * g_ptr10CF28 = &g_t10D438; // 000000000010CF28
 struct Eq_385726 * g_ptr10CF30 = &g_t10F438; // 000000000010CF30
-struct Eq_61916 * g_ptr10CF38 = &g_t111438; // 000000000010CF38
+struct Eq_61918 * g_ptr10CF38 = &g_t111438; // 000000000010CF38
 struct Eq_332907 * g_ptr10CF40 = &g_t111838; // 000000000010CF40
 struct Eq_437295 * g_ptr10CF48 = &g_t113838; // 000000000010CF48
-struct Eq_61919 * g_ptr10CF50 = &g_t115838; // 000000000010CF50
+struct Eq_61921 * g_ptr10CF50 = &g_t115838; // 000000000010CF50
 word64 g_qw10CF58 = 0x00; // 000000000010CF58
 struct Eq_225833 * g_ptr10CF60 = &g_t115C38; // 000000000010CF60
 <anonymous> * __libc_csu_init_GOT = __libc_csu_init; // 000000000010CF68
 struct Eq_437292 * g_ptr10CF70 = &g_t116C38; // 000000000010CF70
 struct Eq_280607 * g_ptr10CF78 = &g_t118C38; // 000000000010CF78
-struct Eq_107231 * g_ptr10CF80 = &g_t119C38; // 000000000010CF80
-struct Eq_112 * g_ptr10CF88 = &g_t11A438; // 000000000010CF88
-struct Eq_107234 * g_ptr10CF90 = &g_t11A838; // 000000000010CF90
+struct Eq_107233 * g_ptr10CF80 = &g_t119C38; // 000000000010CF80
+struct Eq_114 * g_ptr10CF88 = &g_t11A438; // 000000000010CF88
+struct Eq_107236 * g_ptr10CF90 = &g_t11A838; // 000000000010CF90
 struct Eq_280610 * g_ptr10CF98 = &g_t11B038; // 000000000010CF98
 <anonymous> * main_GOT = main; // 000000000010CFA0
 <anonymous> * g_ptr10CFA8 = null; // 000000000010CFA8
-struct Eq_167746 * g_ptr10CFB0 = &g_t11C038; // 000000000010CFB0
+struct Eq_167748 * g_ptr10CFB0 = &g_t11C038; // 000000000010CFB0
 struct Eq_332910 * g_ptr10CFB8 = &g_t11C838; // 000000000010CFB8
-struct Eq_167749 * g_ptr10CFC0 = &g_t11E838; // 000000000010CFC0
+struct Eq_167751 * g_ptr10CFC0 = &g_t11E838; // 000000000010CFC0
 <anonymous> * g_ptr10CFC8 = null; // 000000000010CFC8
 struct Eq_490111 * g_ptr10CFD0 = &g_t11F038; // 000000000010CFD0
 struct Eq_385729 * g_ptr10CFD8 = &g_t121038; // 000000000010CFD8
@@ -24266,7 +24266,7 @@ struct Eq_225830 * g_ptr10CFE0 = &g_t123038; // 000000000010CFE0
 
 #include "subject.h"
 
-struct Eq_72 g_t10D000 = // 000000000010D000
+struct Eq_74 g_t10D000 = // 000000000010D000
 	{
 		0x00,
 	};
@@ -24308,10 +24308,10 @@ word64 g_qw10CD18 = 0x00; // 000000000010CD18
 
 #include "subject.h"
 
-// 0000000000000BE0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000BE0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -24356,7 +24356,7 @@ void register_tm_clones()
 // 0000000000000CA8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t10D000;
+	struct Eq_74 * x19_12 = &g_t10D000;
 	if ((word32) g_b10D030 == 0x00)
 	{
 		if (g_qw10CF20 != 0x00)
@@ -24390,8 +24390,8 @@ void frame_dummy(word64 x29, word64 x30)
 //      main
 void signed_char_add()
 {
-	struct Eq_109 * x0_7 = g_ptr10CF18;
-	struct Eq_112 * x2_5 = g_ptr10CF88;
+	struct Eq_111 * x0_7 = g_ptr10CF18;
+	struct Eq_114 * x2_5 = g_ptr10CF88;
 	x2_5->b0000 = x0_7->b0000 + 0x01;
 	x2_5->b0001 = x0_7->b0001 + 0x02;
 	x2_5->b0002 = x0_7->b0002 + 0x03;
@@ -24517,7 +24517,7 @@ void signed_char_add()
 	x2_5->b007A = x0_7->b007A + 0x7B;
 	x2_5->b007B = x0_7->b007B + 0x7C;
 	x2_5->b007C = x0_7->b007C + 0x7D;
-	struct Eq_109 * x2_510 = g_ptr10CF18;
+	struct Eq_111 * x2_510 = g_ptr10CF18;
 	x2_5->b007D = x2_510->b007D + 0x7E;
 	x2_5->b007E = x2_510->b007E + 0x7F;
 	x2_5->b007F = x2_510->b007F - 0x80;
@@ -24643,9 +24643,9 @@ void signed_char_add()
 	x2_5->b00F7 = x2_510->b00F7 - 0x08;
 	x2_5->b00F8 = x2_510->b00F8 - 0x07;
 	x2_5->b00F9 = x2_510->b00F9 - 0x06;
-	struct Eq_109 * x0_1011 = g_ptr10CF18;
+	struct Eq_111 * x0_1011 = g_ptr10CF18;
 	x2_5->b00FA = x0_1011->b00FA - 0x05;
-	struct Eq_112 * x1_1017 = g_ptr10CF88;
+	struct Eq_114 * x1_1017 = g_ptr10CF88;
 	x1_1017->b00FB = x0_1011->b00FB - 0x04;
 	x1_1017->b00FC = x0_1011->b00FC - 0x03;
 	x1_1017->b00FD = x0_1011->b00FD - 0x02;
@@ -24771,7 +24771,7 @@ void signed_char_add()
 	x1_1017->b0175 = x0_1011->b0175 + 118;
 	x1_1017->b0176 = x0_1011->b0176 + 0x77;
 	x1_1017->b0177 = x0_1011->b0177 + 0x78;
-	struct Eq_109 * x1_1519 = g_ptr10CF18;
+	struct Eq_111 * x1_1519 = g_ptr10CF18;
 	x1_1017->b0178 = x1_1519->b0178 + 121;
 	x1_1017->b0179 = x1_1519->b0179 + 122;
 	x1_1017->b017A = x1_1519->b017A + 0x7B;
@@ -24897,7 +24897,7 @@ void signed_char_add()
 	x1_1017->b01F2 = x1_1519->b01F2 - 0x0D;
 	x1_1017->b01F3 = x1_1519->b01F3 - 0x0C;
 	x1_1017->b01F4 = x1_1519->b01F4 - 11;
-	struct Eq_109 * x1_2022 = g_ptr10CF18;
+	struct Eq_111 * x1_2022 = g_ptr10CF18;
 	x1_1017->b01F5 = x1_2022->b01F5 - 0x0A;
 	x1_1017->b01F6 = x1_2022->b01F6 - 0x09;
 	x1_1017->b01F7 = x1_2022->b01F7 - 0x08;
@@ -25024,8 +25024,8 @@ void signed_char_add()
 	x1_1017->b0270 = x1_2022->b0270 + 113;
 	x1_1017->b0271 = x1_2022->b0271 + 114;
 	x1_1017->b0272 = x1_2022->b0272 + 115;
-	struct Eq_109 * x1_2529 = g_ptr10CF18;
-	struct Eq_112 * x0_2527 = g_ptr10CF88;
+	struct Eq_111 * x1_2529 = g_ptr10CF18;
+	struct Eq_114 * x0_2527 = g_ptr10CF88;
 	x0_2527->b0273 = x1_2529->b0273 + 116;
 	x0_2527->b0274 = x1_2529->b0274 + 117;
 	x0_2527->b0275 = x1_2529->b0275 + 118;
@@ -25151,7 +25151,7 @@ void signed_char_add()
 	x0_2527->b02ED = x1_2529->b02ED - 0x12;
 	x0_2527->b02EE = x1_2529->b02EE - 0x11;
 	x0_2527->b02EF = x1_2529->b02EF - 0x10;
-	struct Eq_109 * x2_3032 = g_ptr10CF18;
+	struct Eq_111 * x2_3032 = g_ptr10CF18;
 	x0_2527->b02F0 = x2_3032->b02F0 - 0x0F;
 	x0_2527->b02F1 = x2_3032->b02F1 - 0x0E;
 	x0_2527->b02F2 = x2_3032->b02F2 - 0x0D;
@@ -25277,9 +25277,9 @@ void signed_char_add()
 	x0_2527->b036A = x2_3032->b036A + 0x6B;
 	x0_2527->b036B = x2_3032->b036B + 0x6C;
 	x0_2527->b036C = x2_3032->b036C + 0x6D;
-	struct Eq_109 * x0_3532 = g_ptr10CF18;
+	struct Eq_111 * x0_3532 = g_ptr10CF18;
 	x0_2527->b036D = x0_3532->b036D + 110;
-	struct Eq_112 * x1_3538 = g_ptr10CF88;
+	struct Eq_114 * x1_3538 = g_ptr10CF88;
 	x1_3538->b036E = x0_3532->b036E + 111;
 	x1_3538->b036F = x0_3532->b036F + 0x70;
 	x1_3538->b0370 = x0_3532->b0370 + 113;
@@ -25405,7 +25405,7 @@ void signed_char_add()
 	x1_3538->b03E8 = x0_3532->b03E8 - 0x17;
 	x1_3538->b03E9 = x0_3532->b03E9 - 22;
 	x1_3538->b03EA = x0_3532->b03EA - 0x15;
-	struct Eq_109 * x1_4041 = g_ptr10CF18;
+	struct Eq_111 * x1_4041 = g_ptr10CF18;
 	x1_3538->b03EB = x1_4041->b03EB - 0x14;
 	x1_3538->b03EC = x1_4041->b03EC - 0x13;
 	x1_3538->b03ED = x1_4041->b03ED - 0x12;
@@ -25434,8 +25434,8 @@ void signed_char_add()
 //      main
 void signed_char_mult()
 {
-	struct Eq_109 * x2_7 = g_ptr10CF18;
-	struct Eq_112 * x1_5 = g_ptr10CF88;
+	struct Eq_111 * x2_7 = g_ptr10CF18;
+	struct Eq_114 * x1_5 = g_ptr10CF88;
 	x1_5->b0000 = x2_7->b0000;
 	x1_5->b0001 = (byte) __ubfm((word32) x2_7->b0001, 31, 31);
 	word32 w4_16 = (word32) x2_7->b0002;
@@ -25568,9 +25568,9 @@ void signed_char_mult()
 	x1_5->b0062 = x2_7->b0062 * 99;
 	x1_5->b0063 = x2_7->b0063 * 100;
 	x1_5->b0064 = x2_7->b0064 * 101;
-	struct Eq_109 * x0_526 = g_ptr10CF18;
+	struct Eq_111 * x0_526 = g_ptr10CF18;
 	x1_5->b0065 = x0_526->b0065 * 0x66;
-	struct Eq_112 * x1_533 = g_ptr10CF88;
+	struct Eq_114 * x1_533 = g_ptr10CF88;
 	x1_533->b0066 = x0_526->b0066 * 0x67;
 	x1_533->b0067 = x0_526->b0067 * 0x68;
 	x1_533->b0068 = x0_526->b0068 * 0x69;
@@ -25692,7 +25692,7 @@ void signed_char_mult()
 	x1_533->b00CC = x0_526->b00CC * ~0x32;
 	x1_533->b00CD = x0_526->b00CD * ~0x31;
 	x1_533->b00CE = x0_526->b00CE * ~0x30;
-	struct Eq_109 * x1_1073 = g_ptr10CF18;
+	struct Eq_111 * x1_1073 = g_ptr10CF18;
 	word32 w2_1075 = (word32) x1_1073->b00CF;
 	x1_533->b00CF = (byte) __ubfm(w2_1075 - __ubfm(w2_1075, 30, 30), 28, 28);
 	x1_533->b00D0 = x1_1073->b00D0 * 0xD1;
@@ -25829,8 +25829,8 @@ void signed_char_mult()
 	x1_533->b0130 = x1_1073->b0130 * 0x31;
 	x1_533->b0131 = x1_1073->b0131 * 0x32;
 	x1_533->b0132 = x1_1073->b0132 * 0x33;
-	struct Eq_109 * x2_1589 = g_ptr10CF18;
-	struct Eq_112 * x1_1587 = g_ptr10CF88;
+	struct Eq_111 * x2_1589 = g_ptr10CF18;
+	struct Eq_114 * x1_1587 = g_ptr10CF88;
 	x1_1587->b0133 = x2_1589->b0133 * 0x34;
 	x1_1587->b0134 = x2_1589->b0134 * 0x35;
 	x1_1587->b0135 = x2_1589->b0135 * 0x36;
@@ -25954,9 +25954,9 @@ void signed_char_mult()
 	x1_1587->b0197 = x2_1589->b0197 * 0x98;
 	x1_1587->b0198 = x2_1589->b0198 * 0x99;
 	x1_1587->b0199 = x2_1589->b0199 * 0x9A;
-	struct Eq_109 * x0_2119 = g_ptr10CF18;
+	struct Eq_111 * x0_2119 = g_ptr10CF18;
 	x1_1587->b019A = x0_2119->b019A * 155;
-	struct Eq_112 * x1_2126 = g_ptr10CF88;
+	struct Eq_114 * x1_2126 = g_ptr10CF88;
 	x1_2126->b019B = x0_2119->b019B * 0x9C;
 	x1_2126->b019C = x0_2119->b019C * ~0x62;
 	x1_2126->b019D = x0_2119->b019D * ~0x61;
@@ -26083,7 +26083,7 @@ void signed_char_mult()
 	x1_2126->b0201 = (byte) __ubfm((word32) x0_2119->b0201, 31, 31);
 	word32 w2_2651 = (word32) x0_2119->b0202;
 	x1_2126->b0202 = (byte) (__ubfm(w2_2651, 31, 31) + w2_2651);
-	struct Eq_109 * x1_2657 = g_ptr10CF18;
+	struct Eq_111 * x1_2657 = g_ptr10CF18;
 	x1_2126->b0203 = (byte) __ubfm((word32) x1_2657->b0203, 30, 30);
 	word32 w3_2663 = (word32) x1_2657->b0204;
 	x1_2126->b0204 = (byte) (__ubfm(w3_2663, 30, 30) + w3_2663);
@@ -26215,8 +26215,8 @@ void signed_char_mult()
 	x1_2126->b0265 = x1_2657->b0265 * 0x66;
 	x1_2126->b0266 = x1_2657->b0266 * 0x67;
 	x1_2126->b0267 = x1_2657->b0267 * 0x68;
-	struct Eq_109 * x1_3182 = g_ptr10CF18;
-	struct Eq_112 * x0_3180 = g_ptr10CF88;
+	struct Eq_111 * x1_3182 = g_ptr10CF18;
+	struct Eq_114 * x0_3180 = g_ptr10CF88;
 	x0_3180->b0268 = x1_3182->b0268 * 0x69;
 	x0_3180->b0269 = x1_3182->b0269 * 0x6A;
 	x0_3180->b026A = x1_3182->b026A * 0x6B;
@@ -26339,8 +26339,8 @@ void signed_char_mult()
 	word32 w2_3710 = (word32) x1_3182->b02CF;
 	x0_3180->b02CF = (byte) __ubfm(w2_3710 - __ubfm(w2_3710, 30, 30), 28, 28);
 	x0_3180->b02D0 = x1_3182->b02D0 * 0xD1;
-	struct Eq_109 * x1_3723 = g_ptr10CF18;
-	struct Eq_112 * x0_3721 = g_ptr10CF88;
+	struct Eq_111 * x1_3723 = g_ptr10CF18;
+	struct Eq_114 * x0_3721 = g_ptr10CF88;
 	x0_3721->b02D1 = x1_3723->b02D1 * 0xD2;
 	x0_3721->b02D2 = x1_3723->b02D2 * 211;
 	x0_3721->b02D3 = x1_3723->b02D3 * 212;
@@ -26477,8 +26477,8 @@ void signed_char_mult()
 	x0_3721->b0333 = x1_3723->b0333 * 0x34;
 	x0_3721->b0334 = x1_3723->b0334 * 0x35;
 	x0_3721->b0335 = x1_3723->b0335 * 0x36;
-	struct Eq_109 * x1_4243 = g_ptr10CF18;
-	struct Eq_112 * x0_4241 = g_ptr10CF88;
+	struct Eq_111 * x1_4243 = g_ptr10CF18;
+	struct Eq_114 * x0_4241 = g_ptr10CF88;
 	x0_4241->b0336 = x1_4243->b0336 * 55;
 	word32 w3_4250 = (word32) x1_4243->b0337;
 	x0_4241->b0337 = (byte) __ubfm(__ubfm(w3_4250, 29, 29) - w3_4250, 29, 29);
@@ -26602,8 +26602,8 @@ void signed_char_mult()
 	x0_4241->b039A = x1_4243->b039A * 155;
 	x0_4241->b039B = x1_4243->b039B * 0x9C;
 	x0_4241->b039C = x1_4243->b039C * ~0x62;
-	struct Eq_109 * x1_4775 = g_ptr10CF18;
-	struct Eq_112 * x0_4773 = g_ptr10CF88;
+	struct Eq_111 * x1_4775 = g_ptr10CF18;
+	struct Eq_114 * x0_4773 = g_ptr10CF88;
 	x0_4773->b039D = x1_4775->b039D * ~0x61;
 	x0_4773->b039E = x1_4775->b039E * ~0x60;
 	word32 w3_4787 = (word32) x1_4775->b039F;
@@ -26731,8 +26731,8 @@ void signed_char_mult()
 //      main
 void signed_char_div()
 {
-	struct Eq_109 * x1_18 = g_ptr10CF18;
-	struct Eq_112 * x0_16 = g_ptr10CF88;
+	struct Eq_111 * x1_18 = g_ptr10CF18;
+	struct Eq_114 * x0_16 = g_ptr10CF88;
 	x0_16->b0000 = x1_18->b0000;
 	uint32 w2_23 = (word32) x1_18->b0001;
 	x0_16->b0001 = (byte) (w2_23 + (w2_23 >> 31) >> 1);
@@ -26886,9 +26886,9 @@ void signed_char_div()
 	x0_16->b004B = (byte) ((word32) ((int64) (w2_670 *s 1808407283) >> 37) - (w2_670 >> 31));
 	int32 w2_677 = (word32) x1_18->b004C;
 	x0_16->b004C = (byte) ((word32) ((int64) (w2_677 *s 0x3531DEC1) >> 36) - (w2_677 >> 31));
-	struct Eq_109 * x1_688 = g_ptr10CF18;
+	struct Eq_111 * x1_688 = g_ptr10CF18;
 	int32 w3_690 = (word32) x1_688->b004D;
-	struct Eq_112 * x0_686 = g_ptr10CF88;
+	struct Eq_114 * x0_686 = g_ptr10CF88;
 	x0_686->b004D = (byte) ((w3_690 + (word32) ((int64) (w3_690 *s 0xD20D20D3) >> 32) >> 6) - (w3_690 >> 31));
 	int32 w3_701 = (word32) x1_688->b004E;
 	x0_686->b004E = (byte) ((word32) ((int64) (w3_701 *s 1739733589) >> 37) - (w3_701 >> 31));
@@ -27038,9 +27038,9 @@ void signed_char_div()
 	x0_686->b0096 = (byte) ((word32) ((int64) (w3_1400 *s 910191745) >> 37) - (w3_1400 >> 31));
 	int32 w2_1409 = (word32) x1_688->b0097;
 	x0_686->b0097 = (byte) ((word32) ((int64) (w2_1409 *s 1808407283) >> 38) - (w2_1409 >> 31));
-	struct Eq_109 * x1_1420 = g_ptr10CF18;
+	struct Eq_111 * x1_1420 = g_ptr10CF18;
 	int32 w4_1422 = (word32) x1_1420->b0098;
-	struct Eq_112 * x2_1418 = g_ptr10CF88;
+	struct Eq_114 * x2_1418 = g_ptr10CF88;
 	x2_1418->b0098 = (byte) ((w4_1422 + (word32) ((int64) (w4_1422 *s 3593175255) >> 32) >> 7) - (w4_1422 >> 31));
 	int32 w4_1433 = (word32) x1_1420->b0099;
 	x2_1418->b0099 = (byte) ((word32) ((int64) (w4_1433 *s 0x3531DEC1) >> 37) - (w4_1433 >> 31));
@@ -27188,7 +27188,7 @@ void signed_char_div()
 	x2_1418->b00E0 = (byte) ((w4_2132 + (word32) ((int64) (w4_2132 *s 2443359173) >> 32) >> 7) - (w4_2132 >> 31));
 	int32 w3_2143 = (word32) x1_1420->b00E1;
 	x2_1418->b00E1 = (byte) ((word32) ((int64) (w3_2143 *s 0x487EDE05) >> 38) - (w3_2143 >> 31));
-	struct Eq_109 * x1_2153 = g_ptr10CF18;
+	struct Eq_111 * x1_2153 = g_ptr10CF18;
 	int32 w3_2155 = (word32) x1_2153->b00E2;
 	x2_1418->b00E2 = (byte) ((word32) ((int64) (w3_2155 *s 605457945) >> 37) - (w3_2155 >> 31));
 	int32 w3_2164 = (word32) x1_2153->b00E3;
@@ -27339,9 +27339,9 @@ void signed_char_div()
 	x2_1418->b012B = (byte) ((word32) ((int64) (w3_2871 *s 458129845) >> 37) - (w3_2871 >> 31));
 	int32 w2_2880 = (word32) x1_2153->b012C;
 	x2_1418->b012C = (byte) ((word32) ((int64) (w2_2880 *s 0x1B37484B) >> 37) - (w2_2880 >> 31));
-	struct Eq_109 * x1_2891 = g_ptr10CF18;
+	struct Eq_111 * x1_2891 = g_ptr10CF18;
 	int32 w3_2893 = (word32) x1_2891->b012D;
-	struct Eq_112 * x0_2889 = g_ptr10CF88;
+	struct Eq_114 * x0_2889 = g_ptr10CF88;
 	x0_2889->b012D = (byte) ((word32) ((int64) (w3_2893 *s 910191745) >> 38) - (w3_2893 >> 31));
 	int32 w3_2902 = (word32) x1_2891->b012E;
 	x0_2889->b012E = (byte) ((word32) ((int64) (w3_2902 *s 226796953) >> 36) - (w3_2902 >> 31));
@@ -27491,9 +27491,9 @@ void signed_char_div()
 	x0_2889->b0176 = (byte) ((word32) ((int64) (w3_3602 *s 91625969) >> 35) - (w3_3602 >> 31));
 	int32 w2_3611 = (word32) x1_2891->b0177;
 	x0_2889->b0177 = (byte) ((w2_3611 + (word32) ((int64) (w2_3611 *s 2924233053) >> 32) >> 8) - (w2_3611 >> 31));
-	struct Eq_109 * x1_3624 = g_ptr10CF18;
+	struct Eq_111 * x1_3624 = g_ptr10CF18;
 	int32 w3_3626 = (word32) x1_3624->b0178;
-	struct Eq_112 * x0_3622 = g_ptr10CF88;
+	struct Eq_114 * x0_3622 = g_ptr10CF88;
 	x0_3622->b0178 = (byte) ((w3_3626 + (word32) ((int64) (w3_3626 *s 2916476467) >> 32) >> 8) - (w3_3626 >> 31));
 	int32 w3_3637 = (word32) x1_3624->b0179;
 	x0_3622->b0179 = (byte) ((w3_3637 + (word32) ((int64) (w3_3637 *s 2908760921) >> 32) >> 8) - (w3_3637 >> 31));
@@ -27643,9 +27643,9 @@ void signed_char_div()
 	x0_3622->b01C1 = (byte) ((w3_4339 + (word32) ((int64) (w3_4339 *s 2443359173) >> 32) >> 8) - (w3_4339 >> 31));
 	int32 w2_4350 = (word32) x1_3624->b01C2;
 	x0_3622->b01C2 = (byte) ((word32) ((int64) (w2_4350 *s 0x48A8048B) >> 39) - (w2_4350 >> 31));
-	struct Eq_109 * x1_4361 = g_ptr10CF18;
+	struct Eq_111 * x1_4361 = g_ptr10CF18;
 	int32 w3_4363 = (word32) x1_4361->b01C3;
-	struct Eq_112 * x0_4359 = g_ptr10CF88;
+	struct Eq_114 * x0_4359 = g_ptr10CF88;
 	x0_4359->b01C3 = (byte) ((word32) ((int64) (w3_4363 *s 0x487EDE05) >> 39) - (w3_4363 >> 31));
 	int32 w3_4372 = (word32) x1_4361->b01C4;
 	x0_4359->b01C4 = (byte) ((w3_4372 + (word32) ((int64) (w3_4372 *s 2427177987) >> 32) >> 8) - (w3_4372 >> 31));
@@ -27795,7 +27795,7 @@ void signed_char_div()
 	x0_4359->b020C = (byte) ((word32) ((int64) (w3_5077 *s 0x7CD49A17) >> 40) - (w3_5077 >> 31));
 	int32 w2_5086 = (word32) x1_4361->b020D;
 	x0_4359->b020D = (byte) ((word32) ((int64) (w2_5086 *s 2090326289) >> 40) - (w2_5086 >> 31));
-	struct Eq_109 * x0_5096 = g_ptr10CF18;
+	struct Eq_111 * x0_5096 = g_ptr10CF18;
 	int32 w3_5098 = (word32) x0_5096->b020E;
 	x0_4359->b020E = (byte) ((w3_5098 + (word32) ((int64) (w3_5098 *s 4172719651) >> 32) >> 9) - (w3_5098 >> 31));
 	int32 w3_5109 = (word32) x0_5096->b020F;
@@ -27946,11 +27946,11 @@ void signed_char_div()
 	x0_4359->b0257 = (byte) ((word32) ((int64) (w3_5797 *s 458129845) >> 38) - (w3_5797 >> 31));
 	int32 w2_5806 = (word32) x0_5096->b0258;
 	x0_4359->b0258 = (byte) ((word32) ((int64) (w2_5806 *s 0x6D0B8037) >> 40) - (w2_5806 >> 31));
-	struct Eq_109 * x0_5815 = g_ptr10CF18;
+	struct Eq_111 * x0_5815 = g_ptr10CF18;
 	int32 w3_5817 = (word32) x0_5815->b0259;
 	x0_4359->b0259 = (byte) ((word32) ((int64) (w3_5817 *s 0x1B37484B) >> 38) - (w3_5817 >> 31));
 	int32 w3_5828 = (word32) x0_5815->b025A;
-	struct Eq_112 * x1_5826 = g_ptr10CF88;
+	struct Eq_114 * x1_5826 = g_ptr10CF88;
 	x1_5826->b025A = (byte) ((word32) ((int64) (w3_5828 *s 0x00D95DD3) >> 33) - (w3_5828 >> 31));
 	int32 w3_5837 = (word32) x0_5815->b025B;
 	x1_5826->b025B = (byte) ((word32) ((int64) (w3_5837 *s 910191745) >> 39) - (w3_5837 >> 31));
@@ -28100,7 +28100,7 @@ void signed_char_div()
 	x1_5826->b02A3 = (byte) ((word32) ((int64) (w3_6519 *s 1626496491) >> 40) - (w3_6519 >> 31));
 	int32 w2_6528 = (word32) x0_5815->b02A4;
 	x1_5826->b02A4 = (byte) ((word32) ((int64) (w2_6528 *s 0x60CDB521) >> 40) - (w2_6528 >> 31));
-	struct Eq_109 * x1_6538 = g_ptr10CF18;
+	struct Eq_111 * x1_6538 = g_ptr10CF18;
 	int32 w3_6540 = (word32) x1_6538->b02A5;
 	x1_5826->b02A5 = (byte) ((w3_6540 + (word32) ((int64) (w3_6540 *s 3243397133) >> 32) >> 9) - (w3_6540 >> 31));
 	int32 w3_6551 = (word32) x1_6538->b02A6;
@@ -28251,9 +28251,9 @@ void signed_char_div()
 	x1_5826->b02EE = (byte) ((w3_7249 + (word32) ((int64) (w3_7249 *s ~0x51785488) >> 32) >> 9) - (w3_7249 >> 31));
 	int32 w2_7260 = (word32) x1_6538->b02EF;
 	x1_5826->b02EF = (byte) ((w2_7260 + (word32) ((int64) (w2_7260 *s 2924233053) >> 32) >> 9) - (w2_7260 >> 31));
-	struct Eq_109 * x1_7273 = g_ptr10CF18;
+	struct Eq_111 * x1_7273 = g_ptr10CF18;
 	int32 w3_7275 = (word32) x1_7273->b02F0;
-	struct Eq_112 * x0_7271 = g_ptr10CF88;
+	struct Eq_114 * x0_7271 = g_ptr10CF88;
 	x0_7271->b02F0 = (byte) ((word32) ((int64) (w3_7275 *s 0x57087FD5) >> 40) - (w3_7275 >> 31));
 	int32 w3_7284 = (word32) x1_7273->b02F1;
 	x0_7271->b02F1 = (byte) ((w3_7284 + (word32) ((int64) (w3_7284 *s 2916476467) >> 32) >> 9) - (w3_7284 >> 31));
@@ -28403,9 +28403,9 @@ void signed_char_div()
 	x0_7271->b0339 = (byte) ((word32) ((int64) (w3_7990 *s 1331127879) >> 40) - (w3_7990 >> 31));
 	int32 w2_7999 = (word32) x1_7273->b033A;
 	x0_7271->b033A = (byte) ((w2_7999 + (word32) ((int64) (w2_7999 *s ~0x61825256) >> 32) >> 9) - (w2_7999 >> 31));
-	struct Eq_109 * x1_8012 = g_ptr10CF18;
+	struct Eq_111 * x1_8012 = g_ptr10CF18;
 	int32 w3_8014 = (word32) x1_8012->b033B;
-	struct Eq_112 * x0_8010 = g_ptr10CF88;
+	struct Eq_114 * x0_8010 = g_ptr10CF88;
 	x0_8010->b033B = (byte) ((word32) ((int64) (w3_8014 *s 663956297) >> 39) - (w3_8014 >> 31));
 	int32 w3_8023 = (word32) x1_8012->b033C;
 	x0_8010->b033C = (byte) ((w3_8023 + (word32) ((int64) (w3_8023 *s 2652621539) >> 32) >> 9) - (w3_8023 >> 31));
@@ -28553,9 +28553,9 @@ void signed_char_div()
 	x0_8010->b0383 = (byte) ((w3_8734 + (word32) ((int64) (w3_8734 *s 2443359173) >> 32) >> 9) - (w3_8734 >> 31));
 	int32 w2_8745 = (word32) x1_8012->b0384;
 	x0_8010->b0384 = (byte) ((w2_8745 + (word32) ((int64) (w2_8745 *s 2440647343) >> 32) >> 9) - (w2_8745 >> 31));
-	struct Eq_109 * x1_8758 = g_ptr10CF18;
+	struct Eq_111 * x1_8758 = g_ptr10CF18;
 	int32 w3_8760 = (word32) x1_8758->b0385;
-	struct Eq_112 * x0_8756 = g_ptr10CF88;
+	struct Eq_114 * x0_8756 = g_ptr10CF88;
 	x0_8756->b0385 = (byte) ((word32) ((int64) (w3_8760 *s 0x48A8048B) >> 40) - (w3_8760 >> 31));
 	int32 w3_8769 = (word32) x1_8758->b0386;
 	x0_8756->b0386 = (byte) ((w3_8769 + (word32) ((int64) (w3_8769 *s 2435241701) >> 32) >> 9) - (w3_8769 >> 31));
@@ -28705,9 +28705,9 @@ void signed_char_div()
 	x0_8756->b03CE = (byte) ((word32) ((int64) (w3_9485 *s 0x219BB355) >> 39) - (w3_9485 >> 31));
 	int32 w2_9494 = (word32) x1_8758->b03CF;
 	x0_8756->b03CF = (byte) ((word32) ((int64) (w2_9494 *s 0x4325C53F) >> 40) - (w2_9494 >> 31));
-	struct Eq_109 * x1_9505 = g_ptr10CF18;
+	struct Eq_111 * x1_9505 = g_ptr10CF18;
 	int32 w3_9507 = (word32) x1_9505->b03D0;
-	struct Eq_112 * x0_9503 = g_ptr10CF88;
+	struct Eq_114 * x0_9503 = g_ptr10CF88;
 	x0_9503->b03D0 = (byte) ((word32) ((int64) (w3_9507 *s 562697865) >> 39) - (w3_9507 >> 31));
 	int32 w3_9516 = (word32) x1_9505->b03D1;
 	x0_9503->b03D1 = (byte) ((w3_9516 + (word32) ((int64) (w3_9516 *s 0x86053C35) >> 32) >> 9) - (w3_9516 >> 31));
@@ -28810,9 +28810,9 @@ void signed_char_div()
 //      main
 void signed_char_modulo()
 {
-	struct Eq_112 * x0_5 = g_ptr10CF88;
+	struct Eq_114 * x0_5 = g_ptr10CF88;
 	x0_5->b0000 = 0x00;
-	struct Eq_109 * x1_8 = g_ptr10CF18;
+	struct Eq_111 * x1_8 = g_ptr10CF18;
 	int32 w2_10 = (word32) x1_8->b0001;
 	x0_5->b0001 = (byte) (w2_10 >= 0x00 ? w2_10 & 0x01 : -(w2_10 & 0x01));
 	int32 w3_17 = (word32) x1_8->b0002;
@@ -28935,9 +28935,9 @@ void signed_char_modulo()
 	x0_5->b003A = (byte) w3_622 - (byte) ((word32) ((int64) (w3_622 *s 0x22B63CBF) >> 35) - (w3_622 >> 31)) * 0x3B;
 	int32 w3_633 = (word32) x1_8->b003B;
 	x0_5->b003B = (byte) w3_633 - (byte) ((w3_633 + (word32) ((int64) (w3_633 *s 0x88888889) >> 32) >> 5) - (w3_633 >> 31)) * 0x3C;
-	struct Eq_109 * x1_647 = g_ptr10CF18;
+	struct Eq_111 * x1_647 = g_ptr10CF18;
 	int32 w3_649 = (word32) x1_647->b003C;
-	struct Eq_112 * x0_645 = g_ptr10CF88;
+	struct Eq_114 * x0_645 = g_ptr10CF88;
 	x0_645->b003C = (byte) w3_649 - (byte) ((word32) ((int64) (w3_649 *s 0x4325C53F) >> 36) - (w3_649 >> 31)) * 0x3D;
 	int32 w4_660 = (word32) x1_647->b003D;
 	x0_645->b003D = (byte) w4_660 - (byte) ((w4_660 + (word32) ((int64) (w4_660 *s 0x84210843) >> 32) >> 5) - (w4_660 >> 31)) * 0x3E;
@@ -29056,9 +29056,9 @@ void signed_char_modulo()
 	x0_645->b0075 = (byte) w3_1319 - (byte) ((word32) ((int64) (w3_1319 *s 0x22B63CBF) >> 36) - (w3_1319 >> 31)) * 118;
 	int32 w2_1330 = (word32) x1_647->b0076;
 	x0_645->b0076 = (byte) w2_1330 - (byte) ((word32) ((int64) (w2_1330 *s 1154949189) >> 37) - (w2_1330 >> 31)) * 0x77;
-	struct Eq_109 * x1_1343 = g_ptr10CF18;
+	struct Eq_111 * x1_1343 = g_ptr10CF18;
 	int32 w4_1345 = (word32) x1_1343->b0077;
-	struct Eq_112 * x0_1341 = g_ptr10CF88;
+	struct Eq_114 * x0_1341 = g_ptr10CF88;
 	x0_1341->b0077 = (byte) w4_1345 - (byte) ((w4_1345 + (word32) ((int64) (w4_1345 *s 0x88888889) >> 32) >> 6) - (w4_1345 >> 31)) * 0x78;
 	int32 w3_1357 = (word32) x1_1343->b0078;
 	x0_1341->b0078 = (byte) w3_1357 - (byte) ((word32) ((int64) (w3_1357 *s 70991195) >> 33) - (w3_1357 >> 31)) * 121;
@@ -29179,9 +29179,9 @@ void signed_char_modulo()
 	x0_1341->b00B1 = (byte) w3_2015 - (byte) ((w3_2015 + (word32) ((int64) (w3_2015 *s 3088515809) >> 32) >> 7) - (w3_2015 >> 31)) * 0xB2;
 	int32 w2_2028 = (word32) x1_1343->b00B2;
 	x0_1341->b00B2 = (byte) w2_2028 - (byte) ((w2_2028 + (word32) ((int64) (w2_2028 *s ~0x48F044A4) >> 32) >> 7) - (w2_2028 >> 31)) * ~0x4C;
-	struct Eq_109 * x1_2043 = g_ptr10CF18;
+	struct Eq_111 * x1_2043 = g_ptr10CF18;
 	int32 w3_2045 = (word32) x1_2043->b00B3;
-	struct Eq_112 * x0_2041 = g_ptr10CF88;
+	struct Eq_114 * x0_2041 = g_ptr10CF88;
 	x0_2041->b00B3 = (byte) w3_2045 - (byte) ((w3_2045 + (word32) ((int64) (w3_2045 *s 0xB60B60B7) >> 32) >> 7) - (w3_2045 >> 31)) * 0xB4;
 	int32 w3_2058 = (word32) x1_2043->b00B4;
 	x0_2041->b00B4 = (byte) w3_2058 - (byte) ((word32) ((int64) (w3_2058 *s 759331235) >> 37) - (w3_2058 >> 31)) * 181;
@@ -29301,9 +29301,9 @@ void signed_char_modulo()
 	x0_2041->b00ED = (byte) w3_2746 - (byte) ((word32) ((int64) (w3_2746 *s 1154949189) >> 38) - (w3_2746 >> 31)) * ~0x11;
 	int32 w2_2757 = (word32) x1_2043->b00EE;
 	x0_2041->b00EE = (byte) w2_2757 - (byte) ((w2_2757 + (word32) ((int64) (w2_2757 *s 2300233531) >> 32) >> 7) - (w2_2757 >> 31)) * ~0x10;
-	struct Eq_109 * x1_2772 = g_ptr10CF18;
+	struct Eq_111 * x1_2772 = g_ptr10CF18;
 	int32 w4_2774 = (word32) x1_2772->b00EF;
-	struct Eq_112 * x0_2770 = g_ptr10CF88;
+	struct Eq_114 * x0_2770 = g_ptr10CF88;
 	x0_2770->b00EF = (byte) w4_2774 - (byte) ((w4_2774 + (word32) ((int64) (w4_2774 *s 0x88888889) >> 32) >> 7) - (w4_2774 >> 31)) * 0xF0;
 	int32 w3_2786 = (word32) x1_2772->b00F0;
 	x0_2770->b00F0 = (byte) w3_2786 - (byte) ((word32) ((int64) (w3_2786 *s 0x10FEF011) >> 36) - (w3_2786 >> 31)) * ~0x0E;
@@ -29422,9 +29422,9 @@ void signed_char_modulo()
 	x0_2770->b0128 = (byte) w3_3446 - (byte) ((word32) ((int64) (w3_3446 *s 1851029677) >> 39) - (w3_3446 >> 31)) * 0x29;
 	int32 w2_3457 = (word32) x1_2772->b0129;
 	x0_2770->b0129 = (byte) w2_3457 - (byte) ((word32) ((int64) (w2_3457 *s 230602271) >> 36) - (w2_3457 >> 31)) * 0x2A;
-	struct Eq_109 * x1_3470 = g_ptr10CF18;
+	struct Eq_111 * x1_3470 = g_ptr10CF18;
 	int32 w3_3472 = (word32) x1_3470->b012A;
-	struct Eq_112 * x0_3468 = g_ptr10CF88;
+	struct Eq_114 * x0_3468 = g_ptr10CF88;
 	x0_3468->b012A = (byte) w3_3472 - (byte) ((word32) ((int64) (w3_3472 *s 1838648207) >> 39) - (w3_3472 >> 31)) * 0x2B;
 	int32 w3_3483 = (word32) x1_3470->b012B;
 	x0_3468->b012B = (byte) w3_3483 - (byte) ((word32) ((int64) (w3_3483 *s 458129845) >> 37) - (w3_3483 >> 31)) * 44;
@@ -29546,9 +29546,9 @@ void signed_char_modulo()
 	x0_3468->b0165 = (byte) w3_4151 - (byte) ((w3_4151 + (word32) ((int64) (w3_4151 *s ~0x48F044A4) >> 32) >> 8) - (w3_4151 >> 31)) * 0x66;
 	int32 w2_4164 = (word32) x1_3470->b0166;
 	x0_3468->b0166 = (byte) w2_4164 - (byte) ((w2_4164 + (word32) ((int64) (w2_4164 *s 0xB68D3135) >> 32) >> 8) - (w2_4164 >> 31)) * 0x67;
-	struct Eq_109 * x1_4179 = g_ptr10CF18;
+	struct Eq_111 * x1_4179 = g_ptr10CF18;
 	int32 w3_4181 = (word32) x1_4179->b0167;
-	struct Eq_112 * x0_4177 = g_ptr10CF88;
+	struct Eq_114 * x0_4177 = g_ptr10CF88;
 	x0_4177->b0167 = (byte) w3_4181 - (byte) ((w3_4181 + (word32) ((int64) (w3_4181 *s 0xB60B60B7) >> 32) >> 8) - (w3_4181 >> 31)) * 0x68;
 	int32 w3_4194 = (word32) x1_4179->b0168;
 	x0_4177->b0168 = (byte) w3_4194 - (byte) ((word32) ((int64) (w3_4194 *s 1522869291) >> 39) - (w3_4194 >> 31)) * 0x69;
@@ -29670,9 +29670,9 @@ void signed_char_modulo()
 	x0_4177->b01A2 = (byte) w3_4876 - (byte) ((word32) ((int64) (w3_4876 *s 656033191) >> 38) - (w3_4876 >> 31)) * 0xA3;
 	int32 w2_4887 = (word32) x1_4179->b01A3;
 	x0_4177->b01A3 = (byte) w2_4887 - (byte) ((w2_4887 + (word32) ((int64) (w2_4887 *s 0x9C09C09D) >> 32) >> 8) - (w2_4887 >> 31)) * 0xA4;
-	struct Eq_109 * x1_4902 = g_ptr10CF18;
+	struct Eq_111 * x1_4902 = g_ptr10CF18;
 	int32 w3_4904 = (word32) x1_4902->b01A4;
-	struct Eq_112 * x0_4900 = g_ptr10CF88;
+	struct Eq_114 * x0_4900 = g_ptr10CF88;
 	x0_4900->b01A4 = (byte) w3_4904 - (byte) ((w3_4904 + (word32) ((int64) (w3_4904 *s 2611666575) >> 32) >> 8) - (w3_4904 >> 31)) * 0xA5;
 	int32 w3_4917 = (word32) x1_4902->b01A5;
 	x0_4900->b01A5 = (byte) w3_4917 - (byte) ((word32) ((int64) (w3_4917 *s 81421181) >> 35) - (w3_4917 >> 31)) * 166;
@@ -29792,9 +29792,9 @@ void signed_char_modulo()
 	x0_4900->b01DE = (byte) w3_5595 - (byte) ((word32) ((int64) (w3_5595 *s 1147715687) >> 39) - (w3_5595 >> 31)) * 223;
 	int32 w3_5606 = (word32) x1_4902->b01DF;
 	x0_4900->b01DF = (byte) w3_5606 - (byte) ((w3_5606 + (word32) ((int64) (w3_5606 *s 0x88888889) >> 32) >> 8) - (w3_5606 >> 31)) * 0xE0;
-	struct Eq_109 * x1_5620 = g_ptr10CF18;
+	struct Eq_111 * x1_5620 = g_ptr10CF18;
 	int32 w3_5622 = (word32) x1_5620->b01E0;
-	struct Eq_112 * x0_5618 = g_ptr10CF88;
+	struct Eq_114 * x0_5618 = g_ptr10CF88;
 	x0_5618->b01E0 = (byte) w3_5622 - (byte) ((w3_5622 + (word32) ((int64) (w3_5622 *s 2285886961) >> 32) >> 8) - (w3_5622 >> 31)) * 225;
 	int32 w3_5635 = (word32) x1_5620->b01E1;
 	x0_5618->b01E1 = (byte) w3_5635 - (byte) ((word32) ((int64) (w3_5635 *s 0x10FEF011) >> 37) - (w3_5635 >> 31)) * 226;
@@ -29915,9 +29915,9 @@ void signed_char_modulo()
 	x0_5618->b021A = (byte) w3_6299 - (byte) ((word32) ((int64) (w3_6299 *s 0x079968F7) >> 36) - (w3_6299 >> 31)) * 0x1B;
 	int32 w2_6310 = (word32) x1_5620->b021B;
 	x0_5618->b021B = (byte) w2_6310 - (byte) ((w2_6310 + (word32) ((int64) (w2_6310 *s 4072265289) >> 32) >> 9) - (w2_6310 >> 31)) * 0x1C;
-	struct Eq_109 * x1_6325 = g_ptr10CF18;
+	struct Eq_111 * x1_6325 = g_ptr10CF18;
 	int32 w3_6327 = (word32) x1_6325->b021C;
-	struct Eq_112 * x0_6323 = g_ptr10CF88;
+	struct Eq_114 * x0_6323 = g_ptr10CF88;
 	x0_6323->b021C = (byte) w3_6327 - (byte) ((word32) ((int64) (w3_6327 *s 1016184499) >> 39) - (w3_6327 >> 31)) * 0x1D;
 	int32 w3_6338 = (word32) x1_6325->b021D;
 	x0_6323->b021D = (byte) w3_6338 - (byte) ((word32) ((int64) (w3_6338 *s 253577405) >> 37) - (w3_6338 >> 31)) * 0x1E;
@@ -30039,9 +30039,9 @@ void signed_char_modulo()
 	x0_6323->b0257 = (byte) w3_7012 - (byte) ((word32) ((int64) (w3_7012 *s 458129845) >> 38) - (w3_7012 >> 31)) * 88;
 	int32 w2_7023 = (word32) x1_6325->b0258;
 	x0_6323->b0258 = (byte) w2_7023 - (byte) ((word32) ((int64) (w2_7023 *s 0x6D0B8037) >> 40) - (w2_7023 >> 31)) * 0x59;
-	struct Eq_109 * x2_7036 = g_ptr10CF18;
+	struct Eq_111 * x2_7036 = g_ptr10CF18;
 	int32 w4_7038 = (word32) x2_7036->b0259;
-	struct Eq_112 * x1_7034 = g_ptr10CF88;
+	struct Eq_114 * x1_7034 = g_ptr10CF88;
 	x1_7034->b0259 = (byte) w4_7038 - (byte) ((word32) ((int64) (w4_7038 *s 0x1B37484B) >> 38) - (w4_7038 >> 31)) * 0x5A;
 	int32 w4_7049 = (word32) x2_7036->b025A;
 	x1_7034->b025A = (byte) w4_7049 - (byte) ((word32) ((int64) (w4_7049 *s 0x00D95DD3) >> 33) - (w4_7049 >> 31)) * 0x5B;
@@ -30163,11 +30163,11 @@ void signed_char_modulo()
 	x1_7034->b0294 = (byte) w4_7709 - (byte) ((w4_7709 + (word32) ((int64) (w4_7709 *s 3326812793) >> 32) >> 9) - (w4_7709 >> 31)) * 0x95;
 	int32 w3_7722 = (word32) x2_7036->b0295;
 	x1_7034->b0295 = (byte) w3_7722 - (byte) ((word32) ((int64) (w3_7722 *s 830446849) >> 39) - (w3_7722 >> 31)) * 0x96;
-	struct Eq_109 * x0_7732 = g_ptr10CF18;
+	struct Eq_111 * x0_7732 = g_ptr10CF18;
 	int32 w3_7734 = (word32) x0_7732->b0296;
 	x1_7034->b0296 = (byte) w3_7734 - (byte) ((word32) ((int64) (w3_7734 *s 0x62D90063) >> 40) - (w3_7734 >> 31)) * 151;
 	int32 w3_7747 = (word32) x0_7732->b0297;
-	struct Eq_112 * x1_7745 = g_ptr10CF88;
+	struct Eq_114 * x1_7745 = g_ptr10CF88;
 	x1_7745->b0297 = (byte) w3_7747 - (byte) ((word32) ((int64) (w3_7747 *s 0x3159721F) >> 39) - (w3_7747 >> 31)) * 0x98;
 	int32 w3_7758 = (word32) x0_7732->b0298;
 	x1_7745->b0298 = (byte) w3_7758 - (byte) ((w3_7758 + (word32) ((int64) (w3_7758 *s 3306801889) >> 32) >> 9) - (w3_7758 >> 31)) * 0x99;
@@ -30289,7 +30289,7 @@ void signed_char_modulo()
 	x1_7745->b02D2 = (byte) w3_8436 - (byte) ((word32) ((int64) (w3_8436 *s 0x5AA5005B) >> 40) - (w3_8436 >> 31)) * 211;
 	int32 w2_8447 = (word32) x0_7732->b02D3;
 	x1_7745->b02D3 = (byte) w2_8447 - (byte) ((word32) ((int64) (w2_8447 *s 759331235) >> 39) - (w2_8447 >> 31)) * 212;
-	struct Eq_109 * x1_8459 = g_ptr10CF18;
+	struct Eq_111 * x1_8459 = g_ptr10CF18;
 	int32 w3_8461 = (word32) x1_8459->b02D4;
 	x1_7745->b02D4 = (byte) w3_8461 - (byte) ((word32) ((int64) (w3_8461 *s 1516567763) >> 40) - (w3_8461 >> 31)) * ~0x2A;
 	int32 w3_8472 = (word32) x1_8459->b02D5;
@@ -30411,9 +30411,9 @@ void signed_char_modulo()
 	x1_7745->b030F = (byte) w3_9152 - (byte) ((word32) ((int64) (w3_9152 *s 1402438301) >> 40) - (w3_9152 >> 31)) * 0x10;
 	int32 w2_9163 = (word32) x1_8459->b0310;
 	x1_7745->b0310 = (byte) w2_9163 - (byte) ((w2_9163 + (word32) ((int64) (w2_9163 *s 2801303511) >> 32) >> 9) - (w2_9163 >> 31)) * 0x11;
-	struct Eq_109 * x1_9178 = g_ptr10CF18;
+	struct Eq_111 * x1_9178 = g_ptr10CF18;
 	int32 w3_9180 = (word32) x1_9178->b0311;
-	struct Eq_112 * x0_9176 = g_ptr10CF88;
+	struct Eq_114 * x0_9176 = g_ptr10CF88;
 	x0_9176->b0311 = (byte) w3_9180 - (byte) ((word32) ((int64) (w3_9180 *s 349717439) >> 38) - (w3_9180 >> 31)) * 0x12;
 	int32 w3_9191 = (word32) x1_9178->b0312;
 	x0_9176->b0312 = (byte) w3_9191 - (byte) ((w3_9191 + (word32) ((int64) (w3_9191 *s 2794184569) >> 32) >> 9) - (w3_9191 >> 31)) * 0x13;
@@ -30535,9 +30535,9 @@ void signed_char_modulo()
 	x0_9176->b034C = (byte) w3_9877 - (byte) ((word32) ((int64) (w3_9877 *s 1301197193) >> 40) - (w3_9877 >> 31)) * 77;
 	int32 w2_9888 = (word32) x1_9178->b034D;
 	x0_9176->b034D = (byte) w2_9888 - (byte) ((word32) ((int64) (w2_9888 *s 1299659135) >> 40) - (w2_9888 >> 31)) * 0x4E;
-	struct Eq_109 * x1_9901 = g_ptr10CF18;
+	struct Eq_111 * x1_9901 = g_ptr10CF18;
 	int32 w3_9903 = (word32) x1_9901->b034E;
-	struct Eq_112 * x0_9899 = g_ptr10CF88;
+	struct Eq_114 * x0_9899 = g_ptr10CF88;
 	x0_9899->b034E = (byte) w3_9903 - (byte) ((w3_9903 + (word32) ((int64) (w3_9903 *s ~0x654060B6) >> 32) >> 9) - (w3_9903 >> 31)) * 0x4F;
 	int32 w3_9916 = (word32) x1_9901->b034F;
 	x0_9899->b034F = (byte) w3_9916 - (byte) ((word32) ((int64) (w3_9916 *s 1296593901) >> 40) - (w3_9916 >> 31)) * 0x50;
@@ -30657,9 +30657,9 @@ void signed_char_modulo()
 	x0_9899->b0388 = (byte) w3_10606 - (byte) ((word32) ((int64) (w3_10606 *s 0x090D4B87) >> 37) - (w3_10606 >> 31)) * 0x89;
 	int32 w2_10617 = (word32) x1_9901->b0389;
 	x0_9899->b0389 = (byte) w2_10617 - (byte) ((w2_10617 + (word32) ((int64) (w2_10617 *s 2427177987) >> 32) >> 9) - (w2_10617 >> 31)) * 0x8A;
-	struct Eq_109 * x1_10632 = g_ptr10CF18;
+	struct Eq_111 * x1_10632 = g_ptr10CF18;
 	int32 w3_10634 = (word32) x1_10632->b038A;
-	struct Eq_112 * x0_10630 = g_ptr10CF88;
+	struct Eq_114 * x0_10630 = g_ptr10CF88;
 	x0_10630->b038A = (byte) w3_10634 - (byte) ((word32) ((int64) (w3_10634 *s 151531371) >> 37) - (w3_10634 >> 31)) * 0x8B;
 	int32 w3_10645 = (word32) x1_10632->b038B;
 	x0_10630->b038B = (byte) w3_10645 - (byte) ((word32) ((int64) (w3_10645 *s 605457945) >> 39) - (w3_10645 >> 31)) * 0x8C;
@@ -30781,9 +30781,9 @@ void signed_char_modulo()
 	x0_10630->b03C5 = (byte) w3_11336 - (byte) ((word32) ((int64) (w3_11336 *s 0x43D7B7EB) >> 40) - (w3_11336 >> 31)) * 0xC6;
 	int32 w2_11347 = (word32) x1_10632->b03C6;
 	x0_10630->b03C6 = (byte) w2_11347 - (byte) ((w2_11347 + (word32) ((int64) (w2_11347 *s 0x878B841B) >> 32) >> 9) - (w2_11347 >> 31)) * 199;
-	struct Eq_109 * x1_11362 = g_ptr10CF18;
+	struct Eq_111 * x1_11362 = g_ptr10CF18;
 	int32 w3_11364 = (word32) x1_11362->b03C7;
-	struct Eq_112 * x0_11360 = g_ptr10CF88;
+	struct Eq_114 * x0_11360 = g_ptr10CF88;
 	x0_11360->b03C7 = (byte) w3_11364 - (byte) ((word32) ((int64) (w3_11364 *s 70991195) >> 36) - (w3_11364 >> 31)) * 200;
 	int32 w3_11375 = (word32) x1_11362->b03C8;
 	x0_11360->b03C8 = (byte) w3_11375 - (byte) ((w3_11375 + (word32) ((int64) (w3_11375 *s 0x8743E595) >> 32) >> 9) - (w3_11375 >> 31)) * 0xC9;
@@ -30911,8 +30911,8 @@ void signed_char_modulo()
 //      main
 void unsigned_char_add()
 {
-	struct Eq_61916 * x0_7 = g_ptr10CF38;
-	struct Eq_61919 * x2_5 = g_ptr10CF50;
+	struct Eq_61918 * x0_7 = g_ptr10CF38;
+	struct Eq_61921 * x2_5 = g_ptr10CF50;
 	x2_5->b0000 = x0_7->b0000 + 0x01;
 	x2_5->b0001 = x0_7->b0001 + 0x02;
 	x2_5->b0002 = x0_7->b0002 + 0x03;
@@ -31038,7 +31038,7 @@ void unsigned_char_add()
 	x2_5->b007A = x0_7->b007A + 0x7B;
 	x2_5->b007B = x0_7->b007B + 0x7C;
 	x2_5->b007C = x0_7->b007C + 0x7D;
-	struct Eq_61916 * x2_510 = g_ptr10CF38;
+	struct Eq_61918 * x2_510 = g_ptr10CF38;
 	x2_5->b007D = x2_510->b007D + 0x7E;
 	x2_5->b007E = x2_510->b007E + 0x7F;
 	x2_5->b007F = x2_510->b007F - 0x80;
@@ -31164,9 +31164,9 @@ void unsigned_char_add()
 	x2_5->b00F7 = x2_510->b00F7 - 0x08;
 	x2_5->b00F8 = x2_510->b00F8 - 0x07;
 	x2_5->b00F9 = x2_510->b00F9 - 0x06;
-	struct Eq_61916 * x0_1011 = g_ptr10CF38;
+	struct Eq_61918 * x0_1011 = g_ptr10CF38;
 	x2_5->b00FA = x0_1011->b00FA - 0x05;
-	struct Eq_61919 * x1_1017 = g_ptr10CF50;
+	struct Eq_61921 * x1_1017 = g_ptr10CF50;
 	x1_1017->b00FB = x0_1011->b00FB - 0x04;
 	x1_1017->b00FC = x0_1011->b00FC - 0x03;
 	x1_1017->b00FD = x0_1011->b00FD - 0x02;
@@ -31292,7 +31292,7 @@ void unsigned_char_add()
 	x1_1017->b0175 = x0_1011->b0175 + 118;
 	x1_1017->b0176 = x0_1011->b0176 + 0x77;
 	x1_1017->b0177 = x0_1011->b0177 + 0x78;
-	struct Eq_61916 * x1_1519 = g_ptr10CF38;
+	struct Eq_61918 * x1_1519 = g_ptr10CF38;
 	x1_1017->b0178 = x1_1519->b0178 + 121;
 	x1_1017->b0179 = x1_1519->b0179 + 122;
 	x1_1017->b017A = x1_1519->b017A + 0x7B;
@@ -31418,7 +31418,7 @@ void unsigned_char_add()
 	x1_1017->b01F2 = x1_1519->b01F2 - 0x0D;
 	x1_1017->b01F3 = x1_1519->b01F3 - 0x0C;
 	x1_1017->b01F4 = x1_1519->b01F4 - 11;
-	struct Eq_61916 * x1_2022 = g_ptr10CF38;
+	struct Eq_61918 * x1_2022 = g_ptr10CF38;
 	x1_1017->b01F5 = x1_2022->b01F5 - 0x0A;
 	x1_1017->b01F6 = x1_2022->b01F6 - 0x09;
 	x1_1017->b01F7 = x1_2022->b01F7 - 0x08;
@@ -31545,8 +31545,8 @@ void unsigned_char_add()
 	x1_1017->b0270 = x1_2022->b0270 + 113;
 	x1_1017->b0271 = x1_2022->b0271 + 114;
 	x1_1017->b0272 = x1_2022->b0272 + 115;
-	struct Eq_61916 * x1_2529 = g_ptr10CF38;
-	struct Eq_61919 * x0_2527 = g_ptr10CF50;
+	struct Eq_61918 * x1_2529 = g_ptr10CF38;
+	struct Eq_61921 * x0_2527 = g_ptr10CF50;
 	x0_2527->b0273 = x1_2529->b0273 + 116;
 	x0_2527->b0274 = x1_2529->b0274 + 117;
 	x0_2527->b0275 = x1_2529->b0275 + 118;
@@ -31672,7 +31672,7 @@ void unsigned_char_add()
 	x0_2527->b02ED = x1_2529->b02ED - 0x12;
 	x0_2527->b02EE = x1_2529->b02EE - 0x11;
 	x0_2527->b02EF = x1_2529->b02EF - 0x10;
-	struct Eq_61916 * x2_3032 = g_ptr10CF38;
+	struct Eq_61918 * x2_3032 = g_ptr10CF38;
 	x0_2527->b02F0 = x2_3032->b02F0 - 0x0F;
 	x0_2527->b02F1 = x2_3032->b02F1 - 0x0E;
 	x0_2527->b02F2 = x2_3032->b02F2 - 0x0D;
@@ -31798,9 +31798,9 @@ void unsigned_char_add()
 	x0_2527->b036A = x2_3032->b036A + 0x6B;
 	x0_2527->b036B = x2_3032->b036B + 0x6C;
 	x0_2527->b036C = x2_3032->b036C + 0x6D;
-	struct Eq_61916 * x0_3532 = g_ptr10CF38;
+	struct Eq_61918 * x0_3532 = g_ptr10CF38;
 	x0_2527->b036D = x0_3532->b036D + 110;
-	struct Eq_61919 * x1_3538 = g_ptr10CF50;
+	struct Eq_61921 * x1_3538 = g_ptr10CF50;
 	x1_3538->b036E = x0_3532->b036E + 111;
 	x1_3538->b036F = x0_3532->b036F + 0x70;
 	x1_3538->b0370 = x0_3532->b0370 + 113;
@@ -31926,7 +31926,7 @@ void unsigned_char_add()
 	x1_3538->b03E8 = x0_3532->b03E8 - 0x17;
 	x1_3538->b03E9 = x0_3532->b03E9 - 22;
 	x1_3538->b03EA = x0_3532->b03EA - 0x15;
-	struct Eq_61916 * x1_4041 = g_ptr10CF38;
+	struct Eq_61918 * x1_4041 = g_ptr10CF38;
 	x1_3538->b03EB = x1_4041->b03EB - 0x14;
 	x1_3538->b03EC = x1_4041->b03EC - 0x13;
 	x1_3538->b03ED = x1_4041->b03ED - 0x12;
@@ -31955,8 +31955,8 @@ void unsigned_char_add()
 //      main
 void unsigned_char_mult()
 {
-	struct Eq_61916 * x2_7 = g_ptr10CF38;
-	struct Eq_61919 * x1_5 = g_ptr10CF50;
+	struct Eq_61918 * x2_7 = g_ptr10CF38;
+	struct Eq_61921 * x1_5 = g_ptr10CF50;
 	x1_5->b0000 = x2_7->b0000;
 	x1_5->b0001 = (byte) __ubfm((word32) x2_7->b0001, 31, 31);
 	word32 w4_16 = (word32) x2_7->b0002;
@@ -32089,9 +32089,9 @@ void unsigned_char_mult()
 	x1_5->b0062 = x2_7->b0062 * 99;
 	x1_5->b0063 = x2_7->b0063 * 100;
 	x1_5->b0064 = x2_7->b0064 * 101;
-	struct Eq_61916 * x0_526 = g_ptr10CF38;
+	struct Eq_61918 * x0_526 = g_ptr10CF38;
 	x1_5->b0065 = x0_526->b0065 * 0x66;
-	struct Eq_61919 * x1_533 = g_ptr10CF50;
+	struct Eq_61921 * x1_533 = g_ptr10CF50;
 	x1_533->b0066 = x0_526->b0066 * 0x67;
 	x1_533->b0067 = x0_526->b0067 * 0x68;
 	x1_533->b0068 = x0_526->b0068 * 0x69;
@@ -32213,7 +32213,7 @@ void unsigned_char_mult()
 	x1_533->b00CC = x0_526->b00CC * ~0x32;
 	x1_533->b00CD = x0_526->b00CD * ~0x31;
 	x1_533->b00CE = x0_526->b00CE * ~0x30;
-	struct Eq_61916 * x1_1073 = g_ptr10CF38;
+	struct Eq_61918 * x1_1073 = g_ptr10CF38;
 	word32 w2_1075 = (word32) x1_1073->b00CF;
 	x1_533->b00CF = (byte) __ubfm(w2_1075 - __ubfm(w2_1075, 30, 30), 28, 28);
 	x1_533->b00D0 = x1_1073->b00D0 * 0xD1;
@@ -32350,8 +32350,8 @@ void unsigned_char_mult()
 	x1_533->b0130 = x1_1073->b0130 * 0x31;
 	x1_533->b0131 = x1_1073->b0131 * 0x32;
 	x1_533->b0132 = x1_1073->b0132 * 0x33;
-	struct Eq_61916 * x2_1589 = g_ptr10CF38;
-	struct Eq_61919 * x1_1587 = g_ptr10CF50;
+	struct Eq_61918 * x2_1589 = g_ptr10CF38;
+	struct Eq_61921 * x1_1587 = g_ptr10CF50;
 	x1_1587->b0133 = x2_1589->b0133 * 0x34;
 	x1_1587->b0134 = x2_1589->b0134 * 0x35;
 	x1_1587->b0135 = x2_1589->b0135 * 0x36;
@@ -32475,9 +32475,9 @@ void unsigned_char_mult()
 	x1_1587->b0197 = x2_1589->b0197 * 0x98;
 	x1_1587->b0198 = x2_1589->b0198 * 0x99;
 	x1_1587->b0199 = x2_1589->b0199 * 0x9A;
-	struct Eq_61916 * x0_2119 = g_ptr10CF38;
+	struct Eq_61918 * x0_2119 = g_ptr10CF38;
 	x1_1587->b019A = x0_2119->b019A * 155;
-	struct Eq_61919 * x1_2126 = g_ptr10CF50;
+	struct Eq_61921 * x1_2126 = g_ptr10CF50;
 	x1_2126->b019B = x0_2119->b019B * 0x9C;
 	x1_2126->b019C = x0_2119->b019C * ~0x62;
 	x1_2126->b019D = x0_2119->b019D * ~0x61;
@@ -32604,7 +32604,7 @@ void unsigned_char_mult()
 	x1_2126->b0201 = (byte) __ubfm((word32) x0_2119->b0201, 31, 31);
 	word32 w2_2651 = (word32) x0_2119->b0202;
 	x1_2126->b0202 = (byte) (__ubfm(w2_2651, 31, 31) + w2_2651);
-	struct Eq_61916 * x1_2657 = g_ptr10CF38;
+	struct Eq_61918 * x1_2657 = g_ptr10CF38;
 	x1_2126->b0203 = (byte) __ubfm((word32) x1_2657->b0203, 30, 30);
 	word32 w3_2663 = (word32) x1_2657->b0204;
 	x1_2126->b0204 = (byte) (__ubfm(w3_2663, 30, 30) + w3_2663);
@@ -32736,8 +32736,8 @@ void unsigned_char_mult()
 	x1_2126->b0265 = x1_2657->b0265 * 0x66;
 	x1_2126->b0266 = x1_2657->b0266 * 0x67;
 	x1_2126->b0267 = x1_2657->b0267 * 0x68;
-	struct Eq_61916 * x1_3182 = g_ptr10CF38;
-	struct Eq_61919 * x0_3180 = g_ptr10CF50;
+	struct Eq_61918 * x1_3182 = g_ptr10CF38;
+	struct Eq_61921 * x0_3180 = g_ptr10CF50;
 	x0_3180->b0268 = x1_3182->b0268 * 0x69;
 	x0_3180->b0269 = x1_3182->b0269 * 0x6A;
 	x0_3180->b026A = x1_3182->b026A * 0x6B;
@@ -32860,8 +32860,8 @@ void unsigned_char_mult()
 	word32 w2_3710 = (word32) x1_3182->b02CF;
 	x0_3180->b02CF = (byte) __ubfm(w2_3710 - __ubfm(w2_3710, 30, 30), 28, 28);
 	x0_3180->b02D0 = x1_3182->b02D0 * 0xD1;
-	struct Eq_61916 * x1_3723 = g_ptr10CF38;
-	struct Eq_61919 * x0_3721 = g_ptr10CF50;
+	struct Eq_61918 * x1_3723 = g_ptr10CF38;
+	struct Eq_61921 * x0_3721 = g_ptr10CF50;
 	x0_3721->b02D1 = x1_3723->b02D1 * 0xD2;
 	x0_3721->b02D2 = x1_3723->b02D2 * 211;
 	x0_3721->b02D3 = x1_3723->b02D3 * 212;
@@ -32998,8 +32998,8 @@ void unsigned_char_mult()
 	x0_3721->b0333 = x1_3723->b0333 * 0x34;
 	x0_3721->b0334 = x1_3723->b0334 * 0x35;
 	x0_3721->b0335 = x1_3723->b0335 * 0x36;
-	struct Eq_61916 * x1_4243 = g_ptr10CF38;
-	struct Eq_61919 * x0_4241 = g_ptr10CF50;
+	struct Eq_61918 * x1_4243 = g_ptr10CF38;
+	struct Eq_61921 * x0_4241 = g_ptr10CF50;
 	x0_4241->b0336 = x1_4243->b0336 * 55;
 	word32 w3_4250 = (word32) x1_4243->b0337;
 	x0_4241->b0337 = (byte) __ubfm(__ubfm(w3_4250, 29, 29) - w3_4250, 29, 29);
@@ -33123,8 +33123,8 @@ void unsigned_char_mult()
 	x0_4241->b039A = x1_4243->b039A * 155;
 	x0_4241->b039B = x1_4243->b039B * 0x9C;
 	x0_4241->b039C = x1_4243->b039C * ~0x62;
-	struct Eq_61916 * x1_4775 = g_ptr10CF38;
-	struct Eq_61919 * x0_4773 = g_ptr10CF50;
+	struct Eq_61918 * x1_4775 = g_ptr10CF38;
+	struct Eq_61921 * x0_4773 = g_ptr10CF50;
 	x0_4773->b039D = x1_4775->b039D * ~0x61;
 	x0_4773->b039E = x1_4775->b039E * ~0x60;
 	word32 w3_4787 = (word32) x1_4775->b039F;
@@ -33252,8 +33252,8 @@ void unsigned_char_mult()
 //      main
 void unsigned_char_div()
 {
-	struct Eq_61916 * x1_7 = g_ptr10CF38;
-	struct Eq_61919 * x0_5 = g_ptr10CF50;
+	struct Eq_61918 * x1_7 = g_ptr10CF38;
+	struct Eq_61921 * x0_5 = g_ptr10CF50;
 	x0_5->b0000 = x1_7->b0000;
 	x0_5->b0001 = (byte) ((word32) x1_7->b0001 >> 1);
 	x0_5->b0002 = (byte) ((word32) ((uint64) ((word32) x1_7->b0002 * ~0x55555554) >> 32) >> 1);
@@ -33371,8 +33371,8 @@ void unsigned_char_div()
 	x0_5->b0056 = (byte) ((word32) ((uint64) ((word32) x1_7->b0056 * 789879043) >> 32) >> 4);
 	x0_5->b0057 = (byte) ((word32) ((uint64) ((word32) x1_7->b0057 * 3123612579) >> 32) >> 6);
 	x0_5->b0058 = (byte) ((word32) ((uint64) ((word32) x1_7->b0058 * 3088515809) >> 32) >> 6);
-	struct Eq_61916 * x1_756 = g_ptr10CF38;
-	struct Eq_61919 * x0_754 = g_ptr10CF50;
+	struct Eq_61918 * x1_756 = g_ptr10CF38;
+	struct Eq_61921 * x0_754 = g_ptr10CF50;
 	x0_754->b0059 = (byte) ((word32) ((uint64) (((word32) x1_756->b0059 >> 1) * 0xB60B60B7) >> 32) >> 5);
 	uint32 w2_768 = (word32) x1_756->b005A;
 	uint32 w3_773 = (word32) ((uint64) (w2_768 * 0x68168169) >> 32);
@@ -33494,8 +33494,8 @@ void unsigned_char_div()
 	uint32 w3_1542 = (word32) ((uint64) (w2_1537 * 0x7AD2208F) >> 32);
 	x0_754->b00AC = (byte) (w3_1542 + (w2_1537 - w3_1542 >> 1) >> 7);
 	x0_754->b00AD = (byte) ((word32) ((uint64) ((word32) x1_756->b00AD * 789879043) >> 32) >> 5);
-	struct Eq_61916 * x1_1559 = g_ptr10CF38;
-	struct Eq_61919 * x0_1557 = g_ptr10CF50;
+	struct Eq_61918 * x1_1559 = g_ptr10CF38;
+	struct Eq_61921 * x0_1557 = g_ptr10CF50;
 	x0_1557->b00AE = (byte) ((word32) ((uint64) ((word32) x1_1559->b00AE * 1570730897) >> 32) >> 6);
 	x0_1557->b00AF = (byte) ((word32) ((uint64) ((word32) x1_1559->b00AF * 3123612579) >> 32) >> 7);
 	uint32 w2_1579 = (word32) x1_1559->b00B0;
@@ -33616,8 +33616,8 @@ void unsigned_char_div()
 	x0_1557->b00FF = 0x00;
 	x0_1557->b0100 = 0x00;
 	x0_1557->b0101 = 0x00;
-	struct Eq_61919 * x1_2348 = g_ptr10CF50;
-	struct Eq_61916 * x2_2350 = g_ptr10CF38;
+	struct Eq_61921 * x1_2348 = g_ptr10CF50;
+	struct Eq_61918 * x2_2350 = g_ptr10CF38;
 	x1_2348->b0102 = 0x00;
 	x1_2348->b0103 = 0x00;
 	x1_2348->b0104 = 0x00;
@@ -33713,7 +33713,7 @@ void unsigned_char_div()
 	x1_2348->b014B = 0x00;
 	int32 w2_2595 = (word32) x2_2350->b014C;
 	x1_2348->b014C = (byte) (w2_2595 + (word32) ((int64) (w2_2595 *s 0xC4CE07B1) >> 32) >> 8);
-	struct Eq_61916 * x1_2606 = g_ptr10CF38;
+	struct Eq_61918 * x1_2606 = g_ptr10CF38;
 	x1_2348->b014D = 0x00;
 	int32 w2_2609 = (word32) x1_2606->b014E;
 	x1_2348->b014E = (byte) (w2_2609 + (word32) ((int64) (w2_2609 *s 3282124263) >> 32) >> 8);
@@ -33819,9 +33819,9 @@ void unsigned_char_div()
 	x1_2348->b0196 = 0x00;
 	int32 w1_2941 = (word32) x1_2606->b0197;
 	x1_2348->b0197 = (byte) (w1_2941 + (word32) ((int64) (w1_2941 *s 0xA0A0A0A1) >> 32) >> 8);
-	struct Eq_61916 * x1_2953 = g_ptr10CF38;
+	struct Eq_61918 * x1_2953 = g_ptr10CF38;
 	int32 w2_2955 = (word32) x1_2953->b0198;
-	struct Eq_61919 * x0_2951 = g_ptr10CF50;
+	struct Eq_61921 * x0_2951 = g_ptr10CF50;
 	x0_2951->b0198 = (byte) (w2_2955 + (word32) ((int64) (w2_2955 *s 2688292489) >> 32) >> 8);
 	x0_2951->b0199 = 0x00;
 	x0_2951->b019A = 0x00;
@@ -33928,8 +33928,8 @@ void unsigned_char_div()
 	x0_2951->b01E0 = (byte) (w1_3306 + (word32) ((int64) (w1_3306 *s 2285886961) >> 32) >> 8);
 	x0_2951->b01E1 = 0x00;
 	x0_2951->b01E2 = 0x00;
-	struct Eq_61919 * x0_3318 = g_ptr10CF50;
-	struct Eq_61916 * x1_3320 = g_ptr10CF38;
+	struct Eq_61921 * x0_3318 = g_ptr10CF50;
+	struct Eq_61918 * x1_3320 = g_ptr10CF38;
 	x0_3318->b01E3 = 0x00;
 	int32 w2_3323 = (word32) x1_3320->b01E4;
 	x0_3318->b01E4 = (byte) (w2_3323 + (word32) ((int64) (w2_3323 *s 0x872032AD) >> 32) >> 8);
@@ -34027,8 +34027,8 @@ void unsigned_char_div()
 	x0_3318->b022B = 0x00;
 	x0_3318->b022C = 0x00;
 	x0_3318->b022D = 0x00;
-	struct Eq_61919 * x0_3595 = g_ptr10CF50;
-	struct Eq_61916 * x1_3597 = g_ptr10CF38;
+	struct Eq_61921 * x0_3595 = g_ptr10CF50;
+	struct Eq_61918 * x1_3597 = g_ptr10CF38;
 	x0_3595->b022E = 0x00;
 	int32 w2_3600 = (word32) x1_3597->b022F;
 	x0_3595->b022F = (byte) (w2_3600 + (word32) ((int64) (w2_3600 *s 0xEA0EA0EB) >> 32) >> 9);
@@ -34127,8 +34127,8 @@ void unsigned_char_div()
 	x0_3595->b0277 = 0x00;
 	x0_3595->b0278 = 0x00;
 	x0_3595->b0279 = 0x00;
-	struct Eq_61919 * x1_3871 = g_ptr10CF50;
-	struct Eq_61916 * x2_3873 = g_ptr10CF38;
+	struct Eq_61921 * x1_3871 = g_ptr10CF50;
+	struct Eq_61918 * x2_3873 = g_ptr10CF38;
 	x1_3871->b027A = 0x00;
 	x1_3871->b027B = 0x00;
 	x1_3871->b027C = 0x00;
@@ -34222,7 +34222,7 @@ void unsigned_char_div()
 	int32 w2_4101 = (word32) x2_3873->b02C3;
 	x1_3871->b02C3 = (byte) (w2_4101 + (word32) ((int64) (w2_4101 *s 3105965051) >> 32) >> 9);
 	x1_3871->b02C4 = 0x00;
-	struct Eq_61916 * x1_4113 = g_ptr10CF38;
+	struct Eq_61918 * x1_4113 = g_ptr10CF38;
 	x1_3871->b02C5 = 0x00;
 	int32 w2_4116 = (word32) x1_4113->b02C6;
 	x1_3871->b02C6 = (byte) (w2_4116 + (word32) ((int64) (w2_4116 *s 0xB8594B41) >> 32) >> 9);
@@ -34329,9 +34329,9 @@ void unsigned_char_div()
 	x1_3871->b030D = 0x00;
 	x1_3871->b030E = 0x00;
 	x1_3871->b030F = 0x00;
-	struct Eq_61916 * x1_4469 = g_ptr10CF38;
+	struct Eq_61918 * x1_4469 = g_ptr10CF38;
 	int32 w2_4471 = (word32) x1_4469->b0310;
-	struct Eq_61919 * x0_4467 = g_ptr10CF50;
+	struct Eq_61921 * x0_4467 = g_ptr10CF50;
 	x0_4467->b0310 = (byte) (w2_4471 + (word32) ((int64) (w2_4471 *s 2801303511) >> 32) >> 9);
 	x0_4467->b0311 = 0x00;
 	int32 w2_4482 = (word32) x1_4469->b0312;
@@ -34437,8 +34437,8 @@ void unsigned_char_div()
 	x0_4467->b0358 = (byte) (w1_4813 + (word32) ((int64) (w1_4813 *s 2565954791) >> 32) >> 9);
 	x0_4467->b0359 = 0x00;
 	x0_4467->b035A = 0x00;
-	struct Eq_61919 * x0_4825 = g_ptr10CF50;
-	struct Eq_61916 * x1_4827 = g_ptr10CF38;
+	struct Eq_61921 * x0_4825 = g_ptr10CF50;
+	struct Eq_61918 * x1_4827 = g_ptr10CF38;
 	x0_4825->b035B = 0x00;
 	int32 w2_4830 = (word32) x1_4827->b035C;
 	x0_4825->b035C = (byte) (w2_4830 + (word32) ((int64) (w2_4830 *s ~0x67C488C4) >> 32) >> 9);
@@ -34552,9 +34552,9 @@ void unsigned_char_div()
 	x0_4825->b03A3 = (byte) (w2_5234 + (word32) ((int64) (w2_5234 *s 0x8CA29C05) >> 32) >> 9);
 	int32 w1_5244 = (word32) x1_4827->b03A4;
 	x0_4825->b03A4 = (byte) (w1_5244 + (word32) ((int64) (w1_5244 *s 0x8C7C057D) >> 32) >> 9);
-	struct Eq_61916 * x1_5256 = g_ptr10CF38;
+	struct Eq_61918 * x1_5256 = g_ptr10CF38;
 	int32 w2_5258 = (word32) x1_5256->b03A5;
-	struct Eq_61919 * x0_5254 = g_ptr10CF50;
+	struct Eq_61921 * x0_5254 = g_ptr10CF50;
 	x0_5254->b03A5 = (byte) (w2_5258 + (word32) ((int64) (w2_5258 *s 2354414621) >> 32) >> 9);
 	int32 w2_5268 = (word32) x1_5256->b03A6;
 	x0_5254->b03A6 = (byte) (w2_5268 + (word32) ((int64) (w2_5268 *s 2351896531) >> 32) >> 9);
@@ -34659,11 +34659,11 @@ void unsigned_char_div()
 	int32 w2_5600 = (word32) x1_5256->b03ED;
 	x0_5254->b03ED = (byte) (w2_5600 + (word32) ((int64) (w2_5600 *s 2185907809) >> 32) >> 9);
 	x0_5254->b03EE = 0x00;
-	struct Eq_61916 * x1_5610 = g_ptr10CF38;
+	struct Eq_61918 * x1_5610 = g_ptr10CF38;
 	int32 w2_5612 = (word32) x1_5610->b03EF;
 	x0_5254->b03EF = (byte) (w2_5612 + (word32) ((int64) (w2_5612 *s 0x82082083) >> 32) >> 9);
 	int32 w2_5624 = (word32) x1_5610->b03F0;
-	struct Eq_61919 * x0_5622 = g_ptr10CF50;
+	struct Eq_61921 * x0_5622 = g_ptr10CF50;
 	x0_5622->b03F0 = (byte) (w2_5624 + (word32) ((int64) (w2_5624 *s 0x81E722C3) >> 32) >> 9);
 	int32 w2_5634 = (word32) x1_5610->b03F1;
 	x0_5622->b03F1 = (byte) (w2_5634 + (word32) ((int64) (w2_5634 *s 2177250749) >> 32) >> 9);
@@ -34705,9 +34705,9 @@ void unsigned_char_div()
 //      main
 void unsigned_char_modulo()
 {
-	struct Eq_61919 * x0_5 = g_ptr10CF50;
+	struct Eq_61921 * x0_5 = g_ptr10CF50;
 	x0_5->b0000 = 0x00;
-	struct Eq_61916 * x1_8 = g_ptr10CF38;
+	struct Eq_61918 * x1_8 = g_ptr10CF38;
 	x0_5->b0001 = x1_8->b0001 & 0x01;
 	uint32 w4_14 = (word32) x1_8->b0002;
 	uint32 w3_19 = (word32) ((uint64) (w4_14 * ~0x55555554) >> 32);
@@ -34870,9 +34870,9 @@ void unsigned_char_modulo()
 	uint32 w2_671 = (word32) x1_8->b0041;
 	uint32 w1_674 = (word32) ((uint64) (w2_671 * 0x3E0F83E1) >> 32);
 	x0_5->b0041 = (byte) w2_671 - ((byte) (w1_674 >> 4) + ((byte) (w1_674 >> 4) << 0x05) << 0x01);
-	struct Eq_61916 * x1_682 = g_ptr10CF38;
+	struct Eq_61918 * x1_682 = g_ptr10CF38;
 	uint32 w4_684 = (word32) x1_682->b0042;
-	struct Eq_61919 * x2_680 = g_ptr10CF50;
+	struct Eq_61921 * x2_680 = g_ptr10CF50;
 	x2_680->b0042 = (byte) w4_684 - (byte) ((word32) ((uint64) (w4_684 * 128207979) >> 32) >> 1) * 0x43;
 	uint32 w4_695 = (word32) x1_682->b0043;
 	uint32 w3_700 = (word32) ((uint64) (w4_695 * ~0x0F0F0F0E) >> 32);
@@ -35025,7 +35025,7 @@ void unsigned_char_modulo()
 	uint32 w4_1420 = (word32) x1_682->b0081;
 	uint32 w1_1425 = (word32) ((uint64) (w4_1420 * ~0x03F03F02) >> 32);
 	x2_680->b0081 = (byte) w4_1420 - (((byte) (w1_1425 >> 7) << 0x06) + (byte) (w1_1425 >> 7) << 0x01);
-	struct Eq_61916 * x1_1433 = g_ptr10CF38;
+	struct Eq_61918 * x1_1433 = g_ptr10CF38;
 	uint32 w3_1435 = (word32) x1_1433->b0082;
 	x2_680->b0082 = (byte) w3_1435 - (byte) ((word32) ((uint64) (w3_1435 * ~0x05DCD30C) >> 32) >> 7) * 131;
 	uint32 w4_1446 = (word32) x1_1433->b0083;
@@ -35176,9 +35176,9 @@ void unsigned_char_modulo()
 	x2_680->b00C4 = (byte) w4_2192 - (byte) (w3_2197 + (w4_2192 - w3_2197 >> 1) >> 7) * 0xC5;
 	uint32 w2_2205 = (word32) x1_1433->b00C5;
 	x2_680->b00C5 = (byte) w2_2205 - (byte) ((word32) ((uint64) (w2_2205 * 2776544515) >> 32) >> 7) * 0xC6;
-	struct Eq_61916 * x1_2218 = g_ptr10CF38;
+	struct Eq_61918 * x1_2218 = g_ptr10CF38;
 	uint32 w3_2220 = (word32) x1_2218->b00C6;
-	struct Eq_61919 * x0_2216 = g_ptr10CF50;
+	struct Eq_61921 * x0_2216 = g_ptr10CF50;
 	x0_2216->b00C6 = (byte) w3_2220 - (byte) ((word32) ((uint64) (w3_2220 * 1381296015) >> 32) >> 6) * 199;
 	uint32 w3_2231 = (word32) x1_2218->b00C7;
 	x0_2216->b00C7 = (byte) w3_2231 - (byte) ((word32) ((uint64) (w3_2231 * 1374389535) >> 32) >> 6) * 200;
@@ -35317,8 +35317,8 @@ void unsigned_char_modulo()
 	x0_2216->b0104 = x1_2218->b0104;
 	x0_2216->b0105 = x1_2218->b0105;
 	x0_2216->b0106 = x1_2218->b0106;
-	struct Eq_61916 * x0_2920 = g_ptr10CF38;
-	struct Eq_61919 * x1_2918 = g_ptr10CF50;
+	struct Eq_61918 * x0_2920 = g_ptr10CF38;
+	struct Eq_61921 * x1_2918 = g_ptr10CF50;
 	x1_2918->b0107 = x0_2920->b0107;
 	x1_2918->b0108 = x0_2920->b0108;
 	int32 w3_2928 = (word32) x0_2920->b0109;
@@ -35397,9 +35397,9 @@ void unsigned_char_modulo()
 	int32 w3_3249 = (word32) x0_2920->b0141;
 	x1_2918->b0141 = (byte) w3_3249 - (byte) (w3_3249 + (word32) ((int64) (w3_3249 *s 3414632385) >> 32) >> 8) * 66;
 	x1_2918->b0142 = x0_2920->b0142;
-	struct Eq_61916 * x0_3264 = g_ptr10CF38;
+	struct Eq_61918 * x0_3264 = g_ptr10CF38;
 	x1_2918->b0143 = x0_3264->b0143;
-	struct Eq_61919 * x1_3269 = g_ptr10CF50;
+	struct Eq_61921 * x1_3269 = g_ptr10CF50;
 	x1_3269->b0144 = x0_3264->b0144;
 	x1_3269->b0145 = x0_3264->b0145;
 	int32 w3_3277 = (word32) x0_3264->b0146;
@@ -35485,7 +35485,7 @@ void unsigned_char_modulo()
 	x1_3269->b017D = (byte) w3_3658 - (byte) (w3_3658 + (word32) ((int64) (w3_3658 *s 2878302691) >> 32) >> 8) * 0x7E;
 	x1_3269->b017E = x0_3264->b017E;
 	x1_3269->b017F = x0_3264->b017F;
-	struct Eq_61916 * x1_3677 = g_ptr10CF38;
+	struct Eq_61918 * x1_3677 = g_ptr10CF38;
 	x1_3269->b0180 = x1_3677->b0180;
 	x1_3269->b0181 = x1_3677->b0181;
 	x1_3269->b0182 = x1_3677->b0182;
@@ -35569,7 +35569,7 @@ void unsigned_char_modulo()
 	x1_3269->b01BC = (byte) w3_4030 - (byte) (w3_4030 + (word32) ((int64) (w3_4030 *s 2470812647) >> 32) >> 8) * ~0x42;
 	int32 w2_4042 = (word32) x1_3677->b01BD;
 	x1_3269->b01BD = (byte) w2_4042 - (byte) (w2_4042 + (word32) ((int64) (w2_4042 *s 2465272709) >> 32) >> 8) * ~0x41;
-	struct Eq_61916 * x0_4055 = g_ptr10CF38;
+	struct Eq_61918 * x0_4055 = g_ptr10CF38;
 	int32 w3_4057 = (word32) x0_4055->b01BE;
 	x1_3269->b01BE = (byte) w3_4057 - (byte) (w3_4057 + (word32) ((int64) (w3_4057 *s 2459757557) >> 32) >> 8) * 191;
 	int32 w4_4069 = (word32) x0_4055->b01BF;
@@ -35661,10 +35661,10 @@ void unsigned_char_modulo()
 	x1_3269->b01F7 = (byte) w4_4465 - (((byte) (w2_4471 >> 8) << 0x06) - (byte) (w2_4471 >> 8) << 0x03);
 	int32 w2_4478 = (word32) x0_4055->b01F8;
 	x1_3269->b01F8 = (byte) w2_4478 - (byte) (w2_4478 + (word32) ((int64) (w2_4478 *s 2177250749) >> 32) >> 8) * ~0x06;
-	struct Eq_61916 * x0_4490 = g_ptr10CF38;
+	struct Eq_61918 * x0_4490 = g_ptr10CF38;
 	int32 w3_4492 = (word32) x0_4490->b01F9;
 	x1_3269->b01F9 = (byte) w3_4492 - (byte) (w3_4492 + (word32) ((int64) (w3_4492 *s 2172947881) >> 32) >> 8) * ~0x05;
-	struct Eq_61919 * x1_4504 = g_ptr10CF50;
+	struct Eq_61921 * x1_4504 = g_ptr10CF50;
 	x1_4504->b01FA = x0_4490->b01FA;
 	int32 w4_4509 = (word32) x0_4490->b01FB;
 	int32 w2_4515 = w4_4509 + (word32) ((int64) (w4_4509 *s 0x81020409) >> 32);
@@ -35742,8 +35742,8 @@ void unsigned_char_modulo()
 	x1_4504->b0234 = x0_4490->b0234;
 	int32 w2_4803 = (word32) x0_4490->b0235;
 	x1_4504->b0235 = (byte) w2_4803 - (byte) (w2_4803 + (word32) ((int64) (w2_4803 *s 3885200099) >> 32) >> 9) * 0x36;
-	struct Eq_61916 * x1_4817 = g_ptr10CF38;
-	struct Eq_61919 * x0_4815 = g_ptr10CF50;
+	struct Eq_61918 * x1_4817 = g_ptr10CF38;
+	struct Eq_61921 * x0_4815 = g_ptr10CF50;
 	x0_4815->b0236 = x1_4817->b0236;
 	int32 w3_4822 = (word32) x1_4817->b0237;
 	x0_4815->b0237 = (byte) w3_4822 - (byte) (w3_4822 + (word32) ((int64) (w3_4822 *s 3871519817) >> 32) >> 9) * 0x38;
@@ -35823,8 +35823,8 @@ void unsigned_char_modulo()
 	int32 w3_5149 = (word32) x1_4817->b0271;
 	x0_4815->b0271 = (byte) w3_5149 - (byte) (w3_5149 + (word32) ((int64) (w3_5149 *s 0xD161543F) >> 32) >> 9) * 114;
 	x0_4815->b0272 = x1_4817->b0272;
-	struct Eq_61916 * x1_5166 = g_ptr10CF38;
-	struct Eq_61919 * x0_5164 = g_ptr10CF50;
+	struct Eq_61918 * x1_5166 = g_ptr10CF38;
+	struct Eq_61921 * x0_5164 = g_ptr10CF50;
 	x0_5164->b0273 = x1_5166->b0273;
 	x0_5164->b0274 = x1_5166->b0274;
 	int32 w3_5174 = (word32) x1_5166->b0275;
@@ -35899,8 +35899,8 @@ void unsigned_char_modulo()
 	x0_5164->b02AE = x1_5166->b02AE;
 	x0_5164->b02AF = x1_5166->b02AF;
 	x0_5164->b02B0 = x1_5166->b02B0;
-	struct Eq_61916 * x1_5464 = g_ptr10CF38;
-	struct Eq_61919 * x0_5462 = g_ptr10CF50;
+	struct Eq_61918 * x1_5464 = g_ptr10CF38;
+	struct Eq_61921 * x0_5462 = g_ptr10CF50;
 	x0_5462->b02B1 = x1_5464->b02B1;
 	x0_5462->b02B2 = x1_5464->b02B2;
 	x0_5462->b02B3 = x1_5464->b02B3;
@@ -35986,9 +35986,9 @@ void unsigned_char_modulo()
 	x0_5462->b02EB = (byte) w3_5847 - (byte) (w3_5847 + (word32) ((int64) (w3_5847 *s ~0x50C52238) >> 32) >> 9) * ~0x13;
 	x0_5462->b02EC = x1_5464->b02EC;
 	x0_5462->b02ED = x1_5464->b02ED;
-	struct Eq_61916 * x1_5867 = g_ptr10CF38;
+	struct Eq_61918 * x1_5867 = g_ptr10CF38;
 	int32 w3_5869 = (word32) x1_5867->b02EE;
-	struct Eq_61919 * x0_5865 = g_ptr10CF50;
+	struct Eq_61921 * x0_5865 = g_ptr10CF50;
 	x0_5865->b02EE = (byte) w3_5869 - (byte) (w3_5869 + (word32) ((int64) (w3_5869 *s ~0x51785488) >> 32) >> 9) * ~0x10;
 	int32 w3_5881 = (word32) x1_5867->b02EF;
 	x0_5865->b02EF = (byte) w3_5881 - (byte) (w3_5881 + (word32) ((int64) (w3_5881 *s 2924233053) >> 32) >> 9) * 0xF0;
@@ -36073,9 +36073,9 @@ void unsigned_char_modulo()
 	x0_5865->b0328 = x1_5867->b0328;
 	x0_5865->b0329 = x1_5867->b0329;
 	x0_5865->b032A = x1_5867->b032A;
-	struct Eq_61916 * x1_6270 = g_ptr10CF38;
+	struct Eq_61918 * x1_6270 = g_ptr10CF38;
 	int32 w3_6272 = (word32) x1_6270->b032B;
-	struct Eq_61919 * x0_6268 = g_ptr10CF50;
+	struct Eq_61921 * x0_6268 = g_ptr10CF50;
 	x0_6268->b032B = (byte) w3_6272 - (byte) (w3_6272 + (word32) ((int64) (w3_6272 *s 0xA16B312F) >> 32) >> 9) * 44;
 	int32 w3_6284 = (word32) x1_6270->b032C;
 	x0_6268->b032C = (byte) w3_6284 - (byte) (w3_6284 + (word32) ((int64) (w3_6284 *s 0xA1385D35) >> 32) >> 9) * 0x2D;
@@ -36163,9 +36163,9 @@ void unsigned_char_modulo()
 	x0_6268->b0366 = (byte) w3_6674 - (byte) (w3_6674 + (word32) ((int64) (w3_6674 *s 2524710971) >> 32) >> 9) * 0x67;
 	int32 w2_6686 = (word32) x1_6270->b0367;
 	x0_6268->b0367 = (byte) w2_6686 - (byte) (w2_6686 + (word32) ((int64) (w2_6686 *s 2521815661) >> 32) >> 9) * 0x68;
-	struct Eq_61916 * x1_6700 = g_ptr10CF38;
+	struct Eq_61918 * x1_6700 = g_ptr10CF38;
 	int32 w3_6702 = (word32) x1_6700->b0368;
-	struct Eq_61919 * x0_6698 = g_ptr10CF50;
+	struct Eq_61921 * x0_6698 = g_ptr10CF50;
 	x0_6698->b0368 = (byte) w3_6702 - (byte) (w3_6702 + (word32) ((int64) (w3_6702 *s 2518926983) >> 32) >> 9) * 0x69;
 	int32 w3_6714 = (word32) x1_6700->b0369;
 	x0_6698->b0369 = (byte) w3_6714 - (byte) (w3_6714 + (word32) ((int64) (w3_6714 *s ~0x6A08338C) >> 32) >> 9) * 0x6A;
@@ -36258,9 +36258,9 @@ void unsigned_char_modulo()
 	x0_6698->b03A2 = (byte) w3_7147 - (byte) (w3_7147 + (word32) ((int64) (w3_7147 *s 0x8CC947C5) >> 32) >> 9) * 0xA3;
 	int32 w2_7159 = (word32) x1_6700->b03A3;
 	x0_6698->b03A3 = (byte) w2_7159 - (byte) (w2_7159 + (word32) ((int64) (w2_7159 *s 0x8CA29C05) >> 32) >> 9) * 0xA4;
-	struct Eq_61916 * x1_7173 = g_ptr10CF38;
+	struct Eq_61918 * x1_7173 = g_ptr10CF38;
 	int32 w4_7175 = (word32) x1_7173->b03A4;
-	struct Eq_61919 * x0_7171 = g_ptr10CF50;
+	struct Eq_61921 * x0_7171 = g_ptr10CF50;
 	x0_7171->b03A4 = (byte) w4_7175 - (byte) (w4_7175 + (word32) ((int64) (w4_7175 *s 0x8C7C057D) >> 32) >> 9) * 0xA5;
 	int32 w4_7187 = (word32) x1_7173->b03A5;
 	x0_7171->b03A5 = (byte) w4_7187 - (byte) (w4_7187 + (word32) ((int64) (w4_7187 *s 2354414621) >> 32) >> 9) * 166;
@@ -36348,10 +36348,10 @@ void unsigned_char_modulo()
 	int32 w4_7578 = (word32) x1_7173->b03DF;
 	int32 w1_7584 = w4_7578 + (word32) ((int64) (w4_7578 *s 0x84210843) >> 32);
 	x0_7171->b03DF = (byte) w4_7578 - (((byte) (w1_7584 >> 9) << 0x05) - (byte) (w1_7584 >> 9) << 0x05);
-	struct Eq_61916 * x1_7590 = g_ptr10CF38;
+	struct Eq_61918 * x1_7590 = g_ptr10CF38;
 	int32 w3_7592 = (word32) x1_7590->b03E0;
 	x0_7171->b03E0 = (byte) w3_7592 - (byte) (w3_7592 + (word32) ((int64) (w3_7592 *s ~0x7C0107FC) >> 32) >> 9) * 225;
-	struct Eq_61919 * x0_7604 = g_ptr10CF50;
+	struct Eq_61921 * x0_7604 = g_ptr10CF50;
 	x0_7604->b03E1 = x1_7590->b03E1;
 	x0_7604->b03E2 = x1_7590->b03E2;
 	int32 w3_7612 = (word32) x1_7590->b03E3;
@@ -36414,8 +36414,8 @@ void unsigned_char_modulo()
 //      main
 void signed_short_add()
 {
-	struct Eq_107231 * x0_7 = g_ptr10CF80;
-	struct Eq_107234 * x2_5 = g_ptr10CF90;
+	struct Eq_107233 * x0_7 = g_ptr10CF80;
+	struct Eq_107236 * x2_5 = g_ptr10CF90;
 	x2_5->w0000 = x0_7->w0000 + 0x01;
 	x2_5->w0002 = x0_7->w0002 + 0x02;
 	x2_5->w0004 = x0_7->w0004 + 0x03;
@@ -36541,7 +36541,7 @@ void signed_short_add()
 	x2_5->w00F4 = x0_7->w00F4 + 0x7B;
 	x2_5->w00F6 = x0_7->w00F6 + 0x7C;
 	x2_5->w00F8 = x0_7->w00F8 + 0x7D;
-	struct Eq_107231 * x2_510 = g_ptr10CF80;
+	struct Eq_107233 * x2_510 = g_ptr10CF80;
 	x2_5->w00FA = x2_510->w00FA + 0x7E;
 	x2_5->w00FC = x2_510->w00FC + 0x7F;
 	x2_5->w00FE = x2_510->w00FE + 0x80;
@@ -36667,9 +36667,9 @@ void signed_short_add()
 	x2_5->w01EE = x2_510->w01EE + 0xF8;
 	x2_5->w01F0 = x2_510->w01F0 + 0xF9;
 	x2_5->w01F2 = x2_510->w01F2 + 0xFA;
-	struct Eq_107231 * x0_1011 = g_ptr10CF80;
+	struct Eq_107233 * x0_1011 = g_ptr10CF80;
 	x2_5->w01F4 = x0_1011->w01F4 + 0xFB;
-	struct Eq_107234 * x1_1017 = g_ptr10CF90;
+	struct Eq_107236 * x1_1017 = g_ptr10CF90;
 	x1_1017->w01F6 = x0_1011->w01F6 + 252;
 	x1_1017->w01F8 = x0_1011->w01F8 + 0xFD;
 	x1_1017->w01FA = x0_1011->w01FA + 0xFE;
@@ -36795,7 +36795,7 @@ void signed_short_add()
 	x1_1017->w02EA = x0_1011->w02EA + 0x0176;
 	x1_1017->w02EC = x0_1011->w02EC + 0x0177;
 	x1_1017->w02EE = x0_1011->w02EE + 0x0178;
-	struct Eq_107231 * x1_1520 = g_ptr10CF80;
+	struct Eq_107233 * x1_1520 = g_ptr10CF80;
 	x1_1017->w02F0 = x1_1520->w02F0 + 377;
 	x1_1017->w02F2 = x1_1520->w02F2 + 0x017A;
 	x1_1017->w02F4 = x1_1520->w02F4 + 0x017B;
@@ -36921,7 +36921,7 @@ void signed_short_add()
 	x1_1017->w03E4 = x1_1520->w03E4 + 499;
 	x1_1017->w03E6 = x1_1520->w03E6 + 500;
 	x1_1017->w03E8 = x1_1520->w03E8 + 0x01F5;
-	struct Eq_107231 * x0_2024 = g_ptr10CF80;
+	struct Eq_107233 * x0_2024 = g_ptr10CF80;
 	x1_1017->w03EA = x0_2024->w03EA + 0x01F6;
 	x1_1017->w03EC = x0_2024->w03EC + 0x01F7;
 	x1_1017->w03EE = x0_2024->w03EE + 0x01F8;
@@ -37047,8 +37047,8 @@ void signed_short_add()
 	x1_1017->w04DE = x0_2024->w04DE + 0x0270;
 	x1_1017->w04E0 = x0_2024->w04E0 + 0x0271;
 	x1_1017->w04E2 = x0_2024->w04E2 + 0x0272;
-	struct Eq_107231 * x2_2527 = g_ptr10CF80;
-	struct Eq_107234 * x1_2525 = g_ptr10CF90;
+	struct Eq_107233 * x2_2527 = g_ptr10CF80;
+	struct Eq_107236 * x1_2525 = g_ptr10CF90;
 	x1_2525->w04E4 = x2_2527->w04E4 + 0x0273;
 	x1_2525->w04E6 = x2_2527->w04E6 + 0x0274;
 	x1_2525->w04E8 = x2_2527->w04E8 + 0x0275;
@@ -37174,9 +37174,9 @@ void signed_short_add()
 	x1_2525->w05D8 = x2_2527->w05D8 + 0x02ED;
 	x1_2525->w05DA = x2_2527->w05DA + 0x02EE;
 	x1_2525->w05DC = x2_2527->w05DC + 0x02EF;
-	struct Eq_107231 * x0_3028 = g_ptr10CF80;
+	struct Eq_107233 * x0_3028 = g_ptr10CF80;
 	x1_2525->w05DE = x0_3028->w05DE + 0x02F0;
-	struct Eq_107234 * x1_3034 = g_ptr10CF90;
+	struct Eq_107236 * x1_3034 = g_ptr10CF90;
 	x1_3034->w05E0 = x0_3028->w05E0 + 0x02F1;
 	x1_3034->w05E2 = x0_3028->w05E2 + 0x02F2;
 	x1_3034->w05E4 = x0_3028->w05E4 + 755;
@@ -37302,8 +37302,8 @@ void signed_short_add()
 	x1_3034->w06D4 = x0_3028->w06D4 + 0x036B;
 	x1_3034->w06D6 = x0_3028->w06D6 + 0x036C;
 	x1_3034->w06D8 = x0_3028->w06D8 + 877;
-	struct Eq_107231 * x1_3538 = g_ptr10CF80;
-	struct Eq_107234 * x0_3536 = g_ptr10CF90;
+	struct Eq_107233 * x1_3538 = g_ptr10CF80;
+	struct Eq_107236 * x0_3536 = g_ptr10CF90;
 	x0_3536->w06DA = x1_3538->w06DA + 878;
 	x0_3536->w06DC = x1_3538->w06DC + 0x036F;
 	x0_3536->w06DE = x1_3538->w06DE + 880;
@@ -37429,8 +37429,8 @@ void signed_short_add()
 	x0_3536->w07CE = x1_3538->w07CE + 1000;
 	x0_3536->w07D0 = x1_3538->w07D0 + 1001;
 	x0_3536->w07D2 = x1_3538->w07D2 + 1002;
-	struct Eq_107231 * x1_4042 = g_ptr10CF80;
-	struct Eq_107234 * x0_4040 = g_ptr10CF90;
+	struct Eq_107233 * x1_4042 = g_ptr10CF80;
+	struct Eq_107236 * x0_4040 = g_ptr10CF90;
 	x0_4040->w07D4 = x1_4042->w07D4 + 1003;
 	x0_4040->w07D6 = x1_4042->w07D6 + 1004;
 	x0_4040->w07D8 = x1_4042->w07D8 + 1005;
@@ -37460,8 +37460,8 @@ void signed_short_add()
 //      main
 void signed_short_mult()
 {
-	struct Eq_107231 * x2_7 = g_ptr10CF80;
-	struct Eq_107234 * x1_5 = g_ptr10CF90;
+	struct Eq_107233 * x2_7 = g_ptr10CF80;
+	struct Eq_107236 * x1_5 = g_ptr10CF90;
 	x1_5->w0000 = x2_7->w0000;
 	x1_5->w0002 = (word16) __ubfm((word32) x2_7->w0002, 31, 31);
 	word32 w4_16 = (word32) x2_7->w0004;
@@ -37594,9 +37594,9 @@ void signed_short_mult()
 	x1_5->w00C4 = x2_7->w00C4 * 99;
 	x1_5->w00C6 = x2_7->w00C6 * 100;
 	x1_5->w00C8 = x2_7->w00C8 * 101;
-	struct Eq_107231 * x0_526 = g_ptr10CF80;
+	struct Eq_107233 * x0_526 = g_ptr10CF80;
 	x1_5->w00CA = x0_526->w00CA * 0x66;
-	struct Eq_107234 * x1_533 = g_ptr10CF90;
+	struct Eq_107236 * x1_533 = g_ptr10CF90;
 	x1_533->w00CC = x0_526->w00CC * 0x67;
 	x1_533->w00CE = x0_526->w00CE * 0x68;
 	x1_533->w00D0 = x0_526->w00D0 * 0x69;
@@ -37715,7 +37715,7 @@ void signed_short_mult()
 	x1_533->w019A = x0_526->w019A * 0xCE;
 	x1_533->w019C = x0_526->w019C * 0xCF;
 	x1_533->w019E = x0_526->w019E * 0xD0;
-	struct Eq_107231 * x1_1075 = g_ptr10CF80;
+	struct Eq_107233 * x1_1075 = g_ptr10CF80;
 	x1_533->w01A0 = x1_1075->w01A0 * 0xD1;
 	x1_533->w01A2 = x1_1075->w01A2 * 0xD2;
 	x1_533->w01A4 = x1_1075->w01A4 * 211;
@@ -37835,8 +37835,8 @@ void signed_short_mult()
 	x1_533->w0270 = x1_1075->w0270 * 313;
 	x1_533->w0272 = x1_1075->w0272 * 0x013A;
 	x1_533->w0274 = x1_1075->w0274 * 0x013B;
-	struct Eq_107231 * x0_1623 = g_ptr10CF80;
-	struct Eq_107234 * x1_1621 = g_ptr10CF90;
+	struct Eq_107233 * x0_1623 = g_ptr10CF80;
+	struct Eq_107236 * x1_1621 = g_ptr10CF90;
 	x1_1621->w0276 = x0_1623->w0276 * 0x013C;
 	x1_1621->w0278 = x0_1623->w0278 * 0x013D;
 	x1_1621->w027A = x0_1623->w027A * 0x013E;
@@ -37949,7 +37949,7 @@ void signed_short_mult()
 	x1_1621->w034C = x0_1623->w034C * 0x01A7;
 	x1_1621->w034E = x0_1623->w034E * 424;
 	x1_1621->w0350 = x0_1623->w0350 * 0x01A9;
-	struct Eq_107231 * x1_2178 = g_ptr10CF80;
+	struct Eq_107233 * x1_2178 = g_ptr10CF80;
 	x1_1621->w0352 = x1_2178->w0352 * 0x01AA;
 	x1_1621->w0354 = x1_2178->w0354 * 0x01AB;
 	x1_1621->w0356 = x1_2178->w0356 * 0x01AC;
@@ -38069,8 +38069,8 @@ void signed_short_mult()
 	x1_1621->w0422 = x1_2178->w0422 * 0x0212;
 	x1_1621->w0424 = x1_2178->w0424 * 0x0213;
 	x1_1621->w0426 = x1_2178->w0426 * 0x0214;
-	struct Eq_107231 * x1_2726 = g_ptr10CF80;
-	struct Eq_107234 * x0_2724 = g_ptr10CF90;
+	struct Eq_107233 * x1_2726 = g_ptr10CF80;
+	struct Eq_107236 * x0_2724 = g_ptr10CF90;
 	x0_2724->w0428 = x1_2726->w0428 * 533;
 	x0_2724->w042A = x1_2726->w042A * 0x0216;
 	x0_2724->w042C = x1_2726->w042C * 535;
@@ -38184,8 +38184,8 @@ void signed_short_mult()
 	x0_2724->w04FE = (word16) __ubfm(__ubfm(w3_3265, 30, 30) + w3_3265, 25, 25);
 	x0_2724->w0500 = x1_2726->w0500 * 0x0281;
 	x0_2724->w0502 = x1_2726->w0502 * 0x0282;
-	struct Eq_107231 * x1_3283 = g_ptr10CF80;
-	struct Eq_107234 * x2_3281 = g_ptr10CF90;
+	struct Eq_107233 * x1_3283 = g_ptr10CF80;
+	struct Eq_107236 * x2_3281 = g_ptr10CF90;
 	x2_3281->w0504 = x1_3283->w0504 * 0x0283;
 	x2_3281->w0506 = x1_3283->w0506 * 644;
 	x2_3281->w0508 = x1_3283->w0508 * 0x0285;
@@ -38297,7 +38297,7 @@ void signed_short_mult()
 	x2_3281->w05DC = x1_3283->w05DC * 0x02EF;
 	x2_3281->w05DE = x1_3283->w05DE * 0x02F0;
 	x2_3281->w05E0 = x1_3283->w05E0 * 0x02F1;
-	struct Eq_107231 * x1_3841 = g_ptr10CF80;
+	struct Eq_107233 * x1_3841 = g_ptr10CF80;
 	x2_3281->w05E2 = x1_3841->w05E2 * 0x02F2;
 	x2_3281->w05E4 = x1_3841->w05E4 * 755;
 	x2_3281->w05E6 = x1_3841->w05E6 * 0x02F4;
@@ -38410,8 +38410,8 @@ void signed_short_mult()
 	x2_3281->w06BA = x1_3841->w06BA * 0x035E;
 	x2_3281->w06BC = x1_3841->w06BC * 0x035F;
 	x2_3281->w06BE = x1_3841->w06BE * 0x0360;
-	struct Eq_107231 * x1_4401 = g_ptr10CF80;
-	struct Eq_107234 * x0_4399 = g_ptr10CF90;
+	struct Eq_107233 * x1_4401 = g_ptr10CF80;
+	struct Eq_107236 * x0_4399 = g_ptr10CF90;
 	x0_4399->w06C0 = x1_4401->w06C0 * 0x0361;
 	x0_4399->w06C2 = x1_4401->w06C2 * 866;
 	x0_4399->w06C4 = x1_4401->w06C4 * 0x0363;
@@ -38525,8 +38525,8 @@ void signed_short_mult()
 	x0_4399->w0798 = x1_4401->w0798 * 0x03CD;
 	x0_4399->w079A = x1_4401->w079A * 0x03CE;
 	x0_4399->w079C = x1_4401->w079C * 0x03CF;
-	struct Eq_107231 * x1_4962 = g_ptr10CF80;
-	struct Eq_107234 * x0_4960 = g_ptr10CF90;
+	struct Eq_107233 * x1_4962 = g_ptr10CF80;
+	struct Eq_107236 * x0_4960 = g_ptr10CF90;
 	x0_4960->w079E = x1_4962->w079E * 0x03D0;
 	x0_4960->w07A0 = x1_4962->w07A0 * 977;
 	x0_4960->w07A2 = x1_4962->w07A2 * 0x03D2;
@@ -38595,8 +38595,8 @@ void signed_short_mult()
 //      main
 void signed_short_div()
 {
-	struct Eq_107231 * x1_18 = g_ptr10CF80;
-	struct Eq_107234 * x0_16 = g_ptr10CF90;
+	struct Eq_107233 * x1_18 = g_ptr10CF80;
+	struct Eq_107236 * x0_16 = g_ptr10CF90;
 	x0_16->w0000 = x1_18->w0000;
 	uint32 w2_23 = (word32) x1_18->w0002;
 	x0_16->w0002 = (word16) (w2_23 + (w2_23 >> 31) >> 1);
@@ -38750,9 +38750,9 @@ void signed_short_div()
 	x0_16->w0096 = (word16) ((word32) ((int64) (w2_670 *s 1808407283) >> 37) - (w2_670 >> 31));
 	int32 w2_677 = (word32) x1_18->w0098;
 	x0_16->w0098 = (word16) ((word32) ((int64) (w2_677 *s 0x3531DEC1) >> 36) - (w2_677 >> 31));
-	struct Eq_107231 * x1_688 = g_ptr10CF80;
+	struct Eq_107233 * x1_688 = g_ptr10CF80;
 	int32 w3_690 = (word32) x1_688->w009A;
-	struct Eq_107234 * x0_686 = g_ptr10CF90;
+	struct Eq_107236 * x0_686 = g_ptr10CF90;
 	x0_686->w009A = (word16) ((w3_690 + (word32) ((int64) (w3_690 *s 0xD20D20D3) >> 32) >> 6) - (w3_690 >> 31));
 	int32 w3_701 = (word32) x1_688->w009C;
 	x0_686->w009C = (word16) ((word32) ((int64) (w3_701 *s 1739733589) >> 37) - (w3_701 >> 31));
@@ -38902,9 +38902,9 @@ void signed_short_div()
 	x0_686->w012C = (word16) ((word32) ((int64) (w3_1400 *s 910191745) >> 37) - (w3_1400 >> 31));
 	int32 w2_1409 = (word32) x1_688->w012E;
 	x0_686->w012E = (word16) ((word32) ((int64) (w2_1409 *s 1808407283) >> 38) - (w2_1409 >> 31));
-	struct Eq_107231 * x1_1420 = g_ptr10CF80;
+	struct Eq_107233 * x1_1420 = g_ptr10CF80;
 	int32 w4_1422 = (word32) x1_1420->w0130;
-	struct Eq_107234 * x2_1418 = g_ptr10CF90;
+	struct Eq_107236 * x2_1418 = g_ptr10CF90;
 	x2_1418->w0130 = (word16) ((w4_1422 + (word32) ((int64) (w4_1422 *s 3593175255) >> 32) >> 7) - (w4_1422 >> 31));
 	int32 w4_1433 = (word32) x1_1420->w0132;
 	x2_1418->w0132 = (word16) ((word32) ((int64) (w4_1433 *s 0x3531DEC1) >> 37) - (w4_1433 >> 31));
@@ -39052,7 +39052,7 @@ void signed_short_div()
 	x2_1418->w01C0 = (word16) ((w4_2132 + (word32) ((int64) (w4_2132 *s 2443359173) >> 32) >> 7) - (w4_2132 >> 31));
 	int32 w3_2143 = (word32) x1_1420->w01C2;
 	x2_1418->w01C2 = (word16) ((word32) ((int64) (w3_2143 *s 0x487EDE05) >> 38) - (w3_2143 >> 31));
-	struct Eq_107231 * x1_2153 = g_ptr10CF80;
+	struct Eq_107233 * x1_2153 = g_ptr10CF80;
 	int32 w3_2155 = (word32) x1_2153->w01C4;
 	x2_1418->w01C4 = (word16) ((word32) ((int64) (w3_2155 *s 605457945) >> 37) - (w3_2155 >> 31));
 	int32 w3_2164 = (word32) x1_2153->w01C6;
@@ -39203,9 +39203,9 @@ void signed_short_div()
 	x2_1418->w0256 = (word16) ((word32) ((int64) (w3_2871 *s 458129845) >> 37) - (w3_2871 >> 31));
 	int32 w2_2880 = (word32) x1_2153->w0258;
 	x2_1418->w0258 = (word16) ((word32) ((int64) (w2_2880 *s 0x1B37484B) >> 37) - (w2_2880 >> 31));
-	struct Eq_107231 * x1_2891 = g_ptr10CF80;
+	struct Eq_107233 * x1_2891 = g_ptr10CF80;
 	int32 w3_2893 = (word32) x1_2891->w025A;
-	struct Eq_107234 * x0_2889 = g_ptr10CF90;
+	struct Eq_107236 * x0_2889 = g_ptr10CF90;
 	x0_2889->w025A = (word16) ((word32) ((int64) (w3_2893 *s 910191745) >> 38) - (w3_2893 >> 31));
 	int32 w3_2902 = (word32) x1_2891->w025C;
 	x0_2889->w025C = (word16) ((word32) ((int64) (w3_2902 *s 226796953) >> 36) - (w3_2902 >> 31));
@@ -39355,9 +39355,9 @@ void signed_short_div()
 	x0_2889->w02EC = (word16) ((word32) ((int64) (w3_3602 *s 91625969) >> 35) - (w3_3602 >> 31));
 	int32 w2_3611 = (word32) x1_2891->w02EE;
 	x0_2889->w02EE = (word16) ((w2_3611 + (word32) ((int64) (w2_3611 *s 2924233053) >> 32) >> 8) - (w2_3611 >> 31));
-	struct Eq_107231 * x1_3624 = g_ptr10CF80;
+	struct Eq_107233 * x1_3624 = g_ptr10CF80;
 	int32 w3_3626 = (word32) x1_3624->w02F0;
-	struct Eq_107234 * x0_3622 = g_ptr10CF90;
+	struct Eq_107236 * x0_3622 = g_ptr10CF90;
 	x0_3622->w02F0 = (word16) ((w3_3626 + (word32) ((int64) (w3_3626 *s 2916476467) >> 32) >> 8) - (w3_3626 >> 31));
 	int32 w3_3637 = (word32) x1_3624->w02F2;
 	x0_3622->w02F2 = (word16) ((w3_3637 + (word32) ((int64) (w3_3637 *s 2908760921) >> 32) >> 8) - (w3_3637 >> 31));
@@ -39507,9 +39507,9 @@ void signed_short_div()
 	x0_3622->w0382 = (word16) ((w3_4339 + (word32) ((int64) (w3_4339 *s 2443359173) >> 32) >> 8) - (w3_4339 >> 31));
 	int32 w2_4350 = (word32) x1_3624->w0384;
 	x0_3622->w0384 = (word16) ((word32) ((int64) (w2_4350 *s 0x48A8048B) >> 39) - (w2_4350 >> 31));
-	struct Eq_107231 * x1_4361 = g_ptr10CF80;
+	struct Eq_107233 * x1_4361 = g_ptr10CF80;
 	int32 w3_4363 = (word32) x1_4361->w0386;
-	struct Eq_107234 * x0_4359 = g_ptr10CF90;
+	struct Eq_107236 * x0_4359 = g_ptr10CF90;
 	x0_4359->w0386 = (word16) ((word32) ((int64) (w3_4363 *s 0x487EDE05) >> 39) - (w3_4363 >> 31));
 	int32 w3_4372 = (word32) x1_4361->w0388;
 	x0_4359->w0388 = (word16) ((w3_4372 + (word32) ((int64) (w3_4372 *s 2427177987) >> 32) >> 8) - (w3_4372 >> 31));
@@ -39659,7 +39659,7 @@ void signed_short_div()
 	x0_4359->w0418 = (word16) ((word32) ((int64) (w3_5077 *s 0x7CD49A17) >> 40) - (w3_5077 >> 31));
 	int32 w2_5086 = (word32) x1_4361->w041A;
 	x0_4359->w041A = (word16) ((word32) ((int64) (w2_5086 *s 2090326289) >> 40) - (w2_5086 >> 31));
-	struct Eq_107231 * x0_5096 = g_ptr10CF80;
+	struct Eq_107233 * x0_5096 = g_ptr10CF80;
 	int32 w3_5098 = (word32) x0_5096->w041C;
 	x0_4359->w041C = (word16) ((w3_5098 + (word32) ((int64) (w3_5098 *s 4172719651) >> 32) >> 9) - (w3_5098 >> 31));
 	int32 w3_5109 = (word32) x0_5096->w041E;
@@ -39810,11 +39810,11 @@ void signed_short_div()
 	x0_4359->w04AE = (word16) ((word32) ((int64) (w3_5797 *s 458129845) >> 38) - (w3_5797 >> 31));
 	int32 w2_5806 = (word32) x0_5096->w04B0;
 	x0_4359->w04B0 = (word16) ((word32) ((int64) (w2_5806 *s 0x6D0B8037) >> 40) - (w2_5806 >> 31));
-	struct Eq_107231 * x0_5815 = g_ptr10CF80;
+	struct Eq_107233 * x0_5815 = g_ptr10CF80;
 	int32 w3_5817 = (word32) x0_5815->w04B2;
 	x0_4359->w04B2 = (word16) ((word32) ((int64) (w3_5817 *s 0x1B37484B) >> 38) - (w3_5817 >> 31));
 	int32 w3_5828 = (word32) x0_5815->w04B4;
-	struct Eq_107234 * x1_5826 = g_ptr10CF90;
+	struct Eq_107236 * x1_5826 = g_ptr10CF90;
 	x1_5826->w04B4 = (word16) ((word32) ((int64) (w3_5828 *s 0x00D95DD3) >> 33) - (w3_5828 >> 31));
 	int32 w3_5837 = (word32) x0_5815->w04B6;
 	x1_5826->w04B6 = (word16) ((word32) ((int64) (w3_5837 *s 910191745) >> 39) - (w3_5837 >> 31));
@@ -39964,7 +39964,7 @@ void signed_short_div()
 	x1_5826->w0546 = (word16) ((word32) ((int64) (w3_6519 *s 1626496491) >> 40) - (w3_6519 >> 31));
 	int32 w2_6528 = (word32) x0_5815->w0548;
 	x1_5826->w0548 = (word16) ((word32) ((int64) (w2_6528 *s 0x60CDB521) >> 40) - (w2_6528 >> 31));
-	struct Eq_107231 * x1_6538 = g_ptr10CF80;
+	struct Eq_107233 * x1_6538 = g_ptr10CF80;
 	int32 w3_6540 = (word32) x1_6538->w054A;
 	x1_5826->w054A = (word16) ((w3_6540 + (word32) ((int64) (w3_6540 *s 3243397133) >> 32) >> 9) - (w3_6540 >> 31));
 	int32 w3_6551 = (word32) x1_6538->w054C;
@@ -40115,9 +40115,9 @@ void signed_short_div()
 	x1_5826->w05DC = (word16) ((w3_7249 + (word32) ((int64) (w3_7249 *s ~0x51785488) >> 32) >> 9) - (w3_7249 >> 31));
 	int32 w2_7260 = (word32) x1_6538->w05DE;
 	x1_5826->w05DE = (word16) ((w2_7260 + (word32) ((int64) (w2_7260 *s 2924233053) >> 32) >> 9) - (w2_7260 >> 31));
-	struct Eq_107231 * x1_7273 = g_ptr10CF80;
+	struct Eq_107233 * x1_7273 = g_ptr10CF80;
 	int32 w3_7275 = (word32) x1_7273->w05E0;
-	struct Eq_107234 * x0_7271 = g_ptr10CF90;
+	struct Eq_107236 * x0_7271 = g_ptr10CF90;
 	x0_7271->w05E0 = (word16) ((word32) ((int64) (w3_7275 *s 0x57087FD5) >> 40) - (w3_7275 >> 31));
 	int32 w3_7284 = (word32) x1_7273->w05E2;
 	x0_7271->w05E2 = (word16) ((w3_7284 + (word32) ((int64) (w3_7284 *s 2916476467) >> 32) >> 9) - (w3_7284 >> 31));
@@ -40267,9 +40267,9 @@ void signed_short_div()
 	x0_7271->w0672 = (word16) ((word32) ((int64) (w3_7990 *s 1331127879) >> 40) - (w3_7990 >> 31));
 	int32 w2_7999 = (word32) x1_7273->w0674;
 	x0_7271->w0674 = (word16) ((w2_7999 + (word32) ((int64) (w2_7999 *s ~0x61825256) >> 32) >> 9) - (w2_7999 >> 31));
-	struct Eq_107231 * x1_8012 = g_ptr10CF80;
+	struct Eq_107233 * x1_8012 = g_ptr10CF80;
 	int32 w3_8014 = (word32) x1_8012->w0676;
-	struct Eq_107234 * x0_8010 = g_ptr10CF90;
+	struct Eq_107236 * x0_8010 = g_ptr10CF90;
 	x0_8010->w0676 = (word16) ((word32) ((int64) (w3_8014 *s 663956297) >> 39) - (w3_8014 >> 31));
 	int32 w3_8023 = (word32) x1_8012->w0678;
 	x0_8010->w0678 = (word16) ((w3_8023 + (word32) ((int64) (w3_8023 *s 2652621539) >> 32) >> 9) - (w3_8023 >> 31));
@@ -40417,9 +40417,9 @@ void signed_short_div()
 	x0_8010->w0706 = (word16) ((w3_8734 + (word32) ((int64) (w3_8734 *s 2443359173) >> 32) >> 9) - (w3_8734 >> 31));
 	int32 w2_8745 = (word32) x1_8012->w0708;
 	x0_8010->w0708 = (word16) ((w2_8745 + (word32) ((int64) (w2_8745 *s 2440647343) >> 32) >> 9) - (w2_8745 >> 31));
-	struct Eq_107231 * x1_8758 = g_ptr10CF80;
+	struct Eq_107233 * x1_8758 = g_ptr10CF80;
 	int32 w3_8760 = (word32) x1_8758->w070A;
-	struct Eq_107234 * x0_8756 = g_ptr10CF90;
+	struct Eq_107236 * x0_8756 = g_ptr10CF90;
 	x0_8756->w070A = (word16) ((word32) ((int64) (w3_8760 *s 0x48A8048B) >> 40) - (w3_8760 >> 31));
 	int32 w3_8769 = (word32) x1_8758->w070C;
 	x0_8756->w070C = (word16) ((w3_8769 + (word32) ((int64) (w3_8769 *s 2435241701) >> 32) >> 9) - (w3_8769 >> 31));
@@ -40569,9 +40569,9 @@ void signed_short_div()
 	x0_8756->w079C = (word16) ((word32) ((int64) (w3_9485 *s 0x219BB355) >> 39) - (w3_9485 >> 31));
 	int32 w2_9494 = (word32) x1_8758->w079E;
 	x0_8756->w079E = (word16) ((word32) ((int64) (w2_9494 *s 0x4325C53F) >> 40) - (w2_9494 >> 31));
-	struct Eq_107231 * x1_9505 = g_ptr10CF80;
+	struct Eq_107233 * x1_9505 = g_ptr10CF80;
 	int32 w3_9507 = (word32) x1_9505->w07A0;
-	struct Eq_107234 * x0_9503 = g_ptr10CF90;
+	struct Eq_107236 * x0_9503 = g_ptr10CF90;
 	x0_9503->w07A0 = (word16) ((word32) ((int64) (w3_9507 *s 562697865) >> 39) - (w3_9507 >> 31));
 	int32 w3_9516 = (word32) x1_9505->w07A2;
 	x0_9503->w07A2 = (word16) ((w3_9516 + (word32) ((int64) (w3_9516 *s 0x86053C35) >> 32) >> 9) - (w3_9516 >> 31));
@@ -40674,9 +40674,9 @@ void signed_short_div()
 //      main
 void signed_short_modulo()
 {
-	struct Eq_107234 * x0_5 = g_ptr10CF90;
+	struct Eq_107236 * x0_5 = g_ptr10CF90;
 	x0_5->w0000 = 0x00;
-	struct Eq_107231 * x1_8 = g_ptr10CF80;
+	struct Eq_107233 * x1_8 = g_ptr10CF80;
 	int32 w2_10 = (word32) x1_8->w0002;
 	x0_5->w0002 = (word16) (w2_10 >= 0x00 ? w2_10 & 0x01 : -(w2_10 & 0x01));
 	int32 w3_17 = (word32) x1_8->w0004;
@@ -40799,9 +40799,9 @@ void signed_short_modulo()
 	x0_5->w0074 = (word16) w3_622 - (word16) ((word32) ((int64) (w3_622 *s 0x22B63CBF) >> 35) - (w3_622 >> 31)) * 0x3B;
 	int32 w3_633 = (word32) x1_8->w0076;
 	x0_5->w0076 = (word16) w3_633 - (word16) ((w3_633 + (word32) ((int64) (w3_633 *s 0x88888889) >> 32) >> 5) - (w3_633 >> 31)) * 0x3C;
-	struct Eq_107231 * x1_647 = g_ptr10CF80;
+	struct Eq_107233 * x1_647 = g_ptr10CF80;
 	int32 w3_649 = (word32) x1_647->w0078;
-	struct Eq_107234 * x0_645 = g_ptr10CF90;
+	struct Eq_107236 * x0_645 = g_ptr10CF90;
 	x0_645->w0078 = (word16) w3_649 - (word16) ((word32) ((int64) (w3_649 *s 0x4325C53F) >> 36) - (w3_649 >> 31)) * 0x3D;
 	int32 w4_660 = (word32) x1_647->w007A;
 	x0_645->w007A = (word16) w4_660 - (word16) ((w4_660 + (word32) ((int64) (w4_660 *s 0x84210843) >> 32) >> 5) - (w4_660 >> 31)) * 0x3E;
@@ -40920,9 +40920,9 @@ void signed_short_modulo()
 	x0_645->w00EA = (word16) w3_1319 - (word16) ((word32) ((int64) (w3_1319 *s 0x22B63CBF) >> 36) - (w3_1319 >> 31)) * 118;
 	int32 w2_1330 = (word32) x1_647->w00EC;
 	x0_645->w00EC = (word16) w2_1330 - (word16) ((word32) ((int64) (w2_1330 *s 1154949189) >> 37) - (w2_1330 >> 31)) * 0x77;
-	struct Eq_107231 * x1_1343 = g_ptr10CF80;
+	struct Eq_107233 * x1_1343 = g_ptr10CF80;
 	int32 w4_1345 = (word32) x1_1343->w00EE;
-	struct Eq_107234 * x0_1341 = g_ptr10CF90;
+	struct Eq_107236 * x0_1341 = g_ptr10CF90;
 	x0_1341->w00EE = (word16) w4_1345 - (word16) ((w4_1345 + (word32) ((int64) (w4_1345 *s 0x88888889) >> 32) >> 6) - (w4_1345 >> 31)) * 0x78;
 	int32 w3_1357 = (word32) x1_1343->w00F0;
 	x0_1341->w00F0 = (word16) w3_1357 - (word16) ((word32) ((int64) (w3_1357 *s 70991195) >> 33) - (w3_1357 >> 31)) * 121;
@@ -41043,9 +41043,9 @@ void signed_short_modulo()
 	x0_1341->w0162 = (word16) w3_2015 - (word16) ((w3_2015 + (word32) ((int64) (w3_2015 *s 3088515809) >> 32) >> 7) - (w3_2015 >> 31)) * 0xB2;
 	int32 w2_2028 = (word32) x1_1343->w0164;
 	x0_1341->w0164 = (word16) w2_2028 - (word16) ((w2_2028 + (word32) ((int64) (w2_2028 *s ~0x48F044A4) >> 32) >> 7) - (w2_2028 >> 31)) * 0xB3;
-	struct Eq_107231 * x1_2043 = g_ptr10CF80;
+	struct Eq_107233 * x1_2043 = g_ptr10CF80;
 	int32 w3_2045 = (word32) x1_2043->w0166;
-	struct Eq_107234 * x0_2041 = g_ptr10CF90;
+	struct Eq_107236 * x0_2041 = g_ptr10CF90;
 	x0_2041->w0166 = (word16) w3_2045 - (word16) ((w3_2045 + (word32) ((int64) (w3_2045 *s 0xB60B60B7) >> 32) >> 7) - (w3_2045 >> 31)) * 0xB4;
 	int32 w3_2058 = (word32) x1_2043->w0168;
 	x0_2041->w0168 = (word16) w3_2058 - (word16) ((word32) ((int64) (w3_2058 *s 759331235) >> 37) - (w3_2058 >> 31)) * 181;
@@ -41165,9 +41165,9 @@ void signed_short_modulo()
 	x0_2041->w01DA = (word16) w3_2746 - (word16) ((word32) ((int64) (w3_2746 *s 1154949189) >> 38) - (w3_2746 >> 31)) * 0xEE;
 	int32 w2_2757 = (word32) x1_2043->w01DC;
 	x0_2041->w01DC = (word16) w2_2757 - (word16) ((w2_2757 + (word32) ((int64) (w2_2757 *s 2300233531) >> 32) >> 7) - (w2_2757 >> 31)) * 0xEF;
-	struct Eq_107231 * x1_2772 = g_ptr10CF80;
+	struct Eq_107233 * x1_2772 = g_ptr10CF80;
 	int32 w4_2774 = (word32) x1_2772->w01DE;
-	struct Eq_107234 * x0_2770 = g_ptr10CF90;
+	struct Eq_107236 * x0_2770 = g_ptr10CF90;
 	x0_2770->w01DE = (word16) w4_2774 - (word16) ((w4_2774 + (word32) ((int64) (w4_2774 *s 0x88888889) >> 32) >> 7) - (w4_2774 >> 31)) * 0xF0;
 	int32 w3_2786 = (word32) x1_2772->w01E0;
 	x0_2770->w01E0 = (word16) w3_2786 - (word16) ((word32) ((int64) (w3_2786 *s 0x10FEF011) >> 36) - (w3_2786 >> 31)) * 0xF1;
@@ -41286,9 +41286,9 @@ void signed_short_modulo()
 	x0_2770->w0250 = (word16) w3_3446 - (word16) ((word32) ((int64) (w3_3446 *s 1851029677) >> 39) - (w3_3446 >> 31)) * 0x0129;
 	int32 w2_3457 = (word32) x1_2772->w0252;
 	x0_2770->w0252 = (word16) w2_3457 - (word16) ((word32) ((int64) (w2_3457 *s 230602271) >> 36) - (w2_3457 >> 31)) * 0x012A;
-	struct Eq_107231 * x1_3470 = g_ptr10CF80;
+	struct Eq_107233 * x1_3470 = g_ptr10CF80;
 	int32 w3_3472 = (word32) x1_3470->w0254;
-	struct Eq_107234 * x0_3468 = g_ptr10CF90;
+	struct Eq_107236 * x0_3468 = g_ptr10CF90;
 	x0_3468->w0254 = (word16) w3_3472 - (word16) ((word32) ((int64) (w3_3472 *s 1838648207) >> 39) - (w3_3472 >> 31)) * 299;
 	int32 w3_3483 = (word32) x1_3470->w0256;
 	x0_3468->w0256 = (word16) w3_3483 - (word16) ((word32) ((int64) (w3_3483 *s 458129845) >> 37) - (w3_3483 >> 31)) * 300;
@@ -41410,9 +41410,9 @@ void signed_short_modulo()
 	x0_3468->w02CA = (word16) w3_4151 - (word16) ((w3_4151 + (word32) ((int64) (w3_4151 *s ~0x48F044A4) >> 32) >> 8) - (w3_4151 >> 31)) * 0x0166;
 	int32 w2_4164 = (word32) x1_3470->w02CC;
 	x0_3468->w02CC = (word16) w2_4164 - (word16) ((w2_4164 + (word32) ((int64) (w2_4164 *s 0xB68D3135) >> 32) >> 8) - (w2_4164 >> 31)) * 0x0167;
-	struct Eq_107231 * x1_4179 = g_ptr10CF80;
+	struct Eq_107233 * x1_4179 = g_ptr10CF80;
 	int32 w3_4181 = (word32) x1_4179->w02CE;
-	struct Eq_107234 * x0_4177 = g_ptr10CF90;
+	struct Eq_107236 * x0_4177 = g_ptr10CF90;
 	x0_4177->w02CE = (word16) w3_4181 - (word16) ((w3_4181 + (word32) ((int64) (w3_4181 *s 0xB60B60B7) >> 32) >> 8) - (w3_4181 >> 31)) * 0x0168;
 	int32 w3_4194 = (word32) x1_4179->w02D0;
 	x0_4177->w02D0 = (word16) w3_4194 - (word16) ((word32) ((int64) (w3_4194 *s 1522869291) >> 39) - (w3_4194 >> 31)) * 0x0169;
@@ -41534,9 +41534,9 @@ void signed_short_modulo()
 	x0_4177->w0344 = (word16) w3_4876 - (word16) ((word32) ((int64) (w3_4876 *s 656033191) >> 38) - (w3_4876 >> 31)) * 0x01A3;
 	int32 w2_4887 = (word32) x1_4179->w0346;
 	x0_4177->w0346 = (word16) w2_4887 - (word16) ((w2_4887 + (word32) ((int64) (w2_4887 *s 0x9C09C09D) >> 32) >> 8) - (w2_4887 >> 31)) * 0x01A4;
-	struct Eq_107231 * x1_4902 = g_ptr10CF80;
+	struct Eq_107233 * x1_4902 = g_ptr10CF80;
 	int32 w3_4904 = (word32) x1_4902->w0348;
-	struct Eq_107234 * x0_4900 = g_ptr10CF90;
+	struct Eq_107236 * x0_4900 = g_ptr10CF90;
 	x0_4900->w0348 = (word16) w3_4904 - (word16) ((w3_4904 + (word32) ((int64) (w3_4904 *s 2611666575) >> 32) >> 8) - (w3_4904 >> 31)) * 0x01A5;
 	int32 w3_4917 = (word32) x1_4902->w034A;
 	x0_4900->w034A = (word16) w3_4917 - (word16) ((word32) ((int64) (w3_4917 *s 81421181) >> 35) - (w3_4917 >> 31)) * 422;
@@ -41656,9 +41656,9 @@ void signed_short_modulo()
 	x0_4900->w03BC = (word16) w3_5595 - (word16) ((word32) ((int64) (w3_5595 *s 1147715687) >> 39) - (w3_5595 >> 31)) * 0x01DF;
 	int32 w3_5606 = (word32) x1_4902->w03BE;
 	x0_4900->w03BE = (word16) w3_5606 - (word16) ((w3_5606 + (word32) ((int64) (w3_5606 *s 0x88888889) >> 32) >> 8) - (w3_5606 >> 31)) * 0x01E0;
-	struct Eq_107231 * x1_5620 = g_ptr10CF80;
+	struct Eq_107233 * x1_5620 = g_ptr10CF80;
 	int32 w3_5622 = (word32) x1_5620->w03C0;
-	struct Eq_107234 * x0_5618 = g_ptr10CF90;
+	struct Eq_107236 * x0_5618 = g_ptr10CF90;
 	x0_5618->w03C0 = (word16) w3_5622 - (word16) ((w3_5622 + (word32) ((int64) (w3_5622 *s 2285886961) >> 32) >> 8) - (w3_5622 >> 31)) * 0x01E1;
 	int32 w3_5635 = (word32) x1_5620->w03C2;
 	x0_5618->w03C2 = (word16) w3_5635 - (word16) ((word32) ((int64) (w3_5635 *s 0x10FEF011) >> 37) - (w3_5635 >> 31)) * 0x01E2;
@@ -41779,9 +41779,9 @@ void signed_short_modulo()
 	x0_5618->w0434 = (word16) w3_6299 - (word16) ((word32) ((int64) (w3_6299 *s 0x079968F7) >> 36) - (w3_6299 >> 31)) * 0x021B;
 	int32 w2_6310 = (word32) x1_5620->w0436;
 	x0_5618->w0436 = (word16) w2_6310 - (word16) ((w2_6310 + (word32) ((int64) (w2_6310 *s 4072265289) >> 32) >> 9) - (w2_6310 >> 31)) * 0x021C;
-	struct Eq_107231 * x1_6325 = g_ptr10CF80;
+	struct Eq_107233 * x1_6325 = g_ptr10CF80;
 	int32 w3_6327 = (word32) x1_6325->w0438;
-	struct Eq_107234 * x0_6323 = g_ptr10CF90;
+	struct Eq_107236 * x0_6323 = g_ptr10CF90;
 	x0_6323->w0438 = (word16) w3_6327 - (word16) ((word32) ((int64) (w3_6327 *s 1016184499) >> 39) - (w3_6327 >> 31)) * 0x021D;
 	int32 w3_6338 = (word32) x1_6325->w043A;
 	x0_6323->w043A = (word16) w3_6338 - (word16) ((word32) ((int64) (w3_6338 *s 253577405) >> 37) - (w3_6338 >> 31)) * 0x021E;
@@ -41903,9 +41903,9 @@ void signed_short_modulo()
 	x0_6323->w04AE = (word16) w3_7012 - (word16) ((word32) ((int64) (w3_7012 *s 458129845) >> 38) - (w3_7012 >> 31)) * 600;
 	int32 w2_7023 = (word32) x1_6325->w04B0;
 	x0_6323->w04B0 = (word16) w2_7023 - (word16) ((word32) ((int64) (w2_7023 *s 0x6D0B8037) >> 40) - (w2_7023 >> 31)) * 0x0259;
-	struct Eq_107231 * x2_7036 = g_ptr10CF80;
+	struct Eq_107233 * x2_7036 = g_ptr10CF80;
 	int32 w4_7038 = (word32) x2_7036->w04B2;
-	struct Eq_107234 * x1_7034 = g_ptr10CF90;
+	struct Eq_107236 * x1_7034 = g_ptr10CF90;
 	x1_7034->w04B2 = (word16) w4_7038 - (word16) ((word32) ((int64) (w4_7038 *s 0x1B37484B) >> 38) - (w4_7038 >> 31)) * 0x025A;
 	int32 w4_7049 = (word32) x2_7036->w04B4;
 	x1_7034->w04B4 = (word16) w4_7049 - (word16) ((word32) ((int64) (w4_7049 *s 0x00D95DD3) >> 33) - (w4_7049 >> 31)) * 0x025B;
@@ -42027,11 +42027,11 @@ void signed_short_modulo()
 	x1_7034->w0528 = (word16) w4_7709 - (word16) ((w4_7709 + (word32) ((int64) (w4_7709 *s 3326812793) >> 32) >> 9) - (w4_7709 >> 31)) * 661;
 	int32 w3_7722 = (word32) x2_7036->w052A;
 	x1_7034->w052A = (word16) w3_7722 - (word16) ((word32) ((int64) (w3_7722 *s 830446849) >> 39) - (w3_7722 >> 31)) * 662;
-	struct Eq_107231 * x0_7732 = g_ptr10CF80;
+	struct Eq_107233 * x0_7732 = g_ptr10CF80;
 	int32 w3_7734 = (word32) x0_7732->w052C;
 	x1_7034->w052C = (word16) w3_7734 - (word16) ((word32) ((int64) (w3_7734 *s 0x62D90063) >> 40) - (w3_7734 >> 31)) * 663;
 	int32 w3_7747 = (word32) x0_7732->w052E;
-	struct Eq_107234 * x1_7745 = g_ptr10CF90;
+	struct Eq_107236 * x1_7745 = g_ptr10CF90;
 	x1_7745->w052E = (word16) w3_7747 - (word16) ((word32) ((int64) (w3_7747 *s 0x3159721F) >> 39) - (w3_7747 >> 31)) * 664;
 	int32 w3_7758 = (word32) x0_7732->w0530;
 	x1_7745->w0530 = (word16) w3_7758 - (word16) ((w3_7758 + (word32) ((int64) (w3_7758 *s 3306801889) >> 32) >> 9) - (w3_7758 >> 31)) * 0x0299;
@@ -42153,7 +42153,7 @@ void signed_short_modulo()
 	x1_7745->w05A4 = (word16) w3_8436 - (word16) ((word32) ((int64) (w3_8436 *s 0x5AA5005B) >> 40) - (w3_8436 >> 31)) * 0x02D3;
 	int32 w2_8447 = (word32) x0_7732->w05A6;
 	x1_7745->w05A6 = (word16) w2_8447 - (word16) ((word32) ((int64) (w2_8447 *s 759331235) >> 39) - (w2_8447 >> 31)) * 0x02D4;
-	struct Eq_107231 * x1_8459 = g_ptr10CF80;
+	struct Eq_107233 * x1_8459 = g_ptr10CF80;
 	int32 w3_8461 = (word32) x1_8459->w05A8;
 	x1_7745->w05A8 = (word16) w3_8461 - (word16) ((word32) ((int64) (w3_8461 *s 1516567763) >> 40) - (w3_8461 >> 31)) * 0x02D5;
 	int32 w3_8472 = (word32) x1_8459->w05AA;
@@ -42276,9 +42276,9 @@ void signed_short_modulo()
 	x1_7745->w061E = (word16) w3_9160 - (word16) ((word32) ((int64) (w3_9160 *s 1402438301) >> 40) - (w3_9160 >> 31)) * 0x0310;
 	int32 w2_9171 = (word32) x1_8459->w0620;
 	x1_7745->w0620 = (word16) w2_9171 - (word16) ((w2_9171 + (word32) ((int64) (w2_9171 *s 2801303511) >> 32) >> 9) - (w2_9171 >> 31)) * 0x0311;
-	struct Eq_107231 * x1_9186 = g_ptr10CF80;
+	struct Eq_107233 * x1_9186 = g_ptr10CF80;
 	int32 w3_9188 = (word32) x1_9186->w0622;
-	struct Eq_107234 * x0_9184 = g_ptr10CF90;
+	struct Eq_107236 * x0_9184 = g_ptr10CF90;
 	x0_9184->w0622 = (word16) w3_9188 - (word16) ((word32) ((int64) (w3_9188 *s 349717439) >> 38) - (w3_9188 >> 31)) * 0x0312;
 	int32 w3_9199 = (word32) x1_9186->w0624;
 	x0_9184->w0624 = (word16) w3_9199 - (word16) ((w3_9199 + (word32) ((int64) (w3_9199 *s 2794184569) >> 32) >> 9) - (w3_9199 >> 31)) * 0x0313;
@@ -42400,9 +42400,9 @@ void signed_short_modulo()
 	x0_9184->w0698 = (word16) w3_9885 - (word16) ((word32) ((int64) (w3_9885 *s 1301197193) >> 40) - (w3_9885 >> 31)) * 0x034D;
 	int32 w2_9896 = (word32) x1_9186->w069A;
 	x0_9184->w069A = (word16) w2_9896 - (word16) ((word32) ((int64) (w2_9896 *s 1299659135) >> 40) - (w2_9896 >> 31)) * 0x034E;
-	struct Eq_107231 * x1_9909 = g_ptr10CF80;
+	struct Eq_107233 * x1_9909 = g_ptr10CF80;
 	int32 w3_9911 = (word32) x1_9909->w069C;
-	struct Eq_107234 * x0_9907 = g_ptr10CF90;
+	struct Eq_107236 * x0_9907 = g_ptr10CF90;
 	x0_9907->w069C = (word16) w3_9911 - (word16) ((w3_9911 + (word32) ((int64) (w3_9911 *s ~0x654060B6) >> 32) >> 9) - (w3_9911 >> 31)) * 0x034F;
 	int32 w3_9924 = (word32) x1_9909->w069E;
 	x0_9907->w069E = (word16) w3_9924 - (word16) ((word32) ((int64) (w3_9924 *s 1296593901) >> 40) - (w3_9924 >> 31)) * 848;
@@ -42522,9 +42522,9 @@ void signed_short_modulo()
 	x0_9907->w0710 = (word16) w3_10614 - (word16) ((word32) ((int64) (w3_10614 *s 0x090D4B87) >> 37) - (w3_10614 >> 31)) * 0x0389;
 	int32 w2_10625 = (word32) x1_9909->w0712;
 	x0_9907->w0712 = (word16) w2_10625 - (word16) ((w2_10625 + (word32) ((int64) (w2_10625 *s 2427177987) >> 32) >> 9) - (w2_10625 >> 31)) * 0x038A;
-	struct Eq_107231 * x1_10640 = g_ptr10CF80;
+	struct Eq_107233 * x1_10640 = g_ptr10CF80;
 	int32 w3_10642 = (word32) x1_10640->w0714;
-	struct Eq_107234 * x0_10638 = g_ptr10CF90;
+	struct Eq_107236 * x0_10638 = g_ptr10CF90;
 	x0_10638->w0714 = (word16) w3_10642 - (word16) ((word32) ((int64) (w3_10642 *s 151531371) >> 37) - (w3_10642 >> 31)) * 0x038B;
 	int32 w3_10653 = (word32) x1_10640->w0716;
 	x0_10638->w0716 = (word16) w3_10653 - (word16) ((word32) ((int64) (w3_10653 *s 605457945) >> 39) - (w3_10653 >> 31)) * 0x038C;
@@ -42646,9 +42646,9 @@ void signed_short_modulo()
 	x0_10638->w078A = (word16) w3_11344 - (word16) ((word32) ((int64) (w3_11344 *s 0x43D7B7EB) >> 40) - (w3_11344 >> 31)) * 966;
 	int32 w2_11355 = (word32) x1_10640->w078C;
 	x0_10638->w078C = (word16) w2_11355 - (word16) ((w2_11355 + (word32) ((int64) (w2_11355 *s 0x878B841B) >> 32) >> 9) - (w2_11355 >> 31)) * 0x03C7;
-	struct Eq_107231 * x1_11370 = g_ptr10CF80;
+	struct Eq_107233 * x1_11370 = g_ptr10CF80;
 	int32 w3_11372 = (word32) x1_11370->w078E;
-	struct Eq_107234 * x0_11368 = g_ptr10CF90;
+	struct Eq_107236 * x0_11368 = g_ptr10CF90;
 	x0_11368->w078E = (word16) w3_11372 - (word16) ((word32) ((int64) (w3_11372 *s 70991195) >> 36) - (w3_11372 >> 31)) * 0x03C8;
 	int32 w3_11383 = (word32) x1_11370->w0790;
 	x0_11368->w0790 = (word16) w3_11383 - (word16) ((w3_11383 + (word32) ((int64) (w3_11383 *s 0x8743E595) >> 32) >> 9) - (w3_11383 >> 31)) * 969;
@@ -42776,8 +42776,8 @@ void signed_short_modulo()
 //      main
 void unsigned_short_add()
 {
-	struct Eq_167746 * x0_7 = g_ptr10CFB0;
-	struct Eq_167749 * x2_5 = g_ptr10CFC0;
+	struct Eq_167748 * x0_7 = g_ptr10CFB0;
+	struct Eq_167751 * x2_5 = g_ptr10CFC0;
 	x2_5->w0000 = x0_7->w0000 + 0x01;
 	x2_5->w0002 = x0_7->w0002 + 0x02;
 	x2_5->w0004 = x0_7->w0004 + 0x03;
@@ -42903,7 +42903,7 @@ void unsigned_short_add()
 	x2_5->w00F4 = x0_7->w00F4 + 0x7B;
 	x2_5->w00F6 = x0_7->w00F6 + 0x7C;
 	x2_5->w00F8 = x0_7->w00F8 + 0x7D;
-	struct Eq_167746 * x2_510 = g_ptr10CFB0;
+	struct Eq_167748 * x2_510 = g_ptr10CFB0;
 	x2_5->w00FA = x2_510->w00FA + 0x7E;
 	x2_5->w00FC = x2_510->w00FC + 0x7F;
 	x2_5->w00FE = x2_510->w00FE + 0x80;
@@ -43029,9 +43029,9 @@ void unsigned_short_add()
 	x2_5->w01EE = x2_510->w01EE + 0xF8;
 	x2_5->w01F0 = x2_510->w01F0 + 0xF9;
 	x2_5->w01F2 = x2_510->w01F2 + 0xFA;
-	struct Eq_167746 * x0_1011 = g_ptr10CFB0;
+	struct Eq_167748 * x0_1011 = g_ptr10CFB0;
 	x2_5->w01F4 = x0_1011->w01F4 + 0xFB;
-	struct Eq_167749 * x1_1017 = g_ptr10CFC0;
+	struct Eq_167751 * x1_1017 = g_ptr10CFC0;
 	x1_1017->w01F6 = x0_1011->w01F6 + 252;
 	x1_1017->w01F8 = x0_1011->w01F8 + 0xFD;
 	x1_1017->w01FA = x0_1011->w01FA + 0xFE;
@@ -43157,7 +43157,7 @@ void unsigned_short_add()
 	x1_1017->w02EA = x0_1011->w02EA + 0x0176;
 	x1_1017->w02EC = x0_1011->w02EC + 0x0177;
 	x1_1017->w02EE = x0_1011->w02EE + 0x0178;
-	struct Eq_167746 * x1_1520 = g_ptr10CFB0;
+	struct Eq_167748 * x1_1520 = g_ptr10CFB0;
 	x1_1017->w02F0 = x1_1520->w02F0 + 377;
 	x1_1017->w02F2 = x1_1520->w02F2 + 0x017A;
 	x1_1017->w02F4 = x1_1520->w02F4 + 0x017B;
@@ -43283,7 +43283,7 @@ void unsigned_short_add()
 	x1_1017->w03E4 = x1_1520->w03E4 + 499;
 	x1_1017->w03E6 = x1_1520->w03E6 + 500;
 	x1_1017->w03E8 = x1_1520->w03E8 + 0x01F5;
-	struct Eq_167746 * x0_2024 = g_ptr10CFB0;
+	struct Eq_167748 * x0_2024 = g_ptr10CFB0;
 	x1_1017->w03EA = x0_2024->w03EA + 0x01F6;
 	x1_1017->w03EC = x0_2024->w03EC + 0x01F7;
 	x1_1017->w03EE = x0_2024->w03EE + 0x01F8;
@@ -43409,8 +43409,8 @@ void unsigned_short_add()
 	x1_1017->w04DE = x0_2024->w04DE + 0x0270;
 	x1_1017->w04E0 = x0_2024->w04E0 + 0x0271;
 	x1_1017->w04E2 = x0_2024->w04E2 + 0x0272;
-	struct Eq_167746 * x2_2527 = g_ptr10CFB0;
-	struct Eq_167749 * x1_2525 = g_ptr10CFC0;
+	struct Eq_167748 * x2_2527 = g_ptr10CFB0;
+	struct Eq_167751 * x1_2525 = g_ptr10CFC0;
 	x1_2525->w04E4 = x2_2527->w04E4 + 0x0273;
 	x1_2525->w04E6 = x2_2527->w04E6 + 0x0274;
 	x1_2525->w04E8 = x2_2527->w04E8 + 0x0275;
@@ -43536,9 +43536,9 @@ void unsigned_short_add()
 	x1_2525->w05D8 = x2_2527->w05D8 + 0x02ED;
 	x1_2525->w05DA = x2_2527->w05DA + 0x02EE;
 	x1_2525->w05DC = x2_2527->w05DC + 0x02EF;
-	struct Eq_167746 * x0_3028 = g_ptr10CFB0;
+	struct Eq_167748 * x0_3028 = g_ptr10CFB0;
 	x1_2525->w05DE = x0_3028->w05DE + 0x02F0;
-	struct Eq_167749 * x1_3034 = g_ptr10CFC0;
+	struct Eq_167751 * x1_3034 = g_ptr10CFC0;
 	x1_3034->w05E0 = x0_3028->w05E0 + 0x02F1;
 	x1_3034->w05E2 = x0_3028->w05E2 + 0x02F2;
 	x1_3034->w05E4 = x0_3028->w05E4 + 755;
@@ -43664,8 +43664,8 @@ void unsigned_short_add()
 	x1_3034->w06D4 = x0_3028->w06D4 + 0x036B;
 	x1_3034->w06D6 = x0_3028->w06D6 + 0x036C;
 	x1_3034->w06D8 = x0_3028->w06D8 + 877;
-	struct Eq_167746 * x1_3538 = g_ptr10CFB0;
-	struct Eq_167749 * x0_3536 = g_ptr10CFC0;
+	struct Eq_167748 * x1_3538 = g_ptr10CFB0;
+	struct Eq_167751 * x0_3536 = g_ptr10CFC0;
 	x0_3536->w06DA = x1_3538->w06DA + 878;
 	x0_3536->w06DC = x1_3538->w06DC + 0x036F;
 	x0_3536->w06DE = x1_3538->w06DE + 880;
@@ -43791,8 +43791,8 @@ void unsigned_short_add()
 	x0_3536->w07CE = x1_3538->w07CE + 1000;
 	x0_3536->w07D0 = x1_3538->w07D0 + 1001;
 	x0_3536->w07D2 = x1_3538->w07D2 + 1002;
-	struct Eq_167746 * x1_4042 = g_ptr10CFB0;
-	struct Eq_167749 * x0_4040 = g_ptr10CFC0;
+	struct Eq_167748 * x1_4042 = g_ptr10CFB0;
+	struct Eq_167751 * x0_4040 = g_ptr10CFC0;
 	x0_4040->w07D4 = x1_4042->w07D4 + 1003;
 	x0_4040->w07D6 = x1_4042->w07D6 + 1004;
 	x0_4040->w07D8 = x1_4042->w07D8 + 1005;
@@ -43822,8 +43822,8 @@ void unsigned_short_add()
 //      main
 void unsigned_short_mult()
 {
-	struct Eq_167746 * x2_7 = g_ptr10CFB0;
-	struct Eq_167749 * x1_5 = g_ptr10CFC0;
+	struct Eq_167748 * x2_7 = g_ptr10CFB0;
+	struct Eq_167751 * x1_5 = g_ptr10CFC0;
 	x1_5->w0000 = x2_7->w0000;
 	x1_5->w0002 = (word16) __ubfm((word32) x2_7->w0002, 31, 31);
 	word32 w4_16 = (word32) x2_7->w0004;
@@ -43956,9 +43956,9 @@ void unsigned_short_mult()
 	x1_5->w00C4 = x2_7->w00C4 * 99;
 	x1_5->w00C6 = x2_7->w00C6 * 100;
 	x1_5->w00C8 = x2_7->w00C8 * 101;
-	struct Eq_167746 * x0_526 = g_ptr10CFB0;
+	struct Eq_167748 * x0_526 = g_ptr10CFB0;
 	x1_5->w00CA = x0_526->w00CA * 0x66;
-	struct Eq_167749 * x1_533 = g_ptr10CFC0;
+	struct Eq_167751 * x1_533 = g_ptr10CFC0;
 	x1_533->w00CC = x0_526->w00CC * 0x67;
 	x1_533->w00CE = x0_526->w00CE * 0x68;
 	x1_533->w00D0 = x0_526->w00D0 * 0x69;
@@ -44077,7 +44077,7 @@ void unsigned_short_mult()
 	x1_533->w019A = x0_526->w019A * 0xCE;
 	x1_533->w019C = x0_526->w019C * 0xCF;
 	x1_533->w019E = x0_526->w019E * 0xD0;
-	struct Eq_167746 * x1_1075 = g_ptr10CFB0;
+	struct Eq_167748 * x1_1075 = g_ptr10CFB0;
 	x1_533->w01A0 = x1_1075->w01A0 * 0xD1;
 	x1_533->w01A2 = x1_1075->w01A2 * 0xD2;
 	x1_533->w01A4 = x1_1075->w01A4 * 211;
@@ -44197,8 +44197,8 @@ void unsigned_short_mult()
 	x1_533->w0270 = x1_1075->w0270 * 313;
 	x1_533->w0272 = x1_1075->w0272 * 0x013A;
 	x1_533->w0274 = x1_1075->w0274 * 0x013B;
-	struct Eq_167746 * x0_1623 = g_ptr10CFB0;
-	struct Eq_167749 * x1_1621 = g_ptr10CFC0;
+	struct Eq_167748 * x0_1623 = g_ptr10CFB0;
+	struct Eq_167751 * x1_1621 = g_ptr10CFC0;
 	x1_1621->w0276 = x0_1623->w0276 * 0x013C;
 	x1_1621->w0278 = x0_1623->w0278 * 0x013D;
 	x1_1621->w027A = x0_1623->w027A * 0x013E;
@@ -44311,7 +44311,7 @@ void unsigned_short_mult()
 	x1_1621->w034C = x0_1623->w034C * 0x01A7;
 	x1_1621->w034E = x0_1623->w034E * 424;
 	x1_1621->w0350 = x0_1623->w0350 * 0x01A9;
-	struct Eq_167746 * x1_2178 = g_ptr10CFB0;
+	struct Eq_167748 * x1_2178 = g_ptr10CFB0;
 	x1_1621->w0352 = x1_2178->w0352 * 0x01AA;
 	x1_1621->w0354 = x1_2178->w0354 * 0x01AB;
 	x1_1621->w0356 = x1_2178->w0356 * 0x01AC;
@@ -44431,8 +44431,8 @@ void unsigned_short_mult()
 	x1_1621->w0422 = x1_2178->w0422 * 0x0212;
 	x1_1621->w0424 = x1_2178->w0424 * 0x0213;
 	x1_1621->w0426 = x1_2178->w0426 * 0x0214;
-	struct Eq_167746 * x1_2726 = g_ptr10CFB0;
-	struct Eq_167749 * x0_2724 = g_ptr10CFC0;
+	struct Eq_167748 * x1_2726 = g_ptr10CFB0;
+	struct Eq_167751 * x0_2724 = g_ptr10CFC0;
 	x0_2724->w0428 = x1_2726->w0428 * 533;
 	x0_2724->w042A = x1_2726->w042A * 0x0216;
 	x0_2724->w042C = x1_2726->w042C * 535;
@@ -44546,8 +44546,8 @@ void unsigned_short_mult()
 	x0_2724->w04FE = (word16) __ubfm(__ubfm(w3_3265, 30, 30) + w3_3265, 25, 25);
 	x0_2724->w0500 = x1_2726->w0500 * 0x0281;
 	x0_2724->w0502 = x1_2726->w0502 * 0x0282;
-	struct Eq_167746 * x1_3283 = g_ptr10CFB0;
-	struct Eq_167749 * x2_3281 = g_ptr10CFC0;
+	struct Eq_167748 * x1_3283 = g_ptr10CFB0;
+	struct Eq_167751 * x2_3281 = g_ptr10CFC0;
 	x2_3281->w0504 = x1_3283->w0504 * 0x0283;
 	x2_3281->w0506 = x1_3283->w0506 * 644;
 	x2_3281->w0508 = x1_3283->w0508 * 0x0285;
@@ -44659,7 +44659,7 @@ void unsigned_short_mult()
 	x2_3281->w05DC = x1_3283->w05DC * 0x02EF;
 	x2_3281->w05DE = x1_3283->w05DE * 0x02F0;
 	x2_3281->w05E0 = x1_3283->w05E0 * 0x02F1;
-	struct Eq_167746 * x1_3841 = g_ptr10CFB0;
+	struct Eq_167748 * x1_3841 = g_ptr10CFB0;
 	x2_3281->w05E2 = x1_3841->w05E2 * 0x02F2;
 	x2_3281->w05E4 = x1_3841->w05E4 * 755;
 	x2_3281->w05E6 = x1_3841->w05E6 * 0x02F4;
@@ -44772,8 +44772,8 @@ void unsigned_short_mult()
 	x2_3281->w06BA = x1_3841->w06BA * 0x035E;
 	x2_3281->w06BC = x1_3841->w06BC * 0x035F;
 	x2_3281->w06BE = x1_3841->w06BE * 0x0360;
-	struct Eq_167746 * x1_4401 = g_ptr10CFB0;
-	struct Eq_167749 * x0_4399 = g_ptr10CFC0;
+	struct Eq_167748 * x1_4401 = g_ptr10CFB0;
+	struct Eq_167751 * x0_4399 = g_ptr10CFC0;
 	x0_4399->w06C0 = x1_4401->w06C0 * 0x0361;
 	x0_4399->w06C2 = x1_4401->w06C2 * 866;
 	x0_4399->w06C4 = x1_4401->w06C4 * 0x0363;
@@ -44887,8 +44887,8 @@ void unsigned_short_mult()
 	x0_4399->w0798 = x1_4401->w0798 * 0x03CD;
 	x0_4399->w079A = x1_4401->w079A * 0x03CE;
 	x0_4399->w079C = x1_4401->w079C * 0x03CF;
-	struct Eq_167746 * x1_4962 = g_ptr10CFB0;
-	struct Eq_167749 * x0_4960 = g_ptr10CFC0;
+	struct Eq_167748 * x1_4962 = g_ptr10CFB0;
+	struct Eq_167751 * x0_4960 = g_ptr10CFC0;
 	x0_4960->w079E = x1_4962->w079E * 0x03D0;
 	x0_4960->w07A0 = x1_4962->w07A0 * 977;
 	x0_4960->w07A2 = x1_4962->w07A2 * 0x03D2;
@@ -44951,8 +44951,8 @@ void unsigned_short_mult()
 //      main
 void unsigned_short_div()
 {
-	struct Eq_167746 * x1_7 = g_ptr10CFB0;
-	struct Eq_167749 * x0_5 = g_ptr10CFC0;
+	struct Eq_167748 * x1_7 = g_ptr10CFB0;
+	struct Eq_167751 * x0_5 = g_ptr10CFC0;
 	x0_5->w0000 = x1_7->w0000;
 	x0_5->w0002 = (word16) ((word32) x1_7->w0002 >> 1);
 	x0_5->w0004 = (word16) ((word32) ((uint64) ((word32) x1_7->w0004 * ~0x55555554) >> 32) >> 1);
@@ -45070,8 +45070,8 @@ void unsigned_short_div()
 	x0_5->w00AC = (word16) ((word32) ((uint64) ((word32) x1_7->w00AC * 789879043) >> 32) >> 4);
 	x0_5->w00AE = (word16) ((word32) ((uint64) ((word32) x1_7->w00AE * 3123612579) >> 32) >> 6);
 	x0_5->w00B0 = (word16) ((word32) ((uint64) ((word32) x1_7->w00B0 * 3088515809) >> 32) >> 6);
-	struct Eq_167746 * x1_756 = g_ptr10CFB0;
-	struct Eq_167749 * x0_754 = g_ptr10CFC0;
+	struct Eq_167748 * x1_756 = g_ptr10CFB0;
+	struct Eq_167751 * x0_754 = g_ptr10CFC0;
 	x0_754->w00B2 = (word16) ((word32) ((uint64) (((word32) x1_756->w00B2 >> 1) * 0xB60B60B7) >> 32) >> 5);
 	uint32 w2_768 = (word32) x1_756->w00B4;
 	uint32 w3_773 = (word32) ((uint64) (w2_768 * 0x68168169) >> 32);
@@ -45193,7 +45193,7 @@ void unsigned_short_div()
 	uint32 w3_1542 = (word32) ((uint64) (w2_1537 * 0x7AD2208F) >> 32);
 	x0_754->w0158 = (word16) (w3_1542 + (w2_1537 - w3_1542 >> 1) >> 7);
 	x0_754->w015A = (word16) ((word32) ((uint64) ((word32) x1_756->w015A * 789879043) >> 32) >> 5);
-	struct Eq_167746 * x0_1558 = g_ptr10CFB0;
+	struct Eq_167748 * x0_1558 = g_ptr10CFB0;
 	x0_754->w015C = (word16) ((word32) ((uint64) ((word32) x0_1558->w015C * 1570730897) >> 32) >> 6);
 	x0_754->w015E = (word16) ((word32) ((uint64) ((word32) x0_1558->w015E * 3123612579) >> 32) >> 7);
 	uint32 w2_1578 = (word32) x0_1558->w0160;
@@ -45311,12 +45311,12 @@ void unsigned_short_div()
 	x0_754->w01F8 = (word16) ((word32) ((uint64) ((word32) x0_1558->w01F8 * 2172947881) >> 32) >> 7);
 	x0_754->w01FA = (word16) ((word32) ((uint64) (((word32) x0_1558->w01FA >> 1) * 0x81020409) >> 32) >> 6);
 	x0_754->w01FC = (word16) ((word32) ((uint64) ((word32) x0_1558->w01FC * 0x80808081) >> 32) >> 7);
-	x0_754->w01FE = (word16) (word32) x0_1558->b01FF;
+	x0_754->w01FE = (word16) x0_1558->b01FF;
 	x0_754->w0200 = (word16) ((word32) ((uint64) ((word32) x0_1558->w0200 * ~0x00FF00FE) >> 32) >> 8);
 	x0_754->w0202 = (word16) ((word32) ((uint64) ((word32) x0_1558->w0202 * 0x0FE03F81) >> 32) >> 4);
-	struct Eq_167746 * x0_2365 = g_ptr10CFB0;
+	struct Eq_167748 * x0_2365 = g_ptr10CFB0;
 	x0_754->w0204 = (word16) ((word32) ((uint64) ((word32) x0_2365->w0204 * 4245218641) >> 32) >> 8);
-	struct Eq_167749 * x1_2376 = g_ptr10CFC0;
+	struct Eq_167751 * x1_2376 = g_ptr10CFC0;
 	x1_2376->w0206 = (word16) ((word32) ((uint64) ((word32) x0_2365->w0206 * ~0x03F03F02) >> 32) >> 8);
 	x1_2376->w0208 = (word16) ((word32) ((uint64) ((word32) x0_2365->w0208 * 2106344115) >> 32) >> 7);
 	x1_2376->w020A = (word16) ((word32) ((uint64) ((word32) x0_2365->w020A * ~0x05DCD30C) >> 32) >> 8);
@@ -45428,8 +45428,8 @@ void unsigned_short_div()
 	x1_2376->w02AE = (word16) ((word32) ((uint64) ((word32) x0_2365->w02AE * 799063683) >> 32) >> 6);
 	x1_2376->w02B0 = (word16) ((word32) ((uint64) ((word32) x0_2365->w02B0 * 1593495113) >> 32) >> 7);
 	x1_2376->w02B2 = (word16) ((word32) ((uint64) (((word32) x0_2365->w02B2 >> 1) * 397222409) >> 32) >> 4);
-	struct Eq_167746 * x2_3187 = g_ptr10CFB0;
-	struct Eq_167749 * x1_3185 = g_ptr10CFC0;
+	struct Eq_167748 * x2_3187 = g_ptr10CFB0;
+	struct Eq_167751 * x1_3185 = g_ptr10CFC0;
 	x1_3185->w02B4 = (word16) ((word32) ((uint64) ((word32) x2_3187->w02B4 * 1584310703) >> 32) >> 7);
 	x1_3185->w02B6 = (word16) ((word32) ((uint64) ((word32) x2_3187->w02B6 * 789879043) >> 32) >> 6);
 	x1_3185->w02B8 = (word16) ((word32) ((uint64) ((word32) x2_3187->w02B8 * 0xBBC8408D) >> 32) >> 8);
@@ -45555,11 +45555,11 @@ void unsigned_short_div()
 	uint32 w2_3980 = (word32) x2_3187->w0358;
 	uint32 w3_3985 = (word32) ((uint64) (w2_3980 * 830961039) >> 32);
 	x1_3185->w0358 = (word16) (w3_3985 + (w2_3980 - w3_3985 >> 1) >> 8);
-	struct Eq_167746 * x0_3990 = g_ptr10CFB0;
+	struct Eq_167748 * x0_3990 = g_ptr10CFB0;
 	x1_3185->w035A = (word16) ((word32) ((uint64) ((word32) x0_3990->w035A * 0x4C346405) >> 32) >> 7);
 	uint32 w2_4003 = (word32) x0_3990->w035C;
 	uint32 w3_4008 = (word32) ((uint64) (w2_4003 * 807174829) >> 32);
-	struct Eq_167749 * x1_4001 = g_ptr10CFC0;
+	struct Eq_167751 * x1_4001 = g_ptr10CFC0;
 	x1_4001->w035C = (word16) (w3_4008 + (w2_4003 - w3_4008 >> 1) >> 8);
 	x1_4001->w035E = (word16) (word32) ((uint64) (((word32) x0_3990->w035E >> 4) * 0x097B425F) >> 32);
 	x1_4001->w0360 = (word16) ((word32) ((uint64) ((word32) x0_3990->w0360 * 0x0975A751) >> 32) >> 4);
@@ -45671,8 +45671,8 @@ void unsigned_short_div()
 	x1_4001->w0400 = (word16) ((word32) ((uint64) ((word32) x0_3990->w0400 * ~0x007FC01E) >> 32) >> 9);
 	x1_4001->w0402 = (word16) ((word32) ((uint64) ((word32) x0_3990->w0402 * ~0x00FF00FE) >> 32) >> 9);
 	x1_4001->w0404 = (word16) ((word32) ((uint64) ((word32) x0_3990->w0404 * 0x7F411E53) >> 32) >> 8);
-	struct Eq_167746 * x2_4817 = g_ptr10CFB0;
-	struct Eq_167749 * x1_4815 = g_ptr10CFC0;
+	struct Eq_167748 * x2_4817 = g_ptr10CFB0;
+	struct Eq_167751 * x1_4815 = g_ptr10CFC0;
 	x1_4815->w0406 = (word16) ((word32) ((uint64) ((word32) x2_4817->w0406 * 0x0FE03F81) >> 32) >> 5);
 	x1_4815->w0408 = (word16) ((word32) ((uint64) ((word32) x2_4817->w0408 * 4253429895) >> 32) >> 9);
 	x1_4815->w040A = (word16) ((word32) ((uint64) ((word32) x2_4817->w040A * 4245218641) >> 32) >> 9);
@@ -45775,9 +45775,9 @@ void unsigned_short_div()
 	x1_4815->w04B0 = (word16) (w4_5601 + (w3_5596 - w4_5601 >> 1) >> 9);
 	x1_4815->w04B2 = (word16) ((word32) ((uint64) ((word32) x2_4817->w04B2 * 3652862551) >> 32) >> 9);
 	x1_4815->w04B4 = (word16) ((word32) ((uint64) ((word32) x2_4817->w04B4 * 0x00D95DD3) >> 32) >> 1);
-	struct Eq_167746 * x0_5624 = g_ptr10CFB0;
+	struct Eq_167748 * x0_5624 = g_ptr10CFB0;
 	x1_4815->w04B6 = (word16) ((word32) ((uint64) ((word32) x0_5624->w04B6 * 910191745) >> 32) >> 7);
-	struct Eq_167749 * x1_5635 = g_ptr10CFC0;
+	struct Eq_167751 * x1_5635 = g_ptr10CFC0;
 	x1_5635->w04B8 = (word16) ((word32) ((uint64) ((word32) x0_5624->w04B8 * 3634749183) >> 32) >> 9);
 	x1_5635->w04BA = (word16) ((word32) ((uint64) ((word32) x0_5624->w04BA * 0xD84A598F) >> 32) >> 9);
 	x1_5635->w04BC = (word16) ((word32) ((uint64) ((word32) x0_5624->w04BC * 1811386537) >> 32) >> 8);
@@ -45881,9 +45881,9 @@ void unsigned_short_div()
 	x1_5635->w0560 = (word16) ((word32) ((uint64) ((word32) x0_5624->w0560 * 797903939) >> 32) >> 7);
 	x1_5635->w0562 = (word16) ((word32) ((uint64) ((word32) x0_5624->w0562 * 1593495113) >> 32) >> 8);
 	x1_5635->w0564 = (word16) ((word32) ((uint64) ((word32) x0_5624->w0564 * 795594521) >> 32) >> 7);
-	struct Eq_167746 * x0_6445 = g_ptr10CFB0;
+	struct Eq_167748 * x0_6445 = g_ptr10CFB0;
 	x1_5635->w0566 = (word16) ((word32) ((uint64) (((word32) x0_6445->w0566 >> 2) * 397222409) >> 32) >> 4);
-	struct Eq_167749 * x1_6457 = g_ptr10CFC0;
+	struct Eq_167751 * x1_6457 = g_ptr10CFC0;
 	x1_6457->w0568 = (word16) ((word32) ((uint64) ((word32) x0_6445->w0568 * 3173193731) >> 32) >> 9);
 	x1_6457->w056A = (word16) ((word32) ((uint64) ((word32) x0_6445->w056A * 1584310703) >> 32) >> 8);
 	uint32 w2_6477 = (word32) x0_6445->w056C;
@@ -45999,8 +45999,8 @@ void unsigned_short_div()
 	uint32 w0_7258 = (word32) x0_6445->w0610;
 	uint32 w2_7263 = (word32) ((uint64) (w0_7258 * 0x516131C1) >> 32);
 	x1_6457->w0610 = (word16) (w2_7263 + (w0_7258 - w2_7263 >> 1) >> 9);
-	struct Eq_167746 * x1_7271 = g_ptr10CFB0;
-	struct Eq_167749 * x0_7269 = g_ptr10CFC0;
+	struct Eq_167748 * x1_7271 = g_ptr10CFB0;
+	struct Eq_167751 * x0_7269 = g_ptr10CFC0;
 	x0_7269->w0612 = (word16) ((word32) ((uint64) ((word32) x1_7271->w0612 * 0xA8791709) >> 32) >> 9);
 	x0_7269->w0614 = (word16) ((word32) ((uint64) ((word32) x1_7271->w0614 * 2822879661) >> 32) >> 9);
 	x0_7269->w0616 = (word16) ((word32) ((uint64) (((word32) x1_7271->w0616 >> 2) * 0x54054055) >> 32) >> 6);
@@ -46125,8 +46125,8 @@ void unsigned_short_div()
 	x0_7269->w06B4 = (word16) (w3_8062 + (w2_8057 - w3_8062 >> 1) >> 9);
 	x0_7269->w06B6 = (word16) ((word32) ((uint64) ((word32) x1_7271->w06B6 * 0x4C346405) >> 32) >> 8);
 	x0_7269->w06B8 = (word16) ((word32) ((uint64) ((word32) x1_7271->w06B8 * ~0x67C488C4) >> 32) >> 9);
-	struct Eq_167746 * x1_8088 = g_ptr10CFB0;
-	struct Eq_167749 * x0_8086 = g_ptr10CFC0;
+	struct Eq_167748 * x1_8088 = g_ptr10CFB0;
+	struct Eq_167751 * x0_8086 = g_ptr10CFC0;
 	x0_8086->w06BA = (word16) ((word32) ((uint64) (((word32) x1_8088->w06BA >> 1) * 2551071063) >> 32) >> 8);
 	uint32 w2_8100 = (word32) x1_8088->w06BC;
 	uint32 w3_8105 = (word32) ((uint64) (w2_8100 * 801262729) >> 32);
@@ -46244,8 +46244,8 @@ void unsigned_short_div()
 	uint32 w3_8893 = (word32) ((uint64) (w2_8888 * 359050177) >> 32);
 	x0_8086->w0760 = (word16) (w3_8893 + (w2_8888 - w3_8893 >> 1) >> 9);
 	x0_8086->w0762 = (word16) ((word32) ((uint64) ((word32) x1_8088->w0762 * 0x04546E69) >> 32) >> 4);
-	struct Eq_167746 * x1_8910 = g_ptr10CFB0;
-	struct Eq_167749 * x0_8908 = g_ptr10CFC0;
+	struct Eq_167748 * x1_8910 = g_ptr10CFB0;
+	struct Eq_167751 * x0_8908 = g_ptr10CFC0;
 	x0_8908->w0764 = (word16) ((word32) ((uint64) ((word32) x1_8910->w0764 * 0x8A6858AB) >> 32) >> 9);
 	x0_8908->w0766 = (word16) ((word32) ((uint64) (((word32) x1_8910->w0766 >> 2) * 1159822393) >> 32) >> 6);
 	uint32 w2_8931 = (word32) x1_8910->w0768;
@@ -46377,9 +46377,9 @@ void unsigned_short_div()
 //      main
 void unsigned_short_modulo()
 {
-	struct Eq_167749 * x0_5 = g_ptr10CFC0;
+	struct Eq_167751 * x0_5 = g_ptr10CFC0;
 	x0_5->w0000 = 0x00;
-	struct Eq_167746 * x1_8 = g_ptr10CFB0;
+	struct Eq_167748 * x1_8 = g_ptr10CFB0;
 	x0_5->w0002 = x1_8->w0002 & 0x01;
 	uint32 w4_14 = (word32) x1_8->w0004;
 	uint32 w3_19 = (word32) ((uint64) (w4_14 * ~0x55555554) >> 32);
@@ -46542,9 +46542,9 @@ void unsigned_short_modulo()
 	uint32 w2_671 = (word32) x1_8->w0082;
 	uint32 w1_674 = (word32) ((uint64) (w2_671 * 0x3E0F83E1) >> 32);
 	x0_5->w0082 = (word16) w2_671 - ((word16) (w1_674 >> 4) + ((word16) (w1_674 >> 4) << 0x05) << 0x01);
-	struct Eq_167746 * x1_682 = g_ptr10CFB0;
+	struct Eq_167748 * x1_682 = g_ptr10CFB0;
 	uint32 w4_684 = (word32) x1_682->w0084;
-	struct Eq_167749 * x2_680 = g_ptr10CFC0;
+	struct Eq_167751 * x2_680 = g_ptr10CFC0;
 	x2_680->w0084 = (word16) w4_684 - (word16) ((word32) ((uint64) (w4_684 * 128207979) >> 32) >> 1) * 0x43;
 	uint32 w4_695 = (word32) x1_682->w0086;
 	uint32 w3_700 = (word32) ((uint64) (w4_695 * ~0x0F0F0F0E) >> 32);
@@ -46697,7 +46697,7 @@ void unsigned_short_modulo()
 	uint32 w3_1419 = (word32) x1_682->w0102;
 	uint32 w1_1424 = (word32) ((uint64) (w3_1419 * ~0x03F03F02) >> 32);
 	x2_680->w0102 = (word16) w3_1419 - ((word16) (w1_1424 >> 7) + ((word16) (w1_1424 >> 7) << 0x06) << 0x01);
-	struct Eq_167746 * x1_1431 = g_ptr10CFB0;
+	struct Eq_167748 * x1_1431 = g_ptr10CFB0;
 	uint32 w3_1433 = (word32) x1_1431->w0104;
 	x2_680->w0104 = (word16) w3_1433 - (word16) ((word32) ((uint64) (w3_1433 * ~0x05DCD30C) >> 32) >> 7) * 131;
 	uint32 w3_1444 = (word32) x1_1431->w0106;
@@ -46848,9 +46848,9 @@ void unsigned_short_modulo()
 	x2_680->w0188 = (word16) w4_2185 - (word16) (w3_2190 + (w4_2185 - w3_2190 >> 1) >> 7) * 0xC5;
 	uint32 w2_2198 = (word32) x1_1431->w018A;
 	x2_680->w018A = (word16) w2_2198 - (word16) ((word32) ((uint64) (w2_2198 * 2776544515) >> 32) >> 7) * 0xC6;
-	struct Eq_167746 * x1_2211 = g_ptr10CFB0;
+	struct Eq_167748 * x1_2211 = g_ptr10CFB0;
 	uint32 w3_2213 = (word32) x1_2211->w018C;
-	struct Eq_167749 * x0_2209 = g_ptr10CFC0;
+	struct Eq_167751 * x0_2209 = g_ptr10CFC0;
 	x0_2209->w018C = (word16) w3_2213 - (word16) ((word32) ((uint64) (w3_2213 * 1381296015) >> 32) >> 6) * 199;
 	uint32 w3_2224 = (word32) x1_2211->w018E;
 	x0_2209->w018E = (word16) w3_2224 - (word16) ((word32) ((uint64) (w3_2224 * 1374389535) >> 32) >> 6) * 200;
@@ -46981,7 +46981,7 @@ void unsigned_short_modulo()
 	uint32 w3_2875 = (word32) x1_2211->w01FC;
 	uint32 w2_2880 = (word32) ((uint64) (w3_2875 * 0x80808081) >> 32);
 	x0_2209->w01FC = (word16) w3_2875 - (((word16) (w2_2880 >> 7) << 0x08) - (word16) (w2_2880 >> 7));
-	x0_2209->w01FE = (word16) (word32) x1_2211->t01FE;
+	x0_2209->w01FE = (word16) x1_2211->t01FE;
 	uint32 w3_2890 = (word32) x1_2211->w0200;
 	uint32 w2_2895 = (word32) ((uint64) (w3_2890 * ~0x00FF00FE) >> 32);
 	x0_2209->w0200 = (word16) (w3_2890 - ((w2_2895 >> 8) + __align(w2_2895, 0x0100)));
@@ -47002,9 +47002,9 @@ void unsigned_short_modulo()
 	uint32 w2_2967 = (word32) x1_2211->w020E;
 	uint32 w1_2972 = (word32) ((uint64) (w2_2967 * 0x3E0F83E1) >> 32);
 	x0_2209->w020E = (word16) w2_2967 - ((word16) (w1_2972 >> 6) + ((word16) (w1_2972 >> 6) << 0x05) << 0x03);
-	struct Eq_167746 * x1_2980 = g_ptr10CFB0;
+	struct Eq_167748 * x1_2980 = g_ptr10CFB0;
 	uint32 w3_2982 = (word32) x1_2980->w0210;
-	struct Eq_167749 * x0_2978 = g_ptr10CFC0;
+	struct Eq_167751 * x0_2978 = g_ptr10CFC0;
 	x0_2978->w0210 = (word16) w3_2982 - (word16) ((word32) ((uint64) (w3_2982 * 4149100483) >> 32) >> 8) * 0x0109;
 	uint32 w3_2993 = (word32) x1_2980->w0212;
 	x0_2978->w0212 = (word16) w3_2993 - (word16) ((word32) ((uint64) (w3_2993 * ~0x099FC266) >> 32) >> 8) * 266;
@@ -47151,10 +47151,10 @@ void unsigned_short_modulo()
 	x0_2978->w0294 = (word16) w4_3727 - (word16) (w3_3732 + (w4_3727 - w3_3732 >> 1) >> 8) * 331;
 	uint32 w2_3740 = (word32) x1_2980->w0296;
 	x0_2978->w0296 = (word16) w2_3740 - (word16) ((word32) ((uint64) (w2_3740 * 0x3159721F) >> 32) >> 6) * 332;
-	struct Eq_167746 * x1_3753 = g_ptr10CFB0;
+	struct Eq_167748 * x1_3753 = g_ptr10CFB0;
 	uint32 w4_3755 = (word32) x1_3753->w0298;
 	uint32 w3_3760 = (word32) ((uint64) (w4_3755 * 0x899C0F61) >> 32);
-	struct Eq_167749 * x0_3751 = g_ptr10CFC0;
+	struct Eq_167751 * x0_3751 = g_ptr10CFC0;
 	x0_3751->w0298 = (word16) w4_3755 - (word16) (w3_3760 + (w4_3755 - w3_3760 >> 1) >> 8) * 333;
 	uint32 w3_3768 = (word32) x1_3753->w029A;
 	x0_3751->w029A = (word16) w3_3768 - (word16) ((word32) ((uint64) (w3_3768 * 1645975491) >> 32) >> 7) * 334;
@@ -47304,9 +47304,9 @@ void unsigned_short_modulo()
 	uint32 w3_4524 = (word32) x1_3753->w031C;
 	uint32 w2_4529 = (word32) ((uint64) (w3_4524 * 0x48805221) >> 32);
 	x0_3751->w031C = (word16) w3_4524 - (word16) (w2_4529 + (w3_4524 - w2_4529 >> 1) >> 8) * 399;
-	struct Eq_167746 * x1_4539 = g_ptr10CFB0;
+	struct Eq_167748 * x1_4539 = g_ptr10CFB0;
 	uint32 w3_4541 = (word32) x1_4539->w031E;
-	struct Eq_167749 * x0_4537 = g_ptr10CFC0;
+	struct Eq_167751 * x0_4537 = g_ptr10CFC0;
 	x0_4537->w031E = (word16) w3_4541 - (word16) ((word32) ((uint64) (w3_4541 * 1374389535) >> 32) >> 7) * 400;
 	uint32 w3_4552 = (word32) x1_4539->w0320;
 	x0_4537->w0320 = (word16) w3_4552 - (word16) ((word32) ((uint64) (w3_4552 * 2741924259) >> 32) >> 8) * 0x0191;
@@ -47455,9 +47455,9 @@ void unsigned_short_modulo()
 	x0_4537->w03A0 = (word16) w4_5302 - (word16) (w3_5307 + (w4_5302 - w3_5307 >> 1) >> 8) * 0x01D1;
 	uint32 w2_5315 = (word32) x1_4539->w03A2;
 	x0_4537->w03A2 = (word16) w2_5315 - (word16) ((word32) ((uint64) ((w2_5315 >> 1) * 0x8CA29C05) >> 32) >> 7) * 466;
-	struct Eq_167746 * x1_5329 = g_ptr10CFB0;
+	struct Eq_167748 * x1_5329 = g_ptr10CFB0;
 	uint32 w3_5331 = (word32) x1_5329->w03A4;
-	struct Eq_167749 * x0_5327 = g_ptr10CFC0;
+	struct Eq_167751 * x0_5327 = g_ptr10CFC0;
 	x0_5327->w03A4 = (word16) w3_5331 - (word16) ((word32) ((uint64) (w3_5331 * 2354414621) >> 32) >> 8) * 0x01D3;
 	uint32 w3_5342 = (word32) x1_5329->w03A6;
 	x0_5327->w03A6 = (word16) w3_5342 - (word16) ((word32) ((uint64) ((w3_5342 >> 2) * 0x46046047) >> 32) >> 5) * 0x01D4;
@@ -47608,9 +47608,9 @@ void unsigned_short_modulo()
 	x0_5327->w0424 = (word16) w3_6063 - (word16) ((word32) ((uint64) (w3_6063 * 2070643367) >> 32) >> 8) * 0x0213;
 	uint32 w2_6074 = (word32) x1_5329->w0426;
 	x0_5327->w0426 = (word16) w2_6074 - (word16) ((word32) ((uint64) (w2_6074 * ~0x099FC266) >> 32) >> 9) * 0x0214;
-	struct Eq_167746 * x1_6087 = g_ptr10CFB0;
+	struct Eq_167748 * x1_6087 = g_ptr10CFB0;
 	uint32 w3_6089 = (word32) x1_6087->w0428;
-	struct Eq_167749 * x0_6085 = g_ptr10CFC0;
+	struct Eq_167751 * x0_6085 = g_ptr10CFC0;
 	x0_6085->w0428 = (word16) w3_6089 - (word16) ((word32) ((uint64) (w3_6089 * 4125747197) >> 32) >> 9) * 533;
 	uint32 w3_6100 = (word32) x1_6087->w042A;
 	x0_6085->w042A = (word16) w3_6100 - (word16) ((word32) ((uint64) (w3_6100 * 0x7ABA01EB) >> 32) >> 8) * 0x0216;
@@ -47756,7 +47756,7 @@ void unsigned_short_modulo()
 	uint32 w3_6853 = (word32) x1_6087->w04B0;
 	uint32 w2_6858 = (word32) ((uint64) (w3_6853 * 0xB42E00DB) >> 32);
 	x0_6085->w04B0 = (word16) w3_6853 - (word16) (w2_6858 + (w3_6853 - w2_6858 >> 1) >> 9) * 0x0259;
-	struct Eq_167746 * x2_6866 = g_ptr10CFB0;
+	struct Eq_167748 * x2_6866 = g_ptr10CFB0;
 	uint32 w3_6868 = (word32) x2_6866->w04B2;
 	x0_6085->w04B2 = (word16) w3_6868 - (word16) ((word32) ((uint64) (w3_6868 * 3652862551) >> 32) >> 9) * 0x025A;
 	uint32 w3_6880 = (word32) x2_6866->w04B4;
@@ -47904,11 +47904,11 @@ void unsigned_short_modulo()
 	x0_6085->w0538 = (word16) w3_7629 - (word16) ((word32) ((uint64) (w3_7629 * 0x61F60D03) >> 32) >> 8) * 669;
 	uint32 w2_7640 = (word32) x2_6866->w053A;
 	x0_6085->w053A = (word16) w2_7640 - (word16) ((word32) ((uint64) ((w2_7640 >> 1) * 3282124263) >> 32) >> 8) * 0x029E;
-	struct Eq_167746 * x0_7652 = g_ptr10CFB0;
+	struct Eq_167748 * x0_7652 = g_ptr10CFB0;
 	uint32 w3_7654 = (word32) x0_7652->w053C;
 	x0_6085->w053C = (word16) w3_7654 - (word16) ((word32) ((uint64) (w3_7654 * 1638616435) >> 32) >> 8) * 0x029F;
 	uint32 w4_7667 = (word32) x0_7652->w053E;
-	struct Eq_167749 * x1_7665 = g_ptr10CFC0;
+	struct Eq_167751 * x1_7665 = g_ptr10CFC0;
 	x1_7665->w053E = (word16) w4_7667 - (word16) ((word32) ((uint64) ((w4_7667 >> 5) * 0x0C30C30D) >> 32)) * 0x02A0;
 	uint32 w3_7678 = (word32) x0_7652->w0540;
 	x1_7665->w0540 = (word16) w3_7678 - (word16) ((word32) ((uint64) (w3_7678 * 0x6160FF9F) >> 32) >> 8) * 0x02A1;
@@ -48053,7 +48053,7 @@ void unsigned_short_modulo()
 	x1_7665->w05C2 = (word16) w3_8424 - (word16) ((word32) ((uint64) (w3_8424 * 2979706309) >> 32) >> 9) * 0x02E2;
 	uint32 w2_8435 = (word32) x0_7652->w05C4;
 	x1_7665->w05C4 = (word16) w2_8435 - (word16) ((word32) ((uint64) (w2_8435 * 1487837115) >> 32) >> 8) * 0x02E3;
-	struct Eq_167746 * x1_8447 = g_ptr10CFB0;
+	struct Eq_167748 * x1_8447 = g_ptr10CFB0;
 	uint32 w3_8449 = (word32) x1_8447->w05C6;
 	x1_7665->w05C6 = (word16) w3_8449 - (word16) ((word32) ((uint64) ((w3_8449 >> 2) * 1485826525) >> 32) >> 6) * 0x02E4;
 	uint32 w4_8461 = (word32) x1_8447->w05C8;
@@ -48203,9 +48203,9 @@ void unsigned_short_modulo()
 	x1_7665->w064A = (word16) w3_9211 - (word16) ((word32) ((uint64) ((w3_9211 >> 1) * 2728316695) >> 32) >> 8) * 0x0326;
 	uint32 w2_9223 = (word32) x1_8447->w064C;
 	x1_7665->w064C = (word16) w2_9223 - (word16) ((word32) ((uint64) (w2_9223 * 2724935881) >> 32) >> 9) * 0x0327;
-	struct Eq_167746 * x1_9236 = g_ptr10CFB0;
+	struct Eq_167748 * x1_9236 = g_ptr10CFB0;
 	uint32 w3_9238 = (word32) x1_9236->w064E;
-	struct Eq_167749 * x0_9234 = g_ptr10CFC0;
+	struct Eq_167751 * x0_9234 = g_ptr10CFC0;
 	x0_9234->w064E = (word16) w3_9238 - (word16) ((word32) ((uint64) ((w3_9238 >> 3) * 170097715) >> 32) >> 2) * 808;
 	uint32 w4_9250 = (word32) x1_9236->w0650;
 	uint32 w3_9255 = (word32) ((uint64) (w4_9250 * 1141431359) >> 32);
@@ -48355,9 +48355,9 @@ void unsigned_short_modulo()
 	x0_9234->w06D0 = (word16) w4_9998 - (word16) (w3_10003 + (w4_9998 - w3_10003 >> 1) >> 9) * 0x0369;
 	uint32 w2_10011 = (word32) x1_9236->w06D2;
 	x0_9234->w06D2 = (word16) w2_10011 - (word16) ((word32) ((uint64) (w2_10011 * ~0x6A08338C) >> 32) >> 9) * 0x036A;
-	struct Eq_167746 * x1_10024 = g_ptr10CFB0;
+	struct Eq_167748 * x1_10024 = g_ptr10CFB0;
 	uint32 w4_10026 = (word32) x1_10024->w06D4;
-	struct Eq_167749 * x2_10022 = g_ptr10CFC0;
+	struct Eq_167751 * x2_10022 = g_ptr10CFC0;
 	x2_10022->w06D4 = (word16) w4_10026 - (word16) ((word32) ((uint64) (w4_10026 * ~0x6A3413E4) >> 32) >> 9) * 0x036B;
 	uint32 w4_10037 = (word32) x1_10024->w06D6;
 	x2_10022->w06D6 = (word16) w4_10037 - (word16) ((word32) ((uint64) ((w4_10037 >> 2) * 1255150261) >> 32) >> 6) * 0x036C;
@@ -48503,7 +48503,7 @@ void unsigned_short_modulo()
 	x2_10022->w0756 = (word16) w4_10783 - (word16) ((word32) ((uint64) ((w4_10783 >> 2) * 584846611) >> 32) >> 5) * 0x03AC;
 	uint32 w3_10795 = (word32) x1_10024->w0758;
 	x2_10022->w0758 = (word16) w3_10795 - (word16) ((word32) ((uint64) (w3_10795 * 1168450189) >> 32) >> 8) * 0x03AD;
-	struct Eq_167746 * x1_10807 = g_ptr10CFB0;
+	struct Eq_167748 * x1_10807 = g_ptr10CFB0;
 	uint32 w3_10809 = (word32) x1_10807->w075A;
 	x2_10022->w075A = (word16) w3_10809 - (word16) ((word32) ((uint64) (w3_10809 * 291802449) >> 32) >> 6) * 0x03AE;
 	uint32 w4_10820 = (word32) x1_10807->w075C;
@@ -48658,10 +48658,10 @@ void unsigned_short_modulo()
 	uint32 w3_11585 = (word32) x1_10807->w07DE;
 	uint32 w1_11591 = (word32) ((uint64) ((w3_11585 >> 4) * 0x10410411) >> 32);
 	x2_10022->w07DE = (word16) w3_11585 - (((word16) (w1_11591 >> 2) << 0x06) - (word16) (w1_11591 >> 2) << 0x04);
-	struct Eq_167746 * x1_11600 = g_ptr10CFB0;
+	struct Eq_167748 * x1_11600 = g_ptr10CFB0;
 	uint32 w4_11602 = (word32) x1_11600->w07E0;
 	uint32 w3_11607 = (word32) ((uint64) (w4_11602 * 63849861) >> 32);
-	struct Eq_167749 * x0_11598 = g_ptr10CFC0;
+	struct Eq_167751 * x0_11598 = g_ptr10CFC0;
 	x0_11598->w07E0 = (word16) w4_11602 - (word16) (w3_11607 + (w4_11602 - w3_11607 >> 1) >> 9) * 1009;
 	uint32 w3_11615 = (word32) x1_11600->w07E2;
 	x0_11598->w07E2 = (word16) w3_11615 - (word16) ((word32) ((uint64) ((w3_11615 >> 1) * 2177250749) >> 32) >> 8) * 1010;

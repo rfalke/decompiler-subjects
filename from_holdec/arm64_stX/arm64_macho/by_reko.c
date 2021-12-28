@@ -57,24 +57,15 @@ void _puts()
 
 #include "subject.h"
 
-// 0000000100002844: void _main(Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
-void _main(Eq_2 q1, Eq_2 q2, Eq_2 q3)
+// 0000000100002844: void _main()
+void _main()
 {
 	Eq_2 q0_18 = __movi_i8(~0x1111111111111111);
 	g_t8060 = q0_18;
 	g_t8070 = q0_18;
 	g_t8040 = q0_18;
 	g_t8050 = q0_18;
-	Eq_2 q2_33;
-	Eq_2 q3_34;
-	Eq_2 q1_32 = _full_write_with_str(&g_t8040, q0_18, q1, q2, q3, out q2_33, out q3_34);
-	_dump();
-	Eq_2 q0_44 = __movi_i8(~0x1111111111111111);
-	g_t8060 = q0_44;
-	g_t8070 = q0_44;
-	g_t8040 = q0_44;
-	g_t8050 = q0_44;
-	_full_store_with_byte_wise_st1(q0_44, q1_32, q2_33, q3_34);
+	_full_write_with_str();
 }
 
 // 0000000100002CC8: void _dump()
@@ -124,452 +115,199 @@ ptr64 _print_word()
 	return 0x100003F93;
 }
 
-// 0000000100002EB0: Register Eq_2 _full_write_with_str(Register (ptr64 Eq_2) x0, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3, Register out Eq_2 q2Out, Register out Eq_2 q3Out)
+// 0000000100002EB0: void _full_write_with_str()
 // Called from:
 //      _main
-Eq_2 _full_write_with_str(union Eq_2 * x0, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3, union Eq_2 & q2Out, union Eq_2 & q3Out)
+void _full_write_with_str()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	Eq_2 q1_34 = __add_i8(q0_29, q4_31);
-	Eq_2 q2_37 = __add_i8(q1_34, q4_31);
-	Eq_2 q3_40 = __add_i8(q2_37, q4_31);
-	*x0 = (union Eq_2 *) q0_29;
-	q2Out = q2_37;
-	q3Out = q3_40;
-	return q1_34;
 }
 
-// 0000000100002F04: void _full_store_with_byte_wise_st1(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002F04: void _full_store_with_byte_wise_st1()
 // Called from:
 //      _main
-void _full_store_with_byte_wise_st1(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _full_store_with_byte_wise_st1()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 0000000100002F58: void _full_store_with_8byte_wise_st1(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002F58: void _full_store_with_8byte_wise_st1()
 // Called from:
 //      _main
-void _full_store_with_8byte_wise_st1(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _full_store_with_8byte_wise_st1()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 0000000100002FAC: void _half_store_with_8byte_wise_st1(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100002FAC: void _half_store_with_8byte_wise_st1()
 // Called from:
 //      _main
-void _half_store_with_8byte_wise_st1(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _half_store_with_8byte_wise_st1()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 0000000100003000: void _full_store_2_regs_with_byte_wise_st1(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003000: void _full_store_2_regs_with_byte_wise_st1()
 // Called from:
 //      _main
-void _full_store_2_regs_with_byte_wise_st1(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _full_store_2_regs_with_byte_wise_st1()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 0000000100003054: void _full_store_4_regs_with_byte_wise_st1(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003054: void _full_store_4_regs_with_byte_wise_st1()
 // Called from:
 //      _main
-void _full_store_4_regs_with_byte_wise_st1(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _full_store_4_regs_with_byte_wise_st1()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 00000001000030A8: void _indexed_st1__one_byte_from_index_0(Register (ptr64 Eq_143) x0, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000030A8: void _indexed_st1__one_byte_from_index_0()
 // Called from:
 //      _main
-void _indexed_st1__one_byte_from_index_0(union Eq_143 * x0, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_st1__one_byte_from_index_0()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
-	*x0 = (union Eq_143 *) *q0_29;
 }
 
-// 00000001000030FC: void _indexed_st1__one_byte_from_index_3(Register (ptr64 Eq_143) x0, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000030FC: void _indexed_st1__one_byte_from_index_3()
 // Called from:
 //      _main
-void _indexed_st1__one_byte_from_index_3(union Eq_143 * x0, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_st1__one_byte_from_index_3()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
-	*x0 = (union Eq_143 *) *((word128) q0_29 + 3);
 }
 
-// 0000000100003150: void _indexed_st1__8_bytes_from_low(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003150: void _indexed_st1__8_bytes_from_low()
 // Called from:
 //      _main
-void _indexed_st1__8_bytes_from_low(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_st1__8_bytes_from_low()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 00000001000031A4: void _indexed_st1__8_bytes_from_high(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000031A4: void _indexed_st1__8_bytes_from_high()
 // Called from:
 //      _main
-void _indexed_st1__8_bytes_from_high(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_st1__8_bytes_from_high()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 00000001000031F8: void _write_interleaved_bytes_from_2_regs(Register word64 x0, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000031F8: void _write_interleaved_bytes_from_2_regs()
 // Called from:
 //      _main
-void _write_interleaved_bytes_from_2_regs(word64 x0, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _write_interleaved_bytes_from_2_regs()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	Eq_2 q1_34 = __add_i8(q0_29, q4_31);
-	__add_i8(__add_i8(q1_34, q4_31), q4_31);
-	__st2(x0, q0_29, q1_34);
 }
 
-// 000000010000324C: void _write_interleaved_bytes_from_2_regs__half_(Register word64 x0, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 000000010000324C: void _write_interleaved_bytes_from_2_regs__half_()
 // Called from:
 //      _main
-void _write_interleaved_bytes_from_2_regs__half_(word64 x0, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _write_interleaved_bytes_from_2_regs__half_()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	Eq_2 q1_34 = __add_i8(q0_29, q4_31);
-	__add_i8(__add_i8(q1_34, q4_31), q4_31);
-	__st2(x0, q0_29, q1_34);
 }
 
-// 00000001000032A0: void _write_interleaved_8_bytes_from_2_regs(Register word64 x0, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000032A0: void _write_interleaved_8_bytes_from_2_regs()
 // Called from:
 //      _main
-void _write_interleaved_8_bytes_from_2_regs(word64 x0, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _write_interleaved_8_bytes_from_2_regs()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	Eq_2 q1_34 = __add_i8(q0_29, q4_31);
-	__add_i8(__add_i8(q1_34, q4_31), q4_31);
-	__st2(x0, q0_29, q1_34);
 }
 
-// 00000001000032F4: void _indexed_st2__write_2_bytes_from_2_regs(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000032F4: void _indexed_st2__write_2_bytes_from_2_regs()
 // Called from:
 //      _main
-void _indexed_st2__write_2_bytes_from_2_regs(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_st2__write_2_bytes_from_2_regs()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 0000000100003348: void _indexed_st2__8_bytes_from_lows(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003348: void _indexed_st2__8_bytes_from_lows()
 // Called from:
 //      _main
-void _indexed_st2__8_bytes_from_lows(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_st2__8_bytes_from_lows()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 000000010000339C: void _indexed_st2__8_bytes_from_highs(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 000000010000339C: void _indexed_st2__8_bytes_from_highs()
 // Called from:
 //      _main
-void _indexed_st2__8_bytes_from_highs(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_st2__8_bytes_from_highs()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 00000001000033F0: void _write_interleaved_bytes_from_3_regs(Register word64 x0, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000033F0: void _write_interleaved_bytes_from_3_regs()
 // Called from:
 //      _main
-void _write_interleaved_bytes_from_3_regs(word64 x0, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _write_interleaved_bytes_from_3_regs()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	Eq_2 q1_34 = __add_i8(q0_29, q4_31);
-	Eq_2 q2_37 = __add_i8(q1_34, q4_31);
-	__add_i8(q2_37, q4_31);
-	__st3(x0, q0_29, q1_34, q2_37);
 }
 
-// 0000000100003444: void _write_interleaved_bytes_from_3_regs__half_(Register word64 x0, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003444: void _write_interleaved_bytes_from_3_regs__half_()
 // Called from:
 //      _main
-void _write_interleaved_bytes_from_3_regs__half_(word64 x0, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _write_interleaved_bytes_from_3_regs__half_()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	Eq_2 q1_34 = __add_i8(q0_29, q4_31);
-	Eq_2 q2_37 = __add_i8(q1_34, q4_31);
-	__add_i8(q2_37, q4_31);
-	__st3(x0, q0_29, q1_34, q2_37);
 }
 
-// 0000000100003498: void _write_interleaved_8_bytes_from_3_regs(Register word64 x0, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003498: void _write_interleaved_8_bytes_from_3_regs()
 // Called from:
 //      _main
-void _write_interleaved_8_bytes_from_3_regs(word64 x0, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _write_interleaved_8_bytes_from_3_regs()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	Eq_2 q1_34 = __add_i8(q0_29, q4_31);
-	Eq_2 q2_37 = __add_i8(q1_34, q4_31);
-	__add_i8(q2_37, q4_31);
-	__st3(x0, q0_29, q1_34, q2_37);
 }
 
-// 00000001000034EC: void _indexed_st3__write_3_bytes_from_3_regs(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000034EC: void _indexed_st3__write_3_bytes_from_3_regs()
 // Called from:
 //      _main
-void _indexed_st3__write_3_bytes_from_3_regs(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_st3__write_3_bytes_from_3_regs()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 0000000100003540: void _indexed_st3__8_bytes_from_lows(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003540: void _indexed_st3__8_bytes_from_lows()
 // Called from:
 //      _main
-void _indexed_st3__8_bytes_from_lows(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_st3__8_bytes_from_lows()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 0000000100003594: void _indexed_st3__8_bytes_from_highs(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003594: void _indexed_st3__8_bytes_from_highs()
 // Called from:
 //      _main
-void _indexed_st3__8_bytes_from_highs(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_st3__8_bytes_from_highs()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 00000001000035E8: void _write_interleaved_bytes_from_4_regs(Register word64 x0, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000035E8: void _write_interleaved_bytes_from_4_regs()
 // Called from:
 //      _main
-void _write_interleaved_bytes_from_4_regs(word64 x0, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _write_interleaved_bytes_from_4_regs()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	Eq_2 q1_34 = __add_i8(q0_29, q4_31);
-	Eq_2 q2_37 = __add_i8(q1_34, q4_31);
-	__st4(x0, q0_29, q1_34, q2_37, __add_i8(q2_37, q4_31));
 }
 
-// 000000010000363C: void _write_interleaved_bytes_from_4_regs__half_(Register word64 x0, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 000000010000363C: void _write_interleaved_bytes_from_4_regs__half_()
 // Called from:
 //      _main
-void _write_interleaved_bytes_from_4_regs__half_(word64 x0, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _write_interleaved_bytes_from_4_regs__half_()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	Eq_2 q1_34 = __add_i8(q0_29, q4_31);
-	Eq_2 q2_37 = __add_i8(q1_34, q4_31);
-	__st4(x0, q0_29, q1_34, q2_37, __add_i8(q2_37, q4_31));
 }
 
-// 0000000100003690: void _write_interleaved_8_bytes_from_4_regs(Register word64 x0, Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003690: void _write_interleaved_8_bytes_from_4_regs()
 // Called from:
 //      _main
-void _write_interleaved_8_bytes_from_4_regs(word64 x0, Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _write_interleaved_8_bytes_from_4_regs()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	Eq_2 q1_34 = __add_i8(q0_29, q4_31);
-	Eq_2 q2_37 = __add_i8(q1_34, q4_31);
-	__st4(x0, q0_29, q1_34, q2_37, __add_i8(q2_37, q4_31));
 }
 
-// 00000001000036E4: void _indexed_st4__write_4_bytes_from_4_regs(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 00000001000036E4: void _indexed_st4__write_4_bytes_from_4_regs()
 // Called from:
 //      _main
-void _indexed_st4__write_4_bytes_from_4_regs(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_st4__write_4_bytes_from_4_regs()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 0000000100003738: void _indexed_st4__8_bytes_from_lows(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 0000000100003738: void _indexed_st4__8_bytes_from_lows()
 // Called from:
 //      _main
-void _indexed_st4__8_bytes_from_lows(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_st4__8_bytes_from_lows()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 
-// 000000010000378C: void _indexed_st4__8_bytes_from_highs(Register Eq_2 q0, Register Eq_2 q1, Register Eq_2 q2, Register Eq_2 q3)
+// 000000010000378C: void _indexed_st4__8_bytes_from_highs()
 // Called from:
 //      _main
-void _indexed_st4__8_bytes_from_highs(Eq_2 q0, Eq_2 q1, Eq_2 q2, Eq_2 q3)
+void _indexed_st4__8_bytes_from_highs()
 {
-	word64 q0_64_64_28 = SLICE(__cmeq_i8(q0, q0), word64, 64);
-	__cmeq_i8(q1, q1);
-	__cmeq_i8(q2, q2);
-	__cmeq_i8(q3, q3);
-	Eq_2 q0_29 = SEQ(q0_64_64_28, 0x1716151413121110);
-	*((word128) q0_29 + 1) = 2242261671028070680;
-	Eq_2 q4_31 = __movi_i8(0x1010101010101010);
-	__add_i8(__add_i8(__add_i8(q0_29, q4_31), q4_31), q4_31);
 }
 

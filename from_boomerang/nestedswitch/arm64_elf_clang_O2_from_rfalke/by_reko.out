@@ -1,5 +1,6 @@
 === Using options:--aggressive-branch-removal
 0000000000400460: warning: Unable to resolve imported reference __gmon_start__.
+00000000004005C8: warning: Call target address 0000000000000000 is invalid.
 l00000000004005F4: warning: Non-integral switch expression
 0000000000400700: warning: Expected sizes of arrays to have been determined by now
 0000000000410DE0: warning: Expected sizes of arrays to have been determined by now

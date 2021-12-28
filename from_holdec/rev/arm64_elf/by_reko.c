@@ -14,10 +14,10 @@ int32 (* g_ptr1FFE8)(int32 x0, char ** x1, char ** x2) = &g_t0FC0; // 0000000000
 #include "subject.h"
 
 Eq_6 g_t0FC0 = ??/* Unexpected function type (fn int32 (int32, (ptr64 (ptr64 char)), (ptr64 (ptr64 char)))) */ ; // 0000000000000FC0
-// 0000000000001460: void fn0000000000001460(Register (ptr64 Eq_2) x0, Stack Eq_3 qwArg00)
-void fn0000000000001460(void (* x0)(), Eq_3 qwArg00)
+// 0000000000001460: void fn0000000000001460(Register (ptr64 Eq_2) x0, Stack word32 dwArg00)
+void fn0000000000001460(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(g_ptr1FFE8, qwArg00, (char *) fp + 8, g_ptr1FFE0, g_ptr1FF98, x0, fp);
+	x0_17 = (uint64) __libc_start_main(g_ptr1FFE8, (int32) qwArg00, (char *) fp + 8, g_ptr1FFE0, g_ptr1FF98, x0, fp);
 	abort();
 }
 

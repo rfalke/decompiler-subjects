@@ -168,7 +168,7 @@ void f(Eq_64 r0, Eq_65 r1)
 // 000084A8: void g()
 void g()
 {
-	f(0x00, SEQ(bLoc19, 0x00, 0x00));
+	f((A) 0x00, (B) 0x00);
 }
 
 // 00008518: void main()

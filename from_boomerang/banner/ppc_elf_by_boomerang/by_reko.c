@@ -88,7 +88,7 @@ word32 g_dw10012010 = 0x00; // 10012010
 
 Eq_39 g_t10000A6C = ??/* Unexpected function type (fn void ()) */ ; // 10000A6C
 word32 _IO_stdin_used = 0x00020001; // 10000A7C
-Eq_119 g_t10001E00 = // 10001E00
+Eq_120 g_t10001E00 = // 10001E00
 	{
 		'\0'
 	};
@@ -178,7 +178,7 @@ void call_frame_dummy()
 void main()
 {
 	__crxor(0x06, 0x06, 0x06);
-	struct Eq_85 * r3_12 = malloc(0x0C);
+	struct Eq_85 * r3_12 = malloc((size_t) 0x0C);
 	r3_12->dw0004 = 0x10001DF4;
 	word32 dwLoc88_180 = 0x02;
 	ptr32 * dwLoc84_181 = &r3_12->dw0004;
@@ -187,25 +187,25 @@ void main()
 		dwLoc88_180 += ~0x00;
 		if (dwLoc88_180 == ~0x00)
 			break;
-		Eq_100 r3_33 = (uint32) strlen(*dwLoc84_181);
-		Eq_100 dwLoc74_185 = r3_33;
+		Eq_101 r3_33 = (uint32) strlen(*dwLoc84_181);
+		Eq_101 dwLoc74_185 = r3_33;
 		if (r3_33 > 0x0A)
 			dwLoc74_185.u0 = 0x0A;
 		int32 dwLoc80_187;
 		for (dwLoc80_187 = 0x00; dwLoc80_187 <= 0x06; ++dwLoc80_187)
 		{
-			Eq_100 dwLoc7C_189 = 0x00;
+			Eq_101 dwLoc7C_189 = 0x00;
 			while (dwLoc7C_189 < dwLoc74_185)
 			{
 				int32 r0_60 = ((word32) *((word32) dwLoc7C_189.u0 + *dwLoc84_181) & 0xFF) + ~0x1F;
 				int32 dwLoc70_193 = r0_60;
 				if (r0_60 < 0x00)
 					dwLoc70_193 = 0x00;
-				Eq_163 dwLoc78_195 = 0x00;
+				Eq_164 dwLoc78_195 = 0x00;
 				while (dwLoc78_195 <= 0x06)
 				{
-					Eq_168 r0_84 = (dwLoc70_193 >> 0x03) + (r0_93 < 0x00);
-					Eq_171 r0_93 = (dwLoc70_193 >> 0x03) + (r0_84 < 0x00);
+					Eq_169 r0_84 = (dwLoc70_193 >> 0x03) + (word32) (r0_93 < 0x00);
+					Eq_172 r0_93 = (dwLoc70_193 >> 0x03) + (word32) (r0_84 < 0x00);
 					Mem103[(dwLoc7C_189 << 0x03) + (fp + ~0x87) + dwLoc78_195 + 0x28:byte] = Mem69[(dwLoc70_193 - (r0_93 << 0x03)) * 0x07 + dwLoc78_195 + 0x100120F4[(r0_84 * 0x07 + dwLoc80_187) * 0x04]:byte];
 					dwLoc78_195 = (word32) dwLoc78_195 + 1;
 				}
@@ -229,7 +229,7 @@ word32 g_dw100006E0 = 104740; // 100006E0
 // 100006E4: void __libc_csu_fini()
 void __libc_csu_fini()
 {
-	struct Eq_229 * r30_17 = g_dw100006E0 + 0x100006F0;
+	struct Eq_232 * r30_17 = g_dw100006E0 + 0x100006F0;
 	<anonymous> * r11_18[] = r30_17->ptrFFFF8004;
 	int32 r0_20 = r30_17->dwFFFF8000 - r11_18;
 	int32 r31_23 = (r0_20 >> 0x02) + ~0x00;
@@ -251,7 +251,7 @@ void __libc_csu_fini()
 // 10000774: void __libc_csu_init()
 void __libc_csu_init()
 {
-	struct Eq_265 * r30_23 = _init(&g_t10000780);
+	struct Eq_268 * r30_23 = _init(&g_t10000780);
 	<anonymous> * r28_27[] = r30_23->ptrFFFF800C;
 	int32 r31_28 = 0x00;
 	int32 r3_30 = r30_23->dwFFFF8008 - r28_27;
@@ -270,320 +270,320 @@ struct Eq_3 g_t10000780 = // 10000780
 	{
 		0x93E1001C,
 	};
-// 10000800: void _savefpr_14(Register (ptr32 Eq_293) r11, Register real64 f14, Register real64 f15, Register real64 f16, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
-void _savefpr_14(struct Eq_293 * r11, real64 f14, real64 f15, real64 f16, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+// 10000800: void _savefpr_14(Register (ptr32 Eq_296) r11, Register real64 f14, Register real64 f15, Register real64 f16, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+void _savefpr_14(struct Eq_296 * r11, real64 f14, real64 f15, real64 f16, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFF70 = f14;
 	_savefpr_15(r11, f15, f16, f17, f18, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 10000804: void _savefpr_15(Register (ptr32 Eq_293) r11, Register real64 f15, Register real64 f16, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 10000804: void _savefpr_15(Register (ptr32 Eq_296) r11, Register real64 f15, Register real64 f16, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_14
-void _savefpr_15(struct Eq_293 * r11, real64 f15, real64 f16, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_15(struct Eq_296 * r11, real64 f15, real64 f16, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFF78 = f15;
 	_savefpr_16(r11, f16, f17, f18, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 10000808: void _savefpr_16(Register (ptr32 Eq_293) r11, Register real64 f16, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 10000808: void _savefpr_16(Register (ptr32 Eq_296) r11, Register real64 f16, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_15
-void _savefpr_16(struct Eq_293 * r11, real64 f16, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_16(struct Eq_296 * r11, real64 f16, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFF80 = f16;
 	_savefpr_17(r11, f17, f18, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 1000080C: void _savefpr_17(Register (ptr32 Eq_293) r11, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 1000080C: void _savefpr_17(Register (ptr32 Eq_296) r11, Register real64 f17, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_16
-void _savefpr_17(struct Eq_293 * r11, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_17(struct Eq_296 * r11, real64 f17, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFF88 = f17;
 	_savefpr_18(r11, f18, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 10000810: void _savefpr_18(Register (ptr32 Eq_293) r11, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 10000810: void _savefpr_18(Register (ptr32 Eq_296) r11, Register real64 f18, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_17
-void _savefpr_18(struct Eq_293 * r11, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_18(struct Eq_296 * r11, real64 f18, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFF90 = f18;
 	_savefpr_19(r11, f19, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 10000814: void _savefpr_19(Register (ptr32 Eq_293) r11, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 10000814: void _savefpr_19(Register (ptr32 Eq_296) r11, Register real64 f19, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_18
-void _savefpr_19(struct Eq_293 * r11, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_19(struct Eq_296 * r11, real64 f19, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFF98 = f19;
 	_savefpr_20(r11, f20, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 10000818: void _savefpr_20(Register (ptr32 Eq_293) r11, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 10000818: void _savefpr_20(Register (ptr32 Eq_296) r11, Register real64 f20, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_19
-void _savefpr_20(struct Eq_293 * r11, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_20(struct Eq_296 * r11, real64 f20, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFA0 = f20;
 	_savefpr_21(r11, f21, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 1000081C: void _savefpr_21(Register (ptr32 Eq_293) r11, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 1000081C: void _savefpr_21(Register (ptr32 Eq_296) r11, Register real64 f21, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_20
-void _savefpr_21(struct Eq_293 * r11, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_21(struct Eq_296 * r11, real64 f21, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFA8 = f21;
 	_savefpr_22(r11, f22, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 10000820: void _savefpr_22(Register (ptr32 Eq_293) r11, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 10000820: void _savefpr_22(Register (ptr32 Eq_296) r11, Register real64 f22, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_21
-void _savefpr_22(struct Eq_293 * r11, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_22(struct Eq_296 * r11, real64 f22, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFB0 = f22;
 	_savefpr_23(r11, f23, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 10000824: void _savefpr_23(Register (ptr32 Eq_293) r11, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 10000824: void _savefpr_23(Register (ptr32 Eq_296) r11, Register real64 f23, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_22
-void _savefpr_23(struct Eq_293 * r11, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_23(struct Eq_296 * r11, real64 f23, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFB8 = f23;
 	_savefpr_24(r11, f24, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 10000828: void _savefpr_24(Register (ptr32 Eq_293) r11, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 10000828: void _savefpr_24(Register (ptr32 Eq_296) r11, Register real64 f24, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_23
-void _savefpr_24(struct Eq_293 * r11, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_24(struct Eq_296 * r11, real64 f24, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFC0 = f24;
 	_savefpr_25(r11, f25, f26, f27, f28, f29, f30, f31);
 }
 
-// 1000082C: void _savefpr_25(Register (ptr32 Eq_293) r11, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 1000082C: void _savefpr_25(Register (ptr32 Eq_296) r11, Register real64 f25, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_24
-void _savefpr_25(struct Eq_293 * r11, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_25(struct Eq_296 * r11, real64 f25, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFC8 = f25;
 	_savefpr_26(r11, f26, f27, f28, f29, f30, f31);
 }
 
-// 10000830: void _savefpr_26(Register (ptr32 Eq_293) r11, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 10000830: void _savefpr_26(Register (ptr32 Eq_296) r11, Register real64 f26, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_25
-void _savefpr_26(struct Eq_293 * r11, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_26(struct Eq_296 * r11, real64 f26, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFD0 = f26;
 	_savefpr_27(r11, f27, f28, f29, f30, f31);
 }
 
-// 10000834: void _savefpr_27(Register (ptr32 Eq_293) r11, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 10000834: void _savefpr_27(Register (ptr32 Eq_296) r11, Register real64 f27, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_26
-void _savefpr_27(struct Eq_293 * r11, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_27(struct Eq_296 * r11, real64 f27, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFD8 = f27;
 	_savefpr_28(r11, f28, f29, f30, f31);
 }
 
-// 10000838: void _savefpr_28(Register (ptr32 Eq_293) r11, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
+// 10000838: void _savefpr_28(Register (ptr32 Eq_296) r11, Register real64 f28, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_27
-void _savefpr_28(struct Eq_293 * r11, real64 f28, real64 f29, real64 f30, real64 f31)
+void _savefpr_28(struct Eq_296 * r11, real64 f28, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFE0 = f28;
 	_savefpr_29(r11, f29, f30, f31);
 }
 
-// 1000083C: void _savefpr_29(Register (ptr32 Eq_293) r11, Register real64 f29, Register real64 f30, Register real64 f31)
+// 1000083C: void _savefpr_29(Register (ptr32 Eq_296) r11, Register real64 f29, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_28
-void _savefpr_29(struct Eq_293 * r11, real64 f29, real64 f30, real64 f31)
+void _savefpr_29(struct Eq_296 * r11, real64 f29, real64 f30, real64 f31)
 {
 	r11->rFFFFFFE8 = f29;
 	_savefpr_30(r11, f30, f31);
 }
 
-// 10000840: void _savefpr_30(Register (ptr32 Eq_293) r11, Register real64 f30, Register real64 f31)
+// 10000840: void _savefpr_30(Register (ptr32 Eq_296) r11, Register real64 f30, Register real64 f31)
 // Called from:
 //      _savefpr_29
-void _savefpr_30(struct Eq_293 * r11, real64 f30, real64 f31)
+void _savefpr_30(struct Eq_296 * r11, real64 f30, real64 f31)
 {
 	r11->rFFFFFFF0 = f30;
 	_savefpr_31(r11, f31);
 }
 
-// 10000844: void _savefpr_31(Register (ptr32 Eq_293) r11, Register real64 f31)
+// 10000844: void _savefpr_31(Register (ptr32 Eq_296) r11, Register real64 f31)
 // Called from:
 //      _savefpr_30
-void _savefpr_31(struct Eq_293 * r11, real64 f31)
+void _savefpr_31(struct Eq_296 * r11, real64 f31)
 {
 	r11->rFFFFFFF8 = f31;
 }
 
-// 1000084C: void _savegpr_14(Register (ptr32 Eq_587) r11, Register word32 r14, Register word32 r15, Register word32 r16, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
-void _savegpr_14(struct Eq_587 * r11, word32 r14, word32 r15, word32 r16, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+// 1000084C: void _savegpr_14(Register (ptr32 Eq_590) r11, Register word32 r14, Register word32 r15, Register word32 r16, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+void _savegpr_14(struct Eq_590 * r11, word32 r14, word32 r15, word32 r16, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFB8 = r14;
 	_savegpr_15(r11, r15, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000850: void _savegpr_15(Register (ptr32 Eq_587) r11, Register word32 r15, Register word32 r16, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 10000850: void _savegpr_15(Register (ptr32 Eq_590) r11, Register word32 r15, Register word32 r16, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_14
-void _savegpr_15(struct Eq_587 * r11, word32 r15, word32 r16, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_15(struct Eq_590 * r11, word32 r15, word32 r16, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFBC = r15;
 	_savegpr_16(r11, r16, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000854: void _savegpr_16(Register (ptr32 Eq_587) r11, Register word32 r16, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 10000854: void _savegpr_16(Register (ptr32 Eq_590) r11, Register word32 r16, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_15
-void _savegpr_16(struct Eq_587 * r11, word32 r16, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_16(struct Eq_590 * r11, word32 r16, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFC0 = r16;
 	_savegpr_17(r11, r17, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000858: void _savegpr_17(Register (ptr32 Eq_587) r11, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 10000858: void _savegpr_17(Register (ptr32 Eq_590) r11, Register word32 r17, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_16
-void _savegpr_17(struct Eq_587 * r11, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_17(struct Eq_590 * r11, word32 r17, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFC4 = r17;
 	_savegpr_18(r11, r18, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 1000085C: void _savegpr_18(Register (ptr32 Eq_587) r11, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 1000085C: void _savegpr_18(Register (ptr32 Eq_590) r11, Register word32 r18, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_17
-void _savegpr_18(struct Eq_587 * r11, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_18(struct Eq_590 * r11, word32 r18, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFC8 = r18;
 	_savegpr_19(r11, r19, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000860: void _savegpr_19(Register (ptr32 Eq_587) r11, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 10000860: void _savegpr_19(Register (ptr32 Eq_590) r11, Register word32 r19, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_18
-void _savegpr_19(struct Eq_587 * r11, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_19(struct Eq_590 * r11, word32 r19, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFCC = r19;
 	_savegpr_20(r11, r20, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000864: void _savegpr_20(Register (ptr32 Eq_587) r11, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 10000864: void _savegpr_20(Register (ptr32 Eq_590) r11, Register word32 r20, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_19
-void _savegpr_20(struct Eq_587 * r11, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_20(struct Eq_590 * r11, word32 r20, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFD0 = r20;
 	_savegpr_21(r11, r21, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000868: void _savegpr_21(Register (ptr32 Eq_587) r11, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 10000868: void _savegpr_21(Register (ptr32 Eq_590) r11, Register word32 r21, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_20
-void _savegpr_21(struct Eq_587 * r11, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_21(struct Eq_590 * r11, word32 r21, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFD4 = r21;
 	_savegpr_22(r11, r22, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 1000086C: void _savegpr_22(Register (ptr32 Eq_587) r11, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 1000086C: void _savegpr_22(Register (ptr32 Eq_590) r11, Register word32 r22, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_21
-void _savegpr_22(struct Eq_587 * r11, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_22(struct Eq_590 * r11, word32 r22, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFD8 = r22;
 	_savegpr_23(r11, r23, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000870: void _savegpr_23(Register (ptr32 Eq_587) r11, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 10000870: void _savegpr_23(Register (ptr32 Eq_590) r11, Register word32 r23, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_22
-void _savegpr_23(struct Eq_587 * r11, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_23(struct Eq_590 * r11, word32 r23, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFDC = r23;
 	_savegpr_24(r11, r24, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000874: void _savegpr_24(Register (ptr32 Eq_587) r11, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 10000874: void _savegpr_24(Register (ptr32 Eq_590) r11, Register word32 r24, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_23
-void _savegpr_24(struct Eq_587 * r11, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_24(struct Eq_590 * r11, word32 r24, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFE0 = r24;
 	_savegpr_25(r11, r25, r26, r27, r28, r29, r30, r31);
 }
 
-// 10000878: void _savegpr_25(Register (ptr32 Eq_587) r11, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 10000878: void _savegpr_25(Register (ptr32 Eq_590) r11, Register word32 r25, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_24
-void _savegpr_25(struct Eq_587 * r11, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_25(struct Eq_590 * r11, word32 r25, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFE4 = r25;
 	_savegpr_26(r11, r26, r27, r28, r29, r30, r31);
 }
 
-// 1000087C: void _savegpr_26(Register (ptr32 Eq_587) r11, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 1000087C: void _savegpr_26(Register (ptr32 Eq_590) r11, Register word32 r26, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_25
-void _savegpr_26(struct Eq_587 * r11, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_26(struct Eq_590 * r11, word32 r26, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFE8 = r26;
 	_savegpr_27(r11, r27, r28, r29, r30, r31);
 }
 
-// 10000880: void _savegpr_27(Register (ptr32 Eq_587) r11, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 10000880: void _savegpr_27(Register (ptr32 Eq_590) r11, Register word32 r27, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_26
-void _savegpr_27(struct Eq_587 * r11, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_27(struct Eq_590 * r11, word32 r27, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFEC = r27;
 	_savegpr_28(r11, r28, r29, r30, r31);
 }
 
-// 10000884: void _savegpr_28(Register (ptr32 Eq_587) r11, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
+// 10000884: void _savegpr_28(Register (ptr32 Eq_590) r11, Register word32 r28, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_27
-void _savegpr_28(struct Eq_587 * r11, word32 r28, word32 r29, word32 r30, word32 r31)
+void _savegpr_28(struct Eq_590 * r11, word32 r28, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFF0 = r28;
 	_savegpr_29(r11, r29, r30, r31);
 }
 
-// 10000888: void _savegpr_29(Register (ptr32 Eq_587) r11, Register word32 r29, Register word32 r30, Register word32 r31)
+// 10000888: void _savegpr_29(Register (ptr32 Eq_590) r11, Register word32 r29, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_28
-void _savegpr_29(struct Eq_587 * r11, word32 r29, word32 r30, word32 r31)
+void _savegpr_29(struct Eq_590 * r11, word32 r29, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFF4 = r29;
 	_savegpr_30(r11, r30, r31);
 }
 
-// 1000088C: void _savegpr_30(Register (ptr32 Eq_587) r11, Register word32 r30, Register word32 r31)
+// 1000088C: void _savegpr_30(Register (ptr32 Eq_590) r11, Register word32 r30, Register word32 r31)
 // Called from:
 //      _savegpr_29
-void _savegpr_30(struct Eq_587 * r11, word32 r30, word32 r31)
+void _savegpr_30(struct Eq_590 * r11, word32 r30, word32 r31)
 {
 	r11->dwFFFFFFF8 = r30;
 	_savegpr_31(r11, r31);
 }
 
-// 10000890: void _savegpr_31(Register (ptr32 Eq_587) r11, Register word32 r31)
+// 10000890: void _savegpr_31(Register (ptr32 Eq_590) r11, Register word32 r31)
 // Called from:
 //      _savegpr_30
-void _savegpr_31(struct Eq_587 * r11, word32 r31)
+void _savegpr_31(struct Eq_590 * r11, word32 r31)
 {
 	r11->dwFFFFFFFC = r31;
 }

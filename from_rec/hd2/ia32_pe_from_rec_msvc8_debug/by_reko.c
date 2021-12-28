@@ -254,7 +254,6 @@ Eq_1234 g_t415838 = // 00415838
 		&g_t417170,
 		&g_t4171C8,
 	};
-CHAR g_t415844 = 'U'; // 00415844
 Eq_370 g_a415B64[] = // 00415B64
 	{
 	};
@@ -265,7 +264,6 @@ Eq_475 g_t415BB0 = // 00415BB0
 	{
 		0x61772027,
 	};
-CHAR g_t415D4C = 'S'; // 00415D4C
 byte g_a416144[] = // 00416144
 	{
 	};
@@ -559,7 +557,7 @@ l00412824:
 			goto l0041283E;
 		}
 	}
-	ebx_154 = (Eq_370) &g_t415D4C;
+	ebx_154 = (Eq_370) "Stack corrupted near unknown variable";
 	goto l00412824;
 }
 
@@ -854,7 +852,7 @@ void fn004111E0(struct Eq_9 * es, struct Eq_10 * ds, Eq_2 dwArg04, uint32 dwArg0
 	{
 		word32 edx_133;
 		word32 edi_134;
-		fn004123F0(es, ds, dwArg04, 0x01, 0x05, &g_t415844, out edx_133, out edi_134);
+		fn004123F0(es, ds, dwArg04, 0x01, 0x05, "Unknown Runtime Check Error\n\r", out edx_133, out edi_134);
 	}
 	else
 	{

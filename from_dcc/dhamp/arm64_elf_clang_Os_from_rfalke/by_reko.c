@@ -78,10 +78,10 @@ real64 g_r400D30 = 1e-06; // 0000000000400D30
 
 #include "subject.h"
 
-// 0000000000400600: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400600: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400630, qwArg00, (char *) fp + 8, g_ptr400638, g_ptr400640, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400630, (int32) qwArg00, (char *) fp + 8, g_ptr400638, g_ptr400640, x0, fp);
 	abort();
 }
 
@@ -141,43 +141,39 @@ void __do_global_dtors_aux()
 // 0000000000400710: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw411DF0 != 0x00)
+	if (g_qw411DF0 != 0x00 && g_qw400748 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400748;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400748 = null; // 0000000000400748
-// 0000000000400750: void main(Register word64 x20, Register word64 x22, Register word64 x26, Register word64 x27, Register word64 x30)
-void main(word64 x20, word64 x22, word64 x26, word64 x27, word64 x30)
+word64 g_qw400748 = 0x00; // 0000000000400748
+// 0000000000400750: void main(Register word32 x1_32_32, Register word64 x20, Register word64 x22, Register word64 x26, Register word64 x27, Register word64 x30)
+void main(word32 x1_32_32, word64 x20, word64 x22, word64 x26, word64 x27, word64 x30)
 {
-	word32 x27_32_32_122 = SLICE(x27, word32, 32);
-	word32 x22_32_32_129 = SLICE(x22, word32, 32);
-	word32 x20_32_32_133 = SLICE(x20, word32, 32);
-	x0_50 = (uint64) printf("Start...%c\n\n", 0x00);
-	word32 x8_32_32_115 = SLICE(0x00400000, word32, 32);
-	real64 d8_53 = g_r400D30;
-	up32 w27_59;
-	word64 x22_130 = SEQ(x22_32_32_129, 9000);
-	word64 x20_134 = SEQ(x20_32_32_133, 54040);
-	for (w27_59 = 0x00; w27_59 != 0x06; ++w27_59)
+	word32 x27_32_32_126 = SLICE(x27, word32, 32);
+	word32 x22_32_32_133 = SLICE(x22, word32, 32);
+	word32 x20_32_32_137 = SLICE(x20, word32, 32);
+	x0_52 = (uint64) printf("Start...%c\n\n", '\a');
+	word32 x8_32_32_119 = SLICE(0x00400000, word32, 32);
+	real64 d8_55 = 1e-06;
+	up32 w27_61;
+	word64 x22_134 = SEQ(x22_32_32_133, 9000);
+	word64 x20_138 = SEQ(x20_32_32_137, 54040);
+	for (w27_61 = 0x00; w27_61 != 0x06; ++w27_61)
 	{
-		ui64 x8_116 = SEQ(x8_32_32_115, w27_59);
-		word64 x27_123 = SEQ(x27_32_32_122, w27_59);
-		if (w27_59 <= 0x05)
+		ui64 x8_120 = SEQ(x8_32_32_119, w27_61);
+		word64 x27_127 = SEQ(x27_32_32_126, w27_61);
+		if (w27_61 <= 0x05)
 		{
-			(*((char *) g_a400D38 + x8_116 * 8))();
+			(*((char *) g_a400D38 + x8_120 * 8))();
 			return;
 		}
 	}
-	x0_79 = (uint64) printf("\n\n...End%c", 0x00);
+	x0_83 = (uint64) printf("\n\n...End%c", '\a');
 }
 
 // 000000000040096C: void sq(Register word64 x0, Register word32 x10_32_32)
@@ -196,7 +192,7 @@ void sq(word64 x0, word32 x10_32_32)
 void sroot(word64 d0)
 {
 	real64 d1_9 = (word64) q0;
-	real64 d2_5 = g_r400D30;
+	real64 d2_5 = 1e-06;
 	real64 d0_10 = d1_9 * 0.5;
 	if (d1_9 * 0.5 * d2_5 < d1_9)
 	{
@@ -220,10 +216,10 @@ void dply()
 {
 }
 
-// 0000000000400A78: Register int32 fib(Register int32 w0, Register out Eq_195 w19Out, Register out Eq_195 w20Out)
+// 0000000000400A78: Register int32 fib(Register int32 w0, Register out Eq_202 w19Out, Register out Eq_202 w20Out)
 // Called from:
 //      fib
-int32 fib(int32 w0, union Eq_195 & w19Out, union Eq_195 & w20Out)
+int32 fib(int32 w0, union Eq_202 & w19Out, union Eq_202 & w20Out)
 {
 	word32 x20_32_32_59 = SLICE(x20, word32, 32);
 	int32 w19_19;
@@ -248,8 +244,8 @@ int32 fib(int32 w0, union Eq_195 & w19Out, union Eq_195 & w20Out)
 	return w19_19;
 }
 
-// 0000000000400AC8: void stest(Register (arr Eq_258) x0, Register (arr Eq_268) x1)
-void stest(Eq_258 x0[], Eq_268 x1[])
+// 0000000000400AC8: void stest(Register (arr Eq_265) x0, Register (arr Eq_275) x1)
+void stest(Eq_265 x0[], Eq_275 x1[])
 {
 	word32 w9_8;
 	for (w9_8 = 0x00; w9_8 != 9000; ++w9_8)
@@ -316,11 +312,13 @@ void mcopy()
 {
 	int64 x8_30;
 	for (x8_30 = 0x00; x8_30 != 0x0E; ++x8_30)
-		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x9C)[x8_30].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_351) (0x00400E19 + x8_30);
-	union Eq_361 * x0_47 = fopen("zyxw.vut", "w");
-	word32 x0_32_32_120 = SLICE(x0_47, word32, 32);
+		(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 0x9C)[x8_30].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_358) (0x00400E19 + x8_30);
+	union Eq_368 * x0_47 = fopen("zyxw.vut", "w");
 	if (x0_47 == null)
-		exit(SEQ(SLICE((uint64) printf("Cannot open file", 0x00), word32, 32), ~0x00));
+	{
+		x0_53 = (uint64) printf("Cannot open file");
+		exit(~0x00);
+	}
 	else
 	{
 		ui32 w20_59 = (word32) bLocA4;
@@ -333,7 +331,7 @@ void mcopy()
 			{
 				do
 				{
-					x0_32_32_120 = SLICE((uint64) _IO_putc(SEQ(x0_32_32_120, w8_66 & 0xFF), x0_47), word32, 32);
+					x0_73 = (uint64) _IO_putc(w8_66 & 0xFF, x0_47);
 					w8_66 = (word32) *x23_64;
 					++x23_64;
 				} while (w8_66 != 0x00);

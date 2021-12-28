@@ -5,25 +5,17 @@ subject.exe: warning: Win32 X86-64 main procedure finder not implemented yet.
 0000000140001AA6: warning: Unable to resolve imported reference KERNEL32.dll!RtlVirtualUnwind.
 0000000140001A88: warning: Unable to guess parameters of MSVCR90.dll!__crt_debugger_hook.
 0000000140001A88: warning: Unable to guess parameters of MSVCR90.dll!__crt_debugger_hook.
-000000014000120C: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-000000014000103D: warning: Unable to determine format string for call to 'sprintf'.
-0000000140001084: warning: Unable to determine format string for call to 'sprintf'.
-000000014000115E: warning: Unable to determine format string for call to 'printf'.
-0000000140001255: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 00000001400014C2: warning: Unable to guess parameters of MSVCR90.dll!_cexit.
-000000014000120C: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-00000001400015FD: warning: Procedure Win32CrtStartup previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
+000000014000189E: warning: Call target address 0000000000000000 is invalid.
 0000000140001A94: warning: Unable to guess parameters of MSVCR90.dll!_unlock.
 00000001400018F2: warning: Unable to guess parameters of MSVCR90.dll!_XcptFilter.
+00000001400018D6: warning: Call target address 0000000000000000 is invalid.
 0000000140001AA0: warning: Unable to guess parameters of MSVCR90.dll!_lock.
 0000000140001812: warning: Unable to guess parameters of MSVCR90.dll!_encode_pointer.
 0000000140001832: warning: Unable to guess parameters of MSVCR90.dll!_encode_pointer.
 0000000140001844: warning: Unable to guess parameters of MSVCR90.dll!_encode_pointer.
 0000000140001A94: warning: Unable to guess parameters of MSVCR90.dll!_unlock.
-000000014000131A: warning: Procedure fn0000000140001300 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 0000000140001582: warning: Unable to guess parameters of MSVCR90.dll!_encode_pointer.
 0000000140001588: warning: Unable to guess parameters of MSVCR90.dll!_fmode.
 00000001400015A5: warning: Unable to guess parameters of MSVCR90.dll!_commode.
 00000001400015E0: warning: Unable to guess parameters of MSVCR90.dll!_configthreadlocale.
-000000014000120C: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-0000000140001204: warning: Procedure fn0000000140001190 previously had a return address of 8 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.

@@ -137,7 +137,7 @@ word32 count_zeros(int32 dwArg04, word32 * dwArg08)
 	word32 eax_13 = 0x00;
 	do
 	{
-		eax_13 = (word32) (*edx_11 == 0x00) + (eax_13 + ~0x00);
+		eax_13 = (word32) ((bool) (*edx_11 != 0x00) + (eax_13 + ~0x00));
 		++edx_11;
 	} while (edx_11 != ecx_12);
 	return -eax_13;

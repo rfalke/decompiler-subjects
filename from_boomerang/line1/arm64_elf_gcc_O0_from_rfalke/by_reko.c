@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t11000 = // 0000000000011000
+struct Eq_74 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,10 +78,10 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 0000000000000810: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000810: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -126,7 +126,7 @@ void register_tm_clones()
 // 00000000000008D8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t11000;
+	struct Eq_74 * x19_12 = &g_t11000;
 	if ((word32) g_b11058 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -155,31 +155,30 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000958: void chomp(Register (ptr64 char) x0, Register Eq_110 x1, Register (ptr64 Eq_111) x2)
+// 0000000000000958: void chomp(Register (ptr64 char) x0, Register int32 w1, Register (ptr64 Eq_113) x2)
 // Called from:
 //      main
-void chomp(char * x0, Eq_110 x1, FILE * x2)
+void chomp(char * x0, int32 w1, FILE * x2)
 {
-	word32 x1_32_32 = SLICE(x1, word32, 32);
-	char * x0_21 = fgets(x0, x1, x2);
+	int32 w1 = (word32) x1;
+	char * x0_21 = fgets(x0, w1, x2);
 	if (x0_21 != null)
 	{
-		char * x0_30 = strchr(x0_21, SEQ(x1_32_32, 0x0A));
+		char * x0_30 = strchr(x0_21, '\n');
 		if (x0_30 != null)
 			*x0_30 = 0x00;
 	}
 }
 
-// 00000000000009BC: void main(Register int32 w0, Register (ptr64 Eq_138) x1)
-void main(int32 w0, struct Eq_138 * x1)
+// 00000000000009BC: void main(Register int32 w0, Register (ptr64 Eq_139) x1)
+void main(int32 w0, struct Eq_139 * x1)
 {
 	if (w0 > 0x01)
 	{
-		word32 x1_32_32_34 = SLICE(0x0AF0, word32, 32);
 		FILE * x0_25 = fopen(x1->ptr0008, "r");
 		if (x0_25 != null)
 		{
-			chomp(fp - 0x0400, SEQ(x1_32_32_34, 0x0400), x0_25);
+			chomp(fp - 0x0400, 0x0400, x0_25);
 			if (fp != 0x0400)
 				x0_44 = (uint64) puts(fp - 0x0400);
 			x0_49 = (uint64) fclose(x0_25);

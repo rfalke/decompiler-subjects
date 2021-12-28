@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400540: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400540: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400570, qwArg00, (char *) fp + 8, g_ptr400578, g_ptr400580, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400570, (int32) qwArg00, (char *) fp + 8, g_ptr400578, g_ptr400580, x0, fp);
 	abort();
 }
 
@@ -124,61 +124,57 @@ void __do_global_dtors_aux()
 // 0000000000400650: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400688 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400688;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400688 = null; // 0000000000400688
+word64 g_qw400688 = 0x00; // 0000000000400688
 // 0000000000400690: void main()
 void main()
 {
-	x0_20 = (uint64) __isoc99_scanf("%f", 0x00);
-	x0_27 = (uint64) printf("a is %f, b is %f\n", 0x00);
-	struct Eq_114 * sp_28 = fp + ~0x37;
-	real32 s0_29 = dwLoc2C;
+	x0_20 = (uint64) __isoc99_scanf("%f", fp + ~0x1B);
+	x0_31 = (uint64) printf("a is %f, b is %f\n", 5.0, (real64) dwLoc24);
+	struct Eq_124 * sp_32 = fp + ~0x37;
+	real32 s0_33 = dwLoc2C;
 	if (dwLoc2C == 5.0F)
 	{
-		x0_35 = (uint64) puts("Equal");
-		sp_28 = fp + ~0x3F;
-		s0_29 = dwLoc34;
+		x0_39 = (uint64) puts("Equal");
+		sp_32 = fp + ~0x3F;
+		s0_33 = dwLoc34;
 	}
-	Eq_122 s0_48;
-	if (s0_29 != 5.0F)
+	Eq_131 s0_52;
+	if (s0_33 != 5.0F)
 	{
-		x0_44 = (uint64) puts("Not Equal");
-		sp_28 = (struct Eq_114 *) ((char *) sp_28 - 8);
-		s0_48 = sp_28->t000C;
-		if (s0_48 < 5.0F)
+		x0_48 = (uint64) puts("Not Equal");
+		sp_32 = (struct Eq_124 *) ((char *) sp_32 - 8);
+		s0_52 = sp_32->t000C;
+		if (s0_52 < 5.0F)
 		{
-			x0_53 = (uint64) puts("Greater");
-			sp_28 = (struct Eq_114 *) ((char *) sp_28 - 8);
-			s0_48 = sp_28->t0004;
+			x0_57 = (uint64) puts("Greater");
+			sp_32 = (struct Eq_124 *) ((char *) sp_32 - 8);
+			s0_52 = sp_32->t0004;
 		}
-		if (s0_48 < 5.0F)
+		if (s0_52 < 5.0F)
 		{
 l0000000000400730:
-			if (s0_48 <= 5.0F)
+			if (s0_52 <= 5.0F)
 			{
-				x0_76 = (uint64) puts("Greater or Equal");
-				s0_48 = sp_28->t0004;
+				x0_80 = (uint64) puts("Greater or Equal");
+				s0_52 = sp_32->t0004;
 			}
-			if (s0_48 > 5.0F)
-				x0_87 = (uint64) puts("Less");
+			if (s0_52 > 5.0F)
+				x0_91 = (uint64) puts("Less");
 			return;
 		}
 	}
-	x0_62 = (uint64) puts("Less or Equal");
-	sp_28 = (struct Eq_114 *) ((char *) sp_28 - 8);
-	s0_48 = sp_28->t000C;
+	x0_66 = (uint64) puts("Less or Equal");
+	sp_32 = (struct Eq_124 *) ((char *) sp_32 - 8);
+	s0_52 = sp_32->t000C;
 	goto l0000000000400730;
 }
 

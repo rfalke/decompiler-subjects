@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_100 g_t11000 = // 0000000000011000
+struct Eq_121 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,17 +81,22 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 0000000000000740: void main(Stack int32 dwArg04)
 void main(int32 dwArg04)
 {
-	x0_12 = (uint64) printf("Input number: ", 0x00);
-	x0_17 = (uint64) __isoc99_scanf("%d", 0x00);
+	x0_12 = (uint64) printf("Input number: ");
+	x0_17 = (uint64) __isoc99_scanf("%d", fp + 0x04);
+	word64 x1_33 = SEQ(SLICE(fp + 0x04, word32, 32), dwArg04);
+	word64 x2_38 = SEQ(x2_32_32, dwArg04);
 	if (dwArg04 > 0x01)
-		fib.part.0();
-	x0_33 = (uint64) printf("fibonacci(%d) = %d\n", 0x00);
+	{
+		x1_33 = SEQ(SLICE(x1_25, word32, 32), dwArg04);
+		x2_38 = SEQ(SLICE(x2_27, word32, 32), fib.part.0());
+	}
+	x0_43 = (uint64) printf("fibonacci(%d) = %d\n", (int32) x1_33, (int32) x2_38);
 }
 
-// 000000000000079C: void _start(Register (ptr64 Eq_37) x0, Stack Eq_38 qwArg00)
-void _start(void (* x0)(), Eq_38 qwArg00)
+// 000000000000079C: void _start(Register (ptr64 Eq_56) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -136,7 +141,7 @@ void register_tm_clones()
 // 0000000000000860: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_100 * x19_12 = &g_t11000;
+	struct Eq_121 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -165,10 +170,10 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 00000000000008E0: Register int32 fib(Register int32 w0, Register out Eq_138 w19Out)
+// 00000000000008E0: Register int32 fib(Register int32 w0, Register out ptr64 w19Out)
 // Called from:
 //      fib.part.0
-int32 fib(int32 w0, union Eq_138 & w19Out)
+int32 fib(int32 w0, ptr64 & w19Out)
 {
 	if (w0 <= 0x01)
 		return;
@@ -176,16 +181,15 @@ int32 fib(int32 w0, union Eq_138 & w19Out)
 	return;
 }
 
-// 00000000000008F8: void fib.part.0()
+// 00000000000008F8: Register word32 fib.part.0()
 // Called from:
 //      main
 //      fib
-void fib.part.0()
+word32 fib.part.0()
 {
-	word32 w19_55;
-	word32 w19_56;
-	fib(fib(w0 - 0x01, out w19_55) - 0x01, out w19_56);
-	x0_38 = (uint64) printf("%d", 0x00);
+	word64 x19_30 = <invalid>;
+	word32 w19_33 = (word32) x19_30;
+	return w19_33;
 }
 
 // 0000000000000938: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

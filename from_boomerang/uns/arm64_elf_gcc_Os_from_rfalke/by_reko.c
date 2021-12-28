@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_107 g_t11000 = // 0000000000011000
+struct Eq_112 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -83,23 +83,23 @@ void main(Eq_9 w0)
 {
 	if (w0 > 3999999999)
 	{
-		x0_22 = (uint64) printf("Population exceeds %u\n", 0x00);
+		x0_24 = (uint64) printf("Population exceeds %u\n", 4000000000);
 		if (w0 > ~0x1000)
 			goto l0000000000000768;
 	}
-	x0_30 = (uint64) printf("The mask is %x\n", 0x00);
+	x0_34 = (uint64) printf("The mask is %x\n", 0xF0000000);
 	if (w0 <= 0x01)
 		return;
 l0000000000000768:
-	x0_38 = (uint64) puts("Arguments supplied");
+	x0_42 = (uint64) puts("Arguments supplied");
 	if (w0 > 0x02)
-		x0_46 = (uint64) puts("Three or more arguments");
+		x0_50 = (uint64) puts("Three or more arguments");
 }
 
-// 00000000000007BC: void _start(Register (ptr64 Eq_44) x0, Stack Eq_45 qwArg00)
-void _start(void (* x0)(), Eq_45 qwArg00)
+// 00000000000007BC: void _start(Register (ptr64 Eq_47) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -144,7 +144,7 @@ void register_tm_clones()
 // 0000000000000880: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_107 * x19_12 = &g_t11000;
+	struct Eq_112 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)

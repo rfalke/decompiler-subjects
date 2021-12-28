@@ -61,12 +61,16 @@ word64 g_qw410DE0 = 0x00; // 0000000000410DE0
 
 #include "subject.h"
 
-Eq_98 g_t400908 = // 0000000000400908
+Eq_107 g_t400908 = // 0000000000400908
 	{
 		-3.1415927F
 	};
+real32 g_r400914 = -110.0F; // 0000000000400914
+real32 g_r400918 = 362880.0F; // 0000000000400918
+real32 g_r40091C = -210.0F; // 000000000040091C
+real32 g_r400920 = 6.227021e+09F; // 0000000000400920
 real32 g_r400924 = 0.19634955F; // 0000000000400924
-Eq_98 g_t400928 = // 0000000000400928
+Eq_107 g_t400928 = // 0000000000400928
 	{
 		3.1515927F
 	};
@@ -76,10 +80,10 @@ Eq_98 g_t400928 = // 0000000000400928
 
 #include "subject.h"
 
-// 0000000000400570: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400570: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4005A0, qwArg00, (char *) fp + 8, g_ptr4005A8, g_ptr4005B0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4005A0, (int32) qwArg00, (char *) fp + 8, g_ptr4005A8, g_ptr4005B0, x0, fp);
 	abort();
 }
 
@@ -139,31 +143,38 @@ void __do_global_dtors_aux()
 // 0000000000400680: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DE0 != 0x00)
+	if (g_qw410DE0 != 0x00 && g_qw4006B8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4006B8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4006B8 = null; // 00000000004006B8
+word64 g_qw4006B8 = 0x00; // 00000000004006B8
 // 00000000004006C0: void main()
 void main()
 {
-	Eq_98 s8_107 = g_t400908;
-	real32 s15_58 = g_r400924;
-	Eq_98 s9_59 = g_t400928;
+	ptr64 sp_109 = fp + ~0x67 + 8;
+	Eq_107 s8_111 = g_t400908;
+	real32 s11_50 = -110.0F;
+	real32 s12_52 = 362880.0F;
+	real32 s13_54 = -210.0F;
+	real32 s14_56 = 6.227021e+09F;
+	real32 s15_58 = 0.19634955F;
+	Eq_107 s9_59 = g_t400928;
 	do
 	{
-		x0_104 = (uint64) printf("sin(%.4f): %.4f\n", 0x00);
-		s8_107 += s15_58;
-	} while (s8_107 <= s9_59);
+		real32 s1_71 = s8_111 * s8_111;
+		real32 s2_72 = s1_71 * s1_71;
+		real32 s6_75 = s8_111 * s2_72;
+		struct Eq_134 * v33_65 = sp_109 + 0;
+		real32 s6_84 = s2_72 * s6_75;
+		x0_108 = (uint64) printf("sin(%.4f): %.4f\n", (real64) s8_111, (real64) (s8_111 * (s1_71 / -6.0F + 1.0F) + ((s6_75 * (s1_71 / v33_65->r0004 + 1.0F)) / v33_65->r0000 + (((s1_71 / s11_50 + 1.0F) * s6_84) / s12_52 + ((s1_71 / s13_54 + 1.0F) * (s2_72 * s6_84)) / s14_56))));
+		sp_109 += ~0x07;
+		s8_111 += s15_58;
+	} while (s8_111 <= s9_59);
 }
 
 // 00000000004007E0: void sin()

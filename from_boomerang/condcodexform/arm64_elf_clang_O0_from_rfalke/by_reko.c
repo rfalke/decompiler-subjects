@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -124,20 +124,16 @@ void __do_global_dtors_aux()
 // 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4005D8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4005D8 = null; // 00000000004005D8
+word64 g_qw4005D8 = 0x00; // 00000000004005D8
 // 00000000004005E0: void func1()
 void func1()
 {
@@ -218,9 +214,9 @@ void main(int32 w0)
 		dwLoc3C_185 = dwLoc48_180 & 0x01;
 	}
 	if (dwLoc3C_185 != 0x00)
-		x0_147 = (uint64) printf("Pass\n", 0x00);
+		x0_147 = (uint64) printf("Pass\n");
 	else
-		x0_141 = (uint64) printf("Failed!\n", 0x00);
+		x0_141 = (uint64) printf("Failed!\n");
 }
 
 // 0000000000400800: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

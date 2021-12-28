@@ -1,7 +1,4 @@
 === Using options:--aggressive-branch-removal
-0000000100002884: warning: AArch64 instruction Nyi is not supported yet.
-00000001000028E0: warning: AArch64 instruction Nyi is not supported yet.
-000000010000293C: warning: AArch64 instruction Nyi is not supported yet.
 0000000100002998: warning: AArch64 instruction Nyi is not supported yet.
 00000001000029F4: warning: AArch64 instruction Nyi is not supported yet.
 0000000100002A50: error: Rewriting A64 mnemonic 'ld1' (D400000) is not supported yet.

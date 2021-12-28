@@ -207,7 +207,7 @@ l00000000004012E8:
 		{
 l0000000000401481:
 			rsp_106->t0050.u0 = 0x00;
-			rsp_106->t0040.u0 = 0x00;
+			rsp_106->t0040.u0 = 0;
 			r15_242.u0 = 0x00;
 			rbp_154.u0 = 0x00;
 			goto l0000000000401426;
@@ -223,7 +223,7 @@ l00000000004012F1:
 		} while (rdx_127 != r12_111);
 		r14_114 += rsp_106->qw0008;
 		rsp_106->t0050.u0 = 0x00;
-		rsp_106->t0040.u0 = 0x00;
+		rsp_106->t0040.u0 = 0;
 		Eq_7 rbx_149 = r13_112;
 		Eq_7 rax_151 = 0x00;
 		rbp_154.u0 = 0x00;
@@ -233,7 +233,7 @@ l00000000004012F1:
 			rsp_106->ptr0010 = r15_161;
 			if (rbp_154 == rax_151)
 			{
-				_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJRFvP6workerERS5_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_(&rsp_106->ptr0010, 4199904, rbx_149, rbp_154, &rsp_106->t0040, r13_112, r15_161, 0x00);
+				_ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJRFvP6workerERS5_EEEvN9__gnu_cxx17__normal_iteratorIPS0_S2_EEDpOT_(&rsp_106->ptr0010, 4199904, rbx_149, rbp_154, &rsp_106->t0040, r13_112, r15_161, 0);
 				rbx_149.u0 = (word128) rbx_149 + 8;
 				rbp_154 = rsp_106->t0048;
 				if (r12_111 == rbx_149)
@@ -289,7 +289,7 @@ l0000000000401426:
 						do
 						{
 							if (*rax_312.u0 != 0x00)
-								fn00000000004011B0(rdx_306, rbp_154, 0x00, rsp_106->ptr0018, rsp_106->t0020, rsp_106->t0030, rsp_106->t0040, rsp_106->t0048, rsp_106->t0050);
+								fn00000000004011B0(rdx_306, rbp_154, 0, rsp_106->ptr0018, rsp_106->t0020, rsp_106->t0030, rsp_106->t0040, rsp_106->t0048, rsp_106->t0050);
 							rax_312.u0 = (word128) rax_312 + 8;
 						} while (rax_312 != rbp_154);
 					}
@@ -427,11 +427,11 @@ void task(worker * rdi)
 				rsi_104->t0000.u2 = 0x7A7A7542;
 				rax_196 = (struct Eq_466 *) (rsi_104 + 4);
 			}
-			else if (rcx_44 - rbx_43 <= 0x09 && (word32) ((uint64) (bpl_81 + dil_83)) <= 0x09)
+			else if (rcx_44 - rbx_43 <= 0x09 && (word32) (bpl_81 + dil_83) <= 0x09)
 			{
 				if (r11 != 0x0F)
 				{
-					struct Eq_749 * r14_97 = 0x0F - r11;
+					struct Eq_748 * r14_97 = 0x0F - r11;
 					up32 r14d_99 = (word32) r14_97;
 					byte r14b_153 = (byte) r14_97;
 					word64 r12_98 = fp - 88 + r11;
@@ -444,7 +444,7 @@ void task(worker * rdi)
 								rsi_104->t0000 = *r12_98;
 								if ((r14b_153 & 0x02) != 0x00)
 								{
-									struct Eq_827 * rax_178 = (uint64) r14d_99;
+									struct Eq_826 * rax_178 = (uint64) r14d_99;
 									Mem182[rsi_104 - 0x02 + rax_178:word16] = Mem173[r12_98 - 0x02 + rax_178:word16];
 								}
 							}
@@ -452,17 +452,17 @@ void task(worker * rdi)
 						else
 						{
 							rsi_104->t0000 = *r12_98;
-							struct Eq_804 * rax_162 = (uint64) r14d_99;
+							struct Eq_803 * rax_162 = (uint64) r14d_99;
 							Mem166[rsi_104 - 0x04 + rax_162:word32] = Mem160[r12_98 - 0x04 + rax_162:word32];
 						}
 					}
 					else
 					{
 						rsi_104->t0000 = *r12_98;
-						struct Eq_768 * rax_107 = (uint64) r14d_99;
+						struct Eq_767 * rax_107 = (uint64) r14d_99;
 						Mem109[rsi_104 - 0x08 + rax_107:word64] = Mem105[r12_98 - 0x08 + rax_107:word64];
 						word64 rax_110 = rsi_104 + 0x08;
-						struct Eq_781 * rdx_113 = rsi_104 - (rax_110 & ~0x07);
+						struct Eq_780 * rdx_113 = rsi_104 - (rax_110 & ~0x07);
 						word64 (* r12_116)[] = r12_98 - rdx_113;
 						uint32 eax_123 = (word32) rdx_113 + r14d_99 & ~0x07;
 						if (eax_123 >= 0x08)
@@ -470,7 +470,7 @@ void task(worker * rdi)
 							uint32 edx_131 = 0x00;
 							do
 							{
-								Eq_839 rsi_137 = (uint64) edx_131;
+								Eq_838 rsi_137 = (uint64) edx_131;
 								Mem144[(rax_110 & ~0x07) + rsi_137:word64] = Mem141[r12_116 + rsi_137:word64];
 								edx_131 += 0x08;
 							} while (edx_131 < (eax_123 & ~0x07));
@@ -568,7 +568,7 @@ void task(worker * rdi)
 					rax_498 = 0x01;
 				up32 eax_507 = (word32) rax_498;
 				byte al_558 = (byte) eax_507;
-				union Eq_654 * r12_506 = (word64) r11.u1 + (fp - 88);
+				union Eq_653 * r12_506 = (word64) r11.u1 + (fp - 88);
 				if (eax_507 < 0x08)
 				{
 					if ((al_558 & 0x04) == 0x00)
@@ -578,7 +578,7 @@ void task(worker * rdi)
 							rsi_104->t0000 = *r12_506;
 							if ((al_558 & 0x02) != 0x00)
 							{
-								struct Eq_717 * rdx_583 = (uint64) eax_507;
+								struct Eq_716 * rdx_583 = (uint64) eax_507;
 								Mem587[rsi_104 - 0x02 + rdx_583:word16] = Mem578[r12_506 - 0x02 + rdx_583:word16];
 							}
 						}
@@ -586,17 +586,17 @@ void task(worker * rdi)
 					else
 					{
 						rsi_104->t0000 = *r12_506;
-						struct Eq_694 * rdx_567 = (uint64) eax_507;
+						struct Eq_693 * rdx_567 = (uint64) eax_507;
 						Mem571[rsi_104 - 0x04 + rdx_567:word32] = Mem565[r12_506 - 0x04 + rdx_567:word32];
 					}
 				}
 				else
 				{
 					rsi_104->t0000 = *r12_506;
-					Eq_658 rdx_522 = (uint64) eax_507;
+					Eq_657 rdx_522 = (uint64) eax_507;
 					Mem524[rsi_104 - 0x08 + rdx_522:word64] = Mem520[r12_506 - 0x08 + rdx_522:word64];
 					word64 r14_518 = rsi_104 + 0x08;
-					struct Eq_671 * rdx_526 = rsi_104 - (r14_518 & ~0x07);
+					struct Eq_670 * rdx_526 = rsi_104 - (r14_518 & ~0x07);
 					word64 (* r12_527)[] = r12_506 - rdx_526;
 					uint32 edx_534 = (word32) rdx_526 + eax_507 & ~0x07;
 					if (edx_534 >= 0x08)
@@ -604,7 +604,7 @@ void task(worker * rdi)
 						uint32 ebx_541 = 0x00;
 						do
 						{
-							Eq_729 r13_546 = (uint64) ebx_541;
+							Eq_728 r13_546 = (uint64) ebx_541;
 							Mem553[(r14_518 & ~0x07) + r13_546:word64] = Mem550[r12_527 + r13_546:word64];
 							ebx_541 += 0x08;
 						} while (ebx_541 < (edx_534 & ~0x07));
@@ -629,8 +629,8 @@ void task(worker * rdi)
 	}
 }
 
-// 0000000000401C40: void _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvP6workerES4_EEEEE6_M_runEv(Register (ptr64 Eq_851) rdi)
-void _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvP6workerES4_EEEEE6_M_runEv(struct Eq_851 * rdi)
+// 0000000000401C40: void _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvP6workerES4_EEEEE6_M_runEv(Register (ptr64 Eq_850) rdi)
+void _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvP6workerES4_EEEEE6_M_runEv(struct Eq_850 * rdi)
 {
 	word64 r8_6 = rdi->qw0008;
 	rdi->ptr0010();
@@ -662,7 +662,7 @@ void _ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJRFvP6workerERS5_EEEvN9__
 	int64 r12_31 = rax_24 - r14_25;
 	if (r12_31 >> 0x03 != 0xFFFFFFFFFFFFFFF)
 	{
-		Eq_905 rax_121 = 0x01;
+		Eq_904 rax_121 = 0x01;
 		if (r12_31 >> 0x03 != 0x00)
 			rax_121 = r12_31 >> 0x03;
 		Eq_7 rsi_185;
@@ -694,10 +694,10 @@ void _ZNSt6vectorISt6threadSaIS0_EE17_M_realloc_insertIJRFvP6workerERS5_EEEvN9__
 l0000000000401CF6:
 		word64 * r15_195 = (word64) r13_187 + r15_137;
 		*r15_195 = 0x00;
-		struct Eq_949 * rax_209;
+		struct Eq_948 * rax_209;
 		word64 rcx_212;
 		_Znwm();
-		rax_209->ptr0000 = (struct Eq_948 *) &g_t4030B0;
+		rax_209->ptr0000 = (struct Eq_947 *) &g_t4030B0;
 		word64 rdx_219 = *rcx;
 		rax_209->qw0010 = rdx;
 		rax_209->qw0008 = rdx_219;
@@ -707,7 +707,7 @@ l0000000000401CF6:
 		_ZNSt6thread15_M_start_threadESt10unique_ptrINS_6_StateESt14default_deleteIS1_EEPFvvE();
 		if (rax_209 != null)
 		{
-			struct Eq_948 * rax_236 = rax_209->ptr0000;
+			struct Eq_947 * rax_236 = rax_209->ptr0000;
 			rax_236->ptr0008();
 		}
 		Eq_7 rax_246 = r14_25;
@@ -734,7 +734,7 @@ l0000000000401CF6:
 		Eq_7 xmm0_291 = __punpcklqdq((word128) r13_187, (word128) rcx_273);
 		if (r14_25 != 0x00)
 			((real64) xmm0_291, r14_25, rdi->qw0010 - r14_25, rdx_248);
-		rdi->ptr0000 = (struct Eq_1240 *) xmm0_291;
+		rdi->ptr0000 = (struct Eq_1239 *) xmm0_291;
 		rdi->qw0010 = (word64) r13_187 + r12_131;
 		return;
 	}
@@ -762,11 +762,11 @@ l0000000000401E59:
 		word64 rdx_99;
 		word64 rcx_100;
 		__cxa_end_catch();
-		struct Eq_1022 ** rdi_105;
+		struct Eq_1021 ** rdi_105;
 		word64 rdx_106;
 		word64 rcx_107;
 		_Unwind_Resume();
-		struct Eq_1022 * rax_110 = *rdi_105;
+		struct Eq_1021 * rax_110 = *rdi_105;
 		word64 rsi_115;
 		rax_110->ptr0008();
 		rdi_117 = rbx;
@@ -789,7 +789,7 @@ void _ZNSt6vectorIP6workerSaIS1_EE17_M_realloc_insertIJS1_EEEvN9__gnu_cxx17__nor
 		__libc_csu_init(0xFFFFFFFFFFFFFFF, rsi, 0x00403010);
 		return;
 	}
-	Eq_1100 rdx_48 = 0x01;
+	Eq_1099 rdx_48 = 0x01;
 	if (rax_30 >> 0x03 != 0x00)
 		rdx_48 = rax_30 >> 0x03;
 	uint64 rbx_116;
@@ -861,7 +861,7 @@ void __libc_csu_init(word64 rdx, Eq_7 rsi, word32 edi)
 	int64 rbp_31 = 4214104 - 0x00404D48;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_1211 rbx_43 = 0x00;
+		Eq_1210 rbx_43 = 0x00;
 		do
 		{
 			(*((const char *) g_a404D48 + rbx_43 * 0x08))();

@@ -349,7 +349,7 @@ void inst_15_values_var_0()
 //      main
 void inst_15_flags_var_0()
 {
-	up32 eax_25 = -212912351;
+	up32 eax_26 = -212912351;
 }
 
 // 08049DF6: void inst_16_values_var_0()

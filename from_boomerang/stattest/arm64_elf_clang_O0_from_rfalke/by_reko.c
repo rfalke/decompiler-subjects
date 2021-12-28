@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,25 +124,20 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
+word64 g_qw400638 = 0x00; // 0000000000400638
 // 0000000000400640: void main()
 void main()
 {
-	stat("test/source/stattest.c", fp - 0x98);
-	x0_30 = (uint64) printf("Stat returns %d; size of file is %d\n", 0x00);
+	x0_32 = (uint64) printf("Stat returns %d; size of file is %d\n", stat("test/source/stattest.c", fp - 0x98), (int32) qwLoc68);
 }
 
 // 00000000004006A0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)
@@ -174,12 +169,11 @@ void __libc_csu_fini()
 {
 }
 
-// 0000000000400720: void stat(Register (ptr64 char) x0, Register (ptr64 Eq_101) x1)
+// 0000000000400720: Register int32 stat(Register (ptr64 char) x0, Register (ptr64 Eq_110) x1)
 // Called from:
 //      main
-void stat(char * x0, struct stat * x1)
+int32 stat(char * x0, struct stat * x1)
 {
-	word32 x0_32_32_8 = SLICE(x0, word32, 32);
-	x0_10 = (uint64) __xstat(SEQ(x0_32_32_8, 0x00), x0, x1);
+	return __xstat(0x00, x0, x1);
 }
 

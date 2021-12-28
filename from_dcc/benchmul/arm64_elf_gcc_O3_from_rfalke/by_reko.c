@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_131 g_t11000 = // 0000000000011000
+struct Eq_177 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -82,28 +82,32 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 void main(int64 qwArg00)
 {
 	x0_16 = (uint64) puts("enter number of iterations");
-	x0_20 = (uint64) __isoc99_scanf("%ld", 0x00);
-	x0_25 = (uint64) printf("executing %ld iterations\n", 0x00);
-	x0_28 = (uint64) __isoc99_scanf("%d", 0x00);
-	x0_32 = (uint64) __isoc99_scanf("%d", 0x00);
+	x0_21 = (uint64) __isoc99_scanf("%ld", fp);
+	x0_26 = (uint64) printf("executing %ld iterations\n", (int32) qwArg00);
+	x0_30 = (uint64) __isoc99_scanf("%d", fp + -2);
+	word32 x1_32_32_87 = SLICE(fp + -1, word32, 32);
+	x0_34 = (uint64) __isoc99_scanf("%d", fp + -1);
+	ui32 w1_105 = dwLoc08;
+	word64 x1_86 = SEQ(x1_32_32_87, dwLoc08);
 	if (qwArg00 > 0x00)
 	{
-		word64 x3_39 = 0x01;
+		word64 x3_41 = 0x01;
 		do
 		{
-			word32 w2_40;
-			for (w2_40 = 0x28; w2_40 != 0x00; --w2_40)
-				;
-			++x3_39;
-		} while (x3_39 - (qwArg00 + 0x01) != 0x00);
+			word32 w2_42;
+			for (w2_42 = 0x28; w2_42 != 0x00; --w2_42)
+				w1_105 *= w1_105 * 0x03 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105 * w1_105;
+			++x3_41;
+		} while (x3_41 - (qwArg00 + 0x01) != 0x00);
+		x1_86 = SEQ(x1_32_32_87, w1_105);
 	}
-	x0_84 = (uint64) printf("a=%d\n", 0x00);
+	x0_92 = (uint64) printf("a=%d\n", (int32) x1_86);
 }
 
-// 000000000000088C: void _start(Register (ptr64 Eq_68) x0, Stack Eq_69 qwArg00)
-void _start(void (* x0)(), Eq_69 qwArg00)
+// 000000000000088C: void _start(Register (ptr64 Eq_112) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -148,7 +152,7 @@ void register_tm_clones()
 // 0000000000000950: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_131 * x19_12 = &g_t11000;
+	struct Eq_177 * x19_12 = &g_t11000;
 	if ((word32) g_b11048 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)

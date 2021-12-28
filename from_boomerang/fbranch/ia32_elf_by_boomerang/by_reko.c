@@ -170,30 +170,30 @@ void main()
 	__align(fp - 0x0C);
 	scanf("%f", fp - 0x08);
 	printf("a is %f, b is %f\n", 5.0, (real64) rLoc08);
-	real64 rLoc1_157 = (real64) rLoc08;
-	real64 rLoc1_161 = rLoc1_157;
-	if ((cond((real64) g_r80485CC - rLoc1_157) ^ 0x40) == 0x00)
+	real64 rLoc1_161 = (real64) rLoc08;
+	real64 rArg0_166 = rLoc1_161;
+	if ((cond((real64) 5.0F - rLoc1_161) & 0x45 ^ 0x40) == 0x00)
 	{
 		puts("Equal");
-		rLoc1_161 = (real64) rLoc08;
+		rArg0_166 = (real64) rLoc08;
 	}
-	if ((real64) g_r80485CC > rLoc1_161)
+	if ((real64) 5.0F > rArg0_166)
 	{
 		puts("Greater");
-		rLoc1_161 = (real64) rLoc08;
+		rArg0_166 = (real64) rLoc08;
 	}
-	real64 rLoc1_176 = rLoc1_161;
-	if (rLoc1_161 >= rLoc1_161)
+	real64 rArg0_181 = rArg0_166;
+	if (rArg0_166 >= rArg0_166)
 	{
 		puts("Less or Equal");
-		rLoc1_176 = (real64) rLoc08;
+		rArg0_181 = (real64) rLoc08;
 	}
-	if ((real64) g_r80485CC >= rLoc1_176)
+	if ((real64) 5.0F >= rArg0_181)
 	{
 		puts("Greater or Equal");
-		rLoc1_176 = (real64) rLoc08;
+		rArg0_181 = (real64) rLoc08;
 	}
-	if (rLoc1_176 > (real64) g_r80485CC)
+	if (rArg0_181 > (real64) 5.0F)
 		puts("Less");
 }
 

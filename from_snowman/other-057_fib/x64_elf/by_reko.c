@@ -85,11 +85,11 @@ char g_str4005F4[] = "%d"; // 00000000004005F4
 
 #include "subject.h"
 
-// 0000000000400410: void _start(Register (ptr64 Eq_8) rdx, Stack Eq_9 qwArg00)
-void _start(void (* rdx)(), Eq_9 qwArg00)
+// 0000000000400410: void _start(Register (ptr64 Eq_8) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t400543, qwArg00, (char *) fp + 8, &g_t400570, &g_t4005E0, rdx, fp);
+	__libc_start_main(&g_t400543, (int32) qwArg00, (char *) fp + 8, &g_t400570, &g_t4005E0, rdx, fp);
 	__hlt();
 }
 
@@ -123,25 +123,25 @@ void frame_dummy()
 	register_tm_clones();
 }
 
-// 00000000004004FD: Register word32 fib(Register Eq_52 edi)
+// 00000000004004FD: Register word32 fib(Register int32 edi)
 // Called from:
 //      fib
 //      main
-word32 fib(Eq_52 edi)
+word32 fib(int32 edi)
 {
-	Eq_52 edi = (word32) rdi;
+	int32 edi = (word32) rdi;
 	uint64 rax_50;
 	if (edi <= 0x01)
 		rax_50 = (uint64) edi;
 	else
-		rax_50 = (uint64) (fib((uint64) (edi - 0x02)) + fib((uint64) (edi - 0x01)));
+		rax_50 = (uint64) (fib(edi - 0x02) + fib(edi - 0x01));
 	return (word32) rax_50;
 }
 
 // 0000000000400543: void main()
 void main()
 {
-	printf("%d", (uint64) fib(0x05));
+	printf("%d", fib(0x05));
 }
 
 // 0000000000400570: void __libc_csu_init(Register word64 rdx, Register word64 rsi, Register word32 edi)
@@ -150,7 +150,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	word32 edi = (word32) rdi;
 	_init();
 	int64 rbp_31 = 6293336 - 0x00600750;
-	Eq_95 rbx_33 = 0x00;
+	Eq_94 rbx_33 = 0x00;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
 		do

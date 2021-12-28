@@ -47,7 +47,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_90 g_t11000 = // 0000000000011000
+struct Eq_92 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -99,10 +99,10 @@ void main()
 	x1_9->qw0018 = 0x0A;
 }
 
-// 000000000000070C: void _start(Register (ptr64 Eq_27) x0, Stack Eq_28 qwArg00)
-void _start(void (* x0)(), Eq_28 qwArg00)
+// 000000000000070C: void _start(Register (ptr64 Eq_27) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -147,7 +147,7 @@ void register_tm_clones()
 // 00000000000007D0: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_90 * x19_12 = &g_t11000;
+	struct Eq_92 * x19_12 = &g_t11000;
 	if ((word32) g_b11030 == 0x00)
 	{
 		if (g_qw10FB0 != 0x00)
@@ -176,8 +176,8 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000850: void func(Register (ptr64 Eq_127) x0)
-void func(struct Eq_127 * x0)
+// 0000000000000850: void func(Register (ptr64 Eq_129) x0)
+void func(struct Eq_129 * x0)
 {
 	x0->b0010 = 0x6B;
 	x0->dw0000 = 0x01;

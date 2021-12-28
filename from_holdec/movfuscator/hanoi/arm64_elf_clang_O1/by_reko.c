@@ -6,7 +6,7 @@
 
 FILE * stdout = null; // 0000000000411058
 byte g_b411060 = 0x00; // 0000000000411060
-Eq_199 g_t411068 = // 0000000000411068
+Eq_219 g_t411068 = // 0000000000411068
 	{
 		
 		{
@@ -37,7 +37,7 @@ word64 g_qw410FE0 = 0x00; // 0000000000410FE0
 
 #include "subject.h"
 
-struct Eq_353 g_t411000 = // 0000000000411000
+struct Eq_375 g_t411000 = // 0000000000411000
 	{
 		0x00,
 	};
@@ -79,10 +79,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400660: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400660: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400690, qwArg00, (char *) fp + 8, g_ptr400698, g_ptr4006A0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400690, (int32) qwArg00, (char *) fp + 8, g_ptr400698, g_ptr4006A0, x0, fp);
 	abort();
 }
 
@@ -142,71 +142,68 @@ void __do_global_dtors_aux()
 // 0000000000400770: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4007A8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4007A8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4007A8 = null; // 00000000004007A8
+word64 g_qw4007A8 = 0x00; // 00000000004007A8
 // 00000000004007B0: Register (ptr64 ptr64) new_tower(Register (ptr64 ptr64) x0, Register out ptr64 x8Out)
 // Called from:
 //      main
 ptr64 * new_tower(ptr64 * x0, ptr64 & x8Out)
 {
-	word32 x0_32_32_13 = SLICE(x0, word32, 32);
-	ptr64 * x0_15 = calloc(SEQ(x0_32_32_13, 0x01), __sbfiz(x0, 2) + 0x10);
+	ptr64 * x0_15 = calloc((size_t) 0x01, (size_t) (__sbfiz(x0, 2) + 0x10));
 	*x0_15 = x0_15 + 2;
 	x8Out = x0_15 + 2;
 	return x0_15;
 }
 
-// 00000000004007D8: Register word32 text(Register word32 w0, Register word32 w2, Register out ptr64 x8Out, Register out Eq_128 w19Out, Register out ptr64 x29Out, Register out ptr64 x30Out)
+// 00000000004007D8: Register word32 text(Register word32 w0, Register word32 w1, Register word32 w2, Register (ptr64 char) x3, Register out ptr64 x8Out, Register out Eq_131 w19Out, Register out ptr64 x29Out, Register out ptr64 x30Out)
 // Called from:
 //      add_disk
 //      remove_disk
 //      main
-word32 text(word32 w0, word32 w2, ptr64 & x8Out, union Eq_128 & w19Out, ptr64 & x29Out, ptr64 & x30Out)
+word32 text(word32 w0, word32 w1, word32 w2, char * x3, ptr64 & x8Out, union Eq_131 & w19Out, ptr64 & x29Out, ptr64 & x30Out)
 {
 	word32 w8_23 = g_dw411080;
+	int32 w1_31 = 0x01 - w0 + w8_23;
 	word32 w20_26 = w2;
-	x0_39 = (uint64) printf("\x1B[%d;%dH", 0x00);
-	word64 x1_46 = SEQ(x1_32_32, 0x01 - w0 + w8_23);
-	ptr64 x8_86 = SEQ(SLICE(0x00411000, word32, 32), w8_23 + 0x01);
+	char * x1_40 = SEQ(x1_32_32, w1_31);
+	x0_43 = (uint64) printf("\x1B[%d;%dH", w1_31, 0x00 - w2 + (w8_23 + 0x01) * __bfm(w1, 31, 30));
+	ptr64 x8_88 = SEQ(SLICE(0x00411000, word32, 32), w8_23 + 0x01);
 	if (w2 != 0x00)
 	{
 		do
 		{
-			x1_46 = x3;
+			x1_40 = x3;
 			--w20_26;
-			x0_49 = (uint64) printf("%s", 0x00);
+			x0_53 = (uint64) printf("%s", x3);
 		} while (w20_26 != 0x00);
 	}
-	x8Out = x8_86;
+	x8Out = x8_88;
 	w19Out.u0 = <invalid>;
 	x29Out = x19;
 	x30Out = x29;
-	return (word32) x1_46;
+	return (word32) x1_40;
 }
 
-// 0000000000400850: Register uint64 add_disk(Sequence (ptr64 ptr64) x8_32_32_w0, Register word32 w1, Register out ptr64 x8Out, Register out Eq_128 w19Out, Register out Eq_128 w20Out)
+// 0000000000400850: Register uint64 add_disk(Sequence (ptr64 ptr64) x8_32_32_w0, Register word32 w1, Register out ptr64 x8Out, Register out Eq_131 w19Out, Register out Eq_131 w20Out)
 // Called from:
 //      move
 //      main
-uint64 add_disk(ptr64 * x8_32_32_w0, word32 w1, ptr64 & x8Out, union Eq_128 & w19Out, union Eq_128 & w20Out)
+uint64 add_disk(ptr64 * x8_32_32_w0, word32 w1, ptr64 & x8Out, union Eq_131 & w19Out, union Eq_131 & w20Out)
 {
+	word32 w0 = (word32) x8_32_32_w0;
 	int64 x10_15 = __sbfiz(x8_32_32_w0, 3);
-	struct Eq_182 * x9_17 = 4264040 + x10_15;
+	struct Eq_202 * x9_17 = 4264040 + x10_15;
 	int64 x12_21 = (int64) x9_17->dw0004;
 	x9_17->dw0008 = (word32) x12_21 + 0x01;
-	(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&g_t411068)[x10_15 /64 8].a0000[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000[x12_21 * 4 /64 8].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_199) w1;
+	(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&g_t411068)[x10_15 /64 8].a0000[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000[x12_21 * 4 /64 8].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0] = (Eq_219) w1;
 	word64 x29_41;
 	word64 x30_42;
 	word64 x8_43;
@@ -218,47 +215,48 @@ uint64 add_disk(ptr64 * x8_32_32_w0, word32 w1, ptr64 & x8Out, union Eq_128 & w1
 	return x0_69;
 }
 
-// 00000000004008C0: Register word32 remove_disk(Sequence (ptr64 ptr64) x8_32_32_w0, Register out ptr64 x8Out, Register out Eq_128 w19Out)
+// 00000000004008C0: Register word32 remove_disk(Sequence (ptr64 ptr64) x8_32_32_w0, Register out ptr64 x8Out, Register out Eq_131 w19Out)
 // Called from:
 //      move
-word32 remove_disk(ptr64 * x8_32_32_w0, ptr64 & x8Out, union Eq_128 & w19Out)
+word32 remove_disk(ptr64 * x8_32_32_w0, ptr64 & x8Out, union Eq_131 & w19Out)
 {
+	word32 w0 = (word32) x8_32_32_w0;
 	int64 x9_21 = __sbfiz(x8_32_32_w0, 3);
-	struct Eq_228 * x11_23 = 4264040 + x9_21;
+	struct Eq_249 * x11_23 = 4264040 + x9_21;
 	int64 x12_28 = (int64) x11_23->dw0004;
 	x11_23->dw0008 = (word32) x12_28 - 0x01;
-	Eq_199 x9_32 = (&g_t411068)[x9_21 /64 8];
+	Eq_219 x9_32 = (&g_t411068)[x9_21 /64 8];
 	ptr64 x8_47;
 	word32 w19_73;
 	word64 x29_74;
 	word64 x30_75;
-	text((&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x9_32.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000, (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x9_32.a0000[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000[(x12_28 - 0x01) * 4 /64 8].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0], out x8_47, out w19_73, out x29_74, out x30_75);
+	text((&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x9_32.a0000[1].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000, w0, (&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&x9_32.a0000[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000[(x12_28 - 0x01) * 4 /64 8].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0], "  ", out x8_47, out w19_73, out x29_74, out x30_75);
 	x8Out = x8_47;
 	w19Out.u0 = <invalid>;
-	word64 x19_43 = <invalid>;
-	return (word32) x19_43;
+	word64 x19_42 = <invalid>;
+	return (word32) x19_42;
 }
 
-// 0000000000400924: Register word32 move(Register Eq_275 w0, Register word64 x8, Register out Eq_128 w21Out)
+// 0000000000400924: Register word32 move(Register word32 w0, Register word64 x8, Register out Eq_131 w21Out)
 // Called from:
 //      move
 //      main
-word32 move(Eq_275 w0, word64 x8, union Eq_128 & w21Out)
+word32 move(word32 w0, word64 x8, union Eq_131 & w21Out)
 {
-	Eq_275 w0 = (word32) x0;
+	word32 w0 = (word32) x0;
 	word32 x8_32_32 = SLICE(x8, word32, 32);
 	if (w0 != 0x00)
 	{
 		do
 		{
-			word64 x19_71 = <invalid>;
+			word64 x19_70 = <invalid>;
 			word64 x8_74;
 			word64 x8_92;
-			word32 w21_215;
-			word32 w19_216;
-			word32 w19_217;
-			word32 w20_218;
-			add_disk(SEQ(SLICE(x8_74, word32, 32), (word32) x19_71), remove_disk(SEQ(x8_32_32, (word32) SEQ(0x00, move(w0, x8, out w21_215))), out x8_74, out w19_216), out x8_92, out w19_217, out w20_218);
+			word32 w21_220;
+			word32 w19_221;
+			word32 w19_222;
+			word32 w20_223;
+			add_disk(SEQ(SLICE(x8_74, word32, 32), (word32) x19_70), remove_disk(SEQ(x8_32_32, (word32) SEQ(0x00, move(w0, x8, out w21_220))), out x8_74, out w19_221), out x8_92, out w19_222, out w20_223);
 			word64 x21_50 = <invalid>;
 			x8_32_32 = SLICE(x8_92, word32, 32);
 		} while ((word32) x21_50 != 0x00);
@@ -267,8 +265,8 @@ word32 move(Eq_275 w0, word64 x8, union Eq_128 & w21Out)
 	return (word32) qwLoc20;
 }
 
-// 0000000000400994: void main(Register int32 w0, Register (ptr64 Eq_321) x1)
-void main(int32 w0, struct Eq_321 * x1)
+// 0000000000400994: void main(Register int32 w0, Register (ptr64 Eq_343) x1)
+void main(int32 w0, struct Eq_343 * x1)
 {
 	ptr64 * x0_32_32_w19_205;
 	word32 x0_32_32_143 = SLICE((uint64) puts("\x1B[H\x1B[J"), word32, 32);
@@ -282,7 +280,7 @@ void main(int32 w0, struct Eq_321 * x1)
 l00000000004009D8:
 			g_dw411080 = (word32) x0_32_32_w19_205;
 			int64 x21_41;
-			struct Eq_353 * x20_42 = &g_t411000;
+			struct Eq_375 * x20_42 = &g_t411000;
 			ptr64 * x0_32_32_w19_202 = x0_32_32_w19_205;
 			for (x21_41 = 0x00; x21_41 != 0x18; x21_41 += 0x08)
 			{
@@ -290,30 +288,30 @@ l00000000004009D8:
 				word64 x0_50 = new_tower(x0_32_32_w19_202, out x8_52);
 				word32 w19_55 = g_dw411080;
 				4264040 + x21_41 = x0_50;
-				word32 x0_32_32_91 = SLICE(x0_50, word32, 32);
+				word32 x0_32_32_92 = SLICE(x0_50, word32, 32);
 				word32 x20_32_32_82 = SLICE(0x00411000, word32, 32);
 				word32 x8_32_32_146 = SLICE(x8_52, word32, 32);
-				x0_32_32_w19_202 = SEQ(x0_32_32_91, w19_55);
+				x0_32_32_w19_202 = SEQ(x0_32_32_92, w19_55);
 			}
 			if (w19_55 != 0x00)
 			{
 				do
 				{
-					word32 w19_74;
+					word32 w19_73;
 					word32 w20_75;
-					x0_32_32_91 = SLICE(add_disk(SEQ(x8_32_32_146, 0x00), w19_55, out x8_52, out w19_74, out w20_75), word32, 32);
+					add_disk(SEQ(x8_32_32_146, 0x00), w19_55, out x8_52, out w19_73, out w20_75);
 					x8_32_32_146 = SLICE(x8_52, word32, 32);
-					w19_55 = w19_74 - 0x01;
+					w19_55 = w19_73 - 0x01;
 					x20_42 = SEQ(x20_32_32_82, w20_75);
-				} while (w19_74 != 0x01);
+				} while (w19_73 != 0x01);
 			}
 			word32 w21_208;
-			move(SEQ(x0_32_32_91, x20_42->dw0080), x8_52, out w21_208);
+			move(x20_42->dw0080, x8_52, out w21_208);
 			word64 x30_212;
 			word64 x8_209;
 			word32 w19_210;
 			word64 x29_211;
-			text(0x01, 0x01, out x8_209, out w19_210, out x29_211, out x30_212);
+			text(0x01, 0x00, 0x01, "\n", out x8_209, out w19_210, out x29_211, out x30_212);
 			return;
 		}
 	}

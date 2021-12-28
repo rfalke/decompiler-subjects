@@ -165,10 +165,10 @@ void call_frame_dummy()
 // 10000418: void main()
 void main()
 {
-	real64 f0_11 = g_r10000880;
-	real64 f13_13 = g_r10000888;
-	real64 f12_15 = g_r10000890;
-	real64 f11_17 = g_r10000898;
+	real64 f0_11 = 1.1;
+	real64 f13_13 = 2.2;
+	real64 f12_15 = 3.3;
+	real64 f11_17 = 4.4;
 	__creqv(0x06, 0x06, 0x06);
 	printf("Many parameters: %d, %.1f, %d, %.1f, %d, %.1f, %d, %.1f\n", 0x01, f0_11, 0x02, f13_13, 0x03, f12_15, 0x04, f11_17);
 }

@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,35 +124,31 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
+word64 g_qw400638 = 0x00; // 0000000000400638
 // 0000000000400640: Register int32 fib(Register int32 w0, Register out ptr64 x29Out)
 // Called from:
 //      fib
 //      main
 int32 fib(int32 w0, ptr64 & x29Out)
 {
-	struct Eq_100 * x29_31 = fp + -8;
+	struct Eq_103 * x29_31 = fp + -8;
 	if (w0 > 0x01)
 	{
 		word64 x29_66;
-		word32 w0_23 = fib(w0 - 0x01, out x29_66);
-		struct Eq_114 * sp_20 = (struct Eq_114 *) <invalid>;
+		int32 w0_23 = fib(w0 - 0x01, out x29_66);
+		struct Eq_117 * sp_20 = (struct Eq_117 *) <invalid>;
 		word32 w8_26 = sp_20->dw0008;
 		sp_20->dw0004 = w0_23;
-		struct Eq_114 * sp_30 = (struct Eq_114 *) <invalid>;
+		struct Eq_117 * sp_30 = (struct Eq_117 *) <invalid>;
 		x29_31->dwFFFFFFFC = sp_30->dw0004 + fib(w8_26 - 0x02, out x29_31);
 	}
 	int32 w0_41 = x29_31->dwFFFFFFFC;
@@ -163,12 +159,12 @@ int32 fib(int32 w0, ptr64 & x29Out)
 // 00000000004006A4: void main(Register word32 w29)
 void main(word32 w29)
 {
-	x0_14 = (uint64) printf("Input number: ", 0x00);
-	x0_22 = (uint64) __isoc99_scanf("%d", 0x00);
-	struct Eq_160 * x29_30;
+	x0_14 = (uint64) printf("Input number: ");
+	x0_22 = (uint64) __isoc99_scanf("%d", fp - 0x10);
+	struct Eq_165 * x29_30;
 	x29_30->dwFFFFFFF4 = fib((word32) x29, out x29_30);
-	struct Eq_114 * sp_28 = (struct Eq_114 *) <invalid>;
-	sp_28->dw0000 = printf("fibonacci(%d) = %d\n", 0x00);
+	struct Eq_117 * sp_28 = (struct Eq_117 *) <invalid>;
+	sp_28->dw0000 = printf("fibonacci(%d) = %d\n", x29_30->dwFFFFFFF8, x29_30->dwFFFFFFF4);
 }
 
 // 0000000000400718: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

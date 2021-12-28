@@ -39,7 +39,7 @@ word64 g_qw11FC0 = 0x00; // 0000000000011FC0
 
 #include "subject.h"
 
-struct Eq_72 g_t12000 = // 0000000000012000
+struct Eq_74 g_t12000 = // 0000000000012000
 	{
 		0x00,
 	};
@@ -88,10 +88,10 @@ void g_v0E68 = ??void??; // 0000000000000E68
 
 #include "subject.h"
 
-// 0000000000000920: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000000920: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -136,7 +136,7 @@ void register_tm_clones()
 // 00000000000009E8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_72 * x19_12 = &g_t12000;
+	struct Eq_74 * x19_12 = &g_t12000;
 	if ((word32) g_b12068 == 0x00)
 	{
 		if (g_qw11FB0 != 0x00)
@@ -165,18 +165,18 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000A68: Register int32 fib(Register int32 w0, Register out Eq_110 w19Out, Register out Eq_110 x29Out)
+// 0000000000000A68: Register int32 fib(Register int32 w0, Register out Eq_112 w19Out, Register out Eq_112 x29Out)
 // Called from:
 //      fib
 //      main
-int32 fib(int32 w0, union Eq_110 & w19Out, union Eq_110 & x29Out)
+int32 fib(int32 w0, union Eq_112 & w19Out, union Eq_112 & x29Out)
 {
 	int32 w0_37;
 	if (w0 <= 0x02)
 		w0_37 = 0x01;
 	else
 	{
-		struct Eq_115 * x29_20;
+		struct Eq_117 * x29_20;
 		word32 w19_72;
 		fib(w0 - 0x01, out w19_72, out x29_20);
 		word64 x19_33 = <invalid>;
@@ -197,14 +197,14 @@ void fact(int32 w0)
 		;
 }
 
-// 0000000000000B0C: Register (ptr64 void) print_num(Register int32 w0, Register int32 w1, Register out Eq_150 w1Out, Register out Eq_151 w2Out)
+// 0000000000000B0C: Register int32 print_num(Register int32 w0, Register int32 w1, Register out Eq_151 w2Out)
 // Called from:
 //      main
-void * print_num(int32 w0, int32 w1, union Eq_150 & w1Out, union Eq_151 & w2Out)
+int32 print_num(int32 w0, int32 w1, union Eq_151 & w2Out)
 {
-	Eq_150 w0_17 = (word32) malloc(0x0100);
+	int32 w0_17 = (word32) malloc((size_t) 0x0100);
 	int32 dwLoc0C_108 = w0;
-	Eq_150 dwArg04_101 = w0_17;
+	int32 dwArg04_101 = w0_17;
 	do
 	{
 		word32 dwArg00_93;
@@ -217,23 +217,18 @@ void * print_num(int32 w0, int32 w1, union Eq_150 & w1Out, union Eq_151 & w2Out)
 			dwArg00_93 = w0_28 + 0x30;
 		null[(int64) dwLoc12_98] = (uint8) dwArg00_93;
 		int32 w0_51 = dwLoc0C_108 / w1;
-		dwArg04_101.u1 = (word32) dwArg04_101.u1 + 1;
+		++dwArg04_101;
 		dwLoc0C_108 = w0_51;
 	} while (w0_51 != 0x00);
 	for (; dwArg04_101 != w0_17; --dwArg04_101)
-	{
-		byte * x0_66 = (int64) dwLoc12_98;
-		x0_71 = (uint64) putchar(SEQ(SLICE(x0_66, word32, 32), (word32) *x0_66));
-	}
-	void * x0_75 = (int64) dwLoc16;
-	free(x0_75);
-	w1Out = dwArg04_101;
+		x0_71 = (uint64) putchar((word32) null[(int64) dwLoc12_98]);
+	free((int64) dwLoc16);
 	w2Out = w2_25;
-	return x0_75;
+	return dwArg04_101;
 }
 
-// 0000000000000BF4: void main(Register int32 w0, Register word32 w1, Register word64 x30)
-void main(int32 w0, word32 w1, word64 x30)
+// 0000000000000BF4: void main(Register int32 w0, Register word32 w1, Register word32 x1_32_32, Register word64 x30)
+void main(int32 w0, word32 w1, word32 x1_32_32, word64 x30)
 {
 	if (w0 == 0x02 || w0 == 0x03)
 	{
@@ -246,48 +241,46 @@ void main(int32 w0, word32 w1, word64 x30)
 			*g_ptr11FA0 = atoi(SEQ(SLICE(x0_42, word32, 32), *x0_42));
 			if (*g_ptr11FA0 <= 0x01 || *g_ptr11FA0 > 0x24)
 			{
-				x0_162 = (uint64) fwrite(&g_v0E68, 0x01, 0x0D, *g_ptr11FB8);
+				x0_168 = (uint64) fwrite(&g_v0E68, (size_t) 0x01, (size_t) 0x0D, *g_ptr11FB8);
 				return;
 			}
 		}
-		word32 x0_32_32_145;
-		x0_68 = (uint64) printf("fib(%d) = ", 0x00);
-		word32 w19_273;
-		word32 w2_276;
-		word64 x29_274;
-		word32 w1_275;
-		x0_94 = (uint64) putchar(SEQ(SLICE(print_num(fib(w0_31, out w19_273, out x29_274), *g_ptr11FA0, out w1_275, out w2_276), word32, 32), 0x0A));
-		x0_99 = (uint64) printf("fact(%d) = ", 0x00);
+		x0_72 = (uint64) printf("fib(%d) = ", w0_31);
+		word32 w19_275;
+		word64 x29_276;
+		word32 w2_277;
+		print_num(fib(w0_31, out w19_275, out x29_276), *g_ptr11FA0, out w2_277);
+		x0_98 = (uint64) putchar(0x0A);
+		x0_104 = (uint64) printf("fact(%d) = ", w0_31);
 		if (w0_31 > 0x0C)
-			x0_32_32_145 = SLICE((uint64) printf("Overflow", 0x00), word32, 32);
+			x0_148 = (uint64) printf("Overflow");
 		else
 		{
-			<anonymous> * x0_109 = (int64) dwLoc16;
-			word64 x0_120;
-			word64 x1_121;
-			word64 x3_122;
-			word64 x2_123;
-			word64 x19_124;
-			x0_109();
-			word32 x1_32_32_197 = SLICE(x1_121, word32, 32);
-			word32 w1_133;
-			word32 w2_134;
-			x0_32_32_145 = SLICE(print_num((word32) x0_120, *g_ptr11FA0, out w1_133, out w2_134), word32, 32);
-			word64 x2_249 = SEQ(SLICE(x2_123, word32, 32), w2_134);
+			<anonymous> * x0_114 = (int64) dwLoc16;
+			word64 x0_126;
+			word64 x1_127;
+			word64 x3_128;
+			word64 x2_129;
+			word64 x19_130;
+			x0_114();
+			word32 x1_32_32_204 = SLICE(x1_127, word32, 32);
+			word32 w2_140;
+			word32 w1_139 = print_num((word32) x0_126, *g_ptr11FA0, out w2_140);
+			word64 x2_251 = SEQ(SLICE(x2_129, word32, 32), w2_140);
 		}
-		x0_149 = (uint64) putchar(SEQ(x0_32_32_145, 0x0A));
+		x0_155 = (uint64) putchar(0x0A);
 	}
 	else
-		help();
+		help(SEQ(x1_32_32, null[(int64) dwLoc1C /64 4]));
 }
 
-// 0000000000000D98: void help()
+// 0000000000000D98: void help(Sequence (ptr64 char) x1_32_32_w0)
 // Called from:
 //      main
-void help()
+void help(char * x1_32_32_w0)
 {
-	x0_15 = (uint64) printf("usage: %s n [base]\n", 0x00);
-	x0_19 = (uint64) puts("Compute fib(n) and fact(n) and output the result in base 'base'");
+	x0_17 = (uint64) printf("usage: %s n [base]\n", x1_32_32_w0);
+	x0_21 = (uint64) puts("Compute fib(n) and fact(n) and output the result in base 'base'");
 }
 
 // 0000000000000DD0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

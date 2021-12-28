@@ -76,11 +76,11 @@ word64 g_qw600E18 = 0x00; // 0000000000600E18
 
 #include "subject.h"
 
-// 0000000000400400: void _start(Register (ptr64 Eq_7) rdx, Stack Eq_8 qwArg00)
-void _start(void (* rdx)(), Eq_8 qwArg00)
+// 0000000000400400: void _start(Register (ptr64 Eq_7) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t400600, qwArg00, (char *) fp + 8, &g_t400620, &g_t400690, rdx, fp);
+	__libc_start_main(&g_t400600, (int32) qwArg00, (char *) fp + 8, &g_t400620, &g_t400690, rdx, fp);
 	__hlt();
 }
 
@@ -129,7 +129,7 @@ void use(word32 * rdi)
 //      with_alloca
 void fill(word32 esi, word32 * rdi)
 {
-	memset(rdi, 0x78, (int64) esi << 0x02);
+	memset(rdi, 0x0078, (int64) esi << 0x02);
 }
 
 // 0000000000400530: void with_array(Register word32 edi)
@@ -137,7 +137,7 @@ void fill(word32 esi, word32 * rdi)
 //      main
 void with_array(word32 edi)
 {
-	word32 * rbx_27 = fp - 0x28 - ((word64) ((word64) ((uint64) edi * 0x04) + 0x0F) & 0x7FFFFFFF0);
+	word32 * rbx_27 = fp - 0x28 - ((uint64) edi * 0x04 + 0x0F & 0x7FFFFFFF0);
 	fill(edi, rbx_27);
 	use(fp - 0x20);
 	use(rbx_27);
@@ -150,7 +150,7 @@ void with_array(word32 edi)
 void with_alloca(word32 edi)
 {
 	int64 rsi_16 = (int64) edi;
-	word32 * rbx_20 = fp - 24 - ((word64) ((word64) (rsi_16 * 0x04) + 0x0F) & ~0x0F);
+	word32 * rbx_20 = fp - 24 - (rsi_16 * 0x04 + 0x0F & ~0x0F);
 	fill((word32) rsi_16, rbx_20);
 	use(fp - 0x18);
 	use(rbx_20);

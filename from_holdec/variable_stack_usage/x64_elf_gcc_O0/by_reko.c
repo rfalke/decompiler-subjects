@@ -76,11 +76,11 @@ word64 g_qw600E18 = 0x00; // 0000000000600E18
 
 #include "subject.h"
 
-// 0000000000400400: void _start(Register (ptr64 Eq_7) rdx, Stack Eq_8 qwArg00)
-void _start(void (* rdx)(), Eq_8 qwArg00)
+// 0000000000400400: void _start(Register (ptr64 Eq_7) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t400698, qwArg00, (char *) fp + 8, &g_t4006D0, &g_t400740, rdx, fp);
+	__libc_start_main(&g_t400698, (int32) qwArg00, (char *) fp + 8, &g_t4006D0, &g_t400740, rdx, fp);
 	__hlt();
 }
 
@@ -129,7 +129,7 @@ void use(word32 * rdi)
 //      with_alloca
 void fill(word32 esi, word32 * rdi)
 {
-	memset(rdi, 0x78, (int64) esi * 0x04);
+	memset(rdi, 0x0078, (int64) esi * 0x04);
 }
 
 // 0000000000400545: void with_array(Register word32 edi)
@@ -171,7 +171,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_31 = 0x00600E10 - 0x00600E08;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_170 rbx_44 = 0x00;
+		Eq_172 rbx_44 = 0x00;
 		do
 		{
 			(*((char *) g_a600E08 + rbx_44 * 0x08))();

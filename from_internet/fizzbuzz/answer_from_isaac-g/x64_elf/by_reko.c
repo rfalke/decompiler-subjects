@@ -434,7 +434,7 @@ l000000000040160E:
 				uint64 r10_1566;
 				union Eq_254 * rbx_1560;
 				union Eq_618 * rcx_1558;
-				ui32 r9d_1547 = 0x3E - (word32) ((uint64) al_1531);
+				ui32 r9d_1547 = 0x3E - (word32) al_1531;
 				union Eq_618 * r11_1542 = &rcx_1534->b405080 + 1;
 				if ((r9d_1547 & 0x03) != 0x01)
 				{
@@ -481,7 +481,7 @@ l00000000004016EA:
 				}
 				union Eq_254 * rbx_1710;
 				union Eq_618 * rax_1709;
-				union Eq_683 * r8_1683 = (uint64) r9d_1547;
+				union Eq_682 * r8_1683 = (uint64) r9d_1547;
 				Mem1691[r15_823 + r8_1683:word16] = 0x0A31;
 				Mem1692[r15_823 + 0x02 + r8_1683:word32] = 0x7A7A6946;
 				Mem1693[r15_823 + 0x06 + r8_1683:byte] = 0x0A;
@@ -729,7 +729,7 @@ l00000000004019FC:
 					do
 					{
 						*rax_2514 = 0x30;
-						struct Eq_1206 * rcx_2524 = (uint64) edx_2522;
+						struct Eq_1205 * rcx_2524 = (uint64) edx_2522;
 						--edx_2522;
 						rax_2514 = &rcx_2524->b405081;
 						cl_2515 = rcx_2524->b405081;
@@ -982,7 +982,7 @@ l0000000000401F1E:
 					do
 					{
 						*rax_3359 = 0x30;
-						struct Eq_1683 * rcx_3369 = (uint64) edx_3367;
+						struct Eq_1682 * rcx_3369 = (uint64) edx_3367;
 						--edx_3367;
 						rax_3359 = &rcx_3369->b405081;
 						cl_3360 = rcx_3369->b405081;
@@ -1019,7 +1019,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_31 = 0x00404E18 - 0x00404E10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_1743 rbx_43 = 0x00;
+		Eq_1742 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a404E10 + rbx_43 * 0x08))();

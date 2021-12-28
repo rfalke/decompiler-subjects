@@ -93,11 +93,11 @@ char g_str4005EC[] = "Hello, World!"; // 00000000004005EC
 
 #include "subject.h"
 
-// 0000000000400400: void _start(Register (ptr64 Eq_11) rdx, Stack Eq_12 qwArg00)
-void _start(void (* rdx)(), Eq_12 qwArg00)
+// 0000000000400400: void _start(Register (ptr64 Eq_11) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t4004E4, qwArg00, (char *) fp + 8, &g_t400510, &g_t400500, rdx, fp);
+	__libc_start_main(&g_t4004E4, (int32) qwArg00, (char *) fp + 8, &g_t400510, &g_t400500, rdx, fp);
 	__hlt();
 }
 
@@ -154,7 +154,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_19 = 0x0060069C - 0x0060069C;
 	if (rbp_19 >> 0x03 != 0x00)
 	{
-		Eq_90 rbx_39 = 0x00;
+		Eq_92 rbx_39 = 0x00;
 		do
 		{
 			((<anonymous> *[]) 0x0060069C)[rbx_39]();

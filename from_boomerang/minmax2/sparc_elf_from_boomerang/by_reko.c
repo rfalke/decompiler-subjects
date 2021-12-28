@@ -14,18 +14,18 @@ ptr32 ___Argv = 0x00; // 000208CC
 
 #include "subject.h"
 
-// 000106F4: void _fini(Register word32 o0, Register word32 o1, Register word32 o2, Register word32 o3, Register word32 o4, Register word32 o5, Register (ptr32 Eq_114) o7)
-void _fini(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, struct Eq_114 * o7)
+// 000106F4: void _fini(Register word32 o0, Register word32 o1, Register word32 o2, Register word32 o3, Register word32 o4, Register word32 o5, Register (ptr32 Eq_116) o7)
+void _fini(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, struct Eq_116 * o7)
 {
 	fn00010704(o7, o0, o1, o2, o3, o4, o5, fp, o7);
 }
 
-// 00010704: void fn00010704(Register (ptr32 Eq_114) o7, Register word32 i0, Register word32 i1, Register word32 i2, Register word32 i3, Register word32 i4, Register word32 i5, Register ptr32 i6, Register (ptr32 Eq_114) i7)
+// 00010704: void fn00010704(Register (ptr32 Eq_116) o7, Register word32 i0, Register word32 i1, Register word32 i2, Register word32 i3, Register word32 i4, Register word32 i5, Register ptr32 i6, Register (ptr32 Eq_116) i7)
 // Called from:
 //      _fini
-void fn00010704(struct Eq_114 * o7, word32 i0, word32 i1, word32 i2, word32 i3, word32 i4, word32 i5, ptr32 i6, struct Eq_114 * i7)
+void fn00010704(struct Eq_116 * o7, word32 i0, word32 i1, word32 i2, word32 i3, word32 i4, word32 i5, ptr32 i6, struct Eq_116 * i7)
 {
-	struct Eq_128 * o0_6 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_130 * o0_6 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_7 = o0_6->ptrFFFFFFFC;
 	<anonymous> * l1_8 = o0_6->ptrFFFFFFF4;
 	if (l0_7 == null)
@@ -57,7 +57,7 @@ void _init(word32 o0, word32 o1, word32 o2, word32 o3, word32 o4, word32 o5, str
 //      _init
 void fn000106B4(struct Eq_7 * o7, word32 i0, word32 i1, word32 i2, word32 i3, word32 i4, word32 i5, ptr32 i6, struct Eq_7 * i7)
 {
-	struct Eq_91 * o0_6 = o7 + o7->dw0008 / 0x0C;
+	struct Eq_93 * o0_6 = o7 + o7->dw0008 / 0x0C;
 	<anonymous> * l0_7 = o0_6->ptrFFFFFFF8;
 	<anonymous> * l1_8 = o0_6->ptrFFFFFFF0;
 	if (l0_7 == null)
@@ -136,8 +136,8 @@ void _start(void (* g1)(), word32 o2, word32 o3, word32 o4, word32 o5, struct Eq
 void test(int32 o0)
 {
 	uint32 g2_7 = ~0x01 - o0;
-	Eq_48 g1_13 = ~0x01 - (g2_7 & (~0x00 - (o0 >> 0x1F)) - (g2_7 < 0x00));
-	printf("MinMax result %d\n", (g1_13 - 0x03 & (g1_13 >> 0x1F) - (g1_13 < 0x03)) + 0x03);
+	Eq_48 g1_13 = ~0x01 - (g2_7 & (~0x00 - (o0 >> 0x1F)) - (word32) (g2_7 < 0x00));
+	printf("MinMax result %d\n", (g1_13 - 0x03 & (g1_13 >> 0x1F) - (word32) (g1_13 < 0x03)) + 0x03);
 }
 
 // 00010670: void main()

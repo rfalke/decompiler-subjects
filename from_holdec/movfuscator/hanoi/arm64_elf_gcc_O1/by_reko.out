@@ -1,7 +1,5 @@
 === Using options:--aggressive-branch-removal
 0000000000000890: warning: Unable to resolve imported reference __gmon_start__.
-0000000000000AB8: warning: Unable to determine format string for call to 'printf'.
-0000000000000AD0: warning: Unable to determine format string for call to 'printf'.
 00000000000008E0: warning: Unable to resolve imported reference usleep.
 0000000000000860: warning: Unable to resolve imported reference __cxa_finalize.
 0000000000011D90: warning: Expected sizes of arrays to have been determined by now

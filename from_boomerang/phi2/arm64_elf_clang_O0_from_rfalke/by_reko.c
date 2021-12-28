@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,52 +124,48 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
+word64 g_qw400638 = 0x00; // 0000000000400638
 // 0000000000400640: Register int32 proc1(Register int32 w0, Register (ptr64 char) x1, Register out ptr64 x29Out)
 // Called from:
 //      main
 int32 proc1(int32 w0, char * x1, ptr64 & x29Out)
 {
-	int32 dwLoc0C_68;
-	struct Eq_102 * sp_20;
+	int32 dwLoc0C_75;
+	struct Eq_105 * sp_20;
 	if (w0 > 0x02)
 	{
-		dwLoc0C_68 = (word32) (uint64) strlen(x1);
-		x0_31 = (uint64) strlen(qwLoc20);
-		x0_41 = (uint64) printf("%d", 0x00);
+		int32 w0_27 = (word32) strlen(x1);
+		dwLoc0C_75 = w0_27;
+		x0_43 = (uint64) printf("%d", w0_27 + (word32) strlen(qwLoc20));
 		sp_20 = fp - 0x40;
 	}
 	else
 	{
 		sp_20 = fp - 0x30;
-		dwLoc0C_68 = (word32) (uint64) strlen(x1);
+		dwLoc0C_75 = (word32) strlen(x1);
 	}
-	uint64 x0_52 = (uint64) printf("%d, %d", 0x00);
-	sp_20->dwFFFFFFFC = (word32) x0_52;
+	uint64 x0_59 = (uint64) printf("%d, %d", dwLoc0C_75, sp_20->dw000C);
+	sp_20->dwFFFFFFFC = (word32) x0_59;
 	x29Out = x30;
-	return dwLoc0C_68;
+	return dwLoc0C_75;
 }
 
-// 00000000004006DC: void main(Register int32 w0, Register (ptr64 Eq_145) x1)
-void main(int32 w0, struct Eq_145 * x1)
+// 00000000004006DC: void main(Register int32 w0, Register (ptr64 Eq_152) x1)
+void main(int32 w0, struct Eq_152 * x1)
 {
-	struct Eq_146 * sp_19 = (struct Eq_146 *) <invalid>;
-	word64 x29_58;
-	sp_19->dw000C = proc1(w0, x1->ptr0008, out x29_58);
-	sp_19->dw0000 = printf("%d\n", 0x00);
+	struct Eq_153 * sp_19 = (struct Eq_153 *) <invalid>;
+	word64 x29_59;
+	sp_19->dw000C = proc1(w0, x1->ptr0008, out x29_59);
+	sp_19->dw0000 = printf("%d\n", sp_19->dw000C);
 }
 
 // 0000000000400738: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

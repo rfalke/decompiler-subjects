@@ -15,17 +15,17 @@ byte g_b804A020 = 0x01; // 0804A020
 word16 g_w804A022 = 0x02; // 0804A022
 int32 global_int = 3; // 0804A024
 int32 global_long = 4; // 0804A028
-Eq_89 g_t804A030 = // 0804A030
+Eq_87 g_t804A030 = // 0804A030
 	{
 		5
 	};
 word32 g_dw804A034 = 0x00; // 0804A034
-Eq_132 global_float = // 0804A038
+Eq_126 global_float = // 0804A038
 	{
 		10.0F
 	};
 real64 g_r804A040 = 11.0; // 0804A040
-Eq_132 g_t804A048 = // 0804A048
+Eq_126 g_t804A048 = // 0804A048
 	{
 		0.0F
 	};
@@ -114,7 +114,7 @@ void fn08048300()
 
 word32 _fp_hw = 0x03; // 080488A0
 word32 _IO_stdin_used = 0x00020001; // 080488A4
-Eq_129 g_t80488B0 = // 080488B0
+Eq_123 g_t80488B0 = // 080488B0
 	{
 		
 		{
@@ -186,13 +186,13 @@ void frame_dummy()
 //      constants
 void use(real64 rArg04[1])
 {
-	printf("%f", (real64) (uint128) rArg04);
+	printf("%f", rArg04);
 }
 
-// 08048430: void use_int(Stack Eq_63 dwArg04)
+// 08048430: void use_int(Stack Eq_61 dwArg04)
 // Called from:
 //      compare_floats
-void use_int(Eq_63 dwArg04)
+void use_int(Eq_61 dwArg04)
 {
 	printf("%d", dwArg04);
 }
@@ -206,8 +206,7 @@ void read_ints()
 // 080484B0: void write_ints(Stack real64 rArg04)
 void write_ints(real64 rArg04)
 {
-	uint128 xmm0_6 = (uint128) rArg04;
-	int32 eax_7 = (int32) (real64) xmm0_6;
+	int32 eax_7 = (int32) rArg04;
 	g_b804A020 = (byte) eax_7;
 	g_w804A022 = (word16) eax_7;
 	global_int = eax_7;
@@ -215,30 +214,29 @@ void write_ints(real64 rArg04)
 	uint16 ax_20 = __fstcw();
 	__fldcw(3199);
 	__fldcw(ax_20);
-	int64 qwLoc14_37 = (int64) (real64) xmm0_6;
+	int64 qwLoc14_37 = (int64) rArg04;
 	g_dw804A034 = SLICE(qwLoc14_37, word32, 32);
 	g_t804A030 = (word32) qwLoc14_37;
 }
 
-// 08048520: void read_floats(Register Eq_129 xmm1)
-void read_floats(Eq_129 xmm1)
+// 08048520: void read_floats(Register Eq_123 xmm1)
+void read_floats(Eq_123 xmm1)
 {
-	use((real64) g_t804A048 + (((real64) __xorpd(xmm1, xmm1) + (real64) ((real32) ((uint128) global_float))) + g_r804A040));
+	use((real64) g_t804A048 + (((real64) __xorpd(xmm1, xmm1) + (real64) global_float) + g_r804A040));
 }
 
 // 08048560: void write_floats(Stack real64 rArg04)
 void write_floats(real64 rArg04)
 {
-	uint128 xmm0_6 = (uint128) rArg04;
-	g_r804A040 = (real64) xmm0_6;
-	global_float.u0 = (real32) (real64) xmm0_6;
-	g_t804A048.u1 = (real80) (real64) xmm0_6;
+	g_r804A040 = rArg04;
+	global_float.u0 = (real32) rArg04;
+	g_t804A048.u1 = (real80) rArg04;
 }
 
 // 08048590: void converting_between_floats_f1()
 void converting_between_floats_f1()
 {
-	global_float.u0 = (real32) (real64) (uint128) g_r804A040;
+	global_float.u0 = (real32) g_r804A040;
 }
 
 // 080485B0: void converting_between_floats_f2()
@@ -250,7 +248,7 @@ void converting_between_floats_f2()
 // 080485C0: void converting_between_floats_d1()
 void converting_between_floats_d1()
 {
-	g_r804A040 = (real64) (real32) (uint128) global_float;
+	g_r804A040 = (real64) global_float;
 }
 
 // 080485E0: void converting_between_floats_d2()
@@ -274,36 +272,41 @@ void converting_between_floats_l2()
 // 08048610: void basic_operations(Stack real64 rArg04, Stack real64 rArg0C)
 void basic_operations(real64 rArg04, real64 rArg0C)
 {
-	use((real64) (uint128) rArg04 + rArg0C);
-	use((real64) (uint128) rArg04 - rArg0C);
-	use((real64) (uint128) rArg0C - (real64) ((uint128) rArg04));
-	use((real64) (uint128) rArg04 * rArg0C);
-	use((real64) (uint128) rArg04 / rArg0C);
-	use((real64) (uint128) rArg0C / (real64) ((uint128) rArg04));
-	use(__movlpd(__xorpd((uint128) rArg04, g_t80488B0)));
+	use(rArg04 + rArg0C);
+	use(rArg04 - rArg0C);
+	use(rArg0C - rArg04);
+	use(rArg04 * rArg0C);
+	use(rArg04 / rArg0C);
+	use(rArg0C / rArg04);
+	use(__movlpd(__xorpd(SEQ(0x00, rArg04), g_t80488B0)));
 }
 
-// 080486C0: void compare_floats(Stack Eq_245 rArg04, Stack Eq_246 rArg0C)
-void compare_floats(Eq_245 rArg04, Eq_246 rArg0C)
+// 080486C0: void compare_floats(Stack Eq_213 rArg04, Stack Eq_213 rArg0C)
+void compare_floats(Eq_213 rArg04, Eq_213 rArg0C)
 {
-	use_int((word32) ((real64) (uint128) rArg04 == rArg0C ? 
-// Exception Value was either too large or too small for a UInt64. when writing procedure.
+	use_int((word32) (rArg04 == rArg0C ? 0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF : 0) & 0x01);
+	use_int((word32) (rArg04 != rArg0C ? 0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF : 0) & 0x01);
+	use_int((uint32) (int8) (rArg04 > rArg0C));
+	use_int((uint32) (int8) (rArg04 >= rArg0C));
+	use_int((uint32) (int8) (rArg0C > rArg04));
+	use_int((uint32) (int8) (rArg0C >= rArg04));
+}
+
 // 08048760: void constants(Stack real64 rArg04)
 void constants(real64 rArg04)
 {
-	uint128 xmm0_7 = (uint128) rArg04;
-	use((real64) xmm0_7 + (real64) xmm0_7);
-	use((real64) (uint128) g_r80488C0 * rArg04);
-	use((real64) (uint128) g_r80488C8 * rArg04);
-	use((real64) (uint128) g_r80488D0 * rArg04);
-	use((real64) (uint128) rArg04 * g_r80488D8);
+	use(rArg04 + rArg04);
+	use(3.0 * rArg04);
+	use(3.141592653589793 * rArg04);
+	use(10.0 * rArg04);
+	use(rArg04 * 12.345);
 }
 
 // 080487E0: void main()
 void main()
 {
-	printf("%zu %zu %zu %zu %zu\n", tLoc28, tLoc28, tLoc28, tLoc28, tLoc28);
-	printf("%zu %zu %zu\n", tLoc18, tLoc18, tLoc18);
+	printf("%zu %zu %zu %zu %zu\n", 0x01, 0x02, 0x04, 0x04, 0x08);
+	printf("%zu %zu %zu\n", 0x04, 0x08, 0x0C);
 }
 
 // 08048820: void __libc_csu_init(Stack word32 dwArg04, Stack word32 dwArg08, Stack word32 dwArg0C)

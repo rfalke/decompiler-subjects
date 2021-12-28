@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_119 g_t11000 = // 0000000000011000
+struct Eq_136 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,24 +81,28 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 0000000000000740: void main(Stack int64 qwArg00)
 void main(int64 qwArg00)
 {
-	x0_15 = (uint64) __isoc99_scanf("%ld", 0x00);
-	x0_20 = (uint64) printf("executing %ld iterations\n", 0x00);
-	x0_23 = (uint64) __isoc99_scanf("%ld", 0x00);
-	x0_27 = (uint64) __isoc99_scanf("%ld", 0x00);
-	word32 w3_31 = 0x00;
-	int64 x0_34 = 0x01;
-	while (x0_34 - qwArg00 <= 0x00)
+	x0_16 = (uint64) __isoc99_scanf("%ld", fp);
+	x0_21 = (uint64) printf("executing %ld iterations\n", (int32) qwArg00);
+	x0_25 = (uint64) __isoc99_scanf("%ld", fp + -1);
+	x0_29 = (uint64) __isoc99_scanf("%ld", (char *) fp - 2);
+	word32 w3_33 = 0x00;
+	word32 w1_35 = (word32) wLoc04;
+	int64 x0_36 = 0x01;
+	while (x0_36 - qwArg00 <= 0x00)
 	{
-		++x0_34;
-		w3_31 = 0x01;
+		++x0_36;
+		w3_33 = 0x01;
+		w1_35 = 0x00;
 	}
-	x0_58 = (uint64) printf("a=%d\n", 0x00);
+	if (w3_33 != 0x00)
+		wLoc04 = (word16) w1_35;
+	x0_64 = (uint64) printf("a=%d\n", (word32) wLoc04);
 }
 
-// 00000000000007E4: void _start(Register (ptr64 Eq_56) x0, Stack Eq_57 qwArg00)
-void _start(void (* x0)(), Eq_57 qwArg00)
+// 00000000000007E4: void _start(Register (ptr64 Eq_71) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -143,7 +147,7 @@ void register_tm_clones()
 // 00000000000008A8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_119 * x19_12 = &g_t11000;
+	struct Eq_136 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)

@@ -1,2 +1,12 @@
 === Using options:--aggressive-branch-removal
-fn00001570: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+Error: An error occurred during decompilation.
+    Source array was not long enough. Check the source index, length, and the array's lower bounds. (Parameter 'sourceArray')
+       at System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable) in /_/src/coreclr/src/System.Private.CoreLib/src/System/Array.CoreCLR.cs:line 218
+   at System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length) in /_/src/coreclr/src/System.Private.CoreLib/src/System/Array.CoreCLR.cs:line 191
+   at System.Array.Copy(Array sourceArray, Int64 sourceIndex, Array destinationArray, Int64 destinationIndex, Int64 length) in /_/src/libraries/System.Private.CoreLib/src/System/Array.cs:line 124
+   at Reko.ImageLoaders.HpSom.HpSomLoader.MakeSegmentMapFromSubspaces(List`1 spaces, List`1 subspaces) in /home/runner/work/reko/reko/src/ImageLoaders/HpSom/HpSomLoader.cs:line 109
+   at Reko.ImageLoaders.HpSom.HpSomLoader.LoadProgram(Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/HpSom/HpSomLoader.cs:line 67
+   at Reko.Core.Loading.ProgramImageLoader.Load(Address addrLoad) in /home/runner/work/reko/reko/src/Core/Loading/ProgramImageLoader.cs:line 46
+   at Reko.Loading.Loader.LoadBinaryImage(ImageLocation imageLocation, Byte[] image, String loader, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 171
+   at Reko.Loading.Loader.Load(ImageLocation imageLocation, String loaderName, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 117
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 166

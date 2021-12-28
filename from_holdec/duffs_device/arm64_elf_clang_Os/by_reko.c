@@ -76,10 +76,10 @@ Eq_626 g_a4009A8[] = // 00000000004009A8
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -139,20 +139,16 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
+word64 g_qw400638 = 0x00; // 0000000000400638
 // 0000000000400640: void copy1_four_times(Register (ptr64 word16) x0, Register (ptr64 word16) x1, Register int32 w2, Register word32 x9_32_32)
 void copy1_four_times(word16 * x0, word16 * x1, int32 w2, word32 x9_32_32)
 {
@@ -197,10 +193,10 @@ l000000000040068C:
 	}
 }
 
-// 00000000004006A8: void copy1_eight_times(Register (ptr64 Eq_173) x0, Register (ptr64 Eq_174) x1, Register int32 w2, Register word32 x9_32_32)
+// 00000000004006A8: void copy1_eight_times(Register (ptr64 Eq_176) x0, Register (ptr64 Eq_177) x1, Register int32 w2, Register word32 x9_32_32)
 // Called from:
 //      main
-void copy1_eight_times(union Eq_173 * x0, struct Eq_174 * x1, int32 w2, word32 x9_32_32)
+void copy1_eight_times(union Eq_176 * x0, struct Eq_177 * x1, int32 w2, word32 x9_32_32)
 {
 	up32 w9_13 = w2 - ((w2 < 0x00 ? w2 + 0x07 : w2) & ~0x07);
 	int32 w8_8 = w2 < 0x07 ? w2 + 0x0E : w2 + 0x07;
@@ -215,40 +211,40 @@ void copy1_eight_times(union Eq_173 * x0, struct Eq_174 * x1, int32 w2, word32 x
 		case 0x01:
 			while (true)
 			{
-				*x0 = (union Eq_173 *) x1->w0000;
+				*x0 = (union Eq_176 *) x1->w0000;
 				++x1;
 				--w8_22;
-				x0 = (union Eq_173 *) ((char *) x0 + 2);
+				x0 = (union Eq_176 *) ((char *) x0 + 2);
 				if (w8_22 <= 0x00)
 					break;
 l00000000004006E4:
-				*x0 = (union Eq_173 *) x1->w0000;
+				*x0 = (union Eq_176 *) x1->w0000;
 				++x1;
-				x0 = (union Eq_173 *) ((char *) x0 + 2);
+				x0 = (union Eq_176 *) ((char *) x0 + 2);
 l00000000004006EC:
-				*x0 = (union Eq_173 *) x1->w0000;
+				*x0 = (union Eq_176 *) x1->w0000;
 				++x1;
-				x0 = (union Eq_173 *) ((char *) x0 + 2);
+				x0 = (union Eq_176 *) ((char *) x0 + 2);
 l00000000004006F4:
-				*x0 = (union Eq_173 *) x1->w0000;
+				*x0 = (union Eq_176 *) x1->w0000;
 				++x1;
-				x0 = (union Eq_173 *) ((char *) x0 + 2);
+				x0 = (union Eq_176 *) ((char *) x0 + 2);
 l00000000004006FC:
-				*x0 = (union Eq_173 *) x1->w0000;
+				*x0 = (union Eq_176 *) x1->w0000;
 				++x1;
-				x0 = (union Eq_173 *) ((char *) x0 + 2);
+				x0 = (union Eq_176 *) ((char *) x0 + 2);
 l0000000000400704:
-				*x0 = (union Eq_173 *) x1->w0000;
+				*x0 = (union Eq_176 *) x1->w0000;
 				++x1;
-				x0 = (union Eq_173 *) ((char *) x0 + 2);
+				x0 = (union Eq_176 *) ((char *) x0 + 2);
 l000000000040070C:
-				*x0 = (union Eq_173 *) x1->w0000;
+				*x0 = (union Eq_176 *) x1->w0000;
 				++x1;
-				x0 = (union Eq_173 *) ((char *) x0 + 2);
+				x0 = (union Eq_176 *) ((char *) x0 + 2);
 l0000000000400714:
-				*x0 = (union Eq_173 *) x1->w0000;
+				*x0 = (union Eq_176 *) x1->w0000;
 				++x1;
-				x0 = (union Eq_173 *) ((char *) x0 + 2);
+				x0 = (union Eq_176 *) ((char *) x0 + 2);
 			}
 			break;
 		case 0x02:
@@ -301,10 +297,10 @@ l0000000000400770:
 	}
 }
 
-// 0000000000400788: void copy2_eight_times(Register (ptr64 Eq_173) x0, Register (ptr64 Eq_174) x1, Register int32 w2, Register (ptr64 Eq_349) x10)
+// 0000000000400788: void copy2_eight_times(Register (ptr64 Eq_176) x0, Register (ptr64 Eq_177) x1, Register int32 w2, Register (ptr64 Eq_352) x10)
 // Called from:
 //      main
-void copy2_eight_times(union Eq_173 * x0, struct Eq_174 * x1, int32 w2, struct Eq_349 * x10)
+void copy2_eight_times(union Eq_176 * x0, struct Eq_177 * x1, int32 w2, struct Eq_352 * x10)
 {
 	word32 x10_32_32 = SLICE(x10, word32, 32);
 	if (w2 >= 0x01)
@@ -326,9 +322,9 @@ void copy2_eight_times(union Eq_173 * x0, struct Eq_174 * x1, int32 w2, struct E
 				word32 w10_117 = (word32) x10_72;
 				return;
 			}
-			*x0 = (union Eq_173 *) x1->w0000;
-			struct Eq_363 * x1_18 = x1 + 1;
-			struct Eq_366 * x0_21 = (char *) x0 + 2;
+			*x0 = (union Eq_176 *) x1->w0000;
+			struct Eq_366 * x1_18 = x1 + 1;
+			struct Eq_369 * x0_21 = (char *) x0 + 2;
 			x0_21->w0000 = x1_18->w0000;
 			x0_21->w0002 = x1_18->w0002;
 			x0_21->w0004 = x1_18->w0004;
@@ -336,23 +332,23 @@ void copy2_eight_times(union Eq_173 * x0, struct Eq_174 * x1, int32 w2, struct E
 			x0_21->w0008 = x1_18->w0008;
 			x0_21->w000A = x1_18->w000A;
 			x0_21->w000C = x1_18->w000C;
-			x1 = (struct Eq_174 *) (&x1_18->w000C + 1);
+			x1 = (struct Eq_177 *) (&x1_18->w000C + 1);
 			w8_10 += 0x08;
-			x0 = (union Eq_173 *) (&x0_21->w000C + 1);
+			x0 = (union Eq_176 *) (&x0_21->w000C + 1);
 		} while (w8_10 != 0x08);
 	}
 }
 
-// 0000000000400804: void main(Register word32 x0_32_32, Register word32 x2_32_32, Register word32 x9_32_32)
-void main(word32 x0_32_32, word32 x2_32_32, word32 x9_32_32)
+// 0000000000400804: void main(Register word32 x9_32_32)
+void main(word32 x9_32_32)
 {
-	struct Eq_174 * x0_19 = malloc(SEQ(x0_32_32, 200));
-	union Eq_173 * x0_25 = malloc(SEQ(SLICE(x0_19, word32, 32), 200));
+	struct Eq_177 * x0_19 = malloc((size_t) 200);
+	union Eq_176 * x0_25 = malloc((size_t) 200);
 	word32 w10_30 = (word32) x0_19[2];
 	word32 w11_32 = (word32) x0_19[3];
-	*((char *) x0_25 + 2) = (union Eq_173 *) x0_19[1];
-	*((char *) x0_25 + 4) = (union Eq_173 *) (word16) w10_30;
-	*((char *) x0_25 + 6) = (union Eq_173 *) (word16) w11_32;
+	*((char *) x0_25 + 2) = (union Eq_176 *) x0_19[1];
+	*((char *) x0_25 + 4) = (union Eq_176 *) (word16) w10_30;
+	*((char *) x0_25 + 6) = (union Eq_176 *) (word16) w11_32;
 	int64 x8_34 = 0x00;
 	int32 w9_36;
 	for (w9_36 = 0x19; w9_36 > 0x01; --w9_36)
@@ -376,14 +372,14 @@ void main(word32 x0_32_32, word32 x2_32_32, word32 x9_32_32)
 		word32 w12_84 = (word32) x9_79->w0002;
 		word32 w13_86 = (word32) x9_79->w0004;
 		word32 w9_88 = (word32) x9_79->w0006;
-		struct Eq_349 * x10_90 = (char *) x0_25 + x8_76;
+		struct Eq_352 * x10_90 = (char *) x0_25 + x8_76;
 		x10_90->w0000 = x9_79->w0000;
 		x10_90->w0002 = (word16) w12_84;
 		x10_90->w0004 = (word16) w13_86;
 		x10_90->w0006 = (word16) w9_88;
 	}
 	copy2_eight_times(x0_25, x0_19, 100, x10_90);
-	x0_130 = (uint64) memcmp(x0_19, x0_25, SEQ(x2_32_32, 200));
+	x0_130 = (uint64) memcmp(x0_19, x0_25, (size_t) 200);
 }
 
 // 00000000004008F0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

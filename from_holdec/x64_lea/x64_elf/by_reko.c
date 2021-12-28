@@ -83,19 +83,19 @@ char g_str402150[] = "lea6 should=0x000000005b6b7b8b/         1533770635 is=0x%0
 // 0000000000401040: void main()
 void main()
 {
-	printf("lea1 should=0x1a2a3a4a5a6a7b8b/1885383485026892683 is=0x%016lx\n", 1885383485026892683);
-	printf("lea2 should=0x1a2a3a4a5a6a7b8b/1885383485026892683 is=0x%016lx\n", 1885383485026892683);
+	printf("lea1 should=0x1a2a3a4a5a6a7b8b/1885383485026892683 is=0x%016lx\n", 0x5A6A7B8B);
+	printf("lea2 should=0x1a2a3a4a5a6a7b8b/1885383485026892683 is=0x%016lx\n", 0x5A6A7B8B);
 	printf("lea3 should=0x000000005b6b7b8b/         1533770635 is=0x%016lx\n", 0x5B6B7B8B);
 	printf("lea4 should=0x000000005b6b7b8b/         1533770635 is=0x%016lx\n", 0x5B6B7B8B);
-	printf("lea5 should=0x1b2b3b4b5b6b7b8b/1957723657864969099 is=0x%016lx\n", 0x1B2B3B4B5B6B7B8B);
+	printf("lea5 should=0x1b2b3b4b5b6b7b8b/1957723657864969099 is=0x%016lx\n", 0x5B6B7B8B);
 	printf("lea6 should=0x000000005b6b7b8b/         1533770635 is=0x%016lx\n", 0x5B6B7B8B);
 }
 
-// 0000000000401130: void _start(Register (ptr64 Eq_44) rdx, Stack Eq_45 qwArg00)
-void _start(void (* rdx)(), Eq_45 qwArg00)
+// 0000000000401130: void _start(Register (ptr64 Eq_44) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t401040, qwArg00, (char *) fp + 8, &g_t401220, &g_t401290, rdx, fp);
+	__libc_start_main(&g_t401040, (int32) qwArg00, (char *) fp + 8, &g_t401220, &g_t401290, rdx, fp);
 	__hlt();
 }
 
@@ -128,6 +128,8 @@ void __do_global_dtors_aux()
 }
 
 // 0000000000401210: void frame_dummy()
+// Called from:
+//      __libc_csu_init
 void frame_dummy()
 {
 	register_tm_clones();
@@ -141,7 +143,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_31 = 4210200 - 0x00403E10;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_99 rbx_43 = 0x00;
+		Eq_101 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a403E10 + rbx_43 * 0x08))();

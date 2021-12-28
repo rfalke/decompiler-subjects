@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_92 g_t11000 = // 0000000000011000
+struct Eq_99 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,15 +81,15 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 00000000000006F0: void main()
 void main()
 {
-	x0_12 = (uint64) printf("a andn b is %d\n", 0x00);
-	x0_17 = (uint64) printf("b orn  a is %d\n", 0x00);
-	x0_23 = (uint64) printf("a xorn c is %d\n", 0x00);
+	x0_15 = (uint64) printf("a andn b is %d\n", 1166672258);
+	x0_22 = (uint64) printf("b orn  a is %d\n", ~0x458A0182);
+	x0_29 = (uint64) printf("a xorn c is %d\n", 0x3223FE67);
 }
 
-// 0000000000000740: void _start(Register (ptr64 Eq_29) x0, Stack Eq_30 qwArg00)
-void _start(void (* x0)(), Eq_30 qwArg00)
+// 0000000000000740: void _start(Register (ptr64 Eq_34) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -134,7 +134,7 @@ void register_tm_clones()
 // 0000000000000808: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_92 * x19_12 = &g_t11000;
+	struct Eq_99 * x19_12 = &g_t11000;
 	if ((word32) g_b11038 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)

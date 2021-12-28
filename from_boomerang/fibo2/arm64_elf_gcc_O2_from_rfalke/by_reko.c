@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_100 g_t11000 = // 0000000000011000
+struct Eq_112 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,17 +81,20 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 0000000000000740: void main(Stack int32 dwArg04)
 void main(int32 dwArg04)
 {
-	x0_14 = (uint64) printf("Input number: ", 0x00);
-	x0_19 = (uint64) __isoc99_scanf("%d", 0x00);
+	word64 x2_38;
+	x0_14 = (uint64) printf("Input number: ");
+	x0_19 = (uint64) __isoc99_scanf("%d", fp + 0x04);
 	if (dwArg04 > 0x01)
-		fib2.part.0();
-	x0_35 = (uint64) printf("fibonacci(%d) = %d\n", 0x00);
+		x2_38 = SEQ(x2_32_32, fib2.part.0(dwArg04));
+	else
+		x2_38 = SEQ(x2_32_32, dwArg04);
+	x0_42 = (uint64) printf("fibonacci(%d) = %d\n", dwArg04, (int32) x2_38);
 }
 
-// 00000000000007A8: void _start(Register (ptr64 Eq_37) x0, Stack Eq_38 qwArg00)
-void _start(void (* x0)(), Eq_38 qwArg00)
+// 00000000000007A8: void _start(Register (ptr64 Eq_47) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -136,7 +139,7 @@ void register_tm_clones()
 // 0000000000000870: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_100 * x19_12 = &g_t11000;
+	struct Eq_112 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -172,18 +175,19 @@ void fib1(int32 w0)
 {
 	if (w0 <= 0x01)
 		return;
-	fib2.part.0();
+	fib2.part.0(w0);
 }
 
-// 0000000000000908: void fib2.part.0()
+// 0000000000000908: Register int32 fib2.part.0(Register int32 w0)
 // Called from:
 //      main
 //      fib1
 //      fib2
-void fib2.part.0()
+int32 fib2.part.0(int32 w0)
 {
 	fib1(w0);
 	fib1(w0);
+	return w0 - 0x01 + (w0 - 0x02);
 }
 
 // 0000000000000940: void fib2(Register int32 w0)
@@ -191,7 +195,7 @@ void fib2(int32 w0)
 {
 	if (w0 <= 0x01)
 		return;
-	fib2.part.0();
+	fib2.part.0(w0);
 }
 
 // 0000000000000958: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

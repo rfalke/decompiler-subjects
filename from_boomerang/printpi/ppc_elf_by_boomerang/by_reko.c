@@ -162,7 +162,7 @@ void call_frame_dummy()
 // 10000418: void main()
 void main()
 {
-	real64 f0_14 = (real64) g_r10000824;
+	real64 f0_14 = (real64) 3.1415925F;
 	__creqv(0x06, 0x06, 0x06);
 	printf("Pi is about %.5f\n", f0_14);
 }

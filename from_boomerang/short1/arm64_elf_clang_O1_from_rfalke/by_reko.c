@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -124,38 +124,31 @@ void __do_global_dtors_aux()
 // 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4005D8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4005D8 = null; // 00000000004005D8
-// 00000000004005E0: void test()
+word64 g_qw4005D8 = 0x00; // 00000000004005D8
+// 00000000004005E0: Register int32 test(Register int32 w0, Register int32 w1, Register int32 w2)
 // Called from:
 //      main
-void test()
+int32 test(int32 w0, int32 w1, int32 w2)
 {
+	return (word32) (w0 < w1) | (word32) (w1 < w2);
 }
 
 // 00000000004005F8: void main()
 void main()
 {
-	test();
-	x0_22 = (uint64) printf("Result for 4, 5, 6: %d\n", 0x00);
-	test();
-	x0_36 = (uint64) printf("Result for 6, 5, 4: %d\n", 0x00);
-	test();
-	x0_50 = (uint64) printf("Result for 4, 6, 5: %d\n", 0x00);
-	test();
-	x0_65 = (uint64) printf("Result for 6, 4, 5: %d\n", 0x00);
+	x0_25 = (uint64) printf("Result for 4, 5, 6: %d\n", test(0x04, 0x05, 0x06));
+	x0_41 = (uint64) printf("Result for 6, 5, 4: %d\n", test(0x06, 0x05, 0x04));
+	x0_57 = (uint64) printf("Result for 4, 6, 5: %d\n", test(0x04, 0x06, 0x05));
+	x0_73 = (uint64) printf("Result for 6, 4, 5: %d\n", test(0x06, 0x04, 0x05));
 }
 
 // 0000000000400690: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

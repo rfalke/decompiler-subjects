@@ -245,10 +245,10 @@ void main._omp_fn.0(word32 ** rdi)
 			struct Eq_258 * rdi_70 = *((char *) g_a404088 + rsi_113 * 0x08);
 			if (rdi_70->bFFFFFFFE != 122)
 			{
-				uint64 rdx_78 = (uint64) ((word32) (uint64) rdi_70->bFFFFFFFB + 0x06);
+				uint64 rdx_78 = (uint64) ((word32) rdi_70->bFFFFFFFB + 0x06);
 				ci8 dl_79 = (byte) rdx_78;
 				rdi_70->bFFFFFFFB = dl_79;
-				struct Eq_272 * rcx_102 = rdi_70 - 0x05;
+				struct Eq_271 * rcx_102 = rdi_70 - 0x05;
 				word32 edx_136 = (word32) rdx_78;
 				if (dl_79 > 0x39)
 				{
@@ -256,7 +256,7 @@ void main._omp_fn.0(word32 ** rdi)
 					{
 						uint64 rdi_86 = (uint64) rcx_102->bFFFFFFFF;
 						--rcx_102;
-						rcx_102[1] = (struct Eq_272) ((byte) edx_136 - 0x0A);
+						rcx_102[1] = (struct Eq_271) ((byte) edx_136 - 0x0A);
 						uint64 rdx_94 = (uint64) ((word32) rdi_86 + 0x01);
 						ci8 dl_95 = (byte) rdx_94;
 						rcx_102->b0000 = dl_95;
@@ -283,7 +283,7 @@ void __libc_csu_init(word64 rdx, word64 rsi, word32 edi)
 	int64 rbp_31 = 0x00403DF8 - 0x00403DF0;
 	if (rbp_31 >> 0x03 != 0x00)
 	{
-		Eq_350 rbx_43 = 0x00;
+		Eq_349 rbx_43 = 0x00;
 		do
 		{
 			(*((char *) g_a403DF0 + rbx_43 * 0x08))();

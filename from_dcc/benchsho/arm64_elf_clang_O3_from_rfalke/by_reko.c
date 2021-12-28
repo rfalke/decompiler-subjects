@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,48 +124,44 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
+word64 g_qw400638 = 0x00; // 0000000000400638
 // 0000000000400640: void main(Register word64 x11)
 void main(word64 x11)
 {
 	word32 x11_32_32 = SLICE(x11, word32, 32);
-	x0_20 = (uint64) __isoc99_scanf("%ld", 0x00);
-	x0_25 = (uint64) printf("executing %ld iterations\n", 0x00);
-	x0_28 = (uint64) __isoc99_scanf("%ld", 0x00);
-	x0_32 = (uint64) __isoc99_scanf("%ld", 0x00);
-	word32 w9_105 = (word32) wLoc3A;
+	x0_21 = (uint64) __isoc99_scanf("%ld", fp + ~0x27);
+	x0_26 = (uint64) printf("executing %ld iterations\n", (int32) qwLoc30);
+	x0_30 = (uint64) __isoc99_scanf("%ld", fp + ~0x29);
+	x0_34 = (uint64) __isoc99_scanf("%ld", fp + ~0x33);
+	word32 w9_113 = (word32) wLoc3A;
 	if (qwLoc48 >= 0x01)
 	{
-		int32 w10_106 = (word32) wLoc3C;
-		int64 x11_108 = SEQ(x11_32_32, 0x01);
+		int32 w10_114 = (word32) wLoc3C;
+		int64 x11_116 = SEQ(x11_32_32, 0x01);
 		do
 		{
-			int32 w12_42 = 0x01;
+			int32 w12_44 = 0x01;
 			do
 			{
-				if ((((word32) (w12_42 == (w12_42 + (w9_105 + w10_106) << 16) >> 0x0011) | w12_42) & 0xFFFF) != 0x00)
-					w10_106 = w12_42 + 0x01;
-				++w12_42;
-				w9_105 = (word32) ((int32) (int16) w10_106 > w12_42);
-			} while (w12_42 != 0x29);
-			x11_108 = x11_167 + 0x01;
-			x11_167 = x11_108;
-		} while (x11_167 - qwLoc48 < 0x00);
+				if ((((word32) (w12_44 == (w12_44 + (w9_113 + w10_114) << 16) >> 0x0011) | w12_44) & 0xFFFF) != 0x00)
+					w10_114 = w12_44 + 0x01;
+				++w12_44;
+				w9_113 = (word32) ((int32) (int16) w10_114 > w12_44);
+			} while (w12_44 != 0x29);
+			x11_116 = x11_169 + 0x01;
+			x11_169 = x11_116;
+		} while (x11_169 - qwLoc48 < 0x00);
 	}
-	x0_88 = (uint64) printf("a=%d\n", 0x00);
+	x0_96 = (uint64) printf("a=%d\n", (int32) (int16) w9_113);
 }
 
 // 0000000000400720: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

@@ -83,14 +83,14 @@ real64 g_r804A1C8 = 7.89; // 0804A1C8
 void main(word32 dwArg04)
 {
 	__align(fp);
-	Eq_13 rLoc1C_112 = (real32) ((real64) dwArg04 + (real64) g_r804A1BC);
+	Eq_13 rLoc1C_112 = (real32) ((real64) dwArg04 + (real64) 1.23F);
 	print_char(0x61);
 	print_short(0x2A);
 	print_float_as_hex(rLoc1C_112);
 	real64 rLoc1_113 = (real64) dwArg04;
-	real64 rLoc1_120 = rLoc1_113 + g_r804A1C0;
+	real64 rLoc1_120 = rLoc1_113 + 4.56;
 	print_double_as_hex((word32) rLoc1_120, SLICE(rLoc1_120, word32, 32));
-	print_long_double_as_hex((real80) (rLoc1_113 + g_r804A1C8));
+	print_long_double_as_hex((real80) (rLoc1_113 + 7.89));
 	real64 rLoc1_127 = (real64) rLoc1C_112;
 	print_varargs(rLoc1_127);
 	print_without_prototype(rLoc1_127);

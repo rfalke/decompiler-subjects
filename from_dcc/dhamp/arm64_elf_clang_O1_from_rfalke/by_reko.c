@@ -81,10 +81,10 @@ byte g_b400D89 = 0x44; // 0000000000400D89
 
 #include "subject.h"
 
-// 0000000000400600: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400600: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400630, qwArg00, (char *) fp + 8, g_ptr400638, g_ptr400640, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400630, (int32) qwArg00, (char *) fp + 8, g_ptr400638, g_ptr400640, x0, fp);
 	abort();
 }
 
@@ -144,38 +144,34 @@ void __do_global_dtors_aux()
 // 0000000000400710: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400748 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400748;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400748 = null; // 0000000000400748
-// 0000000000400750: void main(Register word32 x8_32_32, Register word64 x26, Register word64 x27, Register word64 x30)
-void main(word32 x8_32_32, word64 x26, word64 x27, word64 x30)
+word64 g_qw400748 = 0x00; // 0000000000400748
+// 0000000000400750: void main(Register word32 x1_32_32, Register word32 x8_32_32, Register word64 x26, Register word64 x27, Register word64 x30)
+void main(word32 x1_32_32, word32 x8_32_32, word64 x26, word64 x27, word64 x30)
 {
-	word32 x27_32_32_110 = SLICE(x27, word32, 32);
-	x0_44 = (uint64) printf("Start...%c\n\n", 0x00);
-	up32 w27_54;
-	for (w27_54 = 0x00; w27_54 != 0x06; ++w27_54)
+	word32 x27_32_32_114 = SLICE(x27, word32, 32);
+	x0_46 = (uint64) printf("Start...%c\n\n", '\a');
+	up32 w27_56;
+	for (w27_56 = 0x00; w27_56 != 0x06; ++w27_56)
 	{
-		ui64 x8_106 = SEQ(x8_32_32, w27_54);
-		word64 x27_111 = SEQ(x27_32_32_110, w27_54);
-		if (w27_54 <= 0x05)
+		ui64 x8_110 = SEQ(x8_32_32, w27_56);
+		word64 x27_115 = SEQ(x27_32_32_114, w27_56);
+		if (w27_56 <= 0x05)
 		{
-			<anonymous> * x8_107 = *((char *) g_a400CA0 + x8_106 * 8);
-			x8_107();
+			<anonymous> * x8_111 = *((char *) g_a400CA0 + x8_110 * 8);
+			x8_111();
 			return;
 		}
 	}
-	x0_73 = (uint64) printf("\n\n...End%c", 0x00);
+	x0_77 = (uint64) printf("\n\n...End%c", '\a');
 }
 
 // 00000000004008FC: void sq(Register word64 x0, Register word32 x10_32_32)
@@ -192,7 +188,7 @@ void sq(word64 x0, word32 x10_32_32)
 void sroot(word64 d0)
 {
 	real64 d9_33 = (word64) q0;
-	real64 d10_29 = g_r400CD0;
+	real64 d10_29 = 1e-06;
 	real64 d8_34 = d9_33 * 0.5;
 	if (d9_33 * 0.5 * d10_29 < d9_33)
 	{
@@ -219,10 +215,10 @@ void dply()
 {
 }
 
-// 0000000000400A2C: Register int32 fib(Register int32 w0, Register out Eq_184 w19Out, Register out Eq_184 w20Out)
+// 0000000000400A2C: Register int32 fib(Register int32 w0, Register out Eq_191 w19Out, Register out Eq_191 w20Out)
 // Called from:
 //      fib
-int32 fib(int32 w0, union Eq_184 & w19Out, union Eq_184 & w20Out)
+int32 fib(int32 w0, union Eq_191 & w19Out, union Eq_191 & w20Out)
 {
 	word32 x20_32_32_59 = SLICE(x20, word32, 32);
 	int32 w19_19;
@@ -302,10 +298,12 @@ void mstrcpy(byte * x0, byte * x1)
 void mcopy()
 {
 	mstrcpy(fp - 0x9C, &g_b400D89);
-	union Eq_299 * x0_40 = fopen("zyxw.vut", "w");
-	word32 x0_32_32_110 = SLICE(x0_40, word32, 32);
+	union Eq_306 * x0_40 = fopen("zyxw.vut", "w");
 	if (x0_40 == null)
-		exit(SEQ(SLICE((uint64) printf("Cannot open file", 0x00), word32, 32), ~0x00));
+	{
+		x0_45 = (uint64) printf("Cannot open file");
+		exit(~0x00);
+	}
 	else
 	{
 		ui32 w20_51 = (word32) bLocA4;
@@ -318,7 +316,7 @@ void mcopy()
 			{
 				do
 				{
-					x0_32_32_110 = SLICE((uint64) _IO_putc(SEQ(x0_32_32_110, w8_57 & 0xFF), x0_40), word32, 32);
+					x0_64 = (uint64) _IO_putc(w8_57 & 0xFF, x0_40);
 					w8_57 = (word32) *x23_55;
 					++x23_55;
 				} while (w8_57 != 0x00);

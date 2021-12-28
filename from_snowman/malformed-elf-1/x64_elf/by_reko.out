@@ -1,11 +1,12 @@
 === Using options:--aggressive-branch-removal
 Error: An error occurred during decompilation.
     Value does not fall within the expected range.
-       at Reko.Core.ImageMapItem.set_Size(UInt32 value) in /Users/runner/work/reko/reko/src/Core/ImageMap.cs:line 339
-   at Reko.Core.SegmentMap.CreateImageMap() in /Users/runner/work/reko/reko/src/Core/SegmentMap.cs:line 241
-   at Reko.Core.Program..ctor(SegmentMap segmentMap, IProcessorArchitecture arch, IPlatform platform) in /Users/runner/work/reko/reko/src/Core/Program.cs:line 90
-   at Reko.ImageLoaders.Elf.ElfLoader.LoadImage(IPlatform platform, Byte[] rawImage) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader.cs:line 434
-   at Reko.ImageLoaders.Elf.ElfImageLoader.Load(Address addrLoad) in /Users/runner/work/reko/reko/src/ImageLoaders/Elf/ElfImageLoader.cs:line 92
-   at Reko.Loading.Loader.LoadExecutable(String filename, Byte[] image, String loader, Address addrLoad) in /Users/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 119
-   at Reko.Decompiler.Load(String fileName, String loaderName, Address addrLoad) in /Users/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 194
-   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /Users/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 166
+       at Reko.Core.ImageMapItem.set_Size(UInt32 value) in /home/runner/work/reko/reko/src/Core/ImageMap.cs:line 339
+   at Reko.Core.SegmentMap.CreateImageMap() in /home/runner/work/reko/reko/src/Core/SegmentMap.cs:line 241
+   at Reko.Core.Program..ctor(SegmentMap segmentMap, IProcessorArchitecture arch, IPlatform platform) in /home/runner/work/reko/reko/src/Core/Program.cs:line 91
+   at Reko.ImageLoaders.Elf.ElfLoader.LoadImage(IPlatform platform, Byte[] rawImage) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfLoader.cs:line 435
+   at Reko.ImageLoaders.Elf.ElfImageLoader.LoadProgram(Address addrLoad) in /home/runner/work/reko/reko/src/ImageLoaders/Elf/ElfImageLoader.cs:line 93
+   at Reko.Core.Loading.ProgramImageLoader.Load(Address addrLoad) in /home/runner/work/reko/reko/src/Core/Loading/ProgramImageLoader.cs:line 46
+   at Reko.Loading.Loader.LoadBinaryImage(ImageLocation imageLocation, Byte[] image, String loader, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 171
+   at Reko.Loading.Loader.Load(ImageLocation imageLocation, String loaderName, Address addrLoad) in /home/runner/work/reko/reko/src/Decompiler/Loading/Loader.cs:line 117
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 166

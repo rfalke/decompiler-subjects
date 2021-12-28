@@ -1,6 +1,42 @@
 === Using options:--aggressive-branch-removal
 0804920D: warning: Call target address 00000000 is invalid.
 080491C0: warning: Call target address 00000000 is invalid.
-08049250: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-080490E9: warning: The format specifier '%L' passed to *printf is not known.
-08049122: warning: The format specifier '%L' passed to *printf is not known.
+/home/hawk/kza/decompiler-subjects.clean/from_holdec/i386_float_recog/ia32_elf_gcc/subject.exe: error: An internal error occurred while analyzing /home/hawk/kza/decompiler-subjects.clean/from_holdec/i386_float_recog/ia32_elf_gcc/subject.exe.
+    Unable to cast object of type 'System.Numerics.BigInteger' to type 'System.IConvertible'.
+       at System.Convert.ToDouble(Object value) in /_/src/libraries/System.Private.CoreLib/src/System/Convert.cs:line 1630
+   at Reko.Core.Expressions.Constant.ToReal64() in /home/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 432
+   at Reko.Core.Output.CodeFormatter.VisitConstant(Constant c) in /home/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 298
+   at Reko.Core.Expressions.Constant.Accept(IExpressionVisitor v) in /home/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 174
+   at Reko.Core.Output.CodeFormatter.WriteExpression(Expression expr) in /home/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 1131
+   at Reko.Core.Output.CodeFormatter.WriteActuals(Expression[] arguments) in /home/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 1112
+   at Reko.Core.Output.CodeFormatter.VisitApplication(Application appl) in /home/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 185
+   at Reko.Core.Expressions.Application.Accept(IExpressionVisitor v) in /home/runner/work/reko/reko/src/Core/Expressions/Application.cs:line 60
+   at Reko.Core.Output.CodeFormatter.VisitSideEffect(SideEffect side) in /home/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 714
+   at Reko.Core.Code.SideEffect.Accept(InstructionVisitor v) in /home/runner/work/reko/reko/src/Core/Code/SideEffect.cs:line 51
+   at Reko.Core.Block.WriteStatements(TextWriter writer) in /home/runner/work/reko/reko/src/Core/Block.cs:line 183
+   at Reko.Core.Block.Write(TextWriter sb) in /home/runner/work/reko/reko/src/Core/Block.cs:line 172
+   at Reko.Decompiler.EmitProgram(Program program, IEnumerable`1 objects, DataFlowAnalysis dfa, String filename, TextWriter output) in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 172
+   at Reko.Decompiler.<>c__DisplayClass13_0.<AnalyzeDataFlow>b__0(String name, IEnumerable`1 procs, TextWriter writer) in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 116
+   at Reko.DecompiledFileService.WriteIntermediateCode(Program program, Action`3 writer) in /home/runner/work/reko/reko/src/Decompiler/IDecompiledFileService.cs:line 147
+   at Reko.Decompiler.AnalyzeDataFlow() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 116
+Error: An error occurred during decompilation.
+    Unable to cast object of type 'System.Numerics.BigInteger' to type 'System.IConvertible'.
+       at System.Convert.ToDouble(Object value) in /_/src/libraries/System.Private.CoreLib/src/System/Convert.cs:line 1630
+   at Reko.Core.Expressions.Constant.ToReal64() in /home/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 432
+   at Reko.Core.Output.CodeFormatter.VisitConstant(Constant c) in /home/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 298
+   at Reko.Core.Expressions.Constant.Accept(IExpressionVisitor v) in /home/runner/work/reko/reko/src/Core/Expressions/Constant.cs:line 174
+   at Reko.Core.Output.CodeFormatter.WriteExpression(Expression expr) in /home/runner/work/reko/reko/src/Core/Output/CodeFormatter.cs:line 1131
+   at Reko.Core.Expressions.Expression.ToString() in /home/runner/work/reko/reko/src/Core/Expressions/Expression.cs:line 85
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args) in /_/src/libraries/System.Private.CoreLib/src/System/Text/StringBuilder.cs:line 1789
+   at System.IO.StreamWriter.WriteFormatHelper(String format, ParamsArray args, Boolean appendNewLine) in /_/src/libraries/System.Private.CoreLib/src/System/IO/StreamWriter.cs:line 479
+   at System.IO.StreamWriter.Write(String format, Object[] arg) in /_/src/libraries/System.Private.CoreLib/src/System/IO/StreamWriter.cs:line 542
+   at Reko.Core.Output.TextFormatter.Write(String format, Object[] arguments) in /home/runner/work/reko/reko/src/Core/Output/TextFormatter.cs:line 73
+   at Reko.Core.Types.TypeStore.WriteExpressionOf(TypeVariable tvMember, Boolean showExprAddresses, Formatter writer) in /home/runner/work/reko/reko/src/Core/Types/TypeStore.cs:line 224
+   at Reko.Core.Types.TypeStore.WriteEntry(TypeVariable tv, Boolean showExprAddresses, Formatter writer) in /home/runner/work/reko/reko/src/Core/Types/TypeStore.cs:line 242
+   at Reko.Core.Types.TypeStore.Write(Boolean showExprAddresses, TextWriter w) in /home/runner/work/reko/reko/src/Core/Types/TypeStore.cs:line 216
+   at Reko.Decompiler.WriteDecompiledTypes(Program program, String headerFilename, TextWriter w) in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 392
+   at Reko.Decompiler.<>c__DisplayClass32_0.<WriteDecompilerProducts>b__0(String n, TextWriter w) in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 557
+   at Reko.DecompiledFileService.WriteTypes(Program program, Action`2 writer) in /home/runner/work/reko/reko/src/Decompiler/IDecompiledFileService.cs:line 158
+   at Reko.Decompiler.WriteDecompilerProducts() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 557
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 547
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 225

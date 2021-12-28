@@ -1,17 +1,29 @@
 === Using options:--aggressive-branch-removal
-0000000100002F4C: warning: AArch64 instruction Nyi is not supported yet.
-0000000100002FA0: warning: AArch64 instruction Nyi is not supported yet.
-0000000100002FF4: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003048: warning: AArch64 instruction Nyi is not supported yet.
-000000010000309C: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003198: warning: AArch64 instruction Nyi is not supported yet.
-00000001000031EC: warning: AArch64 instruction Nyi is not supported yet.
-000000010000333C: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003390: warning: AArch64 instruction Nyi is not supported yet.
-00000001000033E4: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003534: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003588: warning: AArch64 instruction Nyi is not supported yet.
-00000001000035DC: warning: AArch64 instruction Nyi is not supported yet.
-000000010000372C: warning: AArch64 instruction Nyi is not supported yet.
-0000000100003780: warning: AArch64 instruction Nyi is not supported yet.
-00000001000037D4: warning: AArch64 instruction Nyi is not supported yet.
+0000000100002EB0: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+0000000100002F04: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+0000000100002F58: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+0000000100002FAC: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+0000000100003000: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+0000000100003054: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+00000001000030A8: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+00000001000030FC: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+0000000100003150: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+00000001000031A4: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+00000001000031F8: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+000000010000324C: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+00000001000032A0: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+00000001000032F4: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+0000000100003348: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+000000010000339C: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+00000001000033F0: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+0000000100003444: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+0000000100003498: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+00000001000034EC: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+0000000100003540: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+0000000100003594: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+00000001000035E8: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+000000010000363C: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+0000000100003690: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+00000001000036E4: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+0000000100003738: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.
+000000010000378C: error: Unable to cast object of type 'Reko.Core.Types.ArrayType' to type 'Reko.Core.Types.PrimitiveType'.

@@ -3,6 +3,4 @@
 0804844F: warning: Call target address 00000000 is invalid.
 08048403: warning: Call target address 00000000 is invalid.
 080483C6: warning: Call target address 00000000 is invalid.
-08048452: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
-08048458: warning: Procedure frame_dummy previously had a return address of 4 bytes on the stack, but now seems to have a return address of 0 bytes on the stack.
 08048330: warning: Unable to resolve imported reference __gmon_start__.

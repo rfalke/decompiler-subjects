@@ -61,7 +61,7 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-Eq_457 g_a400B18[] = // 0000000000400B18
+Eq_580 g_a400B18[] = // 0000000000400B18
 	{
 	};
 // subject_text.c
@@ -70,10 +70,10 @@ Eq_457 g_a400B18[] = // 0000000000400B18
 
 #include "subject.h"
 
-// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 0000000000400490: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr4004C0, (int32) qwArg00, (char *) fp + 8, g_ptr4004C8, g_ptr4004D0, x0, fp);
 	abort();
 }
 
@@ -133,36 +133,36 @@ void __do_global_dtors_aux()
 // 00000000004005A0: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw4005D8 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr4005D8;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr4005D8 = null; // 00000000004005D8
-// 00000000004005E0: void main(Register ui32 w0, Register word32 x8_32_32)
-void main(ui32 w0, word32 x8_32_32)
+word64 g_qw4005D8 = 0x00; // 00000000004005D8
+// 00000000004005E0: void main(Sequence word64 x1_32_32_w0, Register word32 x8_32_32)
+void main(word64 x1_32_32_w0, word32 x8_32_32)
 {
-	x0_20 = (uint64) printf("a(%d)\n", 0x00);
-	x0_26 = (uint64) printf("b(%d)\n", 0x00);
-	c(w0 * 0x03 - 0x01, x8_32_32);
+	int32 w0 = (word32) x1_32_32_w0;
+	word32 x1_32_32 = SLICE(x1_32_32_w0, word32, 64);
+	x0_23 = (uint64) printf("a(%d)\n", w0);
+	x0_30 = (uint64) printf("b(%d)\n", w0 * 0x03);
+	c(SEQ(x1_32_32, w0 * 0x03 - 0x01), x8_32_32);
 }
 
-// 000000000040062C: void b(Register word32 w0, Register word32 x8_32_32)
-void b(word32 w0, word32 x8_32_32)
+// 000000000040062C: void b(Sequence word64 x1_32_32_w0, Register word32 x8_32_32)
+void b(word64 x1_32_32_w0, word32 x8_32_32)
 {
-	x0_20 = (uint64) printf("b(%d)\n", 0x00);
-	c(w0 - 0x01, x8_32_32);
+	int32 w0 = (word32) x1_32_32_w0;
+	word32 x1_32_32 = SLICE(x1_32_32_w0, word32, 64);
+	x0_22 = (uint64) printf("b(%d)\n", w0);
+	c(SEQ(x1_32_32, w0 - 0x01), x8_32_32);
 }
 
-// 000000000040065C: void c(Register Eq_116 w0, Register word32 x8_32_32)
+// 000000000040065C: void c(Sequence word64 x1_32_32_w0, Register word32 x8_32_32)
 // Called from:
 //      main
 //      b
@@ -171,144 +171,168 @@ void b(word32 w0, word32 x8_32_32)
 //      l
 //      e
 //      k
-void c(Eq_116 w0, word32 x8_32_32)
+void c(word64 x1_32_32_w0, word32 x8_32_32)
 {
-	x0_21 = (uint64) printf("c(%d)\n", 0x00);
-	ui64 x8_38 = SEQ(x8_32_32, w0 - 0x02);
+	Eq_151 w0 = (word32) x1_32_32_w0;
+	word32 x1_32_32 = SLICE(x1_32_32_w0, word32, 64);
+	x0_23 = (uint64) printf("c(%d)\n", w0);
+	ui64 x8_40 = SEQ(x8_32_32, w0 - 0x02);
 	if (w0 > 0x06)
 		return;
-	char * x0_107;
-	switch (g_a400B18[x8_38])
+	word64 x1_148;
+	char * x0_104;
+	switch (g_a400B18[x8_40])
 	{
 	case 0x00:
-		x0_99 = (uint64) printf("d(%d)\n", 0x00);
-		x0_103 = (uint64) printf("e(%d)\n", 0x00);
-		x0_107 = (char *) "c(%d)\n";
+		x0_125 = (uint64) printf("d(%d)\n", 0x02);
+		x0_131 = (uint64) printf("e(%d)\n", 0x01);
+		x0_104 = (char *) "c(%d)\n";
+		x1_148 = SEQ(x1_32_32, 0x00);
 		break;
 	case 0x01:
-		x0_89 = (uint64) printf("f(%d)\n", 0x00);
-		x0_93 = (uint64) printf("g(%d)\n", 0x00);
-		x0_107 = (char *) "f(%d)\n";
+		x0_111 = (uint64) printf("f(%d)\n", 0x03);
+		x0_117 = (uint64) printf("g(%d)\n", 0x02);
+		x0_104 = (char *) "f(%d)\n";
+		x1_148 = SEQ(x1_32_32, 0x01);
 		break;
 	case 0x02:
-		x0_81 = (uint64) printf("h(%d)\n", 0x00);
-		x0_107 = (char *) "i(%d)\n";
+		x0_101 = (uint64) printf("h(%d)\n", 0x04);
+		x0_104 = (char *) "i(%d)\n";
+		x1_148 = SEQ(x1_32_32, 0x03);
 		break;
 	case 0x03:
-		x0_54 = (uint64) printf("j(%d)\n", 0x00);
-		x0_58 = (uint64) printf("k(%d)\n", 0x00);
-		x0_63 = (uint64) printf("e(%d)\n", 0x00);
-		x0_68 = (uint64) printf("c(%d)\n", 0x00);
-		x0_72 = (uint64) printf("d(%d)\n", 0x00);
-		x0_75 = (uint64) printf("e(%d)\n", 0x00);
-		x0_107 = (char *) "c(%d)\n";
+		x0_62 = (uint64) printf("j(%d)\n", 0x05);
+		x0_68 = (uint64) printf("k(%d)\n", 0x05);
+		x0_75 = (uint64) printf("e(%d)\n", 0x04);
+		x0_82 = (uint64) printf("c(%d)\n", 0x02);
+		x0_88 = (uint64) printf("d(%d)\n", 0x02);
+		x0_93 = (uint64) printf("e(%d)\n", 0x01);
+		x0_104 = (char *) "c(%d)\n";
+		x1_148 = SEQ(x1_32_32, 0x00);
 		break;
 	case 0x04:
-		x0_43 = (uint64) printf("l(%d)\n", 0x00);
-		x0_47 = (uint64) printf("b(%d)\n", 0x00);
-		x0_107 = (char *) "c(%d)\n";
+		x0_47 = (uint64) printf("l(%d)\n", 0x06);
+		x0_53 = (uint64) printf("b(%d)\n", 0x08);
+		x0_104 = (char *) "c(%d)\n";
+		x1_148 = SEQ(x1_32_32, 0x07);
 		break;
 	}
-	x0_120 = (uint64) printf(x0_107, 0x00);
+	x0_154 = (uint64) printf(x0_104, (int32) x1_148);
 }
 
-// 00000000004007CC: void d(Register int32 w0, Register word64 x8)
-void d(int32 w0, word64 x8)
+// 00000000004007CC: void d(Sequence word64 x1_32_32_w0, Register word64 x8)
+void d(word64 x1_32_32_w0, word64 x8)
 {
+	int32 w0 = (word32) x1_32_32_w0;
+	word32 x1_32_32 = SLICE(x1_32_32_w0, word32, 64);
 	word32 x8_32_32 = SLICE(x8, word32, 32);
-	x0_21 = (uint64) printf("d(%d)\n", 0x00);
+	x0_23 = (uint64) printf("d(%d)\n", w0);
 	if (w0 < 0x02)
 		return;
-	x0_38 = (uint64) printf("e(%d)\n", 0x00);
-	Eq_116 w0_44 = w0 - 0x01 >> 1;
-	c(w0_44, x8_32_32);
+	x0_41 = (uint64) printf("e(%d)\n", w0 - 0x01);
+	int32 w0_47 = w0 - 0x01 >> 1;
+	c(SEQ(x1_32_32, w0_47), x8_32_32);
 }
 
-// 0000000000400824: void f(Register int32 w0)
+// 0000000000400824: void f(Sequence word64 x1_32_32_w0)
 // Called from:
 //      g
-void f(int32 w0)
+void f(word64 x1_32_32_w0)
 {
-	x0_27 = (uint64) printf("f(%d)\n", 0x00);
-	int32 w19_29 = w0 - 0x02;
+	int32 w0 = (word32) x1_32_32_w0;
+	x0_29 = (uint64) printf("f(%d)\n", w0);
+	int32 w19_31 = w0 - 0x02;
 	if (w0 >= 0x02)
 	{
 		do
 		{
-			x0_41 = (uint64) printf("g(%d)\n", 0x00);
-			if (w19_29 <= 0x00)
+			int32 w22_39 = w19_31 + 0x01;
+			x0_45 = (uint64) printf("g(%d)\n", w22_39);
+			if (w22_39 <= 0x01)
 				return;
-			x0_49 = (uint64) printf("f(%d)\n", 0x00);
-			w19_29 -= 0x02;
-		} while (w19_29 >= 0x00);
+			x0_54 = (uint64) printf("f(%d)\n", w19_31);
+			w19_31 -= 0x02;
+		} while (w19_31 >= 0x00);
 	}
 }
 
-// 000000000040089C: void h(Register int32 w0)
-void h(int32 w0)
+// 000000000040089C: void h(Sequence word64 x1_32_32_w0)
+void h(word64 x1_32_32_w0)
 {
-	x0_20 = (uint64) printf("h(%d)\n", 0x00);
+	int32 w0 = (word32) x1_32_32_w0;
+	x0_23 = (uint64) printf("h(%d)\n", w0);
 	if (w0 < 0x01)
 		return;
-	x0_45 = (uint64) printf("i(%d)\n", 0x00);
+	x0_49 = (uint64) printf("i(%d)\n", w0 - 0x01);
 }
 
-// 00000000004008E4: void j(Register int32 w0, Register word64 x8)
-void j(int32 w0, word64 x8)
+// 00000000004008E4: void j(Sequence word64 x1_32_32_w0, Register word64 x8)
+void j(word64 x1_32_32_w0, word64 x8)
 {
+	int32 w0 = (word32) x1_32_32_w0;
+	word32 x1_32_32 = SLICE(x1_32_32_w0, word32, 64);
 	word32 x8_32_32 = SLICE(x8, word32, 32);
-	x0_21 = (uint64) printf("j(%d)\n", 0x00);
+	x0_23 = (uint64) printf("j(%d)\n", w0);
 	if (w0 < 0x02)
 		return;
-	x0_36 = (uint64) printf("k(%d)\n", 0x00);
-	x0_42 = (uint64) printf("e(%d)\n", 0x00);
-	Eq_116 w0_48 = w0 - 0x01 >> 1;
-	c(w0_48, x8_32_32);
+	x0_40 = (uint64) printf("k(%d)\n", w0);
+	x0_47 = (uint64) printf("e(%d)\n", w0 - 0x01);
+	int32 w0_53 = w0 - 0x01 >> 1;
+	c(SEQ(x1_32_32, w0_53), x8_32_32);
 }
 
-// 000000000040094C: void l(Register int32 w0, Register word64 x8)
-void l(int32 w0, word64 x8)
+// 000000000040094C: void l(Sequence word64 x1_32_32_w0, Register word64 x8)
+void l(word64 x1_32_32_w0, word64 x8)
 {
+	int32 w0 = (word32) x1_32_32_w0;
+	word32 x1_32_32 = SLICE(x1_32_32_w0, word32, 64);
 	word32 x8_32_32 = SLICE(x8, word32, 32);
-	x0_21 = (uint64) printf("l(%d)\n", 0x00);
+	x0_23 = (uint64) printf("l(%d)\n", w0);
 	if (w0 < 0x02)
 		return;
-	x0_37 = (uint64) printf("b(%d)\n", 0x00);
-	c(w0 + 0x01, x8_32_32);
+	x0_40 = (uint64) printf("b(%d)\n", w0 + 0x02);
+	c(SEQ(x1_32_32, w0 + 0x01), x8_32_32);
 }
 
-// 00000000004009A0: void e(Register int32 w0, Register word32 x8_32_32)
-void e(int32 w0, word32 x8_32_32)
+// 00000000004009A0: void e(Sequence word64 x1_32_32_w0, Register word32 x8_32_32)
+void e(word64 x1_32_32_w0, word32 x8_32_32)
 {
-	x0_20 = (uint64) printf("e(%d)\n", 0x00);
-	c(w0 >> 1, x8_32_32);
+	int32 w0 = (word32) x1_32_32_w0;
+	word32 x1_32_32 = SLICE(x1_32_32_w0, word32, 64);
+	x0_22 = (uint64) printf("e(%d)\n", w0);
+	c(SEQ(x1_32_32, w0 >> 1), x8_32_32);
 }
 
-// 00000000004009D0: void g(Register int32 w0)
-void g(int32 w0)
+// 00000000004009D0: void g(Sequence word64 x1_32_32_w0)
+void g(word64 x1_32_32_w0)
 {
-	x0_21 = (uint64) printf("g(%d)\n", 0x00);
+	int32 w0 = (word32) x1_32_32_w0;
+	word32 x1_32_32 = SLICE(x1_32_32_w0, word32, 64);
+	x0_23 = (uint64) printf("g(%d)\n", w0);
 	if (w0 < 0x02)
 		return;
-	f(w0 - 0x01);
+	f(SEQ(x1_32_32, w0 - 0x01));
 }
 
-// 0000000000400A14: void i()
-void i()
+// 0000000000400A14: void i(Sequence word64 x1_32_32_w0)
+void i(word64 x1_32_32_w0)
 {
-	x0_8 = (uint64) printf("i(%d)\n", 0x00);
+	int32 w0 = (word32) x1_32_32_w0;
+	x0_10 = (uint64) printf("i(%d)\n", w0);
 }
 
-// 0000000000400A28: void k(Register int32 w0, Register word64 x8)
-void k(int32 w0, word64 x8)
+// 0000000000400A28: void k(Sequence word64 x1_32_32_w0, Register word64 x8)
+void k(word64 x1_32_32_w0, word64 x8)
 {
+	int32 w0 = (word32) x1_32_32_w0;
+	word32 x1_32_32 = SLICE(x1_32_32_w0, word32, 64);
 	word32 x8_32_32 = SLICE(x8, word32, 32);
-	x0_21 = (uint64) printf("k(%d)\n", 0x00);
+	x0_23 = (uint64) printf("k(%d)\n", w0);
 	if (w0 < 0x02)
 		return;
-	x0_38 = (uint64) printf("e(%d)\n", 0x00);
-	Eq_116 w0_44 = w0 - 0x01 >> 1;
-	c(w0_44, x8_32_32);
+	x0_41 = (uint64) printf("e(%d)\n", w0 - 0x01);
+	int32 w0_47 = w0 - 0x01 >> 1;
+	c(SEQ(x1_32_32, w0_47), x8_32_32);
 }
 
 // 0000000000400A80: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

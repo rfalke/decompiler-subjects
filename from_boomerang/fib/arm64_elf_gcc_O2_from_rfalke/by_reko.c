@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_99 g_t11000 = // 0000000000011000
+struct Eq_104 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -81,21 +81,23 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 // 00000000000006F0: void main()
 void main()
 {
-	int32 w2_12;
-	for (w2_12 = 0x09; w2_12 != 0x01; w2_12 -= 0x02)
+	int32 w2_12 = 0x09;
+	int32 w1_10 = 0x00;
+	do
 	{
-		word32 w19_49;
-		word32 w20_50;
-		word32 w21_51;
-		fib(w2_12, out w19_49, out w20_50, out w21_51);
-	}
-	x0_30 = (uint64) printf("%i\n", 0x00);
+		w2_12 -= 0x02;
+		word32 w19_52;
+		word32 w20_53;
+		word32 w21_54;
+		w1_10 += fib(w2_12, out w19_52, out w20_53, out w21_54);
+	} while (w2_12 != 0x01);
+	x0_33 = (uint64) printf("%i\n", w1_10);
 }
 
-// 0000000000000730: void _start(Register (ptr64 Eq_36) x0, Stack Eq_37 qwArg00)
-void _start(void (* x0)(), Eq_37 qwArg00)
+// 0000000000000730: void _start(Register (ptr64 Eq_39) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -140,7 +142,7 @@ void register_tm_clones()
 // 00000000000007F8: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_99 * x19_12 = &g_t11000;
+	struct Eq_104 * x19_12 = &g_t11000;
 	if ((word32) g_b11038 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)
@@ -169,11 +171,11 @@ void frame_dummy(word64 x29, word64 x30)
 	register_tm_clones();
 }
 
-// 0000000000000878: Register int32 fib(Register int32 w0, Register out Eq_17 w19Out, Register out Eq_17 w20Out, Register out Eq_17 w21Out)
+// 0000000000000878: Register int32 fib(Register int32 w0, Register out Eq_21 w19Out, Register out Eq_21 w20Out, Register out Eq_21 w21Out)
 // Called from:
 //      main
 //      fib
-int32 fib(int32 w0, union Eq_17 & w19Out, union Eq_17 & w20Out, union Eq_17 & w21Out)
+int32 fib(int32 w0, union Eq_21 & w19Out, union Eq_21 & w20Out, union Eq_21 & w21Out)
 {
 	word32 w20_22;
 	int32 w21_14 = w0;

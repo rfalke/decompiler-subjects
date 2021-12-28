@@ -61,10 +61,10 @@ word64 g_qw410DF0 = 0x00; // 0000000000410DF0
 
 #include "subject.h"
 
-// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack Eq_10 qwArg00)
-void _start(void (* x0)(), Eq_10 qwArg00)
+// 00000000004004F0: void _start(Register (ptr64 Eq_9) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_14 = (uint64) __libc_start_main(g_ptr400520, qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
+	x0_14 = (uint64) __libc_start_main(g_ptr400520, (int32) qwArg00, (char *) fp + 8, g_ptr400528, g_ptr400530, x0, fp);
 	abort();
 }
 
@@ -124,42 +124,38 @@ void __do_global_dtors_aux()
 // 0000000000400600: void frame_dummy(Register word64 x29, Register word64 x30)
 void frame_dummy(word64 x29, word64 x30)
 {
-	if (g_qw410DF0 != 0x00)
+	if (g_qw410DF0 != 0x00 && g_qw400638 != 0x00)
 	{
-		<anonymous> * x1_7 = g_ptr400638;
-		if (x1_7 != null)
-		{
-			x1_7();
-			register_tm_clones();
-			return;
-		}
+		fn0000000000000000();
+		register_tm_clones();
 	}
-	register_tm_clones();
+	else
+		register_tm_clones();
 }
 
-<anonymous> * g_ptr400638 = null; // 0000000000400638
-// 0000000000400640: void main(Register Eq_98 w0)
-void main(Eq_98 w0)
+word64 g_qw400638 = 0x00; // 0000000000400638
+// 0000000000400640: void main(Register Eq_101 w0)
+void main(Eq_101 w0)
 {
-	char * x0_35;
+	char * x0_37;
 	if (w0 > 0x27FF)
 	{
-		x0_39 = (uint64) printf("Population exceeds %u\n", 0x00);
+		x0_42 = (uint64) printf("Population exceeds %u\n", 0x2800);
 		if (w0 >> 28 <= 0x0E)
-			x0_47 = (uint64) printf("The mask is %x\n", 0x00);
-		x0_35 = (char *) "Arguments supplied";
+			x0_51 = (uint64) printf("The mask is %x\n", 0xF0000000);
+		x0_37 = (char *) "Arguments supplied";
 	}
 	else
 	{
-		x0_24 = (uint64) printf("The mask is %x\n", 0x00);
+		x0_26 = (uint64) printf("The mask is %x\n", 0xF0000000);
 		if (w0 <= 0x01)
 			return;
-		x0_30 = (uint64) puts("Arguments supplied");
+		x0_32 = (uint64) puts("Arguments supplied");
 		if (w0 < 0x03)
 			return;
-		x0_35 = (char *) "Three or more arguments";
+		x0_37 = (char *) "Three or more arguments";
 	}
-	x0_52 = (uint64) puts(x0_35);
+	x0_56 = (uint64) puts(x0_37);
 }
 
 // 00000000004006E0: void __libc_csu_init(Register word32 w0, Register word64 x1, Register word64 x2, Register word64 x24)

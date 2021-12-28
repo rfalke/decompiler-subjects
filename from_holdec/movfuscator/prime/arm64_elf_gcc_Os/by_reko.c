@@ -82,19 +82,19 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 void main()
 {
 	int32 w19_22;
-	word32 x0_32_32_49 = SLICE((uint64) puts("primes, 1-100000: "), word32, 32);
+	x0_24 = (uint64) puts("primes, 1-100000: ");
 	for (w19_22 = 0x01; w19_22 != 10000; ++w19_22)
 	{
 		if (is_prime(w19_22) != 0x00)
-			x0_32_32_49 = SLICE((uint64) printf("%d ", 0x00), word32, 32);
+			x0_41 = (uint64) printf("%d ", w19_22);
 	}
-	x0_54 = (uint64) putchar(SEQ(x0_32_32_49, 0x0A));
+	x0_56 = (uint64) putchar(0x0A);
 }
 
-// 00000000000007EC: void _start(Register (ptr64 Eq_45) x0, Stack Eq_46 qwArg00)
-void _start(void (* x0)(), Eq_46 qwArg00)
+// 00000000000007EC: void _start(Register (ptr64 Eq_43) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 

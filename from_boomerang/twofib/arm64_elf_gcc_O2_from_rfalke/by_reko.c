@@ -36,7 +36,7 @@ word64 g_qw10FC0 = 0x00; // 0000000000010FC0
 
 #include "subject.h"
 
-struct Eq_105 g_t11000 = // 0000000000011000
+struct Eq_110 g_t11000 = // 0000000000011000
 	{
 		0x00,
 	};
@@ -78,18 +78,17 @@ word64 g_qw10DB8 = 0x00; // 0000000000010DB8
 
 #include "subject.h"
 
-// 0000000000000730: void main(Stack word32 dwArg04)
-void main(word32 dwArg04)
+// 0000000000000730: void main(Stack int32 dwArg04)
+void main(int32 dwArg04)
 {
-	x0_12 = (uint64) printf("Enter number: ", 0x00);
-	twofib(SEQ(SLICE((uint64) scanf("%d", 0x00), word32, 32), dwArg04), SLICE(fp + 0x04, word32, 32));
-	x0_32 = (uint64) printf("Fibonacci of %d is %d\n", 0x00);
+	x0_12 = (uint64) printf("Enter number: ");
+	x0_36 = (uint64) printf("Fibonacci of %d is %d\n", dwArg04, (word32) twofib(SEQ(SLICE((uint64) scanf("%d", fp + 0x04), word32, 32), dwArg04), SLICE(fp + 0x04, word32, 32)));
 }
 
-// 0000000000000780: void _start(Register (ptr64 Eq_42) x0, Stack Eq_43 qwArg00)
-void _start(void (* x0)(), Eq_43 qwArg00)
+// 0000000000000780: void _start(Register (ptr64 Eq_45) x0, Stack word32 dwArg00)
+void _start(void (* x0)(), word32 dwArg00)
 {
-	x0_17 = (uint64) __libc_start_main(main_GOT, qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
+	x0_17 = (uint64) __libc_start_main(main_GOT, (int32) qwArg00, (char *) fp + 8, __libc_csu_init_GOT, __libc_csu_fini_GOT, x0, fp);
 	abort();
 }
 
@@ -134,7 +133,7 @@ void register_tm_clones()
 // 0000000000000848: void __do_global_dtors_aux(Register word64 x30)
 void __do_global_dtors_aux(word64 x30)
 {
-	struct Eq_105 * x19_12 = &g_t11000;
+	struct Eq_110 * x19_12 = &g_t11000;
 	if ((word32) g_b11040 == 0x00)
 	{
 		if (g_qw10FB8 != 0x00)

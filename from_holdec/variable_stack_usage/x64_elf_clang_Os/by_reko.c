@@ -76,11 +76,11 @@ word64 g_qw600E18 = 0x00; // 0000000000600E18
 
 #include "subject.h"
 
-// 0000000000400400: void _start(Register (ptr64 Eq_7) rdx, Stack Eq_8 qwArg00)
-void _start(void (* rdx)(), Eq_8 qwArg00)
+// 0000000000400400: void _start(Register (ptr64 Eq_7) rdx, Stack word32 dwArg00)
+void _start(void (* rdx)(), word32 dwArg00)
 {
 	__align((char *) fp + 8);
-	__libc_start_main(&g_t4005C0, qwArg00, (char *) fp + 8, &g_t4005E0, &g_t400650, rdx, fp);
+	__libc_start_main(&g_t4005C0, (int32) qwArg00, (char *) fp + 8, &g_t4005E0, &g_t400650, rdx, fp);
 	__hlt();
 }
 
@@ -123,7 +123,7 @@ void use(word32 * rdi)
 // 0000000000400501: void fill(Register word32 esi, Register (ptr64 void) rdi)
 void fill(word32 esi, void * rdi)
 {
-	memset(rdi, 0x78, (int64) esi << 0x02);
+	memset(rdi, 0x0078, (int64) esi << 0x02);
 }
 
 // 0000000000400512: void with_array(Register word32 edi)
@@ -131,8 +131,8 @@ void fill(word32 esi, void * rdi)
 //      main
 void with_array(word32 edi)
 {
-	ui64 rax_17 = (word64) ((word64) ((uint64) edi * 0x04) + 0x0F);
-	memset(fp - 24 - (rax_17 & 0x7FFFFFFF0), 0x78, (int64) edi << 0x02);
+	ui64 rax_17 = (uint64) edi * 0x04 + 0x0F;
+	memset(fp - 24 - (rax_17 & 0x7FFFFFFF0), 0x0078, (int64) edi << 0x02);
 	g_dw601028 = (word32) ((&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 24)[-(rax_17 & 0x7FFFFFFF0) /64 4].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000 + (g_dw601028 + 0x0F) / 4).a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000;
 }
 
@@ -142,8 +142,8 @@ void with_array(word32 edi)
 void with_alloca(word32 edi)
 {
 	int64 rdx_15 = (int64) edi;
-	ui64 rbx_17 = (word64) ((word64) (rdx_15 * 0x04) + 0x0F);
-	memset(fp - 24 - (rbx_17 & ~0x0F), 0x78, rdx_15 << 0x02);
+	ui64 rbx_17 = rdx_15 * 0x04 + 0x0F;
+	memset(fp - 24 - (rbx_17 & ~0x0F), 0x0078, rdx_15 << 0x02);
 	g_dw601028 = (word32) ((&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(&(fp - 24)[-(rbx_17 & ~0x0F) /64 4].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000)[0].a0000 + (g_dw601028 + 0x0F) / 4).a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000.a0000;
 }
 
