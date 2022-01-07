@@ -1,0 +1,4 @@
+=== Using options:--aggressive-branch-removal
+0000000000401008: warning: Unable to resolve imported reference __gmon_start__.
+0000000000403E10: warning: Expected sizes of arrays to have been determined by now
+0000000000403E10: warning: Expected sizes of arrays to have been determined by now
