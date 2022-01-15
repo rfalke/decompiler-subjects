@@ -2550,6 +2550,16 @@ d8 _inst_254_var_0(void)
   return 0;
 }
 
+// address: 01000173a8.0
+// full-signature: func(_inst_255_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_255_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
 // address: 0100017454.0
 // full-signature: func(_inst_256_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
 d8 _inst_256_var_0(void)
@@ -2573,6 +2583,16 @@ d8 _inst_257_var_0(void)
 // address: 01000175b8.0
 // full-signature: func(_inst_258_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
 d8 _inst_258_var_0(void)
+{
+  (void) STORE(&_dest_high, 0);
+  (void) STORE(&_dest_low, 0);
+  (void) STORE(&_dest_gp, 0);
+  return 0;
+}
+
+// address: 0100017670.0
+// full-signature: func(_inst_259_var_0, return=[<int(undef, 8),null,reg[x0]>], parameter=[], varargs=false)
+d8 _inst_259_var_0(void)
 {
   (void) STORE(&_dest_high, 0);
   (void) STORE(&_dest_low, 0);
