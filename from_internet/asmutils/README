@@ -1,0 +1,5 @@
+Source: http://asm.sourceforge.net/asmutils.html but actual source for compiling https://github.com/rafael2k/asmutils
+Person: Multiple
+Arch:   ia32
+Format: ELF
+Size:   small
