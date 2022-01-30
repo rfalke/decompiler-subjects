@@ -1,0 +1,22 @@
+=== Using options:--aggressive-branch-removal
+0804831C: warning: Call target address 08048383 is invalid.
+08048323: warning: Call target address 0804838D is invalid.
+08048331: warning: Call target address 0804839F is invalid.
+08048337: warning: Call target address 080483AC is invalid.
+08048341: warning: Call target address 080483A8 is invalid.
+08048350: warning: Call target address 080483BB is invalid.
+08048352: warning: Call target address 080483C8 is invalid.
+0804830C: warning: Call target address 0804837D is invalid.
+0804830E: warning: Call target address 08048382 is invalid.
+08048346: warning: Call target address 080483AB is invalid.
+08048348: warning: Call target address 080483B3 is invalid.
+fn080480B4: error: An error occurred while rewriting procedure to high-level language.
+    Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+       at System.Collections.Generic.List`1.get_Item(Int32 index) in /_/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs:line 150
+   at Reko.Core.Block.get_ThenBlock() in /home/runner/work/reko/reko/src/Core/Block.cs:line 91
+   at Reko.Structure.CompoundConditionCoalescer.MaybeCoalesce(Block block) in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 96
+   at Reko.Structure.CompoundConditionCoalescer.Transform() in /home/runner/work/reko/reko/src/Decompiler/Structure/CompoundConditionCoalescer.cs:line 62
+   at Reko.Structure.StructureAnalysis.Structure() in /home/runner/work/reko/reko/src/Decompiler/Structure/StructureAnalysis.cs:line 79
+   at Reko.Decompiler.StructureProgram() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 532
+0804804C: warning: Expected sizes of arrays to have been determined by now
+0804804C: warning: Expected sizes of arrays to have been determined by now

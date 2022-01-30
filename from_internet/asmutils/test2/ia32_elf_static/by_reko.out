@@ -1,0 +1,8 @@
+=== Using options:--aggressive-branch-removal
+Error: An error occurred during decompilation.
+    Address 00000001 is not within the image range.
+       at Reko.Core.ImageMap.AddItemWithSize(Address addr, ImageMapItem itemNew) in /home/runner/work/reko/reko/src/Core/ImageMap.cs:line 122
+   at Reko.Core.Program.BuildImageMap() in /home/runner/work/reko/reko/src/Core/Program.cs:line 551
+   at Reko.Decompiler.BuildImageMaps() in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 191
+   at Reko.Decompiler..ctor(Project project, IServiceProvider services) in /home/runner/work/reko/reko/src/Decompiler/Decompiler.cs:line 54
+   at Reko.CmdLine.CmdLineDriver.Decompile(Dictionary`2 pArgs) in /home/runner/work/reko/reko/src/Drivers/CmdLine/CmdLineDriver.cs:line 180

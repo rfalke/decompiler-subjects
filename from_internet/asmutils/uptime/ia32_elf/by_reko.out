@@ -1,0 +1,4 @@
+=== Using options:--aggressive-branch-removal
+0804820D: warning: Call target address 08048270 is invalid.
+08048211: warning: Call target address 08048288 is invalid.
+08048215: warning: Call target address 0804828B is invalid.

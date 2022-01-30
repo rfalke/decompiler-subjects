@@ -1,0 +1,4 @@
+=== Using options:--aggressive-branch-removal
+fn080481A4: warning: Structure analysis stopped making progress, quitting. Please report this issue at https://github.com/uxmal/reko
+080483DA: warning: Expected sizes of arrays to have been determined by now
+080483DA: warning: Expected sizes of arrays to have been determined by now
