@@ -1,0 +1,109 @@
+
+Database SUBJECTS/from_holdec/branchless_arithmetic/ia32_elf_clang/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
+Autoanalysis subsystem has been initialized.
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
+  Please check the Edit/Plugins menu for more informaton.
+=== start of cleanup script -> OK
+  function at 08049000  LIB  with name '.init_proc'
+  function at 08049030       with name 'sub_8049030'
+  function at 08049040       with name '.printf'
+  function at 08049050       with name '.puts'
+  function at 08049060  LIB  with name '.__libc_start_main'
+  function at 08049070       with name 'start'
+  function at 080490A7       with name 'sub_80490A7'
+  function at 080490B0  LIB  with name '_dl_relocate_static_pie'
+  function at 080490C0  LIB  with name '__x86.get_pc_thunk.bx'
+  function at 080490D0  LIB  with name 'deregister_tm_clones'
+  function at 08049110  LIB  with name 'register_tm_clones'
+  function at 08049150  LIB  with name '__do_global_dtors_aux'
+  function at 08049180  LIB  with name 'frame_dummy'
+  function at 08049190       with name 'sat_addu32b'
+  function at 080491B0       with name 'sat_subu32b'
+  function at 080491C0       with name 'sat_divu32b'
+  function at 080491D0       with name 'sat_mulu32b'
+  function at 080491F0       with name 'sat_addu64b'
+  function at 08049210       with name 'sat_subu64b'
+  function at 08049230       with name 'sat_divu64b'
+  function at 08049250       with name 'sat_adds32b_var1'
+  function at 08049270       with name 'sat_adds32b_var2'
+  function at 080492A0       with name 'sat_adds32b_var3'
+  function at 080492D0       with name 'sat_subs32b'
+  function at 08049300       with name 'sat_divs32b'
+  function at 08049330       with name 'sat_muls32b'
+  function at 08049360       with name 'sat_adds64b'
+  function at 080493A0       with name 'sat_subs64b'
+  function at 080493D0       with name 'sat_divs64b'
+  function at 08049420       with name 'abs32'
+  function at 08049430       with name 'abs64'
+  function at 08049450       with name 'sgn32'
+  function at 08049470       with name 'sgn64'
+  function at 08049490       with name 'main'
+  function at 080496F0       with name '__divdi3'
+  function at 08049830       with name '__udivdi3'
+  function at 08049950  LIB  with name '__libc_csu_init'
+  function at 080499C0  LIB  with name '__libc_csu_fini'
+  function at 080499C5       with name '__x86.get_pc_thunk.bp'
+  function at 080499CC  LIB  with name '.term_proc'
+  function at 0804C024       with name 'printf'
+  function at 0804C028       with name 'puts'
+  function at 0804C02C  LIB  with name '__libc_start_main'
+finished -> OK
+TIMESTAMP decompiling 8049030 size=0000000C times=0...
+The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 80490A7 size=00000004 times=0...
+TIMESTAMP decompiling 8049190 size=00000011 times=0...
+TIMESTAMP decompiling 80491B0 size=0000000E times=0...
+TIMESTAMP decompiling 80491C0 size=0000000B times=0...
+TIMESTAMP decompiling 80491D0 size=00000011 times=0...
+TIMESTAMP decompiling 80491F0 size=0000001C times=0...
+TIMESTAMP decompiling 8049210 size=00000019 times=0...
+TIMESTAMP decompiling 8049230 size=00000015 times=0...
+TIMESTAMP decompiling 8049250 size=0000001F times=0...
+TIMESTAMP decompiling 8049270 size=00000026 times=0...
+TIMESTAMP decompiling 80492A0 size=00000023 times=0...
+TIMESTAMP decompiling 80492D0 size=00000022 times=0...
+TIMESTAMP decompiling 8049300 size=00000024 times=0...
+TIMESTAMP decompiling 8049330 size=00000026 times=0...
+TIMESTAMP decompiling 8049360 size=00000031 times=0...
+TIMESTAMP decompiling 80493A0 size=0000002B times=0...
+TIMESTAMP decompiling 80493D0 size=00000050 times=0...
+TIMESTAMP decompiling 8049420 size=0000000C times=0...
+TIMESTAMP decompiling 8049430 size=00000016 times=0...
+TIMESTAMP decompiling 8049450 size=00000011 times=0...
+TIMESTAMP decompiling 8049470 size=0000001D times=0...
+TIMESTAMP decompiling 80499C5 size=00000004 times=0...
+TIMESTAMP decompiling 8049490 size=00000255 times=0...
+The decompiler assumes that the segment '.rodata' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 8049070 size=00000037 times=0...
+TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
+Unloading IDP module IDADIR/procs/pc.so...

@@ -1,0 +1,97 @@
+
+Database SUBJECTS/from_holdec/branchless_arithmetic/x64_elf_gcc/subject.exe.i64 already exists.
+Do you want to overwrite it? -> ~L~oad existing
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading processor module IDADIR/procs/pc64.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
+Autoanalysis subsystem has been initialized.
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
+  Please check the Edit/Plugins menu for more informaton.
+=== start of cleanup script -> OK
+  function at 00401000  LIB  with name '.init_proc'
+  function at 00401020       with name 'sub_401020'
+  function at 00401030       with name '.puts'
+  function at 00401040       with name '.printf'
+  function at 00401050       with name 'main'
+  function at 00401270  LIB  with name '_start'
+  function at 004012A0  LIB  with name '_dl_relocate_static_pie'
+  function at 004012B0  LIB  with name 'deregister_tm_clones'
+  function at 004012E0  LIB  with name 'register_tm_clones'
+  function at 00401320  LIB  with name '__do_global_dtors_aux'
+  function at 00401350  LIB  with name 'frame_dummy'
+  function at 00401360       with name 'sat_addu32b'
+  function at 00401370       with name 'sat_subu32b'
+  function at 00401380       with name 'sat_divu32b'
+  function at 00401390       with name 'sat_mulu32b'
+  function at 004013B0       with name 'sat_addu64b'
+  function at 004013C0       with name 'sat_subu64b'
+  function at 004013D0       with name 'sat_divu64b'
+  function at 004013E0       with name 'sat_mulu64b'
+  function at 00401400       with name 'sat_adds32b_var1'
+  function at 00401430       with name 'sat_adds32b_var2'
+  function at 00401450       with name 'sat_adds32b_var3'
+  function at 00401470       with name 'sat_subs32b'
+  function at 00401490       with name 'sat_divs32b'
+  function at 004014B0       with name 'sat_muls32b'
+  function at 004014E0       with name 'sat_adds64b'
+  function at 00401510       with name 'sat_subs64b'
+  function at 00401540       with name 'sat_divs64b'
+  function at 00401570       with name 'sat_muls64b'
+  function at 004015A0       with name 'abs32'
+  function at 004015B0       with name 'abs64'
+  function at 004015C0       with name 'sgn32'
+  function at 004015D0       with name 'sgn64'
+  function at 004015F0  LIB  with name '__libc_csu_init'
+  function at 00401660  LIB  with name '__libc_csu_fini'
+  function at 00401668  LIB  with name '.term_proc'
+  function at 00404038       with name 'puts'
+  function at 00404040       with name 'printf'
+  function at 00404048  LIB  with name '__libc_start_main'
+  function at 00404050       with name '__gmon_start__'
+finished -> OK
+TIMESTAMP decompiling 401020 size=000000000000000C times=0...
+The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 401360 size=0000000000000007 times=0...
+TIMESTAMP decompiling 401370 size=000000000000000C times=0...
+TIMESTAMP decompiling 401380 size=0000000000000007 times=0...
+TIMESTAMP decompiling 401390 size=000000000000001A times=0...
+TIMESTAMP decompiling 4013B0 size=000000000000000B times=0...
+TIMESTAMP decompiling 4013C0 size=0000000000000010 times=0...
+TIMESTAMP decompiling 4013D0 size=0000000000000009 times=0...
+TIMESTAMP decompiling 4013E0 size=0000000000000018 times=0...
+TIMESTAMP decompiling 401400 size=0000000000000024 times=0...
+TIMESTAMP decompiling 401430 size=000000000000001B times=0...
+TIMESTAMP decompiling 401450 size=000000000000001A times=0...
+TIMESTAMP decompiling 401470 size=0000000000000019 times=0...
+TIMESTAMP decompiling 401490 size=0000000000000017 times=0...
+TIMESTAMP decompiling 4014B0 size=0000000000000026 times=0...
+TIMESTAMP decompiling 4014E0 size=0000000000000029 times=0...
+TIMESTAMP decompiling 401510 size=0000000000000028 times=0...
+TIMESTAMP decompiling 401540 size=0000000000000025 times=0...
+TIMESTAMP decompiling 401570 size=000000000000002D times=0...
+TIMESTAMP decompiling 4015A0 size=0000000000000008 times=0...
+TIMESTAMP decompiling 4015B0 size=000000000000000B times=0...
+TIMESTAMP decompiling 4015C0 size=000000000000000D times=0...
+TIMESTAMP decompiling 4015D0 size=0000000000000011 times=0...
+TIMESTAMP decompiling 401050 size=000000000000021F times=0...
+TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
+Unloading IDP module IDADIR/procs/pc64.so...

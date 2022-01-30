@@ -1,0 +1,37 @@
+
+Database SUBJECTS/from_internet/asmutils/md5sum/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
+Autoanalysis subsystem has been initialized.
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
+  Please check the Edit/Plugins menu for more informaton.
+=== start of cleanup script -> OK
+  function at 0804804C       with name 'start'
+  function at 080482B3       with name 'sub_80482B3'
+  function at 080482E2       with name 'sub_80482E2'
+  function at 0804831C       with name 'sub_804831C'
+  function at 080483B8       with name 'sub_80483B8'
+  function at 0804841F       with name 'sub_804841F'
+finished -> OK
+TIMESTAMP decompiling 80482B3 size=0000002F times=0...
+TIMESTAMP decompiling 80482E2 size=0000003A times=0...
+TIMESTAMP decompiling 804831C size=0000009C times=0...
+TIMESTAMP decompiling 80483B8 size=00000067 times=0...
+TIMESTAMP decompiling 804841F size=00000064 times=0...
+TIMESTAMP decompiling 804804C size=000000D7 times=0...
+TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
+Unloading IDP module IDADIR/procs/pc.so...

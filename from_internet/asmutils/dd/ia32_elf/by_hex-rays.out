@@ -1,0 +1,39 @@
+
+Database SUBJECTS/from_internet/asmutils/dd/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
+Autoanalysis subsystem has been initialized.
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.6.0.210427)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+
+  Please check the Edit/Plugins menu for more informaton.
+=== start of cleanup script -> OK
+  function at 08048082       with name 'start'
+  function at 08048116       with name 'sub_8048116'
+  function at 08048149       with name 'sub_8048149'
+  function at 080482A7       with name 'sub_80482A7'
+  function at 080482C8       with name 'sub_80482C8'
+  function at 08048318       with name 'sub_8048318'
+  function at 0804832F       with name 'sub_804832F'
+finished -> OK
+TIMESTAMP decompiling 80482A7 size=00000021 times=0...
+TIMESTAMP decompiling 8048318 size=00000017 times=0...
+TIMESTAMP decompiling 804832F size=00000038 times=0...
+TIMESTAMP decompiling 80482C8 size=00000050 times=0...
+TIMESTAMP decompiling 8048149 size=00000029 times=0...
+TIMESTAMP decompiling 8048116 size=00000012 times=0...
+TIMESTAMP decompiling 8048082 size=000001EA times=0...
+TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
+Unloading IDP module IDADIR/procs/pc.so...
