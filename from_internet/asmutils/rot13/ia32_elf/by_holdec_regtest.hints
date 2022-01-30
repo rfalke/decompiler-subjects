@@ -1,0 +1,16 @@
+[0x804804c]
+signature: d4 start(void);auto-created
+local-variable: 0,4,,dummy1
+local-variable: 4,80,default,buffer
+
+[dataRanges]
+0x8048000-0x8048008
+0x8048008-0x8048010;area+of+zeroes
+0x8048010-0x804801d
+0x804801d-0x8048027;area+of+zeroes
+0x8048027-0x804802e
+0x804802e-0x8048034;area+of+zeroes
+0x8048034-0x804804c
+
+[activeFunctions]
+start
