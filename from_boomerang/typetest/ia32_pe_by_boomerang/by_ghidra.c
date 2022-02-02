@@ -21,7 +21,7 @@ typedef int ptrdiff_t;
 struct TypeDescriptor {
     dword hash;
     void * spare;
-    char[0] name;
+    char name[0];
 };
 
 struct _s_HandlerType {
@@ -391,43 +391,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_CNT_CODE=32,
     IMAGE_SCN_CNT_INITIALIZED_DATA=64,
     IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_INFO=512,
+    IMAGE_SCN_RESERVED_0040=1024,
     IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_GPREL=32768,
     IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
     IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
     IMAGE_SCN_MEM_NOT_CACHED=67108864,
     IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_MEM_READ=1073741824,
     IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_WRITE=2147483648
 } SectionFlags;
 
 union Misc {
@@ -670,8 +670,6 @@ typedef struct CCreateContext CCreateContext, *PCCreateContext;
 struct CCreateContext { // PlaceHolder Structure
 };
 
-typedef dword unsigned_int;
-
 typedef struct CFont CFont, *PCFont;
 
 struct CFont { // PlaceHolder Structure
@@ -691,8 +689,6 @@ typedef struct IConnectionPoint IConnectionPoint, *PIConnectionPoint;
 
 struct IConnectionPoint { // PlaceHolder Structure
 };
-
-typedef dword unsigned_long;
 
 typedef struct AFX_DISPMAP AFX_DISPMAP, *PAFX_DISPMAP;
 
@@ -750,11 +746,11 @@ struct _startupinfo {
 
 
 
-undefined ** __fastcall FUN_00401020(undefined **param_1)
+undefined4 * __fastcall FUN_00401020(undefined4 *param_1)
 
 {
   CWinApp::CWinApp((CWinApp *)param_1,(char *)0x0);
-  *param_1 = (undefined *)&PTR_LAB_00402038;
+  *param_1 = &PTR_LAB_00402038;
   return param_1;
 }
 
@@ -788,7 +784,7 @@ void __thiscall CWinApp::_CWinApp(CWinApp *this)
 void FUN_00401080(void)
 
 {
-  FUN_00401020((undefined **)&DAT_00403048);
+  FUN_00401020((undefined4 *)&DAT_00403048);
   return;
 }
 
@@ -833,7 +829,7 @@ void __thiscall CDialog::_CDialog(CDialog *this)
 
 
 
-undefined ** __thiscall FUN_00401150(void *this,CWnd *param_1)
+undefined4 * __thiscall FUN_00401150(void *this,CWnd *param_1)
 
 {
   HINSTANCE__ *hInstance;
@@ -857,7 +853,7 @@ undefined ** __thiscall FUN_00401150(void *this,CWnd *param_1)
   pHVar1 = LoadIconA(hInstance,lpIconName);
   *(HICON *)((int)this + 0x60) = pHVar1;
   *in_FS_OFFSET = local_c;
-  return (undefined **)this;
+  return (undefined4 *)this;
 }
 
 
@@ -1016,19 +1012,19 @@ void __fastcall FUN_00401250(CWnd *param_1)
 
 
 
-undefined ** __thiscall FUN_004015a0(void *this,byte param_1)
+undefined4 * __thiscall FUN_004015a0(void *this,byte param_1)
 
 {
-  FUN_004015c0((undefined **)this);
+  FUN_004015c0((undefined4 *)this);
   if ((param_1 & 1) != 0) {
     operator_delete(this);
   }
-  return (undefined **)this;
+  return (undefined4 *)this;
 }
 
 
 
-void __fastcall FUN_004015c0(undefined **param_1)
+void __fastcall FUN_004015c0(undefined4 *param_1)
 
 {
   undefined4 *in_FS_OFFSET;
@@ -1039,29 +1035,29 @@ void __fastcall FUN_004015c0(undefined **param_1)
   puStack8 = &LAB_00401d08;
   local_c = *in_FS_OFFSET;
   *in_FS_OFFSET = &local_c;
-  *param_1 = (undefined *)&PTR_LAB_00402228;
+  *param_1 = &PTR_LAB_00402228;
   local_4 = 0;
   CGdiObject::DeleteObject((CGdiObject *)param_1);
-  *param_1 = (undefined *)&PTR_LAB_00402210;
+  *param_1 = &PTR_LAB_00402210;
   *in_FS_OFFSET = local_c;
   return;
 }
 
 
 
-undefined ** __thiscall FUN_004016b0(void *this,byte param_1)
+undefined4 * __thiscall FUN_004016b0(void *this,byte param_1)
 
 {
-  FUN_004016d0((undefined **)this);
+  FUN_004016d0((undefined4 *)this);
   if ((param_1 & 1) != 0) {
     operator_delete(this);
   }
-  return (undefined **)this;
+  return (undefined4 *)this;
 }
 
 
 
-void __fastcall FUN_004016d0(undefined **param_1)
+void __fastcall FUN_004016d0(undefined4 *param_1)
 
 {
   undefined4 *in_FS_OFFSET;
@@ -1072,10 +1068,10 @@ void __fastcall FUN_004016d0(undefined **param_1)
   puStack8 = &LAB_00401d68;
   local_c = *in_FS_OFFSET;
   *in_FS_OFFSET = &local_c;
-  *param_1 = (undefined *)&PTR_LAB_00402228;
+  *param_1 = &PTR_LAB_00402228;
   local_4 = 0;
   CGdiObject::DeleteObject((CGdiObject *)param_1);
-  *param_1 = (undefined *)&PTR_LAB_00402210;
+  *param_1 = &PTR_LAB_00402210;
   *in_FS_OFFSET = local_c;
   return;
 }
@@ -1192,7 +1188,7 @@ AFX_MODULE_STATE * AfxGetModuleState(void)
 
 // WARNING: Exceeded maximum restarts with more pending
 
-void __thiscall CDialog::CDialog(CDialog *this,unsigned_int param_1,CWnd *param_2)
+void __thiscall CDialog::CDialog(CDialog *this,uint param_1,CWnd *param_2)
 
 {
                     // WARNING: Could not recover jumptable at 0x004018fc. Too many branches
@@ -1293,10 +1289,10 @@ int __thiscall CDC::SetBkMode(CDC *this,int param_1)
 
 // WARNING: Exceeded maximum restarts with more pending
 
-unsigned_int __thiscall CDC::SetTextAlign(CDC *this,unsigned_int param_1)
+uint __thiscall CDC::SetTextAlign(CDC *this,uint param_1)
 
 {
-  unsigned_int uVar1;
+  uint uVar1;
   
                     // WARNING: Could not recover jumptable at 0x00401938. Too many branches
                     // WARNING: Treating indirect jump as call
@@ -1323,7 +1319,7 @@ CPen * __thiscall CDC::SelectObject(CDC *this,CPen *param_1)
 
 // WARNING: Exceeded maximum restarts with more pending
 
-void __thiscall CPen::CPen(CPen *this,int param_1,int param_2,unsigned_long param_3)
+void __thiscall CPen::CPen(CPen *this,int param_1,int param_2,ulong param_3)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401944. Too many branches
@@ -1366,7 +1362,7 @@ CPoint __thiscall CDC::MoveTo(CDC *this,int param_1,int param_2)
 
 // WARNING: Exceeded maximum restarts with more pending
 
-void __thiscall CBrush::CBrush(CBrush *this,unsigned_long param_1)
+void __thiscall CBrush::CBrush(CBrush *this,ulong param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401956. Too many branches
@@ -1667,21 +1663,21 @@ void Unwind_00401cb0(void)
 void Unwind_00401cb8(void)
 
 {
-  undefined **this;
+  undefined4 *this;
   int unaff_EBP;
   undefined4 *in_FS_OFFSET;
   undefined4 local_c;
   undefined *puStack8;
   undefined4 local_4;
   
-  this = (undefined **)(unaff_EBP + -0x88);
+  this = (undefined4 *)(unaff_EBP + -0x88);
   puStack8 = &LAB_00401d48;
   local_c = *in_FS_OFFSET;
   *in_FS_OFFSET = &local_c;
-  *this = (undefined *)&PTR_LAB_00402228;
+  *this = &PTR_LAB_00402228;
   local_4 = 0;
   CGdiObject::DeleteObject((CGdiObject *)this);
-  *this = (undefined *)&PTR_LAB_00402210;
+  *this = &PTR_LAB_00402210;
   *in_FS_OFFSET = local_c;
   return;
 }
@@ -1691,21 +1687,21 @@ void Unwind_00401cb8(void)
 void Unwind_00401cc3(void)
 
 {
-  undefined **this;
+  undefined4 *this;
   int unaff_EBP;
   undefined4 *in_FS_OFFSET;
   undefined4 local_c;
   undefined *puStack8;
   undefined4 local_4;
   
-  this = (undefined **)(unaff_EBP + -0x78);
+  this = (undefined4 *)(unaff_EBP + -0x78);
   puStack8 = &LAB_00401d28;
   local_c = *in_FS_OFFSET;
   *in_FS_OFFSET = &local_c;
-  *this = (undefined *)&PTR_LAB_00402228;
+  *this = &PTR_LAB_00402228;
   local_4 = 0;
   CGdiObject::DeleteObject((CGdiObject *)this);
-  *this = (undefined *)&PTR_LAB_00402210;
+  *this = &PTR_LAB_00402210;
   *in_FS_OFFSET = local_c;
   return;
 }
@@ -1717,7 +1713,7 @@ void Unwind_00401ccb(void)
 {
   int unaff_EBP;
   
-  FUN_004016d0((undefined **)(unaff_EBP + -0x94));
+  FUN_004016d0((undefined4 *)(unaff_EBP + -0x94));
   return;
 }
 
@@ -1761,7 +1757,7 @@ void Unwind_00401d00(void)
 {
   int unaff_EBP;
   
-  **(undefined ***)(unaff_EBP + -0x10) = (undefined *)&PTR_LAB_00402210;
+  **(undefined4 **)(unaff_EBP + -0x10) = &PTR_LAB_00402210;
   return;
 }
 
@@ -1772,7 +1768,7 @@ void Unwind_00401d20(void)
 {
   int unaff_EBP;
   
-  **(undefined ***)(unaff_EBP + -0x10) = (undefined *)&PTR_LAB_00402210;
+  **(undefined4 **)(unaff_EBP + -0x10) = &PTR_LAB_00402210;
   return;
 }
 
@@ -1783,7 +1779,7 @@ void Unwind_00401d40(void)
 {
   int unaff_EBP;
   
-  **(undefined ***)(unaff_EBP + -0x10) = (undefined *)&PTR_LAB_00402210;
+  **(undefined4 **)(unaff_EBP + -0x10) = &PTR_LAB_00402210;
   return;
 }
 
@@ -1794,7 +1790,7 @@ void Unwind_00401d60(void)
 {
   int unaff_EBP;
   
-  **(undefined ***)(unaff_EBP + -0x10) = (undefined *)&PTR_LAB_00402210;
+  **(undefined4 **)(unaff_EBP + -0x10) = &PTR_LAB_00402210;
   return;
 }
 

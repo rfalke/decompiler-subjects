@@ -27,81 +27,81 @@ struct fde_table_entry {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
+    DT_NULL=0,
+    DT_NEEDED=1,
+    DT_PLTRELSZ=2,
+    DT_PLTGOT=3,
+    DT_HASH=4,
+    DT_STRTAB=5,
+    DT_SYMTAB=6,
+    DT_RELA=7,
+    DT_RELASZ=8,
+    DT_RELAENT=9,
+    DT_STRSZ=10,
+    DT_SYMENT=11,
+    DT_INIT=12,
+    DT_FINI=13,
+    DT_SONAME=14,
+    DT_RPATH=15,
+    DT_SYMBOLIC=16,
+    DT_REL=17,
+    DT_RELSZ=18,
+    DT_RELENT=19,
+    DT_PLTREL=20,
+    DT_DEBUG=21,
+    DT_TEXTREL=22,
+    DT_JMPREL=23,
+    DT_BIND_NOW=24,
+    DT_INIT_ARRAY=25,
+    DT_FINI_ARRAY=26,
+    DT_INIT_ARRAYSZ=27,
+    DT_FINI_ARRAYSZ=28,
+    DT_RUNPATH=29,
+    DT_FLAGS=30,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_RELRSZ=35,
+    DT_RELR=36,
+    DT_RELRENT=37,
     DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELSZ=1610612752,
     DT_ANDROID_RELA=1610612753,
     DT_ANDROID_RELASZ=1610612754,
     DT_ANDROID_RELR=1879040000,
-    DT_ANDROID_RELRENT=1879040003,
     DT_ANDROID_RELRSZ=1879040001,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
-    DT_CONFIG=1879047930,
-    DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_FEATURE_1=1879047676,
-    DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
+    DT_ANDROID_RELRENT=1879040003,
     DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_CHECKSUM=1879047672,
+    DT_PLTPADSZ=1879047673,
     DT_MOVEENT=1879047674,
     DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
+    DT_FEATURE_1=1879047676,
     DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAY=32,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
-    DT_RELENT=19,
-    DT_RELR=36,
-    DT_RELRENT=37,
-    DT_RELRSZ=35,
-    DT_RELSZ=18,
-    DT_RPATH=15,
-    DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
     DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
+    DT_SYMINENT=1879047679,
+    DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
+    DT_TLSDESC_GOT=1879047927,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_LIBLIST=1879047929,
+    DT_CONFIG=1879047930,
+    DT_DEPAUDIT=1879047931,
+    DT_AUDIT=1879047932,
+    DT_PLTPAD=1879047933,
+    DT_MOVETAB=1879047934,
+    DT_SYMINFO=1879047935,
+    DT_VERSYM=1879048176,
+    DT_RELACOUNT=1879048185,
+    DT_RELCOUNT=1879048186,
+    DT_FLAGS_1=1879048187,
     DT_VERDEF=1879048188,
     DT_VERDEFNUM=1879048189,
     DT_VERNEED=1879048190,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_AUXILIARY=2147483645,
+    DT_FILTER=2147483647
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -123,35 +123,35 @@ struct Elf32_Sym {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
+    SHT_NULL=0,
+    SHT_PROGBITS=1,
+    SHT_SYMTAB=2,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_HASH=5,
+    SHT_DYNAMIC=6,
+    SHT_NOTE=7,
+    SHT_NOBITS=8,
+    SHT_REL=9,
+    SHT_SHLIB=10,
+    SHT_DYNSYM=11,
+    SHT_INIT_ARRAY=14,
+    SHT_FINI_ARRAY=15,
+    SHT_PREINIT_ARRAY=16,
+    SHT_GROUP=17,
+    SHT_SYMTAB_SHNDX=18,
     SHT_ANDROID_REL=1610612737,
     SHT_ANDROID_RELA=1610612738,
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
     SHT_GNU_ATTRIBUTES=1879048181,
     SHT_GNU_HASH=1879048182,
     SHT_GNU_LIBLIST=1879048183,
+    SHT_CHECKSUM=1879048184,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_syminfo=1879048188,
     SHT_GNU_verdef=1879048189,
     SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
-    SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -175,17 +175,17 @@ struct Elf32_Rel {
 };
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_DYNAMIC=2,
-    PT_GNU_EH_FRAME=1685382480,
-    PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
     PT_NULL=0,
-    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
     PT_SHLIB=5,
-    PT_TLS=7
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType_x86;
 
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
@@ -971,7 +971,7 @@ int log_size_10_var_000(void)
   sVar8 = (short)uVar17;
   uVar7 = sVar8 << 1;
   uVar34 = (ushort)(sVar8 < 0);
-  uVar21 = SEXT12((char)((byte)(int3)((int)uVar32 >> 9) ^ bVar6));
+  uVar21 = (ushort)(char)((byte)(int3)((int)uVar32 >> 9) ^ bVar6);
   uVar10 = 0;
   if (uVar25 != 0) {
     for (; (uVar25 >> uVar10 & 1) == 0; uVar10 = uVar10 + 1) {
@@ -1326,7 +1326,7 @@ int log_size_10_var_001(void)
   uVar7 = (uint3)((uint3)(uVar33 >> 8) & 0xd2b00 | (uint3)(byte)(uVar29 >> 8)) >> 1 |
           (uint3)(((uint)((bVar6 & 2) != 0) << 0x1f) >> 8);
   iVar14 = CONCAT31(uVar7,0x3e);
-  uVar17 = SEXT12((char)bVar20);
+  uVar17 = (ushort)(char)bVar20;
   uVar29 = uVar11 + uVar17;
   cVar19 = (char)uVar29;
   uVar24 = ((uVar26 & 0xffff0000 | (uint)(ushort)(uVar22 + 0x9601)) - iVar14) -
@@ -1920,7 +1920,7 @@ int log_size_10_var_002(void)
   uVar16 = sVar8 * -2;
   uVar20 = (short)uVar26 * 2 + 0x7bfe;
   cVar13 = (char)uVar16;
-  uVar25 = SEXT12(cVar13);
+  uVar25 = (ushort)cVar13;
   uVar35 = CONCAT22((undefined2)(cVar13 >> 7),uVar25) & 0xfffffeff;
   uVar26 = uVar35 + 0x41f46357;
   uVar7 = (CONCAT11((char)uVar38,(char)uVar38) ^ 0x1000) & ~(1 << ((ushort)uVar21 & 0xf)) | uVar20;
@@ -2487,7 +2487,7 @@ int log_size_10_var_003(void)
   uVar17 = uVar18 & 0xffff | 0xc000;
   uVar10 = uVar18 & 0xffff | 0xc000;
   uVar12 = 0;
-  uVar9 = SEXT12((char)(uVar10 / uVar17));
+  uVar9 = (ushort)(char)(uVar10 / uVar17);
   uVar26 = (ushort)(uVar10 % uVar17 >> 2) >> 10 | 0xbec0;
   for (uVar17 = 0; (0x4add3532U >> uVar17 & 1) == 0; uVar17 = uVar17 + 1) {
   }
@@ -3367,7 +3367,7 @@ int log_size_10_var_004(void)
   uVar14 = (ushort)(uVar41 * 0x7514595 + CONCAT22((short)(uVar3 >> 0x10),uVar14) >> 0x10);
   uVar27 = CONCAT11((char)(uVar24 >> 8),bVar13) & 0xff75;
   uVar31 = CONCAT22(uVar14,0x8518) << 7;
-  uVar41 = SEXT24((short)(uVar1 % (ulonglong)(uVar24 | 0xc0000000)));
+  uVar41 = (uint)(short)(uVar1 % (ulonglong)(uVar24 | 0xc0000000));
   uVar16 = (int)(uVar1 / (uVar24 | 0xc0000000)) >> (bVar13 & 0x15);
   uVar28 = ((ushort)uVar31 | uVar14 >> 9) ^ uVar27;
   uVar14 = (uVar27 | 0xb) + (short)uVar16 + 1;
@@ -3881,7 +3881,7 @@ int log_size_10_var_005(void)
   uVar25 = (ushort)((uVar29 & 0xff00) >> 8);
   uVar25 = uVar25 | ((ushort)(uVar35 >> bVar11) | (short)uVar35 << 0x20 - bVar11) &
                     ~(1 << (uVar25 & 0xf));
-  uVar35 = SEXT14((char)(uVar29 >> 8));
+  uVar35 = (uint)(char)(uVar29 >> 8);
   uVar34 = ~((uVar34 & 0xffff0000) << 1 | (uint)(ushort)((ushort)bVar36 << 0xf));
   bVar11 = (byte)uVar25 & 0x1f;
   uVar30 = uVar35 >> bVar11 | uVar35 << 0x21 - bVar11;
@@ -4812,7 +4812,7 @@ int log_size_10_var_006(void)
   uVar34 = (uVar16 & 0xffff0000 | uVar16 >> 2 & 0x3fff) - (uVar33 << 0x19 | uVar15);
   cVar10 = (char)uVar15;
   bVar40 = (uVar11 & 4) != 0;
-  uVar28 = SEXT12(cVar10);
+  uVar28 = (ushort)cVar10;
   uVar23 = CONCAT11(-1 - bVar40,bVar40) & 0xefc7;
   uVar14 = uVar23 * 2;
   uVar32 = uVar37 + 0xc68c;
@@ -5422,7 +5422,7 @@ int log_size_10_var_009(void)
     uVar18 = iVar19 + 0xd1da00f5U & 0xff | (uint)uVar24 << 0x10;
   }
   if (POPCOUNT(uVar12 & 0x89) != '\0') {
-    uVar11 = SEXT12((char)((uint)uVar11 >> 8));
+    uVar11 = (ushort)(char)((uint)uVar11 >> 8);
   }
   bVar21 = (char)-((byte)(((ushort)((uVar13 & 0xffffff00 | uVar13 >> 1 & 0x7f) >> 2) & 0x7f) << 1) |
                   (byte)(cVar6 >> 7) >> 7) >> 1;
@@ -5630,7 +5630,7 @@ int log_size_10_var_009(void)
   bVar21 = ((byte)uVar31 & 0x1f) % 0x11;
   uVar11 = (short)uVar31 >> 1;
   uVar18 = (uVar30 & 0xffff0000 | uVar28) << 1;
-  uVar10 = SEXT12((char)((byte)(uVar12 >> bVar21) | (char)uVar12 << 0x11 - bVar21));
+  uVar10 = (ushort)(char)((byte)(uVar12 >> bVar21) | (char)uVar12 << 0x11 - bVar21);
   uVar30 = ((uint)(ushort)((short)uVar24 >> 0xf) << 0x10 | 0xcd6f) >> ((byte)uVar11 & 0x1f);
   uVar13 = 0x1f;
   if (uVar18 != 0) {

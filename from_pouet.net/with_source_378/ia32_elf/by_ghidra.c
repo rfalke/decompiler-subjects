@@ -9,35 +9,35 @@ typedef unsigned short    word;
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
-    SHT_ANDROID_REL=1610612737,
     SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_SYMTAB=2,
     SHT_STRTAB=3,
     SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_HASH=5,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_NOTE=7,
+    SHT_NOBITS=8,
+    SHT_REL=9,
+    SHT_SHLIB=10,
+    SHT_DYNSYM=11,
+    SHT_INIT_ARRAY=14,
+    SHT_FINI_ARRAY=15,
+    SHT_PREINIT_ARRAY=16,
+    SHT_GROUP=17,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_ANDROID_REL=1610612737,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_CHECKSUM=1879048184,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -56,81 +56,81 @@ struct Elf32_Shdr {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
     DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
-    DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
-    DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
-    DT_FEATURE_1=1879047676,
-    DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
     DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
-    DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
-    DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
     DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
-    DT_GNU_LIBLIST=1879047929,
     DT_PLTGOT=3,
+    DT_HASH=4,
+    DT_STRTAB=5,
+    DT_SYMTAB=6,
+    DT_RELA=7,
+    DT_RELASZ=8,
+    DT_RELAENT=9,
     DT_STRSZ=10,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_INIT=12,
+    DT_FINI=13,
+    DT_SONAME=14,
+    DT_RPATH=15,
+    DT_SYMBOLIC=16,
+    DT_REL=17,
+    DT_RELSZ=18,
+    DT_RELENT=19,
+    DT_PLTREL=20,
+    DT_DEBUG=21,
+    DT_TEXTREL=22,
+    DT_JMPREL=23,
+    DT_BIND_NOW=24,
+    DT_INIT_ARRAY=25,
+    DT_FINI_ARRAY=26,
+    DT_INIT_ARRAYSZ=27,
+    DT_FINI_ARRAYSZ=28,
+    DT_RUNPATH=29,
+    DT_FLAGS=30,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_RELRSZ=35,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_GNU_PRELINKED=1879047669,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_CHECKSUM=1879047672,
+    DT_PLTPADSZ=1879047673,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_FEATURE_1=1879047676,
+    DT_POSFLAG_1=1879047677,
+    DT_SYMINSZ=1879047678,
+    DT_SYMINENT=1879047679,
+    DT_GNU_HASH=1879047925,
+    DT_TLSDESC_PLT=1879047926,
+    DT_TLSDESC_GOT=1879047927,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_LIBLIST=1879047929,
+    DT_CONFIG=1879047930,
+    DT_DEPAUDIT=1879047931,
+    DT_AUDIT=1879047932,
+    DT_PLTPAD=1879047933,
+    DT_MOVETAB=1879047934,
+    DT_SYMINFO=1879047935,
+    DT_VERSYM=1879048176,
+    DT_RELACOUNT=1879048185,
+    DT_RELCOUNT=1879048186,
+    DT_FLAGS_1=1879048187,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_AUXILIARY=2147483645,
+    DT_FILTER=2147483647
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -152,17 +152,17 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
     PT_NULL=0,
+    PT_LOAD=1,
     PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
     PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
     PT_GNU_EH_FRAME=1685382480,
-    PT_GNU_RELRO=1685382482,
-    PT_TLS=7
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType_x86;
 
 struct Elf32_Phdr {
@@ -641,17 +641,13 @@ void FUN_08048a31(float param_1,int param_2,int param_3)
 void __regparm1 FUN_08048b1e(int param_1_00,float param_1)
 
 {
-  undefined *puVar1;
+  float fVar1;
   int iVar2;
   int iVar3;
   int iVar4;
   float10 fVar5;
   float10 fVar6;
   float10 fVar7;
-  undefined4 uVar8;
-  undefined4 *puVar9;
-  float fVar10;
-  undefined4 uVar11;
   uint local_14;
   
   iVar2 = 0;
@@ -660,11 +656,9 @@ void __regparm1 FUN_08048b1e(int param_1_00,float param_1)
     iVar4 = 0;
     do {
       iVar3 = iVar2;
-      fVar10 = _DAT_0804a8e0 * (float)iVar4;
-      FUN_08048a31(fVar10,&DAT_0804a800 + local_14 * 0xc,&DAT_087d4864,param_1_00);
-      puVar9 = &DAT_087d4870;
-      puVar1 = &DAT_0804a860 + local_14 * 0xc;
-      FUN_08048a31(fVar10,puVar1,&DAT_087d4870);
+      fVar1 = _DAT_0804a8e0 * (float)iVar4;
+      FUN_08048a31(fVar1,&DAT_0804a800 + local_14 * 0xc,&DAT_087d4864,param_1_00);
+      FUN_08048a31(fVar1,&DAT_0804a860 + local_14 * 0xc,&DAT_087d4870);
       iVar2 = 0;
       do {
         (&DAT_087d48a0)[iVar3 * 3 + iVar2] =
@@ -697,42 +691,36 @@ void __regparm1 FUN_08048b1e(int param_1_00,float param_1)
       (&DAT_087d48a8)[local_14 * 3] =
            (float)((fVar5 + (float10)1) * fVar6 * (float10)_DAT_087d55c0 * (float10)_DAT_0804a900 +
                   (float10)(float)(&DAT_087d48a8)[local_14 * 3]);
-      (*_DAT_087d558c)(0xb50,puVar1,puVar9);
-      (*_DAT_087d558c)(0xba1);
-      (*_DAT_087d558c)(0xb71);
-      (*_DAT_087d5580)(_DAT_087d4850 * _DAT_0804a90c,_DAT_087d4850 * _DAT_0804a908,
-                       _DAT_087d4850 * _DAT_0804a904);
-      (*_DAT_087d5598)(&DAT_087d487c);
+      (*DAT_087d558c)(0xb50);
+      (*DAT_087d558c)(0xba1);
+      (*DAT_087d558c)(0xb71);
+      (*DAT_087d5580)(_DAT_087d4850 * _DAT_0804a90c,_DAT_087d4850 * _DAT_0804a908,
+                      _DAT_087d4850 * _DAT_0804a904);
+      (*DAT_087d5598)(&DAT_087d487c);
       (*DAT_087d5564)(9);
-      (*_DAT_087d556c)((&DAT_087d48a0)[local_14 * 3],(&DAT_087d48a8)[local_14 * 3] ^ 0x80000000,
-                       (float)(&DAT_087d48a4)[local_14 * 3] * _DAT_0804a910);
-      (*_DAT_087d556c)(*(undefined4 *)(&DAT_087d48ac + iVar2),
-                       *(uint *)(&DAT_087d48b4 + iVar2) ^ 0x80000000,
-                       *(float *)(&DAT_087d48b0 + iVar2) * _DAT_0804a910);
-      (*_DAT_087d556c)(*(undefined4 *)(&DAT_087d48ac + iVar2),*(undefined4 *)(&DAT_087d48b4 + iVar2)
-                       ,*(float *)(&DAT_087d48b0 + iVar2) * _DAT_0804a910);
-      fVar10 = (float)(&DAT_087d48a4)[local_14 * 3] * _DAT_0804a910;
-      uVar8 = (&DAT_087d48a8)[local_14 * 3];
-      uVar11 = (&DAT_087d48a0)[local_14 * 3];
-      (*_DAT_087d556c)();
-      (*_DAT_087d5568)(uVar11,uVar8,fVar10);
-      uVar11 = 0;
-      uVar8 = 0;
-      (*_DAT_087d5580)(0);
-      (*_DAT_087d5590)(0xb50);
-      (*DAT_087d5564)(1,uVar8,uVar11);
-      (*_DAT_087d556c)((&DAT_087d48a0)[local_14 * 3],(&DAT_087d48a8)[local_14 * 3] ^ 0x80000000,
-                       (float)(&DAT_087d48a4)[local_14 * 3] * _DAT_0804a910);
-      (*_DAT_087d556c)(*(undefined4 *)(&DAT_087d48ac + iVar2),
-                       *(uint *)(&DAT_087d48b4 + iVar2) ^ 0x80000000,
-                       *(float *)(&DAT_087d48b0 + iVar2) * _DAT_0804a910);
-      (*_DAT_087d556c)(*(undefined4 *)(&DAT_087d48ac + iVar2),*(undefined4 *)(&DAT_087d48b4 + iVar2)
-                       ,*(float *)(&DAT_087d48b0 + iVar2) * _DAT_0804a910);
-      puVar9 = (undefined4 *)((float)(&DAT_087d48a4)[local_14 * 3] * _DAT_0804a910);
-      puVar1 = (undefined *)(&DAT_087d48a8)[local_14 * 3];
-      uVar8 = (&DAT_087d48a0)[local_14 * 3];
-      (*_DAT_087d556c)();
-      (*_DAT_087d5568)(uVar8);
+      (*DAT_087d556c)((&DAT_087d48a0)[local_14 * 3],(&DAT_087d48a8)[local_14 * 3] ^ 0x80000000,
+                      (float)(&DAT_087d48a4)[local_14 * 3] * _DAT_0804a910);
+      (*DAT_087d556c)(*(undefined4 *)(&DAT_087d48ac + iVar2),
+                      *(uint *)(&DAT_087d48b4 + iVar2) ^ 0x80000000,
+                      *(float *)(&DAT_087d48b0 + iVar2) * _DAT_0804a910);
+      (*DAT_087d556c)(*(undefined4 *)(&DAT_087d48ac + iVar2),*(undefined4 *)(&DAT_087d48b4 + iVar2),
+                      *(float *)(&DAT_087d48b0 + iVar2) * _DAT_0804a910);
+      (*DAT_087d556c)((&DAT_087d48a0)[local_14 * 3],(&DAT_087d48a8)[local_14 * 3],
+                      (float)(&DAT_087d48a4)[local_14 * 3] * _DAT_0804a910);
+      (*DAT_087d5568)();
+      (*DAT_087d5580)(0,0,0);
+      (*DAT_087d5590)(0xb50);
+      (*DAT_087d5564)(1);
+      (*DAT_087d556c)((&DAT_087d48a0)[local_14 * 3],(&DAT_087d48a8)[local_14 * 3] ^ 0x80000000,
+                      (float)(&DAT_087d48a4)[local_14 * 3] * _DAT_0804a910);
+      (*DAT_087d556c)(*(undefined4 *)(&DAT_087d48ac + iVar2),
+                      *(uint *)(&DAT_087d48b4 + iVar2) ^ 0x80000000,
+                      *(float *)(&DAT_087d48b0 + iVar2) * _DAT_0804a910);
+      (*DAT_087d556c)(*(undefined4 *)(&DAT_087d48ac + iVar2),*(undefined4 *)(&DAT_087d48b4 + iVar2),
+                      *(float *)(&DAT_087d48b0 + iVar2) * _DAT_0804a910);
+      (*DAT_087d556c)((&DAT_087d48a0)[local_14 * 3],(&DAT_087d48a8)[local_14 * 3],
+                      (float)(&DAT_087d48a4)[local_14 * 3] * _DAT_0804a910);
+      (*DAT_087d5568)();
       local_14 = local_14 + 1;
     } while ((int)local_14 < iVar3);
   }
@@ -751,10 +739,7 @@ void FUN_08048e99(int param_1)
   uint uVar3;
   int iVar4;
   float10 fVar5;
-  undefined4 uVar6;
-  undefined4 uVar7;
-  undefined4 uVar8;
-  float fVar9;
+  float fVar6;
   
   _DAT_087d55c8 = (float)param_1;
   _DAT_087d55c4 = (int)ROUND((_DAT_0804a914 * (float)DAT_0804a72e - _DAT_0804a918) * _DAT_0804a91c);
@@ -778,52 +763,46 @@ void FUN_08048e99(int param_1)
     iVar2 = iVar2 + 1;
   } while (iVar2 < 10);
 LAB_08048f70:
-  (*_DAT_087d5578)(_DAT_087d4860,_DAT_087d4860,_DAT_087d4860,0x3f800000);
-  (*_DAT_087d557c)(0x4100);
-  (*_DAT_087d5570)(0x1701);
-  (*_DAT_087d5574)();
-  (*_DAT_087d55a0)(0x47ae147b,0xbf847ae1,0x47ae147b,0x3f847ae1,0xeb851eb8,0xbf7eb851,0xeb851eb8,
-                   0x3f7eb851,0x47ae147b,0x3f847ae1,0,0x4091bc00);
-  (*_DAT_087d5570)(0x1700);
-  (*_DAT_087d5574)();
-  (*_DAT_087d5588)(0,0,DAT_087d4854);
-  (*_DAT_087d5584)(-_DAT_087d4858 * _DAT_0804a92c,0x3f800000,0,0);
+  (*DAT_087d5578)(_DAT_087d4860,_DAT_087d4860,_DAT_087d4860,0x3f800000);
+  (*DAT_087d557c)(0x4100);
+  (*DAT_087d5570)(0x1701);
+  (*DAT_087d5574)();
+  (*DAT_087d55a0)(0x47ae147b,0xbf847ae1,0x47ae147b,0x3f847ae1,0xeb851eb8,0xbf7eb851,0xeb851eb8,
+                  0x3f7eb851,0x47ae147b,0x3f847ae1,0,0x4091bc00);
+  (*DAT_087d5570)(0x1700);
+  (*DAT_087d5574)();
+  (*DAT_087d5588)(0,0,DAT_087d4854);
+  (*DAT_087d5584)(-_DAT_087d4858 * _DAT_0804a92c,0x3f800000,0,0);
   _DAT_087d5560 = _DAT_0804a930 * _DAT_087d485c + _DAT_087d5560;
-  uVar8 = 0x3f800000;
-  uVar7 = 0;
-  uVar6 = 0;
-  uVar1 = (*_DAT_087d5584)(_DAT_087d5560,0,0,0x3f800000);
+  uVar1 = (*DAT_087d5584)(_DAT_087d5560,0,0,0x3f800000);
   if (_DAT_087d55c4 < 0x30) {
-    (*_DAT_087d5590)(0xb50);
-    (*_DAT_087d559c)(0x40400000);
+    (*DAT_087d5590)(0xb50);
+    (*DAT_087d559c)(0x40400000);
     iVar2 = 0;
     do {
-      (*DAT_087d5564)(3,uVar6,uVar7,uVar8);
+      (*DAT_087d5564)(3);
       iVar4 = 0;
       do {
-        fVar9 = (float)iVar4;
+        fVar6 = (float)iVar4;
         fVar5 = (float10)fsin((float10)iVar4 * (float10)_DAT_0804a934);
         fVar5 = (float10)_DAT_0804a8e4 - fVar5;
-        (*_DAT_087d5580)((float)fVar5,(float)fVar5,(float)fVar5,iVar4,fVar9);
-        fVar9 = fVar9 * _DAT_0804a938 - _DAT_0804a8dc;
-        (*_DAT_087d556c)(fVar9 + fVar9,(&DAT_087d55e0)[iVar4],0xbe99999a);
+        (*DAT_087d5580)((float)fVar5,(float)fVar5,(float)fVar5,iVar4,fVar6);
+        fVar6 = fVar6 * _DAT_0804a938 - _DAT_0804a8dc;
+        (*DAT_087d556c)(fVar6 + fVar6,(&DAT_087d55e0)[iVar4],0xbe99999a);
         iVar4 = iVar4 + 1;
       } while (iVar4 < 0x400);
-      (*_DAT_087d5568)();
-      uVar8 = 0x3f800000;
-      uVar7 = 0;
-      uVar6 = 0;
-      uVar1 = (*_DAT_087d5584)(0x42b40000);
+      (*DAT_087d5568)();
+      uVar1 = (*DAT_087d5584)(0x42b40000,0,0,0x3f800000);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 2);
   }
-  (*_DAT_087d5594)(0x4000,0x1200,&DAT_0804a8b8,uVar1);
-  (*_DAT_087d558c)(0x4000);
-  (*_DAT_087d558c)(0xb57);
-  (*_DAT_087d5584)(0x41700000,0,0,0x3f800000);
+  (*DAT_087d5594)(0x4000,0x1200,&DAT_0804a8b8,uVar1);
+  (*DAT_087d558c)(0x4000);
+  (*DAT_087d558c)(0xb57);
+  (*DAT_087d5584)(0x41700000,0,0,0x3f800000);
   iVar2 = 0;
   do {
-    (*_DAT_087d5584)(0x41f00000,0,0,0x3f800000);
+    (*DAT_087d5584)(0x41f00000,0,0,0x3f800000);
     fVar5 = (float10)fsin((float10)_DAT_0804a900 * (float10)param_1);
     FUN_08048b1e((float)(fVar5 * (float10)_DAT_0804a8dc + (float10)_DAT_0804a8dc));
     iVar2 = iVar2 + 1;

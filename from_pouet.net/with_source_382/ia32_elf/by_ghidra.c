@@ -11,81 +11,81 @@ typedef unsigned short    word;
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
     DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
-    DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
-    DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
-    DT_FEATURE_1=1879047676,
-    DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
     DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
-    DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
-    DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
     DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
-    DT_GNU_LIBLIST=1879047929,
     DT_PLTGOT=3,
+    DT_HASH=4,
+    DT_STRTAB=5,
+    DT_SYMTAB=6,
+    DT_RELA=7,
+    DT_RELASZ=8,
+    DT_RELAENT=9,
     DT_STRSZ=10,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_INIT=12,
+    DT_FINI=13,
+    DT_SONAME=14,
+    DT_RPATH=15,
+    DT_SYMBOLIC=16,
+    DT_REL=17,
+    DT_RELSZ=18,
+    DT_RELENT=19,
+    DT_PLTREL=20,
+    DT_DEBUG=21,
+    DT_TEXTREL=22,
+    DT_JMPREL=23,
+    DT_BIND_NOW=24,
+    DT_INIT_ARRAY=25,
+    DT_FINI_ARRAY=26,
+    DT_INIT_ARRAYSZ=27,
+    DT_FINI_ARRAYSZ=28,
+    DT_RUNPATH=29,
+    DT_FLAGS=30,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_RELRSZ=35,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_GNU_PRELINKED=1879047669,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_CHECKSUM=1879047672,
+    DT_PLTPADSZ=1879047673,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_FEATURE_1=1879047676,
+    DT_POSFLAG_1=1879047677,
+    DT_SYMINSZ=1879047678,
+    DT_SYMINENT=1879047679,
+    DT_GNU_HASH=1879047925,
+    DT_TLSDESC_PLT=1879047926,
+    DT_TLSDESC_GOT=1879047927,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_LIBLIST=1879047929,
+    DT_CONFIG=1879047930,
+    DT_DEPAUDIT=1879047931,
+    DT_AUDIT=1879047932,
+    DT_PLTPAD=1879047933,
+    DT_MOVETAB=1879047934,
+    DT_SYMINFO=1879047935,
+    DT_VERSYM=1879048176,
+    DT_RELACOUNT=1879048185,
+    DT_RELCOUNT=1879048186,
+    DT_FLAGS_1=1879048187,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_AUXILIARY=2147483645,
+    DT_FILTER=2147483647
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -94,17 +94,17 @@ struct Elf32_Dyn_x86 {
 };
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
     PT_NULL=0,
+    PT_LOAD=1,
     PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
     PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
     PT_GNU_EH_FRAME=1685382480,
-    PT_GNU_RELRO=1685382482,
-    PT_TLS=7
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType_x86;
 
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
@@ -705,11 +705,11 @@ FUN_08048ebe(float *param_1_00,int param_2_00,int param_3_00,float *param_1,floa
   int iVar6;
   int iVar7;
   float *pfVar8;
-  float10 fVar9;
+  ushort uVar9;
   float10 fVar10;
   float10 fVar11;
   float10 fVar12;
-  ushort uVar13;
+  float10 fVar13;
   float fVar14;
   float local_60;
   float local_5c;
@@ -725,23 +725,21 @@ FUN_08048ebe(float *param_1_00,int param_2_00,int param_3_00,float *param_1,floa
   float local_20;
   
   iVar7 = -1;
-  iVar6 = 0;
-  fVar9 = (float10)1e+20;
+  fVar10 = (float10)1e+20;
   pfVar8 = param_1_00;
-  while (iVar6 < param_3_00) {
-    fVar11 = (float10)FUN_08048c66(param_2,param_4,pfVar8,pfVar8);
-    fVar9 = (float10)(float)fVar9;
-    fVar10 = (float10)0;
+  for (iVar6 = 0; iVar6 < param_3_00; iVar6 = iVar6 + 1) {
+    fVar12 = (float10)FUN_08048c66(param_2,param_4,pfVar8,pfVar8);
+    fVar10 = (float10)(float)fVar10;
+    fVar11 = (float10)0;
     pfVar8 = (float *)CONCAT22(extraout_var,
-                               (ushort)(fVar11 < fVar10) << 8 | (ushort)(fVar11 == fVar10) << 0xe);
-    if ((fVar11 >= fVar10 && (fVar11 == fVar10) == 0) &&
+                               (ushort)(fVar12 < fVar11) << 8 | (ushort)(fVar12 == fVar11) << 0xe);
+    if ((fVar12 >= fVar11 && (fVar12 == fVar11) == 0) &&
        (pfVar8 = (float *)CONCAT22(extraout_var,
-                                   (ushort)(fVar11 < fVar9) << 8 | (ushort)(fVar11 == fVar9) << 0xe)
-       , fVar11 < fVar9)) {
+                                   (ushort)(fVar12 < fVar10) << 8 |
+                                   (ushort)(fVar12 == fVar10) << 0xe), fVar12 < fVar10)) {
       iVar7 = iVar6;
-      fVar9 = fVar11;
+      fVar10 = fVar12;
     }
-    iVar6 = iVar6 + 1;
   }
   if (iVar7 == -1) {
     *param_1_00 = 0.0;
@@ -750,85 +748,84 @@ FUN_08048ebe(float *param_1_00,int param_2_00,int param_3_00,float *param_1,floa
   }
   else {
     pfVar8 = (float *)(param_2_00 + iVar7 * 0x40080);
-    fVar10 = fVar9 * (float10)*param_2 + (float10)*param_1;
-    pfVar8[3] = (float)fVar10;
-    fVar11 = (float10)param_2[1] * fVar9 + (float10)param_1[1];
-    pfVar8[4] = (float)fVar11;
-    fVar9 = fVar9 * (float10)param_2[2] + (float10)param_1[2];
-    pfVar8[5] = (float)fVar9;
+    fVar11 = fVar10 * (float10)*param_2 + (float10)*param_1;
+    pfVar8[3] = (float)fVar11;
+    fVar12 = (float10)param_2[1] * fVar10 + (float10)param_1[1];
+    pfVar8[4] = (float)fVar12;
+    fVar10 = fVar10 * (float10)param_2[2] + (float10)param_1[2];
+    pfVar8[5] = (float)fVar10;
     if (*(char *)(pfVar8 + 0x1f) == '\0') {
-      pfVar8[6] = (float)((fVar10 - (float10)*pfVar8) / (float10)pfVar8[0x18]);
-      pfVar8[7] = (float)((fVar11 - (float10)pfVar8[1]) / (float10)pfVar8[0x18]);
-      pfVar8[8] = (float)((fVar9 - (float10)pfVar8[2]) / (float10)pfVar8[0x18]);
+      pfVar8[6] = (float)((fVar11 - (float10)*pfVar8) / (float10)pfVar8[0x18]);
+      pfVar8[7] = (float)((fVar12 - (float10)pfVar8[1]) / (float10)pfVar8[0x18]);
+      pfVar8[8] = (float)((fVar10 - (float10)pfVar8[2]) / (float10)pfVar8[0x18]);
     }
     if (*(char *)(pfVar8 + 0x1f) == '\x02') {
       FUN_0804847f();
       FUN_080484a2();
     }
     FUN_0804847f();
-    fVar10 = (float10)FUN_08048498();
+    fVar11 = (float10)FUN_08048498();
     FUN_080484a2();
     iVar7 = 0;
-    fVar11 = (float10)FUN_08048438();
-    fVar9 = (float10)0;
+    fVar12 = (float10)FUN_08048438();
+    fVar10 = (float10)0;
     uVar4 = CONCAT22(extraout_var_00,
-                     (ushort)(fVar11 < fVar9) << 8 | (ushort)(fVar11 == fVar9) << 0xe);
-    if (fVar11 < fVar9) {
+                     (ushort)(fVar12 < fVar10) << 8 | (ushort)(fVar12 == fVar10) << 0xe);
+    if (fVar12 < fVar10) {
 LAB_0804904a:
-      uVar13 = 0;
+      uVar9 = 0;
       local_5c = 0.0;
     }
     else {
-      while (uVar13 = 0, iVar7 < param_3_00) {
-        fVar12 = (float10)FUN_08048c66(&local_40,1,uVar4,uVar4);
-        fVar9 = (float10)0.001;
-        uVar13 = (ushort)(fVar12 < fVar9) << 8 | (ushort)(fVar12 == fVar9) << 0xe;
-        if ((fVar12 >= fVar9 && (fVar12 == fVar9) == 0) &&
-           (fVar9 = (float10)(float)fVar10,
-           uVar13 = (ushort)(fVar12 < fVar9) << 8 | (ushort)(fVar12 == fVar9) << 0xe, fVar12 < fVar9
-           )) goto LAB_0804904a;
-        uVar4 = CONCAT22(extraout_var_01,uVar13);
-        iVar7 = iVar7 + 1;
+      for (; uVar9 = 0, iVar7 < param_3_00; iVar7 = iVar7 + 1) {
+        fVar13 = (float10)FUN_08048c66(&local_40,1,uVar4,uVar4);
+        fVar10 = (float10)0.001;
+        uVar9 = (ushort)(fVar13 < fVar10) << 8 | (ushort)(fVar13 == fVar10) << 0xe;
+        if ((fVar13 >= fVar10 && (fVar13 == fVar10) == 0) &&
+           (fVar10 = (float10)(float)fVar11,
+           uVar9 = (ushort)(fVar13 < fVar10) << 8 | (ushort)(fVar13 == fVar10) << 0xe,
+           fVar13 < fVar10)) goto LAB_0804904a;
+        uVar4 = CONCAT22(extraout_var_01,uVar9);
       }
       FUN_0804847f();
-      fVar9 = (float10)FUN_08048498();
-      local_40 = (float)((float10)local_40 / fVar9);
-      local_3c = (float)((float10)local_3c / fVar9);
-      local_38 = (float)((float10)local_38 / fVar9);
+      fVar10 = (float10)FUN_08048498();
+      local_40 = (float)((float10)local_40 / fVar10);
+      local_3c = (float)((float10)local_3c / fVar10);
+      local_38 = (float)((float10)local_38 / fVar10);
       fVar1 = pfVar8[0x1c];
       fVar14 = (float)(int)pfVar8[0x1e];
-      fVar9 = (float10)FUN_08048438();
-      fVar14 = powf((float)fVar9,fVar14);
-      local_5c = fVar14 * pfVar8[0x1d] + (float)fVar11 * fVar1;
+      fVar10 = (float10)FUN_08048438();
+      fVar14 = powf((float)fVar10,fVar14);
+      local_5c = fVar14 * pfVar8[0x1d] + (float)fVar12 * fVar1;
     }
     if (*(char *)(pfVar8 + 0x1f) == '\0') {
-      fVar9 = (float10)FUN_08048438();
-      fVar9 = -fVar9;
-      fVar10 = (float10)fpatan(SQRT((float10)1 - fVar9 * fVar9),fVar9);
-      iVar6 = (int)ROUND((float10)81.4874 * fVar10);
-      fVar9 = (float10)FUN_08048438();
-      fVar10 = (float10)fsin((float10)(float)fVar10);
-      fVar9 = fVar9 / fVar10;
-      fVar9 = (float10)fpatan(SQRT((float10)1 - fVar9 * fVar9),fVar9);
-      iVar7 = (int)ROUND(fVar9 * (float10)40.74366);
-      fVar9 = (float10)FUN_08048438();
-      if ((float10)0 < fVar9) {
+      fVar10 = (float10)FUN_08048438();
+      fVar10 = -fVar10;
+      fVar11 = (float10)fpatan(SQRT((float10)1 - fVar10 * fVar10),fVar10);
+      iVar6 = (int)ROUND((float10)81.4874 * fVar11);
+      fVar10 = (float10)FUN_08048438();
+      fVar11 = (float10)fsin((float10)(float)fVar11);
+      fVar10 = fVar10 / fVar11;
+      fVar10 = (float10)fpatan(SQRT((float10)1 - fVar10 * fVar10),fVar10);
+      iVar7 = (int)ROUND(fVar10 * (float10)40.74366);
+      fVar10 = (float10)FUN_08048438();
+      if ((float10)0 < fVar10) {
         iVar7 = 0x100 - iVar7;
       }
     }
     else {
-      fVar9 = (float10)FUN_08048438();
+      fVar10 = (float10)FUN_08048438();
       do {
-        fVar9 = fVar9 - (fVar9 / (float10)256.0) * (float10)256.0;
-      } while ((uVar13 & 0x400) != 0);
-      uVar5 = (int)ROUND(fVar9) >> 0x1f;
-      iVar7 = (uVar5 ^ (int)ROUND(fVar9)) - uVar5;
-      fVar9 = (float10)FUN_08048438();
+        fVar10 = fVar10 - (fVar10 / (float10)256.0) * (float10)256.0;
+      } while ((uVar9 & 0x400) != 0);
+      uVar5 = (int)ROUND(fVar10) >> 0x1f;
+      iVar7 = (uVar5 ^ (int)ROUND(fVar10)) - uVar5;
+      fVar10 = (float10)FUN_08048438();
       do {
-        fVar9 = fVar9 - (fVar9 / (float10)256.0) * (float10)256.0;
-      } while ((uVar13 & 0x400) != 0);
-      uVar5 = (int)ROUND(fVar9) >> 0x1f;
-      iVar6 = (uVar5 ^ (int)ROUND(fVar9)) - uVar5;
+        fVar10 = fVar10 - (fVar10 / (float10)256.0) * (float10)256.0;
+      } while ((uVar9 & 0x400) != 0);
+      uVar5 = (int)ROUND(fVar10) >> 0x1f;
+      iVar6 = (uVar5 ^ (int)ROUND(fVar10)) - uVar5;
     }
     iVar7 = iVar6 * 0x100 + iVar7;
     bVar2 = *(byte *)((int)pfVar8 + iVar7 * 4 + 0x82);
@@ -842,11 +839,11 @@ LAB_0804904a:
     local_5c = local_5c * pfVar8[0xb];
     pfVar8[0xb] = local_5c;
     if ((0 < param_3) && (*(char *)((int)pfVar8 + 0x7d) == '\x01')) {
-      fVar9 = (float10)FUN_08048438();
-      fVar9 = fVar9 + fVar9;
-      local_34 = (float)((float10)*param_2 - fVar9 * (float10)pfVar8[6]);
-      local_30 = (float)((float10)param_2[1] - (float10)pfVar8[7] * fVar9);
-      local_2c = (float)((float10)param_2[2] - (float10)pfVar8[8] * fVar9);
+      fVar10 = (float10)FUN_08048438();
+      fVar10 = fVar10 + fVar10;
+      local_34 = (float)((float10)*param_2 - fVar10 * (float10)pfVar8[6]);
+      local_30 = (float)((float10)param_2[1] - (float10)pfVar8[7] * fVar10);
+      local_2c = (float)((float10)param_2[2] - (float10)pfVar8[8] * fVar10);
       FUN_080484a2();
       FUN_08048ebe(pfVar8 + 3,&local_34,param_3 + -1,1);
       local_60 = local_28 * 0.6 + local_60;
@@ -883,8 +880,7 @@ void __regparm3 FUN_0804938f(int param_1,int param_2,int param_3)
   float local_24;
   float local_20;
   
-  iVar3 = 0;
-  while (iVar3 < param_2) {
+  for (iVar3 = 0; iVar3 < param_2; iVar3 = iVar3 + 1) {
     FUN_0804847f();
     if (*(char *)(param_1 + 0x7c) == '\0') {
       fVar1 = *(float *)(param_1 + 0x60);
@@ -897,7 +893,6 @@ void __regparm3 FUN_0804938f(int param_1,int param_2,int param_3)
       fVar5 = (float10)FUN_08048438();
       *(float *)(param_1 + 0x68) = (float)fVar5;
     }
-    iVar3 = iVar3 + 1;
     param_1 = param_1 + 0x40080;
   }
   iVar3 = 0;

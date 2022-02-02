@@ -78,7 +78,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[15];
+    char _unused2[56];
 };
 
 struct _IO_marker {
@@ -154,8 +154,8 @@ typedef struct stat stat, *Pstat;
 struct stat {
     __dev_t st_dev;
     ushort __pad1;
-    undefined field_0xa;
-    undefined field_0xb;
+    undefined field2_0xa;
+    undefined field3_0xb;
     __ino_t __st_ino;
     __mode_t st_mode;
     __nlink_t st_nlink;
@@ -163,8 +163,8 @@ struct stat {
     __gid_t st_gid;
     __dev_t st_rdev;
     ushort __pad2;
-    undefined field_0x2a;
-    undefined field_0x2b;
+    undefined field11_0x2a;
+    undefined field12_0x2b;
     __off64_t st_size;
     __blksize_t st_blksize;
     __blkcnt64_t st_blocks;
@@ -218,9 +218,9 @@ struct hash_tuning {
     float growth_threshold;
     float growth_factor;
     _Bool is_n_buckets;
-    undefined field_0x11;
-    undefined field_0x12;
-    undefined field_0x13;
+    undefined field5_0x11;
+    undefined field6_0x12;
+    undefined field7_0x13;
 };
 
 typedef struct hash_table Hash_table;
@@ -250,16 +250,16 @@ typedef enum time_style {
 typedef struct fileinfo fileinfo, *Pfileinfo;
 
 typedef enum filetype {
-    symbolic_link=6,
-    normal=5,
-    sock=7,
-    chardev=2,
-    arg_directory=9,
+    unknown=0,
     fifo=1,
-    whiteout=8,
-    blockdev=4,
+    chardev=2,
     directory=3,
-    unknown=0
+    blockdev=4,
+    normal=5,
+    symbolic_link=6,
+    sock=7,
+    whiteout=8,
+    arg_directory=9
 } filetype;
 
 typedef __mode_t mode_t;
@@ -274,7 +274,7 @@ struct fileinfo {
     _Bool stat_ok;
     _Bool linkok;
     _Bool have_acl;
-    undefined field_0x77;
+    undefined field9_0x77;
 };
 
 typedef struct color_ext_type color_ext_type, *Pcolor_ext_type;
@@ -293,67 +293,67 @@ struct color_ext_type {
 };
 
 typedef enum sort_type {
+    sort_none=-1,
+    sort_name=0,
     sort_extension=1,
+    sort_size=2,
     sort_version=3,
     sort_time=4,
-    sort_numtypes=5,
-    sort_name=0,
-    sort_size=2,
-    sort_none=-1
+    sort_numtypes=5
 } sort_type;
 
 typedef enum indicator_style {
-    classify=3,
-    file_type=2,
+    none=0,
     slash=1,
-    none=0
+    file_type=2,
+    classify=3
 } indicator_style;
 
 typedef enum indicator_no {
+    C_LEFT=0,
     C_RIGHT=1,
     C_END=2,
-    C_LINK=6,
-    C_DOOR=14,
-    C_STICKY=17,
-    C_FILE=4,
-    C_MISSING=11,
-    C_SETGID=16,
-    C_STICKY_OTHER_WRITABLE=19,
     C_NORM=3,
+    C_FILE=4,
     C_DIR=5,
-    C_CHR=10,
-    C_OTHER_WRITABLE=18,
-    C_LEFT=0,
-    C_ORPHAN=12,
-    C_SOCK=8,
+    C_LINK=6,
     C_FIFO=7,
+    C_SOCK=8,
     C_BLK=9,
+    C_CHR=10,
+    C_MISSING=11,
+    C_ORPHAN=12,
     C_EXEC=13,
-    C_SETUID=15
+    C_DOOR=14,
+    C_SETUID=15,
+    C_SETGID=16,
+    C_STICKY=17,
+    C_OTHER_WRITABLE=18,
+    C_STICKY_OTHER_WRITABLE=19
 } indicator_no;
 
 typedef enum time_type {
-    time_numtypes=3,
     time_mtime=0,
     time_ctime=1,
-    time_atime=2
+    time_atime=2,
+    time_numtypes=3
 } time_type;
 
 typedef struct column_info column_info, *Pcolumn_info;
 
 struct column_info {
     _Bool valid_len;
-    undefined field_0x1;
-    undefined field_0x2;
-    undefined field_0x3;
+    undefined field1_0x1;
+    undefined field2_0x2;
+    undefined field3_0x3;
     size_t line_len;
     size_t * col_arr;
 };
 
 typedef enum color_type {
+    color_never=0,
     color_always=1,
-    color_if_tty=2,
-    color_never=0
+    color_if_tty=2
 } color_type;
 
 typedef void * V;
@@ -366,19 +366,19 @@ struct ignore_pattern {
 };
 
 typedef enum Dereference_symlink {
-    DEREF_COMMAND_LINE_ARGUMENTS=3,
     DEREF_UNDEFINED=1,
-    DEREF_COMMAND_LINE_SYMLINK_TO_DIR=4,
     DEREF_NEVER=2,
+    DEREF_COMMAND_LINE_ARGUMENTS=3,
+    DEREF_COMMAND_LINE_SYMLINK_TO_DIR=4,
     DEREF_ALWAYS=5
 } Dereference_symlink;
 
 typedef enum format {
-    horizontal=3,
-    one_per_line=1,
-    with_commas=4,
     long_format=0,
-    many_per_line=2
+    one_per_line=1,
+    many_per_line=2,
+    horizontal=3,
+    with_commas=4
 } format;
 
 typedef struct pending pending, *Ppending;
@@ -387,20 +387,20 @@ struct pending {
     char * name;
     char * realname;
     _Bool command_line_arg;
-    undefined field_0x9;
-    undefined field_0xa;
-    undefined field_0xb;
+    undefined field3_0x9;
+    undefined field4_0xa;
+    undefined field5_0xb;
     struct pending * next;
 };
 
 typedef enum anon_enum_32.conflict1bd4 {
     ST_GND=0,
-    ST_HEX=3,
-    ST_END=5,
-    ST_ERROR=6,
-    ST_CARET=4,
     ST_BACKSLASH=1,
-    ST_OCTAL=2
+    ST_OCTAL=2,
+    ST_HEX=3,
+    ST_CARET=4,
+    ST_END=5,
+    ST_ERROR=6
 } anon_enum_32.conflict1bd4;
 
 typedef int __ssize_t;
@@ -443,77 +443,77 @@ struct __dirstream {
 };
 
 typedef enum anon_enum_32.conflictc03 {
-    FULL_TIME_OPTION=134,
-    IGNORE_DEFAULT=0,
-    FILE_TYPE_INDICATOR_OPTION=132,
-    _ISxdigit=4096,
-    human_base_1024=32,
-    _ISupper=256,
-    DT_CHR=2,
-    human_space_before_unit=64,
-    DT_LNK=10,
-    _ISdigit=2048,
-    DT_REG=8,
-    IGNORE_DOT_AND_DOTDOT=1,
-    __LC_ALL=6,
-    human_SI=128,
-    __LC_ADDRESS=9,
-    COLOR_OPTION=130,
-    IGNORE_MINIMAL=2,
-    _ISgraph=32768,
-    __LC_MESSAGES=5,
-    TIME_STAMP_LEN_MAXIMUM=1000,
-    __LC_CTYPE=0,
-    TIME_STYLE_OPTION=143,
-    DT_WHT=14,
-    __LC_NUMERIC=1,
-    _ISlower=512,
-    LS_FAILURE=2,
-    _ISpunct=4,
-    TIME_OPTION=142,
-    SHOW_CONTROL_CHARS_OPTION=139,
-    DT_UNKNOWN=0,
-    COPYRIGHT_YEAR=2008,
-    _ISalnum=8,
-    __LC_TIME=2,
-    __LC_IDENTIFICATION=12,
-    human_floor=2,
-    FORMAT_OPTION=133,
+    GETOPT_VERSION_CHAR=-131,
     GETOPT_HELP_CHAR=-130,
+    DT_UNKNOWN=0,
+    IGNORE_DEFAULT=0,
+    NOT_AN_INODE_NUMBER=0,
+    __LC_CTYPE=0,
+    human_ceiling=0,
+    DT_FIFO=1,
     HAVE_GNU_CALLOC=1,
+    IGNORE_DOT_AND_DOTDOT=1,
+    LS_MINOR_PROBLEM=1,
+    _ISblank=1,
+    __LC_NUMERIC=1,
+    human_round_to_nearest=1,
+    DT_CHR=2,
+    IGNORE_MINIMAL=2,
+    LS_FAILURE=2,
+    _IScntrl=2,
+    __LC_TIME=2,
+    human_floor=2,
+    __LC_COLLATE=3,
+    DT_DIR=4,
+    _ISpunct=4,
+    __LC_MONETARY=4,
+    human_group_digits=4,
+    __LC_MESSAGES=5,
+    DT_BLK=6,
+    __LC_ALL=6,
+    __LC_PAPER=7,
+    DT_REG=8,
+    _ISalnum=8,
+    __LC_NAME=8,
+    human_suppress_point_zero=8,
+    __LC_ADDRESS=9,
+    DT_LNK=10,
+    __LC_TELEPHONE=10,
+    __LC_MEASUREMENT=11,
+    DT_SOCK=12,
+    __LC_IDENTIFICATION=12,
+    DT_WHT=14,
+    human_autoscale=16,
+    human_base_1024=32,
+    human_space_before_unit=64,
+    AUTHOR_OPTION=128,
+    human_SI=128,
+    BLOCK_SIZE_OPTION=129,
+    COLOR_OPTION=130,
+    DEREFERENCE_COMMAND_LINE_SYMLINK_TO_DIR_OPTION=131,
+    FILE_TYPE_INDICATOR_OPTION=132,
+    FORMAT_OPTION=133,
+    FULL_TIME_OPTION=134,
+    GROUP_DIRECTORIES_FIRST_OPTION=135,
+    HIDE_OPTION=136,
+    INDICATOR_STYLE_OPTION=137,
+    QUOTING_STYLE_OPTION=138,
+    SHOW_CONTROL_CHARS_OPTION=139,
+    SI_OPTION=140,
+    SORT_OPTION=141,
+    TIME_OPTION=142,
+    TIME_STYLE_OPTION=143,
+    _ISupper=256,
+    human_B=256,
+    _ISlower=512,
+    TIME_STAMP_LEN_MAXIMUM=1000,
+    _ISalpha=1024,
+    COPYRIGHT_YEAR=2008,
+    _ISdigit=2048,
+    _ISxdigit=4096,
     _ISspace=8192,
     _ISprint=16384,
-    DT_FIFO=1,
-    _IScntrl=2,
-    DT_BLK=6,
-    SI_OPTION=140,
-    QUOTING_STYLE_OPTION=138,
-    human_suppress_point_zero=8,
-    AUTHOR_OPTION=128,
-    _ISalpha=1024,
-    __LC_MONETARY=4,
-    __LC_MEASUREMENT=11,
-    GETOPT_VERSION_CHAR=-131,
-    human_ceiling=0,
-    _ISblank=1,
-    SORT_OPTION=141,
-    human_autoscale=16,
-    LS_MINOR_PROBLEM=1,
-    INDICATOR_STYLE_OPTION=137,
-    __LC_PAPER=7,
-    human_group_digits=4,
-    DT_DIR=4,
-    human_B=256,
-    __LC_COLLATE=3,
-    BLOCK_SIZE_OPTION=129,
-    __LC_TELEPHONE=10,
-    __LC_NAME=8,
-    DT_SOCK=12,
-    NOT_AN_INODE_NUMBER=0,
-    GROUP_DIRECTORIES_FIRST_OPTION=135,
-    DEREFERENCE_COMMAND_LINE_SYMLINK_TO_DIR_OPTION=131,
-    human_round_to_nearest=1,
-    HIDE_OPTION=136
+    _ISgraph=32768
 } anon_enum_32.conflictc03;
 
 typedef struct dirent dirent, *Pdirent;
@@ -524,7 +524,7 @@ struct dirent {
     ushort d_reclen;
     uchar d_type;
     char d_name[256];
-    undefined field_0x113;
+    undefined field5_0x113;
 };
 
 typedef struct lconv lconv, *Plconv;
@@ -554,8 +554,8 @@ struct lconv {
     char int_n_sep_by_space;
     char int_p_sign_posn;
     char int_n_sign_posn;
-    undefined field_0x36;
-    undefined field_0x37;
+    undefined field24_0x36;
+    undefined field25_0x37;
 };
 
 typedef union sigval sigval, *Psigval;
@@ -665,9 +665,9 @@ struct char_directive {
     char * precision_end;
     size_t precision_arg_index;
     char conversion;
-    undefined field_0x25;
-    undefined field_0x26;
-    undefined field_0x27;
+    undefined field10_0x25;
+    undefined field11_0x26;
+    undefined field12_0x27;
     size_t arg_index;
 };
 
@@ -751,7 +751,7 @@ union anon_union.conflict83d2_for_id {
 struct userid {
     union anon_union.conflict83d2_for_id id;
     struct userid * next;
-    char[0] name;
+    char name[0];
 };
 
 
@@ -782,9 +782,9 @@ struct obstack {
     uint use_extra_arg:1;
     uint maybe_empty_object:1;
     uint alloc_failed:1;
-    undefined field_0x29;
-    undefined field_0x2a;
-    undefined field_0x2b;
+    undefined field13_0x29;
+    undefined field14_0x2a;
+    undefined field15_0x2b;
 };
 
 typedef int __jmp_buf[6];
@@ -800,13 +800,13 @@ struct __jmp_buf_tag {
 typedef struct __jmp_buf_tag jmp_buf[1];
 
 typedef enum quoting_style {
+    literal_quoting_style=0,
     shell_quoting_style=1,
     shell_always_quoting_style=2,
-    escape_quoting_style=4,
     c_quoting_style=3,
-    clocale_quoting_style=6,
+    escape_quoting_style=4,
     locale_quoting_style=5,
-    literal_quoting_style=0
+    clocale_quoting_style=6
 } quoting_style;
 
 typedef struct quoting_options quoting_options, *Pquoting_options;
@@ -863,11 +863,11 @@ struct tm {
 typedef struct __mbstate_t mbstate_t;
 
 typedef enum strtol_error {
+    LONGINT_OK=0,
     LONGINT_OVERFLOW=1,
     LONGINT_INVALID_SUFFIX_CHAR=2,
-    LONGINT_INVALID=4,
     LONGINT_INVALID_SUFFIX_CHAR_WITH_OVERFLOW=3,
-    LONGINT_OK=0
+    LONGINT_INVALID=4
 } strtol_error;
 
 typedef struct option option, *Poption;
@@ -891,29 +891,29 @@ typedef __time_t time_t;
 typedef struct argument argument, *Pargument;
 
 typedef enum arg_type {
-    TYPE_ULONGINT=8,
-    TYPE_COUNT_LONGINT_POINTER=21,
-    TYPE_INT=5,
+    TYPE_NONE=0,
+    TYPE_SCHAR=1,
+    TYPE_UCHAR=2,
     TYPE_SHORT=3,
+    TYPE_USHORT=4,
+    TYPE_INT=5,
+    TYPE_UINT=6,
+    TYPE_LONGINT=7,
+    TYPE_ULONGINT=8,
+    TYPE_LONGLONGINT=9,
+    TYPE_ULONGLONGINT=10,
+    TYPE_DOUBLE=11,
+    TYPE_LONGDOUBLE=12,
+    TYPE_CHAR=13,
     TYPE_WIDE_CHAR=14,
     TYPE_STRING=15,
     TYPE_WIDE_STRING=16,
-    TYPE_LONGDOUBLE=12,
-    TYPE_COUNT_SHORT_POINTER=19,
-    TYPE_UINT=6,
-    TYPE_NONE=0,
-    TYPE_LONGLONGINT=9,
-    TYPE_COUNT_LONGLONGINT_POINTER=22,
-    TYPE_CHAR=13,
     TYPE_POINTER=17,
-    TYPE_DOUBLE=11,
-    TYPE_LONGINT=7,
-    TYPE_SCHAR=1,
-    TYPE_USHORT=4,
     TYPE_COUNT_SCHAR_POINTER=18,
-    TYPE_UCHAR=2,
-    TYPE_ULONGLONGINT=10,
-    TYPE_COUNT_INT_POINTER=20
+    TYPE_COUNT_SHORT_POINTER=19,
+    TYPE_COUNT_INT_POINTER=20,
+    TYPE_COUNT_LONGINT_POINTER=21,
+    TYPE_COUNT_LONGLONGINT_POINTER=22
 } arg_type;
 
 typedef union anon_union.conflictb7e1_for_a anon_union.conflictb7e1_for_a, *Panon_union.conflictb7e1_for_a;
@@ -1087,35 +1087,35 @@ union _union_27 {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
-    SHT_ANDROID_REL=1610612737,
     SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_SYMTAB=2,
     SHT_STRTAB=3,
     SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_HASH=5,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_NOTE=7,
+    SHT_NOBITS=8,
+    SHT_REL=9,
+    SHT_SHLIB=10,
+    SHT_DYNSYM=11,
+    SHT_INIT_ARRAY=14,
+    SHT_FINI_ARRAY=15,
+    SHT_PREINIT_ARRAY=16,
+    SHT_GROUP=17,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_ANDROID_REL=1610612737,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_CHECKSUM=1879048184,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -1134,81 +1134,81 @@ struct Elf32_Shdr {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
     DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
-    DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
-    DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
-    DT_FEATURE_1=1879047676,
-    DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
     DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
-    DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
-    DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
     DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
-    DT_GNU_LIBLIST=1879047929,
     DT_PLTGOT=3,
+    DT_HASH=4,
+    DT_STRTAB=5,
+    DT_SYMTAB=6,
+    DT_RELA=7,
+    DT_RELASZ=8,
+    DT_RELAENT=9,
     DT_STRSZ=10,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_INIT=12,
+    DT_FINI=13,
+    DT_SONAME=14,
+    DT_RPATH=15,
+    DT_SYMBOLIC=16,
+    DT_REL=17,
+    DT_RELSZ=18,
+    DT_RELENT=19,
+    DT_PLTREL=20,
+    DT_DEBUG=21,
+    DT_TEXTREL=22,
+    DT_JMPREL=23,
+    DT_BIND_NOW=24,
+    DT_INIT_ARRAY=25,
+    DT_FINI_ARRAY=26,
+    DT_INIT_ARRAYSZ=27,
+    DT_FINI_ARRAYSZ=28,
+    DT_RUNPATH=29,
+    DT_FLAGS=30,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_RELRSZ=35,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_GNU_PRELINKED=1879047669,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_CHECKSUM=1879047672,
+    DT_PLTPADSZ=1879047673,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_FEATURE_1=1879047676,
+    DT_POSFLAG_1=1879047677,
+    DT_SYMINSZ=1879047678,
+    DT_SYMINENT=1879047679,
+    DT_GNU_HASH=1879047925,
+    DT_TLSDESC_PLT=1879047926,
+    DT_TLSDESC_GOT=1879047927,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_LIBLIST=1879047929,
+    DT_CONFIG=1879047930,
+    DT_DEPAUDIT=1879047931,
+    DT_AUDIT=1879047932,
+    DT_PLTPAD=1879047933,
+    DT_MOVETAB=1879047934,
+    DT_SYMINFO=1879047935,
+    DT_VERSYM=1879048176,
+    DT_RELACOUNT=1879048185,
+    DT_RELCOUNT=1879048186,
+    DT_FLAGS_1=1879048187,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_AUXILIARY=2147483645,
+    DT_FILTER=2147483647
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -1230,17 +1230,17 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
     PT_NULL=0,
+    PT_LOAD=1,
     PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
     PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
     PT_GNU_EH_FRAME=1685382480,
-    PT_GNU_RELRO=1685382482,
-    PT_TLS=7
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType_x86;
 
 struct Elf32_Phdr {
@@ -1351,7 +1351,7 @@ struct _struct_1030 {
 typedef union _union_1028 _union_1028, *P_union_1028;
 
 union _union_1028 {
-    int _pad[125];
+    int _pad[29];
     struct _struct_1029 _kill;
     struct _struct_1030 _timer;
     struct _struct_1031 _rt;
@@ -2611,13 +2611,12 @@ dev_ino * dev_ino_pop(dev_ino *__return_storage_ptr__)
   obstack *__o_1;
   int __len;
   
-  if (dev_ino_obstack.next_free + -(int)dev_ino_obstack.object_base < (char *)0x10) {
+  if ((uint)((int)dev_ino_obstack.next_free - (int)dev_ino_obstack.object_base) < 0x10) {
                     // WARNING: Subroutine does not return
-    __assert_fail(
-                  "sizeof (struct dev_ino) <= __extension__ ({ struct obstack const *__o = (&dev_ino_obstack); (unsigned) (__o->next_free - __o->object_base); })"
+    __assert_fail("sizeof (struct dev_ino) <= __extension__ ({ struct obstack const *__o = (&dev_ino_obstack); (unsigned) (__o->next_free - __o->object_base); })"
                   ,"ls.c",0x396,"dev_ino_pop");
   }
-  if ((int)(dev_ino_obstack.chunk_limit + -(int)dev_ino_obstack.next_free) < -0x10) {
+  if ((int)dev_ino_obstack.chunk_limit - (int)dev_ino_obstack.next_free < -0x10) {
     _obstack_newchunk(&dev_ino_obstack,0xfffffff0);
   }
   dev_ino_obstack.next_free = dev_ino_obstack.next_free + -0x10;
@@ -2639,22 +2638,20 @@ void dired_dump_obstack(char *prefix,obstack *os)
   obstack *__o1;
   void *__value;
   
-  uVar2 = (uint)(os->next_free + -(int)os->object_base) >> 2;
+  uVar2 = (uint)((int)os->next_free - (int)os->object_base) >> 2;
   if (uVar2 != 0) {
     pcVar1 = os->object_base;
     if (os->next_free == pcVar1) {
-      *(byte *)&os->field_0x28 = *(byte *)&os->field_0x28 | 2;
+      os->field_0x28 = os->field_0x28 | 2;
     }
     os->next_free = (char *)(~os->alignment_mask & (uint)(os->next_free + os->alignment_mask));
-    if ((int)(os->chunk_limit + -(int)os->chunk) < (int)(os->next_free + -(int)os->chunk)) {
+    if ((int)os->chunk_limit - (int)os->chunk < (int)os->next_free - (int)os->chunk) {
       os->next_free = os->chunk_limit;
     }
     os->object_base = os->next_free;
     fputs_unlocked(prefix,stdout);
-    i = 0;
-    while (i < uVar2) {
+    for (i = 0; i < uVar2; i = i + 1) {
       printf(" %lu",*(undefined4 *)(pcVar1 + i * 4));
-      i = i + 1;
     }
     putchar_unlocked(10);
   }
@@ -2728,7 +2725,7 @@ _Bool visit_dir(dev_t dev,ino_t ino)
   if (puVar1 != entry) {
     free(entry);
   }
-  return (_Bool)(puVar1 != entry);
+  return puVar1 != entry;
 }
 
 
@@ -2829,42 +2826,40 @@ void process_signals(void)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Restarted to delay deadcode elimination for space: stack
 
-int main(void)
+int main(int argc,char **argv)
 
 {
   _Bool *p_Var1;
   char **ppcVar2;
-  pending *p;
   _Bool _Var3;
   __pid_t _Var4;
   char **ppcVar5;
-  void *x;
   quoting_style qVar6;
   size_t sVar7;
   int iVar8;
   sigset_t *psVar9;
-  sigaction *psVar10;
+  ulong *puVar10;
   byte bVar11;
-  int in_stack_00000004;
-  char **in_stack_00000008;
   code *local_e4;
   Dereference_symlink local_e0;
   _Bool local_dc;
   _Bool local_d8;
-  code *local_c8;
-  sigaction act;
-  dev_ino di;
-  int i;
-  pending *thispend;
-  int n_files;
-  int j;
-  dev_ino *found;
-  int j_1;
+  undefined local_c8 [132];
+  int local_44;
+  dev_ino local_3c;
+  int local_2c;
+  pending *local_28;
+  int local_24;
+  int local_20;
+  void *local_1c;
+  int local_18;
+  int *piStack20;
   
   bVar11 = 0;
-  program_name = *in_stack_00000008;
+  piStack20 = &argc;
+  program_name = *argv;
   setlocale(6,"");
   bindtextdomain("coreutils","/usr/local/share/locale");
   textdomain("coreutils");
@@ -2873,7 +2868,7 @@ int main(void)
   exit_status = 0;
   print_dir_name = true;
   pending_dirs = (pending *)0x0;
-  di.st_dev._4_4_ = decode_switches(in_stack_00000004,in_stack_00000008);
+  local_2c = decode_switches(argc,argv);
   if (print_with_color != false) {
     parse_ls_color();
   }
@@ -2892,38 +2887,32 @@ LAB_0804a166:
   _Var4 = tcgetpgrp(1);
   if (-1 < _Var4) {
     sigemptyset((sigset_t *)&caught_signals);
-    n_files = 0;
-    while (n_files < 0xc) {
-      sigaction(main::sig[n_files],(sigaction *)0x0,(sigaction *)&local_c8);
-      if (local_c8 != (code *)0x1) {
-        sigaddset((sigset_t *)&caught_signals,main::sig[n_files]);
+    for (local_20 = 0; local_20 < 0xc; local_20 = local_20 + 1) {
+      sigaction(main::sig[local_20],(sigaction *)0x0,(sigaction *)local_c8);
+      if (local_c8._0_4_ != (code *)0x1) {
+        sigaddset((sigset_t *)&caught_signals,main::sig[local_20]);
       }
-      n_files = n_files + 1;
     }
-    iVar8 = 0x20;
     psVar9 = &caught_signals;
-    psVar10 = &act;
-    while (iVar8 != 0) {
-      iVar8 = iVar8 + -1;
-      psVar10->__sigaction_handler = psVar9->__val[0];
+    puVar10 = (ulong *)(local_c8 + 4);
+    for (iVar8 = 0x20; iVar8 != 0; iVar8 = iVar8 + -1) {
+      *puVar10 = psVar9->__val[0];
       psVar9 = (sigset_t *)((int)psVar9 + ((uint)bVar11 * -2 + 1) * 4);
-      psVar10 = (sigaction *)((int)psVar10 + (uint)bVar11 * -8 + 4);
+      puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
     }
-    act.sa_mask.__val[31] = 0x10000000;
-    n_files = 0;
-    while (n_files < 0xc) {
-      iVar8 = sigismember((sigset_t *)&caught_signals,main::sig[n_files]);
+    local_44 = 0x10000000;
+    for (local_20 = 0; local_20 < 0xc; local_20 = local_20 + 1) {
+      iVar8 = sigismember((sigset_t *)&caught_signals,main::sig[local_20]);
       if (iVar8 != 0) {
-        if (main::sig[n_files] == 0x14) {
+        if (main::sig[local_20] == 0x14) {
           local_e4 = stophandler;
         }
         else {
           local_e4 = sighandler;
         }
-        local_c8 = local_e4;
-        sigaction(main::sig[n_files],(sigaction *)&local_c8,(sigaction *)0x0);
+        local_c8._0_4_ = local_e4;
+        sigaction(main::sig[local_20],(sigaction *)local_c8,(sigaction *)0x0);
       }
-      n_files = n_files + 1;
     }
   }
   prep_non_filename_text();
@@ -2970,8 +2959,8 @@ LAB_0804a2af:
   cwd_file = (fileinfo *)xnmalloc(100,0x78);
   cwd_n_used = 0;
   clear_files();
-  iVar8 = in_stack_00000004 - di.st_dev._4_4_;
-  if (iVar8 < 1) {
+  local_24 = argc - local_2c;
+  if (local_24 < 1) {
     if (immediate_dirs == false) {
       queue_directory(".",(char *)0x0,true);
     }
@@ -2981,10 +2970,10 @@ LAB_0804a2af:
   }
   else {
     do {
-      ppcVar5 = in_stack_00000008 + di.st_dev._4_4_;
-      di.st_dev._4_4_ = di.st_dev._4_4_ + 1;
+      ppcVar5 = argv + local_2c;
+      local_2c = local_2c + 1;
       gobble_file(*ppcVar5,unknown,0,true,"");
-    } while ((int)di.st_dev._4_4_ < in_stack_00000004);
+    } while (local_2c < argc);
   }
   if (cwd_n_used != 0) {
     sort_files();
@@ -2993,8 +2982,8 @@ LAB_0804a2af:
     }
   }
   if (cwd_n_used == 0) {
-    if (((iVar8 < 2) && (pending_dirs != (pending *)0x0)) && (pending_dirs->next == (pending *)0x0))
-    {
+    if (((local_24 < 2) && (pending_dirs != (pending *)0x0)) &&
+       (pending_dirs->next == (pending *)0x0)) {
       print_dir_name = false;
     }
   }
@@ -3005,44 +2994,42 @@ LAB_0804a2af:
       dired_pos = dired_pos + 1;
     }
   }
-  while (p = pending_dirs, pending_dirs != (pending *)0x0) {
+  while (pending_dirs != (pending *)0x0) {
+    local_28 = pending_dirs;
     if ((active_dir_set == (Hash_table *)0x0) || (pending_dirs->name != (char *)0x0)) {
       p_Var1 = &pending_dirs->command_line_arg;
       ppcVar5 = &pending_dirs->realname;
       ppcVar2 = &pending_dirs->name;
       pending_dirs = pending_dirs->next;
       print_dir(*ppcVar2,*ppcVar5,*p_Var1);
-      free_pending_ent(p);
+      free_pending_ent(local_28);
       print_dir_name = true;
     }
     else {
       pending_dirs = pending_dirs->next;
-      dev_ino_pop((dev_ino *)&act.sa_restorer);
-      x = hash_delete(active_dir_set,&act.sa_restorer);
-      if (x == (void *)0x0) {
+      dev_ino_pop(&local_3c);
+      local_1c = hash_delete(active_dir_set,&local_3c);
+      if (local_1c == (void *)0x0) {
                     // WARNING: Subroutine does not return
         __assert_fail("found","ls.c",0x51e,"main");
       }
-      dev_ino_free(x);
-      free_pending_ent(p);
+      dev_ino_free(local_1c);
+      free_pending_ent(local_28);
     }
   }
   if (print_with_color != false) {
     restore_default_color();
     fflush_unlocked(stdout);
-    found = (dev_ino *)0x0;
-    while ((int)found < 0xc) {
-      iVar8 = sigismember((sigset_t *)&caught_signals,main::sig[(int)found]);
+    for (local_18 = 0; local_18 < 0xc; local_18 = local_18 + 1) {
+      iVar8 = sigismember((sigset_t *)&caught_signals,main::sig[local_18]);
       if (iVar8 != 0) {
-        signal(main::sig[(int)found],(__sighandler_t)0x0);
+        signal(main::sig[local_18],(__sighandler_t)0x0);
       }
-      found = (dev_ino *)((int)&found->st_ino + 1);
     }
-    found = (dev_ino *)stop_signal_count;
-    while (found != (dev_ino *)0x0) {
+    for (local_18 = stop_signal_count; local_18 != 0; local_18 = local_18 + -1) {
       raise(0x13);
-      found = (dev_ino *)((int)&found[-1].st_dev + 7);
     }
+    local_18 = interrupt_signal;
     if (interrupt_signal != 0) {
       raise(interrupt_signal);
     }
@@ -3125,25 +3112,23 @@ int decode_switches(int argc,char **argv)
     format = many_per_line;
     set_quoting_style((quoting_options *)0x0,escape_quoting_style);
   }
+  else if (ls_mode == 3) {
+    format = long_format;
+    set_quoting_style((quoting_options *)0x0,escape_quoting_style);
+  }
   else {
-    if (ls_mode == 3) {
-      format = long_format;
-      set_quoting_style((quoting_options *)0x0,escape_quoting_style);
+    if (ls_mode != 1) {
+                    // WARNING: Subroutine does not return
+      abort();
+    }
+    iVar3 = isatty(1);
+    if (iVar3 == 0) {
+      format = one_per_line;
+      qmark_funny_chars = false;
     }
     else {
-      if (ls_mode != 1) {
-                    // WARNING: Subroutine does not return
-        abort();
-      }
-      iVar3 = isatty(1);
-      if (iVar3 == 0) {
-        format = one_per_line;
-        qmark_funny_chars = false;
-      }
-      else {
-        format = many_per_line;
-        qmark_funny_chars = true;
-      }
+      format = many_per_line;
+      qmark_funny_chars = true;
     }
   }
   time_type = time_mtime;
@@ -3505,10 +3490,8 @@ int decode_switches(int argc,char **argv)
     set_char_quoting(filename_quoting_options,' ',1);
   }
   if (slash < indicator_style) {
-    p_2 = "GNU coreutils" + indicator_style + 0xc;
-    while (*p_2 != '\0') {
+    for (p_2 = "GNU coreutils" + indicator_style + 0xc; *p_2 != '\0'; p_2 = p_2 + 1) {
       set_char_quoting(filename_quoting_options,*p_2,1);
-      p_2 = p_2 + 1;
     }
   }
   dirname_quoting_options = clone_quoting_options((quoting_options *)0x0);
@@ -3562,27 +3545,19 @@ case_long_iso_time_style:
         long_time_format[1] = "%Y-%m-%d %H:%M";
         long_time_format[0] = "%Y-%m-%d %H:%M";
       }
-      else {
-        if (tVar1 == full_iso_time_style) {
-          long_time_format[1] = "%Y-%m-%d %H:%M:%S.%N %z";
-          long_time_format[0] = "%Y-%m-%d %H:%M:%S.%N %z";
-        }
-        else {
-          if (tVar1 == iso_time_style) {
-            long_time_format[0] = "%Y-%m-%d ";
-            long_time_format[1] = "%m-%d %H:%M";
-          }
-          else {
-            if ((tVar1 == locale_time_style) && (_Var2 = hard_locale(2), _Var2 != false)) {
-              i_2 = 0;
-              while (i_2 < 2) {
-                locale_format = (char *)dcgettext(0,long_time_format[i_2],2);
-                if (long_time_format[i_2] == locale_format) goto case_long_iso_time_style;
-                long_time_format[i_2] = locale_format;
-                i_2 = i_2 + 1;
-              }
-            }
-          }
+      else if (tVar1 == full_iso_time_style) {
+        long_time_format[1] = "%Y-%m-%d %H:%M:%S.%N %z";
+        long_time_format[0] = "%Y-%m-%d %H:%M:%S.%N %z";
+      }
+      else if (tVar1 == iso_time_style) {
+        long_time_format[0] = "%Y-%m-%d ";
+        long_time_format[1] = "%m-%d %H:%M";
+      }
+      else if ((tVar1 == locale_time_style) && (_Var2 = hard_locale(2), _Var2 != false)) {
+        for (i_2 = 0; i_2 < 2; i_2 = i_2 + 1) {
+          locale_format = (char *)dcgettext(0,long_time_format[i_2],2);
+          if (long_time_format[i_2] == locale_format) goto case_long_iso_time_style;
+          long_time_format[i_2] = locale_format;
         }
       }
     }
@@ -3617,24 +3592,22 @@ _Bool get_funky_string(char **dest,char **src,_Bool equals_end,size_t *output_co
           break;
         }
       }
-      else {
-        if (cVar1 < '>') {
-          if ((cVar1 == '\0') || (cVar1 == ':')) {
-            state = ST_END;
-            break;
-          }
+      else if (cVar1 < '>') {
+        if ((cVar1 == '\0') || (cVar1 == ':')) {
+          state = ST_END;
+          break;
         }
-        else {
-          if (cVar1 == '\\') {
-            state = ST_BACKSLASH;
-            p = p + 1;
-            break;
-          }
-          if (cVar1 == '^') {
-            state = ST_CARET;
-            p = p + 1;
-            break;
-          }
+      }
+      else {
+        if (cVar1 == '\\') {
+          state = ST_BACKSLASH;
+          p = p + 1;
+          break;
+        }
+        if (cVar1 == '^') {
+          state = ST_CARET;
+          p = p + 1;
+          break;
         }
       }
       *q = *p;
@@ -3782,7 +3755,7 @@ _Bool get_funky_string(char **dest,char **src,_Bool equals_end,size_t *output_co
       *dest = q;
       *src = p;
       *output_count = count;
-      return (_Bool)(state != ST_ERROR);
+      return state != ST_ERROR;
     }
   } while( true );
 }
@@ -3828,92 +3801,80 @@ void parse_ls_color(void)
           state = 3;
         }
       }
-      else {
-        if (state < 3) {
-          if (state == 1) {
-            cVar1 = *p;
-            if (cVar1 == '*') {
-              ext = (color_ext_type *)xmalloc(0x14);
-              ext->next = color_ext_list;
-              p = p + 1;
-              color_ext_list = ext;
-              (ext->ext).string = buf;
-              _Var2 = get_funky_string(&buf,&p,true,(size_t *)ext);
-              if (_Var2 == false) {
-                local_34 = -1;
-              }
-              else {
-                local_34 = 4;
-              }
-              state = local_34;
+      else if (state < 3) {
+        if (state == 1) {
+          cVar1 = *p;
+          if (cVar1 == '*') {
+            ext = (color_ext_type *)xmalloc(0x14);
+            ext->next = color_ext_list;
+            p = p + 1;
+            color_ext_list = ext;
+            (ext->ext).string = buf;
+            _Var2 = get_funky_string(&buf,&p,true,(size_t *)ext);
+            if (_Var2 == false) {
+              local_34 = -1;
             }
             else {
-              if (cVar1 == ':') {
-                p = p + 1;
-              }
-              else {
-                if (cVar1 == '\0') {
-                  state = 0;
-                }
-                else {
-                  label[0] = *p;
-                  p = p + 1;
-                  state = 2;
-                }
-              }
+              local_34 = 4;
             }
+            state = local_34;
           }
-        }
-        else {
-          if (state == 3) {
-            state = -1;
-            cVar1 = *p;
+          else if (cVar1 == ':') {
             p = p + 1;
-            if (cVar1 == '=') {
-              ind_no = 0;
-              while (indicator_name[ind_no] != (char *)0x0) {
-                iVar5 = strcmp(label,indicator_name[ind_no]);
-                if (iVar5 == 0) {
-                  color_indicator[ind_no].string = buf;
-                  _Var2 = get_funky_string(&buf,&p,false,(size_t *)(color_indicator + ind_no));
-                  if (_Var2 == false) {
-                    local_30 = -1;
-                  }
-                  else {
-                    local_30 = 1;
-                  }
-                  state = local_30;
-                  break;
-                }
-                ind_no = ind_no + 1;
-              }
-              if (state == -1) {
-                pcVar3 = quotearg(label);
-                uVar4 = gettext("unrecognized prefix: %s");
-                error(0,0,uVar4,pcVar3);
-              }
-            }
+          }
+          else if (cVar1 == '\0') {
+            state = 0;
           }
           else {
-            if (state == 4) {
-              cVar1 = *p;
-              p = p + 1;
-              if (cVar1 == '=') {
-                (ext->seq).string = buf;
-                _Var2 = get_funky_string(&buf,&p,false,(size_t *)&ext->seq);
-                if (_Var2 == false) {
-                  local_2c = -1;
-                }
-                else {
-                  local_2c = 1;
-                }
-                state = local_2c;
+            label[0] = *p;
+            p = p + 1;
+            state = 2;
+          }
+        }
+      }
+      else if (state == 3) {
+        state = -1;
+        cVar1 = *p;
+        p = p + 1;
+        if (cVar1 == '=') {
+          for (ind_no = 0; indicator_name[ind_no] != (char *)0x0; ind_no = ind_no + 1) {
+            iVar5 = strcmp(label,indicator_name[ind_no]);
+            if (iVar5 == 0) {
+              color_indicator[ind_no].string = buf;
+              _Var2 = get_funky_string(&buf,&p,false,&color_indicator[ind_no].len);
+              if (_Var2 == false) {
+                local_30 = -1;
               }
               else {
-                state = -1;
+                local_30 = 1;
               }
+              state = local_30;
+              break;
             }
           }
+          if (state == -1) {
+            pcVar3 = quotearg(label);
+            uVar4 = gettext("unrecognized prefix: %s");
+            error(0,0,uVar4,pcVar3);
+          }
+        }
+      }
+      else if (state == 4) {
+        cVar1 = *p;
+        p = p + 1;
+        if (cVar1 == '=') {
+          (ext->seq).string = buf;
+          _Var2 = get_funky_string(&buf,&p,false,&(ext->seq).len);
+          if (_Var2 == false) {
+            local_2c = -1;
+          }
+          else {
+            local_2c = 1;
+          }
+          state = local_2c;
+        }
+        else {
+          state = -1;
         }
       }
     }
@@ -4071,7 +4032,7 @@ void print_dir(char *name,char *realname,_Bool command_line_arg)
       closedir(__dirp);
       return;
     }
-    if ((int)(dev_ino_obstack.chunk_limit + -(int)dev_ino_obstack.next_free) < 0x10) {
+    if ((int)dev_ino_obstack.chunk_limit - (int)dev_ino_obstack.next_free < 0x10) {
       _obstack_newchunk(&dev_ino_obstack,0x10);
     }
     pcVar5 = dev_ino_obstack.next_free;
@@ -4143,7 +4104,7 @@ void print_dir(char *name,char *realname,_Bool command_line_arg)
     }
     print_dir::first = false;
     if (dired != false) {
-      fwrite_unlocked(&DAT_0805f873,1,2,(FILE *)stdout);
+      fwrite_unlocked(&DAT_0805f873,1,2,stdout);
       dired_pos = dired_pos + 2;
     }
     if (dired != false) {
@@ -4159,7 +4120,7 @@ void print_dir(char *name,char *realname,_Bool command_line_arg)
     else {
       local_2e4 = realname;
     }
-    sVar9 = quote_name(stdout,local_2e4,dirname_quoting_options,(size_t *)0x0);
+    sVar9 = quote_name((FILE *)stdout,local_2e4,dirname_quoting_options,(size_t *)0x0);
     dired_pos = sVar9 + dired_pos;
     if (dired != false) {
       if (subdired_obstack.chunk_limit < subdired_obstack.next_free + 4) {
@@ -4168,23 +4129,23 @@ void print_dir(char *name,char *realname,_Bool command_line_arg)
       memcpy(subdired_obstack.next_free,&dired_pos,4);
       subdired_obstack.next_free = subdired_obstack.next_free + 4;
     }
-    fwrite_unlocked(&DAT_0805f876,1,2,(FILE *)stdout);
+    fwrite_unlocked(&DAT_0805f876,1,2,stdout);
     dired_pos = dired_pos + 2;
   }
   if ((format == long_format) || (print_block_size != false)) {
     if (dired != false) {
-      fwrite_unlocked(&DAT_0805f873,1,2,(FILE *)stdout);
+      fwrite_unlocked(&DAT_0805f873,1,2,stdout);
       dired_pos = dired_pos + 2;
     }
     pcVar5 = (char *)gettext("total");
-    fputs_unlocked(pcVar5,(FILE *)stdout);
+    fputs_unlocked(pcVar5,stdout);
     sVar10 = strlen(pcVar5);
     dired_pos = sVar10 + dired_pos;
     putchar_unlocked(0x20);
     dired_pos = dired_pos + 1;
     pcVar5 = human_readable(n,(char *)&dir_stat,human_output_opts,0x200,
                             CONCAT44(output_block_size._4_4_,(undefined4)output_block_size));
-    fputs_unlocked(pcVar5,(FILE *)stdout);
+    fputs_unlocked(pcVar5,stdout);
     sVar10 = strlen(pcVar5);
     dired_pos = sVar10 + dired_pos;
     putchar_unlocked(10);
@@ -4265,7 +4226,7 @@ _Bool file_ignored(char *name)
 uintmax_t unsigned_file_size(off_t size)
 
 {
-  return (uintmax_t)size;
+  return size;
 }
 
 
@@ -4277,15 +4238,13 @@ void clear_files(void)
   size_t i;
   fileinfo *f;
   
-  i = 0;
-  while (i < cwd_n_used) {
+  for (i = 0; i < cwd_n_used; i = i + 1) {
     ppvVar1 = (void **)sorted_file[i];
     free(*ppvVar1);
     free(ppvVar1[1]);
     if ((char *)ppvVar1[0x1c] != UNKNOWN_SECURITY_CONTEXT) {
       freecon((char *)ppvVar1[0x1c]);
     }
-    i = i + 1;
   }
   cwd_n_used = 0;
   any_has_acl = false;
@@ -4331,7 +4290,8 @@ uintmax_t gobble_file(char *name,filetype type,ino_t inode,_Bool command_line_ar
   size_t sVar11;
   uint uVar12;
   uintmax_t *puVar13;
-  undefined4 ****local_360;
+  undefined4 uStackY912;
+  char *local_360;
   Dereference_symlink local_35c;
   undefined local_355;
   undefined4 local_354;
@@ -4370,14 +4330,17 @@ uintmax_t gobble_file(char *name,filetype type,ino_t inode,_Bool command_line_ar
   local_344 = inode;
   if ((command_line_arg != false) && (inode != 0)) {
                     // WARNING: Subroutine does not return
+    uStackY912 = 0x804c8fa;
     __assert_fail("! command_line_arg || inode == NOT_AN_INODE_NUMBER","ls.c",0x9f7,"gobble_file");
   }
   if (cwd_n_used == cwd_n_alloc) {
+    uStackY912 = 0x804c928;
     cwd_file = (fileinfo *)xnrealloc(cwd_file,cwd_n_alloc,0xf0);
     cwd_n_alloc = cwd_n_alloc * 2;
     inode = local_344;
   }
   f = cwd_file + cwd_n_used;
+  uStackY912 = 0x804c973;
   local_344 = inode;
   memset(f,0,0x78);
   *(undefined4 *)&(f->stat).st_ino = (undefined4)local_344;
@@ -4397,6 +4360,7 @@ uintmax_t gobble_file(char *name,filetype type,ino_t inode,_Bool command_line_ar
         if (indicator_style == classify) goto LAB_0804caa3;
         puVar13 = (uintmax_t *)&stack0xfffffc74;
         if (print_with_color == true) {
+          uStackY912 = 0x804ca9b;
           _Var4 = is_colored(C_EXEC);
           puVar13 = (uintmax_t *)&stack0xfffffc74;
           if (_Var4 != false) goto LAB_0804caa3;
@@ -4411,16 +4375,18 @@ LAB_0804caa3:
       puVar13 = (uintmax_t *)&stack0xfffffc74;
     }
     else {
+      uStackY912 = 0x804caca;
       sVar11 = strlen(name);
+      uStackY912 = 0x804cad7;
       sVar5 = strlen(dirname);
       iVar7 = -(sVar11 + sVar5 + 0x20 & 0xfffffff0);
       puVar13 = (uintmax_t *)(&stack0xfffffc74 + iVar7);
       absolute_name = (char *)((int)&local_360 + iVar7);
-      local_360 = (undefined4 ****)absolute_name;
+      local_360 = absolute_name;
       *(char **)(&stack0xfffffc7c + iVar7) = name;
       *(char **)(&stack0xfffffc78 + iVar7) = dirname;
       *(char **)(&stack0xfffffc74 + iVar7) = absolute_name;
-      *(undefined4 *)(&stack0xfffffc70 + iVar7) = 0x804cb2c;
+      *(undefined4 *)((int)&uStackY912 + iVar7) = 0x804cb2c;
       attach(*(char **)(&stack0xfffffc74 + iVar7),*(char **)(&stack0xfffffc78 + iVar7),
              *(char **)(&stack0xfffffc7c + iVar7));
     }
@@ -4454,7 +4420,7 @@ LAB_0804cbef:
       if (dereference != DEREF_COMMAND_LINE_ARGUMENTS) {
         if (err < 0) {
           *(undefined4 *)((int)puVar13 + -4) = 0x804cbb5;
-          piVar8 = __errno_location(*(undefined *)((int)puVar13 + -4));
+          piVar8 = __errno_location();
           local_355 = *piVar8 == 2;
         }
         else {
@@ -4510,15 +4476,15 @@ LAB_0804cc0b:
         *(char **)puVar13 = "unlabeled";
         *(undefined4 *)((int)puVar13 + -4) = 0x804cd24;
         iVar7 = strcmp(*(char **)puVar13,*(char **)((int)puVar13 + 4));
-        have_acl = (_Bool)(iVar7 != 0);
+        have_acl = iVar7 != 0;
       }
       else {
         f->scontext = UNKNOWN_SECURITY_CONTEXT;
         *(undefined4 *)((int)puVar13 + -4) = 0x804cd3d;
-        piVar8 = __errno_location(*(undefined *)((int)puVar13 + -4));
+        piVar8 = __errno_location();
         if (*piVar8 != 0x5f) {
           *(undefined4 *)((int)puVar13 + -4) = 0x804cd49;
-          piVar8 = __errno_location(*(undefined *)((int)puVar13 + -4));
+          piVar8 = __errno_location();
           if (*piVar8 != 0x3d) goto LAB_0804cd57;
         }
         err = 0;
@@ -4530,16 +4496,16 @@ LAB_0804cd57:
         *(undefined4 *)((int)puVar13 + -4) = 0x804cd86;
         uVar12 = file_has_acl(*(char **)puVar13,*(stat **)((int)puVar13 + 4));
         err = uVar12 >> 0x1f;
-        have_acl = (_Bool)(0 < (int)uVar12);
+        have_acl = 0 < (int)uVar12;
       }
       f->have_acl = have_acl;
-      any_has_acl = (_Bool)((have_acl | any_has_acl) != 0);
+      any_has_acl = (have_acl | any_has_acl) != 0;
       if (err != 0) {
         *(char **)puVar13 = absolute_name;
         *(undefined4 *)((int)puVar13 + -4) = 0x804cdd1;
         pcVar9 = quotearg_colon(*(char **)puVar13);
         *(undefined4 *)((int)puVar13 + -4) = 0x804cdd8;
-        ppcVar10 = (char **)__errno_location(*(undefined *)((int)puVar13 + -4));
+        ppcVar10 = (char **)__errno_location();
         pcVar6 = *ppcVar10;
         *(char **)((int)puVar13 + 0xc) = pcVar9;
         *(char **)(puVar13 + 1) = "%s";
@@ -4582,18 +4548,16 @@ LAB_0804cd57:
     if (((f->stat).st_mode & 0xf000) == 0xa000) {
       f->filetype = symbolic_link;
     }
-    else {
-      if (((f->stat).st_mode & 0xf000) == 0x4000) {
-        if (((immediate_dirs ^ 1U) & local_348) == 0) {
-          f->filetype = directory;
-        }
-        else {
-          f->filetype = arg_directory;
-        }
+    else if (((f->stat).st_mode & 0xf000) == 0x4000) {
+      if (((immediate_dirs ^ 1U) & local_348) == 0) {
+        f->filetype = directory;
       }
       else {
-        f->filetype = normal;
+        f->filetype = arg_directory;
       }
+    }
+    else {
+      f->filetype = normal;
     }
     blocks._4_4_ = *(char **)((int)&(f->stat).st_blocks + 4);
     blocks._0_4_ = *(undefined4 *)&(f->stat).st_blocks;
@@ -4826,22 +4790,20 @@ char * make_link_name(char *name,char *linkname)
   if (linkname == (char *)0x0) {
     local_18 = (char *)0x0;
   }
+  else if (*linkname == '/') {
+    local_18 = xstrdup(linkname);
+  }
   else {
-    if (*linkname == '/') {
+    pcVar1 = strrchr(name,0x2f);
+    if (pcVar1 == (char *)0x0) {
       local_18 = xstrdup(linkname);
     }
     else {
-      pcVar1 = strrchr(name,0x2f);
-      if (pcVar1 == (char *)0x0) {
-        local_18 = xstrdup(linkname);
-      }
-      else {
-        pcVar1 = pcVar1 + (1 - (int)name);
-        sVar2 = strlen(linkname);
-        local_18 = (char *)xmalloc((size_t)(pcVar1 + sVar2 + 1));
-        strncpy(local_18,name,(size_t)pcVar1);
-        strcpy(local_18 + (int)pcVar1,linkname);
-      }
+      pcVar1 = pcVar1 + (1 - (int)name);
+      sVar2 = strlen(linkname);
+      local_18 = (char *)xmalloc((size_t)(pcVar1 + sVar2 + 1));
+      strncpy(local_18,name,(size_t)pcVar1);
+      strcpy(local_18 + (int)pcVar1,linkname);
     }
   }
   return local_18;
@@ -4918,13 +4880,11 @@ LAB_0804d647:
     bVar3 = i == 0;
     i = i - 1;
     if (bVar3) {
-      i = 0;
       j = 0;
-      while (i < cwd_n_used) {
+      for (i = 0; i < cwd_n_used; i = i + 1) {
         pvVar1 = sorted_file[i];
         sorted_file[j] = pvVar1;
         j = j + (*(int *)((int)pvVar1 + 0x68) != 9);
-        i = i + 1;
       }
       cwd_n_used = j;
       return;
@@ -6195,10 +6155,8 @@ void initialize_ordering_vector(void)
 {
   size_t i;
   
-  i = 0;
-  while (i < cwd_n_used) {
+  for (i = 0; i < cwd_n_used; i = i + 1) {
     sorted_file[i] = cwd_file + i;
-    i = i + 1;
   }
   return;
 }
@@ -6253,20 +6211,16 @@ void print_current_files(void)
   
   switch(format) {
   case long_format:
-    i = 0;
-    while (i < cwd_n_used) {
+    for (i = 0; i < cwd_n_used; i = i + 1) {
       print_long_format((fileinfo *)sorted_file[i]);
       putchar_unlocked(10);
       dired_pos = dired_pos + 1;
-      i = i + 1;
     }
     break;
   case one_per_line:
-    i = 0;
-    while (i < cwd_n_used) {
+    for (i = 0; i < cwd_n_used; i = i + 1) {
       print_file_name_and_frills((fileinfo *)sorted_file[i]);
       putchar_unlocked(10);
-      i = i + 1;
     }
     break;
   case many_per_line:
@@ -6534,21 +6488,19 @@ void print_long_format(fileinfo *f)
     when_timespec.tv_sec = local_119c;
     when_timespec.tv_nsec = local_1198;
   }
+  else if (time_type == time_mtime) {
+    get_stat_mtime((stat *)&local_119c);
+    when_timespec.tv_sec = local_119c;
+    when_timespec.tv_nsec = local_1198;
+  }
   else {
-    if (time_type == time_mtime) {
-      get_stat_mtime((stat *)&local_119c);
-      when_timespec.tv_sec = local_119c;
-      when_timespec.tv_nsec = local_1198;
-    }
-    else {
-      if (time_type != time_atime) {
+    if (time_type != time_atime) {
                     // WARNING: Subroutine does not return
-        abort();
-      }
-      get_stat_atime((stat *)&local_119c);
-      when_timespec.tv_sec = local_119c;
-      when_timespec.tv_nsec = local_1198;
+      abort();
     }
+    get_stat_atime((stat *)&local_119c);
+    when_timespec.tv_sec = local_119c;
+    when_timespec.tv_nsec = local_1198;
   }
   when = when_timespec.tv_sec;
   when_ns = when_timespec.tv_nsec;
@@ -6575,11 +6527,9 @@ void print_long_format(fileinfo *f)
     iVar9 = block_size_width;
     blocks = local_11c4;
     iVar5 = gnu_mbswidth(local_11c4,0);
-    pad = iVar9 - iVar5;
-    while (pcVar7 = p, 0 < pad) {
+    for (pad = iVar9 - iVar5; pcVar7 = p, 0 < pad; pad = pad + -1) {
       *p = ' ';
       p = p + 1;
-      pad = pad + -1;
     }
     do {
       p = pcVar7;
@@ -6646,11 +6596,9 @@ void print_long_format(fileinfo *f)
     iVar9 = file_size_width;
     size = local_11b8;
     iVar5 = gnu_mbswidth(local_11b8,0);
-    pad_1 = iVar9 - iVar5;
-    while (pcVar7 = p, 0 < pad_1) {
+    for (pad_1 = iVar9 - iVar5; pcVar7 = p, 0 < pad_1; pad_1 = pad_1 + -1) {
       *p = ' ';
       p = p + 1;
-      pad_1 = pad_1 + -1;
     }
     do {
       p = pcVar7;
@@ -6661,7 +6609,7 @@ void print_long_format(fileinfo *f)
     *p = ' ';
     p = pcVar7;
   }
-  when_local = (tm *)localtime((time_t *)&when_timespec);
+  when_local = (tm *)localtime(&when_timespec.tv_sec);
   s = 0;
   *p = '\x01';
   if ((f->stat_ok != false) && (when_local != (tm *)0x0)) {
@@ -6715,10 +6663,8 @@ void print_long_format(fileinfo *f)
       }
     }
   }
-  else {
-    if (indicator_style != none) {
-      print_type_indicator(f->stat_ok,(f->stat).st_mode,f->filetype);
-    }
+  else if (indicator_style != none) {
+    print_type_indicator(f->stat_ok,(f->stat).st_mode,f->filetype);
   }
   return;
 }
@@ -6735,7 +6681,8 @@ size_t quote_name(FILE *out,char *name,quoting_options *options,size_t *width)
   int iVar5;
   ushort **ppuVar6;
   mbstate_t **ppmVar7;
-  undefined4 ***local_2050;
+  undefined4 uStackY8304;
+  char *local_2050;
   int local_204c;
   wchar_t wc;
   mbstate_t mbstate;
@@ -6754,21 +6701,22 @@ size_t quote_name(FILE *out,char *name,quoting_options *options,size_t *width)
   char *plimit_2;
   
   ppmVar7 = (mbstate_t **)&stack0xffffdf94;
+  uStackY8304 = 0x804fa8a;
   len = quotearg_buffer(smallbuf,0x2000,name,0xffffffff,options);
   if (len < (mbstate_t *)0x2000) {
     buf = smallbuf;
   }
   else {
-    iVar5 = -((int)&((mbstate_t *)(len + 0x18))->__value + 3U & 0xfffffff0);
+    iVar5 = -((uint)((int)&((mbstate_t *)(len + 0x18))->__value + 3) & 0xfffffff0);
     ppmVar7 = (mbstate_t **)(&stack0xffffdf94 + iVar5);
     buf = (char *)((int)&local_2050 + iVar5);
-    local_2050 = (undefined4 ***)buf;
+    local_2050 = buf;
     *(quoting_options **)(&stack0xffffdfa4 + iVar5) = options;
     *(undefined4 *)(&stack0xffffdfa0 + iVar5) = 0xffffffff;
     *(char **)(&stack0xffffdf9c + iVar5) = name;
-    *(int *)(&stack0xffffdf98 + iVar5) = (int)(int *)len + 1;
+    *(char **)(&stack0xffffdf98 + iVar5) = (char *)((int)(int *)len + 1);
     *(char **)(&stack0xffffdf94 + iVar5) = buf;
-    *(undefined4 *)(&stack0xffffdf90 + iVar5) = 0x804fb08;
+    *(undefined4 *)((int)&uStackY8304 + iVar5) = 0x804fb08;
     quotearg_buffer(*(char **)(&stack0xffffdf94 + iVar5),*(size_t *)(&stack0xffffdf98 + iVar5),
                     *(char **)(&stack0xffffdf9c + iVar5),*(size_t *)(&stack0xffffdfa0 + iVar5),
                     *(quoting_options **)(&stack0xffffdfa4 + iVar5));
@@ -6776,13 +6724,12 @@ size_t quote_name(FILE *out,char *name,quoting_options *options,size_t *width)
   if (qmark_funny_chars == false) {
     if (width != (size_t *)0x0) {
       ppmVar7[-1] = (mbstate_t *)0x804fd35;
-      sVar3 = __ctype_get_mb_cur_max(*(undefined *)(ppmVar7 + -1));
+      sVar3 = __ctype_get_mb_cur_max();
       if (sVar3 < 2) {
-        p_2 = buf;
         displayed_width = 0;
-        while (p_2 < buf + len) {
+        for (p_2 = buf; p_2 < buf + len; p_2 = p_2 + 1) {
           ppmVar7[-1] = (mbstate_t *)0x804fd78;
-          ppuVar6 = __ctype_b_loc(*(undefined *)(ppmVar7 + -1));
+          ppuVar6 = __ctype_b_loc();
           puVar1 = *ppuVar6;
           *ppmVar7 = (mbstate_t *)(int)*p_2;
           ppmVar7[-1] = (mbstate_t *)0x804fd8b;
@@ -6790,7 +6737,6 @@ size_t quote_name(FILE *out,char *name,quoting_options *options,size_t *width)
           if ((puVar1[bVar2] & 0x4000) != 0) {
             displayed_width = displayed_width + 1;
           }
-          p_2 = p_2 + 1;
         }
       }
       else {
@@ -6804,12 +6750,11 @@ size_t quote_name(FILE *out,char *name,quoting_options *options,size_t *width)
   }
   else {
     ppmVar7[-1] = (mbstate_t *)0x804fb1c;
-    sVar3 = __ctype_get_mb_cur_max(*(undefined *)(ppmVar7 + -1));
+    sVar3 = __ctype_get_mb_cur_max();
     if (sVar3 < 2) {
-      p_1 = buf;
-      while (displayed_width = len, p_1 < buf + len) {
+      for (p_1 = buf; displayed_width = len, p_1 < buf + len; p_1 = p_1 + 1) {
         ppmVar7[-1] = (mbstate_t *)0x804fcdf;
-        ppuVar6 = __ctype_b_loc(*(undefined *)(ppmVar7 + -1));
+        ppuVar6 = __ctype_b_loc();
         puVar1 = *ppuVar6;
         *ppmVar7 = (mbstate_t *)(int)*p_1;
         ppmVar7[-1] = (mbstate_t *)0x804fcf2;
@@ -6817,7 +6762,6 @@ size_t quote_name(FILE *out,char *name,quoting_options *options,size_t *width)
         if ((puVar1[bVar2] & 0x4000) == 0) {
           *p_1 = '?';
         }
-        p_1 = p_1 + 1;
       }
     }
     else {
@@ -6849,7 +6793,7 @@ LAB_0804fbb5:
             ppmVar7[1] = (mbstate_t *)p;
             *ppmVar7 = (mbstate_t *)&wc;
             ppmVar7[-1] = (mbstate_t *)0x804fbfa;
-            bytes = mbrtowc((wchar_t *)*ppmVar7,(char *)ppmVar7[1],(size_t)ppmVar7[2],ppmVar7[3]);
+            bytes = mbrtowc(&(*ppmVar7)->__count,(char *)ppmVar7[1],(size_t)ppmVar7[2],ppmVar7[3]);
             if (bytes == 0xffffffff) {
               *q = '?';
               q = q + 1;
@@ -6877,11 +6821,10 @@ LAB_0804fbb5:
               displayed_width = displayed_width + 1;
             }
             else {
-              while (bytes != 0) {
+              for (; bytes != 0; bytes = bytes - 1) {
                 *q = *p;
                 q = q + 1;
                 p = p + 1;
-                bytes = bytes - 1;
               }
               displayed_width = displayed_width + iVar5;
             }
@@ -6892,7 +6835,7 @@ LAB_0804fbb5:
         }
         goto LAB_0804fcab;
       }
-      len = (size_t)(q + -(int)buf);
+      len = (int)q - (int)buf;
     }
   }
   if (out != (FILE *)0x0) {
@@ -6914,7 +6857,7 @@ LAB_0804fbb5:
 uchar to_uchar(char ch)
 
 {
-  return (uchar)ch;
+  return ch;
 }
 
 
@@ -7063,43 +7006,41 @@ char get_type_indicator(_Bool stat_ok,mode_t mode,filetype type)
     if (bVar1) {
       c = '/';
     }
+    else if (indicator_style == slash) {
+      c = '\0';
+    }
     else {
-      if (indicator_style == slash) {
-        c = '\0';
+      if (stat_ok == false) {
+        bVar1 = type == symbolic_link;
+      }
+      else {
+        bVar1 = (mode & 0xf000) == 0xa000;
+      }
+      if (bVar1) {
+        c = '@';
       }
       else {
         if (stat_ok == false) {
-          bVar1 = type == symbolic_link;
+          bVar1 = type == fifo;
         }
         else {
-          bVar1 = (mode & 0xf000) == 0xa000;
+          bVar1 = (mode & 0xf000) == 0x1000;
         }
         if (bVar1) {
-          c = '@';
+          c = '|';
         }
         else {
           if (stat_ok == false) {
-            bVar1 = type == fifo;
+            bVar1 = type == sock;
           }
           else {
-            bVar1 = (mode & 0xf000) == 0x1000;
+            bVar1 = (mode & 0xf000) == 0xc000;
           }
           if (bVar1) {
-            c = '|';
+            c = '=';
           }
           else {
-            if (stat_ok == false) {
-              bVar1 = type == sock;
-            }
-            else {
-              bVar1 = (mode & 0xf000) == 0xc000;
-            }
-            if (bVar1) {
-              c = '=';
-            }
-            else {
-              c = '\0';
-            }
+            c = '\0';
           }
         }
       }
@@ -7140,93 +7081,77 @@ void print_color_indicator(char *name,mode_t mode,int linkok,_Bool stat_ok,filet
   if ((linkok == -1) && (color_indicator[11].string != (char *)0x0)) {
     type = 0xb;
   }
-  else {
-    if (stat_ok == true) {
-      if ((mode & 0xf000) == 0x8000) {
-        type = 4;
-        if ((mode & 0x800) == 0) {
-          if ((mode & 0x400) == 0) {
-            if ((mode & 0x49) != 0) {
-              type = 0xd;
-            }
-          }
-          else {
-            type = 0x10;
+  else if (stat_ok == true) {
+    if ((mode & 0xf000) == 0x8000) {
+      type = 4;
+      if ((mode & 0x800) == 0) {
+        if ((mode & 0x400) == 0) {
+          if ((mode & 0x49) != 0) {
+            type = 0xd;
           }
         }
         else {
-          type = 0xf;
+          type = 0x10;
         }
       }
       else {
-        if ((mode & 0xf000) == 0x4000) {
-          if (((mode & 0x200) == 0) || ((mode & 2) == 0)) {
-            if ((mode & 2) == 0) {
-              if ((mode & 0x200) == 0) {
-                type = 5;
-              }
-              else {
-                type = 0x11;
-              }
-            }
-            else {
-              type = 0x12;
-            }
+        type = 0xf;
+      }
+    }
+    else if ((mode & 0xf000) == 0x4000) {
+      if (((mode & 0x200) == 0) || ((mode & 2) == 0)) {
+        if ((mode & 2) == 0) {
+          if ((mode & 0x200) == 0) {
+            type = 5;
           }
           else {
-            type = 0x13;
+            type = 0x11;
           }
         }
         else {
-          if ((mode & 0xf000) == 0xa000) {
-            if ((linkok == 0) && (color_indicator[12].string != (char *)0x0)) {
-              local_20 = 0xc;
-            }
-            else {
-              local_20 = 6;
-            }
-            type = local_20;
-          }
-          else {
-            if ((mode & 0xf000) == 0x1000) {
-              type = 7;
-            }
-            else {
-              if ((mode & 0xf000) == 0xc000) {
-                type = 8;
-              }
-              else {
-                if ((mode & 0xf000) == 0x6000) {
-                  type = 9;
-                }
-                else {
-                  if ((mode & 0xf000) == 0x2000) {
-                    type = 10;
-                  }
-                  else {
-                    type = 0xc;
-                  }
-                }
-              }
-            }
-          }
+          type = 0x12;
         }
       }
+      else {
+        type = 0x13;
+      }
+    }
+    else if ((mode & 0xf000) == 0xa000) {
+      if ((linkok == 0) && (color_indicator[12].string != (char *)0x0)) {
+        local_20 = 0xc;
+      }
+      else {
+        local_20 = 6;
+      }
+      type = local_20;
+    }
+    else if ((mode & 0xf000) == 0x1000) {
+      type = 7;
+    }
+    else if ((mode & 0xf000) == 0xc000) {
+      type = 8;
+    }
+    else if ((mode & 0xf000) == 0x6000) {
+      type = 9;
+    }
+    else if ((mode & 0xf000) == 0x2000) {
+      type = 10;
     }
     else {
-      type = print_color_indicator::filetype_indicator[filetype];
+      type = 0xc;
     }
+  }
+  else {
+    type = print_color_indicator::filetype_indicator[filetype];
   }
   ext = (color_ext_type *)0x0;
   if (type == 4) {
     sVar1 = strlen(name);
-    ext = color_ext_list;
-    while (ext != (color_ext_type *)0x0) {
+    for (ext = color_ext_list; ext != (color_ext_type *)0x0; ext = ext->next) {
       if ((ext->ext).len <= sVar1) {
         iVar2 = strncmp(name + (sVar1 - (ext->ext).len),(ext->ext).string,(ext->ext).len);
         if (iVar2 == 0) break;
       }
-      ext = ext->next;
     }
   }
   put_indicator(color_indicator);
@@ -7251,12 +7176,10 @@ void put_indicator(bin_str *ind)
   char *p;
   
   p = ind->string;
-  i = ind->len;
-  while (i != 0) {
+  for (i = ind->len; i != 0; i = i - 1) {
     cVar1 = *p;
     p = p + 1;
     putchar_unlocked((int)cVar1);
-    i = i - 1;
   }
   return;
 }
@@ -7341,8 +7264,7 @@ void print_many_per_line(void)
   sVar4 = calculate_columns(true);
   pcVar3 = column_info;
   uVar1 = cwd_n_used / sVar4 + (uint)(cwd_n_used % sVar4 != 0);
-  row = 0;
-  while (row < uVar1) {
+  for (row = 0; row < uVar1; row = row + 1) {
     col = 0;
     filesno = row;
     pos = 0;
@@ -7358,7 +7280,6 @@ void print_many_per_line(void)
       pos = pos + sVar2;
     }
     putchar_unlocked(10);
-    row = row + 1;
   }
   return;
 }
@@ -7368,8 +7289,8 @@ void print_many_per_line(void)
 void print_horizontal(void)
 
 {
-  column_info *pcVar1;
-  fileinfo *pfVar2;
+  fileinfo *pfVar1;
+  column_info *pcVar2;
   size_t sVar3;
   size_t filesno;
   size_t pos;
@@ -7382,13 +7303,12 @@ void print_horizontal(void)
   
   pos = 0;
   sVar3 = calculate_columns(false);
-  pcVar1 = column_info + (sVar3 - 1);
-  pfVar2 = (fileinfo *)*sorted_file;
-  name_length = length_of_file_name_and_frills(pfVar2);
-  max_name_length = *pcVar1->col_arr;
-  print_file_name_and_frills(pfVar2);
-  filesno = 1;
-  while (filesno < cwd_n_used) {
+  pcVar2 = column_info;
+  pfVar1 = (fileinfo *)*sorted_file;
+  name_length = length_of_file_name_and_frills(pfVar1);
+  max_name_length = *pcVar2[sVar3 - 1].col_arr;
+  print_file_name_and_frills(pfVar1);
+  for (filesno = 1; filesno < cwd_n_used; filesno = filesno + 1) {
     if (filesno % sVar3 == 0) {
       putchar_unlocked(10);
       pos = 0;
@@ -7397,11 +7317,10 @@ void print_horizontal(void)
       indent(pos + name_length,pos + max_name_length);
       pos = pos + max_name_length;
     }
-    pfVar2 = (fileinfo *)sorted_file[filesno];
-    print_file_name_and_frills(pfVar2);
-    name_length = length_of_file_name_and_frills(pfVar2);
-    max_name_length = pcVar1->col_arr[filesno % sVar3];
-    filesno = filesno + 1;
+    pfVar1 = (fileinfo *)sorted_file[filesno];
+    print_file_name_and_frills(pfVar1);
+    name_length = length_of_file_name_and_frills(pfVar1);
+    max_name_length = pcVar2[sVar3 - 1].col_arr[filesno % sVar3];
   }
   putchar_unlocked(10);
   return;
@@ -7421,8 +7340,7 @@ void print_with_commas(void)
   char separator;
   
   pos = 0;
-  filesno = 0;
-  while (filesno < cwd_n_used) {
+  for (filesno = 0; filesno < cwd_n_used; filesno = filesno + 1) {
     f_00 = (fileinfo *)sorted_file[filesno];
     sVar1 = length_of_file_name_and_frills(f_00);
     if (filesno != 0) {
@@ -7439,7 +7357,6 @@ void print_with_commas(void)
     }
     print_file_name_and_frills(f_00);
     pos = pos + sVar1;
-    filesno = filesno + 1;
   }
   putchar_unlocked(10);
   return;
@@ -7476,20 +7393,18 @@ void attach(char *dest,char *dirname,char *name)
   
   dirnamep = dirname;
   if ((*dirname != '.') || (dirname[1] != '\0')) {
-    while (*dirnamep != '\0') {
+    for (; *dirnamep != '\0'; dirnamep = dirnamep + 1) {
       *dest = *dirnamep;
       dest = dest + 1;
-      dirnamep = dirnamep + 1;
     }
     if ((dirname < dirnamep) && (dirnamep[-1] != '/')) {
       *dest = '/';
       dest = dest + 1;
     }
   }
-  while (*name != '\0') {
+  for (; *name != '\0'; name = name + 1) {
     *dest = *name;
     dest = dest + 1;
-    name = name + 1;
   }
   *dest = '\0';
   return;
@@ -7532,24 +7447,18 @@ void init_column_info(void)
       xalloc_die();
     }
     p = (size_t *)xnmalloc(uVar2 >> 1,4);
-    i = init_column_info::column_info_alloc;
-    while (i < new_column_info_alloc) {
+    for (i = init_column_info::column_info_alloc; i < new_column_info_alloc; i = i + 1) {
       column_info[i].col_arr = p;
       p = p + i + 1;
-      i = i + 1;
     }
     init_column_info::column_info_alloc = new_column_info_alloc;
   }
-  i = 0;
-  while (i < local_2c) {
+  for (i = 0; i < local_2c; i = i + 1) {
     column_info[i].valid_len = true;
     column_info[i].line_len = (i + 1) * 3;
-    j = 0;
-    while (j <= i) {
+    for (j = 0; j <= i; j = j + 1) {
       column_info[i].col_arr[j] = 3;
-      j = j + 1;
     }
-    i = i + 1;
   }
   return;
 }
@@ -7578,11 +7487,9 @@ size_t calculate_columns(_Bool by_columns)
     local_40 = max_idx;
   }
   init_column_info();
-  filesno = 0;
-  while (filesno < cwd_n_used) {
+  for (filesno = 0; filesno < cwd_n_used; filesno = filesno + 1) {
     sVar1 = length_of_file_name_and_frills((fileinfo *)sorted_file[filesno]);
-    i = 0;
-    while (i < local_40) {
+    for (i = 0; i < local_40; i = i + 1) {
       if (column_info[i].valid_len != false) {
         if (by_columns == false) {
           local_38 = filesno % (i + 1);
@@ -7601,12 +7508,10 @@ size_t calculate_columns(_Bool by_columns)
           column_info[i].line_len =
                column_info[i].line_len + (uVar2 - column_info[i].col_arr[local_38]);
           column_info[i].col_arr[local_38] = uVar2;
-          column_info[i].valid_len = (_Bool)(column_info[i].line_len < line_length);
+          column_info[i].valid_len = column_info[i].line_len < line_length;
         }
       }
-      i = i + 1;
     }
-    filesno = filesno + 1;
   }
   cols = local_40;
   while ((1 < cols && (column_info[cols - 1].valid_len == false))) {
@@ -7892,7 +7797,7 @@ LAB_080516bb:
 LAB_080515b1:
         memset(&mbstate,0,8);
         do {
-          bytes = mbrtowc(&wc,p,(size_t)(plimit + -(int)p),(mbstate_t *)&mbstate);
+          bytes = mbrtowc(&wc,p,(int)plimit - (int)p,(mbstate_t *)&mbstate);
           if (bytes == 0xffffffff) {
             if ((flags & 1U) != 0) {
               return -1;
@@ -8057,7 +7962,7 @@ ptrdiff_t argmatch(char *arg,char **arglist,char *vallist,size_t valsize)
   size_t __n;
   int iVar2;
   size_t sVar3;
-  size_t local_18;
+  ptrdiff_t local_18;
   ptrdiff_t matchind;
   size_t arglen;
   size_t i;
@@ -8070,7 +7975,7 @@ ptrdiff_t argmatch(char *arg,char **arglist,char *vallist,size_t valsize)
   do {
     if (arglist[i] == (char *)0x0) {
       if (bVar1) {
-        local_18 = 0xfffffffe;
+        local_18 = -2;
       }
       else {
         local_18 = matchind;
@@ -8086,12 +7991,10 @@ ptrdiff_t argmatch(char *arg,char **arglist,char *vallist,size_t valsize)
       if (matchind == -1) {
         matchind = i;
       }
-      else {
-        if ((vallist == (char *)0x0) ||
-           (iVar2 = memcmp(vallist + matchind * valsize,vallist + valsize * i,valsize), iVar2 != 0))
-        {
-          bVar1 = true;
-        }
+      else if ((vallist == (char *)0x0) ||
+              (iVar2 = memcmp(vallist + matchind * valsize,vallist + valsize * i,valsize),
+              iVar2 != 0)) {
+        bVar1 = true;
       }
     }
     i = i + 1;
@@ -8203,23 +8106,17 @@ char * last_component(char *name)
   char *base;
   _Bool saw_slash;
   
-  base = name;
   bVar1 = false;
-  while (*base == '/') {
-    base = base + 1;
+  for (base = name; *base == '/'; base = base + 1) {
   }
-  p = base;
-  while (*p != '\0') {
+  for (p = base; *p != '\0'; p = p + 1) {
     if (*p == '/') {
       bVar1 = true;
     }
-    else {
-      if (bVar1) {
-        base = p;
-        bVar1 = false;
-      }
+    else if (bVar1) {
+      base = p;
+      bVar1 = false;
     }
-    p = p + 1;
   }
   return base;
 }
@@ -8258,9 +8155,7 @@ size_t base_len(char *name)
   size_t prefix_len;
   size_t len;
   
-  len = strlen(name);
-  while ((1 < len && (name[len - 1] == '/'))) {
-    len = len - 1;
+  for (len = strlen(name); (1 < len && (name[len - 1] == '/')); len = len - 1) {
   }
   return len;
 }
@@ -8326,38 +8221,26 @@ char ftypelet(mode_t bits)
   if ((bits & 0xf000) == 0x8000) {
     local_5 = '-';
   }
+  else if ((bits & 0xf000) == 0x4000) {
+    local_5 = 'd';
+  }
+  else if ((bits & 0xf000) == 0x6000) {
+    local_5 = 'b';
+  }
+  else if ((bits & 0xf000) == 0x2000) {
+    local_5 = 'c';
+  }
+  else if ((bits & 0xf000) == 0xa000) {
+    local_5 = 'l';
+  }
+  else if ((bits & 0xf000) == 0x1000) {
+    local_5 = 'p';
+  }
+  else if ((bits & 0xf000) == 0xc000) {
+    local_5 = 's';
+  }
   else {
-    if ((bits & 0xf000) == 0x4000) {
-      local_5 = 'd';
-    }
-    else {
-      if ((bits & 0xf000) == 0x6000) {
-        local_5 = 'b';
-      }
-      else {
-        if ((bits & 0xf000) == 0x2000) {
-          local_5 = 'c';
-        }
-        else {
-          if ((bits & 0xf000) == 0xa000) {
-            local_5 = 'l';
-          }
-          else {
-            if ((bits & 0xf000) == 0x1000) {
-              local_5 = 'p';
-            }
-            else {
-              if ((bits & 0xf000) == 0xc000) {
-                local_5 = 's';
-              }
-              else {
-                local_5 = '?';
-              }
-            }
-          }
-        }
-      }
-    }
+    local_5 = '?';
   }
   return local_5;
 }
@@ -8504,8 +8387,7 @@ void filemodestring(stat *statp,char *str)
 char * longest_relative_suffix(char *f)
 
 {
-  while (*f == '/') {
-    f = f + 1;
+  for (; *f == '/'; f = f + 1) {
   }
   return f;
 }
@@ -8629,8 +8511,7 @@ size_t hash_get_max_bucket_length(Hash_table *table)
   hash_entry *bucket;
   
   max_bucket_length = 0;
-  bucket = table->bucket;
-  while (bucket < table->bucket_limit) {
+  for (bucket = table->bucket; bucket < table->bucket_limit; bucket = bucket + 1) {
     if (bucket->data != (void *)0x0) {
       cursor = bucket;
       bucket_length = 1;
@@ -8641,7 +8522,6 @@ size_t hash_get_max_bucket_length(Hash_table *table)
         max_bucket_length = bucket_length;
       }
     }
-    bucket = bucket + 1;
   }
   return max_bucket_length;
 }
@@ -8659,8 +8539,7 @@ _Bool hash_table_ok(Hash_table *table)
   
   n_buckets_used = 0;
   n_entries = 0;
-  bucket = table->bucket;
-  while (bucket < table->bucket_limit) {
+  for (bucket = table->bucket; bucket < table->bucket_limit; bucket = bucket + 1) {
     if (bucket->data != (void *)0x0) {
       cursor = bucket;
       n_buckets_used = n_buckets_used + 1;
@@ -8669,7 +8548,6 @@ _Bool hash_table_ok(Hash_table *table)
         cursor = cursor->next;
       } while (cursor != (hash_entry *)0x0);
     }
-    bucket = bucket + 1;
   }
   if ((table->n_buckets_used == n_buckets_used) && (table->n_entries == n_entries)) {
     local_15 = true;
@@ -8725,12 +8603,11 @@ void * hash_lookup(Hash_table *table,void *entry)
     abort();
   }
   if (cursor->data != (void *)0x0) {
-    while (cursor != (hash_entry *)0x0) {
+    for (; cursor != (hash_entry *)0x0; cursor = cursor->next) {
       _Var2 = (*table->comparator)(entry,cursor->data);
       if (_Var2 != false) {
         return cursor->data;
       }
-      cursor = cursor->next;
     }
   }
   return (void *)0x0;
@@ -8812,14 +8689,12 @@ size_t hash_get_entries(Hash_table *table,void **buffer,size_t buffer_size)
       return counter;
     }
     if (bucket->data != (void *)0x0) {
-      cursor = bucket;
-      while (cursor != (hash_entry *)0x0) {
+      for (cursor = bucket; cursor != (hash_entry *)0x0; cursor = cursor->next) {
         if (buffer_size <= counter) {
           return counter;
         }
         buffer[counter] = cursor->data;
         counter = counter + 1;
-        cursor = cursor->next;
       }
     }
     bucket = bucket + 1;
@@ -8843,14 +8718,12 @@ size_t hash_do_for_each(Hash_table *table,Hash_processor *processor,void *proces
       return counter;
     }
     if (bucket->data != (void *)0x0) {
-      cursor = bucket;
-      while (cursor != (hash_entry *)0x0) {
+      for (cursor = bucket; cursor != (hash_entry *)0x0; cursor = cursor->next) {
         _Var1 = (*processor)(cursor->data,processor_data);
         if (_Var1 != true) {
           return counter;
         }
         counter = counter + 1;
-        cursor = cursor->next;
       }
     }
     bucket = bucket + 1;
@@ -8866,9 +8739,8 @@ size_t hash_string(char *string,size_t n_buckets)
   uchar ch;
   
   value = 0;
-  while (*string != 0) {
+  for (; *string != 0; string = string + 1) {
     value = (value * 0x1f + (uint)(byte)*string) % n_buckets;
-    string = string + 1;
   }
   return value;
 }
@@ -8881,13 +8753,11 @@ _Bool is_prime(size_t candidate)
   size_t square;
   size_t divisor;
   
-  divisor = 3;
   square = 9;
-  while ((square < candidate && (candidate % divisor != 0))) {
+  for (divisor = 3; (square < candidate && (candidate % divisor != 0)); divisor = divisor + 2) {
     square = square + (divisor + 1) * 4;
-    divisor = divisor + 2;
   }
-  return (_Bool)(candidate % divisor != 0);
+  return candidate % divisor != 0;
 }
 
 
@@ -9016,8 +8886,7 @@ void hash_clear(Hash_table *table)
   hash_entry *cursor;
   hash_entry *bucket;
   
-  bucket = table->bucket;
-  while (bucket < table->bucket_limit) {
+  for (bucket = table->bucket; bucket < table->bucket_limit; bucket = bucket + 1) {
     if (bucket->data != (void *)0x0) {
       cursor = bucket->next;
       while (cursor != (hash_entry *)0x0) {
@@ -9036,7 +8905,6 @@ void hash_clear(Hash_table *table)
       bucket->data = (void *)0x0;
       bucket->next = (hash_entry *)0x0;
     }
-    bucket = bucket + 1;
   }
   table->n_buckets_used = 0;
   table->n_entries = 0;
@@ -9054,27 +8922,21 @@ void hash_free(Hash_table *table)
   hash_entry *bucket;
   
   if ((table->data_freer != (Hash_data_freer *)0x0) && (table->n_entries != 0)) {
-    bucket = table->bucket;
-    while (bucket < table->bucket_limit) {
+    for (bucket = table->bucket; bucket < table->bucket_limit; bucket = bucket + 1) {
       if (bucket->data != (void *)0x0) {
-        cursor = bucket;
-        while (cursor != (hash_entry *)0x0) {
+        for (cursor = bucket; cursor != (hash_entry *)0x0; cursor = cursor->next) {
           (*table->data_freer)(cursor->data);
-          cursor = cursor->next;
         }
       }
-      bucket = bucket + 1;
     }
   }
-  bucket = table->bucket;
-  while (bucket < table->bucket_limit) {
+  for (bucket = table->bucket; bucket < table->bucket_limit; bucket = bucket + 1) {
     cursor = bucket->next;
     while (cursor != (hash_entry *)0x0) {
       phVar1 = cursor->next;
       free(cursor);
       cursor = phVar1;
     }
-    bucket = bucket + 1;
   }
   cursor = table->free_entry_list;
   while (cursor != (hash_entry *)0x0) {
@@ -9147,7 +9009,7 @@ void * hash_find_entry(Hash_table *table,void *entry,hash_entry **bucket_head,_B
   else {
     _Var4 = (*table->comparator)(entry,cursor->data);
     if (_Var4 == false) {
-      while (cursor->next != (hash_entry *)0x0) {
+      for (; cursor->next != (hash_entry *)0x0; cursor = cursor->next) {
         _Var4 = (*table->comparator)(entry,cursor->next->data);
         if (_Var4 != false) {
           pvVar3 = cursor->next->data;
@@ -9159,7 +9021,6 @@ void * hash_find_entry(Hash_table *table,void *entry,hash_entry **bucket_head,_B
           free_entry(table,phVar1);
           return pvVar3;
         }
-        cursor = cursor->next;
       }
       local_30 = (void *)0x0;
     }
@@ -9209,8 +9070,7 @@ _Bool hash_rehash(Hash_table *table,size_t candidate)
   }
   else {
     table_00->free_entry_list = table->free_entry_list;
-    bucket = table->bucket;
-    while (bucket < table->bucket_limit) {
+    for (bucket = table->bucket; bucket < table->bucket_limit; bucket = bucket + 1) {
       if (bucket->data != (void *)0x0) {
         cursor = bucket;
         phVar3 = cursor;
@@ -9231,24 +9091,21 @@ _Bool hash_rehash(Hash_table *table,size_t candidate)
               free_entry(table_00,cursor);
             }
           }
+          else if (cursor == bucket) {
+            phVar5 = allocate_entry(table_00);
+            if (phVar5 == (hash_entry *)0x0) {
+              return false;
+            }
+            phVar5->data = pvVar1;
+            phVar5->next = phVar2->next;
+            phVar2->next = phVar5;
+          }
           else {
-            if (cursor == bucket) {
-              phVar5 = allocate_entry(table_00);
-              if (phVar5 == (hash_entry *)0x0) {
-                return false;
-              }
-              phVar5->data = pvVar1;
-              phVar5->next = phVar2->next;
-              phVar2->next = phVar5;
-            }
-            else {
-              cursor->next = phVar2->next;
-              phVar2->next = cursor;
-            }
+            cursor->next = phVar2->next;
+            phVar2->next = cursor;
           }
         }
       }
-      bucket = bucket + 1;
     }
     free(table->bucket);
     table->bucket = table_00->bucket;
@@ -9655,13 +9512,11 @@ use_integer_arithmetic:
             if (__return_storage_ptr__ == (longdouble *)0x1) {
               bVar2 = 2 < (tenths & 1U) + local_10c;
             }
+            else if ((__return_storage_ptr__ == (longdouble *)0x0) && (local_10c != 0)) {
+              bVar2 = true;
+            }
             else {
-              if ((__return_storage_ptr__ == (longdouble *)0x0) && (local_10c != 0)) {
-                bVar2 = true;
-              }
-              else {
-                bVar2 = false;
-              }
+              bVar2 = false;
             }
             if (bVar2) {
               tenths = tenths + 1;
@@ -9687,13 +9542,11 @@ use_integer_arithmetic:
           bVar2 = 5 < (int)((uint)((((uint)amt & 1) + rounding |
                                    (uint)CARRY4((uint)amt & 1,rounding)) != 0) + tenths);
         }
+        else if ((__return_storage_ptr__ == (longdouble *)0x0) && (0 < tenths + rounding)) {
+          bVar2 = true;
+        }
         else {
-          if ((__return_storage_ptr__ == (longdouble *)0x0) && (0 < tenths + rounding)) {
-            bVar2 = true;
-          }
-          else {
-            bVar2 = false;
-          }
+          bVar2 = false;
         }
         uVar16 = uVar15;
         if (bVar2) {
@@ -9792,7 +9645,7 @@ use_integer_arithmetic:
   integerlim = p + (buflen - nonintegerlen);
 do_grouping:
   if ((opts & 4U) != 0) {
-    p = group_number(p,(size_t)(integerlim + -(int)p),grouping_00,thousands_sep);
+    p = group_number(p,(int)integerlim - (int)p,grouping_00,thousands_sep);
   }
   if ((opts & 0x80U) != 0) {
     if (exponent < 0) {
@@ -9848,7 +9701,7 @@ uintmax_t default_block_size(void)
   else {
     local_c = 0x200;
   }
-  return (uintmax_t)(ulonglong)local_c;
+  return (ulonglong)local_c;
 }
 
 
@@ -10016,7 +9869,7 @@ uid_t * getuidbyname(char *user)
            ) break;
         tail = tail->next;
       }
-      return (uid_t *)(userid *)0x0;
+      return (uid_t *)0x0;
     }
     if ((*(char *)&tail[1].id == *user) && (iVar1 = strcmp((char *)(tail + 1),user), iVar1 == 0))
     break;
@@ -10115,7 +9968,7 @@ gid_t * getgidbyname(char *group)
            (iVar1 = strcmp((char *)(tail + 1),group), iVar1 == 0)) break;
         tail = tail->next;
       }
-      return (gid_t *)(userid *)0x0;
+      return (gid_t *)0x0;
     }
     if ((*(char *)&tail[1].id == *group) && (iVar1 = strcmp((char *)(tail + 1),group), iVar1 == 0))
     break;
@@ -10437,7 +10290,7 @@ size_t quotearg_buffer_restyled
   quote_string_len = 0;
   backslash_escapes = false;
   sVar2 = __ctype_get_mb_cur_max();
-  unibyte_locale = (_Bool)(sVar2 == 1);
+  unibyte_locale = sVar2 == 1;
   switch(quoting_style) {
   case shell_always_quoting_style:
     if (len < buffersize) {
@@ -10463,13 +10316,11 @@ size_t quotearg_buffer_restyled
   case clocale_quoting_style:
     left = gettext_quote("`",quoting_style);
     right = gettext_quote("\'",quoting_style);
-    quote_string = left;
-    while (*quote_string != '\0') {
+    for (quote_string = left; *quote_string != '\0'; quote_string = quote_string + 1) {
       if (len < buffersize) {
         buffer[len] = *quote_string;
       }
       len = len + 1;
-      quote_string = quote_string + 1;
     }
     backslash_escapes = true;
     quote_string = right;
@@ -10526,8 +10377,7 @@ LAB_0805535b:
           else {
             if (sVar2 != 0xfffffffe) goto LAB_080553e4;
             printable = false;
-            while ((i + m < argsize && (arg[i + m] != '\0'))) {
-              m = m + 1;
+            for (; (i + m < argsize && (arg[i + m] != '\0')); m = m + 1) {
             }
           }
         }
@@ -10535,7 +10385,7 @@ LAB_0805535b:
       }
       m = 1;
       ppuVar4 = __ctype_b_loc();
-      printable = (_Bool)(((*ppuVar4)[c] & 0x4000) != 0);
+      printable = ((*ppuVar4)[c] & 0x4000) != 0;
 LAB_08055457:
       if ((m < 2) && ((backslash_escapes != true || (printable == true)))) break;
       uVar1 = i + m;
@@ -10751,12 +10601,11 @@ store_c:
   }
   if ((i != 0) || (quoting_style != shell_quoting_style)) {
     if (quote_string != (char *)0x0) {
-      while (*quote_string != '\0') {
+      for (; *quote_string != '\0'; quote_string = quote_string + 1) {
         if (len < buffersize) {
           buffer[len] = *quote_string;
         }
         len = len + 1;
-        quote_string = quote_string + 1;
       }
     }
     if (len < buffersize) {
@@ -10853,10 +10702,8 @@ void quotearg_free(void)
   slotvec *sv;
   
   __ptr = slotvec;
-  i = 1;
-  while (i < nslots) {
+  for (i = 1; i < nslots; i = i + 1) {
     free(__ptr[i].val);
-    i = i + 1;
   }
   if (__ptr->val != slot0) {
     free(__ptr->val);
@@ -11109,7 +10956,6 @@ size_t strftime_case_(_Bool upcase,char *s,size_t maxsize,char *format,tm *tp,in
   uint uVar7;
   size_t sVar8;
   char *__n;
-  int *__n_00;
   int iVar9;
   int in_GS_OFFSET;
   size_t local_61c;
@@ -11387,9 +11233,7 @@ LAB_080561b0:
     local_61c = 0;
     goto LAB_0805863d;
   case ':':
-    colons = 1;
-    while (f[colons] == ':') {
-      colons = colons + 1;
+    for (colons = 1; f[colons] == ':'; colons = colons + 1) {
     }
     if (f[colons] == 'z') {
       f = f + colons;
@@ -11426,7 +11270,7 @@ LAB_080561b0:
         }
         u_number_value = iVar4 - local_610;
         digits = 2;
-        negative_number = (_Bool)(tp->tm_year < -0x76c);
+        negative_number = tp->tm_year < -0x76c;
         goto do_signed_number;
       }
       goto underlying_strftime;
@@ -11483,7 +11327,7 @@ LAB_080561b0:
       }
       if (*f == 'G') {
         digits = 4;
-        negative_number = (_Bool)(tp->tm_year < -0x76c - year_adjust);
+        negative_number = tp->tm_year < -0x76c - year_adjust;
         u_number_value = tp->tm_year + year_adjust + 0x76c;
         goto do_signed_number;
       }
@@ -11536,10 +11380,8 @@ LAB_080561b0:
         width = 9;
       }
       else {
-        j = width;
-        while (j < 9) {
+        for (j = width; j < 9; j = j + 1) {
           number_value = number_value / 10;
-          j = j + 1;
         }
       }
       digits = width;
@@ -11611,7 +11453,7 @@ subformat:
     if (modifier == 0x45) goto underlying_strftime;
     if (modifier != 0x4f) {
       digits = 4;
-      negative_number = (_Bool)(tp->tm_year < -0x76c);
+      negative_number = tp->tm_year < -0x76c;
       u_number_value = tp->tm_year + 0x76c;
       goto do_signed_number;
     }
@@ -11641,13 +11483,11 @@ subformat:
         if (bVar2) {
           memcpy_lowcase(p,zone,sVar5);
         }
+        else if (to_uppcase == false) {
+          memcpy(p,zone,sVar5);
+        }
         else {
-          if (to_uppcase == false) {
-            memcpy(p,zone,sVar5);
-          }
-          else {
-            memcpy_uppcase(p,zone,sVar5);
-          }
+          memcpy_uppcase(p,zone,sVar5);
         }
         p = p + sVar5;
       }
@@ -11696,7 +11536,7 @@ do_number_spacepad:
   case 'j':
     if (modifier != 0x45) {
       digits = 3;
-      negative_number = (_Bool)(tp->tm_yday < -1);
+      negative_number = tp->tm_yday < -1;
       u_number_value = tp->tm_yday + 1;
       goto do_signed_number;
     }
@@ -11716,7 +11556,7 @@ do_number_spacepad:
   case 'm':
     if (modifier != 0x45) {
       digits = 2;
-      negative_number = (_Bool)(tp->tm_mon < -1);
+      negative_number = tp->tm_mon < -1;
       u_number_value = tp->tm_mon + 1;
       goto do_signed_number;
     }
@@ -11876,82 +11716,80 @@ do_number_sign_and_padding:
           i = i + uVar7;
         }
       }
-      else {
-        if (pad == 0x5f) {
-          if ((char *)(maxsize - i) <= __n) {
+      else if (pad == 0x5f) {
+        if ((char *)(maxsize - i) <= __n) {
+          local_61c = 0;
+          goto LAB_0805863d;
+        }
+        if (p != (char *)0x0) {
+          memset(p,0x20,(size_t)__n);
+          p = p + (int)__n;
+        }
+        i = (size_t)(__n + i);
+        if ((int)__n < width) {
+          local_600 = width - (int)__n;
+        }
+        else {
+          local_600 = 0;
+        }
+        width = local_600;
+        if (local_602 != '\0') {
+          uVar6 = local_600 - 1;
+          uVar7 = (~((int)uVar6 >> 0x1f) & uVar6) + 1;
+          if (maxsize - i <= uVar7) {
             local_61c = 0;
             goto LAB_0805863d;
           }
           if (p != (char *)0x0) {
-            memset(p,0x20,(size_t)__n);
-            p = p + (int)__n;
-          }
-          i = (size_t)(__n + i);
-          if ((int)__n < width) {
-            local_600 = width - (int)__n;
-          }
-          else {
-            local_600 = 0;
-          }
-          width = local_600;
-          if (local_602 != '\0') {
-            uVar6 = local_600 - 1;
-            uVar7 = (~((int)uVar6 >> 0x1f) & uVar6) + 1;
-            if (maxsize - i <= uVar7) {
-              local_61c = 0;
-              goto LAB_0805863d;
+            if ((digits == 0) && (0 < (int)uVar6)) {
+              memset(p,0x20,uVar6);
+              p = p + uVar6;
             }
-            if (p != (char *)0x0) {
-              if ((digits == 0) && (0 < (int)uVar6)) {
+            *p = local_602;
+            p = p + 1;
+          }
+          i = i + uVar7;
+        }
+      }
+      else {
+        if (maxsize - i <= (uint)digits) {
+          local_61c = 0;
+          goto LAB_0805863d;
+        }
+        if (local_602 != '\0') {
+          uVar6 = width - 1;
+          uVar7 = (~((int)uVar6 >> 0x1f) & uVar6) + 1;
+          if (maxsize - i <= uVar7) {
+            local_61c = 0;
+            goto LAB_0805863d;
+          }
+          if (p != (char *)0x0) {
+            if ((digits == 0) && (0 < (int)uVar6)) {
+              if (pad == 0x30) {
+                memset(p,0x30,uVar6);
+                p = p + uVar6;
+              }
+              else {
                 memset(p,0x20,uVar6);
                 p = p + uVar6;
               }
-              *p = local_602;
-              p = p + 1;
             }
-            i = i + uVar7;
+            *p = local_602;
+            p = p + 1;
           }
+          i = i + uVar7;
         }
-        else {
-          if (maxsize - i <= (uint)digits) {
-            local_61c = 0;
-            goto LAB_0805863d;
-          }
-          if (local_602 != '\0') {
-            uVar6 = width - 1;
-            uVar7 = (~((int)uVar6 >> 0x1f) & uVar6) + 1;
-            if (maxsize - i <= uVar7) {
-              local_61c = 0;
-              goto LAB_0805863d;
-            }
-            if (p != (char *)0x0) {
-              if ((digits == 0) && (0 < (int)uVar6)) {
-                if (pad == 0x30) {
-                  memset(p,0x30,uVar6);
-                  p = p + uVar6;
-                }
-                else {
-                  memset(p,0x20,uVar6);
-                  p = p + uVar6;
-                }
-              }
-              *p = local_602;
-              p = p + 1;
-            }
-            i = i + uVar7;
-          }
-          if (p != (char *)0x0) {
-            memset(p,0x30,(size_t)__n);
-            p = p + (int)__n;
-          }
-          i = (size_t)(__n + i);
-          width = 0;
+        if (p != (char *)0x0) {
+          memset(p,0x30,(size_t)__n);
+          p = p + (int)__n;
         }
+        i = (size_t)(__n + i);
+        width = 0;
       }
     }
-    __n_00 = (int *)((int)&local_10 - (int)bufp);
-    uVar6 = width - (int)__n_00;
-    uVar7 = (~((int)uVar6 >> 0x1f) & uVar6) + (int)__n_00;
+    sVar8 = (int)&local_10 - (int)bufp;
+    uVar6 = width - sVar8;
+    uVar7 = (~((int)uVar6 >> 0x1f) & uVar6) + sVar8;
     if (uVar7 < maxsize - i) {
       if (p != (char *)0x0) {
         if ((digits == 0) && (0 < (int)uVar6)) {
@@ -11965,12 +11803,12 @@ do_number_sign_and_padding:
           }
         }
         if (to_uppcase == false) {
-          memcpy(p,bufp,(size_t)__n_00);
+          memcpy(p,bufp,sVar8);
         }
         else {
-          memcpy_uppcase(p,bufp,(size_t)__n_00);
+          memcpy_uppcase(p,bufp,sVar8);
         }
-        p = p + (int)__n_00;
+        p = p + sVar8;
       }
       i = i + uVar7;
       goto LAB_08058601;
@@ -12040,13 +11878,11 @@ underlying_strftime:
       if (bVar3) {
         memcpy_lowcase(p,ubuf + 1,sVar8);
       }
+      else if (to_uppcase == false) {
+        memcpy(p,ubuf + 1,sVar8);
+      }
       else {
-        if (to_uppcase == false) {
-          memcpy(p,ubuf + 1,sVar8);
-        }
-        else {
-          memcpy_uppcase(p,ubuf + 1,sVar8);
-        }
+        memcpy_uppcase(p,ubuf + 1,sVar8);
       }
       p = p + sVar8;
     }
@@ -12065,26 +11901,24 @@ tz_hh_mm:
         tz_colon_mask = 4;
         u_number_value = u_number_value * 100 + iVar9;
       }
+      else if (colons == 0) {
+        digits = 5;
+        tz_colon_mask = 0;
+        u_number_value = u_number_value * 100 + iVar9;
+      }
       else {
-        if (colons == 0) {
-          digits = 5;
-          tz_colon_mask = 0;
-          u_number_value = u_number_value * 100 + iVar9;
-        }
-        else {
-          if (colons != 2) {
-            if (colons != 3) break;
-            if (iVar4 % 0x3c == 0) {
-              if (iVar9 != 0) goto tz_hh_mm;
-              digits = 3;
-              tz_colon_mask = 0;
-              goto do_tz_offset;
-            }
+        if (colons != 2) {
+          if (colons != 3) break;
+          if (iVar4 % 0x3c == 0) {
+            if (iVar9 != 0) goto tz_hh_mm;
+            digits = 3;
+            tz_colon_mask = 0;
+            goto do_tz_offset;
           }
-          digits = 9;
-          tz_colon_mask = 0x14;
-          u_number_value = u_number_value * 10000 + iVar9 * 100 + iVar4 % 0x3c;
         }
+        digits = 9;
+        tz_colon_mask = 0x14;
+        u_number_value = u_number_value * 10000 + iVar9 * 100 + iVar4 % 0x3c;
       }
 do_tz_offset:
       negative_number = SUB41((uint)iVar4 >> 0x1f,0);
@@ -12093,9 +11927,7 @@ do_tz_offset:
     }
     goto LAB_08058601;
   }
-  flen = 1;
-  while (f[1 - flen] != '%') {
-    flen = flen + 1;
+  for (flen = 1; f[1 - flen] != '%'; flen = flen + 1) {
   }
   uVar6 = width - flen;
   uVar7 = (~((int)uVar6 >> 0x1f) & uVar6) + flen;
@@ -12205,16 +12037,14 @@ int rpl_vfprintf(FILE *fp,char *format,va_list args)
       }
       local_804 = 0xffffffff;
     }
+    else if ((int)len < 0) {
+      piVar4 = __errno_location();
+      *piVar4 = 0x4b;
+      fseterr(fp);
+      local_804 = 0xffffffff;
+    }
     else {
-      if ((int)len < 0) {
-        piVar4 = __errno_location();
-        *piVar4 = 0x4b;
-        fseterr(fp);
-        local_804 = 0xffffffff;
-      }
-      else {
-        local_804 = len;
-      }
+      local_804 = len;
     }
   }
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
@@ -12551,16 +12381,12 @@ LAB_08058e96:
       base = 1000;
       suffixes = 2;
     }
-    else {
-      if (cVar1 == 'i') {
-        if ((*p)[2] == 'B') {
-          suffixes = 3;
-        }
-      }
-      else {
-        if (cVar1 == 'B') goto LAB_08058e96;
+    else if (cVar1 == 'i') {
+      if ((*p)[2] == 'B') {
+        suffixes = 3;
       }
     }
+    else if (cVar1 == 'B') goto LAB_08058e96;
   }
   switch(**p) {
   case 'B':
@@ -12777,16 +12603,12 @@ LAB_080593b8:
       base = 1000;
       suffixes = suffixes + 1;
     }
-    else {
-      if (cVar1 == 'i') {
-        if ((*p)[2] == 'B') {
-          suffixes = suffixes + 2;
-        }
-      }
-      else {
-        if (cVar1 == 'B') goto LAB_080593b8;
+    else if (cVar1 == 'i') {
+      if ((*p)[2] == 'B') {
+        suffixes = suffixes + 2;
       }
     }
+    else if (cVar1 == 'B') goto LAB_080593b8;
   }
   switch(**p) {
   case 'B':
@@ -12899,20 +12721,19 @@ int is_infinitel(longdouble x)
 char * vasnprintf(char *resultbuf,size_t *lengthp,char *format,va_list args)
 
 {
-  argument *paVar1;
-  char cVar2;
-  size_t *psVar3;
+  char cVar1;
+  size_t *psVar2;
+  undefined4 uVar3;
   undefined4 uVar4;
-  undefined4 uVar5;
+  int iVar5;
   int iVar6;
-  int iVar7;
-  int *piVar8;
-  size_t sVar9;
-  char *pcVar10;
-  undefined (*pauVar11) [12];
+  int *piVar7;
+  size_t sVar8;
+  char *pcVar9;
+  undefined (*pauVar10) [12];
   int in_GS_OFFSET;
-  float10 fVar12;
   ushort in_FPUControlWord;
+  float10 fVar11;
   char acStack1328 [12];
   uint local_524;
   uint local_520;
@@ -13044,36 +12865,36 @@ char * vasnprintf(char *resultbuf,size_t *lengthp,char *format,va_list args)
   char tmpbuf [700];
   int local_20;
   
-  pauVar11 = (undefined (*) [12])&stack0xfffffaa4;
+  pauVar10 = (undefined (*) [12])&stack0xfffffaa4;
   local_470 = resultbuf;
   local_474 = lengthp;
   local_478 = format;
   local_47c = args;
   local_20 = *(int *)(in_GS_OFFSET + 0x14);
-  iVar7 = printf_parse(format,&d,&a);
-  if (iVar7 < 0) {
+  iVar6 = printf_parse(format,&d,&a);
+  if (iVar6 < 0) {
     local_4d4 = (char *)0x0;
-    pauVar11 = (undefined (*) [12])&stack0xfffffaa4;
+    pauVar10 = (undefined (*) [12])&stack0xfffffaa4;
   }
   else {
-    iVar7 = printf_fetchargs(local_47c,&a);
-    if (iVar7 < 0) {
+    iVar6 = printf_fetchargs(local_47c,&a);
+    if (iVar6 < 0) {
       free(d.dir);
       if (a.arg != (argument *)0x0) {
         free(a.arg);
       }
-      piVar8 = __errno_location();
-      *piVar8 = 0x16;
+      piVar7 = __errno_location();
+      *piVar7 = 0x16;
       local_4d4 = (char *)0x0;
     }
     else {
       buf_neededlength = xsum4(7,d.max_width_length,d.max_precision_length,6);
       if (buf_neededlength < 4000) {
-        iVar7 = -(buf_neededlength + 0x1e & 0xfffffff0);
-        local_4d0 = acStack1328 + iVar7;
-        buf = acStack1328 + iVar7;
+        iVar6 = -(buf_neededlength + 0x1e & 0xfffffff0);
+        local_4d0 = acStack1328 + iVar6;
+        buf = acStack1328 + iVar6;
         buf_malloced = (char *)0x0;
-        pauVar11 = (undefined (*) [12])(&stack0xfffffaa4 + iVar7);
+        pauVar10 = (undefined (*) [12])(&stack0xfffffaa4 + iVar6);
 LAB_08059831:
         if (local_470 == (char *)0x0) {
           result = (char *)0x0;
@@ -13089,19 +12910,19 @@ LAB_08059831:
         dp = d.dir;
         do {
           if (dp->dir_start != cp) {
-            n = (size_t)(dp->dir_start + -(int)cp);
-            *(char **)(*pauVar11 + 4) = dp->dir_start + -(int)cp;
-            *(size_t *)*pauVar11 = length;
-            *(undefined4 *)(pauVar11[-1] + 8) = 0x80598de;
-            augmented_length = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
+            n = (int)dp->dir_start - (int)cp;
+            *(size_t *)(*pauVar10 + 4) = n;
+            *(size_t *)*pauVar10 = length;
+            *(undefined4 *)(pauVar10[-1] + 8) = 0x80598de;
+            augmented_length = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
             if (augmented_length <= allocated) {
 LAB_08059a17:
-              pcVar10 = result + length;
-              *(size_t *)(*pauVar11 + 8) = n;
-              *(char **)(*pauVar11 + 4) = cp;
-              *(char **)*pauVar11 = pcVar10;
-              *(undefined4 *)(pauVar11[-1] + 8) = 0x8059a42;
-              memcpy(*(void **)*pauVar11,*(void **)(*pauVar11 + 4),*(size_t *)(*pauVar11 + 8));
+              pcVar9 = result + length;
+              *(size_t *)(*pauVar10 + 8) = n;
+              *(char **)(*pauVar10 + 4) = cp;
+              *(char **)*pauVar10 = pcVar9;
+              *(undefined4 *)(pauVar10[-1] + 8) = 0x8059a42;
+              memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8));
               length = augmented_length;
               goto LAB_08059a4e;
             }
@@ -13124,23 +12945,23 @@ LAB_08059a17:
             memory_size = allocated;
             if (allocated != 0xffffffff) {
               if ((result == local_470) || (result == (char *)0x0)) {
-                *(size_t *)*pauVar11 = allocated;
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x805999f;
-                memory = (char *)malloc(*(size_t *)*pauVar11);
+                *(size_t *)*pauVar10 = allocated;
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x805999f;
+                memory = (char *)malloc(*(size_t *)*pauVar10);
               }
               else {
-                *(size_t *)(*pauVar11 + 4) = allocated;
-                *(char **)*pauVar11 = result;
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x80599bf;
-                memory = (char *)realloc(*(void **)*pauVar11,*(size_t *)(*pauVar11 + 4));
+                *(size_t *)(*pauVar10 + 4) = allocated;
+                *(char **)*pauVar10 = result;
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x80599bf;
+                memory = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
               }
               if (memory != (char *)0x0) {
                 if ((result == local_470) && (length != 0)) {
-                  *(size_t *)(*pauVar11 + 8) = length;
-                  *(char **)(*pauVar11 + 4) = result;
-                  *(char **)*pauVar11 = memory;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x8059a0b;
-                  memcpy(*(void **)*pauVar11,*(void **)(*pauVar11 + 4),*(size_t *)(*pauVar11 + 8));
+                  *(size_t *)(*pauVar10 + 8) = length;
+                  *(char **)(*pauVar10 + 4) = result;
+                  *(char **)*pauVar10 = memory;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x8059a0b;
+                  memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8));
                 }
                 result = memory;
                 goto LAB_08059a17;
@@ -13150,11 +12971,11 @@ LAB_08059a17:
           }
 LAB_08059a4e:
           if (d.count == i) {
-            *(undefined4 *)(*pauVar11 + 4) = 1;
-            *(size_t *)*pauVar11 = length;
-            *(undefined4 *)(pauVar11[-1] + 8) = 0x805c7b7;
-            sVar9 = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
-            if (allocated < sVar9) {
+            *(undefined4 *)(*pauVar10 + 4) = 1;
+            *(size_t *)*pauVar10 = length;
+            *(undefined4 *)(pauVar10[-1] + 8) = 0x805c7b7;
+            sVar8 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+            if (allocated < sVar8) {
               if (allocated == 0) {
                 local_484 = 0xc;
               }
@@ -13168,35 +12989,35 @@ LAB_08059a4e:
                 local_484 = local_480;
               }
               allocated = local_484;
-              *(undefined4 *)(*pauVar11 + 4) = 1;
-              *(size_t *)*pauVar11 = length;
-              *(undefined4 *)(pauVar11[-1] + 8) = 0x805c82a;
-              sVar9 = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
-              if (allocated < sVar9) {
-                *(undefined4 *)(*pauVar11 + 4) = 1;
-                *(size_t *)*pauVar11 = length;
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x805c848;
-                allocated = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
+              *(undefined4 *)(*pauVar10 + 4) = 1;
+              *(size_t *)*pauVar10 = length;
+              *(undefined4 *)(pauVar10[-1] + 8) = 0x805c82a;
+              sVar8 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+              if (allocated < sVar8) {
+                *(undefined4 *)(*pauVar10 + 4) = 1;
+                *(size_t *)*pauVar10 = length;
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x805c848;
+                allocated = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
               }
               if (allocated != 0xffffffff) {
                 if ((result == local_470) || (result == (char *)0x0)) {
-                  *(size_t *)*pauVar11 = allocated;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805c88c;
-                  memory_6 = (char *)malloc(*(size_t *)*pauVar11);
+                  *(size_t *)*pauVar10 = allocated;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c88c;
+                  memory_6 = (char *)malloc(*(size_t *)*pauVar10);
                 }
                 else {
-                  *(size_t *)(*pauVar11 + 4) = allocated;
-                  *(char **)*pauVar11 = result;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805c8ac;
-                  memory_6 = (char *)realloc(*(void **)*pauVar11,*(size_t *)(*pauVar11 + 4));
+                  *(size_t *)(*pauVar10 + 4) = allocated;
+                  *(char **)*pauVar10 = result;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c8ac;
+                  memory_6 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
                 }
                 if (memory_6 != (char *)0x0) {
                   if ((result == local_470) && (length != 0)) {
-                    *(size_t *)(*pauVar11 + 8) = length;
-                    *(char **)(*pauVar11 + 4) = result;
-                    *(char **)*pauVar11 = memory_6;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805c8f8;
-                    memcpy(*(void **)*pauVar11,*(void **)(*pauVar11 + 4),*(size_t *)(*pauVar11 + 8))
+                    *(size_t *)(*pauVar10 + 8) = length;
+                    *(char **)(*pauVar10 + 4) = result;
+                    *(char **)*pauVar10 = memory_6;
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c8f8;
+                    memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8))
                     ;
                   }
                   result = memory_6;
@@ -13205,40 +13026,40 @@ LAB_08059a4e:
               }
 out_of_memory:
               if ((result != local_470) && (result != (char *)0x0)) {
-                *(char **)*pauVar11 = result;
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x805ca64;
-                free(*(void **)*pauVar11);
+                *(char **)*pauVar10 = result;
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x805ca64;
+                free(*(void **)*pauVar10);
               }
               if (buf_malloced != (char *)0x0) {
-                *(char **)*pauVar11 = buf_malloced;
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x805ca7b;
-                free(*(void **)*pauVar11);
+                *(char **)*pauVar10 = buf_malloced;
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x805ca7b;
+                free(*(void **)*pauVar10);
               }
               goto out_of_memory_1;
             }
 LAB_0805c904:
             result[length] = '\0';
             if ((result != local_470) && (length + 1 < allocated)) {
-              *(size_t *)(*pauVar11 + 4) = length + 1;
-              *(char **)*pauVar11 = result;
-              *(undefined4 *)(pauVar11[-1] + 8) = 0x805c94f;
-              pcVar10 = (char *)realloc(*(void **)*pauVar11,*(size_t *)(*pauVar11 + 4));
-              if (pcVar10 != (char *)0x0) {
-                result = pcVar10;
+              *(size_t *)(*pauVar10 + 4) = length + 1;
+              *(char **)*pauVar10 = result;
+              *(undefined4 *)(pauVar10[-1] + 8) = 0x805c94f;
+              pcVar9 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
+              if (pcVar9 != (char *)0x0) {
+                result = pcVar9;
               }
             }
             if (buf_malloced != (char *)0x0) {
-              *(char **)*pauVar11 = buf_malloced;
-              *(undefined4 *)(pauVar11[-1] + 8) = 0x805c981;
-              free(*(void **)*pauVar11);
+              *(char **)*pauVar10 = buf_malloced;
+              *(undefined4 *)(pauVar10[-1] + 8) = 0x805c981;
+              free(*(void **)*pauVar10);
             }
-            *(char_directive **)*pauVar11 = d.dir;
-            *(undefined4 *)(pauVar11[-1] + 8) = 0x805c98f;
-            free(*(void **)*pauVar11);
+            *(char_directive **)*pauVar10 = d.dir;
+            *(undefined4 *)(pauVar10[-1] + 8) = 0x805c98f;
+            free(*(void **)*pauVar10);
             if (a.arg != (argument *)0x0) {
-              *(argument **)*pauVar11 = a.arg;
-              *(undefined4 *)(pauVar11[-1] + 8) = 0x805c9a7;
-              free(*(void **)*pauVar11);
+              *(argument **)*pauVar10 = a.arg;
+              *(undefined4 *)(pauVar10[-1] + 8) = 0x805c9a7;
+              free(*(void **)*pauVar10);
             }
             *local_474 = length;
             local_4d4 = result;
@@ -13247,13 +13068,13 @@ LAB_0805c904:
           if (dp->conversion == '%') {
             if (dp->arg_index != 0xffffffff) {
                     // WARNING: Subroutine does not return
-              *(undefined4 *)(pauVar11[-1] + 8) = 0x8059a85;
-              abort(pauVar11[-1][8]);
+              *(undefined4 *)(pauVar10[-1] + 8) = 0x8059a85;
+              abort();
             }
-            *(undefined4 *)(*pauVar11 + 4) = 1;
-            *(size_t *)*pauVar11 = length;
-            *(undefined4 *)(pauVar11[-1] + 8) = 0x8059a9b;
-            augmented_length_1 = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
+            *(undefined4 *)(*pauVar10 + 4) = 1;
+            *(size_t *)*pauVar10 = length;
+            *(undefined4 *)(pauVar10[-1] + 8) = 0x8059a9b;
+            augmented_length_1 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
             if (allocated < augmented_length_1) {
               if (allocated == 0) {
                 local_4c4 = 0xc;
@@ -13274,23 +13095,23 @@ LAB_0805c904:
               memory_size_1 = allocated;
               if (allocated != 0xffffffff) {
                 if ((result == local_470) || (result == (char *)0x0)) {
-                  *(size_t *)*pauVar11 = allocated;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x8059b5c;
-                  memory_1 = (char *)malloc(*(size_t *)*pauVar11);
+                  *(size_t *)*pauVar10 = allocated;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x8059b5c;
+                  memory_1 = (char *)malloc(*(size_t *)*pauVar10);
                 }
                 else {
-                  *(size_t *)(*pauVar11 + 4) = allocated;
-                  *(char **)*pauVar11 = result;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x8059b7c;
-                  memory_1 = (char *)realloc(*(void **)*pauVar11,*(size_t *)(*pauVar11 + 4));
+                  *(size_t *)(*pauVar10 + 4) = allocated;
+                  *(char **)*pauVar10 = result;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x8059b7c;
+                  memory_1 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
                 }
                 if (memory_1 != (char *)0x0) {
                   if ((result == local_470) && (length != 0)) {
-                    *(size_t *)(*pauVar11 + 8) = length;
-                    *(char **)(*pauVar11 + 4) = result;
-                    *(char **)*pauVar11 = memory_1;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x8059bc8;
-                    memcpy(*(void **)*pauVar11,*(void **)(*pauVar11 + 4),*(size_t *)(*pauVar11 + 8))
+                    *(size_t *)(*pauVar10 + 8) = length;
+                    *(char **)(*pauVar10 + 4) = result;
+                    *(char **)*pauVar10 = memory_1;
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x8059bc8;
+                    memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8))
                     ;
                   }
                   result = memory_1;
@@ -13306,8 +13127,8 @@ LAB_08059bd4:
           else {
             if (dp->arg_index == 0xffffffff) {
                     // WARNING: Subroutine does not return
-              *(undefined4 *)(pauVar11[-1] + 8) = 0x8059c09;
-              abort(pauVar11[-1][8]);
+              *(undefined4 *)(pauVar10[-1] + 8) = 0x8059c09;
+              abort();
             }
             if (dp->conversion == 'n') {
               local_4d8 = a.arg[dp->arg_index].type + ~TYPE_POINTER;
@@ -13325,14 +13146,14 @@ LAB_08059bd4:
                 **(size_t **)&a.arg[dp->arg_index].a = length;
                 break;
               case 4:
-                psVar3 = *(size_t **)&a.arg[dp->arg_index].a;
-                *psVar3 = length;
-                psVar3[1] = 0;
+                psVar2 = *(size_t **)&a.arg[dp->arg_index].a;
+                *psVar2 = length;
+                psVar2[1] = 0;
                 break;
               default:
                     // WARNING: Subroutine does not return
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x8059d1e;
-                abort(pauVar11[-1][8]);
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x8059d1e;
+                abort();
               }
             }
             else {
@@ -13340,15 +13161,15 @@ LAB_08059bd4:
                     ) || ((dp->conversion == 'E' || (dp->conversion == 'g')))) ||
                   ((dp->conversion == 'G' || ((dp->conversion == 'a' || (dp->conversion == 'A'))))))
                  && (a.arg[dp->arg_index].type == TYPE_LONGDOUBLE)) {
-                paVar1 = a.arg + dp->arg_index;
-                uVar4 = *(undefined4 *)((int)&paVar1->a + 8);
-                uVar5 = *(undefined4 *)((int)&paVar1->a + 4);
-                *(undefined4 *)*pauVar11 = *(undefined4 *)&paVar1->a;
-                *(undefined4 *)(*pauVar11 + 4) = uVar5;
-                *(undefined4 *)(*pauVar11 + 8) = uVar4;
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x8059de0;
-                iVar7 = is_infinitel((longdouble)*pauVar11);
-                if (iVar7 != 0) {
+                sVar8 = dp->arg_index;
+                uVar3 = *(undefined4 *)((int)&a.arg[sVar8].a + 8);
+                uVar4 = *(undefined4 *)((int)&a.arg[sVar8].a + 4);
+                *(undefined4 *)*pauVar10 = *(undefined4 *)&a.arg[sVar8].a;
+                *(undefined4 *)(*pauVar10 + 4) = uVar4;
+                *(undefined4 *)(*pauVar10 + 8) = uVar3;
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x8059de0;
+                iVar6 = is_infinitel((longdouble)*pauVar10);
+                if (iVar6 != 0) {
                   flags = dp->flags;
                   has_width = 0;
                   width = 0;
@@ -13356,8 +13177,8 @@ LAB_08059bd4:
                     if (dp->width_arg_index == 0xffffffff) {
                       digitp = dp->width_start;
                       do {
-                        cVar2 = *digitp;
-                        local_4bc = cVar2 + -0x30;
+                        cVar1 = *digitp;
+                        local_4bc = cVar1 + -0x30;
                         digitp = digitp + 1;
                         if (width < 0x1999999a) {
                           local_4b8 = width * 10;
@@ -13365,17 +13186,17 @@ LAB_08059bd4:
                         else {
                           local_4b8 = -1;
                         }
-                        *(int *)(*pauVar11 + 4) = cVar2 + -0x30;
-                        *(int *)*pauVar11 = local_4b8;
-                        *(undefined4 *)(pauVar11[-1] + 8) = 0x8059f17;
-                        width = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
+                        *(int *)(*pauVar10 + 4) = cVar1 + -0x30;
+                        *(int *)*pauVar10 = local_4b8;
+                        *(undefined4 *)(pauVar10[-1] + 8) = 0x8059f17;
+                        width = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
                       } while (dp->width_end != digitp);
                     }
                     else {
                       if (a.arg[dp->width_arg_index].type != TYPE_INT) {
                     // WARNING: Subroutine does not return
-                        *(undefined4 *)(pauVar11[-1] + 8) = 0x8059e54;
-                        abort(pauVar11[-1][8]);
+                        *(undefined4 *)(pauVar10[-1] + 8) = 0x8059e54;
+                        abort();
                       }
                       arg = *(int *)&a.arg[dp->width_arg_index].a;
                       if (arg < 0) {
@@ -13395,8 +13216,8 @@ LAB_08059bd4:
                       digitp_1 = dp->precision_start + 1;
                       precision = 0;
                       while (dp->precision_end != digitp_1) {
-                        cVar2 = *digitp_1;
-                        local_4b4 = cVar2 + -0x30;
+                        cVar1 = *digitp_1;
+                        local_4b4 = cVar1 + -0x30;
                         digitp_1 = digitp_1 + 1;
                         if (precision < 0x1999999a) {
                           local_4b0 = precision * 10;
@@ -13404,18 +13225,18 @@ LAB_08059bd4:
                         else {
                           local_4b0 = -1;
                         }
-                        *(int *)(*pauVar11 + 4) = cVar2 + -0x30;
-                        *(int *)*pauVar11 = local_4b0;
-                        *(undefined4 *)(pauVar11[-1] + 8) = 0x805a05b;
-                        precision = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
+                        *(int *)(*pauVar10 + 4) = cVar1 + -0x30;
+                        *(int *)*pauVar10 = local_4b0;
+                        *(undefined4 *)(pauVar10[-1] + 8) = 0x805a05b;
+                        precision = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
                       }
                       has_precision = 1;
                     }
                     else {
                       if (a.arg[dp->precision_arg_index].type != TYPE_INT) {
                     // WARNING: Subroutine does not return
-                        *(undefined4 *)(pauVar11[-1] + 8) = 0x8059f95;
-                        abort(pauVar11[-1][8]);
+                        *(undefined4 *)(pauVar10[-1] + 8) = 0x8059f95;
+                        abort();
                       }
                       arg_1 = *(int *)&a.arg[dp->precision_arg_index].a;
                       if (-1 < arg_1) {
@@ -13431,23 +13252,23 @@ LAB_08059bd4:
                   if (precision != 0) {
                     tmp_length = precision;
                   }
-                  *(undefined **)(*pauVar11 + 4) = &DAT_0000000c;
-                  *(size_t *)*pauVar11 = tmp_length;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805a0c9;
-                  tmp_length = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
+                  *(undefined **)(*pauVar10 + 4) = &DAT_0000000c;
+                  *(size_t *)*pauVar10 = tmp_length;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805a0c9;
+                  tmp_length = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
                   if (tmp_length < width) {
                     tmp_length = width;
                   }
-                  *(undefined4 *)(*pauVar11 + 4) = 1;
-                  *(size_t *)*pauVar11 = tmp_length;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805a0ff;
-                  tmp_length = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
+                  *(undefined4 *)(*pauVar10 + 4) = 1;
+                  *(size_t *)*pauVar10 = tmp_length;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805a0ff;
+                  tmp_length = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
                   if (700 < tmp_length) {
                     tmp_memsize = tmp_length;
                     if (tmp_length != 0xffffffff) {
-                      *(size_t *)*pauVar11 = tmp_length;
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805a146;
-                      tmp = (char *)malloc(*(size_t *)*pauVar11);
+                      *(size_t *)*pauVar10 = tmp_length;
+                      *(undefined4 *)(pauVar10[-1] + 8) = 0x805a146;
+                      tmp = (char *)malloc(*(size_t *)*pauVar10);
                       if (tmp != (char *)0x0) goto LAB_0805a159;
                     }
                     goto out_of_memory;
@@ -13456,62 +13277,60 @@ LAB_08059bd4:
 LAB_0805a159:
                   pad_ptr = (char *)0x0;
                   p = tmp;
-                  paVar1 = a.arg + dp->arg_index;
-                  uVar4 = *(undefined4 *)((int)&paVar1->a + 8);
-                  uVar5 = *(undefined4 *)((int)&paVar1->a + 4);
-                  arg_2._0_4_ = *(undefined4 *)&paVar1->a;
-                  arg_2._8_2_ = (undefined2)uVar4;
-                  arg_2._10_2_ = (undefined2)((uint)uVar4 >> 0x10);
-                  arg_2._4_4_ = uVar5;
-                  *(undefined4 *)*pauVar11 = arg_2._0_4_;
-                  *(undefined4 *)(*pauVar11 + 4) = uVar5;
-                  *(undefined4 *)(*pauVar11 + 8) = uVar4;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805a1c1;
-                  uVar4 = arg_2._4_4_;
-                  iVar7 = rpl_isnanl((longdouble)*pauVar11);
-                  if (iVar7 == 0) {
+                  sVar8 = dp->arg_index;
+                  uVar3 = *(undefined4 *)((int)&a.arg[sVar8].a + 8);
+                  uVar4 = *(undefined4 *)((int)&a.arg[sVar8].a + 4);
+                  arg_2._0_4_ = *(undefined4 *)&a.arg[sVar8].a;
+                  arg_2._8_2_ = (undefined2)uVar3;
+                  arg_2._10_2_ = (undefined2)((uint)uVar3 >> 0x10);
+                  arg_2._4_4_ = uVar4;
+                  *(undefined4 *)*pauVar10 = arg_2._0_4_;
+                  *(undefined4 *)(*pauVar10 + 4) = uVar4;
+                  *(undefined4 *)(*pauVar10 + 8) = uVar3;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805a1c1;
+                  uVar3 = arg_2._4_4_;
+                  iVar6 = rpl_isnanl((longdouble)*pauVar10);
+                  if (iVar6 == 0) {
                     sign = 0;
                     oldcw = in_FPUControlWord;
                     __cw = __cw & 0xffff0000 |
                            (uint)(ushort)(in_FPUControlWord & 0xff |
                                          (ushort)(byte)((uint)in_FPUControlWord >> 8) << 8) | 0x300;
-                    uVar5 = CONCAT22(arg_2._10_2_,arg_2._8_2_);
-                    *(undefined4 *)*pauVar11 = arg_2._0_4_;
-                    *(undefined4 *)(*pauVar11 + 4) = uVar4;
-                    *(undefined4 *)(*pauVar11 + 8) = uVar5;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805a2a6;
-                    iVar7 = __signbitl();
-                    if (iVar7 != 0) {
+                    uVar4 = CONCAT22(arg_2._10_2_,arg_2._8_2_);
+                    *(undefined4 *)*pauVar10 = arg_2._0_4_;
+                    *(undefined4 *)(*pauVar10 + 4) = uVar3;
+                    *(undefined4 *)(*pauVar10 + 8) = uVar4;
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805a2a6;
+                    iVar6 = __signbitl();
+                    if (iVar6 != 0) {
                       sign = -1;
-                      fVar12 = -(float10)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_));
-                      arg_2._0_4_ = SUB104(fVar12,0);
-                      arg_2._4_4_ = (undefined4)((unkuint10)fVar12 >> 0x20);
-                      arg_2._8_2_ = (undefined2)((unkuint10)fVar12 >> 0x40);
+                      fVar11 = -(float10)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_));
+                      arg_2._0_4_ = SUB104(fVar11,0);
+                      arg_2._4_4_ = (undefined4)((unkuint10)fVar11 >> 0x20);
+                      arg_2._8_2_ = (undefined2)((unkuint10)fVar11 >> 0x40);
                     }
                     if (sign < 0) {
                       *p = '-';
                       p = p + 1;
                     }
-                    else {
-                      if ((flags & 4U) == 0) {
-                        if ((flags & 8U) != 0) {
-                          *p = ' ';
-                          p = p + 1;
-                        }
-                      }
-                      else {
-                        *p = '+';
+                    else if ((flags & 4U) == 0) {
+                      if ((flags & 8U) != 0) {
+                        *p = ' ';
                         p = p + 1;
                       }
                     }
+                    else {
+                      *p = '+';
+                      p = p + 1;
+                    }
                     if (((float10)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_)) <=
                          (float10)0) ||
-                       (fVar12 = (float10)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_)),
+                       (fVar11 = (float10)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_)),
                        (float10)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_)) !=
-                       fVar12 + fVar12)) {
+                       fVar11 + fVar11)) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805a3f7;
-                      abort(pauVar11[-1][8]);
+                      *(undefined4 *)(pauVar10[-1] + 8) = 0x805a3f7;
+                      abort();
                     }
                     if ((dp->conversion < 'A') || ('Z' < dp->conversion)) {
                       *p = 'i';
@@ -13528,21 +13347,19 @@ LAB_0805a159:
                     __cw = __cw & 0xffff0000 | (uint)oldcw;
                     in_FPUControlWord = oldcw;
                   }
-                  else {
-                    if ((dp->conversion < 'A') || ('Z' < dp->conversion)) {
-                      *p = 'n';
-                      p[1] = 'a';
-                      p[2] = 'n';
-                      p = p + 3;
-                    }
-                    else {
-                      *p = 'N';
-                      p[1] = 'A';
-                      p[2] = 'N';
-                      p = p + 3;
-                    }
+                  else if ((dp->conversion < 'A') || ('Z' < dp->conversion)) {
+                    *p = 'n';
+                    p[1] = 'a';
+                    p[2] = 'n';
+                    p = p + 3;
                   }
-                  if ((has_width != 0) && (p + -(int)tmp < width)) {
+                  else {
+                    *p = 'N';
+                    p[1] = 'A';
+                    p[2] = 'N';
+                    p = p + 3;
+                  }
+                  if ((has_width != 0) && ((uint)((int)p - (int)tmp) < width)) {
                     pad = (size_t)(tmp + (width - (int)p));
                     end = p + (int)(tmp + (width - (int)p));
                     if ((flags & 2U) == 0) {
@@ -13553,10 +13370,9 @@ LAB_0805a159:
                           p = p + -1;
                           *q_1 = *p;
                         }
-                        while (pad != 0) {
+                        for (; pad != 0; pad = pad - 1) {
                           *p = ' ';
                           p = p + 1;
-                          pad = pad - 1;
                         }
                       }
                       else {
@@ -13566,18 +13382,16 @@ LAB_0805a159:
                           p = p + -1;
                           *q = *p;
                         }
-                        while (pad != 0) {
+                        for (; pad != 0; pad = pad - 1) {
                           *p = '0';
                           p = p + 1;
-                          pad = pad - 1;
                         }
                       }
                     }
                     else {
-                      while (pad != 0) {
+                      for (; pad != 0; pad = pad - 1) {
                         *p = ' ';
                         p = p + 1;
-                        pad = pad - 1;
                       }
                     }
                     p = end;
@@ -13585,14 +13399,14 @@ LAB_0805a159:
                   count = (size_t)(p + -(int)tmp);
                   if (tmp_length <= count) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805a591;
-                    abort(pauVar11[-1][8]);
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805a591;
+                    abort();
                   }
                   if ((char *)(allocated - length) <= count) {
-                    *(size_t *)(*pauVar11 + 4) = count;
-                    *(size_t *)*pauVar11 = length;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805a5c7;
-                    n_1 = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
+                    *(size_t *)(*pauVar10 + 4) = count;
+                    *(size_t *)*pauVar10 = length;
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805a5c7;
+                    n_1 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
                     if (allocated < n_1) {
                       if (allocated == 0) {
                         local_4ac = 0xc;
@@ -13613,25 +13427,25 @@ LAB_0805a159:
                       memory_size_2 = allocated;
                       if (allocated != 0xffffffff) {
                         if ((result == local_470) || (result == (char *)0x0)) {
-                          *(size_t *)*pauVar11 = allocated;
-                          *(undefined4 *)(pauVar11[-1] + 8) = 0x805a688;
-                          memory_2 = (char *)malloc(*(size_t *)*pauVar11);
+                          *(size_t *)*pauVar10 = allocated;
+                          *(undefined4 *)(pauVar10[-1] + 8) = 0x805a688;
+                          memory_2 = (char *)malloc(*(size_t *)*pauVar10);
                         }
                         else {
-                          *(size_t *)(*pauVar11 + 4) = allocated;
-                          *(char **)*pauVar11 = result;
-                          *(undefined4 *)(pauVar11[-1] + 8) = 0x805a6a8;
-                          memory_2 = (char *)realloc(*(void **)*pauVar11,*(size_t *)(*pauVar11 + 4))
+                          *(size_t *)(*pauVar10 + 4) = allocated;
+                          *(char **)*pauVar10 = result;
+                          *(undefined4 *)(pauVar10[-1] + 8) = 0x805a6a8;
+                          memory_2 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4))
                           ;
                         }
                         if (memory_2 != (char *)0x0) {
                           if ((result == local_470) && (length != 0)) {
-                            *(size_t *)(*pauVar11 + 8) = length;
-                            *(char **)(*pauVar11 + 4) = result;
-                            *(char **)*pauVar11 = memory_2;
-                            *(undefined4 *)(pauVar11[-1] + 8) = 0x805a6f4;
-                            memcpy(*(void **)*pauVar11,*(void **)(*pauVar11 + 4),
-                                   *(size_t *)(*pauVar11 + 8));
+                            *(size_t *)(*pauVar10 + 8) = length;
+                            *(char **)(*pauVar10 + 4) = result;
+                            *(char **)*pauVar10 = memory_2;
+                            *(undefined4 *)(pauVar10[-1] + 8) = 0x805a6f4;
+                            memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),
+                                   *(size_t *)(*pauVar10 + 8));
                           }
                           result = memory_2;
                           goto LAB_0805a700;
@@ -13641,16 +13455,16 @@ LAB_0805a159:
                     }
                   }
 LAB_0805a700:
-                  pcVar10 = result + length;
-                  *(size_t *)(*pauVar11 + 8) = count;
-                  *(char **)(*pauVar11 + 4) = tmp;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805a72b;
-                  memcpy(*(void **)*pauVar11,*(void **)(*pauVar11 + 4),*(size_t *)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(size_t *)(*pauVar10 + 8) = count;
+                  *(char **)(*pauVar10 + 4) = tmp;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805a72b;
+                  memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8));
                   if (tmp != tmpbuf) {
-                    *(char **)*pauVar11 = tmp;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805a747;
-                    free(*(void **)*pauVar11);
+                    *(char **)*pauVar10 = tmp;
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805a747;
+                    free(*(void **)*pauVar10);
                   }
                   length = length + count;
                   goto LAB_0805c77f;
@@ -13686,22 +13500,22 @@ LAB_0805a700:
               }
               if (dp->width_start != dp->width_end) {
                 n_2 = (size_t)(dp->width_end + -(int)dp->width_start);
-                pcVar10 = dp->width_start;
-                *(char **)(*pauVar11 + 8) = dp->width_end + -(int)dp->width_start;
-                *(char **)(*pauVar11 + 4) = pcVar10;
-                *(char **)*pauVar11 = fbp;
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x805a8a9;
-                memcpy(*(void **)*pauVar11,*(void **)(*pauVar11 + 4),*(size_t *)(*pauVar11 + 8));
+                pcVar9 = dp->width_start;
+                *(char **)(*pauVar10 + 8) = dp->width_end + -(int)dp->width_start;
+                *(char **)(*pauVar10 + 4) = pcVar9;
+                *(char **)*pauVar10 = fbp;
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x805a8a9;
+                memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8));
                 fbp = fbp + n_2;
               }
               if (dp->precision_start != dp->precision_end) {
                 n_3 = (size_t)(dp->precision_end + -(int)dp->precision_start);
-                pcVar10 = dp->precision_start;
-                *(char **)(*pauVar11 + 8) = dp->precision_end + -(int)dp->precision_start;
-                *(char **)(*pauVar11 + 4) = pcVar10;
-                *(char **)*pauVar11 = fbp;
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x805a910;
-                memcpy(*(void **)*pauVar11,*(void **)(*pauVar11 + 4),*(size_t *)(*pauVar11 + 8));
+                pcVar9 = dp->precision_start;
+                *(char **)(*pauVar10 + 8) = dp->precision_end + -(int)dp->precision_start;
+                *(char **)(*pauVar10 + 4) = pcVar9;
+                *(char **)*pauVar10 = fbp;
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x805a910;
+                memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8));
                 fbp = fbp + n_3;
               }
               if (type < TYPE_POINTER) {
@@ -13731,8 +13545,8 @@ LAB_0805a977:
               if (dp->width_arg_index != 0xffffffff) {
                 if (a.arg[dp->width_arg_index].type != TYPE_INT) {
                     // WARNING: Subroutine does not return
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805a9f0;
-                  abort(pauVar11[-1][8]);
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805a9f0;
+                  abort();
                 }
                 prefixes[0] = *(int *)&a.arg[dp->width_arg_index].a;
                 prefix_count = 1;
@@ -13740,17 +13554,17 @@ LAB_0805a977:
               if (dp->precision_arg_index != 0xffffffff) {
                 if (a.arg[dp->precision_arg_index].type != TYPE_INT) {
                     // WARNING: Subroutine does not return
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805aa4b;
-                  abort(pauVar11[-1][8]);
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805aa4b;
+                  abort();
                 }
                 prefixes[prefix_count] = *(int *)&a.arg[dp->precision_arg_index].a;
                 prefix_count = prefix_count + 1;
               }
-              *(undefined4 *)(*pauVar11 + 4) = 2;
-              *(size_t *)*pauVar11 = length;
-              *(undefined4 *)(pauVar11[-1] + 8) = 0x805aa8d;
-              sVar9 = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
-              if (allocated < sVar9) {
+              *(undefined4 *)(*pauVar10 + 4) = 2;
+              *(size_t *)*pauVar10 = length;
+              *(undefined4 *)(pauVar10[-1] + 8) = 0x805aa8d;
+              sVar8 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+              if (allocated < sVar8) {
                 if (allocated == 0) {
                   local_4a4 = 0xc;
                 }
@@ -13764,37 +13578,37 @@ LAB_0805a977:
                   local_4a4 = local_4a0;
                 }
                 allocated = local_4a4;
-                *(undefined4 *)(*pauVar11 + 4) = 2;
-                *(size_t *)*pauVar11 = length;
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x805ab00;
-                sVar9 = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
-                if (allocated < sVar9) {
-                  *(undefined4 *)(*pauVar11 + 4) = 2;
-                  *(size_t *)*pauVar11 = length;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805ab1e;
-                  allocated = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
+                *(undefined4 *)(*pauVar10 + 4) = 2;
+                *(size_t *)*pauVar10 = length;
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x805ab00;
+                sVar8 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                if (allocated < sVar8) {
+                  *(undefined4 *)(*pauVar10 + 4) = 2;
+                  *(size_t *)*pauVar10 = length;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ab1e;
+                  allocated = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
                 }
                 memory_size_3 = allocated;
                 if (allocated != 0xffffffff) {
                   if ((result == local_470) || (result == (char *)0x0)) {
-                    *(size_t *)*pauVar11 = allocated;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805ab62;
-                    memory_3 = (char *)malloc(*(size_t *)*pauVar11);
+                    *(size_t *)*pauVar10 = allocated;
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805ab62;
+                    memory_3 = (char *)malloc(*(size_t *)*pauVar10);
                   }
                   else {
-                    *(size_t *)(*pauVar11 + 4) = allocated;
-                    *(char **)*pauVar11 = result;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805ab82;
-                    memory_3 = (char *)realloc(*(void **)*pauVar11,*(size_t *)(*pauVar11 + 4));
+                    *(size_t *)(*pauVar10 + 4) = allocated;
+                    *(char **)*pauVar10 = result;
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805ab82;
+                    memory_3 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
                   }
                   if (memory_3 != (char *)0x0) {
                     if ((result == local_470) && (length != 0)) {
-                      *(size_t *)(*pauVar11 + 8) = length;
-                      *(char **)(*pauVar11 + 4) = result;
-                      *(char **)*pauVar11 = memory_3;
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805abce;
-                      memcpy(*(void **)*pauVar11,*(void **)(*pauVar11 + 4),
-                             *(size_t *)(*pauVar11 + 8));
+                      *(size_t *)(*pauVar10 + 8) = length;
+                      *(char **)(*pauVar10 + 4) = result;
+                      *(char **)*pauVar10 = memory_3;
+                      *(undefined4 *)(pauVar10[-1] + 8) = 0x805abce;
+                      memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),
+                             *(size_t *)(*pauVar10 + 8));
                     }
                     result = memory_3;
                     goto LAB_0805abda;
@@ -13805,8 +13619,8 @@ LAB_0805a977:
 LAB_0805abda:
               result[length] = '\0';
 LAB_0805abec:
-              iVar6 = prefixes[1];
-              iVar7 = prefixes[0];
+              iVar5 = prefixes[1];
+              iVar6 = prefixes[0];
               __cw = 0xffffffff;
               maxlen = allocated - length;
               if ((int)maxlen < 0) {
@@ -13815,382 +13629,366 @@ LAB_0805abec:
               switch(type) {
               default:
                     // WARNING: Subroutine does not return
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x805c32e;
-                abort(pauVar11[-1][8]);
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x805c32e;
+                abort();
               case TYPE_SCHAR:
                 arg_3 = (int)*(char *)&a.arg[dp->arg_index].a;
                 local_4e4 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                  *(int *)(pauVar11[1] + 4) = arg_3;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805ad2b;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(int *)(pauVar10[1] + 4) = arg_3;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ad2b;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
+                  *(int *)pauVar10[1] = arg_3;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805acd7;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 4) = &_cw;
-                    *(int *)pauVar11[1] = arg_3;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805acd7;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805ad99;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(int *)(pauVar11[1] + 8) = arg_3;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805ad89;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805ad99;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(int *)(pauVar10[1] + 8) = arg_3;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ad89;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_UCHAR:
                 arg_4 = (uint)*(byte *)&a.arg[dp->arg_index].a;
                 local_4e8 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                  *(uint *)(pauVar11[1] + 4) = arg_4;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805ae7e;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(uint *)(pauVar10[1] + 4) = arg_4;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ae7e;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
+                  *(uint *)pauVar10[1] = arg_4;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ae2a;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 4) = &_cw;
-                    *(uint *)pauVar11[1] = arg_4;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805ae2a;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805aeec;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(uint *)(pauVar11[1] + 8) = arg_4;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805aedc;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805aeec;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(uint *)(pauVar10[1] + 8) = arg_4;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805aedc;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_SHORT:
                 arg_5 = (int)*(short *)&a.arg[dp->arg_index].a;
                 local_4ec = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                  *(int *)(pauVar11[1] + 4) = arg_5;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805afcf;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(int *)(pauVar10[1] + 4) = arg_5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805afcf;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
+                  *(int *)pauVar10[1] = arg_5;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805af7b;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 4) = &_cw;
-                    *(int *)pauVar11[1] = arg_5;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805af7b;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805b03d;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(int *)(pauVar11[1] + 8) = arg_5;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b02d;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b03d;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(int *)(pauVar10[1] + 8) = arg_5;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b02d;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_USHORT:
                 arg_6 = (uint)*(ushort *)&a.arg[dp->arg_index].a;
                 local_4f0 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                  *(uint *)(pauVar11[1] + 4) = arg_6;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805b122;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(uint *)(pauVar10[1] + 4) = arg_6;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b122;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
+                  *(uint *)pauVar10[1] = arg_6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b0ce;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 4) = &_cw;
-                    *(uint *)pauVar11[1] = arg_6;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b0ce;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805b190;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(uint *)(pauVar11[1] + 8) = arg_6;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b180;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b190;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(uint *)(pauVar10[1] + 8) = arg_6;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b180;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_INT:
                 arg_7 = *(int *)&a.arg[dp->arg_index].a;
                 local_4f4 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                  *(int *)(pauVar11[1] + 4) = arg_7;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805b271;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(int *)(pauVar10[1] + 4) = arg_7;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b271;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
+                  *(int *)pauVar10[1] = arg_7;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b21d;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 4) = &_cw;
-                    *(int *)pauVar11[1] = arg_7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b21d;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805b2df;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(int *)(pauVar11[1] + 8) = arg_7;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b2cf;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b2df;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(int *)(pauVar10[1] + 8) = arg_7;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b2cf;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_UINT:
                 arg_8 = *(uint *)&a.arg[dp->arg_index].a;
                 local_4f8 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                  *(uint *)(pauVar11[1] + 4) = arg_8;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805b3c0;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(uint *)(pauVar10[1] + 4) = arg_8;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b3c0;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
+                  *(uint *)pauVar10[1] = arg_8;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b36c;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 4) = &_cw;
-                    *(uint *)pauVar11[1] = arg_8;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b36c;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805b42e;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(uint *)(pauVar11[1] + 8) = arg_8;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b41e;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b42e;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(uint *)(pauVar10[1] + 8) = arg_8;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b41e;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_LONGINT:
                 arg_9 = *(long *)&a.arg[dp->arg_index].a;
                 local_4fc = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                  *(long *)(pauVar11[1] + 4) = arg_9;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805b50f;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(long *)(pauVar10[1] + 4) = arg_9;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b50f;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
+                  *(long *)pauVar10[1] = arg_9;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b4bb;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 4) = &_cw;
-                    *(long *)pauVar11[1] = arg_9;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b4bb;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805b57d;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(long *)(pauVar11[1] + 8) = arg_9;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b56d;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b57d;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(long *)(pauVar10[1] + 8) = arg_9;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b56d;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_ULONGINT:
                 arg_10 = *(ulong *)&a.arg[dp->arg_index].a;
                 local_500 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                  *(ulong *)(pauVar11[1] + 4) = arg_10;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805b65e;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(ulong *)(pauVar10[1] + 4) = arg_10;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b65e;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
+                  *(ulong *)pauVar10[1] = arg_10;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b60a;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 4) = &_cw;
-                    *(ulong *)pauVar11[1] = arg_10;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b60a;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805b6cc;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(ulong *)(pauVar11[1] + 8) = arg_10;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b6bc;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b6cc;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(ulong *)(pauVar10[1] + 8) = arg_10;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b6bc;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_LONGLONGINT:
@@ -14198,50 +13996,48 @@ LAB_0805abec:
                 arg_11._0_4_ = *(undefined4 *)&a.arg[dp->arg_index].a;
                 local_504 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)pauVar11[2] = &_cw;
-                  *(undefined4 *)(pauVar11[1] + 4) = (undefined4)arg_11;
-                  *(undefined4 *)(pauVar11[1] + 8) = arg_11._4_4_;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805b7ca;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(undefined4 *)(pauVar10[1] + 4) = (undefined4)arg_11;
+                  *(undefined4 *)(pauVar10[1] + 8) = arg_11._4_4_;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b7ca;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(undefined4 *)pauVar10[1] = (undefined4)arg_11;
+                  *(undefined4 *)(pauVar10[1] + 4) = arg_11._4_4_;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b76c;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                    *(undefined4 *)pauVar11[1] = (undefined4)arg_11;
-                    *(undefined4 *)(pauVar11[1] + 4) = arg_11._4_4_;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b76c;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805b842;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[2] + 4) = &_cw;
-                    *(undefined4 *)(pauVar11[1] + 8) = (undefined4)arg_11;
-                    *(undefined4 *)pauVar11[2] = arg_11._4_4_;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b832;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b842;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[2] + 4) = &_cw;
+                  *(undefined4 *)(pauVar10[1] + 8) = (undefined4)arg_11;
+                  *(undefined4 *)pauVar10[2] = arg_11._4_4_;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b832;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_ULONGLONGINT:
@@ -14249,388 +14045,372 @@ LAB_0805abec:
                 arg_12._0_4_ = *(undefined4 *)&a.arg[dp->arg_index].a;
                 local_508 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)pauVar11[2] = &_cw;
-                  *(undefined4 *)(pauVar11[1] + 4) = (undefined4)arg_12;
-                  *(undefined4 *)(pauVar11[1] + 8) = arg_12._4_4_;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805b940;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(undefined4 *)(pauVar10[1] + 4) = (undefined4)arg_12;
+                  *(undefined4 *)(pauVar10[1] + 8) = arg_12._4_4_;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b940;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(undefined4 *)pauVar10[1] = (undefined4)arg_12;
+                  *(undefined4 *)(pauVar10[1] + 4) = arg_12._4_4_;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b8e2;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                    *(undefined4 *)pauVar11[1] = (undefined4)arg_12;
-                    *(undefined4 *)(pauVar11[1] + 4) = arg_12._4_4_;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b8e2;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805b9b8;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[2] + 4) = &_cw;
-                    *(undefined4 *)(pauVar11[1] + 8) = (undefined4)arg_12;
-                    *(undefined4 *)pauVar11[2] = arg_12._4_4_;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805b9a8;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b9b8;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[2] + 4) = &_cw;
+                  *(undefined4 *)(pauVar10[1] + 8) = (undefined4)arg_12;
+                  *(undefined4 *)pauVar10[2] = arg_12._4_4_;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b9a8;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_DOUBLE:
                 arg_13 = *(double *)&a.arg[dp->arg_index].a;
                 local_50c = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)pauVar11[2] = &_cw;
-                  *(double *)(pauVar11[1] + 4) = arg_13;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805ba99;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(double *)(pauVar10[1] + 4) = arg_13;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ba99;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(double *)pauVar10[1] = arg_13;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ba45;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                    *(double *)pauVar11[1] = arg_13;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805ba45;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805bb07;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[2] + 4) = &_cw;
-                    *(double *)(pauVar11[1] + 8) = arg_13;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805baf7;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805bb07;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[2] + 4) = &_cw;
+                  *(double *)(pauVar10[1] + 8) = arg_13;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805baf7;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_LONGDOUBLE:
-                paVar1 = a.arg + dp->arg_index;
-                arg_14._8_4_ = *(undefined4 *)((int)&paVar1->a + 8);
-                arg_14._4_4_ = *(undefined4 *)((int)&paVar1->a + 4);
-                arg_14._0_4_ = *(undefined4 *)&paVar1->a;
+                sVar8 = dp->arg_index;
+                arg_14._8_4_ = *(undefined4 *)((int)&a.arg[sVar8].a + 8);
+                arg_14._4_4_ = *(undefined4 *)((int)&a.arg[sVar8].a + 4);
+                arg_14._0_4_ = *(undefined4 *)&a.arg[sVar8].a;
                 local_510 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[2] + 4) = &_cw;
-                  *(undefined4 *)(pauVar11[1] + 4) = arg_14._0_4_;
-                  *(undefined4 *)(pauVar11[1] + 8) = arg_14._4_4_;
-                  *(undefined4 *)pauVar11[2] = arg_14._8_4_;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805bc22;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[2] + 4) = &_cw;
+                  *(undefined4 *)(pauVar10[1] + 4) = arg_14._0_4_;
+                  *(undefined4 *)(pauVar10[1] + 8) = arg_14._4_4_;
+                  *(undefined4 *)pauVar10[2] = arg_14._8_4_;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bc22;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(undefined4 *)pauVar10[1] = arg_14._0_4_;
+                  *(undefined4 *)(pauVar10[1] + 4) = arg_14._4_4_;
+                  *(undefined4 *)(pauVar10[1] + 8) = arg_14._8_4_;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bbba;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(undefined4 *)pauVar11[1] = arg_14._0_4_;
-                    *(undefined4 *)(pauVar11[1] + 4) = arg_14._4_4_;
-                    *(undefined4 *)(pauVar11[1] + 8) = arg_14._8_4_;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805bbba;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805bca4;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[2] + 8) = &_cw;
-                    *(undefined4 *)(pauVar11[1] + 8) = arg_14._0_4_;
-                    *(undefined4 *)pauVar11[2] = arg_14._4_4_;
-                    *(undefined4 *)(pauVar11[2] + 4) = arg_14._8_4_;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805bc94;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805bca4;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[2] + 8) = &_cw;
+                  *(undefined4 *)(pauVar10[1] + 8) = arg_14._0_4_;
+                  *(undefined4 *)pauVar10[2] = arg_14._4_4_;
+                  *(undefined4 *)(pauVar10[2] + 4) = arg_14._8_4_;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bc94;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_CHAR:
                 arg_15 = *(int *)&a.arg[dp->arg_index].a;
                 local_514 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                  *(int *)(pauVar11[1] + 4) = arg_15;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805bd85;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(int *)(pauVar10[1] + 4) = arg_15;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bd85;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
+                  *(int *)pauVar10[1] = arg_15;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bd31;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 4) = &_cw;
-                    *(int *)pauVar11[1] = arg_15;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805bd31;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805bdf3;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(int *)(pauVar11[1] + 8) = arg_15;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805bde3;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805bdf3;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(int *)(pauVar10[1] + 8) = arg_15;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bde3;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_WIDE_CHAR:
                 arg_16 = *(wint_t *)&a.arg[dp->arg_index].a;
                 local_518 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                  *(wint_t *)(pauVar11[1] + 4) = arg_16;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805bed4;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(wint_t *)(pauVar10[1] + 4) = arg_16;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bed4;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
+                  *(wint_t *)pauVar10[1] = arg_16;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805be80;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 4) = &_cw;
-                    *(wint_t *)pauVar11[1] = arg_16;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805be80;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805bf42;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(wint_t *)(pauVar11[1] + 8) = arg_16;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805bf32;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805bf42;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(wint_t *)(pauVar10[1] + 8) = arg_16;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bf32;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_STRING:
                 arg_17 = *(char **)&a.arg[dp->arg_index].a;
                 local_51c = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                  *(char **)(pauVar11[1] + 4) = arg_17;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805c023;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(char **)(pauVar10[1] + 4) = arg_17;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c023;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
+                  *(char **)pauVar10[1] = arg_17;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bfcf;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 4) = &_cw;
-                    *(char **)pauVar11[1] = arg_17;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805bfcf;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805c091;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(char **)(pauVar11[1] + 8) = arg_17;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805c081;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c091;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(char **)(pauVar10[1] + 8) = arg_17;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c081;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_WIDE_STRING:
                 arg_18 = *(wchar_t **)&a.arg[dp->arg_index].a;
                 local_520 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                  *(wchar_t **)(pauVar11[1] + 4) = arg_18;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805c172;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(wchar_t **)(pauVar10[1] + 4) = arg_18;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c172;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
+                  *(wchar_t **)pauVar10[1] = arg_18;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c11e;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 4) = &_cw;
-                    *(wchar_t **)pauVar11[1] = arg_18;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805c11e;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805c1e0;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(wchar_t **)(pauVar11[1] + 8) = arg_18;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805c1d0;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c1e0;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(wchar_t **)(pauVar10[1] + 8) = arg_18;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c1d0;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 break;
               case TYPE_POINTER:
                 arg_19 = *(void **)&a.arg[dp->arg_index].a;
                 local_524 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar10 = result + length;
-                  *(fpucw_t **)(pauVar11[1] + 8) = &_cw;
-                  *(void **)(pauVar11[1] + 4) = arg_19;
-                  *(int *)pauVar11[1] = iVar7;
-                  *(char **)(*pauVar11 + 8) = buf;
-                  *(size_t *)(*pauVar11 + 4) = maxlen;
-                  *(char **)*pauVar11 = pcVar10;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805c2c1;
-                  retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                      *(char **)(*pauVar11 + 8));
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
+                  *(void **)(pauVar10[1] + 4) = arg_19;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c2c1;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
+                }
+                else if (prefix_count == 0) {
+                  pcVar9 = result + length;
+                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
+                  *(void **)pauVar10[1] = arg_19;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c26d;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
                 else {
-                  if (prefix_count == 0) {
-                    pcVar10 = result + length;
-                    *(fpucw_t **)(pauVar11[1] + 4) = &_cw;
-                    *(void **)pauVar11[1] = arg_19;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805c26d;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
-                  }
-                  else {
-                    if (prefix_count != 2) {
+                  if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805c329;
-                      abort(pauVar11[-1][8]);
-                    }
-                    pcVar10 = result + length;
-                    *(fpucw_t **)pauVar11[2] = &_cw;
-                    *(void **)(pauVar11[1] + 8) = arg_19;
-                    *(int *)(pauVar11[1] + 4) = iVar6;
-                    *(int *)pauVar11[1] = iVar7;
-                    *(char **)(*pauVar11 + 8) = buf;
-                    *(size_t *)(*pauVar11 + 4) = maxlen;
-                    *(char **)*pauVar11 = pcVar10;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805c31c;
-                    retcount = snprintf(*(char **)*pauVar11,*(size_t *)(*pauVar11 + 4),
-                                        *(char **)(*pauVar11 + 8));
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c329;
+                    abort();
                   }
+                  pcVar9 = result + length;
+                  *(fpucw_t **)pauVar10[2] = &_cw;
+                  *(void **)(pauVar10[1] + 8) = arg_19;
+                  *(int *)(pauVar10[1] + 4) = iVar5;
+                  *(int *)pauVar10[1] = iVar6;
+                  *(char **)(*pauVar10 + 8) = buf;
+                  *(size_t *)(*pauVar10 + 4) = maxlen;
+                  *(char **)*pauVar10 = pcVar9;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c31c;
+                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
+                                      *(char **)(*pauVar10 + 8));
                 }
               }
               if ((int)__cw < 0) {
@@ -14645,11 +14425,11 @@ LAB_0805abec:
                   else {
                     local_49c = allocated * 2;
                   }
-                  *(undefined **)(*pauVar11 + 4) = &DAT_0000000c;
-                  *(int *)*pauVar11 = local_49c;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805c3ef;
-                  sVar9 = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
-                  if (allocated < sVar9) {
+                  *(undefined **)(*pauVar10 + 4) = &DAT_0000000c;
+                  *(int *)*pauVar10 = local_49c;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c3ef;
+                  sVar8 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                  if (allocated < sVar8) {
                     if (allocated == 0) {
                       local_498 = 0xc;
                     }
@@ -14663,29 +14443,29 @@ LAB_0805abec:
                       local_498 = local_494;
                     }
                     allocated = local_498;
-                    if (local_498 < sVar9) {
-                      allocated = sVar9;
+                    if (local_498 < sVar8) {
+                      allocated = sVar8;
                     }
                     if (allocated == 0xffffffff) goto out_of_memory;
                     if ((result == local_470) || (result == (char *)0x0)) {
-                      *(size_t *)*pauVar11 = allocated;
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805c4b0;
-                      memory_4 = (char *)malloc(*(size_t *)*pauVar11);
+                      *(size_t *)*pauVar10 = allocated;
+                      *(undefined4 *)(pauVar10[-1] + 8) = 0x805c4b0;
+                      memory_4 = (char *)malloc(*(size_t *)*pauVar10);
                     }
                     else {
-                      *(size_t *)(*pauVar11 + 4) = allocated;
-                      *(char **)*pauVar11 = result;
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805c4d0;
-                      memory_4 = (char *)realloc(*(void **)*pauVar11,*(size_t *)(*pauVar11 + 4));
+                      *(size_t *)(*pauVar10 + 4) = allocated;
+                      *(char **)*pauVar10 = result;
+                      *(undefined4 *)(pauVar10[-1] + 8) = 0x805c4d0;
+                      memory_4 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
                     }
                     if (memory_4 == (char *)0x0) goto out_of_memory;
                     if ((result == local_470) && (length != 0)) {
-                      *(size_t *)(*pauVar11 + 8) = length;
-                      *(char **)(*pauVar11 + 4) = result;
-                      *(char **)*pauVar11 = memory_4;
-                      *(undefined4 *)(pauVar11[-1] + 8) = 0x805c51c;
-                      memcpy(*(void **)*pauVar11,*(void **)(*pauVar11 + 4),
-                             *(size_t *)(*pauVar11 + 8));
+                      *(size_t *)(*pauVar10 + 8) = length;
+                      *(char **)(*pauVar10 + 4) = result;
+                      *(char **)*pauVar10 = memory_4;
+                      *(undefined4 *)(pauVar10[-1] + 8) = 0x805c51c;
+                      memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),
+                             *(size_t *)(*pauVar10 + 8));
                     }
                     result = memory_4;
                   }
@@ -14696,8 +14476,8 @@ LAB_0805abec:
               else {
                 if ((__cw < maxlen) && (result[__cw + length] != '\0')) {
                     // WARNING: Subroutine does not return
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805c364;
-                  abort(pauVar11[-1][8]);
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c364;
+                  abort();
                 }
                 if ((int)__cw < retcount) {
                   __cw = retcount;
@@ -14705,52 +14485,52 @@ LAB_0805abec:
               }
               if ((int)__cw < 0) {
                 if ((result != local_470) && (result != (char *)0x0)) {
-                  *(char **)*pauVar11 = result;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805c568;
-                  free(*(void **)*pauVar11);
+                  *(char **)*pauVar10 = result;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c568;
+                  free(*(void **)*pauVar10);
                 }
                 if (buf_malloced != (char *)0x0) {
-                  *(char **)*pauVar11 = buf_malloced;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805c57f;
-                  free(*(void **)*pauVar11);
+                  *(char **)*pauVar10 = buf_malloced;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c57f;
+                  free(*(void **)*pauVar10);
                 }
-                *(char_directive **)*pauVar11 = d.dir;
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x805c58d;
-                free(*(void **)*pauVar11);
+                *(char_directive **)*pauVar10 = d.dir;
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x805c58d;
+                free(*(void **)*pauVar10);
                 if (a.arg != (argument *)0x0) {
-                  *(argument **)*pauVar11 = a.arg;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805c5a5;
-                  free(*(void **)*pauVar11);
+                  *(argument **)*pauVar10 = a.arg;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c5a5;
+                  free(*(void **)*pauVar10);
                 }
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x805c5aa;
-                piVar8 = __errno_location(pauVar11[-1][8]);
-                *piVar8 = 0x16;
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x805c5aa;
+                piVar7 = __errno_location();
+                *piVar7 = 0x16;
                 local_4d4 = (char *)0x0;
                 goto LAB_0805cab6;
               }
               if (maxlen <= __cw + 1) {
                 if (maxlen == 0x7fffffff) {
                   if ((result != local_470) && (result != (char *)0x0)) {
-                    *(char **)*pauVar11 = result;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805c9eb;
-                    free(*(void **)*pauVar11);
+                    *(char **)*pauVar10 = result;
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c9eb;
+                    free(*(void **)*pauVar10);
                   }
                   if (buf_malloced != (char *)0x0) {
-                    *(char **)*pauVar11 = buf_malloced;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805ca02;
-                    free(*(void **)*pauVar11);
+                    *(char **)*pauVar10 = buf_malloced;
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805ca02;
+                    free(*(void **)*pauVar10);
                   }
-                  *(char_directive **)*pauVar11 = d.dir;
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805ca10;
-                  free(*(void **)*pauVar11);
+                  *(char_directive **)*pauVar10 = d.dir;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ca10;
+                  free(*(void **)*pauVar10);
                   if (a.arg != (argument *)0x0) {
-                    *(argument **)*pauVar11 = a.arg;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805ca28;
-                    free(*(void **)*pauVar11);
+                    *(argument **)*pauVar10 = a.arg;
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805ca28;
+                    free(*(void **)*pauVar10);
                   }
-                  *(undefined4 *)(pauVar11[-1] + 8) = 0x805ca2d;
-                  piVar8 = __errno_location(pauVar11[-1][8]);
-                  *piVar8 = 0x4b;
+                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ca2d;
+                  piVar7 = __errno_location();
+                  *piVar7 = 0x4b;
                   local_4d4 = (char *)0x0;
                   goto LAB_0805cab6;
                 }
@@ -14760,15 +14540,15 @@ LAB_0805abec:
                 else {
                   local_490 = allocated * 2;
                 }
-                *(uint *)(*pauVar11 + 4) = __cw + 2;
-                *(size_t *)*pauVar11 = length;
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x805c623;
-                sVar9 = xsum(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
-                *(int *)(*pauVar11 + 4) = local_490;
-                *(size_t *)*pauVar11 = sVar9;
-                *(undefined4 *)(pauVar11[-1] + 8) = 0x805c635;
-                sVar9 = xmax(*(size_t *)*pauVar11,*(size_t *)(*pauVar11 + 4));
-                if (allocated < sVar9) {
+                *(uint *)(*pauVar10 + 4) = __cw + 2;
+                *(size_t *)*pauVar10 = length;
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x805c623;
+                sVar8 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                *(int *)(*pauVar10 + 4) = local_490;
+                *(size_t *)*pauVar10 = sVar8;
+                *(undefined4 *)(pauVar10[-1] + 8) = 0x805c635;
+                sVar8 = xmax(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                if (allocated < sVar8) {
                   if (allocated == 0) {
                     local_48c = 0xc;
                   }
@@ -14782,28 +14562,28 @@ LAB_0805abec:
                     local_48c = local_488;
                   }
                   allocated = local_48c;
-                  if (local_48c < sVar9) {
-                    allocated = sVar9;
+                  if (local_48c < sVar8) {
+                    allocated = sVar8;
                   }
                   if (allocated == 0xffffffff) goto out_of_memory;
                   if ((result == local_470) || (result == (char *)0x0)) {
-                    *(size_t *)*pauVar11 = allocated;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805c6f6;
-                    memory_5 = (char *)malloc(*(size_t *)*pauVar11);
+                    *(size_t *)*pauVar10 = allocated;
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c6f6;
+                    memory_5 = (char *)malloc(*(size_t *)*pauVar10);
                   }
                   else {
-                    *(size_t *)(*pauVar11 + 4) = allocated;
-                    *(char **)*pauVar11 = result;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805c716;
-                    memory_5 = (char *)realloc(*(void **)*pauVar11,*(size_t *)(*pauVar11 + 4));
+                    *(size_t *)(*pauVar10 + 4) = allocated;
+                    *(char **)*pauVar10 = result;
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c716;
+                    memory_5 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
                   }
                   if (memory_5 == (char *)0x0) goto out_of_memory;
                   if ((result == local_470) && (length != 0)) {
-                    *(size_t *)(*pauVar11 + 8) = length;
-                    *(char **)(*pauVar11 + 4) = result;
-                    *(char **)*pauVar11 = memory_5;
-                    *(undefined4 *)(pauVar11[-1] + 8) = 0x805c762;
-                    memcpy(*(void **)*pauVar11,*(void **)(*pauVar11 + 4),*(size_t *)(*pauVar11 + 8))
+                    *(size_t *)(*pauVar10 + 8) = length;
+                    *(char **)(*pauVar10 + 4) = result;
+                    *(char **)*pauVar10 = memory_5;
+                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c762;
+                    memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8))
                     ;
                   }
                   result = memory_5;
@@ -14820,28 +14600,28 @@ LAB_0805c77f:
         } while( true );
       }
       buf_memsize = buf_neededlength;
-      pauVar11 = (undefined (*) [12])&stack0xfffffaa4;
+      pauVar10 = (undefined (*) [12])&stack0xfffffaa4;
       if (buf_neededlength != 0xffffffff) {
         buf = (char *)malloc(buf_neededlength);
-        pauVar11 = (undefined (*) [12])&stack0xfffffaa4;
+        pauVar10 = (undefined (*) [12])&stack0xfffffaa4;
         if (buf != (char *)0x0) {
           buf_malloced = buf;
-          pauVar11 = (undefined (*) [12])&stack0xfffffaa4;
+          pauVar10 = (undefined (*) [12])&stack0xfffffaa4;
           goto LAB_08059831;
         }
       }
 out_of_memory_1:
-      *(char_directive **)pauVar11 = d.dir;
-      *(undefined4 *)((int)pauVar11 + -4) = 0x805ca89;
-      free(*(void **)pauVar11);
+      *(char_directive **)pauVar10 = d.dir;
+      *(undefined4 *)((int)pauVar10 + -4) = 0x805ca89;
+      free(*(void **)pauVar10);
       if (a.arg != (argument *)0x0) {
-        *(argument **)pauVar11 = a.arg;
-        *(undefined4 *)((int)pauVar11 + -4) = 0x805caa1;
-        free(*(void **)pauVar11);
+        *(argument **)pauVar10 = a.arg;
+        *(undefined4 *)((int)pauVar10 + -4) = 0x805caa1;
+        free(*(void **)pauVar10);
       }
-      *(undefined4 *)((int)pauVar11 + -4) = 0x805caa6;
-      piVar8 = __errno_location(*(undefined *)((int)pauVar11 + -4));
-      *piVar8 = 0xc;
+      *(undefined4 *)((int)pauVar10 + -4) = 0x805caa6;
+      piVar7 = __errno_location();
+      *piVar7 = 0xc;
       local_4d4 = (char *)0x0;
     }
   }
@@ -14850,7 +14630,7 @@ LAB_0805cab6:
     return local_4d4;
   }
                     // WARNING: Subroutine does not return
-  *(undefined4 *)((int)pauVar11 + -4) = 0x805cacd;
+  *(undefined4 *)((int)pauVar10 + -4) = 0x805cacd;
   __stack_chk_fail();
 }
 
@@ -14908,13 +14688,11 @@ int rpl_isnanl(longdouble x)
   if (((undefined  [12])x & (undefined  [12])0x7fff) == (undefined  [12])0x0) {
     local_20 = x._4_4_ >> 0x1f;
   }
+  else if ((x._8_4_ & 0x7fff) == 0x7fff) {
+    local_20 = (uint)((x._0_4_ | x._4_4_ ^ 0x80000000) != 0);
+  }
   else {
-    if ((x._8_4_ & 0x7fff) == 0x7fff) {
-      local_20 = (uint)((x._0_4_ | x._4_4_ ^ 0x80000000) != 0);
-    }
-    else {
-      local_20 = x._4_4_ >> 0x1f ^ 1;
-    }
+    local_20 = x._4_4_ >> 0x1f ^ 1;
   }
   return local_20;
 }
@@ -14932,7 +14710,7 @@ int printf_fetchargs(va_list args,arguments *a)
   
   i = 0;
   ap = a->arg;
-  while (i < a->count) {
+  for (; i < a->count; i = i + 1) {
     switch(ap->type) {
     default:
       return -1;
@@ -15040,7 +14818,6 @@ int printf_fetchargs(va_list args,arguments *a)
       *(undefined4 *)&ap->a = *(undefined4 *)args;
       args = args + 4;
     }
-    i = i + 1;
     ap = ap + 1;
   }
   return 0;
@@ -15051,11 +14828,11 @@ int printf_fetchargs(va_list args,arguments *a)
 int printf_parse(char *format,char_directives *d,arguments *a)
 
 {
-  uint uVar1;
-  size_t sVar2;
-  char *pcVar3;
-  char_directive *pcVar4;
-  int *piVar5;
+  size_t sVar1;
+  char *pcVar2;
+  char_directive *pcVar3;
+  int *piVar4;
+  uint uVar5;
   size_t local_c8;
   size_t local_c0;
   uint local_bc;
@@ -15107,49 +14884,47 @@ int printf_parse(char *format,char_directives *d,arguments *a)
   max_precision_length = 0;
   d->count = 0;
   d_allocated = 1;
-  pcVar4 = (char_directive *)malloc(0x2c);
-  d->dir = pcVar4;
+  pcVar3 = (char_directive *)malloc(0x2c);
+  d->dir = pcVar3;
   if (d->dir == (char_directive *)0x0) {
 out_of_memory_1:
-    piVar5 = __errno_location();
-    *piVar5 = 0xc;
+    piVar4 = __errno_location();
+    *piVar4 = 0xc;
     return -1;
   }
   a->count = 0;
   a_allocated = 0;
   a->arg = (argument *)0x0;
-  pcVar3 = cp;
+  pcVar2 = cp;
 LAB_0805dc15:
   do {
-    cp = pcVar3;
+    cp = pcVar2;
     if (*cp == '\0') {
       d->dir[d->count].dir_start = cp;
       d->max_width_length = max_width_length;
       d->max_precision_length = max_precision_length;
       return 0;
     }
-    pcVar3 = cp + 1;
+    pcVar2 = cp + 1;
   } while (*cp != '%');
   arg_index = 0xffffffff;
-  pcVar4 = d->dir + d->count;
-  pcVar4->dir_start = cp;
-  pcVar4->flags = 0;
-  pcVar4->width_start = (char *)0x0;
-  pcVar4->width_end = (char *)0x0;
-  pcVar4->width_arg_index = 0xffffffff;
-  pcVar4->precision_start = (char *)0x0;
-  pcVar4->precision_end = (char *)0x0;
-  pcVar4->precision_arg_index = 0xffffffff;
-  pcVar4->arg_index = 0xffffffff;
-  cp = pcVar3;
-  if (('/' < *pcVar3) && (np = pcVar3, *pcVar3 < ':')) {
-    while (('/' < *np && (*np < ':'))) {
-      np = np + 1;
+  pcVar3 = d->dir + d->count;
+  pcVar3->dir_start = cp;
+  pcVar3->flags = 0;
+  pcVar3->width_start = (char *)0x0;
+  pcVar3->width_end = (char *)0x0;
+  pcVar3->width_arg_index = 0xffffffff;
+  pcVar3->precision_start = (char *)0x0;
+  pcVar3->precision_end = (char *)0x0;
+  pcVar3->precision_arg_index = 0xffffffff;
+  pcVar3->arg_index = 0xffffffff;
+  cp = pcVar2;
+  if (('/' < *pcVar2) && (np = pcVar2, *pcVar2 < ':')) {
+    for (; ('/' < *np && (*np < ':')); np = np + 1) {
     }
     if (*np == '$') {
       n = 0;
-      np = pcVar3;
-      while (('/' < *np && (*np < ':'))) {
+      for (np = pcVar2; ('/' < *np && (*np < ':')); np = np + 1) {
         if (n < 0x1999999a) {
           local_c8 = n * 10;
         }
@@ -15157,7 +14932,6 @@ LAB_0805dc15:
           local_c8 = 0xffffffff;
         }
         n = xsum(local_c8,(int)*np - 0x30);
-        np = np + 1;
       }
       if ((n == 0) || (n == 0xffffffff)) goto error;
       arg_index = n - 1;
@@ -15169,45 +14943,42 @@ LAB_0805dc15:
       while( true ) {
         while( true ) {
           while( true ) {
-            while (*cp == '\'') {
-              pcVar4->flags = pcVar4->flags | 1;
-              cp = cp + 1;
+            for (; *cp == '\''; cp = cp + 1) {
+              pcVar3->flags = pcVar3->flags | 1;
             }
             if (*cp != '-') break;
-            pcVar4->flags = pcVar4->flags | 2;
+            pcVar3->flags = pcVar3->flags | 2;
             cp = cp + 1;
           }
           if (*cp != '+') break;
-          pcVar4->flags = pcVar4->flags | 4;
+          pcVar3->flags = pcVar3->flags | 4;
           cp = cp + 1;
         }
         if (*cp != ' ') break;
-        pcVar4->flags = pcVar4->flags | 8;
+        pcVar3->flags = pcVar3->flags | 8;
         cp = cp + 1;
       }
       if (*cp != '#') break;
-      pcVar4->flags = pcVar4->flags | 0x10;
+      pcVar3->flags = pcVar3->flags | 0x10;
       cp = cp + 1;
     }
     if (*cp != '0') break;
-    pcVar4->flags = pcVar4->flags | 0x20;
+    pcVar3->flags = pcVar3->flags | 0x20;
     cp = cp + 1;
   }
   if (*cp == '*') {
-    pcVar4->width_start = cp;
+    pcVar3->width_start = cp;
     cp = cp + 1;
-    pcVar4->width_end = cp;
+    pcVar3->width_end = cp;
     if (max_width_length == 0) {
       max_width_length = 1;
     }
     if (('/' < *cp) && (np_1 = cp, *cp < ':')) {
-      while (('/' < *np_1 && (*np_1 < ':'))) {
-        np_1 = np_1 + 1;
+      for (; ('/' < *np_1 && (*np_1 < ':')); np_1 = np_1 + 1) {
       }
       if (*np_1 == '$') {
         n_1 = 0;
-        np_1 = cp;
-        while (('/' < *np_1 && (*np_1 < ':'))) {
+        for (np_1 = cp; ('/' < *np_1 && (*np_1 < ':')); np_1 = np_1 + 1) {
           if (n_1 < 0x1999999a) {
             local_c0 = n_1 * 10;
           }
@@ -15215,32 +14986,29 @@ LAB_0805dc15:
             local_c0 = 0xffffffff;
           }
           n_1 = xsum(local_c0,(int)*np_1 - 0x30);
-          np_1 = np_1 + 1;
         }
         if ((n_1 == 0) || (n_1 == 0xffffffff)) goto error;
-        pcVar4->width_arg_index = n_1 - 1;
+        pcVar3->width_arg_index = n_1 - 1;
         cp = np_1 + 1;
       }
     }
-    if (pcVar4->width_arg_index == 0xffffffff) {
-      pcVar4->width_arg_index = arg_posn;
+    if (pcVar3->width_arg_index == 0xffffffff) {
+      pcVar3->width_arg_index = arg_posn;
       arg_posn = arg_posn + 1;
-      if (pcVar4->width_arg_index == 0xffffffff) goto error;
+      if (pcVar3->width_arg_index == 0xffffffff) goto error;
     }
-    uVar1 = pcVar4->width_arg_index;
-    if (uVar1 < a_allocated) {
+    uVar5 = pcVar3->width_arg_index;
+    if (uVar5 < a_allocated) {
 LAB_0805d399:
-      while (a->count <= uVar1) {
-        sVar2 = a->count;
-        a->arg[sVar2].type = TYPE_NONE;
-        a->count = sVar2 + 1;
+      while (a->count <= uVar5) {
+        sVar1 = a->count;
+        a->arg[sVar1].type = TYPE_NONE;
+        a->count = sVar1 + 1;
       }
-      if (a->arg[uVar1].type == TYPE_NONE) {
-        a->arg[uVar1].type = TYPE_INT;
+      if (a->arg[uVar5].type == TYPE_NONE) {
+        a->arg[uVar5].type = TYPE_INT;
       }
-      else {
-        if (a->arg[uVar1].type != TYPE_INT) goto error;
-      }
+      else if (a->arg[uVar5].type != TYPE_INT) goto error;
       goto LAB_0805d453;
     }
     if ((int)a_allocated < 0) {
@@ -15250,8 +15018,8 @@ LAB_0805d399:
       local_bc = a_allocated * 2;
     }
     a_allocated = local_bc;
-    if (local_bc <= uVar1) {
-      a_allocated = xsum(uVar1,1);
+    if (local_bc <= uVar5) {
+      a_allocated = xsum(uVar5,1);
     }
     if (a_allocated < 0x10000000) {
       local_b8 = a_allocated << 4;
@@ -15274,43 +15042,40 @@ LAB_0805d399:
     goto out_of_memory;
   }
   if (('/' < *cp) && (*cp < ':')) {
-    pcVar4->width_start = cp;
-    while (('/' < *cp && (*cp < ':'))) {
-      cp = cp + 1;
+    pcVar3->width_start = cp;
+    for (; ('/' < *cp && (*cp < ':')); cp = cp + 1) {
     }
-    pcVar4->width_end = cp;
-    if (max_width_length < pcVar4->width_end + -(int)pcVar4->width_start) {
-      max_width_length = (size_t)(pcVar4->width_end + -(int)pcVar4->width_start);
+    pcVar3->width_end = cp;
+    uVar5 = (int)pcVar3->width_end - (int)pcVar3->width_start;
+    if (max_width_length < uVar5) {
+      max_width_length = uVar5;
     }
   }
 LAB_0805d453:
   if (*cp == '.') {
     if (cp[1] != '*') {
-      pcVar4->precision_start = cp;
-      cp = cp + 1;
-      while (('/' < *cp && (*cp < ':'))) {
-        cp = cp + 1;
+      pcVar3->precision_start = cp;
+      for (cp = cp + 1; ('/' < *cp && (*cp < ':')); cp = cp + 1) {
       }
-      pcVar4->precision_end = cp;
-      if (max_precision_length < pcVar4->precision_end + -(int)pcVar4->precision_start) {
-        max_precision_length = (size_t)(pcVar4->precision_end + -(int)pcVar4->precision_start);
+      pcVar3->precision_end = cp;
+      uVar5 = (int)pcVar3->precision_end - (int)pcVar3->precision_start;
+      if (max_precision_length < uVar5) {
+        max_precision_length = uVar5;
       }
       goto LAB_0805d75c;
     }
-    pcVar4->precision_start = cp;
+    pcVar3->precision_start = cp;
     cp = cp + 2;
-    pcVar4->precision_end = cp;
+    pcVar3->precision_end = cp;
     if (max_precision_length < 2) {
       max_precision_length = 2;
     }
     if (('/' < *cp) && (np_2 = cp, *cp < ':')) {
-      while (('/' < *np_2 && (*np_2 < ':'))) {
-        np_2 = np_2 + 1;
+      for (; ('/' < *np_2 && (*np_2 < ':')); np_2 = np_2 + 1) {
       }
       if (*np_2 == '$') {
         n_3 = 0;
-        np_2 = cp;
-        while (('/' < *np_2 && (*np_2 < ':'))) {
+        for (np_2 = cp; ('/' < *np_2 && (*np_2 < ':')); np_2 = np_2 + 1) {
           if (n_3 < 0x1999999a) {
             local_ac = n_3 * 10;
           }
@@ -15318,32 +15083,29 @@ LAB_0805d453:
             local_ac = 0xffffffff;
           }
           n_3 = xsum(local_ac,(int)*np_2 - 0x30);
-          np_2 = np_2 + 1;
         }
         if ((n_3 == 0) || (n_3 == 0xffffffff)) goto error;
-        pcVar4->precision_arg_index = n_3 - 1;
+        pcVar3->precision_arg_index = n_3 - 1;
         cp = np_2 + 1;
       }
     }
-    if (pcVar4->precision_arg_index == 0xffffffff) {
-      pcVar4->precision_arg_index = arg_posn;
+    if (pcVar3->precision_arg_index == 0xffffffff) {
+      pcVar3->precision_arg_index = arg_posn;
       arg_posn = arg_posn + 1;
-      if (pcVar4->precision_arg_index == 0xffffffff) goto error;
+      if (pcVar3->precision_arg_index == 0xffffffff) goto error;
     }
-    uVar1 = pcVar4->precision_arg_index;
-    if (uVar1 < a_allocated) {
+    uVar5 = pcVar3->precision_arg_index;
+    if (uVar5 < a_allocated) {
 LAB_0805d6b6:
-      while (a->count <= uVar1) {
-        sVar2 = a->count;
-        a->arg[sVar2].type = TYPE_NONE;
-        a->count = sVar2 + 1;
+      while (a->count <= uVar5) {
+        sVar1 = a->count;
+        a->arg[sVar1].type = TYPE_NONE;
+        a->count = sVar1 + 1;
       }
-      if (a->arg[uVar1].type == TYPE_NONE) {
-        a->arg[uVar1].type = TYPE_INT;
+      if (a->arg[uVar5].type == TYPE_NONE) {
+        a->arg[uVar5].type = TYPE_INT;
       }
-      else {
-        if (a->arg[uVar1].type != TYPE_INT) goto error;
-      }
+      else if (a->arg[uVar5].type != TYPE_INT) goto error;
       goto LAB_0805d75c;
     }
     if ((int)a_allocated < 0) {
@@ -15353,8 +15115,8 @@ LAB_0805d6b6:
       local_a8 = a_allocated * 2;
     }
     a_allocated = local_a8;
-    if (local_a8 <= uVar1) {
-      a_allocated = xsum(uVar1,1);
+    if (local_a8 <= uVar5) {
+      a_allocated = xsum(uVar5,1);
     }
     if (a_allocated < 0x10000000) {
       local_a4 = a_allocated << 4;
@@ -15383,9 +15145,8 @@ LAB_0805d75c:
       while( true ) {
         while( true ) {
           while( true ) {
-            while (*cp == 'h') {
+            for (; *cp == 'h'; cp = cp + 1) {
               flags = flags | 1 << ((byte)flags & 1);
-              cp = cp + 1;
             }
             if (*cp != 'L') break;
             flags = flags | 4;
@@ -15406,7 +15167,7 @@ LAB_0805d75c:
     cp = cp + 1;
   }
   c = *cp;
-  pcVar3 = cp + 1;
+  pcVar2 = cp + 1;
   switch(c) {
   case '%':
     type = TYPE_NONE;
@@ -15529,36 +15290,34 @@ LAB_0805d75c:
     }
   }
   if (type == TYPE_NONE) goto LAB_0805db61;
-  pcVar4->arg_index = arg_index;
-  if (pcVar4->arg_index == 0xffffffff) {
-    pcVar4->arg_index = arg_posn;
+  pcVar3->arg_index = arg_index;
+  if (pcVar3->arg_index == 0xffffffff) {
+    pcVar3->arg_index = arg_posn;
     arg_posn = arg_posn + 1;
-    if (pcVar4->arg_index == 0xffffffff) goto error;
+    if (pcVar3->arg_index == 0xffffffff) goto error;
   }
-  uVar1 = pcVar4->arg_index;
-  if (uVar1 < a_allocated) {
+  uVar5 = pcVar3->arg_index;
+  if (uVar5 < a_allocated) {
 LAB_0805db13:
-    while (a->count <= uVar1) {
-      sVar2 = a->count;
-      a->arg[sVar2].type = TYPE_NONE;
-      a->count = sVar2 + 1;
+    while (a->count <= uVar5) {
+      sVar1 = a->count;
+      a->arg[sVar1].type = TYPE_NONE;
+      a->count = sVar1 + 1;
     }
-    if (a->arg[uVar1].type == TYPE_NONE) {
-      a->arg[uVar1].type = type;
+    if (a->arg[uVar5].type == TYPE_NONE) {
+      a->arg[uVar5].type = type;
     }
-    else {
-      if (a->arg[uVar1].type != type) {
+    else if (a->arg[uVar5].type != type) {
 error:
-        if (a->arg != (argument *)0x0) {
-          free(a->arg);
-        }
-        if (d->dir != (char_directive *)0x0) {
-          free(d->dir);
-        }
-        piVar5 = __errno_location();
-        *piVar5 = 0x16;
-        return -1;
+      if (a->arg != (argument *)0x0) {
+        free(a->arg);
       }
+      if (d->dir != (char_directive *)0x0) {
+        free(d->dir);
+      }
+      piVar4 = __errno_location();
+      *piVar4 = 0x16;
+      return -1;
     }
     goto LAB_0805db61;
   }
@@ -15569,8 +15328,8 @@ error:
     local_9c = a_allocated * 2;
   }
   a_allocated = local_9c;
-  if (local_9c <= uVar1) {
-    a_allocated = xsum(uVar1,1);
+  if (local_9c <= uVar5) {
+    a_allocated = xsum(uVar5,1);
   }
   if (a_allocated < 0x10000000) {
     local_98 = a_allocated << 4;
@@ -15592,8 +15351,8 @@ error:
   }
   goto out_of_memory;
 LAB_0805db61:
-  pcVar4->conversion = c;
-  pcVar4->dir_end = pcVar3;
+  pcVar3->conversion = c;
+  pcVar3->dir_end = pcVar2;
   d->count = d->count + 1;
   if (d_allocated <= d->count) {
     if ((int)d_allocated < 0) {
@@ -15610,7 +15369,7 @@ LAB_0805db61:
       local_8c = 0xffffffff;
     }
     if ((local_8c == 0xffffffff) ||
-       (pcVar4 = (char_directive *)realloc(d->dir,local_8c), pcVar4 == (char_directive *)0x0)) {
+       (pcVar3 = (char_directive *)realloc(d->dir,local_8c), pcVar3 == (char_directive *)0x0)) {
 out_of_memory:
       if (a->arg != (argument *)0x0) {
         free(a->arg);
@@ -15620,7 +15379,7 @@ out_of_memory:
       }
       goto out_of_memory_1;
     }
-    d->dir = pcVar4;
+    d->dir = pcVar3;
   }
   goto LAB_0805dc15;
 }
@@ -15656,7 +15415,7 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
   bool bVar9;
   uint local_20;
   uint local_18;
-  byte local_14;
+  byte bStack20;
   
   local_20 = 0;
   if ((int)param_2 < 0) {
@@ -15690,22 +15449,21 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
   if (param_4 <= param_2) {
     uVar8 = 0x1f;
     if (param_4 != 0) {
-      while (param_4 >> uVar8 == 0) {
-        uVar8 = uVar8 - 1;
+      for (; param_4 >> uVar8 == 0; uVar8 = uVar8 - 1) {
       }
     }
     if ((uVar8 ^ 0x1f) != 0) {
-      local_14 = (byte)(uVar8 ^ 0x1f);
-      bVar6 = 0x20 - local_14;
-      uVar1 = (ulonglong)(param_3 >> (bVar6 & 0x1f) | param_4 << (local_14 & 0x1f));
+      bStack20 = (byte)(uVar8 ^ 0x1f);
+      bVar6 = 0x20 - bStack20;
+      uVar1 = (ulonglong)(param_3 >> (bVar6 & 0x1f) | param_4 << (bStack20 & 0x1f));
       uVar2 = CONCAT44(param_2 >> (bVar6 & 0x1f),
-                       param_1 >> (bVar6 & 0x1f) | param_2 << (local_14 & 0x1f));
+                       param_1 >> (bVar6 & 0x1f) | param_2 << (bStack20 & 0x1f));
       uVar3 = uVar2 / uVar1;
       iVar5 = (int)uVar3;
       uVar8 = (uint)(uVar2 % uVar1);
-      lVar4 = (ulonglong)(param_3 << (local_14 & 0x1f)) * (uVar3 & 0xffffffff);
+      lVar4 = (ulonglong)(param_3 << (bStack20 & 0x1f)) * (uVar3 & 0xffffffff);
       uVar7 = (uint)((ulonglong)lVar4 >> 0x20);
-      if ((uVar8 < uVar7) || ((uVar8 == uVar7 && (param_1 << (local_14 & 0x1f) < (uint)lVar4)))) {
+      if ((uVar8 < uVar7) || ((uVar8 == uVar7 && (param_1 << (bStack20 & 0x1f) < (uint)lVar4)))) {
         uVar8 = 0;
         iVar5 = iVar5 + -1;
       }
@@ -15746,8 +15504,8 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
   uint local_44;
   uint local_40;
   int local_34;
-  byte local_30;
-  byte local_2c;
+  byte bStack48;
+  byte bStack44;
   uint local_24;
   uint local_14;
   uint local_10;
@@ -15784,8 +15542,7 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
     if (local_40 <= local_10) {
       uVar3 = 0x1f;
       if (local_40 != 0) {
-        while (local_40 >> uVar3 == 0) {
-          uVar3 = uVar3 - 1;
+        for (; local_40 >> uVar3 == 0; uVar3 = uVar3 - 1) {
         }
       }
       if ((uVar3 ^ 0x1f) == 0) {
@@ -15797,14 +15554,14 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
         local_14 = local_24;
       }
       else {
-        local_2c = (byte)(uVar3 ^ 0x1f);
-        local_30 = 0x20 - local_2c;
-        uVar3 = local_44 >> (local_30 & 0x1f) | local_40 << (local_2c & 0x1f);
-        local_44 = local_44 << (local_2c & 0x1f);
-        uVar1 = CONCAT44(local_10 >> (local_30 & 0x1f),
-                         local_24 >> (local_30 & 0x1f) | local_10 << (local_2c & 0x1f));
+        bStack44 = (byte)(uVar3 ^ 0x1f);
+        bStack48 = 0x20 - bStack44;
+        uVar3 = local_44 >> (bStack48 & 0x1f) | local_40 << (bStack44 & 0x1f);
+        local_44 = local_44 << (bStack44 & 0x1f);
+        uVar1 = CONCAT44(local_10 >> (bStack48 & 0x1f),
+                         local_24 >> (bStack48 & 0x1f) | local_10 << (bStack44 & 0x1f));
         uVar5 = (uint)(uVar1 % (ulonglong)uVar3);
-        local_24 = local_24 << (local_2c & 0x1f);
+        local_24 = local_24 << (bStack44 & 0x1f);
         lVar2 = (uVar1 / uVar3 & 0xffffffff) * (ulonglong)local_44;
         uVar6 = (uint)((ulonglong)lVar2 >> 0x20);
         uVar4 = (uint)lVar2;
@@ -15814,8 +15571,8 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
           uVar6 = (uVar6 - uVar3) - (uint)bVar7;
         }
         local_10 = (uVar5 - uVar6) - (uint)(local_24 < uVar4);
-        local_14 = local_24 - uVar4 >> (local_2c & 0x1f) | local_10 << (local_30 & 0x1f);
-        local_10 = local_10 >> (local_2c & 0x1f);
+        local_14 = local_24 - uVar4 >> (bStack44 & 0x1f) | local_10 << (bStack48 & 0x1f);
+        local_10 = local_10 >> (bStack44 & 0x1f);
       }
     }
   }
@@ -15855,8 +15612,7 @@ ulonglong __udivdi3(uint param_1,uint param_2,uint param_3,uint param_4)
   if (param_4 <= param_2) {
     uVar7 = 0x1f;
     if (param_4 != 0) {
-      while (param_4 >> uVar7 == 0) {
-        uVar7 = uVar7 - 1;
+      for (; param_4 >> uVar7 == 0; uVar7 = uVar7 - 1) {
       }
     }
     if ((uVar7 ^ 0x1f) != 0) {
@@ -15897,15 +15653,14 @@ ulonglong __umoddi3(uint param_1,uint param_2,uint param_3,uint param_4)
   uint uVar5;
   uint uVar6;
   bool bVar7;
-  byte local_24;
-  byte local_20;
+  byte bStack36;
+  byte bStack32;
   
   if (param_4 != 0) {
     if (param_4 <= param_2) {
       uVar4 = 0x1f;
       if (param_4 != 0) {
-        while (param_4 >> uVar4 == 0) {
-          uVar4 = uVar4 - 1;
+        for (; param_4 >> uVar4 == 0; uVar4 = uVar4 - 1) {
         }
       }
       if ((uVar4 ^ 0x1f) == 0) {
@@ -15916,14 +15671,14 @@ ulonglong __umoddi3(uint param_1,uint param_2,uint param_3,uint param_4)
         }
       }
       else {
-        local_20 = (byte)(uVar4 ^ 0x1f);
-        local_24 = 0x20 - local_20;
-        uVar4 = param_3 >> (local_24 & 0x1f) | param_4 << (local_20 & 0x1f);
-        param_3 = param_3 << (local_20 & 0x1f);
-        uVar1 = CONCAT44(param_2 >> (local_24 & 0x1f),
-                         param_1 >> (local_24 & 0x1f) | param_2 << (local_20 & 0x1f));
+        bStack32 = (byte)(uVar4 ^ 0x1f);
+        bStack36 = 0x20 - bStack32;
+        uVar4 = param_3 >> (bStack36 & 0x1f) | param_4 << (bStack32 & 0x1f);
+        param_3 = param_3 << (bStack32 & 0x1f);
+        uVar1 = CONCAT44(param_2 >> (bStack36 & 0x1f),
+                         param_1 >> (bStack36 & 0x1f) | param_2 << (bStack32 & 0x1f));
         uVar5 = (uint)(uVar1 % (ulonglong)uVar4);
-        param_1 = param_1 << (local_20 & 0x1f);
+        param_1 = param_1 << (bStack32 & 0x1f);
         lVar2 = (uVar1 / uVar4 & 0xffffffff) * (ulonglong)param_3;
         uVar6 = (uint)((ulonglong)lVar2 >> 0x20);
         uVar3 = (uint)lVar2;
@@ -15933,8 +15688,8 @@ ulonglong __umoddi3(uint param_1,uint param_2,uint param_3,uint param_4)
           uVar6 = (uVar6 - uVar4) - (uint)bVar7;
         }
         param_2 = (uVar5 - uVar6) - (uint)(param_1 < uVar3);
-        param_1 = param_2 << (local_24 & 0x1f) | param_1 - uVar3 >> (local_20 & 0x1f);
-        param_2 = param_2 >> (local_20 & 0x1f);
+        param_1 = param_2 << (bStack36 & 0x1f) | param_1 - uVar3 >> (bStack32 & 0x1f);
+        param_2 = param_2 >> (bStack32 & 0x1f);
       }
     }
     return CONCAT44(param_2,param_1);

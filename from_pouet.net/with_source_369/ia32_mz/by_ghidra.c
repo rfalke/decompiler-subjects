@@ -5,7 +5,7 @@ typedef unsigned char   undefined;
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __cdecl16far entry(void)
+void entry(void)
 
 {
   undefined2 *puVar1;
@@ -26,9 +26,7 @@ void __cdecl16far entry(void)
     iVar5 = iVar3;
     puVar6 = (undefined2 *)0x0;
     puVar7 = (undefined2 *)0x0;
-    iVar3 = 8;
-    while (iVar3 != 0) {
-      iVar3 = iVar3 + -1;
+    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
       puVar2 = puVar7;
       puVar7 = puVar7 + 1;
       puVar1 = puVar6;

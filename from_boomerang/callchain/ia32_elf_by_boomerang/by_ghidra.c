@@ -13,35 +13,35 @@ typedef ulong size_t;
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
+    SHT_NULL=0,
+    SHT_PROGBITS=1,
+    SHT_SYMTAB=2,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_HASH=5,
+    SHT_DYNAMIC=6,
+    SHT_NOTE=7,
+    SHT_NOBITS=8,
+    SHT_REL=9,
+    SHT_SHLIB=10,
+    SHT_DYNSYM=11,
+    SHT_INIT_ARRAY=14,
+    SHT_FINI_ARRAY=15,
+    SHT_PREINIT_ARRAY=16,
+    SHT_GROUP=17,
+    SHT_SYMTAB_SHNDX=18,
     SHT_ANDROID_REL=1610612737,
     SHT_ANDROID_RELA=1610612738,
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
     SHT_GNU_ATTRIBUTES=1879048181,
     SHT_GNU_HASH=1879048182,
     SHT_GNU_LIBLIST=1879048183,
+    SHT_CHECKSUM=1879048184,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_syminfo=1879048188,
     SHT_GNU_verdef=1879048189,
     SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
-    SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -60,81 +60,81 @@ struct Elf32_Shdr {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
+    DT_NULL=0,
+    DT_NEEDED=1,
+    DT_PLTRELSZ=2,
+    DT_PLTGOT=3,
+    DT_HASH=4,
+    DT_STRTAB=5,
+    DT_SYMTAB=6,
+    DT_RELA=7,
+    DT_RELASZ=8,
+    DT_RELAENT=9,
+    DT_STRSZ=10,
+    DT_SYMENT=11,
+    DT_INIT=12,
+    DT_FINI=13,
+    DT_SONAME=14,
+    DT_RPATH=15,
+    DT_SYMBOLIC=16,
+    DT_REL=17,
+    DT_RELSZ=18,
+    DT_RELENT=19,
+    DT_PLTREL=20,
+    DT_DEBUG=21,
+    DT_TEXTREL=22,
+    DT_JMPREL=23,
+    DT_BIND_NOW=24,
+    DT_INIT_ARRAY=25,
+    DT_FINI_ARRAY=26,
+    DT_INIT_ARRAYSZ=27,
+    DT_FINI_ARRAYSZ=28,
+    DT_RUNPATH=29,
+    DT_FLAGS=30,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_RELRSZ=35,
+    DT_RELR=36,
+    DT_RELRENT=37,
     DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELSZ=1610612752,
     DT_ANDROID_RELA=1610612753,
     DT_ANDROID_RELASZ=1610612754,
     DT_ANDROID_RELR=1879040000,
-    DT_ANDROID_RELRENT=1879040003,
     DT_ANDROID_RELRSZ=1879040001,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
-    DT_CONFIG=1879047930,
-    DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_FEATURE_1=1879047676,
-    DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
+    DT_ANDROID_RELRENT=1879040003,
     DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_CHECKSUM=1879047672,
+    DT_PLTPADSZ=1879047673,
     DT_MOVEENT=1879047674,
     DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
+    DT_FEATURE_1=1879047676,
     DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAY=32,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
-    DT_RELENT=19,
-    DT_RELR=36,
-    DT_RELRENT=37,
-    DT_RELRSZ=35,
-    DT_RELSZ=18,
-    DT_RPATH=15,
-    DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
     DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
+    DT_SYMINENT=1879047679,
+    DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
+    DT_TLSDESC_GOT=1879047927,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_LIBLIST=1879047929,
+    DT_CONFIG=1879047930,
+    DT_DEPAUDIT=1879047931,
+    DT_AUDIT=1879047932,
+    DT_PLTPAD=1879047933,
+    DT_MOVETAB=1879047934,
+    DT_SYMINFO=1879047935,
+    DT_VERSYM=1879048176,
+    DT_RELACOUNT=1879048185,
+    DT_RELCOUNT=1879048186,
+    DT_FLAGS_1=1879048187,
     DT_VERDEF=1879048188,
     DT_VERDEFNUM=1879048189,
     DT_VERNEED=1879048190,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_AUXILIARY=2147483645,
+    DT_FILTER=2147483647
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -156,17 +156,17 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_DYNAMIC=2,
-    PT_GNU_EH_FRAME=1685382480,
-    PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
     PT_NULL=0,
-    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
     PT_SHLIB=5,
-    PT_TLS=7
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType_x86;
 
 struct Elf32_Phdr {
@@ -544,12 +544,13 @@ int count_fdes(int *param_1)
   int iVar2;
   
   iVar2 = 0;
-  for (iVar1 = *param_1; iVar1 != 0; iVar1 = *(int *)(iVar1 + 4)) {
+  iVar1 = *param_1;
+  while (iVar1 != 0) {
     if ((param_1[1] != 0) && (param_1[2] != 0)) {
       iVar2 = iVar2 + 1;
     }
-    iVar1 = (int)param_1 + *param_1;
-    param_1 = (int *)(iVar1 + 4);
+    iVar1 = *(int *)((int)param_1 + *param_1 + 4);
+    param_1 = (int *)((int)param_1 + *param_1 + 4);
   }
   return iVar2;
 }
@@ -568,12 +569,13 @@ void add_fdes(int *param_1,undefined4 param_2,int *param_3,uint *param_4,uint *p
   
   local_8 = *param_4;
   local_c = *param_5;
-  iVar2 = *param_3;
-  for (iVar3 = *param_1; iVar3 != 0; iVar3 = *(int *)(iVar3 + 4)) {
-    iVar4 = iVar2;
+  iVar2 = *param_1;
+  iVar3 = *param_3;
+  while (iVar2 != 0) {
+    iVar4 = iVar3;
     if ((param_1[1] != 0) && (param_1[2] != 0)) {
-      iVar4 = iVar2 + 1;
-      fde_insert(param_2,iVar2,param_1);
+      iVar4 = iVar3 + 1;
+      fde_insert(param_2,iVar3,param_1);
       uVar1 = param_1[2];
       if (uVar1 < local_8) {
         local_8 = uVar1;
@@ -582,11 +584,11 @@ void add_fdes(int *param_1,undefined4 param_2,int *param_3,uint *param_4,uint *p
         local_c = uVar1 + param_1[3];
       }
     }
-    iVar3 = (int)param_1 + *param_1;
-    param_1 = (int *)(iVar3 + 4);
-    iVar2 = iVar4;
+    iVar2 = *(int *)((int)param_1 + *param_1 + 4);
+    iVar3 = iVar4;
+    param_1 = (int *)((int)param_1 + *param_1 + 4);
   }
-  *param_3 = iVar2;
+  *param_3 = iVar3;
   *param_4 = local_8;
   *param_5 = local_c;
   return;
@@ -627,13 +629,11 @@ void frame_init(undefined4 *param_1)
   if (piVar3 == (int *)0x0) {
     add_fdes(param_1[2],pvVar2,&local_10,&local_c,&local_8);
   }
-  else {
-    if (*piVar3 != 0) {
-      do {
-        add_fdes(*piVar3,pvVar2,&local_10,&local_c,&local_8);
-        piVar3 = piVar3 + 1;
-      } while (*piVar3 != 0);
-    }
+  else if (*piVar3 != 0) {
+    do {
+      add_fdes(*piVar3,pvVar2,&local_10,&local_c,&local_8);
+      piVar3 = piVar3 + 1;
+    } while (*piVar3 != 0);
   }
   param_1[3] = pvVar2;
   *param_1 = local_c;
@@ -696,68 +696,67 @@ byte * extract_cie_info(int param_1,char **param_2)
   char *pcVar6;
   char *pcVar7;
   char *pcVar8;
-  char *pcVar9;
-  bool bVar10;
+  bool bVar9;
   int local_8;
   
   param_1 = param_1 - (*(int *)(param_1 + 4) + -4);
-  pcVar8 = (char *)(param_1 + 9);
-  *param_2 = pcVar8;
+  pcVar6 = (char *)(param_1 + 9);
+  *param_2 = pcVar6;
   iVar4 = 1;
-  bVar10 = true;
-  pcVar7 = pcVar8;
-  pcVar9 = "";
+  bVar9 = true;
+  pcVar7 = pcVar6;
+  pcVar8 = "";
   do {
     if (iVar4 == 0) break;
     iVar4 = iVar4 + -1;
-    bVar10 = *pcVar7 == *pcVar9;
+    bVar9 = *pcVar7 == *pcVar8;
     pcVar7 = pcVar7 + 1;
-    pcVar9 = pcVar9 + 1;
-  } while (bVar10);
-  if (!bVar10) {
+    pcVar8 = pcVar8 + 1;
+  } while (bVar9);
+  if (!bVar9) {
     iVar4 = 3;
-    bVar10 = true;
+    bVar9 = true;
     pcVar7 = "eh";
     do {
       if (iVar4 == 0) break;
       iVar4 = iVar4 + -1;
-      bVar10 = *pcVar8 == *pcVar7;
-      pcVar8 = pcVar8 + 1;
+      bVar9 = *pcVar6 == *pcVar7;
+      pcVar6 = pcVar6 + 1;
       pcVar7 = pcVar7 + 1;
-    } while (bVar10);
-    if ((!bVar10) && (*(char *)(param_1 + 9) != 'z')) {
+    } while (bVar9);
+    if ((!bVar9) && (*(char *)(param_1 + 9) != 'z')) {
       return (byte *)0x0;
     }
   }
-  pcVar8 = *param_2;
+  pcVar6 = *param_2;
   uVar5 = 0xffffffff;
-  pcVar7 = pcVar8;
+  pcVar7 = pcVar6;
   do {
     if (uVar5 == 0) break;
     uVar5 = uVar5 - 1;
     cVar1 = *pcVar7;
     pcVar7 = pcVar7 + 1;
   } while (cVar1 != '\0');
-  pcVar7 = pcVar8 + (~uVar5 - 1);
-  pcVar6 = pcVar7 + 1;
+  uVar5 = ~uVar5;
   iVar4 = 3;
-  bVar10 = true;
-  pcVar9 = "eh";
+  bVar9 = true;
+  pcVar7 = pcVar6;
+  pcVar8 = "eh";
   do {
     if (iVar4 == 0) break;
     iVar4 = iVar4 + -1;
-    bVar10 = *pcVar8 == *pcVar9;
+    bVar9 = *pcVar7 == *pcVar8;
+    pcVar7 = pcVar7 + 1;
     pcVar8 = pcVar8 + 1;
-    pcVar9 = pcVar9 + 1;
-  } while (bVar10);
-  if (bVar10) {
-    param_2[1] = *(char **)(pcVar7 + 1);
-    pcVar6 = pcVar7 + 5;
+  } while (bVar9);
+  if (bVar9) {
+    param_2[1] = *(char **)(pcVar6 + uVar5);
+    uVar5 = uVar5 + 4;
   }
   else {
     param_2[1] = (char *)0x0;
   }
-  uVar2 = decode_uleb128(pcVar6,param_2 + 2);
+  uVar2 = decode_uleb128(pcVar6 + uVar5,param_2 + 2);
   pbVar3 = (byte *)decode_sleb128(uVar2,param_2 + 3);
   param_2[4] = (char *)(uint)*pbVar3;
   pbVar3 = pbVar3 + 1;
@@ -800,100 +799,98 @@ int * execute_cfa_insn(int *param_1,undefined4 *param_2,int param_3,int *param_4
       *(undefined *)(local_c + 0x5c + (int)param_2) = 1;
       param_2[local_c + 4] = local_8 * iVar6;
     }
-    else {
-      if ((bVar1 & 0xc0) == 0) {
-        switch(uVar2) {
-        case 0:
-        case 7:
-        case 8:
-          break;
-        case 1:
-          *param_4 = *piVar5;
-          piVar5 = (int *)((int)param_1 + 5);
-          break;
-        case 2:
-          *param_4 = *param_4 + (uint)*(byte *)piVar5;
-          piVar5 = (int *)((int)param_1 + 2);
-          break;
-        case 3:
-          *param_4 = *param_4 + (uint)*(ushort *)piVar5;
-          piVar5 = (int *)((int)param_1 + 3);
-          break;
-        case 4:
-          *param_4 = *param_4 + *piVar5;
-          piVar5 = (int *)((int)param_1 + 5);
-          break;
-        case 5:
-          uVar3 = decode_uleb128(piVar5,&local_c);
-          piVar5 = (int *)decode_uleb128(uVar3,&local_8);
-          iVar6 = *(int *)(param_3 + 0xc);
-          *(undefined *)(local_c + 0x5c + (int)param_2) = 1;
-          param_2[local_c + 4] = local_8 * iVar6;
-          break;
-        case 6:
-          piVar5 = (int *)decode_uleb128(piVar5,&local_c);
-          *(undefined *)(local_c + 0x5c + (int)param_2) = 0;
-          break;
-        case 9:
-          uVar3 = decode_uleb128(piVar5,&local_c);
-          piVar5 = (int *)decode_uleb128(uVar3,&local_10);
-          *(undefined *)(local_c + 0x5c + (int)param_2) = 2;
-          param_2[local_c + 4] = local_10;
-          break;
-        case 10:
-          puVar4 = (undefined4 *)malloc(0x74);
-          puVar7 = param_2;
-          puVar8 = puVar4;
-          for (iVar6 = 0x1d; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *puVar8 = *puVar7;
-            puVar7 = puVar7 + 1;
-            puVar8 = puVar8 + 1;
-          }
-          param_2[0x1c] = puVar4;
-          break;
-        case 0xb:
-          puVar7 = (undefined4 *)param_2[0x1c];
-          puVar8 = puVar7;
-          for (iVar6 = 0x1d; iVar6 != 0; iVar6 = iVar6 + -1) {
-            *param_2 = *puVar8;
-            puVar8 = puVar8 + 1;
-            param_2 = param_2 + 1;
-          }
-          free(puVar7);
-          break;
-        case 0xc:
-          uVar3 = decode_uleb128(piVar5,&local_c);
-          piVar5 = (int *)decode_uleb128(uVar3,&local_8);
-          *(undefined2 *)(param_2 + 0x16) = (undefined2)local_c;
-          param_2[2] = local_8;
-          break;
-        case 0xd:
-          piVar5 = (int *)decode_uleb128(piVar5,&local_c);
-          *(short *)(param_2 + 0x16) = (short)local_c;
-          break;
-        case 0xe:
-          piVar5 = (int *)decode_uleb128(piVar5,&local_8);
-          param_2[2] = local_8;
-          break;
-        default:
-                    // WARNING: Subroutine does not return
-          abort();
-        case 0x2d:
-          local_c = 0x10;
-          do {
-            *(undefined *)(local_c + 0x5c + (int)param_2) = 1;
-            param_2[local_c + 4] = local_c * 4 + -0x40;
-            local_c = local_c + 1;
-          } while (local_c < 0x20);
-          break;
-        case 0x2e:
-          piVar5 = (int *)decode_uleb128(piVar5,&local_8);
-          param_2[3] = local_8;
+    else if ((bVar1 & 0xc0) == 0) {
+      switch(uVar2) {
+      case 0:
+      case 7:
+      case 8:
+        break;
+      case 1:
+        *param_4 = *piVar5;
+        piVar5 = (int *)((int)param_1 + 5);
+        break;
+      case 2:
+        *param_4 = *param_4 + (uint)*(byte *)piVar5;
+        piVar5 = (int *)((int)param_1 + 2);
+        break;
+      case 3:
+        *param_4 = *param_4 + (uint)*(ushort *)piVar5;
+        piVar5 = (int *)((int)param_1 + 3);
+        break;
+      case 4:
+        *param_4 = *param_4 + *piVar5;
+        piVar5 = (int *)((int)param_1 + 5);
+        break;
+      case 5:
+        uVar3 = decode_uleb128(piVar5,&local_c);
+        piVar5 = (int *)decode_uleb128(uVar3,&local_8);
+        iVar6 = *(int *)(param_3 + 0xc);
+        *(undefined *)(local_c + 0x5c + (int)param_2) = 1;
+        param_2[local_c + 4] = local_8 * iVar6;
+        break;
+      case 6:
+        piVar5 = (int *)decode_uleb128(piVar5,&local_c);
+        *(undefined *)(local_c + 0x5c + (int)param_2) = 0;
+        break;
+      case 9:
+        uVar3 = decode_uleb128(piVar5,&local_c);
+        piVar5 = (int *)decode_uleb128(uVar3,&local_10);
+        *(undefined *)(local_c + 0x5c + (int)param_2) = 2;
+        param_2[local_c + 4] = local_10;
+        break;
+      case 10:
+        puVar4 = (undefined4 *)malloc(0x74);
+        puVar7 = param_2;
+        puVar8 = puVar4;
+        for (iVar6 = 0x1d; iVar6 != 0; iVar6 = iVar6 + -1) {
+          *puVar8 = *puVar7;
+          puVar7 = puVar7 + 1;
+          puVar8 = puVar8 + 1;
         }
+        param_2[0x1c] = puVar4;
+        break;
+      case 0xb:
+        puVar7 = (undefined4 *)param_2[0x1c];
+        puVar8 = puVar7;
+        for (iVar6 = 0x1d; iVar6 != 0; iVar6 = iVar6 + -1) {
+          *param_2 = *puVar8;
+          puVar8 = puVar8 + 1;
+          param_2 = param_2 + 1;
+        }
+        free(puVar7);
+        break;
+      case 0xc:
+        uVar3 = decode_uleb128(piVar5,&local_c);
+        piVar5 = (int *)decode_uleb128(uVar3,&local_8);
+        *(undefined2 *)(param_2 + 0x16) = (undefined2)local_c;
+        param_2[2] = local_8;
+        break;
+      case 0xd:
+        piVar5 = (int *)decode_uleb128(piVar5,&local_c);
+        *(short *)(param_2 + 0x16) = (short)local_c;
+        break;
+      case 0xe:
+        piVar5 = (int *)decode_uleb128(piVar5,&local_8);
+        param_2[2] = local_8;
+        break;
+      default:
+                    // WARNING: Subroutine does not return
+        abort();
+      case 0x2d:
+        local_c = 0x10;
+        do {
+          *(undefined *)(local_c + 0x5c + (int)param_2) = 1;
+          param_2[local_c + 4] = local_c * 4 + -0x40;
+          local_c = local_c + 1;
+        } while (local_c < 0x20);
+        break;
+      case 0x2e:
+        piVar5 = (int *)decode_uleb128(piVar5,&local_8);
+        param_2[3] = local_8;
       }
-      else {
-        *(byte *)((uVar2 & 0x3f) + 0x5c + (int)param_2) = local_14;
-      }
+    }
+    else {
+      *(byte *)((uVar2 & 0x3f) + 0x5c + (int)param_2) = local_14;
     }
   }
   else {
@@ -1071,148 +1068,147 @@ void _fini(void)
 void __regparm3 __DTOR_END__(char **param_1,int param_2,byte *param_3)
 
 {
-  int *piVar1;
-  uint uVar2;
-  byte bVar3;
-  char cVar4;
-  byte bVar5;
+  uint uVar1;
+  byte bVar2;
+  char cVar3;
+  byte bVar4;
+  char *pcVar6;
   char *pcVar7;
-  char *pcVar8;
-  char **ppcVar9;
-  char cVar10;
+  char **ppcVar8;
+  char cVar9;
   char **unaff_EBX;
   int unaff_EBP;
   char *unaff_ESI;
   int *unaff_EDI;
-  byte *pbVar6;
+  byte *pbVar5;
   
-  bVar3 = (byte)param_1;
-  *(byte *)param_1 = *(char *)param_1 + bVar3;
-  bVar5 = *(byte *)param_1;
-  *(byte *)param_1 = *(char *)param_1 + bVar3;
-  *(byte *)param_1 = *(char *)param_1 + bVar3 + CARRY1(bVar5,bVar3);
-  *(byte *)param_1 = *(char *)param_1 + bVar3;
-  *(byte *)param_1 = *(char *)param_1 + bVar3;
-  *(byte *)param_1 = *(char *)param_1 + bVar3;
+  bVar2 = (byte)param_1;
+  *(byte *)param_1 = *(char *)param_1 + bVar2;
+  bVar4 = *(byte *)param_1;
+  *(byte *)param_1 = *(char *)param_1 + bVar2;
+  *(byte *)param_1 = *(char *)param_1 + bVar2 + CARRY1(bVar4,bVar2);
+  *(byte *)param_1 = *(char *)param_1 + bVar2;
+  *(byte *)param_1 = *(char *)param_1 + bVar2;
+  *(byte *)param_1 = *(char *)param_1 + bVar2;
   do {
     *param_1 = *param_1 + (int)param_1;
-    piVar1 = (int *)((int)((int)param_1 + 0xc) + (int)param_3);
-    *piVar1 = *piVar1 + (int)unaff_EDI;
-    bVar3 = (char)param_1 + 4;
-    uVar2 = (uint)param_1 & 0xffffff00;
-    pbVar6 = (byte *)(uVar2 | bVar3);
-    *param_3 = bVar3;
-    *pbVar6 = *pbVar6 + bVar3;
-    bVar5 = *pbVar6;
-    *pbVar6 = *pbVar6 + bVar3;
-    *pbVar6 = (*pbVar6 - bVar3) - CARRY1(bVar5,bVar3);
-    *pbVar6 = *pbVar6 + bVar3;
-    cVar4 = in(0x89);
-    pcVar8 = (char *)(uVar2 | (byte)(cVar4 + 8U));
-    *pcVar8 = *pcVar8 + cVar4 + 8U;
-    bVar5 = cVar4 + 9;
-    pcVar7 = (char *)(uVar2 | bVar5);
-    *pcVar7 = *pcVar7 + bVar5;
-    bVar3 = (byte)param_3;
-    *unaff_ESI = *unaff_ESI + bVar3;
-    *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar5;
-    *pcVar7 = *pcVar7 + bVar5;
-    pcVar7 = (char *)((uint)pcVar7 | 0x10405);
+    *(int *)((int)(param_1 + 3) + (int)param_3) =
+         *(int *)((int)(param_1 + 3) + (int)param_3) + (int)unaff_EDI;
+    bVar2 = (char)param_1 + 4;
+    uVar1 = (uint)param_1 & 0xffffff00;
+    pbVar5 = (byte *)(uVar1 | bVar2);
+    *param_3 = bVar2;
+    *pbVar5 = *pbVar5 + bVar2;
+    bVar4 = *pbVar5;
+    *pbVar5 = *pbVar5 + bVar2;
+    *pbVar5 = (*pbVar5 - bVar2) - CARRY1(bVar4,bVar2);
+    *pbVar5 = *pbVar5 + bVar2;
+    cVar3 = in(0x89);
+    pcVar7 = (char *)(uVar1 | (byte)(cVar3 + 8U));
+    *pcVar7 = *pcVar7 + cVar3 + 8U;
+    bVar4 = cVar3 + 9;
+    pcVar6 = (char *)(uVar1 | bVar4);
+    *pcVar6 = *pcVar6 + bVar4;
+    bVar2 = (byte)param_3;
+    *unaff_ESI = *unaff_ESI + bVar2;
+    *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar4;
+    *pcVar6 = *pcVar6 + bVar4;
+    pcVar6 = (char *)((uint)pcVar6 | 0x10405);
+    *pcVar6 = *pcVar6 + (char)pcVar6;
+    pcVar7 = *unaff_EBX;
+    *unaff_EBX = pcVar6;
+    cVar3 = (char)pcVar7;
+    bVar4 = cVar3 + 1;
+    uVar1 = (uint)pcVar7 & 0xffffff00;
+    pcVar7 = (char *)(uVar1 | bVar4);
+    *pcVar7 = *pcVar7 + bVar4;
+    unaff_ESI[0x2c000004] = unaff_ESI[0x2c000004] + bVar4;
+    *pcVar7 = *pcVar7 + bVar4;
+    *pcVar7 = *pcVar7 + bVar2;
+    *pcVar7 = *pcVar7 + bVar4;
+    *(byte *)(param_2 + 0x590804) = *(byte *)(param_2 + 0x590804) & bVar2;
+    *pcVar7 = *pcVar7 + bVar4;
+    bVar4 = cVar3 + 2;
+    pcVar7 = (char *)(uVar1 | bVar4);
+    *pcVar7 = *pcVar7 + bVar4;
+    *unaff_ESI = *unaff_ESI + bVar2;
+    *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar4;
+    *pcVar7 = *pcVar7 + bVar4;
+    pcVar7 = (char *)((uint)pcVar7 | 0x40405);
     *pcVar7 = *pcVar7 + (char)pcVar7;
-    pcVar8 = *unaff_EBX;
-    *unaff_EBX = pcVar7;
-    cVar4 = (char)pcVar8;
-    bVar5 = cVar4 + 1;
-    uVar2 = (uint)pcVar8 & 0xffffff00;
-    pcVar8 = (char *)(uVar2 | bVar5);
-    *pcVar8 = *pcVar8 + bVar5;
-    unaff_ESI[0x2c000004] = unaff_ESI[0x2c000004] + bVar5;
-    *pcVar8 = *pcVar8 + bVar5;
-    *pcVar8 = *pcVar8 + bVar3;
-    *pcVar8 = *pcVar8 + bVar5;
-    *(byte *)(param_2 + 0x590804) = *(byte *)(param_2 + 0x590804) & bVar3;
-    *pcVar8 = *pcVar8 + bVar5;
-    bVar5 = cVar4 + 2;
-    pcVar8 = (char *)(uVar2 | bVar5);
-    *pcVar8 = *pcVar8 + bVar5;
-    *unaff_ESI = *unaff_ESI + bVar3;
-    *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar5;
-    *pcVar8 = *pcVar8 + bVar5;
-    pcVar8 = (char *)((uint)pcVar8 | 0x40405);
-    *pcVar8 = *pcVar8 + (char)pcVar8;
-    ppcVar9 = *(char ***)(pcVar8 + (int)&stack0x00000000);
-    *(char **)(pcVar8 + (int)&stack0x00000000) = pcVar8;
-    *ppcVar9 = *ppcVar9 + (int)ppcVar9;
-    *(byte *)ppcVar9 = *(char *)ppcVar9 + (byte)ppcVar9;
-    bVar5 = bRam002c0000;
-    param_1 = (char **)((uint)ppcVar9 & 0xffffff00 | (uint)bRam002c0000);
-    cVar4 = *(char *)param_1 + bRam002c0000;
-    bRam002c0000 = (byte)ppcVar9;
-    *(char *)param_1 = cVar4;
-    cVar4 = *(char *)param_1;
-    *(byte *)param_1 = *(char *)param_1 + bVar5;
-  } while (SCARRY1(cVar4,bVar5) != *(char *)param_1 < '\0');
-  bVar5 = bVar5 + 8;
-  pcVar7 = (char *)((uint)ppcVar9 & 0xffffff00 | (uint)bVar5);
-  *pcVar7 = *pcVar7 + bVar5;
-  param_3[(int)pcVar7] = param_3[(int)pcVar7] + bVar5;
-  *pcVar7 = *pcVar7 + bVar5;
-  *unaff_ESI = *unaff_ESI + bVar3;
-  *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar5;
-  *pcVar7 = *pcVar7 + bVar5;
-  pcVar7 = (char *)((uint)pcVar7 | 0x40405);
-  *pcVar7 = *pcVar7 + (char)pcVar7;
-  pcVar8 = pcRam00000104;
-  cVar4 = (char)pcRam00000104;
-  pcRam00000104 = pcVar7;
-  unaff_ESI[0x1c000006] = unaff_ESI[0x1c000006] + cVar4;
-  *pcVar8 = *pcVar8 + cVar4;
-  cVar10 = (char)((uint)param_3 >> 8);
-  pcVar8[-0x2c000000] = pcVar8[-0x2c000000] + cVar10;
-  bVar5 = pcVar8[(int)param_3];
-  pcVar8 = (char *)((uint)pcVar8 & 0xffffff00 | (uint)bVar5);
-  *pcVar8 = *pcVar8 + bVar5;
-  param_3[(int)pcVar8] = param_3[(int)pcVar8] + bVar5;
-  *pcVar8 = *pcVar8 + bVar5;
-  *unaff_ESI = *unaff_ESI + bVar3;
-  *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar5;
-  *pcVar8 = *pcVar8 + bVar5;
-  bVar5 = (char)((uint)pcVar8 | 0x5005) + bVar3;
-  uVar2 = ((uint)pcVar8 | 0x5005) & 0xffffff00;
-  *(char *)(uVar2 | bVar5) = *(char *)(uVar2 | bVar5) + bVar5;
-  *(byte *)(unaff_EBX + (int)param_3) = *(char *)(unaff_EBX + (int)param_3) + bVar5;
-  pcVar8 = (char *)(uVar2 | (byte)(bVar5 + 8));
-  *pcVar8 = *pcVar8 + bVar5 + 8;
-  bVar5 = bVar5 + 9;
-  pcVar7 = (char *)(uVar2 | bVar5);
-  *pcVar7 = *pcVar7 + bVar5;
-  *unaff_ESI = *unaff_ESI + bVar3;
-  *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar5;
-  *pcVar7 = *pcVar7 + bVar5;
-  pcVar7 = (char *)((uint)pcVar7 | 0x40405);
-  *pcVar7 = *pcVar7 + (char)pcVar7;
-  pcVar8 = pcRam00000104;
-  cVar4 = (char)pcRam00000104;
-  pcRam00000104 = pcVar7;
-  unaff_ESI[0x10406] = unaff_ESI[0x10406] + cVar4;
-  *pcVar8 = *pcVar8 + cVar4;
+    ppcVar8 = *(char ***)(pcVar7 + (int)&stack0x00000000);
+    *(char **)(pcVar7 + (int)&stack0x00000000) = pcVar7;
+    *ppcVar8 = *ppcVar8 + (int)ppcVar8;
+    *(byte *)ppcVar8 = *(char *)ppcVar8 + (byte)ppcVar8;
+    bVar4 = bRam002c0000;
+    param_1 = (char **)((uint)ppcVar8 & 0xffffff00 | (uint)bRam002c0000);
+    cVar3 = *(char *)param_1 + bRam002c0000;
+    bRam002c0000 = (byte)ppcVar8;
+    *(char *)param_1 = cVar3;
+    cVar3 = *(char *)param_1;
+    *(byte *)param_1 = *(char *)param_1 + bVar4;
+  } while (SCARRY1(cVar3,bVar4) != *(char *)param_1 < '\0');
+  bVar4 = bVar4 + 8;
+  pcVar6 = (char *)((uint)ppcVar8 & 0xffffff00 | (uint)bVar4);
+  *pcVar6 = *pcVar6 + bVar4;
+  param_3[(int)pcVar6] = param_3[(int)pcVar6] + bVar4;
+  *pcVar6 = *pcVar6 + bVar4;
+  *unaff_ESI = *unaff_ESI + bVar2;
+  *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar4;
+  *pcVar6 = *pcVar6 + bVar4;
+  pcVar6 = (char *)((uint)pcVar6 | 0x40405);
+  *pcVar6 = *pcVar6 + (char)pcVar6;
+  pcVar7 = pcRam00000104;
+  cVar3 = (char)pcRam00000104;
+  pcRam00000104 = pcVar6;
+  unaff_ESI[0x1c000006] = unaff_ESI[0x1c000006] + cVar3;
+  *pcVar7 = *pcVar7 + cVar3;
+  cVar9 = (char)((uint)param_3 >> 8);
+  pcVar7[-0x2c000000] = pcVar7[-0x2c000000] + cVar9;
+  bVar4 = pcVar7[(int)param_3];
+  pcVar7 = (char *)((uint)pcVar7 & 0xffffff00 | (uint)bVar4);
+  *pcVar7 = *pcVar7 + bVar4;
+  param_3[(int)pcVar7] = param_3[(int)pcVar7] + bVar4;
+  *pcVar7 = *pcVar7 + bVar4;
+  *unaff_ESI = *unaff_ESI + bVar2;
+  *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar4;
+  *pcVar7 = *pcVar7 + bVar4;
+  bVar4 = (char)((uint)pcVar7 | 0x5005) + bVar2;
+  uVar1 = ((uint)pcVar7 | 0x5005) & 0xffffff00;
+  *(char *)(uVar1 | bVar4) = *(char *)(uVar1 | bVar4) + bVar4;
+  *(byte *)(unaff_EBX + (int)param_3) = *(char *)(unaff_EBX + (int)param_3) + bVar4;
+  pcVar7 = (char *)(uVar1 | (byte)(bVar4 + 8));
+  *pcVar7 = *pcVar7 + bVar4 + 8;
+  bVar4 = bVar4 + 9;
+  pcVar6 = (char *)(uVar1 | bVar4);
+  *pcVar6 = *pcVar6 + bVar4;
+  *unaff_ESI = *unaff_ESI + bVar2;
+  *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar4;
+  *pcVar6 = *pcVar6 + bVar4;
+  pcVar6 = (char *)((uint)pcVar6 | 0x40405);
+  *pcVar6 = *pcVar6 + (char)pcVar6;
+  pcVar7 = pcRam00000104;
+  cVar3 = (char)pcRam00000104;
+  pcRam00000104 = pcVar6;
+  unaff_ESI[0x10406] = unaff_ESI[0x10406] + cVar3;
+  *pcVar7 = *pcVar7 + cVar3;
   *unaff_EDI = *unaff_EDI + 4;
-  *pcVar8 = *pcVar8 + cVar4;
-  bVar5 = cVar4 + 4;
-  ppcVar9 = (char **)((uint)pcVar8 & 0xffffff00 | (uint)bVar5);
-  *ppcVar9 = *ppcVar9 + (int)ppcVar9;
-  *(byte *)ppcVar9 = *(char *)ppcVar9 + bVar5;
-  (&stack0xfffffffc)[(int)ppcVar9] = (&stack0xfffffffc)[(int)ppcVar9] | bVar5;
-  *(byte *)ppcVar9 = *(char *)ppcVar9 + bVar5;
-  *unaff_ESI = *unaff_ESI + cVar10;
-  pcVar8 = (char *)((uint)(uint *)((uint)ppcVar9 | 4) | *(uint *)((uint)ppcVar9 | 4));
-  cVar4 = (char)pcVar8;
-  *pcVar8 = *pcVar8 + cVar4;
-  *pcVar8 = *pcVar8 + cVar4;
-  *pcVar8 = *pcVar8 + cVar4;
-  *(undefined *)((uint)pcVar8 & 0xffffff00) = *(undefined *)((uint)pcVar8 & 0xffffff00);
-  pcVar8 = (char *)((uint)pcVar8 & 0xffffff00 | 0xff);
-  *pcVar8 = *pcVar8 + -1;
+  *pcVar7 = *pcVar7 + cVar3;
+  bVar4 = cVar3 + 4;
+  ppcVar8 = (char **)((uint)pcVar7 & 0xffffff00 | (uint)bVar4);
+  *ppcVar8 = *ppcVar8 + (int)ppcVar8;
+  *(byte *)ppcVar8 = *(char *)ppcVar8 + bVar4;
+  (&stack0xfffffffc)[(int)ppcVar8] = (&stack0xfffffffc)[(int)ppcVar8] | bVar4;
+  *(byte *)ppcVar8 = *(char *)ppcVar8 + bVar4;
+  *unaff_ESI = *unaff_ESI + cVar9;
+  pcVar7 = (char *)((uint)(uint *)((uint)ppcVar8 | 4) | *(uint *)((uint)ppcVar8 | 4));
+  cVar3 = (char)pcVar7;
+  *pcVar7 = *pcVar7 + cVar3;
+  *pcVar7 = *pcVar7 + cVar3;
+  *pcVar7 = *pcVar7 + cVar3;
+  *(undefined *)((uint)pcVar7 & 0xffffff00) = *(undefined *)((uint)pcVar7 & 0xffffff00);
+  pcVar7 = (char *)((uint)pcVar7 & 0xffffff00 | 0xff);
+  *pcVar7 = *pcVar7 + -1;
                     // WARNING: Bad instruction - Truncating control flow here
   halt_baddata();
 }

@@ -4,7 +4,7 @@ typedef unsigned int    undefined2;
 
 
 
-void __cdecl16far entry(void)
+void entry(void)
 
 {
   undefined2 *puVar1;
@@ -32,9 +32,7 @@ void __cdecl16far entry(void)
     puVar7 = (undefined2 *)0x32;
     puVar8 = (undefined2 *)0x0;
     iVar6 = iVar6 + -1;
-    iVar4 = CONCAT11((char)((uint)iVar4 >> 8),8);
-    while (iVar4 != 0) {
-      iVar4 = iVar4 + -1;
+    for (iVar4 = CONCAT11((char)((uint)iVar4 >> 8),8); iVar4 != 0; iVar4 = iVar4 + -1) {
       puVar2 = puVar8;
       puVar8 = puVar8 + 1;
       puVar1 = puVar7;

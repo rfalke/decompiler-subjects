@@ -347,9 +347,7 @@ undefined8 _main(int param_1)
 LAB_00001d68:
         __picsymbol_stub::_putchar(0x35);
       }
-      else {
-        if (4 < param_1) goto LAB_00001d68;
-      }
+      else if (4 < param_1) goto LAB_00001d68;
     } while (!(bool)(bVar2 >> 2 & 1));
   }
   else {

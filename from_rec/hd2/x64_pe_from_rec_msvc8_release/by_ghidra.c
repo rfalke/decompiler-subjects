@@ -51,9 +51,9 @@ struct _FILETIME {
 
 typedef ushort WORD;
 
-typedef uchar BYTE;
-
 typedef int BOOL;
+
+typedef uchar BYTE;
 
 typedef uint UINT;
 
@@ -128,43 +128,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_CNT_CODE=32,
     IMAGE_SCN_CNT_INITIALIZED_DATA=64,
     IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_INFO=512,
+    IMAGE_SCN_RESERVED_0040=1024,
     IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_GPREL=32768,
     IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
     IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
     IMAGE_SCN_MEM_NOT_CACHED=67108864,
     IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_MEM_READ=1073741824,
     IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_WRITE=2147483648
 } SectionFlags;
 
 union Misc {
@@ -440,42 +440,18 @@ struct _RUNTIME_FUNCTION {
     DWORD UnwindData;
 };
 
-typedef struct _IMAGE_SECTION_HEADER _IMAGE_SECTION_HEADER, *P_IMAGE_SECTION_HEADER;
-
-typedef union _union_236 _union_236, *P_union_236;
-
-union _union_236 {
-    DWORD PhysicalAddress;
-    DWORD VirtualSize;
-};
-
-struct _IMAGE_SECTION_HEADER {
-    BYTE Name[8];
-    union _union_236 Misc;
-    DWORD VirtualAddress;
-    DWORD SizeOfRawData;
-    DWORD PointerToRawData;
-    DWORD PointerToRelocations;
-    DWORD PointerToLinenumbers;
-    WORD NumberOfRelocations;
-    WORD NumberOfLinenumbers;
-    DWORD Characteristics;
-};
-
 typedef struct _RUNTIME_FUNCTION * PRUNTIME_FUNCTION;
 
 typedef enum _EXCEPTION_DISPOSITION {
-    ExceptionCollidedUnwind=3,
     ExceptionContinueExecution=0,
     ExceptionContinueSearch=1,
-    ExceptionNestedException=2
+    ExceptionNestedException=2,
+    ExceptionCollidedUnwind=3
 } _EXCEPTION_DISPOSITION;
 
 typedef enum _EXCEPTION_DISPOSITION EXCEPTION_DISPOSITION;
 
 typedef EXCEPTION_DISPOSITION (EXCEPTION_ROUTINE)(struct _EXCEPTION_RECORD *, PVOID, struct _CONTEXT *, PVOID);
-
-typedef struct _IMAGE_SECTION_HEADER * PIMAGE_SECTION_HEADER;
 
 typedef struct _M128A * PM128A;
 
@@ -598,8 +574,6 @@ struct IMAGE_DOS_HEADER {
     dword e_lfanew; // File address of new exe header
     byte e_program[64]; // Actual DOS program
 };
-
-typedef ULONG_PTR DWORD_PTR;
 
 typedef int (* _onexit_t)(void);
 
@@ -827,47 +801,44 @@ void FUN_140001300(longlong param_1)
 int entry(void)
 
 {
-  ulonglong uVar1;
-  bool bVar2;
-  int iVar3;
-  BOOL BVar4;
+  bool bVar1;
+  int iVar2;
+  ulonglong uVar3;
   longlong in_GS_OFFSET;
-  bool bVar5;
+  bool bVar4;
   
-  __security_init_cookie();
-  uVar1 = *(ulonglong *)(*(longlong *)(in_GS_OFFSET + 0x30) + 8);
-  bVar2 = false;
+  FUN_1400019d4();
+  uVar3 = *(ulonglong *)(*(longlong *)(in_GS_OFFSET + 0x30) + 8);
+  bVar1 = false;
   do {
     LOCK();
-    bVar5 = DAT_1400035d8 == 0;
-    DAT_1400035d8 = DAT_1400035d8 ^ (ulonglong)bVar5 * (DAT_1400035d8 ^ uVar1);
-    if (bVar5) {
+    bVar4 = DAT_1400035d8 == 0;
+    DAT_1400035d8 = DAT_1400035d8 ^ (ulonglong)bVar4 * (DAT_1400035d8 ^ uVar3);
+    if (bVar4) {
 LAB_1400013ce:
       if (DAT_1400035d0 == 1) {
         _amsg_exit(0x1f);
       }
+      else if (DAT_1400035d0 == 0) {
+        DAT_1400035d0 = 1;
+        iVar2 = _initterm_e(&DAT_140002190,&DAT_1400021a8);
+        if (iVar2 != 0) {
+          return 0xff;
+        }
+      }
       else {
-        if (DAT_1400035d0 == 0) {
-          DAT_1400035d0 = 1;
-          iVar3 = _initterm_e(&DAT_140002190,&DAT_1400021a8);
-          if (iVar3 != 0) {
-            return 0xff;
-          }
-        }
-        else {
-          _DAT_140003044 = 1;
-        }
+        _DAT_140003044 = 1;
       }
       if (DAT_1400035d0 == 1) {
         _initterm(&DAT_140002178,&DAT_140002188);
         DAT_1400035d0 = 2;
       }
-      if (!bVar2) {
+      if (!bVar1) {
         DAT_1400035d8 = 0;
       }
-      if ((_DAT_1400035f0 != (code *)0x0) &&
-         (BVar4 = _IsNonwritableInCurrentImage(&DAT_1400035f0), BVar4 != 0)) {
-        (*_DAT_1400035f0)(0,2);
+      if ((DAT_1400035f0 != (code *)0x0) &&
+         (uVar3 = FUN_140001980((longlong)&DAT_1400035f0), (int)uVar3 != 0)) {
+        (*DAT_1400035f0)(0,2);
       }
       *(undefined8 *)__initenv_exref = DAT_140003028;
       DAT_140003040 = FUN_140001290(DAT_140003020,DAT_140003030);
@@ -880,8 +851,8 @@ LAB_1400013ce:
                     // WARNING: Subroutine does not return
       exit(DAT_140003040);
     }
-    if (!bVar5 * DAT_1400035d8 == uVar1) {
-      bVar2 = true;
+    if (!bVar4 * DAT_1400035d8 == uVar3) {
+      bVar1 = true;
       goto LAB_1400013ce;
     }
     Sleep(1000);
@@ -953,7 +924,7 @@ int atexit(void *param_1)
   _onexit_t p_Var1;
   
   p_Var1 = _onexit((_onexit_t)param_1);
-  return (int)((p_Var1 != (_onexit_t)0x0) - 1);
+  return (p_Var1 != (_onexit_t)0x0) - 1;
 }
 
 
@@ -989,7 +960,7 @@ int _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
 // Library Function - Single Match
 //  _ValidateImageBase
 // 
-// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
+// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2012 Release
 
 BOOL _ValidateImageBase(PBYTE pImageBase)
 
@@ -1004,62 +975,54 @@ BOOL _ValidateImageBase(PBYTE pImageBase)
     uVar1 = (uint)(*(short *)((longlong)(pImageBase + *(int *)(pImageBase + 0x3c)) + 0x18) == 0x20b)
     ;
   }
-  return (BOOL)uVar1;
+  return uVar1;
 }
 
 
 
-// Library Function - Single Match
-//  _FindPESection
-// 
-// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2019 Release
-
-PIMAGE_SECTION_HEADER _FindPESection(PBYTE pImageBase,DWORD_PTR rva)
+longlong FUN_140001930(longlong param_1,ulonglong param_2)
 
 {
-  PIMAGE_SECTION_HEADER p_Var1;
-  PBYTE pBVar2;
+  longlong lVar1;
+  longlong lVar2;
   uint uVar3;
   
   uVar3 = 0;
-  pBVar2 = pImageBase + *(int *)(pImageBase + 0x3c);
-  p_Var1 = (PIMAGE_SECTION_HEADER)(pBVar2 + (ulonglong)*(ushort *)(pBVar2 + 0x14) + 0x18);
-  if (*(ushort *)(pBVar2 + 6) != 0) {
+  lVar2 = *(int *)(param_1 + 0x3c) + param_1;
+  lVar1 = (ulonglong)*(ushort *)(lVar2 + 0x14) + 0x18 + lVar2;
+  if (*(ushort *)(lVar2 + 6) != 0) {
     do {
-      if ((p_Var1->VirtualAddress <= rva) && (rva < p_Var1->Misc + p_Var1->VirtualAddress)) {
-        return p_Var1;
+      if ((*(uint *)(lVar1 + 0xc) <= param_2) &&
+         (param_2 < *(int *)(lVar1 + 8) + *(uint *)(lVar1 + 0xc))) {
+        return lVar1;
       }
       uVar3 = uVar3 + 1;
-      p_Var1 = p_Var1 + 1;
-    } while (uVar3 < *(ushort *)(pBVar2 + 6));
+      lVar1 = lVar1 + 0x28;
+    } while (uVar3 < *(ushort *)(lVar2 + 6));
   }
-  return (PIMAGE_SECTION_HEADER)0x0;
+  return 0;
 }
 
 
 
-// Library Function - Single Match
-//  _IsNonwritableInCurrentImage
-// 
-// Library: Visual Studio 2008 Release
-
-BOOL _IsNonwritableInCurrentImage(PBYTE pTarget)
+ulonglong FUN_140001980(longlong param_1)
 
 {
-  uint uVar1;
-  PIMAGE_SECTION_HEADER p_Var2;
-  IMAGE_DOS_HEADER *pImageBase;
+  BOOL BVar1;
+  undefined4 extraout_var;
+  ulonglong uVar2;
+  IMAGE_DOS_HEADER *pIVar3;
   
-  pImageBase = &IMAGE_DOS_HEADER_140000000;
-  uVar1 = _ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_140000000);
-  p_Var2 = (PIMAGE_SECTION_HEADER)(ulonglong)uVar1;
-  if (uVar1 != 0) {
-    p_Var2 = _FindPESection((PBYTE)pImageBase,(longlong)pTarget - (longlong)pImageBase);
-    if (p_Var2 != (PIMAGE_SECTION_HEADER)0x0) {
-      p_Var2 = (PIMAGE_SECTION_HEADER)(ulonglong)(~(p_Var2->Characteristics >> 0x1f) & 1);
+  pIVar3 = &IMAGE_DOS_HEADER_140000000;
+  BVar1 = _ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_140000000);
+  uVar2 = CONCAT44(extraout_var,BVar1);
+  if (BVar1 != 0) {
+    uVar2 = FUN_140001930((longlong)pIVar3,param_1 - (longlong)pIVar3);
+    if (uVar2 != 0) {
+      uVar2 = (ulonglong)(~(*(uint *)(uVar2 + 0x24) >> 0x1f) & 1);
     }
   }
-  return (BOOL)p_Var2;
+  return uVar2;
 }
 
 
@@ -1094,12 +1057,7 @@ undefined8 FUN_1400019d0(void)
 
 
 
-// Library Function - Single Match
-//  __security_init_cookie
-// 
-// Library: Visual Studio 2008 Release
-
-void __security_init_cookie(void)
+void FUN_1400019d4(void)
 
 {
   _FILETIME _Var1;
@@ -1111,7 +1069,7 @@ void __security_init_cookie(void)
   
   local_res8 = (_FILETIME)0x0;
   if (DAT_140003000 == 0x2b992ddfa232) {
-    GetSystemTimeAsFileTime((LPFILETIME)&local_res8);
+    GetSystemTimeAsFileTime(&local_res8);
     _Var1 = local_res8;
     DVar2 = GetCurrentProcessId();
     DVar3 = GetCurrentThreadId();
@@ -1221,13 +1179,7 @@ RtlLookupFunctionEntry(DWORD64 ControlPc,PDWORD64 ImageBase,PUNWIND_HISTORY_TABL
 
 
 
-// Library Function - Single Match
-//  __GSHandlerCheckCommon
-// 
-// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2012 Release,
-// Visual Studio 2019 Release
-
-void __GSHandlerCheckCommon(ulonglong param_1,longlong param_2,uint *param_3)
+void FUN_140001ab4(ulonglong param_1,longlong param_2,uint *param_3)
 
 {
   longlong lVar1;

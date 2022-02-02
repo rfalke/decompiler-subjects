@@ -1,35 +1,32 @@
-OpenJDK 64-Bit Server VM warning: Archived non-system classes are disabled because the java.system.class.loader property is specified (value = "ghidra.GhidraClassLoader"). To use archived non-system classes, this property must be not be set
-openjdk version "11.0.5" 2019-10-15
-OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
-OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
+openjdk version "11.0.12" 2021-07-20
+OpenJDK Runtime Environment 18.9 (build 11.0.12+7)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.12+7, mixed mode)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
-INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
-WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger/ghidra_scripts
     GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
     GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/project_loc/project_name (DefaultProject)  
@@ -38,23 +35,6 @@ INFO       project: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/p
 INFO  IMPORTING: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 323, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 382, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 382, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 466, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 525, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 584, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 323, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 382, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 382, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 466, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 525, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 584, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 1833, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 1833, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 1989, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 2088, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 2187, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [93e], 
 DebugInfoEntry - Offset: 0x93e
 AbbreviationCode: 0xc DW_TAG_string_type
@@ -66,97 +46,19 @@ DebugInfoEntry - Offset: 0x969
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 323, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 382, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 382, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 466, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 525, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 584, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 1833, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 1833, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 1989, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 2088, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 2187, forcing to 1 (DWARFDataTypeImporter)  
+ERROR Failed to process DWARF DIE 283: Data type may not report a length less than 1: VoidDataType (DWARFDataTypeManager)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [969], 
 DebugInfoEntry - Offset: 0x969
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
-ERROR Failed to process DWARF DIE 940: Array data-type must be Fixed length (DWARFDataTypeManager)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 323, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 382, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 382, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 466, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 525, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 584, forcing to 1 (DWARFDataTypeImporter)  
+ERROR Failed to process DWARF DIE 940: Data type may not report a length less than 1: VoidDataType (DWARFDataTypeManager)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [969], 
 DebugInfoEntry - Offset: 0x969
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
 ERROR Failed to get data type for struct field: 9d9 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 6052, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 6223, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 6223, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 3 for array's size in DIE: 6223, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 4 for array's size in DIE: 6223, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 5 for array's size in DIE: 6223, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 6363, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 6363, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 6440, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 6440, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 6517, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 6517, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 8742, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 8774, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 8774, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 8813, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 8813, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 8854, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 8854, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 4 for array's size in DIE: 8854, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 8992, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 9051, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 13443, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 13476, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 13476, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 13517, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 13517, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 4 for array's size in DIE: 13517, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 13579, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 13579, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 13816, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 13816, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 3 for array's size in DIE: 13816, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 4 for array's size in DIE: 13816, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 13929, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 13929, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 3 for array's size in DIE: 13929, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 4 for array's size in DIE: 13929, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14042, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 14042, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 3 for array's size in DIE: 14042, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 4 for array's size in DIE: 14042, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14155, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14214, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 14214, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14611, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14670, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 14670, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14754, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14813, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14872, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14611, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14670, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 14670, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14754, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14813, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14872, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 16121, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 16121, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 16277, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 16376, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 16475, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [410e], 
 DebugInfoEntry - Offset: 0x410e
 AbbreviationCode: 0xc DW_TAG_string_type
@@ -168,74 +70,19 @@ DebugInfoEntry - Offset: 0x4139
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14611, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14670, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 14670, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14754, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14813, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14872, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 16121, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 16121, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 16277, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 16376, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 16475, forcing to 1 (DWARFDataTypeImporter)  
+ERROR Failed to process DWARF DIE 3a53: Data type may not report a length less than 1: VoidDataType (DWARFDataTypeManager)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [4139], 
 DebugInfoEntry - Offset: 0x4139
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
-ERROR Failed to process DWARF DIE 4110: Array data-type must be Fixed length (DWARFDataTypeManager)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14611, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14670, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 14670, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14754, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14813, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 14872, forcing to 1 (DWARFDataTypeImporter)  
+ERROR Failed to process DWARF DIE 4110: Data type may not report a length less than 1: VoidDataType (DWARFDataTypeManager)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [42ec], 
 DebugInfoEntry - Offset: 0x42ec
 AbbreviationCode: 0x6 DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
 ERROR Failed to get data type for struct field: 4232 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 17593, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 18604, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 18631, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 18698, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 18698, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 18757, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 18757, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 19516, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 19516, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 3 for array's size in DIE: 19516, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 4 for array's size in DIE: 19516, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 19573, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 19573, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 3 for array's size in DIE: 19573, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 4 for array's size in DIE: 19573, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 19630, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 19630, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 3 for array's size in DIE: 19630, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 4 for array's size in DIE: 19630, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 19687, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 19687, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 4 for array's size in DIE: 19687, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20060, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20119, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 20119, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20203, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20262, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20321, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20060, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20119, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 20119, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20203, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20262, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20321, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 21570, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 21570, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 21726, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 21825, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 21924, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [5657], 
 DebugInfoEntry - Offset: 0x5657
 AbbreviationCode: 0xc DW_TAG_string_type
@@ -247,52 +94,19 @@ DebugInfoEntry - Offset: 0x5682
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20060, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20119, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 20119, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20203, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20262, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20321, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 21570, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 21570, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 21726, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 21825, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 21924, forcing to 1 (DWARFDataTypeImporter)  
+ERROR Failed to process DWARF DIE 4f9c: Data type may not report a length less than 1: VoidDataType (DWARFDataTypeManager)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [5682], 
 DebugInfoEntry - Offset: 0x5682
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
-ERROR Failed to process DWARF DIE 5659: Array data-type must be Fixed length (DWARFDataTypeManager)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20060, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20119, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 20119, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20203, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20262, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 20321, forcing to 1 (DWARFDataTypeImporter)  
+ERROR Failed to process DWARF DIE 5659: Data type may not report a length less than 1: VoidDataType (DWARFDataTypeManager)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [5682], 
 DebugInfoEntry - Offset: 0x5682
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
 ERROR Failed to get data type for struct field: 56f2 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 22847, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 22906, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 22906, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 22983, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 23042, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 23101, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 22847, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 22906, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 22906, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 22983, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 23042, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 23101, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 24334, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 24334, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 24451, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 24550, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 24649, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [5657], 
 DebugInfoEntry - Offset: 0x5657
 AbbreviationCode: 0xc DW_TAG_string_type
@@ -304,30 +118,13 @@ DebugInfoEntry - Offset: 0x5682
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 22847, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 22906, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 22906, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 22983, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 23042, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 23101, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 24334, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 24334, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 24451, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 24550, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 24649, forcing to 1 (DWARFDataTypeImporter)  
+ERROR Failed to process DWARF DIE 5a78: Data type may not report a length less than 1: VoidDataType (DWARFDataTypeManager)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [5682], 
 DebugInfoEntry - Offset: 0x5682
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
-ERROR Failed to process DWARF DIE 60fc: Array data-type must be Fixed length (DWARFDataTypeManager)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 22847, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 22906, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 22906, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 22983, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 23042, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 23101, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 28147, forcing to 1 (DWARFDataTypeImporter)  
+ERROR Failed to process DWARF DIE 60fc: Data type may not report a length less than 1: VoidDataType (DWARFDataTypeManager)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [6f75], 
 DebugInfoEntry - Offset: 0x6f75
 AbbreviationCode: 0x6 DW_TAG_string_type
@@ -352,10 +149,6 @@ AbbreviationCode: 0x6 DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
 ERROR Failed to get data type for struct field: 787a (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 31874, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 31921, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 32075, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 32122, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [7ed5], 
 DebugInfoEntry - Offset: 0x7ed5
 AbbreviationCode: 0x6 DW_TAG_string_type
@@ -386,21 +179,18 @@ AbbreviationCode: 0x6 DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
 ERROR Failed to get data type for struct field: 8592 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 35653, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 2 for array's size in DIE: 35685, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Bad undefined-length array dimension for subrange 1 for array's size in DIE: 37924, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [96f0], 
 DebugInfoEntry - Offset: 0x96f0
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=3 [00000003], unsigned=3 [00000003] DW_FORM_data1
  (DWARFDataTypeImporter)  
-ERROR Failed to process DWARF DIE 96e0: Array data-type must be Fixed length (DWARFDataTypeManager)  
+ERROR Failed to process DWARF DIE 96e0: Data type may not report a length less than 1: VoidDataType (DWARFDataTypeManager)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [96f0], 
 DebugInfoEntry - Offset: 0x96f0
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=3 [00000003], unsigned=3 [00000003] DW_FORM_data1
  (DWARFDataTypeImporter)  
-ERROR Failed to process DWARF DIE 9708: Array data-type must be Fixed length (DWARFDataTypeManager)  
+ERROR Failed to process DWARF DIE 9708: Data type may not report a length less than 1: VoidDataType (DWARFDataTypeManager)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [220a], 
 DebugInfoEntry - Offset: 0x220a
 AbbreviationCode: 0xf DW_TAG_string_type
@@ -413,6 +203,174 @@ AbbreviationCode: 0x10 DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=256 [00000100], unsigned=256 [00000100] DW_FORM_data2
  (DWARFDataTypeImporter)  
 ERROR Bad function parameter type for function /DWARF/_UNCATEGORIZED_/nlinopt, param 18 : null, func die 23bf, param type die: 3466 (DWARFDataTypeManager)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [410e], 
+DebugInfoEntry - Offset: 0x410e
+AbbreviationCode: 0xc DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=6 [00000006], unsigned=6 [00000006] DW_FORM_data1
+ (DWARFDataTypeImporter)  
+ERROR Failed to get data type for struct field: 3d2b (DWARFDataTypeImporter)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [4139], 
+DebugInfoEntry - Offset: 0x4139
+AbbreviationCode: 0xc DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
+ (DWARFDataTypeImporter)  
+ERROR Error when processing DWARF information for DIE 4165 (DWARFDataTypeManager) java.lang.IllegalArgumentException: Data type may not report a length less than 1: VoidDataType
+	at ghidra.program.model.data.ArrayDataType.validate(ArrayDataType.java:106)
+	at ghidra.program.model.data.ArrayDataType.<init>(ArrayDataType.java:67)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.makeDataTypeForArray(DWARFDataTypeImporter.java:1118)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:184)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct_worker(DWARFDataTypeImporter.java:830)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct(DWARFDataTypeImporter.java:762)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.finishStruct(DWARFDataTypeImporter.java:608)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:195)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.doGetDataType(DWARFDataTypeManager.java:127)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.getDataType(DWARFDataTypeManager.java:222)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.createFunctionDefinitionDataType(DWARFDataTypeManager.java:729)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.importFuncSignatures(DWARFDataTypeManager.java:642)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.importAllDataTypes(DWARFDataTypeManager.java:589)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:199)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [4165], 
+DebugInfoEntry - Offset: 0x4165
+AbbreviationCode: 0xd DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=2073, value=hdr_clean] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=36 [00000024], unsigned=36 [00000024] DW_FORM_data1
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134589652 [0805acd4] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134591894 [0805b596] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=132 [00000084], unsigned=132 [00000084] DW_FORM_data4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 5
+ (DWARFDataTypeManager)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [5657], 
+DebugInfoEntry - Offset: 0x5657
+AbbreviationCode: 0xc DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=6 [00000006], unsigned=6 [00000006] DW_FORM_data1
+ (DWARFDataTypeImporter)  
+ERROR Failed to get data type for struct field: 5274 (DWARFDataTypeImporter)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [5682], 
+DebugInfoEntry - Offset: 0x5682
+AbbreviationCode: 0xc DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
+ (DWARFDataTypeImporter)  
+ERROR Error when processing DWARF information for DIE 57ac (DWARFDataTypeManager) java.lang.IllegalArgumentException: Data type may not report a length less than 1: VoidDataType
+	at ghidra.program.model.data.ArrayDataType.validate(ArrayDataType.java:106)
+	at ghidra.program.model.data.ArrayDataType.<init>(ArrayDataType.java:67)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.makeDataTypeForArray(DWARFDataTypeImporter.java:1118)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:184)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct_worker(DWARFDataTypeImporter.java:830)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct(DWARFDataTypeImporter.java:762)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.finishStruct(DWARFDataTypeImporter.java:608)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:195)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.doGetDataType(DWARFDataTypeManager.java:127)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.getDataType(DWARFDataTypeManager.java:222)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.createFunctionDefinitionDataType(DWARFDataTypeManager.java:729)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.importFuncSignatures(DWARFDataTypeManager.java:642)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.importAllDataTypes(DWARFDataTypeManager.java:589)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:199)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [57ac], 
+DebugInfoEntry - Offset: 0x57ac
+AbbreviationCode: 0xe DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=2669, value=hdr_io_wfftype] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=67 [00000043], unsigned=67 [00000043] DW_FORM_data1
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134597280 [0805caa0] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134597396 [0805cb14] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=308 [00000134], unsigned=308 [00000134] DW_FORM_data4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 7
+ (DWARFDataTypeManager)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [5657], 
+DebugInfoEntry - Offset: 0x5657
+AbbreviationCode: 0xc DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=6 [00000006], unsigned=6 [00000006] DW_FORM_data1
+ (DWARFDataTypeImporter)  
+ERROR Failed to get data type for struct field: 5d50 (DWARFDataTypeImporter)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [5682], 
+DebugInfoEntry - Offset: 0x5682
+AbbreviationCode: 0xc DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
+ (DWARFDataTypeImporter)  
+ERROR Error when processing DWARF information for DIE 614f (DWARFDataTypeManager) java.lang.IllegalArgumentException: Data type may not report a length less than 1: VoidDataType
+	at ghidra.program.model.data.ArrayDataType.validate(ArrayDataType.java:106)
+	at ghidra.program.model.data.ArrayDataType.<init>(ArrayDataType.java:67)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.makeDataTypeForArray(DWARFDataTypeImporter.java:1118)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:184)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct_worker(DWARFDataTypeImporter.java:830)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct(DWARFDataTypeImporter.java:762)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.finishStruct(DWARFDataTypeImporter.java:608)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:195)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.doGetDataType(DWARFDataTypeManager.java:127)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.getDataType(DWARFDataTypeManager.java:222)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.createFunctionDefinitionDataType(DWARFDataTypeManager.java:729)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.importFuncSignatures(DWARFDataTypeManager.java:642)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.importAllDataTypes(DWARFDataTypeManager.java:589)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:199)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [614f], 
+DebugInfoEntry - Offset: 0x614f
+AbbreviationCode: 0xe DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=2710, value=hdr_io_int] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=-125 [ffffffffffffff83], unsigned=131 [00000083] DW_FORM_data1
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134597396 [0805cb14] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134642332 [08067a9c] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=352 [00000160], unsigned=352 [00000160] DW_FORM_data4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 173
+ (DWARFDataTypeManager)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [8072], 
 DebugInfoEntry - Offset: 0x8072
 AbbreviationCode: 0x6 DW_TAG_string_type
@@ -483,93 +441,335 @@ DebugInfoEntry - Offset: 0x17a1
 AbbreviationCode: 0x1c DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=256 [00000100], unsigned=256 [00000100] DW_FORM_data2
  (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [18d9], 
-DebugInfoEntry - Offset: 0x18d9
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [93e], 
+DebugInfoEntry - Offset: 0x93e
 AbbreviationCode: 0xc DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=4 [00000004], unsigned=4 [00000004] DW_FORM_data1
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=6 [00000006], unsigned=6 [00000006] DW_FORM_data1
  (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [18d9], 
-DebugInfoEntry - Offset: 0x18d9
+ERROR Failed to get data type for struct field: 55b (DWARFDataTypeImporter)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [969], 
+DebugInfoEntry - Offset: 0x969
 AbbreviationCode: 0xc DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=4 [00000004], unsigned=4 [00000004] DW_FORM_data1
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [18d9], 
-DebugInfoEntry - Offset: 0x18d9
-AbbreviationCode: 0xc DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=4 [00000004], unsigned=4 [00000004] DW_FORM_data1
- (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [17a1], 
-DebugInfoEntry - Offset: 0x17a1
-AbbreviationCode: 0x1c DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=256 [00000100], unsigned=256 [00000100] DW_FORM_data2
- (DWARFDataTypeImporter)  
-ERROR Error updating function optic at 08048e54: Unsupported varnode size: 0 (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE a93 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Data type may not report a length less than 1: VoidDataType
+	at ghidra.program.model.data.ArrayDataType.validate(ArrayDataType.java:106)
+	at ghidra.program.model.data.ArrayDataType.<init>(ArrayDataType.java:67)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.makeDataTypeForArray(DWARFDataTypeImporter.java:1118)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:184)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct_worker(DWARFDataTypeImporter.java:830)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct(DWARFDataTypeImporter.java:762)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.finishStruct(DWARFDataTypeImporter.java:608)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:195)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.doGetDataType(DWARFDataTypeManager.java:127)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.getDataType(DWARFDataTypeManager.java:222)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:509)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processFuncChildren(DWARFFunctionImporter.java:416)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processSubprogram(DWARFFunctionImporter.java:303)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:116)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:208)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [a93], 
+DebugInfoEntry - Offset: 0xa93
+AbbreviationCode: 0xe DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=1373, value=null] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=73 [00000049], unsigned=73 [00000049] DW_FORM_data1
+	Attribute: DW_AT_calling_convention DWARFAmbigNumericAttribute: natural=2 [00000002], unsigned=2 [00000002] DW_FORM_data1
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134516308 [08048e54] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134536664 [0804ddd8] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=0 [00000000], unsigned=0 [00000000] DW_FORM_data4
+	Attribute: DW_AT_calling_convention DWARFAmbigNumericAttribute: natural=2 [00000002], unsigned=2 [00000002] DW_FORM_data1
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 170
+ (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter wkpt:real(kind=8)[0], omitting from definition of linopt@0804ddd8 (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter occv:real(kind=8)[0][0][0], omitting from definition of linopt@0804ddd8 (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter evalv:real(kind=8)[0][0][0], omitting from definition of linopt@0804ddd8 (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter pmat:complex(kind=8)[0][0][0][4][0], omitting from definition of linopt@0804ddd8 (DWARFFunctionImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [220a], 
 DebugInfoEntry - Offset: 0x220a
 AbbreviationCode: 0xf DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=256 [00000100], unsigned=256 [00000100] DW_FORM_data2
  (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [220a], 
-DebugInfoEntry - Offset: 0x220a
-AbbreviationCode: 0xf DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=256 [00000100], unsigned=256 [00000100] DW_FORM_data2
- (DWARFDataTypeImporter)  
-ERROR Error updating function linopt at 0804ddd8: Unsupported varnode size: 0 (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 1a3a (DWARFFunctionImporter) java.lang.NullPointerException
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processSubprogram(DWARFFunctionImporter.java:272)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:116)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:208)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [1a3a], 
+DebugInfoEntry - Offset: 0x1a3a
+AbbreviationCode: 0x3 DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=1776, value=linopt] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=55 [00000037], unsigned=55 [00000037] DW_FORM_data1
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134536664 [0804ddd8] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134548314 [08050b5a] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=44 [0000002c], unsigned=44 [0000002c] DW_FORM_data4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 121
+ (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter wkpt:real(kind=8)[0], omitting from definition of nlinopt@08050b5c (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter evalv:real(kind=8)[0][0][0], omitting from definition of nlinopt@08050b5c (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter pmat:complex(kind=8)[0][0][0][4][0], omitting from definition of nlinopt@08050b5c (DWARFFunctionImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [3466], 
 DebugInfoEntry - Offset: 0x3466
 AbbreviationCode: 0x10 DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=256 [00000100], unsigned=256 [00000100] DW_FORM_data2
  (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [3466], 
-DebugInfoEntry - Offset: 0x3466
-AbbreviationCode: 0x10 DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=256 [00000100], unsigned=256 [00000100] DW_FORM_data2
+ERROR Error when processing DWARF information for DIE 23bf (DWARFFunctionImporter) java.lang.NullPointerException
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processSubprogram(DWARFFunctionImporter.java:272)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:116)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:208)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [23bf], 
+DebugInfoEntry - Offset: 0x23bf
+AbbreviationCode: 0x3 DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=1775, value=nlinopt] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=75 [0000004b], unsigned=75 [0000004b] DW_FORM_data1
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134548316 [08050b5c] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134589652 [0805acd4] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=88 [00000058], unsigned=88 [00000058] DW_FORM_data4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 250
+ (DWARFFunctionImporter)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [410e], 
+DebugInfoEntry - Offset: 0x410e
+AbbreviationCode: 0xc DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=6 [00000006], unsigned=6 [00000006] DW_FORM_data1
  (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [3466], 
-DebugInfoEntry - Offset: 0x3466
-AbbreviationCode: 0x10 DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=256 [00000100], unsigned=256 [00000100] DW_FORM_data2
+ERROR Failed to get data type for struct field: 3d2b (DWARFDataTypeImporter)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [4139], 
+DebugInfoEntry - Offset: 0x4139
+AbbreviationCode: 0xc DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [3466], 
-DebugInfoEntry - Offset: 0x3466
-AbbreviationCode: 0x10 DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=256 [00000100], unsigned=256 [00000100] DW_FORM_data2
- (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [3466], 
-DebugInfoEntry - Offset: 0x3466
-AbbreviationCode: 0x10 DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=256 [00000100], unsigned=256 [00000100] DW_FORM_data2
- (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [3466], 
-DebugInfoEntry - Offset: 0x3466
-AbbreviationCode: 0x10 DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=256 [00000100], unsigned=256 [00000100] DW_FORM_data2
- (DWARFDataTypeImporter)  
-ERROR Error updating function nlinopt at 08050b5c: Unsupported varnode size: 0 (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 4165 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Data type may not report a length less than 1: VoidDataType
+	at ghidra.program.model.data.ArrayDataType.validate(ArrayDataType.java:106)
+	at ghidra.program.model.data.ArrayDataType.<init>(ArrayDataType.java:67)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.makeDataTypeForArray(DWARFDataTypeImporter.java:1118)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:184)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct_worker(DWARFDataTypeImporter.java:830)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct(DWARFDataTypeImporter.java:762)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.finishStruct(DWARFDataTypeImporter.java:608)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:195)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.doGetDataType(DWARFDataTypeManager.java:127)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.getDataType(DWARFDataTypeManager.java:222)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processSubprogram(DWARFFunctionImporter.java:267)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:116)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:208)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [4165], 
+DebugInfoEntry - Offset: 0x4165
+AbbreviationCode: 0xd DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=2073, value=hdr_clean] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=36 [00000024], unsigned=36 [00000024] DW_FORM_data1
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134589652 [0805acd4] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134591894 [0805b596] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=132 [00000084], unsigned=132 [00000084] DW_FORM_data4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 5
+ (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter eigen:real(kind=8)[0], omitting from definition of wffreadeigk@0805b598 (DWARFFunctionImporter)  
 ERROR Error updating function wffreadeigk at 0805b598: Stack varnode violates stack frame constraints (stack offset=-36, size=48 (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter wtk:real(kind=8)[0], omitting from definition of getwtk@0805b8d4 (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter pmat:complex(kind=8)[0][0][0][4][0], omitting from definition of pmat2cart@0805c23c (DWARFFunctionImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [5657], 
 DebugInfoEntry - Offset: 0x5657
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=6 [00000006], unsigned=6 [00000006] DW_FORM_data1
  (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [6df0], 
-DebugInfoEntry - Offset: 0x6df0
-AbbreviationCode: 0x1c DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=500 [000001f4], unsigned=500 [000001f4] DW_FORM_data2
+ERROR Failed to get data type for struct field: 5274 (DWARFDataTypeImporter)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [5682], 
+DebugInfoEntry - Offset: 0x5682
+AbbreviationCode: 0xc DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
-ERROR Error updating function hdr_io_int at 0805cb14: Unsupported varnode size: 0 (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 57ac (DWARFFunctionImporter) java.lang.IllegalArgumentException: Data type may not report a length less than 1: VoidDataType
+	at ghidra.program.model.data.ArrayDataType.validate(ArrayDataType.java:106)
+	at ghidra.program.model.data.ArrayDataType.<init>(ArrayDataType.java:67)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.makeDataTypeForArray(DWARFDataTypeImporter.java:1118)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:184)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct_worker(DWARFDataTypeImporter.java:830)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct(DWARFDataTypeImporter.java:762)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.finishStruct(DWARFDataTypeImporter.java:608)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:195)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.doGetDataType(DWARFDataTypeManager.java:127)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.getDataType(DWARFDataTypeManager.java:222)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processSubprogram(DWARFFunctionImporter.java:267)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:116)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:208)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [57ac], 
+DebugInfoEntry - Offset: 0x57ac
+AbbreviationCode: 0xe DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=2669, value=hdr_io_wfftype] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=67 [00000043], unsigned=67 [00000043] DW_FORM_data1
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134597280 [0805caa0] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134597396 [0805cb14] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=308 [00000134], unsigned=308 [00000134] DW_FORM_data4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 7
+ (DWARFFunctionImporter)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [5657], 
+DebugInfoEntry - Offset: 0x5657
+AbbreviationCode: 0xc DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=6 [00000006], unsigned=6 [00000006] DW_FORM_data1
+ (DWARFDataTypeImporter)  
+ERROR Failed to get data type for struct field: 5d50 (DWARFDataTypeImporter)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [5682], 
+DebugInfoEntry - Offset: 0x5682
+AbbreviationCode: 0xc DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
+ (DWARFDataTypeImporter)  
+ERROR Error when processing DWARF information for DIE 614f (DWARFFunctionImporter) java.lang.IllegalArgumentException: Data type may not report a length less than 1: VoidDataType
+	at ghidra.program.model.data.ArrayDataType.validate(ArrayDataType.java:106)
+	at ghidra.program.model.data.ArrayDataType.<init>(ArrayDataType.java:67)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.makeDataTypeForArray(DWARFDataTypeImporter.java:1118)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:184)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct_worker(DWARFDataTypeImporter.java:830)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.populateStubStruct(DWARFDataTypeImporter.java:762)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.finishStruct(DWARFDataTypeImporter.java:608)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeImporter.getDataType(DWARFDataTypeImporter.java:195)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.doGetDataType(DWARFDataTypeManager.java:127)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.getDataType(DWARFDataTypeManager.java:222)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processSubprogram(DWARFFunctionImporter.java:267)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:116)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:208)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [614f], 
+DebugInfoEntry - Offset: 0x614f
+AbbreviationCode: 0xe DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=2710, value=hdr_io_int] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=-125 [ffffffffffffff83], unsigned=131 [00000083] DW_FORM_data1
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134597396 [0805cb14] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134642332 [08067a9c] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=352 [00000160], unsigned=352 [00000160] DW_FORM_data4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 173
+ (DWARFFunctionImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [7207], 
 DebugInfoEntry - Offset: 0x7207
 AbbreviationCode: 0x6 DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=6 [00000006], unsigned=6 [00000006] DW_FORM_data1
  (DWARFDataTypeImporter)  
 ERROR Error updating function hdr_skip_wfftype at 08067adf: Unsupported varnode size: 0 (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter eigen:real(kind=8)[0], omitting from definition of rwwf@08067f38 (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter occ:real(kind=8)[0], omitting from definition of rwwf@08067f38 (DWARFFunctionImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [7cde], 
 DebugInfoEntry - Offset: 0x7cde
 AbbreviationCode: 0x21 DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=500 [000001f4], unsigned=500 [000001f4] DW_FORM_data2
  (DWARFDataTypeImporter)  
 ERROR Error updating function rwwf at 08067f38: Unsupported varnode size: 0 (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter eigen:real(kind=8)[0], omitting from definition of writewf@0806a30d (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter occ:real(kind=8)[0], omitting from definition of writewf@0806a30d (DWARFFunctionImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [7cde], 
 DebugInfoEntry - Offset: 0x7cde
 AbbreviationCode: 0x21 DW_TAG_string_type
@@ -581,12 +781,40 @@ DebugInfoEntry - Offset: 0x8072
 AbbreviationCode: 0x6 DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=-124 [ffffffffffffff84], unsigned=132 [00000084] DW_FORM_data1
  (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [819c], 
-DebugInfoEntry - Offset: 0x819c
-AbbreviationCode: 0x12 DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=500 [000001f4], unsigned=500 [000001f4] DW_FORM_data2
- (DWARFDataTypeImporter)  
-ERROR Error updating function wffopen at 0806af3c: Unsupported varnode size: 0 (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 807b (DWARFFunctionImporter) java.lang.NullPointerException
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processSubprogram(DWARFFunctionImporter.java:272)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:116)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:208)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [807b], 
+DebugInfoEntry - Offset: 0x807b
+AbbreviationCode: 0x7 DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=2971, value=wffopen] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=47 [0000002f], unsigned=47 [0000002f] DW_FORM_data1
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134655804 [0806af3c] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134656814 [0806b32e] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=616 [00000268], unsigned=616 [00000268] DW_FORM_data4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 20
+ (DWARFFunctionImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [895f], 
 DebugInfoEntry - Offset: 0x895f
 AbbreviationCode: 0x10 DW_TAG_string_type
@@ -599,65 +827,79 @@ DebugInfoEntry - Offset: 0x8d14
 AbbreviationCode: 0xb DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=4 [00000004], unsigned=4 [00000004] DW_FORM_data1
  (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [8d27], 
-DebugInfoEntry - Offset: 0x8d27
-AbbreviationCode: 0xe DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=500 [000001f4], unsigned=500 [000001f4] DW_FORM_data2
- (DWARFDataTypeImporter)  
-ERROR Error updating function int2char4 at 0806c7b0: Unsupported varnode size: 0 (DWARFFunctionImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [8e34], 
-DebugInfoEntry - Offset: 0x8e34
-AbbreviationCode: 0xf DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=500 [000001f4], unsigned=500 [000001f4] DW_FORM_data2
- (DWARFDataTypeImporter)  
-ERROR Error updating function mati3inv at 0806cbe4: Unsupported varnode size: 0 (DWARFFunctionImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [9421], 
-DebugInfoEntry - Offset: 0x9421
-AbbreviationCode: 0x15 DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=500 [000001f4], unsigned=500 [000001f4] DW_FORM_data2
- (DWARFDataTypeImporter)  
-ERROR Error updating function print_ij at 0806d2a0: Unsupported varnode size: 0 (DWARFFunctionImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [96c6], 
-DebugInfoEntry - Offset: 0x96c6
-AbbreviationCode: 0xc DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=24 [00000018], unsigned=24 [00000018] DW_FORM_data1
- (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [96c8], 
-DebugInfoEntry - Offset: 0x96c8
-AbbreviationCode: 0xc DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=6 [00000006], unsigned=6 [00000006] DW_FORM_data1
- (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [96f0], 
-DebugInfoEntry - Offset: 0x96f0
-AbbreviationCode: 0xc DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=3 [00000003], unsigned=3 [00000003] DW_FORM_data1
- (DWARFDataTypeImporter)  
-ERROR Error when processing DWARF information for DIE 94b9 (DWARFFunctionImporter) java.lang.IllegalArgumentException: Array data-type must be Fixed length
-	at ghidra.program.database.data.DataTypeManagerDB.createArray(DataTypeManagerDB.java:2505)
-	at ghidra.program.database.data.DataTypeManagerDB.createDataType(DataTypeManagerDB.java:2290)
-	at ghidra.program.database.data.DataTypeManagerDB.resolveNoSourceDataType(DataTypeManagerDB.java:902)
-	at ghidra.program.database.data.DataTypeManagerDB.resolve(DataTypeManagerDB.java:792)
-	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.doGetDataType(DWARFDataTypeManager.java:135)
-	at ghidra.app.util.bin.format.dwarf4.next.DWARFDataTypeManager.getDataType(DWARFDataTypeManager.java:223)
-	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processVariable(DWARFFunctionImporter.java:356)
-	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processFuncChildren(DWARFFunctionImporter.java:279)
-	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processSubprogram(DWARFFunctionImporter.java:265)
-	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:115)
-	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:201)
-	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:139)
+ERROR Error when processing DWARF information for DIE 8c6c (DWARFFunctionImporter) java.lang.NullPointerException
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processSubprogram(DWARFFunctionImporter.java:272)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:116)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:208)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
 	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
 	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
 	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
 	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
 	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
 	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
-	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:998)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1532)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
 	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [8c6c], 
+DebugInfoEntry - Offset: 0x8c6c
+AbbreviationCode: 0x2 DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=3315, value=int2char4] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=38 [00000026], unsigned=38 [00000026] DW_FORM_data1
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134662064 [0806c7b0] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134663138 [0806cbe2] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=924 [0000039c], unsigned=924 [0000039c] DW_FORM_data4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 12
+ (DWARFFunctionImporter)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [8e34], 
+DebugInfoEntry - Offset: 0x8e34
+AbbreviationCode: 0xf DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=500 [000001f4], unsigned=500 [000001f4] DW_FORM_data2
+ (DWARFDataTypeImporter)  
+ERROR Error updating function mati3inv at 0806cbe4: Unsupported varnode size: 0 (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter a_ij:real(kind=8)[0], omitting from definition of print_ij@0806d2a0 (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter opt_l_index:integer(kind=4)[0], omitting from definition of print_ij@0806d2a0 (DWARFFunctionImporter)  
+WARN  DWARF: zero-length function parameter pack2ij:integer(kind=4)[0], omitting from definition of print_ij@0806d2a0 (DWARFFunctionImporter)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [9421], 
+DebugInfoEntry - Offset: 0x9421
+AbbreviationCode: 0x15 DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=500 [000001f4], unsigned=500 [000001f4] DW_FORM_data2
+ (DWARFDataTypeImporter)  
+ERROR Error updating function print_ij at 0806d2a0: Storage size does not match data type size: 4 (DWARFFunctionImporter)  
+WARN  Unsupported datatype in die: DIEAgregrate of: DIE [96c6], 
+DebugInfoEntry - Offset: 0x96c6
+AbbreviationCode: 0xc DW_TAG_string_type
+	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=24 [00000018], unsigned=24 [00000018] DW_FORM_data1
+ (DWARFDataTypeImporter)  
+ERROR Error when processing DWARF information for DIE 94b9 (DWARFFunctionImporter) java.lang.NullPointerException
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processSubprogram(DWARFFunctionImporter.java:272)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:116)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:208)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
  
 INFO  DIE info:
 DIEAgregrate of: DIE [94b9], 
@@ -670,7 +912,7 @@ AbbreviationCode: 0x3 DW_TAG_subprogram
 	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134669060 [0806e304] DW_FORM_addr
 	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134671829 [0806edd5] DW_FORM_addr
 	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=1144 [00000478], unsigned=1144 [00000478] DW_FORM_data4
-	Attribute: DW_AT_sibling DWARFNumericAttribute: 38598 [000096c6] DW_FORM_ref4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
 	Child count: 30
  (DWARFFunctionImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [97ab], 
@@ -678,12 +920,40 @@ DebugInfoEntry - Offset: 0x97ab
 AbbreviationCode: 0xa DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=4 [00000004], unsigned=4 [00000004] DW_FORM_data1
  (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [97cb], 
-DebugInfoEntry - Offset: 0x97cb
-AbbreviationCode: 0xe DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=500 [000001f4], unsigned=500 [000001f4] DW_FORM_data2
- (DWARFDataTypeImporter)  
-ERROR Error updating function leave_new at 0806edd8: Unsupported varnode size: 0 (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 973a (DWARFFunctionImporter) java.lang.NullPointerException
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processSubprogram(DWARFFunctionImporter.java:272)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:116)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:208)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [973a], 
+DebugInfoEntry - Offset: 0x973a
+AbbreviationCode: 0x2 DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=3758, value=leave_new] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=102 [00000066], unsigned=102 [00000066] DW_FORM_data1
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134671832 [0806edd8] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134672074 [0806eeca] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=1188 [000004a4], unsigned=1188 [000004a4] DW_FORM_data4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 8
+ (DWARFFunctionImporter)  
 WARN  Unsupported datatype in die: DIEAgregrate of: DIE [9913], 
 DebugInfoEntry - Offset: 0x9913
 AbbreviationCode: 0x10 DW_TAG_string_type
@@ -716,31 +986,44 @@ DebugInfoEntry - Offset: 0x9d5f
 AbbreviationCode: 0xc DW_TAG_string_type
 	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=500 [000001f4], unsigned=500 [000001f4] DW_FORM_data2
  (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [9d62], 
-DebugInfoEntry - Offset: 0x9d62
-AbbreviationCode: 0xd DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=4 [00000004], unsigned=4 [00000004] DW_FORM_data1
- (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [9d5f], 
-DebugInfoEntry - Offset: 0x9d5f
-AbbreviationCode: 0xc DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=500 [000001f4], unsigned=500 [000001f4] DW_FORM_data2
- (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [9d5f], 
-DebugInfoEntry - Offset: 0x9d5f
-AbbreviationCode: 0xc DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=500 [000001f4], unsigned=500 [000001f4] DW_FORM_data2
- (DWARFDataTypeImporter)  
-WARN  Unsupported datatype in die: DIEAgregrate of: DIE [9d74], 
-DebugInfoEntry - Offset: 0x9d74
-AbbreviationCode: 0xd DW_TAG_string_type
-	Attribute: DW_AT_byte_size DWARFAmbigNumericAttribute: natural=7 [00000007], unsigned=7 [00000007] DW_FORM_data1
- (DWARFDataTypeImporter)  
-ERROR Error updating function wrtout at 0806f9a4: Unsupported varnode size: 0 (DWARFFunctionImporter)  
+ERROR Error when processing DWARF information for DIE 9b17 (DWARFFunctionImporter) java.lang.NullPointerException
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.processSubprogram(DWARFFunctionImporter.java:272)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFFunctionImporter.importFunctions(DWARFFunctionImporter.java:116)
+	at ghidra.app.util.bin.format.dwarf4.next.DWARFParser.parse(DWARFParser.java:208)
+	at ghidra.app.plugin.core.analysis.DWARFAnalyzer.added(DWARFAnalyzer.java:145)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+ 
+INFO  DIE info:
+DIEAgregrate of: DIE [9b17], 
+DebugInfoEntry - Offset: 0x9b17
+AbbreviationCode: 0x2 DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=3914, value=wrtout] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFAmbigNumericAttribute: natural=1 [00000001], unsigned=1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFAmbigNumericAttribute: natural=108 [0000006c], unsigned=108 [0000006c] DW_FORM_data1
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134674852 [0806f9a4] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134678344 [08070748] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFAmbigNumericAttribute: natural=1320 [00000528], unsigned=1320 [00000528] DW_FORM_data4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 29
+ (DWARFFunctionImporter)  
 INFO  DWARF import - total elapsed: some time (DWARFImportSummary)  
 INFO  DWARF data type import - elapsed: some time (DWARFImportSummary)  
 INFO  DWARF func & symbol import - elapsed: some time (DWARFImportSummary)  
-INFO  DWARF types imported: 54 (DWARFImportSummary)  
+INFO  DWARF types imported: 53 (DWARFImportSummary)  
 INFO  DWARF function signatures added: 25 (DWARFImportSummary)  
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
@@ -774,6 +1057,12 @@ INFO  -----------------------------------------------------
  (AutoAnalysisManager)  
 INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
+WARN  Error decompiling: Exception while decompiling 08050b5c: process: timeout
+ (CppExporter)  
+WARN  Error decompiling: Exception while decompiling 08048e54: process: timeout
+ (CppExporter)  
+WARN  Error decompiling: Exception while decompiling 0805cb14: process: timeout
+ (CppExporter)  
 INFO  ghidra_script.java> Wrote SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/ghidra.c (GhidraScript)  
 INFO  ANALYZING changes made by post scripts: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  

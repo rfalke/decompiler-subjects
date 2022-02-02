@@ -1,0 +1,92 @@
+openjdk version "11.0.12" 2021-07-20
+OpenJDK Runtime Environment 18.9 (build 11.0.12+7)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.12+7, mixed mode)
+INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/preferences (Preferences)  
+INFO  Class search complete (some time) (ClassSearcher)  
+INFO  Initializing SSL Context (SSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
+INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    SUBJECTS/scripts
+    HOME/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_internet/asmutils/lsmod/ia32_elf/project_loc/project_name (HeadlessAnalyzer)  
+INFO  Creating project: SUBJECTS/from_internet/asmutils/lsmod/ia32_elf/project_loc/project_name (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: SUBJECTS/from_internet/asmutils/lsmod/ia32_elf/project_loc/project_name (HeadlessAnalyzer)  
+INFO  IMPORTING: SUBJECTS/from_internet/asmutils/lsmod/ia32_elf/subject.exe (HeadlessAnalyzer)  
+WARN  ELF data markup conflict at 0804802c (ElfProgramBuilder)  
+java.lang.NullPointerException
+	at ghidra.app.util.opinion.ElfProgramBuilder.markupProgramHeaders(ElfProgramBuilder.java:1020)
+	at ghidra.app.util.opinion.ElfProgramBuilder.load(ElfProgramBuilder.java:150)
+	at ghidra.app.util.opinion.ElfProgramBuilder.loadElf(ElfProgramBuilder.java:103)
+	at ghidra.app.util.opinion.ElfLoader.load(ElfLoader.java:153)
+	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:347)
+	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.loadProgram(AbstractLibrarySupportLoader.java:83)
+	at ghidra.app.util.opinion.AbstractProgramLoader.load(AbstractProgramLoader.java:112)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:198)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:156)
+	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:51)
+	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1640)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1522)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
+INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_internet/asmutils/lsmod/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: SUBJECTS/from_internet/asmutils/lsmod/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              some time
+    Apply Data Archives                        some time
+    Call Convention ID                         some time
+    Call-Fixup Installer                       some time
+    Create Address Tables                      some time
+    Create Address Tables - One Time           some time
+    Create Function                            some time
+    Data Reference                             some time
+    Decompiler Switch Analysis                 some time
+    Demangler GNU                              some time
+    Disassemble Entry Points                   some time
+    ELF Scalar Operand References              some time
+    Embedded Media                             some time
+    External Entry References                  some time
+    Function ID                                some time
+    Function Start Search                      some time
+    Non-Returning Functions - Discovered       some time
+    Non-Returning Functions - Known            some time
+    Reference                                  some time
+    Shared Return Calls                        some time
+    Stack                                      some time
+    Subroutine References                      some time
+    X86 Function Callee Purge                  some time
+    x86 Constant Reference Analyzer            some time
+-----------------------------------------------------
+     Total Time  some time
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_internet/asmutils/lsmod/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
+INFO  ghidra_script.java> Wrote SUBJECTS/from_internet/asmutils/lsmod/ia32_elf/ghidra.c (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: SUBJECTS/from_internet/asmutils/lsmod/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_internet/asmutils/lsmod/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  

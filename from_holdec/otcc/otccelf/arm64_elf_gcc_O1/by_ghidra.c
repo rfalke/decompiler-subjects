@@ -53,7 +53,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[15];
+    char _unused2[56];
 };
 
 struct _IO_marker {
@@ -87,36 +87,36 @@ typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType_AARCH64 {
-    SHT_AARCH64_ATTRIBUTES=1879048195,
+    SHT_NULL=0,
+    SHT_PROGBITS=1,
+    SHT_SYMTAB=2,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_HASH=5,
+    SHT_DYNAMIC=6,
+    SHT_NOTE=7,
+    SHT_NOBITS=8,
+    SHT_REL=9,
+    SHT_SHLIB=10,
+    SHT_DYNSYM=11,
+    SHT_INIT_ARRAY=14,
+    SHT_FINI_ARRAY=15,
+    SHT_PREINIT_ARRAY=16,
+    SHT_GROUP=17,
+    SHT_SYMTAB_SHNDX=18,
     SHT_ANDROID_REL=1610612737,
     SHT_ANDROID_RELA=1610612738,
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
     SHT_GNU_ATTRIBUTES=1879048181,
     SHT_GNU_HASH=1879048182,
     SHT_GNU_LIBLIST=1879048183,
+    SHT_CHECKSUM=1879048184,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_syminfo=1879048188,
     SHT_GNU_verdef=1879048189,
     SHT_GNU_verneed=1879048190,
     SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
-    SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_AARCH64_ATTRIBUTES=1879048195
 } Elf_SectionHeaderType_AARCH64;
 
 struct Elf64_Shdr {
@@ -135,18 +135,18 @@ struct Elf64_Shdr {
 typedef struct Elf64_Phdr Elf64_Phdr, *PElf64_Phdr;
 
 typedef enum Elf_ProgramHeaderType_AARCH64 {
-    PT_AARCH64_ARCHEXT=1879048192,
-    PT_DYNAMIC=2,
-    PT_GNU_EH_FRAME=1685382480,
-    PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
     PT_NULL=0,
-    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
     PT_SHLIB=5,
-    PT_TLS=7
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482,
+    PT_AARCH64_ARCHEXT=1879048192
 } Elf_ProgramHeaderType_AARCH64;
 
 struct Elf64_Phdr {
@@ -171,81 +171,81 @@ struct Elf64_Rela {
 typedef struct Elf64_Dyn_AARCH64 Elf64_Dyn_AARCH64, *PElf64_Dyn_AARCH64;
 
 typedef enum Elf64_DynTag_AARCH64 {
+    DT_NULL=0,
+    DT_NEEDED=1,
+    DT_PLTRELSZ=2,
+    DT_PLTGOT=3,
+    DT_HASH=4,
+    DT_STRTAB=5,
+    DT_SYMTAB=6,
+    DT_RELA=7,
+    DT_RELASZ=8,
+    DT_RELAENT=9,
+    DT_STRSZ=10,
+    DT_SYMENT=11,
+    DT_INIT=12,
+    DT_FINI=13,
+    DT_SONAME=14,
+    DT_RPATH=15,
+    DT_SYMBOLIC=16,
+    DT_REL=17,
+    DT_RELSZ=18,
+    DT_RELENT=19,
+    DT_PLTREL=20,
+    DT_DEBUG=21,
+    DT_TEXTREL=22,
+    DT_JMPREL=23,
+    DT_BIND_NOW=24,
+    DT_INIT_ARRAY=25,
+    DT_FINI_ARRAY=26,
+    DT_INIT_ARRAYSZ=27,
+    DT_FINI_ARRAYSZ=28,
+    DT_RUNPATH=29,
+    DT_FLAGS=30,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_RELRSZ=35,
+    DT_RELR=36,
+    DT_RELRENT=37,
     DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELSZ=1610612752,
     DT_ANDROID_RELA=1610612753,
     DT_ANDROID_RELASZ=1610612754,
     DT_ANDROID_RELR=1879040000,
-    DT_ANDROID_RELRENT=1879040003,
     DT_ANDROID_RELRSZ=1879040001,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
-    DT_CONFIG=1879047930,
-    DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_FEATURE_1=1879047676,
-    DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
+    DT_ANDROID_RELRENT=1879040003,
     DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_CHECKSUM=1879047672,
+    DT_PLTPADSZ=1879047673,
     DT_MOVEENT=1879047674,
     DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
+    DT_FEATURE_1=1879047676,
     DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAY=32,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
-    DT_RELENT=19,
-    DT_RELR=36,
-    DT_RELRENT=37,
-    DT_RELRSZ=35,
-    DT_RELSZ=18,
-    DT_RPATH=15,
-    DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
     DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
+    DT_SYMINENT=1879047679,
+    DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
+    DT_TLSDESC_GOT=1879047927,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_LIBLIST=1879047929,
+    DT_CONFIG=1879047930,
+    DT_DEPAUDIT=1879047931,
+    DT_AUDIT=1879047932,
+    DT_PLTPAD=1879047933,
+    DT_MOVETAB=1879047934,
+    DT_SYMINFO=1879047935,
+    DT_VERSYM=1879048176,
+    DT_RELACOUNT=1879048185,
+    DT_RELCOUNT=1879048186,
+    DT_FLAGS_1=1879048187,
     DT_VERDEF=1879048188,
     DT_VERDEFNUM=1879048189,
     DT_VERNEED=1879048190,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_AUXILIARY=2147483645,
+    DT_FILTER=2147483647
 } Elf64_DynTag_AARCH64;
 
 struct Elf64_Dyn_AARCH64 {
@@ -635,7 +635,7 @@ int am(void)
   
   iVar1 = m;
   uVar2 = isalnum(m);
-  return (int)(iVar1 == 0x5f | uVar2);
+  return iVar1 == 0x5f | uVar2;
 }
 
 
@@ -704,44 +704,42 @@ int av(void)
       w();
       iVar4 = w();
     }
-    else {
-      if (e == 0x2f && m == 0x2a) {
-        w();
-        while (m != 0) {
-          while (m != 0x2a) {
-            w();
-          }
+    else if (e == 0x2f && m == 0x2a) {
+      w();
+      while (m != 0) {
+        while (m != 0x2a) {
           w();
-          if (m == 0x2f) {
-            m = 0;
-          }
         }
         w();
-        iVar4 = av();
+        if (m == 0x2f) {
+          m = 0;
+        }
       }
-      else {
-        iVar4 = 0x102ab8;
-        do {
-          pbVar7 = (byte *)(long)iVar4;
-          if (*pbVar7 == 0) {
-            return iVar4 + 1;
-          }
-          bVar1 = *(byte *)(long)(iVar4 + 1);
-          C = 0;
-          bVar2 = *(byte *)(long)(iVar4 + 2);
-          iVar4 = iVar4 + 3;
-          while (J = bVar2 - 0x62, J < 0) {
-            C = J + C * 0x40 + 0x40;
-            bVar2 = *(byte *)(long)iVar4;
-            iVar4 = iVar4 + 1;
-          }
-        } while (bVar1 != 0x40 && m != (uint)bVar1 || e != (uint)*pbVar7);
-        iVar4 = J;
-        if (m == (uint)bVar1) {
-          w();
-          iVar4 = 0x1130c4;
-          e = 1;
+      w();
+      iVar4 = av();
+    }
+    else {
+      iVar4 = 0x102ab8;
+      do {
+        pbVar7 = (byte *)(long)iVar4;
+        if (*pbVar7 == 0) {
+          return iVar4 + 1;
         }
+        bVar1 = *(byte *)(long)(iVar4 + 1);
+        C = 0;
+        bVar2 = *(byte *)(long)(iVar4 + 2);
+        iVar4 = iVar4 + 3;
+        while (J = bVar2 - 0x62, J < 0) {
+          C = J + C * 0x40 + 0x40;
+          bVar2 = *(byte *)(long)iVar4;
+          iVar4 = iVar4 + 1;
+        }
+      } while (bVar1 != 0x40 && m != (uint)bVar1 || e != (uint)*pbVar7);
+      iVar4 = J;
+      if (m == (uint)bVar1) {
+        w();
+        iVar4 = 0x1130c4;
+        e = 1;
       }
     }
   }
@@ -815,8 +813,8 @@ int E(int a,int d)
 int ao(int a)
 
 {
-  return (int)((uint)*(byte *)(long)(a + 2) << 0x10 | (uint)*(byte *)(long)(a + 1) << 8 |
-              (uint)*(byte *)(long)a | (uint)*(byte *)(long)(a + 3) << 0x18);
+  return (uint)*(byte *)(long)(a + 2) << 0x10 | (uint)*(byte *)(long)(a + 1) << 8 |
+         (uint)*(byte *)(long)a | (uint)*(byte *)(long)(a + 3) << 0x18;
 }
 
 
@@ -1071,16 +1069,14 @@ LAB_001018e0:
 LAB_00101adc:
           aw(iVar2);
         }
-        else {
-          if (a_01 != 0) {
-            if (a_01 == 0x100) {
-              aw(0x8b);
-            }
-            else {
-              aw(0xbe0f);
-            }
-            v = v + 1;
+        else if (a_01 != 0) {
+          if (a_01 == 0x100) {
+            aw(0x8b);
           }
+          else {
+            aw(0xbe0f);
+          }
+          v = v + 1;
         }
       }
       goto LAB_00101994;
@@ -1286,70 +1282,62 @@ int S(int s)
       iVar1 = H(iVar1);
     }
   }
-  else {
-    if (e == 0x160 || e == 0x1f8) {
-      av();
-      av();
-      iVar2 = v;
-      if (iVar1 == 0x160) {
-        h = ac();
-      }
-      else {
-        if (e != 0x3b) {
-          B();
-        }
-        av();
-        iVar2 = v;
-        h = 0;
-        if (e != 0x3b) {
-          h = ac();
-        }
-        av();
-        if (e != 0x29) {
-          iVar1 = I(0);
-          B();
-          I((iVar2 - v) + -5);
-          H(iVar1);
-          iVar2 = iVar1 + 4;
-        }
-      }
-      av();
-      S((int)register0x00000008 + -4);
-      I((iVar2 - v) + -5);
-      iVar1 = H(h);
+  else if (e == 0x160 || e == 0x1f8) {
+    av();
+    av();
+    iVar2 = v;
+    if (iVar1 == 0x160) {
+      h = ac();
     }
     else {
-      if (e == 0x7b) {
-        av();
-        ar(1);
-        while (e != 0x7d) {
-          S(s);
-        }
-        iVar1 = av();
+      if (e != 0x3b) {
+        B();
       }
-      else {
-        if (e == 0x1c0) {
-          av();
-          if (e != 0x3b) {
-            B();
-          }
-          U = I(U);
-        }
-        else {
-          if (e == 400) {
-            av();
-            iVar1 = I(*(int *)(long)s);
-            *(int *)(long)s = iVar1;
-          }
-          else {
-            if (e != 0x3b) {
-              B();
-            }
-          }
-        }
-        iVar1 = av();
+      av();
+      iVar2 = v;
+      h = 0;
+      if (e != 0x3b) {
+        h = ac();
+      }
+      av();
+      if (e != 0x29) {
+        iVar1 = I(0);
+        B();
+        I((iVar2 - v) + -5);
+        H(iVar1);
+        iVar2 = iVar1 + 4;
       }
     }
+    av();
+    S((int)register0x00000008 + -4);
+    I((iVar2 - v) + -5);
+    iVar1 = H(h);
+  }
+  else if (e == 0x7b) {
+    av();
+    ar(1);
+    while (e != 0x7d) {
+      S(s);
+    }
+    iVar1 = av();
+  }
+  else {
+    if (e == 0x1c0) {
+      av();
+      if (e != 0x3b) {
+        B();
+      }
+      U = I(U);
+    }
+    else if (e == 400) {
+      av();
+      iVar1 = I(*(int *)(long)s);
+      *(int *)(long)s = iVar1;
+    }
+    else if (e != 0x3b) {
+      B();
+    }
+    iVar1 = av();
   }
   return iVar1;
 }
@@ -1413,33 +1401,29 @@ int ae(int s)
           memcpy((void *)(long)i,(char *)(long)iVar2,(long)(iVar3 - iVar2));
           i = ((iVar3 + i) - iVar2) + 1;
         }
+        else if (s == 1) {
+          ax(local_10 + 0x16);
+          ax(0);
+          ax(0);
+          ax(0x10);
+          local_10 = ((local_10 + iVar3) - iVar2) + 1;
+        }
         else {
-          if (s == 1) {
-            ax(local_10 + 0x16);
-            ax(0);
-            ax(0);
-            ax(0x10);
-            local_10 = ((local_10 + iVar3) - iVar2) + 1;
-          }
-          else {
-            local_10 = local_10 + 1;
-            if (iVar4 != 0) {
-              do {
-                iVar2 = ao(iVar4);
-                uVar5 = (uint)(*(char *)(long)(iVar4 + -1) != '\x05');
-                E(iVar4,uVar5 * -4);
-                ax((iVar4 - K) + R + y);
-                ax(uVar5 + local_10 * 0x100 + 1);
-                iVar4 = iVar2;
-              } while (iVar2 != 0);
-            }
+          local_10 = local_10 + 1;
+          if (iVar4 != 0) {
+            do {
+              iVar2 = ao(iVar4);
+              uVar5 = (uint)(*(char *)(long)(iVar4 + -1) != '\x05');
+              E(iVar4,uVar5 * -4);
+              ax((iVar4 - K) + R + y);
+              ax(uVar5 + local_10 * 0x100 + 1);
+              iVar4 = iVar2;
+            } while (iVar2 != 0);
           }
         }
       }
-      else {
-        if (s == 0) {
-          ap(iVar4,z);
-        }
+      else if (s == 0) {
+        ap(iVar4,z);
       }
     }
   }

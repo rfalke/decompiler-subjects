@@ -2,36 +2,31 @@ openjdk version "11.0.12" 2021-07-20
 OpenJDK Runtime Environment 18.9 (build 11.0.12+7)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.12+7, mixed mode)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/preferences (Preferences)  
-INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
-SLF4J: Class path contains multiple SLF4J bindings.
-SLF4J: Found binding in [jar:file:GHIDRADIR/Ghidra/Features/Base/lib/slf4j-nop-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
-SLF4J: Found binding in [jar:file:GHIDRADIR/Ghidra/Features/GraphServices/lib/slf4j-nop-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
-SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
-SLF4J: Actual binding is of type [org.slf4j.helpers.NOPLoggerFactory]
+INFO  Using log file: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
 INFO  HEADLESS Script Paths:
-    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
     GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
     GHIDRADIR/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
-    GHIDRADIR/Ghidra/Debug/Debugger/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_boomerang/fibo2/arm64_elf_clang_Os_from_rfalke/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_boomerang/fibo2/arm64_elf_clang_Os_from_rfalke/project_loc/project_name (DefaultProject)  

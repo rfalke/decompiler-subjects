@@ -1,48 +1,45 @@
-OpenJDK 64-Bit Server VM warning: Archived non-system classes are disabled because the java.system.class.loader property is specified (value = "ghidra.GhidraClassLoader"). To use archived non-system classes, this property must be not be set
-openjdk version "11.0.5" 2019-10-15
-OpenJDK Runtime Environment 18.9 (build 11.0.5+10)
-OpenJDK 64-Bit Server VM 18.9 (build 11.0.5+10, mixed mode, sharing)
+openjdk version "11.0.12" 2021-07-20
+OpenJDK Runtime Environment 18.9 (build 11.0.12+7)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.12+7, mixed mode)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_9.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_9.2_PUBLIC/preferences (Preferences)  
-INFO  Loading previous preferences: HOME/.ghidra/.ghidra_9.1.2_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/preferences (Preferences)  
+INFO  Loading previous preferences: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/preferences (Preferences)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender (file:GHIDRADIR/Ghidra/Features/Base/lib/org.apache.felix.framework-6.0.3.jar) to method java.net.URLClassLoader.addURL(java.net.URL)
-WARNING: Please consider reporting this to the maintainers of org.apache.felix.framework.ext.ClassPathExtenderFactory$DefaultClassLoaderExtender
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
 INFO  HEADLESS Script Paths:
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger/ghidra_scripts
     GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
     GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_pouet.net/with_source_136/ia32_mz/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_pouet.net/with_source_136/ia32_mz/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_pouet.net/with_source_136/ia32_mz/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_pouet.net/with_source_136/ia32_mz/subject.exe (HeadlessAnalyzer)  
-WARN  Unusual file alignment: 0x4 (OptionalHeaderImpl$$EnhancerByCGLIB$$6bef20fc)  
-WARN  Unusual file alignment: 0x4 (OptionalHeaderImpl$$EnhancerByCGLIB$$6bef20fc)  
+WARN  Unusual file alignment: 0x4 (OptionalHeaderImpl)  
+WARN  Unusual file alignment: 0x4 (OptionalHeaderImpl)  
 ERROR REPORT: Offset must be in range [0,96], got 5312 (HeadlessAnalyzer) java.lang.IndexOutOfBoundsException: Offset must be in range [0,96], got 5312
-	at ghidra.program.database.mem.MemoryMapDB.checkFileBytesRange(MemoryMapDB.java:684)
-	at ghidra.program.database.mem.MemoryMapDB.createInitializedBlock(MemoryMapDB.java:651)
+	at ghidra.program.database.mem.MemoryMapDB.checkFileBytesRange(MemoryMapDB.java:681)
+	at ghidra.program.database.mem.MemoryMapDB.createInitializedBlock(MemoryMapDB.java:648)
 	at ghidra.app.util.MemoryBlockUtils.createInitializedBlock(MemoryBlockUtils.java:227)
-	at ghidra.app.util.opinion.MzLoader.processSegments(MzLoader.java:330)
+	at ghidra.app.util.opinion.MzLoader.processSegments(MzLoader.java:324)
 	at ghidra.app.util.opinion.MzLoader.load(MzLoader.java:112)
 	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:347)
 	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.loadProgram(AbstractLibrarySupportLoader.java:83)
@@ -50,19 +47,20 @@ ERROR REPORT: Offset must be in range [0,96], got 5312 (HeadlessAnalyzer) java.l
 	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:198)
 	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:156)
 	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:51)
-	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1622)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1504)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1640)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1522)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
 	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
  
 java.lang.IndexOutOfBoundsException: Offset must be in range [0,96], got 5312
-	at ghidra.program.database.mem.MemoryMapDB.checkFileBytesRange(MemoryMapDB.java:684)
-	at ghidra.program.database.mem.MemoryMapDB.createInitializedBlock(MemoryMapDB.java:651)
+	at ghidra.program.database.mem.MemoryMapDB.checkFileBytesRange(MemoryMapDB.java:681)
+	at ghidra.program.database.mem.MemoryMapDB.createInitializedBlock(MemoryMapDB.java:648)
 	at ghidra.app.util.MemoryBlockUtils.createInitializedBlock(MemoryBlockUtils.java:227)
-	at ghidra.app.util.opinion.MzLoader.processSegments(MzLoader.java:330)
+	at ghidra.app.util.opinion.MzLoader.processSegments(MzLoader.java:324)
 	at ghidra.app.util.opinion.MzLoader.load(MzLoader.java:112)
 	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:347)
 	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.loadProgram(AbstractLibrarySupportLoader.java:83)
@@ -70,11 +68,12 @@ java.lang.IndexOutOfBoundsException: Offset must be in range [0,96], got 5312
 	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:198)
 	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:156)
 	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:51)
-	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1622)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1504)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1670)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1735)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:443)
+	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1640)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1522)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
 	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.main(GhidraLauncher.java:82)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
+	at ghidra.Ghidra.main(Ghidra.java:47)
 ERROR REPORT: Import failed for file: SUBJECTS/from_pouet.net/with_source_136/ia32_mz/subject.exe (HeadlessAnalyzer)  

@@ -135,6 +135,14 @@ struct runtime.modulehash {
     struct string * runtimehash;
 };
 
+typedef struct struct_{_F_uintptr;_runtime.dst_*uintptr;_runtime.src_uintptr_} struct_{_F_uintptr;_runtime.dst_*uintptr;_runtime.src_uintptr_}, *Pstruct_{_F_uintptr;_runtime.dst_*uintptr;_runtime.src_uintptr_};
+
+struct struct_{_F_uintptr;_runtime.dst_*uintptr;_runtime.src_uintptr_} { // Original name: struct { F uintptr; runtime.dst *uintptr; runtime.src uintptr }
+    uintptr .F;
+    uintptr * dst;
+    uintptr src;
+};
+
 typedef struct unicode.Range16 unicode.Range16, *Punicode.Range16;
 
 struct unicode.Range16 {
@@ -184,24 +192,55 @@ struct reflect.funcTypeFixed64 {
     struct reflect.rtype * args[64];
 };
 
-struct reflect.typeAlg { // Missing member  hash : func(unsafe.Pointer,uintptr)uintptr at offset 0x0
-Missing member  equal : func(unsafe.Pointer,unsafe.Pointer)bool at offset 0x4
-    undefined field_0x0;
-    undefined field_0x1;
-    undefined field_0x2;
-    undefined field_0x3;
-    undefined field_0x4;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
+struct reflect.typeAlg { // Missing member  hash : func(unsafe.Pointer,_uintptr)_uintptr at offset 0x0
+Missing member  equal : func(unsafe.Pointer,_unsafe.Pointer)_bool at offset 0x4
+    undefined field0_0x0;
+    undefined field1_0x1;
+    undefined field2_0x2;
+    undefined field3_0x3;
+    undefined field4_0x4;
+    undefined field5_0x5;
+    undefined field6_0x6;
+    undefined field7_0x7;
 };
 
-typedef struct struct{Fuintptr;runtime.addr*uint32;runtime.retint32} struct{Fuintptr;runtime.addr*uint32;runtime.retint32}, *Pstruct{Fuintptr;runtime.addr*uint32;runtime.retint32};
+typedef struct runtime.eface runtime.eface, *Pruntime.eface;
 
-struct struct{Fuintptr;runtime.addr*uint32;runtime.retint32} { // Original name: struct { F uintptr; runtime.addr *uint32; runtime.ret int32 }
-    uintptr .F;
-    uint32 * addr;
-    int32 ret;
+typedef struct runtime.eface interface_{};
+
+typedef struct runtime._type runtime._type, *Pruntime._type;
+
+typedef struct runtime.typeAlg runtime.typeAlg, *Pruntime.typeAlg;
+
+struct runtime.typeAlg { // Missing member  hash : func(unsafe.Pointer,_uintptr)_uintptr at offset 0x0
+Missing member  equal : func(unsafe.Pointer,_unsafe.Pointer)_bool at offset 0x4
+    undefined field0_0x0;
+    undefined field1_0x1;
+    undefined field2_0x2;
+    undefined field3_0x3;
+    undefined field4_0x4;
+    undefined field5_0x5;
+    undefined field6_0x6;
+    undefined field7_0x7;
+};
+
+struct runtime.eface {
+    struct runtime._type * _type;
+    void * data;
+};
+
+struct runtime._type {
+    uintptr size;
+    uintptr ptrdata;
+    uint32 hash;
+    runtime.tflag tflag;
+    uint8 align;
+    uint8 fieldalign;
+    uint8 kind;
+    struct runtime.typeAlg * alg;
+    uint8 * gcdata;
+    runtime.nameOff str;
+    runtime.typeOff ptrToThis;
 };
 
 typedef struct runtime.sigTabT runtime.sigTabT, *Pruntime.sigTabT;
@@ -217,25 +256,9 @@ typedef struct bucket<runtime.typeOff,*runtime._type> bucket<runtime.typeOff,*ru
 
 typedef struct runtime.mapextra runtime.mapextra, *Pruntime.mapextra;
 
-typedef struct runtime._type runtime._type, *Pruntime._type;
-
 typedef struct []*runtime.bmap []*runtime.bmap, *P[]*runtime.bmap;
 
 typedef struct runtime.bmap runtime.bmap, *Pruntime.bmap;
-
-typedef struct runtime.typeAlg runtime.typeAlg, *Pruntime.typeAlg;
-
-struct runtime.typeAlg { // Missing member  hash : func(unsafe.Pointer,uintptr)uintptr at offset 0x0
-Missing member  equal : func(unsafe.Pointer,unsafe.Pointer)bool at offset 0x4
-    undefined field_0x0;
-    undefined field_0x1;
-    undefined field_0x2;
-    undefined field_0x3;
-    undefined field_0x4;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
-};
 
 struct hash<runtime.typeOff,*runtime._type> {
     int count;
@@ -271,20 +294,6 @@ struct bucket<runtime.typeOff,*runtime._type> {
     struct bucket<runtime.typeOff,*runtime._type> * overflow;
 };
 
-struct runtime._type {
-    uintptr size;
-    uintptr ptrdata;
-    uint32 hash;
-    runtime.tflag tflag;
-    uint8 align;
-    uint8 fieldalign;
-    uint8 kind;
-    struct runtime.typeAlg * alg;
-    uint8 * gcdata;
-    runtime.nameOff str;
-    runtime.typeOff ptrToThis;
-};
-
 typedef struct hchan<bool> hchan<bool>, *Phchan<bool>;
 
 typedef struct waitq<bool> waitq<bool>, *Pwaitq<bool>;
@@ -315,10 +324,6 @@ typedef struct runtime.timer runtime.timer, *Pruntime.timer;
 
 typedef struct runtime.waitq runtime.waitq, *Pruntime.waitq;
 
-typedef struct runtime.eface runtime.eface, *Pruntime.eface;
-
-typedef struct runtime.eface interface{};
-
 typedef struct runtime.funcval runtime.funcval, *Pruntime.funcval;
 
 typedef struct runtime.note runtime.note, *Pruntime.note;
@@ -337,111 +342,20 @@ typedef struct runtime.mSpanList runtime.mSpanList, *Pruntime.mSpanList;
 
 typedef struct runtime.special runtime.special, *Pruntime.special;
 
-struct runtime.eface {
-    struct runtime._type * _type;
-    void * data;
-};
-
-struct runtime.timer { // Missing member  f : func(interface{},uintptr) at offset 0x14
+struct runtime.timer { // Missing member  f : func(interface_{},_uintptr) at offset 0x14
     int i;
     int64 when;
     int64 period;
-    undefined field_0x14;
-    undefined field_0x15;
-    undefined field_0x16;
-    undefined field_0x17;
-    interface{} arg;
+    undefined field3_0x14;
+    undefined field4_0x15;
+    undefined field5_0x16;
+    undefined field6_0x17;
+    interface_{} arg;
     uintptr seq;
 };
 
 struct runtime.funcval {
     uintptr fn;
-};
-
-struct runtime.mSpanList {
-    struct runtime.mspan * first;
-    struct runtime.mspan * last;
-};
-
-struct waitq<bool> {
-    struct sudog<bool> * first;
-    struct sudog<bool> * last;
-};
-
-struct hchan<bool> {
-    uint qcount;
-    uint dataqsiz;
-    void * buf;
-    uint16 elemsize;
-    undefined field_0xe;
-    undefined field_0xf;
-    uint32 closed;
-    struct runtime._type * elemtype;
-    uint sendx;
-    uint recvx;
-    struct waitq<bool> recvq;
-    struct waitq<bool> sendq;
-    struct runtime.mutex lock;
-};
-
-struct runtime._panic {
-    void * argp;
-    interface{} arg;
-    struct runtime._panic * link;
-    bool recovered;
-    bool aborted;
-    undefined field_0x12;
-    undefined field_0x13;
-};
-
-struct runtime.stackfreelist {
-    runtime.gclinkptr list;
-    uintptr size;
-};
-
-struct runtime.libcall {
-    uintptr fn;
-    uintptr n;
-    uintptr args;
-    uintptr r1;
-    uintptr r2;
-    uintptr err;
-};
-
-struct runtime.special {
-    struct runtime.special * next;
-    uint16 offset;
-    uint8 kind;
-    undefined field_0x7;
-};
-
-struct runtime.gobuf {
-    uintptr sp;
-    uintptr pc;
-    runtime.guintptr g;
-    void * ctxt;
-    runtime/internal/sys.Uintreg ret;
-    uintptr lr;
-    uintptr bp;
-};
-
-struct runtime.waitq {
-    struct runtime.sudog * first;
-    struct runtime.sudog * last;
-};
-
-struct runtime.stack {
-    uintptr lo;
-    uintptr hi;
-};
-
-struct []uint8 {
-    uint8 * array;
-    int len;
-    int cap;
-};
-
-struct runtime.mOS {
 };
 
 struct runtime.sudog {
@@ -463,13 +377,54 @@ struct runtime.note {
     uintptr key;
 };
 
+struct runtime.mSpanList {
+    struct runtime.mspan * first;
+    struct runtime.mspan * last;
+};
+
+struct waitq<bool> {
+    struct sudog<bool> * first;
+    struct sudog<bool> * last;
+};
+
+struct hchan<bool> {
+    uint qcount;
+    uint dataqsiz;
+    void * buf;
+    uint16 elemsize;
+    undefined field4_0xe;
+    undefined field5_0xf;
+    uint32 closed;
+    struct runtime._type * elemtype;
+    uint sendx;
+    uint recvx;
+    struct waitq<bool> recvq;
+    struct waitq<bool> sendq;
+    struct runtime.mutex lock;
+};
+
+struct runtime._panic {
+    void * argp;
+    interface_{} arg;
+    struct runtime._panic * link;
+    bool recovered;
+    bool aborted;
+    undefined field5_0x12;
+    undefined field6_0x13;
+};
+
+struct runtime.waitq {
+    struct runtime.sudog * first;
+    struct runtime.sudog * last;
+};
+
 struct runtime.hchan {
     uint qcount;
     uint dataqsiz;
     void * buf;
     uint16 elemsize;
-    undefined field_0xe;
-    undefined field_0xf;
+    undefined field4_0xe;
+    undefined field5_0xf;
     uint32 closed;
     struct runtime._type * elemtype;
     uint sendx;
@@ -479,17 +434,44 @@ struct runtime.hchan {
     struct runtime.mutex lock;
 };
 
+struct runtime.stackfreelist {
+    runtime.gclinkptr list;
+    uintptr size;
+};
+
 struct runtime._defer {
     int32 siz;
     bool started;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
+    undefined field2_0x5;
+    undefined field3_0x6;
+    undefined field4_0x7;
     uintptr sp;
     uintptr pc;
     struct runtime.funcval * fn;
     struct runtime._panic * _panic;
     struct runtime._defer * link;
+};
+
+struct runtime.mOS {
+};
+
+struct runtime.gobuf {
+    uintptr sp;
+    uintptr pc;
+    runtime.guintptr g;
+    void * ctxt;
+    runtime/internal/sys.Uintreg ret;
+    uintptr lr;
+    uintptr bp;
+};
+
+struct runtime.libcall {
+    uintptr fn;
+    uintptr n;
+    uintptr args;
+    uintptr r1;
+    uintptr r2;
+    uintptr err;
 };
 
 struct runtime.m { // Missing member  mstartfn : func() at offset 0x50
@@ -500,10 +482,10 @@ struct runtime.m { // Missing member  mstartfn : func() at offset 0x50
     struct runtime.g * gsignal;
     uint32 sigmask[2];
     uintptr tls[6];
-    undefined field_0x50;
-    undefined field_0x51;
-    undefined field_0x52;
-    undefined field_0x53;
+    undefined field7_0x50;
+    undefined field8_0x51;
+    undefined field9_0x52;
+    undefined field10_0x53;
     struct runtime.g * curg;
     runtime.guintptr caughtsig;
     runtime.puintptr p;
@@ -523,8 +505,8 @@ struct runtime.m { // Missing member  mstartfn : func() at offset 0x50
     bool newSigstack;
     int8 printlock;
     bool incgo;
-    undefined field_0x92;
-    undefined field_0x93;
+    undefined field30_0x92;
+    undefined field31_0x93;
     uint32 fastrand;
     uint64 ncgocall;
     int32 ncgo;
@@ -543,19 +525,19 @@ struct runtime.m { // Missing member  mstartfn : func() at offset 0x50
     uintptr nextwaitm;
     bool needextram;
     uint8 traceback;
-    undefined field_0x1ce;
-    undefined field_0x1cf;
+    undefined field50_0x1ce;
+    undefined field51_0x1cf;
     void * waitunlockf;
     void * waitlock;
     uint8 waittraceev;
-    undefined field_0x1d9;
-    undefined field_0x1da;
-    undefined field_0x1db;
+    undefined field55_0x1d9;
+    undefined field56_0x1da;
+    undefined field57_0x1db;
     int waittraceskip;
     bool startingtrace;
-    undefined field_0x1e1;
-    undefined field_0x1e2;
-    undefined field_0x1e3;
+    undefined field60_0x1e1;
+    undefined field61_0x1e2;
+    undefined field62_0x1e3;
     uint32 syscalltick;
     uintptr thread;
     struct runtime.libcall libcall;
@@ -564,15 +546,27 @@ struct runtime.m { // Missing member  mstartfn : func() at offset 0x50
     runtime.guintptr libcallg;
     struct runtime.libcall syscall;
     struct runtime.mOS mOS;
-    undefined field_0x229;
-    undefined field_0x22a;
-    undefined field_0x22b;
+    undefined field71_0x228;
+    undefined field72_0x229;
+    undefined field73_0x22a;
+    undefined field74_0x22b;
 };
 
 struct []uintptr {
     uintptr * array;
     int len;
     int cap;
+};
+
+struct []uint8 {
+    uint8 * array;
+    int len;
+    int cap;
+};
+
+struct runtime.stack {
+    uintptr lo;
+    uintptr hi;
 };
 
 struct runtime.g {
@@ -620,6 +614,13 @@ struct runtime.g {
     int64 gcAssistBytes;
 };
 
+struct runtime.special {
+    struct runtime.special * next;
+    uint16 offset;
+    uint8 kind;
+    undefined field3_0x7;
+};
+
 struct runtime.mspan {
     struct runtime.mspan * next;
     struct runtime.mspan * prev;
@@ -656,9 +657,9 @@ struct sudog<bool> {
     struct runtime.sudog * next;
     struct runtime.sudog * prev;
     bool elem;
-    undefined field_0x11;
-    undefined field_0x12;
-    undefined field_0x13;
+    undefined field5_0x11;
+    undefined field6_0x12;
+    undefined field7_0x13;
     int64 acquiretime;
     int64 releasetime;
     uint32 ticket;
@@ -680,13 +681,6 @@ struct runtime.mcache {
     uintptr local_largefree;
     uintptr local_nlargefree;
     uintptr local_nsmallfree[67];
-};
-
-typedef struct struct{Fuintptr;runtime.e*runtime.eface} struct{Fuintptr;runtime.e*runtime.eface}, *Pstruct{Fuintptr;runtime.e*runtime.eface};
-
-struct struct{Fuintptr;runtime.e*runtime.eface} { // Original name: struct { F uintptr; runtime.e *runtime.eface }
-    uintptr .F;
-    struct runtime.eface * e;
 };
 
 typedef struct sync.Once sync.Once, *Psync.Once;
@@ -719,36 +713,6 @@ struct reflect.Value {
     reflect.flag flag;
 };
 
-typedef struct hash<runtime._typePair,struct{}> hash<runtime._typePair,struct{}>, *Phash<runtime._typePair,struct{}>;
-
-typedef struct bucket<runtime._typePair,struct{}> bucket<runtime._typePair,struct{}>, *Pbucket<runtime._typePair,struct{}>;
-
-typedef struct runtime._typePair runtime._typePair, *Pruntime._typePair;
-
-struct hash<runtime._typePair,struct{}> { // Original name: hash<runtime._typePair,struct {}>
-    int count;
-    uint8 flags;
-    uint8 B;
-    uint16 noverflow;
-    uint32 hash0;
-    struct bucket<runtime._typePair,struct{}> * buckets;
-    struct bucket<runtime._typePair,struct{}> * oldbuckets;
-    uintptr nevacuate;
-    struct runtime.mapextra * extra;
-};
-
-struct runtime._typePair {
-    struct runtime._type * t1;
-    struct runtime._type * t2;
-};
-
-struct bucket<runtime._typePair,struct{}> { // Original name: bucket<runtime._typePair,struct {}>
-Missing member values : struct{}[8] at offset 0x48 [exceeds parent struct len]
-    uint8 tophash[8];
-    struct runtime._typePair keys[8];
-    struct bucket<runtime._typePair,struct{}> * overflow;
-};
-
 typedef struct runtime.pollDesc runtime.pollDesc, *Pruntime.pollDesc;
 
 struct runtime.pollDesc {
@@ -756,9 +720,9 @@ struct runtime.pollDesc {
     struct runtime.mutex lock;
     uintptr fd;
     bool closing;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
+    undefined field4_0xd;
+    undefined field5_0xe;
+    undefined field6_0xf;
     uintptr seq;
     uintptr rg;
     struct runtime.timer rt;
@@ -778,8 +742,6 @@ struct bucket<unsafe.Pointer,int32> {
     struct bucket<unsafe.Pointer,int32> * overflow;
 };
 
-typedef struct hchan<bool> * chanbool;
-
 typedef struct []*runtime._defer []*runtime._defer, *P[]*runtime._defer;
 
 struct []*runtime._defer {
@@ -793,9 +755,9 @@ typedef struct runtime.markBits runtime.markBits, *Pruntime.markBits;
 struct runtime.markBits {
     uint8 * bytep;
     uint8 mask;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
+    undefined field2_0x5;
+    undefined field3_0x6;
+    undefined field4_0x7;
     uintptr index;
 };
 
@@ -820,14 +782,19 @@ struct syscall.Iovec {
     uint32 Len;
 };
 
-typedef struct struct{Fuintptr;runtime.typ*runtime._type;runtime.srcunsafe.Pointer;runtime.offuintptr;runtime.sizeuintptr} struct{Fuintptr;runtime.typ*runtime._type;runtime.srcunsafe.Pointer;runtime.offuintptr;runtime.sizeuintptr}, *Pstruct{Fuintptr;runtime.typ*runtime._type;runtime.srcunsafe.Pointer;runtime.offuintptr;runtime.sizeuintptr};
+typedef struct struct_{_runtime.root_runtime.semaRoot;_runtime.pad_[52]uint8_} struct_{_runtime.root_runtime.semaRoot;_runtime.pad_[52]uint8_}, *Pstruct_{_runtime.root_runtime.semaRoot;_runtime.pad_[52]uint8_};
 
-struct struct{Fuintptr;runtime.typ*runtime._type;runtime.srcunsafe.Pointer;runtime.offuintptr;runtime.sizeuintptr} { // Original name: struct { F uintptr; runtime.typ *runtime._type; runtime.src unsafe.Pointer; runtime.off uintptr; runtime.size uintptr }
-    uintptr .F;
-    struct runtime._type * typ;
-    void * src;
-    uintptr off;
-    uintptr size;
+typedef struct runtime.semaRoot runtime.semaRoot, *Pruntime.semaRoot;
+
+struct runtime.semaRoot {
+    struct runtime.mutex lock;
+    struct runtime.sudog * treap;
+    uint32 nwait;
+};
+
+struct struct_{_runtime.root_runtime.semaRoot;_runtime.pad_[52]uint8_} { // Original name: struct { runtime.root runtime.semaRoot; runtime.pad [52]uint8 }
+    struct runtime.semaRoot root;
+    uint8 pad[52];
 };
 
 typedef struct runtime.TypeAssertionError runtime.TypeAssertionError, *Pruntime.TypeAssertionError;
@@ -837,13 +804,6 @@ struct runtime.TypeAssertionError {
     struct string concreteString;
     struct string assertedString;
     struct string missingMethod;
-};
-
-typedef struct sync-fwdslash-atomic.Value sync-fwdslash-atomic.Value, *Psync-fwdslash-atomic.Value;
-
-struct sync-fwdslash-atomic.Value { // Original name: sync/atomic.Value
-Missing member noCopy : sync-fwdslash-atomic.noCopy at offset 0x0 [zero-length member]
-    interface{} v;
 };
 
 typedef struct runtime.pcvalueCacheEnt runtime.pcvalueCacheEnt, *Pruntime.pcvalueCacheEnt;
@@ -875,6 +835,14 @@ struct runtime.itimerval {
     struct runtime.timeval it_value;
 };
 
+typedef struct struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.traceskip_int_} struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.traceskip_int_}, *Pstruct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.traceskip_int_};
+
+struct struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.traceskip_int_} { // Original name: struct { F uintptr; runtime.gp *runtime.g; runtime.traceskip int }
+    uintptr .F;
+    struct runtime.g * gp;
+    int traceskip;
+};
+
 typedef struct runtime.sysmontick runtime.sysmontick, *Pruntime.sysmontick;
 
 struct runtime.sysmontick {
@@ -882,16 +850,6 @@ struct runtime.sysmontick {
     int64 schedwhen;
     uint32 syscalltick;
     int64 syscallwhen;
-};
-
-typedef struct struct{Fuintptr;runtime.sp1uintptr;runtime.sp2uintptr;runtime.sp3uintptr;runtime._g_*runtime.g} struct{Fuintptr;runtime.sp1uintptr;runtime.sp2uintptr;runtime.sp3uintptr;runtime._g_*runtime.g}, *Pstruct{Fuintptr;runtime.sp1uintptr;runtime.sp2uintptr;runtime.sp3uintptr;runtime._g_*runtime.g};
-
-struct struct{Fuintptr;runtime.sp1uintptr;runtime.sp2uintptr;runtime.sp3uintptr;runtime._g_*runtime.g} { // Original name: struct { F uintptr; runtime.sp1 uintptr; runtime.sp2 uintptr; runtime.sp3 uintptr; runtime._g_ *runtime.g }
-    uintptr .F;
-    uintptr sp1;
-    uintptr sp2;
-    uintptr sp3;
-    struct runtime.g * _g_;
 };
 
 typedef struct hash<*uint8,[]uint8> hash<*uint8,[]uint8>, *Phash<*uint8,[]uint8>;
@@ -917,6 +875,11 @@ struct bucket<*uint8,[]uint8> {
     struct bucket<*uint8,[]uint8> * overflow;
 };
 
+typedef struct struct_{} struct_{}, *Pstruct_{};
+
+struct struct_{} { // Original name: struct {}
+};
+
 typedef struct runtime.interfacetype runtime.interfacetype, *Pruntime.interfacetype;
 
 typedef struct runtime.name runtime.name, *Pruntime.name;
@@ -925,14 +888,14 @@ typedef struct []runtime.imethod []runtime.imethod, *P[]runtime.imethod;
 
 typedef struct runtime.imethod runtime.imethod, *Pruntime.imethod;
 
-struct runtime.name {
-    uint8 * bytes;
-};
-
 struct []runtime.imethod {
     struct runtime.imethod * array;
     int len;
     int cap;
+};
+
+struct runtime.name {
+    uint8 * bytes;
 };
 
 struct runtime.imethod {
@@ -950,6 +913,11 @@ typedef struct runtime.iface runtime.iface, *Pruntime.iface;
 
 typedef struct runtime.itab runtime.itab, *Pruntime.itab;
 
+struct runtime.iface {
+    struct runtime.itab * tab;
+    void * data;
+};
+
 struct runtime.itab {
     struct runtime.interfacetype * inter;
     struct runtime._type * _type;
@@ -961,20 +929,15 @@ struct runtime.itab {
     uintptr fun[1];
 };
 
-struct runtime.iface {
-    struct runtime.itab * tab;
-    void * data;
-};
-
 typedef struct os.file os.file, *Pos.file;
 
-typedef struct internal-fwdslash-poll.FD internal-fwdslash-poll.FD, *Pinternal-fwdslash-poll.FD;
+typedef struct internal/poll.FD internal/poll.FD, *Pinternal/poll.FD;
 
 typedef struct os.dirInfo os.dirInfo, *Pos.dirInfo;
 
-typedef struct internal-fwdslash-poll.fdMutex internal-fwdslash-poll.fdMutex, *Pinternal-fwdslash-poll.fdMutex;
+typedef struct internal/poll.fdMutex internal/poll.fdMutex, *Pinternal/poll.fdMutex;
 
-typedef struct internal-fwdslash-poll.pollDesc internal-fwdslash-poll.pollDesc, *Pinternal-fwdslash-poll.pollDesc;
+typedef struct internal/poll.pollDesc internal/poll.pollDesc, *Pinternal/poll.pollDesc;
 
 typedef struct []syscall.Iovec []syscall.Iovec, *P[]syscall.Iovec;
 
@@ -984,41 +947,50 @@ struct os.dirInfo {
     int bufp;
 };
 
-struct internal-fwdslash-poll.fdMutex { // Original name: internal/poll.fdMutex
+struct internal/poll.fdMutex {
     uint64 state;
     uint32 rsema;
     uint32 wsema;
 };
 
-struct internal-fwdslash-poll.pollDesc { // Original name: internal/poll.pollDesc
+struct internal/poll.pollDesc {
     uintptr runtimeCtx;
 };
 
-struct internal-fwdslash-poll.FD { // Original name: internal/poll.FD
-    struct internal-fwdslash-poll.fdMutex fdmu;
+struct internal/poll.FD {
+    struct internal/poll.fdMutex fdmu;
     int Sysfd;
-    struct internal-fwdslash-poll.pollDesc pd;
+    struct internal/poll.pollDesc pd;
     struct []syscall.Iovec * iovecs;
     bool IsStream;
     bool ZeroReadIsEOF;
     bool isFile;
-    undefined field_0x1f;
-};
-
-struct os.file {
-    struct internal-fwdslash-poll.FD pfd;
-    struct string name;
-    struct os.dirInfo * dirinfo;
-    bool nonblock;
-    undefined field_0x2d;
-    undefined field_0x2e;
-    undefined field_0x2f;
+    undefined field7_0x1f;
 };
 
 struct []syscall.Iovec {
     struct syscall.Iovec * array;
     int len;
     int cap;
+};
+
+struct os.file {
+    struct internal/poll.FD pfd;
+    struct string name;
+    struct os.dirInfo * dirinfo;
+    bool nonblock;
+    undefined field4_0x2d;
+    undefined field5_0x2e;
+    undefined field6_0x2f;
+};
+
+typedef struct struct_{_F_uintptr;_runtime.pc_uintptr;_runtime.sp_uintptr;_runtime.gp_*runtime.g_} struct_{_F_uintptr;_runtime.pc_uintptr;_runtime.sp_uintptr;_runtime.gp_*runtime.g_}, *Pstruct_{_F_uintptr;_runtime.pc_uintptr;_runtime.sp_uintptr;_runtime.gp_*runtime.g_};
+
+struct struct_{_F_uintptr;_runtime.pc_uintptr;_runtime.sp_uintptr;_runtime.gp_*runtime.g_} { // Original name: struct { F uintptr; runtime.pc uintptr; runtime.sp uintptr; runtime.gp *runtime.g }
+    uintptr .F;
+    uintptr pc;
+    uintptr sp;
+    struct runtime.g * gp;
 };
 
 typedef struct runtime.parkInfoￂﾷ2 runtime.parkInfoￂﾷ2, *Pruntime.parkInfoￂﾷ2;
@@ -1028,19 +1000,27 @@ struct runtime.parkInfoￂﾷ2 {
     runtime.puintptr attach;
 };
 
-typedef struct struct{Fuintptr;runtime.ret*uintptr} struct{Fuintptr;runtime.ret*uintptr}, *Pstruct{Fuintptr;runtime.ret*uintptr};
-
-struct struct{Fuintptr;runtime.ret*uintptr} { // Original name: struct { F uintptr; runtime.ret *uintptr }
-    uintptr .F;
-    uintptr * ret;
-};
-
 typedef struct unicode.Range32 unicode.Range32, *Punicode.Range32;
 
 struct unicode.Range32 {
     uint32 Lo;
     uint32 Hi;
     uint32 Stride;
+};
+
+typedef struct noalg.map.bucket[interface_{}]*sync.entry noalg.map.bucket[interface_{}]*sync.entry, *Pnoalg.map.bucket[interface_{}]*sync.entry;
+
+typedef struct sync.entry sync.entry, *Psync.entry;
+
+struct noalg.map.bucket[interface_{}]*sync.entry { // Original name: noalg.map.bucket[interface {}]*sync.entry
+    uint8 topbits[8];
+    interface_{} keys[8];
+    struct sync.entry * values[8];
+    struct noalg.map.bucket[interface_{}]*sync.entry * overflow;
+};
+
+struct sync.entry {
+    void * p;
 };
 
 typedef struct hash<uint32,[]*runtime._type> hash<uint32,[]*runtime._type>, *Phash<uint32,[]*runtime._type>;
@@ -1055,6 +1035,13 @@ struct []*runtime._type {
     int cap;
 };
 
+struct bucket<uint32,[]*runtime._type> {
+    uint8 tophash[8];
+    uint32 keys[8];
+    struct []*runtime._type values[8];
+    struct bucket<uint32,[]*runtime._type> * overflow;
+};
+
 struct hash<uint32,[]*runtime._type> {
     int count;
     uint8 flags;
@@ -1067,22 +1054,32 @@ struct hash<uint32,[]*runtime._type> {
     struct runtime.mapextra * extra;
 };
 
-struct bucket<uint32,[]*runtime._type> {
-    uint8 tophash[8];
-    uint32 keys[8];
-    struct []*runtime._type values[8];
-    struct bucket<uint32,[]*runtime._type> * overflow;
-};
-
-typedef struct struct{runtime.sizeuint32;runtime.nmallocuint64;runtime.nfreeuint64} struct{runtime.sizeuint32;runtime.nmallocuint64;runtime.nfreeuint64}, *Pstruct{runtime.sizeuint32;runtime.nmallocuint64;runtime.nfreeuint64};
-
-struct struct{runtime.sizeuint32;runtime.nmallocuint64;runtime.nfreeuint64} { // Original name: struct { runtime.size uint32; runtime.nmalloc uint64; runtime.nfree uint64 }
-    uint32 size;
-    uint64 nmalloc;
-    uint64 nfree;
-};
-
 typedef struct hash<runtime.typeOff,*runtime._type> * map[runtime.typeOff]*runtime._type;
+
+typedef struct hash<interface_{},*sync.entry> hash<interface_{},*sync.entry>, *Phash<interface_{},*sync.entry>;
+
+typedef struct hash<interface_{},*sync.entry> * map[interface_{}]*sync.entry;
+
+typedef struct bucket<interface_{},*sync.entry> bucket<interface_{},*sync.entry>, *Pbucket<interface_{},*sync.entry>;
+
+struct bucket<interface_{},*sync.entry> { // Original name: bucket<interface {},*sync.entry>
+    uint8 tophash[8];
+    interface_{} keys[8];
+    struct sync.entry * values[8];
+    struct bucket<interface_{},*sync.entry> * overflow;
+};
+
+struct hash<interface_{},*sync.entry> { // Original name: hash<interface {},*sync.entry>
+    int count;
+    uint8 flags;
+    uint8 B;
+    uint16 noverflow;
+    uint32 hash0;
+    struct bucket<interface_{},*sync.entry> * buckets;
+    struct bucket<interface_{},*sync.entry> * oldbuckets;
+    uintptr nevacuate;
+    struct runtime.mapextra * extra;
+};
 
 typedef struct runtime.cgoSymbolizerArg runtime.cgoSymbolizerArg, *Pruntime.cgoSymbolizerArg;
 
@@ -1096,22 +1093,11 @@ struct runtime.cgoSymbolizerArg {
     uintptr data;
 };
 
-typedef struct struct{Fuintptr;runtime.c*runtime.mcache;runtime.spcruntime.spanClass} struct{Fuintptr;runtime.c*runtime.mcache;runtime.spcruntime.spanClass}, *Pstruct{Fuintptr;runtime.c*runtime.mcache;runtime.spcruntime.spanClass};
+typedef struct struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr_} struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr_}, *Pstruct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr_};
 
-struct struct{Fuintptr;runtime.c*runtime.mcache;runtime.spcruntime.spanClass} { // Original name: struct { F uintptr; runtime.c *runtime.mcache; runtime.spc runtime.spanClass }
-    uintptr .F;
-    struct runtime.mcache * c;
-    runtime.spanClass spc;
-    undefined field_0x9;
-    undefined field_0xa;
-    undefined field_0xb;
-};
-
-typedef struct struct{Fuintptr;reflect.namestring} struct{Fuintptr;reflect.namestring}, *Pstruct{Fuintptr;reflect.namestring};
-
-struct struct{Fuintptr;reflect.namestring} { // Original name: struct { F uintptr; reflect.name string }
-    uintptr .F;
-    struct string name;
+struct struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr_} { // Original name: struct { runtime.lock runtime.mutex; runtime.head runtime.guintptr }
+    struct runtime.mutex lock;
+    runtime.guintptr head;
 };
 
 typedef struct runtime.gcBitsArena runtime.gcBitsArena, *Pruntime.gcBitsArena;
@@ -1120,6 +1106,100 @@ struct runtime.gcBitsArena {
     uintptr free;
     struct runtime.gcBitsArena * next;
     runtime.gcBits bits[65528];
+};
+
+typedef struct struct_{_F_uintptr;_runtime.pp_*runtime.p;_runtime.sc_uintptr_} struct_{_F_uintptr;_runtime.pp_*runtime.p;_runtime.sc_uintptr_}, *Pstruct_{_F_uintptr;_runtime.pp_*runtime.p;_runtime.sc_uintptr_};
+
+typedef struct runtime.p runtime.p, *Pruntime.p;
+
+typedef struct []*runtime.sudog []*runtime.sudog, *P[]*runtime.sudog;
+
+typedef struct runtime.persistentAlloc runtime.persistentAlloc, *Pruntime.persistentAlloc;
+
+typedef struct runtime.gcWork runtime.gcWork, *Pruntime.gcWork;
+
+typedef struct runtime.workbuf runtime.workbuf, *Pruntime.workbuf;
+
+typedef struct runtime.workbufhdr runtime.workbufhdr, *Pruntime.workbufhdr;
+
+typedef struct runtime.lfnode runtime.lfnode, *Pruntime.lfnode;
+
+struct runtime.lfnode {
+    uint64 next;
+    uintptr pushcnt;
+};
+
+struct runtime.workbufhdr {
+    struct runtime.lfnode node;
+    int nobj;
+};
+
+struct runtime.workbuf {
+    struct runtime.workbufhdr workbufhdr;
+    uintptr obj[508];
+};
+
+struct runtime.persistentAlloc {
+    void * base;
+    uintptr off;
+};
+
+struct []*runtime.sudog {
+    struct runtime.sudog * * array;
+    int len;
+    int cap;
+};
+
+struct runtime.gcWork {
+    struct runtime.workbuf * wbuf1;
+    struct runtime.workbuf * wbuf2;
+    uint64 bytesMarked;
+    int64 scanWork;
+};
+
+struct runtime.p {
+    struct runtime.mutex lock;
+    int32 id;
+    uint32 status;
+    runtime.puintptr link;
+    uint32 schedtick;
+    uint32 syscalltick;
+    struct runtime.sysmontick sysmontick;
+    runtime.muintptr m;
+    struct runtime.mcache * mcache;
+    uintptr racectx;
+    struct []*runtime._defer deferpool[5];
+    struct runtime._defer * deferpoolbuf[5][32];
+    uint64 goidcache;
+    uint64 goidcacheend;
+    uint32 runqhead;
+    uint32 runqtail;
+    runtime.guintptr runq[256];
+    runtime.guintptr runnext;
+    struct runtime.g * gfree;
+    int32 gfreecnt;
+    struct []*runtime.sudog sudogcache;
+    struct runtime.sudog * sudogbuf[128];
+    runtime.traceBufPtr tracebuf;
+    bool traceSweep;
+    undefined field24_0x92d;
+    undefined field25_0x92e;
+    undefined field26_0x92f;
+    uintptr traceSwept;
+    uintptr traceReclaimed;
+    struct runtime.persistentAlloc palloc;
+    int64 gcAssistTime;
+    runtime.guintptr gcBgMarkWorker;
+    runtime.gcMarkWorkerMode gcMarkWorkerMode;
+    struct runtime.gcWork gcw;
+    uint32 runSafePointFn;
+    uint8 pad[64];
+};
+
+struct struct_{_F_uintptr;_runtime.pp_*runtime.p;_runtime.sc_uintptr_} { // Original name: struct { F uintptr; runtime.pp *runtime.p; runtime.sc uintptr }
+    uintptr .F;
+    struct runtime.p * pp;
+    uintptr sc;
 };
 
 typedef struct runtime._func runtime._func, *Pruntime._func;
@@ -1134,6 +1214,51 @@ struct runtime._func {
     int32 pcln;
     int32 npcdata;
     int32 nfuncdata;
+};
+
+typedef struct reflect.fieldScan reflect.fieldScan, *Preflect.fieldScan;
+
+typedef struct reflect.structType reflect.structType, *Preflect.structType;
+
+typedef struct []int []int, *P[]int;
+
+typedef struct reflect.name reflect.name, *Preflect.name;
+
+typedef struct []reflect.structField []reflect.structField, *P[]reflect.structField;
+
+typedef struct reflect.structField reflect.structField, *Preflect.structField;
+
+struct []int {
+    int * array;
+    int len;
+    int cap;
+};
+
+struct reflect.name {
+    uint8 * bytes;
+};
+
+struct []reflect.structField {
+    struct reflect.structField * array;
+    int len;
+    int cap;
+};
+
+struct reflect.structType {
+    struct reflect.rtype rtype;
+    struct reflect.name pkgPath;
+    struct []reflect.structField fields;
+};
+
+struct reflect.structField {
+    struct reflect.name name;
+    struct reflect.rtype * typ;
+    uintptr offsetAnon;
+};
+
+struct reflect.fieldScan {
+    struct reflect.structType * typ;
+    struct []int index;
 };
 
 typedef struct runtime.hmap runtime.hmap, *Pruntime.hmap;
@@ -1183,17 +1308,6 @@ struct reflect.bitVector {
     struct []uint8 data;
 };
 
-typedef struct struct{reflect.ityp*reflect.rtype;reflect.typ*reflect.rtype;reflect.linkunsafe.Pointer;reflect.badint32;reflect.unusedint32;reflect.fun[100000]unsafe.Pointer} struct{reflect.ityp*reflect.rtype;reflect.typ*reflect.rtype;reflect.linkunsafe.Pointer;reflect.badint32;reflect.unusedint32;reflect.fun[100000]unsafe.Pointer}, *Pstruct{reflect.ityp*reflect.rtype;reflect.typ*reflect.rtype;reflect.linkunsafe.Pointer;reflect.badint32;reflect.unusedint32;reflect.fun[100000]unsafe.Pointer};
-
-struct struct{reflect.ityp*reflect.rtype;reflect.typ*reflect.rtype;reflect.linkunsafe.Pointer;reflect.badint32;reflect.unusedint32;reflect.fun[100000]unsafe.Pointer} { // Original name: struct { reflect.ityp *reflect.rtype; reflect.typ *reflect.rtype; reflect.link unsafe.Pointer; reflect.bad int32; reflect.unused int32; reflect.fun [100000]unsafe.Pointer }
-    struct reflect.rtype * ityp;
-    struct reflect.rtype * typ;
-    void * link;
-    int32 bad;
-    int32 unused;
-    void * fun[100000];
-};
-
 typedef struct runtime.schedt runtime.schedt, *Pruntime.schedt;
 
 struct runtime.schedt { // Missing member  safePointFn : func(*runtime.p) at offset 0x88
@@ -1225,10 +1339,10 @@ struct runtime.schedt { // Missing member  safePointFn : func(*runtime.p) at off
     struct runtime.note stopnote;
     uint32 sysmonwait;
     struct runtime.note sysmonnote;
-    undefined field_0x88;
-    undefined field_0x89;
-    undefined field_0x8a;
-    undefined field_0x8b;
+    undefined field28_0x88;
+    undefined field29_0x89;
+    undefined field30_0x8a;
+    undefined field31_0x8b;
     int32 safePointWait;
     struct runtime.note safePointNote;
     int32 profilehz;
@@ -1236,56 +1350,25 @@ struct runtime.schedt { // Missing member  safePointFn : func(*runtime.p) at off
     int64 totaltime;
 };
 
-typedef struct reflect.fieldScan reflect.fieldScan, *Preflect.fieldScan;
-
-typedef struct reflect.structType reflect.structType, *Preflect.structType;
-
-typedef struct []int []int, *P[]int;
-
-typedef struct reflect.name reflect.name, *Preflect.name;
-
-typedef struct []reflect.structField []reflect.structField, *P[]reflect.structField;
-
-typedef struct reflect.structField reflect.structField, *Preflect.structField;
-
-struct reflect.name {
-    uint8 * bytes;
-};
-
-struct reflect.structField {
-    struct reflect.name name;
-    struct reflect.rtype * typ;
-    uintptr offsetAnon;
-};
-
-struct []reflect.structField {
-    struct reflect.structField * array;
-    int len;
-    int cap;
-};
-
-struct []int {
-    int * array;
-    int len;
-    int cap;
-};
-
-struct reflect.structType {
-    struct reflect.rtype rtype;
-    struct reflect.name pkgPath;
-    struct []reflect.structField fields;
-};
-
-struct reflect.fieldScan {
-    struct reflect.structType * typ;
-    struct []int index;
-};
-
 typedef struct reflect.ptrType reflect.ptrType, *Preflect.ptrType;
 
 struct reflect.ptrType {
     struct reflect.rtype rtype;
     struct reflect.rtype * elem;
+};
+
+typedef struct noalg.map.hdr[interface_{}]*sync.entry noalg.map.hdr[interface_{}]*sync.entry, *Pnoalg.map.hdr[interface_{}]*sync.entry;
+
+struct noalg.map.hdr[interface_{}]*sync.entry { // Original name: noalg.map.hdr[interface {}]*sync.entry
+    int count;
+    uint8 flags;
+    uint8 B;
+    uint16 noverflow;
+    uint32 hash0;
+    struct noalg.map.bucket[interface_{}]*sync.entry * buckets;
+    struct noalg.map.bucket[interface_{}]*sync.entry * oldbuckets;
+    uintptr nevacuate;
+    void * overflow;
 };
 
 typedef struct strconv.decimal strconv.decimal, *Pstrconv.decimal;
@@ -1296,8 +1379,20 @@ struct strconv.decimal {
     int dp;
     bool neg;
     bool trunc;
-    undefined field_0x32a;
-    undefined field_0x32b;
+    undefined field5_0x32a;
+    undefined field6_0x32b;
+};
+
+typedef struct struct_{_F_uintptr;_runtime.s_**runtime.mspan;_runtime.size_*uintptr;_runtime.needzero_bool;_runtime.noscan_bool_} struct_{_F_uintptr;_runtime.s_**runtime.mspan;_runtime.size_*uintptr;_runtime.needzero_bool;_runtime.noscan_bool_}, *Pstruct_{_F_uintptr;_runtime.s_**runtime.mspan;_runtime.size_*uintptr;_runtime.needzero_bool;_runtime.noscan_bool_};
+
+struct struct_{_F_uintptr;_runtime.s_**runtime.mspan;_runtime.size_*uintptr;_runtime.needzero_bool;_runtime.noscan_bool_} { // Original name: struct { F uintptr; runtime.s **runtime.mspan; runtime.size *uintptr; runtime.needzero bool; runtime.noscan bool }
+    uintptr .F;
+    struct runtime.mspan * * s;
+    uintptr * size;
+    bool needzero;
+    bool noscan;
+    undefined field5_0xe;
+    undefined field6_0xf;
 };
 
 typedef struct reflect.ValueError reflect.ValueError, *Preflect.ValueError;
@@ -1307,16 +1402,25 @@ struct reflect.ValueError {
     reflect.Kind Kind;
 };
 
+typedef struct bucket<runtime._typePair,struct_{}> bucket<runtime._typePair,struct_{}>, *Pbucket<runtime._typePair,struct_{}>;
+
+typedef struct runtime._typePair runtime._typePair, *Pruntime._typePair;
+
+struct runtime._typePair {
+    struct runtime._type * t1;
+    struct runtime._type * t2;
+};
+
+struct bucket<runtime._typePair,struct_{}> { // Original name: bucket<runtime._typePair,struct {}>
+Missing member values : struct_{}[8] at offset 0x48 [exceeds parent struct len]
+    uint8 tophash[8];
+    struct runtime._typePair keys[8];
+    struct bucket<runtime._typePair,struct_{}> * overflow;
+};
+
 typedef struct hash<string,uint64> hash<string,uint64>, *Phash<string,uint64>;
 
 typedef struct bucket<string,uint64> bucket<string,uint64>, *Pbucket<string,uint64>;
-
-struct bucket<string,uint64> {
-    uint8 tophash[8];
-    struct string keys[8];
-    uint64 values[8];
-    struct bucket<string,uint64> * overflow;
-};
 
 struct hash<string,uint64> {
     int count;
@@ -1328,6 +1432,21 @@ struct hash<string,uint64> {
     struct bucket<string,uint64> * oldbuckets;
     uintptr nevacuate;
     struct runtime.mapextra * extra;
+};
+
+struct bucket<string,uint64> {
+    uint8 tophash[8];
+    struct string keys[8];
+    uint64 values[8];
+    struct bucket<string,uint64> * overflow;
+};
+
+typedef struct struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr;_runtime.tail_runtime.guintptr_} struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr;_runtime.tail_runtime.guintptr_}, *Pstruct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr;_runtime.tail_runtime.guintptr_};
+
+struct struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr;_runtime.tail_runtime.guintptr_} { // Original name: struct { runtime.lock runtime.mutex; runtime.head runtime.guintptr; runtime.tail runtime.guintptr }
+    struct runtime.mutex lock;
+    runtime.guintptr head;
+    runtime.guintptr tail;
 };
 
 typedef struct sync.noCopy sync.noCopy, *Psync.noCopy;
@@ -1357,17 +1476,17 @@ typedef struct runtime.finalizer runtime.finalizer, *Pruntime.finalizer;
 
 typedef struct runtime.ptrtype runtime.ptrtype, *Pruntime.ptrtype;
 
-struct runtime.ptrtype {
-    struct runtime._type typ;
-    struct runtime._type * elem;
-};
-
 struct runtime.finalizer {
     struct runtime.funcval * fn;
     void * arg;
     uintptr nret;
     struct runtime._type * fint;
     struct runtime.ptrtype * ot;
+};
+
+struct runtime.ptrtype {
+    struct runtime._type typ;
+    struct runtime._type * elem;
 };
 
 typedef struct os.PathError os.PathError, *Pos.PathError;
@@ -1408,6 +1527,10 @@ typedef struct runtime.Frame runtime.Frame, *Pruntime.Frame;
 
 typedef struct runtime.Func runtime.Func, *Pruntime.Func;
 
+struct runtime.Func {
+    struct struct_{} opaque;
+};
+
 struct runtime.Frame {
     uintptr PC;
     struct runtime.Func * Func;
@@ -1415,9 +1538,6 @@ struct runtime.Frame {
     struct string File;
     int Line;
     uintptr Entry;
-};
-
-struct runtime.Func { // Missing member opaque : struct{} at offset 0x0 [exceeds parent struct len]
 };
 
 typedef struct runtime.textsect runtime.textsect, *Pruntime.textsect;
@@ -1435,16 +1555,11 @@ struct reflect.imethod {
     reflect.typeOff typ;
 };
 
-typedef struct struct{Fuintptr;runtime.n*int;runtime.pcuintptr;runtime.spuintptr;runtime.gp*runtime.g;runtime.skip*int;runtime.pcbuf[]uintptr} struct{Fuintptr;runtime.n*int;runtime.pcuintptr;runtime.spuintptr;runtime.gp*runtime.g;runtime.skip*int;runtime.pcbuf[]uintptr}, *Pstruct{Fuintptr;runtime.n*int;runtime.pcuintptr;runtime.spuintptr;runtime.gp*runtime.g;runtime.skip*int;runtime.pcbuf[]uintptr};
+typedef struct struct_{_F_uintptr;_reflect.x_*reflect.rtype_} struct_{_F_uintptr;_reflect.x_*reflect.rtype_}, *Pstruct_{_F_uintptr;_reflect.x_*reflect.rtype_};
 
-struct struct{Fuintptr;runtime.n*int;runtime.pcuintptr;runtime.spuintptr;runtime.gp*runtime.g;runtime.skip*int;runtime.pcbuf[]uintptr} { // Original name: struct { F uintptr; runtime.n *int; runtime.pc uintptr; runtime.sp uintptr; runtime.gp *runtime.g; runtime.skip *int; runtime.pcbuf []uintptr }
+struct struct_{_F_uintptr;_reflect.x_*reflect.rtype_} { // Original name: struct { F uintptr; reflect.x *reflect.rtype }
     uintptr .F;
-    int * n;
-    uintptr pc;
-    uintptr sp;
-    struct runtime.g * gp;
-    int * skip;
-    struct []uintptr pcbuf;
+    struct reflect.rtype * x;
 };
 
 typedef struct []unsafe.Pointer []unsafe.Pointer, *P[]unsafe.Pointer;
@@ -1462,6 +1577,13 @@ struct strconv.leftCheat {
     struct string cutoff;
 };
 
+typedef struct struct_{_runtime.mutex;_runtime.persistentAlloc_} struct_{_runtime.mutex;_runtime.persistentAlloc_}, *Pstruct_{_runtime.mutex;_runtime.persistentAlloc_};
+
+struct struct_{_runtime.mutex;_runtime.persistentAlloc_} { // Original name: struct { runtime.mutex; runtime.persistentAlloc }
+    struct runtime.mutex mutex;
+    struct runtime.persistentAlloc persistentAlloc;
+};
+
 typedef struct runtime.chantype runtime.chantype, *Pruntime.chantype;
 
 struct runtime.chantype {
@@ -1472,17 +1594,14 @@ struct runtime.chantype {
 
 typedef uintptr runtime.cgoCallers[32];
 
-typedef struct struct{Fuintptr;runtime.c*runtime.hchan} struct{Fuintptr;runtime.c*runtime.hchan}, *Pstruct{Fuintptr;runtime.c*runtime.hchan};
+typedef struct struct_{_F_uintptr;_runtime.preemptible_bool_} struct_{_F_uintptr;_runtime.preemptible_bool_}, *Pstruct_{_F_uintptr;_runtime.preemptible_bool_};
 
-struct struct{Fuintptr;runtime.c*runtime.hchan} { // Original name: struct { F uintptr; runtime.c *runtime.hchan }
+struct struct_{_F_uintptr;_runtime.preemptible_bool_} { // Original name: struct { F uintptr; runtime.preemptible bool }
     uintptr .F;
-    struct runtime.hchan * c;
-};
-
-typedef struct sync.entry sync.entry, *Psync.entry;
-
-struct sync.entry {
-    void * p;
+    bool preemptible;
+    undefined field2_0x5;
+    undefined field3_0x6;
+    undefined field4_0x7;
 };
 
 typedef struct unicode.RangeTable unicode.RangeTable, *Punicode.RangeTable;
@@ -1509,36 +1628,6 @@ struct unicode.RangeTable {
     int LatinOffset;
 };
 
-typedef struct struct{runtime.enabledbool;runtime.pad[3]uint8;runtime.neededbool;runtime.cgobool;runtime.alignmeuint64} struct{runtime.enabledbool;runtime.pad[3]uint8;runtime.neededbool;runtime.cgobool;runtime.alignmeuint64}, *Pstruct{runtime.enabledbool;runtime.pad[3]uint8;runtime.neededbool;runtime.cgobool;runtime.alignmeuint64};
-
-struct struct{runtime.enabledbool;runtime.pad[3]uint8;runtime.neededbool;runtime.cgobool;runtime.alignmeuint64} { // Original name: struct { runtime.enabled bool; runtime.pad [3]uint8; runtime.needed bool; runtime.cgo bool; runtime.alignme uint64 }
-    bool enabled;
-    uint8 pad[3];
-    bool needed;
-    bool cgo;
-    undefined field_0x6;
-    undefined field_0x7;
-    uint64 alignme;
-};
-
-typedef struct struct{runtime.lockruntime.mutex;runtime.free*runtime.gcBitsArena;runtime.next*runtime.gcBitsArena;runtime.current*runtime.gcBitsArena;runtime.previous*runtime.gcBitsArena} struct{runtime.lockruntime.mutex;runtime.free*runtime.gcBitsArena;runtime.next*runtime.gcBitsArena;runtime.current*runtime.gcBitsArena;runtime.previous*runtime.gcBitsArena}, *Pstruct{runtime.lockruntime.mutex;runtime.free*runtime.gcBitsArena;runtime.next*runtime.gcBitsArena;runtime.current*runtime.gcBitsArena;runtime.previous*runtime.gcBitsArena};
-
-struct struct{runtime.lockruntime.mutex;runtime.free*runtime.gcBitsArena;runtime.next*runtime.gcBitsArena;runtime.current*runtime.gcBitsArena;runtime.previous*runtime.gcBitsArena} { // Original name: struct { runtime.lock runtime.mutex; runtime.free *runtime.gcBitsArena; runtime.next *runtime.gcBitsArena; runtime.current *runtime.gcBitsArena; runtime.previous *runtime.gcBitsArena }
-    struct runtime.mutex lock;
-    struct runtime.gcBitsArena * free;
-    struct runtime.gcBitsArena * next;
-    struct runtime.gcBitsArena * current;
-    struct runtime.gcBitsArena * previous;
-};
-
-typedef struct struct{Fuintptr;runtime.dst*uintptr;runtime.srcuintptr} struct{Fuintptr;runtime.dst*uintptr;runtime.srcuintptr}, *Pstruct{Fuintptr;runtime.dst*uintptr;runtime.srcuintptr};
-
-struct struct{Fuintptr;runtime.dst*uintptr;runtime.srcuintptr} { // Original name: struct { F uintptr; runtime.dst *uintptr; runtime.src uintptr }
-    uintptr .F;
-    uintptr * dst;
-    uintptr src;
-};
-
 typedef struct reflect.funcTypeFixed8 reflect.funcTypeFixed8, *Preflect.funcTypeFixed8;
 
 struct reflect.funcTypeFixed8 {
@@ -1546,28 +1635,11 @@ struct reflect.funcTypeFixed8 {
     struct reflect.rtype * args[8];
 };
 
-typedef struct struct{} struct{}, *Pstruct{};
+typedef struct struct_{_F_uintptr;_reflect.hash_uint32_} struct_{_F_uintptr;_reflect.hash_uint32_}, *Pstruct_{_F_uintptr;_reflect.hash_uint32_};
 
-struct struct{} { // Original name: struct {}
-};
-
-typedef struct struct{Fuintptr;runtime.rw*runtime.rwmutex} struct{Fuintptr;runtime.rw*runtime.rwmutex}, *Pstruct{Fuintptr;runtime.rw*runtime.rwmutex};
-
-typedef struct runtime.rwmutex runtime.rwmutex, *Pruntime.rwmutex;
-
-struct struct{Fuintptr;runtime.rw*runtime.rwmutex} { // Original name: struct { F uintptr; runtime.rw *runtime.rwmutex }
+struct struct_{_F_uintptr;_reflect.hash_uint32_} { // Original name: struct { F uintptr; reflect.hash uint32 }
     uintptr .F;
-    struct runtime.rwmutex * rw;
-};
-
-struct runtime.rwmutex {
-    struct runtime.mutex rLock;
-    runtime.muintptr readers;
-    uint32 readerPass;
-    struct runtime.mutex wLock;
-    runtime.muintptr writer;
-    uint32 readerCount;
-    uint32 readerWait;
+    uint32 hash;
 };
 
 typedef struct sudog<int> sudog<int>, *Psudog<int>;
@@ -1597,14 +1669,11 @@ struct runtime.finblock {
     struct runtime.finalizer fin[204];
 };
 
-typedef struct struct{Fuintptr;runtime.preemptiblebool} struct{Fuintptr;runtime.preemptiblebool}, *Pstruct{Fuintptr;runtime.preemptiblebool};
+typedef struct struct_{_F_uintptr;_runtime.s_**runtime.mspan_} struct_{_F_uintptr;_runtime.s_**runtime.mspan_}, *Pstruct_{_F_uintptr;_runtime.s_**runtime.mspan_};
 
-struct struct{Fuintptr;runtime.preemptiblebool} { // Original name: struct { F uintptr; runtime.preemptible bool }
+struct struct_{_F_uintptr;_runtime.s_**runtime.mspan_} { // Original name: struct { F uintptr; runtime.s **runtime.mspan }
     uintptr .F;
-    bool preemptible;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
+    struct runtime.mspan * * s;
 };
 
 typedef struct []map[runtime.typeOff]*runtime._type []map[runtime.typeOff]*runtime._type, *P[]map[runtime.typeOff]*runtime._type;
@@ -1654,53 +1723,20 @@ struct runtime.pcvalueCache {
     struct runtime.pcvalueCacheEnt entries[16];
 };
 
-typedef struct hash<interface{},*sync.entry> hash<interface{},*sync.entry>, *Phash<interface{},*sync.entry>;
+typedef struct struct_{_runtime.lock_runtime.mutex;_runtime.free_[19]runtime.mSpanList_} struct_{_runtime.lock_runtime.mutex;_runtime.free_[19]runtime.mSpanList_}, *Pstruct_{_runtime.lock_runtime.mutex;_runtime.free_[19]runtime.mSpanList_};
 
-typedef struct hash<interface{},*sync.entry> * map[interface{}]*sync.entry;
-
-typedef struct bucket<interface{},*sync.entry> bucket<interface{},*sync.entry>, *Pbucket<interface{},*sync.entry>;
-
-struct bucket<interface{},*sync.entry> { // Original name: bucket<interface {},*sync.entry>
-    uint8 tophash[8];
-    interface{} keys[8];
-    struct sync.entry * values[8];
-    struct bucket<interface{},*sync.entry> * overflow;
-};
-
-struct hash<interface{},*sync.entry> { // Original name: hash<interface {},*sync.entry>
-    int count;
-    uint8 flags;
-    uint8 B;
-    uint16 noverflow;
-    uint32 hash0;
-    struct bucket<interface{},*sync.entry> * buckets;
-    struct bucket<interface{},*sync.entry> * oldbuckets;
-    uintptr nevacuate;
-    struct runtime.mapextra * extra;
+struct struct_{_runtime.lock_runtime.mutex;_runtime.free_[19]runtime.mSpanList_} { // Original name: struct { runtime.lock runtime.mutex; runtime.free [19]runtime.mSpanList }
+    struct runtime.mutex lock;
+    struct runtime.mSpanList free[19];
 };
 
 typedef struct hash<string,uint64> * map[string]uint64;
-
-typedef struct []interface{} []interface{}, *P[]interface{};
-
-struct []interface{} { // Original name: []interface {}
-    interface{} * array;
-    int len;
-    int cap;
-};
 
 typedef struct hash<string,*unicode.RangeTable> hash<string,*unicode.RangeTable>, *Phash<string,*unicode.RangeTable>;
 
 typedef struct hash<string,*unicode.RangeTable> * map[string]*unicode.RangeTable;
 
 typedef struct bucket<string,*unicode.RangeTable> bucket<string,*unicode.RangeTable>, *Pbucket<string,*unicode.RangeTable>;
-
-struct bucket<string,*unicode.RangeTable> {
-    uint8 tophash[8];
-    struct string keys[8];
-    struct unicode.RangeTable * values[8];
-    struct bucket<string,*unicode.RangeTable> * overflow;
-};
 
 struct hash<string,*unicode.RangeTable> {
     int count;
@@ -1714,26 +1750,11 @@ struct hash<string,*unicode.RangeTable> {
     struct runtime.mapextra * extra;
 };
 
-typedef struct struct{runtime.lockruntime.mutex;runtime.gp*runtime.g;runtime.createdbool;runtime.sleepingbool;runtime.reschedulingbool;runtime.sleepUntilint64;runtime.waitnoteruntime.note;runtime.t[]*runtime.timer} struct{runtime.lockruntime.mutex;runtime.gp*runtime.g;runtime.createdbool;runtime.sleepingbool;runtime.reschedulingbool;runtime.sleepUntilint64;runtime.waitnoteruntime.note;runtime.t[]*runtime.timer}, *Pstruct{runtime.lockruntime.mutex;runtime.gp*runtime.g;runtime.createdbool;runtime.sleepingbool;runtime.reschedulingbool;runtime.sleepUntilint64;runtime.waitnoteruntime.note;runtime.t[]*runtime.timer};
-
-typedef struct []*runtime.timer []*runtime.timer, *P[]*runtime.timer;
-
-struct []*runtime.timer {
-    struct runtime.timer * * array;
-    int len;
-    int cap;
-};
-
-struct struct{runtime.lockruntime.mutex;runtime.gp*runtime.g;runtime.createdbool;runtime.sleepingbool;runtime.reschedulingbool;runtime.sleepUntilint64;runtime.waitnoteruntime.note;runtime.t[]*runtime.timer} { // Original name: struct { runtime.lock runtime.mutex; runtime.gp *runtime.g; runtime.created bool; runtime.sleeping bool; runtime.rescheduling bool; runtime.sleepUntil int64; runtime.waitnote runtime.note; runtime.t []*runtime.timer }
-    struct runtime.mutex lock;
-    struct runtime.g * gp;
-    bool created;
-    bool sleeping;
-    bool rescheduling;
-    undefined field_0xb;
-    int64 sleepUntil;
-    struct runtime.note waitnote;
-    struct []*runtime.timer t;
+struct bucket<string,*unicode.RangeTable> {
+    uint8 tophash[8];
+    struct string keys[8];
+    struct unicode.RangeTable * values[8];
+    struct bucket<string,*unicode.RangeTable> * overflow;
 };
 
 typedef struct runtime.functab runtime.functab, *Pruntime.functab;
@@ -1761,30 +1782,6 @@ typedef struct runtime.bitvector runtime.bitvector, *Pruntime.bitvector;
 
 typedef struct runtime.ptabEntry runtime.ptabEntry, *Pruntime.ptabEntry;
 
-struct []uint32 {
-    uint32 * array;
-    int len;
-    int cap;
-};
-
-struct []*runtime.itab {
-    struct runtime.itab * * array;
-    int len;
-    int cap;
-};
-
-struct []*runtime.moduledata {
-    struct runtime.moduledata * * array;
-    int len;
-    int cap;
-};
-
-struct []runtime.textsect {
-    struct runtime.textsect * array;
-    int len;
-    int cap;
-};
-
 struct runtime.ptabEntry {
     runtime.nameOff name;
     runtime.typeOff typ;
@@ -1795,6 +1792,12 @@ struct runtime.bitvector {
     uint8 * bytedata;
 };
 
+struct []runtime.textsect {
+    struct runtime.textsect * array;
+    int len;
+    int cap;
+};
+
 struct []runtime.functab {
     struct runtime.functab * array;
     int len;
@@ -1803,6 +1806,18 @@ struct []runtime.functab {
 
 struct []runtime.ptabEntry {
     struct runtime.ptabEntry * array;
+    int len;
+    int cap;
+};
+
+struct []*runtime.itab {
+    struct runtime.itab * * array;
+    int len;
+    int cap;
+};
+
+struct []uint32 {
+    uint32 * array;
     int len;
     int cap;
 };
@@ -1843,18 +1858,19 @@ struct runtime.moduledata {
     struct runtime.moduledata * next;
 };
 
-typedef struct runtime.workbufhdr runtime.workbufhdr, *Pruntime.workbufhdr;
-
-typedef struct runtime.lfnode runtime.lfnode, *Pruntime.lfnode;
-
-struct runtime.lfnode {
-    uint64 next;
-    uintptr pushcnt;
+struct []*runtime.moduledata {
+    struct runtime.moduledata * * array;
+    int len;
+    int cap;
 };
 
-struct runtime.workbufhdr {
-    struct runtime.lfnode node;
-    int nobj;
+typedef struct struct_{_F_uintptr;_runtime.ok_*bool;_runtime.oldp_*runtime.p;_runtime._g__*runtime.g_} struct_{_F_uintptr;_runtime.ok_*bool;_runtime.oldp_*runtime.p;_runtime._g__*runtime.g_}, *Pstruct_{_F_uintptr;_runtime.ok_*bool;_runtime.oldp_*runtime.p;_runtime._g__*runtime.g_};
+
+struct struct_{_F_uintptr;_runtime.ok_*bool;_runtime.oldp_*runtime.p;_runtime._g__*runtime.g_} { // Original name: struct { F uintptr; runtime.ok *bool; runtime.oldp *runtime.p; runtime._g_ *runtime.g }
+    uintptr .F;
+    bool * ok;
+    struct runtime.p * oldp;
+    struct runtime.g * _g_;
 };
 
 typedef struct runtime.traceAlloc runtime.traceAlloc, *Pruntime.traceAlloc;
@@ -1882,22 +1898,22 @@ typedef struct runtime.funcInfo runtime.funcInfo, *Pruntime.funcInfo;
 
 typedef struct runtime.inlinedCall runtime.inlinedCall, *Pruntime.inlinedCall;
 
-struct runtime.funcInfo {
-    struct runtime._func * _func;
-    struct runtime.moduledata * datap;
-};
-
 struct []runtime.Frame {
     struct runtime.Frame * array;
     int len;
     int cap;
 };
 
+struct runtime.funcInfo {
+    struct runtime._func * _func;
+    struct runtime.moduledata * datap;
+};
+
 struct runtime.pcExpander {
     bool more;
-    undefined field_0x1;
-    undefined field_0x2;
-    undefined field_0x3;
+    undefined field1_0x1;
+    undefined field2_0x2;
+    undefined field3_0x3;
     uintptr pc;
     struct []runtime.Frame frames;
     struct runtime.funcInfo funcInfo;
@@ -1910,9 +1926,9 @@ struct runtime.pcExpander {
 struct runtime.stackExpander {
     struct runtime.pcExpander pcExpander;
     bool wasPanic;
-    undefined field_0x31;
-    undefined field_0x32;
-    undefined field_0x33;
+    undefined field2_0x31;
+    undefined field3_0x32;
+    undefined field4_0x33;
     int skip;
 };
 
@@ -1923,50 +1939,38 @@ struct runtime.inlinedCall {
     int32 func_;
 };
 
-typedef struct struct{Fuintptr;runtime.cache*runtime.pcvalueCache;runtime.gcw*runtime.gcWork} struct{Fuintptr;runtime.cache*runtime.pcvalueCache;runtime.gcw*runtime.gcWork}, *Pstruct{Fuintptr;runtime.cache*runtime.pcvalueCache;runtime.gcw*runtime.gcWork};
+typedef struct struct_{_F_uintptr;_runtime.e_*runtime.eface;_runtime.f_*runtime.eface;_runtime.nret_uintptr;_runtime.fint_*runtime._type;_runtime.ot_*runtime.ptrtype_} struct_{_F_uintptr;_runtime.e_*runtime.eface;_runtime.f_*runtime.eface;_runtime.nret_uintptr;_runtime.fint_*runtime._type;_runtime.ot_*runtime.ptrtype_}, *Pstruct_{_F_uintptr;_runtime.e_*runtime.eface;_runtime.f_*runtime.eface;_runtime.nret_uintptr;_runtime.fint_*runtime._type;_runtime.ot_*runtime.ptrtype_};
 
-typedef struct runtime.gcWork runtime.gcWork, *Pruntime.gcWork;
-
-typedef struct runtime.workbuf runtime.workbuf, *Pruntime.workbuf;
-
-struct runtime.gcWork {
-    struct runtime.workbuf * wbuf1;
-    struct runtime.workbuf * wbuf2;
-    uint64 bytesMarked;
-    int64 scanWork;
-};
-
-struct runtime.workbuf {
-    struct runtime.workbufhdr workbufhdr;
-    uintptr obj[508];
-};
-
-struct struct{Fuintptr;runtime.cache*runtime.pcvalueCache;runtime.gcw*runtime.gcWork} { // Original name: struct { F uintptr; runtime.cache *runtime.pcvalueCache; runtime.gcw *runtime.gcWork }
+struct struct_{_F_uintptr;_runtime.e_*runtime.eface;_runtime.f_*runtime.eface;_runtime.nret_uintptr;_runtime.fint_*runtime._type;_runtime.ot_*runtime.ptrtype_} { // Original name: struct { F uintptr; runtime.e *runtime.eface; runtime.f *runtime.eface; runtime.nret uintptr; runtime.fint *runtime._type; runtime.ot *runtime.ptrtype }
     uintptr .F;
-    struct runtime.pcvalueCache * cache;
-    struct runtime.gcWork * gcw;
+    struct runtime.eface * e;
+    struct runtime.eface * f;
+    uintptr nret;
+    struct runtime._type * fint;
+    struct runtime.ptrtype * ot;
 };
 
 typedef struct sync.poolLocal sync.poolLocal, *Psync.poolLocal;
 
 typedef struct sync.poolLocalInternal sync.poolLocalInternal, *Psync.poolLocalInternal;
 
+typedef struct []interface_{} []interface_{}, *P[]interface_{};
+
+struct []interface_{} { // Original name: []interface {}
+    interface_{} * array;
+    int len;
+    int cap;
+};
+
 struct sync.poolLocalInternal {
-    interface{} private;
-    struct []interface{} shared;
+    interface_{} private;
+    struct []interface_{} shared;
     struct sync.Mutex Mutex;
 };
 
 struct sync.poolLocal {
     struct sync.poolLocalInternal poolLocalInternal;
     uint8 pad[100];
-};
-
-typedef struct runtime.persistentAlloc runtime.persistentAlloc, *Pruntime.persistentAlloc;
-
-struct runtime.persistentAlloc {
-    void * base;
-    uintptr off;
 };
 
 typedef struct []*runtime._type noalg.[8][]*runtime._type[8];
@@ -1978,12 +1982,6 @@ typedef struct fmt.buffer fmt.buffer, *Pfmt.buffer;
 typedef struct fmt.fmt fmt.fmt, *Pfmt.fmt;
 
 typedef struct fmt.fmtFlags fmt.fmtFlags, *Pfmt.fmtFlags;
-
-struct fmt.buffer {
-    uint8 * array;
-    int len;
-    int cap;
-};
 
 struct fmt.fmtFlags {
     bool widPresent;
@@ -2000,17 +1998,23 @@ struct fmt.fmtFlags {
 struct fmt.fmt {
     struct fmt.buffer * buf;
     struct fmt.fmtFlags fmtFlags;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
+    undefined field2_0xd;
+    undefined field3_0xe;
+    undefined field4_0xf;
     int wid;
     int prec;
     uint8 intbuf[68];
 };
 
+struct fmt.buffer {
+    uint8 * array;
+    int len;
+    int cap;
+};
+
 struct fmt.pp {
     struct fmt.buffer buf;
-    interface{} arg;
+    interface_{} arg;
     struct reflect.Value value;
     struct fmt.fmt fmt;
     bool reordered;
@@ -2028,11 +2032,18 @@ struct errors.errorString {
 typedef struct sync.readOnly sync.readOnly, *Psync.readOnly;
 
 struct sync.readOnly {
-    map[interface{}]*sync.entry m;
+    map[interface_{}]*sync.entry m;
     bool amended;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
+    undefined field2_0x5;
+    undefined field3_0x6;
+    undefined field4_0x7;
+};
+
+typedef struct unicode/utf8.acceptRange unicode/utf8.acceptRange, *Punicode/utf8.acceptRange;
+
+struct unicode/utf8.acceptRange {
+    uint8 lo;
+    uint8 hi;
 };
 
 typedef struct runtime.errorString runtime.errorString, *Pruntime.errorString;
@@ -2040,11 +2051,6 @@ typedef struct runtime.errorString runtime.errorString, *Pruntime.errorString;
 struct runtime.errorString {
     uint8 * str;
     int len;
-};
-
-typedef struct internal-fwdslash-poll.TimeoutError internal-fwdslash-poll.TimeoutError, *Pinternal-fwdslash-poll.TimeoutError;
-
-struct internal-fwdslash-poll.TimeoutError { // Original name: internal/poll.TimeoutError
 };
 
 typedef struct hash<uint32,[]*runtime._type> * map[uint32][]*runtime._type;
@@ -2067,6 +2073,96 @@ struct runtime.arraytype {
 
 typedef uint32 runtime.sigset[2];
 
+typedef struct internal/poll.TimeoutError internal/poll.TimeoutError, *Pinternal/poll.TimeoutError;
+
+struct internal/poll.TimeoutError {
+};
+
+typedef struct struct_{_runtime.mcentral_runtime.mcentral;_runtime.pad_[32]uint8_} struct_{_runtime.mcentral_runtime.mcentral;_runtime.pad_[32]uint8_}, *Pstruct_{_runtime.mcentral_runtime.mcentral;_runtime.pad_[32]uint8_};
+
+typedef struct runtime.mcentral runtime.mcentral, *Pruntime.mcentral;
+
+struct runtime.mcentral {
+    struct runtime.mutex lock;
+    runtime.spanClass spanclass;
+    undefined field2_0x5;
+    undefined field3_0x6;
+    undefined field4_0x7;
+    struct runtime.mSpanList nonempty;
+    struct runtime.mSpanList empty;
+    uint64 nmalloc;
+};
+
+struct struct_{_runtime.mcentral_runtime.mcentral;_runtime.pad_[32]uint8_} { // Original name: struct { runtime.mcentral runtime.mcentral; runtime.pad [32]uint8 }
+    struct runtime.mcentral mcentral;
+    uint8 pad[32];
+};
+
+typedef struct struct_{_runtime.full_runtime.lfstack;_runtime.empty_runtime.lfstack;_runtime.pad0_[64]uint8;_runtime.wbufSpans_struct_{_runtime.lock_runtime.mutex;_runtime.free_runtime.mSpanList;_runtime.busy_runtime.mSpanList_};___uint32;_runtime.bytesMarked_uint64;_runtime.markrootNext_uint32;_runtime.markrootJobs_uint32;_runtime.nproc_uint32;_runtime.tstart_int64;_runtime.nwait_uint32;_runtime.ndone_uint32;_runtime.alldone_runtime.note;_runtime.helperDrainBlock_bool;_runtime.nFlushCacheRoots_int;_runtime.nDataRoots_int;_runtime.nBSSRoots_int;_runtime.nSpanRoots_int;_runtime.nStackRoots_int;_runtime.markrootDone_bool;_runtime.startSema_uint32;_runtime.markDoneSema_uint32;_runtime.bgMarkReady_runtime.note;_runtime.bgMarkDone_uint32;_runtime.mode_runtime.gcMode;_runtime.userForced_bool;_runtime.totaltime_int64;_runtime.initialHeapLive_uint64;_runtime.assistQueue_struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr;_runtime.tail_runtime.guintptr_};_runtime.sweepWaiters_struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr_};_runtime.cycles_uint32;_runtime.stwprocs_int32;_runtime.maxprocs_int32;_runtime.tSweepTerm_int64;_runtime.tMark_int64;_runtime.tMarkTerm_int64;_runtime.tEnd_int64;_runtime.pauseNS_int64;_runtime.pauseStart_int64;_runtime.heap0_uint64;_runtime.heap1_uint64;_runtime.heap2_uint64;_runtime.heapGoal_uint64_} struct_{_runtime.full_runtime.lfstack;_runtime.empty_runtime.lfstack;_runtime.pad0_[64]uint8;_runtime.wbufSpans_struct_{_runtime.lock_runtime.mutex;_runtime.free_runtime.mSpanList;_runtime.busy_runtime.mSpanList_};___uint32;_runtime.bytesMarked_uint64;_runtime.markrootNext_uint32;_runtime.markrootJobs_uint32;_runtime.nproc_uint32;_runtime.tstart_int64;_runtime.nwait_uint32;_runtime.ndone_uint32;_runtime.alldone_runtime.note;_runtime.helperDrainBlock_bool;_runtime.nFlushCacheRoots_int;_runtime.nDataRoots_int;_runtime.nBSSRoots_int;_runtime.nSpanRoots_int;_runtime.nStackRoots_int;_runtime.markrootDone_bool;_runtime.startSema_uint32;_runtime.markDoneSema_uint32;_runtime.bgMarkReady_runtime.note;_runtime.bgMarkDone_uint32;_runtime.mode_runtime.gcMode;_runtime.userForced_bool;_runtime.totaltime_int64;_runtime.initialHeapLive_uint64;_runtime.assistQueue_struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr;_runtime.tail_runtime.guintptr_};_runtime.sweepWaiters_struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr_};_runtime.cycles_uint32;_runtime.stwprocs_int32;_runtime.maxprocs_int32;_runtime.tSweepTerm_int64;_runtime.tMark_int64;_runtime.tMarkTerm_int64;_runtime.tEnd_int64;_runtime.pauseNS_int64;_runtime.pauseStart_int64;_runtime.heap0_uint64;_runtime.heap1_uint64;_runtime.heap2_uint64;_runtime.heapGoal_uint64_}, *Pstruct_{_runtime.full_runtime.lfstack;_runtime.empty_runtime.lfstack;_runtime.pad0_[64]uint8;_runtime.wbufSpans_struct_{_runtime.lock_runtime.mutex;_runtime.free_runtime.mSpanList;_runtime.busy_runtime.mSpanList_};___uint32;_runtime.bytesMarked_uint64;_runtime.markrootNext_uint32;_runtime.markrootJobs_uint32;_runtime.nproc_uint32;_runtime.tstart_int64;_runtime.nwait_uint32;_runtime.ndone_uint32;_runtime.alldone_runtime.note;_runtime.helperDrainBlock_bool;_runtime.nFlushCacheRoots_int;_runtime.nDataRoots_int;_runtime.nBSSRoots_int;_runtime.nSpanRoots_int;_runtime.nStackRoots_int;_runtime.markrootDone_bool;_runtime.startSema_uint32;_runtime.markDoneSema_uint32;_runtime.bgMarkReady_runtime.note;_runtime.bgMarkDone_uint32;_runtime.mode_runtime.gcMode;_runtime.userForced_bool;_runtime.totaltime_int64;_runtime.initialHeapLive_uint64;_runtime.assistQueue_struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr;_runtime.tail_runtime.guintptr_};_runtime.sweepWaiters_struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr_};_runtime.cycles_uint32;_runtime.stwprocs_int32;_runtime.maxprocs_int32;_runtime.tSweepTerm_int64;_runtime.tMark_int64;_runtime.tMarkTerm_int64;_runtime.tEnd_int64;_runtime.pauseNS_int64;_runtime.pauseStart_int64;_runtime.heap0_uint64;_runtime.heap1_uint64;_runtime.heap2_uint64;_runtime.heapGoal_uint64_};
+
+typedef struct struct_{_runtime.lock_runtime.mutex;_runtime.free_runtime.mSpanList;_runtime.busy_runtime.mSpanList_} struct_{_runtime.lock_runtime.mutex;_runtime.free_runtime.mSpanList;_runtime.busy_runtime.mSpanList_}, *Pstruct_{_runtime.lock_runtime.mutex;_runtime.free_runtime.mSpanList;_runtime.busy_runtime.mSpanList_};
+
+struct struct_{_runtime.lock_runtime.mutex;_runtime.free_runtime.mSpanList;_runtime.busy_runtime.mSpanList_} { // Original name: struct { runtime.lock runtime.mutex; runtime.free runtime.mSpanList; runtime.busy runtime.mSpanList }
+    struct runtime.mutex lock;
+    struct runtime.mSpanList free;
+    struct runtime.mSpanList busy;
+};
+
+struct struct_{_runtime.full_runtime.lfstack;_runtime.empty_runtime.lfstack;_runtime.pad0_[64]uint8;_runtime.wbufSpans_struct_{_runtime.lock_runtime.mutex;_runtime.free_runtime.mSpanList;_runtime.busy_runtime.mSpanList_};___uint32;_runtime.bytesMarked_uint64;_runtime.markrootNext_uint32;_runtime.markrootJobs_uint32;_runtime.nproc_uint32;_runtime.tstart_int64;_runtime.nwait_uint32;_runtime.ndone_uint32;_runtime.alldone_runtime.note;_runtime.helperDrainBlock_bool;_runtime.nFlushCacheRoots_int;_runtime.nDataRoots_int;_runtime.nBSSRoots_int;_runtime.nSpanRoots_int;_runtime.nStackRoots_int;_runtime.markrootDone_bool;_runtime.startSema_uint32;_runtime.markDoneSema_uint32;_runtime.bgMarkReady_runtime.note;_runtime.bgMarkDone_uint32;_runtime.mode_runtime.gcMode;_runtime.userForced_bool;_runtime.totaltime_int64;_runtime.initialHeapLive_uint64;_runtime.assistQueue_struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr;_runtime.tail_runtime.guintptr_};_runtime.sweepWaiters_struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr_};_runtime.cycles_uint32;_runtime.stwprocs_int32;_runtime.maxprocs_int32;_runtime.tSweepTerm_int64;_runtime.tMark_int64;_runtime.tMarkTerm_int64;_runtime.tEnd_int64;_runtime.pauseNS_int64;_runtime.pauseStart_int64;_runtime.heap0_uint64;_runtime.heap1_uint64;_runtime.heap2_uint64;_runtime.heapGoal_uint64_} { // Original name: struct { runtime.full runtime.lfstack; runtime.empty runtime.lfstack; runtime.pad0 [64]uint8; runtime.wbufSpans struct { runtime.lock runtime.mutex; runtime.free runtime.mSpanList; runtime.busy runtime.mSpanList }; _ uint32; runtime.bytesMarked uint64; runtime.markrootNext uint32; runtime.markrootJobs uint32; runtime.nproc uint32; runtime.tstart int64; runtime.nwait uint32; runtime.ndone uint32; runtime.alldone runtime.note; runtime.helperDrainBlock bool; runtime.nFlushCacheRoots int; runtime.nDataRoots int; runtime.nBSSRoots int; runtime.nSpanRoots int; runtime.nStackRoots int; runtime.markrootDone bool; runtime.startSema uint32; runtime.markDoneSema uint32; runtime.bgMarkReady runtime.note; runtime.bgMarkDone uint32; runtime.mode runtime.gcMode; runtime.userForced bool; runtime.totaltime int64; runtime.initialHeapLive uint64; runtime.assistQueue struct { runtime.lock runtime.mutex; runtime.head runtime.guintptr; runtime.tail runtime.guintptr }; runtime.sweepWaiters struct { runtime.lock runtime.mutex; runtime.head runtime.guintptr }; runtime.cycles uint32; runtime.stwprocs int32; runtime.maxprocs int32; runtime.tSweepTerm int64; runtime.tMark int64; runtime.tMarkTerm int64; runtime.tEnd int64; runtime.pauseNS int64; runtime.pauseStart int64; runtime.heap0 uint64; runtime.heap1 uint64; runtime.heap2 uint64; runtime.heapGoal uint64 }
+    runtime.lfstack full;
+    runtime.lfstack empty;
+    uint8 pad0[64];
+    struct struct_{_runtime.lock_runtime.mutex;_runtime.free_runtime.mSpanList;_runtime.busy_runtime.mSpanList_} wbufSpans;
+    uint32 _;
+    uint64 bytesMarked;
+    uint32 markrootNext;
+    uint32 markrootJobs;
+    uint32 nproc;
+    int64 tstart;
+    uint32 nwait;
+    uint32 ndone;
+    struct runtime.note alldone;
+    bool helperDrainBlock;
+    undefined field14_0x91;
+    undefined field15_0x92;
+    undefined field16_0x93;
+    int nFlushCacheRoots;
+    int nDataRoots;
+    int nBSSRoots;
+    int nSpanRoots;
+    int nStackRoots;
+    bool markrootDone;
+    undefined field23_0xa9;
+    undefined field24_0xaa;
+    undefined field25_0xab;
+    uint32 startSema;
+    uint32 markDoneSema;
+    struct runtime.note bgMarkReady;
+    uint32 bgMarkDone;
+    runtime.gcMode mode;
+    bool userForced;
+    undefined field32_0xc1;
+    undefined field33_0xc2;
+    undefined field34_0xc3;
+    int64 totaltime;
+    uint64 initialHeapLive;
+    struct struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr;_runtime.tail_runtime.guintptr_} assistQueue;
+    struct struct_{_runtime.lock_runtime.mutex;_runtime.head_runtime.guintptr_} sweepWaiters;
+    uint32 cycles;
+    int32 stwprocs;
+    int32 maxprocs;
+    int64 tSweepTerm;
+    int64 tMark;
+    int64 tMarkTerm;
+    int64 tEnd;
+    int64 pauseNS;
+    int64 pauseStart;
+    uint64 heap0;
+    uint64 heap1;
+    uint64 heap2;
+    uint64 heapGoal;
+};
+
 typedef struct strconv.floatInfo strconv.floatInfo, *Pstrconv.floatInfo;
 
 struct strconv.floatInfo {
@@ -2082,35 +2178,109 @@ struct reflect.funcTypeFixed32 {
     struct reflect.rtype * args[32];
 };
 
-typedef struct struct{Fuintptr;runtime.gp*runtime.g;runtime.scanWorkint64} struct{Fuintptr;runtime.gp*runtime.g;runtime.scanWorkint64}, *Pstruct{Fuintptr;runtime.gp*runtime.g;runtime.scanWorkint64};
+typedef struct struct_{_F_uintptr;_runtime.h_*runtime.mheap;_runtime.s_*runtime.mspan;_runtime.acct_int32_} struct_{_F_uintptr;_runtime.h_*runtime.mheap;_runtime.s_*runtime.mspan;_runtime.acct_int32_}, *Pstruct_{_F_uintptr;_runtime.h_*runtime.mheap;_runtime.s_*runtime.mspan;_runtime.acct_int32_};
 
-struct struct{Fuintptr;runtime.gp*runtime.g;runtime.scanWorkint64} { // Original name: struct { F uintptr; runtime.gp *runtime.g; runtime.scanWork int64 }
+typedef struct runtime.mheap runtime.mheap, *Pruntime.mheap;
+
+typedef struct runtime.mTreap runtime.mTreap, *Pruntime.mTreap;
+
+typedef struct []*runtime.mspan []*runtime.mspan, *P[]*runtime.mspan;
+
+typedef struct runtime.fixalloc runtime.fixalloc, *Pruntime.fixalloc;
+
+typedef struct runtime.treapNode runtime.treapNode, *Pruntime.treapNode;
+
+typedef struct runtime.mlink runtime.mlink, *Pruntime.mlink;
+
+struct runtime.fixalloc { // Missing member  first : func(unsafe.Pointer,_unsafe.Pointer) at offset 0x4
+    uintptr size;
+    undefined field1_0x4;
+    undefined field2_0x5;
+    undefined field3_0x6;
+    undefined field4_0x7;
+    void * arg;
+    struct runtime.mlink * list;
+    uintptr chunk;
+    uint32 nchunk;
+    uintptr inuse;
+    uint64 * stat;
+    bool zero;
+    undefined field12_0x21;
+    undefined field13_0x22;
+    undefined field14_0x23;
+};
+
+struct struct_{_F_uintptr;_runtime.h_*runtime.mheap;_runtime.s_*runtime.mspan;_runtime.acct_int32_} { // Original name: struct { F uintptr; runtime.h *runtime.mheap; runtime.s *runtime.mspan; runtime.acct int32 }
     uintptr .F;
-    struct runtime.g * gp;
-    int64 scanWork;
+    struct runtime.mheap * h;
+    struct runtime.mspan * s;
+    int32 acct;
 };
 
-typedef struct noalg.map.hdr[interface{}]*sync.entry noalg.map.hdr[interface{}]*sync.entry, *Pnoalg.map.hdr[interface{}]*sync.entry;
-
-typedef struct noalg.map.bucket[interface{}]*sync.entry noalg.map.bucket[interface{}]*sync.entry, *Pnoalg.map.bucket[interface{}]*sync.entry;
-
-struct noalg.map.hdr[interface{}]*sync.entry { // Original name: noalg.map.hdr[interface {}]*sync.entry
-    int count;
-    uint8 flags;
-    uint8 B;
-    uint16 noverflow;
-    uint32 hash0;
-    struct noalg.map.bucket[interface{}]*sync.entry * buckets;
-    struct noalg.map.bucket[interface{}]*sync.entry * oldbuckets;
-    uintptr nevacuate;
-    void * overflow;
+struct []*runtime.mspan {
+    struct runtime.mspan * * array;
+    int len;
+    int cap;
 };
 
-struct noalg.map.bucket[interface{}]*sync.entry { // Original name: noalg.map.bucket[interface {}]*sync.entry
-    uint8 topbits[8];
-    interface{} keys[8];
-    struct sync.entry * values[8];
-    struct noalg.map.bucket[interface{}]*sync.entry * overflow;
+struct runtime.mTreap {
+    struct runtime.treapNode * treap;
+};
+
+struct runtime.mheap {
+    struct runtime.mutex lock;
+    struct runtime.mSpanList free[128];
+    struct runtime.mTreap freelarge;
+    struct runtime.mSpanList busy[128];
+    struct runtime.mSpanList busylarge;
+    uint32 sweepgen;
+    uint32 sweepdone;
+    uint32 sweepers;
+    struct []*runtime.mspan allspans;
+    struct []*runtime.mspan spans;
+    struct runtime.gcSweepBuf sweepSpans[2];
+    uint32 _;
+    uint64 pagesInUse;
+    uint64 pagesSwept;
+    uint64 pagesSweptBasis;
+    uint64 sweepHeapLiveBasis;
+    float64 sweepPagesPerByte;
+    uint64 largealloc;
+    uint64 nlargealloc;
+    uint64 largefree;
+    uint64 nlargefree;
+    uint64 nsmallfree[67];
+    uintptr bitmap;
+    uintptr bitmap_mapped;
+    uintptr arena_start;
+    uintptr arena_used;
+    uintptr arena_alloc;
+    uintptr arena_end;
+    bool arena_reserved;
+    undefined field29_0xad9;
+    undefined field30_0xada;
+    undefined field31_0xadb;
+    uint32 _;
+    struct struct_{_runtime.mcentral_runtime.mcentral;_runtime.pad_[32]uint8_} central[134];
+    struct runtime.fixalloc spanalloc;
+    struct runtime.fixalloc cachealloc;
+    struct runtime.fixalloc treapalloc;
+    struct runtime.fixalloc specialfinalizeralloc;
+    struct runtime.fixalloc specialprofilealloc;
+    struct runtime.mutex speciallock;
+};
+
+struct runtime.treapNode {
+    struct runtime.treapNode * right;
+    struct runtime.treapNode * left;
+    struct runtime.treapNode * parent;
+    uintptr npagesKey;
+    struct runtime.mspan * spanKey;
+    uint32 priority;
+};
+
+struct runtime.mlink {
+    struct runtime.mlink * next;
 };
 
 typedef struct hash<*reflect.structType,int> hash<*reflect.structType,int>, *Phash<*reflect.structType,int>;
@@ -2134,14 +2304,6 @@ struct runtime.heapBits {
     uint32 shift;
 };
 
-typedef struct struct{Fuintptr;runtime.oldvaluint32;runtime.newvaluint32} struct{Fuintptr;runtime.oldvaluint32;runtime.newvaluint32}, *Pstruct{Fuintptr;runtime.oldvaluint32;runtime.newvaluint32};
-
-struct struct{Fuintptr;runtime.oldvaluint32;runtime.newvaluint32} { // Original name: struct { F uintptr; runtime.oldval uint32; runtime.newval uint32 }
-    uintptr .F;
-    uint32 oldval;
-    uint32 newval;
-};
-
 typedef struct runtime.randomOrder runtime.randomOrder, *Pruntime.randomOrder;
 
 struct runtime.randomOrder {
@@ -2149,17 +2311,12 @@ struct runtime.randomOrder {
     struct []uint32 coprimes;
 };
 
-typedef struct runtime.mcentral runtime.mcentral, *Pruntime.mcentral;
+typedef struct struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.scanWork_int64_} struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.scanWork_int64_}, *Pstruct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.scanWork_int64_};
 
-struct runtime.mcentral {
-    struct runtime.mutex lock;
-    runtime.spanClass spanclass;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
-    struct runtime.mSpanList nonempty;
-    struct runtime.mSpanList empty;
-    uint64 nmalloc;
+struct struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.scanWork_int64_} { // Original name: struct { F uintptr; runtime.gp *runtime.g; runtime.scanWork int64 }
+    uintptr .F;
+    struct runtime.g * gp;
+    int64 scanWork;
 };
 
 typedef struct runtime.memRecordCycle runtime.memRecordCycle, *Pruntime.memRecordCycle;
@@ -2193,12 +2350,26 @@ struct reflect.Method {
     int Index;
 };
 
-typedef struct struct{runtime.lockruntime.mutex;runtime.headruntime.guintptr;runtime.tailruntime.guintptr} struct{runtime.lockruntime.mutex;runtime.headruntime.guintptr;runtime.tailruntime.guintptr}, *Pstruct{runtime.lockruntime.mutex;runtime.headruntime.guintptr;runtime.tailruntime.guintptr};
+typedef struct struct_{_runtime.lock_runtime.mutex;_runtime.gp_*runtime.g;_runtime.created_bool;_runtime.sleeping_bool;_runtime.rescheduling_bool;_runtime.sleepUntil_int64;_runtime.waitnote_runtime.note;_runtime.t_[]*runtime.timer_} struct_{_runtime.lock_runtime.mutex;_runtime.gp_*runtime.g;_runtime.created_bool;_runtime.sleeping_bool;_runtime.rescheduling_bool;_runtime.sleepUntil_int64;_runtime.waitnote_runtime.note;_runtime.t_[]*runtime.timer_}, *Pstruct_{_runtime.lock_runtime.mutex;_runtime.gp_*runtime.g;_runtime.created_bool;_runtime.sleeping_bool;_runtime.rescheduling_bool;_runtime.sleepUntil_int64;_runtime.waitnote_runtime.note;_runtime.t_[]*runtime.timer_};
 
-struct struct{runtime.lockruntime.mutex;runtime.headruntime.guintptr;runtime.tailruntime.guintptr} { // Original name: struct { runtime.lock runtime.mutex; runtime.head runtime.guintptr; runtime.tail runtime.guintptr }
+typedef struct []*runtime.timer []*runtime.timer, *P[]*runtime.timer;
+
+struct []*runtime.timer {
+    struct runtime.timer * * array;
+    int len;
+    int cap;
+};
+
+struct struct_{_runtime.lock_runtime.mutex;_runtime.gp_*runtime.g;_runtime.created_bool;_runtime.sleeping_bool;_runtime.rescheduling_bool;_runtime.sleepUntil_int64;_runtime.waitnote_runtime.note;_runtime.t_[]*runtime.timer_} { // Original name: struct { runtime.lock runtime.mutex; runtime.gp *runtime.g; runtime.created bool; runtime.sleeping bool; runtime.rescheduling bool; runtime.sleepUntil int64; runtime.waitnote runtime.note; runtime.t []*runtime.timer }
     struct runtime.mutex lock;
-    runtime.guintptr head;
-    runtime.guintptr tail;
+    struct runtime.g * gp;
+    bool created;
+    bool sleeping;
+    bool rescheduling;
+    undefined field5_0xb;
+    int64 sleepUntil;
+    struct runtime.note waitnote;
+    struct []*runtime.timer t;
 };
 
 typedef struct runtime.maptype runtime.maptype, *Pruntime.maptype;
@@ -2216,6 +2387,29 @@ struct runtime.maptype {
     uint16 bucketsize;
     bool reflexivekey;
     bool needkeyupdate;
+};
+
+typedef struct hash<runtime._typePair,struct_{}> hash<runtime._typePair,struct_{}>, *Phash<runtime._typePair,struct_{}>;
+
+struct hash<runtime._typePair,struct_{}> { // Original name: hash<runtime._typePair,struct {}>
+    int count;
+    uint8 flags;
+    uint8 B;
+    uint16 noverflow;
+    uint32 hash0;
+    struct bucket<runtime._typePair,struct_{}> * buckets;
+    struct bucket<runtime._typePair,struct_{}> * oldbuckets;
+    uintptr nevacuate;
+    struct runtime.mapextra * extra;
+};
+
+typedef struct struct_{_F_uintptr;_runtime.mp_*runtime.m;_runtime.src_uintptr;_runtime.dst_*uintptr_} struct_{_F_uintptr;_runtime.mp_*runtime.m;_runtime.src_uintptr;_runtime.dst_*uintptr_}, *Pstruct_{_F_uintptr;_runtime.mp_*runtime.m;_runtime.src_uintptr;_runtime.dst_*uintptr_};
+
+struct struct_{_F_uintptr;_runtime.mp_*runtime.m;_runtime.src_uintptr;_runtime.dst_*uintptr_} { // Original name: struct { F uintptr; runtime.mp *runtime.m; runtime.src uintptr; runtime.dst *uintptr }
+    uintptr .F;
+    struct runtime.m * mp;
+    uintptr src;
+    uintptr * dst;
 };
 
 typedef struct runtime.traceBuf runtime.traceBuf, *Pruntime.traceBuf;
@@ -2242,21 +2436,41 @@ struct []reflect.imethod {
     int cap;
 };
 
-typedef struct []*runtime.mspan []*runtime.mspan, *P[]*runtime.mspan;
+typedef struct struct_{_F_uintptr;_runtime.srcp_*unsafe.Pointer;_runtime.dstp_*unsafe.Pointer;_runtime.n_int;_runtime.typ_**runtime._type_} struct_{_F_uintptr;_runtime.srcp_*unsafe.Pointer;_runtime.dstp_*unsafe.Pointer;_runtime.n_int;_runtime.typ_**runtime._type_}, *Pstruct_{_F_uintptr;_runtime.srcp_*unsafe.Pointer;_runtime.dstp_*unsafe.Pointer;_runtime.n_int;_runtime.typ_**runtime._type_};
 
-struct []*runtime.mspan {
-    struct runtime.mspan * * array;
-    int len;
-    int cap;
+struct struct_{_F_uintptr;_runtime.srcp_*unsafe.Pointer;_runtime.dstp_*unsafe.Pointer;_runtime.n_int;_runtime.typ_**runtime._type_} { // Original name: struct { F uintptr; runtime.srcp *unsafe.Pointer; runtime.dstp *unsafe.Pointer; runtime.n int; runtime.typ **runtime._type }
+    uintptr .F;
+    void * * srcp;
+    void * * dstp;
+    int n;
+    struct runtime._type * * typ;
 };
 
-typedef struct struct{Fuintptr;runtime.gp*runtime.g;runtime.pcuintptr;runtime.spuintptr} struct{Fuintptr;runtime.gp*runtime.g;runtime.pcuintptr;runtime.spuintptr}, *Pstruct{Fuintptr;runtime.gp*runtime.g;runtime.pcuintptr;runtime.spuintptr};
+typedef struct hchan<int> hchan<int>, *Phchan<int>;
 
-struct struct{Fuintptr;runtime.gp*runtime.g;runtime.pcuintptr;runtime.spuintptr} { // Original name: struct { F uintptr; runtime.gp *runtime.g; runtime.pc uintptr; runtime.sp uintptr }
-    uintptr .F;
-    struct runtime.g * gp;
-    uintptr pc;
-    uintptr sp;
+typedef struct hchan<int> * chan_int;
+
+typedef struct waitq<int> waitq<int>, *Pwaitq<int>;
+
+struct waitq<int> {
+    struct sudog<int> * first;
+    struct sudog<int> * last;
+};
+
+struct hchan<int> {
+    uint qcount;
+    uint dataqsiz;
+    void * buf;
+    uint16 elemsize;
+    undefined field4_0xe;
+    undefined field5_0xf;
+    uint32 closed;
+    struct runtime._type * elemtype;
+    uint sendx;
+    uint recvx;
+    struct waitq<int> recvq;
+    struct waitq<int> sendq;
+    struct runtime.mutex lock;
 };
 
 typedef struct []reflect.method []reflect.method, *P[]reflect.method;
@@ -2276,53 +2490,21 @@ struct []reflect.method {
     int cap;
 };
 
-typedef struct runtime.p runtime.p, *Pruntime.p;
+typedef struct struct_{_F_uintptr;_runtime.startTime_*int64_} struct_{_F_uintptr;_runtime.startTime_*int64_}, *Pstruct_{_F_uintptr;_runtime.startTime_*int64_};
 
-typedef struct []*runtime.sudog []*runtime.sudog, *P[]*runtime.sudog;
-
-struct []*runtime.sudog {
-    struct runtime.sudog * * array;
-    int len;
-    int cap;
+struct struct_{_F_uintptr;_runtime.startTime_*int64_} { // Original name: struct { F uintptr; runtime.startTime *int64 }
+    uintptr .F;
+    int64 * startTime;
 };
 
-struct runtime.p {
-    struct runtime.mutex lock;
-    int32 id;
-    uint32 status;
-    runtime.puintptr link;
-    uint32 schedtick;
-    uint32 syscalltick;
-    struct runtime.sysmontick sysmontick;
-    runtime.muintptr m;
-    struct runtime.mcache * mcache;
-    uintptr racectx;
-    struct []*runtime._defer deferpool[5];
-    struct runtime._defer * deferpoolbuf[5][32];
-    uint64 goidcache;
-    uint64 goidcacheend;
-    uint32 runqhead;
-    uint32 runqtail;
-    runtime.guintptr runq[256];
-    runtime.guintptr runnext;
-    struct runtime.g * gfree;
-    int32 gfreecnt;
-    struct []*runtime.sudog sudogcache;
-    struct runtime.sudog * sudogbuf[128];
-    runtime.traceBufPtr tracebuf;
-    bool traceSweep;
-    undefined field_0x92d;
-    undefined field_0x92e;
-    undefined field_0x92f;
-    uintptr traceSwept;
-    uintptr traceReclaimed;
-    struct runtime.persistentAlloc palloc;
-    int64 gcAssistTime;
-    runtime.guintptr gcBgMarkWorker;
-    runtime.gcMarkWorkerMode gcMarkWorkerMode;
-    struct runtime.gcWork gcw;
-    uint32 runSafePointFn;
-    uint8 pad[64];
+typedef struct struct_{_F_uintptr;_runtime.sp1_uintptr;_runtime.sp2_uintptr;_runtime.sp3_uintptr;_runtime._g__*runtime.g_} struct_{_F_uintptr;_runtime.sp1_uintptr;_runtime.sp2_uintptr;_runtime.sp3_uintptr;_runtime._g__*runtime.g_}, *Pstruct_{_F_uintptr;_runtime.sp1_uintptr;_runtime.sp2_uintptr;_runtime.sp3_uintptr;_runtime._g__*runtime.g_};
+
+struct struct_{_F_uintptr;_runtime.sp1_uintptr;_runtime.sp2_uintptr;_runtime.sp3_uintptr;_runtime._g__*runtime.g_} { // Original name: struct { F uintptr; runtime.sp1 uintptr; runtime.sp2 uintptr; runtime.sp3 uintptr; runtime._g_ *runtime.g }
+    uintptr .F;
+    uintptr sp1;
+    uintptr sp2;
+    uintptr sp3;
+    struct runtime.g * _g_;
 };
 
 typedef struct runtime.stkframe runtime.stkframe, *Pruntime.stkframe;
@@ -2349,18 +2531,33 @@ struct reflect.funcTypeFixed128 {
 
 typedef struct sync.Map sync.Map, *Psync.Map;
 
+typedef struct sync/atomic.Value sync/atomic.Value, *Psync/atomic.Value;
+
+typedef struct sync/atomic.noCopy sync/atomic.noCopy, *Psync/atomic.noCopy;
+
+struct sync/atomic.noCopy {
+};
+
+struct sync/atomic.Value {
+    struct sync/atomic.noCopy noCopy;
+    interface_{} v;
+};
+
 struct sync.Map {
     struct sync.Mutex mu;
-    struct sync-fwdslash-atomic.Value read;
-    map[interface{}]*sync.entry dirty;
+    struct sync/atomic.Value read;
+    map[interface_{}]*sync.entry dirty;
     int misses;
 };
 
-typedef struct struct{Fuintptr;reflect.x*reflect.rtype} struct{Fuintptr;reflect.x*reflect.rtype}, *Pstruct{Fuintptr;reflect.x*reflect.rtype};
+typedef struct struct_{_F_uintptr;_runtime.typ_*runtime._type;_runtime.src_unsafe.Pointer;_runtime.off_uintptr;_runtime.size_uintptr_} struct_{_F_uintptr;_runtime.typ_*runtime._type;_runtime.src_unsafe.Pointer;_runtime.off_uintptr;_runtime.size_uintptr_}, *Pstruct_{_F_uintptr;_runtime.typ_*runtime._type;_runtime.src_unsafe.Pointer;_runtime.off_uintptr;_runtime.size_uintptr_};
 
-struct struct{Fuintptr;reflect.x*reflect.rtype} { // Original name: struct { F uintptr; reflect.x *reflect.rtype }
+struct struct_{_F_uintptr;_runtime.typ_*runtime._type;_runtime.src_unsafe.Pointer;_runtime.off_uintptr;_runtime.size_uintptr_} { // Original name: struct { F uintptr; runtime.typ *runtime._type; runtime.src unsafe.Pointer; runtime.off uintptr; runtime.size uintptr }
     uintptr .F;
-    struct reflect.rtype * x;
+    struct runtime._type * typ;
+    void * src;
+    uintptr off;
+    uintptr size;
 };
 
 typedef struct reflect.funcTypeFixed4 reflect.funcTypeFixed4, *Preflect.funcTypeFixed4;
@@ -2370,19 +2567,14 @@ struct reflect.funcTypeFixed4 {
     struct reflect.rtype * args[4];
 };
 
-typedef struct struct{runtime.lockruntime.mutex;runtime.free[19]runtime.mSpanList} struct{runtime.lockruntime.mutex;runtime.free[19]runtime.mSpanList}, *Pstruct{runtime.lockruntime.mutex;runtime.free[19]runtime.mSpanList};
+typedef struct struct_{_reflect.b_bool;_reflect.x_interface_{}_} struct_{_reflect.b_bool;_reflect.x_interface_{}_}, *Pstruct_{_reflect.b_bool;_reflect.x_interface_{}_};
 
-struct struct{runtime.lockruntime.mutex;runtime.free[19]runtime.mSpanList} { // Original name: struct { runtime.lock runtime.mutex; runtime.free [19]runtime.mSpanList }
-    struct runtime.mutex lock;
-    struct runtime.mSpanList free[19];
-};
-
-typedef struct struct{runtime.lockruntime.mutex;runtime.freeruntime.mSpanList;runtime.busyruntime.mSpanList} struct{runtime.lockruntime.mutex;runtime.freeruntime.mSpanList;runtime.busyruntime.mSpanList}, *Pstruct{runtime.lockruntime.mutex;runtime.freeruntime.mSpanList;runtime.busyruntime.mSpanList};
-
-struct struct{runtime.lockruntime.mutex;runtime.freeruntime.mSpanList;runtime.busyruntime.mSpanList} { // Original name: struct { runtime.lock runtime.mutex; runtime.free runtime.mSpanList; runtime.busy runtime.mSpanList }
-    struct runtime.mutex lock;
-    struct runtime.mSpanList free;
-    struct runtime.mSpanList busy;
+struct struct_{_reflect.b_bool;_reflect.x_interface_{}_} { // Original name: struct { reflect.b bool; reflect.x interface {} }
+    bool b;
+    undefined field1_0x1;
+    undefined field2_0x2;
+    undefined field3_0x3;
+    interface_{} x;
 };
 
 typedef struct []strconv.leftCheat []strconv.leftCheat, *P[]strconv.leftCheat;
@@ -2418,13 +2610,6 @@ struct runtime.memRecord {
     struct runtime.memRecordCycle future[3];
 };
 
-typedef struct struct{Fuintptr;runtime.s**runtime.mspan} struct{Fuintptr;runtime.s**runtime.mspan}, *Pstruct{Fuintptr;runtime.s**runtime.mspan};
-
-struct struct{Fuintptr;runtime.s**runtime.mspan} { // Original name: struct { F uintptr; runtime.s **runtime.mspan }
-    uintptr .F;
-    struct runtime.mspan * * s;
-};
-
 typedef struct reflect.StructField reflect.StructField, *Preflect.StructField;
 
 struct reflect.StructField {
@@ -2435,9 +2620,9 @@ struct reflect.StructField {
     uintptr Offset;
     struct []int Index;
     bool Anonymous;
-    undefined field_0x31;
-    undefined field_0x32;
-    undefined field_0x33;
+    undefined field7_0x31;
+    undefined field8_0x32;
+    undefined field9_0x33;
 };
 
 typedef uint8 runtime.tmpBuf[32];
@@ -2449,23 +2634,6 @@ struct bucket<int32,unsafe.Pointer> {
     int32 keys[8];
     void * values[8];
     struct bucket<int32,unsafe.Pointer> * overflow;
-};
-
-typedef struct runtime.mTreap runtime.mTreap, *Pruntime.mTreap;
-
-typedef struct runtime.treapNode runtime.treapNode, *Pruntime.treapNode;
-
-struct runtime.mTreap {
-    struct runtime.treapNode * treap;
-};
-
-struct runtime.treapNode {
-    struct runtime.treapNode * right;
-    struct runtime.treapNode * left;
-    struct runtime.treapNode * parent;
-    uintptr npagesKey;
-    struct runtime.mspan * spanKey;
-    uint32 priority;
 };
 
 typedef struct runtime.hiter runtime.hiter, *Pruntime.hiter;
@@ -2485,70 +2653,6 @@ struct runtime.hiter {
     uint8 i;
     uintptr bucket;
     uintptr checkBucket;
-};
-
-typedef struct struct{runtime.fullruntime.lfstack;runtime.emptyruntime.lfstack;runtime.pad0[64]uint8;runtime.wbufSpansstruct{runtime.lockruntime.mutex;runtime.freeruntime.mSpanList;runtime.busyruntime.mSpanList};_uint32;runtime.bytesMarkeduint64;runtime.markrootNextuint32;runtime.markrootJobsuint32;runtime.nprocuint32;runtime.tstartint64;runtime.nwaituint32;runtime.ndoneuint32;runtime.alldoneruntime.note;runtime.helperDrainBlockbool;runtime.nFlushCacheRootsint;runtime.nDataRootsint;runtime.nBSSRootsint;runtime.nSpanRootsint;runtime.nStackRootsint;runtime.markrootDonebool;runtime.startSemauint32;runtime.markDoneSemauint32;runtime.bgMarkReadyruntime.note;runtime.bgMarkDoneuint32;runtime.moderuntime.gcMode;runtime.userForcedbool;runtime.totaltimeint64;runtime.initialHeapLiveuint64;runtime.assistQueuestruct{runtime.lockruntime.mutex;runtime.headruntime.guintptr;runtime.tailruntime.guintptr};runtime.sweepWaitersstruct{runtime.lockruntime.mutex;runtime.headruntime.guintptr};runtime.cyclesuint32;runtime.stwprocsint32;runtime.maxprocsint32;runtime.tSweepTermint64;runtime.tMarkint64;runtime.tMarkTermint64;runtime.tEndint64;runtime.pauseNSint64;runtime.pauseStartint64;runtime.heap0uint64;runtime.heap1uint64;runtime.heap2uint64;runtime.heapGoaluint64} struct{runtime.fullruntime.lfstack;runtime.emptyruntime.lfstack;runtime.pad0[64]uint8;runtime.wbufSpansstruct{runtime.lockruntime.mutex;runtime.freeruntime.mSpanList;runtime.busyruntime.mSpanList};_uint32;runtime.bytesMarkeduint64;runtime.markrootNextuint32;runtime.markrootJobsuint32;runtime.nprocuint32;runtime.tstartint64;runtime.nwaituint32;runtime.ndoneuint32;runtime.alldoneruntime.note;runtime.helperDrainBlockbool;runtime.nFlushCacheRootsint;runtime.nDataRootsint;runtime.nBSSRootsint;runtime.nSpanRootsint;runtime.nStackRootsint;runtime.markrootDonebool;runtime.startSemauint32;runtime.markDoneSemauint32;runtime.bgMarkReadyruntime.note;runtime.bgMarkDoneuint32;runtime.moderuntime.gcMode;runtime.userForcedbool;runtime.totaltimeint64;runtime.initialHeapLiveuint64;runtime.assistQueuestruct{runtime.lockruntime.mutex;runtime.headruntime.guintptr;runtime.tailruntime.guintptr};runtime.sweepWaitersstruct{runtime.lockruntime.mutex;runtime.headruntime.guintptr};runtime.cyclesuint32;runtime.stwprocsint32;runtime.maxprocsint32;runtime.tSweepTermint64;runtime.tMarkint64;runtime.tMarkTermint64;runtime.tEndint64;runtime.pauseNSint64;runtime.pauseStartint64;runtime.heap0uint64;runtime.heap1uint64;runtime.heap2uint64;runtime.heapGoaluint64}, *Pstruct{runtime.fullruntime.lfstack;runtime.emptyruntime.lfstack;runtime.pad0[64]uint8;runtime.wbufSpansstruct{runtime.lockruntime.mutex;runtime.freeruntime.mSpanList;runtime.busyruntime.mSpanList};_uint32;runtime.bytesMarkeduint64;runtime.markrootNextuint32;runtime.markrootJobsuint32;runtime.nprocuint32;runtime.tstartint64;runtime.nwaituint32;runtime.ndoneuint32;runtime.alldoneruntime.note;runtime.helperDrainBlockbool;runtime.nFlushCacheRootsint;runtime.nDataRootsint;runtime.nBSSRootsint;runtime.nSpanRootsint;runtime.nStackRootsint;runtime.markrootDonebool;runtime.startSemauint32;runtime.markDoneSemauint32;runtime.bgMarkReadyruntime.note;runtime.bgMarkDoneuint32;runtime.moderuntime.gcMode;runtime.userForcedbool;runtime.totaltimeint64;runtime.initialHeapLiveuint64;runtime.assistQueuestruct{runtime.lockruntime.mutex;runtime.headruntime.guintptr;runtime.tailruntime.guintptr};runtime.sweepWaitersstruct{runtime.lockruntime.mutex;runtime.headruntime.guintptr};runtime.cyclesuint32;runtime.stwprocsint32;runtime.maxprocsint32;runtime.tSweepTermint64;runtime.tMarkint64;runtime.tMarkTermint64;runtime.tEndint64;runtime.pauseNSint64;runtime.pauseStartint64;runtime.heap0uint64;runtime.heap1uint64;runtime.heap2uint64;runtime.heapGoaluint64};
-
-typedef struct struct{runtime.lockruntime.mutex;runtime.headruntime.guintptr} struct{runtime.lockruntime.mutex;runtime.headruntime.guintptr}, *Pstruct{runtime.lockruntime.mutex;runtime.headruntime.guintptr};
-
-struct struct{runtime.lockruntime.mutex;runtime.headruntime.guintptr} { // Original name: struct { runtime.lock runtime.mutex; runtime.head runtime.guintptr }
-    struct runtime.mutex lock;
-    runtime.guintptr head;
-};
-
-struct struct{runtime.fullruntime.lfstack;runtime.emptyruntime.lfstack;runtime.pad0[64]uint8;runtime.wbufSpansstruct{runtime.lockruntime.mutex;runtime.freeruntime.mSpanList;runtime.busyruntime.mSpanList};_uint32;runtime.bytesMarkeduint64;runtime.markrootNextuint32;runtime.markrootJobsuint32;runtime.nprocuint32;runtime.tstartint64;runtime.nwaituint32;runtime.ndoneuint32;runtime.alldoneruntime.note;runtime.helperDrainBlockbool;runtime.nFlushCacheRootsint;runtime.nDataRootsint;runtime.nBSSRootsint;runtime.nSpanRootsint;runtime.nStackRootsint;runtime.markrootDonebool;runtime.startSemauint32;runtime.markDoneSemauint32;runtime.bgMarkReadyruntime.note;runtime.bgMarkDoneuint32;runtime.moderuntime.gcMode;runtime.userForcedbool;runtime.totaltimeint64;runtime.initialHeapLiveuint64;runtime.assistQueuestruct{runtime.lockruntime.mutex;runtime.headruntime.guintptr;runtime.tailruntime.guintptr};runtime.sweepWaitersstruct{runtime.lockruntime.mutex;runtime.headruntime.guintptr};runtime.cyclesuint32;runtime.stwprocsint32;runtime.maxprocsint32;runtime.tSweepTermint64;runtime.tMarkint64;runtime.tMarkTermint64;runtime.tEndint64;runtime.pauseNSint64;runtime.pauseStartint64;runtime.heap0uint64;runtime.heap1uint64;runtime.heap2uint64;runtime.heapGoaluint64} { // Original name: struct { runtime.full runtime.lfstack; runtime.empty runtime.lfstack; runtime.pad0 [64]uint8; runtime.wbufSpans struct { runtime.lock runtime.mutex; runtime.free runtime.mSpanList; runtime.busy runtime.mSpanList }; _ uint32; runtime.bytesMarked uint64; runtime.markrootNext uint32; runtime.markrootJobs uint32; runtime.nproc uint32; runtime.tstart int64; runtime.nwait uint32; runtime.ndone uint32; runtime.alldone runtime.note; runtime.helperDrainBlock bool; runtime.nFlushCacheRoots int; runtime.nDataRoots int; runtime.nBSSRoots int; runtime.nSpanRoots int; runtime.nStackRoots int; runtime.markrootDone bool; runtime.startSema uint32; runtime.markDoneSema uint32; runtime.bgMarkReady runtime.note; runtime.bgMarkDone uint32; runtime.mode runtime.gcMode; runtime.userForced bool; runtime.totaltime int64; runtime.initialHeapLive uint64; runtime.assistQueue struct { runtime.lock runtime.mutex; runtime.head runtime.guintptr; runtime.tail runtime.guintptr }; runtime.sweepWaiters struct { runtime.lock runtime.mutex; runtime.head runtime.guintptr }; runtime.cycles uint32; runtime.stwprocs int32; runtime.maxprocs int32; runtime.tSweepTerm int64; runtime.tMark int64; runtime.tMarkTerm int64; runtime.tEnd int64; runtime.pauseNS int64; runtime.pauseStart int64; runtime.heap0 uint64; runtime.heap1 uint64; runtime.heap2 uint64; runtime.heapGoal uint64 }
-    runtime.lfstack full;
-    runtime.lfstack empty;
-    uint8 pad0[64];
-    struct struct{runtime.lockruntime.mutex;runtime.freeruntime.mSpanList;runtime.busyruntime.mSpanList} wbufSpans;
-    uint32 _;
-    uint64 bytesMarked;
-    uint32 markrootNext;
-    uint32 markrootJobs;
-    uint32 nproc;
-    int64 tstart;
-    uint32 nwait;
-    uint32 ndone;
-    struct runtime.note alldone;
-    bool helperDrainBlock;
-    undefined field_0x91;
-    undefined field_0x92;
-    undefined field_0x93;
-    int nFlushCacheRoots;
-    int nDataRoots;
-    int nBSSRoots;
-    int nSpanRoots;
-    int nStackRoots;
-    bool markrootDone;
-    undefined field_0xa9;
-    undefined field_0xaa;
-    undefined field_0xab;
-    uint32 startSema;
-    uint32 markDoneSema;
-    struct runtime.note bgMarkReady;
-    uint32 bgMarkDone;
-    runtime.gcMode mode;
-    bool userForced;
-    undefined field_0xc1;
-    undefined field_0xc2;
-    undefined field_0xc3;
-    int64 totaltime;
-    uint64 initialHeapLive;
-    struct struct{runtime.lockruntime.mutex;runtime.headruntime.guintptr;runtime.tailruntime.guintptr} assistQueue;
-    struct struct{runtime.lockruntime.mutex;runtime.headruntime.guintptr} sweepWaiters;
-    uint32 cycles;
-    int32 stwprocs;
-    int32 maxprocs;
-    int64 tSweepTerm;
-    int64 tMark;
-    int64 tMarkTerm;
-    int64 tEnd;
-    int64 pauseNS;
-    int64 pauseStart;
-    uint64 heap0;
-    uint64 heap1;
-    uint64 heap2;
-    uint64 heapGoal;
 };
 
 typedef struct runtime.epollevent runtime.epollevent, *Pruntime.epollevent;
@@ -2577,6 +2681,25 @@ struct bucket<*reflect.structType,bool> {
     struct bucket<*reflect.structType,bool> * overflow;
 };
 
+typedef struct struct_{_F_uintptr;_runtime.rw_*runtime.rwmutex_} struct_{_F_uintptr;_runtime.rw_*runtime.rwmutex_}, *Pstruct_{_F_uintptr;_runtime.rw_*runtime.rwmutex_};
+
+typedef struct runtime.rwmutex runtime.rwmutex, *Pruntime.rwmutex;
+
+struct runtime.rwmutex {
+    struct runtime.mutex rLock;
+    runtime.muintptr readers;
+    uint32 readerPass;
+    struct runtime.mutex wLock;
+    runtime.muintptr writer;
+    uint32 readerCount;
+    uint32 readerWait;
+};
+
+struct struct_{_F_uintptr;_runtime.rw_*runtime.rwmutex_} { // Original name: struct { F uintptr; runtime.rw *runtime.rwmutex }
+    uintptr .F;
+    struct runtime.rwmutex * rw;
+};
+
 typedef struct runtime.sweepdata runtime.sweepdata, *Pruntime.sweepdata;
 
 struct runtime.sweepdata {
@@ -2584,10 +2707,22 @@ struct runtime.sweepdata {
     struct runtime.g * g;
     bool parked;
     bool started;
-    undefined field_0xa;
-    undefined field_0xb;
+    undefined field4_0xa;
+    undefined field5_0xb;
     uint32 nbgsweep;
     uint32 npausesweep;
+};
+
+typedef struct struct_{_runtime.enabled_bool;_runtime.pad_[3]uint8;_runtime.needed_bool;_runtime.cgo_bool;_runtime.alignme_uint64_} struct_{_runtime.enabled_bool;_runtime.pad_[3]uint8;_runtime.needed_bool;_runtime.cgo_bool;_runtime.alignme_uint64_}, *Pstruct_{_runtime.enabled_bool;_runtime.pad_[3]uint8;_runtime.needed_bool;_runtime.cgo_bool;_runtime.alignme_uint64_};
+
+struct struct_{_runtime.enabled_bool;_runtime.pad_[3]uint8;_runtime.needed_bool;_runtime.cgo_bool;_runtime.alignme_uint64_} { // Original name: struct { runtime.enabled bool; runtime.pad [3]uint8; runtime.needed bool; runtime.cgo bool; runtime.alignme uint64 }
+    bool enabled;
+    uint8 pad[3];
+    bool needed;
+    bool cgo;
+    undefined field4_0x6;
+    undefined field5_0x7;
+    uint64 alignme;
 };
 
 typedef struct os.File os.File, *Pos.File;
@@ -2596,21 +2731,11 @@ struct os.File {
     struct os.file * file;
 };
 
-typedef struct struct{runtime.cycleuint32;runtime.flushedbool} struct{runtime.cycleuint32;runtime.flushedbool}, *Pstruct{runtime.cycleuint32;runtime.flushedbool};
-
-struct struct{runtime.cycleuint32;runtime.flushedbool} { // Original name: struct { runtime.cycle uint32; runtime.flushed bool }
-    uint32 cycle;
-    bool flushed;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
-};
-
 typedef struct runtime.MemStats runtime.MemStats, *Pruntime.MemStats;
 
-typedef struct struct{Sizeuint32;Mallocsuint64;Freesuint64} struct{Sizeuint32;Mallocsuint64;Freesuint64}, *Pstruct{Sizeuint32;Mallocsuint64;Freesuint64};
+typedef struct struct_{_Size_uint32;_Mallocs_uint64;_Frees_uint64_} struct_{_Size_uint32;_Mallocs_uint64;_Frees_uint64_}, *Pstruct_{_Size_uint32;_Mallocs_uint64;_Frees_uint64_};
 
-struct struct{Sizeuint32;Mallocsuint64;Freesuint64} { // Original name: struct { Size uint32; Mallocs uint64; Frees uint64 }
+struct struct_{_Size_uint32;_Mallocs_uint64;_Frees_uint64_} { // Original name: struct { Size uint32; Mallocs uint64; Frees uint64 }
     uint32 Size;
     uint64 Mallocs;
     uint64 Frees;
@@ -2648,23 +2773,18 @@ struct runtime.MemStats {
     float64 GCCPUFraction;
     bool EnableGC;
     bool DebugGC;
-    undefined field_0x10d2;
-    undefined field_0x10d3;
-    struct struct{Sizeuint32;Mallocsuint64;Freesuint64} BySize[61];
+    undefined field31_0x10d2;
+    undefined field32_0x10d3;
+    struct struct_{_Size_uint32;_Mallocs_uint64;_Frees_uint64_} BySize[61];
 };
+
+typedef struct hchan<bool> * chan_bool;
 
 typedef struct hash<string,int64> hash<string,int64>, *Phash<string,int64>;
 
 typedef struct hash<string,int64> * map[string]int64;
 
 typedef struct bucket<string,int64> bucket<string,int64>, *Pbucket<string,int64>;
-
-struct bucket<string,int64> {
-    uint8 tophash[8];
-    struct string keys[8];
-    int64 values[8];
-    struct bucket<string,int64> * overflow;
-};
 
 struct hash<string,int64> {
     int count;
@@ -2676,6 +2796,13 @@ struct hash<string,int64> {
     struct bucket<string,int64> * oldbuckets;
     uintptr nevacuate;
     struct runtime.mapextra * extra;
+};
+
+struct bucket<string,int64> {
+    uint8 tophash[8];
+    struct string keys[8];
+    int64 values[8];
+    struct bucket<string,int64> * overflow;
 };
 
 typedef struct hash<*reflect.structType,bool> hash<*reflect.structType,bool>, *Phash<*reflect.structType,bool>;
@@ -2717,16 +2844,40 @@ struct strconv.extFloat {
     uint64 mant;
     int exp;
     bool neg;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
+    undefined field3_0xd;
+    undefined field4_0xe;
+    undefined field5_0xf;
 };
 
-typedef struct struct{runtime.mcentralruntime.mcentral;runtime.pad[32]uint8} struct{runtime.mcentralruntime.mcentral;runtime.pad[32]uint8}, *Pstruct{runtime.mcentralruntime.mcentral;runtime.pad[32]uint8};
+typedef struct struct_{_runtime.signalLock_uint32;_runtime.hz_int32_} struct_{_runtime.signalLock_uint32;_runtime.hz_int32_}, *Pstruct_{_runtime.signalLock_uint32;_runtime.hz_int32_};
 
-struct struct{runtime.mcentralruntime.mcentral;runtime.pad[32]uint8} { // Original name: struct { runtime.mcentral runtime.mcentral; runtime.pad [32]uint8 }
-    struct runtime.mcentral mcentral;
-    uint8 pad[32];
+struct struct_{_runtime.signalLock_uint32;_runtime.hz_int32_} { // Original name: struct { runtime.signalLock uint32; runtime.hz int32 }
+    uint32 signalLock;
+    int32 hz;
+};
+
+typedef struct struct_{_F_uintptr;_runtime._g__*runtime.g_} struct_{_F_uintptr;_runtime._g__*runtime.g_}, *Pstruct_{_F_uintptr;_runtime._g__*runtime.g_};
+
+struct struct_{_F_uintptr;_runtime._g__*runtime.g_} { // Original name: struct { F uintptr; runtime._g_ *runtime.g }
+    uintptr .F;
+    struct runtime.g * _g_;
+};
+
+typedef struct noalg.map.iter[interface_{}]*sync.entry noalg.map.iter[interface_{}]*sync.entry, *Pnoalg.map.iter[interface_{}]*sync.entry;
+
+struct noalg.map.iter[interface_{}]*sync.entry { // Original name: noalg.map.iter[interface {}]*sync.entry
+    interface_{} * key;
+    struct sync.entry * * val;
+    uint8 * t;
+    struct noalg.map.hdr[interface_{}]*sync.entry * h;
+    struct noalg.map.bucket[interface_{}]*sync.entry * buckets;
+    struct noalg.map.bucket[interface_{}]*sync.entry * bptr;
+    void * overflow0;
+    void * overflow1;
+    uintptr startBucket;
+    uintptr stuff;
+    uintptr bucket;
+    uintptr checkBucket;
 };
 
 typedef struct []string []string, *P[]string;
@@ -2737,13 +2888,7 @@ struct []string {
     int cap;
 };
 
-typedef struct struct{Fuintptr;runtime.pp*runtime.p;runtime.scuintptr} struct{Fuintptr;runtime.pp*runtime.p;runtime.scuintptr}, *Pstruct{Fuintptr;runtime.pp*runtime.p;runtime.scuintptr};
-
-struct struct{Fuintptr;runtime.pp*runtime.p;runtime.scuintptr} { // Original name: struct { F uintptr; runtime.pp *runtime.p; runtime.sc uintptr }
-    uintptr .F;
-    struct runtime.p * pp;
-    uintptr sc;
-};
+typedef struct hash<runtime._typePair,struct_{}> * map[runtime._typePair]struct_{};
 
 typedef struct reflect.interfaceType reflect.interfaceType, *Preflect.interfaceType;
 
@@ -2753,98 +2898,18 @@ struct reflect.interfaceType {
     struct []reflect.imethod methods;
 };
 
-typedef struct struct{Fuintptr;runtime.h*runtime.mheap;runtime.s*runtime.mspan;runtime.acctint32} struct{Fuintptr;runtime.h*runtime.mheap;runtime.s*runtime.mspan;runtime.acctint32}, *Pstruct{Fuintptr;runtime.h*runtime.mheap;runtime.s*runtime.mspan;runtime.acctint32};
-
-typedef struct runtime.mheap runtime.mheap, *Pruntime.mheap;
-
-typedef struct runtime.fixalloc runtime.fixalloc, *Pruntime.fixalloc;
-
-typedef struct runtime.mlink runtime.mlink, *Pruntime.mlink;
-
-struct runtime.fixalloc { // Missing member  first : func(unsafe.Pointer,unsafe.Pointer) at offset 0x4
-    uintptr size;
-    undefined field_0x4;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
-    void * arg;
-    struct runtime.mlink * list;
-    uintptr chunk;
-    uint32 nchunk;
-    uintptr inuse;
-    uint64 * stat;
-    bool zero;
-    undefined field_0x21;
-    undefined field_0x22;
-    undefined field_0x23;
-};
-
-struct runtime.mheap {
-    struct runtime.mutex lock;
-    struct runtime.mSpanList free[128];
-    struct runtime.mTreap freelarge;
-    struct runtime.mSpanList busy[128];
-    struct runtime.mSpanList busylarge;
-    uint32 sweepgen;
-    uint32 sweepdone;
-    uint32 sweepers;
-    struct []*runtime.mspan allspans;
-    struct []*runtime.mspan spans;
-    struct runtime.gcSweepBuf sweepSpans[2];
-    uint32 _;
-    uint64 pagesInUse;
-    uint64 pagesSwept;
-    uint64 pagesSweptBasis;
-    uint64 sweepHeapLiveBasis;
-    float64 sweepPagesPerByte;
-    uint64 largealloc;
-    uint64 nlargealloc;
-    uint64 largefree;
-    uint64 nlargefree;
-    uint64 nsmallfree[67];
-    uintptr bitmap;
-    uintptr bitmap_mapped;
-    uintptr arena_start;
-    uintptr arena_used;
-    uintptr arena_alloc;
-    uintptr arena_end;
-    bool arena_reserved;
-    undefined field_0xad9;
-    undefined field_0xada;
-    undefined field_0xadb;
-    uint32 _;
-    struct struct{runtime.mcentralruntime.mcentral;runtime.pad[32]uint8} central[134];
-    struct runtime.fixalloc spanalloc;
-    struct runtime.fixalloc cachealloc;
-    struct runtime.fixalloc treapalloc;
-    struct runtime.fixalloc specialfinalizeralloc;
-    struct runtime.fixalloc specialprofilealloc;
-    struct runtime.mutex speciallock;
-};
-
-struct struct{Fuintptr;runtime.h*runtime.mheap;runtime.s*runtime.mspan;runtime.acctint32} { // Original name: struct { F uintptr; runtime.h *runtime.mheap; runtime.s *runtime.mspan; runtime.acct int32 }
-    uintptr .F;
-    struct runtime.mheap * h;
-    struct runtime.mspan * s;
-    int32 acct;
-};
-
-struct runtime.mlink {
-    struct runtime.mlink * next;
-};
-
 typedef struct reflect.layoutType reflect.layoutType, *Preflect.layoutType;
 
 typedef struct sync.Pool sync.Pool, *Psync.Pool;
 
-struct sync.Pool { // Missing member noCopy : sync.noCopy at offset 0x0 [zero-length member]
-Missing member  New : func()interface{} at offset 0x8
+struct sync.Pool { // Missing member  New : func()_interface_{} at offset 0x8
+    struct sync.noCopy noCopy;
     void * local;
     uintptr localSize;
-    undefined field_0x8;
-    undefined field_0x9;
-    undefined field_0xa;
-    undefined field_0xb;
+    undefined field3_0x8;
+    undefined field4_0x9;
+    undefined field5_0xa;
+    undefined field6_0xb;
 };
 
 struct reflect.layoutType {
@@ -2855,29 +2920,12 @@ struct reflect.layoutType {
     struct sync.Pool * framePool;
 };
 
-typedef struct struct{Fuintptr;runtime.s**runtime.mspan;runtime.size*uintptr;runtime.needzerobool;runtime.noscanbool} struct{Fuintptr;runtime.s**runtime.mspan;runtime.size*uintptr;runtime.needzerobool;runtime.noscanbool}, *Pstruct{Fuintptr;runtime.s**runtime.mspan;runtime.size*uintptr;runtime.needzerobool;runtime.noscanbool};
+typedef struct struct_{_F_uintptr;_runtime.newg_*runtime.g;_runtime.stacksize_int32_} struct_{_F_uintptr;_runtime.newg_*runtime.g;_runtime.stacksize_int32_}, *Pstruct_{_F_uintptr;_runtime.newg_*runtime.g;_runtime.stacksize_int32_};
 
-struct struct{Fuintptr;runtime.s**runtime.mspan;runtime.size*uintptr;runtime.needzerobool;runtime.noscanbool} { // Original name: struct { F uintptr; runtime.s **runtime.mspan; runtime.size *uintptr; runtime.needzero bool; runtime.noscan bool }
+struct struct_{_F_uintptr;_runtime.newg_*runtime.g;_runtime.stacksize_int32_} { // Original name: struct { F uintptr; runtime.newg *runtime.g; runtime.stacksize int32 }
     uintptr .F;
-    struct runtime.mspan * * s;
-    uintptr * size;
-    bool needzero;
-    bool noscan;
-    undefined field_0xe;
-    undefined field_0xf;
-};
-
-typedef struct struct{Fuintptr;runtime.s**runtime.mspan;runtime.h*runtime.mheap;runtime.npageuintptr;runtime.spanclassruntime.spanClass;runtime.largebool} struct{Fuintptr;runtime.s**runtime.mspan;runtime.h*runtime.mheap;runtime.npageuintptr;runtime.spanclassruntime.spanClass;runtime.largebool}, *Pstruct{Fuintptr;runtime.s**runtime.mspan;runtime.h*runtime.mheap;runtime.npageuintptr;runtime.spanclassruntime.spanClass;runtime.largebool};
-
-struct struct{Fuintptr;runtime.s**runtime.mspan;runtime.h*runtime.mheap;runtime.npageuintptr;runtime.spanclassruntime.spanClass;runtime.largebool} { // Original name: struct { F uintptr; runtime.s **runtime.mspan; runtime.h *runtime.mheap; runtime.npage uintptr; runtime.spanclass runtime.spanClass; runtime.large bool }
-    uintptr .F;
-    struct runtime.mspan * * s;
-    struct runtime.mheap * h;
-    uintptr npage;
-    runtime.spanClass spanclass;
-    bool large;
-    undefined field_0x12;
-    undefined field_0x13;
+    struct runtime.g * newg;
+    int32 stacksize;
 };
 
 typedef struct runtime.plainError runtime.plainError, *Pruntime.plainError;
@@ -2887,53 +2935,63 @@ struct runtime.plainError {
     int len;
 };
 
-typedef struct struct{runtime.noteruntime.note;runtime.mask[3]uint32;runtime.wanted[3]uint32;runtime.ignored[3]uint32;runtime.recv[3]uint32;runtime.stateuint32;runtime.inusebool} struct{runtime.noteruntime.note;runtime.mask[3]uint32;runtime.wanted[3]uint32;runtime.ignored[3]uint32;runtime.recv[3]uint32;runtime.stateuint32;runtime.inusebool}, *Pstruct{runtime.noteruntime.note;runtime.mask[3]uint32;runtime.wanted[3]uint32;runtime.ignored[3]uint32;runtime.recv[3]uint32;runtime.stateuint32;runtime.inusebool};
+typedef struct struct_{_runtime.cycle_uint32;_runtime.flushed_bool_} struct_{_runtime.cycle_uint32;_runtime.flushed_bool_}, *Pstruct_{_runtime.cycle_uint32;_runtime.flushed_bool_};
 
-struct struct{runtime.noteruntime.note;runtime.mask[3]uint32;runtime.wanted[3]uint32;runtime.ignored[3]uint32;runtime.recv[3]uint32;runtime.stateuint32;runtime.inusebool} { // Original name: struct { runtime.note runtime.note; runtime.mask [3]uint32; runtime.wanted [3]uint32; runtime.ignored [3]uint32; runtime.recv [3]uint32; runtime.state uint32; runtime.inuse bool }
-    struct runtime.note note;
-    uint32 mask[3];
-    uint32 wanted[3];
-    uint32 ignored[3];
-    uint32 recv[3];
-    uint32 state;
-    bool inuse;
-    undefined field_0x39;
-    undefined field_0x3a;
-    undefined field_0x3b;
+struct struct_{_runtime.cycle_uint32;_runtime.flushed_bool_} { // Original name: struct { runtime.cycle uint32; runtime.flushed bool }
+    uint32 cycle;
+    bool flushed;
+    undefined field2_0x5;
+    undefined field3_0x6;
+    undefined field4_0x7;
 };
 
-typedef struct struct{runtime.signalLockuint32;runtime.hzint32} struct{runtime.signalLockuint32;runtime.hzint32}, *Pstruct{runtime.signalLockuint32;runtime.hzint32};
+typedef struct struct_{_reflect.ityp_*reflect.rtype;_reflect.typ_*reflect.rtype;_reflect.link_unsafe.Pointer;_reflect.bad_int32;_reflect.unused_int32;_reflect.fun_[100000]unsafe.Pointer_} struct_{_reflect.ityp_*reflect.rtype;_reflect.typ_*reflect.rtype;_reflect.link_unsafe.Pointer;_reflect.bad_int32;_reflect.unused_int32;_reflect.fun_[100000]unsafe.Pointer_}, *Pstruct_{_reflect.ityp_*reflect.rtype;_reflect.typ_*reflect.rtype;_reflect.link_unsafe.Pointer;_reflect.bad_int32;_reflect.unused_int32;_reflect.fun_[100000]unsafe.Pointer_};
 
-struct struct{runtime.signalLockuint32;runtime.hzint32} { // Original name: struct { runtime.signalLock uint32; runtime.hz int32 }
-    uint32 signalLock;
-    int32 hz;
+struct struct_{_reflect.ityp_*reflect.rtype;_reflect.typ_*reflect.rtype;_reflect.link_unsafe.Pointer;_reflect.bad_int32;_reflect.unused_int32;_reflect.fun_[100000]unsafe.Pointer_} { // Original name: struct { reflect.ityp *reflect.rtype; reflect.typ *reflect.rtype; reflect.link unsafe.Pointer; reflect.bad int32; reflect.unused int32; reflect.fun [100000]unsafe.Pointer }
+    struct reflect.rtype * ityp;
+    struct reflect.rtype * typ;
+    void * link;
+    int32 bad;
+    int32 unused;
+    void * fun[100000];
 };
 
-typedef struct hchan<int> hchan<int>, *Phchan<int>;
+typedef struct struct_{_runtime.lock_runtime.mutex;_runtime.lockOwner_*runtime.g;_runtime.enabled_bool;_runtime.shutdown_bool;_runtime.headerWritten_bool;_runtime.footerWritten_bool;_runtime.shutdownSema_uint32;_runtime.seqStart_uint64;_runtime.ticksStart_int64;_runtime.ticksEnd_int64;_runtime.timeStart_int64;_runtime.timeEnd_int64;_runtime.seqGC_uint64;_runtime.reading_runtime.traceBufPtr;_runtime.empty_runtime.traceBufPtr;_runtime.fullHead_runtime.traceBufPtr;_runtime.fullTail_runtime.traceBufPtr;_runtime.reader_runtime.guintptr;_runtime.stackTab_runtime.traceStackTable;_runtime.strings_map[string]uint64;_runtime.stringSeq_uint64;_runtime.markWorkerLabels_[3]uint64;_runtime.bufLock_runtime.mutex;_runtime.buf_runtime.traceBufPtr_} struct_{_runtime.lock_runtime.mutex;_runtime.lockOwner_*runtime.g;_runtime.enabled_bool;_runtime.shutdown_bool;_runtime.headerWritten_bool;_runtime.footerWritten_bool;_runtime.shutdownSema_uint32;_runtime.seqStart_uint64;_runtime.ticksStart_int64;_runtime.ticksEnd_int64;_runtime.timeStart_int64;_runtime.timeEnd_int64;_runtime.seqGC_uint64;_runtime.reading_runtime.traceBufPtr;_runtime.empty_runtime.traceBufPtr;_runtime.fullHead_runtime.traceBufPtr;_runtime.fullTail_runtime.traceBufPtr;_runtime.reader_runtime.guintptr;_runtime.stackTab_runtime.traceStackTable;_runtime.strings_map[string]uint64;_runtime.stringSeq_uint64;_runtime.markWorkerLabels_[3]uint64;_runtime.bufLock_runtime.mutex;_runtime.buf_runtime.traceBufPtr_}, *Pstruct_{_runtime.lock_runtime.mutex;_runtime.lockOwner_*runtime.g;_runtime.enabled_bool;_runtime.shutdown_bool;_runtime.headerWritten_bool;_runtime.footerWritten_bool;_runtime.shutdownSema_uint32;_runtime.seqStart_uint64;_runtime.ticksStart_int64;_runtime.ticksEnd_int64;_runtime.timeStart_int64;_runtime.timeEnd_int64;_runtime.seqGC_uint64;_runtime.reading_runtime.traceBufPtr;_runtime.empty_runtime.traceBufPtr;_runtime.fullHead_runtime.traceBufPtr;_runtime.fullTail_runtime.traceBufPtr;_runtime.reader_runtime.guintptr;_runtime.stackTab_runtime.traceStackTable;_runtime.strings_map[string]uint64;_runtime.stringSeq_uint64;_runtime.markWorkerLabels_[3]uint64;_runtime.bufLock_runtime.mutex;_runtime.buf_runtime.traceBufPtr_};
 
-typedef struct hchan<int> * chanint;
+typedef struct runtime.traceStackTable runtime.traceStackTable, *Pruntime.traceStackTable;
 
-typedef struct waitq<int> waitq<int>, *Pwaitq<int>;
-
-struct waitq<int> {
-    struct sudog<int> * first;
-    struct sudog<int> * last;
-};
-
-struct hchan<int> {
-    uint qcount;
-    uint dataqsiz;
-    void * buf;
-    uint16 elemsize;
-    undefined field_0xe;
-    undefined field_0xf;
-    uint32 closed;
-    struct runtime._type * elemtype;
-    uint sendx;
-    uint recvx;
-    struct waitq<int> recvq;
-    struct waitq<int> sendq;
+struct runtime.traceStackTable {
     struct runtime.mutex lock;
+    uint32 seq;
+    struct runtime.traceAlloc mem;
+    runtime.traceStackPtr tab[8192];
+};
+
+struct struct_{_runtime.lock_runtime.mutex;_runtime.lockOwner_*runtime.g;_runtime.enabled_bool;_runtime.shutdown_bool;_runtime.headerWritten_bool;_runtime.footerWritten_bool;_runtime.shutdownSema_uint32;_runtime.seqStart_uint64;_runtime.ticksStart_int64;_runtime.ticksEnd_int64;_runtime.timeStart_int64;_runtime.timeEnd_int64;_runtime.seqGC_uint64;_runtime.reading_runtime.traceBufPtr;_runtime.empty_runtime.traceBufPtr;_runtime.fullHead_runtime.traceBufPtr;_runtime.fullTail_runtime.traceBufPtr;_runtime.reader_runtime.guintptr;_runtime.stackTab_runtime.traceStackTable;_runtime.strings_map[string]uint64;_runtime.stringSeq_uint64;_runtime.markWorkerLabels_[3]uint64;_runtime.bufLock_runtime.mutex;_runtime.buf_runtime.traceBufPtr_} { // Original name: struct { runtime.lock runtime.mutex; runtime.lockOwner *runtime.g; runtime.enabled bool; runtime.shutdown bool; runtime.headerWritten bool; runtime.footerWritten bool; runtime.shutdownSema uint32; runtime.seqStart uint64; runtime.ticksStart int64; runtime.ticksEnd int64; runtime.timeStart int64; runtime.timeEnd int64; runtime.seqGC uint64; runtime.reading runtime.traceBufPtr; runtime.empty runtime.traceBufPtr; runtime.fullHead runtime.traceBufPtr; runtime.fullTail runtime.traceBufPtr; runtime.reader runtime.guintptr; runtime.stackTab runtime.traceStackTable; runtime.strings map[string]uint64; runtime.stringSeq uint64; runtime.markWorkerLabels [3]uint64; runtime.bufLock runtime.mutex; runtime.buf runtime.traceBufPtr }
+    struct runtime.mutex lock;
+    struct runtime.g * lockOwner;
+    bool enabled;
+    bool shutdown;
+    bool headerWritten;
+    bool footerWritten;
+    uint32 shutdownSema;
+    uint64 seqStart;
+    int64 ticksStart;
+    int64 ticksEnd;
+    int64 timeStart;
+    int64 timeEnd;
+    uint64 seqGC;
+    runtime.traceBufPtr reading;
+    runtime.traceBufPtr empty;
+    runtime.traceBufPtr fullHead;
+    runtime.traceBufPtr fullTail;
+    runtime.guintptr reader;
+    struct runtime.traceStackTable stackTab;
+    map[string]uint64 strings;
+    uint64 stringSeq;
+    uint64 markWorkerLabels[3];
+    struct runtime.mutex bufLock;
+    runtime.traceBufPtr buf;
 };
 
 typedef struct runtime.divMagic runtime.divMagic, *Pruntime.divMagic;
@@ -2943,20 +3001,6 @@ struct runtime.divMagic {
     uint8 shift2;
     uint16 mul;
     uint16 baseMask;
-};
-
-typedef struct sync-fwdslash-atomic.noCopy sync-fwdslash-atomic.noCopy, *Psync-fwdslash-atomic.noCopy;
-
-struct sync-fwdslash-atomic.noCopy { // Original name: sync/atomic.noCopy
-};
-
-typedef struct struct{Fuintptr;runtime.ok*bool;runtime.oldp*runtime.p;runtime._g_*runtime.g} struct{Fuintptr;runtime.ok*bool;runtime.oldp*runtime.p;runtime._g_*runtime.g}, *Pstruct{Fuintptr;runtime.ok*bool;runtime.oldp*runtime.p;runtime._g_*runtime.g};
-
-struct struct{Fuintptr;runtime.ok*bool;runtime.oldp*runtime.p;runtime._g_*runtime.g} { // Original name: struct { F uintptr; runtime.ok *bool; runtime.oldp *runtime.p; runtime._g_ *runtime.g }
-    uintptr .F;
-    bool * ok;
-    struct runtime.p * oldp;
-    struct runtime.g * _g_;
 };
 
 typedef struct runtime.gsignalStack runtime.gsignalStack, *Pruntime.gsignalStack;
@@ -2975,19 +3019,10 @@ struct runtime.pollCache {
     struct runtime.pollDesc * first;
 };
 
-typedef struct struct{Fuintptr;reflect.hashuint32} struct{Fuintptr;reflect.hashuint32}, *Pstruct{Fuintptr;reflect.hashuint32};
+typedef struct struct_{_F_uintptr;_runtime.gp_*runtime.g_} struct_{_F_uintptr;_runtime.gp_*runtime.g_}, *Pstruct_{_F_uintptr;_runtime.gp_*runtime.g_};
 
-struct struct{Fuintptr;reflect.hashuint32} { // Original name: struct { F uintptr; reflect.hash uint32 }
+struct struct_{_F_uintptr;_runtime.gp_*runtime.g_} { // Original name: struct { F uintptr; runtime.gp *runtime.g }
     uintptr .F;
-    uint32 hash;
-};
-
-typedef struct struct{Fuintptr;runtime.pcuintptr;runtime.spuintptr;runtime.gp*runtime.g} struct{Fuintptr;runtime.pcuintptr;runtime.spuintptr;runtime.gp*runtime.g}, *Pstruct{Fuintptr;runtime.pcuintptr;runtime.spuintptr;runtime.gp*runtime.g};
-
-struct struct{Fuintptr;runtime.pcuintptr;runtime.spuintptr;runtime.gp*runtime.g} { // Original name: struct { F uintptr; runtime.pc uintptr; runtime.sp uintptr; runtime.gp *runtime.g }
-    uintptr .F;
-    uintptr pc;
-    uintptr sp;
     struct runtime.g * gp;
 };
 
@@ -2998,24 +3033,21 @@ struct strconv.decimalSlice {
     int nd;
     int dp;
     bool neg;
-    undefined field_0x15;
-    undefined field_0x16;
-    undefined field_0x17;
+    undefined field4_0x15;
+    undefined field5_0x16;
+    undefined field6_0x17;
 };
 
-typedef struct struct{runtime.rootruntime.semaRoot;runtime.pad[52]uint8} struct{runtime.rootruntime.semaRoot;runtime.pad[52]uint8}, *Pstruct{runtime.rootruntime.semaRoot;runtime.pad[52]uint8};
+typedef struct struct_{_F_uintptr;_runtime.n_*int;_runtime.pc_uintptr;_runtime.sp_uintptr;_runtime.gp_*runtime.g;_runtime.skip_*int;_runtime.pcbuf_[]uintptr_} struct_{_F_uintptr;_runtime.n_*int;_runtime.pc_uintptr;_runtime.sp_uintptr;_runtime.gp_*runtime.g;_runtime.skip_*int;_runtime.pcbuf_[]uintptr_}, *Pstruct_{_F_uintptr;_runtime.n_*int;_runtime.pc_uintptr;_runtime.sp_uintptr;_runtime.gp_*runtime.g;_runtime.skip_*int;_runtime.pcbuf_[]uintptr_};
 
-typedef struct runtime.semaRoot runtime.semaRoot, *Pruntime.semaRoot;
-
-struct runtime.semaRoot {
-    struct runtime.mutex lock;
-    struct runtime.sudog * treap;
-    uint32 nwait;
-};
-
-struct struct{runtime.rootruntime.semaRoot;runtime.pad[52]uint8} { // Original name: struct { runtime.root runtime.semaRoot; runtime.pad [52]uint8 }
-    struct runtime.semaRoot root;
-    uint8 pad[52];
+struct struct_{_F_uintptr;_runtime.n_*int;_runtime.pc_uintptr;_runtime.sp_uintptr;_runtime.gp_*runtime.g;_runtime.skip_*int;_runtime.pcbuf_[]uintptr_} { // Original name: struct { F uintptr; runtime.n *int; runtime.pc uintptr; runtime.sp uintptr; runtime.gp *runtime.g; runtime.skip *int; runtime.pcbuf []uintptr }
+    uintptr .F;
+    int * n;
+    uintptr pc;
+    uintptr sp;
+    struct runtime.g * gp;
+    int * skip;
+    struct []uintptr pcbuf;
 };
 
 typedef struct runtime.gcControllerState runtime.gcControllerState, *Pruntime.gcControllerState;
@@ -3037,12 +3069,12 @@ struct runtime.gcControllerState {
     uint8 _[64];
 };
 
-typedef struct struct{Fuintptr;runtime.srcuintptr;runtime.dst*uintptr} struct{Fuintptr;runtime.srcuintptr;runtime.dst*uintptr}, *Pstruct{Fuintptr;runtime.srcuintptr;runtime.dst*uintptr};
+typedef struct struct_{_F_uintptr;_runtime.oldval_uint32;_runtime.newval_uint32_} struct_{_F_uintptr;_runtime.oldval_uint32;_runtime.newval_uint32_}, *Pstruct_{_F_uintptr;_runtime.oldval_uint32;_runtime.newval_uint32_};
 
-struct struct{Fuintptr;runtime.srcuintptr;runtime.dst*uintptr} { // Original name: struct { F uintptr; runtime.src uintptr; runtime.dst *uintptr }
+struct struct_{_F_uintptr;_runtime.oldval_uint32;_runtime.newval_uint32_} { // Original name: struct { F uintptr; runtime.oldval uint32; runtime.newval uint32 }
     uintptr .F;
-    uintptr src;
-    uintptr * dst;
+    uint32 oldval;
+    uint32 newval;
 };
 
 typedef struct noalg.map.bucket[uint32][]*runtime._type noalg.map.bucket[uint32][]*runtime._type, *Pnoalg.map.bucket[uint32][]*runtime._type;
@@ -3062,13 +3094,73 @@ struct runtime.forcegcstate {
     uint32 idle;
 };
 
-typedef struct runtime.traceStackTable runtime.traceStackTable, *Pruntime.traceStackTable;
+typedef struct struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.pc_uintptr;_runtime.sp_uintptr_} struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.pc_uintptr;_runtime.sp_uintptr_}, *Pstruct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.pc_uintptr;_runtime.sp_uintptr_};
 
-struct runtime.traceStackTable {
+struct struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.pc_uintptr;_runtime.sp_uintptr_} { // Original name: struct { F uintptr; runtime.gp *runtime.g; runtime.pc uintptr; runtime.sp uintptr }
+    uintptr .F;
+    struct runtime.g * gp;
+    uintptr pc;
+    uintptr sp;
+};
+
+typedef struct struct_{_runtime.lock_runtime.mutex;_runtime.next_int32;_runtime.m_map[int32]unsafe.Pointer;_runtime.minv_map[unsafe.Pointer]int32_} struct_{_runtime.lock_runtime.mutex;_runtime.next_int32;_runtime.m_map[int32]unsafe.Pointer;_runtime.minv_map[unsafe.Pointer]int32_}, *Pstruct_{_runtime.lock_runtime.mutex;_runtime.next_int32;_runtime.m_map[int32]unsafe.Pointer;_runtime.minv_map[unsafe.Pointer]int32_};
+
+typedef struct hash<int32,unsafe.Pointer> hash<int32,unsafe.Pointer>, *Phash<int32,unsafe.Pointer>;
+
+typedef struct hash<int32,unsafe.Pointer> * map[int32]unsafe.Pointer;
+
+typedef struct hash<unsafe.Pointer,int32> * map[unsafe.Pointer]int32;
+
+struct hash<int32,unsafe.Pointer> {
+    int count;
+    uint8 flags;
+    uint8 B;
+    uint16 noverflow;
+    uint32 hash0;
+    struct bucket<int32,unsafe.Pointer> * buckets;
+    struct bucket<int32,unsafe.Pointer> * oldbuckets;
+    uintptr nevacuate;
+    struct runtime.mapextra * extra;
+};
+
+struct struct_{_runtime.lock_runtime.mutex;_runtime.next_int32;_runtime.m_map[int32]unsafe.Pointer;_runtime.minv_map[unsafe.Pointer]int32_} { // Original name: struct { runtime.lock runtime.mutex; runtime.next int32; runtime.m map[int32]unsafe.Pointer; runtime.minv map[unsafe.Pointer]int32 }
     struct runtime.mutex lock;
-    uint32 seq;
-    struct runtime.traceAlloc mem;
-    runtime.traceStackPtr tab[8192];
+    int32 next;
+    map[int32]unsafe.Pointer m;
+    map[unsafe.Pointer]int32 minv;
+};
+
+typedef struct struct_{_F_uintptr;_runtime.c_*runtime.mcache;_runtime.spc_runtime.spanClass_} struct_{_F_uintptr;_runtime.c_*runtime.mcache;_runtime.spc_runtime.spanClass_}, *Pstruct_{_F_uintptr;_runtime.c_*runtime.mcache;_runtime.spc_runtime.spanClass_};
+
+struct struct_{_F_uintptr;_runtime.c_*runtime.mcache;_runtime.spc_runtime.spanClass_} { // Original name: struct { F uintptr; runtime.c *runtime.mcache; runtime.spc runtime.spanClass }
+    uintptr .F;
+    struct runtime.mcache * c;
+    runtime.spanClass spc;
+    undefined field3_0x9;
+    undefined field4_0xa;
+    undefined field5_0xb;
+};
+
+typedef struct struct_{_F_uintptr;_runtime.ret_*uintptr_} struct_{_F_uintptr;_runtime.ret_*uintptr_}, *Pstruct_{_F_uintptr;_runtime.ret_*uintptr_};
+
+struct struct_{_F_uintptr;_runtime.ret_*uintptr_} { // Original name: struct { F uintptr; runtime.ret *uintptr }
+    uintptr .F;
+    uintptr * ret;
+};
+
+typedef struct struct_{_runtime.note_runtime.note;_runtime.mask_[3]uint32;_runtime.wanted_[3]uint32;_runtime.ignored_[3]uint32;_runtime.recv_[3]uint32;_runtime.state_uint32;_runtime.inuse_bool_} struct_{_runtime.note_runtime.note;_runtime.mask_[3]uint32;_runtime.wanted_[3]uint32;_runtime.ignored_[3]uint32;_runtime.recv_[3]uint32;_runtime.state_uint32;_runtime.inuse_bool_}, *Pstruct_{_runtime.note_runtime.note;_runtime.mask_[3]uint32;_runtime.wanted_[3]uint32;_runtime.ignored_[3]uint32;_runtime.recv_[3]uint32;_runtime.state_uint32;_runtime.inuse_bool_};
+
+struct struct_{_runtime.note_runtime.note;_runtime.mask_[3]uint32;_runtime.wanted_[3]uint32;_runtime.ignored_[3]uint32;_runtime.recv_[3]uint32;_runtime.state_uint32;_runtime.inuse_bool_} { // Original name: struct { runtime.note runtime.note; runtime.mask [3]uint32; runtime.wanted [3]uint32; runtime.ignored [3]uint32; runtime.recv [3]uint32; runtime.state uint32; runtime.inuse bool }
+    struct runtime.note note;
+    uint32 mask[3];
+    uint32 wanted[3];
+    uint32 ignored[3];
+    uint32 recv[3];
+    uint32 state;
+    bool inuse;
+    undefined field7_0x39;
+    undefined field8_0x3a;
+    undefined field9_0x3b;
 };
 
 typedef struct runtime.adjustinfo runtime.adjustinfo, *Pruntime.adjustinfo;
@@ -3080,22 +3172,14 @@ struct runtime.adjustinfo {
     uintptr sghi;
 };
 
-typedef struct struct{Fuintptr;runtime.p*unsafe.Pointer;runtime.sizeuintptr;runtime.alignuintptr;runtime.sysStat*uint64} struct{Fuintptr;runtime.p*unsafe.Pointer;runtime.sizeuintptr;runtime.alignuintptr;runtime.sysStat*uint64}, *Pstruct{Fuintptr;runtime.p*unsafe.Pointer;runtime.sizeuintptr;runtime.alignuintptr;runtime.sysStat*uint64};
+typedef struct struct_{_F_uintptr;_runtime.fn_**runtime.funcval;_runtime.argp_unsafe.Pointer;_runtime.siz_*int32;_runtime.pc_uintptr_} struct_{_F_uintptr;_runtime.fn_**runtime.funcval;_runtime.argp_unsafe.Pointer;_runtime.siz_*int32;_runtime.pc_uintptr_}, *Pstruct_{_F_uintptr;_runtime.fn_**runtime.funcval;_runtime.argp_unsafe.Pointer;_runtime.siz_*int32;_runtime.pc_uintptr_};
 
-struct struct{Fuintptr;runtime.p*unsafe.Pointer;runtime.sizeuintptr;runtime.alignuintptr;runtime.sysStat*uint64} { // Original name: struct { F uintptr; runtime.p *unsafe.Pointer; runtime.size uintptr; runtime.align uintptr; runtime.sysStat *uint64 }
+struct struct_{_F_uintptr;_runtime.fn_**runtime.funcval;_runtime.argp_unsafe.Pointer;_runtime.siz_*int32;_runtime.pc_uintptr_} { // Original name: struct { F uintptr; runtime.fn **runtime.funcval; runtime.argp unsafe.Pointer; runtime.siz *int32; runtime.pc uintptr }
     uintptr .F;
-    void * * p;
-    uintptr size;
-    uintptr align;
-    uint64 * sysStat;
-};
-
-typedef struct struct{Fuintptr;runtime.spuintptr;runtime._g_*runtime.g} struct{Fuintptr;runtime.spuintptr;runtime._g_*runtime.g}, *Pstruct{Fuintptr;runtime.spuintptr;runtime._g_*runtime.g};
-
-struct struct{Fuintptr;runtime.spuintptr;runtime._g_*runtime.g} { // Original name: struct { F uintptr; runtime.sp uintptr; runtime._g_ *runtime.g }
-    uintptr .F;
-    uintptr sp;
-    struct runtime.g * _g_;
+    struct runtime.funcval * * fn;
+    void * argp;
+    int32 * siz;
+    uintptr pc;
 };
 
 typedef struct reflect.uncommonType reflect.uncommonType, *Preflect.uncommonType;
@@ -3123,23 +3207,6 @@ struct runtime.Frames {
     struct runtime.stackExpander stackExpander;
 };
 
-typedef struct struct{Fuintptr;runtime.gp*runtime.g;runtime.traceskipint} struct{Fuintptr;runtime.gp*runtime.g;runtime.traceskipint}, *Pstruct{Fuintptr;runtime.gp*runtime.g;runtime.traceskipint};
-
-struct struct{Fuintptr;runtime.gp*runtime.g;runtime.traceskipint} { // Original name: struct { F uintptr; runtime.gp *runtime.g; runtime.traceskip int }
-    uintptr .F;
-    struct runtime.g * gp;
-    int traceskip;
-};
-
-typedef interface{} noalg.[8]interface{}[8];
-
-typedef struct struct{Fuintptr;runtime.startTime*int64} struct{Fuintptr;runtime.startTime*int64}, *Pstruct{Fuintptr;runtime.startTime*int64};
-
-struct struct{Fuintptr;runtime.startTime*int64} { // Original name: struct { F uintptr; runtime.startTime *int64 }
-    uintptr .F;
-    int64 * startTime;
-};
-
 typedef struct []runtime.dbgVar []runtime.dbgVar, *P[]runtime.dbgVar;
 
 struct []runtime.dbgVar {
@@ -3153,15 +3220,6 @@ typedef struct reflect.sliceType reflect.sliceType, *Preflect.sliceType;
 struct reflect.sliceType {
     struct reflect.rtype rtype;
     struct reflect.rtype * elem;
-};
-
-typedef struct struct{Fuintptr;runtime.mp*runtime.m;runtime.srcuintptr;runtime.dst*uintptr} struct{Fuintptr;runtime.mp*runtime.m;runtime.srcuintptr;runtime.dst*uintptr}, *Pstruct{Fuintptr;runtime.mp*runtime.m;runtime.srcuintptr;runtime.dst*uintptr};
-
-struct struct{Fuintptr;runtime.mp*runtime.m;runtime.srcuintptr;runtime.dst*uintptr} { // Original name: struct { F uintptr; runtime.mp *runtime.m; runtime.src uintptr; runtime.dst *uintptr }
-    uintptr .F;
-    struct runtime.m * mp;
-    uintptr src;
-    uintptr * dst;
 };
 
 typedef struct runtime.cgoTracebackArg runtime.cgoTracebackArg, *Pruntime.cgoTracebackArg;
@@ -3195,6 +3253,13 @@ struct reflect.stringHeader {
     int Len;
 };
 
+typedef struct struct_{_F_uintptr;_reflect.name_string_} struct_{_F_uintptr;_reflect.name_string_}, *Pstruct_{_F_uintptr;_reflect.name_string_};
+
+struct struct_{_F_uintptr;_reflect.name_string_} { // Original name: struct { F uintptr; reflect.name string }
+    uintptr .F;
+    struct string name;
+};
+
 typedef struct []*sync.Pool []*sync.Pool, *P[]*sync.Pool;
 
 struct []*sync.Pool {
@@ -3217,17 +3282,15 @@ struct noalg.map.hdr[uint32][]*runtime._type {
     void * overflow;
 };
 
-typedef struct struct{Fuintptr;runtime.fn**runtime.funcval;runtime.argpunsafe.Pointer;runtime.siz*int32;runtime.pcuintptr} struct{Fuintptr;runtime.fn**runtime.funcval;runtime.argpunsafe.Pointer;runtime.siz*int32;runtime.pcuintptr}, *Pstruct{Fuintptr;runtime.fn**runtime.funcval;runtime.argpunsafe.Pointer;runtime.siz*int32;runtime.pcuintptr};
-
-struct struct{Fuintptr;runtime.fn**runtime.funcval;runtime.argpunsafe.Pointer;runtime.siz*int32;runtime.pcuintptr} { // Original name: struct { F uintptr; runtime.fn **runtime.funcval; runtime.argp unsafe.Pointer; runtime.siz *int32; runtime.pc uintptr }
-    uintptr .F;
-    struct runtime.funcval * * fn;
-    void * argp;
-    int32 * siz;
-    uintptr pc;
-};
-
 typedef struct hash<*reflect.structType,int> * map[*reflect.structType]int;
+
+typedef struct struct_{_runtime.size_uint32;_runtime.nmalloc_uint64;_runtime.nfree_uint64_} struct_{_runtime.size_uint32;_runtime.nmalloc_uint64;_runtime.nfree_uint64_}, *Pstruct_{_runtime.size_uint32;_runtime.nmalloc_uint64;_runtime.nfree_uint64_};
+
+struct struct_{_runtime.size_uint32;_runtime.nmalloc_uint64;_runtime.nfree_uint64_} { // Original name: struct { runtime.size uint32; runtime.nmalloc uint64; runtime.nfree uint64 }
+    uint32 size;
+    uint64 nmalloc;
+    uint64 nfree;
+};
 
 typedef struct []uint16 []uint16, *P[]uint16;
 
@@ -3237,26 +3300,24 @@ struct []uint16 {
     int cap;
 };
 
-typedef struct hash<int32,unsafe.Pointer> hash<int32,unsafe.Pointer>, *Phash<int32,unsafe.Pointer>;
+typedef struct struct_{_F_uintptr;_runtime.s_**runtime.mspan;_runtime.h_*runtime.mheap;_runtime.npage_uintptr;_runtime.spanclass_runtime.spanClass;_runtime.large_bool_} struct_{_F_uintptr;_runtime.s_**runtime.mspan;_runtime.h_*runtime.mheap;_runtime.npage_uintptr;_runtime.spanclass_runtime.spanClass;_runtime.large_bool_}, *Pstruct_{_F_uintptr;_runtime.s_**runtime.mspan;_runtime.h_*runtime.mheap;_runtime.npage_uintptr;_runtime.spanclass_runtime.spanClass;_runtime.large_bool_};
 
-struct hash<int32,unsafe.Pointer> {
-    int count;
-    uint8 flags;
-    uint8 B;
-    uint16 noverflow;
-    uint32 hash0;
-    struct bucket<int32,unsafe.Pointer> * buckets;
-    struct bucket<int32,unsafe.Pointer> * oldbuckets;
-    uintptr nevacuate;
-    struct runtime.mapextra * extra;
+struct struct_{_F_uintptr;_runtime.s_**runtime.mspan;_runtime.h_*runtime.mheap;_runtime.npage_uintptr;_runtime.spanclass_runtime.spanClass;_runtime.large_bool_} { // Original name: struct { F uintptr; runtime.s **runtime.mspan; runtime.h *runtime.mheap; runtime.npage uintptr; runtime.spanclass runtime.spanClass; runtime.large bool }
+    uintptr .F;
+    struct runtime.mspan * * s;
+    struct runtime.mheap * h;
+    uintptr npage;
+    runtime.spanClass spanclass;
+    bool large;
+    undefined field6_0x12;
+    undefined field7_0x13;
 };
 
-typedef struct struct{Fuintptr;runtime.punsafe.Pointer;runtime.b*runtime.bucket} struct{Fuintptr;runtime.punsafe.Pointer;runtime.b*runtime.bucket}, *Pstruct{Fuintptr;runtime.punsafe.Pointer;runtime.b*runtime.bucket};
+typedef struct struct_{_F_uintptr;_runtime.e_*runtime.eface_} struct_{_F_uintptr;_runtime.e_*runtime.eface_}, *Pstruct_{_F_uintptr;_runtime.e_*runtime.eface_};
 
-struct struct{Fuintptr;runtime.punsafe.Pointer;runtime.b*runtime.bucket} { // Original name: struct { F uintptr; runtime.p unsafe.Pointer; runtime.b *runtime.bucket }
+struct struct_{_F_uintptr;_runtime.e_*runtime.eface_} { // Original name: struct { F uintptr; runtime.e *runtime.eface }
     uintptr .F;
-    void * p;
-    struct runtime.bucket * b;
+    struct runtime.eface * e;
 };
 
 typedef struct runtime.timespec runtime.timespec, *Pruntime.timespec;
@@ -3264,37 +3325,6 @@ typedef struct runtime.timespec runtime.timespec, *Pruntime.timespec;
 struct runtime.timespec {
     int32 tv_sec;
     int32 tv_nsec;
-};
-
-typedef struct noalg.map.iter[interface{}]*sync.entry noalg.map.iter[interface{}]*sync.entry, *Pnoalg.map.iter[interface{}]*sync.entry;
-
-struct noalg.map.iter[interface{}]*sync.entry { // Original name: noalg.map.iter[interface {}]*sync.entry
-    interface{} * key;
-    struct sync.entry * * val;
-    uint8 * t;
-    struct noalg.map.hdr[interface{}]*sync.entry * h;
-    struct noalg.map.bucket[interface{}]*sync.entry * buckets;
-    struct noalg.map.bucket[interface{}]*sync.entry * bptr;
-    void * overflow0;
-    void * overflow1;
-    uintptr startBucket;
-    uintptr stuff;
-    uintptr bucket;
-    uintptr checkBucket;
-};
-
-typedef struct struct{Fuintptr;runtime.gp*runtime.g} struct{Fuintptr;runtime.gp*runtime.g}, *Pstruct{Fuintptr;runtime.gp*runtime.g};
-
-struct struct{Fuintptr;runtime.gp*runtime.g} { // Original name: struct { F uintptr; runtime.gp *runtime.g }
-    uintptr .F;
-    struct runtime.g * gp;
-};
-
-typedef struct unicode-fwdslash-utf8.acceptRange unicode-fwdslash-utf8.acceptRange, *Punicode-fwdslash-utf8.acceptRange;
-
-struct unicode-fwdslash-utf8.acceptRange { // Original name: unicode/utf8.acceptRange
-    uint8 lo;
-    uint8 hi;
 };
 
 typedef struct runtime.gcTrigger runtime.gcTrigger, *Pruntime.gcTrigger;
@@ -3305,36 +3335,28 @@ struct runtime.gcTrigger {
     uint32 n;
 };
 
-typedef struct struct{sync.Mutex;reflect.msync.Map} struct{sync.Mutex;reflect.msync.Map}, *Pstruct{sync.Mutex;reflect.msync.Map};
-
-struct struct{sync.Mutex;reflect.msync.Map} { // Original name: struct { sync.Mutex; reflect.m sync.Map }
-    struct sync.Mutex Mutex;
-    struct sync.Map m;
-};
-
 typedef struct sync.entry * noalg.[8]*sync.entry[8];
 
-typedef struct struct{reflect.bbool;reflect.xinterface{}} struct{reflect.bbool;reflect.xinterface{}}, *Pstruct{reflect.bbool;reflect.xinterface{}};
+typedef struct struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.gcw_*runtime.gcWork_} struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.gcw_*runtime.gcWork_}, *Pstruct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.gcw_*runtime.gcWork_};
 
-struct struct{reflect.bbool;reflect.xinterface{}} { // Original name: struct { reflect.b bool; reflect.x interface {} }
-    bool b;
-    undefined field_0x1;
-    undefined field_0x2;
-    undefined field_0x3;
-    interface{} x;
+struct struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime.gcw_*runtime.gcWork_} { // Original name: struct { F uintptr; runtime.gp *runtime.g; runtime.gcw *runtime.gcWork }
+    uintptr .F;
+    struct runtime.g * gp;
+    struct runtime.gcWork * gcw;
 };
 
 typedef struct runtime.traceStack runtime.traceStack, *Pruntime.traceStack;
 
-struct runtime.traceStack { // Missing member stk : uintptr[1] at offset 0x10 [Unsupported interior flex array: uintptr[1]]
+struct runtime.traceStack {
     runtime.traceStackPtr link;
     uintptr hash;
     uint32 id;
     int n;
-    undefined field_0x10;
-    undefined field_0x11;
-    undefined field_0x12;
-    undefined field_0x13;
+    uintptr stk[0];
+    undefined field5_0x10;
+    undefined field6_0x11;
+    undefined field7_0x12;
+    undefined field8_0x13;
 };
 
 typedef struct reflect.layoutKey reflect.layoutKey, *Preflect.layoutKey;
@@ -3349,9 +3371,9 @@ typedef struct runtime.cpuProfile runtime.cpuProfile, *Pruntime.cpuProfile;
 struct runtime.cpuProfile {
     struct runtime.mutex lock;
     bool on;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
+    undefined field2_0x5;
+    undefined field3_0x6;
+    undefined field4_0x7;
     struct runtime.profBuf * log;
     uintptr extra[1000];
     int numExtra;
@@ -3394,9 +3416,9 @@ struct runtime.mstats {
     float64 gc_cpu_fraction;
     bool enablegc;
     bool debuggc;
-    undefined field_0x10d2;
-    undefined field_0x10d3;
-    struct struct{runtime.sizeuint32;runtime.nmallocuint64;runtime.nfreeuint64} by_size[67];
+    undefined field31_0x10d2;
+    undefined field32_0x10d3;
+    struct struct_{_runtime.size_uint32;_runtime.nmalloc_uint64;_runtime.nfree_uint64_} by_size[67];
     uint64 last_gc_nanotime;
     uint64 tinyallocs;
     float64 triggerRatio;
@@ -3414,60 +3436,12 @@ struct runtime.cgothreadstart {
     void * fn;
 };
 
-typedef struct struct{runtime.lockruntime.mutex;runtime.lockOwner*runtime.g;runtime.enabledbool;runtime.shutdownbool;runtime.headerWrittenbool;runtime.footerWrittenbool;runtime.shutdownSemauint32;runtime.seqStartuint64;runtime.ticksStartint64;runtime.ticksEndint64;runtime.timeStartint64;runtime.timeEndint64;runtime.seqGCuint64;runtime.readingruntime.traceBufPtr;runtime.emptyruntime.traceBufPtr;runtime.fullHeadruntime.traceBufPtr;runtime.fullTailruntime.traceBufPtr;runtime.readerruntime.guintptr;runtime.stackTabruntime.traceStackTable;runtime.stringsmap[string]uint64;runtime.stringSequint64;runtime.markWorkerLabels[3]uint64;runtime.bufLockruntime.mutex;runtime.bufruntime.traceBufPtr} struct{runtime.lockruntime.mutex;runtime.lockOwner*runtime.g;runtime.enabledbool;runtime.shutdownbool;runtime.headerWrittenbool;runtime.footerWrittenbool;runtime.shutdownSemauint32;runtime.seqStartuint64;runtime.ticksStartint64;runtime.ticksEndint64;runtime.timeStartint64;runtime.timeEndint64;runtime.seqGCuint64;runtime.readingruntime.traceBufPtr;runtime.emptyruntime.traceBufPtr;runtime.fullHeadruntime.traceBufPtr;runtime.fullTailruntime.traceBufPtr;runtime.readerruntime.guintptr;runtime.stackTabruntime.traceStackTable;runtime.stringsmap[string]uint64;runtime.stringSequint64;runtime.markWorkerLabels[3]uint64;runtime.bufLockruntime.mutex;runtime.bufruntime.traceBufPtr}, *Pstruct{runtime.lockruntime.mutex;runtime.lockOwner*runtime.g;runtime.enabledbool;runtime.shutdownbool;runtime.headerWrittenbool;runtime.footerWrittenbool;runtime.shutdownSemauint32;runtime.seqStartuint64;runtime.ticksStartint64;runtime.ticksEndint64;runtime.timeStartint64;runtime.timeEndint64;runtime.seqGCuint64;runtime.readingruntime.traceBufPtr;runtime.emptyruntime.traceBufPtr;runtime.fullHeadruntime.traceBufPtr;runtime.fullTailruntime.traceBufPtr;runtime.readerruntime.guintptr;runtime.stackTabruntime.traceStackTable;runtime.stringsmap[string]uint64;runtime.stringSequint64;runtime.markWorkerLabels[3]uint64;runtime.bufLockruntime.mutex;runtime.bufruntime.traceBufPtr};
+typedef struct struct_{_F_uintptr;_runtime.sp_uintptr;_runtime._g__*runtime.g_} struct_{_F_uintptr;_runtime.sp_uintptr;_runtime._g__*runtime.g_}, *Pstruct_{_F_uintptr;_runtime.sp_uintptr;_runtime._g__*runtime.g_};
 
-struct struct{runtime.lockruntime.mutex;runtime.lockOwner*runtime.g;runtime.enabledbool;runtime.shutdownbool;runtime.headerWrittenbool;runtime.footerWrittenbool;runtime.shutdownSemauint32;runtime.seqStartuint64;runtime.ticksStartint64;runtime.ticksEndint64;runtime.timeStartint64;runtime.timeEndint64;runtime.seqGCuint64;runtime.readingruntime.traceBufPtr;runtime.emptyruntime.traceBufPtr;runtime.fullHeadruntime.traceBufPtr;runtime.fullTailruntime.traceBufPtr;runtime.readerruntime.guintptr;runtime.stackTabruntime.traceStackTable;runtime.stringsmap[string]uint64;runtime.stringSequint64;runtime.markWorkerLabels[3]uint64;runtime.bufLockruntime.mutex;runtime.bufruntime.traceBufPtr} { // Original name: struct { runtime.lock runtime.mutex; runtime.lockOwner *runtime.g; runtime.enabled bool; runtime.shutdown bool; runtime.headerWritten bool; runtime.footerWritten bool; runtime.shutdownSema uint32; runtime.seqStart uint64; runtime.ticksStart int64; runtime.ticksEnd int64; runtime.timeStart int64; runtime.timeEnd int64; runtime.seqGC uint64; runtime.reading runtime.traceBufPtr; runtime.empty runtime.traceBufPtr; runtime.fullHead runtime.traceBufPtr; runtime.fullTail runtime.traceBufPtr; runtime.reader runtime.guintptr; runtime.stackTab runtime.traceStackTable; runtime.strings map[string]uint64; runtime.stringSeq uint64; runtime.markWorkerLabels [3]uint64; runtime.bufLock runtime.mutex; runtime.buf runtime.traceBufPtr }
-    struct runtime.mutex lock;
-    struct runtime.g * lockOwner;
-    bool enabled;
-    bool shutdown;
-    bool headerWritten;
-    bool footerWritten;
-    uint32 shutdownSema;
-    uint64 seqStart;
-    int64 ticksStart;
-    int64 ticksEnd;
-    int64 timeStart;
-    int64 timeEnd;
-    uint64 seqGC;
-    runtime.traceBufPtr reading;
-    runtime.traceBufPtr empty;
-    runtime.traceBufPtr fullHead;
-    runtime.traceBufPtr fullTail;
-    runtime.guintptr reader;
-    struct runtime.traceStackTable stackTab;
-    map[string]uint64 strings;
-    uint64 stringSeq;
-    uint64 markWorkerLabels[3];
-    struct runtime.mutex bufLock;
-    runtime.traceBufPtr buf;
-};
-
-typedef struct struct{runtime.allocfreetraceint32;runtime.cgocheckint32;runtime.efenceint32;runtime.gccheckmarkint32;runtime.gcpacertraceint32;runtime.gcshrinkstackoffint32;runtime.gcrescanstacksint32;runtime.gcstoptheworldint32;runtime.gctraceint32;runtime.invalidptrint32;runtime.sbrkint32;runtime.scavengeint32;runtime.scheddetailint32;runtime.schedtraceint32} struct{runtime.allocfreetraceint32;runtime.cgocheckint32;runtime.efenceint32;runtime.gccheckmarkint32;runtime.gcpacertraceint32;runtime.gcshrinkstackoffint32;runtime.gcrescanstacksint32;runtime.gcstoptheworldint32;runtime.gctraceint32;runtime.invalidptrint32;runtime.sbrkint32;runtime.scavengeint32;runtime.scheddetailint32;runtime.schedtraceint32}, *Pstruct{runtime.allocfreetraceint32;runtime.cgocheckint32;runtime.efenceint32;runtime.gccheckmarkint32;runtime.gcpacertraceint32;runtime.gcshrinkstackoffint32;runtime.gcrescanstacksint32;runtime.gcstoptheworldint32;runtime.gctraceint32;runtime.invalidptrint32;runtime.sbrkint32;runtime.scavengeint32;runtime.scheddetailint32;runtime.schedtraceint32};
-
-struct struct{runtime.allocfreetraceint32;runtime.cgocheckint32;runtime.efenceint32;runtime.gccheckmarkint32;runtime.gcpacertraceint32;runtime.gcshrinkstackoffint32;runtime.gcrescanstacksint32;runtime.gcstoptheworldint32;runtime.gctraceint32;runtime.invalidptrint32;runtime.sbrkint32;runtime.scavengeint32;runtime.scheddetailint32;runtime.schedtraceint32} { // Original name: struct { runtime.allocfreetrace int32; runtime.cgocheck int32; runtime.efence int32; runtime.gccheckmark int32; runtime.gcpacertrace int32; runtime.gcshrinkstackoff int32; runtime.gcrescanstacks int32; runtime.gcstoptheworld int32; runtime.gctrace int32; runtime.invalidptr int32; runtime.sbrk int32; runtime.scavenge int32; runtime.scheddetail int32; runtime.schedtrace int32 }
-    int32 allocfreetrace;
-    int32 cgocheck;
-    int32 efence;
-    int32 gccheckmark;
-    int32 gcpacertrace;
-    int32 gcshrinkstackoff;
-    int32 gcrescanstacks;
-    int32 gcstoptheworld;
-    int32 gctrace;
-    int32 invalidptr;
-    int32 sbrk;
-    int32 scavenge;
-    int32 scheddetail;
-    int32 schedtrace;
-};
-
-typedef struct struct{Fuintptr;runtime.gp*runtime.g;runtime.gcw*runtime.gcWork} struct{Fuintptr;runtime.gp*runtime.g;runtime.gcw*runtime.gcWork}, *Pstruct{Fuintptr;runtime.gp*runtime.g;runtime.gcw*runtime.gcWork};
-
-struct struct{Fuintptr;runtime.gp*runtime.g;runtime.gcw*runtime.gcWork} { // Original name: struct { F uintptr; runtime.gp *runtime.g; runtime.gcw *runtime.gcWork }
+struct struct_{_F_uintptr;_runtime.sp_uintptr;_runtime._g__*runtime.g_} { // Original name: struct { F uintptr; runtime.sp uintptr; runtime._g_ *runtime.g }
     uintptr .F;
-    struct runtime.g * gp;
-    struct runtime.gcWork * gcw;
+    uintptr sp;
+    struct runtime.g * _g_;
 };
 
 typedef struct runtime.stackmap runtime.stackmap, *Pruntime.stackmap;
@@ -3476,27 +3450,51 @@ struct runtime.stackmap {
     int32 n;
     int32 nbit;
     uint8 bytedata[1];
-    undefined field_0x9;
-    undefined field_0xa;
-    undefined field_0xb;
+    undefined field3_0x9;
+    undefined field4_0xa;
+    undefined field5_0xb;
+};
+
+typedef struct struct_{_F_uintptr;_runtime.p_unsafe.Pointer;_runtime.b_*runtime.bucket_} struct_{_F_uintptr;_runtime.p_unsafe.Pointer;_runtime.b_*runtime.bucket_}, *Pstruct_{_F_uintptr;_runtime.p_unsafe.Pointer;_runtime.b_*runtime.bucket_};
+
+struct struct_{_F_uintptr;_runtime.p_unsafe.Pointer;_runtime.b_*runtime.bucket_} { // Original name: struct { F uintptr; runtime.p unsafe.Pointer; runtime.b *runtime.bucket }
+    uintptr .F;
+    void * p;
+    struct runtime.bucket * b;
 };
 
 typedef struct hash<*uint8,[]uint8> * map[*uint8][]uint8;
 
+typedef struct struct_{_F_uintptr;_runtime.src_uintptr;_runtime.dst_*uintptr_} struct_{_F_uintptr;_runtime.src_uintptr;_runtime.dst_*uintptr_}, *Pstruct_{_F_uintptr;_runtime.src_uintptr;_runtime.dst_*uintptr_};
+
+struct struct_{_F_uintptr;_runtime.src_uintptr;_runtime.dst_*uintptr_} { // Original name: struct { F uintptr; runtime.src uintptr; runtime.dst *uintptr }
+    uintptr .F;
+    uintptr src;
+    uintptr * dst;
+};
+
 typedef struct syscall.mmapper syscall.mmapper, *Psyscall.mmapper;
 
-struct syscall.mmapper { // Missing member  mmap : func(uintptr,uintptr,int,int,int,int64)(uintptr,error) at offset 0xc
-Missing member  munmap : func(uintptr,uintptr)error at offset 0x10
+struct syscall.mmapper { // Missing member  mmap : func(uintptr,_uintptr,_int,_int,_int,_int64)_(uintptr,_error) at offset 0xc
+Missing member  munmap : func(uintptr,_uintptr)_error at offset 0x10
     struct sync.Mutex Mutex;
     map[*uint8][]uint8 active;
-    undefined field_0xc;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
-    undefined field_0x10;
-    undefined field_0x11;
-    undefined field_0x12;
-    undefined field_0x13;
+    undefined field2_0xc;
+    undefined field3_0xd;
+    undefined field4_0xe;
+    undefined field5_0xf;
+    undefined field6_0x10;
+    undefined field7_0x11;
+    undefined field8_0x12;
+    undefined field9_0x13;
+};
+
+typedef struct struct_{_F_uintptr;_runtime.addr_*uint32;_runtime.ret_int32_} struct_{_F_uintptr;_runtime.addr_*uint32;_runtime.ret_int32_}, *Pstruct_{_F_uintptr;_runtime.addr_*uint32;_runtime.ret_int32_};
+
+struct struct_{_F_uintptr;_runtime.addr_*uint32;_runtime.ret_int32_} { // Original name: struct { F uintptr; runtime.addr *uint32; runtime.ret int32 }
+    uintptr .F;
+    uint32 * addr;
+    int32 ret;
 };
 
 typedef struct runtime.sigactiont runtime.sigactiont, *Pruntime.sigactiont;
@@ -3516,6 +3514,14 @@ struct runtime.functype {
     uint16 outCount;
 };
 
+typedef struct struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime._p__*runtime.p_} struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime._p__*runtime.p_}, *Pstruct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime._p__*runtime.p_};
+
+struct struct_{_F_uintptr;_runtime.gp_*runtime.g;_runtime._p__*runtime.p_} { // Original name: struct { F uintptr; runtime.gp *runtime.g; runtime._p_ *runtime.p }
+    uintptr .F;
+    struct runtime.g * gp;
+    struct runtime.p * _p_;
+};
+
 typedef struct runtime.gobitvector runtime.gobitvector, *Pruntime.gobitvector;
 
 struct runtime.gobitvector {
@@ -3530,58 +3536,24 @@ struct runtime.stringStruct {
     int len;
 };
 
-typedef struct struct{runtime.lockruntime.mutex;runtime.nextint32;runtime.mmap[int32]unsafe.Pointer;runtime.minvmap[unsafe.Pointer]int32} struct{runtime.lockruntime.mutex;runtime.nextint32;runtime.mmap[int32]unsafe.Pointer;runtime.minvmap[unsafe.Pointer]int32}, *Pstruct{runtime.lockruntime.mutex;runtime.nextint32;runtime.mmap[int32]unsafe.Pointer;runtime.minvmap[unsafe.Pointer]int32};
+typedef struct struct_{_F_uintptr;_runtime.p_*unsafe.Pointer;_runtime.size_uintptr;_runtime.align_uintptr;_runtime.sysStat_*uint64_} struct_{_F_uintptr;_runtime.p_*unsafe.Pointer;_runtime.size_uintptr;_runtime.align_uintptr;_runtime.sysStat_*uint64_}, *Pstruct_{_F_uintptr;_runtime.p_*unsafe.Pointer;_runtime.size_uintptr;_runtime.align_uintptr;_runtime.sysStat_*uint64_};
 
-typedef struct hash<int32,unsafe.Pointer> * map[int32]unsafe.Pointer;
+struct struct_{_F_uintptr;_runtime.p_*unsafe.Pointer;_runtime.size_uintptr;_runtime.align_uintptr;_runtime.sysStat_*uint64_} { // Original name: struct { F uintptr; runtime.p *unsafe.Pointer; runtime.size uintptr; runtime.align uintptr; runtime.sysStat *uint64 }
+    uintptr .F;
+    void * * p;
+    uintptr size;
+    uintptr align;
+    uint64 * sysStat;
+};
 
-typedef struct hash<unsafe.Pointer,int32> * map[unsafe.Pointer]int32;
+typedef struct struct_{_runtime.lock_runtime.mutex;_runtime.free_*runtime.gcBitsArena;_runtime.next_*runtime.gcBitsArena;_runtime.current_*runtime.gcBitsArena;_runtime.previous_*runtime.gcBitsArena_} struct_{_runtime.lock_runtime.mutex;_runtime.free_*runtime.gcBitsArena;_runtime.next_*runtime.gcBitsArena;_runtime.current_*runtime.gcBitsArena;_runtime.previous_*runtime.gcBitsArena_}, *Pstruct_{_runtime.lock_runtime.mutex;_runtime.free_*runtime.gcBitsArena;_runtime.next_*runtime.gcBitsArena;_runtime.current_*runtime.gcBitsArena;_runtime.previous_*runtime.gcBitsArena_};
 
-struct struct{runtime.lockruntime.mutex;runtime.nextint32;runtime.mmap[int32]unsafe.Pointer;runtime.minvmap[unsafe.Pointer]int32} { // Original name: struct { runtime.lock runtime.mutex; runtime.next int32; runtime.m map[int32]unsafe.Pointer; runtime.minv map[unsafe.Pointer]int32 }
+struct struct_{_runtime.lock_runtime.mutex;_runtime.free_*runtime.gcBitsArena;_runtime.next_*runtime.gcBitsArena;_runtime.current_*runtime.gcBitsArena;_runtime.previous_*runtime.gcBitsArena_} { // Original name: struct { runtime.lock runtime.mutex; runtime.free *runtime.gcBitsArena; runtime.next *runtime.gcBitsArena; runtime.current *runtime.gcBitsArena; runtime.previous *runtime.gcBitsArena }
     struct runtime.mutex lock;
-    int32 next;
-    map[int32]unsafe.Pointer m;
-    map[unsafe.Pointer]int32 minv;
-};
-
-typedef struct struct{Fuintptr;runtime.sizint32;runtime.d**runtime._defer} struct{Fuintptr;runtime.sizint32;runtime.d**runtime._defer}, *Pstruct{Fuintptr;runtime.sizint32;runtime.d**runtime._defer};
-
-struct struct{Fuintptr;runtime.sizint32;runtime.d**runtime._defer} { // Original name: struct { F uintptr; runtime.siz int32; runtime.d **runtime._defer }
-    uintptr .F;
-    int32 siz;
-    struct runtime._defer * * d;
-};
-
-typedef struct struct{Fuintptr;runtime.e*runtime.eface;runtime.f*runtime.eface;runtime.nretuintptr;runtime.fint*runtime._type;runtime.ot*runtime.ptrtype} struct{Fuintptr;runtime.e*runtime.eface;runtime.f*runtime.eface;runtime.nretuintptr;runtime.fint*runtime._type;runtime.ot*runtime.ptrtype}, *Pstruct{Fuintptr;runtime.e*runtime.eface;runtime.f*runtime.eface;runtime.nretuintptr;runtime.fint*runtime._type;runtime.ot*runtime.ptrtype};
-
-struct struct{Fuintptr;runtime.e*runtime.eface;runtime.f*runtime.eface;runtime.nretuintptr;runtime.fint*runtime._type;runtime.ot*runtime.ptrtype} { // Original name: struct { F uintptr; runtime.e *runtime.eface; runtime.f *runtime.eface; runtime.nret uintptr; runtime.fint *runtime._type; runtime.ot *runtime.ptrtype }
-    uintptr .F;
-    struct runtime.eface * e;
-    struct runtime.eface * f;
-    uintptr nret;
-    struct runtime._type * fint;
-    struct runtime.ptrtype * ot;
-};
-
-typedef struct struct{Fuintptr;runtime.newg*runtime.g;runtime.stacksizeint32} struct{Fuintptr;runtime.newg*runtime.g;runtime.stacksizeint32}, *Pstruct{Fuintptr;runtime.newg*runtime.g;runtime.stacksizeint32};
-
-struct struct{Fuintptr;runtime.newg*runtime.g;runtime.stacksizeint32} { // Original name: struct { F uintptr; runtime.newg *runtime.g; runtime.stacksize int32 }
-    uintptr .F;
-    struct runtime.g * newg;
-    int32 stacksize;
-};
-
-typedef struct struct{Fuintptr;runtime.c*runtime.mcache} struct{Fuintptr;runtime.c*runtime.mcache}, *Pstruct{Fuintptr;runtime.c*runtime.mcache};
-
-struct struct{Fuintptr;runtime.c*runtime.mcache} { // Original name: struct { F uintptr; runtime.c *runtime.mcache }
-    uintptr .F;
-    struct runtime.mcache * c;
-};
-
-typedef struct struct{runtime.mutex;runtime.persistentAlloc} struct{runtime.mutex;runtime.persistentAlloc}, *Pstruct{runtime.mutex;runtime.persistentAlloc};
-
-struct struct{runtime.mutex;runtime.persistentAlloc} { // Original name: struct { runtime.mutex; runtime.persistentAlloc }
-    struct runtime.mutex mutex;
-    struct runtime.persistentAlloc persistentAlloc;
+    struct runtime.gcBitsArena * free;
+    struct runtime.gcBitsArena * next;
+    struct runtime.gcBitsArena * current;
+    struct runtime.gcBitsArena * previous;
 };
 
 typedef struct runtime.slicetype runtime.slicetype, *Pruntime.slicetype;
@@ -3591,6 +3563,22 @@ struct runtime.slicetype {
     struct runtime._type * elem;
 };
 
+typedef struct struct_{_F_uintptr;_runtime.c_*runtime.mcache_} struct_{_F_uintptr;_runtime.c_*runtime.mcache_}, *Pstruct_{_F_uintptr;_runtime.c_*runtime.mcache_};
+
+struct struct_{_F_uintptr;_runtime.c_*runtime.mcache_} { // Original name: struct { F uintptr; runtime.c *runtime.mcache }
+    uintptr .F;
+    struct runtime.mcache * c;
+};
+
+typedef struct struct_{_sync.Mutex;_reflect.m_sync.Map_} struct_{_sync.Mutex;_reflect.m_sync.Map_}, *Pstruct_{_sync.Mutex;_reflect.m_sync.Map_};
+
+struct struct_{_sync.Mutex;_reflect.m_sync.Map_} { // Original name: struct { sync.Mutex; reflect.m sync.Map }
+    struct sync.Mutex Mutex;
+    struct sync.Map m;
+};
+
+typedef interface_{} noalg.[8]interface_{}[8];
+
 typedef struct runtime.stringStructDWARF runtime.stringStructDWARF, *Pruntime.stringStructDWARF;
 
 struct runtime.stringStructDWARF {
@@ -3598,31 +3586,46 @@ struct runtime.stringStructDWARF {
     int len;
 };
 
-typedef struct struct{Fuintptr;runtime.gp*runtime.g;runtime._p_*runtime.p} struct{Fuintptr;runtime.gp*runtime.g;runtime._p_*runtime.p}, *Pstruct{Fuintptr;runtime.gp*runtime.g;runtime._p_*runtime.p};
+typedef struct struct_{_F_uintptr;_runtime.siz_int32;_runtime.d_**runtime._defer_} struct_{_F_uintptr;_runtime.siz_int32;_runtime.d_**runtime._defer_}, *Pstruct_{_F_uintptr;_runtime.siz_int32;_runtime.d_**runtime._defer_};
 
-struct struct{Fuintptr;runtime.gp*runtime.g;runtime._p_*runtime.p} { // Original name: struct { F uintptr; runtime.gp *runtime.g; runtime._p_ *runtime.p }
+struct struct_{_F_uintptr;_runtime.siz_int32;_runtime.d_**runtime._defer_} { // Original name: struct { F uintptr; runtime.siz int32; runtime.d **runtime._defer }
     uintptr .F;
-    struct runtime.g * gp;
-    struct runtime.p * _p_;
+    int32 siz;
+    struct runtime._defer * * d;
 };
 
-typedef struct hash<runtime._typePair,struct{}> * map[runtime._typePair]struct{};
+typedef struct struct_{_runtime.allocfreetrace_int32;_runtime.cgocheck_int32;_runtime.efence_int32;_runtime.gccheckmark_int32;_runtime.gcpacertrace_int32;_runtime.gcshrinkstackoff_int32;_runtime.gcrescanstacks_int32;_runtime.gcstoptheworld_int32;_runtime.gctrace_int32;_runtime.invalidptr_int32;_runtime.sbrk_int32;_runtime.scavenge_int32;_runtime.scheddetail_int32;_runtime.schedtrace_int32_} struct_{_runtime.allocfreetrace_int32;_runtime.cgocheck_int32;_runtime.efence_int32;_runtime.gccheckmark_int32;_runtime.gcpacertrace_int32;_runtime.gcshrinkstackoff_int32;_runtime.gcrescanstacks_int32;_runtime.gcstoptheworld_int32;_runtime.gctrace_int32;_runtime.invalidptr_int32;_runtime.sbrk_int32;_runtime.scavenge_int32;_runtime.scheddetail_int32;_runtime.schedtrace_int32_}, *Pstruct_{_runtime.allocfreetrace_int32;_runtime.cgocheck_int32;_runtime.efence_int32;_runtime.gccheckmark_int32;_runtime.gcpacertrace_int32;_runtime.gcshrinkstackoff_int32;_runtime.gcrescanstacks_int32;_runtime.gcstoptheworld_int32;_runtime.gctrace_int32;_runtime.invalidptr_int32;_runtime.sbrk_int32;_runtime.scavenge_int32;_runtime.scheddetail_int32;_runtime.schedtrace_int32_};
 
-typedef struct struct{Fuintptr;runtime.srcp*unsafe.Pointer;runtime.dstp*unsafe.Pointer;runtime.nint;runtime.typ**runtime._type} struct{Fuintptr;runtime.srcp*unsafe.Pointer;runtime.dstp*unsafe.Pointer;runtime.nint;runtime.typ**runtime._type}, *Pstruct{Fuintptr;runtime.srcp*unsafe.Pointer;runtime.dstp*unsafe.Pointer;runtime.nint;runtime.typ**runtime._type};
-
-struct struct{Fuintptr;runtime.srcp*unsafe.Pointer;runtime.dstp*unsafe.Pointer;runtime.nint;runtime.typ**runtime._type} { // Original name: struct { F uintptr; runtime.srcp *unsafe.Pointer; runtime.dstp *unsafe.Pointer; runtime.n int; runtime.typ **runtime._type }
-    uintptr .F;
-    void * * srcp;
-    void * * dstp;
-    int n;
-    struct runtime._type * * typ;
+struct struct_{_runtime.allocfreetrace_int32;_runtime.cgocheck_int32;_runtime.efence_int32;_runtime.gccheckmark_int32;_runtime.gcpacertrace_int32;_runtime.gcshrinkstackoff_int32;_runtime.gcrescanstacks_int32;_runtime.gcstoptheworld_int32;_runtime.gctrace_int32;_runtime.invalidptr_int32;_runtime.sbrk_int32;_runtime.scavenge_int32;_runtime.scheddetail_int32;_runtime.schedtrace_int32_} { // Original name: struct { runtime.allocfreetrace int32; runtime.cgocheck int32; runtime.efence int32; runtime.gccheckmark int32; runtime.gcpacertrace int32; runtime.gcshrinkstackoff int32; runtime.gcrescanstacks int32; runtime.gcstoptheworld int32; runtime.gctrace int32; runtime.invalidptr int32; runtime.sbrk int32; runtime.scavenge int32; runtime.scheddetail int32; runtime.schedtrace int32 }
+    int32 allocfreetrace;
+    int32 cgocheck;
+    int32 efence;
+    int32 gccheckmark;
+    int32 gcpacertrace;
+    int32 gcshrinkstackoff;
+    int32 gcrescanstacks;
+    int32 gcstoptheworld;
+    int32 gctrace;
+    int32 invalidptr;
+    int32 sbrk;
+    int32 scavenge;
+    int32 scheddetail;
+    int32 schedtrace;
 };
 
-typedef struct struct{Fuintptr;runtime._g_*runtime.g} struct{Fuintptr;runtime._g_*runtime.g}, *Pstruct{Fuintptr;runtime._g_*runtime.g};
+typedef struct struct_{_F_uintptr;_runtime.cache_*runtime.pcvalueCache;_runtime.gcw_*runtime.gcWork_} struct_{_F_uintptr;_runtime.cache_*runtime.pcvalueCache;_runtime.gcw_*runtime.gcWork_}, *Pstruct_{_F_uintptr;_runtime.cache_*runtime.pcvalueCache;_runtime.gcw_*runtime.gcWork_};
 
-struct struct{Fuintptr;runtime._g_*runtime.g} { // Original name: struct { F uintptr; runtime._g_ *runtime.g }
+struct struct_{_F_uintptr;_runtime.cache_*runtime.pcvalueCache;_runtime.gcw_*runtime.gcWork_} { // Original name: struct { F uintptr; runtime.cache *runtime.pcvalueCache; runtime.gcw *runtime.gcWork }
     uintptr .F;
-    struct runtime.g * _g_;
+    struct runtime.pcvalueCache * cache;
+    struct runtime.gcWork * gcw;
+};
+
+typedef struct struct_{_F_uintptr;_runtime.c_*runtime.hchan_} struct_{_F_uintptr;_runtime.c_*runtime.hchan_}, *Pstruct_{_F_uintptr;_runtime.c_*runtime.hchan_};
+
+struct struct_{_F_uintptr;_runtime.c_*runtime.hchan_} { // Original name: struct { F uintptr; runtime.c *runtime.hchan }
+    uintptr .F;
+    struct runtime.hchan * c;
 };
 
 typedef struct []*reflect.rtype []*reflect.rtype, *P[]*reflect.rtype;
@@ -3654,7 +3657,7 @@ typedef ulong __cpu_mask;
 typedef struct cpu_set_t cpu_set_t, *Pcpu_set_t;
 
 struct cpu_set_t {
-    __cpu_mask __bits[128];
+    __cpu_mask __bits[32];
 };
 
 typedef struct evp_pkey_ctx_st evp_pkey_ctx_st, *Pevp_pkey_ctx_st;
@@ -3665,9 +3668,9 @@ struct evp_pkey_ctx_st {
 typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 
 typedef enum __itimer_which {
-    ITIMER_PROF=2,
     ITIMER_REAL=0,
-    ITIMER_VIRTUAL=1
+    ITIMER_VIRTUAL=1,
+    ITIMER_PROF=2
 } __itimer_which;
 
 typedef enum __itimer_which __itimer_which_t;
@@ -3697,35 +3700,35 @@ struct sigaltstack {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
+    SHT_NULL=0,
+    SHT_PROGBITS=1,
+    SHT_SYMTAB=2,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_HASH=5,
+    SHT_DYNAMIC=6,
+    SHT_NOTE=7,
+    SHT_NOBITS=8,
+    SHT_REL=9,
+    SHT_SHLIB=10,
+    SHT_DYNSYM=11,
+    SHT_INIT_ARRAY=14,
+    SHT_FINI_ARRAY=15,
+    SHT_PREINIT_ARRAY=16,
+    SHT_GROUP=17,
+    SHT_SYMTAB_SHNDX=18,
     SHT_ANDROID_REL=1610612737,
     SHT_ANDROID_RELA=1610612738,
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
     SHT_GNU_ATTRIBUTES=1879048181,
     SHT_GNU_HASH=1879048182,
     SHT_GNU_LIBLIST=1879048183,
+    SHT_CHECKSUM=1879048184,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_syminfo=1879048188,
     SHT_GNU_verdef=1879048189,
     SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
-    SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -3742,17 +3745,17 @@ struct Elf32_Shdr {
 };
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_DYNAMIC=2,
-    PT_GNU_EH_FRAME=1685382480,
-    PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
     PT_NULL=0,
-    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
     PT_SHLIB=5,
-    PT_TLS=7
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType_x86;
 
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
@@ -3883,9 +3886,7 @@ struct _fpstate {
 
 
 
-// Original name: sync/atomic.(*Value).Load
-
-void sync_fwdslash_atomic___Value__Load(sync_fwdslash_atomic_Value *v,interface__ x)
+void sync_atomic___Value__Load(sync_atomic_Value *v,interface___ x)
 
 {
   uint *puVar1;
@@ -3896,12 +3897,12 @@ void sync_fwdslash_atomic___Value__Load(sync_fwdslash_atomic_Value *v,interface_
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    sync_fwdslash_atomic___Value__Load(v,x);
+    sync_atomic___Value__Load(v,x);
     return;
   }
-  sync_fwdslash_atomic_LoadPointer();
+  sync_atomic_LoadPointer();
   if ((local_8 != 0) && (local_8 != -1)) {
-    sync_fwdslash_atomic_LoadPointer();
+    sync_atomic_LoadPointer();
     return;
   }
   return;
@@ -3909,14 +3910,12 @@ void sync_fwdslash_atomic___Value__Load(sync_fwdslash_atomic_Value *v,interface_
 
 
 
-// Original name: sync/atomic.(*Value).Store
-
-void sync_fwdslash_atomic___Value__Store(sync_fwdslash_atomic_Value *v,interface__ x)
+void sync_atomic___Value__Store(sync_atomic_Value *v,interface___ x)
 
 {
   uint *puVar1;
   int *in_GS_OFFSET;
-  sync_fwdslash_atomic_Value *_r0;
+  sync_atomic_Value *_r0;
   runtime__type *in_stack_fffffff4;
   undefined4 in_stack_fffffffc;
   
@@ -3924,11 +3923,11 @@ void sync_fwdslash_atomic___Value__Store(sync_fwdslash_atomic_Value *v,interface
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    sync_fwdslash_atomic___Value__Store(v,x);
+    sync_atomic___Value__Store(v,x);
     return;
   }
   if (x._type == (runtime__type *)0x0) {
-    runtime_gopanic((interface__)0x80f1b40080cf1a0);
+    runtime_gopanic((interface___)0x80f1b40080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -3936,26 +3935,26 @@ void sync_fwdslash_atomic___Value__Store(sync_fwdslash_atomic_Value *v,interface
   do {
     while( true ) {
       _r0 = v;
-      sync_fwdslash_atomic_LoadPointer();
+      sync_atomic_LoadPointer();
       if (in_stack_fffffff4 != (runtime__type *)0x0) break;
-      sync_fwdslash_atomic_runtime_procPin((int)_r0);
+      sync_atomic_runtime_procPin((int)_r0);
       in_stack_fffffff4 = (runtime__type *)0x0;
-      sync_fwdslash_atomic_CompareAndSwapPointer
+      sync_atomic_CompareAndSwapPointer
                 ((void **)v,(void *)0x0,(void *)0xffffffff,SUB41(in_stack_fffffffc,0));
       if ((char)in_stack_fffffffc != '\0') {
-        sync_fwdslash_atomic_StorePointer(&(v->v).data,x.data);
-        sync_fwdslash_atomic_StorePointer((void **)v,x._type);
-        sync_fwdslash_atomic_runtime_procUnpin();
+        sync_atomic_StorePointer(&(v->v).data,x.data);
+        sync_atomic_StorePointer((void **)v,x._type);
+        sync_atomic_runtime_procUnpin();
         return;
       }
-      sync_fwdslash_atomic_runtime_procUnpin();
+      sync_atomic_runtime_procUnpin();
     }
   } while (in_stack_fffffff4 == (runtime__type *)0xffffffff);
   if (in_stack_fffffff4 == x._type) {
-    sync_fwdslash_atomic_StorePointer(&(v->v).data,x.data);
+    sync_atomic_StorePointer(&(v->v).data,x.data);
     return;
   }
-  runtime_gopanic((interface__)0x80f1b48080cf1a0);
+  runtime_gopanic((interface___)0x80f1b48080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -3963,9 +3962,7 @@ void sync_fwdslash_atomic___Value__Store(sync_fwdslash_atomic_Value *v,interface
 
 
 
-// Original name: sync/atomic.CompareAndSwapInt32
-
-void sync_fwdslash_atomic_CompareAndSwapInt32(void)
+void sync_atomic_CompareAndSwapInt32(void)
 
 {
   int *in_stack_00000004;
@@ -3981,9 +3978,7 @@ void sync_fwdslash_atomic_CompareAndSwapInt32(void)
 
 
 
-// Original name: sync/atomic.CompareAndSwapUint32
-
-void sync_fwdslash_atomic_CompareAndSwapUint32(void)
+void sync_atomic_CompareAndSwapUint32(void)
 
 {
   int *in_stack_00000004;
@@ -3999,9 +3994,7 @@ void sync_fwdslash_atomic_CompareAndSwapUint32(void)
 
 
 
-// Original name: sync/atomic.CompareAndSwapUintptr
-
-void sync_fwdslash_atomic_CompareAndSwapUintptr(void)
+void sync_atomic_CompareAndSwapUintptr(void)
 
 {
   int *in_stack_00000004;
@@ -4017,9 +4010,7 @@ void sync_fwdslash_atomic_CompareAndSwapUintptr(void)
 
 
 
-// Original name: sync/atomic.CompareAndSwapUint64
-
-void sync_fwdslash_atomic_CompareAndSwapUint64(void)
+void sync_atomic_CompareAndSwapUint64(void)
 
 {
   longlong *in_stack_00000004;
@@ -4035,9 +4026,7 @@ void sync_fwdslash_atomic_CompareAndSwapUint64(void)
 
 
 
-// Original name: sync/atomic.AddInt32
-
-void sync_fwdslash_atomic_AddInt32(void)
+void sync_atomic_AddInt32(void)
 
 {
   int *in_stack_00000004;
@@ -4050,9 +4039,7 @@ void sync_fwdslash_atomic_AddInt32(void)
 
 
 
-// Original name: sync/atomic.AddUint32
-
-void sync_fwdslash_atomic_AddUint32(void)
+void sync_atomic_AddUint32(void)
 
 {
   int *in_stack_00000004;
@@ -4065,9 +4052,7 @@ void sync_fwdslash_atomic_AddUint32(void)
 
 
 
-// Original name: sync/atomic.LoadUint32
-
-void sync_fwdslash_atomic_LoadUint32(void)
+void sync_atomic_LoadUint32(void)
 
 {
   return;
@@ -4076,19 +4061,8 @@ void sync_fwdslash_atomic_LoadUint32(void)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-// Original name: sync/atomic.LoadUint64
 
-void sync_fwdslash_atomic_LoadUint64(void)
-
-{
-  return;
-}
-
-
-
-// Original name: sync/atomic.LoadUintptr
-
-void sync_fwdslash_atomic_LoadUintptr(void)
+void sync_atomic_LoadUint64(void)
 
 {
   return;
@@ -4096,9 +4070,7 @@ void sync_fwdslash_atomic_LoadUintptr(void)
 
 
 
-// Original name: sync/atomic.LoadPointer
-
-void sync_fwdslash_atomic_LoadPointer(void)
+void sync_atomic_LoadUintptr(void)
 
 {
   return;
@@ -4106,9 +4078,15 @@ void sync_fwdslash_atomic_LoadPointer(void)
 
 
 
-// Original name: sync/atomic.StoreUint32
+void sync_atomic_LoadPointer(void)
 
-void sync_fwdslash_atomic_StoreUint32(void)
+{
+  return;
+}
+
+
+
+void sync_atomic_StoreUint32(void)
 
 {
   undefined4 *in_stack_00000004;
@@ -4120,9 +4098,7 @@ void sync_fwdslash_atomic_StoreUint32(void)
 
 
 
-// Original name: sync/atomic.StoreUintptr
-
-void sync_fwdslash_atomic_StoreUintptr(void)
+void sync_atomic_StoreUintptr(void)
 
 {
   undefined4 *in_stack_00000004;
@@ -4134,9 +4110,7 @@ void sync_fwdslash_atomic_StoreUintptr(void)
 
 
 
-// Original name: type..hash.sync/atomic.Value
-
-void type__hash_sync_fwdslash_atomic_Value(sync_fwdslash_atomic_Value *p,uintptr h,uintptr _r2)
+void type__hash_sync_atomic_Value(sync_atomic_Value *p,uintptr h,uintptr _r2)
 
 {
   uint *puVar1;
@@ -4153,16 +4127,13 @@ void type__hash_sync_fwdslash_atomic_Value(sync_fwdslash_atomic_Value *p,uintptr
     return;
   }
   runtime_morestack_noctxt();
-  type__hash_sync_fwdslash_atomic_Value(p,h,_r2);
+  type__hash_sync_atomic_Value(p,h,_r2);
   return;
 }
 
 
 
-// Original name: type..eq.sync/atomic.Value
-
-void type__eq_sync_fwdslash_atomic_Value
-               (sync_fwdslash_atomic_Value *p,sync_fwdslash_atomic_Value *q,bool _r2)
+void type__eq_sync_atomic_Value(sync_atomic_Value *p,sync_atomic_Value *q,bool _r2)
 
 {
   uint *puVar1;
@@ -4174,7 +4145,7 @@ void type__eq_sync_fwdslash_atomic_Value
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    type__eq_sync_fwdslash_atomic_Value(p,q,_r2);
+    type__eq_sync_atomic_Value(p,q,_r2);
     return;
   }
   t = (p->v)._type;
@@ -4186,9 +4157,7 @@ void type__eq_sync_fwdslash_atomic_Value
 
 
 
-// Original name: runtime/internal/sys.Ctz64
-
-void runtime_fwdslash_internal_fwdslash_sys_Ctz64(void)
+void runtime_internal_sys_Ctz64(void)
 
 {
   int iVar1;
@@ -4216,9 +4185,7 @@ void runtime_fwdslash_internal_fwdslash_sys_Ctz64(void)
 
 
 
-// Original name: runtime/internal/atomic.Load
-
-void runtime_fwdslash_internal_fwdslash_atomic_Load(uint32 *ptr,uint32 _r1)
+void runtime_internal_atomic_Load(uint32 *ptr,uint32 _r1)
 
 {
   return;
@@ -4226,9 +4193,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_Load(uint32 *ptr,uint32 _r1)
 
 
 
-// Original name: runtime/internal/atomic.Loadp
-
-void runtime_fwdslash_internal_fwdslash_atomic_Loadp(void *ptr,void *_r1)
+void runtime_internal_atomic_Loadp(void *ptr,void *_r1)
 
 {
   return;
@@ -4236,39 +4201,33 @@ void runtime_fwdslash_internal_fwdslash_atomic_Loadp(void *ptr,void *_r1)
 
 
 
-// Original name: runtime/internal/atomic.Xadd64
-
-void runtime_fwdslash_internal_fwdslash_atomic_Xadd64(uint64 *ptr,int64 delta,uint64 _r2)
+void runtime_internal_atomic_Xadd64(uint64 *ptr,int64 delta,uint64 _r2)
 
 {
   char local_c;
   
   do {
-    runtime_fwdslash_internal_fwdslash_atomic_Cas64();
+    runtime_internal_atomic_Cas64();
   } while (local_c == '\0');
   return;
 }
 
 
 
-// Original name: runtime/internal/atomic.Xchg64
-
-void runtime_fwdslash_internal_fwdslash_atomic_Xchg64(uint64 *ptr,uint64 new,uint64 _r2)
+void runtime_internal_atomic_Xchg64(uint64 *ptr,uint64 new,uint64 _r2)
 
 {
   char local_c;
   
   do {
-    runtime_fwdslash_internal_fwdslash_atomic_Cas64();
+    runtime_internal_atomic_Cas64();
   } while (local_c == '\0');
   return;
 }
 
 
 
-// Original name: runtime/internal/atomic.Cas
-
-void runtime_fwdslash_internal_fwdslash_atomic_Cas(void)
+void runtime_internal_atomic_Cas(void)
 
 {
   int *in_stack_00000004;
@@ -4284,9 +4243,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_Cas(void)
 
 
 
-// Original name: runtime/internal/atomic.Casuintptr
-
-void runtime_fwdslash_internal_fwdslash_atomic_Casuintptr(void)
+void runtime_internal_atomic_Casuintptr(void)
 
 {
   int *in_stack_00000004;
@@ -4302,9 +4259,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_Casuintptr(void)
 
 
 
-// Original name: runtime/internal/atomic.Loaduintptr
-
-void runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr(uint32 *ptr,uint32 _r1)
+void runtime_internal_atomic_Loaduintptr(uint32 *ptr,uint32 _r1)
 
 {
   return;
@@ -4312,9 +4267,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr(uint32 *ptr,uint32 _r
 
 
 
-// Original name: runtime/internal/atomic.Loaduint
-
-void runtime_fwdslash_internal_fwdslash_atomic_Loaduint(uint32 *ptr,uint32 _r1)
+void runtime_internal_atomic_Loaduint(uint32 *ptr,uint32 _r1)
 
 {
   return;
@@ -4322,9 +4275,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_Loaduint(uint32 *ptr,uint32 _r1)
 
 
 
-// Original name: runtime/internal/atomic.Storeuintptr
-
-void runtime_fwdslash_internal_fwdslash_atomic_Storeuintptr(void)
+void runtime_internal_atomic_Storeuintptr(void)
 
 {
   undefined4 *in_stack_00000004;
@@ -4336,9 +4287,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_Storeuintptr(void)
 
 
 
-// Original name: runtime/internal/atomic.Xadduintptr
-
-void runtime_fwdslash_internal_fwdslash_atomic_Xadduintptr(void)
+void runtime_internal_atomic_Xadduintptr(void)
 
 {
   int *in_stack_00000004;
@@ -4352,9 +4301,8 @@ void runtime_fwdslash_internal_fwdslash_atomic_Xadduintptr(void)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-// Original name: runtime/internal/atomic.Loadint64
 
-void runtime_fwdslash_internal_fwdslash_atomic_Loadint64(void)
+void runtime_internal_atomic_Loadint64(void)
 
 {
   return;
@@ -4362,15 +4310,13 @@ void runtime_fwdslash_internal_fwdslash_atomic_Loadint64(void)
 
 
 
-// Original name: runtime/internal/atomic.Xaddint64
-
-void runtime_fwdslash_internal_fwdslash_atomic_Xaddint64(uint64 *ptr,int64 delta,uint64 _r2)
+void runtime_internal_atomic_Xaddint64(uint64 *ptr,int64 delta,uint64 _r2)
 
 {
   char cStack12;
   
   do {
-    runtime_fwdslash_internal_fwdslash_atomic_Cas64();
+    runtime_internal_atomic_Cas64();
   } while (cStack12 == '\0');
   return;
 }
@@ -4378,9 +4324,8 @@ void runtime_fwdslash_internal_fwdslash_atomic_Xaddint64(uint64 *ptr,int64 delta
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-// Original name: runtime/internal/atomic.Cas64
 
-void runtime_fwdslash_internal_fwdslash_atomic_Cas64(void)
+void runtime_internal_atomic_Cas64(void)
 
 {
   longlong *in_stack_00000004;
@@ -4399,9 +4344,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_Cas64(void)
 
 
 
-// Original name: runtime/internal/atomic.Casp1
-
-void runtime_fwdslash_internal_fwdslash_atomic_Casp1(void)
+void runtime_internal_atomic_Casp1(void)
 
 {
   int *in_stack_00000004;
@@ -4417,9 +4360,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_Casp1(void)
 
 
 
-// Original name: runtime/internal/atomic.Xadd
-
-void runtime_fwdslash_internal_fwdslash_atomic_Xadd(void)
+void runtime_internal_atomic_Xadd(void)
 
 {
   int *in_stack_00000004;
@@ -4432,9 +4373,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_Xadd(void)
 
 
 
-// Original name: runtime/internal/atomic.Xchg
-
-void runtime_fwdslash_internal_fwdslash_atomic_Xchg(void)
+void runtime_internal_atomic_Xchg(void)
 
 {
   undefined4 *in_stack_00000004;
@@ -4446,9 +4385,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_Xchg(void)
 
 
 
-// Original name: runtime/internal/atomic.Xchguintptr
-
-void runtime_fwdslash_internal_fwdslash_atomic_Xchguintptr(void)
+void runtime_internal_atomic_Xchguintptr(void)
 
 {
   undefined4 *in_stack_00000004;
@@ -4460,9 +4397,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_Xchguintptr(void)
 
 
 
-// Original name: runtime/internal/atomic.StorepNoWB
-
-void runtime_fwdslash_internal_fwdslash_atomic_StorepNoWB(void)
+void runtime_internal_atomic_StorepNoWB(void)
 
 {
   undefined4 *in_stack_00000004;
@@ -4474,9 +4409,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_StorepNoWB(void)
 
 
 
-// Original name: runtime/internal/atomic.Store
-
-void runtime_fwdslash_internal_fwdslash_atomic_Store(void)
+void runtime_internal_atomic_Store(void)
 
 {
   undefined4 *in_stack_00000004;
@@ -4489,9 +4422,8 @@ void runtime_fwdslash_internal_fwdslash_atomic_Store(void)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-// Original name: runtime/internal/atomic.Load64
 
-void runtime_fwdslash_internal_fwdslash_atomic_Load64(void)
+void runtime_internal_atomic_Load64(void)
 
 {
   return;
@@ -4500,9 +4432,8 @@ void runtime_fwdslash_internal_fwdslash_atomic_Load64(void)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-// Original name: runtime/internal/atomic.Store64
 
-void runtime_fwdslash_internal_fwdslash_atomic_Store64(void)
+void runtime_internal_atomic_Store64(void)
 
 {
   undefined8 *in_stack_00000004;
@@ -4518,9 +4449,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_Store64(void)
 
 
 
-// Original name: runtime/internal/atomic.Or8
-
-void runtime_fwdslash_internal_fwdslash_atomic_Or8(void)
+void runtime_internal_atomic_Or8(void)
 
 {
   byte *in_stack_00000004;
@@ -4533,9 +4462,7 @@ void runtime_fwdslash_internal_fwdslash_atomic_Or8(void)
 
 
 
-// Original name: runtime/internal/atomic.And8
-
-void runtime_fwdslash_internal_fwdslash_atomic_And8(void)
+void runtime_internal_atomic_And8(void)
 
 {
   byte *in_stack_00000004;
@@ -4820,7 +4747,7 @@ void runtime_interhash(void *p,uintptr h,uintptr _r2)
     runtime_convT2Estring
               ((runtime__type *)&DAT_080d1e80,local_8,
                (runtime_eface)CONCAT44(in_stack_ffffffe0,uVar3));
-    runtime_gopanic((interface__)CONCAT44(in_stack_ffffffe0,uVar3));
+    runtime_gopanic((interface___)CONCAT44(in_stack_ffffffe0,uVar3));
     do {
       invalidInstructionException();
     } while( true );
@@ -4874,7 +4801,7 @@ void runtime_nilinterhash(void *p,uintptr h,uintptr _r2)
     runtime_convT2Estring
               ((runtime__type *)&DAT_080d1e80,local_8,
                (runtime_eface)CONCAT44(in_stack_ffffffe0,uVar3));
-    runtime_gopanic((interface__)CONCAT44(in_stack_ffffffe0,uVar3));
+    runtime_gopanic((interface___)CONCAT44(in_stack_ffffffe0,uVar3));
     do {
       invalidInstructionException();
     } while( true );
@@ -5174,7 +5101,7 @@ void runtime_efaceeq(runtime__type *t,void *x,void *y,bool _r3)
     runtime_convT2Estring
               ((runtime__type *)&DAT_080d1e80,local_8,
                (runtime_eface)CONCAT44(in_stack_ffffffe0,uVar3));
-    runtime_gopanic((interface__)CONCAT44(in_stack_ffffffe0,uVar3));
+    runtime_gopanic((interface___)CONCAT44(in_stack_ffffffe0,uVar3));
     do {
       invalidInstructionException();
     } while( true );
@@ -5227,7 +5154,7 @@ void runtime_ifaceeq(runtime_itab *tab,void *x,void *y,bool _r3)
     runtime_convT2Estring
               ((runtime__type *)&DAT_080d1e80,local_8,
                (runtime_eface)CONCAT44(in_stack_ffffffe0,uVar3));
-    runtime_gopanic((interface__)CONCAT44(in_stack_ffffffe0,uVar3));
+    runtime_gopanic((interface___)CONCAT44(in_stack_ffffffe0,uVar3));
     do {
       invalidInstructionException();
     } while( true );
@@ -5288,7 +5215,7 @@ void runtime_atomicstorep(void *ptr,void *new)
 
 {
   runtime_writebarrierptr_prewrite((uintptr *)ptr,(uintptr)new);
-  runtime_fwdslash_internal_fwdslash_atomic_StorepNoWB();
+  runtime_internal_atomic_StorepNoWB();
   return;
 }
 
@@ -5298,31 +5225,27 @@ void runtime_casp(void **ptr,void *old,void *new,bool _r3)
 
 {
   runtime_writebarrierptr_prewrite((uintptr *)ptr,(uintptr)new);
-  runtime_fwdslash_internal_fwdslash_atomic_Casp1();
+  runtime_internal_atomic_Casp1();
   return;
 }
 
 
 
-// Original name: sync/atomic.StorePointer
-
-void sync_fwdslash_atomic_StorePointer(void **ptr,void *new)
+void sync_atomic_StorePointer(void **ptr,void *new)
 
 {
   runtime_writebarrierptr_prewrite((uintptr *)ptr,(uintptr)new);
-  sync_fwdslash_atomic_StoreUintptr();
+  sync_atomic_StoreUintptr();
   return;
 }
 
 
 
-// Original name: sync/atomic.CompareAndSwapPointer
-
-void sync_fwdslash_atomic_CompareAndSwapPointer(void **ptr,void *old,void *new,bool _r3)
+void sync_atomic_CompareAndSwapPointer(void **ptr,void *old,void *new,bool _r3)
 
 {
   runtime_writebarrierptr_prewrite((uintptr *)ptr,(uintptr)new);
-  sync_fwdslash_atomic_CompareAndSwapUintptr();
+  sync_atomic_CompareAndSwapUintptr();
   return;
 }
 
@@ -5449,8 +5372,8 @@ void runtime_cgocallbackg1(uintptr ctxt)
   }
   iVar2 = *(int *)(*in_GS_OFFSET + -4);
   if ((*(char *)(*(int *)(iVar2 + 0x18) + 0x1cc) != '\0') ||
-     (runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_extraMWaiters,in_stack_ffffffcc),
-     in_stack_ffffffcc != 0)) {
+     (runtime_internal_atomic_Load(&runtime_extraMWaiters,in_stack_ffffffcc), in_stack_ffffffcc != 0
+     )) {
     *(undefined *)(*(int *)(iVar2 + 0x18) + 0x1cc) = 0;
     runtime_systemstack();
   }
@@ -5918,14 +5841,11 @@ void runtime_makechan(runtime_chantype *t,int64 size,runtime_hchan *_r2)
                     ((uintptr *)((int)in_stack_ffffffe4 + 8),(int)in_stack_ffffffe4 + 0x38U);
         }
       }
+      else if (runtime_writeBarrier._0_4_ == 0) {
+        *(void **)((int)in_stack_ffffffe4 + 8) = in_stack_ffffffe4;
+      }
       else {
-        if (runtime_writeBarrier._0_4_ == 0) {
-          *(void **)((int)in_stack_ffffffe4 + 8) = in_stack_ffffffe4;
-        }
-        else {
-          runtime_writebarrierptr
-                    ((uintptr *)((int)in_stack_ffffffe4 + 8),(uintptr)in_stack_ffffffe4);
-        }
+        runtime_writebarrierptr((uintptr *)((int)in_stack_ffffffe4 + 8),(uintptr)in_stack_ffffffe4);
       }
     }
     else {
@@ -5948,7 +5868,7 @@ void runtime_makechan(runtime_chantype *t,int64 size,runtime_hchan *_r2)
     *(uint *)((int)in_stack_ffffffe4 + 4) = (uint)size;
     return;
   }
-  runtime_gopanic((interface__)0x80f1a70080d1ee0);
+  runtime_gopanic((interface___)0x80f1a70080d1ee0);
   do {
     invalidInstructionException();
   } while( true );
@@ -5998,7 +5918,7 @@ void runtime_chansend(runtime_hchan *c,void *ep,bool block,uintptr callerpc,bool
   }
   if (c == (runtime_hchan *)0x0) {
     if (block != false) {
-      runtime_gopark((func__runtime_g_unsafe_Pointer_bool *)0x0,(void *)0x0,(string)0x14080e301f,
+      runtime_gopark((func__runtime_g__unsafe_Pointer__bool *)0x0,(void *)0x0,(string)0x14080e301f,
                      0x10,2);
       runtime_throw((string)0xb080e1be2);
       do {
@@ -6026,7 +5946,7 @@ void runtime_chansend(runtime_hchan *c,void *ep,bool block,uintptr callerpc,bool
   runtime_lock(l);
   if (c->closed != 0) {
     runtime_unlock(l);
-    runtime_gopanic((interface__)0x80f1a78080d1ee0);
+    runtime_gopanic((interface___)0x80f1a78080d1ee0);
     do {
       invalidInstructionException();
     } while( true );
@@ -6100,17 +6020,15 @@ void runtime_chansend(runtime_hchan *c,void *ep,bool block,uintptr callerpc,bool
       runtime_writebarrierptr((uintptr *)dst,(uintptr)_r0);
     }
   }
+  else if (runtime_writeBarrier._0_4_ == 0) {
+    _r0->prev = src_00;
+    src_00->next = _r0;
+    (c->sendq).last = _r0;
+  }
   else {
-    if (runtime_writeBarrier._0_4_ == 0) {
-      _r0->prev = src_00;
-      src_00->next = _r0;
-      (c->sendq).last = _r0;
-    }
-    else {
-      runtime_writebarrierptr((uintptr *)&_r0->prev,(uintptr)src_00);
-      runtime_writebarrierptr((uintptr *)&src_00->next,(uintptr)_r0);
-      runtime_writebarrierptr((uintptr *)dst,(uintptr)_r0);
-    }
+    runtime_writebarrierptr((uintptr *)&_r0->prev,(uintptr)src_00);
+    runtime_writebarrierptr((uintptr *)&src_00->next,(uintptr)_r0);
+    runtime_writebarrierptr((uintptr *)dst,(uintptr)_r0);
   }
   runtime_goparkunlock(l,(string)0x9080e1665,0x16,3);
   if (_r0 != src->waiting) {
@@ -6132,7 +6050,7 @@ void runtime_chansend(runtime_hchan *c,void *ep,bool block,uintptr callerpc,bool
         invalidInstructionException();
       } while( true );
     }
-    runtime_gopanic((interface__)0x80f1aa8080d1ee0);
+    runtime_gopanic((interface___)0x80f1aa8080d1ee0);
     do {
       invalidInstructionException();
     } while( true );
@@ -6281,7 +6199,7 @@ void runtime_closechan(runtime_hchan *c)
     return;
   }
   if (c == (runtime_hchan *)0x0) {
-    runtime_gopanic((interface__)0x80f1ad8080d1ee0);
+    runtime_gopanic((interface___)0x80f1ad8080d1ee0);
     do {
       invalidInstructionException();
     } while( true );
@@ -6289,7 +6207,7 @@ void runtime_closechan(runtime_hchan *c)
   runtime_lock(&c->lock);
   if (c->closed != 0) {
     runtime_unlock(&c->lock);
-    runtime_gopanic((interface__)0x80f1ae8080d1ee0);
+    runtime_gopanic((interface___)0x80f1ae8080d1ee0);
     do {
       invalidInstructionException();
     } while( true );
@@ -6420,7 +6338,7 @@ void runtime_chanrecv(runtime_hchan *c,void *ep,bool block,bool selected,bool re
   }
   if (c == (runtime_hchan *)0x0) {
     if (block != false) {
-      runtime_gopark((func__runtime_g_unsafe_Pointer_bool *)0x0,(void *)0x0,(string)0x17080e38ae,
+      runtime_gopark((func__runtime_g__unsafe_Pointer__bool *)0x0,(void *)0x0,(string)0x17080e38ae,
                      0x10,2);
       runtime_throw((string)0xb080e1be2);
       do {
@@ -6433,11 +6351,10 @@ void runtime_chanrecv(runtime_hchan *c,void *ep,bool block,bool selected,bool re
      (((c->dataqsiz == 0 && ((c->sendq).first == (runtime_sudog *)0x0)) ||
       ((c->dataqsiz != 0 &&
        (in_stack_ffffffac = c,
-       runtime_fwdslash_internal_fwdslash_atomic_Loaduint(&c->qcount,(uint32)in_stack_ffffffb0),
+       runtime_internal_atomic_Loaduint(&c->qcount,(uint32)in_stack_ffffffb0),
        in_stack_ffffffb0 == (runtime_sudog *)0x0)))))) {
     in_stack_ffffffac = (runtime_hchan *)&c->closed;
-    runtime_fwdslash_internal_fwdslash_atomic_Load
-              ((uint32 *)in_stack_ffffffac,(uint32)in_stack_ffffffb0);
+    runtime_internal_atomic_Load((uint32 *)in_stack_ffffffac,(uint32)in_stack_ffffffb0);
     if (in_stack_ffffffb0 == (runtime_sudog *)0x0) {
       return;
     }
@@ -6534,17 +6451,15 @@ void runtime_chanrecv(runtime_hchan *c,void *ep,bool block,bool selected,bool re
       runtime_writebarrierptr((uintptr *)dst,(uintptr)_r0);
     }
   }
+  else if (runtime_writeBarrier._0_4_ == 0) {
+    _r0->prev = src_00;
+    src_00->next = _r0;
+    (c->recvq).last = _r0;
+  }
   else {
-    if (runtime_writeBarrier._0_4_ == 0) {
-      _r0->prev = src_00;
-      src_00->next = _r0;
-      (c->recvq).last = _r0;
-    }
-    else {
-      runtime_writebarrierptr((uintptr *)&_r0->prev,(uintptr)src_00);
-      runtime_writebarrierptr((uintptr *)&src_00->next,(uintptr)_r0);
-      runtime_writebarrierptr((uintptr *)dst,(uintptr)_r0);
-    }
+    runtime_writebarrierptr((uintptr *)&_r0->prev,(uintptr)src_00);
+    runtime_writebarrierptr((uintptr *)&src_00->next,(uintptr)_r0);
+    runtime_writebarrierptr((uintptr *)dst,(uintptr)_r0);
   }
   runtime_goparkunlock(l,(string)0xc080e1d83,0x17,3);
   if (_r0 != src->waiting) {
@@ -6703,21 +6618,18 @@ void runtime___waitq__dequeue(runtime_waitq *q,runtime_sudog *_r0)
         runtime_writebarrierptr((uintptr *)&q->last,0);
       }
     }
+    else if (runtime_writeBarrier._0_4_ == 0) {
+      src->prev = (runtime_sudog *)0x0;
+      q->first = src;
+      prVar2->next = (runtime_sudog *)0x0;
+    }
     else {
-      if (runtime_writeBarrier._0_4_ == 0) {
-        src->prev = (runtime_sudog *)0x0;
-        q->first = src;
-        prVar2->next = (runtime_sudog *)0x0;
-      }
-      else {
-        runtime_writebarrierptr((uintptr *)&src->prev,0);
-        runtime_writebarrierptr((uintptr *)q,(uintptr)src);
-        runtime_writebarrierptr((uintptr *)&prVar2->next,0);
-      }
+      runtime_writebarrierptr((uintptr *)&src->prev,0);
+      runtime_writebarrierptr((uintptr *)q,(uintptr)src);
+      runtime_writebarrierptr((uintptr *)&prVar2->next,0);
     }
   } while ((prVar2->selectdone != (uint32 *)0x0) &&
-          ((*prVar2->selectdone != 0 ||
-           (runtime_fwdslash_internal_fwdslash_atomic_Cas(), local_10 == '\0'))));
+          ((*prVar2->selectdone != 0 || (runtime_internal_atomic_Cas(), local_10 == '\0'))));
   return;
 }
 
@@ -6729,7 +6641,7 @@ void runtime___cpuProfile__add(runtime_cpuProfile *p,runtime_g *gp,__uintptr stk
   uint *puVar1;
   int iVar2;
   int *in_GS_OFFSET;
-  struct_runtime_signalLockuint32_runtime_hzint32_ *psVar3;
+  struct___runtime_signalLock_uint32__runtime_hz_int32__ *psVar3;
   undefined4 uVar4;
   undefined4 in_stack_ffffffdc;
   undefined4 local_8;
@@ -6746,7 +6658,7 @@ void runtime___cpuProfile__add(runtime_cpuProfile *p,runtime_g *gp,__uintptr stk
   while( true ) {
     psVar3 = &runtime_prof;
     uVar4 = 0;
-    runtime_fwdslash_internal_fwdslash_atomic_Cas();
+    runtime_internal_atomic_Cas();
     if ((char)in_stack_ffffffdc != '\0') break;
     runtime_osyield();
   }
@@ -6755,7 +6667,7 @@ void runtime___cpuProfile__add(runtime_cpuProfile *p,runtime_g *gp,__uintptr stk
        (iVar2 = *(int *)((int)&p->lostExtra + 4),
        iVar2 != 0 || iVar2 == 0 && *(int *)&p->lostExtra != 0)) {
       runtime___cpuProfile__addExtra(p);
-      psVar3 = (struct_runtime_signalLockuint32_runtime_hzint32_ *)p;
+      psVar3 = (struct___runtime_signalLock_uint32__runtime_hz_int32__ *)p;
     }
     local_8 = 1;
     local_4 = 0;
@@ -6764,7 +6676,7 @@ void runtime___cpuProfile__add(runtime_cpuProfile *p,runtime_g *gp,__uintptr stk
               (runtime_cpuprof.log,&gp->labels,CONCAT44(uVar4,psVar3),
                (__uint64)CONCAT48(1,CONCAT44(1,&local_8)),stk);
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Store();
+  runtime_internal_atomic_Store();
   return;
 }
 
@@ -6780,7 +6692,7 @@ void runtime___cpuProfile__addNonGo(runtime_cpuProfile *p,__uintptr stk)
   char local_4;
   
   while( true ) {
-    runtime_fwdslash_internal_fwdslash_atomic_Cas();
+    runtime_internal_atomic_Cas();
     iVar2 = runtime_cpuprof.numExtra;
     if (local_4 != '\0') break;
     runtime_osyield();
@@ -6814,7 +6726,7 @@ void runtime___cpuProfile__addNonGo(runtime_cpuProfile *p,__uintptr stk)
     runtime_cpuprof.lostExtra._0_4_ = (uint)runtime_cpuprof.lostExtra + 1;
     runtime_cpuprof.lostExtra._4_4_ = runtime_cpuprof.lostExtra._4_4_ + (uint)bVar4;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Store();
+  runtime_internal_atomic_Store();
   return;
 }
 
@@ -7097,7 +7009,7 @@ void runtime_plainError_Error(runtime_plainError e,string _r0)
 
 
 
-void runtime_typestring(interface__ x,string _r1)
+void runtime_typestring(interface___ x,string _r1)
 
 {
   uint *puVar1;
@@ -7118,7 +7030,7 @@ void runtime_typestring(interface__ x,string _r1)
 
 
 
-void runtime_printany(interface__ i)
+void runtime_printany(interface___ i)
 
 {
   uint *puVar1;
@@ -7160,13 +7072,13 @@ void runtime_printany(interface__ i)
     uVar10 = (i._type)->hash;
     prVar12 = i._type;
     pvVar13 = i.data;
-    runtime_assertE2I2((runtime_interfacetype *)&DAT_080d1040,(runtime_eface)i,
+    runtime_assertE2I2((runtime_interfacetype *)&DAT_080d1040,i,
                        (runtime_iface)CONCAT44(in_stack_ffffff94,in_stack_ffffff90),
                        (bool)in_stack_ffffff98);
     if (in_stack_ffffff98 == '\0') {
       prVar12 = i._type;
       pvVar13 = i.data;
-      runtime_assertE2I2((runtime_interfacetype *)&DAT_080d0e60,(runtime_eface)i,
+      runtime_assertE2I2((runtime_interfacetype *)&DAT_080d0e60,i,
                          (runtime_iface)CONCAT44(in_stack_ffffff94,in_stack_ffffff90),false);
       if (in_stack_ffffff98 == '\0') {
         if (uVar10 < 0xb31a546e) {
@@ -7204,140 +7116,132 @@ void runtime_printany(interface__ i)
                 fVar3 = *i.data;
                 runtime_printlock();
                 runtime_printcomplex
-                          ((complex128)
-                           CONCAT412((int)((ulonglong)(double)fVar2 >> 0x20),
+                          (CONCAT412((int)((ulonglong)(double)fVar2 >> 0x20),
                                      CONCAT48(SUB84((double)fVar2,0),(double)fVar3)));
                 runtime_printunlock();
                 return;
               }
             }
           }
-          else {
-            if (uVar10 < 0x963f9c00) {
-              if ((uVar10 == 0x86318d2e) && (i._type == (runtime__type *)&DAT_080cf2e0)) {
+          else if (uVar10 < 0x963f9c00) {
+            if ((uVar10 == 0x86318d2e) && (i._type == (runtime__type *)&DAT_080cf2e0)) {
                     // WARNING: Load size is inaccurate
-                v_02 = *i.data;
-                runtime_printlock();
-                runtime_printuint(v_02);
-                runtime_printunlock();
-                return;
-              }
-              if ((uVar10 == 0x963f9bff) && (i._type == (runtime__type *)&DAT_080cec20)) {
-                    // WARNING: Load size is inaccurate
-                v_01 = *i.data;
-                runtime_printlock();
-                runtime_printint(v_01);
-                runtime_printunlock();
-                return;
-              }
+              v_02 = *i.data;
+              runtime_printlock();
+              runtime_printuint(v_02);
+              runtime_printunlock();
+              return;
             }
-            else {
-              if ((uVar10 == 0xb0c23ed3) && (i._type == (runtime__type *)&DAT_080ce820)) {
+            if ((uVar10 == 0x963f9bff) && (i._type == (runtime__type *)&DAT_080cec20)) {
                     // WARNING: Load size is inaccurate
-                fVar2 = *i.data;
-                runtime_printlock();
-                runtime_printfloat((float64)(double)fVar2);
-                runtime_printunlock();
-                return;
-              }
-              if ((uVar10 == 0xb31a546d) && (i._type == (runtime__type *)&DAT_080ce7a0)) {
+              v_01 = *i.data;
+              runtime_printlock();
+              runtime_printint(v_01);
+              runtime_printunlock();
+              return;
+            }
+          }
+          else {
+            if ((uVar10 == 0xb0c23ed3) && (i._type == (runtime__type *)&DAT_080ce820)) {
                     // WARNING: Load size is inaccurate
-                uVar4 = *i.data;
-                uVar5 = *(undefined8 *)((int)i.data + 8);
-                runtime_printlock();
-                runtime_printcomplex
-                          ((complex128)
-                           CONCAT412((int)((ulonglong)uVar5 >> 0x20),CONCAT48((int)uVar5,uVar4)));
-                runtime_printunlock();
-                return;
-              }
+              fVar2 = *i.data;
+              runtime_printlock();
+              runtime_printfloat((double)fVar2);
+              runtime_printunlock();
+              return;
+            }
+            if ((uVar10 == 0xb31a546d) && (i._type == (runtime__type *)&DAT_080ce7a0)) {
+                    // WARNING: Load size is inaccurate
+              uVar4 = *i.data;
+              uVar5 = *(undefined8 *)((int)i.data + 8);
+              runtime_printlock();
+              runtime_printcomplex
+                        (CONCAT412((int)((ulonglong)uVar5 >> 0x20),CONCAT48((int)uVar5,uVar4)));
+              runtime_printunlock();
+              return;
             }
           }
         }
-        else {
-          if (uVar10 < 0xd04ae83e) {
-            if (uVar10 < 0xbd4ad793) {
-              if ((uVar10 == 0xbbad4102) && (i._type == (runtime__type *)&DAT_080cebe0)) {
+        else if (uVar10 < 0xd04ae83e) {
+          if (uVar10 < 0xbd4ad793) {
+            if ((uVar10 == 0xbbad4102) && (i._type == (runtime__type *)&DAT_080cebe0)) {
                     // WARNING: Load size is inaccurate
-                iVar11 = *i.data;
-                runtime_printlock();
-                runtime_printint((longlong)iVar11);
-                runtime_printunlock();
-                return;
-              }
-              if ((uVar10 == 0xbd4ad792) && (i._type == (runtime__type *)&DAT_080cf360)) {
-                    // WARNING: Load size is inaccurate
-                uVar10 = *i.data;
-                runtime_printlock();
-                runtime_printint((ulonglong)uVar10);
-                runtime_printunlock();
-                return;
-              }
+              iVar11 = *i.data;
+              runtime_printlock();
+              runtime_printint((longlong)iVar11);
+              runtime_printunlock();
+              return;
             }
-            else {
-              if ((uVar10 == 0xcc06c027) && (i._type == (runtime__type *)&DAT_080cec60)) {
+            if ((uVar10 == 0xbd4ad792) && (i._type == (runtime__type *)&DAT_080cf360)) {
                     // WARNING: Load size is inaccurate
-                cVar7 = *i.data;
-                runtime_printlock();
-                runtime_printint((longlong)(int)cVar7);
-                runtime_printunlock();
-                return;
-              }
-              if ((uVar10 == 0xd04ae83d) && (i._type == (runtime__type *)&DAT_080cf2a0)) {
-                    // WARNING: Load size is inaccurate
-                uVar10 = *i.data;
-                runtime_printlock();
-                runtime_printint((ulonglong)uVar10);
-                runtime_printunlock();
-                return;
-              }
+              uVar10 = *i.data;
+              runtime_printlock();
+              runtime_printint((ulonglong)uVar10);
+              runtime_printunlock();
+              return;
             }
           }
           else {
-            if (uVar10 < 0xe0ff5cb5) {
-              if ((uVar10 == 0xd5b87712) && (i._type == (runtime__type *)&DAT_080cf220)) {
+            if ((uVar10 == 0xcc06c027) && (i._type == (runtime__type *)&DAT_080cec60)) {
                     // WARNING: Load size is inaccurate
-                uVar10 = *i.data;
-                runtime_printlock();
-                runtime_printint((ulonglong)uVar10);
-                runtime_printunlock();
-                return;
-              }
-              if ((uVar10 == 0xe0ff5cb4) && (i._type == (runtime__type *)&DAT_080cf1a0)) {
-                    // WARNING: Load size is inaccurate
-                s = *i.data;
-                runtime_printlock();
-                runtime_printstring(s);
-                runtime_printunlock();
-                return;
-              }
+              cVar7 = *i.data;
+              runtime_printlock();
+              runtime_printint((longlong)(int)cVar7);
+              runtime_printunlock();
+              return;
             }
-            else {
-              if ((uVar10 == 0xecd580ce) && (i._type == (runtime__type *)&DAT_080ceba0)) {
+            if ((uVar10 == 0xd04ae83d) && (i._type == (runtime__type *)&DAT_080cf2a0)) {
                     // WARNING: Load size is inaccurate
-                sVar8 = *i.data;
-                runtime_printlock();
-                runtime_printint((longlong)(int)sVar8);
-                runtime_printunlock();
-                return;
-              }
-              if ((uVar10 == 0xeff20ea0) && (i._type == (runtime__type *)&DAT_080cf260)) {
-                    // WARNING: Load size is inaccurate
-                uVar9 = *i.data;
-                runtime_printlock();
-                runtime_printint((ulonglong)uVar9);
-                runtime_printunlock();
-                return;
-              }
-              if ((uVar10 == 0xf75371fa) && (i._type == (runtime__type *)&DAT_080ceb60)) {
-                    // WARNING: Load size is inaccurate
-                iVar11 = *i.data;
-                runtime_printlock();
-                runtime_printint((longlong)iVar11);
-                runtime_printunlock();
-                return;
-              }
+              uVar10 = *i.data;
+              runtime_printlock();
+              runtime_printint((ulonglong)uVar10);
+              runtime_printunlock();
+              return;
             }
+          }
+        }
+        else if (uVar10 < 0xe0ff5cb5) {
+          if ((uVar10 == 0xd5b87712) && (i._type == (runtime__type *)&DAT_080cf220)) {
+                    // WARNING: Load size is inaccurate
+            uVar10 = *i.data;
+            runtime_printlock();
+            runtime_printint((ulonglong)uVar10);
+            runtime_printunlock();
+            return;
+          }
+          if ((uVar10 == 0xe0ff5cb4) && (i._type == (runtime__type *)&DAT_080cf1a0)) {
+                    // WARNING: Load size is inaccurate
+            s = *i.data;
+            runtime_printlock();
+            runtime_printstring(s);
+            runtime_printunlock();
+            return;
+          }
+        }
+        else {
+          if ((uVar10 == 0xecd580ce) && (i._type == (runtime__type *)&DAT_080ceba0)) {
+                    // WARNING: Load size is inaccurate
+            sVar8 = *i.data;
+            runtime_printlock();
+            runtime_printint((longlong)(int)sVar8);
+            runtime_printunlock();
+            return;
+          }
+          if ((uVar10 == 0xeff20ea0) && (i._type == (runtime__type *)&DAT_080cf260)) {
+                    // WARNING: Load size is inaccurate
+            uVar9 = *i.data;
+            runtime_printlock();
+            runtime_printint((ulonglong)uVar9);
+            runtime_printunlock();
+            return;
+          }
+          if ((uVar10 == 0xf75371fa) && (i._type == (runtime__type *)&DAT_080ceb60)) {
+                    // WARNING: Load size is inaccurate
+            iVar11 = *i.data;
+            runtime_printlock();
+            runtime_printint((longlong)iVar11);
+            runtime_printunlock();
+            return;
           }
         }
         runtime_typestring(i,(string)CONCAT44(in_stack_ffffff90,pvVar13));
@@ -7345,7 +7249,7 @@ void runtime_printany(interface__ i)
         runtime_printstring((string)0x1080e0d85);
         runtime_printstring((string)CONCAT44(in_stack_ffffff90,pvVar13));
         runtime_printstring((string)0x2080e0daf);
-        runtime_printeface((runtime_eface)i);
+        runtime_printeface(i);
         runtime_printunlock();
       }
       else {
@@ -7372,8 +7276,8 @@ void runtime_panicwrap(void)
 {
   int **ppiVar1;
   runtime_Frames *prVar2;
-  uint uVar3;
-  uint uVar4;
+  undefined *puVar3;
+  undefined *puVar4;
   uint uVar5;
   runtime_Frames *prVar6;
   int *in_GS_OFFSET;
@@ -7400,10 +7304,10 @@ void runtime_panicwrap(void)
   runtime_Frames *local_94;
   undefined local_90 [16];
   int local_80;
-  uint local_7c;
+  undefined *local_7c;
   undefined local_48 [8];
   int local_40;
-  uint local_3c;
+  undefined *local_3c;
   int local_30;
   undefined4 local_2c;
   int local_20;
@@ -7448,7 +7352,7 @@ void runtime_panicwrap(void)
              (bool)in_stack_ffffff08);
   FUN_08090250();
   FUN_08090250();
-  uVar3 = local_7c;
+  puVar3 = local_7c;
   local_9c = local_80;
   uVar11 = (undefined3)((uint)in_stack_fffffef8 >> 8);
   strings_IndexByte();
@@ -7462,21 +7366,21 @@ void runtime_panicwrap(void)
       invalidInstructionException();
     } while( true );
   }
-  local_3c = (int)&_r1[-1].stackExpander.skip + 3;
-  if (local_3c <= uVar3) {
-    uVar4 = (int)&(_r1->callers).array + 2;
-    if ((int)uVar4 < (int)uVar3) {
-      if ((uVar4 < local_3c) || (uVar3 < uVar4)) {
+  local_3c = (undefined *)((int)&_r1[-1].stackExpander.skip + 3);
+  if (local_3c <= puVar3) {
+    puVar4 = (undefined *)((int)&(_r1->callers).array + 2);
+    if ((int)puVar4 < (int)puVar3) {
+      if ((puVar4 < local_3c) || (puVar3 < puVar4)) {
         runtime_panicslice();
         do {
           invalidInstructionException();
         } while( true );
       }
-      uVar5 = (int)-(uVar4 - local_3c) >> 0x1f & local_3c;
-      if (((uVar4 - local_3c == 3) && (*(short *)(uVar5 + local_9c) == 0x282e)) &&
+      uVar5 = -((int)puVar4 - (int)local_3c) >> 0x1f & (uint)local_3c;
+      if ((((int)puVar4 - (int)local_3c == 3) && (*(short *)(uVar5 + local_9c) == 0x282e)) &&
          (*(char *)(local_9c + 2 + uVar5) == '*')) {
-        prVar6 = (runtime_Frames *)(uVar3 - uVar4);
-        iVar8 = local_9c + (uVar4 & -(int)prVar6 >> 0x1f);
+        prVar6 = (runtime_Frames *)(puVar3 + -(int)puVar4);
+        iVar8 = local_9c + ((uint)puVar4 & -(int)prVar6 >> 0x1f);
         uVar10 = CONCAT31(uVar11,0x29);
         prVar9 = prVar6;
         local_a0 = iVar8;
@@ -7517,7 +7421,7 @@ void runtime_panicwrap(void)
               runtime_convT2Estring
                         ((runtime__type *)&DAT_080d1ee0,local_90,
                          (runtime_eface)CONCAT44(uVar12,uVar10));
-              runtime_gopanic((interface__)CONCAT44(uVar12,uVar10));
+              runtime_gopanic((interface___)CONCAT44(uVar12,uVar10));
               do {
                 invalidInstructionException();
               } while( true );
@@ -7718,17 +7622,17 @@ void runtime___hmap__newoverflow
 {
   uint *puVar1;
   int iVar2;
-  uintptr *dst;
+  uint8 *dst;
   runtime_mapextra *prVar3;
   byte bVar4;
   ___runtime_bmap *src;
-  runtime_bmap *src_00;
+  runtime_bmap **src_00;
   int iVar5;
   uint uVar6;
   int *in_GS_OFFSET;
   ___runtime_bmap *in_stack_ffffffc8;
   ___runtime_bmap *p_Var7;
-  runtime_bmap *in_stack_ffffffd8;
+  runtime_bmap **in_stack_ffffffd8;
   int in_stack_ffffffdc;
   int in_stack_ffffffe0;
   
@@ -7743,9 +7647,9 @@ void runtime___hmap__newoverflow
   if (prVar3 != (runtime_mapextra *)0x0) {
     src = (___runtime_bmap *)prVar3->nextOverflow;
     if (src != (___runtime_bmap *)0x0) {
-      dst = (uintptr *)((int)&src->array + (t->bucketsize - 4));
+      dst = (uint8 *)((int)&src->array + (t->bucketsize - 4));
       p_Var7 = (___runtime_bmap *)((int)&src->array + (uint)t->bucketsize);
-      if (*dst == 0) {
+      if (*(uintptr *)dst == 0) {
         if (runtime_writeBarrier._0_4_ == 0) {
           prVar3->nextOverflow = (runtime_bmap *)p_Var7;
           p_Var7 = in_stack_ffffffc8;
@@ -7756,11 +7660,11 @@ void runtime___hmap__newoverflow
       }
       else {
         if (runtime_writeBarrier._0_4_ == 0) {
-          *dst = 0;
+          *(uintptr *)dst = 0;
         }
         else {
           in_stack_ffffffc8 = (___runtime_bmap *)0x0;
-          runtime_writebarrierptr(dst,0);
+          runtime_writebarrierptr((uintptr *)dst,0);
         }
         if (runtime_writeBarrier._0_4_ == 0) {
           h->extra->nextOverflow = (runtime_bmap *)0x0;
@@ -7812,7 +7716,7 @@ LAB_0804e53a:
       }
     }
     p_Var7 = h->extra->overflow[0];
-    src_00 = (runtime_bmap *)p_Var7->array;
+    src_00 = p_Var7->array;
     iVar5 = p_Var7->len;
     iVar2 = iVar5 + 1;
     if (p_Var7->cap < iVar2) {
@@ -7823,7 +7727,7 @@ LAB_0804e53a:
                         CONCAT48(in_stack_ffffffe0,CONCAT44(in_stack_ffffffdc,in_stack_ffffffd8)));
       p_Var7->cap = in_stack_ffffffe0;
       if (runtime_writeBarrier._0_4_ == 0) {
-        p_Var7->array = (runtime_bmap **)src_00;
+        p_Var7->array = src_00;
       }
       else {
         runtime_writebarrierptr((uintptr *)p_Var7,(uintptr)src_00);
@@ -7831,10 +7735,10 @@ LAB_0804e53a:
     }
     p_Var7->len = iVar5 + 1;
     if (runtime_writeBarrier._0_4_ == 0) {
-      *(___runtime_bmap **)((int)src_00->tophash + iVar5 * 4) = src;
+      src_00[iVar5] = (runtime_bmap *)src;
     }
     else {
-      runtime_writebarrierptr((uintptr *)((int)src_00->tophash + iVar5 * 4),(uintptr)src);
+      runtime_writebarrierptr((uintptr *)(src_00 + iVar5),(uintptr)src);
     }
   }
   if (runtime_writeBarrier._0_4_ == 0) {
@@ -8214,16 +8118,16 @@ void runtime_mapassign(runtime_maptype *t,runtime_hmap *h,void *key,void *_r3)
   uint uVar8;
   runtime_maptype *prVar9;
   byte bVar10;
-  runtime_bmap *prVar11;
+  uint8 *puVar11;
   runtime_bmap *b;
   runtime_maptype *prVar12;
   runtime_maptype *dst;
-  runtime_bmap *dst_00;
+  uint8 *dst_00;
   int *in_GS_OFFSET;
   bool bVar13;
   runtime_maptype *prVar14;
   runtime_maptype *in_stack_ffffffb0;
-  runtime_bmap *in_stack_ffffffb4;
+  uint8 *in_stack_ffffffb4;
   uint local_44;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
@@ -8234,7 +8138,7 @@ void runtime_mapassign(runtime_maptype *t,runtime_hmap *h,void *key,void *_r3)
     return;
   }
   if (h == (runtime_hmap *)0x0) {
-    runtime_gopanic((interface__)0x80f1af0080d1ee0);
+    runtime_gopanic((interface___)0x80f1af0080d1ee0);
     do {
       invalidInstructionException();
     } while( true );
@@ -8275,9 +8179,9 @@ void runtime_mapassign(runtime_maptype *t,runtime_hmap *h,void *key,void *_r3)
     if ((byte)((uint)in_stack_ffffffb0 >> 0x18) < 4) {
       uVar8 = uVar8 + 4;
     }
-    prVar11 = (runtime_bmap *)0x0;
+    puVar11 = (uint8 *)0x0;
     dst = (runtime_maptype *)0x0;
-    dst_00 = (runtime_bmap *)0x0;
+    dst_00 = (uint8 *)0x0;
     uVar7 = uVar8;
     b = (runtime_bmap *)((int)prVar12 * (uint)t->bucketsize + (int)h->buckets);
     while( true ) {
@@ -8298,12 +8202,10 @@ void runtime_mapassign(runtime_maptype *t,runtime_hmap *h,void *key,void *_r3)
             goto LAB_0804f2ef;
           }
         }
-        else {
-          if ((b->tophash[local_44] == 0) && (prVar11 == (runtime_bmap *)0x0)) {
-            dst = (runtime_maptype *)(b[1].tophash + local_44 * t->keysize);
-            dst_00 = (runtime_bmap *)(b[t->keysize + 1].tophash + t->valuesize * local_44);
-            prVar11 = (runtime_bmap *)(b->tophash + local_44);
-          }
+        else if ((b->tophash[local_44] == 0) && (puVar11 == (uint8 *)0x0)) {
+          dst = (runtime_maptype *)(b[1].tophash + local_44 * t->keysize);
+          dst_00 = b[t->keysize + 1].tophash + t->valuesize * local_44;
+          puVar11 = b->tophash + local_44;
         }
       }
       if (*(runtime_bmap **)(b->tophash + (t->bucketsize - 4)) == (runtime_bmap *)0x0) break;
@@ -8338,12 +8240,12 @@ void runtime_mapassign(runtime_maptype *t,runtime_hmap *h,void *key,void *_r3)
       }
       if (!bVar13) {
 LAB_0804f456:
-        if (prVar11 == (runtime_bmap *)0x0) {
+        if (puVar11 == (uint8 *)0x0) {
           prVar14 = t;
-          prVar11 = in_stack_ffffffb4;
-          runtime___hmap__newoverflow(h,t,b,in_stack_ffffffb4);
-          dst = (runtime_maptype *)(prVar11 + 1);
-          dst_00 = prVar11 + t->keysize + 1;
+          puVar11 = in_stack_ffffffb4;
+          runtime___hmap__newoverflow(h,t,b,(runtime_bmap *)in_stack_ffffffb4);
+          dst = (runtime_maptype *)(puVar11 + 8);
+          dst_00 = puVar11 + (t->keysize + 1) * 8;
         }
         prVar9 = dst;
         if (t->indirectkey != false) {
@@ -8360,14 +8262,14 @@ LAB_0804f456:
         if (t->indirectvalue != false) {
           runtime_newobject(t->elem,prVar14);
           if (runtime_writeBarrier._0_4_ == 0) {
-            *(runtime_maptype **)dst_00->tophash = prVar14;
+            *(runtime_maptype **)dst_00 = prVar14;
           }
           else {
             runtime_writebarrierptr((uintptr *)dst_00,(uintptr)prVar14);
           }
         }
         runtime_typedmemmove(t->key,prVar9,key);
-        prVar11->tophash[0] = (uint8)uVar8;
+        *puVar11 = (uint8)uVar8;
         h->count = h->count + 1;
 LAB_0804f2ef:
         if ((h->flags & 4) != 0) {
@@ -8499,7 +8401,7 @@ void runtime_mapiterinit(runtime_maptype *t,runtime_hmap *h,runtime_hiter *it)
       runtime_writebarrierptr((uintptr *)&it->bptr,0);
     }
     if ((h->flags & 3) != 3) {
-      runtime_fwdslash_internal_fwdslash_atomic_Or8();
+      runtime_internal_atomic_Or8();
     }
     runtime_mapiternext(it);
     return;
@@ -8524,19 +8426,19 @@ void runtime_mapiternext(runtime_hiter *it)
   runtime_hmap *h;
   runtime_maptype *t;
   runtime_typeAlg *prVar2;
-  undefined4 *src;
+  uint8 *src;
   uint uVar3;
   runtime_bmap *src_00;
   uint uVar4;
-  int **key;
+  uint8 *key;
   uint uVar5;
   byte bVar6;
   uint uVar7;
   uint uVar8;
-  int **ppiVar9;
+  uint8 *puVar9;
   int *in_GS_OFFSET;
   char cVar10;
-  int **in_stack_ffffffbc;
+  uint8 *in_stack_ffffffbc;
   void *in_stack_ffffffc0;
   void *in_stack_ffffffc4;
   
@@ -8606,15 +8508,15 @@ void runtime_mapiternext(runtime_hiter *it)
       uVar7 = it->offset + uVar5;
       uVar8 = uVar7 & 7;
       uVar7 = uVar7 & 7;
-      key = (int **)(src_00[1].tophash + t->keysize * uVar8);
-      src = (undefined4 *)(src_00[t->keysize + 1].tophash + t->valuesize * uVar8);
+      key = src_00[1].tophash + t->keysize * uVar8;
+      src = src_00[t->keysize + 1].tophash + t->valuesize * uVar8;
       if ((src_00->tophash[uVar7] == 0) || (src_00->tophash[uVar7] == 1)) goto LAB_0804fb8a;
       if ((uVar3 == 0xffffffff) || ((h->flags & 8) != 0)) {
 LAB_0804fc90:
         cVar10 = (char)in_stack_ffffffbc;
         if ((src_00->tophash[uVar7] != 2) && (src_00->tophash[uVar7] != 3)) {
           if (t->indirectkey != false) {
-            key = (int **)*key;
+            key = *(uint8 **)key;
           }
           if (runtime_writeBarrier._0_4_ == 0) {
             it->key = key;
@@ -8623,7 +8525,7 @@ LAB_0804fc90:
             runtime_writebarrierptr((uintptr *)it,(uintptr)key);
           }
           if (t->indirectvalue != false) {
-            src = (undefined4 *)*src;
+            src = *(uint8 **)src;
           }
           if (runtime_writeBarrier._0_4_ == 0) {
             it->value = src;
@@ -8646,7 +8548,7 @@ LAB_0804fd2b:
           return;
         }
         if (t->indirectkey != false) {
-          key = (int **)*key;
+          key = *(uint8 **)key;
         }
         if ((t->reflexivekey == false) &&
            ((***(code ***)&prVar2->field_0x4)(key,key), cVar10 == '\0')) {
@@ -8657,7 +8559,7 @@ LAB_0804fd2b:
             runtime_writebarrierptr((uintptr *)it,(uintptr)key);
           }
           if (t->indirectvalue != false) {
-            src = (undefined4 *)*src;
+            src = *(uint8 **)src;
           }
           if (runtime_writeBarrier._0_4_ == 0) {
             it->value = src;
@@ -8687,19 +8589,19 @@ LAB_0804fd2b:
         in_stack_ffffffbc = key;
       }
       else {
-        ppiVar9 = key;
+        puVar9 = key;
         if (t->indirectkey != false) {
-          ppiVar9 = (int **)*key;
+          puVar9 = *(uint8 **)key;
         }
         if ((t->reflexivekey == false) &&
-           ((***(code ***)&prVar2->field_0x4)(ppiVar9,ppiVar9), (char)in_stack_ffffffbc == '\0')) {
+           ((***(code ***)&prVar2->field_0x4)(puVar9,puVar9), (char)in_stack_ffffffbc == '\0')) {
           bVar6 = it->B - 1;
           if ((uVar3 >> (bVar6 & 0x1f) & -(uint)(bVar6 < 0x20)) == (src_00->tophash[uVar7] & 1))
           goto LAB_0804fc90;
           uVar5 = uVar5 & 0xff;
         }
         else {
-          (***(code ***)prVar2)(ppiVar9,h->hash0);
+          (***(code ***)prVar2)(puVar9,h->hash0);
           if (((uint)in_stack_ffffffbc & (1 << (it->B & 0x1f) & -(uint)(it->B < 0x20)) - 1) == uVar3
              ) goto LAB_0804fc90;
           uVar5 = uVar5 & 0xff;
@@ -8932,21 +8834,23 @@ void runtime_growWork(runtime_maptype *t,runtime_hmap *h,uintptr bucket)
 
 
 
+// WARNING: Type propagation algorithm not settling
+
 void runtime_evacuate(runtime_maptype *t,runtime_hmap *h,uintptr oldbucket)
 
 {
-  runtime_bmap **pprVar1;
+  uint *puVar1;
   uint uVar2;
   runtime_mapextra *prVar3;
   void *pvVar4;
   byte bVar5;
   runtime_bmap *src;
   runtime_bmap *prVar6;
-  runtime_bmap *dst;
+  char **dst;
   char *pcVar7;
   runtime_bmap *b;
   runtime_bmap *src_00;
-  runtime_bmap *dst_00;
+  char **dst_00;
   int iVar8;
   uint uVar9;
   uint uVar10;
@@ -8969,8 +8873,8 @@ void runtime_evacuate(runtime_maptype *t,runtime_hmap *h,uintptr oldbucket)
   char *local_8;
   void **local_4;
   
-  pprVar1 = (runtime_bmap **)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if ((runtime_bmap *)&local_1c < *pprVar1 || (runtime_bmap *)&local_1c == *pprVar1) {
+  puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
+  if (&local_1c < (runtime_bmap **)*puVar1 || &local_1c == (runtime_bmap **)*puVar1) {
     local_4 = (void **)0x8050ee4;
     runtime_morestack_noctxt();
     runtime_evacuate(t,h,oldbucket);
@@ -8989,17 +8893,17 @@ void runtime_evacuate(runtime_maptype *t,runtime_hmap *h,uintptr oldbucket)
     pvVar4 = h->buckets;
     b = (runtime_bmap *)((int)pvVar4 + iVar8);
     local_44 = (runtime_bmap *)((int)pvVar4 + iVar8 + 8);
-    dst_00 = b + t->keysize + 1;
+    dst_00 = (char **)(b + t->keysize + 1);
     if ((h->flags & 8) == 0) {
       iVar8 = (oldbucket + uVar9) * (uint)t->bucketsize;
       local_4c = (runtime_bmap *)(iVar8 + (int)pvVar4);
       prVar6 = (runtime_bmap *)(iVar8 + 8 + (int)pvVar4);
-      dst = local_4c + t->keysize + 1;
+      dst = (char **)(local_4c + t->keysize + 1);
     }
     else {
       local_4c = (runtime_bmap *)0x0;
       prVar6 = (runtime_bmap *)0x0;
-      dst = (runtime_bmap *)0x0;
+      dst = (char **)0x0;
     }
     local_84 = 0;
     local_88 = 0;
@@ -9060,7 +8964,7 @@ void runtime_evacuate(runtime_maptype *t,runtime_hmap *h,uintptr oldbucket)
               runtime___hmap__newoverflow(h,t,b,in_stack_ffffff70);
               b = in_stack_ffffff70;
               local_28 = b + 1;
-              dst_00 = b + t->keysize + 1;
+              dst_00 = (char **)(b + t->keysize + 1);
               local_84 = 0;
               in_stack_ffffff70 = b;
             }
@@ -9073,35 +8977,31 @@ void runtime_evacuate(runtime_maptype *t,runtime_hmap *h,uintptr oldbucket)
                 invalidInstructionException();
               } while( true );
             }
-            b->tophash[local_84] = bVar5;
+            *(byte *)((int)b->tophash + local_84) = bVar5;
             local_14 = b;
             if (t->indirectkey == false) {
               prVar12 = src;
               runtime_typedmemmove(t->key,local_28,src);
             }
+            else if (runtime_writeBarrier._0_4_ == 0) {
+              *(runtime_bmap **)local_28->tophash = local_1c;
+            }
             else {
-              if (runtime_writeBarrier._0_4_ == 0) {
-                *(runtime_bmap **)local_28->tophash = local_1c;
-              }
-              else {
-                runtime_writebarrierptr((uintptr *)local_28,(uintptr)local_1c);
-              }
+              runtime_writebarrierptr((uintptr *)local_28,(uintptr)local_1c);
             }
             if (t->indirectvalue == false) {
               prVar12 = src_00;
               runtime_typedmemmove(t->elem,dst_00,src_00);
             }
+            else if (runtime_writeBarrier._0_4_ == 0) {
+              *dst_00 = *(char **)src_00->tophash;
+            }
             else {
-              if (runtime_writeBarrier._0_4_ == 0) {
-                *(uintptr *)dst_00->tophash = *(uintptr *)src_00->tophash;
-              }
-              else {
-                runtime_writebarrierptr((uintptr *)dst_00,*(uintptr *)src_00->tophash);
-              }
+              runtime_writebarrierptr((uintptr *)dst_00,(uintptr)*(char **)src_00->tophash);
             }
             local_84 = local_84 + 1;
-            local_44 = (runtime_bmap *)(local_28->tophash + t->keysize);
-            dst_00 = (runtime_bmap *)(dst_00->tophash + t->valuesize);
+            local_44 = (runtime_bmap *)((int)local_28->tophash + (uint)t->keysize);
+            dst_00 = (char **)((int)dst_00 + (uint)t->valuesize);
             prVar6 = local_10;
             b = local_14;
           }
@@ -9110,7 +9010,7 @@ void runtime_evacuate(runtime_maptype *t,runtime_hmap *h,uintptr oldbucket)
             if (local_88 == 8) {
               runtime___hmap__newoverflow(h,t,local_4c,in_stack_ffffff70);
               local_34 = in_stack_ffffff70 + 1;
-              dst = in_stack_ffffff70 + t->keysize + 1;
+              dst = (char **)(in_stack_ffffff70 + t->keysize + 1);
               local_88 = 0;
               prVar12 = local_4c;
               local_4c = in_stack_ffffff70;
@@ -9124,38 +9024,34 @@ void runtime_evacuate(runtime_maptype *t,runtime_hmap *h,uintptr oldbucket)
                 invalidInstructionException();
               } while( true );
             }
-            local_4c->tophash[local_88] = bVar5;
+            *(byte *)((int)local_4c->tophash + local_88) = bVar5;
             if (t->indirectkey == false) {
               prVar12 = src;
               runtime_typedmemmove(t->key,local_34,src);
             }
+            else if (runtime_writeBarrier._0_4_ == 0) {
+              *(runtime_bmap **)local_34->tophash = local_1c;
+            }
             else {
-              if (runtime_writeBarrier._0_4_ == 0) {
-                *(runtime_bmap **)local_34->tophash = local_1c;
-              }
-              else {
-                runtime_writebarrierptr((uintptr *)local_34,(uintptr)local_1c);
-              }
+              runtime_writebarrierptr((uintptr *)local_34,(uintptr)local_1c);
             }
             if (t->indirectvalue == false) {
               prVar12 = src_00;
               runtime_typedmemmove(t->elem,dst,src_00);
             }
+            else if (runtime_writeBarrier._0_4_ == 0) {
+              *dst = *(char **)src_00->tophash;
+            }
             else {
-              if (runtime_writeBarrier._0_4_ == 0) {
-                *(uintptr *)dst->tophash = *(uintptr *)src_00->tophash;
-              }
-              else {
-                runtime_writebarrierptr((uintptr *)dst,*(uintptr *)src_00->tophash);
-              }
+              runtime_writebarrierptr((uintptr *)dst,(uintptr)*(char **)src_00->tophash);
             }
             local_88 = local_88 + 1;
-            prVar6 = (runtime_bmap *)(local_34->tophash + t->keysize);
-            dst = (runtime_bmap *)(dst->tophash + t->valuesize);
+            prVar6 = (runtime_bmap *)((int)local_34->tophash + (uint)t->keysize);
+            dst = (char **)((int)dst + (uint)t->valuesize);
           }
         }
-        src = (runtime_bmap *)(src->tophash + t->keysize);
-        src_00 = (runtime_bmap *)(src_00->tophash + t->valuesize);
+        src = (runtime_bmap *)((int)src->tophash + (uint)t->keysize);
+        src_00 = (runtime_bmap *)((int)src_00->tophash + (uint)t->valuesize);
         in_stack_ffffff6c = prVar12;
       }
       pcVar7 = *(char **)(local_c + (t->bucketsize - 4));
@@ -9496,16 +9392,16 @@ void runtime_mapassign_fast32(runtime_maptype *t,runtime_hmap *h,uint32 key,void
   runtime_bmap *prVar5;
   byte bVar6;
   byte bVar7;
-  runtime_bmap *prVar8;
+  uint8 *puVar8;
   runtime_bmap *b;
   void *bucket;
   int *in_GS_OFFSET;
   bool bVar9;
   void *in_stack_ffffffa8;
   void *src;
-  runtime_bmap *in_stack_ffffffac;
+  uint8 *in_stack_ffffffac;
   uint local_4c;
-  runtime_bmap *local_14;
+  uint8 *local_14;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if (register0x00000010 < (undefined *)*puVar1 ||
@@ -9515,7 +9411,7 @@ void runtime_mapassign_fast32(runtime_maptype *t,runtime_hmap *h,uint32 key,void
     return;
   }
   if (h == (runtime_hmap *)0x0) {
-    runtime_gopanic((interface__)0x80f1a80080d1ee0);
+    runtime_gopanic((interface___)0x80f1a80080d1ee0);
     do {
       invalidInstructionException();
     } while( true );
@@ -9548,8 +9444,8 @@ void runtime_mapassign_fast32(runtime_maptype *t,runtime_hmap *h,uint32 key,void
     if (bVar6 < 4) {
       bVar6 = bVar6 + 4;
     }
-    prVar8 = (runtime_bmap *)0x0;
-    local_14 = (runtime_bmap *)0x0;
+    puVar8 = (uint8 *)0x0;
+    local_14 = (uint8 *)0x0;
     prVar5 = (runtime_bmap *)((int)bucket * (uint)t->bucketsize + (int)h->buckets);
     do {
       b = prVar5;
@@ -9557,11 +9453,9 @@ void runtime_mapassign_fast32(runtime_maptype *t,runtime_hmap *h,uint32 key,void
         if (bVar6 == b->tophash[local_4c]) {
           if (*(uint32 *)(b[1].tophash + local_4c * 4) == key) goto LAB_080515cb;
         }
-        else {
-          if ((b->tophash[local_4c] == 0) && (prVar8 == (runtime_bmap *)0x0)) {
-            local_14 = (runtime_bmap *)(b[1].tophash + local_4c * 4);
-            prVar8 = (runtime_bmap *)(b->tophash + local_4c);
-          }
+        else if ((b->tophash[local_4c] == 0) && (puVar8 == (uint8 *)0x0)) {
+          local_14 = b[1].tophash + local_4c * 4;
+          puVar8 = b->tophash + local_4c;
         }
       }
       prVar5 = *(runtime_bmap **)(b->tophash + (t->bucketsize - 4));
@@ -9593,13 +9487,13 @@ void runtime_mapassign_fast32(runtime_maptype *t,runtime_hmap *h,uint32 key,void
       }
       if (!bVar9) {
 LAB_08051710:
-        if (prVar8 == (runtime_bmap *)0x0) {
-          prVar8 = in_stack_ffffffac;
-          runtime___hmap__newoverflow(h,t,b,in_stack_ffffffac);
-          local_14 = prVar8 + 1;
+        if (puVar8 == (uint8 *)0x0) {
+          puVar8 = in_stack_ffffffac;
+          runtime___hmap__newoverflow(h,t,b,(runtime_bmap *)in_stack_ffffffac);
+          local_14 = puVar8 + 8;
         }
         runtime_typedmemmove(t->key,local_14,&key);
-        prVar8->tophash[0] = bVar6;
+        *puVar8 = bVar6;
         h->count = h->count + 1;
 LAB_080515cb:
         if ((h->flags & 4) == 0) {
@@ -9628,14 +9522,14 @@ void runtime_mapassign_fast64(runtime_maptype *t,runtime_hmap *h,uint64 key,void
   runtime_bmap *prVar5;
   byte bVar6;
   byte bVar7;
-  runtime_bmap *prVar8;
+  uint8 *puVar8;
   runtime_bmap *b;
   void *bucket;
   int *in_GS_OFFSET;
   bool bVar9;
   void *in_stack_ffffffa8;
   void *src;
-  runtime_bmap *in_stack_ffffffac;
+  uint8 *in_stack_ffffffac;
   uint local_4c;
   runtime_bmap *local_14;
   
@@ -9647,7 +9541,7 @@ void runtime_mapassign_fast64(runtime_maptype *t,runtime_hmap *h,uint64 key,void
     return;
   }
   if (h == (runtime_hmap *)0x0) {
-    runtime_gopanic((interface__)0x80f1a88080d1ee0);
+    runtime_gopanic((interface___)0x80f1a88080d1ee0);
     do {
       invalidInstructionException();
     } while( true );
@@ -9681,7 +9575,7 @@ void runtime_mapassign_fast64(runtime_maptype *t,runtime_hmap *h,uint64 key,void
     if (bVar6 < 4) {
       bVar6 = bVar6 + 4;
     }
-    prVar8 = (runtime_bmap *)0x0;
+    puVar8 = (uint8 *)0x0;
     local_14 = (runtime_bmap *)0x0;
     prVar5 = (runtime_bmap *)((int)bucket * (uint)t->bucketsize + (int)h->buckets);
     do {
@@ -9691,11 +9585,9 @@ void runtime_mapassign_fast64(runtime_maptype *t,runtime_hmap *h,uint64 key,void
           if (*(int *)(b[local_4c + 1].tophash + 4) == key._4_4_ &&
               *(int *)b[local_4c + 1].tophash == (int)key) goto LAB_08051a4f;
         }
-        else {
-          if ((b->tophash[local_4c] == 0) && (prVar8 == (runtime_bmap *)0x0)) {
-            local_14 = b + local_4c + 1;
-            prVar8 = (runtime_bmap *)(b->tophash + local_4c);
-          }
+        else if ((b->tophash[local_4c] == 0) && (puVar8 == (uint8 *)0x0)) {
+          local_14 = b + local_4c + 1;
+          puVar8 = b->tophash + local_4c;
         }
       }
       prVar5 = *(runtime_bmap **)(b->tophash + (t->bucketsize - 4));
@@ -9727,13 +9619,13 @@ void runtime_mapassign_fast64(runtime_maptype *t,runtime_hmap *h,uint64 key,void
       }
       if (!bVar9) {
 LAB_08051b94:
-        if (prVar8 == (runtime_bmap *)0x0) {
-          prVar8 = in_stack_ffffffac;
-          runtime___hmap__newoverflow(h,t,b,in_stack_ffffffac);
-          local_14 = prVar8 + 1;
+        if (puVar8 == (uint8 *)0x0) {
+          puVar8 = in_stack_ffffffac;
+          runtime___hmap__newoverflow(h,t,b,(runtime_bmap *)in_stack_ffffffac);
+          local_14 = (runtime_bmap *)(puVar8 + 8);
         }
         runtime_typedmemmove(t->key,local_14,&key);
-        prVar8->tophash[0] = bVar6;
+        *puVar8 = bVar6;
         h->count = h->count + 1;
 LAB_08051a4f:
         if ((h->flags & 4) == 0) {
@@ -9763,15 +9655,15 @@ void runtime_mapassign_faststr(runtime_maptype *t,runtime_hmap *h,string ky,void
   uint uVar6;
   uint uVar7;
   byte bVar8;
-  runtime_bmap *prVar9;
+  uint8 *puVar9;
   runtime_bmap *b;
   void *bucket;
-  runtime_bmap *dst;
+  uint8 *dst;
   int *in_GS_OFFSET;
   bool bVar10;
   void *in_stack_ffffffb4;
   void *src;
-  runtime_bmap *in_stack_ffffffb8;
+  uint8 *in_stack_ffffffb8;
   uint local_40;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
@@ -9782,7 +9674,7 @@ void runtime_mapassign_faststr(runtime_maptype *t,runtime_hmap *h,string ky,void
     return;
   }
   if (h == (runtime_hmap *)0x0) {
-    runtime_gopanic((interface__)0x80f1a90080d1ee0);
+    runtime_gopanic((interface___)0x80f1a90080d1ee0);
     do {
       invalidInstructionException();
     } while( true );
@@ -9815,8 +9707,8 @@ void runtime_mapassign_faststr(runtime_maptype *t,runtime_hmap *h,string ky,void
     if ((byte)((uint)in_stack_ffffffb4 >> 0x18) < 4) {
       uVar7 = uVar7 + 4;
     }
-    prVar9 = (runtime_bmap *)0x0;
-    dst = (runtime_bmap *)0x0;
+    puVar9 = (uint8 *)0x0;
+    dst = (uint8 *)0x0;
     uVar6 = uVar7;
     prVar5 = (runtime_bmap *)((int)bucket * (uint)t->bucketsize + (int)h->buckets);
     do {
@@ -9831,11 +9723,9 @@ void runtime_mapassign_faststr(runtime_maptype *t,runtime_hmap *h,string ky,void
             uVar6 = uVar7 & 0xff;
           }
         }
-        else {
-          if ((b->tophash[local_40] == 0) && (prVar9 == (runtime_bmap *)0x0)) {
-            dst = (runtime_bmap *)(b[1].tophash + t->keysize * local_40);
-            prVar9 = (runtime_bmap *)(b->tophash + local_40);
-          }
+        else if ((b->tophash[local_40] == 0) && (puVar9 == (uint8 *)0x0)) {
+          dst = b[1].tophash + t->keysize * local_40;
+          puVar9 = b->tophash + local_40;
         }
       }
       prVar5 = *(runtime_bmap **)(b->tophash + (t->bucketsize - 4));
@@ -9867,19 +9757,19 @@ void runtime_mapassign_faststr(runtime_maptype *t,runtime_hmap *h,string ky,void
       }
       if (!bVar10) {
 LAB_08052044:
-        if (prVar9 == (runtime_bmap *)0x0) {
-          prVar9 = in_stack_ffffffb8;
-          runtime___hmap__newoverflow(h,t,b,in_stack_ffffffb8);
-          dst = prVar9 + 1;
+        if (puVar9 == (uint8 *)0x0) {
+          puVar9 = in_stack_ffffffb8;
+          runtime___hmap__newoverflow(h,t,b,(runtime_bmap *)in_stack_ffffffb8);
+          dst = puVar9 + 8;
         }
-        *(int *)(dst->tophash + 4) = ky.len;
+        *(int *)(dst + 4) = ky.len;
         if (runtime_writeBarrier._0_4_ == 0) {
-          *(uint8 **)dst->tophash = ky.str;
+          *(uint8 **)dst = ky.str;
         }
         else {
           runtime_writebarrierptr((uintptr *)dst,(uintptr)ky.str);
         }
-        prVar9->tophash[0] = (uint8)uVar7;
+        *puVar9 = (uint8)uVar7;
         h->count = h->count + 1;
 LAB_08051f11:
         if ((h->flags & 4) == 0) {
@@ -9982,7 +9872,7 @@ void runtime_getitab(runtime_interfacetype *inter,runtime__type *typ,bool canfai
       else {
         runtime_writebarrierptr((uintptr *)(iVar3 + 0x18),src_00);
       }
-      runtime_gopanic((interface__)CONCAT26(uVar8,CONCAT15(uVar6,CONCAT14(uVar5,0x80d20c0))));
+      runtime_gopanic((interface___)CONCAT26(uVar8,CONCAT15(uVar6,CONCAT14(uVar5,0x80d20c0))));
       do {
         invalidInstructionException();
       } while( true );
@@ -10019,7 +9909,7 @@ void runtime_getitab(runtime_interfacetype *inter,runtime__type *typ,bool canfai
       runtime_lock(&runtime_ifaceLock);
     }
     if (0x3f0 < uVar4) break;
-    runtime_fwdslash_internal_fwdslash_atomic_Loadp
+    runtime_internal_atomic_Loadp
               (runtime_hash + uVar4,
                (void *)CONCAT22(in_stack_ffffffbe,CONCAT11(in_stack_ffffffbd,in_stack_ffffffbc)));
     for (m = (runtime_itab *)
@@ -10053,25 +9943,24 @@ void runtime_additab(runtime_itab *m,bool locked,bool canfail)
   uint *puVar1;
   runtime_interfacetype *t;
   runtime__type *t_00;
-  uint8 *puVar2;
-  uint8 *puVar3;
-  int iVar4;
-  int iVar5;
+  uint32 uVar2;
+  int iVar3;
+  runtime_imethod *prVar4;
+  uint uVar5;
   uint uVar6;
-  uint8 *puVar7;
-  uint uVar8;
+  uint uVar7;
   int *in_GS_OFFSET;
   char in_stack_00000009;
   runtime_uncommontype *in_stack_ffffff9c;
-  runtime_name rVar9;
+  runtime_name rVar8;
   runtime_name n;
   runtime_name src;
   runtime_name src_00;
+  runtime_name rVar9;
   runtime_name rVar10;
-  runtime_name rVar11;
   runtime_name in_stack_ffffffa0;
+  runtime_name rVar11;
   runtime_name rVar12;
-  runtime_name rVar13;
   char local_58;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
@@ -10084,19 +9973,19 @@ void runtime_additab(runtime_itab *m,bool locked,bool canfail)
   t = m->inter;
   t_00 = m->_type;
   runtime____type__uncommon(t_00,in_stack_ffffff9c);
-  iVar4 = (int)&in_stack_ffffff9c->pkgpath + in_stack_ffffff9c->moff;
-  puVar2 = (&t->pkgpath)[2].bytes;
-  uVar6 = (uint)in_stack_ffffff9c->mcount;
-  if (0x10000 < uVar6) {
+  uVar2 = in_stack_ffffff9c->moff;
+  iVar3 = *(int *)(&t->pkgpath + 2);
+  uVar5 = (uint)in_stack_ffffff9c->mcount;
+  if (0x10000 < uVar5) {
     runtime_panicslice();
     do {
       invalidInstructionException();
     } while( true );
   }
-  puVar7 = (uint8 *)0x0;
-  uVar8 = 0;
+  uVar6 = 0;
+  uVar7 = 0;
 LAB_080527ac:
-  if ((int)puVar2 <= (int)puVar7) {
+  if (iVar3 <= (int)uVar6) {
 LAB_080528af:
     if (locked == false) {
       runtime_throw((string)0x14080e30bf);
@@ -10104,85 +9993,83 @@ LAB_080528af:
         invalidInstructionException();
       } while( true );
     }
-    uVar6 = *(uint32 *)&t->typ + t_00->hash * 0x11;
-    uVar6 = uVar6 + (((uint)((ulonglong)uVar6 * 0x103ce4585 >> 0x21) |
-                     (uint)CARRY4((uint)((ulonglong)uVar6 * 0x3ce4585 >> 0x20),uVar6) << 0x1f) >> 9)
+    uVar5 = *(uint32 *)&t->typ + t_00->hash * 0x11;
+    uVar5 = uVar5 + (((uint)((ulonglong)uVar5 * 0x103ce4585 >> 0x21) |
+                     (uint)CARRY4((uint)((ulonglong)uVar5 * 0x3ce4585 >> 0x20),uVar5) << 0x1f) >> 9)
                     * -0x3f1;
-    if (0x3f0 < uVar6) {
+    if (0x3f0 < uVar5) {
       runtime_panicindex();
       do {
         invalidInstructionException();
       } while( true );
     }
     if (runtime_writeBarrier._0_4_ == 0) {
-      m->link = runtime_hash[uVar6];
+      m->link = runtime_hash[uVar5];
     }
     else {
-      runtime_writebarrierptr((uintptr *)&m->link,(uintptr)runtime_hash[uVar6]);
+      runtime_writebarrierptr((uintptr *)&m->link,(uintptr)runtime_hash[uVar5]);
     }
     m->inhash = true;
-    runtime_atomicstorep(runtime_hash + uVar6,m);
+    runtime_atomicstorep(runtime_hash + uVar5,m);
     return;
   }
-  puVar3 = (&t->pkgpath)[1].bytes;
-  if ((&t->pkgpath)[2].bytes <= puVar7) {
+  prVar4 = ((__runtime_imethod *)(&t->pkgpath + 1))->array;
+  if (*(uint *)(&t->pkgpath + 2) <= uVar6) {
     runtime_panicindex();
     do {
       invalidInstructionException();
     } while( true );
   }
-  runtime____type__typeOff
-            (&t->typ,*(runtime_typeOff *)(puVar3 + (int)puVar7 * 8 + 4),
-             (runtime__type *)in_stack_ffffffa0);
-  src = (runtime_name)((runtime_name *)(puVar3 + (int)puVar7 * 8))->bytes;
-  rVar10 = in_stack_ffffffa0;
+  runtime____type__typeOff(&t->typ,prVar4[uVar6].ityp,(runtime__type *)in_stack_ffffffa0);
+  src = (runtime_name)prVar4[uVar6].name;
+  rVar9 = in_stack_ffffffa0;
   runtime____type__nameOff(&t->typ,(runtime_nameOff)src,in_stack_ffffffa0);
-  rVar12 = rVar10;
-  runtime_name_name(rVar10,(string)CONCAT44(rVar10,src));
+  rVar11 = rVar9;
+  runtime_name_name(rVar9,(string)CONCAT44(rVar9,src));
   src_00 = src;
-  rVar13 = rVar12;
-  runtime_name_pkgPath(rVar10,(string)CONCAT44(rVar12,src));
-  rVar10 = rVar13;
-  rVar11 = src_00;
-  if (rVar13 == (runtime_name)0x0) {
+  rVar12 = rVar11;
+  runtime_name_pkgPath(rVar9,(string)CONCAT44(rVar11,src));
+  rVar9 = rVar12;
+  rVar10 = src_00;
+  if (rVar12 == (runtime_name)0x0) {
     runtime_name_name((runtime_name)(t->pkgpath).bytes,(string)(ulonglong)(uint)src_00);
-    rVar10 = rVar13;
-    rVar11 = src_00;
+    rVar9 = rVar12;
+    rVar10 = src_00;
   }
   do {
-    if ((int)uVar6 <= (int)uVar8) {
+    if ((int)uVar5 <= (int)uVar7) {
       if (in_stack_00000009 == '\0') {
         if (locked != false) {
           runtime_unlock(&runtime_ifaceLock);
         }
-        runtime____type__string(t_00,(string)CONCAT44(rVar13,src_00));
-        rVar10 = src_00;
-        rVar9 = rVar13;
-        runtime____type__string(&t->typ,(string)CONCAT44(rVar13,src_00));
-        rVar11 = rVar10;
-        runtime_newobject((runtime__type *)&DAT_080d6ba0,(void *)rVar10);
-        ((runtime_name *)((int)rVar11 + 0xc))->bytes = (uint8 *)rVar13;
+        runtime____type__string(t_00,(string)CONCAT44(rVar12,src_00));
+        rVar9 = src_00;
+        rVar8 = rVar12;
+        runtime____type__string(&t->typ,(string)CONCAT44(rVar12,src_00));
+        rVar10 = rVar9;
+        runtime_newobject((runtime__type *)&DAT_080d6ba0,(void *)rVar9);
+        ((runtime_name *)((int)rVar10 + 0xc))->bytes = (uint8 *)rVar12;
         if (runtime_writeBarrier._0_4_ == 0) {
-          ((runtime_name *)((int)rVar11 + 8))->bytes = (uint8 *)src_00;
+          ((runtime_name *)((int)rVar10 + 8))->bytes = (uint8 *)src_00;
         }
         else {
-          runtime_writebarrierptr((uintptr *)((int)rVar11 + 8),(uintptr)src_00);
+          runtime_writebarrierptr((uintptr *)((int)rVar10 + 8),(uintptr)src_00);
         }
-        ((runtime_name *)((int)rVar11 + 0x14))->bytes = (uint8 *)rVar9;
+        ((runtime_name *)((int)rVar10 + 0x14))->bytes = (uint8 *)rVar8;
         if (runtime_writeBarrier._0_4_ == 0) {
-          ((runtime_name *)((int)rVar11 + 0x10))->bytes = (uint8 *)rVar10;
+          ((runtime_name *)((int)rVar10 + 0x10))->bytes = (uint8 *)rVar9;
         }
         else {
-          runtime_writebarrierptr((uintptr *)((int)rVar11 + 0x10),(uintptr)rVar10);
+          runtime_writebarrierptr((uintptr *)((int)rVar10 + 0x10),(uintptr)rVar9);
         }
-        ((runtime_name *)((int)rVar11 + 0x1c))->bytes = (uint8 *)rVar12;
+        ((runtime_name *)((int)rVar10 + 0x1c))->bytes = (uint8 *)rVar11;
         if (runtime_writeBarrier._0_4_ == 0) {
-          ((runtime_name *)((int)rVar11 + 0x18))->bytes = (uint8 *)src;
+          ((runtime_name *)((int)rVar10 + 0x18))->bytes = (uint8 *)src;
         }
         else {
-          runtime_writebarrierptr((uintptr *)((int)rVar11 + 0x18),(uintptr)src);
+          runtime_writebarrierptr((uintptr *)((int)rVar10 + 0x18),(uintptr)src);
         }
-        runtime_gopanic((interface__)CONCAT44(rVar11,0x80d20c0));
+        runtime_gopanic((interface___)CONCAT44(rVar10,0x80d20c0));
         do {
           invalidInstructionException();
         } while( true );
@@ -10190,50 +10077,49 @@ LAB_080528af:
       m->bad = true;
       goto LAB_080528af;
     }
-    if (uVar6 <= uVar8) {
+    if (uVar5 <= uVar7) {
       runtime_panicindex();
       do {
         invalidInstructionException();
       } while( true );
     }
-    iVar5 = uVar8 * 0x10;
-    runtime____type__nameOff(t_00,*(runtime_nameOff *)(iVar4 + iVar5),rVar13);
-    src_00 = (runtime_name)((runtime_name *)(iVar4 + 4 + iVar5))->bytes;
-    rVar9 = rVar13;
-    runtime____type__typeOff(t_00,(runtime_typeOff)src_00,(runtime__type *)rVar13);
-    n = rVar9;
-    if (((rVar9 == in_stack_ffffffa0) &&
-        (runtime_name_name(rVar13,(string)CONCAT44(rVar9,src_00)), n = rVar9, rVar9 == rVar12)) &&
-       (n = src, runtime_eqstring(), src_00 = rVar9, local_58 != '\0')) {
-      runtime_name_pkgPath(rVar13,(string)CONCAT44(n,rVar9));
+    runtime____type__nameOff
+              (t_00,*(runtime_nameOff *)((int)&in_stack_ffffff9c[uVar7].pkgpath + uVar2),rVar12);
+    src_00 = (runtime_name)((runtime_name *)((int)&in_stack_ffffff9c[uVar7].mcount + uVar2))->bytes;
+    rVar8 = rVar12;
+    runtime____type__typeOff(t_00,(runtime_typeOff)src_00,(runtime__type *)rVar12);
+    n = rVar8;
+    if (((rVar8 == in_stack_ffffffa0) &&
+        (runtime_name_name(rVar12,(string)CONCAT44(rVar8,src_00)), n = rVar8, rVar8 == rVar11)) &&
+       (n = src, runtime_eqstring(), src_00 = rVar8, local_58 != '\0')) {
+      runtime_name_pkgPath(rVar12,(string)CONCAT44(n,rVar8));
       if (n == (runtime_name)0x0) {
-        rVar9 = (runtime_name)in_stack_ffffff9c->pkgpath;
-        runtime____type__nameOff(t_00,(runtime_nameOff)rVar9,(runtime_name)0x0);
-        runtime_name_name(n,(string)CONCAT44(n,rVar9));
+        rVar8 = (runtime_name)in_stack_ffffff9c->pkgpath;
+        runtime____type__nameOff(t_00,(runtime_nameOff)rVar8,(runtime_name)0x0);
+        runtime_name_name(n,(string)CONCAT44(n,rVar8));
       }
-      if (((*(byte *)rVar13 & 1) != 0) ||
-         ((src_00 = rVar9, rVar10 == n &&
-          (rVar13 = rVar11, runtime_eqstring(), src_00 = n, n = rVar13, local_58 != '\0')))) break;
+      if (((*(byte *)rVar12 & 1) != 0) ||
+         ((src_00 = rVar8, rVar9 == n &&
+          (rVar12 = rVar10, runtime_eqstring(), src_00 = n, n = rVar12, local_58 != '\0')))) break;
     }
-    uVar8 = uVar8 + 1;
-    rVar13 = n;
+    uVar7 = uVar7 + 1;
+    rVar12 = n;
   } while( true );
   in_stack_ffffffa0 = n;
-  runtime____type__textOff(t_00,*(runtime_textOff *)(iVar4 + 8 + iVar5),(void *)in_stack_ffffffa0);
+  runtime____type__textOff
+            (t_00,*(runtime_textOff *)((int)&in_stack_ffffff9c[uVar7].moff + uVar2),
+             (void *)in_stack_ffffffa0);
   if (runtime_writeBarrier._0_4_ == 0) {
-    ((runtime_name *)(m->fun + (int)puVar7))->bytes = (uint8 *)in_stack_ffffffa0;
+    m->fun[uVar6] = (uintptr)in_stack_ffffffa0;
   }
   else {
-    runtime_writebarrierptr
-              ((uintptr *)(runtime_name *)(m->fun + (int)puVar7),(uintptr)in_stack_ffffffa0);
+    runtime_writebarrierptr(m->fun + uVar6,(uintptr)in_stack_ffffffa0);
   }
-  puVar7 = puVar7 + 1;
+  uVar6 = uVar6 + 1;
   goto LAB_080527ac;
 }
 
 
-
-// WARNING: Type propagation algorithm not settling
 
 void runtime_itabsinit(void)
 
@@ -10241,7 +10127,7 @@ void runtime_itabsinit(void)
   uint *puVar1;
   int iVar2;
   int iVar3;
-  runtime_itab *prVar4;
+  runtime_itab **pprVar4;
   int iVar5;
   int *in_GS_OFFSET;
   runtime_mutex *prVar6;
@@ -10263,13 +10149,13 @@ void runtime_itabsinit(void)
     for (iVar3 = 0;
         iVar3 < CONCAT22(in_stack_ffffffe2,CONCAT11(in_stack_ffffffe1,in_stack_ffffffe0));
         iVar3 = iVar3 + 1) {
-      prVar4 = *(runtime_itab **)(prVar6->key + 0x84);
+      pprVar4 = *(runtime_itab ***)(prVar6->key + 0x84);
       iVar2 = *(int *)(prVar6->key + 0x88);
       for (iVar5 = 0; iVar5 < iVar2; iVar5 = iVar5 + 1) {
-        if (((runtime_itab *)prVar4->inter)->inhash == false) {
-          runtime_additab((runtime_itab *)prVar4->inter,true,SUB41(in_stack_ffffffe4,0));
+        if ((*pprVar4)->inhash == false) {
+          runtime_additab(*pprVar4,true,SUB41(in_stack_ffffffe4,0));
         }
-        prVar4 = (runtime_itab *)&prVar4->_type;
+        pprVar4 = pprVar4 + 1;
       }
       prVar6 = prVar6 + 1;
     }
@@ -10344,7 +10230,7 @@ void runtime_panicdottypeE(runtime__type *have,runtime__type *want,runtime__type
     else {
       runtime_writebarrierptr((uintptr *)(dst + 6),0);
     }
-    runtime_gopanic((interface__)CONCAT44(dst,0x80d20c0));
+    runtime_gopanic((interface___)CONCAT44(dst,0x80d20c0));
     do {
       invalidInstructionException();
     } while( true );
@@ -10559,7 +10445,7 @@ void runtime_assertE2I(runtime_interfacetype *inter,runtime_eface e,runtime_ifac
   else {
     runtime_writebarrierptr((uintptr *)((int)pvVar2 + 0x18),0);
   }
-  runtime_gopanic((interface__)CONCAT44(pvVar2,0x80d20c0));
+  runtime_gopanic((interface___)CONCAT44(pvVar2,0x80d20c0));
   do {
     invalidInstructionException();
   } while( true );
@@ -10639,10 +10525,10 @@ void runtime___lfstack__push(runtime_lfstack *head,runtime_lfnode *node)
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     node->pushcnt = node->pushcnt + 1;
     do {
-      runtime_fwdslash_internal_fwdslash_atomic_Load64();
+      runtime_internal_atomic_Load64();
       *(undefined4 *)&node->next = local_1c;
       *(undefined4 *)((int)&node->next + 4) = local_18;
-      runtime_fwdslash_internal_fwdslash_atomic_Cas64();
+      runtime_internal_atomic_Cas64();
     } while (local_c == '\0');
     return;
   }
@@ -10670,12 +10556,12 @@ void runtime___lfstack__pop(runtime_lfstack *head,void *_r0)
     return;
   }
   do {
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
+    runtime_internal_atomic_Load64();
     if (local_1c == 0 && local_20 == 0) {
       return;
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
-    runtime_fwdslash_internal_fwdslash_atomic_Cas64();
+    runtime_internal_atomic_Load64();
+    runtime_internal_atomic_Cas64();
   } while (local_10 == '\0');
   return;
 }
@@ -10691,7 +10577,7 @@ void runtime___lfstack__empty(runtime_lfstack *head,bool _r0)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
+    runtime_internal_atomic_Load64();
     return;
   }
   runtime_morestack_noctxt();
@@ -10728,7 +10614,7 @@ void runtime_lock(runtime_mutex *l)
     } while( true );
   }
   *(int *)(iVar4 + 0x78) = iVar2 + 1;
-  runtime_fwdslash_internal_fwdslash_atomic_Xchg();
+  runtime_internal_atomic_Xchg();
   if (in_stack_ffffffe8 == 0) {
     return;
   }
@@ -10743,7 +10629,7 @@ void runtime_lock(runtime_mutex *l)
     for (iVar3 = 0; iVar3 < iVar2; iVar3 = iVar3 + 1) {
       while (l->key == 0) {
         iVar4 = in_stack_ffffffe8;
-        runtime_fwdslash_internal_fwdslash_atomic_Cas();
+        runtime_internal_atomic_Cas();
         if ((char)in_stack_ffffffec != '\0') {
           return;
         }
@@ -10753,14 +10639,14 @@ void runtime_lock(runtime_mutex *l)
     for (iVar3 = 0; iVar3 < 1; iVar3 = iVar3 + 1) {
       while (l->key == 0) {
         iVar4 = in_stack_ffffffe8;
-        runtime_fwdslash_internal_fwdslash_atomic_Cas();
+        runtime_internal_atomic_Cas();
         if ((char)in_stack_ffffffec != '\0') {
           return;
         }
       }
       runtime_osyield();
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Xchg();
+    runtime_internal_atomic_Xchg();
     if (iVar4 == 0) break;
     iVar4 = -1;
     in_stack_ffffffec = 0xffffffff;
@@ -10788,7 +10674,7 @@ void runtime_unlock(runtime_mutex *l)
     runtime_unlock(l);
     return;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Xchg();
+  runtime_internal_atomic_Xchg();
   if (local_4 != 0) {
     if (local_4 == 2) {
       runtime_futexwakeup(&l->key,1);
@@ -10829,7 +10715,7 @@ void runtime_notewakeup(runtime_note *n)
     runtime_notewakeup(n);
     return;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Xchg();
+  runtime_internal_atomic_Xchg();
   if (local_8 == 0) {
     runtime_futexwakeup(&n->key,1);
     return;
@@ -10879,8 +10765,7 @@ void runtime_notesleep(runtime_note *n)
     uVar3 = 10000000;
     uVar4 = 0;
   }
-  while (runtime_fwdslash_internal_fwdslash_atomic_Load(&n->key,in_stack_ffffffe8),
-        in_stack_ffffffe8 == 0) {
+  while (runtime_internal_atomic_Load(&n->key,in_stack_ffffffe8), in_stack_ffffffe8 == 0) {
     *(undefined *)(*(int *)(iVar2 + 0x18) + 0x8d) = 1;
     in_stack_ffffffe8 = 0;
     runtime_futexsleep(&n->key,0,CONCAT44(uVar4,uVar3));
@@ -10912,8 +10797,7 @@ void runtime_notetsleep_internal(runtime_note *n,int64 ns,bool _r2)
     if (*runtime_cgo_yield != (void *)0x0) {
       ns = 10000000;
     }
-    while (runtime_fwdslash_internal_fwdslash_atomic_Load(&n->key,in_stack_ffffffe8),
-          in_stack_ffffffe8 == 0) {
+    while (runtime_internal_atomic_Load(&n->key,in_stack_ffffffe8), in_stack_ffffffe8 == 0) {
       *(undefined *)(*(int *)(iVar1 + 0x18) + 0x8d) = 1;
       in_stack_ffffffe8 = 0;
       runtime_futexsleep(&n->key,0,ns);
@@ -10926,7 +10810,7 @@ void runtime_notetsleep_internal(runtime_note *n,int64 ns,bool _r2)
     return;
   }
   prVar5 = n;
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&n->key,in_stack_ffffffe8);
+  runtime_internal_atomic_Load(&n->key,in_stack_ffffffe8);
   if (in_stack_ffffffe8 != 0) {
     return;
   }
@@ -10947,13 +10831,13 @@ void runtime_notetsleep_internal(runtime_note *n,int64 ns,bool _r2)
     }
     *(undefined *)(*(int *)(iVar1 + 0x18) + 0x8d) = 0;
     prVar5 = n;
-    runtime_fwdslash_internal_fwdslash_atomic_Load(&n->key,_r1);
+    runtime_internal_atomic_Load(&n->key,_r1);
     if (_r1 != 0) break;
     runtime_nanotime();
     if ((runtime_note *)lVar2 <= prVar5 && _r1 == uVar3 || (int)uVar3 < (int)_r1) break;
     ns = lVar2 - CONCAT44(_r1,prVar5);
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&n->key,_r1);
+  runtime_internal_atomic_Load(&n->key,_r1);
   return;
 }
 
@@ -11187,19 +11071,17 @@ void runtime___mheap__sysAlloc(runtime_mheap *h,uintptr n,void *_r1)
         h->arena_end = (uintptr)local_c;
         h->arena_reserved = (bool)local_21;
       }
+      else if ((in_stack_ffffffd8 < (void *)h->arena_start) ||
+              (0xffffff < (int)(void *)h->arena_end - h->arena_alloc)) {
+        local_8 = local_14;
+        local_4 = 0;
+        in_stack_ffffffd4 = (uint64 *)&local_8;
+        runtime_sysFree(in_stack_ffffffd8,local_14,in_stack_ffffffd4);
+      }
       else {
-        if ((in_stack_ffffffd8 < (void *)h->arena_start) ||
-           (0xffffff < (int)(void *)h->arena_end - h->arena_alloc)) {
-          local_8 = local_14;
-          local_4 = 0;
-          in_stack_ffffffd4 = (uint64 *)&local_8;
-          runtime_sysFree(in_stack_ffffffd8,local_14,in_stack_ffffffd4);
-        }
-        else {
-          h->arena_end = local_14 + (int)in_stack_ffffffd8;
-          h->arena_alloc = (int)in_stack_ffffffd8 + 0x1fffU & 0xffffe000;
-          h->arena_reserved = (bool)local_21;
-        }
+        h->arena_end = local_14 + (int)in_stack_ffffffd8;
+        h->arena_alloc = (int)in_stack_ffffffd8 + 0x1fffU & 0xffffe000;
+        h->arena_reserved = (bool)local_21;
       }
     }
   }
@@ -11283,7 +11165,7 @@ void runtime_nextFreeFast(runtime_mspan *s,runtime_gclinkptr _r1)
     runtime_nextFreeFast(s,_r1);
     return;
   }
-  runtime_fwdslash_internal_fwdslash_sys_Ctz64();
+  runtime_internal_sys_Ctz64();
   if (local_10 < 0x40) {
     if (s->freeindex + local_10 < s->nelems) {
       uVar2 = local_10 + 1 + s->freeindex;
@@ -11547,15 +11429,11 @@ void runtime_mallocgc(uintptr size,runtime__type *typ,bool needzero,void *_r3)
         if ((size & 7) == 0) {
           uVar8 = uVar8 + 7 & 0xfffffff8;
         }
-        else {
-          if ((size & 3) == 0) {
-            uVar8 = uVar8 + 3 & 0xfffffffc;
-          }
-          else {
-            if ((size & 1) == 0) {
-              uVar8 = uVar8 + 1 & 0xfffffffe;
-            }
-          }
+        else if ((size & 3) == 0) {
+          uVar8 = uVar8 + 3 & 0xfffffffc;
+        }
+        else if ((size & 1) == 0) {
+          uVar8 = uVar8 + 1 & 0xfffffffe;
         }
         if ((uVar8 + size < 0x11) && (local_18->tiny != 0)) {
           local_18->tinyoffset = uVar8 + size;
@@ -11808,7 +11686,7 @@ void runtime_newarray(runtime__type *typ,int n,void *_r2)
       return;
     }
   }
-  runtime_gopanic((interface__)0x80f1a98080d1ee0);
+  runtime_gopanic((interface___)0x80f1a98080d1ee0);
   do {
     invalidInstructionException();
   } while( true );
@@ -12353,7 +12231,7 @@ void runtime___mspan__nextFreeIndex(runtime_mspan *s,uintptr _r0)
         invalidInstructionException();
       } while( true );
     }
-    runtime_fwdslash_internal_fwdslash_sys_Ctz64();
+    runtime_internal_sys_Ctz64();
     while( true ) {
       if (local_18 != 0x40) {
         if (uVar6 + local_18 < uVar3) {
@@ -12379,7 +12257,7 @@ void runtime___mspan__nextFreeIndex(runtime_mspan *s,uintptr _r0)
       uVar6 = uVar6 + 0x40 & 0xffffffc0;
       if (uVar3 <= uVar6) break;
       runtime___mspan__refillAllocCache(s,uVar6 >> 3);
-      runtime_fwdslash_internal_fwdslash_sys_Ctz64();
+      runtime_internal_sys_Ctz64();
     }
     s->freeindex = uVar3;
     return;
@@ -12423,7 +12301,7 @@ void runtime_markBits_setMarked(runtime_markBits m)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    runtime_fwdslash_internal_fwdslash_atomic_Or8();
+    runtime_internal_atomic_Or8();
     return;
   }
   runtime_morestack_noctxt();
@@ -12573,10 +12451,10 @@ void runtime_heapBits_setCheckmarked(runtime_heapBits h,uintptr size)
     return;
   }
   if (size == 4) {
-    runtime_fwdslash_internal_fwdslash_atomic_Or8();
+    runtime_internal_atomic_Or8();
     return;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Or8();
+  runtime_internal_atomic_Or8();
   return;
 }
 
@@ -13088,15 +12966,13 @@ void runtime_heapBitsSetType(uintptr x,uintptr size,uintptr dataSize,runtime__ty
           }
         }
       }
+      else if (uVar6 < 8) {
+        uVar13 = uVar13 | (uint)*pbVar8 << (bVar5 & 0x1f) & -(uint)(uVar6 < 0x20);
+        uVar14 = uVar6;
+        pbVar8 = pbVar8 + 1;
+      }
       else {
-        if (uVar6 < 8) {
-          uVar13 = uVar13 | (uint)*pbVar8 << (bVar5 & 0x1f) & -(uint)(uVar6 < 0x20);
-          uVar14 = uVar6;
-          pbVar8 = pbVar8 + 1;
-        }
-        else {
-          uVar14 = uVar6 - 8;
-        }
+        uVar14 = uVar6 - 8;
       }
       bVar5 = (byte)uVar13 & 0xf | 0xf0;
       uVar7 = local_54 + 8;
@@ -13329,7 +13205,7 @@ void runtime_progToPointerMask(uint8 *prog,uintptr size,runtime_bitvector _r2)
 void runtime_runGCProg(uint8 *prog,uint8 *trailer,uint8 *dst,int size,uintptr _r4)
 
 {
-  byte **ppbVar1;
+  uint *puVar1;
   byte bVar2;
   byte bVar3;
   int iVar4;
@@ -13347,8 +13223,8 @@ void runtime_runGCProg(uint8 *prog,uint8 *trailer,uint8 *dst,int size,uintptr _r
   byte *local_10;
   uint8 *local_4;
   
-  ppbVar1 = (byte **)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if (&local_4 < *ppbVar1 || &local_4 == (uint8 **)*ppbVar1) {
+  puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
+  if (&local_4 < (byte **)*puVar1 || &local_4 == (byte **)*puVar1) {
     local_4 = (byte *)0x8057e83;
     runtime_morestack_noctxt();
     runtime_runGCProg(prog,trailer,dst,size,_r4);
@@ -13659,7 +13535,8 @@ void runtime___mcache__refill(runtime_mcache *c,runtime_spanClass spc,runtime_ms
   if (prVar4 != &runtime_emptymspan) {
     prVar4->incache = false;
   }
-  runtime___mcentral__cacheSpan(&runtime_mheap_.central[uVar5].mcentral,in_stack_fffffff4);
+  runtime___mcentral__cacheSpan
+            ((runtime_mcentral *)(runtime_mheap_.central + uVar5),in_stack_fffffff4);
   if (in_stack_fffffff4 != (runtime_mspan *)0x0) {
     if ((uint)in_stack_fffffff4->allocCount != in_stack_fffffff4->nelems) {
       c->alloc[uVar5] = in_stack_fffffff4;
@@ -13703,7 +13580,8 @@ void runtime___mcache__releaseAll(runtime_mcache *c)
     }
     if (0x85 < uVar2) break;
     if (c->alloc[uVar2] != &runtime_emptymspan) {
-      runtime___mcentral__uncacheSpan(&runtime_mheap_.central[uVar2].mcentral,c->alloc[uVar2]);
+      runtime___mcentral__uncacheSpan
+                ((runtime_mcentral *)(runtime_mheap_.central + uVar2),c->alloc[uVar2]);
       c->alloc[uVar2] = &runtime_emptymspan;
     }
     uVar2 = uVar2 + 1;
@@ -13741,7 +13619,7 @@ void runtime___mcentral__cacheSpan(runtime_mcentral *c,runtime_mspan *_r0)
     runtime___mcentral__cacheSpan(c,_r0);
     return;
   }
-  uVar6 = SEXT14((char)(c->spanclass >> 1));
+  uVar6 = (uint)(char)(c->spanclass >> 1);
   if (0x42 < uVar6) {
     runtime_panicindex();
     do {
@@ -13762,7 +13640,7 @@ LAB_08058538:
     prVar9 = (runtime_mspan *)(uVar3 - 2);
     if ((runtime_mspan *)span->sweepgen == prVar9) {
       cVar4 = (char)uVar3 + -1;
-      runtime_fwdslash_internal_fwdslash_atomic_Cas();
+      runtime_internal_atomic_Cas();
       prVar8 = prVar9;
       if (in_stack_ffffffe4 != '\0') {
         runtime___mSpanList__remove(&c->nonempty,span);
@@ -13803,7 +13681,7 @@ LAB_0805840d:
     prVar9 = (runtime_mspan *)(uVar3 - 2);
     if ((runtime_mspan *)span->sweepgen == prVar9) {
       cVar4 = (char)uVar3 + -1;
-      runtime_fwdslash_internal_fwdslash_atomic_Cas();
+      runtime_internal_atomic_Cas();
       prVar8 = prVar9;
       if (in_stack_ffffffe4 != '\0') break;
     }
@@ -13833,10 +13711,10 @@ LAB_0805820b:
     iVar5 = (span->npages << 0xd) / span->elemsize - (uint)span->allocCount;
     if (((iVar5 != 0) && (span->freeindex != span->nelems)) &&
        (span->nelems != (uint)span->allocCount)) {
-      runtime_fwdslash_internal_fwdslash_atomic_Xadd64
+      runtime_internal_atomic_Xadd64
                 (&c->nmalloc,(longlong)iVar5,CONCAT71(in_stack_ffffffe5,in_stack_ffffffe4));
       uVar6 = (uint)span->allocCount * span->elemsize;
-      runtime_fwdslash_internal_fwdslash_atomic_Xadd64
+      runtime_internal_atomic_Xadd64
                 (&runtime_memstats.heap_live,CONCAT44(-(uint)(spanBytes < uVar6),spanBytes - uVar6),
                  CONCAT71(in_stack_ffffffe5,in_stack_ffffffe4));
       if (runtime_trace.enabled != false) {
@@ -13895,13 +13773,12 @@ void runtime___mcentral__uncacheSpan(runtime_mcentral *c,runtime_mspan *s)
         runtime___mSpanList__insert(&c->nonempty,s);
         uVar2 = (ulonglong)(uint)-iVar3 * (ulonglong)s->elemsize;
         iVar4 = -(uint)(iVar3 != 0) - (iVar3 >> 0x1f);
-        runtime_fwdslash_internal_fwdslash_atomic_Xadd64
+        runtime_internal_atomic_Xadd64
                   (&runtime_memstats.heap_live,
                    uVar2 & 0xffffffff |
                    (ulonglong)(s->elemsize * iVar4 + (int)(uVar2 >> 0x20)) << 0x20,in_stack_ffffffec
                   );
-        runtime_fwdslash_internal_fwdslash_atomic_Xadd64
-                  (&c->nmalloc,CONCAT44(iVar4,-iVar3),in_stack_ffffffec);
+        runtime_internal_atomic_Xadd64(&c->nmalloc,CONCAT44(iVar4,-iVar3),in_stack_ffffffec);
       }
       runtime_unlock(&c->lock);
       return;
@@ -13943,7 +13820,7 @@ void runtime___mcentral__freeSpan
   s->needzero = 1;
   if (preserve != false) {
     if (s->list != (runtime_mSpanList *)0x0) {
-      runtime_fwdslash_internal_fwdslash_atomic_Store();
+      runtime_internal_atomic_Store();
       return;
     }
     runtime_throw((string)0x1c080e477c);
@@ -13956,7 +13833,7 @@ void runtime___mcentral__freeSpan
     runtime___mSpanList__remove(&c->empty,s);
     runtime___mSpanList__insert(&c->nonempty,s);
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Store();
+  runtime_internal_atomic_Store();
   if (s->allocCount != 0) {
     runtime_unlock(&c->lock);
     return;
@@ -13991,7 +13868,7 @@ void runtime___mcentral__grow(runtime_mcentral *c,runtime_mspan *_r0)
     return;
   }
   spanclass = c->spanclass;
-  uVar2 = SEXT14((char)(spanclass >> 1));
+  uVar2 = (uint)(char)(spanclass >> 1);
   if (0x42 < uVar2) {
     runtime_panicindex();
     do {
@@ -14350,7 +14227,7 @@ void runtime_queuefinalizer
         invalidInstructionException();
       } while( true );
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     if (runtime_writeBarrier._0_4_ == 0) {
       prVar3->fin[uVar4].fn = fn;
     }
@@ -14415,7 +14292,7 @@ void runtime_createfing(void)
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     if (runtime_fingCreate == 0) {
-      runtime_fwdslash_internal_fwdslash_atomic_Cas();
+      runtime_internal_atomic_Cas();
       if (local_4 != '\0') {
         runtime_newproc(0,(runtime_funcval *)&PTR_runtime_runfinq_080e7cb8);
       }
@@ -14566,7 +14443,7 @@ void runtime_runfinq(void)
           runtime_writebarrierptr((uintptr *)&prVar6->fin[uVar7 - 1].ot,0);
           in_stack_ffffffc0 = size;
         }
-        runtime_fwdslash_internal_fwdslash_atomic_Store();
+        runtime_internal_atomic_Store();
         uVar7 = uVar7 - 1;
       }
       prVar3 = prVar6->next;
@@ -14586,7 +14463,7 @@ void runtime_runfinq(void)
 // WARNING: Removing unreachable block (ram,0x08059bac)
 // WARNING: Removing unreachable block (ram,0x08059bb1)
 
-void runtime_SetFinalizer(interface__ obj,interface__ finalizer)
+void runtime_SetFinalizer(interface___ obj,interface___ finalizer)
 
 {
   uint *puVar1;
@@ -14615,7 +14492,7 @@ void runtime_SetFinalizer(interface__ obj,interface__ finalizer)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    runtime_SetFinalizer((interface__)obj,finalizer);
+    runtime_SetFinalizer(obj,finalizer);
     return;
   }
   if (runtime_debug.sbrk != 0) {
@@ -14748,32 +14625,31 @@ void runtime_SetFinalizer(interface__ obj,interface__ finalizer)
           in_stack_ffffff8c != (runtime_mspan *)0x0)) ||
          ((inter->pkgpath).bytes != (uint8 *)obj._type[1].size)) goto LAB_08059b1b;
     }
-    else {
-      if ((bVar5 != 0x14) ||
-         (((inter->mhdr).len != 0 &&
-          (in_stack_ffffff8c = (runtime_mspan *)obj._type,
-          runtime_assertE2I2(inter,obj,(runtime_iface)CONCAT44(in_stack_ffffff98,in_stack_ffffff94),
-                             (bool)in_stack_ffffff9c), in_stack_ffffff90 = obj.data,
-          in_stack_ffffff9c == '\0')))) {
+    else if ((bVar5 != 0x14) ||
+            (((inter->mhdr).len != 0 &&
+             (in_stack_ffffff8c = (runtime_mspan *)obj._type,
+             runtime_assertE2I2(inter,obj,
+                                (runtime_iface)CONCAT44(in_stack_ffffff98,in_stack_ffffff94),
+                                (bool)in_stack_ffffff9c), in_stack_ffffff90 = obj.data,
+             in_stack_ffffff9c == '\0')))) {
 LAB_08059b1b:
-        runtime____type__string(obj._type,(string)CONCAT44(in_stack_ffffff90,in_stack_ffffff8c));
-        prVar7 = in_stack_ffffff8c;
-        pvVar8 = in_stack_ffffff90;
-        runtime____type__string
-                  (finalizer._type,(string)CONCAT44(in_stack_ffffff90,in_stack_ffffff8c));
-        runtime_concatstring4
-                  ((uint8 (*) [32])0x0,
-                   (string  [4])
-                   CONCAT428(pvVar8,CONCAT424(prVar7,CONCAT420(0xe,CONCAT416(0x80e201c,
-                                                                             CONCAT412(
+      runtime____type__string(obj._type,(string)CONCAT44(in_stack_ffffff90,in_stack_ffffff8c));
+      prVar7 = in_stack_ffffff8c;
+      pvVar8 = in_stack_ffffff90;
+      runtime____type__string(finalizer._type,(string)CONCAT44(in_stack_ffffff90,in_stack_ffffff8c))
+      ;
+      runtime_concatstring4
+                ((uint8 (*) [32])0x0,
+                 (string  [4])
+                 CONCAT428(pvVar8,CONCAT424(prVar7,CONCAT420(0xe,CONCAT416(0x80e201c,
+                                                                           CONCAT412(
                                                   in_stack_ffffff90,
                                                   CONCAT48(in_stack_ffffff8c,0x22080e5a95)))))),
-                   (string)CONCAT44(in_stack_ffffffb0,in_stack_ffffffac));
-        runtime_throw((string)CONCAT44(in_stack_ffffffb0,in_stack_ffffffac));
-        do {
-          invalidInstructionException();
-        } while( true );
-      }
+                 (string)CONCAT44(in_stack_ffffffb0,in_stack_ffffffac));
+      runtime_throw((string)CONCAT44(in_stack_ffffffb0,in_stack_ffffffac));
+      do {
+        invalidInstructionException();
+      } while( true );
     }
   }
   uVar2 = *(ushort *)&finalizer._type[1].size;
@@ -14913,14 +14789,14 @@ void runtime_gcinit(void)
               (CONCAT44(runtime_heapminimum._4_4_,(undefined4)runtime_heapminimum),
                (float64)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
     d = (double)CONCAT44(in_stack_fffffffc,in_stack_fffffff8) /
-        ((double)runtime_memstats.triggerRatio + 1.0);
+        (runtime_memstats.triggerRatio + 1.0);
     uVar2 = in_stack_fffffff8;
     uVar3 = in_stack_fffffffc;
-    runtime_float64touint64((float64)d,CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
+    runtime_float64touint64(d,CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
     runtime_memstats.heap_marked._4_4_ = uVar3;
     runtime_memstats.heap_marked._0_4_ = uVar2;
     runtime_readgogc(SUB84(d,0));
-    runtime_fwdslash_debug_setGCPercent(SUB84(d,0),(int32)((ulonglong)d >> 0x20));
+    runtime_debug_setGCPercent(SUB84(d,0),(int32)((ulonglong)d >> 0x20));
     runtime_work.startSema = 1;
     runtime_work.markDoneSema = 1;
     return;
@@ -14985,9 +14861,7 @@ void runtime_gcenable(void)
 
 
 
-// Original name: runtime/debug.setGCPercent
-
-void runtime_fwdslash_debug_setGCPercent(int32 in,int32 out)
+void runtime_debug_setGCPercent(int32 in,int32 out)
 
 {
   uint *puVar1;
@@ -15016,7 +14890,7 @@ void runtime_fwdslash_debug_setGCPercent(int32 in,int32 out)
     return;
   }
   runtime_morestack_noctxt();
-  runtime_fwdslash_debug_setGCPercent(in,out);
+  runtime_debug_setGCPercent(in,out);
   return;
 }
 
@@ -15025,7 +14899,7 @@ void runtime_fwdslash_debug_setGCPercent(int32 in,int32 out)
 void runtime_setGCPhase(uint32 x)
 
 {
-  runtime_fwdslash_internal_fwdslash_atomic_Store();
+  runtime_internal_atomic_Store();
   runtime_writeBarrier.enabled = runtime_writeBarrier.cgo;
   if (runtime_gcphase == 1 || runtime_gcphase == 2) {
     runtime_writeBarrier.enabled = (bool)1;
@@ -15085,9 +14959,9 @@ void runtime___gcControllerState__startCycle(runtime_gcControllerState *c)
       uVar10 = in_stack_ffffffc0;
       iVar8 = in_stack_ffffffc4;
       runtime_float64touint64
-                ((float64)((double)CONCAT44(in_stack_ffffffc4,in_stack_ffffffc0) /
-                          ((double)runtime_memstats.triggerRatio + 1.0)),
-                 CONCAT44(in_stack_ffffffc4,in_stack_ffffffc0));
+                ((double)CONCAT44(in_stack_ffffffc4,in_stack_ffffffc0) /
+                 (runtime_memstats.triggerRatio + 1.0),CONCAT44(in_stack_ffffffc4,in_stack_ffffffc0)
+                );
       runtime_memstats.heap_marked._4_4_ = iVar8;
       runtime_memstats.heap_marked._0_4_ = uVar10;
     }
@@ -15119,12 +14993,12 @@ void runtime___gcControllerState__startCycle(runtime_gcControllerState *c)
       runtime_memstats.next_gc._4_4_ = uVar10;
     }
     dVar11 = (double)runtime_gomaxprocs;
-    runtime_float64toint64((float64)(dVar11 * 0.25),CONCAT44(uVar13,uVar12));
+    runtime_float64toint64(dVar11 * 0.25,CONCAT44(uVar13,uVar12));
     *(undefined4 *)&c->dedicatedMarkWorkersNeeded = uVar12;
     *(undefined4 *)((int)&c->dedicatedMarkWorkersNeeded + 4) = uVar13;
     runtime_int64tofloat64(CONCAT44(uVar13,uVar12),(float64)CONCAT44(uVar13,uVar12));
     dVar11 = dVar11 * 0.25 - (double)CONCAT44(uVar13,uVar12);
-    c->fractionalUtilizationGoal = (float64)dVar11;
+    c->fractionalUtilizationGoal = dVar11;
     if (dVar11 <= 0.0) {
       *(undefined4 *)&c->fractionalMarkWorkersNeeded = 0;
       *(undefined4 *)((int)&c->fractionalMarkWorkersNeeded + 4) = 0;
@@ -15201,7 +15075,7 @@ void runtime___gcControllerState__revise(runtime_gcControllerState *c)
       uVar3 = 1000;
       iVar6 = 0;
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
+    runtime_internal_atomic_Load64();
     iVar4 = (uint)runtime_memstats.next_gc - in_stack_ffffffdc;
     iVar5 = (runtime_memstats.next_gc._4_4_ - in_stack_ffffffe0) -
             (uint)((uint)runtime_memstats.next_gc < in_stack_ffffffdc);
@@ -15214,14 +15088,13 @@ void runtime___gcControllerState__revise(runtime_gcControllerState *c)
     dVar2 = (double)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0);
     runtime_int64tofloat64
               (CONCAT44(iVar5,iVar4),(float64)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
-    c->assistWorkPerByte = (float64)(dVar2 / (double)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
+    c->assistWorkPerByte = dVar2 / (double)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0);
     runtime_int64tofloat64
               (CONCAT44(iVar5,iVar4),(float64)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
     dVar2 = (double)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0);
     runtime_int64tofloat64
               (CONCAT44(iVar6,uVar3),(float64)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
-    c->assistBytesPerWork = (float64)(dVar2 / (double)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0))
-    ;
+    c->assistBytesPerWork = dVar2 / (double)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0);
     return;
   }
   runtime_morestack_noctxt();
@@ -15301,15 +15174,15 @@ void runtime___gcControllerState__endCycle(runtime_gcControllerState *c,float64 
     uVar4 = runtime_memstats.gc_trigger._4_4_;
     uVar3 = (undefined4)runtime_memstats.gc_trigger;
     v_00 = runtime_memstats.triggerRatio;
-    v_02 = v_01 - (double)runtime_memstats.triggerRatio;
-    v_03 = local_8 - (double)runtime_memstats.triggerRatio;
+    v_02 = v_01 - runtime_memstats.triggerRatio;
+    v_03 = local_8 - runtime_memstats.triggerRatio;
     if (0 < runtime_debug.gcpacertrace) {
       runtime_uint64tofloat64
                 (CONCAT44(runtime_memstats.heap_marked._4_4_,
                           (undefined4)runtime_memstats.heap_marked),
                  (float64)CONCAT44(in_stack_ffffff88,in_stack_ffffff84));
       runtime_float64toint64
-                ((float64)((v_01 + 1.0) * (double)CONCAT44(in_stack_ffffff88,in_stack_ffffff84)),
+                ((v_01 + 1.0) * (double)CONCAT44(in_stack_ffffff88,in_stack_ffffff84),
                  CONCAT44(in_stack_ffffff88,in_stack_ffffff84));
       v = c->scanWork;
       runtime_printlock();
@@ -15320,25 +15193,25 @@ void runtime___gcControllerState__endCycle(runtime_gcControllerState *c,float64 
       runtime_printstring((string)0x5080e0f57);
       runtime_printuint(CONCAT44(uVar4,uVar3));
       runtime_printstring((string)0x5080e0f7a);
-      runtime_printfloat((float64)local_8);
+      runtime_printfloat(local_8);
       runtime_printstring((string)0x5080e0f5c);
       runtime_printuint(CONCAT44(uVar6,uVar5));
       runtime_printstring((string)0x5080e0f7f);
-      runtime_printfloat((float64)v_01);
+      runtime_printfloat(v_01);
       runtime_printstring((string)0x5080e0f61);
       runtime_printint(CONCAT44(in_stack_ffffff88,in_stack_ffffff84));
       runtime_printstring((string)0x5080e0fa7);
-      runtime_printfloat((float64)dVar11);
+      runtime_printfloat(dVar11);
       runtime_printstring((string)0x5080e0fac);
       runtime_printfloat(0.25);
       runtime_printstring((string)0x5080e0f6b);
       runtime_printint(v);
       runtime_printstring((string)0x8080e1375);
-      runtime_printfloat((float64)v_02);
+      runtime_printfloat(v_02);
       runtime_printstring((string)0xa080e17fb);
-      runtime_printfloat((float64)v_03);
+      runtime_printfloat(v_03);
       runtime_printstring((string)0x9080e158d);
-      runtime_printfloat((float64)(dVar11 * 4.0));
+      runtime_printfloat(dVar11 * 4.0);
       runtime_printstring((string)0x1080e0d9c);
       runtime_printunlock();
     }
@@ -15439,13 +15312,13 @@ void runtime___gcControllerState__findRunnableGCWorker
 
 {
   uint *puVar1;
-  uint64 *ptr;
+  int64 *ptr;
   runtime_g *gp;
   double dVar2;
   int iVar3;
   int iVar4;
   int *in_GS_OFFSET;
-  uint64 *puVar5;
+  int64 *piVar5;
   int in_stack_ffffffd8;
   undefined4 in_stack_ffffffdc;
   undefined4 in_stack_ffffffe0;
@@ -15472,26 +15345,26 @@ void runtime___gcControllerState__findRunnableGCWorker
     runtime___gcControllerState__findRunnableGCWorker_func1
               (&c->dedicatedMarkWorkersNeeded,SUB41(in_stack_ffffffd8,0));
     if ((char)in_stack_ffffffd8 == '\0') {
-      ptr = (uint64 *)&c->fractionalMarkWorkersNeeded;
-      puVar5 = ptr;
-      runtime___gcControllerState__findRunnableGCWorker_func1((int64 *)ptr,false);
+      ptr = &c->fractionalMarkWorkersNeeded;
+      piVar5 = ptr;
+      runtime___gcControllerState__findRunnableGCWorker_func1(ptr,false);
       if ((char)in_stack_ffffffd8 == '\0') {
         return;
       }
       runtime_nanotime();
-      iVar3 = (int)puVar5 - (int)(uint64 *)runtime_gcController.markStartTime;
+      iVar3 = (int)piVar5 - (int)(undefined *)runtime_gcController.markStartTime;
       iVar4 = (in_stack_ffffffd8 - runtime_gcController.markStartTime._4_4_) -
-              (uint)(puVar5 < (uint64 *)runtime_gcController.markStartTime);
+              (uint)(piVar5 < (undefined *)runtime_gcController.markStartTime);
       if (0 < iVar4 || iVar4 == 0 && iVar3 != 0) {
         runtime_int64tofloat64
                   (c->fractionalMarkTime,(float64)CONCAT44(in_stack_ffffffe0,in_stack_ffffffdc));
         dVar2 = (double)CONCAT44(in_stack_ffffffe0,in_stack_ffffffdc);
         runtime_int64tofloat64
                   (CONCAT44(iVar4,iVar3),(float64)CONCAT44(in_stack_ffffffe0,in_stack_ffffffdc));
-        if ((double)c->fractionalUtilizationGoal <
+        if (c->fractionalUtilizationGoal <
             dVar2 / (double)CONCAT44(in_stack_ffffffe0,in_stack_ffffffdc)) {
-          runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
-                    (ptr,1,CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
+          runtime_internal_atomic_Xaddint64
+                    ((uint64 *)ptr,1,CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
           return;
         }
       }
@@ -15551,17 +15424,17 @@ void runtime_gcSetTriggerRatio(float64 triggerRatio)
     runtime_gcSetTriggerRatio(triggerRatio);
     return;
   }
-  if (0.0 <= (double)triggerRatio) {
-    dVar15 = (double)triggerRatio;
+  if (0.0 <= triggerRatio) {
+    dVar15 = triggerRatio;
     if ((-1 < runtime_gcpercent) &&
-       (dVar15 = ((double)runtime_gcpercent * 0.95) / 100.0, (double)triggerRatio <= dVar15)) {
-      dVar15 = (double)triggerRatio;
+       (dVar15 = ((double)runtime_gcpercent * 0.95) / 100.0, triggerRatio <= dVar15)) {
+      dVar15 = triggerRatio;
     }
   }
   else {
     dVar15 = 0.0;
   }
-  runtime_memstats.triggerRatio = (float64)dVar15;
+  runtime_memstats.triggerRatio = dVar15;
   if (runtime_gcpercent < 0) {
     uVar8 = 0xffffffff;
     uVar9 = 0xffffffff;
@@ -15573,7 +15446,7 @@ void runtime_gcSetTriggerRatio(float64 triggerRatio)
     d = (dVar15 + 1.0) * (double)CONCAT44(in_stack_ffffff94,in_stack_ffffff90);
     uVar8 = in_stack_ffffff90;
     uVar9 = in_stack_ffffff94;
-    runtime_float64touint64((float64)d,CONCAT44(in_stack_ffffff94,in_stack_ffffff90));
+    runtime_float64touint64(d,CONCAT44(in_stack_ffffff94,in_stack_ffffff90));
     uVar18 = runtime_heapminimum._4_4_;
     uVar10 = (uint)runtime_heapminimum;
     uVar17 = (uint)((ulonglong)d >> 0x20);
@@ -15584,7 +15457,7 @@ void runtime_gcSetTriggerRatio(float64 triggerRatio)
     uVar16 = uVar17;
     if (runtime_mheap_.sweepdone == 0) {
       uVar12 = uVar8;
-      runtime_fwdslash_internal_fwdslash_atomic_Load64();
+      runtime_internal_atomic_Load64();
       n_00 = CONCAT44((runtime_gcpercent >> 0x1f) << 0x14 | (uint)runtime_gcpercent >> 0xc,
                       runtime_gcpercent << 0x14);
       in_stack_ffffff90 = 100;
@@ -15621,7 +15494,7 @@ void runtime_gcSetTriggerRatio(float64 triggerRatio)
       runtime_printstring((string)0x11080e26b9);
       runtime_printuint(CONCAT44(uVar3,uVar2));
       runtime_printstring((string)0xd080e1fbf);
-      runtime_printfloat((float64)dVar15);
+      runtime_printfloat(dVar15);
       runtime_printstring((string)0xc080e1c33);
       runtime_printuint(CONCAT44(uVar12,uVar14));
       runtime_printstring((string)0x1080e0d9c);
@@ -15667,7 +15540,7 @@ void runtime_gcSetTriggerRatio(float64 triggerRatio)
     runtime___gcControllerState__revise(&runtime_gcController);
   }
   if (runtime_mheap_.sweepdone == 0) {
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
+    runtime_internal_atomic_Load64();
     uVar10 = (uVar8 - uVar16) - 0x100000;
     iVar11 = ((uVar9 - in_stack_ffffff90) - (uint)(uVar8 < uVar16)) + -1 +
              (uint)(0xfffff < uVar8 - uVar16);
@@ -15677,7 +15550,7 @@ void runtime_gcSetTriggerRatio(float64 triggerRatio)
     }
     uVar18 = in_stack_ffffff90;
     uVar12 = uVar16;
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
+    runtime_internal_atomic_Load64();
     iVar13 = (runtime_mheap_.pagesInUse._4_4_ - uVar18) -
              (uint)((uint)runtime_mheap_.pagesInUse < uVar12);
     if ((uint)runtime_mheap_.pagesInUse - uVar12 == 0 && iVar13 == 0 || iVar13 < 0) {
@@ -15689,11 +15562,10 @@ void runtime_gcSetTriggerRatio(float64 triggerRatio)
                  (float64)CONCAT44(in_stack_ffffff94,uVar18));
       dVar15 = (double)CONCAT44(in_stack_ffffff94,uVar18);
       runtime_int64tofloat64(CONCAT44(iVar11,uVar10),(float64)CONCAT44(in_stack_ffffff94,uVar18));
-      runtime_mheap_.sweepPagesPerByte =
-           (float64)(dVar15 / (double)CONCAT44(in_stack_ffffff94,uVar18));
+      runtime_mheap_.sweepPagesPerByte = dVar15 / (double)CONCAT44(in_stack_ffffff94,uVar18);
       runtime_mheap_.sweepHeapLiveBasis._0_4_ = uVar16;
       runtime_mheap_.sweepHeapLiveBasis._4_4_ = in_stack_ffffff90;
-      runtime_fwdslash_internal_fwdslash_atomic_Store64();
+      runtime_internal_atomic_Store64();
     }
   }
   else {
@@ -15729,7 +15601,7 @@ void runtime_gcTrigger_test(runtime_gcTrigger t,bool _r0)
     }
     if (t.kind == 2) {
       if (-1 < runtime_gcpercent) {
-        runtime_fwdslash_internal_fwdslash_atomic_Load64();
+        runtime_internal_atomic_Load64();
         return;
       }
       return;
@@ -15787,10 +15659,8 @@ void runtime_gcStart(runtime_gcMode mode,runtime_gcTrigger trigger)
         if (runtime_debug.gcstoptheworld == 1) {
           mode = 1;
         }
-        else {
-          if (runtime_debug.gcstoptheworld == 2) {
-            mode = 2;
-          }
+        else if (runtime_debug.gcstoptheworld == 2) {
+          mode = 2;
         }
       }
       _r0_00 = &runtime_worldsema;
@@ -15806,7 +15676,7 @@ void runtime_gcStart(runtime_gcMode mode,runtime_gcTrigger trigger)
       runtime_work.stwprocs = (int32)_r0_00;
       runtime_work.maxprocs = runtime_gomaxprocs;
       ppuVar3 = (undefined **)0x81597b0;
-      runtime_fwdslash_internal_fwdslash_atomic_Load64();
+      runtime_internal_atomic_Load64();
       runtime_work.heap0._4_4_ = trigger.now._4_4_;
       runtime_work.heap0._0_4_ = (int)trigger.now;
       runtime_work.pauseNS._0_4_ = 0;
@@ -15834,7 +15704,7 @@ void runtime_gcStart(runtime_gcMode mode,runtime_gcTrigger trigger)
         runtime_gcMarkRootPrepare();
         runtime_gcMarkTinyAllocs();
         iVar6 = 1;
-        runtime_fwdslash_internal_fwdslash_atomic_Store();
+        runtime_internal_atomic_Store();
         ppuVar4 = &PTR_runtime_startTheWorldWithSema_080e7cd4;
         runtime_gcController.markStartTime._0_4_ = ppuVar3;
         runtime_gcController.markStartTime._4_4_ = iVar5;
@@ -15908,13 +15778,13 @@ void runtime_gcMarkDone(void)
       runtime_semrelease(&runtime_work.markDoneSema);
       return;
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+    runtime_internal_atomic_Xaddint64
               ((uint64 *)&runtime_gcController.dedicatedMarkWorkersNeeded,-0xffffffff,
                CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
     uVar3 = 0x81578f8;
     uVar4 = 1;
     uVar5 = 0xffffffff;
-    runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+    runtime_internal_atomic_Xaddint64
               ((uint64 *)&runtime_gcController.fractionalMarkWorkersNeeded,-0xffffffff,
                CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
     if (runtime_gcBlackenPromptly != false) {
@@ -15934,7 +15804,7 @@ void runtime_gcMarkDone(void)
       runtime_systemstack();
       runtime_work.markrootDone = true;
       uVar3 = 0;
-      runtime_fwdslash_internal_fwdslash_atomic_Store();
+      runtime_internal_atomic_Store();
       runtime_gcWakeAllAssists();
       runtime_semrelease(&runtime_work.markDoneSema);
       runtime___gcControllerState__endCycle(&runtime_gcController,(float64)CONCAT44(uVar5,uVar3));
@@ -15942,19 +15812,19 @@ void runtime_gcMarkDone(void)
       return;
     }
     runtime_gcBlackenPromptly = true;
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     runtime_semrelease(&runtime_work.markDoneSema);
     runtime_systemstack();
     runtime_gcMarkRootCheck();
-    runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+    runtime_internal_atomic_Xaddint64
               ((uint64 *)&runtime_gcController.dedicatedMarkWorkersNeeded,0xffffffff,
                CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
     uVar6 = 0;
-    runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+    runtime_internal_atomic_Xaddint64
               ((uint64 *)&runtime_gcController.fractionalMarkWorkersNeeded,0xffffffff,
                CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
     in_stack_fffffff0 = 1;
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     if (runtime_work.nproc != uVar6) break;
     runtime_gcMarkWorkAvailable((runtime_p *)0x0,SUB41(in_stack_fffffff0,0));
     if ((char)in_stack_fffffff0 != '\0') {
@@ -16057,7 +15927,7 @@ void runtime_gcMarkTermination(float64 nextTriggerRatio)
     return;
   }
   local_ec = 0;
-  runtime_fwdslash_internal_fwdslash_atomic_Store();
+  runtime_internal_atomic_Store();
   runtime_gcBlackenPromptly = false;
   local_f0 = 2;
   runtime_setGCPhase(2);
@@ -16124,9 +15994,9 @@ void runtime_gcMarkTermination(float64 nextTriggerRatio)
     iVar9 = (int)((ulonglong)fVar16 >> 0x20) * 1000000000 + local_f4;
     bVar14 = CARRY4(local_f8,uVar18);
     runtime_work.tEnd = (int64)nextTriggerRatio;
-    runtime_fwdslash_internal_fwdslash_atomic_Store64();
+    runtime_internal_atomic_Store64();
     iVar10 = iVar17;
-    runtime_fwdslash_internal_fwdslash_atomic_Store64();
+    runtime_internal_atomic_Store64();
     uVar8 = runtime_memstats.numgc & 0xff;
     *(undefined4 *)(runtime_memstats.pause_ns + uVar8) = (undefined4)runtime_work.pauseNS;
     *(undefined4 *)((int)runtime_memstats.pause_ns + uVar8 * 8 + 4) = runtime_work.pauseNS._4_4_;
@@ -16191,8 +16061,7 @@ void runtime_gcMarkTermination(float64 nextTriggerRatio)
                         local_100 + (local_100 >> 0x1f) * local_104 + local_108 +
                         (uint)CARRY4(local_10c,local_110),iVar7),
                (float64)CONCAT44(in_stack_fffffe5c,iVar10));
-    runtime_memstats.gc_cpu_fraction =
-         (float64)(local_e8 / (double)CONCAT44(in_stack_fffffe5c,iVar10));
+    runtime_memstats.gc_cpu_fraction = local_e8 / (double)CONCAT44(in_stack_fffffe5c,iVar10);
     runtime_sweep.nbgsweep = 0;
     runtime_sweep.npausesweep = 0;
     if (runtime_work.userForced != false) {
@@ -16210,7 +16079,7 @@ void runtime_gcMarkTermination(float64 nextTriggerRatio)
     ppuVar15 = &PTR_runtime_freeStackSpans_080e7bf4;
     runtime_systemstack();
     if (0 < runtime_debug.gctrace) {
-      local_e8 = (double)runtime_memstats.gc_cpu_fraction;
+      local_e8 = runtime_memstats.gc_cpu_fraction;
       FUN_0808fd8a(ppuVar15);
       runtime_printlock();
       runtime_uint64div(CONCAT44((runtime_work.tSweepTerm._4_4_ - runtime_runtimeInitTime._4_4_) -
@@ -16306,12 +16175,10 @@ void runtime_gcMarkTermination(float64 nextTriggerRatio)
           runtime_printstring((string)0x1080e0d8c);
           runtime_printunlock();
         }
-        else {
-          if (iVar10 != 0) {
-            runtime_printlock();
-            runtime_printstring((string)0x1080e0d88);
-            runtime_printunlock();
-          }
+        else if (iVar10 != 0) {
+          runtime_printlock();
+          runtime_printstring((string)0x1080e0d88);
+          runtime_printunlock();
         }
         runtime_fmtNSAsMS((__uint8)CONCAT48(0x18,CONCAT44(0x18,local_e0)),ns,
                           (__uint8)CONCAT48(in_stack_fffffe6c,CONCAT44(in_stack_fffffe68,uVar20)));
@@ -16474,8 +16341,9 @@ void runtime_gcBgMarkWorker(runtime_p *_p_)
     uVar11 = 0x10;
     in_stack_ffffffc8 = CONCAT31((int3)((uint)in_stack_ffffffc8 >> 8),0x14);
     piVar8 = in_stack_ffffffbc;
-    runtime_gopark((func__runtime_g_unsafe_Pointer_bool *)&PTR_runtime_gcBgMarkWorker_func1_080e7bf8
-                   ,in_stack_ffffffbc,(string)0x10080e2499,0x14,0);
+    runtime_gopark((func__runtime_g__unsafe_Pointer__bool *)
+                   &PTR_runtime_gcBgMarkWorker_func1_080e7bf8,in_stack_ffffffbc,(string)0x10080e2499
+                   ,0x14,0);
     if ((runtime_workbuf *)_p_->gcBgMarkWorker != prVar2) {
       return;
     }
@@ -16491,7 +16359,7 @@ void runtime_gcBgMarkWorker(runtime_p *_p_)
     }
     runtime_nanotime();
     iVar9 = -1;
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     uVar4 = runtime_work.nproc;
     if (puVar10 == (undefined *)runtime_work.nproc) {
       runtime_printlock();
@@ -16523,35 +16391,31 @@ void runtime_gcBgMarkWorker(runtime_p *_p_)
     puVar6 = (undefined *)((iVar9 - (int)piVar8) - (uint)(w < ppuVar7));
     iVar9 = _p_->gcMarkWorkerMode;
     if (iVar9 == 0) {
-      runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+      runtime_internal_atomic_Xaddint64
                 ((uint64 *)&runtime_gcController.dedicatedMarkTime,CONCAT44(puVar6,iVar5),
                  CONCAT44(in_stack_ffffffc8,uVar11));
       puVar10 = (undefined *)0x0;
-      runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+      runtime_internal_atomic_Xaddint64
                 ((uint64 *)&runtime_gcController.dedicatedMarkWorkersNeeded,1,
                  CONCAT44(in_stack_ffffffc8,uVar11));
     }
-    else {
-      if (iVar9 == 1) {
-        runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
-                  ((uint64 *)&runtime_gcController.fractionalMarkTime,CONCAT44(puVar6,iVar5),
-                   CONCAT44(in_stack_ffffffc8,uVar11));
-        puVar10 = (undefined *)0x0;
-        runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
-                  ((uint64 *)&runtime_gcController.fractionalMarkWorkersNeeded,1,
-                   CONCAT44(in_stack_ffffffc8,uVar11));
-      }
-      else {
-        if (iVar9 == 2) {
-          runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
-                    ((uint64 *)&runtime_gcController.idleMarkTime,CONCAT44(puVar6,iVar5),
-                     CONCAT44(in_stack_ffffffc8,uVar11));
-          puVar10 = puVar6;
-        }
-      }
+    else if (iVar9 == 1) {
+      runtime_internal_atomic_Xaddint64
+                ((uint64 *)&runtime_gcController.fractionalMarkTime,CONCAT44(puVar6,iVar5),
+                 CONCAT44(in_stack_ffffffc8,uVar11));
+      puVar10 = (undefined *)0x0;
+      runtime_internal_atomic_Xaddint64
+                ((uint64 *)&runtime_gcController.fractionalMarkWorkersNeeded,1,
+                 CONCAT44(in_stack_ffffffc8,uVar11));
+    }
+    else if (iVar9 == 2) {
+      runtime_internal_atomic_Xaddint64
+                ((uint64 *)&runtime_gcController.idleMarkTime,CONCAT44(puVar6,iVar5),
+                 CONCAT44(in_stack_ffffffc8,uVar11));
+      puVar10 = puVar6;
     }
     _r1 = true;
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     uVar4 = runtime_work.nproc;
     if (runtime_work.nproc < puVar10) break;
     if (puVar10 == (undefined *)runtime_work.nproc) {
@@ -16617,13 +16481,11 @@ void runtime_gcMarkWorkAvailable(runtime_p *p,bool _r1)
     if (prVar2 == (runtime_workbuf *)0x0) {
       bVar3 = true;
     }
+    else if ((prVar2->workbufhdr).nobj == 0) {
+      bVar3 = (((p->gcw).wbuf2)->workbufhdr).nobj == 0;
+    }
     else {
-      if ((prVar2->workbufhdr).nobj == 0) {
-        bVar3 = (((p->gcw).wbuf2)->workbufhdr).nobj == 0;
-      }
-      else {
-        bVar3 = false;
-      }
+      bVar3 = false;
     }
     if (!bVar3) {
       return;
@@ -16728,13 +16590,11 @@ void runtime_gcMark(int64 start_time)
         if (prVar3 == (runtime_workbuf *)0x0) {
           bVar5 = true;
         }
+        else if ((prVar3->workbufhdr).nobj == 0) {
+          bVar5 = (((prVar2->gcw).wbuf2)->workbufhdr).nobj == 0;
+        }
         else {
-          if ((prVar3->workbufhdr).nobj == 0) {
-            bVar5 = (((prVar2->gcw).wbuf2)->workbufhdr).nobj == 0;
-          }
-          else {
-            bVar5 = false;
-          }
+          bVar5 = false;
         }
         if (!bVar5) {
           runtime_throw((string)0x2f080e7043);
@@ -16860,7 +16720,7 @@ void runtime_gcResetMarkState(void)
     runtime_unlock(&runtime_allglock);
     runtime_work.bytesMarked._0_4_ = 0;
     runtime_work.bytesMarked._4_4_ = 0;
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
+    runtime_internal_atomic_Load64();
     runtime_work.markrootDone = false;
     runtime_work.initialHeapLive._0_4_ = local_8;
     runtime_work.initialHeapLive._4_4_ = local_4;
@@ -17008,8 +16868,8 @@ void runtime_gchelper(void)
     if (runtime_trace.enabled != false) {
       runtime_traceGCScanDone();
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_work.nproc,in_stack_ffffffec);
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Load(&runtime_work.nproc,in_stack_ffffffec);
+    runtime_internal_atomic_Xadd();
     if (in_stack_ffffffec - 1 == local_10) {
       runtime_notewakeup(&runtime_work.alldone);
     }
@@ -17262,16 +17122,14 @@ void runtime___mTreap__insert(runtime_mTreap *root,runtime_mspan *span)
       if (span->npages < prVar6->npagesKey) {
         prVar5 = (runtime_treapNode *)&prVar6->left;
       }
-      else {
-        if (span <= prVar6->spanKey) {
-          if (prVar6->spanKey <= span) {
-            runtime_throw((string)0x1f080e514d);
-            do {
-              invalidInstructionException();
-            } while( true );
-          }
-          prVar5 = (runtime_treapNode *)&prVar6->left;
+      else if (span <= prVar6->spanKey) {
+        if (prVar6->spanKey <= span) {
+          runtime_throw((string)0x1f080e514d);
+          do {
+            invalidInstructionException();
+          } while( true );
         }
+        prVar5 = (runtime_treapNode *)&prVar6->left;
       }
     }
     prVar4 = prVar5->right;
@@ -17315,13 +17173,11 @@ void runtime___mTreap__removeNode(runtime_mTreap *root,runtime_treapNode *t,runt
   if (prVar2 == (runtime_treapNode *)0x0) {
     root->treap = (runtime_treapNode *)0x0;
   }
+  else if (prVar2->left == t) {
+    prVar2->left = (runtime_treapNode *)0x0;
+  }
   else {
-    if (prVar2->left == t) {
-      prVar2->left = (runtime_treapNode *)0x0;
-    }
-    else {
-      prVar2->right = (runtime_treapNode *)0x0;
-    }
+    prVar2->right = (runtime_treapNode *)0x0;
   }
   t->spanKey = (runtime_mspan *)0x0;
   t->npagesKey = 0;
@@ -17393,20 +17249,14 @@ void runtime___mTreap__removeSpan(runtime_mTreap *root,runtime_mspan *span)
       if (t->npagesKey < span->npages) {
         t = t->right;
       }
-      else {
-        if (span->npages < t->npagesKey) {
-          t = t->left;
-        }
-        else {
-          if (prVar2 < span) {
-            t = t->right;
-          }
-          else {
-            if (span < prVar2) {
-              t = t->left;
-            }
-          }
-        }
+      else if (span->npages < t->npagesKey) {
+        t = t->left;
+      }
+      else if (prVar2 < span) {
+        t = t->right;
+      }
+      else if (span < prVar2) {
+        t = t->left;
       }
     }
     runtime___mTreap__removeNode(root,t,in_stack_fffffffc);
@@ -17485,19 +17335,17 @@ void runtime___mTreap__rotateLeft(runtime_mTreap *root,runtime_treapNode *x)
   if (prVar3 == (runtime_treapNode *)0x0) {
     root->treap = prVar2;
   }
+  else if (prVar3->left == x) {
+    prVar3->left = prVar2;
+  }
   else {
-    if (prVar3->left == x) {
-      prVar3->left = prVar2;
+    if (prVar3->right != x) {
+      runtime_throw((string)0x1b080e4411);
+      do {
+        invalidInstructionException();
+      } while( true );
     }
-    else {
-      if (prVar3->right != x) {
-        runtime_throw((string)0x1b080e4411);
-        do {
-          invalidInstructionException();
-        } while( true );
-      }
-      prVar3->right = prVar2;
-    }
+    prVar3->right = prVar2;
   }
   return;
 }
@@ -17542,19 +17390,17 @@ void runtime___mTreap__rotateRight(runtime_mTreap *root,runtime_treapNode *y)
   if (prVar3 == (runtime_treapNode *)0x0) {
     root->treap = prVar2;
   }
+  else if (prVar3->left == y) {
+    prVar3->left = prVar2;
+  }
   else {
-    if (prVar3->left == y) {
-      prVar3->left = prVar2;
+    if (prVar3->right != y) {
+      runtime_throw((string)0x1c080e4878);
+      do {
+        invalidInstructionException();
+      } while( true );
     }
-    else {
-      if (prVar3->right != y) {
-        runtime_throw((string)0x1c080e4878);
-        do {
-          invalidInstructionException();
-        } while( true );
-      }
-      prVar3->right = prVar2;
-    }
+    prVar3->right = prVar2;
   }
   return;
 }
@@ -17615,15 +17461,14 @@ void runtime_gcMarkRootPrepare(void)
                 (runtime_mheap_.sweepSpans + (runtime_mheap_.sweepgen >> 1 & 1),in_stack_ffffffe8);
       runtime_work.nSpanRoots = in_stack_ffffffe8;
       uVar3 = runtime_work.nSpanRoots;
-      runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr
-                (&runtime_allglen,runtime_work.nSpanRoots);
+      runtime_internal_atomic_Loaduintptr(&runtime_allglen,runtime_work.nSpanRoots);
       runtime_work.nStackRoots = uVar3;
     }
     else {
       runtime_work.nSpanRoots = 0;
       runtime_work.nStackRoots = 0;
       if (0 < runtime_debug.gcrescanstacks) {
-        runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr(&runtime_allglen,in_stack_ffffffe8);
+        runtime_internal_atomic_Loaduintptr(&runtime_allglen,in_stack_ffffffe8);
         runtime_work.nStackRoots = in_stack_ffffffe8;
       }
     }
@@ -17775,47 +17620,45 @@ void runtime_markroot(runtime_gcWork *gcw,uint32 i)
           prVar6 = runtime_allfin;
           if (runtime_work.markrootDone == false) {
             for (; prVar6 != (runtime_finblock *)0x0; prVar6 = prVar6->alllink) {
-              runtime_fwdslash_internal_fwdslash_atomic_Load(&prVar6->cnt,in_stack_ffffffbc);
+              runtime_internal_atomic_Load(&prVar6->cnt,in_stack_ffffffbc);
               in_stack_ffffffbc = in_stack_ffffffbc * 0x14;
               runtime_scanblock((uintptr)prVar6->fin,in_stack_ffffffbc,runtime_finptrmask,gcw);
             }
           }
         }
+        else if (i == 1) {
+          if (runtime_work.markrootDone == false) {
+            runtime_systemstack();
+          }
+        }
         else {
-          if (i == 1) {
-            if (runtime_work.markrootDone == false) {
-              runtime_systemstack();
+          uVar3 = iVar7 + 2 + runtime_work.nSpanRoots;
+          if ((i < uVar2) || (uVar3 <= i)) {
+            if ((i < uVar3) ||
+               ((uint)(iVar7 + runtime_work.nSpanRoots + 2 + runtime_work.nStackRoots) <= i)) {
+              runtime_throw((string)0x13080e2d01);
+              do {
+                invalidInstructionException();
+              } while( true );
             }
+            if ((uint)runtime_allgs.len <= i - uVar3) {
+              runtime_panicindex();
+              do {
+                invalidInstructionException();
+              } while( true );
+            }
+            gp = runtime_allgs.array[i - uVar3];
+            runtime_readgstatus(gp,in_stack_ffffffbc);
+            uVar5 = runtime_work.tstart._4_4_;
+            if (((in_stack_ffffffbc == 4) || (in_stack_ffffffbc == 3)) &&
+               (*(int *)((int)&gp->waitsince + 4) == 0 && *(int *)&gp->waitsince == 0)) {
+              *(undefined4 *)&gp->waitsince = (undefined4)runtime_work.tstart;
+              *(undefined4 *)((int)&gp->waitsince + 4) = uVar5;
+            }
+            runtime_systemstack();
           }
           else {
-            uVar3 = iVar7 + 2 + runtime_work.nSpanRoots;
-            if ((i < uVar2) || (uVar3 <= i)) {
-              if ((i < uVar3) ||
-                 ((uint)(iVar7 + runtime_work.nSpanRoots + 2 + runtime_work.nStackRoots) <= i)) {
-                runtime_throw((string)0x13080e2d01);
-                do {
-                  invalidInstructionException();
-                } while( true );
-              }
-              if ((uint)runtime_allgs.len <= i - uVar3) {
-                runtime_panicindex();
-                do {
-                  invalidInstructionException();
-                } while( true );
-              }
-              gp = runtime_allgs.array[i - uVar3];
-              runtime_readgstatus(gp,in_stack_ffffffbc);
-              uVar5 = runtime_work.tstart._4_4_;
-              if (((in_stack_ffffffbc == 4) || (in_stack_ffffffbc == 3)) &&
-                 (*(int *)((int)&gp->waitsince + 4) == 0 && *(int *)&gp->waitsince == 0)) {
-                *(undefined4 *)&gp->waitsince = (undefined4)runtime_work.tstart;
-                *(undefined4 *)((int)&gp->waitsince + 4) = uVar5;
-              }
-              runtime_systemstack();
-            }
-            else {
-              runtime_markrootSpans(gcw,i - uVar2);
-            }
+            runtime_markrootSpans(gcw,i - uVar2);
           }
         }
       }
@@ -18060,25 +17903,25 @@ void runtime_gcAssistAlloc(runtime_g *gp)
       uVar10 = -(uint)(*(int *)&gp->gcAssistBytes != 0) - *(int *)((int)&gp->gcAssistBytes + 4);
       runtime_int64tofloat64
                 (CONCAT44(uVar10,uVar9),(float64)CONCAT44(in_stack_ffffffb0,in_stack_ffffffac));
-      dVar12 = (double)fVar6 * (double)CONCAT44(in_stack_ffffffb0,in_stack_ffffffac);
+      dVar12 = fVar6 * (double)CONCAT44(in_stack_ffffffb0,in_stack_ffffffac);
       uVar11 = (uint)((ulonglong)dVar12 >> 0x20);
-      runtime_float64toint64((float64)dVar12,CONCAT44(in_stack_ffffffb0,in_stack_ffffffac));
+      runtime_float64toint64(dVar12,CONCAT44(in_stack_ffffffb0,in_stack_ffffffac));
       fVar6 = runtime_gcController.assistBytesPerWork;
       uVar8 = in_stack_ffffffac;
       uVar13 = in_stack_ffffffb0;
       if (in_stack_ffffffac < 0x10000 && in_stack_ffffffb0 == 0 || (int)in_stack_ffffffb0 < 0) {
         runtime_int64tofloat64(0x10000,(float64)CONCAT44(in_stack_ffffffb0,in_stack_ffffffac));
-        dVar12 = (double)CONCAT44(in_stack_ffffffb0,in_stack_ffffffac) * (double)fVar6;
+        dVar12 = (double)CONCAT44(in_stack_ffffffb0,in_stack_ffffffac) * fVar6;
         uVar11 = (uint)((ulonglong)dVar12 >> 0x20);
         uVar9 = in_stack_ffffffac;
         uVar10 = in_stack_ffffffb0;
-        runtime_float64toint64((float64)dVar12,CONCAT44(in_stack_ffffffb0,in_stack_ffffffac));
+        runtime_float64toint64(dVar12,CONCAT44(in_stack_ffffffb0,in_stack_ffffffac));
         in_stack_ffffffac = 0x10000;
         in_stack_ffffffb0 = 0;
         uVar8 = uVar9;
         uVar13 = uVar10;
       }
-      runtime_fwdslash_internal_fwdslash_atomic_Loadint64();
+      runtime_internal_atomic_Loadint64();
       fVar6 = runtime_gcController.assistBytesPerWork;
       uVar7 = uVar8;
       if (uVar11 != 0 && uVar8 == 0 || 0 < (int)uVar8) {
@@ -18088,9 +17931,7 @@ void runtime_gcAssistAlloc(runtime_g *gp)
           uVar9 = *(uint *)&gp->gcAssistBytes;
           uVar10 = uVar8;
           runtime_int64tofloat64(CONCAT44(uVar8,uVar11),(float64)CONCAT44(uVar13,uVar8));
-          runtime_float64toint64
-                    ((float64)((double)CONCAT44(uVar13,uVar10) * (double)fVar6),
-                     CONCAT44(uVar13,uVar10));
+          runtime_float64toint64((double)CONCAT44(uVar13,uVar10) * fVar6,CONCAT44(uVar13,uVar10));
           uVar7 = uVar10 + uVar9;
           *(uint *)&gp->gcAssistBytes = uVar7 + 1;
           *(uint *)((int)&gp->gcAssistBytes + 4) =
@@ -18105,7 +17946,7 @@ void runtime_gcAssistAlloc(runtime_g *gp)
           uVar11 = in_stack_ffffffac;
         }
         uVar7 = -(uint)(uVar11 != 0) - uVar8;
-        runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+        runtime_internal_atomic_Xaddint64
                   ((uint64 *)&runtime_gcController.bgScanCredit,CONCAT44(uVar7,-uVar11),
                    CONCAT44(in_stack_ffffffb4,uVar13));
         if (in_stack_ffffffb0 - uVar8 == (uint)(in_stack_ffffffac < uVar11) &&
@@ -18196,14 +18037,14 @@ void runtime_gcAssistAlloc1(runtime_g *gp,int64 scanWork)
     runtime_writebarrierptr((uintptr *)dst,0);
   }
   puVar8 = &runtime_gcBlackenEnabled;
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_gcBlackenEnabled,in_stack_ffffffb8);
+  runtime_internal_atomic_Load(&runtime_gcBlackenEnabled,in_stack_ffffffb8);
   if (in_stack_ffffffb8 == 0) {
     *(undefined4 *)&gp->gcAssistBytes = 0;
     *(undefined4 *)((int)&gp->gcAssistBytes + 4) = 0;
     return;
   }
   runtime_nanotime();
-  runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+  runtime_internal_atomic_Xadd();
   uVar4 = runtime_work.nproc;
   if (in_stack_ffffffbc == runtime_work.nproc) {
     runtime_printlock();
@@ -18243,15 +18084,14 @@ void runtime_gcAssistAlloc1(runtime_g *gp,int64 scanWork)
   uVar2 = *(uint *)&gp->gcAssistBytes;
   runtime_int64tofloat64
             (CONCAT44(in_stack_ffffffc4,in_stack_ffffffc0),(float64)CONCAT44(iVar12,uVar11));
-  runtime_float64toint64
-            ((float64)((double)fVar5 * (double)CONCAT44(iVar12,uVar11)),CONCAT44(iVar12,uVar11));
+  runtime_float64toint64(fVar5 * (double)CONCAT44(iVar12,uVar11),CONCAT44(iVar12,uVar11));
   uVar6 = uVar11 + uVar2;
   *(uint *)&gp->gcAssistBytes = uVar6 + 1;
   *(uint *)((int)&gp->gcAssistBytes + 4) =
        iVar12 + iVar7 + (uint)CARRY4(uVar11,uVar2) + (uint)(0xfffffffe < uVar6);
   ppvVar9 = (void **)&runtime_work.nwait;
   prVar10 = (runtime_g *)0x1;
-  runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+  runtime_internal_atomic_Xadd();
   uVar4 = runtime_work.nproc;
   if (uVar11 <= runtime_work.nproc) {
     if (uVar11 == runtime_work.nproc) {
@@ -18278,7 +18118,7 @@ void runtime_gcAssistAlloc1(runtime_g *gp,int64 scanWork)
             *(int *)(rVar3 + 0x944) + (-(uint)(ppvVar9 < puVar8) - in_stack_ffffffb8);
     *(int *)(rVar3 + 0x944) = iVar7;
     if (0 < iVar7 || iVar7 == 0 && 5000 < uVar6) {
-      runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+      runtime_internal_atomic_Xaddint64
                 ((uint64 *)&runtime_gcController.assistTime,CONCAT44(iVar7,uVar6),
                  CONCAT44(uVar13,iVar12));
       *(undefined4 *)(rVar3 + 0x940) = 0;
@@ -18351,7 +18191,7 @@ void runtime_gcParkAssist(bool _r0)
     return;
   }
   runtime_lock(&runtime_work.assistQueue.lock);
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_gcBlackenEnabled,in_stack_ffffffe8);
+  runtime_internal_atomic_Load(&runtime_gcBlackenEnabled,in_stack_ffffffe8);
   rVar4 = runtime_work.assistQueue.tail;
   rVar3 = runtime_work.assistQueue.head;
   if (in_stack_ffffffe8 == 0) {
@@ -18367,7 +18207,7 @@ void runtime_gcParkAssist(bool _r0)
   runtime_work.assistQueue.head = rVar5;
   runtime_work.assistQueue.tail = rVar2;
   *(undefined4 *)(rVar2 + 0x68) = 0;
-  runtime_fwdslash_internal_fwdslash_atomic_Loadint64();
+  runtime_internal_atomic_Loadint64();
   if (in_stack_ffffffec < 1 && (in_stack_ffffffec != 0 || in_stack_ffffffe8 == 0)) {
     runtime_goparkunlock(&runtime_work.assistQueue.lock,(string)0xe080e2070,0x2a,2);
     return;
@@ -18406,15 +18246,15 @@ void runtime_gcFlushBgCredit(int64 scanWork)
     return;
   }
   if (runtime_work.assistQueue.head == 0) {
-    runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+    runtime_internal_atomic_Xaddint64
               ((uint64 *)&runtime_gcController.bgScanCredit,scanWork,
                CONCAT44(in_stack_ffffffe8,in_stack_ffffffe4));
     return;
   }
   runtime_int64tofloat64(scanWork,(float64)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
   runtime_float64toint64
-            ((float64)((double)runtime_gcController.assistBytesPerWork *
-                      (double)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0)),
+            (runtime_gcController.assistBytesPerWork *
+             (double)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0),
              CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
   uVar5 = in_stack_ffffffe0;
   iVar6 = in_stack_ffffffe4;
@@ -18457,9 +18297,9 @@ LAB_0805ffc3:
     runtime_int64tofloat64
               (CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0),(float64)CONCAT44(iVar6,uVar5));
     runtime_float64toint64
-              ((float64)((double)runtime_gcController.assistWorkPerByte *
-                        (double)CONCAT44(iVar6,uVar5)),CONCAT44(iVar6,uVar5));
-    runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+              (runtime_gcController.assistWorkPerByte * (double)CONCAT44(iVar6,uVar5),
+               CONCAT44(iVar6,uVar5));
+    runtime_internal_atomic_Xaddint64
               ((uint64 *)&runtime_gcController.bgScanCredit,CONCAT44(iVar6,uVar5),
                CONCAT44(in_stack_ffffffe8,iVar6));
   }
@@ -18552,13 +18392,11 @@ LAB_08060289:
       } while( true );
     }
   }
-  else {
-    if (1 < uVar3 - 3) {
-      if (uVar3 == 6) {
-        return;
-      }
-      goto LAB_08060289;
+  else if (1 < uVar3 - 3) {
+    if (uVar3 == 6) {
+      return;
     }
+    goto LAB_08060289;
   }
   if (gp == *(runtime_g **)(*in_GS_OFFSET + -4)) {
     runtime_throw((string)0x18080e3bf0);
@@ -18581,9 +18419,9 @@ LAB_08060289:
   local_4 = gcw;
   runtime_gentraceback
             (0xffffffff,0xffffffff,0,gp_00,0,(uintptr *)0x0,0x7fffffff,
-             (func__runtime_stkframe_unsafe_Pointer_bool *)&local_c,(void *)0x0,0,in_stack_ffffff24)
-  ;
-  runtime_tracebackdefers(gp,(func__runtime_stkframe_unsafe_Pointer_bool *)&local_c,(void *)0x0);
+             (func__runtime_stkframe__unsafe_Pointer__bool *)&local_c,(void *)0x0,0,
+             in_stack_ffffff24);
+  runtime_tracebackdefers(gp,(func__runtime_stkframe__unsafe_Pointer__bool *)&local_c,(void *)0x0);
   gp->gcscanvalid = true;
   return;
 }
@@ -18788,7 +18626,7 @@ void runtime_gcDrain(runtime_gcWork *gcw,runtime_gcDrainFlags flags)
       if (((flags & 1U) != 0) && (prVar11 = in_stack_ffffffc4, *(char *)(iVar2 + 0x6c) != '\0'))
       goto LAB_08060ca5;
       prVar11 = (runtime_gcWork *)0x1;
-      runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+      runtime_internal_atomic_Xadd();
       in_stack_ffffffc4 = (runtime_gcWork *)(in_stack_ffffffc8 - 1);
       if (runtime_work.markrootJobs <= in_stack_ffffffc4) goto LAB_08060ca5;
       prVar11 = gcw;
@@ -18841,7 +18679,7 @@ LAB_08060ca5:
       prVar11 = *(runtime_gcWork **)&gcw->scanWork;
       if (iVar4 == 0 && (runtime_gcWork *)0x7cf < prVar11 || 0 < iVar4) {
         cVar10 = 0x60;
-        runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+        runtime_internal_atomic_Xaddint64
                   ((uint64 *)&runtime_gcController,gcw->scanWork,in_stack_ffffffcc);
         if ((flags & 4U) != 0) {
           iVar4 = *(uint *)&gcw->scanWork - uVar5;
@@ -18862,17 +18700,15 @@ LAB_08060ca5:
         if ((flags & 8U) == 0) {
           bVar9 = (flags & 1U) == 0;
         }
+        else if (uVar8 == 0 && iVar7 == 0 || iVar7 < 0) {
+          runtime_pollWork((bool)cVar10);
+          iVar7 = iVar7 + (uint)(0xfffe795f < uVar8);
+          if (cVar10 != '\0') break;
+          bVar9 = (flags & 1U) == 0;
+          uVar8 = uVar8 + 100000;
+        }
         else {
-          if (uVar8 == 0 && iVar7 == 0 || iVar7 < 0) {
-            runtime_pollWork((bool)cVar10);
-            iVar7 = iVar7 + (uint)(0xfffe795f < uVar8);
-            if (cVar10 != '\0') break;
-            bVar9 = (flags & 1U) == 0;
-            uVar8 = uVar8 + 100000;
-          }
-          else {
-            bVar9 = (flags & 1U) == 0;
-          }
+          bVar9 = (flags & 1U) == 0;
         }
       }
       else {
@@ -18883,7 +18719,7 @@ LAB_08060ca5:
   }
   iVar2 = *(int *)((int)&gcw->scanWork + 4);
   if (*(int *)&gcw->scanWork != 0 && iVar2 == 0 || 0 < iVar2) {
-    runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+    runtime_internal_atomic_Xaddint64
               ((uint64 *)&runtime_gcController,gcw->scanWork,in_stack_ffffffcc);
     if ((flags & 4U) != 0) {
       runtime_gcFlushBgCredit
@@ -18968,7 +18804,7 @@ void runtime_gcDrainN(runtime_gcWork *gcw,int64 scanWork,int64 _r2)
         iVar8 = *(int *)((int)&gcw->scanWork + 4);
         prVar5 = *(runtime_gcWork **)&gcw->scanWork;
         if ((runtime_gcWork *)0x7cf < prVar5 && iVar8 == 0 || 0 < iVar8) {
-          runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+          runtime_internal_atomic_Xaddint64
                     ((uint64 *)&runtime_gcController,gcw->scanWork,in_stack_ffffffec);
           bVar9 = CARRY4(*(uint *)&gcw->scanWork,uVar6);
           uVar6 = *(uint *)&gcw->scanWork + uVar6;
@@ -18983,7 +18819,7 @@ void runtime_gcDrainN(runtime_gcWork *gcw,int64 scanWork,int64 _r2)
       if (runtime_work.markrootJobs <= runtime_work.markrootNext) {
         return;
       }
-      runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+      runtime_internal_atomic_Xadd();
       in_stack_ffffffe4 = (runtime_gcWork *)(in_stack_ffffffe8 - 1);
       if (runtime_work.markrootJobs <= in_stack_ffffffe4) break;
       runtime_markroot(gcw,(uint32)in_stack_ffffffe4);
@@ -19284,7 +19120,7 @@ void runtime_greyobject(uintptr obj,uintptr base,uintptr off,runtime_heapBits hb
     if ((span->gcmarkBits[objIndex >> 3] & bVar8) != 0) {
       return;
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Or8();
+    runtime_internal_atomic_Or8();
     if ((span->spanclass & 1) != 0) {
       uVar3 = *(uint *)&gcw->bytesMarked;
       uVar4 = span->elemsize;
@@ -19548,8 +19384,9 @@ void runtime_gcMarkTinyAllocs(void)
   runtime_p *prVar2;
   runtime_mcache *prVar3;
   runtime_heapBits hbits;
-  int iVar4;
-  runtime_mspan *prVar5;
+  runtime_mspan *prVar4;
+  int iVar5;
+  runtime_gcWork *gcw;
   runtime_p **pprVar6;
   int *in_GS_OFFSET;
   runtime_mspan *in_stack_ffffffd8;
@@ -19565,30 +19402,30 @@ void runtime_gcMarkTinyAllocs(void)
     runtime_gcMarkTinyAllocs();
     return;
   }
-  iVar4 = 0;
+  iVar5 = 0;
   for (pprVar6 = runtime_allp;
-      ((iVar4 < 0x401 && (prVar2 = *pprVar6, prVar2 != (runtime_p *)0x0)) && (prVar2->status != 4));
+      ((iVar5 < 0x401 && (prVar2 = *pprVar6, prVar2 != (runtime_p *)0x0)) && (prVar2->status != 4));
       pprVar6 = pprVar6 + 1) {
     prVar3 = prVar2->mcache;
     if ((prVar3 != (runtime_mcache *)0x0) && (prVar3->tiny != 0)) {
       hbits = (runtime_heapBits)CONCAT44(in_stack_ffffffe0,in_stack_ffffffdc);
-      prVar5 = in_stack_ffffffdc;
+      prVar4 = in_stack_ffffffdc;
       in_stack_ffffffdc = in_stack_ffffffe0;
       in_stack_ffffffe0 = in_stack_ffffffe4;
       runtime_heapBitsForObject
                 (prVar3->tiny,0,0,(uintptr)in_stack_ffffffd8,hbits,in_stack_ffffffe4,
                  in_stack_ffffffe8);
-      in_stack_ffffffd8 = prVar5;
-      prVar5 = (runtime_mspan *)&prVar2->gcw;
-      in_stack_ffffffe4 = prVar5;
+      in_stack_ffffffd8 = prVar4;
+      gcw = &prVar2->gcw;
+      in_stack_ffffffe4 = (runtime_mspan *)gcw;
       runtime_greyobject(prVar3->tiny,0,0,
                          (runtime_heapBits)CONCAT44(in_stack_ffffffdc,in_stack_ffffffd8),
-                         in_stack_ffffffe0,(runtime_gcWork *)prVar5,in_stack_ffffffe8);
+                         in_stack_ffffffe0,gcw,in_stack_ffffffe8);
       if (runtime_gcBlackenPromptly != false) {
-        runtime___gcWork__dispose((runtime_gcWork *)prVar5);
+        runtime___gcWork__dispose(gcw);
       }
     }
-    iVar4 = iVar4 + 1;
+    iVar5 = iVar5 + 1;
   }
   return;
 }
@@ -19722,7 +19559,7 @@ void runtime_finishsweep_m(void)
 
 
 
-void runtime_bgsweep(chanint c)
+void runtime_bgsweep(chan_int c)
 
 {
   uint *puVar1;
@@ -19809,13 +19646,13 @@ void runtime_sweepone(uintptr _r0)
   iVar3 = *(int *)(*in_GS_OFFSET + -4);
   *(int *)(*(int *)(iVar3 + 0x18) + 0x78) = *(int *)(*(int *)(iVar3 + 0x18) + 0x78) + 1;
   uVar11 = (uint32)((ulonglong)in_stack_ffffffb8 >> 0x20);
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_mheap_.sweepdone,uVar11);
+  runtime_internal_atomic_Load(&runtime_mheap_.sweepdone,uVar11);
   if (uVar11 != 0) {
     *(int *)(*(int *)(iVar3 + 0x18) + 0x78) = *(int *)(*(int *)(iVar3 + 0x18) + 0x78) + -1;
     return;
   }
   prVar12 = (runtime_mspan *)0x1;
-  runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+  runtime_internal_atomic_Xadd();
   uVar11 = runtime_mheap_.sweepgen;
   while( true ) {
     _r0_00 = prVar12;
@@ -19835,15 +19672,15 @@ void runtime_sweepone(uintptr _r0)
       prVar13 = (runtime_mspan *)(uVar11 - 2);
       if ((runtime_mspan *)_r0_00->sweepgen == prVar13) {
         in_stack_ffffffc0 = uVar11 - 1;
-        runtime_fwdslash_internal_fwdslash_atomic_Cas();
+        runtime_internal_atomic_Cas();
         prVar12 = prVar13;
         if (local_3c != '\0') {
           runtime___mspan__sweep(_r0_00,false,SUB41(in_stack_ffffffc0,0));
 LAB_080626b3:
           uVar11 = 0xffffffff;
-          runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+          runtime_internal_atomic_Xadd();
           if (((in_stack_ffffffc0 == 0) &&
-              (runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_mheap_.sweepdone,uVar11),
+              (runtime_internal_atomic_Load(&runtime_mheap_.sweepdone,uVar11),
               uVar7 = runtime_memstats.heap_live._4_4_, uVar6 = (uint)runtime_memstats.heap_live,
               iVar8 = runtime_mheap_.sweepHeapLiveBasis._4_4_,
               uVar10 = (uint)runtime_mheap_.sweepHeapLiveBasis,
@@ -19887,7 +19724,7 @@ LAB_080626b3:
       }
     }
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Store();
+  runtime_internal_atomic_Store();
   goto LAB_080626b3;
 }
 
@@ -19946,18 +19783,18 @@ void runtime___mspan__ensureSwept(runtime_mspan *s)
       invalidInstructionException();
     } while( true );
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&s->sweepgen,in_stack_ffffffec);
+  runtime_internal_atomic_Load(&s->sweepgen,in_stack_ffffffec);
   if (in_stack_ffffffec == uVar3) {
     return;
   }
   _r1 = uVar3 - 2;
   _r1_00 = (char)uVar3 + -1;
-  runtime_fwdslash_internal_fwdslash_atomic_Cas();
+  runtime_internal_atomic_Cas();
   if (local_c != '\0') {
     runtime___mspan__sweep(s,false,(bool)_r1_00);
     return;
   }
-  while (runtime_fwdslash_internal_fwdslash_atomic_Load(&s->sweepgen,_r1), _r1 != uVar3) {
+  while (runtime_internal_atomic_Load(&s->sweepgen,_r1), _r1 != uVar3) {
     runtime_osyield();
   }
   return;
@@ -20039,7 +19876,7 @@ void runtime___mspan__sweep(runtime_mspan *s,bool preserve,bool _r1)
     runtime_traceGCSweepSpan(s->npages << 0xd);
   }
   _r1_00 = (runtime_gcBits *)s->npages;
-  runtime_fwdslash_internal_fwdslash_atomic_Xadd64
+  runtime_internal_atomic_Xadd64
             (&runtime_mheap_.pagesSwept,ZEXT48(_r1_00),CONCAT44(in_stack_ffffffa0,in_stack_ffffff9c)
             );
   bVar3 = s->spanclass;
@@ -20150,7 +19987,7 @@ void runtime___mspan__sweep(runtime_mspan *s,bool preserve,bool _r1)
               invalidInstructionException();
             } while( true );
           }
-          runtime_fwdslash_internal_fwdslash_atomic_Store();
+          runtime_internal_atomic_Store();
         }
         if ((uVar17 == 0) || (bVar3 >> 1 == 0)) {
           if (bVar12) {
@@ -20170,7 +20007,7 @@ void runtime___mspan__sweep(runtime_mspan *s,bool preserve,bool _r1)
           }
         }
         else {
-          uVar14 = SEXT14((char)(bVar3 >> 1));
+          uVar14 = (uint)(char)(bVar3 >> 1);
           if (0x42 < uVar14) {
             runtime_panicindex();
             do {
@@ -20185,7 +20022,8 @@ void runtime___mspan__sweep(runtime_mspan *s,bool preserve,bool _r1)
             } while( true );
           }
           runtime___mcentral__freeSpan
-                    (&runtime_mheap_.central[bVar3].mcentral,s,preserve,(bool)wasempty,(bool)_r3);
+                    ((runtime_mcentral *)(runtime_mheap_.central + bVar3),s,preserve,(bool)wasempty,
+                     (bool)_r3);
         }
         if (wasempty == '\0') {
           runtime___gcSweepBuf__push(runtime_mheap_.sweepSpans + (uVar11 >> 1 & 1),s);
@@ -20263,7 +20101,7 @@ void runtime_deductSweepCredit(uintptr spanBytes,uintptr callerSweepPages)
     runtime_deductSweepCredit(spanBytes,callerSweepPages);
     return;
   }
-  if ((double)runtime_mheap_.sweepPagesPerByte == 0.0) {
+  if (runtime_mheap_.sweepPagesPerByte == 0.0) {
     return;
   }
   if (runtime_trace.enabled != false) {
@@ -20272,20 +20110,20 @@ void runtime_deductSweepCredit(uintptr spanBytes,uintptr callerSweepPages)
   do {
     uVar7 = in_stack_ffffffe0;
     uVar6 = in_stack_ffffffdc;
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
+    runtime_internal_atomic_Load64();
     uVar3 = uVar6;
     in_stack_ffffffe0 = uVar7;
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
+    runtime_internal_atomic_Load64();
     fVar2 = runtime_mheap_.sweepPagesPerByte;
     runtime_uint32tofloat64();
-    d = (double)fVar2 * (double)CONCAT44(in_stack_ffffffe0,uVar3);
+    d = fVar2 * (double)CONCAT44(in_stack_ffffffe0,uVar3);
     in_stack_ffffffdc = (uint)((ulonglong)d >> 0x20);
-    runtime_float64toint64((float64)d,CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
+    runtime_float64toint64(d,CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
     uVar3 = in_stack_ffffffe0 - callerSweepPages;
     iVar5 = in_stack_ffffffe4 - (uint)(in_stack_ffffffe0 < callerSweepPages);
     do {
       _r0 = 0x8149148;
-      runtime_fwdslash_internal_fwdslash_atomic_Load64();
+      runtime_internal_atomic_Load64();
       iVar4 = (in_stack_ffffffe0 - uVar7) - (uint)(in_stack_ffffffdc < uVar6);
       if ((iVar5 != iVar4 || uVar3 <= in_stack_ffffffdc - uVar6) && iVar5 <= iVar4) {
 LAB_080634a9:
@@ -20299,7 +20137,7 @@ LAB_080634a9:
         runtime_mheap_.sweepPagesPerByte = 0.0;
         goto LAB_080634a9;
       }
-      runtime_fwdslash_internal_fwdslash_atomic_Load64();
+      runtime_internal_atomic_Load64();
     } while (in_stack_ffffffe0 == uVar7 && in_stack_ffffffdc == uVar6);
   } while( true );
 }
@@ -20326,21 +20164,21 @@ void runtime___gcSweepBuf__push(runtime_gcSweepBuf *b,runtime_mspan *s)
     return;
   }
   _r1_00 = (void *)0x1;
-  runtime_fwdslash_internal_fwdslash_atomic_Xadd();
-  runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr(&b->spineLen,(uint32)_r1_00);
+  runtime_internal_atomic_Xadd();
+  runtime_internal_atomic_Loaduintptr(&b->spineLen,(uint32)_r1_00);
   pvVar2 = (void *)(in_stack_ffffffdc - 1U >> 9);
   _r1 = _r1_00;
   do {
     if (pvVar2 < _r1_00) {
-      runtime_fwdslash_internal_fwdslash_atomic_Loadp(&b->spine,_r1);
-      runtime_fwdslash_internal_fwdslash_atomic_Loadp((void *)((int)_r1 + (int)pvVar2 * 4),_r1);
+      runtime_internal_atomic_Loadp(&b->spine,_r1);
+      runtime_internal_atomic_Loadp((void *)((int)_r1 + (int)pvVar2 * 4),_r1);
 LAB_08063656:
       *(runtime_mspan **)((int)_r1 + (in_stack_ffffffdc - 1U & 0x1ff) * 4) = s;
       return;
     }
     runtime_lock(&b->spineLock);
     _r1_00 = _r1;
-    runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr(&b->spineLen,(uint32)_r1);
+    runtime_internal_atomic_Loaduintptr(&b->spineLen,(uint32)_r1);
     if (_r1_00 <= pvVar2) {
       _r1 = in_stack_ffffffe0;
       if (_r1_00 == (void *)b->spineCap) {
@@ -20354,12 +20192,12 @@ LAB_08063656:
           runtime_memmove(in_stack_ffffffe0,b->spine,b->spineCap << 2);
           _r1 = in_stack_ffffffe0;
         }
-        runtime_fwdslash_internal_fwdslash_atomic_StorepNoWB();
+        runtime_internal_atomic_StorepNoWB();
         b->spineCap = uVar3;
       }
       runtime_persistentalloc(0x800,0x40,&runtime_memstats.gc_sys,_r1);
-      runtime_fwdslash_internal_fwdslash_atomic_StorepNoWB();
-      runtime_fwdslash_internal_fwdslash_atomic_Storeuintptr();
+      runtime_internal_atomic_StorepNoWB();
+      runtime_internal_atomic_Storeuintptr();
       runtime_unlock(&b->spineLock);
       goto LAB_08063656;
     }
@@ -20384,9 +20222,9 @@ void runtime___gcSweepBuf__pop(runtime_gcSweepBuf *b,runtime_mspan *_r0)
     runtime___gcSweepBuf__pop(b,_r0);
     return;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+  runtime_internal_atomic_Xadd();
   if ((int)local_8 < 0) {
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     return;
   }
   *(undefined4 *)(*(int *)((int)b->spine + (local_8 >> 9) * 4) + (local_8 & 0x1ff) * 4) = 0;
@@ -20405,7 +20243,7 @@ void runtime___gcSweepBuf__numBlocks(runtime_gcSweepBuf *b,int _r0)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    runtime_fwdslash_internal_fwdslash_atomic_Load(&b->index,in_stack_fffffffc);
+    runtime_internal_atomic_Load(&b->index,in_stack_fffffffc);
     return;
   }
   runtime_morestack_noctxt();
@@ -20433,13 +20271,12 @@ void runtime___gcSweepBuf__block(runtime_gcSweepBuf *b,int i,___runtime_mspan _r
     return;
   }
   if ((-1 < i) &&
-     (runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr(&b->spineLen,(uint32)in_stack_fffffff8),
+     (runtime_internal_atomic_Loaduintptr(&b->spineLen,(uint32)in_stack_fffffff8),
      (uint)i < in_stack_fffffff8)) {
-    runtime_fwdslash_internal_fwdslash_atomic_Loadp(&b->spine,in_stack_fffffff8);
-    runtime_fwdslash_internal_fwdslash_atomic_Loadp
-              ((void *)((int)in_stack_fffffff8 + i * 4),in_stack_fffffff8);
+    runtime_internal_atomic_Loadp(&b->spine,in_stack_fffffff8);
+    runtime_internal_atomic_Loadp((void *)((int)in_stack_fffffff8 + i * 4),in_stack_fffffff8);
     pvVar4 = in_stack_fffffff8;
-    runtime_fwdslash_internal_fwdslash_atomic_Load(&b->index,(uint32)in_stack_fffffff8);
+    runtime_internal_atomic_Load(&b->index,(uint32)in_stack_fffffff8);
     if ((uint)i < (uint)pvVar4 >> 9) {
       uVar3 = 0x200;
     }
@@ -20536,21 +20373,19 @@ void runtime___gcWork__put(runtime_gcWork *w,uintptr obj)
     b = w->wbuf1;
     bVar3 = false;
   }
+  else if ((b->workbufhdr).nobj == 0x1fc) {
+    w->wbuf1 = w->wbuf2;
+    w->wbuf2 = b;
+    b = w->wbuf1;
+    bVar3 = (b->workbufhdr).nobj == 0x1fc;
+    if (bVar3) {
+      runtime_putfull(b);
+      runtime_getempty(b);
+      w->wbuf1 = b;
+    }
+  }
   else {
-    if ((b->workbufhdr).nobj == 0x1fc) {
-      w->wbuf1 = w->wbuf2;
-      w->wbuf2 = b;
-      b = w->wbuf1;
-      bVar3 = (b->workbufhdr).nobj == 0x1fc;
-      if (bVar3) {
-        runtime_putfull(b);
-        runtime_getempty(b);
-        w->wbuf1 = b;
-      }
-    }
-    else {
-      bVar3 = false;
-    }
+    bVar3 = false;
   }
   uVar2 = (b->workbufhdr).nobj;
   if (uVar2 < 0x1fc) {
@@ -20704,14 +20539,14 @@ void runtime___gcWork__dispose(runtime_gcWork *w)
       w->wbuf2 = (runtime_workbuf *)0x0;
     }
     if (*(int *)&w->bytesMarked != 0 || *(int *)((int)&w->bytesMarked + 4) != 0) {
-      runtime_fwdslash_internal_fwdslash_atomic_Xadd64
+      runtime_internal_atomic_Xadd64
                 (&runtime_work.bytesMarked,w->bytesMarked,
                  CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
       *(undefined4 *)&w->bytesMarked = 0;
       *(undefined4 *)((int)&w->bytesMarked + 4) = 0;
     }
     if (*(int *)&w->scanWork != 0 || *(int *)((int)&w->scanWork + 4) != 0) {
-      runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+      runtime_internal_atomic_Xaddint64
                 ((uint64 *)&runtime_gcController,w->scanWork,
                  CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
       *(undefined4 *)&w->scanWork = 0;
@@ -20981,7 +20816,7 @@ void runtime_getfull(runtime_workbuf *_r0)
     runtime___workbuf__checknonempty(in_stack_ffffffe0);
     return;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+  runtime_internal_atomic_Xadd();
   uVar2 = runtime_work.nproc;
   if (runtime_work.nproc < local_1c) {
     runtime_printlock();
@@ -21003,7 +20838,7 @@ void runtime_getfull(runtime_workbuf *_r0)
   do {
     if (runtime_work.full._4_4_ != 0 || (int)runtime_work.full != 0) {
       b = (runtime_workbuf *)0xffffffff;
-      runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+      runtime_internal_atomic_Xadd();
       uVar2 = runtime_work.nproc;
       if (local_1c == runtime_work.nproc) {
         runtime_printlock();
@@ -21026,7 +20861,7 @@ void runtime_getfull(runtime_workbuf *_r0)
         runtime___workbuf__checknonempty(b);
         return;
       }
-      runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+      runtime_internal_atomic_Xadd();
       uVar2 = runtime_work.nproc;
       if (runtime_work.nproc < local_1c) {
         runtime_printlock();
@@ -21052,13 +20887,11 @@ void runtime_getfull(runtime_workbuf *_r0)
     if (iVar3 < 10) {
       runtime_procyield();
     }
+    else if (iVar3 < 0x14) {
+      runtime_osyield();
+    }
     else {
-      if (iVar3 < 0x14) {
-        runtime_osyield();
-      }
-      else {
-        runtime_usleep(100);
-      }
+      runtime_usleep(100);
     }
     iVar3 = iVar3 + 1;
   } while( true );
@@ -21495,7 +21328,7 @@ LAB_08065026:
     }
     if (span->sweepgen == uVar3 - 2) {
       _r1 = (char)uVar3 + -1;
-      runtime_fwdslash_internal_fwdslash_atomic_Cas();
+      runtime_internal_atomic_Cas();
       if (local_14 != '\0') break;
     }
     if (span->sweepgen != uVar3 - 1) {
@@ -21633,7 +21466,7 @@ void runtime___mheap__alloc_m
   runtime___mheap__allocSpanLocked(h,npage,&runtime_memstats.heap_inuse,in_stack_fffffff0);
   if (in_stack_fffffff0 != (runtime_mspan *)0x0) {
     prVar5 = in_stack_fffffff0;
-    runtime_fwdslash_internal_fwdslash_atomic_Store();
+    runtime_internal_atomic_Store();
     runtime___gcSweepBuf__push(h->sweepSpans + (h->sweepgen >> 1 & 1),in_stack_fffffff0);
     in_stack_fffffff0->state = 1;
     in_stack_fffffff0->allocCount = 0;
@@ -21646,7 +21479,7 @@ void runtime___mheap__alloc_m
       in_stack_fffffff0->baseMask = 0;
     }
     else {
-      uVar3 = SEXT14((char)(spanclass >> 1));
+      uVar3 = (uint)(char)(spanclass >> 1);
       if (0x42 < uVar3) {
         runtime_panicindex();
         do {
@@ -21674,7 +21507,7 @@ void runtime___mheap__alloc_m
       bVar4 = 0xfffffffe < (uint)runtime_mheap_.nlargealloc;
       runtime_mheap_.nlargealloc._0_4_ = (uint)runtime_mheap_.nlargealloc + 1;
       runtime_mheap_.nlargealloc._4_4_ = runtime_mheap_.nlargealloc._4_4_ + (uint)bVar4;
-      runtime_fwdslash_internal_fwdslash_atomic_Xadd64
+      runtime_internal_atomic_Xadd64
                 (&runtime_memstats.heap_live,(ulonglong)(npage << 0xd),
                  CONCAT44(in_stack_fffffff4,prVar5));
       if (in_stack_fffffff0->npages < 0x80) {
@@ -22036,7 +21869,7 @@ void runtime___mheap__grow(runtime_mheap *h,uintptr npage,bool _r1)
   uVar6 = uVar5;
   while( true ) {
     if (s->npages + uVar5 <= uVar6) {
-      runtime_fwdslash_internal_fwdslash_atomic_Store();
+      runtime_internal_atomic_Store();
       s->state = 1;
       uVar6 = *(uint *)&h->pagesInUse;
       uVar5 = s->npages;
@@ -22678,8 +22511,6 @@ void runtime___mSpanList__takeAll(runtime_mSpanList *list,runtime_mSpanList *oth
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void runtime_addspecial(void *p,runtime_special *s,bool _r2)
 
 {
@@ -22766,8 +22597,6 @@ void runtime_addspecial(void *p,runtime_special *s,bool _r2)
 }
 
 
-
-// WARNING: Type propagation algorithm not settling
 
 void runtime_removespecial(void *p,uint8 kind,runtime_special *_r2)
 
@@ -22876,7 +22705,7 @@ void runtime_addfinalizer
   runtime_lock(&runtime_mheap_.speciallock);
   runtime___fixalloc__alloc(&runtime_mheap_.specialfinalizeralloc,in_stack_ffffffe0);
   runtime_unlock(&runtime_mheap_.speciallock);
-  *(undefined *)((int)&in_stack_ffffffe0->prev + 2) = 1;
+  *(uint8 *)((int)&in_stack_ffffffe0->prev + 2) = 1;
   if (runtime_writeBarrier._0_4_ == 0) {
     in_stack_ffffffe0->list = (runtime_mSpanList *)f;
   }
@@ -23048,9 +22877,9 @@ void runtime___gcBitsArena__tryAlloc(runtime_gcBitsArena *b,uintptr bytes,runtim
     return;
   }
   if (b != (runtime_gcBitsArena *)0x0) {
-    runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr(&b->free,in_stack_fffffff8);
+    runtime_internal_atomic_Loaduintptr(&b->free,in_stack_fffffff8);
     if (in_stack_fffffff8 + bytes < 0xfff9) {
-      runtime_fwdslash_internal_fwdslash_atomic_Xadduintptr();
+      runtime_internal_atomic_Xadduintptr();
       if (0xfff8 < local_4) {
         return;
       }
@@ -23085,7 +22914,7 @@ void runtime_newMarkBits(uintptr nelems,runtime_gcBits *_r1)
     runtime_newMarkBits(nelems,_r1);
     return;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Loadp(&runtime_gcBitsArenas.next,in_stack_ffffffe4);
+  runtime_internal_atomic_Loadp(&runtime_gcBitsArenas.next,in_stack_ffffffe4);
   bytes = (nelems + 0x3f >> 6) << 3;
   runtime___gcBitsArena__tryAlloc(in_stack_ffffffe4,bytes,in_stack_ffffffe8);
   if (in_stack_ffffffe8 != (runtime_gcBits *)0x0) {
@@ -23104,7 +22933,7 @@ void runtime_newMarkBits(uintptr nelems,runtime_gcBits *_r1)
     runtime___gcBitsArena__tryAlloc(_r0,bytes,(runtime_gcBits *)0x0);
     if (in_stack_ffffffe8 != (runtime_gcBits *)0x0) {
       _r0->next = runtime_gcBitsArenas.next;
-      runtime_fwdslash_internal_fwdslash_atomic_StorepNoWB();
+      runtime_internal_atomic_StorepNoWB();
       runtime_unlock(&runtime_gcBitsArenas.lock);
       return;
     }
@@ -23172,7 +23001,7 @@ void runtime_nextMarkBitArenaEpoch(void)
   runtime_gcBitsArenas.free = prVar2;
   runtime_gcBitsArenas.previous = runtime_gcBitsArenas.current;
   runtime_gcBitsArenas.current = runtime_gcBitsArenas.next;
-  runtime_fwdslash_internal_fwdslash_atomic_StorepNoWB();
+  runtime_internal_atomic_StorepNoWB();
   runtime_unlock(&runtime_gcBitsArenas.lock);
   return;
 }
@@ -23308,14 +23137,14 @@ void runtime_stkbucket(runtime_bucketType typ,uintptr size,__uintptr stk,bool al
 {
   uint *puVar1;
   uintptr uVar2;
-  runtime_bucket *(*paprVar3) [179999];
+  uint uVar3;
   uintptr *puVar4;
-  runtime_bucket *prVar5;
-  int iVar6;
-  uint uVar7;
-  runtime_bucket *prVar8;
+  uint uVar5;
+  runtime_bucket *prVar6;
+  int iVar7;
+  uint uVar8;
   int *in_GS_OFFSET;
-  runtime_bucket *(*in_stack_ffffffe0) [179999];
+  runtime_bucket *in_stack_ffffffe0;
   char in_stack_fffffff0;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
@@ -23327,12 +23156,12 @@ void runtime_stkbucket(runtime_bucketType typ,uintptr size,__uintptr stk,bool al
   }
   if (runtime_buckhash == (runtime_bucket *(*) [179999])0x0) {
     runtime_sysAlloc(0xafc7c,&runtime_memstats.buckhash_sys,in_stack_ffffffe0);
-    paprVar3 = in_stack_ffffffe0;
+    prVar6 = in_stack_ffffffe0;
     if (runtime_writeBarrier._0_4_ != 0) {
       runtime_writebarrierptr((uintptr *)&runtime_buckhash,(uintptr)in_stack_ffffffe0);
-      paprVar3 = runtime_buckhash;
+      prVar6 = (runtime_bucket *)runtime_buckhash;
     }
-    runtime_buckhash = paprVar3;
+    runtime_buckhash = &prVar6->next;
     if (runtime_buckhash == (runtime_bucket *(*) [179999])0x0) {
       runtime_throw((string)0x1f080e5245);
       do {
@@ -23340,79 +23169,76 @@ void runtime_stkbucket(runtime_bucketType typ,uintptr size,__uintptr stk,bool al
       } while( true );
     }
   }
-  uVar7 = 0;
+  uVar8 = 0;
   puVar4 = stk.array;
-  for (iVar6 = 0; iVar6 < stk.len; iVar6 = iVar6 + 1) {
+  for (iVar7 = 0; iVar7 < stk.len; iVar7 = iVar7 + 1) {
     uVar2 = *puVar4;
     puVar4 = puVar4 + 1;
-    uVar7 = (uVar2 + uVar7) * 0x401;
-    uVar7 = uVar7 >> 6 ^ uVar7;
+    uVar8 = (uVar2 + uVar8) * 0x401;
+    uVar8 = uVar8 >> 6 ^ uVar8;
   }
-  uVar7 = (uVar7 + size) * 0x401;
-  uVar7 = (uVar7 ^ uVar7 >> 6) * 9;
-  prVar8 = (runtime_bucket *)(uVar7 >> 0xb ^ uVar7);
-  uVar7 = ((uint)(ZEXT48(prVar8) * 0x174d43f79 >> 0x21) |
-          (uint)CARRY4((uint)(ZEXT48(prVar8) * 0x74d43f79 >> 0x20),(uint)prVar8) << 0x1f) >> 0x11;
-  if (0x2bf1e < (int)prVar8 + uVar7 * -179999) {
+  uVar8 = (uVar8 + size) * 0x401;
+  uVar8 = (uVar8 ^ uVar8 >> 6) * 9;
+  uVar8 = uVar8 >> 0xb ^ uVar8;
+  uVar5 = ((uint)((ulonglong)uVar8 * 0x174d43f79 >> 0x21) |
+          (uint)CARRY4((uint)((ulonglong)uVar8 * 0x74d43f79 >> 0x20),uVar8) << 0x1f) >> 0x11;
+  if (0x2bf1e < uVar8 + uVar5 * -179999) {
     runtime_panicindex();
     do {
       invalidInstructionException();
     } while( true );
   }
-  prVar5 = runtime_buckhash[-uVar7][(int)prVar8];
+  prVar6 = runtime_buckhash[-uVar5][uVar8];
   do {
-    if (prVar5 == (runtime_bucket *)0x0) {
+    if (prVar6 == (runtime_bucket *)0x0) {
       if (alloc == false) {
         return;
       }
-      runtime_newBucket(typ,stk.len,(runtime_bucket *)in_stack_ffffffe0);
-      prVar5 = (*in_stack_ffffffe0)[5];
-      if ((runtime_bucket *)0x20 < prVar5) {
+      runtime_newBucket(typ,stk.len,in_stack_ffffffe0);
+      uVar3 = in_stack_ffffffe0->nstk;
+      if (0x20 < uVar3) {
         runtime_panicslice();
         do {
           invalidInstructionException();
         } while( true );
       }
-      if ((int)prVar5 <= stk.len) {
-        stk.len = (int)prVar5;
+      if ((int)uVar3 <= stk.len) {
+        stk.len = uVar3;
       }
-      runtime_memmove(*in_stack_ffffffe0 + 6,stk.array,stk.len << 2);
-      (*in_stack_ffffffe0)[3] = prVar8;
-      (*in_stack_ffffffe0)[4] = (runtime_bucket *)size;
-      (*in_stack_ffffffe0)[0] = runtime_buckhash[-uVar7][(int)prVar8];
-      runtime_buckhash[-uVar7][(int)prVar8] = (runtime_bucket *)in_stack_ffffffe0;
+      runtime_memmove(in_stack_ffffffe0 + 1,stk.array,stk.len << 2);
+      in_stack_ffffffe0->hash = uVar8;
+      in_stack_ffffffe0->size = size;
+      in_stack_ffffffe0->next = runtime_buckhash[-uVar5][uVar8];
+      runtime_buckhash[-uVar5][uVar8] = in_stack_ffffffe0;
       if (typ == 1) {
-        (*in_stack_ffffffe0)[1] = runtime_mbuckets;
-        runtime_mbuckets = (runtime_bucket *)in_stack_ffffffe0;
+        in_stack_ffffffe0->allnext = runtime_mbuckets;
+        runtime_mbuckets = in_stack_ffffffe0;
+      }
+      else if (typ == 3) {
+        in_stack_ffffffe0->allnext = runtime_xbuckets;
+        runtime_xbuckets = in_stack_ffffffe0;
       }
       else {
-        if (typ == 3) {
-          (*in_stack_ffffffe0)[1] = runtime_xbuckets;
-          runtime_xbuckets = (runtime_bucket *)in_stack_ffffffe0;
-        }
-        else {
-          (*in_stack_ffffffe0)[1] = runtime_bbuckets;
-          runtime_bbuckets = (runtime_bucket *)in_stack_ffffffe0;
-        }
+        in_stack_ffffffe0->allnext = runtime_bbuckets;
+        runtime_bbuckets = in_stack_ffffffe0;
       }
       return;
     }
-    if (((prVar5->typ == typ) && (prVar8 == (runtime_bucket *)prVar5->hash)) &&
-       (size == prVar5->size)) {
-      in_stack_ffffffe0 = (runtime_bucket *(*) [179999])prVar5->nstk;
-      if ((runtime_bucket *(*) [179999])0x20 < in_stack_ffffffe0) {
+    if (((prVar6->typ == typ) && (uVar8 == prVar6->hash)) && (size == prVar6->size)) {
+      in_stack_ffffffe0 = (runtime_bucket *)prVar6->nstk;
+      if ((runtime_bucket *)0x20 < in_stack_ffffffe0) {
         runtime_panicslice();
         do {
           invalidInstructionException();
         } while( true );
       }
-      runtime_eqslice((__uintptr)CONCAT48(in_stack_ffffffe0,CONCAT44(in_stack_ffffffe0,prVar5 + 1)),
+      runtime_eqslice((__uintptr)CONCAT48(in_stack_ffffffe0,CONCAT44(in_stack_ffffffe0,prVar6 + 1)),
                       stk,(bool)in_stack_fffffff0);
       if (in_stack_fffffff0 != '\0') {
         return;
       }
     }
-    prVar5 = prVar5->next;
+    prVar6 = prVar6->next;
   } while( true );
 }
 
@@ -23668,7 +23494,7 @@ void runtime_blocksampled(int64 cycles,bool _r1)
     runtime_blocksampled(cycles,_r1);
     return;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Load64();
+  runtime_internal_atomic_Load64();
   if (in_stack_ffffffec == 0 && in_stack_fffffff0 == 0 || in_stack_fffffff0 < 0) {
     return;
   }
@@ -23774,7 +23600,7 @@ void sync_event(int64 cycles,int skip)
   if (cycles < 0) {
     cycles = 0;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Load64();
+  runtime_internal_atomic_Load64();
   if (in_stack_ffffffec != 0 && in_stack_fffffff0 == 0 || 0 < in_stack_fffffff0) {
     iVar2 = *(int *)(*(int *)(*in_GS_OFFSET + -4) + 0x18);
     iVar3 = *(int *)(iVar2 + 0x94);
@@ -24081,7 +23907,7 @@ void runtime_mSysStatInc(uint64 *sysStat,uintptr n)
 {
   uint local_8;
   
-  runtime_fwdslash_internal_fwdslash_atomic_Xadduintptr();
+  runtime_internal_atomic_Xadduintptr();
   if (local_8 < n) {
     runtime_printlock();
     runtime_printstring((string)0x1c080e49e4);
@@ -24102,7 +23928,7 @@ void runtime_mSysStatDec(uint64 *sysStat,uintptr n)
 {
   uint local_8;
   
-  runtime_fwdslash_internal_fwdslash_atomic_Xadduintptr();
+  runtime_internal_atomic_Xadduintptr();
   if (local_8 + n < n) {
     runtime_printlock();
     runtime_printstring((string)0x1d080e4c7d);
@@ -24118,9 +23944,7 @@ void runtime_mSysStatDec(uint64 *sysStat,uintptr n)
 
 
 
-// Original name: internal/poll.runtime_pollServerInit
-
-void internal_fwdslash_poll_runtime_pollServerInit(void)
+void internal_poll_runtime_pollServerInit(void)
 
 {
   uint *puVar1;
@@ -24130,11 +23954,11 @@ void internal_fwdslash_poll_runtime_pollServerInit(void)
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     runtime_netpollinit();
-    runtime_fwdslash_internal_fwdslash_atomic_Store();
+    runtime_internal_atomic_Store();
     return;
   }
   runtime_morestack_noctxt();
-  internal_fwdslash_poll_runtime_pollServerInit();
+  internal_poll_runtime_pollServerInit();
   return;
 }
 
@@ -24150,7 +23974,7 @@ void runtime_netpollinited(bool _r0)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_netpollInited,in_stack_fffffffc);
+    runtime_internal_atomic_Load(&runtime_netpollInited,in_stack_fffffffc);
     return;
   }
   runtime_morestack_noctxt();
@@ -24160,9 +23984,7 @@ void runtime_netpollinited(bool _r0)
 
 
 
-// Original name: internal/poll.runtime_pollOpen
-
-void internal_fwdslash_poll_runtime_pollOpen(uintptr fd,runtime_pollDesc *_r1,int _r2)
+void internal_poll_runtime_pollOpen(uintptr fd,runtime_pollDesc *_r1,int _r2)
 
 {
   uint *puVar1;
@@ -24174,7 +23996,7 @@ void internal_fwdslash_poll_runtime_pollOpen(uintptr fd,runtime_pollDesc *_r1,in
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll_runtime_pollOpen(fd,_r1,_r2);
+    internal_poll_runtime_pollOpen(fd,_r1,_r2);
     return;
   }
   runtime___pollCache__alloc(&runtime_pollcache,in_stack_fffffff0);
@@ -24207,9 +24029,7 @@ void internal_fwdslash_poll_runtime_pollOpen(uintptr fd,runtime_pollDesc *_r1,in
 
 
 
-// Original name: internal/poll.runtime_pollClose
-
-void internal_fwdslash_poll_runtime_pollClose(runtime_pollDesc *pd)
+void internal_poll_runtime_pollClose(runtime_pollDesc *pd)
 
 {
   uint *puVar1;
@@ -24220,7 +24040,7 @@ void internal_fwdslash_poll_runtime_pollClose(runtime_pollDesc *pd)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll_runtime_pollClose(pd);
+    internal_poll_runtime_pollClose(pd);
     return;
   }
   if (pd->closing == false) {
@@ -24270,9 +24090,7 @@ void runtime___pollCache__free(runtime_pollCache *c,runtime_pollDesc *pd)
 
 
 
-// Original name: internal/poll.runtime_pollReset
-
-void internal_fwdslash_poll_runtime_pollReset(runtime_pollDesc *pd,int mode,int _r2)
+void internal_poll_runtime_pollReset(runtime_pollDesc *pd,int mode,int _r2)
 
 {
   uint *puVar1;
@@ -24283,7 +24101,7 @@ void internal_fwdslash_poll_runtime_pollReset(runtime_pollDesc *pd,int mode,int 
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll_runtime_pollReset(pd,mode,_r2);
+    internal_poll_runtime_pollReset(pd,mode,_r2);
     return;
   }
   if (pd->closing == false) {
@@ -24302,10 +24120,8 @@ void internal_fwdslash_poll_runtime_pollReset(runtime_pollDesc *pd,int mode,int 
     if (mode == 0x72) {
       pd->rg = 0;
     }
-    else {
-      if (mode == 0x77) {
-        pd->wg = 0;
-      }
+    else if (mode == 0x77) {
+      pd->wg = 0;
     }
     return;
   }
@@ -24314,9 +24130,7 @@ void internal_fwdslash_poll_runtime_pollReset(runtime_pollDesc *pd,int mode,int 
 
 
 
-// Original name: internal/poll.runtime_pollWait
-
-void internal_fwdslash_poll_runtime_pollWait(runtime_pollDesc *pd,int mode,int _r2)
+void internal_poll_runtime_pollWait(runtime_pollDesc *pd,int mode,int _r2)
 
 {
   uint *puVar1;
@@ -24328,7 +24142,7 @@ void internal_fwdslash_poll_runtime_pollWait(runtime_pollDesc *pd,int mode,int _
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll_runtime_pollWait(pd,mode,_r2);
+    internal_poll_runtime_pollWait(pd,mode,_r2);
     return;
   }
   if (pd->closing == false) {
@@ -24369,9 +24183,7 @@ void internal_fwdslash_poll_runtime_pollWait(runtime_pollDesc *pd,int mode,int _
 
 
 
-// Original name: internal/poll.runtime_pollUnblock
-
-void internal_fwdslash_poll_runtime_pollUnblock(runtime_pollDesc *pd)
+void internal_poll_runtime_pollUnblock(runtime_pollDesc *pd)
 
 {
   uint *puVar1;
@@ -24387,7 +24199,7 @@ void internal_fwdslash_poll_runtime_pollUnblock(runtime_pollDesc *pd)
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     local_4 = (runtime_mutex *)0x806942b;
     runtime_morestack_noctxt();
-    internal_fwdslash_poll_runtime_pollUnblock(pd);
+    internal_poll_runtime_pollUnblock(pd);
     return;
   }
   local_4 = &pd->lock;
@@ -24488,9 +24300,9 @@ void runtime_netpollblockcommit(runtime_g *gp,void *gpp,bool _r2)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    runtime_fwdslash_internal_fwdslash_atomic_Casuintptr();
+    runtime_internal_atomic_Casuintptr();
     if (local_c != '\0') {
-      runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+      runtime_internal_atomic_Xadd();
     }
     return;
   }
@@ -24510,7 +24322,7 @@ void runtime_netpollgoready(runtime_g *gp,int traceskip)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     runtime_goready(gp,traceskip + 1);
     return;
   }
@@ -24554,7 +24366,7 @@ void runtime_netpollblock(runtime_pollDesc *pd,int32 mode,bool waitio,bool _r3)
       } while( true );
     }
     puVar3 = (undefined *)0x2;
-    runtime_fwdslash_internal_fwdslash_atomic_Casuintptr();
+    runtime_internal_atomic_Casuintptr();
   } while ((char)in_stack_fffffff0 == '\0');
   if (waitio == false) {
     if (pd->closing == false) {
@@ -24572,10 +24384,10 @@ void runtime_netpollblock(runtime_pollDesc *pd,int32 mode,bool waitio,bool _r3)
     if (iVar2 != 0) goto LAB_08069692;
   }
   puVar3 = &DAT_080e124f;
-  runtime_gopark((func__runtime_g_unsafe_Pointer_bool *)&PTR_runtime_netpollblockcommit_080e7c88,
+  runtime_gopark((func__runtime_g__unsafe_Pointer__bool *)&PTR_runtime_netpollblockcommit_080e7c88,
                  lock,(string)0x7080e124f,0x1b,5);
 LAB_08069692:
-  runtime_fwdslash_internal_fwdslash_atomic_Xchguintptr();
+  runtime_internal_atomic_Xchguintptr();
   if ((undefined *)0x2 < puVar3) {
     runtime_throw((string)0x1b080e451f);
     do {
@@ -24611,7 +24423,7 @@ void runtime_netpollunblock(runtime_pollDesc *pd,int32 mode,bool ioready,runtime
       return;
     }
     if ((*puVar2 == 0) && (ioready == false)) break;
-    runtime_fwdslash_internal_fwdslash_atomic_Casuintptr();
+    runtime_internal_atomic_Casuintptr();
     if (local_c != '\0') {
       return;
     }
@@ -24851,11 +24663,11 @@ void runtime_getproccount(int32 _r0)
 {
   uint uVar1;
   int iVar2;
-  cpu_set_t *pcVar3;
-  __cpu_mask _Var4;
+  __cpu_mask *p_Var3;
+  uint uVar4;
   int *in_GS_OFFSET;
   int local_2004;
-  cpu_set_t local_2000 [15];
+  cpu_set_t local_2000 [63];
   undefined4 uStack4;
   
   iVar2 = *(int *)(*(int *)(*in_GS_OFFSET + -4) + 8);
@@ -24865,20 +24677,21 @@ void runtime_getproccount(int32 _r0)
     runtime_getproccount(_r0);
     return;
   }
-  pcVar3 = local_2000;
-  for (iVar2 = 0x800; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pcVar3->__bits[0] = 0;
-    pcVar3 = (cpu_set_t *)(pcVar3->__bits + 1);
+  iVar2 = 0x800;
+  p_Var3 = local_2000[0].__bits;
+  for (; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *p_Var3 = 0;
+    p_Var3 = p_Var3 + 1;
   }
   runtime_sched_getaffinity(0,0x2000,local_2000);
   if (-1 < local_2004) {
     uVar1 = (int)(local_2004 + ((uint)(local_2004 >> 0x1f) >> 0x1e)) >> 2;
     if (uVar1 < 0x801) {
-      pcVar3 = local_2000;
+      p_Var3 = (__cpu_mask *)local_2000;
       for (iVar2 = 0; iVar2 < (int)uVar1; iVar2 = iVar2 + 1) {
-        for (_Var4 = pcVar3->__bits[0]; _Var4 != 0; _Var4 = _Var4 >> 1) {
+        for (uVar4 = *p_Var3; uVar4 != 0; uVar4 = uVar4 >> 1) {
         }
-        pcVar3 = (cpu_set_t *)(pcVar3->__bits + 1);
+        p_Var3 = p_Var3 + 1;
       }
       return;
     }
@@ -25326,7 +25139,7 @@ void runtime_panicindex(void)
     if (runtime_indexError.tab != (runtime_itab *)0x0) {
       prVar2 = (runtime_indexError.tab)->_type;
     }
-    runtime_gopanic((interface__)CONCAT44(runtime_indexError.data,prVar2));
+    runtime_gopanic((interface___)CONCAT44(runtime_indexError.data,prVar2));
     do {
       invalidInstructionException();
     } while( true );
@@ -25353,7 +25166,7 @@ void runtime_panicslice(void)
     if (runtime_sliceError.tab != (runtime_itab *)0x0) {
       prVar2 = (runtime_sliceError.tab)->_type;
     }
-    runtime_gopanic((interface__)CONCAT44(runtime_sliceError.data,prVar2));
+    runtime_gopanic((interface___)CONCAT44(runtime_sliceError.data,prVar2));
     do {
       invalidInstructionException();
     } while( true );
@@ -25380,7 +25193,7 @@ void runtime_panicdivide(void)
     if (runtime_divideError.tab != (runtime_itab *)0x0) {
       prVar2 = (runtime_divideError.tab)->_type;
     }
-    runtime_gopanic((interface__)CONCAT44(runtime_divideError.data,prVar2));
+    runtime_gopanic((interface___)CONCAT44(runtime_divideError.data,prVar2));
     do {
       invalidInstructionException();
     } while( true );
@@ -25407,7 +25220,7 @@ void runtime_panicoverflow(void)
     if (runtime_overflowError.tab != (runtime_itab *)0x0) {
       prVar2 = (runtime_overflowError.tab)->_type;
     }
-    runtime_gopanic((interface__)CONCAT44(runtime_overflowError.data,prVar2));
+    runtime_gopanic((interface___)CONCAT44(runtime_overflowError.data,prVar2));
     do {
       invalidInstructionException();
     } while( true );
@@ -25434,7 +25247,7 @@ void runtime_panicfloat(void)
     if (runtime_floatError.tab != (runtime_itab *)0x0) {
       prVar2 = (runtime_floatError.tab)->_type;
     }
-    runtime_gopanic((interface__)CONCAT44(runtime_floatError.data,prVar2));
+    runtime_gopanic((interface___)CONCAT44(runtime_floatError.data,prVar2));
     do {
       invalidInstructionException();
     } while( true );
@@ -25461,7 +25274,7 @@ void runtime_panicmem(void)
     if (runtime_memoryError.tab != (runtime_itab *)0x0) {
       prVar2 = (runtime_memoryError.tab)->_type;
     }
-    runtime_gopanic((interface__)CONCAT44(runtime_memoryError.data,prVar2));
+    runtime_gopanic((interface___)CONCAT44(runtime_memoryError.data,prVar2));
     do {
       invalidInstructionException();
     } while( true );
@@ -25559,7 +25372,6 @@ void runtime_testdefersizes(void)
   uint uVar2;
   uint uVar3;
   uint uVar4;
-  uint uVar5;
   int *in_GS_OFFSET;
   uint local_14 [5];
   
@@ -25572,79 +25384,74 @@ void runtime_testdefersizes(void)
     return;
   }
   FUN_0808fd8b();
-  for (uVar3 = 0; (int)uVar3 < 5; uVar3 = uVar3 + 1) {
-    if (4 < uVar3) {
+  for (uVar2 = 0; (int)uVar2 < 5; uVar2 = uVar2 + 1) {
+    if (4 < uVar2) {
       runtime_panicindex();
       do {
         invalidInstructionException();
       } while( true );
     }
-    local_14[uVar3] = 0xffffffff;
+    local_14[uVar2] = 0xffffffff;
   }
-  uVar3 = 0;
+  uVar2 = 0;
   while( true ) {
-    if (uVar3 < 5) {
-      uVar4 = 0;
+    if (uVar2 < 5) {
+      uVar3 = 0;
     }
     else {
-      uVar4 = uVar3 + 0xb >> 4;
+      uVar3 = uVar2 + 0xb >> 4;
     }
-    if (4 < uVar4) break;
-    if (uVar3 < 5) {
-      uVar5 = 0x20;
+    if (4 < uVar3) break;
+    if (uVar2 < 5) {
+      uVar4 = 0x20;
     }
     else {
-      uVar5 = uVar3 + 0x1c;
+      uVar4 = uVar2 + 0x1c;
     }
-    if (uVar5 < 0x8000) {
-      if (uVar5 < 0x3f9) {
-        uVar5 = uVar5 + 7 >> 3;
-        if ((0x80 < uVar5) || (0x42 < runtime_size_to_class8[uVar5])) {
+    if (uVar4 < 0x8000) {
+      if (uVar4 < 0x3f9) {
+        uVar4 = uVar4 + 7 >> 3;
+        if ((0x80 < uVar4) || (0x42 < runtime_size_to_class8[uVar4])) {
           runtime_panicindex();
           do {
             invalidInstructionException();
           } while( true );
         }
-        uVar5 = (uint)runtime_class_to_size[runtime_size_to_class8[uVar5]];
+        uVar4 = (uint)runtime_class_to_size[runtime_size_to_class8[uVar4]];
       }
       else {
-        uVar5 = uVar5 - 0x381 >> 7;
-        if ((0xf8 < uVar5) || (0x42 < runtime_size_to_class128[uVar5])) {
+        uVar4 = uVar4 - 0x381 >> 7;
+        if ((0xf8 < uVar4) || (0x42 < runtime_size_to_class128[uVar4])) {
           runtime_panicindex();
           do {
             invalidInstructionException();
           } while( true );
         }
-        uVar5 = (uint)runtime_class_to_size[runtime_size_to_class128[uVar5]];
+        uVar4 = (uint)runtime_class_to_size[runtime_size_to_class128[uVar4]];
       }
     }
-    else {
-      if (uVar5 <= uVar5 + 0x2000) {
-        uVar5 = uVar5 + 0x1fff & 0xffffe000;
-      }
+    else if (uVar4 <= uVar4 + 0x2000) {
+      uVar4 = uVar4 + 0x1fff & 0xffffe000;
     }
-    uVar2 = local_14[uVar4];
-    if ((int)uVar2 < 0) {
-      local_14[uVar4] = uVar5;
+    if ((int)local_14[uVar3] < 0) {
+      local_14[uVar3] = uVar4;
     }
-    else {
-      if (uVar2 != uVar5) {
-        runtime_printlock();
-        runtime_printstring((string)0x18080e3bc0);
-        runtime_printint((ulonglong)uVar3);
-        runtime_printstring((string)0x5080e0f98);
-        runtime_printint((ulonglong)uVar5);
-        runtime_printstring((string)0x9080e1518);
-        runtime_printint((ulonglong)uVar4);
-        runtime_printstring((string)0x1080e0d9c);
-        runtime_printunlock();
-        runtime_throw((string)0x14080e2fbb);
-        do {
-          invalidInstructionException();
-        } while( true );
-      }
+    else if (local_14[uVar3] != uVar4) {
+      runtime_printlock();
+      runtime_printstring((string)0x18080e3bc0);
+      runtime_printint((ulonglong)uVar2);
+      runtime_printstring((string)0x5080e0f98);
+      runtime_printint((ulonglong)uVar4);
+      runtime_printstring((string)0x9080e1518);
+      runtime_printint((ulonglong)uVar3);
+      runtime_printstring((string)0x1080e0d9c);
+      runtime_printunlock();
+      runtime_throw((string)0x14080e2fbb);
+      do {
+        invalidInstructionException();
+      } while( true );
     }
-    uVar3 = uVar3 + 1;
+    uVar2 = uVar2 + 1;
   }
   return;
 }
@@ -25939,7 +25746,7 @@ void runtime_preprintpanics(runtime__panic *p)
 
 {
   uint *puVar1;
-  runtime_eface *prVar2;
+  interface___ *piVar2;
   runtime_eface e;
   undefined **ppuVar3;
   int *in_GS_OFFSET;
@@ -25974,14 +25781,14 @@ void runtime_preprintpanics(runtime__panic *p)
   }
   for (; p != (runtime__panic *)0x0; p = p->link) {
     prVar7 = (runtime__type *)(p->arg).data;
-    prVar2 = (runtime_eface *)&p->arg;
-    prVar5 = prVar2->_type;
-    e = *prVar2;
+    piVar2 = &p->arg;
+    prVar5 = piVar2->_type;
+    e = *piVar2;
     dst = &(p->arg).data;
     if (prVar5 != (runtime__type *)0x0) {
       prVar4 = prVar5;
       prVar6 = prVar7;
-      runtime_assertE2I2((runtime_interfacetype *)&DAT_080d0e60,*prVar2,
+      runtime_assertE2I2((runtime_interfacetype *)&DAT_080d0e60,*piVar2,
                          (runtime_iface)CONCAT44(in_stack_ffffffdc,in_stack_ffffffd8),
                          (bool)in_stack_ffffffe0);
       if (in_stack_ffffffe0 == '\0') {
@@ -26069,7 +25876,7 @@ void runtime_printpanics(runtime__panic *p)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void runtime_gopanic(interface__ e)
+void runtime_gopanic(interface___ e)
 
 {
   uint *puVar1;
@@ -26177,14 +25984,14 @@ void runtime_gopanic(interface__ e)
     runtime_writebarrierptr(dst,(uintptr)local_14);
   }
   src = (runtime__defer *)0x1;
-  runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+  runtime_internal_atomic_Xadd();
   while( true ) {
     while( true ) {
       d = *(runtime__defer **)(iVar2 + 0x14);
       if (d == (runtime__defer *)0x0) {
         runtime_preprintpanics(*(runtime__panic **)(iVar2 + 0x10));
         runtime_startpanic();
-        runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+        runtime_internal_atomic_Xadd();
         runtime_printpanics(*(runtime__panic **)(iVar2 + 0x10));
         runtime_dopanic(0);
         _DAT_00000000 = 0;
@@ -26249,7 +26056,7 @@ void runtime_gopanic(interface__ e)
     uVar5 = d->sp;
     runtime_freedefer(d);
     if (local_14[16] != false) {
-      runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+      runtime_internal_atomic_Xadd();
       if (runtime_writeBarrier._0_4_ == 0) {
         *(runtime__panic **)(iVar2 + 0x10) = local_14._12_4_;
       }
@@ -26292,7 +26099,7 @@ void runtime_getargp(int x,uintptr _r1)
 
 
 
-void runtime_gorecover(uintptr argp,interface__ _r1)
+void runtime_gorecover(uintptr argp,interface___ _r1)
 
 {
   uintptr *puVar1;
@@ -26427,11 +26234,9 @@ void runtime_startpanic_m(void)
     runtime_printunlock();
     *(undefined4 *)(*(int *)(iVar2 + 0x18) + 0x68) = 1;
   }
-  else {
-    if (*(int *)(*(int *)(iVar2 + 0x18) + 0xb8) == 0) {
-      runtime_allocmcache(in_stack_fffffff0);
-      *(runtime_mcache **)(*(int *)(iVar2 + 0x18) + 0xb8) = in_stack_fffffff0;
-    }
+  else if (*(int *)(*(int *)(iVar2 + 0x18) + 0xb8) == 0) {
+    runtime_allocmcache(in_stack_fffffff0);
+    *(runtime_mcache **)(*(int *)(iVar2 + 0x18) + 0xb8) = in_stack_fffffff0;
   }
   iVar3 = *(int *)(iVar2 + 0x18);
   iVar4 = *(int *)(iVar3 + 0x80);
@@ -26445,7 +26250,7 @@ void runtime_startpanic_m(void)
     else {
       runtime_writebarrierptr((uintptr *)(iVar2 + 0x90),0);
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     runtime_lock(&runtime_paniclk);
     if ((0 < runtime_debug.schedtrace) || (0 < runtime_debug.scheddetail)) {
       runtime_schedtrace(true);
@@ -26461,9 +26266,7 @@ void runtime_startpanic_m(void)
     runtime_dopanic(0);
     runtime_exit(3);
   }
-  else {
-    if (iVar4 != 2) goto LAB_0806c0b3;
-  }
+  else if (iVar4 != 2) goto LAB_0806c0b3;
   *(undefined4 *)(*(int *)(iVar2 + 0x18) + 0x80) = 3;
   runtime_printlock();
   runtime_printstring((string)0x18080e3d58);
@@ -26566,7 +26369,7 @@ void runtime_dopanic_m(runtime_g *gp,uintptr pc,uintptr sp)
     }
   }
   runtime_unlock(&runtime_paniclk);
-  runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+  runtime_internal_atomic_Xadd();
   if (in_stack_ffffffd8 != 0) {
     runtime_lock(&runtime_deadlock);
     runtime_lock(&runtime_deadlock);
@@ -26623,7 +26426,7 @@ void runtime_recordForPanic(__uint8 b)
     return;
   }
   runtime_printlock();
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_panicking,in_stack_fffffff0);
+  runtime_internal_atomic_Load(&runtime_panicking,in_stack_fffffff0);
   if (in_stack_fffffff0 == 0) {
     for (uVar2 = 0; (int)uVar2 < b.len; uVar2 = uVar2 + __n) {
       if (0x200 < (uint)runtime_printBacklogIndex) {
@@ -26861,13 +26664,13 @@ void runtime_printfloat(float64 v)
     runtime_printfloat(v);
     return;
   }
-  if (((double)v == (double)v + (double)v) && (0.0 < (double)v)) {
+  if ((v == v + v) && (0.0 < v)) {
     runtime_printlock();
     runtime_printstring((string)0x4080e0eb6);
     runtime_printunlock();
     return;
   }
-  if (((double)v == (double)v + (double)v) && ((double)v < 0.0)) {
+  if ((v == v + v) && (v < 0.0)) {
     runtime_printlock();
     runtime_printstring((string)0x4080e0ebe);
     runtime_printunlock();
@@ -26883,32 +26686,32 @@ void runtime_printfloat(float64 v)
   cStack2 = 0;
   cStack1 = 0;
   local_e = 0x2b;
-  if ((double)v == 0.0) {
-    if (1.0 / (double)v < 0.0) {
+  if (v == 0.0) {
+    if (1.0 / v < 0.0) {
       local_e = 0x2d;
     }
     iVar3 = 0;
   }
   else {
-    if ((double)v < 0.0) {
+    if (v < 0.0) {
       local_e = 0x2d;
       v = (float64)((ulonglong)v ^ 0x8000000000000000);
     }
     iVar3 = 0;
-    for (; 10.0 <= (double)v; v = (float64)((double)v / 10.0)) {
+    for (; 10.0 <= v; v = v / 10.0) {
       iVar3 = iVar3 + 1;
     }
-    for (; (double)v < 1.0; v = (float64)((double)v * 10.0)) {
+    for (; v < 1.0; v = v * 10.0) {
       iVar3 = iVar3 + -1;
     }
     dVar5 = 5.0;
     for (iVar4 = 0; iVar4 < 7; iVar4 = iVar4 + 1) {
       dVar5 = dVar5 / 10.0;
     }
-    v = (float64)(dVar5 + (double)v);
-    if (10.0 <= (double)v) {
+    v = dVar5 + v;
+    if (10.0 <= v) {
       iVar3 = iVar3 + 1;
-      v = (float64)((double)v / 10.0);
+      v = v / 10.0;
     }
   }
   iVar4 = 0;
@@ -26930,9 +26733,9 @@ void runtime_printfloat(float64 v)
       return;
     }
     if (0xd < iVar4 + 2U) break;
-    acStack12[iVar4] = (char)(int)(double)v + '0';
+    acStack12[iVar4] = (char)(int)v + '0';
     iVar4 = iVar4 + 1;
-    v = (float64)(((double)v - (double)(int)(double)v) * 10.0);
+    v = (v - (double)(int)v) * 10.0;
   }
   runtime_panicindex();
   do {
@@ -26960,7 +26763,7 @@ void runtime_printcomplex(complex128 c)
     return;
   }
   runtime_morestack_noctxt();
-  runtime_printcomplex((complex128)c);
+  runtime_printcomplex(c);
   return;
 }
 
@@ -27196,8 +26999,8 @@ void runtime_main(void)
   int *in_GS_OFFSET;
   undefined **ppuVar5;
   uintptr uVar6;
-  chanbool *ctx;
-  chanbool arg0;
+  chan_bool *ctx;
+  chan_bool arg0;
   uintptr in_stack_ffffffdc;
   undefined **ppuVar7;
   runtime_hchan *_r1;
@@ -27266,7 +27069,7 @@ void runtime_main(void)
   runtime_runtimeInitTime._4_4_ = ppuVar7;
   runtime_runtimeInitTime._0_4_ = uVar6;
   runtime_gcenable();
-  ctx = (chanbool *)&DAT_080ca640;
+  ctx = (chan_bool *)&DAT_080ca640;
   _r1 = (runtime_hchan *)0x0;
   _r2 = 0;
   runtime_makechan((runtime_chantype *)&DAT_080ca640,0,in_stack_ffffffe4);
@@ -27277,7 +27080,7 @@ void runtime_main(void)
     prVar3 = (runtime_hchan *)runtime_main_init_done;
     _r1 = in_stack_ffffffe4;
   }
-  runtime_main_init_done = (chanbool)prVar3;
+  runtime_main_init_done = (chan_bool)prVar3;
   if (runtime_iscgo != false) {
     if (_cgo_thread_start == (void *)0x0) {
       runtime_throw((string)0x19080e3dba);
@@ -27304,7 +27107,7 @@ void runtime_main(void)
       } while( true );
     }
     _r1 = (runtime_hchan *)0x0;
-    ctx = (chanbool *)_cgo_notify_runtime_init_done;
+    ctx = (chan_bool *)_cgo_notify_runtime_init_done;
     runtime_cgocall(_cgo_notify_runtime_init_done,(void *)0x0,_r2);
   }
   main_init((EVP_PKEY_CTX *)ctx);
@@ -27313,20 +27116,20 @@ void runtime_main(void)
   runtime_unlockOSThread();
   if ((runtime_isarchive == false) && (runtime_islibrary == false)) {
     main_main();
-    runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_runningPanicDefers,(uint32)_r1);
+    runtime_internal_atomic_Load(&runtime_runningPanicDefers,(uint32)_r1);
     if (_r1 != (runtime_hchan *)0x0) {
       iVar4 = 0;
       while ((iVar4 < 1000 &&
-             (runtime_fwdslash_internal_fwdslash_atomic_Load
-                        (&runtime_runningPanicDefers,(uint32)_r1), _r1 != (runtime_hchan *)0x0))) {
+             (runtime_internal_atomic_Load(&runtime_runningPanicDefers,(uint32)_r1),
+             _r1 != (runtime_hchan *)0x0))) {
         runtime_Gosched();
         iVar4 = iVar4 + 1;
       }
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_panicking,(uint32)_r1);
+    runtime_internal_atomic_Load(&runtime_panicking,(uint32)_r1);
     if (_r1 != (runtime_hchan *)0x0) {
-      runtime_gopark((func__runtime_g_unsafe_Pointer_bool *)0x0,(void *)0x0,(string)0x9080e16a4,0x10
-                     ,1);
+      runtime_gopark((func__runtime_g__unsafe_Pointer__bool *)0x0,(void *)0x0,(string)0x9080e16a4,
+                     0x10,1);
     }
     runtime_exit(0);
     do {
@@ -27382,7 +27185,7 @@ void runtime_forcegchelper(void)
   }
   while (runtime_forcegc.g = prVar2, runtime_lock(&runtime_forcegc.lock), runtime_forcegc.idle == 0)
   {
-    runtime_fwdslash_internal_fwdslash_atomic_Store();
+    runtime_internal_atomic_Store();
     prVar3 = &runtime_forcegc;
     puVar4 = &DAT_080e231a;
     runtime_goparkunlock(&runtime_forcegc.lock,(string)0xf080e231a,0x14,1);
@@ -27415,7 +27218,7 @@ void runtime_Gosched(void)
 
 
 
-void runtime_gopark(func__runtime_g_unsafe_Pointer_bool *unlockf,void *lock,string reason,
+void runtime_gopark(func__runtime_g__unsafe_Pointer__bool *unlockf,void *lock,string reason,
                    uint8 traceEv,int traceskip)
 
 {
@@ -27453,7 +27256,7 @@ void runtime_gopark(func__runtime_g_unsafe_Pointer_bool *unlockf,void *lock,stri
     runtime_writebarrierptr((uintptr *)(iVar2 + 0x1d4),(uintptr)lock);
   }
   if (runtime_writeBarrier._0_4_ == 0) {
-    *(func__runtime_g_unsafe_Pointer_bool **)(iVar2 + 0x1d0) = unlockf;
+    *(func__runtime_g__unsafe_Pointer__bool **)(iVar2 + 0x1d0) = unlockf;
   }
   else {
     runtime_writebarrierptr((uintptr *)(iVar2 + 0x1d0),(uintptr)unlockf);
@@ -27488,7 +27291,7 @@ void runtime_goparkunlock(runtime_mutex *lock,string reason,uint8 traceEv,int tr
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    runtime_gopark((func__runtime_g_unsafe_Pointer_bool *)&PTR_runtime_parkunlock_c_080e7ca0,lock,
+    runtime_gopark((func__runtime_g__unsafe_Pointer__bool *)&PTR_runtime_parkunlock_c_080e7ca0,lock,
                    reason,traceEv,traceskip);
     return;
   }
@@ -27518,8 +27321,6 @@ void runtime_goready(runtime_g *gp,int traceskip)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void runtime_acquireSudog(runtime_sudog *_r0)
 
 {
@@ -27529,12 +27330,12 @@ void runtime_acquireSudog(runtime_sudog *_r0)
   int iVar4;
   int iVar5;
   uint uVar6;
-  runtime_sudog *prVar7;
+  runtime_g *prVar7;
   int iVar8;
-  runtime_sudog *src;
+  runtime_g *src;
   int *in_GS_OFFSET;
-  runtime_sudog *in_stack_ffffffbc;
-  runtime_sudog *in_stack_ffffffcc;
+  runtime_g *in_stack_ffffffbc;
+  runtime_g *in_stack_ffffffcc;
   int in_stack_ffffffd0;
   undefined4 in_stack_ffffffd4;
   
@@ -27545,8 +27346,9 @@ void runtime_acquireSudog(runtime_sudog *_r0)
   iVar5 = *(int *)(iVar4 + 0x5c);
   if (*(int *)(iVar5 + 0x720) == 0) {
     runtime_lock(&runtime_sched.sudoglock);
-    while ((prVar7 = runtime_sched.sudogcache, *(int *)(iVar5 + 0x720) < *(int *)(iVar5 + 0x724) / 2
-           && (runtime_sched.sudogcache != (runtime_sudog *)0x0))) {
+    while ((prVar7 = (runtime_g *)runtime_sched.sudogcache,
+           *(int *)(iVar5 + 0x720) < *(int *)(iVar5 + 0x724) / 2 &&
+           (runtime_sched.sudogcache != (runtime_sudog *)0x0))) {
       pprVar1 = &(runtime_sched.sudogcache)->next;
       if (runtime_writeBarrier._0_4_ == 0) {
         pprVar1 = &(runtime_sched.sudogcache)->next;
@@ -27556,11 +27358,11 @@ void runtime_acquireSudog(runtime_sudog *_r0)
       else {
         runtime_writebarrierptr
                   ((uintptr *)&runtime_sched.sudogcache,(uintptr)(runtime_sched.sudogcache)->next);
-        in_stack_ffffffbc = (runtime_sudog *)0x0;
+        in_stack_ffffffbc = (runtime_g *)0x0;
         runtime_writebarrierptr((uintptr *)pprVar1,0);
       }
       iVar8 = *(int *)(iVar5 + 0x720);
-      src = (runtime_sudog *)((runtime_slice *)(iVar5 + 0x71c))->array;
+      src = (runtime_g *)((runtime_slice *)(iVar5 + 0x71c))->array;
       iVar2 = iVar8 + 1;
       if (*(int *)(iVar5 + 0x724) < iVar2) {
         in_stack_ffffffbc = src;
@@ -27574,7 +27376,7 @@ void runtime_acquireSudog(runtime_sudog *_r0)
         in_stack_ffffffcc = src;
         in_stack_ffffffd0 = iVar8;
         if (runtime_writeBarrier._0_4_ == 0) {
-          *(runtime_sudog **)(iVar5 + 0x71c) = src;
+          *(runtime_g **)(iVar5 + 0x71c) = src;
         }
         else {
           in_stack_ffffffbc = src;
@@ -27583,17 +27385,17 @@ void runtime_acquireSudog(runtime_sudog *_r0)
       }
       *(int *)(iVar5 + 0x720) = iVar8 + 1;
       if (runtime_writeBarrier._0_4_ == 0) {
-        (&src->g)[iVar8] = (runtime_g *)prVar7;
+        (&(src->stack).lo)[iVar8] = (uintptr)prVar7;
       }
       else {
-        runtime_writebarrierptr((uintptr *)(&src->g + iVar8),(uintptr)prVar7);
+        runtime_writebarrierptr(&(src->stack).lo + iVar8,(uintptr)prVar7);
         in_stack_ffffffbc = prVar7;
       }
     }
     runtime_unlock(&runtime_sched.sudoglock);
     if (*(int *)(iVar5 + 0x720) == 0) {
       runtime_newobject((runtime__type *)&DAT_080db1e0,in_stack_ffffffbc);
-      prVar7 = (runtime_sudog *)((runtime_slice *)(iVar5 + 0x71c))->array;
+      prVar7 = (runtime_g *)((runtime_slice *)(iVar5 + 0x71c))->array;
       iVar8 = *(int *)(iVar5 + 0x720);
       iVar2 = iVar8 + 1;
       if (*(int *)(iVar5 + 0x724) < iVar2) {
@@ -27605,7 +27407,7 @@ void runtime_acquireSudog(runtime_sudog *_r0)
         ;
         *(undefined4 *)(iVar5 + 0x724) = in_stack_ffffffd4;
         if (runtime_writeBarrier._0_4_ == 0) {
-          *(runtime_sudog **)(iVar5 + 0x71c) = prVar7;
+          *(runtime_g **)(iVar5 + 0x71c) = prVar7;
         }
         else {
           runtime_writebarrierptr((uintptr *)(iVar5 + 0x71c),(uintptr)prVar7);
@@ -27613,10 +27415,10 @@ void runtime_acquireSudog(runtime_sudog *_r0)
       }
       *(int *)(iVar5 + 0x720) = iVar8 + 1;
       if (runtime_writeBarrier._0_4_ == 0) {
-        (&prVar7->g)[iVar8] = (runtime_g *)in_stack_ffffffbc;
+        (&(prVar7->stack).lo)[iVar8] = (uintptr)in_stack_ffffffbc;
       }
       else {
-        runtime_writebarrierptr((uintptr *)(&prVar7->g + iVar8),(uintptr)in_stack_ffffffbc);
+        runtime_writebarrierptr(&(prVar7->stack).lo + iVar8,(uintptr)in_stack_ffffffbc);
       }
     }
   }
@@ -27812,7 +27614,7 @@ void runtime_releaseSudog(runtime_sudog *s)
 
 
 
-void runtime_funcPC(interface__ f,uintptr _r1)
+void runtime_funcPC(interface___ f,uintptr _r1)
 
 {
   return;
@@ -27871,7 +27673,7 @@ void runtime_badreflectcall(void)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    runtime_gopanic((interface__)0x80f1aa0080d1ee0);
+    runtime_gopanic((interface___)0x80f1aa0080d1ee0);
     do {
       invalidInstructionException();
     } while( true );
@@ -28207,9 +28009,9 @@ void runtime_ready(runtime_g *gp,int traceskip,bool next)
   if ((in_stack_fffffff4 & 0xffffefff) == 4) {
     runtime_casgstatus(gp,4,1);
     runtime_runqput(*(runtime_p **)(*(int *)(iVar2 + 0x18) + 0x5c),gp,next);
-    runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.npidle,(uint32)gp);
+    runtime_internal_atomic_Load(&runtime_sched.npidle,(uint32)gp);
     if (gp != (runtime_g *)0x0) {
-      runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.nmspinning,(uint32)gp);
+      runtime_internal_atomic_Load(&runtime_sched.nmspinning,(uint32)gp);
       if (gp == (runtime_g *)0x0) {
         runtime_wakep();
       }
@@ -28349,11 +28151,11 @@ void runtime_freezetheworld(void)
     runtime_freezetheworld();
     return;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Store();
+  runtime_internal_atomic_Store();
   for (iVar2 = 0; iVar2 < 5; iVar2 = iVar2 + 1) {
     runtime_sched.stopwait = 0x7fffffff;
     _r0 = 0x54;
-    runtime_fwdslash_internal_fwdslash_atomic_Store();
+    runtime_internal_atomic_Store();
     runtime_preemptall((bool)_r0);
     if (_r0 == '\0') break;
     runtime_usleep(1000);
@@ -28372,7 +28174,7 @@ void runtime_readgstatus(runtime_g *gp,uint32 _r1)
 {
   uint32 in_stack_fffffffc;
   
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&gp->atomicstatus,in_stack_fffffffc);
+  runtime_internal_atomic_Load(&gp->atomicstatus,in_stack_fffffffc);
   return;
 }
 
@@ -28394,7 +28196,7 @@ void runtime_casfrom_Gscanstatus(runtime_g *gp,uint32 oldval,uint32 newval)
   }
   if (oldval - 0x1001 < 4) {
     if (newval == (oldval & 0xffffefff)) {
-      runtime_fwdslash_internal_fwdslash_atomic_Cas();
+      runtime_internal_atomic_Cas();
     }
     else {
       local_4 = '\0';
@@ -28449,7 +28251,7 @@ void runtime_castogscanstatus(runtime_g *gp,uint32 oldval,uint32 newval,bool _r3
     return;
   }
   if ((oldval - 1 < 4) && (newval == (oldval | 0x1000))) {
-    runtime_fwdslash_internal_fwdslash_atomic_Cas();
+    runtime_internal_atomic_Cas();
     return;
   }
   runtime_printlock();
@@ -28474,7 +28276,7 @@ void runtime_casgstatus(runtime_g *gp,uint32 oldval,uint32 newval)
   int iVar2;
   int iVar3;
   uint32 uVar4;
-  undefined **ppuVar5;
+  undefined *puVar5;
   undefined **ppuVar6;
   uint32 uVar7;
   char local_24;
@@ -28500,11 +28302,11 @@ void runtime_casgstatus(runtime_g *gp,uint32 oldval,uint32 newval)
   }
   iVar3 = 0;
   uVar4 = 0;
-  ppuVar5 = (undefined **)0x0;
+  puVar5 = (undefined *)0x0;
   while( true ) {
     ppuVar6 = (undefined **)&gp->atomicstatus;
     uVar7 = oldval;
-    runtime_fwdslash_internal_fwdslash_atomic_Cas();
+    runtime_internal_atomic_Cas();
     if (local_24 != '\0') break;
     if ((oldval == 4) && (gp->atomicstatus == 1)) {
       ppuVar6 = &PTR_runtime_casgstatus_func2_080e7ba8;
@@ -28512,11 +28314,11 @@ void runtime_casgstatus(runtime_g *gp,uint32 oldval,uint32 newval)
     }
     if (iVar3 == 0) {
       runtime_nanotime();
-      ppuVar5 = ppuVar6 + 0x4e2;
-      uVar4 = uVar7 + ((undefined **)0xffffec77 < ppuVar6);
+      puVar5 = (undefined *)(ppuVar6 + 0x4e2);
+      uVar4 = uVar7 + ((uint32 *)0xffffec77 < ppuVar6);
     }
     runtime_nanotime();
-    if ((int)uVar7 < (int)uVar4 || ppuVar6 < ppuVar5 && uVar7 == uVar4) {
+    if ((int)uVar7 < (int)uVar4 || ppuVar6 < puVar5 && uVar7 == uVar4) {
       iVar2 = 0;
       while ((iVar2 < 10 && (oldval != gp->atomicstatus))) {
         runtime_procyield();
@@ -28526,8 +28328,8 @@ void runtime_casgstatus(runtime_g *gp,uint32 oldval,uint32 newval)
     else {
       runtime_osyield();
       runtime_nanotime();
-      ppuVar5 = ppuVar6 + 0x271;
-      uVar4 = uVar7 + ((undefined **)0xfffff63b < ppuVar6);
+      puVar5 = (undefined *)(ppuVar6 + 0x271);
+      uVar4 = uVar7 + ((uint32 *)0xfffff63b < ppuVar6);
     }
     iVar3 = iVar3 + 1;
   }
@@ -28764,7 +28566,7 @@ void runtime_stopTheWorldWithSema(void)
   runtime_sched.stopwait = runtime_gomaxprocs;
   _r0_00 = (runtime_p *)&runtime_sched.gcwaiting;
   _r1 = 1;
-  runtime_fwdslash_internal_fwdslash_atomic_Store();
+  runtime_internal_atomic_Store();
   runtime_preemptall(SUB41(_r0_00,0));
   *(undefined4 *)(*(int *)(*(int *)(iVar5 + 0x18) + 0x5c) + 8) = 3;
   runtime_sched.stopwait = runtime_sched.stopwait + -1;
@@ -28779,8 +28581,7 @@ void runtime_stopTheWorldWithSema(void)
     uVar7 = pp->status;
     prVar6 = (runtime_p *)&pp->status;
     if ((uVar7 == 2) &&
-       (runtime_fwdslash_internal_fwdslash_atomic_Cas(), _r0_00 = prVar6, _r1 = uVar7,
-       in_stack_ffffffe4 != '\0')) {
+       (runtime_internal_atomic_Cas(), _r0_00 = prVar6, _r1 = uVar7, in_stack_ffffffe4 != '\0')) {
       if (runtime_trace.enabled != false) {
         runtime_traceGoSysBlock(pp);
         prVar6 = pp;
@@ -28831,7 +28632,7 @@ void runtime_stopTheWorldWithSema(void)
     "stopTheWorld: not stopped (stopwait != 0)strconv: illegal AppendInt/FormatInt base173472347597680709441192448139190673828125867361737988403547205962240695953369140625acquireSudog: found s.elem != nil in cachepersistentalloc: align is not a power of 2runtime: blocked write on closing polldescruntime: heapBitsSetTypeGCProg: total bitssync/atomic: store of nil value into Valueunexpected signal during runtime executiongcBgMarkWorker: unexpected gcMarkWorkerModegentraceback before goexitPC initializationheapBitsSetTypeGCProg: unexpected bit countinterrupted system call should be restartedmultiple Read calls return no data or errorreflect: FieldByNameFunc of non-struct typereflect: nil type passed to Type.Implementsruntime.SetFinalizer: finalizer already setruntime.SetFinalizer: first argument is nilruntime: casfrom_Gscanstatus bad oldval gp=runtime: releaseSudog with non-nil gp.paramunknown runnable goroutine during bootstrap using value obtained using unexported fieldgcmarknewobject called while doing checkmarkreflect: funcLayout with interface receiver runtime: lfstack.push invalid packing: node=systemstack called from unexpected goroutinecannot send after transport endpoint shutdownexitsyscall: syscall frame is no longer validheapBitsSetType: called with non-pointer typereflect: internal error: invalid method indexreflect: nil type passed to Type.AssignableToruntime: failed MSpanList_Remove span.npages=panicwrap: unexpected string after type name: reflect.Value.Slice: slice index out of boundsreflect: nil type passed to Type.ConvertibleToruntime: failed to create new OS thread (have runtime: name offset base pointer out of rangeruntime: panic before malloc heap initialized\nruntime: text offset base pointer out of rangeruntime: type offset base pointer out of rangestopTheWorld: not stopped (status != _Pgcstop)P has cached GC work at end of mark terminationattempting to link in too many shared librariesP has unflushed stats at end of mark terminationruntime: cannot map pages in arena address spacestrconv: illegal App..." /* TRUNCATED STRING LITERAL */
     ;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_freezing,_r1);
+  runtime_internal_atomic_Load(&runtime_freezing,_r1);
   if (_r1 != 0) {
     runtime_lock(&runtime_deadlock);
     runtime_lock(&runtime_deadlock);
@@ -28913,10 +28714,10 @@ void runtime_startTheWorldWithSema(void)
   while( true ) {
     while( true ) {
       if (_r1 == (runtime_p *)0x0) {
-        runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.npidle,(uint32)_r1_00);
+        runtime_internal_atomic_Load(&runtime_sched.npidle,(uint32)_r1_00);
         if ((_r1_00 != (runtime_p *)0x0) &&
-           (runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.nmspinning,(uint32)_r1_00)
-           , _r1_00 == (runtime_p *)0x0)) {
+           (runtime_internal_atomic_Load(&runtime_sched.nmspinning,(uint32)_r1_00),
+           _r1_00 == (runtime_p *)0x0)) {
           runtime_wakep();
         }
         if (_r0 != '\0') {
@@ -29087,7 +28888,7 @@ void runtime_forEachP(func__runtime_p_ *fn)
   for (iVar8 = 0; iVar8 < iVar5; iVar8 = iVar8 + 1) {
     if (*pprVar9 != prVar3) {
       puVar10 = &(*pprVar9)->runSafePointFn;
-      runtime_fwdslash_internal_fwdslash_atomic_Store();
+      runtime_internal_atomic_Store();
     }
     pprVar9 = pprVar9 + 1;
   }
@@ -29096,7 +28897,7 @@ void runtime_forEachP(func__runtime_p_ *fn)
       rVar6 = *(runtime_puintptr *)(rVar6 + 0xc)) {
     uVar11 = 1;
     uVar12 = 0;
-    runtime_fwdslash_internal_fwdslash_atomic_Cas();
+    runtime_internal_atomic_Cas();
     if (in_stack_ffffffdc != '\0') {
       (**(code **)fn)(rVar6,uVar11,uVar12);
       runtime_sched.safePointWait = runtime_sched.safePointWait + -1;
@@ -29113,7 +28914,7 @@ void runtime_forEachP(func__runtime_p_ *fn)
     }
     prVar3 = runtime_allp[uVar7];
     if (((prVar3->status == 2) && (prVar3->runSafePointFn == 1)) &&
-       (runtime_fwdslash_internal_fwdslash_atomic_Cas(), in_stack_ffffffdc != '\0')) {
+       (runtime_internal_atomic_Cas(), in_stack_ffffffdc != '\0')) {
       if (runtime_trace.enabled != false) {
         runtime_traceGoSysBlock(prVar3);
         runtime_traceProcStop(prVar3);
@@ -29195,7 +28996,7 @@ void runtime_runSafePointFn(void)
   uVar3 = *(undefined4 *)(*(int *)(*(int *)(*in_GS_OFFSET + -4) + 0x18) + 0x5c);
   uVar5 = 1;
   uVar6 = 0;
-  runtime_fwdslash_internal_fwdslash_atomic_Cas();
+  runtime_internal_atomic_Cas();
   if (local_8 != '\0') {
     (**runtime_sched._136_4_)(uVar3,uVar5,uVar6);
     runtime_lock(&runtime_sched.lock);
@@ -29337,7 +29138,7 @@ void runtime_needm(uint8 x)
   uStackY24 = 0x807030f;
   runtime_casgstatus(in_stack_fffffff0->curg,6,3);
   uStackY24 = 0x8070325;
-  runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+  runtime_internal_atomic_Xadd();
   return;
 }
 
@@ -29356,7 +29157,7 @@ void runtime_newextram(void)
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     _r1 = (runtime_m *)0x0;
-    runtime_fwdslash_internal_fwdslash_atomic_Xchg();
+    runtime_internal_atomic_Xchg();
     if (local_10 == 0) {
       runtime_lockextra(true,_r1);
       runtime_unlockextra(_r1);
@@ -29426,13 +29227,13 @@ void runtime_oneNewExtraM(void)
       runtime_writebarrierptr((uintptr *)&in_stack_ffffffe0->lockedg,(uintptr)_r1);
       runtime_writebarrierptr((uintptr *)&_r1->lockedm,(uintptr)in_stack_ffffffe0);
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd64
+    runtime_internal_atomic_Xadd64
               (&runtime_sched.goidgen,1,CONCAT44(in_stack_ffffffe8,in_stack_ffffffe4));
     *(undefined4 *)&_r1->goid = in_stack_ffffffe4;
     *(undefined4 *)((int)&_r1->goid + 4) = in_stack_ffffffe8;
     runtime_allgadd(_r1);
     _r1_00 = (runtime_m *)0x1;
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     runtime_lockextra(true,_r1_00);
     in_stack_ffffffe0->schedlink = (runtime_muintptr)_r1_00;
     runtime_extraMCount = runtime_extraMCount + 1;
@@ -29463,7 +29264,7 @@ void runtime_dropm(void)
     runtime_casgstatus(mp->curg,3,6);
     __mask = 0x8145408;
     _r1 = (runtime_m *)0x1;
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     sigmask = *(runtime_sigset *)mp->sigmask;
     runtime_sigblock(__mask);
     runtime_unminit();
@@ -29493,19 +29294,19 @@ void runtime_lockextra(bool nilokay,runtime_m *_r1)
   while( true ) {
     while( true ) {
       while( true ) {
-        runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr(&runtime_extram,in_stack_ffffffec);
+        runtime_internal_atomic_Loaduintptr(&runtime_extram,in_stack_ffffffec);
         if (in_stack_ffffffec != 1) break;
         runtime_osyield();
       }
       if ((in_stack_ffffffec != 0) || (nilokay != false)) break;
       if (!bVar1) {
         in_stack_ffffffec = 1;
-        runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+        runtime_internal_atomic_Xadd();
       }
       runtime_usleep(1);
       bVar1 = true;
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Casuintptr();
+    runtime_internal_atomic_Casuintptr();
     if (local_c != '\0') break;
     runtime_osyield();
   }
@@ -29517,7 +29318,7 @@ void runtime_lockextra(bool nilokay,runtime_m *_r1)
 void runtime_unlockextra(runtime_m *mp)
 
 {
-  runtime_fwdslash_internal_fwdslash_atomic_Storeuintptr();
+  runtime_internal_atomic_Storeuintptr();
   return;
 }
 
@@ -29658,7 +29459,7 @@ void runtime_startm(runtime_p *_p_,bool spinning)
   runtime_lock(&runtime_sched.lock);
   if ((_p_ == (runtime_p *)0x0) && (_p_ = _r0, runtime_pidleget(_r0), _p_ == (runtime_p *)0x0)) {
     runtime_unlock(&runtime_sched.lock);
-    if ((spinning != false) && (runtime_fwdslash_internal_fwdslash_atomic_Xadd(), local_10 < 0)) {
+    if ((spinning != false) && (runtime_internal_atomic_Xadd(), local_10 < 0)) {
       runtime_throw((string)0x1b080e45dc);
       do {
         invalidInstructionException();
@@ -29739,13 +29540,13 @@ void runtime_handoffp(runtime_p *_p_)
     runtime_startm(_p_,false);
     return;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.nmspinning,in_stack_fffffff0);
+  runtime_internal_atomic_Load(&runtime_sched.nmspinning,in_stack_fffffff0);
   uVar4 = in_stack_fffffff0;
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.npidle,in_stack_fffffff0);
+  runtime_internal_atomic_Load(&runtime_sched.npidle,in_stack_fffffff0);
   if (uVar4 + in_stack_fffffff0 == 0) {
     uVar4 = 0;
     local_c = 1;
-    runtime_fwdslash_internal_fwdslash_atomic_Cas();
+    runtime_internal_atomic_Cas();
     if (local_8 != '\0') {
       runtime_startm(_p_,true);
       return;
@@ -29756,7 +29557,7 @@ void runtime_handoffp(runtime_p *_p_)
     if (_p_->runSafePointFn != 0) {
       uVar4 = 1;
       local_c = 0;
-      runtime_fwdslash_internal_fwdslash_atomic_Cas();
+      runtime_internal_atomic_Cas();
       if (local_8 != '\0') {
         (**runtime_sched._136_4_)(_p_);
         iVar2 = runtime_sched.safePointWait + -1;
@@ -29773,7 +29574,7 @@ void runtime_handoffp(runtime_p *_p_)
       return;
     }
     if ((runtime_gomaxprocs - 1U == runtime_sched.npidle) &&
-       (runtime_fwdslash_internal_fwdslash_atomic_Load64(), local_c != 0 || uVar4 != 0)) {
+       (runtime_internal_atomic_Load64(), local_c != 0 || uVar4 != 0)) {
       runtime_unlock(&runtime_sched.lock);
       runtime_startm(_p_,false);
       return;
@@ -29809,7 +29610,7 @@ void runtime_wakep(void)
     runtime_wakep();
     return;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Cas();
+  runtime_internal_atomic_Cas();
   if (local_4 != '\0') {
     runtime_startm((runtime_p *)0x0,true);
     return;
@@ -29930,7 +29731,7 @@ void runtime_gcstopm(void)
     if (*(char *)(iVar2 + 0x8c) != '\0') {
       *(undefined *)(iVar2 + 0x8c) = 0;
       in_stack_fffffff0 = (runtime_p *)&runtime_sched.nmspinning;
-      runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+      runtime_internal_atomic_Xadd();
       if (local_8 < 0) {
         runtime_throw((string)0x1c080e4840);
         do {
@@ -30099,21 +29900,21 @@ LAB_08071766:
     }
     iVar7 = runtime_gomaxprocs;
     in_stack_ffffffa8 = &runtime_sched.npidle;
-    runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.npidle,(uint32)prVar11);
+    runtime_internal_atomic_Load(&runtime_sched.npidle,(uint32)prVar11);
     in_stack_ffffffac = prVar11;
     if ((runtime_p *)(iVar7 + -1) != prVar11) {
       if (*(char *)(*(int *)(iVar2 + 0x18) + 0x8c) == '\0') {
-        runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.nmspinning,(uint32)prVar11);
+        runtime_internal_atomic_Load(&runtime_sched.nmspinning,(uint32)prVar11);
         in_stack_ffffffa8 = &runtime_sched.npidle;
         in_stack_ffffffac = prVar11;
-        runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.npidle,(uint32)prVar11);
+        runtime_internal_atomic_Load(&runtime_sched.npidle,(uint32)prVar11);
         if ((uint)(iVar7 - (int)in_stack_ffffffac) <= (uint)((int)prVar11 << 1)) goto LAB_08071680;
       }
       if (*(char *)(*(int *)(iVar2 + 0x18) + 0x8c) == '\0') {
         *(undefined *)(*(int *)(iVar2 + 0x18) + 0x8c) = 1;
         in_stack_ffffffa8 = &runtime_sched.nmspinning;
         in_stack_ffffffac = (runtime_p *)0x1;
-        runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+        runtime_internal_atomic_Xadd();
       }
       for (iVar8 = 0; iVar8 < 4; iVar8 = iVar8 + 1) {
         iVar3 = *(int *)(*(int *)(*in_GS_OFFSET + -4) + 0x18);
@@ -30201,7 +30002,7 @@ LAB_08071680:
       *(undefined *)(*(int *)(iVar2 + 0x18) + 0x8c) = 0;
       prVar11 = (runtime_p *)&runtime_sched.nmspinning;
       in_stack_ffffffac = (runtime_p *)0xffffffff;
-      runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+      runtime_internal_atomic_Xadd();
       if ((int)in_stack_ffffffb0 < 0) {
         runtime_throw((string)0x21080e566a);
         do {
@@ -30231,7 +30032,7 @@ LAB_08071680:
             *(undefined *)(*(int *)(iVar2 + 0x18) + 0x8c) = 1;
             in_stack_ffffffa8 = &runtime_sched.nmspinning;
             in_stack_ffffffac = (runtime_p *)0x1;
-            runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+            runtime_internal_atomic_Xadd();
           }
           goto LAB_08071766;
         }
@@ -30256,7 +30057,7 @@ LAB_08071680:
       if (cVar10 != '\0') {
         *(undefined *)(*(int *)(iVar2 + 0x18) + 0x8c) = 1;
         in_stack_ffffffac = (runtime_p *)0x1;
-        runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+        runtime_internal_atomic_Xadd();
       }
       goto LAB_08071680;
     }
@@ -30265,13 +30066,12 @@ LAB_0807174c:
     in_stack_ffffffa8 = (uint32 *)prVar11;
     if ((char)prVar11 != '\0') {
       in_stack_ffffffa8 = &runtime_netpollWaiters;
-      runtime_fwdslash_internal_fwdslash_atomic_Load
-                (&runtime_netpollWaiters,(uint32)in_stack_ffffffac);
+      runtime_internal_atomic_Load(&runtime_netpollWaiters,(uint32)in_stack_ffffffac);
       if (in_stack_ffffffac != (runtime_p *)0x0) {
         in_stack_ffffffa8 = (uint32 *)&runtime_sched.lastpoll;
         prVar13 = (runtime_p *)0x0;
         in_stack_ffffffb0 = (runtime_p *)0x0;
-        runtime_fwdslash_internal_fwdslash_atomic_Xchg64
+        runtime_internal_atomic_Xchg64
                   (&runtime_sched.lastpoll,0,CONCAT44(in_stack_ffffffb8,in_stack_ffffffb4));
         in_stack_ffffffac = prVar13;
         if (in_stack_ffffffb8 != 0 || in_stack_ffffffb4 != (runtime_g *)0x0) {
@@ -30292,7 +30092,7 @@ LAB_0807174c:
           in_stack_ffffffb0 = prVar13;
           runtime_nanotime();
           in_stack_ffffffa8 = (uint32 *)&runtime_sched.lastpoll;
-          runtime_fwdslash_internal_fwdslash_atomic_Store64();
+          runtime_internal_atomic_Store64();
           if (prVar13 != (runtime_p *)0x0) {
             prVar11 = (runtime_p *)&runtime_sched.lock;
             runtime_lock(&runtime_sched.lock);
@@ -30344,8 +30144,7 @@ void runtime_pollWork(bool _r0)
     }
     runtime_netpollinited((bool)_r0_00);
     if (_r0_00 != '\0') {
-      runtime_fwdslash_internal_fwdslash_atomic_Load
-                (&runtime_netpollWaiters,(uint32)in_stack_fffffffc);
+      runtime_internal_atomic_Load(&runtime_netpollWaiters,(uint32)in_stack_fffffffc);
       if ((in_stack_fffffffc != (runtime_g *)0x0) &&
          (runtime_sched.lastpoll._4_4_ != 0 || (int)runtime_sched.lastpoll != 0)) {
         runtime_netpoll(false,in_stack_fffffffc);
@@ -30382,10 +30181,10 @@ void runtime_resetspinning(void)
   if (*(char *)(iVar2 + 0x8c) != '\0') {
     *(undefined *)(iVar2 + 0x8c) = 0;
     _r1 = 0xffffffff;
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     if (-1 < local_4) {
       if (local_4 == 0) {
-        runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.npidle,_r1);
+        runtime_internal_atomic_Load(&runtime_sched.npidle,_r1);
         if (_r1 != 0) {
           runtime_wakep();
         }
@@ -30775,26 +30574,20 @@ void runtime_goexit0(runtime_g *gp)
   if ((runtime_runfinqPC == uVar3) && (runtime_fingRunning == false)) {
     bVar6 = true;
   }
+  else if (runtime_bgsweepPC == uVar3) {
+    bVar6 = true;
+  }
+  else if (runtime_forcegchelperPC == uVar3) {
+    bVar6 = true;
+  }
+  else if (runtime_timerprocPC == uVar3) {
+    bVar6 = true;
+  }
   else {
-    if (runtime_bgsweepPC == uVar3) {
-      bVar6 = true;
-    }
-    else {
-      if (runtime_forcegchelperPC == uVar3) {
-        bVar6 = true;
-      }
-      else {
-        if (runtime_timerprocPC == uVar3) {
-          bVar6 = true;
-        }
-        else {
-          bVar6 = runtime_gcBgMarkWorkerPC == uVar3;
-        }
-      }
-    }
+    bVar6 = runtime_gcBgMarkWorkerPC == uVar3;
   }
   if (bVar6) {
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
   }
   if (runtime_writeBarrier._0_4_ == 0) {
     gp->m = (runtime_m *)0x0;
@@ -30908,7 +30701,7 @@ void runtime_reentersyscall(uintptr pc,uintptr sp)
     _r1 = sp;
     runtime_save(pc,sp);
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.sysmonwait,_r1);
+  runtime_internal_atomic_Load(&runtime_sched.sysmonwait,_r1);
   if (_r1 != 0) {
     runtime_systemstack();
     runtime_save(pc,sp);
@@ -30921,7 +30714,7 @@ void runtime_reentersyscall(uintptr pc,uintptr sp)
   gp->sysblocktraced = true;
   gp->m->mcache = (runtime_mcache *)0x0;
   *(undefined4 *)(gp->m->p + 0x30) = 0;
-  runtime_fwdslash_internal_fwdslash_atomic_Store();
+  runtime_internal_atomic_Store();
   if (runtime_sched.gcwaiting != 0) {
     runtime_systemstack();
     runtime_save(pc,sp);
@@ -30956,9 +30749,9 @@ void runtime_entersyscall_sysmon(void)
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     runtime_lock(&runtime_sched.lock);
-    runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.sysmonwait,in_stack_fffffffc);
+    runtime_internal_atomic_Load(&runtime_sched.sysmonwait,in_stack_fffffffc);
     if (in_stack_fffffffc != 0) {
-      runtime_fwdslash_internal_fwdslash_atomic_Store();
+      runtime_internal_atomic_Store();
       runtime_notewakeup(&runtime_sched.sysmonnote);
     }
     runtime_unlock(&runtime_sched.lock);
@@ -30987,7 +30780,7 @@ void runtime_entersyscall_gcwait(void)
     pp = *(runtime_p **)(*(int *)(*(int *)(*in_GS_OFFSET + -4) + 0x18) + 0x5c);
     runtime_lock(&runtime_sched.lock);
     if (0 < runtime_sched.stopwait) {
-      runtime_fwdslash_internal_fwdslash_atomic_Cas();
+      runtime_internal_atomic_Cas();
       if (local_8 != '\0') {
         if (runtime_trace.enabled != false) {
           runtime_traceGoSysBlock(pp);
@@ -31171,8 +30964,7 @@ void runtime_exitsyscallfast(bool _r0)
   }
   iVar1 = *(int *)(*(int *)(local_4 + 0x18) + 0x5c);
   if (((iVar1 != 0) && (*(int *)(iVar1 + 8) == 2)) &&
-     (local_14 = local_4, runtime_fwdslash_internal_fwdslash_atomic_Cas(), local_4 = local_14,
-     local_1c != '\0')) {
+     (local_14 = local_4, runtime_internal_atomic_Cas(), local_4 = local_14, local_1c != '\0')) {
     runtime_exitsyscallfast_reacquired();
     return;
   }
@@ -31235,9 +31027,9 @@ void runtime_exitsyscallfast_pidle(bool _r0)
   runtime_lock(&runtime_sched.lock);
   runtime_pidleget(_r0_00);
   if ((_r0_00 != (runtime_p *)0x0) &&
-     (runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.sysmonwait,in_stack_fffffff8),
+     (runtime_internal_atomic_Load(&runtime_sched.sysmonwait,in_stack_fffffff8),
      in_stack_fffffff8 != 0)) {
-    runtime_fwdslash_internal_fwdslash_atomic_Store();
+    runtime_internal_atomic_Store();
     runtime_notewakeup(&runtime_sched.sysmonnote);
   }
   runtime_unlock(&runtime_sched.lock);
@@ -31289,9 +31081,9 @@ void runtime_exitsyscall0(runtime_g *gp)
     runtime_sched.runqsize = runtime_sched.runqsize + 1;
   }
   else {
-    runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.sysmonwait,_r1);
+    runtime_internal_atomic_Load(&runtime_sched.sysmonwait,_r1);
     if (_r1 != 0) {
-      runtime_fwdslash_internal_fwdslash_atomic_Store();
+      runtime_internal_atomic_Store();
       runtime_notewakeup(&runtime_sched.sysmonnote);
     }
   }
@@ -31463,38 +31255,32 @@ void runtime_newproc1(runtime_funcval *fn,uint8 *argp,int32 narg,int32 nret,uint
   if ((runtime_runfinqPC == uVar3) && (runtime_fingRunning == false)) {
     bVar8 = true;
   }
+  else if (runtime_bgsweepPC == uVar3) {
+    bVar8 = true;
+  }
+  else if (runtime_forcegchelperPC == uVar3) {
+    bVar8 = true;
+  }
+  else if (runtime_timerprocPC == uVar3) {
+    bVar8 = true;
+  }
   else {
-    if (runtime_bgsweepPC == uVar3) {
-      bVar8 = true;
-    }
-    else {
-      if (runtime_forcegchelperPC == uVar3) {
-        bVar8 = true;
-      }
-      else {
-        if (runtime_timerprocPC == uVar3) {
-          bVar8 = true;
-        }
-        else {
-          bVar8 = runtime_gcBgMarkWorkerPC == uVar3;
-        }
-      }
-    }
+    bVar8 = runtime_gcBgMarkWorkerPC == uVar3;
   }
   if (bVar8) {
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
   }
   in_stack_ffffffcc->gcscanvalid = false;
   runtime_casgstatus(in_stack_ffffffcc,6,1);
   if (*(int *)((int)&_p_->goidcache + 4) == *(int *)((int)&_p_->goidcacheend + 4) &&
       *(int *)&_p_->goidcache == *(int *)&_p_->goidcacheend) {
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd64
+    runtime_internal_atomic_Xadd64
               (&runtime_sched.goidgen,0x10,CONCAT44(in_stack_ffffffd8,in_stack_ffffffd4));
     *(runtime_stackmap **)((int)&_p_->goidcache + 4) = in_stack_ffffffd8;
-    *(int *)&_p_->goidcache = &in_stack_ffffffd4[-2].field_0x9;
+    *(undefined **)&_p_->goidcache = &in_stack_ffffffd4[-2].field_0x9;
     *(uint8 **)((int)&_p_->goidcache + 4) =
          in_stack_ffffffd8->bytedata + (((runtime_stackmap *)0xe < in_stack_ffffffd4) - 9);
-    *(int *)&_p_->goidcacheend = (int)&in_stack_ffffffd4->n + 1;
+    *(undefined **)&_p_->goidcacheend = (undefined *)((int)&in_stack_ffffffd4->n + 1);
     *(uint8 **)((int)&_p_->goidcacheend + 4) =
          in_stack_ffffffd8->bytedata + (((runtime_stackmap *)0xfffffffe < in_stack_ffffffd4) - 8);
   }
@@ -31509,10 +31295,9 @@ void runtime_newproc1(runtime_funcval *fn,uint8 *argp,int32 narg,int32 nret,uint
     runtime_traceGoCreate(in_stack_ffffffcc,in_stack_ffffffcc->startpc);
   }
   runtime_runqput(_p_,in_stack_ffffffcc,true);
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.npidle,(uint32)in_stack_ffffffcc);
+  runtime_internal_atomic_Load(&runtime_sched.npidle,(uint32)in_stack_ffffffcc);
   if (((in_stack_ffffffcc != (runtime_g *)0x0) &&
-      (runtime_fwdslash_internal_fwdslash_atomic_Load
-                 (&runtime_sched.nmspinning,(uint32)in_stack_ffffffcc),
+      (runtime_internal_atomic_Load(&runtime_sched.nmspinning,(uint32)in_stack_ffffffcc),
       in_stack_ffffffcc == (runtime_g *)0x0)) && (runtime_mainStarted != false)) {
     runtime_wakep();
   }
@@ -31922,12 +31707,12 @@ void runtime_sigprof(uintptr pc,uintptr sp,uintptr lr,runtime_g *gp,runtime_m *m
     }
     else {
       runtime_gentraceback
-                (pc,sp,lr,gp,0,&local_118,0x40,(func__runtime_stkframe_unsafe_Pointer_bool *)0x0,
+                (pc,sp,lr,gp,0,&local_118,0x40,(func__runtime_stkframe__unsafe_Pointer__bool *)0x0,
                  (void *)0x0,6,in_stack_fffffee0);
     }
   }
   else {
-    runtime_fwdslash_internal_fwdslash_atomic_Load(&mp->cgoCallersUse,in_stack_fffffebc);
+    runtime_internal_atomic_Load(&mp->cgoCallersUse,in_stack_fffffebc);
     if (((in_stack_fffffebc == 0) && (__src = mp->cgoCallers, __src != (uintptr (*) [32])0x0)) &&
        ((*__src)[0] != 0)) {
       for (uVar4 = 0; (int)uVar4 < 0x20; uVar4 = uVar4 + 1) {
@@ -31964,7 +31749,7 @@ void runtime_sigprof(uintptr pc,uintptr sp,uintptr lr,runtime_g *gp,runtime_m *m
     }
     runtime_gentraceback
               (prVar3->syscallpc,prVar3->syscallsp,0,prVar3,0,&local_118 + uVar4,-(uVar4 - 0x40),
-               (func__runtime_stkframe_unsafe_Pointer_bool *)0x0,(void *)0x0,0,in_stack_fffffee0);
+               (func__runtime_stkframe__unsafe_Pointer__bool *)0x0,(void *)0x0,0,in_stack_fffffee0);
   }
   if ((int)in_stack_fffffee0 < 1) {
     if (runtime_firstmoduledata.etext < pc) {
@@ -32058,25 +31843,25 @@ void runtime_procresize(int32 nprocs,runtime_p *_r1)
 
 {
   uint *puVar1;
-  uintptr uVar2;
-  runtime_guintptr rVar3;
+  runtime_guintptr rVar2;
   runtime_g *gp;
+  int iVar3;
   int iVar4;
-  int iVar5;
-  longlong lVar6;
-  runtime_muintptr rVar7;
-  int32 iVar8;
-  runtime_g *prVar9;
-  uint uVar10;
+  longlong lVar5;
+  runtime_muintptr rVar6;
+  int32 iVar7;
+  runtime_g *prVar8;
+  uint uVar9;
+  runtime_sudog *prVar10;
   uint uVar11;
   runtime_p *prVar12;
   int *in_GS_OFFSET;
   runtime_mcache *in_stack_ffffffa8;
-  runtime_mcache *ptr;
+  runtime_mcache *prVar13;
   runtime_p *in_stack_ffffffac;
-  runtime_p *prVar13;
+  runtime_p *prVar14;
   
-  iVar8 = runtime_gomaxprocs;
+  iVar7 = runtime_gomaxprocs;
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
@@ -32092,115 +31877,117 @@ void runtime_procresize(int32 nprocs,runtime_p *_r1)
     runtime_nanotime();
     if (runtime_sched.procresizetime._4_4_ != (runtime_p *)0x0 ||
         (runtime_mcache *)runtime_sched.procresizetime != (runtime_mcache *)0x0) {
-      lVar6 = (ulonglong)
+      lVar5 = (ulonglong)
               (uint)((int)in_stack_ffffffa8 - (int)(runtime_mcache *)runtime_sched.procresizetime) *
-              (ulonglong)(uint)iVar8;
-      uVar10 = (uint)lVar6;
+              (ulonglong)(uint)iVar7;
+      uVar9 = (uint)lVar5;
       runtime_sched.totaltime._4_4_ =
            runtime_sched.totaltime._4_4_ +
            ((int)in_stack_ffffffa8 - (int)(runtime_mcache *)runtime_sched.procresizetime) *
-           (iVar8 >> 0x1f) + (int)((ulonglong)lVar6 >> 0x20) +
+           (iVar7 >> 0x1f) + (int)((ulonglong)lVar5 >> 0x20) +
            ((int)in_stack_ffffffac +
            (-(uint)(in_stack_ffffffa8 < (runtime_mcache *)runtime_sched.procresizetime) -
-           (int)runtime_sched.procresizetime._4_4_)) * iVar8 +
-           (uint)CARRY4((uint)runtime_sched.totaltime,uVar10);
-      runtime_sched.totaltime._0_4_ = (uint)runtime_sched.totaltime + uVar10;
+           (int)runtime_sched.procresizetime._4_4_)) * iVar7 +
+           (uint)CARRY4((uint)runtime_sched.totaltime,uVar9);
+      runtime_sched.totaltime._0_4_ = (uint)runtime_sched.totaltime + uVar9;
     }
     runtime_sched.procresizetime._0_4_ = in_stack_ffffffa8;
     runtime_sched.procresizetime._4_4_ = in_stack_ffffffac;
-    for (uVar10 = 0; uVar11 = nprocs, (int)uVar10 < nprocs; uVar10 = uVar10 + 1) {
-      if (0x400 < uVar10) {
+    for (prVar10 = (runtime_sudog *)0x0; uVar9 = nprocs, (int)prVar10 < nprocs;
+        prVar10 = (runtime_sudog *)((int)&prVar10->g + 1)) {
+      if ((runtime_sudog *)0x400 < prVar10) {
         runtime_panicindex();
         do {
           invalidInstructionException();
         } while( true );
       }
-      prVar12 = runtime_allp[uVar10];
-      ptr = (runtime_mcache *)(runtime_allp + uVar10);
+      prVar12 = runtime_allp[(int)prVar10];
+      prVar13 = (runtime_mcache *)(runtime_allp + (int)prVar10);
       if (prVar12 == (runtime_p *)0x0) {
         prVar12 = in_stack_ffffffac;
         runtime_newobject((runtime__type *)&DAT_080dc7a0,in_stack_ffffffac);
-        (&prVar12->lock)[1].key = uVar10;
-        (&prVar12->lock)[2].key = 3;
-        prVar12->runq[0x104] = 0;
-        prVar12->runq[0x105] = 0x80;
+        (&prVar12->lock)[1] = (runtime_mutex)prVar10;
+        (&prVar12->lock)[2] = (runtime_mutex)0x3;
+        (prVar12->sudogcache).len = 0;
+        (prVar12->sudogcache).cap = 0x80;
         if (runtime_writeBarrier._0_4_ == 0) {
-          prVar12->runq[0x103] = (runtime_guintptr)(prVar12->runq + 0x106);
+          (prVar12->sudogcache).array = prVar12->sudogbuf;
         }
         else {
-          runtime_writebarrierptr(prVar12->runq + 0x103,(uintptr)(prVar12->runq + 0x106));
+          runtime_writebarrierptr((uintptr *)&prVar12->sudogcache,(uintptr)prVar12->sudogbuf);
         }
-        for (uVar11 = 0; (int)uVar11 < 5; uVar11 = uVar11 + 1) {
-          if (4 < uVar11) {
+        for (uVar9 = 0; (int)uVar9 < 5; uVar9 = uVar9 + 1) {
+          if (4 < uVar9) {
             runtime_panicindex();
             do {
               invalidInstructionException();
             } while( true );
           }
-          (&prVar12->lock)[uVar11 * 3 + 0x10].key = 0;
-          (&prVar12->lock)[uVar11 * 3 + 0x11].key = 0x20;
+          (&prVar12->lock)[uVar9 * 3 + 0x10].key = 0;
+          (&prVar12->lock)[uVar9 * 3 + 0x11].key = 0x20;
           if (runtime_writeBarrier._0_4_ == 0) {
-            (&prVar12->lock)[uVar11 * 3 + 0xf].key = (uintptr)prVar12->deferpoolbuf[uVar11];
+            (&prVar12->lock)[uVar9 * 3 + 0xf].key =
+                 (uintptr)(runtime_sudog *)prVar12->deferpoolbuf[uVar9];
           }
           else {
             runtime_writebarrierptr
-                      (&(&prVar12->lock)[uVar11 * 3 + 0xf].key,
-                       (uintptr)prVar12->deferpoolbuf[uVar11]);
+                      (&(&prVar12->lock)[uVar9 * 3 + 0xf].key,
+                       (uintptr)(runtime_sudog *)prVar12->deferpoolbuf[uVar9]);
           }
         }
         in_stack_ffffffac = prVar12;
-        runtime_atomicstorep(ptr,prVar12);
-        in_stack_ffffffa8 = ptr;
+        runtime_atomicstorep(prVar13,prVar12);
+        in_stack_ffffffa8 = prVar13;
       }
-      if ((&prVar12->lock)[0xd].key == 0) {
-        if ((iVar8 == 0) && (uVar10 == 0)) {
-          uVar2 = *(uintptr *)(*(int *)(*(int *)(*in_GS_OFFSET + -4) + 0x18) + 0xb8);
-          if (uVar2 == 0) {
+      if (*(runtime_mcache **)(&prVar12->lock + 0xd) == (runtime_mcache *)0x0) {
+        if ((iVar7 == 0) && (prVar10 == (runtime_sudog *)0x0)) {
+          prVar13 = *(runtime_mcache **)(*(int *)(*(int *)(*in_GS_OFFSET + -4) + 0x18) + 0xb8);
+          if (prVar13 == (runtime_mcache *)0x0) {
             runtime_throw((string)0xf080e2347);
             do {
               invalidInstructionException();
             } while( true );
           }
-          (&prVar12->lock)[0xd].key = uVar2;
+          (&prVar12->lock)[0xd] = (runtime_mutex)prVar13;
         }
         else {
           runtime_allocmcache(in_stack_ffffffa8);
-          (&prVar12->lock)[0xd].key = (uintptr)in_stack_ffffffa8;
+          (&prVar12->lock)[0xd] = (runtime_mutex)in_stack_ffffffa8;
         }
       }
     }
-    for (; (int)uVar11 < iVar8; uVar11 = uVar11 + 1) {
-      if (0x400 < uVar11) {
+    for (; (int)uVar9 < iVar7; uVar9 = uVar9 + 1) {
+      if (0x400 < uVar9) {
         runtime_panicindex();
         do {
           invalidInstructionException();
         } while( true );
       }
-      prVar12 = runtime_allp[uVar11];
+      prVar12 = runtime_allp[uVar9];
       if ((runtime_trace.enabled != false) &&
          (prVar12 == *(runtime_p **)(*(int *)(*(int *)(*in_GS_OFFSET + -4) + 0x18) + 0x5c))) {
         runtime_traceGoSched();
         runtime_traceProcStop(prVar12);
       }
       while (prVar12->runqhead != prVar12->runqtail) {
-        uVar10 = prVar12->runqtail - 1;
-        prVar12->runqtail = uVar10;
-        rVar3 = prVar12->runq[uVar10 & 0xff];
-        *(runtime_guintptr *)(rVar3 + 0x68) = runtime_sched.runqhead;
+        uVar11 = prVar12->runqtail - 1;
+        prVar12->runqtail = uVar11;
+        rVar2 = prVar12->runq[uVar11 & 0xff];
+        *(runtime_guintptr *)(rVar2 + 0x68) = runtime_sched.runqhead;
         if (runtime_sched.runqtail == 0) {
-          runtime_sched.runqtail = rVar3;
+          runtime_sched.runqtail = rVar2;
         }
         runtime_sched.runqsize = runtime_sched.runqsize + 1;
-        runtime_sched.runqhead = rVar3;
+        runtime_sched.runqhead = rVar2;
       }
-      rVar3 = prVar12->runnext;
-      if (rVar3 != 0) {
-        *(runtime_guintptr *)(rVar3 + 0x68) = runtime_sched.runqhead;
+      rVar2 = prVar12->runnext;
+      if (rVar2 != 0) {
+        *(runtime_guintptr *)(rVar2 + 0x68) = runtime_sched.runqhead;
         if (runtime_sched.runqtail == 0) {
-          runtime_sched.runqtail = rVar3;
+          runtime_sched.runqtail = rVar2;
         }
         runtime_sched.runqsize = runtime_sched.runqsize + 1;
-        runtime_sched.runqhead = rVar3;
+        runtime_sched.runqhead = rVar2;
         prVar12->runnext = 0;
       }
       gp = (runtime_g *)prVar12->gcBgMarkWorker;
@@ -32210,47 +31997,47 @@ void runtime_procresize(int32 nprocs,runtime_p *_r1)
           runtime_traceGoUnpark(gp,0);
         }
         gp->schedlink = 0;
-        prVar9 = gp;
+        prVar8 = gp;
         if (runtime_sched.runqtail != 0) {
           *(runtime_g **)(runtime_sched.runqtail + 0x68) = gp;
-          prVar9 = (runtime_g *)runtime_sched.runqhead;
+          prVar8 = (runtime_g *)runtime_sched.runqhead;
         }
-        runtime_sched.runqhead = (runtime_guintptr)prVar9;
+        runtime_sched.runqhead = (runtime_guintptr)prVar8;
         runtime_sched.runqsize = runtime_sched.runqsize + 1;
         runtime_sched.runqtail = (runtime_guintptr)gp;
         prVar12->gcBgMarkWorker = 0;
       }
-      prVar13 = (runtime_p *)0x0;
+      prVar14 = (runtime_p *)0x0;
       runtime_memclrHasPointers(prVar12->sudogbuf,0x200);
       in_stack_ffffffac = (runtime_p *)prVar12->sudogbuf;
       (prVar12->sudogcache).len = 0;
       (prVar12->sudogcache).cap = 0x80;
       if (runtime_writeBarrier._0_4_ == 0) {
         (prVar12->sudogcache).array = (runtime_sudog **)in_stack_ffffffac;
-        in_stack_ffffffac = prVar13;
+        in_stack_ffffffac = prVar14;
       }
       else {
         runtime_writebarrierptr((uintptr *)&prVar12->sudogcache,(uintptr)in_stack_ffffffac);
       }
-      for (uVar10 = 0; (int)uVar10 < 5; uVar10 = uVar10 + 1) {
-        if (4 < uVar10) {
+      for (uVar11 = 0; (int)uVar11 < 5; uVar11 = uVar11 + 1) {
+        if (4 < uVar11) {
           runtime_panicindex();
           do {
             invalidInstructionException();
           } while( true );
         }
-        prVar13 = (runtime_p *)0x80;
-        runtime_memclrHasPointers(prVar12->deferpoolbuf[uVar10],0x80);
-        prVar12->deferpool[uVar10].len = 0;
-        prVar12->deferpool[uVar10].cap = 0x20;
-        in_stack_ffffffac = (runtime_p *)prVar12->deferpoolbuf[uVar10];
+        prVar14 = (runtime_p *)0x80;
+        runtime_memclrHasPointers(prVar12->deferpoolbuf[uVar11],0x80);
+        prVar12->deferpool[uVar11].len = 0;
+        prVar12->deferpool[uVar11].cap = 0x20;
+        in_stack_ffffffac = (runtime_p *)prVar12->deferpoolbuf[uVar11];
         if (runtime_writeBarrier._0_4_ == 0) {
-          prVar12->deferpool[uVar10].array = (runtime__defer **)in_stack_ffffffac;
-          in_stack_ffffffac = prVar13;
+          prVar12->deferpool[uVar11].array = (runtime__defer **)in_stack_ffffffac;
+          in_stack_ffffffac = prVar14;
         }
         else {
           runtime_writebarrierptr
-                    ((uintptr *)(prVar12->deferpool + uVar10),(uintptr)in_stack_ffffffac);
+                    ((uintptr *)(prVar12->deferpool + uVar11),(uintptr)in_stack_ffffffac);
         }
       }
       runtime_freemcache(prVar12->mcache);
@@ -32259,14 +32046,14 @@ void runtime_procresize(int32 nprocs,runtime_p *_r1)
       runtime_traceProcFree(prVar12);
       prVar12->status = 4;
     }
-    iVar4 = *(int *)(*in_GS_OFFSET + -4);
-    iVar5 = *(int *)(*(int *)(iVar4 + 0x18) + 0x5c);
-    if ((iVar5 == 0) || (nprocs <= *(int *)(iVar5 + 4))) {
-      if (iVar5 != 0) {
-        *(undefined4 *)(iVar5 + 0x30) = 0;
+    iVar3 = *(int *)(*in_GS_OFFSET + -4);
+    iVar4 = *(int *)(*(int *)(iVar3 + 0x18) + 0x5c);
+    if ((iVar4 == 0) || (nprocs <= *(int *)(iVar4 + 4))) {
+      if (iVar4 != 0) {
+        *(undefined4 *)(iVar4 + 0x30) = 0;
       }
-      *(undefined4 *)(*(int *)(iVar4 + 0x18) + 0x5c) = 0;
-      *(undefined4 *)(*(int *)(iVar4 + 0x18) + 0xb8) = 0;
+      *(undefined4 *)(*(int *)(iVar3 + 0x18) + 0x5c) = 0;
+      *(undefined4 *)(*(int *)(iVar3 + 0x18) + 0xb8) = 0;
       prVar12 = runtime_allp[0];
       runtime_allp[0]->m = 0;
       prVar12->status = 0;
@@ -32276,34 +32063,34 @@ void runtime_procresize(int32 nprocs,runtime_p *_r1)
       }
     }
     else {
-      *(undefined4 *)(iVar5 + 8) = 1;
+      *(undefined4 *)(iVar4 + 8) = 1;
     }
     prVar12 = (runtime_p *)0x0;
-    uVar10 = nprocs;
+    uVar9 = nprocs;
     while( true ) {
-      uVar10 = uVar10 - 1;
-      if ((int)uVar10 < 0) {
+      uVar9 = uVar9 - 1;
+      if ((int)uVar9 < 0) {
         runtime___randomOrder__reset(&runtime_stealOrder,nprocs);
-        runtime_fwdslash_internal_fwdslash_atomic_Store();
+        runtime_internal_atomic_Store();
         return;
       }
-      if (0x400 < uVar10) break;
-      prVar13 = runtime_allp[uVar10];
-      if (*(runtime_p **)(*(int *)(iVar4 + 0x18) + 0x5c) != prVar13) {
-        prVar13->status = 0;
-        runtime_runqempty(prVar13,SUB41(in_stack_ffffffac,0));
-        rVar7 = runtime_sched.midle;
+      if (0x400 < uVar9) break;
+      prVar14 = runtime_allp[uVar9];
+      if (*(runtime_p **)(*(int *)(iVar3 + 0x18) + 0x5c) != prVar14) {
+        prVar14->status = 0;
+        runtime_runqempty(prVar14,SUB41(in_stack_ffffffac,0));
+        rVar6 = runtime_sched.midle;
         if ((char)in_stack_ffffffac == '\0') {
           if (runtime_sched.midle != 0) {
             runtime_sched.midle = *(runtime_muintptr *)(runtime_sched.midle + 0xb4);
             runtime_sched.nmidle = runtime_sched.nmidle + -1;
           }
-          prVar13->m = rVar7;
-          prVar13->link = (runtime_puintptr)prVar12;
-          prVar12 = prVar13;
+          prVar14->m = rVar6;
+          prVar14->link = (runtime_puintptr)prVar12;
+          prVar12 = prVar14;
         }
         else {
-          runtime_pidleput(prVar13);
+          runtime_pidleput(prVar14);
         }
       }
     }
@@ -32560,23 +32347,17 @@ void runtime_checkdead(void)
     if ((runtime_runfinqPC == uVar3) && (runtime_fingRunning == false)) {
       bVar11 = true;
     }
+    else if (runtime_bgsweepPC == uVar3) {
+      bVar11 = true;
+    }
+    else if (runtime_forcegchelperPC == uVar3) {
+      bVar11 = true;
+    }
+    else if (runtime_timerprocPC == uVar3) {
+      bVar11 = true;
+    }
     else {
-      if (runtime_bgsweepPC == uVar3) {
-        bVar11 = true;
-      }
-      else {
-        if (runtime_forcegchelperPC == uVar3) {
-          bVar11 = true;
-        }
-        else {
-          if (runtime_timerprocPC == uVar3) {
-            bVar11 = true;
-          }
-          else {
-            bVar11 = runtime_gcBgMarkWorkerPC == uVar3;
-          }
-        }
-      }
+      bVar11 = runtime_gcBgMarkWorkerPC == uVar3;
     }
     if (!bVar11) {
       runtime_readgstatus(gp,in_stack_ffffffd4);
@@ -32701,10 +32482,8 @@ void runtime_sysmon(void)
       if (iVar4 == 0) {
         uVar8 = 0x14;
       }
-      else {
-        if (0x32 < iVar4) {
-          uVar8 = uVar8 << 1;
-        }
+      else if (0x32 < iVar4) {
+        uVar8 = uVar8 << 1;
       }
       if (10000 < uVar8) {
         uVar8 = 10000;
@@ -32712,14 +32491,14 @@ void runtime_sysmon(void)
       runtime_usleep(uVar8);
       if ((runtime_debug.schedtrace < 1) &&
          ((runtime_sched.gcwaiting != 0 ||
-          (runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.npidle,(uint32)_r1),
+          (runtime_internal_atomic_Load(&runtime_sched.npidle,(uint32)_r1),
           (runtime_g *)runtime_gomaxprocs == _r1)))) {
         runtime_lock(&runtime_sched.lock);
-        runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.gcwaiting,(uint32)_r1);
+        runtime_internal_atomic_Load(&runtime_sched.gcwaiting,(uint32)_r1);
         if ((_r1 != (runtime_g *)0x0) ||
-           (runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.npidle,0),
+           (runtime_internal_atomic_Load(&runtime_sched.npidle,0),
            (runtime_g *)runtime_gomaxprocs == _r1)) {
-          runtime_fwdslash_internal_fwdslash_atomic_Store();
+          runtime_internal_atomic_Store();
           runtime_unlock(&runtime_sched.lock);
           iVar4 = runtime_forcegcperiod._4_4_ +
                   (uint)CARRY4(-(runtime_forcegcperiod._4_4_ >> 0x1f),
@@ -32736,7 +32515,7 @@ void runtime_sysmon(void)
           runtime_notetsleep(&runtime_sched.sysmonnote,CONCAT44(in_stack_ffffffb8,uVar8),(bool)_r2);
           runtime_lock(&runtime_sched.lock);
           _r1 = (runtime_g *)0x0;
-          runtime_fwdslash_internal_fwdslash_atomic_Store();
+          runtime_internal_atomic_Store();
           runtime_sched.sysmonnote = 0;
           uVar8 = 0x14;
           iVar4 = 0;
@@ -32748,17 +32527,16 @@ void runtime_sysmon(void)
         runtime_asmcgocall();
       }
       prVar11 = (runtime_g *)&runtime_sched.lastpoll;
-      runtime_fwdslash_internal_fwdslash_atomic_Load64();
+      runtime_internal_atomic_Load64();
       prVar12 = _r1;
       prVar7 = in_stack_ffffffb8;
       runtime_nanotime();
       if ((in_stack_ffffffb8 != (runtime_g *)0x0 || _r1 != (runtime_g *)0x0) &&
          (prVar5 = (runtime_g *)
                    ((int)&(in_stack_ffffffb8->stack).lo + (uint)((runtime_g *)0xff67697f < _r1)),
-         (runtime_g *)&_r1[0xb841].startpc < prVar11 && prVar5 == prVar12 ||
-         (int)prVar5 < (int)prVar12)) {
+         &_r1[0xb841].startpc < prVar11 && prVar5 == prVar12 || (int)prVar5 < (int)prVar12)) {
         in_stack_ffffffc0 = prVar12;
-        runtime_fwdslash_internal_fwdslash_atomic_Cas64();
+        runtime_internal_atomic_Cas64();
         runtime_netpoll(false,_r1);
         prVar7 = in_stack_ffffffb8;
         if (_r1 != (runtime_g *)0x0) {
@@ -32782,8 +32560,8 @@ void runtime_sysmon(void)
                 ((runtime_gcTrigger)ZEXT1216(CONCAT48(prVar12,CONCAT44(prVar11,2))),
                  SUB41(in_stack_ffffffc0,0));
       if (((char)in_stack_ffffffc0 != '\0') &&
-         (runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_forcegc.idle,(uint32)_r1),
-         _r1 != (runtime_g *)0x0)) {
+         (runtime_internal_atomic_Load(&runtime_forcegc.idle,(uint32)_r1), _r1 != (runtime_g *)0x0))
+      {
         runtime_lock(&runtime_forcegc.lock);
         runtime_forcegc.idle = 0;
         (runtime_forcegc.g)->schedlink = 0;
@@ -32868,10 +32646,9 @@ void runtime_retake(int64 now,uint32 _r1)
         if ((_p_->sysmontick).syscalltick == _p_->syscalltick) {
           runtime_runqempty(_p_,SUB41(in_stack_ffffffd8,0));
           if ((char)in_stack_ffffffd8 != '\0') {
-            runtime_fwdslash_internal_fwdslash_atomic_Load
-                      (&runtime_sched.nmspinning,in_stack_ffffffd8);
+            runtime_internal_atomic_Load(&runtime_sched.nmspinning,in_stack_ffffffd8);
             uVar7 = in_stack_ffffffd8;
-            runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sched.npidle,in_stack_ffffffd8);
+            runtime_internal_atomic_Load(&runtime_sched.npidle,in_stack_ffffffd8);
             if ((uVar7 + in_stack_ffffffd8 != 0) &&
                (uVar2 = *(uint *)&(_p_->sysmontick).syscallwhen,
                iVar5 = *(int *)((int)&(_p_->sysmontick).syscallwhen + 4) +
@@ -32880,7 +32657,7 @@ void runtime_retake(int64 now,uint32 _r1)
             goto LAB_08075e3f;
           }
           runtime_incidlelocked(-1);
-          runtime_fwdslash_internal_fwdslash_atomic_Cas();
+          runtime_internal_atomic_Cas();
           if (local_20 != '\0') {
             if (runtime_trace.enabled != false) {
               runtime_traceGoSysBlock(_p_);
@@ -32898,24 +32675,22 @@ void runtime_retake(int64 now,uint32 _r1)
           *(int *)((int)&(_p_->sysmontick).syscallwhen + 4) = now._4_4_;
         }
       }
-      else {
-        if (uVar6 == 1) {
-          if ((_p_->sysmontick).schedtick == _p_->schedtick) {
-            uVar2 = *(uint *)&(_p_->sysmontick).schedwhen;
-            iVar5 = *(int *)((int)&(_p_->sysmontick).schedwhen + 4) + (uint)(0xff67697f < uVar2);
-            if ((((iVar5 <= now._4_4_ && (iVar5 != now._4_4_ || uVar2 + 10000000 <= (uint)now)) &&
-                 (piVar3 = (int *)_p_->m, piVar3 != (int *)0x0)) &&
-                (*(int **)(*(int *)(*in_GS_OFFSET + -4) + 0x18) != piVar3)) &&
-               ((iVar5 = piVar3[0x15], iVar5 != 0 && (iVar5 != *piVar3)))) {
-              *(undefined *)(iVar5 + 0x6c) = 1;
-              *(undefined4 *)(iVar5 + 8) = 0xfffffade;
-            }
+      else if (uVar6 == 1) {
+        if ((_p_->sysmontick).schedtick == _p_->schedtick) {
+          uVar2 = *(uint *)&(_p_->sysmontick).schedwhen;
+          iVar5 = *(int *)((int)&(_p_->sysmontick).schedwhen + 4) + (uint)(0xff67697f < uVar2);
+          if ((((iVar5 <= now._4_4_ && (iVar5 != now._4_4_ || uVar2 + 10000000 <= (uint)now)) &&
+               (piVar3 = (int *)_p_->m, piVar3 != (int *)0x0)) &&
+              (*(int **)(*(int *)(*in_GS_OFFSET + -4) + 0x18) != piVar3)) &&
+             ((iVar5 = piVar3[0x15], iVar5 != 0 && (iVar5 != *piVar3)))) {
+            *(undefined *)(iVar5 + 0x6c) = 1;
+            *(undefined4 *)(iVar5 + 8) = 0xfffffade;
           }
-          else {
-            (_p_->sysmontick).schedtick = _p_->schedtick;
-            *(uint *)&(_p_->sysmontick).schedwhen = (uint)now;
-            *(int *)((int)&(_p_->sysmontick).schedwhen + 4) = now._4_4_;
-          }
+        }
+        else {
+          (_p_->sysmontick).schedtick = _p_->schedtick;
+          *(uint *)&(_p_->sysmontick).schedwhen = (uint)now;
+          *(int *)((int)&(_p_->sysmontick).schedwhen + 4) = now._4_4_;
         }
       }
     }
@@ -32970,7 +32745,7 @@ void runtime_preemptall(bool _r0)
 void runtime_schedtrace(bool detailed)
 
 {
-  runtime_g **pprVar1;
+  uint *puVar1;
   bool v;
   bool v_00;
   runtime_p *prVar2;
@@ -33010,8 +32785,8 @@ void runtime_schedtrace(bool detailed)
   uint8 *local_8;
   runtime_muintptr local_4;
   
-  pprVar1 = (runtime_g **)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if ((runtime_g *)&local_10 < *pprVar1 || (runtime_g *)&local_10 == *pprVar1) {
+  puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
+  if (&local_10 < (runtime_g **)*puVar1 || &local_10 == (runtime_g **)*puVar1) {
     local_4 = 0x8076c34;
     runtime_morestack_noctxt();
     runtime_schedtrace(detailed);
@@ -33191,9 +32966,9 @@ void runtime_schedtrace(bool detailed)
     if (prVar2 != (runtime_p *)0x0) {
       local_4 = prVar2->m;
       local_c = prVar2;
-      runtime_fwdslash_internal_fwdslash_atomic_Load(&prVar2->runqhead,_r1);
+      runtime_internal_atomic_Load(&prVar2->runqhead,_r1);
       uVar26 = _r1;
-      runtime_fwdslash_internal_fwdslash_atomic_Load(&local_c->runqtail,_r1);
+      runtime_internal_atomic_Load(&local_c->runqtail,_r1);
       if (detailed == false) {
         runtime_printlock();
         runtime_printstring((string)0x1080e0d84);
@@ -33350,7 +33125,7 @@ void runtime_pidleput(runtime_p *_p_)
   if (in_stack_fffffff8 != '\0') {
     _p_->link = runtime_sched.pidle;
     runtime_sched.pidle = (runtime_puintptr)_p_;
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     return;
   }
   runtime_throw((string)0x23080e5c9c);
@@ -33372,7 +33147,7 @@ void runtime_pidleget(runtime_p *_r0)
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     if (runtime_sched.pidle != 0) {
       runtime_sched.pidle = *(runtime_puintptr *)(runtime_sched.pidle + 0xc);
-      runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+      runtime_internal_atomic_Xadd();
     }
     return;
   }
@@ -33396,11 +33171,11 @@ void runtime_runqempty(runtime_p *_p_,bool _r1)
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     do {
-      runtime_fwdslash_internal_fwdslash_atomic_Load(&_p_->runqhead,in_stack_ffffffec);
-      runtime_fwdslash_internal_fwdslash_atomic_Load(&_p_->runqtail,in_stack_ffffffec);
+      runtime_internal_atomic_Load(&_p_->runqhead,in_stack_ffffffec);
+      runtime_internal_atomic_Load(&_p_->runqtail,in_stack_ffffffec);
       _r1_00 = in_stack_ffffffec;
-      runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr(&_p_->runnext,in_stack_ffffffec);
-      runtime_fwdslash_internal_fwdslash_atomic_Load(&_p_->runqtail,_r1_00);
+      runtime_internal_atomic_Loaduintptr(&_p_->runnext,in_stack_ffffffec);
+      runtime_internal_atomic_Load(&_p_->runqtail,_r1_00);
       bVar2 = _r1_00 != in_stack_ffffffec;
       in_stack_ffffffec = _r1_00;
     } while (bVar2);
@@ -33445,11 +33220,11 @@ void runtime_runqput(runtime_p *_p_,runtime_g *gp,bool next)
     }
   }
   do {
-    runtime_fwdslash_internal_fwdslash_atomic_Load(&_p_->runqhead,(uint32)in_stack_ffffffe8);
+    runtime_internal_atomic_Load(&_p_->runqhead,(uint32)in_stack_ffffffe8);
     t = _p_->runqtail;
     if (t - (int)in_stack_ffffffe8 < 0x100) {
       _p_->runq[t & 0xff] = (runtime_guintptr)gp;
-      runtime_fwdslash_internal_fwdslash_atomic_Store();
+      runtime_internal_atomic_Store();
       return;
     }
     prVar2 = gp;
@@ -33499,7 +33274,7 @@ void runtime_runqputslow(runtime_p *_p_,runtime_g *gp,uint32 h,uint32 t,bool _r4
   uVar4 = 0;
   while( true ) {
     if (0x7f < uVar4) {
-      runtime_fwdslash_internal_fwdslash_atomic_Cas();
+      runtime_internal_atomic_Cas();
       if (local_20c == '\0') {
         return;
       }
@@ -33566,11 +33341,11 @@ void runtime_runqget(runtime_p *_p_,runtime_g *gp,bool inheritTime)
     old = _p_->runnext;
     if (old == 0) {
       do {
-        runtime_fwdslash_internal_fwdslash_atomic_Load(&_p_->runqhead,in_stack_ffffffe8);
+        runtime_internal_atomic_Load(&_p_->runqhead,in_stack_ffffffe8);
         if (_p_->runqtail == in_stack_ffffffe8) {
           return;
         }
-        runtime_fwdslash_internal_fwdslash_atomic_Cas();
+        runtime_internal_atomic_Cas();
       } while (in_stack_fffffff0 == '\0');
       return;
     }
@@ -33605,9 +33380,9 @@ void runtime_runqgrab(runtime_p *_p_,runtime_guintptr (*batch) [256],uint32 batc
   while( true ) {
     while( true ) {
       _r1 = in_stack_ffffffdc;
-      runtime_fwdslash_internal_fwdslash_atomic_Load(&_p_->runqhead,_r1);
+      runtime_internal_atomic_Load(&_p_->runqhead,_r1);
       in_stack_ffffffdc = _r1;
-      runtime_fwdslash_internal_fwdslash_atomic_Load(&_p_->runqtail,_r1);
+      runtime_internal_atomic_Load(&_p_->runqtail,_r1);
       uVar2 = in_stack_ffffffdc - _r1;
       uVar3 = uVar2 - (uVar2 >> 1);
       if (uVar2 == uVar2 >> 1) break;
@@ -33615,7 +33390,7 @@ void runtime_runqgrab(runtime_p *_p_,runtime_guintptr (*batch) [256],uint32 batc
         for (uVar2 = 0; uVar2 < uVar3; uVar2 = uVar2 + 1) {
           (*batch)[uVar2 + batchHead & 0xff] = _p_->runq[uVar2 + _r1 & 0xff];
         }
-        runtime_fwdslash_internal_fwdslash_atomic_Cas();
+        runtime_internal_atomic_Cas();
         in_stack_ffffffdc = _r1;
         if (in_stack_ffffffe4 != '\0') {
           return;
@@ -33646,7 +33421,7 @@ void runtime_runqsteal(runtime_p *_p_,runtime_p *p2,bool stealRunNextG,runtime_g
   uint *puVar1;
   uint32 batchHead;
   int *in_GS_OFFSET;
-  runtime_guintptr (*batch) [256];
+  runtime_guintptr *batch;
   uint32 in_stack_ffffffe8;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
@@ -33657,17 +33432,17 @@ void runtime_runqsteal(runtime_p *_p_,runtime_p *p2,bool stealRunNextG,runtime_g
     return;
   }
   batchHead = _p_->runqtail;
-  batch = (runtime_guintptr (*) [256])_p_->runq;
-  runtime_runqgrab(p2,batch,batchHead,stealRunNextG,in_stack_ffffffe8);
+  batch = _p_->runq;
+  runtime_runqgrab(p2,(runtime_guintptr (*) [256])batch,batchHead,stealRunNextG,in_stack_ffffffe8);
   if (in_stack_ffffffe8 == 0) {
     return;
   }
   if (in_stack_ffffffe8 == 1) {
     return;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&_p_->runqhead,(uint32)batch);
+  runtime_internal_atomic_Load(&_p_->runqhead,(uint32)batch);
   if ((batchHead - (int)batch) + -1 + in_stack_ffffffe8 < 0x100) {
-    runtime_fwdslash_internal_fwdslash_atomic_Store();
+    runtime_internal_atomic_Store();
     return;
   }
   runtime_throw((string)0x18080e3ce0);
@@ -33704,9 +33479,7 @@ void sync_runtime_procUnpin(void)
 
 
 
-// Original name: sync/atomic.runtime_procPin
-
-void sync_fwdslash_atomic_runtime_procPin(int _r0)
+void sync_atomic_runtime_procPin(int _r0)
 
 {
   int iVar1;
@@ -33719,9 +33492,7 @@ void sync_fwdslash_atomic_runtime_procPin(int _r0)
 
 
 
-// Original name: sync/atomic.runtime_procUnpin
-
-void sync_fwdslash_atomic_runtime_procUnpin(void)
+void sync_atomic_runtime_procUnpin(void)
 
 {
   int iVar1;
@@ -33852,7 +33623,7 @@ void runtime___profAtomic__load(runtime_profAtomic *x,runtime_profIndex _r0)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
+    runtime_internal_atomic_Load64();
     return;
   }
   runtime_morestack_noctxt();
@@ -33872,7 +33643,7 @@ void runtime___profAtomic__cas
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    runtime_fwdslash_internal_fwdslash_atomic_Cas64();
+    runtime_internal_atomic_Cas64();
     return;
   }
   runtime_morestack_noctxt();
@@ -33891,7 +33662,7 @@ void runtime___profBuf__hasOverflow(runtime_profBuf *b,bool _r0)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
+    runtime_internal_atomic_Load64();
     return;
   }
   runtime_morestack_noctxt();
@@ -33912,12 +33683,11 @@ void runtime___profBuf__takeOverflow(runtime_profBuf *b,uint32 count,uint64 time
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
-    while ((local_2c != 0 && (runtime_fwdslash_internal_fwdslash_atomic_Cas64(), local_1c == '\0')))
-    {
-      runtime_fwdslash_internal_fwdslash_atomic_Load64();
-      runtime_fwdslash_internal_fwdslash_atomic_Load64();
+    runtime_internal_atomic_Load64();
+    runtime_internal_atomic_Load64();
+    while ((local_2c != 0 && (runtime_internal_atomic_Cas64(), local_1c == '\0'))) {
+      runtime_internal_atomic_Load64();
+      runtime_internal_atomic_Load64();
     }
     return;
   }
@@ -33944,14 +33714,14 @@ void runtime___profBuf__incrementOverflow(runtime_profBuf *b,int64 now)
     return;
   }
   while( true ) {
-    runtime_fwdslash_internal_fwdslash_atomic_Load64();
+    runtime_internal_atomic_Load64();
     if (local_20 == 0) {
-      runtime_fwdslash_internal_fwdslash_atomic_Store64();
-      runtime_fwdslash_internal_fwdslash_atomic_Store64();
+      runtime_internal_atomic_Store64();
+      runtime_internal_atomic_Store64();
       return;
     }
     if (local_20 == -1) break;
-    runtime_fwdslash_internal_fwdslash_atomic_Cas64();
+    runtime_internal_atomic_Cas64();
     if (local_10 != '\0') {
       return;
     }
@@ -34358,7 +34128,7 @@ void runtime_gotraceback(int32 level,bool all,bool crash)
 {
   uint32 in_stack_fffffff8;
   
-  runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_traceback_cache,in_stack_fffffff8);
+  runtime_internal_atomic_Load(&runtime_traceback_cache,in_stack_fffffff8);
   return;
 }
 
@@ -34567,12 +34337,12 @@ void runtime_testAtomic64(void)
   runtime_prefetcht1();
   runtime_prefetcht2();
   runtime_prefetchnta();
-  runtime_fwdslash_internal_fwdslash_atomic_Cas64();
+  runtime_internal_atomic_Cas64();
   if (local_14 == '\0') {
     if ((int)runtime_test_x64 == 0 && runtime_test_x64._4_4_ == 0) {
       runtime_test_x64._0_4_ = 0x2a;
       runtime_test_x64._4_4_ = 0;
-      runtime_fwdslash_internal_fwdslash_atomic_Cas64();
+      runtime_internal_atomic_Cas64();
       runtime_throw((string)0xc080e1d77);
       do {
         invalidInstructionException();
@@ -34683,7 +34453,7 @@ void runtime_check(void)
   runtime_timediv(0xb3a4b57ce31,1000000000,rem,in_stack_ffffffd0);
   cVar2 = (char)rem;
   if ((in_stack_ffffffd0 == 0x3039) && (local_1c == 0xd431)) {
-    runtime_fwdslash_internal_fwdslash_atomic_Cas();
+    runtime_internal_atomic_Cas();
     if (cVar2 != '\0') {
       runtime_throw((string)0x4080e0f06);
       do {
@@ -34742,7 +34512,7 @@ void runtime_parsedebugvars(void)
         puVar6 = puVar5;
         if (in_stack_ffffffcc == 0) {
           runtime_gogetenv((string)0xb080e1a82,(string)CONCAT44(uVar11,in_stack_ffffffc8));
-          runtime_fwdslash_debug_SetTraceback((string)CONCAT44(uVar11,in_stack_ffffffc8));
+          runtime_debug_SetTraceback((string)CONCAT44(uVar11,in_stack_ffffffc8));
           if (1 < runtime_debug.cgocheck) {
             runtime_writeBarrier.cgo = true;
             runtime_writeBarrier.enabled = true;
@@ -34810,9 +34580,7 @@ LAB_08078fca:
 
 
 
-// Original name: runtime/debug.SetTraceback
-
-void runtime_fwdslash_debug_SetTraceback(string level)
+void runtime_debug_SetTraceback(string level)
 
 {
   uint *puVar1;
@@ -34825,7 +34593,7 @@ void runtime_fwdslash_debug_SetTraceback(string level)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    runtime_fwdslash_debug_SetTraceback(level);
+    runtime_debug_SetTraceback(level);
     return;
   }
   if (level.len < 4) {
@@ -34849,7 +34617,7 @@ LAB_080791b6:
   }
   runtime_atoi(level,(int)in_stack_fffffff4,(bool)in_stack_fffffff8);
 LAB_080791bf:
-  runtime_fwdslash_internal_fwdslash_atomic_Store();
+  runtime_internal_atomic_Store();
   return;
 }
 
@@ -34897,7 +34665,7 @@ void runtime_timediv(int64 v,int32 div,int32 *rem,int32 _r3)
 void reflect_typelinks(__unsafe_Pointer _r0,____int32 _r1)
 
 {
-  uintptr ***pppuVar1;
+  uint *puVar1;
   uintptr *puVar2;
   uintptr *puVar3;
   int iVar4;
@@ -34924,8 +34692,8 @@ void reflect_typelinks(__unsafe_Pointer _r0,____int32 _r1)
   int *local_8;
   uintptr **local_4;
   
-  pppuVar1 = (uintptr ***)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if (&local_c < *pppuVar1 || &local_c == (uintptr ***)*pppuVar1) {
+  puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
+  if (&local_c < (uintptr ***)*puVar1 || &local_c == (uintptr ***)*puVar1) {
     local_4 = (uintptr **)0x80797ac;
     runtime_morestack_noctxt();
     reflect_typelinks(_r0,_r1);
@@ -35153,7 +34921,7 @@ void runtime___guintptr__cas
                (runtime_guintptr *gp,runtime_guintptr old,runtime_guintptr new,bool _r2)
 
 {
-  runtime_fwdslash_internal_fwdslash_atomic_Casuintptr();
+  runtime_internal_atomic_Casuintptr();
   return;
 }
 
@@ -35228,7 +34996,7 @@ void runtime___rwmutex__rlock(runtime_rwmutex *rw)
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     iVar2 = *(int *)(*(int *)(*in_GS_OFFSET + -4) + 0x18);
     *(int *)(iVar2 + 0x78) = *(int *)(iVar2 + 0x78) + 1;
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     if (local_c < 0) {
       runtime_systemstack();
     }
@@ -35257,7 +35025,7 @@ void runtime___rwmutex__runlock(runtime_rwmutex *rw)
     runtime___rwmutex__runlock(rw);
     return;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+  runtime_internal_atomic_Xadd();
   if (local_4 < 0) {
     if ((local_4 == -1) || (local_4 == -0x40000001)) {
       runtime_throw((string)0x1b080e44ce);
@@ -35265,7 +35033,7 @@ void runtime___rwmutex__runlock(runtime_rwmutex *rw)
         invalidInstructionException();
       } while( true );
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     if (local_4 == 0) {
       runtime_lock(&rw->rLock);
       if (rw->writer != 0) {
@@ -35285,9 +35053,7 @@ void runtime___rwmutex__runlock(runtime_rwmutex *rw)
 
 
 
-// Original name: internal/poll.runtime_Semacquire
-
-void internal_fwdslash_poll_runtime_Semacquire(uint32 *addr)
+void internal_poll_runtime_Semacquire(uint32 *addr)
 
 {
   uint *puVar1;
@@ -35300,7 +35066,7 @@ void internal_fwdslash_poll_runtime_Semacquire(uint32 *addr)
     return;
   }
   runtime_morestack_noctxt();
-  internal_fwdslash_poll_runtime_Semacquire(addr);
+  internal_poll_runtime_Semacquire(addr);
   return;
 }
 
@@ -35344,9 +35110,7 @@ void sync_runtime_SemacquireMutex(uint32 *addr,bool lifo)
 
 
 
-// Original name: internal/poll.runtime_Semrelease
-
-void internal_fwdslash_poll_runtime_Semrelease(uint32 *addr)
+void internal_poll_runtime_Semrelease(uint32 *addr)
 
 {
   uint *puVar1;
@@ -35359,7 +35123,7 @@ void internal_fwdslash_poll_runtime_Semrelease(uint32 *addr)
     return;
   }
   runtime_morestack_noctxt();
-  internal_fwdslash_poll_runtime_Semrelease(addr);
+  internal_poll_runtime_Semrelease(addr);
   return;
 }
 
@@ -35414,7 +35178,7 @@ void runtime_semacquire1(uint32 *addr,bool lifo,runtime_semaProfileFlags profile
 
 {
   uint *puVar1;
-  struct_runtime_rootruntime_semaRoot_runtime_pad_52_uint8_ *l;
+  struct___runtime_root_runtime_semaRoot__runtime_pad__52_uint8__ *l;
   int iVar2;
   int iVar3;
   uint uVar4;
@@ -35456,21 +35220,19 @@ void runtime_semacquire1(uint32 *addr,bool lifo,runtime_semaProfileFlags profile
     iVar3 = 0;
     prVar5 = (runtime_sudog *)0x0;
   }
+  else if (runtime_blockprofilerate._4_4_ == 0 && (int)runtime_blockprofilerate != 0 ||
+           runtime_blockprofilerate._4_4_ != 0) {
+    prVar5 = _r0;
+    iVar3 = in_stack_ffffffd0;
+    runtime_cputicks();
+    *(undefined4 *)&_r0->releasetime = 0xffffffff;
+    *(undefined4 *)((int)&_r0->releasetime + 4) = 0xffffffff;
+    prVar6 = prVar5;
+    in_stack_ffffffd0 = iVar3;
+  }
   else {
-    if (runtime_blockprofilerate._4_4_ == 0 && (int)runtime_blockprofilerate != 0 ||
-        runtime_blockprofilerate._4_4_ != 0) {
-      prVar5 = _r0;
-      iVar3 = in_stack_ffffffd0;
-      runtime_cputicks();
-      *(undefined4 *)&_r0->releasetime = 0xffffffff;
-      *(undefined4 *)((int)&_r0->releasetime + 4) = 0xffffffff;
-      prVar6 = prVar5;
-      in_stack_ffffffd0 = iVar3;
-    }
-    else {
-      iVar3 = 0;
-      prVar5 = (runtime_sudog *)0x0;
-    }
+    iVar3 = 0;
+    prVar5 = (runtime_sudog *)0x0;
   }
   if (((profile & 2U) != 0) &&
      ((int)runtime_mutexprofilerate != 0 && runtime_mutexprofilerate._4_4_ == 0 ||
@@ -35487,7 +35249,7 @@ void runtime_semacquire1(uint32 *addr,bool lifo,runtime_semaProfileFlags profile
     l = runtime_semtable + uVar4;
     runtime_lock((runtime_mutex *)l);
     cVar7 = true;
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
     runtime_cansemacquire(addr,(bool)cVar7);
     if (cVar7 != '\0') break;
     runtime___semaRoot__queue(&runtime_semtable[uVar4].root,addr,_r0,lifo);
@@ -35496,7 +35258,7 @@ void runtime_semacquire1(uint32 *addr,bool lifo,runtime_semaProfileFlags profile
     if ((_r0->ticket != 0) || (runtime_cansemacquire(addr,(bool)cVar7), cVar7 != '\0'))
     goto LAB_0807a069;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+  runtime_internal_atomic_Xadd();
   runtime_unlock((runtime_mutex *)l);
 LAB_0807a069:
   iVar2 = *(int *)((int)&_r0->releasetime + 4);
@@ -35534,7 +35296,7 @@ void runtime_semrelease1(uint32 *addr,bool handoff)
 
 {
   uint *puVar1;
-  struct_runtime_rootruntime_semaRoot_runtime_pad_52_uint8_ *l;
+  struct___runtime_root_runtime_semaRoot__runtime_pad__52_uint8__ *l;
   int iVar2;
   uint uVar3;
   int *in_GS_OFFSET;
@@ -35553,16 +35315,16 @@ void runtime_semrelease1(uint32 *addr,bool handoff)
     return;
   }
   _r1_00 = 1;
-  runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+  runtime_internal_atomic_Xadd();
   uVar3 = ((uint)addr >> 3) % 0xfb;
   puVar4 = &runtime_semtable[uVar3].root.nwait;
-  runtime_fwdslash_internal_fwdslash_atomic_Load(puVar4,_r1_00);
+  runtime_internal_atomic_Load(puVar4,_r1_00);
   if (_r1_00 == 0) {
     return;
   }
   l = runtime_semtable + uVar3;
   runtime_lock((runtime_mutex *)l);
-  runtime_fwdslash_internal_fwdslash_atomic_Load(puVar4,_r1_00);
+  runtime_internal_atomic_Load(puVar4,_r1_00);
   if (_r1_00 == 0) {
     runtime_unlock((runtime_mutex *)l);
     return;
@@ -35574,7 +35336,7 @@ void runtime_semrelease1(uint32 *addr,bool handoff)
   _r1 = (char)puVar4;
   if (in_stack_ffffffd4 != (runtime_sudog *)0x0) {
     _r1 = 0xff;
-    runtime_fwdslash_internal_fwdslash_atomic_Xadd();
+    runtime_internal_atomic_Xadd();
   }
   runtime_unlock((runtime_mutex *)l);
   if (in_stack_ffffffd4 != (runtime_sudog *)0x0) {
@@ -35617,11 +35379,11 @@ void runtime_cansemacquire(uint32 *addr,bool _r1)
     return;
   }
   do {
-    runtime_fwdslash_internal_fwdslash_atomic_Load(addr,in_stack_fffffff4);
+    runtime_internal_atomic_Load(addr,in_stack_fffffff4);
     if (in_stack_fffffff4 == 0) {
       return;
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Cas();
+    runtime_internal_atomic_Cas();
   } while (local_4 == '\0');
   return;
 }
@@ -35690,7 +35452,7 @@ void runtime___semaRoot__queue(runtime_semaRoot *root,uint32 *addr,runtime_sudog
         }
         else {
           if (prVar3->next != s) {
-            runtime_gopanic((interface__)0x80f1ab0080cf1a0);
+            runtime_gopanic((interface___)0x80f1ab0080cf1a0);
             do {
               invalidInstructionException();
             } while( true );
@@ -35720,13 +35482,11 @@ void runtime___semaRoot__queue(runtime_semaRoot *root,uint32 *addr,runtime_sudog
         runtime_writebarrierptr((uintptr *)&src->waitlink,(uintptr)s);
       }
     }
+    else if (runtime_writeBarrier._0_4_ == 0) {
+      prVar3->waitlink = s;
+    }
     else {
-      if (runtime_writeBarrier._0_4_ == 0) {
-        prVar3->waitlink = s;
-      }
-      else {
-        runtime_writebarrierptr((uintptr *)&prVar3->waitlink,(uintptr)s);
-      }
+      runtime_writebarrierptr((uintptr *)&prVar3->waitlink,(uintptr)s);
     }
     if (runtime_writeBarrier._0_4_ == 0) {
       src->waittail = s;
@@ -35885,23 +35645,19 @@ void runtime___semaRoot__dequeue(runtime_semaRoot *root,uint32 *addr,runtime_sud
         runtime_writebarrierptr((uintptr *)&root->treap,0);
       }
     }
-    else {
-      if (x == prVar2->prev) {
-        if (runtime_writeBarrier._0_4_ == 0) {
-          prVar2->prev = (runtime_sudog *)0x0;
-        }
-        else {
-          runtime_writebarrierptr((uintptr *)&prVar2->prev,0);
-        }
+    else if (x == prVar2->prev) {
+      if (runtime_writeBarrier._0_4_ == 0) {
+        prVar2->prev = (runtime_sudog *)0x0;
       }
       else {
-        if (runtime_writeBarrier._0_4_ == 0) {
-          prVar2->next = (runtime_sudog *)0x0;
-        }
-        else {
-          runtime_writebarrierptr((uintptr *)&prVar2->next,0);
-        }
+        runtime_writebarrierptr((uintptr *)&prVar2->prev,0);
       }
+    }
+    else if (runtime_writeBarrier._0_4_ == 0) {
+      prVar2->next = (runtime_sudog *)0x0;
+    }
+    else {
+      runtime_writebarrierptr((uintptr *)&prVar2->next,0);
     }
   }
   else {
@@ -35956,13 +35712,11 @@ void runtime___semaRoot__dequeue(runtime_semaRoot *root,uint32 *addr,runtime_sud
         runtime_writebarrierptr((uintptr *)&prVar2->waittail,0);
       }
     }
+    else if (runtime_writeBarrier._0_4_ == 0) {
+      prVar2->waittail = x->waittail;
+    }
     else {
-      if (runtime_writeBarrier._0_4_ == 0) {
-        prVar2->waittail = x->waittail;
-      }
-      else {
-        runtime_writebarrierptr((uintptr *)&prVar2->waittail,(uintptr)x->waittail);
-      }
+      runtime_writebarrierptr((uintptr *)&prVar2->waittail,(uintptr)x->waittail);
     }
     *(undefined4 *)&prVar2->acquiretime = in_stack_ffffffd4;
     *(undefined4 *)((int)&prVar2->acquiretime + 4) = in_stack_ffffffd8;
@@ -36076,28 +35830,26 @@ void runtime___semaRoot__rotateLeft(runtime_semaRoot *root,runtime_sudog *x)
       runtime_writebarrierptr((uintptr *)&root->treap,(uintptr)src);
     }
   }
-  else {
-    if (src_00->prev == x) {
-      if (runtime_writeBarrier._0_4_ == 0) {
-        src_00->prev = src;
-      }
-      else {
-        runtime_writebarrierptr((uintptr *)&src_00->prev,(uintptr)src);
-      }
+  else if (src_00->prev == x) {
+    if (runtime_writeBarrier._0_4_ == 0) {
+      src_00->prev = src;
     }
     else {
-      if (src_00->next != x) {
-        runtime_throw((string)0x13080e2e31);
-        do {
-          invalidInstructionException();
-        } while( true );
-      }
-      if (runtime_writeBarrier._0_4_ == 0) {
-        src_00->next = src;
-      }
-      else {
-        runtime_writebarrierptr((uintptr *)&src_00->next,(uintptr)src);
-      }
+      runtime_writebarrierptr((uintptr *)&src_00->prev,(uintptr)src);
+    }
+  }
+  else {
+    if (src_00->next != x) {
+      runtime_throw((string)0x13080e2e31);
+      do {
+        invalidInstructionException();
+      } while( true );
+    }
+    if (runtime_writeBarrier._0_4_ == 0) {
+      src_00->next = src;
+    }
+    else {
+      runtime_writebarrierptr((uintptr *)&src_00->next,(uintptr)src);
     }
   }
   return;
@@ -36182,28 +35934,26 @@ void runtime___semaRoot__rotateRight(runtime_semaRoot *root,runtime_sudog *y)
       runtime_writebarrierptr((uintptr *)&root->treap,(uintptr)src);
     }
   }
-  else {
-    if (src_00->prev == y) {
-      if (runtime_writeBarrier._0_4_ == 0) {
-        src_00->prev = src;
-      }
-      else {
-        runtime_writebarrierptr((uintptr *)&src_00->prev,(uintptr)src);
-      }
+  else if (src_00->prev == y) {
+    if (runtime_writeBarrier._0_4_ == 0) {
+      src_00->prev = src;
     }
     else {
-      if (src_00->next != y) {
-        runtime_throw((string)0x14080e31ff);
-        do {
-          invalidInstructionException();
-        } while( true );
-      }
-      if (runtime_writeBarrier._0_4_ == 0) {
-        src_00->next = src;
-      }
-      else {
-        runtime_writebarrierptr((uintptr *)&src_00->next,(uintptr)src);
-      }
+      runtime_writebarrierptr((uintptr *)&src_00->prev,(uintptr)src);
+    }
+  }
+  else {
+    if (src_00->next != y) {
+      runtime_throw((string)0x14080e31ff);
+      do {
+        invalidInstructionException();
+      } while( true );
+    }
+    if (runtime_writeBarrier._0_4_ == 0) {
+      src_00->next = src;
+    }
+    else {
+      runtime_writebarrierptr((uintptr *)&src_00->next,(uintptr)src);
     }
   }
   return;
@@ -36396,8 +36146,6 @@ void runtime___sigctxt__preparePanic(runtime_sigctxt *c,uint32 sig,runtime_g *gp
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void runtime_sighandler(uint32 sig,runtime_siginfo *info,void *ctxt,runtime_g *gp)
 
 {
@@ -36407,8 +36155,9 @@ void runtime_sighandler(uint32 sig,runtime_siginfo *info,void *ctxt,runtime_g *g
   uint8 *puVar4;
   undefined4 uVar5;
   uint uVar6;
-  runtime_g *prVar7;
+  runtime_g **pprVar7;
   uintptr sp;
+  runtime_g *gp_00;
   uint uVar8;
   int *in_GS_OFFSET;
   undefined *level;
@@ -36498,9 +36247,8 @@ void runtime_sighandler(uint32 sig,runtime_siginfo *info,void *ctxt,runtime_g *g
     runtime_printint((ulonglong)uVar6);
     runtime_printstring((string)0x1080e0d9c);
     runtime_printunlock();
-    prVar7 = *(runtime_g **)(iVar2 + 0x18);
-    if (((*(runtime_g **)((int)&prVar7->cgoCtxt + 4) != (runtime_g *)0x0) &&
-        (0 < (int)prVar7->sigcode1)) && (gp == *(runtime_g **)&prVar7->stack)) {
+    pprVar7 = *(runtime_g ***)(iVar2 + 0x18);
+    if (((pprVar7[0x2f] != (runtime_g *)0x0) && (0 < (int)pprVar7[0x28])) && (gp == *pprVar7)) {
       runtime_printlock();
       runtime_printstring((string)0x24080e5fb0);
       runtime_printunlock();
@@ -36521,9 +36269,9 @@ void runtime_sighandler(uint32 sig,runtime_siginfo *info,void *ctxt,runtime_g *g
       uVar12 = (undefined2)(sp >> 0x10);
       runtime_tracebacktrap(*(uintptr *)((int)local_8.ctxt + 0x4c),sp,0,gp);
       if ((((runtime_crashing < 1) ||
-           (prVar7 = *(runtime_g **)(*(int *)(iVar2 + 0x18) + 0x54), gp == prVar7)) ||
-          (prVar7 == (runtime_g *)0x0)) ||
-         (runtime_readgstatus(prVar7,CONCAT22(uVar12,CONCAT11(uVar11,uVar9))),
+           (gp_00 = *(runtime_g **)(*(int *)(iVar2 + 0x18) + 0x54), gp == gp_00)) ||
+          (gp_00 == (runtime_g *)0x0)) ||
+         (runtime_readgstatus(gp_00,CONCAT22(uVar12,CONCAT11(uVar11,uVar9))),
          (CONCAT22(uVar12,CONCAT11(uVar11,uVar9)) & 0xffffefff) != 2)) {
         if (runtime_crashing == 0) {
           runtime_tracebackothers(gp);
@@ -36640,7 +36388,7 @@ void runtime_sigInstallGoHandler(uint32 sig,bool _r1)
         invalidInstructionException();
       } while( true );
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr(runtime_fwdSig + sig,in_stack_fffffffc);
+    runtime_internal_atomic_Loaduintptr(runtime_fwdSig + sig,in_stack_fffffffc);
     if (in_stack_fffffffc == 1) {
       return;
     }
@@ -36897,33 +36645,29 @@ void runtime_sigpanic(void)
     if (gp->sigcode0 == 1) {
       runtime_panicdivide();
     }
-    else {
-      if (gp->sigcode0 == 2) {
-        runtime_panicoverflow();
-      }
+    else if (gp->sigcode0 == 2) {
+      runtime_panicoverflow();
     }
     runtime_panicfloat();
   }
-  else {
-    if (uVar2 == 0xb) {
-      uVar3 = gp->sigcode0;
-      if ((((uVar3 == 0) || (uVar3 == 1)) || (uVar3 == 2)) && (gp->sigcode1 < 0x1000)) {
-        runtime_panicmem();
-      }
-      if (gp->paniconfault != false) {
-        runtime_panicmem();
-      }
-      uVar4 = gp->sigcode1;
-      runtime_printlock();
-      runtime_printstring((string)0x19080e405d);
-      runtime_printhex((ulonglong)uVar4);
-      runtime_printstring((string)0x1080e0d9c);
-      runtime_printunlock();
-      runtime_throw((string)0x5080e1033);
-      do {
-        invalidInstructionException();
-      } while( true );
+  else if (uVar2 == 0xb) {
+    uVar3 = gp->sigcode0;
+    if ((((uVar3 == 0) || (uVar3 == 1)) || (uVar3 == 2)) && (gp->sigcode1 < 0x1000)) {
+      runtime_panicmem();
     }
+    if (gp->paniconfault != false) {
+      runtime_panicmem();
+    }
+    uVar4 = gp->sigcode1;
+    runtime_printlock();
+    runtime_printstring((string)0x19080e405d);
+    runtime_printhex((ulonglong)uVar4);
+    runtime_printstring((string)0x1080e0d9c);
+    runtime_printunlock();
+    runtime_throw((string)0x5080e1033);
+    do {
+      invalidInstructionException();
+    } while( true );
   }
   uVar4 = gp->sig;
   if (0x40 < uVar4) {
@@ -36937,7 +36681,7 @@ void runtime_sigpanic(void)
   runtime_convT2Estring
             ((runtime__type *)&DAT_080d1e80,&local_8,
              (runtime_eface)CONCAT44(in_stack_ffffffec,in_stack_ffffffe8));
-  runtime_gopanic((interface__)CONCAT44(in_stack_ffffffec,in_stack_ffffffe8));
+  runtime_gopanic((interface___)CONCAT44(in_stack_ffffffec,in_stack_ffffffe8));
   do {
     invalidInstructionException();
   } while( true );
@@ -36978,7 +36722,7 @@ void runtime_raisebadsignal(uint32 sig,runtime_sigctxt *c)
     return;
   }
   if (sig < 0x41) {
-    runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr(runtime_fwdSig + sig,in_stack_fffffff0);
+    runtime_internal_atomic_Loaduintptr(runtime_fwdSig + sig,in_stack_fffffff0);
   }
   else {
     in_stack_fffffff0 = 0;
@@ -37130,7 +36874,7 @@ void runtime_sigfwdgo(uint32 sig,runtime_siginfo *info,void *ctx,bool _r3)
   if (0x40 < sig) {
     return;
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr(runtime_fwdSig + sig,in_stack_ffffffe8);
+  runtime_internal_atomic_Loaduintptr(runtime_fwdSig + sig,in_stack_ffffffe8);
   if (runtime_signalsOK == false) {
     if (in_stack_ffffffe8 == 0) {
       runtime_dieFromSignal(sig);
@@ -37144,7 +36888,7 @@ void runtime_sigfwdgo(uint32 sig,runtime_siginfo *info,void *ctx,bool _r3)
     return;
   }
   uVar2 = in_stack_ffffffe8;
-  runtime_fwdslash_internal_fwdslash_atomic_Load(runtime_handlingSig + sig,in_stack_ffffffe8);
+  runtime_internal_atomic_Load(runtime_handlingSig + sig,in_stack_ffffffe8);
   if (uVar2 == 0) {
     runtime_sigfwd();
     return;
@@ -37385,7 +37129,7 @@ void runtime_sigsend(uint32 s,bool _r1)
       invalidInstructionException();
     } while( true );
   }
-  runtime_fwdslash_internal_fwdslash_atomic_Load(runtime_sig.wanted + uVar2,in_stack_ffffffec);
+  runtime_internal_atomic_Load(runtime_sig.wanted + uVar2,in_stack_ffffffec);
   uVar3 = 1 << ((byte)s & 0x1f);
   if ((in_stack_ffffffec & uVar3) != 0) {
     do {
@@ -37393,20 +37137,19 @@ void runtime_sigsend(uint32 s,bool _r1)
       if ((_r1_00 & uVar3) != 0) {
         return;
       }
-      runtime_fwdslash_internal_fwdslash_atomic_Cas();
+      runtime_internal_atomic_Cas();
     } while (local_c == '\0');
     while( true ) {
-      while (runtime_fwdslash_internal_fwdslash_atomic_Load(&runtime_sig.state,_r1_00), _r1_00 == 0)
-      {
+      while (runtime_internal_atomic_Load(&runtime_sig.state,_r1_00), _r1_00 == 0) {
         _r1_00 = 0;
-        runtime_fwdslash_internal_fwdslash_atomic_Cas();
+        runtime_internal_atomic_Cas();
         if (local_c != '\0') {
           return;
         }
       }
       if (_r1_00 != 1) break;
       _r1_00 = 1;
-      runtime_fwdslash_internal_fwdslash_atomic_Cas();
+      runtime_internal_atomic_Cas();
       if (local_c != '\0') {
         runtime_notewakeup(&runtime_sig.note);
         return;
@@ -37440,8 +37183,7 @@ void runtime_signal_ignored(uint32 s,bool _r1)
     return;
   }
   if (s >> 5 < 3) {
-    runtime_fwdslash_internal_fwdslash_atomic_Load(runtime_sig.ignored + (s >> 5),in_stack_fffffffc)
-    ;
+    runtime_internal_atomic_Load(runtime_sig.ignored + (s >> 5),in_stack_fffffffc);
     return;
   }
   runtime_panicindex();
@@ -37480,12 +37222,12 @@ void runtime_makeslice(runtime__type *et,int len,int cap,runtime_slice _r3)
       runtime_mallocgc(uVar2 * cap,et,true,in_stack_fffffffc);
       return;
     }
-    runtime_gopanic((interface__)0x80f1ac0080d1e80);
+    runtime_gopanic((interface___)0x80f1ac0080d1e80);
     do {
       invalidInstructionException();
     } while( true );
   }
-  runtime_gopanic((interface__)0x80f1ab8080d1e80);
+  runtime_gopanic((interface___)0x80f1ab8080d1e80);
   do {
     invalidInstructionException();
   } while( true );
@@ -37515,7 +37257,7 @@ void runtime_growslice(runtime__type *et,runtime_slice old,int cap,runtime_slice
   uVar3 = et->size;
   if (uVar3 == 0) {
     if (cap < old.cap) {
-      runtime_gopanic((interface__)0x80f1ac8080d1e80);
+      runtime_gopanic((interface___)0x80f1ac8080d1e80);
       do {
         invalidInstructionException();
       } while( true );
@@ -37561,71 +37303,65 @@ void runtime_growslice(runtime__type *et,runtime_slice old,int cap,runtime_slice
       }
     }
   }
+  else if (uVar3 == 4) {
+    local_18 = uVar5 * 4;
+    if (local_18 < 0x8000) {
+      if (local_18 < 0x3f9) {
+        uVar5 = local_18 + 7 >> 3;
+        if ((0x80 < uVar5) || (0x42 < runtime_size_to_class8[uVar5])) {
+          runtime_panicindex();
+          do {
+            invalidInstructionException();
+          } while( true );
+        }
+        local_18 = (uint)runtime_class_to_size[runtime_size_to_class8[uVar5]];
+      }
+      else {
+        uVar5 = local_18 - 0x381 >> 7;
+        if ((0xf8 < uVar5) || (0x42 < runtime_size_to_class128[uVar5])) {
+          runtime_panicindex();
+          do {
+            invalidInstructionException();
+          } while( true );
+        }
+        local_18 = (uint)runtime_class_to_size[runtime_size_to_class128[uVar5]];
+      }
+    }
+    else if (local_18 <= local_18 + 0x2000) {
+      local_18 = local_18 + 0x1fff & 0xffffe000;
+    }
+    old.len = old.len << 2;
+    uVar5 = local_18 >> 2;
+  }
   else {
-    if (uVar3 == 4) {
-      local_18 = uVar5 * 4;
-      if (local_18 < 0x8000) {
-        if (local_18 < 0x3f9) {
-          uVar5 = local_18 + 7 >> 3;
-          if ((0x80 < uVar5) || (0x42 < runtime_size_to_class8[uVar5])) {
-            runtime_panicindex();
-            do {
-              invalidInstructionException();
-            } while( true );
-          }
-          local_18 = (uint)runtime_class_to_size[runtime_size_to_class8[uVar5]];
+    old.len = old.len * uVar3;
+    local_18 = uVar5 * uVar3;
+    if (local_18 < 0x8000) {
+      if (local_18 < 0x3f9) {
+        uVar5 = local_18 + 7 >> 3;
+        if ((0x80 < uVar5) || (0x42 < runtime_size_to_class8[uVar5])) {
+          runtime_panicindex();
+          do {
+            invalidInstructionException();
+          } while( true );
         }
-        else {
-          uVar5 = local_18 - 0x381 >> 7;
-          if ((0xf8 < uVar5) || (0x42 < runtime_size_to_class128[uVar5])) {
-            runtime_panicindex();
-            do {
-              invalidInstructionException();
-            } while( true );
-          }
-          local_18 = (uint)runtime_class_to_size[runtime_size_to_class128[uVar5]];
-        }
+        local_18 = (uint)runtime_class_to_size[runtime_size_to_class8[uVar5]];
       }
       else {
-        if (local_18 <= local_18 + 0x2000) {
-          local_18 = local_18 + 0x1fff & 0xffffe000;
+        uVar5 = local_18 - 0x381 >> 7;
+        if ((0xf8 < uVar5) || (0x42 < runtime_size_to_class128[uVar5])) {
+          runtime_panicindex();
+          do {
+            invalidInstructionException();
+          } while( true );
         }
+        local_18 = (uint)runtime_class_to_size[runtime_size_to_class128[uVar5]];
       }
-      old.len = old.len << 2;
-      uVar5 = local_18 >> 2;
     }
-    else {
-      old.len = old.len * uVar3;
-      local_18 = uVar5 * uVar3;
-      if (local_18 < 0x8000) {
-        if (local_18 < 0x3f9) {
-          uVar5 = local_18 + 7 >> 3;
-          if ((0x80 < uVar5) || (0x42 < runtime_size_to_class8[uVar5])) {
-            runtime_panicindex();
-            do {
-              invalidInstructionException();
-            } while( true );
-          }
-          local_18 = (uint)runtime_class_to_size[runtime_size_to_class8[uVar5]];
-        }
-        else {
-          uVar5 = local_18 - 0x381 >> 7;
-          if ((0xf8 < uVar5) || (0x42 < runtime_size_to_class128[uVar5])) {
-            runtime_panicindex();
-            do {
-              invalidInstructionException();
-            } while( true );
-          }
-          local_18 = (uint)runtime_class_to_size[runtime_size_to_class128[uVar5]];
-        }
-      }
-      else {
-        if (local_18 <= local_18 + 0x2000) {
-          local_18 = local_18 + 0x1fff & 0xffffe000;
-        }
-      }
-      uVar5 = local_18 / uVar3;
+    else if (local_18 <= local_18 + 0x2000) {
+      local_18 = local_18 + 0x1fff & 0xffffe000;
     }
+    uVar5 = local_18 / uVar3;
   }
   if (old.cap <= cap) {
     if (uVar3 < 0x21) {
@@ -37656,7 +37392,7 @@ void runtime_growslice(runtime__type *et,runtime_slice old,int cap,runtime_slice
       return;
     }
   }
-  runtime_gopanic((interface__)0x80f1ad0080d1e80);
+  runtime_gopanic((interface___)0x80f1ad0080d1e80);
   do {
     invalidInstructionException();
   } while( true );
@@ -38285,7 +38021,7 @@ void runtime_adjustpointers
           break;
         }
         in_stack_ffffffb4 = uVar8 + uVar6;
-        runtime_fwdslash_internal_fwdslash_atomic_Casp1();
+        runtime_internal_atomic_Casp1();
       } while ((char)in_stack_ffffffb8 == '\0');
     }
     local_40 = local_40 + 1;
@@ -38513,7 +38249,7 @@ void runtime_adjustdefers(runtime_g *gp,runtime_adjustinfo *adjinfo)
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     runtime_tracebackdefers
-              (gp,(func__runtime_stkframe_unsafe_Pointer_bool *)&PTR_runtime_adjustframe_080e7b7c,
+              (gp,(func__runtime_stkframe__unsafe_Pointer__bool *)&PTR_runtime_adjustframe_080e7b7c,
                adjinfo);
     for (prVar5 = gp->_defer; prVar5 != (runtime__defer *)0x0; prVar5 = prVar5->link) {
       prVar2 = prVar5->fn;
@@ -38711,7 +38447,7 @@ void runtime_copystack(runtime_g *gp,uintptr newsize,bool sync)
       gp->stktopsp = gp->stktopsp + local_d0._8_4_;
       runtime_gentraceback
                 (0xffffffff,0xffffffff,0,gp,0,(uintptr *)0x0,0x7fffffff,
-                 (func__runtime_stkframe_unsafe_Pointer_bool *)&PTR_runtime_adjustframe_080e7b7c,
+                 (func__runtime_stkframe__unsafe_Pointer__bool *)&PTR_runtime_adjustframe_080e7b7c,
                  local_d0,0,in_stack_ffffff14);
       runtime_stackfree(stk_00);
       return;
@@ -38752,8 +38488,6 @@ void runtime_round2(int32 x,int32 _r1)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void runtime_newstack(void *ctxt)
 
 {
@@ -38765,16 +38499,17 @@ void runtime_newstack(void *ctxt)
   runtime_g *prVar4;
   runtime_g *gp;
   uint uVar5;
-  uint uVar6;
+  runtime_g **pprVar6;
   uint uVar7;
   uint uVar8;
-  void *p_00;
   uint uVar9;
-  int iVar10;
-  uint uVar11;
+  void *p_00;
+  uint uVar10;
+  int iVar11;
+  uint uVar12;
   int *in_GS_OFFSET;
   void *in_stack_ffffff50;
-  void *pvVar12;
+  void *pvVar13;
   undefined4 in_stack_ffffff58;
   uintptr local_54;
   uintptr local_50;
@@ -38806,7 +38541,7 @@ void runtime_newstack(void *ctxt)
   }
   gp = (runtime_g *)p[0x15];
   if (prVar4 != gp) {
-    pvVar12 = *p;
+    pvVar13 = *p;
     p_00 = p[0xb];
     runtime_printlock();
     runtime_printstring((string)0x20080e5443);
@@ -38816,7 +38551,7 @@ void runtime_newstack(void *ctxt)
     runtime_printstring((string)0x9080e153c);
     runtime_printpointer(gp);
     runtime_printstring((string)0x7080e11d8);
-    runtime_printpointer(pvVar12);
+    runtime_printpointer(pvVar13);
     runtime_printstring((string)0xc080e1c27);
     runtime_printpointer(p_00);
     runtime_printstring((string)0x1080e0d9c);
@@ -38837,39 +38572,39 @@ void runtime_newstack(void *ctxt)
   }
   if (*(char *)(*(int *)(*(int *)(iVar3 + 0x18) + 0x54) + 0x71) != '\0') {
     FUN_0809025a();
-    uVar9 = local_24;
-    uVar8 = local_34[0];
+    uVar10 = local_24;
+    uVar9 = local_34[0];
     gp->syscallsp = local_38;
     gp->syscallpc = local_34[0];
-    uVar11 = (gp->stack).lo;
+    uVar12 = (gp->stack).lo;
     uVar2 = (gp->stack).hi;
     uVar5 = (gp->sched).pc;
-    uVar6 = (gp->sched).sp;
-    uVar7 = (gp->sched).lr;
-    pvVar12 = (gp->sched).ctxt;
+    uVar7 = (gp->sched).sp;
+    uVar8 = (gp->sched).lr;
+    pvVar13 = (gp->sched).ctxt;
     runtime_printlock();
     runtime_printstring((string)0x15080e3432);
-    runtime_printhex((ulonglong)uVar6);
+    runtime_printhex((ulonglong)uVar7);
     runtime_printstring((string)0x8080e13c5);
-    runtime_printhex((ulonglong)uVar11);
+    runtime_printhex((ulonglong)uVar12);
     runtime_printstring((string)0x2080e0db5);
     runtime_printhex((ulonglong)uVar2);
     runtime_printstring((string)0x2080e0e0f);
     runtime_printstring((string)0xd080e1f16);
-    runtime_printhex((ulonglong)uVar8);
+    runtime_printhex((ulonglong)uVar9);
     runtime_printstring((string)0x4080e0ea6);
     runtime_printhex((ulonglong)local_38);
     runtime_printstring((string)0x4080e0e96);
-    runtime_printhex((ulonglong)uVar9);
+    runtime_printhex((ulonglong)uVar10);
     runtime_printstring((string)0x2080e0e1d);
     runtime_printstring((string)0xb080e1ae5);
     runtime_printhex((ulonglong)uVar5);
     runtime_printstring((string)0x4080e0ea6);
-    runtime_printhex((ulonglong)uVar6);
-    runtime_printstring((string)0x4080e0e96);
     runtime_printhex((ulonglong)uVar7);
+    runtime_printstring((string)0x4080e0e96);
+    runtime_printhex((ulonglong)uVar8);
     runtime_printstring((string)0x6080e1082);
-    runtime_printpointer(pvVar12);
+    runtime_printpointer(pvVar13);
     runtime_printstring((string)0x2080e0e1d);
     runtime_printunlock();
     runtime_traceback(local_34[0],local_38,local_24,gp);
@@ -38878,22 +38613,22 @@ void runtime_newstack(void *ctxt)
       invalidInstructionException();
     } while( true );
   }
-  iVar10 = FUN_0809025a();
-  *(undefined4 *)(*(int *)(iVar10 + 0x18) + 8) = 0;
-  *(undefined4 *)(*(int *)(iVar10 + 0x18) + 0x18) = 0;
-  *(undefined4 *)(*(int *)(iVar10 + 0x18) + 4) = 0;
-  *(undefined4 *)(*(int *)(iVar10 + 0x18) + 0xc) = 0;
-  runtime_fwdslash_internal_fwdslash_atomic_Loaduintptr(&gp->stackguard0,(uint32)in_stack_ffffff50);
-  pvVar12 = in_stack_ffffff50;
+  iVar11 = FUN_0809025a();
+  *(undefined4 *)(*(int *)(iVar11 + 0x18) + 8) = 0;
+  *(undefined4 *)(*(int *)(iVar11 + 0x18) + 0x18) = 0;
+  *(undefined4 *)(*(int *)(iVar11 + 0x18) + 4) = 0;
+  *(undefined4 *)(*(int *)(iVar11 + 0x18) + 0xc) = 0;
+  runtime_internal_atomic_Loaduintptr(&gp->stackguard0,(uint32)in_stack_ffffff50);
+  pvVar13 = in_stack_ffffff50;
   if ((in_stack_ffffff50 == (void *)0xfffffade) &&
-     ((((iVar10 = *(int *)(iVar3 + 0x18), *(int *)(iVar10 + 0x78) != 0 ||
-        (*(int *)(iVar10 + 0x68) != 0)) || (*(int *)(iVar10 + 0x74) != 0)) ||
-      (*(int *)(*(int *)(iVar10 + 0x5c) + 8) != 1)))) {
+     ((((iVar11 = *(int *)(iVar3 + 0x18), *(int *)(iVar11 + 0x78) != 0 ||
+        (*(int *)(iVar11 + 0x68) != 0)) || (*(int *)(iVar11 + 0x74) != 0)) ||
+      (*(int *)(*(int *)(iVar11 + 0x5c) + 8) != 1)))) {
     gp->stackguard0 = (gp->stack).lo + 0x370;
     runtime_gogo();
   }
-  uVar11 = (gp->stack).lo;
-  if (uVar11 == 0) {
+  uVar12 = (gp->stack).lo;
+  if (uVar12 == 0) {
     runtime_throw((string)0x19080e3eb4);
     do {
       invalidInstructionException();
@@ -38901,18 +38636,18 @@ void runtime_newstack(void *ctxt)
   }
   uVar5 = (gp->sched).sp;
   uVar2 = uVar5 - 4;
-  if (uVar2 < uVar11) {
-    uVar6 = (gp->stack).hi;
-    uVar7 = (gp->sched).pc;
-    uVar8 = (gp->sched).lr;
-    pvVar12 = (gp->sched).ctxt;
+  if (uVar2 < uVar12) {
+    uVar7 = (gp->stack).hi;
+    uVar8 = (gp->sched).pc;
+    uVar9 = (gp->sched).lr;
+    pvVar13 = (gp->sched).ctxt;
     runtime_printlock();
     runtime_printstring((string)0x15080e3432);
     runtime_printhex((ulonglong)uVar2);
     runtime_printstring((string)0x8080e13c5);
-    runtime_printhex((ulonglong)uVar11);
+    runtime_printhex((ulonglong)uVar12);
     runtime_printstring((string)0x2080e0db5);
-    runtime_printhex((ulonglong)uVar6);
+    runtime_printhex((ulonglong)uVar7);
     runtime_printstring((string)0x2080e0e0f);
     runtime_printstring((string)0xd080e1f16);
     runtime_printhex((ulonglong)local_18);
@@ -38922,32 +38657,32 @@ void runtime_newstack(void *ctxt)
     runtime_printhex((ulonglong)local_8);
     runtime_printstring((string)0x2080e0e1d);
     runtime_printstring((string)0xb080e1ae5);
-    runtime_printhex((ulonglong)uVar7);
+    runtime_printhex((ulonglong)uVar8);
     runtime_printstring((string)0x4080e0ea6);
     runtime_printhex((ulonglong)uVar5);
     runtime_printstring((string)0x4080e0e96);
-    runtime_printhex((ulonglong)uVar8);
+    runtime_printhex((ulonglong)uVar9);
     runtime_printstring((string)0x6080e1082);
-    runtime_printpointer(pvVar12);
-    pvVar12 = (void *)0x2;
+    runtime_printpointer(pvVar13);
+    pvVar13 = (void *)0x2;
     runtime_printstring((string)0x2080e0e1d);
     runtime_printunlock();
   }
   if (uVar2 < (gp->stack).lo) {
-    runtime_readgstatus(gp,(uint32)pvVar12);
+    runtime_readgstatus(gp,(uint32)pvVar13);
     runtime_printlock();
     runtime_printstring((string)0xc080e1dfb);
     runtime_printpointer(gp);
     runtime_printstring((string)0xd080e1e94);
-    runtime_printhex(ZEXT48(pvVar12));
+    runtime_printhex(ZEXT48(pvVar13));
     runtime_printstring((string)0x2080e0e0d);
     runtime_printunlock();
-    uVar11 = (gp->stack).lo;
+    uVar12 = (gp->stack).lo;
     runtime_printlock();
     runtime_printstring((string)0x1f080e5264);
     runtime_printhex((ulonglong)uVar2);
     runtime_printstring((string)0x3080e0e2b);
-    runtime_printhex((ulonglong)uVar11);
+    runtime_printhex((ulonglong)uVar12);
     runtime_printstring((string)0x1080e0d9c);
     runtime_printunlock();
     runtime_throw((string)0x1d080e4c60);
@@ -38956,15 +38691,14 @@ void runtime_newstack(void *ctxt)
     } while( true );
   }
   if (in_stack_ffffff50 == (void *)0xfffffade) {
-    prVar4 = *(runtime_g **)(iVar3 + 0x18);
-    if (gp == *(runtime_g **)&prVar4->stack) {
+    pprVar6 = *(runtime_g ***)(iVar3 + 0x18);
+    if (gp == *pprVar6) {
       runtime_throw((string)0x13080e2e1e);
       do {
         invalidInstructionException();
       } while( true );
     }
-    if ((*(runtime_g **)((int)&prVar4->waitsince + 4) == (runtime_g *)0x0) &&
-       (*(runtime_g **)((int)&prVar4->sysexitticks + 4) == (runtime_g *)0x0)) {
+    if ((pprVar6[0x17] == (runtime_g *)0x0) && (pprVar6[0x1e] == (runtime_g *)0x0)) {
       runtime_throw((string)0x22080e5ab7);
       do {
         invalidInstructionException();
@@ -38993,8 +38727,8 @@ void runtime_newstack(void *ctxt)
     runtime_casgstatus(gp,4,2);
     runtime_gopreempt_m(gp);
   }
-  uVar11 = ((gp->stack).hi - (gp->stack).lo) * 2;
-  if (runtime_maxstacksize <= uVar11 && uVar11 - runtime_maxstacksize != 0) {
+  uVar12 = ((gp->stack).hi - (gp->stack).lo) * 2;
+  if (runtime_maxstacksize <= uVar12 && uVar12 - runtime_maxstacksize != 0) {
     runtime_printlock();
     runtime_printstring((string)0x21080e57b4);
     runtime_printint((ulonglong)runtime_maxstacksize);
@@ -39006,7 +38740,7 @@ void runtime_newstack(void *ctxt)
     } while( true );
   }
   runtime_casgstatus(gp,2,8);
-  runtime_copystack(gp,uVar11,true);
+  runtime_copystack(gp,uVar12,true);
   runtime_casgstatus(gp,8,2);
   runtime_gogo();
   return;
@@ -39395,13 +39129,11 @@ void runtime_rawstringtmp(uint8 (*buf) [32],int l,string s,__uint8 b)
                       (__uint8)CONCAT48(in_stack_fffffffc,
                                         CONCAT44(in_stack_fffffff8,in_stack_fffffff4)));
   }
-  else {
-    if (0x20 < (uint)l) {
-      runtime_panicslice();
-      do {
-        invalidInstructionException();
-      } while( true );
-    }
+  else if (0x20 < (uint)l) {
+    runtime_panicslice();
+    do {
+      invalidInstructionException();
+    } while( true );
   }
   return;
 }
@@ -40506,7 +40238,7 @@ void runtime_activeModules(___runtime_moduledata _r0)
 {
   void *in_stack_fffffffc;
   
-  runtime_fwdslash_internal_fwdslash_atomic_Loadp(&runtime_modulesSlice,in_stack_fffffffc);
+  runtime_internal_atomic_Loadp(&runtime_modulesSlice,in_stack_fffffffc);
   if (in_stack_fffffffc != (void *)0x0) {
     return;
   }
@@ -41765,7 +41497,7 @@ void runtime_timerproc(void)
   runtime__type *prVar4;
   uintptr uVar5;
   runtime_timer *prVar6;
-  struct_runtime_lockruntime_mutex_runtime_gp_runtime_g_runtime_createdbool_runtime_sleepingbool_runtime_reschedulingbool_runtime_sleepUntilint64_runtime_waitnoteruntime_note_runtime_t___runtime_timer_
+  struct___runtime_lock_runtime_mutex__runtime_gp__runtime_g__runtime_created_bool__runtime_sleeping_bool__runtime_rescheduling_bool__runtime_sleepUntil_int64__runtime_waitnote_runtime_note__runtime_t____runtime_timer__
   *psVar7;
   int iVar8;
   uint uVar9;
@@ -41776,7 +41508,7 @@ void runtime_timerproc(void)
   int iVar14;
   runtime_g *prVar15;
   int *in_GS_OFFSET;
-  struct_runtime_lockruntime_mutex_runtime_gp_runtime_g_runtime_createdbool_runtime_sleepingbool_runtime_reschedulingbool_runtime_sleepUntilint64_runtime_waitnoteruntime_note_runtime_t___runtime_timer_
+  struct___runtime_lock_runtime_mutex__runtime_gp__runtime_g__runtime_created_bool__runtime_sleeping_bool__runtime_rescheduling_bool__runtime_sleepUntil_int64__runtime_waitnote_runtime_note__runtime_t____runtime_timer__
   *psVar16;
   runtime_g *in_stack_ffffffb0;
   int in_stack_ffffffb8;
@@ -41805,7 +41537,7 @@ void runtime_timerproc(void)
     runtime_nanotime();
     while (iVar11 = runtime_timers.t.len, runtime_timers.t.len != 0) {
       prVar6 = *runtime_timers.t.array;
-      psVar7 = *(struct_runtime_lockruntime_mutex_runtime_gp_runtime_g_runtime_createdbool_runtime_sleepingbool_runtime_reschedulingbool_runtime_sleepUntilint64_runtime_waitnoteruntime_note_runtime_t___runtime_timer_
+      psVar7 = *(struct___runtime_lock_runtime_mutex__runtime_gp__runtime_g__runtime_created_bool__runtime_sleeping_bool__runtime_rescheduling_bool__runtime_sleepUntil_int64__runtime_waitnote_runtime_note__runtime_t____runtime_timer__
                  **)&prVar6->when;
       prVar15 = (runtime_g *)((int)psVar7 - (int)psVar16);
       iVar8 = *(int *)((int)&prVar6->when + 4);
@@ -41898,10 +41630,13 @@ LAB_08083a0e:
       prVar12 = runtime_timers.gp;
     }
     else {
-      runtime_timers.sleepUntil._0_4_ = (int)&(psVar16->lock).key + (int)&(prVar15->stack).lo;
+      runtime_timers.sleepUntil._0_4_ =
+           (undefined *)((int)&(psVar16->lock).key + (int)&(prVar15->stack).lo);
       runtime_timers.sleeping = true;
       runtime_timers.sleepUntil._4_4_ =
-           (int)&(in_stack_ffffffb0->stack).lo + (uint)CARRY4((uint)psVar16,(uint)prVar15) + iVar14;
+           (undefined *)
+           ((int)&(in_stack_ffffffb0->stack).lo + (uint)CARRY4((uint)psVar16,(uint)prVar15) + iVar14
+           );
       runtime_timers.waitnote = 0;
       runtime_unlock(&runtime_timers.lock);
       runtime_notetsleepg(&runtime_timers.waitnote,CONCAT44(iVar14,prVar15),
@@ -42345,14 +42080,12 @@ void runtime_traceEvent(uint8 ev,int skip,__uint64 args)
   if (skip == 0) {
     runtime___traceBuf__varint(buf,0);
   }
-  else {
-    if (0 < skip) {
-      runtime_traceStackID
-                ((runtime_m *)in_stack_ffffffb4,
-                 (__uintptr)CONCAT48(0x80,CONCAT44(0x80,(buf->traceBufHeader).stk)),skip,
-                 CONCAT44(in_stack_ffffffcc,in_stack_ffffffc8));
-      runtime___traceBuf__varint(buf,CONCAT44(in_stack_ffffffcc,in_stack_ffffffc8));
-    }
+  else if (0 < skip) {
+    runtime_traceStackID
+              ((runtime_m *)in_stack_ffffffb4,
+               (__uintptr)CONCAT48(0x80,CONCAT44(0x80,(buf->traceBufHeader).stk)),skip,
+               CONCAT44(in_stack_ffffffcc,in_stack_ffffffc8));
+    runtime___traceBuf__varint(buf,CONCAT44(in_stack_ffffffcc,in_stack_ffffffc8));
   }
   iVar4 = (buf->traceBufHeader).pos - uVar2;
   if (0x34 < iVar4) {
@@ -42392,14 +42125,12 @@ void runtime_traceStackID(runtime_m *mp,__uintptr buf,int skip,uint64 _r3)
     runtime_callers(skip + 1,buf,in_stack_fffffff4);
     in_stack_fffffff4 = in_stack_fffffff8;
   }
+  else if (gp == (runtime_g *)0x0) {
+    in_stack_fffffff8 = 0;
+  }
   else {
-    if (gp == (runtime_g *)0x0) {
-      in_stack_fffffff8 = 0;
-    }
-    else {
-      in_stack_fffffff4 = buf.cap;
-      runtime_gcallers(gp,skip,buf,in_stack_fffffff8);
-    }
+    in_stack_fffffff4 = buf.cap;
+    runtime_gcallers(gp,skip,buf,in_stack_fffffff8);
   }
   if (0 < (int)in_stack_fffffff8) {
     in_stack_fffffff8 = in_stack_fffffff8 - 1;
@@ -43152,20 +42883,18 @@ void runtime_traceGoStart(void)
     local_8 = *(undefined4 *)((int)runtime_trace.markWorkerLabels + uVar2 * 8 + 4);
     runtime_traceEvent(0x29,-1,(__uint64)CONCAT48(3,CONCAT44(3,&local_1c)));
   }
+  else if (*(int *)(local_4 + 0x84) == iVar3) {
+    local_30 = *(undefined4 *)(local_4 + 0x54);
+    local_34 = *(undefined4 *)(local_4 + 0x50);
+    runtime_traceEvent(0x26,-1,(__uint64)CONCAT48(1,CONCAT44(1,&local_34)));
+  }
   else {
-    if (*(int *)(local_4 + 0x84) == iVar3) {
-      local_30 = *(undefined4 *)(local_4 + 0x54);
-      local_34 = *(undefined4 *)(local_4 + 0x50);
-      runtime_traceEvent(0x26,-1,(__uint64)CONCAT48(1,CONCAT44(1,&local_34)));
-    }
-    else {
-      *(int *)(local_4 + 0x84) = iVar3;
-      local_28 = *(undefined4 *)(local_4 + 0x54);
-      local_2c = *(undefined4 *)(local_4 + 0x50);
-      local_20 = *(undefined4 *)(local_4 + 0x80);
-      local_24 = *(undefined4 *)(local_4 + 0x7c);
-      runtime_traceEvent(0xe,-1,(__uint64)CONCAT48(2,CONCAT44(2,&local_2c)));
-    }
+    *(int *)(local_4 + 0x84) = iVar3;
+    local_28 = *(undefined4 *)(local_4 + 0x54);
+    local_2c = *(undefined4 *)(local_4 + 0x50);
+    local_20 = *(undefined4 *)(local_4 + 0x80);
+    local_24 = *(undefined4 *)(local_4 + 0x7c);
+    runtime_traceEvent(0xe,-1,(__uint64)CONCAT48(2,CONCAT44(2,&local_2c)));
   }
   return;
 }
@@ -43497,7 +43226,7 @@ void runtime_tracebackinit(void)
 
 
 void runtime_tracebackdefers
-               (runtime_g *gp,func__runtime_stkframe_unsafe_Pointer_bool *callback,void *v)
+               (runtime_g *gp,func__runtime_stkframe__unsafe_Pointer__bool *callback,void *v)
 
 {
   uint *puVar1;
@@ -43573,49 +43302,44 @@ void runtime_tracebackdefers
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void runtime_gentraceback
                (uintptr pc0,uintptr sp0,uintptr lr0,runtime_g *gp,int skip,uintptr *pcbuf,int max,
-               func__runtime_stkframe_unsafe_Pointer_bool *callback,void *v,uint flags,int _r10)
+               func__runtime_stkframe__unsafe_Pointer__bool *callback,void *v,uint flags,int _r10)
 
 {
-  runtime_moduledata **pprVar1;
+  uint *puVar1;
   uint8 *puVar2;
   undefined4 uVar3;
-  runtime_m *prVar4;
-  runtime_g *prVar5;
+  runtime_g *prVar4;
+  runtime_moduledata *prVar5;
   runtime_moduledata *prVar6;
-  runtime_moduledata *prVar7;
-  runtime__defer *prVar8;
-  runtime_moduledata *prVar9;
-  int iVar10;
+  runtime__defer *prVar7;
+  runtime_moduledata *prVar8;
+  int iVar9;
   runtime_moduledata *_r4;
-  runtime_moduledata *prVar11;
-  uint uVar12;
-  runtime_pcvalueCache *prVar13;
+  runtime_moduledata *prVar10;
+  uint uVar11;
   runtime_moduledata *extraout_EDX;
-  uintptr *puVar14;
-  uint uVar15;
-  runtime_moduledata *prVar16;
-  runtime_moduledata *prVar17;
+  uintptr *puVar12;
+  uint uVar13;
+  runtime_moduledata *prVar14;
+  runtime_moduledata *prVar15;
   int *in_GS_OFFSET;
-  bool bVar18;
-  bool bVar19;
+  bool bVar16;
+  bool bVar17;
   int in_stack_fffffe40;
   runtime_moduledata *in_stack_fffffe44;
   runtime_moduledata *in_stack_fffffe48;
+  runtime_moduledata *fileno;
   runtime_moduledata *in_stack_fffffe4c;
-  runtime_pcvalueCache *in_stack_fffffe50;
-  runtime_pcvalueCache *prVar20;
+  runtime_moduledata *in_stack_fffffe50;
   runtime_moduledata *in_stack_fffffe54;
   runtime_bitvector *in_stack_fffffe58;
   bool local_1a1;
-  runtime_moduledata local_140;
-  runtime_moduledata *local_64;
-  runtime_moduledata *local_60;
-  runtime_moduledata *local_5c;
-  runtime_moduledata *local_58;
+  runtime_moduledata *local_140;
+  runtime_moduledata *local_13c;
+  runtime_moduledata *local_138;
+  runtime_moduledata local_130;
   runtime_moduledata *local_54;
   uintptr *local_50;
   runtime__defer *local_4c;
@@ -43628,8 +43352,8 @@ void runtime_gentraceback
   undefined **local_30;
   runtime_stkframe local_2c;
   
-  pprVar1 = (runtime_moduledata **)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if (&local_140 < *pprVar1 || &local_140 == *pprVar1) {
+  puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
+  if (&local_140 < (runtime_moduledata **)*puVar1 || &local_140 == (runtime_moduledata **)*puVar1) {
     local_2c.argmap = (runtime_bitvector *)0x8087727;
     runtime_morestack_noctxt();
     runtime_gentraceback(pc0,sp0,lr0,gp,skip,pcbuf,max,callback,v,flags,_r10);
@@ -43637,7 +43361,7 @@ void runtime_gentraceback
   }
   local_34 = (undefined1 *)0x0;
   local_30 = (undefined **)0x0;
-  if ((0 < skip) && (callback != (func__runtime_stkframe_unsafe_Pointer_bool *)0x0)) {
+  if ((0 < skip) && (callback != (func__runtime_stkframe__unsafe_Pointer__bool *)0x0)) {
     runtime_throw((string)0x37080e75fc);
     do {
       invalidInstructionException();
@@ -43649,10 +43373,10 @@ void runtime_gentraceback
       invalidInstructionException();
     } while( true );
   }
-  local_140.next = *(runtime_moduledata **)(*in_GS_OFFSET + -4);
-  if ((local_140.next == (runtime_moduledata *)gp) &&
-     (local_140.next == (runtime_moduledata *)((runtime_m *)((local_140.next)->filetab).array)->curg
-     )) {
+  local_130.gcdatamask.bytedata = *(uint8 **)(*in_GS_OFFSET + -4);
+  if (((runtime_g *)local_130.gcdatamask.bytedata == gp) &&
+     ((runtime_g *)local_130.gcdatamask.bytedata ==
+      (*(runtime_m **)((int)local_130.gcdatamask.bytedata + 0x18))->curg)) {
     runtime_throw((string)0x39080e7710);
     do {
       invalidInstructionException();
@@ -43668,10 +43392,10 @@ void runtime_gentraceback
     }
   }
   FUN_0808fd85();
-  uVar15 = (gp->cgoCtxt).len;
+  uVar13 = (gp->cgoCtxt).len;
   local_50 = (gp->cgoCtxt).array;
   local_1a1 = pcbuf == (uintptr *)0x0 &&
-              callback == (func__runtime_stkframe_unsafe_Pointer_bool *)0x0;
+              callback == (func__runtime_stkframe__unsafe_Pointer__bool *)0x0;
   for (local_4c = gp->_defer; (local_4c != (runtime__defer *)0x0 && (local_4c->sp == 0xffffffff));
       local_4c = local_4c->link) {
   }
@@ -43682,14 +43406,14 @@ void runtime_gentraceback
     local_2c.sp = (uintptr)&(extraout_EDX->pclntable).len;
   }
   runtime_findfunc(local_2c.pc,(runtime_funcInfo)CONCAT44(in_stack_fffffe48,in_stack_fffffe44));
-  prVar6 = (runtime_moduledata *)local_2c.pc;
+  prVar5 = (runtime_moduledata *)local_2c.pc;
   if (in_stack_fffffe44 == (runtime_moduledata *)0x0) {
-    if (callback == (func__runtime_stkframe_unsafe_Pointer_bool *)0x0) {
+    if (callback == (func__runtime_stkframe__unsafe_Pointer__bool *)0x0) {
       return;
     }
     runtime_printlock();
     runtime_printstring((string)0x14080e31d7);
-    runtime_printhex(ZEXT48(prVar6));
+    runtime_printhex(ZEXT48(prVar5));
     runtime_printstring((string)0x1080e0d9c);
     runtime_printunlock();
     runtime_throw((string)0xa080e19bd);
@@ -43700,97 +43424,87 @@ void runtime_gentraceback
   local_2c.fn._func = (runtime__func *)in_stack_fffffe44;
   local_2c.fn.datap = in_stack_fffffe48;
   FUN_0808fd60();
-  prVar6 = (runtime_moduledata *)0x0;
-  bVar18 = false;
-  prVar17 = (runtime_moduledata *)0x0;
-  puVar14 = local_50;
-  while (((int)prVar6 < max &&
-         (local_60 = local_2c.fn.datap, ((__runtime_functab *)&(local_2c.fn._func)->_)->len != 0)))
-  {
+  prVar5 = (runtime_moduledata *)0x0;
+  bVar16 = false;
+  prVar15 = (runtime_moduledata *)0x0;
+  puVar12 = local_50;
+  while (((int)prVar5 < max &&
+         (local_130.gcbssmask.bytedata = (uint8 *)local_2c.fn.datap,
+         ((__runtime_functab *)&(local_2c.fn._func)->_)->len != 0))) {
     local_38 = local_4c;
-    local_58 = (runtime_moduledata *)local_2c.fn._func;
-    local_3c = (runtime_moduledata *)puVar14;
-    prVar11 = in_stack_fffffe4c;
+    local_130.next = (runtime_moduledata *)local_2c.fn._func;
+    local_3c = (runtime_moduledata *)puVar12;
+    prVar10 = in_stack_fffffe4c;
     if ((runtime_moduledata *)local_2c.fp == (runtime_moduledata *)0x0) {
-      prVar11 = (runtime_moduledata *)local_2c.sp;
+      prVar10 = (runtime_moduledata *)local_2c.sp;
       if (((((flags & 4) != 0) &&
-           (prVar11 = (runtime_moduledata *)local_140.pclntable.cap,
+           (prVar10 = local_138,
            (uint8 *)runtime_systemstackPC == ((__uint8 *)&(local_2c.fn._func)->entry)->array)) &&
-          (((runtime_m *)((local_140.next)->filetab).array)->g0 == gp)) &&
-         (prVar5 = gp->m->curg, prVar5 != (runtime_g *)0x0)) {
-        local_2c.sp = (prVar5->sched).sp;
-        prVar5 = gp->m->curg;
-        puVar14 = (prVar5->cgoCtxt).array;
-        uVar15 = (prVar5->cgoCtxt).len;
+          ((*(runtime_m **)((int)local_130.gcdatamask.bytedata + 0x18))->g0 == gp)) &&
+         (prVar4 = gp->m->curg, prVar4 != (runtime_g *)0x0)) {
+        local_2c.sp = (prVar4->sched).sp;
+        prVar4 = gp->m->curg;
+        puVar12 = (prVar4->cgoCtxt).array;
+        uVar13 = (prVar4->cgoCtxt).len;
       }
-      local_140.pclntable.cap = (int)prVar11;
-      prVar16 = (runtime_moduledata *)local_2c.sp;
-      prVar11 = (runtime_moduledata *)((int)&local_140 + 0x10);
+      local_138 = prVar10;
+      prVar14 = (runtime_moduledata *)local_2c.sp;
+      prVar10 = &local_130;
       in_stack_fffffe44 = local_2c.fn.datap;
       in_stack_fffffe48 = (runtime_moduledata *)local_2c.pc;
-      local_3c = (runtime_moduledata *)puVar14;
+      local_3c = (runtime_moduledata *)puVar12;
       runtime_funcspdelta((runtime_funcInfo)CONCAT44(local_2c.fn.datap,local_2c.fn._func),
-                          local_2c.pc,(runtime_pcvalueCache *)prVar11,(int32)in_stack_fffffe50);
-      local_2c.fp = (int)((int)prVar16 + 4) + (int)in_stack_fffffe50;
+                          local_2c.pc,(runtime_pcvalueCache *)prVar10,(int32)in_stack_fffffe50);
+      local_2c.fp = (int)&(prVar14->pclntable).len + (int)in_stack_fffffe50;
     }
-    puVar2 = (local_58->pclntable).array;
+    puVar2 = ((local_130.next)->pclntable).array;
     if ((uint8 *)runtime_goexitPC == puVar2) {
-      bVar19 = true;
+      bVar17 = true;
+    }
+    else if ((uint8 *)runtime_mstartPC == puVar2) {
+      bVar17 = true;
+    }
+    else if ((uint8 *)runtime_mcallPC == puVar2) {
+      bVar17 = true;
+    }
+    else if ((uint8 *)runtime_morestackPC == puVar2) {
+      bVar17 = true;
+    }
+    else if ((uint8 *)runtime_rt0_goPC == puVar2) {
+      bVar17 = true;
+    }
+    else if (runtime_externalthreadhandlerp == 0) {
+      bVar17 = false;
     }
     else {
-      if ((uint8 *)runtime_mstartPC == puVar2) {
-        bVar19 = true;
-      }
-      else {
-        if ((uint8 *)runtime_mcallPC == puVar2) {
-          bVar19 = true;
-        }
-        else {
-          if ((uint8 *)runtime_morestackPC == puVar2) {
-            bVar19 = true;
-          }
-          else {
-            if ((uint8 *)runtime_rt0_goPC == puVar2) {
-              bVar19 = true;
-            }
-            else {
-              if (runtime_externalthreadhandlerp == 0) {
-                bVar19 = false;
-              }
-              else {
-                bVar19 = puVar2 == (uint8 *)runtime_externalthreadhandlerp;
-              }
-            }
-          }
-        }
-      }
+      bVar17 = puVar2 == (uint8 *)runtime_externalthreadhandlerp;
     }
-    if (bVar19) {
+    if (bVar17) {
       local_2c.lr = 0;
-      prVar7 = (runtime_moduledata *)0x0;
-      prVar16 = (runtime_moduledata *)0x0;
+      prVar6 = (runtime_moduledata *)0x0;
+      prVar14 = (runtime_moduledata *)0x0;
     }
     else {
       if ((runtime_moduledata *)local_2c.lr == (runtime_moduledata *)0x0) {
         local_2c.lr = (uintptr)((runtime_moduledata *)(local_2c.fp + -0xdc))->next;
       }
-      prVar16 = in_stack_fffffe44;
-      prVar7 = in_stack_fffffe48;
+      prVar14 = in_stack_fffffe44;
+      prVar6 = in_stack_fffffe48;
       runtime_findfunc(local_2c.lr,(runtime_funcInfo)CONCAT44(in_stack_fffffe48,in_stack_fffffe44));
-      in_stack_fffffe44 = prVar16;
-      in_stack_fffffe48 = prVar7;
-      if ((prVar16 == (runtime_moduledata *)0x0) &&
-         (callback != (func__runtime_stkframe_unsafe_Pointer_bool *)0x0)) {
-        runtime_funcname((runtime_funcInfo)CONCAT44(local_60,local_58),
-                         (string)CONCAT44(prVar11,prVar7));
-        prVar6 = (runtime_moduledata *)local_2c.lr;
-        local_140.pclntable.len = (int)prVar11;
-        local_3c = prVar7;
+      in_stack_fffffe44 = prVar14;
+      in_stack_fffffe48 = prVar6;
+      if ((prVar14 == (runtime_moduledata *)0x0) &&
+         (callback != (func__runtime_stkframe__unsafe_Pointer__bool *)0x0)) {
+        runtime_funcname((runtime_funcInfo)CONCAT44(local_130.gcbssmask.bytedata,local_130.next),
+                         (string)CONCAT44(prVar10,prVar6));
+        prVar5 = (runtime_moduledata *)local_2c.lr;
+        local_13c = prVar10;
+        local_3c = prVar6;
         runtime_printlock();
         runtime_printstring((string)0x22080e5ad9);
-        runtime_printstring((string)CONCAT44(local_140.pclntable.len,local_3c));
+        runtime_printstring((string)CONCAT44(local_13c,local_3c));
         runtime_printstring((string)0xd080e1e2c);
-        runtime_printhex(ZEXT48(prVar6));
+        runtime_printhex(ZEXT48(prVar5));
         runtime_printstring((string)0x1080e0d9c);
         runtime_printunlock();
         runtime_throw((string)0x11080e290c);
@@ -43800,23 +43514,25 @@ void runtime_gentraceback
       }
     }
     local_2c.varp = (uintptr)&((runtime_moduledata *)(local_2c.fp + -0xdc))->next;
-    bVar19 = callback != (func__runtime_stkframe_unsafe_Pointer_bool *)0x0;
-    local_5c = prVar7;
-    local_54 = prVar16;
-    if ((bVar19) || (local_1a1)) {
+    bVar17 = callback != (func__runtime_stkframe__unsafe_Pointer__bool *)0x0;
+    local_130.typemap = (map_runtime_typeOff__runtime__type)prVar6;
+    local_54 = prVar14;
+    if ((bVar17) || (local_1a1)) {
       local_2c.argp = local_2c.fp;
-      prVar11 = (runtime_moduledata *)((uint)prVar11 & 0xffffff00 | (uint)bVar19);
-      in_stack_fffffe50 = (runtime_pcvalueCache *)0x0;
-      in_stack_fffffe44 = local_58;
-      in_stack_fffffe48 = local_60;
-      runtime_getArgInfo(&local_2c,(runtime_funcInfo)CONCAT44(local_60,local_58),bVar19,
-                         (runtime_funcval *)0x0,(uintptr)in_stack_fffffe54,in_stack_fffffe58);
+      prVar10 = (runtime_moduledata *)((uint)prVar10 & 0xffffff00 | (uint)bVar17);
+      in_stack_fffffe50 = (runtime_moduledata *)0x0;
+      in_stack_fffffe44 = local_130.next;
+      in_stack_fffffe48 = (runtime_moduledata *)local_130.gcbssmask.bytedata;
+      runtime_getArgInfo(&local_2c,
+                         (runtime_funcInfo)CONCAT44(local_130.gcbssmask.bytedata,local_130.next),
+                         bVar17,(runtime_funcval *)0x0,(uintptr)in_stack_fffffe54,in_stack_fffffe58)
+      ;
       local_2c.arglen = (uintptr)in_stack_fffffe54;
       local_2c.argmap = in_stack_fffffe58;
     }
     local_2c.continpc = local_2c.pc;
     local_4c = local_38;
-    if (bVar18) {
+    if (bVar16) {
       if ((local_38 == (runtime__defer *)0x0) ||
          ((runtime_moduledata *)local_2c.sp != (runtime_moduledata *)local_38->sp)) {
         local_2c.continpc = 0;
@@ -43830,57 +43546,60 @@ void runtime_gentraceback
             ((runtime_moduledata *)local_4c->sp == (runtime_moduledata *)0xffffffff))));
         local_4c = local_4c->link) {
     }
-    if ((callback != (func__runtime_stkframe_unsafe_Pointer_bool *)0x0) &&
+    if ((callback != (func__runtime_stkframe__unsafe_Pointer__bool *)0x0) &&
        (in_stack_fffffe44 = (runtime_moduledata *)v, (**(code **)callback)(&local_2c),
        (char)in_stack_fffffe48 == '\0')) {
       return;
     }
-    in_stack_fffffe4c = prVar11;
+    in_stack_fffffe4c = prVar10;
     if (pcbuf == (uintptr *)0x0) {
 LAB_080862fc:
       if (local_1a1) {
-        prVar16 = in_stack_fffffe4c;
-        prVar13 = in_stack_fffffe50;
-        prVar11 = in_stack_fffffe54;
-        local_140.pclntable.len = (int)prVar6;
+        prVar14 = in_stack_fffffe4c;
+        prVar6 = in_stack_fffffe50;
+        prVar10 = in_stack_fffffe54;
+        local_13c = prVar5;
         if ((flags & 1) == 0) {
           in_stack_fffffe4c =
                (runtime_moduledata *)
-               ((uint)in_stack_fffffe4c & 0xffffff00 | (uint)(prVar17 == (runtime_moduledata *)0x0))
+               ((uint)in_stack_fffffe4c & 0xffffff00 | (uint)(prVar15 == (runtime_moduledata *)0x0))
           ;
-          in_stack_fffffe44 = local_60;
+          in_stack_fffffe44 = (runtime_moduledata *)local_130.gcbssmask.bytedata;
           in_stack_fffffe48 = (runtime_moduledata *)gp;
-          runtime_showframe((runtime_funcInfo)CONCAT44(local_60,local_58),gp,
-                            prVar17 == (runtime_moduledata *)0x0,SUB41(in_stack_fffffe50,0));
-          prVar6 = (runtime_moduledata *)local_140.pclntable.len;
-          prVar16 = in_stack_fffffe4c;
-          prVar13 = in_stack_fffffe50;
-          prVar11 = in_stack_fffffe54;
+          runtime_showframe((runtime_funcInfo)CONCAT44(local_130.gcbssmask.bytedata,local_130.next),
+                            gp,prVar15 == (runtime_moduledata *)0x0,SUB41(in_stack_fffffe50,0));
+          prVar5 = local_13c;
+          prVar14 = in_stack_fffffe4c;
+          prVar6 = in_stack_fffffe50;
+          prVar10 = in_stack_fffffe54;
           if ((char)in_stack_fffffe50 == '\0') goto LAB_0808630a;
         }
-        prVar6 = (runtime_moduledata *)local_2c.pc;
-        if (((0 < local_140.pclntable.len) || ((flags & 2) == 0)) &&
-           (((runtime_moduledata *)(local_58->pclntable).array < local_2c.pc && (!bVar18)))) {
-          prVar6 = (runtime_moduledata *)
+        prVar5 = (runtime_moduledata *)local_2c.pc;
+        if (((0 < (int)local_13c) || ((flags & 2) == 0)) &&
+           (((runtime_moduledata *)((local_130.next)->pclntable).array < local_2c.pc && (!bVar16))))
+        {
+          prVar5 = (runtime_moduledata *)
                    ((int)&((runtime_moduledata *)(local_2c.pc + -0xdc))->next + 3);
         }
-        runtime_funcline((runtime_funcInfo)CONCAT44(local_60,local_58),(uintptr)prVar6,
-                         (string)CONCAT44(prVar13,prVar16),(int32)prVar11);
-        prVar7 = (runtime_moduledata *)0x2;
-        in_stack_fffffe50 = prVar13;
-        _r4 = prVar11;
-        local_64 = prVar16;
-        runtime_funcdata((runtime_funcInfo)CONCAT44(local_60,local_58),2,prVar16);
-        prVar9 = local_64;
+        runtime_funcline((runtime_funcInfo)CONCAT44(local_130.gcbssmask.bytedata,local_130.next),
+                         (uintptr)prVar5,(string)CONCAT44(prVar6,prVar14),(int32)prVar10);
+        fileno = (runtime_moduledata *)0x2;
+        in_stack_fffffe50 = prVar6;
+        _r4 = prVar10;
+        local_130.gcbssmask.n = (int32)prVar14;
+        runtime_funcdata((runtime_funcInfo)CONCAT44(local_130.gcbssmask.bytedata,local_130.next),2,
+                         prVar14);
+        prVar8 = (runtime_moduledata *)local_130.gcbssmask.n;
         in_stack_fffffe54 = _r4;
-        if (prVar16 != (runtime_moduledata *)0x0) {
-          prVar7 = (runtime_moduledata *)0x1;
-          in_stack_fffffe50 = (runtime_pcvalueCache *)0x0;
-          local_40 = prVar16;
-          runtime_pcdatavalue((runtime_funcInfo)CONCAT44(local_60,local_58),1,(uintptr)prVar6,
-                              (runtime_pcvalueCache *)0x0,(int32)_r4);
-          prVar9 = local_64;
-          prVar16 = prVar6;
+        if (prVar14 != (runtime_moduledata *)0x0) {
+          fileno = (runtime_moduledata *)0x1;
+          in_stack_fffffe50 = (runtime_moduledata *)0x0;
+          local_40 = prVar14;
+          runtime_pcdatavalue((runtime_funcInfo)
+                              CONCAT44(local_130.gcbssmask.bytedata,local_130.next),1,
+                              (uintptr)prVar5,(runtime_pcvalueCache *)0x0,(int32)_r4);
+          prVar8 = (runtime_moduledata *)local_130.gcbssmask.n;
+          prVar14 = prVar5;
           in_stack_fffffe54 = _r4;
           while (_r4 != (runtime_moduledata *)0xffffffff) {
             if ((runtime_moduledata *)0xfffff < _r4) {
@@ -43889,72 +43608,72 @@ LAB_080862fc:
                 invalidInstructionException();
               } while( true );
             }
-            iVar10 = (int)_r4 * 0x10;
-            local_140.pclntable.array = (uint8 *)prVar11;
-            local_48 = prVar9;
+            iVar9 = (int)_r4 * 0x10;
+            local_140 = prVar10;
+            local_48 = prVar8;
             runtime_funcnameFromNameoff
-                      ((runtime_funcInfo)CONCAT44(local_60,local_58),
-                       *(uintptr *)((int)&local_40->ftab + iVar10),
-                       (string)CONCAT44(in_stack_fffffe50,prVar16));
-            prVar20 = in_stack_fffffe50;
-            local_140.typemap = (map_runtime_typeOff__runtime__type)prVar16;
+                      ((runtime_funcInfo)CONCAT44(local_130.gcbssmask.bytedata,local_130.next),
+                       *(int32 *)((int)&local_40->ftab + iVar9),
+                       (string)CONCAT44(in_stack_fffffe50,prVar14));
+            prVar5 = in_stack_fffffe50;
+            local_130.gcdatamask.n = (int32)prVar14;
             runtime_printlock();
-            runtime_printstring((string)CONCAT44(in_stack_fffffe50,local_140.typemap));
+            runtime_printstring((string)CONCAT44(in_stack_fffffe50,local_130.gcdatamask.n));
             runtime_printstring((string)0x6080e10ac);
             runtime_printunlock();
             runtime_printlock();
             runtime_printstring((string)0x1080e0d9d);
-            runtime_printstring((string)CONCAT44(prVar13,local_48));
+            runtime_printstring((string)CONCAT44(prVar6,local_48));
             runtime_printstring((string)0x1080e0d8f);
-            runtime_printint((longlong)(int)local_140.pclntable.array);
+            runtime_printint((longlong)(int)local_140);
             runtime_printstring((string)0x1080e0d9c);
             runtime_printunlock();
-            prVar7 = *(runtime_moduledata **)((int)&local_40->pclntable + iVar10 + 4);
-            prVar9 = prVar16;
-            prVar13 = prVar20;
-            runtime_funcfile((runtime_funcInfo)CONCAT44(local_60,local_58),(int32)prVar7,
-                             (string)CONCAT44(prVar20,prVar16));
-            prVar11 = *(runtime_moduledata **)((int)&local_40->pclntable + iVar10 + 8);
-            prVar16 = prVar9;
-            in_stack_fffffe50 = prVar13;
-            _r4 = *(runtime_moduledata **)((int)&local_40->pclntable + iVar10);
+            fileno = *(runtime_moduledata **)((int)&local_40->pclntable + iVar9 + 4);
+            prVar8 = prVar14;
+            prVar6 = prVar5;
+            runtime_funcfile((runtime_funcInfo)CONCAT44(local_130.gcbssmask.bytedata,local_130.next)
+                             ,(int32)fileno,(string)CONCAT44(prVar5,prVar14));
+            prVar10 = *(runtime_moduledata **)((int)&local_40->pclntable + iVar9 + 8);
+            prVar14 = prVar8;
+            in_stack_fffffe50 = prVar6;
+            _r4 = *(runtime_moduledata **)((int)&local_40->pclntable + iVar9);
           }
         }
-        local_64 = prVar9;
-        runtime_funcname((runtime_funcInfo)CONCAT44(local_60,local_58),
-                         (string)CONCAT44(prVar16,prVar7));
-        in_stack_fffffe48 = prVar7;
-        in_stack_fffffe4c = prVar16;
-        if (prVar16 == (runtime_moduledata *)0xf) {
+        local_130.gcbssmask.n = (int32)prVar8;
+        runtime_funcname((runtime_funcInfo)CONCAT44(local_130.gcbssmask.bytedata,local_130.next),
+                         (string)CONCAT44(prVar14,fileno));
+        in_stack_fffffe48 = fileno;
+        in_stack_fffffe4c = prVar14;
+        if (prVar14 == (runtime_moduledata *)0xf) {
           in_stack_fffffe48 = (runtime_moduledata *)&DAT_080e23ce;
           in_stack_fffffe4c = (runtime_moduledata *)0xf;
-          local_44 = prVar7;
+          local_44 = fileno;
           runtime_eqstring();
-          prVar7 = local_44;
+          fileno = local_44;
           if ((char)in_stack_fffffe50 != '\0') {
-            prVar16 = (runtime_moduledata *)&DAT_00000005;
-            prVar7 = (runtime_moduledata *)&DAT_080e1051;
+            prVar14 = (runtime_moduledata *)&DAT_00000005;
+            fileno = (runtime_moduledata *)&DAT_080e1051;
           }
         }
-        local_140.gcbssmask.bytedata = (uint8 *)prVar7;
+        local_130.modulehashes.cap = (int)fileno;
         runtime_printlock();
-        runtime_printstring((string)CONCAT44(prVar16,local_140.gcbssmask.bytedata));
+        runtime_printstring((string)CONCAT44(prVar14,local_130.modulehashes.cap));
         runtime_printstring((string)0x1080e0d85);
         runtime_printunlock();
         local_40 = (runtime_moduledata *)local_2c.argp;
-        for (uVar12 = 0; uVar12 < local_2c.arglen >> 2; uVar12 = uVar12 + 1) {
-          if (9 < uVar12) {
+        for (uVar11 = 0; uVar11 < local_2c.arglen >> 2; uVar11 = uVar11 + 1) {
+          if (9 < uVar11) {
             runtime_printlock();
             runtime_printstring((string)0x5080e0fb6);
             runtime_printunlock();
             break;
           }
-          if (uVar12 != 0) {
+          if (uVar11 != 0) {
             runtime_printlock();
             runtime_printstring((string)0x2080e0db5);
             runtime_printunlock();
           }
-          puVar2 = (&(local_40->pclntable).array)[uVar12];
+          puVar2 = (&(local_40->pclntable).array)[uVar11];
           runtime_printlock();
           runtime_printhex(ZEXT48(puVar2));
           runtime_printunlock();
@@ -43964,209 +43683,212 @@ LAB_080862fc:
         runtime_printunlock();
         runtime_printlock();
         runtime_printstring((string)0x1080e0d9d);
-        runtime_printstring((string)CONCAT44(prVar13,local_64));
+        runtime_printstring((string)CONCAT44(prVar6,local_130.gcbssmask.n));
         runtime_printstring((string)0x1080e0d8f);
-        runtime_printint((longlong)(int)prVar11);
+        runtime_printint((longlong)(int)prVar10);
         runtime_printunlock();
-        prVar11 = (runtime_moduledata *)local_2c.pc;
-        prVar6 = (runtime_moduledata *)(local_58->pclntable).array;
-        if (prVar6 < local_2c.pc) {
+        prVar10 = (runtime_moduledata *)local_2c.pc;
+        prVar5 = (runtime_moduledata *)((local_130.next)->pclntable).array;
+        if (prVar5 < local_2c.pc) {
           runtime_printlock();
           runtime_printstring((string)0x2080e0da5);
-          runtime_printhex((ulonglong)(uint)((int)prVar11 - (int)prVar6));
+          runtime_printhex((ulonglong)(uint)((int)prVar10 - (int)prVar5));
           runtime_printunlock();
         }
-        prVar16 = (runtime_moduledata *)local_2c.fp;
-        prVar11 = (runtime_moduledata *)local_2c.sp;
-        prVar6 = (runtime_moduledata *)local_2c.pc;
-        prVar4 = (runtime_m *)((local_140.next)->filetab).array;
-        if (((0 < prVar4->throwing) && (prVar4->curg == gp)) || (1 < in_stack_fffffe40)) {
+        prVar14 = (runtime_moduledata *)local_2c.fp;
+        prVar10 = (runtime_moduledata *)local_2c.sp;
+        prVar5 = (runtime_moduledata *)local_2c.pc;
+        if (((0 < (*(runtime_m **)((int)local_130.gcdatamask.bytedata + 0x18))->throwing) &&
+            ((*(runtime_m **)((int)local_130.gcdatamask.bytedata + 0x18))->curg == gp)) ||
+           (1 < in_stack_fffffe40)) {
           runtime_printlock();
           runtime_printstring((string)0x4080e0e8e);
-          runtime_printhex(ZEXT48(prVar16));
+          runtime_printhex(ZEXT48(prVar14));
           runtime_printstring((string)0x4080e0eaa);
-          runtime_printhex(ZEXT48(prVar11));
+          runtime_printhex(ZEXT48(prVar10));
           runtime_printstring((string)0x4080e0ea2);
-          runtime_printhex(ZEXT48(prVar6));
+          runtime_printhex(ZEXT48(prVar5));
           runtime_printunlock();
         }
         runtime_printlock();
         in_stack_fffffe44 = (runtime_moduledata *)0x1;
         runtime_printstring((string)0x1080e0d9c);
         runtime_printunlock();
-        prVar17 = (runtime_moduledata *)((int)&(prVar17->pclntable).array + 1);
-        prVar6 = (runtime_moduledata *)local_140.pclntable.len;
+        prVar15 = (runtime_moduledata *)((int)&(prVar15->pclntable).array + 1);
+        prVar5 = local_13c;
       }
 LAB_0808630a:
-      prVar6 = (runtime_moduledata *)((int)&(prVar6->pclntable).array + 1);
+      prVar5 = (runtime_moduledata *)((int)&(prVar5->pclntable).array + 1);
     }
     else {
       if (skip == 0) {
-        if ((runtime_moduledata *)0xfffff < prVar6) {
+        if ((runtime_moduledata *)0xfffff < prVar5) {
           runtime_panicindex();
           do {
             invalidInstructionException();
           } while( true );
         }
-        pcbuf[(int)prVar6] = local_2c.pc;
+        pcbuf[(int)prVar5] = local_2c.pc;
         goto LAB_080862fc;
       }
       in_stack_fffffe4c = (runtime_moduledata *)local_2c.pc;
-      if ((((0 < (int)prVar6) || ((flags & 2) == 0)) &&
-          ((runtime_moduledata *)(local_58->pclntable).array < local_2c.pc)) && (!bVar18)) {
+      if ((((0 < (int)prVar5) || ((flags & 2) == 0)) &&
+          ((runtime_moduledata *)((local_130.next)->pclntable).array < local_2c.pc)) && (!bVar16)) {
         in_stack_fffffe4c =
              (runtime_moduledata *)((int)&((runtime_moduledata *)(local_2c.pc + -0xdc))->next + 3);
       }
       in_stack_fffffe48 = (runtime_moduledata *)0x2;
-      in_stack_fffffe44 = local_60;
-      runtime_funcdata((runtime_funcInfo)CONCAT44(local_60,local_58),2,prVar11);
-      if (prVar11 == (runtime_moduledata *)0x0) {
+      in_stack_fffffe44 = (runtime_moduledata *)local_130.gcbssmask.bytedata;
+      runtime_funcdata((runtime_funcInfo)CONCAT44(local_130.gcbssmask.bytedata,local_130.next),2,
+                       prVar10);
+      if (prVar10 == (runtime_moduledata *)0x0) {
         skip = skip + -1;
-        in_stack_fffffe4c = prVar11;
+        in_stack_fffffe4c = prVar10;
       }
       else {
         in_stack_fffffe48 = (runtime_moduledata *)0x1;
-        in_stack_fffffe50 = (runtime_pcvalueCache *)((int)&local_140 + 0x10);
-        in_stack_fffffe44 = local_60;
-        local_40 = prVar11;
-        runtime_pcdatavalue((runtime_funcInfo)CONCAT44(local_60,local_58),1,
-                            (uintptr)in_stack_fffffe4c,in_stack_fffffe50,(int32)in_stack_fffffe54);
-        iVar10 = 0;
-        prVar11 = in_stack_fffffe54;
-        for (; (-1 < (int)prVar11 && (0 < skip)); skip = skip + -1) {
-          if ((runtime_moduledata *)0xfffff < prVar11) {
+        in_stack_fffffe50 = &local_130;
+        in_stack_fffffe44 = (runtime_moduledata *)local_130.gcbssmask.bytedata;
+        local_40 = prVar10;
+        runtime_pcdatavalue((runtime_funcInfo)CONCAT44(local_130.gcbssmask.bytedata,local_130.next),
+                            1,(uintptr)in_stack_fffffe4c,(runtime_pcvalueCache *)in_stack_fffffe50,
+                            (int32)in_stack_fffffe54);
+        iVar9 = 0;
+        prVar10 = in_stack_fffffe54;
+        for (; (-1 < (int)prVar10 && (0 < skip)); skip = skip + -1) {
+          if ((runtime_moduledata *)0xfffff < prVar10) {
             runtime_panicindex();
             do {
               invalidInstructionException();
             } while( true );
           }
-          iVar10 = iVar10 + 1;
-          prVar11 = *(runtime_moduledata **)((int)&local_40->pclntable + (int)prVar11 * 0x10);
+          iVar9 = iVar9 + 1;
+          prVar10 = *(runtime_moduledata **)((int)&local_40->pclntable + (int)prVar10 * 0x10);
         }
         if (skip < 1) {
-          if ((runtime_moduledata *)0xfffff < prVar6) {
+          if ((runtime_moduledata *)0xfffff < prVar5) {
             runtime_panicindex();
             do {
               invalidInstructionException();
             } while( true );
           }
-          pcbuf[(int)prVar6] = local_2c.pc;
-          prVar11 = (runtime_moduledata *)((int)&(prVar6->pclntable).array + 1);
-          if ((int)prVar11 < max) {
+          pcbuf[(int)prVar5] = local_2c.pc;
+          prVar10 = (runtime_moduledata *)((int)&(prVar5->pclntable).array + 1);
+          if ((int)prVar10 < max) {
             local_34 = &DAT_080ca340;
             local_30 = &PTR_runtime_skipPleaseUseCallersFrames_080e7cd0;
-            if ((runtime_moduledata *)0xfffff < prVar11) {
+            if ((runtime_moduledata *)0xfffff < prVar10) {
               runtime_panicindex();
               do {
                 invalidInstructionException();
               } while( true );
             }
-            pcbuf[(int)&(prVar6->pclntable).array + 1] =
-                 (uintptr)(runtime_skipPleaseUseCallersFrames + iVar10);
-            prVar6 = prVar11;
+            pcbuf[(int)((int)&(prVar5->pclntable).array + 1)] =
+                 (uintptr)(runtime_skipPleaseUseCallersFrames + iVar9);
+            prVar5 = prVar10;
           }
           goto LAB_080862fc;
         }
         skip = skip + -1;
       }
     }
-    if (((uint8 *)runtime_cgocallback_gofuncPC == (local_58->pclntable).array) && (0 < (int)uVar15))
-    {
-      uVar12 = uVar15 - 1;
-      if (uVar15 <= uVar12) {
+    if (((uint8 *)runtime_cgocallback_gofuncPC == ((local_130.next)->pclntable).array) &&
+       (0 < (int)uVar13)) {
+      uVar11 = uVar13 - 1;
+      if (uVar13 <= uVar11) {
         runtime_panicindex();
         do {
           invalidInstructionException();
         } while( true );
       }
-      prVar11 = *(runtime_moduledata **)((int)local_3c + (uVar15 - 1) * 4);
-      uVar15 = uVar12;
-      if ((skip == 0) && (callback == (func__runtime_stkframe_unsafe_Pointer_bool *)0x0)) {
+      prVar10 = *(runtime_moduledata **)((int)local_3c + (uVar13 - 1) * 4);
+      uVar13 = uVar11;
+      if ((skip == 0) && (callback == (func__runtime_stkframe__unsafe_Pointer__bool *)0x0)) {
         in_stack_fffffe44 =
              (runtime_moduledata *)((uint)in_stack_fffffe44 & 0xffffff00 | (uint)local_1a1);
-        in_stack_fffffe4c = prVar6;
-        in_stack_fffffe50 = (runtime_pcvalueCache *)max;
+        in_stack_fffffe4c = prVar5;
+        in_stack_fffffe50 = (runtime_moduledata *)max;
         runtime_tracebackCgoContext
-                  (pcbuf,local_1a1,(uintptr)prVar11,(int)prVar6,max,(int)in_stack_fffffe54);
-        prVar6 = in_stack_fffffe54;
-        in_stack_fffffe48 = prVar11;
-        in_stack_fffffe54 = prVar6;
+                  (pcbuf,local_1a1,(uintptr)prVar10,(int)prVar5,max,(int)in_stack_fffffe54);
+        prVar5 = in_stack_fffffe54;
+        in_stack_fffffe48 = prVar10;
+        in_stack_fffffe54 = prVar5;
       }
     }
-    local_140.pclntable.len = (int)prVar6;
+    local_13c = prVar5;
     if (local_54 == (runtime_moduledata *)0x0) break;
-    local_2c.fn.datap = local_5c;
+    local_2c.fn.datap = (runtime_moduledata *)local_130.typemap;
     local_2c.pc = local_2c.lr;
     local_2c.lr = 0;
     local_2c.sp = local_2c.fp;
     local_2c.fp = 0;
     local_2c.argmap = (runtime_bitvector *)0x0;
-    bVar18 = (uint8 *)runtime_sigpanicPC == (local_58->pclntable).array;
-    puVar14 = (uintptr *)local_3c;
+    bVar16 = (uint8 *)runtime_sigpanicPC == ((local_130.next)->pclntable).array;
+    puVar12 = (uintptr *)local_3c;
     local_2c.fn._func = (runtime__func *)local_54;
   }
-  prVar11 = (runtime_moduledata *)local_2c.sp;
-  if (pcbuf != (uintptr *)0x0 || callback != (func__runtime_stkframe_unsafe_Pointer_bool *)0x0) {
-    prVar17 = prVar6;
+  prVar10 = (runtime_moduledata *)local_2c.sp;
+  if (pcbuf != (uintptr *)0x0 || callback != (func__runtime_stkframe__unsafe_Pointer__bool *)0x0) {
+    prVar15 = prVar5;
   }
-  if (((callback != (func__runtime_stkframe_unsafe_Pointer_bool *)0x0) && ((int)prVar17 < max)) &&
+  if (((callback != (func__runtime_stkframe__unsafe_Pointer__bool *)0x0) && ((int)prVar15 < max)) &&
      (local_4c != (runtime__defer *)0x0)) {
-    local_140.pclntable.array = *(uint8 **)((int)&gp->goid + 4);
+    local_140 = *(runtime_moduledata **)((int)&gp->goid + 4);
     uVar3 = *(undefined4 *)&gp->goid;
-    uVar15 = local_4c->sp;
-    uVar12 = local_4c->pc;
+    uVar13 = local_4c->sp;
+    uVar11 = local_4c->pc;
     runtime_printlock();
     runtime_printstring((string)0xa080e198b);
-    runtime_printint(CONCAT44(local_140.pclntable.array,uVar3));
+    runtime_printint(CONCAT44(local_140,uVar3));
     runtime_printstring((string)0x14080e2ef3);
-    runtime_printhex((ulonglong)uVar15);
+    runtime_printhex((ulonglong)uVar13);
     runtime_printstring((string)0x4080e0ea2);
-    runtime_printhex((ulonglong)uVar12);
+    runtime_printhex((ulonglong)uVar11);
     runtime_printstring((string)0x1080e0d9c);
     runtime_printunlock();
-    prVar8 = gp->_defer;
-    while (prVar8 != (runtime__defer *)0x0) {
-      uVar15 = prVar8->sp;
-      uVar12 = prVar8->pc;
-      local_4c = prVar8;
+    prVar7 = gp->_defer;
+    while (prVar7 != (runtime__defer *)0x0) {
+      uVar13 = prVar7->sp;
+      uVar11 = prVar7->pc;
+      local_4c = prVar7;
       runtime_printlock();
       runtime_printstring((string)0x7080e12bf);
       runtime_printpointer(local_4c);
       runtime_printstring((string)0x4080e0eaa);
-      runtime_printhex((ulonglong)uVar15);
+      runtime_printhex((ulonglong)uVar13);
       runtime_printstring((string)0x4080e0ea2);
-      runtime_printhex((ulonglong)uVar12);
+      runtime_printhex((ulonglong)uVar11);
       runtime_printstring((string)0x1080e0d9c);
       runtime_printunlock();
-      prVar8 = local_4c->link;
+      prVar7 = local_4c->link;
     }
     runtime_throw((string)0x1d080e4d48);
     do {
       invalidInstructionException();
     } while( true );
   }
-  if (((callback != (func__runtime_stkframe_unsafe_Pointer_bool *)0x0) && ((int)prVar17 < max)) &&
-     (prVar6 = (runtime_moduledata *)gp->stktopsp, (runtime_moduledata *)local_2c.sp != prVar6)) {
-    local_140.pclntable.array = *(uint8 **)((int)&gp->goid + 4);
+  if (((callback != (func__runtime_stkframe__unsafe_Pointer__bool *)0x0) && ((int)prVar15 < max)) &&
+     (prVar5 = (runtime_moduledata *)gp->stktopsp, (runtime_moduledata *)local_2c.sp != prVar5)) {
+    local_140 = *(runtime_moduledata **)((int)&gp->goid + 4);
     uVar3 = *(undefined4 *)&gp->goid;
     runtime_printlock();
     runtime_printstring((string)0xa080e198b);
-    runtime_printint(CONCAT44(local_140.pclntable.array,uVar3));
+    runtime_printint(CONCAT44(local_140,uVar3));
     runtime_printstring((string)0xb080e1a77);
-    runtime_printhex(ZEXT48(prVar11));
+    runtime_printhex(ZEXT48(prVar10));
     runtime_printstring((string)0x5080e0fa2);
-    runtime_printhex(ZEXT48(prVar6));
+    runtime_printhex(ZEXT48(prVar5));
     runtime_printstring((string)0x1080e0d9c);
     runtime_printunlock();
-    uVar15 = (gp->stack).lo;
-    uVar12 = (gp->stack).hi;
+    uVar13 = (gp->stack).lo;
+    uVar11 = (gp->stack).hi;
     runtime_printlock();
     runtime_printstring((string)0x8080e14bd);
-    runtime_printhex((ulonglong)uVar15);
+    runtime_printhex((ulonglong)uVar13);
     runtime_printstring((string)0x1080e0d8a);
-    runtime_printhex((ulonglong)uVar12);
+    runtime_printhex((ulonglong)uVar11);
     runtime_printstring((string)0x4080e0ef2);
-    runtime_printint((longlong)(int)prVar17);
+    runtime_printint((longlong)(int)prVar15);
     runtime_printstring((string)0x5080e0f8e);
     runtime_printint((longlong)max);
     runtime_printstring((string)0x1080e0d9c);
@@ -44180,8 +43902,6 @@ LAB_0808630a:
 }
 
 
-
-// WARNING: Type propagation algorithm not settling
 
 void runtime_getArgInfo(runtime_stkframe *frame,runtime_funcInfo f,bool needArgMap,
                        runtime_funcval *ctxt,uintptr arglen,runtime_bitvector *argmap)
@@ -44226,7 +43946,7 @@ void runtime_getArgInfo(runtime_stkframe *frame,runtime_funcInfo f,bool needArgM
   }
 LAB_080877c8:
   if (ctxt == (runtime_funcval *)0x0) {
-    ctxt = (runtime_funcval *)((runtime_funcval *)frame->sp)->fn;
+    ctxt = *(runtime_funcval **)frame->sp;
   }
   if (ctxt->fn == (f._func)->entry) {
     return;
@@ -44449,11 +44169,11 @@ void runtime_traceback1(uintptr pc,uintptr sp,uintptr lr,runtime_g *gp,uint flag
      ((*prVar2->cgoCallers)[0] != 0)) {
     puVar4 = &prVar2->cgoCallersUse;
     uVar5 = 1;
-    runtime_fwdslash_internal_fwdslash_atomic_Store();
+    runtime_internal_atomic_Store();
     iVar3 = FUN_08090160(puVar4,uVar5);
     **(undefined4 **)(*(int *)(iVar3 + 0x18) + 0xa8) = 0;
     in_stack_ffffff58 = 0;
-    runtime_fwdslash_internal_fwdslash_atomic_Store();
+    runtime_internal_atomic_Store();
     runtime_printCgoTraceback((uintptr (*) [32])local_80);
   }
   runtime_readgstatus(gp,in_stack_ffffff58);
@@ -44463,11 +44183,11 @@ void runtime_traceback1(uintptr pc,uintptr sp,uintptr lr,runtime_g *gp,uint flag
     flags = flags & 0xfffffffd;
   }
   runtime_gentraceback
-            (pc,sp,lr,gp,0,(uintptr *)0x0,100,(func__runtime_stkframe_unsafe_Pointer_bool *)0x0,
+            (pc,sp,lr,gp,0,(uintptr *)0x0,100,(func__runtime_stkframe__unsafe_Pointer__bool *)0x0,
              (void *)0x0,flags,in_stack_ffffff7c);
   if ((in_stack_ffffff7c == 0) && ((flags & 1) == 0)) {
     runtime_gentraceback
-              (pc,sp,lr,gp,0,(uintptr *)0x0,100,(func__runtime_stkframe_unsafe_Pointer_bool *)0x0,
+              (pc,sp,lr,gp,0,(uintptr *)0x0,100,(func__runtime_stkframe__unsafe_Pointer__bool *)0x0,
                (void *)0x0,flags | 1,0);
   }
   if (in_stack_ffffff7c == 100) {
@@ -44547,7 +44267,7 @@ void runtime_gcallers(runtime_g *gp,int skip,__uintptr pcbuf,int _r3)
   if (pcbuf.len != 0) {
     runtime_gentraceback
               (0xffffffff,0xffffffff,0,gp,skip,pcbuf.array,pcbuf.len,
-               (func__runtime_stkframe_unsafe_Pointer_bool *)0x0,(void *)0x0,0,in_stack_fffffffc);
+               (func__runtime_stkframe__unsafe_Pointer__bool *)0x0,(void *)0x0,0,in_stack_fffffffc);
     return;
   }
   runtime_panicindex();
@@ -44737,23 +44457,17 @@ void runtime_tracebackothers(runtime_g *me)
         if ((runtime_runfinqPC == uVar4) && (runtime_fingRunning == false)) {
           bVar8 = true;
         }
+        else if (runtime_bgsweepPC == uVar4) {
+          bVar8 = true;
+        }
+        else if (runtime_forcegchelperPC == uVar4) {
+          bVar8 = true;
+        }
+        else if (runtime_timerprocPC == uVar4) {
+          bVar8 = true;
+        }
         else {
-          if (runtime_bgsweepPC == uVar4) {
-            bVar8 = true;
-          }
-          else {
-            if (runtime_forcegchelperPC == uVar4) {
-              bVar8 = true;
-            }
-            else {
-              if (runtime_timerprocPC == uVar4) {
-                bVar8 = true;
-              }
-              else {
-                bVar8 = runtime_gcBgMarkWorkerPC == uVar4;
-              }
-            }
-          }
+          bVar8 = runtime_gcBgMarkWorkerPC == uVar4;
         }
         if ((!bVar8) || (1 < in_stack_ffffffd4)) {
           runtime_printlock();
@@ -44808,8 +44522,9 @@ void runtime_printCgoTraceback(uintptr (*callers) [32])
   if (runtime_cgoSymbolizer != (void *)0x0) {
     FUN_0808fd89();
     iVar3 = 0;
-    for (; (iVar3 < 0x20 && ((*callers)[0] != 0)); callers = (uintptr (*) [32])(*callers + 1)) {
-      runtime_printOneCgoTraceback((*callers)[0],0x7fffffff,&local_1c,in_stack_ffffffd4);
+    for (; (iVar3 < 0x20 && (*(uintptr *)callers != 0));
+        callers = (uintptr (*) [32])((int)callers + 4)) {
+      runtime_printOneCgoTraceback(*(uintptr *)callers,0x7fffffff,&local_1c,in_stack_ffffffd4);
       iVar3 = iVar3 + 1;
     }
     local_1c.pc = 0;
@@ -44817,8 +44532,8 @@ void runtime_printCgoTraceback(uintptr (*callers) [32])
     return;
   }
   iVar3 = 0;
-  for (; (iVar3 < 0x20 && (uVar2 = (*callers)[0], uVar2 != 0));
-      callers = (uintptr (*) [32])(*callers + 1)) {
+  for (; (iVar3 < 0x20 && (uVar2 = *(uint *)callers, uVar2 != 0));
+      callers = (uintptr (*) [32])((int)callers + 4)) {
     runtime_printlock();
     runtime_printstring((string)0x16080e3625);
     runtime_printhex((ulonglong)uVar2);
@@ -45562,8 +45277,6 @@ void runtime_name_pkgPath(runtime_name n,string _r0)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void runtime_typelinksinit(void)
 
 {
@@ -45571,16 +45284,16 @@ void runtime_typelinksinit(void)
   int iVar2;
   int iVar3;
   uint32 key;
-  int iVar4;
   runtime_slice old;
-  int iVar5;
+  runtime__type **pprVar4;
   runtime__type *v;
-  int *piVar6;
+  int *piVar5;
   uintptr src;
-  runtime_hmap *prVar7;
-  int iVar8;
-  map_runtime_typeOff__runtime__type phVar9;
-  uint32 *puVar10;
+  runtime_hmap *prVar6;
+  int iVar7;
+  map_runtime_typeOff__runtime__type phVar8;
+  uint32 *puVar9;
+  int iVar10;
   int iVar11;
   map_runtime_typeOff__runtime__type phVar12;
   runtime__type *t;
@@ -45613,72 +45326,72 @@ void runtime_typelinksinit(void)
   FUN_0808fd89();
   FUN_0808fd6d();
   piVar14 = (int *)&DAT_080cfc00;
-  iVar8 = iVar15 >> 0x1f;
+  iVar7 = iVar15 >> 0x1f;
   h = &local_a8;
   runtime_makemap((runtime_maptype *)&DAT_080cfc00,(longlong)iVar15,h,local_8c,
                   (runtime_hmap *)in_stack_fffffeec);
   seen = in_stack_fffffeec;
-  runtime_activeModules((___runtime_moduledata)CONCAT48(iVar8,CONCAT44(iVar15,piVar14)));
+  runtime_activeModules((___runtime_moduledata)CONCAT48(iVar7,CONCAT44(iVar15,piVar14)));
   if (iVar15 == 0) {
     runtime_panicindex();
     do {
       invalidInstructionException();
     } while( true );
   }
-  piVar6 = (int *)((-(iVar8 + -1) >> 0x1f & 4U) + (int)piVar14);
+  piVar5 = (int *)((-(iVar7 + -1) >> 0x1f & 4U) + (int)piVar14);
   iVar11 = 0;
-  iVar8 = *piVar14;
+  iVar7 = *piVar14;
   do {
     if (iVar15 + -1 <= iVar11) {
       return;
     }
-    iVar2 = *piVar6;
-    puVar10 = *(uint32 **)(iVar8 + 0x78);
-    iVar3 = *(int *)(iVar8 + 0x7c);
+    iVar2 = *piVar5;
+    puVar9 = *(uint32 **)(iVar7 + 0x78);
+    iVar3 = *(int *)(iVar7 + 0x7c);
     for (local_f4 = 0; local_f4 < iVar3; local_f4 = local_f4 + 1) {
-      if (*(runtime_hmap **)(iVar8 + 0xd4) == (runtime_hmap *)0x0) {
-        src = *(int *)(iVar8 + 100) + *puVar10;
+      if (*(runtime_hmap **)(iVar7 + 0xd4) == (runtime_hmap *)0x0) {
+        src = *(int *)(iVar7 + 100) + *puVar9;
       }
       else {
         runtime_mapaccess1_fast32
-                  ((runtime_maptype *)&DAT_080cfb00,*(runtime_hmap **)(iVar8 + 0xd4),*puVar10,h);
+                  ((runtime_maptype *)&DAT_080cfb00,*(runtime_hmap **)(iVar7 + 0xd4),*puVar9,h);
         src = h->count;
       }
       runtime_mapaccess1_fast32
                 ((runtime_maptype *)&DAT_080cfc00,(runtime_hmap *)in_stack_fffffeec,
                  *(uint32 *)(src + 8),h);
-      prVar7 = (runtime_hmap *)h->hash0;
+      prVar6 = (runtime_hmap *)h->hash0;
       phVar12 = (map_runtime_typeOff__runtime__type)h->count;
-      iVar5 = *(int *)&h->flags;
+      iVar10 = *(int *)&h->flags;
       old = *(runtime_slice *)h;
-      phVar9 = phVar12;
-      for (iVar13 = 0; iVar13 < iVar5; iVar13 = iVar13 + 1) {
-        if (phVar9->count == src) goto LAB_08089ad5;
-        phVar9 = (map_runtime_typeOff__runtime__type)&phVar9->flags;
+      phVar8 = phVar12;
+      for (iVar13 = 0; iVar13 < iVar10; iVar13 = iVar13 + 1) {
+        if (phVar8->count == src) goto LAB_08089ad5;
+        phVar8 = (map_runtime_typeOff__runtime__type)&phVar8->flags;
       }
-      iVar13 = iVar5 + 1;
-      if ((int)prVar7 < iVar13) {
-        h = prVar7;
+      iVar13 = iVar10 + 1;
+      if ((int)prVar6 < iVar13) {
+        h = prVar6;
         phVar12 = seen;
-        prVar7 = in_stack_fffffef4;
+        prVar6 = in_stack_fffffef4;
         runtime_growslice((runtime__type *)&DAT_080d8da0,old,iVar13,
                           (runtime_slice)
                           CONCAT48(in_stack_fffffef4,CONCAT44(in_stack_fffffef0,seen)));
         iVar13 = in_stack_fffffef0 + 1;
         seen = phVar12;
-        in_stack_fffffef4 = prVar7;
+        in_stack_fffffef4 = prVar6;
       }
       if (runtime_writeBarrier._0_4_ == 0) {
-        (&phVar12->count)[iVar5] = src;
+        (&phVar12->count)[iVar10] = src;
       }
       else {
-        runtime_writebarrierptr((uintptr *)(&phVar12->count + iVar5),src);
+        runtime_writebarrierptr((uintptr *)(&phVar12->count + iVar10),src);
       }
       runtime_mapassign_fast32
                 ((runtime_maptype *)&DAT_080cfc00,(runtime_hmap *)in_stack_fffffeec,
                  *(uint32 *)(src + 8),h);
       *(int *)&h->flags = iVar13;
-      h->hash0 = (uint32)prVar7;
+      h->hash0 = (uint32)prVar6;
       if (runtime_writeBarrier._0_4_ == 0) {
         h->count = (int)phVar12;
       }
@@ -45686,18 +45399,18 @@ void runtime_typelinksinit(void)
         runtime_writebarrierptr((uintptr *)h,(uintptr)phVar12);
       }
 LAB_08089ad5:
-      puVar10 = puVar10 + 1;
+      puVar9 = puVar9 + 1;
     }
     if (*(int *)(iVar2 + 0xd4) == 0) {
       h = (runtime_hmap *)0x0;
       runtime_makemap((runtime_maptype *)&DAT_080cfb00,(longlong)*(int *)(iVar2 + 0x7c),
                       (runtime_hmap *)0x0,(void *)0x0,(runtime_hmap *)seen);
-      iVar8 = runtime_pinnedTypemaps.len;
+      iVar7 = runtime_pinnedTypemaps.len;
       phVar12 = (map_runtime_typeOff__runtime__type)runtime_pinnedTypemaps.array;
-      phVar9 = (map_runtime_typeOff__runtime__type)runtime_pinnedTypemaps.array;
+      phVar8 = (map_runtime_typeOff__runtime__type)runtime_pinnedTypemaps.array;
       phVar16 = seen;
       if ((runtime_pinnedTypemaps.cap < runtime_pinnedTypemaps.len + 1) &&
-         (h = (runtime_hmap *)runtime_pinnedTypemaps.cap, phVar12 = seen, iVar8 = in_stack_fffffef0,
+         (h = (runtime_hmap *)runtime_pinnedTypemaps.cap, phVar12 = seen, iVar7 = in_stack_fffffef0,
          runtime_growslice((runtime__type *)&DAT_080cfb00,
                            (runtime_slice)
                            CONCAT48(runtime_pinnedTypemaps.cap,
@@ -45705,41 +45418,41 @@ LAB_08089ad5:
                                             )),runtime_pinnedTypemaps.len + 1,
                            (runtime_slice)
                            CONCAT48(in_stack_fffffef4,CONCAT44(in_stack_fffffef0,seen))),
-         runtime_pinnedTypemaps.cap = (int)in_stack_fffffef4, phVar9 = phVar12, phVar16 = phVar12,
-         in_stack_fffffef0 = iVar8, in_stack_fffffef4 = (runtime_hmap *)runtime_pinnedTypemaps.cap,
+         runtime_pinnedTypemaps.cap = (int)in_stack_fffffef4, phVar8 = phVar12, phVar16 = phVar12,
+         in_stack_fffffef0 = iVar7, in_stack_fffffef4 = (runtime_hmap *)runtime_pinnedTypemaps.cap,
          runtime_writeBarrier._0_4_ != 0)) {
         runtime_writebarrierptr((uintptr *)&runtime_pinnedTypemaps,(uintptr)phVar12);
-        phVar9 = (map_runtime_typeOff__runtime__type)runtime_pinnedTypemaps.array;
+        phVar8 = (map_runtime_typeOff__runtime__type)runtime_pinnedTypemaps.array;
       }
-      runtime_pinnedTypemaps.array = (map_runtime_typeOff__runtime__type *)phVar9;
-      runtime_pinnedTypemaps.len = iVar8 + 1;
+      runtime_pinnedTypemaps.array = (map_runtime_typeOff__runtime__type *)phVar8;
+      runtime_pinnedTypemaps.len = iVar7 + 1;
       if (runtime_writeBarrier._0_4_ == 0) {
-        (&phVar12->count)[iVar8] = (int)seen;
+        (&phVar12->count)[iVar7] = (int)seen;
         *(map_runtime_typeOff__runtime__type *)(iVar2 + 0xd4) = seen;
         seen = phVar16;
       }
       else {
-        runtime_writebarrierptr((uintptr *)(&phVar12->count + iVar8),(uintptr)seen);
+        runtime_writebarrierptr((uintptr *)(&phVar12->count + iVar7),(uintptr)seen);
         runtime_writebarrierptr((uintptr *)(iVar2 + 0xd4),(uintptr)seen);
         seen = phVar16;
       }
       iVar3 = *(int *)(iVar2 + 0x7c);
-      puVar10 = *(uint32 **)(iVar2 + 0x78);
-      for (iVar8 = 0; iVar8 < iVar3; iVar8 = iVar8 + 1) {
-        key = *puVar10;
+      puVar9 = *(uint32 **)(iVar2 + 0x78);
+      for (iVar7 = 0; iVar7 < iVar3; iVar7 = iVar7 + 1) {
+        key = *puVar9;
         t = (runtime__type *)(*(int *)(iVar2 + 100) + key);
         runtime_mapaccess1_fast32
                   ((runtime_maptype *)&DAT_080cfc00,(runtime_hmap *)in_stack_fffffeec,t->hash,h);
-        iVar4 = *(int *)&h->flags;
-        iVar5 = h->count;
-        for (iVar13 = 0; v = t, iVar13 < iVar4; iVar13 = iVar13 + 1) {
-          v = *(runtime__type **)iVar5;
+        iVar13 = *(int *)&h->flags;
+        pprVar4 = (runtime__type **)h->count;
+        for (iVar10 = 0; v = t, iVar10 < iVar13; iVar10 = iVar10 + 1) {
+          v = *pprVar4;
           h = (runtime_hmap *)0x0;
           runtime_makemap((runtime_maptype *)&DAT_080cfac0,0,(runtime_hmap *)0x0,(void *)0x0,
                           (runtime_hmap *)seen);
-          runtime_typesEqual(t,v,(map_runtime__typePair_struct__)seen,SUB41(h,0));
+          runtime_typesEqual(t,v,(map_runtime__typePair_struct___)seen,SUB41(h,0));
           if ((char)h != '\0') break;
-          iVar5 = iVar5 + 4;
+          pprVar4 = pprVar4 + 1;
         }
         runtime_mapassign_fast32
                   ((runtime_maptype *)&DAT_080cfb00,*(runtime_hmap **)(iVar2 + 0xd4),key,h);
@@ -45749,12 +45462,12 @@ LAB_08089ad5:
         else {
           runtime_writebarrierptr((uintptr *)h,(uintptr)v);
         }
-        puVar10 = puVar10 + 1;
+        puVar9 = puVar9 + 1;
       }
     }
-    piVar6 = piVar6 + 1;
+    piVar5 = piVar5 + 1;
     iVar11 = iVar11 + 1;
-    iVar8 = iVar2;
+    iVar7 = iVar2;
   } while( true );
 }
 
@@ -45762,7 +45475,7 @@ LAB_08089ad5:
 
 // WARNING: Type propagation algorithm not settling
 
-void runtime_typesEqual(runtime__type *t,runtime__type *v,map_runtime__typePair_struct__ seen,
+void runtime_typesEqual(runtime__type *t,runtime__type *v,map_runtime__typePair_struct___ seen,
                        bool _r3)
 
 {
@@ -46179,25 +45892,21 @@ void runtime_decoderune(string s,int k,int32 r,int pos)
         return;
       }
     }
-    else {
-      if ((byte)(bVar2 + 0x20) < 0x10) {
-        if (((2 < iVar3) && ((byte)(s.str[uVar4 + 1] + 0x80) < 0x40)) &&
-           (((byte)(s.str[uVar4 + 2] + 0x80) < 0x40 &&
-            ((uVar4 = (s.str[uVar4 + 1] & 0x3f) << 6 | (uVar5 & 0xf) << 0xc |
-                      s.str[uVar4 + 2] & 0x3f, 0x7ff < uVar4 && (0x7ff < uVar4 - 0xd800)))))) {
-          return;
-        }
+    else if ((byte)(bVar2 + 0x20) < 0x10) {
+      if (((2 < iVar3) && ((byte)(s.str[uVar4 + 1] + 0x80) < 0x40)) &&
+         (((byte)(s.str[uVar4 + 2] + 0x80) < 0x40 &&
+          ((uVar4 = (s.str[uVar4 + 1] & 0x3f) << 6 | (uVar5 & 0xf) << 0xc | s.str[uVar4 + 2] & 0x3f,
+           0x7ff < uVar4 && (0x7ff < uVar4 - 0xd800)))))) {
+        return;
       }
-      else {
-        if (((((byte)(bVar2 + 0x10) < 8) && (3 < iVar3)) && ((byte)(s.str[uVar4 + 1] + 0x80) < 0x40)
-            ) && ((((byte)(s.str[uVar4 + 2] + 0x80) < 0x40 &&
-                   ((byte)(s.str[uVar4 + 3] + 0x80) < 0x40)) &&
-                  ((s.str[uVar4 + 3] & 0x3f |
-                   (uVar5 & 7) << 0x12 | (s.str[uVar4 + 1] & 0x3f) << 0xc |
-                   (s.str[uVar4 + 2] & 0x3f) << 6) - 0x10000 < 0x100000)))) {
-          return;
-        }
-      }
+    }
+    else if (((((byte)(bVar2 + 0x10) < 8) && (3 < iVar3)) &&
+             ((byte)(s.str[uVar4 + 1] + 0x80) < 0x40)) &&
+            ((((byte)(s.str[uVar4 + 2] + 0x80) < 0x40 && ((byte)(s.str[uVar4 + 3] + 0x80) < 0x40))
+             && ((s.str[uVar4 + 3] & 0x3f |
+                 (uVar5 & 7) << 0x12 | (s.str[uVar4 + 1] & 0x3f) << 0xc |
+                 (s.str[uVar4 + 2] & 0x3f) << 6) - 0x10000 < 0x100000)))) {
+      return;
     }
     return;
   }
@@ -47040,8 +46749,6 @@ void runtime_writebarrierptr_prewrite_func1(void)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void runtime_typedslicecopy_func1(void)
 
 {
@@ -47049,7 +46756,7 @@ void runtime_typedslicecopy_func1(void)
   void **dst;
   void **dst_00;
   int iVar2;
-  runtime__type *prVar3;
+  runtime__type **pprVar3;
   int in_EDX;
   int iVar4;
   void *pvVar5;
@@ -47065,19 +46772,17 @@ void runtime_typedslicecopy_func1(void)
   dst = *(void ***)(in_EDX + 4);
   dst_00 = *(void ***)(in_EDX + 8);
   iVar2 = *(int *)(in_EDX + 0xc);
-  prVar3 = *(runtime__type **)(in_EDX + 0x10);
+  pprVar3 = *(runtime__type ***)(in_EDX + 0x10);
   pvVar5 = *dst_00;
-  if ((*dst < pvVar5) &&
-     (iVar4 = ((runtime__type *)prVar3->size)->size, pvVar5 < (void *)(iVar2 * iVar4 + (int)*dst)))
-  {
-    pvVar5 = (void *)((int)pvVar5 + iVar4 * (iVar2 + -1));
+  if ((*dst < pvVar5) && (pvVar5 < (void *)(iVar2 * (*pprVar3)->size + (int)*dst))) {
+    pvVar5 = (void *)((int)pvVar5 + (*pprVar3)->size * (iVar2 + -1));
     if (runtime_writeBarrier._0_4_ == 0) {
       *dst_00 = pvVar5;
     }
     else {
       runtime_writebarrierptr((uintptr *)dst_00,(uintptr)pvVar5);
     }
-    pvVar5 = (void *)(((runtime__type *)prVar3->size)->size * (iVar2 + -1) + (int)*dst);
+    pvVar5 = (void *)((*pprVar3)->size * (iVar2 + -1) + (int)*dst);
     if (runtime_writeBarrier._0_4_ == 0) {
       *dst = pvVar5;
     }
@@ -47086,17 +46791,17 @@ void runtime_typedslicecopy_func1(void)
     }
     iVar4 = 0;
     while( true ) {
-      runtime_typedmemmove((runtime__type *)prVar3->size,*dst_00,*dst);
+      runtime_typedmemmove(*pprVar3,*dst_00,*dst);
       iVar4 = iVar4 + 1;
       if (iVar2 <= iVar4) break;
-      pvVar5 = (void *)((int)*dst_00 - ((runtime__type *)prVar3->size)->size);
+      pvVar5 = (void *)((int)*dst_00 - (*pprVar3)->size);
       if (runtime_writeBarrier._0_4_ == 0) {
         *dst_00 = pvVar5;
       }
       else {
         runtime_writebarrierptr((uintptr *)dst_00,(uintptr)pvVar5);
       }
-      pvVar5 = (void *)((int)*dst - ((runtime__type *)prVar3->size)->size);
+      pvVar5 = (void *)((int)*dst - (*pprVar3)->size);
       if (runtime_writeBarrier._0_4_ == 0) {
         *dst = pvVar5;
       }
@@ -47108,17 +46813,17 @@ void runtime_typedslicecopy_func1(void)
   else {
     iVar4 = 0;
     while( true ) {
-      runtime_typedmemmove((runtime__type *)prVar3->size,*dst_00,*dst);
+      runtime_typedmemmove(*pprVar3,*dst_00,*dst);
       iVar4 = iVar4 + 1;
       if (iVar2 <= iVar4) break;
-      pvVar5 = (void *)(((runtime__type *)prVar3->size)->size + (int)*dst_00);
+      pvVar5 = (void *)((*pprVar3)->size + (int)*dst_00);
       if (runtime_writeBarrier._0_4_ == 0) {
         *dst_00 = pvVar5;
       }
       else {
         runtime_writebarrierptr((uintptr *)dst_00,(uintptr)pvVar5);
       }
-      pvVar5 = (void *)((int)*dst + ((runtime__type *)prVar3->size)->size);
+      pvVar5 = (void *)((int)*dst + (*pprVar3)->size);
       if (runtime_writeBarrier._0_4_ == 0) {
         *dst = pvVar5;
       }
@@ -47228,13 +46933,13 @@ void runtime___gcControllerState__findRunnableGCWorker_func1(int64 *ptr,bool _r1
     return;
   }
   if (*(int *)ptr != 0 && *(int *)((int)ptr + 4) == 0 || 0 < *(int *)((int)ptr + 4)) {
-    runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
+    runtime_internal_atomic_Xaddint64
               ((uint64 *)ptr,-1,CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
     if (-1 < in_stack_fffffffc) {
       return;
     }
-    runtime_fwdslash_internal_fwdslash_atomic_Xaddint64
-              ((uint64 *)ptr,1,CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
+    runtime_internal_atomic_Xaddint64((uint64 *)ptr,1,CONCAT44(in_stack_fffffffc,in_stack_fffffff8))
+    ;
   }
   return;
 }
@@ -47446,19 +47151,17 @@ void runtime_gcBgMarkWorker_func2(void)
     }
     runtime_gcDrain(&_p_->gcw,6);
   }
+  else if (iVar2 == 1) {
+    runtime_gcDrain(&_p_->gcw,5);
+  }
   else {
-    if (iVar2 == 1) {
-      runtime_gcDrain(&_p_->gcw,5);
+    if (iVar2 != 2) {
+      runtime_throw((string)0x2b080e6ab7);
+      do {
+        invalidInstructionException();
+      } while( true );
     }
-    else {
-      if (iVar2 != 2) {
-        runtime_throw((string)0x2b080e6ab7);
-        do {
-          invalidInstructionException();
-        } while( true );
-      }
-      runtime_gcDrain(&_p_->gcw,0xd);
-    }
+    runtime_gcDrain(&_p_->gcw,0xd);
   }
   runtime_casgstatus(gp,4,2);
   return;
@@ -47599,13 +47302,11 @@ void runtime_gosweepone_func1(void)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void runtime_getempty_func1(void)
 
 {
   uint *puVar1;
-  runtime_mspan *prVar2;
+  runtime_mspan **pprVar2;
   int in_EDX;
   int *in_GS_OFFSET;
   runtime_mspan *in_stack_fffffff8;
@@ -47613,9 +47314,9 @@ void runtime_getempty_func1(void)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    prVar2 = *(runtime_mspan **)(in_EDX + 4);
+    pprVar2 = *(runtime_mspan ***)(in_EDX + 4);
     runtime___mheap__allocManual(&runtime_mheap_,4,&runtime_memstats.gc_sys,in_stack_fffffff8);
-    prVar2->next = in_stack_fffffff8;
+    *pprVar2 = in_stack_fffffff8;
     return;
   }
   runtime_morestack();
@@ -47954,10 +47655,8 @@ void runtime_newdefer_func2(void)
       size = (uintptr)runtime_class_to_size[runtime_size_to_class128[uVar2]];
     }
   }
-  else {
-    if (size <= size + 0x2000) {
-      size = size + 0x1fff & 0xffffe000;
-    }
+  else if (size <= size + 0x2000) {
+    size = size + 0x1fff & 0xffffe000;
   }
   runtime_mallocgc(size,runtime_deferType,true,in_stack_fffffff8);
   if (runtime_writeBarrier._0_4_ == 0) {
@@ -48073,7 +47772,7 @@ void runtime_preprintpanics_func1(void)
     return;
   }
   runtime_gorecover((uintptr)&stack0x00000004,
-                    (interface__)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
+                    (interface___)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
   if (in_stack_fffffff8 == 0) {
     return;
   }
@@ -48454,8 +48153,6 @@ void runtime_malg_func1(void)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void runtime_newproc_func1(void)
 
 {
@@ -48467,9 +48164,8 @@ void runtime_newproc_func1(void)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    runtime_newproc1((runtime_funcval *)(*(runtime_funcval **)(in_EDX + 4))->fn,
-                     *(uint8 **)(in_EDX + 8),**(int32 **)(in_EDX + 0xc),0,
-                     *(uintptr *)(in_EDX + 0x10),in_stack_fffffffc);
+    runtime_newproc1(**(runtime_funcval ***)(in_EDX + 4),*(uint8 **)(in_EDX + 8),
+                     **(int32 **)(in_EDX + 0xc),0,*(uintptr *)(in_EDX + 0x10),in_stack_fffffffc);
     return;
   }
   runtime_morestack();
@@ -48582,7 +48278,7 @@ void runtime_callers_func1(void)
     runtime_gentraceback
               (*(uintptr *)(in_EDX + 8),*(uintptr *)(in_EDX + 0xc),0,*(runtime_g **)(in_EDX + 0x10),
                **(int **)(in_EDX + 0x14),*(uintptr **)(in_EDX + 0x18),*(int *)(in_EDX + 0x1c),
-               (func__runtime_stkframe_unsafe_Pointer_bool *)0x0,(void *)0x0,0,in_stack_fffffff8);
+               (func__runtime_stkframe__unsafe_Pointer__bool *)0x0,(void *)0x0,0,in_stack_fffffff8);
     *piVar2 = in_stack_fffffff8;
     return;
   }
@@ -48600,9 +48296,10 @@ int runtime_init(EVP_PKEY_CTX *ctx)
   uint *puVar1;
   uintptr uVar2;
   undefined *puVar3;
+  int iVar4;
   int *in_GS_OFFSET;
-  undefined *puVar4;
-  undefined **ppuVar5;
+  undefined *puVar5;
+  undefined **ppuVar6;
   uintptr in_stack_fffffff8;
   undefined4 in_stack_fffffffc;
   
@@ -48610,11 +48307,11 @@ int runtime_init(EVP_PKEY_CTX *ctx)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    puVar3 = (undefined *)runtime_init(ctx);
-    return (int)puVar3;
+    iVar4 = runtime_init(ctx);
+    return iVar4;
   }
   if (1 < runtime_initdoneￂﾷ) {
-    return (int)(uint)runtime_initdoneￂﾷ;
+    return (uint)runtime_initdoneￂﾷ;
   }
   if (runtime_initdoneￂﾷ == 1) {
     runtime_throwinit();
@@ -48627,16 +48324,16 @@ int runtime_init(EVP_PKEY_CTX *ctx)
   ;
   runtime_inf = (float64)CONCAT44(in_stack_fffffffc,in_stack_fffffff8);
   uVar2 = in_stack_fffffff8;
-  runtime_funcPC((interface__)0x80e7bc8080cf940,in_stack_fffffff8);
+  runtime_funcPC((interface___)0x80e7bc8080cf940,in_stack_fffffff8);
   runtime_chansendpc = uVar2;
-  puVar4 = &DAT_080cf900;
-  ppuVar5 = &PTR_runtime_chanrecv_080e7bc4;
+  puVar5 = &DAT_080cf900;
+  ppuVar6 = &PTR_runtime_chanrecv_080e7bc4;
   uVar2 = runtime_chansendpc;
-  runtime_funcPC((interface__)0x80e7bc4080cf900,runtime_chansendpc);
+  runtime_funcPC((interface___)0x80e7bc4080cf900,runtime_chansendpc);
   runtime_chanrecvpc = uVar2;
   runtime_nanotime();
-  puVar3 = puVar4 + -1;
-  runtime_startNano._4_4_ = (int)ppuVar5 + ((puVar4 != (undefined *)0x0) - 1);
+  puVar3 = puVar5 + -1;
+  runtime_startNano._4_4_ = (int)ppuVar6 + ((puVar5 != (undefined *)0x0) - 1);
   runtime_startNano._0_4_ = puVar3;
   runtime_init_0();
   runtime_init_1();
@@ -54522,9 +54219,9 @@ int runtime_clone(__fn *__fn,void *__child_stack,int __flags,void *__arg,...)
 
 {
   undefined4 uVar1;
-  uint uVar2;
+  int iVar2;
   undefined4 uVar3;
-  int iVar4;
+  uint uVar4;
   undefined4 extraout_ECX;
   undefined4 extraout_ECX_00;
   int iVar5;
@@ -54545,10 +54242,10 @@ int runtime_clone(__fn *__fn,void *__child_stack,int __flags,void *__arg,...)
   *(undefined4 *)((int)__child_stack + -8) = in_stack_00000014;
   *(undefined4 *)((int)__child_stack + -4) = 0x4d2;
   pcVar10 = (code *)swi(0x80);
-  uVar2 = (*pcVar10)();
+  iVar2 = (*pcVar10)();
   pp_Var7 = &__fn;
-  if (uVar2 != 0) {
-    return uVar2;
+  if (iVar2 != 0) {
+    return iVar2;
   }
   if (__arg != (void *)0x4d2) {
     pcVar10 = (code *)swi(3);
@@ -54557,22 +54254,22 @@ int runtime_clone(__fn *__fn,void *__child_stack,int __flags,void *__arg,...)
   }
   pcVar10 = (code *)swi(0x80);
   uVar3 = (*pcVar10)();
-  iVar4 = ((int *)pp_Var7)[1];
+  iVar2 = ((int *)pp_Var7)[1];
   iVar5 = ((int *)pp_Var7)[2];
   pcVar10 = (code *)((int *)pp_Var7)[3];
-  if ((iVar4 != 0) && (iVar5 != 0)) {
-    *(undefined4 *)(iVar4 + 0x24) = uVar3;
-    iVar11 = *(int *)(iVar4 + 100) + 7;
+  if ((iVar2 != 0) && (iVar5 != 0)) {
+    *(undefined4 *)(iVar2 + 0x24) = uVar3;
+    iVar11 = *(int *)(iVar2 + 100) + 7;
     *pp_Var7 = (__fn *)uVar3;
     ((int *)pp_Var7)[-1] = extraout_ECX;
     ((int *)pp_Var7)[-2] = iVar5;
-    ((int *)pp_Var7)[-3] = iVar4;
+    ((int *)pp_Var7)[-3] = iVar2;
     ((int *)pp_Var7)[-4] = (int)((int *)pp_Var7 + 1);
-    ((int *)pp_Var7)[-5] = iVar4 + 0x38;
+    ((int *)pp_Var7)[-5] = iVar2 + 0x38;
     ((int *)pp_Var7)[-6] = (int)pcVar10;
     ((int *)pp_Var7)[-7] = iVar11;
     ((int *)pp_Var7)[-8] = 0x20;
-    ((int *)pp_Var7)[-9] = iVar4 + 0x38;
+    ((int *)pp_Var7)[-9] = iVar2 + 0x38;
     ((int *)pp_Var7)[-10] = iVar11;
     ((int *)pp_Var7)[-0xb] = 0x8090a9b;
     runtime_setldt();
@@ -54581,14 +54278,14 @@ int runtime_clone(__fn *__fn,void *__child_stack,int __flags,void *__arg,...)
     uVar8 = ((int *)pp_Var7)[-5];
     puVar6 = (undefined4 *)((int *)pp_Var7)[-3];
     iVar5 = ((int *)pp_Var7)[-2];
-    iVar4 = *in_GS_OFFSET;
-    *(int *)(iVar4 + -4) = iVar5;
+    iVar2 = *in_GS_OFFSET;
+    *(int *)(iVar2 + -4) = iVar5;
     *(undefined4 **)(iVar5 + 0x18) = puVar6;
     *pp_Var7 = (__fn *)0x8090ab4;
     runtime_stackcheck();
     uVar3 = *extraout_EDX;
     uVar1 = *puVar6;
-    *pp_Var7 = (__fn *)iVar4;
+    *pp_Var7 = (__fn *)iVar2;
     ((int *)pp_Var7)[-1] = extraout_ECX_00;
     ((int *)pp_Var7)[-2] = uVar3;
     ((int *)pp_Var7)[-3] = uVar1;
@@ -54606,12 +54303,12 @@ int runtime_clone(__fn *__fn,void *__child_stack,int __flags,void *__arg,...)
   runtime_exit1();
   _DAT_00001005 = 0x1234;
   pcVar10 = (code *)swi(0x80);
-  uVar2 = (*pcVar10)();
-  if (0xfffff001 < uVar2) {
+  uVar4 = (*pcVar10)();
+  if (0xfffff001 < uVar4) {
     pcVar10 = (code *)swi(3);
-    uVar2 = (*pcVar10)();
+    uVar4 = (*pcVar10)();
   }
-  return uVar2;
+  return uVar4;
 }
 
 
@@ -55033,7 +54730,7 @@ void type__eq_runtime_MemStats(runtime_MemStats *p,runtime_MemStats *q,bool _r2)
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     runtime_memequal();
-    if ((((local_4 != '\0') && ((double)p->GCCPUFraction == (double)q->GCCPUFraction)) &&
+    if ((((local_4 != '\0') && (p->GCCPUFraction == q->GCCPUFraction)) &&
         (p->EnableGC == q->EnableGC)) && (p->DebugGC == q->DebugGC)) {
       runtime_memequal();
     }
@@ -55095,25 +54792,21 @@ void type__eq_runtime_TypeAssertionError
   if (cVar2 == '\0') {
     cVar2 = '\0';
   }
+  else if ((q->concreteString).len == (p->concreteString).len) {
+    runtime_eqstring();
+    cVar2 = local_4;
+  }
   else {
-    if ((q->concreteString).len == (p->concreteString).len) {
-      runtime_eqstring();
-      cVar2 = local_4;
-    }
-    else {
-      cVar2 = '\0';
-    }
+    cVar2 = '\0';
   }
   if (cVar2 == '\0') {
     local_4 = '\0';
   }
+  else if ((p->assertedString).len == (q->assertedString).len) {
+    runtime_eqstring();
+  }
   else {
-    if ((p->assertedString).len == (q->assertedString).len) {
-      runtime_eqstring();
-    }
-    else {
-      local_4 = '\0';
-    }
+    local_4 = '\0';
   }
   if ((local_4 != '\0') && ((q->missingMethod).len == (p->missingMethod).len)) {
     runtime_eqstring();
@@ -55431,13 +55124,11 @@ void type__eq_runtime_dbgVar(runtime_dbgVar *p,runtime_dbgVar *q,bool _r2)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void runtime___errorString__Error(runtime_errorString *_this,string _r0)
 
 {
   uint *puVar1;
-  runtime_errorString *prVar2;
+  int *piVar2;
   int *in_GS_OFFSET;
   undefined4 in_stack_fffffff8;
   undefined4 in_stack_fffffffc;
@@ -55449,10 +55140,9 @@ void runtime___errorString__Error(runtime_errorString *_this,string _r0)
     runtime___errorString__Error(_this,(string)CONCAT44(_r0.len,_r0.str));
     return;
   }
-  prVar2 = *(runtime_errorString **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
-  if ((prVar2 != (runtime_errorString *)0x0) &&
-     ((runtime_errorString *)prVar2->str == (runtime_errorString *)&_this)) {
-    prVar2->str = (uint8 *)&stack0xffffffe4;
+  piVar2 = *(int **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
+  if ((piVar2 != (int *)0x0) && ((runtime_errorString **)*piVar2 == &_this)) {
+    *piVar2 = (int)&stack0xffffffe4;
   }
   if (_this != (runtime_errorString *)0x0) {
     runtime_concatstring2
@@ -55605,8 +55295,8 @@ void type__eq_runtime_mcentral(runtime_mcentral *p,runtime_mcentral *q,bool _r2)
 
 // Original name: type..hash.struct { runtime.mcentral runtime.mcentral; runtime.pad [32]uint8 }
 
-void type__hash_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_
-               (struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_ *p,uintptr h,
+void type__hash_struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__
+               (struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__ *p,uintptr h,
                uintptr _r2)
 
 {
@@ -55623,7 +55313,7 @@ void type__hash_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_
     return;
   }
   runtime_morestack_noctxt();
-  type__hash_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_(p,h,_r2);
+  type__hash_struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__(p,h,_r2);
   return;
 }
 
@@ -55631,9 +55321,9 @@ void type__hash_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_
 
 // Original name: type..eq.struct { runtime.mcentral runtime.mcentral; runtime.pad [32]uint8 }
 
-void type__eq_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_
-               (struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_ *p,
-               struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_ *q,bool _r2)
+void type__eq_struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__
+               (struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__ *p,
+               struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__ *q,bool _r2)
 
 {
   uint *puVar1;
@@ -55644,7 +55334,7 @@ void type__eq_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    type__eq_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_(p,q,_r2);
+    type__eq_struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__(p,q,_r2);
     return;
   }
   type__eq_runtime_mcentral(&p->mcentral,&q->mcentral,(bool)in_stack_fffffff8);
@@ -55659,9 +55349,9 @@ void type__eq_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_
 // Original name: type..hash.[134]struct { runtime.mcentral runtime.mcentral; runtime.pad [32]uint8
 // }
 
-void type__hash__134_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_
-               (struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_ (*p) [134],uintptr h,
-               uintptr _r2)
+void type__hash__134_struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__
+               (struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__ (*p) [134],
+               uintptr h,uintptr _r2)
 
 {
   uint *puVar1;
@@ -55673,7 +55363,7 @@ void type__hash__134_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     for (iVar2 = 0; iVar2 < 0x86; iVar2 = iVar2 + 1) {
-      type__hash_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_
+      type__hash_struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__
                 (*p + iVar2,h,in_stack_fffffff8);
       h = in_stack_fffffff8;
       in_stack_fffffff8 = h;
@@ -55681,7 +55371,7 @@ void type__hash__134_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint
     return;
   }
   runtime_morestack_noctxt();
-  type__hash__134_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_(p,h,_r2);
+  type__hash__134_struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__(p,h,_r2);
   return;
 }
 
@@ -55689,9 +55379,10 @@ void type__hash__134_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint
 
 // Original name: type..eq.[134]struct { runtime.mcentral runtime.mcentral; runtime.pad [32]uint8 }
 
-void type__eq__134_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_
-               (struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_ (*p) [134],
-               struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_ (*q) [134],bool _r2)
+void type__eq__134_struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__
+               (struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__ (*p) [134],
+               struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__ (*q) [134],
+               bool _r2)
 
 {
   uint *puVar1;
@@ -55705,7 +55396,7 @@ void type__eq__134_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    type__eq__134_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_(p,q,_r2);
+    type__eq__134_struct___runtime_mcentral_runtime_mcentral__runtime_pad__32_uint8__(p,q,_r2);
     return;
   }
   iVar2 = 0;
@@ -55714,7 +55405,8 @@ void type__eq__134_struct_runtime_mcentralruntime_mcentral_runtime_pad_32_uint8_
     if (0x85 < iVar2) {
       return;
     }
-    type__eq_runtime_mcentral(&(*p)[iVar2].mcentral,&(*q)[iVar2].mcentral,(bool)_r2_00);
+    type__eq_runtime_mcentral
+              ((runtime_mcentral *)(*p + iVar2),(runtime_mcentral *)(*q + iVar2),(bool)_r2_00);
     if (_r2_00 == '\0') break;
     in_stack_fffffff0 = 0x20;
     runtime_memequal();
@@ -55770,15 +55462,10 @@ void type__eq_runtime_mstats(runtime_mstats *p,runtime_mstats *q,bool _r2)
     if (local_4 == '\0') {
       local_4 = '\0';
     }
-    else {
-      if ((double)p->gc_cpu_fraction == (double)q->gc_cpu_fraction) {
-        if (q->enablegc == p->enablegc) {
-          if (q->debuggc == p->debuggc) {
-            runtime_memequal();
-          }
-          else {
-            local_4 = '\0';
-          }
+    else if (p->gc_cpu_fraction == q->gc_cpu_fraction) {
+      if (q->enablegc == p->enablegc) {
+        if (q->debuggc == p->debuggc) {
+          runtime_memequal();
         }
         else {
           local_4 = '\0';
@@ -55788,7 +55475,10 @@ void type__eq_runtime_mstats(runtime_mstats *p,runtime_mstats *q,bool _r2)
         local_4 = '\0';
       }
     }
-    if ((local_4 != '\0') && ((double)p->triggerRatio == (double)q->triggerRatio)) {
+    else {
+      local_4 = '\0';
+    }
+    if ((local_4 != '\0') && (p->triggerRatio == q->triggerRatio)) {
       runtime_memequal();
     }
     return;
@@ -55800,13 +55490,11 @@ void type__eq_runtime_mstats(runtime_mstats *p,runtime_mstats *q,bool _r2)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void runtime___plainError__Error(runtime_plainError *_this,string _r0)
 
 {
   uint *puVar1;
-  runtime_plainError *prVar2;
+  int *piVar2;
   int *in_GS_OFFSET;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
@@ -55816,10 +55504,9 @@ void runtime___plainError__Error(runtime_plainError *_this,string _r0)
     runtime___plainError__Error(_this,(string)CONCAT44(_r0.len,_r0.str));
     return;
   }
-  prVar2 = *(runtime_plainError **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
-  if ((prVar2 != (runtime_plainError *)0x0) &&
-     ((runtime_plainError *)prVar2->str == (runtime_plainError *)&_this)) {
-    prVar2->str = (uint8 *)register0x00000010;
+  piVar2 = *(int **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
+  if ((piVar2 != (int *)0x0) && ((runtime_plainError **)*piVar2 == &_this)) {
+    *piVar2 = (int)register0x00000010;
   }
   if (_this != (runtime_plainError *)0x0) {
     return;
@@ -56156,7 +55843,7 @@ void type__eq__33_float64(float64 (*p) [33],float64 (*q) [33],bool _r2)
     if (0x20 < iVar2) {
       return;
     }
-    if ((double)(*p)[iVar2] != (double)(*q)[iVar2]) break;
+    if ((*p)[iVar2] != (*q)[iVar2]) break;
     iVar2 = iVar2 + 1;
   }
   return;
@@ -56511,8 +56198,8 @@ void type__eq__9_string(string (*p) [9],string (*q) [9],bool _r2)
 
 // Original name: type..hash.struct { runtime.cycle uint32; runtime.flushed bool }
 
-void type__hash_struct_runtime_cycleuint32_runtime_flushedbool_
-               (struct_runtime_cycleuint32_runtime_flushedbool_ *p,uintptr h,uintptr _r2)
+void type__hash_struct___runtime_cycle_uint32__runtime_flushed_bool__
+               (struct___runtime_cycle_uint32__runtime_flushed_bool__ *p,uintptr h,uintptr _r2)
 
 {
   uint *puVar1;
@@ -56526,7 +56213,7 @@ void type__hash_struct_runtime_cycleuint32_runtime_flushedbool_
     return;
   }
   runtime_morestack_noctxt();
-  type__hash_struct_runtime_cycleuint32_runtime_flushedbool_(p,h,_r2);
+  type__hash_struct___runtime_cycle_uint32__runtime_flushed_bool__(p,h,_r2);
   return;
 }
 
@@ -56534,9 +56221,9 @@ void type__hash_struct_runtime_cycleuint32_runtime_flushedbool_
 
 // Original name: type..eq.struct { runtime.cycle uint32; runtime.flushed bool }
 
-void type__eq_struct_runtime_cycleuint32_runtime_flushedbool_
-               (struct_runtime_cycleuint32_runtime_flushedbool_ *p,
-               struct_runtime_cycleuint32_runtime_flushedbool_ *q,bool _r2)
+void type__eq_struct___runtime_cycle_uint32__runtime_flushed_bool__
+               (struct___runtime_cycle_uint32__runtime_flushed_bool__ *p,
+               struct___runtime_cycle_uint32__runtime_flushed_bool__ *q,bool _r2)
 
 {
   uint *puVar1;
@@ -56548,7 +56235,7 @@ void type__eq_struct_runtime_cycleuint32_runtime_flushedbool_
     return;
   }
   runtime_morestack_noctxt();
-  type__eq_struct_runtime_cycleuint32_runtime_flushedbool_(p,q,_r2);
+  type__eq_struct___runtime_cycle_uint32__runtime_flushed_bool__(p,q,_r2);
   return;
 }
 
@@ -56557,8 +56244,8 @@ void type__eq_struct_runtime_cycleuint32_runtime_flushedbool_
 // Original name: type..hash.struct { runtime.enabled bool; runtime.pad [3]uint8; runtime.needed
 // bool; runtime.cgo bool; runtime.alignme uint64 }
 
-void type__hash_struct_runtime_enabledbool_runtime_pad_3_uint8_runtime_neededbool_runtime_cgobool_runtime_alignmeuint64_
-               (struct_runtime_enabledbool_runtime_pad_3_uint8_runtime_neededbool_runtime_cgobool_runtime_alignmeuint64_
+void type__hash_struct___runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64__
+               (struct___runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64__
                 *p,uintptr h,uintptr _r2)
 
 {
@@ -56574,7 +56261,7 @@ void type__hash_struct_runtime_enabledbool_runtime_pad_3_uint8_runtime_neededboo
     return;
   }
   runtime_morestack_noctxt();
-  type__hash_struct_runtime_enabledbool_runtime_pad_3_uint8_runtime_neededbool_runtime_cgobool_runtime_alignmeuint64_
+  type__hash_struct___runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64__
             (p,h,_r2);
   return;
 }
@@ -56584,9 +56271,9 @@ void type__hash_struct_runtime_enabledbool_runtime_pad_3_uint8_runtime_neededboo
 // Original name: type..eq.struct { runtime.enabled bool; runtime.pad [3]uint8; runtime.needed bool;
 // runtime.cgo bool; runtime.alignme uint64 }
 
-void type__eq_struct_runtime_enabledbool_runtime_pad_3_uint8_runtime_neededbool_runtime_cgobool_runtime_alignmeuint64_
-               (struct_runtime_enabledbool_runtime_pad_3_uint8_runtime_neededbool_runtime_cgobool_runtime_alignmeuint64_
-                *p,struct_runtime_enabledbool_runtime_pad_3_uint8_runtime_neededbool_runtime_cgobool_runtime_alignmeuint64_
+void type__eq_struct___runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64__
+               (struct___runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64__
+                *p,struct___runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64__
                    *q,bool _r2)
 
 {
@@ -56600,7 +56287,7 @@ void type__eq_struct_runtime_enabledbool_runtime_pad_3_uint8_runtime_neededbool_
     return;
   }
   runtime_morestack_noctxt();
-  type__eq_struct_runtime_enabledbool_runtime_pad_3_uint8_runtime_neededbool_runtime_cgobool_runtime_alignmeuint64_
+  type__eq_struct___runtime_enabled_bool__runtime_pad__3_uint8__runtime_needed_bool__runtime_cgo_bool__runtime_alignme_uint64__
             (p,q,_r2);
   return;
 }
@@ -56624,8 +56311,8 @@ void type__eq_struct_runtime_enabledbool_runtime_pad_3_uint8_runtime_neededbool_
 // runtime.pauseStart int64; runtime.heap0 uint64; runtime.heap1 uint64; runtime.heap2 uint64;
 // runtime.heapGoal uint64 }
 
-void type__hash_struct_runtime_fullruntime_lfstack_runtime_emptyruntime_lfstack_runtime_pad0_64_uint8_runtime_wbufSpansstruct_runtime_lockruntime_mutex_runtime_freeruntime_mSpanList_runtime_busyruntime_mSpanList___uint32_runtime_bytesMarkeduint64_runtime_markrootNextuint32_runtime_markrootJobsuint32_runtime_nprocuint32_runtime_tstartint64_runtime_nwaituint32_runtime_ndoneuint32_runtime_alldoneruntime_note_runtime_helperDrainBlockbool_runtime_nFlushCacheRootsint_runtime_nDataRootsint_runtime_nBSSRootsint_runtime_nSpanRootsint_runtime_nStackRootsint_runtime_markrootDonebool_runtime_startSemauint32_runtime_markDoneSemauint32_runtime_bgMarkReadyruntime_note_runtime_bgMarkDoneuint32_runtime_moderuntime_gcMode_runtime_userForcedbool_runtime_totaltimeint64_runtime_initialHeapLiveuint64_runtime_assistQueuestruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr_runtime_tailruntime_guintptr__runtime_sweepWaitersstruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr__runtime_cyclesuint32_runtime_stwprocsint32_runtime_maxprocsint32_runtime_tSweepTermint64_runtime_tMarkint64_runtime_tMarkTermint64_runtime_tEndint64_runtime_pauseNSint64_runtime_pauseStartint64_runtime_heap0uint64_runtime_heap1uint64_runtime_heap2uint64_runtime_heapGoaluint64_
-               (struct_runtime_fullruntime_lfstack_runtime_emptyruntime_lfstack_runtime_pad0_64_uint8_runtime_wbufSpansstruct_runtime_lockruntime_mutex_runtime_freeruntime_mSpanList_runtime_busyruntime_mSpanList___uint32_runtime_bytesMarkeduint64_runtime_markrootNextuint32_runtime_markrootJobsuint32_runtime_nprocuint32_runtime_tstartint64_runtime_nwaituint32_runtime_ndoneuint32_runtime_alldoneruntime_note_runtime_helperDrainBlockbool_runtime_nFlushCacheRootsint_runtime_nDataRootsint_runtime_nBSSRootsint_runtime_nSpanRootsint_runtime_nStackRootsint_runtime_markrootDonebool_runtime_startSemauint32_runtime_markDoneSemauint32_runtime_bgMarkReadyruntime_note_runtime_bgMarkDoneuint32_runtime_moderuntime_gcMode_runtime_userForcedbool_runtime_totaltimeint64_runtime_initialHeapLiveuint64_runtime_assistQueuestruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr_runtime_tailruntime_guintptr__runtime_sweepWaitersstruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr__runtime_cyclesuint32_runtime_stwprocsint32_runtime_maxprocsint32_runtime_tSweepTermint64_runtime_tMarkint64_runtime_tMarkTermint64_runtime_tEndint64_runtime_pauseNSint64_runtime_pauseStartint64_runtime_heap0uint64_runtime_heap1uint64_runtime_heap2uint64_runtime_heapGoaluint64_
+void type__hash_struct___runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct___runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList______uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr____runtime_sweepWaiters_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr____runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64__
+               (struct___runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct___runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList______uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr____runtime_sweepWaiters_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr____runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64__
                 *p,uintptr h,uintptr _r2)
 
 {
@@ -56644,7 +56331,7 @@ void type__hash_struct_runtime_fullruntime_lfstack_runtime_emptyruntime_lfstack_
     return;
   }
   runtime_morestack_noctxt();
-  type__hash_struct_runtime_fullruntime_lfstack_runtime_emptyruntime_lfstack_runtime_pad0_64_uint8_runtime_wbufSpansstruct_runtime_lockruntime_mutex_runtime_freeruntime_mSpanList_runtime_busyruntime_mSpanList___uint32_runtime_bytesMarkeduint64_runtime_markrootNextuint32_runtime_markrootJobsuint32_runtime_nprocuint32_runtime_tstartint64_runtime_nwaituint32_runtime_ndoneuint32_runtime_alldoneruntime_note_runtime_helperDrainBlockbool_runtime_nFlushCacheRootsint_runtime_nDataRootsint_runtime_nBSSRootsint_runtime_nSpanRootsint_runtime_nStackRootsint_runtime_markrootDonebool_runtime_startSemauint32_runtime_markDoneSemauint32_runtime_bgMarkReadyruntime_note_runtime_bgMarkDoneuint32_runtime_moderuntime_gcMode_runtime_userForcedbool_runtime_totaltimeint64_runtime_initialHeapLiveuint64_runtime_assistQueuestruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr_runtime_tailruntime_guintptr__runtime_sweepWaitersstruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr__runtime_cyclesuint32_runtime_stwprocsint32_runtime_maxprocsint32_runtime_tSweepTermint64_runtime_tMarkint64_runtime_tMarkTermint64_runtime_tEndint64_runtime_pauseNSint64_runtime_pauseStartint64_runtime_heap0uint64_runtime_heap1uint64_runtime_heap2uint64_runtime_heapGoaluint64_
+  type__hash_struct___runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct___runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList______uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr____runtime_sweepWaiters_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr____runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64__
             (p,h,_r2);
   return;
 }
@@ -56668,9 +56355,9 @@ void type__hash_struct_runtime_fullruntime_lfstack_runtime_emptyruntime_lfstack_
 // runtime.pauseStart int64; runtime.heap0 uint64; runtime.heap1 uint64; runtime.heap2 uint64;
 // runtime.heapGoal uint64 }
 
-void type__eq_struct_runtime_fullruntime_lfstack_runtime_emptyruntime_lfstack_runtime_pad0_64_uint8_runtime_wbufSpansstruct_runtime_lockruntime_mutex_runtime_freeruntime_mSpanList_runtime_busyruntime_mSpanList___uint32_runtime_bytesMarkeduint64_runtime_markrootNextuint32_runtime_markrootJobsuint32_runtime_nprocuint32_runtime_tstartint64_runtime_nwaituint32_runtime_ndoneuint32_runtime_alldoneruntime_note_runtime_helperDrainBlockbool_runtime_nFlushCacheRootsint_runtime_nDataRootsint_runtime_nBSSRootsint_runtime_nSpanRootsint_runtime_nStackRootsint_runtime_markrootDonebool_runtime_startSemauint32_runtime_markDoneSemauint32_runtime_bgMarkReadyruntime_note_runtime_bgMarkDoneuint32_runtime_moderuntime_gcMode_runtime_userForcedbool_runtime_totaltimeint64_runtime_initialHeapLiveuint64_runtime_assistQueuestruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr_runtime_tailruntime_guintptr__runtime_sweepWaitersstruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr__runtime_cyclesuint32_runtime_stwprocsint32_runtime_maxprocsint32_runtime_tSweepTermint64_runtime_tMarkint64_runtime_tMarkTermint64_runtime_tEndint64_runtime_pauseNSint64_runtime_pauseStartint64_runtime_heap0uint64_runtime_heap1uint64_runtime_heap2uint64_runtime_heapGoaluint64_
-               (struct_runtime_fullruntime_lfstack_runtime_emptyruntime_lfstack_runtime_pad0_64_uint8_runtime_wbufSpansstruct_runtime_lockruntime_mutex_runtime_freeruntime_mSpanList_runtime_busyruntime_mSpanList___uint32_runtime_bytesMarkeduint64_runtime_markrootNextuint32_runtime_markrootJobsuint32_runtime_nprocuint32_runtime_tstartint64_runtime_nwaituint32_runtime_ndoneuint32_runtime_alldoneruntime_note_runtime_helperDrainBlockbool_runtime_nFlushCacheRootsint_runtime_nDataRootsint_runtime_nBSSRootsint_runtime_nSpanRootsint_runtime_nStackRootsint_runtime_markrootDonebool_runtime_startSemauint32_runtime_markDoneSemauint32_runtime_bgMarkReadyruntime_note_runtime_bgMarkDoneuint32_runtime_moderuntime_gcMode_runtime_userForcedbool_runtime_totaltimeint64_runtime_initialHeapLiveuint64_runtime_assistQueuestruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr_runtime_tailruntime_guintptr__runtime_sweepWaitersstruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr__runtime_cyclesuint32_runtime_stwprocsint32_runtime_maxprocsint32_runtime_tSweepTermint64_runtime_tMarkint64_runtime_tMarkTermint64_runtime_tEndint64_runtime_pauseNSint64_runtime_pauseStartint64_runtime_heap0uint64_runtime_heap1uint64_runtime_heap2uint64_runtime_heapGoaluint64_
-                *p,struct_runtime_fullruntime_lfstack_runtime_emptyruntime_lfstack_runtime_pad0_64_uint8_runtime_wbufSpansstruct_runtime_lockruntime_mutex_runtime_freeruntime_mSpanList_runtime_busyruntime_mSpanList___uint32_runtime_bytesMarkeduint64_runtime_markrootNextuint32_runtime_markrootJobsuint32_runtime_nprocuint32_runtime_tstartint64_runtime_nwaituint32_runtime_ndoneuint32_runtime_alldoneruntime_note_runtime_helperDrainBlockbool_runtime_nFlushCacheRootsint_runtime_nDataRootsint_runtime_nBSSRootsint_runtime_nSpanRootsint_runtime_nStackRootsint_runtime_markrootDonebool_runtime_startSemauint32_runtime_markDoneSemauint32_runtime_bgMarkReadyruntime_note_runtime_bgMarkDoneuint32_runtime_moderuntime_gcMode_runtime_userForcedbool_runtime_totaltimeint64_runtime_initialHeapLiveuint64_runtime_assistQueuestruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr_runtime_tailruntime_guintptr__runtime_sweepWaitersstruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr__runtime_cyclesuint32_runtime_stwprocsint32_runtime_maxprocsint32_runtime_tSweepTermint64_runtime_tMarkint64_runtime_tMarkTermint64_runtime_tEndint64_runtime_pauseNSint64_runtime_pauseStartint64_runtime_heap0uint64_runtime_heap1uint64_runtime_heap2uint64_runtime_heapGoaluint64_
+void type__eq_struct___runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct___runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList______uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr____runtime_sweepWaiters_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr____runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64__
+               (struct___runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct___runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList______uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr____runtime_sweepWaiters_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr____runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64__
+                *p,struct___runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct___runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList______uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr____runtime_sweepWaiters_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr____runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64__
                    *q,bool _r2)
 
 {
@@ -56683,7 +56370,7 @@ void type__eq_struct_runtime_fullruntime_lfstack_runtime_emptyruntime_lfstack_ru
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    type__eq_struct_runtime_fullruntime_lfstack_runtime_emptyruntime_lfstack_runtime_pad0_64_uint8_runtime_wbufSpansstruct_runtime_lockruntime_mutex_runtime_freeruntime_mSpanList_runtime_busyruntime_mSpanList___uint32_runtime_bytesMarkeduint64_runtime_markrootNextuint32_runtime_markrootJobsuint32_runtime_nprocuint32_runtime_tstartint64_runtime_nwaituint32_runtime_ndoneuint32_runtime_alldoneruntime_note_runtime_helperDrainBlockbool_runtime_nFlushCacheRootsint_runtime_nDataRootsint_runtime_nBSSRootsint_runtime_nSpanRootsint_runtime_nStackRootsint_runtime_markrootDonebool_runtime_startSemauint32_runtime_markDoneSemauint32_runtime_bgMarkReadyruntime_note_runtime_bgMarkDoneuint32_runtime_moderuntime_gcMode_runtime_userForcedbool_runtime_totaltimeint64_runtime_initialHeapLiveuint64_runtime_assistQueuestruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr_runtime_tailruntime_guintptr__runtime_sweepWaitersstruct_runtime_lockruntime_mutex_runtime_headruntime_guintptr__runtime_cyclesuint32_runtime_stwprocsint32_runtime_maxprocsint32_runtime_tSweepTermint64_runtime_tMarkint64_runtime_tMarkTermint64_runtime_tEndint64_runtime_pauseNSint64_runtime_pauseStartint64_runtime_heap0uint64_runtime_heap1uint64_runtime_heap2uint64_runtime_heapGoaluint64_
+    type__eq_struct___runtime_full_runtime_lfstack__runtime_empty_runtime_lfstack__runtime_pad0__64_uint8__runtime_wbufSpans_struct___runtime_lock_runtime_mutex__runtime_free_runtime_mSpanList__runtime_busy_runtime_mSpanList______uint32__runtime_bytesMarked_uint64__runtime_markrootNext_uint32__runtime_markrootJobs_uint32__runtime_nproc_uint32__runtime_tstart_int64__runtime_nwait_uint32__runtime_ndone_uint32__runtime_alldone_runtime_note__runtime_helperDrainBlock_bool__runtime_nFlushCacheRoots_int__runtime_nDataRoots_int__runtime_nBSSRoots_int__runtime_nSpanRoots_int__runtime_nStackRoots_int__runtime_markrootDone_bool__runtime_startSema_uint32__runtime_markDoneSema_uint32__runtime_bgMarkReady_runtime_note__runtime_bgMarkDone_uint32__runtime_mode_runtime_gcMode__runtime_userForced_bool__runtime_totaltime_int64__runtime_initialHeapLive_uint64__runtime_assistQueue_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr__runtime_tail_runtime_guintptr____runtime_sweepWaiters_struct___runtime_lock_runtime_mutex__runtime_head_runtime_guintptr____runtime_cycles_uint32__runtime_stwprocs_int32__runtime_maxprocs_int32__runtime_tSweepTerm_int64__runtime_tMark_int64__runtime_tMarkTerm_int64__runtime_tEnd_int64__runtime_pauseNS_int64__runtime_pauseStart_int64__runtime_heap0_uint64__runtime_heap1_uint64__runtime_heap2_uint64__runtime_heapGoal_uint64__
               (p,q,_r2);
     return;
   }
@@ -56720,8 +56407,8 @@ void type__eq_struct_runtime_fullruntime_lfstack_runtime_emptyruntime_lfstack_ru
 // runtime.wanted [3]uint32; runtime.ignored [3]uint32; runtime.recv [3]uint32; runtime.state
 // uint32; runtime.inuse bool }
 
-void type__hash_struct_runtime_noteruntime_note_runtime_mask_3_uint32_runtime_wanted_3_uint32_runtime_ignored_3_uint32_runtime_recv_3_uint32_runtime_stateuint32_runtime_inusebool_
-               (struct_runtime_noteruntime_note_runtime_mask_3_uint32_runtime_wanted_3_uint32_runtime_ignored_3_uint32_runtime_recv_3_uint32_runtime_stateuint32_runtime_inusebool_
+void type__hash_struct___runtime_note_runtime_note__runtime_mask__3_uint32__runtime_wanted__3_uint32__runtime_ignored__3_uint32__runtime_recv__3_uint32__runtime_state_uint32__runtime_inuse_bool__
+               (struct___runtime_note_runtime_note__runtime_mask__3_uint32__runtime_wanted__3_uint32__runtime_ignored__3_uint32__runtime_recv__3_uint32__runtime_state_uint32__runtime_inuse_bool__
                 *p,uintptr h,uintptr _r2)
 
 {
@@ -56736,7 +56423,7 @@ void type__hash_struct_runtime_noteruntime_note_runtime_mask_3_uint32_runtime_wa
     return;
   }
   runtime_morestack_noctxt();
-  type__hash_struct_runtime_noteruntime_note_runtime_mask_3_uint32_runtime_wanted_3_uint32_runtime_ignored_3_uint32_runtime_recv_3_uint32_runtime_stateuint32_runtime_inusebool_
+  type__hash_struct___runtime_note_runtime_note__runtime_mask__3_uint32__runtime_wanted__3_uint32__runtime_ignored__3_uint32__runtime_recv__3_uint32__runtime_state_uint32__runtime_inuse_bool__
             (p,h,_r2);
   return;
 }
@@ -56747,9 +56434,9 @@ void type__hash_struct_runtime_noteruntime_note_runtime_mask_3_uint32_runtime_wa
 // runtime.wanted [3]uint32; runtime.ignored [3]uint32; runtime.recv [3]uint32; runtime.state
 // uint32; runtime.inuse bool }
 
-void type__eq_struct_runtime_noteruntime_note_runtime_mask_3_uint32_runtime_wanted_3_uint32_runtime_ignored_3_uint32_runtime_recv_3_uint32_runtime_stateuint32_runtime_inusebool_
-               (struct_runtime_noteruntime_note_runtime_mask_3_uint32_runtime_wanted_3_uint32_runtime_ignored_3_uint32_runtime_recv_3_uint32_runtime_stateuint32_runtime_inusebool_
-                *p,struct_runtime_noteruntime_note_runtime_mask_3_uint32_runtime_wanted_3_uint32_runtime_ignored_3_uint32_runtime_recv_3_uint32_runtime_stateuint32_runtime_inusebool_
+void type__eq_struct___runtime_note_runtime_note__runtime_mask__3_uint32__runtime_wanted__3_uint32__runtime_ignored__3_uint32__runtime_recv__3_uint32__runtime_state_uint32__runtime_inuse_bool__
+               (struct___runtime_note_runtime_note__runtime_mask__3_uint32__runtime_wanted__3_uint32__runtime_ignored__3_uint32__runtime_recv__3_uint32__runtime_state_uint32__runtime_inuse_bool__
+                *p,struct___runtime_note_runtime_note__runtime_mask__3_uint32__runtime_wanted__3_uint32__runtime_ignored__3_uint32__runtime_recv__3_uint32__runtime_state_uint32__runtime_inuse_bool__
                    *q,bool _r2)
 
 {
@@ -56763,7 +56450,7 @@ void type__eq_struct_runtime_noteruntime_note_runtime_mask_3_uint32_runtime_want
     return;
   }
   runtime_morestack_noctxt();
-  type__eq_struct_runtime_noteruntime_note_runtime_mask_3_uint32_runtime_wanted_3_uint32_runtime_ignored_3_uint32_runtime_recv_3_uint32_runtime_stateuint32_runtime_inusebool_
+  type__eq_struct___runtime_note_runtime_note__runtime_mask__3_uint32__runtime_wanted__3_uint32__runtime_ignored__3_uint32__runtime_recv__3_uint32__runtime_state_uint32__runtime_inuse_bool__
             (p,q,_r2);
   return;
 }
@@ -56773,9 +56460,9 @@ void type__eq_struct_runtime_noteruntime_note_runtime_mask_3_uint32_runtime_want
 // Original name: type..hash.struct { F uintptr; runtime.c *runtime.mcache; runtime.spc
 // runtime.spanClass }
 
-void type__hash_struct_Fuintptr_runtime_c_runtime_mcache_runtime_spcruntime_spanClass_
-               (struct_Fuintptr_runtime_c_runtime_mcache_runtime_spcruntime_spanClass_ *p,uintptr h,
-               uintptr _r2)
+void type__hash_struct___F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass__
+               (struct___F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass__ *p,
+               uintptr h,uintptr _r2)
 
 {
   uint *puVar1;
@@ -56789,7 +56476,8 @@ void type__hash_struct_Fuintptr_runtime_c_runtime_mcache_runtime_spcruntime_span
     return;
   }
   runtime_morestack_noctxt();
-  type__hash_struct_Fuintptr_runtime_c_runtime_mcache_runtime_spcruntime_spanClass_(p,h,_r2);
+  type__hash_struct___F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass__(p,h,_r2)
+  ;
   return;
 }
 
@@ -56798,9 +56486,10 @@ void type__hash_struct_Fuintptr_runtime_c_runtime_mcache_runtime_spcruntime_span
 // Original name: type..eq.struct { F uintptr; runtime.c *runtime.mcache; runtime.spc
 // runtime.spanClass }
 
-void type__eq_struct_Fuintptr_runtime_c_runtime_mcache_runtime_spcruntime_spanClass_
-               (struct_Fuintptr_runtime_c_runtime_mcache_runtime_spcruntime_spanClass_ *p,
-               struct_Fuintptr_runtime_c_runtime_mcache_runtime_spcruntime_spanClass_ *q,bool _r2)
+void type__eq_struct___F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass__
+               (struct___F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass__ *p,
+               struct___F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass__ *q,
+               bool _r2)
 
 {
   uint *puVar1;
@@ -56813,7 +56502,7 @@ void type__eq_struct_Fuintptr_runtime_c_runtime_mcache_runtime_spcruntime_spanCl
     return;
   }
   runtime_morestack_noctxt();
-  type__eq_struct_Fuintptr_runtime_c_runtime_mcache_runtime_spcruntime_spanClass_(p,q,_r2);
+  type__eq_struct___F_uintptr__runtime_c__runtime_mcache__runtime_spc_runtime_spanClass__(p,q,_r2);
   return;
 }
 
@@ -56821,8 +56510,8 @@ void type__eq_struct_Fuintptr_runtime_c_runtime_mcache_runtime_spcruntime_spanCl
 
 // Original name: type..hash.struct { F uintptr; runtime.preemptible bool }
 
-void type__hash_struct_Fuintptr_runtime_preemptiblebool_
-               (struct_Fuintptr_runtime_preemptiblebool_ *p,uintptr h,uintptr _r2)
+void type__hash_struct___F_uintptr__runtime_preemptible_bool__
+               (struct___F_uintptr__runtime_preemptible_bool__ *p,uintptr h,uintptr _r2)
 
 {
   uint *puVar1;
@@ -56836,7 +56525,7 @@ void type__hash_struct_Fuintptr_runtime_preemptiblebool_
     return;
   }
   runtime_morestack_noctxt();
-  type__hash_struct_Fuintptr_runtime_preemptiblebool_(p,h,_r2);
+  type__hash_struct___F_uintptr__runtime_preemptible_bool__(p,h,_r2);
   return;
 }
 
@@ -56844,9 +56533,9 @@ void type__hash_struct_Fuintptr_runtime_preemptiblebool_
 
 // Original name: type..eq.struct { F uintptr; runtime.preemptible bool }
 
-void type__eq_struct_Fuintptr_runtime_preemptiblebool_
-               (struct_Fuintptr_runtime_preemptiblebool_ *p,
-               struct_Fuintptr_runtime_preemptiblebool_ *q,bool _r2)
+void type__eq_struct___F_uintptr__runtime_preemptible_bool__
+               (struct___F_uintptr__runtime_preemptible_bool__ *p,
+               struct___F_uintptr__runtime_preemptible_bool__ *q,bool _r2)
 
 {
   uint *puVar1;
@@ -56858,7 +56547,7 @@ void type__eq_struct_Fuintptr_runtime_preemptiblebool_
     return;
   }
   runtime_morestack_noctxt();
-  type__eq_struct_Fuintptr_runtime_preemptiblebool_(p,q,_r2);
+  type__eq_struct___F_uintptr__runtime_preemptible_bool__(p,q,_r2);
   return;
 }
 
@@ -56867,8 +56556,8 @@ void type__eq_struct_Fuintptr_runtime_preemptiblebool_
 // Original name: type..hash.struct { F uintptr; runtime.s **runtime.mspan; runtime.h
 // *runtime.mheap; runtime.npage uintptr; runtime.spanclass runtime.spanClass; runtime.large bool }
 
-void type__hash_struct_Fuintptr_runtime_s__runtime_mspan_runtime_h_runtime_mheap_runtime_npageuintptr_runtime_spanclassruntime_spanClass_runtime_largebool_
-               (struct_Fuintptr_runtime_s__runtime_mspan_runtime_h_runtime_mheap_runtime_npageuintptr_runtime_spanclassruntime_spanClass_runtime_largebool_
+void type__hash_struct___F_uintptr__runtime_s___runtime_mspan__runtime_h__runtime_mheap__runtime_npage_uintptr__runtime_spanclass_runtime_spanClass__runtime_large_bool__
+               (struct___F_uintptr__runtime_s___runtime_mspan__runtime_h__runtime_mheap__runtime_npage_uintptr__runtime_spanclass_runtime_spanClass__runtime_large_bool__
                 *p,uintptr h,uintptr _r2)
 
 {
@@ -56883,7 +56572,7 @@ void type__hash_struct_Fuintptr_runtime_s__runtime_mspan_runtime_h_runtime_mheap
     return;
   }
   runtime_morestack_noctxt();
-  type__hash_struct_Fuintptr_runtime_s__runtime_mspan_runtime_h_runtime_mheap_runtime_npageuintptr_runtime_spanclassruntime_spanClass_runtime_largebool_
+  type__hash_struct___F_uintptr__runtime_s___runtime_mspan__runtime_h__runtime_mheap__runtime_npage_uintptr__runtime_spanclass_runtime_spanClass__runtime_large_bool__
             (p,h,_r2);
   return;
 }
@@ -56893,9 +56582,9 @@ void type__hash_struct_Fuintptr_runtime_s__runtime_mspan_runtime_h_runtime_mheap
 // Original name: type..eq.struct { F uintptr; runtime.s **runtime.mspan; runtime.h *runtime.mheap;
 // runtime.npage uintptr; runtime.spanclass runtime.spanClass; runtime.large bool }
 
-void type__eq_struct_Fuintptr_runtime_s__runtime_mspan_runtime_h_runtime_mheap_runtime_npageuintptr_runtime_spanclassruntime_spanClass_runtime_largebool_
-               (struct_Fuintptr_runtime_s__runtime_mspan_runtime_h_runtime_mheap_runtime_npageuintptr_runtime_spanclassruntime_spanClass_runtime_largebool_
-                *p,struct_Fuintptr_runtime_s__runtime_mspan_runtime_h_runtime_mheap_runtime_npageuintptr_runtime_spanclassruntime_spanClass_runtime_largebool_
+void type__eq_struct___F_uintptr__runtime_s___runtime_mspan__runtime_h__runtime_mheap__runtime_npage_uintptr__runtime_spanclass_runtime_spanClass__runtime_large_bool__
+               (struct___F_uintptr__runtime_s___runtime_mspan__runtime_h__runtime_mheap__runtime_npage_uintptr__runtime_spanclass_runtime_spanClass__runtime_large_bool__
+                *p,struct___F_uintptr__runtime_s___runtime_mspan__runtime_h__runtime_mheap__runtime_npage_uintptr__runtime_spanclass_runtime_spanClass__runtime_large_bool__
                    *q,bool _r2)
 
 {
@@ -56909,7 +56598,7 @@ void type__eq_struct_Fuintptr_runtime_s__runtime_mspan_runtime_h_runtime_mheap_r
     return;
   }
   runtime_morestack_noctxt();
-  type__eq_struct_Fuintptr_runtime_s__runtime_mspan_runtime_h_runtime_mheap_runtime_npageuintptr_runtime_spanclassruntime_spanClass_runtime_largebool_
+  type__eq_struct___F_uintptr__runtime_s___runtime_mspan__runtime_h__runtime_mheap__runtime_npage_uintptr__runtime_spanclass_runtime_spanClass__runtime_large_bool__
             (p,q,_r2);
   return;
 }
@@ -56919,8 +56608,8 @@ void type__eq_struct_Fuintptr_runtime_s__runtime_mspan_runtime_h_runtime_mheap_r
 // Original name: type..hash.struct { F uintptr; runtime.s **runtime.mspan; runtime.size *uintptr;
 // runtime.needzero bool; runtime.noscan bool }
 
-void type__hash_struct_Fuintptr_runtime_s__runtime_mspan_runtime_size_uintptr_runtime_needzerobool_runtime_noscanbool_
-               (struct_Fuintptr_runtime_s__runtime_mspan_runtime_size_uintptr_runtime_needzerobool_runtime_noscanbool_
+void type__hash_struct___F_uintptr__runtime_s___runtime_mspan__runtime_size__uintptr__runtime_needzero_bool__runtime_noscan_bool__
+               (struct___F_uintptr__runtime_s___runtime_mspan__runtime_size__uintptr__runtime_needzero_bool__runtime_noscan_bool__
                 *p,uintptr h,uintptr _r2)
 
 {
@@ -56935,7 +56624,7 @@ void type__hash_struct_Fuintptr_runtime_s__runtime_mspan_runtime_size_uintptr_ru
     return;
   }
   runtime_morestack_noctxt();
-  type__hash_struct_Fuintptr_runtime_s__runtime_mspan_runtime_size_uintptr_runtime_needzerobool_runtime_noscanbool_
+  type__hash_struct___F_uintptr__runtime_s___runtime_mspan__runtime_size__uintptr__runtime_needzero_bool__runtime_noscan_bool__
             (p,h,_r2);
   return;
 }
@@ -56945,9 +56634,9 @@ void type__hash_struct_Fuintptr_runtime_s__runtime_mspan_runtime_size_uintptr_ru
 // Original name: type..eq.struct { F uintptr; runtime.s **runtime.mspan; runtime.size *uintptr;
 // runtime.needzero bool; runtime.noscan bool }
 
-void type__eq_struct_Fuintptr_runtime_s__runtime_mspan_runtime_size_uintptr_runtime_needzerobool_runtime_noscanbool_
-               (struct_Fuintptr_runtime_s__runtime_mspan_runtime_size_uintptr_runtime_needzerobool_runtime_noscanbool_
-                *p,struct_Fuintptr_runtime_s__runtime_mspan_runtime_size_uintptr_runtime_needzerobool_runtime_noscanbool_
+void type__eq_struct___F_uintptr__runtime_s___runtime_mspan__runtime_size__uintptr__runtime_needzero_bool__runtime_noscan_bool__
+               (struct___F_uintptr__runtime_s___runtime_mspan__runtime_size__uintptr__runtime_needzero_bool__runtime_noscan_bool__
+                *p,struct___F_uintptr__runtime_s___runtime_mspan__runtime_size__uintptr__runtime_needzero_bool__runtime_noscan_bool__
                    *q,bool _r2)
 
 {
@@ -56961,7 +56650,7 @@ void type__eq_struct_Fuintptr_runtime_s__runtime_mspan_runtime_size_uintptr_runt
     return;
   }
   runtime_morestack_noctxt();
-  type__eq_struct_Fuintptr_runtime_s__runtime_mspan_runtime_size_uintptr_runtime_needzerobool_runtime_noscanbool_
+  type__eq_struct___F_uintptr__runtime_s___runtime_mspan__runtime_size__uintptr__runtime_needzero_bool__runtime_noscan_bool__
             (p,q,_r2);
   return;
 }
@@ -57013,9 +56702,7 @@ void errors___errorString__Error(errors_errorString *e,string _r0)
 
 
 
-// Original name: unicode/utf8.DecodeRuneInString
-
-void unicode_fwdslash_utf8_DecodeRuneInString(string s,int32 r,int size)
+void unicode_utf8_DecodeRuneInString(string s,int32 r,int size)
 
 {
   uint *puVar1;
@@ -57027,13 +56714,13 @@ void unicode_fwdslash_utf8_DecodeRuneInString(string s,int32 r,int size)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    unicode_fwdslash_utf8_DecodeRuneInString(s,r,size);
+    unicode_utf8_DecodeRuneInString(s,r,size);
     return;
   }
   if (s.len < 1) {
     return;
   }
-  bVar2 = unicode_fwdslash_utf8_first[*s.str];
+  bVar2 = unicode_utf8_first[*s.str];
   if (0xef < bVar2) {
     return;
   }
@@ -57053,8 +56740,8 @@ void unicode_fwdslash_utf8_DecodeRuneInString(string s,int32 r,int size)
       invalidInstructionException();
     } while( true );
   }
-  if ((s.str[1] < unicode_fwdslash_utf8_acceptRanges[uVar3].lo) ||
-     (unicode_fwdslash_utf8_acceptRanges[uVar3].hi < s.str[1])) {
+  if ((s.str[1] < unicode_utf8_acceptRanges[uVar3].lo) ||
+     (unicode_utf8_acceptRanges[uVar3].hi < s.str[1])) {
     return;
   }
   if ((bVar2 & 7) == 2) {
@@ -57086,9 +56773,7 @@ void unicode_fwdslash_utf8_DecodeRuneInString(string s,int32 r,int size)
 
 
 
-// Original name: unicode/utf8.EncodeRune
-
-void unicode_fwdslash_utf8_EncodeRune(__uint8 p,int32 r,int _r2)
+void unicode_utf8_EncodeRune(__uint8 p,int32 r,int _r2)
 
 {
   uint *puVar1;
@@ -57100,7 +56785,7 @@ void unicode_fwdslash_utf8_EncodeRune(__uint8 p,int32 r,int _r2)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    unicode_fwdslash_utf8_EncodeRune(p,r,_r2);
+    unicode_utf8_EncodeRune(p,r,_r2);
     return;
   }
   bVar3 = (byte)r;
@@ -57158,9 +56843,7 @@ void unicode_fwdslash_utf8_EncodeRune(__uint8 p,int32 r,int _r2)
 
 
 
-// Original name: unicode/utf8.RuneCount
-
-void unicode_fwdslash_utf8_RuneCount(__uint8 p,int _r1)
+void unicode_utf8_RuneCount(__uint8 p,int _r1)
 
 {
   uint *puVar1;
@@ -57174,7 +56857,7 @@ void unicode_fwdslash_utf8_RuneCount(__uint8 p,int _r1)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    unicode_fwdslash_utf8_RuneCount(p,_r1);
+    unicode_utf8_RuneCount(p,_r1);
     return;
   }
   uVar3 = 0;
@@ -57194,7 +56877,7 @@ void unicode_fwdslash_utf8_RuneCount(__uint8 p,int _r1)
           if (0x7f < p.array[uVar3]) break;
           uVar3 = uVar3 + 1;
         }
-        bVar2 = unicode_fwdslash_utf8_first[p.array[uVar3]];
+        bVar2 = unicode_utf8_first[p.array[uVar3]];
         if (bVar2 != 0xf1) break;
         uVar3 = uVar3 + 1;
       }
@@ -57210,34 +56893,32 @@ void unicode_fwdslash_utf8_RuneCount(__uint8 p,int _r1)
       } while( true );
     }
     if ((uint)p.len <= uVar3 + 1) break;
-    if ((p.array[uVar3 + 1] < unicode_fwdslash_utf8_acceptRanges[uVar5].lo) ||
-       (unicode_fwdslash_utf8_acceptRanges[uVar5].hi < p.array[uVar3 + 1])) {
+    if ((p.array[uVar3 + 1] < unicode_utf8_acceptRanges[uVar5].lo) ||
+       (unicode_utf8_acceptRanges[uVar5].hi < p.array[uVar3 + 1])) {
       uVar4 = 1;
     }
-    else {
-      if (uVar4 != 2) {
-        if ((uint)p.len <= uVar3 + 2) {
-          runtime_panicindex();
-          do {
-            invalidInstructionException();
-          } while( true );
-        }
-        if ((byte)(p.array[uVar3 + 2] + 0x80) < 0x40) {
-          if (uVar4 != 3) {
-            if ((uint)p.len <= uVar3 + 3) {
-              runtime_panicindex();
-              do {
-                invalidInstructionException();
-              } while( true );
-            }
-            if (0x3f < (byte)(p.array[uVar3 + 3] + 0x80)) {
-              uVar4 = 1;
-            }
+    else if (uVar4 != 2) {
+      if ((uint)p.len <= uVar3 + 2) {
+        runtime_panicindex();
+        do {
+          invalidInstructionException();
+        } while( true );
+      }
+      if ((byte)(p.array[uVar3 + 2] + 0x80) < 0x40) {
+        if (uVar4 != 3) {
+          if ((uint)p.len <= uVar3 + 3) {
+            runtime_panicindex();
+            do {
+              invalidInstructionException();
+            } while( true );
+          }
+          if (0x3f < (byte)(p.array[uVar3 + 3] + 0x80)) {
+            uVar4 = 1;
           }
         }
-        else {
-          uVar4 = 1;
-        }
+      }
+      else {
+        uVar4 = 1;
       }
     }
     uVar3 = uVar3 + uVar4;
@@ -57250,9 +56931,7 @@ void unicode_fwdslash_utf8_RuneCount(__uint8 p,int _r1)
 
 
 
-// Original name: unicode/utf8.RuneCountInString
-
-void unicode_fwdslash_utf8_RuneCountInString(string s,int n)
+void unicode_utf8_RuneCountInString(string s,int n)
 
 {
   uint *puVar1;
@@ -57266,7 +56945,7 @@ void unicode_fwdslash_utf8_RuneCountInString(string s,int n)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    unicode_fwdslash_utf8_RuneCountInString(s,n);
+    unicode_utf8_RuneCountInString(s,n);
     return;
   }
   uVar3 = 0;
@@ -57286,7 +56965,7 @@ void unicode_fwdslash_utf8_RuneCountInString(string s,int n)
           if (0x7f < s.str[uVar3]) break;
           uVar3 = uVar3 + 1;
         }
-        bVar2 = unicode_fwdslash_utf8_first[s.str[uVar3]];
+        bVar2 = unicode_utf8_first[s.str[uVar3]];
         if (bVar2 != 0xf1) break;
         uVar3 = uVar3 + 1;
       }
@@ -57302,34 +56981,32 @@ void unicode_fwdslash_utf8_RuneCountInString(string s,int n)
       } while( true );
     }
     if ((uint)s.len <= uVar3 + 1) break;
-    if ((s.str[uVar3 + 1] < unicode_fwdslash_utf8_acceptRanges[uVar5].lo) ||
-       (unicode_fwdslash_utf8_acceptRanges[uVar5].hi < s.str[uVar3 + 1])) {
+    if ((s.str[uVar3 + 1] < unicode_utf8_acceptRanges[uVar5].lo) ||
+       (unicode_utf8_acceptRanges[uVar5].hi < s.str[uVar3 + 1])) {
       uVar4 = 1;
     }
-    else {
-      if (uVar4 != 2) {
-        if ((uint)s.len <= uVar3 + 2) {
-          runtime_panicindex();
-          do {
-            invalidInstructionException();
-          } while( true );
-        }
-        if ((byte)(s.str[uVar3 + 2] + 0x80) < 0x40) {
-          if (uVar4 != 3) {
-            if ((uint)s.len <= uVar3 + 3) {
-              runtime_panicindex();
-              do {
-                invalidInstructionException();
-              } while( true );
-            }
-            if (0x3f < (byte)(s.str[uVar3 + 3] + 0x80)) {
-              uVar4 = 1;
-            }
+    else if (uVar4 != 2) {
+      if ((uint)s.len <= uVar3 + 2) {
+        runtime_panicindex();
+        do {
+          invalidInstructionException();
+        } while( true );
+      }
+      if ((byte)(s.str[uVar3 + 2] + 0x80) < 0x40) {
+        if (uVar4 != 3) {
+          if ((uint)s.len <= uVar3 + 3) {
+            runtime_panicindex();
+            do {
+              invalidInstructionException();
+            } while( true );
+          }
+          if (0x3f < (byte)(s.str[uVar3 + 3] + 0x80)) {
+            uVar4 = 1;
           }
         }
-        else {
-          uVar4 = 1;
-        }
+      }
+      else {
+        uVar4 = 1;
       }
     }
     uVar3 = uVar3 + uVar4;
@@ -57700,10 +57377,8 @@ LAB_08093fbe:
           a->d[local_14] = ((byte)uVar7 & (byte)uVar3) + 0x30;
           local_14 = local_14 + 1;
         }
-        else {
-          if ((uVar3 & uVar7) != 0) {
-            a->trunc = true;
-          }
+        else if ((uVar3 & uVar7) != 0) {
+          a->trunc = true;
         }
         uVar5 = (uVar5 & uVar6) * 10;
       } while( true );
@@ -58270,7 +57945,7 @@ void strconv_frexp10Many(strconv_extFloat *a,strconv_extFloat *b,strconv_extFloa
 void strconv___extFloat__FixedDecimal(strconv_extFloat *f,strconv_decimalSlice *d,int n,bool _r2)
 
 {
-  strconv_decimalSlice **ppsVar1;
+  uint *puVar1;
   ulonglong uVar2;
   uint uVar3;
   uint uVar4;
@@ -58301,14 +57976,16 @@ void strconv___extFloat__FixedDecimal(strconv_extFloat *f,strconv_decimalSlice *
   int local_8c;
   uint local_7c;
   uint local_78;
-  strconv_decimalSlice local_48;
+  strconv_decimalSlice *local_48 [2];
+  int local_40;
+  uint local_38;
   uint local_30;
   uint local_28;
   char acStack33 [29];
   undefined4 uStack4;
   
-  ppsVar1 = (strconv_decimalSlice **)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if (&local_48 < *ppsVar1 || &local_48 == *ppsVar1) {
+  puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
+  if (local_48 < (strconv_decimalSlice **)*puVar1 || local_48 == (strconv_decimalSlice **)*puVar1) {
     uStack4 = 0x8095272;
     runtime_morestack_noctxt();
     strconv___extFloat__FixedDecimal(f,d,n,_r2);
@@ -58321,7 +57998,7 @@ void strconv___extFloat__FixedDecimal(strconv_extFloat *f,strconv_decimalSlice *
     return;
   }
   if (n == 0) {
-    runtime_gopanic((interface__)0x80f1af8080cf1a0);
+    runtime_gopanic((interface___)0x80f1af8080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -58405,16 +58082,16 @@ LAB_08094db0:
       }
       else {
         if ((uVar5 != 0) || (iVar15 != 0 || uVar17 != 1)) {
-          runtime_gopanic((interface__)0x80f1b00080cf1a0);
+          runtime_gopanic((interface___)0x80f1b00080cf1a0);
           do {
             invalidInstructionException();
           } while( true );
         }
         local_a4 = 1;
-        local_48.d.array = (uint8 *)d;
+        local_48[0] = d;
         local_a0 = 0;
         uVar14 = uVar6;
-        for (; local_48.d.cap = iVar15, local_48.dp = uVar6, 0 < iVar16; iVar16 = iVar16 + -1) {
+        for (; local_40 = iVar15, local_38 = uVar6, 0 < iVar16; iVar16 = iVar16 + -1) {
           uVar8 = (uint)((ulonglong)local_7c * 10);
           uVar2 = (ulonglong)local_a4;
           local_a4 = (uint)(uVar2 * 10);
@@ -58508,7 +58185,7 @@ void strconv_adjustLastDigitFixed
           den._4_4_ << ((byte)shift & 0x1f) & -(uint)(shift < 0x20) |
           -(uint)(uVar4 < 0x20) & (uint)den << ((byte)uVar4 & 0x1f);
   if (uVar4 < num._4_4_ || num._4_4_ == uVar4 && uVar3 < (uint)num) {
-    runtime_gopanic((interface__)0x80f1b08080cf1a0);
+    runtime_gopanic((interface___)0x80f1b08080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -58516,7 +58193,7 @@ void strconv_adjustLastDigitFixed
   uVar6 = (uint)ￎﾵ >> 0x1f | ￎﾵ._4_4_ << 1;
   if ((uVar3 <= (uint)ￎﾵ * 2 && (uint)ￎﾵ * 2 - uVar3 != 0) && uVar6 == uVar4 ||
       uVar4 < uVar6) {
-    runtime_gopanic((interface__)0x80f1b10080cf1a0);
+    runtime_gopanic((interface___)0x80f1b10080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -59025,12 +58702,12 @@ void strconv_genericFtoa(__uint8 dst,float64 val,uint8 fmt,int prec,int bitSize,
     return;
   }
   if (bitSize == 0x20) {
-    val = (float64)(ulonglong)(uint)(float)(double)val;
+    val = (float64)(ulonglong)(uint)(float)val;
     flt = &strconv_float32info;
   }
   else {
     if (bitSize != 0x40) {
-      runtime_gopanic((interface__)0x80f1b18080cf1a0);
+      runtime_gopanic((interface___)0x80f1b18080cf1a0);
       do {
         invalidInstructionException();
       } while( true );
@@ -59137,13 +58814,11 @@ void strconv_genericFtoa(__uint8 dst,float64 val,uint8 fmt,int prec,int bitSize,
 LAB_080965a1:
         iVar11 = prec + 1;
       }
-      else {
-        if (fmt == 0x47) {
+      else if (fmt == 0x47) {
 LAB_0809677b:
-          if (prec == 0) {
-            prec = 1;
-            iVar11 = prec;
-          }
+        if (prec == 0) {
+          prec = 1;
+          iVar11 = prec;
         }
       }
     }
@@ -59186,7 +58861,7 @@ LAB_0809677b:
              (strconv_extFloat)
              CONCAT412(in_stack_ffffff08,
                        CONCAT48(in_stack_ffffff04,CONCAT44(in_stack_ffffff00,in_stack_fffffefc))));
-  local_8c.neg = (bool)(char)in_stack_fffffef8;
+  local_8c.neg = SUB41(in_stack_fffffef8,0);
   in_stack_ffffff12 = (undefined)in_stack_ffffff08;
   local_9c.neg = (bool)in_stack_ffffff12;
   FUN_0808fd88();
@@ -59213,18 +58888,16 @@ LAB_0809690e:
       goto LAB_080965af;
     }
   }
-  else {
-    if (fmt != 0x65) {
-      if (fmt == 0x66) {
-        prec = local_18._12_4_ - local_18._16_4_;
-        if (prec < 1) {
-          prec = 0;
-        }
-        goto LAB_080965af;
+  else if (fmt != 0x65) {
+    if (fmt == 0x66) {
+      prec = local_18._12_4_ - local_18._16_4_;
+      if (prec < 1) {
+        prec = 0;
       }
-      if (fmt != 0x67) goto LAB_080965af;
-      goto LAB_0809690e;
+      goto LAB_080965af;
     }
+    if (fmt != 0x67) goto LAB_080965af;
+    goto LAB_0809690e;
   }
   prec = local_18._12_4_ + -1;
   if (prec < 1) {
@@ -59262,7 +58935,7 @@ void strconv_bigFtoa(__uint8 dst,int prec,uint8 fmt,bool neg,uint64 mant,int exp
                     strconv_floatInfo *flt,__uint8 _r7)
 
 {
-  uint8 **ppuVar1;
+  uint *puVar1;
   int iVar2;
   undefined4 extraout_EDX;
   strconv_decimal *psVar3;
@@ -59285,8 +58958,8 @@ void strconv_bigFtoa(__uint8 dst,int prec,uint8 fmt,bool neg,uint64 mant,int exp
   int local_8;
   undefined4 uStack4;
   
-  ppuVar1 = (uint8 **)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if (local_344.d + 0x40 < *ppuVar1 || local_344.d + 0x40 == *ppuVar1) {
+  puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
+  if (local_344.d + 0x40 < (undefined *)*puVar1 || local_344.d + 0x40 == (undefined *)*puVar1) {
     uStack4 = 0x8096e21;
     runtime_morestack_noctxt();
     strconv_bigFtoa(dst,prec,fmt,neg,mant,exp,flt,_r7);
@@ -59315,14 +58988,12 @@ void strconv_bigFtoa(__uint8 dst,int prec,uint8 fmt,bool neg,uint64 mant,int exp
 LAB_08096bd2:
       strconv___decimal__Round(&local_344,prec + 1);
     }
-    else {
-      if (fmt == 0x47) {
+    else if (fmt == 0x47) {
 LAB_08096cc8:
-        if (prec == 0) {
-          prec = 1;
-        }
-        strconv___decimal__Round(&local_344,prec);
+      if (prec == 0) {
+        prec = 1;
       }
+      strconv___decimal__Round(&local_344,prec);
     }
   }
   else {
@@ -59330,9 +59001,7 @@ LAB_08096cc8:
     if (fmt == 0x66) {
       strconv___decimal__Round(&local_344,local_344.dp + prec);
     }
-    else {
-      if (fmt == 0x67) goto LAB_08096cc8;
-    }
+    else if (fmt == 0x67) goto LAB_08096cc8;
   }
   FUN_0808fd8a();
   local_c = local_344.nd;
@@ -59449,24 +59118,22 @@ LAB_08096ebf:
       return;
     }
   }
-  else {
-    if ((byte)prec != 0x65) {
-      if ((byte)prec == 0x66) {
-        FUN_08090264();
-        strconv_fmtF((__uint8)CONCAT48(dst.cap,CONCAT44(dst.len,dst.array)),(bool)in_stack_00000011,
-                     (strconv_decimalSlice)
-                     CONCAT816(in_stack_ffffffe4,
-                               CONCAT412(in_stack_ffffffe0,
-                                         CONCAT48(in_stack_ffffffdc,
-                                                  CONCAT44(in_stack_ffffffd8,in_stack_ffffffd4)))),
-                     digs._20_4_,
-                     (__uint8)CONCAT48(in_stack_fffffff8,
-                                       CONCAT44(in_stack_fffffff4,in_stack_fffffff0)));
-        return;
-      }
-      if ((byte)prec != 0x67) goto LAB_08096fce;
-      goto LAB_08096ebf;
+  else if ((byte)prec != 0x65) {
+    if ((byte)prec == 0x66) {
+      FUN_08090264();
+      strconv_fmtF((__uint8)CONCAT48(dst.cap,CONCAT44(dst.len,dst.array)),(bool)in_stack_00000011,
+                   (strconv_decimalSlice)
+                   CONCAT816(in_stack_ffffffe4,
+                             CONCAT412(in_stack_ffffffe0,
+                                       CONCAT48(in_stack_ffffffdc,
+                                                CONCAT44(in_stack_ffffffd8,in_stack_ffffffd4)))),
+                   digs._20_4_,
+                   (__uint8)CONCAT48(in_stack_fffffff8,CONCAT44(in_stack_fffffff4,in_stack_fffffff0)
+                                    ));
+      return;
     }
+    if ((byte)prec != 0x67) goto LAB_08096fce;
+    goto LAB_08096ebf;
   }
   fmt_00 = FUN_08090264();
   strconv_fmtE((__uint8)CONCAT48(dst.cap,CONCAT44(dst.len,dst.array)),(bool)in_stack_00000011,
@@ -59485,7 +59152,7 @@ LAB_08096ebf:
 void strconv_roundShortest(strconv_decimal *d,uint64 mant,int exp,strconv_floatInfo *flt)
 
 {
-  uint8 **ppuVar1;
+  uint *puVar1;
   byte bVar2;
   bool bVar3;
   uint uVar4;
@@ -59505,8 +59172,8 @@ void strconv_roundShortest(strconv_decimal *d,uint64 mant,int exp,strconv_floatI
   undefined local_32c [812];
   
   bVar15 = 0;
-  ppuVar1 = (uint8 **)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if (local_658.d + 100 < *ppuVar1 || local_658.d + 100 == *ppuVar1) {
+  puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
+  if (local_658.d + 100 < (undefined *)*puVar1 || local_658.d + 100 == (undefined *)*puVar1) {
     local_32c._808_4_ = 0x8097467;
     runtime_morestack_noctxt();
     strconv_roundShortest(d,mant,exp,flt);
@@ -59599,18 +59266,16 @@ void strconv_roundShortest(strconv_decimal *d,uint64 mant,int exp,strconv_floatI
     if (bVar7 == bVar2) {
       bVar3 = false;
     }
-    else {
-      if (bVar13) {
-        if ((byte)(bVar2 + 1) < bVar7) {
-          bVar3 = true;
-        }
-        else {
-          bVar3 = (int)(uVar10 + 1) < local_32c._800_4_;
-        }
-      }
-      else {
+    else if (bVar13) {
+      if ((byte)(bVar2 + 1) < bVar7) {
         bVar3 = true;
       }
+      else {
+        bVar3 = (int)(uVar10 + 1) < local_32c._800_4_;
+      }
+    }
+    else {
+      bVar3 = true;
     }
     if ((bVar14) && (bVar3)) {
       strconv___decimal__Round(d,uVar10 + 1);
@@ -59809,36 +59474,32 @@ LAB_08097985:
     dst.array[cap_00] = 0x30;
     dst.array[cap_00 + 1] = cVar2 + 0x30;
   }
+  else if (iVar9 < 100) {
+    cVar3 = (char)(iVar9 / 10);
+    if (dst.cap < cap_00 + 2) {
+      uVar5 = CONCAT44(cap_00,dst.array);
+      dst.array = in_stack_ffffffd4;
+      runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)CONCAT48(dst.cap,uVar5),
+                        cap_00 + 2,
+                        (runtime_slice)
+                        CONCAT48(in_stack_ffffffdc,CONCAT44(in_stack_ffffffd8,in_stack_ffffffd4)));
+    }
+    dst.array[cap_00] = cVar3 + 0x30;
+    dst.array[cap_00 + 1] = cVar2 + cVar3 * -10 + 0x30;
+  }
   else {
-    if (iVar9 < 100) {
-      cVar3 = (char)(iVar9 / 10);
-      if (dst.cap < cap_00 + 2) {
-        uVar5 = CONCAT44(cap_00,dst.array);
-        dst.array = in_stack_ffffffd4;
-        runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)CONCAT48(dst.cap,uVar5),
-                          cap_00 + 2,
-                          (runtime_slice)
-                          CONCAT48(in_stack_ffffffdc,CONCAT44(in_stack_ffffffd8,in_stack_ffffffd4)))
-        ;
-      }
-      dst.array[cap_00] = cVar3 + 0x30;
-      dst.array[cap_00 + 1] = cVar2 + cVar3 * -10 + 0x30;
+    cVar3 = (char)(iVar9 / 10);
+    if (dst.cap < cap_00 + 3) {
+      uVar5 = CONCAT44(cap_00,dst.array);
+      dst.array = in_stack_ffffffd4;
+      runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)CONCAT48(dst.cap,uVar5),
+                        cap_00 + 3,
+                        (runtime_slice)
+                        CONCAT48(in_stack_ffffffdc,CONCAT44(in_stack_ffffffd8,in_stack_ffffffd4)));
     }
-    else {
-      cVar3 = (char)(iVar9 / 10);
-      if (dst.cap < cap_00 + 3) {
-        uVar5 = CONCAT44(cap_00,dst.array);
-        dst.array = in_stack_ffffffd4;
-        runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)CONCAT48(dst.cap,uVar5),
-                          cap_00 + 3,
-                          (runtime_slice)
-                          CONCAT48(in_stack_ffffffdc,CONCAT44(in_stack_ffffffd8,in_stack_ffffffd4)))
-        ;
-      }
-      dst.array[cap_00] = (char)(iVar9 / 100) + 0x30;
-      dst.array[cap_00 + 1] = cVar3 + (char)((iVar9 / 10 & 0xffU) / 10) * -10 + 0x30;
-      dst.array[cap_00 + 2] = cVar2 + cVar3 * -10 + 0x30;
-    }
+    dst.array[cap_00] = (char)(iVar9 / 100) + 0x30;
+    dst.array[cap_00 + 1] = cVar3 + (char)((iVar9 / 10 & 0xffU) / 10) * -10 + 0x30;
+    dst.array[cap_00 + 2] = cVar2 + cVar3 * -10 + 0x30;
   }
   return;
 }
@@ -59962,19 +59623,17 @@ LAB_08097a00:
       if ((int)uVar6 < 0) {
         uVar4 = 0x30;
       }
+      else if ((int)uVar6 < d.nd) {
+        if ((uint)d.d.len <= uVar6) {
+          runtime_panicindex();
+          do {
+            invalidInstructionException();
+          } while( true );
+        }
+        uVar4 = d.d.array[uVar6];
+      }
       else {
-        if ((int)uVar6 < d.nd) {
-          if ((uint)d.d.len <= uVar6) {
-            runtime_panicindex();
-            do {
-              invalidInstructionException();
-            } while( true );
-          }
-          uVar4 = d.d.array[uVar6];
-        }
-        else {
-          uVar4 = 0x30;
-        }
+        uVar4 = 0x30;
       }
       cap_00 = iVar5 + 1;
       if (dst.cap < cap_00) {
@@ -60194,7 +59853,7 @@ void strconv_formatBits(__uint8 dst,uint64 u,int base,bool neg,bool append_,__ui
     return;
   }
   if (0x22 < base - 2U) {
-    runtime_gopanic((interface__)0x80f1b20080cf1a0);
+    runtime_gopanic((interface___)0x80f1b20080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -60362,7 +60021,7 @@ LAB_080986b9:
   if (uVar5 + 1 < 200) {
     uVar3 = uVar2 - 1;
     if (uVar3 < 0x41) {
-      *(char *)((uVar2 - 1) + (int)&local_45) =
+      acStack71[uVar2 + 1] =
            " > (den<<shift)/245474735088646411895751953125SIGPIPE: write to broken pipeSIGPWR: power failure restartabi mismatch detected betweenaddspecial on invalid pointergc done but gcphase != _GCoffgfput: bad status (not Gdead)invalid length of trace eventio: read/write on closed pipemachine is not on the networkno XENIX semaphores availablenumerical result out of rangeoperation already in progressprotocol family not supportedreflect: Elem of invalid typereflect: Out of non-func typeruntime: bad g in cgocallbackruntime: impossible type kindruntime: marking free object runtime: mmap: access denied\nruntime: split stack overflowruntime: stat underflow: val runtime: sudog with non-nil cruntime: unknown pc in defer semacquire not on the G stackstring concatenation too longsyntax error scanning booleantoo many open files in systemtraceback has leftover defers locals stack map entries for 227373675443232059478759765625MHeap_AllocLocked - bad npagesSIGPROF: profiling alarm clockSIGUSR1: user-defined signal 1SIGUSR2: user-defined signal 2SIGVTALRM: virtual alarm clockassignment to entry in nil mapcheckdead: inconsistent countsfailed to get system page sizefreedefer with d._panic != nilinappropriate ioctl for deviceinvalid function symbol table\ninvalid pointer found on stackneed padding in bucket (value)protocol wrong type for socketreflect: Len of non-array typerunqputslow: queue is not fullruntime: bad pointer in frame runtime: found in object at *(socket operation on non-socketsync: inconsistent mutex statesync: unlock of unlocked mutex...additional frames elided...\n.lib section in a.out corrupted11368683772161602973937988281255684341886080801486968994140625SIGSEGV: segmentation violationcannot assign requested addresscasgstatus: bad incoming valuescheckmark found unmarked objectentersyscallblock inconsistent fmt: unknown base; can\'t happeninserting span already in treapinternal error - misuse of itabmalformed time zone informationnon in-use span in unswept listpacer: sweep done at heap size reflect: NumIn of non-func typerese..." /* TRUNCATED STRING LITERAL */
            [uVar5 + 0x3037];
       if (uVar8 < 10) {
@@ -60418,7 +60077,7 @@ LAB_080982a1:
       if (uVar5 < 200) {
         uVar3 = uVar2 - 2;
         if (uVar3 < 0x41) {
-          *(char *)((uVar2 - 2) + (int)&local_45) =
+          acStack71[uVar2] =
                " > (den<<shift)/245474735088646411895751953125SIGPIPE: write to broken pipeSIGPWR: power failure restartabi mismatch detected betweenaddspecial on invalid pointergc done but gcphase != _GCoffgfput: bad status (not Gdead)invalid length of trace eventio: read/write on closed pipemachine is not on the networkno XENIX semaphores availablenumerical result out of rangeoperation already in progressprotocol family not supportedreflect: Elem of invalid typereflect: Out of non-func typeruntime: bad g in cgocallbackruntime: impossible type kindruntime: marking free object runtime: mmap: access denied\nruntime: split stack overflowruntime: stat underflow: val runtime: sudog with non-nil cruntime: unknown pc in defer semacquire not on the G stackstring concatenation too longsyntax error scanning booleantoo many open files in systemtraceback has leftover defers locals stack map entries for 227373675443232059478759765625MHeap_AllocLocked - bad npagesSIGPROF: profiling alarm clockSIGUSR1: user-defined signal 1SIGUSR2: user-defined signal 2SIGVTALRM: virtual alarm clockassignment to entry in nil mapcheckdead: inconsistent countsfailed to get system page sizefreedefer with d._panic != nilinappropriate ioctl for deviceinvalid function symbol table\ninvalid pointer found on stackneed padding in bucket (value)protocol wrong type for socketreflect: Len of non-array typerunqputslow: queue is not fullruntime: bad pointer in frame runtime: found in object at *(socket operation on non-socketsync: inconsistent mutex statesync: unlock of unlocked mutex...additional frames elided...\n.lib section in a.out corrupted11368683772161602973937988281255684341886080801486968994140625SIGSEGV: segmentation violationcannot assign requested addresscasgstatus: bad incoming valuescheckmark found unmarked objectentersyscallblock inconsistent fmt: unknown base; can\'t happeninserting span already in treapinternal error - misuse of itabmalformed time zone informationnon in-use span in unswept listpacer: sweep done at heap size reflect: NumIn of non-func typerese..." /* TRUNCATED STRING LITERAL */
                [uVar8 * 2 + 0x3036];
           goto LAB_080982a1;
@@ -60500,7 +60159,7 @@ void strconv_appendQuotedWith
     }
     else {
       r = in_stack_ffffffcc;
-      unicode_fwdslash_utf8_DecodeRuneInString
+      unicode_utf8_DecodeRuneInString
                 ((string)CONCAT44(s.len,s.str),in_stack_ffffffcc,in_stack_ffffffd0);
       uVar5 = in_stack_ffffffd0;
     }
@@ -60718,7 +60377,7 @@ void strconv_appendEscapedRune
        ((in_stack_00000016 != '\0' &&
         (strconv_isInGraphicList(r,false), local_c = in_stack_ffffffd4, in_stack_ffffffc8 != '\0')))
        ) {
-      unicode_fwdslash_utf8_EncodeRune((__uint8)CONCAT48(4,CONCAT44(4,&local_10)),r,local_c);
+      unicode_utf8_EncodeRune((__uint8)CONCAT48(4,CONCAT44(4,&local_10)),r,local_c);
       if (local_c < 5) {
         local_4 = buf.len + local_c;
         if ((uint)buf.cap < local_4) {
@@ -60740,18 +60399,15 @@ void strconv_appendEscapedRune
       } while( true );
     }
   }
-  else {
-    if ((r < 0x80) && (strconv_IsPrint(r,(bool)in_stack_ffffffc8), in_stack_ffffffc8 != '\0')) {
-      if (buf.cap < buf.len + 1) {
-        buf.array = in_stack_ffffffd8;
-        runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)buf,buf.len + 1,
-                          (runtime_slice)
-                          CONCAT48(in_stack_ffffffe0,CONCAT44(in_stack_ffffffdc,in_stack_ffffffd8)))
-        ;
-      }
-      buf.array[buf.len] = (uint8)r;
-      return;
+  else if ((r < 0x80) && (strconv_IsPrint(r,(bool)in_stack_ffffffc8), in_stack_ffffffc8 != '\0')) {
+    if (buf.cap < buf.len + 1) {
+      buf.array = in_stack_ffffffd8;
+      runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)buf,buf.len + 1,
+                        (runtime_slice)
+                        CONCAT48(in_stack_ffffffe0,CONCAT44(in_stack_ffffffdc,in_stack_ffffffd8)));
     }
+    buf.array[buf.len] = (uint8)r;
+    return;
   }
   if (r < 10) {
     if (r == 7) {
@@ -61072,7 +60728,7 @@ void strconv_CanBackquote(string s,bool _r1)
       if (s.len < 1) {
         return;
       }
-      unicode_fwdslash_utf8_DecodeRuneInString
+      unicode_utf8_DecodeRuneInString
                 ((string)CONCAT44(s.len,s.str),in_stack_fffffff8,in_stack_fffffffc);
       if ((uint)s.len < in_stack_fffffffc) {
         runtime_panicslice();
@@ -61323,7 +60979,7 @@ int strconv_init(EVP_PKEY_CTX *ctx)
 {
   uint *puVar1;
   void *pvVar2;
-  uint uVar3;
+  int iVar3;
   int *in_GS_OFFSET;
   runtime_itab *in_stack_fffffff8;
   runtime_itab *prVar4;
@@ -61333,8 +60989,8 @@ int strconv_init(EVP_PKEY_CTX *ctx)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    uVar3 = strconv_init(ctx);
-    return uVar3;
+    iVar3 = strconv_init(ctx);
+    return iVar3;
   }
   if (strconv_initdoneￂﾷ < 2) {
     if (strconv_initdoneￂﾷ != 1) {
@@ -61351,15 +61007,15 @@ int strconv_init(EVP_PKEY_CTX *ctx)
       strconv_ErrRange.data = pvVar2;
       errors_New((string)0xe080e2142,(error)CONCAT44(in_stack_fffffffc,prVar4));
       strconv_ErrSyntax.tab = prVar4;
-      uVar3 = runtime_writeBarrier._0_4_;
+      iVar3 = runtime_writeBarrier._0_4_;
       if (runtime_writeBarrier._0_4_ != 0) {
-        uVar3 = 0x81450bc;
+        iVar3 = 0x81450bc;
         runtime_writebarrierptr((uintptr *)&strconv_ErrSyntax.data,(uintptr)in_stack_fffffffc);
         in_stack_fffffffc = strconv_ErrSyntax.data;
       }
       strconv_ErrSyntax.data = in_stack_fffffffc;
       strconv_initdoneￂﾷ = 2;
-      return uVar3;
+      return iVar3;
     }
     runtime_throwinit();
     do {
@@ -61608,7 +61264,7 @@ void type__eq__87_strconv_extFloat(strconv_extFloat (*p) [87],strconv_extFloat (
 
 
 
-void sync___Map__Load(sync_Map *m,interface__ key,interface__ value,bool ok)
+void sync___Map__Load(sync_Map *m,interface___ key,interface___ value,bool ok)
 
 {
   uint *puVar1;
@@ -61636,8 +61292,7 @@ void sync___Map__Load(sync_Map *m,interface__ key,interface__ value,bool ok)
     sync___Map__Load(m,key,value,ok);
     return;
   }
-  sync_fwdslash_atomic___Value__Load
-            (&m->read,(interface__)CONCAT44(in_stack_ffffffd0,in_stack_ffffffcc));
+  sync_atomic___Value__Load(&m->read,(interface___)CONCAT44(in_stack_ffffffd0,in_stack_ffffffcc));
   if (in_stack_ffffffcc == &DAT_080d4580) {
     cVar2 = *(char *)(in_stack_ffffffd0 + 1);
     h = *in_stack_ffffffd0;
@@ -61655,7 +61310,7 @@ void sync___Map__Load(sync_Map *m,interface__ key,interface__ value,bool ok)
   if (in_stack_ffffffd8 == '\0') {
     if (cVar2 != '\0') {
       sync___Mutex__Lock(&m->mu);
-      sync_fwdslash_atomic___Value__Load(&m->read,(interface__)CONCAT44(key_00,h));
+      sync_atomic___Value__Load(&m->read,(interface___)CONCAT44(key_00,h));
       if (h == (runtime__type *)&DAT_080d4580) {
         h = *key_00;
         cVar2 = *(char *)(key_00 + 1);
@@ -61692,7 +61347,7 @@ void sync___Map__Load(sync_Map *m,interface__ key,interface__ value,bool ok)
     in_stack_ffffffd8 = '\x01';
   }
   if (in_stack_ffffffd8 != '\0') {
-    sync___entry__load(e,(interface__)CONCAT44(key_00,h),SUB41(in_stack_ffffffd4,0));
+    sync___entry__load(e,(interface___)CONCAT44(key_00,h),SUB41(in_stack_ffffffd4,0));
     return;
   }
   return;
@@ -61700,7 +61355,7 @@ void sync___Map__Load(sync_Map *m,interface__ key,interface__ value,bool ok)
 
 
 
-void sync___entry__load(sync_entry *e,interface__ value,bool ok)
+void sync___entry__load(sync_entry *e,interface___ value,bool ok)
 
 {
   uint *puVar1;
@@ -61714,7 +61369,7 @@ void sync___entry__load(sync_entry *e,interface__ value,bool ok)
     sync___entry__load(e,value,ok);
     return;
   }
-  sync_fwdslash_atomic_LoadPointer();
+  sync_atomic_LoadPointer();
   if ((local_4 != (void *)0x0) && (local_4 != sync_expunged)) {
     return;
   }
@@ -61723,22 +61378,22 @@ void sync___entry__load(sync_entry *e,interface__ value,bool ok)
 
 
 
-void sync___Map__Store(sync_Map *m,interface__ key,interface__ value)
+void sync___Map__Store(sync_Map *m,interface___ key,interface___ value)
 
 {
   uint *puVar1;
-  sync_fwdslash_atomic_Value *v;
+  sync_atomic_Value *v;
   char cVar2;
   runtime_hmap *h;
   runtime__type *h_00;
   int *in_GS_OFFSET;
   char wasExpunged;
   runtime_hmap *in_stack_ffffffa4;
-  map_interface____sync_entry h_01;
-  map_interface____sync_entry phVar4;
+  map_interface_____sync_entry h_01;
+  map_interface_____sync_entry phVar4;
   runtime_hmap **in_stack_ffffffa8;
   runtime__type **key_00;
-  map_interface____sync_entry *in_stack_ffffffac;
+  map_interface_____sync_entry *in_stack_ffffffac;
   char in_stack_ffffffb0;
   runtime__type *local_30;
   void *local_2c;
@@ -61746,8 +61401,8 @@ void sync___Map__Store(sync_Map *m,interface__ key,interface__ value)
   undefined local_24;
   undefined local_20 [8];
   runtime__type *local_18;
-  bucket_interface____sync_entry_ *local_14;
-  bucket_interface____sync_entry_ *local_10;
+  bucket_interface_____sync_entry_ *local_14;
+  bucket_interface_____sync_entry_ *local_10;
   void *local_c;
   runtime__type *local_8;
   void *local_4;
@@ -61771,7 +61426,7 @@ void sync___Map__Store(sync_Map *m,interface__ key,interface__ value)
     runtime_writebarrierptr((uintptr *)&in_stack_ffffffa4->flags,(uintptr)value.data);
   }
   v = &m->read;
-  sync_fwdslash_atomic___Value__Load(v,(interface__)CONCAT44(in_stack_ffffffa8,value.data));
+  sync_atomic___Value__Load(v,(interface___)CONCAT44(in_stack_ffffffa8,value.data));
   if ((runtime_hmap *)value.data == (runtime_hmap *)&DAT_080d4580) {
     h = *in_stack_ffffffa8;
   }
@@ -61786,13 +61441,13 @@ void sync___Map__Store(sync_Map *m,interface__ key,interface__ value)
   if (in_stack_ffffffb0 != '\0') {
     h = in_stack_ffffffa4;
     sync___entry__tryStore
-              ((sync_entry *)*in_stack_ffffffac,(interface__ *)in_stack_ffffffa4,SUB41(key_00,0));
+              ((sync_entry *)*in_stack_ffffffac,(interface___ *)in_stack_ffffffa4,SUB41(key_00,0));
     if ((char)key_00 != '\0') {
       return;
     }
   }
   sync___Mutex__Lock(&m->mu);
-  sync_fwdslash_atomic___Value__Load(v,(interface__)CONCAT44(key_00,h));
+  sync_atomic___Value__Load(v,(interface___)CONCAT44(key_00,h));
   if (h == (runtime_hmap *)&DAT_080d4580) {
     h_00 = *key_00;
     cVar2 = *(char *)(key_00 + 1);
@@ -61801,7 +61456,7 @@ void sync___Map__Store(sync_Map *m,interface__ key,interface__ value)
     cVar2 = '\0';
     h_00 = (runtime__type *)0x0;
   }
-  local_10 = (bucket_interface____sync_entry_ *)key._type;
+  local_10 = (bucket_interface_____sync_entry_ *)key._type;
   local_c = key.data;
   prVar3 = h_00;
   runtime_mapaccess2((runtime_maptype *)&DAT_080cfa80,(runtime_hmap *)h_00,&local_10,
@@ -61812,7 +61467,7 @@ void sync___Map__Store(sync_Map *m,interface__ key,interface__ value)
     local_20._0_4_ = key._type;
     local_20._4_4_ = key.data;
     h_01 = m->dirty;
-    phVar4 = (map_interface____sync_entry)local_20;
+    phVar4 = (map_interface_____sync_entry)local_20;
     runtime_mapaccess2((runtime_maptype *)&DAT_080cfa80,(runtime_hmap *)h_01,phVar4,
                        in_stack_ffffffac,false);
     if (in_stack_ffffffb0 == '\0') {
@@ -61823,15 +61478,15 @@ void sync___Map__Store(sync_Map *m,interface__ key,interface__ value)
         local_28 = h_00;
         runtime_convT2E((runtime__type *)&DAT_080d4580,&local_28,
                         (runtime_eface)CONCAT44(in_stack_ffffffac,phVar4));
-        sync_fwdslash_atomic___Value__Store(v,(interface__)CONCAT44(in_stack_ffffffac,h_01));
+        sync_atomic___Value__Store(v,(interface___)CONCAT44(in_stack_ffffffac,h_01));
       }
       local_30 = key._type;
       local_2c = key.data;
       runtime_newobject((runtime__type *)&DAT_080ceca0,h_01);
-      phVar4 = *(map_interface____sync_entry *)&in_stack_ffffffa4->flags;
+      phVar4 = *(map_interface_____sync_entry *)&in_stack_ffffffa4->flags;
       h_01->count = (int)in_stack_ffffffa4->count;
       if (runtime_writeBarrier._0_4_ == 0) {
-        *(map_interface____sync_entry *)&h_01->flags = phVar4;
+        *(map_interface_____sync_entry *)&h_01->flags = phVar4;
         phVar4 = h_01;
       }
       else {
@@ -61854,14 +61509,14 @@ void sync___Map__Store(sync_Map *m,interface__ key,interface__ value)
       }
     }
     else {
-      sync___entry__storeLocked((sync_entry *)*in_stack_ffffffac,(interface__ *)in_stack_ffffffa4);
+      sync___entry__storeLocked((sync_entry *)*in_stack_ffffffac,(interface___ *)in_stack_ffffffa4);
     }
   }
   else {
     sync___entry__unexpungeLocked((sync_entry *)phVar4,(bool)wasExpunged);
     if (wasExpunged != '\0') {
       local_18 = key._type;
-      local_14 = (bucket_interface____sync_entry_ *)key.data;
+      local_14 = (bucket_interface_____sync_entry_ *)key.data;
       runtime_mapassign((runtime_maptype *)&DAT_080cfa80,(runtime_hmap *)m->dirty,&local_18,
                         in_stack_ffffffac);
       if (runtime_writeBarrier._0_4_ == 0) {
@@ -61871,7 +61526,7 @@ void sync___Map__Store(sync_Map *m,interface__ key,interface__ value)
         runtime_writebarrierptr((uintptr *)in_stack_ffffffac,(uintptr)phVar4);
       }
     }
-    sync___entry__storeLocked((sync_entry *)phVar4,(interface__ *)in_stack_ffffffa4);
+    sync___entry__storeLocked((sync_entry *)phVar4,(interface___ *)in_stack_ffffffa4);
   }
   sync___Mutex__Unlock(&m->mu);
   return;
@@ -61879,7 +61534,7 @@ void sync___Map__Store(sync_Map *m,interface__ key,interface__ value)
 
 
 
-void sync___entry__tryStore(sync_entry *e,interface__ *i,bool _r1)
+void sync___entry__tryStore(sync_entry *e,interface___ *i,bool _r1)
 
 {
   uint *puVar1;
@@ -61894,15 +61549,14 @@ void sync___entry__tryStore(sync_entry *e,interface__ *i,bool _r1)
     sync___entry__tryStore(e,i,_r1);
     return;
   }
-  sync_fwdslash_atomic_LoadPointer();
+  sync_atomic_LoadPointer();
   if (sync_expunged != in_stack_fffffff4) {
     do {
-      sync_fwdslash_atomic_CompareAndSwapPointer
-                (&e->p,in_stack_fffffff4,i,SUB41(in_stack_fffffffc,0));
+      sync_atomic_CompareAndSwapPointer(&e->p,in_stack_fffffff4,i,SUB41(in_stack_fffffffc,0));
       if ((char)in_stack_fffffffc != '\0') {
         return;
       }
-      sync_fwdslash_atomic_LoadPointer();
+      sync_atomic_LoadPointer();
     } while (sync_expunged != in_stack_fffffff4);
     return;
   }
@@ -61921,7 +61575,7 @@ void sync___entry__unexpungeLocked(sync_entry *e,bool wasExpunged)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    sync_fwdslash_atomic_CompareAndSwapPointer(&e->p,sync_expunged,(void *)0x0,in_stack_fffffffc);
+    sync_atomic_CompareAndSwapPointer(&e->p,sync_expunged,(void *)0x0,in_stack_fffffffc);
     return;
   }
   runtime_morestack_noctxt();
@@ -61931,7 +61585,7 @@ void sync___entry__unexpungeLocked(sync_entry *e,bool wasExpunged)
 
 
 
-void sync___entry__storeLocked(sync_entry *e,interface__ *i)
+void sync___entry__storeLocked(sync_entry *e,interface___ *i)
 
 {
   uint *puVar1;
@@ -61940,7 +61594,7 @@ void sync___entry__storeLocked(sync_entry *e,interface__ *i)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    sync_fwdslash_atomic_StorePointer(&e->p,i);
+    sync_atomic_StorePointer(&e->p,i);
     return;
   }
   runtime_morestack_noctxt();
@@ -61951,21 +61605,21 @@ void sync___entry__storeLocked(sync_entry *e,interface__ *i)
 
 
 void sync___Map__LoadOrStore
-               (sync_Map *m,interface__ key,interface__ value,interface__ actual,bool loaded)
+               (sync_Map *m,interface___ key,interface___ value,interface___ actual,bool loaded)
 
 {
   uint *puVar1;
-  sync_fwdslash_atomic_Value *v;
+  sync_atomic_Value *v;
   char cVar2;
   runtime__type *prVar3;
   int *in_GS_OFFSET;
   char wasExpunged;
   undefined *in_stack_ffffff9c;
-  map_interface____sync_entry h;
+  map_interface_____sync_entry h;
   runtime__type **in_stack_ffffffa0;
   runtime__type **key_00;
-  map_interface____sync_entry phVar5;
-  map_interface____sync_entry *in_stack_ffffffa4;
+  map_interface_____sync_entry phVar5;
+  map_interface_____sync_entry *in_stack_ffffffa4;
   undefined4 in_stack_ffffffa8;
   undefined in_stack_ffffffac;
   char local_53;
@@ -61976,8 +61630,8 @@ void sync___Map__LoadOrStore
   undefined local_24;
   undefined local_20 [8];
   runtime__type *local_18;
-  bucket_interface____sync_entry_ *local_14;
-  bucket_interface____sync_entry_ *local_10;
+  bucket_interface_____sync_entry_ *local_14;
+  bucket_interface_____sync_entry_ *local_10;
   void *local_c;
   runtime__type *local_8;
   void *local_4;
@@ -61992,7 +61646,7 @@ void sync___Map__LoadOrStore
     return;
   }
   v = &m->read;
-  sync_fwdslash_atomic___Value__Load(v,(interface__)CONCAT44(in_stack_ffffffa0,in_stack_ffffff9c));
+  sync_atomic___Value__Load(v,(interface___)CONCAT44(in_stack_ffffffa0,in_stack_ffffff9c));
   if (in_stack_ffffff9c == &DAT_080d4580) {
     prVar3 = *in_stack_ffffffa0;
   }
@@ -62008,12 +61662,12 @@ void sync___Map__LoadOrStore
      (prVar3 = value._type, key_00 = (runtime__type **)value.data,
      sync___entry__tryLoadOrStore
                ((sync_entry *)*in_stack_ffffffa4,value,
-                (interface__)CONCAT44(in_stack_ffffffa8,in_stack_ffffffa4),(bool)in_stack_ffffffac,
+                (interface___)CONCAT44(in_stack_ffffffa8,in_stack_ffffffa4),(bool)in_stack_ffffffac,
                 (bool)in_stack_ffffffb0), local_53 != '\0')) {
     return;
   }
   sync___Mutex__Lock(&m->mu);
-  sync_fwdslash_atomic___Value__Load(v,(interface__)CONCAT44(key_00,prVar3));
+  sync_atomic___Value__Load(v,(interface___)CONCAT44(key_00,prVar3));
   if (prVar3 == (runtime__type *)&DAT_080d4580) {
     prVar3 = *key_00;
     cVar2 = *(char *)(key_00 + 1);
@@ -62022,7 +61676,7 @@ void sync___Map__LoadOrStore
     cVar2 = '\0';
     prVar3 = (runtime__type *)0x0;
   }
-  local_10 = (bucket_interface____sync_entry_ *)key._type;
+  local_10 = (bucket_interface_____sync_entry_ *)key._type;
   local_c = key.data;
   prVar4 = prVar3;
   runtime_mapaccess2((runtime_maptype *)&DAT_080cfa80,(runtime_hmap *)prVar3,&local_10,
@@ -62033,7 +61687,7 @@ void sync___Map__LoadOrStore
     local_20._0_4_ = key._type;
     local_20._4_4_ = key.data;
     h = m->dirty;
-    phVar5 = (map_interface____sync_entry)local_20;
+    phVar5 = (map_interface_____sync_entry)local_20;
     runtime_mapaccess2((runtime_maptype *)&DAT_080cfa80,(runtime_hmap *)h,phVar5,in_stack_ffffffa4,
                        false);
     if ((char)in_stack_ffffffa8 == '\0') {
@@ -62044,7 +61698,7 @@ void sync___Map__LoadOrStore
         local_28 = prVar3;
         runtime_convT2E((runtime__type *)&DAT_080d4580,&local_28,
                         (runtime_eface)CONCAT44(in_stack_ffffffa4,phVar5));
-        sync_fwdslash_atomic___Value__Store(v,(interface__)CONCAT44(in_stack_ffffffa4,h));
+        sync_atomic___Value__Store(v,(interface___)CONCAT44(in_stack_ffffffa4,h));
       }
       local_30 = key._type;
       local_2c = key.data;
@@ -62059,7 +61713,7 @@ void sync___Map__LoadOrStore
       }
       runtime_newobject((runtime__type *)&DAT_080d1ce0,value.data);
       if (runtime_writeBarrier._0_4_ == 0) {
-        *(map_interface____sync_entry *)value.data = h;
+        *(void **)value.data = h;
       }
       else {
         runtime_writebarrierptr((uintptr *)value.data,(uintptr)h);
@@ -62067,7 +61721,7 @@ void sync___Map__LoadOrStore
       runtime_mapassign((runtime_maptype *)&DAT_080cfa80,(runtime_hmap *)m->dirty,&local_30,
                         in_stack_ffffffa4);
       if (runtime_writeBarrier._0_4_ == 0) {
-        *in_stack_ffffffa4 = (map_interface____sync_entry)value.data;
+        *in_stack_ffffffa4 = (map_interface_____sync_entry)value.data;
       }
       else {
         runtime_writebarrierptr((uintptr *)in_stack_ffffffa4,(uintptr)value.data);
@@ -62076,8 +61730,8 @@ void sync___Map__LoadOrStore
     else {
       sync___entry__tryLoadOrStore
                 ((sync_entry *)*in_stack_ffffffa4,value,
-                 (interface__)CONCAT44(in_stack_ffffffa8,in_stack_ffffffa4),(bool)in_stack_ffffffac,
-                 (bool)in_stack_ffffffb0);
+                 (interface___)CONCAT44(in_stack_ffffffa8,in_stack_ffffffa4),(bool)in_stack_ffffffac
+                 ,(bool)in_stack_ffffffb0);
       sync___Map__missLocked(m);
     }
   }
@@ -62085,7 +61739,7 @@ void sync___Map__LoadOrStore
     sync___entry__unexpungeLocked((sync_entry *)phVar5,(bool)wasExpunged);
     if (wasExpunged != '\0') {
       local_18 = key._type;
-      local_14 = (bucket_interface____sync_entry_ *)key.data;
+      local_14 = (bucket_interface_____sync_entry_ *)key.data;
       runtime_mapassign((runtime_maptype *)&DAT_080cfa80,(runtime_hmap *)m->dirty,&local_18,
                         in_stack_ffffffa4);
       if (runtime_writeBarrier._0_4_ == 0) {
@@ -62096,8 +61750,9 @@ void sync___Map__LoadOrStore
       }
     }
     sync___entry__tryLoadOrStore
-              ((sync_entry *)phVar5,value,(interface__)CONCAT44(in_stack_ffffffa8,in_stack_ffffffa4)
-               ,(bool)in_stack_ffffffac,(bool)in_stack_ffffffb0);
+              ((sync_entry *)phVar5,value,
+               (interface___)CONCAT44(in_stack_ffffffa8,in_stack_ffffffa4),(bool)in_stack_ffffffac,
+               (bool)in_stack_ffffffb0);
   }
   sync___Mutex__Unlock(&m->mu);
   return;
@@ -62106,7 +61761,7 @@ void sync___Map__LoadOrStore
 
 
 void sync___entry__tryLoadOrStore
-               (sync_entry *e,interface__ i,interface__ actual,bool loaded,bool ok)
+               (sync_entry *e,interface___ i,interface___ actual,bool loaded,bool ok)
 
 {
   uint *puVar1;
@@ -62122,7 +61777,7 @@ void sync___entry__tryLoadOrStore
     sync___entry__tryLoadOrStore(e,i,actual,loaded,ok);
     return;
   }
-  sync_fwdslash_atomic_LoadPointer();
+  sync_atomic_LoadPointer();
   if ((runtime__type **)sync_expunged == in_stack_fffffff0) {
     return;
   }
@@ -62139,12 +61794,11 @@ void sync___entry__tryLoadOrStore
   }
   while( true ) {
     pvVar2 = (void *)0x0;
-    sync_fwdslash_atomic_CompareAndSwapPointer
-              (&e->p,(void *)0x0,in_stack_fffffff0,(bool)in_stack_fffffff8);
+    sync_atomic_CompareAndSwapPointer(&e->p,(void *)0x0,in_stack_fffffff0,(bool)in_stack_fffffff8);
     if (in_stack_fffffff8 != '\0') {
       return;
     }
-    sync_fwdslash_atomic_LoadPointer();
+    sync_atomic_LoadPointer();
     if (sync_expunged == pvVar2) break;
     if (pvVar2 != (void *)0x0) {
       return;
@@ -62164,7 +61818,7 @@ void sync___Map__missLocked(sync_Map *m)
   int *in_GS_OFFSET;
   undefined4 in_stack_ffffffec;
   undefined4 in_stack_fffffff0;
-  map_interface____sync_entry local_8;
+  map_interface_____sync_entry local_8;
   uint local_4;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
@@ -62177,7 +61831,7 @@ void sync___Map__missLocked(sync_Map *m)
   }
   iVar2 = m->misses + 1;
   m->misses = iVar2;
-  if (m->dirty == (map_interface____sync_entry)0x0) {
+  if (m->dirty == (map_interface_____sync_entry)0x0) {
     iVar3 = 0;
   }
   else {
@@ -62188,10 +61842,10 @@ void sync___Map__missLocked(sync_Map *m)
     local_8 = m->dirty;
     runtime_convT2E((runtime__type *)&DAT_080d4580,&local_8,
                     (runtime_eface)CONCAT44(in_stack_fffffff0,in_stack_ffffffec));
-    sync_fwdslash_atomic___Value__Store
-              (&m->read,(interface__)CONCAT44(in_stack_fffffff0,in_stack_ffffffec));
+    sync_atomic___Value__Store(&m->read,(interface___)CONCAT44(in_stack_fffffff0,in_stack_ffffffec))
+    ;
     if (runtime_writeBarrier._0_4_ == 0) {
-      m->dirty = (map_interface____sync_entry)0x0;
+      m->dirty = (map_interface_____sync_entry)0x0;
     }
     else {
       runtime_writebarrierptr((uintptr *)&m->dirty,0);
@@ -62210,14 +61864,14 @@ void sync___Map__dirtyLocked(sync_Map *m)
   uint *puVar1;
   undefined4 uVar2;
   undefined4 uVar3;
-  map_interface____sync_entry h;
+  map_interface_____sync_entry h;
   int iVar4;
   int *in_GS_OFFSET;
   undefined *in_stack_ffffffa0;
-  map_interface____sync_entry e;
-  map_interface____sync_entry *in_stack_ffffffa4;
-  map_interface____sync_entry *dst;
-  map_interface____sync_entry in_stack_ffffffb0;
+  map_interface_____sync_entry e;
+  map_interface_____sync_entry *in_stack_ffffffa4;
+  map_interface_____sync_entry *dst;
+  map_interface_____sync_entry in_stack_ffffffb0;
   undefined4 local_38;
   undefined4 local_34;
   runtime_hiter local_30;
@@ -62230,22 +61884,21 @@ void sync___Map__dirtyLocked(sync_Map *m)
     sync___Map__dirtyLocked(m);
     return;
   }
-  if (m->dirty == (map_interface____sync_entry)0x0) {
-    sync_fwdslash_atomic___Value__Load
-              (&m->read,(interface__)CONCAT44(in_stack_ffffffa4,in_stack_ffffffa0));
+  if (m->dirty == (map_interface_____sync_entry)0x0) {
+    sync_atomic___Value__Load(&m->read,(interface___)CONCAT44(in_stack_ffffffa4,in_stack_ffffffa0));
     if (in_stack_ffffffa0 == &DAT_080d4580) {
       h = *in_stack_ffffffa4;
     }
     else {
-      h = (map_interface____sync_entry)0x0;
+      h = (map_interface_____sync_entry)0x0;
     }
-    if (h == (map_interface____sync_entry)0x0) {
+    if (h == (map_interface_____sync_entry)0x0) {
       iVar4 = 0;
     }
     else {
       iVar4 = h->count;
     }
-    dst = (map_interface____sync_entry *)0x0;
+    dst = (map_interface_____sync_entry *)0x0;
     runtime_makemap((runtime_maptype *)&DAT_080cfa80,(longlong)iVar4,(runtime_hmap *)0x0,(void *)0x0
                     ,(runtime_hmap *)in_stack_ffffffb0);
     if (runtime_writeBarrier._0_4_ == 0) {
@@ -62300,16 +61953,15 @@ void sync___entry__tryExpungeLocked(sync_entry *e,bool isExpunged)
     sync___entry__tryExpungeLocked(e,isExpunged);
     return;
   }
-  sync_fwdslash_atomic_LoadPointer();
+  sync_atomic_LoadPointer();
   while( true ) {
     if (in_stack_fffffff4 != 0) {
       return;
     }
     in_stack_fffffff4 = 0;
-    sync_fwdslash_atomic_CompareAndSwapPointer
-              (&e->p,(void *)0x0,sync_expunged,SUB41(in_stack_fffffffc,0));
+    sync_atomic_CompareAndSwapPointer(&e->p,(void *)0x0,sync_expunged,SUB41(in_stack_fffffffc,0));
     if ((char)in_stack_fffffffc != '\0') break;
-    sync_fwdslash_atomic_LoadPointer();
+    sync_atomic_LoadPointer();
   }
   return;
 }
@@ -62361,7 +62013,7 @@ void sync___Mutex__Lock(sync_Mutex *m)
     return;
   }
   uVar3 = 0;
-  sync_fwdslash_atomic_CompareAndSwapInt32();
+  sync_atomic_CompareAndSwapInt32();
   if (local_18 != '\0') {
     return;
   }
@@ -62370,11 +62022,11 @@ void sync___Mutex__Lock(sync_Mutex *m)
   do {
     while (((uVar2 & 5) != 1 || (sync_runtime_canSpin(i,SUB41(uVar3,0)), (char)uVar3 == '\0'))) {
       uVar3 = uVar2;
-      sync_fwdslash_atomic_CompareAndSwapInt32();
+      sync_atomic_CompareAndSwapInt32();
       uVar2 = m->state;
     }
     if (((uVar2 & 2) == 0) && ((int)uVar2 >> 3 != 0)) {
-      sync_fwdslash_atomic_CompareAndSwapInt32();
+      sync_atomic_CompareAndSwapInt32();
       uVar3 = uVar2;
     }
     sync_runtime_doSpin();
@@ -62400,14 +62052,14 @@ void sync___Mutex__Unlock(sync_Mutex *m)
     sync___Mutex__Unlock(m);
     return;
   }
-  sync_fwdslash_atomic_AddInt32();
+  sync_atomic_AddInt32();
   if ((local_8 + 1 & 1) != 0) {
     if ((local_8 & 4) != 0) {
       sync_runtime_Semrelease(&m->sema,true);
       return;
     }
     while (((int)local_8 >> 3 != 0 && ((local_8 & 7) == 0))) {
-      sync_fwdslash_atomic_CompareAndSwapInt32();
+      sync_atomic_CompareAndSwapInt32();
       if (local_4 != '\0') {
         sync_runtime_Semrelease(&m->sema,false);
         return;
@@ -62416,7 +62068,7 @@ void sync___Mutex__Unlock(sync_Mutex *m)
     }
     return;
   }
-  runtime_gopanic((interface__)0x80f1b38080cf1a0);
+  runtime_gopanic((interface___)0x80f1b38080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -62447,7 +62099,7 @@ void sync___Once__Do(sync_Once *o,func__ *f)
   }
   puVar5 = &o->done;
   arg0 = puVar5;
-  sync_fwdslash_atomic_LoadUint32();
+  sync_atomic_LoadUint32();
   if (in_stack_fffffff0 != 1) {
     sync___Mutex__Lock(&o->m);
     arg0_00 = 4;
@@ -62460,9 +62112,9 @@ void sync___Once__Do(sync_Once *o,func__ *f)
     if (o->done == 0) {
       uVar6 = 1;
       arg0_00 = 8;
-      ppuVar3 = &PTR_sync_fwdslash_atomic_StoreUint32_080e7d10;
-      ppuVar4 = &PTR_sync_fwdslash_atomic_StoreUint32_080e7d10;
-      runtime_deferproc(8,(runtime_funcval *)&PTR_sync_fwdslash_atomic_StoreUint32_080e7d10);
+      ppuVar3 = &PTR_sync_atomic_StoreUint32_080e7d10;
+      ppuVar4 = &PTR_sync_atomic_StoreUint32_080e7d10;
+      runtime_deferproc(8,(runtime_funcval *)&PTR_sync_atomic_StoreUint32_080e7d10);
       if (ppuVar3 != (undefined **)0x0) {
         runtime_deferreturn(arg0_00);
         return;
@@ -62478,18 +62130,18 @@ void sync___Once__Do(sync_Once *o,func__ *f)
 
 
 
-void sync___Pool__Put(sync_Pool *p,interface__ x)
+void sync___Pool__Put(sync_Pool *p,interface___ x)
 
 {
   uint *puVar1;
   sync_Mutex *m;
-  __interface__ *p_Var2;
+  __interface___ *p_Var2;
   int cap;
-  interface__ *src;
+  interface___ *src;
   int iVar3;
   int *in_GS_OFFSET;
   sync_poolLocal *in_stack_ffffffd0;
-  interface__ *in_stack_ffffffe0;
+  interface___ *in_stack_ffffffe0;
   int in_stack_ffffffe4;
   int in_stack_ffffffe8;
   
@@ -62554,7 +62206,7 @@ void sync___Pool__Put(sync_Pool *p,interface__ x)
 
 
 
-void sync___Pool__Get(sync_Pool *p,interface__ _r0)
+void sync___Pool__Get(sync_Pool *p,interface___ _r0)
 
 {
   uint *puVar1;
@@ -62605,7 +62257,7 @@ void sync___Pool__Get(sync_Pool *p,interface__ _r0)
     sync___Mutex__Unlock(m);
     if (psVar4 == (sync_poolLocal *)0x0) {
       psVar4 = psVar5;
-      sync___Pool__getSlow(p,(interface__)CONCAT44(in_stack_ffffffec,psVar5));
+      sync___Pool__getSlow(p,(interface___)CONCAT44(in_stack_ffffffec,psVar5));
     }
   }
   if ((psVar4 == (sync_poolLocal *)0x0) && (*(code ***)&p->field_0x8 != (code **)0x0)) {
@@ -62616,16 +62268,16 @@ void sync___Pool__Get(sync_Pool *p,interface__ _r0)
 
 
 
-void sync___Pool__getSlow(sync_Pool *p,interface__ x)
+void sync___Pool__getSlow(sync_Pool *p,interface___ x)
 
 {
   uint *puVar1;
   sync_Mutex *m;
   uint uVar2;
   void *pvVar3;
-  int iVar4;
+  uint uVar4;
   int iVar5;
-  void *pvVar6;
+  int iVar6;
   int *in_GS_OFFSET;
   uintptr *_r0;
   int local_24;
@@ -62638,29 +62290,29 @@ void sync___Pool__getSlow(sync_Pool *p,interface__ x)
     return;
   }
   _r0 = &p->localSize;
-  sync_fwdslash_atomic_LoadUintptr();
+  sync_atomic_LoadUintptr();
   pvVar3 = p->local;
   sync_runtime_procPin((int)_r0);
   sync_runtime_procUnpin();
-  iVar4 = 0;
+  iVar5 = 0;
   while( true ) {
-    if (local_24 <= iVar4) {
+    if (local_24 <= iVar5) {
       return;
     }
     if (local_24 == 0) break;
     if (local_24 == -1) {
-      iVar5 = 0;
+      iVar6 = 0;
     }
     else {
-      iVar5 = (iVar4 + 1 + (int)_r0) % local_24;
+      iVar6 = (iVar5 + 1 + (int)_r0) % local_24;
     }
-    pvVar6 = (void *)(iVar5 * 0x80 + (int)pvVar3);
-    m = (sync_Mutex *)((int)pvVar6 + 0x14);
+    m = (sync_Mutex *)((int)pvVar3 + iVar6 * 0x80 + 0x14);
     sync___Mutex__Lock(m);
-    uVar2 = *(uint *)((int)pvVar6 + 0xc) - 1;
+    uVar4 = *(uint *)((int)pvVar3 + iVar6 * 0x80 + 0xc);
+    uVar2 = uVar4 - 1;
     if (-1 < (int)uVar2) {
-      if (uVar2 < *(uint *)((int)pvVar6 + 0xc)) {
-        *(uint *)((int)pvVar6 + 0xc) = uVar2;
+      if (uVar2 < uVar4) {
+        *(uint *)((int)pvVar3 + iVar6 * 0x80 + 0xc) = uVar2;
         sync___Mutex__Unlock(m);
         return;
       }
@@ -62670,7 +62322,7 @@ void sync___Pool__getSlow(sync_Pool *p,interface__ x)
       } while( true );
     }
     sync___Mutex__Unlock(m);
-    iVar4 = iVar4 + 1;
+    iVar5 = iVar5 + 1;
   }
   runtime_panicdivide();
   do {
@@ -62696,7 +62348,7 @@ void sync___Pool__pin(sync_Pool *p,sync_poolLocal *_r0)
     return;
   }
   sync_runtime_procPin((int)in_stack_fffffff4);
-  sync_fwdslash_atomic_LoadUintptr();
+  sync_atomic_LoadUintptr();
   if (in_stack_fffffff4 < in_stack_fffffff8) {
     return;
   }
@@ -62790,8 +62442,8 @@ void sync___Pool__pinSlow(sync_Pool *p,sync_poolLocal *_r0)
       invalidInstructionException();
     } while( true );
   }
-  sync_fwdslash_atomic_StorePointer(&p->local,in_stack_ffffffd0);
-  sync_fwdslash_atomic_StoreUintptr();
+  sync_atomic_StorePointer(&p->local,in_stack_ffffffd0);
+  sync_atomic_StoreUintptr();
   if (in_stack_ffffffd4 <= arg0) {
     runtime_panicindex();
     do {
@@ -62935,6 +62587,7 @@ int sync_init(EVP_PKEY_CTX *ctx)
 {
   uint *puVar1;
   void *pvVar2;
+  int iVar3;
   int *in_GS_OFFSET;
   EVP_PKEY_CTX *in_stack_fffffff8;
   void *in_stack_fffffffc;
@@ -62943,8 +62596,8 @@ int sync_init(EVP_PKEY_CTX *ctx)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    pvVar2 = (void *)sync_init(ctx);
-    return (int)pvVar2;
+    iVar3 = sync_init(ctx);
+    return iVar3;
   }
   if (sync_initdoneￂﾷ < 2) {
     if (sync_initdoneￂﾷ != 1) {
@@ -62967,7 +62620,7 @@ int sync_init(EVP_PKEY_CTX *ctx)
       invalidInstructionException();
     } while( true );
   }
-  return (int)(uint)sync_initdoneￂﾷ;
+  return (uint)sync_initdoneￂﾷ;
 }
 
 
@@ -62977,7 +62630,7 @@ int io_init(EVP_PKEY_CTX *ctx)
 {
   uint *puVar1;
   void *pvVar2;
-  uint uVar3;
+  int iVar3;
   int *in_GS_OFFSET;
   EVP_PKEY_CTX *in_stack_fffffff0;
   runtime_itab *in_stack_fffffff8;
@@ -62988,8 +62641,8 @@ int io_init(EVP_PKEY_CTX *ctx)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    uVar3 = io_init(ctx);
-    return uVar3;
+    iVar3 = io_init(ctx);
+    return iVar3;
   }
   if (io_initdoneￂﾷ < 2) {
     if (io_initdoneￂﾷ != 1) {
@@ -63061,15 +62714,15 @@ int io_init(EVP_PKEY_CTX *ctx)
       io_errOffset.data = pvVar2;
       errors_New((string)0x1d080e4b04,(error)CONCAT44(in_stack_fffffffc,prVar4));
       io_ErrClosedPipe.tab = prVar4;
-      uVar3 = runtime_writeBarrier._0_4_;
+      iVar3 = runtime_writeBarrier._0_4_;
       if (runtime_writeBarrier._0_4_ != 0) {
-        uVar3 = 0x8145034;
+        iVar3 = 0x8145034;
         runtime_writebarrierptr((uintptr *)&io_ErrClosedPipe.data,(uintptr)in_stack_fffffffc);
         in_stack_fffffffc = io_ErrClosedPipe.data;
       }
       io_ErrClosedPipe.data = in_stack_fffffffc;
       io_initdoneￂﾷ = 2;
-      return uVar3;
+      return iVar3;
     }
     runtime_throwinit();
     do {
@@ -63665,9 +63318,9 @@ int syscall_init(EVP_PKEY_CTX *ctx)
 
 {
   uint *puVar1;
-  int iVar2;
+  map__uint8___uint8 phVar2;
   int iVar3;
-  map__uint8___uint8 phVar4;
+  int iVar4;
   int *in_GS_OFFSET;
   string *in_stack_ffffffe8;
   int in_stack_ffffffec;
@@ -63678,21 +63331,21 @@ int syscall_init(EVP_PKEY_CTX *ctx)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    phVar4 = (map__uint8___uint8)syscall_init(ctx);
-    return (int)phVar4;
+    iVar4 = syscall_init(ctx);
+    return iVar4;
   }
   if (syscall_initdoneￂﾷ < 2) {
     if (syscall_initdoneￂﾷ != 1) {
       syscall_initdoneￂﾷ = 1;
       sync_init((EVP_PKEY_CTX *)in_stack_ffffffe8);
       runtime_init((EVP_PKEY_CTX *)in_stack_ffffffe8);
-      iVar2 = in_stack_ffffffec;
+      iVar4 = in_stack_ffffffec;
       iVar3 = in_stack_fffffff0;
       syscall_runtime_envs
                 ((__string)CONCAT48(in_stack_fffffff0,CONCAT44(in_stack_ffffffec,in_stack_ffffffe8))
                 );
       syscall_envs.cap = iVar3;
-      syscall_envs.len = iVar2;
+      syscall_envs.len = iVar4;
       if (runtime_writeBarrier._0_4_ != 0) {
         runtime_writebarrierptr((uintptr *)&syscall_envs,(uintptr)in_stack_ffffffe8);
         in_stack_ffffffe8 = syscall_envs.array;
@@ -63700,12 +63353,12 @@ int syscall_init(EVP_PKEY_CTX *ctx)
       syscall_envs.array = in_stack_ffffffe8;
       runtime_makemap((runtime_maptype *)&DAT_080cfa00,0,(runtime_hmap *)0x0,(void *)0x0,
                       (runtime_hmap *)in_stack_fffffffc);
-      phVar4 = in_stack_fffffffc;
+      phVar2 = in_stack_fffffffc;
       if (runtime_writeBarrier._0_4_ != 0) {
         runtime_writebarrierptr((uintptr *)&syscall_statictmp_51.active,(uintptr)in_stack_fffffffc);
-        phVar4 = syscall_statictmp_51.active;
+        phVar2 = syscall_statictmp_51.active;
       }
-      syscall_statictmp_51.active = phVar4;
+      syscall_statictmp_51.active = phVar2;
       syscall_init_0();
       syscall_initdoneￂﾷ = 2;
       return (int)in_stack_fffffffc;
@@ -63715,7 +63368,7 @@ int syscall_init(EVP_PKEY_CTX *ctx)
       invalidInstructionException();
     } while( true );
   }
-  return (int)(uint)syscall_initdoneￂﾷ;
+  return (uint)syscall_initdoneￂﾷ;
 }
 
 
@@ -63780,7 +63433,7 @@ void syscall___Errno__Error(syscall_Errno *_this,string _r0)
 
 {
   uint *puVar1;
-  syscall_Errno **ppsVar2;
+  int *piVar2;
   int *in_GS_OFFSET;
   undefined4 in_stack_fffffff8;
   undefined4 in_stack_fffffffc;
@@ -63792,9 +63445,9 @@ void syscall___Errno__Error(syscall_Errno *_this,string _r0)
     syscall___Errno__Error(_this,(string)CONCAT44(_r0.len,_r0.str));
     return;
   }
-  ppsVar2 = *(syscall_Errno ***)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
-  if ((ppsVar2 != (syscall_Errno **)0x0) && ((syscall_Errno **)*ppsVar2 == &_this)) {
-    *ppsVar2 = (syscall_Errno *)&stack0xfffffff4;
+  piVar2 = *(int **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
+  if ((piVar2 != (int *)0x0) && ((syscall_Errno **)*piVar2 == &_this)) {
+    *piVar2 = (int)&stack0xfffffff4;
   }
   if (_this != (syscall_Errno *)0x0) {
     syscall_Errno_Error(*_this,(string)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
@@ -63871,7 +63524,8 @@ int time_init(EVP_PKEY_CTX *ctx)
   uint *puVar1;
   map_string_int64 phVar2;
   void *pvVar3;
-  map_string_int64 phVar4;
+  map_string_int64 src;
+  int iVar4;
   int *in_GS_OFFSET;
   EVP_PKEY_CTX *in_stack_ffffffe0;
   char *pcVar5;
@@ -63888,8 +63542,8 @@ int time_init(EVP_PKEY_CTX *ctx)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    phVar4 = (map_string_int64)time_init(ctx);
-    return (int)phVar4;
+    iVar4 = time_init(ctx);
+    return iVar4;
   }
   if (time_initdoneￂﾷ < 2) {
     if (time_initdoneￂﾷ != 1) {
@@ -63926,7 +63580,7 @@ int time_init(EVP_PKEY_CTX *ctx)
       _r3 = (undefined4 *)0x0;
       runtime_makemap((runtime_maptype *)&DAT_080cfb80,8,(runtime_hmap *)0x0,(void *)0x0,
                       (runtime_hmap *)in_stack_fffffff4);
-      phVar4 = in_stack_fffffff4;
+      src = in_stack_fffffff4;
       runtime_mapassign_faststr
                 ((runtime_maptype *)&DAT_080cfb80,(runtime_hmap *)in_stack_fffffff4,
                  (string)0x2080e0e17,_r3);
@@ -64001,30 +63655,28 @@ int time_init(EVP_PKEY_CTX *ctx)
       runtime_concatstring2
                 ((uint8 (*) [32])0x0,
                  (string  [2])CONCAT412(0x16,CONCAT48(0x80e34c5,CONCAT44(pvVar6,pcVar5))),
-                 (string)CONCAT44(in_stack_fffffff8,phVar4));
+                 (string)CONCAT44(in_stack_fffffff8,src));
       time_statictmp_23[3].len = in_stack_fffffff8;
-      phVar2 = phVar4;
+      phVar2 = src;
       if (runtime_writeBarrier._0_4_ != 0) {
-        runtime_writebarrierptr((uintptr *)(time_statictmp_23 + 3),(uintptr)phVar4);
+        runtime_writebarrierptr((uintptr *)(time_statictmp_23 + 3),(uintptr)src);
         phVar2 = (map_string_int64)time_statictmp_23[3].str;
       }
       time_statictmp_23[3].str = (uint8 *)phVar2;
       time_initdoneￂﾷ = 2;
-      return (int)phVar4;
+      return (int)src;
     }
     runtime_throwinit();
     do {
       invalidInstructionException();
     } while( true );
   }
-  return (int)(uint)time_initdoneￂﾷ;
+  return (uint)time_initdoneￂﾷ;
 }
 
 
 
-// Original name: internal/poll.(*TimeoutError).Error
-
-void internal_fwdslash_poll___TimeoutError__Error(internal_fwdslash_poll_TimeoutError *e,string _r0)
+void internal_poll___TimeoutError__Error(internal_poll_TimeoutError *e,string _r0)
 
 {
   uint *puVar1;
@@ -64036,15 +63688,13 @@ void internal_fwdslash_poll___TimeoutError__Error(internal_fwdslash_poll_Timeout
     return;
   }
   runtime_morestack_noctxt();
-  internal_fwdslash_poll___TimeoutError__Error(e,_r0);
+  internal_poll___TimeoutError__Error(e,_r0);
   return;
 }
 
 
 
-// Original name: internal/poll.(*fdMutex).increfAndClose
-
-void internal_fwdslash_poll___fdMutex__increfAndClose(internal_fwdslash_poll_fdMutex *mu,bool _r0)
+void internal_poll___fdMutex__increfAndClose(internal_poll_fdMutex *mu,bool _r0)
 
 {
   uint *puVar1;
@@ -64058,31 +63708,31 @@ void internal_fwdslash_poll___fdMutex__increfAndClose(internal_fwdslash_poll_fdM
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___fdMutex__increfAndClose(mu,_r0);
+    internal_poll___fdMutex__increfAndClose(mu,_r0);
     return;
   }
   while( true ) {
     uVar2 = in_stack_ffffffdc;
-    sync_fwdslash_atomic_LoadUint64();
+    sync_atomic_LoadUint64();
     if ((uVar2 & 1) != 0) {
       return;
     }
     if (((uVar2 | 1) + 8 & 0x7ffff8) == 0) break;
     in_stack_ffffffdc = uVar2;
-    sync_fwdslash_atomic_CompareAndSwapUint64();
+    sync_atomic_CompareAndSwapUint64();
     if (local_14 != '\0') {
       while ((local_20 & 0x7ff) != 0 || (uVar2 & 0xff800000) != 0) {
-        internal_fwdslash_poll_runtime_Semrelease(&mu->rsema);
+        internal_poll_runtime_Semrelease(&mu->rsema);
         local_20 = (local_20 - 1) + (uint)(0x7fffff < uVar2);
         uVar2 = uVar2 - 0x800000;
       }
       for (; (local_20 & 0x7ffff800) != 0; local_20 = local_20 - 0x800) {
-        internal_fwdslash_poll_runtime_Semrelease(&mu->wsema);
+        internal_poll_runtime_Semrelease(&mu->wsema);
       }
       return;
     }
   }
-  runtime_gopanic((interface__)0x80f18a8080cf1a0);
+  runtime_gopanic((interface___)0x80f18a8080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -64090,9 +63740,7 @@ void internal_fwdslash_poll___fdMutex__increfAndClose(internal_fwdslash_poll_fdM
 
 
 
-// Original name: internal/poll.(*fdMutex).decref
-
-void internal_fwdslash_poll___fdMutex__decref(internal_fwdslash_poll_fdMutex *mu,bool _r0)
+void internal_poll___fdMutex__decref(internal_poll_fdMutex *mu,bool _r0)
 
 {
   uint *puVar1;
@@ -64104,27 +63752,25 @@ void internal_fwdslash_poll___fdMutex__decref(internal_fwdslash_poll_fdMutex *mu
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___fdMutex__decref(mu,_r0);
+    internal_poll___fdMutex__decref(mu,_r0);
     return;
   }
   do {
-    sync_fwdslash_atomic_LoadUint64();
+    sync_atomic_LoadUint64();
     if ((in_stack_ffffffe8 & 0x7ffff8) == 0) {
-      runtime_gopanic((interface__)0x80f18b0080cf1a0);
+      runtime_gopanic((interface___)0x80f18b0080cf1a0);
       do {
         invalidInstructionException();
       } while( true );
     }
-    sync_fwdslash_atomic_CompareAndSwapUint64();
+    sync_atomic_CompareAndSwapUint64();
   } while (local_8 == '\0');
   return;
 }
 
 
 
-// Original name: internal/poll.(*fdMutex).rwlock
-
-void internal_fwdslash_poll___fdMutex__rwlock(internal_fwdslash_poll_fdMutex *mu,bool read,bool _r1)
+void internal_poll___fdMutex__rwlock(internal_poll_fdMutex *mu,bool read,bool _r1)
 
 {
   uint *puVar1;
@@ -64144,7 +63790,7 @@ void internal_fwdslash_poll___fdMutex__rwlock(internal_fwdslash_poll_fdMutex *mu
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___fdMutex__rwlock(mu,read,_r1);
+    internal_poll___fdMutex__rwlock(mu,read,_r1);
     return;
   }
   if (read == false) {
@@ -64165,42 +63811,37 @@ void internal_fwdslash_poll___fdMutex__rwlock(internal_fwdslash_poll_fdMutex *mu
   }
   while( true ) {
     do {
-      sync_fwdslash_atomic_LoadUint64();
+      sync_atomic_LoadUint64();
       if ((in_stack_ffffffd0 & 1) != 0) {
         return;
       }
       bVar7 = (uVar2 & in_stack_ffffffd0) == 0;
       if (bVar7) {
         if (((in_stack_ffffffd0 | uVar2) + 8 & 0x7ffff8) == 0) {
-          runtime_gopanic((interface__)0x80f18b8080cf1a0);
+          runtime_gopanic((interface___)0x80f18b8080cf1a0);
           do {
             invalidInstructionException();
           } while( true );
         }
       }
-      else {
-        if ((uVar5 & local_2c + iVar4 + (uint)CARRY4(in_stack_ffffffd0,uVar3)) == 0 &&
-            (uVar6 & in_stack_ffffffd0 + uVar3) == 0) {
-          runtime_gopanic((interface__)0x80f18c0080cf1a0);
-          do {
-            invalidInstructionException();
-          } while( true );
-        }
+      else if ((uVar5 & local_2c + iVar4 + (uint)CARRY4(in_stack_ffffffd0,uVar3)) == 0 &&
+               (uVar6 & in_stack_ffffffd0 + uVar3) == 0) {
+        runtime_gopanic((interface___)0x80f18c0080cf1a0);
+        do {
+          invalidInstructionException();
+        } while( true );
       }
-      sync_fwdslash_atomic_CompareAndSwapUint64();
+      sync_atomic_CompareAndSwapUint64();
     } while (local_20 == '\0');
     if (bVar7) break;
-    internal_fwdslash_poll_runtime_Semacquire(addr);
+    internal_poll_runtime_Semacquire(addr);
   }
   return;
 }
 
 
 
-// Original name: internal/poll.(*fdMutex).rwunlock
-
-void internal_fwdslash_poll___fdMutex__rwunlock
-               (internal_fwdslash_poll_fdMutex *mu,bool read,bool _r1)
+void internal_poll___fdMutex__rwunlock(internal_poll_fdMutex *mu,bool read,bool _r1)
 
 {
   uint *puVar1;
@@ -64218,7 +63859,7 @@ void internal_fwdslash_poll___fdMutex__rwunlock
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___fdMutex__rwunlock(mu,read,_r1);
+    internal_poll___fdMutex__rwunlock(mu,read,_r1);
     return;
   }
   if (read == false) {
@@ -64233,18 +63874,18 @@ void internal_fwdslash_poll___fdMutex__rwunlock
     uVar4 = 0xff800000;
     uVar5 = 0x7ff;
   }
-  while ((sync_fwdslash_atomic_LoadUint64(), (uVar3 & in_stack_ffffffcc) != 0 &&
+  while ((sync_atomic_LoadUint64(), (uVar3 & in_stack_ffffffcc) != 0 &&
          ((in_stack_ffffffcc & 0x7ffff8) != 0))) {
     uVar2 = uVar4 & in_stack_ffffffcc;
-    sync_fwdslash_atomic_CompareAndSwapUint64();
+    sync_atomic_CompareAndSwapUint64();
     if (local_24 != '\0') {
       if ((uVar5 & local_30) != 0 || uVar2 != 0) {
-        internal_fwdslash_poll_runtime_Semrelease(addr);
+        internal_poll_runtime_Semrelease(addr);
       }
       return;
     }
   }
-  runtime_gopanic((interface__)0x80f18c8080cf1a0);
+  runtime_gopanic((interface___)0x80f18c8080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -64252,9 +63893,7 @@ void internal_fwdslash_poll___fdMutex__rwunlock
 
 
 
-// Original name: internal/poll.(*FD).decref
-
-void internal_fwdslash_poll___FD__decref(internal_fwdslash_poll_FD *fd,error _r0)
+void internal_poll___FD__decref(internal_poll_FD *fd,error _r0)
 
 {
   uint *puVar1;
@@ -64266,12 +63905,12 @@ void internal_fwdslash_poll___FD__decref(internal_fwdslash_poll_FD *fd,error _r0
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___FD__decref(fd,_r0);
+    internal_poll___FD__decref(fd,_r0);
     return;
   }
-  internal_fwdslash_poll___fdMutex__decref(&fd->fdmu,SUB41(in_stack_fffffff8,0));
+  internal_poll___fdMutex__decref(&fd->fdmu,SUB41(in_stack_fffffff8,0));
   if ((char)in_stack_fffffff8 != '\0') {
-    internal_fwdslash_poll___FD__destroy(fd,(error)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
+    internal_poll___FD__destroy(fd,(error)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
     return;
   }
   return;
@@ -64279,9 +63918,7 @@ void internal_fwdslash_poll___FD__decref(internal_fwdslash_poll_FD *fd,error _r0
 
 
 
-// Original name: internal/poll.(*FD).writeLock
-
-void internal_fwdslash_poll___FD__writeLock(internal_fwdslash_poll_FD *fd,error _r0)
+void internal_poll___FD__writeLock(internal_poll_FD *fd,error _r0)
 
 {
   uint *puVar1;
@@ -64292,10 +63929,10 @@ void internal_fwdslash_poll___FD__writeLock(internal_fwdslash_poll_FD *fd,error 
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___FD__writeLock(fd,_r0);
+    internal_poll___FD__writeLock(fd,_r0);
     return;
   }
-  internal_fwdslash_poll___fdMutex__rwlock(&fd->fdmu,false,(bool)in_stack_fffffffc);
+  internal_poll___fdMutex__rwlock(&fd->fdmu,false,(bool)in_stack_fffffffc);
   if (in_stack_fffffffc == '\0') {
     return;
   }
@@ -64304,9 +63941,7 @@ void internal_fwdslash_poll___FD__writeLock(internal_fwdslash_poll_FD *fd,error 
 
 
 
-// Original name: internal/poll.(*FD).writeUnlock
-
-void internal_fwdslash_poll___FD__writeUnlock(internal_fwdslash_poll_FD *fd)
+void internal_poll___FD__writeUnlock(internal_poll_FD *fd)
 
 {
   uint *puVar1;
@@ -64319,23 +63954,20 @@ void internal_fwdslash_poll___FD__writeUnlock(internal_fwdslash_poll_FD *fd)
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     uVar2 = in_stack_fffffff8 & 0xffffff00;
-    internal_fwdslash_poll___fdMutex__rwunlock(&fd->fdmu,false,SUB41(in_stack_fffffffc,0));
+    internal_poll___fdMutex__rwunlock(&fd->fdmu,false,SUB41(in_stack_fffffffc,0));
     if ((char)in_stack_fffffffc != '\0') {
-      internal_fwdslash_poll___FD__destroy(fd,(error)CONCAT44(in_stack_fffffffc,uVar2));
+      internal_poll___FD__destroy(fd,(error)CONCAT44(in_stack_fffffffc,uVar2));
     }
     return;
   }
   runtime_morestack_noctxt();
-  internal_fwdslash_poll___FD__writeUnlock(fd);
+  internal_poll___FD__writeUnlock(fd);
   return;
 }
 
 
 
-// Original name: internal/poll.(*pollDesc).init
-
-void internal_fwdslash_poll___pollDesc__init
-               (internal_fwdslash_poll_pollDesc *pd,internal_fwdslash_poll_FD *fd,error _r1)
+void internal_poll___pollDesc__init(internal_poll_pollDesc *pd,internal_poll_FD *fd,error _r1)
 
 {
   uint *puVar1;
@@ -64350,17 +63982,17 @@ void internal_fwdslash_poll___pollDesc__init
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     local_4 = 0x809dd2f;
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___pollDesc__init(pd,fd,_r1);
+    internal_poll___pollDesc__init(pd,fd,_r1);
     return;
   }
-  _r1_00 = &PTR_internal_fwdslash_poll_runtime_pollServerInit_080e7b18;
-  sync___Once__Do(&internal_fwdslash_poll_serverInit,
-                  (func__ *)&PTR_internal_fwdslash_poll_runtime_pollServerInit_080e7b18);
-  internal_fwdslash_poll_runtime_pollOpen(fd->Sysfd,(runtime_pollDesc *)_r1_00,in_stack_ffffffec);
+  _r1_00 = &PTR_internal_poll_runtime_pollServerInit_080e7b18;
+  sync___Once__Do(&internal_poll_serverInit,
+                  (func__ *)&PTR_internal_poll_runtime_pollServerInit_080e7b18);
+  internal_poll_runtime_pollOpen(fd->Sysfd,(runtime_pollDesc *)_r1_00,in_stack_ffffffec);
   if (in_stack_ffffffec != 0) {
     if ((runtime_pollDesc *)_r1_00 != (runtime_pollDesc *)0x0) {
-      internal_fwdslash_poll_runtime_pollUnblock((runtime_pollDesc *)_r1_00);
-      internal_fwdslash_poll_runtime_pollClose((runtime_pollDesc *)_r1_00);
+      internal_poll_runtime_pollUnblock((runtime_pollDesc *)_r1_00);
+      internal_poll_runtime_pollClose((runtime_pollDesc *)_r1_00);
     }
     runtime_convT2I32((runtime_itab *)go_itab_syscall_Errno_error,&local_4,
                       (runtime_iface)CONCAT44(in_stack_fffffff0,in_stack_ffffffec));
@@ -64372,9 +64004,7 @@ void internal_fwdslash_poll___pollDesc__init
 
 
 
-// Original name: internal/poll.(*pollDesc).close
-
-void internal_fwdslash_poll___pollDesc__close(internal_fwdslash_poll_pollDesc *pd)
+void internal_poll___pollDesc__close(internal_poll_pollDesc *pd)
 
 {
   uint *puVar1;
@@ -64384,22 +64014,20 @@ void internal_fwdslash_poll___pollDesc__close(internal_fwdslash_poll_pollDesc *p
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___pollDesc__close(pd);
+    internal_poll___pollDesc__close(pd);
     return;
   }
   if ((runtime_pollDesc *)pd->runtimeCtx == (runtime_pollDesc *)0x0) {
     return;
   }
-  internal_fwdslash_poll_runtime_pollClose((runtime_pollDesc *)pd->runtimeCtx);
+  internal_poll_runtime_pollClose((runtime_pollDesc *)pd->runtimeCtx);
   pd->runtimeCtx = 0;
   return;
 }
 
 
 
-// Original name: internal/poll.(*pollDesc).evict
-
-void internal_fwdslash_poll___pollDesc__evict(internal_fwdslash_poll_pollDesc *pd)
+void internal_poll___pollDesc__evict(internal_poll_pollDesc *pd)
 
 {
   uint *puVar1;
@@ -64409,22 +64037,19 @@ void internal_fwdslash_poll___pollDesc__evict(internal_fwdslash_poll_pollDesc *p
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___pollDesc__evict(pd);
+    internal_poll___pollDesc__evict(pd);
     return;
   }
   if ((runtime_pollDesc *)pd->runtimeCtx == (runtime_pollDesc *)0x0) {
     return;
   }
-  internal_fwdslash_poll_runtime_pollUnblock((runtime_pollDesc *)pd->runtimeCtx);
+  internal_poll_runtime_pollUnblock((runtime_pollDesc *)pd->runtimeCtx);
   return;
 }
 
 
 
-// Original name: internal/poll.(*pollDesc).prepare
-
-void internal_fwdslash_poll___pollDesc__prepare
-               (internal_fwdslash_poll_pollDesc *pd,int mode,bool isFile,error _r2)
+void internal_poll___pollDesc__prepare(internal_poll_pollDesc *pd,int mode,bool isFile,error _r2)
 
 {
   uint *puVar1;
@@ -64436,25 +64061,21 @@ void internal_fwdslash_poll___pollDesc__prepare
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___pollDesc__prepare(pd,mode,isFile,_r2);
+    internal_poll___pollDesc__prepare(pd,mode,isFile,_r2);
     return;
   }
   if ((runtime_pollDesc *)pd->runtimeCtx == (runtime_pollDesc *)0x0) {
     return;
   }
-  internal_fwdslash_poll_runtime_pollReset
-            ((runtime_pollDesc *)pd->runtimeCtx,mode,in_stack_fffffff8);
-  internal_fwdslash_poll_convertErr
+  internal_poll_runtime_pollReset((runtime_pollDesc *)pd->runtimeCtx,mode,in_stack_fffffff8);
+  internal_poll_convertErr
             (in_stack_fffffff8,isFile,(error)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
   return;
 }
 
 
 
-// Original name: internal/poll.(*pollDesc).prepareWrite
-
-void internal_fwdslash_poll___pollDesc__prepareWrite
-               (internal_fwdslash_poll_pollDesc *pd,bool isFile,error _r1)
+void internal_poll___pollDesc__prepareWrite(internal_poll_pollDesc *pd,bool isFile,error _r1)
 
 {
   uint *puVar1;
@@ -64465,21 +64086,18 @@ void internal_fwdslash_poll___pollDesc__prepareWrite
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    internal_fwdslash_poll___pollDesc__prepare
+    internal_poll___pollDesc__prepare
               (pd,0x77,isFile,(error)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
     return;
   }
   runtime_morestack_noctxt();
-  internal_fwdslash_poll___pollDesc__prepareWrite(pd,isFile,_r1);
+  internal_poll___pollDesc__prepareWrite(pd,isFile,_r1);
   return;
 }
 
 
 
-// Original name: internal/poll.(*pollDesc).wait
-
-void internal_fwdslash_poll___pollDesc__wait
-               (internal_fwdslash_poll_pollDesc *pd,int mode,bool isFile,error _r2)
+void internal_poll___pollDesc__wait(internal_poll_pollDesc *pd,int mode,bool isFile,error _r2)
 
 {
   uint *puVar1;
@@ -64492,7 +64110,7 @@ void internal_fwdslash_poll___pollDesc__wait
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___pollDesc__wait(pd,mode,isFile,_r2);
+    internal_poll___pollDesc__wait(pd,mode,isFile,_r2);
     return;
   }
   if ((runtime_pollDesc *)pd->runtimeCtx == (runtime_pollDesc *)0x0) {
@@ -64512,19 +64130,15 @@ void internal_fwdslash_poll___pollDesc__wait
     }
     return;
   }
-  internal_fwdslash_poll_runtime_pollWait((runtime_pollDesc *)pd->runtimeCtx,mode,in_stack_fffffff4)
-  ;
-  internal_fwdslash_poll_convertErr
+  internal_poll_runtime_pollWait((runtime_pollDesc *)pd->runtimeCtx,mode,in_stack_fffffff4);
+  internal_poll_convertErr
             (in_stack_fffffff4,isFile,(error)CONCAT44(in_stack_fffffff8,in_stack_fffffff4));
   return;
 }
 
 
 
-// Original name: internal/poll.(*pollDesc).waitWrite
-
-void internal_fwdslash_poll___pollDesc__waitWrite
-               (internal_fwdslash_poll_pollDesc *pd,bool isFile,error _r1)
+void internal_poll___pollDesc__waitWrite(internal_poll_pollDesc *pd,bool isFile,error _r1)
 
 {
   uint *puVar1;
@@ -64535,20 +64149,18 @@ void internal_fwdslash_poll___pollDesc__waitWrite
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    internal_fwdslash_poll___pollDesc__wait
+    internal_poll___pollDesc__wait
               (pd,0x77,isFile,(error)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
     return;
   }
   runtime_morestack_noctxt();
-  internal_fwdslash_poll___pollDesc__waitWrite(pd,isFile,_r1);
+  internal_poll___pollDesc__waitWrite(pd,isFile,_r1);
   return;
 }
 
 
 
-// Original name: internal/poll.convertErr
-
-void internal_fwdslash_poll_convertErr(int res,bool isFile,error _r2)
+void internal_poll_convertErr(int res,bool isFile,error _r2)
 
 {
   uint *puVar1;
@@ -64558,7 +64170,7 @@ void internal_fwdslash_poll_convertErr(int res,bool isFile,error _r2)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll_convertErr(res,isFile,_r2);
+    internal_poll_convertErr(res,isFile,_r2);
     return;
   }
   if (res == 0) {
@@ -64576,7 +64188,7 @@ void internal_fwdslash_poll_convertErr(int res,bool isFile,error _r2)
   runtime_printint((longlong)res);
   runtime_printnl();
   runtime_printunlock();
-  runtime_gopanic((interface__)0x80f18d0080cf1a0);
+  runtime_gopanic((interface___)0x80f18d0080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -64584,10 +64196,7 @@ void internal_fwdslash_poll_convertErr(int res,bool isFile,error _r2)
 
 
 
-// Original name: internal/poll.(*FD).Init
-
-void internal_fwdslash_poll___FD__Init
-               (internal_fwdslash_poll_FD *fd,string net,bool pollable,error _r2)
+void internal_poll___FD__Init(internal_poll_FD *fd,string net,bool pollable,error _r2)
 
 {
   uint *puVar1;
@@ -64599,7 +64208,7 @@ void internal_fwdslash_poll___FD__Init
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___FD__Init(fd,net,pollable,_r2);
+    internal_poll___FD__Init(fd,net,pollable,_r2);
     return;
   }
   if ((net.len == 4) && (*(int *)net.str == 0x656c6966)) {
@@ -64608,16 +64217,13 @@ void internal_fwdslash_poll___FD__Init
   if (pollable == false) {
     return;
   }
-  internal_fwdslash_poll___pollDesc__init
-            (&fd->pd,fd,(error)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
+  internal_poll___pollDesc__init(&fd->pd,fd,(error)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
   return;
 }
 
 
 
-// Original name: internal/poll.(*FD).destroy
-
-void internal_fwdslash_poll___FD__destroy(internal_fwdslash_poll_FD *fd,error _r0)
+void internal_poll___FD__destroy(internal_poll_FD *fd,error _r0)
 
 {
   uint *puVar1;
@@ -64626,21 +64232,19 @@ void internal_fwdslash_poll___FD__destroy(internal_fwdslash_poll_FD *fd,error _r
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    internal_fwdslash_poll___pollDesc__close(&fd->pd);
+    internal_poll___pollDesc__close(&fd->pd);
     (**(code **)runtime_data)(fd->Sysfd);
     fd->Sysfd = -1;
     return;
   }
   runtime_morestack_noctxt();
-  internal_fwdslash_poll___FD__destroy(fd,_r0);
+  internal_poll___FD__destroy(fd,_r0);
   return;
 }
 
 
 
-// Original name: internal/poll.(*FD).Close
-
-void internal_fwdslash_poll___FD__Close(internal_fwdslash_poll_FD *fd,error _r0)
+void internal_poll___FD__Close(internal_poll_FD *fd,error _r0)
 
 {
   uint *puVar1;
@@ -64652,28 +64256,26 @@ void internal_fwdslash_poll___FD__Close(internal_fwdslash_poll_FD *fd,error _r0)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___FD__Close(fd,_r0);
+    internal_poll___FD__Close(fd,_r0);
     return;
   }
-  internal_fwdslash_poll___fdMutex__increfAndClose(&fd->fdmu,SUB41(in_stack_fffffff8,0));
+  internal_poll___fdMutex__increfAndClose(&fd->fdmu,SUB41(in_stack_fffffff8,0));
   if ((char)in_stack_fffffff8 == '\0') {
     return;
   }
-  internal_fwdslash_poll___pollDesc__evict(&fd->pd);
-  internal_fwdslash_poll___FD__decref(fd,(error)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
+  internal_poll___pollDesc__evict(&fd->pd);
+  internal_poll___FD__decref(fd,(error)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
   return;
 }
 
 
 
-// Original name: internal/poll.(*FD).Write
-
-void internal_fwdslash_poll___FD__Write(internal_fwdslash_poll_FD *fd,__uint8 p,int _r1,error _r2)
+void internal_poll___FD__Write(internal_poll_FD *fd,__uint8 p,int _r1,error _r2)
 
 {
   uint *puVar1;
-  internal_fwdslash_poll_pollDesc *pd;
-  internal_fwdslash_poll_FD *piVar2;
+  internal_poll_pollDesc *pd;
+  internal_poll_FD *piVar2;
   uint uVar3;
   int iVar4;
   uint uVar5;
@@ -64681,10 +64283,10 @@ void internal_fwdslash_poll___FD__Write(internal_fwdslash_poll_FD *fd,__uint8 p,
   int iVar7;
   int *in_GS_OFFSET;
   uintptr arg0;
-  internal_fwdslash_poll_pollDesc *piVar8;
+  internal_poll_pollDesc *piVar8;
   int in_stack_ffffffd8;
   undefined4 in_stack_ffffffdc;
-  internal_fwdslash_poll_FD *piVar9;
+  internal_poll_FD *piVar9;
   undefined4 in_stack_ffffffe0;
   int in_stack_ffffffe4;
   int n;
@@ -64695,11 +64297,11 @@ void internal_fwdslash_poll___FD__Write(internal_fwdslash_poll_FD *fd,__uint8 p,
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    internal_fwdslash_poll___FD__Write(fd,p,_r1,_r2);
+    internal_poll___FD__Write(fd,p,_r1,_r2);
     return;
   }
   piVar2 = fd;
-  internal_fwdslash_poll___FD__writeLock(fd,(error)CONCAT44(in_stack_ffffffdc,in_stack_ffffffd8));
+  internal_poll___FD__writeLock(fd,(error)CONCAT44(in_stack_ffffffdc,in_stack_ffffffd8));
   if (in_stack_ffffffd8 != 0) {
     runtime_deferreturn((uintptr)piVar2);
     return;
@@ -64707,16 +64309,15 @@ void internal_fwdslash_poll___FD__Write(internal_fwdslash_poll_FD *fd,__uint8 p,
   arg0 = 4;
   piVar2 = fd;
   piVar9 = fd;
-  runtime_deferproc(4,(runtime_funcval *)&PTR_internal_fwdslash_poll___FD__writeUnlock_080e7b14);
-  if (piVar2 != (internal_fwdslash_poll_FD *)0x0) {
+  runtime_deferproc(4,(runtime_funcval *)&PTR_internal_poll___FD__writeUnlock_080e7b14);
+  if (piVar2 != (internal_poll_FD *)0x0) {
     runtime_deferreturn(arg0);
     return;
   }
   pd = &fd->pd;
   piVar8 = pd;
-  internal_fwdslash_poll___pollDesc__prepareWrite
-            (pd,fd->isFile,(error)CONCAT44(in_stack_ffffffe0,piVar9));
-  if (piVar9 == (internal_fwdslash_poll_FD *)0x0) {
+  internal_poll___pollDesc__prepareWrite(pd,fd->isFile,(error)CONCAT44(in_stack_ffffffe0,piVar9));
+  if (piVar9 == (internal_poll_FD *)0x0) {
     uVar3 = 0;
     while( true ) {
       iVar4 = in_stack_ffffffe8;
@@ -64731,7 +64332,7 @@ void internal_fwdslash_poll___FD__Write(internal_fwdslash_poll_FD *fd,__uint8 p,
           invalidInstructionException();
         } while( true );
       }
-      piVar8 = (internal_fwdslash_poll_pollDesc *)fd->Sysfd;
+      piVar8 = (internal_poll_pollDesc *)fd->Sysfd;
       iVar7 = p.cap - uVar3;
       iVar6 = uVar5 - uVar3;
       syscall_Write((int)piVar8,
@@ -64747,7 +64348,7 @@ void internal_fwdslash_poll___FD__Write(internal_fwdslash_poll_FD *fd,__uint8 p,
           (*in_stack_ffffffec != 0xb)) ||
          (((fd->pd).runtimeCtx == 0 ||
           (piVar8 = pd,
-          internal_fwdslash_poll___pollDesc__waitWrite(pd,fd->isFile,(error)CONCAT44(iVar7,iVar6)),
+          internal_poll___pollDesc__waitWrite(pd,fd->isFile,(error)CONCAT44(iVar7,iVar6)),
           iVar4 = iVar6, iVar4 != 0)))) {
         if (iVar4 != 0) {
           runtime_deferreturn((uintptr)piVar8);
@@ -64768,14 +64369,12 @@ void internal_fwdslash_poll___FD__Write(internal_fwdslash_poll_FD *fd,__uint8 p,
 
 
 
-// Original name: internal/poll.init
-
-int internal_fwdslash_poll_init(EVP_PKEY_CTX *ctx)
+int internal_poll_init(EVP_PKEY_CTX *ctx)
 
 {
   uint *puVar1;
   void *pvVar2;
-  uint uVar3;
+  int iVar3;
   int *in_GS_OFFSET;
   EVP_PKEY_CTX *in_stack_fffffff0;
   runtime_itab *in_stack_fffffff8;
@@ -64786,55 +64385,51 @@ int internal_fwdslash_poll_init(EVP_PKEY_CTX *ctx)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    uVar3 = internal_fwdslash_poll_init(ctx);
-    return uVar3;
+    iVar3 = internal_poll_init(ctx);
+    return iVar3;
   }
-  if (internal_fwdslash_poll_initdoneￂﾷ < 2) {
-    if (internal_fwdslash_poll_initdoneￂﾷ != 1) {
-      internal_fwdslash_poll_initdoneￂﾷ = 1;
+  if (internal_poll_initdoneￂﾷ < 2) {
+    if (internal_poll_initdoneￂﾷ != 1) {
+      internal_poll_initdoneￂﾷ = 1;
       sync_init(in_stack_fffffff0);
       syscall_init(in_stack_fffffff0);
       time_init(in_stack_fffffff0);
       io_init(in_stack_fffffff0);
       prVar4 = in_stack_fffffff8;
       errors_New((string)0x20080e5563,(error)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
-      internal_fwdslash_poll_ErrNetClosing.tab = prVar4;
+      internal_poll_ErrNetClosing.tab = prVar4;
       pvVar2 = in_stack_fffffffc;
-      prVar4 = internal_fwdslash_poll_ErrNetClosing.tab;
+      prVar4 = internal_poll_ErrNetClosing.tab;
       if (runtime_writeBarrier._0_4_ != 0) {
         runtime_writebarrierptr
-                  ((uintptr *)&internal_fwdslash_poll_ErrNetClosing.data,(uintptr)in_stack_fffffffc)
-        ;
-        pvVar2 = internal_fwdslash_poll_ErrNetClosing.data;
+                  ((uintptr *)&internal_poll_ErrNetClosing.data,(uintptr)in_stack_fffffffc);
+        pvVar2 = internal_poll_ErrNetClosing.data;
       }
-      internal_fwdslash_poll_ErrNetClosing.data = pvVar2;
+      internal_poll_ErrNetClosing.data = pvVar2;
       errors_New((string)0x12080e2b02,(error)CONCAT44(in_stack_fffffffc,prVar4));
-      internal_fwdslash_poll_ErrFileClosing.tab = prVar4;
-      uVar3 = runtime_writeBarrier._0_4_;
+      internal_poll_ErrFileClosing.tab = prVar4;
+      iVar3 = runtime_writeBarrier._0_4_;
       if (runtime_writeBarrier._0_4_ != 0) {
-        uVar3 = 0x814501c;
+        iVar3 = 0x814501c;
         runtime_writebarrierptr
-                  ((uintptr *)&internal_fwdslash_poll_ErrFileClosing.data,(uintptr)in_stack_fffffffc
-                  );
-        in_stack_fffffffc = internal_fwdslash_poll_ErrFileClosing.data;
+                  ((uintptr *)&internal_poll_ErrFileClosing.data,(uintptr)in_stack_fffffffc);
+        in_stack_fffffffc = internal_poll_ErrFileClosing.data;
       }
-      internal_fwdslash_poll_ErrFileClosing.data = in_stack_fffffffc;
-      internal_fwdslash_poll_initdoneￂﾷ = 2;
-      return uVar3;
+      internal_poll_ErrFileClosing.data = in_stack_fffffffc;
+      internal_poll_initdoneￂﾷ = 2;
+      return iVar3;
     }
     runtime_throwinit();
     do {
       invalidInstructionException();
     } while( true );
   }
-  return (uint)internal_fwdslash_poll_initdoneￂﾷ;
+  return (uint)internal_poll_initdoneￂﾷ;
 }
 
 
 
-// Original name: type..hash.internal/poll.FD
-
-void type__hash_internal_fwdslash_poll_FD(internal_fwdslash_poll_FD *p,uintptr h,uintptr _r2)
+void type__hash_internal_poll_FD(internal_poll_FD *p,uintptr h,uintptr _r2)
 
 {
   uint *puVar1;
@@ -64848,16 +64443,13 @@ void type__hash_internal_fwdslash_poll_FD(internal_fwdslash_poll_FD *p,uintptr h
     return;
   }
   runtime_morestack_noctxt();
-  type__hash_internal_fwdslash_poll_FD(p,h,_r2);
+  type__hash_internal_poll_FD(p,h,_r2);
   return;
 }
 
 
 
-// Original name: type..eq.internal/poll.FD
-
-void type__eq_internal_fwdslash_poll_FD
-               (internal_fwdslash_poll_FD *p,internal_fwdslash_poll_FD *q,bool _r2)
+void type__eq_internal_poll_FD(internal_poll_FD *p,internal_poll_FD *q,bool _r2)
 
 {
   uint *puVar1;
@@ -64870,7 +64462,7 @@ void type__eq_internal_fwdslash_poll_FD
     return;
   }
   runtime_morestack_noctxt();
-  type__eq_internal_fwdslash_poll_FD(p,q,_r2);
+  type__eq_internal_poll_FD(p,q,_r2);
   return;
 }
 
@@ -64961,11 +64553,10 @@ void os___File__Write(os_File *f,__uint8 b,int n,error err)
       (prVar2 = in_stack_ffffffdc,
       runtime_ifaceeq(in_stack_ffffffd8,in_stack_ffffffdc,io_EOF.data,(bool)(char)b.cap),
       (char)b.cap == '\0')))) {
-    if ((internal_fwdslash_poll_ErrFileClosing.tab == in_stack_ffffffd8) &&
+    if ((internal_poll_ErrFileClosing.tab == in_stack_ffffffd8) &&
        (prVar2 = in_stack_ffffffdc,
-       runtime_ifaceeq(in_stack_ffffffd8,in_stack_ffffffdc,
-                       internal_fwdslash_poll_ErrFileClosing.data,(bool)(char)b.cap),
-       (char)b.cap != '\0')) {
+       runtime_ifaceeq(in_stack_ffffffd8,in_stack_ffffffdc,internal_poll_ErrFileClosing.data,
+                       (bool)(char)b.cap), (char)b.cap != '\0')) {
       in_stack_ffffffd8 = os_ErrClosed.tab;
       in_stack_ffffffdc = (runtime_itab *)os_ErrClosed.data;
     }
@@ -65107,8 +64698,8 @@ void os_newFile(uintptr fd,string name,bool pollable,os_File *_r3)
 {
   uint *puVar1;
   int *in_GS_OFFSET;
-  internal_fwdslash_poll_FD *in_stack_ffffffe4;
-  internal_fwdslash_poll_FD *fd_00;
+  internal_poll_FD *in_stack_ffffffe4;
+  internal_poll_FD *fd_00;
   int iVar2;
   uint in_stack_ffffffec;
   uint uVar3;
@@ -65136,25 +64727,25 @@ void os_newFile(uintptr fd,string name,bool pollable,os_File *_r3)
       runtime_writebarrierptr((uintptr *)(fd_00 + 1),(uintptr)name.str);
     }
     if (runtime_writeBarrier._0_4_ == 0) {
-      *(internal_fwdslash_poll_FD **)&(in_stack_ffffffe4->fdmu).state = fd_00;
+      *(internal_poll_FD **)&(in_stack_ffffffe4->fdmu).state = fd_00;
     }
     else {
       runtime_writebarrierptr((uintptr *)in_stack_ffffffe4,(uintptr)fd_00);
     }
     iVar2 = 4;
     uVar3 = in_stack_ffffffec & 0xffffff00 | (uint)pollable;
-    internal_fwdslash_poll___FD__Init
+    internal_poll___FD__Init
               (fd_00,(string)0x4080e0f22,pollable,
                (error)CONCAT44(in_stack_fffffff4,in_stack_fffffff0));
     if ((in_stack_fffffff0 == 0) && (pollable != false)) {
       syscall_SetNonblock(fd,true,(error)CONCAT44(uVar3,iVar2));
       if (iVar2 == 0) {
-        *(undefined *)(*(int *)&(in_stack_ffffffe4->fdmu).state + 0x2c) = 1;
+        *(undefined *)(*(uintptr *)&(in_stack_ffffffe4->fdmu).state + 0x2c) = 1;
       }
     }
     runtime_SetFinalizer
-              ((interface__)CONCAT44(*(undefined4 *)&(in_stack_ffffffe4->fdmu).state,0x80d0640),
-               (interface__)0x80e7b1c080cdea0);
+              ((interface___)CONCAT44(*(uintptr *)&(in_stack_ffffffe4->fdmu).state,0x80d0640),
+               (interface___)0x80e7b1c080cdea0);
     return;
   }
   return;
@@ -65207,15 +64798,13 @@ void os___file__close(os_file *file,error _r0)
   if (file == (os_file *)0x0) {
     return;
   }
-  internal_fwdslash_poll___FD__Close
-            (&file->pfd,(error)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
+  internal_poll___FD__Close(&file->pfd,(error)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
   if (in_stack_ffffffe0 != (runtime_itab *)0x0) {
     dst = in_stack_ffffffe0;
-    if ((in_stack_ffffffe0 == internal_fwdslash_poll_ErrFileClosing.tab) &&
+    if ((in_stack_ffffffe0 == internal_poll_ErrFileClosing.tab) &&
        (dst = in_stack_ffffffe4,
-       runtime_ifaceeq(in_stack_ffffffe0,in_stack_ffffffe4,
-                       internal_fwdslash_poll_ErrFileClosing.data,(bool)in_stack_ffffffe8),
-       in_stack_ffffffe8 != '\0')) {
+       runtime_ifaceeq(in_stack_ffffffe0,in_stack_ffffffe4,internal_poll_ErrFileClosing.data,
+                       (bool)in_stack_ffffffe8), in_stack_ffffffe8 != '\0')) {
       in_stack_ffffffe0 = os_ErrClosed.tab;
       in_stack_ffffffe4 = (runtime_itab *)os_ErrClosed.data;
     }
@@ -65243,7 +64832,7 @@ void os___file__close(os_file *file,error _r0)
       runtime_writebarrierptr(dst->fun,(uintptr)in_stack_ffffffe4);
     }
   }
-  runtime_SetFinalizer((interface__)CONCAT44(file,0x80d0640),(interface__)0x0);
+  runtime_SetFinalizer((interface___)CONCAT44(file,0x80d0640),(interface___)0x0);
   return;
 }
 
@@ -65261,7 +64850,7 @@ void os___File__write(os_File *f,__uint8 b,int n,error err)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    internal_fwdslash_poll___FD__Write
+    internal_poll___FD__Write
               (&f->file->pfd,b,in_stack_fffffff4,
                (error)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
     return;
@@ -65336,21 +64925,22 @@ int os_init(EVP_PKEY_CTX *ctx)
 {
   uint *puVar1;
   os_File *poVar2;
+  int iVar3;
   int *in_GS_OFFSET;
   EVP_PKEY_CTX *in_stack_ffffffe8;
   void **src;
-  os_File *poVar3;
+  os_File *poVar4;
   runtime_itab *in_stack_fffffff0;
-  runtime_itab *prVar4;
+  runtime_itab *prVar5;
   os_File *in_stack_fffffff4;
-  os_File *poVar5;
+  os_File *poVar6;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    poVar2 = (os_File *)os_init(ctx);
-    return (int)poVar2;
+    iVar3 = os_init(ctx);
+    return iVar3;
   }
   if (os_initdoneￂﾷ < 2) {
     if (os_initdoneￂﾷ != 1) {
@@ -65360,103 +64950,103 @@ int os_init(EVP_PKEY_CTX *ctx)
       syscall_init(in_stack_ffffffe8);
       sync_init(in_stack_ffffffe8);
       time_init(in_stack_ffffffe8);
-      internal_fwdslash_poll_init(in_stack_ffffffe8);
-      prVar4 = in_stack_fffffff0;
+      internal_poll_init(in_stack_ffffffe8);
+      prVar5 = in_stack_fffffff0;
       errors_New((string)0x10080e2579,(error)CONCAT44(in_stack_fffffff4,in_stack_fffffff0));
-      os_ErrInvalid.tab = prVar4;
+      os_ErrInvalid.tab = prVar5;
       poVar2 = in_stack_fffffff4;
-      prVar4 = os_ErrInvalid.tab;
+      prVar5 = os_ErrInvalid.tab;
       if (runtime_writeBarrier._0_4_ != 0) {
         runtime_writebarrierptr((uintptr *)&os_ErrInvalid.data,(uintptr)in_stack_fffffff4);
         poVar2 = (os_File *)os_ErrInvalid.data;
       }
       os_ErrInvalid.data = poVar2;
-      errors_New((string)0x11080e2862,(error)CONCAT44(in_stack_fffffff4,prVar4));
-      os_ErrPermission.tab = prVar4;
+      errors_New((string)0x11080e2862,(error)CONCAT44(in_stack_fffffff4,prVar5));
+      os_ErrPermission.tab = prVar5;
       poVar2 = in_stack_fffffff4;
-      prVar4 = os_ErrPermission.tab;
+      prVar5 = os_ErrPermission.tab;
       if (runtime_writeBarrier._0_4_ != 0) {
         runtime_writebarrierptr((uintptr *)&os_ErrPermission.data,(uintptr)in_stack_fffffff4);
         poVar2 = (os_File *)os_ErrPermission.data;
       }
       os_ErrPermission.data = poVar2;
-      errors_New((string)0x13080e2cc8,(error)CONCAT44(in_stack_fffffff4,prVar4));
-      os_ErrExist.tab = prVar4;
+      errors_New((string)0x13080e2cc8,(error)CONCAT44(in_stack_fffffff4,prVar5));
+      os_ErrExist.tab = prVar5;
       poVar2 = in_stack_fffffff4;
-      prVar4 = os_ErrExist.tab;
+      prVar5 = os_ErrExist.tab;
       if (runtime_writeBarrier._0_4_ != 0) {
         runtime_writebarrierptr((uintptr *)&os_ErrExist.data,(uintptr)in_stack_fffffff4);
         poVar2 = (os_File *)os_ErrExist.data;
       }
       os_ErrExist.data = poVar2;
-      errors_New((string)0x13080e2cdb,(error)CONCAT44(in_stack_fffffff4,prVar4));
-      os_ErrNotExist.tab = prVar4;
+      errors_New((string)0x13080e2cdb,(error)CONCAT44(in_stack_fffffff4,prVar5));
+      os_ErrNotExist.tab = prVar5;
       poVar2 = in_stack_fffffff4;
-      prVar4 = os_ErrNotExist.tab;
+      prVar5 = os_ErrNotExist.tab;
       if (runtime_writeBarrier._0_4_ != 0) {
         runtime_writebarrierptr((uintptr *)&os_ErrNotExist.data,(uintptr)in_stack_fffffff4);
         poVar2 = (os_File *)os_ErrNotExist.data;
       }
       os_ErrNotExist.data = poVar2;
-      errors_New((string)0x13080e2cb5,(error)CONCAT44(in_stack_fffffff4,prVar4));
-      os_ErrClosed.tab = prVar4;
+      errors_New((string)0x13080e2cb5,(error)CONCAT44(in_stack_fffffff4,prVar5));
+      os_ErrClosed.tab = prVar5;
       poVar2 = in_stack_fffffff4;
-      prVar4 = os_ErrClosed.tab;
+      prVar5 = os_ErrClosed.tab;
       if (runtime_writeBarrier._0_4_ != 0) {
         runtime_writebarrierptr((uintptr *)&os_ErrClosed.data,(uintptr)in_stack_fffffff4);
         poVar2 = (os_File *)os_ErrClosed.data;
       }
       os_ErrClosed.data = poVar2;
       src = (void **)&DAT_080e4920;
-      poVar3 = (os_File *)0x1c;
-      errors_New((string)0x1c080e4920,(error)CONCAT44(in_stack_fffffff4,prVar4));
-      os_errFinished.tab = prVar4;
+      poVar4 = (os_File *)0x1c;
+      errors_New((string)0x1c080e4920,(error)CONCAT44(in_stack_fffffff4,prVar5));
+      os_errFinished.tab = prVar5;
       poVar2 = in_stack_fffffff4;
-      prVar4 = os_errFinished.tab;
+      prVar5 = os_errFinished.tab;
       if (runtime_writeBarrier._0_4_ != 0) {
         src = &os_errFinished.data;
-        poVar5 = in_stack_fffffff4;
+        poVar6 = in_stack_fffffff4;
         runtime_writebarrierptr((uintptr *)&os_errFinished.data,(uintptr)in_stack_fffffff4);
         poVar2 = (os_File *)os_errFinished.data;
-        poVar3 = in_stack_fffffff4;
-        in_stack_fffffff4 = poVar5;
+        poVar4 = in_stack_fffffff4;
+        in_stack_fffffff4 = poVar6;
       }
       os_errFinished.data = poVar2;
-      os_glob__func1((string)CONCAT44(poVar3,src),(error)CONCAT44(in_stack_fffffff4,prVar4));
-      os_executablePath.len = (int)poVar3;
+      os_glob__func1((string)CONCAT44(poVar4,src),(error)CONCAT44(in_stack_fffffff4,prVar5));
+      os_executablePath.len = (int)poVar4;
       poVar2 = in_stack_fffffff4;
       if (runtime_writeBarrier._0_4_ != 0) {
         runtime_writebarrierptr((uintptr *)&os_executablePath,(uintptr)src);
         src = (void **)os_executablePath.str;
       }
       os_executablePath.str = (uint8 *)src;
-      os_executablePathErr.tab = prVar4;
+      os_executablePathErr.tab = prVar5;
       if (runtime_writeBarrier._0_4_ != 0) {
         runtime_writebarrierptr((uintptr *)&os_executablePathErr.data,(uintptr)in_stack_fffffff4);
         in_stack_fffffff4 = (os_File *)os_executablePathErr.data;
       }
       os_executablePathErr.data = in_stack_fffffff4;
       os_NewFile(syscall_Stdin,(string)0xa080e1887,poVar2);
-      poVar3 = poVar2;
+      poVar4 = poVar2;
       if (runtime_writeBarrier._0_4_ != 0) {
         runtime_writebarrierptr((uintptr *)&os_Stdin,(uintptr)poVar2);
-        poVar3 = os_Stdin;
+        poVar4 = os_Stdin;
       }
-      os_Stdin = poVar3;
+      os_Stdin = poVar4;
       os_NewFile(syscall_Stdout,(string)0xb080e1a61,poVar2);
-      poVar3 = poVar2;
+      poVar4 = poVar2;
       if (runtime_writeBarrier._0_4_ != 0) {
         runtime_writebarrierptr((uintptr *)&os_Stdout,(uintptr)poVar2);
-        poVar3 = os_Stdout;
+        poVar4 = os_Stdout;
       }
-      os_Stdout = poVar3;
+      os_Stdout = poVar4;
       os_NewFile(syscall_Stderr,(string)0xb080e1a56,poVar2);
-      poVar3 = poVar2;
+      poVar4 = poVar2;
       if (runtime_writeBarrier._0_4_ != 0) {
         runtime_writebarrierptr((uintptr *)&os_Stderr,(uintptr)poVar2);
-        poVar3 = os_Stderr;
+        poVar4 = os_Stderr;
       }
-      os_Stderr = poVar3;
+      os_Stderr = poVar4;
       os_init_0();
       os_initdoneￂﾷ = 2;
       return (int)poVar2;
@@ -65466,7 +65056,7 @@ int os_init(EVP_PKEY_CTX *ctx)
       invalidInstructionException();
     } while( true );
   }
-  return (int)(uint)os_initdoneￂﾷ;
+  return (uint)os_initdoneￂﾷ;
 }
 
 
@@ -65482,7 +65072,7 @@ void type__hash_os_file(os_file *p,uintptr h,uintptr _r2)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    type__hash_internal_fwdslash_poll_FD(&p->pfd,h,in_stack_fffffff8);
+    type__hash_internal_poll_FD(&p->pfd,h,in_stack_fffffff8);
     runtime_strhash(&p->name,in_stack_fffffff8,in_stack_fffffff8);
     runtime_memhash(&p->dirinfo,in_stack_fffffff8,5,in_stack_fffffffc);
     return;
@@ -65504,7 +65094,7 @@ void type__eq_os_file(os_file *p,os_file *q,bool _r2)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    type__eq_internal_fwdslash_poll_FD(&p->pfd,&q->pfd,(bool)in_stack_fffffff4);
+    type__eq_internal_poll_FD(&p->pfd,&q->pfd,(bool)in_stack_fffffff4);
     if ((in_stack_fffffff4 != '\0') && ((p->name).len == (q->name).len)) {
       runtime_eqstring();
     }
@@ -65596,20 +65186,21 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   uint *puVar1;
   unicode_RangeTable *puVar2;
   map_string__unicode_RangeTable phVar3;
-  map_string__unicode_RangeTable phVar4;
+  int iVar4;
   int *in_GS_OFFSET;
   unicode_RangeTable **ppuVar5;
   map_string__unicode_RangeTable in_stack_ffffffe4;
+  map_string__unicode_RangeTable phVar6;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    phVar4 = (map_string__unicode_RangeTable)unicode_init(ctx);
-    return (int)phVar4;
+    iVar4 = unicode_init(ctx);
+    return iVar4;
   }
   if (1 < unicode_initdoneￂﾷ) {
-    return (int)(uint)unicode_initdoneￂﾷ;
+    return (uint)unicode_initdoneￂﾷ;
   }
   if (unicode_initdoneￂﾷ == 1) {
     runtime_throwinit();
@@ -65622,7 +65213,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   runtime_makemap((runtime_maptype *)&DAT_080cfb40,0x24,(runtime_hmap *)0x0,(void *)0x0,
                   (runtime_hmap *)in_stack_ffffffe4);
   puVar2 = unicode_C;
-  phVar4 = in_stack_ffffffe4;
+  phVar6 = in_stack_ffffffe4;
   runtime_mapassign_faststr
             ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)in_stack_ffffffe4,(string)0x1080e0d94,
              ppuVar5);
@@ -65986,11 +65577,11 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   ppuVar5 = (unicode_RangeTable **)0x0;
   runtime_makemap((runtime_maptype *)&DAT_080cfb40,0x89,(runtime_hmap *)0x0,(void *)0x0,
-                  (runtime_hmap *)phVar4);
+                  (runtime_hmap *)phVar6);
   puVar2 = unicode_Adlam;
-  phVar3 = phVar4;
+  phVar3 = phVar6;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e0fca,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e0fca,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -65999,7 +65590,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Ahom;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x4080e0eca,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x4080e0eca,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66008,7 +65599,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Anatolian_Hieroglyphs;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x15080e32b8,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x15080e32b8,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66017,7 +65608,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Arabic;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e10c4,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e10c4,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66026,7 +65617,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Armenian;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e13dd,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e13dd,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66035,7 +65626,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Avestan;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e1209,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e1209,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66044,7 +65635,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Balinese;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e13e5,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e13e5,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66053,7 +65644,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Bamum;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e0fcf,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e0fcf,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66062,7 +65653,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Bassa_Vah;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x9080e15cc,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x9080e15cc,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66071,7 +65662,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Batak;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e0fd4,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e0fd4,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66080,7 +65671,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Bengali;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e1210,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e1210,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66089,7 +65680,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Bhaiksuki;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x9080e15d5,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x9080e15d5,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66098,7 +65689,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Bopomofo;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e13ed,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e13ed,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66107,7 +65698,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Brahmi;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e10ca,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e10ca,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66116,7 +65707,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Braille;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e1217,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e1217,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66125,7 +65716,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Buginese;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e13f5,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e13f5,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66134,7 +65725,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Buhid;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e0fd9,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e0fd9,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66143,7 +65734,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Canadian_Aboriginal;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x13080e2b98,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x13080e2b98,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66152,7 +65743,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Carian;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e10d0,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e10d0,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66161,7 +65752,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Caucasian_Albanian;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x12080e2964,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x12080e2964,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66170,7 +65761,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Chakma;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e10d6,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e10d6,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66179,7 +65770,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Cham;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x4080e0ece,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x4080e0ece,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66188,7 +65779,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Cherokee;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e13fd,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e13fd,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66197,7 +65788,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Common;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e10dc,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e10dc,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66206,7 +65797,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Coptic;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e10e2,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e10e2,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66215,7 +65806,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Cuneiform;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x9080e15de,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x9080e15de,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66224,7 +65815,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Cypriot;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e1225,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e1225,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66233,7 +65824,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Cyrillic;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e1405,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e1405,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66242,7 +65833,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Deseret;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e122c,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e122c,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66251,7 +65842,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Devanagari;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xa080e18af,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xa080e18af,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66260,7 +65851,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Duployan;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e140d,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e140d,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66269,7 +65860,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Egyptian_Hieroglyphs;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x14080e2f07,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x14080e2f07,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66278,7 +65869,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Elbasan;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e1233,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e1233,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66287,7 +65878,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Ethiopic;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e1415,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e1415,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66296,7 +65887,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Georgian;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e1425,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e1425,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66305,7 +65896,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Glagolitic;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xa080e18c3,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xa080e18c3,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66314,7 +65905,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Gothic;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e10ee,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e10ee,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66323,7 +65914,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Grantha;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e1241,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e1241,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66332,7 +65923,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Greek;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e0fde,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e0fde,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66341,7 +65932,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Gujarati;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e142d,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e142d,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66350,7 +65941,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Gurmukhi;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e1435,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e1435,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66359,7 +65950,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Han;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x3080e0e49,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x3080e0e49,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66368,7 +65959,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Hangul;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e10f4,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e10f4,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66377,7 +65968,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Hanunoo;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e1248,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e1248,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66386,7 +65977,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Hatran;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e10fa,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e10fa,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66395,7 +65986,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Hebrew;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e1100,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e1100,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66404,7 +65995,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Hiragana;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e143d,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e143d,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66413,7 +66004,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Imperial_Aramaic;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x10080e24a9,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x10080e24a9,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66422,7 +66013,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Inherited;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x9080e1602,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x9080e1602,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66431,7 +66022,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Inscriptional_Pahlavi;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x15080e32cd,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x15080e32cd,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66440,7 +66031,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Inscriptional_Parthian;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x16080e34f1,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x16080e34f1,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66449,7 +66040,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Javanese;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e1445,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e1445,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66458,7 +66049,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Kaithi;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e110c,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e110c,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66467,7 +66058,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Kannada;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e1256,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e1256,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66476,7 +66067,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Katakana;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e144d,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e144d,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66485,7 +66076,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Kayah_Li;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e1455,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e1455,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66494,7 +66085,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Kharoshthi;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xa080e18cd,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xa080e18cd,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66503,7 +66094,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Khmer;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e0fe3,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e0fe3,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66512,7 +66103,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Khojki;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e1112,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e1112,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66521,7 +66112,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Khudawadi;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x9080e1614,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x9080e1614,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66530,7 +66121,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Lao;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x3080e0e4c,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x3080e0e4c,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66539,7 +66130,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Latin;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e0fe8,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e0fe8,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66548,7 +66139,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Lepcha;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e1118,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e1118,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66557,7 +66148,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Limbu;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e0fed,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e0fed,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66566,7 +66157,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Linear_A;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e145d,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e145d,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66575,7 +66166,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Linear_B;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e1465,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e1465,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66584,7 +66175,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Lisu;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x4080e0eda,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x4080e0eda,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66593,7 +66184,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Lycian;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e111e,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e111e,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66602,7 +66193,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Lydian;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e1124,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e1124,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66611,7 +66202,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Mahajani;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e146d,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e146d,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66620,7 +66211,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Malayalam;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x9080e161d,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x9080e161d,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66629,7 +66220,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Mandaic;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e125d,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e125d,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66638,7 +66229,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Manichaean;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xa080e18d7,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xa080e18d7,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66647,7 +66238,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Marchen;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e1264,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e1264,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66656,7 +66247,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Meetei_Mayek;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xc080e1cf3,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xc080e1cf3,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66665,7 +66256,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Mende_Kikakui;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xd080e1ee2,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xd080e1ee2,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66674,7 +66265,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Meroitic_Cursive;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x10080e24d9,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x10080e24d9,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66683,7 +66274,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Meroitic_Hieroglyphs;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x14080e2f43,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x14080e2f43,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66692,7 +66283,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Miao;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x4080e0ede,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x4080e0ede,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66701,7 +66292,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Modi;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x4080e0ee2,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x4080e0ee2,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66710,7 +66301,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Mongolian;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x9080e1626,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x9080e1626,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66719,7 +66310,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Mro;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x3080e0e4f,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x3080e0e4f,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66728,7 +66319,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Multani;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e126b,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e126b,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66737,7 +66328,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Myanmar;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e1272,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e1272,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66746,7 +66337,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Nabataean;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x9080e162f,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x9080e162f,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66755,7 +66346,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_New_Tai_Lue;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xb080e1a98,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xb080e1a98,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66764,7 +66355,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Newa;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x4080e0ee6,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x4080e0ee6,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66773,7 +66364,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Nko;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x3080e0e55,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x3080e0e55,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66782,7 +66373,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Ogham;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e0ff2,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e0ff2,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66791,7 +66382,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Ol_Chiki;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e1475,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e1475,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66800,7 +66391,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Old_Hungarian;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xd080e1eef,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xd080e1eef,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66809,7 +66400,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Old_Italic;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xa080e18e1,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xa080e18e1,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66818,7 +66409,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Old_North_Arabian;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x11080e2741,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x11080e2741,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66827,7 +66418,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Old_Permic;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xa080e18eb,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xa080e18eb,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66836,7 +66427,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Old_Persian;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xb080e1aa3,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xb080e1aa3,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66845,7 +66436,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Old_South_Arabian;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x11080e2752,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x11080e2752,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66854,7 +66445,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Old_Turkic;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xa080e18f5,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xa080e18f5,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66863,7 +66454,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Oriya;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e0ff7,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e0ff7,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66872,7 +66463,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Osage;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e0ffc,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e0ffc,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66881,7 +66472,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Osmanya;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e1279,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e1279,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66890,7 +66481,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Pahawh_Hmong;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xc080e1cff,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xc080e1cff,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66899,7 +66490,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Palmyrene;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x9080e1638,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x9080e1638,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66908,7 +66499,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Pau_Cin_Hau;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xb080e1aae,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xb080e1aae,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66917,7 +66508,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Phags_Pa;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e147d,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e147d,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66926,7 +66517,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Phoenician;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xa080e1909,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xa080e1909,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66935,7 +66526,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Psalter_Pahlavi;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xf080e22ed,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xf080e22ed,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66944,7 +66535,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Rejang;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e112a,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e112a,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66953,7 +66544,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Runic;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e1001,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e1001,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66962,7 +66553,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Samaritan;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x9080e1641,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x9080e1641,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66971,7 +66562,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Saurashtra;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xa080e1913,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xa080e1913,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66980,7 +66571,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Sharada;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e1287,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e1287,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66989,7 +66580,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Shavian;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e128e,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e128e,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -66998,7 +66589,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Siddham;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e1295,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e1295,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67007,7 +66598,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_SignWriting;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xb080e1ab9,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xb080e1ab9,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67016,7 +66607,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Sinhala;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e12a3,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e12a3,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67025,7 +66616,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Sora_Sompeng;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xc080e1d0b,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xc080e1d0b,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67034,7 +66625,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Sundanese;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x9080e164a,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x9080e164a,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67043,7 +66634,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Syloti_Nagri;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xc080e1d17,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xc080e1d17,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67052,7 +66643,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Syriac;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e1136,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e1136,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67061,7 +66652,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Tagalog;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e12aa,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e12aa,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67070,7 +66661,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Tagbanwa;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e1485,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e1485,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67079,7 +66670,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Tai_Le;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e113c,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e113c,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67088,7 +66679,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Tai_Tham;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e148d,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e148d,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67097,7 +66688,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Tai_Viet;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e1495,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e1495,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67106,7 +66697,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Takri;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e100b,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e100b,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67115,7 +66706,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Tamil;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x5080e1010,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x5080e1010,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67124,7 +66715,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Tangut;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e1142,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e1142,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67133,7 +66724,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Telugu;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e1148,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e1148,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67142,7 +66733,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Thaana;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x6080e114e,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x6080e114e,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67151,7 +66742,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Thai;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x4080e0eea,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x4080e0eea,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67160,7 +66751,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Tibetan;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e12b1,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e12b1,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67169,7 +66760,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Tifinagh;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e149d,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e149d,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67178,7 +66769,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Tirhuta;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x7080e12b8,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x7080e12b8,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67187,7 +66778,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Ugaritic;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x8080e14a5,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x8080e14a5,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67196,7 +66787,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Vai;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x3080e0e5b,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x3080e0e5b,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67205,7 +66796,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Warang_Citi;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0xb080e1acf,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0xb080e1acf,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67214,20 +66805,20 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_Yi;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x2080e0df1,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x2080e0df1,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
-    unicode_Scripts = phVar4;
+    unicode_Scripts = phVar6;
   }
   else {
     runtime_writebarrierptr((uintptr *)ppuVar5,(uintptr)puVar2);
-    runtime_writebarrierptr((uintptr *)&unicode_Scripts,(uintptr)phVar4);
+    runtime_writebarrierptr((uintptr *)&unicode_Scripts,(uintptr)phVar6);
   }
   ppuVar5 = (unicode_RangeTable **)0x0;
   runtime_makemap((runtime_maptype *)&DAT_080cfb40,0x22,(runtime_hmap *)0x0,(void *)0x0,
                   (runtime_hmap *)phVar3);
   puVar2 = unicode_ASCII_Hex_Digit;
-  phVar4 = phVar3;
+  phVar6 = phVar3;
   runtime_mapassign_faststr
             ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar3,(string)0xf080e22c0,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
@@ -67537,11 +67128,11 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   ppuVar5 = (unicode_RangeTable **)0x0;
   runtime_makemap((runtime_maptype *)&DAT_080cfb40,6,(runtime_hmap *)0x0,(void *)0x0,
-                  (runtime_hmap *)phVar4);
+                  (runtime_hmap *)phVar6);
   puVar2 = unicode_foldL;
-  phVar3 = phVar4;
+  phVar3 = phVar6;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x1080e0d95,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x1080e0d95,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67550,7 +67141,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_foldLl;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x2080e0dc5,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x2080e0dc5,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67559,7 +67150,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_foldLt;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x2080e0dcb,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x2080e0dcb,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67568,7 +67159,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_foldLu;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x2080e0dcd,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x2080e0dcd,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67577,7 +67168,7 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_foldM;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x1080e0d96,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x1080e0d96,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
   }
@@ -67586,14 +67177,14 @@ int unicode_init(EVP_PKEY_CTX *ctx)
   }
   puVar2 = unicode_foldMn;
   runtime_mapassign_faststr
-            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar4,(string)0x2080e0dd3,ppuVar5);
+            ((runtime_maptype *)&DAT_080cfb40,(runtime_hmap *)phVar6,(string)0x2080e0dd3,ppuVar5);
   if (runtime_writeBarrier._0_4_ == 0) {
     *ppuVar5 = puVar2;
-    unicode_FoldCategory = phVar4;
+    unicode_FoldCategory = phVar6;
   }
   else {
     runtime_writebarrierptr((uintptr *)ppuVar5,(uintptr)puVar2);
-    runtime_writebarrierptr((uintptr *)&unicode_FoldCategory,(uintptr)phVar4);
+    runtime_writebarrierptr((uintptr *)&unicode_FoldCategory,(uintptr)phVar6);
   }
   ppuVar5 = (unicode_RangeTable **)0x0;
   runtime_makemap((runtime_maptype *)&DAT_080cfb40,3,(runtime_hmap *)0x0,(void *)0x0,
@@ -67693,7 +67284,7 @@ void reflect_makeMethodValue(string op,reflect_Value v,reflect_Value _r2)
       invalidInstructionException();
     } while( true );
   }
-  runtime_gopanic((interface__)0x80f18e8080cf1a0);
+  runtime_gopanic((interface___)0x80f18e8080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -67817,7 +67408,7 @@ void reflect_newName(string n,string tag,string pkgPath,bool exported,reflect_na
                (string)CONCAT44(in_stack_ffffffd8,in_stack_ffffffd4));
     runtime_convT2Estring
               ((runtime__type *)&DAT_080cf1a0,local_8,(runtime_eface)CONCAT44(n.str,uVar5));
-    runtime_gopanic((interface__)CONCAT44(n.str,uVar5));
+    runtime_gopanic((interface___)CONCAT44(n.str,uVar5));
     do {
       invalidInstructionException();
     } while( true );
@@ -67829,7 +67420,7 @@ void reflect_newName(string n,string tag,string pkgPath,bool exported,reflect_na
                (string)CONCAT44(in_stack_ffffffd8,in_stack_ffffffd4));
     runtime_convT2Estring
               ((runtime__type *)&DAT_080cf1a0,local_10,(runtime_eface)CONCAT44(tag.str,uVar5));
-    runtime_gopanic((interface__)CONCAT44(tag.str,uVar5));
+    runtime_gopanic((interface___)CONCAT44(tag.str,uVar5));
     do {
       invalidInstructionException();
     } while( true );
@@ -67902,7 +67493,7 @@ void reflect_newName(string n,string tag,string pkgPath,bool exported,reflect_na
     ;
   }
   if (pkgPath.len != 0) {
-    runtime_gopanic((interface__)0x80f1960080cf1a0);
+    runtime_gopanic((interface___)0x80f1960080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -68166,12 +67757,12 @@ void reflect___rtype__Bits(reflect_rtype *t,int _r0)
     runtime_convT2Estring
               ((runtime__type *)&DAT_080cf1a0,local_8,
                (runtime_eface)CONCAT44(in_stack_ffffffe0,uVar2));
-    runtime_gopanic((interface__)CONCAT44(in_stack_ffffffe0,uVar2));
+    runtime_gopanic((interface___)CONCAT44(in_stack_ffffffe0,uVar2));
     do {
       invalidInstructionException();
     } while( true );
   }
-  runtime_gopanic((interface__)0x80f1998080cf1a0);
+  runtime_gopanic((interface___)0x80f1998080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -68290,8 +67881,8 @@ void reflect___rtype__exportedMethods(reflect_rtype *t,__reflect_method _r0)
   }
   _r0_00 = (reflect_uncommonType *)&DAT_080ddf40;
   _r1 = (reflect_name)t;
-  sync___Map__Load(&reflect_methodCache,(interface__)CONCAT44(t,0x80ddf40),
-                   (interface__)CONCAT44(in_stack_ffffffb4,in_stack_ffffffb0),
+  sync___Map__Load(&reflect_methodCache,(interface___)CONCAT44(t,0x80ddf40),
+                   (interface___)CONCAT44(in_stack_ffffffb4,in_stack_ffffffb0),
                    SUB41(in_stack_ffffffb8,0));
   if ((char)in_stack_ffffffb8 != '\0') {
     if (in_stack_ffffffb0 != (runtime__type *)&DAT_080c9840) {
@@ -68370,8 +67961,8 @@ LAB_080a56f2:
       runtime_convT2Eslice
                 ((runtime__type *)&DAT_080c9840,&local_c,(runtime_eface)CONCAT44(prVar6,_r1));
       sync___Map__LoadOrStore
-                (&reflect_methodCache,(interface__)CONCAT44(t,0x80ddf40),
-                 (interface__)CONCAT44(prVar6,_r1),(interface__)CONCAT44(in_stack_ffffffbc,have),
+                (&reflect_methodCache,(interface___)CONCAT44(t,0x80ddf40),
+                 (interface___)CONCAT44(prVar6,_r1),(interface___)CONCAT44(in_stack_ffffffbc,have),
                  (bool)loaded);
       if (have != (runtime__type *)&DAT_080c9840) {
         runtime_panicdottypeE(have,(runtime__type *)&DAT_080c9840,(runtime__type *)&DAT_080ceca0);
@@ -68466,7 +68057,7 @@ void reflect___rtype__Method(reflect_rtype *t,int i,reflect_Method m)
   undefined4 uStack4;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if (&local_4c < (undefined *)*puVar1 || &local_4c == (runtime__type **)*puVar1) {
+  if (&local_4c < (runtime__type **)*puVar1 || &local_4c == (runtime__type **)*puVar1) {
     uStack4 = 0x80a6055;
     runtime_morestack_noctxt();
     reflect___rtype__Method(t,i,m);
@@ -68493,7 +68084,7 @@ void reflect___rtype__Method(reflect_rtype *t,int i,reflect_Method m)
             (t,(__reflect_method)
                CONCAT48(in_stack_ffffff40,CONCAT44(in_stack_ffffff3c,in_stack_ffffff38)));
   if ((i < 0) || ((int)in_stack_ffffff3c <= i)) {
-    runtime_gopanic((interface__)0x80f19b8080cf1a0);
+    runtime_gopanic((interface___)0x80f19b8080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -68849,7 +68440,7 @@ void reflect___rtype__ChanDir(reflect_rtype *t,reflect_ChanDir _r0)
   if ((t->kind & 0x1f) == 0x12) {
     return;
   }
-  runtime_gopanic((interface__)0x80f19e8080cf1a0);
+  runtime_gopanic((interface___)0x80f19e8080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -68873,7 +68464,7 @@ void reflect___rtype__IsVariadic(reflect_rtype *t,bool _r0)
   if ((t->kind & 0x1f) == 0x13) {
     return;
   }
-  runtime_gopanic((interface__)0x80f19f8080cf1a0);
+  runtime_gopanic((interface___)0x80f19f8080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -68915,7 +68506,7 @@ void reflect___rtype__Elem(reflect_rtype *t,reflect_Type _r0)
       return;
     }
   }
-  runtime_gopanic((interface__)0x80f1a30080cf1a0);
+  runtime_gopanic((interface___)0x80f1a30080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -68944,7 +68535,7 @@ void reflect___rtype__Field(reflect_rtype *t,int i,reflect_StructField _r1)
     FUN_0809021e();
     return;
   }
-  runtime_gopanic((interface__)0x80f18f0080cf1a0);
+  runtime_gopanic((interface___)0x80f18f0080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -68973,7 +68564,7 @@ void reflect___rtype__FieldByIndex(reflect_rtype *t,__int index,reflect_StructFi
     FUN_0809021e();
     return;
   }
-  runtime_gopanic((interface__)0x80f1908080cf1a0);
+  runtime_gopanic((interface___)0x80f1908080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -69008,7 +68599,7 @@ void reflect___rtype__FieldByName(reflect_rtype *t,string name,reflect_StructFie
     FUN_0809021e();
     return;
   }
-  runtime_gopanic((interface__)0x80f1910080cf1a0);
+  runtime_gopanic((interface___)0x80f1910080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -69017,7 +68608,7 @@ void reflect___rtype__FieldByName(reflect_rtype *t,string name,reflect_StructFie
 
 
 void reflect___rtype__FieldByNameFunc
-               (reflect_rtype *t,func_string_bool *match,reflect_StructField _r1,bool _r2)
+               (reflect_rtype *t,func_string__bool *match,reflect_StructField _r1,bool _r2)
 
 {
   uint *puVar1;
@@ -69044,7 +68635,7 @@ void reflect___rtype__FieldByNameFunc
     FUN_0809021e();
     return;
   }
-  runtime_gopanic((interface__)0x80f1928080cf1a0);
+  runtime_gopanic((interface___)0x80f1928080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -69066,7 +68657,7 @@ void reflect___rtype__In(reflect_rtype *t,int i,reflect_Type _r1)
     return;
   }
   if ((t->kind & 0x1f) != 0x13) {
-    runtime_gopanic((interface__)0x80f1930080cf1a0);
+    runtime_gopanic((interface___)0x80f1930080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -69104,7 +68695,7 @@ void reflect___rtype__Key(reflect_rtype *t,reflect_Type _r0)
   if ((t->kind & 0x1f) == 0x15) {
     return;
   }
-  runtime_gopanic((interface__)0x80f1938080cf1a0);
+  runtime_gopanic((interface___)0x80f1938080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -69128,7 +68719,7 @@ void reflect___rtype__Len(reflect_rtype *t,int _r0)
   if ((t->kind & 0x1f) == 0x11) {
     return;
   }
-  runtime_gopanic((interface__)0x80f1940080cf1a0);
+  runtime_gopanic((interface___)0x80f1940080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -69152,7 +68743,7 @@ void reflect___rtype__NumField(reflect_rtype *t,int _r0)
   if ((t->kind & 0x1f) == 0x19) {
     return;
   }
-  runtime_gopanic((interface__)0x80f1948080cf1a0);
+  runtime_gopanic((interface___)0x80f1948080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -69176,7 +68767,7 @@ void reflect___rtype__NumIn(reflect_rtype *t,int _r0)
   if ((t->kind & 0x1f) == 0x13) {
     return;
   }
-  runtime_gopanic((interface__)0x80f1950080cf1a0);
+  runtime_gopanic((interface___)0x80f1950080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -69208,7 +68799,7 @@ void reflect___rtype__NumOut(reflect_rtype *t,int _r0)
       invalidInstructionException();
     } while( true );
   }
-  runtime_gopanic((interface__)0x80f1958080cf1a0);
+  runtime_gopanic((interface___)0x80f1958080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -69248,7 +68839,7 @@ void reflect___rtype__Out(reflect_rtype *t,int i,reflect_Type _r1)
       invalidInstructionException();
     } while( true );
   }
-  runtime_gopanic((interface__)0x80f1968080cf1a0);
+  runtime_gopanic((interface___)0x80f1968080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -69400,8 +68991,6 @@ void reflect___interfaceType__MethodByName
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void reflect___structType__Field(reflect_structType *t,int i,reflect_StructField f)
 
 {
@@ -69410,7 +68999,7 @@ void reflect___structType__Field(reflect_structType *t,int i,reflect_StructField
   reflect_name n;
   int *in_GS_OFFSET;
   int *in_stack_ffffffe0;
-  int in_stack_ffffffe4;
+  undefined4 in_stack_ffffffe4;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if (register0x00000010 < (undefined *)*puVar1 ||
@@ -69421,17 +69010,17 @@ void reflect___structType__Field(reflect_structType *t,int i,reflect_StructField
   }
   FUN_0808fd83();
   if ((-1 < i) && (prVar2 = (t->fields).array, i < (t->fields).len)) {
-    n = (reflect_name)((reflect_name *)&prVar2[i].name.bytes)->bytes;
+    n = (reflect_name)prVar2[i].name.bytes;
     if ((*(byte *)n & 1) == 0) {
       reflect_name_pkgPath(n,(string)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
     }
-    reflect_name_tag((reflect_name)((reflect_name *)&prVar2[i].name.bytes)->bytes,
+    reflect_name_tag((reflect_name)prVar2[i].name.bytes,
                      (string)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
     runtime_newobject((runtime__type *)&DAT_080cbc60,in_stack_ffffffe0);
     *in_stack_ffffffe0 = i;
     return;
   }
-  runtime_gopanic((interface__)0x80f1970080cf1a0);
+  runtime_gopanic((interface___)0x80f1970080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -69503,10 +69092,10 @@ void reflect___structType__FieldByIndex(reflect_structType *t,__int index,reflec
 
 
 void reflect___structType__FieldByNameFunc
-               (reflect_structType *t,func_string_bool *match,reflect_StructField result,bool ok)
+               (reflect_structType *t,func_string__bool *match,reflect_StructField result,bool ok)
 
 {
-  reflect_structType **pprVar1;
+  uint *puVar1;
   reflect_structField *prVar2;
   int iVar3;
   char cVar4;
@@ -69534,7 +69123,7 @@ void reflect___structType__FieldByNameFunc
   reflect_structType *local_b8;
   reflect_structType *local_b4;
   reflect_structType *local_b0;
-  uint local_ac;
+  uintptr local_ac;
   reflect_structType *local_a8;
   reflect_structType *local_a4;
   reflect_structType *local_a0;
@@ -69544,7 +69133,12 @@ void reflect___structType__FieldByNameFunc
   reflect_structType *local_90;
   int local_8c;
   reflect_structType *local_88;
-  reflect_structType local_80;
+  reflect_structType *local_80 [4];
+  reflect_structType *local_70;
+  reflect_structType *local_60;
+  reflect_structType *local_5c;
+  reflect_structType *local_58;
+  reflect_structType *local_54;
   reflect_structType *local_50;
   reflect_structType *local_4c;
   uint8 *local_48;
@@ -69566,8 +69160,8 @@ void reflect___structType__FieldByNameFunc
   uint32 local_8;
   undefined4 local_4;
   
-  pprVar1 = (reflect_structType **)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if (&local_80 < *pprVar1 || &local_80 == *pprVar1) {
+  puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
+  if (local_80 < (reflect_structType **)*puVar1 || local_80 == (reflect_structType **)*puVar1) {
     local_4 = 0x80a7cd4;
     runtime_morestack_noctxt();
     reflect___structType__FieldByNameFunc(t,match,result,ok);
@@ -69593,48 +69187,47 @@ void reflect___structType__FieldByNameFunc
   local_c1 = '\0';
   local_bc = (reflect_structType *)0x1;
   _r4 = in_stack_ffffff14;
-  local_80.pkgPath = (uint8 *)in_stack_ffffff14;
+  local_60 = in_stack_ffffff14;
   do {
     if ((int)local_bc < 1) {
       return;
     }
-    local_80.fields.cap = 0;
+    local_54 = (reflect_structType *)0x0;
     local_90 = (reflect_structType *)0x0;
     local_28 = local_24;
     prVar6 = local_20;
     prVar8 = local_b8;
     local_b8 = local_94;
     local_88 = local_24;
-    local_80.rtype.size = (uintptr)local_24;
+    local_80[0] = local_24;
     local_20 = local_24;
     for (local_8c = 0; local_94 = prVar8, local_24 = prVar6, local_8c < (int)local_bc;
         local_8c = local_8c + 1) {
       local_c0 = (reflect_structType *)(local_28->rtype).hash;
-      local_80.fields.len = (local_28->rtype).ptrdata;
-      local_80.fields.array = (reflect_structField *)(local_28->rtype).size;
+      local_58 = (reflect_structType *)(local_28->rtype).ptrdata;
+      local_5c = (reflect_structType *)(local_28->rtype).size;
       runtime_mapaccess1_fast32
-                ((runtime_maptype *)&DAT_080cf980,(runtime_hmap *)in_stack_ffffff14,
-                 (uint32)local_80.fields.array,_r3);
-      prVar5 = (reflect_structType *)local_80.fields.cap;
+                ((runtime_maptype *)&DAT_080cf980,(runtime_hmap *)in_stack_ffffff14,(uint32)local_5c
+                 ,_r3);
+      prVar5 = local_54;
       prVar6 = local_24;
       prVar8 = local_94;
       cVar4 = local_c1;
       if (*(char *)&(_r3->rtype).size == '\0') {
-        prVar11 = (reflect_structType *)local_80.pkgPath;
-        __n = (reflect_structType *)local_80.fields.array;
+        prVar11 = local_60;
+        __n = local_5c;
         runtime_mapassign_fast32
-                  ((runtime_maptype *)&DAT_080cf980,(runtime_hmap *)local_80.pkgPath,
-                   (uint32)local_80.fields.array,_r3);
+                  ((runtime_maptype *)&DAT_080cf980,(runtime_hmap *)local_60,(uint32)local_5c,_r3);
         *(undefined *)&(_r3->rtype).size = 1;
-        local_98 = ((__reflect_structField *)((int)local_80.fields.array + 0x24))->len;
+        local_98 = (local_5c->fields).len;
         uVar7 = 0;
-        prVar5 = (reflect_structType *)local_80.fields.cap;
+        prVar5 = local_54;
         prVar6 = local_24;
         prVar8 = local_94;
         cVar4 = local_c1;
         while ((int)uVar7 < local_98) {
-          prVar2 = ((__reflect_structField *)((int)local_80.fields.array + 0x24))->array;
-          if ((uint)((__reflect_structField *)((int)local_80.fields.array + 0x24))->len <= uVar7) {
+          prVar2 = (local_5c->fields).array;
+          if ((uint)(local_5c->fields).len <= uVar7) {
             runtime_panicindex();
             do {
               invalidInstructionException();
@@ -69692,17 +69285,17 @@ void reflect___structType__FieldByNameFunc
                                   ,(runtime_hmap *)_r4);
                   _r4 = prVar8;
                 }
-                local_80.fields.cap = (int)prVar8;
+                local_54 = prVar8;
                 runtime_mapassign_fast32
                           ((runtime_maptype *)&DAT_080cf9c0,(runtime_hmap *)prVar8,(uint32)local_34,
                            _r3);
                 (_r3->rtype).size = 1;
                 runtime_mapaccess1_fast32
                           ((runtime_maptype *)&DAT_080cf9c0,(runtime_hmap *)local_44,
-                           (uint32)local_80.fields.array,_r3);
+                           (uint32)local_5c,_r3);
                 if (1 < (int)(_r3->rtype).size) {
                   runtime_mapassign_fast32
-                            ((runtime_maptype *)&DAT_080cf9c0,(runtime_hmap *)local_80.fields.cap,
+                            ((runtime_maptype *)&DAT_080cf9c0,(runtime_hmap *)local_54,
                              (uint32)local_34,_r3);
                   (_r3->rtype).size = 2;
                 }
@@ -69729,10 +69322,10 @@ void reflect___structType__FieldByNameFunc
                   } while( true );
                 }
                 __n = (reflect_structType *)((int)local_c0 << 2);
-                prVar9 = (reflect_structType *)local_80.fields.len;
+                prVar9 = local_58;
                 local_a0 = prVar6;
                 local_38 = prVar8;
-                runtime_memmove(prVar8,(void *)local_80.fields.len,(size_t)__n);
+                runtime_memmove(prVar8,local_58,(size_t)__n);
                 prVar6 = (reflect_structType *)((int)&(local_c0->rtype).size + 1);
                 prVar5 = local_a0;
                 prVar8 = local_38;
@@ -69773,7 +69366,7 @@ void reflect___structType__FieldByNameFunc
                   local_50 = _r4;
                 }
                 else {
-                  local_80.rtype.alg = (reflect_typeAlg *)local_9c;
+                  local_70 = local_9c;
                   local_50 = local_2c;
                   prVar8 = local_9c;
                 }
@@ -69784,7 +69377,7 @@ void reflect___structType__FieldByNameFunc
                 if (runtime_writeBarrier._0_4_ == 0) {
                   (&(local_50->rtype).size)[(int)local_90 * 4] = (uintptr)local_34;
                   (&(local_50->rtype).ptrdata)[(int)local_90 * 4] = (uintptr)local_4c;
-                  prVar5 = (reflect_structType *)local_80.fields.cap;
+                  prVar5 = local_54;
                   prVar6 = local_50;
                   cVar4 = local_c4[2];
                 }
@@ -69795,7 +69388,7 @@ void reflect___structType__FieldByNameFunc
                   runtime_writebarrierptr(local_3c,(uintptr)local_34);
                   prVar9 = local_4c;
                   runtime_writebarrierptr(local_40,(uintptr)local_4c);
-                  prVar5 = (reflect_structType *)local_80.fields.cap;
+                  prVar5 = local_54;
                   cap = local_a4;
                   prVar6 = local_50;
                   prVar8 = local_90;
@@ -69818,16 +69411,16 @@ void reflect___structType__FieldByNameFunc
             }
           }
           else {
-            prVar8 = (reflect_structType *)local_80.fields.array;
+            prVar8 = local_5c;
             runtime_mapaccess1_fast32
-                      ((runtime_maptype *)&DAT_080cf9c0,(runtime_hmap *)local_44,
-                       (uint32)local_80.fields.array,_r3);
+                      ((runtime_maptype *)&DAT_080cf9c0,(runtime_hmap *)local_44,(uint32)local_5c,
+                       _r3);
             if ((1 < (int)(_r3->rtype).size) || (local_c4[2] != '\0')) {
               FUN_0809021e();
               return;
             }
             reflect___structType__Field
-                      ((reflect_structType *)local_80.fields.array,local_ac,
+                      (local_5c,local_ac,
                        (reflect_StructField)
                        CONCAT2824(in_stack_ffffff20,
                                   CONCAT420(in_stack_ffffff1c,
@@ -69858,10 +69451,10 @@ void reflect___structType__FieldByNameFunc
               } while( true );
             }
             __n = (reflect_structType *)((int)local_c0 << 2);
-            prVar9 = (reflect_structType *)local_80.fields.len;
+            prVar9 = local_58;
             local_a0 = prVar6;
             local_38 = prVar8;
-            runtime_memmove(prVar8,(void *)local_80.fields.len,(size_t)__n);
+            runtime_memmove(prVar8,local_58,(size_t)__n);
             prVar8 = (reflect_structType *)((int)&(local_c0->rtype).size + 1);
             prVar6 = local_38;
             prVar5 = local_c0;
@@ -69891,14 +69484,14 @@ void reflect___structType__FieldByNameFunc
         }
       }
       local_28 = (reflect_structType *)&(local_28->rtype).alg;
-      in_stack_ffffff14 = (reflect_structType *)local_80.pkgPath;
+      in_stack_ffffff14 = local_60;
       local_c1 = cVar4;
-      local_80.fields.cap = (int)prVar5;
+      local_54 = prVar5;
     }
     if (local_c1 != '\0') {
       return;
     }
-    local_44 = (reflect_structType *)local_80.fields.cap;
+    local_44 = local_54;
     local_bc = local_90;
   } while( true );
 }
@@ -69979,7 +69572,7 @@ void reflect___structType__FieldByName
   local_a4 = name.str;
   local_a0 = extraout_EDX;
   reflect___structType__FieldByNameFunc
-            (t,(func_string_bool *)&local_a8,
+            (t,(func_string__bool *)&local_a8,
              (reflect_StructField)
              CONCAT439(in_stack_ffffff09,
                        CONCAT18(in_stack_ffffff08,CONCAT44(in_stack_ffffff04,in_stack_ffffff00))),
@@ -69992,7 +69585,7 @@ void reflect___structType__FieldByName
 
 
 
-void reflect_TypeOf(interface__ i,reflect_Type _r1)
+void reflect_TypeOf(interface___ i,reflect_Type _r1)
 
 {
   uint *puVar1;
@@ -70053,8 +69646,8 @@ void reflect___rtype__ptrTo(reflect_rtype *t,reflect_rtype *_r0)
   }
   puVar3 = &DAT_080ddf40;
   prVar4 = t;
-  sync___Map__Load(&reflect_ptrMap,(interface__)CONCAT44(t,0x80ddf40),
-                   (interface__)CONCAT44(in_stack_ffffffb4,in_stack_ffffffb0),
+  sync___Map__Load(&reflect_ptrMap,(interface___)CONCAT44(t,0x80ddf40),
+                   (interface___)CONCAT44(in_stack_ffffffb4,in_stack_ffffffb0),
                    SUB41(in_stack_ffffffb8,0));
   if ((char)in_stack_ffffffb8 != '\0') {
     if (in_stack_ffffffb0 == (runtime__type *)&DAT_080ddca0) {
@@ -70080,9 +69673,9 @@ void reflect___rtype__ptrTo(reflect_rtype *t,reflect_rtype *_r0)
   for (iVar2 = 0; iVar2 < (int)puVar3; iVar2 = iVar2 + 1) {
     if (*(reflect_rtype **)(*piVar5 + 0x20) == t) {
       sync___Map__LoadOrStore
-                (&reflect_ptrMap,(interface__)CONCAT44(t,0x80ddf40),
-                 (interface__)CONCAT44(*piVar5,0x80ddca0),
-                 (interface__)CONCAT44(pvVar6,in_stack_ffffffb8),SUB41(in_stack_ffffffc0,0));
+                (&reflect_ptrMap,(interface___)CONCAT44(t,0x80ddf40),
+                 (interface___)CONCAT44(*piVar5,0x80ddca0),
+                 (interface___)CONCAT44(pvVar6,in_stack_ffffffb8),SUB41(in_stack_ffffffc0,0));
       if (in_stack_ffffffb8 == (runtime__type *)&DAT_080ddca0) {
         return;
       }
@@ -70124,9 +69717,9 @@ void reflect___rtype__ptrTo(reflect_rtype *t,reflect_rtype *_r0)
     runtime_writebarrierptr((uintptr *)((int)local_c + 0x20),(uintptr)t);
   }
   sync___Map__LoadOrStore
-            (&reflect_ptrMap,(interface__)CONCAT44(t,0x80ddf40),
-             (interface__)CONCAT44(local_c,0x80ddca0),(interface__)CONCAT44(uVar7,have),(bool)loaded
-            );
+            (&reflect_ptrMap,(interface___)CONCAT44(t,0x80ddf40),
+             (interface___)CONCAT44(local_c,0x80ddca0),(interface___)CONCAT44(uVar7,have),
+             (bool)loaded);
   if (have == (runtime__type *)&DAT_080ddca0) {
     return;
   }
@@ -70175,14 +69768,14 @@ void reflect___rtype__Implements(reflect_rtype *t,reflect_Type u,bool _r1)
     return;
   }
   if (u.tab == (runtime_itab *)0x0) {
-    runtime_gopanic((interface__)0x80f1978080cf1a0);
+    runtime_gopanic((interface___)0x80f1978080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
   }
   (*(code *)u.tab[3].hash)(u.data);
   if (in_stack_fffffff8 != 0x14) {
-    runtime_gopanic((interface__)0x80f1980080cf1a0);
+    runtime_gopanic((interface___)0x80f1980080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -70214,7 +69807,7 @@ void reflect___rtype__AssignableTo(reflect_rtype *t,reflect_Type u,bool _r1)
     return;
   }
   if (u.tab == (runtime_itab *)0x0) {
-    runtime_gopanic((interface__)0x80f1988080cf1a0);
+    runtime_gopanic((interface___)0x80f1988080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -70239,7 +69832,7 @@ void reflect___rtype__ConvertibleTo(reflect_rtype *t,reflect_Type u,bool _r1)
 {
   uint *puVar1;
   int *in_GS_OFFSET;
-  func_reflect_Value_reflect_Type_reflect_Value *in_stack_fffffffc;
+  func_reflect_Value__reflect_Type__reflect_Value *in_stack_fffffffc;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if (register0x00000010 < (undefined *)*puVar1 ||
@@ -70258,7 +69851,7 @@ void reflect___rtype__ConvertibleTo(reflect_rtype *t,reflect_Type u,bool _r1)
       invalidInstructionException();
     } while( true );
   }
-  runtime_gopanic((interface__)0x80f1990080cf1a0);
+  runtime_gopanic((interface___)0x80f1990080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -70293,9 +69886,9 @@ void reflect_implements(reflect_rtype *T,reflect_rtype *V,bool _r2)
   ushort uVar2;
   uintptr uVar3;
   uintptr uVar4;
+  uint32 uVar5;
   reflect_typeOff off;
-  reflect_name rVar5;
-  int iVar6;
+  reflect_name rVar6;
   reflect_name rVar7;
   reflect_name rVar8;
   uint uVar9;
@@ -70340,7 +69933,7 @@ void reflect_implements(reflect_rtype *T,reflect_rtype *V,bool _r2)
     if (in_stack_ffffff64 == (reflect_uncommonType *)0x0) {
       return;
     }
-    iVar6 = (int)&in_stack_ffffff64->pkgPath + in_stack_ffffff64->moff;
+    uVar5 = in_stack_ffffff64->moff;
     uVar2 = in_stack_ffffff64->mcount;
     if (0x10000 < uVar2) {
       runtime_panicslice();
@@ -70368,12 +69961,14 @@ void reflect_implements(reflect_rtype *T,reflect_rtype *V,bool _r2)
           invalidInstructionException();
         } while( true );
       }
-      off = *(reflect_typeOff *)(iVar6 + 4 + uVar9 * 0x10);
-      rVar5 = in_stack_ffffff68;
-      reflect___rtype__nameOff(V,*(reflect_nameOff *)(iVar6 + uVar9 * 0x10),in_stack_ffffff68);
+      off = *(reflect_typeOff *)((int)&in_stack_ffffff64[uVar9].mcount + uVar5);
+      rVar6 = in_stack_ffffff68;
+      reflect___rtype__nameOff
+                (V,*(reflect_nameOff *)((int)&in_stack_ffffff64[uVar9].pkgPath + uVar5),
+                 in_stack_ffffff68);
       local_24 = 0;
-      if (rVar5 != (reflect_name)0x0) {
-        local_24 = (uint)CONCAT11(*(undefined *)((int)rVar5 + 1),*(undefined *)((int)rVar5 + 2));
+      if (rVar6 != (reflect_name)0x0) {
+        local_24 = (uint)CONCAT11(*(undefined *)((int)rVar6 + 1),*(undefined *)((int)rVar6 + 2));
       }
       local_10 = (uint8 *)0x0;
       local_c = 0;
@@ -70382,7 +69977,7 @@ void reflect_implements(reflect_rtype *T,reflect_rtype *V,bool _r2)
         local_c = (uint)CONCAT11(*(undefined *)((int)in_stack_ffffff68 + 1),
                                  *(undefined *)((int)in_stack_ffffff68 + 2));
       }
-      rVar11 = rVar5;
+      rVar11 = rVar6;
       if ((local_c == local_24) &&
          (rVar8 = (reflect_name)local_10, runtime_eqstring(), rVar11 = rVar8, local_90 != '\0')) {
         reflect___rtype__typeOff(V,off,(reflect_rtype *)rVar8);
@@ -70406,25 +70001,25 @@ void reflect_implements(reflect_rtype *T,reflect_rtype *V,bool _r2)
                 local_4 = (uint8 *)rVar7;
               }
             }
-            reflect_name_pkgPath(rVar5,(string)CONCAT44(rVar11,off_00));
-            rVar5 = rVar11;
+            reflect_name_pkgPath(rVar6,(string)CONCAT44(rVar11,off_00));
+            rVar6 = rVar11;
             rVar8 = off_00;
             if (rVar11 == (reflect_name)0x0) {
               reflect___rtype__nameOff(V,in_stack_ffffff64->pkgPath,(reflect_name)0x0);
               local_20 = (uint8 *)0x0;
               local_1c = (uint8 *)0x0;
-              rVar5 = (reflect_name)local_1c;
+              rVar6 = (reflect_name)local_1c;
               rVar8 = (reflect_name)local_20;
               if (rVar11 != (reflect_name)0x0) {
                 rVar8 = (reflect_name)((int)rVar11 + 3);
-                rVar5 = (reflect_name)
+                rVar6 = (reflect_name)
                         (uint)CONCAT11(*(undefined *)((int)rVar11 + 1),
                                        *(undefined *)((int)rVar11 + 2));
                 local_20 = (uint8 *)rVar8;
-                local_1c = (uint8 *)rVar5;
+                local_1c = (uint8 *)rVar6;
               }
             }
-            if ((rVar5 != rVar7) || (runtime_eqstring(), rVar11 = rVar8, local_90 == '\0'))
+            if ((rVar6 != rVar7) || (runtime_eqstring(), rVar11 = rVar8, local_90 == '\0'))
             goto LAB_080a8899;
           }
           uVar10 = uVar10 + 1;
@@ -70460,13 +70055,13 @@ LAB_080a8899:
         invalidInstructionException();
       } while( true );
     }
-    rVar5 = in_stack_ffffff68;
+    rVar6 = in_stack_ffffff68;
     reflect___rtype__nameOff(V,*(reflect_nameOff *)(uVar4 + uVar9 * 8),in_stack_ffffff68);
     local_18 = 0;
     local_14 = 0;
-    if (rVar5 != (reflect_name)0x0) {
-      local_18 = (int)rVar5 + 3;
-      local_14 = (uint)CONCAT11(*(undefined *)((int)rVar5 + 1),*(undefined *)((int)rVar5 + 2));
+    if (rVar6 != (reflect_name)0x0) {
+      local_18 = (int)rVar6 + 3;
+      local_14 = (uint)CONCAT11(*(undefined *)((int)rVar6 + 1),*(undefined *)((int)rVar6 + 2));
     }
     local_40 = (uint8 *)0x0;
     local_3c = 0;
@@ -70475,7 +70070,7 @@ LAB_080a8899:
       local_3c = (uint)CONCAT11(*(undefined *)((int)in_stack_ffffff68 + 1),
                                 *(undefined *)((int)in_stack_ffffff68 + 2));
     }
-    rVar11 = rVar5;
+    rVar11 = rVar6;
     if ((local_3c == local_14) &&
        (runtime_eqstring(), rVar11 = (reflect_name)local_40, local_90 != '\0')) {
       reflect___rtype__typeOff
@@ -70495,7 +70090,7 @@ LAB_080a8899:
                                                 );
             }
           }
-          reflect_name_pkgPath(rVar5,(string)CONCAT44(rVar11,local_30));
+          reflect_name_pkgPath(rVar6,(string)CONCAT44(rVar11,local_30));
           local_2c = (uint8 *)rVar11;
           if (rVar11 == (reflect_name)0x0) {
             uVar3 = V[1].size;
@@ -71011,25 +70606,26 @@ void reflect_typesByString(string s,___reflect_rtype _r1)
 
 
 
-// WARNING: Type propagation algorithm not settling
 // WARNING: Could not reconcile some variable overlaps
 
 void reflect_FuncOf(__reflect_Type in,__reflect_Type out,bool variadic,reflect_Type _r3)
 
 {
-  reflect_Type **pprVar1;
+  uint *puVar1;
   int iVar2;
   uintptr *puVar3;
   runtime_slice rVar4;
-  undefined **ppuVar5;
-  reflect_rtype *prVar6;
-  reflect_name rVar7;
+  reflect_rtype **pprVar5;
+  undefined **ppuVar6;
+  uintptr uVar7;
+  reflect_rtype *cap;
+  reflect_rtype **pprVar8;
+  reflect_name rVar9;
   reflect_name extraout_EDX;
-  reflect_funcType *prVar8;
-  reflect_rtype *prVar9;
-  ushort uVar10;
+  reflect_funcType *prVar10;
+  reflect_rtype *prVar11;
+  ushort uVar12;
   int *in_GS_OFFSET;
-  uintptr arg0;
   reflect_funcType *in_stack_ffffff6c;
   runtime__type *have;
   reflect_rtype *in_stack_ffffff78;
@@ -71039,36 +70635,38 @@ void reflect_FuncOf(__reflect_Type in,__reflect_Type out,bool variadic,reflect_T
   reflect_name in_stack_ffffff84;
   undefined local_76;
   undefined local_75;
-  reflect_rtype *local_74;
+  reflect_rtype **local_74;
   reflect_rtype *local_70;
   reflect_rtype *local_6c;
   reflect_name local_68;
-  undefined local_64 [8];
-  uint32 local_5c;
+  reflect_rtype *local_64;
+  reflect_rtype *local_60;
+  undefined4 local_5c;
   undefined4 local_58;
   reflect_name local_54;
-  reflect_rtype *local_50;
+  runtime__type *local_50;
   reflect_rtype *local_4c;
   reflect_rtype *local_48;
   reflect_rtype *local_44;
   reflect_rtype *local_40;
   undefined1 *local_3c;
-  runtime__type *local_38;
+  void *local_38;
   void *local_34;
   reflect_funcType *local_30;
   reflect_funcType *local_2c;
-  reflect_rtype *local_28;
+  reflect_rtype **local_28;
   reflect_rtype *local_24;
-  reflect_rtype *local_20;
+  reflect_rtype **local_20;
   reflect_rtype **local_1c;
-  reflect_Type local_18;
+  reflect_Type *local_18;
+  reflect_funcType *local_14;
   reflect_Type *local_10;
   reflect_funcType *local_c;
   undefined1 *local_8;
   undefined4 local_4;
   
-  pprVar1 = (reflect_Type **)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if (&local_18 < *pprVar1 || &local_18 == *pprVar1) {
+  puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
+  if (&local_18 < (reflect_Type **)*puVar1 || &local_18 == (reflect_Type **)*puVar1) {
     local_4 = 0x80aa1ff;
     runtime_morestack_noctxt();
     reflect_FuncOf(in,out,variadic,_r3);
@@ -71085,7 +70683,7 @@ void reflect_FuncOf(__reflect_Type in,__reflect_Type out,bool variadic,reflect_T
       (*(code *)in.array[in.len + -1].tab[3].hash)(in.array[in.len + -1].data);
       if (in_stack_ffffff6c == (reflect_funcType *)0x17) goto LAB_080a9926;
     }
-    runtime_gopanic((interface__)0x80f19a0080cf1a0);
+    runtime_gopanic((interface___)0x80f19a0080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -71098,46 +70696,38 @@ LAB_080a9926:
   if (iVar2 < 5) {
     runtime_newobject((runtime__type *)&DAT_080d3380,in_stack_ffffff6c);
     local_c = in_stack_ffffff6c + 1;
-    rVar7 = (reflect_name)0x4;
+    rVar9 = (reflect_name)0x4;
+  }
+  else if (iVar2 < 9) {
+    runtime_newobject((runtime__type *)&DAT_080d3440,in_stack_ffffff6c);
+    local_c = in_stack_ffffff6c + 1;
+    rVar9 = (reflect_name)0x8;
+  }
+  else if (iVar2 < 0x11) {
+    runtime_newobject((runtime__type *)&DAT_080d32c0,in_stack_ffffff6c);
+    local_c = in_stack_ffffff6c + 1;
+    rVar9 = (reflect_name)0x10;
+  }
+  else if (iVar2 < 0x21) {
+    runtime_newobject((runtime__type *)&DAT_080d3320,in_stack_ffffff6c);
+    local_c = in_stack_ffffff6c + 1;
+    rVar9 = (reflect_name)0x20;
+  }
+  else if (iVar2 < 0x41) {
+    runtime_newobject((runtime__type *)&DAT_080d33e0,in_stack_ffffff6c);
+    local_c = in_stack_ffffff6c + 1;
+    rVar9 = (reflect_name)0x40;
   }
   else {
-    if (iVar2 < 9) {
-      runtime_newobject((runtime__type *)&DAT_080d3440,in_stack_ffffff6c);
-      local_c = in_stack_ffffff6c + 1;
-      rVar7 = (reflect_name)0x8;
+    if (0x80 < iVar2) {
+      runtime_gopanic((interface___)0x80f19a8080cf1a0);
+      do {
+        invalidInstructionException();
+      } while( true );
     }
-    else {
-      if (iVar2 < 0x11) {
-        runtime_newobject((runtime__type *)&DAT_080d32c0,in_stack_ffffff6c);
-        local_c = in_stack_ffffff6c + 1;
-        rVar7 = (reflect_name)0x10;
-      }
-      else {
-        if (iVar2 < 0x21) {
-          runtime_newobject((runtime__type *)&DAT_080d3320,in_stack_ffffff6c);
-          local_c = in_stack_ffffff6c + 1;
-          rVar7 = (reflect_name)0x20;
-        }
-        else {
-          if (iVar2 < 0x41) {
-            runtime_newobject((runtime__type *)&DAT_080d33e0,in_stack_ffffff6c);
-            local_c = in_stack_ffffff6c + 1;
-            rVar7 = (reflect_name)0x40;
-          }
-          else {
-            if (0x80 < iVar2) {
-              runtime_gopanic((interface__)0x80f19a8080cf1a0);
-              do {
-                invalidInstructionException();
-              } while( true );
-            }
-            runtime_newobject((runtime__type *)&DAT_080d3260,in_stack_ffffff6c);
-            local_c = in_stack_ffffff6c + 1;
-            rVar7 = (reflect_name)0x80;
-          }
-        }
-      }
-    }
+    runtime_newobject((runtime__type *)&DAT_080d3260,in_stack_ffffff6c);
+    local_c = in_stack_ffffff6c + 1;
+    rVar9 = (reflect_name)0x80;
   }
   local_30 = in_stack_ffffff6c;
   if (runtime_writeBarrier._0_4_ == 0) {
@@ -71145,16 +70735,16 @@ LAB_080a9926:
     local_54 = (uint8 *)extraout_EDX;
   }
   else {
-    local_68 = (uint8 *)rVar7;
+    local_68 = (uint8 *)rVar9;
     runtime_typedmemmove((runtime__type *)&DAT_080d58c0,in_stack_ffffff6c,local_3c);
     local_54 = local_68;
   }
-  prVar9 = (reflect_rtype *)0x0;
+  prVar11 = (reflect_rtype *)0x0;
   local_6c = (reflect_rtype *)0x0;
-  prVar6 = (reflect_rtype *)0x0;
-  local_18.data = local_c;
-  while ((int)prVar6 < in.len) {
-    local_50 = prVar6;
+  uVar7 = 0;
+  local_14 = local_c;
+  while ((int)uVar7 < in.len) {
+    local_50 = (runtime__type *)uVar7;
     local_10 = in.array;
     if ((in.array)->tab != (runtime_itab *)go_itab__reflect_rtype_reflect_Type) {
       runtime_panicdottypeI
@@ -71163,31 +70753,31 @@ LAB_080a9926:
         invalidInstructionException();
       } while( true );
     }
-    prVar6 = (reflect_rtype *)((int)&local_6c->size + 1);
-    local_70 = prVar9;
+    cap = (reflect_rtype *)((int)&local_6c->size + 1);
+    local_70 = prVar11;
     local_34 = (in.array)->data;
-    if ((int)local_54 < (int)prVar6) {
-      rVar4 = (runtime_slice)CONCAT48(local_54,CONCAT44(local_6c,local_18.data));
-      in_stack_ffffff78 = prVar6;
-      local_18.data = in_stack_ffffff7c;
+    if ((int)local_54 < (int)cap) {
+      rVar4 = (runtime_slice)CONCAT48(local_54,CONCAT44(local_6c,local_14));
+      in_stack_ffffff78 = cap;
+      local_14 = in_stack_ffffff7c;
       local_54 = (uint8 *)in_stack_ffffff84;
-      runtime_growslice((runtime__type *)&DAT_080ddf40,rVar4,(int)prVar6,
+      runtime_growslice((runtime__type *)&DAT_080ddf40,rVar4,(int)cap,
                         (runtime_slice)
                         CONCAT48(in_stack_ffffff84,CONCAT44(in_stack_ffffff80,in_stack_ffffff7c)));
-      prVar6 = (reflect_rtype *)(in_stack_ffffff80 + 1);
-      in_stack_ffffff7c = (reflect_funcType *)local_18.data;
+      cap = (reflect_rtype *)(in_stack_ffffff80 + 1);
+      in_stack_ffffff7c = local_14;
       in_stack_ffffff84 = (reflect_name)local_54;
     }
-    prVar9 = in_stack_ffffff78;
-    puVar3 = &((reflect_rtype *)local_18.data)->size + (int)local_6c;
+    prVar11 = in_stack_ffffff78;
+    puVar3 = &(local_14->rtype).size + (int)local_6c;
     local_68 = local_54;
-    local_2c = (reflect_funcType *)local_18.data;
+    local_2c = local_14;
     if (runtime_writeBarrier._0_4_ == 0) {
-      (&((reflect_rtype *)local_18.data)->size)[(int)local_6c] = (uintptr)local_34;
-      local_6c = prVar6;
+      (&(local_14->rtype).size)[(int)local_6c] = (uintptr)local_34;
+      local_6c = cap;
     }
     else {
-      local_6c = prVar6;
+      local_6c = cap;
       runtime_writebarrierptr(puVar3,(uintptr)local_34);
     }
     local_58 = CONCAT13((char)*(undefined4 *)((int)local_34 + 8),
@@ -71195,77 +70785,77 @@ LAB_080a9926:
                                  CONCAT11((char)((uint)*(undefined4 *)((int)local_34 + 8) >> 0x10),
                                           (char)((uint)*(undefined4 *)((int)local_34 + 8) >> 0x18)))
                        );
-    reflect_fnv1((uint32)local_70,(__uint8)CONCAT48(4,CONCAT44(4,&local_58)),(uint32)prVar9);
+    reflect_fnv1((uint32)local_70,(__uint8)CONCAT48(4,CONCAT44(4,&local_58)),(uint32)prVar11);
     in.array = local_10 + 1;
     local_54 = local_68;
-    local_18.data = local_2c;
-    in_stack_ffffff78 = prVar9;
-    prVar6 = (reflect_rtype *)((int)&local_50->size + 1);
+    local_14 = local_2c;
+    in_stack_ffffff78 = prVar11;
+    uVar7 = (int)local_50 + 1;
   }
   if (variadic != false) {
     local_75 = 0x76;
-    reflect_fnv1((uint32)prVar9,(__uint8)CONCAT48(1,CONCAT44(1,&local_75)),(uint32)in_stack_ffffff78
-                );
-    prVar9 = in_stack_ffffff78;
-    in_stack_ffffff78 = prVar9;
+    reflect_fnv1((uint32)prVar11,(__uint8)CONCAT48(1,CONCAT44(1,&local_75)),
+                 (uint32)in_stack_ffffff78);
+    prVar11 = in_stack_ffffff78;
+    in_stack_ffffff78 = prVar11;
   }
   local_76 = 0x2e;
   have = (runtime__type *)0x1;
-  reflect_fnv1((uint32)prVar9,(__uint8)CONCAT48(1,CONCAT44(1,&local_76)),(uint32)in_stack_ffffff78);
-  prVar6 = (reflect_rtype *)0x0;
-  prVar8 = (reflect_funcType *)local_18.data;
-  rVar7 = (reflect_name)local_54;
-  while (local_70 = in_stack_ffffff78, (int)prVar6 < out.len) {
-    local_50 = prVar6;
-    local_18.tab = (runtime_itab *)out.array;
-    if (((runtime_itab *)out.array)->inter !=
-        (runtime_interfacetype *)go_itab__reflect_rtype_reflect_Type) {
+  reflect_fnv1((uint32)prVar11,(__uint8)CONCAT48(1,CONCAT44(1,&local_76)),(uint32)in_stack_ffffff78)
+  ;
+  uVar7 = 0;
+  prVar10 = local_14;
+  rVar9 = (reflect_name)local_54;
+  while (local_70 = in_stack_ffffff78, (int)uVar7 < out.len) {
+    local_50 = (runtime__type *)uVar7;
+    local_18 = out.array;
+    if ((out.array)->tab != (runtime_itab *)go_itab__reflect_rtype_reflect_Type) {
       runtime_panicdottypeI
-                ((runtime_itab *)((runtime_itab *)out.array)->inter,(runtime__type *)&DAT_080ddf40,
-                 (runtime__type *)&DAT_080dbae0);
+                ((out.array)->tab,(runtime__type *)&DAT_080ddf40,(runtime__type *)&DAT_080dbae0);
       do {
         invalidInstructionException();
       } while( true );
     }
-    prVar6 = (reflect_rtype *)((int)&local_6c->size + 1);
-    local_38 = ((runtime_itab *)out.array)->_type;
-    if ((int)rVar7 < (int)prVar6) {
-      rVar4 = (runtime_slice)CONCAT48(rVar7,CONCAT44(local_6c,prVar8));
-      in_stack_ffffff78 = prVar6;
-      prVar8 = in_stack_ffffff7c;
-      rVar7 = in_stack_ffffff84;
-      runtime_growslice((runtime__type *)&DAT_080ddf40,rVar4,(int)prVar6,
+    prVar11 = (reflect_rtype *)((int)&local_6c->size + 1);
+    local_38 = (out.array)->data;
+    if ((int)rVar9 < (int)prVar11) {
+      rVar4 = (runtime_slice)CONCAT48(rVar9,CONCAT44(local_6c,prVar10));
+      in_stack_ffffff78 = prVar11;
+      prVar10 = in_stack_ffffff7c;
+      rVar9 = in_stack_ffffff84;
+      runtime_growslice((runtime__type *)&DAT_080ddf40,rVar4,(int)prVar11,
                         (runtime_slice)
                         CONCAT48(in_stack_ffffff84,CONCAT44(in_stack_ffffff80,in_stack_ffffff7c)));
-      prVar6 = (reflect_rtype *)(in_stack_ffffff80 + 1);
-      in_stack_ffffff7c = prVar8;
-      in_stack_ffffff84 = rVar7;
+      prVar11 = (reflect_rtype *)(in_stack_ffffff80 + 1);
+      in_stack_ffffff7c = prVar10;
+      in_stack_ffffff84 = rVar9;
     }
-    puVar3 = &(prVar8->rtype).size + (int)local_6c;
-    local_68 = (uint8 *)rVar7;
-    local_2c = prVar8;
+    puVar3 = &(prVar10->rtype).size + (int)local_6c;
+    local_68 = (uint8 *)rVar9;
+    local_2c = prVar10;
     if (runtime_writeBarrier._0_4_ == 0) {
-      (&(prVar8->rtype).size)[(int)local_6c] = (uintptr)local_38;
-      local_6c = prVar6;
+      (&(prVar10->rtype).size)[(int)local_6c] = (uintptr)local_38;
+      local_6c = prVar11;
     }
     else {
-      local_6c = prVar6;
+      local_6c = prVar11;
       runtime_writebarrierptr(puVar3,(uintptr)local_38);
     }
-    local_5c = CONCAT13((char)local_38->hash,
-                        CONCAT12((char)(local_38->hash >> 8),
-                                 CONCAT11((char)(local_38->hash >> 0x10),
-                                          (char)(local_38->hash >> 0x18))));
+    local_5c = CONCAT13((char)*(undefined4 *)((int)local_38 + 8),
+                        CONCAT12((char)((uint)*(undefined4 *)((int)local_38 + 8) >> 8),
+                                 CONCAT11((char)((uint)*(undefined4 *)((int)local_38 + 8) >> 0x10),
+                                          (char)((uint)*(undefined4 *)((int)local_38 + 8) >> 0x18)))
+                       );
     have = (runtime__type *)0x4;
     reflect_fnv1((uint32)local_70,(__uint8)CONCAT48(4,CONCAT44(4,&local_5c)),
                  (uint32)in_stack_ffffff78);
-    out.array = (reflect_Type *)&(local_18.tab)->link;
-    prVar8 = local_2c;
-    rVar7 = (reflect_name)local_68;
-    prVar6 = (reflect_rtype *)((int)&local_50->size + 1);
+    out.array = local_18 + 1;
+    prVar10 = local_2c;
+    rVar9 = (reflect_name)local_68;
+    uVar7 = (int)local_50 + 1;
   }
   if (0x32 < (int)local_6c) {
-    runtime_gopanic((interface__)0x80f19b0080cf1a0);
+    runtime_gopanic((interface___)0x80f19b0080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -71273,15 +70863,14 @@ LAB_080a9926:
   (local_30->rtype).tflag = 0;
   (local_30->rtype).hash = (uint32)in_stack_ffffff78;
   local_30->inCount = SUB122((undefined  [12])in >> 0x20,0);
-  uVar10 = SUB122((undefined  [12])out >> 0x20,0);
-  local_30->outCount = uVar10;
+  uVar12 = SUB122((undefined  [12])out >> 0x20,0);
+  local_30->outCount = uVar12;
   if (variadic != false) {
-    local_30->outCount = uVar10 | 0x8000;
+    local_30->outCount = uVar12 | 0x8000;
   }
-  local_64._4_4_ = in_stack_ffffff78;
-  sync___Map__Load(&reflect_funcLookupCache.m,
-                   (interface__)CONCAT44((uintptr *)((int)local_64 + 4),0x80cf2a0),
-                   (interface__)CONCAT44(in_stack_ffffff78,have),SUB41(in_stack_ffffff7c,0));
+  local_60 = in_stack_ffffff78;
+  sync___Map__Load(&reflect_funcLookupCache.m,(interface___)CONCAT44(&local_60,0x80cf2a0),
+                   (interface___)CONCAT44(in_stack_ffffff78,have),SUB41(in_stack_ffffff7c,0));
   ok = (char)in_stack_ffffff7c;
   if (ok != '\0') {
     if (have != (runtime__type *)&DAT_080c9000) {
@@ -71290,33 +70879,33 @@ LAB_080a9926:
         invalidInstructionException();
       } while( true );
     }
-    local_50 = (reflect_rtype *)in_stack_ffffff78->ptrdata;
-    prVar6 = (reflect_rtype *)in_stack_ffffff78->size;
-    rVar7 = (reflect_name)0x0;
-    while (ok = (char)in_stack_ffffff7c, (int)rVar7 < (int)local_50) {
-      local_48 = *(reflect_rtype **)prVar6;
-      prVar8 = local_30;
-      local_54 = (uint8 *)rVar7;
-      local_1c = (reflect_rtype **)prVar6;
+    local_50 = (runtime__type *)in_stack_ffffff78->ptrdata;
+    pprVar5 = (reflect_rtype **)in_stack_ffffff78->size;
+    rVar9 = (reflect_name)0x0;
+    while (ok = (char)in_stack_ffffff7c, (int)rVar9 < (int)local_50) {
+      local_48 = *pprVar5;
+      prVar10 = local_30;
+      local_54 = (uint8 *)rVar9;
+      local_1c = pprVar5;
       reflect_haveIdenticalUnderlyingType(&local_30->rtype,local_48,true,SUB41(have,0));
       if ((char)have != '\0') {
-        runtime_deferreturn((uintptr)prVar8);
+        runtime_deferreturn((uintptr)prVar10);
         return;
       }
-      prVar6 = (reflect_rtype *)(local_1c + 1);
-      rVar7 = (reflect_name)((int)local_54 + 1);
+      pprVar5 = local_1c + 1;
+      rVar9 = (reflect_name)((int)local_54 + 1);
     }
   }
   sync___Mutex__Lock(&reflect_funcLookupCache.Mutex);
-  arg0 = 4;
-  ppuVar5 = &PTR_sync___Mutex__Unlock_080e7d08;
+  uVar7 = 4;
+  ppuVar6 = &PTR_sync___Mutex__Unlock_080e7d08;
   runtime_deferproc(4,(runtime_funcval *)&PTR_sync___Mutex__Unlock_080e7d08);
-  if (ppuVar5 == (undefined **)0x0) {
-    local_64._0_4_ = local_70;
+  if (ppuVar6 == (undefined **)0x0) {
+    local_64 = local_70;
     local_40 = (reflect_rtype *)&DAT_080cf2a0;
-    prVar6 = (reflect_rtype *)local_64;
-    sync___Map__Load(&reflect_funcLookupCache.m,(interface__)CONCAT44(prVar6,0x80cf2a0),
-                     (interface__)CONCAT44(in_stack_ffffff78,have),(bool)ok);
+    pprVar5 = &local_64;
+    sync___Map__Load(&reflect_funcLookupCache.m,(interface___)CONCAT44(pprVar5,0x80cf2a0),
+                     (interface___)CONCAT44(in_stack_ffffff78,have),(bool)ok);
     if (ok != '\0') {
       if (have != (runtime__type *)&DAT_080c9000) {
         runtime_panicdottypeE(have,(runtime__type *)&DAT_080c9000,(runtime__type *)&DAT_080ceca0);
@@ -71324,62 +70913,62 @@ LAB_080a9926:
           invalidInstructionException();
         } while( true );
       }
-      local_50 = (reflect_rtype *)in_stack_ffffff78->ptrdata;
-      prVar9 = (reflect_rtype *)in_stack_ffffff78->size;
-      rVar7 = (reflect_name)0x0;
-      while ((int)rVar7 < (int)local_50) {
-        local_40 = (reflect_rtype *)prVar9->size;
-        prVar6 = (reflect_rtype *)CONCAT31((int3)((uint)prVar6 >> 8),1);
-        prVar8 = local_30;
-        local_54 = (uint8 *)rVar7;
+      local_50 = (runtime__type *)in_stack_ffffff78->ptrdata;
+      pprVar8 = (reflect_rtype **)in_stack_ffffff78->size;
+      rVar9 = (reflect_name)0x0;
+      while ((int)rVar9 < (int)local_50) {
+        local_40 = *pprVar8;
+        pprVar5 = (reflect_rtype **)CONCAT31((int3)((uint)pprVar5 >> 8),1);
+        prVar10 = local_30;
+        local_54 = (uint8 *)rVar9;
         local_44 = local_40;
-        local_20 = prVar9;
+        local_20 = pprVar8;
         reflect_haveIdenticalUnderlyingType(&local_30->rtype,local_40,true,SUB41(have,0));
         if ((char)have != '\0') {
-          runtime_deferreturn((uintptr)prVar8);
+          runtime_deferreturn((uintptr)prVar10);
           return;
         }
-        prVar9 = (reflect_rtype *)&local_20->ptrdata;
-        rVar7 = (reflect_name)((int)local_54 + 1);
+        pprVar8 = local_20 + 1;
+        rVar9 = (reflect_name)((int)local_54 + 1);
       }
     }
     runtime_newobject((runtime__type *)&DAT_080d10a0,local_40);
     local_40->size = (uintptr)reflect_FuncOf_func1;
     local_40->ptrdata = (uintptr)local_70;
     local_24 = local_40;
-    reflect_funcStr(local_30,(string)CONCAT44(prVar6,local_40));
-    local_74 = prVar6;
+    reflect_funcStr(local_30,(string)CONCAT44(pprVar5,local_40));
+    local_74 = pprVar5;
     reflect_typesByString
-              ((string)CONCAT44(prVar6,local_40),
-               (___reflect_rtype)CONCAT48(in_stack_ffffff78,CONCAT44(have,prVar6)));
-    rVar7 = (reflect_name)0x0;
-    local_50 = (reflect_rtype *)have;
+              ((string)CONCAT44(pprVar5,local_40),
+               (___reflect_rtype)CONCAT48(in_stack_ffffff78,CONCAT44(have,pprVar5)));
+    rVar9 = (reflect_name)0x0;
+    local_50 = have;
     while( true ) {
-      if ((int)local_50 <= (int)rVar7) {
-        prVar6 = local_74;
+      if ((int)local_50 <= (int)rVar9) {
+        pprVar5 = local_74;
         reflect_newName((string)CONCAT44(local_74,local_40),(string)0x0,(string)0x0,false,
                         in_stack_ffffff84);
-        reflect_resolveReflectName(in_stack_ffffff84,(reflect_nameOff)prVar6);
-        (local_30->rtype).str = (reflect_nameOff)prVar6;
+        reflect_resolveReflectName(in_stack_ffffff84,(reflect_nameOff)pprVar5);
+        (local_30->rtype).str = (reflect_nameOff)pprVar5;
         (local_30->rtype).ptrToThis = 0;
         (*(code *)local_24->size)();
         runtime_deferreturn((uintptr)local_30);
         return;
       }
-      local_4c = (reflect_rtype *)prVar6->size;
-      local_54 = (uint8 *)rVar7;
-      local_28 = prVar6;
+      local_4c = *pprVar5;
+      local_54 = (uint8 *)rVar9;
+      local_28 = pprVar5;
       reflect_haveIdenticalUnderlyingType(&local_30->rtype,local_4c,true,SUB41(have,0));
       if ((char)have != '\0') break;
-      prVar6 = (reflect_rtype *)&local_28->ptrdata;
-      rVar7 = (reflect_name)((int)local_54 + 1);
+      pprVar5 = local_28 + 1;
+      rVar9 = (reflect_name)((int)local_54 + 1);
     }
-    prVar6 = local_4c;
+    prVar11 = local_4c;
     (*(code *)local_24->size)();
-    runtime_deferreturn((uintptr)prVar6);
+    runtime_deferreturn((uintptr)prVar11);
     return;
   }
-  runtime_deferreturn(arg0);
+  runtime_deferreturn(uVar7);
   return;
 }
 
@@ -71503,35 +71092,33 @@ void reflect_funcStr(reflect_funcType *ft,string _r1)
         puVar6[uVar7] = 0x20;
         uVar7 = uVar8;
       }
-      else {
-        if (1 < iVar9) {
-          uVar8 = uVar7 + 2;
-          if (local_7c < uVar8) {
-            rVar3 = (runtime_slice)CONCAT48(local_7c,CONCAT44(uVar7,puVar6));
-            in_stack_ffffff70 = uVar8;
-            puVar6 = in_stack_ffffff74;
-            local_7c = in_stack_ffffff7c;
-            runtime_growslice((runtime__type *)&DAT_080cf320,rVar3,uVar8,
-                              (runtime_slice)
-                              CONCAT48(in_stack_ffffff7c,
-                                       CONCAT44(in_stack_ffffff78,in_stack_ffffff74)));
-            in_stack_ffffff74 = puVar6;
-            in_stack_ffffff7c = local_7c;
-          }
-          if (local_7c < uVar8) {
-            runtime_panicslice();
-            do {
-              invalidInstructionException();
-            } while( true );
-          }
-          __src = &DAT_080e0da3;
-          uVar11 = 2;
-          local_14 = puVar6;
-          runtime_memmove(puVar6 + uVar7,&DAT_080e0da3,2);
-          pprVar5 = local_10;
-          uVar7 = uVar8;
-          puVar6 = local_14;
+      else if (1 < iVar9) {
+        uVar8 = uVar7 + 2;
+        if (local_7c < uVar8) {
+          rVar3 = (runtime_slice)CONCAT48(local_7c,CONCAT44(uVar7,puVar6));
+          in_stack_ffffff70 = uVar8;
+          puVar6 = in_stack_ffffff74;
+          local_7c = in_stack_ffffff7c;
+          runtime_growslice((runtime__type *)&DAT_080cf320,rVar3,uVar8,
+                            (runtime_slice)
+                            CONCAT48(in_stack_ffffff7c,CONCAT44(in_stack_ffffff78,in_stack_ffffff74)
+                                    ));
+          in_stack_ffffff74 = puVar6;
+          in_stack_ffffff7c = local_7c;
         }
+        if (local_7c < uVar8) {
+          runtime_panicslice();
+          do {
+            invalidInstructionException();
+          } while( true );
+        }
+        __src = &DAT_080e0da3;
+        uVar11 = 2;
+        local_14 = puVar6;
+        runtime_memmove(puVar6 + uVar7,&DAT_080e0da3,2);
+        pprVar5 = local_10;
+        uVar7 = uVar8;
+        puVar6 = local_14;
       }
       iVar4 = 0;
       do {
@@ -71741,6 +71328,7 @@ void reflect_funcLayout(reflect_rtype *t,reflect_rtype *rcvr,reflect_rtype *fram
 
 {
   uint *puVar1;
+  undefined *cap;
   ushort uVar2;
   int iVar3;
   reflect_rtype *prVar4;
@@ -71803,7 +71391,7 @@ void reflect_funcLayout(reflect_rtype *t,reflect_rtype *rcvr,reflect_rtype *fram
     return;
   }
   if ((t->kind & 0x1f) != 0x13) {
-    runtime_gopanic((interface__)0x80f19c0080cf1a0);
+    runtime_gopanic((interface___)0x80f19c0080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -71818,7 +71406,7 @@ void reflect_funcLayout(reflect_rtype *t,reflect_rtype *rcvr,reflect_rtype *fram
     runtime_convT2Estring
               ((runtime__type *)&DAT_080cf1a0,local_6c,
                (runtime_eface)CONCAT44(in_stack_fffffec0,uVar12));
-    runtime_gopanic((interface__)CONCAT44(in_stack_fffffec0,uVar12));
+    runtime_gopanic((interface___)CONCAT44(in_stack_fffffec0,uVar12));
     do {
       invalidInstructionException();
     } while( true );
@@ -71827,8 +71415,8 @@ void reflect_funcLayout(reflect_rtype *t,reflect_rtype *rcvr,reflect_rtype *fram
   local_7c._4_4_ = rcvr;
   rVar10 = (reflect_name)&DAT_080d3500;
   t_00 = (reflect_rtype *)local_7c;
-  sync___Map__Load(&reflect_layoutCache,(interface__)CONCAT44(t_00,0x80d3500),
-                   (interface__)CONCAT44(in_stack_fffffecc,in_stack_fffffec8),
+  sync___Map__Load(&reflect_layoutCache,(interface___)CONCAT44(t_00,0x80d3500),
+                   (interface___)CONCAT44(in_stack_fffffecc,in_stack_fffffec8),
                    SUB41(in_stack_fffffed0,0));
   if (SUB41(in_stack_fffffed0,0) != '\0') {
     local_a8 = in_stack_fffffec8;
@@ -71854,17 +71442,17 @@ void reflect_funcLayout(reflect_rtype *t,reflect_rtype *rcvr,reflect_rtype *fram
       if ((*(uint *)rVar10 & 7) == 0) {
         prVar4 = *(reflect_rtype **)((int)rVar10 + 8);
         local_9c = (uint8 *)((runtime_slice *)((int)rVar10 + 4))->array;
-        iVar6 = (int)&prVar4->size + 1;
-        if ((int)*(uint *)((int)rVar10 + 0xc) < iVar6) {
+        cap = (undefined *)((int)&prVar4->size + 1);
+        if ((int)*(uint *)((int)rVar10 + 0xc) < (int)cap) {
           rVar10 = (reflect_name)local_9c;
           t_00 = prVar4;
           local_9c = (uint8 *)in_stack_fffffed0;
           prVar4 = in_stack_fffffed4;
           local_98 = (uint *)((int)rVar10 + 4);
-          runtime_growslice((runtime__type *)&DAT_080cf320,*(runtime_slice *)((int)rVar10 + 4),iVar6
-                            ,(runtime_slice)
-                             CONCAT48(in_stack_fffffed8,
-                                      CONCAT44(in_stack_fffffed4,in_stack_fffffed0)));
+          runtime_growslice((runtime__type *)&DAT_080cf320,*(runtime_slice *)((int)rVar10 + 4),
+                            (int)cap,(runtime_slice)
+                                     CONCAT48(in_stack_fffffed8,
+                                              CONCAT44(in_stack_fffffed4,in_stack_fffffed0)));
           ((reflect_name *)((int)local_a4 + 0xc))->bytes = (uint8 *)in_stack_fffffed8;
           if (runtime_writeBarrier._0_4_ == 0) {
             ((reflect_name *)((int)local_a4 + 4))->bytes = local_9c;
@@ -71874,7 +71462,7 @@ void reflect_funcLayout(reflect_rtype *t,reflect_rtype *rcvr,reflect_rtype *fram
             runtime_writebarrierptr(local_98,(uintptr)local_9c);
           }
         }
-        *(uint *)((int)local_a4 + 8) = (int)&prVar4->size + 1;
+        *(undefined **)((int)local_a4 + 8) = (undefined *)((int)&prVar4->size + 1);
         *(undefined *)((int)&prVar4->size + (int)local_9c) = 0;
       }
       uVar7 = *(uint *)local_a4 >> 3;
@@ -72030,8 +71618,8 @@ void reflect_funcLayout(reflect_rtype *t,reflect_rtype *rcvr,reflect_rtype *fram
     runtime_convT2E((runtime__type *)&DAT_080d7d20,&local_28,(runtime_eface)CONCAT44(uVar13,uVar12))
     ;
     sync___Map__LoadOrStore
-              (&reflect_layoutCache,(interface__)CONCAT44(local_88,local_90),
-               (interface__)CONCAT44(uVar13,uVar12),(interface__)CONCAT44(uVar7,local_ac),
+              (&reflect_layoutCache,(interface___)CONCAT44(local_88,local_90),
+               (interface___)CONCAT44(uVar13,uVar12),(interface___)CONCAT44(uVar7,local_ac),
                (bool)loaded);
     FUN_0808fd8b();
     if (local_ac != (runtime__type *)&DAT_080d7d20) {
@@ -72192,28 +71780,26 @@ void reflect_addTypeBits(reflect_bitVector *bv,uintptr offset,reflect_rtype *t)
       } while( true );
     }
   }
-  else {
-    if (3 < uVar4 - 0x15) {
-      if (uVar4 == 0x19) {
-        uVar2 = t[1].hash;
-        uVar4 = 0;
-        while( true ) {
-          if ((int)uVar2 <= (int)uVar4) {
-            return;
-          }
-          if (t[1].hash <= uVar4) break;
-          reflect_addTypeBits(bv,(*(uint *)(t[1].ptrdata + 8 + uVar4 * 0xc) >> 1) + offset,
-                              *(reflect_rtype **)(t[1].ptrdata + 4 + uVar4 * 0xc));
-          uVar4 = uVar4 + 1;
+  else if (3 < uVar4 - 0x15) {
+    if (uVar4 == 0x19) {
+      uVar2 = t[1].hash;
+      uVar4 = 0;
+      while( true ) {
+        if ((int)uVar2 <= (int)uVar4) {
+          return;
         }
-        runtime_panicindex();
-        do {
-          invalidInstructionException();
-        } while( true );
+        if (t[1].hash <= uVar4) break;
+        reflect_addTypeBits(bv,(*(uint *)(t[1].ptrdata + 8 + uVar4 * 0xc) >> 1) + offset,
+                            *(reflect_rtype **)(t[1].ptrdata + 4 + uVar4 * 0xc));
+        uVar4 = uVar4 + 1;
       }
-      if (uVar4 != 0x1a) {
-        return;
-      }
+      runtime_panicindex();
+      do {
+        invalidInstructionException();
+      } while( true );
+    }
+    if (uVar4 != 0x1a) {
+      return;
     }
   }
   while( true ) {
@@ -72307,7 +71893,7 @@ void reflect_Value_pointer(reflect_Value v,void *_r0)
     }
     return;
   }
-  runtime_gopanic((interface__)0x80f19c8080cf1a0);
+  runtime_gopanic((interface___)0x80f19c8080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -72315,7 +71901,7 @@ void reflect_Value_pointer(reflect_Value v,void *_r0)
 
 
 
-void reflect_packEface(reflect_Value v,interface__ _r1)
+void reflect_packEface(reflect_Value v,interface___ _r1)
 
 {
   uint *puVar1;
@@ -72331,7 +71917,7 @@ void reflect_packEface(reflect_Value v,interface__ _r1)
   }
   if (((v.typ)->kind & 0x20) == 0) {
     if (((undefined  [12])v & (undefined  [12])0x80) == (undefined  [12])0x0) {
-      runtime_gopanic((interface__)0x80f19d0080cf1a0);
+      runtime_gopanic((interface___)0x80f19d0080cf1a0);
       do {
         invalidInstructionException();
       } while( true );
@@ -72452,7 +72038,7 @@ void reflect_flag_mustBe(reflect_flag f,reflect_Kind expected)
     runtime_writebarrierptr(dst,in_stack_ffffffe8);
   }
   dst[2] = f & 0x1f;
-  runtime_gopanic((interface__)CONCAT44(dst,0x80d0760));
+  runtime_gopanic((interface___)CONCAT44(dst,0x80d0760));
   do {
     invalidInstructionException();
   } while( true );
@@ -72495,7 +72081,7 @@ void reflect_flag_mustBeAssignable(reflect_flag f)
       runtime_writebarrierptr(dst,in_stack_ffffffc0);
     }
     dst[2] = 0;
-    runtime_gopanic((interface__)CONCAT44(dst,0x80d0760));
+    runtime_gopanic((interface___)CONCAT44(dst,0x80d0760));
     do {
       invalidInstructionException();
     } while( true );
@@ -72513,7 +72099,7 @@ void reflect_flag_mustBeAssignable(reflect_flag f)
     runtime_convT2Estring
               ((runtime__type *)&DAT_080cf1a0,local_8,
                (runtime_eface)CONCAT44(in_stack_ffffffc0,uVar2));
-    runtime_gopanic((interface__)CONCAT44(in_stack_ffffffc0,uVar2));
+    runtime_gopanic((interface___)CONCAT44(in_stack_ffffffc0,uVar2));
     do {
       invalidInstructionException();
     } while( true );
@@ -72533,7 +72119,7 @@ void reflect_flag_mustBeAssignable(reflect_flag f)
   runtime_convT2Estring
             ((runtime__type *)&DAT_080cf1a0,local_10,
              (runtime_eface)CONCAT44(in_stack_ffffffc0,uVar2));
-  runtime_gopanic((interface__)CONCAT44(in_stack_ffffffc0,uVar2));
+  runtime_gopanic((interface___)CONCAT44(in_stack_ffffffc0,uVar2));
   do {
     invalidInstructionException();
   } while( true );
@@ -72582,7 +72168,7 @@ void reflect_Value_Bytes(reflect_Value v,__uint8 _r0)
   if (iVar2 == 8) {
     return;
   }
-  runtime_gopanic((interface__)0x80f19d8080cf1a0);
+  runtime_gopanic((interface___)0x80f19d8080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -72612,7 +72198,7 @@ void reflect_Value_runes(reflect_Value v,__int32 _r0)
   if (iVar2 == 5) {
     return;
   }
-  runtime_gopanic((interface__)0x80f19e0080cf1a0);
+  runtime_gopanic((interface___)0x80f19e0080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -72630,15 +72216,14 @@ void reflect_methodReceiver
   uint *puVar1;
   ushort uVar2;
   uintptr uVar3;
+  uint32 uVar4;
   reflect_typeOff off;
   reflect_textOff off_00;
-  int iVar4;
-  int iVar5;
   int *in_GS_OFFSET;
   reflect_uncommonType *in_stack_ffffffb0;
   reflect_name *dst;
   reflect_name in_stack_ffffffb4;
-  undefined4 uVar6;
+  undefined4 uVar5;
   undefined4 in_stack_ffffffc8;
   undefined4 in_stack_ffffffcc;
   undefined local_18 [8];
@@ -72658,12 +72243,12 @@ void reflect_methodReceiver
     reflect___rtype__uncommon(v.typ,in_stack_ffffffb0);
     if ((in_stack_ffffffb0 == (reflect_uncommonType *)0x0) ||
        (uVar2 = in_stack_ffffffb0->mcount, (uint)uVar2 <= (uint)methodIndex)) {
-      runtime_gopanic((interface__)0x80f1a00080cf1a0);
+      runtime_gopanic((interface___)0x80f1a00080cf1a0);
       do {
         invalidInstructionException();
       } while( true );
     }
-    iVar4 = (int)&in_stack_ffffffb0->pkgPath + in_stack_ffffffb0->moff;
+    uVar4 = in_stack_ffffffb0->moff;
     if (0x10000 < uVar2) {
       runtime_panicslice();
       do {
@@ -72671,10 +72256,9 @@ void reflect_methodReceiver
       } while( true );
     }
     if ((uint)methodIndex < (uint)uVar2) {
-      iVar5 = methodIndex * 0x10;
-      off = *(reflect_typeOff *)(iVar4 + 4 + iVar5);
-      off_00 = *(reflect_textOff *)(iVar4 + 8 + iVar5);
-      dst = *(reflect_name **)(iVar4 + iVar5);
+      off = *(reflect_typeOff *)((int)&in_stack_ffffffb0[methodIndex].mcount + uVar4);
+      off_00 = *(reflect_textOff *)((int)&in_stack_ffffffb0[methodIndex].moff + uVar4);
+      dst = *(reflect_name **)((int)&in_stack_ffffffb0[methodIndex].pkgPath + uVar4);
       reflect___rtype__nameOff(v.typ,(reflect_nameOff)dst,in_stack_ffffffb4);
       if ((*(byte *)in_stack_ffffffb4 & 1) != 0) {
         runtime_newobject((runtime__type *)&DAT_080cf3a0,dst);
@@ -72688,15 +72272,15 @@ void reflect_methodReceiver
         reflect___rtype__typeOff(v.typ,off,(reflect_rtype *)in_stack_ffffffb4);
         return;
       }
-      uVar6 = 9;
+      uVar5 = 9;
       runtime_concatstring3
                 ((uint8 (*) [32])0x0,
                  (string  [3])
                  CONCAT420(0x15,CONCAT416(0x80e3264,CONCAT412(op.len,CONCAT48(op.str,0x9080e16b6))))
                  ,(string)CONCAT44(in_stack_ffffffcc,in_stack_ffffffc8));
       runtime_convT2Estring
-                ((runtime__type *)&DAT_080cf1a0,local_18,(runtime_eface)CONCAT44(op.str,uVar6));
-      runtime_gopanic((interface__)CONCAT44(op.str,uVar6));
+                ((runtime__type *)&DAT_080cf1a0,local_18,(runtime_eface)CONCAT44(op.str,uVar5));
+      runtime_gopanic((interface___)CONCAT44(op.str,uVar5));
       do {
         invalidInstructionException();
       } while( true );
@@ -72708,37 +72292,37 @@ void reflect_methodReceiver
   }
   uVar3 = v.typ[1].ptrdata;
   if (v.typ[1].hash <= (uint)methodIndex) {
-    runtime_gopanic((interface__)0x80f19f0080cf1a0);
+    runtime_gopanic((interface___)0x80f19f0080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
   }
   reflect___rtype__nameOff(v.typ,*(reflect_nameOff *)(uVar3 + methodIndex * 8),in_stack_ffffffb4);
   if ((*(byte *)in_stack_ffffffb4 & 1) == 0) {
-    uVar6 = 9;
+    uVar5 = 9;
     runtime_concatstring3
               ((uint8 (*) [32])0x0,
                (string  [3])
                CONCAT420(0x15,CONCAT416(0x80e3264,CONCAT412(op.len,CONCAT48(op.str,0x9080e16b6)))),
                (string)CONCAT44(in_stack_ffffffcc,in_stack_ffffffc8));
     runtime_convT2Estring
-              ((runtime__type *)&DAT_080cf1a0,local_8,(runtime_eface)CONCAT44(op.str,uVar6));
-    runtime_gopanic((interface__)CONCAT44(op.str,uVar6));
+              ((runtime__type *)&DAT_080cf1a0,local_8,(runtime_eface)CONCAT44(op.str,uVar5));
+    runtime_gopanic((interface___)CONCAT44(op.str,uVar5));
     do {
       invalidInstructionException();
     } while( true );
   }
                     // WARNING: Load size is inaccurate
   if (*v.ptr == 0) {
-    uVar6 = 9;
+    uVar5 = 9;
     runtime_concatstring3
               ((uint8 (*) [32])0x0,
                (string  [3])
                CONCAT420(0x21,CONCAT416(0x80e5583,CONCAT412(op.len,CONCAT48(op.str,0x9080e16b6)))),
                (string)CONCAT44(in_stack_ffffffcc,in_stack_ffffffc8));
     runtime_convT2Estring
-              ((runtime__type *)&DAT_080cf1a0,local_10,(runtime_eface)CONCAT44(op.str,uVar6));
-    runtime_gopanic((interface__)CONCAT44(op.str,uVar6));
+              ((runtime__type *)&DAT_080cf1a0,local_10,(runtime_eface)CONCAT44(op.str,uVar5));
+    runtime_gopanic((interface___)CONCAT44(op.str,uVar5));
     do {
       invalidInstructionException();
     } while( true );
@@ -72757,23 +72341,21 @@ void reflect_methodReceiver
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void reflect_callMethod(reflect_methodValue *ctxt,void *frame)
 
 {
   uint *puVar1;
   byte bVar2;
-  reflect_methodValue *prVar3;
+  int *piVar3;
   reflect_rtype *prVar4;
-  void *pvVar5;
-  reflect_rtype *src;
+  uint uVar5;
+  uintptr *src;
   uintptr size;
   int *in_GS_OFFSET;
   reflect_rtype *frametype;
   reflect_rtype *dst;
-  reflect_rtype *argSize;
-  void *retOffset;
+  uintptr *argSize;
+  uint retOffset;
   reflect_bitVector *stk;
   reflect_rtype *in_stack_ffffffd0;
   reflect_rtype *p;
@@ -72787,68 +72369,62 @@ void reflect_callMethod(reflect_methodValue *ctxt,void *frame)
     reflect_callMethod(ctxt,frame);
     return;
   }
-  prVar3 = *(reflect_methodValue **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
-  if ((prVar3 != (reflect_methodValue *)0x0) &&
-     ((reflect_methodValue *)prVar3->fn == (reflect_methodValue *)&ctxt)) {
-    prVar3->fn = (uintptr)&stack0xffffffb8;
+  piVar3 = *(int **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
+  if ((piVar3 != (int *)0x0) && ((reflect_methodValue **)*piVar3 == &ctxt)) {
+    *piVar3 = (int)&stack0xffffffb8;
   }
   prVar4 = (ctxt->rcvr).typ;
-  pvVar5 = (void *)(ctxt->rcvr).flag;
-  src = (reflect_rtype *)(ctxt->rcvr).ptr;
+  uVar5 = (ctxt->rcvr).flag;
+  src = (uintptr *)(ctxt->rcvr).ptr;
   stk = (reflect_bitVector *)ctxt->method;
   frametype = prVar4;
   argSize = src;
-  retOffset = pvVar5;
+  retOffset = uVar5;
   reflect_methodReceiver
             ((string)0x4080e0efe,ctxt->rcvr,(int)stk,in_stack_ffffffd0,in_stack_ffffffd4,
              in_stack_ffffffd8);
   p = in_stack_ffffffd0;
-  reflect_funcLayout(in_stack_ffffffd4,in_stack_ffffffd0,frametype,(uintptr)argSize,
-                     (uintptr)retOffset,stk,(sync_Pool *)in_stack_ffffffd0);
+  reflect_funcLayout(in_stack_ffffffd4,in_stack_ffffffd0,frametype,(uintptr)argSize,retOffset,stk,
+                     (sync_Pool *)in_stack_ffffffd0);
   dst = frametype;
-  sync___Pool__Get((sync_Pool *)p,(interface__)CONCAT44(frametype,in_stack_ffffffd0));
+  sync___Pool__Get((sync_Pool *)p,(interface___)CONCAT44(frametype,in_stack_ffffffd0));
   if (in_stack_ffffffd0 == (reflect_rtype *)&DAT_080cf3a0) {
     bVar2 = prVar4->kind;
     if ((bVar2 & 0x1f) == 0x14) {
       if (runtime_writeBarrier._0_4_ == 0) {
-        dst->size = src->ptrdata;
+        dst->size = src[1];
       }
       else {
-        runtime_writebarrierptr(&dst->size,src->ptrdata);
+        runtime_writebarrierptr(&dst->size,src[1]);
       }
+    }
+    else if (((uVar5 & 0x80) == 0) || ((bVar2 & 0x20) == 0)) {
+      if (runtime_writeBarrier._0_4_ == 0) {
+        dst->size = (uintptr)src;
+      }
+      else {
+        runtime_writebarrierptr(&dst->size,(uintptr)src);
+      }
+    }
+    else if (runtime_writeBarrier._0_4_ == 0) {
+      dst->size = *src;
     }
     else {
-      if ((((uint)pvVar5 & 0x80) == 0) || ((bVar2 & 0x20) == 0)) {
-        if (runtime_writeBarrier._0_4_ == 0) {
-          dst->size = (uintptr)src;
-        }
-        else {
-          runtime_writebarrierptr(&dst->size,(uintptr)src);
-        }
-      }
-      else {
-        if (runtime_writeBarrier._0_4_ == 0) {
-          dst->size = src->size;
-        }
-        else {
-          runtime_writebarrierptr(&dst->size,src->size);
-        }
-      }
+      runtime_writebarrierptr(&dst->size,*src);
     }
-    if ((uintptr *)((int)(argSize + 0xffffffff) + 0x1cU) != (uintptr *)0x0) {
+    if (argSize + -1 != (uintptr *)0x0) {
       reflect_typedmemmovepartial
-                ((runtime__type *)frametype,&dst->ptrdata,frame,4,
-                 (uintptr)(uintptr *)((int)(argSize + 0xffffffff) + 0x1cU));
+                ((runtime__type *)frametype,&dst->ptrdata,frame,4,(uintptr)(argSize + -1));
     }
     reflect_call();
-    size = frametype->size - (int)retOffset;
+    size = frametype->size - retOffset;
     if (size != 0) {
       reflect_typedmemmovepartial
-                ((runtime__type *)frametype,(void *)((int)frame + ((int)retOffset - 4U)),
-                 (void *)((int)&dst->size + (int)retOffset),(uintptr)retOffset,size);
+                ((runtime__type *)frametype,(void *)((int)frame + (retOffset - 4)),
+                 (void *)((int)&dst->size + retOffset),retOffset,size);
     }
     reflect_memclrNoHeapPointers(dst,frametype->size);
-    sync___Pool__Put((sync_Pool *)p,(interface__)CONCAT44(dst,0x80cf3a0));
+    sync___Pool__Put((sync_Pool *)p,(interface___)CONCAT44(dst,0x80cf3a0));
     return;
   }
   runtime_panicdottypeE
@@ -72890,7 +72466,7 @@ void reflect_Value_Complex(reflect_Value v,complex128 _r0)
       runtime_writebarrierptr(in_stack_fffffff4,(uintptr)&DAT_080e33de);
     }
     in_stack_fffffff4[2] = uVar2;
-    runtime_gopanic((interface__)CONCAT44(in_stack_fffffff4,0x80d0760));
+    runtime_gopanic((interface___)CONCAT44(in_stack_fffffff4,0x80d0760));
     do {
       invalidInstructionException();
     } while( true );
@@ -72930,7 +72506,7 @@ void reflect_Value_Elem(reflect_Value v,reflect_Value _r0)
       runtime_writebarrierptr(in_stack_ffffffec,(uintptr)&DAT_080e2a84);
     }
     in_stack_ffffffec[2] = uVar2;
-    runtime_gopanic((interface__)CONCAT44(in_stack_ffffffec,0x80d0760));
+    runtime_gopanic((interface___)CONCAT44(in_stack_ffffffec,0x80d0760));
     do {
       invalidInstructionException();
     } while( true );
@@ -72971,13 +72547,13 @@ void reflect_Value_Field(reflect_Value v,int i,reflect_Value _r1)
       runtime_writebarrierptr(in_stack_fffffff4,(uintptr)&DAT_080e2dac);
     }
     in_stack_fffffff4[2] = v.flag & 0x1f;
-    runtime_gopanic((interface__)CONCAT44(in_stack_fffffff4,0x80d0760));
+    runtime_gopanic((interface___)CONCAT44(in_stack_fffffff4,0x80d0760));
     do {
       invalidInstructionException();
     } while( true );
   }
   if (v.typ[1].hash <= (uint)i) {
-    runtime_gopanic((interface__)0x80f1a08080cf1a0);
+    runtime_gopanic((interface___)0x80f1a08080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -73016,7 +72592,7 @@ void reflect_Value_Float(reflect_Value v,float64 _r0)
       runtime_writebarrierptr(in_stack_fffffff4,(uintptr)&DAT_080e2dbf);
     }
     in_stack_fffffff4[2] = uVar2;
-    runtime_gopanic((interface__)CONCAT44(in_stack_fffffff4,0x80d0760));
+    runtime_gopanic((interface___)CONCAT44(in_stack_fffffff4,0x80d0760));
     do {
       invalidInstructionException();
     } while( true );
@@ -73046,7 +72622,7 @@ void reflect_Value_Index(reflect_Value v,int i,reflect_Value _r1)
     if ((uint)i < v.typ[1].hash) {
       return;
     }
-    runtime_gopanic((interface__)0x80f1a10080cf1a0);
+    runtime_gopanic((interface___)0x80f1a10080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -73055,7 +72631,7 @@ void reflect_Value_Index(reflect_Value v,int i,reflect_Value _r1)
     if ((uint)i < *(uint *)((int)v.ptr + 4)) {
       return;
     }
-    runtime_gopanic((interface__)0x80f1a18080cf1a0);
+    runtime_gopanic((interface___)0x80f1a18080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -73070,7 +72646,7 @@ void reflect_Value_Index(reflect_Value v,int i,reflect_Value _r1)
       runtime_writebarrierptr(in_stack_fffffff4,(uintptr)&DAT_080e2dd2);
     }
     in_stack_fffffff4[2] = uVar2;
-    runtime_gopanic((interface__)CONCAT44(in_stack_fffffff4,0x80d0760));
+    runtime_gopanic((interface___)CONCAT44(in_stack_fffffff4,0x80d0760));
     do {
       invalidInstructionException();
     } while( true );
@@ -73078,7 +72654,7 @@ void reflect_Value_Index(reflect_Value v,int i,reflect_Value _r1)
   if ((uint)i < *(uint *)((int)v.ptr + 4)) {
     return;
   }
-  runtime_gopanic((interface__)0x80f1a20080cf1a0);
+  runtime_gopanic((interface___)0x80f1a20080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -73130,7 +72706,7 @@ void reflect_Value_Int(reflect_Value v,int64 _r0)
     runtime_writebarrierptr(in_stack_fffffff4,(uintptr)&DAT_080e2873);
   }
   in_stack_fffffff4[2] = uVar2;
-  runtime_gopanic((interface__)CONCAT44(in_stack_fffffff4,0x80d0760));
+  runtime_gopanic((interface___)CONCAT44(in_stack_fffffff4,0x80d0760));
   do {
     invalidInstructionException();
   } while( true );
@@ -73164,7 +72740,7 @@ void reflect_Value_CanInterface(reflect_Value v,bool _r0)
     runtime_writebarrierptr(in_stack_fffffff8,(uintptr)&DAT_080e4230);
   }
   in_stack_fffffff8[2] = 0;
-  runtime_gopanic((interface__)CONCAT44(in_stack_fffffff8,0x80d0760));
+  runtime_gopanic((interface___)CONCAT44(in_stack_fffffff8,0x80d0760));
   do {
     invalidInstructionException();
   } while( true );
@@ -73172,7 +72748,7 @@ void reflect_Value_CanInterface(reflect_Value v,bool _r0)
 
 
 
-void reflect_Value_Interface(reflect_Value v,interface__ i)
+void reflect_Value_Interface(reflect_Value v,interface___ i)
 
 {
   uint *puVar1;
@@ -73183,7 +72759,7 @@ void reflect_Value_Interface(reflect_Value v,interface__ i)
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
-    reflect_valueInterface(v,true,(interface__)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
+    reflect_valueInterface(v,true,(interface___)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
     return;
   }
   runtime_morestack_noctxt();
@@ -73193,7 +72769,7 @@ void reflect_Value_Interface(reflect_Value v,interface__ i)
 
 
 
-void reflect_valueInterface(reflect_Value v,bool safe,interface__ _r2)
+void reflect_valueInterface(reflect_Value v,bool safe,interface___ _r2)
 
 {
   uint *puVar1;
@@ -73222,13 +72798,13 @@ void reflect_valueInterface(reflect_Value v,bool safe,interface__ _r2)
       runtime_writebarrierptr(in_stack_ffffffe0,(uintptr)&DAT_080e3a35);
     }
     in_stack_ffffffe0[2] = 0;
-    runtime_gopanic((interface__)CONCAT44(in_stack_ffffffe0,0x80d0760));
+    runtime_gopanic((interface___)CONCAT44(in_stack_ffffffe0,0x80d0760));
     do {
       invalidInstructionException();
     } while( true );
   }
   if ((safe != false) && (((undefined  [12])v & (undefined  [12])0x60) != (undefined  [12])0x0)) {
-    runtime_gopanic((interface__)0x80f1a28080cf1a0);
+    runtime_gopanic((interface___)0x80f1a28080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -73253,7 +72829,7 @@ void reflect_valueInterface(reflect_Value v,bool safe,interface__ _r2)
     return;
   }
   reflect_packEface((reflect_Value)CONCAT48(v.flag,CONCAT44(v.ptr,v.typ)),
-                    (interface__)CONCAT44(in_stack_ffffffec,in_stack_ffffffe8));
+                    (interface___)CONCAT44(in_stack_ffffffec,in_stack_ffffffe8));
   return;
 }
 
@@ -73290,19 +72866,17 @@ LAB_080acf97:
         runtime_writebarrierptr(in_stack_fffffff4,(uintptr)&DAT_080e2de5);
       }
       in_stack_fffffff4[2] = uVar2;
-      runtime_gopanic((interface__)CONCAT44(in_stack_fffffff4,0x80d0760));
+      runtime_gopanic((interface___)CONCAT44(in_stack_fffffff4,0x80d0760));
       do {
         invalidInstructionException();
       } while( true );
     }
   }
-  else {
-    if (1 < uVar2 - 0x15) {
-      if (uVar2 == 0x17) {
-        return;
-      }
-      goto LAB_080acf97;
+  else if (1 < uVar2 - 0x15) {
+    if (uVar2 == 0x17) {
+      return;
     }
+    goto LAB_080acf97;
   }
   if (((undefined  [12])v & (undefined  [12])0x200) != (undefined  [12])0x0) {
     return;
@@ -73379,7 +72953,7 @@ void reflect_Value_Len(reflect_Value v,int _r0)
     runtime_writebarrierptr(in_stack_ffffffec,(uintptr)&DAT_080e2884);
   }
   in_stack_ffffffec[2] = uVar2;
-  runtime_gopanic((interface__)CONCAT44(in_stack_ffffffec,0x80d0760));
+  runtime_gopanic((interface___)CONCAT44(in_stack_ffffffec,0x80d0760));
   do {
     invalidInstructionException();
   } while( true );
@@ -73562,7 +73136,7 @@ void reflect_Value_NumMethod(reflect_Value v,int _r0)
     runtime_writebarrierptr(in_stack_fffffff8,(uintptr)&DAT_080e3a4c);
   }
   in_stack_fffffff8[2] = 0;
-  runtime_gopanic((interface__)CONCAT44(in_stack_fffffff8,0x80d0760));
+  runtime_gopanic((interface___)CONCAT44(in_stack_fffffff8,0x80d0760));
   do {
     invalidInstructionException();
   } while( true );
@@ -73625,19 +73199,17 @@ LAB_080ad789:
         runtime_writebarrierptr(in_stack_ffffffe8,(uintptr)&DAT_080e33f3);
       }
       in_stack_ffffffe8[2] = uVar2;
-      runtime_gopanic((interface__)CONCAT44(in_stack_ffffffe8,0x80d0760));
+      runtime_gopanic((interface___)CONCAT44(in_stack_ffffffe8,0x80d0760));
       do {
         invalidInstructionException();
       } while( true );
     }
   }
-  else {
-    if (1 < uVar2 - 0x15) {
-      if (uVar2 == 0x17) {
-        return;
-      }
-      if (uVar2 != 0x1a) goto LAB_080ad789;
+  else if (1 < uVar2 - 0x15) {
+    if (uVar2 == 0x17) {
+      return;
     }
+    if (uVar2 != 0x1a) goto LAB_080ad789;
   }
   reflect_Value_pointer(v,in_stack_fffffff0);
   return;
@@ -73676,7 +73248,7 @@ void reflect_Value_SetBytes(reflect_Value v,__uint8 x)
     }
     return;
   }
-  runtime_gopanic((interface__)0x80f1a38080cf1a0);
+  runtime_gopanic((interface___)0x80f1a38080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -73715,7 +73287,7 @@ void reflect_Value_setRunes(reflect_Value v,__int32 x)
     }
     return;
   }
-  runtime_gopanic((interface__)0x80f1a40080cf1a0);
+  runtime_gopanic((interface___)0x80f1a40080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -73771,7 +73343,7 @@ void reflect_Value_Slice(reflect_Value v,int i,int j,reflect_Value _r2)
   puVar3 = (undefined *)(v.flag & 0x1f);
   if (puVar3 == &DAT_00000011) {
     if (((undefined  [12])v & (undefined  [12])0x100) == (undefined  [12])0x0) {
-      runtime_gopanic((interface__)0x80f1a48080cf1a0);
+      runtime_gopanic((interface___)0x80f1a48080cf1a0);
       do {
         invalidInstructionException();
       } while( true );
@@ -73792,7 +73364,7 @@ void reflect_Value_Slice(reflect_Value v,int i,int j,reflect_Value _r2)
           runtime_writebarrierptr((uintptr *)in_stack_ffffffe0,(uintptr)&DAT_080e2df8);
         }
         in_stack_ffffffe0[2] = puVar3;
-        runtime_gopanic((interface__)CONCAT44(in_stack_ffffffe0,0x80d0760));
+        runtime_gopanic((interface___)CONCAT44(in_stack_ffffffe0,0x80d0760));
         do {
           invalidInstructionException();
         } while( true );
@@ -73810,7 +73382,7 @@ void reflect_Value_Slice(reflect_Value v,int i,int j,reflect_Value _r2)
         }
         return;
       }
-      runtime_gopanic((interface__)0x80f1a50080cf1a0);
+      runtime_gopanic((interface___)0x80f1a50080cf1a0);
       do {
         invalidInstructionException();
       } while( true );
@@ -73842,7 +73414,7 @@ void reflect_Value_Slice(reflect_Value v,int i,int j,reflect_Value _r2)
     }
     return;
   }
-  runtime_gopanic((interface__)0x80f1a58080cf1a0);
+  runtime_gopanic((interface___)0x80f1a58080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -73912,7 +73484,7 @@ void reflect_Value_Type(reflect_Value v,reflect_Type _r0)
       runtime_writebarrierptr((uintptr *)in_stack_fffffff0,(uintptr)&DAT_080e2a96);
     }
     in_stack_fffffff0->moff = 0;
-    runtime_gopanic((interface__)CONCAT44(in_stack_fffffff0,0x80d0760));
+    runtime_gopanic((interface___)CONCAT44(in_stack_fffffff0,0x80d0760));
     do {
       invalidInstructionException();
     } while( true );
@@ -73927,7 +73499,7 @@ void reflect_Value_Type(reflect_Value v,reflect_Type _r0)
                 (v.typ,*(reflect_typeOff *)(v.typ[1].ptrdata + 4 + uVar3 * 8),in_stack_fffffff4);
       return;
     }
-    runtime_gopanic((interface__)0x80f18f8080cf1a0);
+    runtime_gopanic((interface___)0x80f18f8080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -73955,7 +73527,7 @@ void reflect_Value_Type(reflect_Value v,reflect_Type _r0)
       } while( true );
     }
   }
-  runtime_gopanic((interface__)0x80f1900080cf1a0);
+  runtime_gopanic((interface___)0x80f1900080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -74010,7 +73582,7 @@ void reflect_Value_Uint(reflect_Value v,uint64 _r0)
     runtime_writebarrierptr(in_stack_fffffff4,(uintptr)&DAT_080e2aa8);
   }
   in_stack_fffffff4[2] = uVar2;
-  runtime_gopanic((interface__)CONCAT44(in_stack_fffffff4,0x80d0760));
+  runtime_gopanic((interface___)CONCAT44(in_stack_fffffff4,0x80d0760));
   do {
     invalidInstructionException();
   } while( true );
@@ -74018,7 +73590,7 @@ void reflect_Value_Uint(reflect_Value v,uint64 _r0)
 
 
 
-void reflect_ValueOf(interface__ i,reflect_Value _r1)
+void reflect_ValueOf(interface___ i,reflect_Value _r1)
 
 {
   uint *puVar1;
@@ -74063,7 +73635,7 @@ void reflect_Zero(reflect_Type typ,reflect_Value _r1)
     return;
   }
   if (typ.tab == (runtime_itab *)0x0) {
-    runtime_gopanic((interface__)0x80f1918080cf1a0);
+    runtime_gopanic((interface___)0x80f1918080cf1a0);
     do {
       invalidInstructionException();
     } while( true );
@@ -74110,7 +73682,7 @@ void reflect_New(reflect_Type typ,reflect_Value _r1)
       invalidInstructionException();
     } while( true );
   }
-  runtime_gopanic((interface__)0x80f1920080cf1a0);
+  runtime_gopanic((interface___)0x80f1920080cf1a0);
   do {
     invalidInstructionException();
   } while( true );
@@ -74182,7 +73754,7 @@ void reflect_Value_assignTo
                (string)CONCAT44(in_stack_ffffffe4,in_stack_ffffffe0));
     runtime_convT2Estring
               ((runtime__type *)&DAT_080cf1a0,local_8,(runtime_eface)CONCAT44(puVar4,context.len));
-    runtime_gopanic((interface__)CONCAT44(puVar4,context.len));
+    runtime_gopanic((interface___)CONCAT44(puVar4,context.len));
     do {
       invalidInstructionException();
     } while( true );
@@ -74193,7 +73765,7 @@ void reflect_Value_assignTo
   }
   reflect_valueInterface
             ((reflect_Value)CONCAT48(v.flag,CONCAT44(v.ptr,v.typ)),false,
-             (interface__)CONCAT44(in_stack_ffffffc8,in_stack_ffffffc4));
+             (interface___)CONCAT44(in_stack_ffffffc8,in_stack_ffffffc4));
   reflect___rtype__NumMethod(dst,(int)v.ptr);
   if (v.ptr == (void *)0x0) {
     *(runtime_itab **)target = in_stack_ffffffc4;
@@ -74215,7 +73787,7 @@ void reflect_Value_assignTo
 
 
 void reflect_convertOp(reflect_rtype *dst,reflect_rtype *src,
-                      func_reflect_Value_reflect_Type_reflect_Value *_r2)
+                      func_reflect_Value__reflect_Type__reflect_Value *_r2)
 
 {
   uint *puVar1;
@@ -74249,73 +73821,63 @@ void reflect_convertOp(reflect_rtype *dst,reflect_rtype *src,
         return;
       }
     }
-    else {
-      if (uVar2 - 7 < 6) {
-        uVar2 = dst->kind & 0x1f;
-        if (uVar2 - 2 < 0xb) {
-          return;
-        }
-        if (uVar2 - 0xd < 2) {
-          return;
-        }
-        if (uVar2 == 0x18) {
-          return;
-        }
+    else if (uVar2 - 7 < 6) {
+      uVar2 = dst->kind & 0x1f;
+      if (uVar2 - 2 < 0xb) {
+        return;
       }
-      else {
-        if (uVar2 - 0xd < 2) {
-          uVar2 = dst->kind & 0x1f;
-          if (uVar2 - 2 < 5) {
-            return;
-          }
-          if (uVar2 - 7 < 6) {
-            return;
-          }
-          if (uVar2 - 0xd < 2) {
-            return;
-          }
+      if (uVar2 - 0xd < 2) {
+        return;
+      }
+      if (uVar2 == 0x18) {
+        return;
+      }
+    }
+    else if (uVar2 - 0xd < 2) {
+      uVar2 = dst->kind & 0x1f;
+      if (uVar2 - 2 < 5) {
+        return;
+      }
+      if (uVar2 - 7 < 6) {
+        return;
+      }
+      if (uVar2 - 0xd < 2) {
+        return;
+      }
+    }
+  }
+  else if (uVar2 - 0xf < 2) {
+    if ((dst->kind & 0x1f) - 0xf < 2) {
+      return;
+    }
+  }
+  else if (uVar2 == 0x17) {
+    if ((dst->kind & 0x1f) == 0x18) {
+      reflect___rtype__Elem(src,(reflect_Type)CONCAT44(in_stack_fffffff4,in_stack_fffffff0));
+      (**(code **)(in_stack_fffffff0 + 0x7c))(in_stack_fffffff4);
+      if (in_stack_fffffff4 == 0) {
+        reflect___rtype__Elem(src,(reflect_Type)(ulonglong)in_stack_fffffff0);
+        (**(code **)(in_stack_fffffff0 + 0x54))(in_stack_fffffff4);
+        if (in_stack_fffffff0 == 5) {
+          return;
+        }
+        if (in_stack_fffffff0 == 8) {
+          return;
         }
       }
     }
   }
-  else {
-    if (uVar2 - 0xf < 2) {
-      if ((dst->kind & 0x1f) - 0xf < 2) {
+  else if ((uVar2 == 0x18) && ((dst->kind & 0x1f) == 0x17)) {
+    reflect___rtype__Elem(dst,(reflect_Type)CONCAT44(in_stack_fffffff4,in_stack_fffffff0));
+    (**(code **)(in_stack_fffffff0 + 0x7c))(in_stack_fffffff4);
+    if (in_stack_fffffff4 == 0) {
+      reflect___rtype__Elem(dst,(reflect_Type)(ulonglong)in_stack_fffffff0);
+      (**(code **)(in_stack_fffffff0 + 0x54))(in_stack_fffffff4);
+      if (in_stack_fffffff0 == 5) {
         return;
       }
-    }
-    else {
-      if (uVar2 == 0x17) {
-        if ((dst->kind & 0x1f) == 0x18) {
-          reflect___rtype__Elem(src,(reflect_Type)CONCAT44(in_stack_fffffff4,in_stack_fffffff0));
-          (**(code **)(in_stack_fffffff0 + 0x7c))(in_stack_fffffff4);
-          if (in_stack_fffffff4 == 0) {
-            reflect___rtype__Elem(src,(reflect_Type)(ulonglong)in_stack_fffffff0);
-            (**(code **)(in_stack_fffffff0 + 0x54))(in_stack_fffffff4);
-            if (in_stack_fffffff0 == 5) {
-              return;
-            }
-            if (in_stack_fffffff0 == 8) {
-              return;
-            }
-          }
-        }
-      }
-      else {
-        if ((uVar2 == 0x18) && ((dst->kind & 0x1f) == 0x17)) {
-          reflect___rtype__Elem(dst,(reflect_Type)CONCAT44(in_stack_fffffff4,in_stack_fffffff0));
-          (**(code **)(in_stack_fffffff0 + 0x7c))(in_stack_fffffff4);
-          if (in_stack_fffffff4 == 0) {
-            reflect___rtype__Elem(dst,(reflect_Type)(ulonglong)in_stack_fffffff0);
-            (**(code **)(in_stack_fffffff0 + 0x54))(in_stack_fffffff4);
-            if (in_stack_fffffff0 == 5) {
-              return;
-            }
-            if (in_stack_fffffff0 == 8) {
-              return;
-            }
-          }
-        }
+      if (in_stack_fffffff0 == 8) {
+        return;
       }
     }
   }
@@ -74372,22 +73934,16 @@ void reflect_makeInt(reflect_flag f,uint64 bits,reflect_Type t,reflect_Value _r3
       if (uVar2 == 1) {
         *(char *)&prVar3->size = (char)bits;
       }
-      else {
-        if (uVar2 == 2) {
-          *(short *)&prVar3->size = (short)bits;
-        }
+      else if (uVar2 == 2) {
+        *(short *)&prVar3->size = (short)bits;
       }
     }
-    else {
-      if (uVar2 == 4) {
-        prVar3->size = (uintptr)bits;
-      }
-      else {
-        if (uVar2 == 8) {
-          prVar3->size = (uintptr)bits;
-          prVar3->ptrdata = bits._4_4_;
-        }
-      }
+    else if (uVar2 == 4) {
+      prVar3->size = (uintptr)bits;
+    }
+    else if (uVar2 == 8) {
+      prVar3->size = (uintptr)bits;
+      prVar3->ptrdata = bits._4_4_;
     }
     return;
   }
@@ -74413,12 +73969,10 @@ void reflect_makeFloat(reflect_flag f,float64 v,reflect_Type t,reflect_Value _r3
     prVar2 = in_stack_fffffff8;
     reflect_unsafe_New(in_stack_fffffff8,in_stack_fffffff8);
     if (in_stack_fffffff8->size == 4) {
-      prVar2->size = (uintptr)(float)(double)v;
+      prVar2->size = (uintptr)(float)v;
     }
-    else {
-      if (in_stack_fffffff8->size == 8) {
-        *(float64 *)prVar2 = v;
-      }
+    else if (in_stack_fffffff8->size == 8) {
+      *(float64 *)prVar2 = v;
     }
     return;
   }
@@ -74449,16 +74003,14 @@ void reflect_makeComplex(reflect_flag f,complex128 v,reflect_Type t,reflect_Valu
       prVar3->size = (uintptr)(float)SUB168(v,0);
       prVar3->ptrdata = (uintptr)(float)dVar2;
     }
-    else {
-      if (in_stack_fffffff8->size == 0x10) {
-        *(double *)prVar3 = SUB168(v,0);
-        *(double *)&prVar3->hash = dVar2;
-      }
+    else if (in_stack_fffffff8->size == 0x10) {
+      *(double *)prVar3 = SUB168(v,0);
+      *(double *)&prVar3->hash = dVar2;
     }
     return;
   }
   runtime_morestack_noctxt();
-  reflect_makeComplex(f,(complex128)v,t,_r3);
+  reflect_makeComplex(f,v,t,_r3);
   return;
 }
 
@@ -74782,10 +74334,8 @@ void reflect_cvtComplex(reflect_Value v,reflect_Type t,reflect_Value _r2)
   if ((undefined *)*puVar1 <= register0x00000010 &&
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     reflect_Value_Complex
-              (v,(complex128)
-                 CONCAT412(in_stack_fffffff0,CONCAT48(in_stack_ffffffec,in_stack_ffffffe4)));
+              (v,CONCAT412(in_stack_fffffff0,CONCAT48(in_stack_ffffffec,in_stack_ffffffe4)));
     reflect_makeComplex(v.flag & 0x60,
-                        (complex128)
                         CONCAT88(CONCAT44(in_stack_fffffff0,in_stack_ffffffec),in_stack_ffffffe4),t,
                         (reflect_Value)
                         CONCAT48(in_stack_fffffffc,CONCAT44(in_stack_fffffff8,in_stack_fffffff4)));
@@ -75030,7 +74580,7 @@ void reflect_cvtT2I(reflect_Value v,reflect_Type typ,reflect_Value _r2)
   }
   (**(code **)&typ.tab[5].bad)(typ.data);
   reflect_unsafe_New(in_stack_ffffffe0,in_stack_ffffffe0);
-  reflect_valueInterface(v,false,(interface__)CONCAT44(in_stack_fffffff0,in_stack_ffffffec));
+  reflect_valueInterface(v,false,(interface___)CONCAT44(in_stack_fffffff0,in_stack_ffffffec));
   (**(code **)&typ.tab[4].bad)(typ.data);
   if (v.ptr == (void *)0x0) {
     in_stack_ffffffe0->size = in_stack_ffffffec;
@@ -75148,8 +74698,8 @@ void __regparm2 reflect_FuncOf_func1(reflect_rtype *tt,reflect_Type _r1)
   local_1c = *(undefined4 *)(in_EDX + 4);
   puVar3 = &local_20;
   local_20 = local_1c;
-  sync___Map__Load(&reflect_funcLookupCache.m,(interface__)CONCAT44(puVar3,0x80cf2a0),
-                   (interface__)CONCAT44(in_stack_ffffffc0,in_stack_ffffffbc),
+  sync___Map__Load(&reflect_funcLookupCache.m,(interface___)CONCAT44(puVar3,0x80cf2a0),
+                   (interface___)CONCAT44(in_stack_ffffffc0,in_stack_ffffffbc),
                    SUB41(in_stack_ffffffc4,0));
   if ((char)in_stack_ffffffc4 == '\0') {
     puVar2 = (undefined4 *)0x0;
@@ -75195,14 +74745,14 @@ void __regparm2 reflect_FuncOf_func1(reflect_rtype *tt,reflect_Type _r1)
   runtime_convT2Eslice
             ((runtime__type *)&DAT_080c9000,&local_c,
              (runtime_eface)CONCAT44(in_stack_ffffffbc,puVar3));
-  sync___Map__Store(&reflect_funcLookupCache.m,(interface__)CONCAT44(local_14,local_10),
-                    (interface__)CONCAT44(in_stack_ffffffbc,puVar3));
+  sync___Map__Store(&reflect_funcLookupCache.m,(interface___)CONCAT44(local_14,local_10),
+                    (interface___)CONCAT44(in_stack_ffffffbc,puVar3));
   return;
 }
 
 
 
-void __regparm3 reflect_funcLayout_func1(interface__ _r0)
+void __regparm3 reflect_funcLayout_func1(interface___ _r0)
 
 {
   uint *puVar1;
@@ -75228,6 +74778,7 @@ int reflect_init(EVP_PKEY_CTX *ctx)
 {
   uint *puVar1;
   reflect_rtype *prVar2;
+  int iVar3;
   int *in_GS_OFFSET;
   EVP_PKEY_CTX *in_stack_fffffff0;
   runtime_itab *in_stack_fffffff8;
@@ -75237,11 +74788,11 @@ int reflect_init(EVP_PKEY_CTX *ctx)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    prVar2 = (reflect_rtype *)reflect_init(ctx);
-    return (int)prVar2;
+    iVar3 = reflect_init(ctx);
+    return iVar3;
   }
   if (1 < reflect_initdoneￂﾷ) {
-    return (int)(uint)reflect_initdoneￂﾷ;
+    return (uint)reflect_initdoneￂﾷ;
   }
   if (reflect_initdoneￂﾷ == 1) {
     runtime_throwinit();
@@ -75254,7 +74805,7 @@ int reflect_init(EVP_PKEY_CTX *ctx)
   strconv_init(in_stack_fffffff0);
   sync_init(in_stack_fffffff0);
   unicode_init(in_stack_fffffff0);
-  reflect_TypeOf((interface__)0x81398e0080cf320,
+  reflect_TypeOf((interface___)0x81398e0080cf320,
                  (reflect_Type)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
   if (in_stack_fffffff8 != (runtime_itab *)go_itab__reflect_rtype_reflect_Type) {
     runtime_panicdottypeI
@@ -75296,7 +74847,7 @@ void reflect___ChanDir__String(reflect_ChanDir *_this,string _r0)
 
 {
   uint *puVar1;
-  reflect_ChanDir **pprVar2;
+  int *piVar2;
   int *in_GS_OFFSET;
   undefined4 in_stack_fffffff8;
   undefined4 in_stack_fffffffc;
@@ -75308,9 +74859,9 @@ void reflect___ChanDir__String(reflect_ChanDir *_this,string _r0)
     reflect___ChanDir__String(_this,(string)CONCAT44(_r0.len,_r0.str));
     return;
   }
-  pprVar2 = *(reflect_ChanDir ***)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
-  if ((pprVar2 != (reflect_ChanDir **)0x0) && ((reflect_ChanDir **)*pprVar2 == &_this)) {
-    *pprVar2 = (reflect_ChanDir *)&stack0xfffffff4;
+  piVar2 = *(int **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
+  if ((piVar2 != (int *)0x0) && ((reflect_ChanDir **)*piVar2 == &_this)) {
+    *piVar2 = (int)&stack0xfffffff4;
   }
   if (_this != (reflect_ChanDir *)0x0) {
     reflect_ChanDir_String(*_this,(string)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
@@ -75328,7 +74879,7 @@ void reflect___Kind__String(reflect_Kind *_this,string _r0)
 
 {
   uint *puVar1;
-  reflect_Kind **pprVar2;
+  int *piVar2;
   int *in_GS_OFFSET;
   undefined4 in_stack_fffffff8;
   undefined4 in_stack_fffffffc;
@@ -75340,9 +74891,9 @@ void reflect___Kind__String(reflect_Kind *_this,string _r0)
     reflect___Kind__String(_this,(string)CONCAT44(_r0.len,_r0.str));
     return;
   }
-  pprVar2 = *(reflect_Kind ***)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
-  if ((pprVar2 != (reflect_Kind **)0x0) && ((reflect_Kind **)*pprVar2 == &_this)) {
-    *pprVar2 = (reflect_Kind *)&stack0xfffffff4;
+  piVar2 = *(int **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
+  if ((piVar2 != (int *)0x0) && ((reflect_Kind **)*piVar2 == &_this)) {
+    *piVar2 = (int)&stack0xfffffff4;
   }
   if (_this != (reflect_Kind *)0x0) {
     reflect_Kind_String(*_this,(string)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
@@ -75395,13 +74946,11 @@ void type__eq_reflect_uncommonType(reflect_uncommonType *p,reflect_uncommonType 
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void reflect___Value__Kind(reflect_Value *_this,reflect_Kind _r0)
 
 {
   uint *puVar1;
-  reflect_Value *prVar2;
+  int *piVar2;
   int *in_GS_OFFSET;
   
   puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
@@ -75411,10 +74960,9 @@ void reflect___Value__Kind(reflect_Value *_this,reflect_Kind _r0)
     reflect___Value__Kind(_this,_r0);
     return;
   }
-  prVar2 = *(reflect_Value **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
-  if ((prVar2 != (reflect_Value *)0x0) && ((reflect_Value *)prVar2->typ == (reflect_Value *)&_this))
-  {
-    prVar2->typ = (reflect_rtype *)register0x00000010;
+  piVar2 = *(int **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
+  if ((piVar2 != (int *)0x0) && ((reflect_Value **)*piVar2 == &_this)) {
+    *piVar2 = (int)register0x00000010;
   }
   if (_this != (reflect_Value *)0x0) {
     return;
@@ -75427,13 +74975,11 @@ void reflect___Value__Kind(reflect_Value *_this,reflect_Kind _r0)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void reflect___Value__Len(reflect_Value *_this,int _r0)
 
 {
   uint *puVar1;
-  reflect_Value *prVar2;
+  int *piVar2;
   int *in_GS_OFFSET;
   int in_stack_fffffffc;
   
@@ -75444,10 +74990,9 @@ void reflect___Value__Len(reflect_Value *_this,int _r0)
     reflect___Value__Len(_this,_r0);
     return;
   }
-  prVar2 = *(reflect_Value **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
-  if ((prVar2 != (reflect_Value *)0x0) && ((reflect_Value *)prVar2->typ == (reflect_Value *)&_this))
-  {
-    prVar2->typ = (reflect_rtype *)&stack0xfffffff0;
+  piVar2 = *(int **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
+  if ((piVar2 != (int *)0x0) && ((reflect_Value **)*piVar2 == &_this)) {
+    *piVar2 = (int)&stack0xfffffff0;
   }
   if (_this != (reflect_Value *)0x0) {
     reflect_Value_Len(*_this,in_stack_fffffffc);
@@ -75461,13 +75006,11 @@ void reflect___Value__Len(reflect_Value *_this,int _r0)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void reflect___Value__NumMethod(reflect_Value *_this,int _r0)
 
 {
   uint *puVar1;
-  reflect_Value *prVar2;
+  int *piVar2;
   int *in_GS_OFFSET;
   int in_stack_fffffffc;
   
@@ -75478,10 +75021,9 @@ void reflect___Value__NumMethod(reflect_Value *_this,int _r0)
     reflect___Value__NumMethod(_this,_r0);
     return;
   }
-  prVar2 = *(reflect_Value **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
-  if ((prVar2 != (reflect_Value *)0x0) && ((reflect_Value *)prVar2->typ == (reflect_Value *)&_this))
-  {
-    prVar2->typ = (reflect_rtype *)&stack0xfffffff0;
+  piVar2 = *(int **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
+  if ((piVar2 != (int *)0x0) && ((reflect_Value **)*piVar2 == &_this)) {
+    *piVar2 = (int)&stack0xfffffff0;
   }
   if (_this != (reflect_Value *)0x0) {
     reflect_Value_NumMethod(*_this,in_stack_fffffffc);
@@ -75495,13 +75037,11 @@ void reflect___Value__NumMethod(reflect_Value *_this,int _r0)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void reflect___Value__NumField(reflect_Value *_this,int _r0)
 
 {
   uint *puVar1;
-  reflect_Value *prVar2;
+  int *piVar2;
   int *in_GS_OFFSET;
   int in_stack_fffffffc;
   
@@ -75512,10 +75052,9 @@ void reflect___Value__NumField(reflect_Value *_this,int _r0)
     reflect___Value__NumField(_this,_r0);
     return;
   }
-  prVar2 = *(reflect_Value **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
-  if ((prVar2 != (reflect_Value *)0x0) && ((reflect_Value *)prVar2->typ == (reflect_Value *)&_this))
-  {
-    prVar2->typ = (reflect_rtype *)&stack0xfffffff0;
+  piVar2 = *(int **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
+  if ((piVar2 != (int *)0x0) && ((reflect_Value **)*piVar2 == &_this)) {
+    *piVar2 = (int)&stack0xfffffff0;
   }
   if (_this != (reflect_Value *)0x0) {
     reflect_Value_NumField(*_this,in_stack_fffffffc);
@@ -75529,13 +75068,11 @@ void reflect___Value__NumField(reflect_Value *_this,int _r0)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void reflect___Value__String(reflect_Value *_this,string _r0)
 
 {
   uint *puVar1;
-  reflect_Value *prVar2;
+  int *piVar2;
   int *in_GS_OFFSET;
   undefined4 in_stack_fffffff8;
   undefined4 in_stack_fffffffc;
@@ -75547,10 +75084,9 @@ void reflect___Value__String(reflect_Value *_this,string _r0)
     reflect___Value__String(_this,(string)CONCAT44(_r0.len,_r0.str));
     return;
   }
-  prVar2 = *(reflect_Value **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
-  if ((prVar2 != (reflect_Value *)0x0) && ((reflect_Value *)prVar2->typ == (reflect_Value *)&_this))
-  {
-    prVar2->typ = (reflect_rtype *)&stack0xffffffec;
+  piVar2 = *(int **)(*(int *)(*in_GS_OFFSET + -4) + 0x10);
+  if ((piVar2 != (int *)0x0) && ((reflect_Value **)*piVar2 == &_this)) {
+    *piVar2 = (int)&stack0xffffffec;
   }
   if (_this != (reflect_Value *)0x0) {
     reflect_Value_String(*_this,(string)CONCAT44(in_stack_fffffffc,in_stack_fffffff8));
@@ -76568,7 +76104,7 @@ void reflect___funcType__FieldByName
 
 
 void reflect___funcType__FieldByNameFunc
-               (reflect_funcType *_this,func_string_bool *match,reflect_StructField _r1,bool _r2)
+               (reflect_funcType *_this,func_string__bool *match,reflect_StructField _r1,bool _r2)
 
 {
   uint *puVar1;
@@ -77168,7 +76704,7 @@ void reflect___funcTypeFixed128__FieldByName
 
 
 void reflect___funcTypeFixed128__FieldByNameFunc
-               (reflect_funcTypeFixed128 *_this,func_string_bool *match,reflect_StructField _r1,
+               (reflect_funcTypeFixed128 *_this,func_string__bool *match,reflect_StructField _r1,
                bool _r2)
 
 {
@@ -77770,7 +77306,7 @@ void reflect___funcTypeFixed16__FieldByName
 
 
 void reflect___funcTypeFixed16__FieldByNameFunc
-               (reflect_funcTypeFixed16 *_this,func_string_bool *match,reflect_StructField _r1,
+               (reflect_funcTypeFixed16 *_this,func_string__bool *match,reflect_StructField _r1,
                bool _r2)
 
 {
@@ -78371,7 +77907,7 @@ void reflect___funcTypeFixed32__FieldByName
 
 
 void reflect___funcTypeFixed32__FieldByNameFunc
-               (reflect_funcTypeFixed32 *_this,func_string_bool *match,reflect_StructField _r1,
+               (reflect_funcTypeFixed32 *_this,func_string__bool *match,reflect_StructField _r1,
                bool _r2)
 
 {
@@ -78972,7 +78508,7 @@ void reflect___funcTypeFixed4__FieldByName
 
 
 void reflect___funcTypeFixed4__FieldByNameFunc
-               (reflect_funcTypeFixed4 *_this,func_string_bool *match,reflect_StructField _r1,
+               (reflect_funcTypeFixed4 *_this,func_string__bool *match,reflect_StructField _r1,
                bool _r2)
 
 {
@@ -79572,7 +79108,7 @@ void reflect___funcTypeFixed64__FieldByName
 
 
 void reflect___funcTypeFixed64__FieldByNameFunc
-               (reflect_funcTypeFixed64 *_this,func_string_bool *match,reflect_StructField _r1,
+               (reflect_funcTypeFixed64 *_this,func_string__bool *match,reflect_StructField _r1,
                bool _r2)
 
 {
@@ -80173,7 +79709,7 @@ void reflect___funcTypeFixed8__FieldByName
 
 
 void reflect___funcTypeFixed8__FieldByNameFunc
-               (reflect_funcTypeFixed8 *_this,func_string_bool *match,reflect_StructField _r1,
+               (reflect_funcTypeFixed8 *_this,func_string__bool *match,reflect_StructField _r1,
                bool _r2)
 
 {
@@ -80713,7 +80249,7 @@ void reflect___interfaceType__FieldByName
 
 
 void reflect___interfaceType__FieldByNameFunc
-               (reflect_interfaceType *_this,func_string_bool *match,reflect_StructField _r1,
+               (reflect_interfaceType *_this,func_string__bool *match,reflect_StructField _r1,
                bool _r2)
 
 {
@@ -81311,7 +80847,7 @@ void reflect___ptrType__FieldByName
 
 
 void reflect___ptrType__FieldByNameFunc
-               (reflect_ptrType *_this,func_string_bool *match,reflect_StructField _r1,bool _r2)
+               (reflect_ptrType *_this,func_string__bool *match,reflect_StructField _r1,bool _r2)
 
 {
   uint *puVar1;
@@ -81909,7 +81445,7 @@ void reflect___sliceType__FieldByName
 
 
 void reflect___sliceType__FieldByNameFunc
-               (reflect_sliceType *_this,func_string_bool *match,reflect_StructField _r1,bool _r2)
+               (reflect_sliceType *_this,func_string__bool *match,reflect_StructField _r1,bool _r2)
 
 {
   uint *puVar1;
@@ -82197,8 +81733,8 @@ void type__eq__27_string(string (*p) [27],string (*q) [27],bool _r2)
 
 // Original name: type..hash.struct { reflect.b bool; reflect.x interface {} }
 
-void type__hash_struct_reflect_bbool_reflect_xinterface___
-               (struct_reflect_bbool_reflect_xinterface___ *p,uintptr h,uintptr _r2)
+void type__hash_struct___reflect_b_bool__reflect_x_interface_____
+               (struct___reflect_b_bool__reflect_x_interface_____ *p,uintptr h,uintptr _r2)
 
 {
   uint *puVar1;
@@ -82215,7 +81751,7 @@ void type__hash_struct_reflect_bbool_reflect_xinterface___
     return;
   }
   runtime_morestack_noctxt();
-  type__hash_struct_reflect_bbool_reflect_xinterface___(p,h,_r2);
+  type__hash_struct___reflect_b_bool__reflect_x_interface_____(p,h,_r2);
   return;
 }
 
@@ -82223,9 +81759,9 @@ void type__hash_struct_reflect_bbool_reflect_xinterface___
 
 // Original name: type..eq.struct { reflect.b bool; reflect.x interface {} }
 
-void type__eq_struct_reflect_bbool_reflect_xinterface___
-               (struct_reflect_bbool_reflect_xinterface___ *p,
-               struct_reflect_bbool_reflect_xinterface___ *q,bool _r2)
+void type__eq_struct___reflect_b_bool__reflect_x_interface_____
+               (struct___reflect_b_bool__reflect_x_interface_____ *p,
+               struct___reflect_b_bool__reflect_x_interface_____ *q,bool _r2)
 
 {
   uint *puVar1;
@@ -82237,7 +81773,7 @@ void type__eq_struct_reflect_bbool_reflect_xinterface___
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    type__eq_struct_reflect_bbool_reflect_xinterface___(p,q,_r2);
+    type__eq_struct___reflect_b_bool__reflect_x_interface_____(p,q,_r2);
     return;
   }
   if (p->b == q->b) {
@@ -82253,8 +81789,8 @@ void type__eq_struct_reflect_bbool_reflect_xinterface___
 
 // Original name: type..hash.struct { F uintptr; reflect.name string }
 
-void type__hash_struct_Fuintptr_reflect_namestring_
-               (struct_Fuintptr_reflect_namestring_ *p,uintptr h,uintptr _r2)
+void type__hash_struct___F_uintptr__reflect_name_string__
+               (struct___F_uintptr__reflect_name_string__ *p,uintptr h,uintptr _r2)
 
 {
   uint *puVar1;
@@ -82271,7 +81807,7 @@ void type__hash_struct_Fuintptr_reflect_namestring_
     return;
   }
   runtime_morestack_noctxt();
-  type__hash_struct_Fuintptr_reflect_namestring_(p,h,_r2);
+  type__hash_struct___F_uintptr__reflect_name_string__(p,h,_r2);
   return;
 }
 
@@ -82279,9 +81815,9 @@ void type__hash_struct_Fuintptr_reflect_namestring_
 
 // Original name: type..eq.struct { F uintptr; reflect.name string }
 
-void type__eq_struct_Fuintptr_reflect_namestring_
-               (struct_Fuintptr_reflect_namestring_ *p,struct_Fuintptr_reflect_namestring_ *q,
-               bool _r2)
+void type__eq_struct___F_uintptr__reflect_name_string__
+               (struct___F_uintptr__reflect_name_string__ *p,
+               struct___F_uintptr__reflect_name_string__ *q,bool _r2)
 
 {
   uint *puVar1;
@@ -82291,7 +81827,7 @@ void type__eq_struct_Fuintptr_reflect_namestring_
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    type__eq_struct_Fuintptr_reflect_namestring_(p,q,_r2);
+    type__eq_struct___F_uintptr__reflect_name_string__(p,q,_r2);
     return;
   }
   if ((p->_F == q->_F) && ((p->name).len == (q->name).len)) {
@@ -82410,7 +81946,7 @@ void fmt___fmt__pad(fmt_fmt *f,__uint8 b)
     return;
   }
   if (((f->fmtFlags).widPresent != false) && (f->wid != 0)) {
-    unicode_fwdslash_utf8_RuneCount(b,in_stack_ffffffd0);
+    unicode_utf8_RuneCount(b,in_stack_ffffffd0);
     iVar5 = f->wid - in_stack_ffffffd0;
     if ((f->fmtFlags).minus == false) {
       fmt___fmt__writePadding(f,iVar5);
@@ -82532,7 +82068,7 @@ void fmt___fmt__padString(fmt_fmt *f,string s)
     return;
   }
   if (((f->fmtFlags).widPresent != false) && (f->wid != 0)) {
-    unicode_fwdslash_utf8_RuneCountInString(s,in_stack_ffffffcc);
+    unicode_utf8_RuneCountInString(s,in_stack_ffffffcc);
     iVar5 = f->wid - in_stack_ffffffcc;
     if ((f->fmtFlags).minus == false) {
       fmt___fmt__writePadding(f,iVar5);
@@ -82722,33 +82258,23 @@ void fmt___fmt__fmt_unicode(fmt_fmt *f,uint64 u)
     if ((int)(uint)u < 0) {
       iVar7 = -1;
     }
+    else if ((int)(uint)u < 0x80) {
+      iVar7 = 1;
+    }
+    else if ((int)(uint)u < 0x800) {
+      iVar7 = 2;
+    }
+    else if ((uint)u - 0xd800 < 0x800) {
+      iVar7 = -1;
+    }
+    else if ((int)(uint)u < 0x10000) {
+      iVar7 = 3;
+    }
+    else if ((int)(uint)u < 0x110000) {
+      iVar7 = 4;
+    }
     else {
-      if ((int)(uint)u < 0x80) {
-        iVar7 = 1;
-      }
-      else {
-        if ((int)(uint)u < 0x800) {
-          iVar7 = 2;
-        }
-        else {
-          if ((uint)u - 0xd800 < 0x800) {
-            iVar7 = -1;
-          }
-          else {
-            if ((int)(uint)u < 0x10000) {
-              iVar7 = 3;
-            }
-            else {
-              if ((int)(uint)u < 0x110000) {
-                iVar7 = 4;
-              }
-              else {
-                iVar7 = -1;
-              }
-            }
-          }
-        }
-      }
+      iVar7 = -1;
     }
     uVar4 = (uVar5 - 1) - iVar7;
     if (uVar5 < uVar4) {
@@ -82757,7 +82283,7 @@ void fmt___fmt__fmt_unicode(fmt_fmt *f,uint64 u)
         invalidInstructionException();
       } while( true );
     }
-    unicode_fwdslash_utf8_EncodeRune
+    unicode_utf8_EncodeRune
               ((__uint8)CONCAT48(in_stack_ffffffe0 - uVar4,
                                  CONCAT44(uVar5 - uVar4,
                                           puVar3 + ((int)-(in_stack_ffffffe0 - uVar4) >> 0x1f &
@@ -82897,16 +82423,14 @@ void fmt___fmt__fmt_integer(fmt_fmt *f,uint64 u,int base,bool isSigned,string di
     if ((f->fmtFlags).zero == false) {
       iVar10 = 0;
     }
+    else if ((f->fmtFlags).widPresent == false) {
+      iVar10 = 0;
+    }
     else {
-      if ((f->fmtFlags).widPresent == false) {
-        iVar10 = 0;
-      }
-      else {
-        iVar10 = f->wid;
-        if (((!bVar11 && !bVar2) || ((f->fmtFlags).plus != false)) || ((f->fmtFlags).space != false)
-           ) {
-          iVar10 = iVar10 + -1;
-        }
+      iVar10 = f->wid;
+      if (((!bVar11 && !bVar2) || ((f->fmtFlags).plus != false)) || ((f->fmtFlags).space != false))
+      {
+        iVar10 = iVar10 + -1;
       }
     }
   }
@@ -82937,7 +82461,7 @@ void fmt___fmt__fmt_integer(fmt_fmt *f,uint64 u,int base,bool isSigned,string di
     else {
       if (base != 8) {
 LAB_080b5e4d:
-        runtime_gopanic((interface__)0x80f18a0080cf1a0);
+        runtime_gopanic((interface___)0x80f18a0080cf1a0);
         do {
           invalidInstructionException();
         } while( true );
@@ -82954,37 +82478,35 @@ LAB_080b5e4d:
       }
     }
   }
-  else {
-    if (base == 10) {
-      while (iVar6 = (int)(u >> 0x20), iVar6 != 0 || 9 < (uint)u && iVar6 == 0) {
-        cVar3 = (char)u;
-        runtime_uint64div(u,10,CONCAT44(in_stack_ffffffdc,in_stack_ffffffd8));
-        u = CONCAT44(in_stack_ffffffdc,in_stack_ffffffd8);
-        if (uVar8 <= uVar4 - 1) {
-          runtime_panicindex();
-          do {
-            invalidInstructionException();
-          } while( true );
-        }
-        puVar7[uVar4 - 1] = cVar3 + '0' + (char)in_stack_ffffffd8 * -10;
-        uVar4 = uVar4 - 1;
+  else if (base == 10) {
+    while (iVar6 = (int)(u >> 0x20), iVar6 != 0 || 9 < (uint)u && iVar6 == 0) {
+      cVar3 = (char)u;
+      runtime_uint64div(u,10,CONCAT44(in_stack_ffffffdc,in_stack_ffffffd8));
+      u = CONCAT44(in_stack_ffffffdc,in_stack_ffffffd8);
+      if (uVar8 <= uVar4 - 1) {
+        runtime_panicindex();
+        do {
+          invalidInstructionException();
+        } while( true );
       }
+      puVar7[uVar4 - 1] = cVar3 + '0' + (char)in_stack_ffffffd8 * -10;
+      uVar4 = uVar4 - 1;
     }
-    else {
-      if (base != 0x10) goto LAB_080b5e4d;
-      for (; iVar6 = (int)(u >> 0x20), iVar6 == 0 && 0xf < (uint)u || iVar6 != 0; u = u >> 4) {
-        uVar5 = (uint)u & 0xf;
-        if ((uint)digits.len <= uVar5) {
+  }
+  else {
+    if (base != 0x10) goto LAB_080b5e4d;
+    for (; iVar6 = (int)(u >> 0x20), iVar6 == 0 && 0xf < (uint)u || iVar6 != 0; u = u >> 4) {
+      uVar5 = (uint)u & 0xf;
+      if ((uint)digits.len <= uVar5) {
 LAB_080b5e3f:
-          runtime_panicindex();
-          do {
-            invalidInstructionException();
-          } while( true );
-        }
-        if (uVar8 <= uVar4 - 1) goto LAB_080b5e3f;
-        puVar7[uVar4 - 1] = digits.str[uVar5];
-        uVar4 = uVar4 - 1;
+        runtime_panicindex();
+        do {
+          invalidInstructionException();
+        } while( true );
       }
+      if (uVar8 <= uVar4 - 1) goto LAB_080b5e3f;
+      puVar7[uVar4 - 1] = digits.str[uVar5];
+      uVar4 = uVar4 - 1;
     }
   }
   if (((int)(u >> 0x20) == 0) && ((uint)u < (uint)digits.len)) {
@@ -83020,24 +82542,22 @@ LAB_080b5e3f:
             uVar4 = uVar4 - 1;
           }
         }
-        else {
-          if (base == 0x10) {
-            if (((uint)digits.len < 0x11) || (uVar8 <= uVar4 - 1)) {
-              runtime_panicindex();
-              do {
-                invalidInstructionException();
-              } while( true );
-            }
-            puVar7[uVar4 - 1] = digits.str[0x10];
-            if (uVar8 <= uVar4 - 2) {
-              runtime_panicindex();
-              do {
-                invalidInstructionException();
-              } while( true );
-            }
-            puVar7[uVar4 - 2] = 0x30;
-            uVar4 = uVar4 - 2;
+        else if (base == 0x10) {
+          if (((uint)digits.len < 0x11) || (uVar8 <= uVar4 - 1)) {
+            runtime_panicindex();
+            do {
+              invalidInstructionException();
+            } while( true );
           }
+          puVar7[uVar4 - 1] = digits.str[0x10];
+          if (uVar8 <= uVar4 - 2) {
+            runtime_panicindex();
+            do {
+              invalidInstructionException();
+            } while( true );
+          }
+          puVar7[uVar4 - 2] = 0x30;
+          uVar4 = uVar4 - 2;
         }
       }
       if (bVar11 || bVar2) {
@@ -83469,8 +82989,7 @@ void fmt___fmt__fmt_c(fmt_fmt *f,uint64 c)
   if (c._4_4_ != 0 || c._4_4_ == 0 && 0x10ffff < (uint)c) {
     c._0_4_ = 0xfffd;
   }
-  unicode_fwdslash_utf8_EncodeRune
-            ((__uint8)CONCAT48(0x44,CONCAT44(4,f->intbuf)),(uint)c,in_stack_fffffff8);
+  unicode_utf8_EncodeRune((__uint8)CONCAT48(0x44,CONCAT44(4,f->intbuf)),(uint)c,in_stack_fffffff8);
   if (in_stack_fffffff8 < 0x45) {
     fmt___fmt__pad(f,(__uint8)CONCAT48(0x44,CONCAT44(in_stack_fffffff8,f->intbuf)));
     return;
@@ -83524,7 +83043,7 @@ void fmt___fmt__fmt_qc(fmt_fmt *f,uint64 c)
 void fmt___fmt__fmt_float(fmt_fmt *f,float64 v,int size,int32 verb,int prec)
 
 {
-  runtime_slice **pprVar1;
+  uint *puVar1;
   char cVar2;
   bool bVar3;
   int iVar4;
@@ -83551,12 +83070,14 @@ void fmt___fmt__fmt_float(fmt_fmt *f,float64 v,int size,int32 verb,int prec)
   undefined4 *local_20;
   char *local_1c;
   undefined4 *local_18;
-  runtime_slice local_14;
+  fmt_buffer *local_14;
+  fmt_buffer *local_10;
+  undefined4 *local_c;
   undefined4 *local_8;
   char *local_4;
   
-  pprVar1 = (runtime_slice **)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if (&local_14 < *pprVar1 || &local_14 == *pprVar1) {
+  puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
+  if (&local_14 < (fmt_buffer **)*puVar1 || &local_14 == (fmt_buffer **)*puVar1) {
     local_4 = (char *)0x80b6f27;
     runtime_morestack_noctxt();
     fmt___fmt__fmt_float(f,v,size,verb,prec);
@@ -83647,41 +83168,39 @@ void fmt___fmt__fmt_float(fmt_fmt *f,float64 v,int size,int32 verb,int prec)
       if (cVar2 == '.') {
         bVar3 = true;
       }
+      else if ((cVar2 == 'E') || (cVar2 == 'e')) {
+        puVar7 = local_64 + ((int)in_stack_ffffff90 - (int)puVar10);
+        pcVar6 = (char *)((-((int)in_stack_ffffff94 - (int)puVar10) >> 0x1f & (uint)puVar10) +
+                         (int)in_stack_ffffff8c);
+        if (local_60 < puVar7) {
+          rVar5 = (runtime_slice)CONCAT48(local_60,CONCAT44(local_64,local_20));
+          local_60 = (undefined *)size;
+          local_4 = pcVar6;
+          runtime_growslice((runtime__type *)&DAT_080cf320,rVar5,(int)puVar7,
+                            (runtime_slice)CONCAT48(size,CONCAT44(puVar11,src)));
+          pcVar6 = local_4;
+          size = (int)local_60;
+          local_20 = src;
+        }
+        if (local_60 < puVar7) {
+          runtime_panicslice();
+          do {
+            invalidInstructionException();
+          } while( true );
+        }
+        runtime_memmove(local_64 + (int)local_20,pcVar6,(int)in_stack_ffffff90 - (int)puVar10);
+        in_stack_ffffff90 = puVar10;
+        in_stack_ffffff8c = local_18;
+        local_64 = puVar7;
+        if (in_stack_ffffff94 < puVar10) {
+          runtime_panicslice();
+          do {
+            invalidInstructionException();
+          } while( true );
+        }
+      }
       else {
-        if ((cVar2 == 'E') || (cVar2 == 'e')) {
-          puVar7 = local_64 + ((int)in_stack_ffffff90 - (int)puVar10);
-          pcVar6 = (char *)((-((int)in_stack_ffffff94 - (int)puVar10) >> 0x1f & (uint)puVar10) +
-                           (int)in_stack_ffffff8c);
-          if (local_60 < puVar7) {
-            rVar5 = (runtime_slice)CONCAT48(local_60,CONCAT44(local_64,local_20));
-            local_60 = (undefined *)size;
-            local_4 = pcVar6;
-            runtime_growslice((runtime__type *)&DAT_080cf320,rVar5,(int)puVar7,
-                              (runtime_slice)CONCAT48(size,CONCAT44(puVar11,src)));
-            pcVar6 = local_4;
-            size = (int)local_60;
-            local_20 = src;
-          }
-          if (local_60 < puVar7) {
-            runtime_panicslice();
-            do {
-              invalidInstructionException();
-            } while( true );
-          }
-          runtime_memmove(local_64 + (int)local_20,pcVar6,(int)in_stack_ffffff90 - (int)puVar10);
-          in_stack_ffffff90 = puVar10;
-          in_stack_ffffff8c = local_18;
-          local_64 = puVar7;
-          if (in_stack_ffffff94 < puVar10) {
-            runtime_panicslice();
-            do {
-              invalidInstructionException();
-            } while( true );
-          }
-        }
-        else {
-          prec = prec + -1;
-        }
+        prec = prec + -1;
       }
     }
     puVar10 = in_stack_ffffff90;
@@ -83771,38 +83290,38 @@ void fmt___fmt__fmt_float(fmt_fmt *f,float64 v,int size,int32 verb,int prec)
   local_18 = in_stack_ffffff8c;
   if (pfVar9->cap < (int)puVar10) {
     puVar7 = puVar11;
-    local_14.array = pfVar9;
+    local_14 = pfVar9;
     runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)*pfVar9,(int)puVar10,
                       (runtime_slice)CONCAT48(size,CONCAT44(puVar11,src)));
-    *(int *)((int)local_14.array + 8) = size;
+    local_14->cap = size;
     puVar11 = puVar7;
     if (runtime_writeBarrier._0_4_ == 0) {
-      *(uint8 **)local_14.array = (uint8 *)src;
+      local_14->array = (uint8 *)src;
       puVar8 = src;
-      pfVar9 = (fmt_buffer *)local_14.array;
+      pfVar9 = local_14;
     }
     else {
-      local_14.cap = (int)src;
-      runtime_writebarrierptr((uintptr *)local_14.array,(uintptr)src);
-      puVar8 = (undefined4 *)local_14.cap;
-      pfVar9 = (fmt_buffer *)local_14.array;
+      local_c = src;
+      runtime_writebarrierptr((uintptr *)local_14,(uintptr)src);
+      puVar8 = local_c;
+      pfVar9 = local_14;
     }
   }
   pfVar9->len = (int)(puVar7 + 1);
   *(char *)((int)puVar8 + (int)puVar7) = cVar2;
   fmt___fmt__writePadding(f,f->wid - (int)in_stack_ffffff90);
-  local_14.len = (int)f->buf;
+  local_10 = f->buf;
   pcVar6 = (char *)((-(int)(in_stack_ffffff94 + -1) >> 0x1f & 1U) + (int)local_18);
-  iVar4 = *(int *)(local_14.len + 4);
+  iVar4 = local_10->len;
   puVar10 = in_stack_ffffff90 + -1 + iVar4;
-  puVar7 = *(undefined **)(local_14.len + 8);
-  local_8 = (undefined4 *)*(uint8 **)local_14.len;
+  puVar7 = (undefined *)local_10->cap;
+  local_8 = (undefined4 *)local_10->array;
   if (puVar7 < puVar10) {
     local_8 = src;
     puVar7 = (undefined *)size;
     local_1c = pcVar6;
-    runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)*(fmt_buffer *)local_14.len,
-                      (int)puVar10,(runtime_slice)CONCAT48(size,CONCAT44(puVar11,src)));
+    runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)*local_10,(int)puVar10,
+                      (runtime_slice)CONCAT48(size,CONCAT44(puVar11,src)));
     pcVar6 = local_1c;
   }
   if (puVar7 < puVar10) {
@@ -83812,13 +83331,13 @@ void fmt___fmt__fmt_float(fmt_fmt *f,float64 v,int size,int32 verb,int prec)
     } while( true );
   }
   runtime_memmove((char *)((int)local_8 + iVar4),pcVar6,(size_t)(in_stack_ffffff90 + -1));
-  *(undefined **)(local_14.len + 4) = puVar10;
-  *(undefined **)(local_14.len + 8) = puVar7;
+  local_10->len = (int)puVar10;
+  local_10->cap = (int)puVar7;
   if (runtime_writeBarrier._0_4_ == 0) {
-    *(uint8 **)local_14.len = (uint8 *)local_8;
+    local_10->array = (uint8 *)local_8;
   }
   else {
-    runtime_writebarrierptr((uintptr *)local_14.len,(uintptr)local_8);
+    runtime_writebarrierptr((uintptr *)local_10,(uintptr)local_8);
   }
   return;
 }
@@ -83894,7 +83413,7 @@ void fmt___buffer__WriteRune(fmt_buffer *bp,int32 r)
     uVar5 = uVar7;
   }
   if ((uVar2 <= uVar7) && (uVar7 <= uVar3)) {
-    unicode_fwdslash_utf8_EncodeRune
+    unicode_utf8_EncodeRune
               ((__uint8)CONCAT48(uVar3 - uVar2,
                                  CONCAT44(4,puVar4 + ((int)-(uVar3 - uVar2) >> 0x1f & uVar2))),r,
                in_stack_ffffffdc);
@@ -83937,7 +83456,7 @@ void fmt_newPrinter(fmt_pp *_r0)
     fmt_newPrinter(_r0);
     return;
   }
-  sync___Pool__Get(&fmt_ppFree,(interface__)CONCAT44(in_stack_fffffff8,in_stack_fffffff4));
+  sync___Pool__Get(&fmt_ppFree,(interface___)CONCAT44(in_stack_fffffff8,in_stack_fffffff4));
   if (in_stack_fffffff4 == (runtime__type *)&DAT_080dc3e0) {
     *(undefined2 *)(in_stack_fffffff8 + 0x7e) = 0;
     if (runtime_writeBarrier._0_4_ == 0) {
@@ -83986,7 +83505,7 @@ void fmt___pp__free(fmt_pp *p)
       runtime_writebarrierptr((uintptr *)&p->value,0);
       runtime_writebarrierptr((uintptr *)&(p->value).ptr,0);
     }
-    sync___Pool__Put(&fmt_ppFree,(interface__)CONCAT44(p,0x80dc3e0));
+    sync___Pool__Put(&fmt_ppFree,(interface___)CONCAT44(p,0x80dc3e0));
     return;
   }
   runtime_morestack_noctxt();
@@ -84120,7 +83639,7 @@ void fmt___pp__Write(fmt_pp *p,__uint8 b,int ret,error err)
 
 
 
-void fmt_Fprintln(io_Writer w,__interface__ a,int n,error err)
+void fmt_Fprintln(io_Writer w,__interface___ a,int n,error err)
 
 {
   uint *puVar1;
@@ -84145,7 +83664,7 @@ void fmt_Fprintln(io_Writer w,__interface__ a,int n,error err)
 
 
 
-void fmt_Println(__interface__ a,int n,error err)
+void fmt_Println(__interface___ a,int n,error err)
 
 {
   uint *puVar1;
@@ -84692,38 +84211,36 @@ void fmt___pp__fmtInteger(fmt_pp *p,uint64 v,bool isSigned,int32 verb)
       }
     }
   }
-  else {
-    if (verb < 0x70) {
-      if (verb == 100) {
-        fmt___fmt__fmt_integer(&p->fmt,v,10,isSigned,(string)0x11080e26ec);
-        return;
-      }
-      if (verb == 0x6f) {
-        fmt___fmt__fmt_integer(&p->fmt,v,8,isSigned,(string)0x11080e26ec);
-        return;
-      }
+  else if (verb < 0x70) {
+    if (verb == 100) {
+      fmt___fmt__fmt_integer(&p->fmt,v,10,isSigned,(string)0x11080e26ec);
+      return;
     }
-    else {
-      if (verb == 0x71) {
-        if (v._4_4_ == 0 && (uint)v < 0x110000) {
-          fmt___fmt__fmt_qc(&p->fmt,v);
-          return;
-        }
-        fmt___pp__badVerb(p,0x71);
+    if (verb == 0x6f) {
+      fmt___fmt__fmt_integer(&p->fmt,v,8,isSigned,(string)0x11080e26ec);
+      return;
+    }
+  }
+  else {
+    if (verb == 0x71) {
+      if (v._4_4_ == 0 && (uint)v < 0x110000) {
+        fmt___fmt__fmt_qc(&p->fmt,v);
         return;
       }
-      if (verb == 0x76) {
-        if (((p->fmt).fmtFlags.sharpV != false) && (isSigned == false)) {
-          fmt___pp__fmt0x64(p,v,true);
-          return;
-        }
-        fmt___fmt__fmt_integer(&p->fmt,v,10,isSigned,(string)0x11080e26ec);
+      fmt___pp__badVerb(p,0x71);
+      return;
+    }
+    if (verb == 0x76) {
+      if (((p->fmt).fmtFlags.sharpV != false) && (isSigned == false)) {
+        fmt___pp__fmt0x64(p,v,true);
         return;
       }
-      if (verb == 0x78) {
-        fmt___fmt__fmt_integer(&p->fmt,v,0x10,isSigned,(string)0x11080e26ec);
-        return;
-      }
+      fmt___fmt__fmt_integer(&p->fmt,v,10,isSigned,(string)0x11080e26ec);
+      return;
+    }
+    if (verb == 0x78) {
+      fmt___fmt__fmt_integer(&p->fmt,v,0x10,isSigned,(string)0x11080e26ec);
+      return;
     }
   }
   fmt___pp__badVerb(p,verb);
@@ -84757,24 +84274,20 @@ LAB_080b842b:
     }
     if (verb != 0x47) goto LAB_080b849d;
   }
-  else {
-    if (verb < 0x67) {
-      if (verb != 0x62) {
-        if (verb - 0x65U < 2) goto LAB_080b842b;
+  else if (verb < 0x67) {
+    if (verb != 0x62) {
+      if (verb - 0x65U < 2) goto LAB_080b842b;
 LAB_080b849d:
-        fmt___pp__badVerb(p,verb);
-        return;
-      }
+      fmt___pp__badVerb(p,verb);
+      return;
     }
-    else {
-      if (verb != 0x67) {
-        if (verb == 0x76) {
-          fmt___fmt__fmt_float(&p->fmt,v,size,0x67,-1);
-          return;
-        }
-        goto LAB_080b849d;
-      }
+  }
+  else if (verb != 0x67) {
+    if (verb == 0x76) {
+      fmt___fmt__fmt_float(&p->fmt,v,size,0x67,-1);
+      return;
     }
+    goto LAB_080b849d;
   }
   fmt___fmt__fmt_float(&p->fmt,v,size,verb,-1);
   return;
@@ -84801,7 +84314,7 @@ void fmt___pp__fmtComplex(fmt_pp *p,complex128 v,int size,int32 verb)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    fmt___pp__fmtComplex(p,(complex128)v,size,verb);
+    fmt___pp__fmtComplex(p,v,size,verb);
     return;
   }
   if (verb < 99) {
@@ -84811,9 +84324,7 @@ LAB_080b8753:
       return;
     }
   }
-  else {
-    if ((2 < verb - 0x65U) && (verb != 0x76)) goto LAB_080b8753;
-  }
+  else if ((2 < verb - 0x65U) && (verb != 0x76)) goto LAB_080b8753;
   bVar3 = (p->fmt).fmtFlags.plus;
   puVar5 = (p->buf).array;
   iVar6 = (p->buf).len;
@@ -84921,7 +84432,7 @@ void fmt___pp__fmtString(fmt_pp *p,string v,int32 verb)
 void fmt___pp__fmtBytes(fmt_pp *p,__uint8 v,int32 verb,string typeString)
 
 {
-  byte **ppbVar1;
+  uint *puVar1;
   uint uVar2;
   byte bVar3;
   undefined8 uVar4;
@@ -84949,8 +84460,8 @@ void fmt___pp__fmtBytes(fmt_pp *p,__uint8 v,int32 verb,string typeString)
   int local_8;
   int local_4;
   
-  ppbVar1 = (byte **)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if (&local_1c < *ppbVar1 || &local_1c == (byte **)*ppbVar1) {
+  puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
+  if (&local_1c < (byte **)*puVar1 || &local_1c == (byte **)*puVar1) {
     local_4 = 0x80b91c1;
     runtime_morestack_noctxt();
     fmt___pp__fmtBytes(p,v,verb,typeString);
@@ -84976,7 +84487,7 @@ LAB_080b8fa8:
       runtime_convT2Eslice
                 ((runtime__type *)&DAT_080ca1c0,&local_c,
                  (runtime_eface)CONCAT44(in_stack_ffffff70,in_stack_ffffff6c));
-      reflect_ValueOf((interface__)CONCAT44(in_stack_ffffff70,in_stack_ffffff6c),
+      reflect_ValueOf((interface___)CONCAT44(in_stack_ffffff70,in_stack_ffffff6c),
                       (reflect_Value)
                       CONCAT48(in_stack_ffffff74,CONCAT44(in_stack_ffffff70,in_stack_ffffff6c)));
       fmt___pp__printValue
@@ -85256,66 +84767,89 @@ void fmt___pp__fmtPointer(fmt_pp *p,reflect_Value value,int32 verb)
   if (verb < 0x65) {
     if (((verb != 0x58) && (verb != 0x62)) && (verb != 100)) goto LAB_080b9257;
   }
-  else {
-    if (verb < 0x71) {
-      if (verb != 0x6f) {
-        if (verb == 0x70) {
-          fmt___pp__fmt0x64(p,(ulonglong)in_stack_ffffffc8,(bool)((p->fmt).fmtFlags.sharp ^ 1));
-          return;
-        }
-LAB_080b9257:
-        fmt___pp__badVerb(p,verb);
+  else if (verb < 0x71) {
+    if (verb != 0x6f) {
+      if (verb == 0x70) {
+        fmt___pp__fmt0x64(p,(ulonglong)in_stack_ffffffc8,(bool)((p->fmt).fmtFlags.sharp ^ 1));
         return;
       }
+LAB_080b9257:
+      fmt___pp__badVerb(p,verb);
+      return;
     }
-    else {
-      if (verb == 0x76) {
-        if ((p->fmt).fmtFlags.sharpV == false) {
-          if (in_stack_ffffffc8 == 0) {
-            fmt___fmt__padString(&p->fmt,(string)0x5080e0fc5);
-            return;
-          }
-          fmt___pp__fmt0x64(p,(ulonglong)in_stack_ffffffc8,(bool)((p->fmt).fmtFlags.sharp ^ 1));
+  }
+  else {
+    if (verb == 0x76) {
+      if ((p->fmt).fmtFlags.sharpV == false) {
+        if (in_stack_ffffffc8 == 0) {
+          fmt___fmt__padString(&p->fmt,(string)0x5080e0fc5);
           return;
         }
-        uVar3 = (p->buf).cap;
-        iVar5 = (p->buf).len;
-        puVar4 = (p->buf).array;
-        iVar7 = iVar5 + 1;
-        uVar6 = in_stack_ffffffc8;
-        if ((int)uVar3 < iVar7) {
-          puVar4 = in_stack_ffffffd0;
-          iVar5 = in_stack_ffffffd4;
-          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,iVar7,
-                            (runtime_slice)
-                            CONCAT48(in_stack_ffffffd8,CONCAT44(in_stack_ffffffd4,in_stack_ffffffd0)
-                                    ));
-          (p->buf).cap = in_stack_ffffffd8;
-          in_stack_ffffffd0 = puVar4;
-          in_stack_ffffffd4 = iVar5;
-          if (runtime_writeBarrier._0_4_ == 0) {
-            (p->buf).array = puVar4;
-            uVar6 = uVar3;
-            in_stack_ffffffcc = iVar7;
-          }
-          else {
-            runtime_writebarrierptr((uintptr *)p,(uintptr)puVar4);
-            uVar6 = uVar3;
-            in_stack_ffffffcc = iVar7;
-          }
+        fmt___pp__fmt0x64(p,(ulonglong)in_stack_ffffffc8,(bool)((p->fmt).fmtFlags.sharp ^ 1));
+        return;
+      }
+      uVar3 = (p->buf).cap;
+      iVar5 = (p->buf).len;
+      puVar4 = (p->buf).array;
+      iVar7 = iVar5 + 1;
+      uVar6 = in_stack_ffffffc8;
+      if ((int)uVar3 < iVar7) {
+        puVar4 = in_stack_ffffffd0;
+        iVar5 = in_stack_ffffffd4;
+        runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,iVar7,
+                          (runtime_slice)
+                          CONCAT48(in_stack_ffffffd8,CONCAT44(in_stack_ffffffd4,in_stack_ffffffd0)))
+        ;
+        (p->buf).cap = in_stack_ffffffd8;
+        in_stack_ffffffd0 = puVar4;
+        in_stack_ffffffd4 = iVar5;
+        if (runtime_writeBarrier._0_4_ == 0) {
+          (p->buf).array = puVar4;
+          uVar6 = uVar3;
+          in_stack_ffffffcc = iVar7;
         }
-        (p->buf).len = iVar5 + 1;
-        puVar4[iVar5] = 0x28;
-        reflect_Value_Type(value,(reflect_Type)CONCAT44(in_stack_ffffffcc,uVar6));
-        (**(code **)(uVar6 + 0x84))(in_stack_ffffffcc);
+        else {
+          runtime_writebarrierptr((uintptr *)p,(uintptr)puVar4);
+          uVar6 = uVar3;
+          in_stack_ffffffcc = iVar7;
+        }
+      }
+      (p->buf).len = iVar5 + 1;
+      puVar4[iVar5] = 0x28;
+      reflect_Value_Type(value,(reflect_Type)CONCAT44(in_stack_ffffffcc,uVar6));
+      (**(code **)(uVar6 + 0x84))(in_stack_ffffffcc);
+      iVar7 = (p->buf).len;
+      uVar3 = iVar7 + value.flag;
+      uVar6 = (p->buf).cap;
+      puVar4 = (p->buf).array;
+      if (uVar6 < uVar3) {
+        puVar4 = in_stack_ffffffd0;
+        uVar6 = in_stack_ffffffd8;
+        runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,uVar3,
+                          (runtime_slice)
+                          CONCAT48(in_stack_ffffffd8,CONCAT44(in_stack_ffffffd4,in_stack_ffffffd0)))
+        ;
+        in_stack_ffffffd0 = puVar4;
+        in_stack_ffffffd8 = uVar6;
+      }
+      if (uVar3 <= uVar6) {
+        runtime_memmove(puVar4 + iVar7,value.ptr,value.flag);
+        (p->buf).len = uVar3;
+        (p->buf).cap = uVar6;
+        if (runtime_writeBarrier._0_4_ == 0) {
+          (p->buf).array = puVar4;
+        }
+        else {
+          runtime_writebarrierptr((uintptr *)p,(uintptr)puVar4);
+        }
         iVar7 = (p->buf).len;
-        uVar3 = iVar7 + value.flag;
+        uVar3 = iVar7 + 2;
         uVar6 = (p->buf).cap;
-        puVar4 = (p->buf).array;
         if (uVar6 < uVar3) {
+          rVar2 = (runtime_slice)CONCAT48(uVar6,CONCAT44(iVar7,puVar4));
           puVar4 = in_stack_ffffffd0;
           uVar6 = in_stack_ffffffd8;
-          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,uVar3,
+          runtime_growslice((runtime__type *)&DAT_080cf320,rVar2,uVar3,
                             (runtime_slice)
                             CONCAT48(in_stack_ffffffd8,CONCAT44(in_stack_ffffffd4,in_stack_ffffffd0)
                                     ));
@@ -85323,7 +84857,7 @@ LAB_080b9257:
           in_stack_ffffffd8 = uVar6;
         }
         if (uVar3 <= uVar6) {
-          runtime_memmove(puVar4 + iVar7,value.ptr,value.flag);
+          runtime_memmove(puVar4 + iVar7,&DAT_080e0db1,2);
           (p->buf).len = uVar3;
           (p->buf).cap = uVar6;
           if (runtime_writeBarrier._0_4_ == 0) {
@@ -85332,22 +84866,28 @@ LAB_080b9257:
           else {
             runtime_writebarrierptr((uintptr *)p,(uintptr)puVar4);
           }
-          iVar7 = (p->buf).len;
-          uVar3 = iVar7 + 2;
-          uVar6 = (p->buf).cap;
-          if (uVar6 < uVar3) {
-            rVar2 = (runtime_slice)CONCAT48(uVar6,CONCAT44(iVar7,puVar4));
-            puVar4 = in_stack_ffffffd0;
-            uVar6 = in_stack_ffffffd8;
-            runtime_growslice((runtime__type *)&DAT_080cf320,rVar2,uVar3,
-                              (runtime_slice)
-                              CONCAT48(in_stack_ffffffd8,
-                                       CONCAT44(in_stack_ffffffd4,in_stack_ffffffd0)));
-            in_stack_ffffffd0 = puVar4;
-            in_stack_ffffffd8 = uVar6;
-          }
-          if (uVar3 <= uVar6) {
-            runtime_memmove(puVar4 + iVar7,&DAT_080e0db1,2);
+          if (in_stack_ffffffc8 == 0) {
+            iVar7 = (p->buf).len;
+            uVar3 = iVar7 + 3;
+            uVar6 = (p->buf).cap;
+            if (uVar6 < uVar3) {
+              rVar2 = (runtime_slice)CONCAT48(uVar6,CONCAT44(iVar7,puVar4));
+              puVar4 = in_stack_ffffffd0;
+              uVar6 = in_stack_ffffffd8;
+              runtime_growslice((runtime__type *)&DAT_080cf320,rVar2,uVar3,
+                                (runtime_slice)
+                                CONCAT48(in_stack_ffffffd8,
+                                         CONCAT44(in_stack_ffffffd4,in_stack_ffffffd0)));
+              in_stack_ffffffd0 = puVar4;
+              in_stack_ffffffd8 = uVar6;
+            }
+            if (uVar6 < uVar3) {
+              runtime_panicslice();
+              do {
+                invalidInstructionException();
+              } while( true );
+            }
+            runtime_memmove(puVar4 + iVar7,&DAT_080e0e70,3);
             (p->buf).len = uVar3;
             (p->buf).cap = uVar6;
             if (runtime_writeBarrier._0_4_ == 0) {
@@ -85356,74 +84896,43 @@ LAB_080b9257:
             else {
               runtime_writebarrierptr((uintptr *)p,(uintptr)puVar4);
             }
-            if (in_stack_ffffffc8 == 0) {
-              iVar7 = (p->buf).len;
-              uVar3 = iVar7 + 3;
-              uVar6 = (p->buf).cap;
-              if (uVar6 < uVar3) {
-                rVar2 = (runtime_slice)CONCAT48(uVar6,CONCAT44(iVar7,puVar4));
-                puVar4 = in_stack_ffffffd0;
-                uVar6 = in_stack_ffffffd8;
-                runtime_growslice((runtime__type *)&DAT_080cf320,rVar2,uVar3,
-                                  (runtime_slice)
-                                  CONCAT48(in_stack_ffffffd8,
-                                           CONCAT44(in_stack_ffffffd4,in_stack_ffffffd0)));
-                in_stack_ffffffd0 = puVar4;
-                in_stack_ffffffd8 = uVar6;
-              }
-              if (uVar6 < uVar3) {
-                runtime_panicslice();
-                do {
-                  invalidInstructionException();
-                } while( true );
-              }
-              runtime_memmove(puVar4 + iVar7,&DAT_080e0e70,3);
-              (p->buf).len = uVar3;
-              (p->buf).cap = uVar6;
-              if (runtime_writeBarrier._0_4_ == 0) {
-                (p->buf).array = puVar4;
-              }
-              else {
-                runtime_writebarrierptr((uintptr *)p,(uintptr)puVar4);
-              }
+          }
+          else {
+            fmt___pp__fmt0x64(p,(ulonglong)in_stack_ffffffc8,true);
+          }
+          iVar5 = (p->buf).len;
+          puVar4 = (p->buf).array;
+          iVar7 = iVar5 + 1;
+          if ((p->buf).cap < iVar7) {
+            puVar4 = in_stack_ffffffd0;
+            iVar5 = in_stack_ffffffd4;
+            runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,iVar7,
+                              (runtime_slice)
+                              CONCAT48(in_stack_ffffffd8,
+                                       CONCAT44(in_stack_ffffffd4,in_stack_ffffffd0)));
+            (p->buf).cap = in_stack_ffffffd8;
+            if (runtime_writeBarrier._0_4_ == 0) {
+              (p->buf).array = puVar4;
             }
             else {
-              fmt___pp__fmt0x64(p,(ulonglong)in_stack_ffffffc8,true);
+              runtime_writebarrierptr((uintptr *)p,(uintptr)puVar4);
             }
-            iVar5 = (p->buf).len;
-            puVar4 = (p->buf).array;
-            iVar7 = iVar5 + 1;
-            if ((p->buf).cap < iVar7) {
-              puVar4 = in_stack_ffffffd0;
-              iVar5 = in_stack_ffffffd4;
-              runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,iVar7,
-                                (runtime_slice)
-                                CONCAT48(in_stack_ffffffd8,
-                                         CONCAT44(in_stack_ffffffd4,in_stack_ffffffd0)));
-              (p->buf).cap = in_stack_ffffffd8;
-              if (runtime_writeBarrier._0_4_ == 0) {
-                (p->buf).array = puVar4;
-              }
-              else {
-                runtime_writebarrierptr((uintptr *)p,(uintptr)puVar4);
-              }
-            }
-            (p->buf).len = iVar5 + 1;
-            puVar4[iVar5] = 0x29;
-            return;
           }
-          runtime_panicslice();
-          do {
-            invalidInstructionException();
-          } while( true );
+          (p->buf).len = iVar5 + 1;
+          puVar4[iVar5] = 0x29;
+          return;
         }
         runtime_panicslice();
         do {
           invalidInstructionException();
         } while( true );
       }
-      if (verb != 0x78) goto LAB_080b9257;
+      runtime_panicslice();
+      do {
+        invalidInstructionException();
+      } while( true );
     }
+    if (verb != 0x78) goto LAB_080b9257;
   }
   fmt___pp__fmtInteger(p,(ulonglong)in_stack_ffffffc8,false,verb);
   return;
@@ -85431,7 +84940,7 @@ LAB_080b9257:
 
 
 
-void fmt___pp__catchPanic(fmt_pp *p,interface__ arg,int32 verb)
+void fmt___pp__catchPanic(fmt_pp *p,interface___ arg,int32 verb)
 
 {
   uint *puVar1;
@@ -85456,13 +84965,13 @@ void fmt___pp__catchPanic(fmt_pp *p,interface__ arg,int32 verb)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    fmt___pp__catchPanic(p,(interface__)CONCAT44(arg.data,arg._type),verb);
+    fmt___pp__catchPanic(p,(interface___)CONCAT44(arg.data,arg._type),verb);
     return;
   }
-  runtime_gorecover((uintptr)&p,(interface__)CONCAT44(in_stack_ffffffc0,in_stack_ffffffbc));
+  runtime_gorecover((uintptr)&p,(interface___)CONCAT44(in_stack_ffffffc0,in_stack_ffffffbc));
   if (in_stack_ffffffbc != 0) {
     uVar8 = in_stack_ffffffc0;
-    reflect_ValueOf((interface__)CONCAT44(arg.data,arg._type),
+    reflect_ValueOf((interface___)CONCAT44(arg.data,arg._type),
                     (reflect_Value)
                     CONCAT48(in_stack_ffffffc8,CONCAT44(in_stack_ffffffc4,in_stack_ffffffc0)));
     if (((in_stack_ffffffc8 & 0x1f) == 0x16) &&
@@ -85499,7 +85008,7 @@ void fmt___pp__catchPanic(fmt_pp *p,interface__ arg,int32 verb)
       return;
     }
     if (p->panicking != false) {
-      runtime_gopanic((interface__)CONCAT44(in_stack_ffffffc0,in_stack_ffffffbc));
+      runtime_gopanic((interface___)CONCAT44(in_stack_ffffffc0,in_stack_ffffffbc));
       do {
         invalidInstructionException();
       } while( true );
@@ -85568,7 +85077,7 @@ void fmt___pp__catchPanic(fmt_pp *p,interface__ arg,int32 verb)
       runtime_writebarrierptr((uintptr *)p,(uintptr)puVar7);
     }
     p->panicking = true;
-    fmt___pp__printArg(p,(interface__)CONCAT44(in_stack_ffffffc0,in_stack_ffffffbc),0x76);
+    fmt___pp__printArg(p,(interface___)CONCAT44(in_stack_ffffffc0,in_stack_ffffffbc),0x76);
     p->panicking = false;
     iVar5 = (p->buf).len;
     puVar7 = (p->buf).array;
@@ -85602,7 +85111,7 @@ void fmt___pp__handleMethods(fmt_pp *p,int32 verb,bool handled)
 
 {
   uint *puVar1;
-  runtime_eface *prVar2;
+  interface___ *piVar2;
   runtime_eface e;
   fmt_pp *pfVar3;
   int *in_GS_OFFSET;
@@ -85631,7 +85140,7 @@ void fmt___pp__handleMethods(fmt_pp *p,int32 verb,bool handled)
     return;
   }
   arg0 = &DAT_080d0ec0;
-  runtime_assertE2I2((runtime_interfacetype *)&DAT_080d0ec0,*(runtime_eface *)&p->arg,
+  runtime_assertE2I2((runtime_interfacetype *)&DAT_080d0ec0,p->arg,
                      (runtime_iface)CONCAT44(in_stack_ffffffd0,in_stack_ffffffcc),
                      (bool)in_stack_ffffffd4);
   if (in_stack_ffffffd4 != '\0') {
@@ -85653,13 +85162,11 @@ void fmt___pp__handleMethods(fmt_pp *p,int32 verb,bool handled)
     if (verb < 0x72) {
       if ((verb != 0x58) && (verb != 0x71)) goto LAB_080b9bbf;
     }
-    else {
-      if (((verb != 0x73) && (verb != 0x76)) && (verb != 0x78)) goto LAB_080b9bbf;
-    }
-    prVar2 = (runtime_eface *)&p->arg;
-    e = *prVar2;
-    if (prVar2->_type != (runtime__type *)0x0) {
-      runtime_assertE2I2((runtime_interfacetype *)&DAT_080d0e60,*prVar2,
+    else if (((verb != 0x73) && (verb != 0x76)) && (verb != 0x78)) goto LAB_080b9bbf;
+    piVar2 = &p->arg;
+    e = *piVar2;
+    if (piVar2->_type != (runtime__type *)0x0) {
+      runtime_assertE2I2((runtime_interfacetype *)&DAT_080d0e60,*piVar2,
                          (runtime_iface)CONCAT44(in_stack_ffffffd0,in_stack_ffffffcc),false);
       if (in_stack_ffffffd4 != '\0') {
         pvVar8 = (p->arg).data;
@@ -85706,7 +85213,7 @@ void fmt___pp__handleMethods(fmt_pp *p,int32 verb,bool handled)
   }
   else {
     arg0 = &DAT_080d0f20;
-    runtime_assertE2I2((runtime_interfacetype *)&DAT_080d0f20,*(runtime_eface *)&p->arg,
+    runtime_assertE2I2((runtime_interfacetype *)&DAT_080d0f20,p->arg,
                        (runtime_iface)CONCAT44(in_stack_ffffffd0,in_stack_ffffffcc),false);
     if (in_stack_ffffffd4 != '\0') {
       pvVar8 = (p->arg).data;
@@ -85734,7 +85241,7 @@ LAB_080b9bbf:
 
 
 
-void fmt___pp__printArg(fmt_pp *p,interface__ arg,int32 verb)
+void fmt___pp__printArg(fmt_pp *p,interface___ arg,int32 verb)
 
 {
   uint *puVar1;
@@ -85830,7 +85337,7 @@ void fmt___pp__printArg(fmt_pp *p,interface__ arg,int32 verb)
                  (reflect_Value_CanInterface(*arg.data,SUB41(in_stack_ffffffd4,0)),
                  (char)in_stack_ffffffd4 != '\0')) {
                 reflect_Value_Interface
-                          (v,(interface__)CONCAT44(in_stack_ffffffd8,in_stack_ffffffd4));
+                          (v,(interface___)CONCAT44(in_stack_ffffffd8,in_stack_ffffffd4));
                 handled = (char)iVar4;
                 (p->arg)._type = in_stack_ffffffd4;
                 if (runtime_writeBarrier._0_4_ == 0) {
@@ -85849,108 +85356,100 @@ void fmt___pp__printArg(fmt_pp *p,interface__ arg,int32 verb)
             }
           }
         }
-        else {
-          if (uVar2 < 0x7925028d) {
-            if ((uVar2 == 0x663e425f) && (arg._type == (runtime__type *)&DAT_080cf320)) {
+        else if (uVar2 < 0x7925028d) {
+          if ((uVar2 == 0x663e425f) && (arg._type == (runtime__type *)&DAT_080cf320)) {
                     // WARNING: Load size is inaccurate
-              fmt___pp__fmtInteger(p,(ulonglong)*arg.data,false,verb);
-              return;
-            }
-            if ((uVar2 == 0x7925028c) && (arg._type == (runtime__type *)&DAT_080ce7e0)) {
-                    // WARNING: Load size is inaccurate
-              fmt___pp__fmtComplex
-                        (p,(complex128)
-                           CONCAT412((int)((ulonglong)(double)*(float *)((int)arg.data + 4) >> 0x20)
-                                     ,CONCAT48(SUB84((double)*(float *)((int)arg.data + 4),0),
-                                               (double)*arg.data)),0x40,verb);
-              return;
-            }
+            fmt___pp__fmtInteger(p,(ulonglong)*arg.data,false,verb);
+            return;
           }
-          else {
-            if ((uVar2 == 0x86318d2e) && (arg._type == (runtime__type *)&DAT_080cf2e0)) {
+          if ((uVar2 == 0x7925028c) && (arg._type == (runtime__type *)&DAT_080ce7e0)) {
                     // WARNING: Load size is inaccurate
-              fmt___pp__fmtInteger(p,*arg.data,false,verb);
-              return;
-            }
-            if ((uVar2 == 0x963f9bff) && (arg._type == (runtime__type *)&DAT_080cec20)) {
+            fmt___pp__fmtComplex
+                      (p,CONCAT412((int)((ulonglong)(double)*(float *)((int)arg.data + 4) >> 0x20),
+                                   CONCAT48(SUB84((double)*(float *)((int)arg.data + 4),0),
+                                            (double)*arg.data)),0x40,verb);
+            return;
+          }
+        }
+        else {
+          if ((uVar2 == 0x86318d2e) && (arg._type == (runtime__type *)&DAT_080cf2e0)) {
                     // WARNING: Load size is inaccurate
-              fmt___pp__fmtInteger(p,*arg.data,true,verb);
-              return;
-            }
-            if ((uVar2 == 0xb0c23ed3) && (arg._type == (runtime__type *)&DAT_080ce820)) {
+            fmt___pp__fmtInteger(p,*arg.data,false,verb);
+            return;
+          }
+          if ((uVar2 == 0x963f9bff) && (arg._type == (runtime__type *)&DAT_080cec20)) {
                     // WARNING: Load size is inaccurate
-              fmt___pp__fmtFloat(p,(float64)(double)*arg.data,0x20,verb);
-              return;
-            }
+            fmt___pp__fmtInteger(p,*arg.data,true,verb);
+            return;
+          }
+          if ((uVar2 == 0xb0c23ed3) && (arg._type == (runtime__type *)&DAT_080ce820)) {
+                    // WARNING: Load size is inaccurate
+            fmt___pp__fmtFloat(p,(double)*arg.data,0x20,verb);
+            return;
           }
         }
       }
-      else {
-        if (uVar2 < 0xd04ae83e) {
-          if (uVar2 < 0xbbad4103) {
-            if ((uVar2 == 0xb31a546d) && (arg._type == (runtime__type *)&DAT_080ce7a0)) {
+      else if (uVar2 < 0xd04ae83e) {
+        if (uVar2 < 0xbbad4103) {
+          if ((uVar2 == 0xb31a546d) && (arg._type == (runtime__type *)&DAT_080ce7a0)) {
                     // WARNING: Load size is inaccurate
-              fmt___pp__fmtComplex
-                        (p,(complex128)
-                           CONCAT412((int)((ulonglong)*(undefined8 *)((int)arg.data + 8) >> 0x20),
-                                     CONCAT48((int)*(undefined8 *)((int)arg.data + 8),*arg.data)),
-                         0x80,verb);
-              return;
-            }
-            if ((uVar2 == 0xbbad4102) && (arg._type == (runtime__type *)&DAT_080cebe0)) {
-                    // WARNING: Load size is inaccurate
-              fmt___pp__fmtInteger(p,(longlong)*arg.data,true,verb);
-              return;
-            }
+            fmt___pp__fmtComplex
+                      (p,CONCAT412((int)((ulonglong)*(undefined8 *)((int)arg.data + 8) >> 0x20),
+                                   CONCAT48((int)*(undefined8 *)((int)arg.data + 8),*arg.data)),0x80
+                       ,verb);
+            return;
           }
-          else {
-            if ((uVar2 == 0xbd4ad792) && (arg._type == (runtime__type *)&DAT_080cf360)) {
+          if ((uVar2 == 0xbbad4102) && (arg._type == (runtime__type *)&DAT_080cebe0)) {
                     // WARNING: Load size is inaccurate
-              fmt___pp__fmtInteger(p,(ulonglong)*arg.data,false,verb);
-              return;
-            }
-            if ((uVar2 == 0xcc06c027) && (arg._type == (runtime__type *)&DAT_080cec60)) {
-                    // WARNING: Load size is inaccurate
-              fmt___pp__fmtInteger(p,(longlong)(int)*arg.data,true,verb);
-              return;
-            }
-            if ((uVar2 == 0xd04ae83d) && (arg._type == (runtime__type *)&DAT_080cf2a0)) {
-                    // WARNING: Load size is inaccurate
-              fmt___pp__fmtInteger(p,(ulonglong)*arg.data,false,verb);
-              return;
-            }
+            fmt___pp__fmtInteger(p,(longlong)*arg.data,true,verb);
+            return;
           }
         }
         else {
-          if (uVar2 < 0xe0ff5cb5) {
-            if ((uVar2 == 0xd5b87712) && (arg._type == (runtime__type *)&DAT_080cf220)) {
+          if ((uVar2 == 0xbd4ad792) && (arg._type == (runtime__type *)&DAT_080cf360)) {
                     // WARNING: Load size is inaccurate
-              fmt___pp__fmtInteger(p,(ulonglong)*arg.data,false,verb);
-              return;
-            }
-            if ((uVar2 == 0xe0ff5cb4) && (arg._type == (runtime__type *)&DAT_080cf1a0)) {
-                    // WARNING: Load size is inaccurate
-              fmt___pp__fmtString(p,*arg.data,verb);
-              return;
-            }
+            fmt___pp__fmtInteger(p,(ulonglong)*arg.data,false,verb);
+            return;
           }
-          else {
-            if ((uVar2 == 0xecd580ce) && (arg._type == (runtime__type *)&DAT_080ceba0)) {
+          if ((uVar2 == 0xcc06c027) && (arg._type == (runtime__type *)&DAT_080cec60)) {
                     // WARNING: Load size is inaccurate
-              fmt___pp__fmtInteger(p,(longlong)(int)*arg.data,true,verb);
-              return;
-            }
-            if ((uVar2 == 0xeff20ea0) && (arg._type == (runtime__type *)&DAT_080cf260)) {
-                    // WARNING: Load size is inaccurate
-              fmt___pp__fmtInteger(p,(ulonglong)*arg.data,false,verb);
-              return;
-            }
-            if ((uVar2 == 0xf75371fa) && (arg._type == (runtime__type *)&DAT_080ceb60)) {
-                    // WARNING: Load size is inaccurate
-              fmt___pp__fmtInteger(p,(longlong)*arg.data,true,verb);
-              return;
-            }
+            fmt___pp__fmtInteger(p,(longlong)(int)*arg.data,true,verb);
+            return;
           }
+          if ((uVar2 == 0xd04ae83d) && (arg._type == (runtime__type *)&DAT_080cf2a0)) {
+                    // WARNING: Load size is inaccurate
+            fmt___pp__fmtInteger(p,(ulonglong)*arg.data,false,verb);
+            return;
+          }
+        }
+      }
+      else if (uVar2 < 0xe0ff5cb5) {
+        if ((uVar2 == 0xd5b87712) && (arg._type == (runtime__type *)&DAT_080cf220)) {
+                    // WARNING: Load size is inaccurate
+          fmt___pp__fmtInteger(p,(ulonglong)*arg.data,false,verb);
+          return;
+        }
+        if ((uVar2 == 0xe0ff5cb4) && (arg._type == (runtime__type *)&DAT_080cf1a0)) {
+                    // WARNING: Load size is inaccurate
+          fmt___pp__fmtString(p,*arg.data,verb);
+          return;
+        }
+      }
+      else {
+        if ((uVar2 == 0xecd580ce) && (arg._type == (runtime__type *)&DAT_080ceba0)) {
+                    // WARNING: Load size is inaccurate
+          fmt___pp__fmtInteger(p,(longlong)(int)*arg.data,true,verb);
+          return;
+        }
+        if ((uVar2 == 0xeff20ea0) && (arg._type == (runtime__type *)&DAT_080cf260)) {
+                    // WARNING: Load size is inaccurate
+          fmt___pp__fmtInteger(p,(ulonglong)*arg.data,false,verb);
+          return;
+        }
+        if ((uVar2 == 0xf75371fa) && (arg._type == (runtime__type *)&DAT_080ceb60)) {
+                    // WARNING: Load size is inaccurate
+          fmt___pp__fmtInteger(p,(longlong)*arg.data,true,verb);
+          return;
         }
       }
     }
@@ -85976,35 +85475,37 @@ void fmt___pp__printArg(fmt_pp *p,interface__ arg,int32 verb)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 void fmt___pp__printValue(fmt_pp *p,reflect_Value value,int32 verb,int depth)
 
 {
-  runtime__type **pprVar1;
-  uint32 uVar2;
-  int iVar3;
-  undefined8 uVar4;
+  uint *puVar1;
+  uint8 *puVar2;
+  uint32 uVar3;
+  int iVar4;
+  undefined8 uVar5;
   runtime_slice old;
   size_t __n;
-  runtime__type *prVar5;
-  uint uVar6;
-  runtime__type *prVar7;
-  int iVar8;
+  runtime__type *prVar6;
+  uint uVar7;
+  runtime__type *prVar8;
+  int iVar9;
   void *__src;
-  runtime__type *prVar9;
   runtime__type *prVar10;
+  runtime__type *prVar11;
   int *in_GS_OFFSET;
-  undefined *puVar11;
+  undefined *puVar12;
   char handled;
-  reflect_flag rVar12;
+  reflect_flag rVar13;
   runtime__type *in_stack_fffffef0;
   runtime__type *in_stack_fffffef4;
   runtime__type *in_stack_fffffef8;
   runtime__type *in_stack_fffffefc;
   runtime__type *in_stack_ffffff00;
   undefined4 in_stack_ffffff04;
-  undefined local_9c [16];
+  runtime__type *local_9c;
+  runtime__type *local_98;
+  runtime__type *local_94;
+  runtime__type *local_90;
   runtime__type *local_8c;
   runtime__type *local_88;
   runtime__type *local_84;
@@ -86031,8 +85532,8 @@ void fmt___pp__printValue(fmt_pp *p,reflect_Value value,int32 verb,int depth)
   size_t local_30;
   undefined4 uStack4;
   
-  pprVar1 = (runtime__type **)(*(int *)(*in_GS_OFFSET + -4) + 8);
-  if ((runtime__type *)local_9c < *pprVar1 || (runtime__type *)local_9c == *pprVar1) {
+  puVar1 = (uint *)(*(int *)(*in_GS_OFFSET + -4) + 8);
+  if (&local_9c < (runtime__type **)*puVar1 || &local_9c == (runtime__type **)*puVar1) {
     uStack4 = 0x80bce6c;
     runtime_morestack_noctxt();
     fmt___pp__printValue(p,value,verb,depth);
@@ -86041,9 +85542,9 @@ void fmt___pp__printValue(fmt_pp *p,reflect_Value value,int32 verb,int depth)
   if (((0 < depth) && (value.flag != 0)) &&
      (reflect_Value_CanInterface(value,SUB41(in_stack_fffffef0,0)), (char)in_stack_fffffef0 != '\0')
      ) {
-    rVar12 = value.flag;
-    reflect_Value_Interface(value,(interface__)CONCAT44(in_stack_fffffef4,in_stack_fffffef0));
-    handled = (char)rVar12;
+    rVar13 = value.flag;
+    reflect_Value_Interface(value,(interface___)CONCAT44(in_stack_fffffef4,in_stack_fffffef0));
+    handled = (char)rVar13;
     (p->arg)._type = in_stack_fffffef0;
     if (runtime_writeBarrier._0_4_ == 0) {
       (p->arg).data = in_stack_fffffef4;
@@ -86077,33 +85578,29 @@ void fmt___pp__printValue(fmt_pp *p,reflect_Value value,int32 verb,int depth)
     runtime_writebarrierptr((uintptr *)&p->value,(uintptr)value.typ);
     runtime_writebarrierptr((uintptr *)local_5c,(uintptr)value.ptr);
   }
-  local_9c._12_4_ = (runtime__type *)(value.flag & 0x1f);
-  if (local_9c._12_4_ < 0x11) {
-    if (0xc < local_9c._12_4_) {
-      if (0xe < local_9c._12_4_) {
-        if (local_9c._12_4_ == (runtime__type *)0xf) {
+  local_90 = (runtime__type *)(value.flag & 0x1f);
+  if (local_90 < 0x11) {
+    if (0xc < local_90) {
+      if (0xe < local_90) {
+        if (local_90 == (runtime__type *)0xf) {
           reflect_Value_Complex
-                    (value,(complex128)
-                           CONCAT412(in_stack_fffffefc,
+                    (value,CONCAT412(in_stack_fffffefc,
                                      CONCAT48(in_stack_fffffef8,CONCAT44(local_88,local_8c))));
           fmt___pp__fmtComplex
-                    (p,(complex128)
-                       CONCAT412(in_stack_fffffefc,
+                    (p,CONCAT412(in_stack_fffffefc,
                                  CONCAT48(in_stack_fffffef8,CONCAT44(local_88,local_8c))),0x40,verb)
           ;
           return;
         }
         reflect_Value_Complex
-                  (value,(complex128)
-                         CONCAT412(in_stack_fffffefc,
+                  (value,CONCAT412(in_stack_fffffefc,
                                    CONCAT48(in_stack_fffffef8,CONCAT44(local_88,local_8c))));
         fmt___pp__fmtComplex
-                  (p,(complex128)
-                     CONCAT412(in_stack_fffffefc,
+                  (p,CONCAT412(in_stack_fffffefc,
                                CONCAT48(in_stack_fffffef8,CONCAT44(local_88,local_8c))),0x80,verb);
         return;
       }
-      if (local_9c._12_4_ == (runtime__type *)0xd) {
+      if (local_90 == (runtime__type *)0xd) {
         reflect_Value_Float(value,(float64)CONCAT44(local_88,local_8c));
         fmt___pp__fmtFloat(p,(float64)CONCAT44(local_88,local_8c),0x20,verb);
         return;
@@ -86112,32 +85609,32 @@ void fmt___pp__printValue(fmt_pp *p,reflect_Value value,int32 verb,int depth)
       fmt___pp__fmtFloat(p,(float64)CONCAT44(local_88,local_8c),0x40,verb);
       return;
     }
-    if (local_9c._12_4_ < 2) {
+    if (local_90 < 2) {
       if (((undefined  [12])value & (undefined  [12])0x1f) != (undefined  [12])0x0) {
         reflect_Value_Bool(value,SUB41(local_8c,0));
         fmt___pp__fmtBool(p,SUB41(local_8c,0),verb);
         return;
       }
       if (depth == 0) {
-        prVar9 = (runtime__type *)(p->buf).len;
-        local_9c._8_4_ = (runtime__type *)((int)&prVar9->gcdata + 3);
-        prVar7 = (runtime__type *)(p->buf).cap;
+        prVar10 = (runtime__type *)(p->buf).len;
+        local_94 = (runtime__type *)((int)&prVar10->gcdata + 3);
+        prVar8 = (runtime__type *)(p->buf).cap;
         local_44 = (runtime__type *)(p->buf).array;
-        if (prVar7 < local_9c._8_4_) {
+        if (prVar8 < local_94) {
           local_44 = in_stack_fffffef8;
-          prVar7 = in_stack_ffffff00;
-          local_9c._4_4_ = prVar9;
-          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)local_9c._8_4_
-                            ,(runtime_slice)
-                             CONCAT48(in_stack_ffffff00,
-                                      CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
-          prVar9 = local_9c._4_4_;
+          prVar8 = in_stack_ffffff00;
+          local_98 = prVar10;
+          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)local_94,
+                            (runtime_slice)
+                            CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)
+                                    ));
+          prVar10 = local_98;
         }
-        if (local_9c._8_4_ <= prVar7) {
-          local_9c._4_4_ = prVar7;
-          runtime_memmove((void *)((int)&local_44->size + (int)&prVar9->size),&DAT_080e380d,0x17);
-          (p->buf).len = (int)local_9c._8_4_;
-          (p->buf).cap = (int)local_9c._4_4_;
+        if (local_94 <= prVar8) {
+          local_98 = prVar8;
+          runtime_memmove((uint8 *)((int)&local_44->size + (int)&prVar10->size),&DAT_080e380d,0x17);
+          (p->buf).len = (int)local_94;
+          (p->buf).cap = (int)local_98;
           if (runtime_writeBarrier._0_4_ == 0) {
             (p->buf).array = (uint8 *)local_44;
             return;
@@ -86154,25 +85651,25 @@ void fmt___pp__printValue(fmt_pp *p,reflect_Value value,int32 verb,int depth)
         fmt___pp__badVerb(p,verb);
         return;
       }
-      prVar9 = (runtime__type *)(p->buf).len;
-      local_9c._8_4_ = (runtime__type *)((int)&prVar9->ptrdata + 1);
-      prVar7 = (runtime__type *)(p->buf).cap;
+      prVar10 = (runtime__type *)(p->buf).len;
+      local_94 = (runtime__type *)((int)&prVar10->ptrdata + 1);
+      prVar8 = (runtime__type *)(p->buf).cap;
       local_44 = (runtime__type *)(p->buf).array;
-      if (prVar7 < local_9c._8_4_) {
+      if (prVar8 < local_94) {
         local_44 = in_stack_fffffef8;
-        prVar7 = in_stack_ffffff00;
-        local_9c._4_4_ = prVar9;
-        runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)local_9c._8_4_,
+        prVar8 = in_stack_ffffff00;
+        local_98 = prVar10;
+        runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)local_94,
                           (runtime_slice)
                           CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)))
         ;
-        prVar9 = local_9c._4_4_;
+        prVar10 = local_98;
       }
-      if (local_9c._8_4_ <= prVar7) {
-        local_9c._4_4_ = prVar7;
-        runtime_memmove((void *)((int)&local_44->size + (int)&prVar9->size),&DAT_080e0fc5,5);
-        (p->buf).len = (int)local_9c._8_4_;
-        (p->buf).cap = (int)local_9c._4_4_;
+      if (local_94 <= prVar8) {
+        local_98 = prVar8;
+        runtime_memmove((uint8 *)((int)&local_44->size + (int)&prVar10->size),&DAT_080e0fc5,5);
+        (p->buf).len = (int)local_94;
+        (p->buf).cap = (int)local_98;
         if (runtime_writeBarrier._0_4_ == 0) {
           (p->buf).array = (uint8 *)local_44;
           return;
@@ -86185,12 +85682,12 @@ void fmt___pp__printValue(fmt_pp *p,reflect_Value value,int32 verb,int depth)
         invalidInstructionException();
       } while( true );
     }
-    if ((int)local_9c._12_4_ - 2U < 5) {
+    if ((int)local_90 - 2U < 5) {
       reflect_Value_Int(value,CONCAT44(local_88,local_8c));
       fmt___pp__fmtInteger(p,CONCAT44(local_88,local_8c),true,verb);
       return;
     }
-    if ((int)local_9c._12_4_ - 7U < 6) {
+    if ((int)local_90 - 7U < 6) {
       reflect_Value_Uint(value,CONCAT44(local_88,local_8c));
       fmt___pp__fmtInteger(p,CONCAT44(local_88,local_8c),false,verb);
       return;
@@ -86199,39 +85696,39 @@ LAB_080bb330:
     fmt___pp__unknownType(p,value);
     return;
   }
-  if (local_9c._12_4_ < 0x16) {
-    if (0x13 < local_9c._12_4_) {
-      if (local_9c._12_4_ != (runtime__type *)0x14) {
+  if (local_90 < 0x16) {
+    if (0x13 < local_90) {
+      if (local_90 != (runtime__type *)0x14) {
         if ((p->fmt).fmtFlags.sharpV == false) {
-          prVar7 = (runtime__type *)(p->buf).len;
-          prVar9 = (runtime__type *)&prVar7->ptrdata;
-          prVar5 = (runtime__type *)(p->buf).cap;
+          prVar8 = (runtime__type *)(p->buf).len;
+          prVar10 = (runtime__type *)&prVar8->ptrdata;
+          prVar6 = (runtime__type *)(p->buf).cap;
           local_44 = (runtime__type *)(p->buf).array;
-          local_9c._8_4_ = prVar9;
-          if (prVar5 < prVar9) {
-            local_8c = prVar5;
+          local_94 = prVar10;
+          if (prVar6 < prVar10) {
+            local_8c = prVar6;
             local_44 = in_stack_fffffef8;
-            prVar5 = in_stack_ffffff00;
-            local_9c._4_4_ = prVar7;
-            runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar9,
+            prVar6 = in_stack_ffffff00;
+            local_98 = prVar8;
+            runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar10,
                               (runtime_slice)
                               CONCAT48(in_stack_ffffff00,
                                        CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
-            prVar7 = local_9c._4_4_;
-            local_88 = prVar9;
+            prVar8 = local_98;
+            local_88 = prVar10;
             in_stack_fffffef8 = local_44;
-            in_stack_ffffff00 = prVar5;
+            in_stack_ffffff00 = prVar6;
           }
-          if (prVar5 < local_9c._8_4_) {
+          if (prVar6 < local_94) {
             runtime_panicslice();
             do {
               invalidInstructionException();
             } while( true );
           }
-          local_9c._4_4_ = prVar5;
-          runtime_memmove((void *)((int)&prVar7->size + (int)&local_44->size),&DAT_080e0f3a,4);
-          (p->buf).len = (int)local_9c._8_4_;
-          (p->buf).cap = (int)local_9c._4_4_;
+          local_98 = prVar6;
+          runtime_memmove((uint8 *)((int)&prVar8->size + (int)&local_44->size),&DAT_080e0f3a,4);
+          (p->buf).len = (int)local_94;
+          (p->buf).cap = (int)local_98;
           if (runtime_writeBarrier._0_4_ == 0) {
             (p->buf).array = (uint8 *)local_44;
           }
@@ -86242,37 +85739,38 @@ LAB_080bb330:
         else {
           reflect_Value_Type(value,(reflect_Type)CONCAT44(local_88,local_8c));
           (*(code *)local_8c[4].ptrdata)(local_88);
-          prVar7 = (runtime__type *)(p->buf).len;
-          prVar9 = (runtime__type *)((int)&prVar7->size + value.flag);
+          prVar8 = (runtime__type *)(p->buf).len;
+          prVar10 = (runtime__type *)((int)&prVar8->size + value.flag);
           local_44 = (runtime__type *)(p->buf).array;
-          prVar5 = (runtime__type *)(p->buf).cap;
-          local_9c._8_4_ = prVar9;
-          if (prVar5 < prVar9) {
-            local_8c = prVar5;
+          prVar6 = (runtime__type *)(p->buf).cap;
+          local_94 = prVar10;
+          if (prVar6 < prVar10) {
+            local_8c = prVar6;
             local_44 = in_stack_fffffef8;
-            prVar5 = in_stack_ffffff00;
-            local_9c._4_4_ = prVar7;
+            prVar6 = in_stack_ffffff00;
+            local_98 = prVar8;
             local_6c = value.ptr;
-            runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar9,
+            runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar10,
                               (runtime_slice)
                               CONCAT48(in_stack_ffffff00,
                                        CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
             value.ptr = local_6c;
-            prVar7 = local_9c._4_4_;
-            local_88 = prVar9;
+            prVar8 = local_98;
+            local_88 = prVar10;
             in_stack_fffffef8 = local_44;
-            in_stack_ffffff00 = prVar5;
+            in_stack_ffffff00 = prVar6;
           }
-          if (prVar5 < local_9c._8_4_) {
+          if (prVar6 < local_94) {
             runtime_panicslice();
             do {
               invalidInstructionException();
             } while( true );
           }
-          local_9c._4_4_ = prVar5;
-          runtime_memmove((void *)((int)&prVar7->size + (int)&local_44->size),value.ptr,value.flag);
-          (p->buf).len = (int)local_9c._8_4_;
-          (p->buf).cap = (int)local_9c._4_4_;
+          local_98 = prVar6;
+          runtime_memmove((uint8 *)((int)&prVar8->size + (int)&local_44->size),value.ptr,value.flag)
+          ;
+          (p->buf).len = (int)local_94;
+          (p->buf).cap = (int)local_98;
           if (runtime_writeBarrier._0_4_ == 0) {
             (p->buf).array = (uint8 *)local_44;
           }
@@ -86281,27 +85779,26 @@ LAB_080bb330:
           }
           reflect_Value_IsNil(value,SUB41(local_8c,0));
           if ((char)local_8c != '\0') {
-            prVar9 = (runtime__type *)(p->buf).len;
-            local_9c._8_4_ = (runtime__type *)((int)&prVar9->ptrdata + 1);
-            prVar7 = (runtime__type *)(p->buf).cap;
-            prVar5 = (runtime__type *)(p->buf).array;
-            if (prVar7 < local_9c._8_4_) {
-              prVar5 = in_stack_fffffef8;
-              prVar7 = in_stack_ffffff00;
-              local_9c._4_4_ = prVar9;
-              runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,
-                                (int)local_9c._8_4_,
+            prVar10 = (runtime__type *)(p->buf).len;
+            local_94 = (runtime__type *)((int)&prVar10->ptrdata + 1);
+            prVar8 = (runtime__type *)(p->buf).cap;
+            prVar6 = (runtime__type *)(p->buf).array;
+            if (prVar8 < local_94) {
+              prVar6 = in_stack_fffffef8;
+              prVar8 = in_stack_ffffff00;
+              local_98 = prVar10;
+              runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)local_94,
                                 (runtime_slice)
                                 CONCAT48(in_stack_ffffff00,
                                          CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
-              prVar9 = local_9c._4_4_;
+              prVar10 = local_98;
             }
-            if (local_9c._8_4_ <= prVar7) {
-              local_9c._4_4_ = prVar7;
-              local_44 = prVar5;
-              runtime_memmove((void *)((int)&prVar9->size + (int)&prVar5->size),&DAT_080e0fb1,5);
-              (p->buf).len = (int)local_9c._8_4_;
-              (p->buf).cap = (int)local_9c._4_4_;
+            if (local_94 <= prVar8) {
+              local_98 = prVar8;
+              local_44 = prVar6;
+              runtime_memmove((uint8 *)((int)&prVar10->size + (int)&prVar6->size),&DAT_080e0fb1,5);
+              (p->buf).len = (int)local_94;
+              (p->buf).cap = (int)local_98;
               if (runtime_writeBarrier._0_4_ == 0) {
                 (p->buf).array = (uint8 *)local_44;
               }
@@ -86315,47 +85812,47 @@ LAB_080bb330:
               invalidInstructionException();
             } while( true );
           }
-          prVar7 = (runtime__type *)(p->buf).cap;
+          prVar8 = (runtime__type *)(p->buf).cap;
           local_50 = (runtime__type *)(p->buf).array;
-          prVar5 = (runtime__type *)(p->buf).len;
-          prVar9 = (runtime__type *)((int)&prVar5->size + 1);
-          if ((int)prVar7 < (int)prVar9) {
+          prVar6 = (runtime__type *)(p->buf).len;
+          prVar10 = (runtime__type *)((int)&prVar6->size + 1);
+          if ((int)prVar8 < (int)prVar10) {
             local_50 = in_stack_fffffef8;
-            prVar5 = in_stack_fffffefc;
-            runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar9,
+            prVar6 = in_stack_fffffefc;
+            runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar10,
                               (runtime_slice)
                               CONCAT48(in_stack_ffffff00,
                                        CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
             (p->buf).cap = (int)in_stack_ffffff00;
             in_stack_fffffef8 = local_50;
-            in_stack_fffffefc = prVar5;
+            in_stack_fffffefc = prVar6;
             if (runtime_writeBarrier._0_4_ == 0) {
               (p->buf).array = (uint8 *)local_50;
-              local_8c = prVar7;
-              local_88 = prVar9;
+              local_8c = prVar8;
+              local_88 = prVar10;
             }
             else {
               runtime_writebarrierptr((uintptr *)p,(uintptr)local_50);
-              local_8c = prVar7;
-              local_88 = prVar9;
+              local_8c = prVar8;
+              local_88 = prVar10;
             }
           }
-          (p->buf).len = (int)&prVar5->size + 1;
-          *(undefined *)((int)&prVar5->size + (int)&local_50->size) = 0x7b;
+          (p->buf).len = (int)((int)&prVar6->size + 1);
+          *(uint8 *)((int)&prVar6->size + (int)&local_50->size) = 0x7b;
         }
         reflect_Value_MapKeys
                   (value,(__reflect_Value)CONCAT48(in_stack_fffffef8,CONCAT44(local_88,local_8c)));
-        iVar8 = 0;
+        iVar9 = 0;
         do {
-          if ((int)local_88 <= iVar8) {
+          if ((int)local_88 <= iVar9) {
             if ((p->fmt).fmtFlags.sharpV != false) {
-              prVar9 = (runtime__type *)(p->buf).len;
+              prVar10 = (runtime__type *)(p->buf).len;
               local_4c = (runtime__type *)(p->buf).array;
-              iVar8 = (int)&prVar9->size + 1;
-              if ((p->buf).cap < iVar8) {
+              puVar2 = (uint8 *)((int)&prVar10->size + 1);
+              if ((p->buf).cap < (int)puVar2) {
                 local_4c = in_stack_fffffef8;
-                prVar9 = in_stack_fffffefc;
-                runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,iVar8,
+                prVar10 = in_stack_fffffefc;
+                runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)puVar2,
                                   (runtime_slice)
                                   CONCAT48(in_stack_ffffff00,
                                            CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
@@ -86367,17 +85864,17 @@ LAB_080bb330:
                   runtime_writebarrierptr((uintptr *)p,(uintptr)local_4c);
                 }
               }
-              (p->buf).len = (int)&prVar9->size + 1;
-              *(undefined *)((int)&prVar9->size + (int)&local_4c->size) = 0x7d;
+              (p->buf).len = (int)((int)&prVar10->size + 1);
+              *(uint8 *)((int)&prVar10->size + (int)&local_4c->size) = 0x7d;
               return;
             }
-            prVar9 = (runtime__type *)(p->buf).len;
+            prVar10 = (runtime__type *)(p->buf).len;
             local_4c = (runtime__type *)(p->buf).array;
-            iVar8 = (int)&prVar9->size + 1;
-            if ((p->buf).cap < iVar8) {
+            puVar2 = (uint8 *)((int)&prVar10->size + 1);
+            if ((p->buf).cap < (int)puVar2) {
               local_4c = in_stack_fffffef8;
-              prVar9 = in_stack_fffffefc;
-              runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,iVar8,
+              prVar10 = in_stack_fffffefc;
+              runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)puVar2,
                                 (runtime_slice)
                                 CONCAT48(in_stack_ffffff00,
                                          CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
@@ -86389,68 +85886,67 @@ LAB_080bb330:
                 runtime_writebarrierptr((uintptr *)p,(uintptr)local_4c);
               }
             }
-            (p->buf).len = (int)&prVar9->size + 1;
-            *(undefined *)((int)&prVar9->size + (int)&local_4c->size) = 0x5d;
+            (p->buf).len = (int)((int)&prVar10->size + 1);
+            *(uint8 *)((int)&prVar10->size + (int)&local_4c->size) = 0x5d;
             return;
           }
-          uVar2 = local_8c->hash;
+          uVar3 = local_8c->hash;
           local_64 = local_8c->ptrdata;
           local_68 = local_8c->size;
           local_48 = local_8c;
-          if (0 < iVar8) {
+          if (0 < iVar9) {
             if ((p->fmt).fmtFlags.sharpV == false) {
-              prVar9 = (runtime__type *)(p->buf).len;
-              iVar3 = (int)&prVar9->size + 1;
-              prVar7 = (runtime__type *)(p->buf).array;
-              if ((p->buf).cap < iVar3) {
-                prVar9 = in_stack_fffffefc;
-                runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,iVar3,
+              prVar10 = (runtime__type *)(p->buf).len;
+              puVar2 = (uint8 *)((int)&prVar10->size + 1);
+              prVar8 = (runtime__type *)(p->buf).array;
+              if ((p->buf).cap < (int)puVar2) {
+                prVar10 = in_stack_fffffefc;
+                runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)puVar2,
                                   (runtime_slice)
                                   CONCAT48(in_stack_ffffff00,
                                            CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
                 (p->buf).cap = (int)in_stack_ffffff00;
-                in_stack_fffffefc = prVar9;
+                in_stack_fffffefc = prVar10;
                 if (runtime_writeBarrier._0_4_ == 0) {
                   (p->buf).array = (uint8 *)in_stack_fffffef8;
-                  prVar7 = in_stack_fffffef8;
+                  prVar8 = in_stack_fffffef8;
                 }
                 else {
                   local_40 = in_stack_fffffef8;
                   runtime_writebarrierptr((uintptr *)p,(uintptr)in_stack_fffffef8);
-                  prVar7 = local_40;
+                  prVar8 = local_40;
                 }
               }
-              (p->buf).len = (int)&prVar9->size + 1;
-              *(undefined *)((int)&prVar9->size + (int)&prVar7->size) = 0x20;
+              (p->buf).len = (int)((int)&prVar10->size + 1);
+              *(uint8 *)((int)&prVar10->size + (int)&prVar8->size) = 0x20;
             }
             else {
-              prVar9 = (runtime__type *)(p->buf).len;
-              local_9c._8_4_ = (runtime__type *)((int)&prVar9->size + 2);
-              prVar7 = (runtime__type *)(p->buf).array;
-              prVar5 = (runtime__type *)(p->buf).cap;
-              if (prVar5 < local_9c._8_4_) {
-                prVar7 = in_stack_fffffef8;
-                prVar5 = in_stack_ffffff00;
-                local_9c._4_4_ = prVar9;
-                runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,
-                                  (int)local_9c._8_4_,
-                                  (runtime_slice)
-                                  CONCAT48(in_stack_ffffff00,
-                                           CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
-                prVar9 = local_9c._4_4_;
-                in_stack_ffffff00 = prVar5;
+              prVar10 = (runtime__type *)(p->buf).len;
+              local_94 = (runtime__type *)((int)&prVar10->size + 2);
+              prVar8 = (runtime__type *)(p->buf).array;
+              prVar6 = (runtime__type *)(p->buf).cap;
+              if (prVar6 < local_94) {
+                prVar8 = in_stack_fffffef8;
+                prVar6 = in_stack_ffffff00;
+                local_98 = prVar10;
+                runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)local_94
+                                  ,(runtime_slice)
+                                   CONCAT48(in_stack_ffffff00,
+                                            CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
+                prVar10 = local_98;
+                in_stack_ffffff00 = prVar6;
               }
-              if (prVar5 < local_9c._8_4_) {
+              if (prVar6 < local_94) {
                 runtime_panicslice();
                 do {
                   invalidInstructionException();
                 } while( true );
               }
-              local_9c._4_4_ = prVar5;
-              local_44 = prVar7;
-              runtime_memmove((void *)((int)&prVar7->size + (int)&prVar9->size),&DAT_080e0db5,2);
-              (p->buf).len = (int)local_9c._8_4_;
-              (p->buf).cap = (int)local_9c._4_4_;
+              local_98 = prVar6;
+              local_44 = prVar8;
+              runtime_memmove((uint8 *)((int)&prVar8->size + (int)&prVar10->size),&DAT_080e0db5,2);
+              (p->buf).len = (int)local_94;
+              (p->buf).cap = (int)local_98;
               if (runtime_writeBarrier._0_4_ == 0) {
                 (p->buf).array = (uint8 *)local_44;
               }
@@ -86459,43 +85955,44 @@ LAB_080bb330:
               }
             }
           }
-          prVar9 = (runtime__type *)(depth + 1);
-          local_9c._8_4_ = prVar9;
+          prVar10 = (runtime__type *)(depth + 1);
+          local_94 = prVar10;
           fmt___pp__printValue
-                    (p,(reflect_Value)CONCAT48(uVar2,CONCAT44(local_64,local_68)),verb,(int)prVar9);
-          local_9c._0_4_ = (runtime__type *)(p->buf).len;
-          iVar3 = (int)&(local_9c._0_4_)->size + 1;
-          prVar7 = (runtime__type *)(p->buf).array;
-          if ((p->buf).cap < iVar3) {
-            local_9c._0_4_ = in_stack_fffffefc;
-            runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,iVar3,
+                    (p,(reflect_Value)CONCAT48(uVar3,CONCAT44(local_64,local_68)),verb,(int)prVar10)
+          ;
+          local_9c = (runtime__type *)(p->buf).len;
+          puVar2 = (uint8 *)((int)&local_9c->size + 1);
+          prVar8 = (runtime__type *)(p->buf).array;
+          if ((p->buf).cap < (int)puVar2) {
+            local_9c = in_stack_fffffefc;
+            runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)puVar2,
                               (runtime_slice)
-                              CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,prVar9)));
+                              CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,prVar10)));
             (p->buf).cap = (int)in_stack_ffffff00;
-            in_stack_fffffefc = local_9c._0_4_;
+            in_stack_fffffefc = local_9c;
             if (runtime_writeBarrier._0_4_ == 0) {
-              (p->buf).array = (uint8 *)prVar9;
-              prVar7 = prVar9;
+              (p->buf).array = (uint8 *)prVar10;
+              prVar8 = prVar10;
             }
             else {
-              local_3c = prVar9;
-              runtime_writebarrierptr((uintptr *)p,(uintptr)prVar9);
-              prVar7 = local_3c;
+              local_3c = prVar10;
+              runtime_writebarrierptr((uintptr *)p,(uintptr)prVar10);
+              prVar8 = local_3c;
             }
           }
-          (p->buf).len = (int)&(local_9c._0_4_)->size + 1;
-          *(undefined *)((int)&(local_9c._0_4_)->size + (int)&prVar7->size) = 0x3a;
+          (p->buf).len = (int)((int)&local_9c->size + 1);
+          *(uint8 *)((int)&local_9c->size + (int)&prVar8->size) = 0x3a;
           reflect_Value_MapIndex
-                    (value,(reflect_Value)CONCAT48(uVar2,CONCAT44(local_64,local_68)),
+                    (value,(reflect_Value)CONCAT48(uVar3,CONCAT44(local_64,local_68)),
                      (reflect_Value)
                      CONCAT48(in_stack_ffffff04,CONCAT44(in_stack_ffffff00,in_stack_fffffefc)));
-          in_stack_fffffef8 = local_9c._8_4_;
+          in_stack_fffffef8 = local_94;
           fmt___pp__printValue
                     (p,(reflect_Value)
                        CONCAT48(in_stack_ffffff04,CONCAT44(in_stack_ffffff00,in_stack_fffffefc)),
-                     verb,(int)local_9c._8_4_);
+                     verb,(int)local_94);
           local_8c = (runtime__type *)&local_48->tflag;
-          iVar8 = iVar8 + 1;
+          iVar9 = iVar9 + 1;
         } while( true );
       }
       reflect_Value_Elem(value,(reflect_Value)
@@ -86507,24 +86004,24 @@ LAB_080bb330:
         return;
       }
       if ((p->fmt).fmtFlags.sharpV == false) {
-        prVar9 = (runtime__type *)(p->buf).len;
-        local_9c._8_4_ = (runtime__type *)((int)&prVar9->ptrdata + 1);
-        prVar7 = (runtime__type *)(p->buf).cap;
+        prVar10 = (runtime__type *)(p->buf).len;
+        local_94 = (runtime__type *)((int)&prVar10->ptrdata + 1);
+        prVar8 = (runtime__type *)(p->buf).cap;
         local_44 = (runtime__type *)(p->buf).array;
-        if (prVar7 < local_9c._8_4_) {
+        if (prVar8 < local_94) {
           local_44 = in_stack_fffffef8;
-          prVar7 = in_stack_ffffff00;
-          local_9c._4_4_ = prVar9;
-          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)local_9c._8_4_
-                            ,(runtime_slice)
-                             (ZEXT812(CONCAT44(in_stack_ffffff00,in_stack_fffffefc)) << 0x20));
-          prVar9 = local_9c._4_4_;
+          prVar8 = in_stack_ffffff00;
+          local_98 = prVar10;
+          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)local_94,
+                            (runtime_slice)
+                            (ZEXT812(CONCAT44(in_stack_ffffff00,in_stack_fffffefc)) << 0x20));
+          prVar10 = local_98;
         }
-        if (local_9c._8_4_ <= prVar7) {
-          local_9c._4_4_ = prVar7;
-          runtime_memmove((void *)((int)&prVar9->size + (int)&local_44->size),&DAT_080e0fc5,5);
-          (p->buf).len = (int)local_9c._8_4_;
-          (p->buf).cap = (int)local_9c._4_4_;
+        if (local_94 <= prVar8) {
+          local_98 = prVar8;
+          runtime_memmove((uint8 *)((int)&prVar10->size + (int)&local_44->size),&DAT_080e0fc5,5);
+          (p->buf).len = (int)local_94;
+          (p->buf).cap = (int)local_98;
           if (runtime_writeBarrier._0_4_ == 0) {
             (p->buf).array = (uint8 *)local_44;
             return;
@@ -86539,61 +86036,61 @@ LAB_080bb330:
       }
       reflect_Value_Type(value,(reflect_Type)CONCAT44(local_88,local_8c));
       (*(code *)local_8c[4].ptrdata)(local_88);
-      prVar9 = (runtime__type *)(p->buf).len;
-      local_9c._8_4_ = (runtime__type *)((int)&prVar9->size + value.flag);
-      prVar7 = (runtime__type *)(p->buf).cap;
+      prVar10 = (runtime__type *)(p->buf).len;
+      local_94 = (runtime__type *)((int)&prVar10->size + value.flag);
+      prVar8 = (runtime__type *)(p->buf).cap;
       local_44 = (runtime__type *)(p->buf).array;
-      if (prVar7 < local_9c._8_4_) {
+      if (prVar8 < local_94) {
         local_44 = in_stack_fffffef8;
-        prVar7 = in_stack_ffffff00;
-        local_9c._4_4_ = prVar9;
+        prVar8 = in_stack_ffffff00;
+        local_98 = prVar10;
         local_70 = value.ptr;
-        runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)local_9c._8_4_,
+        runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)local_94,
                           (runtime_slice)
                           CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)))
         ;
         value.ptr = local_70;
-        prVar9 = local_9c._4_4_;
+        prVar10 = local_98;
         in_stack_fffffef8 = local_44;
-        in_stack_ffffff00 = prVar7;
+        in_stack_ffffff00 = prVar8;
       }
-      if (prVar7 < local_9c._8_4_) {
+      if (prVar8 < local_94) {
         runtime_panicslice();
         do {
           invalidInstructionException();
         } while( true );
       }
-      local_9c._4_4_ = prVar7;
-      runtime_memmove((void *)((int)&prVar9->size + (int)&local_44->size),value.ptr,value.flag);
-      (p->buf).len = (int)local_9c._8_4_;
-      (p->buf).cap = (int)local_9c._4_4_;
+      local_98 = prVar8;
+      runtime_memmove((uint8 *)((int)&prVar10->size + (int)&local_44->size),value.ptr,value.flag);
+      (p->buf).len = (int)local_94;
+      (p->buf).cap = (int)local_98;
       if (runtime_writeBarrier._0_4_ == 0) {
         (p->buf).array = (uint8 *)local_44;
       }
       else {
         runtime_writebarrierptr((uintptr *)p,(uintptr)local_44);
       }
-      prVar9 = (runtime__type *)(p->buf).len;
-      local_9c._8_4_ = (runtime__type *)((int)&prVar9->ptrdata + 1);
-      prVar7 = (runtime__type *)(p->buf).cap;
-      prVar5 = local_44;
-      if (prVar7 < local_9c._8_4_) {
-        old = (runtime_slice)CONCAT48(prVar7,CONCAT44(prVar9,local_44));
-        prVar5 = in_stack_fffffef8;
-        prVar7 = in_stack_ffffff00;
-        local_9c._4_4_ = prVar9;
-        runtime_growslice((runtime__type *)&DAT_080cf320,old,(int)local_9c._8_4_,
+      prVar10 = (runtime__type *)(p->buf).len;
+      local_94 = (runtime__type *)((int)&prVar10->ptrdata + 1);
+      prVar8 = (runtime__type *)(p->buf).cap;
+      prVar6 = local_44;
+      if (prVar8 < local_94) {
+        old = (runtime_slice)CONCAT48(prVar8,CONCAT44(prVar10,local_44));
+        prVar6 = in_stack_fffffef8;
+        prVar8 = in_stack_ffffff00;
+        local_98 = prVar10;
+        runtime_growslice((runtime__type *)&DAT_080cf320,old,(int)local_94,
                           (runtime_slice)
                           CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)))
         ;
-        prVar9 = local_9c._4_4_;
+        prVar10 = local_98;
       }
-      if (local_9c._8_4_ <= prVar7) {
-        local_9c._4_4_ = prVar7;
-        local_44 = prVar5;
-        runtime_memmove((void *)((int)&prVar9->size + (int)&prVar5->size),&DAT_080e0fb1,5);
-        (p->buf).len = (int)local_9c._8_4_;
-        (p->buf).cap = (int)local_9c._4_4_;
+      if (local_94 <= prVar8) {
+        local_98 = prVar8;
+        local_44 = prVar6;
+        runtime_memmove((uint8 *)((int)&prVar10->size + (int)&prVar6->size),&DAT_080e0fb1,5);
+        (p->buf).len = (int)local_94;
+        (p->buf).cap = (int)local_98;
         if (runtime_writeBarrier._0_4_ == 0) {
           (p->buf).array = (uint8 *)local_44;
           return;
@@ -86606,50 +86103,50 @@ LAB_080bb330:
         invalidInstructionException();
       } while( true );
     }
-    if (local_9c._12_4_ != (runtime__type *)0x11) {
-      if ((int)local_9c._12_4_ - 0x12U < 2) goto LAB_080bb30c;
+    if (local_90 != (runtime__type *)0x11) {
+      if ((int)local_90 - 0x12U < 2) goto LAB_080bb30c;
       goto LAB_080bb330;
     }
   }
   else {
-    if (0x17 < local_9c._12_4_) {
-      if (local_9c._12_4_ == (runtime__type *)0x18) {
+    if (0x17 < local_90) {
+      if (local_90 == (runtime__type *)0x18) {
         reflect_Value_String(value,(string)CONCAT44(local_88,local_8c));
         fmt___pp__fmtString(p,(string)CONCAT44(local_88,local_8c),verb);
         return;
       }
-      if (local_9c._12_4_ == (runtime__type *)0x19) {
+      if (local_90 == (runtime__type *)0x19) {
         if ((p->fmt).fmtFlags.sharpV != false) {
           reflect_Value_Type(value,(reflect_Type)CONCAT44(local_88,local_8c));
           (*(code *)local_8c[4].ptrdata)(local_88);
-          iVar8 = (p->buf).len;
-          prVar9 = (runtime__type *)(value.flag + iVar8);
+          iVar9 = (p->buf).len;
+          prVar10 = (runtime__type *)(value.flag + iVar9);
           local_58 = (runtime__type *)(p->buf).array;
-          prVar7 = (runtime__type *)(p->buf).cap;
-          local_9c._4_4_ = prVar9;
-          if (prVar7 < prVar9) {
-            local_8c = prVar7;
+          prVar8 = (runtime__type *)(p->buf).cap;
+          local_98 = prVar10;
+          if (prVar8 < prVar10) {
+            local_8c = prVar8;
             local_58 = in_stack_fffffef8;
-            prVar7 = in_stack_ffffff00;
+            prVar8 = in_stack_ffffff00;
             local_78 = value.ptr;
-            runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar9,
+            runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar10,
                               (runtime_slice)
                               CONCAT48(in_stack_ffffff00,
                                        CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
             value.ptr = local_78;
-            local_88 = prVar9;
+            local_88 = prVar10;
             in_stack_fffffef8 = local_58;
-            in_stack_ffffff00 = prVar7;
+            in_stack_ffffff00 = prVar8;
           }
-          if (prVar7 < local_9c._4_4_) {
+          if (prVar8 < local_98) {
             runtime_panicslice();
             do {
               invalidInstructionException();
             } while( true );
           }
-          runtime_memmove((void *)((int)&local_58->size + iVar8),value.ptr,value.flag);
-          (p->buf).len = (int)local_9c._4_4_;
-          (p->buf).cap = (int)prVar7;
+          runtime_memmove((uint8 *)((int)&local_58->size + iVar9),value.ptr,value.flag);
+          (p->buf).len = (int)local_98;
+          (p->buf).cap = (int)prVar8;
           if (runtime_writeBarrier._0_4_ == 0) {
             (p->buf).array = (uint8 *)local_58;
           }
@@ -86657,13 +86154,13 @@ LAB_080bb330:
             runtime_writebarrierptr((uintptr *)p,(uintptr)local_58);
           }
         }
-        prVar7 = (runtime__type *)(p->buf).cap;
-        prVar5 = (runtime__type *)(p->buf).len;
+        prVar8 = (runtime__type *)(p->buf).cap;
+        prVar6 = (runtime__type *)(p->buf).len;
         local_38 = (runtime__type *)(p->buf).array;
-        prVar9 = (runtime__type *)((int)&prVar5->size + 1);
-        if ((int)prVar7 < (int)prVar9) {
+        prVar10 = (runtime__type *)((int)&prVar6->size + 1);
+        if ((int)prVar8 < (int)prVar10) {
           local_38 = in_stack_fffffef8;
-          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar9,
+          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar10,
                             (runtime_slice)
                             CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)
                                     ));
@@ -86671,32 +86168,32 @@ LAB_080bb330:
           in_stack_fffffef8 = local_38;
           if (runtime_writeBarrier._0_4_ == 0) {
             (p->buf).array = (uint8 *)local_38;
-            prVar5 = in_stack_fffffefc;
-            local_8c = prVar7;
-            local_88 = prVar9;
+            prVar6 = in_stack_fffffefc;
+            local_8c = prVar8;
+            local_88 = prVar10;
           }
           else {
-            local_9c._8_4_ = in_stack_fffffefc;
+            local_94 = in_stack_fffffefc;
             runtime_writebarrierptr((uintptr *)p,(uintptr)local_38);
-            prVar5 = local_9c._8_4_;
-            local_8c = prVar7;
-            local_88 = prVar9;
+            prVar6 = local_94;
+            local_8c = prVar8;
+            local_88 = prVar10;
           }
         }
-        (p->buf).len = (int)&prVar5->size + 1;
-        *(undefined *)((int)&prVar5->size + (int)&local_38->size) = 0x7b;
+        (p->buf).len = (int)((int)&prVar6->size + 1);
+        *(uint8 *)((int)&prVar6->size + (int)&local_38->size) = 0x7b;
         local_54 = &stack0xfffffeec;
-        iVar8 = 0;
+        iVar9 = 0;
         do {
           reflect_Value_NumField(value,(int)local_8c);
-          if ((int)local_8c <= iVar8) {
+          if ((int)local_8c <= iVar9) {
             local_4c = (runtime__type *)(p->buf).array;
-            prVar9 = (runtime__type *)(p->buf).len;
-            iVar8 = (int)&prVar9->size + 1;
-            if ((p->buf).cap < iVar8) {
+            prVar10 = (runtime__type *)(p->buf).len;
+            puVar2 = (uint8 *)((int)&prVar10->size + 1);
+            if ((p->buf).cap < (int)puVar2) {
               local_4c = in_stack_fffffef8;
-              prVar9 = in_stack_fffffefc;
-              runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,iVar8,
+              prVar10 = in_stack_fffffefc;
+              runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)puVar2,
                                 (runtime_slice)
                                 CONCAT48(in_stack_ffffff00,
                                          CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
@@ -86708,72 +86205,72 @@ LAB_080bb330:
                 runtime_writebarrierptr((uintptr *)p,(uintptr)local_4c);
               }
             }
-            (p->buf).len = (int)&prVar9->size + 1;
-            *(undefined *)((int)&prVar9->size + (int)&local_4c->size) = 0x7d;
+            (p->buf).len = (int)((int)&prVar10->size + 1);
+            *(uint8 *)((int)&prVar10->size + (int)&local_4c->size) = 0x7d;
             return;
           }
-          if (0 < iVar8) {
+          if (0 < iVar9) {
             if ((p->fmt).fmtFlags.sharpV == false) {
-              prVar7 = (runtime__type *)(p->buf).len;
-              prVar5 = (runtime__type *)(p->buf).cap;
-              prVar9 = (runtime__type *)((int)&prVar7->size + 1);
-              prVar10 = (runtime__type *)(p->buf).array;
-              if ((int)prVar5 < (int)prVar9) {
-                prVar7 = in_stack_fffffefc;
-                runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar9,
+              prVar8 = (runtime__type *)(p->buf).len;
+              prVar6 = (runtime__type *)(p->buf).cap;
+              prVar10 = (runtime__type *)((int)&prVar8->size + 1);
+              prVar11 = (runtime__type *)(p->buf).array;
+              if ((int)prVar6 < (int)prVar10) {
+                prVar8 = in_stack_fffffefc;
+                runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar10,
                                   (runtime_slice)
                                   CONCAT48(in_stack_ffffff00,
                                            CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
                 (p->buf).cap = (int)in_stack_ffffff00;
-                in_stack_fffffefc = prVar7;
+                in_stack_fffffefc = prVar8;
                 if (runtime_writeBarrier._0_4_ == 0) {
                   (p->buf).array = (uint8 *)in_stack_fffffef8;
-                  prVar10 = in_stack_fffffef8;
-                  local_8c = prVar5;
-                  local_88 = prVar9;
+                  prVar11 = in_stack_fffffef8;
+                  local_8c = prVar6;
+                  local_88 = prVar10;
                 }
                 else {
                   local_40 = in_stack_fffffef8;
                   runtime_writebarrierptr((uintptr *)p,(uintptr)in_stack_fffffef8);
-                  prVar10 = local_40;
-                  local_8c = prVar5;
-                  local_88 = prVar9;
+                  prVar11 = local_40;
+                  local_8c = prVar6;
+                  local_88 = prVar10;
                 }
               }
-              (p->buf).len = (int)&prVar7->size + 1;
-              *(undefined *)((int)&prVar7->size + (int)&prVar10->size) = 0x20;
+              (p->buf).len = (int)((int)&prVar8->size + 1);
+              *(uint8 *)((int)&prVar8->size + (int)&prVar11->size) = 0x20;
             }
             else {
-              prVar7 = (runtime__type *)(p->buf).len;
-              prVar9 = (runtime__type *)((int)&prVar7->size + 2);
-              prVar5 = (runtime__type *)(p->buf).cap;
-              prVar10 = (runtime__type *)(p->buf).array;
-              local_9c._8_4_ = prVar9;
-              if (prVar5 < prVar9) {
-                local_8c = prVar5;
-                prVar10 = in_stack_fffffef8;
-                prVar5 = in_stack_ffffff00;
-                local_9c._4_4_ = prVar7;
-                runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar9,
+              prVar8 = (runtime__type *)(p->buf).len;
+              prVar10 = (runtime__type *)((int)&prVar8->size + 2);
+              prVar6 = (runtime__type *)(p->buf).cap;
+              prVar11 = (runtime__type *)(p->buf).array;
+              local_94 = prVar10;
+              if (prVar6 < prVar10) {
+                local_8c = prVar6;
+                prVar11 = in_stack_fffffef8;
+                prVar6 = in_stack_ffffff00;
+                local_98 = prVar8;
+                runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar10,
                                   (runtime_slice)
                                   CONCAT48(in_stack_ffffff00,
                                            CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
-                prVar7 = local_9c._4_4_;
-                local_88 = prVar9;
-                in_stack_fffffef8 = prVar10;
-                in_stack_ffffff00 = prVar5;
+                prVar8 = local_98;
+                local_88 = prVar10;
+                in_stack_fffffef8 = prVar11;
+                in_stack_ffffff00 = prVar6;
               }
-              if (prVar5 < local_9c._8_4_) {
+              if (prVar6 < local_94) {
                 runtime_panicslice();
                 do {
                   invalidInstructionException();
                 } while( true );
               }
-              local_9c._4_4_ = prVar5;
-              local_44 = prVar10;
-              runtime_memmove((void *)((int)&prVar7->size + (int)&prVar10->size),&DAT_080e0db5,2);
-              (p->buf).len = (int)local_9c._8_4_;
-              (p->buf).cap = (int)local_9c._4_4_;
+              local_98 = prVar6;
+              local_44 = prVar11;
+              runtime_memmove((uint8 *)((int)&prVar8->size + (int)&prVar11->size),&DAT_080e0db5,2);
+              (p->buf).len = (int)local_94;
+              (p->buf).cap = (int)local_98;
               if (runtime_writeBarrier._0_4_ == 0) {
                 (p->buf).array = (uint8 *)local_44;
               }
@@ -86784,113 +86281,113 @@ LAB_080bb330:
           }
           if (((p->fmt).fmtFlags.plusV != false) || ((p->fmt).fmtFlags.sharpV != false)) {
             reflect_Value_Type(value,(reflect_Type)CONCAT44(local_88,local_8c));
-            (*(code *)local_8c[1].alg)(local_88,iVar8);
+            (*(code *)local_8c[1].alg)(local_88,iVar9);
             FUN_0809021e();
             __n = local_30;
             if (local_30 != 0) {
-              prVar7 = (runtime__type *)(p->buf).len;
-              prVar9 = (runtime__type *)((int)&prVar7->size + local_30);
-              prVar5 = (runtime__type *)(p->buf).cap;
-              prVar10 = (runtime__type *)(p->buf).array;
+              prVar8 = (runtime__type *)(p->buf).len;
+              prVar10 = (runtime__type *)((int)&prVar8->size + local_30);
+              prVar6 = (runtime__type *)(p->buf).cap;
+              prVar11 = (runtime__type *)(p->buf).array;
               __src = local_34;
-              local_9c._8_4_ = prVar9;
-              if (prVar5 < prVar9) {
+              local_94 = prVar10;
+              if (prVar6 < prVar10) {
                 local_74 = local_34;
-                prVar10 = in_stack_fffffef8;
-                prVar5 = in_stack_ffffff00;
-                local_9c._4_4_ = prVar7;
-                runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar9,
+                prVar11 = in_stack_fffffef8;
+                prVar6 = in_stack_ffffff00;
+                local_98 = prVar8;
+                runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar10,
                                   (runtime_slice)
                                   CONCAT48(in_stack_ffffff00,
                                            CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
                 __src = local_74;
-                prVar7 = local_9c._4_4_;
-                local_88 = prVar9;
-                in_stack_fffffef8 = prVar10;
-                in_stack_ffffff00 = prVar5;
+                prVar8 = local_98;
+                local_88 = prVar10;
+                in_stack_fffffef8 = prVar11;
+                in_stack_ffffff00 = prVar6;
               }
-              if (prVar5 < local_9c._8_4_) {
+              if (prVar6 < local_94) {
                 runtime_panicslice();
                 do {
                   invalidInstructionException();
                 } while( true );
               }
-              local_9c._4_4_ = prVar5;
-              local_44 = prVar10;
-              runtime_memmove((void *)((int)&prVar7->size + (int)&prVar10->size),__src,__n);
-              (p->buf).len = (int)local_9c._8_4_;
-              (p->buf).cap = (int)local_9c._4_4_;
+              local_98 = prVar6;
+              local_44 = prVar11;
+              runtime_memmove((uint8 *)((int)&prVar8->size + (int)&prVar11->size),__src,__n);
+              (p->buf).len = (int)local_94;
+              (p->buf).cap = (int)local_98;
               if (runtime_writeBarrier._0_4_ == 0) {
                 (p->buf).array = (uint8 *)local_44;
               }
               else {
                 runtime_writebarrierptr((uintptr *)p,(uintptr)local_44);
               }
-              iVar3 = (p->buf).cap;
-              local_9c._0_4_ = (runtime__type *)(p->buf).len;
-              prVar9 = (runtime__type *)((int)&(local_9c._0_4_)->size + 1);
-              prVar7 = local_44;
-              if (iVar3 < (int)prVar9) {
-                uVar4 = CONCAT44(local_9c._0_4_,local_44);
-                prVar7 = in_stack_fffffef8;
-                local_9c._0_4_ = in_stack_fffffefc;
+              iVar4 = (p->buf).cap;
+              local_9c = (runtime__type *)(p->buf).len;
+              prVar10 = (runtime__type *)((int)&local_9c->size + 1);
+              prVar8 = local_44;
+              if (iVar4 < (int)prVar10) {
+                uVar5 = CONCAT44(local_9c,local_44);
+                prVar8 = in_stack_fffffef8;
+                local_9c = in_stack_fffffefc;
                 runtime_growslice((runtime__type *)&DAT_080cf320,
-                                  (runtime_slice)CONCAT48(iVar3,uVar4),(int)prVar9,
+                                  (runtime_slice)CONCAT48(iVar4,uVar5),(int)prVar10,
                                   (runtime_slice)
                                   CONCAT48(in_stack_ffffff00,
                                            CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
                 (p->buf).cap = (int)in_stack_ffffff00;
-                in_stack_fffffef8 = prVar7;
-                in_stack_fffffefc = local_9c._0_4_;
+                in_stack_fffffef8 = prVar8;
+                in_stack_fffffefc = local_9c;
                 if (runtime_writeBarrier._0_4_ == 0) {
-                  (p->buf).array = (uint8 *)prVar7;
-                  local_88 = prVar9;
+                  (p->buf).array = (uint8 *)prVar8;
+                  local_88 = prVar10;
                 }
                 else {
-                  local_3c = prVar7;
-                  runtime_writebarrierptr((uintptr *)p,(uintptr)prVar7);
-                  prVar7 = local_3c;
-                  local_88 = prVar9;
+                  local_3c = prVar8;
+                  runtime_writebarrierptr((uintptr *)p,(uintptr)prVar8);
+                  prVar8 = local_3c;
+                  local_88 = prVar10;
                 }
               }
-              (p->buf).len = (int)&(local_9c._0_4_)->size + 1;
-              *(undefined *)((int)&(local_9c._0_4_)->size + (int)&prVar7->size) = 0x3a;
+              (p->buf).len = (int)((int)&local_9c->size + 1);
+              *(uint8 *)((int)&local_9c->size + (int)&prVar8->size) = 0x3a;
             }
           }
           local_8c = in_stack_fffffefc;
-          fmt_getField(value,iVar8,
+          fmt_getField(value,iVar9,
                        (reflect_Value)CONCAT48(local_8c,CONCAT44(in_stack_fffffef8,local_88)));
-          prVar9 = (runtime__type *)(depth + 1);
-          uVar4 = CONCAT44(in_stack_fffffef8,local_88);
+          prVar10 = (runtime__type *)(depth + 1);
+          uVar5 = CONCAT44(in_stack_fffffef8,local_88);
           local_88 = (runtime__type *)verb;
           in_stack_fffffefc = local_8c;
-          fmt___pp__printValue(p,(reflect_Value)CONCAT48(local_8c,uVar4),verb,(int)prVar9);
-          iVar8 = iVar8 + 1;
-          in_stack_fffffef8 = prVar9;
+          fmt___pp__printValue(p,(reflect_Value)CONCAT48(local_8c,uVar5),verb,(int)prVar10);
+          iVar9 = iVar9 + 1;
+          in_stack_fffffef8 = prVar10;
         } while( true );
       }
-      if (local_9c._12_4_ != (runtime__type *)0x1a) goto LAB_080bb330;
+      if (local_90 != (runtime__type *)0x1a) goto LAB_080bb330;
 LAB_080bb30c:
       fmt___pp__fmtPointer(p,value,verb);
       return;
     }
-    if (local_9c._12_4_ == (runtime__type *)0x16) {
+    if (local_90 == (runtime__type *)0x16) {
       if ((depth == 0) &&
          (reflect_Value_Pointer(value,(uintptr)local_8c), local_8c != (runtime__type *)0x0)) {
         reflect_Value_Elem(value,(reflect_Value)
                                  CONCAT48(in_stack_fffffef8,CONCAT44(local_88,local_8c)));
-        uVar6 = (uint)in_stack_fffffef8 & 0x1f;
-        if (uVar6 < 0x16) {
-          if ((uVar6 == 0x11) || (uVar6 == 0x15)) {
+        uVar7 = (uint)in_stack_fffffef8 & 0x1f;
+        if (uVar7 < 0x16) {
+          if ((uVar7 == 0x11) || (uVar7 == 0x15)) {
 LAB_080bbfef:
-            local_9c._8_4_ = (runtime__type *)(p->buf).len;
+            local_94 = (runtime__type *)(p->buf).len;
             local_38 = (runtime__type *)(p->buf).array;
-            iVar8 = (int)&(local_9c._8_4_)->size + 1;
-            local_9c._12_4_ = in_stack_fffffef8;
-            if ((p->buf).cap < iVar8) {
+            puVar2 = (uint8 *)((int)&local_94->size + 1);
+            local_90 = in_stack_fffffef8;
+            if ((p->buf).cap < (int)puVar2) {
               local_38 = in_stack_fffffef8;
-              local_9c._8_4_ = in_stack_fffffefc;
-              runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,iVar8,
+              local_94 = in_stack_fffffefc;
+              runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)puVar2,
                                 (runtime_slice)
                                 CONCAT48(in_stack_ffffff00,
                                          CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
@@ -86902,17 +86399,14 @@ LAB_080bbfef:
                 runtime_writebarrierptr((uintptr *)p,(uintptr)local_38);
               }
             }
-            (p->buf).len = (int)&(local_9c._8_4_)->size + 1;
-            *(undefined *)((int)&(local_9c._8_4_)->size + (int)&local_38->size) = 0x26;
+            (p->buf).len = (int)((int)&local_94->size + 1);
+            *(uint8 *)((int)&local_94->size + (int)&local_38->size) = 0x26;
             fmt___pp__printValue
-                      (p,(reflect_Value)CONCAT48(local_9c._12_4_,CONCAT44(local_88,local_8c)),verb,1
-                      );
+                      (p,(reflect_Value)CONCAT48(local_90,CONCAT44(local_88,local_8c)),verb,1);
             return;
           }
         }
-        else {
-          if ((uVar6 == 0x17) || (uVar6 == 0x19)) goto LAB_080bbfef;
-        }
+        else if ((uVar7 == 0x17) || (uVar7 == 0x19)) goto LAB_080bbfef;
       }
       goto LAB_080bb30c;
     }
@@ -86920,65 +86414,60 @@ LAB_080bbfef:
   if (verb < 0x72) {
     if ((verb != 0x58) && (verb != 0x71)) goto LAB_080baaf1;
   }
-  else {
-    if ((verb != 0x73) && (verb != 0x78)) goto LAB_080baaf1;
-  }
-  puVar11 = (undefined *)value.ptr;
-  rVar12 = value.flag;
+  else if ((verb != 0x73) && (verb != 0x78)) goto LAB_080baaf1;
+  puVar12 = (undefined *)value.ptr;
+  rVar13 = value.flag;
   reflect_Value_Type(value,(reflect_Type)CONCAT44(local_88,local_8c));
   local_84 = local_8c;
   local_80 = local_88;
   (**(code **)&local_8c[1].tflag)(local_88);
-  (**(code **)(puVar11 + 0x54))(rVar12);
-  if (puVar11 == &DAT_00000008) {
-    if (local_9c._12_4_ == (runtime__type *)0x17) {
+  (**(code **)(puVar12 + 0x54))(rVar13);
+  if (puVar12 == &DAT_00000008) {
+    if (local_90 == (runtime__type *)0x17) {
       local_60 = local_8c;
       reflect_Value_Bytes(value,(__uint8)CONCAT48(in_stack_fffffef8,CONCAT44(local_88,local_8c)));
     }
-    else {
-      if (((undefined  [12])value & (undefined  [12])0x100) == (undefined  [12])0x0) {
-        value.ptr = local_8c;
-        reflect_Value_Len(value,(int)local_8c);
-        value.flag = (reflect_flag)value.ptr;
-        local_60 = (runtime__type *)value.ptr;
-        runtime_makeslice((runtime__type *)&DAT_080cf320,(int)value.ptr,(int)value.ptr,
-                          (runtime_slice)CONCAT48(in_stack_fffffef8,CONCAT44(local_88,value.ptr)));
-        prVar7 = local_88;
-        prVar5 = in_stack_fffffef8;
-        for (prVar9 = (runtime__type *)0x0; (int)prVar9 < (int)local_88;
-            prVar9 = (runtime__type *)((int)&prVar9->size + 1)) {
-          prVar10 = prVar9;
-          value.ptr = prVar5;
-          value.flag = (reflect_flag)in_stack_fffffefc;
-          reflect_Value_Index(value,(int)prVar9,
-                              (reflect_Value)CONCAT48(in_stack_fffffefc,CONCAT44(prVar5,prVar7)));
-          prVar5 = (runtime__type *)value.ptr;
-          in_stack_fffffefc = (runtime__type *)value.flag;
-          reflect_Value_Uint((reflect_Value)CONCAT48(value.flag,CONCAT44(value.ptr,prVar7)),
-                             CONCAT44(prVar7,prVar10));
-          if (local_88 <= prVar9) {
-            runtime_panicindex();
-            do {
-              invalidInstructionException();
-            } while( true );
-          }
-          *(char *)((int)&prVar9->size + (int)&local_60->size) = (char)prVar10;
+    else if (((undefined  [12])value & (undefined  [12])0x100) == (undefined  [12])0x0) {
+      value.ptr = local_8c;
+      reflect_Value_Len(value,(int)local_8c);
+      value.flag = (reflect_flag)value.ptr;
+      local_60 = (runtime__type *)value.ptr;
+      runtime_makeslice((runtime__type *)&DAT_080cf320,(int)value.ptr,(int)value.ptr,
+                        (runtime_slice)CONCAT48(in_stack_fffffef8,CONCAT44(local_88,value.ptr)));
+      prVar8 = local_88;
+      prVar6 = in_stack_fffffef8;
+      for (prVar10 = (runtime__type *)0x0; (int)prVar10 < (int)local_88;
+          prVar10 = (runtime__type *)((int)&prVar10->size + 1)) {
+        prVar11 = prVar10;
+        value.ptr = prVar6;
+        value.flag = (reflect_flag)in_stack_fffffefc;
+        reflect_Value_Index(value,(int)prVar10,
+                            (reflect_Value)CONCAT48(in_stack_fffffefc,CONCAT44(prVar6,prVar8)));
+        prVar6 = (runtime__type *)value.ptr;
+        in_stack_fffffefc = (runtime__type *)value.flag;
+        reflect_Value_Uint((reflect_Value)CONCAT48(value.flag,CONCAT44(value.ptr,prVar8)),
+                           CONCAT44(prVar8,prVar11));
+        if (local_88 <= prVar10) {
+          runtime_panicindex();
+          do {
+            invalidInstructionException();
+          } while( true );
         }
+        *(uint8 *)((int)&prVar10->size + (int)&local_60->size) = (uint8)prVar11;
       }
-      else {
-        reflect_Value_Len(value,(int)local_8c);
-        local_60 = (runtime__type *)0x0;
-        value.ptr = in_stack_fffffefc;
-        value.flag = (reflect_flag)in_stack_ffffff00;
-        reflect_Value_Slice(value,0,(int)local_8c,
-                            (reflect_Value)
-                            CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)
-                                    ));
-        local_88 = local_8c;
-        reflect_Value_Bytes((reflect_Value)
-                            CONCAT48(value.flag,CONCAT44(value.ptr,in_stack_fffffef8)),
-                            (__uint8)CONCAT48(in_stack_fffffef8,CONCAT44(local_8c,local_60)));
-      }
+    }
+    else {
+      reflect_Value_Len(value,(int)local_8c);
+      local_60 = (runtime__type *)0x0;
+      value.ptr = in_stack_fffffefc;
+      value.flag = (reflect_flag)in_stack_ffffff00;
+      reflect_Value_Slice(value,0,(int)local_8c,
+                          (reflect_Value)
+                          CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)))
+      ;
+      local_88 = local_8c;
+      reflect_Value_Bytes((reflect_Value)CONCAT48(value.flag,CONCAT44(value.ptr,in_stack_fffffef8)),
+                          (__uint8)CONCAT48(in_stack_fffffef8,CONCAT44(local_8c,local_60)));
     }
     (*(code *)local_84[4].ptrdata)(local_80);
     fmt___pp__fmtBytes(p,(__uint8)CONCAT48(in_stack_fffffef8,CONCAT44(local_88,local_60)),verb,
@@ -86987,78 +86476,78 @@ LAB_080bbfef:
   }
 LAB_080baaf1:
   if ((p->fmt).fmtFlags.sharpV == false) {
-    prVar7 = (runtime__type *)(p->buf).cap;
-    local_9c._0_4_ = (runtime__type *)(p->buf).len;
+    prVar8 = (runtime__type *)(p->buf).cap;
+    local_9c = (runtime__type *)(p->buf).len;
     local_40 = (runtime__type *)(p->buf).array;
-    prVar9 = (runtime__type *)((int)&(local_9c._0_4_)->size + 1);
-    if ((int)prVar7 < (int)prVar9) {
+    prVar10 = (runtime__type *)((int)&local_9c->size + 1);
+    if ((int)prVar8 < (int)prVar10) {
       local_40 = in_stack_fffffef8;
-      local_9c._0_4_ = in_stack_fffffefc;
-      runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar9,
+      local_9c = in_stack_fffffefc;
+      runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar10,
                         (runtime_slice)
                         CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
       (p->buf).cap = (int)in_stack_ffffff00;
       in_stack_fffffef8 = local_40;
-      in_stack_fffffefc = local_9c._0_4_;
+      in_stack_fffffefc = local_9c;
       if (runtime_writeBarrier._0_4_ == 0) {
         (p->buf).array = (uint8 *)local_40;
-        local_8c = prVar7;
-        local_88 = prVar9;
+        local_8c = prVar8;
+        local_88 = prVar10;
       }
       else {
         runtime_writebarrierptr((uintptr *)p,(uintptr)local_40);
-        local_8c = prVar7;
-        local_88 = prVar9;
+        local_8c = prVar8;
+        local_88 = prVar10;
       }
     }
-    (p->buf).len = (int)&(local_9c._0_4_)->size + 1;
-    *(undefined *)((int)&(local_9c._0_4_)->size + (int)&local_40->size) = 0x5b;
-    for (iVar8 = 0; reflect_Value_Len(value,(int)local_8c), iVar8 < (int)local_8c; iVar8 = iVar8 + 1
+    (p->buf).len = (int)((int)&local_9c->size + 1);
+    *(uint8 *)((int)&local_9c->size + (int)&local_40->size) = 0x5b;
+    for (iVar9 = 0; reflect_Value_Len(value,(int)local_8c), iVar9 < (int)local_8c; iVar9 = iVar9 + 1
         ) {
       local_8c = in_stack_fffffefc;
-      if (0 < iVar8) {
-        local_9c._8_4_ = (runtime__type *)(p->buf).len;
-        prVar9 = (runtime__type *)((int)&(local_9c._8_4_)->size + 1);
-        prVar7 = (runtime__type *)(p->buf).array;
-        if ((p->buf).cap < (int)prVar9) {
-          local_9c._8_4_ = in_stack_fffffefc;
-          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar9,
+      if (0 < iVar9) {
+        local_94 = (runtime__type *)(p->buf).len;
+        prVar10 = (runtime__type *)((int)&local_94->size + 1);
+        prVar8 = (runtime__type *)(p->buf).array;
+        if ((p->buf).cap < (int)prVar10) {
+          local_94 = in_stack_fffffefc;
+          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar10,
                             (runtime_slice)
                             CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)
                                     ));
           (p->buf).cap = (int)in_stack_ffffff00;
-          local_8c = local_9c._8_4_;
+          local_8c = local_94;
           if (runtime_writeBarrier._0_4_ == 0) {
             (p->buf).array = (uint8 *)in_stack_fffffef8;
-            prVar7 = in_stack_fffffef8;
-            local_88 = prVar9;
+            prVar8 = in_stack_fffffef8;
+            local_88 = prVar10;
           }
           else {
             local_38 = in_stack_fffffef8;
             runtime_writebarrierptr((uintptr *)p,(uintptr)in_stack_fffffef8);
-            prVar7 = local_38;
-            local_88 = prVar9;
+            prVar8 = local_38;
+            local_88 = prVar10;
           }
         }
-        (p->buf).len = (int)&(local_9c._8_4_)->size + 1;
-        *(undefined *)((int)&(local_9c._8_4_)->size + (int)&prVar7->size) = 0x20;
+        (p->buf).len = (int)((int)&local_94->size + 1);
+        *(uint8 *)((int)&local_94->size + (int)&prVar8->size) = 0x20;
       }
-      reflect_Value_Index(value,iVar8,
+      reflect_Value_Index(value,iVar9,
                           (reflect_Value)CONCAT48(local_8c,CONCAT44(in_stack_fffffef8,local_88)));
-      prVar9 = (runtime__type *)(depth + 1);
-      uVar4 = CONCAT44(in_stack_fffffef8,local_88);
+      prVar10 = (runtime__type *)(depth + 1);
+      uVar5 = CONCAT44(in_stack_fffffef8,local_88);
       local_88 = (runtime__type *)verb;
       in_stack_fffffefc = local_8c;
-      fmt___pp__printValue(p,(reflect_Value)CONCAT48(local_8c,uVar4),verb,(int)prVar9);
-      in_stack_fffffef8 = prVar9;
+      fmt___pp__printValue(p,(reflect_Value)CONCAT48(local_8c,uVar5),verb,(int)prVar10);
+      in_stack_fffffef8 = prVar10;
     }
-    local_9c._4_4_ = (runtime__type *)(p->buf).len;
+    local_98 = (runtime__type *)(p->buf).len;
     local_3c = (runtime__type *)(p->buf).array;
-    iVar8 = (int)&(local_9c._4_4_)->size + 1;
-    if ((p->buf).cap < iVar8) {
+    puVar2 = (uint8 *)((int)&local_98->size + 1);
+    if ((p->buf).cap < (int)puVar2) {
       local_3c = in_stack_fffffef8;
-      local_9c._4_4_ = in_stack_fffffefc;
-      runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,iVar8,
+      local_98 = in_stack_fffffefc;
+      runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)puVar2,
                         (runtime_slice)
                         CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
       (p->buf).cap = (int)in_stack_ffffff00;
@@ -87069,65 +86558,65 @@ LAB_080baaf1:
         runtime_writebarrierptr((uintptr *)p,(uintptr)local_3c);
       }
     }
-    (p->buf).len = (int)&(local_9c._4_4_)->size + 1;
-    *(undefined *)((int)&(local_9c._4_4_)->size + (int)&local_3c->size) = 0x5d;
+    (p->buf).len = (int)((int)&local_98->size + 1);
+    *(uint8 *)((int)&local_98->size + (int)&local_3c->size) = 0x5d;
     return;
   }
   reflect_Value_Type(value,(reflect_Type)CONCAT44(local_88,local_8c));
   (*(code *)local_8c[4].ptrdata)(local_88);
-  prVar7 = (runtime__type *)(p->buf).len;
-  prVar9 = (runtime__type *)((int)&prVar7->size + value.flag);
+  prVar8 = (runtime__type *)(p->buf).len;
+  prVar10 = (runtime__type *)((int)&prVar8->size + value.flag);
   local_44 = (runtime__type *)(p->buf).array;
-  prVar5 = (runtime__type *)(p->buf).cap;
-  local_9c._8_4_ = prVar9;
-  if (prVar5 < prVar9) {
-    local_8c = prVar5;
+  prVar6 = (runtime__type *)(p->buf).cap;
+  local_94 = prVar10;
+  if (prVar6 < prVar10) {
+    local_8c = prVar6;
     local_44 = in_stack_fffffef8;
-    prVar5 = in_stack_ffffff00;
-    local_9c._4_4_ = prVar7;
+    prVar6 = in_stack_ffffff00;
+    local_98 = prVar8;
     local_7c = value.ptr;
-    runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar9,
+    runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar10,
                       (runtime_slice)
                       CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
     value.ptr = local_7c;
-    prVar7 = local_9c._4_4_;
-    local_88 = prVar9;
+    prVar8 = local_98;
+    local_88 = prVar10;
     in_stack_fffffef8 = local_44;
-    in_stack_ffffff00 = prVar5;
+    in_stack_ffffff00 = prVar6;
   }
-  if (local_9c._8_4_ <= prVar5) {
-    local_9c._4_4_ = prVar5;
-    runtime_memmove((void *)((int)&prVar7->size + (int)&local_44->size),value.ptr,value.flag);
-    (p->buf).len = (int)local_9c._8_4_;
-    (p->buf).cap = (int)local_9c._4_4_;
+  if (local_94 <= prVar6) {
+    local_98 = prVar6;
+    runtime_memmove((uint8 *)((int)&prVar8->size + (int)&local_44->size),value.ptr,value.flag);
+    (p->buf).len = (int)local_94;
+    (p->buf).cap = (int)local_98;
     if (runtime_writeBarrier._0_4_ == 0) {
       (p->buf).array = (uint8 *)local_44;
     }
     else {
       runtime_writebarrierptr((uintptr *)p,(uintptr)local_44);
     }
-    if ((local_9c._12_4_ == (runtime__type *)0x17) &&
+    if ((local_90 == (runtime__type *)0x17) &&
        (reflect_Value_IsNil(value,SUB41(local_8c,0)), (char)local_8c != '\0')) {
-      prVar9 = (runtime__type *)(p->buf).len;
-      local_9c._8_4_ = (runtime__type *)((int)&prVar9->ptrdata + 1);
-      prVar7 = (runtime__type *)(p->buf).cap;
-      prVar5 = (runtime__type *)(p->buf).array;
-      if (prVar7 < local_9c._8_4_) {
-        prVar5 = in_stack_fffffef8;
-        prVar7 = in_stack_ffffff00;
-        local_9c._4_4_ = prVar9;
-        runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)local_9c._8_4_,
+      prVar10 = (runtime__type *)(p->buf).len;
+      local_94 = (runtime__type *)((int)&prVar10->ptrdata + 1);
+      prVar8 = (runtime__type *)(p->buf).cap;
+      prVar6 = (runtime__type *)(p->buf).array;
+      if (prVar8 < local_94) {
+        prVar6 = in_stack_fffffef8;
+        prVar8 = in_stack_ffffff00;
+        local_98 = prVar10;
+        runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)local_94,
                           (runtime_slice)
                           CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)))
         ;
-        prVar9 = local_9c._4_4_;
+        prVar10 = local_98;
       }
-      if (local_9c._8_4_ <= prVar7) {
-        local_9c._4_4_ = prVar7;
-        local_44 = prVar5;
-        runtime_memmove((void *)((int)&prVar9->size + (int)&prVar5->size),&DAT_080e0fb1,5);
-        (p->buf).len = (int)local_9c._8_4_;
-        (p->buf).cap = (int)local_9c._4_4_;
+      if (local_94 <= prVar8) {
+        local_98 = prVar8;
+        local_44 = prVar6;
+        runtime_memmove((uint8 *)((int)&prVar10->size + (int)&prVar6->size),&DAT_080e0fb1,5);
+        (p->buf).len = (int)local_94;
+        (p->buf).cap = (int)local_98;
         if (runtime_writeBarrier._0_4_ == 0) {
           (p->buf).array = (uint8 *)local_44;
         }
@@ -87141,43 +86630,43 @@ LAB_080baaf1:
         invalidInstructionException();
       } while( true );
     }
-    prVar7 = (runtime__type *)(p->buf).len;
+    prVar8 = (runtime__type *)(p->buf).len;
     local_40 = (runtime__type *)(p->buf).array;
-    prVar5 = (runtime__type *)(p->buf).cap;
-    prVar9 = (runtime__type *)((int)&prVar7->size + 1);
-    if ((int)prVar5 < (int)prVar9) {
+    prVar6 = (runtime__type *)(p->buf).cap;
+    prVar10 = (runtime__type *)((int)&prVar8->size + 1);
+    if ((int)prVar6 < (int)prVar10) {
       local_40 = in_stack_fffffef8;
-      prVar7 = in_stack_fffffefc;
-      runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar9,
+      prVar8 = in_stack_fffffefc;
+      runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar10,
                         (runtime_slice)
                         CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)));
       (p->buf).cap = (int)in_stack_ffffff00;
       in_stack_fffffef8 = local_40;
-      in_stack_fffffefc = prVar7;
+      in_stack_fffffefc = prVar8;
       if (runtime_writeBarrier._0_4_ == 0) {
         (p->buf).array = (uint8 *)local_40;
-        local_8c = prVar5;
-        local_88 = prVar9;
+        local_8c = prVar6;
+        local_88 = prVar10;
       }
       else {
         runtime_writebarrierptr((uintptr *)p,(uintptr)local_40);
-        local_8c = prVar5;
-        local_88 = prVar9;
+        local_8c = prVar6;
+        local_88 = prVar10;
       }
     }
-    (p->buf).len = (int)&prVar7->size + 1;
-    *(undefined *)((int)&prVar7->size + (int)&local_40->size) = 0x7b;
-    iVar8 = 0;
+    (p->buf).len = (int)((int)&prVar8->size + 1);
+    *(uint8 *)((int)&prVar8->size + (int)&local_40->size) = 0x7b;
+    iVar9 = 0;
     do {
       reflect_Value_Len(value,(int)local_8c);
-      if ((int)local_8c <= iVar8) {
-        local_9c._0_4_ = (runtime__type *)(p->buf).len;
+      if ((int)local_8c <= iVar9) {
+        local_9c = (runtime__type *)(p->buf).len;
         local_3c = (runtime__type *)(p->buf).array;
-        iVar8 = (int)&(local_9c._0_4_)->size + 1;
-        if ((p->buf).cap < iVar8) {
+        puVar2 = (uint8 *)((int)&local_9c->size + 1);
+        if ((p->buf).cap < (int)puVar2) {
           local_3c = in_stack_fffffef8;
-          local_9c._0_4_ = in_stack_fffffefc;
-          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,iVar8,
+          local_9c = in_stack_fffffefc;
+          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)puVar2,
                             (runtime_slice)
                             CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)
                                     ));
@@ -87189,42 +86678,42 @@ LAB_080baaf1:
             runtime_writebarrierptr((uintptr *)p,(uintptr)local_3c);
           }
         }
-        (p->buf).len = (int)&(local_9c._0_4_)->size + 1;
-        *(undefined *)((int)&(local_9c._0_4_)->size + (int)&local_3c->size) = 0x7d;
+        (p->buf).len = (int)((int)&local_9c->size + 1);
+        *(uint8 *)((int)&local_9c->size + (int)&local_3c->size) = 0x7d;
         return;
       }
       local_8c = in_stack_fffffefc;
-      if (0 < iVar8) {
-        prVar7 = (runtime__type *)(p->buf).len;
-        prVar9 = (runtime__type *)((int)&prVar7->size + 2);
-        prVar5 = (runtime__type *)(p->buf).cap;
-        prVar10 = (runtime__type *)(p->buf).array;
-        local_9c._8_4_ = prVar9;
-        if (prVar5 < prVar9) {
-          prVar10 = in_stack_fffffef8;
-          prVar5 = in_stack_ffffff00;
-          local_9c._4_4_ = prVar7;
-          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar9,
+      if (0 < iVar9) {
+        prVar8 = (runtime__type *)(p->buf).len;
+        prVar10 = (runtime__type *)((int)&prVar8->size + 2);
+        prVar6 = (runtime__type *)(p->buf).cap;
+        prVar11 = (runtime__type *)(p->buf).array;
+        local_94 = prVar10;
+        if (prVar6 < prVar10) {
+          prVar11 = in_stack_fffffef8;
+          prVar6 = in_stack_ffffff00;
+          local_98 = prVar8;
+          runtime_growslice((runtime__type *)&DAT_080cf320,(runtime_slice)p->buf,(int)prVar10,
                             (runtime_slice)
                             CONCAT48(in_stack_ffffff00,CONCAT44(in_stack_fffffefc,in_stack_fffffef8)
                                     ));
-          prVar7 = local_9c._4_4_;
-          local_88 = prVar9;
-          in_stack_fffffef8 = prVar10;
+          prVar8 = local_98;
+          local_88 = prVar10;
+          in_stack_fffffef8 = prVar11;
           local_8c = in_stack_fffffefc;
-          in_stack_ffffff00 = prVar5;
+          in_stack_ffffff00 = prVar6;
         }
-        if (prVar5 < local_9c._8_4_) {
+        if (prVar6 < local_94) {
           runtime_panicslice();
           do {
             invalidInstructionException();
           } while( true );
         }
-        local_9c._4_4_ = prVar5;
-        local_44 = prVar10;
-        runtime_memmove((void *)((int)&prVar7->size + (int)&prVar10->size),&DAT_080e0db5,2);
-        (p->buf).len = (int)local_9c._8_4_;
-        (p->buf).cap = (int)local_9c._4_4_;
+        local_98 = prVar6;
+        local_44 = prVar11;
+        runtime_memmove((uint8 *)((int)&prVar8->size + (int)&prVar11->size),&DAT_080e0db5,2);
+        (p->buf).len = (int)local_94;
+        (p->buf).cap = (int)local_98;
         if (runtime_writeBarrier._0_4_ == 0) {
           (p->buf).array = (uint8 *)local_44;
         }
@@ -87232,15 +86721,15 @@ LAB_080baaf1:
           runtime_writebarrierptr((uintptr *)p,(uintptr)local_44);
         }
       }
-      reflect_Value_Index(value,iVar8,
+      reflect_Value_Index(value,iVar9,
                           (reflect_Value)CONCAT48(local_8c,CONCAT44(in_stack_fffffef8,local_88)));
-      prVar9 = (runtime__type *)(depth + 1);
-      uVar4 = CONCAT44(in_stack_fffffef8,local_88);
+      prVar10 = (runtime__type *)(depth + 1);
+      uVar5 = CONCAT44(in_stack_fffffef8,local_88);
       local_88 = (runtime__type *)verb;
       in_stack_fffffefc = local_8c;
-      fmt___pp__printValue(p,(reflect_Value)CONCAT48(local_8c,uVar4),verb,(int)prVar9);
-      iVar8 = iVar8 + 1;
-      in_stack_fffffef8 = prVar9;
+      fmt___pp__printValue(p,(reflect_Value)CONCAT48(local_8c,uVar5),verb,(int)prVar10);
+      iVar9 = iVar9 + 1;
+      in_stack_fffffef8 = prVar10;
     } while( true );
   }
   runtime_panicslice();
@@ -87251,11 +86740,11 @@ LAB_080baaf1:
 
 
 
-void fmt___pp__doPrintln(fmt_pp *p,__interface__ a)
+void fmt___pp__doPrintln(fmt_pp *p,__interface___ a)
 
 {
   uint *puVar1;
-  interface__ arg;
+  interface___ arg;
   int iVar2;
   int iVar3;
   uint8 *puVar4;
@@ -87325,7 +86814,7 @@ void fmt___pp__doPrintln(fmt_pp *p,__interface__ a)
 
 
 
-void fmt_glob__func1(interface__ _r0)
+void fmt_glob__func1(interface___ _r0)
 
 {
   uint *puVar1;
@@ -87350,7 +86839,7 @@ int fmt_init(EVP_PKEY_CTX *ctx)
 {
   uint *puVar1;
   void *pvVar2;
-  uint uVar3;
+  int iVar3;
   int *in_GS_OFFSET;
   EVP_PKEY_CTX *in_stack_fffffff0;
   runtime_itab *in_stack_fffffff8;
@@ -87361,8 +86850,8 @@ int fmt_init(EVP_PKEY_CTX *ctx)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    uVar3 = fmt_init(ctx);
-    return uVar3;
+    iVar3 = fmt_init(ctx);
+    return iVar3;
   }
   if (fmt_initdoneￂﾷ < 2) {
     if (fmt_initdoneￂﾷ != 1) {
@@ -87384,15 +86873,15 @@ int fmt_init(EVP_PKEY_CTX *ctx)
       fmt_complexError.data = pvVar2;
       errors_New((string)0x1d080e4d0e,(error)CONCAT44(in_stack_fffffffc,prVar4));
       fmt_boolError.tab = prVar4;
-      uVar3 = runtime_writeBarrier._0_4_;
+      iVar3 = runtime_writeBarrier._0_4_;
       if (runtime_writeBarrier._0_4_ != 0) {
-        uVar3 = 0x814500c;
+        iVar3 = 0x814500c;
         runtime_writebarrierptr((uintptr *)&fmt_boolError.data,(uintptr)in_stack_fffffffc);
         in_stack_fffffffc = fmt_boolError.data;
       }
       fmt_boolError.data = in_stack_fffffffc;
       fmt_initdoneￂﾷ = 2;
-      return uVar3;
+      return iVar3;
     }
     runtime_throwinit();
     do {
@@ -87468,8 +86957,8 @@ void main_main(void)
       (undefined *)register0x00000010 != (undefined *)*puVar1) {
     local_8 = &DAT_080cf1a0;
     local_4 = &main_statictmp_0;
-    fmt_Println((__interface__)CONCAT48(1,CONCAT44(1,&local_8)),in_stack_ffffffec,in_stack_fffffff0)
-    ;
+    fmt_Println((__interface___)CONCAT48(1,CONCAT44(1,&local_8)),in_stack_ffffffec,in_stack_fffffff0
+               );
     return;
   }
   local_4 = (string *)0x80bd2be;
@@ -87484,7 +86973,7 @@ int main_init(EVP_PKEY_CTX *ctx)
 
 {
   uint *puVar1;
-  uint uVar2;
+  int iVar2;
   int *in_GS_OFFSET;
   EVP_PKEY_CTX *unaff_retaddr;
   
@@ -87492,8 +86981,8 @@ int main_init(EVP_PKEY_CTX *ctx)
   if (register0x00000010 < (undefined *)*puVar1 ||
       (undefined *)register0x00000010 == (undefined *)*puVar1) {
     runtime_morestack_noctxt();
-    uVar2 = main_init(ctx);
-    return uVar2;
+    iVar2 = main_init(ctx);
+    return iVar2;
   }
   if (1 < main_initdoneￂﾷ) {
     return (uint)main_initdoneￂﾷ;
@@ -87505,9 +86994,9 @@ int main_init(EVP_PKEY_CTX *ctx)
     } while( true );
   }
   main_initdoneￂﾷ = 1;
-  uVar2 = fmt_init(unaff_retaddr);
+  iVar2 = fmt_init(unaff_retaddr);
   main_initdoneￂﾷ = 2;
-  return uVar2;
+  return iVar2;
 }
 
 
