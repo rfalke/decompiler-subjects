@@ -657,8 +657,8 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
                 case 25:
                     v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xffffff84);
                     v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xffffff8c);
-                    v25 = reinterpret_cast<void**>(0x8059559);
-                    eax56 = fun_804a19c(eax52, 0x8059559, v24, v26, v27);
+                    v25 = reinterpret_cast<void**>("%d,%d");
+                    eax56 = fun_804a19c(eax52, "%d,%d", v24, v26, v27);
                     if (reinterpret_cast<int1_t>(eax56 == 1)) {
                     }
                     v37 = reinterpret_cast<void*>(1);
@@ -669,8 +669,8 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
                     break;
                 case 27:
                     v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xffffff84);
-                    v25 = reinterpret_cast<void**>(0x805955f);
-                    eax57 = fun_804a19c(eax52, 0x805955f, v24, v26, v27);
+                    v25 = reinterpret_cast<void**>("%d");
+                    eax57 = fun_804a19c(eax52, "%d", v24, v26, v27);
                     v37 = eax57;
                     break;
                 case 34:
@@ -693,7 +693,7 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
                 case 37:
                 case 44:
                     v25 = reinterpret_cast<void**>(static_cast<int32_t>(*reinterpret_cast<signed char*>(&eax50)));
-                    error_printf(0x805953e, v25, v24, v26, v27, 0x805953e, v25, v24, v26, v27);
+                    error_printf("WARNING: -%c is obsolete.\n", v25, v24, v26, v27, "WARNING: -%c is obsolete.\n", v25, v24, v26, v27);
                     break;
                 case 38:
                     v37 = reinterpret_cast<void*>(1);
@@ -874,34 +874,34 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             continue;
         }
         v67 = v20 + 1;
-        eax68 = local_strcasecmp(v67, 0x8058ef1, v24, v26, v27);
+        eax68 = local_strcasecmp(v67, "resample", v24, v26, v27);
         if (!eax68) 
             goto addr_8050665_88;
-        eax69 = local_strcasecmp(v67, 0x8058efa, v24, v26, v27);
+        eax69 = local_strcasecmp(v67, "vbr-old", v24, v26, v27);
         if (!eax69) {
             v25 = reinterpret_cast<void**>(2);
             fun_804a4bc(a1, 2, v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax70 = local_strcasecmp(v67, 0x8058f02, v24, v26, v27);
+        eax70 = local_strcasecmp(v67, "vbr-new", v24, v26, v27);
         if (!eax70) {
             v25 = reinterpret_cast<void**>(4);
             fun_804a4bc(a1, 4, v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax71 = local_strcasecmp(v67, 0x8058f0a, v24, v26, v27);
+        eax71 = local_strcasecmp(v67, "vbr-mtrh", v24, v26, v27);
         if (!eax71) {
             v25 = reinterpret_cast<void**>(4);
             fun_804a4bc(a1, 4, v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax72 = local_strcasecmp(v67, 0x8058f13, v24, v26, v27);
+        eax72 = local_strcasecmp(v67, "cbr", v24, v26, v27);
         if (!eax72) {
             v25 = reinterpret_cast<void**>(0);
             fun_804a4bc(a1, 0, v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax73 = local_strcasecmp(v67, 0x8058f17, v24, v26, v27);
+        eax73 = local_strcasecmp(v67, "abr", v24, v26, v27);
         if (!eax73) {
             v37 = reinterpret_cast<void*>(1);
             fun_804a4bc(a1, 3, v24, v26, v27);
@@ -931,69 +931,69 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             fun_804a66c(a1, v25, v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax82 = local_strcasecmp(v67, 0x8058f1b, v24, v26, v27);
+        eax82 = local_strcasecmp(v67, "r3mix", v24, v26, v27);
         if (!eax82) {
             v25 = reinterpret_cast<void**>(0x3e8);
             fun_804a88c(a1, 0x3e8, v24, v26, v27);
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8058f21);
-        eax83 = local_strcasecmp(v67, 0x8058f21, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("bitwidth");
+        eax83 = local_strcasecmp(v67, "bitwidth", v24, v26, v27);
         if (!eax83) {
             v37 = reinterpret_cast<void*>(1);
-            eax84 = fun_804a5cc(v39, 0x8058f21, v24, v26, v27);
+            eax84 = fun_804a5cc(v39, "bitwidth", v24, v26, v27);
             in_bitwidth = eax84;
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8058f2a);
-        eax85 = local_strcasecmp(v67, 0x8058f2a, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("signed");
+        eax85 = local_strcasecmp(v67, "signed", v24, v26, v27);
         if (!eax85) {
             in_signed = 1;
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8058f31);
-        eax86 = local_strcasecmp(v67, 0x8058f31, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("unsigned");
+        eax86 = local_strcasecmp(v67, "unsigned", v24, v26, v27);
         if (!eax86) {
             in_signed = 0;
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8058f3a);
-        eax87 = local_strcasecmp(v67, 0x8058f3a, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("little-endian");
+        eax87 = local_strcasecmp(v67, "little-endian", v24, v26, v27);
         if (!eax87) {
             in_endian = 0;
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8058f48);
-        eax88 = local_strcasecmp(v67, 0x8058f48, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("big-endian");
+        eax88 = local_strcasecmp(v67, "big-endian", v24, v26, v27);
         if (!eax88) {
             in_endian = 1;
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8058f53);
-        eax89 = local_strcasecmp(v67, 0x8058f53, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("mp1input");
+        eax89 = local_strcasecmp(v67, "mp1input", v24, v26, v27);
         if (!eax89) {
             input_format = reinterpret_cast<void**>(4);
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8058f5c);
-        eax90 = local_strcasecmp(v67, 0x8058f5c, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("mp2input");
+        eax90 = local_strcasecmp(v67, "mp2input", v24, v26, v27);
         if (!eax90) {
             input_format = reinterpret_cast<void**>(5);
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8058f65);
-        eax91 = local_strcasecmp(v67, 0x8058f65, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("mp3input");
+        eax91 = local_strcasecmp(v67, "mp3input", v24, v26, v27);
         if (!eax91) {
             input_format = reinterpret_cast<void**>(6);
             goto addr_805203c_91;
         }
-        eax92 = local_strcasecmp(v67, 0x8058f6e, v24, v26, v27);
+        eax92 = local_strcasecmp(v67, "ogginput", v24, v26, v27);
         if (!eax92) 
             goto addr_80509d3_127;
-        eax93 = local_strcasecmp(v67, 0x8058929, v24, v26, v27);
+        eax93 = local_strcasecmp(v67, "phone", v24, v26, v27);
         if (!eax93) 
             goto addr_8050a00_129;
-        eax94 = local_strcasecmp(v67, 0x8058950, v24, v26, v27);
+        eax94 = local_strcasecmp(v67, "voice", v24, v26, v27);
         if (!eax94) {
             v27 = v13;
             v26 = v67;
@@ -1002,90 +1002,90 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             eax95 = presets_set(a1, 0, 0, v26, v27);
             if (eax95 < 0) 
                 goto addr_8050a8c_132;
-            error_printf(0x8058fe4, 0, 0, v26, v27, 0x8058fe4, 0, 0, v26, v27);
+            error_printf("Warning: --voice is deprecated, use --preset voice instead!", 0, 0, v26, v27, "Warning: --voice is deprecated, use --preset voice instead!", 0, 0, v26, v27);
             goto addr_805203c_91;
         }
-        eax96 = local_strcasecmp(v67, 0x8059020, v24, v26, v27);
+        eax96 = local_strcasecmp(v67, "decode", v24, v26, v27);
         if (!eax96) {
             v25 = reinterpret_cast<void**>(1);
             fun_804a14c(a1, 1, v24, v26, v27);
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8059027);
-        eax97 = local_strcasecmp(v67, 0x8059027, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("flush");
+        eax97 = local_strcasecmp(v67, "flush", v24, v26, v27);
         if (!eax97) {
             flush_write = 1;
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x805902d);
-        eax98 = local_strcasecmp(v67, 0x805902d, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("decode-mp3delay");
+        eax98 = local_strcasecmp(v67, "decode-mp3delay", v24, v26, v27);
         if (!eax98) {
-            eax99 = fun_804a5cc(v39, 0x805902d, v24, v26, v27);
+            eax99 = fun_804a5cc(v39, "decode-mp3delay", v24, v26, v27);
             mp3_delay = eax99;
             mp3_delay_set = 1;
             v37 = reinterpret_cast<void*>(1);
             goto addr_805203c_91;
         }
-        eax100 = local_strcasecmp(v67, 0x805903d, v24, v26, v27);
+        eax100 = local_strcasecmp(v67, "nores", v24, v26, v27);
         if (!eax100) {
             v25 = reinterpret_cast<void**>(1);
             fun_804a39c(a1, 1, v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax101 = local_strcasecmp(v67, 0x8059043, v24, v26, v27);
+        eax101 = local_strcasecmp(v67, "strictly-enforce-ISO", v24, v26, v27);
         if (!eax101) {
             v25 = reinterpret_cast<void**>(1);
             fun_804a32c(a1, 1, v24, v26, v27);
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8059058);
-        eax102 = local_strcasecmp(v67, 0x8059058, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("scale");
+        eax102 = local_strcasecmp(v67, "scale", v24, v26, v27);
         if (!eax102) {
             v37 = reinterpret_cast<void*>(1);
-            fun_804a60c(v39, 0x8059058, v24, v26, v27);
+            fun_804a60c(v39, "scale", v24, v26, v27);
             __asm__("fstp dword [ebp+0xffffff54]");
             __asm__("fld dword [ebp+0xffffff54]");
             __asm__("fstp dword [esp+0x4]");
-            fun_804aa0c(a1, 0x8059058, v24, v26, v27);
+            fun_804aa0c(a1, "scale", v24, v26, v27);
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x805905e);
-        eax103 = local_strcasecmp(v67, 0x805905e, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("scale-l");
+        eax103 = local_strcasecmp(v67, "scale-l", v24, v26, v27);
         if (!eax103) {
             v37 = reinterpret_cast<void*>(1);
-            fun_804a60c(v39, 0x805905e, v24, v26, v27);
+            fun_804a60c(v39, "scale-l", v24, v26, v27);
             __asm__("fstp dword [ebp+0xffffff54]");
             __asm__("fld dword [ebp+0xffffff54]");
             __asm__("fstp dword [esp+0x4]");
-            fun_804a9ac(a1, 0x805905e, v24, v26, v27);
+            fun_804a9ac(a1, "scale-l", v24, v26, v27);
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8059066);
-        eax104 = local_strcasecmp(v67, 0x8059066, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("scale-r");
+        eax104 = local_strcasecmp(v67, "scale-r", v24, v26, v27);
         if (!eax104) {
             v37 = reinterpret_cast<void*>(1);
-            fun_804a60c(v39, 0x8059066, v24, v26, v27);
+            fun_804a60c(v39, "scale-r", v24, v26, v27);
             __asm__("fstp dword [ebp+0xffffff54]");
             __asm__("fld dword [ebp+0xffffff54]");
             __asm__("fstp dword [esp+0x4]");
-            fun_804a12c(a1, 0x8059066, v24, v26, v27);
+            fun_804a12c(a1, "scale-r", v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax105 = local_strcasecmp(v67, 0x805906e, v24, v26, v27);
+        eax105 = local_strcasecmp(v67, "noasm", v24, v26, v27);
         if (!eax105) {
             v37 = reinterpret_cast<void*>(1);
-            eax108 = fun_804aa6c(v39, 0x8059074, v24, v26, v27, v106, v107);
+            eax108 = fun_804aa6c(v39, "mmx", v24, v26, v27, v106, v107);
             if (!eax108) {
                 v24 = reinterpret_cast<void**>(0);
                 fun_804a57c(a1, 1, 0, v26, v27);
             }
-            eax111 = fun_804aa6c(v39, 0x8059078, v24, v26, v27, v109, v110);
+            eax111 = fun_804aa6c(v39, "3dnow", v24, v26, v27, v109, v110);
             if (!eax111) {
                 v24 = reinterpret_cast<void**>(0);
                 fun_804a57c(a1, 2, 0, v26, v27);
             }
-            v25 = reinterpret_cast<void**>(0x805907e);
-            eax114 = fun_804aa6c(v39, 0x805907e, v24, v26, v27, v112, v113);
+            v25 = reinterpret_cast<void**>("sse");
+            eax114 = fun_804aa6c(v39, "sse", v24, v26, v27, v112, v113);
             if (!eax114) {
                 v24 = reinterpret_cast<void**>(0);
                 v25 = reinterpret_cast<void**>(3);
@@ -1093,46 +1093,46 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
                 goto addr_805203c_91;
             }
         }
-        eax115 = local_strcasecmp(v67, 0x8059082, v24, v26, v27);
+        eax115 = local_strcasecmp(v67, "freeformat", v24, v26, v27);
         if (!eax115) {
             v25 = reinterpret_cast<void**>(1);
             fun_804a42c(a1, 1, v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax116 = local_strcasecmp(v67, 0x805908d, v24, v26, v27);
+        eax116 = local_strcasecmp(v67, "replaygain-fast", v24, v26, v27);
         if (!eax116) {
             v25 = reinterpret_cast<void**>(1);
             fun_804a5ec(a1, 1, v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax117 = local_strcasecmp(v67, 0x805909d, v24, v26, v27);
+        eax117 = local_strcasecmp(v67, "replaygain-accurate", v24, v26, v27);
         if (!eax117) {
             fun_804a2dc(a1, 1, v24, v26, v27);
             v25 = reinterpret_cast<void**>(1);
             fun_804a5ec(a1, 1, v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax118 = local_strcasecmp(v67, 0x80590b1, v24, v26, v27);
+        eax118 = local_strcasecmp(v67, "noreplaygain", v24, v26, v27);
         if (!eax118) {
             v15 = 1;
             v25 = reinterpret_cast<void**>(0);
             fun_804a5ec(a1, 0, v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax119 = local_strcasecmp(v67, 0x80590be, v24, v26, v27);
+        eax119 = local_strcasecmp(v67, "clipdetect", v24, v26, v27);
         if (!eax119) {
             print_clipping_info = reinterpret_cast<void**>(1);
             v25 = reinterpret_cast<void**>(1);
             fun_804a2dc(a1, 1, v24, v26, v27);
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x80590c9);
-        eax120 = local_strcasecmp(v67, 0x80590c9, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("nohist");
+        eax120 = local_strcasecmp(v67, "nohist", v24, v26, v27);
         if (!eax120) {
             brhist = 0;
             goto addr_805203c_91;
         }
-        eax121 = local_strcasecmp(v67, 0x80590d0, v24, v26, v27);
+        eax121 = local_strcasecmp(v67, "tt", v24, v26, v27);
         if (!eax121) {
             v37 = reinterpret_cast<void*>(1);
             v26 = v39;
@@ -1141,7 +1141,7 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             id3_tag(a1, 0x74, 0, v26, v27);
             goto addr_805203c_91;
         }
-        eax122 = local_strcasecmp(v67, 0x80590d3, v24, v26, v27);
+        eax122 = local_strcasecmp(v67, "ta", v24, v26, v27);
         if (!eax122) {
             v37 = reinterpret_cast<void*>(1);
             v26 = v39;
@@ -1150,7 +1150,7 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             id3_tag(a1, 97, 0, v26, v27);
             goto addr_805203c_91;
         }
-        eax123 = local_strcasecmp(v67, 0x80590d6, v24, v26, v27);
+        eax123 = local_strcasecmp(v67, "tl", v24, v26, v27);
         if (!eax123) {
             v37 = reinterpret_cast<void*>(1);
             v26 = v39;
@@ -1159,7 +1159,7 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             id3_tag(a1, 0x6c, 0, v26, v27);
             goto addr_805203c_91;
         }
-        eax124 = local_strcasecmp(v67, 0x80590d9, v24, v26, v27);
+        eax124 = local_strcasecmp(v67, "ty", v24, v26, v27);
         if (!eax124) {
             v37 = reinterpret_cast<void*>(1);
             v26 = v39;
@@ -1168,7 +1168,7 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             id3_tag(a1, 0x79, 0, v26, v27);
             goto addr_805203c_91;
         }
-        eax125 = local_strcasecmp(v67, 0x80590dc, v24, v26, v27);
+        eax125 = local_strcasecmp(v67, "tc", v24, v26, v27);
         if (!eax125) {
             v37 = reinterpret_cast<void*>(1);
             v26 = v39;
@@ -1177,7 +1177,7 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             id3_tag(a1, 99, 0, v26, v27);
             goto addr_805203c_91;
         }
-        eax126 = local_strcasecmp(v67, 0x80590df, v24, v26, v27);
+        eax126 = local_strcasecmp(v67, "tn", v24, v26, v27);
         if (!eax126) {
             v26 = v39;
             v24 = reinterpret_cast<void**>(0);
@@ -1196,10 +1196,10 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             eax129 = silent;
             if (reinterpret_cast<signed char>(eax129) > reinterpret_cast<signed char>(9)) 
                 goto addr_805203c_91;
-            error_printf(0x8059120, 0x6e, 0, v26, v27, 0x8059120, 0x6e, 0, v26, v27);
+            error_printf("The track number has to be between 1 and 255 for ID3v1, ignored for ID3v1.\n", 0x6e, 0, v26, v27, "The track number has to be between 1 and 255 for ID3v1, ignored for ID3v1.\n", 0x6e, 0, v26, v27);
             goto addr_805203c_91;
         }
-        eax130 = local_strcasecmp(v67, 0x805916c, v24, v26, v27);
+        eax130 = local_strcasecmp(v67, "tg", v24, v26, v27);
         if (!eax130) {
             v26 = v39;
             v24 = reinterpret_cast<void**>(0);
@@ -1223,10 +1223,10 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             if (reinterpret_cast<signed char>(eax133) > reinterpret_cast<signed char>(9)) 
                 goto addr_805203c_91;
             v25 = v39;
-            error_printf(0x80591b0, v25, 0, v26, v27, 0x80591b0, v25, 0, v26, v27);
+            error_printf("Unknown ID3v1 genre: '%s'.  Setting ID3v1 genre to 'Other'\n", v25, 0, v26, v27, "Unknown ID3v1 genre: '%s'.  Setting ID3v1 genre to 'Other'\n", v25, 0, v26, v27);
             goto addr_805203c_91;
         }
-        eax134 = local_strcasecmp(v67, 0x80591fd, v24, v26, v27);
+        eax134 = local_strcasecmp(v67, "tv", v24, v26, v27);
         if (!eax134) {
             v37 = reinterpret_cast<void*>(1);
             v26 = v39;
@@ -1235,11 +1235,11 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             eax135 = id3_tag(a1, 0x76, 0, v26, v27);
             if (eax135 && (eax136 = silent, reinterpret_cast<signed char>(eax136) <= reinterpret_cast<signed char>(9))) {
                 v25 = v39;
-                error_printf(0x8059200, v25, 0, v26, v27, 0x8059200, v25, 0, v26, v27);
+                error_printf("Invalid field value: '%s'. Ignored\n", v25, 0, v26, v27, "Invalid field value: '%s'. Ignored\n", v25, 0, v26, v27);
                 goto addr_805203c_91;
             }
         }
-        eax137 = local_strcasecmp(v67, 0x8059224, v24, v26, v27);
+        eax137 = local_strcasecmp(v67, "ti", v24, v26, v27);
         if (!eax137) {
             v37 = reinterpret_cast<void*>(1);
             v25 = v39;
@@ -1251,47 +1251,47 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
                 goto addr_805203c_91; else 
                 goto addr_8051207_205;
         }
-        v25 = reinterpret_cast<void**>(0x8059227);
-        eax140 = local_strcasecmp(v67, 0x8059227, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("ignore-tag-errors");
+        eax140 = local_strcasecmp(v67, "ignore-tag-errors", v24, v26, v27);
         if (!eax140) {
             ignore_tag_errors = 1;
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8059239);
-        eax141 = local_strcasecmp(v67, 0x8059239, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("add-id3v2");
+        eax141 = local_strcasecmp(v67, "add-id3v2", v24, v26, v27);
         if (!eax141) {
-            fun_804a7bc(a1, 0x8059239, v24, v26, v27);
+            fun_804a7bc(a1, "add-id3v2", v24, v26, v27);
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8059243);
-        eax142 = local_strcasecmp(v67, 0x8059243, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("id3v1-only");
+        eax142 = local_strcasecmp(v67, "id3v1-only", v24, v26, v27);
         if (!eax142) {
-            fun_804a0cc(a1, 0x8059243, v24, v26, v27);
+            fun_804a0cc(a1, "id3v1-only", v24, v26, v27);
             v16 = 1;
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x805924e);
-        eax143 = local_strcasecmp(v67, 0x805924e, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("id3v2-only");
+        eax143 = local_strcasecmp(v67, "id3v2-only", v24, v26, v27);
         if (!eax143) {
-            fun_804a0dc(a1, 0x805924e, v24, v26, v27);
+            fun_804a0dc(a1, "id3v2-only", v24, v26, v27);
             v16 = 2;
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8059259);
-        eax144 = local_strcasecmp(v67, 0x8059259, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("space-id3v1");
+        eax144 = local_strcasecmp(v67, "space-id3v1", v24, v26, v27);
         if (!eax144) {
-            fun_804aa8c(a1, 0x8059259, v24, v26, v27);
+            fun_804aa8c(a1, "space-id3v1", v24, v26, v27);
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x8059265);
-        eax145 = local_strcasecmp(v67, 0x8059265, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("pad-id3v2");
+        eax145 = local_strcasecmp(v67, "pad-id3v2", v24, v26, v27);
         if (!eax145) {
-            fun_804a78c(a1, 0x8059265, v24, v26, v27);
+            fun_804a78c(a1, "pad-id3v2", v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax146 = local_strcasecmp(v67, 0x805926f, v24, v26, v27);
+        eax146 = local_strcasecmp(v67, "pad-id3v2-size", v24, v26, v27);
         if (!eax146) {
-            eax147 = fun_804a5cc(v39, 0x805926f, v24, v26, v27);
+            eax147 = fun_804a5cc(v39, "pad-id3v2-size", v24, v26, v27);
             eax148 = reinterpret_cast<void**>(0x1f400);
             if (reinterpret_cast<signed char>(eax147) <= reinterpret_cast<signed char>(0x1f400)) {
                 eax148 = eax147;
@@ -1305,23 +1305,23 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             v37 = reinterpret_cast<void*>(1);
             goto addr_805203c_91;
         }
-        eax150 = local_strcasecmp(v67, 0x805927e, v24, v26, v27);
+        eax150 = local_strcasecmp(v67, "genre-list", v24, v26, v27);
         if (!eax150) 
             goto addr_8051385_225;
-        eax151 = local_strcasecmp(v67, 0x8059289, v24, v26, v27);
+        eax151 = local_strcasecmp(v67, "lowpass", v24, v26, v27);
         zf152 = reinterpret_cast<uint1_t>(eax151 == 0);
         if (zf152) 
             goto addr_80513be_227;
-        eax153 = local_strcasecmp(v67, 0x80592d1, v24, v26, v27);
+        eax153 = local_strcasecmp(v67, "lowpass-width", v24, v26, v27);
         zf154 = reinterpret_cast<uint1_t>(eax153 == 0);
         if (!zf154) {
-            eax155 = local_strcasecmp(v67, 0x8059329, v24, v26, v27);
+            eax155 = local_strcasecmp(v67, "highpass", v24, v26, v27);
             zf156 = reinterpret_cast<uint1_t>(eax155 == 0);
             if (!zf156) {
-                eax157 = local_strcasecmp(v67, 0x8059373, v24, v26, v27);
+                eax157 = local_strcasecmp(v67, "highpass-width", v24, v26, v27);
                 zf158 = reinterpret_cast<uint1_t>(eax157 == 0);
                 if (zf158) {
-                    fun_804a60c(v39, 0x8059373, v24, v26, v27);
+                    fun_804a60c(v39, "highpass-width", v24, v26, v27);
                     __asm__("fstp qword [ebp+0xffffff78]");
                     v37 = reinterpret_cast<void*>(1);
                     __asm__("fld qword [ebp+0xffffff78]");
@@ -1347,12 +1347,12 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
                     fun_804a9dc(a1, v25, v24, v26, v27);
                     goto addr_805203c_91;
                 }
-                v25 = reinterpret_cast<void**>(0x80593cf);
-                eax161 = local_strcasecmp(v67, 0x80593cf, v24, v26, v27);
+                v25 = reinterpret_cast<void**>("comp");
+                eax161 = local_strcasecmp(v67, "comp", v24, v26, v27);
                 zf162 = reinterpret_cast<uint1_t>(eax161 == 0);
                 if (zf162) {
                     v37 = reinterpret_cast<void*>(1);
-                    fun_804a60c(v39, 0x80593cf, v24, v26, v27);
+                    fun_804a60c(v39, "comp", v24, v26, v27);
                     __asm__("fstp qword [ebp+0xffffff78]");
                     __asm__("fld qword [ebp+0xffffff78]");
                     __asm__("fld1 ");
@@ -1364,43 +1364,43 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
                     __asm__("fstp dword [ebp+0xffffff54]");
                     __asm__("fld dword [ebp+0xffffff54]");
                     __asm__("fstp dword [esp+0x4]");
-                    fun_804a35c(a1, 0x80593cf, v24, v26, v27);
+                    fun_804a35c(a1, "comp", v24, v26, v27);
                     goto addr_805203c_91;
                 }
-                eax163 = local_strcasecmp(v67, 0x80593fb, v24, v26, v27);
+                eax163 = local_strcasecmp(v67, "notemp", v24, v26, v27);
                 if (!eax163) {
                     v25 = reinterpret_cast<void**>(0);
                     fun_804a33c(a1, 0, v24, v26, v27);
                     goto addr_805203c_91;
                 }
-                v25 = reinterpret_cast<void**>(0x8059402);
-                eax164 = local_strcasecmp(v67, 0x8059402, v24, v26, v27);
+                v25 = reinterpret_cast<void**>("interch");
+                eax164 = local_strcasecmp(v67, "interch", v24, v26, v27);
                 if (!eax164) {
                     v37 = reinterpret_cast<void*>(1);
-                    fun_804a60c(v39, 0x8059402, v24, v26, v27);
+                    fun_804a60c(v39, "interch", v24, v26, v27);
                     __asm__("fstp dword [ebp+0xffffff54]");
                     __asm__("fld dword [ebp+0xffffff54]");
                     __asm__("fstp dword [esp+0x4]");
-                    fun_804a85c(a1, 0x8059402, v24, v26, v27);
+                    fun_804a85c(a1, "interch", v24, v26, v27);
                     goto addr_805203c_91;
                 }
-                eax165 = local_strcasecmp(v67, 0x805940a, v24, v26, v27);
+                eax165 = local_strcasecmp(v67, "temporal-masking", v24, v26, v27);
                 if (!eax165) {
                     v37 = reinterpret_cast<void*>(1);
-                    eax166 = fun_804a5cc(v39, 0x805940a, v24, v26, v27);
+                    eax166 = fun_804a5cc(v39, "temporal-masking", v24, v26, v27);
                     v25 = reinterpret_cast<void**>(static_cast<uint32_t>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(!!eax166))));
                     fun_804a33c(a1, v25, v24, v26, v27);
                     goto addr_805203c_91;
                 }
-                v25 = reinterpret_cast<void**>(0x805941b);
-                eax167 = local_strcasecmp(v67, 0x805941b, v24, v26, v27);
+                v25 = reinterpret_cast<void**>("nspsytune");
+                eax167 = local_strcasecmp(v67, "nspsytune", v24, v26, v27);
                 if (!eax167) 
                     goto addr_805203c_91;
-                eax168 = local_strcasecmp(v67, 0x8059425, v24, v26, v27);
+                eax168 = local_strcasecmp(v67, "nssafejoint", v24, v26, v27);
                 if (!eax168) 
                     goto addr_80518e5_247;
             } else {
-                fun_804a60c(v39, 0x8059329, v24, v26, v27);
+                fun_804a60c(v39, "highpass", v24, v26, v27);
                 __asm__("fstp qword [ebp+0xffffff78]");
                 v37 = reinterpret_cast<void*>(1);
                 __asm__("fld qword [ebp+0xffffff78]");
@@ -1437,7 +1437,7 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
                     goto addr_805165d_255;
             }
         } else {
-            fun_804a60c(v39, 0x80592d1, v24, v26, v27);
+            fun_804a60c(v39, "lowpass-width", v24, v26, v27);
             __asm__("fstp qword [ebp+0xffffff78]");
             v37 = reinterpret_cast<void*>(1);
             __asm__("fld qword [ebp+0xffffff78]");
@@ -1463,19 +1463,19 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
                 goto addr_8051550_260; else 
                 goto addr_8051548_261;
         }
-        v25 = reinterpret_cast<void**>(0x8059431);
-        eax174 = local_strcasecmp(v67, 0x8059431, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("nsmsfix");
+        eax174 = local_strcasecmp(v67, "nsmsfix", v24, v26, v27);
         if (!eax174) {
             v37 = reinterpret_cast<void*>(1);
-            fun_804a60c(v39, 0x8059431, v24, v26, v27);
+            fun_804a60c(v39, "nsmsfix", v24, v26, v27);
             __asm__("fstp qword [esp+0x4]");
-            fun_804a50c(a1, 0x8059431, v24, v26, v27);
+            fun_804a50c(a1, "nsmsfix", v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax175 = local_strcasecmp(v67, 0x8059439, v24, v26, v27);
+        eax175 = local_strcasecmp(v67, "ns-bass", v24, v26, v27);
         if (!eax175) {
             v37 = reinterpret_cast<void*>(1);
-            fun_804a60c(v39, 0x8059439, v24, v26, v27);
+            fun_804a60c(v39, "ns-bass", v24, v26, v27);
             __asm__("fstp qword [ebp+0xffffff70]");
             __asm__("fld qword [ebp+0xffffff70]");
             __asm__("fld qword [0x8059858]");
@@ -1493,15 +1493,15 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             if (reinterpret_cast<int32_t>(v176) < reinterpret_cast<int32_t>(0)) {
                 v176 = v176 + 64;
             }
-            eax177 = fun_804a81c(a1, 0x8059439, v24, v26, v27);
+            eax177 = fun_804a81c(a1, "ns-bass", v24, v26, v27);
             v25 = reinterpret_cast<void**>(eax177 | v176 << 2);
             fun_804a46c(a1, v25, v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax178 = local_strcasecmp(v67, 0x8059441, v24, v26, v27);
+        eax178 = local_strcasecmp(v67, "ns-alto", v24, v26, v27);
         if (!eax178) {
             v37 = reinterpret_cast<void*>(1);
-            fun_804a60c(v39, 0x8059441, v24, v26, v27);
+            fun_804a60c(v39, "ns-alto", v24, v26, v27);
             __asm__("fstp qword [ebp+0xffffff68]");
             __asm__("fld qword [ebp+0xffffff68]");
             __asm__("fld qword [0x8059858]");
@@ -1519,15 +1519,15 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             if (reinterpret_cast<int32_t>(v179) < reinterpret_cast<int32_t>(0)) {
                 v179 = v179 + 64;
             }
-            eax180 = fun_804a81c(a1, 0x8059441, v24, v26, v27);
+            eax180 = fun_804a81c(a1, "ns-alto", v24, v26, v27);
             v25 = reinterpret_cast<void**>(eax180 | v179 << 8);
             fun_804a46c(a1, v25, v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax181 = local_strcasecmp(v67, 0x8059449, v24, v26, v27);
+        eax181 = local_strcasecmp(v67, "ns-treble", v24, v26, v27);
         if (!eax181) {
             v37 = reinterpret_cast<void*>(1);
-            fun_804a60c(v39, 0x8059449, v24, v26, v27);
+            fun_804a60c(v39, "ns-treble", v24, v26, v27);
             __asm__("fstp qword [ebp+0xffffff60]");
             __asm__("fld qword [ebp+0xffffff60]");
             __asm__("fld qword [0x8059858]");
@@ -1545,15 +1545,15 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             if (reinterpret_cast<int32_t>(v182) < reinterpret_cast<int32_t>(0)) {
                 v182 = v182 + 64;
             }
-            eax183 = fun_804a81c(a1, 0x8059449, v24, v26, v27);
+            eax183 = fun_804a81c(a1, "ns-treble", v24, v26, v27);
             v25 = reinterpret_cast<void**>(eax183 | v182 << 14);
             fun_804a46c(a1, v25, v24, v26, v27);
             goto addr_805203c_91;
         }
-        eax184 = local_strcasecmp(v67, 0x8059453, v24, v26, v27);
+        eax184 = local_strcasecmp(v67, "ns-sfb21", v24, v26, v27);
         if (!eax184) {
             v37 = reinterpret_cast<void*>(1);
-            fun_804a60c(v39, 0x8059453, v24, v26, v27);
+            fun_804a60c(v39, "ns-sfb21", v24, v26, v27);
             __asm__("fstp qword [ebp+0xffffff58]");
             __asm__("fld qword [ebp+0xffffff58]");
             __asm__("fld qword [0x8059858]");
@@ -1571,54 +1571,54 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             if (reinterpret_cast<int32_t>(v185) < reinterpret_cast<int32_t>(0)) {
                 v185 = v185 + 64;
             }
-            eax186 = fun_804a81c(a1, 0x8059453, v24, v26, v27);
+            eax186 = fun_804a81c(a1, "ns-sfb21", v24, v26, v27);
             v25 = reinterpret_cast<void**>(eax186 | v185 << 20);
             fun_804a46c(a1, v25, v24, v26, v27);
             goto addr_805203c_91;
         }
-        v25 = reinterpret_cast<void**>(0x805945c);
-        eax187 = local_strcasecmp(v67, 0x805945c, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("nspsytune2");
+        eax187 = local_strcasecmp(v67, "nspsytune2", v24, v26, v27);
         if (!eax187) {
             addr_805203c_91:
             v17 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v17) + reinterpret_cast<uint32_t>(v37));
             continue;
         } else {
-            v25 = reinterpret_cast<void**>(0x8059467);
-            eax188 = local_strcasecmp(v67, 0x8059467, v24, v26, v27);
-            if (!eax188 || (v25 = reinterpret_cast<void**>(0x805946d), eax189 = local_strcasecmp(v67, 0x805946d, v24, v26, v27), !eax189)) {
+            v25 = reinterpret_cast<void**>("quiet");
+            eax188 = local_strcasecmp(v67, "quiet", v24, v26, v27);
+            if (!eax188 || (v25 = reinterpret_cast<void**>("silent"), eax189 = local_strcasecmp(v67, "silent", v24, v26, v27), !eax189)) {
                 silent = reinterpret_cast<void**>(10);
                 goto addr_805203c_91;
             } else {
-                v25 = reinterpret_cast<void**>(0x8059474);
-                eax190 = local_strcasecmp(v67, 0x8059474, v24, v26, v27);
+                v25 = reinterpret_cast<void**>("brief");
+                eax190 = local_strcasecmp(v67, "brief", v24, v26, v27);
                 if (eax190) {
-                    v25 = reinterpret_cast<void**>(0x805947a);
-                    eax191 = local_strcasecmp(v67, 0x805947a, v24, v26, v27);
+                    v25 = reinterpret_cast<void**>("verbose");
+                    eax191 = local_strcasecmp(v67, "verbose", v24, v26, v27);
                     if (eax191) {
-                        v192 = reinterpret_cast<void**>(0x8059482);
-                        eax193 = local_strcasecmp(v67, 0x8059482, v24, v26, v27);
+                        v192 = reinterpret_cast<void**>("version");
+                        eax193 = local_strcasecmp(v67, "version", v24, v26, v27);
                         if (!eax193) 
                             goto addr_8051cda_302;
-                        v192 = reinterpret_cast<void**>(0x805948a);
-                        eax194 = local_strcasecmp(v67, 0x805948a, v24, v26, v27);
+                        v192 = reinterpret_cast<void**>("license");
+                        eax194 = local_strcasecmp(v67, "license", v24, v26, v27);
                         if (!eax194) 
                             goto addr_8051cda_302;
-                        eax195 = local_strcasecmp(v67, 0x8058924, v24, v26, v27);
+                        eax195 = local_strcasecmp(v67, "help", v24, v26, v27);
                         if (!eax195) 
                             goto addr_8051d1f_305;
-                        eax196 = local_strcasecmp(v67, 0x8059492, v24, v26, v27);
+                        eax196 = local_strcasecmp(v67, "usage", v24, v26, v27);
                         if (!eax196) 
                             goto addr_8051d1f_305;
-                        eax197 = local_strcasecmp(v67, 0x8059498, v24, v26, v27);
+                        eax197 = local_strcasecmp(v67, "longhelp", v24, v26, v27);
                         if (!eax197) 
                             goto addr_8051d5b_308;
-                        eax198 = local_strcasecmp(v67, 0x80594a1, v24, v26, v27);
+                        eax198 = local_strcasecmp(v67, "?", v24, v26, v27);
                         if (!eax198) 
                             goto addr_8051d9f_310;
-                        eax199 = local_strcasecmp(v67, 0x80594af, v24, v26, v27);
+                        eax199 = local_strcasecmp(v67, "preset", v24, v26, v27);
                         if (!eax199) 
                             goto addr_8051e1e_312;
-                        eax200 = local_strcasecmp(v67, 0x80594b6, v24, v26, v27);
+                        eax200 = local_strcasecmp(v67, "alt-preset", v24, v26, v27);
                         if (eax200) 
                             goto addr_8051f19_314;
                     } else {
@@ -1635,12 +1635,12 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
         v37 = reinterpret_cast<void*>(1);
         v201 = reinterpret_cast<void**>(0);
         v202 = reinterpret_cast<void**>(0);
-        while ((eax205 = fun_804aa6c(v39, 0x80594c1, v24, v26, v27, v203, v204), eax205 == 0) || (eax208 = fun_804aa6c(v39, 0x8058f13, v24, v26, v27, v206, v207), eax208 == 0)) {
-            eax211 = fun_804aa6c(v39, 0x80594c1, v24, v26, v27, v209, v210);
+        while ((eax205 = fun_804aa6c(v39, "fast", v24, v26, v27, v203, v204), eax205 == 0) || (eax208 = fun_804aa6c(v39, "cbr", v24, v26, v27, v206, v207), eax208 == 0)) {
+            eax211 = fun_804aa6c(v39, "fast", v24, v26, v27, v209, v210);
             if (!eax211 && reinterpret_cast<signed char>(v201) <= reinterpret_cast<signed char>(0)) {
                 v201 = reinterpret_cast<void**>(1);
             }
-            eax214 = fun_804aa6c(v39, 0x8058f13, v24, v26, v27, v212, v213);
+            eax214 = fun_804aa6c(v39, "cbr", v24, v26, v27, v212, v213);
             if (!eax214 && reinterpret_cast<signed char>(v202) <= reinterpret_cast<signed char>(0)) {
                 v202 = reinterpret_cast<void**>(1);
             }
@@ -1661,27 +1661,27 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             goto addr_8051f0f_327;
         goto addr_805203c_91;
         addr_8051f19_314:
-        v25 = reinterpret_cast<void**>(0x80594c6);
-        eax217 = local_strcasecmp(v67, 0x80594c6, v24, v26, v27);
+        v25 = reinterpret_cast<void**>("disptime");
+        eax217 = local_strcasecmp(v67, "disptime", v24, v26, v27);
         if (eax217) {
-            v25 = reinterpret_cast<void**>(0x80594cf);
-            eax218 = local_strcasecmp(v67, 0x80594cf, v24, v26, v27);
+            v25 = reinterpret_cast<void**>("nogaptags");
+            eax218 = local_strcasecmp(v67, "nogaptags", v24, v26, v27);
             if (eax218) {
-                eax219 = local_strcasecmp(v67, 0x80594d9, v24, v26, v27);
+                eax219 = local_strcasecmp(v67, "nogapout", v24, v26, v27);
                 if (eax219) {
-                    v25 = reinterpret_cast<void**>(0x80594e2);
-                    eax220 = local_strcasecmp(v67, 0x80594e2, v24, v26, v27);
+                    v25 = reinterpret_cast<void**>("nogap");
+                    eax220 = local_strcasecmp(v67, "nogap", v24, v26, v27);
                     if (eax220) {
-                        v25 = reinterpret_cast<void**>(0x80594e8);
-                        eax221 = local_strcasecmp(v67, 0x80594e8, v24, v26, v27);
+                        v25 = reinterpret_cast<void**>("athaa-sensitivity");
+                        eax221 = local_strcasecmp(v67, "athaa-sensitivity", v24, v26, v27);
                         if (eax221) 
                             goto addr_8052017_333;
                         v37 = reinterpret_cast<void*>(1);
-                        fun_804a60c(v39, 0x80594e8, v24, v26, v27);
+                        fun_804a60c(v39, "athaa-sensitivity", v24, v26, v27);
                         __asm__("fstp dword [ebp+0xffffff54]");
                         __asm__("fld dword [ebp+0xffffff54]");
                         __asm__("fstp dword [esp+0x4]");
-                        fun_804a52c(a1, 0x80594e8, v24, v26, v27);
+                        fun_804a52c(a1, "athaa-sensitivity", v24, v26, v27);
                         goto addr_805203c_91;
                     } else {
                         v11 = 1;
@@ -1699,14 +1699,14 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             }
         } else {
             v37 = reinterpret_cast<void*>(1);
-            fun_804a60c(v39, 0x80594c6, v24, v26, v27);
+            fun_804a60c(v39, "disptime", v24, v26, v27);
             __asm__("fstp dword [ebp+0xffffff54]");
             __asm__("fld dword [ebp+0xffffff54]");
             __asm__("fstp dword [0x805c550]");
             goto addr_805203c_91;
         }
         addr_80518e5_247:
-        eax222 = fun_804a81c(a1, 0x8059425, v24, v26, v27);
+        eax222 = fun_804a81c(a1, "nssafejoint", v24, v26, v27);
         v25 = reinterpret_cast<void**>(eax222 | 2);
         fun_804a46c(a1, v25, v24, v26, v27);
         goto addr_805203c_91;
@@ -1743,7 +1743,7 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
         __asm__("fld qword [0x8059828]");
         goto addr_8051552_340;
         addr_80513be_227:
-        fun_804a60c(v39, 0x8059289, v24, v26, v27);
+        fun_804a60c(v39, "lowpass", v24, v26, v27);
         __asm__("fstp qword [ebp+0xffffff78]");
         v37 = reinterpret_cast<void*>(1);
         __asm__("fld qword [ebp+0xffffff78]");
@@ -1800,13 +1800,13 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
         eax229 = presets_set(a1, 0, 0, v26, v27);
         if (eax229 < 0) 
             goto addr_8050a2d_349;
-        error_printf(0x8058fa8, 0, 0, v26, v27, 0x8058fa8, 0, 0, v26, v27);
+        error_printf("Warning: --phone is deprecated, use --preset phone instead!", 0, 0, v26, v27, "Warning: --phone is deprecated, use --preset phone instead!", 0, 0, v26, v27);
         goto addr_805203c_91;
         addr_8050665_88:
         v37 = reinterpret_cast<void*>(1);
-        fun_804a60c(v39, 0x8058ef1, v24, v26, v27);
+        fun_804a60c(v39, "resample", v24, v26, v27);
         __asm__("fstp qword [esp]");
-        eax230 = resample_rate(v39, 0x8058ef1, v24, v26, v27);
+        eax230 = resample_rate(v39, "resample", v24, v26, v27);
         v25 = eax230;
         fun_804a56c(a1, v25, v24, v26, v27);
         goto addr_805203c_91;
@@ -1828,16 +1828,16 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
                 fun_804a1ec(a5, a4, 0xffd, v26, v27, v235, v236);
                 eax239 = fun_804a30c(a1, a4, 0xffd, v26, v27, v237, v238);
                 if (!eax239) {
-                    v25 = reinterpret_cast<void**>(0x8058d67);
-                    fun_804a7ec(a5, 0x8058d67, 0xffd, v26, v27);
+                    v25 = reinterpret_cast<void**>(".mp3");
+                    fun_804a7ec(a5, ".mp3", 0xffd, v26, v27);
                 } else {
-                    v25 = reinterpret_cast<void**>(0x8058d6c);
-                    fun_804a7ec(a5, 0x8058d6c, 0xffd, v26, v27);
+                    v25 = reinterpret_cast<void**>(".wav");
+                    fun_804a7ec(a5, ".wav", 0xffd, v26, v27);
                 }
             } else {
                 v24 = reinterpret_cast<void**>(2);
-                v25 = reinterpret_cast<void**>(0x8059645);
-                fun_804a48c(a5, 0x8059645, 2, v26, v27);
+                v25 = reinterpret_cast<void**>("-");
+                fun_804a48c(a5, "-", 2, v26, v27);
             }
         }
         if (!v15) {
@@ -1845,7 +1845,7 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             fun_804a5ec(a1, 1, v24, v26, v27);
         }
         if (v11 && ((eax240 = fun_804a4dc(a1, v25, v24, v26, v27), !!eax240) && !v12)) {
-            console_printf(0x8059648, v25, v24, v26, v27, v241, v242, v243, v244);
+            console_printf("Note: Disabling VBR Xing/Info tag since it interferes with --nogap\n", v25, v24, v26, v27, v241, v242, v243, v244);
             v25 = reinterpret_cast<void**>(0);
             fun_804a7dc(a1, 0, v24, v26, v27);
         }
@@ -1881,12 +1881,12 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
                 }
                 eax254 = reinterpret_cast<void**>(0);
             } else {
-                error_printf(0x805968c, v250, v24, v26, v27, 0x805968c, v250, v24, v26, v27);
-                error_printf(0x80596c7, v250, v24, v26, v27, 0x80596c7, v250, v24, v26, v27);
+                error_printf("For free format, specify a bitrate between 8 and 640 kbps\n", v250, v24, v26, v27, "For free format, specify a bitrate between 8 and 640 kbps\n", v250, v24, v26, v27);
+                error_printf("with the -b <bitrate> option\n", v250, v24, v26, v27, "with the -b <bitrate> option\n", v250, v24, v26, v27);
                 eax254 = reinterpret_cast<void**>(0xffffffff);
             }
         } else {
-            error_printf(0x8058f78, v25, v24, v26, v27, 0x8058f78, v25, v24, v26, v27);
+            error_printf("sorry, vorbis support in LAME is deprecated.\n", v25, v24, v26, v27, "sorry, vorbis support in LAME is deprecated.\n", v25, v24, v26, v27);
             eax254 = reinterpret_cast<void**>(0xffffffff);
         }
     } else {
@@ -1898,31 +1898,31 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
     return eax254;
     addr_80526a6_7:
     v256 = *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(v17) << 2) + reinterpret_cast<unsigned char>(a3));
-    error_printf(0x8059632, v13, v256, v26, v27, 0x8059632, v13, v256, v26, v27);
+    error_printf("%s: excess arg %s\n", v13, v256, v26, v27, "%s: excess arg %s\n", v13, v256, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_8052624_11:
-    error_printf(0x80595a4, v25, v24, v26, v27, 0x80595a4, v25, v24, v26, v27);
+    error_printf("Error: 'nogap option'.  Calling program does not allow nogap option, or\nyou have exceeded maximum number of input files for the nogap option\n", v25, v24, v26, v27, "Error: 'nogap option'.  Calling program does not allow nogap option, or\nyou have exceeded maximum number of input files for the nogap option\n", v25, v24, v26, v27);
     *reinterpret_cast<void***>(a7) = reinterpret_cast<void**>(0xffffffff);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     v257 = reinterpret_cast<void**>(static_cast<int32_t>(*reinterpret_cast<signed char*>(&eax50)));
-    error_printf(0x8059585, v13, v257, v26, v27, 0x8059585, v13, v257, v26, v27);
+    error_printf("%s: unrecognized option -%c\n", v13, v257, v26, v27, "%s: unrecognized option -%c\n", v13, v257, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     eax258 = stdout;
     long_help(a1, eax258, v13, 0, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
-    error_printf(0x8059518, v13, eax52, v26, v27, 0x8059518, v13, eax52, v26, v27);
+    error_printf("%s: -m mode must be s/d/j/f/m not %s\n", v13, eax52, v26, v27, "%s: -m mode must be s/d/j/f/m not %s\n", v13, eax52, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_80524a4_50:
-    error_printf(0x8059564, v13, eax52, v26, v27, 0x8059564, v13, eax52, v26, v27);
+    error_printf("%s: -e emp must be n/5/c not %s\n", v13, eax52, v26, v27, "%s: -e emp must be n/5/c not %s\n", v13, eax52, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_80509d3_127:
-    error_printf(0x8058f78, 0x8058f6e, v24, v26, v27, 0x8058f78, 0x8058f6e, v24, v26, v27);
+    error_printf("sorry, vorbis support in LAME is deprecated.\n", "ogginput", v24, v26, v27, "sorry, vorbis support in LAME is deprecated.\n", "ogginput", v24, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_8051385_225:
@@ -1954,46 +1954,46 @@ void** parse_args(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_8052017_333:
-    error_printf(0x80594fa, v13, v67, v26, v27, 0x80594fa, v13, v67, v26, v27);
+    error_printf("%s: unrecognized option --%s\n", v13, v67, v26, v27, "%s: unrecognized option --%s\n", v13, v67, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_80517ba_237:
-    error_printf(0x80593d4, 0x80593cf, v24, v26, v27, 0x80593d4, 0x80593cf, v24, v26, v27);
+    error_printf("Must specify compression ratio >= 1.0\n", "comp", v24, v26, v27, "Must specify compression ratio >= 1.0\n", "comp", v24, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_805171a_232:
-    error_printf(0x8059384, 0x8059373, v24, v26, v27, 0x8059384, 0x8059373, v24, v26, v27);
+    error_printf("Must specify highpass width with --highpass-width freq, freq >= 0.001 kHz\n", "highpass-width", v24, v26, v27, "Must specify highpass width with --highpass-width freq, freq >= 0.001 kHz\n", "highpass-width", v24, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_8051630_251:
-    error_printf(0x8059334, 0x8059329, v24, v26, v27, 0x8059334, 0x8059329, v24, v26, v27);
+    error_printf("Must specify highpass with --highpass freq, freq >= 0.001 kHz\n", "highpass", v24, v26, v27, "Must specify highpass with --highpass freq, freq >= 0.001 kHz\n", "highpass", v24, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_805151b_257:
-    error_printf(0x80592e0, 0x80592d1, v24, v26, v27, 0x80592e0, 0x80592d1, v24, v26, v27);
+    error_printf("Must specify lowpass width with --lowpass-width freq, freq >= 0.001 kHz\n", "lowpass-width", v24, v26, v27, "Must specify lowpass width with --lowpass-width freq, freq >= 0.001 kHz\n", "lowpass-width", v24, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_8051431_343:
-    error_printf(0x8059294, 0x8059289, v24, v26, v27, 0x8059294, 0x8059289, v24, v26, v27);
+    error_printf("Must specify lowpass with --lowpass freq, freq >= 0.001 kHz\n", "lowpass", v24, v26, v27, "Must specify lowpass with --lowpass freq, freq >= 0.001 kHz\n", "lowpass", v24, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_8051207_205:
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_80510c8_191:
-    error_printf(0x8059170, v39, 0, v26, v27, 0x8059170, v39, 0, v26, v27);
+    error_printf("Unknown ID3v1 genre number: '%s'.\n", v39, 0, v26, v27, "Unknown ID3v1 genre number: '%s'.\n", v39, 0, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_805113e_193:
-    error_printf(0x80591ec, 0x67, 0, v26, v27, 0x80591ec, 0x67, 0, v26, v27);
+    error_printf("Internal error.\n", 0x67, 0, v26, v27, "Internal error.\n", 0x67, 0, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_80510f1_195:
-    error_printf(0x8059193, v39, 0, v26, v27, 0x8059193, v39, 0, v26, v27);
+    error_printf("Unknown ID3v1 genre: '%s'.\n", v39, 0, v26, v27, "Unknown ID3v1 genre: '%s'.\n", v39, 0, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_8051025_183:
-    error_printf(0x80590e4, 0x6e, 0, v26, v27, 0x80590e4, 0x6e, 0, v26, v27);
+    error_printf("The track number has to be between 1 and 255 for ID3v1.\n", 0x6e, 0, v26, v27, "The track number has to be between 1 and 255 for ID3v1.\n", 0x6e, 0, v26, v27);
     eax254 = reinterpret_cast<void**>(0xffffffff);
     goto addr_8052912_383;
     addr_8050a8c_132:
@@ -2105,9 +2105,9 @@ int32_t WriteWaveHeader(void** a1, void** a2, void** a3, void** a4, void** a5, v
         eax8 = eax8 + 7;
     }
     v9 = reinterpret_cast<uint32_t>(reinterpret_cast<int32_t>(eax8) >> 3);
-    fun_804a64c(0x805508b, 1, 4, a1, v10, v11);
+    fun_804a64c("RIFF", 1, 4, a1, v10, v11);
     Write32BitsLowHigh(a1, a2 + 36, 4, a1);
-    fun_804a64c(0x8055090, 2, 4, a1, v12, v13);
+    fun_804a64c("WAVEfmt ", 2, 4, a1, v12, v13);
     Write32BitsLowHigh(a1, 16, 4, a1);
     Write16BitsLowHigh(a1, 1, 4, a1, v14, v15, v16);
     Write16BitsLowHigh(a1, a4, 4, a1, v17, v18, v19);
@@ -2115,7 +2115,7 @@ int32_t WriteWaveHeader(void** a1, void** a2, void** a3, void** a4, void** a5, v
     Write32BitsLowHigh(a1, reinterpret_cast<unsigned char>(a3) * reinterpret_cast<unsigned char>(a4) * v9, 4, a1);
     Write16BitsLowHigh(a1, reinterpret_cast<unsigned char>(a4) * v9, 4, a1, v20, v21, v22);
     Write16BitsLowHigh(a1, a5, 4, a1, v23, v24, v25);
-    fun_804a64c(0x8055099, 1, 4, a1, v26, v27);
+    fun_804a64c("data", 1, 4, a1, v26, v27);
     Write32BitsLowHigh(a1, a2, 4, a1);
     eax29 = fun_804aa1c(a1, a2, 4, a1, v28);
     if (!eax29) {
@@ -2172,9 +2172,9 @@ void** decoder_progress(void** a1, void** a2, void** a3, void** a4, void** a5, v
     v10 = *reinterpret_cast<void***>(a1 + 12);
     v11 = edx8;
     v12 = eax9;
-    console_printf(0x8059a6b, v12, v11, v10, v13, v14, v15, v16, v17);
+    console_printf("\rFrame#%6i/%-6i %3i kbps", v12, v11, v10, v13, v14, v15, v16, v17);
     if (*reinterpret_cast<int32_t*>(a1 + 16) != 1) {
-        console_printf(0x8059a9c, v12, v11, v10, v18, v19, v20, v21, v22);
+        console_printf("         ", v12, v11, v10, v18, v19, v20, v21, v22);
         last_3337 = reinterpret_cast<void**>(0);
     } else {
         v23 = *reinterpret_cast<void***>(a1 + 20);
@@ -2201,21 +2201,21 @@ void** decoder_progress(void** a1, void** a2, void** a3, void** a4, void** a5, v
         if (!(reinterpret_cast<unsigned char>(v23) & 2)) {
             eax32 = last_3337;
             if (!(reinterpret_cast<unsigned char>(eax32) & 2)) {
-                eax33 = reinterpret_cast<void**>(0x8059a8e);
+                eax33 = reinterpret_cast<void**>("L  R");
             } else {
-                eax33 = reinterpret_cast<void**>(0x8059a89);
+                eax33 = reinterpret_cast<void**>("LMSR");
             }
         } else {
             eax34 = last_3337;
             if (!(reinterpret_cast<unsigned char>(eax34) & 2)) {
-                eax33 = reinterpret_cast<void**>(0x8059a89);
+                eax33 = reinterpret_cast<void**>("LMSR");
             } else {
-                eax33 = reinterpret_cast<void**>(0x8059a84);
+                eax33 = reinterpret_cast<void**>(" MS ");
             }
         }
         v11 = edx28;
         v12 = eax33;
-        console_printf(0x8059a93, v12, v11, v10, v35, v36, v37, v23, v38);
+        console_printf("  %s  %c", v12, v11, v10, v35, v36, v37, v23, v38);
         last_3337 = v23;
     }
     eax43 = console_printf(0x8059aa6, v12, v11, v10, v39, v40, v41, v23, v42);
@@ -2272,7 +2272,7 @@ void** decoder_progress_finish(void** a1, void** a2, void** a3, void** a4, void*
     void** ebp13;
     void** eax14;
 
-    eax14 = console_printf(0x805996b, v8, v9, v10, v11, v12, ebp13, __return_address(), a1);
+    eax14 = console_printf("\n", v8, v9, v10, v11, v12, ebp13, __return_address(), a1);
     return eax14;
 }
 
@@ -2291,7 +2291,7 @@ void** print_lame_tag_leading_info(void** a1, void** a2, void** a3, void** a4, v
 
     eax11 = fun_804a4dc(a1, v7, v8, v9, v10);
     if (eax11) {
-        eax11 = console_printf(0x8054a78, v12, v13, v14, v15, v16, ebp17, __return_address(), a1);
+        eax11 = console_printf("Writing LAME Tag...", v12, v13, v14, v15, v16, ebp17, __return_address(), a1);
     }
     return eax11;
 }
@@ -2378,7 +2378,7 @@ void** print_trailing_info(void** a1, void** a2, void** a3, void** a4, void** a5
 
     eax11 = fun_804a4dc(a1, v7, v8, v9, v10);
     if (eax11) {
-        console_printf(0x8054a8c, v12, v13, v14, v15, v16, v17, v18, v19);
+        console_printf("done\n", v12, v13, v14, v15, v16, v17, v18, v19);
     }
     eax20 = fun_804a92c(a1);
     if (eax20) {
@@ -2389,13 +2389,13 @@ void** print_trailing_info(void** a1, void** a2, void** a3, void** a4, void** a5
         if (eax21 <= 0) {
             eax22 = reinterpret_cast<void**>(0x80548b4);
         } else {
-            eax22 = reinterpret_cast<void**>(0x8054a92);
+            eax22 = reinterpret_cast<void**>("+");
         }
         __asm__("fstp qword [esp+0x8]");
         v23 = eax22;
-        console_printf(0x8054a94, v23, v24, v25, v26, v27, v28, v29, v30);
+        console_printf("ReplayGain: %s%.1fdB\n", v23, v24, v25, v26, v27, v28, v29, v30);
         if (eax21 > 0x1fe || eax21 < 0xfffffe02) {
-            error_printf(0x8054aac, v23, v31, v32, v33);
+            error_printf("WARNING: ReplayGain exceeds the -51dB to +51dB range. Such a result is too\n         high to be stored in the header.\n", v23, v31, v32, v33);
         }
     }
     eax34 = print_clipping_info;
@@ -2424,26 +2424,26 @@ void** print_trailing_info(void** a1, void** a2, void** a3, void** a4, void** a5
                 __asm__("fld dword [ebp-0x10]");
                 __asm__("fchs ");
                 __asm__("fstp qword [esp+0x4]");
-                eax34 = console_printf(0x8054ccc, v23, v39, v40, v41, v42, v43, eax36, v44);
+                eax34 = console_printf("\nThe waveform does not clip and is at least %.1fdB away from full scale.\n", v23, v39, v40, v41, v42, v43, eax36, v44);
             } else {
-                eax34 = console_printf(0x8054c80, v23, v45, v46, v47, v48, v49, eax36, v50);
+                eax34 = console_printf("\nThe waveform does not clip and is less than 0.1dB away from full scale.\n", v23, v45, v46, v47, v48, v49, eax36, v50);
             }
         } else {
             __asm__("fld dword [ebp-0x10]");
             __asm__("fstp qword [esp+0x4]");
-            console_printf(0x8054b24, v23, v51, v52, v53, v54, v55, eax36, v56);
+            console_printf("WARNING: clipping occurs at the current gain. Set your decoder to decrease\n         the  gain  by  at least %.1fdB or encode again ", v23, v51, v52, v53, v54, v55, eax36, v56);
             __asm__("fld dword [ebp-0x14]");
             __asm__("fldz ");
             __asm__("fxch st0, st1");
             __asm__("fucomip st0, st1");
             __asm__("fstp st0");
             if (!reinterpret_cast<uint1_t>(!below_or_equal38)) {
-                eax34 = console_printf(0x8054bfc, v23, v57, v58, v59, v60, v61, eax36, v62);
+                eax34 = console_printf("using --scale <arg>\n         (For   a   suggestion  on  the  optimal  value  of  <arg>  encode\n         with  --scale 1  first)\n", v23, v57, v58, v59, v60, v61, eax36, v62);
             } else {
                 __asm__("fld dword [ebp-0x14]");
                 __asm__("fstp qword [esp+0x4]");
-                console_printf(0x8054ba8, v23, v63, v64, v65, v66, v67, eax36, v68);
-                eax34 = console_printf(0x8054bc0, v23, v69, v70, v71, v72, v73, eax36, v74);
+                console_printf("using  --scale %.2f\n", v23, v63, v64, v65, v66, v67, eax36, v68);
+                eax34 = console_printf("         or less (the value under --scale is approximate).\n", v23, v69, v70, v71, v72, v73, eax36, v74);
             }
         }
     }
@@ -2608,8 +2608,8 @@ void** lame_encoder(void** a1, void** a2, void** a3, void** a4, void** a5, void*
             } while (reinterpret_cast<signed char>(eax28) > reinterpret_cast<signed char>(0));
         } else {
             encoder_progress_end(v9, 1, v17, v16, v33, v34);
-            v35 = reinterpret_cast<void**>(0x8054dca);
-            error_printf(0x8054dca, 1, v17, v16, v36);
+            v35 = reinterpret_cast<void**>("Error writing ID3v2 tag \n");
+            error_printf("Error writing ID3v2 tag \n", 1, v17, v16, v36);
             eax37 = reinterpret_cast<void**>(1);
             goto addr_804bc72_15;
         }
@@ -2617,8 +2617,8 @@ void** lame_encoder(void** a1, void** a2, void** a3, void** a4, void** a5, void*
         encoder_progress_end(v9, v14, 0x24000, v38, v39, v40);
         v17 = eax15;
         v18 = reinterpret_cast<void**>(0x24000);
-        v35 = reinterpret_cast<void**>(0x8054d80);
-        error_printf(0x8054d80, 0x24000, v17, v41, v42);
+        v35 = reinterpret_cast<void**>("Error writing ID3v2 tag: buffer too small: buffer size=%d  ID3v2 size=%d\n");
+        error_printf("Error writing ID3v2 tag: buffer too small: buffer size=%d  ID3v2 size=%d\n", 0x24000, v17, v41, v42);
         eax37 = reinterpret_cast<void**>(1);
         goto addr_804bc72_15;
     }
@@ -2650,19 +2650,19 @@ void** lame_encoder(void** a1, void** a2, void** a3, void** a4, void** a5, void*
             if (reinterpret_cast<unsigned char>(eax49) > reinterpret_cast<unsigned char>(0x24000)) 
                 goto addr_804bb60_25;
         } else {
-            v35 = reinterpret_cast<void**>(0x8054e2c);
-            error_printf(0x8054e2c, 1, v17, v16, v27, 0x8054e2c, 1, v17, v16, v27);
+            v35 = reinterpret_cast<void**>("Error writing mp3 output \n");
+            error_printf("Error writing mp3 output \n", 1, v17, v16, v27, "Error writing mp3 output \n", 1, v17, v16, v27);
             eax37 = reinterpret_cast<void**>(1);
             goto addr_804bc72_15;
         }
     } else {
         if (!reinterpret_cast<int1_t>(v44 == 0xffffffff)) {
             v18 = v44;
-            v35 = reinterpret_cast<void**>(0x8054e08);
-            error_printf(0x8054e08, v18, 0x24000, v16, v27, 0x8054e08, v18, 0x24000, v16, v27);
+            v35 = reinterpret_cast<void**>("mp3 internal error:  error code=%i\n");
+            error_printf("mp3 internal error:  error code=%i\n", v18, 0x24000, v16, v27, "mp3 internal error:  error code=%i\n", v18, 0x24000, v16, v27);
         } else {
-            v35 = reinterpret_cast<void**>(0x8054de4);
-            error_printf(0x8054de4, v18, 0x24000, v16, v27, 0x8054de4, v18, 0x24000, v16, v27);
+            v35 = reinterpret_cast<void**>("mp3 buffer is not big enough... \n");
+            error_printf("mp3 buffer is not big enough... \n", v18, 0x24000, v16, v27, "mp3 buffer is not big enough... \n", v18, 0x24000, v16, v27);
         }
         eax37 = reinterpret_cast<void**>(1);
         goto addr_804bc72_15;
@@ -2685,8 +2685,8 @@ void** lame_encoder(void** a1, void** a2, void** a3, void** a4, void** a5, void*
                 goto addr_804bbf5_32;
             }
         } else {
-            v35 = reinterpret_cast<void**>(0x8054e92);
-            error_printf(0x8054e92, 1, v17, v16, v27, 0x8054e92, 1, v17, v16, v27);
+            v35 = reinterpret_cast<void**>("Error writing ID3v1 tag \n");
+            error_printf("Error writing ID3v1 tag \n", 1, v17, v16, v27, "Error writing ID3v1 tag \n", 1, v17, v16, v27);
             eax37 = reinterpret_cast<void**>(1);
             goto addr_804bc72_15;
         }
@@ -2699,8 +2699,8 @@ void** lame_encoder(void** a1, void** a2, void** a3, void** a4, void** a5, void*
         v35 = v9;
         write_xing_frame(v35, v18, 0, v16, v27, 0x24000);
     } else {
-        v35 = reinterpret_cast<void**>(0x8054eac);
-        error_printf(0x8054eac, v18, 0, v16, v27, 0x8054eac, v18, 0, v16, v27);
+        v35 = reinterpret_cast<void**>("fatal error: can't update LAME-tag frame!\n");
+        error_printf("fatal error: can't update LAME-tag frame!\n", v18, 0, v16, v27, "fatal error: can't update LAME-tag frame!\n", v18, 0, v16, v27);
     }
     eax56 = silent;
     if (reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(eax56) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(eax56 == 0))) {
@@ -2717,22 +2717,22 @@ void** lame_encoder(void** a1, void** a2, void** a3, void** a4, void** a5, void*
     addr_804bb60_25:
     v17 = eax49;
     v18 = reinterpret_cast<void**>(0x24000);
-    error_printf(0x8054e48, 0x24000, v17, v16, v27, 0x8054e48, 0x24000, v17, v16, v27);
+    error_printf("Error writing ID3v1 tag: buffer too small: buffer size=%d  ID3v1 size=%d\n", 0x24000, v17, v16, v27, "Error writing ID3v1 tag: buffer too small: buffer size=%d  ID3v1 size=%d\n", 0x24000, v17, v16, v27);
     goto addr_804bbf5_32;
     addr_804b96f_8:
     if (!reinterpret_cast<int1_t>(eax29 == 0xffffffff)) {
         v18 = eax29;
-        v35 = reinterpret_cast<void**>(0x8054e08);
-        error_printf(0x8054e08, v18, v17, v16, v27, 0x8054e08, v18, v17, v16, v27);
+        v35 = reinterpret_cast<void**>("mp3 internal error:  error code=%i\n");
+        error_printf("mp3 internal error:  error code=%i\n", v18, v17, v16, v27, "mp3 internal error:  error code=%i\n", v18, v17, v16, v27);
     } else {
-        v35 = reinterpret_cast<void**>(0x8054de4);
-        error_printf(0x8054de4, v18, v17, v16, v27, 0x8054de4, v18, v17, v16, v27);
+        v35 = reinterpret_cast<void**>("mp3 buffer is not big enough... \n");
+        error_printf("mp3 buffer is not big enough... \n", v18, v17, v16, v27, "mp3 buffer is not big enough... \n", v18, v17, v16, v27);
     }
     eax37 = reinterpret_cast<void**>(1);
     goto addr_804bc72_15;
     addr_804b9e4_10:
-    v35 = reinterpret_cast<void**>(0x8054e2c);
-    error_printf(0x8054e2c, 1, v17, v16, v27, 0x8054e2c, 1, v17, v16, v27);
+    v35 = reinterpret_cast<void**>("Error writing mp3 output \n");
+    error_printf("Error writing mp3 output \n", 1, v17, v16, v27, "Error writing mp3 output \n", 1, v17, v16, v27);
     eax37 = reinterpret_cast<void**>(1);
     goto addr_804bc72_15;
 }
@@ -2933,7 +2933,7 @@ int32_t brhist_init(void** a1, void** a2, void** a3) {
     g805b484 = eax5;
     eax6 = brhist;
     if (reinterpret_cast<signed char>(eax6) > reinterpret_cast<signed char>(13) || (eax7 = g805b484, reinterpret_cast<signed char>(eax7) > reinterpret_cast<signed char>(13))) {
-        error_printf(0x8059b10, a2, a3, v8, v9);
+        error_printf("lame internal error: VBR min %d kbps or VBR max %d kbps not allowed.\n", a2, a3, v8, v9);
         eax10 = -1;
     } else {
         fun_804a25c(0x805b4c4, 42, 0x200, v11);
@@ -2982,9 +2982,9 @@ struct s2 {
     signed char[8] pad8;
     void** f8;
     signed char[7] pad16;
-    void** f16;
+    void** f10;
     signed char[51] pad68;
-    void** f68;
+    void** f44;
 };
 
 void deinit_console(struct s2* a1);
@@ -3002,7 +3002,7 @@ int32_t usage(void** a1, void** a2, void** a3, void** a4, void** a5) {
     void** v6;
 
     lame_version_print(a1, v6);
-    fun_804a65c(a1, 0x8055b5c, a2, a2, a2, a2, a2);
+    fun_804a65c(a1, "usage: %s [options] <infile> [outfile]\n\n    <infile> and/or <outfile> can be \"-\", which means stdin/stdout.\n\nTry:\n     \"%s --help\"           for general usage information\n or:\n     \"%s --preset help\"    for information on suggested predefined settings\n or:\n     \"%s --longhelp\"\n  or \"%s -?\"              for a complete options list\n\n", a2, a2, a2, a2, a2);
     return 0;
 }
 
@@ -3108,7 +3108,7 @@ void parse_nogap_filenames(void** a1, void** a2, void** a3, void** a4, void** a5
     }
     addr_804be75_6:
     if (v12 == a2 && ((eax40 = fun_804a4ac(a3, v8, v38, v39), eax41 = *reinterpret_cast<unsigned char*>(reinterpret_cast<uint32_t>(eax40) - 1 + reinterpret_cast<unsigned char>(a3)), *reinterpret_cast<signed char*>(&eax41) != 47) && ((eax44 = fun_804a4ac(a3, v8, v42, v43), eax45 = *reinterpret_cast<unsigned char*>(reinterpret_cast<uint32_t>(eax44) - 1 + reinterpret_cast<unsigned char>(a3)), *reinterpret_cast<signed char*>(&eax45) != 92) && (eax48 = fun_804a4ac(a3, v8, v46, v47), eax49 = *reinterpret_cast<unsigned char*>(reinterpret_cast<uint32_t>(eax48) - 1 + reinterpret_cast<unsigned char>(a3)), *reinterpret_cast<signed char*>(&eax49) != 58)))) {
-        fun_804a7ec(a3, 0x8054ed7, v50, v51, v52);
+        fun_804a7ec(a3, "/", v50, v51, v52);
     }
     addr_804bed9_16:
     fun_804a69c(a3, v12, 0xffd);
@@ -3160,7 +3160,7 @@ void** init_files(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
     void** v28;
     void** v29;
 
-    eax13 = fun_804aa6c(0x8054866, a3, v8, v9, v10, v11, v12);
+    eax13 = fun_804aa6c("-", a3, v8, v9, v10, v11, v12);
     if (!eax13 || (eax19 = fun_804aa6c(a2, a3, v14, v15, v16, v17, v18), !!eax19)) {
         init_infile(a1, a2, a4, a5);
         eax23 = fun_804a30c(a1, a2, a4, a5, v20, v21, v22);
@@ -3168,11 +3168,11 @@ void** init_files(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
         if (eax24) {
             eax25 = eax24;
         } else {
-            error_printf(0x8054899, a3, a4, a5, v26);
+            error_printf("Can't init outfile '%s'\n", a3, a4, a5, v26);
             eax25 = reinterpret_cast<void**>(0);
         }
     } else {
-        error_printf(0x8054868, a3, v27, v28, v29);
+        error_printf("Input file and Output file are the same. Abort.\n", a3, v27, v28, v29);
         eax25 = reinterpret_cast<void**>(0);
     }
     return eax25;
@@ -3188,9 +3188,9 @@ int32_t display_bitrates(void** a1, void** a2, void** a3, void** a4, void** a5, 
     void** v10;
     void** ebp11;
 
-    display_bitrate(a1, 0x8057d43, 1, 1);
-    display_bitrate(a1, 0x8057d45, 2, 0);
-    display_bitrate(a1, 0x8057d47, 4, 0);
+    display_bitrate(a1, "1", 1, 1);
+    display_bitrate(a1, "2", 2, 0);
+    display_bitrate(a1, "2.5", 4, 0);
     fun_804a73c(10, a1, 4, 0, v8);
     fun_804a3ec(a1, a1, 4, 0, v9, v10, ebp11);
     return 0;
@@ -3212,7 +3212,7 @@ uint32_t fun_804a7ac(void** a1, void** a2, void** a3, void** a4);
 
 struct s3 {
     signed char[529] pad529;
-    void** f529;
+    void** f211;
 };
 
 struct s3* fun_804a3fc(void** a1, void** a2, void** a3);
@@ -3393,7 +3393,7 @@ int32_t lame_decoder(void** a1, void** a2, void** a3, void** a4, void** a5, void
         if (v14 == 1) {
             esi16 = reinterpret_cast<void**>(0x80548b4);
         } else {
-            esi16 = reinterpret_cast<void**>(0x80548b2);
+            esi16 = reinterpret_cast<void**>("s");
         }
         fun_804a06c(a1, v17, v18, v19, v20, v21, v22, v23);
         __asm__("fild dword [ebp+0xffffedd0]");
@@ -3402,13 +3402,13 @@ int32_t lame_decoder(void** a1, void** a2, void** a3, void** a4, void** a5, void
         __asm__("fstp qword [ebp+0xffffedc0]");
         eax27 = fun_804a4ac(a4, v24, v25, v26);
         if (reinterpret_cast<uint32_t>(eax27) <= 26) {
-            ebx28 = reinterpret_cast<void**>(0x80548b8);
+            ebx28 = reinterpret_cast<void**>("  ");
         } else {
-            ebx28 = reinterpret_cast<void**>(0x80548b5);
+            ebx28 = reinterpret_cast<void**>("\n\t");
         }
-        eax34 = fun_804aa6c(a4, 0x8054866, v29, v30, v31, v32, v33);
+        eax34 = fun_804aa6c(a4, "-", v29, v30, v31, v32, v33);
         if (!eax34) {
-            eax35 = reinterpret_cast<void**>(0x80548bb);
+            eax35 = reinterpret_cast<void**>("<stdin>");
         } else {
             eax35 = a4;
         }
@@ -3418,14 +3418,14 @@ int32_t lame_decoder(void** a1, void** a2, void** a3, void** a4, void** a5, void
         __asm__("fstp qword [esp+0xc]");
         v38 = ebx28;
         v39 = eax35;
-        console_printf(0x80548c4, v39, v38, v40, v41, v37, v36, v42, v43);
+        console_printf("\rinput:  %s%s(%g kHz, %i channel%s, ", v39, v38, v40, v41, v37, v36, v42, v43);
     }
     eax44 = input_format;
     switch (eax44) {
     default:
         eax45 = silent;
         if (reinterpret_cast<signed char>(eax45) <= reinterpret_cast<signed char>(9)) {
-            console_printf(0x805494e, v39, v38, v46, v47, v37, v36, v48, v49);
+            console_printf("unknown", v39, v38, v46, v47, v37, v36, v48, v49);
         }
         eax51 = fun_804a20c(a1, v39, v38, v50);
         g805c57c = eax51;
@@ -3435,7 +3435,7 @@ int32_t lame_decoder(void** a1, void** a2, void** a3, void** a4, void** a5, void
     case 1:
         eax52 = silent;
         if (reinterpret_cast<signed char>(eax52) <= reinterpret_cast<signed char>(9)) {
-            console_printf(0x8054923, v39, v38, v53, v54, v37, v36, v55, v56);
+            console_printf("raw PCM data", v39, v38, v53, v54, v37, v36, v55, v56);
         }
         eax58 = fun_804a20c(a1, v39, v38, v57);
         g805c57c = eax58;
@@ -3445,7 +3445,7 @@ int32_t lame_decoder(void** a1, void** a2, void** a3, void** a4, void** a5, void
     case 2:
         eax59 = silent;
         if (reinterpret_cast<signed char>(eax59) <= reinterpret_cast<signed char>(9)) {
-            console_printf(0x8054930, v39, v38, v60, v61, v37, v36, v62, v63);
+            console_printf("Microsoft WAVE", v39, v38, v60, v61, v37, v36, v62, v63);
         }
         eax65 = fun_804a20c(a1, v39, v38, v64);
         g805c57c = eax65;
@@ -3455,7 +3455,7 @@ int32_t lame_decoder(void** a1, void** a2, void** a3, void** a4, void** a5, void
     case 3:
         eax66 = silent;
         if (reinterpret_cast<signed char>(eax66) <= reinterpret_cast<signed char>(9)) {
-            console_printf(0x805493f, v39, v38, v67, v68, v37, v36, v69, v70);
+            console_printf("SGI/Apple AIFF", v39, v38, v67, v68, v37, v36, v69, v70);
         }
         eax72 = fun_804a20c(a1, v39, v38, v71);
         g805c57c = eax72;
@@ -3472,13 +3472,13 @@ int32_t lame_decoder(void** a1, void** a2, void** a3, void** a4, void** a5, void
             if (eax75 > 0x3e7f) {
                 ebx76 = reinterpret_cast<void**>(0x80548b4);
             } else {
-                ebx76 = reinterpret_cast<void**>(0x8054904);
+                ebx76 = reinterpret_cast<void**>(".5");
             }
             eax78 = fun_804a7ac(a1, v39, v38, v77);
-            v79 = reinterpret_cast<void**>(0x8054921);
+            v79 = reinterpret_cast<void**>("I");
             v38 = ebx76;
             v39 = reinterpret_cast<void**>(2 - eax78);
-            console_printf(0x805490b, v39, v38, 0x8054921, v80, v37, v36, v81, v82);
+            console_printf("MPEG-%u%s Layer %s", v39, v38, "I", v80, v37, v36, v81, v82);
             break;
         }
     case 5:
@@ -3491,13 +3491,13 @@ int32_t lame_decoder(void** a1, void** a2, void** a3, void** a4, void** a5, void
             if (eax85 > 0x3e7f) {
                 ebx86 = reinterpret_cast<void**>(0x80548b4);
             } else {
-                ebx86 = reinterpret_cast<void**>(0x8054904);
+                ebx86 = reinterpret_cast<void**>(".5");
             }
             eax88 = fun_804a7ac(a1, v39, v38, v87);
-            v79 = reinterpret_cast<void**>(0x805491e);
+            v79 = reinterpret_cast<void**>("II");
             v38 = ebx86;
             v39 = reinterpret_cast<void**>(2 - eax88);
-            console_printf(0x805490b, v39, v38, 0x805491e, v89, v37, v36, v90, v91);
+            console_printf("MPEG-%u%s Layer %s", v39, v38, "II", v89, v37, v36, v90, v91);
             break;
         }
         addr_804ae34_38:
@@ -3514,7 +3514,7 @@ int32_t lame_decoder(void** a1, void** a2, void** a3, void** a4, void** a5, void
                 }
             } else {
                 eax92 = fun_804a3fc(a1, v39, v38);
-                a3 = reinterpret_cast<void**>(&eax92->f529);
+                a3 = reinterpret_cast<void**>(&eax92->f211);
             }
         }
         eax93 = silent;
@@ -3525,17 +3525,17 @@ int32_t lame_decoder(void** a1, void** a2, void** a3, void** a4, void** a5, void
             if (eax95 > 0x3e7f) {
                 ebx96 = reinterpret_cast<void**>(0x80548b4);
             } else {
-                ebx96 = reinterpret_cast<void**>(0x8054904);
+                ebx96 = reinterpret_cast<void**>(".5");
             }
             eax98 = fun_804a7ac(a1, v39, v38, v97);
-            v79 = reinterpret_cast<void**>(0x8054907);
+            v79 = reinterpret_cast<void**>("III");
             v38 = ebx96;
             v39 = reinterpret_cast<void**>(2 - eax98);
-            console_printf(0x805490b, v39, v38, 0x8054907, v99, v37, v36, v100, v101);
+            console_printf("MPEG-%u%s Layer %s", v39, v38, "III", v99, v37, v36, v100, v101);
             break;
         }
     case 7:
-        error_printf(0x80548e9, v39, v38, v102, v103, 0x80548e9, v39, v38, v104, v105);
+        error_printf("Internal error.  Aborting.", v39, v38, v102, v103, "Internal error.  Aborting.", v39, v38, v104, v105);
         fun_804aa7c(-1, v39, v38, v106, v107, v37, v36);
         goto addr_804ae34_38;
     }
@@ -3543,26 +3543,26 @@ int32_t lame_decoder(void** a1, void** a2, void** a3, void** a4, void** a5, void
     if (reinterpret_cast<signed char>(eax108) <= reinterpret_cast<signed char>(9)) {
         eax109 = fun_804a4ac(a5, v39, v38, v79);
         if (reinterpret_cast<uint32_t>(eax109) <= 45) {
-            ebx110 = reinterpret_cast<void**>(0x80548b8);
+            ebx110 = reinterpret_cast<void**>("  ");
         } else {
-            ebx110 = reinterpret_cast<void**>(0x80548b5);
+            ebx110 = reinterpret_cast<void**>("\n\t");
         }
-        eax112 = fun_804aa6c(a5, 0x8054866, v38, v79, v111, v37, v36);
+        eax112 = fun_804aa6c(a5, "-", v38, v79, v111, v37, v36);
         if (!eax112) {
-            eax113 = reinterpret_cast<void**>(0x8054956);
+            eax113 = reinterpret_cast<void**>("<stdout>");
         } else {
             eax113 = a5;
         }
         v38 = ebx110;
         v39 = eax113;
-        console_printf(0x8054960, v39, v38, v79, v114, v37, v36, v115, v116);
+        console_printf(")\noutput: %s%s(16 bit, Microsoft WAVE)\n", v39, v38, v79, v114, v37, v36, v115, v116);
         if (reinterpret_cast<signed char>(a3) > reinterpret_cast<signed char>(0)) {
             v39 = a3;
-            console_printf(0x8054988, v39, v38, v79, v117, v37, v36, v118, v119);
+            console_printf("skipping initial %i samples (encoder+decoder delay)\n", v39, v38, v79, v117, v37, v36, v118, v119);
         }
         if (reinterpret_cast<signed char>(v9) > reinterpret_cast<signed char>(0)) {
             v39 = v9;
-            console_printf(0x80549c0, v39, v38, v79, v120, v37, v36, v121, v122);
+            console_printf("skipping final %i samples (encoder padding-decoder delay)\n", v39, v38, v79, v120, v37, v36, v121, v122);
         }
     }
     eax123 = disable_wav_header;
@@ -3666,7 +3666,7 @@ int32_t lame_decoder(void** a1, void** a2, void** a3, void** a4, void** a5, void
         } else {
             eax151 = silent;
             if (reinterpret_cast<signed char>(eax151) <= reinterpret_cast<signed char>(9)) {
-                error_printf(0x8054a20, v133, v38, v79, 16, 0x8054a20, v133, v38, v79, 16);
+                error_printf("Very huge WAVE file, can't set filesize accordingly\n", v133, v38, v79, 16, "Very huge WAVE file, can't set filesize accordingly\n", v133, v38, v79, 16);
             }
             __asm__("fld qword [0x8054f10]");
             __asm__("fstp qword [ebp-0x28]");
@@ -3674,13 +3674,13 @@ int32_t lame_decoder(void** a1, void** a2, void** a3, void** a4, void** a5, void
     } else {
         eax152 = silent;
         if (reinterpret_cast<signed char>(eax152) <= reinterpret_cast<signed char>(9)) {
-            error_printf(0x80549fc, v133, v38, v79, 16, 0x80549fc, v133, v38, v79, 16);
+            error_printf("WAVE file contains 0 PCM samples\n", v133, v38, v79, 16, "WAVE file contains 0 PCM samples\n", v133, v38, v79, 16);
         }
         __asm__("fldz ");
         __asm__("fstp qword [ebp-0x28]");
     }
     eax153 = disable_wav_header;
-    if (!eax153 && ((v133 = a5, eax154 = fun_804aa6c(0x8054866, v133, v38, v79, 16, v37, v36), !!eax154) && (v38 = reinterpret_cast<void**>(0), v133 = reinterpret_cast<void**>(0), eax155 = fun_804a40c(a2, 0, 0, v79, 16, v37, v36), !eax155))) {
+    if (!eax153 && ((v133 = a5, eax154 = fun_804aa6c("-", v133, v38, v79, 16, v37, v36), !!eax154) && (v38 = reinterpret_cast<void**>(0), v133 = reinterpret_cast<void**>(0), eax155 = fun_804a40c(a2, 0, 0, v79, 16, v37, v36), !eax155))) {
         eax157 = fun_804a06c(a1, 0, 0, v79, 16, v37, v36, v156);
         __asm__("fld qword [ebp-0x28]");
         __asm__("fnstcw word [ebp+0xffffedd6]");
@@ -3822,9 +3822,9 @@ void** init_outfile(void** a1, int32_t a2, void** a3, void** a4) {
     void** eax13;
     void** eax14;
 
-    eax10 = fun_804aa6c(a1, 0x8055007, v5, v6, v7, v8, v9);
+    eax10 = fun_804aa6c(a1, "-", v5, v6, v7, v8, v9);
     if (eax10) {
-        eax11 = fun_804a26c(a1, 0x8055009);
+        eax11 = fun_804a26c(a1, "w+b");
         v12 = eax11;
         if (v12) {
             addr_804cee3_3:
@@ -3836,7 +3836,7 @@ void** init_outfile(void** a1, int32_t a2, void** a3, void** a4) {
     } else {
         eax14 = stdout;
         v12 = eax14;
-        lame_set_stream_binary_mode(v12, 0x8055007);
+        lame_set_stream_binary_mode(v12, "-");
         goto addr_804cee3_3;
     }
 }
@@ -3879,8 +3879,8 @@ void** read_samples_mp3(void** a1, void** a2, void** a3) {
         if (eax8 != edx9) {
             eax10 = silent;
             if (reinterpret_cast<signed char>(eax10) <= reinterpret_cast<signed char>(9)) {
-                v5 = reinterpret_cast<void**>(0x80554b5);
-                error_printf(0x8055010, 0x80554b5, v4, 0x805c560, v11);
+                v5 = reinterpret_cast<void**>("MP3 file");
+                error_printf("Error: number of channels has changed in %s - not supported\n", "MP3 file", v4, 0x805c560, v11);
             }
             v7 = reinterpret_cast<void**>(0xffffffff);
         }
@@ -3889,7 +3889,7 @@ void** read_samples_mp3(void** a1, void** a2, void** a3) {
         if (eax15 != edx16) {
             eax17 = silent;
             if (reinterpret_cast<signed char>(eax17) <= reinterpret_cast<signed char>(9)) {
-                error_printf(0x8055050, 0x80554b5, v4, 0x805c560, v18);
+                error_printf("Error: sample frequency has changed in %s - not supported\n", "MP3 file", v4, 0x805c560, v18);
             }
             v7 = reinterpret_cast<void**>(0xffffffff);
         }
@@ -4011,14 +4011,14 @@ void** read_samples_pcm(void** a1, void** a2, void** a3) {
             addr_804d9dc_2:
             eax5 = in_signed;
             if (!eax5) {
-                error_printf(0x80550a0, v6, v7, v8, v9);
+                error_printf("Unsigned input only supported with bitwidth 8\n", v6, v7, v8, v9);
                 fun_804aa7c(1, v10, v11, v12, v13, v14, v15);
             }
         } else {
             addr_804da8b_6:
             eax16 = silent;
             if (reinterpret_cast<signed char>(eax16) <= reinterpret_cast<signed char>(9)) {
-                error_printf(0x80550d0, v17, v18, v19, v20);
+                error_printf("Only 8, 16, 24 and 32 bit input files supported \n", v17, v18, v19, v20);
                 goto addr_804daa1_8;
             }
         }
@@ -4057,7 +4057,7 @@ void** read_samples_pcm(void** a1, void** a2, void** a3) {
     if (eax33) {
         eax34 = silent;
         if (reinterpret_cast<signed char>(eax34) <= reinterpret_cast<signed char>(9)) {
-            error_printf(0x8055102, v25, v24, v23, v22);
+            error_printf("Error reading input file\n", v25, v24, v23, v22);
         }
         fun_804aa7c(1, v25, v24, v23, v22, v35, v36);
     }
@@ -4289,8 +4289,8 @@ void** fskip(void** a1, void** a2, void** a3, void** a4) {
             if (!reinterpret_cast<int1_t>(a3 == 1) || reinterpret_cast<signed char>(a2) < reinterpret_cast<signed char>(0)) {
                 eax20 = silent;
                 if (reinterpret_cast<signed char>(eax20) <= reinterpret_cast<signed char>(9)) {
-                    v11 = reinterpret_cast<void**>(0x8054f98);
-                    error_printf(0x8054f98, v10, v14, v21, v22);
+                    v11 = reinterpret_cast<void**>("fskip problem: Mostly the return status of functions is not evaluate so it is more secure to polute <stderr>.\n");
+                    error_printf("fskip problem: Mostly the return status of functions is not evaluate so it is more secure to polute <stderr>.\n", v10, v14, v21, v22);
                 }
                 eax23 = reinterpret_cast<void**>(0xffffffff);
             } else {
@@ -4464,7 +4464,7 @@ int32_t aiff_check2(void** a1, void** a2, void** a3) {
         if (eax6 > 24 || (ecx7 = eax6, (1 << *reinterpret_cast<unsigned char*>(&ecx7) & 0x1010101) == 0)) {
             eax8 = silent;
             if (reinterpret_cast<signed char>(eax8) <= reinterpret_cast<signed char>(9)) {
-                error_printf(0x80551c0, v9, v10, v11, v12);
+                error_printf("ERROR: input sound data is not 8, 16, 24 or 32 bits\n", v9, v10, v11, v12);
             }
             eax13 = 1;
         } else {
@@ -4478,14 +4478,14 @@ int32_t aiff_check2(void** a1, void** a2, void** a3) {
                     } else {
                         eax16 = silent;
                         if (reinterpret_cast<signed char>(eax16) <= reinterpret_cast<signed char>(9)) {
-                            error_printf(0x8055228, v17, v18, v19, v20);
+                            error_printf("ERROR: block size of input sound data is not 0 bytes\n", v17, v18, v19, v20);
                         }
                         eax13 = 1;
                     }
                 } else {
                     eax21 = silent;
                     if (reinterpret_cast<signed char>(eax21) <= reinterpret_cast<signed char>(9)) {
-                        error_printf(0x80551f8, v22, v23, v24, v25);
+                        error_printf("ERROR: input sound data is not mono or stereo\n", v22, v23, v24, v25);
                     }
                     eax13 = 1;
                 }
@@ -4496,7 +4496,7 @@ int32_t aiff_check2(void** a1, void** a2, void** a3) {
     } else {
         eax26 = silent;
         if (reinterpret_cast<signed char>(eax26) <= reinterpret_cast<signed char>(9)) {
-            error_printf(0x805519c, v27, v28, v29, v30);
+            error_printf("ERROR: input sound data is not PCM\n", v27, v28, v29, v30);
         }
         eax13 = 1;
     }
@@ -4658,14 +4658,14 @@ int32_t parse_wave_header(void** a1, void** a2) {
             } else {
                 eax46 = silent;
                 if (reinterpret_cast<signed char>(eax46) <= reinterpret_cast<signed char>(9)) {
-                    error_printf(0x8055178, v4, 1, v47, v48, 0x8055178, v4, 1, v49, v50);
+                    error_printf("Unsupported number of channels: %u\n", v4, 1, v47, v48, "Unsupported number of channels: %u\n", v4, 1, v49, v50);
                 }
                 eax33 = 0;
             }
         } else {
             eax51 = silent;
             if (reinterpret_cast<signed char>(eax51) <= reinterpret_cast<signed char>(9)) {
-                error_printf(0x8055154, v3, 1, v52, v53, 0x8055154, v3, 1, v54, v55);
+                error_printf("Unsupported data format: 0x%04X\n", v3, 1, v52, v53, "Unsupported data format: 0x%04X\n", v3, 1, v54, v55);
             }
             eax33 = 0;
         }
@@ -4918,7 +4918,7 @@ int32_t parse_aiff_header(void** a1, void** a2) {
                 } else {
                     eax72 = silent;
                     if (reinterpret_cast<signed char>(eax72) <= reinterpret_cast<signed char>(9)) {
-                        error_printf(0x8055260, v8, 0, v73, v74, 0x8055260, v8, 0, v75, v76);
+                        error_printf("Can't rewind stream to audio data position\n", v8, 0, v73, v74, "Can't rewind stream to audio data position\n", v8, 0, v75, v76);
                     }
                     eax45 = 0;
                     goto addr_804e2e2_18;
@@ -4927,7 +4927,7 @@ int32_t parse_aiff_header(void** a1, void** a2) {
                 eax77 = silent;
                 if (reinterpret_cast<signed char>(eax77) <= reinterpret_cast<signed char>(9)) {
                     eax78 = v24;
-                    error_printf(0x8055178, static_cast<int32_t>(*reinterpret_cast<int16_t*>(&eax78)), v9, v79, v80);
+                    error_printf("Unsupported number of channels: %u\n", static_cast<int32_t>(*reinterpret_cast<int16_t*>(&eax78)), v9, v79, v80);
                 }
                 eax45 = 0;
                 goto addr_804e2e2_18;
@@ -5112,7 +5112,7 @@ void** lame_decode_initfile(void** a1, void** a2, void** a3, void** a4, void** a
             goto addr_804eb42_5;
         eax40 = silent;
         if (reinterpret_cast<signed char>(eax40) <= reinterpret_cast<signed char>(9)) {
-            console_printf(0x8055410, 1, 4, v25, v41, v42, v43, v44, v13);
+            console_printf("ID3v2 found. Be aware that the ID3 tag is currently lost when transcoding.\n", 1, 4, v25, v41, v42, v43, v44, v13);
         }
         v25 = v10;
         v26 = reinterpret_cast<void**>(6);
@@ -5156,7 +5156,7 @@ void** lame_decode_initfile(void** a1, void** a2, void** a3, void** a4, void** a
                 edx77 = v78;
                 eax79 = silent;
                 if (reinterpret_cast<signed char>(eax79) <= reinterpret_cast<signed char>(9)) {
-                    console_printf(0x805545c, *reinterpret_cast<unsigned char*>(&eax75) + (static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(&edx77)) << 8), 2, v25, v80, v81, v82, v83, v13);
+                    console_printf("Album ID found.  length=%i \n", *reinterpret_cast<unsigned char*>(&eax75) + (static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(&edx77)) << 8), 2, v25, v80, v81, v82, v83, v13);
                 }
                 fskip(v10, reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&eax75) + (static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(&edx77)) << 8)) - 6, 1, v25);
                 v25 = v10;
@@ -5197,7 +5197,7 @@ void** lame_decode_initfile(void** a1, void** a2, void** a3, void** a4, void** a
     if (!(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(&eax97)) & 0xf0)) {
         eax98 = silent;
         if (reinterpret_cast<signed char>(eax98) <= reinterpret_cast<signed char>(9)) {
-            console_printf(0x8055479, 1, v26, v25, v99, v100, v101, v102, v13);
+            console_printf("Input file is freeformat.\n", 1, v26, v25, v99, v100, v101, v102, v13);
         }
         v16 = 1;
     }
@@ -5246,7 +5246,7 @@ void** lame_decode_initfile(void** a1, void** a2, void** a3, void** a4, void** a
     } else {
         eax112 = silent;
         if (reinterpret_cast<signed char>(eax112) <= reinterpret_cast<signed char>(9)) {
-            error_printf(0x8055494, v27, v26, v25, v107, 0x8055494, v27, v26, v25, v107);
+            error_printf("fail to sync...\n", v27, v26, v25, v107, "fail to sync...\n", v27, v26, v25, v107);
         }
         v25 = v13;
         v26 = v12;
@@ -5476,15 +5476,15 @@ int32_t lame_version_print(void** a1, void** a2) {
     eax17 = fun_804a4ac(eax5, v14, v15, v16);
     if (reinterpret_cast<uint32_t>(eax9) + reinterpret_cast<uint32_t>(eax13) + reinterpret_cast<uint32_t>(eax17) + 16 <= 80 || reinterpret_cast<uint32_t>(eax17 + 1) > 80) {
         if (!eax9) {
-            fun_804a65c(a1, 0x805555e, eax4, eax5, v18, v19, v20);
+            fun_804a65c(a1, "LAME version %s (%s)\n\n", eax4, eax5, v18, v19, v20);
         } else {
-            fun_804a65c(a1, 0x8055544, eax3, eax4, eax5, v21, v22);
+            fun_804a65c(a1, "LAME %s version %s (%s)\n\n", eax3, eax4, eax5, v21, v22);
         }
     } else {
         if (!eax9) {
-            fun_804a65c(a1, 0x8055593, eax4, 80 - reinterpret_cast<uint32_t>(eax17) + 0xfffffffe, 0x8055592, eax5, v23);
+            fun_804a65c(a1, "LAME version %s\n%*s(%s)\n\n", eax4, 80 - reinterpret_cast<uint32_t>(eax17) + 0xfffffffe, 0x8055592, eax5, v23);
         } else {
-            fun_804a65c(a1, 0x8055575, eax3, eax4, 80 - reinterpret_cast<uint32_t>(eax17) + 0xfffffffe, 0x8055592, eax5);
+            fun_804a65c(a1, "LAME %s version %s\n%*s(%s)\n\n", eax3, eax4, 80 - reinterpret_cast<uint32_t>(eax17) + 0xfffffffe, 0x8055592, eax5);
         }
     }
     return 0;
@@ -5517,18 +5517,18 @@ void** presets_longinfo_dm(void** a1, void** a2) {
     void** v26;
     void** eax27;
 
-    fun_804a64c(0x8057d4c, 1, 57, a1, v3, v4);
-    fun_804a64c(0x8057d88, 1, 75, a1, v5, v6);
-    fun_804a64c(0x8057dd4, 1, 0x143, a1, v7, v8);
-    fun_804a64c(0x8057f18, 1, 0xff, a1, v9, v10);
-    fun_804a64c(0x8058018, 1, 0x16a, a1, v11, v12);
-    fun_804a64c(0x8058184, 1, 0x12b, a1, v13, v14);
-    fun_804a64c(0x80582b0, 1, 0x136, a1, v15, v16);
-    fun_804a64c(0x80583e8, 1, 0x17f, a1, v17, v18);
-    fun_804a64c(0x8058568, 1, 65, a1, v19, v20);
-    fun_804a64c(0x80585ac, 1, 0x19c, a1, v21, v22);
-    fun_804a64c(0x805874c, 1, 0xde, a1, v23, v24);
-    eax27 = fun_804a64c(0x805882c, 1, 0xf7, a1, v25, v26);
+    fun_804a64c("\nThe --preset switches are aliases over LAME settings.\n\n\n", 1, 57, a1, v3, v4);
+    fun_804a64c("To activate these presets:\n\n   For VBR modes (generally highest quality):\n\n", 1, 75, a1, v5, v6);
+    fun_804a64c("     \"--preset medium\" This preset should provide near transparency\n                             to most people on most music.\n\n     \"--preset standard\" This preset should generally be transparent\n                             to most people on most music and is already\n                             quite high in quality.\n\n", 1, 0x143, a1, v7, v8);
+    fun_804a64c("     \"--preset extreme\" If you have extremely good hearing and similar\n                             equipment, this preset will generally provide\n                             slightly higher quality than the \"standard\"\n                             mode.\n\n", 1, 0xff, a1, v9, v10);
+    fun_804a64c("   For CBR 320kbps (highest quality possible from the --preset switches):\n\n     \"--preset insane\"  This preset will usually be overkill for most\n                             people and most situations, but if you must\n                             have the absolute highest quality with no\n                             regard to filesize, this is the way to go.\n\n", 1, 0x16a, a1, v11, v12);
+    fun_804a64c("   For ABR modes (high quality per given bitrate but not as high as VBR):\n\n     \"--preset <kbps>\"  Using this preset will usually give you good\n                             quality at a specified bitrate. Depending on the\n                             bitrate entered, this preset will determine the\n", 1, 0x12b, a1, v13, v14);
+    fun_804a64c("                             optimal settings for that particular situation.\n                             While this approach works, it is not nearly as\n                             flexible as VBR, and usually will not attain the\n                             same level of quality as VBR at higher bitrates.\n\n", 1, 0x136, a1, v15, v16);
+    fun_804a64c("The following options are also available for the corresponding profiles:\n\n   <fast>        standard\n   <fast>        extreme\n                 insane\n   <cbr> (ABR Mode) - The ABR Mode is implied. To use it,\n                      simply specify a bitrate. For example:\n                      \"--preset 185\" activates this\n                      preset and uses 185 as an average kbps.\n\n", 1, 0x17f, a1, v17, v18);
+    fun_804a64c("   \"fast\" - Enables the fast VBR mode for a particular profile.\n\n", 1, 65, a1, v19, v20);
+    fun_804a64c("   \"cbr\"  - If you use the ABR mode (read above) with a significant\n            bitrate such as 80, 96, 112, 128, 160, 192, 224, 256, 320,\n            you can use the \"cbr\" option to force CBR mode encoding\n            instead of the standard abr mode. ABR does provide higher\n            quality but CBR may be useful in situations such as when\n            streaming an mp3 over the internet may be important.\n\n", 1, 0x19c, a1, v21, v22);
+    fun_804a64c("    For example:\n\n    \"--preset fast standard <input file> <output file>\"\n or \"--preset cbr 192 <input file> <output file>\"\n or \"--preset 172 <input file> <output file>\"\n or \"--preset extreme <input file> <output file>\"\n\n\n", 1, 0xde, a1, v23, v24);
+    eax27 = fun_804a64c("A few aliases are also available for ABR mode:\nphone => 16kbps/mono        phon+/lw/mw-eu/sw => 24kbps/mono\nmw-us => 40kbps/mono        voice => 56kbps/mono\nfm/radio/tape => 112kbps    hifi => 160kbps\ncd => 192kbps               studio => 256kbps\n", 1, 0xf7, a1, v25, v26);
     return eax27;
 }
 
@@ -5627,7 +5627,7 @@ void** resample_rate(void** a1, void** a2, void** a3, void** a4, void** a5) {
     default:
         __asm__("fld qword [ebp-0x10]");
         __asm__("fstp qword [esp+0x4]");
-        error_printf(0x8058d80, v7, v8, v9, v10, 0x8058d80, v11, v12, v13, v14);
+        error_printf("Illegal resample frequency: %.3f kHz\n", v7, v8, v9, v10, "Illegal resample frequency: %.3f kHz\n", v11, v12, v13, v14);
         eax15 = reinterpret_cast<void**>(0);
         break;
     case 0:
@@ -5847,72 +5847,72 @@ int32_t presets_set(void** a1, void** a2, void** a3, void** a4, void** a5) {
     void** eax171;
 
     v6 = 0;
-    eax12 = fun_804aa6c(a4, 0x8058924, v7, v8, v9, v10, v11);
+    eax12 = fun_804aa6c(a4, "help", v7, v8, v9, v10, v11);
     if (eax12 || (reinterpret_cast<signed char>(a2) > reinterpret_cast<signed char>(0) || reinterpret_cast<signed char>(a3) > reinterpret_cast<signed char>(0))) {
-        eax18 = fun_804aa6c(a4, 0x8058929, v13, v14, v15, v16, v17);
+        eax18 = fun_804aa6c(a4, "phone", v13, v14, v15, v16, v17);
         if (!eax18) {
-            a4 = reinterpret_cast<void**>(0x805892f);
+            a4 = reinterpret_cast<void**>("16");
             v6 = 1;
         }
-        eax24 = fun_804aa6c(a4, 0x8058932, v19, v20, v21, v22, v23);
-        if (!eax24 || ((eax30 = fun_804aa6c(a4, 0x8058938, v25, v26, v27, v28, v29), eax30 == 0) || ((eax36 = fun_804aa6c(a4, 0x805893b, v31, v32, v33, v34, v35), eax36 == 0) || (eax42 = fun_804aa6c(a4, 0x8058941, v37, v38, v39, v40, v41), !eax42)))) {
-            a4 = reinterpret_cast<void**>(0x8058944);
+        eax24 = fun_804aa6c(a4, "phon+", v19, v20, v21, v22, v23);
+        if (!eax24 || ((eax30 = fun_804aa6c(a4, "lw", v25, v26, v27, v28, v29), eax30 == 0) || ((eax36 = fun_804aa6c(a4, "mw-eu", v31, v32, v33, v34, v35), eax36 == 0) || (eax42 = fun_804aa6c(a4, "sw", v37, v38, v39, v40, v41), !eax42)))) {
+            a4 = reinterpret_cast<void**>("24");
             v6 = 1;
         }
-        eax48 = fun_804aa6c(a4, 0x8058947, v43, v44, v45, v46, v47);
+        eax48 = fun_804aa6c(a4, "mw-us", v43, v44, v45, v46, v47);
         if (!eax48) {
-            a4 = reinterpret_cast<void**>(0x805894d);
+            a4 = reinterpret_cast<void**>("40");
             v6 = 1;
         }
-        eax54 = fun_804aa6c(a4, 0x8058950, v49, v50, v51, v52, v53);
+        eax54 = fun_804aa6c(a4, "voice", v49, v50, v51, v52, v53);
         if (!eax54) {
-            a4 = reinterpret_cast<void**>(0x8058956);
+            a4 = reinterpret_cast<void**>("56");
             v6 = 1;
         }
-        eax60 = fun_804aa6c(a4, 0x8058959, v55, v56, v57, v58, v59);
+        eax60 = fun_804aa6c(a4, "fm", v55, v56, v57, v58, v59);
         if (!eax60) {
-            a4 = reinterpret_cast<void**>(0x805895c);
+            a4 = reinterpret_cast<void**>("112");
         }
-        eax66 = fun_804aa6c(a4, 0x8058960, v61, v62, v63, v64, v65);
-        if (!eax66 || (eax72 = fun_804aa6c(a4, 0x8058966, v67, v68, v69, v70, v71), !eax72)) {
-            a4 = reinterpret_cast<void**>(0x805895c);
+        eax66 = fun_804aa6c(a4, "radio", v61, v62, v63, v64, v65);
+        if (!eax66 || (eax72 = fun_804aa6c(a4, "tape", v67, v68, v69, v70, v71), !eax72)) {
+            a4 = reinterpret_cast<void**>("112");
         }
-        eax78 = fun_804aa6c(a4, 0x805896b, v73, v74, v75, v76, v77);
+        eax78 = fun_804aa6c(a4, "hifi", v73, v74, v75, v76, v77);
         if (!eax78) {
-            a4 = reinterpret_cast<void**>(0x8058970);
+            a4 = reinterpret_cast<void**>("160");
         }
-        eax84 = fun_804aa6c(a4, 0x8058974, v79, v80, v81, v82, v83);
+        eax84 = fun_804aa6c(a4, "cd", v79, v80, v81, v82, v83);
         if (!eax84) {
-            a4 = reinterpret_cast<void**>(0x8058977);
+            a4 = reinterpret_cast<void**>("192");
         }
-        eax90 = fun_804aa6c(a4, 0x805897b, v85, v86, v87, v88, v89);
+        eax90 = fun_804aa6c(a4, "studio", v85, v86, v87, v88, v89);
         if (!eax90) {
-            a4 = reinterpret_cast<void**>(0x8058982);
+            a4 = reinterpret_cast<void**>("256");
         }
-        eax96 = fun_804aa6c(a4, 0x8058986, v91, v92, v93, v94, v95);
+        eax96 = fun_804aa6c(a4, "medium", v91, v92, v93, v94, v95);
         if (eax96) {
-            eax102 = fun_804aa6c(a4, 0x805898d, v97, v98, v99, v100, v101);
+            eax102 = fun_804aa6c(a4, "standard", v97, v98, v99, v100, v101);
             if (eax102) {
-                eax108 = fun_804aa6c(a4, 0x8058996, v103, v104, v105, v106, v107);
+                eax108 = fun_804aa6c(a4, "extreme", v103, v104, v105, v106, v107);
                 if (eax108) {
-                    eax114 = fun_804aa6c(a4, 0x805899e, v109, v110, v111, v112, v113);
+                    eax114 = fun_804aa6c(a4, "insane", v109, v110, v111, v112, v113);
                     if (eax114 || reinterpret_cast<signed char>(a2) > reinterpret_cast<signed char>(0)) {
-                        eax118 = fun_804a5cc(a4, 0x805899e, v115, v116, v117);
+                        eax118 = fun_804a5cc(a4, "insane", v115, v116, v117);
                         if (reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(eax118) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(eax118 == 0) || reinterpret_cast<signed char>(a2) > reinterpret_cast<signed char>(0)) {
                             eax119 = g805bcec;
-                            lame_version_print(eax119, 0x805899e);
-                            error_printf(0x8058a68, 0x805899e, v120, v121, v122);
-                            error_printf(0x8058c34, a5, a5, a5, a5, 0x8058c34, a5, a5, a5, a5);
+                            lame_version_print(eax119, "insane");
+                            error_printf("Error: You did not enter a valid profile and/or options with --preset\n\nAvailable profiles are:\n\n   <fast>        medium\n   <fast>        standard\n   <fast>        extreme\n                 insane\n          <cbr> (ABR Mode) - The ABR Mode is implied. To use it,\n                             simply specify a bitrate. For example:\n                             \"--preset 185\" activates this\n                             preset and uses 185 as an average kbps.\n\n", "insane", v120, v121, v122);
+                            error_printf("    Some examples:\n\n or \"%s --preset fast standard <input file> <output file>\"\n or \"%s --preset cbr 192 <input file> <output file>\"\n or \"%s --preset 172 <input file> <output file>\"\n or \"%s --preset extreme <input file> <output file>\"\n\nFor further information try: \"%s --preset help\"\n", a5, a5, a5, a5, "    Some examples:\n\n or \"%s --preset fast standard <input file> <output file>\"\n or \"%s --preset cbr 192 <input file> <output file>\"\n or \"%s --preset 172 <input file> <output file>\"\n or \"%s --preset extreme <input file> <output file>\"\n\nFor further information try: \"%s --preset help\"\n", a5, a5, a5, a5);
                             eax123 = -1;
                         } else {
-                            eax127 = fun_804a5cc(a4, 0x805899e, v124, v125, v126);
-                            if (reinterpret_cast<signed char>(eax127) <= reinterpret_cast<signed char>(7) || (eax131 = fun_804a5cc(a4, 0x805899e, v128, v129, v130), reinterpret_cast<signed char>(eax131) > reinterpret_cast<signed char>(0x140))) {
+                            eax127 = fun_804a5cc(a4, "insane", v124, v125, v126);
+                            if (reinterpret_cast<signed char>(eax127) <= reinterpret_cast<signed char>(7) || (eax131 = fun_804a5cc(a4, "insane", v128, v129, v130), reinterpret_cast<signed char>(eax131) > reinterpret_cast<signed char>(0x140))) {
                                 eax132 = g805bcec;
-                                lame_version_print(eax132, 0x805899e);
-                                error_printf(0x80589a8, a5, v133, v134, v135);
+                                lame_version_print(eax132, "insane");
+                                error_printf("Error: The bitrate specified is out of the valid range for this preset\n\nWhen using this mode you must enter a value between \"32\" and \"320\"\n\nFor further information try: \"%s --preset help\"\n", a5, v133, v134, v135);
                                 eax123 = -1;
                             } else {
-                                eax139 = fun_804a5cc(a4, 0x805899e, v136, v137, v138);
+                                eax139 = fun_804a5cc(a4, "insane", v136, v137, v138);
                                 fun_804a88c(a1, eax139, v140, v141, v142);
                                 if (reinterpret_cast<int1_t>(a3 == 1)) {
                                     fun_804a4bc(a1, 0, v143, v144, v145);
@@ -5956,9 +5956,9 @@ int32_t presets_set(void** a1, void** a2, void** a3, void** a4, void** a5) {
         }
     } else {
         eax170 = stdout;
-        lame_version_print(eax170, 0x8058924);
+        lame_version_print(eax170, "help");
         eax171 = stdout;
-        presets_longinfo_dm(eax171, 0x8058924);
+        presets_longinfo_dm(eax171, "help");
         eax123 = -1;
     }
     return eax123;
@@ -6066,8 +6066,8 @@ int32_t set_id3_albumart(void** a1, void** a2, void** a3, void** a4, void** a5) 
     int32_t eax23;
 
     if (a2) {
-        v6 = reinterpret_cast<void**>(0x8058e4c);
-        eax7 = fun_804a26c(a2, 0x8058e4c);
+        v6 = reinterpret_cast<void**>("rb");
+        eax7 = fun_804a26c(a2, "rb");
         if (eax7) {
             fun_804a40c(eax7, 0, 2, v8, v9, 0, eax7, eax7, 0, 2, v10, v11, 0, eax7);
             eax12 = fun_804a55c(eax7, 0, 2);
@@ -6103,19 +6103,19 @@ int32_t set_id3_albumart(void** a1, void** a2, void** a3, void** a4, void** a5) 
             v22 = 1;
         }
         if (v22 == 2) {
-            error_printf(0x8058e68, v6, v14, v18, v13, 0x8058e68, v6, v14, v18, v13);
+            error_printf("Insufficient memory for reading the albumart.\n", v6, v14, v18, v13, "Insufficient memory for reading the albumart.\n", v6, v14, v18, v13);
         } else {
             if (v22 > 2) {
                 if (v22 == 3) {
-                    error_printf(0x8058e97, a2, v14, v18, v13, 0x8058e97, a2, v14, v18, v13);
+                    error_printf("Read error: '%s'.\n", a2, v14, v18, v13, "Read error: '%s'.\n", a2, v14, v18, v13);
                 } else {
                     if (v22 == 4) {
-                        error_printf(0x8058eac, a2, v14, v18, v13, 0x8058eac, a2, v14, v18, v13);
+                        error_printf("Unsupported image: '%s'.\nSpecify JPEG/PNG/GIF image (128KB maximum)\n", a2, v14, v18, v13, "Unsupported image: '%s'.\nSpecify JPEG/PNG/GIF image (128KB maximum)\n", a2, v14, v18, v13);
                     }
                 }
             } else {
                 if (v22 == 1) {
-                    error_printf(0x8058e4f, a2, v14, v18, v13, 0x8058e4f, a2, v14, v18, v13);
+                    error_printf("Could not find: '%s'.\n", a2, v14, v18, v13, "Could not find: '%s'.\n", a2, v14, v18, v13);
                 }
             }
         }
@@ -6226,12 +6226,12 @@ int32_t print_license(void** a1, void** a2, void** a3, void** a4, void** a5) {
     void** v18;
 
     lame_version_print(a1, v6);
-    fun_804a64c(0x80555b0, 1, 0xff, a1, v7, v8);
-    fun_804a64c(0x80556b0, 1, 0xaf, a1, v9, v10);
-    fun_804a64c(0x8055760, 1, 0x9d, a1, v11, v12);
-    fun_804a64c(0x8055800, 1, 0x1e7, a1, v13, v14);
-    fun_804a64c(0x80559e8, 1, 0x6c, a1, v15, v16);
-    fun_804a64c(0x8055a58, 1, 0x103, a1, v17, v18);
+    fun_804a64c("Can I use LAME in my commercial program?\n\nYes, you can, under the restrictions of the LGPL.  In particular, you\ncan include a compiled version of the LAME library (for example,\nlame.dll) with a commercial program.  Some notable requirements of\nthe LGPL:\n\n", 1, 0xff, a1, v7, v8);
+    fun_804a64c("1. In your program, you cannot include any source code from LAME, with\n   the exception of files whose only purpose is to describe the library\n   interface (such as lame.h).\n\n", 1, 0xaf, a1, v9, v10);
+    fun_804a64c("2. Any modifications of LAME must be released under the LGPL.\n   The LAME project (www.mp3dev.org) would appreciate being\n   notified of any modifications.\n\n", 1, 0x9d, a1, v11, v12);
+    fun_804a64c("3. You must give prominent notice that your program is:\n      A. using LAME (including version number)\n      B. LAME is under the LGPL\n      C. Provide a copy of the LGPL.  (the file COPYING contains the LGPL)\n      D. Provide a copy of LAME source, or a pointer where the LAME\n         source can be obtained (such as www.mp3dev.org)\n   An example of prominent notice would be an \"About the LAME encoding engine\"\n   button in some pull down menu within the executable of your program.\n\n", 1, 0x1e7, a1, v13, v14);
+    fun_804a64c("4. If you determine that distribution of LAME requires a patent license,\n   you must obtain such license.\n\n\n", 1, 0x6c, a1, v15, v16);
+    fun_804a64c("*** IMPORTANT NOTE ***\n\nThe decoding functions provided in LAME use the mpglib decoding engine which\nis under the GPL.  They may not be used by any program not released under the\nGPL unless you obtain such permission from the MPG123 project (www.mpg123.de).\n\n", 1, 0x103, a1, v17, v18);
     return 0;
 }
 
@@ -6254,11 +6254,11 @@ int32_t short_help(void** a1, void** a2, void** a3, void** a4, void** a5) {
     void** v19;
 
     lame_version_print(a2, v6);
-    fun_804a65c(a2, 0x8055cac, a3, v7, v8, v9, ebp10);
-    eax12 = fun_804aa9c(a1, 0x8055cac, a3, v11);
-    fun_804a65c(a2, 0x8055d4c, eax12, v13, v14, v15, ebp10);
-    fun_804a64c(0x8055e80, 1, 0x141, a2, v16, v17);
-    fun_804a64c(0x8055fc4, 1, 89, a2, v18, v19);
+    fun_804a65c(a2, "usage: %s [options] <infile> [outfile]\n\n    <infile> and/or <outfile> can be \"-\", which means stdin/stdout.\n\nRECOMMENDED:\n    lame -V2 input.wav output.mp3\n\n", a3, v7, v8, v9, ebp10);
+    eax12 = fun_804aa9c(a1, "usage: %s [options] <infile> [outfile]\n\n    <infile> and/or <outfile> can be \"-\", which means stdin/stdout.\n\nRECOMMENDED:\n    lame -V2 input.wav output.mp3\n\n", a3, v11);
+    fun_804a65c(a2, "OPTIONS:\n    -b bitrate      set the bitrate, default 128 kbps\n    -h              higher quality, but a little slower.  Recommended.\n    -f              fast mode (lower quality)\n    -V n            quality setting for VBR.  default n=%i\n                    0=high quality,bigger files. 9=smaller files\n", eax12, v13, v14, v15, ebp10);
+    fun_804a64c("    --preset type   type must be \"medium\", \"standard\", \"extreme\", \"insane\",\n                    or a value for an average desired bitrate and depending\n                    on the value specified, appropriate quality settings will\n                    be used.\n                    \"--preset help\" gives more info on these\n\n", 1, 0x141, a2, v16, v17);
+    fun_804a64c("    --longhelp      full list of options\n\n    --license       print License information\n\n", 1, 89, a2, v18, v19);
     return 0;
 }
 
@@ -6317,37 +6317,37 @@ int32_t long_help(void** a1, void** a2, void** a3, void** a4, void** a5) {
     void** v55;
 
     lame_version_print(a2, v6);
-    fun_804a65c(a2, 0x8055cac, a3, v7, v8, v9, ebp10);
-    fun_804a64c(0x8056020, 1, 0x2a3, a2, v11, v12);
-    fun_804a64c(0x80562c4, 1, 0x1a9, a2, v13, v14);
+    fun_804a65c(a2, "usage: %s [options] <infile> [outfile]\n\n    <infile> and/or <outfile> can be \"-\", which means stdin/stdout.\n\nRECOMMENDED:\n    lame -V2 input.wav output.mp3\n\n", a3, v7, v8, v9, ebp10);
+    fun_804a64c("OPTIONS:\n  Input options:\n    --scale <arg>   scale input (multiply PCM data) by <arg>\n    --scale-l <arg> scale channel 0 (left) input (multiply PCM data) by <arg>\n    --scale-r <arg> scale channel 1 (right) input (multiply PCM data) by <arg>\n    --mp1input      input file is a MPEG Layer I   file\n    --mp2input      input file is a MPEG Layer II  file\n    --mp3input      input file is a MPEG Layer III file\n    --nogap <file1> <file2> <...>\n                    gapless encoding for a set of contiguous files\n    --nogapout <dir>\n                    output dir for gapless encoding (must precede --nogap)\n    --nogaptags     allow the use of VBR tags in gapless encoding\n", 1, 0x2a3, a2, v11, v12);
+    fun_804a64c("\n  Input options for RAW PCM:\n    -r              input is raw pcm\n    -x              force byte-swapping of input\n    -s sfreq        sampling frequency of input file (kHz) - default 44.1 kHz\n    --bitwidth w    input bit width is w (default 16)\n    --signed        input is signed (default)\n    --unsigned      input is unsigned\n    --little-endian input is little-endian (default)\n    --big-endian    input is big-endian\n", 1, 0x1a9, a2, v13, v14);
     wait_for(a2, a4, 0x1a9, a2);
-    fun_804a64c(0x8056470, 1, 0x32c, a2, v15, v16);
-    fun_804a64c(0x80567a0, 1, 0x169, a2, v17, v18);
-    fun_804a64c(0x805690c, 1, 0xe2, a2, v19, v20);
+    fun_804a64c("  Operational options:\n    -a              downmix from stereo to mono file for mono encoding\n    -m <mode>       (j)oint, (s)imple, (f)orce, (d)dual-mono, (m)ono\n                    default is (j) or (s) depending on bitrate\n                    joint  = joins the best possible of MS and LR stereo\n                    simple = force LR stereo on all frames\n                    force  = force MS stereo on all frames.\n    --preset type   type must be \"medium\", \"standard\", \"extreme\", \"insane\",\n                    or a value for an average desired bitrate and depending\n                    on the value specified, appropriate quality settings will\n                    be used.\n                    \"--preset help\" gives more info on these\n    --comp  <arg>   choose bitrate to achive a compression ratio of <arg>\n", 1, 0x32c, a2, v15, v16);
+    fun_804a64c("    --replaygain-fast   compute RG fast but slightly inaccurately (default)\n    --replaygain-accurate   compute RG more accurately and find the peak sample\n    --noreplaygain  disable ReplayGain analysis\n    --clipdetect    enable --replaygain-accurate and print a message whether\n                    clipping occurs and how far the waveform is from full scale\n", 1, 0x169, a2, v17, v18);
+    fun_804a64c("    --flush         flush output stream as soon as possible\n    --freeformat    produce a free format bitstream\n    --decode        input=mp3 file, output=wav\n    -t              disable writing wav header when using --decode\n", 1, 0xe2, a2, v19, v20);
     wait_for(a2, a4, 0xe2, a2);
-    fun_804a64c(0x80569f0, 1, 0x18a, a2, v21, v22);
-    fun_804a64c(0x8056b7c, 1, 0x131, a2, v23, v24);
+    fun_804a64c("  Verbosity:\n    --disptime <arg>print progress report every arg seconds\n    -S              don't print progress report, VBR histograms\n    --nohist        disable VBR histogram display\n    --silent        don't print anything on screen\n    --quiet         don't print anything on screen\n    --brief         print more useful information\n    --verbose       print a lot of useful information\n\n", 1, 0x18a, a2, v21, v22);
+    fun_804a64c("  Noise shaping & psycho acoustic algorithms:\n    -q <arg>        <arg> = 0...9.  Default  -q 5 \n                    -q 0:  Highest quality, very slow \n                    -q 9:  Poor quality, but fast \n    -h              Same as -q 2.   Recommended.\n    -f              Same as -q 7.   Fast, ok quality\n", 1, 0x131, a2, v23, v24);
     wait_for(a2, a4, 0x131, a2);
-    fun_804a64c(0x8056cb0, 1, 0xfb, a2, v25, v26);
+    fun_804a64c("  CBR (constant bitrate, the default) options:\n    -b <bitrate>    set the bitrate in kbps, default 128 kbps\n    --cbr           enforce use of constant bitrate\n\n  ABR options:\n    --abr <bitrate> specify average bitrate desired (instead of quality)\n\n", 1, 0xfb, a2, v25, v26);
     eax27 = fun_804aa9c(a1, 1, 0xfb, a2);
-    fun_804a65c(a2, 0x8056dac, eax27, a2, v28, v29, ebp10);
-    fun_804a64c(0x8056ee0, 1, 0x170, a2, v30, v31);
+    fun_804a65c(a2, "  VBR options:\n    -V n            quality setting for VBR.  default n=%i\n                    0=high quality,bigger files. 9=smaller files\n    -v              the same as -V 4\n    --vbr-old       use old variable bitrate (VBR) routine\n    --vbr-new       use new variable bitrate (VBR) routine (default)\n", eax27, a2, v28, v29, ebp10);
+    fun_804a64c("    -b <bitrate>    specify minimum allowed bitrate, default  32 kbps\n    -B <bitrate>    specify maximum allowed bitrate, default 320 kbps\n    -F              strictly enforce the -b option, for use with players that\n                    do not support low bitrate mp3\n    -t              disable writing LAME Tag\n    -T              enable and force writing LAME Tag\n", 1, 0x170, a2, v30, v31);
     wait_for(a2, a4, 0x170, a2);
-    fun_804a64c(0x8057051, 1, 15, a2, v32, v33);
-    fun_804a64c(0x8057064, 1, 0x1cc, a2, v34, v35);
-    fun_804a64c(0x8057234, 1, 55, a2, v36, v37);
+    fun_804a64c("  PSY related:\n", 1, 15, a2, v32, v33);
+    fun_804a64c("    --temporal-masking x   x=0 disables, x=1 enables temporal masking effect\n    --nssafejoint   M/S switching criterion\n    --nsmsfix <arg> M/S switching tuning [effective 0-3.5]\n    --interch x     adjust inter-channel masking ratio\n    --ns-bass x     adjust masking for sfbs  0 -  6 (long)  0 -  5 (short)\n    --ns-alto x     adjust masking for sfbs  7 - 13 (long)  6 - 10 (short)\n    --ns-treble x   adjust masking for sfbs 14 - 21 (long) 11 - 12 (short)\n", 1, 0x1cc, a2, v34, v35);
+    fun_804a64c("    --ns-sfb21 x    change ns-treble by x dB for sfb21\n", 1, 55, a2, v36, v37);
     wait_for(a2, a4, 55, a2);
-    fun_804a64c(0x805726c, 1, 90, a2, v38, v39);
+    fun_804a64c("  experimental switches:\n    -Y              lets LAME ignore noise in sfb21, like in CBR\n", 1, 90, a2, v38, v39);
     wait_for(a2, a4, 90, a2);
-    fun_804a64c(0x80572c8, 1, 0x19a, a2, v40, v41);
-    fun_804a65c(a2, 0x8057464, 0x19a, a2, v42, v43, ebp10);
-    fun_804a64c(0x80575a0, 1, 80, a2, v44, v45);
+    fun_804a64c("  MP3 header/stream options:\n    -e <emp>        de-emphasis n/5/c  (obsolete)\n    -c              mark as copyright\n    -o              mark as non-original\n    -p              error protection.  adds 16 bit checksum to every frame\n                    (the checksum is computed correctly)\n    --nores         disable the bit reservoir\n    --strictly-enforce-ISO   comply as much as possible to ISO MPEG spec\n\n", 1, 0x19a, a2, v40, v41);
+    fun_804a65c(a2, "  Filter options:\n  --lowpass <freq>        frequency(kHz), lowpass filter cutoff above freq\n  --lowpass-width <freq>  frequency(kHz) - default 15%% of lowpass freq\n  --highpass <freq>       frequency(kHz), highpass filter cutoff below freq\n  --highpass-width <freq> frequency(kHz) - default 15%% of highpass freq\n", 0x19a, a2, v42, v43, ebp10);
+    fun_804a64c("  --resample <sfreq>  sampling frequency of output file(kHz)- default=automatic\n", 1, 80, a2, v44, v45);
     wait_for(a2, a4, 80, a2);
-    fun_804a64c(0x80575f4, 1, 0x376, a2, v46, v47);
-    fun_804a64c(0x805796c, 1, 0x1dc, a2, v48, v49);
-    fun_804a64c(0x8057b4c, 1, 0x13c, a2, v50, v51);
+    fun_804a64c("  ID3 tag options:\n    --tt <title>    audio/song title (max 30 chars for version 1 tag)\n    --ta <artist>   audio/song artist (max 30 chars for version 1 tag)\n    --tl <album>    audio/song album (max 30 chars for version 1 tag)\n    --ty <year>     audio/song year of issue (1 to 9999)\n    --tc <comment>  user-defined text (max 30 chars for v1 tag, 28 for v1.1)\n    --tn <track[/total]>   audio/song track number and (optionally) the total\n                           number of tracks on the original recording. (track\n                           and total each 1 to 255. just the track number\n                           creates v1.1 tag, providing a total forces v2.0).\n    --tg <genre>    audio/song genre (name or number in list)\n    --ti <file>     audio/song albumArt (jpeg/png/gif file, 128KB max, v2.3)\n    --tv <id=value> user-defined frame specified by id and value (v2.3 tag)\n", 1, 0x376, a2, v46, v47);
+    fun_804a64c("    --add-id3v2     force addition of version 2 tag\n    --id3v1-only    add only a version 1 tag\n    --id3v2-only    add only a version 2 tag\n    --space-id3v1   pad version 1 tag with spaces instead of nulls\n    --pad-id3v2     same as '--pad-id3v2-size 128'\n    --pad-id3v2-size <value> adds version 2 tag, pad with extra <value> bytes\n    --genre-list    print alphabetically sorted ID3 genre list and exit\n    --ignore-tag-errors  ignore errors in values passed for tags\n\n", 1, 0x1dc, a2, v48, v49);
+    fun_804a64c("    Note: A version 2 tag will NOT be added unless one of the input fields\n    won't fit in a version 1 tag (e.g. the title string is longer than 30\n    characters), or the '--add-id3v2' or '--id3v2-only' options are used,\n    or output is redirected to stdout.\n\nMisc:\n    --license       print License information\n\n", 1, 0x13c, a2, v50, v51);
     wait_for(a2, a4, 0x13c, a2);
-    fun_804a64c(0x8057c8c, 1, 97, a2, v52, v53);
+    fun_804a64c("  Platform specific:\n    --noasm <instructions> disable assembly optimizations for mmx/3dnow/sse\n", 1, 97, a2, v52, v53);
     wait_for(a2, a4, 97, a2);
     display_bitrates(a2, a4, 97, a2, v54, v55, ebp10);
     return 0;
@@ -6438,21 +6438,21 @@ void** filename_to_type(void** a1, void** a2, void** a3, void** a4, void** a5) {
     eax9 = fun_804a4ac(a1, v6, v7, v8);
     if (reinterpret_cast<uint32_t>(eax9) > 3) {
         v10 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(a1) + reinterpret_cast<uint32_t>(eax9 - 2));
-        eax14 = local_strcasecmp(v10, 0x8058d58, v11, v12, v13);
+        eax14 = local_strcasecmp(v10, ".mpg", v11, v12, v13);
         if (eax14) {
-            eax18 = local_strcasecmp(v10, 0x8058d5d, v15, v16, v17);
+            eax18 = local_strcasecmp(v10, ".mp1", v15, v16, v17);
             if (eax18) {
-                eax22 = local_strcasecmp(v10, 0x8058d62, v19, v20, v21);
+                eax22 = local_strcasecmp(v10, ".mp2", v19, v20, v21);
                 if (eax22) {
-                    eax26 = local_strcasecmp(v10, 0x8058d67, v23, v24, v25);
+                    eax26 = local_strcasecmp(v10, ".mp3", v23, v24, v25);
                     if (eax26) {
-                        eax30 = local_strcasecmp(v10, 0x8058d6c, v27, v28, v29);
+                        eax30 = local_strcasecmp(v10, ".wav", v27, v28, v29);
                         if (eax30) {
-                            eax34 = local_strcasecmp(v10, 0x8058d71, v31, v32, v33);
+                            eax34 = local_strcasecmp(v10, ".aif", v31, v32, v33);
                             if (eax34) {
-                                eax38 = local_strcasecmp(v10, 0x8058d76, v35, v36, v37);
+                                eax38 = local_strcasecmp(v10, ".raw", v35, v36, v37);
                                 if (eax38) {
-                                    eax42 = local_strcasecmp(v10, 0x8058d7b, v39, v40, v41);
+                                    eax42 = local_strcasecmp(v10, ".ogg", v39, v40, v41);
                                     if (eax42) {
                                         eax43 = reinterpret_cast<void**>(0);
                                     } else {
@@ -6781,11 +6781,11 @@ void** timestatus(void** a1) {
             __asm__("fistp dword [ebp-0xc]");
             __asm__("fldcw word [ebp-0x3a]");
         }
-        console_printf(0x805993b, eax6, v12, v12, eax13, v16, v17, v18, v19, 0x805993b, eax6, v12, v12, eax13, v20, v21, v22, v23);
+        console_printf("\r%6i/%-6i", eax6, v12, v12, eax13, v16, v17, v18, v19, "\r%6i/%-6i", eax6, v12, v12, eax13, v20, v21, v22, v23);
         if (1) {
-            eax24 = reinterpret_cast<void**>(0x805994f);
+            eax24 = reinterpret_cast<void**>("(%3.3d%%)|");
         } else {
-            eax24 = reinterpret_cast<void**>(0x8059945);
+            eax24 = reinterpret_cast<void**>(" (%2d%%)|");
         }
         console_printf(eax24, 100, v12, v12, eax13, v25, v26, v27, v28, eax24, 100, v12, v12, eax13, v29, v30, v31, v32);
         __asm__("fld qword [0x805b448]");
@@ -6818,9 +6818,9 @@ void** timestatus(void** a1) {
         __asm__("fucomip st0, st1");
         __asm__("fstp st0");
         if (0) {
-            eax37 = reinterpret_cast<void**>(0x8059962);
+            eax37 = reinterpret_cast<void**>("%#9.5gx|");
         } else {
-            eax37 = reinterpret_cast<void**>(0x805995a);
+            eax37 = reinterpret_cast<void**>("%9.4fx|");
         }
         __asm__("fstp qword [esp+0x4]");
         console_printf(eax37, 0x7c, v12, v12, eax13, v38, v39, v40, v41, eax37, 0x7c, v12, v12, eax13, v42, v43, v44, v45);
@@ -6833,7 +6833,7 @@ void** timestatus(void** a1) {
         __asm__("fldcw word [ebp-0x3a]");
         eax47 = ts_time_decompose(v46, 32, v12, v12, eax13);
     } else {
-        eax47 = console_printf(0x80598a0, v48, v49, v50, v51, v52, v53, v54, v55);
+        eax47 = console_printf("\r    Frame          |  CPU time/estim | REAL time/estim | play/CPU |    ETA \n     0/       ( 0%%)|    0:00/     :  |    0:00/     :  |         x|     :  \r", v48, v49, v50, v51, v52, v53, v54, v55);
         init_3108 = 1;
     }
     return eax47;
@@ -7001,7 +7001,7 @@ void** timestatus_finish(void** a1) {
     void** ebp7;
     void** eax8;
 
-    eax8 = console_printf(0x805996b, v2, v3, v4, v5, v6, ebp7, __return_address(), a1);
+    eax8 = console_printf("\n", v2, v3, v4, v5, v6, ebp7, __return_address(), a1);
     return eax8;
 }
 
@@ -7161,15 +7161,15 @@ void** progress_line(void** a1, void** a2, void** a3, uint32_t a4, void** a5) {
         v37 = v18;
         v38 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xffffffe0);
         v39 = v19;
-        v40 = reinterpret_cast<void**>(0x8059bae);
-        console_printf(0x8059bae, v39, 0x805b8c6, v38, v37, 0x805bac7, v36, 0x8059b6f, v41, 0x8059bae, v39, 0x805b8c6, v38, v37, 0x805bac7, v36, 0x8059b6f, v42);
+        v40 = reinterpret_cast<void**>("\n%.*s%s%.*s%*s");
+        console_printf("\n%.*s%s%.*s%*s", v39, 0x805b8c6, v38, v37, 0x805bac7, v36, 0x8059b6f, v41, "\n%.*s%s%.*s%*s", v39, 0x805b8c6, v38, v37, 0x805bac7, v36, 0x8059b6f, v42);
     } else {
         v36 = reinterpret_cast<void**>(0x805bd06);
         v37 = v18;
         v38 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xffffffe0);
         v39 = v19;
-        v40 = reinterpret_cast<void**>(0x8059ba0);
-        console_printf(0x8059ba0, v39, 0x805b8c6, v38, v37, 0x805bac7, 0x805bd06, v43, v44, 0x8059ba0, v39, 0x805b8c6, v38, v37, 0x805bac7, 0x805bd06, v45, v46);
+        v40 = reinterpret_cast<void**>("\n%.*s%s%.*s%s");
+        console_printf("\n%.*s%s%.*s%s", v39, 0x805b8c6, v38, v37, 0x805bac7, 0x805bd06, v43, v44, "\n%.*s%s%.*s%s", v39, 0x805b8c6, v38, v37, 0x805bac7, 0x805bd06, v45, v46);
     }
     eax47 = g805b4c0;
     g805b4c0 = eax47 + 1;
@@ -7199,7 +7199,7 @@ void* stats_value(void** a1, void** a2, void** a3) {
     } else {
         __asm__("fld qword [ebp-0x10]");
         __asm__("fstp qword [esp+0x4]");
-        console_printf(0x8059bd1, v5, v6, v7, v8, v9, a1, a2, v10);
+        console_printf(" %5.1f", v5, v6, v7, v8, v9, a1, a2, v10);
         eax4 = reinterpret_cast<void*>(6);
     }
     return eax4;
@@ -7289,8 +7289,8 @@ void** brhist_disp_line(void** a1, void** a2, uint32_t a3, uint32_t a4, void** a
         v31 = v14;
         v32 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xffffffe6);
         v33 = eax28;
-        v34 = reinterpret_cast<void**>(0x8059b70);
-        console_printf(0x8059b70, v33, v32, v31, 0x805b6c5, v30, 0x805b4c4, v29, 0x8059b6f);
+        v34 = reinterpret_cast<void**>("\n%3d%s %.*s%.*s%*s");
+        console_printf("\n%3d%s %.*s%.*s%*s", v33, v32, v31, 0x805b6c5, v30, 0x805b4c4, v29, 0x8059b6f);
     } else {
         eax35 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a1) * 4 + 0x805b488);
         v29 = reinterpret_cast<void**>(0x805bd06);
@@ -7298,8 +7298,8 @@ void** brhist_disp_line(void** a1, void** a2, uint32_t a3, uint32_t a4, void** a
         v31 = v14;
         v32 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xffffffe6);
         v33 = eax35;
-        v34 = reinterpret_cast<void**>(0x8059b5d);
-        console_printf(0x8059b5d, v33, v32, v31, 0x805b6c5, v30, 0x805b4c4, 0x805bd06, v36);
+        v34 = reinterpret_cast<void**>("\n%3d%s %.*s%.*s%s");
+        console_printf("\n%3d%s %.*s%.*s%s", v33, v32, v31, 0x805b6c5, v30, 0x805b4c4, 0x805bd06, v36);
     }
     eax37 = g805b4c0;
     g805b4c0 = eax37 + 1;
@@ -7465,8 +7465,8 @@ void** write_xing_frame(void** a1, void** a2, void** a3, void** a4, void** a5, v
                 }
                 eax20 = eax12;
             } else {
-                v11 = reinterpret_cast<void**>(0x8054d67);
-                error_printf(0x8054d67, 1, v9, v13, v21);
+                v11 = reinterpret_cast<void**>("Error writing LAME-tag \n");
+                error_printf("Error writing LAME-tag \n", 1, v9, v13, v21);
                 eax20 = reinterpret_cast<void**>(0xffffffff);
             }
         } else {
@@ -7475,8 +7475,8 @@ void** write_xing_frame(void** a1, void** a2, void** a3, void** a4, void** a5, v
     } else {
         v9 = eax12;
         v10 = reinterpret_cast<void**>(0x24000);
-        v11 = reinterpret_cast<void**>(0x8054d18);
-        error_printf(0x8054d18, 0x24000, v9, v22, v23);
+        v11 = reinterpret_cast<void**>("Error writing LAME-tag frame: buffer too small: buffer size=%d  frame size=%d\n");
+        error_printf("Error writing LAME-tag frame: buffer too small: buffer size=%d  frame size=%d\n", 0x24000, v9, v22, v23);
         eax20 = reinterpret_cast<void**>(0xffffffff);
     }
     edx24 = eax8 ^ g14;
@@ -7596,32 +7596,32 @@ void encoder_progress_begin(void** a1, void** a2, void** a3) {
         return;
     } else {
         fun_804a4cc(a1);
-        eax10 = fun_804aa6c(a3, 0x805996d, v5, v6, v7, v8, v9);
+        eax10 = fun_804aa6c(a3, "-", v5, v6, v7, v8, v9);
         if (!eax10) {
-            esi11 = reinterpret_cast<void**>(0x805996f);
+            esi11 = reinterpret_cast<void**>("<stdout>");
         } else {
             esi11 = a3;
         }
-        eax14 = fun_804a4ac(a2, 0x805996d, v12, v13);
-        eax17 = fun_804a4ac(a3, 0x805996d, v15, v16);
+        eax14 = fun_804a4ac(a2, "-", v12, v13);
+        eax17 = fun_804a4ac(a3, "-", v15, v16);
         if (reinterpret_cast<uint32_t>(eax14) + reinterpret_cast<uint32_t>(eax17) > 65) {
-            ebx18 = reinterpret_cast<void**>(0x8059979);
+            ebx18 = reinterpret_cast<void**>("\n     ");
         } else {
             ebx18 = reinterpret_cast<void**>(0x8059978);
         }
-        eax24 = fun_804aa6c(a2, 0x805996d, v19, v20, v21, v22, v23);
+        eax24 = fun_804aa6c(a2, "-", v19, v20, v21, v22, v23);
         if (!eax24) {
-            eax25 = reinterpret_cast<void**>(0x8059980);
+            eax25 = reinterpret_cast<void**>("<stdin>");
         } else {
             eax25 = a2;
         }
-        console_printf(0x8059988, eax25, ebx18, esi11, v26, v27, v28, v29, v30);
+        console_printf("Encoding %s%s to %s\n", eax25, ebx18, esi11, v26, v27, v28, v29, v30);
         fun_804a95c(a1, eax25, ebx18, esi11);
         __asm__("fild dword [ebp-0x20]");
         __asm__("fld qword [0x8059af8]");
         __asm__("fmulp st1, st0");
         __asm__("fstp qword [esp+0x4]");
-        console_printf(0x805999d, eax25, ebx18, esi11, v31, v32, v33, v34, v35);
+        console_printf("Encoding as %g kHz ", eax25, ebx18, esi11, v31, v32, v33, v34, v35);
         eax37 = fun_804a51c(a1, eax25, ebx18, esi11, v36);
         if (eax37 != 2) 
             goto addr_805346b_13;
@@ -7633,7 +7633,7 @@ void encoder_progress_begin(void** a1, void** a2, void** a3) {
     if (eax39 > 0x3e7f) {
         esi40 = reinterpret_cast<void**>(0x8059978);
     } else {
-        esi40 = reinterpret_cast<void**>(0x80599b1);
+        esi40 = reinterpret_cast<void**>(".5");
     }
     eax41 = fun_804a7ac(a1, eax25, ebx18, esi11);
     eax42 = fun_804a98c(a1, eax25, ebx18, esi11);
@@ -7644,7 +7644,7 @@ void encoder_progress_begin(void** a1, void** a2, void** a3) {
     v46 = esi40;
     v47 = reinterpret_cast<void**>(2 - eax41);
     v48 = eax45;
-    console_printf(0x80599b4, v48, v47, v46, v49, v50, eax38, v51, v52);
+    console_printf("%s MPEG-%u%s Layer III VBR(q=%g) qval=%i\n", v48, v47, v46, v49, v50, eax38, v51, v52);
     addr_80537a1_18:
     eax53 = silent;
     if (reinterpret_cast<signed char>(eax53) < reinterpret_cast<signed char>(0xfffffff7)) {
@@ -7673,7 +7673,7 @@ void encoder_progress_begin(void** a1, void** a2, void** a3) {
             if (eax57 > 0x3e7f) {
                 edi58 = reinterpret_cast<void**>(0x8059978);
             } else {
-                edi58 = reinterpret_cast<void**>(0x80599b1);
+                edi58 = reinterpret_cast<void**>(".5");
             }
             eax59 = fun_804a7ac(a1, eax25, ebx18, esi11);
             eax60 = fun_804a98c(a1, eax25, ebx18, esi11);
@@ -7684,7 +7684,7 @@ void encoder_progress_begin(void** a1, void** a2, void** a3) {
             v46 = edi58;
             v47 = reinterpret_cast<void**>(2 - eax59);
             v48 = eax63;
-            console_printf(0x8059a04, v48, v47, v46, v64, v65, eax56, eax54, v66, 0x8059a04, v48, v47, v46, v67, v68, eax56, eax54, v69);
+            console_printf("%s MPEG-%u%s Layer III (%gx) average %d kbps qval=%i\n", v48, v47, v46, v64, v65, eax56, eax54, v66, "%s MPEG-%u%s Layer III (%gx) average %d kbps qval=%i\n", v48, v47, v46, v67, v68, eax56, eax54, v69);
             goto addr_80537a1_18;
         } else {
             if (eax37 == 4) {
@@ -7695,7 +7695,7 @@ void encoder_progress_begin(void** a1, void** a2, void** a3) {
                 if (eax70 > 0x3e7f) {
                     edi71 = reinterpret_cast<void**>(0x8059978);
                 } else {
-                    edi71 = reinterpret_cast<void**>(0x80599b1);
+                    edi71 = reinterpret_cast<void**>(".5");
                 }
             } else {
                 goto addr_80536b6_30;
@@ -7715,7 +7715,7 @@ void encoder_progress_begin(void** a1, void** a2, void** a3) {
     v46 = edi71;
     v47 = reinterpret_cast<void**>(2 - eax72);
     v48 = eax76;
-    console_printf(0x80599e0, v48, v47, v46, v77, v78, v79, v80, v81);
+    console_printf("%s MPEG-%u%s Layer III VBR(q=%g)\n", v48, v47, v46, v77, v78, v79, v80, v81);
     goto addr_80537a1_18;
     addr_80536b6_30:
     eax82 = fun_804a58c(a1, eax25, ebx18, esi11);
@@ -7737,7 +7737,7 @@ void encoder_progress_begin(void** a1, void** a2, void** a3) {
     if (eax85 > 0x3e7f) {
         edi86 = reinterpret_cast<void**>(0x8059978);
     } else {
-        edi86 = reinterpret_cast<void**>(0x80599b1);
+        edi86 = reinterpret_cast<void**>(".5");
     }
     eax87 = fun_804a7ac(a1, eax25, ebx18, esi11);
     eax88 = fun_804a98c(a1, eax25, ebx18, esi11);
@@ -7748,7 +7748,7 @@ void encoder_progress_begin(void** a1, void** a2, void** a3) {
     v46 = edi86;
     v47 = reinterpret_cast<void**>(2 - eax87);
     v48 = eax91;
-    console_printf(0x8059a3c, v48, v47, v46, v92, v93, eax84, eax82, v94, 0x8059a3c, v48, v47, v46, v95, v96, eax84, eax82, v97);
+    console_printf("%s MPEG-%u%s Layer III (%gx) %3d kbps qval=%i\n", v48, v47, v46, v92, v93, eax84, eax82, v94, "%s MPEG-%u%s Layer III (%gx) %3d kbps qval=%i\n", v48, v47, v46, v95, v96, eax84, eax82, v97);
     goto addr_80537a1_18;
 }
 
@@ -7997,16 +7997,16 @@ void deinit_console(struct s2* a1) {
     void** v14;
     void** eax15;
 
-    if (a1->f16) {
-        v2 = a1->f16;
+    if (a1->f10) {
+        v2 = a1->f10;
         fun_804a43c(v2, v3, v4, v5, v6, v7, ebp8);
-        a1->f16 = reinterpret_cast<void**>(0);
+        a1->f10 = reinterpret_cast<void**>(0);
     }
     v9 = a1->f8;
     fun_804a3ec(v9, v10, v11, v12, v13, v14, ebp8);
     eax15 = a1->f8;
     fun_804a68c(eax15, 0, 2, 0);
-    fun_804a25c(&a1->f68, 85, 0x400, 0);
+    fun_804a25c(&a1->f44, 85, 0x400, 0);
     return;
 }
 
@@ -8104,11 +8104,11 @@ void display_bitrate(void** a1, void** a2, void** a3, void** a4) {
     v6 = reinterpret_cast<void**>(48 / reinterpret_cast<signed char>(a3));
     v7 = reinterpret_cast<void**>(32 / reinterpret_cast<signed char>(a3));
     v8 = a2;
-    fun_804a65c(a1, 0x8057cf0, v8, v7, v6, v9, v10);
+    fun_804a65c(a1, "\nMPEG-%-3s layer III sample frequencies (kHz):  %2d  %2d  %g\nbitrates (kbps):", v8, v7, v6, v9, v10);
     v11 = 1;
     while (reinterpret_cast<int32_t>(v11) <= reinterpret_cast<int32_t>(v5)) {
         v8 = *reinterpret_cast<void***>(((reinterpret_cast<unsigned char>(a4) << 4) + v11) * 4 + 0x805b2e0);
-        fun_804a65c(a1, 0x8057d3e, v8, v7, v6, v12, v13);
+        fun_804a65c(a1, " %2i", v8, v7, v6, v12, v13);
         ++v11;
     }
     fun_804a73c(10, a1, v8, v7, v6);
@@ -8144,7 +8144,7 @@ void CloseSndFile(void** a1, void** a2) {
     if (eax9) {
         eax10 = silent;
         if (reinterpret_cast<signed char>(eax10) <= reinterpret_cast<signed char>(9)) {
-            error_printf(0x8055310, v11, v12, v13, v14);
+            error_printf("Could not close audio input file\n", v11, v12, v13, v14);
         }
         fun_804aa7c(2, v15, v16, v17, v18, v19, ebp8);
     }
@@ -8210,8 +8210,8 @@ void** apply_termcap_settings(void** a1, void** a2, void** a3, void** a4) {
 
     ebp5 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     eax6 = g14;
-    v7 = reinterpret_cast<void**>(0x8054f30);
-    eax10 = fun_804a1dc(0x8054f30, v8, v9);
+    v7 = reinterpret_cast<void**>("TERM");
+    eax10 = fun_804a1dc("TERM", v8, v9);
     if (eax10) {
         v11 = eax10;
         v7 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xfffff7ea);
@@ -8225,21 +8225,21 @@ void** apply_termcap_settings(void** a1, void** a2, void** a3, void** a4) {
             if (reinterpret_cast<signed char>(eax14) > reinterpret_cast<signed char>(15) && reinterpret_cast<signed char>(eax14) <= reinterpret_cast<signed char>(0x100)) {
                 *reinterpret_cast<void***>(a1 + 24) = eax14;
             }
-            eax15 = fun_804a97c(0x8054f3b, reinterpret_cast<int32_t>(ebp5) + 0xfffff7e0);
+            eax15 = fun_804a97c("up", reinterpret_cast<int32_t>(ebp5) + 0xfffff7e0);
             if (eax15) {
                 fun_804a54c(a1 + 28, eax15, v16, v17, v18);
             }
-            eax19 = fun_804a97c(0x8054f3e, reinterpret_cast<int32_t>(ebp5) + 0xfffff7e0);
+            eax19 = fun_804a97c("ce", reinterpret_cast<int32_t>(ebp5) + 0xfffff7e0);
             if (eax19) {
                 fun_804a54c(a1 + 38, eax19, v20, v21, v22);
             }
-            eax23 = fun_804a97c(0x8054f41, reinterpret_cast<int32_t>(ebp5) + 0xfffff7e0);
+            eax23 = fun_804a97c("md", reinterpret_cast<int32_t>(ebp5) + 0xfffff7e0);
             if (eax23) {
                 fun_804a54c(a1 + 48, eax23, v24, v25, v26);
             }
             v11 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xfffff7e0);
-            v7 = reinterpret_cast<void**>(0x8054f44);
-            eax27 = fun_804a97c(0x8054f44, v11);
+            v7 = reinterpret_cast<void**>("me");
+            eax27 = fun_804a97c("me", v11);
             if (eax27) {
                 v11 = eax27;
                 v7 = a1 + 58;
@@ -8326,13 +8326,13 @@ void** parse_file_header(void** a1, void** a2) {
         if (eax5 != eax8) {
             eax9 = silent;
             if (reinterpret_cast<signed char>(eax9) <= reinterpret_cast<signed char>(9)) {
-                error_printf(0x80552ec, v10, v11, v12, v13);
+                error_printf("Warning: unsupported audio format\n", v10, v11, v12, v13);
             }
         } else {
             eax14 = parse_aiff_header(a1, a2);
             if (eax14 <= 0) {
                 if (eax14 < 0 && (eax15 = silent, reinterpret_cast<signed char>(eax15) <= reinterpret_cast<signed char>(9))) {
-                    error_printf(0x80552bc, a2, v16, v17, v18);
+                    error_printf("Warning: corrupt or unsupported AIFF format\n", a2, v16, v17, v18);
                 }
             } else {
                 global = 1;
@@ -8344,7 +8344,7 @@ void** parse_file_header(void** a1, void** a2) {
         eax20 = parse_wave_header(a1, a2);
         if (eax20 <= 0) {
             if (eax20 < 0 && (eax21 = silent, reinterpret_cast<signed char>(eax21) <= reinterpret_cast<signed char>(9))) {
-                error_printf(0x805528c, a2, v22, v23, v24);
+                error_printf("Warning: corrupt or unsupported WAVE format\n", a2, v22, v23, v24);
             }
         } else {
             global = 1;
@@ -8486,24 +8486,24 @@ void** OpenSndFile(void** a1, void** a2, void** a3, void** a4) {
     void** v103;
 
     fun_804a87c(a1, 0xffffffff, v5, v6);
-    v7 = reinterpret_cast<void**>(0x8055007);
-    eax13 = fun_804aa6c(a2, 0x8055007, v8, v9, v10, v11, v12);
+    v7 = reinterpret_cast<void**>("-");
+    eax13 = fun_804aa6c(a2, "-", v8, v9, v10, v11, v12);
     if (eax13) {
-        v7 = reinterpret_cast<void**>(0x8055332);
-        eax14 = fun_804a26c(a2, 0x8055332);
+        v7 = reinterpret_cast<void**>("rb");
+        eax14 = fun_804a26c(a2, "rb");
         v15 = eax14;
         if (!v15) {
             eax16 = silent;
             if (reinterpret_cast<signed char>(eax16) <= reinterpret_cast<signed char>(9)) {
                 v7 = a2;
-                error_printf(0x8055335, v7, v17, v18, v19);
+                error_printf("Could not find \"%s\".\n", v7, v17, v18, v19);
             }
             fun_804aa7c(1, v7, v20, v21, v22, v23, v24);
         }
     } else {
         eax25 = stdin;
         v15 = eax25;
-        lame_set_stream_binary_mode(v15, 0x8055007);
+        lame_set_stream_binary_mode(v15, "-");
     }
     eax26 = input_format;
     eax29 = is_mpeg_file_format(eax26, v7, v27, v28);
@@ -8512,7 +8512,7 @@ void** OpenSndFile(void** a1, void** a2, void** a3, void** a4) {
         if (reinterpret_cast<int1_t>(eax30 == 8)) {
             eax31 = silent;
             if (reinterpret_cast<signed char>(eax31) <= reinterpret_cast<signed char>(9)) {
-                error_printf(0x80553a4, v7, v32, v33, v34);
+                error_printf("sorry, vorbis support in LAME is deprecated.\n", v7, v32, v33, v34);
             }
             fun_804aa7c(1, v7, v35, v36, v37, v38, v39);
         }
@@ -8524,12 +8524,12 @@ void** OpenSndFile(void** a1, void** a2, void** a3, void** a4) {
         } else {
             eax42 = silent;
             if (reinterpret_cast<signed char>(eax42) <= reinterpret_cast<signed char>(9)) {
-                console_printf(0x80553d2, v7, v43, v44, v45, v46, v47, v48, v49);
+                console_printf("Assuming raw pcm input file", v7, v43, v44, v45, v46, v47, v48, v49);
                 eax50 = swapbytes;
                 if (!eax50) {
-                    console_printf(0x8055408, v7, v51, v52, v53, v54, v55, v56, v57);
+                    console_printf("\n", v7, v51, v52, v53, v54, v55, v56, v57);
                 } else {
-                    console_printf(0x80553ee, v7, v58, v59, v60, v61, v62, v63, v64);
+                    console_printf(" : Forcing byte-swapping\n", v7, v58, v59, v60, v61, v62, v63, v64);
                 }
             }
             eax65 = swapbytes;
@@ -8544,7 +8544,7 @@ void** OpenSndFile(void** a1, void** a2, void** a3, void** a4) {
             eax74 = silent;
             if (reinterpret_cast<signed char>(eax74) <= reinterpret_cast<signed char>(9)) {
                 v68 = a2;
-                error_printf(0x805534c, v68, v67, v66, v75);
+                error_printf("Error reading headers in mp3 input file %s.\n", v68, v67, v66, v75);
             }
             fun_804aa7c(1, v68, v67, v66, v76, v77, v78);
         }
@@ -8556,7 +8556,7 @@ void** OpenSndFile(void** a1, void** a2, void** a3, void** a4) {
             if (reinterpret_cast<signed char>(eax83) <= reinterpret_cast<signed char>(9)) {
                 eax84 = g805c564;
                 v80 = eax84;
-                error_printf(0x805537c, v80, v67, v66, v85);
+                error_printf("Unsupported number of channels: %ud\n", v80, v67, v66, v85);
             }
             fun_804aa7c(1, v80, v67, v66, v86, v87, v88);
         }
@@ -8596,7 +8596,7 @@ void** OpenSndFile(void** a1, void** a2, void** a3, void** a4) {
                 __asm__("fmulp st1, st0");
                 __asm__("fdivp st1, st0");
                 __asm__("fstp qword [ebp-0x20]");
-                fun_804a06c(a1, v7, v67, v66, eax98, 0x8055332, v103, eax102);
+                fun_804a06c(a1, v7, v67, v66, eax98, "rb", v103, eax102);
                 __asm__("fild dword [ebp-0x2c]");
                 __asm__("fmul qword [ebp-0x20]");
                 __asm__("fnstcw word [ebp-0x2e]");
@@ -9065,12 +9065,12 @@ void** ts_time_decompose(void* a1, void** a2, void** a3, void** a4, void** a5) {
     v11 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(a1) - ((eax10 << 4) - eax10));
     if (v7) {
         if (reinterpret_cast<unsigned char>(v7) > reinterpret_cast<unsigned char>(99)) {
-            eax18 = console_printf(0x8059897, v7, static_cast<int32_t>(*reinterpret_cast<signed char*>(&eax6)), v12, v13, v14, v15, v16, v17);
+            eax18 = console_printf("%6lu h%c", v7, static_cast<int32_t>(*reinterpret_cast<signed char*>(&eax6)), v12, v13, v14, v15, v16, v17);
         } else {
-            eax18 = console_printf(0x8059886, v7, v9, v11, static_cast<int32_t>(*reinterpret_cast<signed char*>(&eax6)), v19, v20, v21, v22);
+            eax18 = console_printf("%2lu:%02u:%02u%c", v7, v9, v11, static_cast<int32_t>(*reinterpret_cast<signed char*>(&eax6)), v19, v20, v21, v22);
         }
     } else {
-        eax18 = console_printf(0x8059878, v9, v11, static_cast<int32_t>(*reinterpret_cast<signed char*>(&eax6)), v23, v24, v25, v26, v27);
+        eax18 = console_printf("   %2u:%02u%c", v9, v11, static_cast<int32_t>(*reinterpret_cast<signed char*>(&eax6)), v23, v24, v25, v26, v27);
     }
     return eax18;
 }
@@ -9258,85 +9258,85 @@ void stats_line(void* a1, void** a2, void** a3, uint32_t a4, void** a5) {
     void** v91;
     int32_t eax92;
 
-    console_printf(0x8059bd8, v6, v7, v8, v9, v10, v11, 1, v12);
+    console_printf("\n   kbps     ", v6, v7, v8, v9, v10, v11, 1, v12);
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax14 = stats_head(0x8059bd8, v13, 0x8059be6);
+    eax14 = stats_head("\n   kbps     ", v13, "  mono");
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax16 = stats_head(0x8059bd8, v15, 0x8059bed);
+    eax16 = stats_head("\n   kbps     ", v15, "   IS ");
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax18 = stats_head(0x8059bd8, v17, 0x8059bf4);
+    eax18 = stats_head("\n   kbps     ", v17, "   LR ");
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax20 = stats_head(0x8059bd8, v19, 0x8059bfb);
+    eax20 = stats_head("\n   kbps     ", v19, "   MS ");
     v21 = reinterpret_cast<void**>(13 + reinterpret_cast<uint32_t>(eax14) + reinterpret_cast<uint32_t>(eax16) + reinterpret_cast<uint32_t>(eax18) + reinterpret_cast<uint32_t>(eax20));
-    console_printf(0x8059c02, v22, 0x8059bfb, v23, v24, v25, v26, v21, v27);
+    console_printf(" %%    ", v22, "   MS ", v23, v24, v25, v26, v21, v27);
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax29 = stats_head(0x8059c02, v28, 0x8059c0a);
+    eax29 = stats_head(" %%    ", v28, " long ");
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax31 = stats_head(0x8059c02, v30, 0x8059c11);
+    eax31 = stats_head(" %%    ", v30, "switch");
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax33 = stats_head(0x8059c02, v32, 0x8059c18);
+    eax33 = stats_head(" %%    ", v32, " short");
     __asm__("fld qword [eax]");
-    v34 = reinterpret_cast<void**>(0x8059c1f);
+    v34 = reinterpret_cast<void**>(" mixed");
     __asm__("fstp qword [esp]");
-    eax36 = stats_head(0x8059c02, v35, 0x8059c1f);
+    eax36 = stats_head(" %%    ", v35, " mixed");
     v37 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v21 + 6) + reinterpret_cast<uint32_t>(eax29) + reinterpret_cast<uint32_t>(eax31) + reinterpret_cast<uint32_t>(eax33) + reinterpret_cast<uint32_t>(eax36));
-    eax44 = console_printf(0x8059c26, v38, 0x8059c1f, v39, v40, v41, v42, v37, v43);
+    eax44 = console_printf(" %%", v38, " mixed", v39, v40, v41, v42, v37, v43);
     v45 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v37) + reinterpret_cast<unsigned char>(eax44));
     eax46 = g805bd06;
     if (!*reinterpret_cast<signed char*>(&eax46)) {
         eax47 = g805bcf4;
         v34 = reinterpret_cast<void**>(0x8059b6f);
         v48 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(eax47) - reinterpret_cast<unsigned char>(v45));
-        console_printf(0x8059c2d, v48, 0x8059b6f, v49, v50, v51, v52, v45, v53);
+        console_printf("%*s", v48, 0x8059b6f, v49, v50, v51, v52, v45, v53);
     } else {
         v48 = reinterpret_cast<void**>(0x805bd06);
-        console_printf(0x8059c2a, 0x805bd06, 0x8059c1f, v54, v55, v56, v57, v45, v58);
+        console_printf("%s", 0x805bd06, " mixed", v54, v55, v56, v57, v45, v58);
     }
     eax59 = g805b4c0;
     g805b4c0 = eax59 + 1;
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp+0x4]");
-    console_printf(0x8059c31, v48, v34, v60, v61, v62, v63, 1, v64);
+    console_printf("\n  %5.1f     ", v48, v34, v60, v61, v62, v63, 1, v64);
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax65 = stats_value(0x8059c31, v48, v34);
+    eax65 = stats_value("\n  %5.1f     ", v48, v34);
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax66 = stats_value(0x8059c31, v48, v34);
+    eax66 = stats_value("\n  %5.1f     ", v48, v34);
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax67 = stats_value(0x8059c31, v48, v34);
+    eax67 = stats_value("\n  %5.1f     ", v48, v34);
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax68 = stats_value(0x8059c31, v48, v34);
+    eax68 = stats_value("\n  %5.1f     ", v48, v34);
     v69 = reinterpret_cast<void**>(13 + reinterpret_cast<uint32_t>(eax65) + reinterpret_cast<uint32_t>(eax66) + reinterpret_cast<uint32_t>(eax67) + reinterpret_cast<uint32_t>(eax68));
-    console_printf(0x8059c3f, v48, v34, v70, v71, v72, v73, v69, v74);
+    console_printf("      ", v48, v34, v70, v71, v72, v73, v69, v74);
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax75 = stats_value(0x8059c3f, v48, v34);
+    eax75 = stats_value("      ", v48, v34);
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax76 = stats_value(0x8059c3f, v48, v34);
+    eax76 = stats_value("      ", v48, v34);
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax77 = stats_value(0x8059c3f, v48, v34);
+    eax77 = stats_value("      ", v48, v34);
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
-    eax78 = stats_value(0x8059c3f, v48, v34);
+    eax78 = stats_value("      ", v48, v34);
     v79 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v69 + 6) + reinterpret_cast<uint32_t>(eax75) + reinterpret_cast<uint32_t>(eax76) + reinterpret_cast<uint32_t>(eax77) + reinterpret_cast<uint32_t>(eax78));
     eax80 = g805bd06;
     if (!*reinterpret_cast<signed char*>(&eax80)) {
         eax81 = g805bcf4;
-        console_printf(0x8059c2d, reinterpret_cast<int32_t>(eax81) - reinterpret_cast<unsigned char>(v79), 0x8059b6f, v82, v83, v84, v85, v79, v86);
+        console_printf("%*s", reinterpret_cast<int32_t>(eax81) - reinterpret_cast<unsigned char>(v79), 0x8059b6f, v82, v83, v84, v85, v79, v86);
     } else {
-        console_printf(0x8059c2a, 0x805bd06, v34, v87, v88, v89, v90, v79, v91);
+        console_printf("%s", 0x805bd06, v34, v87, v88, v89, v90, v79, v91);
     }
     eax92 = g805b4c0;
     g805b4c0 = eax92 + 1;
@@ -9452,13 +9452,13 @@ void** set_debug_file(void** a1) {
 
     eax2 = g805bcf0;
     if (!eax2) {
-        eax3 = fun_804a26c(a1, 0x8054f4b);
+        eax3 = fun_804a26c(a1, "a");
         g805bcf0 = eax3;
         eax4 = g805bcf0;
         if (!eax4) {
-            eax2 = error_printf(0x8054f6c, a1, v5, v6, v7);
+            eax2 = error_printf("Error: can't open for debug info: %s\n", a1, v5, v6, v7);
         } else {
-            eax2 = error_printf(0x8054f4d, a1, v8, v9, v10);
+            eax2 = error_printf("writing debug info into: %s\n", a1, v8, v9, v10);
         }
     }
     return eax2;
@@ -9775,7 +9775,7 @@ void** main(void** a1, void** a2) {
         fun_804a21c(v16, frontend_debugf, 0x1001);
         fun_804a6bc(v16, frontend_msgf, 0x1001);
         if (reinterpret_cast<signed char>(a1) > reinterpret_cast<signed char>(1)) {
-            eax17 = fun_804a1dc(0x8054eff, frontend_msgf, 0x1001);
+            eax17 = fun_804a1dc("LAMEOPT", frontend_msgf, 0x1001);
             esp18 = esp9 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4;
             parse_args_from_string(v16, eax17, esp18 + 0xc8449, esp18 + 0xca44b);
             esp19 = esp18 - 4 + 4;
@@ -9908,7 +9908,7 @@ void** main(void** a1, void** a2) {
                             eax54 = stderr;
                             display_bitrates(eax54, 0, v11, v23, v22, v21, v20);
                         }
-                        error_printf(0x8054edc, 0, v11, v23, v22, 0x8054edc, 0, v11, v23, v22);
+                        error_printf("fatal error during initialization\n", 0, v11, v23, v22, "fatal error during initialization\n", 0, v11, v23, v22);
                         v52 = v16;
                         fun_804a3bc(v52, 0, v11, v23, v22, v21, v20);
                         frontend_close_console(v52, 0, v11, v23, v22, v21, v20);
@@ -9936,9 +9936,9 @@ void** main(void** a1, void** a2) {
             eax53 = reinterpret_cast<void**>(1);
         }
     } else {
-        v52 = reinterpret_cast<void**>(0x8054edc);
-        error_printf(0x8054edc, 0, 0x1001, v66, v67);
-        frontend_close_console(0x8054edc, 0, 0x1001, v68, v69, v70, v71);
+        v52 = reinterpret_cast<void**>("fatal error during initialization\n");
+        error_printf("fatal error during initialization\n", 0, 0x1001, v66, v67);
+        frontend_close_console("fatal error during initialization\n", 0, 0x1001, v68, v69, v70, v71);
         eax53 = reinterpret_cast<void**>(1);
     }
     edx72 = v6 ^ g14;
@@ -10125,7 +10125,7 @@ void** genre_list_handler(void** a1, void** a2) {
     void** ebp6;
     void** eax7;
 
-    eax7 = console_printf(0x8058d50, a1, a2, v3, v4, v5, ebp6, __return_address(), a1);
+    eax7 = console_printf("%3d %s\n", a1, a2, v3, v4, v5, ebp6, __return_address(), a1);
     return eax7;
 }
 

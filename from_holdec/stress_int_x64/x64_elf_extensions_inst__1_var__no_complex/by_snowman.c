@@ -497,17 +497,17 @@ void fun_402b58() {
 
 struct s0 {
     signed char[1] pad1;
-    signed char 0x1;
+    signed char f1;
 };
 
 struct s1 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 struct s2 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 void fun_402c58(int64_t rdi) {
@@ -519,9 +519,9 @@ void fun_402c58(int64_t rdi) {
     struct s2* rax7;
     int64_t v8;
 
-    tmp8_2 = reinterpret_cast<unsigned char>(rax3->0x1 + bh4);
-    cf5 = tmp8_2 < rax6->0x1;
-    rax7->0x1 = tmp8_2;
+    tmp8_2 = reinterpret_cast<unsigned char>(rax3->f1 + bh4);
+    cf5 = tmp8_2 < rax6->f1;
+    rax7->f1 = tmp8_2;
     if (cf5) {
     }
     if (__intrinsic()) {

@@ -253,7 +253,7 @@ int32_t fun_402970() {
 struct s3 {
     void** f0;
     signed char[15] pad16;
-    uint32_t f16;
+    uint32_t f10;
 };
 
 int32_t g408a70;
@@ -486,7 +486,7 @@ void fun_402dd0(uint32_t a1) {
             break;
         eax3 = eax3 + 2;
         ++ebp5;
-    } while (reinterpret_cast<uint32_t>(eax3) < 0x406528);
+    } while (reinterpret_cast<uint32_t>(eax3) < reinterpret_cast<uint32_t>("0A@"));
     if (ecx2 == *reinterpret_cast<uint32_t*>(ebp5 * 8 + 0x406498)) {
         eax6 = g408900;
         if (eax6 == 1 || !eax6 && (zf7 = g40606c == 1, zf7)) {
@@ -536,7 +536,7 @@ void fun_402dd0(uint32_t a1) {
                     } while (v22);
                     esp23 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp17) - 4);
                     ebx19 = reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(~ecx21) - 1 + (reinterpret_cast<int32_t>(esp23) + 0xb8 - 59));
-                    fun_403d90(ebx19, 0x405358, 3);
+                    fun_403d90(ebx19, "...", 3);
                     esp17 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp23) - 4 - 4 - 4 + 4 + 12);
                 }
                 ecx24 = 6;
@@ -567,7 +567,7 @@ void fun_402dd0(uint32_t a1) {
                 while (ecx31) {
                     --ecx31;
                 }
-                edi33 = reinterpret_cast<unsigned char*>(0x405338);
+                edi33 = reinterpret_cast<unsigned char*>("\n\n");
                 ecx34 = 0xffffffff;
                 do {
                     if (!ecx34) 
@@ -694,11 +694,11 @@ struct s6 {
     void* f4;
     void** f8;
     signed char[3] pad12;
-    uint32_t f12;
-    int32_t* f16;
-    void** f20;
+    uint32_t fc;
+    int32_t* f10;
+    void** f14;
     signed char[3] pad24;
-    void* f24;
+    void* f18;
 };
 
 uint32_t fun_403350(uint32_t a1, struct s6* a2);
@@ -1126,9 +1126,9 @@ int32_t fun_402010(int32_t a1, int32_t** a2) {
 struct s8 {
     struct s8* f0;
     signed char[12] pad16;
-    void** f16;
+    void** f10;
     signed char[3] pad20;
-    void** f20;
+    void** f14;
 };
 
 signed char* fun_403880(void** a1, struct s8** a2, uint32_t* a3);
@@ -1399,19 +1399,19 @@ struct s10 {
     signed char[4] pad4;
     int32_t f4;
     int32_t* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s12 {
     signed char[12] pad12;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s11 {
     struct s11* f0;
     int32_t f4;
     int32_t f8;
-    struct s12* f12;
+    struct s12* fc;
 };
 
 struct s11* g0;
@@ -1426,10 +1426,10 @@ void fun_402c02(struct s10* a1, int32_t a2) {
 
     v3 = g0;
     g0 = reinterpret_cast<struct s11*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 - 4 - 4 - 4 - 4 - 4 - 4);
-    while ((ebx4 = a1->f8, a1->f12 != -1) && a1->f12 != a2) {
-        esi5 = a1->f12 + a1->f12 * 2;
+    while ((ebx4 = a1->f8, a1->fc != -1) && a1->fc != a2) {
+        esi5 = a1->fc + a1->fc * 2;
         ecx6 = ebx4[esi5];
-        a1->f12 = ecx6;
+        a1->fc = ecx6;
         if (!(ebx4 + esi5)[1]) {
             fun_402c96(ecx6, 0x101);
             (ebx4 + esi5)[2]();
@@ -1698,9 +1698,9 @@ struct s17 {
     void* f4;
     signed char f8;
     signed char[239] pad248;
-    signed char f248;
+    signed char ff8;
     signed char[7] pad256;
-    void** f256;
+    void** f100;
 };
 
 struct s16 {
@@ -1713,18 +1713,18 @@ struct s14 {
     struct s14* f0;
     struct s14* f4;
     struct s15* f8;
-    struct s16* f12;
-    struct s17* f16;
-    uint32_t f20;
-    void* f24;
+    struct s16* fc;
+    struct s17* f10;
+    uint32_t f14;
+    void* f18;
     signed char[4] pad32;
-    int32_t f32;
+    int32_t f20;
     signed char[116] pad152;
-    struct s17* f152;
+    struct s17* f98;
     signed char[8052] pad8208;
-    struct s17* f8208;
+    struct s17* f2010;
     signed char[4] pad8216;
-    void* f8216;
+    void* f2018;
 };
 
 struct s14* g408770 = reinterpret_cast<struct s14*>(0x406750);
@@ -1742,7 +1742,7 @@ int32_t VirtualAlloc = 0xa302;
 struct s20 {
     uint32_t f0;
     signed char[240] pad244;
-    signed char f244;
+    signed char ff4;
 };
 
 struct s14* fun_4035e0();
@@ -1786,10 +1786,10 @@ struct s3* fun_403940(void* ecx, void* a2) {
     v7 = esi8;
     v9 = ecx3;
     while (1) {
-        if (ecx3->f16 != 0xffffffff) {
+        if (ecx3->f10 != 0xffffffff) {
             edi10 = ecx3->f8;
-            ebp11 = reinterpret_cast<struct s15*>(&ecx3->f8216);
-            esi12 = reinterpret_cast<struct s17*>((reinterpret_cast<int32_t>(reinterpret_cast<uint32_t>(edi10) - reinterpret_cast<uint32_t>(ecx3) - 24) >> 3 << 12) + reinterpret_cast<uint32_t>(ecx3->f16));
+            ebp11 = reinterpret_cast<struct s15*>(&ecx3->f2018);
+            esi12 = reinterpret_cast<struct s17*>((reinterpret_cast<int32_t>(reinterpret_cast<uint32_t>(edi10) - reinterpret_cast<uint32_t>(ecx3) - 24) >> 3 << 12) + reinterpret_cast<uint32_t>(ecx3->f10));
             if (reinterpret_cast<uint32_t>(edi10) < reinterpret_cast<uint32_t>(ebp11)) {
                 do {
                     eax13 = edi10->f0;
@@ -1805,8 +1805,8 @@ struct s3* fun_403940(void* ecx, void* a2) {
                 } while (reinterpret_cast<uint32_t>(edi10) < reinterpret_cast<uint32_t>(ebp11));
             }
             ebp15 = ecx3->f8;
-            edi16 = ecx3->f16;
-            esi17 = reinterpret_cast<struct s15*>(&ecx3->f24);
+            edi16 = ecx3->f10;
+            esi17 = reinterpret_cast<struct s15*>(&ecx3->f18);
             if (reinterpret_cast<uint32_t>(esi17) < reinterpret_cast<uint32_t>(ebp15)) {
                 do {
                     eax18 = esi17->f0;
@@ -1828,14 +1828,14 @@ struct s3* fun_403940(void* ecx, void* a2) {
         if (ecx3 == eax20) 
             break;
     }
-    ebp21 = reinterpret_cast<struct s14*>(0x406750);
-    while (ebp21->f16 == 0xffffffff || !ebp21->f12) {
+    ebp21 = reinterpret_cast<struct s14*>("Pg@");
+    while (ebp21->f10 == 0xffffffff || !ebp21->fc) {
         ebp21 = ebp21->f0;
-        if (ebp21 == 0x406750) 
+        if (ebp21 == "Pg@") 
             goto addr_403b2d_20;
     }
-    eax22 = ebp21->f12;
-    esi23 = ebp21->f16;
+    eax22 = ebp21->fc;
+    esi23 = ebp21->f10;
     edi24 = reinterpret_cast<struct s19*>((reinterpret_cast<int32_t>(reinterpret_cast<uint32_t>(eax22) - reinterpret_cast<uint32_t>(ebp21) - 24) >> 3 << 12) + reinterpret_cast<uint32_t>(esi23));
     esi25 = 0;
     if (reinterpret_cast<int1_t>(eax22->f0 == 0xffffffff)) {
@@ -1855,7 +1855,7 @@ struct s3* fun_403940(void* ecx, void* a2) {
             do {
                 eax29->f0 = 0xf0;
                 *reinterpret_cast<uint32_t*>(reinterpret_cast<uint32_t>(eax29) - 4) = reinterpret_cast<uint32_t>(&eax29->pad244);
-                eax29->f244 = -1;
+                eax29->ff4 = -1;
                 ecx28->f0 = reinterpret_cast<void*>(0xf0);
                 ecx28->f4 = reinterpret_cast<void*>(0xf1);
                 eax29 = reinterpret_cast<struct s20*>(reinterpret_cast<uint32_t>(eax29) + 0x1000);
@@ -1864,7 +1864,7 @@ struct s3* fun_403940(void* ecx, void* a2) {
             } while (esi25);
             edx27 = v5;
         }
-        eax30 = reinterpret_cast<struct s15*>(&ebp21->f8216);
+        eax30 = reinterpret_cast<struct s15*>(&ebp21->f2018);
         g408770 = ebp21;
         cf31 = reinterpret_cast<uint1_t>(reinterpret_cast<uint32_t>(ecx28) < reinterpret_cast<uint32_t>(eax30));
         if (cf31) {
@@ -1875,7 +1875,7 @@ struct s3* fun_403940(void* ecx, void* a2) {
             } while (reinterpret_cast<uint32_t>(ecx28) < reinterpret_cast<uint32_t>(eax30));
             cf31 = reinterpret_cast<uint1_t>(reinterpret_cast<uint32_t>(ecx28) < reinterpret_cast<uint32_t>(eax30));
         }
-        ebp21->f12 = reinterpret_cast<struct s16*>(reinterpret_cast<uint32_t>(eax30) - (reinterpret_cast<uint32_t>(eax30) + reinterpret_cast<uint1_t>(reinterpret_cast<uint32_t>(eax30) < reinterpret_cast<uint32_t>(eax30) + cf31)) & reinterpret_cast<uint32_t>(ecx28));
+        ebp21->fc = reinterpret_cast<struct s16*>(reinterpret_cast<uint32_t>(eax30) - (reinterpret_cast<uint32_t>(eax30) + reinterpret_cast<uint1_t>(reinterpret_cast<uint32_t>(eax30) < reinterpret_cast<uint32_t>(eax30) + cf31)) & reinterpret_cast<uint32_t>(ecx28));
         edi24->f8 = *reinterpret_cast<signed char*>(&ebx4);
         ebp21->f8 = edx27;
         edx27->f0 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(edx27->f0) - reinterpret_cast<uint32_t>(ebx4));
@@ -1887,13 +1887,13 @@ struct s3* fun_403940(void* ecx, void* a2) {
     addr_403b2d_20:
     eax32 = fun_4035e0();
     if (eax32) {
-        ecx33 = eax32->f16;
+        ecx33 = eax32->f10;
         ecx33->f8 = *reinterpret_cast<signed char*>(&ebx4);
         g408770 = eax32;
         ecx33->f0 = reinterpret_cast<struct s18*>(reinterpret_cast<uint32_t>(ecx33) + reinterpret_cast<uint32_t>(ebx4) + 8);
         ecx33->f4 = reinterpret_cast<void*>(0xf0 - reinterpret_cast<uint32_t>(ebx4));
-        eax32->f24 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax32->f24) - (reinterpret_cast<uint32_t>(ebx4) & 0xff));
-        return &ecx33->f256;
+        eax32->f18 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax32->f18) - (reinterpret_cast<uint32_t>(ebx4) & 0xff));
+        return &ecx33->f100;
     }
     addr_403a11_12:
     g408770 = v9;
@@ -2185,12 +2185,12 @@ void fun_404200(struct s6* a1) {
     g408910 = eax2 + 1;
     eax3 = fun_402fb0(0x1000);
     a1->f8 = eax3;
-    eax4 = a1->f12;
+    eax4 = a1->fc;
     if (!eax3) {
         *reinterpret_cast<unsigned char*>(&eax4) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&eax4) | 4);
-        a1->f24 = reinterpret_cast<void*>(2);
-        a1->f12 = eax4;
-        eax5 = reinterpret_cast<void**>(&a1->f20);
+        a1->f18 = reinterpret_cast<void*>(2);
+        a1->fc = eax4;
+        eax5 = reinterpret_cast<void**>(&a1->f14);
         a1->f8 = eax5;
         a1->f0 = eax5;
         a1->f4 = reinterpret_cast<void*>(0);
@@ -2198,8 +2198,8 @@ void fun_404200(struct s6* a1) {
     } else {
         edx6 = a1->f8;
         *reinterpret_cast<unsigned char*>(&eax4) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&eax4) | 8);
-        a1->f12 = eax4;
-        a1->f24 = reinterpret_cast<void*>(0x1000);
+        a1->fc = eax4;
+        a1->f18 = reinterpret_cast<void*>(0x1000);
         a1->f0 = edx6;
         a1->f4 = reinterpret_cast<void*>(0);
         return;
@@ -2290,10 +2290,10 @@ signed char* fun_403880(void** a1, struct s8** a2, uint32_t* a3) {
     uint32_t eax6;
 
     ecx4 = a1;
-    eax5 = reinterpret_cast<struct s8*>(0x406750);
-    while (reinterpret_cast<unsigned char>(ecx4) <= reinterpret_cast<unsigned char>(eax5->f16) || reinterpret_cast<unsigned char>(ecx4) >= reinterpret_cast<unsigned char>(eax5->f20)) {
+    eax5 = reinterpret_cast<struct s8*>("Pg@");
+    while (reinterpret_cast<unsigned char>(ecx4) <= reinterpret_cast<unsigned char>(eax5->f10) || reinterpret_cast<unsigned char>(ecx4) >= reinterpret_cast<unsigned char>(eax5->f14)) {
         eax5 = eax5->f0;
-        if (eax5 == 0x406750) 
+        if (eax5 == "Pg@") 
             goto addr_4038d6_4;
     }
     if (!(*reinterpret_cast<unsigned char*>(&ecx4) & 15) && (reinterpret_cast<unsigned char>(ecx4) & 0xfff) >= 0x100) {
@@ -2324,7 +2324,7 @@ void fun_4038e0(struct s3* a1, void** a2, signed char* a3) {
     int32_t eax9;
 
     edx4 = 0;
-    ecx5 = reinterpret_cast<int32_t>(reinterpret_cast<unsigned char>(a2) - a1->f16) >> 12;
+    ecx5 = reinterpret_cast<int32_t>(reinterpret_cast<unsigned char>(a2) - a1->f10) >> 12;
     eax6 = reinterpret_cast<struct s22*>(reinterpret_cast<uint32_t>(a1) + ecx5 * 8 + 24);
     *reinterpret_cast<signed char*>(&edx4) = *a3;
     eax6->f0 = *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(a1) + ecx5 * 8 + 24) + edx4;
@@ -2351,7 +2351,7 @@ void fun_403750(struct s14* a1) {
     if (zf2) {
         g408770 = a1->f4;
     }
-    if (a1 == 0x406750) {
+    if (a1 == "Pg@") {
         g406760 = -1;
         goto 0;
     } else {
@@ -2385,7 +2385,7 @@ void fun_4037b0(int32_t a1) {
     v2 = ebp3;
     edi4 = g406754;
     while (1) {
-        if (edi4->f16 == 0xffffffff) {
+        if (edi4->f10 == 0xffffffff) {
             addr_403864_3:
             zf5 = edi4 == g406754;
             if (zf5) 
@@ -2395,15 +2395,15 @@ void fun_4037b0(int32_t a1) {
                 break;
         } else {
             ebp6 = 0;
-            esi7 = reinterpret_cast<struct s16*>(&edi4->f8208);
+            esi7 = reinterpret_cast<struct s16*>(&edi4->f2010);
             ebx8 = 0x3ff000;
             do {
-                if (reinterpret_cast<int1_t>(esi7->f0 == 0xf0) && (eax9 = edi4->f16, eax10 = reinterpret_cast<int32_t>(VirtualFree(reinterpret_cast<uint32_t>(eax9) + ebx8, 0x1000, 0x4000)), !!eax10)) {
+                if (reinterpret_cast<int1_t>(esi7->f0 == 0xf0) && (eax9 = edi4->f10, eax10 = reinterpret_cast<int32_t>(VirtualFree(reinterpret_cast<uint32_t>(eax9) + ebx8, 0x1000, 0x4000)), !!eax10)) {
                     esi7->f0 = reinterpret_cast<struct s17*>(0xffffffff);
                     edx11 = g408bbc;
                     g408bbc = edx11 - 1;
-                    if (!edi4->f12 || reinterpret_cast<uint32_t>(edi4->f12) > reinterpret_cast<uint32_t>(esi7)) {
-                        edi4->f12 = esi7;
+                    if (!edi4->fc || reinterpret_cast<uint32_t>(edi4->fc) > reinterpret_cast<uint32_t>(esi7)) {
+                        edi4->fc = esi7;
                     }
                     ++ebp6;
                     eax12 = v2 - 1;
@@ -2418,11 +2418,11 @@ void fun_4037b0(int32_t a1) {
             edi4 = edi4->f4;
             if (!ebp6) 
                 goto addr_403864_3;
-            if (!reinterpret_cast<int1_t>(edx13->f24 == 0xffffffff)) 
+            if (!reinterpret_cast<int1_t>(edx13->f18 == 0xffffffff)) 
                 goto addr_403864_3;
         }
         eax14 = 1;
-        ecx15 = &edx13->f32;
+        ecx15 = &edx13->f20;
         do {
             if (*ecx15 != -1) 
                 break;
@@ -2466,7 +2466,7 @@ struct s3* fun_403b80(struct s17* a1, void* a2, void* a3) {
     ecx7 = edi5->f0;
     v8 = ecx7;
     esi9 = ecx7;
-    ebx10 = reinterpret_cast<struct s18*>(&edi5->f248);
+    ebx10 = reinterpret_cast<struct s18*>(&edi5->ff8);
     if (reinterpret_cast<uint32_t>(eax6) >= reinterpret_cast<uint32_t>(edx4)) {
         ecx7->f0 = *reinterpret_cast<signed char*>(&edx4);
         if (reinterpret_cast<uint32_t>(ecx7) + reinterpret_cast<uint32_t>(edx4) >= reinterpret_cast<uint32_t>(ebx10)) {
@@ -2496,7 +2496,7 @@ struct s3* fun_403b80(struct s17* a1, void* a2, void* a3) {
         return 0;
     } else {
         do {
-            eax17 = reinterpret_cast<struct s18*>(&edi5->f248);
+            eax17 = reinterpret_cast<struct s18*>(&edi5->ff8);
             if (reinterpret_cast<uint32_t>(esi9) + reinterpret_cast<uint32_t>(edx4) >= reinterpret_cast<uint32_t>(eax17)) 
                 goto addr_403ceb_11;
             *reinterpret_cast<signed char*>(&eax17) = esi9->f0;
@@ -2523,7 +2523,7 @@ struct s3* fun_403b80(struct s17* a1, void* a2, void* a3) {
     return 0;
     addr_403cb7_18:
     eax20 = reinterpret_cast<struct s18*>(reinterpret_cast<uint32_t>(esi9) + reinterpret_cast<uint32_t>(edx4));
-    if (reinterpret_cast<uint32_t>(eax20) >= reinterpret_cast<uint32_t>(&edi5->f248)) {
+    if (reinterpret_cast<uint32_t>(eax20) >= reinterpret_cast<uint32_t>(&edi5->ff8)) {
         edi5->f0 = ebp16;
     } else {
         edi5->f0 = eax20;
@@ -2564,12 +2564,12 @@ struct s3* fun_403b80(struct s17* a1, void* a2, void* a3) {
                 ecx7 = v8;
             }
         }
-        eax14 = reinterpret_cast<struct s18*>(&edi5->f248);
+        eax14 = reinterpret_cast<struct s18*>(&edi5->ff8);
     } while (reinterpret_cast<uint32_t>(esi9) + reinterpret_cast<uint32_t>(edx4) < reinterpret_cast<uint32_t>(eax14));
     goto addr_403c64_10;
     addr_403c47_31:
     eax24 = reinterpret_cast<struct s18*>(reinterpret_cast<uint32_t>(esi9) + reinterpret_cast<uint32_t>(edx4));
-    if (reinterpret_cast<uint32_t>(eax24) >= reinterpret_cast<uint32_t>(&edi5->f248)) {
+    if (reinterpret_cast<uint32_t>(eax24) >= reinterpret_cast<uint32_t>(&edi5->ff8)) {
         edi5->f0 = reinterpret_cast<struct s18*>(&edi5->f8);
         goto addr_403ccf_26;
     } else {
@@ -2684,10 +2684,10 @@ struct s23 {
     int32_t f0;
     int32_t f4;
     int32_t f8;
-    uint32_t f12;
-    int32_t* f16;
+    uint32_t fc;
+    int32_t* f10;
     signed char[4] pad24;
-    int32_t f24;
+    int32_t f18;
 };
 
 int32_t fun_401230(struct s23* a1);
@@ -2818,7 +2818,7 @@ int32_t fun_4026a0(int32_t a1) {
     g408b7c = v9;
     eax22 = fun_4028e0(v9);
     ecx23 = *reinterpret_cast<int32_t*>(ebx17 + 0x40638c);
-    edx24 = *reinterpret_cast<int32_t*>(ebx17 + 0x406390);
+    edx24 = *reinterpret_cast<int32_t*>(ebx17 + reinterpret_cast<int32_t>("!"));
     g408b80 = eax22;
     g408b88 = ecx23;
     eax25 = *reinterpret_cast<int32_t*>(ebx17 + 0x40638c + 8);
@@ -3165,8 +3165,8 @@ uint32_t fun_403350(uint32_t a1, struct s6* a2) {
     uint32_t eax15;
 
     esp3 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 - 4 - 4 - 4);
-    eax4 = a2->f12;
-    ebp5 = a2->f16;
+    eax4 = a2->fc;
+    ebp5 = a2->f10;
     if (!(*reinterpret_cast<unsigned char*>(&eax4) & 0x82)) 
         goto addr_403470_2;
     if (*reinterpret_cast<unsigned char*>(&eax4) & 64) 
@@ -3177,30 +3177,30 @@ uint32_t fun_403350(uint32_t a1, struct s6* a2) {
         if (!(*reinterpret_cast<unsigned char*>(&eax4) & 16)) {
             addr_403470_2:
             *reinterpret_cast<unsigned char*>(&eax4) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&eax4) | 32);
-            a2->f12 = eax4;
+            a2->fc = eax4;
             return 0xffffffff;
         } else {
             *reinterpret_cast<unsigned char*>(&eax4) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&eax4) & 0xfe);
             a2->f0 = a2->f8;
-            a2->f12 = eax4;
+            a2->fc = eax4;
         }
     }
-    eax7 = a2->f12;
+    eax7 = a2->fc;
     a2->f4 = reinterpret_cast<void*>(0);
     *reinterpret_cast<unsigned char*>(&eax7) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&eax7) & 0xef) | 2);
-    a2->f12 = eax7;
+    a2->fc = eax7;
     if (!(eax7 & 0x10c) && (a2 != 0x406098 && !reinterpret_cast<int1_t>(a2 == 0x4060b8) || (eax8 = fun_403060(ebp5), esp3 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp3) - 4 - 4 + 4 + 4), !eax8))) {
         fun_404200(a2);
         esp3 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp3) - 4 - 4 + 4 + 4);
     }
-    if (!(a2->f12 & 0x108)) {
+    if (!(a2->fc & 0x108)) {
         edi9 = reinterpret_cast<void*>(1);
         eax10 = fun_403f10(ebp5, reinterpret_cast<int32_t>(esp3) + 20, 1);
         ebx6 = eax10;
     } else {
         eax11 = a2->f8;
         edi9 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(a2->f0) - reinterpret_cast<unsigned char>(eax11));
-        ecx12 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(a2->f24) - 1);
+        ecx12 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(a2->f18) - 1);
         a2->f0 = eax11 + 1;
         a2->f4 = ecx12;
         if (reinterpret_cast<int32_t>(edi9) <= reinterpret_cast<int32_t>(0)) {
@@ -3222,9 +3222,9 @@ uint32_t fun_403350(uint32_t a1, struct s6* a2) {
     if (ebx6 == edi9) {
         return a1 & 0xff;
     } else {
-        eax15 = a2->f12;
+        eax15 = a2->fc;
         *reinterpret_cast<unsigned char*>(&eax15) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&eax15) | 32);
-        a2->f12 = eax15;
+        a2->fc = eax15;
         return 0xffffffff;
     }
 }
@@ -3303,8 +3303,8 @@ struct s14* fun_4035e0() {
                 if (!eax8) {
                     VirtualFree(esi7, 0, 0x8000);
                 } else {
-                    if (!reinterpret_cast<int1_t>(ebp3 == 0x406750)) {
-                        ebp3->f0 = reinterpret_cast<struct s14*>(0x406750);
+                    if (!reinterpret_cast<int1_t>(ebp3 == "Pg@")) {
+                        ebp3->f0 = reinterpret_cast<struct s14*>("Pg@");
                         ecx9 = g406754;
                         ebp3->f4 = ecx9;
                         g406754 = ebp3;
@@ -3316,14 +3316,14 @@ struct s14* fun_4035e0() {
                         }
                         eax11 = g406754;
                         if (!eax11) {
-                            g406754 = reinterpret_cast<struct s14*>(0x406750);
+                            g406754 = reinterpret_cast<struct s14*>("Pg@");
                         }
                     }
-                    ecx12 = reinterpret_cast<struct s15*>(&ebp3->f24);
-                    ebp3->f20 = reinterpret_cast<uint32_t>(esi7) + 0x400000;
-                    ebp3->f16 = esi7;
+                    ecx12 = reinterpret_cast<struct s15*>(&ebp3->f18);
+                    ebp3->f14 = reinterpret_cast<uint32_t>(esi7) + 0x400000;
+                    ebp3->f10 = esi7;
                     ebp3->f8 = ecx12;
-                    ebp3->f12 = reinterpret_cast<struct s16*>(&ebp3->f152);
+                    ebp3->fc = reinterpret_cast<struct s16*>(&ebp3->f98);
                     eax13 = 0;
                     do {
                         edx14 = 0;
@@ -3341,25 +3341,25 @@ struct s14* fun_4035e0() {
                         edi16 = reinterpret_cast<struct s17*>(&edi16->f4);
                         esi7 = reinterpret_cast<struct s17*>(&esi7->f4);
                     }
-                    if (reinterpret_cast<uint32_t>(esi7) < reinterpret_cast<uint32_t>(ebp3->f16) + 0x10000) {
+                    if (reinterpret_cast<uint32_t>(esi7) < reinterpret_cast<uint32_t>(ebp3->f10) + 0x10000) {
                         do {
                             esi7->f4 = reinterpret_cast<void*>(0xf0);
                             esi7->f0 = reinterpret_cast<struct s18*>(&esi7->f8);
-                            esi7->f248 = -1;
+                            esi7->ff8 = -1;
                             esi7 = reinterpret_cast<struct s17*>(reinterpret_cast<uint32_t>(esi7) + 0x1000);
-                        } while (reinterpret_cast<uint32_t>(esi7) < reinterpret_cast<uint32_t>(ebp3->f16) + 0x10000);
+                        } while (reinterpret_cast<uint32_t>(esi7) < reinterpret_cast<uint32_t>(ebp3->f10) + 0x10000);
                     }
                     goto 4;
                 }
             }
         }
-        if (ebp3 != 0x406750) {
+        if (ebp3 != "Pg@") {
             eax17 = g408bd4;
             HeapFree(eax17, 0, ebp3, 0);
             goto addr_40373c_3;
         }
     } else {
-        ebp3 = reinterpret_cast<struct s14*>(0x406750);
+        ebp3 = reinterpret_cast<struct s14*>("Pg@");
         goto addr_403611_4;
     }
 }
@@ -3420,7 +3420,7 @@ int32_t fun_401230(struct s23* a1) {
     int32_t eax7;
     uint32_t eax8;
 
-    v2 = a1->f16;
+    v2 = a1->f10;
     eax3 = fun_403060(v2);
     if (!eax3) 
         goto addr_4012ca_2;
@@ -3436,14 +3436,14 @@ int32_t fun_401230(struct s23* a1) {
     }
     ecx5 = g408910;
     g408910 = ecx5 + 1;
-    if (!(a1->f12 & 0x10c) && (*reinterpret_cast<int32_t*>(edi4 * 4 + 0x408908) || (eax6 = fun_402fb0(0x1000), *reinterpret_cast<void***>(edi4 * 4 + 0x408908) = eax6, !!eax6))) {
+    if (!(a1->fc & 0x10c) && (*reinterpret_cast<int32_t*>(edi4 * 4 + 0x408908) || (eax6 = fun_402fb0(0x1000), *reinterpret_cast<void***>(edi4 * 4 + 0x408908) = eax6, !!eax6))) {
         eax7 = *reinterpret_cast<int32_t*>(edi4 * 4 + 0x408908);
-        a1->f24 = 0x1000;
+        a1->f18 = 0x1000;
         a1->f8 = eax7;
         a1->f0 = eax7;
-        eax8 = a1->f12;
+        eax8 = a1->fc;
         a1->f4 = 0x1000;
-        a1->f12 = eax8 | 0x1102;
+        a1->fc = eax8 | 0x1102;
         return 1;
     }
 }
@@ -4216,37 +4216,37 @@ struct s27 {
 
 struct s28 {
     signed char[16] pad16;
-    signed char f16;
+    signed char f10;
 };
 
 struct s29 {
     signed char[16] pad16;
-    signed char f16;
+    signed char f10;
 };
 
 struct s30 {
     signed char[16] pad16;
-    signed char f16;
+    signed char f10;
 };
 
 struct s31 {
     signed char[16] pad16;
-    signed char f16;
+    signed char f10;
 };
 
 struct s32 {
     signed char[16] pad16;
-    signed char f16;
+    signed char f10;
 };
 
 struct s33 {
     signed char[16] pad16;
-    signed char f16;
+    signed char f10;
 };
 
 struct s34 {
     signed char[1452314768] pad1452314768;
-    signed char f1452314768;
+    signed char f56909090;
 };
 
 void fun_401084() {
@@ -4280,10 +4280,10 @@ void fun_401084() {
     *eax5 = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*eax5 + *reinterpret_cast<signed char*>(&eax5)) + cf9);
     edx12 = edx1 ^ *eax5;
     eax13 = reinterpret_cast<void*>(eax5 + 1);
-    ebx14->f16 = reinterpret_cast<signed char>(ebx15->f16 + *reinterpret_cast<signed char*>(&eax13));
-    ebx16->f16 = reinterpret_cast<signed char>(ebx17->f16 + *reinterpret_cast<signed char*>(&edx12));
+    ebx14->f10 = reinterpret_cast<signed char>(ebx15->f10 + *reinterpret_cast<signed char*>(&eax13));
+    ebx16->f10 = reinterpret_cast<signed char>(ebx17->f10 + *reinterpret_cast<signed char*>(&edx12));
     eax18 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(eax13) + 1 + 1);
-    ebx19->f16 = reinterpret_cast<signed char>(ebx20->f16 + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax18) + 1));
+    ebx19->f10 = reinterpret_cast<signed char>(ebx20->f10 + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax18) + 1));
     eax21 = reinterpret_cast<struct s34*>(reinterpret_cast<int32_t>(eax18) + 1);
     *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(eax21) + 0x56909090) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(eax21) + 0x56909090) + *reinterpret_cast<signed char*>(&edx12));
 }
@@ -4357,7 +4357,7 @@ struct s35 {
 
 struct s36 {
     signed char[352337941] pad352337941;
-    unsigned char f352337941;
+    unsigned char f15004015;
 };
 
 struct s37 {
@@ -4372,9 +4372,9 @@ struct s38 {
 
 struct s39 {
     signed char[27] pad27;
-    signed char f27;
+    signed char f1b;
     signed char[1778401273] pad1778401301;
-    unsigned char f1778401301;
+    unsigned char f6a004015;
 };
 
 signed char g4050503;
@@ -4382,13 +4382,13 @@ signed char g4050503;
 struct s40 {
     void* f0;
     signed char[4199879] pad4199880;
-    void* f4199880;
+    void* f4015c8;
 };
 
 struct s41 {
     unsigned char f0;
     signed char[2046836758] pad2046836759;
-    unsigned char f2046836759;
+    unsigned char f7a004017;
 };
 
 struct s42 {
@@ -4506,7 +4506,7 @@ void fun_401bac(int16_t cx) {
     tmp8_24 = reinterpret_cast<unsigned char>(bh25 + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&edx10) + 1));
     eax26 = reinterpret_cast<struct s38*>(reinterpret_cast<uint32_t>(eax18) + reinterpret_cast<int32_t>(*eax18) + reinterpret_cast<uint1_t>(tmp8_24 < bh27));
     edx28 = reinterpret_cast<struct s39*>(reinterpret_cast<uint32_t>(edx10) ^ *reinterpret_cast<uint32_t*>(reinterpret_cast<uint32_t>(eax26) + reinterpret_cast<uint32_t>(eax26) * 2));
-    edx28->f27 = reinterpret_cast<signed char>(edx28->f27 + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx1) + 1));
+    edx28->f1b = reinterpret_cast<signed char>(edx28->f1b + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx1) + 1));
     eax29 = reinterpret_cast<signed char*>(reinterpret_cast<uint32_t>(eax26) + 1);
     *eax29 = reinterpret_cast<signed char>(*eax29 + *reinterpret_cast<signed char*>(&eax29));
     eax30 = reinterpret_cast<uint32_t>(eax29 + 0x5050105 + 0x5050505);
@@ -4525,7 +4525,7 @@ void fun_401bac(int16_t cx) {
     *reinterpret_cast<signed char*>(&eax39) = reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(&eax39) + 4) + 4) + 4) + 4) + 4) + 4) + 4) + 4) + 4) + 4) + 4) + 4) + 4) + 4);
     *reinterpret_cast<uint32_t*>(reinterpret_cast<int32_t>(esp33) + reinterpret_cast<uint32_t>(eax39)) = *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(esp33) + reinterpret_cast<uint32_t>(eax39)) + reinterpret_cast<uint32_t>(eax39);
     *reinterpret_cast<signed char*>(&eax39) = reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(&eax39) + 2) + 4) + 4) + 4) + 4) + 4);
-    edx40 = reinterpret_cast<struct s41*>(reinterpret_cast<uint32_t>(edx28) + reinterpret_cast<int32_t>(eax39->f4199880));
+    edx40 = reinterpret_cast<struct s41*>(reinterpret_cast<uint32_t>(edx28) + reinterpret_cast<int32_t>(eax39->f4015c8));
     *reinterpret_cast<unsigned char*>(reinterpret_cast<uint32_t>(eax39) - 0x53ffbfe9) = reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(reinterpret_cast<uint32_t>(eax39) - 0x53ffbfe9) + reinterpret_cast<unsigned char>(*reinterpret_cast<void**>(&edx40)));
     eax41 = edi42 + 1 + 1;
     *reinterpret_cast<signed char*>(eax41 + 0x43004018) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(eax41 + 0x43004018) + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&eax41) + 1));
@@ -4626,7 +4626,7 @@ int32_t fun_402c6a() {
 
     eax1 = 0;
     ecx2 = g0;
-    if (reinterpret_cast<int1_t>(ecx2->f4 == fun_402be0) && ecx2->f8 == ecx2->f12->f12) {
+    if (reinterpret_cast<int1_t>(ecx2->f4 == fun_402be0) && ecx2->f8 == ecx2->fc->fc) {
         eax1 = 1;
     }
     return eax1;
@@ -4639,7 +4639,7 @@ struct s45 {
 
 struct s46 {
     signed char[12] pad12;
-    struct s10* f12;
+    struct s10* fc;
 };
 
 int32_t fun_402cb0(struct s45* a1, struct s10* a2, int32_t a3) {
@@ -4664,11 +4664,11 @@ int32_t fun_402cb0(struct s45* a1, struct s10* a2, int32_t a3) {
         eax9 = 1;
     } else {
         *reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx8) - 4) = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebp7) - 8);
-        esi10 = ebx8->f12;
+        esi10 = ebx8->fc;
         edi11 = ebx8->f8;
         while (esi10 != -1) {
             ecx12 = esi10 + esi10 * 2;
-            if ((edi11 + ecx12)[1] && (eax13 = reinterpret_cast<int32_t>((edi11 + ecx12)[1]()), ebp7 = ebp7, esi10 = esi10, ebx8 = ebp7->f12, !!eax13)) {
+            if ((edi11 + ecx12)[1] && (eax13 = reinterpret_cast<int32_t>((edi11 + ecx12)[1]()), ebp7 = ebp7, esi10 = esi10, ebx8 = ebp7->fc, !!eax13)) {
                 if (__intrinsic()) 
                     goto addr_402d4a_7;
                 edi14 = ebx8->f8;
@@ -4677,7 +4677,7 @@ int32_t fun_402cb0(struct s45* a1, struct s10* a2, int32_t a3) {
                 fun_402c02(ebx8, esi10);
                 ecx15 = esi10 + esi10 * 2;
                 fun_402c96(ecx15, 1);
-                ebx8->f12 = edi14[ecx15];
+                ebx8->fc = edi14[ecx15];
                 (edi14 + ecx15)[2]();
             }
             edi11 = ebx8->f8;
@@ -4802,16 +4802,16 @@ void fun_4011d6() {
 
 struct s48 {
     signed char[24] pad24;
-    struct s10* f24;
-    int32_t f28;
+    struct s10* f18;
+    int32_t f1c;
 };
 
 void fun_402d75(struct s48* a1) {
     int32_t v2;
     struct s10* v3;
 
-    v2 = a1->f28;
-    v3 = a1->f24;
+    v2 = a1->f1c;
+    v3 = a1->f18;
     fun_402c02(v3, v2);
     return;
 }

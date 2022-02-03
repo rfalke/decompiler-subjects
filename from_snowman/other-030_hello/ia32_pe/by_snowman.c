@@ -23,11 +23,11 @@ int32_t __fmode = 0x4000;
 
 struct s0 {
     signed char[16] pad16;
-    int32_t f16;
+    int32_t f10;
     signed char[28] pad48;
-    int32_t f48;
+    int32_t f30;
     signed char[28] pad80;
-    int32_t f80;
+    int32_t f50;
 };
 
 struct s0* _iob = reinterpret_cast<struct s0*>(0x62dc);
@@ -98,14 +98,14 @@ void text(int32_t a1) {
     while (1) {
         __fmode = eax6;
         ebx7 = _iob;
-        v8 = ebx7->f16;
+        v8 = ebx7->f10;
         __setmode(v8, eax6);
         eax9 = __CRT_fmode;
-        v10 = ebx7->f48;
+        v10 = ebx7->f30;
         __setmode(v10, eax9);
         eax11 = __CRT_fmode;
         v12 = eax11;
-        v13 = ebx7->f80;
+        v13 = ebx7->f50;
         __setmode(v13, v12);
         addr_40107e_4:
         eax14 = ___p__fmode(v13, v12);
@@ -136,7 +136,7 @@ struct s2 {
     int32_t f0;
     struct s1* f4;
     struct s1* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s1* ___write_memory(int32_t ecx, int32_t a2, struct s1* a3);
@@ -212,7 +212,7 @@ struct s1* __pei386_runtime_relocator(int32_t a1, int32_t a2) {
                     }
                     goto "  Unknown pseudo relocation protocol version %d.\n";
                 } else {
-                    ebx13 = reinterpret_cast<struct s1*>(&ebx4->f12);
+                    ebx13 = reinterpret_cast<struct s1*>(&ebx4->fc);
                     if (reinterpret_cast<uint32_t>(ebx13) < 0x403140) {
                         while (1) {
                             eax14 = reinterpret_cast<unsigned char*>(0x400000 + ebx13->f4);
@@ -455,7 +455,7 @@ struct s4 {
     int32_t f0;
     int32_t f4;
     struct s1* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s5 {
@@ -582,7 +582,7 @@ struct s1* ___write_memory(int32_t ecx, int32_t a2, struct s1* a3) {
                 }
                 goto "  Unknown pseudo relocation protocol version %d.\n";
             } else {
-                ebx30 = reinterpret_cast<struct s5*>(&ebx22->f12);
+                ebx30 = reinterpret_cast<struct s5*>(&ebx22->fc);
                 if (reinterpret_cast<uint32_t>(ebx30) < 0x403140) {
                     while (1) {
                         eax31 = reinterpret_cast<unsigned char*>(0x400000 + ebx30->f4);
@@ -663,7 +663,7 @@ struct s6 {
     int32_t f0;
     int32_t f4;
     struct s1* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s7 {
@@ -800,7 +800,7 @@ unsigned char* text(int32_t ecx, int32_t a2, struct s1* a3, signed char* a4) {
                 }
                 goto "  Unknown pseudo relocation protocol version %d.\n";
             } else {
-                ebx36 = reinterpret_cast<struct s7*>(&ebx28->f12);
+                ebx36 = reinterpret_cast<struct s7*>(&ebx28->fc);
                 if (reinterpret_cast<uint32_t>(ebx36) < 0x403140) {
                     while (1) {
                         eax37 = reinterpret_cast<unsigned char*>(0x400000 + ebx36->f4);

@@ -236,7 +236,7 @@ void quantum_error(void** a1, void** a2, void** a3, void** a4, void** a5, void**
         eax10 = quantum_strerr(a1);
         edx11 = stderr;
         v12 = eax10;
-        fun_8048994(edx11, 0x805431d, v12, v13, v14);
+        fun_8048994(edx11, "ERROR: %s\n", v12, v13, v14);
         eax15 = stderr;
         v16 = eax15;
         fun_80488e4(v16);
@@ -245,13 +245,13 @@ void quantum_error(void** a1, void** a2, void** a3, void** a4, void** a5, void**
         quantum_sigma_x(reinterpret_cast<uint32_t>(eax17) + reinterpret_cast<uint32_t>(eax17), v19, v20, v21, v22);
         v23 = reinterpret_cast<void*>(1);
         while (reinterpret_cast<int32_t>(v23) <= reinterpret_cast<int32_t>(v24)) {
-            v25 = reinterpret_cast<int32_t>(v12) % reinterpret_cast<int32_t>(0x805431d);
+            v25 = reinterpret_cast<int32_t>(v12) % reinterpret_cast<int32_t>("ERROR: %s\n");
             v26 = reinterpret_cast<void*>(1);
             while (reinterpret_cast<int32_t>(v26) < reinterpret_cast<int32_t>(v23)) {
-                v25 = v25 * v25 % reinterpret_cast<int32_t>(0x805431d);
+                v25 = v25 * v25 % reinterpret_cast<int32_t>("ERROR: %s\n");
                 v26 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(v26) + 1);
             }
-            mul_mod_n(0x805431d, v25, reinterpret_cast<int32_t>(v27) + reinterpret_cast<int32_t>(v27) + reinterpret_cast<int32_t>(v27) + 1 + reinterpret_cast<uint32_t>(v23), v28, v29);
+            mul_mod_n("ERROR: %s\n", v25, reinterpret_cast<int32_t>(v27) + reinterpret_cast<int32_t>(v27) + reinterpret_cast<int32_t>(v27) + 1 + reinterpret_cast<uint32_t>(v23), v28, v29);
             v23 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(v23) + 1);
         }
         goto v16;
@@ -1208,24 +1208,24 @@ struct s3 {
     void** f0;
     void** f4;
     void** f8;
-    void** f12;
-    void** f16;
+    void** fc;
+    void** f10;
 };
 
 struct s4 {
     void** f0;
     int32_t f4;
     int32_t f8;
-    int32_t f12;
-    int32_t f16;
+    int32_t fc;
+    int32_t f10;
 };
 
 struct s5 {
     void** f0;
     int32_t f4;
     int32_t f8;
-    int32_t f12;
-    int32_t f16;
+    int32_t fc;
+    int32_t f10;
 };
 
 struct s2* quantum_new_density_op(struct s2* a1, void** a2, void*** a3, struct s3* a4) {
@@ -1267,17 +1267,17 @@ struct s2* quantum_new_density_op(struct s2* a1, void** a2, void*** a3, struct s
     }
     quantum_memman(reinterpret_cast<uint32_t>(a2) + reinterpret_cast<uint32_t>(a2) + reinterpret_cast<uint32_t>(a2) << 3, 20, v22, v23, v5, v11, v19);
     *reinterpret_cast<void***>(v11) = *a3;
-    v24 = a4->f16;
+    v24 = a4->f10;
     v25 = a4->f8;
     *reinterpret_cast<void***>(v19) = a4->f0;
     *reinterpret_cast<void***>(v19 + 1) = a4->f4;
     *reinterpret_cast<void***>(v19 + 2) = a4->f8;
-    *reinterpret_cast<void***>(v19 + 3) = a4->f12;
-    *reinterpret_cast<void***>(v19 + 4) = a4->f16;
+    *reinterpret_cast<void***>(v19 + 3) = a4->fc;
+    *reinterpret_cast<void***>(v19 + 4) = a4->f10;
     a4->f4 = reinterpret_cast<void**>(0);
     a4->f0 = reinterpret_cast<void**>(0);
-    a4->f12 = reinterpret_cast<void**>(0);
-    a4->f16 = reinterpret_cast<void**>(0);
+    a4->fc = reinterpret_cast<void**>(0);
+    a4->f10 = reinterpret_cast<void**>(0);
     v26 = reinterpret_cast<void**>(1);
     while (reinterpret_cast<int32_t>(v26) < reinterpret_cast<int32_t>(a2)) {
         *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(v11) + (reinterpret_cast<uint32_t>(v26) << 2)) = *reinterpret_cast<void***>((reinterpret_cast<uint32_t>(v26) << 2) + reinterpret_cast<uint32_t>(a3));
@@ -1286,8 +1286,8 @@ struct s2* quantum_new_density_op(struct s2* a1, void** a2, void*** a3, struct s
         ecx27->f0 = edx28->f0;
         ecx27->f4 = edx28->f4;
         ecx27->f8 = edx28->f8;
-        ecx27->f12 = edx28->f12;
-        ecx27->f16 = edx28->f16;
+        ecx27->fc = edx28->fc;
+        ecx27->f10 = edx28->f10;
         *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(v19) + ((reinterpret_cast<uint32_t>(v26) << 2) + reinterpret_cast<uint32_t>(v26) << 2) + 16) = v24;
         *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(v19) + ((reinterpret_cast<uint32_t>(v26) << 2) + reinterpret_cast<uint32_t>(v26) << 2) + 8) = v25;
         *reinterpret_cast<int32_t*>(((reinterpret_cast<uint32_t>(v26) << 2) + reinterpret_cast<uint32_t>(v26) << 2) + reinterpret_cast<uint32_t>(a4) + 4) = 0;
@@ -1336,14 +1336,14 @@ struct s6 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s7 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s8 {
@@ -1357,35 +1357,35 @@ struct s9 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s10 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s11 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s12 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s13 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 void** __divsc3(void** ecx, void** a2, void** a3, void** a4, void** a5);
@@ -1478,7 +1478,7 @@ void** quantum_state_collapse(void** a1, void** a2, void** a3, void** a4, void**
     v15 = reinterpret_cast<void**>(0);
     while (reinterpret_cast<int32_t>(a5) > reinterpret_cast<int32_t>(v15)) {
         eax16 = reinterpret_cast<struct s6*>(reinterpret_cast<uint32_t>(a7) + (reinterpret_cast<uint32_t>(v15) << 4));
-        if (eax16->f8 & v13 | eax16->f12 & v14 && a3 || (eax17 = reinterpret_cast<struct s7*>(reinterpret_cast<uint32_t>(a7) + (reinterpret_cast<uint32_t>(v15) << 4)), !(eax17->f8 & v13 | eax17->f12 & v14)) && !a3) {
+        if (eax16->f8 & v13 | eax16->fc & v14 && a3 || (eax17 = reinterpret_cast<struct s7*>(reinterpret_cast<uint32_t>(a7) + (reinterpret_cast<uint32_t>(v15) << 4)), !(eax17->f8 & v13 | eax17->fc & v14)) && !a3) {
             edx18 = reinterpret_cast<struct s8*>(reinterpret_cast<uint32_t>(a7) + (reinterpret_cast<uint32_t>(v15) << 4));
             v19 = edx18->f0;
             v20 = edx18->f4;
@@ -1506,7 +1506,7 @@ void** quantum_state_collapse(void** a1, void** a2, void** a3, void** a4, void**
     v45 = 0;
     while (reinterpret_cast<int32_t>(a5) > reinterpret_cast<int32_t>(v44)) {
         eax46 = reinterpret_cast<struct s9*>(reinterpret_cast<uint32_t>(a7) + (reinterpret_cast<uint32_t>(v44) << 4));
-        if (eax46->f8 & v13 | eax46->f12 & v14 && a3 || (eax47 = reinterpret_cast<struct s10*>(reinterpret_cast<uint32_t>(a7) + (reinterpret_cast<uint32_t>(v44) << 4)), !(eax47->f8 & v13 | eax47->f12 & v14)) && !a3) {
+        if (eax46->f8 & v13 | eax46->fc & v14 && a3 || (eax47 = reinterpret_cast<struct s10*>(reinterpret_cast<uint32_t>(a7) + (reinterpret_cast<uint32_t>(v44) << 4)), !(eax47->f8 & v13 | eax47->fc & v14)) && !a3) {
             v48 = reinterpret_cast<void**>(0);
             v49 = 0;
             v50 = 0;
@@ -1526,7 +1526,7 @@ void** quantum_state_collapse(void** a1, void** a2, void** a3, void** a4, void**
                 v48 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v48) + 1);
             }
             eax56 = reinterpret_cast<struct s11*>(reinterpret_cast<uint32_t>(a7) + (reinterpret_cast<uint32_t>(v44) << 4));
-            edx57 = eax56->f12;
+            edx57 = eax56->fc;
             v58 = v49 & eax56->f8;
             v59 = v50 & edx57;
             v60 = reinterpret_cast<void**>(63);
@@ -1548,12 +1548,12 @@ void** quantum_state_collapse(void** a1, void** a2, void** a3, void** a4, void**
                 v60 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v60) - 1);
             }
             eax68 = reinterpret_cast<struct s12*>(reinterpret_cast<uint32_t>(a7) + (reinterpret_cast<uint32_t>(v44) << 4));
-            edx69 = eax68->f12;
+            edx69 = eax68->fc;
             v70 = v61 & eax68->f8;
             esi71 = reinterpret_cast<struct s13*>(reinterpret_cast<uint32_t>(v30) + (v45 << 4));
             __asm__("shrd ecx, ebx, 0x1");
             esi71->f8 = v70 | v58;
-            esi71->f12 = (v62 & edx69) >> 1 | v59;
+            esi71->fc = (v62 & edx69) >> 1 | v59;
             __asm__("fld dword [eax]");
             __asm__("fstp dword [ebp-0x60]");
             __asm__("fld dword [eax+0x4]");
@@ -1666,7 +1666,7 @@ struct s14 {
     void** f0;
     signed char[4] pad8;
     void** f8;
-    void** f12;
+    void** fc;
 };
 
 void quantum_add_hash(void** a1, void** a2, void** a3, void** a4);
@@ -1688,7 +1688,7 @@ void quantum_reconstruct_hash(void** a1, void** a2, void** a3, void** a4, void**
     while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a1 + 1)) > reinterpret_cast<int32_t>(v10)) {
         eax11 = reinterpret_cast<struct s14*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a1 + 3)) + (reinterpret_cast<uint32_t>(v10) << 4));
         edx12 = eax11->f8;
-        ecx13 = eax11->f12;
+        ecx13 = eax11->fc;
         quantum_add_hash(edx12, ecx13, v10, a1);
         v10 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v10) + 1);
     }
@@ -1743,20 +1743,20 @@ void** quantum_strerr(void** a1) {
     void** v2;
 
     if (a1 == 3) {
-        v2 = reinterpret_cast<void**>(0x80542aa);
+        v2 = reinterpret_cast<void**>("matrix too large");
     } else {
         if (reinterpret_cast<int32_t>(a1) > reinterpret_cast<int32_t>(3)) {
             if (a1 == 5) {
-                v2 = reinterpret_cast<void**>(0x80542cd);
+                v2 = reinterpret_cast<void**>("hash table full");
             } else {
                 if (reinterpret_cast<int32_t>(a1) < reinterpret_cast<int32_t>(5)) {
-                    v2 = reinterpret_cast<void**>(0x80542bb);
+                    v2 = reinterpret_cast<void**>("wrong matrix size");
                 } else {
                     if (a1 == 0x10000) {
-                        v2 = reinterpret_cast<void**>(0x80542dd);
+                        v2 = reinterpret_cast<void**>("single-column matrix expected");
                     } else {
                         if (a1 == 0x10001) {
-                            v2 = reinterpret_cast<void**>(0x80542fb);
+                            v2 = reinterpret_cast<void**>("unknown opcode");
                         } else {
                             goto addr_804a010_13;
                         }
@@ -1765,13 +1765,13 @@ void** quantum_strerr(void** a1) {
             }
         } else {
             if (a1 == 1) {
-                v2 = reinterpret_cast<void**>(0x8054294);
+                v2 = reinterpret_cast<void**>("failure");
             } else {
                 if (reinterpret_cast<int32_t>(a1) > reinterpret_cast<int32_t>(1)) {
-                    v2 = reinterpret_cast<void**>(0x805429c);
+                    v2 = reinterpret_cast<void**>("malloc failed");
                 } else {
                     if (!a1) {
-                        v2 = reinterpret_cast<void**>(0x805428c);
+                        v2 = reinterpret_cast<void**>("success");
                     } else {
                         goto addr_804a010_13;
                     }
@@ -1782,7 +1782,7 @@ void** quantum_strerr(void** a1) {
     addr_804a017_21:
     return v2;
     addr_804a010_13:
-    v2 = reinterpret_cast<void**>(0x805430a);
+    v2 = reinterpret_cast<void**>("unknown error code");
     goto addr_804a017_21;
 }
 
@@ -1857,7 +1857,7 @@ struct s15 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s16 {
@@ -2008,7 +2008,7 @@ void** quantum_decohere(void** a1, void** a2, void** a3, void** a4, void** a5, v
                 ecx42 = v39;
                 __asm__("shrd eax, edx, cl");
                 if (*reinterpret_cast<unsigned char*>(&ecx42) & 32) {
-                    eax41 = eax40->f12 >> *reinterpret_cast<unsigned char*>(&ecx42);
+                    eax41 = eax40->fc >> *reinterpret_cast<unsigned char*>(&ecx42);
                 }
                 eax43 = eax41 & 1;
                 if (!*reinterpret_cast<signed char*>(&eax43)) {
@@ -2049,56 +2049,56 @@ struct s17 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s18 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s19 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s20 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s21 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s22 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s23 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s24 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 void** quantum_toffoli_ft(void** a1, void** a2, void** a3, void** a4) {
@@ -2197,7 +2197,7 @@ void** quantum_toffoli_ft(void** a1, void** a2, void** a3, void** a4) {
         ecx25 = a1;
         __asm__("shrd eax, edx, cl");
         if (*reinterpret_cast<unsigned char*>(&ecx25) & 32) {
-            eax24 = eax23->f12 >> *reinterpret_cast<unsigned char*>(&ecx25);
+            eax24 = eax23->fc >> *reinterpret_cast<unsigned char*>(&ecx25);
         }
         eax26 = eax24 & 1;
         if (*reinterpret_cast<signed char*>(&eax26)) {
@@ -2209,7 +2209,7 @@ void** quantum_toffoli_ft(void** a1, void** a2, void** a3, void** a4) {
         eax30 = eax27->f8;
         __asm__("shrd eax, edx, cl");
         if (*reinterpret_cast<unsigned char*>(&ecx29) & 32) {
-            eax30 = eax27->f12 >> *reinterpret_cast<unsigned char*>(&ecx29);
+            eax30 = eax27->fc >> *reinterpret_cast<unsigned char*>(&ecx29);
         }
         eax31 = eax30 & 1;
         if (*reinterpret_cast<signed char*>(&eax31)) {
@@ -2221,7 +2221,7 @@ void** quantum_toffoli_ft(void** a1, void** a2, void** a3, void** a4) {
         eax35 = eax32->f8;
         __asm__("shrd eax, edx, cl");
         if (*reinterpret_cast<unsigned char*>(&ecx34) & 32) {
-            eax35 = eax32->f12 >> *reinterpret_cast<unsigned char*>(&ecx34);
+            eax35 = eax32->fc >> *reinterpret_cast<unsigned char*>(&ecx34);
         }
         eax36 = eax35 & 1;
         if (*reinterpret_cast<signed char*>(&eax36)) {
@@ -2232,7 +2232,7 @@ void** quantum_toffoli_ft(void** a1, void** a2, void** a3, void** a4) {
         ecx39 = a2;
         __asm__("shrd eax, edx, cl");
         if (*reinterpret_cast<unsigned char*>(&ecx39) & 32) {
-            eax38 = eax37->f12 >> *reinterpret_cast<unsigned char*>(&ecx39);
+            eax38 = eax37->fc >> *reinterpret_cast<unsigned char*>(&ecx39);
         }
         eax40 = eax38 & 1;
         if (*reinterpret_cast<signed char*>(&eax40)) {
@@ -2244,7 +2244,7 @@ void** quantum_toffoli_ft(void** a1, void** a2, void** a3, void** a4) {
         eax44 = eax41->f8;
         __asm__("shrd eax, edx, cl");
         if (*reinterpret_cast<unsigned char*>(&ecx43) & 32) {
-            eax44 = eax41->f12 >> *reinterpret_cast<unsigned char*>(&ecx43);
+            eax44 = eax41->fc >> *reinterpret_cast<unsigned char*>(&ecx43);
         }
         eax45 = eax44 & 1;
         if (*reinterpret_cast<signed char*>(&eax45)) {
@@ -2256,7 +2256,7 @@ void** quantum_toffoli_ft(void** a1, void** a2, void** a3, void** a4) {
         eax49 = eax46->f8;
         __asm__("shrd eax, edx, cl");
         if (*reinterpret_cast<unsigned char*>(&ecx48) & 32) {
-            eax49 = eax46->f12 >> *reinterpret_cast<unsigned char*>(&ecx48);
+            eax49 = eax46->fc >> *reinterpret_cast<unsigned char*>(&ecx48);
         }
         eax50 = eax49 & 1;
         if (*reinterpret_cast<signed char*>(&eax50)) {
@@ -2265,9 +2265,9 @@ void** quantum_toffoli_ft(void** a1, void** a2, void** a3, void** a4) {
         if (v21 == 1 && v22 == 1) {
             esi51 = reinterpret_cast<struct s23*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a4 + 3)) + (reinterpret_cast<uint32_t>(v20) << 4));
             eax52 = reinterpret_cast<struct s24*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a4 + 3)) + (reinterpret_cast<uint32_t>(v20) << 4));
-            edx53 = eax52->f12 ^ reinterpret_cast<uint32_t>(v19);
+            edx53 = eax52->fc ^ reinterpret_cast<uint32_t>(v19);
             esi51->f8 = eax52->f8 ^ reinterpret_cast<uint32_t>(v18);
-            esi51->f12 = edx53;
+            esi51->fc = edx53;
         }
         v20 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v20) + 1);
     }
@@ -2284,7 +2284,7 @@ struct s25 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 void** quantum_sigma_x_ft(void** a1, void** a2);
@@ -2316,7 +2316,7 @@ void** quantum_sigma_x(void** a1, void** a2, void** a3, void** a4, void** a5) {
                 v12 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v11) << 4));
                 eax13 = reinterpret_cast<struct s25*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v11) << 4));
                 esi14 = eax13->f8;
-                edi15 = eax13->f12;
+                edi15 = eax13->fc;
                 ecx16 = a1;
                 edx17 = reinterpret_cast<void**>(0);
                 __asm__("shld edx, eax, cl");
@@ -2375,7 +2375,7 @@ struct s26 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s27 {
@@ -2411,7 +2411,7 @@ void** quantum_sigma_z(void** a1, void** a2, void** a3, void** a4, void** a5) {
             ecx13 = a1;
             __asm__("shrd eax, edx, cl");
             if (*reinterpret_cast<unsigned char*>(&ecx13) & 32) {
-                eax12 = eax11->f12 >> *reinterpret_cast<unsigned char*>(&ecx13);
+                eax12 = eax11->fc >> *reinterpret_cast<unsigned char*>(&ecx13);
             }
             eax14 = eax12 & 1;
             if (*reinterpret_cast<signed char*>(&eax14)) {
@@ -2441,14 +2441,14 @@ struct s28 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s29 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 void quantum_swaptheleads(void** a1, void** a2, void** a3, void** a4, void** a5) {
@@ -2510,7 +2510,7 @@ void quantum_swaptheleads(void** a1, void** a2, void** a3, void** a4, void** a5)
             eax18 = reinterpret_cast<struct s28*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v7) << 4));
             eax19 = v13 + v14;
             edx20 = reinterpret_cast<int32_t>(eax19) >> 31;
-            edx21 = eax18->f12 - (edx20 + reinterpret_cast<uint1_t>(eax18->f12 < edx20 + reinterpret_cast<uint1_t>(eax18->f8 < eax19)));
+            edx21 = eax18->fc - (edx20 + reinterpret_cast<uint1_t>(eax18->fc < edx20 + reinterpret_cast<uint1_t>(eax18->f8 < eax19)));
             v22 = eax18->f8 - eax19;
             ecx23 = a1;
             eax24 = v13 << *reinterpret_cast<unsigned char*>(&ecx23);
@@ -2520,7 +2520,7 @@ void quantum_swaptheleads(void** a1, void** a2, void** a3, void** a4, void** a5)
             tmp32_28 = tmp32_25 + eax27;
             ecx29 = reinterpret_cast<struct s29*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v7) << 4));
             ecx29->f8 = tmp32_28;
-            ecx29->f12 = edx21 + (reinterpret_cast<int32_t>(eax24) >> 31) + reinterpret_cast<uint1_t>(tmp32_25 < v22) + (reinterpret_cast<int32_t>(eax27) >> 31) + reinterpret_cast<uint1_t>(tmp32_28 < tmp32_25);
+            ecx29->fc = edx21 + (reinterpret_cast<int32_t>(eax24) >> 31) + reinterpret_cast<uint1_t>(tmp32_25 < v22) + (reinterpret_cast<int32_t>(eax27) >> 31) + reinterpret_cast<uint1_t>(tmp32_28 < tmp32_25);
             v7 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v7) + 1);
         }
     } else {
@@ -2559,14 +2559,14 @@ struct s30 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s31 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 void** quantum_get_state(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7);
@@ -2575,7 +2575,7 @@ struct s32 {
     void** f0;
     signed char[4] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s33 {
@@ -2587,7 +2587,7 @@ struct s34 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s35 {
@@ -2629,14 +2629,14 @@ struct s42 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s43 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s44 {
@@ -2670,14 +2670,14 @@ struct s49 {
     void** f0;
     signed char[4] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s50 {
     void** f0;
     signed char[4] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s51 {
@@ -2837,12 +2837,12 @@ void** quantum_gate1(void** a1, void** a2, void** a3, void** a4, void** a5) {
     quantum_reconstruct_hash(a5);
     v15 = reinterpret_cast<void**>(0);
     while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a5 + 1)) > reinterpret_cast<int32_t>(v15)) {
-        if (v8 && (eax16 = reinterpret_cast<struct s30*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 3)) + (reinterpret_cast<uint32_t>(v15) << 4)), !!(reinterpret_cast<uint32_t>(v15) ^ eax16->f8 | eax16->f12 ^ reinterpret_cast<uint32_t>(reinterpret_cast<int32_t>(v15) >> 31)))) {
+        if (v8 && (eax16 = reinterpret_cast<struct s30*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 3)) + (reinterpret_cast<uint32_t>(v15) << 4)), !!(reinterpret_cast<uint32_t>(v15) ^ eax16->f8 | eax16->fc ^ reinterpret_cast<uint32_t>(reinterpret_cast<int32_t>(v15) >> 31)))) {
             v8 = 0;
         }
         eax17 = reinterpret_cast<struct s31*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 3)) + (reinterpret_cast<uint32_t>(v15) << 4));
         esi18 = eax17->f8;
-        edi19 = eax17->f12;
+        edi19 = eax17->fc;
         ecx20 = a1;
         edx21 = 0;
         __asm__("shld edx, eax, cl");
@@ -2874,7 +2874,7 @@ void** quantum_gate1(void** a1, void** a2, void** a3, void** a4, void** a5) {
     while (reinterpret_cast<int32_t>(v32) < reinterpret_cast<int32_t>(v6)) {
         eax33 = reinterpret_cast<struct s32*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 3)) + (reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 1)) + reinterpret_cast<uint32_t>(v32) << 4));
         eax33->f8 = 0;
-        eax33->f12 = 0;
+        eax33->fc = 0;
         edx34 = reinterpret_cast<struct s33*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 3)) + (reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 1)) + reinterpret_cast<uint32_t>(v32) << 4));
         edx34->f0 = reinterpret_cast<void**>(0);
         edx34->f4 = 0;
@@ -2931,7 +2931,7 @@ void** quantum_gate1(void** a1, void** a2, void** a3, void** a4, void** a5) {
             v49 = reinterpret_cast<void**>(0);
             eax50 = reinterpret_cast<struct s34*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 3)) + (reinterpret_cast<uint32_t>(v43) << 4));
             esi51 = eax50->f8;
-            edi52 = eax50->f12;
+            edi52 = eax50->fc;
             ecx53 = a1;
             edx54 = 0;
             __asm__("shld edx, eax, cl");
@@ -3061,7 +3061,7 @@ void** quantum_gate1(void** a1, void** a2, void** a3, void** a4, void** a5) {
         v96 = reinterpret_cast<struct s42*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 3)) + (reinterpret_cast<uint32_t>(v40) << 4));
         eax97 = reinterpret_cast<struct s43*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 3)) + (reinterpret_cast<uint32_t>(v43) << 4));
         esi98 = eax97->f8;
-        edi99 = eax97->f12;
+        edi99 = eax97->fc;
         ecx100 = a1;
         edx101 = 0;
         __asm__("shld edx, eax, cl");
@@ -3070,7 +3070,7 @@ void** quantum_gate1(void** a1, void** a2, void** a3, void** a4, void** a5) {
             goto addr_804b2d1_43;
         addr_804b2d5_44:
         v96->f8 = esi98 ^ eax102;
-        v96->f12 = edi99 ^ edx101;
+        v96->fc = edi99 ^ edx101;
         if (!v47) {
             esi103 = reinterpret_cast<struct s44*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 3)) + (reinterpret_cast<uint32_t>(v40) << 4));
             eax104 = reinterpret_cast<struct s40*>(a4 + 4);
@@ -3181,9 +3181,9 @@ void** quantum_gate1(void** a1, void** a2, void** a3, void** a4, void** a5) {
                 if (v129) {
                     ecx134 = reinterpret_cast<struct s49*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 3)) + (reinterpret_cast<uint32_t>(v128) - v129 << 4));
                     eax135 = reinterpret_cast<struct s50*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 3)) + (reinterpret_cast<uint32_t>(v128) << 4));
-                    edx136 = eax135->f12;
+                    edx136 = eax135->fc;
                     ecx134->f8 = eax135->f8;
-                    ecx134->f12 = edx136;
+                    ecx134->fc = edx136;
                     ecx137 = reinterpret_cast<struct s51*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 3)) + (reinterpret_cast<uint32_t>(v128) - v129 << 4));
                     eax138 = reinterpret_cast<struct s52*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a5 + 3)) + (reinterpret_cast<uint32_t>(v128) << 4));
                     eax139 = eax138->f4;
@@ -3216,7 +3216,7 @@ uint32_t quantum_hash64(void** a1, void** a2, void** a3);
 struct s53 {
     signed char[8] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 void** quantum_get_state(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7) {
@@ -3235,7 +3235,7 @@ void** quantum_get_state(void** a1, void** a2, void** a3, void** a4, void** a5, 
         v11 = eax10;
         while (*reinterpret_cast<void***>(reinterpret_cast<uint32_t>(a7) + (v11 << 2))) {
             eax12 = reinterpret_cast<struct s53*>(reinterpret_cast<uint32_t>(a6) + -(1 - reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(reinterpret_cast<uint32_t>(a7) + (v11 << 2))) << 4));
-            if (!(eax12->f8 ^ reinterpret_cast<uint32_t>(v8) | eax12->f12 ^ reinterpret_cast<uint32_t>(v9))) 
+            if (!(eax12->f8 ^ reinterpret_cast<uint32_t>(v8) | eax12->fc ^ reinterpret_cast<uint32_t>(v9))) 
                 goto addr_804b6e5_5;
             ++v11;
             ecx13 = a5;
@@ -4413,7 +4413,7 @@ struct s54 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s55 {
@@ -4486,7 +4486,7 @@ void** quantum_r_z(void** a1, void** a2, void** a3, void** a4, void** a5) {
             ecx19 = a1;
             __asm__("shrd eax, edx, cl");
             if (*reinterpret_cast<unsigned char*>(&ecx19) & 32) {
-                eax18 = eax17->f12 >> *reinterpret_cast<unsigned char*>(&ecx19);
+                eax18 = eax17->fc >> *reinterpret_cast<unsigned char*>(&ecx19);
             }
             eax20 = eax18 & 1;
             if (!*reinterpret_cast<signed char*>(&eax20)) {
@@ -4582,7 +4582,7 @@ struct s61 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s62 {
@@ -4636,7 +4636,7 @@ void** quantum_phase_kick(void** a1, void** a2, void** a3, void** a4, void** a5)
             ecx19 = a1;
             __asm__("shrd eax, edx, cl");
             if (*reinterpret_cast<unsigned char*>(&ecx19) & 32) {
-                eax18 = eax17->f12 >> *reinterpret_cast<unsigned char*>(&ecx19);
+                eax18 = eax17->fc >> *reinterpret_cast<unsigned char*>(&ecx19);
             }
             eax20 = eax18 & 1;
             if (*reinterpret_cast<signed char*>(&eax20)) {
@@ -4662,14 +4662,14 @@ struct s64 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s65 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s66 {
@@ -4751,7 +4751,7 @@ void** quantum_cond_phase(void** a1, void** a2, void** a3, void** a4, void** a5)
             ecx19 = a1;
             __asm__("shrd eax, edx, cl");
             if (*reinterpret_cast<unsigned char*>(&ecx19) & 32) {
-                eax18 = eax17->f12 >> *reinterpret_cast<unsigned char*>(&ecx19);
+                eax18 = eax17->fc >> *reinterpret_cast<unsigned char*>(&ecx19);
             }
             eax20 = eax18 & 1;
             if (*reinterpret_cast<signed char*>(&eax20)) {
@@ -4760,7 +4760,7 @@ void** quantum_cond_phase(void** a1, void** a2, void** a3, void** a4, void** a5)
                 ecx23 = a2;
                 __asm__("shrd eax, edx, cl");
                 if (*reinterpret_cast<unsigned char*>(&ecx23) & 32) {
-                    eax22 = eax21->f12 >> *reinterpret_cast<unsigned char*>(&ecx23);
+                    eax22 = eax21->fc >> *reinterpret_cast<unsigned char*>(&ecx23);
                 }
                 eax24 = eax22 & 1;
                 if (*reinterpret_cast<signed char*>(&eax24)) {
@@ -4787,14 +4787,14 @@ struct s68 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s69 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s70 {
@@ -4874,7 +4874,7 @@ void** quantum_cond_phase_inv(void** a1, void** a2, void** a3) {
         ecx16 = a1;
         __asm__("shrd eax, edx, cl");
         if (*reinterpret_cast<unsigned char*>(&ecx16) & 32) {
-            eax15 = eax14->f12 >> *reinterpret_cast<unsigned char*>(&ecx16);
+            eax15 = eax14->fc >> *reinterpret_cast<unsigned char*>(&ecx16);
         }
         eax17 = eax15 & 1;
         if (*reinterpret_cast<signed char*>(&eax17)) {
@@ -4883,7 +4883,7 @@ void** quantum_cond_phase_inv(void** a1, void** a2, void** a3) {
             ecx20 = a2;
             __asm__("shrd eax, edx, cl");
             if (*reinterpret_cast<unsigned char*>(&ecx20) & 32) {
-                eax19 = eax18->f12 >> *reinterpret_cast<unsigned char*>(&ecx20);
+                eax19 = eax18->fc >> *reinterpret_cast<unsigned char*>(&ecx20);
             }
             eax21 = eax19 & 1;
             if (*reinterpret_cast<signed char*>(&eax21)) {
@@ -4909,14 +4909,14 @@ struct s72 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s73 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s74 {
@@ -4977,7 +4977,7 @@ void** quantum_cond_phase_kick(void** a1, void** a2, void** a3, void** a4, void*
             ecx18 = a1;
             __asm__("shrd eax, edx, cl");
             if (*reinterpret_cast<unsigned char*>(&ecx18) & 32) {
-                eax17 = eax16->f12 >> *reinterpret_cast<unsigned char*>(&ecx18);
+                eax17 = eax16->fc >> *reinterpret_cast<unsigned char*>(&ecx18);
             }
             eax19 = eax17 & 1;
             if (*reinterpret_cast<signed char*>(&eax19)) {
@@ -4986,7 +4986,7 @@ void** quantum_cond_phase_kick(void** a1, void** a2, void** a3, void** a4, void*
                 ecx22 = a2;
                 __asm__("shrd eax, edx, cl");
                 if (*reinterpret_cast<unsigned char*>(&ecx22) & 32) {
-                    eax21 = eax20->f12 >> *reinterpret_cast<unsigned char*>(&ecx22);
+                    eax21 = eax20->fc >> *reinterpret_cast<unsigned char*>(&ecx22);
                 }
                 eax23 = eax21 & 1;
                 if (*reinterpret_cast<signed char*>(&eax23)) {
@@ -5077,21 +5077,21 @@ struct s76 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s77 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s78 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 void** quantum_cnot(void** a1, void** a2, void** a3, void** a4, void** a5) {
@@ -5129,14 +5129,14 @@ void** quantum_cnot(void** a1, void** a2, void** a3, void** a4, void** a5) {
                 ecx14 = a1;
                 __asm__("shrd eax, edx, cl");
                 if (*reinterpret_cast<unsigned char*>(&ecx14) & 32) {
-                    eax13 = eax12->f12 >> *reinterpret_cast<unsigned char*>(&ecx14);
+                    eax13 = eax12->fc >> *reinterpret_cast<unsigned char*>(&ecx14);
                 }
                 eax15 = eax13 & 1;
                 if (*reinterpret_cast<signed char*>(&eax15)) {
                     v16 = reinterpret_cast<struct s77*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 3)) + (reinterpret_cast<uint32_t>(v11) << 4));
                     eax17 = reinterpret_cast<struct s78*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 3)) + (reinterpret_cast<uint32_t>(v11) << 4));
                     esi18 = eax17->f8;
-                    edi19 = eax17->f12;
+                    edi19 = eax17->fc;
                     ecx20 = a2;
                     edx21 = 0;
                     __asm__("shld edx, eax, cl");
@@ -5146,7 +5146,7 @@ void** quantum_cnot(void** a1, void** a2, void** a3, void** a4, void** a5) {
                         eax22 = 0;
                     }
                     v16->f8 = esi18 ^ eax22;
-                    v16->f12 = edi19 ^ edx21;
+                    v16->fc = edi19 ^ edx21;
                 }
                 v11 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v11) + 1);
             }
@@ -5162,28 +5162,28 @@ struct s79 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s80 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s81 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s82 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 void** quantum_toffoli(void** a1, void** a2, void** a3, void** a4, void** a5) {
@@ -5225,7 +5225,7 @@ void** quantum_toffoli(void** a1, void** a2, void** a3, void** a4, void** a5) {
                 ecx14 = a1;
                 __asm__("shrd eax, edx, cl");
                 if (*reinterpret_cast<unsigned char*>(&ecx14) & 32) {
-                    eax13 = eax12->f12 >> *reinterpret_cast<unsigned char*>(&ecx14);
+                    eax13 = eax12->fc >> *reinterpret_cast<unsigned char*>(&ecx14);
                 }
                 eax15 = eax13 & 1;
                 if (*reinterpret_cast<signed char*>(&eax15)) {
@@ -5234,14 +5234,14 @@ void** quantum_toffoli(void** a1, void** a2, void** a3, void** a4, void** a5) {
                     ecx18 = a2;
                     __asm__("shrd eax, edx, cl");
                     if (*reinterpret_cast<unsigned char*>(&ecx18) & 32) {
-                        eax17 = eax16->f12 >> *reinterpret_cast<unsigned char*>(&ecx18);
+                        eax17 = eax16->fc >> *reinterpret_cast<unsigned char*>(&ecx18);
                     }
                     eax19 = eax17 & 1;
                     if (*reinterpret_cast<signed char*>(&eax19)) {
                         v20 = reinterpret_cast<struct s81*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a4 + 3)) + (reinterpret_cast<uint32_t>(v11) << 4));
                         eax21 = reinterpret_cast<struct s82*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a4 + 3)) + (reinterpret_cast<uint32_t>(v11) << 4));
                         esi22 = eax21->f8;
-                        edi23 = eax21->f12;
+                        edi23 = eax21->fc;
                         ecx24 = a3;
                         edx25 = 0;
                         __asm__("shld edx, eax, cl");
@@ -5251,7 +5251,7 @@ void** quantum_toffoli(void** a1, void** a2, void** a3, void** a4, void** a5) {
                             eax26 = 0;
                         }
                         v20->f8 = esi22 ^ eax26;
-                        v20->f12 = edi23 ^ edx25;
+                        v20->fc = edi23 ^ edx25;
                     }
                 }
                 v11 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v11) + 1);
@@ -5642,7 +5642,7 @@ int32_t quantum_objcode_write(void** a1) {
             eax3 = globalfile;
             a1 = eax3;
         }
-        eax4 = fun_8048924(a1, 0x80543ca);
+        eax4 = fun_8048924(a1, "w");
         if (eax4) {
             edx5 = position;
             ecx6 = objcode;
@@ -5654,7 +5654,7 @@ int32_t quantum_objcode_write(void** a1) {
         }
     } else {
         eax9 = stderr;
-        fun_8048984(0x8054380, 1, 73, eax9);
+        fun_8048984("Object code generation not active! Forgot to call quantum_objcode_start?\n", 1, 73, eax9);
         v8 = 1;
     }
     return v8;
@@ -5698,7 +5698,7 @@ void fun_8048904(void** a1, void** a2, void** a3, void** a4, void** a5) {
 
 void** emul(int32_t a1, void** a2, void** a3, void** a4);
 
-void** add_mod_n(void** a1, void* a2, void** a3, void** a4);
+void add_mod_n(void** a1, void* a2, void** a3, void** a4);
 
 void muln(void** a1, int32_t a2, void** a3, void** a4, void** a5) {
     void** v6;
@@ -6009,8 +6009,8 @@ struct s83 {
     void** f0;
     int32_t f4;
     uint32_t f8;
-    void** f12;
-    void** f16;
+    void** fc;
+    void** f10;
 };
 
 void** fun_8048874(void** a1, void** a2);
@@ -6066,9 +6066,9 @@ struct s83* quantum_new_qureg(struct s83* a1, void** a2, void** a3, void** a4, v
     *reinterpret_cast<void***>(eax9 + 3) = a3;
     *reinterpret_cast<void***>(eax9) = reinterpret_cast<void**>(0x3f800000);
     *reinterpret_cast<void***>(eax9 + 1) = reinterpret_cast<void**>(0);
-    eax28 = fun_8048874(0x8054448, 4);
+    eax28 = fun_8048874("QUOBFILE", 4);
     if (eax28) {
-        quantum_objcode_start(0x8054448, 4, v29);
+        quantum_objcode_start("QUOBFILE", 4, v29);
         quantum_objcode_file(eax28, 4);
         atexit(quantum_objcode_exit, 4);
     }
@@ -6076,8 +6076,8 @@ struct s83* quantum_new_qureg(struct s83* a1, void** a2, void** a3, void** a4, v
     a1->f0 = a4;
     a1->f4 = 1;
     a1->f8 = reinterpret_cast<uint32_t>(a4) + 2;
-    a1->f12 = eax9;
-    a1->f16 = eax20;
+    a1->fc = eax9;
+    a1->f10 = eax20;
     return a1;
 }
 
@@ -6361,19 +6361,19 @@ struct s84 {
     uint32_t f0;
     int32_t f4;
     signed char[4] pad12;
-    void* f12;
+    void* fc;
 };
 
 struct s85 {
     signed char[8] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s86 {
     signed char[8] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 void quantum_addscratch(void** a1, struct s84* a2, void** a3, void** a4) {
@@ -6387,8 +6387,8 @@ void quantum_addscratch(void** a1, struct s84* a2, void** a3, void** a4) {
     a2->f0 = a2->f0 + reinterpret_cast<uint32_t>(a1);
     v5 = 0;
     while (a2->f4 > v5) {
-        eax6 = reinterpret_cast<struct s85*>(reinterpret_cast<int32_t>(a2->f12) + (v5 << 4));
-        edx7 = eax6->f12;
+        eax6 = reinterpret_cast<struct s85*>(reinterpret_cast<int32_t>(a2->fc) + (v5 << 4));
+        edx7 = eax6->fc;
         ecx8 = a1;
         __asm__("shld edx, eax, cl");
         eax9 = eax6->f8 << *reinterpret_cast<unsigned char*>(&ecx8);
@@ -6396,9 +6396,9 @@ void quantum_addscratch(void** a1, struct s84* a2, void** a3, void** a4) {
             edx7 = eax9;
             eax9 = 0;
         }
-        ecx10 = reinterpret_cast<struct s86*>(reinterpret_cast<int32_t>(a2->f12) + (v5 << 4));
+        ecx10 = reinterpret_cast<struct s86*>(reinterpret_cast<int32_t>(a2->fc) + (v5 << 4));
         ecx10->f8 = eax9;
-        ecx10->f12 = edx7;
+        ecx10->fc = edx7;
         ++v5;
     }
     return;
@@ -6416,7 +6416,7 @@ struct s87 {
     void** f0;
     signed char[4] pad8;
     void** f8;
-    void** f12;
+    void** fc;
 };
 
 void** quantum_get_state(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7);
@@ -6455,7 +6455,7 @@ void** quantum_dot_product(void** a1, void** a2, void** a3, void** a4, void** a5
     while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a1 + 1)) > reinterpret_cast<int32_t>(v10)) {
         eax11 = reinterpret_cast<struct s87*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a1 + 3)) + (reinterpret_cast<uint32_t>(v10) << 4));
         ecx12 = eax11->f8;
-        ebx13 = eax11->f12;
+        ebx13 = eax11->fc;
         v14 = *reinterpret_cast<void***>(a2);
         v15 = *reinterpret_cast<void***>(a2 + 1);
         v16 = *reinterpret_cast<void***>(a2 + 2);
@@ -6492,7 +6492,7 @@ struct s89 {
     void** f0;
     signed char[4] pad8;
     void** f8;
-    void** f12;
+    void** fc;
 };
 
 void quantum_add_hash(void** a1, void** a2, void** a3, void** a4);
@@ -6514,7 +6514,7 @@ void quantum_reconstruct_hash(void** a1, void** a2) {
     while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a1 + 1)) > reinterpret_cast<int32_t>(v5)) {
         eax6 = reinterpret_cast<struct s89*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a1 + 3)) + (reinterpret_cast<uint32_t>(v5) << 4));
         edx7 = eax6->f8;
-        ecx8 = eax6->f12;
+        ecx8 = eax6->fc;
         quantum_add_hash(edx7, ecx8, v5, a1);
         v5 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v5) + 1);
     }
@@ -6569,8 +6569,8 @@ struct s90 {
     int32_t f0;
     uint32_t f4;
     int32_t f8;
-    void** f12;
-    int32_t f16;
+    void** fc;
+    int32_t f10;
 };
 
 void quantum_copy_qureg(void** a1, void** a2);
@@ -6579,28 +6579,28 @@ struct s91 {
     void** f0;
     signed char[4] pad8;
     void** f8;
-    void** f12;
+    void** fc;
 };
 
 struct s92 {
     void** f0;
     signed char[4] pad8;
     void** f8;
-    void** f12;
+    void** fc;
 };
 
 struct s93 {
     void** f0;
     signed char[4] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s94 {
     void** f0;
     signed char[4] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s95 {
@@ -6672,7 +6672,7 @@ struct s90* quantum_vectoradd(struct s90* a1, void** a2, void** a3) {
         while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a3 + 1)) > reinterpret_cast<int32_t>(v7)) {
             eax8 = reinterpret_cast<struct s91*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 3)) + (reinterpret_cast<uint32_t>(v7) << 4));
             ecx9 = eax8->f8;
-            ebx10 = eax8->f12;
+            ebx10 = eax8->fc;
             v11 = *reinterpret_cast<void***>(a2);
             v12 = *reinterpret_cast<void***>(a2 + 1);
             v13 = *reinterpret_cast<void***>(a2 + 2);
@@ -6698,7 +6698,7 @@ struct s90* quantum_vectoradd(struct s90* a1, void** a2, void** a3) {
     while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a3 + 1)) > reinterpret_cast<int32_t>(v24)) {
         eax25 = reinterpret_cast<struct s92*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 3)) + (reinterpret_cast<uint32_t>(v24) << 4));
         ecx26 = eax25->f8;
-        ebx27 = eax25->f12;
+        ebx27 = eax25->fc;
         v28 = *reinterpret_cast<void***>(a2);
         v29 = *reinterpret_cast<void***>(a2 + 1);
         v30 = *reinterpret_cast<void***>(a2 + 2);
@@ -6708,9 +6708,9 @@ struct s90* quantum_vectoradd(struct s90* a1, void** a2, void** a3) {
         if (reinterpret_cast<int32_t>(eax33) < reinterpret_cast<int32_t>(0)) {
             ecx34 = reinterpret_cast<struct s93*>(reinterpret_cast<uint32_t>(v22) + (reinterpret_cast<uint32_t>(v23) << 4));
             eax35 = reinterpret_cast<struct s94*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 3)) + (reinterpret_cast<uint32_t>(v24) << 4));
-            edx36 = eax35->f12;
+            edx36 = eax35->fc;
             ecx34->f8 = eax35->f8;
-            ecx34->f12 = edx36;
+            ecx34->fc = edx36;
             ecx37 = reinterpret_cast<struct s95*>(reinterpret_cast<uint32_t>(v22) + (reinterpret_cast<uint32_t>(v23) << 4));
             eax38 = reinterpret_cast<struct s96*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 3)) + (reinterpret_cast<uint32_t>(v24) << 4));
             eax39 = eax38->f4;
@@ -6738,8 +6738,8 @@ struct s90* quantum_vectoradd(struct s90* a1, void** a2, void** a3) {
     a1->f0 = v42;
     a1->f4 = v17;
     a1->f8 = v43;
-    a1->f12 = v22;
-    a1->f16 = v44;
+    a1->fc = v22;
+    a1->f10 = v44;
     return a1;
 }
 
@@ -6813,28 +6813,28 @@ struct s98 {
     void** f0;
     signed char[4] pad8;
     void** f8;
-    void** f12;
+    void** fc;
 };
 
 struct s99 {
     void** f0;
     signed char[4] pad8;
     void** f8;
-    void** f12;
+    void** fc;
 };
 
 struct s100 {
     void** f0;
     signed char[4] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s101 {
     void** f0;
     signed char[4] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s102 {
@@ -6895,7 +6895,7 @@ void quantum_vectoradd_inplace(void** a1, void** a2, void** a3) {
         while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a2 + 1)) > reinterpret_cast<int32_t>(v6)) {
             eax7 = reinterpret_cast<struct s98*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v6) << 4));
             ecx8 = eax7->f8;
-            ebx9 = eax7->f12;
+            ebx9 = eax7->fc;
             v10 = *reinterpret_cast<void***>(a1);
             v11 = *reinterpret_cast<void***>(a1 + 1);
             v12 = *reinterpret_cast<void***>(a1 + 2);
@@ -6921,7 +6921,7 @@ void quantum_vectoradd_inplace(void** a1, void** a2, void** a3) {
     while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a2 + 1)) > reinterpret_cast<int32_t>(v20)) {
         eax21 = reinterpret_cast<struct s99*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v20) << 4));
         ecx22 = eax21->f8;
-        ebx23 = eax21->f12;
+        ebx23 = eax21->fc;
         v24 = *reinterpret_cast<void***>(a1);
         v25 = *reinterpret_cast<void***>(a1 + 1);
         v26 = *reinterpret_cast<void***>(a1 + 2);
@@ -6931,9 +6931,9 @@ void quantum_vectoradd_inplace(void** a1, void** a2, void** a3) {
         if (reinterpret_cast<int32_t>(eax29) < reinterpret_cast<int32_t>(0)) {
             ecx30 = reinterpret_cast<struct s100*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a1 + 3)) + (reinterpret_cast<uint32_t>(v19) << 4));
             eax31 = reinterpret_cast<struct s101*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v20) << 4));
-            edx32 = eax31->f12;
+            edx32 = eax31->fc;
             ecx30->f8 = eax31->f8;
-            ecx30->f12 = edx32;
+            ecx30->fc = edx32;
             ecx33 = reinterpret_cast<struct s102*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a1 + 3)) + (reinterpret_cast<uint32_t>(v19) << 4));
             eax34 = reinterpret_cast<struct s103*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v20) << 4));
             eax35 = eax34->f4;
@@ -6966,15 +6966,15 @@ struct s105 {
     void** f0;
     void** f4;
     int32_t f8;
-    void** f12;
-    int32_t f16;
+    void** fc;
+    int32_t f10;
 };
 
 struct s106 {
     void** f0;
     signed char[4] pad8;
     void** f8;
-    void** f12;
+    void** fc;
 };
 
 struct s107 {
@@ -6986,7 +6986,7 @@ struct s108 {
     signed char[4] pad4;
     int32_t f4;
     signed char[4] pad12;
-    void*** f12;
+    void*** fc;
 };
 
 void** quantum_dot_product_noconj(struct s108* a1, void** a2, void** a3, void** a4);
@@ -7042,7 +7042,7 @@ struct s105* quantum_matrix_qureg(struct s105* a1, void** a2, void** a3, int32_t
     while ((ecx29 = *reinterpret_cast<void***>(a5), eax30 = reinterpret_cast<void**>(1 << *reinterpret_cast<unsigned char*>(&ecx29)), v31 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(eax30) >> 31), reinterpret_cast<uint32_t>(v31) > reinterpret_cast<uint32_t>(v28)) || reinterpret_cast<uint32_t>(v31) >= reinterpret_cast<uint32_t>(v28) && reinterpret_cast<uint32_t>(eax30) > reinterpret_cast<uint32_t>(v27)) {
         ecx32 = reinterpret_cast<struct s106*>(reinterpret_cast<uint32_t>(v16) + (reinterpret_cast<uint32_t>(v27) << 4));
         ecx32->f8 = v27;
-        ecx32->f12 = v28;
+        ecx32->fc = v28;
         __asm__("fld qword [ebp-0x40]");
         __asm__("fstp qword [esp+0xc]");
         a2(reinterpret_cast<int32_t>(ebp6) - 0x68, v27, v28);
@@ -7059,8 +7059,8 @@ struct s105* quantum_matrix_qureg(struct s105* a1, void** a2, void** a3, int32_t
     a1->f0 = v7;
     a1->f4 = v9;
     a1->f8 = 0;
-    a1->f12 = v16;
-    a1->f16 = 0;
+    a1->fc = v16;
+    a1->f10 = 0;
     return a1;
 }
 
@@ -7339,7 +7339,7 @@ void** quantum_imag(void** a1, void** a2) {
 struct s114 {
     signed char[8] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 void** quantum_get_state(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7) {
@@ -7358,7 +7358,7 @@ void** quantum_get_state(void** a1, void** a2, void** a3, void** a4, void** a5, 
         v11 = eax10;
         while (*reinterpret_cast<void***>(reinterpret_cast<uint32_t>(a7) + (v11 << 2))) {
             eax12 = reinterpret_cast<struct s114*>(reinterpret_cast<uint32_t>(a6) + -(1 - reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(reinterpret_cast<uint32_t>(a7) + (v11 << 2))) << 4));
-            if (!(eax12->f8 ^ reinterpret_cast<uint32_t>(v8) | eax12->f12 ^ reinterpret_cast<uint32_t>(v9))) 
+            if (!(eax12->f8 ^ reinterpret_cast<uint32_t>(v8) | eax12->fc ^ reinterpret_cast<uint32_t>(v9))) 
                 goto addr_8049b72_5;
             ++v11;
             ecx13 = a5;
@@ -7409,21 +7409,21 @@ struct s115 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s116 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s117 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s118 {
@@ -7489,7 +7489,7 @@ void** quantum_sigma_y(void** a1, void** a2, void** a3, void** a4, void** a5) {
             v11 = reinterpret_cast<struct s115*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v10) << 4));
             eax12 = reinterpret_cast<struct s116*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v10) << 4));
             esi13 = eax12->f8;
-            edi14 = eax12->f12;
+            edi14 = eax12->fc;
             ecx15 = a1;
             edx16 = 0;
             __asm__("shld edx, eax, cl");
@@ -7499,13 +7499,13 @@ void** quantum_sigma_y(void** a1, void** a2, void** a3, void** a4, void** a5) {
                 eax17 = 0;
             }
             v11->f8 = esi13 ^ eax17;
-            v11->f12 = edi14 ^ edx16;
+            v11->fc = edi14 ^ edx16;
             eax18 = reinterpret_cast<struct s117*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v10) << 4));
             eax19 = eax18->f8;
             ecx20 = a1;
             __asm__("shrd eax, edx, cl");
             if (*reinterpret_cast<unsigned char*>(&ecx20) & 32) {
-                eax19 = eax18->f12 >> *reinterpret_cast<unsigned char*>(&ecx20);
+                eax19 = eax18->fc >> *reinterpret_cast<unsigned char*>(&ecx20);
             }
             eax21 = eax19 & 1;
             if (!*reinterpret_cast<signed char*>(&eax21)) {
@@ -7540,7 +7540,7 @@ struct s122 {
     void** f0;
     signed char[4] pad8;
     void** f8;
-    void** f12;
+    void** fc;
 };
 
 void quantum_reconstruct_hash(void** a1) {
@@ -7560,7 +7560,7 @@ void quantum_reconstruct_hash(void** a1) {
     while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a1 + 1)) > reinterpret_cast<int32_t>(v4)) {
         eax5 = reinterpret_cast<struct s122*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a1 + 3)) + (reinterpret_cast<uint32_t>(v4) << 4));
         edx6 = eax5->f8;
-        ecx7 = eax5->f12;
+        ecx7 = eax5->fc;
         quantum_add_hash(edx6, ecx7, v4, a1);
         v4 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v4) + 1);
     }
@@ -8148,7 +8148,7 @@ struct s123 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s124 {
@@ -8160,7 +8160,7 @@ struct s125 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s126 {
@@ -8187,14 +8187,14 @@ struct s130 {
     void** f0;
     signed char[4] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s131 {
     void** f0;
     signed char[4] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 int32_t quantum_bmeasure_bitpreserve(void** a1, void** a2, void** a3, void** a4, void** a5) {
@@ -8293,7 +8293,7 @@ int32_t quantum_bmeasure_bitpreserve(void** a1, void** a2, void** a3, void** a4,
         v18 = reinterpret_cast<void**>(0);
         while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a2 + 1)) > reinterpret_cast<int32_t>(v18)) {
             eax19 = reinterpret_cast<struct s123*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v18) << 4));
-            if (!(eax19->f8 & v16 | eax19->f12 & v17)) {
+            if (!(eax19->f8 & v16 | eax19->fc & v17)) {
                 edx20 = reinterpret_cast<struct s124*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v18) << 4));
                 v9 = edx20->f0;
                 v8 = edx20->f4;
@@ -8317,7 +8317,7 @@ int32_t quantum_bmeasure_bitpreserve(void** a1, void** a2, void** a3, void** a4,
         v23 = reinterpret_cast<void**>(0);
         while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a2 + 1)) > reinterpret_cast<int32_t>(v23)) {
             eax24 = reinterpret_cast<struct s125*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v23) << 4));
-            if (!(eax24->f8 & v16 | eax24->f12 & v17)) {
+            if (!(eax24->f8 & v16 | eax24->fc & v17)) {
                 if (!v7) {
                     edx25 = reinterpret_cast<struct s126*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v23) << 4));
                     v26 = edx25->f0;
@@ -8375,9 +8375,9 @@ int32_t quantum_bmeasure_bitpreserve(void** a1, void** a2, void** a3, void** a4,
             if (!*reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&ax60) + 1) || (*reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&ax60) + 1) || ((ax62 = fpu_status_word63, *reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&ax62) + 1)) || !*reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&ax62) + 1)))) {
                 ecx64 = reinterpret_cast<struct s130*>(reinterpret_cast<uint32_t>(v41) + (v57 << 4));
                 eax65 = reinterpret_cast<struct s131*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v56) << 4));
-                edx66 = eax65->f12;
+                edx66 = eax65->fc;
                 ecx64->f8 = eax65->f8;
-                ecx64->f12 = edx66;
+                ecx64->fc = edx66;
                 __asm__("fld dword [eax]");
                 __asm__("fstp dword [ebp-0x60]");
                 __asm__("fld dword [eax+0x4]");
@@ -8652,19 +8652,18 @@ void** test_sum(void* a1, void** a2, void** a3, void** a4) {
     return eax49;
 }
 
-void** addn_inv(void** a1, void* a2, void** a3, void** a4) {
+void addn_inv(void** a1, void* a2, void** a3, void** a4) {
     void** v5;
     void** v6;
     void** ecx7;
     void** v8;
-    void** eax9;
 
     quantum_cnot(reinterpret_cast<uint32_t>(a3) + reinterpret_cast<uint32_t>(a3) + 1, reinterpret_cast<uint32_t>(a3) + reinterpret_cast<uint32_t>(a3), a4, v5, v6);
     ecx7 = a3;
     madd_inv((1 << *reinterpret_cast<unsigned char*>(&ecx7)) - reinterpret_cast<uint32_t>(a2), reinterpret_cast<uint32_t>(a1) - reinterpret_cast<uint32_t>(a2), a3, a4);
     quantum_swaptheleads(a3, a4, a3, a4, v8);
-    eax9 = test_sum(a2, a3, a4, a4);
-    return eax9;
+    test_sum(a2, a3, a4, a4);
+    return;
 }
 
 void quantum_mu2char(void** a1, void** a2, void** a3) {
@@ -8715,7 +8714,7 @@ struct s132 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s133 {
@@ -8774,7 +8773,7 @@ void** quantum_bmeasure(void** a1, void** a2, void** a3, void** a4, void** a5) {
         v18 = reinterpret_cast<void**>(0);
         while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a2 + 1)) > reinterpret_cast<int32_t>(v18)) {
             eax19 = reinterpret_cast<struct s132*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v18) << 4));
-            if (!(eax19->f8 & v16 | eax19->f12 & v17)) {
+            if (!(eax19->f8 & v16 | eax19->fc & v17)) {
                 edx20 = reinterpret_cast<struct s133*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v18) << 4));
                 v9 = edx20->f0;
                 v8 = edx20->f4;
@@ -9627,7 +9626,7 @@ void** quantum_real(void** a1, void** a2) {
 struct s135 {
     signed char[8] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 void** quantum_get_state(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7) {
@@ -9646,7 +9645,7 @@ void** quantum_get_state(void** a1, void** a2, void** a3, void** a4, void** a5, 
         v11 = eax10;
         while (*reinterpret_cast<void***>(reinterpret_cast<uint32_t>(a7) + (v11 << 2))) {
             eax12 = reinterpret_cast<struct s135*>(reinterpret_cast<uint32_t>(a6) + -(1 - reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(reinterpret_cast<uint32_t>(a7) + (v11 << 2))) << 4));
-            if (!(eax12->f8 ^ reinterpret_cast<uint32_t>(v8) | eax12->f12 ^ reinterpret_cast<uint32_t>(v9))) 
+            if (!(eax12->f8 ^ reinterpret_cast<uint32_t>(v8) | eax12->fc ^ reinterpret_cast<uint32_t>(v9))) 
                 goto addr_8051cd4_5;
             ++v11;
             ecx13 = a5;
@@ -9670,7 +9669,7 @@ struct s136 {
     void** f0;
     signed char[4] pad8;
     void** f8;
-    void** f12;
+    void** fc;
 };
 
 struct s137 {
@@ -9709,9 +9708,9 @@ void** quantum_dot_product_noconj(struct s108* a1, void** a2, void** a3, void** 
     }
     v7 = 0;
     while (a1->f4 > v7) {
-        eax8 = reinterpret_cast<struct s136*>(reinterpret_cast<int32_t>(a1->f12) + (v7 << 4));
+        eax8 = reinterpret_cast<struct s136*>(reinterpret_cast<int32_t>(a1->fc) + (v7 << 4));
         ecx9 = eax8->f8;
-        ebx10 = eax8->f12;
+        ebx10 = eax8->fc;
         v11 = *reinterpret_cast<void***>(a2);
         v12 = *reinterpret_cast<void***>(a2 + 1);
         v13 = *reinterpret_cast<void***>(a2 + 2);
@@ -9719,7 +9718,7 @@ void** quantum_dot_product_noconj(struct s108* a1, void** a2, void** a3, void** 
         v15 = *reinterpret_cast<void***>(a2 + 4);
         eax16 = quantum_get_state(ecx9, ebx10, v11, v12, v13, v14, v15);
         if (reinterpret_cast<int32_t>(eax16) >= reinterpret_cast<int32_t>(0)) {
-            eax17 = reinterpret_cast<struct s137*>(reinterpret_cast<int32_t>(a1->f12) + (v7 << 4));
+            eax17 = reinterpret_cast<struct s137*>(reinterpret_cast<int32_t>(a1->fc) + (v7 << 4));
             eax18 = reinterpret_cast<struct s138*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(eax16) << 4));
             edx19 = eax18->f0;
             esi20 = eax17->f0;
@@ -9798,16 +9797,16 @@ struct s142 {
     void** f0;
     void** f4;
     void** f8;
-    void** f12;
-    void** f16;
+    void** fc;
+    void** f10;
 };
 
 struct s143 {
     void** f0;
     void** f4;
     void** f8;
-    void** f12;
-    void** f16;
+    void** fc;
+    void** f10;
 };
 
 struct s144 {
@@ -9884,15 +9883,15 @@ struct s140* quantum_density_matrix(struct s140* a1, struct s141* a2) {
                 v22 = edx21->f0;
                 v23 = edx21->f4;
                 v24 = edx21->f8;
-                v25 = edx21->f12;
-                v26 = edx21->f16;
+                v25 = edx21->fc;
+                v26 = edx21->f10;
                 eax27 = quantum_get_state(v19, reinterpret_cast<int32_t>(v19) >> 31, v22, v23, v24, v25, v26);
                 edx28 = reinterpret_cast<struct s143*>(reinterpret_cast<int32_t>(a2->f8) + ((v13 << 2) + v13 << 2));
                 v11 = edx28->f0;
                 v15 = edx28->f4;
                 v16 = edx28->f8;
-                v17 = edx28->f12;
-                v18 = edx28->f16;
+                v17 = edx28->fc;
+                v18 = edx28->f10;
                 v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v20) >> 31);
                 eax29 = quantum_get_state(v20, v12, v11, v15, v16, v17, v18);
                 if (reinterpret_cast<int32_t>(eax27) >= reinterpret_cast<int32_t>(0) && reinterpret_cast<int32_t>(eax29) >= reinterpret_cast<int32_t>(0)) {
@@ -9960,12 +9959,10 @@ void** quantum_imag(void** a1, void** a2) {
     return a2;
 }
 
-void** add_mod_n(void** a1, void* a2, void** a3, void** a4) {
-    void** eax5;
-
+void add_mod_n(void** a1, void* a2, void** a3, void** a4) {
     addn(a1, a2, a3, a4);
-    eax5 = addn_inv(a1, a2, a3, a4);
-    return eax5;
+    addn_inv(a1, a2, a3, a4);
+    return;
 }
 
 int32_t feof = 0x804895a;
@@ -10056,14 +10053,14 @@ struct s148 {
     void** f0;
     void** f4;
     void** f8;
-    void** f12;
-    void** f16;
+    void** fc;
+    void** f10;
 };
 
 struct s149 {
     signed char[8] pad8;
     void** f8;
-    void** f12;
+    void** fc;
 };
 
 struct s150 {
@@ -10129,12 +10126,12 @@ int32_t quantum_purity(struct s147* a1) {
                 ecx16 = reinterpret_cast<struct s148*>(reinterpret_cast<int32_t>(a1->f8) + ((reinterpret_cast<uint32_t>(v4) << 2) + reinterpret_cast<uint32_t>(v4) << 2));
                 eax17 = reinterpret_cast<struct s149*>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>(reinterpret_cast<int32_t>(a1->f8) + ((reinterpret_cast<uint32_t>(v3) << 2) + reinterpret_cast<uint32_t>(v3) << 2) + 12)) + (v15 << 4));
                 ebx18 = eax17->f8;
-                esi19 = eax17->f12;
+                esi19 = eax17->fc;
                 v7 = ecx16->f0;
                 v8 = ecx16->f4;
                 v9 = ecx16->f8;
-                v10 = ecx16->f12;
-                v11 = ecx16->f16;
+                v10 = ecx16->fc;
+                v11 = ecx16->f10;
                 eax20 = quantum_get_state(ebx18, esi19, v7, v8, v9, v10, v11);
                 if (reinterpret_cast<int32_t>(eax20) < reinterpret_cast<int32_t>(0)) {
                     v21 = reinterpret_cast<void**>(0);
@@ -10453,8 +10450,8 @@ struct s151 {
     void** f0;
     void** f4;
     int32_t f8;
-    void** f12;
-    int32_t f16;
+    void** fc;
+    int32_t f10;
 };
 
 struct s151* quantum_new_qureg_size(struct s151* a1, void** a2, void** a3) {
@@ -10477,8 +10474,8 @@ struct s151* quantum_new_qureg_size(struct s151* a1, void** a2, void** a3) {
     a1->f0 = a3;
     a1->f4 = a2;
     a1->f8 = 0;
-    a1->f12 = eax7;
-    a1->f16 = 0;
+    a1->fc = eax7;
+    a1->f10 = 0;
     return a1;
 }
 
@@ -10531,7 +10528,7 @@ struct s152* quantum_qureg2matrix(struct s152* a1, int32_t a2, int32_t a3) {
 struct s155 {
     signed char[8] pad8;
     void** f8;
-    void** f12;
+    void** fc;
 };
 
 void quantum_print_hash() {
@@ -10552,7 +10549,7 @@ void quantum_print_hash() {
     while (ecx2 = v3, reinterpret_cast<int32_t>(1 << *reinterpret_cast<unsigned char*>(&ecx2)) > reinterpret_cast<int32_t>(v1)) {
         if (v1) {
             eax4 = reinterpret_cast<struct s155*>(reinterpret_cast<int32_t>(v5) + -(1 - *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(v6) + (reinterpret_cast<uint32_t>(v1) << 2)) << 4));
-            ebx7 = eax4->f12;
+            ebx7 = eax4->fc;
             eax8 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>(reinterpret_cast<int32_t>(v9) + (reinterpret_cast<uint32_t>(v1) << 2))) - 1);
             v10 = eax4->f8;
             fun_8048964("%i: %i %llu\n", v1, eax8, v10, ebx7, v11, v12);
@@ -10566,36 +10563,36 @@ struct s156 {
     int32_t f0;
     void** f4;
     uint32_t f8;
-    void** f12;
-    void** f16;
+    void** fc;
+    void** f10;
 };
 
 struct s157 {
     int32_t f0;
     uint32_t f4;
     signed char[4] pad12;
-    void*** f12;
+    void*** fc;
 };
 
 struct s158 {
     int32_t f0;
     uint32_t f4;
     signed char[4] pad12;
-    void*** f12;
+    void*** fc;
 };
 
 struct s159 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s160 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s161 {
@@ -10695,22 +10692,22 @@ struct s156* quantum_kronecker(struct s156* a1, struct s157* a2, struct s158* a3
         v44 = 0;
         while (reinterpret_cast<int32_t>(a3->f4) > reinterpret_cast<int32_t>(v44)) {
             v45 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v13) + (a3->f4 * v43 + v44 << 4));
-            eax46 = reinterpret_cast<struct s159*>(reinterpret_cast<int32_t>(a2->f12) + (v43 << 4));
+            eax46 = reinterpret_cast<struct s159*>(reinterpret_cast<int32_t>(a2->fc) + (v43 << 4));
             ecx47 = a3->f0;
-            edi48 = eax46->f12;
+            edi48 = eax46->fc;
             __asm__("shld edi, esi, cl");
             esi49 = eax46->f8 << *reinterpret_cast<unsigned char*>(&ecx47);
             if (*reinterpret_cast<unsigned char*>(&ecx47) & 32) {
                 edi48 = esi49;
                 esi49 = 0;
             }
-            eax50 = reinterpret_cast<struct s160*>(reinterpret_cast<int32_t>(a3->f12) + (v44 << 4));
-            edx51 = reinterpret_cast<void**>(edi48 | eax50->f12);
+            eax50 = reinterpret_cast<struct s160*>(reinterpret_cast<int32_t>(a3->fc) + (v44 << 4));
+            edx51 = reinterpret_cast<void**>(edi48 | eax50->fc);
             *reinterpret_cast<void***>(v45 + 2) = reinterpret_cast<void**>(esi49 | eax50->f8);
             *reinterpret_cast<void***>(v45 + 3) = edx51;
             edi52 = reinterpret_cast<struct s161*>(reinterpret_cast<uint32_t>(v13) + (a3->f4 * v43 + v44 << 4));
-            eax53 = reinterpret_cast<struct s162*>(reinterpret_cast<int32_t>(a2->f12) + (v43 << 4));
-            eax54 = reinterpret_cast<struct s163*>(reinterpret_cast<int32_t>(a3->f12) + (v44 << 4));
+            eax53 = reinterpret_cast<struct s162*>(reinterpret_cast<int32_t>(a2->fc) + (v43 << 4));
+            eax54 = reinterpret_cast<struct s163*>(reinterpret_cast<int32_t>(a3->fc) + (v44 << 4));
             edx55 = eax54->f0;
             esi56 = eax53->f0;
             ecx57 = eax53->f4;
@@ -10725,8 +10722,8 @@ struct s156* quantum_kronecker(struct s156* a1, struct s157* a2, struct s158* a3
     a1->f0 = v4;
     a1->f4 = v5;
     a1->f8 = v6;
-    a1->f12 = v13;
-    a1->f16 = v31;
+    a1->fc = v13;
+    a1->f10 = v31;
     return a1;
 }
 
@@ -11071,14 +11068,14 @@ struct s167 {
     void** f0;
     void** f4;
     void** f8;
-    void** f12;
-    void** f16;
+    void** fc;
+    void** f10;
 };
 
 struct s168 {
     signed char[8] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s169 {
@@ -11090,16 +11087,16 @@ struct s170 {
     void** f0;
     int32_t f4;
     int32_t f8;
-    int32_t f12;
-    int32_t f16;
+    int32_t fc;
+    int32_t f10;
 };
 
 struct s171 {
     void** f0;
     int32_t f4;
     int32_t f8;
-    int32_t f12;
-    int32_t f16;
+    int32_t fc;
+    int32_t f10;
 };
 
 void quantum_reduced_density_op(void** a1, struct s166* a2) {
@@ -11208,14 +11205,14 @@ void quantum_reduced_density_op(void** a1, struct s166* a2) {
         v43 = edx42->f0;
         v44 = edx42->f4;
         v45 = edx42->f8;
-        v46 = edx42->f12;
-        v47 = edx42->f16;
+        v46 = edx42->fc;
+        v47 = edx42->f10;
         __asm__("fldz ");
         __asm__("fstp qword [ebp-0x18]");
         v48 = 0;
         while (*reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(a2->f8) + ((v41 << 2) + v41 << 2) + 4) > v48) {
             eax49 = reinterpret_cast<struct s168*>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>(reinterpret_cast<uint32_t>(a2->f8) + ((v41 << 2) + v41 << 2) + 12)) + (v48 << 4));
-            if (!(eax49->f8 & v39 | eax49->f12 & v40)) {
+            if (!(eax49->f8 & v39 | eax49->fc & v40)) {
                 edx50 = reinterpret_cast<struct s169*>(reinterpret_cast<int32_t>(*reinterpret_cast<void****>(reinterpret_cast<uint32_t>(a2->f8) + ((v41 << 2) + v41 << 2) + 12)) + (v48 << 4));
                 v51 = edx50->f0;
                 v52 = edx50->f4;
@@ -11242,8 +11239,8 @@ void quantum_reduced_density_op(void** a1, struct s166* a2) {
         ebx58->f0 = v59;
         ebx58->f4 = v60;
         ebx58->f8 = v61;
-        ebx58->f12 = v62;
-        ebx58->f16 = v63;
+        ebx58->fc = v62;
+        ebx58->f10 = v63;
         ebx64 = reinterpret_cast<struct s171*>(reinterpret_cast<uint32_t>(a2->f8) + ((a2->f0 + v41 << 2) + (a2->f0 + v41) << 2));
         v53 = v43;
         v54 = v44;
@@ -11254,8 +11251,8 @@ void quantum_reduced_density_op(void** a1, struct s166* a2) {
         ebx64->f0 = v65;
         ebx64->f4 = v66;
         ebx64->f8 = v67;
-        ebx64->f12 = v68;
-        ebx64->f16 = v69;
+        ebx64->fc = v68;
+        ebx64->f10 = v69;
         quantum_delete_qureg_hashpreserve(reinterpret_cast<int32_t>(ebp3) + 0xffffffc4, a1, 1, v53, v54, v55, v56, v57);
         ++v41;
     }
@@ -11287,14 +11284,14 @@ struct s172 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s173 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 void** quantum_unbounded_toffoli(uint32_t a1, void** a2) {
@@ -11361,7 +11358,7 @@ void** quantum_unbounded_toffoli(uint32_t a1, void** a2) {
             eax25 = eax23->f8;
             __asm__("shrd eax, edx, cl");
             if (*reinterpret_cast<unsigned char*>(&ecx24) & 32) {
-                eax25 = eax23->f12 >> *reinterpret_cast<unsigned char*>(&ecx24);
+                eax25 = eax23->fc >> *reinterpret_cast<unsigned char*>(&ecx24);
             }
             eax26 = eax25 & 1;
             if (!*reinterpret_cast<signed char*>(&eax26)) 
@@ -11372,7 +11369,7 @@ void** quantum_unbounded_toffoli(uint32_t a1, void** a2) {
             v27 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v21) << 4));
             eax28 = reinterpret_cast<struct s173*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 3)) + (reinterpret_cast<uint32_t>(v21) << 4));
             esi29 = eax28->f8;
-            edi30 = eax28->f12;
+            edi30 = eax28->fc;
             ecx31 = v19;
             edx32 = reinterpret_cast<void**>(0);
             __asm__("shld edx, eax, cl");
@@ -11458,7 +11455,7 @@ struct s174 {
 struct s175 {
     signed char[8] pad8;
     int32_t f8;
-    void*** f12;
+    void*** fc;
 };
 
 struct s176 {
@@ -11474,7 +11471,7 @@ struct s177 {
 struct s178 {
     signed char[8] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 void quantum_print_qureg(int32_t a1, int32_t a2) {
@@ -11522,7 +11519,7 @@ void quantum_print_qureg(int32_t a1, int32_t a2) {
         __asm__("fstp qword [ebp-0x28]");
         eax8 = reinterpret_cast<struct s175*>(reinterpret_cast<int32_t>(v9) + (v3 << 4));
         ebx10 = eax8->f8;
-        esi11 = eax8->f12;
+        esi11 = eax8->fc;
         edx12 = reinterpret_cast<struct s176*>(reinterpret_cast<int32_t>(v13) + (v3 << 4));
         v14 = edx12->f0;
         v15 = edx12->f4;
@@ -11551,7 +11548,7 @@ void quantum_print_qureg(int32_t a1, int32_t a2) {
             ecx30 = v25;
             __asm__("shrd eax, edx, cl");
             if (*reinterpret_cast<unsigned char*>(&ecx30) & 32) {
-                eax29 = eax27->f12 >> *reinterpret_cast<unsigned char*>(&ecx30);
+                eax29 = eax27->fc >> *reinterpret_cast<unsigned char*>(&ecx30);
             }
             v19 = reinterpret_cast<void**>(eax29 & 1);
             fun_8048964("%i", v19, v31, v32, v33, v20, v21);
@@ -11776,8 +11773,8 @@ struct s183 {
     void** f0;
     void** f4;
     uint32_t f8;
-    void** f12;
-    void** f16;
+    void** fc;
+    void** f10;
 };
 
 struct s184 {
@@ -11795,7 +11792,7 @@ struct s186 {
     void** f0;
     signed char[4] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s187 {
@@ -11905,7 +11902,7 @@ struct s183* quantum_matrix2qureg(struct s183* a1, struct s184* a2, void** a3) {
         if (!*reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&ax43) + 1) || (*reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&ax43) + 1) || ((ax45 = fpu_status_word46, *reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&ax45) + 1)) || !*reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&ax45) + 1)))) {
             ecx47 = reinterpret_cast<struct s186*>(reinterpret_cast<uint32_t>(v26) + (v42 << 4));
             ecx47->f8 = v41;
-            ecx47->f12 = v41 >> 31;
+            ecx47->fc = v41 >> 31;
             ecx48 = reinterpret_cast<struct s187*>(reinterpret_cast<uint32_t>(v26) + (v42 << 4));
             eax49 = reinterpret_cast<struct s188*>(reinterpret_cast<int32_t>(a2->f8) + (v41 << 3));
             eax50 = eax49->f4;
@@ -11918,8 +11915,8 @@ struct s183* quantum_matrix2qureg(struct s183* a1, struct s184* a2, void** a3) {
     a1->f0 = v11;
     a1->f4 = v21;
     a1->f8 = v22;
-    a1->f12 = v26;
-    a1->f16 = v35;
+    a1->fc = v26;
+    a1->f10 = v35;
     return a1;
 }
 
@@ -11976,8 +11973,8 @@ void** quantum_objcode_run(void** a1, void** a2) {
     v4 = a2;
     eax5 = g14;
     v6 = eax5;
-    v7 = reinterpret_cast<void**>(0x80543cc);
-    eax8 = fun_8048924(a1, 0x80543cc);
+    v7 = reinterpret_cast<void**>("r");
+    eax8 = fun_8048924(a1, "r");
     v9 = eax8;
     if (v9) {
         v10 = reinterpret_cast<void**>(0);
@@ -12193,10 +12190,10 @@ void** quantum_objcode_run(void** a1, void** a2) {
     } else {
         edx36 = stderr;
         v11 = a1;
-        v7 = reinterpret_cast<void**>(0x80543d0);
-        fun_8048994(edx36, 0x80543d0, v11, v37, v38);
+        v7 = reinterpret_cast<void**>("quantum_objcode_run: Could not open %s: ");
+        fun_8048994(edx36, "quantum_objcode_run: Could not open %s: ", v11, v37, v38);
         v39 = reinterpret_cast<void**>(0);
-        fun_80488c4(0, 0x80543d0, v11);
+        fun_80488c4(0, "quantum_objcode_run: Could not open %s: ", v11);
         goto addr_804f2dd_58;
     }
     v39 = v9;
@@ -12212,9 +12209,9 @@ void** quantum_objcode_run(void** a1, void** a2) {
     edx41 = stderr;
     v12 = reinterpret_cast<void**>(static_cast<uint32_t>(al16));
     v11 = v10;
-    v7 = reinterpret_cast<void**>(0x80543f9);
+    v7 = reinterpret_cast<void**>("%i: Unknown opcode 0x(%X)!\n");
     v39 = edx41;
-    fun_8048994(v39, 0x80543f9, v11, v12, v13);
+    fun_8048994(v39, "%i: Unknown opcode 0x(%X)!\n", v11, v12, v13);
     goto addr_804f2dd_58;
     addr_804ec95_35:
     goto addr_804f294_62;
@@ -12225,7 +12222,7 @@ void** quantum_objcode_run(void** a1, void** a2) {
 struct s189 {
     signed char[8] pad8;
     void*** f8;
-    void* f12;
+    void* fc;
 };
 
 void quantum_print_expn(uint32_t a1, void** a2) {
@@ -12243,7 +12240,7 @@ void quantum_print_expn(uint32_t a1, void** a2) {
     v3 = reinterpret_cast<void**>(0);
     while (reinterpret_cast<int32_t>(a2) > reinterpret_cast<int32_t>(v3)) {
         eax4 = reinterpret_cast<struct s189*>(reinterpret_cast<int32_t>(v5) + (reinterpret_cast<uint32_t>(v3) << 4));
-        ecx6 = eax4->f12;
+        ecx6 = eax4->fc;
         v7 = eax4->f8;
         ecx8 = reinterpret_cast<int32_t>((a1 >> 31) + a1) >> 1;
         eax9 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(v3) << *reinterpret_cast<unsigned char*>(&ecx8));
@@ -12286,28 +12283,28 @@ struct s190 {
     void** f0;
     signed char[4] pad8;
     void** f8;
-    void** f12;
+    void** fc;
 };
 
 struct s191 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s192 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s193 {
     void** f0;
     signed char[4] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s194 {
@@ -12319,28 +12316,28 @@ struct s195 {
     void** f0;
     signed char[4] pad8;
     void** f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s196 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s197 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s198 {
     void** f0;
     signed char[4] pad8;
     uint32_t f8;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s199 {
@@ -12372,14 +12369,14 @@ struct s204 {
     void** f0;
     signed char[4] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s205 {
     void** f0;
     signed char[4] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s206 {
@@ -12531,7 +12528,7 @@ void** quantum_gate2(int32_t a1, int32_t a2, int32_t a3, int32_t a4, void*** a5,
     while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a6 + 1)) > reinterpret_cast<int32_t>(v18)) {
         eax19 = reinterpret_cast<struct s190*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 3)) + (reinterpret_cast<uint32_t>(v18) << 4));
         edx20 = eax19->f8;
-        ecx21 = eax19->f12;
+        ecx21 = eax19->fc;
         v22 = a6;
         v23 = v18;
         quantum_add_hash(edx20, ecx21, v23, v22);
@@ -12541,7 +12538,7 @@ void** quantum_gate2(int32_t a1, int32_t a2, int32_t a3, int32_t a4, void*** a5,
     while (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a6 + 1)) > reinterpret_cast<int32_t>(v24)) {
         eax25 = reinterpret_cast<struct s191*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 3)) + (reinterpret_cast<uint32_t>(v24) << 4));
         esi26 = eax25->f8;
-        edi27 = eax25->f12;
+        edi27 = eax25->fc;
         ecx28 = a1;
         edx29 = 0;
         __asm__("shld edx, eax, cl");
@@ -12561,7 +12558,7 @@ void** quantum_gate2(int32_t a1, int32_t a2, int32_t a3, int32_t a4, void*** a5,
         }
         eax37 = reinterpret_cast<struct s192*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 3)) + (reinterpret_cast<uint32_t>(v24) << 4));
         esi38 = eax37->f8;
-        edi39 = eax37->f12;
+        edi39 = eax37->fc;
         ecx40 = a2;
         edx41 = 0;
         __asm__("shld edx, eax, cl");
@@ -12593,7 +12590,7 @@ void** quantum_gate2(int32_t a1, int32_t a2, int32_t a3, int32_t a4, void*** a5,
     while (reinterpret_cast<int32_t>(v50) < reinterpret_cast<int32_t>(v8)) {
         eax51 = reinterpret_cast<struct s193*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 3)) + (reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 1)) + reinterpret_cast<uint32_t>(v50) << 4));
         eax51->f8 = 0;
-        eax51->f12 = 0;
+        eax51->fc = 0;
         edx52 = reinterpret_cast<struct s194*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 3)) + (reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 1)) + reinterpret_cast<uint32_t>(v50) << 4));
         edx52->f0 = reinterpret_cast<void**>(0);
         edx52->f4 = 0;
@@ -12637,12 +12634,12 @@ void** quantum_gate2(int32_t a1, int32_t a2, int32_t a3, int32_t a4, void*** a5,
         if (!*reinterpret_cast<signed char*>(&eax62)) {
             eax63 = reinterpret_cast<struct s195*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 3)) + (reinterpret_cast<uint32_t>(v61) << 4));
             edx64 = eax63->f8;
-            ecx65 = eax63->f12;
+            ecx65 = eax63->fc;
             eax66 = quantum_bitmask(edx64, ecx65, 2, reinterpret_cast<int32_t>(ebp7) - 64, v43, v44, v45);
             *reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebp7) + eax66 * 4 - 80) = v61;
             eax67 = reinterpret_cast<struct s196*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 3)) + (reinterpret_cast<uint32_t>(v61) << 4));
             esi68 = eax67->f8;
-            edi69 = eax67->f12;
+            edi69 = eax67->fc;
             ecx70 = a2;
             edx71 = 0;
             __asm__("shld edx, eax, cl");
@@ -12660,7 +12657,7 @@ void** quantum_gate2(int32_t a1, int32_t a2, int32_t a3, int32_t a4, void*** a5,
             *reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebp7) + (eax66 ^ 1) * 4 - 80) = eax78;
             eax79 = reinterpret_cast<struct s197*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 3)) + (reinterpret_cast<uint32_t>(v61) << 4));
             esi80 = eax79->f8;
-            edi81 = eax79->f12;
+            edi81 = eax79->fc;
             ecx82 = a1;
             edx83 = 0;
             __asm__("shld edx, eax, cl");
@@ -12678,7 +12675,7 @@ void** quantum_gate2(int32_t a1, int32_t a2, int32_t a3, int32_t a4, void*** a5,
             *reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebp7) + (eax66 ^ 2) * 4 - 80) = eax90;
             eax91 = reinterpret_cast<struct s198*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 3)) + (reinterpret_cast<uint32_t>(v61) << 4));
             esi92 = eax91->f8;
-            edi93 = eax91->f12;
+            edi93 = eax91->fc;
             ecx94 = a1;
             edx95 = 0;
             __asm__("shld edx, eax, cl");
@@ -12774,9 +12771,9 @@ void** quantum_gate2(int32_t a1, int32_t a2, int32_t a3, int32_t a4, void*** a5,
             if (v115) {
                 ecx120 = reinterpret_cast<struct s204*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 3)) + (reinterpret_cast<uint32_t>(v114) - v115 << 4));
                 eax121 = reinterpret_cast<struct s205*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 3)) + (reinterpret_cast<uint32_t>(v114) << 4));
-                edx122 = eax121->f12;
+                edx122 = eax121->fc;
                 ecx120->f8 = eax121->f8;
-                ecx120->f12 = edx122;
+                ecx120->fc = edx122;
                 ecx123 = reinterpret_cast<struct s206*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 3)) + (reinterpret_cast<uint32_t>(v114) - v115 << 4));
                 eax124 = reinterpret_cast<struct s207*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a6 + 3)) + (reinterpret_cast<uint32_t>(v114) << 4));
                 eax125 = eax124->f4;

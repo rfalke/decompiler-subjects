@@ -32,7 +32,7 @@ int32_t deregister_tm_clones() {
 
 struct s0 {
     signed char[24] pad24;
-    int32_t 0x18;
+    int32_t f18;
 };
 
 void fun_8049040(int32_t a1, int32_t a2);
@@ -44,7 +44,7 @@ void a_func(int32_t a1, int32_t a2) {
 
     __x86_get_pc_thunk_bx();
     ebx3 = reinterpret_cast<struct s0*>(ebx4 + 0x2e81);
-    v5 = ebx3->0x18;
+    v5 = ebx3->f18;
     fun_8049040(reinterpret_cast<int32_t>(ebx3) - 0x1ff4, v5);
     return;
 }
@@ -238,7 +238,7 @@ void fun_8049169() {
 
 struct s1 {
     signed char[24] pad24;
-    int32_t 0x18;
+    int32_t f18;
 };
 
 int32_t main() {
@@ -249,10 +249,10 @@ int32_t main() {
 
     __x86_get_pc_thunk_bx();
     ebx1 = reinterpret_cast<struct s1*>(ebx2 + 0x2e50);
-    v3 = ebx1->0x18;
+    v3 = ebx1->f18;
     v4 = reinterpret_cast<int32_t>(ebx1) - 0x1fe7;
     fun_8049040(v4, v3);
-    ebx1->0x18 = ebx1->0x18 + 1;
+    ebx1->f18 = ebx1->f18 + 1;
     a_func(v4, v3);
     return 0;
 }

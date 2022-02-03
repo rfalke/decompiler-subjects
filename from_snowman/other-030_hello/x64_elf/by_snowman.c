@@ -44,7 +44,7 @@ int32_t maxSections;
 struct s3 {
     int64_t f0;
     signed char[24] pad32;
-    int32_t f32;
+    int32_t f20;
 };
 
 struct s5 {
@@ -57,7 +57,7 @@ struct s4 {
     signed char[4] pad8;
     struct s1* f8;
     signed char[7] pad16;
-    struct s5* f16;
+    struct s5* f10;
 };
 
 struct s4* the_secs;
@@ -70,7 +70,7 @@ int32_t g404290 = 1;
 
 struct s6 {
     signed char[4194304] pad4194304;
-    struct s1* f4194304;
+    struct s1* f400000;
 };
 
 struct s7 {
@@ -93,7 +93,7 @@ struct s8 {
     signed char[8] pad8;
     struct s1* f8;
     signed char[7] pad16;
-    struct s9* f16;
+    struct s9* f10;
 };
 
 /* .text */
@@ -103,19 +103,19 @@ struct s1* g4041f8 = reinterpret_cast<struct s1*>(32);
 
 struct s10 {
     signed char[4211192] pad4211192;
-    int32_t f4211192;
+    int32_t f4041f8;
 };
 
 int32_t g404234 = 0x776f6e6b;
 
 struct s11 {
     signed char[4194304] pad4194304;
-    struct s1* f4194304;
+    struct s1* f400000;
 };
 
 struct s12 {
     signed char[4194304] pad4194304;
-    struct s1* f4194304;
+    struct s1* f400000;
 };
 
 struct s0* _pei386_runtime_relocator(struct s1* rcx, struct s1* rdx, struct s1* r8, struct s1* r9) {
@@ -178,7 +178,7 @@ struct s0* _pei386_runtime_relocator(struct s1* rcx, struct s1* rdx, struct s1* 
     rbx9 = reinterpret_cast<struct s2*>(0x404288);
     maxSections = 0;
     rsp10 = reinterpret_cast<struct s3*>(reinterpret_cast<int64_t>(rsp5) - 8 - 8 - 8 - 8 - 96 - 8 + 8 - 8 + 8 - rax8);
-    the_secs = reinterpret_cast<struct s4*>(&rsp10->f32);
+    the_secs = reinterpret_cast<struct s4*>(&rsp10->f20);
     rax11 = reinterpret_cast<struct s0*>(24);
     if (0) 
         goto addr_401f79_2;
@@ -217,7 +217,7 @@ struct s0* _pei386_runtime_relocator(struct s1* rcx, struct s1* rdx, struct s1* 
         rbx9 = reinterpret_cast<struct s2*>(&rbx9->f8);
         rsp18 = reinterpret_cast<struct s7*>(reinterpret_cast<int64_t>(rsp10) - 8);
         rsp18->f0 = 0x402031;
-        rax11 = __write_memory(&rcx17->f4194304, reinterpret_cast<int64_t>(rbp6) - 36, 4, r9);
+        rax11 = __write_memory(&rcx17->f400000, reinterpret_cast<int64_t>(rbp6) - 36, 4, r9);
         rsp10 = reinterpret_cast<struct s3*>(&rsp18->f8);
     } while (reinterpret_cast<uint64_t>(rbx9) < 0x4042a0);
     addr_402036_17:
@@ -259,18 +259,18 @@ struct s0* _pei386_runtime_relocator(struct s1* rcx, struct s1* rdx, struct s1* 
     }
     tmp64_35 = reinterpret_cast<struct s8*>(reinterpret_cast<int64_t>(rbx20) + reinterpret_cast<int64_t>(the_secs));
     r8 = tmp64_35->f8;
-    *reinterpret_cast<int32_t*>(&rdx15) = tmp64_35->f16->f8;
+    *reinterpret_cast<int32_t*>(&rdx15) = tmp64_35->f10->f8;
     *reinterpret_cast<int32_t*>(&rdx15 + 4) = 0;
     rsp36 = reinterpret_cast<struct s7*>(reinterpret_cast<int64_t>(rsp28) - 8);
     rsp36->f0 = 0x402257;
-    text(0x4041c0, rdx15, r8, r9);
+    text("  VirtualQuery failed for %d bytes at address %p", rdx15, r8, r9);
     rsp10 = reinterpret_cast<struct s3*>(&rsp36->f8);
     rsp37 = reinterpret_cast<struct s7*>(reinterpret_cast<int64_t>(rsp10) - 8);
     rsp37->f0 = 0x402263;
-    text(0x4041f8, rdx15, r8, r9);
+    text("  Unknown pseudo relocation protocol version %d.\n", rdx15, r8, r9);
     rsp38 = reinterpret_cast<struct s3*>(&rsp37->f8);
     zf39 = reinterpret_cast<int1_t>(g4041f8 == 0x5a4d);
-    if (!zf39 || (rdx40 = reinterpret_cast<struct s10*>(static_cast<int64_t>(g404234)), *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(0x4041f8) + reinterpret_cast<uint64_t>(rdx40)) != 0x4550)) {
+    if (!zf39 || (rdx40 = reinterpret_cast<struct s10*>(static_cast<int64_t>(g404234)), *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>("  Unknown pseudo relocation protocol version %d.\n") + reinterpret_cast<uint64_t>(rdx40)) != 0x4550)) {
         goto rsp38->f0;
     } else {
         goto rsp38->f0;
@@ -303,8 +303,8 @@ struct s0* _pei386_runtime_relocator(struct s1* rcx, struct s1* rdx, struct s1* 
                         *reinterpret_cast<int32_t*>(&r8_46 + 4) = 0;
                         *reinterpret_cast<uint32_t*>(&rax11) = *reinterpret_cast<unsigned char*>(&r8_46);
                         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax11) + 4) = 0;
-                        rdx47 = reinterpret_cast<struct s1*>(&rdx45->f4194304);
-                        rcx42 = reinterpret_cast<struct s1*>(&rcx44->f4194304);
+                        rdx47 = reinterpret_cast<struct s1*>(&rdx45->f400000);
+                        rcx42 = reinterpret_cast<struct s1*>(&rcx44->f400000);
                         r9 = *reinterpret_cast<struct s1**>(&rdx47->f0);
                         if (*reinterpret_cast<uint32_t*>(&rax11) == 16) {
                             *reinterpret_cast<struct s1**>(&r8_41) = reinterpret_cast<struct s1*>(static_cast<uint32_t>(reinterpret_cast<uint16_t>(*reinterpret_cast<struct s1**>(&rcx42->f0))));
@@ -363,12 +363,12 @@ struct s0* _pei386_runtime_relocator(struct s1* rcx, struct s1* rdx, struct s1* 
             }
         }
         addr_402139_38:
-        rcx42 = reinterpret_cast<struct s1*>(0x404230);
+        rcx42 = reinterpret_cast<struct s1*>("  Unknown pseudo relocation bit size %d.\n");
         *reinterpret_cast<uint32_t*>(&rdx47) = *reinterpret_cast<unsigned char*>(&r8_46);
         *reinterpret_cast<int32_t*>(&rdx47 + 4) = 0;
         rsp51 = reinterpret_cast<struct s7*>(reinterpret_cast<int64_t>(rsp10) - 8);
         rsp51->f0 = 0x402151;
-        rax11 = text(0x404230, rdx47, r8_46, r9);
+        rax11 = text("  Unknown pseudo relocation bit size %d.\n", rdx47, r8_46, r9);
         rsp10 = reinterpret_cast<struct s3*>(&rsp51->f8);
     }
 }
@@ -393,9 +393,9 @@ void text(uint32_t* rcx);
 struct s14 {
     signed char[8] pad8;
     int32_t f8;
-    signed char f12;
+    signed char fc;
     signed char[26] pad39;
-    unsigned char f39;
+    unsigned char f27;
 };
 
 struct s14* _FindPESectionExec(int64_t rcx);
@@ -426,7 +426,7 @@ int64_t __mingw_init_ehandler(struct s1* rcx, struct s1* rdx, struct s1* r8) {
     rbx5 = rax4;
     *reinterpret_cast<int32_t*>(&rax6) = was_here_61446;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax6) + 4) = 0;
-    if (!rbx5 || (*reinterpret_cast<int32_t*>(&rax6) || (was_here_61446 = 1, rax7 = _FindPESectionByName(0x404030, rdx, r8), *reinterpret_cast<int32_t*>(&rax6) = 1, *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax6) + 4) = 0, !!rax7))) {
+    if (!rbx5 || (*reinterpret_cast<int32_t*>(&rax6) || (was_here_61446 = 1, rax7 = _FindPESectionByName(".pdata", rdx, r8), *reinterpret_cast<int32_t*>(&rax6) = 1, *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax6) + 4) = 0, !!rax7))) {
         addr_40193d_2:
         return rax6;
     } else {
@@ -459,7 +459,7 @@ int64_t __mingw_init_ehandler(struct s1* rcx, struct s1* rdx, struct s1* r8) {
                 break;
             rsi10[rdi15 * 8] = 9;
             *reinterpret_cast<int32_t*>(0x407244 + rdi15 * 8) = *reinterpret_cast<int32_t*>(&r12_14);
-            edx17 = rax16->f12;
+            edx17 = rax16->fc;
             rbp12->f0 = edx17;
             edx18 = edx17 + rax16->f8;
             rax19 = rsi10 + rdi15 * 8;
@@ -644,7 +644,7 @@ void text(int64_t rcx, struct s1* rdx) {
 struct s16 {
     int16_t f0;
     signed char[58] pad60;
-    int32_t f60;
+    int32_t f3c;
 };
 
 /* .text */
@@ -656,7 +656,7 @@ struct s17 {
     signed char[6] pad6;
     uint16_t f6;
     signed char[12] pad20;
-    uint16_t f20;
+    uint16_t f14;
 };
 
 int32_t strncmp(signed char rcx, struct s1* rdx, int64_t r8);
@@ -679,7 +679,7 @@ signed char _FindPESectionByName(struct s1* rcx, struct s1* rdx, struct s1* r8) 
     *reinterpret_cast<int32_t*>(&rbx4 + 4) = 0;
     rsi5 = rcx;
     rax6 = strlen(rcx, rdx, r8);
-    if (rax6 > 8 || ((eax7 = text(0x400000), eax7 == 0) || (rdx8 = g40003c, rax9 = reinterpret_cast<struct s17*>(0x400000 + rdx8), edx10 = rax9->f6, ecx11 = rax9->f20, edx10 == 0))) {
+    if (rax6 > 8 || ((eax7 = text(0x400000), eax7 == 0) || (rdx8 = g40003c, rax9 = reinterpret_cast<struct s17*>(0x400000 + rdx8), edx10 = rax9->f6, ecx11 = rax9->f14, edx10 == 0))) {
         addr_40236e_2:
         return rbx4;
     } else {
@@ -703,7 +703,7 @@ struct s18 {
     signed char[6] pad6;
     uint16_t f6;
     signed char[12] pad20;
-    uint16_t f20;
+    uint16_t f14;
 };
 
 struct s14* _FindPESectionExec(int64_t rcx) {
@@ -722,7 +722,7 @@ struct s14* _FindPESectionExec(int64_t rcx) {
     eax3 = text(0x400000);
     *reinterpret_cast<int32_t*>(&rdx4) = 0;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdx4) + 4) = 0;
-    if (!eax3 || (rcx5 = g40003c, rax6 = reinterpret_cast<struct s18*>(0x400000 + rcx5), ecx7 = rax6->f6, r8d8 = rax6->f20, ecx7 == 0)) {
+    if (!eax3 || (rcx5 = g40003c, rax6 = reinterpret_cast<struct s18*>(0x400000 + rcx5), ecx7 = rax6->f6, r8d8 = rax6->f14, ecx7 == 0)) {
         addr_40246a_2:
         return rdx4;
     } else {
@@ -733,7 +733,7 @@ struct s14* _FindPESectionExec(int64_t rcx) {
         rdx4 = reinterpret_cast<struct s14*>(reinterpret_cast<int64_t>(rax6) + r8_9 + 24);
         rax11 = reinterpret_cast<struct s14*>(reinterpret_cast<int64_t>(rdx4) + (rcx10 + rcx10 * 4) * 8 + 40);
         do {
-            if (rdx4->f39 & 32) {
+            if (rdx4->f27 & 32) {
                 if (!rbx2) 
                     goto addr_40246a_2;
                 --rbx2;
@@ -748,7 +748,7 @@ struct s14* _FindPESectionExec(int64_t rcx) {
 
 struct s19 {
     signed char[96] pad96;
-    struct s1* f96;
+    struct s1* f60;
 };
 
 int64_t __iob_func = 0x86a0;
@@ -766,14 +766,14 @@ void fprintf(struct s1* rcx, int64_t rdx, int64_t r8, int64_t r9, int64_t a5) {
 struct s20 {
     signed char[8] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s21 {
     signed char[6] pad6;
     uint16_t f6;
     signed char[12] pad20;
-    uint16_t f20;
+    uint16_t f14;
 };
 
 struct s20* __mingw_GetSectionForAddress(struct s1* rcx) {
@@ -800,7 +800,7 @@ struct s20* __mingw_GetSectionForAddress(struct s1* rcx) {
     *reinterpret_cast<int32_t*>(&rax6) = 0;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax6) + 4) = 0;
     r8d7 = rcx5->f6;
-    r9d8 = rcx5->f20;
+    r9d8 = rcx5->f14;
     if (r8d7) 
         goto addr_4022b8_5;
     addr_4022ee_6:
@@ -813,11 +813,11 @@ struct s20* __mingw_GetSectionForAddress(struct s1* rcx) {
     rax6 = reinterpret_cast<struct s20*>(reinterpret_cast<uint64_t>(rcx5) + r9_9 + 24);
     r9_11 = reinterpret_cast<struct s20*>(reinterpret_cast<uint64_t>(rax6) + (r8_10 + r8_10 * 4) * 8 + 40);
     do {
-        *reinterpret_cast<int32_t*>(&r8_12) = rax6->f12;
+        *reinterpret_cast<int32_t*>(&r8_12) = rax6->fc;
         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&r8_12) + 4) = 0;
         if (r8_12 > rdx3) 
             continue;
-        *reinterpret_cast<int32_t*>(&rcx13) = rax6->f12 + rax6->f8;
+        *reinterpret_cast<int32_t*>(&rcx13) = rax6->fc + rax6->f8;
         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx13) + 4) = 0;
         if (rdx3 < rcx13) 
             goto addr_4022ee_6;
@@ -845,7 +845,7 @@ struct s22 {
     int32_t f0;
     signed char[4] pad8;
     int64_t f8;
-    struct s20* f16;
+    struct s20* f10;
 };
 
 struct s23 {
@@ -857,12 +857,12 @@ struct s23 {
 struct s24 {
     int64_t f0;
     signed char[24] pad32;
-    int32_t f32;
+    int32_t f20;
 };
 
 struct s25 {
     signed char[4194304] pad4194304;
-    struct s1* f4194304;
+    struct s1* f400000;
 };
 
 struct s26 {
@@ -885,22 +885,22 @@ struct s28 {
     signed char[8] pad8;
     struct s1* f8;
     signed char[7] pad16;
-    struct s29* f16;
+    struct s29* f10;
 };
 
 struct s30 {
     signed char[4211192] pad4211192;
-    int32_t f4211192;
+    int32_t f4041f8;
 };
 
 struct s31 {
     signed char[4194304] pad4194304;
-    struct s1* f4194304;
+    struct s1* f400000;
 };
 
 struct s32 {
     signed char[4194304] pad4194304;
-    struct s1* f4194304;
+    struct s1* f400000;
 };
 
 struct s0* __write_memory(struct s1* rcx, void* rdx, struct s1* r8, struct s1* r9) {
@@ -991,7 +991,7 @@ struct s0* __write_memory(struct s1* rcx, void* rdx, struct s1* r8, struct s1* r
         do {
             if (reinterpret_cast<unsigned char>(rbx6) < reinterpret_cast<unsigned char>(rax10->f8)) 
                 continue;
-            *reinterpret_cast<int32_t*>(&r8) = rax10->f16->f8;
+            *reinterpret_cast<int32_t*>(&r8) = rax10->f10->f8;
             *reinterpret_cast<int32_t*>(&r8 + 4) = 0;
             if (reinterpret_cast<unsigned char>(rbx6) < reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(rax10->f8) + reinterpret_cast<unsigned char>(r8))) 
                 goto addr_401ee0_8;
@@ -1003,18 +1003,18 @@ struct s0* __write_memory(struct s1* rcx, void* rdx, struct s1* r8, struct s1* r
     rax11 = __mingw_GetSectionForAddress(rbx6);
     rsp12 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp5) - 8 + 8);
     if (!rax11) {
-        text(0x4041a0, rbx6, r8, r9);
+        text("Address %p has no image-section", rbx6, r8, r9);
         rsp5 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp12) - 8 + 8);
         goto addr_401f3e_12;
     }
     r12_13 = *reinterpret_cast<int32_t*>(&r12_9);
     r12_9 = reinterpret_cast<void*>(r12_13 + r12_13 * 2 << 3);
     tmp64_14 = reinterpret_cast<struct s22*>(reinterpret_cast<int64_t>(r12_9) + reinterpret_cast<int64_t>(the_secs));
-    tmp64_14->f16 = rax11;
+    tmp64_14->f10 = rax11;
     tmp64_14->f0 = 0;
     rax15 = _GetPEImageBase(rbx6);
     rsp16 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp12) - 8 + 8);
-    *reinterpret_cast<int32_t*>(&rdx17) = rax11->f12;
+    *reinterpret_cast<int32_t*>(&rdx17) = rax11->fc;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdx17) + 4) = 0;
     tmp64_14->f8 = rax15 + rdx17;
     rax18 = the_secs;
@@ -1027,7 +1027,7 @@ struct s0* __write_memory(struct s1* rcx, void* rdx, struct s1* r8, struct s1* r
         *reinterpret_cast<int32_t*>(&rdx22) = rax11->f8;
         *reinterpret_cast<int32_t*>(&rdx22 + 4) = 0;
         r8_23 = *reinterpret_cast<struct s1**>(reinterpret_cast<int64_t>(rax21) + reinterpret_cast<int64_t>(r12_9) + 8);
-        text(0x4041c0, rdx22, r8_23, r9);
+        text("  VirtualQuery failed for %d bytes at address %p", rdx22, r8_23, r9);
     } else {
         if (v24 != 4 && v24 != 64) {
             VirtualProtect(v25, v26, 64);
@@ -1042,12 +1042,12 @@ struct s0* __write_memory(struct s1* rcx, void* rdx, struct s1* r8, struct s1* r
     if (r12d30) 
         goto addr_401f79_18;
     bss = 1;
-    __mingw_GetSectionCount(0x4041c0, rdx22, r8_23, r9);
-    rax31 = ___chkstk_ms(0x4041c0, rdx22, r8_23, r9);
+    __mingw_GetSectionCount("  VirtualQuery failed for %d bytes at address %p", rdx22, r8_23, r9);
+    rax31 = ___chkstk_ms("  VirtualQuery failed for %d bytes at address %p", rdx22, r8_23, r9);
     rbx32 = reinterpret_cast<struct s23*>(0x404288);
     maxSections = 0;
     rsp33 = reinterpret_cast<struct s24*>(reinterpret_cast<int64_t>(rsp28) - 8 - 8 - 8 - 8 - 96 - 8 + 8 - 8 + 8 - rax31);
-    the_secs = reinterpret_cast<struct s4*>(&rsp33->f32);
+    the_secs = reinterpret_cast<struct s4*>(&rsp33->f20);
     if (0) 
         goto addr_401f79_18;
     if (!0) {
@@ -1085,7 +1085,7 @@ struct s0* __write_memory(struct s1* rcx, void* rdx, struct s1* r8, struct s1* r
         rbx32 = reinterpret_cast<struct s23*>(&rbx32->f8);
         rsp40 = reinterpret_cast<struct s26*>(reinterpret_cast<int64_t>(rsp33) - 8);
         rsp40->f0 = 0x402031;
-        __write_memory(&rcx39->f4194304, reinterpret_cast<int64_t>(rbp29) - 36, 4, r9);
+        __write_memory(&rcx39->f400000, reinterpret_cast<int64_t>(rbp29) - 36, 4, r9);
         rsp33 = reinterpret_cast<struct s24*>(&rsp40->f8);
     } while (reinterpret_cast<uint64_t>(rbx32) < 0x4042a0);
     addr_402036_33:
@@ -1126,18 +1126,18 @@ struct s0* __write_memory(struct s1* rcx, void* rdx, struct s1* r8, struct s1* r
     }
     tmp64_58 = reinterpret_cast<struct s28*>(reinterpret_cast<int64_t>(rbx43) + reinterpret_cast<int64_t>(the_secs));
     r8_23 = tmp64_58->f8;
-    *reinterpret_cast<int32_t*>(&rdx37) = tmp64_58->f16->f8;
+    *reinterpret_cast<int32_t*>(&rdx37) = tmp64_58->f10->f8;
     *reinterpret_cast<int32_t*>(&rdx37 + 4) = 0;
     rsp59 = reinterpret_cast<struct s26*>(reinterpret_cast<int64_t>(rsp51) - 8);
     rsp59->f0 = 0x402257;
-    text(0x4041c0, rdx37, r8_23, r9);
+    text("  VirtualQuery failed for %d bytes at address %p", rdx37, r8_23, r9);
     rsp33 = reinterpret_cast<struct s24*>(&rsp59->f8);
     rsp60 = reinterpret_cast<struct s26*>(reinterpret_cast<int64_t>(rsp33) - 8);
     rsp60->f0 = 0x402263;
-    text(0x4041f8, rdx37, r8_23, r9);
+    text("  Unknown pseudo relocation protocol version %d.\n", rdx37, r8_23, r9);
     rsp61 = reinterpret_cast<struct s24*>(&rsp60->f8);
     zf62 = reinterpret_cast<int1_t>(g4041f8 == 0x5a4d);
-    if (!zf62 || (rdx63 = reinterpret_cast<struct s30*>(static_cast<int64_t>(g404234)), *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(0x4041f8) + reinterpret_cast<uint64_t>(rdx63)) != 0x4550)) {
+    if (!zf62 || (rdx63 = reinterpret_cast<struct s30*>(static_cast<int64_t>(g404234)), *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>("  Unknown pseudo relocation protocol version %d.\n") + reinterpret_cast<uint64_t>(rdx63)) != 0x4550)) {
         goto rsp61->f0;
     } else {
         goto rsp61->f0;
@@ -1171,8 +1171,8 @@ struct s0* __write_memory(struct s1* rcx, void* rdx, struct s1* r8, struct s1* r
                         *reinterpret_cast<int32_t*>(&r8_70) = rbx38->f8;
                         *reinterpret_cast<int32_t*>(&r8_70 + 4) = 0;
                         *reinterpret_cast<uint32_t*>(&rax64) = *reinterpret_cast<unsigned char*>(&r8_70);
-                        rdx71 = reinterpret_cast<struct s1*>(&rdx69->f4194304);
-                        rcx66 = reinterpret_cast<struct s1*>(&rcx68->f4194304);
+                        rdx71 = reinterpret_cast<struct s1*>(&rdx69->f400000);
+                        rcx66 = reinterpret_cast<struct s1*>(&rcx68->f400000);
                         r9 = *reinterpret_cast<struct s1**>(&rdx71->f0);
                         if (*reinterpret_cast<uint32_t*>(&rax64) == 16) {
                             *reinterpret_cast<struct s1**>(&r8_65) = reinterpret_cast<struct s1*>(static_cast<uint32_t>(reinterpret_cast<uint16_t>(*reinterpret_cast<struct s1**>(&rcx66->f0))));
@@ -1231,12 +1231,12 @@ struct s0* __write_memory(struct s1* rcx, void* rdx, struct s1* r8, struct s1* r
             }
         }
         addr_402139_55:
-        rcx66 = reinterpret_cast<struct s1*>(0x404230);
+        rcx66 = reinterpret_cast<struct s1*>("  Unknown pseudo relocation bit size %d.\n");
         *reinterpret_cast<uint32_t*>(&rdx71) = *reinterpret_cast<unsigned char*>(&r8_70);
         *reinterpret_cast<int32_t*>(&rdx71 + 4) = 0;
         rsp75 = reinterpret_cast<struct s26*>(reinterpret_cast<int64_t>(rsp33) - 8);
         rsp75->f0 = 0x402151;
-        rax64 = text(0x404230, rdx71, r8_70, r9);
+        rax64 = text("  Unknown pseudo relocation bit size %d.\n", rdx71, r8_70, r9);
         rsp33 = reinterpret_cast<struct s24*>(&rsp75->f8);
     }
 }
@@ -1251,7 +1251,7 @@ struct s33 {
     int32_t f0;
     signed char[4] pad8;
     int64_t f8;
-    struct s20* f16;
+    struct s20* f10;
 };
 
 struct s34 {
@@ -1263,12 +1263,12 @@ struct s34 {
 struct s35 {
     int64_t f0;
     signed char[24] pad32;
-    int32_t f32;
+    int32_t f20;
 };
 
 struct s36 {
     signed char[4194304] pad4194304;
-    struct s1* f4194304;
+    struct s1* f400000;
 };
 
 struct s37 {
@@ -1291,22 +1291,22 @@ struct s39 {
     signed char[8] pad8;
     struct s1* f8;
     signed char[7] pad16;
-    struct s40* f16;
+    struct s40* f10;
 };
 
 struct s41 {
     signed char[4211192] pad4211192;
-    int32_t f4211192;
+    int32_t f4041f8;
 };
 
 struct s42 {
     signed char[4194304] pad4194304;
-    struct s1* f4194304;
+    struct s1* f400000;
 };
 
 struct s43 {
     signed char[4194304] pad4194304;
-    struct s1* f4194304;
+    struct s1* f400000;
 };
 
 /* .text */
@@ -1393,10 +1393,10 @@ struct s0* text(struct s1* rcx, struct s1* rdx, struct s1* r8, struct s1* r9) {
 
     rsp5 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(__zero_stack_offset()) - 8 - 8 - 56);
     rax7 = __iob_func(rcx, rdx, r8, r9, v6);
-    r9_8 = reinterpret_cast<struct s1*>(&rax7->f96);
-    fwrite(0x404180, 1, 27, r9_8);
-    rax10 = __iob_func(0x404180, 1, 27, r9_8, v9);
-    rcx11 = reinterpret_cast<struct s1*>(&rax10->f96);
+    r9_8 = reinterpret_cast<struct s1*>(&rax7->f60);
+    fwrite("Mingw-w64 runtime failure:\n", 1, 27, r9_8);
+    rax10 = __iob_func("Mingw-w64 runtime failure:\n", 1, 27, r9_8, v9);
+    rcx11 = reinterpret_cast<struct s1*>(&rax10->f60);
     r8_12 = reinterpret_cast<struct s1*>(reinterpret_cast<int64_t>(rsp5) + 88);
     vfprintf();
     abort(rcx11, rcx, r8_12, r9_8);
@@ -1415,7 +1415,7 @@ struct s0* text(struct s1* rcx, struct s1* rdx, struct s1* r8, struct s1* r9) {
         do {
             if (reinterpret_cast<unsigned char>(rbx14) < reinterpret_cast<unsigned char>(rax18->f8)) 
                 continue;
-            *reinterpret_cast<int32_t*>(&r8_12) = rax18->f16->f8;
+            *reinterpret_cast<int32_t*>(&r8_12) = rax18->f10->f8;
             *reinterpret_cast<int32_t*>(&r8_12 + 4) = 0;
             if (reinterpret_cast<unsigned char>(rbx14) < reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(rax18->f8) + reinterpret_cast<unsigned char>(r8_12))) 
                 goto addr_401ee0_9;
@@ -1427,18 +1427,18 @@ struct s0* text(struct s1* rcx, struct s1* rdx, struct s1* r8, struct s1* r9) {
     rax19 = __mingw_GetSectionForAddress(rbx14);
     rsp20 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp13) - 8 + 8);
     if (!rax19) {
-        text(0x4041a0, rbx14, r8_12, r9_8);
+        text("Address %p has no image-section", rbx14, r8_12, r9_8);
         rsp13 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp20) - 8 + 8);
         goto addr_401f3e_13;
     }
     r12_21 = *reinterpret_cast<int32_t*>(&r12_17);
     r12_17 = reinterpret_cast<void*>(r12_21 + r12_21 * 2 << 3);
     tmp64_22 = reinterpret_cast<struct s33*>(reinterpret_cast<int64_t>(r12_17) + reinterpret_cast<int64_t>(the_secs));
-    tmp64_22->f16 = rax19;
+    tmp64_22->f10 = rax19;
     tmp64_22->f0 = 0;
     rax23 = _GetPEImageBase(rbx14);
     rsp24 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp20) - 8 + 8);
-    *reinterpret_cast<int32_t*>(&rdx25) = rax19->f12;
+    *reinterpret_cast<int32_t*>(&rdx25) = rax19->fc;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdx25) + 4) = 0;
     tmp64_22->f8 = rax23 + rdx25;
     rax26 = the_secs;
@@ -1451,7 +1451,7 @@ struct s0* text(struct s1* rcx, struct s1* rdx, struct s1* r8, struct s1* r9) {
         *reinterpret_cast<int32_t*>(&rdx30) = rax19->f8;
         *reinterpret_cast<int32_t*>(&rdx30 + 4) = 0;
         r8_31 = *reinterpret_cast<struct s1**>(reinterpret_cast<int64_t>(rax29) + reinterpret_cast<int64_t>(r12_17) + 8);
-        text(0x4041c0, rdx30, r8_31, r9_8);
+        text("  VirtualQuery failed for %d bytes at address %p", rdx30, r8_31, r9_8);
     } else {
         if (v32 != 4 && v32 != 64) {
             VirtualProtect(v33, v34, 64);
@@ -1466,12 +1466,12 @@ struct s0* text(struct s1* rcx, struct s1* rdx, struct s1* r8, struct s1* r9) {
     if (r12d38) 
         goto addr_401f79_19;
     bss = 1;
-    __mingw_GetSectionCount(0x4041c0, rdx30, r8_31, r9_8);
-    rax39 = ___chkstk_ms(0x4041c0, rdx30, r8_31, r9_8);
+    __mingw_GetSectionCount("  VirtualQuery failed for %d bytes at address %p", rdx30, r8_31, r9_8);
+    rax39 = ___chkstk_ms("  VirtualQuery failed for %d bytes at address %p", rdx30, r8_31, r9_8);
     rbx40 = reinterpret_cast<struct s34*>(0x404288);
     maxSections = 0;
     rsp41 = reinterpret_cast<struct s35*>(reinterpret_cast<int64_t>(rsp36) - 8 - 8 - 8 - 8 - 96 - 8 + 8 - 8 + 8 - rax39);
-    the_secs = reinterpret_cast<struct s4*>(&rsp41->f32);
+    the_secs = reinterpret_cast<struct s4*>(&rsp41->f20);
     if (0) 
         goto addr_401f79_19;
     if (!0) {
@@ -1509,7 +1509,7 @@ struct s0* text(struct s1* rcx, struct s1* rdx, struct s1* r8, struct s1* r9) {
         rbx40 = reinterpret_cast<struct s34*>(&rbx40->f8);
         rsp48 = reinterpret_cast<struct s37*>(reinterpret_cast<int64_t>(rsp41) - 8);
         rsp48->f0 = 0x402031;
-        __write_memory(&rcx47->f4194304, reinterpret_cast<int64_t>(rbp37) - 36, 4, r9_8);
+        __write_memory(&rcx47->f400000, reinterpret_cast<int64_t>(rbp37) - 36, 4, r9_8);
         rsp41 = reinterpret_cast<struct s35*>(&rsp48->f8);
     } while (reinterpret_cast<uint64_t>(rbx40) < 0x4042a0);
     addr_402036_34:
@@ -1550,18 +1550,18 @@ struct s0* text(struct s1* rcx, struct s1* rdx, struct s1* r8, struct s1* r9) {
     }
     tmp64_66 = reinterpret_cast<struct s39*>(reinterpret_cast<int64_t>(rbx51) + reinterpret_cast<int64_t>(the_secs));
     r8_31 = tmp64_66->f8;
-    *reinterpret_cast<int32_t*>(&rdx45) = tmp64_66->f16->f8;
+    *reinterpret_cast<int32_t*>(&rdx45) = tmp64_66->f10->f8;
     *reinterpret_cast<int32_t*>(&rdx45 + 4) = 0;
     rsp67 = reinterpret_cast<struct s37*>(reinterpret_cast<int64_t>(rsp59) - 8);
     rsp67->f0 = 0x402257;
-    text(0x4041c0, rdx45, r8_31, r9_8);
+    text("  VirtualQuery failed for %d bytes at address %p", rdx45, r8_31, r9_8);
     rsp41 = reinterpret_cast<struct s35*>(&rsp67->f8);
     rsp68 = reinterpret_cast<struct s37*>(reinterpret_cast<int64_t>(rsp41) - 8);
     rsp68->f0 = 0x402263;
-    text(0x4041f8, rdx45, r8_31, r9_8);
+    text("  Unknown pseudo relocation protocol version %d.\n", rdx45, r8_31, r9_8);
     rsp69 = reinterpret_cast<struct s35*>(&rsp68->f8);
     zf70 = reinterpret_cast<int1_t>(g4041f8 == 0x5a4d);
-    if (!zf70 || (rdx71 = reinterpret_cast<struct s41*>(static_cast<int64_t>(g404234)), *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(0x4041f8) + reinterpret_cast<uint64_t>(rdx71)) != 0x4550)) {
+    if (!zf70 || (rdx71 = reinterpret_cast<struct s41*>(static_cast<int64_t>(g404234)), *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>("  Unknown pseudo relocation protocol version %d.\n") + reinterpret_cast<uint64_t>(rdx71)) != 0x4550)) {
         goto rsp69->f0;
     } else {
         goto rsp69->f0;
@@ -1595,8 +1595,8 @@ struct s0* text(struct s1* rcx, struct s1* rdx, struct s1* r8, struct s1* r9) {
                         *reinterpret_cast<int32_t*>(&r8_78) = rbx46->f8;
                         *reinterpret_cast<int32_t*>(&r8_78 + 4) = 0;
                         *reinterpret_cast<uint32_t*>(&rax72) = *reinterpret_cast<unsigned char*>(&r8_78);
-                        rdx79 = reinterpret_cast<struct s1*>(&rdx77->f4194304);
-                        rcx74 = reinterpret_cast<struct s1*>(&rcx76->f4194304);
+                        rdx79 = reinterpret_cast<struct s1*>(&rdx77->f400000);
+                        rcx74 = reinterpret_cast<struct s1*>(&rcx76->f400000);
                         r9_8 = *reinterpret_cast<struct s1**>(&rdx79->f0);
                         if (*reinterpret_cast<uint32_t*>(&rax72) == 16) {
                             *reinterpret_cast<struct s1**>(&r8_73) = reinterpret_cast<struct s1*>(static_cast<uint32_t>(reinterpret_cast<uint16_t>(*reinterpret_cast<struct s1**>(&rcx74->f0))));
@@ -1655,12 +1655,12 @@ struct s0* text(struct s1* rcx, struct s1* rdx, struct s1* r8, struct s1* r9) {
             }
         }
         addr_402139_56:
-        rcx74 = reinterpret_cast<struct s1*>(0x404230);
+        rcx74 = reinterpret_cast<struct s1*>("  Unknown pseudo relocation bit size %d.\n");
         *reinterpret_cast<uint32_t*>(&rdx79) = *reinterpret_cast<unsigned char*>(&r8_78);
         *reinterpret_cast<int32_t*>(&rdx79 + 4) = 0;
         rsp83 = reinterpret_cast<struct s37*>(reinterpret_cast<int64_t>(rsp41) - 8);
         rsp83->f0 = 0x402151;
-        rax72 = text(0x404230, rdx79, r8_78, r9_8);
+        rax72 = text("  Unknown pseudo relocation bit size %d.\n", rdx79, r8_78, r9_8);
         rsp41 = reinterpret_cast<struct s35*>(&rsp83->f8);
     }
 }
@@ -1668,7 +1668,7 @@ struct s0* text(struct s1* rcx, struct s1* rdx, struct s1* r8, struct s1* r9) {
 struct s44 {
     int32_t f0;
     signed char[20] pad24;
-    int16_t f24;
+    int16_t f18;
 };
 
 /* .text */
@@ -1676,11 +1676,11 @@ int32_t text(struct s16* rcx) {
     struct s44* rcx2;
     int32_t eax3;
 
-    if (rcx->f0 != 0x5a4d || (rcx2 = reinterpret_cast<struct s44*>(reinterpret_cast<int64_t>(rcx) + rcx->f60), rcx2->f0 != 0x4550)) {
+    if (rcx->f0 != 0x5a4d || (rcx2 = reinterpret_cast<struct s44*>(reinterpret_cast<int64_t>(rcx) + rcx->f3c), rcx2->f0 != 0x4550)) {
         return 0;
     } else {
         eax3 = 0;
-        *reinterpret_cast<unsigned char*>(&eax3) = reinterpret_cast<uint1_t>(rcx2->f24 == 0x20b);
+        *reinterpret_cast<unsigned char*>(&eax3) = reinterpret_cast<uint1_t>(rcx2->f18 == 0x20b);
         return eax3;
     }
 }
@@ -1694,21 +1694,21 @@ int32_t strncmp(signed char rcx, struct s1* rdx, int64_t r8) {
 struct s45 {
     signed char[8] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
     signed char[20] pad36;
-    int32_t f36;
+    int32_t f24;
 };
 
 struct s46 {
     signed char[60] pad60;
-    int32_t f60;
+    int32_t f3c;
 };
 
 struct s47 {
     signed char[6] pad6;
     uint16_t f6;
     signed char[12] pad20;
-    uint16_t f20;
+    uint16_t f14;
 };
 
 struct s45* _FindPESection(struct s46* rcx, uint64_t rdx) {
@@ -1722,11 +1722,11 @@ struct s45* _FindPESection(struct s46* rcx, uint64_t rdx) {
     uint64_t r8_10;
     uint64_t rcx11;
 
-    rcx3 = reinterpret_cast<struct s47*>(reinterpret_cast<int64_t>(rcx) + rcx->f60);
+    rcx3 = reinterpret_cast<struct s47*>(reinterpret_cast<int64_t>(rcx) + rcx->f3c);
     *reinterpret_cast<int32_t*>(&rax4) = 0;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax4) + 4) = 0;
     r8d5 = rcx3->f6;
-    r9d6 = rcx3->f20;
+    r9d6 = rcx3->f14;
     if (!r8d5) {
         addr_4022ee_2:
         return rax4;
@@ -1738,11 +1738,11 @@ struct s45* _FindPESection(struct s46* rcx, uint64_t rdx) {
         rax4 = reinterpret_cast<struct s45*>(reinterpret_cast<int64_t>(rcx3) + r9_7 + 24);
         r9_9 = reinterpret_cast<struct s45*>(reinterpret_cast<int64_t>(rax4) + (r8_8 + r8_8 * 4) * 8 + 40);
         do {
-            *reinterpret_cast<int32_t*>(&r8_10) = rax4->f12;
+            *reinterpret_cast<int32_t*>(&r8_10) = rax4->fc;
             *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&r8_10) + 4) = 0;
             if (r8_10 > rdx) 
                 continue;
-            *reinterpret_cast<int32_t*>(&rcx11) = rax4->f12 + rax4->f8;
+            *reinterpret_cast<int32_t*>(&rcx11) = rax4->fc + rax4->f8;
             *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx11) + 4) = 0;
             if (rdx < rcx11) 
                 goto addr_4022ee_2;
@@ -1815,7 +1815,7 @@ struct s48 {
     int32_t f0;
     signed char[4] pad8;
     int64_t f8;
-    struct s48* f16;
+    struct s48* f10;
 };
 
 struct s48* key_dtor_list;
@@ -1851,7 +1851,7 @@ void text() {
                 rax7 = rbx1->f8;
                 rax7(rax5);
             }
-            rbx1 = rbx1->f16;
+            rbx1 = rbx1->f10;
         } while (rbx1);
     }
     rax8 = LeaveCriticalSection;
@@ -2297,14 +2297,14 @@ int64_t __tmainCRTStartup(int64_t rcx, struct s1* rdx, struct s1* r8, struct s1*
     __mingw_oldexcpt_handler = rax21;
     __mingw_init_ehandler(_gnu_exception_handler, rdx7, r8);
     rax22 = __mingw_get_msvcrt_handle(_gnu_exception_handler, rdx7);
-    rdx23 = reinterpret_cast<struct s1*>(0x404000);
+    rdx23 = reinterpret_cast<struct s1*>("_set_invalid_parameter_handler");
     rcx24 = rax22;
-    rax25 = reinterpret_cast<int64_t>(GetProcAddress(rcx24, 0x404000));
+    rax25 = reinterpret_cast<int64_t>(GetProcAddress(rcx24, "_set_invalid_parameter_handler"));
     if (rax25) {
         rcx24 = reinterpret_cast<int64_t>(text);
-        rax25(text, 0x404000);
+        rax25(text, "_set_invalid_parameter_handler");
     }
-    text(rcx24, 0x404000);
+    text(rcx24, "_set_invalid_parameter_handler");
     r10d26 = mingw_app_type;
     if (!r10d26) {
         addr_40131f_31:
@@ -2458,7 +2458,7 @@ struct s50 {
     signed char[4] pad4;
     int32_t f4;
     signed char[4] pad12;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s15* __mingw_enum_import_library_names(int32_t ecx) {
@@ -2481,7 +2481,7 @@ struct s15* __mingw_enum_import_library_names(int32_t ecx) {
     } else {
         rdi8 = reinterpret_cast<struct s50*>(rdi6 + 0x400000);
         if (rdi8) {
-            while (rdi8->f4 || rdi8->f12) {
+            while (rdi8->f4 || rdi8->fc) {
                 if (reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(ebx3 < 0) | reinterpret_cast<uint1_t>(ebx3 == 0))) 
                     goto addr_402569_6;
                 --ebx3;
@@ -2493,7 +2493,7 @@ struct s15* __mingw_enum_import_library_names(int32_t ecx) {
     }
     return 0;
     addr_402569_6:
-    *reinterpret_cast<int32_t*>(&rbp9) = rdi8->f12;
+    *reinterpret_cast<int32_t*>(&rbp9) = rdi8->fc;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rbp9) + 4) = 0;
     rbp2 = reinterpret_cast<struct s15*>(rbp9 + 0x400000);
     goto addr_40256f_2;
@@ -3225,7 +3225,7 @@ int64_t _IsNonwritableInCurrentImage(int64_t rcx) {
     if (!eax2 || (rax3 = _FindPESection(0x400000, rcx - 0x400000), rax3 == 0)) {
         return 0;
     } else {
-        *reinterpret_cast<uint32_t*>(&rax4) = reinterpret_cast<uint32_t>(~rax3->f36) >> 31;
+        *reinterpret_cast<uint32_t*>(&rax4) = reinterpret_cast<uint32_t>(~rax3->f24) >> 31;
         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax4) + 4) = 0;
         return rax4;
     }
@@ -3250,7 +3250,7 @@ int64_t ___w64_mingwthr_add_key_dtor(int32_t ecx, int64_t rdx) {
             EnterCriticalSection(0x407940, 24);
             rax6 = key_dtor_list;
             key_dtor_list = rax5;
-            rax5->f16 = rax6;
+            rax5->f10 = rax6;
             LeaveCriticalSection(0x407940, 24);
             return 0;
         }
@@ -3274,7 +3274,7 @@ void fun_402a09() {
         LeaveCriticalSection(0x407940);
     } else {
         if (rax1->f0 != ebx2) {
-            while (rcx3 = rax1->f16, !!rcx3) {
+            while (rcx3 = rax1->f10, !!rcx3) {
                 if (rcx3->f0 == ebx4) 
                     goto addr_402a60_7;
                 rax1 = rcx3;
@@ -3282,14 +3282,14 @@ void fun_402a09() {
             goto addr_402a43_3;
         } else {
             rcx3 = rax1;
-            key_dtor_list = rax1->f16;
+            key_dtor_list = rax1->f10;
             goto addr_402a68_11;
         }
     }
     addr_402a50_12:
     goto v5;
     addr_402a60_7:
-    rax1->f16 = rcx3->f16;
+    rax1->f10 = rcx3->f10;
     addr_402a68_11:
     free(rcx3);
     LeaveCriticalSection(0x407940);
@@ -3315,15 +3315,15 @@ int32_t mingw_initcharmax;
 struct s52 {
     int32_t f0;
     signed char[20] pad24;
-    uint16_t f24;
+    uint16_t f18;
     signed char[90] pad116;
-    uint32_t f116;
+    uint32_t f74;
     signed char[12] pad132;
-    uint32_t f132;
+    uint32_t f84;
     signed char[96] pad232;
-    int32_t f232;
+    int32_t fe8;
     signed char[12] pad248;
-    int32_t f248;
+    int32_t ff8;
 };
 
 int32_t _fmode;
@@ -3351,16 +3351,16 @@ int64_t pre_c_init() {
     mingw_initltssuo_force = 1;
     mingw_initcharmax = 1;
     if (zf2 && (rcx3 = g40003c, rdx4 = reinterpret_cast<struct s52*>(0x400000 + rcx3), rdx4->f0 == 0x4550)) {
-        ecx5 = rdx4->f24;
+        ecx5 = rdx4->f18;
         if (*reinterpret_cast<int16_t*>(&ecx5) == 0x10b) {
-            if (rdx4->f116 > 14) {
+            if (rdx4->f74 > 14) {
                 eax1 = 0;
-                *reinterpret_cast<unsigned char*>(&eax1) = reinterpret_cast<uint1_t>(!!rdx4->f232);
+                *reinterpret_cast<unsigned char*>(&eax1) = reinterpret_cast<uint1_t>(!!rdx4->fe8);
             }
         } else {
-            if (*reinterpret_cast<int16_t*>(&ecx5) == 0x20b && rdx4->f132 > 14) {
+            if (*reinterpret_cast<int16_t*>(&ecx5) == 0x20b && rdx4->f84 > 14) {
                 eax1 = 0;
-                *reinterpret_cast<unsigned char*>(&eax1) = reinterpret_cast<uint1_t>(!!rdx4->f248);
+                *reinterpret_cast<unsigned char*>(&eax1) = reinterpret_cast<uint1_t>(!!rdx4->ff8);
             }
         }
     }
@@ -3533,7 +3533,7 @@ void fun_401d12(struct s1* rcx, struct s1* rdx, struct s1* r8, struct s1* r9) {
 
     rsi5 = rcx->f8;
     rax6 = __iob_func(rcx, rdx, r8, r9, __return_address());
-    fprintf(&rax6->f96, "_matherr(): %s in %s(%g, %g)  (retval=%g)\n", "Partial loss of significance (PLOSS)", rsi5, __return_address());
+    fprintf(&rax6->f60, "_matherr(): %s in %s(%g, %g)  (retval=%g)\n", "Partial loss of significance (PLOSS)", rsi5, __return_address());
     goto v7;
 }
 

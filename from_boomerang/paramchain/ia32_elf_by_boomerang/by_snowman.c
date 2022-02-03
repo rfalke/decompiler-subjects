@@ -111,7 +111,7 @@ int32_t printf(int32_t a1, int32_t a2, int32_t a3, int32_t a4, int32_t a5, void*
 
 struct s0 {
     signed char[20] pad20;
-    int32_t* f20;
+    int32_t* f14;
 };
 
 struct s1 {
@@ -121,12 +121,12 @@ struct s1 {
 
 struct s2 {
     signed char[12] pad12;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s3 {
     signed char[16] pad16;
-    int32_t f16;
+    int32_t f10;
 };
 
 struct s4 {
@@ -142,7 +142,7 @@ void addem(int32_t a1, int32_t a2, int32_t a3, void* a4) {
     struct s4* ebp9;
 
     __asm__("in al, dx");
-    *ebp5->f20 = ebp6->f8 + ebp7->f12 + ebp8->f16;
+    *ebp5->f14 = ebp6->f8 + ebp7->fc + ebp8->f10;
     goto ebp9->f4;
 }
 

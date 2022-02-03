@@ -132,13 +132,13 @@ int32_t fun_80484fd(int32_t a1) {
 
 struct s3 {
     signed char[10] pad10;
-    signed char f10;
+    signed char fa;
 };
 
 void fst(struct s3* a1) {
     int32_t v2;
 
-    v2 = a1->f10;
+    v2 = a1->fa;
     fun_80482b0("First element is %d\n", v2);
     return;
 }

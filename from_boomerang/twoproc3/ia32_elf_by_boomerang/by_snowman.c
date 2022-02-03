@@ -170,7 +170,7 @@ void __do_global_dtors_aux() {
 
 struct s2 {
     signed char[24] pad24;
-    int32_t f24;
+    int32_t f18;
 };
 
 int32_t xf86GetPciVideoInfo = 0x804838a;
@@ -180,7 +180,7 @@ struct s2** fun_8048384() {
 }
 
 int32_t getDevice(struct s2* a1) {
-    return a1->f24;
+    return a1->f18;
 }
 
 void fun_80484de(int32_t ecx) {

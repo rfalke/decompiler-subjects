@@ -65,7 +65,7 @@ void* g40211c = reinterpret_cast<void*>(0);
 
 struct s2 {
     signed char[100000] pad100000;
-    signed char f100000;
+    signed char f186a0;
 };
 
 struct s2* g402120 = reinterpret_cast<struct s2*>(0);
@@ -316,7 +316,7 @@ void fun_401230(struct s0* a1, struct s0* a2, struct s0* a3, struct s0* a4, stru
         addr_40137b_2:
         v12 = reinterpret_cast<struct s0*>(16);
         v13 = reinterpret_cast<struct s0*>(0);
-        v14 = reinterpret_cast<struct s0*>(0x40204c);
+        v14 = reinterpret_cast<struct s0*>("S");
         v15 = reinterpret_cast<struct s0*>(0);
         MessageBoxW();
     } else {
@@ -328,7 +328,7 @@ void fun_401230(struct s0* a1, struct s0* a2, struct s0* a3, struct s0* a4, stru
         g40211c = eax17;
         eax18 = reinterpret_cast<struct s2*>(reinterpret_cast<int32_t>(eax17) + 0x30d40);
         g402120 = eax18;
-        g402124 = &eax18->f100000;
+        g402124 = &eax18->f186a0;
         ebx19 = reinterpret_cast<struct s0*>(0x7a11f);
         do {
             edi20 = g40210c;
@@ -350,7 +350,7 @@ void fun_401230(struct s0* a1, struct s0* a2, struct s0* a3, struct s0* a4, stru
         if (!eax25) 
             goto addr_40137b_2;
         v26 = g4020b4;
-        eax27 = reinterpret_cast<struct s0*>(CreateWindowExW(0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0));
+        eax27 = reinterpret_cast<struct s0*>(CreateWindowExW(0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0));
         if (!eax27) 
             goto addr_40137b_2; else 
             goto addr_40130e_7;
@@ -375,17 +375,17 @@ void fun_401230(struct s0* a1, struct s0* a2, struct s0* a3, struct s0* a4, stru
     addr_40130e_7:
     g4020cc = eax27;
     v35 = eax27;
-    eax36 = reinterpret_cast<struct s0*>(GetDC(v35, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0));
+    eax36 = reinterpret_cast<struct s0*>(GetDC(v35, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0));
     g4020d0 = eax36;
-    fun_401000(v35, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0);
-    fun_401020(v35, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0);
-    fun_401052(v35, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0, 0x7f00, 0, 0x7f00, 0, 0, 0xf4240, v10, a1, a2);
+    fun_401000(v35, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0);
+    fun_401020(v35, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0);
+    fun_401052(v35, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0, 0x7f00, 0, 0x7f00, 0, 0, 0xf4240, v10, a1, a2);
     v37 = g4020d0;
-    SetStretchBltMode(v37, 4, v35, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0);
-    while (PeekMessageW(0x4020d4, 0, 0, 0, 1, v37, 4, v35, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0), zf38 = g4020d8 == 18, !zf38) {
-        TranslateMessage(0x4020d4, 0x4020d4, 0, 0, 0, 1, v37, 4, v35, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0);
-        DispatchMessageW(0x4020d4, 0x4020d4, 0x4020d4, 0, 0, 0, 1, v37, 4, v35, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0);
-        fun_401052(0x4020d4, 0x4020d4, 0x4020d4, 0, 0, 0, 1, v37, 4, v35, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0);
+    SetStretchBltMode(v37, 4, v35, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0);
+    while (PeekMessageW(0x4020d4, 0, 0, 0, 1, v37, 4, v35, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0), zf38 = g4020d8 == 18, !zf38) {
+        TranslateMessage(0x4020d4, 0x4020d4, 0, 0, 0, 1, v37, 4, v35, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0);
+        DispatchMessageW(0x4020d4, 0x4020d4, 0x4020d4, 0, 0, 0, 1, v37, 4, v35, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0);
+        fun_401052(0x4020d4, 0x4020d4, 0x4020d4, 0, 0, 0, 1, v37, 4, v35, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v26, 0, 0x4020a4, 0);
         ++g402108;
     }
     goto addr_40138c_8;

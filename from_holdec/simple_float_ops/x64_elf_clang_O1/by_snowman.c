@@ -28,12 +28,7 @@ void use(int32_t* rdi, int32_t* rsi) {
     goto printf;
 }
 
-struct s0 {
-    int32_t f0;
-    int32_t f4;
-};
-
-void use_int(uint32_t edi, struct s0* rsi) {
+void use_int(uint32_t edi, int32_t* rsi) {
     goto printf;
 }
 
@@ -69,17 +64,17 @@ void frame_dummy() {
     goto 0;
 }
 
+struct s0 {
+    int32_t f0;
+    int32_t f4;
+};
+
 struct s1 {
     int32_t f0;
     int32_t f4;
 };
 
-struct s2 {
-    int32_t f0;
-    int32_t f4;
-};
-
-void write_floats(struct s1* rdi, struct s2* rsi) {
+void write_floats(struct s0* rdi, struct s1* rsi) {
     __asm__("cvtsd2ss xmm1, xmm0");
     __asm__("movss [rip+0x200a3c], xmm1");
     rdi->f0 = rsi->f0;
@@ -108,10 +103,57 @@ void converting_between_floats_d2() {
     return;
 }
 
+struct s2 {
+    int32_t f0;
+    int32_t f4;
+};
+
 struct s3 {
     int32_t f0;
     int32_t f4;
 };
+
+int32_t __gmon_start__;
+
+int64_t compare_floats(struct s2* rdi, struct s3* rsi) {
+    int32_t* rdi3;
+    int32_t* rsi4;
+    void* rdi5;
+    int32_t* rsi6;
+    int32_t* rdi7;
+    void* rdi8;
+    int32_t* rsi9;
+    int32_t* rsi10;
+    int32_t* rsi11;
+
+    rdi->f0 = rsi->f0;
+    rdi3 = &rdi->f4;
+    rsi4 = &rsi->f4;
+    *rdi3 = *rsi4;
+    __asm__("movapd xmm2, xmm0");
+    rdi5 = reinterpret_cast<void*>(rdi3 + 1 + 1);
+    rsi6 = rsi4 + 1 + 1;
+    __asm__("movd rdi, xmm2");
+    *reinterpret_cast<uint32_t*>(&rdi7) = *reinterpret_cast<uint32_t*>(&rdi5) & 1;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdi7) + 4) = 0;
+    use_int(*reinterpret_cast<uint32_t*>(&rdi7), rsi6);
+    *rdi7 = *rsi6;
+    rdi8 = reinterpret_cast<void*>(rdi7 + 1 + 1);
+    rsi9 = rsi6 + 1 + 1;
+    __asm__("movd rdi, xmm0");
+    use_int(*reinterpret_cast<uint32_t*>(&rdi8) & 1, rsi9);
+    __gmon_start__ = *rsi9;
+    rsi10 = rsi9 + 1;
+    __asm__("ucomisd xmm0, [rsp]");
+    use_int(0, rsi10);
+    use_int(1, rsi10);
+    __gmon_start__ = *rsi10;
+    rsi11 = rsi10 + 1;
+    __asm__("ucomisd xmm0, [rsp+0x8]");
+    use_int(0, rsi11);
+    use_int(1, rsi11);
+    return 0x7c;
+}
 
 struct s4 {
     int32_t f0;
@@ -123,89 +165,7 @@ struct s5 {
     int32_t f4;
 };
 
-struct s6 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s7 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s8 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s9 {
-    int32_t f0;
-    int32_t f4;
-};
-
-int32_t __gmon_start__;
-
-int64_t compare_floats(struct s3* rdi, struct s4* rsi) {
-    struct s5* rdi3;
-    struct s6* rsi4;
-    int32_t* rdi5;
-    struct s7* rsi6;
-    void* rdi7;
-    struct s0* rsi8;
-    struct s8* rdi9;
-    int32_t* rdi10;
-    struct s9* rsi11;
-    void* rdi12;
-    struct s0* rsi13;
-    struct s0* rsi14;
-    struct s0* rsi15;
-
-    rdi->f0 = rsi->f0;
-    rdi3 = reinterpret_cast<struct s5*>(&rdi->f4);
-    rsi4 = reinterpret_cast<struct s6*>(&rsi->f4);
-    rdi3->f0 = rsi4->f0;
-    rdi5 = &rdi3->f4;
-    rsi6 = reinterpret_cast<struct s7*>(&rsi4->f4);
-    __asm__("movapd xmm2, xmm0");
-    *rdi5 = rsi6->f0;
-    rdi7 = reinterpret_cast<void*>(rdi5 + 1);
-    rsi8 = reinterpret_cast<struct s0*>(&rsi6->f4);
-    __asm__("movd rdi, xmm2");
-    *reinterpret_cast<uint32_t*>(&rdi9) = *reinterpret_cast<uint32_t*>(&rdi7) & 1;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdi9) + 4) = 0;
-    use_int(*reinterpret_cast<uint32_t*>(&rdi9), rsi8);
-    rdi9->f0 = rsi8->f0;
-    rdi10 = &rdi9->f4;
-    rsi11 = reinterpret_cast<struct s9*>(&rsi8->f4);
-    *rdi10 = rsi11->f0;
-    rdi12 = reinterpret_cast<void*>(rdi10 + 1);
-    rsi13 = reinterpret_cast<struct s0*>(&rsi11->f4);
-    __asm__("movd rdi, xmm0");
-    use_int(*reinterpret_cast<uint32_t*>(&rdi12) & 1, rsi13);
-    __gmon_start__ = rsi13->f0;
-    rsi14 = reinterpret_cast<struct s0*>(&rsi13->f4);
-    __asm__("ucomisd xmm0, [rsp]");
-    use_int(0, rsi14);
-    use_int(1, rsi14);
-    __gmon_start__ = rsi14->f0;
-    rsi15 = reinterpret_cast<struct s0*>(&rsi14->f4);
-    __asm__("ucomisd xmm0, [rsp+0x8]");
-    use_int(0, rsi15);
-    use_int(1, rsi15);
-    return 0x7c;
-}
-
-struct s10 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s11 {
-    int32_t f0;
-    int32_t f4;
-};
-
-int64_t constants(struct s10* rdi, struct s11* rsi) {
+int64_t constants(struct s4* rdi, struct s5* rsi) {
     int32_t* rdi3;
     int32_t* rsi4;
     int32_t* rdi5;
@@ -370,17 +330,17 @@ int64_t write_ints() {
     return 0x79;
 }
 
-struct s12 {
+struct s6 {
     int32_t f0;
     int32_t f4;
 };
 
-struct s13 {
+struct s7 {
     int32_t f0;
     int32_t f4;
 };
 
-int64_t basic_operations(struct s12* rdi, struct s13* rsi) {
+int64_t basic_operations(struct s6* rdi, struct s7* rsi) {
     int32_t* rdi3;
     int32_t* rsi4;
     int32_t* rdi5;
@@ -419,29 +379,29 @@ int64_t basic_operations(struct s12* rdi, struct s13* rsi) {
     return 0x7b;
 }
 
-struct s14 {
+struct s8 {
     int32_t f0;
     int32_t f4;
 };
 
-struct s15 {
+struct s9 {
     int32_t f0;
     int32_t f4;
 };
 
-struct s16 {
+struct s10 {
     int32_t f0;
     int32_t f4;
 };
 
-struct s17 {
+struct s11 {
     int32_t f0;
     int32_t f4;
 };
 
-int64_t read_floats(struct s14* rdi, struct s15* rsi) {
-    struct s16* rdi3;
-    struct s17* rsi4;
+int64_t read_floats(struct s8* rdi, struct s9* rsi) {
+    struct s10* rdi3;
+    struct s11* rsi4;
 
     __asm__("movss xmm0, [rip+0x200a8c]");
     __asm__("cvtss2sd xmm0, xmm0");
@@ -450,8 +410,8 @@ int64_t read_floats(struct s14* rdi, struct s15* rsi) {
     __asm__("addsd xmm1, [rip+0x200a80]");
     __asm__("fld tword [rip+0x200a8a]");
     rdi->f0 = rsi->f0;
-    rdi3 = reinterpret_cast<struct s16*>(&rdi->f4);
-    rsi4 = reinterpret_cast<struct s17*>(&rsi->f4);
+    rdi3 = reinterpret_cast<struct s10*>(&rdi->f4);
+    rsi4 = reinterpret_cast<struct s11*>(&rsi->f4);
     __asm__("fadd qword [rsp+0x10]");
     __asm__("fstp qword [rsp+0x8]");
     rdi3->f0 = rsi4->f0;

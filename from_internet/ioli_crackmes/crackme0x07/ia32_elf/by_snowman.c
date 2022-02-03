@@ -132,7 +132,7 @@ void fun_80483e8(int32_t a1, int32_t* a2, int32_t* a3, int32_t a4) {
 
 struct s0 {
     signed char[4] pad4;
-    int32_t 0x4;
+    int32_t f4;
 };
 
 void fun_804842d(int32_t a1) {
@@ -143,7 +143,7 @@ void fun_804842d(int32_t a1) {
     if (eax2) {
         eax2();
     }
-    goto ebp3->0x4;
+    goto ebp3->f4;
 }
 
 void fun_8048524(void* a1, int32_t* a2, int32_t* a3) {
@@ -266,14 +266,14 @@ void fun_8048450();
 
 struct s1 {
     signed char[4] pad4;
-    int32_t 0x4;
+    int32_t f4;
 };
 
 void fun_804878d(int32_t a1, int32_t a2, int32_t a3) {
     struct s1* ebp4;
 
     fun_8048450();
-    goto ebp4->0x4;
+    goto ebp4->f4;
 }
 
 int32_t scanf = 0x804839e;

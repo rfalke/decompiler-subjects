@@ -68,7 +68,7 @@ void __clang_call_terminate(int64_t rdi) {
 struct s0 {
     uint32_t* f0;
     uint32_t* f8;
-    uint32_t* f16;
+    uint32_t* f10;
 };
 
 int32_t x45 = 0;
@@ -320,7 +320,7 @@ void _ZNSt6vectorIiSaIiEE9push_backERKi(struct s0* rdi, uint32_t* rsi, ...) {
     if (!(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(eax3 * (eax3 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(ecx4 < 10))) & 1)) {
         goto addr_405a57_3;
     }
-    while (rsi7 = v5, v8 = v6, r9b9 = reinterpret_cast<uint1_t>(rsi7->f8 != rsi7->f16), r10d10 = x19, r11d11 = y20, v12 = rsi7, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r10d10 * (r10d10 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r11d11 < 10))) & 1)) {
+    while (rsi7 = v5, v8 = v6, r9b9 = reinterpret_cast<uint1_t>(rsi7->f8 != rsi7->f10), r10d10 = x19, r11d11 = y20, v12 = rsi7, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r10d10 * (r10d10 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r11d11 < 10))) & 1)) {
         addr_405a57_3:
     }
     if (!(r9b9 & 1)) 
@@ -1598,7 +1598,7 @@ void _ZNSt12_Vector_baseIiSaIiEED2Ev(struct s0* rdi) {
     if (!(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(eax2 * (eax2 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(ecx3 < 10))) & 1)) {
         goto addr_4070a8_3;
     }
-    while (rdi5 = reinterpret_cast<int64_t>(reinterpret_cast<uint64_t>(v4->f16) - reinterpret_cast<uint64_t>(v4->f0)) >> 2, r9d6 = x41, r10d7 = y42, v8 = v4->f0, v9 = v4, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r9d6 * (r9d6 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r10d7 < 10))) & 1)) {
+    while (rdi5 = reinterpret_cast<int64_t>(reinterpret_cast<uint64_t>(v4->f10) - reinterpret_cast<uint64_t>(v4->f0)) >> 2, r9d6 = x41, r10d7 = y42, v8 = v4->f0, v9 = v4, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r9d6 * (r9d6 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r10d7 < 10))) & 1)) {
         addr_4070a8_3:
     }
     _ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPim(v9, v8, rdi5);
@@ -1834,7 +1834,7 @@ void _ZNSt6vectorIiSaIiEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPiS1_EER
     if (!(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(eax5 * (eax5 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(ecx6 < 10))) & 1)) {
         goto addr_40ac7a_3;
     }
-    while (rax9 = reinterpret_cast<uint32_t**>(reinterpret_cast<int64_t>(rsp4) - 16), r9_10 = rax9 - 2 - 2 - 2 - 2 - 2 - 2, rsp4 = reinterpret_cast<void*>(r9_10 - 2 - 2 - 2 - 2), v11 = v8, r15b12 = reinterpret_cast<uint1_t>(v7->f8 != v7->f16), r12d13 = x97, r13d14 = y98, v15 = rax9, v16 = v7, v17 = r9_10, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r12d13 * (r12d13 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r13d14 < 10))) & 1)) {
+    while (rax9 = reinterpret_cast<uint32_t**>(reinterpret_cast<int64_t>(rsp4) - 16), r9_10 = rax9 - 2 - 2 - 2 - 2 - 2 - 2, rsp4 = reinterpret_cast<void*>(r9_10 - 2 - 2 - 2 - 2), v11 = v8, r15b12 = reinterpret_cast<uint1_t>(v7->f8 != v7->f10), r12d13 = x97, r13d14 = y98, v15 = rax9, v16 = v7, v17 = r9_10, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r12d13 * (r12d13 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r13d14 < 10))) & 1)) {
         addr_40ac7a_3:
         rsp4 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp4) - 16 - 16 - 16);
     }
@@ -1950,18 +1950,18 @@ void _ZNSt6vectorIiSaIiEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPiS1_EER
     ecx102 = y98;
     if (!(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(eax101 * (eax101 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(ecx102 < 10))) & 1)) 
         goto addr_40a921_69;
-    while (rsi103 = v16->f8, v104 = v16->f0, rax105 = _ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv(v16), _ZSt8_DestroyIPiiEvT_S1_RSaIT0_E(v104, rsi103, rax105), rsi106 = v16->f0, v107 = reinterpret_cast<int64_t>(reinterpret_cast<uint64_t>(v16->f16) - reinterpret_cast<uint64_t>(v16->f0)) >> 2, _ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPim(v16, rsi106, v107), v16->f0 = v48, v16->f8 = v98, v16->f16 = reinterpret_cast<uint32_t*>(reinterpret_cast<uint64_t>(v48) + (v45 << 2)), r9d108 = x97, r10d109 = y98, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r9d108 * (r9d108 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r10d109 < 10))) & 1)) {
+    while (rsi103 = v16->f8, v104 = v16->f0, rax105 = _ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv(v16), _ZSt8_DestroyIPiiEvT_S1_RSaIT0_E(v104, rsi103, rax105), rsi106 = v16->f0, v107 = reinterpret_cast<int64_t>(reinterpret_cast<uint64_t>(v16->f10) - reinterpret_cast<uint64_t>(v16->f0)) >> 2, _ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPim(v16, rsi106, v107), v16->f0 = v48, v16->f8 = v98, v16->f10 = reinterpret_cast<uint32_t*>(reinterpret_cast<uint64_t>(v48) + (v45 << 2)), r9d108 = x97, r10d109 = y98, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r9d108 * (r9d108 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r10d109 < 10))) & 1)) {
         addr_40ae9e_72:
         rsi110 = v16->f8;
         v111 = v16->f0;
         rax112 = _ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv(v16);
         _ZSt8_DestroyIPiiEvT_S1_RSaIT0_E(v111, rsi110, rax112);
         rsi113 = v16->f0;
-        v114 = reinterpret_cast<int64_t>(reinterpret_cast<uint64_t>(v16->f16) - reinterpret_cast<uint64_t>(v16->f0)) >> 2;
+        v114 = reinterpret_cast<int64_t>(reinterpret_cast<uint64_t>(v16->f10) - reinterpret_cast<uint64_t>(v16->f0)) >> 2;
         _ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPim(v16, rsi113, v114);
         v16->f0 = v48;
         v16->f8 = v98;
-        v16->f16 = reinterpret_cast<uint32_t*>(reinterpret_cast<uint64_t>(v48) + (v45 << 2));
+        v16->f10 = reinterpret_cast<uint32_t*>(reinterpret_cast<uint64_t>(v48) + (v45 << 2));
     }
     goto addr_40aa10_14;
     addr_40a921_69:
@@ -2222,12 +2222,12 @@ void _ZNSt12_Vector_baseIiSaIiEE12_Vector_implC2ERKS0_(struct s0* rdi, struct s0
     v5 = rdi;
     v6 = rsi;
     if (reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(eax3 * (eax3 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(ecx4 < 10))) & 1) {
-        while (_ZNSaIiEC2ERKS_(v5, v6), v5->f0 = reinterpret_cast<uint32_t*>(0), v5->f8 = reinterpret_cast<uint32_t*>(0), v5->f16 = reinterpret_cast<uint32_t*>(0), r8d7 = x81, r9d8 = y82, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r8d7 * (r8d7 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r9d8 < 10))) & 1)) {
+        while (_ZNSaIiEC2ERKS_(v5, v6), v5->f0 = reinterpret_cast<uint32_t*>(0), v5->f8 = reinterpret_cast<uint32_t*>(0), v5->f10 = reinterpret_cast<uint32_t*>(0), r8d7 = x81, r9d8 = y82, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r8d7 * (r8d7 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r9d8 < 10))) & 1)) {
             addr_408c46_4:
             _ZNSaIiEC2ERKS_(v5, v6);
             v5->f0 = reinterpret_cast<uint32_t*>(0);
             v5->f8 = reinterpret_cast<uint32_t*>(0);
-            v5->f16 = reinterpret_cast<uint32_t*>(0);
+            v5->f10 = reinterpret_cast<uint32_t*>(0);
         }
         return;
     } else {
@@ -2255,12 +2255,12 @@ void _ZNSt12_Vector_baseIiSaIiEE17_M_create_storageEm(struct s0* rdi, uint64_t r
     v5 = rdi;
     v6 = rsi;
     if (reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(eax3 * (eax3 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(ecx4 < 10))) & 1) {
-        while (rax7 = _ZNSt12_Vector_baseIiSaIiEE11_M_allocateEm(v5, v6), v5->f0 = rax7, v5->f8 = v5->f0, v5->f16 = reinterpret_cast<uint32_t*>(reinterpret_cast<uint64_t>(v5->f0) + (v6 << 2)), r8d8 = x83, r9d9 = y84, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r8d8 * (r8d8 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r9d9 < 10))) & 1)) {
+        while (rax7 = _ZNSt12_Vector_baseIiSaIiEE11_M_allocateEm(v5, v6), v5->f0 = rax7, v5->f8 = v5->f0, v5->f10 = reinterpret_cast<uint32_t*>(reinterpret_cast<uint64_t>(v5->f0) + (v6 << 2)), r8d8 = x83, r9d9 = y84, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r8d8 * (r8d8 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r9d9 < 10))) & 1)) {
             addr_408da2_4:
             rax10 = _ZNSt12_Vector_baseIiSaIiEE11_M_allocateEm(v5, v6);
             v5->f0 = rax10;
             v5->f8 = v5->f0;
-            v5->f16 = reinterpret_cast<uint32_t*>(reinterpret_cast<uint64_t>(v5->f0) + (v6 << 2));
+            v5->f10 = reinterpret_cast<uint32_t*>(reinterpret_cast<uint64_t>(v5->f0) + (v6 << 2));
         }
         return;
     } else {
@@ -4275,12 +4275,12 @@ void _ZNSt12_Vector_baseIiSaIiEE12_Vector_implC2Ev(struct s0* rdi) {
     ecx3 = y158;
     v4 = rdi;
     if (reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(eax2 * (eax2 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(ecx3 < 10))) & 1) {
-        while (_ZNSaIiEC2Ev(v4), v4->f0 = reinterpret_cast<uint32_t*>(0), v4->f8 = reinterpret_cast<uint32_t*>(0), v4->f16 = reinterpret_cast<uint32_t*>(0), esi5 = x157, r8d6 = y158, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(esi5 * (esi5 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r8d6 < 10))) & 1)) {
+        while (_ZNSaIiEC2Ev(v4), v4->f0 = reinterpret_cast<uint32_t*>(0), v4->f8 = reinterpret_cast<uint32_t*>(0), v4->f10 = reinterpret_cast<uint32_t*>(0), esi5 = x157, r8d6 = y158, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(esi5 * (esi5 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r8d6 < 10))) & 1)) {
             addr_40de1c_4:
             _ZNSaIiEC2Ev(v4);
             v4->f0 = reinterpret_cast<uint32_t*>(0);
             v4->f8 = reinterpret_cast<uint32_t*>(0);
-            v4->f16 = reinterpret_cast<uint32_t*>(0);
+            v4->f10 = reinterpret_cast<uint32_t*>(0);
         }
         return;
     } else {
@@ -4579,9 +4579,9 @@ uint32_t _Z11start_questSs(uint32_t* rdi, uint32_t* rsi, void* rdx) {
     if (!(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(eax5 * (eax5 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(ecx6 < 10))) & 1)) {
         goto addr_404c13_3;
     }
-    while (rcx8 = reinterpret_cast<uint32_t*>(reinterpret_cast<uint64_t>(rsp4) + 0xfffffffffffffff0 + 0xfffffffffffffff0), v9 = rcx8, _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61013c), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610140), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610144), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610148), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61014c), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610150), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610154), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610158), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61015c), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610160), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610164), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610168), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61016c), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610170), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610174), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610178), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61017c), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610180), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610184), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610188), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61018c), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610190), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610194), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610198), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61019c), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x6101a0), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x6101a4), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x6101a8), rax10 = fun_400f50(v7, 0x6101a8), rsp4 = reinterpret_cast<void*>(rcx8 + 0xfffffffffffffffc + 0xfffffffffffffffc - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2), r9d11 = legend, r9d12 = x25, r11d13 = y26, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r9d12 * (r9d12 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r11d13 < 10))) & 1)) {
+    while (rcx8 = reinterpret_cast<uint32_t*>(reinterpret_cast<uint64_t>(rsp4) + 0xfffffffffffffff0 + 0xfffffffffffffff0), v9 = rcx8, _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, "d"), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610140), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610144), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610148), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61014c), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610150), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610154), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610158), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61015c), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610160), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610164), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610168), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61016c), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610170), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610174), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610178), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61017c), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610180), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610184), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610188), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61018c), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610190), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610194), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610198), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, " \t"), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, "l\t"), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x6101a4), _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x6101a8), rax10 = fun_400f50(v7, 0x6101a8), rsp4 = reinterpret_cast<void*>(rcx8 + 0xfffffffffffffffc + 0xfffffffffffffffc - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2 - 2 + 2), r9d11 = legend, r9d12 = x25, r11d13 = y26, !(reinterpret_cast<unsigned char>(static_cast<unsigned char>(reinterpret_cast<uint1_t>((reinterpret_cast<uint32_t>(r9d12 * (r9d12 - 1)) & 1) == 0)) | static_cast<unsigned char>(reinterpret_cast<uint1_t>(r11d13 < 10))) & 1)) {
         addr_404c13_3:
-        _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61013c, 0x6102f8, 0x61013c);
+        _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, "d", 0x6102f8, "d");
         _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610140, 0x6102f8, 0x610140);
         _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610144, 0x6102f8, 0x610144);
         _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610148, 0x6102f8, 0x610148);
@@ -4605,8 +4605,8 @@ uint32_t _Z11start_questSs(uint32_t* rdi, uint32_t* rsi, void* rdx) {
         _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610190, 0x6102f8, 0x610190);
         _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610194, 0x6102f8, 0x610194);
         _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x610198, 0x6102f8, 0x610198);
-        _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x61019c, 0x6102f8, 0x61019c);
-        _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x6101a0, 0x6102f8, 0x6101a0);
+        _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, " \t", 0x6102f8, " \t");
+        _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, "l\t", 0x6102f8, "l\t");
         _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x6101a4, 0x6102f8, 0x6101a4);
         _ZNSt6vectorIiSaIiEE9push_backERKi(0x6102f8, 0x6101a8, 0x6102f8, 0x6101a8);
         fun_400f50(v7, 0x6101a8, v7, 0x6101a8);

@@ -1033,25 +1033,25 @@ void** metric_(void** ecx, void* a2, void** a3, void** a4, void** a5, void** a6,
         v14 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
         fun_8048cd0(ecx, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, ecx, v14, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34);
         v35 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v35, 0x80734ff, 1, v36, v37, v38, v39, v40, v41, v42, v43, ecx, v35, 0x80734ff, 1, v44, v45, v46, v47, v48, v49, v50, v51);
+        fun_8048cc0(ecx, v35, "\n metric : ERROR -", 1, v36, v37, v38, v39, v40, v41, v42, v43, ecx, v35, "\n metric : ERROR -", 1, v44, v45, v46, v47, v48, v49, v50, v51);
         v52 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v52, 0x8073500, 17, v53, v54, v55, v56, v57, v58, v59, v60, ecx, v52, 0x8073500, 17, v61, v62, v63, v64, v65, v66, v67, v68);
+        fun_8048cc0(ecx, v52, " metric : ERROR -", 17, v53, v54, v55, v56, v57, v58, v59, v60, ecx, v52, " metric : ERROR -", 17, v61, v62, v63, v64, v65, v66, v67, v68);
         v69 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v69, 0x80734ff, 1, v70, v71, v72, v73, v74, v75, v76, v77, ecx, v69, 0x80734ff, 1, v78, v79, v80, v81, v82, v83, v84, v85);
+        fun_8048cc0(ecx, v69, "\n metric : ERROR -", 1, v70, v71, v72, v73, v74, v75, v76, v77, ecx, v69, "\n metric : ERROR -", 1, v78, v79, v80, v81, v82, v83, v84, v85);
         v86 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v86, 0x8073514, 57, v87, v88, v89, v90, v91, v92, v93, v94, ecx, v86, 0x8073514, 57, v95, v96, v97, v98, v99, v100, v101, v102);
+        fun_8048cc0(ecx, v86, "  Input rprim and acell gives vanishing unit cell volume.", 57, v87, v88, v89, v90, v91, v92, v93, v94, ecx, v86, "  Input rprim and acell gives vanishing unit cell volume.", 57, v95, v96, v97, v98, v99, v100, v101, v102);
         v103 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v103, 0x80734ff, 1, v104, v105, v106, v107, v108, v109, v110, v111, ecx, v103, 0x80734ff, 1, v112, v113, v114, v115, v116, v117, v118, v119);
+        fun_8048cc0(ecx, v103, "\n metric : ERROR -", 1, v104, v105, v106, v107, v108, v109, v110, v111, ecx, v103, "\n metric : ERROR -", 1, v112, v113, v114, v115, v116, v117, v118, v119);
         v120 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v120, 0x8073550, 68, v121, v122, v123, v124, v125, v126, v127, v128, ecx, v120, 0x8073550, 68, v129, v130, v131, v132, v133, v134, v135, v136);
+        fun_8048cc0(ecx, v120, "  This indicates linear dependency between primitive lattice vectors  Action : correct either rprim or acell in input file.COLL", 68, v121, v122, v123, v124, v125, v126, v127, v128, ecx, v120, "  This indicates linear dependency between primitive lattice vectors  Action : correct either rprim or acell in input file.COLL", 68, v129, v130, v131, v132, v133, v134, v135, v136);
         v137 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v137, 0x80734ff, 1, v138, v139, v140, v141, v142, v143, v144, v145, ecx, v137, 0x80734ff, 1, v146, v147, v148, v149, v150, v151, v152, v153);
+        fun_8048cc0(ecx, v137, "\n metric : ERROR -", 1, v138, v139, v140, v141, v142, v143, v144, v145, ecx, v137, "\n metric : ERROR -", 1, v146, v147, v148, v149, v150, v151, v152, v153);
         v154 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v154, 0x8073594, 55, v155, v156, v157, v158, v159, v160, v161, v162, ecx, v154, 0x8073594, 55, v163, v164, v165, v166, v167, v168, v169, v170);
+        fun_8048cc0(ecx, v154, "  Action : correct either rprim or acell in input file.COLL", 55, v155, v156, v157, v158, v159, v160, v161, v162, ecx, v154, "  Action : correct either rprim or acell in input file.COLL", 55, v163, v164, v165, v166, v167, v168, v169, v170);
         v171 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048b50(ecx, v171, 0x8073594, 55, v172, v173, v174, v175, v176, v177, v178, v179, ecx, v171, 0x8073594, 55, v180, v181, v182, v183, v184, v185, v186, v187);
-        wrtout_(ecx, 0x80735d0, reinterpret_cast<int32_t>(ebp12) + 0xfffffde4, 0x80735cb, 0x1f4, 4, v188, v189);
-        leave_new_(ecx, "COLL", 4, 0x80735cb, 0x1f4, 4, v190, v191);
+        fun_8048b50(ecx, v171, "  Action : correct either rprim or acell in input file.COLL", 55, v172, v173, v174, v175, v176, v177, v178, v179, ecx, v171, "  Action : correct either rprim or acell in input file.COLL", 55, v180, v181, v182, v183, v184, v185, v186, v187);
+        wrtout_(ecx, 0x80735d0, reinterpret_cast<int32_t>(ebp12) + 0xfffffde4, "COLL", 0x1f4, 4, v188, v189);
+        leave_new_(ecx, "COLL", 4, "COLL", 0x1f4, 4, v190, v191);
     }
     __asm__("fld qword [eax]");
     __asm__("fldz ");
@@ -1059,77 +1059,77 @@ void** metric_(void** ecx, void* a2, void** a3, void** a4, void** a5, void** a6,
     __asm__("fstp st0");
     if (reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(static_cast<uint32_t>(zf13)))) {
         v192 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cd0(ecx, v192, 4, 0x80735cb, 0x1f4, 4, v193, v194, v195, v196, v197, v198, ecx, v192, 4, 0x80735cb, 0x1f4, 4, v199, v200, v201, v202, v203, v204);
+        fun_8048cd0(ecx, v192, 4, "COLL", 0x1f4, 4, v193, v194, v195, v196, v197, v198, ecx, v192, 4, "COLL", 0x1f4, 4, v199, v200, v201, v202, v203, v204);
         v205 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v205, 0x80734ff, 1, 0x1f4, 4, v206, v207, v208, v209, v210, v211, ecx, v205, 0x80734ff, 1, 0x1f4, 4, v212, v213, v214, v215, v216, v217);
+        fun_8048cc0(ecx, v205, "\n metric : ERROR -", 1, 0x1f4, 4, v206, v207, v208, v209, v210, v211, ecx, v205, "\n metric : ERROR -", 1, 0x1f4, 4, v212, v213, v214, v215, v216, v217);
         v218 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v218, 0x8073500, 17, 0x1f4, 4, v219, v220, v221, v222, v223, v224, ecx, v218, 0x8073500, 17, 0x1f4, 4, v225, v226, v227, v228, v229, v230);
+        fun_8048cc0(ecx, v218, " metric : ERROR -", 17, 0x1f4, 4, v219, v220, v221, v222, v223, v224, ecx, v218, " metric : ERROR -", 17, 0x1f4, 4, v225, v226, v227, v228, v229, v230);
         v231 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v231, 0x80734ff, 1, 0x1f4, 4, v232, v233, v234, v235, v236, v237, ecx, v231, 0x80734ff, 1, 0x1f4, 4, v238, v239, v240, v241, v242, v243);
+        fun_8048cc0(ecx, v231, "\n metric : ERROR -", 1, 0x1f4, 4, v232, v233, v234, v235, v236, v237, ecx, v231, "\n metric : ERROR -", 1, 0x1f4, 4, v238, v239, v240, v241, v242, v243);
         v244 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v244, 0x80735ec, 45, 0x1f4, 4, v245, v246, v247, v248, v249, v250, ecx, v244, 0x80735ec, 45, 0x1f4, 4, v251, v252, v253, v254, v255, v256);
+        fun_8048cc0(ecx, v244, "  Current rprimd gives negative (R1xR2).R3 .   Rprimd =          ", 45, 0x1f4, 4, v245, v246, v247, v248, v249, v250, ecx, v244, "  Current rprimd gives negative (R1xR2).R3 .   Rprimd =          ", 45, 0x1f4, 4, v251, v252, v253, v254, v255, v256);
         v257 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v257, 0x80734ff, 1, 0x1f4, 4, v258, v259, v260, v261, v262, v263, ecx, v257, 0x80734ff, 1, 0x1f4, 4, v264, v265, v266, v267, v268, v269);
+        fun_8048cc0(ecx, v257, "\n metric : ERROR -", 1, 0x1f4, 4, v258, v259, v260, v261, v262, v263, ecx, v257, "\n metric : ERROR -", 1, 0x1f4, 4, v264, v265, v266, v267, v268, v269);
         v270 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v270, 0x8073619, 10, 0x1f4, 4, v271, v272, v273, v274, v275, v276, ecx, v270, 0x8073619, 10, 0x1f4, 4, v277, v278, v279, v280, v281, v282);
+        fun_8048cc0(ecx, v270, "  Rprimd =          ", 10, 0x1f4, 4, v271, v272, v273, v274, v275, v276, ecx, v270, "  Rprimd =          ", 10, 0x1f4, 4, v277, v278, v279, v280, v281, v282);
         fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp12) - 0x3ec, reinterpret_cast<int32_t>(ebp12) + 0xfffffdc8, 8, 0, 4, v283, v284, v285, v286, v287);
         v288 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v288, 0x80734ff, 1, 0, 4, v289, v290, v291, v292, v293, v294, ecx, v288, 0x80734ff, 1, 0, 4, v295, v296, v297, v298, v299, v300);
+        fun_8048cc0(ecx, v288, "\n metric : ERROR -", 1, 0, 4, v289, v290, v291, v292, v293, v294, ecx, v288, "\n metric : ERROR -", 1, 0, 4, v295, v296, v297, v298, v299, v300);
         v301 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v301, 0x8073623, 10, 0, 4, v302, v303, v304, v305, v306, v307, ecx, v301, 0x8073623, 10, 0, 4, v308, v309, v310, v311, v312, v313);
+        fun_8048cc0(ecx, v301, "          ", 10, 0, 4, v302, v303, v304, v305, v306, v307, ecx, v301, "          ", 10, 0, 4, v308, v309, v310, v311, v312, v313);
         fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp12) - 0x3ec, reinterpret_cast<int32_t>(ebp12) + 0xfffffdb0, 8, 0, 4, v314, v315, v316, v317, v318);
         v319 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v319, 0x80734ff, 1, 0, 4, v320, v321, v322, v323, v324, v325, ecx, v319, 0x80734ff, 1, 0, 4, v326, v327, v328, v329, v330, v331);
+        fun_8048cc0(ecx, v319, "\n metric : ERROR -", 1, 0, 4, v320, v321, v322, v323, v324, v325, ecx, v319, "\n metric : ERROR -", 1, 0, 4, v326, v327, v328, v329, v330, v331);
         v332 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v332, 0x8073623, 10, 0, 4, v333, v334, v335, v336, v337, v338, ecx, v332, 0x8073623, 10, 0, 4, v339, v340, v341, v342, v343, v344);
+        fun_8048cc0(ecx, v332, "          ", 10, 0, 4, v333, v334, v335, v336, v337, v338, ecx, v332, "          ", 10, 0, 4, v339, v340, v341, v342, v343, v344);
         fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp12) - 0x3ec, reinterpret_cast<int32_t>(ebp12) + 0xfffffd98, 8, 0, 4, v345, v346, v347, v348, v349);
         v350 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v350, 0x80734ff, 1, 0, 4, v351, v352, v353, v354, v355, v356, ecx, v350, 0x80734ff, 1, 0, 4, v357, v358, v359, v360, v361, v362);
+        fun_8048cc0(ecx, v350, "\n metric : ERROR -", 1, 0, 4, v351, v352, v353, v354, v355, v356, ecx, v350, "\n metric : ERROR -", 1, 0, 4, v357, v358, v359, v360, v361, v362);
         v363 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v363, 0x8073630, 61, 0, 4, v364, v365, v366, v367, v368, v369, ecx, v363, 0x8073630, 61, 0, 4, v370, v371, v372, v373, v374, v375);
+        fun_8048cc0(ecx, v363, "  Action : if the cell size and shape are fixed (optcell==0),", 61, 0, 4, v364, v365, v366, v367, v368, v369, ecx, v363, "  Action : if the cell size and shape are fixed (optcell==0),", 61, 0, 4, v370, v371, v372, v373, v374, v375);
         v376 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v376, 0x80734ff, 1, 0, 4, v377, v378, v379, v380, v381, v382, ecx, v376, 0x80734ff, 1, 0, 4, v383, v384, v385, v386, v387, v388);
+        fun_8048cc0(ecx, v376, "\n metric : ERROR -", 1, 0, 4, v377, v378, v379, v380, v381, v382, ecx, v376, "\n metric : ERROR -", 1, 0, 4, v383, v384, v385, v386, v387, v388);
         v389 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v389, 0x8073670, 43, 0, 4, v390, v391, v392, v393, v394, v395, ecx, v389, 0x8073670, 43, 0, 4, v396, v397, v398, v399, v400, v401);
+        fun_8048cc0(ecx, v389, "   exchange two of the input rprim vectors;", 43, 0, 4, v390, v391, v392, v393, v394, v395, ecx, v389, "   exchange two of the input rprim vectors;", 43, 0, 4, v396, v397, v398, v399, v400, v401);
         v402 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v402, 0x80734ff, 1, 0, 4, v403, v404, v405, v406, v407, v408, ecx, v402, 0x80734ff, 1, 0, 4, v409, v410, v411, v412, v413, v414);
+        fun_8048cc0(ecx, v402, "\n metric : ERROR -", 1, 0, 4, v403, v404, v405, v406, v407, v408, ecx, v402, "\n metric : ERROR -", 1, 0, 4, v409, v410, v411, v412, v413, v414);
         v415 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v415, 0x807369c, 62, 0, 4, v416, v417, v418, v419, v420, v421, ecx, v415, 0x807369c, 62, 0, 4, v422, v423, v424, v425, v426, v427);
+        fun_8048cc0(ecx, v415, "   if you are optimizing the cell size and shape (optcell/=0),", 62, 0, 4, v416, v417, v418, v419, v420, v421, ecx, v415, "   if you are optimizing the cell size and shape (optcell/=0),", 62, 0, 4, v422, v423, v424, v425, v426, v427);
         v428 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v428, 0x80734ff, 1, 0, 4, v429, v430, v431, v432, v433, v434, ecx, v428, 0x80734ff, 1, 0, 4, v435, v436, v437, v438, v439, v440);
+        fun_8048cc0(ecx, v428, "\n metric : ERROR -", 1, 0, 4, v429, v430, v431, v432, v433, v434, ecx, v428, "\n metric : ERROR -", 1, 0, 4, v435, v436, v437, v438, v439, v440);
         v441 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v441, 0x80736dc, 73, 0, 4, v442, v443, v444, v445, v446, v447, ecx, v441, 0x80736dc, 73, 0, 4, v448, v449, v450, v451, v452, v453);
+        fun_8048cc0(ecx, v441, "   maybe the move was too large, and you might try to decrease strprecon.(a,a) Real(R)+Recip(G) space primitive vectors, cartesian coordinates (Bohr,Bohr^-1):", 73, 0, 4, v442, v443, v444, v445, v446, v447, ecx, v441, "   maybe the move was too large, and you might try to decrease strprecon.(a,a) Real(R)+Recip(G) space primitive vectors, cartesian coordinates (Bohr,Bohr^-1):", 73, 0, 4, v448, v449, v450, v451, v452, v453);
         v454 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048b50(ecx, v454, 0x80736dc, 73, 0, 4, v455, v456, v457, v458, v459, v460, ecx, v454, 0x80736dc, 73, 0, 4, v461, v462, v463, v464, v465, v466);
-        wrtout_(ecx, 0x80735d0, reinterpret_cast<int32_t>(ebp12) + 0xfffffde4, 0x80735cb, 0x1f4, 4, v467, v468);
-        leave_new_(ecx, "COLL", 4, 0x80735cb, 0x1f4, 4, v469, v470);
+        fun_8048b50(ecx, v454, "   maybe the move was too large, and you might try to decrease strprecon.(a,a) Real(R)+Recip(G) space primitive vectors, cartesian coordinates (Bohr,Bohr^-1):", 73, 0, 4, v455, v456, v457, v458, v459, v460, ecx, v454, "   maybe the move was too large, and you might try to decrease strprecon.(a,a) Real(R)+Recip(G) space primitive vectors, cartesian coordinates (Bohr,Bohr^-1):", 73, 0, 4, v461, v462, v463, v464, v465, v466);
+        wrtout_(ecx, 0x80735d0, reinterpret_cast<int32_t>(ebp12) + 0xfffffde4, "COLL", 0x1f4, 4, v467, v468);
+        leave_new_(ecx, "COLL", 4, "COLL", 0x1f4, 4, v469, v470);
     }
     v471 = a3;
     v472 = a6;
-    matr3inv_(ecx, v472, v471, 0x80735cb, 0x1f4, 4, v473, v474, v475, v476);
+    matr3inv_(ecx, v472, v471, "COLL", 0x1f4, 4, v473, v474, v475, v476);
     if (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a4)) >= reinterpret_cast<int32_t>(0)) {
         v477 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cd0(ecx, v477, v471, 0x80735cb, 0x1f4, 4, v478, v479, v480, v481, v482, v483, ecx, v477, v471, 0x80735cb, 0x1f4, 4, v484, v485, v486, v487, v488, v489);
+        fun_8048cd0(ecx, v477, v471, "COLL", 0x1f4, 4, v478, v479, v480, v481, v482, v483, ecx, v477, v471, "COLL", 0x1f4, 4, v484, v485, v486, v487, v488, v489);
         v490 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v490, 0x807372a, 18, 0x1f4, 4, v491, v492, v493, v494, v495, v496, ecx, v490, 0x807372a, 18, 0x1f4, 4, v497, v498, v499, v500, v501, v502);
+        fun_8048cc0(ecx, v490, " Real(R)+Recip(G) space primitive vectors, cartesian coordinates (Bohr,Bohr^-1):", 18, 0x1f4, 4, v491, v492, v493, v494, v495, v496, ecx, v490, " Real(R)+Recip(G) space primitive vectors, cartesian coordinates (Bohr,Bohr^-1):", 18, 0x1f4, 4, v497, v498, v499, v500, v501, v502);
         v503 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v503, 0x807373c, 62, 0x1f4, 4, v504, v505, v506, v507, v508, v509, ecx, v503, 0x807373c, 62, 0x1f4, 4, v510, v511, v512, v513, v514, v515);
+        fun_8048cc0(ecx, v503, "space primitive vectors, cartesian coordinates (Bohr,Bohr^-1):", 62, 0x1f4, 4, v504, v505, v506, v507, v508, v509, ecx, v503, "space primitive vectors, cartesian coordinates (Bohr,Bohr^-1):", 62, 0x1f4, 4, v510, v511, v512, v513, v514, v515);
         v516 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048b50(ecx, v516, 0x807373c, 62, 0x1f4, 4, v517, v518, v519, v520, v521, v522, ecx, v516, 0x807373c, 62, 0x1f4, 4, v523, v524, v525, v526, v527, v528);
+        fun_8048b50(ecx, v516, "space primitive vectors, cartesian coordinates (Bohr,Bohr^-1):", 62, 0x1f4, 4, v517, v518, v519, v520, v521, v522, ecx, v516, "space primitive vectors, cartesian coordinates (Bohr,Bohr^-1):", 62, 0x1f4, 4, v523, v524, v525, v526, v527, v528);
         v529 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffde4);
-        wrtout_(ecx, a4, v529, 0x80735cb, 0x1f4, 4, v530, v531);
+        wrtout_(ecx, a4, v529, "COLL", 0x1f4, 4, v530, v531);
         v532 = 1;
         if (!0) {
             while (1) {
                 v533 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-                fun_8048cd0(ecx, v533, v529, 0x80735cb, 0x1f4, 4, v534, v535, v536, v537, v538, v539, ecx, v533, v529, 0x80735cb, 0x1f4, 4, v540, v541, v542, v543, v544, v545);
+                fun_8048cd0(ecx, v533, v529, "COLL", 0x1f4, 4, v534, v535, v536, v537, v538, v539, ecx, v533, v529, "COLL", 0x1f4, 4, v540, v541, v542, v543, v544, v545);
                 v546 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-                fun_8048cc0(ecx, v546, 0x807379f, 2, 0x1f4, 4, v547, v548, v549, v550, v551, v552, ecx, v546, 0x807379f, 2, 0x1f4, 4, v553, v554, v555, v556, v557, v558);
+                fun_8048cc0(ecx, v546, "R()=G((a,1p,e15.7,a) Unit cell volume ucvol= bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 2, 0x1f4, 4, v547, v548, v549, v550, v551, v552, ecx, v546, "R()=G((a,1p,e15.7,a) Unit cell volume ucvol= bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 2, 0x1f4, 4, v553, v554, v555, v556, v557, v558);
                 v559 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffde0);
                 v560 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
                 fun_8048c50(ecx, v560, v559, 4, 0x1f4, 4, v561, v562, v563, v564, v565, v566, ecx, v560, v559, 4, 0x1f4, 4, v567, v568, v569, v570, v571, v572);
                 v573 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-                fun_8048cc0(ecx, v573, 0x80737a1, 2, 0x1f4, 4, v574, v575, v576, v577, v578, v579, ecx, v573, 0x80737a1, 2, 0x1f4, 4, v580, v581, v582, v583, v584, v585);
+                fun_8048cc0(ecx, v573, ")=G((a,1p,e15.7,a) Unit cell volume ucvol= bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 2, 0x1f4, 4, v574, v575, v576, v577, v578, v579, ecx, v573, ")=G((a,1p,e15.7,a) Unit cell volume ucvol= bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 2, 0x1f4, 4, v580, v581, v582, v583, v584, v585);
                 ebx586 = 1;
                 while (ebx586 <= 3) {
                     __asm__("fld qword [eax+edx*8]");
@@ -1142,14 +1142,14 @@ void** metric_(void** ecx, void* a2, void** a3, void** a4, void** a5, void** a6,
                     ++ebx586;
                 }
                 v597 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-                fun_8048cc0(ecx, v597, 0x80737a3, 2, 0x1f4, 4, v598, v599, v600, v601, v602, v603, ecx, v597, 0x80737a3, 2, 0x1f4, 4, v604, v605, v606, v607, v608, v609);
+                fun_8048cc0(ecx, v597, "G((a,1p,e15.7,a) Unit cell volume ucvol= bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 2, 0x1f4, 4, v598, v599, v600, v601, v602, v603, ecx, v597, "G((a,1p,e15.7,a) Unit cell volume ucvol= bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 2, 0x1f4, 4, v604, v605, v606, v607, v608, v609);
                 v610 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffde0);
                 v611 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
                 fun_8048c50(ecx, v611, v610, 4, 0x1f4, 4, v612, v613, v614, v615, v616, v617, ecx, v611, v610, 4, 0x1f4, 4, v618, v619, v620, v621, v622, v623);
                 v624 = reinterpret_cast<void**>(2);
-                v625 = reinterpret_cast<void**>(0x80737a1);
+                v625 = reinterpret_cast<void**>(")=G((a,1p,e15.7,a) Unit cell volume ucvol= bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees");
                 v626 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-                fun_8048cc0(ecx, v626, 0x80737a1, 2, 0x1f4, 4, v627, v628, v629, v630, v631, v632, ecx, v626, 0x80737a1, 2, 0x1f4, 4, v633, v634, v635, v636, v637, v638);
+                fun_8048cc0(ecx, v626, ")=G((a,1p,e15.7,a) Unit cell volume ucvol= bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 2, 0x1f4, 4, v627, v628, v629, v630, v631, v632, ecx, v626, ")=G((a,1p,e15.7,a) Unit cell volume ucvol= bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 2, 0x1f4, 4, v633, v634, v635, v636, v637, v638);
                 ebx639 = 1;
                 while (ebx639 <= 3) {
                     __asm__("fld qword [eax+edx*8]");
@@ -1165,7 +1165,7 @@ void** metric_(void** ecx, void* a2, void** a3, void** a4, void** a5, void** a6,
                 v649 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
                 fun_8048b50(ecx, v649, v625, v624, 0x1f4, 4, v650, v651, v652, v653, v654, v655, ecx, v649, v625, v624, 0x1f4, 4, v656, v657, v658, v659, v660, v661);
                 v529 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffde4);
-                wrtout_(ecx, a4, v529, 0x80735cb, 0x1f4, 4, v662, v663);
+                wrtout_(ecx, a4, v529, "COLL", 0x1f4, 4, v662, v663);
                 eax664 = reinterpret_cast<uint1_t>(v532 == 3);
                 ++v532;
                 if (eax664) 
@@ -1173,9 +1173,9 @@ void** metric_(void** ecx, void* a2, void** a3, void** a4, void** a5, void** a6,
             }
         }
         v665 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cd0(ecx, v665, v529, 0x80735cb, 0x1f4, 4, v666, v667, v668, v669, v670, v671, ecx, v665, v529, 0x80735cb, 0x1f4, 4, v672, v673, v674, v675, v676, v677);
+        fun_8048cd0(ecx, v665, v529, "COLL", 0x1f4, 4, v666, v667, v668, v669, v670, v671, ecx, v665, v529, "COLL", 0x1f4, 4, v672, v673, v674, v675, v676, v677);
         v678 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v678, 0x80737b3, 24, 0x1f4, 4, v679, v680, v681, v682, v683, v684, ecx, v678, 0x80737b3, 24, 0x1f4, 4, v685, v686, v687, v688, v689, v690);
+        fun_8048cc0(ecx, v678, " Unit cell volume ucvol= bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 24, 0x1f4, 4, v679, v680, v681, v682, v683, v684, ecx, v678, " Unit cell volume ucvol= bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 24, 0x1f4, 4, v685, v686, v687, v688, v689, v690);
         __asm__("fld qword [eax]");
         __asm__("fld qword [0x8073808]");
         __asm__("faddp st1, st0");
@@ -1184,13 +1184,13 @@ void** metric_(void** ecx, void* a2, void** a3, void** a4, void** a5, void** a6,
         v692 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
         fun_8048d50(ecx, v692, v691, 8, 0x1f4, 4, v693, v694, v695, v696, ecx, v692, v691, 8, 0x1f4, 4, v697, v698, v699, v700);
         v701 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v701, 0x80737cb, 7, 0x1f4, 4, v702, v703, v704, v705, v706, v707, ecx, v701, 0x80737cb, 7, 0x1f4, 4, v708, v709, v710, v711, v712, v713);
+        fun_8048cc0(ecx, v701, " bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 7, 0x1f4, 4, v702, v703, v704, v705, v706, v707, ecx, v701, " bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 7, 0x1f4, 4, v708, v709, v710, v711, v712, v713);
         v714 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048b50(ecx, v714, 0x80737cb, 7, 0x1f4, 4, v715, v716, v717, v718, v719, v720, ecx, v714, 0x80737cb, 7, 0x1f4, 4, v721, v722, v723, v724, v725, v726);
-        wrtout_(ecx, a4, reinterpret_cast<int32_t>(ebp12) + 0xfffffde4, 0x80735cb, 0x1f4, 4, v727, v728);
+        fun_8048b50(ecx, v714, " bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 7, 0x1f4, 4, v715, v716, v717, v718, v719, v720, ecx, v714, " bohr^3(a,3es16.8,a) Angles (23,13,12)= degrees", 7, 0x1f4, 4, v721, v722, v723, v724, v725, v726);
+        wrtout_(ecx, a4, reinterpret_cast<int32_t>(ebp12) + 0xfffffde4, "COLL", 0x1f4, 4, v727, v728);
         v471 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffde4);
         v472 = reinterpret_cast<void**>(0x80735d0);
-        wrtout_(ecx, 0x80735d0, v471, 0x80735cb, 0x1f4, 4, v729, v730);
+        wrtout_(ecx, 0x80735d0, v471, "COLL", 0x1f4, 4, v729, v730);
     }
     v731 = 1;
     if (!0) {
@@ -1259,7 +1259,7 @@ void** metric_(void** ecx, void* a2, void** a3, void** a4, void** a5, void** a6,
         __asm__("fsqrt ");
         __asm__("fdivp st1, st0");
         __asm__("fstp qword [esp]");
-        fun_8048c40(ecx, v472, v471, 0x80735cb, 0x1f4, 4);
+        fun_8048c40(ecx, v472, v471, "COLL", 0x1f4, 4);
         __asm__("fld qword [0x8073810]");
         __asm__("fdivp st1, st0");
         __asm__("fld qword [0x8073818]");
@@ -1272,7 +1272,7 @@ void** metric_(void** ecx, void* a2, void** a3, void** a4, void** a5, void** a6,
         __asm__("fsqrt ");
         __asm__("fdivp st1, st0");
         __asm__("fstp qword [esp]");
-        fun_8048c40(ecx, v472, v471, 0x80735cb, 0x1f4, 4);
+        fun_8048c40(ecx, v472, v471, "COLL", 0x1f4, 4);
         __asm__("fld qword [0x8073810]");
         __asm__("fdivp st1, st0");
         __asm__("fld qword [0x8073818]");
@@ -1285,25 +1285,25 @@ void** metric_(void** ecx, void* a2, void** a3, void** a4, void** a5, void** a6,
         __asm__("fsqrt ");
         __asm__("fdivp st1, st0");
         __asm__("fstp qword [esp]");
-        fun_8048c40(ecx, v472, v471, 0x80735cb, 0x1f4, 4);
+        fun_8048c40(ecx, v472, v471, "COLL", 0x1f4, 4);
         __asm__("fld qword [0x8073810]");
         __asm__("fdivp st1, st0");
         __asm__("fld qword [0x8073818]");
         __asm__("fmulp st1, st0");
         __asm__("fstp qword [ebp-0x18]");
         v738 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cd0(ecx, v738, v471, 0x80735cb, 0x1f4, 4, v739, v740, v741, v742, v743, v744, ecx, v738, v471, 0x80735cb, 0x1f4, 4, v745, v746, v747, v748, v749, v750);
+        fun_8048cd0(ecx, v738, v471, "COLL", 0x1f4, 4, v739, v740, v741, v742, v743, v744, ecx, v738, v471, "COLL", 0x1f4, 4, v745, v746, v747, v748, v749, v750);
         v751 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v751, 0x80737df, 19, 0x1f4, 4, v752, v753, v754, v755, v756, v757, ecx, v751, 0x80737df, 19, 0x1f4, 4, v758, v759, v760, v761, v762, v763);
+        fun_8048cc0(ecx, v751, " Angles (23,13,12)= degrees", 19, 0x1f4, 4, v752, v753, v754, v755, v756, v757, ecx, v751, " Angles (23,13,12)= degrees", 19, 0x1f4, 4, v758, v759, v760, v761, v762, v763);
         v764 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffd68);
         v765 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebp12) - 0x3ec);
         fun_8048bd0(ecx, v765, v764, 8, 0, 4, v766, v767, v768, v769, v770, ecx, v765, v764, 8, 0, 4, v771, v772, v773, v774, v775);
         v776 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048cc0(ecx, v776, 0x80737f2, 8, 0, 4, v777, v778, v779, v780, v781, v782, ecx, v776, 0x80737f2, 8, 0, 4, v783, v784, v785, v786, v787, v788);
+        fun_8048cc0(ecx, v776, " degrees", 8, 0, 4, v777, v778, v779, v780, v781, v782, ecx, v776, " degrees", 8, 0, 4, v783, v784, v785, v786, v787, v788);
         v789 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffc14);
-        fun_8048b50(ecx, v789, 0x80737f2, 8, 0, 4, v790, v791, v792, v793, v794, v795, ecx, v789, 0x80737f2, 8, 0, 4, v796, v797, v798, v799, v800, v801);
-        wrtout_(ecx, a4, reinterpret_cast<int32_t>(ebp12) + 0xfffffde4, 0x80735cb, 0x1f4, 4, v802, v803);
-        eax737 = wrtout_(ecx, 0x80735d0, reinterpret_cast<int32_t>(ebp12) + 0xfffffde4, 0x80735cb, 0x1f4, 4, v804, v805);
+        fun_8048b50(ecx, v789, " degrees", 8, 0, 4, v790, v791, v792, v793, v794, v795, ecx, v789, " degrees", 8, 0, 4, v796, v797, v798, v799, v800, v801);
+        wrtout_(ecx, a4, reinterpret_cast<int32_t>(ebp12) + 0xfffffde4, "COLL", 0x1f4, 4, v802, v803);
+        eax737 = wrtout_(ecx, 0x80735d0, reinterpret_cast<int32_t>(ebp12) + 0xfffffde4, "COLL", 0x1f4, 4, v804, v805);
     }
     return eax737;
 }
@@ -1426,12 +1426,12 @@ void fun_8048c20(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
 
 struct s1 {
     signed char[11] pad11;
-    void** f11;
+    void** fb;
 };
 
 struct s2 {
     signed char[11] pad11;
-    void** f11;
+    void** fb;
 };
 
 void fun_8048b90(void* a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16, void** a17, void** a18, void** a19, void** a20, void** a21, void** a22, void** a23);
@@ -3174,97 +3174,97 @@ void** linopt_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6,
     v62 = reinterpret_cast<void**>(0);
     if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a12)) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(*reinterpret_cast<void***>(a12) == 0) || (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a13)) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(*reinterpret_cast<void***>(a13) == 0) || (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a12)) > reinterpret_cast<int32_t>(3) || reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a13)) > reinterpret_cast<int32_t>(3)))) {
         fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v63, v64, v65, v66, v67, v68, v69, v70, v71, v72);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v73, v74, v75, v76, v77, v78, v79, v80);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v81, v82, v83, v84, v85, v86, v87, v88);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v89, v90, v91, v92, v93, v94, v95, v96);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807109c, 45, v97, v98, v99, v100, v101, v102, v103, v104);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807109c, 45, v105, v106, v107, v108, v109, v110, v111, v112);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807109c, 45, v113, v114, v115, v116, v117, v118, v119, v120);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80710cc, 45, v121, v122, v123, v124, v125, v126, v127, v128);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80710cc, 45, v129, v130, v131, v132, v133, v134, v135, v136);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80710cc, 45, v137, v138, v139, v140, v141, v142, v143, v144);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80710fc, 45, v145, v146, v147, v148, v149, v150, v151, v152);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80710fc, 45, v153, v154, v155, v156, v157, v158, v159, v160);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80710fc, 45, v161, v162, v163, v164, v165, v166, v167, v168);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v73, v74, v75, v76, v77, v78, v79, v80);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v81, v82, v83, v84, v85, v86, v87, v88);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v89, v90, v91, v92, v93, v94, v95, v96);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    Error in linopt:                         ", 45, v97, v98, v99, v100, v101, v102, v103, v104);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    Error in linopt:                         ", 45, v105, v106, v107, v108, v109, v110, v111, v112);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    Error in linopt:                         ", 45, v113, v114, v115, v116, v117, v118, v119, v120);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    the polarisation directions incorrect    ", 45, v121, v122, v123, v124, v125, v126, v127, v128);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    the polarisation directions incorrect    ", 45, v129, v130, v131, v132, v133, v134, v135, v136);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    the polarisation directions incorrect    ", 45, v137, v138, v139, v140, v141, v142, v143, v144);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    1=x and 2=y and 3=z                      ", 45, v145, v146, v147, v148, v149, v150, v151, v152);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    1=x and 2=y and 3=z                      ", 45, v153, v154, v155, v156, v157, v158, v159, v160);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    1=x and 2=y and 3=z                      ", 45, v161, v162, v163, v164, v165, v166, v167, v168);
         v169 = reinterpret_cast<void**>(45);
-        v170 = reinterpret_cast<void**>(0x807106c);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v171, v172, v173, v174, v175, v176, v177, v178);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v179, v180, v181, v182, v183, v184, v185, v186);
-        fun_8048d60(-1, 0x807106c, 45, v187, v188, v189, v190, v191, v192);
+        v170 = reinterpret_cast<void**>("---------------------------------------------");
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v171, v172, v173, v174, v175, v176, v177, v178);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v179, v180, v181, v182, v183, v184, v185, v186);
+        fun_8048d60(-1, "---------------------------------------------", 45, v187, v188, v189, v190, v191, v192);
     }
     if (reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a14)) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(*reinterpret_cast<void***>(a14) == 0))) {
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v193, v194, v195, v196, v197, v198, v199, v200);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v201, v202, v203, v204, v205, v206, v207, v208);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v209, v210, v211, v212, v213, v214, v215, v216);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v217, v218, v219, v220, v221, v222, v223, v224);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807109c, 45, v225, v226, v227, v228, v229, v230, v231, v232);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807109c, 45, v233, v234, v235, v236, v237, v238, v239, v240);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807109c, 45, v241, v242, v243, v244, v245, v246, v247, v248);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807112c, 45, v249, v250, v251, v252, v253, v254, v255, v256);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807112c, 45, v257, v258, v259, v260, v261, v262, v263, v264);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807112c, 45, v265, v266, v267, v268, v269, v270, v271, v272);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807115c, 45, v273, v274, v275, v276, v277, v278, v279, v280);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807115c, 45, v281, v282, v283, v284, v285, v286, v287, v288);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807115c, 45, v289, v290, v291, v292, v293, v294, v295, v296);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807118c, 45, v297, v298, v299, v300, v301, v302, v303, v304);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807118c, 45, v305, v306, v307, v308, v309, v310, v311, v312);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807118c, 45, v313, v314, v315, v316, v317, v318, v319, v320);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v193, v194, v195, v196, v197, v198, v199, v200);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v201, v202, v203, v204, v205, v206, v207, v208);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v209, v210, v211, v212, v213, v214, v215, v216);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v217, v218, v219, v220, v221, v222, v223, v224);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    Error in linopt:                         ", 45, v225, v226, v227, v228, v229, v230, v231, v232);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    Error in linopt:                         ", 45, v233, v234, v235, v236, v237, v238, v239, v240);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    Error in linopt:                         ", 45, v241, v242, v243, v244, v245, v246, v247, v248);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    number of energy mesh points incorrect   ", 45, v249, v250, v251, v252, v253, v254, v255, v256);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    number of energy mesh points incorrect   ", 45, v257, v258, v259, v260, v261, v262, v263, v264);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    number of energy mesh points incorrect   ", 45, v265, v266, v267, v268, v269, v270, v271, v272);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    number has to integer greater than 0     ", 45, v273, v274, v275, v276, v277, v278, v279, v280);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    number has to integer greater than 0     ", 45, v281, v282, v283, v284, v285, v286, v287, v288);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    number has to integer greater than 0     ", 45, v289, v290, v291, v292, v293, v294, v295, v296);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    nmesh*de = max energy for calculation    ", 45, v297, v298, v299, v300, v301, v302, v303, v304);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    nmesh*de = max energy for calculation    ", 45, v305, v306, v307, v308, v309, v310, v311, v312);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    nmesh*de = max energy for calculation    ", 45, v313, v314, v315, v316, v317, v318, v319, v320);
         v169 = reinterpret_cast<void**>(45);
-        v170 = reinterpret_cast<void**>(0x807106c);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v321, v322, v323, v324, v325, v326, v327, v328);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v329, v330, v331, v332, v333, v334, v335, v336);
-        fun_8048d60(-1, 0x807106c, 45, v337, v338, v339, v340, v341, v342);
+        v170 = reinterpret_cast<void**>("---------------------------------------------");
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v321, v322, v323, v324, v325, v326, v327, v328);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v329, v330, v331, v332, v333, v334, v335, v336);
+        fun_8048d60(-1, "---------------------------------------------", 45, v337, v338, v339, v340, v341, v342);
     }
     __asm__("fld qword [eax]");
     __asm__("fldz ");
     __asm__("fucomip st0, st1");
     __asm__("fstp st0");
     if (!0) {
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v343, v344, v345, v346, v347, v348, v349, v350);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v351, v352, v353, v354, v355, v356, v357, v358);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v359, v360, v361, v362, v363, v364, v365, v366);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v367, v368, v369, v370, v371, v372, v373, v374);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807109c, 45, v375, v376, v377, v378, v379, v380, v381, v382);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807109c, 45, v383, v384, v385, v386, v387, v388, v389, v390);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807109c, 45, v391, v392, v393, v394, v395, v396, v397, v398);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80711bc, 45, v399, v400, v401, v402, v403, v404, v405, v406);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80711bc, 45, v407, v408, v409, v410, v411, v412, v413, v414);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80711bc, 45, v415, v416, v417, v418, v419, v420, v421, v422);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80711ec, 45, v423, v424, v425, v426, v427, v428, v429, v430);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80711ec, 45, v431, v432, v433, v434, v435, v436, v437, v438);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80711ec, 45, v439, v440, v441, v442, v443, v444, v445, v446);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807118c, 45, v447, v448, v449, v450, v451, v452, v453, v454);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807118c, 45, v455, v456, v457, v458, v459, v460, v461, v462);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807118c, 45, v463, v464, v465, v466, v467, v468, v469, v470);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v343, v344, v345, v346, v347, v348, v349, v350);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v351, v352, v353, v354, v355, v356, v357, v358);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v359, v360, v361, v362, v363, v364, v365, v366);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v367, v368, v369, v370, v371, v372, v373, v374);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    Error in linopt:                         ", 45, v375, v376, v377, v378, v379, v380, v381, v382);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    Error in linopt:                         ", 45, v383, v384, v385, v386, v387, v388, v389, v390);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    Error in linopt:                         ", 45, v391, v392, v393, v394, v395, v396, v397, v398);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    energy step is incorrect                 ", 45, v399, v400, v401, v402, v403, v404, v405, v406);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    energy step is incorrect                 ", 45, v407, v408, v409, v410, v411, v412, v413, v414);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    energy step is incorrect                 ", 45, v415, v416, v417, v418, v419, v420, v421, v422);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    number has to real greater than 0.0      ", 45, v423, v424, v425, v426, v427, v428, v429, v430);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    number has to real greater than 0.0      ", 45, v431, v432, v433, v434, v435, v436, v437, v438);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    number has to real greater than 0.0      ", 45, v439, v440, v441, v442, v443, v444, v445, v446);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    nmesh*de = max energy for calculation    ", 45, v447, v448, v449, v450, v451, v452, v453, v454);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    nmesh*de = max energy for calculation    ", 45, v455, v456, v457, v458, v459, v460, v461, v462);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    nmesh*de = max energy for calculation    ", 45, v463, v464, v465, v466, v467, v468, v469, v470);
         v169 = reinterpret_cast<void**>(45);
-        v170 = reinterpret_cast<void**>(0x807106c);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v471, v472, v473, v474, v475, v476, v477, v478);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v479, v480, v481, v482, v483, v484, v485, v486);
-        fun_8048d60(-1, 0x807106c, 45, v487, v488, v489, v490, v491, v492);
+        v170 = reinterpret_cast<void**>("---------------------------------------------");
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v471, v472, v473, v474, v475, v476, v477, v478);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v479, v480, v481, v482, v483, v484, v485, v486);
+        fun_8048d60(-1, "---------------------------------------------", 45, v487, v488, v489, v490, v491, v492);
     }
     __asm__("fld qword [eax]");
     __asm__("fldz ");
     __asm__("fucomip st0, st1");
     __asm__("fstp st0");
     if (!0) {
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v493, v494, v495, v496, v497, v498, v499, v500);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v501, v502, v503, v504, v505, v506, v507, v508);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v509, v510, v511, v512, v513, v514, v515, v516);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v517, v518, v519, v520, v521, v522, v523, v524);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807109c, 45, v525, v526, v527, v528, v529, v530, v531, v532);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807109c, 45, v533, v534, v535, v536, v537, v538, v539, v540);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807109c, 45, v541, v542, v543, v544, v545, v546, v547, v548);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807121c, 45, v549, v550, v551, v552, v553, v554, v555, v556);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807121c, 45, v557, v558, v559, v560, v561, v562, v563, v564);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807121c, 45, v565, v566, v567, v568, v569, v570, v571, v572);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80711ec, 45, v573, v574, v575, v576, v577, v578, v579, v580);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80711ec, 45, v581, v582, v583, v584, v585, v586, v587, v588);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80711ec, 45, v589, v590, v591, v592, v593, v594, v595, v596);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v493, v494, v495, v496, v497, v498, v499, v500);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v501, v502, v503, v504, v505, v506, v507, v508);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v509, v510, v511, v512, v513, v514, v515, v516);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v517, v518, v519, v520, v521, v522, v523, v524);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    Error in linopt:                         ", 45, v525, v526, v527, v528, v529, v530, v531, v532);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    Error in linopt:                         ", 45, v533, v534, v535, v536, v537, v538, v539, v540);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    Error in linopt:                         ", 45, v541, v542, v543, v544, v545, v546, v547, v548);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    scissors shift is incorrect              ", 45, v549, v550, v551, v552, v553, v554, v555, v556);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    scissors shift is incorrect              ", 45, v557, v558, v559, v560, v561, v562, v563, v564);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    scissors shift is incorrect              ", 45, v565, v566, v567, v568, v569, v570, v571, v572);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    number has to real greater than 0.0      ", 45, v573, v574, v575, v576, v577, v578, v579, v580);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    number has to real greater than 0.0      ", 45, v581, v582, v583, v584, v585, v586, v587, v588);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    number has to real greater than 0.0      ", 45, v589, v590, v591, v592, v593, v594, v595, v596);
         v169 = reinterpret_cast<void**>(45);
-        v170 = reinterpret_cast<void**>(0x807106c);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v597, v598, v599, v600, v601, v602, v603, v604);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v605, v606, v607, v608, v609, v610, v611, v612);
-        fun_8048d60(-1, 0x807106c, 45, v613, v614, v615, v616, v617, v618);
+        v170 = reinterpret_cast<void**>("---------------------------------------------");
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v597, v598, v599, v600, v601, v602, v603, v604);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v605, v606, v607, v608, v609, v610, v611, v612);
+        fun_8048d60(-1, "---------------------------------------------", 45, v613, v614, v615, v616, v617, v618);
     }
     __asm__("fld qword [eax]");
     __asm__("fld qword [0x8071608]");
@@ -3278,36 +3278,36 @@ void** linopt_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6,
         __asm__("fucomip st0, st1");
         __asm__("fstp st0");
         if (!0) {
-            fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v619, v620, v621, v622, v623, v624, v625, v626);
-            fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80712ac, 40, v627, v628, v629, v630, v631, v632, v633, v634);
-            fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80712ac, 40, v635, v636, v637, v638, v639, v640, v641, v642);
-            fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80712ac, 40, v643, v644, v645, v646, v647, v648, v649, v650);
-            fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80712d4, 40, v651, v652, v653, v654, v655, v656, v657, v658);
-            fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80712d4, 40, v659, v660, v661, v662, v663, v664, v665, v666);
-            fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80712d4, 40, v667, v668, v669, v670, v671, v672, v673, v674);
-            fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80712fc, 40, v675, v676, v677, v678, v679, v680, v681, v682);
-            fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80712fc, 40, v683, v684, v685, v686, v687, v688, v689, v690);
-            fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80712fc, 40, v691, v692, v693, v694, v695, v696, v697, v698);
+            fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v619, v620, v621, v622, v623, v624, v625, v626);
+            fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v627, v628, v629, v630, v631, v632, v633, v634);
+            fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v635, v636, v637, v638, v639, v640, v641, v642);
+            fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v643, v644, v645, v646, v647, v648, v649, v650);
+            fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    ATTENTION: broadening is too high       ideally should be less than 0.005   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v651, v652, v653, v654, v655, v656, v657, v658);
+            fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    ATTENTION: broadening is too high       ideally should be less than 0.005   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v659, v660, v661, v662, v663, v664, v665, v666);
+            fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    ATTENTION: broadening is too high       ideally should be less than 0.005   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v667, v668, v669, v670, v671, v672, v673, v674);
+            fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    ideally should be less than 0.005   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v675, v676, v677, v678, v679, v680, v681, v682);
+            fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    ideally should be less than 0.005   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v683, v684, v685, v686, v687, v688, v689, v690);
+            fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    ideally should be less than 0.005   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v691, v692, v693, v694, v695, v696, v697, v698);
             v169 = reinterpret_cast<void**>(40);
-            v170 = reinterpret_cast<void**>(0x80712ac);
-            fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80712ac, 40, v699, v700, v701, v702, v703, v704, v705, v706);
-            fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80712ac, 40, v707, v708, v709, v710, v711, v712, v713, v714);
+            v170 = reinterpret_cast<void**>("----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005   Attempt to allocate negative amount of memory. Possible integer overflow");
+            fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v699, v700, v701, v702, v703, v704, v705, v706);
+            fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v707, v708, v709, v710, v711, v712, v713, v714);
         }
     } else {
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v715, v716, v717, v718, v719, v720, v721, v722);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v723, v724, v725, v726, v727, v728, v729, v730);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v731, v732, v733, v734, v735, v736, v737, v738);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v739, v740, v741, v742, v743, v744, v745, v746);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807124c, 45, v747, v748, v749, v750, v751, v752, v753, v754);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807124c, 45, v755, v756, v757, v758, v759, v760, v761, v762);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807124c, 45, v763, v764, v765, v766, v767, v768, v769, v770);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807127c, 45, v771, v772, v773, v774, v775, v776, v777, v778);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807127c, 45, v779, v780, v781, v782, v783, v784, v785, v786);
-        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807127c, 45, v787, v788, v789, v790, v791, v792, v793, v794);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v715, v716, v717, v718, v719, v720, v721, v722);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v723, v724, v725, v726, v727, v728, v729, v730);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v731, v732, v733, v734, v735, v736, v737, v738);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v739, v740, v741, v742, v743, v744, v745, v746);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    ATTENTION: broadening is quite high      ", 45, v747, v748, v749, v750, v751, v752, v753, v754);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    ATTENTION: broadening is quite high      ", 45, v755, v756, v757, v758, v759, v760, v761, v762);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    ATTENTION: broadening is quite high      ", 45, v763, v764, v765, v766, v767, v768, v769, v770);
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    ideally should be less than 0.005        ", 45, v771, v772, v773, v774, v775, v776, v777, v778);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    ideally should be less than 0.005        ", 45, v779, v780, v781, v782, v783, v784, v785, v786);
+        fun_8048cd0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "    ideally should be less than 0.005        ", 45, v787, v788, v789, v790, v791, v792, v793, v794);
         v169 = reinterpret_cast<void**>(45);
-        v170 = reinterpret_cast<void**>(0x807106c);
-        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v795, v796, v797, v798, v799, v800, v801, v802);
-        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807106c, 45, v803, v804, v805, v806, v807, v808, v809, v810);
+        v170 = reinterpret_cast<void**>("---------------------------------------------");
+        fun_8048cc0(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v795, v796, v797, v798, v799, v800, v801, v802);
+        fun_8048b50(ecx57, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "---------------------------------------------", 45, v803, v804, v805, v806, v807, v808, v809, v810);
     }
     v811 = *reinterpret_cast<void***>(a14);
     edx812 = reinterpret_cast<void**>(0);
@@ -3320,9 +3320,9 @@ void** linopt_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6,
         edx813 = reinterpret_cast<void**>(0);
     }
     if (0) {
-        v169 = reinterpret_cast<void**>(0x807137b);
-        v170 = reinterpret_cast<void**>(0x8071380);
-        fun_8048c30(ecx57, "At line 157 of file linopt.F90", 0x8071380, 0x807137b, v814, v815, v816, v817, v818, v819, v820, v821, v822, v823, v824, v825, v826, v58, 0, v56, 0);
+        v169 = reinterpret_cast<void**>("chi");
+        v170 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx57, "At line 157 of file linopt.F90", "Attempting to allocate already allocated array '%s'", "chi", v814, v815, v816, v817, v818, v819, v820, v821, v822, v823, v824, v825, v826, v58, 0, v56, 0);
     } else {
         eax827 = edx813;
         if (reinterpret_cast<int32_t>(eax827) < reinterpret_cast<int32_t>(0)) {
@@ -3347,9 +3347,9 @@ void** linopt_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6,
     edx870 = reinterpret_cast<void**>(0);
     addr_804eec0_57:
     if (0) {
-        v169 = reinterpret_cast<void**>(0x80713d3);
-        v170 = reinterpret_cast<void**>(0x8071380);
-        fun_8048c30(ecx57, "At line 157 of file linopt.F90", 0x8071380, 0x80713d3, v871, v872, v873, v874, v875, v876, v877, v878, v879, v880, v881, v882, v883, v58, 0, v56, 0);
+        v169 = reinterpret_cast<void**>("eps");
+        v170 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx57, "At line 157 of file linopt.F90", "Attempting to allocate already allocated array '%s'", "eps", v871, v872, v873, v874, v875, v876, v877, v878, v879, v880, v881, v882, v883, v58, 0, v56, 0);
     } else {
         eax884 = edx870;
         if (reinterpret_cast<int32_t>(eax884) < reinterpret_cast<int32_t>(0)) {
@@ -3373,9 +3373,9 @@ void** linopt_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6,
     }
     v61 = eax938;
     if (!1) {
-        v952 = reinterpret_cast<void**>(0x80713fb);
-        v953 = reinterpret_cast<void**>(0x8071380);
-        fun_8048c30(ecx57, "At line 158 of file linopt.F90", 0x8071380, 0x80713fb, v954, v955, v956, v957, v958, v959, v960, v961, v962, v963, v964, v965, v966, v58, 0, v56, 0);
+        v952 = reinterpret_cast<void**>("sym");
+        v953 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx57, "At line 158 of file linopt.F90", "Attempting to allocate already allocated array '%s'", "sym", v954, v955, v956, v957, v958, v959, v960, v961, v962, v963, v964, v965, v966, v58, 0, v56, 0);
         goto addr_804f0f5_72;
     }
     addr_804f020_73:
@@ -3425,24 +3425,24 @@ void** linopt_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6,
     }
     ecx1046 = v1047;
     v1048 = ecx1046;
-    fun_8048c20(&v1049->f11, eax1033, v1050, v1048, 11, 0x807144a, v1051, v1052, v1053, v1054, v1055, v1056, v1057, v1058, v1059, v1060, v58, 0, v56, 0, v45, 0);
+    fun_8048c20(&v1049->fb, eax1033, v1050, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1051, v1052, v1053, v1054, v1055, v1056, v1057, v1058, v1059, v1060, v58, 0, v56, 0, v45, 0);
     if (!(reinterpret_cast<uint1_t>(v1061 < 0) | reinterpret_cast<uint1_t>(v1061 == 0)) && v1062) {
-        fun_8048bc0(ecx1046, v1062, eax1033, v1050, v1048, 11, 0x807144a, v1063, v1064, v1065, v1066, v1067, v1068, v1069, v1070, v1071, v1072, v58, 0, v56, 0, v45, 0);
+        fun_8048bc0(ecx1046, v1062, eax1033, v1050, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1063, v1064, v1065, v1066, v1067, v1068, v1069, v1070, v1071, v1072, v58, 0, v56, 0, v45, 0);
     }
-    ebx1073 = reinterpret_cast<void**>(&v1074->f11);
+    ebx1073 = reinterpret_cast<void**>(&v1074->fb);
     if (reinterpret_cast<int32_t>(ebx1073) <= reinterpret_cast<int32_t>(0xff)) {
-        fun_8048d10(reinterpret_cast<int32_t>(ebp20) + 0xfffffdf8, eax1033, ebx1073, v1048, 11, 0x807144a, v1075, v1076, v1077, v1078, v1079, v1080, v1081, v1082, v1083, v1084, v58, 0, v56, 0, v45, 0);
+        fun_8048d10(reinterpret_cast<int32_t>(ebp20) + 0xfffffdf8, eax1033, ebx1073, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1075, v1076, v1077, v1078, v1079, v1080, v1081, v1082, v1083, v1084, v58, 0, v56, 0, v45, 0);
         ecx1046 = reinterpret_cast<void**>(0x100 - reinterpret_cast<uint32_t>(ebx1073));
         v1085 = ecx1046;
         v1086 = reinterpret_cast<void**>(32);
-        fun_8048b90(reinterpret_cast<int32_t>(ebp20) - 0x208 + reinterpret_cast<uint32_t>(ebx1073), 32, v1085, v1048, 11, 0x807144a, v1087, v1088, v1089, v1090, v1091, v1092, v1093, v1094, v1095, v1096, v58, 0, v56, 0, v45, 0, ecx43);
+        fun_8048b90(reinterpret_cast<int32_t>(ebp20) - 0x208 + reinterpret_cast<uint32_t>(ebx1073), 32, v1085, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1087, v1088, v1089, v1090, v1091, v1092, v1093, v1094, v1095, v1096, v58, 0, v56, 0, v45, 0, ecx43);
     } else {
         v1085 = reinterpret_cast<void**>(0x100);
         v1086 = eax1033;
-        fun_8048d10(reinterpret_cast<int32_t>(ebp20) + 0xfffffdf8, v1086, 0x100, v1048, 11, 0x807144a, v1097, v1098, v1099, v1100, v1101, v1102, v1103, v1104, v1105, v1106, v58, 0, v56, 0, v45, 0);
+        fun_8048d10(reinterpret_cast<int32_t>(ebp20) + 0xfffffdf8, v1086, 0x100, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1097, v1098, v1099, v1100, v1101, v1102, v1103, v1104, v1105, v1106, v58, 0, v56, 0, v45, 0);
     }
     if (eax1033) {
-        fun_8048bc0(ecx1046, eax1033, v1086, v1085, v1048, 11, 0x807144a, v1107, v1108, v1109, v1110, v1111, v1112, v1113, v1114, v1115, v1116, v58, 0, v56, 0, v45, 0);
+        fun_8048bc0(ecx1046, eax1033, v1086, v1085, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1107, v1108, v1109, v1110, v1111, v1112, v1113, v1114, v1115, v1116, v58, 0, v56, 0, v45, 0);
     }
     ecx1117 = 1;
     while (reinterpret_cast<int32_t>(ecx1117) <= reinterpret_cast<int32_t>(3)) {
@@ -3564,13 +3564,13 @@ void** linopt_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6,
     v1147 = reinterpret_cast<void**>(1);
     if (reinterpret_cast<int32_t>(1) <= reinterpret_cast<int32_t>(v1146)) {
         while (1) {
-            fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1086, v1085, v1048, 11, 0x807144a, v1148, v1149, v1150, v1151, v1152);
-            fun_8048c50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xfffffde4, 4, v1048, 11, 0x807144a, v1153, v1154, v1155, v1156, v1157);
-            fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x8071455, 2, v1048, 11, 0x807144a, v1158, v1159, v1160, v1161, v1162);
+            fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1086, v1085, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1148, v1149, v1150, v1151, v1152);
+            fun_8048c50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xfffffde4, 4, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1153, v1154, v1155, v1156, v1157);
+            fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "ofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 2, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1158, v1159, v1160, v1161, v1162);
             v1085 = reinterpret_cast<void**>(4);
             v1086 = a3;
-            fun_8048c50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1086, 4, v1048, 11, 0x807144a, v1163, v1164, v1165, v1166, v1167);
-            fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1086, 4, v1048, 11, 0x807144a, v1168, v1169, v1170, v1171, v1172);
+            fun_8048c50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1086, 4, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1163, v1164, v1165, v1166, v1167);
+            fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1086, 4, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1168, v1169, v1170, v1171, v1172);
             v1173 = *reinterpret_cast<void***>(a1);
             v1174 = reinterpret_cast<void**>(1);
             ecx1143 = v1173;
@@ -3816,75 +3816,75 @@ void** linopt_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6,
                 break;
         }
     }
-    fun_8048b30(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1086, v1085, v1048, 11, 0x807144a);
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1086, v1085, v1048, 11, 0x807144a, v1196, v1197, v1198, v1199, v1200);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x8071468, 33, v1048, 11, 0x807144a, v1201, v1202, v1203, v1204, v1205);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x8071468, 33, v1048, 11, 0x807144a, v1206, v1207, v1208, v1209, v1210);
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x8071468, 33, v1048, 11, 0x807144a, v1211, v1212, v1213, v1214, v1215);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x8071492, 27, v1048, 11, 0x807144a, v1216, v1217, v1218, v1219, v1220);
-    fun_8048c50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a12, 4, v1048, 11, 0x807144a, v1221, v1222, v1223, v1224, v1225);
-    fun_8048c50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a13, 4, v1048, 11, 0x807144a, v1226, v1227, v1228, v1229, v1230);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80714ad, 24, v1048, 11, 0x807144a, v1231, v1232, v1233, v1234, v1235);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80714ad, 24, v1048, 11, 0x807144a, v1236, v1237, v1238, v1239, v1240);
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80714ad, 24, v1048, 11, 0x807144a, v1241, v1242, v1243, v1244, v1245);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80714c5, 25, v1048, 11, 0x807144a, v1246, v1247, v1248, v1249, v1250);
-    fun_8048c50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a12, 4, v1048, 11, 0x807144a, v1251, v1252, v1253, v1254, v1255);
-    fun_8048c50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a13, 4, v1048, 11, 0x807144a, v1256, v1257, v1258, v1259, v1260);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80714ad, 24, v1048, 11, 0x807144a, v1261, v1262, v1263, v1264, v1265);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80714ad, 24, v1048, 11, 0x807144a, v1266, v1267, v1268, v1269, v1270);
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80714ad, 24, v1048, 11, 0x807144a, v1271, v1272, v1273, v1274, v1275);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80714e9, 13, v1048, 11, 0x807144a, v1276, v1277, v1278, v1279, v1280);
+    fun_8048b30(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1086, v1085, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)");
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1086, v1085, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1196, v1197, v1198, v1199, v1200);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, " # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 33, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1201, v1202, v1203, v1204, v1205);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, " # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 33, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1206, v1207, v1208, v1209, v1210);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, " # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 33, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1211, v1212, v1213, v1214, v1215);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, " #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 27, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1216, v1217, v1218, v1219, v1220);
+    fun_8048c50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a12, 4, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1221, v1222, v1223, v1224, v1225);
+    fun_8048c50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a13, 4, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1226, v1227, v1228, v1229, v1230);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 24, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1231, v1232, v1233, v1234, v1235);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 24, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1236, v1237, v1238, v1239, v1240);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 24, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1241, v1242, v1243, v1244, v1245);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "calculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 25, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1246, v1247, v1248, v1249, v1250);
+    fun_8048c50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a12, 4, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1251, v1252, v1253, v1254, v1255);
+    fun_8048c50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a13, 4, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1256, v1257, v1258, v1259, v1260);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 24, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1261, v1262, v1263, v1264, v1265);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 24, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1266, v1267, v1268, v1269, v1270);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 24, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1271, v1272, v1273, v1274, v1275);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, " #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 13, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1276, v1277, v1278, v1279, v1280);
     __asm__("fld qword [ebp+0xfffffde8]");
     __asm__("fstp qword [ebp+0xfffffd78]");
-    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xfffffd78, 8, v1048, 11, 0x807144a, v1281, v1282, v1283);
+    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xfffffd78, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1281, v1282, v1283);
     __asm__("fld qword [ebp+0xfffffdf0]");
     __asm__("fstp qword [ebp+0xfffffd70]");
     v1284 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffd70);
-    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1284, 8, v1048, 11, 0x807144a, v1285, v1286, v1287);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1284, 8, v1048, 11, 0x807144a, v1288, v1289, v1290, v1291, v1292);
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1284, 8, v1048, 11, 0x807144a, v1293, v1294, v1295, v1296, v1297);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x80714f6, 17, v1048, 11, 0x807144a, v1298, v1299, v1300, v1301, v1302);
+    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1284, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1285, v1286, v1287);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1284, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1288, v1289, v1290, v1291, v1292);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1284, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1293, v1294, v1295, v1296, v1297);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, " with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 17, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1298, v1299, v1300, v1301, v1302);
     v1303 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffde8);
-    fun_8048ba0(ecx1143, reinterpret_cast<int32_t>(ebp20) - 0x41c, v1303, 8, v1048, 11, 0x807144a);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1303, 8, v1048, 11, 0x807144a, v1304, v1305, v1306, v1307, v1308);
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1303, 8, v1048, 11, 0x807144a, v1309, v1310, v1311, v1312, v1313);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x8071511, 17, v1048, 11, 0x807144a, v1314, v1315, v1316, v1317, v1318);
-    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a16, 8, v1048, 11, 0x807144a, v1319, v1320, v1321);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a16, 8, v1048, 11, 0x807144a, v1322, v1323, v1324, v1325, v1326);
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a16, 8, v1048, 11, 0x807144a, v1327, v1328, v1329, v1330, v1331);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x8071522, 19, v1048, 11, 0x807144a, v1332, v1333, v1334, v1335, v1336);
-    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a16, 8, v1048, 11, 0x807144a, v1337, v1338, v1339);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a16, 8, v1048, 11, 0x807144a, v1340, v1341, v1342, v1343, v1344);
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a16, 8, v1048, 11, 0x807144a, v1345, v1346, v1347, v1348, v1349);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807154a, 16, v1048, 11, 0x807144a, v1350, v1351, v1352, v1353, v1354);
+    fun_8048ba0(ecx1143, reinterpret_cast<int32_t>(ebp20) - 0x41c, v1303, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)");
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1303, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1304, v1305, v1306, v1307, v1308);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1303, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1309, v1310, v1311, v1312, v1313);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, " #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 17, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1314, v1315, v1316, v1317, v1318);
+    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a16, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1319, v1320, v1321);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a16, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1322, v1323, v1324, v1325, v1326);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a16, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1327, v1328, v1329, v1330, v1331);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", 19, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1332, v1333, v1334, v1335, v1336);
+    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a16, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1337, v1338, v1339);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a16, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1340, v1341, v1342, v1343, v1344);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, a16, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1345, v1346, v1347, v1348, v1349);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, " #energy window:eVHaenergy window:(2es16.6)", 16, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1350, v1351, v1352, v1353, v1354);
     __asm__("fld qword [ebp+0xffffff78]");
     __asm__("fsub qword [ebp-0x80]");
     __asm__("fmul qword [ebp-0x68]");
     __asm__("fstp qword [ebp+0xfffffd68]");
-    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xfffffd68, 8, v1048, 11, 0x807144a, v1355, v1356, v1357);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807155a, 2, v1048, 11, 0x807144a, v1358, v1359, v1360, v1361, v1362);
+    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xfffffd68, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1355, v1356, v1357);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "eVHaenergy window:(2es16.6)", 2, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1358, v1359, v1360, v1361, v1362);
     __asm__("fld qword [ebp+0xffffff78]");
     __asm__("fsub qword [ebp-0x80]");
     __asm__("fstp qword [ebp+0xfffffd60]");
-    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xfffffd60, 8, v1048, 11, 0x807144a, v1363, v1364, v1365);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807155c, 2, v1048, 11, 0x807144a, v1366, v1367, v1368, v1369, v1370);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807155c, 2, v1048, 11, 0x807144a, v1371, v1372, v1373, v1374, v1375);
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807155c, 2, v1048, 11, 0x807144a, v1376, v1377, v1378, v1379, v1380);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807155e, 14, v1048, 11, 0x807144a, v1381, v1382, v1383, v1384, v1385);
+    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xfffffd60, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1363, v1364, v1365);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "Haenergy window:(2es16.6)", 2, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1366, v1367, v1368, v1369, v1370);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "Haenergy window:(2es16.6)", 2, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1371, v1372, v1373, v1374, v1375);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "Haenergy window:(2es16.6)", 2, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1376, v1377, v1378, v1379, v1380);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "energy window:(2es16.6)", 14, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1381, v1382, v1383, v1384, v1385);
     __asm__("fld qword [ebp+0xffffff78]");
     __asm__("fsub qword [ebp-0x80]");
     __asm__("fmul qword [ebp-0x68]");
     __asm__("fstp qword [ebp+0xfffffd58]");
-    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xfffffd58, 8, v1048, 11, 0x807144a, v1386, v1387, v1388);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807155a, 2, v1048, 11, 0x807144a, v1389, v1390, v1391, v1392, v1393);
+    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xfffffd58, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1386, v1387, v1388);
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "eVHaenergy window:(2es16.6)", 2, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1389, v1390, v1391, v1392, v1393);
     __asm__("fld qword [ebp+0xffffff78]");
     __asm__("fsub qword [ebp-0x80]");
     __asm__("fstp qword [ebp+0xfffffd50]");
-    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xfffffd50, 8, v1048, 11, 0x807144a, v1394, v1395, v1396);
+    fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xfffffd50, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1394, v1395, v1396);
     v1397 = reinterpret_cast<void**>(2);
-    v1398 = reinterpret_cast<void**>(0x807155c);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807155c, 2, v1048, 11, 0x807144a, v1399, v1400, v1401, v1402, v1403);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807155c, 2, v1048, 11, 0x807144a, v1404, v1405, v1406, v1407, v1408);
+    v1398 = reinterpret_cast<void**>("Haenergy window:(2es16.6)");
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "Haenergy window:(2es16.6)", 2, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1399, v1400, v1401, v1402, v1403);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, "Haenergy window:(2es16.6)", 2, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1404, v1405, v1406, v1407, v1408);
     eax1409 = reinterpret_cast<void**>(1);
     edi1410 = v868;
     while (reinterpret_cast<int32_t>(eax1409) <= reinterpret_cast<int32_t>(edi1410)) {
@@ -3898,82 +3898,82 @@ void** linopt_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6,
     ebx1411 = *reinterpret_cast<void***>(a14);
     v1412 = reinterpret_cast<void**>(2);
     if (reinterpret_cast<int32_t>(2) <= reinterpret_cast<int32_t>(ebx1411)) {
-        while (ecx1413 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v1412) + 0xffffffff << 4), fun_8048cd0(ecx1413, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, v1397, v1048, 11, 0x807144a, v1414, v1415, v1416, v1417, v1418), fun_8048d50(ecx1413, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xffffff10, 8, v1048, 11, 0x807144a, v1419, v1420, v1421), ecx1143 = v1412, v1397 = reinterpret_cast<void**>(8), v1398 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffd48), fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, 8, v1048, 11, 0x807144a, v1422, v1423, v1424), fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, 8, v1048, 11, 0x807144a, v1425, v1426, v1427, v1428, v1429), eax1430 = reinterpret_cast<uint1_t>(v1412 == ebx1411), v1412 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v1412) + 1), eax1430 == 0) {
+        while (ecx1413 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v1412) + 0xffffffff << 4), fun_8048cd0(ecx1413, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, v1397, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1414, v1415, v1416, v1417, v1418), fun_8048d50(ecx1413, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xffffff10, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1419, v1420, v1421), ecx1143 = v1412, v1397 = reinterpret_cast<void**>(8), v1398 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffd48), fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1422, v1423, v1424), fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1425, v1426, v1427, v1428, v1429), eax1430 = reinterpret_cast<uint1_t>(v1412 == ebx1411), v1412 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v1412) + 1), eax1430 == 0) {
         }
     }
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, v1397, v1048, 11, 0x807144a, v1431, v1432, v1433, v1434, v1435);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, v1397, v1048, 11, 0x807144a, v1436, v1437, v1438, v1439, v1440);
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, v1397, v1048, 11, 0x807144a, v1441, v1442, v1443, v1444, v1445);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, v1397, v1048, 11, 0x807144a, v1446, v1447, v1448, v1449, v1450);
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, v1397, v1048, 11, 0x807144a, v1451, v1452, v1453, v1454, v1455);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, v1397, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1431, v1432, v1433, v1434, v1435);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, v1397, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1436, v1437, v1438, v1439, v1440);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, v1397, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1441, v1442, v1443, v1444, v1445);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, v1397, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1446, v1447, v1448, v1449, v1450);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1398, v1397, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1451, v1452, v1453, v1454, v1455);
     v1456 = reinterpret_cast<void**>(33);
-    v1457 = reinterpret_cast<void**>(0x8071578);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x8071578, 33, v1048, 11, 0x807144a, v1458, v1459, v1460, v1461, v1462);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x8071578, 33, v1048, 11, 0x807144a, v1463, v1464, v1465, v1466, v1467);
+    v1457 = reinterpret_cast<void**>(" # Energy(eV)         Re(chi1(w))");
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, " # Energy(eV)         Re(chi1(w))", 33, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1458, v1459, v1460, v1461, v1462);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, " # Energy(eV)         Re(chi1(w))", 33, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1463, v1464, v1465, v1466, v1467);
     ebx1468 = *reinterpret_cast<void***>(a14);
     v1469 = reinterpret_cast<void**>(2);
     if (reinterpret_cast<int32_t>(2) <= reinterpret_cast<int32_t>(ebx1468)) {
-        while (fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, v1456, v1048, 11, 0x807144a, v1470, v1471, v1472, v1473, v1474), fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xffffff10, 8, v1048, 11, 0x807144a, v1475, v1476, v1477), ecx1143 = v1469, v1456 = reinterpret_cast<void**>(8), v1457 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffd40), fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, 8, v1048, 11, 0x807144a, v1478, v1479, v1480), fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, 8, v1048, 11, 0x807144a, v1481, v1482, v1483, v1484, v1485), eax1486 = reinterpret_cast<uint1_t>(v1469 == ebx1468), v1469 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v1469) + 1), eax1486 == 0) {
+        while (fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, v1456, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1470, v1471, v1472, v1473, v1474), fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, reinterpret_cast<int32_t>(ebp20) + 0xffffff10, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1475, v1476, v1477), ecx1143 = v1469, v1456 = reinterpret_cast<void**>(8), v1457 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffd40), fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1478, v1479, v1480), fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1481, v1482, v1483, v1484, v1485), eax1486 = reinterpret_cast<uint1_t>(v1469 == ebx1468), v1469 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v1469) + 1), eax1486 == 0) {
         }
     }
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, v1456, v1048, 11, 0x807144a, v1487, v1488, v1489, v1490, v1491);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, v1456, v1048, 11, 0x807144a, v1492, v1493, v1494, v1495, v1496);
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, v1456, v1048, 11, 0x807144a, v1497, v1498, v1499, v1500, v1501);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, v1456, v1048, 11, 0x807144a, v1502, v1503, v1504, v1505, v1506);
-    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, v1456, v1048, 11, 0x807144a, v1507, v1508, v1509, v1510, v1511);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, v1456, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1487, v1488, v1489, v1490, v1491);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, v1456, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1492, v1493, v1494, v1495, v1496);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, v1456, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1497, v1498, v1499, v1500, v1501);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, v1456, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1502, v1503, v1504, v1505, v1506);
+    fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1457, v1456, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1507, v1508, v1509, v1510, v1511);
     v1512 = reinterpret_cast<void**>(34);
-    v1513 = reinterpret_cast<void**>(0x807159c);
-    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807159c, 34, v1048, 11, 0x807144a, v1514, v1515, v1516, v1517, v1518);
-    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, 0x807159c, 34, v1048, 11, 0x807144a, v1519, v1520, v1521, v1522, v1523);
+    v1513 = reinterpret_cast<void**>(" # Energy(eV)         abs(chi1(w))");
+    fun_8048cc0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, " # Energy(eV)         abs(chi1(w))", 34, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1514, v1515, v1516, v1517, v1518);
+    fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, " # Energy(eV)         abs(chi1(w))", 34, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1519, v1520, v1521, v1522, v1523);
     ebx1524 = *reinterpret_cast<void***>(a14);
     v1525 = reinterpret_cast<void**>(2);
     if (reinterpret_cast<int32_t>(2) <= reinterpret_cast<int32_t>(ebx1524)) {
-        while (fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1513, v1512, v1048, 11, 0x807144a, v1526, v1527, v1528, v1529, v1530), v1531 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xffffff10), v1532 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4), fun_8048d50(ecx1143, v1532, v1531, 8, v1048, 11, 0x807144a, v1533, v1534, v1535), ecx1143 = v1525, fun_8048cb0(v1532, v1531, 8, v1048, 11, 0x807144a), v1512 = reinterpret_cast<void**>(8), v1513 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffd38), fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1513, 8, v1048, 11, 0x807144a, v1536, v1537, v1538), fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1513, 8, v1048, 11, 0x807144a, v1539, v1540, v1541, v1542, v1543), eax1544 = reinterpret_cast<uint1_t>(v1525 == ebx1524), v1525 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v1525) + 1), eax1544 == 0) {
+        while (fun_8048cd0(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1513, v1512, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1526, v1527, v1528, v1529, v1530), v1531 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xffffff10), v1532 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4), fun_8048d50(ecx1143, v1532, v1531, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1533, v1534, v1535), ecx1143 = v1525, fun_8048cb0(v1532, v1531, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)"), v1512 = reinterpret_cast<void**>(8), v1513 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffd38), fun_8048d50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1513, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1536, v1537, v1538), fun_8048b50(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1513, 8, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1539, v1540, v1541, v1542, v1543), eax1544 = reinterpret_cast<uint1_t>(v1525 == ebx1524), v1525 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v1525) + 1), eax1544 == 0) {
         }
     }
-    fun_8048c70(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1513, v1512, v1048, 11, 0x807144a, v1545, v1546, v1547, v1548, v1549);
+    fun_8048c70(ecx1143, reinterpret_cast<int32_t>(ebp20) + 0xfffffbe4, v1513, v1512, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1545, v1546, v1547, v1548, v1549);
     if (!v61) {
-        v1512 = reinterpret_cast<void**>(0x80713d7);
-        v1513 = reinterpret_cast<void**>(0x80715c0);
-        fun_8048c30(ecx1143, "At line 263 of file linopt.F90", 0x80715c0, 0x80713d7, v1048, 11, 0x807144a, v1550, v1551, v1552, v1553, v1554, v1118, v1555, v1556, v1557, v1120, v58, 0, v56, 0);
+        v1512 = reinterpret_cast<void**>("s");
+        v1513 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1143, "At line 263 of file linopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "s", v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1550, v1551, v1552, v1553, v1554, v1118, v1555, v1556, v1557, v1120, v58, 0, v56, 0);
     }
-    fun_8048bc0(ecx1143, v61, v1513, v1512, v1048, 11, 0x807144a, v1558, v1559, v1560, v1561, v1562, v1118, v1563, v1564, v1565, v1120, v58, 0, v56, 0, v45, 0);
+    fun_8048bc0(ecx1143, v61, v1513, v1512, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1558, v1559, v1560, v1561, v1562, v1118, v1563, v1564, v1565, v1120, v58, 0, v56, 0, v45, 0);
     if (!v62) {
-        v1512 = reinterpret_cast<void**>(0x80713fb);
-        v1513 = reinterpret_cast<void**>(0x80715c0);
-        fun_8048c30(ecx1143, "At line 263 of file linopt.F90", 0x80715c0, 0x80713fb, v1048, 11, 0x807144a, v1566, v1567, v1568, v1569, v1570, v1118, v1571, v1572, v1573, v1120, v58, 0, v56, 0);
+        v1512 = reinterpret_cast<void**>("sym");
+        v1513 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1143, "At line 263 of file linopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "sym", v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1566, v1567, v1568, v1569, v1570, v1118, v1571, v1572, v1573, v1120, v58, 0, v56, 0);
     }
-    fun_8048bc0(ecx1143, v62, v1513, v1512, v1048, 11, 0x807144a, v1574, v1575, v1576, v1577, v1578, v1118, v1579, v1580, v1581, v1120, v58, 0, v56, 0, v45, 0);
+    fun_8048bc0(ecx1143, v62, v1513, v1512, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1574, v1575, v1576, v1577, v1578, v1118, v1579, v1580, v1581, v1120, v58, 0, v56, 0, v45, 0);
     if (!v59) {
-        v1512 = reinterpret_cast<void**>(0x807137b);
-        v1513 = reinterpret_cast<void**>(0x80715c0);
-        fun_8048c30(ecx1143, "At line 263 of file linopt.F90", 0x80715c0, 0x807137b, v1048, 11, 0x807144a, v1582, v1583, v1584, v1585, v1586, v1118, v1587, v1588, v1589, v1120, v58, 0, v56, 0);
+        v1512 = reinterpret_cast<void**>("chi");
+        v1513 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1143, "At line 263 of file linopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "chi", v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1582, v1583, v1584, v1585, v1586, v1118, v1587, v1588, v1589, v1120, v58, 0, v56, 0);
     }
-    fun_8048bc0(ecx1143, v59, v1513, v1512, v1048, 11, 0x807144a, v1590, v1591, v1592, v1593, v1594, v1118, v1595, v1596, v1597, v1120, v58, 0, v56, 0, v45, 0);
+    fun_8048bc0(ecx1143, v59, v1513, v1512, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1590, v1591, v1592, v1593, v1594, v1118, v1595, v1596, v1597, v1120, v58, 0, v56, 0, v45, 0);
     if (!v60) {
-        v1512 = reinterpret_cast<void**>(0x80713d3);
-        v1513 = reinterpret_cast<void**>(0x80715c0);
-        fun_8048c30(ecx1143, "At line 263 of file linopt.F90", 0x80715c0, 0x80713d3, v1048, 11, 0x807144a, v1598, v1599, v1600, v1601, v1602, v1118, v1603, v1604, v1605, v1120, v58, 0, v56, 0);
+        v1512 = reinterpret_cast<void**>("eps");
+        v1513 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1143, "At line 263 of file linopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "eps", v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1598, v1599, v1600, v1601, v1602, v1118, v1603, v1604, v1605, v1120, v58, 0, v56, 0);
     }
-    fun_8048bc0(ecx1143, v60, v1513, v1512, v1048, 11, 0x807144a, v1606, v1607, v1608, v1609, v1610, v1118, v1611, v1612, v1613, v1120, v58, 0, v56, 0, v45, 0);
+    fun_8048bc0(ecx1143, v60, v1513, v1512, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1606, v1607, v1608, v1609, v1610, v1118, v1611, v1612, v1613, v1120, v58, 0, v56, 0, v45, 0);
     if (!1) {
-        fun_8048bc0(ecx1143, 0, v1513, v1512, v1048, 11, 0x807144a, v1614, v1615, v1616, v1617, v1618, v1118, v1619, v1620, v1621, v1120, v58, 0, v56, 0, v45, 0);
-    }
-    if (!1) {
-        fun_8048bc0(ecx1143, 0, v1513, v1512, v1048, 11, 0x807144a, v1622, v1623, v1624, v1625, v1626, v1118, v1627, v1628, v1629, v1120, v58, 0, v56, 0, v45, 0);
+        fun_8048bc0(ecx1143, 0, v1513, v1512, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1614, v1615, v1616, v1617, v1618, v1118, v1619, v1620, v1621, v1120, v58, 0, v56, 0, v45, 0);
     }
     if (!1) {
-        fun_8048bc0(ecx1143, 0, v1513, v1512, v1048, 11, 0x807144a, v1630, v1631, v1632, v1633, v1634, v1118, v1635, v1636, v1637, v1120, v58, 0, v56, 0, v45, 0);
+        fun_8048bc0(ecx1143, 0, v1513, v1512, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1622, v1623, v1624, v1625, v1626, v1118, v1627, v1628, v1629, v1120, v58, 0, v56, 0, v45, 0);
+    }
+    if (!1) {
+        fun_8048bc0(ecx1143, 0, v1513, v1512, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1630, v1631, v1632, v1633, v1634, v1118, v1635, v1636, v1637, v1120, v58, 0, v56, 0, v45, 0);
     }
     eax1638 = reinterpret_cast<void**>(0);
     if (!1) {
-        eax1638 = fun_8048bc0(ecx1143, 0, v1513, v1512, v1048, 11, 0x807144a, v1639, v1640, v1641, v1642, v1643, v1118, v1644, v1645, v1646, v1120, v58, 0, v56, 0, v45, 0);
+        eax1638 = fun_8048bc0(ecx1143, 0, v1513, v1512, v1048, 11, "-linopt.outofFORMATTEDWRITE(a) # Energy(eV)         Im(chi1(w))(a,2i3,a) #calculated the component:of linear susceptibilitycalculated the component:(a,2es16.6) #broadening: with broadening:(a,es16.6) #scissors shift:and scissors shift:(a,es16.6,a,es16.6,a) #energy window:eVHaenergy window:(2es16.6)", v1639, v1640, v1641, v1642, v1643, v1118, v1644, v1645, v1646, v1120, v58, 0, v56, 0, v45, 0);
     }
     return eax1638;
     addr_804ef62_66:
-    v169 = reinterpret_cast<void**>(0x80713d7);
-    v170 = reinterpret_cast<void**>(0x8071380);
-    fun_8048c30(ecx57, "At line 158 of file linopt.F90", 0x8071380, 0x80713d7, v1647, v1648, v1649, v1650, v1651, v1652, v1653, v1654, v1655, v1656, v1657, v1658, v1659, v58, 0, v56, 0);
+    v169 = reinterpret_cast<void**>("s");
+    v170 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+    fun_8048c30(ecx57, "At line 158 of file linopt.F90", "Attempting to allocate already allocated array '%s'", "s", v1647, v1648, v1649, v1650, v1651, v1652, v1653, v1654, v1655, v1656, v1657, v1658, v1659, v58, 0, v56, 0);
     goto addr_804f020_73;
     addr_804ee98_55:
     edx870 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(edx869) << 4);
@@ -3982,52 +3982,52 @@ void** linopt_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6,
 
 struct s3 {
     signed char[13] pad13;
-    void** f13;
+    void** fd;
 };
 
 struct s4 {
     signed char[13] pad13;
-    void** f13;
+    void** fd;
 };
 
 struct s5 {
     signed char[13] pad13;
-    void** f13;
+    void** fd;
 };
 
 struct s6 {
     signed char[13] pad13;
-    void** f13;
+    void** fd;
 };
 
 struct s7 {
     signed char[10] pad10;
-    void** f10;
+    void** fa;
 };
 
 struct s8 {
     signed char[10] pad10;
-    void** f10;
+    void** fa;
 };
 
 struct s9 {
     signed char[10] pad10;
-    void** f10;
+    void** fa;
 };
 
 struct s10 {
     signed char[10] pad10;
-    void** f10;
+    void** fa;
 };
 
 struct s11 {
     signed char[11] pad11;
-    void** f11;
+    void** fb;
 };
 
 struct s12 {
     signed char[11] pad11;
-    void** f11;
+    void** fb;
 };
 
 void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16, void** a17, void** a18, void** a19, void** a20) {
@@ -9365,160 +9365,160 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
     }
     ecx113 = v114;
     v115 = ecx113;
-    fun_8048c20(&v116->f13, eax100, v117, v115, 13, 0x8071672, v118, v119, v120, v121, v122, v123, v124, v125, v126, v127, v50, 0, v49, 0, v45, 0);
+    fun_8048c20(&v116->fd, eax100, v117, v115, 13, "-ChiTotIm.out-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v118, v119, v120, v121, v122, v123, v124, v125, v126, v127, v50, 0, v49, 0, v45, 0);
     if (!(reinterpret_cast<uint1_t>(v128 < 0) | reinterpret_cast<uint1_t>(v128 == 0)) && v129) {
-        fun_8048bc0(ecx113, v129, eax100, v117, v115, 13, 0x8071672, v130, v131, v132, v133, v134, v135, v136, v137, v138, v139, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx113, v129, eax100, v117, v115, 13, "-ChiTotIm.out-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v130, v131, v132, v133, v134, v135, v136, v137, v138, v139, v50, 0, v49, 0, v45, 0);
     }
-    ebx140 = reinterpret_cast<void**>(&v141->f13);
+    ebx140 = reinterpret_cast<void**>(&v141->fd);
     if (reinterpret_cast<int32_t>(ebx140) <= reinterpret_cast<int32_t>(0xff)) {
-        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffffbc8, eax100, ebx140, v115, 13, 0x8071672, v142, v143, v144, v145, v146, v147, v148, v149, v150, v151, v50, 0, v49, 0, v45, 0);
+        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffffbc8, eax100, ebx140, v115, 13, "-ChiTotIm.out-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v142, v143, v144, v145, v146, v147, v148, v149, v150, v151, v50, 0, v49, 0, v45, 0);
         ecx113 = reinterpret_cast<void**>(0x100 - reinterpret_cast<uint32_t>(ebx140));
         v152 = ecx113;
         v153 = reinterpret_cast<void**>(32);
-        fun_8048b90(reinterpret_cast<int32_t>(ebp21) - 0x438 + reinterpret_cast<uint32_t>(ebx140), 32, v152, v115, 13, 0x8071672, v154, v155, v156, v157, v158, v159, v160, v161, v162, v163, v50, 0, v49, 0, v45, 0, ebx43);
+        fun_8048b90(reinterpret_cast<int32_t>(ebp21) - 0x438 + reinterpret_cast<uint32_t>(ebx140), 32, v152, v115, 13, "-ChiTotIm.out-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v154, v155, v156, v157, v158, v159, v160, v161, v162, v163, v50, 0, v49, 0, v45, 0, ebx43);
     } else {
         v152 = reinterpret_cast<void**>(0x100);
         v153 = eax100;
-        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffffbc8, v153, 0x100, v115, 13, 0x8071672, v164, v165, v166, v167, v168, v169, v170, v171, v172, v173, v50, 0, v49, 0, v45, 0);
+        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffffbc8, v153, 0x100, v115, 13, "-ChiTotIm.out-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v164, v165, v166, v167, v168, v169, v170, v171, v172, v173, v50, 0, v49, 0, v45, 0);
     }
     if (eax100) {
-        fun_8048bc0(ecx113, eax100, v153, v152, v115, 13, 0x8071672, v174, v175, v176, v177, v178, v179, v180, v181, v182, v183, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx113, eax100, v153, v152, v115, 13, "-ChiTotIm.out-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v174, v175, v176, v177, v178, v179, v180, v181, v182, v183, v50, 0, v49, 0, v45, 0);
     }
     v184 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff588);
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp21) + 0xfffff58c, v184, 0x100, a19, 13, 0x8071672, v185, v186, v187, v188, v189, v190, v191, v192, v193, v194, v50, 0, v49, 0, v45, 0);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp21) + 0xfffff58c, v184, 0x100, a19, 13, "-ChiTotIm.out-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v185, v186, v187, v188, v189, v190, v191, v192, v193, v194, v50, 0, v49, 0, v45, 0);
     eax195 = reinterpret_cast<void**>(v196 + 13 << 5);
     if (reinterpret_cast<int32_t>(eax195) < reinterpret_cast<int32_t>(0)) {
-        eax195 = fun_8048c80(ecx113, "Attempt to allocate a negative amount of memory.", v184, 0x100, a19, 13, 0x8071672, v197, v198, v199, v200, v201, v202, v203, v204, v205, v206, v50, 0, v49, 0, v45, 0);
+        eax195 = fun_8048c80(ecx113, "Attempt to allocate a negative amount of memory.", v184, 0x100, a19, 13, "-ChiTotIm.out-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v197, v198, v199, v200, v201, v202, v203, v204, v205, v206, v50, 0, v49, 0, v45, 0);
     }
     if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax195) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax195 == 0)) {
         eax195 = reinterpret_cast<void**>(1);
     }
-    eax217 = fun_8048ce0(ecx113, eax195, v184, 0x100, a19, 13, 0x8071672, v207, v208, v209, v210, v211, v212, v213, v214, v215, v216, v50, 0, v49, 0, v45, 0);
+    eax217 = fun_8048ce0(ecx113, eax195, v184, 0x100, a19, 13, "-ChiTotIm.out-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v207, v208, v209, v210, v211, v212, v213, v214, v215, v216, v50, 0, v49, 0, v45, 0);
     if (!eax217) {
-        eax217 = fun_8048b10(ecx113, "Memory allocation failed", v184, 0x100, a19, 13, 0x8071672, v218, v219, v220, v221, v222, v223, v224, v225, v226, v227, v50, 0, v49, 0, v45, 0);
+        eax217 = fun_8048b10(ecx113, "Memory allocation failed", v184, 0x100, a19, 13, "-ChiTotIm.out-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v218, v219, v220, v221, v222, v223, v224, v225, v226, v227, v50, 0, v49, 0, v45, 0);
     }
     ecx228 = v229;
     v230 = ecx228;
-    fun_8048c20(&v231->f13, eax217, v232, v230, 13, 0x807167f, v233, v234, v235, v236, v237, v238, v239, v240, v241, v242, v50, 0, v49, 0, v45, 0);
+    fun_8048c20(&v231->fd, eax217, v232, v230, 13, "-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v233, v234, v235, v236, v237, v238, v239, v240, v241, v242, v50, 0, v49, 0, v45, 0);
     if (!(reinterpret_cast<uint1_t>(v243 < 0) | reinterpret_cast<uint1_t>(v243 == 0)) && v244) {
-        fun_8048bc0(ecx228, v244, eax217, v232, v230, 13, 0x807167f, v245, v246, v247, v248, v249, v250, v251, v252, v253, v254, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx228, v244, eax217, v232, v230, 13, "-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v245, v246, v247, v248, v249, v250, v251, v252, v253, v254, v50, 0, v49, 0, v45, 0);
     }
-    ebx255 = reinterpret_cast<void**>(&v256->f13);
+    ebx255 = reinterpret_cast<void**>(&v256->fd);
     if (reinterpret_cast<int32_t>(ebx255) <= reinterpret_cast<int32_t>(0xff)) {
-        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffffac8, eax217, ebx255, v230, 13, 0x807167f, v257, v258, v259, v260, v261, v262, v263, v264, v265, v266, v50, 0, v49, 0, v45, 0);
+        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffffac8, eax217, ebx255, v230, 13, "-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v257, v258, v259, v260, v261, v262, v263, v264, v265, v266, v50, 0, v49, 0, v45, 0);
         ecx228 = reinterpret_cast<void**>(0x100 - reinterpret_cast<uint32_t>(ebx255));
         v267 = ecx228;
         v268 = reinterpret_cast<void**>(32);
-        fun_8048b90(reinterpret_cast<int32_t>(ebp21) - 0x538 + reinterpret_cast<uint32_t>(ebx255), 32, v267, v230, 13, 0x807167f, v269, v270, v271, v272, v273, v274, v275, v276, v277, v278, v50, 0, v49, 0, v45, 0, ebx43);
+        fun_8048b90(reinterpret_cast<int32_t>(ebp21) - 0x538 + reinterpret_cast<uint32_t>(ebx255), 32, v267, v230, 13, "-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v269, v270, v271, v272, v273, v274, v275, v276, v277, v278, v50, 0, v49, 0, v45, 0, ebx43);
     } else {
         v267 = reinterpret_cast<void**>(0x100);
         v268 = eax217;
-        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffffac8, v268, 0x100, v230, 13, 0x807167f, v279, v280, v281, v282, v283, v284, v285, v286, v287, v288, v50, 0, v49, 0, v45, 0);
+        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffffac8, v268, 0x100, v230, 13, "-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v279, v280, v281, v282, v283, v284, v285, v286, v287, v288, v50, 0, v49, 0, v45, 0);
     }
     if (eax217) {
-        fun_8048bc0(ecx228, eax217, v268, v267, v230, 13, 0x807167f, v289, v290, v291, v292, v293, v294, v295, v296, v297, v298, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx228, eax217, v268, v267, v230, 13, "-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v289, v290, v291, v292, v293, v294, v295, v296, v297, v298, v50, 0, v49, 0, v45, 0);
     }
     v299 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff580);
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp21) + 0xfffff584, v299, 0x100, a19, 13, 0x807167f, v300, v301, v302, v303, v304, v305, v306, v307, v308, v309, v50, 0, v49, 0, v45, 0);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp21) + 0xfffff584, v299, 0x100, a19, 13, "-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v300, v301, v302, v303, v304, v305, v306, v307, v308, v309, v50, 0, v49, 0, v45, 0);
     eax310 = reinterpret_cast<void**>(v311 + 10 << 5);
     if (reinterpret_cast<int32_t>(eax310) < reinterpret_cast<int32_t>(0)) {
-        eax310 = fun_8048c80(ecx228, "Attempt to allocate a negative amount of memory.", v299, 0x100, a19, 13, 0x807167f, v312, v313, v314, v315, v316, v317, v318, v319, v320, v321, v50, 0, v49, 0, v45, 0);
+        eax310 = fun_8048c80(ecx228, "Attempt to allocate a negative amount of memory.", v299, 0x100, a19, 13, "-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v312, v313, v314, v315, v316, v317, v318, v319, v320, v321, v50, 0, v49, 0, v45, 0);
     }
     if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax310) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax310 == 0)) {
         eax310 = reinterpret_cast<void**>(1);
     }
-    eax332 = fun_8048ce0(ecx228, eax310, v299, 0x100, a19, 13, 0x807167f, v322, v323, v324, v325, v326, v327, v328, v329, v330, v331, v50, 0, v49, 0, v45, 0);
+    eax332 = fun_8048ce0(ecx228, eax310, v299, 0x100, a19, 13, "-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v322, v323, v324, v325, v326, v327, v328, v329, v330, v331, v50, 0, v49, 0, v45, 0);
     if (!eax332) {
-        eax332 = fun_8048b10(ecx228, "Memory allocation failed", v299, 0x100, a19, 13, 0x807167f, v333, v334, v335, v336, v337, v338, v339, v340, v341, v342, v50, 0, v49, 0, v45, 0);
+        eax332 = fun_8048b10(ecx228, "Memory allocation failed", v299, 0x100, a19, 13, "-ChiTotRe.out-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v333, v334, v335, v336, v337, v338, v339, v340, v341, v342, v50, 0, v49, 0, v45, 0);
     }
     ecx343 = v344;
     v345 = ecx343;
-    fun_8048c20(&v346->f10, eax332, v347, v345, 10, 0x807168c, v348, v349, v350, v351, v352, v353, v354, v355, v356, v357, v50, 0, v49, 0, v45, 0);
+    fun_8048c20(&v346->fa, eax332, v347, v345, 10, "-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v348, v349, v350, v351, v352, v353, v354, v355, v356, v357, v50, 0, v49, 0, v45, 0);
     if (!(reinterpret_cast<uint1_t>(v358 < 0) | reinterpret_cast<uint1_t>(v358 == 0)) && v359) {
-        fun_8048bc0(ecx343, v359, eax332, v347, v345, 10, 0x807168c, v360, v361, v362, v363, v364, v365, v366, v367, v368, v369, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx343, v359, eax332, v347, v345, 10, "-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v360, v361, v362, v363, v364, v365, v366, v367, v368, v369, v50, 0, v49, 0, v45, 0);
     }
-    ebx370 = reinterpret_cast<void**>(&v371->f10);
+    ebx370 = reinterpret_cast<void**>(&v371->fa);
     if (reinterpret_cast<int32_t>(ebx370) <= reinterpret_cast<int32_t>(0xff)) {
-        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffff9c8, eax332, ebx370, v345, 10, 0x807168c, v372, v373, v374, v375, v376, v377, v378, v379, v380, v381, v50, 0, v49, 0, v45, 0);
+        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffff9c8, eax332, ebx370, v345, 10, "-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v372, v373, v374, v375, v376, v377, v378, v379, v380, v381, v50, 0, v49, 0, v45, 0);
         ecx343 = reinterpret_cast<void**>(0x100 - reinterpret_cast<uint32_t>(ebx370));
         v382 = ecx343;
         v383 = reinterpret_cast<void**>(32);
-        fun_8048b90(reinterpret_cast<int32_t>(ebp21) - 0x638 + reinterpret_cast<uint32_t>(ebx370), 32, v382, v345, 10, 0x807168c, v384, v385, v386, v387, v388, v389, v390, v391, v392, v393, v50, 0, v49, 0, v45, 0, ebx43);
+        fun_8048b90(reinterpret_cast<int32_t>(ebp21) - 0x638 + reinterpret_cast<uint32_t>(ebx370), 32, v382, v345, 10, "-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v384, v385, v386, v387, v388, v389, v390, v391, v392, v393, v50, 0, v49, 0, v45, 0, ebx43);
     } else {
         v382 = reinterpret_cast<void**>(0x100);
         v383 = eax332;
-        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffff9c8, v383, 0x100, v345, 10, 0x807168c, v394, v395, v396, v397, v398, v399, v400, v401, v402, v403, v50, 0, v49, 0, v45, 0);
+        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffff9c8, v383, 0x100, v345, 10, "-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v394, v395, v396, v397, v398, v399, v400, v401, v402, v403, v50, 0, v49, 0, v45, 0);
     }
     if (eax332) {
-        fun_8048bc0(ecx343, eax332, v383, v382, v345, 10, 0x807168c, v404, v405, v406, v407, v408, v409, v410, v411, v412, v413, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx343, eax332, v383, v382, v345, 10, "-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v404, v405, v406, v407, v408, v409, v410, v411, v412, v413, v50, 0, v49, 0, v45, 0);
     }
     v414 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff578);
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp21) + 0xfffff57c, v414, 0x100, a19, 10, 0x807168c, v415, v416, v417, v418, v419, v420, v421, v422, v423, v424, v50, 0, v49, 0, v45, 0);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp21) + 0xfffff57c, v414, 0x100, a19, 10, "-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v415, v416, v417, v418, v419, v420, v421, v422, v423, v424, v50, 0, v49, 0, v45, 0);
     eax425 = reinterpret_cast<void**>(v426 + 10 << 5);
     if (reinterpret_cast<int32_t>(eax425) < reinterpret_cast<int32_t>(0)) {
-        eax425 = fun_8048c80(ecx343, "Attempt to allocate a negative amount of memory.", v414, 0x100, a19, 10, 0x807168c, v427, v428, v429, v430, v431, v432, v433, v434, v435, v436, v50, 0, v49, 0, v45, 0);
+        eax425 = fun_8048c80(ecx343, "Attempt to allocate a negative amount of memory.", v414, 0x100, a19, 10, "-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v427, v428, v429, v430, v431, v432, v433, v434, v435, v436, v50, 0, v49, 0, v45, 0);
     }
     if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax425) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax425 == 0)) {
         eax425 = reinterpret_cast<void**>(1);
     }
-    eax447 = fun_8048ce0(ecx343, eax425, v414, 0x100, a19, 10, 0x807168c, v437, v438, v439, v440, v441, v442, v443, v444, v445, v446, v50, 0, v49, 0, v45, 0);
+    eax447 = fun_8048ce0(ecx343, eax425, v414, 0x100, a19, 10, "-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v437, v438, v439, v440, v441, v442, v443, v444, v445, v446, v50, 0, v49, 0, v45, 0);
     if (!eax447) {
-        eax447 = fun_8048b10(ecx343, "Memory allocation failed", v414, 0x100, a19, 10, 0x807168c, v448, v449, v450, v451, v452, v453, v454, v455, v456, v457, v50, 0, v49, 0, v45, 0);
+        eax447 = fun_8048b10(ecx343, "Memory allocation failed", v414, 0x100, a19, 10, "-ChiIm.out-ChiRe.out-ChiAbs.outnlinopt.F90", v448, v449, v450, v451, v452, v453, v454, v455, v456, v457, v50, 0, v49, 0, v45, 0);
     }
     ecx458 = v459;
     v460 = ecx458;
-    fun_8048c20(&v461->f10, eax447, v462, v460, 10, 0x8071696, v463, v464, v465, v466, v467, v468, v469, v470, v471, v472, v50, 0, v49, 0, v45, 0);
+    fun_8048c20(&v461->fa, eax447, v462, v460, 10, "-ChiRe.out-ChiAbs.outnlinopt.F90", v463, v464, v465, v466, v467, v468, v469, v470, v471, v472, v50, 0, v49, 0, v45, 0);
     if (!(reinterpret_cast<uint1_t>(v473 < 0) | reinterpret_cast<uint1_t>(v473 == 0)) && v474) {
-        fun_8048bc0(ecx458, v474, eax447, v462, v460, 10, 0x8071696, v475, v476, v477, v478, v479, v480, v481, v482, v483, v484, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx458, v474, eax447, v462, v460, 10, "-ChiRe.out-ChiAbs.outnlinopt.F90", v475, v476, v477, v478, v479, v480, v481, v482, v483, v484, v50, 0, v49, 0, v45, 0);
     }
-    ebx485 = reinterpret_cast<void**>(&v486->f10);
+    ebx485 = reinterpret_cast<void**>(&v486->fa);
     if (reinterpret_cast<int32_t>(ebx485) <= reinterpret_cast<int32_t>(0xff)) {
-        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffff8c8, eax447, ebx485, v460, 10, 0x8071696, v487, v488, v489, v490, v491, v492, v493, v494, v495, v496, v50, 0, v49, 0, v45, 0);
+        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffff8c8, eax447, ebx485, v460, 10, "-ChiRe.out-ChiAbs.outnlinopt.F90", v487, v488, v489, v490, v491, v492, v493, v494, v495, v496, v50, 0, v49, 0, v45, 0);
         ecx458 = reinterpret_cast<void**>(0x100 - reinterpret_cast<uint32_t>(ebx485));
         v497 = ecx458;
         v498 = reinterpret_cast<void**>(32);
-        fun_8048b90(reinterpret_cast<int32_t>(ebp21) - 0x738 + reinterpret_cast<uint32_t>(ebx485), 32, v497, v460, 10, 0x8071696, v499, v500, v501, v502, v503, v504, v505, v506, v507, v508, v50, 0, v49, 0, v45, 0, ebx43);
+        fun_8048b90(reinterpret_cast<int32_t>(ebp21) - 0x738 + reinterpret_cast<uint32_t>(ebx485), 32, v497, v460, 10, "-ChiRe.out-ChiAbs.outnlinopt.F90", v499, v500, v501, v502, v503, v504, v505, v506, v507, v508, v50, 0, v49, 0, v45, 0, ebx43);
     } else {
         v497 = reinterpret_cast<void**>(0x100);
         v498 = eax447;
-        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffff8c8, v498, 0x100, v460, 10, 0x8071696, v509, v510, v511, v512, v513, v514, v515, v516, v517, v518, v50, 0, v49, 0, v45, 0);
+        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffff8c8, v498, 0x100, v460, 10, "-ChiRe.out-ChiAbs.outnlinopt.F90", v509, v510, v511, v512, v513, v514, v515, v516, v517, v518, v50, 0, v49, 0, v45, 0);
     }
     if (eax447) {
-        fun_8048bc0(ecx458, eax447, v498, v497, v460, 10, 0x8071696, v519, v520, v521, v522, v523, v524, v525, v526, v527, v528, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx458, eax447, v498, v497, v460, 10, "-ChiRe.out-ChiAbs.outnlinopt.F90", v519, v520, v521, v522, v523, v524, v525, v526, v527, v528, v50, 0, v49, 0, v45, 0);
     }
     v529 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff570);
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp21) + 0xfffff574, v529, 0x100, a19, 10, 0x8071696, v530, v531, v532, v533, v534, v535, v536, v537, v538, v539, v50, 0, v49, 0, v45, 0);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp21) + 0xfffff574, v529, 0x100, a19, 10, "-ChiRe.out-ChiAbs.outnlinopt.F90", v530, v531, v532, v533, v534, v535, v536, v537, v538, v539, v50, 0, v49, 0, v45, 0);
     eax540 = reinterpret_cast<void**>(v541 + 11 << 5);
     if (reinterpret_cast<int32_t>(eax540) < reinterpret_cast<int32_t>(0)) {
-        eax540 = fun_8048c80(ecx458, "Attempt to allocate a negative amount of memory.", v529, 0x100, a19, 10, 0x8071696, v542, v543, v544, v545, v546, v547, v548, v549, v550, v551, v50, 0, v49, 0, v45, 0);
+        eax540 = fun_8048c80(ecx458, "Attempt to allocate a negative amount of memory.", v529, 0x100, a19, 10, "-ChiRe.out-ChiAbs.outnlinopt.F90", v542, v543, v544, v545, v546, v547, v548, v549, v550, v551, v50, 0, v49, 0, v45, 0);
     }
     if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax540) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax540 == 0)) {
         eax540 = reinterpret_cast<void**>(1);
     }
-    eax562 = fun_8048ce0(ecx458, eax540, v529, 0x100, a19, 10, 0x8071696, v552, v553, v554, v555, v556, v557, v558, v559, v560, v561, v50, 0, v49, 0, v45, 0);
+    eax562 = fun_8048ce0(ecx458, eax540, v529, 0x100, a19, 10, "-ChiRe.out-ChiAbs.outnlinopt.F90", v552, v553, v554, v555, v556, v557, v558, v559, v560, v561, v50, 0, v49, 0, v45, 0);
     if (!eax562) {
-        eax562 = fun_8048b10(ecx458, "Memory allocation failed", v529, 0x100, a19, 10, 0x8071696, v563, v564, v565, v566, v567, v568, v569, v570, v571, v572, v50, 0, v49, 0, v45, 0);
+        eax562 = fun_8048b10(ecx458, "Memory allocation failed", v529, 0x100, a19, 10, "-ChiRe.out-ChiAbs.outnlinopt.F90", v563, v564, v565, v566, v567, v568, v569, v570, v571, v572, v50, 0, v49, 0, v45, 0);
     }
     ecx573 = v574;
     v575 = ecx573;
-    fun_8048c20(&v576->f11, eax562, v577, v575, 11, 0x80716a0, v578, v579, v580, v581, v582, v583, v584, v585, v586, v587, v50, 0, v49, 0, v45, 0);
+    fun_8048c20(&v576->fb, eax562, v577, v575, 11, "-ChiAbs.outnlinopt.F90", v578, v579, v580, v581, v582, v583, v584, v585, v586, v587, v50, 0, v49, 0, v45, 0);
     if (!(reinterpret_cast<uint1_t>(v588 < 0) | reinterpret_cast<uint1_t>(v588 == 0)) && v589) {
-        fun_8048bc0(ecx573, v589, eax562, v577, v575, 11, 0x80716a0, v590, v591, v592, v593, v594, v595, v596, v597, v598, v599, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx573, v589, eax562, v577, v575, 11, "-ChiAbs.outnlinopt.F90", v590, v591, v592, v593, v594, v595, v596, v597, v598, v599, v50, 0, v49, 0, v45, 0);
     }
-    ebx600 = reinterpret_cast<void**>(&v601->f11);
+    ebx600 = reinterpret_cast<void**>(&v601->fb);
     if (reinterpret_cast<int32_t>(ebx600) <= reinterpret_cast<int32_t>(0xff)) {
-        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffff7c8, eax562, ebx600, v575, 11, 0x80716a0, v602, v603, v604, v605, v606, v607, v608, v609, v610, v611, v50, 0, v49, 0, v45, 0);
+        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffff7c8, eax562, ebx600, v575, 11, "-ChiAbs.outnlinopt.F90", v602, v603, v604, v605, v606, v607, v608, v609, v610, v611, v50, 0, v49, 0, v45, 0);
         ecx573 = reinterpret_cast<void**>(0x100 - reinterpret_cast<uint32_t>(ebx600));
         v612 = ecx573;
         v613 = reinterpret_cast<void**>(32);
-        fun_8048b90(reinterpret_cast<int32_t>(ebp21) - 0x838 + reinterpret_cast<uint32_t>(ebx600), 32, v612, v575, 11, 0x80716a0, v614, v615, v616, v617, v618, v619, v620, v621, v622, v623, v50, 0, v49, 0, v45, 0, ebx43);
+        fun_8048b90(reinterpret_cast<int32_t>(ebp21) - 0x838 + reinterpret_cast<uint32_t>(ebx600), 32, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v614, v615, v616, v617, v618, v619, v620, v621, v622, v623, v50, 0, v49, 0, v45, 0, ebx43);
     } else {
         v612 = reinterpret_cast<void**>(0x100);
         v613 = eax562;
-        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffff7c8, v613, 0x100, v575, 11, 0x80716a0, v624, v625, v626, v627, v628, v629, v630, v631, v632, v633, v50, 0, v49, 0, v45, 0);
+        fun_8048d10(reinterpret_cast<int32_t>(ebp21) + 0xfffff7c8, v613, 0x100, v575, 11, "-ChiAbs.outnlinopt.F90", v624, v625, v626, v627, v628, v629, v630, v631, v632, v633, v50, 0, v49, 0, v45, 0);
     }
     if (eax562) {
-        fun_8048bc0(ecx573, eax562, v613, v612, v575, 11, 0x80716a0, v634, v635, v636, v637, v638, v639, v640, v641, v642, v643, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx573, eax562, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v634, v635, v636, v637, v638, v639, v640, v641, v642, v643, v50, 0, v49, 0, v45, 0);
     }
     __asm__("fld qword [0x8071f80]");
     __asm__("fstp qword [ebp-0x58]");
@@ -9547,21 +9547,21 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
             __asm__("fstp st0");
             zf648 = reinterpret_cast<uint1_t>(static_cast<uint32_t>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<uint32_t>(tmp32_647) < reinterpret_cast<uint32_t>(eax646)) | reinterpret_cast<uint1_t>(tmp32_647 == 0))))) == 0);
             if (!zf648 && ((zf649 = reinterpret_cast<uint1_t>(static_cast<uint32_t>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(static_cast<uint32_t>(zf648))))) == 0), !zf649) && (reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(static_cast<uint32_t>(zf649))) && ((eax650 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(v645) << 3), tmp32_651 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(eax650) + reinterpret_cast<uint32_t>(v645)), reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<uint32_t>(tmp32_651) < reinterpret_cast<uint32_t>(eax650)) | reinterpret_cast<uint1_t>(tmp32_651 == 0)))) && ((eax652 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(v645) << 3), tmp32_653 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(eax652) + reinterpret_cast<uint32_t>(v645)), reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<uint32_t>(tmp32_653) < reinterpret_cast<uint32_t>(eax652)) | reinterpret_cast<uint1_t>(tmp32_653 == 0)))) && ((eax654 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(v645) << 3), tmp32_655 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(eax654) + reinterpret_cast<uint32_t>(v645)), reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<uint32_t>(tmp32_655) < reinterpret_cast<uint32_t>(eax654)) | reinterpret_cast<uint1_t>(tmp32_655 == 0)))) && ((eax656 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(v645) << 3), tmp32_657 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(eax656) + reinterpret_cast<uint32_t>(v645)), reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<uint32_t>(tmp32_657) < reinterpret_cast<uint32_t>(eax656)) | reinterpret_cast<uint1_t>(tmp32_657 == 0)))) && ((eax658 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(v645) << 3), tmp32_659 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(eax658) + reinterpret_cast<uint32_t>(v645)), reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<uint32_t>(tmp32_659) < reinterpret_cast<uint32_t>(eax658)) | reinterpret_cast<uint1_t>(tmp32_659 == 0)))) && (edx660 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v645) + 1), eax661 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(edx660) << 3), tmp32_662 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(eax661) + reinterpret_cast<uint32_t>(edx660)), reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<uint32_t>(tmp32_662) < reinterpret_cast<uint32_t>(eax661)) | reinterpret_cast<uint1_t>(tmp32_662 == 0)))))))))))) {
-                fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, 0x80716a0, v663, v664, v665, v666, v667);
-                fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80716b8, 41, v575, 11, 0x80716a0, v668, v669, v670, v671, v672);
-                fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80716b8, 41, v575, 11, 0x80716a0, v673, v674, v675, v676, v677);
-                fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80716b8, 41, v575, 11, 0x80716a0, v678, v679, v680, v681, v682);
-                fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80716e4, 41, v575, 11, 0x80716a0, v683, v684, v685, v686, v687);
-                fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80716e4, 41, v575, 11, 0x80716a0, v688, v689, v690, v691, v692);
-                fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80716e4, 41, v575, 11, 0x80716a0, v693, v694, v695, v696, v697);
-                fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x8071710, 41, v575, 11, 0x80716a0, v698, v699, v700, v701, v702);
-                fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x8071710, 41, v575, 11, 0x80716a0, v703, v704, v705, v706, v707);
-                fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x8071710, 41, v575, 11, 0x80716a0, v708, v709, v710, v711, v712);
+                fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v663, v664, v665, v666, v667);
+                fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "-----------------------------------------", 41, v575, 11, "-ChiAbs.outnlinopt.F90", v668, v669, v670, v671, v672);
+                fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "-----------------------------------------", 41, v575, 11, "-ChiAbs.outnlinopt.F90", v673, v674, v675, v676, v677);
+                fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "-----------------------------------------", 41, v575, 11, "-ChiAbs.outnlinopt.F90", v678, v679, v680, v681, v682);
+                fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    the crystal has inversion symmetry   ", 41, v575, 11, "-ChiAbs.outnlinopt.F90", v683, v684, v685, v686, v687);
+                fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    the crystal has inversion symmetry   ", 41, v575, 11, "-ChiAbs.outnlinopt.F90", v688, v689, v690, v691, v692);
+                fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    the crystal has inversion symmetry   ", 41, v575, 11, "-ChiAbs.outnlinopt.F90", v693, v694, v695, v696, v697);
+                fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    the SHG sussceptibility is zero      ", 41, v575, 11, "-ChiAbs.outnlinopt.F90", v698, v699, v700, v701, v702);
+                fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    the SHG sussceptibility is zero      ", 41, v575, 11, "-ChiAbs.outnlinopt.F90", v703, v704, v705, v706, v707);
+                fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    the SHG sussceptibility is zero      ", 41, v575, 11, "-ChiAbs.outnlinopt.F90", v708, v709, v710, v711, v712);
                 v612 = reinterpret_cast<void**>(41);
-                v613 = reinterpret_cast<void**>(0x80716b8);
-                fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80716b8, 41, v575, 11, 0x80716a0, v713, v714, v715, v716, v717);
-                fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80716b8, 41, v575, 11, 0x80716a0, v718, v719, v720, v721, v722);
-                fun_8048d60(-1, 0x80716b8, 41, v575, 11, 0x80716a0, v723, v724, v725);
+                v613 = reinterpret_cast<void**>("-----------------------------------------");
+                fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "-----------------------------------------", 41, v575, 11, "-ChiAbs.outnlinopt.F90", v713, v714, v715, v716, v717);
+                fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "-----------------------------------------", 41, v575, 11, "-ChiAbs.outnlinopt.F90", v718, v719, v720, v721, v722);
+                fun_8048d60(-1, "-----------------------------------------", 41, v575, 11, "-ChiAbs.outnlinopt.F90", v723, v724, v725);
             }
             eax726 = reinterpret_cast<uint1_t>(v645 == ecx644);
             v645 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v645) + 1);
@@ -9570,98 +9570,98 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
         }
     }
     if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a11)) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(*reinterpret_cast<void***>(a11) == 0) || (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a12)) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(*reinterpret_cast<void***>(a12) == 0) || (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a13)) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(*reinterpret_cast<void***>(a13) == 0) || (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a11)) > reinterpret_cast<int32_t>(3) || (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a12)) > reinterpret_cast<int32_t>(3) || reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a13)) > reinterpret_cast<int32_t>(3)))))) {
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, 0x80716a0, v727, v728, v729, v730, v731);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v732, v733, v734, v735, v736);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v737, v738, v739, v740, v741);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v742, v743, v744, v745, v746);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807176c, 45, v575, 11, 0x80716a0, v747, v748, v749, v750, v751);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807176c, 45, v575, 11, 0x80716a0, v752, v753, v754, v755, v756);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807176c, 45, v575, 11, 0x80716a0, v757, v758, v759, v760, v761);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807179c, 45, v575, 11, 0x80716a0, v762, v763, v764, v765, v766);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807179c, 45, v575, 11, 0x80716a0, v767, v768, v769, v770, v771);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807179c, 45, v575, 11, 0x80716a0, v772, v773, v774, v775, v776);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80717cc, 45, v575, 11, 0x80716a0, v777, v778, v779, v780, v781);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80717cc, 45, v575, 11, 0x80716a0, v782, v783, v784, v785, v786);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80717cc, 45, v575, 11, 0x80716a0, v787, v788, v789, v790, v791);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v727, v728, v729, v730, v731);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v732, v733, v734, v735, v736);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v737, v738, v739, v740, v741);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v742, v743, v744, v745, v746);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    Error in nlinopt:                        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v747, v748, v749, v750, v751);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    Error in nlinopt:                        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v752, v753, v754, v755, v756);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    Error in nlinopt:                        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v757, v758, v759, v760, v761);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    the polarisation directions incorrect    ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v762, v763, v764, v765, v766);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    the polarisation directions incorrect    ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v767, v768, v769, v770, v771);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    the polarisation directions incorrect    ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v772, v773, v774, v775, v776);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    1=x,  2=y  and 3=z                       ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v777, v778, v779, v780, v781);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    1=x,  2=y  and 3=z                       ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v782, v783, v784, v785, v786);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    1=x,  2=y  and 3=z                       ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v787, v788, v789, v790, v791);
         v612 = reinterpret_cast<void**>(45);
-        v613 = reinterpret_cast<void**>(0x807173c);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v792, v793, v794, v795, v796);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v797, v798, v799, v800, v801);
-        fun_8048d60(-1, 0x807173c, 45, v575, 11, 0x80716a0, v802, v803, v804);
+        v613 = reinterpret_cast<void**>("---------------------------------------------");
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v792, v793, v794, v795, v796);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v797, v798, v799, v800, v801);
+        fun_8048d60(-1, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v802, v803, v804);
     }
     if (reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a14)) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(*reinterpret_cast<void***>(a14) == 0))) {
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, 0x80716a0, v805, v806, v807, v808, v809);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v810, v811, v812, v813, v814);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v815, v816, v817, v818, v819);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v820, v821, v822, v823, v824);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807176c, 45, v575, 11, 0x80716a0, v825, v826, v827, v828, v829);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807176c, 45, v575, 11, 0x80716a0, v830, v831, v832, v833, v834);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807176c, 45, v575, 11, 0x80716a0, v835, v836, v837, v838, v839);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80717fc, 45, v575, 11, 0x80716a0, v840, v841, v842, v843, v844);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80717fc, 45, v575, 11, 0x80716a0, v845, v846, v847, v848, v849);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80717fc, 45, v575, 11, 0x80716a0, v850, v851, v852, v853, v854);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807182c, 45, v575, 11, 0x80716a0, v855, v856, v857, v858, v859);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807182c, 45, v575, 11, 0x80716a0, v860, v861, v862, v863, v864);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807182c, 45, v575, 11, 0x80716a0, v865, v866, v867, v868, v869);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807185c, 45, v575, 11, 0x80716a0, v870, v871, v872, v873, v874);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807185c, 45, v575, 11, 0x80716a0, v875, v876, v877, v878, v879);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807185c, 45, v575, 11, 0x80716a0, v880, v881, v882, v883, v884);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v805, v806, v807, v808, v809);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v810, v811, v812, v813, v814);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v815, v816, v817, v818, v819);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v820, v821, v822, v823, v824);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    Error in nlinopt:                        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v825, v826, v827, v828, v829);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    Error in nlinopt:                        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v830, v831, v832, v833, v834);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    Error in nlinopt:                        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v835, v836, v837, v838, v839);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    number of energy mesh points incorrect   ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v840, v841, v842, v843, v844);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    number of energy mesh points incorrect   ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v845, v846, v847, v848, v849);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    number of energy mesh points incorrect   ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v850, v851, v852, v853, v854);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    number has to integer greater than 0     ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v855, v856, v857, v858, v859);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    number has to integer greater than 0     ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v860, v861, v862, v863, v864);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    number has to integer greater than 0     ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v865, v866, v867, v868, v869);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    nmesh*de = max energy for calculation    ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v870, v871, v872, v873, v874);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    nmesh*de = max energy for calculation    ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v875, v876, v877, v878, v879);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    nmesh*de = max energy for calculation    ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v880, v881, v882, v883, v884);
         v612 = reinterpret_cast<void**>(45);
-        v613 = reinterpret_cast<void**>(0x807173c);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v885, v886, v887, v888, v889);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v890, v891, v892, v893, v894);
-        fun_8048d60(-1, 0x807173c, 45, v575, 11, 0x80716a0, v895, v896, v897);
+        v613 = reinterpret_cast<void**>("---------------------------------------------");
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v885, v886, v887, v888, v889);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v890, v891, v892, v893, v894);
+        fun_8048d60(-1, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v895, v896, v897);
     }
     __asm__("fld qword [eax]");
     __asm__("fldz ");
     __asm__("fucomip st0, st1");
     __asm__("fstp st0");
     if (!0) {
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, 0x80716a0, v898, v899, v900, v901, v902);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v903, v904, v905, v906, v907);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v908, v909, v910, v911, v912);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v913, v914, v915, v916, v917);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807176c, 45, v575, 11, 0x80716a0, v918, v919, v920, v921, v922);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807176c, 45, v575, 11, 0x80716a0, v923, v924, v925, v926, v927);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807176c, 45, v575, 11, 0x80716a0, v928, v929, v930, v931, v932);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807188c, 45, v575, 11, 0x80716a0, v933, v934, v935, v936, v937);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807188c, 45, v575, 11, 0x80716a0, v938, v939, v940, v941, v942);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807188c, 45, v575, 11, 0x80716a0, v943, v944, v945, v946, v947);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80718bc, 45, v575, 11, 0x80716a0, v948, v949, v950, v951, v952);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80718bc, 45, v575, 11, 0x80716a0, v953, v954, v955, v956, v957);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80718bc, 45, v575, 11, 0x80716a0, v958, v959, v960, v961, v962);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807185c, 45, v575, 11, 0x80716a0, v963, v964, v965, v966, v967);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807185c, 45, v575, 11, 0x80716a0, v968, v969, v970, v971, v972);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807185c, 45, v575, 11, 0x80716a0, v973, v974, v975, v976, v977);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v898, v899, v900, v901, v902);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v903, v904, v905, v906, v907);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v908, v909, v910, v911, v912);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v913, v914, v915, v916, v917);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    Error in nlinopt:                        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v918, v919, v920, v921, v922);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    Error in nlinopt:                        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v923, v924, v925, v926, v927);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    Error in nlinopt:                        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v928, v929, v930, v931, v932);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    energy step is incorrect                 ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v933, v934, v935, v936, v937);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    energy step is incorrect                 ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v938, v939, v940, v941, v942);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    energy step is incorrect                 ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v943, v944, v945, v946, v947);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    number has to real greater than 0.0      ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v948, v949, v950, v951, v952);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    number has to real greater than 0.0      ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v953, v954, v955, v956, v957);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    number has to real greater than 0.0      ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v958, v959, v960, v961, v962);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    nmesh*de = max energy for calculation    ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v963, v964, v965, v966, v967);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    nmesh*de = max energy for calculation    ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v968, v969, v970, v971, v972);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    nmesh*de = max energy for calculation    ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v973, v974, v975, v976, v977);
         v612 = reinterpret_cast<void**>(45);
-        v613 = reinterpret_cast<void**>(0x807173c);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v978, v979, v980, v981, v982);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v983, v984, v985, v986, v987);
-        fun_8048d60(-1, 0x807173c, 45, v575, 11, 0x80716a0, v988, v989, v990);
+        v613 = reinterpret_cast<void**>("---------------------------------------------");
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v978, v979, v980, v981, v982);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v983, v984, v985, v986, v987);
+        fun_8048d60(-1, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v988, v989, v990);
     }
     __asm__("fld qword [eax]");
     __asm__("fldz ");
     __asm__("fucomip st0, st1");
     __asm__("fstp st0");
     if (!0) {
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, 0x80716a0, v991, v992, v993, v994, v995);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v996, v997, v998, v999, v1000);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v1001, v1002, v1003, v1004, v1005);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v1006, v1007, v1008, v1009, v1010);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807176c, 45, v575, 11, 0x80716a0, v1011, v1012, v1013, v1014, v1015);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807176c, 45, v575, 11, 0x80716a0, v1016, v1017, v1018, v1019, v1020);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807176c, 45, v575, 11, 0x80716a0, v1021, v1022, v1023, v1024, v1025);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80718ec, 45, v575, 11, 0x80716a0, v1026, v1027, v1028, v1029, v1030);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80718ec, 45, v575, 11, 0x80716a0, v1031, v1032, v1033, v1034, v1035);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80718ec, 45, v575, 11, 0x80716a0, v1036, v1037, v1038, v1039, v1040);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80718bc, 45, v575, 11, 0x80716a0, v1041, v1042, v1043, v1044, v1045);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80718bc, 45, v575, 11, 0x80716a0, v1046, v1047, v1048, v1049, v1050);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80718bc, 45, v575, 11, 0x80716a0, v1051, v1052, v1053, v1054, v1055);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v991, v992, v993, v994, v995);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v996, v997, v998, v999, v1000);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1001, v1002, v1003, v1004, v1005);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1006, v1007, v1008, v1009, v1010);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    Error in nlinopt:                        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1011, v1012, v1013, v1014, v1015);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    Error in nlinopt:                        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1016, v1017, v1018, v1019, v1020);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    Error in nlinopt:                        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1021, v1022, v1023, v1024, v1025);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    scissors shift is incorrect              ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1026, v1027, v1028, v1029, v1030);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    scissors shift is incorrect              ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1031, v1032, v1033, v1034, v1035);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    scissors shift is incorrect              ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1036, v1037, v1038, v1039, v1040);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    number has to real greater than 0.0      ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1041, v1042, v1043, v1044, v1045);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    number has to real greater than 0.0      ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1046, v1047, v1048, v1049, v1050);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    number has to real greater than 0.0      ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1051, v1052, v1053, v1054, v1055);
         v612 = reinterpret_cast<void**>(45);
-        v613 = reinterpret_cast<void**>(0x807173c);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v1056, v1057, v1058, v1059, v1060);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v1061, v1062, v1063, v1064, v1065);
-        fun_8048d60(-1, 0x807173c, 45, v575, 11, 0x80716a0, v1066, v1067, v1068);
+        v613 = reinterpret_cast<void**>("---------------------------------------------");
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1056, v1057, v1058, v1059, v1060);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1061, v1062, v1063, v1064, v1065);
+        fun_8048d60(-1, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1066, v1067, v1068);
     }
     __asm__("fld qword [eax]");
     __asm__("fld qword [0x8071f88]");
@@ -9675,36 +9675,36 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
         __asm__("fucomip st0, st1");
         __asm__("fstp st0");
         if (!0) {
-            fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, 0x80716a0, v1069, v1070, v1071, v1072, v1073);
-            fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807197c, 40, v575, 11, 0x80716a0, v1074, v1075, v1076, v1077, v1078);
-            fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807197c, 40, v575, 11, 0x80716a0, v1079, v1080, v1081, v1082, v1083);
-            fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807197c, 40, v575, 11, 0x80716a0, v1084, v1085, v1086, v1087, v1088);
-            fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80719a4, 40, v575, 11, 0x80716a0, v1089, v1090, v1091, v1092, v1093);
-            fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80719a4, 40, v575, 11, 0x80716a0, v1094, v1095, v1096, v1097, v1098);
-            fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80719a4, 40, v575, 11, 0x80716a0, v1099, v1100, v1101, v1102, v1103);
-            fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80719cc, 40, v575, 11, 0x80716a0, v1104, v1105, v1106, v1107, v1108);
-            fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80719cc, 40, v575, 11, 0x80716a0, v1109, v1110, v1111, v1112, v1113);
-            fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80719cc, 40, v575, 11, 0x80716a0, v1114, v1115, v1116, v1117, v1118);
+            fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1069, v1070, v1071, v1072, v1073);
+            fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1074, v1075, v1076, v1077, v1078);
+            fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1079, v1080, v1081, v1082, v1083);
+            fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1084, v1085, v1086, v1087, v1088);
+            fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1089, v1090, v1091, v1092, v1093);
+            fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1094, v1095, v1096, v1097, v1098);
+            fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1099, v1100, v1101, v1102, v1103);
+            fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1104, v1105, v1106, v1107, v1108);
+            fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1109, v1110, v1111, v1112, v1113);
+            fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1114, v1115, v1116, v1117, v1118);
             v612 = reinterpret_cast<void**>(40);
-            v613 = reinterpret_cast<void**>(0x807197c);
-            fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807197c, 40, v575, 11, 0x80716a0, v1119, v1120, v1121, v1122, v1123);
-            fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807197c, 40, v575, 11, 0x80716a0, v1124, v1125, v1126, v1127, v1128);
+            v613 = reinterpret_cast<void**>("----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow");
+            fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1119, v1120, v1121, v1122, v1123);
+            fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1124, v1125, v1126, v1127, v1128);
         }
     } else {
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, 0x80716a0, v1129, v1130, v1131, v1132, v1133);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v1134, v1135, v1136, v1137, v1138);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v1139, v1140, v1141, v1142, v1143);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v1144, v1145, v1146, v1147, v1148);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807191c, 45, v575, 11, 0x80716a0, v1149, v1150, v1151, v1152, v1153);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807191c, 45, v575, 11, 0x80716a0, v1154, v1155, v1156, v1157, v1158);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807191c, 45, v575, 11, 0x80716a0, v1159, v1160, v1161, v1162, v1163);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807194c, 45, v575, 11, 0x80716a0, v1164, v1165, v1166, v1167, v1168);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807194c, 45, v575, 11, 0x80716a0, v1169, v1170, v1171, v1172, v1173);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807194c, 45, v575, 11, 0x80716a0, v1174, v1175, v1176, v1177, v1178);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1129, v1130, v1131, v1132, v1133);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1134, v1135, v1136, v1137, v1138);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1139, v1140, v1141, v1142, v1143);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1144, v1145, v1146, v1147, v1148);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ATTENTION: broadening is quite high      ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1149, v1150, v1151, v1152, v1153);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ATTENTION: broadening is quite high      ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1154, v1155, v1156, v1157, v1158);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ATTENTION: broadening is quite high      ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1159, v1160, v1161, v1162, v1163);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ideally should be less than 0.005        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1164, v1165, v1166, v1167, v1168);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ideally should be less than 0.005        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1169, v1170, v1171, v1172, v1173);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ideally should be less than 0.005        ", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1174, v1175, v1176, v1177, v1178);
         v612 = reinterpret_cast<void**>(45);
-        v613 = reinterpret_cast<void**>(0x807173c);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v1179, v1180, v1181, v1182, v1183);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807173c, 45, v575, 11, 0x80716a0, v1184, v1185, v1186, v1187, v1188);
+        v613 = reinterpret_cast<void**>("---------------------------------------------");
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1179, v1180, v1181, v1182, v1183);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "---------------------------------------------", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v1184, v1185, v1186, v1187, v1188);
     }
     __asm__("fld qword [eax]");
     __asm__("fld qword [0x8071f98]");
@@ -9712,20 +9712,20 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
     __asm__("fucomip st0, st1");
     __asm__("fstp st0");
     if (!0) {
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, 0x80716a0, v1189, v1190, v1191, v1192, v1193);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807197c, 40, v575, 11, 0x80716a0, v1194, v1195, v1196, v1197, v1198);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807197c, 40, v575, 11, 0x80716a0, v1199, v1200, v1201, v1202, v1203);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807197c, 40, v575, 11, 0x80716a0, v1204, v1205, v1206, v1207, v1208);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80719f4, 40, v575, 11, 0x80716a0, v1209, v1210, v1211, v1212, v1213);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80719f4, 40, v575, 11, 0x80716a0, v1214, v1215, v1216, v1217, v1218);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x80719f4, 40, v575, 11, 0x80716a0, v1219, v1220, v1221, v1222, v1223);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x8071a1c, 40, v575, 11, 0x80716a0, v1224, v1225, v1226, v1227, v1228);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x8071a1c, 40, v575, 11, 0x80716a0, v1229, v1230, v1231, v1232, v1233);
-        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x8071a1c, 40, v575, 11, 0x80716a0, v1234, v1235, v1236, v1237, v1238);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1189, v1190, v1191, v1192, v1193);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1194, v1195, v1196, v1197, v1198);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1199, v1200, v1201, v1202, v1203);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1204, v1205, v1206, v1207, v1208);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1209, v1210, v1211, v1212, v1213);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1214, v1215, v1216, v1217, v1218);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1219, v1220, v1221, v1222, v1223);
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1224, v1225, v1226, v1227, v1228);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1229, v1230, v1231, v1232, v1233);
+        fun_8048cd0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "    ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1234, v1235, v1236, v1237, v1238);
         v612 = reinterpret_cast<void**>(40);
-        v613 = reinterpret_cast<void**>(0x807197c);
-        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807197c, 40, v575, 11, 0x80716a0, v1239, v1240, v1241, v1242, v1243);
-        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, 0x807197c, 40, v575, 11, 0x80716a0, v1244, v1245, v1246, v1247, v1248);
+        v613 = reinterpret_cast<void**>("----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow");
+        fun_8048cc0(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1239, v1240, v1241, v1242, v1243);
+        fun_8048b50(ecx644, reinterpret_cast<int32_t>(ebp21) + 0xfffff364, "----------------------------------------    ATTENTION: broadening is too high       ideally should be less than 0.005       ATTENTION: tolerance is too high        ideally should be less than 0.004   Attempt to allocate negative amount of memory. Possible integer overflow", 40, v575, 11, "-ChiAbs.outnlinopt.F90", v1244, v1245, v1246, v1247, v1248);
     }
     esi1249 = reinterpret_cast<void**>(0);
     if (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a7)) >= reinterpret_cast<int32_t>(0)) {
@@ -9745,20 +9745,20 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
         edx1255 = reinterpret_cast<void**>(0);
     }
     if (0) {
-        v612 = reinterpret_cast<void**>(0x8071a9b);
-        v613 = reinterpret_cast<void**>(0x8071aa0);
-        fun_8048c30(ecx1252, "At line 245 of file nlinopt.F90", 0x8071aa0, 0x8071a9b, v575, 11, 0x80716a0, v1256, v1257, v1258, v1259, v1260, v1261, v1262, v1263, v1264, v1265, v50, 0, v49, 0);
+        v612 = reinterpret_cast<void**>("px");
+        v613 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1252, "At line 245 of file nlinopt.F90", "Attempting to allocate already allocated array '%s'", "px", v575, 11, "-ChiAbs.outnlinopt.F90", v1256, v1257, v1258, v1259, v1260, v1261, v1262, v1263, v1264, v1265, v50, 0, v49, 0);
     } else {
         eax1266 = edx1255;
         if (reinterpret_cast<int32_t>(eax1266) < reinterpret_cast<int32_t>(0)) {
-            eax1266 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, 0x80716a0, v1267, v1268, v1269, v1270, v1271, v1272, v1273, v1274, v1275, v1276, v50, 0, v49, 0, v45, 0);
+            eax1266 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1267, v1268, v1269, v1270, v1271, v1272, v1273, v1274, v1275, v1276, v50, 0, v49, 0, v45, 0);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1266) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1266 == 0)) {
             eax1266 = reinterpret_cast<void**>(1);
         }
-        eax1287 = fun_8048ce0(ecx1252, eax1266, v613, v612, v575, 11, 0x80716a0, v1277, v1278, v1279, v1280, v1281, v1282, v1283, v1284, v1285, v1286, v50, 0, v49, 0, v45, 0);
+        eax1287 = fun_8048ce0(ecx1252, eax1266, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1277, v1278, v1279, v1280, v1281, v1282, v1283, v1284, v1285, v1286, v50, 0, v49, 0, v45, 0);
         if (!eax1287) {
-            eax1287 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, 0x80716a0, v1288, v1289, v1290, v1291, v1292, v1293, v1294, v1295, v1296, v1297, v50, 0, v49, 0, v45, 0);
+            eax1287 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1288, v1289, v1290, v1291, v1292, v1293, v1294, v1295, v1296, v1297, v50, 0, v49, 0, v45, 0);
         }
         v56 = eax1287;
         esi1249 = reinterpret_cast<void**>(0);
@@ -9779,20 +9779,20 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
     edx1301 = reinterpret_cast<void**>(0);
     addr_8052913_128:
     if (0) {
-        v612 = reinterpret_cast<void**>(0x8071af4);
-        v613 = reinterpret_cast<void**>(0x8071aa0);
-        fun_8048c30(ecx1252, "At line 246 of file nlinopt.F90", 0x8071aa0, 0x8071af4, v575, 11, 0x80716a0, v1302, v1303, v1304, v1305, v1306, v1307, v1308, v1309, v1310, v1311, v50, 0, v49, 0);
+        v612 = reinterpret_cast<void**>("py");
+        v613 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1252, "At line 246 of file nlinopt.F90", "Attempting to allocate already allocated array '%s'", "py", v575, 11, "-ChiAbs.outnlinopt.F90", v1302, v1303, v1304, v1305, v1306, v1307, v1308, v1309, v1310, v1311, v50, 0, v49, 0);
     } else {
         eax1312 = edx1301;
         if (reinterpret_cast<int32_t>(eax1312) < reinterpret_cast<int32_t>(0)) {
-            eax1312 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, 0x80716a0, v1313, v1314, v1315, v1316, v1317, v1318, v1319, v1320, v1321, v1322, v50, 0, v49, 0, v45, 0);
+            eax1312 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1313, v1314, v1315, v1316, v1317, v1318, v1319, v1320, v1321, v1322, v50, 0, v49, 0, v45, 0);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1312) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1312 == 0)) {
             eax1312 = reinterpret_cast<void**>(1);
         }
-        eax1333 = fun_8048ce0(ecx1252, eax1312, v613, v612, v575, 11, 0x80716a0, v1323, v1324, v1325, v1326, v1327, v1328, v1329, v1330, v1331, v1332, v50, 0, v49, 0, v45, 0);
+        eax1333 = fun_8048ce0(ecx1252, eax1312, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1323, v1324, v1325, v1326, v1327, v1328, v1329, v1330, v1331, v1332, v50, 0, v49, 0, v45, 0);
         if (!eax1333) {
-            eax1333 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, 0x80716a0, v1334, v1335, v1336, v1337, v1338, v1339, v1340, v1341, v1342, v1343, v50, 0, v49, 0, v45, 0);
+            eax1333 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1334, v1335, v1336, v1337, v1338, v1339, v1340, v1341, v1342, v1343, v50, 0, v49, 0, v45, 0);
         }
         v57 = eax1333;
         esi1249 = reinterpret_cast<void**>(0);
@@ -9813,20 +9813,20 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
     edx1347 = reinterpret_cast<void**>(0);
     addr_8052a83_143:
     if (0) {
-        v612 = reinterpret_cast<void**>(0x8071b18);
-        v613 = reinterpret_cast<void**>(0x8071aa0);
-        fun_8048c30(ecx1252, "At line 247 of file nlinopt.F90", 0x8071aa0, 0x8071b18, v575, 11, 0x80716a0, v1348, v1349, v1350, v1351, v1352, v1353, v1354, v1355, v1356, v1357, v50, 0, v49, 0);
+        v612 = reinterpret_cast<void**>("pz");
+        v613 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1252, "At line 247 of file nlinopt.F90", "Attempting to allocate already allocated array '%s'", "pz", v575, 11, "-ChiAbs.outnlinopt.F90", v1348, v1349, v1350, v1351, v1352, v1353, v1354, v1355, v1356, v1357, v50, 0, v49, 0);
     } else {
         eax1358 = edx1347;
         if (reinterpret_cast<int32_t>(eax1358) < reinterpret_cast<int32_t>(0)) {
-            eax1358 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, 0x80716a0, v1359, v1360, v1361, v1362, v1363, v1364, v1365, v1366, v1367, v1368, v50, 0, v49, 0, v45, 0);
+            eax1358 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1359, v1360, v1361, v1362, v1363, v1364, v1365, v1366, v1367, v1368, v50, 0, v49, 0, v45, 0);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1358) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1358 == 0)) {
             eax1358 = reinterpret_cast<void**>(1);
         }
-        eax1379 = fun_8048ce0(ecx1252, eax1358, v613, v612, v575, 11, 0x80716a0, v1369, v1370, v1371, v1372, v1373, v1374, v1375, v1376, v1377, v1378, v50, 0, v49, 0, v45, 0);
+        eax1379 = fun_8048ce0(ecx1252, eax1358, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1369, v1370, v1371, v1372, v1373, v1374, v1375, v1376, v1377, v1378, v50, 0, v49, 0, v45, 0);
         if (!eax1379) {
-            eax1379 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, 0x80716a0, v1380, v1381, v1382, v1383, v1384, v1385, v1386, v1387, v1388, v1389, v50, 0, v49, 0, v45, 0);
+            eax1379 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1380, v1381, v1382, v1383, v1384, v1385, v1386, v1387, v1388, v1389, v50, 0, v49, 0, v45, 0);
         }
         v58 = eax1379;
         v1390 = *reinterpret_cast<void***>(a14);
@@ -9840,20 +9840,20 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
     edx1392 = reinterpret_cast<void**>(0);
     addr_8052b42_156:
     if (0) {
-        v612 = reinterpret_cast<void**>(0x8071b3c);
-        v613 = reinterpret_cast<void**>(0x8071aa0);
-        fun_8048c30(ecx1252, "At line 248 of file nlinopt.F90", 0x8071aa0, 0x8071b3c, v575, 11, 0x80716a0, v1393, v1394, v1395, v1396, v1397, v1398, v1399, v1400, v1401, v1402, v50, 0, v49, 0);
+        v612 = reinterpret_cast<void**>("inter2w");
+        v613 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1252, "At line 248 of file nlinopt.F90", "Attempting to allocate already allocated array '%s'", "inter2w", v575, 11, "-ChiAbs.outnlinopt.F90", v1393, v1394, v1395, v1396, v1397, v1398, v1399, v1400, v1401, v1402, v50, 0, v49, 0);
     } else {
         eax1403 = edx1392;
         if (reinterpret_cast<int32_t>(eax1403) < reinterpret_cast<int32_t>(0)) {
-            eax1403 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, 0x80716a0, v1404, v1405, v1406, v1407, v1408, v1409, v1410, v1411, v1412, v1413, v50, 0, v49, 0, v45, 0);
+            eax1403 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1404, v1405, v1406, v1407, v1408, v1409, v1410, v1411, v1412, v1413, v50, 0, v49, 0, v45, 0);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1403) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1403 == 0)) {
             eax1403 = reinterpret_cast<void**>(1);
         }
-        eax1424 = fun_8048ce0(ecx1252, eax1403, v613, v612, v575, 11, 0x80716a0, v1414, v1415, v1416, v1417, v1418, v1419, v1420, v1421, v1422, v1423, v50, 0, v49, 0, v45, 0);
+        eax1424 = fun_8048ce0(ecx1252, eax1403, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1414, v1415, v1416, v1417, v1418, v1419, v1420, v1421, v1422, v1423, v50, 0, v49, 0, v45, 0);
         if (!eax1424) {
-            eax1424 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, 0x80716a0, v1425, v1426, v1427, v1428, v1429, v1430, v1431, v1432, v1433, v1434, v50, 0, v49, 0, v45, 0);
+            eax1424 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1425, v1426, v1427, v1428, v1429, v1430, v1431, v1432, v1433, v1434, v50, 0, v49, 0, v45, 0);
         }
         v53 = eax1424;
         v1435 = *reinterpret_cast<void***>(a14);
@@ -9867,20 +9867,20 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
     edx1437 = reinterpret_cast<void**>(0);
     addr_8052c05_169:
     if (0) {
-        v612 = reinterpret_cast<void**>(0x8071b64);
-        v613 = reinterpret_cast<void**>(0x8071aa0);
-        fun_8048c30(ecx1252, "At line 249 of file nlinopt.F90", 0x8071aa0, 0x8071b64, v575, 11, 0x80716a0, v1438, v1439, v1440, v1441, v1442, v1443, v1444, v1445, v1446, v1447, v50, 0, v49, 0);
+        v612 = reinterpret_cast<void**>("inter1w");
+        v613 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1252, "At line 249 of file nlinopt.F90", "Attempting to allocate already allocated array '%s'", "inter1w", v575, 11, "-ChiAbs.outnlinopt.F90", v1438, v1439, v1440, v1441, v1442, v1443, v1444, v1445, v1446, v1447, v50, 0, v49, 0);
     } else {
         eax1448 = edx1437;
         if (reinterpret_cast<int32_t>(eax1448) < reinterpret_cast<int32_t>(0)) {
-            eax1448 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, 0x80716a0, v1449, v1450, v1451, v1452, v1453, v1454, v1455, v1456, v1457, v1458, v50, 0, v49, 0, v45, 0);
+            eax1448 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1449, v1450, v1451, v1452, v1453, v1454, v1455, v1456, v1457, v1458, v50, 0, v49, 0, v45, 0);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1448) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1448 == 0)) {
             eax1448 = reinterpret_cast<void**>(1);
         }
-        eax1469 = fun_8048ce0(ecx1252, eax1448, v613, v612, v575, 11, 0x80716a0, v1459, v1460, v1461, v1462, v1463, v1464, v1465, v1466, v1467, v1468, v50, 0, v49, 0, v45, 0);
+        eax1469 = fun_8048ce0(ecx1252, eax1448, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1459, v1460, v1461, v1462, v1463, v1464, v1465, v1466, v1467, v1468, v50, 0, v49, 0, v45, 0);
         if (!eax1469) {
-            eax1469 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, 0x80716a0, v1470, v1471, v1472, v1473, v1474, v1475, v1476, v1477, v1478, v1479, v50, 0, v49, 0, v45, 0);
+            eax1469 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1470, v1471, v1472, v1473, v1474, v1475, v1476, v1477, v1478, v1479, v50, 0, v49, 0, v45, 0);
         }
         v52 = eax1469;
         v1480 = *reinterpret_cast<void***>(a14);
@@ -9894,20 +9894,20 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
     edx1482 = reinterpret_cast<void**>(0);
     addr_8052cc8_182:
     if (0) {
-        v612 = reinterpret_cast<void**>(0x8071b8c);
-        v613 = reinterpret_cast<void**>(0x8071aa0);
-        fun_8048c30(ecx1252, "At line 250 of file nlinopt.F90", 0x8071aa0, 0x8071b8c, v575, 11, 0x80716a0, v1483, v1484, v1485, v1486, v1487, v1488, v1489, v1490, v1491, v1492, v50, 0, v49, 0);
+        v612 = reinterpret_cast<void**>("intra2w");
+        v613 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1252, "At line 250 of file nlinopt.F90", "Attempting to allocate already allocated array '%s'", "intra2w", v575, 11, "-ChiAbs.outnlinopt.F90", v1483, v1484, v1485, v1486, v1487, v1488, v1489, v1490, v1491, v1492, v50, 0, v49, 0);
     } else {
         eax1493 = edx1482;
         if (reinterpret_cast<int32_t>(eax1493) < reinterpret_cast<int32_t>(0)) {
-            eax1493 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, 0x80716a0, v1494, v1495, v1496, v1497, v1498, v1499, v1500, v1501, v1502, v1503, v50, 0, v49, 0, v45, 0);
+            eax1493 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1494, v1495, v1496, v1497, v1498, v1499, v1500, v1501, v1502, v1503, v50, 0, v49, 0, v45, 0);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1493) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1493 == 0)) {
             eax1493 = reinterpret_cast<void**>(1);
         }
-        eax1514 = fun_8048ce0(ecx1252, eax1493, v613, v612, v575, 11, 0x80716a0, v1504, v1505, v1506, v1507, v1508, v1509, v1510, v1511, v1512, v1513, v50, 0, v49, 0, v45, 0);
+        eax1514 = fun_8048ce0(ecx1252, eax1493, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1504, v1505, v1506, v1507, v1508, v1509, v1510, v1511, v1512, v1513, v50, 0, v49, 0, v45, 0);
         if (!eax1514) {
-            eax1514 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, 0x80716a0, v1515, v1516, v1517, v1518, v1519, v1520, v1521, v1522, v1523, v1524, v50, 0, v49, 0, v45, 0);
+            eax1514 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1515, v1516, v1517, v1518, v1519, v1520, v1521, v1522, v1523, v1524, v50, 0, v49, 0, v45, 0);
         }
         v55 = eax1514;
         v1525 = *reinterpret_cast<void***>(a14);
@@ -9921,20 +9921,20 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
     edx1527 = reinterpret_cast<void**>(0);
     addr_8052d8b_195:
     if (0) {
-        v612 = reinterpret_cast<void**>(0x8071bb4);
-        v613 = reinterpret_cast<void**>(0x8071aa0);
-        fun_8048c30(ecx1252, "At line 251 of file nlinopt.F90", 0x8071aa0, 0x8071bb4, v575, 11, 0x80716a0, v1528, v1529, v1530, v1531, v1532, v1533, v1534, v1535, v1536, v1537, v50, 0, v49, 0);
+        v612 = reinterpret_cast<void**>("intra1w");
+        v613 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1252, "At line 251 of file nlinopt.F90", "Attempting to allocate already allocated array '%s'", "intra1w", v575, 11, "-ChiAbs.outnlinopt.F90", v1528, v1529, v1530, v1531, v1532, v1533, v1534, v1535, v1536, v1537, v50, 0, v49, 0);
     } else {
         eax1538 = edx1527;
         if (reinterpret_cast<int32_t>(eax1538) < reinterpret_cast<int32_t>(0)) {
-            eax1538 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, 0x80716a0, v1539, v1540, v1541, v1542, v1543, v1544, v1545, v1546, v1547, v1548, v50, 0, v49, 0, v45, 0);
+            eax1538 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1539, v1540, v1541, v1542, v1543, v1544, v1545, v1546, v1547, v1548, v50, 0, v49, 0, v45, 0);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1538) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1538 == 0)) {
             eax1538 = reinterpret_cast<void**>(1);
         }
-        eax1559 = fun_8048ce0(ecx1252, eax1538, v613, v612, v575, 11, 0x80716a0, v1549, v1550, v1551, v1552, v1553, v1554, v1555, v1556, v1557, v1558, v50, 0, v49, 0, v45, 0);
+        eax1559 = fun_8048ce0(ecx1252, eax1538, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1549, v1550, v1551, v1552, v1553, v1554, v1555, v1556, v1557, v1558, v50, 0, v49, 0, v45, 0);
         if (!eax1559) {
-            eax1559 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, 0x80716a0, v1560, v1561, v1562, v1563, v1564, v1565, v1566, v1567, v1568, v1569, v50, 0, v49, 0, v45, 0);
+            eax1559 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1560, v1561, v1562, v1563, v1564, v1565, v1566, v1567, v1568, v1569, v50, 0, v49, 0, v45, 0);
         }
         v54 = eax1559;
         v1570 = *reinterpret_cast<void***>(a7);
@@ -9955,40 +9955,40 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
     edx1574 = reinterpret_cast<void**>(0);
     addr_8052eb9_210:
     if (0) {
-        v612 = reinterpret_cast<void**>(0x8071bdc);
-        v613 = reinterpret_cast<void**>(0x8071aa0);
-        fun_8048c30(ecx1252, "At line 252 of file nlinopt.F90", 0x8071aa0, 0x8071bdc, v575, 11, 0x80716a0, v1575, v1576, v1577, v1578, v1579, v1580, v1581, v1582, v1583, v1584, v50, 0, v49, 0);
+        v612 = reinterpret_cast<void**>("delta");
+        v613 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1252, "At line 252 of file nlinopt.F90", "Attempting to allocate already allocated array '%s'", "delta", v575, 11, "-ChiAbs.outnlinopt.F90", v1575, v1576, v1577, v1578, v1579, v1580, v1581, v1582, v1583, v1584, v50, 0, v49, 0);
     } else {
         eax1585 = edx1574;
         if (reinterpret_cast<int32_t>(eax1585) < reinterpret_cast<int32_t>(0)) {
-            eax1585 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, 0x80716a0, v1586, v1587, v1588, v1589, v1590, v1591, v1592, v1593, v1594, v1595, v50, 0, v49, 0, v45, 0);
+            eax1585 = fun_8048c80(ecx1252, "Attempt to allocate negative amount of memory. Possible integer overflow", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1586, v1587, v1588, v1589, v1590, v1591, v1592, v1593, v1594, v1595, v50, 0, v49, 0, v45, 0);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1585) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1585 == 0)) {
             eax1585 = reinterpret_cast<void**>(1);
         }
-        eax1606 = fun_8048ce0(ecx1252, eax1585, v613, v612, v575, 11, 0x80716a0, v1596, v1597, v1598, v1599, v1600, v1601, v1602, v1603, v1604, v1605, v50, 0, v49, 0, v45, 0);
+        eax1606 = fun_8048ce0(ecx1252, eax1585, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1596, v1597, v1598, v1599, v1600, v1601, v1602, v1603, v1604, v1605, v50, 0, v49, 0, v45, 0);
         if (!eax1606) {
-            eax1606 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, 0x80716a0, v1607, v1608, v1609, v1610, v1611, v1612, v1613, v1614, v1615, v1616, v50, 0, v49, 0, v45, 0);
+            eax1606 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1607, v1608, v1609, v1610, v1611, v1612, v1613, v1614, v1615, v1616, v50, 0, v49, 0, v45, 0);
         }
         v51 = eax1606;
         if (!1) 
             goto addr_8052f75_219;
     }
-    eax1627 = fun_8048ce0(ecx1252, 0xd8, v613, v612, v575, 11, 0x80716a0, v1617, v1618, v1619, v1620, v1621, v1622, v1623, v1624, v1625, v1626, v50, 0, v49, 0, v45, 0);
+    eax1627 = fun_8048ce0(ecx1252, 0xd8, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1617, v1618, v1619, v1620, v1621, v1622, v1623, v1624, v1625, v1626, v50, 0, v49, 0, v45, 0);
     if (!eax1627) {
-        eax1627 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, 0x80716a0, v1628, v1629, v1630, v1631, v1632, v1633, v1634, v1635, v1636, v1637, v50, 0, v49, 0, v45, 0);
+        eax1627 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1628, v1629, v1630, v1631, v1632, v1633, v1634, v1635, v1636, v1637, v50, 0, v49, 0, v45, 0);
     }
     v60 = eax1627;
     if (1) {
         addr_8053033_223:
-        eax1648 = fun_8048ce0(ecx1252, 72, v613, v612, v575, 11, 0x80716a0, v1638, v1639, v1640, v1641, v1642, v1643, v1644, v1645, v1646, v1647, v50, 0, v49, 0, v45, 0);
+        eax1648 = fun_8048ce0(ecx1252, 72, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1638, v1639, v1640, v1641, v1642, v1643, v1644, v1645, v1646, v1647, v50, 0, v49, 0, v45, 0);
         if (!eax1648) {
-            eax1648 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, 0x80716a0, v1649, v1650, v1651, v1652, v1653, v1654, v1655, v1656, v1657, v1658, v50, 0, v49, 0, v45, 0);
+            eax1648 = fun_8048b10(ecx1252, "Out of memory", v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1649, v1650, v1651, v1652, v1653, v1654, v1655, v1656, v1657, v1658, v50, 0, v49, 0, v45, 0);
         }
     } else {
-        v612 = reinterpret_cast<void**>(0x8071c28);
-        v613 = reinterpret_cast<void**>(0x8071aa0);
-        fun_8048c30(ecx1252, "At line 254 of file nlinopt.F90", 0x8071aa0, 0x8071c28, v575, 11, 0x80716a0, v1659, v1660, v1661, v1662, v1663, v1664, v1665, v1666, v1667, v1668, v50, 0, v49, 0);
+        v612 = reinterpret_cast<void**>("s");
+        v613 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1252, "At line 254 of file nlinopt.F90", "Attempting to allocate already allocated array '%s'", "s", v575, 11, "-ChiAbs.outnlinopt.F90", v1659, v1660, v1661, v1662, v1663, v1664, v1665, v1666, v1667, v1668, v50, 0, v49, 0);
         goto addr_80530e5_227;
     }
     v59 = eax1648;
@@ -10117,18 +10117,18 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
     if (reinterpret_cast<int32_t>(1) <= reinterpret_cast<int32_t>(v1698)) {
         while (1) {
             v1700 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048cd0(ecx1695, v1700, v613, v612, v575, 11, 0x80716a0, v1701, v1702, v1703, v1704, v1705, ecx1695, v1700, v613, v612, v575, 11, 0x80716a0, v1706, v1707, v1708, v1709, v1710);
+            fun_8048cd0(ecx1695, v1700, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1701, v1702, v1703, v1704, v1705, ecx1695, v1700, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1706, v1707, v1708, v1709, v1710);
             v1711 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff7b4);
             v1712 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048c50(ecx1695, v1712, v1711, 4, v575, 11, 0x80716a0, v1713, v1714, v1715, v1716, v1717, ecx1695, v1712, v1711, 4, v575, 11, 0x80716a0, v1718, v1719, v1720, v1721, v1722);
+            fun_8048c50(ecx1695, v1712, v1711, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1713, v1714, v1715, v1716, v1717, ecx1695, v1712, v1711, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1718, v1719, v1720, v1721, v1722);
             v1723 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048cc0(ecx1695, v1723, 0x8071c4c, 2, v575, 11, 0x80716a0, v1724, v1725, v1726, v1727, v1728, ecx1695, v1723, 0x8071c4c, 2, v575, 11, 0x80716a0, v1729, v1730, v1731, v1732, v1733);
+            fun_8048cc0(ecx1695, v1723, "ofFORMATTEDWRITE(a,3i3) #calculated the component:(a,es16.6) #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v1724, v1725, v1726, v1727, v1728, ecx1695, v1723, "ofFORMATTEDWRITE(a,3i3) #calculated the component:(a,es16.6) #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v1729, v1730, v1731, v1732, v1733);
             v612 = reinterpret_cast<void**>(4);
             v613 = a3;
             v1734 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048c50(ecx1695, v1734, v613, 4, v575, 11, 0x80716a0, v1735, v1736, v1737, v1738, v1739, ecx1695, v1734, v613, 4, v575, 11, 0x80716a0, v1740, v1741, v1742, v1743, v1744);
+            fun_8048c50(ecx1695, v1734, v613, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1735, v1736, v1737, v1738, v1739, ecx1695, v1734, v613, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1740, v1741, v1742, v1743, v1744);
             v1745 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048b50(ecx1695, v1745, v613, 4, v575, 11, 0x80716a0, v1746, v1747, v1748, v1749, v1750, ecx1695, v1745, v613, 4, v575, 11, 0x80716a0, v1751, v1752, v1753, v1754, v1755);
+            fun_8048b50(ecx1695, v1745, v613, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1746, v1747, v1748, v1749, v1750, ecx1695, v1745, v613, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1751, v1752, v1753, v1754, v1755);
             v1756 = *a1;
             v1757 = reinterpret_cast<void**>(1);
             if (reinterpret_cast<int32_t>(1) <= reinterpret_cast<int32_t>(v1756)) {
@@ -13667,422 +13667,422 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
         }
     }
     v1886 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b30(ecx1695, v1886, v613, v612, v575, 11, 0x80716a0, ecx1695, v1886, v613, v612, v575, 11, 0x80716a0);
+    fun_8048b30(ecx1695, v1886, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", ecx1695, v1886, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90");
     v1887 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b30(ecx1695, v1887, v613, v612, v575, 11, 0x80716a0, ecx1695, v1887, v613, v612, v575, 11, 0x80716a0);
+    fun_8048b30(ecx1695, v1887, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", ecx1695, v1887, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90");
     v1888 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b30(ecx1695, v1888, v613, v612, v575, 11, 0x80716a0, ecx1695, v1888, v613, v612, v575, 11, 0x80716a0);
+    fun_8048b30(ecx1695, v1888, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", ecx1695, v1888, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90");
     v1889 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b30(ecx1695, v1889, v613, v612, v575, 11, 0x80716a0, ecx1695, v1889, v613, v612, v575, 11, 0x80716a0);
+    fun_8048b30(ecx1695, v1889, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", ecx1695, v1889, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90");
     v1890 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b30(ecx1695, v1890, v613, v612, v575, 11, 0x80716a0, ecx1695, v1890, v613, v612, v575, 11, 0x80716a0);
+    fun_8048b30(ecx1695, v1890, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", ecx1695, v1890, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90");
     v1891 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v1891, v613, v612, v575, 11, 0x80716a0, v1892, v1893, v1894, v1895, v1896, ecx1695, v1891, v613, v612, v575, 11, 0x80716a0, v1897, v1898, v1899, v1900, v1901);
+    fun_8048cd0(ecx1695, v1891, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1892, v1893, v1894, v1895, v1896, ecx1695, v1891, v613, v612, v575, 11, "-ChiAbs.outnlinopt.F90", v1897, v1898, v1899, v1900, v1901);
     v1902 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v1902, 0x8071c63, 27, v575, 11, 0x80716a0, v1903, v1904, v1905, v1906, v1907, ecx1695, v1902, 0x8071c63, 27, v575, 11, 0x80716a0, v1908, v1909, v1910, v1911, v1912);
+    fun_8048cc0(ecx1695, v1902, " #calculated the component:(a,es16.6) #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 27, v575, 11, "-ChiAbs.outnlinopt.F90", v1903, v1904, v1905, v1906, v1907, ecx1695, v1902, " #calculated the component:(a,es16.6) #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 27, v575, 11, "-ChiAbs.outnlinopt.F90", v1908, v1909, v1910, v1911, v1912);
     v1913 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v1913, a11, 4, v575, 11, 0x80716a0, v1914, v1915, v1916, v1917, v1918, ecx1695, v1913, a11, 4, v575, 11, 0x80716a0, v1919, v1920, v1921, v1922, v1923);
+    fun_8048c50(ecx1695, v1913, a11, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1914, v1915, v1916, v1917, v1918, ecx1695, v1913, a11, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1919, v1920, v1921, v1922, v1923);
     v1924 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v1924, a12, 4, v575, 11, 0x80716a0, v1925, v1926, v1927, v1928, v1929, ecx1695, v1924, a12, 4, v575, 11, 0x80716a0, v1930, v1931, v1932, v1933, v1934);
+    fun_8048c50(ecx1695, v1924, a12, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1925, v1926, v1927, v1928, v1929, ecx1695, v1924, a12, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1930, v1931, v1932, v1933, v1934);
     v1935 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v1935, a13, 4, v575, 11, 0x80716a0, v1936, v1937, v1938, v1939, v1940, ecx1695, v1935, a13, 4, v575, 11, 0x80716a0, v1941, v1942, v1943, v1944, v1945);
+    fun_8048c50(ecx1695, v1935, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1936, v1937, v1938, v1939, v1940, ecx1695, v1935, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1941, v1942, v1943, v1944, v1945);
     v1946 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v1946, a13, 4, v575, 11, 0x80716a0, v1947, v1948, v1949, v1950, v1951, ecx1695, v1946, a13, 4, v575, 11, 0x80716a0, v1952, v1953, v1954, v1955, v1956);
+    fun_8048b50(ecx1695, v1946, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1947, v1948, v1949, v1950, v1951, ecx1695, v1946, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1952, v1953, v1954, v1955, v1956);
     v1957 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v1957, a13, 4, v575, 11, 0x80716a0, v1958, v1959, v1960, v1961, v1962, ecx1695, v1957, a13, 4, v575, 11, 0x80716a0, v1963, v1964, v1965, v1966, v1967);
+    fun_8048cd0(ecx1695, v1957, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1958, v1959, v1960, v1961, v1962, ecx1695, v1957, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v1963, v1964, v1965, v1966, v1967);
     v1968 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v1968, 0x8071c88, 12, v575, 11, 0x80716a0, v1969, v1970, v1971, v1972, v1973, ecx1695, v1968, 0x8071c88, 12, v575, 11, 0x80716a0, v1974, v1975, v1976, v1977, v1978);
+    fun_8048cc0(ecx1695, v1968, " #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 12, v575, 11, "-ChiAbs.outnlinopt.F90", v1969, v1970, v1971, v1972, v1973, ecx1695, v1968, " #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 12, v575, 11, "-ChiAbs.outnlinopt.F90", v1974, v1975, v1976, v1977, v1978);
     v1979 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v1979, a18, 8, v575, 11, 0x80716a0, v1980, v1981, v1982, ecx1695, v1979, a18, 8, v575, 11, 0x80716a0, v1983, v1984, v1985);
+    fun_8048d50(ecx1695, v1979, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v1980, v1981, v1982, ecx1695, v1979, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v1983, v1984, v1985);
     v1986 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v1986, a18, 8, v575, 11, 0x80716a0, v1987, v1988, v1989, v1990, v1991, ecx1695, v1986, a18, 8, v575, 11, 0x80716a0, v1992, v1993, v1994, v1995, v1996);
+    fun_8048b50(ecx1695, v1986, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v1987, v1988, v1989, v1990, v1991, ecx1695, v1986, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v1992, v1993, v1994, v1995, v1996);
     v1997 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v1997, a18, 8, v575, 11, 0x80716a0, v1998, v1999, v2000, v2001, v2002, ecx1695, v1997, a18, 8, v575, 11, 0x80716a0, v2003, v2004, v2005, v2006, v2007);
+    fun_8048cd0(ecx1695, v1997, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v1998, v1999, v2000, v2001, v2002, ecx1695, v1997, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2003, v2004, v2005, v2006, v2007);
     v2008 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2008, 0x8071ca0, 13, v575, 11, 0x80716a0, v2009, v2010, v2011, v2012, v2013, ecx1695, v2008, 0x8071ca0, 13, v575, 11, 0x80716a0, v2014, v2015, v2016, v2017, v2018);
+    fun_8048cc0(ecx1695, v2008, " #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 13, v575, 11, "-ChiAbs.outnlinopt.F90", v2009, v2010, v2011, v2012, v2013, ecx1695, v2008, " #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 13, v575, 11, "-ChiAbs.outnlinopt.F90", v2014, v2015, v2016, v2017, v2018);
     v2019 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2019, a17, 8, v575, 11, 0x80716a0, v2020, v2021, v2022, ecx1695, v2019, a17, 8, v575, 11, 0x80716a0, v2023, v2024, v2025);
+    fun_8048d50(ecx1695, v2019, a17, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2020, v2021, v2022, ecx1695, v2019, a17, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2023, v2024, v2025);
     v2026 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2026, 0x8071cad, 2, v575, 11, 0x80716a0, v2027, v2028, v2029, v2030, v2031, ecx1695, v2026, 0x8071cad, 2, v575, 11, 0x80716a0, v2032, v2033, v2034, v2035, v2036);
+    fun_8048cc0(ecx1695, v2026, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2027, v2028, v2029, v2030, v2031, ecx1695, v2026, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2032, v2033, v2034, v2035, v2036);
     v2037 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2037, 0x8071cad, 2, v575, 11, 0x80716a0, v2038, v2039, v2040, v2041, v2042, ecx1695, v2037, 0x8071cad, 2, v575, 11, 0x80716a0, v2043, v2044, v2045, v2046, v2047);
+    fun_8048b50(ecx1695, v2037, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2038, v2039, v2040, v2041, v2042, ecx1695, v2037, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2043, v2044, v2045, v2046, v2047);
     v2048 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2048, 0x8071cad, 2, v575, 11, 0x80716a0, v2049, v2050, v2051, v2052, v2053, ecx1695, v2048, 0x8071cad, 2, v575, 11, 0x80716a0, v2054, v2055, v2056, v2057, v2058);
+    fun_8048cd0(ecx1695, v2048, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2049, v2050, v2051, v2052, v2053, ecx1695, v2048, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2054, v2055, v2056, v2057, v2058);
     v2059 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2059, 0x8071caf, 17, v575, 11, 0x80716a0, v2060, v2061, v2062, v2063, v2064, ecx1695, v2059, 0x8071caf, 17, v575, 11, 0x80716a0, v2065, v2066, v2067, v2068, v2069);
+    fun_8048cc0(ecx1695, v2059, " #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 17, v575, 11, "-ChiAbs.outnlinopt.F90", v2060, v2061, v2062, v2063, v2064, ecx1695, v2059, " #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 17, v575, 11, "-ChiAbs.outnlinopt.F90", v2065, v2066, v2067, v2068, v2069);
     v2070 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2070, a16, 8, v575, 11, 0x80716a0, v2071, v2072, v2073, ecx1695, v2070, a16, 8, v575, 11, 0x80716a0, v2074, v2075, v2076);
+    fun_8048d50(ecx1695, v2070, a16, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2071, v2072, v2073, ecx1695, v2070, a16, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2074, v2075, v2076);
     v2077 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2077, 0x8071cad, 2, v575, 11, 0x80716a0, v2078, v2079, v2080, v2081, v2082, ecx1695, v2077, 0x8071cad, 2, v575, 11, 0x80716a0, v2083, v2084, v2085, v2086, v2087);
+    fun_8048cc0(ecx1695, v2077, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2078, v2079, v2080, v2081, v2082, ecx1695, v2077, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2083, v2084, v2085, v2086, v2087);
     v2088 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2088, 0x8071cad, 2, v575, 11, 0x80716a0, v2089, v2090, v2091, v2092, v2093, ecx1695, v2088, 0x8071cad, 2, v575, 11, 0x80716a0, v2094, v2095, v2096, v2097, v2098);
+    fun_8048b50(ecx1695, v2088, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2089, v2090, v2091, v2092, v2093, ecx1695, v2088, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2094, v2095, v2096, v2097, v2098);
     v2099 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2099, 0x8071cad, 2, v575, 11, 0x80716a0, v2100, v2101, v2102, v2103, v2104, ecx1695, v2099, 0x8071cad, 2, v575, 11, 0x80716a0, v2105, v2106, v2107, v2108, v2109);
+    fun_8048cd0(ecx1695, v2099, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2100, v2101, v2102, v2103, v2104, ecx1695, v2099, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2105, v2106, v2107, v2108, v2109);
     v2110 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2110, 0x8071cd5, 16, v575, 11, 0x80716a0, v2111, v2112, v2113, v2114, v2115, ecx1695, v2110, 0x8071cd5, 16, v575, 11, 0x80716a0, v2116, v2117, v2118, v2119, v2120);
+    fun_8048cc0(ecx1695, v2110, " #energy window:eV(a)", 16, v575, 11, "-ChiAbs.outnlinopt.F90", v2111, v2112, v2113, v2114, v2115, ecx1695, v2110, " #energy window:eV(a)", 16, v575, 11, "-ChiAbs.outnlinopt.F90", v2116, v2117, v2118, v2119, v2120);
     __asm__("fld qword [ebp+0xffffff08]");
     __asm__("fsub qword [ebp+0xffffff10]");
     __asm__("fmul qword [ebp+0xffffff30]");
     __asm__("fstp qword [ebp+0xfffff568]");
     v2121 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff568);
     v2122 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2122, v2121, 8, v575, 11, 0x80716a0, v2123, v2124, v2125, ecx1695, v2122, v2121, 8, v575, 11, 0x80716a0, v2126, v2127, v2128);
+    fun_8048d50(ecx1695, v2122, v2121, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2123, v2124, v2125, ecx1695, v2122, v2121, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2126, v2127, v2128);
     v2129 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2129, 0x8071ce5, 2, v575, 11, 0x80716a0, v2130, v2131, v2132, v2133, v2134, ecx1695, v2129, 0x8071ce5, 2, v575, 11, 0x80716a0, v2135, v2136, v2137, v2138, v2139);
+    fun_8048cc0(ecx1695, v2129, "eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2130, v2131, v2132, v2133, v2134, ecx1695, v2129, "eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2135, v2136, v2137, v2138, v2139);
     __asm__("fld qword [ebp+0xffffff08]");
     __asm__("fsub qword [ebp+0xffffff10]");
     __asm__("fstp qword [ebp+0xfffff560]");
     v2140 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff560);
     v2141 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2141, v2140, 8, v575, 11, 0x80716a0, v2142, v2143, v2144, ecx1695, v2141, v2140, 8, v575, 11, 0x80716a0, v2145, v2146, v2147);
+    fun_8048d50(ecx1695, v2141, v2140, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2142, v2143, v2144, ecx1695, v2141, v2140, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2145, v2146, v2147);
     v2148 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2148, 0x8071cad, 2, v575, 11, 0x80716a0, v2149, v2150, v2151, v2152, v2153, ecx1695, v2148, 0x8071cad, 2, v575, 11, 0x80716a0, v2154, v2155, v2156, v2157, v2158);
+    fun_8048cc0(ecx1695, v2148, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2149, v2150, v2151, v2152, v2153, ecx1695, v2148, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2154, v2155, v2156, v2157, v2158);
     v2159 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2159, 0x8071cad, 2, v575, 11, 0x80716a0, v2160, v2161, v2162, v2163, v2164, ecx1695, v2159, 0x8071cad, 2, v575, 11, 0x80716a0, v2165, v2166, v2167, v2168, v2169);
+    fun_8048b50(ecx1695, v2159, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2160, v2161, v2162, v2163, v2164, ecx1695, v2159, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2165, v2166, v2167, v2168, v2169);
     v2170 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2170, 0x8071cad, 2, v575, 11, 0x80716a0, v2171, v2172, v2173, v2174, v2175, ecx1695, v2170, 0x8071cad, 2, v575, 11, 0x80716a0, v2176, v2177, v2178, v2179, v2180);
+    fun_8048cd0(ecx1695, v2170, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2171, v2172, v2173, v2174, v2175, ecx1695, v2170, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2176, v2177, v2178, v2179, v2180);
     v2181 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2181, 0x8071cec, 55, v575, 11, 0x80716a0, v2182, v2183, v2184, v2185, v2186, ecx1695, v2181, 0x8071cec, 55, v575, 11, 0x80716a0, v2187, v2188, v2189, v2190, v2191);
+    fun_8048cc0(ecx1695, v2181, " # Energy      Tot-Im Chi(-2w,w,w)  Tot-Im Chi(-2w,w,w)", 55, v575, 11, "-ChiAbs.outnlinopt.F90", v2182, v2183, v2184, v2185, v2186, ecx1695, v2181, " # Energy      Tot-Im Chi(-2w,w,w)  Tot-Im Chi(-2w,w,w)", 55, v575, 11, "-ChiAbs.outnlinopt.F90", v2187, v2188, v2189, v2190, v2191);
     v2192 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2192, 0x8071cec, 55, v575, 11, 0x80716a0, v2193, v2194, v2195, v2196, v2197, ecx1695, v2192, 0x8071cec, 55, v575, 11, 0x80716a0, v2198, v2199, v2200, v2201, v2202);
+    fun_8048b50(ecx1695, v2192, " # Energy      Tot-Im Chi(-2w,w,w)  Tot-Im Chi(-2w,w,w)", 55, v575, 11, "-ChiAbs.outnlinopt.F90", v2193, v2194, v2195, v2196, v2197, ecx1695, v2192, " # Energy      Tot-Im Chi(-2w,w,w)  Tot-Im Chi(-2w,w,w)", 55, v575, 11, "-ChiAbs.outnlinopt.F90", v2198, v2199, v2200, v2201, v2202);
     v2203 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2203, 0x8071cec, 55, v575, 11, 0x80716a0, v2204, v2205, v2206, v2207, v2208, ecx1695, v2203, 0x8071cec, 55, v575, 11, 0x80716a0, v2209, v2210, v2211, v2212, v2213);
+    fun_8048cd0(ecx1695, v2203, " # Energy      Tot-Im Chi(-2w,w,w)  Tot-Im Chi(-2w,w,w)", 55, v575, 11, "-ChiAbs.outnlinopt.F90", v2204, v2205, v2206, v2207, v2208, ecx1695, v2203, " # Energy      Tot-Im Chi(-2w,w,w)  Tot-Im Chi(-2w,w,w)", 55, v575, 11, "-ChiAbs.outnlinopt.F90", v2209, v2210, v2211, v2212, v2213);
     v2214 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2214, 0x8071d24, 54, v575, 11, 0x80716a0, v2215, v2216, v2217, v2218, v2219, ecx1695, v2214, 0x8071d24, 54, v575, 11, 0x80716a0, v2220, v2221, v2222, v2223, v2224);
+    fun_8048cc0(ecx1695, v2214, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v2215, v2216, v2217, v2218, v2219, ecx1695, v2214, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v2220, v2221, v2222, v2223, v2224);
     v2225 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2225, 0x8071d24, 54, v575, 11, 0x80716a0, v2226, v2227, v2228, v2229, v2230, ecx1695, v2225, 0x8071d24, 54, v575, 11, 0x80716a0, v2231, v2232, v2233, v2234, v2235);
+    fun_8048b50(ecx1695, v2225, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v2226, v2227, v2228, v2229, v2230, ecx1695, v2225, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v2231, v2232, v2233, v2234, v2235);
     v2236 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2236, 0x8071d24, 54, v575, 11, 0x80716a0, v2237, v2238, v2239, v2240, v2241, ecx1695, v2236, 0x8071d24, 54, v575, 11, 0x80716a0, v2242, v2243, v2244, v2245, v2246);
+    fun_8048cd0(ecx1695, v2236, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v2237, v2238, v2239, v2240, v2241, ecx1695, v2236, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v2242, v2243, v2244, v2245, v2246);
     v2247 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2247, 0x8071d5a, 3, v575, 11, 0x80716a0, v2248, v2249, v2250, v2251, v2252, ecx1695, v2247, 0x8071d5a, 3, v575, 11, 0x80716a0, v2253, v2254, v2255, v2256, v2257);
+    fun_8048cc0(ecx1695, v2247, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v2248, v2249, v2250, v2251, v2252, ecx1695, v2247, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v2253, v2254, v2255, v2256, v2257);
     v2258 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2258, 0x8071d5a, 3, v575, 11, 0x80716a0, v2259, v2260, v2261, v2262, v2263, ecx1695, v2258, 0x8071d5a, 3, v575, 11, 0x80716a0, v2264, v2265, v2266, v2267, v2268);
+    fun_8048b50(ecx1695, v2258, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v2259, v2260, v2261, v2262, v2263, ecx1695, v2258, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v2264, v2265, v2266, v2267, v2268);
     v2269 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2269, 0x8071d5a, 3, v575, 11, 0x80716a0, v2270, v2271, v2272, v2273, v2274, ecx1695, v2269, 0x8071d5a, 3, v575, 11, 0x80716a0, v2275, v2276, v2277, v2278, v2279);
+    fun_8048cd0(ecx1695, v2269, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v2270, v2271, v2272, v2273, v2274, ecx1695, v2269, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v2275, v2276, v2277, v2278, v2279);
     v2280 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2280, 0x8071c63, 27, v575, 11, 0x80716a0, v2281, v2282, v2283, v2284, v2285, ecx1695, v2280, 0x8071c63, 27, v575, 11, 0x80716a0, v2286, v2287, v2288, v2289, v2290);
+    fun_8048cc0(ecx1695, v2280, " #calculated the component:(a,es16.6) #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 27, v575, 11, "-ChiAbs.outnlinopt.F90", v2281, v2282, v2283, v2284, v2285, ecx1695, v2280, " #calculated the component:(a,es16.6) #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 27, v575, 11, "-ChiAbs.outnlinopt.F90", v2286, v2287, v2288, v2289, v2290);
     v2291 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v2291, a11, 4, v575, 11, 0x80716a0, v2292, v2293, v2294, v2295, v2296, ecx1695, v2291, a11, 4, v575, 11, 0x80716a0, v2297, v2298, v2299, v2300, v2301);
+    fun_8048c50(ecx1695, v2291, a11, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2292, v2293, v2294, v2295, v2296, ecx1695, v2291, a11, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2297, v2298, v2299, v2300, v2301);
     v2302 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v2302, a12, 4, v575, 11, 0x80716a0, v2303, v2304, v2305, v2306, v2307, ecx1695, v2302, a12, 4, v575, 11, 0x80716a0, v2308, v2309, v2310, v2311, v2312);
+    fun_8048c50(ecx1695, v2302, a12, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2303, v2304, v2305, v2306, v2307, ecx1695, v2302, a12, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2308, v2309, v2310, v2311, v2312);
     v2313 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v2313, a13, 4, v575, 11, 0x80716a0, v2314, v2315, v2316, v2317, v2318, ecx1695, v2313, a13, 4, v575, 11, 0x80716a0, v2319, v2320, v2321, v2322, v2323);
+    fun_8048c50(ecx1695, v2313, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2314, v2315, v2316, v2317, v2318, ecx1695, v2313, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2319, v2320, v2321, v2322, v2323);
     v2324 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2324, a13, 4, v575, 11, 0x80716a0, v2325, v2326, v2327, v2328, v2329, ecx1695, v2324, a13, 4, v575, 11, 0x80716a0, v2330, v2331, v2332, v2333, v2334);
+    fun_8048b50(ecx1695, v2324, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2325, v2326, v2327, v2328, v2329, ecx1695, v2324, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2330, v2331, v2332, v2333, v2334);
     v2335 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2335, a13, 4, v575, 11, 0x80716a0, v2336, v2337, v2338, v2339, v2340, ecx1695, v2335, a13, 4, v575, 11, 0x80716a0, v2341, v2342, v2343, v2344, v2345);
+    fun_8048cd0(ecx1695, v2335, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2336, v2337, v2338, v2339, v2340, ecx1695, v2335, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2341, v2342, v2343, v2344, v2345);
     v2346 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2346, 0x8071c88, 12, v575, 11, 0x80716a0, v2347, v2348, v2349, v2350, v2351, ecx1695, v2346, 0x8071c88, 12, v575, 11, 0x80716a0, v2352, v2353, v2354, v2355, v2356);
+    fun_8048cc0(ecx1695, v2346, " #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 12, v575, 11, "-ChiAbs.outnlinopt.F90", v2347, v2348, v2349, v2350, v2351, ecx1695, v2346, " #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 12, v575, 11, "-ChiAbs.outnlinopt.F90", v2352, v2353, v2354, v2355, v2356);
     v2357 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2357, a18, 8, v575, 11, 0x80716a0, v2358, v2359, v2360, ecx1695, v2357, a18, 8, v575, 11, 0x80716a0, v2361, v2362, v2363);
+    fun_8048d50(ecx1695, v2357, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2358, v2359, v2360, ecx1695, v2357, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2361, v2362, v2363);
     v2364 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2364, a18, 8, v575, 11, 0x80716a0, v2365, v2366, v2367, v2368, v2369, ecx1695, v2364, a18, 8, v575, 11, 0x80716a0, v2370, v2371, v2372, v2373, v2374);
+    fun_8048b50(ecx1695, v2364, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2365, v2366, v2367, v2368, v2369, ecx1695, v2364, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2370, v2371, v2372, v2373, v2374);
     v2375 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2375, a18, 8, v575, 11, 0x80716a0, v2376, v2377, v2378, v2379, v2380, ecx1695, v2375, a18, 8, v575, 11, 0x80716a0, v2381, v2382, v2383, v2384, v2385);
+    fun_8048cd0(ecx1695, v2375, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2376, v2377, v2378, v2379, v2380, ecx1695, v2375, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2381, v2382, v2383, v2384, v2385);
     v2386 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2386, 0x8071ca0, 13, v575, 11, 0x80716a0, v2387, v2388, v2389, v2390, v2391, ecx1695, v2386, 0x8071ca0, 13, v575, 11, 0x80716a0, v2392, v2393, v2394, v2395, v2396);
+    fun_8048cc0(ecx1695, v2386, " #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 13, v575, 11, "-ChiAbs.outnlinopt.F90", v2387, v2388, v2389, v2390, v2391, ecx1695, v2386, " #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 13, v575, 11, "-ChiAbs.outnlinopt.F90", v2392, v2393, v2394, v2395, v2396);
     v2397 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2397, a17, 8, v575, 11, 0x80716a0, v2398, v2399, v2400, ecx1695, v2397, a17, 8, v575, 11, 0x80716a0, v2401, v2402, v2403);
+    fun_8048d50(ecx1695, v2397, a17, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2398, v2399, v2400, ecx1695, v2397, a17, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2401, v2402, v2403);
     v2404 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2404, 0x8071cad, 2, v575, 11, 0x80716a0, v2405, v2406, v2407, v2408, v2409, ecx1695, v2404, 0x8071cad, 2, v575, 11, 0x80716a0, v2410, v2411, v2412, v2413, v2414);
+    fun_8048cc0(ecx1695, v2404, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2405, v2406, v2407, v2408, v2409, ecx1695, v2404, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2410, v2411, v2412, v2413, v2414);
     v2415 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2415, 0x8071cad, 2, v575, 11, 0x80716a0, v2416, v2417, v2418, v2419, v2420, ecx1695, v2415, 0x8071cad, 2, v575, 11, 0x80716a0, v2421, v2422, v2423, v2424, v2425);
+    fun_8048b50(ecx1695, v2415, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2416, v2417, v2418, v2419, v2420, ecx1695, v2415, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2421, v2422, v2423, v2424, v2425);
     v2426 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2426, 0x8071cad, 2, v575, 11, 0x80716a0, v2427, v2428, v2429, v2430, v2431, ecx1695, v2426, 0x8071cad, 2, v575, 11, 0x80716a0, v2432, v2433, v2434, v2435, v2436);
+    fun_8048cd0(ecx1695, v2426, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2427, v2428, v2429, v2430, v2431, ecx1695, v2426, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2432, v2433, v2434, v2435, v2436);
     v2437 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2437, 0x8071caf, 17, v575, 11, 0x80716a0, v2438, v2439, v2440, v2441, v2442, ecx1695, v2437, 0x8071caf, 17, v575, 11, 0x80716a0, v2443, v2444, v2445, v2446, v2447);
+    fun_8048cc0(ecx1695, v2437, " #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 17, v575, 11, "-ChiAbs.outnlinopt.F90", v2438, v2439, v2440, v2441, v2442, ecx1695, v2437, " #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 17, v575, 11, "-ChiAbs.outnlinopt.F90", v2443, v2444, v2445, v2446, v2447);
     v2448 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2448, a16, 8, v575, 11, 0x80716a0, v2449, v2450, v2451, ecx1695, v2448, a16, 8, v575, 11, 0x80716a0, v2452, v2453, v2454);
+    fun_8048d50(ecx1695, v2448, a16, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2449, v2450, v2451, ecx1695, v2448, a16, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2452, v2453, v2454);
     v2455 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2455, 0x8071cad, 2, v575, 11, 0x80716a0, v2456, v2457, v2458, v2459, v2460, ecx1695, v2455, 0x8071cad, 2, v575, 11, 0x80716a0, v2461, v2462, v2463, v2464, v2465);
+    fun_8048cc0(ecx1695, v2455, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2456, v2457, v2458, v2459, v2460, ecx1695, v2455, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2461, v2462, v2463, v2464, v2465);
     v2466 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2466, 0x8071cad, 2, v575, 11, 0x80716a0, v2467, v2468, v2469, v2470, v2471, ecx1695, v2466, 0x8071cad, 2, v575, 11, 0x80716a0, v2472, v2473, v2474, v2475, v2476);
+    fun_8048b50(ecx1695, v2466, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2467, v2468, v2469, v2470, v2471, ecx1695, v2466, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2472, v2473, v2474, v2475, v2476);
     v2477 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2477, 0x8071cad, 2, v575, 11, 0x80716a0, v2478, v2479, v2480, v2481, v2482, ecx1695, v2477, 0x8071cad, 2, v575, 11, 0x80716a0, v2483, v2484, v2485, v2486, v2487);
+    fun_8048cd0(ecx1695, v2477, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2478, v2479, v2480, v2481, v2482, ecx1695, v2477, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2483, v2484, v2485, v2486, v2487);
     v2488 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2488, 0x8071cd5, 16, v575, 11, 0x80716a0, v2489, v2490, v2491, v2492, v2493, ecx1695, v2488, 0x8071cd5, 16, v575, 11, 0x80716a0, v2494, v2495, v2496, v2497, v2498);
+    fun_8048cc0(ecx1695, v2488, " #energy window:eV(a)", 16, v575, 11, "-ChiAbs.outnlinopt.F90", v2489, v2490, v2491, v2492, v2493, ecx1695, v2488, " #energy window:eV(a)", 16, v575, 11, "-ChiAbs.outnlinopt.F90", v2494, v2495, v2496, v2497, v2498);
     __asm__("fld qword [ebp+0xffffff08]");
     __asm__("fsub qword [ebp+0xffffff10]");
     __asm__("fmul qword [ebp+0xffffff30]");
     __asm__("fstp qword [ebp+0xfffff558]");
     v2499 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff558);
     v2500 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2500, v2499, 8, v575, 11, 0x80716a0, v2501, v2502, v2503, ecx1695, v2500, v2499, 8, v575, 11, 0x80716a0, v2504, v2505, v2506);
+    fun_8048d50(ecx1695, v2500, v2499, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2501, v2502, v2503, ecx1695, v2500, v2499, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2504, v2505, v2506);
     v2507 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2507, 0x8071ce5, 2, v575, 11, 0x80716a0, v2508, v2509, v2510, v2511, v2512, ecx1695, v2507, 0x8071ce5, 2, v575, 11, 0x80716a0, v2513, v2514, v2515, v2516, v2517);
+    fun_8048cc0(ecx1695, v2507, "eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2508, v2509, v2510, v2511, v2512, ecx1695, v2507, "eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2513, v2514, v2515, v2516, v2517);
     __asm__("fld qword [ebp+0xffffff08]");
     __asm__("fsub qword [ebp+0xffffff10]");
     __asm__("fstp qword [ebp+0xfffff550]");
     v2518 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff550);
     v2519 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2519, v2518, 8, v575, 11, 0x80716a0, v2520, v2521, v2522, ecx1695, v2519, v2518, 8, v575, 11, 0x80716a0, v2523, v2524, v2525);
+    fun_8048d50(ecx1695, v2519, v2518, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2520, v2521, v2522, ecx1695, v2519, v2518, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2523, v2524, v2525);
     v2526 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2526, 0x8071cad, 2, v575, 11, 0x80716a0, v2527, v2528, v2529, v2530, v2531, ecx1695, v2526, 0x8071cad, 2, v575, 11, 0x80716a0, v2532, v2533, v2534, v2535, v2536);
+    fun_8048cc0(ecx1695, v2526, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2527, v2528, v2529, v2530, v2531, ecx1695, v2526, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2532, v2533, v2534, v2535, v2536);
     v2537 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2537, 0x8071cad, 2, v575, 11, 0x80716a0, v2538, v2539, v2540, v2541, v2542, ecx1695, v2537, 0x8071cad, 2, v575, 11, 0x80716a0, v2543, v2544, v2545, v2546, v2547);
+    fun_8048b50(ecx1695, v2537, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2538, v2539, v2540, v2541, v2542, ecx1695, v2537, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2543, v2544, v2545, v2546, v2547);
     v2548 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2548, 0x8071cad, 2, v575, 11, 0x80716a0, v2549, v2550, v2551, v2552, v2553, ecx1695, v2548, 0x8071cad, 2, v575, 11, 0x80716a0, v2554, v2555, v2556, v2557, v2558);
+    fun_8048cd0(ecx1695, v2548, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2549, v2550, v2551, v2552, v2553, ecx1695, v2548, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2554, v2555, v2556, v2557, v2558);
     v2559 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2559, 0x8071cec, 55, v575, 11, 0x80716a0, v2560, v2561, v2562, v2563, v2564, ecx1695, v2559, 0x8071cec, 55, v575, 11, 0x80716a0, v2565, v2566, v2567, v2568, v2569);
+    fun_8048cc0(ecx1695, v2559, " # Energy      Tot-Im Chi(-2w,w,w)  Tot-Im Chi(-2w,w,w)", 55, v575, 11, "-ChiAbs.outnlinopt.F90", v2560, v2561, v2562, v2563, v2564, ecx1695, v2559, " # Energy      Tot-Im Chi(-2w,w,w)  Tot-Im Chi(-2w,w,w)", 55, v575, 11, "-ChiAbs.outnlinopt.F90", v2565, v2566, v2567, v2568, v2569);
     v2570 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2570, 0x8071cec, 55, v575, 11, 0x80716a0, v2571, v2572, v2573, v2574, v2575, ecx1695, v2570, 0x8071cec, 55, v575, 11, 0x80716a0, v2576, v2577, v2578, v2579, v2580);
+    fun_8048b50(ecx1695, v2570, " # Energy      Tot-Im Chi(-2w,w,w)  Tot-Im Chi(-2w,w,w)", 55, v575, 11, "-ChiAbs.outnlinopt.F90", v2571, v2572, v2573, v2574, v2575, ecx1695, v2570, " # Energy      Tot-Im Chi(-2w,w,w)  Tot-Im Chi(-2w,w,w)", 55, v575, 11, "-ChiAbs.outnlinopt.F90", v2576, v2577, v2578, v2579, v2580);
     v2581 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2581, 0x8071cec, 55, v575, 11, 0x80716a0, v2582, v2583, v2584, v2585, v2586, ecx1695, v2581, 0x8071cec, 55, v575, 11, 0x80716a0, v2587, v2588, v2589, v2590, v2591);
+    fun_8048cd0(ecx1695, v2581, " # Energy      Tot-Im Chi(-2w,w,w)  Tot-Im Chi(-2w,w,w)", 55, v575, 11, "-ChiAbs.outnlinopt.F90", v2582, v2583, v2584, v2585, v2586, ecx1695, v2581, " # Energy      Tot-Im Chi(-2w,w,w)  Tot-Im Chi(-2w,w,w)", 55, v575, 11, "-ChiAbs.outnlinopt.F90", v2587, v2588, v2589, v2590, v2591);
     v2592 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2592, 0x8071d24, 54, v575, 11, 0x80716a0, v2593, v2594, v2595, v2596, v2597, ecx1695, v2592, 0x8071d24, 54, v575, 11, 0x80716a0, v2598, v2599, v2600, v2601, v2602);
+    fun_8048cc0(ecx1695, v2592, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v2593, v2594, v2595, v2596, v2597, ecx1695, v2592, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v2598, v2599, v2600, v2601, v2602);
     v2603 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2603, 0x8071d24, 54, v575, 11, 0x80716a0, v2604, v2605, v2606, v2607, v2608, ecx1695, v2603, 0x8071d24, 54, v575, 11, 0x80716a0, v2609, v2610, v2611, v2612, v2613);
+    fun_8048b50(ecx1695, v2603, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v2604, v2605, v2606, v2607, v2608, ecx1695, v2603, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v2609, v2610, v2611, v2612, v2613);
     v2614 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2614, 0x8071d24, 54, v575, 11, 0x80716a0, v2615, v2616, v2617, v2618, v2619, ecx1695, v2614, 0x8071d24, 54, v575, 11, 0x80716a0, v2620, v2621, v2622, v2623, v2624);
+    fun_8048cd0(ecx1695, v2614, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v2615, v2616, v2617, v2618, v2619, ecx1695, v2614, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v2620, v2621, v2622, v2623, v2624);
     v2625 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2625, 0x8071d5a, 3, v575, 11, 0x80716a0, v2626, v2627, v2628, v2629, v2630, ecx1695, v2625, 0x8071d5a, 3, v575, 11, 0x80716a0, v2631, v2632, v2633, v2634, v2635);
+    fun_8048cc0(ecx1695, v2625, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v2626, v2627, v2628, v2629, v2630, ecx1695, v2625, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v2631, v2632, v2633, v2634, v2635);
     v2636 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2636, 0x8071d5a, 3, v575, 11, 0x80716a0, v2637, v2638, v2639, v2640, v2641, ecx1695, v2636, 0x8071d5a, 3, v575, 11, 0x80716a0, v2642, v2643, v2644, v2645, v2646);
+    fun_8048b50(ecx1695, v2636, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v2637, v2638, v2639, v2640, v2641, ecx1695, v2636, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v2642, v2643, v2644, v2645, v2646);
     v2647 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2647, 0x8071d5a, 3, v575, 11, 0x80716a0, v2648, v2649, v2650, v2651, v2652, ecx1695, v2647, 0x8071d5a, 3, v575, 11, 0x80716a0, v2653, v2654, v2655, v2656, v2657);
+    fun_8048cd0(ecx1695, v2647, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v2648, v2649, v2650, v2651, v2652, ecx1695, v2647, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v2653, v2654, v2655, v2656, v2657);
     v2658 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2658, 0x8071c63, 27, v575, 11, 0x80716a0, v2659, v2660, v2661, v2662, v2663, ecx1695, v2658, 0x8071c63, 27, v575, 11, 0x80716a0, v2664, v2665, v2666, v2667, v2668);
+    fun_8048cc0(ecx1695, v2658, " #calculated the component:(a,es16.6) #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 27, v575, 11, "-ChiAbs.outnlinopt.F90", v2659, v2660, v2661, v2662, v2663, ecx1695, v2658, " #calculated the component:(a,es16.6) #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 27, v575, 11, "-ChiAbs.outnlinopt.F90", v2664, v2665, v2666, v2667, v2668);
     v2669 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v2669, a11, 4, v575, 11, 0x80716a0, v2670, v2671, v2672, v2673, v2674, ecx1695, v2669, a11, 4, v575, 11, 0x80716a0, v2675, v2676, v2677, v2678, v2679);
+    fun_8048c50(ecx1695, v2669, a11, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2670, v2671, v2672, v2673, v2674, ecx1695, v2669, a11, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2675, v2676, v2677, v2678, v2679);
     v2680 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v2680, a12, 4, v575, 11, 0x80716a0, v2681, v2682, v2683, v2684, v2685, ecx1695, v2680, a12, 4, v575, 11, 0x80716a0, v2686, v2687, v2688, v2689, v2690);
+    fun_8048c50(ecx1695, v2680, a12, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2681, v2682, v2683, v2684, v2685, ecx1695, v2680, a12, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2686, v2687, v2688, v2689, v2690);
     v2691 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v2691, a13, 4, v575, 11, 0x80716a0, v2692, v2693, v2694, v2695, v2696, ecx1695, v2691, a13, 4, v575, 11, 0x80716a0, v2697, v2698, v2699, v2700, v2701);
+    fun_8048c50(ecx1695, v2691, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2692, v2693, v2694, v2695, v2696, ecx1695, v2691, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2697, v2698, v2699, v2700, v2701);
     v2702 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2702, a13, 4, v575, 11, 0x80716a0, v2703, v2704, v2705, v2706, v2707, ecx1695, v2702, a13, 4, v575, 11, 0x80716a0, v2708, v2709, v2710, v2711, v2712);
+    fun_8048b50(ecx1695, v2702, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2703, v2704, v2705, v2706, v2707, ecx1695, v2702, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2708, v2709, v2710, v2711, v2712);
     v2713 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2713, a13, 4, v575, 11, 0x80716a0, v2714, v2715, v2716, v2717, v2718, ecx1695, v2713, a13, 4, v575, 11, 0x80716a0, v2719, v2720, v2721, v2722, v2723);
+    fun_8048cd0(ecx1695, v2713, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2714, v2715, v2716, v2717, v2718, ecx1695, v2713, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v2719, v2720, v2721, v2722, v2723);
     v2724 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2724, 0x8071c88, 12, v575, 11, 0x80716a0, v2725, v2726, v2727, v2728, v2729, ecx1695, v2724, 0x8071c88, 12, v575, 11, 0x80716a0, v2730, v2731, v2732, v2733, v2734);
+    fun_8048cc0(ecx1695, v2724, " #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 12, v575, 11, "-ChiAbs.outnlinopt.F90", v2725, v2726, v2727, v2728, v2729, ecx1695, v2724, " #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 12, v575, 11, "-ChiAbs.outnlinopt.F90", v2730, v2731, v2732, v2733, v2734);
     v2735 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2735, a18, 8, v575, 11, 0x80716a0, v2736, v2737, v2738, ecx1695, v2735, a18, 8, v575, 11, 0x80716a0, v2739, v2740, v2741);
+    fun_8048d50(ecx1695, v2735, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2736, v2737, v2738, ecx1695, v2735, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2739, v2740, v2741);
     v2742 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2742, a18, 8, v575, 11, 0x80716a0, v2743, v2744, v2745, v2746, v2747, ecx1695, v2742, a18, 8, v575, 11, 0x80716a0, v2748, v2749, v2750, v2751, v2752);
+    fun_8048b50(ecx1695, v2742, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2743, v2744, v2745, v2746, v2747, ecx1695, v2742, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2748, v2749, v2750, v2751, v2752);
     v2753 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2753, a18, 8, v575, 11, 0x80716a0, v2754, v2755, v2756, v2757, v2758, ecx1695, v2753, a18, 8, v575, 11, 0x80716a0, v2759, v2760, v2761, v2762, v2763);
+    fun_8048cd0(ecx1695, v2753, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2754, v2755, v2756, v2757, v2758, ecx1695, v2753, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2759, v2760, v2761, v2762, v2763);
     v2764 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2764, 0x8071ca0, 13, v575, 11, 0x80716a0, v2765, v2766, v2767, v2768, v2769, ecx1695, v2764, 0x8071ca0, 13, v575, 11, 0x80716a0, v2770, v2771, v2772, v2773, v2774);
+    fun_8048cc0(ecx1695, v2764, " #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 13, v575, 11, "-ChiAbs.outnlinopt.F90", v2765, v2766, v2767, v2768, v2769, ecx1695, v2764, " #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 13, v575, 11, "-ChiAbs.outnlinopt.F90", v2770, v2771, v2772, v2773, v2774);
     v2775 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2775, a17, 8, v575, 11, 0x80716a0, v2776, v2777, v2778, ecx1695, v2775, a17, 8, v575, 11, 0x80716a0, v2779, v2780, v2781);
+    fun_8048d50(ecx1695, v2775, a17, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2776, v2777, v2778, ecx1695, v2775, a17, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2779, v2780, v2781);
     v2782 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2782, 0x8071cad, 2, v575, 11, 0x80716a0, v2783, v2784, v2785, v2786, v2787, ecx1695, v2782, 0x8071cad, 2, v575, 11, 0x80716a0, v2788, v2789, v2790, v2791, v2792);
+    fun_8048cc0(ecx1695, v2782, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2783, v2784, v2785, v2786, v2787, ecx1695, v2782, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2788, v2789, v2790, v2791, v2792);
     v2793 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2793, 0x8071cad, 2, v575, 11, 0x80716a0, v2794, v2795, v2796, v2797, v2798, ecx1695, v2793, 0x8071cad, 2, v575, 11, 0x80716a0, v2799, v2800, v2801, v2802, v2803);
+    fun_8048b50(ecx1695, v2793, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2794, v2795, v2796, v2797, v2798, ecx1695, v2793, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2799, v2800, v2801, v2802, v2803);
     v2804 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2804, 0x8071cad, 2, v575, 11, 0x80716a0, v2805, v2806, v2807, v2808, v2809, ecx1695, v2804, 0x8071cad, 2, v575, 11, 0x80716a0, v2810, v2811, v2812, v2813, v2814);
+    fun_8048cd0(ecx1695, v2804, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2805, v2806, v2807, v2808, v2809, ecx1695, v2804, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2810, v2811, v2812, v2813, v2814);
     v2815 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2815, 0x8071caf, 17, v575, 11, 0x80716a0, v2816, v2817, v2818, v2819, v2820, ecx1695, v2815, 0x8071caf, 17, v575, 11, 0x80716a0, v2821, v2822, v2823, v2824, v2825);
+    fun_8048cc0(ecx1695, v2815, " #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 17, v575, 11, "-ChiAbs.outnlinopt.F90", v2816, v2817, v2818, v2819, v2820, ecx1695, v2815, " #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 17, v575, 11, "-ChiAbs.outnlinopt.F90", v2821, v2822, v2823, v2824, v2825);
     v2826 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2826, a16, 8, v575, 11, 0x80716a0, v2827, v2828, v2829, ecx1695, v2826, a16, 8, v575, 11, 0x80716a0, v2830, v2831, v2832);
+    fun_8048d50(ecx1695, v2826, a16, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2827, v2828, v2829, ecx1695, v2826, a16, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2830, v2831, v2832);
     v2833 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2833, 0x8071cad, 2, v575, 11, 0x80716a0, v2834, v2835, v2836, v2837, v2838, ecx1695, v2833, 0x8071cad, 2, v575, 11, 0x80716a0, v2839, v2840, v2841, v2842, v2843);
+    fun_8048cc0(ecx1695, v2833, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2834, v2835, v2836, v2837, v2838, ecx1695, v2833, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2839, v2840, v2841, v2842, v2843);
     v2844 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2844, 0x8071cad, 2, v575, 11, 0x80716a0, v2845, v2846, v2847, v2848, v2849, ecx1695, v2844, 0x8071cad, 2, v575, 11, 0x80716a0, v2850, v2851, v2852, v2853, v2854);
+    fun_8048b50(ecx1695, v2844, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2845, v2846, v2847, v2848, v2849, ecx1695, v2844, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2850, v2851, v2852, v2853, v2854);
     v2855 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2855, 0x8071cad, 2, v575, 11, 0x80716a0, v2856, v2857, v2858, v2859, v2860, ecx1695, v2855, 0x8071cad, 2, v575, 11, 0x80716a0, v2861, v2862, v2863, v2864, v2865);
+    fun_8048cd0(ecx1695, v2855, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2856, v2857, v2858, v2859, v2860, ecx1695, v2855, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2861, v2862, v2863, v2864, v2865);
     v2866 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2866, 0x8071cd5, 16, v575, 11, 0x80716a0, v2867, v2868, v2869, v2870, v2871, ecx1695, v2866, 0x8071cd5, 16, v575, 11, 0x80716a0, v2872, v2873, v2874, v2875, v2876);
+    fun_8048cc0(ecx1695, v2866, " #energy window:eV(a)", 16, v575, 11, "-ChiAbs.outnlinopt.F90", v2867, v2868, v2869, v2870, v2871, ecx1695, v2866, " #energy window:eV(a)", 16, v575, 11, "-ChiAbs.outnlinopt.F90", v2872, v2873, v2874, v2875, v2876);
     __asm__("fld qword [ebp+0xffffff08]");
     __asm__("fsub qword [ebp+0xffffff10]");
     __asm__("fmul qword [ebp+0xffffff30]");
     __asm__("fstp qword [ebp+0xfffff548]");
     v2877 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff548);
     v2878 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2878, v2877, 8, v575, 11, 0x80716a0, v2879, v2880, v2881, ecx1695, v2878, v2877, 8, v575, 11, 0x80716a0, v2882, v2883, v2884);
+    fun_8048d50(ecx1695, v2878, v2877, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2879, v2880, v2881, ecx1695, v2878, v2877, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2882, v2883, v2884);
     v2885 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2885, 0x8071ce5, 2, v575, 11, 0x80716a0, v2886, v2887, v2888, v2889, v2890, ecx1695, v2885, 0x8071ce5, 2, v575, 11, 0x80716a0, v2891, v2892, v2893, v2894, v2895);
+    fun_8048cc0(ecx1695, v2885, "eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2886, v2887, v2888, v2889, v2890, ecx1695, v2885, "eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2891, v2892, v2893, v2894, v2895);
     __asm__("fld qword [ebp+0xffffff08]");
     __asm__("fsub qword [ebp+0xffffff10]");
     __asm__("fstp qword [ebp+0xfffff540]");
     v2896 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff540);
     v2897 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v2897, v2896, 8, v575, 11, 0x80716a0, v2898, v2899, v2900, ecx1695, v2897, v2896, 8, v575, 11, 0x80716a0, v2901, v2902, v2903);
+    fun_8048d50(ecx1695, v2897, v2896, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2898, v2899, v2900, ecx1695, v2897, v2896, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v2901, v2902, v2903);
     v2904 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2904, 0x8071cad, 2, v575, 11, 0x80716a0, v2905, v2906, v2907, v2908, v2909, ecx1695, v2904, 0x8071cad, 2, v575, 11, 0x80716a0, v2910, v2911, v2912, v2913, v2914);
+    fun_8048cc0(ecx1695, v2904, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2905, v2906, v2907, v2908, v2909, ecx1695, v2904, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2910, v2911, v2912, v2913, v2914);
     v2915 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2915, 0x8071cad, 2, v575, 11, 0x80716a0, v2916, v2917, v2918, v2919, v2920, ecx1695, v2915, 0x8071cad, 2, v575, 11, 0x80716a0, v2921, v2922, v2923, v2924, v2925);
+    fun_8048b50(ecx1695, v2915, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2916, v2917, v2918, v2919, v2920, ecx1695, v2915, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2921, v2922, v2923, v2924, v2925);
     v2926 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2926, 0x8071cad, 2, v575, 11, 0x80716a0, v2927, v2928, v2929, v2930, v2931, ecx1695, v2926, 0x8071cad, 2, v575, 11, 0x80716a0, v2932, v2933, v2934, v2935, v2936);
+    fun_8048cd0(ecx1695, v2926, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2927, v2928, v2929, v2930, v2931, ecx1695, v2926, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v2932, v2933, v2934, v2935, v2936);
     v2937 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2937, 0x8071d60, 53, v575, 11, 0x80716a0, v2938, v2939, v2940, v2941, v2942, ecx1695, v2937, 0x8071d60, 53, v575, 11, 0x80716a0, v2943, v2944, v2945, v2946, v2947);
+    fun_8048cc0(ecx1695, v2937, " # Energy(eV) Inter(2w) inter(1w) intra(2w) intra(1w) # in esu", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v2938, v2939, v2940, v2941, v2942, ecx1695, v2937, " # Energy(eV) Inter(2w) inter(1w) intra(2w) intra(1w) # in esu", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v2943, v2944, v2945, v2946, v2947);
     v2948 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2948, 0x8071d60, 53, v575, 11, 0x80716a0, v2949, v2950, v2951, v2952, v2953, ecx1695, v2948, 0x8071d60, 53, v575, 11, 0x80716a0, v2954, v2955, v2956, v2957, v2958);
+    fun_8048b50(ecx1695, v2948, " # Energy(eV) Inter(2w) inter(1w) intra(2w) intra(1w) # in esu", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v2949, v2950, v2951, v2952, v2953, ecx1695, v2948, " # Energy(eV) Inter(2w) inter(1w) intra(2w) intra(1w) # in esu", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v2954, v2955, v2956, v2957, v2958);
     v2959 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2959, 0x8071d60, 53, v575, 11, 0x80716a0, v2960, v2961, v2962, v2963, v2964, ecx1695, v2959, 0x8071d60, 53, v575, 11, 0x80716a0, v2965, v2966, v2967, v2968, v2969);
+    fun_8048cd0(ecx1695, v2959, " # Energy(eV) Inter(2w) inter(1w) intra(2w) intra(1w) # in esu", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v2960, v2961, v2962, v2963, v2964, ecx1695, v2959, " # Energy(eV) Inter(2w) inter(1w) intra(2w) intra(1w) # in esu", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v2965, v2966, v2967, v2968, v2969);
     v2970 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v2970, 0x8071d95, 9, v575, 11, 0x80716a0, v2971, v2972, v2973, v2974, v2975, ecx1695, v2970, 0x8071d95, 9, v575, 11, 0x80716a0, v2976, v2977, v2978, v2979, v2980);
+    fun_8048cc0(ecx1695, v2970, " # in esu", 9, v575, 11, "-ChiAbs.outnlinopt.F90", v2971, v2972, v2973, v2974, v2975, ecx1695, v2970, " # in esu", 9, v575, 11, "-ChiAbs.outnlinopt.F90", v2976, v2977, v2978, v2979, v2980);
     v2981 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v2981, 0x8071d95, 9, v575, 11, 0x80716a0, v2982, v2983, v2984, v2985, v2986, ecx1695, v2981, 0x8071d95, 9, v575, 11, 0x80716a0, v2987, v2988, v2989, v2990, v2991);
+    fun_8048b50(ecx1695, v2981, " # in esu", 9, v575, 11, "-ChiAbs.outnlinopt.F90", v2982, v2983, v2984, v2985, v2986, ecx1695, v2981, " # in esu", 9, v575, 11, "-ChiAbs.outnlinopt.F90", v2987, v2988, v2989, v2990, v2991);
     v2992 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v2992, 0x8071d95, 9, v575, 11, 0x80716a0, v2993, v2994, v2995, v2996, v2997, ecx1695, v2992, 0x8071d95, 9, v575, 11, 0x80716a0, v2998, v2999, v3000, v3001, v3002);
+    fun_8048cd0(ecx1695, v2992, " # in esu", 9, v575, 11, "-ChiAbs.outnlinopt.F90", v2993, v2994, v2995, v2996, v2997, ecx1695, v2992, " # in esu", 9, v575, 11, "-ChiAbs.outnlinopt.F90", v2998, v2999, v3000, v3001, v3002);
     v3003 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3003, 0x8071d5a, 3, v575, 11, 0x80716a0, v3004, v3005, v3006, v3007, v3008, ecx1695, v3003, 0x8071d5a, 3, v575, 11, 0x80716a0, v3009, v3010, v3011, v3012, v3013);
+    fun_8048cc0(ecx1695, v3003, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3004, v3005, v3006, v3007, v3008, ecx1695, v3003, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3009, v3010, v3011, v3012, v3013);
     v3014 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3014, 0x8071d5a, 3, v575, 11, 0x80716a0, v3015, v3016, v3017, v3018, v3019, ecx1695, v3014, 0x8071d5a, 3, v575, 11, 0x80716a0, v3020, v3021, v3022, v3023, v3024);
+    fun_8048b50(ecx1695, v3014, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3015, v3016, v3017, v3018, v3019, ecx1695, v3014, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3020, v3021, v3022, v3023, v3024);
     v3025 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3025, 0x8071d5a, 3, v575, 11, 0x80716a0, v3026, v3027, v3028, v3029, v3030, ecx1695, v3025, 0x8071d5a, 3, v575, 11, 0x80716a0, v3031, v3032, v3033, v3034, v3035);
+    fun_8048cd0(ecx1695, v3025, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3026, v3027, v3028, v3029, v3030, ecx1695, v3025, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3031, v3032, v3033, v3034, v3035);
     v3036 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3036, 0x8071c63, 27, v575, 11, 0x80716a0, v3037, v3038, v3039, v3040, v3041, ecx1695, v3036, 0x8071c63, 27, v575, 11, 0x80716a0, v3042, v3043, v3044, v3045, v3046);
+    fun_8048cc0(ecx1695, v3036, " #calculated the component:(a,es16.6) #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 27, v575, 11, "-ChiAbs.outnlinopt.F90", v3037, v3038, v3039, v3040, v3041, ecx1695, v3036, " #calculated the component:(a,es16.6) #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 27, v575, 11, "-ChiAbs.outnlinopt.F90", v3042, v3043, v3044, v3045, v3046);
     v3047 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v3047, a11, 4, v575, 11, 0x80716a0, v3048, v3049, v3050, v3051, v3052, ecx1695, v3047, a11, 4, v575, 11, 0x80716a0, v3053, v3054, v3055, v3056, v3057);
+    fun_8048c50(ecx1695, v3047, a11, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3048, v3049, v3050, v3051, v3052, ecx1695, v3047, a11, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3053, v3054, v3055, v3056, v3057);
     v3058 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v3058, a12, 4, v575, 11, 0x80716a0, v3059, v3060, v3061, v3062, v3063, ecx1695, v3058, a12, 4, v575, 11, 0x80716a0, v3064, v3065, v3066, v3067, v3068);
+    fun_8048c50(ecx1695, v3058, a12, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3059, v3060, v3061, v3062, v3063, ecx1695, v3058, a12, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3064, v3065, v3066, v3067, v3068);
     v3069 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v3069, a13, 4, v575, 11, 0x80716a0, v3070, v3071, v3072, v3073, v3074, ecx1695, v3069, a13, 4, v575, 11, 0x80716a0, v3075, v3076, v3077, v3078, v3079);
+    fun_8048c50(ecx1695, v3069, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3070, v3071, v3072, v3073, v3074, ecx1695, v3069, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3075, v3076, v3077, v3078, v3079);
     v3080 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3080, a13, 4, v575, 11, 0x80716a0, v3081, v3082, v3083, v3084, v3085, ecx1695, v3080, a13, 4, v575, 11, 0x80716a0, v3086, v3087, v3088, v3089, v3090);
+    fun_8048b50(ecx1695, v3080, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3081, v3082, v3083, v3084, v3085, ecx1695, v3080, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3086, v3087, v3088, v3089, v3090);
     v3091 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3091, a13, 4, v575, 11, 0x80716a0, v3092, v3093, v3094, v3095, v3096, ecx1695, v3091, a13, 4, v575, 11, 0x80716a0, v3097, v3098, v3099, v3100, v3101);
+    fun_8048cd0(ecx1695, v3091, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3092, v3093, v3094, v3095, v3096, ecx1695, v3091, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3097, v3098, v3099, v3100, v3101);
     v3102 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3102, 0x8071c88, 12, v575, 11, 0x80716a0, v3103, v3104, v3105, v3106, v3107, ecx1695, v3102, 0x8071c88, 12, v575, 11, 0x80716a0, v3108, v3109, v3110, v3111, v3112);
+    fun_8048cc0(ecx1695, v3102, " #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 12, v575, 11, "-ChiAbs.outnlinopt.F90", v3103, v3104, v3105, v3106, v3107, ecx1695, v3102, " #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 12, v575, 11, "-ChiAbs.outnlinopt.F90", v3108, v3109, v3110, v3111, v3112);
     v3113 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v3113, a18, 8, v575, 11, 0x80716a0, v3114, v3115, v3116, ecx1695, v3113, a18, 8, v575, 11, 0x80716a0, v3117, v3118, v3119);
+    fun_8048d50(ecx1695, v3113, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3114, v3115, v3116, ecx1695, v3113, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3117, v3118, v3119);
     v3120 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3120, a18, 8, v575, 11, 0x80716a0, v3121, v3122, v3123, v3124, v3125, ecx1695, v3120, a18, 8, v575, 11, 0x80716a0, v3126, v3127, v3128, v3129, v3130);
+    fun_8048b50(ecx1695, v3120, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3121, v3122, v3123, v3124, v3125, ecx1695, v3120, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3126, v3127, v3128, v3129, v3130);
     v3131 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3131, a18, 8, v575, 11, 0x80716a0, v3132, v3133, v3134, v3135, v3136, ecx1695, v3131, a18, 8, v575, 11, 0x80716a0, v3137, v3138, v3139, v3140, v3141);
+    fun_8048cd0(ecx1695, v3131, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3132, v3133, v3134, v3135, v3136, ecx1695, v3131, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3137, v3138, v3139, v3140, v3141);
     v3142 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3142, 0x8071ca0, 13, v575, 11, 0x80716a0, v3143, v3144, v3145, v3146, v3147, ecx1695, v3142, 0x8071ca0, 13, v575, 11, 0x80716a0, v3148, v3149, v3150, v3151, v3152);
+    fun_8048cc0(ecx1695, v3142, " #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 13, v575, 11, "-ChiAbs.outnlinopt.F90", v3143, v3144, v3145, v3146, v3147, ecx1695, v3142, " #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 13, v575, 11, "-ChiAbs.outnlinopt.F90", v3148, v3149, v3150, v3151, v3152);
     v3153 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v3153, a17, 8, v575, 11, 0x80716a0, v3154, v3155, v3156, ecx1695, v3153, a17, 8, v575, 11, 0x80716a0, v3157, v3158, v3159);
+    fun_8048d50(ecx1695, v3153, a17, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3154, v3155, v3156, ecx1695, v3153, a17, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3157, v3158, v3159);
     v3160 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3160, 0x8071cad, 2, v575, 11, 0x80716a0, v3161, v3162, v3163, v3164, v3165, ecx1695, v3160, 0x8071cad, 2, v575, 11, 0x80716a0, v3166, v3167, v3168, v3169, v3170);
+    fun_8048cc0(ecx1695, v3160, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3161, v3162, v3163, v3164, v3165, ecx1695, v3160, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3166, v3167, v3168, v3169, v3170);
     v3171 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3171, 0x8071cad, 2, v575, 11, 0x80716a0, v3172, v3173, v3174, v3175, v3176, ecx1695, v3171, 0x8071cad, 2, v575, 11, 0x80716a0, v3177, v3178, v3179, v3180, v3181);
+    fun_8048b50(ecx1695, v3171, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3172, v3173, v3174, v3175, v3176, ecx1695, v3171, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3177, v3178, v3179, v3180, v3181);
     v3182 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3182, 0x8071cad, 2, v575, 11, 0x80716a0, v3183, v3184, v3185, v3186, v3187, ecx1695, v3182, 0x8071cad, 2, v575, 11, 0x80716a0, v3188, v3189, v3190, v3191, v3192);
+    fun_8048cd0(ecx1695, v3182, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3183, v3184, v3185, v3186, v3187, ecx1695, v3182, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3188, v3189, v3190, v3191, v3192);
     v3193 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3193, 0x8071caf, 17, v575, 11, 0x80716a0, v3194, v3195, v3196, v3197, v3198, ecx1695, v3193, 0x8071caf, 17, v575, 11, 0x80716a0, v3199, v3200, v3201, v3202, v3203);
+    fun_8048cc0(ecx1695, v3193, " #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 17, v575, 11, "-ChiAbs.outnlinopt.F90", v3194, v3195, v3196, v3197, v3198, ecx1695, v3193, " #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 17, v575, 11, "-ChiAbs.outnlinopt.F90", v3199, v3200, v3201, v3202, v3203);
     v3204 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v3204, a16, 8, v575, 11, 0x80716a0, v3205, v3206, v3207, ecx1695, v3204, a16, 8, v575, 11, 0x80716a0, v3208, v3209, v3210);
+    fun_8048d50(ecx1695, v3204, a16, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3205, v3206, v3207, ecx1695, v3204, a16, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3208, v3209, v3210);
     v3211 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3211, 0x8071cad, 2, v575, 11, 0x80716a0, v3212, v3213, v3214, v3215, v3216, ecx1695, v3211, 0x8071cad, 2, v575, 11, 0x80716a0, v3217, v3218, v3219, v3220, v3221);
+    fun_8048cc0(ecx1695, v3211, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3212, v3213, v3214, v3215, v3216, ecx1695, v3211, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3217, v3218, v3219, v3220, v3221);
     v3222 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3222, 0x8071cad, 2, v575, 11, 0x80716a0, v3223, v3224, v3225, v3226, v3227, ecx1695, v3222, 0x8071cad, 2, v575, 11, 0x80716a0, v3228, v3229, v3230, v3231, v3232);
+    fun_8048b50(ecx1695, v3222, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3223, v3224, v3225, v3226, v3227, ecx1695, v3222, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3228, v3229, v3230, v3231, v3232);
     v3233 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3233, 0x8071cad, 2, v575, 11, 0x80716a0, v3234, v3235, v3236, v3237, v3238, ecx1695, v3233, 0x8071cad, 2, v575, 11, 0x80716a0, v3239, v3240, v3241, v3242, v3243);
+    fun_8048cd0(ecx1695, v3233, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3234, v3235, v3236, v3237, v3238, ecx1695, v3233, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3239, v3240, v3241, v3242, v3243);
     v3244 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3244, 0x8071cd5, 16, v575, 11, 0x80716a0, v3245, v3246, v3247, v3248, v3249, ecx1695, v3244, 0x8071cd5, 16, v575, 11, 0x80716a0, v3250, v3251, v3252, v3253, v3254);
+    fun_8048cc0(ecx1695, v3244, " #energy window:eV(a)", 16, v575, 11, "-ChiAbs.outnlinopt.F90", v3245, v3246, v3247, v3248, v3249, ecx1695, v3244, " #energy window:eV(a)", 16, v575, 11, "-ChiAbs.outnlinopt.F90", v3250, v3251, v3252, v3253, v3254);
     __asm__("fld qword [ebp+0xffffff08]");
     __asm__("fsub qword [ebp+0xffffff10]");
     __asm__("fmul qword [ebp+0xffffff30]");
     __asm__("fstp qword [ebp+0xfffff538]");
     v3255 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff538);
     v3256 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v3256, v3255, 8, v575, 11, 0x80716a0, v3257, v3258, v3259, ecx1695, v3256, v3255, 8, v575, 11, 0x80716a0, v3260, v3261, v3262);
+    fun_8048d50(ecx1695, v3256, v3255, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3257, v3258, v3259, ecx1695, v3256, v3255, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3260, v3261, v3262);
     v3263 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3263, 0x8071ce5, 2, v575, 11, 0x80716a0, v3264, v3265, v3266, v3267, v3268, ecx1695, v3263, 0x8071ce5, 2, v575, 11, 0x80716a0, v3269, v3270, v3271, v3272, v3273);
+    fun_8048cc0(ecx1695, v3263, "eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3264, v3265, v3266, v3267, v3268, ecx1695, v3263, "eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3269, v3270, v3271, v3272, v3273);
     __asm__("fld qword [ebp+0xffffff08]");
     __asm__("fsub qword [ebp+0xffffff10]");
     __asm__("fstp qword [ebp+0xfffff530]");
     v3274 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff530);
     v3275 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v3275, v3274, 8, v575, 11, 0x80716a0, v3276, v3277, v3278, ecx1695, v3275, v3274, 8, v575, 11, 0x80716a0, v3279, v3280, v3281);
+    fun_8048d50(ecx1695, v3275, v3274, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3276, v3277, v3278, ecx1695, v3275, v3274, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3279, v3280, v3281);
     v3282 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3282, 0x8071cad, 2, v575, 11, 0x80716a0, v3283, v3284, v3285, v3286, v3287, ecx1695, v3282, 0x8071cad, 2, v575, 11, 0x80716a0, v3288, v3289, v3290, v3291, v3292);
+    fun_8048cc0(ecx1695, v3282, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3283, v3284, v3285, v3286, v3287, ecx1695, v3282, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3288, v3289, v3290, v3291, v3292);
     v3293 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3293, 0x8071cad, 2, v575, 11, 0x80716a0, v3294, v3295, v3296, v3297, v3298, ecx1695, v3293, 0x8071cad, 2, v575, 11, 0x80716a0, v3299, v3300, v3301, v3302, v3303);
+    fun_8048b50(ecx1695, v3293, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3294, v3295, v3296, v3297, v3298, ecx1695, v3293, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3299, v3300, v3301, v3302, v3303);
     v3304 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3304, 0x8071cad, 2, v575, 11, 0x80716a0, v3305, v3306, v3307, v3308, v3309, ecx1695, v3304, 0x8071cad, 2, v575, 11, 0x80716a0, v3310, v3311, v3312, v3313, v3314);
+    fun_8048cd0(ecx1695, v3304, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3305, v3306, v3307, v3308, v3309, ecx1695, v3304, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3310, v3311, v3312, v3313, v3314);
     v3315 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3315, 0x8071d60, 53, v575, 11, 0x80716a0, v3316, v3317, v3318, v3319, v3320, ecx1695, v3315, 0x8071d60, 53, v575, 11, 0x80716a0, v3321, v3322, v3323, v3324, v3325);
+    fun_8048cc0(ecx1695, v3315, " # Energy(eV) Inter(2w) inter(1w) intra(2w) intra(1w) # in esu", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v3316, v3317, v3318, v3319, v3320, ecx1695, v3315, " # Energy(eV) Inter(2w) inter(1w) intra(2w) intra(1w) # in esu", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v3321, v3322, v3323, v3324, v3325);
     v3326 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3326, 0x8071d60, 53, v575, 11, 0x80716a0, v3327, v3328, v3329, v3330, v3331, ecx1695, v3326, 0x8071d60, 53, v575, 11, 0x80716a0, v3332, v3333, v3334, v3335, v3336);
+    fun_8048b50(ecx1695, v3326, " # Energy(eV) Inter(2w) inter(1w) intra(2w) intra(1w) # in esu", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v3327, v3328, v3329, v3330, v3331, ecx1695, v3326, " # Energy(eV) Inter(2w) inter(1w) intra(2w) intra(1w) # in esu", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v3332, v3333, v3334, v3335, v3336);
     v3337 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3337, 0x8071d60, 53, v575, 11, 0x80716a0, v3338, v3339, v3340, v3341, v3342, ecx1695, v3337, 0x8071d60, 53, v575, 11, 0x80716a0, v3343, v3344, v3345, v3346, v3347);
+    fun_8048cd0(ecx1695, v3337, " # Energy(eV) Inter(2w) inter(1w) intra(2w) intra(1w) # in esu", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v3338, v3339, v3340, v3341, v3342, ecx1695, v3337, " # Energy(eV) Inter(2w) inter(1w) intra(2w) intra(1w) # in esu", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v3343, v3344, v3345, v3346, v3347);
     v3348 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3348, 0x8071d95, 9, v575, 11, 0x80716a0, v3349, v3350, v3351, v3352, v3353, ecx1695, v3348, 0x8071d95, 9, v575, 11, 0x80716a0, v3354, v3355, v3356, v3357, v3358);
+    fun_8048cc0(ecx1695, v3348, " # in esu", 9, v575, 11, "-ChiAbs.outnlinopt.F90", v3349, v3350, v3351, v3352, v3353, ecx1695, v3348, " # in esu", 9, v575, 11, "-ChiAbs.outnlinopt.F90", v3354, v3355, v3356, v3357, v3358);
     v3359 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3359, 0x8071d95, 9, v575, 11, 0x80716a0, v3360, v3361, v3362, v3363, v3364, ecx1695, v3359, 0x8071d95, 9, v575, 11, 0x80716a0, v3365, v3366, v3367, v3368, v3369);
+    fun_8048b50(ecx1695, v3359, " # in esu", 9, v575, 11, "-ChiAbs.outnlinopt.F90", v3360, v3361, v3362, v3363, v3364, ecx1695, v3359, " # in esu", 9, v575, 11, "-ChiAbs.outnlinopt.F90", v3365, v3366, v3367, v3368, v3369);
     v3370 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3370, 0x8071d95, 9, v575, 11, 0x80716a0, v3371, v3372, v3373, v3374, v3375, ecx1695, v3370, 0x8071d95, 9, v575, 11, 0x80716a0, v3376, v3377, v3378, v3379, v3380);
+    fun_8048cd0(ecx1695, v3370, " # in esu", 9, v575, 11, "-ChiAbs.outnlinopt.F90", v3371, v3372, v3373, v3374, v3375, ecx1695, v3370, " # in esu", 9, v575, 11, "-ChiAbs.outnlinopt.F90", v3376, v3377, v3378, v3379, v3380);
     v3381 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3381, 0x8071d5a, 3, v575, 11, 0x80716a0, v3382, v3383, v3384, v3385, v3386, ecx1695, v3381, 0x8071d5a, 3, v575, 11, 0x80716a0, v3387, v3388, v3389, v3390, v3391);
+    fun_8048cc0(ecx1695, v3381, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3382, v3383, v3384, v3385, v3386, ecx1695, v3381, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3387, v3388, v3389, v3390, v3391);
     v3392 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3392, 0x8071d5a, 3, v575, 11, 0x80716a0, v3393, v3394, v3395, v3396, v3397, ecx1695, v3392, 0x8071d5a, 3, v575, 11, 0x80716a0, v3398, v3399, v3400, v3401, v3402);
+    fun_8048b50(ecx1695, v3392, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3393, v3394, v3395, v3396, v3397, ecx1695, v3392, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3398, v3399, v3400, v3401, v3402);
     v3403 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3403, 0x8071d5a, 3, v575, 11, 0x80716a0, v3404, v3405, v3406, v3407, v3408, ecx1695, v3403, 0x8071d5a, 3, v575, 11, 0x80716a0, v3409, v3410, v3411, v3412, v3413);
+    fun_8048cd0(ecx1695, v3403, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3404, v3405, v3406, v3407, v3408, ecx1695, v3403, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3409, v3410, v3411, v3412, v3413);
     v3414 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3414, 0x8071c63, 27, v575, 11, 0x80716a0, v3415, v3416, v3417, v3418, v3419, ecx1695, v3414, 0x8071c63, 27, v575, 11, 0x80716a0, v3420, v3421, v3422, v3423, v3424);
+    fun_8048cc0(ecx1695, v3414, " #calculated the component:(a,es16.6) #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 27, v575, 11, "-ChiAbs.outnlinopt.F90", v3415, v3416, v3417, v3418, v3419, ecx1695, v3414, " #calculated the component:(a,es16.6) #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 27, v575, 11, "-ChiAbs.outnlinopt.F90", v3420, v3421, v3422, v3423, v3424);
     v3425 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v3425, a11, 4, v575, 11, 0x80716a0, v3426, v3427, v3428, v3429, v3430, ecx1695, v3425, a11, 4, v575, 11, 0x80716a0, v3431, v3432, v3433, v3434, v3435);
+    fun_8048c50(ecx1695, v3425, a11, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3426, v3427, v3428, v3429, v3430, ecx1695, v3425, a11, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3431, v3432, v3433, v3434, v3435);
     v3436 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v3436, a12, 4, v575, 11, 0x80716a0, v3437, v3438, v3439, v3440, v3441, ecx1695, v3436, a12, 4, v575, 11, 0x80716a0, v3442, v3443, v3444, v3445, v3446);
+    fun_8048c50(ecx1695, v3436, a12, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3437, v3438, v3439, v3440, v3441, ecx1695, v3436, a12, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3442, v3443, v3444, v3445, v3446);
     v3447 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v3447, a13, 4, v575, 11, 0x80716a0, v3448, v3449, v3450, v3451, v3452, ecx1695, v3447, a13, 4, v575, 11, 0x80716a0, v3453, v3454, v3455, v3456, v3457);
+    fun_8048c50(ecx1695, v3447, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3448, v3449, v3450, v3451, v3452, ecx1695, v3447, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3453, v3454, v3455, v3456, v3457);
     v3458 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3458, a13, 4, v575, 11, 0x80716a0, v3459, v3460, v3461, v3462, v3463, ecx1695, v3458, a13, 4, v575, 11, 0x80716a0, v3464, v3465, v3466, v3467, v3468);
+    fun_8048b50(ecx1695, v3458, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3459, v3460, v3461, v3462, v3463, ecx1695, v3458, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3464, v3465, v3466, v3467, v3468);
     v3469 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3469, a13, 4, v575, 11, 0x80716a0, v3470, v3471, v3472, v3473, v3474, ecx1695, v3469, a13, 4, v575, 11, 0x80716a0, v3475, v3476, v3477, v3478, v3479);
+    fun_8048cd0(ecx1695, v3469, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3470, v3471, v3472, v3473, v3474, ecx1695, v3469, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v3475, v3476, v3477, v3478, v3479);
     v3480 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3480, 0x8071c88, 12, v575, 11, 0x80716a0, v3481, v3482, v3483, v3484, v3485, ecx1695, v3480, 0x8071c88, 12, v575, 11, 0x80716a0, v3486, v3487, v3488, v3489, v3490);
+    fun_8048cc0(ecx1695, v3480, " #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 12, v575, 11, "-ChiAbs.outnlinopt.F90", v3481, v3482, v3483, v3484, v3485, ecx1695, v3480, " #tolerence:(a,es16.6,a) #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 12, v575, 11, "-ChiAbs.outnlinopt.F90", v3486, v3487, v3488, v3489, v3490);
     v3491 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v3491, a18, 8, v575, 11, 0x80716a0, v3492, v3493, v3494, ecx1695, v3491, a18, 8, v575, 11, 0x80716a0, v3495, v3496, v3497);
+    fun_8048d50(ecx1695, v3491, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3492, v3493, v3494, ecx1695, v3491, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3495, v3496, v3497);
     v3498 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3498, a18, 8, v575, 11, 0x80716a0, v3499, v3500, v3501, v3502, v3503, ecx1695, v3498, a18, 8, v575, 11, 0x80716a0, v3504, v3505, v3506, v3507, v3508);
+    fun_8048b50(ecx1695, v3498, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3499, v3500, v3501, v3502, v3503, ecx1695, v3498, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3504, v3505, v3506, v3507, v3508);
     v3509 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3509, a18, 8, v575, 11, 0x80716a0, v3510, v3511, v3512, v3513, v3514, ecx1695, v3509, a18, 8, v575, 11, 0x80716a0, v3515, v3516, v3517, v3518, v3519);
+    fun_8048cd0(ecx1695, v3509, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3510, v3511, v3512, v3513, v3514, ecx1695, v3509, a18, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3515, v3516, v3517, v3518, v3519);
     v3520 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3520, 0x8071ca0, 13, v575, 11, 0x80716a0, v3521, v3522, v3523, v3524, v3525, ecx1695, v3520, 0x8071ca0, 13, v575, 11, 0x80716a0, v3526, v3527, v3528, v3529, v3530);
+    fun_8048cc0(ecx1695, v3520, " #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 13, v575, 11, "-ChiAbs.outnlinopt.F90", v3521, v3522, v3523, v3524, v3525, ecx1695, v3520, " #broadening:Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 13, v575, 11, "-ChiAbs.outnlinopt.F90", v3526, v3527, v3528, v3529, v3530);
     v3531 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v3531, a17, 8, v575, 11, 0x80716a0, v3532, v3533, v3534, ecx1695, v3531, a17, 8, v575, 11, 0x80716a0, v3535, v3536, v3537);
+    fun_8048d50(ecx1695, v3531, a17, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3532, v3533, v3534, ecx1695, v3531, a17, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3535, v3536, v3537);
     v3538 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3538, 0x8071cad, 2, v575, 11, 0x80716a0, v3539, v3540, v3541, v3542, v3543, ecx1695, v3538, 0x8071cad, 2, v575, 11, 0x80716a0, v3544, v3545, v3546, v3547, v3548);
+    fun_8048cc0(ecx1695, v3538, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3539, v3540, v3541, v3542, v3543, ecx1695, v3538, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3544, v3545, v3546, v3547, v3548);
     v3549 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3549, 0x8071cad, 2, v575, 11, 0x80716a0, v3550, v3551, v3552, v3553, v3554, ecx1695, v3549, 0x8071cad, 2, v575, 11, 0x80716a0, v3555, v3556, v3557, v3558, v3559);
+    fun_8048b50(ecx1695, v3549, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3550, v3551, v3552, v3553, v3554, ecx1695, v3549, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3555, v3556, v3557, v3558, v3559);
     v3560 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3560, 0x8071cad, 2, v575, 11, 0x80716a0, v3561, v3562, v3563, v3564, v3565, ecx1695, v3560, 0x8071cad, 2, v575, 11, 0x80716a0, v3566, v3567, v3568, v3569, v3570);
+    fun_8048cd0(ecx1695, v3560, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3561, v3562, v3563, v3564, v3565, ecx1695, v3560, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3566, v3567, v3568, v3569, v3570);
     v3571 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3571, 0x8071caf, 17, v575, 11, 0x80716a0, v3572, v3573, v3574, v3575, v3576, ecx1695, v3571, 0x8071caf, 17, v575, 11, 0x80716a0, v3577, v3578, v3579, v3580, v3581);
+    fun_8048cc0(ecx1695, v3571, " #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 17, v575, 11, "-ChiAbs.outnlinopt.F90", v3572, v3573, v3574, v3575, v3576, ecx1695, v3571, " #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 17, v575, 11, "-ChiAbs.outnlinopt.F90", v3577, v3578, v3579, v3580, v3581);
     v3582 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v3582, a16, 8, v575, 11, 0x80716a0, v3583, v3584, v3585, ecx1695, v3582, a16, 8, v575, 11, 0x80716a0, v3586, v3587, v3588);
+    fun_8048d50(ecx1695, v3582, a16, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3583, v3584, v3585, ecx1695, v3582, a16, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3586, v3587, v3588);
     v3589 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3589, 0x8071cad, 2, v575, 11, 0x80716a0, v3590, v3591, v3592, v3593, v3594, ecx1695, v3589, 0x8071cad, 2, v575, 11, 0x80716a0, v3595, v3596, v3597, v3598, v3599);
+    fun_8048cc0(ecx1695, v3589, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3590, v3591, v3592, v3593, v3594, ecx1695, v3589, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3595, v3596, v3597, v3598, v3599);
     v3600 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3600, 0x8071cad, 2, v575, 11, 0x80716a0, v3601, v3602, v3603, v3604, v3605, ecx1695, v3600, 0x8071cad, 2, v575, 11, 0x80716a0, v3606, v3607, v3608, v3609, v3610);
+    fun_8048b50(ecx1695, v3600, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3601, v3602, v3603, v3604, v3605, ecx1695, v3600, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3606, v3607, v3608, v3609, v3610);
     v3611 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3611, 0x8071cad, 2, v575, 11, 0x80716a0, v3612, v3613, v3614, v3615, v3616, ecx1695, v3611, 0x8071cad, 2, v575, 11, 0x80716a0, v3617, v3618, v3619, v3620, v3621);
+    fun_8048cd0(ecx1695, v3611, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3612, v3613, v3614, v3615, v3616, ecx1695, v3611, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3617, v3618, v3619, v3620, v3621);
     v3622 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3622, 0x8071cd5, 16, v575, 11, 0x80716a0, v3623, v3624, v3625, v3626, v3627, ecx1695, v3622, 0x8071cd5, 16, v575, 11, 0x80716a0, v3628, v3629, v3630, v3631, v3632);
+    fun_8048cc0(ecx1695, v3622, " #energy window:eV(a)", 16, v575, 11, "-ChiAbs.outnlinopt.F90", v3623, v3624, v3625, v3626, v3627, ecx1695, v3622, " #energy window:eV(a)", 16, v575, 11, "-ChiAbs.outnlinopt.F90", v3628, v3629, v3630, v3631, v3632);
     __asm__("fld qword [ebp+0xffffff08]");
     __asm__("fsub qword [ebp+0xffffff10]");
     __asm__("fmul qword [ebp+0xffffff30]");
     __asm__("fstp qword [ebp+0xfffff528]");
     v3633 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff528);
     v3634 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v3634, v3633, 8, v575, 11, 0x80716a0, v3635, v3636, v3637, ecx1695, v3634, v3633, 8, v575, 11, 0x80716a0, v3638, v3639, v3640);
+    fun_8048d50(ecx1695, v3634, v3633, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3635, v3636, v3637, ecx1695, v3634, v3633, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3638, v3639, v3640);
     v3641 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3641, 0x8071ce5, 2, v575, 11, 0x80716a0, v3642, v3643, v3644, v3645, v3646, ecx1695, v3641, 0x8071ce5, 2, v575, 11, 0x80716a0, v3647, v3648, v3649, v3650, v3651);
+    fun_8048cc0(ecx1695, v3641, "eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3642, v3643, v3644, v3645, v3646, ecx1695, v3641, "eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3647, v3648, v3649, v3650, v3651);
     __asm__("fld qword [ebp+0xffffff08]");
     __asm__("fsub qword [ebp+0xffffff10]");
     __asm__("fstp qword [ebp+0xfffff520]");
     v3652 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff520);
     v3653 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v3653, v3652, 8, v575, 11, 0x80716a0, v3654, v3655, v3656, ecx1695, v3653, v3652, 8, v575, 11, 0x80716a0, v3657, v3658, v3659);
+    fun_8048d50(ecx1695, v3653, v3652, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3654, v3655, v3656, ecx1695, v3653, v3652, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3657, v3658, v3659);
     v3660 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3660, 0x8071cad, 2, v575, 11, 0x80716a0, v3661, v3662, v3663, v3664, v3665, ecx1695, v3660, 0x8071cad, 2, v575, 11, 0x80716a0, v3666, v3667, v3668, v3669, v3670);
+    fun_8048cc0(ecx1695, v3660, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3661, v3662, v3663, v3664, v3665, ecx1695, v3660, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3666, v3667, v3668, v3669, v3670);
     v3671 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3671, 0x8071cad, 2, v575, 11, 0x80716a0, v3672, v3673, v3674, v3675, v3676, ecx1695, v3671, 0x8071cad, 2, v575, 11, 0x80716a0, v3677, v3678, v3679, v3680, v3681);
+    fun_8048b50(ecx1695, v3671, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3672, v3673, v3674, v3675, v3676, ecx1695, v3671, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3677, v3678, v3679, v3680, v3681);
     v3682 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3682, 0x8071cad, 2, v575, 11, 0x80716a0, v3683, v3684, v3685, v3686, v3687, ecx1695, v3682, 0x8071cad, 2, v575, 11, 0x80716a0, v3688, v3689, v3690, v3691, v3692);
+    fun_8048cd0(ecx1695, v3682, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3683, v3684, v3685, v3686, v3687, ecx1695, v3682, "Ha #scissors shift:(a,es16.6,a,es16.6,a) #energy window:eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v3688, v3689, v3690, v3691, v3692);
     v3693 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3693, 0x8071da0, 53, v575, 11, 0x80716a0, v3694, v3695, v3696, v3697, v3698, ecx1695, v3693, 0x8071da0, 53, v575, 11, 0x80716a0, v3699, v3700, v3701, v3702, v3703);
+    fun_8048cc0(ecx1695, v3693, " # Energy(eV)  |TotChi(-2w,w,w)|   |Tot Chi(-2w,w,w)|(f15.6,2es15.6)(f15.6,4es15.6)", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v3694, v3695, v3696, v3697, v3698, ecx1695, v3693, " # Energy(eV)  |TotChi(-2w,w,w)|   |Tot Chi(-2w,w,w)|(f15.6,2es15.6)(f15.6,4es15.6)", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v3699, v3700, v3701, v3702, v3703);
     v3704 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3704, 0x8071da0, 53, v575, 11, 0x80716a0, v3705, v3706, v3707, v3708, v3709, ecx1695, v3704, 0x8071da0, 53, v575, 11, 0x80716a0, v3710, v3711, v3712, v3713, v3714);
+    fun_8048b50(ecx1695, v3704, " # Energy(eV)  |TotChi(-2w,w,w)|   |Tot Chi(-2w,w,w)|(f15.6,2es15.6)(f15.6,4es15.6)", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v3705, v3706, v3707, v3708, v3709, ecx1695, v3704, " # Energy(eV)  |TotChi(-2w,w,w)|   |Tot Chi(-2w,w,w)|(f15.6,2es15.6)(f15.6,4es15.6)", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v3710, v3711, v3712, v3713, v3714);
     v3715 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3715, 0x8071da0, 53, v575, 11, 0x80716a0, v3716, v3717, v3718, v3719, v3720, ecx1695, v3715, 0x8071da0, 53, v575, 11, 0x80716a0, v3721, v3722, v3723, v3724, v3725);
+    fun_8048cd0(ecx1695, v3715, " # Energy(eV)  |TotChi(-2w,w,w)|   |Tot Chi(-2w,w,w)|(f15.6,2es15.6)(f15.6,4es15.6)", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v3716, v3717, v3718, v3719, v3720, ecx1695, v3715, " # Energy(eV)  |TotChi(-2w,w,w)|   |Tot Chi(-2w,w,w)|(f15.6,2es15.6)(f15.6,4es15.6)", 53, v575, 11, "-ChiAbs.outnlinopt.F90", v3721, v3722, v3723, v3724, v3725);
     v3726 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3726, 0x8071d24, 54, v575, 11, 0x80716a0, v3727, v3728, v3729, v3730, v3731, ecx1695, v3726, 0x8071d24, 54, v575, 11, 0x80716a0, v3732, v3733, v3734, v3735, v3736);
+    fun_8048cc0(ecx1695, v3726, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v3727, v3728, v3729, v3730, v3731, ecx1695, v3726, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v3732, v3733, v3734, v3735, v3736);
     v3737 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3737, 0x8071d24, 54, v575, 11, 0x80716a0, v3738, v3739, v3740, v3741, v3742, ecx1695, v3737, 0x8071d24, 54, v575, 11, 0x80716a0, v3743, v3744, v3745, v3746, v3747);
+    fun_8048b50(ecx1695, v3737, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v3738, v3739, v3740, v3741, v3742, ecx1695, v3737, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v3743, v3744, v3745, v3746, v3747);
     v3748 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v3748, 0x8071d24, 54, v575, 11, 0x80716a0, v3749, v3750, v3751, v3752, v3753, ecx1695, v3748, 0x8071d24, 54, v575, 11, 0x80716a0, v3754, v3755, v3756, v3757, v3758);
+    fun_8048cd0(ecx1695, v3748, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v3749, v3750, v3751, v3752, v3753, ecx1695, v3748, " # eV          *10^-7 esu        *10^-12 m/V SI units  # ", 54, v575, 11, "-ChiAbs.outnlinopt.F90", v3754, v3755, v3756, v3757, v3758);
     v3759 = reinterpret_cast<void**>(3);
-    v3760 = reinterpret_cast<void**>(0x8071d5a);
+    v3760 = reinterpret_cast<void**>(" # ");
     v3761 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v3761, 0x8071d5a, 3, v575, 11, 0x80716a0, v3762, v3763, v3764, v3765, v3766, ecx1695, v3761, 0x8071d5a, 3, v575, 11, 0x80716a0, v3767, v3768, v3769, v3770, v3771);
+    fun_8048cc0(ecx1695, v3761, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3762, v3763, v3764, v3765, v3766, ecx1695, v3761, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3767, v3768, v3769, v3770, v3771);
     v3772 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v3772, 0x8071d5a, 3, v575, 11, 0x80716a0, v3773, v3774, v3775, v3776, v3777, ecx1695, v3772, 0x8071d5a, 3, v575, 11, 0x80716a0, v3778, v3779, v3780, v3781, v3782);
+    fun_8048b50(ecx1695, v3772, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3773, v3774, v3775, v3776, v3777, ecx1695, v3772, " # ", 3, v575, 11, "-ChiAbs.outnlinopt.F90", v3778, v3779, v3780, v3781, v3782);
     __asm__("fldz ");
     __asm__("fstp qword [ebp+0xfffff5c0]");
     __asm__("fldz ");
@@ -14092,122 +14092,122 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
     ebx3783 = *reinterpret_cast<void***>(a14);
     v3784 = reinterpret_cast<void**>(2);
     if (reinterpret_cast<int32_t>(2) <= reinterpret_cast<int32_t>(ebx3783)) {
-        while (ecx3785 = v3784, v3786 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048cd0(ecx3785, v3786, v3760, v3759, v575, 11, 0x80716a0, v3787, v3788, v3789, v3790, v3791, ecx3785, v3786, v3760, v3759, v575, 11, 0x80716a0, v3792, v3793, v3794, v3795, v3796), v3797 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffffcc8), v3798 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3785, v3798, v3797, 8, v575, 11, 0x80716a0, v3799, v3800, v3801, ecx3785, v3798, v3797, 8, v575, 11, 0x80716a0, v3802, v3803, v3804), v3805 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff5c0), v3806 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3785, v3806, v3805, 8, v575, 11, 0x80716a0, v3807, v3808, v3809, ecx3785, v3806, v3805, 8, v575, 11, 0x80716a0, v3810, v3811, v3812), v3813 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff518), v3814 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3785, v3814, v3813, 8, v575, 11, 0x80716a0, v3815, v3816, v3817, ecx3785, v3814, v3813, 8, v575, 11, 0x80716a0, v3818, v3819, v3820), v3821 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048b50(ecx3785, v3821, v3813, 8, v575, 11, 0x80716a0, v3822, v3823, v3824, v3825, v3826, ecx3785, v3821, v3813, 8, v575, 11, 0x80716a0, v3827, v3828, v3829, v3830, v3831), ecx3832 = v3784, v3833 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048cd0(ecx3832, v3833, v3813, 8, v575, 11, 0x80716a0, v3834, v3835, v3836, v3837, v3838, ecx3832, v3833, v3813, 8, v575, 11, 0x80716a0, v3839, v3840, v3841, v3842, v3843), v3844 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffffcc8), v3845 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3832, v3845, v3844, 8, v575, 11, 0x80716a0, v3846, v3847, v3848, ecx3832, v3845, v3844, 8, v575, 11, 0x80716a0, v3849, v3850, v3851), v3852 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff5b8), v3853 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3832, v3853, v3852, 8, v575, 11, 0x80716a0, v3854, v3855, v3856, ecx3832, v3853, v3852, 8, v575, 11, 0x80716a0, v3857, v3858, v3859), v3860 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff510), v3861 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3832, v3861, v3860, 8, v575, 11, 0x80716a0, v3862, v3863, v3864, ecx3832, v3861, v3860, 8, v575, 11, 0x80716a0, v3865, v3866, v3867), v3868 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048b50(ecx3832, v3868, v3860, 8, v575, 11, 0x80716a0, v3869, v3870, v3871, v3872, v3873, ecx3832, v3868, v3860, 8, v575, 11, 0x80716a0, v3874, v3875, v3876, v3877, v3878), v3879 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048cd0(ecx3832, v3879, v3860, 8, v575, 11, 0x80716a0, v3880, v3881, v3882, v3883, v3884, ecx3832, v3879, v3860, 8, v575, 11, 0x80716a0, v3885, v3886, v3887, v3888, v3889), v3890 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffffcc8), v3891 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3832, v3891, v3890, 8, v575, 11, 0x80716a0, v3892, v3893, v3894, ecx3832, v3891, v3890, 8, v575, 11, 0x80716a0, v3895, v3896, v3897), ecx3898 = v3784, v3899 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff508), v3900 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3898, v3900, v3899, 8, v575, 11, 0x80716a0, v3901, v3902, v3903, ecx3898, v3900, v3899, 8, v575, 11, 0x80716a0, v3904, v3905, v3906), ecx3907 = v3784, v3908 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff500), v3909 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3907, v3909, v3908, 8, v575, 11, 0x80716a0, v3910, v3911, v3912, ecx3907, v3909, v3908, 8, v575, 11, 0x80716a0, v3913, v3914, v3915), ecx3916 = v3784, v3917 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4f8), v3918 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3916, v3918, v3917, 8, v575, 11, 0x80716a0, v3919, v3920, v3921, ecx3916, v3918, v3917, 8, v575, 11, 0x80716a0, v3922, v3923, v3924), ecx3925 = v3784, v3926 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4f0), v3927 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3925, v3927, v3926, 8, v575, 11, 0x80716a0, v3928, v3929, v3930, ecx3925, v3927, v3926, 8, v575, 11, 0x80716a0, v3931, v3932, v3933), v3934 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048b50(ecx3925, v3934, v3926, 8, v575, 11, 0x80716a0, v3935, v3936, v3937, v3938, v3939, ecx3925, v3934, v3926, 8, v575, 11, 0x80716a0, v3940, v3941, v3942, v3943, v3944), v3945 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048cd0(ecx3925, v3945, v3926, 8, v575, 11, 0x80716a0, v3946, v3947, v3948, v3949, v3950, ecx3925, v3945, v3926, 8, v575, 11, 0x80716a0, v3951, v3952, v3953, v3954, v3955), v3956 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffffcc8), v3957 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3925, v3957, v3956, 8, v575, 11, 0x80716a0, v3958, v3959, v3960, ecx3925, v3957, v3956, 8, v575, 11, 0x80716a0, v3961, v3962, v3963), ecx3964 = v3784, v3965 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4e8), v3966 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3964, v3966, v3965, 8, v575, 11, 0x80716a0, v3967, v3968, v3969, ecx3964, v3966, v3965, 8, v575, 11, 0x80716a0, v3970, v3971, v3972), ecx3973 = v3784, v3974 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4e0), v3975 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3973, v3975, v3974, 8, v575, 11, 0x80716a0, v3976, v3977, v3978, ecx3973, v3975, v3974, 8, v575, 11, 0x80716a0, v3979, v3980, v3981), ecx3982 = v3784, v3983 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4d8), v3984 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3982, v3984, v3983, 8, v575, 11, 0x80716a0, v3985, v3986, v3987, ecx3982, v3984, v3983, 8, v575, 11, 0x80716a0, v3988, v3989, v3990), ecx3991 = v3784, v3992 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4d0), v3993 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3991, v3993, v3992, 8, v575, 11, 0x80716a0, v3994, v3995, v3996, ecx3991, v3993, v3992, 8, v575, 11, 0x80716a0, v3997, v3998, v3999), v4000 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048b50(ecx3991, v4000, v3992, 8, v575, 11, 0x80716a0, v4001, v4002, v4003, v4004, v4005, ecx3991, v4000, v3992, 8, v575, 11, 0x80716a0, v4006, v4007, v4008, v4009, v4010), ecx1695 = v3784, fun_8048cb0(v4000, v3992, 8, v575, 11, 0x80716a0), v4011 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048cd0(ecx1695, v4011, v3992, 8, v575, 11, 0x80716a0, v4012, v4013, v4014, v4015, v4016, ecx1695, v4011, v3992, 8, v575, 11, 0x80716a0, v4017, v4018, v4019, v4020, v4021), v4022 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffffcc8), v4023 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx1695, v4023, v4022, 8, v575, 11, 0x80716a0, v4024, v4025, v4026, ecx1695, v4023, v4022, 8, v575, 11, 0x80716a0, v4027, v4028, v4029), v4030 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff5c8), v4031 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx1695, v4031, v4030, 8, v575, 11, 0x80716a0, v4032, v4033, v4034, ecx1695, v4031, v4030, 8, v575, 11, 0x80716a0, v4035, v4036, v4037), v3759 = reinterpret_cast<void**>(8), v3760 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4c8), v4038 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx1695, v4038, v3760, 8, v575, 11, 0x80716a0, v4039, v4040, v4041, ecx1695, v4038, v3760, 8, v575, 11, 0x80716a0, v4042, v4043, v4044), v4045 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048b50(ecx1695, v4045, v3760, 8, v575, 11, 0x80716a0, v4046, v4047, v4048, v4049, v4050, ecx1695, v4045, v3760, 8, v575, 11, 0x80716a0, v4051, v4052, v4053, v4054, v4055), eax4056 = reinterpret_cast<uint1_t>(v3784 == ebx3783), v3784 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v3784) + 1), eax4056 == 0) {
+        while (ecx3785 = v3784, v3786 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048cd0(ecx3785, v3786, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v3787, v3788, v3789, v3790, v3791, ecx3785, v3786, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v3792, v3793, v3794, v3795, v3796), v3797 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffffcc8), v3798 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3785, v3798, v3797, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3799, v3800, v3801, ecx3785, v3798, v3797, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3802, v3803, v3804), v3805 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff5c0), v3806 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3785, v3806, v3805, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3807, v3808, v3809, ecx3785, v3806, v3805, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3810, v3811, v3812), v3813 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff518), v3814 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3785, v3814, v3813, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3815, v3816, v3817, ecx3785, v3814, v3813, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3818, v3819, v3820), v3821 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048b50(ecx3785, v3821, v3813, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3822, v3823, v3824, v3825, v3826, ecx3785, v3821, v3813, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3827, v3828, v3829, v3830, v3831), ecx3832 = v3784, v3833 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048cd0(ecx3832, v3833, v3813, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3834, v3835, v3836, v3837, v3838, ecx3832, v3833, v3813, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3839, v3840, v3841, v3842, v3843), v3844 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffffcc8), v3845 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3832, v3845, v3844, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3846, v3847, v3848, ecx3832, v3845, v3844, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3849, v3850, v3851), v3852 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff5b8), v3853 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3832, v3853, v3852, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3854, v3855, v3856, ecx3832, v3853, v3852, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3857, v3858, v3859), v3860 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff510), v3861 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3832, v3861, v3860, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3862, v3863, v3864, ecx3832, v3861, v3860, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3865, v3866, v3867), v3868 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048b50(ecx3832, v3868, v3860, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3869, v3870, v3871, v3872, v3873, ecx3832, v3868, v3860, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3874, v3875, v3876, v3877, v3878), v3879 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048cd0(ecx3832, v3879, v3860, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3880, v3881, v3882, v3883, v3884, ecx3832, v3879, v3860, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3885, v3886, v3887, v3888, v3889), v3890 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffffcc8), v3891 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3832, v3891, v3890, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3892, v3893, v3894, ecx3832, v3891, v3890, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3895, v3896, v3897), ecx3898 = v3784, v3899 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff508), v3900 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3898, v3900, v3899, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3901, v3902, v3903, ecx3898, v3900, v3899, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3904, v3905, v3906), ecx3907 = v3784, v3908 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff500), v3909 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3907, v3909, v3908, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3910, v3911, v3912, ecx3907, v3909, v3908, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3913, v3914, v3915), ecx3916 = v3784, v3917 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4f8), v3918 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3916, v3918, v3917, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3919, v3920, v3921, ecx3916, v3918, v3917, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3922, v3923, v3924), ecx3925 = v3784, v3926 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4f0), v3927 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3925, v3927, v3926, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3928, v3929, v3930, ecx3925, v3927, v3926, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3931, v3932, v3933), v3934 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048b50(ecx3925, v3934, v3926, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3935, v3936, v3937, v3938, v3939, ecx3925, v3934, v3926, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3940, v3941, v3942, v3943, v3944), v3945 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048cd0(ecx3925, v3945, v3926, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3946, v3947, v3948, v3949, v3950, ecx3925, v3945, v3926, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3951, v3952, v3953, v3954, v3955), v3956 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffffcc8), v3957 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3925, v3957, v3956, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3958, v3959, v3960, ecx3925, v3957, v3956, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3961, v3962, v3963), ecx3964 = v3784, v3965 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4e8), v3966 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3964, v3966, v3965, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3967, v3968, v3969, ecx3964, v3966, v3965, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3970, v3971, v3972), ecx3973 = v3784, v3974 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4e0), v3975 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3973, v3975, v3974, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3976, v3977, v3978, ecx3973, v3975, v3974, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3979, v3980, v3981), ecx3982 = v3784, v3983 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4d8), v3984 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3982, v3984, v3983, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3985, v3986, v3987, ecx3982, v3984, v3983, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3988, v3989, v3990), ecx3991 = v3784, v3992 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4d0), v3993 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx3991, v3993, v3992, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3994, v3995, v3996, ecx3991, v3993, v3992, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v3997, v3998, v3999), v4000 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048b50(ecx3991, v4000, v3992, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4001, v4002, v4003, v4004, v4005, ecx3991, v4000, v3992, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4006, v4007, v4008, v4009, v4010), ecx1695 = v3784, fun_8048cb0(v4000, v3992, 8, v575, 11, "-ChiAbs.outnlinopt.F90"), v4011 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048cd0(ecx1695, v4011, v3992, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4012, v4013, v4014, v4015, v4016, ecx1695, v4011, v3992, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4017, v4018, v4019, v4020, v4021), v4022 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffffcc8), v4023 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx1695, v4023, v4022, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4024, v4025, v4026, ecx1695, v4023, v4022, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4027, v4028, v4029), v4030 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff5c8), v4031 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx1695, v4031, v4030, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4032, v4033, v4034, ecx1695, v4031, v4030, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4035, v4036, v4037), v3759 = reinterpret_cast<void**>(8), v3760 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4c8), v4038 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048d50(ecx1695, v4038, v3760, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4039, v4040, v4041, ecx1695, v4038, v3760, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4042, v4043, v4044), v4045 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364), fun_8048b50(ecx1695, v4045, v3760, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4046, v4047, v4048, v4049, v4050, ecx1695, v4045, v3760, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4051, v4052, v4053, v4054, v4055), eax4056 = reinterpret_cast<uint1_t>(v3784 == ebx3783), v3784 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v3784) + 1), eax4056 == 0) {
         }
     }
     if (!v56) {
-        v3759 = reinterpret_cast<void**>(0x8071a9b);
-        v3760 = reinterpret_cast<void**>(0x8071df4);
-        fun_8048c30(ecx1695, "At line 684 of file nlinopt.F90", 0x8071df4, 0x8071a9b, v575, 11, 0x80716a0, v4057, v4058, v4059, v4060, v4061, v1671, v4062, v4063, v4064, v1673, v50, 0, v49, 0, ecx1695, "At line 684 of file nlinopt.F90", 0x8071df4, 0x8071a9b, v575, 11, 0x80716a0, v4065, v4066, v4067, v4068, v4069, v1671, v4070, v4071, v4072, v1673, v50, 0, v49, 0);
+        v3759 = reinterpret_cast<void**>("px");
+        v3760 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1695, "At line 684 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "px", v575, 11, "-ChiAbs.outnlinopt.F90", v4057, v4058, v4059, v4060, v4061, v1671, v4062, v4063, v4064, v1673, v50, 0, v49, 0, ecx1695, "At line 684 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "px", v575, 11, "-ChiAbs.outnlinopt.F90", v4065, v4066, v4067, v4068, v4069, v1671, v4070, v4071, v4072, v1673, v50, 0, v49, 0);
     }
-    fun_8048bc0(ecx1695, v56, v3760, v3759, v575, 11, 0x80716a0, v4073, v4074, v4075, v4076, v4077, v1671, v4078, v4079, v4080, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v56, v3760, v3759, v575, 11, 0x80716a0, v4081, v4082, v4083, v4084, v4085, v1671, v4086, v4087, v4088, v1673, v50, 0, v49, 0, v45, 0);
+    fun_8048bc0(ecx1695, v56, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4073, v4074, v4075, v4076, v4077, v1671, v4078, v4079, v4080, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v56, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4081, v4082, v4083, v4084, v4085, v1671, v4086, v4087, v4088, v1673, v50, 0, v49, 0, v45, 0);
     if (!v57) {
-        v3759 = reinterpret_cast<void**>(0x8071af4);
-        v3760 = reinterpret_cast<void**>(0x8071df4);
-        fun_8048c30(ecx1695, "At line 684 of file nlinopt.F90", 0x8071df4, 0x8071af4, v575, 11, 0x80716a0, v4089, v4090, v4091, v4092, v4093, v1671, v4094, v4095, v4096, v1673, v50, 0, v49, 0, ecx1695, "At line 684 of file nlinopt.F90", 0x8071df4, 0x8071af4, v575, 11, 0x80716a0, v4097, v4098, v4099, v4100, v4101, v1671, v4102, v4103, v4104, v1673, v50, 0, v49, 0);
+        v3759 = reinterpret_cast<void**>("py");
+        v3760 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1695, "At line 684 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "py", v575, 11, "-ChiAbs.outnlinopt.F90", v4089, v4090, v4091, v4092, v4093, v1671, v4094, v4095, v4096, v1673, v50, 0, v49, 0, ecx1695, "At line 684 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "py", v575, 11, "-ChiAbs.outnlinopt.F90", v4097, v4098, v4099, v4100, v4101, v1671, v4102, v4103, v4104, v1673, v50, 0, v49, 0);
     }
-    fun_8048bc0(ecx1695, v57, v3760, v3759, v575, 11, 0x80716a0, v4105, v4106, v4107, v4108, v4109, v1671, v4110, v4111, v4112, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v57, v3760, v3759, v575, 11, 0x80716a0, v4113, v4114, v4115, v4116, v4117, v1671, v4118, v4119, v4120, v1673, v50, 0, v49, 0, v45, 0);
+    fun_8048bc0(ecx1695, v57, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4105, v4106, v4107, v4108, v4109, v1671, v4110, v4111, v4112, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v57, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4113, v4114, v4115, v4116, v4117, v1671, v4118, v4119, v4120, v1673, v50, 0, v49, 0, v45, 0);
     if (!v58) {
-        v3759 = reinterpret_cast<void**>(0x8071b18);
-        v3760 = reinterpret_cast<void**>(0x8071df4);
-        fun_8048c30(ecx1695, "At line 684 of file nlinopt.F90", 0x8071df4, 0x8071b18, v575, 11, 0x80716a0, v4121, v4122, v4123, v4124, v4125, v1671, v4126, v4127, v4128, v1673, v50, 0, v49, 0, ecx1695, "At line 684 of file nlinopt.F90", 0x8071df4, 0x8071b18, v575, 11, 0x80716a0, v4129, v4130, v4131, v4132, v4133, v1671, v4134, v4135, v4136, v1673, v50, 0, v49, 0);
+        v3759 = reinterpret_cast<void**>("pz");
+        v3760 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1695, "At line 684 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "pz", v575, 11, "-ChiAbs.outnlinopt.F90", v4121, v4122, v4123, v4124, v4125, v1671, v4126, v4127, v4128, v1673, v50, 0, v49, 0, ecx1695, "At line 684 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "pz", v575, 11, "-ChiAbs.outnlinopt.F90", v4129, v4130, v4131, v4132, v4133, v1671, v4134, v4135, v4136, v1673, v50, 0, v49, 0);
     }
-    fun_8048bc0(ecx1695, v58, v3760, v3759, v575, 11, 0x80716a0, v4137, v4138, v4139, v4140, v4141, v1671, v4142, v4143, v4144, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v58, v3760, v3759, v575, 11, 0x80716a0, v4145, v4146, v4147, v4148, v4149, v1671, v4150, v4151, v4152, v1673, v50, 0, v49, 0, v45, 0);
+    fun_8048bc0(ecx1695, v58, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4137, v4138, v4139, v4140, v4141, v1671, v4142, v4143, v4144, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v58, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4145, v4146, v4147, v4148, v4149, v1671, v4150, v4151, v4152, v1673, v50, 0, v49, 0, v45, 0);
     if (!v60) {
-        v3759 = reinterpret_cast<void**>(0x8071c04);
-        v3760 = reinterpret_cast<void**>(0x8071df4);
-        fun_8048c30(ecx1695, "At line 684 of file nlinopt.F90", 0x8071df4, 0x8071c04, v575, 11, 0x80716a0, v4153, v4154, v4155, v4156, v4157, v1671, v4158, v4159, v4160, v1673, v50, 0, v49, 0, ecx1695, "At line 684 of file nlinopt.F90", 0x8071df4, 0x8071c04, v575, 11, 0x80716a0, v4161, v4162, v4163, v4164, v4165, v1671, v4166, v4167, v4168, v1673, v50, 0, v49, 0);
+        v3759 = reinterpret_cast<void**>("sym");
+        v3760 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1695, "At line 684 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "sym", v575, 11, "-ChiAbs.outnlinopt.F90", v4153, v4154, v4155, v4156, v4157, v1671, v4158, v4159, v4160, v1673, v50, 0, v49, 0, ecx1695, "At line 684 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "sym", v575, 11, "-ChiAbs.outnlinopt.F90", v4161, v4162, v4163, v4164, v4165, v1671, v4166, v4167, v4168, v1673, v50, 0, v49, 0);
     }
-    fun_8048bc0(ecx1695, v60, v3760, v3759, v575, 11, 0x80716a0, v4169, v4170, v4171, v4172, v4173, v1671, v4174, v4175, v4176, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v60, v3760, v3759, v575, 11, 0x80716a0, v4177, v4178, v4179, v4180, v4181, v1671, v4182, v4183, v4184, v1673, v50, 0, v49, 0, v45, 0);
+    fun_8048bc0(ecx1695, v60, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4169, v4170, v4171, v4172, v4173, v1671, v4174, v4175, v4176, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v60, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4177, v4178, v4179, v4180, v4181, v1671, v4182, v4183, v4184, v1673, v50, 0, v49, 0, v45, 0);
     if (!v59) {
-        v3759 = reinterpret_cast<void**>(0x8071c28);
-        v3760 = reinterpret_cast<void**>(0x8071df4);
-        fun_8048c30(ecx1695, "At line 684 of file nlinopt.F90", 0x8071df4, 0x8071c28, v575, 11, 0x80716a0, v4185, v4186, v4187, v4188, v4189, v1671, v4190, v4191, v4192, v1673, v50, 0, v49, 0, ecx1695, "At line 684 of file nlinopt.F90", 0x8071df4, 0x8071c28, v575, 11, 0x80716a0, v4193, v4194, v4195, v4196, v4197, v1671, v4198, v4199, v4200, v1673, v50, 0, v49, 0);
+        v3759 = reinterpret_cast<void**>("s");
+        v3760 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1695, "At line 684 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "s", v575, 11, "-ChiAbs.outnlinopt.F90", v4185, v4186, v4187, v4188, v4189, v1671, v4190, v4191, v4192, v1673, v50, 0, v49, 0, ecx1695, "At line 684 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "s", v575, 11, "-ChiAbs.outnlinopt.F90", v4193, v4194, v4195, v4196, v4197, v1671, v4198, v4199, v4200, v1673, v50, 0, v49, 0);
     }
-    fun_8048bc0(ecx1695, v59, v3760, v3759, v575, 11, 0x80716a0, v4201, v4202, v4203, v4204, v4205, v1671, v4206, v4207, v4208, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v59, v3760, v3759, v575, 11, 0x80716a0, v4209, v4210, v4211, v4212, v4213, v1671, v4214, v4215, v4216, v1673, v50, 0, v49, 0, v45, 0);
+    fun_8048bc0(ecx1695, v59, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4201, v4202, v4203, v4204, v4205, v1671, v4206, v4207, v4208, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v59, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4209, v4210, v4211, v4212, v4213, v1671, v4214, v4215, v4216, v1673, v50, 0, v49, 0, v45, 0);
     if (!v53) {
-        v3759 = reinterpret_cast<void**>(0x8071b3c);
-        v3760 = reinterpret_cast<void**>(0x8071df4);
-        fun_8048c30(ecx1695, "At line 685 of file nlinopt.F90", 0x8071df4, 0x8071b3c, v575, 11, 0x80716a0, v4217, v4218, v4219, v4220, v4221, v1671, v4222, v4223, v4224, v1673, v50, 0, v49, 0, ecx1695, "At line 685 of file nlinopt.F90", 0x8071df4, 0x8071b3c, v575, 11, 0x80716a0, v4225, v4226, v4227, v4228, v4229, v1671, v4230, v4231, v4232, v1673, v50, 0, v49, 0);
+        v3759 = reinterpret_cast<void**>("inter2w");
+        v3760 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1695, "At line 685 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "inter2w", v575, 11, "-ChiAbs.outnlinopt.F90", v4217, v4218, v4219, v4220, v4221, v1671, v4222, v4223, v4224, v1673, v50, 0, v49, 0, ecx1695, "At line 685 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "inter2w", v575, 11, "-ChiAbs.outnlinopt.F90", v4225, v4226, v4227, v4228, v4229, v1671, v4230, v4231, v4232, v1673, v50, 0, v49, 0);
     }
-    fun_8048bc0(ecx1695, v53, v3760, v3759, v575, 11, 0x80716a0, v4233, v4234, v4235, v4236, v4237, v1671, v4238, v4239, v4240, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v53, v3760, v3759, v575, 11, 0x80716a0, v4241, v4242, v4243, v4244, v4245, v1671, v4246, v4247, v4248, v1673, v50, 0, v49, 0, v45, 0);
+    fun_8048bc0(ecx1695, v53, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4233, v4234, v4235, v4236, v4237, v1671, v4238, v4239, v4240, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v53, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4241, v4242, v4243, v4244, v4245, v1671, v4246, v4247, v4248, v1673, v50, 0, v49, 0, v45, 0);
     if (!v52) {
-        v3759 = reinterpret_cast<void**>(0x8071b64);
-        v3760 = reinterpret_cast<void**>(0x8071df4);
-        fun_8048c30(ecx1695, "At line 685 of file nlinopt.F90", 0x8071df4, 0x8071b64, v575, 11, 0x80716a0, v4249, v4250, v4251, v4252, v4253, v1671, v4254, v4255, v4256, v1673, v50, 0, v49, 0, ecx1695, "At line 685 of file nlinopt.F90", 0x8071df4, 0x8071b64, v575, 11, 0x80716a0, v4257, v4258, v4259, v4260, v4261, v1671, v4262, v4263, v4264, v1673, v50, 0, v49, 0);
+        v3759 = reinterpret_cast<void**>("inter1w");
+        v3760 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1695, "At line 685 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "inter1w", v575, 11, "-ChiAbs.outnlinopt.F90", v4249, v4250, v4251, v4252, v4253, v1671, v4254, v4255, v4256, v1673, v50, 0, v49, 0, ecx1695, "At line 685 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "inter1w", v575, 11, "-ChiAbs.outnlinopt.F90", v4257, v4258, v4259, v4260, v4261, v1671, v4262, v4263, v4264, v1673, v50, 0, v49, 0);
     }
-    fun_8048bc0(ecx1695, v52, v3760, v3759, v575, 11, 0x80716a0, v4265, v4266, v4267, v4268, v4269, v1671, v4270, v4271, v4272, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v52, v3760, v3759, v575, 11, 0x80716a0, v4273, v4274, v4275, v4276, v4277, v1671, v4278, v4279, v4280, v1673, v50, 0, v49, 0, v45, 0);
+    fun_8048bc0(ecx1695, v52, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4265, v4266, v4267, v4268, v4269, v1671, v4270, v4271, v4272, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v52, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4273, v4274, v4275, v4276, v4277, v1671, v4278, v4279, v4280, v1673, v50, 0, v49, 0, v45, 0);
     if (!v55) {
-        v3759 = reinterpret_cast<void**>(0x8071b8c);
-        v3760 = reinterpret_cast<void**>(0x8071df4);
-        fun_8048c30(ecx1695, "At line 685 of file nlinopt.F90", 0x8071df4, 0x8071b8c, v575, 11, 0x80716a0, v4281, v4282, v4283, v4284, v4285, v1671, v4286, v4287, v4288, v1673, v50, 0, v49, 0, ecx1695, "At line 685 of file nlinopt.F90", 0x8071df4, 0x8071b8c, v575, 11, 0x80716a0, v4289, v4290, v4291, v4292, v4293, v1671, v4294, v4295, v4296, v1673, v50, 0, v49, 0);
+        v3759 = reinterpret_cast<void**>("intra2w");
+        v3760 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1695, "At line 685 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "intra2w", v575, 11, "-ChiAbs.outnlinopt.F90", v4281, v4282, v4283, v4284, v4285, v1671, v4286, v4287, v4288, v1673, v50, 0, v49, 0, ecx1695, "At line 685 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "intra2w", v575, 11, "-ChiAbs.outnlinopt.F90", v4289, v4290, v4291, v4292, v4293, v1671, v4294, v4295, v4296, v1673, v50, 0, v49, 0);
     }
-    fun_8048bc0(ecx1695, v55, v3760, v3759, v575, 11, 0x80716a0, v4297, v4298, v4299, v4300, v4301, v1671, v4302, v4303, v4304, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v55, v3760, v3759, v575, 11, 0x80716a0, v4305, v4306, v4307, v4308, v4309, v1671, v4310, v4311, v4312, v1673, v50, 0, v49, 0, v45, 0);
+    fun_8048bc0(ecx1695, v55, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4297, v4298, v4299, v4300, v4301, v1671, v4302, v4303, v4304, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v55, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4305, v4306, v4307, v4308, v4309, v1671, v4310, v4311, v4312, v1673, v50, 0, v49, 0, v45, 0);
     if (!v54) {
-        v3759 = reinterpret_cast<void**>(0x8071bb4);
-        v3760 = reinterpret_cast<void**>(0x8071df4);
-        fun_8048c30(ecx1695, "At line 685 of file nlinopt.F90", 0x8071df4, 0x8071bb4, v575, 11, 0x80716a0, v4313, v4314, v4315, v4316, v4317, v1671, v4318, v4319, v4320, v1673, v50, 0, v49, 0, ecx1695, "At line 685 of file nlinopt.F90", 0x8071df4, 0x8071bb4, v575, 11, 0x80716a0, v4321, v4322, v4323, v4324, v4325, v1671, v4326, v4327, v4328, v1673, v50, 0, v49, 0);
+        v3759 = reinterpret_cast<void**>("intra1w");
+        v3760 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1695, "At line 685 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "intra1w", v575, 11, "-ChiAbs.outnlinopt.F90", v4313, v4314, v4315, v4316, v4317, v1671, v4318, v4319, v4320, v1673, v50, 0, v49, 0, ecx1695, "At line 685 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "intra1w", v575, 11, "-ChiAbs.outnlinopt.F90", v4321, v4322, v4323, v4324, v4325, v1671, v4326, v4327, v4328, v1673, v50, 0, v49, 0);
     }
-    fun_8048bc0(ecx1695, v54, v3760, v3759, v575, 11, 0x80716a0, v4329, v4330, v4331, v4332, v4333, v1671, v4334, v4335, v4336, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v54, v3760, v3759, v575, 11, 0x80716a0, v4337, v4338, v4339, v4340, v4341, v1671, v4342, v4343, v4344, v1673, v50, 0, v49, 0, v45, 0);
+    fun_8048bc0(ecx1695, v54, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4329, v4330, v4331, v4332, v4333, v1671, v4334, v4335, v4336, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v54, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4337, v4338, v4339, v4340, v4341, v1671, v4342, v4343, v4344, v1673, v50, 0, v49, 0, v45, 0);
     zf4345 = reinterpret_cast<uint1_t>(v51 == 0);
     if (zf4345) {
-        v3759 = reinterpret_cast<void**>(0x8071bdc);
-        v3760 = reinterpret_cast<void**>(0x8071df4);
-        fun_8048c30(ecx1695, "At line 685 of file nlinopt.F90", 0x8071df4, 0x8071bdc, v575, 11, 0x80716a0, v4346, v4347, v4348, v4349, v4350, v1671, v4351, v4352, v4353, v1673, v50, 0, v49, 0, ecx1695, "At line 685 of file nlinopt.F90", 0x8071df4, 0x8071bdc, v575, 11, 0x80716a0, v4354, v4355, v4356, v4357, v4358, v1671, v4359, v4360, v4361, v1673, v50, 0, v49, 0);
+        v3759 = reinterpret_cast<void**>("delta");
+        v3760 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1695, "At line 685 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "delta", v575, 11, "-ChiAbs.outnlinopt.F90", v4346, v4347, v4348, v4349, v4350, v1671, v4351, v4352, v4353, v1673, v50, 0, v49, 0, ecx1695, "At line 685 of file nlinopt.F90", "Attempt to DEALLOCATE unallocated '%s'", "delta", v575, 11, "-ChiAbs.outnlinopt.F90", v4354, v4355, v4356, v4357, v4358, v1671, v4359, v4360, v4361, v1673, v50, 0, v49, 0);
     }
-    fun_8048bc0(ecx1695, v51, v3760, v3759, v575, 11, 0x80716a0, v4362, v4363, v4364, v4365, v4366, v1671, v4367, v4368, v4369, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v51, v3760, v3759, v575, 11, 0x80716a0, v4370, v4371, v4372, v4373, v4374, v1671, v4375, v4376, v4377, v1673, v50, 0, v49, 0, v45, 0);
+    fun_8048bc0(ecx1695, v51, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4362, v4363, v4364, v4365, v4366, v1671, v4367, v4368, v4369, v1673, v50, 0, v49, 0, v45, 0, ecx1695, v51, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4370, v4371, v4372, v4373, v4374, v1671, v4375, v4376, v4377, v1673, v50, 0, v49, 0, v45, 0);
     v4378 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c70(ecx1695, v4378, v3760, v3759, v575, 11, 0x80716a0, v4379, v4380, v4381, v4382, v4383, ecx1695, v4378, v3760, v3759, v575, 11, 0x80716a0, v4384, v4385, v4386, v4387, v4388);
+    fun_8048c70(ecx1695, v4378, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4379, v4380, v4381, v4382, v4383, ecx1695, v4378, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4384, v4385, v4386, v4387, v4388);
     v4389 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c70(ecx1695, v4389, v3760, v3759, v575, 11, 0x80716a0, v4390, v4391, v4392, v4393, v4394, ecx1695, v4389, v3760, v3759, v575, 11, 0x80716a0, v4395, v4396, v4397, v4398, v4399);
+    fun_8048c70(ecx1695, v4389, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4390, v4391, v4392, v4393, v4394, ecx1695, v4389, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4395, v4396, v4397, v4398, v4399);
     v4400 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c70(ecx1695, v4400, v3760, v3759, v575, 11, 0x80716a0, v4401, v4402, v4403, v4404, v4405, ecx1695, v4400, v3760, v3759, v575, 11, 0x80716a0, v4406, v4407, v4408, v4409, v4410);
+    fun_8048c70(ecx1695, v4400, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4401, v4402, v4403, v4404, v4405, ecx1695, v4400, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4406, v4407, v4408, v4409, v4410);
     v4411 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c70(ecx1695, v4411, v3760, v3759, v575, 11, 0x80716a0, v4412, v4413, v4414, v4415, v4416, ecx1695, v4411, v3760, v3759, v575, 11, 0x80716a0, v4417, v4418, v4419, v4420, v4421);
+    fun_8048c70(ecx1695, v4411, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4412, v4413, v4414, v4415, v4416, ecx1695, v4411, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4417, v4418, v4419, v4420, v4421);
     v4422 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c70(ecx1695, v4422, v3760, v3759, v575, 11, 0x80716a0, v4423, v4424, v4425, v4426, v4427, ecx1695, v4422, v3760, v3759, v575, 11, 0x80716a0, v4428, v4429, v4430, v4431, v4432);
+    fun_8048c70(ecx1695, v4422, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4423, v4424, v4425, v4426, v4427, ecx1695, v4422, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4428, v4429, v4430, v4431, v4432);
     v4433 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v4433, v3760, v3759, v575, 11, 0x80716a0, v4434, v4435, v4436, v4437, v4438, ecx1695, v4433, v3760, v3759, v575, 11, 0x80716a0, v4439, v4440, v4441, v4442, v4443);
+    fun_8048cd0(ecx1695, v4433, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4434, v4435, v4436, v4437, v4438, ecx1695, v4433, v3760, v3759, v575, 11, "-ChiAbs.outnlinopt.F90", v4439, v4440, v4441, v4442, v4443);
     v4444 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v4444, 0x8071e5c, 1, v575, 11, 0x80716a0, v4445, v4446, v4447, v4448, v4449, ecx1695, v4444, 0x8071e5c, 1, v575, 11, 0x80716a0, v4450, v4451, v4452, v4453, v4454);
+    fun_8048cc0(ecx1695, v4444, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4445, v4446, v4447, v4448, v4449, ecx1695, v4444, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4450, v4451, v4452, v4453, v4454);
     v4455 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v4455, 0x8071e5c, 1, v575, 11, 0x80716a0, v4456, v4457, v4458, v4459, v4460, ecx1695, v4455, 0x8071e5c, 1, v575, 11, 0x80716a0, v4461, v4462, v4463, v4464, v4465);
+    fun_8048b50(ecx1695, v4455, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4456, v4457, v4458, v4459, v4460, ecx1695, v4455, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4461, v4462, v4463, v4464, v4465);
     v4466 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v4466, 0x8071e5c, 1, v575, 11, 0x80716a0, v4467, v4468, v4469, v4470, v4471, ecx1695, v4466, 0x8071e5c, 1, v575, 11, 0x80716a0, v4472, v4473, v4474, v4475, v4476);
+    fun_8048cd0(ecx1695, v4466, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4467, v4468, v4469, v4470, v4471, ecx1695, v4466, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4472, v4473, v4474, v4475, v4476);
     v4477 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v4477, 0x8071e60, 45, v575, 11, 0x80716a0, v4478, v4479, v4480, v4481, v4482, ecx1695, v4477, 0x8071e60, 45, v575, 11, 0x80716a0, v4483, v4484, v4485, v4486, v4487);
+    fun_8048cc0(ecx1695, v4477, "information about calculation just performed:calculated the component:of second order susceptibilitytolerence:", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v4478, v4479, v4480, v4481, v4482, ecx1695, v4477, "information about calculation just performed:calculated the component:of second order susceptibilitytolerence:", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v4483, v4484, v4485, v4486, v4487);
     v4488 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v4488, 0x8071e60, 45, v575, 11, 0x80716a0, v4489, v4490, v4491, v4492, v4493, ecx1695, v4488, 0x8071e60, 45, v575, 11, 0x80716a0, v4494, v4495, v4496, v4497, v4498);
+    fun_8048b50(ecx1695, v4488, "information about calculation just performed:calculated the component:of second order susceptibilitytolerence:", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v4489, v4490, v4491, v4492, v4493, ecx1695, v4488, "information about calculation just performed:calculated the component:of second order susceptibilitytolerence:", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v4494, v4495, v4496, v4497, v4498);
     v4499 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v4499, 0x8071e60, 45, v575, 11, 0x80716a0, v4500, v4501, v4502, v4503, v4504, ecx1695, v4499, 0x8071e60, 45, v575, 11, 0x80716a0, v4505, v4506, v4507, v4508, v4509);
+    fun_8048cd0(ecx1695, v4499, "information about calculation just performed:calculated the component:of second order susceptibilitytolerence:", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v4500, v4501, v4502, v4503, v4504, ecx1695, v4499, "information about calculation just performed:calculated the component:of second order susceptibilitytolerence:", 45, v575, 11, "-ChiAbs.outnlinopt.F90", v4505, v4506, v4507, v4508, v4509);
     v4510 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v4510, 0x8071e5c, 1, v575, 11, 0x80716a0, v4511, v4512, v4513, v4514, v4515, ecx1695, v4510, 0x8071e5c, 1, v575, 11, 0x80716a0, v4516, v4517, v4518, v4519, v4520);
+    fun_8048cc0(ecx1695, v4510, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4511, v4512, v4513, v4514, v4515, ecx1695, v4510, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4516, v4517, v4518, v4519, v4520);
     v4521 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v4521, 0x8071e5c, 1, v575, 11, 0x80716a0, v4522, v4523, v4524, v4525, v4526, ecx1695, v4521, 0x8071e5c, 1, v575, 11, 0x80716a0, v4527, v4528, v4529, v4530, v4531);
+    fun_8048b50(ecx1695, v4521, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4522, v4523, v4524, v4525, v4526, ecx1695, v4521, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4527, v4528, v4529, v4530, v4531);
     v4532 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v4532, 0x8071e5c, 1, v575, 11, 0x80716a0, v4533, v4534, v4535, v4536, v4537, ecx1695, v4532, 0x8071e5c, 1, v575, 11, 0x80716a0, v4538, v4539, v4540, v4541, v4542);
+    fun_8048cd0(ecx1695, v4532, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4533, v4534, v4535, v4536, v4537, ecx1695, v4532, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4538, v4539, v4540, v4541, v4542);
     v4543 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v4543, 0x8071e8d, 25, v575, 11, 0x80716a0, v4544, v4545, v4546, v4547, v4548, ecx1695, v4543, 0x8071e8d, 25, v575, 11, 0x80716a0, v4549, v4550, v4551, v4552, v4553);
+    fun_8048cc0(ecx1695, v4543, "calculated the component:of second order susceptibilitytolerence:", 25, v575, 11, "-ChiAbs.outnlinopt.F90", v4544, v4545, v4546, v4547, v4548, ecx1695, v4543, "calculated the component:of second order susceptibilitytolerence:", 25, v575, 11, "-ChiAbs.outnlinopt.F90", v4549, v4550, v4551, v4552, v4553);
     v4554 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v4554, a11, 4, v575, 11, 0x80716a0, v4555, v4556, v4557, v4558, v4559, ecx1695, v4554, a11, 4, v575, 11, 0x80716a0, v4560, v4561, v4562, v4563, v4564);
+    fun_8048c50(ecx1695, v4554, a11, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v4555, v4556, v4557, v4558, v4559, ecx1695, v4554, a11, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v4560, v4561, v4562, v4563, v4564);
     v4565 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v4565, a12, 4, v575, 11, 0x80716a0, v4566, v4567, v4568, v4569, v4570, ecx1695, v4565, a12, 4, v575, 11, 0x80716a0, v4571, v4572, v4573, v4574, v4575);
+    fun_8048c50(ecx1695, v4565, a12, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v4566, v4567, v4568, v4569, v4570, ecx1695, v4565, a12, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v4571, v4572, v4573, v4574, v4575);
     v4576 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048c50(ecx1695, v4576, a13, 4, v575, 11, 0x80716a0, v4577, v4578, v4579, v4580, v4581, ecx1695, v4576, a13, 4, v575, 11, 0x80716a0, v4582, v4583, v4584, v4585, v4586);
+    fun_8048c50(ecx1695, v4576, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v4577, v4578, v4579, v4580, v4581, ecx1695, v4576, a13, 4, v575, 11, "-ChiAbs.outnlinopt.F90", v4582, v4583, v4584, v4585, v4586);
     v4587 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v4587, 0x8071ea6, 30, v575, 11, 0x80716a0, v4588, v4589, v4590, v4591, v4592, ecx1695, v4587, 0x8071ea6, 30, v575, 11, 0x80716a0, v4593, v4594, v4595, v4596, v4597);
+    fun_8048cc0(ecx1695, v4587, "of second order susceptibilitytolerence:", 30, v575, 11, "-ChiAbs.outnlinopt.F90", v4588, v4589, v4590, v4591, v4592, ecx1695, v4587, "of second order susceptibilitytolerence:", 30, v575, 11, "-ChiAbs.outnlinopt.F90", v4593, v4594, v4595, v4596, v4597);
     v4598 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v4598, 0x8071ea6, 30, v575, 11, 0x80716a0, v4599, v4600, v4601, v4602, v4603, ecx1695, v4598, 0x8071ea6, 30, v575, 11, 0x80716a0, v4604, v4605, v4606, v4607, v4608);
+    fun_8048b50(ecx1695, v4598, "of second order susceptibilitytolerence:", 30, v575, 11, "-ChiAbs.outnlinopt.F90", v4599, v4600, v4601, v4602, v4603, ecx1695, v4598, "of second order susceptibilitytolerence:", 30, v575, 11, "-ChiAbs.outnlinopt.F90", v4604, v4605, v4606, v4607, v4608);
     v4609 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v4609, 0x8071ea6, 30, v575, 11, 0x80716a0, v4610, v4611, v4612, v4613, v4614, ecx1695, v4609, 0x8071ea6, 30, v575, 11, 0x80716a0, v4615, v4616, v4617, v4618, v4619);
+    fun_8048cd0(ecx1695, v4609, "of second order susceptibilitytolerence:", 30, v575, 11, "-ChiAbs.outnlinopt.F90", v4610, v4611, v4612, v4613, v4614, ecx1695, v4609, "of second order susceptibilitytolerence:", 30, v575, 11, "-ChiAbs.outnlinopt.F90", v4615, v4616, v4617, v4618, v4619);
     v4620 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v4620, 0x8071ec4, 10, v575, 11, 0x80716a0, v4621, v4622, v4623, v4624, v4625, ecx1695, v4620, 0x8071ec4, 10, v575, 11, 0x80716a0, v4626, v4627, v4628, v4629, v4630);
+    fun_8048cc0(ecx1695, v4620, "tolerence:", 10, v575, 11, "-ChiAbs.outnlinopt.F90", v4621, v4622, v4623, v4624, v4625, ecx1695, v4620, "tolerence:", 10, v575, 11, "-ChiAbs.outnlinopt.F90", v4626, v4627, v4628, v4629, v4630);
     v4631 = reinterpret_cast<void**>(8);
     v4632 = a18;
     v4633 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v4633, v4632, 8, v575, 11, 0x80716a0, v4634, v4635, v4636, ecx1695, v4633, v4632, 8, v575, 11, 0x80716a0, v4637, v4638, v4639);
+    fun_8048d50(ecx1695, v4633, v4632, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4634, v4635, v4636, ecx1695, v4633, v4632, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4637, v4638, v4639);
     v4640 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v4640, v4632, 8, v575, 11, 0x80716a0, v4641, v4642, v4643, v4644, v4645, ecx1695, v4640, v4632, 8, v575, 11, 0x80716a0, v4646, v4647, v4648, v4649, v4650);
+    fun_8048b50(ecx1695, v4640, v4632, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4641, v4642, v4643, v4644, v4645, ecx1695, v4640, v4632, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4646, v4647, v4648, v4649, v4650);
     __asm__("fld qword [eax]");
     __asm__("fld qword [0x8071fd8]");
     __asm__("fxch st0, st1");
@@ -14216,26 +14216,26 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
     zf4651 = reinterpret_cast<uint1_t>(static_cast<uint32_t>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(static_cast<uint32_t>(zf4345))))) == 0);
     if (!zf4651) {
         v4652 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-        fun_8048cd0(ecx1695, v4652, v4632, 8, v575, 11, 0x80716a0, v4653, v4654, v4655, v4656, v4657, ecx1695, v4652, v4632, 8, v575, 11, 0x80716a0, v4658, v4659, v4660, v4661, v4662);
+        fun_8048cd0(ecx1695, v4652, v4632, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4653, v4654, v4655, v4656, v4657, ecx1695, v4652, v4632, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4658, v4659, v4660, v4661, v4662);
         v4631 = reinterpret_cast<void**>(32);
-        v4632 = reinterpret_cast<void**>(0x8071ed0);
+        v4632 = reinterpret_cast<void**>("ATTENTION: tolerence is too highbroadening:Hartree");
         v4663 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-        fun_8048cc0(ecx1695, v4663, 0x8071ed0, 32, v575, 11, 0x80716a0, v4664, v4665, v4666, v4667, v4668, ecx1695, v4663, 0x8071ed0, 32, v575, 11, 0x80716a0, v4669, v4670, v4671, v4672, v4673);
+        fun_8048cc0(ecx1695, v4663, "ATTENTION: tolerence is too highbroadening:Hartree", 32, v575, 11, "-ChiAbs.outnlinopt.F90", v4664, v4665, v4666, v4667, v4668, ecx1695, v4663, "ATTENTION: tolerence is too highbroadening:Hartree", 32, v575, 11, "-ChiAbs.outnlinopt.F90", v4669, v4670, v4671, v4672, v4673);
         v4674 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-        fun_8048b50(ecx1695, v4674, 0x8071ed0, 32, v575, 11, 0x80716a0, v4675, v4676, v4677, v4678, v4679, ecx1695, v4674, 0x8071ed0, 32, v575, 11, 0x80716a0, v4680, v4681, v4682, v4683, v4684);
+        fun_8048b50(ecx1695, v4674, "ATTENTION: tolerence is too highbroadening:Hartree", 32, v575, 11, "-ChiAbs.outnlinopt.F90", v4675, v4676, v4677, v4678, v4679, ecx1695, v4674, "ATTENTION: tolerence is too highbroadening:Hartree", 32, v575, 11, "-ChiAbs.outnlinopt.F90", v4680, v4681, v4682, v4683, v4684);
     }
     v4685 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v4685, v4632, v4631, v575, 11, 0x80716a0, v4686, v4687, v4688, v4689, v4690, ecx1695, v4685, v4632, v4631, v575, 11, 0x80716a0, v4691, v4692, v4693, v4694, v4695);
+    fun_8048cd0(ecx1695, v4685, v4632, v4631, v575, 11, "-ChiAbs.outnlinopt.F90", v4686, v4687, v4688, v4689, v4690, ecx1695, v4685, v4632, v4631, v575, 11, "-ChiAbs.outnlinopt.F90", v4691, v4692, v4693, v4694, v4695);
     v4696 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v4696, 0x8071ef0, 11, v575, 11, 0x80716a0, v4697, v4698, v4699, v4700, v4701, ecx1695, v4696, 0x8071ef0, 11, v575, 11, 0x80716a0, v4702, v4703, v4704, v4705, v4706);
+    fun_8048cc0(ecx1695, v4696, "broadening:Hartree", 11, v575, 11, "-ChiAbs.outnlinopt.F90", v4697, v4698, v4699, v4700, v4701, ecx1695, v4696, "broadening:Hartree", 11, v575, 11, "-ChiAbs.outnlinopt.F90", v4702, v4703, v4704, v4705, v4706);
     v4707 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v4707, a17, 8, v575, 11, 0x80716a0, v4708, v4709, v4710, ecx1695, v4707, a17, 8, v575, 11, 0x80716a0, v4711, v4712, v4713);
+    fun_8048d50(ecx1695, v4707, a17, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4708, v4709, v4710, ecx1695, v4707, a17, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4711, v4712, v4713);
     v4714 = reinterpret_cast<void**>(7);
-    v4715 = reinterpret_cast<void**>(0x8071efb);
+    v4715 = reinterpret_cast<void**>("Hartree");
     v4716 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v4716, 0x8071efb, 7, v575, 11, 0x80716a0, v4717, v4718, v4719, v4720, v4721, ecx1695, v4716, 0x8071efb, 7, v575, 11, 0x80716a0, v4722, v4723, v4724, v4725, v4726);
+    fun_8048cc0(ecx1695, v4716, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4717, v4718, v4719, v4720, v4721, ecx1695, v4716, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4722, v4723, v4724, v4725, v4726);
     v4727 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v4727, 0x8071efb, 7, v575, 11, 0x80716a0, v4728, v4729, v4730, v4731, v4732, ecx1695, v4727, 0x8071efb, 7, v575, 11, 0x80716a0, v4733, v4734, v4735, v4736, v4737);
+    fun_8048b50(ecx1695, v4727, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4728, v4729, v4730, v4731, v4732, ecx1695, v4727, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4733, v4734, v4735, v4736, v4737);
     __asm__("fld qword [eax]");
     __asm__("fld qword [0x8071f88]");
     __asm__("fxch st0, st1");
@@ -14250,117 +14250,117 @@ void** nlinopt_(void*** a1, void** a2, void** a3, void** a4, void** a5, void** a
         __asm__("fstp st0");
         if (reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(static_cast<uint32_t>(zf4738)))) {
             v4739 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048cd0(ecx1695, v4739, 0x8071efb, 7, v575, 11, 0x80716a0, v4740, v4741, v4742, v4743, v4744, ecx1695, v4739, 0x8071efb, 7, v575, 11, 0x80716a0, v4745, v4746, v4747, v4748, v4749);
+            fun_8048cd0(ecx1695, v4739, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4740, v4741, v4742, v4743, v4744, ecx1695, v4739, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4745, v4746, v4747, v4748, v4749);
             v4750 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048cc0(ecx1695, v4750, 0x8071e5c, 1, v575, 11, 0x80716a0, v4751, v4752, v4753, v4754, v4755, ecx1695, v4750, 0x8071e5c, 1, v575, 11, 0x80716a0, v4756, v4757, v4758, v4759, v4760);
+            fun_8048cc0(ecx1695, v4750, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4751, v4752, v4753, v4754, v4755, ecx1695, v4750, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4756, v4757, v4758, v4759, v4760);
             v4761 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048b50(ecx1695, v4761, 0x8071e5c, 1, v575, 11, 0x80716a0, v4762, v4763, v4764, v4765, v4766, ecx1695, v4761, 0x8071e5c, 1, v575, 11, 0x80716a0, v4767, v4768, v4769, v4770, v4771);
+            fun_8048b50(ecx1695, v4761, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4762, v4763, v4764, v4765, v4766, ecx1695, v4761, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4767, v4768, v4769, v4770, v4771);
             v4772 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048cd0(ecx1695, v4772, 0x8071e5c, 1, v575, 11, 0x80716a0, v4773, v4774, v4775, v4776, v4777, ecx1695, v4772, 0x8071e5c, 1, v575, 11, 0x80716a0, v4778, v4779, v4780, v4781, v4782);
+            fun_8048cd0(ecx1695, v4772, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4773, v4774, v4775, v4776, v4777, ecx1695, v4772, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4778, v4779, v4780, v4781, v4782);
             v4783 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048cc0(ecx1695, v4783, 0x8071f28, 33, v575, 11, 0x80716a0, v4784, v4785, v4786, v4787, v4788, ecx1695, v4783, 0x8071f28, 33, v575, 11, 0x80716a0, v4789, v4790, v4791, v4792, v4793);
+            fun_8048cc0(ecx1695, v4783, "ATTENTION: broadening is too highscissors shift:energy window:", 33, v575, 11, "-ChiAbs.outnlinopt.F90", v4784, v4785, v4786, v4787, v4788, ecx1695, v4783, "ATTENTION: broadening is too highscissors shift:energy window:", 33, v575, 11, "-ChiAbs.outnlinopt.F90", v4789, v4790, v4791, v4792, v4793);
             v4794 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048b50(ecx1695, v4794, 0x8071f28, 33, v575, 11, 0x80716a0, v4795, v4796, v4797, v4798, v4799, ecx1695, v4794, 0x8071f28, 33, v575, 11, 0x80716a0, v4800, v4801, v4802, v4803, v4804);
+            fun_8048b50(ecx1695, v4794, "ATTENTION: broadening is too highscissors shift:energy window:", 33, v575, 11, "-ChiAbs.outnlinopt.F90", v4795, v4796, v4797, v4798, v4799, ecx1695, v4794, "ATTENTION: broadening is too highscissors shift:energy window:", 33, v575, 11, "-ChiAbs.outnlinopt.F90", v4800, v4801, v4802, v4803, v4804);
             v4805 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048cd0(ecx1695, v4805, 0x8071f28, 33, v575, 11, 0x80716a0, v4806, v4807, v4808, v4809, v4810, ecx1695, v4805, 0x8071f28, 33, v575, 11, 0x80716a0, v4811, v4812, v4813, v4814, v4815);
+            fun_8048cd0(ecx1695, v4805, "ATTENTION: broadening is too highscissors shift:energy window:", 33, v575, 11, "-ChiAbs.outnlinopt.F90", v4806, v4807, v4808, v4809, v4810, ecx1695, v4805, "ATTENTION: broadening is too highscissors shift:energy window:", 33, v575, 11, "-ChiAbs.outnlinopt.F90", v4811, v4812, v4813, v4814, v4815);
             v4714 = reinterpret_cast<void**>(1);
-            v4715 = reinterpret_cast<void**>(0x8071e5c);
+            v4715 = reinterpret_cast<void**>(" ");
             v4816 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048cc0(ecx1695, v4816, 0x8071e5c, 1, v575, 11, 0x80716a0, v4817, v4818, v4819, v4820, v4821, ecx1695, v4816, 0x8071e5c, 1, v575, 11, 0x80716a0, v4822, v4823, v4824, v4825, v4826);
+            fun_8048cc0(ecx1695, v4816, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4817, v4818, v4819, v4820, v4821, ecx1695, v4816, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4822, v4823, v4824, v4825, v4826);
             v4827 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-            fun_8048b50(ecx1695, v4827, 0x8071e5c, 1, v575, 11, 0x80716a0, v4828, v4829, v4830, v4831, v4832, ecx1695, v4827, 0x8071e5c, 1, v575, 11, 0x80716a0, v4833, v4834, v4835, v4836, v4837);
+            fun_8048b50(ecx1695, v4827, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4828, v4829, v4830, v4831, v4832, ecx1695, v4827, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4833, v4834, v4835, v4836, v4837);
         }
     } else {
         v4838 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-        fun_8048cd0(ecx1695, v4838, 0x8071efb, 7, v575, 11, 0x80716a0, v4839, v4840, v4841, v4842, v4843, ecx1695, v4838, 0x8071efb, 7, v575, 11, 0x80716a0, v4844, v4845, v4846, v4847, v4848);
+        fun_8048cd0(ecx1695, v4838, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4839, v4840, v4841, v4842, v4843, ecx1695, v4838, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4844, v4845, v4846, v4847, v4848);
         v4849 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-        fun_8048cc0(ecx1695, v4849, 0x8071e5c, 1, v575, 11, 0x80716a0, v4850, v4851, v4852, v4853, v4854, ecx1695, v4849, 0x8071e5c, 1, v575, 11, 0x80716a0, v4855, v4856, v4857, v4858, v4859);
+        fun_8048cc0(ecx1695, v4849, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4850, v4851, v4852, v4853, v4854, ecx1695, v4849, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4855, v4856, v4857, v4858, v4859);
         v4860 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-        fun_8048b50(ecx1695, v4860, 0x8071e5c, 1, v575, 11, 0x80716a0, v4861, v4862, v4863, v4864, v4865, ecx1695, v4860, 0x8071e5c, 1, v575, 11, 0x80716a0, v4866, v4867, v4868, v4869, v4870);
+        fun_8048b50(ecx1695, v4860, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4861, v4862, v4863, v4864, v4865, ecx1695, v4860, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4866, v4867, v4868, v4869, v4870);
         v4871 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-        fun_8048cd0(ecx1695, v4871, 0x8071e5c, 1, v575, 11, 0x80716a0, v4872, v4873, v4874, v4875, v4876, ecx1695, v4871, 0x8071e5c, 1, v575, 11, 0x80716a0, v4877, v4878, v4879, v4880, v4881);
+        fun_8048cd0(ecx1695, v4871, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4872, v4873, v4874, v4875, v4876, ecx1695, v4871, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4877, v4878, v4879, v4880, v4881);
         v4882 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-        fun_8048cc0(ecx1695, v4882, 0x8071f04, 35, v575, 11, 0x80716a0, v4883, v4884, v4885, v4886, v4887, ecx1695, v4882, 0x8071f04, 35, v575, 11, 0x80716a0, v4888, v4889, v4890, v4891, v4892);
+        fun_8048cc0(ecx1695, v4882, "ATTENTION: broadening is quite high", 35, v575, 11, "-ChiAbs.outnlinopt.F90", v4883, v4884, v4885, v4886, v4887, ecx1695, v4882, "ATTENTION: broadening is quite high", 35, v575, 11, "-ChiAbs.outnlinopt.F90", v4888, v4889, v4890, v4891, v4892);
         v4893 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-        fun_8048b50(ecx1695, v4893, 0x8071f04, 35, v575, 11, 0x80716a0, v4894, v4895, v4896, v4897, v4898, ecx1695, v4893, 0x8071f04, 35, v575, 11, 0x80716a0, v4899, v4900, v4901, v4902, v4903);
+        fun_8048b50(ecx1695, v4893, "ATTENTION: broadening is quite high", 35, v575, 11, "-ChiAbs.outnlinopt.F90", v4894, v4895, v4896, v4897, v4898, ecx1695, v4893, "ATTENTION: broadening is quite high", 35, v575, 11, "-ChiAbs.outnlinopt.F90", v4899, v4900, v4901, v4902, v4903);
         v4904 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-        fun_8048cd0(ecx1695, v4904, 0x8071f04, 35, v575, 11, 0x80716a0, v4905, v4906, v4907, v4908, v4909, ecx1695, v4904, 0x8071f04, 35, v575, 11, 0x80716a0, v4910, v4911, v4912, v4913, v4914);
+        fun_8048cd0(ecx1695, v4904, "ATTENTION: broadening is quite high", 35, v575, 11, "-ChiAbs.outnlinopt.F90", v4905, v4906, v4907, v4908, v4909, ecx1695, v4904, "ATTENTION: broadening is quite high", 35, v575, 11, "-ChiAbs.outnlinopt.F90", v4910, v4911, v4912, v4913, v4914);
         v4714 = reinterpret_cast<void**>(1);
-        v4715 = reinterpret_cast<void**>(0x8071e5c);
+        v4715 = reinterpret_cast<void**>(" ");
         v4915 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-        fun_8048cc0(ecx1695, v4915, 0x8071e5c, 1, v575, 11, 0x80716a0, v4916, v4917, v4918, v4919, v4920, ecx1695, v4915, 0x8071e5c, 1, v575, 11, 0x80716a0, v4921, v4922, v4923, v4924, v4925);
+        fun_8048cc0(ecx1695, v4915, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4916, v4917, v4918, v4919, v4920, ecx1695, v4915, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4921, v4922, v4923, v4924, v4925);
         v4926 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-        fun_8048b50(ecx1695, v4926, 0x8071e5c, 1, v575, 11, 0x80716a0, v4927, v4928, v4929, v4930, v4931, ecx1695, v4926, 0x8071e5c, 1, v575, 11, 0x80716a0, v4932, v4933, v4934, v4935, v4936);
+        fun_8048b50(ecx1695, v4926, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4927, v4928, v4929, v4930, v4931, ecx1695, v4926, " ", 1, v575, 11, "-ChiAbs.outnlinopt.F90", v4932, v4933, v4934, v4935, v4936);
     }
     v4937 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v4937, v4715, v4714, v575, 11, 0x80716a0, v4938, v4939, v4940, v4941, v4942, ecx1695, v4937, v4715, v4714, v575, 11, 0x80716a0, v4943, v4944, v4945, v4946, v4947);
+    fun_8048cd0(ecx1695, v4937, v4715, v4714, v575, 11, "-ChiAbs.outnlinopt.F90", v4938, v4939, v4940, v4941, v4942, ecx1695, v4937, v4715, v4714, v575, 11, "-ChiAbs.outnlinopt.F90", v4943, v4944, v4945, v4946, v4947);
     v4948 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v4948, 0x8071f49, 15, v575, 11, 0x80716a0, v4949, v4950, v4951, v4952, v4953, ecx1695, v4948, 0x8071f49, 15, v575, 11, 0x80716a0, v4954, v4955, v4956, v4957, v4958);
+    fun_8048cc0(ecx1695, v4948, "scissors shift:energy window:", 15, v575, 11, "-ChiAbs.outnlinopt.F90", v4949, v4950, v4951, v4952, v4953, ecx1695, v4948, "scissors shift:energy window:", 15, v575, 11, "-ChiAbs.outnlinopt.F90", v4954, v4955, v4956, v4957, v4958);
     v4959 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v4959, a16, 8, v575, 11, 0x80716a0, v4960, v4961, v4962, ecx1695, v4959, a16, 8, v575, 11, 0x80716a0, v4963, v4964, v4965);
+    fun_8048d50(ecx1695, v4959, a16, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4960, v4961, v4962, ecx1695, v4959, a16, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v4963, v4964, v4965);
     v4966 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v4966, 0x8071efb, 7, v575, 11, 0x80716a0, v4967, v4968, v4969, v4970, v4971, ecx1695, v4966, 0x8071efb, 7, v575, 11, 0x80716a0, v4972, v4973, v4974, v4975, v4976);
+    fun_8048cc0(ecx1695, v4966, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4967, v4968, v4969, v4970, v4971, ecx1695, v4966, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4972, v4973, v4974, v4975, v4976);
     v4977 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v4977, 0x8071efb, 7, v575, 11, 0x80716a0, v4978, v4979, v4980, v4981, v4982, ecx1695, v4977, 0x8071efb, 7, v575, 11, 0x80716a0, v4983, v4984, v4985, v4986, v4987);
+    fun_8048b50(ecx1695, v4977, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4978, v4979, v4980, v4981, v4982, ecx1695, v4977, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4983, v4984, v4985, v4986, v4987);
     v4988 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cd0(ecx1695, v4988, 0x8071efb, 7, v575, 11, 0x80716a0, v4989, v4990, v4991, v4992, v4993, ecx1695, v4988, 0x8071efb, 7, v575, 11, 0x80716a0, v4994, v4995, v4996, v4997, v4998);
+    fun_8048cd0(ecx1695, v4988, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4989, v4990, v4991, v4992, v4993, ecx1695, v4988, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v4994, v4995, v4996, v4997, v4998);
     v4999 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v4999, 0x8071f58, 14, v575, 11, 0x80716a0, v5000, v5001, v5002, v5003, v5004, ecx1695, v4999, 0x8071f58, 14, v575, 11, 0x80716a0, v5005, v5006, v5007, v5008, v5009);
+    fun_8048cc0(ecx1695, v4999, "energy window:", 14, v575, 11, "-ChiAbs.outnlinopt.F90", v5000, v5001, v5002, v5003, v5004, ecx1695, v4999, "energy window:", 14, v575, 11, "-ChiAbs.outnlinopt.F90", v5005, v5006, v5007, v5008, v5009);
     __asm__("fld qword [ebp+0xffffff08]");
     __asm__("fsub qword [ebp+0xffffff10]");
     __asm__("fmul qword [ebp+0xffffff30]");
     __asm__("fstp qword [ebp+0xfffff4c0]");
     v5010 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4c0);
     v5011 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v5011, v5010, 8, v575, 11, 0x80716a0, v5012, v5013, v5014, ecx1695, v5011, v5010, 8, v575, 11, 0x80716a0, v5015, v5016, v5017);
+    fun_8048d50(ecx1695, v5011, v5010, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v5012, v5013, v5014, ecx1695, v5011, v5010, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v5015, v5016, v5017);
     v5018 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v5018, 0x8071ce5, 2, v575, 11, 0x80716a0, v5019, v5020, v5021, v5022, v5023, ecx1695, v5018, 0x8071ce5, 2, v575, 11, 0x80716a0, v5024, v5025, v5026, v5027, v5028);
+    fun_8048cc0(ecx1695, v5018, "eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v5019, v5020, v5021, v5022, v5023, ecx1695, v5018, "eV(a)", 2, v575, 11, "-ChiAbs.outnlinopt.F90", v5024, v5025, v5026, v5027, v5028);
     __asm__("fld qword [ebp+0xffffff08]");
     __asm__("fsub qword [ebp+0xffffff10]");
     __asm__("fstp qword [ebp+0xfffff4b8]");
     v5029 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff4b8);
     v5030 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048d50(ecx1695, v5030, v5029, 8, v575, 11, 0x80716a0, v5031, v5032, v5033, ecx1695, v5030, v5029, 8, v575, 11, 0x80716a0, v5034, v5035, v5036);
+    fun_8048d50(ecx1695, v5030, v5029, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v5031, v5032, v5033, ecx1695, v5030, v5029, 8, v575, 11, "-ChiAbs.outnlinopt.F90", v5034, v5035, v5036);
     v5037 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048cc0(ecx1695, v5037, 0x8071efb, 7, v575, 11, 0x80716a0, v5038, v5039, v5040, v5041, v5042, ecx1695, v5037, 0x8071efb, 7, v575, 11, 0x80716a0, v5043, v5044, v5045, v5046, v5047);
+    fun_8048cc0(ecx1695, v5037, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5038, v5039, v5040, v5041, v5042, ecx1695, v5037, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5043, v5044, v5045, v5046, v5047);
     v5048 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp21) + 0xfffff364);
-    fun_8048b50(ecx1695, v5048, 0x8071efb, 7, v575, 11, 0x80716a0, v5049, v5050, v5051, v5052, v5053, ecx1695, v5048, 0x8071efb, 7, v575, 11, 0x80716a0, v5054, v5055, v5056, v5057, v5058);
+    fun_8048b50(ecx1695, v5048, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5049, v5050, v5051, v5052, v5053, ecx1695, v5048, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5054, v5055, v5056, v5057, v5058);
     if (!1) {
-        fun_8048bc0(ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5059, v5060, v5061, v5062, v5063, v1671, v5064, v5065, v5066, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5067, v5068, v5069, v5070, v5071, v1671, v5072, v5073, v5074, v1673, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5059, v5060, v5061, v5062, v5063, v1671, v5064, v5065, v5066, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5067, v5068, v5069, v5070, v5071, v1671, v5072, v5073, v5074, v1673, v50, 0, v49, 0, v45, 0);
     }
     if (!1) {
-        fun_8048bc0(ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5075, v5076, v5077, v5078, v5079, v1671, v5080, v5081, v5082, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5083, v5084, v5085, v5086, v5087, v1671, v5088, v5089, v5090, v1673, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5075, v5076, v5077, v5078, v5079, v1671, v5080, v5081, v5082, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5083, v5084, v5085, v5086, v5087, v1671, v5088, v5089, v5090, v1673, v50, 0, v49, 0, v45, 0);
     }
     if (!1) {
-        fun_8048bc0(ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5091, v5092, v5093, v5094, v5095, v1671, v5096, v5097, v5098, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5099, v5100, v5101, v5102, v5103, v1671, v5104, v5105, v5106, v1673, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5091, v5092, v5093, v5094, v5095, v1671, v5096, v5097, v5098, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5099, v5100, v5101, v5102, v5103, v1671, v5104, v5105, v5106, v1673, v50, 0, v49, 0, v45, 0);
     }
     if (!1) {
-        fun_8048bc0(ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5107, v5108, v5109, v5110, v5111, v1671, v5112, v5113, v5114, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5115, v5116, v5117, v5118, v5119, v1671, v5120, v5121, v5122, v1673, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5107, v5108, v5109, v5110, v5111, v1671, v5112, v5113, v5114, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5115, v5116, v5117, v5118, v5119, v1671, v5120, v5121, v5122, v1673, v50, 0, v49, 0, v45, 0);
     }
     if (!1) {
-        fun_8048bc0(ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5123, v5124, v5125, v5126, v5127, v1671, v5128, v5129, v5130, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5131, v5132, v5133, v5134, v5135, v1671, v5136, v5137, v5138, v1673, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5123, v5124, v5125, v5126, v5127, v1671, v5128, v5129, v5130, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5131, v5132, v5133, v5134, v5135, v1671, v5136, v5137, v5138, v1673, v50, 0, v49, 0, v45, 0);
     }
     if (!1) {
-        fun_8048bc0(ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5139, v5140, v5141, v5142, v5143, v1671, v5144, v5145, v5146, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5147, v5148, v5149, v5150, v5151, v1671, v5152, v5153, v5154, v1673, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5139, v5140, v5141, v5142, v5143, v1671, v5144, v5145, v5146, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5147, v5148, v5149, v5150, v5151, v1671, v5152, v5153, v5154, v1673, v50, 0, v49, 0, v45, 0);
     }
     if (!1) {
-        fun_8048bc0(ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5155, v5156, v5157, v5158, v5159, v1671, v5160, v5161, v5162, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5163, v5164, v5165, v5166, v5167, v1671, v5168, v5169, v5170, v1673, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5155, v5156, v5157, v5158, v5159, v1671, v5160, v5161, v5162, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5163, v5164, v5165, v5166, v5167, v1671, v5168, v5169, v5170, v1673, v50, 0, v49, 0, v45, 0);
     }
     if (!1) {
-        fun_8048bc0(ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5171, v5172, v5173, v5174, v5175, v1671, v5176, v5177, v5178, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5179, v5180, v5181, v5182, v5183, v1671, v5184, v5185, v5186, v1673, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5171, v5172, v5173, v5174, v5175, v1671, v5176, v5177, v5178, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5179, v5180, v5181, v5182, v5183, v1671, v5184, v5185, v5186, v1673, v50, 0, v49, 0, v45, 0);
     }
     if (!1) {
-        fun_8048bc0(ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5187, v5188, v5189, v5190, v5191, v1671, v5192, v5193, v5194, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5195, v5196, v5197, v5198, v5199, v1671, v5200, v5201, v5202, v1673, v50, 0, v49, 0, v45, 0);
+        fun_8048bc0(ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5187, v5188, v5189, v5190, v5191, v1671, v5192, v5193, v5194, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5195, v5196, v5197, v5198, v5199, v1671, v5200, v5201, v5202, v1673, v50, 0, v49, 0, v45, 0);
     }
     eax5203 = reinterpret_cast<void**>(0);
     if (!1) {
-        eax5203 = fun_8048bc0(ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5204, v5205, v5206, v5207, v5208, v1671, v5209, v5210, v5211, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, 0x8071efb, 7, v575, 11, 0x80716a0, v5212, v5213, v5214, v5215, v5216, v1671, v5217, v5218, v5219, v1673, v50, 0, v49, 0, v45, 0);
+        eax5203 = fun_8048bc0(ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5204, v5205, v5206, v5207, v5208, v1671, v5209, v5210, v5211, v1673, v50, 0, v49, 0, v45, 0, ecx1695, 0, "Hartree", 7, v575, 11, "-ChiAbs.outnlinopt.F90", v5212, v5213, v5214, v5215, v5216, v1671, v5217, v5218, v5219, v1673, v50, 0, v49, 0, v45, 0);
     }
     return eax5203;
     addr_8052f75_219:
-    v612 = reinterpret_cast<void**>(0x8071c04);
-    v613 = reinterpret_cast<void**>(0x8071aa0);
-    fun_8048c30(ecx1252, "At line 253 of file nlinopt.F90", 0x8071aa0, 0x8071c04, v575, 11, 0x80716a0, v5220, v5221, v5222, v5223, v5224, v5225, v5226, v5227, v5228, v5229, v50, 0, v49, 0);
+    v612 = reinterpret_cast<void**>("sym");
+    v613 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+    fun_8048c30(ecx1252, "At line 253 of file nlinopt.F90", "Attempting to allocate already allocated array '%s'", "sym", v575, 11, "-ChiAbs.outnlinopt.F90", v5220, v5221, v5222, v5223, v5224, v5225, v5226, v5227, v5228, v5229, v50, 0, v49, 0);
     goto addr_8053033_223;
     addr_8052e8f_208:
     edx1574 = reinterpret_cast<void**>(ebx1254 << 4);
@@ -14731,130 +14731,130 @@ void hdr_clean_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a
     v23 = ebp24;
     v25 = ebx26;
     if (!*reinterpret_cast<void***>(a2 + 19)) {
-        fun_8048c30(ecx, "At line 59 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v27, v28, v29, v30, v31, v32, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 59 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v27, v28, v29, v30, v31, v32, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v33 = *reinterpret_cast<void***>(a2 + 19);
-    fun_8048bc0(ecx, v33, 0x8071fe4, 0x8071fe0, v34, v35, v36, v37, v38, v39, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v33, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v34, v35, v36, v37, v38, v39, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 19) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 0x8d)) {
-        fun_8048c30(ecx, "At line 60 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v40, v41, v42, v43, v44, v45, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 60 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v40, v41, v42, v43, v44, v45, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v46 = *reinterpret_cast<void***>(a2 + 0x8d);
-    fun_8048bc0(ecx, v46, 0x8071fe4, 0x8071fe0, v47, v48, v49, v50, v51, v52, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v46, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v47, v48, v49, v50, v51, v52, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 0x8d) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 25)) {
-        fun_8048c30(ecx, "At line 61 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v53, v54, v55, v56, v57, v58, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 61 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v53, v54, v55, v56, v57, v58, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v59 = *reinterpret_cast<void***>(a2 + 25);
-    fun_8048bc0(ecx, v59, 0x8071fe4, 0x8071fe0, v60, v61, v62, v63, v64, v65, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v59, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v60, v61, v62, v63, v64, v65, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 25) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 31)) {
-        fun_8048c30(ecx, "At line 62 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v66, v67, v68, v69, v70, v71, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 62 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v66, v67, v68, v69, v70, v71, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v72 = *reinterpret_cast<void***>(a2 + 31);
-    fun_8048bc0(ecx, v72, 0x8071fe4, 0x8071fe0, v73, v74, v75, v76, v77, v78, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v72, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v73, v74, v75, v76, v77, v78, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 31) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 37)) {
-        fun_8048c30(ecx, "At line 63 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v79, v80, v81, v82, v83, v84, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 63 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v79, v80, v81, v82, v83, v84, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v85 = *reinterpret_cast<void***>(a2 + 37);
-    fun_8048bc0(ecx, v85, 0x8071fe4, 0x8071fe0, v86, v87, v88, v89, v90, v91, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v85, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v86, v87, v88, v89, v90, v91, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 37) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 0x96)) {
-        fun_8048c30(ecx, "At line 64 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v92, v93, v94, v95, v96, v97, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 64 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v92, v93, v94, v95, v96, v97, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v98 = *reinterpret_cast<void***>(a2 + 0x96);
-    fun_8048bc0(ecx, v98, 0x8071fe4, 0x8071fe0, v99, v100, v101, v102, v103, v104, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v98, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v99, v100, v101, v102, v103, v104, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 0x96) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 43)) {
-        fun_8048c30(ecx, "At line 65 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v105, v106, v107, v108, v109, v110, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 65 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v105, v106, v107, v108, v109, v110, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v111 = *reinterpret_cast<void***>(a2 + 43);
-    fun_8048bc0(ecx, v111, 0x8071fe4, 0x8071fe0, v112, v113, v114, v115, v116, v117, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v111, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v112, v113, v114, v115, v116, v117, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 43) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 49)) {
-        fun_8048c30(ecx, "At line 66 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v118, v119, v120, v121, v122, v123, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 66 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v118, v119, v120, v121, v122, v123, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v124 = *reinterpret_cast<void***>(a2 + 49);
-    fun_8048bc0(ecx, v124, 0x8071fe4, 0x8071fe0, v125, v126, v127, v128, v129, v130, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v124, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v125, v126, v127, v128, v129, v130, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 49) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 55)) {
-        fun_8048c30(ecx, "At line 67 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v131, v132, v133, v134, v135, v136, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 67 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v131, v132, v133, v134, v135, v136, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v137 = *reinterpret_cast<void***>(a2 + 55);
-    fun_8048bc0(ecx, v137, 0x8071fe4, 0x8071fe0, v138, v139, v140, v141, v142, v143, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v137, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v138, v139, v140, v141, v142, v143, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 55) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 61)) {
-        fun_8048c30(ecx, "At line 68 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v144, v145, v146, v147, v148, v149, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 68 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v144, v145, v146, v147, v148, v149, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v150 = *reinterpret_cast<void***>(a2 + 61);
-    fun_8048bc0(ecx, v150, 0x8071fe4, 0x8071fe0, v151, v152, v153, v154, v155, v156, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v150, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v151, v152, v153, v154, v155, v156, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 61) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 67)) {
-        fun_8048c30(ecx, "At line 69 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v157, v158, v159, v160, v161, v162, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 69 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v157, v158, v159, v160, v161, v162, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v163 = *reinterpret_cast<void***>(a2 + 67);
-    fun_8048bc0(ecx, v163, 0x8071fe4, 0x8071fe0, v164, v165, v166, v167, v168, v169, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v163, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v164, v165, v166, v167, v168, v169, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 67) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 73)) {
-        fun_8048c30(ecx, "At line 70 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v170, v171, v172, v173, v174, v175, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 70 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v170, v171, v172, v173, v174, v175, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v176 = *reinterpret_cast<void***>(a2 + 73);
-    fun_8048bc0(ecx, v176, 0x8071fe4, 0x8071fe0, v177, v178, v179, v180, v181, v182, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v176, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v177, v178, v179, v180, v181, v182, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 73) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 79)) {
-        fun_8048c30(ecx, "At line 71 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v183, v184, v185, v186, v187, v188, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 71 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v183, v184, v185, v186, v187, v188, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v189 = *reinterpret_cast<void***>(a2 + 79);
-    fun_8048bc0(ecx, v189, 0x8071fe4, 0x8071fe0, v190, v191, v192, v193, v194, v195, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v189, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v190, v191, v192, v193, v194, v195, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 79) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 0xc8)) {
-        fun_8048c30(ecx, "At line 72 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v196, v197, v198, v199, v200, v201, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 72 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v196, v197, v198, v199, v200, v201, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v202 = *reinterpret_cast<void***>(a2 + 0xc8);
-    fun_8048bc0(ecx, v202, 0x8071fe4, 0x8071fe0, v203, v204, v205, v206, v207, v208, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v202, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v203, v204, v205, v206, v207, v208, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 0xc8) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 0x9c)) {
-        fun_8048c30(ecx, "At line 73 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v209, v210, v211, v212, v213, v214, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 73 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v209, v210, v211, v212, v213, v214, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v215 = *reinterpret_cast<void***>(a2 + 0x9c);
-    fun_8048bc0(ecx, v215, 0x8071fe4, 0x8071fe0, v216, v217, v218, v219, v220, v221, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v215, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v216, v217, v218, v219, v220, v221, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 0x9c) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 91)) {
-        fun_8048c30(ecx, "At line 74 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v222, v223, v224, v225, v226, v227, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 74 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v222, v223, v224, v225, v226, v227, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v228 = *reinterpret_cast<void***>(a2 + 91);
-    fun_8048bc0(ecx, v228, 0x8071fe4, 0x8071fe0, v229, v230, v231, v232, v233, v234, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v228, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v229, v230, v231, v232, v233, v234, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 91) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 0xa5)) {
-        fun_8048c30(ecx, "At line 75 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v235, v236, v237, v238, v239, v240, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 75 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v235, v236, v237, v238, v239, v240, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v241 = *reinterpret_cast<void***>(a2 + 0xa5);
-    fun_8048bc0(ecx, v241, 0x8071fe4, 0x8071fe0, v242, v243, v244, v245, v246, v247, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v241, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v242, v243, v244, v245, v246, v247, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 0xa5) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 0xab)) {
-        fun_8048c30(ecx, "At line 76 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v248, v249, v250, v251, v252, v253, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 76 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v248, v249, v250, v251, v252, v253, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v254 = *reinterpret_cast<void***>(a2 + 0xab);
-    fun_8048bc0(ecx, v254, 0x8071fe4, 0x8071fe0, v255, v256, v257, v258, v259, v260, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v254, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v255, v256, v257, v258, v259, v260, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 0xab) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 0xb4)) {
-        fun_8048c30(ecx, "At line 77 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v261, v262, v263, v264, v265, v266, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 77 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v261, v262, v263, v264, v265, v266, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v267 = *reinterpret_cast<void***>(a2 + 0xb4);
-    fun_8048bc0(ecx, v267, 0x8071fe4, 0x8071fe0, v268, v269, v270, v271, v272, v273, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v267, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v268, v269, v270, v271, v272, v273, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 0xb4) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 0xba)) {
-        fun_8048c30(ecx, "At line 78 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v274, v275, v276, v277, v278, v279, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 78 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v274, v275, v276, v277, v278, v279, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v280 = *reinterpret_cast<void***>(a2 + 0xba);
-    fun_8048bc0(ecx, v280, 0x8071fe4, 0x8071fe0, v281, v282, v283, v284, v285, v286, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v280, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v281, v282, v283, v284, v285, v286, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 0xba) = reinterpret_cast<void**>(0);
     if (!*reinterpret_cast<void***>(a2 + 0xc0)) {
-        fun_8048c30(ecx, "At line 79 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v287, v288, v289, v290, v291, v292, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+        fun_8048c30(ecx, "At line 79 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v287, v288, v289, v290, v291, v292, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
     }
     v293 = *reinterpret_cast<void***>(a2 + 0xc0);
-    fun_8048bc0(ecx, v293, 0x8071fe4, 0x8071fe0, v294, v295, v296, v297, v298, v299, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    fun_8048bc0(ecx, v293, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v294, v295, v296, v297, v298, v299, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     *reinterpret_cast<void***>(a2 + 0xc0) = reinterpret_cast<void**>(0);
     if (*reinterpret_cast<int32_t*>(a2 + 15) == 1) {
         ebx300 = *reinterpret_cast<void***>(a2 + 5);
@@ -14864,34 +14864,34 @@ void hdr_clean_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a
                 eax302 = reinterpret_cast<void***>(*reinterpret_cast<int32_t*>(a2 + 0xd1) * reinterpret_cast<uint32_t>(v301) + *reinterpret_cast<uint32_t*>(a2 + 0xcf) << 3);
                 ecx303 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax302) << 5);
                 if (!*reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(eax302) + reinterpret_cast<uint32_t>(ecx303) + reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 0xce)) + 24)) {
-                    fun_8048c30(ecx303, "At line 82 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v304, v305, v306, v307, v301, v308, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+                    fun_8048c30(ecx303, "At line 82 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v304, v305, v306, v307, v301, v308, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
                 }
                 eax309 = reinterpret_cast<void***>(*reinterpret_cast<int32_t*>(a2 + 0xd1) * reinterpret_cast<uint32_t>(v301) + *reinterpret_cast<uint32_t*>(a2 + 0xcf) << 3);
                 ecx310 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax309) << 5);
                 v311 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(eax309) + reinterpret_cast<uint32_t>(ecx310) + reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 0xce)) + 24);
-                fun_8048bc0(ecx310, v311, 0x8071fe4, 0x8071fe0, v312, v313, v314, v315, v301, v316, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+                fun_8048bc0(ecx310, v311, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v312, v313, v314, v315, v301, v316, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
                 eax317 = reinterpret_cast<void*>(*reinterpret_cast<int32_t*>(a2 + 0xd1) * reinterpret_cast<uint32_t>(v301) + *reinterpret_cast<uint32_t*>(a2 + 0xcf) << 3);
                 *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(eax317) + (reinterpret_cast<uint32_t>(eax317) << 5) + reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 0xce)) + 24) = 0;
                 eax318 = reinterpret_cast<void***>(*reinterpret_cast<int32_t*>(a2 + 0xd1) * reinterpret_cast<uint32_t>(v301) + *reinterpret_cast<uint32_t*>(a2 + 0xcf) << 3);
                 ecx319 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax318) << 5);
                 if (!*reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(eax318) + reinterpret_cast<uint32_t>(ecx319) + reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 0xce)) + 0xc0)) {
-                    fun_8048c30(ecx319, "At line 83 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v320, v321, v322, v323, v301, v324, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+                    fun_8048c30(ecx319, "At line 83 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v320, v321, v322, v323, v301, v324, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
                 }
                 eax325 = reinterpret_cast<void***>(*reinterpret_cast<int32_t*>(a2 + 0xd1) * reinterpret_cast<uint32_t>(v301) + *reinterpret_cast<uint32_t*>(a2 + 0xcf) << 3);
                 ecx326 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax325) << 5);
                 v327 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(eax325) + reinterpret_cast<uint32_t>(ecx326) + reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 0xce)) + 0xc0);
-                fun_8048bc0(ecx326, v327, 0x8071fe4, 0x8071fe0, v328, v329, v330, v331, v301, v332, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+                fun_8048bc0(ecx326, v327, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v328, v329, v330, v331, v301, v332, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
                 eax333 = reinterpret_cast<void*>(*reinterpret_cast<int32_t*>(a2 + 0xd1) * reinterpret_cast<uint32_t>(v301) + *reinterpret_cast<uint32_t*>(a2 + 0xcf) << 3);
                 *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(eax333) + (reinterpret_cast<uint32_t>(eax333) << 5) + reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 0xce)) + 0xc0) = 0;
                 eax334 = reinterpret_cast<void***>(*reinterpret_cast<int32_t*>(a2 + 0xd1) * reinterpret_cast<uint32_t>(v301) + *reinterpret_cast<uint32_t*>(a2 + 0xcf) << 3);
                 ecx335 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax334) << 5);
                 if (!*reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(eax334) + reinterpret_cast<uint32_t>(ecx335) + reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 0xce)) + 72)) {
-                    fun_8048c30(ecx335, "At line 84 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v336, v337, v338, v339, v301, v340, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+                    fun_8048c30(ecx335, "At line 84 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v336, v337, v338, v339, v301, v340, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
                 }
                 eax341 = reinterpret_cast<void***>(*reinterpret_cast<int32_t*>(a2 + 0xd1) * reinterpret_cast<uint32_t>(v301) + *reinterpret_cast<uint32_t*>(a2 + 0xcf) << 3);
                 ecx342 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax341) << 5);
                 v343 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(eax341) + reinterpret_cast<uint32_t>(ecx342) + reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 0xce)) + 72);
-                fun_8048bc0(ecx342, v343, 0x8071fe4, 0x8071fe0, v344, v345, v346, v347, v301, v348, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+                fun_8048bc0(ecx342, v343, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v344, v345, v346, v347, v301, v348, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
                 eax349 = reinterpret_cast<void***>(*reinterpret_cast<int32_t*>(a2 + 0xd1) * reinterpret_cast<uint32_t>(v301) + *reinterpret_cast<uint32_t*>(a2 + 0xcf) << 3);
                 ecx = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax349) << 5);
                 *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(eax349) + reinterpret_cast<uint32_t>(ecx) + reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2 + 0xce)) + 72) = 0;
@@ -14902,10 +14902,10 @@ void hdr_clean_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a
             }
         }
         if (!*reinterpret_cast<void***>(a2 + 0xce)) {
-            fun_8048c30(ecx, "At line 86 of file hdr_clean.F90", 0x8071fe4, 0x8071fe0, v351, v352, v353, v354, v301, v355, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
+            fun_8048c30(ecx, "At line 86 of file hdr_clean.F90", "Attempt to DEALLOCATE unallocated '%s'", "hdr", v351, v352, v353, v354, v301, v355, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9);
         }
         v356 = *reinterpret_cast<void***>(a2 + 0xce);
-        fun_8048bc0(ecx, v356, 0x8071fe4, 0x8071fe0, v357, v358, v359, v360, v301, v361, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+        fun_8048bc0(ecx, v356, "Attempt to DEALLOCATE unallocated '%s'", "hdr", v357, v358, v359, v360, v301, v361, v25, v23, v22, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
         *reinterpret_cast<void***>(a2 + 0xce) = reinterpret_cast<void**>(0);
     }
     return;
@@ -21465,50 +21465,50 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
             if (*reinterpret_cast<void***>(a4) == 3 || reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a4) == 4)) {
                 fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v483, v484, v485, v486, v487, v488, v489, v490, v491, v492);
                 v493 = reinterpret_cast<void**>(80);
-                v494 = reinterpret_cast<void**>(0x8072984);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072984, 80, v495, v496, v497, v498, v499, v500, v501, v502);
-                fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072984, 80, v503, v504, v505, v506, v507, v508, v509, v510);
+                v494 = reinterpret_cast<void**>(" =============================================================================== ECHO of part of the ABINIT file header  ECHO of the ABINIT file header   First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)");
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " =============================================================================== ECHO of part of the ABINIT file header  ECHO of the ABINIT file header   First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 80, v495, v496, v497, v498, v499, v500, v501, v502);
+                fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " =============================================================================== ECHO of part of the ABINIT file header  ECHO of the ABINIT file header   First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 80, v503, v504, v505, v506, v507, v508, v509, v510);
                 if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a4) == 3)) {
-                    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072984, 80, v511, v512, v513, v514, v515, v516, v517, v518);
+                    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " =============================================================================== ECHO of part of the ABINIT file header  ECHO of the ABINIT file header   First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 80, v511, v512, v513, v514, v515, v516, v517, v518);
                     v493 = reinterpret_cast<void**>(40);
-                    v494 = reinterpret_cast<void**>(0x80729d4);
-                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x80729d4, 40, v519, v520, v521, v522, v523, v524, v525, v526);
-                    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x80729d4, 40, v527, v528, v529, v530, v531, v532, v533, v534);
+                    v494 = reinterpret_cast<void**>(" ECHO of part of the ABINIT file header  ECHO of the ABINIT file header   First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)");
+                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " ECHO of part of the ABINIT file header  ECHO of the ABINIT file header   First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 40, v519, v520, v521, v522, v523, v524, v525, v526);
+                    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " ECHO of part of the ABINIT file header  ECHO of the ABINIT file header   First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 40, v527, v528, v529, v530, v531, v532, v533, v534);
                 }
                 if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a4) == 4)) {
                     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v494, v493, v535, v536, v537, v538, v539, v540, v541, v542);
                     v493 = reinterpret_cast<void**>(32);
-                    v494 = reinterpret_cast<void**>(0x80729fc);
-                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x80729fc, 32, v543, v544, v545, v546, v547, v548, v549, v550);
-                    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x80729fc, 32, v551, v552, v553, v554, v555, v556, v557, v558);
+                    v494 = reinterpret_cast<void**>(" ECHO of the ABINIT file header   First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)");
+                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " ECHO of the ABINIT file header   First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 32, v543, v544, v545, v546, v547, v548, v549, v550);
+                    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " ECHO of the ABINIT file header   First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 32, v551, v552, v553, v554, v555, v556, v557, v558);
                 }
                 fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v494, v493, v559, v560, v561, v562, v563, v564, v565, v566);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a1c, 1, v567, v568, v569, v570, v571, v572, v573, v574);
-                fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a1c, 1, v575, v576, v577, v578, v579, v580, v581, v582);
-                fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a1c, 1, v583, v584, v585, v586, v587, v588, v589, v590);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a1d, 15, v591, v592, v593, v594, v595, v596, v597, v598);
-                fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a1d, 15, v599, v600, v601, v602, v603, v604, v605, v606);
-                fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a1d, 15, v607, v608, v609, v610, v611, v612, v613, v614);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a36, 25, v615, v616, v617, v618, v619, v620, v621, v622);
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 1, v567, v568, v569, v570, v571, v572, v573, v574);
+                fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 1, v575, v576, v577, v578, v579, v580, v581, v582);
+                fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 1, v583, v584, v585, v586, v587, v588, v589, v590);
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 15, v591, v592, v593, v594, v595, v596, v597, v598);
+                fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 15, v599, v600, v601, v602, v603, v604, v605, v606);
+                fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 15, v607, v608, v609, v610, v611, v612, v613, v614);
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, ".codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 25, v615, v616, v617, v618, v619, v620, v621, v622);
                 fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 0xc6, 6, v623, v624, v625, v626, v627, v628, v629, v630);
                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 2, 4, v631, v632, v633, v634, v635, v636, v637, v638);
                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a2, 4, v639, v640, v641, v642, v643, v644, v645, v646);
                 fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a2, 4, v647, v648, v649, v650, v651, v652, v653, v654);
                 fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a2, 4, v655, v656, v657, v658, v659, v660, v661, v662);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a1c, 1, v663, v664, v665, v666, v667, v668, v669, v670);
-                fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a1c, 1, v671, v672, v673, v674, v675, v676, v677, v678);
-                fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a1c, 1, v679, v680, v681, v682, v683, v684, v685, v686);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a4f, 16, v687, v688, v689, v690, v691, v692, v693, v694);
-                fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a4f, 16, v695, v696, v697, v698, v699, v700, v701, v702);
-                fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a4f, 16, v703, v704, v705, v706, v707, v708, v709, v710);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a66, 26, v711, v712, v713, v714, v715, v716, v717, v718);
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 1, v663, v664, v665, v666, v667, v668, v669, v670);
+                fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 1, v671, v672, v673, v674, v675, v676, v677, v678);
+                fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 1, v679, v680, v681, v682, v683, v684, v685, v686);
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 16, v687, v688, v689, v690, v691, v692, v693, v694);
+                fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 16, v695, v696, v697, v698, v699, v700, v701, v702);
+                fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 16, v703, v704, v705, v706, v707, v708, v709, v710);
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 26, v711, v712, v713, v714, v715, v716, v717, v718);
                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3, 4, v719, v720, v721, v722, v723, v724, v725, v726);
                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 3, 4, v727, v728, v729, v730, v731, v732, v733, v734);
                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 4, 4, v735, v736, v737, v738, v739, v740, v741, v742);
                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 5, 4, v743, v744, v745, v746, v747, v748, v749, v750);
                 fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 5, 4, v751, v752, v753, v754, v755, v756, v757, v758);
                 fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 5, 4, v759, v760, v761, v762, v763, v764, v765, v766);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a80, 26, v767, v768, v769, v770, v771, v772, v773, v774);
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 26, v767, v768, v769, v770, v771, v772, v773, v774);
                 fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, reinterpret_cast<int32_t>(ebp6) + 0xfffffb64, 4, 0, v775, v776, v777, v778, v779, v780);
                 v781 = reinterpret_cast<void**>(4);
                 v782 = a3 + 6;
@@ -21516,7 +21516,7 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                 fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v782, 4, 0, v790, v791, v792, v793, v794, v795, v796);
                 if (*reinterpret_cast<int32_t*>(a3 + 2) > reinterpret_cast<int32_t>(22)) {
                     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v782, 4, 0, v797, v798, v799, v800, v801, v802, v803);
-                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072aa1, 26, 0, v804, v805, v806, v807, v808, v809, v810);
+                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 26, 0, v804, v805, v806, v807, v808, v809, v810);
                     fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 8, 4, 0, v811, v812, v813, v814, v815, v816, v817);
                     v781 = reinterpret_cast<void**>(4);
                     v782 = a3 + 9;
@@ -21527,7 +21527,7 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                     if (*reinterpret_cast<int32_t*>(a3 + 2) > reinterpret_cast<int32_t>(40)) {
                         if (*reinterpret_cast<uint32_t*>(a3 + 2) == 41 || *reinterpret_cast<uint32_t*>(a3 + 2) == 42) {
                             fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v782, 4, 0, v832, v833, v834, v835, v836, v837, v838);
-                            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072b08, 41, 0, v839, v840, v841, v842, v843, v844, v845);
+                            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " nsppol,nsym,npsp,ntypat,occopt,pertcase= nsppol,nsym,npsp,ntypat =(a,3i6) occopt,pertcase,usepaw  =(a,2es18.10) ecut,ecutsm             =(a,3es18.10) ecut,ecutdg,ecutsm      =(a, es18.10) ecut_eff                = qptn(1:3)               = rprimd(1:3,1)           = rprimd(1:3,2)           = rprimd(1:3,3)           = tphysel,tsmear          = stmbias,tphysel,tsmear  =(a,i3,a) The header contain  additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 41, 0, v839, v840, v841, v842, v843, v844, v845);
                             fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 10, 4, 0, v846, v847, v848, v849, v850, v851, v852);
                             fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 11, 4, 0, v853, v854, v855, v856, v857, v858, v859);
                             fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 7, 4, 0, v860, v861, v862, v863, v864, v865, v866);
@@ -21540,14 +21540,14 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                         } else {
                             if (*reinterpret_cast<int32_t*>(a3 + 2) > reinterpret_cast<int32_t>(43)) {
                                 fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v782, 4, 0, v895, v896, v897, v898, v899, v900, v901);
-                                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072b31, 26, 0, v902, v903, v904, v905, v906, v907, v908);
+                                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " nsppol,nsym,npsp,ntypat =(a,3i6) occopt,pertcase,usepaw  =(a,2es18.10) ecut,ecutsm             =(a,3es18.10) ecut,ecutdg,ecutsm      =(a, es18.10) ecut_eff                = qptn(1:3)               = rprimd(1:3,1)           = rprimd(1:3,2)           = rprimd(1:3,3)           = tphysel,tsmear          = stmbias,tphysel,tsmear  =(a,i3,a) The header contain  additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 26, 0, v902, v903, v904, v905, v906, v907, v908);
                                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 10, 4, 0, v909, v910, v911, v912, v913, v914, v915);
                                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 11, 4, 0, v916, v917, v918, v919, v920, v921, v922);
                                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 7, 4, 0, v923, v924, v925, v926, v927, v928, v929);
                                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 12, 4, 0, v930, v931, v932, v933, v934, v935, v936);
                                 fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 12, 4, 0, v937, v938, v939, v940, v941, v942, v943);
                                 fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 12, 4, 0, v944, v945, v946, v947, v948, v949, v950);
-                                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072b52, 26, 0, v951, v952, v953, v954, v955, v956, v957);
+                                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " occopt,pertcase,usepaw  =(a,2es18.10) ecut,ecutsm             =(a,3es18.10) ecut,ecutdg,ecutsm      =(a, es18.10) ecut_eff                = qptn(1:3)               = rprimd(1:3,1)           = rprimd(1:3,2)           = rprimd(1:3,3)           = tphysel,tsmear          = stmbias,tphysel,tsmear  =(a,i3,a) The header contain  additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 26, 0, v951, v952, v953, v954, v955, v956, v957);
                                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 13, 4, 0, v958, v959, v960, v961, v962, v963, v964);
                                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 14, 4, 0, v965, v966, v967, v968, v969, v970, v971);
                                 v781 = reinterpret_cast<void**>(4);
@@ -21558,7 +21558,7 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                         }
                     } else {
                         fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v782, 4, 0, v986, v987, v988, v989, v990, v991, v992);
-                        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072ae0, 32, 0, v993, v994, v995, v996, v997, v998, v999);
+                        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " nsppol,nsym,npsp,ntypat,occopt=(a,6i6)", 32, 0, v993, v994, v995, v996, v997, v998, v999);
                         fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 10, 4, 0, v1000, v1001, v1002, v1003, v1004, v1005, v1006);
                         fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 11, 4, 0, v1007, v1008, v1009, v1010, v1011, v1012, v1013);
                         fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 7, 4, 0, v1014, v1015, v1016, v1017, v1018, v1019, v1020);
@@ -21570,7 +21570,7 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                     }
                 } else {
                     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v782, 4, 0, v1042, v1043, v1044, v1045, v1046, v1047, v1048);
-                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072abb, 27, 0, v1049, v1050, v1051, v1052, v1053, v1054, v1055);
+                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " nsppol,nsym,ntypat,occopt=(a,5i6)", 27, 0, v1049, v1050, v1051, v1052, v1053, v1054, v1055);
                     fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 10, 4, 0, v1056, v1057, v1058, v1059, v1060, v1061, v1062);
                     fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 11, 4, 0, v1063, v1064, v1065, v1066, v1067, v1068, v1069);
                     fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 12, 4, 0, v1070, v1071, v1072, v1073, v1074, v1075, v1076);
@@ -21581,7 +21581,7 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                 }
                 if (*reinterpret_cast<uint32_t*>(a3 + 2) == 40 || (*reinterpret_cast<uint32_t*>(a3 + 2) == 41 || *reinterpret_cast<uint32_t*>(a3 + 2) == 42)) {
                     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v782, 4, 0, v1091, v1092, v1093, v1094, v1095, v1096, v1097);
-                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072b78, 26, 0, v1098, v1099, v1100, v1101, v1102, v1103, v1104);
+                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " ecut,ecutsm             =(a,3es18.10) ecut,ecutdg,ecutsm      =(a, es18.10) ecut_eff                = qptn(1:3)               = rprimd(1:3,1)           = rprimd(1:3,2)           = rprimd(1:3,3)           = tphysel,tsmear          = stmbias,tphysel,tsmear  =(a,i3,a) The header contain  additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 26, 0, v1098, v1099, v1100, v1101, v1102, v1103, v1104);
                     fun_8048d50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 97, 8, 0, v1105, v1106, v1107, v1108, v1109);
                     v781 = reinterpret_cast<void**>(8);
                     v782 = a3 + 0x65;
@@ -21590,7 +21590,7 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                 } else {
                     if (*reinterpret_cast<int32_t*>(a3 + 2) > reinterpret_cast<int32_t>(43)) {
                         fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v782, 4, 0, v1122, v1123, v1124, v1125, v1126, v1127, v1128);
-                        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072b9e, 26, 0, v1129, v1130, v1131, v1132, v1133, v1134, v1135);
+                        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " ecut,ecutdg,ecutsm      =(a, es18.10) ecut_eff                = qptn(1:3)               = rprimd(1:3,1)           = rprimd(1:3,2)           = rprimd(1:3,3)           = tphysel,tsmear          = stmbias,tphysel,tsmear  =(a,i3,a) The header contain  additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 26, 0, v1129, v1130, v1131, v1132, v1133, v1134, v1135);
                         fun_8048d50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 97, 8, 0, v1136, v1137, v1138, v1139, v1140);
                         fun_8048d50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 99, 8, 0, v1141, v1142, v1143, v1144, v1145);
                         v781 = reinterpret_cast<void**>(8);
@@ -21600,36 +21600,36 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                     }
                 }
                 fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v782, v781, 0, v1158, v1159, v1160, v1161, v1162, v1163, v1164);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072bc4, 26, 0, v1165, v1166, v1167, v1168, v1169, v1170, v1171);
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " ecut_eff                = qptn(1:3)               = rprimd(1:3,1)           = rprimd(1:3,2)           = rprimd(1:3,3)           = tphysel,tsmear          = stmbias,tphysel,tsmear  =(a,i3,a) The header contain  additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 26, 0, v1165, v1166, v1167, v1168, v1169, v1170, v1171);
                 v1172 = a3 + 0x67;
                 fun_8048d50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1172, 8, 0, v1173, v1174, v1175, v1176, v1177);
                 fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1172, 8, 0, v1178, v1179, v1180, v1181, v1182, v1183, v1184);
                 if (*reinterpret_cast<int32_t*>(a3 + 2) > reinterpret_cast<int32_t>(40)) {
                     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1172, 8, 0, v1185, v1186, v1187, v1188, v1189, v1190, v1191);
-                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072bde, 26, 0, v1192, v1193, v1194, v1195, v1196, v1197, v1198);
+                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " qptn(1:3)               = rprimd(1:3,1)           = rprimd(1:3,2)           = rprimd(1:3,3)           = tphysel,tsmear          = stmbias,tphysel,tsmear  =(a,i3,a) The header contain  additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 26, 0, v1192, v1193, v1194, v1195, v1196, v1197, v1198);
                     v1172 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffb4c);
                     fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v1172, 8, 0, v1199, v1200, v1201, v1202, v1203, v1204);
                     fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1172, 8, 0, v1205, v1206, v1207, v1208, v1209, v1210, v1211);
                 }
                 fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1172, 8, 0, v1212, v1213, v1214, v1215, v1216, v1217, v1218);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072bf8, 26, 0, v1219, v1220, v1221, v1222, v1223, v1224, v1225);
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " rprimd(1:3,1)           = rprimd(1:3,2)           = rprimd(1:3,3)           = tphysel,tsmear          = stmbias,tphysel,tsmear  =(a,i3,a) The header contain  additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 26, 0, v1219, v1220, v1221, v1222, v1223, v1224, v1225);
                 v1226 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffb34);
                 fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v1226, 8, 0, v1227, v1228, v1229, v1230, v1231, v1232);
                 fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1226, 8, 0, v1233, v1234, v1235, v1236, v1237, v1238, v1239);
                 fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1226, 8, 0, v1240, v1241, v1242, v1243, v1244, v1245, v1246);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072c12, 26, 0, v1247, v1248, v1249, v1250, v1251, v1252, v1253);
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " rprimd(1:3,2)           = rprimd(1:3,3)           = tphysel,tsmear          = stmbias,tphysel,tsmear  =(a,i3,a) The header contain  additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 26, 0, v1247, v1248, v1249, v1250, v1251, v1252, v1253);
                 v1254 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffb1c);
                 fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v1254, 8, 0, v1255, v1256, v1257, v1258, v1259, v1260);
                 fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1254, 8, 0, v1261, v1262, v1263, v1264, v1265, v1266, v1267);
                 fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1254, 8, 0, v1268, v1269, v1270, v1271, v1272, v1273, v1274);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072c2c, 26, 0, v1275, v1276, v1277, v1278, v1279, v1280, v1281);
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " rprimd(1:3,3)           = tphysel,tsmear          = stmbias,tphysel,tsmear  =(a,i3,a) The header contain  additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 26, 0, v1275, v1276, v1277, v1278, v1279, v1280, v1281);
                 v459 = reinterpret_cast<void**>(0);
                 v1282 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffb04);
                 fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v1282, 8, 0, v1283, v1284, v1285, v1286, v1287, v1288);
                 fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1282, 8, 0, v1289, v1290, v1291, v1292, v1293, v1294, v1295);
                 if (*reinterpret_cast<uint32_t*>(a3 + 2) == 40 || *reinterpret_cast<uint32_t*>(a3 + 2) == 41) {
                     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1282, 8, 0, v1296, v1297, v1298, v1299, v1300, v1301, v1302);
-                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072c46, 26, 0, v1303, v1304, v1305, v1306, v1307, v1308, v1309);
+                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " tphysel,tsmear          = stmbias,tphysel,tsmear  =(a,i3,a) The header contain  additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 26, 0, v1303, v1304, v1305, v1306, v1307, v1308, v1309);
                     fun_8048d50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 0x89, 8, 0, v1310, v1311, v1312, v1313, v1314);
                     v1282 = a3 + 0x8b;
                     fun_8048d50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1282, 8, 0, v1315, v1316, v1317, v1318, v1319);
@@ -21637,7 +21637,7 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                 } else {
                     if (*reinterpret_cast<int32_t*>(a3 + 2) > reinterpret_cast<int32_t>(41)) {
                         fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1282, 8, 0, v1327, v1328, v1329, v1330, v1331, v1332, v1333);
-                        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072c60, 26, 0, v1334, v1335, v1336, v1337, v1338, v1339, v1340);
+                        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " stmbias,tphysel,tsmear  =(a,i3,a) The header contain  additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 26, 0, v1334, v1335, v1336, v1337, v1338, v1339, v1340);
                         fun_8048d50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 0x87, 8, 0, v1341, v1342, v1343, v1344, v1345);
                         fun_8048d50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 0x89, 8, 0, v1346, v1347, v1348, v1349, v1350);
                         v1282 = a3 + 0x8b;
@@ -21668,23 +21668,23 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         fun_8048be0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, a2, 4, v1423, v1424, v1425, v1426, v1427, v1428, v1429, v1430);
         if (v1431 != 23 && (v1432 != 34 && (v1433 != 40 && (v1434 != 41 && (v1435 != 42 && (v1436 != 44 && v1437 != 53)))))) {
             fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, a2, 4, v1438, v1439, v1440, v1441, v1442, v1443, v1444, v1445);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, 0x807255b, 1, v1446, v1447, v1448, v1449, v1450, v1451, v1452, v1453);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, 0x807255c, 17, v1454, v1455, v1456, v1457, v1458, v1459, v1460, v1461);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, 0x807255b, 1, v1462, v1463, v1464, v1465, v1466, v1467, v1468, v1469);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, 0x8072570, 59, v1470, v1471, v1472, v1473, v1474, v1475, v1476, v1477);
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, "\n hdr_io : ERROR -", 1, v1446, v1447, v1448, v1449, v1450, v1451, v1452, v1453);
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, " hdr_io : ERROR -", 17, v1454, v1455, v1456, v1457, v1458, v1459, v1460, v1461);
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, "\n hdr_io : ERROR -", 1, v1462, v1463, v1464, v1465, v1466, v1467, v1468, v1469);
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, "  The first line of the (WF, DEN or POT) file read in unit  is erroneous.  headform is ", 59, v1470, v1471, v1472, v1473, v1474, v1475, v1476, v1477);
             fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, a5, 4, v1478, v1479, v1480, v1481, v1482, v1483, v1484, v1485);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, 0x80725ab, 14, v1486, v1487, v1488, v1489, v1490, v1491, v1492, v1493);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, 0x807255b, 1, v1494, v1495, v1496, v1497, v1498, v1499, v1500, v1501);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, 0x80725b9, 14, v1502, v1503, v1504, v1505, v1506, v1507, v1508, v1509);
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, " is erroneous.  headform is ", 14, v1486, v1487, v1488, v1489, v1490, v1491, v1492, v1493);
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, "\n hdr_io : ERROR -", 1, v1494, v1495, v1496, v1497, v1498, v1499, v1500, v1501);
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, "  headform is ", 14, v1502, v1503, v1504, v1505, v1506, v1507, v1508, v1509);
             fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, reinterpret_cast<int32_t>(ebp6) + 0xffffff80, 4, v1510, v1511, v1512, v1513, v1514, v1515, v1516, v1517);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, 0x80725c8, 50, v1518, v1519, v1520, v1521, v1522, v1523, v1524, v1525);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, 0x807255b, 1, v1526, v1527, v1528, v1529, v1530, v1531, v1532, v1533);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, 0x80725fc, 46, v1534, v1535, v1536, v1537, v1538, v1539, v1540, v1541);
-            fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, 0x80725fc, 46, v1542, v1543, v1544, v1545, v1546, v1547, v1548, v1549);
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, ", while it should be 23, 34, 40, 41, 42, 44 or 53.", 50, v1518, v1519, v1520, v1521, v1522, v1523, v1524, v1525);
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, "\n hdr_io : ERROR -", 1, v1526, v1527, v1528, v1529, v1530, v1531, v1532, v1533);
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, "  Action : check the correctness of your file.COLL", 46, v1534, v1535, v1536, v1537, v1538, v1539, v1540, v1541);
+            fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, "  Action : check the correctness of your file.COLL", 46, v1542, v1543, v1544, v1545, v1546, v1547, v1548, v1549);
             v1377 = reinterpret_cast<void**>(4);
             v459 = reinterpret_cast<void**>(0x1f4);
-            wrtout_(ecx, 0x8072630, reinterpret_cast<int32_t>(ebp6) + 0xfffffd60, 0x807262a, 0x1f4, 4, v1550, v1551);
-            leave_new_(ecx, "COLL", 4, 0x807262a, 0x1f4, 4, v1552, v1553);
+            wrtout_(ecx, 0x8072630, reinterpret_cast<int32_t>(ebp6) + 0xfffffd60, "COLL", 0x1f4, 4, v1550, v1551);
+            leave_new_(ecx, "COLL", 4, "COLL", 0x1f4, 4, v1552, v1553);
         }
     }
     v32 = reinterpret_cast<void**>(6);
@@ -21936,27 +21936,27 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     __asm__("fstp st0");
     if (reinterpret_cast<uint1_t>(!below_or_equal1573) && (!0 && (*reinterpret_cast<void***>(a2) != 51 && (*reinterpret_cast<void***>(a2) != 52 && (*reinterpret_cast<void***>(a2) != 0x65 && *reinterpret_cast<void***>(a2) != 0x66))))) {
         fun_8048cd0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v33, v32, v459, 4, v2413, v2414, v2415, v2416, v2417, v2418);
-        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x807255b, 1, v459, 4, v2419, v2420, v2421, v2422, v2423, v2424);
-        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x807255c, 17, v459, 4, v2425, v2426, v2427, v2428, v2429, v2430);
-        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x807255b, 1, v459, 4, v2431, v2432, v2433, v2434, v2435, v2436);
-        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072642, 24, v459, 4, v2437, v2438, v2439, v2440, v2441, v2442);
+        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "\n hdr_io : ERROR -", 1, v459, 4, v2419, v2420, v2421, v2422, v2423, v2424);
+        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " hdr_io : ERROR -", 17, v459, 4, v2425, v2426, v2427, v2428, v2429, v2430);
+        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "\n hdr_io : ERROR -", 1, v459, 4, v2431, v2432, v2433, v2434, v2435, v2436);
+        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  The value of ecutsm is", 24, v459, 4, v2437, v2438, v2439, v2440, v2441, v2442);
         fun_8048d50(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 0x65, 8, v459, 4, v2443, v2444, v2445, v2446);
-        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x807265c, 50, v459, 4, v2447, v2448, v2449, v2450, v2451, v2452);
-        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x807255b, 1, v459, 4, v2453, v2454, v2455, v2456, v2457, v2458);
-        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072690, 82, v459, 4, v2459, v2460, v2461, v2462, v2463, v2464);
-        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x807255b, 1, v459, 4, v2465, v2466, v2467, v2468, v2469, v2470);
-        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x80726e4, 83, v459, 4, v2471, v2472, v2473, v2474, v2475, v2476);
-        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x807255b, 1, v459, 4, v2477, v2478, v2479, v2480, v2481, v2482);
-        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072738, 91, v459, 4, v2483, v2484, v2485, v2486, v2487, v2488);
-        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x807255b, 1, v459, 4, v2489, v2490, v2491, v2492, v2493, v2494);
-        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072794, 100, v459, 4, v2495, v2496, v2497, v2498, v2499, v2500);
-        fun_8048b50(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072794, 100, v459, 4, v2501, v2502, v2503, v2504, v2505, v2506);
+        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, ", while the file has been produced prior to v4.4 .", 50, v459, 4, v2447, v2448, v2449, v2450, v2451, v2452);
+        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "\n hdr_io : ERROR -", 1, v459, 4, v2453, v2454, v2455, v2456, v2457, v2458);
+        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  The definition of the smearing function has changed, so that you are not allowed", 82, v459, 4, v2459, v2460, v2461, v2462, v2463, v2464);
+        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "\n hdr_io : ERROR -", 1, v459, 4, v2465, v2466, v2467, v2468, v2469, v2470);
+        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  to restart from a old wavefunction file. By contrast, you can restart from an old", 83, v459, 4, v2471, v2472, v2473, v2474, v2475, v2476);
+        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "\n hdr_io : ERROR -", 1, v459, 4, v2477, v2478, v2479, v2480, v2481, v2482);
+        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  potential or density file, and perform a self-consistent cycle with a new ABINIT version.", 91, v459, 4, v2483, v2484, v2485, v2486, v2487, v2488);
+        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "\n hdr_io : ERROR -", 1, v459, 4, v2489, v2490, v2491, v2492, v2493, v2494);
+        fun_8048cc0(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  Action : produce a density or potential file using the old version of ABINIT, and restart from it.Attempt to allocate negative amount of memory. Possible integer overflow", 100, v459, 4, v2495, v2496, v2497, v2498, v2499, v2500);
+        fun_8048b50(ecx1571, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  Action : produce a density or potential file using the old version of ABINIT, and restart from it.Attempt to allocate negative amount of memory. Possible integer overflow", 100, v459, 4, v2501, v2502, v2503, v2504, v2505, v2506);
         v1377 = reinterpret_cast<void**>(4);
         v459 = reinterpret_cast<void**>(0x1f4);
-        v32 = reinterpret_cast<void**>(0x807262a);
-        wrtout_(ecx1571, 0x8072630, reinterpret_cast<int32_t>(ebp6) + 0xfffffd60, 0x807262a, 0x1f4, 4, v2507, v2508);
+        v32 = reinterpret_cast<void**>("COLL");
+        wrtout_(ecx1571, 0x8072630, reinterpret_cast<int32_t>(ebp6) + 0xfffffd60, "COLL", 0x1f4, 4, v2507, v2508);
         v33 = reinterpret_cast<void**>(4);
-        leave_new_(ecx1571, "COLL", 4, 0x807262a, 0x1f4, 4, v2509, v2510);
+        leave_new_(ecx1571, "COLL", 4, "COLL", 0x1f4, 4, v2509, v2510);
     }
     *reinterpret_cast<int32_t*>(a3 + 21) = 0x109;
     *reinterpret_cast<int32_t*>(a3 + 23) = 1;
@@ -22867,9 +22867,9 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
             eax4588 = reinterpret_cast<void**>(0);
         }
         if (0) {
-            v32 = reinterpret_cast<void**>(0x807284f);
-            v33 = reinterpret_cast<void**>(0x8072854);
-            fun_8048c30(ecx4587, "At line 464 of file hdr_io.F90", 0x8072854, 0x807284f, v459, 4, v4589, v4590, v4591, v4592, v4593, v4594, v4595, v4596, v4597, v4598, v4599, v4600, v4601, v4602, v4603);
+            v32 = reinterpret_cast<void**>("nsel");
+            v33 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+            fun_8048c30(ecx4587, "At line 464 of file hdr_io.F90", "Attempting to allocate already allocated array '%s'", "nsel", v459, 4, v4589, v4590, v4591, v4592, v4593, v4594, v4595, v4596, v4597, v4598, v4599, v4600, v4601, v4602, v4603);
             do {
                 addr_8061d49_415:
                 esi4604 = *reinterpret_cast<uint32_t*>(a3 + 8);
@@ -22954,16 +22954,16 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         if (!0) 
             goto addr_8062095_447;
     }
-    v32 = reinterpret_cast<void**>(0x80728a7);
-    v33 = reinterpret_cast<void**>(0x8072854);
-    fun_8048c30(ecx, "At line 469 of file hdr_io.F90", 0x8072854, 0x80728a7, v459, 4, v4700, v4701, v4702, v4703, v4704, v4705, v4706, v4707, v4708, v4709, v1384, v4710, v1386, v1387, v4711);
+    v32 = reinterpret_cast<void**>("ibuffer");
+    v33 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+    fun_8048c30(ecx, "At line 469 of file hdr_io.F90", "Attempting to allocate already allocated array '%s'", "ibuffer", v459, 4, v4700, v4701, v4702, v4703, v4704, v4705, v4706, v4707, v4708, v4709, v1384, v4710, v1386, v1387, v4711);
     addr_806212d_449:
     eax4712 = reinterpret_cast<void**>(0);
     addr_806213b_450:
     if (0) {
-        v32 = reinterpret_cast<void**>(0x80728cf);
-        v33 = reinterpret_cast<void**>(0x8072854);
-        fun_8048c30(ecx, "At line 469 of file hdr_io.F90", 0x8072854, 0x80728cf, v459, 4, v4713, v4714, v4715, v4716, v4717, v4718, v4719, v4720, v4721, v4722, v1384, v4723, v1386, v1387, v4724);
+        v32 = reinterpret_cast<void**>("buffer");
+        v33 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx, "At line 469 of file hdr_io.F90", "Attempting to allocate already allocated array '%s'", "buffer", v459, 4, v4713, v4714, v4715, v4716, v4717, v4718, v4719, v4720, v4721, v4722, v1384, v4723, v1386, v1387, v4724);
         do {
             addr_8062261_453:
             v4725 = *reinterpret_cast<uint32_t*>(a3 + 8);
@@ -23043,21 +23043,21 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
             goto addr_8062261_453;
     }
     if (!v8) {
-        v32 = reinterpret_cast<void**>(0x80728a7);
-        v33 = reinterpret_cast<void**>(0x80728d8);
-        fun_8048c30(ecx, "At line 479 of file hdr_io.F90", 0x80728d8, 0x80728a7, v459, 4, v4817, v4818, v4819, v4820, v4821, v4822, v4823, v4824, v4825, v4826, v1384, v4827, v1386, v1387, v4828);
+        v32 = reinterpret_cast<void**>("ibuffer");
+        v33 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx, "At line 479 of file hdr_io.F90", "Attempt to DEALLOCATE unallocated '%s'", "ibuffer", v459, 4, v4817, v4818, v4819, v4820, v4821, v4822, v4823, v4824, v4825, v4826, v1384, v4827, v1386, v1387, v4828);
     }
     fun_8048bc0(ecx, v8, v33, v32, v459, 4, v4829, v4830, v4831, v4832, v4833, v4834, v4835, v4836, v4837, v4838, v1384, v4839, v1386, v1387, v4840, v4841, v4842);
     if (!v7) {
-        v32 = reinterpret_cast<void**>(0x80728cf);
-        v33 = reinterpret_cast<void**>(0x80728d8);
-        fun_8048c30(ecx, "At line 479 of file hdr_io.F90", 0x80728d8, 0x80728cf, v459, 4, v4843, v4844, v4845, v4846, v4847, v4848, v4849, v4850, v4851, v4852, v1384, v4853, v1386, v1387, v4854);
+        v32 = reinterpret_cast<void**>("buffer");
+        v33 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx, "At line 479 of file hdr_io.F90", "Attempt to DEALLOCATE unallocated '%s'", "buffer", v459, 4, v4843, v4844, v4845, v4846, v4847, v4848, v4849, v4850, v4851, v4852, v1384, v4853, v1386, v1387, v4854);
     }
     fun_8048bc0(ecx, v7, v33, v32, v459, 4, v4855, v4856, v4857, v4858, v4859, v4860, v4861, v4862, v4863, v4864, v1384, v4865, v1386, v1387, v4866, v4867, v4868);
     if (!v9) {
-        v32 = reinterpret_cast<void**>(0x807284f);
-        v33 = reinterpret_cast<void**>(0x80728d8);
-        fun_8048c30(ecx, "At line 479 of file hdr_io.F90", 0x80728d8, 0x807284f, v459, 4, v4869, v4870, v4871, v4872, v4873, v4874, v4875, v4876, v4877, v4878, v1384, v4879, v1386, v1387, v4880);
+        v32 = reinterpret_cast<void**>("nsel");
+        v33 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx, "At line 479 of file hdr_io.F90", "Attempt to DEALLOCATE unallocated '%s'", "nsel", v459, 4, v4869, v4870, v4871, v4872, v4873, v4874, v4875, v4876, v4877, v4878, v1384, v4879, v1386, v1387, v4880);
     }
     fun_8048bc0(ecx, v9, v33, v32, v459, 4, v4881, v4882, v4883, v4884, v4885, v4886, v4887, v4888, v4889, v4890, v1384, v4891, v1386, v1387, v4892, v4893, v4894);
     goto addr_8067a34_44;
@@ -23105,9 +23105,9 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         eax4945 = reinterpret_cast<void**>(0);
     }
     if (0) {
-        v32 = reinterpret_cast<void**>(0x807284f);
-        v33 = reinterpret_cast<void**>(0x8072854);
-        fun_8048c30(ecx4944, "At line 531 of file hdr_io.F90", 0x8072854, 0x807284f, 0, v4946, v4947, v4948, v4949, v4950, v4951, v4952, v4953, v4954, v4955, v4956, v4957, v4958, v4959, v4960, v4961);
+        v32 = reinterpret_cast<void**>("nsel");
+        v33 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx4944, "At line 531 of file hdr_io.F90", "Attempting to allocate already allocated array '%s'", "nsel", 0, v4946, v4947, v4948, v4949, v4950, v4951, v4952, v4953, v4954, v4955, v4956, v4957, v4958, v4959, v4960, v4961);
         do {
             addr_806333e_498:
             eax4962 = reinterpret_cast<void*>(*reinterpret_cast<int32_t*>(a3 + 0xd1) * reinterpret_cast<uint32_t>(v4963) + *reinterpret_cast<uint32_t*>(a3 + 0xcf) << 3);
@@ -23194,16 +23194,16 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     }
     if (!0) 
         goto addr_80636b8_530;
-    v32 = reinterpret_cast<void**>(0x80728a7);
-    v33 = reinterpret_cast<void**>(0x8072854);
-    fun_8048c30(ecx, "At line 537 of file hdr_io.F90", 0x8072854, 0x80728a7, 0, v5067, v5068, v5069, v5070, v5071, v5072, v5073, v5074, v5075, v5076, v5077, 1, v5078, v1386, v1387, v5079);
+    v32 = reinterpret_cast<void**>("ibuffer");
+    v33 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+    fun_8048c30(ecx, "At line 537 of file hdr_io.F90", "Attempting to allocate already allocated array '%s'", "ibuffer", 0, v5067, v5068, v5069, v5070, v5071, v5072, v5073, v5074, v5075, v5076, v5077, 1, v5078, v1386, v1387, v5079);
     addr_8063750_532:
     eax5080 = reinterpret_cast<void**>(0);
     addr_806375e_533:
     if (0) {
-        v32 = reinterpret_cast<void**>(0x80728cf);
-        v33 = reinterpret_cast<void**>(0x8072854);
-        fun_8048c30(ecx, "At line 537 of file hdr_io.F90", 0x8072854, 0x80728cf, 0, v5081, v5082, v5083, v5084, v5085, v5086, v5087, v5088, v5089, v5090, v5091, 1, v5092, v1386, v1387, v5093);
+        v32 = reinterpret_cast<void**>("buffer");
+        v33 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx, "At line 537 of file hdr_io.F90", "Attempting to allocate already allocated array '%s'", "buffer", 0, v5081, v5082, v5083, v5084, v5085, v5086, v5087, v5088, v5089, v5090, v5091, 1, v5092, v1386, v1387, v5093);
         do {
             addr_80637ee_536:
             v5094 = *reinterpret_cast<uint32_t*>(a3 + 8);
@@ -23285,21 +23285,21 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v33, 8, 0, v5182, v5183, v5184, v5185, v5186, v5187);
     fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v33, 8, 0, v5188, v5189, v5190, v5191, v5192, v5193, v5194);
     if (!v8) {
-        v32 = reinterpret_cast<void**>(0x80728a7);
-        v33 = reinterpret_cast<void**>(0x80728d8);
-        fun_8048c30(ecx, "At line 548 of file hdr_io.F90", 0x80728d8, 0x80728a7, 0, v5195, v5196, v5197, v5198, v5199, v5200, v5201, v5202, v5203, v5204, v5205, 1, v5206, v1386, v1387, v5207);
+        v32 = reinterpret_cast<void**>("ibuffer");
+        v33 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx, "At line 548 of file hdr_io.F90", "Attempt to DEALLOCATE unallocated '%s'", "ibuffer", 0, v5195, v5196, v5197, v5198, v5199, v5200, v5201, v5202, v5203, v5204, v5205, 1, v5206, v1386, v1387, v5207);
     }
     fun_8048bc0(ecx, v8, v33, v32, 0, v5208, v5209, v5210, v5211, v5212, v5213, v5214, v5215, v5216, v5217, v5218, 1, v5219, v1386, v1387, v5220, v5221, v5222);
     if (!v7) {
-        v32 = reinterpret_cast<void**>(0x80728cf);
-        v33 = reinterpret_cast<void**>(0x80728d8);
-        fun_8048c30(ecx, "At line 548 of file hdr_io.F90", 0x80728d8, 0x80728cf, 0, v5223, v5224, v5225, v5226, v5227, v5228, v5229, v5230, v5231, v5232, v5233, 1, v5234, v1386, v1387, v5235);
+        v32 = reinterpret_cast<void**>("buffer");
+        v33 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx, "At line 548 of file hdr_io.F90", "Attempt to DEALLOCATE unallocated '%s'", "buffer", 0, v5223, v5224, v5225, v5226, v5227, v5228, v5229, v5230, v5231, v5232, v5233, 1, v5234, v1386, v1387, v5235);
     }
     fun_8048bc0(ecx, v7, v33, v32, 0, v5236, v5237, v5238, v5239, v5240, v5241, v5242, v5243, v5244, v5245, v5246, 1, v5247, v1386, v1387, v5248, v5249, v5250);
     if (!v9) {
-        v32 = reinterpret_cast<void**>(0x807284f);
-        v33 = reinterpret_cast<void**>(0x80728d8);
-        fun_8048c30(ecx, "At line 548 of file hdr_io.F90", 0x80728d8, 0x807284f, 0, v5251, v5252, v5253, v5254, v5255, v5256, v5257, v5258, v5259, v5260, v5261, 1, v5262, v1386, v1387, v5263);
+        v32 = reinterpret_cast<void**>("nsel");
+        v33 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx, "At line 548 of file hdr_io.F90", "Attempt to DEALLOCATE unallocated '%s'", "nsel", 0, v5251, v5252, v5253, v5254, v5255, v5256, v5257, v5258, v5259, v5260, v5261, 1, v5262, v1386, v1387, v5263);
     }
     fun_8048bc0(ecx, v9, v33, v32, 0, v5264, v5265, v5266, v5267, v5268, v5269, v5270, v5271, v5272, v5273, v5274, 1, v5275, v1386, v1387, v5276, v5277, v5278);
     goto addr_8067a34_44;
@@ -23325,52 +23325,52 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     goto addr_806375e_533;
     addr_8065253_42:
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1282, 8, 0, v5326, v5327, v5328, v5329, v5330, v5331, v5332);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072caa, 15, 0, v5333, v5334, v5335, v5336, v5337, v5338, v5339);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072caa, 15, 0, v5340, v5341, v5342, v5343, v5344, v5345, v5346);
-    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072caa, 15, 0, v5347, v5348, v5349, v5350, v5351, v5352, v5353);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072cc6, 8, 0, v5354, v5355, v5356, v5357, v5358, v5359, v5360);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 15, 0, v5333, v5334, v5335, v5336, v5337, v5338, v5339);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 15, 0, v5340, v5341, v5342, v5343, v5344, v5345, v5346);
+    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 15, 0, v5347, v5348, v5349, v5350, v5351, v5352, v5353);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 8, 0, v5354, v5355, v5356, v5357, v5358, v5359, v5360);
     fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, a3 + 19, 4, 0, v5361, v5362, v5363, v5364, v5365, v5366);
     fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 19, 4, 0, v5367, v5368, v5369, v5370, v5371, v5372, v5373);
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 19, 4, 0, v5374, v5375, v5376, v5377, v5378, v5379, v5380);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072cce, 8, 0, v5381, v5382, v5383, v5384, v5385, v5386, v5387);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 8, 0, v5381, v5382, v5383, v5384, v5385, v5386, v5387);
     fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, a3 + 31, 4, 0, v5388, v5389, v5390, v5391, v5392, v5393);
     fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 31, 4, 0, v5394, v5395, v5396, v5397, v5398, v5399, v5400);
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 31, 4, 0, v5401, v5402, v5403, v5404, v5405, v5406, v5407);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072ce3, 8, 0, v5408, v5409, v5410, v5411, v5412, v5413, v5414);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 8, 0, v5408, v5409, v5410, v5411, v5412, v5413, v5414);
     v5415 = a3 + 37;
     fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v5415, 4, 0, v5416, v5417, v5418, v5419, v5420, v5421);
     fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5415, 4, 0, v5422, v5423, v5424, v5425, v5426, v5427, v5428);
     if (*reinterpret_cast<int32_t*>(a3 + 2) > reinterpret_cast<int32_t>(39)) {
         fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5415, 4, 0, v5429, v5430, v5431, v5432, v5433, v5434, v5435);
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072ceb, 10, 0, v5436, v5437, v5438, v5439, v5440, v5441, v5442);
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 10, 0, v5436, v5437, v5438, v5439, v5440, v5441, v5442);
         v5415 = a3 + 67;
         fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v5415, 4, 0, v5443, v5444, v5445, v5446, v5447, v5448);
         fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5415, 4, 0, v5449, v5450, v5451, v5452, v5453, v5454, v5455);
     }
     if (*reinterpret_cast<int32_t*>(a3 + 2) > reinterpret_cast<int32_t>(39)) {
         fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5415, 4, 0, v5456, v5457, v5458, v5459, v5460, v5461, v5462);
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072cf5, 8, 0, v5463, v5464, v5465, v5466, v5467, v5468, v5469);
-        fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072cf5, 8, 0, v5470, v5471, v5472, v5473, v5474, v5475, v5476);
-        fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072cf5, 8, 0, v5477, v5478, v5479, v5480, v5481, v5482, v5483);
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 8, 0, v5463, v5464, v5465, v5466, v5467, v5468, v5469);
+        fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 8, 0, v5470, v5471, v5472, v5473, v5474, v5475, v5476);
+        fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 8, 0, v5477, v5478, v5479, v5480, v5481, v5482, v5483);
         v5415 = a3 + 73;
         fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v5415, 4, 0, v5484, v5485, v5486, v5487, v5488, v5489);
         fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5415, 4, 0, v5490, v5491, v5492, v5493, v5494, v5495, v5496);
     }
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5415, 4, 0, v5497, v5498, v5499, v5500, v5501, v5502, v5503);
     v5504 = reinterpret_cast<void**>(8);
-    v5505 = reinterpret_cast<void**>(0x8072d09);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d09, 8, 0, v5506, v5507, v5508, v5509, v5510, v5511, v5512);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d09, 8, 0, v5513, v5514, v5515, v5516, v5517, v5518, v5519);
+    v5505 = reinterpret_cast<void**>(" symrel=(a,9i4,a,9i4)          (a,9i4) type  =");
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 8, 0, v5506, v5507, v5508, v5509, v5510, v5511, v5512);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 8, 0, v5513, v5514, v5515, v5516, v5517, v5518, v5519);
     v5520 = reinterpret_cast<void*>(reinterpret_cast<int32_t>((reinterpret_cast<uint32_t>(a3[11]) >> 31) + reinterpret_cast<uint32_t>(a3[11])) >> 1);
     v5521 = reinterpret_cast<void*>(1);
     if (1 <= reinterpret_cast<int32_t>(v5520)) {
-        while (fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5505, v5504, 0, v5522, v5523, v5524, v5525, v5526, v5527, v5528), fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d1e, 8, 0, v5529, v5530, v5531, v5532, v5533, v5534, v5535), ecx5536 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v5521) + reinterpret_cast<int32_t>(v5521) - 1 - *reinterpret_cast<uint32_t*>(a3 + 89)), fun_8048bd0(ecx5536, reinterpret_cast<int32_t>(ebp6) - 0x888, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, 4, 0, v5537, v5538, v5539, v5540, v5541, v5542), fun_8048cc0(ecx5536, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d26, 2, 0, v5543, v5544, v5545, v5546, v5547, v5548, v5549), ecx = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v5521) + reinterpret_cast<int32_t>(v5521) - *reinterpret_cast<uint32_t*>(a3 + 89)), v5504 = reinterpret_cast<void**>(4), v5505 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc), fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v5505, 4, 0, v5550, v5551, v5552, v5553, v5554, v5555), fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5505, 4, 0, v5556, v5557, v5558, v5559, v5560, v5561, v5562), eax5563 = reinterpret_cast<uint1_t>(v5521 == v5520), v5521 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(v5521) + 1), eax5563 == 0) {
+        while (fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5505, v5504, 0, v5522, v5523, v5524, v5525, v5526, v5527, v5528), fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "          (a,9i4) type  =", 8, 0, v5529, v5530, v5531, v5532, v5533, v5534, v5535), ecx5536 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v5521) + reinterpret_cast<int32_t>(v5521) - 1 - *reinterpret_cast<uint32_t*>(a3 + 89)), fun_8048bd0(ecx5536, reinterpret_cast<int32_t>(ebp6) - 0x888, reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc, 4, 0, v5537, v5538, v5539, v5540, v5541, v5542), fun_8048cc0(ecx5536, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  (a,9i4) type  =", 2, 0, v5543, v5544, v5545, v5546, v5547, v5548, v5549), ecx = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v5521) + reinterpret_cast<int32_t>(v5521) - *reinterpret_cast<uint32_t*>(a3 + 89)), v5504 = reinterpret_cast<void**>(4), v5505 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff8cc), fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v5505, 4, 0, v5550, v5551, v5552, v5553, v5554, v5555), fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5505, 4, 0, v5556, v5557, v5558, v5559, v5560, v5561, v5562), eax5563 = reinterpret_cast<uint1_t>(v5521 == v5520), v5521 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(v5521) + 1), eax5563 == 0) {
         }
     }
     eax5564 = reinterpret_cast<void*>(reinterpret_cast<int32_t>((reinterpret_cast<uint32_t>(a3[11]) >> 31) + reinterpret_cast<uint32_t>(a3[11])) >> 1);
     if (reinterpret_cast<uint32_t>(eax5564) + reinterpret_cast<uint32_t>(eax5564) != a3[11]) {
         fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5505, v5504, 0, v5565, v5566, v5567, v5568, v5569, v5570, v5571);
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d1e, 8, 0, v5572, v5573, v5574, v5575, v5576, v5577, v5578);
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "          (a,9i4) type  =", 8, 0, v5572, v5573, v5574, v5575, v5576, v5577, v5578);
         v5579 = a3[11];
         ecx = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v5579) - *reinterpret_cast<uint32_t*>(a3 + 89));
         v5504 = reinterpret_cast<void**>(4);
@@ -23379,14 +23379,14 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5505, 4, 0, v5586, v5587, v5588, v5589, v5590, v5591, v5592);
     }
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5505, v5504, 0, v5593, v5594, v5595, v5596, v5597, v5598, v5599);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d2f, 8, 0, v5600, v5601, v5602, v5603, v5604, v5605, v5606);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " type  =", 8, 0, v5600, v5601, v5602, v5603, v5604, v5605, v5606);
     fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, a3 + 91, 4, 0, v5607, v5608, v5609, v5610, v5611, v5612);
     fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 91, 4, 0, v5613, v5614, v5615, v5616, v5617, v5618, v5619);
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 91, 4, 0, v5620, v5621, v5622, v5623, v5624, v5625, v5626);
     v5627 = reinterpret_cast<void**>(58);
-    v5628 = reinterpret_cast<void**>(0x8072d38);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d38, 58, 0, v5629, v5630, v5631, v5632, v5633, v5634, v5635);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d38, 58, 0, v5636, v5637, v5638, v5639, v5640, v5641, v5642);
+    v5628 = reinterpret_cast<void**>(" kptns =                 (max 50 k-points will be written)(a,3es16.6) wtk =(a,10f6.2)   occ = tnons =(a,3f10.6,a,3f10.6)(a,3f10.6)(a,(10f6.2,8x))  znucl= Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,");
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " kptns =                 (max 50 k-points will be written)(a,3es16.6) wtk =(a,10f6.2)   occ = tnons =(a,3f10.6,a,3f10.6)(a,3f10.6)(a,(10f6.2,8x))  znucl= Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 58, 0, v5629, v5630, v5631, v5632, v5633, v5634, v5635);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " kptns =                 (max 50 k-points will be written)(a,3es16.6) wtk =(a,10f6.2)   occ = tnons =(a,3f10.6,a,3f10.6)(a,3f10.6)(a,(10f6.2,8x))  znucl= Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 58, 0, v5636, v5637, v5638, v5639, v5640, v5641, v5642);
     eax5643 = a3[6];
     if (reinterpret_cast<int32_t>(eax5643) > reinterpret_cast<int32_t>(50)) {
         eax5643 = reinterpret_cast<void*>(50);
@@ -23394,14 +23394,14 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     ebx5644 = eax5643;
     v5645 = reinterpret_cast<void*>(1);
     if (reinterpret_cast<int32_t>(1) <= reinterpret_cast<int32_t>(ebx5644)) {
-        while (fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5628, v5627, 0, v5646, v5647, v5648, v5649, v5650, v5651, v5652), fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d1e, 8, 0, v5653, v5654, v5655, v5656, v5657, v5658, v5659), ecx = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v5645) - *reinterpret_cast<uint32_t*>(a3 + 0x94)), v5627 = reinterpret_cast<void**>(8), v5628 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffae8), fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v5628, 8, 0, v5660, v5661, v5662, v5663, v5664, v5665), fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5628, 8, 0, v5666, v5667, v5668, v5669, v5670, v5671, v5672), eax5673 = reinterpret_cast<uint1_t>(v5645 == ebx5644), v5645 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(v5645) + 1), eax5673 == 0) {
+        while (fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5628, v5627, 0, v5646, v5647, v5648, v5649, v5650, v5651, v5652), fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "          (a,9i4) type  =", 8, 0, v5653, v5654, v5655, v5656, v5657, v5658, v5659), ecx = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v5645) - *reinterpret_cast<uint32_t*>(a3 + 0x94)), v5627 = reinterpret_cast<void**>(8), v5628 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffae8), fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v5628, 8, 0, v5660, v5661, v5662, v5663, v5664, v5665), fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5628, 8, 0, v5666, v5667, v5668, v5669, v5670, v5671, v5672), eax5673 = reinterpret_cast<uint1_t>(v5645 == ebx5644), v5645 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(v5645) + 1), eax5673 == 0) {
         }
     }
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5628, v5627, 0, v5674, v5675, v5676, v5677, v5678, v5679, v5680);
     v5681 = reinterpret_cast<void**>(6);
-    v5682 = reinterpret_cast<void**>(0x8072d7d);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d7d, 6, 0, v5683, v5684, v5685, v5686, v5687, v5688, v5689);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d7d, 6, 0, v5690, v5691, v5692, v5693, v5694, v5695, v5696);
+    v5682 = reinterpret_cast<void**>(" wtk =(a,10f6.2)   occ = tnons =(a,3f10.6,a,3f10.6)(a,3f10.6)(a,(10f6.2,8x))  znucl= Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,");
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " wtk =(a,10f6.2)   occ = tnons =(a,3f10.6,a,3f10.6)(a,3f10.6)(a,(10f6.2,8x))  znucl= Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 6, 0, v5683, v5684, v5685, v5686, v5687, v5688, v5689);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " wtk =(a,10f6.2)   occ = tnons =(a,3f10.6,a,3f10.6)(a,3f10.6)(a,(10f6.2,8x))  znucl= Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 6, 0, v5690, v5691, v5692, v5693, v5694, v5695, v5696);
     eax5697 = a3[6];
     v5698 = reinterpret_cast<void*>(1);
     if (!(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax5697) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax5697 == 0))) {
@@ -23409,7 +23409,7 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         ebx5699 = __intrinsic() >> 3;
         while (1) {
             fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5682, v5681, 0, v5700, v5701, v5702, v5703, v5704, v5705, v5706);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d1e, 8, 0, v5707, v5708, v5709, v5710, v5711, v5712, v5713);
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "          (a,9i4) type  =", 8, 0, v5707, v5708, v5709, v5710, v5711, v5712, v5713);
             if (reinterpret_cast<int32_t>(reinterpret_cast<int32_t>(v5698) + 9) < reinterpret_cast<int32_t>(a3[6])) {
             }
             ecx = *reinterpret_cast<void***>(a3 + 0xa9);
@@ -23424,9 +23424,9 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         }
     }
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5682, v5681, 0, v5727, v5728, v5729, v5730, v5731, v5732, v5733);
-    v5734 = reinterpret_cast<void**>(0x8072d8d);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d8d, 8, 0, v5735, v5736, v5737, v5738, v5739, v5740, v5741);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d8d, 8, 0, v5742, v5743, v5744, v5745, v5746, v5747, v5748);
+    v5734 = reinterpret_cast<void**>("   occ = tnons =(a,3f10.6,a,3f10.6)(a,3f10.6)(a,(10f6.2,8x))  znucl= Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,");
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "   occ = tnons =(a,3f10.6,a,3f10.6)(a,3f10.6)(a,(10f6.2,8x))  znucl= Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 8, 0, v5735, v5736, v5737, v5738, v5739, v5740, v5741);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "   occ = tnons =(a,3f10.6,a,3f10.6)(a,3f10.6)(a,(10f6.2,8x))  znucl= Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 8, 0, v5742, v5743, v5744, v5745, v5746, v5747, v5748);
     eax5749 = *reinterpret_cast<void***>(a3);
     v5750 = reinterpret_cast<struct s13*>(1);
     if (!(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax5749) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax5749 == 0))) {
@@ -23434,7 +23434,7 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         ebx5751 = __intrinsic() >> 3;
         while (1) {
             fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5734, 8, 0, v5752, v5753, v5754, v5755, v5756, v5757, v5758);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d1e, 8, 0, v5759, v5760, v5761, v5762, v5763, v5764, v5765);
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "          (a,9i4) type  =", 8, 0, v5759, v5760, v5761, v5762, v5763, v5764, v5765);
             if (reinterpret_cast<int32_t>(&v5750->f9) < reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a3))) {
             }
             ecx = *reinterpret_cast<void***>(a3 + 0x9a);
@@ -23448,19 +23448,19 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         }
     }
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5734, 8, 0, v5779, v5780, v5781, v5782, v5783, v5784, v5785);
-    v5786 = reinterpret_cast<void**>(0x8072d95);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d95, 8, 0, v5787, v5788, v5789, v5790, v5791, v5792, v5793);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d95, 8, 0, v5794, v5795, v5796, v5797, v5798, v5799, v5800);
+    v5786 = reinterpret_cast<void**>(" tnons =(a,3f10.6,a,3f10.6)(a,3f10.6)(a,(10f6.2,8x))  znucl= Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,");
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " tnons =(a,3f10.6,a,3f10.6)(a,3f10.6)(a,(10f6.2,8x))  znucl= Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 8, 0, v5787, v5788, v5789, v5790, v5791, v5792, v5793);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " tnons =(a,3f10.6,a,3f10.6)(a,3f10.6)(a,(10f6.2,8x))  znucl= Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 8, 0, v5794, v5795, v5796, v5797, v5798, v5799, v5800);
     ebx5801 = reinterpret_cast<void*>(reinterpret_cast<int32_t>((reinterpret_cast<uint32_t>(a3[11]) >> 31) + reinterpret_cast<uint32_t>(a3[11])) >> 1);
     v5802 = reinterpret_cast<void*>(1);
     if (1 <= reinterpret_cast<int32_t>(ebx5801)) {
-        while (fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5786, 8, 0, v5803, v5804, v5805, v5806, v5807, v5808, v5809), fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d1e, 8, 0, v5810, v5811, v5812, v5813, v5814, v5815, v5816), ecx5817 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v5802) + reinterpret_cast<int32_t>(v5802) - 1 - *reinterpret_cast<uint32_t*>(a3 + 0xa3)), fun_8048bd0(ecx5817, reinterpret_cast<int32_t>(ebp6) - 0x888, reinterpret_cast<int32_t>(ebp6) + 0xfffffaa0, 8, 0, v5818, v5819, v5820, v5821, v5822, v5823), fun_8048cc0(ecx5817, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d26, 2, 0, v5824, v5825, v5826, v5827, v5828, v5829, v5830), ecx = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v5802) + reinterpret_cast<int32_t>(v5802) - *reinterpret_cast<uint32_t*>(a3 + 0xa3)), v5786 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffa88), fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v5786, 8, 0, v5831, v5832, v5833, v5834, v5835, v5836), fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5786, 8, 0, v5837, v5838, v5839, v5840, v5841, v5842, v5843), eax5844 = reinterpret_cast<uint1_t>(v5802 == ebx5801), v5802 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(v5802) + 1), eax5844 == 0) {
+        while (fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5786, 8, 0, v5803, v5804, v5805, v5806, v5807, v5808, v5809), fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "          (a,9i4) type  =", 8, 0, v5810, v5811, v5812, v5813, v5814, v5815, v5816), ecx5817 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v5802) + reinterpret_cast<int32_t>(v5802) - 1 - *reinterpret_cast<uint32_t*>(a3 + 0xa3)), fun_8048bd0(ecx5817, reinterpret_cast<int32_t>(ebp6) - 0x888, reinterpret_cast<int32_t>(ebp6) + 0xfffffaa0, 8, 0, v5818, v5819, v5820, v5821, v5822, v5823), fun_8048cc0(ecx5817, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  (a,9i4) type  =", 2, 0, v5824, v5825, v5826, v5827, v5828, v5829, v5830), ecx = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v5802) + reinterpret_cast<int32_t>(v5802) - *reinterpret_cast<uint32_t*>(a3 + 0xa3)), v5786 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffa88), fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v5786, 8, 0, v5831, v5832, v5833, v5834, v5835, v5836), fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5786, 8, 0, v5837, v5838, v5839, v5840, v5841, v5842, v5843), eax5844 = reinterpret_cast<uint1_t>(v5802 == ebx5801), v5802 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(v5802) + 1), eax5844 == 0) {
         }
     }
     eax5845 = reinterpret_cast<void*>(reinterpret_cast<int32_t>((reinterpret_cast<uint32_t>(a3[11]) >> 31) + reinterpret_cast<uint32_t>(a3[11])) >> 1);
     if (reinterpret_cast<uint32_t>(eax5845) + reinterpret_cast<uint32_t>(eax5845) != a3[11]) {
         fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5786, 8, 0, v5846, v5847, v5848, v5849, v5850, v5851, v5852);
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d1e, 8, 0, v5853, v5854, v5855, v5856, v5857, v5858, v5859);
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "          (a,9i4) type  =", 8, 0, v5853, v5854, v5855, v5856, v5857, v5858, v5859);
         esi5860 = a3[11];
         ecx = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esi5860) - *reinterpret_cast<uint32_t*>(a3 + 0xa3));
         v5786 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffa70);
@@ -23468,7 +23468,7 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5786, 8, 0, v5867, v5868, v5869, v5870, v5871, v5872, v5873);
     }
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5786, 8, 0, v5874, v5875, v5876, v5877, v5878, v5879, v5880);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072dc9, 8, 0, v5881, v5882, v5883, v5884, v5885, v5886, v5887);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  znucl= Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 8, 0, v5881, v5882, v5883, v5884, v5885, v5886, v5887);
     v459 = reinterpret_cast<void**>(0);
     fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, a3 + 0xc0, 8, 0, v5888, v5889, v5890, v5891, v5892, v5893);
     fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 0xc0, 8, 0, v5894, v5895, v5896, v5897, v5898, v5899, v5900);
@@ -23476,15 +23476,15 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 0xc0, 8, 0, v5908, v5909, v5910, v5911, v5912, v5913, v5914);
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 0xc0, 8, 0, v5915, v5916, v5917, v5918, v5919, v5920, v5921);
     v5922 = reinterpret_cast<void**>(23);
-    v5923 = reinterpret_cast<void**>(0x8072dd1);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072dd1, 23, 0, v5924, v5925, v5926, v5927, v5928, v5929, v5930);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072dd1, 23, 0, v5931, v5932, v5933, v5934, v5935, v5936, v5937);
+    v5923 = reinterpret_cast<void**>(" Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,");
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 23, 0, v5924, v5925, v5926, v5927, v5928, v5929, v5930);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " Pseudopotential info :(a,a) title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 23, 0, v5931, v5932, v5933, v5934, v5935, v5936, v5937);
     ebx5938 = *reinterpret_cast<void***>(a3 + 7);
     v5939 = reinterpret_cast<void**>(1);
     if (reinterpret_cast<int32_t>(1) <= reinterpret_cast<int32_t>(ebx5938)) {
         while (1) {
             fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5923, v5922, v459, v5940, v5941, v5942, v5943, v5944, v5945, v5946);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072ded, 7, v459, v5947, v5948, v5949, v5950, v5951, v5952, v5953);
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " title=(a,f6.2,a,f6.2,a,i3,a,i6,a,i3,a,i3)  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 7, v459, v5947, v5948, v5949, v5950, v5951, v5952, v5953);
             eax5954 = reinterpret_cast<void***>(*reinterpret_cast<int32_t*>(a3 + 0xcb) * reinterpret_cast<uint32_t>(v5939) + *reinterpret_cast<uint32_t*>(a3 + 0xc9) << 2);
             ecx5955 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax5954) << 5);
             v459 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 0xc8)) + (reinterpret_cast<uint32_t>(eax5954) + reinterpret_cast<uint32_t>(ecx5955)));
@@ -23495,27 +23495,27 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
             }
             fun_8048b50(ecx5955, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5973, v5974, v459, v6001, v6002, v6003, v6004, v6005, v6006, v6007);
             fun_8048cd0(ecx5955, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5973, v5974, v459, v6008, v6009, v6010, v6011, v6012, v6013, v6014);
-            fun_8048cc0(ecx5955, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072e17, 11, v459, v6015, v6016, v6017, v6018, v6019, v6020, v6021);
+            fun_8048cc0(ecx5955, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  znuclpsp=, zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 11, v459, v6015, v6016, v6017, v6018, v6019, v6020, v6021);
             ecx6022 = reinterpret_cast<void**>(*reinterpret_cast<int32_t*>(a3 + 0xbd) * reinterpret_cast<uint32_t>(v5939));
             eax6023 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 0xba)) + (reinterpret_cast<uint32_t>(ecx6022) + reinterpret_cast<uint32_t>(a3[0xbb]) << 3));
             fun_8048d50(ecx6022, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, eax6023, 8, v459, v6024, v6025, v6026, v6027, v6028);
-            fun_8048cc0(ecx6022, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072e22, 10, v459, v6029, v6030, v6031, v6032, v6033, v6034, v6035);
+            fun_8048cc0(ecx6022, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, ", zionpsp=, pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 10, v459, v6029, v6030, v6031, v6032, v6033, v6034, v6035);
             ecx6036 = reinterpret_cast<void**>(*reinterpret_cast<int32_t*>(a3 + 0xb7) * reinterpret_cast<uint32_t>(v5939));
             eax6037 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 0xb4)) + (reinterpret_cast<uint32_t>(ecx6036) + reinterpret_cast<uint32_t>(a3[0xb5]) << 3));
             fun_8048d50(ecx6036, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, eax6037, 8, v459, v6038, v6039, v6040, v6041, v6042);
-            fun_8048cc0(ecx6036, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072e2c, 8, v459, v6043, v6044, v6045, v6046, v6047, v6048, v6049);
+            fun_8048cc0(ecx6036, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, ", pspso=, pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 8, v459, v6043, v6044, v6045, v6046, v6047, v6048, v6049);
             ecx6050 = reinterpret_cast<void**>(*reinterpret_cast<uint32_t*>(a3 + 58) * reinterpret_cast<uint32_t>(v5939));
             eax6051 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 55)) + (reinterpret_cast<uint32_t>(ecx6050) + reinterpret_cast<uint32_t>(a3[56]) << 2));
             fun_8048c50(ecx6050, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, eax6051, 4, v459, v6052, v6053, v6054, v6055, v6056, v6057, v6058);
-            fun_8048cc0(ecx6050, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072e34, 9, v459, v6059, v6060, v6061, v6062, v6063, v6064, v6065);
+            fun_8048cc0(ecx6050, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, ", pspdat=, pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 9, v459, v6059, v6060, v6061, v6062, v6063, v6064, v6065);
             ecx6066 = reinterpret_cast<void**>(*reinterpret_cast<int32_t*>(a3 + 52) * reinterpret_cast<uint32_t>(v5939));
             eax6067 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 49)) + (reinterpret_cast<uint32_t>(ecx6066) + reinterpret_cast<uint32_t>(a3[50]) << 2));
             fun_8048c50(ecx6066, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, eax6067, 4, v459, v6068, v6069, v6070, v6071, v6072, v6073, v6074);
-            fun_8048cc0(ecx6066, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072e3d, 9, v459, v6075, v6076, v6077, v6078, v6079, v6080, v6081);
+            fun_8048cc0(ecx6066, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, ", pspcod=, pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 9, v459, v6075, v6076, v6077, v6078, v6079, v6080, v6081);
             ecx6082 = reinterpret_cast<void**>(*reinterpret_cast<int32_t*>(a3 + 46) * reinterpret_cast<uint32_t>(v5939));
             eax6083 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 43)) + (reinterpret_cast<uint32_t>(ecx6082) + reinterpret_cast<uint32_t>(a3[44]) << 2));
             fun_8048c50(ecx6082, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, eax6083, 4, v459, v6084, v6085, v6086, v6087, v6088, v6089, v6090);
-            fun_8048cc0(ecx6082, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072e46, 8, v459, v6091, v6092, v6093, v6094, v6095, v6096, v6097);
+            fun_8048cc0(ecx6082, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, ", pspxc=(a,i3)  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 8, v459, v6091, v6092, v6093, v6094, v6095, v6096, v6097);
             ecx = reinterpret_cast<void**>(*reinterpret_cast<int32_t*>(a3 + 64) * reinterpret_cast<uint32_t>(v5939));
             eax6098 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 61)) + (reinterpret_cast<uint32_t>(ecx) + reinterpret_cast<uint32_t>(a3[62]) << 2));
             v5922 = reinterpret_cast<void**>(4);
@@ -23525,7 +23525,7 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
             if (*reinterpret_cast<int32_t*>(a3 + 2) > reinterpret_cast<int32_t>(43)) {
                 if (*reinterpret_cast<int32_t*>(a3 + 15) != 1) {
                     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5923, 4, v459, v6113, v6114, v6115, v6116, v6117, v6118, v6119);
-                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072e5f, 11, v459, v6120, v6121, v6122, v6123, v6124, v6125, v6126);
+                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 11, v459, v6120, v6121, v6122, v6123, v6124, v6125, v6126);
                     ecx = reinterpret_cast<void**>(*reinterpret_cast<uint32_t*>(a3 + 28) * reinterpret_cast<uint32_t>(v5939));
                     eax6127 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 25)) + (reinterpret_cast<uint32_t>(ecx) + reinterpret_cast<uint32_t>(*reinterpret_cast<void****>(a3 + 26)) << 2));
                     v5922 = reinterpret_cast<void**>(4);
@@ -23534,7 +23534,7 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                     fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5923, 4, v459, v6135, v6136, v6137, v6138, v6139, v6140, v6141);
                 } else {
                     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5923, 4, v459, v6142, v6143, v6144, v6145, v6146, v6147, v6148);
-                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072e54, 11, v459, v6149, v6150, v6151, v6152, v6153, v6154, v6155);
+                    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  lmn_size=  lmnmax  = Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 11, v459, v6149, v6150, v6151, v6152, v6153, v6154, v6155);
                     ecx = reinterpret_cast<void**>(*reinterpret_cast<uint32_t*>(a3 + 28) * reinterpret_cast<uint32_t>(v5939));
                     eax6156 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a3 + 25)) + (reinterpret_cast<uint32_t>(ecx) + reinterpret_cast<uint32_t>(*reinterpret_cast<void****>(a3 + 26)) << 2));
                     v5922 = reinterpret_cast<void**>(4);
@@ -23550,26 +23550,26 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         }
     }
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v5923, v5922, v459, v6172, v6173, v6174, v6175, v6176, v6177, v6178);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a1c, 1, v459, v6179, v6180, v6181, v6182, v6183, v6184, v6185);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a1c, 1, v459, v6186, v6187, v6188, v6189, v6190, v6191, v6192);
-    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072a1c, 1, v459, v6193, v6194, v6195, v6196, v6197, v6198, v6199);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072e6a, 14, v459, v6200, v6201, v6202, v6203, v6204, v6205, v6206);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072e6a, 14, v459, v6207, v6208, v6209, v6210, v6211, v6212, v6213);
-    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072e6a, 14, v459, v6214, v6215, v6216, v6217, v6218, v6219, v6220);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072e91, 20, v459, v6221, v6222, v6223, v6224, v6225, v6226, v6227);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 1, v459, v6179, v6180, v6181, v6182, v6183, v6184, v6185);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 1, v459, v6186, v6187, v6188, v6189, v6190, v6191, v6192);
+    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "  First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 1, v459, v6193, v6194, v6195, v6196, v6197, v6198, v6199);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 14, v459, v6200, v6201, v6202, v6203, v6204, v6205, v6206);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 14, v459, v6207, v6208, v6209, v6210, v6211, v6212, v6213);
+    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " Last record :(a,es16.6,es22.12,es16.6) residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 14, v459, v6214, v6215, v6216, v6217, v6218, v6219, v6220);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " residm,etot,fermie= xred =(a,i4,a,i1,a) rhoij(,", 20, v459, v6221, v6222, v6223, v6224, v6225, v6226, v6227);
     fun_8048d50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 0x6d, 8, v459, v6228, v6229, v6230, v6231, v6232);
     fun_8048d50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 0x69, 8, v459, v6233, v6234, v6235, v6236, v6237);
     fun_8048d50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 0x6b, 8, v459, v6238, v6239, v6240, v6241, v6242);
     fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 0x6b, 8, v459, v6243, v6244, v6245, v6246, v6247, v6248, v6249);
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, a3 + 0x6b, 8, v459, v6250, v6251, v6252, v6253, v6254, v6255, v6256);
     v6257 = reinterpret_cast<void**>(7);
-    v6258 = reinterpret_cast<void**>(0x8072ea5);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072ea5, 7, v459, v6259, v6260, v6261, v6262, v6263, v6264, v6265);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072ea5, 7, v459, v6266, v6267, v6268, v6269, v6270, v6271, v6272);
+    v6258 = reinterpret_cast<void**>(" xred =(a,i4,a,i1,a) rhoij(,");
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " xred =(a,i4,a,i1,a) rhoij(,", 7, v459, v6259, v6260, v6261, v6262, v6263, v6264, v6265);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " xred =(a,i4,a,i1,a) rhoij(,", 7, v459, v6266, v6267, v6268, v6269, v6270, v6271, v6272);
     ebx6273 = *reinterpret_cast<void***>(a3 + 5);
     v6274 = reinterpret_cast<void**>(1);
     if (reinterpret_cast<int32_t>(1) <= reinterpret_cast<int32_t>(ebx6273)) {
-        while (fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v6258, v6257, v459, v6275, v6276, v6277, v6278, v6279, v6280, v6281), fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072d1e, 8, v459, v6282, v6283, v6284, v6285, v6286, v6287, v6288), ecx = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v6274) - *reinterpret_cast<uint32_t*>(a3 + 0xb2)), v459 = reinterpret_cast<void**>(0), v6257 = reinterpret_cast<void**>(8), v6258 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffa50), fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v6258, 8, 0, v6289, v6290, v6291, v6292, v6293, v6294), fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v6258, 8, 0, v6295, v6296, v6297, v6298, v6299, v6300, v6301), eax6302 = reinterpret_cast<uint1_t>(v6274 == ebx6273), v6274 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v6274) + 1), eax6302 == 0) {
+        while (fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v6258, v6257, v459, v6275, v6276, v6277, v6278, v6279, v6280, v6281), fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, "          (a,9i4) type  =", 8, v459, v6282, v6283, v6284, v6285, v6286, v6287, v6288), ecx = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v6274) - *reinterpret_cast<uint32_t*>(a3 + 0xb2)), v459 = reinterpret_cast<void**>(0), v6257 = reinterpret_cast<void**>(8), v6258 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffa50), fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp6) - 0x888, v6258, 8, 0, v6289, v6290, v6291, v6292, v6293, v6294), fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v6258, 8, 0, v6295, v6296, v6297, v6298, v6299, v6300, v6301), eax6302 = reinterpret_cast<uint1_t>(v6274 == ebx6273), v6274 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v6274) + 1), eax6302 == 0) {
         }
     }
     if (*reinterpret_cast<int32_t*>(a3 + 15) != 1) 
@@ -23588,9 +23588,9 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a4) == 3)) {
             fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v6258, v6257, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6307);
             v6257 = reinterpret_cast<void**>(48);
-            v6258 = reinterpret_cast<void**>(0x8072f04);
-            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072f04, 48, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6308);
-            fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072f04, 48, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6309);
+            v6258 = reinterpret_cast<void**>(" End the ECHO of part of the ABINIT file header  End the ECHO of the ABINIT file header ");
+            fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " End the ECHO of part of the ABINIT file header  End the ECHO of the ABINIT file header ", 48, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6308);
+            fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " End the ECHO of part of the ABINIT file header  End the ECHO of the ABINIT file header ", 48, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6309);
         }
     } else {
         v1388 = reinterpret_cast<void**>(-reinterpret_cast<uint32_t>(v6305));
@@ -23600,15 +23600,15 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a4) == 4)) {
         fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v6258, v6257, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6311);
         v6257 = reinterpret_cast<void**>(40);
-        v6258 = reinterpret_cast<void**>(0x8072f34);
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072f34, 40, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6312);
-        fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072f34, 40, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6313);
+        v6258 = reinterpret_cast<void**>(" End the ECHO of the ABINIT file header ");
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " End the ECHO of the ABINIT file header ", 40, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6312);
+        fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " End the ECHO of the ABINIT file header ", 40, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6313);
     }
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v6258, v6257, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6314);
     v32 = reinterpret_cast<void**>(80);
-    v33 = reinterpret_cast<void**>(0x8072984);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072984, 80, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6315);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072984, 80, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6316);
+    v33 = reinterpret_cast<void**>(" =============================================================================== ECHO of part of the ABINIT file header  ECHO of the ABINIT file header   First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)");
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " =============================================================================== ECHO of part of the ABINIT file header  ECHO of the ABINIT file header   First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 80, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6315);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " =============================================================================== ECHO of part of the ABINIT file header  ECHO of the ABINIT file header   First record :(a,a6,2i5).codvsn,headform,fform =  Second record :(a,4i6) bantot,intxc,ixc,natom  = ngfft(1:3),nkpt         =(a,2i6) nspden,nspinor          = nsppol,nsym,ntypat,occopt=(a,5i6)", 80, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6316);
     goto addr_8067a34_44;
     while (1) {
         addr_8067155_628:
@@ -23618,9 +23618,9 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         if (reinterpret_cast<int32_t>(1) <= reinterpret_cast<int32_t>(v6317)) {
             while (1) {
                 fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v6258, v6257, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6319);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072eb9, 7, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6320);
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " rhoij(,", 7, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6320);
                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, reinterpret_cast<int32_t>(ebp6) + 0xffffff7c, 4, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6321);
-                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072ec0, 1, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6322);
+                fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, ",", 1, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6322);
                 fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, reinterpret_cast<int32_t>(ebp6) + 0xffffff5c, 4, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6323);
                 fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072ec4, 48, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6324);
                 fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072ec4, 48, v459, 0x8072f00, 0, 0x8072ef4, v1378, 0x8072ef8, 0x8072ef4, v6325);
@@ -23685,12 +23685,12 @@ void** hdr_io_int_(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     goto addr_8067155_628;
     addr_806518a_43:
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, v1282, 8, 0, v6380, v6381, v6382, v6383, v6384, v6385, v6386);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072c82, 20, 0, v6387, v6388, v6389, v6390, v6391, v6392, v6393);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " The header contain  additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 20, 0, v6387, v6388, v6389, v6390, v6391, v6392, v6393);
     fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, reinterpret_cast<int32_t>(ebp6) + 0xfffffb00, 4, 0, v6394, v6395, v6396, v6397, v6398, v6399, v6400);
     v32 = reinterpret_cast<void**>(20);
-    v33 = reinterpret_cast<void**>(0x8072c96);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072c96, 20, 0, v6401, v6402, v6403, v6404, v6405, v6406, v6407);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, 0x8072c96, 20, 0, v6408, v6409, v6410, v6411, v6412, v6413, v6414);
+    v33 = reinterpret_cast<void**>(" additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =");
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 20, 0, v6401, v6402, v6403, v6404, v6405, v6406, v6407);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp6) + 0xfffff778, " additional records. Third record :(a,(12i4,8x)) istwfk= nband =(a,(10i5,8x)) npwarr= so_typat= symafm=(8x,24i3,8x) symrel=(a,9i4,a,9i4)          (a,9i4) type  =", 20, 0, v6408, v6409, v6410, v6411, v6412, v6413, v6414);
     goto addr_8067a34_44;
     addr_8067a4c_46:
     if (!1) {
@@ -24494,20 +24494,20 @@ void** wrtout_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
     void** v777;
 
     ebp9 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
-    eax10 = fun_8048d70(0x1f4, a3, 1, 0x80742b8);
+    eax10 = fun_8048d70(0x1f4, a3, 1, " \nwrtout.F90");
     if (!eax10) {
         v11 = reinterpret_cast<void**>(0xa5);
         v12 = reinterpret_cast<void**>(0x80);
         v13 = *reinterpret_cast<void***>(a2);
         v14 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-        fun_8048cd0(ecx, v14, a3, 1, 0x80742b8, v15, v16, v17, v18, 0x80, v13, 0x80742ba, ecx, v14, a3, 1, 0x80742b8, v19, v20, v21, v22, 0x80, v13, 0x80742ba);
+        fun_8048cd0(ecx, v14, a3, 1, " \nwrtout.F90", v15, v16, v17, v18, 0x80, v13, "wrtout.F90", ecx, v14, a3, 1, " \nwrtout.F90", v19, v20, v21, v22, 0x80, v13, "wrtout.F90");
         v23 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-        fun_8048b50(ecx, v23, a3, 1, 0x80742b8, v24, v25, v26, v27, 0x80, v13, 0x80742ba, ecx, v23, a3, 1, 0x80742b8, v28, v29, v30, v31, 0x80, v13, 0x80742ba);
+        fun_8048b50(ecx, v23, a3, 1, " \nwrtout.F90", v24, v25, v26, v27, 0x80, v13, "wrtout.F90", ecx, v23, a3, 1, " \nwrtout.F90", v28, v29, v30, v31, 0x80, v13, "wrtout.F90");
     } else {
-        fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffde8, a3, 0x1f4, 0x80742b8, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49);
+        fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffde8, a3, 0x1f4, " \nwrtout.F90", v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49);
         v50 = reinterpret_cast<void*>(0x1f4);
         v51 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffde8);
-        eax53 = fun_8048d00(0x1f4, v51, 1, 0x80742b9, 0, v52);
+        eax53 = fun_8048d00(0x1f4, v51, 1, "\nwrtout.F90", 0, v52);
         v54 = eax53;
         while (v54) {
             eax55 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v54) - 1);
@@ -24516,28 +24516,28 @@ void** wrtout_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
                 ebx56 = eax55;
             }
             if (reinterpret_cast<int32_t>(ebx56) <= reinterpret_cast<int32_t>(0x1f3)) {
-                fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffbf4, reinterpret_cast<int32_t>(ebp9) + 0xfffffde8, ebx56, 0x80742b9, 0, v57, v58, v59, 0x1000, v60, 0x80742ba, 0x9e, v61, v62, v63, v64, v65, v66, v67, v68, 0x80742c5, 3);
+                fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffbf4, reinterpret_cast<int32_t>(ebp9) + 0xfffffde8, ebx56, "\nwrtout.F90", 0, v57, v58, v59, 0x1000, v60, "wrtout.F90", 0x9e, v61, v62, v63, v64, v65, v66, v67, v68, "(a)BUG", 3);
                 ecx = ebx56;
                 v69 = reinterpret_cast<void**>(0x1f4 - reinterpret_cast<uint32_t>(ebx56));
                 v70 = reinterpret_cast<void**>(32);
-                fun_8048b90(reinterpret_cast<int32_t>(ebp9) - 0x40c + reinterpret_cast<uint32_t>(ecx), 32, v69, 0x80742b9, 0, v71, v72, v73, 0x1000, v60, 0x80742ba, 0x9e, v74, v75, v76, v77, v78, v79, v80, v81, 0x80742c5, 3, v82);
+                fun_8048b90(reinterpret_cast<int32_t>(ebp9) - 0x40c + reinterpret_cast<uint32_t>(ecx), 32, v69, "\nwrtout.F90", 0, v71, v72, v73, 0x1000, v60, "wrtout.F90", 0x9e, v74, v75, v76, v77, v78, v79, v80, v81, "(a)BUG", 3, v82);
             } else {
                 v69 = reinterpret_cast<void**>(0x1f4);
                 v70 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffde8);
-                fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffbf4, v70, 0x1f4, 0x80742b9, 0, v83, v84, v85, 0x1000, v60, 0x80742ba, 0x9e, v86, v87, v88, v89, v90, v91, v92, v93, 0x80742c5, 3);
+                fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffbf4, v70, 0x1f4, "\nwrtout.F90", 0, v83, v84, v85, 0x1000, v60, "wrtout.F90", 0x9e, v86, v87, v88, v89, v90, v91, v92, v93, "(a)BUG", 3);
             }
             v60 = *reinterpret_cast<void***>(a2);
             v94 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cd0(ecx, v94, v70, v69, 0x80742b9, 0, v95, v96, v97, 0x1000, v60, 0x80742ba, ecx, v94, v70, v69, 0x80742b9, 0, v98, v99, v100, 0x1000, v60, 0x80742ba);
+            fun_8048cd0(ecx, v94, v70, v69, "\nwrtout.F90", 0, v95, v96, v97, 0x1000, v60, "wrtout.F90", ecx, v94, v70, v69, "\nwrtout.F90", 0, v98, v99, v100, 0x1000, v60, "wrtout.F90");
             v101 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffbf4);
-            fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbe8, reinterpret_cast<int32_t>(ebp9) + 0xfffffbe4, 0x1f4, v101, 0, v102, v103, v104, 0x1000, v60, 0x80742ba, 0x9e, v105, v106, v107, v108, v109, v110, v111, v112, 0x80742c5, 3);
+            fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbe8, reinterpret_cast<int32_t>(ebp9) + 0xfffffbe4, 0x1f4, v101, 0, v102, v103, v104, 0x1000, v60, "wrtout.F90", 0x9e, v105, v106, v107, v108, v109, v110, v111, v112, "(a)BUG", 3);
             v113 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cc0(ecx, v113, v114, v115, v101, 0, v116, v117, v118, 0x1000, v60, 0x80742ba, ecx, v113, v114, v115, v101, 0, v119, v120, v121, 0x1000, v60, 0x80742ba);
+            fun_8048cc0(ecx, v113, v114, v115, v101, 0, v116, v117, v118, 0x1000, v60, "wrtout.F90", ecx, v113, v114, v115, v101, 0, v119, v120, v121, 0x1000, v60, "wrtout.F90");
             if (!(reinterpret_cast<uint1_t>(v122 < 0) | reinterpret_cast<uint1_t>(v122 == 0)) && v123) {
-                fun_8048bc0(ecx, v123, v114, v115, v101, 0, v124, v125, v126, 0x1000, v60, 0x80742ba, 0x9e, v127, v128, v129, v130, v131, v132, v133, v134, 0x80742c5, 3);
+                fun_8048bc0(ecx, v123, v114, v115, v101, 0, v124, v125, v126, 0x1000, v60, "wrtout.F90", 0x9e, v127, v128, v129, v130, v131, v132, v133, v134, "(a)BUG", 3);
             }
             v135 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048b50(ecx, v135, v114, v115, v101, 0, v136, v137, v138, 0x1000, v60, 0x80742ba, ecx, v135, v114, v115, v101, 0, v139, v140, v141, 0x1000, v60, 0x80742ba);
+            fun_8048b50(ecx, v135, v114, v115, v101, 0, v136, v137, v138, 0x1000, v60, "wrtout.F90", ecx, v135, v114, v115, v101, 0, v139, v140, v141, 0x1000, v60, "wrtout.F90");
             eax142 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(v54) + 1);
             edx143 = reinterpret_cast<void**>(1 - reinterpret_cast<uint32_t>(eax142) + reinterpret_cast<uint32_t>(v50));
             ecx = reinterpret_cast<void**>(0);
@@ -24546,28 +24546,28 @@ void** wrtout_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
                 ebx144 = edx143;
             }
             if (reinterpret_cast<int32_t>(ebx144) <= reinterpret_cast<int32_t>(0x1f3)) {
-                fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffde8, reinterpret_cast<int32_t>(ebp9) - 0x218 + (reinterpret_cast<uint32_t>(eax142) - 1), ebx144, v101, 0, v145, v146, v147, 0x1000, v60, 0x80742ba, 0x9e, v148, v149, v150, v151, v152, v153, v154, v155, 0x80742c5, 3);
+                fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffde8, reinterpret_cast<int32_t>(ebp9) - 0x218 + (reinterpret_cast<uint32_t>(eax142) - 1), ebx144, v101, 0, v145, v146, v147, 0x1000, v60, "wrtout.F90", 0x9e, v148, v149, v150, v151, v152, v153, v154, v155, "(a)BUG", 3);
                 ecx = ebx144;
-                fun_8048b90(reinterpret_cast<int32_t>(ebp9) - 0x218 + reinterpret_cast<uint32_t>(ecx), 32, 0x1f4 - reinterpret_cast<uint32_t>(ebx144), v101, 0, v156, v157, v158, 0x1000, v60, 0x80742ba, 0x9e, v159, v160, v161, v162, v163, v164, v165, v166, 0x80742c5, 3, v167);
+                fun_8048b90(reinterpret_cast<int32_t>(ebp9) - 0x218 + reinterpret_cast<uint32_t>(ecx), 32, 0x1f4 - reinterpret_cast<uint32_t>(ebx144), v101, 0, v156, v157, v158, 0x1000, v60, "wrtout.F90", 0x9e, v159, v160, v161, v162, v163, v164, v165, v166, "(a)BUG", 3, v167);
             } else {
-                fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffde8, reinterpret_cast<int32_t>(ebp9) - 0x218 + (reinterpret_cast<uint32_t>(eax142) - 1), 0x1f4, v101, 0, v168, v169, v170, 0x1000, v60, 0x80742ba, 0x9e, v171, v172, v173, v174, v175, v176, v177, v178, 0x80742c5, 3);
+                fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffde8, reinterpret_cast<int32_t>(ebp9) - 0x218 + (reinterpret_cast<uint32_t>(eax142) - 1), 0x1f4, v101, 0, v168, v169, v170, 0x1000, v60, "wrtout.F90", 0x9e, v171, v172, v173, v174, v175, v176, v177, v178, "(a)BUG", 3);
             }
             v50 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(v50) - reinterpret_cast<uint32_t>(v54));
             v51 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffde8);
-            eax180 = fun_8048d00(0x1f4, v51, 1, 0x80742b9, 0, v179);
+            eax180 = fun_8048d00(0x1f4, v51, 1, "\nwrtout.F90", 0, v179);
             v54 = eax180;
         }
         v11 = reinterpret_cast<void**>(0xa3);
-        v181 = reinterpret_cast<void**>(0x80742c5);
+        v181 = reinterpret_cast<void**>("(a)BUG");
         v182 = reinterpret_cast<void**>(3);
         v12 = reinterpret_cast<void**>(0x1000);
         v13 = *reinterpret_cast<void***>(a2);
         v183 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-        fun_8048cd0(ecx, v183, v51, 1, 0x80742b9, 0, v184, v185, v186, 0x1000, v13, 0x80742ba, ecx, v183, v51, 1, 0x80742b9, 0, v187, v188, v189, 0x1000, v13, 0x80742ba);
+        fun_8048cd0(ecx, v183, v51, 1, "\nwrtout.F90", 0, v184, v185, v186, 0x1000, v13, "wrtout.F90", ecx, v183, v51, 1, "\nwrtout.F90", 0, v187, v188, v189, 0x1000, v13, "wrtout.F90");
         v190 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffde8);
-        fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbe0, reinterpret_cast<int32_t>(ebp9) + 0xfffffbdc, 0x1f4, v190, 0, v191, v192, v193, 0x1000, v13, 0x80742ba, 0xa3, v194, v195, v196, v197, v198, v199, v200, v201, 0x80742c5, 3);
+        fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbe0, reinterpret_cast<int32_t>(ebp9) + 0xfffffbdc, 0x1f4, v190, 0, v191, v192, v193, 0x1000, v13, "wrtout.F90", 0xa3, v194, v195, v196, v197, v198, v199, v200, v201, "(a)BUG", 3);
         v202 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-        fun_8048cc0(ecx, v202, v203, v204, v190, 0, v205, v206, v207, 0x1000, v13, 0x80742ba, ecx, v202, v203, v204, v190, 0, v208, v209, v210, 0x1000, v13, 0x80742ba);
+        fun_8048cc0(ecx, v202, v203, v204, v190, 0, v205, v206, v207, 0x1000, v13, "wrtout.F90", ecx, v202, v203, v204, v190, 0, v208, v209, v210, 0x1000, v13, "wrtout.F90");
         if (reinterpret_cast<uint1_t>(v211 < 0) | reinterpret_cast<uint1_t>(v211 == 0)) 
             goto addr_806fd07_19;
         if (!v212) 
@@ -24575,128 +24575,128 @@ void** wrtout_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
             goto addr_806fcff_21;
     }
     addr_806fd5c_22:
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbd8, reinterpret_cast<int32_t>(ebp9) + 0xfffffbd4, 0x1f4, a3, 0, v213, v214, v215, v12, v13, 0x80742ba, v11, v216, v217, v218, v219, v220, v221, v222, v223, 0x80742c5, 3);
-    eax227 = fun_8048d00(v224, v225, 3, 0x80742c8, 0, v226);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbd8, reinterpret_cast<int32_t>(ebp9) + 0xfffffbd4, 0x1f4, a3, 0, v213, v214, v215, v12, v13, "wrtout.F90", v11, v216, v217, v218, v219, v220, v221, v222, v223, "(a)BUG", 3);
+    eax227 = fun_8048d00(v224, v225, 3, "BUG", 0, v226);
     if (!(reinterpret_cast<uint1_t>(v228 < 0) | reinterpret_cast<uint1_t>(v228 == 0)) && v229) {
-        fun_8048bc0(ecx, v229, v225, 3, 0x80742c8, 0, v230, v231, v232, v12, v13, 0x80742ba, v11, v233, v234, v235, v236, v237, v238, v239, v240, 0x80742c5, 3);
+        fun_8048bc0(ecx, v229, v225, 3, "BUG", 0, v230, v231, v232, v12, v13, "wrtout.F90", v11, v233, v234, v235, v236, v237, v238, v239, v240, "(a)BUG", 3);
     }
     if (reinterpret_cast<uint1_t>(!!eax227)) {
-        v181 = reinterpret_cast<void**>(0x80742c5);
+        v181 = reinterpret_cast<void**>("(a)BUG");
         v182 = reinterpret_cast<void**>(3);
         v241 = *reinterpret_cast<void***>(a2);
         v242 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-        fun_8048cd0(ecx, v242, v225, 3, 0x80742c8, 0, v243, v244, v245, 0x1000, v241, 0x80742ba, ecx, v242, v225, 3, 0x80742c8, 0, v246, v247, v248, 0x1000, v241, 0x80742ba);
+        fun_8048cd0(ecx, v242, v225, 3, "BUG", 0, v243, v244, v245, 0x1000, v241, "wrtout.F90", ecx, v242, v225, 3, "BUG", 0, v246, v247, v248, 0x1000, v241, "wrtout.F90");
         v249 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-        fun_8048cc0(ecx, v249, 0x80742cc, 32, 0x80742c8, 0, v250, v251, v252, 0x1000, v241, 0x80742ba, ecx, v249, 0x80742cc, 32, 0x80742c8, 0, v253, v254, v255, 0x1000, v241, 0x80742ba);
+        fun_8048cc0(ecx, v249, "  Action : contact ABINIT group.Calculation completed(a,i5,a,i4,a).Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 32, "BUG", 0, v250, v251, v252, 0x1000, v241, "wrtout.F90", ecx, v249, "  Action : contact ABINIT group.Calculation completed(a,i5,a,i4,a).Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 32, "BUG", 0, v253, v254, v255, 0x1000, v241, "wrtout.F90");
         v256 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-        fun_8048b50(ecx, v256, 0x80742cc, 32, 0x80742c8, 0, v257, v258, v259, 0x1000, v241, 0x80742ba, ecx, v256, 0x80742cc, 32, 0x80742c8, 0, v260, v261, v262, 0x1000, v241, 0x80742ba);
+        fun_8048b50(ecx, v256, "  Action : contact ABINIT group.Calculation completed(a,i5,a,i4,a).Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 32, "BUG", 0, v257, v258, v259, 0x1000, v241, "wrtout.F90", ecx, v256, "  Action : contact ABINIT group.Calculation completed(a,i5,a,i4,a).Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 32, "BUG", 0, v260, v261, v262, 0x1000, v241, "wrtout.F90");
         v11 = reinterpret_cast<void**>(0xaa);
         v12 = reinterpret_cast<void**>(0x80);
         v13 = *reinterpret_cast<void***>(a2);
         v263 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-        fun_8048cd0(ecx, v263, 0x80742cc, 32, 0x80742c8, 0, v264, v265, v266, 0x80, v13, 0x80742ba, ecx, v263, 0x80742cc, 32, 0x80742c8, 0, v267, v268, v269, 0x80, v13, 0x80742ba);
+        fun_8048cd0(ecx, v263, "  Action : contact ABINIT group.Calculation completed(a,i5,a,i4,a).Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 32, "BUG", 0, v264, v265, v266, 0x80, v13, "wrtout.F90", ecx, v263, "  Action : contact ABINIT group.Calculation completed(a,i5,a,i4,a).Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 32, "BUG", 0, v267, v268, v269, 0x80, v13, "wrtout.F90");
         v270 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-        fun_8048b50(ecx, v270, 0x80742cc, 32, 0x80742c8, 0, v271, v272, v273, 0x80, v13, 0x80742ba, ecx, v270, 0x80742cc, 32, 0x80742c8, 0, v274, v275, v276, 0x80, v13, 0x80742ba);
+        fun_8048b50(ecx, v270, "  Action : contact ABINIT group.Calculation completed(a,i5,a,i4,a).Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 32, "BUG", 0, v271, v272, v273, 0x80, v13, "wrtout.F90", ecx, v270, "  Action : contact ABINIT group.Calculation completed(a,i5,a,i4,a).Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 32, "BUG", 0, v274, v275, v276, 0x80, v13, "wrtout.F90");
     }
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbc8, reinterpret_cast<int32_t>(ebp9) + 0xfffffbc4, 0x1f4, a3, 0, v277, v278, v279, v12, v13, 0x80742ba, v11, v280, v281, v282, v283, v284, v285, v286, v287, 0x80742c5, 3);
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbd0, reinterpret_cast<int32_t>(ebp9) + 0xfffffbcc, 0x1f4, a3, 0, v288, v289, v290, v12, v13, 0x80742ba, v11, v291, v292, v293, v294, v295, v296, v297, v298, 0x80742c5, 3);
-    v299 = reinterpret_cast<void**>(0x80742c8);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbc8, reinterpret_cast<int32_t>(ebp9) + 0xfffffbc4, 0x1f4, a3, 0, v277, v278, v279, v12, v13, "wrtout.F90", v11, v280, v281, v282, v283, v284, v285, v286, v287, "(a)BUG", 3);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbd0, reinterpret_cast<int32_t>(ebp9) + 0xfffffbcc, 0x1f4, a3, 0, v288, v289, v290, v12, v13, "wrtout.F90", v11, v291, v292, v293, v294, v295, v296, v297, v298, "(a)BUG", 3);
+    v299 = reinterpret_cast<void**>("BUG");
     v300 = reinterpret_cast<void**>(3);
     v301 = v302;
-    eax305 = fun_8048d00(v303, v301, 3, 0x80742c8, 0, v304);
-    if (eax305 || (v299 = reinterpret_cast<void**>(0x80742ec), v300 = reinterpret_cast<void**>(21), v301 = v306, eax309 = fun_8048d00(v307, v301, 21, 0x80742ec, 0, v308), !!eax309)) {
+    eax305 = fun_8048d00(v303, v301, 3, "BUG", 0, v304);
+    if (eax305 || (v299 = reinterpret_cast<void**>("Calculation completed(a,i5,a,i4,a).Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT"), v300 = reinterpret_cast<void**>(21), v301 = v306, eax309 = fun_8048d00(v307, v301, 21, "Calculation completed(a,i5,a,i4,a).Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 0, v308), !!eax309)) {
         eax310 = 1;
     } else {
         eax310 = 0;
     }
     if (!(reinterpret_cast<uint1_t>(v311 < 0) | reinterpret_cast<uint1_t>(v311 == 0)) && v312) {
-        fun_8048bc0(ecx, v312, v301, v300, v299, 0, v313, v314, v315, v12, v13, 0x80742ba, v11, v316, v317, v318, v319, v320, v321, v322, v323, 0x80742c5, 3);
+        fun_8048bc0(ecx, v312, v301, v300, v299, 0, v313, v314, v315, v12, v13, "wrtout.F90", v11, v316, v317, v318, v319, v320, v321, v322, v323, "(a)BUG", 3);
     }
     if (!(reinterpret_cast<uint1_t>(v324 < 0) | reinterpret_cast<uint1_t>(v324 == 0)) && v325) {
-        fun_8048bc0(ecx, v325, v301, v300, v299, 0, v326, v327, v328, v12, v13, 0x80742ba, v11, v329, v330, v331, v332, v333, v334, v335, v336, 0x80742c5, 3);
+        fun_8048bc0(ecx, v325, v301, v300, v299, 0, v326, v327, v328, v12, v13, "wrtout.F90", v11, v329, v330, v331, v332, v333, v334, v335, v336, "(a)BUG", 3);
     }
     if (eax310) {
         eax337 = nwarning_1508;
         if (eax337 > 0x270f || (eax338 = ncomment_1507, reinterpret_cast<int32_t>(eax338) > reinterpret_cast<int32_t>(0x3e7))) {
             v11 = reinterpret_cast<void**>(0xb4);
-            v181 = reinterpret_cast<void**>(0x807433b);
+            v181 = reinterpret_cast<void**>("(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT");
             v182 = reinterpret_cast<void**>(13);
             v12 = reinterpret_cast<void**>(0x1000);
             v13 = *reinterpret_cast<void***>(a2);
             v339 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cd0(ecx, v339, v301, v300, v299, 0, v340, v341, v342, 0x1000, v13, 0x80742ba, ecx, v339, v301, v300, v299, 0, v343, v344, v345, 0x1000, v13, 0x80742ba);
+            fun_8048cd0(ecx, v339, v301, v300, v299, 0, v340, v341, v342, 0x1000, v13, "wrtout.F90", ecx, v339, v301, v300, v299, 0, v343, v344, v345, 0x1000, v13, "wrtout.F90");
             v346 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cc0(ecx, v346, 0x807430e, 10, v299, 0, v347, v348, v349, 0x1000, v13, 0x80742ba, ecx, v346, 0x807430e, 10, v299, 0, v350, v351, v352, 0x1000, v13, 0x80742ba);
+            fun_8048cc0(ecx, v346, ".Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 10, v299, 0, v347, v348, v349, 0x1000, v13, "wrtout.F90", ecx, v346, ".Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 10, v299, 0, v350, v351, v352, 0x1000, v13, "wrtout.F90");
             v353 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048c50(ecx, v353, 0x80761f4, 4, v299, 0, v354, v355, v356, 0x1000, v13, 0x80742ba, ecx, v353, 0x80761f4, 4, v299, 0, v357, v358, v359, 0x1000, v13, 0x80742ba);
+            fun_8048c50(ecx, v353, 0x80761f4, 4, v299, 0, v354, v355, v356, 0x1000, v13, "wrtout.F90", ecx, v353, 0x80761f4, 4, v299, 0, v357, v358, v359, 0x1000, v13, "wrtout.F90");
             v360 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cc0(ecx, v360, 0x8074318, 13, v299, 0, v361, v362, v363, 0x1000, v13, 0x80742ba, ecx, v360, 0x8074318, 13, v299, 0, v364, v365, v366, 0x1000, v13, 0x80742ba);
+            fun_8048cc0(ecx, v360, " WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 13, v299, 0, v361, v362, v363, 0x1000, v13, "wrtout.F90", ecx, v360, " WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 13, v299, 0, v364, v365, v366, 0x1000, v13, "wrtout.F90");
             v367 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048c50(ecx, v367, 0x80761f8, 4, v299, 0, v368, v369, v370, 0x1000, v13, 0x80742ba, ecx, v367, 0x80761f8, 4, v299, 0, v371, v372, v373, 0x1000, v13, 0x80742ba);
+            fun_8048c50(ecx, v367, 0x80761f8, 4, v299, 0, v368, v369, v370, 0x1000, v13, "wrtout.F90", ecx, v367, 0x80761f8, 4, v299, 0, v371, v372, v373, 0x1000, v13, "wrtout.F90");
             v374 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cc0(ecx, v374, 0x8074325, 22, v299, 0, v375, v376, v377, 0x1000, v13, 0x80742ba, ecx, v374, 0x8074325, 22, v299, 0, v378, v379, v380, 0x1000, v13, 0x80742ba);
+            fun_8048cc0(ecx, v374, " COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 22, v299, 0, v375, v376, v377, 0x1000, v13, "wrtout.F90", ecx, v374, " COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 22, v299, 0, v378, v379, v380, 0x1000, v13, "wrtout.F90");
             v381 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048b50(ecx, v381, 0x8074325, 22, v299, 0, v382, v383, v384, 0x1000, v13, 0x80742ba, ecx, v381, 0x8074325, 22, v299, 0, v385, v386, v387, 0x1000, v13, 0x80742ba);
+            fun_8048b50(ecx, v381, " COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 22, v299, 0, v382, v383, v384, 0x1000, v13, "wrtout.F90", ecx, v381, " COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 22, v299, 0, v385, v386, v387, 0x1000, v13, "wrtout.F90");
         } else {
             v11 = reinterpret_cast<void**>(0xb1);
-            v181 = reinterpret_cast<void**>(0x8074301);
+            v181 = reinterpret_cast<void**>("(a,i5,a,i4,a).Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT");
             v182 = reinterpret_cast<void**>(13);
             v12 = reinterpret_cast<void**>(0x1000);
             v13 = *reinterpret_cast<void***>(a2);
             v388 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cd0(ecx, v388, v301, v300, v299, 0, v389, v390, v391, 0x1000, v13, 0x80742ba, ecx, v388, v301, v300, v299, 0, v392, v393, v394, 0x1000, v13, 0x80742ba);
+            fun_8048cd0(ecx, v388, v301, v300, v299, 0, v389, v390, v391, 0x1000, v13, "wrtout.F90", ecx, v388, v301, v300, v299, 0, v392, v393, v394, 0x1000, v13, "wrtout.F90");
             v395 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cc0(ecx, v395, 0x807430e, 10, v299, 0, v396, v397, v398, 0x1000, v13, 0x80742ba, ecx, v395, 0x807430e, 10, v299, 0, v399, v400, v401, 0x1000, v13, 0x80742ba);
+            fun_8048cc0(ecx, v395, ".Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 10, v299, 0, v396, v397, v398, 0x1000, v13, "wrtout.F90", ecx, v395, ".Delivered WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 10, v299, 0, v399, v400, v401, 0x1000, v13, "wrtout.F90");
             v402 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048c50(ecx, v402, 0x80761f4, 4, v299, 0, v403, v404, v405, 0x1000, v13, 0x80742ba, ecx, v402, 0x80761f4, 4, v299, 0, v406, v407, v408, 0x1000, v13, 0x80742ba);
+            fun_8048c50(ecx, v402, 0x80761f4, 4, v299, 0, v403, v404, v405, 0x1000, v13, "wrtout.F90", ecx, v402, 0x80761f4, 4, v299, 0, v406, v407, v408, 0x1000, v13, "wrtout.F90");
             v409 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cc0(ecx, v409, 0x8074318, 13, v299, 0, v410, v411, v412, 0x1000, v13, 0x80742ba, ecx, v409, 0x8074318, 13, v299, 0, v413, v414, v415, 0x1000, v13, 0x80742ba);
+            fun_8048cc0(ecx, v409, " WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 13, v299, 0, v410, v411, v412, 0x1000, v13, "wrtout.F90", ecx, v409, " WARNINGs and COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 13, v299, 0, v413, v414, v415, 0x1000, v13, "wrtout.F90");
             v416 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048c50(ecx, v416, 0x80761f8, 4, v299, 0, v417, v418, v419, 0x1000, v13, 0x80742ba, ecx, v416, 0x80761f8, 4, v299, 0, v420, v421, v422, 0x1000, v13, 0x80742ba);
+            fun_8048c50(ecx, v416, 0x80761f8, 4, v299, 0, v417, v418, v419, 0x1000, v13, "wrtout.F90", ecx, v416, 0x80761f8, 4, v299, 0, v420, v421, v422, 0x1000, v13, "wrtout.F90");
             v423 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cc0(ecx, v423, 0x8074325, 22, v299, 0, v424, v425, v426, 0x1000, v13, 0x80742ba, ecx, v423, 0x8074325, 22, v299, 0, v427, v428, v429, 0x1000, v13, 0x80742ba);
+            fun_8048cc0(ecx, v423, " COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 22, v299, 0, v424, v425, v426, 0x1000, v13, "wrtout.F90", ecx, v423, " COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 22, v299, 0, v427, v428, v429, 0x1000, v13, "wrtout.F90");
             v430 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048b50(ecx, v430, 0x8074325, 22, v299, 0, v431, v432, v433, 0x1000, v13, 0x80742ba, ecx, v430, 0x8074325, 22, v299, 0, v434, v435, v436, 0x1000, v13, 0x80742ba);
+            fun_8048b50(ecx, v430, " COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 22, v299, 0, v431, v432, v433, 0x1000, v13, "wrtout.F90", ecx, v430, " COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 22, v299, 0, v434, v435, v436, 0x1000, v13, "wrtout.F90");
         }
         eax437 = iexit_1504;
         if (eax437) {
             v11 = reinterpret_cast<void**>(0xb7);
-            v181 = reinterpret_cast<void**>(0x80742c5);
+            v181 = reinterpret_cast<void**>("(a)BUG");
             v182 = reinterpret_cast<void**>(3);
             v12 = reinterpret_cast<void**>(0x1000);
             v13 = *reinterpret_cast<void***>(a2);
             v438 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cd0(ecx, v438, 0x8074325, 22, v299, 0, v439, v440, v441, 0x1000, v13, 0x80742ba, ecx, v438, 0x8074325, 22, v299, 0, v442, v443, v444, 0x1000, v13, 0x80742ba);
+            fun_8048cd0(ecx, v438, " COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 22, v299, 0, v439, v440, v441, 0x1000, v13, "wrtout.F90", ecx, v438, " COMMENTs to log file.(a,i6,a,i6,a) Note : exit requested by the user.ExitWARNINGCOMMENT", 22, v299, 0, v442, v443, v444, 0x1000, v13, "wrtout.F90");
             v445 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cc0(ecx, v445, 0x8074348, 35, v299, 0, v446, v447, v448, 0x1000, v13, 0x80742ba, ecx, v445, 0x8074348, 35, v299, 0, v449, v450, v451, 0x1000, v13, 0x80742ba);
+            fun_8048cc0(ecx, v445, " Note : exit requested by the user.ExitWARNINGCOMMENT", 35, v299, 0, v446, v447, v448, 0x1000, v13, "wrtout.F90", ecx, v445, " Note : exit requested by the user.ExitWARNINGCOMMENT", 35, v299, 0, v449, v450, v451, 0x1000, v13, "wrtout.F90");
             v452 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048b50(ecx, v452, 0x8074348, 35, v299, 0, v453, v454, v455, 0x1000, v13, 0x80742ba, ecx, v452, 0x8074348, 35, v299, 0, v456, v457, v458, 0x1000, v13, 0x80742ba);
+            fun_8048b50(ecx, v452, " Note : exit requested by the user.ExitWARNINGCOMMENT", 35, v299, 0, v453, v454, v455, 0x1000, v13, "wrtout.F90", ecx, v452, " Note : exit requested by the user.ExitWARNINGCOMMENT", 35, v299, 0, v456, v457, v458, 0x1000, v13, "wrtout.F90");
         }
     }
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbc0, reinterpret_cast<int32_t>(ebp9) + 0xfffffbbc, 0x1f4, a3, 0, v459, v460, v461, v12, v13, 0x80742ba, v11, v462, v463, v464, v465, v466, v467, v468, v469, v181, v182);
-    eax473 = fun_8048d00(v470, v471, 4, 0x807436b, 0, v472);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbc0, reinterpret_cast<int32_t>(ebp9) + 0xfffffbbc, 0x1f4, a3, 0, v459, v460, v461, v12, v13, "wrtout.F90", v11, v462, v463, v464, v465, v466, v467, v468, v469, v181, v182);
+    eax473 = fun_8048d00(v470, v471, 4, "ExitWARNINGCOMMENT", 0, v472);
     if (!(reinterpret_cast<uint1_t>(v474 < 0) | reinterpret_cast<uint1_t>(v474 == 0)) && v475) {
-        fun_8048bc0(ecx, v475, v471, 4, 0x807436b, 0, v476, v477, v478, v12, v13, 0x80742ba, v11, v479, v480, v481, v482, v483, v484, v485, v486, v181, v182);
+        fun_8048bc0(ecx, v475, v471, 4, "ExitWARNINGCOMMENT", 0, v476, v477, v478, v12, v13, "wrtout.F90", v11, v479, v480, v481, v482, v483, v484, v485, v486, v181, v182);
     }
     if (reinterpret_cast<uint1_t>(!!eax473)) {
         iexit_1504 = 1;
     }
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbb8, reinterpret_cast<int32_t>(ebp9) + 0xfffffbb4, 0x1f4, a3, 0, v487, v488, v489, v12, v13, 0x80742ba, v11, v490, v491, v492, v493, v494, v495, v496, v497, v181, v182);
-    eax501 = fun_8048d00(v498, v499, 7, 0x807436f, 0, v500);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbb8, reinterpret_cast<int32_t>(ebp9) + 0xfffffbb4, 0x1f4, a3, 0, v487, v488, v489, v12, v13, "wrtout.F90", v11, v490, v491, v492, v493, v494, v495, v496, v497, v181, v182);
+    eax501 = fun_8048d00(v498, v499, 7, "WARNINGCOMMENT", 0, v500);
     if (!eax501 || !reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a2) == 6)) {
         eax502 = 0;
     } else {
         eax502 = 1;
     }
     if (!(reinterpret_cast<uint1_t>(v503 < 0) | reinterpret_cast<uint1_t>(v503 == 0)) && v504) {
-        fun_8048bc0(ecx, v504, v499, 7, 0x807436f, 0, v505, v506, v507, v12, v13, 0x80742ba, v11, v508, v509, v510, v511, v512, v513, v514, v515, v181, v182);
+        fun_8048bc0(ecx, v504, v499, 7, "WARNINGCOMMENT", 0, v505, v506, v507, v12, v13, "wrtout.F90", v11, v508, v509, v510, v511, v512, v513, v514, v515, v181, v182);
     }
     if (eax502) {
         eax516 = nwarning_1508;
         nwarning_1508 = eax516 + 1;
     }
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbb0, reinterpret_cast<int32_t>(ebp9) + 0xfffffbac, 0x1f4, a3, 0, v517, v518, v519, v12, v13, 0x80742ba, v11, v520, v521, v522, v523, v524, v525, v526, v527, v181, v182);
-    eax531 = fun_8048d00(v528, v529, 7, 0x8074376, 0, v530);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffbb0, reinterpret_cast<int32_t>(ebp9) + 0xfffffbac, 0x1f4, a3, 0, v517, v518, v519, v12, v13, "wrtout.F90", v11, v520, v521, v522, v523, v524, v525, v526, v527, v181, v182);
+    eax531 = fun_8048d00(v528, v529, 7, "COMMENT", 0, v530);
     if (!eax531 || !reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a2) == 6)) {
         eax532 = 0;
     } else {
@@ -24704,7 +24704,7 @@ void** wrtout_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
     }
     eax533 = v534;
     if (!(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax533) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax533 == 0)) && (eax533 = v535, !!eax533)) {
-        eax533 = fun_8048bc0(ecx, eax533, v529, 7, 0x8074376, 0, v536, v537, v538, v12, v13, 0x80742ba, v11, v539, v540, v541, v542, v543, v544, v545, v546, v181, v182);
+        eax533 = fun_8048bc0(ecx, eax533, v529, 7, "COMMENT", 0, v536, v537, v538, v12, v13, "wrtout.F90", v11, v539, v540, v541, v542, v543, v544, v545, v546, v181, v182);
     }
     if (eax532) {
         eax547 = ncomment_1507;
@@ -24715,7 +24715,7 @@ void** wrtout_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
         while (v54) {
             v548 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffbed);
             v549 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffba4);
-            fun_8048c20(8, v549, 7, v548, 1, 0x80742b8, v550, v551, v12, v13, 0x80742ba, v11, v552, v553, v554, v555, v556, v557, v558, v559, v181, v182);
+            fun_8048c20(8, v549, 7, v548, 1, " \nwrtout.F90", v550, v551, v12, v13, "wrtout.F90", v11, v552, v553, v554, v555, v556, v557, v558, v559, v181, v182);
             ebx560 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v54) + 0xffffffff);
             eax561 = reinterpret_cast<void**>(0);
             if (reinterpret_cast<int32_t>(ebx560) >= reinterpret_cast<int32_t>(0)) {
@@ -24723,14 +24723,14 @@ void** wrtout_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
             }
             eax562 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax561 + 2) << 5);
             if (reinterpret_cast<int32_t>(eax562) < reinterpret_cast<int32_t>(0)) {
-                eax562 = fun_8048c80(ecx, "Attempt to allocate a negative amount of memory.", v549, 7, v548, 1, 0x80742b8, v563, v564, v12, v13, 0x80742ba, v11, v565, v566, v567, v568, v569, v570, v571, v572, v181, v182);
+                eax562 = fun_8048c80(ecx, "Attempt to allocate a negative amount of memory.", v549, 7, v548, 1, " \nwrtout.F90", v563, v564, v12, v13, "wrtout.F90", v11, v565, v566, v567, v568, v569, v570, v571, v572, v181, v182);
             }
             if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax562) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax562 == 0)) {
                 eax562 = reinterpret_cast<void**>(1);
             }
-            eax583 = fun_8048ce0(ecx, eax562, v549, 7, v548, 1, 0x80742b8, v573, v574, v12, v13, 0x80742ba, v11, v575, v576, v577, v578, v579, v580, v581, v582, v181, v182);
+            eax583 = fun_8048ce0(ecx, eax562, v549, 7, v548, 1, " \nwrtout.F90", v573, v574, v12, v13, "wrtout.F90", v11, v575, v576, v577, v578, v579, v580, v581, v582, v181, v182);
             if (!eax583) {
-                eax583 = fun_8048b10(ecx, "Memory allocation failed", v549, 7, v548, 1, 0x80742b8, v584, v585, v12, v13, 0x80742ba, v11, v586, v587, v588, v589, v590, v591, v592, v593, v181, v182);
+                eax583 = fun_8048b10(ecx, "Memory allocation failed", v549, 7, v548, 1, " \nwrtout.F90", v584, v585, v12, v13, "wrtout.F90", v11, v586, v587, v588, v589, v590, v591, v592, v593, v181, v182);
             }
             edx594 = reinterpret_cast<void**>(0);
             if (reinterpret_cast<int32_t>(ebx560) >= reinterpret_cast<int32_t>(0)) {
@@ -24743,42 +24743,42 @@ void** wrtout_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
             ecx596 = a3;
             v597 = ecx596;
             v598 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffba4);
-            fun_8048c20(ecx595 + 2, eax583, 8, v598, edx594, v597, v599, v600, v12, v13, 0x80742ba, v11, v601, v602, v603, v604, v605, v606, v607, v608, v181, v182);
+            fun_8048c20(ecx595 + 2, eax583, 8, v598, edx594, v597, v599, v600, v12, v13, "wrtout.F90", v11, v601, v602, v603, v604, v605, v606, v607, v608, v181, v182);
             eax609 = reinterpret_cast<void**>(0);
             if (reinterpret_cast<int32_t>(ebx560) >= reinterpret_cast<int32_t>(0)) {
                 eax609 = ebx560;
             }
             ebx610 = eax609 + 2;
             if (reinterpret_cast<int32_t>(ebx610) <= reinterpret_cast<int32_t>(0x1f3)) {
-                fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffbf4, eax583, ebx610, v598, edx594, v597, v611, v612, v12, v13, 0x80742ba, v11, v613, v614, v615, v616, v617, v618, v619, v620, v181, v182);
+                fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffbf4, eax583, ebx610, v598, edx594, v597, v611, v612, v12, v13, "wrtout.F90", v11, v613, v614, v615, v616, v617, v618, v619, v620, v181, v182);
                 ecx596 = ebx610;
                 v621 = reinterpret_cast<void**>(0x1f4 - reinterpret_cast<uint32_t>(ebx610));
                 v622 = reinterpret_cast<void**>(32);
-                fun_8048b90(reinterpret_cast<int32_t>(ebp9) - 0x40c + reinterpret_cast<uint32_t>(ecx596), 32, v621, v598, edx594, v597, v623, v624, v12, v13, 0x80742ba, v11, v625, v626, v627, v628, v629, v630, v631, v632, v181, v182, v633);
+                fun_8048b90(reinterpret_cast<int32_t>(ebp9) - 0x40c + reinterpret_cast<uint32_t>(ecx596), 32, v621, v598, edx594, v597, v623, v624, v12, v13, "wrtout.F90", v11, v625, v626, v627, v628, v629, v630, v631, v632, v181, v182, v633);
             } else {
                 v621 = reinterpret_cast<void**>(0x1f4);
                 v622 = eax583;
-                fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffbf4, v622, 0x1f4, v598, edx594, v597, v634, v635, v12, v13, 0x80742ba, v11, v636, v637, v638, v639, v640, v641, v642, v643, v181, v182);
+                fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffbf4, v622, 0x1f4, v598, edx594, v597, v634, v635, v12, v13, "wrtout.F90", v11, v636, v637, v638, v639, v640, v641, v642, v643, v181, v182);
             }
             if (eax583) {
-                fun_8048bc0(ecx596, eax583, v622, v621, v598, edx594, v597, v644, v645, v12, v13, 0x80742ba, v11, v646, v647, v648, v649, v650, v651, v652, v653, v181, v182);
+                fun_8048bc0(ecx596, eax583, v622, v621, v598, edx594, v597, v644, v645, v12, v13, "wrtout.F90", v11, v646, v647, v648, v649, v650, v651, v652, v653, v181, v182);
             }
             v11 = reinterpret_cast<void**>(0xdc);
-            v181 = reinterpret_cast<void**>(0x80742c5);
+            v181 = reinterpret_cast<void**>("(a)BUG");
             v182 = reinterpret_cast<void**>(3);
             v12 = reinterpret_cast<void**>(0x1000);
             v13 = *reinterpret_cast<void***>(a2);
             v654 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cd0(ecx596, v654, v622, v621, v598, edx594, v597, v655, v656, 0x1000, v13, 0x80742ba, ecx596, v654, v622, v621, v598, edx594, v597, v657, v658, 0x1000, v13, 0x80742ba);
+            fun_8048cd0(ecx596, v654, v622, v621, v598, edx594, v597, v655, v656, 0x1000, v13, "wrtout.F90", ecx596, v654, v622, v621, v598, edx594, v597, v657, v658, 0x1000, v13, "wrtout.F90");
             v659 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffbf4);
-            fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffba0, reinterpret_cast<int32_t>(ebp9) + 0xfffffb9c, 0x1f4, v659, edx594, v597, v660, v661, 0x1000, v13, 0x80742ba, 0xdc, v662, v663, v664, v665, v666, v667, v668, v669, 0x80742c5, 3);
+            fun_8048ca0(reinterpret_cast<int32_t>(ebp9) + 0xfffffba0, reinterpret_cast<int32_t>(ebp9) + 0xfffffb9c, 0x1f4, v659, edx594, v597, v660, v661, 0x1000, v13, "wrtout.F90", 0xdc, v662, v663, v664, v665, v666, v667, v668, v669, "(a)BUG", 3);
             v670 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048cc0(ecx596, v670, v671, v672, v659, edx594, v597, v673, v674, 0x1000, v13, 0x80742ba, ecx596, v670, v671, v672, v659, edx594, v597, v675, v676, 0x1000, v13, 0x80742ba);
+            fun_8048cc0(ecx596, v670, v671, v672, v659, edx594, v597, v673, v674, 0x1000, v13, "wrtout.F90", ecx596, v670, v671, v672, v659, edx594, v597, v675, v676, 0x1000, v13, "wrtout.F90");
             if (!(reinterpret_cast<uint1_t>(v677 < 0) | reinterpret_cast<uint1_t>(v677 == 0)) && v678) {
-                fun_8048bc0(ecx596, v678, v671, v672, v659, edx594, v597, v679, v680, 0x1000, v13, 0x80742ba, 0xdc, v681, v682, v683, v684, v685, v686, v687, v688, 0x80742c5, 3);
+                fun_8048bc0(ecx596, v678, v671, v672, v659, edx594, v597, v679, v680, 0x1000, v13, "wrtout.F90", 0xdc, v681, v682, v683, v684, v685, v686, v687, v688, "(a)BUG", 3);
             }
             v689 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-            fun_8048b50(ecx596, v689, v671, v672, v659, edx594, v597, v690, v691, 0x1000, v13, 0x80742ba, ecx596, v689, v671, v672, v659, edx594, v597, v692, v693, 0x1000, v13, 0x80742ba);
+            fun_8048b50(ecx596, v689, v671, v672, v659, edx594, v597, v690, v691, 0x1000, v13, "wrtout.F90", ecx596, v689, v671, v672, v659, edx594, v597, v692, v693, 0x1000, v13, "wrtout.F90");
             eax694 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(v54) + 1);
             edx695 = reinterpret_cast<void**>(0x1f5 - reinterpret_cast<uint32_t>(eax694));
             ecx = reinterpret_cast<void**>(0);
@@ -24787,26 +24787,26 @@ void** wrtout_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
                 ebx696 = edx695;
             }
             if (reinterpret_cast<int32_t>(ebx696) <= reinterpret_cast<int32_t>(0x1f3)) {
-                fun_8048d10(a3, reinterpret_cast<uint32_t>(eax694) - 1 + reinterpret_cast<uint32_t>(a3), ebx696, v659, edx594, v597, v697, v698, 0x1000, v13, 0x80742ba, 0xdc, v699, v700, v701, v702, v703, v704, v705, v706, 0x80742c5, 3);
-                fun_8048b90(reinterpret_cast<uint32_t>(ebx696) + reinterpret_cast<uint32_t>(a3), 32, 0x1f4 - reinterpret_cast<uint32_t>(ebx696), v659, edx594, v597, v707, v708, 0x1000, v13, 0x80742ba, 0xdc, v709, v710, v711, v712, v713, v714, v715, v716, 0x80742c5, 3, v717);
+                fun_8048d10(a3, reinterpret_cast<uint32_t>(eax694) - 1 + reinterpret_cast<uint32_t>(a3), ebx696, v659, edx594, v597, v697, v698, 0x1000, v13, "wrtout.F90", 0xdc, v699, v700, v701, v702, v703, v704, v705, v706, "(a)BUG", 3);
+                fun_8048b90(reinterpret_cast<uint32_t>(ebx696) + reinterpret_cast<uint32_t>(a3), 32, 0x1f4 - reinterpret_cast<uint32_t>(ebx696), v659, edx594, v597, v707, v708, 0x1000, v13, "wrtout.F90", 0xdc, v709, v710, v711, v712, v713, v714, v715, v716, "(a)BUG", 3, v717);
             } else {
-                fun_8048d10(a3, reinterpret_cast<uint32_t>(eax694) - 1 + reinterpret_cast<uint32_t>(a3), 0x1f4, v659, edx594, v597, v718, v719, 0x1000, v13, 0x80742ba, 0xdc, v720, v721, v722, v723, v724, v725, v726, v727, 0x80742c5, 3);
+                fun_8048d10(a3, reinterpret_cast<uint32_t>(eax694) - 1 + reinterpret_cast<uint32_t>(a3), 0x1f4, v659, edx594, v597, v718, v719, 0x1000, v13, "wrtout.F90", 0xdc, v720, v721, v722, v723, v724, v725, v726, v727, "(a)BUG", 3);
             }
-            eax728 = fun_8048d00(0x1f4, a3, 1, 0x80742b9, 0, v597);
+            eax728 = fun_8048d00(0x1f4, a3, 1, "\nwrtout.F90", 0, v597);
             v54 = eax728;
         }
-        fun_8048c20(8, reinterpret_cast<int32_t>(ebp9) + 0xfffffb94, 7, reinterpret_cast<int32_t>(ebp9) + 0xfffffbed, 1, 0x80742b8, v729, v730, v12, v13, 0x80742ba, v11, v731, v732, v733, v734, v735, v736, v737, v738, v181, v182);
+        fun_8048c20(8, reinterpret_cast<int32_t>(ebp9) + 0xfffffb94, 7, reinterpret_cast<int32_t>(ebp9) + 0xfffffbed, 1, " \nwrtout.F90", v729, v730, v12, v13, "wrtout.F90", v11, v731, v732, v733, v734, v735, v736, v737, v738, v181, v182);
         v739 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffb94);
-        fun_8048c20(0x1fc, reinterpret_cast<int32_t>(ebp9) + 0xfffff998, 8, v739, 0x1f4, a3, v740, v741, v12, v13, 0x80742ba, v11, v742, v743, v744, v745, v746, v747, v748, v749, v181, v182);
-        eax533 = fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffbf4, reinterpret_cast<int32_t>(ebp9) + 0xfffff998, 0x1f4, v739, 0x1f4, a3, v750, v751, v12, v13, 0x80742ba, v11, v752, v753, v754, v755, v756, v757, v758, v759, v181, v182);
+        fun_8048c20(0x1fc, reinterpret_cast<int32_t>(ebp9) + 0xfffff998, 8, v739, 0x1f4, a3, v740, v741, v12, v13, "wrtout.F90", v11, v742, v743, v744, v745, v746, v747, v748, v749, v181, v182);
+        eax533 = fun_8048d10(reinterpret_cast<int32_t>(ebp9) + 0xfffffbf4, reinterpret_cast<int32_t>(ebp9) + 0xfffff998, 0x1f4, v739, 0x1f4, a3, v750, v751, v12, v13, "wrtout.F90", v11, v752, v753, v754, v755, v756, v757, v758, v759, v181, v182);
     }
     return eax533;
     addr_806fd07_19:
     v760 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff998);
-    fun_8048b50(ecx, v760, v203, v204, v190, 0, v761, v762, v763, 0x1000, v13, 0x80742ba, ecx, v760, v203, v204, v190, 0, v764, v765, v766, 0x1000, v13, 0x80742ba);
+    fun_8048b50(ecx, v760, v203, v204, v190, 0, v761, v762, v763, 0x1000, v13, "wrtout.F90", ecx, v760, v203, v204, v190, 0, v764, v765, v766, 0x1000, v13, "wrtout.F90");
     goto addr_806fd5c_22;
     addr_806fcff_21:
-    fun_8048bc0(ecx, v212, v203, v204, v190, 0, v767, v768, v769, 0x1000, v13, 0x80742ba, 0xa3, v770, v771, v772, v773, v774, v775, v776, v777, 0x80742c5, 3);
+    fun_8048bc0(ecx, v212, v203, v204, v190, 0, v767, v768, v769, 0x1000, v13, "wrtout.F90", 0xa3, v770, v771, v772, v773, v774, v775, v776, v777, "(a)BUG", 3);
     goto addr_806fd07_19;
 }
 
@@ -24887,14 +24887,14 @@ void** leave_new_(void** ecx, int32_t a2, void** a3, void** a4, void** a5, void*
     v10 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffcb0);
     fun_8048cd0(ecx, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, 0x5000, ecx, v10, v20, v21, v22, v23, v24, v25, v26, v27, v28, 0x5000);
     v29 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffcb0);
-    fun_8048cc0(ecx, v29, 0x8074153, 1, v30, v31, v32, v33, v34, v35, v36, 0x5000, ecx, v29, 0x8074153, 1, v37, v38, v39, v40, v41, v42, v43, 0x5000);
+    fun_8048cc0(ecx, v29, "\n leave_new : decision taken to exit ...PERS", 1, v30, v31, v32, v33, v34, v35, v36, 0x5000, ecx, v29, "\n leave_new : decision taken to exit ...PERS", 1, v37, v38, v39, v40, v41, v42, v43, 0x5000);
     v44 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffcb0);
-    fun_8048cc0(ecx, v44, 0x8074154, 39, v45, v46, v47, v48, v49, v50, v51, 0x5000, ecx, v44, 0x8074154, 39, v52, v53, v54, v55, v56, v57, v58, 0x5000);
+    fun_8048cc0(ecx, v44, " leave_new : decision taken to exit ...PERS", 39, v45, v46, v47, v48, v49, v50, v51, 0x5000, ecx, v44, " leave_new : decision taken to exit ...PERS", 39, v52, v53, v54, v55, v56, v57, v58, 0x5000);
     v59 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffcb0);
-    fun_8048b50(ecx, v59, 0x8074154, 39, v60, v61, v62, v63, v64, v65, v66, 0x5000, ecx, v59, 0x8074154, 39, v67, v68, v69, v70, v71, v72, v73, 0x5000);
+    fun_8048b50(ecx, v59, " leave_new : decision taken to exit ...PERS", 39, v60, v61, v62, v63, v64, v65, v66, 0x5000, ecx, v59, " leave_new : decision taken to exit ...PERS", 39, v67, v68, v69, v70, v71, v72, v73, 0x5000);
     v74 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffffe04);
-    wrtout_(ecx, 0x8074180, v74, 0x807417b, 0x1f4, 4, v75, v76);
-    eax77 = leave_myproc_(ecx, 0x8074180, v74, 0x807417b, 0x1f4, 4);
+    wrtout_(ecx, 0x8074180, v74, "PERS", 0x1f4, 4, v75, v76);
+    eax77 = leave_myproc_(ecx, 0x8074180, v74, "PERS", 0x1f4, 4);
     return eax77;
 }
 
@@ -25236,25 +25236,25 @@ void** timab_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6,
             v22 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
             fun_8048cd0(ecx, v22, v23, v24, v25, v26, v27, v28, v29, v30, 0x5000, 0, ecx, v22, v31, v32, v33, v34, v35, v36, v37, v38, 0x5000, 0);
             v39 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-            fun_8048cc0(ecx, v39, 0x80741a1, 1, v40, v41, v42, v43, v44, v45, 0x5000, 0, ecx, v39, 0x80741a1, 1, v46, v47, v48, v49, v50, v51, 0x5000, 0);
+            fun_8048cc0(ecx, v39, "\n timab: BUG -  dim mtim=", 1, v40, v41, v42, v43, v44, v45, 0x5000, 0, ecx, v39, "\n timab: BUG -  dim mtim=", 1, v46, v47, v48, v49, v50, v51, 0x5000, 0);
             v52 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-            fun_8048cc0(ecx, v52, 0x80741a2, 13, v53, v54, v55, v56, v57, v58, 0x5000, 0, ecx, v52, 0x80741a2, 13, v59, v60, v61, v62, v63, v64, 0x5000, 0);
+            fun_8048cc0(ecx, v52, " timab: BUG -  dim mtim=", 13, v53, v54, v55, v56, v57, v58, 0x5000, 0, ecx, v52, " timab: BUG -  dim mtim=", 13, v59, v60, v61, v62, v63, v64, 0x5000, 0);
             v65 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-            fun_8048cc0(ecx, v65, 0x80741a1, 1, v66, v67, v68, v69, v70, v71, 0x5000, 0, ecx, v65, 0x80741a1, 1, v72, v73, v74, v75, v76, v77, 0x5000, 0);
+            fun_8048cc0(ecx, v65, "\n timab: BUG -  dim mtim=", 1, v66, v67, v68, v69, v70, v71, 0x5000, 0, ecx, v65, "\n timab: BUG -  dim mtim=", 1, v72, v73, v74, v75, v76, v77, 0x5000, 0);
             v78 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-            fun_8048cc0(ecx, v78, 0x80741af, 11, v79, v80, v81, v82, v83, v84, 0x5000, 0, ecx, v78, 0x80741af, 11, v85, v86, v87, v88, v89, v90, 0x5000, 0);
+            fun_8048cc0(ecx, v78, "  dim mtim=", 11, v79, v80, v81, v82, v83, v84, 0x5000, 0, ecx, v78, "  dim mtim=", 11, v85, v86, v87, v88, v89, v90, 0x5000, 0);
             v91 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
             fun_8048c50(ecx, v91, 0x80741bc, 4, v92, v93, v94, v95, v96, v97, 0x5000, 0, ecx, v91, 0x80741bc, 4, v98, v99, v100, v101, v102, v103, 0x5000, 0);
             v104 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-            fun_8048cc0(ecx, v104, 0x80741c0, 14, v105, v106, v107, v108, v109, v110, 0x5000, 0, ecx, v104, 0x80741c0, 14, v111, v112, v113, v114, v115, v116, 0x5000, 0);
+            fun_8048cc0(ecx, v104, " but input nn=.PERS", 14, v105, v106, v107, v108, v109, v110, 0x5000, 0, ecx, v104, " but input nn=.PERS", 14, v111, v112, v113, v114, v115, v116, 0x5000, 0);
             v117 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
             fun_8048c50(ecx, v117, a2, 4, v118, v119, v120, v121, v122, v123, 0x5000, 0, ecx, v117, a2, 4, v124, v125, v126, v127, v128, v129, 0x5000, 0);
             v130 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-            fun_8048cc0(ecx, v130, 0x80741ce, 1, v131, v132, v133, v134, v135, v136, 0x5000, 0, ecx, v130, 0x80741ce, 1, v137, v138, v139, v140, v141, v142, 0x5000, 0);
+            fun_8048cc0(ecx, v130, ".PERS", 1, v131, v132, v133, v134, v135, v136, 0x5000, 0, ecx, v130, ".PERS", 1, v137, v138, v139, v140, v141, v142, 0x5000, 0);
             v143 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-            fun_8048b50(ecx, v143, 0x80741ce, 1, v144, v145, v146, v147, v148, v149, 0x5000, 0, ecx, v143, 0x80741ce, 1, v150, v151, v152, v153, v154, v155, 0x5000, 0);
-            wrtout_(ecx, 0x80741d4, reinterpret_cast<int32_t>(ebp20) + 0xfffffdfc, 0x80741cf, 0x1f4, 4, v156, v157);
-            leave_new_(ecx, "PERS", 4, 0x80741cf, 0x1f4, 4, v158, v159);
+            fun_8048b50(ecx, v143, ".PERS", 1, v144, v145, v146, v147, v148, v149, 0x5000, 0, ecx, v143, ".PERS", 1, v150, v151, v152, v153, v154, v155, 0x5000, 0);
+            wrtout_(ecx, 0x80741d4, reinterpret_cast<int32_t>(ebp20) + 0xfffffdfc, "PERS", 0x1f4, 4, v156, v157);
+            leave_new_(ecx, "PERS", 4, "PERS", 0x1f4, 4, v158, v159);
         }
         if (*reinterpret_cast<void***>(a3)) {
             if (!reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a3) == 1)) {
@@ -25262,25 +25262,25 @@ void** timab_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6,
                     if (!reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a3) == 3)) {
                         if (!reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a3) == 4)) {
                             v160 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-                            fun_8048cd0(ecx, v160, 4, 0x80741cf, 0x1f4, 4, v161, v162, v163, v164, 0x5000, 0, ecx, v160, 4, 0x80741cf, 0x1f4, 4, v165, v166, v167, v168, 0x5000, 0);
+                            fun_8048cd0(ecx, v160, 4, "PERS", 0x1f4, 4, v161, v162, v163, v164, 0x5000, 0, ecx, v160, 4, "PERS", 0x1f4, 4, v165, v166, v167, v168, 0x5000, 0);
                             v169 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-                            fun_8048cc0(ecx, v169, 0x80741a1, 1, 0x1f4, 4, v170, v171, v172, v173, 0x5000, 0, ecx, v169, 0x80741a1, 1, 0x1f4, 4, v174, v175, v176, v177, 0x5000, 0);
+                            fun_8048cc0(ecx, v169, "\n timab: BUG -  dim mtim=", 1, 0x1f4, 4, v170, v171, v172, v173, 0x5000, 0, ecx, v169, "\n timab: BUG -  dim mtim=", 1, 0x1f4, 4, v174, v175, v176, v177, 0x5000, 0);
                             v178 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-                            fun_8048cc0(ecx, v178, 0x80741a2, 13, 0x1f4, 4, v179, v180, v181, v182, 0x5000, 0, ecx, v178, 0x80741a2, 13, 0x1f4, 4, v183, v184, v185, v186, 0x5000, 0);
+                            fun_8048cc0(ecx, v178, " timab: BUG -  dim mtim=", 13, 0x1f4, 4, v179, v180, v181, v182, 0x5000, 0, ecx, v178, " timab: BUG -  dim mtim=", 13, 0x1f4, 4, v183, v184, v185, v186, 0x5000, 0);
                             v187 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-                            fun_8048cc0(ecx, v187, 0x80741a1, 1, 0x1f4, 4, v188, v189, v190, v191, 0x5000, 0, ecx, v187, 0x80741a1, 1, 0x1f4, 4, v192, v193, v194, v195, 0x5000, 0);
+                            fun_8048cc0(ecx, v187, "\n timab: BUG -  dim mtim=", 1, 0x1f4, 4, v188, v189, v190, v191, 0x5000, 0, ecx, v187, "\n timab: BUG -  dim mtim=", 1, 0x1f4, 4, v192, v193, v194, v195, 0x5000, 0);
                             v196 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-                            fun_8048cc0(ecx, v196, 0x8074217, 27, 0x1f4, 4, v197, v198, v199, v200, 0x5000, 0, ecx, v196, 0x8074217, 27, 0x1f4, 4, v201, v202, v203, v204, 0x5000, 0);
+                            fun_8048cc0(ecx, v196, "  Input option not valid, =", 27, 0x1f4, 4, v197, v198, v199, v200, 0x5000, 0, ecx, v196, "  Input option not valid, =", 27, 0x1f4, 4, v201, v202, v203, v204, 0x5000, 0);
                             v205 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
                             fun_8048c50(ecx, v205, a3, 4, 0x1f4, 4, v206, v207, v208, v209, 0x5000, 0, ecx, v205, a3, 4, 0x1f4, 4, v210, v211, v212, v213, 0x5000, 0);
                             v214 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-                            fun_8048cc0(ecx, v214, 0x80741ce, 1, 0x1f4, 4, v215, v216, v217, v218, 0x5000, 0, ecx, v214, 0x80741ce, 1, 0x1f4, 4, v219, v220, v221, v222, 0x5000, 0);
+                            fun_8048cc0(ecx, v214, ".PERS", 1, 0x1f4, 4, v215, v216, v217, v218, 0x5000, 0, ecx, v214, ".PERS", 1, 0x1f4, 4, v219, v220, v221, v222, 0x5000, 0);
                             v223 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-                            fun_8048b50(ecx, v223, 0x80741ce, 1, 0x1f4, 4, v224, v225, v226, v227, 0x5000, 0, ecx, v223, 0x80741ce, 1, 0x1f4, 4, v228, v229, v230, v231, 0x5000, 0);
-                            wrtout_(ecx, 0x80741d4, reinterpret_cast<int32_t>(ebp20) + 0xfffffdfc, 0x80741cf, 0x1f4, 4, v232, v233);
-                            eax21 = leave_new_(ecx, "PERS", 4, 0x80741cf, 0x1f4, 4, v234, v235);
+                            fun_8048b50(ecx, v223, ".PERS", 1, 0x1f4, 4, v224, v225, v226, v227, 0x5000, 0, ecx, v223, ".PERS", 1, 0x1f4, 4, v228, v229, v230, v231, 0x5000, 0);
+                            wrtout_(ecx, 0x80741d4, reinterpret_cast<int32_t>(ebp20) + 0xfffffdfc, "PERS", 0x1f4, 4, v232, v233);
+                            eax21 = leave_new_(ecx, "PERS", 4, "PERS", 0x1f4, 4, v234, v235);
                         } else {
-                            timein_(ecx, reinterpret_cast<int32_t>(ebp20) + 0xfffffff0, reinterpret_cast<int32_t>(ebp20) + 0xfffffdf0, 0x80741cf, 0x1f4, 4);
+                            timein_(ecx, reinterpret_cast<int32_t>(ebp20) + 0xfffffff0, reinterpret_cast<int32_t>(ebp20) + 0xfffffdf0, "PERS", 0x1f4, 4);
                             __asm__("fld qword [ebp-0x10]");
                             __asm__("fld qword [eax*8+0x80790e0]");
                             __asm__("fsubp st1, st0");
@@ -25293,22 +25293,22 @@ void** timab_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6,
                         }
                     } else {
                         v236 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-                        fun_8048cd0(ecx, v236, 4, 0x80741cf, 0x1f4, 4, v237, v238, v239, v240, 0x5000, 0, ecx, v236, 4, 0x80741cf, 0x1f4, 4, v241, v242, v243, v244, 0x5000, 0);
+                        fun_8048cd0(ecx, v236, 4, "PERS", 0x1f4, 4, v237, v238, v239, v240, 0x5000, 0, ecx, v236, 4, "PERS", 0x1f4, 4, v241, v242, v243, v244, 0x5000, 0);
                         v245 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-                        fun_8048cc0(ecx, v245, 0x80741a1, 1, 0x1f4, 4, v246, v247, v248, v249, 0x5000, 0, ecx, v245, 0x80741a1, 1, 0x1f4, 4, v250, v251, v252, v253, 0x5000, 0);
+                        fun_8048cc0(ecx, v245, "\n timab: BUG -  dim mtim=", 1, 0x1f4, 4, v246, v247, v248, v249, 0x5000, 0, ecx, v245, "\n timab: BUG -  dim mtim=", 1, 0x1f4, 4, v250, v251, v252, v253, 0x5000, 0);
                         v254 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-                        fun_8048cc0(ecx, v254, 0x80741a2, 13, 0x1f4, 4, v255, v256, v257, v258, 0x5000, 0, ecx, v254, 0x80741a2, 13, 0x1f4, 4, v259, v260, v261, v262, 0x5000, 0);
+                        fun_8048cc0(ecx, v254, " timab: BUG -  dim mtim=", 13, 0x1f4, 4, v255, v256, v257, v258, 0x5000, 0, ecx, v254, " timab: BUG -  dim mtim=", 13, 0x1f4, 4, v259, v260, v261, v262, 0x5000, 0);
                         v263 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-                        fun_8048cc0(ecx, v263, 0x80741a1, 1, 0x1f4, 4, v264, v265, v266, v267, 0x5000, 0, ecx, v263, 0x80741a1, 1, 0x1f4, 4, v268, v269, v270, v271, 0x5000, 0);
+                        fun_8048cc0(ecx, v263, "\n timab: BUG -  dim mtim=", 1, 0x1f4, 4, v264, v265, v266, v267, 0x5000, 0, ecx, v263, "\n timab: BUG -  dim mtim=", 1, 0x1f4, 4, v268, v269, v270, v271, 0x5000, 0);
                         v272 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-                        fun_8048cc0(ecx, v272, 0x80741e4, 36, 0x1f4, 4, v273, v274, v275, v276, 0x5000, 0, ecx, v272, 0x80741e4, 36, 0x1f4, 4, v277, v278, v279, v280, 0x5000, 0);
+                        fun_8048cc0(ecx, v272, " option 3 not valid (use time_accu).(a,a,a,a,i10,a)  Input option not valid, =", 36, 0x1f4, 4, v273, v274, v275, v276, 0x5000, 0, ecx, v272, " option 3 not valid (use time_accu).(a,a,a,a,i10,a)  Input option not valid, =", 36, 0x1f4, 4, v277, v278, v279, v280, 0x5000, 0);
                         v281 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp20) + 0xfffffc9c);
-                        fun_8048b50(ecx, v281, 0x80741e4, 36, 0x1f4, 4, v282, v283, v284, v285, 0x5000, 0, ecx, v281, 0x80741e4, 36, 0x1f4, 4, v286, v287, v288, v289, 0x5000, 0);
-                        wrtout_(ecx, 0x80741d4, reinterpret_cast<int32_t>(ebp20) + 0xfffffdfc, 0x80741cf, 0x1f4, 4, v290, v291);
-                        eax21 = leave_new_(ecx, "PERS", 4, 0x80741cf, 0x1f4, 4, v292, v293);
+                        fun_8048b50(ecx, v281, " option 3 not valid (use time_accu).(a,a,a,a,i10,a)  Input option not valid, =", 36, 0x1f4, 4, v282, v283, v284, v285, 0x5000, 0, ecx, v281, " option 3 not valid (use time_accu).(a,a,a,a,i10,a)  Input option not valid, =", 36, 0x1f4, 4, v286, v287, v288, v289, 0x5000, 0);
+                        wrtout_(ecx, 0x80741d4, reinterpret_cast<int32_t>(ebp20) + 0xfffffdfc, "PERS", 0x1f4, 4, v290, v291);
+                        eax21 = leave_new_(ecx, "PERS", 4, "PERS", 0x1f4, 4, v292, v293);
                     }
                 } else {
-                    timein_(ecx, reinterpret_cast<int32_t>(ebp20) + 0xfffffff0, reinterpret_cast<int32_t>(ebp20) + 0xfffffdf0, 0x80741cf, 0x1f4, 4);
+                    timein_(ecx, reinterpret_cast<int32_t>(ebp20) + 0xfffffff0, reinterpret_cast<int32_t>(ebp20) + 0xfffffdf0, "PERS", 0x1f4, 4);
                     __asm__("fld qword [eax*8+0x8076200]");
                     __asm__("fld qword [ebp-0x10]");
                     __asm__("faddp st1, st0");
@@ -25325,7 +25325,7 @@ void** timab_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6,
                     *reinterpret_cast<void***>((reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2)) + 0xffffffff) * 4 + 0x8078780) = eax21;
                 }
             } else {
-                timein_(ecx, reinterpret_cast<int32_t>(ebp20) + 0xfffffff0, reinterpret_cast<int32_t>(ebp20) + 0xfffffdf0, 0x80741cf, 0x1f4, 4);
+                timein_(ecx, reinterpret_cast<int32_t>(ebp20) + 0xfffffff0, reinterpret_cast<int32_t>(ebp20) + 0xfffffdf0, "PERS", 0x1f4, 4);
                 __asm__("fld qword [ebp-0x10]");
                 __asm__("fstp qword [eax*8+0x80790e0]");
                 eax294 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a2)) + 1);
@@ -25334,8 +25334,8 @@ void** timab_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6,
                 __asm__("fstp qword [eax*8+0x80790e0]");
             }
         } else {
-            fun_8048b90(0x8076200, 0, 0x2570, 0x1f4, 4, v295, v296, v297, v298, 0x5000, 0, 0x8074184, 0x77, v299, v300, v301, v302, v303, v304, v305, 0, 0x807418e, 19);
-            fun_8048b90(0x80790e0, 0, 0x2570, 0x1f4, 4, v306, v307, v308, v309, 0x5000, 0, 0x8074184, 0x77, v310, v311, v312, v313, v314, v315, v316, 0, 0x807418e, 19);
+            fun_8048b90(0x8076200, 0, 0x2570, 0x1f4, 4, v295, v296, v297, v298, 0x5000, 0, "timab.F90", 0x77, v299, v300, v301, v302, v303, v304, v305, 0, "(a,a,a,a,i6,a,i8,a)\n timab: BUG -  dim mtim=", 19);
+            fun_8048b90(0x80790e0, 0, 0x2570, 0x1f4, 4, v306, v307, v308, v309, 0x5000, 0, "timab.F90", 0x77, v310, v311, v312, v313, v314, v315, v316, 0, "(a,a,a,a,i6,a,i8,a)\n timab: BUG -  dim mtim=", 19);
             eax21 = reinterpret_cast<void**>(0);
             edi317 = reinterpret_cast<void***>(0x8078780);
             ecx318 = 0x257;
@@ -25381,11 +25381,11 @@ void** wffreadnpwrec_(void** ecx, void** a2, void** a3, void** a4, void** a5, vo
     if (!*reinterpret_cast<void***>(a7 + 1) || (eax9 = *reinterpret_cast<void***>(a7 + 1), reinterpret_cast<int1_t>(eax9 == 0xffffffff)) && (eax9 = *reinterpret_cast<void***>(a7 + 38), *reinterpret_cast<void***>(a7 + 37) == eax9)) {
         *reinterpret_cast<void***>(a2) = reinterpret_cast<void**>(0);
         v10 = *reinterpret_cast<void***>(a7);
-        fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp8) + 0xfffffea4, v11, v12, v13, v14, v15, v16, 32, v10, 0x80734c8, 95);
-        fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp8) + 0xfffffea4, a5, 4, v17, v18, v19, v20, 32, v10, 0x80734c8, 95);
-        fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp8) + 0xfffffea4, a6, 4, v21, v22, v23, v24, 32, v10, 0x80734c8, 95);
-        fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp8) + 0xfffffea4, a4, 4, v25, v26, v27, v28, 32, v10, 0x80734c8, 95);
-        eax9 = fun_8048be0(ecx, reinterpret_cast<int32_t>(ebp8) + 0xfffffea4, a4, 4, v29, v30, v31, v32, 32, v10, 0x80734c8, 95);
+        fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp8) + 0xfffffea4, v11, v12, v13, v14, v15, v16, 32, v10, "wffreadnpwrec.F90", 95);
+        fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp8) + 0xfffffea4, a5, 4, v17, v18, v19, v20, 32, v10, "wffreadnpwrec.F90", 95);
+        fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp8) + 0xfffffea4, a6, 4, v21, v22, v23, v24, 32, v10, "wffreadnpwrec.F90", 95);
+        fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp8) + 0xfffffea4, a4, 4, v25, v26, v27, v28, 32, v10, "wffreadnpwrec.F90", 95);
+        eax9 = fun_8048be0(ecx, reinterpret_cast<int32_t>(ebp8) + 0xfffffea4, a4, 4, v29, v30, v31, v32, 32, v10, "wffreadnpwrec.F90", 95);
     }
     return eax9;
 }
@@ -25787,26 +25787,26 @@ void writewf_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, 
         v33 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
         fun_8048cd0(0, v33, v22, v34, v35, v36, v37, v38, v39, v31, 0, v29, 0, v33, v22, v40, v41, v42, v43, v44, v45, v31, 0, v29);
         v46 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v46, 0x8072f9c, 1, v47, v48, v49, v50, v51, v31, 0, v29, 0, v46, 0x8072f9c, 1, v52, v53, v54, v55, v56, v31, 0, v29);
+        fun_8048cc0(0, v46, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v47, v48, v49, v50, v51, v31, 0, v29, 0, v46, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v52, v53, v54, v55, v56, v31, 0, v29);
         v57 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v57, 0x8073330, 16, v58, v59, v60, v61, v62, v31, 0, v29, 0, v57, 0x8073330, 16, v63, v64, v65, v66, v67, v31, 0, v29);
+        fun_8048cc0(0, v57, " writewf : BUG -  The argument option should be 2 or 4.", 16, v58, v59, v60, v61, v62, v31, 0, v29, 0, v57, " writewf : BUG -  The argument option should be 2 or 4.", 16, v63, v64, v65, v66, v67, v31, 0, v29);
         v68 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v68, 0x8072f9c, 1, v69, v70, v71, v72, v73, v31, 0, v29, 0, v68, 0x8072f9c, 1, v74, v75, v76, v77, v78, v31, 0, v29);
+        fun_8048cc0(0, v68, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v69, v70, v71, v72, v73, v31, 0, v29, 0, v68, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v74, v75, v76, v77, v78, v31, 0, v29);
         v79 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v79, 0x8073340, 39, v80, v81, v82, v83, v84, v31, 0, v29, 0, v79, 0x8073340, 39, v85, v86, v87, v88, v89, v31, 0, v29);
+        fun_8048cc0(0, v79, "  The argument option should be 2 or 4.", 39, v80, v81, v82, v83, v84, v31, 0, v29, 0, v79, "  The argument option should be 2 or 4.", 39, v85, v86, v87, v88, v89, v31, 0, v29);
         v90 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v90, 0x8072f9c, 1, v91, v92, v93, v94, v95, v31, 0, v29, 0, v90, 0x8072f9c, 1, v96, v97, v98, v99, v100, v31, 0, v29);
+        fun_8048cc0(0, v90, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v91, v92, v93, v94, v95, v31, 0, v29, 0, v90, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v96, v97, v98, v99, v100, v31, 0, v29);
         v101 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v101, 0x8073072, 18, v102, v103, v104, v105, v106, v31, 0, v29, 0, v101, 0x8073072, 18, v107, v108, v109, v110, v111, v31, 0, v29);
+        fun_8048cc0(0, v101, "  However, option=(a,a,a,a,a,a,i4,a,a,i4,a,a,a) rwwf: ERROR -", 18, v102, v103, v104, v105, v106, v31, 0, v29, 0, v101, "  However, option=(a,a,a,a,a,a,i4,a,a,i4,a,a,a) rwwf: ERROR -", 18, v107, v108, v109, v110, v111, v31, 0, v29);
         v112 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
         fun_8048c50(0, v112, a16, 4, v113, v114, v115, v116, v117, v31, 0, v29, 0, v112, a16, 4, v118, v119, v120, v121, v122, v31, 0, v29);
         v123 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v123, 0x8072fe5, 1, v124, v125, v126, v127, v128, v31, 0, v29, 0, v123, 0x8072fe5, 1, v129, v130, v131, v132, v133, v31, 0, v29);
+        fun_8048cc0(0, v123, ".PERS", 1, v124, v125, v126, v127, v128, v31, 0, v29, 0, v123, ".PERS", 1, v129, v130, v131, v132, v133, v31, 0, v29);
         v134 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048b50(0, v134, 0x8072fe5, 1, v135, v136, v137, v138, v139, v31, 0, v29, 0, v134, 0x8072fe5, 1, v140, v141, v142, v143, v144, v31, 0, v29);
-        wrtout_(0, 0x8072fec, reinterpret_cast<int32_t>(ebp19) + 0xfffffdc0, 0x8072fe6, 0x1f4, 4, v145, v146);
+        fun_8048b50(0, v134, ".PERS", 1, v135, v136, v137, v138, v139, v31, 0, v29, 0, v134, ".PERS", 1, v140, v141, v142, v143, v144, v31, 0, v29);
+        wrtout_(0, 0x8072fec, reinterpret_cast<int32_t>(ebp19) + 0xfffffdc0, "PERS", 0x1f4, 4, v145, v146);
         v22 = reinterpret_cast<void**>(4);
-        leave_new_(0, "PERS", 4, 0x8072fe6, 0x1f4, 4, v147, v148);
+        leave_new_(0, "PERS", 4, "PERS", 0x1f4, 4, v147, v148);
     }
     v149 = 0;
     if (!*reinterpret_cast<void***>(a18 + 1) || reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a18 + 1) == 0xffffffff) && *reinterpret_cast<void***>(a18 + 37) == *reinterpret_cast<void***>(a18 + 38)) {
@@ -25814,31 +25814,31 @@ void writewf_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, 
     }
     if (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a11)) < reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a12))) {
         v150 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cd0(0, v150, v22, 0x8072fe6, 0x1f4, 4, v151, v152, v153, v31, 0, v29, 0, v150, v22, 0x8072fe6, 0x1f4, 4, v154, v155, v156, v31, 0, v29);
+        fun_8048cd0(0, v150, v22, "PERS", 0x1f4, 4, v151, v152, v153, v31, 0, v29, 0, v150, v22, "PERS", 0x1f4, 4, v154, v155, v156, v31, 0, v29);
         v157 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v157, 0x8072f9c, 1, 0x1f4, 4, v158, v159, v160, v31, 0, v29, 0, v157, 0x8072f9c, 1, 0x1f4, 4, v161, v162, v163, v31, 0, v29);
+        fun_8048cc0(0, v157, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v158, v159, v160, v31, 0, v29, 0, v157, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v161, v162, v163, v31, 0, v29);
         v164 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v164, 0x8072f9d, 13, 0x1f4, 4, v165, v166, v167, v31, 0, v29, 0, v164, 0x8072f9d, 13, 0x1f4, 4, v168, v169, v170, v31, 0, v29);
+        fun_8048cc0(0, v164, " rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 13, 0x1f4, 4, v165, v166, v167, v31, 0, v29, 0, v164, " rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 13, 0x1f4, 4, v168, v169, v170, v31, 0, v29);
         v171 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v171, 0x8072f9c, 1, 0x1f4, 4, v172, v173, v174, v31, 0, v29, 0, v171, 0x8072f9c, 1, 0x1f4, 4, v175, v176, v177, v31, 0, v29);
+        fun_8048cc0(0, v171, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v172, v173, v174, v31, 0, v29, 0, v171, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v175, v176, v177, v31, 0, v29);
         v178 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v178, 0x8073368, 59, 0x1f4, 4, v179, v180, v181, v31, 0, v29, 0, v178, 0x8073368, 59, 0x1f4, 4, v182, v183, v184, v31, 0, v29);
+        fun_8048cc0(0, v178, "  Writing option of rwwf. One should have nband<=nband_disk, and nband_disk=wffclose.F90", 59, 0x1f4, 4, v179, v180, v181, v31, 0, v29, 0, v178, "  Writing option of rwwf. One should have nband<=nband_disk, and nband_disk=wffclose.F90", 59, 0x1f4, 4, v182, v183, v184, v31, 0, v29);
         v185 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v185, 0x8072f9c, 1, 0x1f4, 4, v186, v187, v188, v31, 0, v29, 0, v185, 0x8072f9c, 1, 0x1f4, 4, v189, v190, v191, v31, 0, v29);
+        fun_8048cc0(0, v185, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v186, v187, v188, v31, 0, v29, 0, v185, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v189, v190, v191, v31, 0, v29);
         v192 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v192, 0x8072fc8, 17, 0x1f4, 4, v193, v194, v195, v31, 0, v29, 0, v192, 0x8072fc8, 17, 0x1f4, 4, v196, v197, v198, v31, 0, v29);
+        fun_8048cc0(0, v192, "  However, nband=, and mband=.PERS", 17, 0x1f4, 4, v193, v194, v195, v31, 0, v29, 0, v192, "  However, nband=, and mband=.PERS", 17, 0x1f4, 4, v196, v197, v198, v31, 0, v29);
         v199 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
         fun_8048c50(0, v199, a11, 4, 0x1f4, 4, v200, v201, v202, v31, 0, v29, 0, v199, a11, 4, 0x1f4, 4, v203, v204, v205, v31, 0, v29);
         v206 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v206, 0x80733a3, 17, 0x1f4, 4, v207, v208, v209, v31, 0, v29, 0, v206, 0x80733a3, 17, 0x1f4, 4, v210, v211, v212, v31, 0, v29);
+        fun_8048cc0(0, v206, ", and nband_disk=wffclose.F90", 17, 0x1f4, 4, v207, v208, v209, v31, 0, v29, 0, v206, ", and nband_disk=wffclose.F90", 17, 0x1f4, 4, v210, v211, v212, v31, 0, v29);
         v213 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
         fun_8048c50(0, v213, a12, 4, 0x1f4, 4, v214, v215, v216, v31, 0, v29, 0, v213, a12, 4, 0x1f4, 4, v217, v218, v219, v31, 0, v29);
         v220 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048cc0(0, v220, 0x8072fe5, 1, 0x1f4, 4, v221, v222, v223, v31, 0, v29, 0, v220, 0x8072fe5, 1, 0x1f4, 4, v224, v225, v226, v31, 0, v29);
+        fun_8048cc0(0, v220, ".PERS", 1, 0x1f4, 4, v221, v222, v223, v31, 0, v29, 0, v220, ".PERS", 1, 0x1f4, 4, v224, v225, v226, v31, 0, v29);
         v227 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp19) + 0xfffffc54);
-        fun_8048b50(0, v227, 0x8072fe5, 1, 0x1f4, 4, v228, v229, v230, v31, 0, v29, 0, v227, 0x8072fe5, 1, 0x1f4, 4, v231, v232, v233, v31, 0, v29);
-        wrtout_(0, 0x8072fec, reinterpret_cast<int32_t>(ebp19) + 0xfffffdc0, 0x8072fe6, 0x1f4, 4, v234, v235);
-        leave_new_(0, "PERS", 4, 0x8072fe6, 0x1f4, 4, v236, v237);
+        fun_8048b50(0, v227, ".PERS", 1, 0x1f4, 4, v228, v229, v230, v31, 0, v29, 0, v227, ".PERS", 1, 0x1f4, 4, v231, v232, v233, v31, 0, v29);
+        wrtout_(0, 0x8072fec, reinterpret_cast<int32_t>(ebp19) + 0xfffffdc0, "PERS", 0x1f4, 4, v234, v235);
+        leave_new_(0, "PERS", 4, "PERS", 0x1f4, 4, v236, v237);
     }
     v238 = a18;
     v239 = a14;
@@ -25959,11 +25959,11 @@ void wffwritenpwrec_(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
     if (!*reinterpret_cast<void***>(a6 + 1) || reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a6 + 1) == 0xffffffff) && *reinterpret_cast<void***>(a6 + 37) == *reinterpret_cast<void***>(a6 + 38)) {
         *reinterpret_cast<void***>(a2) = reinterpret_cast<void**>(0);
         v8 = *reinterpret_cast<void***>(a6);
-        fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffea4, v9, v10, v11, v12, v13, v14, 32, v8, 0x80734da, 65);
-        fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffea4, a4, 4, v15, v16, v17, v18, 32, v8, 0x80734da, 65);
-        fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffea4, a5, 4, v19, v20, v21, v22, 32, v8, 0x80734da, 65);
-        fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffea4, a3, 4, v23, v24, v25, v26, 32, v8, 0x80734da, 65);
-        fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffea4, a3, 4, v27, v28, v29, v30, 32, v8, 0x80734da, 65);
+        fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffea4, v9, v10, v11, v12, v13, v14, 32, v8, "wffwritenpwrec.F90", 65);
+        fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffea4, a4, 4, v15, v16, v17, v18, 32, v8, "wffwritenpwrec.F90", 65);
+        fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffea4, a5, 4, v19, v20, v21, v22, 32, v8, "wffwritenpwrec.F90", 65);
+        fun_8048c50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffea4, a3, 4, v23, v24, v25, v26, 32, v8, "wffwritenpwrec.F90", 65);
+        fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffea4, a3, 4, v27, v28, v29, v30, 32, v8, "wffwritenpwrec.F90", 65);
     }
     return;
 }
@@ -26004,7 +26004,7 @@ void mvrecord_(void** ecx, void** a2, void** a3, void** a4) {
         ebx11 = *reinterpret_cast<void***>(a3);
         v12 = reinterpret_cast<void**>(1);
         if (reinterpret_cast<int32_t>(1) <= reinterpret_cast<int32_t>(ebx11)) {
-            while (*reinterpret_cast<void***>(a2) = reinterpret_cast<void**>(0), v13 = *reinterpret_cast<void***>(a4), fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp5) + 0xfffffe84, v14, v15, v16, v17, v18, v19, 32, v13, 0x8073964, 60), fun_8048be0(ecx, reinterpret_cast<int32_t>(ebp5) + 0xfffffe84, v20, v21, v22, v23, v24, v25, 32, v13, 0x8073964, 60), eax26 = reinterpret_cast<uint1_t>(v12 == ebx11), v12 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v12) + 1), !eax26) {
+            while (*reinterpret_cast<void***>(a2) = reinterpret_cast<void**>(0), v13 = *reinterpret_cast<void***>(a4), fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp5) + 0xfffffe84, v14, v15, v16, v17, v18, v19, 32, v13, "mvrecord.F90", 60), fun_8048be0(ecx, reinterpret_cast<int32_t>(ebp5) + 0xfffffe84, v20, v21, v22, v23, v24, v25, 32, v13, "mvrecord.F90", 60), eax26 = reinterpret_cast<uint1_t>(v12 == ebx11), v12 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v12) + 1), !eax26) {
             }
         }
     }
@@ -26172,17 +26172,17 @@ void* timein_(void** ecx, void** a2, void* a3, void** a4, void** a5, void** a6) 
             v22 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffc30);
             fun_8048cd0(ecx, v22, v13, v12, v11, 10, 10, 10, v23, v24, v25, v26, ecx, v22, v13, v12, v11, 10, 10, 10, v27, v28, v29, v30);
             v31 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffc30);
-            fun_8048cc0(ecx, v31, 0x807424c, 1, v11, 10, 10, 10, v32, v33, v34, v35, ecx, v31, 0x807424c, 1, v11, 10, 10, 10, v36, v37, v38, v39);
+            fun_8048cc0(ecx, v31, "\n timein : BUG -  Problem with month and year numbers.COLL", 1, v11, 10, 10, 10, v32, v33, v34, v35, ecx, v31, "\n timein : BUG -  Problem with month and year numbers.COLL", 1, v11, 10, 10, 10, v36, v37, v38, v39);
             v40 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffc30);
-            fun_8048cc0(ecx, v40, 0x807424d, 15, v11, 10, 10, 10, v41, v42, v43, v44, ecx, v40, 0x807424d, 15, v11, 10, 10, 10, v45, v46, v47, v48);
+            fun_8048cc0(ecx, v40, " timein : BUG -  Problem with month and year numbers.COLL", 15, v11, 10, 10, 10, v41, v42, v43, v44, ecx, v40, " timein : BUG -  Problem with month and year numbers.COLL", 15, v11, 10, 10, 10, v45, v46, v47, v48);
             v49 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffc30);
-            fun_8048cc0(ecx, v49, 0x807424c, 1, v11, 10, 10, 10, v50, v51, v52, v53, ecx, v49, 0x807424c, 1, v11, 10, 10, 10, v54, v55, v56, v57);
+            fun_8048cc0(ecx, v49, "\n timein : BUG -  Problem with month and year numbers.COLL", 1, v11, 10, 10, 10, v50, v51, v52, v53, ecx, v49, "\n timein : BUG -  Problem with month and year numbers.COLL", 1, v11, 10, 10, 10, v54, v55, v56, v57);
             v58 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffc30);
-            fun_8048cc0(ecx, v58, 0x807425c, 38, v11, 10, 10, 10, v59, v60, v61, v62, ecx, v58, 0x807425c, 38, v11, 10, 10, 10, v63, v64, v65, v66);
+            fun_8048cc0(ecx, v58, "  Problem with month and year numbers.COLL", 38, v11, 10, 10, 10, v59, v60, v61, v62, ecx, v58, "  Problem with month and year numbers.COLL", 38, v11, 10, 10, 10, v63, v64, v65, v66);
             v67 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffc30);
-            fun_8048b50(ecx, v67, 0x807425c, 38, v11, 10, 10, 10, v68, v69, v70, v71, ecx, v67, 0x807425c, 38, v11, 10, 10, 10, v72, v73, v74, v75);
-            wrtout_(ecx, 0x8074288, reinterpret_cast<int32_t>(ebp7) + 0xfffffdea, 0x8074282, 0x1f4, 4, 10, 10);
-            leave_new_(ecx, "COLL", 4, 0x8074282, 0x1f4, 4, 10, 10);
+            fun_8048b50(ecx, v67, "  Problem with month and year numbers.COLL", 38, v11, 10, 10, 10, v68, v69, v70, v71, ecx, v67, "  Problem with month and year numbers.COLL", 38, v11, 10, 10, 10, v72, v73, v74, v75);
+            wrtout_(ecx, 0x8074288, reinterpret_cast<int32_t>(ebp7) + 0xfffffdea, "COLL", 0x1f4, 4, 10, 10);
+            leave_new_(ecx, "COLL", 4, "COLL", 0x1f4, 4, 10, 10);
         }
         edx76 = month_init_1506;
         eax77 = month_now_1507;
@@ -26261,8 +26261,8 @@ struct s15 {
     void** f0;
     void** f4;
     signed char[140] pad148;
-    void** f148;
-    void** f152;
+    void** f94;
+    void** f98;
 };
 
 void** hdr_skip_wfftype_(void** ecx, struct s15* a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10);
@@ -28841,40 +28841,40 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     v21 = reinterpret_cast<void**>(0);
     fun_8048bf0(8, "D");
     fun_8048d10(reinterpret_cast<int32_t>(ebp4) + 0xffffffa8, 0x8070900, 24, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40);
-    herald_(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffffa8, 0x807091c, 0x8070918, 24, 6);
-    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, 0x807091c, 0x8070918, 24, 6, v41, v42, v43, v44, v45, v46);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, 0x8070930, 43, 24, 6, v47, v48, v49, v50, v51, v52);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, 0x8070930, 43, 24, 6, v53, v54, v55, v56, v57, v58);
-    fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, 0x8070930, 43, 24, 6, v59, v60, v61, v62, v63, v64);
+    herald_(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffffa8, "5.3.4 optic.F90", 0x8070918, 24, 6);
+    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, "5.3.4 optic.F90", 0x8070918, 24, 6, v41, v42, v43, v44, v45, v46);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, " Please, give the name of the data file ...", 43, 24, 6, v47, v48, v49, v50, v51, v52);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, " Please, give the name of the data file ...", 43, 24, 6, v53, v54, v55, v56, v57, v58);
+    fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, " Please, give the name of the data file ...", 43, 24, 6, v59, v60, v61, v62, v63, v64);
     v65 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffffe30);
     fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v65, 0x84, 24, 6, v66, v67, v68, v69, v70, v71);
     fun_8048be0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v65, 0x84, 24, 6, v72, v73, v74, v75, v76, v77);
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v65, 0x84, 24, 6, v78, v79, v80, v81, v82, v83);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, 0x807095c, 31, 24, 6, v84, v85, v86, v87, v88, v89);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, " The name of the data file is :", 31, 24, 6, v84, v85, v86, v87, v88, v89);
     v90 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffffe30);
     fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v90, 0x84, 24, 6, v91, v92, v93, v94, v95, v96);
     fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v90, 0x84, 24, 6, v97, v98, v99, v100, v101, v102);
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v90, 0x84, 24, 6, v103, v104, v105, v106, v107, v108);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, 0x807097c, 45, 24, 6, v109, v110, v111, v112, v113, v114);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, 0x807097c, 45, 24, 6, v115, v116, v117, v118, v119, v120);
-    fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, 0x807097c, 45, 24, 6, v121, v122, v123, v124, v125, v126);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, " Please, give the name of the output file ...", 45, 24, 6, v109, v110, v111, v112, v113, v114);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, " Please, give the name of the output file ...", 45, 24, 6, v115, v116, v117, v118, v119, v120);
+    fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, " Please, give the name of the output file ...", 45, 24, 6, v121, v122, v123, v124, v125, v126);
     v127 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffffb9c);
     fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v127, 0x84, 24, 6, v128, v129, v130, v131, v132, v133);
     fun_8048be0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v127, 0x84, 24, 6, v134, v135, v136, v137, v138, v139);
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v127, 0x84, 24, 6, v140, v141, v142, v143, v144, v145);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, 0x80709ac, 33, 24, 6, v146, v147, v148, v149, v150, v151);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, " The name of the output file is :", 33, 24, 6, v146, v147, v148, v149, v150, v151);
     v152 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffffb9c);
     fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v152, 0x84, 24, 6, v153, v154, v155, v156, v157, v158);
     fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v152, 0x84, 24, 6, v159, v160, v161, v162, v163, v164);
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v152, 0x84, 24, 6, v165, v166, v167, v168, v169, v170);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, 0x80709d0, 76, 24, 6, v171, v172, v173, v174, v175, v176);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, 0x80709d0, 76, 24, 6, v177, v178, v179, v180, v181, v182);
-    fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, 0x80709d0, 76, 24, 6, v183, v184, v185, v186, v187, v188);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, " Please, give the root name for the (non)linear optical data output file ... The root name of the output files is :formatted\n", 76, 24, 6, v171, v172, v173, v174, v175, v176);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, " Please, give the root name for the (non)linear optical data output file ... The root name of the output files is :formatted\n", 76, 24, 6, v177, v178, v179, v180, v181, v182);
+    fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, " Please, give the root name for the (non)linear optical data output file ... The root name of the output files is :formatted\n", 76, 24, 6, v183, v184, v185, v186, v187, v188);
     v189 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffffa9c);
     fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v189, 0x100, 24, 6, v190, v191, v192, v193, v194, v195);
     fun_8048be0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v189, 0x100, 24, 6, v196, v197, v198, v199, v200, v201);
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v189, 0x100, 24, 6, v202, v203, v204, v205, v206, v207);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, 0x8070a1c, 39, 24, 6, v208, v209, v210, v211, v212, v213);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, " The root name of the output files is :formatted\n", 39, 24, 6, v208, v209, v210, v211, v212, v213);
     v214 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffffa9c);
     fun_8048ca0(reinterpret_cast<int32_t>(ebp4) + 0xffffef44, reinterpret_cast<int32_t>(ebp4) + 0xffffef40, 0x100, v214, 6, v215, v216, v217, v218, v219, v220, v221, v222, v223, v224, v225, v226, v227, v228, v229, v230, v231);
     fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v232, v233, v214, 6, v234, v235, v236, v237, v238, v239);
@@ -28905,19 +28905,19 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     v353 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
     fun_8048cc0(ecx, v353, v352, 0x84, v214, 6, v354, v355, v356, v357, v358, v359, ecx, v353, v352, 0x84, v214, 6, v360, v361, v362, v363, v364, v365);
     fun_8048be0(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v352, 0x84, v214, 6, v366, v367, v368, v369, v370, v371);
-    wffopen_(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffffc0, reinterpret_cast<int32_t>(ebp4) - 0xbd4, reinterpret_cast<int32_t>(ebp4) + 0xfffffdac, reinterpret_cast<int32_t>(ebp4) - 0x998, reinterpret_cast<int32_t>(ebp4) + 0xfffff1b8, reinterpret_cast<int32_t>(ebp4) + 0xfffff60c, reinterpret_cast<int32_t>(ebp4) + 0xfffff5f8, 0x8070a4c, 0x84);
+    wffopen_(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffffc0, reinterpret_cast<int32_t>(ebp4) - 0xbd4, reinterpret_cast<int32_t>(ebp4) + 0xfffffdac, reinterpret_cast<int32_t>(ebp4) - 0x998, reinterpret_cast<int32_t>(ebp4) + 0xfffff1b8, reinterpret_cast<int32_t>(ebp4) + 0xfffff60c, reinterpret_cast<int32_t>(ebp4) + 0xfffff5f8, "\n", 0x84);
     wffopen_(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffffc0, reinterpret_cast<int32_t>(ebp4) - 0xbd4, reinterpret_cast<int32_t>(ebp4) + 0xfffffd28, reinterpret_cast<int32_t>(ebp4) - 0x998, reinterpret_cast<int32_t>(ebp4) + 0xfffff0f0, reinterpret_cast<int32_t>(ebp4) + 0xfffff60c, reinterpret_cast<int32_t>(ebp4) + 0xfffff5f8, 0x8070a50, 0x84);
     wffopen_(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffffc0, reinterpret_cast<int32_t>(ebp4) - 0xbd4, reinterpret_cast<int32_t>(ebp4) + 0xfffffca4, reinterpret_cast<int32_t>(ebp4) - 0x998, reinterpret_cast<int32_t>(ebp4) + 0xfffff028, reinterpret_cast<int32_t>(ebp4) + 0xfffff60c, reinterpret_cast<int32_t>(ebp4) + 0xfffff5f8, 0x8070a54, 0x84);
     v372 = reinterpret_cast<void**>(0x84);
-    v373 = reinterpret_cast<void**>(0x8070a58);
+    v373 = reinterpret_cast<void**>("\r");
     v374 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff5f8);
     v375 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff60c);
     v376 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffef60);
-    wffopen_(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffffc0, reinterpret_cast<int32_t>(ebp4) - 0xbd4, reinterpret_cast<int32_t>(ebp4) + 0xfffffc20, reinterpret_cast<int32_t>(ebp4) - 0x998, v376, v375, v374, 0x8070a58, 0x84);
+    wffopen_(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffffc0, reinterpret_cast<int32_t>(ebp4) - 0xbd4, reinterpret_cast<int32_t>(ebp4) + 0xfffffc20, reinterpret_cast<int32_t>(ebp4) - 0x998, v376, v375, v374, "\r", 0x84);
     v377 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff1b8);
     v378 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff4d8);
     v379 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff670);
-    hdr_io_wfftype_(ecx, reinterpret_cast<int32_t>(ebp4) + 0xfffffeb4, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84);
+    hdr_io_wfftype_(ecx, reinterpret_cast<int32_t>(ebp4) + 0xfffffeb4, v379, v378, v377, v376, v375, v374, "\r", 0x84);
     v380 = v381;
     __asm__("fld qword [ebp+0xfffff80c]");
     __asm__("fstp qword [ebp+0xffffff50]");
@@ -28946,19 +28946,19 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         eax392 = reinterpret_cast<void**>(0);
     }
     if (0) {
-        v378 = reinterpret_cast<void**>(0x8070ab3);
-        v379 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(v382, "At line 180 of file optic.F90", 0x8070abc, 0x8070ab3, v377, v376, v375, v374, 0x8070a58, 0x84, v393, v394, v395, v396, v397, v398, v399, v400, v401, v402, v403, v382, "At line 180 of file optic.F90", 0x8070abc, 0x8070ab3, v377, v376, v375, v374, 0x8070a58, 0x84, v404, v405, v406, v407, v408, v409, v410, v411, v412, v413, v414);
+        v378 = reinterpret_cast<void**>("nband");
+        v379 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(v382, "At line 180 of file optic.F90", "Attempting to allocate already allocated array '%s'", "nband", v377, v376, v375, v374, "\r", 0x84, v393, v394, v395, v396, v397, v398, v399, v400, v401, v402, v403, v382, "At line 180 of file optic.F90", "Attempting to allocate already allocated array '%s'", "nband", v377, v376, v375, v374, "\r", 0x84, v404, v405, v406, v407, v408, v409, v410, v411, v412, v413, v414);
     } else {
         if (reinterpret_cast<int32_t>(eax392) < reinterpret_cast<int32_t>(0)) {
-            eax392 = fun_8048c80(v382, "Attempt to allocate negative amount of memory. Possible integer overflow", v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v415, v416, v417, v418, v419, v420, v421, v422, v423, v424, v425, v426, v427);
+            eax392 = fun_8048c80(v382, "Attempt to allocate negative amount of memory. Possible integer overflow", v379, v378, v377, v376, v375, v374, "\r", 0x84, v415, v416, v417, v418, v419, v420, v421, v422, v423, v424, v425, v426, v427);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax392) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax392 == 0)) {
             eax392 = reinterpret_cast<void**>(1);
         }
-        eax441 = fun_8048ce0(v382, eax392, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v428, v429, v430, v431, v432, v433, v434, v435, v436, v437, v438, v439, v440);
+        eax441 = fun_8048ce0(v382, eax392, v379, v378, v377, v376, v375, v374, "\r", 0x84, v428, v429, v430, v431, v432, v433, v434, v435, v436, v437, v438, v439, v440);
         if (!eax441) {
-            eax441 = fun_8048b10(v382, "Out of memory", v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v442, v443, v444, v445, v446, v447, v448, v449, v450, v451, v452, v453, v454);
+            eax441 = fun_8048b10(v382, "Out of memory", v379, v378, v377, v376, v375, v374, "\r", 0x84, v442, v443, v444, v445, v446, v447, v448, v449, v450, v451, v452, v453, v454);
         }
         v15 = eax441;
         edx455 = reinterpret_cast<void**>(0);
@@ -28972,19 +28972,19 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     addr_8049a4f_27:
     edx457 = reinterpret_cast<void**>(0);
     if (0) {
-        v378 = reinterpret_cast<void**>(0x8070b0e);
-        v379 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(v382, "At line 180 of file optic.F90", 0x8070abc, 0x8070b0e, v377, v376, v375, v374, 0x8070a58, 0x84, v458, v459, v460, v461, v462, v463, v464, v465, v466, v467, v468, v382, "At line 180 of file optic.F90", 0x8070abc, 0x8070b0e, v377, v376, v375, v374, 0x8070a58, 0x84, v469, v470, v471, v472, v473, v474, v475, v476, v477, v478, v479);
+        v378 = reinterpret_cast<void**>("occ");
+        v379 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(v382, "At line 180 of file optic.F90", "Attempting to allocate already allocated array '%s'", "occ", v377, v376, v375, v374, "\r", 0x84, v458, v459, v460, v461, v462, v463, v464, v465, v466, v467, v468, v382, "At line 180 of file optic.F90", "Attempting to allocate already allocated array '%s'", "occ", v377, v376, v375, v374, "\r", 0x84, v469, v470, v471, v472, v473, v474, v475, v476, v477, v478, v479);
     } else {
         if (reinterpret_cast<int32_t>(eax456) < reinterpret_cast<int32_t>(0)) {
-            eax456 = fun_8048c80(v382, "Attempt to allocate negative amount of memory. Possible integer overflow", v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v480, v481, v482, v483, v484, v485, v486, v487, v488, v489, v490, v491, v492);
+            eax456 = fun_8048c80(v382, "Attempt to allocate negative amount of memory. Possible integer overflow", v379, v378, v377, v376, v375, v374, "\r", 0x84, v480, v481, v482, v483, v484, v485, v486, v487, v488, v489, v490, v491, v492);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax456) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax456 == 0)) {
             eax456 = reinterpret_cast<void**>(1);
         }
-        eax506 = fun_8048ce0(v382, eax456, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v493, v494, v495, v496, v497, v498, v499, v500, v501, v502, v503, v504, v505);
+        eax506 = fun_8048ce0(v382, eax456, v379, v378, v377, v376, v375, v374, "\r", 0x84, v493, v494, v495, v496, v497, v498, v499, v500, v501, v502, v503, v504, v505);
         if (!eax506) {
-            eax506 = fun_8048b10(v382, "Out of memory", v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v507, v508, v509, v510, v511, v512, v513, v514, v515, v516, v517, v518, v519);
+            eax506 = fun_8048b10(v382, "Out of memory", v379, v378, v377, v376, v375, v374, "\r", 0x84, v507, v508, v509, v510, v511, v512, v513, v514, v515, v516, v517, v518, v519);
         }
         v16 = eax506;
         __asm__("fld qword [ebp+0xfffff81c]");
@@ -29020,19 +29020,19 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         eax534 = reinterpret_cast<void**>(0);
     }
     if (0) {
-        v378 = reinterpret_cast<void**>(0x8070b12);
-        v379 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx529, "At line 186 of file optic.F90", 0x8070abc, 0x8070b12, v377, v376, v375, v374, 0x8070a58, 0x84, v535, v536, v537, v538, v539, v540, v541, v542, v543, v544, v545, ecx529, "At line 186 of file optic.F90", 0x8070abc, 0x8070b12, v377, v376, v375, v374, 0x8070a58, 0x84, v546, v547, v548, v549, v550, v551, v552, v553, v554, v555, v556);
+        v378 = reinterpret_cast<void**>("symrel");
+        v379 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx529, "At line 186 of file optic.F90", "Attempting to allocate already allocated array '%s'", "symrel", v377, v376, v375, v374, "\r", 0x84, v535, v536, v537, v538, v539, v540, v541, v542, v543, v544, v545, ecx529, "At line 186 of file optic.F90", "Attempting to allocate already allocated array '%s'", "symrel", v377, v376, v375, v374, "\r", 0x84, v546, v547, v548, v549, v550, v551, v552, v553, v554, v555, v556);
     } else {
         if (reinterpret_cast<int32_t>(eax534) < reinterpret_cast<int32_t>(0)) {
-            eax534 = fun_8048c80(ecx529, "Attempt to allocate negative amount of memory. Possible integer overflow", v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v557, v558, v559, v560, v561, v562, v563, v564, v565, v566, v567, v568, v569);
+            eax534 = fun_8048c80(ecx529, "Attempt to allocate negative amount of memory. Possible integer overflow", v379, v378, v377, v376, v375, v374, "\r", 0x84, v557, v558, v559, v560, v561, v562, v563, v564, v565, v566, v567, v568, v569);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax534) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax534 == 0)) {
             eax534 = reinterpret_cast<void**>(1);
         }
-        eax583 = fun_8048ce0(ecx529, eax534, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v570, v571, v572, v573, v574, v575, v576, v577, v578, v579, v580, v581, v582);
+        eax583 = fun_8048ce0(ecx529, eax534, v379, v378, v377, v376, v375, v374, "\r", 0x84, v570, v571, v572, v573, v574, v575, v576, v577, v578, v579, v580, v581, v582);
         if (!eax583) {
-            eax583 = fun_8048b10(ecx529, "Out of memory", v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v584, v585, v586, v587, v588, v589, v590, v591, v592, v593, v594, v595, v596);
+            eax583 = fun_8048b10(ecx529, "Out of memory", v379, v378, v377, v376, v375, v374, "\r", 0x84, v584, v585, v586, v587, v588, v589, v590, v591, v592, v593, v594, v595, v596);
         }
         v20 = eax583;
         edx597 = reinterpret_cast<void*>(0);
@@ -29045,19 +29045,19 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     eax598 = reinterpret_cast<void**>(0);
     addr_8049d7d_59:
     if (0) {
-        v378 = reinterpret_cast<void**>(0x8070b37);
-        v379 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx529, "At line 186 of file optic.F90", 0x8070abc, 0x8070b37, v377, v376, v375, v374, 0x8070a58, 0x84, v599, v600, v601, v602, v603, v604, v605, v606, v607, v608, v609, ecx529, "At line 186 of file optic.F90", 0x8070abc, 0x8070b37, v377, v376, v375, v374, 0x8070a58, 0x84, v610, v611, v612, v613, v614, v615, v616, v617, v618, v619, v620);
+        v378 = reinterpret_cast<void**>("symrec");
+        v379 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx529, "At line 186 of file optic.F90", "Attempting to allocate already allocated array '%s'", "symrec", v377, v376, v375, v374, "\r", 0x84, v599, v600, v601, v602, v603, v604, v605, v606, v607, v608, v609, ecx529, "At line 186 of file optic.F90", "Attempting to allocate already allocated array '%s'", "symrec", v377, v376, v375, v374, "\r", 0x84, v610, v611, v612, v613, v614, v615, v616, v617, v618, v619, v620);
     } else {
         if (reinterpret_cast<int32_t>(eax598) < reinterpret_cast<int32_t>(0)) {
-            eax598 = fun_8048c80(ecx529, "Attempt to allocate negative amount of memory. Possible integer overflow", v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v621, v622, v623, v624, v625, v626, v627, v628, v629, v630, v631, v632, v633);
+            eax598 = fun_8048c80(ecx529, "Attempt to allocate negative amount of memory. Possible integer overflow", v379, v378, v377, v376, v375, v374, "\r", 0x84, v621, v622, v623, v624, v625, v626, v627, v628, v629, v630, v631, v632, v633);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax598) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax598 == 0)) {
             eax598 = reinterpret_cast<void**>(1);
         }
-        eax647 = fun_8048ce0(ecx529, eax598, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v634, v635, v636, v637, v638, v639, v640, v641, v642, v643, v644, v645, v646);
+        eax647 = fun_8048ce0(ecx529, eax598, v379, v378, v377, v376, v375, v374, "\r", 0x84, v634, v635, v636, v637, v638, v639, v640, v641, v642, v643, v644, v645, v646);
         if (!eax647) {
-            eax647 = fun_8048b10(ecx529, "Out of memory", v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v648, v649, v650, v651, v652, v653, v654, v655, v656, v657, v658, v659, v660);
+            eax647 = fun_8048b10(ecx529, "Out of memory", v379, v378, v377, v376, v375, v374, "\r", 0x84, v648, v649, v650, v651, v652, v653, v654, v655, v656, v657, v658, v659, v660);
         }
         v19 = eax647;
         v661 = v662;
@@ -29101,17 +29101,17 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     if (1 <= reinterpret_cast<int32_t>(v691)) {
         while (1) {
             ecx693 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v692) - 1);
-            eax697 = fun_8048cf0(ecx693, reinterpret_cast<int32_t>(ebp4) + 0xffffee14, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v694, v695, v696);
+            eax697 = fun_8048cf0(ecx693, reinterpret_cast<int32_t>(ebp4) + 0xffffee14, v379, v378, v377, v376, v375, v374, "\r", 0x84, v694, v695, v696);
             ecx529 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v692) - 1);
-            eax701 = fun_8048cf0(ecx529, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v698, v699, v700);
+            eax701 = fun_8048cf0(ecx529, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v379, v378, v377, v376, v375, v374, "\r", 0x84, v698, v699, v700);
             ebx526 = eax701;
             v379 = ebx526;
-            mati3inv_(eax697, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84);
+            mati3inv_(eax697, v379, v378, v377, v376, v375, v374, "\r", 0x84);
             if (reinterpret_cast<uint32_t>(v20) + (9 * reinterpret_cast<uint32_t>(ecx693) << 2) != eax697 && eax697) {
-                fun_8048bc0(ecx529, eax697, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v702, v703, v704, v705, v706, v707, v708, v709, v710, v711, v712, v713, v687, ecx529, eax697, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v714, v715, v716, v717, v718, v719, v720, v721, v722, v723, v724, v725, v687);
+                fun_8048bc0(ecx529, eax697, v379, v378, v377, v376, v375, v374, "\r", 0x84, v702, v703, v704, v705, v706, v707, v708, v709, v710, v711, v712, v713, v687, ecx529, eax697, v379, v378, v377, v376, v375, v374, "\r", 0x84, v714, v715, v716, v717, v718, v719, v720, v721, v722, v723, v724, v725, v687);
             }
-            if (reinterpret_cast<uint32_t>(v19) + (9 * reinterpret_cast<uint32_t>(ecx529) << 2) != ebx526 && (v379 = ebx526, fun_8048c10(ecx529, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v726, v727, v728), !!ebx526)) {
-                fun_8048bc0(ecx529, ebx526, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v729, v730, v731, v732, v733, v734, v735, v736, v737, v738, v739, v740, v687, ecx529, ebx526, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v741, v742, v743, v744, v745, v746, v747, v748, v749, v750, v751, v752, v687);
+            if (reinterpret_cast<uint32_t>(v19) + (9 * reinterpret_cast<uint32_t>(ecx529) << 2) != ebx526 && (v379 = ebx526, fun_8048c10(ecx529, reinterpret_cast<int32_t>(ebp4) + 0xffffecc0, v379, v378, v377, v376, v375, v374, "\r", 0x84, v726, v727, v728), !!ebx526)) {
+                fun_8048bc0(ecx529, ebx526, v379, v378, v377, v376, v375, v374, "\r", 0x84, v729, v730, v731, v732, v733, v734, v735, v736, v737, v738, v739, v740, v687, ecx529, ebx526, v379, v378, v377, v376, v375, v374, "\r", 0x84, v741, v742, v743, v744, v745, v746, v747, v748, v749, v750, v751, v752, v687);
             }
             eax753 = reinterpret_cast<uint1_t>(v692 == v691);
             v692 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(v692) + 1);
@@ -29129,19 +29129,19 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         eax755 = reinterpret_cast<void**>(0);
     }
     if (0) {
-        v378 = reinterpret_cast<void**>(0x8070b3e);
-        v379 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx529, "At line 192 of file optic.F90", 0x8070abc, 0x8070b3e, v377, v376, v375, v374, 0x8070a58, 0x84, v756, v757, v758, v759, v760, v761, v762, v763, v764, v765, v766, ecx529, "At line 192 of file optic.F90", 0x8070abc, 0x8070b3e, v377, v376, v375, v374, 0x8070a58, 0x84, v767, v768, v769, v770, v771, v772, v773, v774, v775, v776, v777);
+        v378 = reinterpret_cast<void**>("kpt");
+        v379 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx529, "At line 192 of file optic.F90", "Attempting to allocate already allocated array '%s'", "kpt", v377, v376, v375, v374, "\r", 0x84, v756, v757, v758, v759, v760, v761, v762, v763, v764, v765, v766, ecx529, "At line 192 of file optic.F90", "Attempting to allocate already allocated array '%s'", "kpt", v377, v376, v375, v374, "\r", 0x84, v767, v768, v769, v770, v771, v772, v773, v774, v775, v776, v777);
     } else {
         if (reinterpret_cast<int32_t>(eax755) < reinterpret_cast<int32_t>(0)) {
-            eax755 = fun_8048c80(ecx529, "Attempt to allocate negative amount of memory. Possible integer overflow", v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v778, v779, v780, v781, v782, v783, v784, v785, v786, v787, v788, v789, v687);
+            eax755 = fun_8048c80(ecx529, "Attempt to allocate negative amount of memory. Possible integer overflow", v379, v378, v377, v376, v375, v374, "\r", 0x84, v778, v779, v780, v781, v782, v783, v784, v785, v786, v787, v788, v789, v687);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax755) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax755 == 0)) {
             eax755 = reinterpret_cast<void**>(1);
         }
-        eax802 = fun_8048ce0(ecx529, eax755, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v790, v791, v792, v793, v794, v795, v796, v797, v798, v799, v800, v801, v687);
+        eax802 = fun_8048ce0(ecx529, eax755, v379, v378, v377, v376, v375, v374, "\r", 0x84, v790, v791, v792, v793, v794, v795, v796, v797, v798, v799, v800, v801, v687);
         if (!eax802) {
-            eax802 = fun_8048b10(ecx529, "Out of memory", v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v803, v804, v805, v806, v807, v808, v809, v810, v811, v812, v813, v814, v687);
+            eax802 = fun_8048b10(ecx529, "Out of memory", v379, v378, v377, v376, v375, v374, "\r", 0x84, v803, v804, v805, v806, v807, v808, v809, v810, v811, v812, v813, v814, v687);
         }
         v14 = eax802;
         v815 = v816;
@@ -29180,14 +29180,14 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
             ecx826 = *reinterpret_cast<void***>(v15 + (reinterpret_cast<uint32_t>(v832) + 0xffffffff));
             if (ecx826 != v830) {
                 v833 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-                fun_8048cd0(ecx826, v833, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v834, v835, ecx826, v833, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v836, v837);
+                fun_8048cd0(ecx826, v833, v379, v378, v377, v376, v375, v374, "\r", 0x84, v834, v835, ecx826, v833, v379, v378, v377, v376, v375, v374, "\r", 0x84, v836, v837);
                 v378 = reinterpret_cast<void**>(50);
-                v379 = reinterpret_cast<void**>(0x8070b60);
+                v379 = reinterpret_cast<void**>("optic : Error : nband must be constant across kpts(a,3f10.5,a) rprimd(bohr)      =                    (a,i8) natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp");
                 v838 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-                fun_8048cc0(ecx826, v838, 0x8070b60, 50, v377, v376, v375, v374, 0x8070a58, 0x84, v839, v840, ecx826, v838, 0x8070b60, 50, v377, v376, v375, v374, 0x8070a58, 0x84, v841, v842);
+                fun_8048cc0(ecx826, v838, "optic : Error : nband must be constant across kpts(a,3f10.5,a) rprimd(bohr)      =                    (a,i8) natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 50, v377, v376, v375, v374, "\r", 0x84, v839, v840, ecx826, v838, "optic : Error : nband must be constant across kpts(a,3f10.5,a) rprimd(bohr)      =                    (a,i8) natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 50, v377, v376, v375, v374, "\r", 0x84, v841, v842);
                 v843 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-                fun_8048b50(ecx826, v843, 0x8070b60, 50, v377, v376, v375, v374, 0x8070a58, 0x84, v844, v845, ecx826, v843, 0x8070b60, 50, v377, v376, v375, v374, 0x8070a58, 0x84, v846, v847);
-                eax831 = fun_8048d60(-1, 0x8070b60, 50, v377, v376, v375, v374, 0x8070a58, 0x84);
+                fun_8048b50(ecx826, v843, "optic : Error : nband must be constant across kpts(a,3f10.5,a) rprimd(bohr)      =                    (a,i8) natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 50, v377, v376, v375, v374, "\r", 0x84, v844, v845, ecx826, v843, "optic : Error : nband must be constant across kpts(a,3f10.5,a) rprimd(bohr)      =                    (a,i8) natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 50, v377, v376, v375, v374, "\r", 0x84, v846, v847);
+                eax831 = fun_8048d60(-1, "optic : Error : nband must be constant across kpts(a,3f10.5,a) rprimd(bohr)      =                    (a,i8) natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 50, v377, v376, v375, v374, "\r", 0x84);
             }
             edx848 = reinterpret_cast<uint1_t>(v832 == eax831);
             v832 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v832) + 1);
@@ -29196,88 +29196,88 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         }
     }
     v849 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cd0(ecx826, v849, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v850, v851, ecx826, v849, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v852, v853);
+    fun_8048cd0(ecx826, v849, v379, v378, v377, v376, v375, v374, "\r", 0x84, v850, v851, ecx826, v849, v379, v378, v377, v376, v375, v374, "\r", 0x84, v852, v853);
     v854 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048b50(ecx826, v854, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v855, v856, ecx826, v854, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v857, v858);
+    fun_8048b50(ecx826, v854, v379, v378, v377, v376, v375, v374, "\r", 0x84, v855, v856, ecx826, v854, v379, v378, v377, v376, v375, v374, "\r", 0x84, v857, v858);
     v859 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cd0(ecx826, v859, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v860, v861, ecx826, v859, v379, v378, v377, v376, v375, v374, 0x8070a58, 0x84, v862, v863);
+    fun_8048cd0(ecx826, v859, v379, v378, v377, v376, v375, v374, "\r", 0x84, v860, v861, ecx826, v859, v379, v378, v377, v376, v375, v374, "\r", 0x84, v862, v863);
     v864 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cc0(ecx826, v864, 0x8070b9e, 20, v377, v376, v375, v374, 0x8070a58, 0x84, v865, v866, ecx826, v864, 0x8070b9e, 20, v377, v376, v375, v374, 0x8070a58, 0x84, v867, v868);
+    fun_8048cc0(ecx826, v864, " rprimd(bohr)      =                    (a,i8) natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 20, v377, v376, v375, v374, "\r", 0x84, v865, v866, ecx826, v864, " rprimd(bohr)      =                    (a,i8) natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 20, v377, v376, v375, v374, "\r", 0x84, v867, v868);
     v869 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffef0c);
-    fun_8048bd0(ecx826, reinterpret_cast<int32_t>(ebp4) - 0x1340, v869, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v870);
+    fun_8048bd0(ecx826, reinterpret_cast<int32_t>(ebp4) - 0x1340, v869, 8, 0, v376, v375, v374, "\r", 0x84, v870);
     v871 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048b50(ecx826, v871, v869, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v872, v873, ecx826, v871, v869, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v874, v875);
+    fun_8048b50(ecx826, v871, v869, 8, 0, v376, v375, v374, "\r", 0x84, v872, v873, ecx826, v871, v869, 8, 0, v376, v375, v374, "\r", 0x84, v874, v875);
     v876 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cd0(ecx826, v876, v869, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v877, v878, ecx826, v876, v869, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v879, v880);
+    fun_8048cd0(ecx826, v876, v869, 8, 0, v376, v375, v374, "\r", 0x84, v877, v878, ecx826, v876, v869, 8, 0, v376, v375, v374, "\r", 0x84, v879, v880);
     v881 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cc0(ecx826, v881, 0x8070bb2, 20, 0, v376, v375, v374, 0x8070a58, 0x84, v882, v883, ecx826, v881, 0x8070bb2, 20, 0, v376, v375, v374, 0x8070a58, 0x84, v884, v885);
+    fun_8048cc0(ecx826, v881, "                    (a,i8) natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 20, 0, v376, v375, v374, "\r", 0x84, v882, v883, ecx826, v881, "                    (a,i8) natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 20, 0, v376, v375, v374, "\r", 0x84, v884, v885);
     v886 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffeef4);
-    fun_8048bd0(ecx826, reinterpret_cast<int32_t>(ebp4) - 0x1340, v886, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v887);
+    fun_8048bd0(ecx826, reinterpret_cast<int32_t>(ebp4) - 0x1340, v886, 8, 0, v376, v375, v374, "\r", 0x84, v887);
     v888 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048b50(ecx826, v888, v886, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v889, v890, ecx826, v888, v886, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v891, v892);
+    fun_8048b50(ecx826, v888, v886, 8, 0, v376, v375, v374, "\r", 0x84, v889, v890, ecx826, v888, v886, 8, 0, v376, v375, v374, "\r", 0x84, v891, v892);
     v893 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cd0(ecx826, v893, v886, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v894, v895, ecx826, v893, v886, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v896, v897);
+    fun_8048cd0(ecx826, v893, v886, 8, 0, v376, v375, v374, "\r", 0x84, v894, v895, ecx826, v893, v886, 8, 0, v376, v375, v374, "\r", 0x84, v896, v897);
     v898 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cc0(ecx826, v898, 0x8070bb2, 20, 0, v376, v375, v374, 0x8070a58, 0x84, v899, v900, ecx826, v898, 0x8070bb2, 20, 0, v376, v375, v374, 0x8070a58, 0x84, v901, v902);
+    fun_8048cc0(ecx826, v898, "                    (a,i8) natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 20, 0, v376, v375, v374, "\r", 0x84, v899, v900, ecx826, v898, "                    (a,i8) natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 20, 0, v376, v375, v374, "\r", 0x84, v901, v902);
     v903 = reinterpret_cast<void**>(0);
     v904 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffeedc);
-    fun_8048bd0(ecx826, reinterpret_cast<int32_t>(ebp4) - 0x1340, v904, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v905);
+    fun_8048bd0(ecx826, reinterpret_cast<int32_t>(ebp4) - 0x1340, v904, 8, 0, v376, v375, v374, "\r", 0x84, v905);
     v906 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048b50(ecx826, v906, v904, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v907, v908, ecx826, v906, v904, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v909, v910);
+    fun_8048b50(ecx826, v906, v904, 8, 0, v376, v375, v374, "\r", 0x84, v907, v908, ecx826, v906, v904, 8, 0, v376, v375, v374, "\r", 0x84, v909, v910);
     v911 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cd0(ecx826, v911, v904, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v912, v913, ecx826, v911, v904, 8, 0, v376, v375, v374, 0x8070a58, 0x84, v914, v915);
+    fun_8048cd0(ecx826, v911, v904, 8, 0, v376, v375, v374, "\r", 0x84, v912, v913, ecx826, v911, v904, 8, 0, v376, v375, v374, "\r", 0x84, v914, v915);
     v916 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cc0(ecx826, v916, 0x8070bcc, 20, 0, v376, v375, v374, 0x8070a58, 0x84, v917, v918, ecx826, v916, 0x8070bcc, 20, 0, v376, v375, v374, 0x8070a58, 0x84, v919, v920);
+    fun_8048cc0(ecx826, v916, " natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 20, 0, v376, v375, v374, "\r", 0x84, v917, v918, ecx826, v916, " natom             =(a,2i8) nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 20, 0, v376, v375, v374, "\r", 0x84, v919, v920);
     v921 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff5ec);
     v922 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048c50(ecx826, v922, v921, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v923, v924, ecx826, v922, v921, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v925, v926);
+    fun_8048c50(ecx826, v922, v921, 4, 0, v376, v375, v374, "\r", 0x84, v923, v924, ecx826, v922, v921, 4, 0, v376, v375, v374, "\r", 0x84, v925, v926);
     v927 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048b50(ecx826, v927, v921, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v928, v929, ecx826, v927, v921, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v930, v931);
+    fun_8048b50(ecx826, v927, v921, 4, 0, v376, v375, v374, "\r", 0x84, v928, v929, ecx826, v927, v921, 4, 0, v376, v375, v374, "\r", 0x84, v930, v931);
     v932 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cd0(ecx826, v932, v921, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v933, v934, ecx826, v932, v921, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v935, v936);
+    fun_8048cd0(ecx826, v932, v921, 4, 0, v376, v375, v374, "\r", 0x84, v933, v934, ecx826, v932, v921, 4, 0, v376, v375, v374, "\r", 0x84, v935, v936);
     v937 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cc0(ecx826, v937, 0x8070be7, 20, 0, v376, v375, v374, 0x8070a58, 0x84, v938, v939, ecx826, v937, 0x8070be7, 20, 0, v376, v375, v374, 0x8070a58, 0x84, v940, v941);
+    fun_8048cc0(ecx826, v937, " nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 20, 0, v376, v375, v374, "\r", 0x84, v938, v939, ecx826, v937, " nkpt,mband        =(a, f10.5,a) ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 20, 0, v376, v375, v374, "\r", 0x84, v940, v941);
     v942 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff5cc);
     v943 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048c50(ecx826, v943, v942, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v944, v945, ecx826, v943, v942, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v946, v947);
+    fun_8048c50(ecx826, v943, v942, 4, 0, v376, v375, v374, "\r", 0x84, v944, v945, ecx826, v943, v942, 4, 0, v376, v375, v374, "\r", 0x84, v946, v947);
     v948 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff5fc);
     v949 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048c50(ecx826, v949, v948, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v950, v951, ecx826, v949, v948, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v952, v953);
+    fun_8048c50(ecx826, v949, v948, 4, 0, v376, v375, v374, "\r", 0x84, v950, v951, ecx826, v949, v948, 4, 0, v376, v375, v374, "\r", 0x84, v952, v953);
     v954 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048b50(ecx826, v954, v948, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v955, v956, ecx826, v954, v948, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v957, v958);
+    fun_8048b50(ecx826, v954, v948, 4, 0, v376, v375, v374, "\r", 0x84, v955, v956, ecx826, v954, v948, 4, 0, v376, v375, v374, "\r", 0x84, v957, v958);
     v959 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cd0(ecx826, v959, v948, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v960, v961, ecx826, v959, v948, 4, 0, v376, v375, v374, 0x8070a58, 0x84, v962, v963);
+    fun_8048cd0(ecx826, v959, v948, 4, 0, v376, v375, v374, "\r", 0x84, v960, v961, ecx826, v959, v948, 4, 0, v376, v375, v374, "\r", 0x84, v962, v963);
     v964 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cc0(ecx826, v964, 0x8070c07, 20, 0, v376, v375, v374, 0x8070a58, 0x84, v965, v966, ecx826, v964, 0x8070c07, 20, 0, v376, v375, v374, 0x8070a58, 0x84, v967, v968);
+    fun_8048cc0(ecx826, v964, " ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 20, 0, v376, v375, v374, "\r", 0x84, v965, v966, ecx826, v964, " ecut              = Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 20, 0, v376, v375, v374, "\r", 0x84, v967, v968);
     v969 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffff50);
     v970 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048d50(ecx826, v970, v969, 8, 0, v376, v375, v374, 0x8070a58, 0x84, ecx826, v970, v969, 8, 0, v376, v375, v374, 0x8070a58, 0x84);
+    fun_8048d50(ecx826, v970, v969, 8, 0, v376, v375, v374, "\r", 0x84, ecx826, v970, v969, 8, 0, v376, v375, v374, "\r", 0x84);
     v971 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cc0(ecx826, v971, 0x8070c1b, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v972, v973, ecx826, v971, 0x8070c1b, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v974, v975);
+    fun_8048cc0(ecx826, v971, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v972, v973, ecx826, v971, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v974, v975);
     v976 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048b50(ecx826, v976, 0x8070c1b, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v977, v978, ecx826, v976, 0x8070c1b, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v979, v980);
+    fun_8048b50(ecx826, v976, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v977, v978, ecx826, v976, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v979, v980);
     v981 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cd0(ecx826, v981, 0x8070c1b, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v982, v983, ecx826, v981, 0x8070c1b, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v984, v985);
+    fun_8048cd0(ecx826, v981, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v982, v983, ecx826, v981, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v984, v985);
     v986 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cc0(ecx826, v986, 0x8070c31, 20, 0, v376, v375, v374, 0x8070a58, 0x84, v987, v988, ecx826, v986, 0x8070c31, 20, 0, v376, v375, v374, 0x8070a58, 0x84, v989, v990);
+    fun_8048cc0(ecx826, v986, " fermie            = eVeigtmp", 20, 0, v376, v375, v374, "\r", 0x84, v987, v988, ecx826, v986, " fermie            = eVeigtmp", 20, 0, v376, v375, v374, "\r", 0x84, v989, v990);
     v991 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffffeb8);
     v992 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048d50(ecx826, v992, v991, 8, 0, v376, v375, v374, 0x8070a58, 0x84, ecx826, v992, v991, 8, 0, v376, v375, v374, 0x8070a58, 0x84);
+    fun_8048d50(ecx826, v992, v991, 8, 0, v376, v375, v374, "\r", 0x84, ecx826, v992, v991, 8, 0, v376, v375, v374, "\r", 0x84);
     v993 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cc0(ecx826, v993, 0x8070c1b, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v994, v995, ecx826, v993, 0x8070c1b, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v996, v997);
+    fun_8048cc0(ecx826, v993, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v994, v995, ecx826, v993, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v996, v997);
     __asm__("fld qword [ebp+0xfffffeb8]");
     __asm__("fld qword [0x8071040]");
     __asm__("fmulp st1, st0");
     __asm__("fstp qword [ebp+0xffffeed0]");
     v998 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffeed0);
     v999 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048d50(ecx826, v999, v998, 8, 0, v376, v375, v374, 0x8070a58, 0x84, ecx826, v999, v998, 8, 0, v376, v375, v374, 0x8070a58, 0x84);
+    fun_8048d50(ecx826, v999, v998, 8, 0, v376, v375, v374, "\r", 0x84, ecx826, v999, v998, 8, 0, v376, v375, v374, "\r", 0x84);
     v1000 = reinterpret_cast<void**>(3);
-    v1001 = reinterpret_cast<void**>(0x8070c45);
+    v1001 = reinterpret_cast<void**>(" eVeigtmp");
     v1002 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cc0(ecx826, v1002, 0x8070c45, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v1003, v1004, ecx826, v1002, 0x8070c45, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v1005, v1006);
+    fun_8048cc0(ecx826, v1002, " eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v1003, v1004, ecx826, v1002, " eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v1005, v1006);
     v1007 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048b50(ecx826, v1007, 0x8070c45, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v1008, v1009, ecx826, v1007, 0x8070c45, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v1010, v1011);
+    fun_8048b50(ecx826, v1007, " eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v1008, v1009, ecx826, v1007, " eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v1010, v1011);
     eax1012 = reinterpret_cast<uint32_t>(v830) * reinterpret_cast<uint32_t>(v830);
     eax1013 = eax1012 + eax1012;
     edx1014 = 0;
@@ -29293,19 +29293,19 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         eax1018 = reinterpret_cast<void**>(0);
     }
     if (0) {
-        v1000 = reinterpret_cast<void**>(0x8070c48);
-        v1001 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx1015, "At line 215 of file optic.F90", 0x8070abc, 0x8070c48, 0, v376, v375, v374, 0x8070a58, 0x84, v1019, v1020, v1021, v1022, v1023, v1024, v1025, v1026, v1027, v1028, v1029, ecx1015, "At line 215 of file optic.F90", 0x8070abc, 0x8070c48, 0, v376, v375, v374, 0x8070a58, 0x84, v1030, v1031, v1032, v1033, v1034, v1035, v1036, v1037, v1038, v1039, v1040);
+        v1000 = reinterpret_cast<void**>("eigtmp");
+        v1001 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1015, "At line 215 of file optic.F90", "Attempting to allocate already allocated array '%s'", "eigtmp", 0, v376, v375, v374, "\r", 0x84, v1019, v1020, v1021, v1022, v1023, v1024, v1025, v1026, v1027, v1028, v1029, ecx1015, "At line 215 of file optic.F90", "Attempting to allocate already allocated array '%s'", "eigtmp", 0, v376, v375, v374, "\r", 0x84, v1030, v1031, v1032, v1033, v1034, v1035, v1036, v1037, v1038, v1039, v1040);
     } else {
         if (reinterpret_cast<int32_t>(eax1018) < reinterpret_cast<int32_t>(0)) {
-            eax1018 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", 0x8070c45, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v1041, v1042, v1043, v1044, v1045, v1046, v1047, v1048, v1049, v1050, v1051, v1052, v687);
+            eax1018 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", " eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v1041, v1042, v1043, v1044, v1045, v1046, v1047, v1048, v1049, v1050, v1051, v1052, v687);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1018) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1018 == 0)) {
             eax1018 = reinterpret_cast<void**>(1);
         }
-        eax1065 = fun_8048ce0(ecx1015, eax1018, 0x8070c45, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v1053, v1054, v1055, v1056, v1057, v1058, v1059, v1060, v1061, v1062, v1063, v1064, v687);
+        eax1065 = fun_8048ce0(ecx1015, eax1018, " eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v1053, v1054, v1055, v1056, v1057, v1058, v1059, v1060, v1061, v1062, v1063, v1064, v687);
         if (!eax1065) {
-            eax1065 = fun_8048b10(ecx1015, "Out of memory", 0x8070c45, 3, 0, v376, v375, v374, 0x8070a58, 0x84, v1066, v1067, v1068, v1069, v1070, v1071, v1072, v1073, v1074, v1075, v1076, v1077, v687);
+            eax1065 = fun_8048b10(ecx1015, "Out of memory", " eVeigtmp", 3, 0, v376, v375, v374, "\r", 0x84, v1066, v1067, v1068, v1069, v1070, v1071, v1072, v1073, v1074, v1075, v1076, v1077, v687);
         }
         v13 = eax1065;
         edx1078 = reinterpret_cast<void**>(0);
@@ -29318,25 +29318,25 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     eax1079 = reinterpret_cast<void**>(0);
     addr_804acab_132:
     if (0) {
-        v1000 = reinterpret_cast<void**>(0x8070c6d);
-        v1080 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx1015, "At line 215 of file optic.F90", 0x8070abc, 0x8070c6d, 0, v376, v375, v374, 0x8070a58, 0x84, v1081, v1082, v1083, v1084, v1085, v1086, v1087, v1088, v1089, v1090, v1091, ecx1015, "At line 215 of file optic.F90", 0x8070abc, 0x8070c6d, 0, v376, v375, v374, 0x8070a58, 0x84, v1092, v1093, v1094, v1095, v1096, v1097, v1098, v1099, v1100, v1101, v1102);
+        v1000 = reinterpret_cast<void**>("eig0tmp");
+        v1080 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1015, "At line 215 of file optic.F90", "Attempting to allocate already allocated array '%s'", "eig0tmp", 0, v376, v375, v374, "\r", 0x84, v1081, v1082, v1083, v1084, v1085, v1086, v1087, v1088, v1089, v1090, v1091, ecx1015, "At line 215 of file optic.F90", "Attempting to allocate already allocated array '%s'", "eig0tmp", 0, v376, v375, v374, "\r", 0x84, v1092, v1093, v1094, v1095, v1096, v1097, v1098, v1099, v1100, v1101, v1102);
     } else {
         if (reinterpret_cast<int32_t>(eax1079) < reinterpret_cast<int32_t>(0)) {
-            eax1079 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1001, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1103, v1104, v1105, v1106, v1107, v1108, v1109, v1110, v1111, v1112, v1113, v1114, v687);
+            eax1079 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1001, v1000, 0, v376, v375, v374, "\r", 0x84, v1103, v1104, v1105, v1106, v1107, v1108, v1109, v1110, v1111, v1112, v1113, v1114, v687);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1079) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1079 == 0)) {
             eax1079 = reinterpret_cast<void**>(1);
         }
-        eax1127 = fun_8048ce0(ecx1015, eax1079, v1001, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1115, v1116, v1117, v1118, v1119, v1120, v1121, v1122, v1123, v1124, v1125, v1126, v687);
+        eax1127 = fun_8048ce0(ecx1015, eax1079, v1001, v1000, 0, v376, v375, v374, "\r", 0x84, v1115, v1116, v1117, v1118, v1119, v1120, v1121, v1122, v1123, v1124, v1125, v1126, v687);
         if (!eax1127) {
-            eax1127 = fun_8048b10(ecx1015, "Out of memory", v1001, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1128, v1129, v1130, v1131, v1132, v1133, v1134, v1135, v1136, v1137, v1138, v1139, v687);
+            eax1127 = fun_8048b10(ecx1015, "Out of memory", v1001, v1000, 0, v376, v375, v374, "\r", 0x84, v1128, v1129, v1130, v1131, v1132, v1133, v1134, v1135, v1136, v1137, v1138, v1139, v687);
         }
         v8 = eax1127;
-        hdr_skip_wfftype_(ecx1015, reinterpret_cast<int32_t>(ebp4) - 0xf10, reinterpret_cast<int32_t>(ebp4) + 0xfffff668, v1000, 0, v376, v375, v374, 0x8070a58, 0x84);
-        hdr_skip_wfftype_(ecx1015, reinterpret_cast<int32_t>(ebp4) - 0xfd8, reinterpret_cast<int32_t>(ebp4) + 0xfffff668, v1000, 0, v376, v375, v374, 0x8070a58, 0x84);
+        hdr_skip_wfftype_(ecx1015, reinterpret_cast<int32_t>(ebp4) - 0xf10, reinterpret_cast<int32_t>(ebp4) + 0xfffff668, v1000, 0, v376, v375, v374, "\r", 0x84);
+        hdr_skip_wfftype_(ecx1015, reinterpret_cast<int32_t>(ebp4) - 0xfd8, reinterpret_cast<int32_t>(ebp4) + 0xfffff668, v1000, 0, v376, v375, v374, "\r", 0x84);
         v1080 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff668);
-        hdr_skip_wfftype_(ecx1015, reinterpret_cast<int32_t>(ebp4) - 0x10a0, v1080, v1000, 0, v376, v375, v374, 0x8070a58, 0x84);
+        hdr_skip_wfftype_(ecx1015, reinterpret_cast<int32_t>(ebp4) - 0x10a0, v1080, v1000, 0, v376, v375, v374, "\r", 0x84);
         eax1140 = reinterpret_cast<uint32_t>(v384) * (reinterpret_cast<uint32_t>(v830) * reinterpret_cast<uint32_t>(v382));
         edx1141 = 0;
         if (reinterpret_cast<int32_t>(eax1140) >= reinterpret_cast<int32_t>(0)) {
@@ -29350,19 +29350,19 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     eax1143 = reinterpret_cast<void**>(0);
     addr_804adf1_145:
     if (0) {
-        v1000 = reinterpret_cast<void**>(0x8070c75);
-        v1080 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx1015, "At line 221 of file optic.F90", 0x8070abc, 0x8070c75, 0, v376, v375, v374, 0x8070a58, 0x84, v1144, v1145, v1146, v1147, v1148, v1149, v1150, v1151, v1152, v1153, v1154, ecx1015, "At line 221 of file optic.F90", 0x8070abc, 0x8070c75, 0, v376, v375, v374, 0x8070a58, 0x84, v1155, v1156, v1157, v1158, v1159, v1160, v1161, v1162, v1163, v1164, v1165);
+        v1000 = reinterpret_cast<void**>("eigen0");
+        v1080 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1015, "At line 221 of file optic.F90", "Attempting to allocate already allocated array '%s'", "eigen0", 0, v376, v375, v374, "\r", 0x84, v1144, v1145, v1146, v1147, v1148, v1149, v1150, v1151, v1152, v1153, v1154, ecx1015, "At line 221 of file optic.F90", "Attempting to allocate already allocated array '%s'", "eigen0", 0, v376, v375, v374, "\r", 0x84, v1155, v1156, v1157, v1158, v1159, v1160, v1161, v1162, v1163, v1164, v1165);
     } else {
         if (reinterpret_cast<int32_t>(eax1143) < reinterpret_cast<int32_t>(0)) {
-            eax1143 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1080, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1166, v1167, v1168, v1169, v1170, v1171, v1172, v1173, v1174, v1175, v1176, v1177, v687);
+            eax1143 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1080, v1000, 0, v376, v375, v374, "\r", 0x84, v1166, v1167, v1168, v1169, v1170, v1171, v1172, v1173, v1174, v1175, v1176, v1177, v687);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1143) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1143 == 0)) {
             eax1143 = reinterpret_cast<void**>(1);
         }
-        eax1190 = fun_8048ce0(ecx1015, eax1143, v1080, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1178, v1179, v1180, v1181, v1182, v1183, v1184, v1185, v1186, v1187, v1188, v1189, v687);
+        eax1190 = fun_8048ce0(ecx1015, eax1143, v1080, v1000, 0, v376, v375, v374, "\r", 0x84, v1178, v1179, v1180, v1181, v1182, v1183, v1184, v1185, v1186, v1187, v1188, v1189, v687);
         if (!eax1190) {
-            eax1190 = fun_8048b10(ecx1015, "Out of memory", v1080, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1191, v1192, v1193, v1194, v1195, v1196, v1197, v1198, v1199, v1200, v1201, v1202, v687);
+            eax1190 = fun_8048b10(ecx1015, "Out of memory", v1080, v1000, 0, v376, v375, v374, "\r", 0x84, v1191, v1192, v1193, v1194, v1195, v1196, v1197, v1198, v1199, v1200, v1201, v1202, v687);
         }
         v9 = eax1190;
         eax1203 = reinterpret_cast<uint32_t>(v830) * reinterpret_cast<uint32_t>(v830);
@@ -29380,19 +29380,19 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     eax1208 = reinterpret_cast<void**>(0);
     addr_804af13_158:
     if (0) {
-        v1000 = reinterpret_cast<void**>(0x8070c9a);
-        v1080 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx1015, "At line 222 of file optic.F90", 0x8070abc, 0x8070c9a, 0, v376, v375, v374, 0x8070a58, 0x84, v1209, v1210, v1211, v1212, v1213, v1214, v1215, v1216, v1217, v1218, v1219, ecx1015, "At line 222 of file optic.F90", 0x8070abc, 0x8070c9a, 0, v376, v375, v374, 0x8070a58, 0x84, v1220, v1221, v1222, v1223, v1224, v1225, v1226, v1227, v1228, v1229, v1230);
+        v1000 = reinterpret_cast<void**>("eigen11");
+        v1080 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1015, "At line 222 of file optic.F90", "Attempting to allocate already allocated array '%s'", "eigen11", 0, v376, v375, v374, "\r", 0x84, v1209, v1210, v1211, v1212, v1213, v1214, v1215, v1216, v1217, v1218, v1219, ecx1015, "At line 222 of file optic.F90", "Attempting to allocate already allocated array '%s'", "eigen11", 0, v376, v375, v374, "\r", 0x84, v1220, v1221, v1222, v1223, v1224, v1225, v1226, v1227, v1228, v1229, v1230);
     } else {
         if (reinterpret_cast<int32_t>(eax1208) < reinterpret_cast<int32_t>(0)) {
-            eax1208 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1080, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1231, v1232, v1233, v1234, v1235, v1236, v1237, v1238, v1239, v1240, v1241, v1242, v687);
+            eax1208 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1080, v1000, 0, v376, v375, v374, "\r", 0x84, v1231, v1232, v1233, v1234, v1235, v1236, v1237, v1238, v1239, v1240, v1241, v1242, v687);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1208) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1208 == 0)) {
             eax1208 = reinterpret_cast<void**>(1);
         }
-        eax1255 = fun_8048ce0(ecx1015, eax1208, v1080, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1243, v1244, v1245, v1246, v1247, v1248, v1249, v1250, v1251, v1252, v1253, v1254, v687);
+        eax1255 = fun_8048ce0(ecx1015, eax1208, v1080, v1000, 0, v376, v375, v374, "\r", 0x84, v1243, v1244, v1245, v1246, v1247, v1248, v1249, v1250, v1251, v1252, v1253, v1254, v687);
         if (!eax1255) {
-            eax1255 = fun_8048b10(ecx1015, "Out of memory", v1080, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1256, v1257, v1258, v1259, v1260, v1261, v1262, v1263, v1264, v1265, v1266, v1267, v687);
+            eax1255 = fun_8048b10(ecx1015, "Out of memory", v1080, v1000, 0, v376, v375, v374, "\r", 0x84, v1256, v1257, v1258, v1259, v1260, v1261, v1262, v1263, v1264, v1265, v1266, v1267, v687);
         }
         v10 = eax1255;
         eax1268 = reinterpret_cast<uint32_t>(v830) * reinterpret_cast<uint32_t>(v830);
@@ -29410,19 +29410,19 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     eax1273 = reinterpret_cast<void**>(0);
     addr_804b035_171:
     if (0) {
-        v1000 = reinterpret_cast<void**>(0x8070cc0);
-        v1080 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx1015, "At line 223 of file optic.F90", 0x8070abc, 0x8070cc0, 0, v376, v375, v374, 0x8070a58, 0x84, v1274, v1275, v1276, v1277, v1278, v1279, v1280, v1281, v1282, v1283, v1284, ecx1015, "At line 223 of file optic.F90", 0x8070abc, 0x8070cc0, 0, v376, v375, v374, 0x8070a58, 0x84, v1285, v1286, v1287, v1288, v1289, v1290, v1291, v1292, v1293, v1294, v1295);
+        v1000 = reinterpret_cast<void**>("eigen12");
+        v1080 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1015, "At line 223 of file optic.F90", "Attempting to allocate already allocated array '%s'", "eigen12", 0, v376, v375, v374, "\r", 0x84, v1274, v1275, v1276, v1277, v1278, v1279, v1280, v1281, v1282, v1283, v1284, ecx1015, "At line 223 of file optic.F90", "Attempting to allocate already allocated array '%s'", "eigen12", 0, v376, v375, v374, "\r", 0x84, v1285, v1286, v1287, v1288, v1289, v1290, v1291, v1292, v1293, v1294, v1295);
     } else {
         if (reinterpret_cast<int32_t>(eax1273) < reinterpret_cast<int32_t>(0)) {
-            eax1273 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1080, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1296, v1297, v1298, v1299, v1300, v1301, v1302, v1303, v1304, v1305, v1306, v1307, v687);
+            eax1273 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1080, v1000, 0, v376, v375, v374, "\r", 0x84, v1296, v1297, v1298, v1299, v1300, v1301, v1302, v1303, v1304, v1305, v1306, v1307, v687);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1273) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1273 == 0)) {
             eax1273 = reinterpret_cast<void**>(1);
         }
-        eax1320 = fun_8048ce0(ecx1015, eax1273, v1080, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1308, v1309, v1310, v1311, v1312, v1313, v1314, v1315, v1316, v1317, v1318, v1319, v687);
+        eax1320 = fun_8048ce0(ecx1015, eax1273, v1080, v1000, 0, v376, v375, v374, "\r", 0x84, v1308, v1309, v1310, v1311, v1312, v1313, v1314, v1315, v1316, v1317, v1318, v1319, v687);
         if (!eax1320) {
-            eax1320 = fun_8048b10(ecx1015, "Out of memory", v1080, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1321, v1322, v1323, v1324, v1325, v1326, v1327, v1328, v1329, v1330, v1331, v1332, v687);
+            eax1320 = fun_8048b10(ecx1015, "Out of memory", v1080, v1000, 0, v376, v375, v374, "\r", 0x84, v1321, v1322, v1323, v1324, v1325, v1326, v1327, v1328, v1329, v1330, v1331, v1332, v687);
         }
         v11 = eax1320;
         eax1333 = reinterpret_cast<uint32_t>(v830) * reinterpret_cast<uint32_t>(v830);
@@ -29440,8 +29440,8 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     eax1338 = reinterpret_cast<void**>(0);
     addr_804b157_184:
     if (0) {
-        v1000 = reinterpret_cast<void**>(0x8070ce6);
-        fun_8048c30(ecx1015, "At line 224 of file optic.F90", 0x8070abc, 0x8070ce6, 0, v376, v375, v374, 0x8070a58, 0x84, v1339, v1340, v1341, v1342, v1343, v1344, v1345, v1346, v1347, v1348, v1349, ecx1015, "At line 224 of file optic.F90", 0x8070abc, 0x8070ce6, 0, v376, v375, v374, 0x8070a58, 0x84, v1350, v1351, v1352, v1353, v1354, v1355, v1356, v1357, v1358, v1359, v1360);
+        v1000 = reinterpret_cast<void**>("eigen13");
+        fun_8048c30(ecx1015, "At line 224 of file optic.F90", "Attempting to allocate already allocated array '%s'", "eigen13", 0, v376, v375, v374, "\r", 0x84, v1339, v1340, v1341, v1342, v1343, v1344, v1345, v1346, v1347, v1348, v1349, ecx1015, "At line 224 of file optic.F90", "Attempting to allocate already allocated array '%s'", "eigen13", 0, v376, v375, v374, "\r", 0x84, v1350, v1351, v1352, v1353, v1354, v1355, v1356, v1357, v1358, v1359, v1360);
         do {
             addr_804b1f7_187:
             v1361 = v382;
@@ -29522,14 +29522,14 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         } while (!eax1388);
     } else {
         if (reinterpret_cast<int32_t>(eax1338) < reinterpret_cast<int32_t>(0)) {
-            eax1338 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1080, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1390, v1391, v1392, v1393, v1394, v1395, v1396, v1397, v1398, v1399, v1400, v1401, v687);
+            eax1338 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1080, v1000, 0, v376, v375, v374, "\r", 0x84, v1390, v1391, v1392, v1393, v1394, v1395, v1396, v1397, v1398, v1399, v1400, v1401, v687);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax1338) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax1338 == 0)) {
             eax1338 = reinterpret_cast<void**>(1);
         }
-        eax1414 = fun_8048ce0(ecx1015, eax1338, v1080, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1402, v1403, v1404, v1405, v1406, v1407, v1408, v1409, v1410, v1411, v1412, v1413, v687);
+        eax1414 = fun_8048ce0(ecx1015, eax1338, v1080, v1000, 0, v376, v375, v374, "\r", 0x84, v1402, v1403, v1404, v1405, v1406, v1407, v1408, v1409, v1410, v1411, v1412, v1413, v687);
         if (!eax1414) {
-            eax1414 = fun_8048b10(ecx1015, "Out of memory", v1080, v1000, 0, v376, v375, v374, 0x8070a58, 0x84, v1415, v1416, v1417, v1418, v1419, v1420, v1421, v1422, v1423, v1424, v1425, v1426, v687);
+            eax1414 = fun_8048b10(ecx1015, "Out of memory", v1080, v1000, 0, v376, v375, v374, "\r", 0x84, v1415, v1416, v1417, v1418, v1419, v1420, v1421, v1422, v1423, v1424, v1425, v1426, v687);
         }
         v12 = eax1414;
         v1368 = reinterpret_cast<void*>(0);
@@ -29546,15 +29546,15 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     v1427 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff668);
     wffclose_(ecx1015, reinterpret_cast<int32_t>(ebp4) + 0xffffef60, v1427, v1000, v903, v376, v375, v374, v373, v372);
     if (!v13) {
-        v1000 = reinterpret_cast<void**>(0x8070c48);
-        v1427 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx1015, "At line 246 of file optic.F90", 0x8070d10, 0x8070c48, v903, v376, v375, v374, v373, v372, v1428, v1429, v1430, v1431, v1432, v1433, v1434, v1435, v1436, v1437, v1438, ecx1015, "At line 246 of file optic.F90", 0x8070d10, 0x8070c48, v903, v376, v375, v374, v373, v372, v1439, v1440, v1441, v1442, v1443, v1444, v1445, v1446, v1447, v1448, v1449);
+        v1000 = reinterpret_cast<void**>("eigtmp");
+        v1427 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1015, "At line 246 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "eigtmp", v903, v376, v375, v374, v373, v372, v1428, v1429, v1430, v1431, v1432, v1433, v1434, v1435, v1436, v1437, v1438, ecx1015, "At line 246 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "eigtmp", v903, v376, v375, v374, v373, v372, v1439, v1440, v1441, v1442, v1443, v1444, v1445, v1446, v1447, v1448, v1449);
     }
     fun_8048bc0(ecx1015, v13, v1427, v1000, v903, v376, v375, v374, v373, v372, v1450, v1451, v1452, v1453, v1454, v1455, v1456, v1457, v1458, v1459, v1460, v1461, v687, ecx1015, v13, v1427, v1000, v903, v376, v375, v374, v373, v372, v1462, v1463, v1464, v1465, v1466, v1467, v1468, v1469, v1470, v1471, v1472, v1473, v687);
     if (!v8) {
-        v1000 = reinterpret_cast<void**>(0x8070c6d);
-        v1427 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx1015, "At line 246 of file optic.F90", 0x8070d10, 0x8070c6d, v903, v376, v375, v374, v373, v372, v1474, v1475, v1476, v1477, v1478, v1479, v1480, v1481, v1482, v1483, v1484, ecx1015, "At line 246 of file optic.F90", 0x8070d10, 0x8070c6d, v903, v376, v375, v374, v373, v372, v1485, v1486, v1487, v1488, v1489, v1490, v1491, v1492, v1493, v1494, v1495);
+        v1000 = reinterpret_cast<void**>("eig0tmp");
+        v1427 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx1015, "At line 246 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "eig0tmp", v903, v376, v375, v374, v373, v372, v1474, v1475, v1476, v1477, v1478, v1479, v1480, v1481, v1482, v1483, v1484, ecx1015, "At line 246 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "eig0tmp", v903, v376, v375, v374, v373, v372, v1485, v1486, v1487, v1488, v1489, v1490, v1491, v1492, v1493, v1494, v1495);
     }
     fun_8048bc0(ecx1015, v8, v1427, v1000, v903, v376, v375, v374, v373, v372, v1496, v1497, v1498, v1499, v1500, v1501, v1502, v1503, v1504, v1505, v1506, v1507, v687, ecx1015, v8, v1427, v1000, v903, v376, v375, v374, v373, v372, v1508, v1509, v1510, v1511, v1512, v1513, v1514, v1515, v1516, v1517, v1518, v1519, v687);
     v1520 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff280);
@@ -29573,9 +29573,9 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         eax1525 = reinterpret_cast<void**>(0);
     }
     if (0) {
-        v1526 = reinterpret_cast<void**>(0x8070d5c);
-        v1527 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx1015, "At line 256 of file optic.F90", 0x8070abc, 0x8070d5c, v1522, v1521, v1520, v374, v373, v372, v1528, v1529, v1530, v1531, v1532, v1533, v1534, v1535, v1536, v1537, v1538, ecx1015, "At line 256 of file optic.F90", 0x8070abc, 0x8070d5c, v1522, v1521, v1520, v374, v373, v372, v1539, v1540, v1541, v1542, v1543, v1544, v1545, v1546, v1547, v1548, v1549);
+        v1526 = reinterpret_cast<void**>("wtk");
+        v1527 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1015, "At line 256 of file optic.F90", "Attempting to allocate already allocated array '%s'", "wtk", v1522, v1521, v1520, v374, v373, v372, v1528, v1529, v1530, v1531, v1532, v1533, v1534, v1535, v1536, v1537, v1538, ecx1015, "At line 256 of file optic.F90", "Attempting to allocate already allocated array '%s'", "wtk", v1522, v1521, v1520, v374, v373, v372, v1539, v1540, v1541, v1542, v1543, v1544, v1545, v1546, v1547, v1548, v1549);
     } else {
         if (reinterpret_cast<int32_t>(eax1525) < reinterpret_cast<int32_t>(0)) {
             eax1525 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1523, 0x8070d58, v1522, v1521, v1520, v374, v373, v372, v1550, v1551, v1552, v1553, v1554, v1555, v1556, v1557, v1558, v1559, v1560, v1561, v687);
@@ -29606,9 +29606,9 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     eax1590 = reinterpret_cast<void**>(0);
     addr_804b9d7_234:
     if (0) {
-        v1591 = reinterpret_cast<void**>(0x8070d7e);
-        v1592 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx1015, "At line 259 of file optic.F90", 0x8070abc, 0x8070d7e, v1522, v1521, v1520, v374, v373, v372, v1593, v1594, v1595, v1596, v1597, v1598, v1599, v1600, v1601, v1602, v1603, ecx1015, "At line 259 of file optic.F90", 0x8070abc, 0x8070d7e, v1522, v1521, v1520, v374, v373, v372, v1604, v1605, v1606, v1607, v1608, v1609, v1610, v1611, v1612, v1613, v1614);
+        v1591 = reinterpret_cast<void**>("doccde");
+        v1592 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1015, "At line 259 of file optic.F90", "Attempting to allocate already allocated array '%s'", "doccde", v1522, v1521, v1520, v374, v373, v372, v1593, v1594, v1595, v1596, v1597, v1598, v1599, v1600, v1601, v1602, v1603, ecx1015, "At line 259 of file optic.F90", "Attempting to allocate already allocated array '%s'", "doccde", v1522, v1521, v1520, v374, v373, v372, v1604, v1605, v1606, v1607, v1608, v1609, v1610, v1611, v1612, v1613, v1614);
     } else {
         if (reinterpret_cast<int32_t>(eax1590) < reinterpret_cast<int32_t>(0)) {
             eax1590 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1527, v1526, v1522, v1521, v1520, v374, v373, v372, v1615, v1616, v1617, v1618, v1619, v1620, v1621, v1622, v1623, v1624, v1625, v1626, v687);
@@ -29657,9 +29657,9 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     eax1668 = reinterpret_cast<void**>(0);
     addr_804bbdd_247:
     if (0) {
-        v1591 = reinterpret_cast<void**>(0x8070da3);
-        v1592 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx1015, "At line 282 of file optic.F90", 0x8070abc, 0x8070da3, v1522, v1521, v1520, v374, v373, v372, v1669, v1670, v1671, v1672, v1673, v1674, v1675, v1676, v1677, v1678, v1679, ecx1015, "At line 282 of file optic.F90", 0x8070abc, 0x8070da3, v1522, v1521, v1520, v374, v373, v372, v1680, v1681, v1682, v1683, v1684, v1685, v1686, v1687, v1688, v1689, v1690);
+        v1591 = reinterpret_cast<void**>("cond_nd");
+        v1592 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1015, "At line 282 of file optic.F90", "Attempting to allocate already allocated array '%s'", "cond_nd", v1522, v1521, v1520, v374, v373, v372, v1669, v1670, v1671, v1672, v1673, v1674, v1675, v1676, v1677, v1678, v1679, ecx1015, "At line 282 of file optic.F90", "Attempting to allocate already allocated array '%s'", "cond_nd", v1522, v1521, v1520, v374, v373, v372, v1680, v1681, v1682, v1683, v1684, v1685, v1686, v1687, v1688, v1689, v1690);
     } else {
         if (reinterpret_cast<int32_t>(eax1668) < reinterpret_cast<int32_t>(0)) {
             eax1668 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1592, v1591, v1522, v1521, v1520, v374, v373, v372, v1691, v1692, v1693, v1694, v1695, v1696, v1697, v1698, v1699, v1700, v1701, v1702, v687);
@@ -29682,9 +29682,9 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     eax1729 = reinterpret_cast<void**>(0);
     addr_804bc99_260:
     if (0) {
-        v1730 = reinterpret_cast<void**>(0x8070e6c);
-        v1731 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx1015, "At line 282 of file optic.F90", 0x8070abc, 0x8070e6c, v1522, v1521, v1520, v374, v373, v372, v1732, v1733, v1734, v1735, v1736, v1737, v1738, v1739, v1740, v1741, v1742, ecx1015, "At line 282 of file optic.F90", 0x8070abc, 0x8070e6c, v1522, v1521, v1520, v374, v373, v372, v1743, v1744, v1745, v1746, v1747, v1748, v1749, v1750, v1751, v1752, v1753);
+        v1730 = reinterpret_cast<void**>("cond_kg");
+        v1731 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1015, "At line 282 of file optic.F90", "Attempting to allocate already allocated array '%s'", "cond_kg", v1522, v1521, v1520, v374, v373, v372, v1732, v1733, v1734, v1735, v1736, v1737, v1738, v1739, v1740, v1741, v1742, ecx1015, "At line 282 of file optic.F90", "Attempting to allocate already allocated array '%s'", "cond_kg", v1522, v1521, v1520, v374, v373, v372, v1743, v1744, v1745, v1746, v1747, v1748, v1749, v1750, v1751, v1752, v1753);
     } else {
         if (reinterpret_cast<int32_t>(eax1729) < reinterpret_cast<int32_t>(0)) {
             eax1729 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1592, v1591, v1522, v1521, v1520, v374, v373, v372, v1754, v1755, v1756, v1757, v1758, v1759, v1760, v1761, v1762, v1763, v1764, v1765, v687);
@@ -29707,16 +29707,16 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         v1803 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
         fun_8048cd0(ecx1015, v1803, v1796, 8, v1522, v1521, v1520, v374, v373, v372, v1804, v1805, ecx1015, v1803, v1796, 8, v1522, v1521, v1520, v374, v373, v372, v1806, v1807);
         v1808 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048cc0(ecx1015, v1808, 0x8070dd4, 20, v1522, v1521, v1520, v374, v373, v372, v1809, v1810, ecx1015, v1808, 0x8070dd4, 20, v1522, v1521, v1520, v374, v373, v372, v1811, v1812);
+        fun_8048cc0(ecx1015, v1808, " Scissor shift     = Tolerance on closeness to singularities     =", 20, v1522, v1521, v1520, v374, v373, v372, v1809, v1810, ecx1015, v1808, " Scissor shift     = Tolerance on closeness to singularities     =", 20, v1522, v1521, v1520, v374, v373, v372, v1811, v1812);
         v1813 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff430);
         v1814 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
         fun_8048d50(ecx1015, v1814, v1813, 8, v1522, v1521, v1520, v374, v373, v372, ecx1015, v1814, v1813, 8, v1522, v1521, v1520, v374, v373, v372);
         v1815 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048cc0(ecx1015, v1815, 0x8070c1b, 3, v1522, v1521, v1520, v374, v373, v372, v1816, v1817, ecx1015, v1815, 0x8070c1b, 3, v1522, v1521, v1520, v374, v373, v372, v1818, v1819);
+        fun_8048cc0(ecx1015, v1815, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, v1522, v1521, v1520, v374, v373, v372, v1816, v1817, ecx1015, v1815, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, v1522, v1521, v1520, v374, v373, v372, v1818, v1819);
         v1820 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048b50(ecx1015, v1820, 0x8070c1b, 3, v1522, v1521, v1520, v374, v373, v372, v1821, v1822, ecx1015, v1820, 0x8070c1b, 3, v1522, v1521, v1520, v374, v373, v372, v1823, v1824);
+        fun_8048b50(ecx1015, v1820, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, v1522, v1521, v1520, v374, v373, v372, v1821, v1822, ecx1015, v1820, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, v1522, v1521, v1520, v374, v373, v372, v1823, v1824);
         v1825 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048d30(ecx1015, v1825, 0x8070c1b, 3, v1522, v1521, v1520, v374, v373, v372, v1826, v1827, ecx1015, v1825, 0x8070c1b, 3, v1522, v1521, v1520, v374, v373, v372, v1828, v1829);
+        fun_8048d30(ecx1015, v1825, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, v1522, v1521, v1520, v374, v373, v372, v1826, v1827, ecx1015, v1825, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, v1522, v1521, v1520, v374, v373, v372, v1828, v1829);
         v1830 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff290);
         v1831 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
         fun_8048d50(ecx1015, v1831, v1830, 8, v1522, v1521, v1520, v374, v373, v372, ecx1015, v1831, v1830, 8, v1522, v1521, v1520, v374, v373, v372);
@@ -29725,16 +29725,16 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         v1837 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
         fun_8048cd0(ecx1015, v1837, v1830, 8, v1522, v1521, v1520, v374, v373, v372, v1838, v1839, ecx1015, v1837, v1830, 8, v1522, v1521, v1520, v374, v373, v372, v1840, v1841);
         v1842 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048cc0(ecx1015, v1842, 0x8070de8, 46, v1522, v1521, v1520, v374, v373, v372, v1843, v1844, ecx1015, v1842, 0x8070de8, 46, v1522, v1521, v1520, v374, v373, v372, v1845, v1846);
+        fun_8048cc0(ecx1015, v1842, " Tolerance on closeness to singularities     =", 46, v1522, v1521, v1520, v374, v373, v372, v1843, v1844, ecx1015, v1842, " Tolerance on closeness to singularities     =", 46, v1522, v1521, v1520, v374, v373, v372, v1845, v1846);
         v1847 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff290);
         v1848 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
         fun_8048d50(ecx1015, v1848, v1847, 8, v1522, v1521, v1520, v374, v373, v372, ecx1015, v1848, v1847, 8, v1522, v1521, v1520, v374, v373, v372);
         v1849 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048cc0(ecx1015, v1849, 0x8070c1b, 3, v1522, v1521, v1520, v374, v373, v372, v1850, v1851, ecx1015, v1849, 0x8070c1b, 3, v1522, v1521, v1520, v374, v373, v372, v1852, v1853);
+        fun_8048cc0(ecx1015, v1849, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, v1522, v1521, v1520, v374, v373, v372, v1850, v1851, ecx1015, v1849, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, v1522, v1521, v1520, v374, v373, v372, v1852, v1853);
         v1854 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048b50(ecx1015, v1854, 0x8070c1b, 3, v1522, v1521, v1520, v374, v373, v372, v1855, v1856, ecx1015, v1854, 0x8070c1b, 3, v1522, v1521, v1520, v374, v373, v372, v1857, v1858);
+        fun_8048b50(ecx1015, v1854, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, v1522, v1521, v1520, v374, v373, v372, v1855, v1856, ecx1015, v1854, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, v1522, v1521, v1520, v374, v373, v372, v1857, v1858);
         v1859 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048d30(ecx1015, v1859, 0x8070c1b, 3, v1522, v1521, v1520, v374, v373, v372, v1860, v1861, ecx1015, v1859, 0x8070c1b, 3, v1522, v1521, v1520, v374, v373, v372, v1862, v1863);
+        fun_8048d30(ecx1015, v1859, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, v1522, v1521, v1520, v374, v373, v372, v1860, v1861, ecx1015, v1859, " Ha(a,f10.5,a,f10.5,a) fermie            = eVeigtmp", 3, v1522, v1521, v1520, v374, v373, v372, v1862, v1863);
         v1864 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff5f4);
         v1865 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
         fun_8048c50(ecx1015, v1865, v1864, 4, v1522, v1521, v1520, v374, v373, v372, v1866, v1867, ecx1015, v1865, v1864, 4, v1522, v1521, v1520, v374, v373, v372, v1868, v1869);
@@ -29750,11 +29750,11 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         v1889 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
         fun_8048cd0(ecx1015, v1889, v1880, 4, 0, v1521, v1520, v374, v373, v372, v1890, v1891, ecx1015, v1889, v1880, 4, 0, v1521, v1520, v374, v373, v372, v1892, v1893);
         v1894 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048cc0(ecx1015, v1894, 0x8070e18, 34, 0, v1521, v1520, v374, v373, v372, v1895, v1896, ecx1015, v1894, 0x8070e18, 34, 0, v1521, v1520, v374, v373, v372, v1897, v1898);
+        fun_8048cc0(ecx1015, v1894, " linear coeffs to be calculated : (9i3)", 34, 0, v1521, v1520, v374, v373, v372, v1895, v1896, ecx1015, v1894, " linear coeffs to be calculated : (9i3)", 34, 0, v1521, v1520, v374, v373, v372, v1897, v1898);
         v1899 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048b50(ecx1015, v1899, 0x8070e18, 34, 0, v1521, v1520, v374, v373, v372, v1900, v1901, ecx1015, v1899, 0x8070e18, 34, 0, v1521, v1520, v374, v373, v372, v1902, v1903);
+        fun_8048b50(ecx1015, v1899, " linear coeffs to be calculated : (9i3)", 34, 0, v1521, v1520, v374, v373, v372, v1900, v1901, ecx1015, v1899, " linear coeffs to be calculated : (9i3)", 34, 0, v1521, v1520, v374, v373, v372, v1902, v1903);
         v1904 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048cd0(ecx1015, v1904, 0x8070e18, 34, 0, v1521, v1520, v374, v373, v372, v1905, v1906, ecx1015, v1904, 0x8070e18, 34, 0, v1521, v1520, v374, v373, v372, v1907, v1908);
+        fun_8048cd0(ecx1015, v1904, " linear coeffs to be calculated : (9i3)", 34, 0, v1521, v1520, v374, v373, v372, v1905, v1906, ecx1015, v1904, " linear coeffs to be calculated : (9i3)", 34, 0, v1521, v1520, v374, v373, v372, v1907, v1908);
         v1909 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffeea0);
         v1910 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebp4) - 0x1340);
         fun_8048bd0(ecx1015, v1910, v1909, 4, 0, v1521, v1520, v374, v373, v372, v1911, ecx1015, v1910, v1909, 4, 0, v1521, v1520, v374, v373, v372, v1912);
@@ -29777,11 +29777,11 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         v1948 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
         fun_8048cd0(ecx1015, v1948, v1939, 4, 0, v1521, v1520, v374, v373, v372, v1949, v1950, ecx1015, v1948, v1939, 4, 0, v1521, v1520, v374, v373, v372, v1951, v1952);
         v1953 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048cc0(ecx1015, v1953, 0x8070e40, 38, 0, v1521, v1520, v374, v373, v372, v1954, v1955, ecx1015, v1953, 0x8070e40, 38, 0, v1521, v1520, v374, v373, v372, v1956, v1957);
+        fun_8048cc0(ecx1015, v1953, " non-linear coeffs to be calculated : (27i4)cond_kg", 38, 0, v1521, v1520, v374, v373, v372, v1954, v1955, ecx1015, v1953, " non-linear coeffs to be calculated : (27i4)cond_kg", 38, 0, v1521, v1520, v374, v373, v372, v1956, v1957);
         v1958 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048b50(ecx1015, v1958, 0x8070e40, 38, 0, v1521, v1520, v374, v373, v372, v1959, v1960, ecx1015, v1958, 0x8070e40, 38, 0, v1521, v1520, v374, v373, v372, v1961, v1962);
+        fun_8048b50(ecx1015, v1958, " non-linear coeffs to be calculated : (27i4)cond_kg", 38, 0, v1521, v1520, v374, v373, v372, v1959, v1960, ecx1015, v1958, " non-linear coeffs to be calculated : (27i4)cond_kg", 38, 0, v1521, v1520, v374, v373, v372, v1961, v1962);
         v1963 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048cd0(ecx1015, v1963, 0x8070e40, 38, 0, v1521, v1520, v374, v373, v372, v1964, v1965, ecx1015, v1963, 0x8070e40, 38, 0, v1521, v1520, v374, v373, v372, v1966, v1967);
+        fun_8048cd0(ecx1015, v1963, " non-linear coeffs to be calculated : (27i4)cond_kg", 38, 0, v1521, v1520, v374, v373, v372, v1964, v1965, ecx1015, v1963, " non-linear coeffs to be calculated : (27i4)cond_kg", 38, 0, v1521, v1520, v374, v373, v372, v1966, v1967);
         v1522 = reinterpret_cast<void**>(0);
         v1730 = reinterpret_cast<void**>(4);
         v1731 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffee70);
@@ -29801,9 +29801,9 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     eax1982 = reinterpret_cast<void**>(0);
     addr_804c48e_273:
     if (0) {
-        v1983 = reinterpret_cast<void**>(0x8070e74);
-        v1984 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx1015, "At line 304 of file optic.F90", 0x8070abc, 0x8070e74, v1522, v1521, v1520, v374, v373, v372, v1985, v1986, v1987, v1988, v1989, v1990, v1991, v1992, v1993, v1994, v1995, ecx1015, "At line 304 of file optic.F90", 0x8070abc, 0x8070e74, v1522, v1521, v1520, v374, v373, v372, v1996, v1997, v1998, v1999, v2000, v2001, v2002, v2003, v2004, v2005, v2006);
+        v1983 = reinterpret_cast<void**>("symcart");
+        v1984 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1015, "At line 304 of file optic.F90", "Attempting to allocate already allocated array '%s'", "symcart", v1522, v1521, v1520, v374, v373, v372, v1985, v1986, v1987, v1988, v1989, v1990, v1991, v1992, v1993, v1994, v1995, ecx1015, "At line 304 of file optic.F90", "Attempting to allocate already allocated array '%s'", "symcart", v1522, v1521, v1520, v374, v373, v372, v1996, v1997, v1998, v1999, v2000, v2001, v2002, v2003, v2004, v2005, v2006);
     } else {
         if (reinterpret_cast<int32_t>(eax1982) < reinterpret_cast<int32_t>(0)) {
             eax1982 = fun_8048c80(ecx1015, "Attempt to allocate negative amount of memory. Possible integer overflow", v1731, v1730, v1522, v1521, v1520, v374, v373, v372, v2007, v2008, v2009, v2010, v2011, v2012, v2013, v2014, v2015, v2016, v2017, v2018, v687);
@@ -29846,9 +29846,9 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     eax2049 = reinterpret_cast<void**>(0);
     addr_804c6b0_292:
     if (0) {
-        v2050 = reinterpret_cast<void**>(0x8070ec5);
-        v2051 = reinterpret_cast<void**>(0x8070abc);
-        fun_8048c30(ecx1015, "At line 307 of file optic.F90", 0x8070abc, 0x8070ec5, v1522, v1521, v1520, v374, v373, v372, v2052, v2053, v2054, v2055, v2056, v2057, v2058, v2059, v2060, v2061, v2062, ecx1015, "At line 307 of file optic.F90", 0x8070abc, 0x8070ec5, v1522, v1521, v1520, v374, v373, v372, v2063, v2064, v2065, v2066, v2067, v2068, v2069, v2070, v2071, v2072, v2073);
+        v2050 = reinterpret_cast<void**>("pmat");
+        v2051 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx1015, "At line 307 of file optic.F90", "Attempting to allocate already allocated array '%s'", "pmat", v1522, v1521, v1520, v374, v373, v372, v2052, v2053, v2054, v2055, v2056, v2057, v2058, v2059, v2060, v2061, v2062, ecx1015, "At line 307 of file optic.F90", "Attempting to allocate already allocated array '%s'", "pmat", v1522, v1521, v1520, v374, v373, v372, v2063, v2064, v2065, v2066, v2067, v2068, v2069, v2070, v2071, v2072, v2073);
         do {
             addr_804c85a_295:
             __asm__("fild dword [ebp+0xffffecb4]");
@@ -29862,7 +29862,7 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
             v2075 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
             fun_8048cd0(ecx2074, v2075, v2051, v2050, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, ecx2074, v2075, v2051, v2050, v1522, v1521, v1520, v374, v373, v372, v2076, v2077);
             v2078 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-            fun_8048cc0(ecx2074, v2078, 0x8070ee8, 8, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, ecx2074, v2078, 0x8070ee8, 8, v1522, v1521, v1520, v374, v373, v372, v2076, v2077);
+            fun_8048cc0(ecx2074, v2078, " linopt Attempt to allocate a negative amount of memory.", 8, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, ecx2074, v2078, " linopt Attempt to allocate a negative amount of memory.", 8, v1522, v1521, v1520, v374, v373, v372, v2076, v2077);
             v2079 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff638);
             v2080 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
             fun_8048c50(ecx2074, v2080, v2079, 4, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, ecx2074, v2080, v2079, 4, v1522, v1521, v1520, v374, v373, v372, v2076, v2077);
@@ -29888,23 +29888,23 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
                 eax2103 = fun_8048b10(ecx2074, "Memory allocation failed", v2094, 0x100, v2093, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2104, v2105, v687);
             }
             ecx2106 = reinterpret_cast<void**>(&v2107->f1);
-            fun_8048c20(ecx2106, eax2103, v2108, v2109, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2110, v2111, v687);
+            fun_8048c20(ecx2106, eax2103, v2108, v2109, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2110, v2111, v687);
             if (!(reinterpret_cast<uint1_t>(v2112 < 0) | reinterpret_cast<uint1_t>(v2112 == 0)) && v2113) {
-                fun_8048bc0(ecx2106, v2113, eax2103, v2108, v2109, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2114, v2115, v687, ecx2106, v2113, eax2103, v2108, v2109, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2116, v2117, v687);
+                fun_8048bc0(ecx2106, v2113, eax2103, v2108, v2109, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2114, v2115, v687, ecx2106, v2113, eax2103, v2108, v2109, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2116, v2117, v687);
             }
             v2118 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff444);
             v2119 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffee60);
-            fun_8048ca0(reinterpret_cast<int32_t>(ebp4) + 0xffffee64, v2119, 4, v2118, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2120, v2121, v687);
+            fun_8048ca0(reinterpret_cast<int32_t>(ebp4) + 0xffffee64, v2119, 4, v2118, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2120, v2121, v687);
             eax2122 = reinterpret_cast<void**>(v2123 + 1 + v2124 << 5);
             if (reinterpret_cast<int32_t>(eax2122) < reinterpret_cast<int32_t>(0)) {
-                eax2122 = fun_8048c80(ecx2106, "Attempt to allocate a negative amount of memory.", v2119, 4, v2118, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2125, v2126, v687);
+                eax2122 = fun_8048c80(ecx2106, "Attempt to allocate a negative amount of memory.", v2119, 4, v2118, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2125, v2126, v687);
             }
             if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax2122) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax2122 == 0)) {
                 eax2122 = reinterpret_cast<void**>(1);
             }
-            eax2129 = fun_8048ce0(ecx2106, eax2122, v2119, 4, v2118, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2127, v2128, v687);
+            eax2129 = fun_8048ce0(ecx2106, eax2122, v2119, 4, v2118, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2127, v2128, v687);
             if (!eax2129) {
-                eax2129 = fun_8048b10(ecx2106, "Memory allocation failed", v2119, 4, v2118, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2130, v2131, v687);
+                eax2129 = fun_8048b10(ecx2106, "Memory allocation failed", v2119, 4, v2118, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2130, v2131, v687);
             }
             fun_8048c20(reinterpret_cast<int32_t>(v2132) + 1 + reinterpret_cast<uint32_t>(v2133), eax2129, &v2134->f1, eax2103, v2135, v2136, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2137, v2138, v687);
             if (!(reinterpret_cast<uint1_t>(v2139 < 0) | reinterpret_cast<uint1_t>(v2139 == 0)) && v2140) {
@@ -29925,23 +29925,23 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
                 eax2156 = fun_8048b10(v2135, "Memory allocation failed", eax2129, &v2134->f1, eax2103, v2135, v2136, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2157, v2158, v687);
             }
             ecx2159 = reinterpret_cast<void**>(&v2160->f1);
-            fun_8048c20(reinterpret_cast<uint32_t>(ecx2159) + reinterpret_cast<uint32_t>(v2161) + 1, eax2156, reinterpret_cast<int32_t>(v2162) + 1 + reinterpret_cast<uint32_t>(v2163), eax2129, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2164, v2165, v687);
+            fun_8048c20(reinterpret_cast<uint32_t>(ecx2159) + reinterpret_cast<uint32_t>(v2161) + 1, eax2156, reinterpret_cast<int32_t>(v2162) + 1 + reinterpret_cast<uint32_t>(v2163), eax2129, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2164, v2165, v687);
             if (eax2129) {
-                fun_8048bc0(ecx2159, eax2129, eax2156, reinterpret_cast<int32_t>(v2162) + 1 + reinterpret_cast<uint32_t>(v2163), eax2129, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2166, v2167, v687, ecx2159, eax2129, eax2156, reinterpret_cast<int32_t>(v2162) + 1 + reinterpret_cast<uint32_t>(v2163), eax2129, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2168, v2169, v687);
+                fun_8048bc0(ecx2159, eax2129, eax2156, reinterpret_cast<int32_t>(v2162) + 1 + reinterpret_cast<uint32_t>(v2163), eax2129, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2166, v2167, v687, ecx2159, eax2129, eax2156, reinterpret_cast<int32_t>(v2162) + 1 + reinterpret_cast<uint32_t>(v2163), eax2129, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2168, v2169, v687);
             }
             v2170 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff440);
             v2171 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffee68);
-            fun_8048ca0(reinterpret_cast<int32_t>(ebp4) + 0xffffee6c, v2171, 4, v2170, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2172, v2173, v687);
+            fun_8048ca0(reinterpret_cast<int32_t>(ebp4) + 0xffffee6c, v2171, 4, v2170, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2172, v2173, v687);
             eax2174 = reinterpret_cast<void**>(v2175 + 1 + v2176 + 1 + v2177 << 5);
             if (reinterpret_cast<int32_t>(eax2174) < reinterpret_cast<int32_t>(0)) {
-                eax2174 = fun_8048c80(ecx2159, "Attempt to allocate a negative amount of memory.", v2171, 4, v2170, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2178, v2179, v687);
+                eax2174 = fun_8048c80(ecx2159, "Attempt to allocate a negative amount of memory.", v2171, 4, v2170, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2178, v2179, v687);
             }
             if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax2174) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax2174 == 0)) {
                 eax2174 = reinterpret_cast<void**>(1);
             }
-            eax2182 = fun_8048ce0(ecx2159, eax2174, v2171, 4, v2170, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2180, v2181, v687);
+            eax2182 = fun_8048ce0(ecx2159, eax2174, v2171, 4, v2170, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2180, v2181, v687);
             if (!eax2182) {
-                eax2182 = fun_8048b10(ecx2159, "Memory allocation failed", v2171, 4, v2170, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2183, v2184, v687);
+                eax2182 = fun_8048b10(ecx2159, "Memory allocation failed", v2171, 4, v2170, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2183, v2184, v687);
             }
             ecx2185 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v2186) + 1 + reinterpret_cast<int32_t>(v2187) + 1);
             fun_8048c20(reinterpret_cast<int32_t>(v2188) + 1 + reinterpret_cast<int32_t>(v2189) + 1 + reinterpret_cast<uint32_t>(v2190), eax2182, ecx2185, eax2156, v2191, v2192, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, 0x100, v2193, v2194, v687);
@@ -30004,9 +30004,9 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         v2262 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
         fun_8048cd0(ecx1015, v2262, v1984, v1983, v1522, v1521, v1520, v374, v373, v372, v2263, v2264, ecx1015, v2262, v1984, v1983, v1522, v1521, v1520, v374, v373, v372, v2265, v2266);
         v2267 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048cc0(ecx1015, v2267, 0x8070e9a, 23, v1522, v1521, v1520, v374, v373, v372, v2268, v2269, ecx1015, v2267, 0x8070e9a, 23, v1522, v1521, v1520, v374, v373, v372, v2270, v2271);
+        fun_8048cc0(ecx1015, v2267, " optic : Call pmat2cart optic : Call linoptpmat", 23, v1522, v1521, v1520, v374, v373, v372, v2268, v2269, ecx1015, v2267, " optic : Call pmat2cart optic : Call linoptpmat", 23, v1522, v1521, v1520, v374, v373, v372, v2270, v2271);
         v2272 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048b50(ecx1015, v2272, 0x8070e9a, 23, v1522, v1521, v1520, v374, v373, v372, v2273, v2274, ecx1015, v2272, 0x8070e9a, 23, v1522, v1521, v1520, v374, v373, v372, v2275, v2276);
+        fun_8048b50(ecx1015, v2272, " optic : Call pmat2cart optic : Call linoptpmat", 23, v1522, v1521, v1520, v374, v373, v372, v2273, v2274, ecx1015, v2272, " optic : Call pmat2cart optic : Call linoptpmat", 23, v1522, v1521, v1520, v374, v373, v372, v2275, v2276);
         ecx2222 = v12;
         v373 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff448);
         v374 = v17;
@@ -30017,11 +30017,11 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         v2277 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
         fun_8048cd0(ecx2222, v2277, v11, ecx2222, v1522, v1521, v1520, v374, v373, v372, v2278, v2279, ecx2222, v2277, v11, ecx2222, v1522, v1521, v1520, v374, v373, v372, v2280, v2281);
         v2050 = reinterpret_cast<void**>(20);
-        v2051 = reinterpret_cast<void**>(0x8070eb1);
+        v2051 = reinterpret_cast<void**>(" optic : Call linoptpmat");
         v2282 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048cc0(ecx2222, v2282, 0x8070eb1, 20, v1522, v1521, v1520, v374, v373, v372, v2283, v2284, ecx2222, v2282, 0x8070eb1, 20, v1522, v1521, v1520, v374, v373, v372, v2285, v2286);
+        fun_8048cc0(ecx2222, v2282, " optic : Call linoptpmat", 20, v1522, v1521, v1520, v374, v373, v372, v2283, v2284, ecx2222, v2282, " optic : Call linoptpmat", 20, v1522, v1521, v1520, v374, v373, v372, v2285, v2286);
         v2287 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-        fun_8048b50(ecx2222, v2287, 0x8070eb1, 20, v1522, v1521, v1520, v374, v373, v372, v2288, v2289, ecx2222, v2287, 0x8070eb1, 20, v1522, v1521, v1520, v374, v373, v372, v2290, v2291);
+        fun_8048b50(ecx2222, v2287, " optic : Call linoptpmat", 20, v1522, v1521, v1520, v374, v373, v372, v2288, v2289, ecx2222, v2287, " optic : Call linoptpmat", 20, v1522, v1521, v1520, v374, v373, v372, v2290, v2291);
         v2223 = v2292;
         v832 = reinterpret_cast<void**>(1);
         if (reinterpret_cast<int32_t>(1) <= reinterpret_cast<int32_t>(v2223)) 
@@ -30030,11 +30030,11 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
     v2293 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
     fun_8048cd0(ecx2222, v2293, v2051, v2050, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, ecx2222, v2293, v2051, v2050, v1522, v1521, v1520, v374, v373, v372, v2076, v2077);
     v2294 = reinterpret_cast<void**>(21);
-    v2295 = reinterpret_cast<void**>(0x8070f3b);
+    v2295 = reinterpret_cast<void**>(" optic : Call nlinopt nlinopt At line 351 of file optic.F90");
     v2296 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048cc0(ecx2222, v2296, 0x8070f3b, 21, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, ecx2222, v2296, 0x8070f3b, 21, v1522, v1521, v1520, v374, v373, v372, v2076, v2077);
+    fun_8048cc0(ecx2222, v2296, " optic : Call nlinopt nlinopt At line 351 of file optic.F90", 21, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, ecx2222, v2296, " optic : Call nlinopt nlinopt At line 351 of file optic.F90", 21, v1522, v1521, v1520, v374, v373, v372, v2076, v2077);
     v2297 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-    fun_8048b50(ecx2222, v2297, 0x8070f3b, 21, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, ecx2222, v2297, 0x8070f3b, 21, v1522, v1521, v1520, v374, v373, v372, v2076, v2077);
+    fun_8048b50(ecx2222, v2297, " optic : Call nlinopt nlinopt At line 351 of file optic.F90", 21, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, ecx2222, v2297, " optic : Call nlinopt nlinopt At line 351 of file optic.F90", 21, v1522, v1521, v1520, v374, v373, v372, v2076, v2077);
     v2298 = v2299;
     v2300 = reinterpret_cast<void**>(1);
     if (reinterpret_cast<int32_t>(1) <= reinterpret_cast<int32_t>(v2298)) {
@@ -30075,23 +30075,23 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
                 eax2309 = fun_8048b10(ecx2301, "Memory allocation failed", v2303, 0x100, v2302, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2310, v687);
             }
             ecx2311 = reinterpret_cast<void**>(&v2312->f1);
-            fun_8048c20(ecx2311, eax2309, v2313, v2314, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2315, v687);
+            fun_8048c20(ecx2311, eax2309, v2313, v2314, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2315, v687);
             if (!(reinterpret_cast<uint1_t>(v2316 < 0) | reinterpret_cast<uint1_t>(v2316 == 0)) && v2317) {
-                fun_8048bc0(ecx2311, v2317, eax2309, v2313, v2314, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2318, v687, ecx2311, v2317, eax2309, v2313, v2314, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2319, v687);
+                fun_8048bc0(ecx2311, v2317, eax2309, v2313, v2314, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2318, v687, ecx2311, v2317, eax2309, v2313, v2314, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2319, v687);
             }
             v2320 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff444);
             v2321 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffee40);
-            fun_8048ca0(reinterpret_cast<int32_t>(ebp4) + 0xffffee44, v2321, 4, v2320, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2322, v687);
+            fun_8048ca0(reinterpret_cast<int32_t>(ebp4) + 0xffffee44, v2321, 4, v2320, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2322, v687);
             eax2323 = reinterpret_cast<void**>(v2324 + 1 + v2325 << 5);
             if (reinterpret_cast<int32_t>(eax2323) < reinterpret_cast<int32_t>(0)) {
-                eax2323 = fun_8048c80(ecx2311, "Attempt to allocate a negative amount of memory.", v2321, 4, v2320, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2326, v687);
+                eax2323 = fun_8048c80(ecx2311, "Attempt to allocate a negative amount of memory.", v2321, 4, v2320, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2326, v687);
             }
             if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax2323) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax2323 == 0)) {
                 eax2323 = reinterpret_cast<void**>(1);
             }
-            eax2328 = fun_8048ce0(ecx2311, eax2323, v2321, 4, v2320, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2327, v687);
+            eax2328 = fun_8048ce0(ecx2311, eax2323, v2321, 4, v2320, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2327, v687);
             if (!eax2328) {
-                eax2328 = fun_8048b10(ecx2311, "Memory allocation failed", v2321, 4, v2320, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2329, v687);
+                eax2328 = fun_8048b10(ecx2311, "Memory allocation failed", v2321, 4, v2320, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2329, v687);
             }
             fun_8048c20(reinterpret_cast<int32_t>(v2330) + 1 + reinterpret_cast<uint32_t>(v2331), eax2328, &v2332->f1, eax2309, v2333, v2334, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2335, v687);
             if (!(reinterpret_cast<uint1_t>(v2336 < 0) | reinterpret_cast<uint1_t>(v2336 == 0)) && v2337) {
@@ -30112,23 +30112,23 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
                 eax2347 = fun_8048b10(v2333, "Memory allocation failed", eax2328, &v2332->f1, eax2309, v2333, v2334, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2348, v687);
             }
             ecx2349 = reinterpret_cast<void**>(&v2350->f1);
-            fun_8048c20(reinterpret_cast<uint32_t>(ecx2349) + reinterpret_cast<uint32_t>(v2351) + 1, eax2347, reinterpret_cast<int32_t>(v2352) + 1 + reinterpret_cast<uint32_t>(v2353), eax2328, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2354, v687);
+            fun_8048c20(reinterpret_cast<uint32_t>(ecx2349) + reinterpret_cast<uint32_t>(v2351) + 1, eax2347, reinterpret_cast<int32_t>(v2352) + 1 + reinterpret_cast<uint32_t>(v2353), eax2328, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2354, v687);
             if (eax2328) {
-                fun_8048bc0(ecx2349, eax2328, eax2347, reinterpret_cast<int32_t>(v2352) + 1 + reinterpret_cast<uint32_t>(v2353), eax2328, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2355, v687, ecx2349, eax2328, eax2347, reinterpret_cast<int32_t>(v2352) + 1 + reinterpret_cast<uint32_t>(v2353), eax2328, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2356, v687);
+                fun_8048bc0(ecx2349, eax2328, eax2347, reinterpret_cast<int32_t>(v2352) + 1 + reinterpret_cast<uint32_t>(v2353), eax2328, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2355, v687, ecx2349, eax2328, eax2347, reinterpret_cast<int32_t>(v2352) + 1 + reinterpret_cast<uint32_t>(v2353), eax2328, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2356, v687);
             }
             v2357 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff440);
             v2358 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffee48);
-            fun_8048ca0(reinterpret_cast<int32_t>(ebp4) + 0xffffee4c, v2358, 4, v2357, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2359, v687);
+            fun_8048ca0(reinterpret_cast<int32_t>(ebp4) + 0xffffee4c, v2358, 4, v2357, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2359, v687);
             eax2360 = reinterpret_cast<void**>(v2361 + 1 + v2362 + 1 + v2363 << 5);
             if (reinterpret_cast<int32_t>(eax2360) < reinterpret_cast<int32_t>(0)) {
-                eax2360 = fun_8048c80(ecx2349, "Attempt to allocate a negative amount of memory.", v2358, 4, v2357, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2364, v687);
+                eax2360 = fun_8048c80(ecx2349, "Attempt to allocate a negative amount of memory.", v2358, 4, v2357, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2364, v687);
             }
             if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax2360) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax2360 == 0)) {
                 eax2360 = reinterpret_cast<void**>(1);
             }
-            eax2366 = fun_8048ce0(ecx2349, eax2360, v2358, 4, v2357, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2365, v687);
+            eax2366 = fun_8048ce0(ecx2349, eax2360, v2358, 4, v2357, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2365, v687);
             if (!eax2366) {
-                eax2366 = fun_8048b10(ecx2349, "Memory allocation failed", v2358, 4, v2357, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2367, v687);
+                eax2366 = fun_8048b10(ecx2349, "Memory allocation failed", v2358, 4, v2357, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2367, v687);
             }
             ecx2368 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v2369) + 1 + reinterpret_cast<int32_t>(v2370) + 1);
             fun_8048c20(reinterpret_cast<int32_t>(v2371) + 1 + reinterpret_cast<int32_t>(v2372) + 1 + reinterpret_cast<uint32_t>(v2373), eax2366, ecx2368, eax2347, v2374, v2375, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2376, v687);
@@ -30150,23 +30150,23 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
                 eax2389 = fun_8048b10(ecx2368, "Memory allocation failed", eax2366, ecx2368, eax2347, v2374, v2375, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2390, v687);
             }
             ecx2391 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v2392) + 1 + reinterpret_cast<int32_t>(v2393) + 1);
-            fun_8048c20(reinterpret_cast<uint32_t>(ecx2391) + reinterpret_cast<uint32_t>(v2394) + 1, eax2389, reinterpret_cast<int32_t>(v2395) + 1 + reinterpret_cast<int32_t>(v2396) + 1 + reinterpret_cast<uint32_t>(v2397), eax2366, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2398, v687);
+            fun_8048c20(reinterpret_cast<uint32_t>(ecx2391) + reinterpret_cast<uint32_t>(v2394) + 1, eax2389, reinterpret_cast<int32_t>(v2395) + 1 + reinterpret_cast<int32_t>(v2396) + 1 + reinterpret_cast<uint32_t>(v2397), eax2366, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2398, v687);
             if (eax2366) {
-                fun_8048bc0(ecx2391, eax2366, eax2389, reinterpret_cast<int32_t>(v2395) + 1 + reinterpret_cast<int32_t>(v2396) + 1 + reinterpret_cast<uint32_t>(v2397), eax2366, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2399, v687, ecx2391, eax2366, eax2389, reinterpret_cast<int32_t>(v2395) + 1 + reinterpret_cast<int32_t>(v2396) + 1 + reinterpret_cast<uint32_t>(v2397), eax2366, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2400, v687);
+                fun_8048bc0(ecx2391, eax2366, eax2389, reinterpret_cast<int32_t>(v2395) + 1 + reinterpret_cast<int32_t>(v2396) + 1 + reinterpret_cast<uint32_t>(v2397), eax2366, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2399, v687, ecx2391, eax2366, eax2389, reinterpret_cast<int32_t>(v2395) + 1 + reinterpret_cast<int32_t>(v2396) + 1 + reinterpret_cast<uint32_t>(v2397), eax2366, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2400, v687);
             }
             v2401 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff43c);
             v2402 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffee50);
-            fun_8048ca0(reinterpret_cast<int32_t>(ebp4) + 0xffffee54, v2402, 4, v2401, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2403, v687);
+            fun_8048ca0(reinterpret_cast<int32_t>(ebp4) + 0xffffee54, v2402, 4, v2401, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2403, v687);
             eax2404 = reinterpret_cast<void**>(v2405 + 1 + v2406 + 1 + v2407 + 1 + v2408 << 5);
             if (reinterpret_cast<int32_t>(eax2404) < reinterpret_cast<int32_t>(0)) {
-                eax2404 = fun_8048c80(ecx2391, "Attempt to allocate a negative amount of memory.", v2402, 4, v2401, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2409, v687);
+                eax2404 = fun_8048c80(ecx2391, "Attempt to allocate a negative amount of memory.", v2402, 4, v2401, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2409, v687);
             }
             if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax2404) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax2404 == 0)) {
                 eax2404 = reinterpret_cast<void**>(1);
             }
-            eax2411 = fun_8048ce0(ecx2391, eax2404, v2402, 4, v2401, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2410, v687);
+            eax2411 = fun_8048ce0(ecx2391, eax2404, v2402, 4, v2401, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2410, v687);
             if (!eax2411) {
-                eax2411 = fun_8048b10(ecx2391, "Memory allocation failed", v2402, 4, v2401, 1, 0x8070f3a, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2412, v687);
+                eax2411 = fun_8048b10(ecx2391, "Memory allocation failed", v2402, 4, v2401, 1, "_ optic : Call nlinopt nlinopt At line 351 of file optic.F90", v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2412, v687);
             }
             ecx2413 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v2414) + 1 + reinterpret_cast<int32_t>(v2415) + 1 + reinterpret_cast<int32_t>(v2416) + 1);
             fun_8048c20(reinterpret_cast<int32_t>(v2417) + 1 + reinterpret_cast<int32_t>(v2418) + 1 + reinterpret_cast<int32_t>(v2419) + 1 + reinterpret_cast<uint32_t>(v2420), eax2411, ecx2413, eax2389, v2421, v2422, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2423, v687);
@@ -30194,7 +30194,7 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
             v2442 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
             fun_8048cd0(ecx2413, v2442, v2437, v2436, eax2389, v2421, v2422, v374, v373, v372, v2076, v2077, ecx2413, v2442, v2437, v2436, eax2389, v2421, v2422, v374, v373, v372, v2076, v2077);
             v2443 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
-            fun_8048cc0(ecx2413, v2443, 0x8070f50, 9, eax2389, v2421, v2422, v374, v373, v372, v2076, v2077, ecx2413, v2443, 0x8070f50, 9, eax2389, v2421, v2422, v374, v373, v372, v2076, v2077);
+            fun_8048cc0(ecx2413, v2443, " nlinopt At line 351 of file optic.F90", 9, eax2389, v2421, v2422, v374, v373, v372, v2076, v2077, ecx2413, v2443, " nlinopt At line 351 of file optic.F90", 9, eax2389, v2421, v2422, v374, v373, v372, v2076, v2077);
             v2444 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffecc0);
             fun_8048c50(ecx2413, v2444, reinterpret_cast<int32_t>(ebp4) - 0xaac + (reinterpret_cast<uint32_t>(v2300) + 0xffffffff << 2), 4, eax2389, v2421, v2422, v374, v373, v372, v2076, v2077, ecx2413, v2444, reinterpret_cast<int32_t>(ebp4) - 0xaac + (reinterpret_cast<uint32_t>(v2300) + 0xffffffff << 2), 4, eax2389, v2421, v2422, v374, v373, v372, v2076, v2077);
             v2445 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffff5c8);
@@ -30235,87 +30235,87 @@ void** MAIN__(void** ecx, int32_t a2, int32_t* a3) {
         }
     }
     if (!v15) {
-        v2294 = reinterpret_cast<void**>(0x8070ab3);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 351 of file optic.F90", 0x8070d10, 0x8070ab3, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 351 of file optic.F90", 0x8070d10, 0x8070ab3, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("nband");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 351 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "nband", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 351 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "nband", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v15, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2453, v687, ecx2222, v15, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2454, v687);
     if (!v16) {
-        v2294 = reinterpret_cast<void**>(0x8070b0e);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 352 of file optic.F90", 0x8070d10, 0x8070b0e, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 352 of file optic.F90", 0x8070d10, 0x8070b0e, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("occ");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 352 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "occ", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 352 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "occ", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v16, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2455, v687, ecx2222, v16, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2456, v687);
     if (!v10) {
-        v2294 = reinterpret_cast<void**>(0x8070c9a);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 353 of file optic.F90", 0x8070d10, 0x8070c9a, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 353 of file optic.F90", 0x8070d10, 0x8070c9a, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("eigen11");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 353 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "eigen11", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 353 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "eigen11", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v10, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2457, v687, ecx2222, v10, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2458, v687);
     if (!v11) {
-        v2294 = reinterpret_cast<void**>(0x8070cc0);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 353 of file optic.F90", 0x8070d10, 0x8070cc0, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 353 of file optic.F90", 0x8070d10, 0x8070cc0, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("eigen12");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 353 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "eigen12", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 353 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "eigen12", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v11, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2459, v687, ecx2222, v11, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2460, v687);
     if (!v12) {
-        v2294 = reinterpret_cast<void**>(0x8070ce6);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 353 of file optic.F90", 0x8070d10, 0x8070ce6, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 353 of file optic.F90", 0x8070d10, 0x8070ce6, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("eigen13");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 353 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "eigen13", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 353 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "eigen13", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v12, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2461, v687, ecx2222, v12, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2462, v687);
     if (!v9) {
-        v2294 = reinterpret_cast<void**>(0x8070c75);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 354 of file optic.F90", 0x8070d10, 0x8070c75, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 354 of file optic.F90", 0x8070d10, 0x8070c75, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("eigen0");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 354 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "eigen0", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 354 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "eigen0", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v9, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2463, v687, ecx2222, v9, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2464, v687);
     if (!v7) {
-        v2294 = reinterpret_cast<void**>(0x8070d7e);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 354 of file optic.F90", 0x8070d10, 0x8070d7e, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 354 of file optic.F90", 0x8070d10, 0x8070d7e, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("doccde");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 354 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "doccde", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 354 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "doccde", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v7, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2465, v687, ecx2222, v7, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2466, v687);
     if (!v21) {
-        v2294 = reinterpret_cast<void**>(0x8070d5c);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 354 of file optic.F90", 0x8070d10, 0x8070d5c, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 354 of file optic.F90", 0x8070d10, 0x8070d5c, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("wtk");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 354 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "wtk", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 354 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "wtk", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v21, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2467, v687, ecx2222, v21, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2468, v687);
     if (!v6) {
-        v2294 = reinterpret_cast<void**>(0x8070da3);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 355 of file optic.F90", 0x8070d10, 0x8070da3, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 355 of file optic.F90", 0x8070d10, 0x8070da3, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("cond_nd");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 355 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "cond_nd", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 355 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "cond_nd", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v6, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2469, v687, ecx2222, v6, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2470, v687);
     if (!v5) {
-        v2294 = reinterpret_cast<void**>(0x8070e6c);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 355 of file optic.F90", 0x8070d10, 0x8070e6c, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 355 of file optic.F90", 0x8070d10, 0x8070e6c, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("cond_kg");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 355 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "cond_kg", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 355 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "cond_kg", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v5, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2471, v687, ecx2222, v5, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2472, v687);
     if (!v14) {
-        v2294 = reinterpret_cast<void**>(0x8070b3e);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 357 of file optic.F90", 0x8070d10, 0x8070b3e, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 357 of file optic.F90", 0x8070d10, 0x8070b3e, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("kpt");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 357 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "kpt", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 357 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "kpt", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v14, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2473, v687, ecx2222, v14, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2474, v687);
     if (!v20) {
-        v2294 = reinterpret_cast<void**>(0x8070b12);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 357 of file optic.F90", 0x8070d10, 0x8070b12, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 357 of file optic.F90", 0x8070d10, 0x8070b12, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("symrel");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 357 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "symrel", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 357 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "symrel", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v20, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2475, v687, ecx2222, v20, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2476, v687);
     if (!v18) {
-        v2294 = reinterpret_cast<void**>(0x8070e74);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 357 of file optic.F90", 0x8070d10, 0x8070e74, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 357 of file optic.F90", 0x8070d10, 0x8070e74, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("symcart");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 357 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "symcart", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 357 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "symcart", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v18, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2477, v687, ecx2222, v18, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2478, v687);
     if (!v17) {
-        v2294 = reinterpret_cast<void**>(0x8070ec5);
-        v2295 = reinterpret_cast<void**>(0x8070d10);
-        fun_8048c30(ecx2222, "At line 357 of file optic.F90", 0x8070d10, 0x8070ec5, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 357 of file optic.F90", 0x8070d10, 0x8070ec5, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
+        v2294 = reinterpret_cast<void**>("pmat");
+        v2295 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx2222, "At line 357 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "pmat", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, ecx2222, "At line 357 of file optic.F90", "Attempt to DEALLOCATE unallocated '%s'", "pmat", v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
     }
     fun_8048bc0(ecx2222, v17, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2479, v687, ecx2222, v17, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100, v2480, v687);
     hdr_clean_(ecx2222, reinterpret_cast<int32_t>(ebp4) + 0xfffff670, v2295, v2294, v1522, v1521, v1520, v374, v373, v372, v2076, v2077, v2084, v2085, v2086, v2087, v2088, v2089, v2090, v2221, 0x100);
@@ -30617,35 +30617,35 @@ void** wffopen_(void** ecx, void** a2, int32_t* a3, void** a4, int32_t* a5, void
     if (*reinterpret_cast<void***>(a2)) {
         if (!reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a2) == 0xffffffff)) {
             v31 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048cd0(ecx, v31, a4, 0x84, v32, v33, v34, v35, v36, 0x5000, 0, 0x80733c4, ecx, v31, a4, 0x84, v37, v38, v39, v40, v41, 0x5000, 0, 0x80733c4);
+            fun_8048cd0(ecx, v31, a4, 0x84, v32, v33, v34, v35, v36, 0x5000, 0, "wffopen.F90", ecx, v31, a4, 0x84, v37, v38, v39, v40, v41, 0x5000, 0, "wffopen.F90");
             v42 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048cc0(ecx, v42, 0x80733e5, 1, v43, v44, v45, v46, v47, 0x5000, 0, 0x80733c4, ecx, v42, 0x80733e5, 1, v48, v49, v50, v51, v52, 0x5000, 0, 0x80733c4);
+            fun_8048cc0(ecx, v42, "\n WffOpen : ERROR -  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 1, v43, v44, v45, v46, v47, 0x5000, 0, "wffopen.F90", ecx, v42, "\n WffOpen : ERROR -  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 1, v48, v49, v50, v51, v52, 0x5000, 0, "wffopen.F90");
             v53 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048cc0(ecx, v53, 0x80733e6, 18, v54, v55, v56, v57, v58, 0x5000, 0, 0x80733c4, ecx, v53, 0x80733e6, 18, v59, v60, v61, v62, v63, 0x5000, 0, 0x80733c4);
+            fun_8048cc0(ecx, v53, " WffOpen : ERROR -  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 18, v54, v55, v56, v57, v58, 0x5000, 0, "wffopen.F90", ecx, v53, " WffOpen : ERROR -  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 18, v59, v60, v61, v62, v63, 0x5000, 0, "wffopen.F90");
             v64 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048cc0(ecx, v64, 0x80733e5, 1, v65, v66, v67, v68, v69, 0x5000, 0, 0x80733c4, ecx, v64, 0x80733e5, 1, v70, v71, v72, v73, v74, 0x5000, 0, 0x80733c4);
+            fun_8048cc0(ecx, v64, "\n WffOpen : ERROR -  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 1, v65, v66, v67, v68, v69, 0x5000, 0, "wffopen.F90", ecx, v64, "\n WffOpen : ERROR -  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 1, v70, v71, v72, v73, v74, 0x5000, 0, "wffopen.F90");
             v75 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048cc0(ecx, v75, 0x80733f8, 64, v76, v77, v78, v79, v80, 0x5000, 0, 0x80733c4, ecx, v75, 0x80733f8, 64, v81, v82, v83, v84, v85, 0x5000, 0, 0x80733c4);
+            fun_8048cc0(ecx, v75, "  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 64, v76, v77, v78, v79, v80, 0x5000, 0, "wffopen.F90", ecx, v75, "  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 64, v81, v82, v83, v84, v85, 0x5000, 0, "wffopen.F90");
             v86 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048cc0(ecx, v86, 0x80733e5, 1, v87, v88, v89, v90, v91, 0x5000, 0, 0x80733c4, ecx, v86, 0x80733e5, 1, v92, v93, v94, v95, v96, 0x5000, 0, 0x80733c4);
+            fun_8048cc0(ecx, v86, "\n WffOpen : ERROR -  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 1, v87, v88, v89, v90, v91, 0x5000, 0, "wffopen.F90", ecx, v86, "\n WffOpen : ERROR -  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 1, v92, v93, v94, v95, v96, 0x5000, 0, "wffopen.F90");
             v97 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048cc0(ecx, v97, 0x8073438, 54, v98, v99, v100, v101, v102, 0x5000, 0, 0x80733c4, ecx, v97, 0x8073438, 54, v103, v104, v105, v106, v107, 0x5000, 0, 0x80733c4);
+            fun_8048cc0(ecx, v97, "  to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 54, v98, v99, v100, v101, v102, 0x5000, 0, "wffopen.F90", ecx, v97, "  to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 54, v103, v104, v105, v106, v107, 0x5000, 0, "wffopen.F90");
             v108 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048cc0(ecx, v108, 0x80733e5, 1, v109, v110, v111, v112, v113, 0x5000, 0, 0x80733c4, ecx, v108, 0x80733e5, 1, v114, v115, v116, v117, v118, 0x5000, 0, 0x80733c4);
+            fun_8048cc0(ecx, v108, "\n WffOpen : ERROR -  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 1, v109, v110, v111, v112, v113, 0x5000, 0, "wffopen.F90", ecx, v108, "\n WffOpen : ERROR -  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 1, v114, v115, v116, v117, v118, 0x5000, 0, "wffopen.F90");
             v119 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048cc0(ecx, v119, 0x807346e, 25, v120, v121, v122, v123, v124, 0x5000, 0, 0x80733c4, ecx, v119, 0x807346e, 25, v125, v126, v127, v128, v129, 0x5000, 0, 0x80733c4);
+            fun_8048cc0(ecx, v119, "  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 25, v120, v121, v122, v123, v124, 0x5000, 0, "wffopen.F90", ecx, v119, "  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 25, v125, v126, v127, v128, v129, 0x5000, 0, "wffopen.F90");
             v130 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048c50(ecx, v130, a2, 4, v131, v132, v133, v134, v135, 0x5000, 0, 0x80733c4, ecx, v130, a2, 4, v136, v137, v138, v139, v140, 0x5000, 0, 0x80733c4);
+            fun_8048c50(ecx, v130, a2, 4, v131, v132, v133, v134, v135, 0x5000, 0, "wffopen.F90", ecx, v130, a2, 4, v136, v137, v138, v139, v140, 0x5000, 0, "wffopen.F90");
             v141 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048cc0(ecx, v141, 0x8073487, 1, v142, v143, v144, v145, v146, 0x5000, 0, 0x80733c4, ecx, v141, 0x8073487, 1, v147, v148, v149, v150, v151, 0x5000, 0, 0x80733c4);
+            fun_8048cc0(ecx, v141, ".  Action : change accesswff or use ABINIT in parallel.COLL", 1, v142, v143, v144, v145, v146, 0x5000, 0, "wffopen.F90", ecx, v141, ".  Action : change accesswff or use ABINIT in parallel.COLL", 1, v147, v148, v149, v150, v151, 0x5000, 0, "wffopen.F90");
             v152 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048cc0(ecx, v152, 0x80733e5, 1, v153, v154, v155, v156, v157, 0x5000, 0, 0x80733c4, ecx, v152, 0x80733e5, 1, v158, v159, v160, v161, v162, 0x5000, 0, 0x80733c4);
+            fun_8048cc0(ecx, v152, "\n WffOpen : ERROR -  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 1, v153, v154, v155, v156, v157, 0x5000, 0, "wffopen.F90", ecx, v152, "\n WffOpen : ERROR -  For the time being the input variable accesswff is restricted   to 0, 2, or 3 in sequential, and 0 or 1 in parallel.  Its value is accesswff=.  Action : change accesswff or use ABINIT in parallel.COLL", 1, v158, v159, v160, v161, v162, 0x5000, 0, "wffopen.F90");
             v163 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048cc0(ecx, v163, 0x8073488, 54, v164, v165, v166, v167, v168, 0x5000, 0, 0x80733c4, ecx, v163, 0x8073488, 54, v169, v170, v171, v172, v173, 0x5000, 0, 0x80733c4);
+            fun_8048cc0(ecx, v163, "  Action : change accesswff or use ABINIT in parallel.COLL", 54, v164, v165, v166, v167, v168, 0x5000, 0, "wffopen.F90", ecx, v163, "  Action : change accesswff or use ABINIT in parallel.COLL", 54, v169, v170, v171, v172, v173, 0x5000, 0, "wffopen.F90");
             v174 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffc78);
-            fun_8048b50(ecx, v174, 0x8073488, 54, v175, v176, v177, v178, v179, 0x5000, 0, 0x80733c4, ecx, v174, 0x8073488, 54, v180, v181, v182, v183, v184, 0x5000, 0, 0x80733c4);
-            wrtout_(ecx, 0x80734c4, reinterpret_cast<int32_t>(ebp11) + 0xfffffe04, 0x80734be, 0x1f4, 4, v185, v186);
-            eax189 = leave_new_(ecx, "COLL", 4, 0x80734be, 0x1f4, 4, v187, v188);
+            fun_8048b50(ecx, v174, "  Action : change accesswff or use ABINIT in parallel.COLL", 54, v175, v176, v177, v178, v179, 0x5000, 0, "wffopen.F90", ecx, v174, "  Action : change accesswff or use ABINIT in parallel.COLL", 54, v180, v181, v182, v183, v184, 0x5000, 0, "wffopen.F90");
+            wrtout_(ecx, 0x80734c4, reinterpret_cast<int32_t>(ebp11) + 0xfffffe04, "COLL", 0x1f4, 4, v185, v186);
+            eax189 = leave_new_(ecx, "COLL", 4, "COLL", 0x1f4, 4, v187, v188);
         } else {
             eax189 = *reinterpret_cast<void***>(a8);
             if (*reinterpret_cast<void***>(a7) == eax189) {
@@ -30770,16 +30770,16 @@ void** mati3inv_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     eax15 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx14) + v13 * *reinterpret_cast<uint32_t*>(a1 + 2));
     if (!eax15) {
         fun_8048cd0(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25);
-        fun_8048cc0(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, 0x807390a, 1, v26, v27, v28, v29, v30, v31, v32, v33);
-        fun_8048cc0(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, 0x807390b, 17, v34, v35, v36, v37, v38, v39, v40, v41);
-        fun_8048cc0(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, 0x807390a, 1, v42, v43, v44, v45, v46, v47, v48, v49);
-        fun_8048cc0(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, 0x807391c, 36, v50, v51, v52, v53, v54, v55, v56, v57);
-        fun_8048cc0(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, 0x807390a, 1, v58, v59, v60, v61, v62, v63, v64, v65);
+        fun_8048cc0(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, "\n mati3inv : BUG -  Attempting to invert integer array   ==> determinant is zero.COLL", 1, v26, v27, v28, v29, v30, v31, v32, v33);
+        fun_8048cc0(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, " mati3inv : BUG -  Attempting to invert integer array   ==> determinant is zero.COLL", 17, v34, v35, v36, v37, v38, v39, v40, v41);
+        fun_8048cc0(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, "\n mati3inv : BUG -  Attempting to invert integer array   ==> determinant is zero.COLL", 1, v42, v43, v44, v45, v46, v47, v48, v49);
+        fun_8048cc0(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, "  Attempting to invert integer array   ==> determinant is zero.COLL", 36, v50, v51, v52, v53, v54, v55, v56, v57);
+        fun_8048cc0(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, "\n mati3inv : BUG -  Attempting to invert integer array   ==> determinant is zero.COLL", 1, v58, v59, v60, v61, v62, v63, v64, v65);
         fun_8048bd0(ecx14, reinterpret_cast<int32_t>(ebp10) - 0x3ac, reinterpret_cast<int32_t>(ebp10) + 0xfffffda8, 4, 0, v66, v67, v68, v69, v70, v71);
-        fun_8048cc0(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, 0x8073940, 27, 0, v72, v73, v74, v75, v76, v77, v78);
-        fun_8048b50(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, 0x8073940, 27, 0, v79, v80, v81, v82, v83, v84, v85);
-        wrtout_(ecx14, 0x8073960, reinterpret_cast<int32_t>(ebp10) + 0xfffffdf0, 0x807395b, 0x1f4, 4, v86, v87);
-        eax15 = leave_new_(ecx14, "COLL", 4, 0x807395b, 0x1f4, 4, v88, v89);
+        fun_8048cc0(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, "   ==> determinant is zero.COLL", 27, 0, v72, v73, v74, v75, v76, v77, v78);
+        fun_8048b50(ecx14, reinterpret_cast<int32_t>(ebp10) + 0xfffffc54, "   ==> determinant is zero.COLL", 27, 0, v79, v80, v81, v82, v83, v84, v85);
+        wrtout_(ecx14, 0x8073960, reinterpret_cast<int32_t>(ebp10) + 0xfffffdf0, "COLL", 0x1f4, 4, v86, v87);
+        eax15 = leave_new_(ecx14, "COLL", 4, "COLL", 0x1f4, 4, v88, v89);
     } else {
         edi90 = eax15;
         ecx91 = 1;
@@ -30949,58 +30949,58 @@ void** hdr_skip_wfftype_(void** ecx, struct s15* a2, void** a3, void** a4, void*
     ebp11 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     v12 = a2->f0;
     *reinterpret_cast<void***>(a3) = reinterpret_cast<void**>(0);
-    if (!a2->f4 || (eax13 = a2->f4, reinterpret_cast<int1_t>(eax13 == 0xffffffff)) && (eax13 = a2->f152, a2->f148 == eax13)) {
+    if (!a2->f4 || (eax13 = a2->f4, reinterpret_cast<int1_t>(eax13 == 0xffffffff)) && (eax13 = a2->f98, a2->f94 == eax13)) {
         fun_8048d20(reinterpret_cast<int32_t>(ebp11) + 0xffffff7c, v14, v15, v16, v17);
-        fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp11) + 0xfffffde0, v18, v19, v20, v21, v22, 0, v12, 0x8072f68, 0x71, v23);
+        fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp11) + 0xfffffde0, v18, v19, v20, v21, v22, 0, v12, "hdr_skip.F90", 0x71, v23);
         v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xffffffea);
         v25 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0);
-        fun_8048cc0(ecx, v25, v24, 6, v26, v27, v28, 0, v12, 0x8072f68, 0x71, v29, ecx, v25, v24, 6, v30, v31, v32, 0, v12, 0x8072f68, 0x71, v33);
+        fun_8048cc0(ecx, v25, v24, 6, v26, v27, v28, 0, v12, "hdr_skip.F90", 0x71, v29, ecx, v25, v24, 6, v30, v31, v32, 0, v12, "hdr_skip.F90", 0x71, v33);
         v34 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xffffffe4);
         v35 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0);
-        fun_8048c50(ecx, v35, v34, 4, v36, v37, v38, 0, v12, 0x8072f68, 0x71, v39, ecx, v35, v34, 4, v40, v41, v42, 0, v12, 0x8072f68, 0x71, v43);
-        fun_8048be0(ecx, reinterpret_cast<int32_t>(ebp11) + 0xfffffde0, v34, 4, v44, v45, v46, 0, v12, 0x8072f68, 0x71, v47);
+        fun_8048c50(ecx, v35, v34, 4, v36, v37, v38, 0, v12, "hdr_skip.F90", 0x71, v39, ecx, v35, v34, 4, v40, v41, v42, 0, v12, "hdr_skip.F90", 0x71, v43);
+        fun_8048be0(ecx, reinterpret_cast<int32_t>(ebp11) + 0xfffffde0, v34, 4, v44, v45, v46, 0, v12, "hdr_skip.F90", 0x71, v47);
         if (v48 == 1 || (v49 == 2 || (v50 == 51 || (v51 == 52 || (v52 == 0x65 || v53 == 0x66))))) {
         }
         if (0) {
-            fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp11) + 0xfffffde0, v34, 4, v54, v55, v56, 0, v12, 0x8072f68, 0x7b, v57);
+            fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp11) + 0xfffffde0, v34, 4, v54, v55, v56, 0, v12, "hdr_skip.F90", 0x7b, v57);
             v58 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xffffff4c);
             v59 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebp11) - 0x220);
-            fun_8048bd0(ecx, v59, v58, 4, 0, v60, v61, 0, v12, 0x8072f68, 0x7b, ecx, v59, v58, 4, 0, v62, v63, 0, v12, 0x8072f68, 0x7b);
+            fun_8048bd0(ecx, v59, v58, 4, 0, v60, v61, 0, v12, "hdr_skip.F90", 0x7b, ecx, v59, v58, 4, 0, v62, v63, 0, v12, "hdr_skip.F90", 0x7b);
             v64 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xffffff9c);
             v65 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0);
-            fun_8048c50(ecx, v65, v64, 4, 0, v66, v67, 0, v12, 0x8072f68, 0x7b, v68, ecx, v65, v64, 4, 0, v69, v70, 0, v12, 0x8072f68, 0x7b, v71);
+            fun_8048c50(ecx, v65, v64, 4, 0, v66, v67, 0, v12, "hdr_skip.F90", 0x7b, v68, ecx, v65, v64, 4, 0, v69, v70, 0, v12, "hdr_skip.F90", 0x7b, v71);
             v72 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xffffff34);
             v73 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebp11) - 0x220);
-            fun_8048bd0(ecx, v73, v72, 4, 0, v74, v75, 0, v12, 0x8072f68, 0x7b, ecx, v73, v72, 4, 0, v76, v77, 0, v12, 0x8072f68, 0x7b);
+            fun_8048bd0(ecx, v73, v72, 4, 0, v74, v75, 0, v12, "hdr_skip.F90", 0x7b, ecx, v73, v72, 4, 0, v76, v77, 0, v12, "hdr_skip.F90", 0x7b);
             v78 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xffffff98);
             v79 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0);
-            fun_8048c50(ecx, v79, v78, 4, 0, v80, v81, 0, v12, 0x8072f68, 0x7b, v82, ecx, v79, v78, 4, 0, v83, v84, 0, v12, 0x8072f68, 0x7b, v85);
+            fun_8048c50(ecx, v79, v78, 4, 0, v80, v81, 0, v12, "hdr_skip.F90", 0x7b, v82, ecx, v79, v78, 4, 0, v83, v84, 0, v12, "hdr_skip.F90", 0x7b, v85);
             v86 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0);
-            fun_8048be0(ecx, v86, v78, 4, 0, v87, v88, 0, v12, 0x8072f68, 0x7b, v89, ecx, v86, v78, 4, 0, v90, v91, 0, v12, 0x8072f68, 0x7b, v92);
+            fun_8048be0(ecx, v86, v78, 4, 0, v87, v88, 0, v12, "hdr_skip.F90", 0x7b, v89, ecx, v86, v78, 4, 0, v90, v91, 0, v12, "hdr_skip.F90", 0x7b, v92);
         } else {
-            fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp11) + 0xfffffde0, v34, 4, v93, v94, v95, 0, v12, 0x8072f68, 0x79, v96);
-            fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp11) - 0x220, reinterpret_cast<int32_t>(ebp11) + 0xffffff64, 4, 0, v97, v98, 0, v12, 0x8072f68, 0x79);
+            fun_8048d30(ecx, reinterpret_cast<int32_t>(ebp11) + 0xfffffde0, v34, 4, v93, v94, v95, 0, v12, "hdr_skip.F90", 0x79, v96);
+            fun_8048bd0(ecx, reinterpret_cast<int32_t>(ebp11) - 0x220, reinterpret_cast<int32_t>(ebp11) + 0xffffff64, 4, 0, v97, v98, 0, v12, "hdr_skip.F90", 0x79);
             v78 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xffffff9c);
             v99 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0);
-            fun_8048c50(ecx, v99, v78, 4, 0, v100, v101, 0, v12, 0x8072f68, 0x79, v102, ecx, v99, v78, 4, 0, v103, v104, 0, v12, 0x8072f68, 0x79, v105);
-            fun_8048be0(ecx, reinterpret_cast<int32_t>(ebp11) + 0xfffffde0, v78, 4, 0, v106, v107, 0, v12, 0x8072f68, 0x79, v108);
+            fun_8048c50(ecx, v99, v78, 4, 0, v100, v101, 0, v12, "hdr_skip.F90", 0x79, v102, ecx, v99, v78, 4, 0, v103, v104, 0, v12, "hdr_skip.F90", 0x79, v105);
+            fun_8048be0(ecx, reinterpret_cast<int32_t>(ebp11) + 0xfffffde0, v78, 4, 0, v106, v107, 0, v12, "hdr_skip.F90", 0x79, v108);
         }
         ebx109 = v110 + 2;
         v111 = 1;
         if (1 <= ebx109) {
-            while (v112 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0), fun_8048d30(ecx, v112, v78, 4, 0, v113, v114, 0, v12, 0x8072f68, 0x80, v115, ecx, v112, v78, 4, 0, v116, v117, 0, v12, 0x8072f68, 0x80, v118), v119 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0), fun_8048be0(ecx, v119, v78, 4, 0, v120, v121, 0, v12, 0x8072f68, 0x80, v122, ecx, v119, v78, 4, 0, v123, v124, 0, v12, 0x8072f68, 0x80, v125), eax126 = reinterpret_cast<uint1_t>(v111 == ebx109), ++v111, eax126 == 0) {
+            while (v112 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0), fun_8048d30(ecx, v112, v78, 4, 0, v113, v114, 0, v12, "hdr_skip.F90", 0x80, v115, ecx, v112, v78, 4, 0, v116, v117, 0, v12, "hdr_skip.F90", 0x80, v118), v119 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0), fun_8048be0(ecx, v119, v78, 4, 0, v120, v121, 0, v12, "hdr_skip.F90", 0x80, v122, ecx, v119, v78, 4, 0, v123, v124, 0, v12, "hdr_skip.F90", 0x80, v125), eax126 = reinterpret_cast<uint1_t>(v111 == ebx109), ++v111, eax126 == 0) {
             }
         }
         eax13 = reinterpret_cast<void**>(22);
         if (!1 && (eax13 = v127, reinterpret_cast<int1_t>(eax13 == 1))) {
             v128 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0);
-            fun_8048d30(ecx, v128, v78, 4, 0, v129, v130, 0, v12, 0x8072f68, 0x83, v131, ecx, v128, v78, 4, 0, v132, v133, 0, v12, 0x8072f68, 0x83, v134);
+            fun_8048d30(ecx, v128, v78, 4, 0, v129, v130, 0, v12, "hdr_skip.F90", 0x83, v131, ecx, v128, v78, 4, 0, v132, v133, 0, v12, "hdr_skip.F90", 0x83, v134);
             v135 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0);
-            fun_8048be0(ecx, v135, v78, 4, 0, v136, v137, 0, v12, 0x8072f68, 0x83, v138, ecx, v135, v78, 4, 0, v139, v140, 0, v12, 0x8072f68, 0x83, v141);
+            fun_8048be0(ecx, v135, v78, 4, 0, v136, v137, 0, v12, "hdr_skip.F90", 0x83, v138, ecx, v135, v78, 4, 0, v139, v140, 0, v12, "hdr_skip.F90", 0x83, v141);
             v142 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0);
-            fun_8048d30(ecx, v142, v78, 4, 0, v143, v144, 0, v12, 0x8072f68, 0x84, v145, ecx, v142, v78, 4, 0, v146, v147, 0, v12, 0x8072f68, 0x84, v148);
+            fun_8048d30(ecx, v142, v78, 4, 0, v143, v144, 0, v12, "hdr_skip.F90", 0x84, v145, ecx, v142, v78, 4, 0, v146, v147, 0, v12, "hdr_skip.F90", 0x84, v148);
             v149 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffde0);
-            eax13 = fun_8048be0(ecx, v149, v78, 4, 0, v150, v151, 0, v12, 0x8072f68, 0x84, v152, ecx, v149, v78, 4, 0, v153, v154, 0, v12, 0x8072f68, 0x84, v155);
+            eax13 = fun_8048be0(ecx, v149, v78, 4, 0, v150, v151, 0, v12, "hdr_skip.F90", 0x84, v152, ecx, v149, v78, 4, 0, v153, v154, 0, v12, "hdr_skip.F90", 0x84, v155);
         }
     }
     return eax13;
@@ -31226,8 +31226,8 @@ void** wffreadeigk_(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         eax19 = reinterpret_cast<void**>(0);
     }
     if (0) {
-        v13 = reinterpret_cast<void**>(0x80723f0);
-        fun_8048c30(0, "At line 88 of file WffReadEigK.F90", 0x80723f0, 0x80723e7, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36);
+        v13 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(0, "At line 88 of file WffReadEigK.F90", "Attempting to allocate already allocated array '%s'", "kg_dum", v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36);
     } else {
         if (!1) {
             eax19 = fun_8048c80(0, "Attempt to allocate negative amount of memory. Possible integer overflow", v13, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56);
@@ -31250,17 +31250,17 @@ void** wffreadeigk_(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     eax99 = reinterpret_cast<void**>(0);
     addr_805b73b_21:
     if (0) {
-        fun_8048c30(0, "At line 88 of file WffReadEigK.F90", 0x80723f0, 0x8072447, v100, v101, v102, v103, v104, v105, v106, v107, v108, v109, v110, v111, v112, v113, v114, v115, v116);
+        fun_8048c30(0, "At line 88 of file WffReadEigK.F90", "Attempting to allocate already allocated array '%s'", "occ_dum", v100, v101, v102, v103, v104, v105, v106, v107, v108, v109, v110, v111, v112, v113, v114, v115, v116);
     } else {
         if (reinterpret_cast<int32_t>(eax99) < reinterpret_cast<int32_t>(0)) {
-            eax99 = fun_8048c80(0, "Attempt to allocate negative amount of memory. Possible integer overflow", v13, 0x80723e7, v117, v118, v119, v120, v121, v122, v123, v124, v125, v126, v127, v128, v129, v130, v131, v132, v133, v134, v135);
+            eax99 = fun_8048c80(0, "Attempt to allocate negative amount of memory. Possible integer overflow", v13, "kg_dum", v117, v118, v119, v120, v121, v122, v123, v124, v125, v126, v127, v128, v129, v130, v131, v132, v133, v134, v135);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax99) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax99 == 0)) {
             eax99 = reinterpret_cast<void**>(1);
         }
-        eax155 = fun_8048ce0(0, eax99, v13, 0x80723e7, v136, v137, v138, v139, v140, v141, v142, v143, v144, v145, v146, v147, v148, v149, v150, v151, v152, v153, v154);
+        eax155 = fun_8048ce0(0, eax99, v13, "kg_dum", v136, v137, v138, v139, v140, v141, v142, v143, v144, v145, v146, v147, v148, v149, v150, v151, v152, v153, v154);
         if (!eax155) {
-            eax155 = fun_8048b10(0, "Out of memory", v13, 0x80723e7, v156, v157, v158, v159, v160, v161, v162, v163, v164, v165, v166, v167, v168, v169, v170, v171, v172, v173, v174);
+            eax155 = fun_8048b10(0, "Out of memory", v13, "kg_dum", v156, v157, v158, v159, v160, v161, v162, v163, v164, v165, v166, v167, v168, v169, v170, v171, v172, v173, v174);
         }
         v18 = eax155;
         v175 = a10;
@@ -31286,15 +31286,15 @@ void** wffreadeigk_(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         if (v17) 
             goto addr_805b814_30;
     }
-    v191 = reinterpret_cast<void**>(0x80723e7);
-    v192 = reinterpret_cast<void**>(0x8072450);
-    fun_8048c30(ecx16, "At line 97 of file WffReadEigK.F90", 0x8072450, 0x80723e7, v190, v189, v188, v187, v186, v185, v184, v183, v182, v181, v180, v179, v178, v177, v176, v175, v193);
+    v191 = reinterpret_cast<void**>("kg_dum");
+    v192 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+    fun_8048c30(ecx16, "At line 97 of file WffReadEigK.F90", "Attempt to DEALLOCATE unallocated '%s'", "kg_dum", v190, v189, v188, v187, v186, v185, v184, v183, v182, v181, v180, v179, v178, v177, v176, v175, v193);
     addr_805b84e_32:
     fun_8048bc0(ecx16, v17, v192, v191, v190, v189, v188, v187, v186, v185, v184, v183, v182, v181, v180, v179, v178, v177, v176, v175, v194, v195, v196);
     if (!v18) {
-        v191 = reinterpret_cast<void**>(0x8072447);
-        v192 = reinterpret_cast<void**>(0x8072450);
-        fun_8048c30(ecx16, "At line 97 of file WffReadEigK.F90", 0x8072450, 0x8072447, v190, v189, v188, v187, v186, v185, v184, v183, v182, v181, v180, v179, v178, v177, v176, v175, v197);
+        v191 = reinterpret_cast<void**>("occ_dum");
+        v192 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx16, "At line 97 of file WffReadEigK.F90", "Attempt to DEALLOCATE unallocated '%s'", "occ_dum", v190, v189, v188, v187, v186, v185, v184, v183, v182, v181, v180, v179, v178, v177, v176, v175, v197);
     }
     fun_8048bc0(ecx16, v18, v192, v191, v190, v189, v188, v187, v186, v185, v184, v183, v182, v181, v180, v179, v178, v177, v176, v175, v198, v199, v200);
     if (!1) {
@@ -31648,7 +31648,7 @@ void** getwtk_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6,
             v186 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp10) + 0xfffffdd4);
             fun_8048cd0(ecx136, v186, v187, v188, 0x8072520, v189, 0x8072518, v190, 0x8072508, 0x8072510, v191, 0x8072508, ecx136, v186, v187, v188, 0x8072520, v189, 0x8072518, v190, 0x8072508, 0x8072510, v191, 0x8072508);
             v192 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp10) + 0xfffffdd4);
-            fun_8048cc0(ecx136, v192, 0x80724f5, 17, 0x8072520, v189, 0x8072518, v190, 0x8072508, 0x8072510, v191, 0x8072508, ecx136, v192, 0x80724f5, 17, 0x8072520, v189, 0x8072518, v190, 0x8072508, 0x8072510, v191, 0x8072508);
+            fun_8048cc0(ecx136, v192, " getwtk : ikpt = ", 17, 0x8072520, v189, 0x8072518, v190, 0x8072508, 0x8072510, v191, 0x8072508, ecx136, v192, " getwtk : ikpt = ", 17, 0x8072520, v189, 0x8072518, v190, 0x8072508, 0x8072510, v191, 0x8072508);
             v188 = reinterpret_cast<void**>(4);
             v187 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp10) + 0xffffff84);
             v193 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp10) + 0xfffffdd4);
@@ -32448,36 +32448,36 @@ void int2char4_(void** ecx, void** a2, void* a3, int32_t a4, void** a5, void** a
         v23 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
         fun_8048cd0(ecx, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32, 0x5000, ecx, v23, v33, v34, v35, v36, v37, v38, v39, v40, v41, 0x5000);
         v42 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
-        fun_8048cc0(ecx, v42, 0x807386f, 1, v43, v44, v45, v46, v47, v48, v49, 0x5000, ecx, v42, 0x807386f, 1, v50, v51, v52, v53, v54, v55, v56, 0x5000);
+        fun_8048cc0(ecx, v42, "\n int2char4: ERROR -", 1, v43, v44, v45, v46, v47, v48, v49, 0x5000, ecx, v42, "\n int2char4: ERROR -", 1, v50, v51, v52, v53, v54, v55, v56, 0x5000);
         v57 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
-        fun_8048cc0(ecx, v57, 0x8073870, 19, v58, v59, v60, v61, v62, v63, v64, 0x5000, ecx, v57, 0x8073870, 19, v65, v66, v67, v68, v69, v70, v71, 0x5000);
+        fun_8048cc0(ecx, v57, " int2char4: ERROR -", 19, v58, v59, v60, v61, v62, v63, v64, 0x5000, ecx, v57, " int2char4: ERROR -", 19, v65, v66, v67, v68, v69, v70, v71, 0x5000);
         v72 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
-        fun_8048cc0(ecx, v72, 0x807386f, 1, v73, v74, v75, v76, v77, v78, v79, 0x5000, ecx, v72, 0x807386f, 1, v80, v81, v82, v83, v84, v85, v86, 0x5000);
+        fun_8048cc0(ecx, v72, "\n int2char4: ERROR -", 1, v73, v74, v75, v76, v77, v78, v79, 0x5000, ecx, v72, "\n int2char4: ERROR -", 1, v80, v81, v82, v83, v84, v85, v86, 0x5000);
         v87 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
-        fun_8048cc0(ecx, v87, 0x8073884, 58, v88, v89, v90, v91, v92, v93, v94, 0x5000, ecx, v87, 0x8073884, 58, v95, v96, v97, v98, v99, v100, v101, 0x5000);
+        fun_8048cc0(ecx, v87, "  The integer argument should be between 0 and 9999, while  it is COLL", 58, v88, v89, v90, v91, v92, v93, v94, 0x5000, ecx, v87, "  The integer argument should be between 0 and 9999, while  it is COLL", 58, v95, v96, v97, v98, v99, v100, v101, 0x5000);
         v102 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
-        fun_8048cc0(ecx, v102, 0x807386f, 1, v103, v104, v105, v106, v107, v108, v109, 0x5000, ecx, v102, 0x807386f, 1, v110, v111, v112, v113, v114, v115, v116, 0x5000);
+        fun_8048cc0(ecx, v102, "\n int2char4: ERROR -", 1, v103, v104, v105, v106, v107, v108, v109, 0x5000, ecx, v102, "\n int2char4: ERROR -", 1, v110, v111, v112, v113, v114, v115, v116, 0x5000);
         v117 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
-        fun_8048cc0(ecx, v117, 0x80738be, 8, v118, v119, v120, v121, v122, v123, v124, 0x5000, ecx, v117, 0x80738be, 8, v125, v126, v127, v128, v129, v130, v131, 0x5000);
+        fun_8048cc0(ecx, v117, "  it is COLL", 8, v118, v119, v120, v121, v122, v123, v124, 0x5000, ecx, v117, "  it is COLL", 8, v125, v126, v127, v128, v129, v130, v131, 0x5000);
         v132 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
         fun_8048c50(ecx, v132, a2, 4, v133, v134, v135, v136, v137, v138, v139, 0x5000, ecx, v132, a2, 4, v140, v141, v142, v143, v144, v145, v146, 0x5000);
         v147 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
         fun_8048b50(ecx, v147, a2, 4, v148, v149, v150, v151, v152, v153, v154, 0x5000, ecx, v147, a2, 4, v155, v156, v157, v158, v159, v160, v161, 0x5000);
-        wrtout_(ecx, 0x80738cc, reinterpret_cast<int32_t>(ebp22) + 0xfffffe04, 0x80738c6, 0x1f4, 4, v162, v163);
-        leave_new_(ecx, "COLL", 4, 0x80738c6, 0x1f4, 4, v164, v165);
+        wrtout_(ecx, 0x80738cc, reinterpret_cast<int32_t>(ebp22) + 0xfffffe04, "COLL", 0x1f4, 4, v162, v163);
+        leave_new_(ecx, "COLL", 4, "COLL", 0x1f4, 4, v164, v165);
     }
     if (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a2)) > reinterpret_cast<int32_t>(9)) {
         if (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a2)) > reinterpret_cast<int32_t>(99)) {
             if (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a2)) > reinterpret_cast<int32_t>(0x3e7)) {
                 v166 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
-                fun_8048cd0(ecx, v166, 4, 0x80738c6, 0x1f4, 4, v167, v168, v169, v170, v171, 0x5000, ecx, v166, 4, 0x80738c6, 0x1f4, 4, v172, v173, v174, v175, v176, 0x5000);
+                fun_8048cd0(ecx, v166, 4, "COLL", 0x1f4, 4, v167, v168, v169, v170, v171, 0x5000, ecx, v166, 4, "COLL", 0x1f4, 4, v172, v173, v174, v175, v176, 0x5000);
                 v177 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
                 fun_8048c50(ecx, v177, a2, 4, 0x1f4, 4, v178, v179, v180, v181, v182, 0x5000, ecx, v177, a2, 4, 0x1f4, 4, v183, v184, v185, v186, v187, 0x5000);
                 v188 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
                 fun_8048b50(ecx, v188, a2, 4, 0x1f4, 4, v189, v190, v191, v192, v193, 0x5000, ecx, v188, a2, 4, 0x1f4, 4, v194, v195, v196, v197, v198, 0x5000);
             } else {
                 v199 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
-                fun_8048cd0(ecx, v199, 4, 0x80738c6, 0x1f4, 4, v200, v201, v202, v203, v204, 0x5000, ecx, v199, 4, 0x80738c6, 0x1f4, 4, v205, v206, v207, v208, v209, 0x5000);
+                fun_8048cd0(ecx, v199, 4, "COLL", 0x1f4, 4, v200, v201, v202, v203, v204, 0x5000, ecx, v199, 4, "COLL", 0x1f4, 4, v205, v206, v207, v208, v209, 0x5000);
                 v210 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
                 fun_8048c50(ecx, v210, a2, 4, 0x1f4, 4, v211, v212, v213, v214, v215, 0x5000, ecx, v210, a2, 4, 0x1f4, 4, v216, v217, v218, v219, v220, 0x5000);
                 v221 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
@@ -32485,7 +32485,7 @@ void int2char4_(void** ecx, void** a2, void* a3, int32_t a4, void** a5, void** a
             }
         } else {
             v232 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
-            fun_8048cd0(ecx, v232, 4, 0x80738c6, 0x1f4, 4, v233, v234, v235, v236, v237, 0x5000, ecx, v232, 4, 0x80738c6, 0x1f4, 4, v238, v239, v240, v241, v242, 0x5000);
+            fun_8048cd0(ecx, v232, 4, "COLL", 0x1f4, 4, v233, v234, v235, v236, v237, 0x5000, ecx, v232, 4, "COLL", 0x1f4, 4, v238, v239, v240, v241, v242, 0x5000);
             v243 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
             fun_8048c50(ecx, v243, a2, 4, 0x1f4, 4, v244, v245, v246, v247, v248, 0x5000, ecx, v243, a2, 4, 0x1f4, 4, v249, v250, v251, v252, v253, 0x5000);
             v254 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
@@ -32493,7 +32493,7 @@ void int2char4_(void** ecx, void** a2, void* a3, int32_t a4, void** a5, void** a
         }
     } else {
         v265 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
-        fun_8048cd0(ecx, v265, 4, 0x80738c6, 0x1f4, 4, v266, v267, v268, v269, v270, 0x5000, ecx, v265, 4, 0x80738c6, 0x1f4, 4, v271, v272, v273, v274, v275, 0x5000);
+        fun_8048cd0(ecx, v265, 4, "COLL", 0x1f4, 4, v266, v267, v268, v269, v270, 0x5000, ecx, v265, 4, "COLL", 0x1f4, 4, v271, v272, v273, v274, v275, 0x5000);
         v276 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
         fun_8048c50(ecx, v276, a2, 4, 0x1f4, 4, v277, v278, v279, v280, v281, 0x5000, ecx, v276, a2, 4, 0x1f4, 4, v282, v283, v284, v285, v286, 0x5000);
         v287 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp22) + 0xfffffcb0);
@@ -33572,59 +33572,59 @@ void** rwwf_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, v
     timab_(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffda0, 0x8072f78, v31, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47);
     if (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a11)) > reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a9)) && *reinterpret_cast<void***>(a16) != 0xffffffff) {
         fun_8048cd0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f78, v31, v48, v49, v50, v51, v52, v53, v54, v55);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v56, v57, v58, v59, v60, v61, v62, v63);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9d, 13, v64, v65, v66, v67, v68, v69, v70, v71);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v72, v73, v74, v75, v76, v77, v78, v79);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072faa, 30, v80, v81, v82, v83, v84, v85, v86, v87);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v88, v89, v90, v91, v92, v93, v94, v95);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fc8, 17, v96, v97, v98, v99, v100, v101, v102, v103);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v56, v57, v58, v59, v60, v61, v62, v63);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, " rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 13, v64, v65, v66, v67, v68, v69, v70, v71);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v72, v73, v74, v75, v76, v77, v78, v79);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  One should have nband<=mband  However, nband=, and mband=.PERS", 30, v80, v81, v82, v83, v84, v85, v86, v87);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v88, v89, v90, v91, v92, v93, v94, v95);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  However, nband=, and mband=.PERS", 17, v96, v97, v98, v99, v100, v101, v102, v103);
         fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, a11, 4, v104, v105, v106, v107, v108, v109, v110, v111);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fd9, 12, v112, v113, v114, v115, v116, v117, v118, v119);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ", and mband=.PERS", 12, v112, v113, v114, v115, v116, v117, v118, v119);
         fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, a9, 4, v120, v121, v122, v123, v124, v125, v126, v127);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fe5, 1, v128, v129, v130, v131, v132, v133, v134, v135);
-        fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fe5, 1, v136, v137, v138, v139, v140, v141, v142, v143);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ".PERS", 1, v128, v129, v130, v131, v132, v133, v134, v135);
+        fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ".PERS", 1, v136, v137, v138, v139, v140, v141, v142, v143);
         v144 = reinterpret_cast<void**>(4);
         v145 = reinterpret_cast<void**>(0x1f4);
-        v31 = reinterpret_cast<void**>(0x8072fe6);
-        wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, 0x8072fe6, 0x1f4, 4, v146, v147);
+        v31 = reinterpret_cast<void**>("PERS");
+        wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, "PERS", 0x1f4, 4, v146, v147);
         v32 = reinterpret_cast<void**>(4);
-        leave_new_(ecx30, "PERS", 4, 0x8072fe6, 0x1f4, 4, v148, v149);
+        leave_new_(ecx30, "PERS", 4, "PERS", 0x1f4, 4, v148, v149);
     }
     if (*reinterpret_cast<void***>(a3) && *reinterpret_cast<void***>(a3) != 1) {
         fun_8048cd0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, v32, v31, 0x1f4, 4, v150, v151, v152, v153, v154, v155);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, 0x1f4, 4, v156, v157, v158, v159, v160, v161);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9d, 13, 0x1f4, 4, v162, v163, v164, v165, v166, v167);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, 0x1f4, 4, v168, v169, v170, v171, v172, v173);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8073004, 40, 0x1f4, 4, v174, v175, v176, v177, v178, v179);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, 0x1f4, 4, v180, v181, v182, v183, v184, v185);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x807302c, 19, 0x1f4, 4, v186, v187, v188, v189, v190, v191);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v156, v157, v158, v159, v160, v161);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, " rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 13, 0x1f4, 4, v162, v163, v164, v165, v166, v167);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v168, v169, v170, v171, v172, v173);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  The argument formeig should be 0 or 1.  However, formeig=", 40, 0x1f4, 4, v174, v175, v176, v177, v178, v179);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v180, v181, v182, v183, v184, v185);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  However, formeig=", 19, 0x1f4, 4, v186, v187, v188, v189, v190, v191);
         fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, a3, 4, 0x1f4, 4, v192, v193, v194, v195, v196, v197);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fe5, 1, 0x1f4, 4, v198, v199, v200, v201, v202, v203);
-        fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fe5, 1, 0x1f4, 4, v204, v205, v206, v207, v208, v209);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ".PERS", 1, 0x1f4, 4, v198, v199, v200, v201, v202, v203);
+        fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ".PERS", 1, 0x1f4, 4, v204, v205, v206, v207, v208, v209);
         v144 = reinterpret_cast<void**>(4);
         v145 = reinterpret_cast<void**>(0x1f4);
-        v31 = reinterpret_cast<void**>(0x8072fe6);
-        wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, 0x8072fe6, 0x1f4, 4, v210, v211);
+        v31 = reinterpret_cast<void**>("PERS");
+        wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, "PERS", 0x1f4, 4, v210, v211);
         v32 = reinterpret_cast<void**>(4);
-        leave_new_(ecx30, "PERS", 4, 0x8072fe6, 0x1f4, 4, v212, v213);
+        leave_new_(ecx30, "PERS", 4, "PERS", 0x1f4, 4, v212, v213);
     }
     if (*reinterpret_cast<void***>(a16) != 1 && (*reinterpret_cast<void***>(a16) != 2 && (*reinterpret_cast<void***>(a16) != 3 && (*reinterpret_cast<void***>(a16) != 4 && (*reinterpret_cast<void***>(a16) != 0xffffffff && (*reinterpret_cast<void***>(a16) != 0xfffffffe && *reinterpret_cast<void***>(a16) != 0xfffffffc)))))) {
         fun_8048cd0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, v32, v31, 0x1f4, 4, v214, v215, v216, v217, v218, v219);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, 0x1f4, 4, v220, v221, v222, v223, v224, v225);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9d, 13, 0x1f4, 4, v226, v227, v228, v229, v230, v231);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, 0x1f4, 4, v232, v233, v234, v235, v236, v237);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8073040, 50, 0x1f4, 4, v238, v239, v240, v241, v242, v243);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, 0x1f4, 4, v244, v245, v246, v247, v248, v249);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8073072, 18, 0x1f4, 4, v250, v251, v252, v253, v254, v255);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v220, v221, v222, v223, v224, v225);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, " rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 13, 0x1f4, 4, v226, v227, v228, v229, v230, v231);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v232, v233, v234, v235, v236, v237);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  The argument option should be 1, 2, 3, -1 or -2.  However, option=(a,a,a,a,a,a,i4,a,a,i4,a,a,a) rwwf: ERROR -", 50, 0x1f4, 4, v238, v239, v240, v241, v242, v243);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v244, v245, v246, v247, v248, v249);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  However, option=(a,a,a,a,a,a,i4,a,a,i4,a,a,a) rwwf: ERROR -", 18, 0x1f4, 4, v250, v251, v252, v253, v254, v255);
         fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, a16, 4, 0x1f4, 4, v256, v257, v258, v259, v260, v261);
-        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fe5, 1, 0x1f4, 4, v262, v263, v264, v265, v266, v267);
-        fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fe5, 1, 0x1f4, 4, v268, v269, v270, v271, v272, v273);
+        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ".PERS", 1, 0x1f4, 4, v262, v263, v264, v265, v266, v267);
+        fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ".PERS", 1, 0x1f4, 4, v268, v269, v270, v271, v272, v273);
         v144 = reinterpret_cast<void**>(4);
         v145 = reinterpret_cast<void**>(0x1f4);
-        v31 = reinterpret_cast<void**>(0x8072fe6);
-        wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, 0x8072fe6, 0x1f4, 4, v274, v275);
+        v31 = reinterpret_cast<void**>("PERS");
+        wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, "PERS", 0x1f4, 4, v274, v275);
         v32 = reinterpret_cast<void**>(4);
-        leave_new_(ecx30, "PERS", 4, 0x8072fe6, 0x1f4, 4, v276, v277);
+        leave_new_(ecx30, "PERS", 4, "PERS", 0x1f4, 4, v276, v277);
     }
     v278 = 0;
     if (!*reinterpret_cast<void***>(a19 + 1) || reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a19 + 1) == 0xffffffff) && *reinterpret_cast<void***>(a19 + 37) == *reinterpret_cast<void***>(a19 + 38)) {
@@ -33660,26 +33660,26 @@ void** rwwf_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, v
             v292 = v293 * v294;
             if (v295) {
                 fun_8048cd0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, v32, v31, v145, v144, v291, v296, v297, v298, v299, v300);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v301, v302, v303, v304, v305);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x80730a1, 14, v145, v144, v291, v306, v307, v308, v309, v310);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v311, v312, v313, v314, v315);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x80730b0, 40, v145, v144, v291, v316, v317, v318, v319, v320);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v321, v322, v323, v324, v325);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x80730d8, 52, v145, v144, v291, v326, v327, v328, v329, v330);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v301, v302, v303, v304, v305);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, " rwwf: ERROR -", 14, v145, v144, v291, v306, v307, v308, v309, v310);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v311, v312, v313, v314, v315);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  Reading option of rwwf. Trying to read  the (npw,nspinor,nband) record of a wf file, unit=  gave iostat=", 40, v145, v144, v291, v316, v317, v318, v319, v320);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v321, v322, v323, v324, v325);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  the (npw,nspinor,nband) record of a wf file, unit=  gave iostat=", 52, v145, v144, v291, v326, v327, v328, v329, v330);
                 fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, reinterpret_cast<int32_t>(ebp20) + 0xfffffda4, 4, v145, v144, v291, v331, v332, v333, v334, v335);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v336, v337, v338, v339, v340);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x807310c, 14, v145, v144, v291, v341, v342, v343, v344, v345);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v336, v337, v338, v339, v340);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  gave iostat=", 14, v145, v144, v291, v341, v342, v343, v344, v345);
                 fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, reinterpret_cast<int32_t>(ebp20) + 0xffffffbc, 4, v145, v144, v291, v346, v347, v348, v349, v350);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x807311c, 34, v145, v144, v291, v351, v352, v353, v354, v355);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v356, v357, v358, v359, v360);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8073140, 35, v145, v144, v291, v361, v362, v363, v364, v365);
-                fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8073140, 35, v145, v144, v291, v366, v367, v368, v369, v370);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ". Your file is likely not correct.", 34, v145, v144, v291, v351, v352, v353, v354, v355);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v356, v357, v358, v359, v360);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  Action: check your input wf file.", 35, v145, v144, v291, v361, v362, v363, v364, v365);
+                fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  Action: check your input wf file.", 35, v145, v144, v291, v366, v367, v368, v369, v370);
                 v144 = reinterpret_cast<void**>(4);
                 v145 = reinterpret_cast<void**>(0x1f4);
-                v31 = reinterpret_cast<void**>(0x8072fe6);
-                wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, 0x8072fe6, 0x1f4, 4, v291, v371);
+                v31 = reinterpret_cast<void**>("PERS");
+                wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, "PERS", 0x1f4, 4, v291, v371);
                 v32 = reinterpret_cast<void**>(4);
-                leave_new_(ecx30, "PERS", 4, 0x8072fe6, 0x1f4, 4, v291, v372);
+                leave_new_(ecx30, "PERS", 4, "PERS", 0x1f4, 4, v291, v372);
             }
         } else {
             if (v278 == 1) {
@@ -33692,90 +33692,90 @@ void** rwwf_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, v
             }
             if (!1) {
                 fun_8048cd0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, v32, v31, 0x1f4, 4, v397, v398, v399, v400, v401, v402);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, 0x1f4, 4, v403, v404, v405, v406, v407, v408);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x80730a1, 14, 0x1f4, 4, v409, v410, v411, v412, v413, v414);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, 0x1f4, 4, v415, v416, v417, v418, v419, v420);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x80730b0, 40, 0x1f4, 4, v421, v422, v423, v424, v425, v426);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, 0x1f4, 4, v427, v428, v429, v430, v431, v432);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8073164, 44, 0x1f4, 4, v433, v434, v435, v436, v437, v438);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v403, v404, v405, v406, v407, v408);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, " rwwf: ERROR -", 14, 0x1f4, 4, v409, v410, v411, v412, v413, v414);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v415, v416, v417, v418, v419, v420);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  Reading option of rwwf. Trying to read  the (npw,nspinor,nband) record of a wf file, unit=  gave iostat=", 40, 0x1f4, 4, v421, v422, v423, v424, v425, v426);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v427, v428, v429, v430, v431, v432);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  the (npw,nband) record of a wf file, unit=  Reading option of rwwf. One should have npw=npw1  However, npw=, and npw1=  Reading option of rwwf. One should have nspinor=nspinor1  However, nspinor=, and nspinor1=  Reading option of rwwf. One should have npwso=npwso1  However, npwso=, and npwso1=  the k+g record of a wf file, unit=  an eigenvalue record of a wf file, unit=", 44, 0x1f4, 4, v433, v434, v435, v436, v437, v438);
                 fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, reinterpret_cast<int32_t>(ebp20) + 0xfffffda4, 4, 0x1f4, 4, v439, v440, v441, v442, v443, v444);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, 0x1f4, 4, v445, v446, v447, v448, v449, v450);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x807310c, 14, 0x1f4, 4, v451, v452, v453, v454, v455, v456);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v445, v446, v447, v448, v449, v450);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  gave iostat=", 14, 0x1f4, 4, v451, v452, v453, v454, v455, v456);
                 fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, reinterpret_cast<int32_t>(ebp20) + 0xffffffbc, 4, 0x1f4, 4, v457, v458, v459, v460, v461, v462);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x807311c, 34, 0x1f4, 4, v463, v464, v465, v466, v467, v468);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, 0x1f4, 4, v469, v470, v471, v472, v473, v474);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8073140, 35, 0x1f4, 4, v475, v476, v477, v478, v479, v480);
-                fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8073140, 35, 0x1f4, 4, v481, v482, v483, v484, v485, v486);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ". Your file is likely not correct.", 34, 0x1f4, 4, v463, v464, v465, v466, v467, v468);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, 0x1f4, 4, v469, v470, v471, v472, v473, v474);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  Action: check your input wf file.", 35, 0x1f4, 4, v475, v476, v477, v478, v479, v480);
+                fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  Action: check your input wf file.", 35, 0x1f4, 4, v481, v482, v483, v484, v485, v486);
                 v144 = reinterpret_cast<void**>(4);
                 v145 = reinterpret_cast<void**>(0x1f4);
-                v31 = reinterpret_cast<void**>(0x8072fe6);
-                wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, 0x8072fe6, 0x1f4, 4, v487, v488);
+                v31 = reinterpret_cast<void**>("PERS");
+                wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, "PERS", 0x1f4, 4, v487, v488);
                 v32 = reinterpret_cast<void**>(4);
-                leave_new_(ecx30, "PERS", 4, 0x8072fe6, 0x1f4, 4, v489, v490);
+                leave_new_(ecx30, "PERS", 4, "PERS", 0x1f4, 4, v489, v490);
             }
         }
         if (*reinterpret_cast<void***>(a16) == 1 || reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a16) == 0xfffffffe)) {
             if (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a4)) > reinterpret_cast<int32_t>(39) || !*reinterpret_cast<void***>(a4)) {
                 if (*reinterpret_cast<void***>(a13) != v491) {
                     fun_8048cd0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, v32, v31, v145, v144, v291, v492, v493, v494, v495, v496);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v497, v498, v499, v500, v501);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9d, 13, v145, v144, v291, v502, v503, v504, v505, v506);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v507, v508, v509, v510, v511);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8073190, 50, v145, v144, v291, v512, v513, v514, v515, v516);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v517, v518, v519, v520, v521);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x80731c2, 15, v145, v144, v291, v522, v523, v524, v525, v526);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v497, v498, v499, v500, v501);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, " rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 13, v145, v144, v291, v502, v503, v504, v505, v506);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v507, v508, v509, v510, v511);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  Reading option of rwwf. One should have npw=npw1  However, npw=, and npw1=  Reading option of rwwf. One should have nspinor=nspinor1  However, nspinor=, and nspinor1=  Reading option of rwwf. One should have npwso=npwso1  However, npwso=, and npwso1=  the k+g record of a wf file, unit=  an eigenvalue record of a wf file, unit=", 50, v145, v144, v291, v512, v513, v514, v515, v516);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v517, v518, v519, v520, v521);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  However, npw=, and npw1=  Reading option of rwwf. One should have nspinor=nspinor1  However, nspinor=, and nspinor1=  Reading option of rwwf. One should have npwso=npwso1  However, npwso=, and npwso1=  the k+g record of a wf file, unit=  an eigenvalue record of a wf file, unit=", 15, v145, v144, v291, v522, v523, v524, v525, v526);
                     fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, a13, 4, v145, v144, v291, v527, v528, v529, v530, v531);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x80731d1, 11, v145, v144, v291, v532, v533, v534, v535, v536);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ", and npw1=  Reading option of rwwf. One should have nspinor=nspinor1  However, nspinor=, and nspinor1=  Reading option of rwwf. One should have npwso=npwso1  However, npwso=, and npwso1=  the k+g record of a wf file, unit=  an eigenvalue record of a wf file, unit=", 11, v145, v144, v291, v532, v533, v534, v535, v536);
                     fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc4, 4, v145, v144, v291, v537, v538, v539, v540, v541);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fe5, 1, v145, v144, v291, v542, v543, v544, v545, v546);
-                    fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fe5, 1, v145, v144, v291, v547, v548, v549, v550, v551);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ".PERS", 1, v145, v144, v291, v542, v543, v544, v545, v546);
+                    fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ".PERS", 1, v145, v144, v291, v547, v548, v549, v550, v551);
                     v144 = reinterpret_cast<void**>(4);
                     v145 = reinterpret_cast<void**>(0x1f4);
-                    v31 = reinterpret_cast<void**>(0x8072fe6);
-                    wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, 0x8072fe6, 0x1f4, 4, v291, v552);
+                    v31 = reinterpret_cast<void**>("PERS");
+                    wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, "PERS", 0x1f4, 4, v291, v552);
                     v32 = reinterpret_cast<void**>(4);
-                    leave_new_(ecx30, "PERS", 4, 0x8072fe6, 0x1f4, 4, v291, v553);
+                    leave_new_(ecx30, "PERS", 4, "PERS", 0x1f4, 4, v291, v553);
                 }
                 if (*reinterpret_cast<void***>(a14) != v554) {
                     fun_8048cd0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, v32, v31, v145, v144, v291, v555, v556, v557, v558, v559);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v560, v561, v562, v563, v564);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9d, 13, v145, v144, v291, v565, v566, v567, v568, v569);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v570, v571, v572, v573, v574);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x80731dc, 58, v145, v144, v291, v575, v576, v577, v578, v579);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v580, v581, v582, v583, v584);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8073216, 19, v145, v144, v291, v585, v586, v587, v588, v589);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v560, v561, v562, v563, v564);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, " rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 13, v145, v144, v291, v565, v566, v567, v568, v569);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v570, v571, v572, v573, v574);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  Reading option of rwwf. One should have nspinor=nspinor1  However, nspinor=, and nspinor1=  Reading option of rwwf. One should have npwso=npwso1  However, npwso=, and npwso1=  the k+g record of a wf file, unit=  an eigenvalue record of a wf file, unit=", 58, v145, v144, v291, v575, v576, v577, v578, v579);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v580, v581, v582, v583, v584);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  However, nspinor=, and nspinor1=  Reading option of rwwf. One should have npwso=npwso1  However, npwso=, and npwso1=  the k+g record of a wf file, unit=  an eigenvalue record of a wf file, unit=", 19, v145, v144, v291, v585, v586, v587, v588, v589);
                     fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, a14, 4, v145, v144, v291, v590, v591, v592, v593, v594);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8073229, 15, v145, v144, v291, v595, v596, v597, v598, v599);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ", and nspinor1=  Reading option of rwwf. One should have npwso=npwso1  However, npwso=, and npwso1=  the k+g record of a wf file, unit=  an eigenvalue record of a wf file, unit=", 15, v145, v144, v291, v595, v596, v597, v598, v599);
                     fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, reinterpret_cast<int32_t>(ebp20) + 0xfffffdb8, 4, v145, v144, v291, v600, v601, v602, v603, v604);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fe5, 1, v145, v144, v291, v605, v606, v607, v608, v609);
-                    fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fe5, 1, v145, v144, v291, v610, v611, v612, v613, v614);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ".PERS", 1, v145, v144, v291, v605, v606, v607, v608, v609);
+                    fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ".PERS", 1, v145, v144, v291, v610, v611, v612, v613, v614);
                     v144 = reinterpret_cast<void**>(4);
                     v145 = reinterpret_cast<void**>(0x1f4);
-                    v31 = reinterpret_cast<void**>(0x8072fe6);
-                    wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, 0x8072fe6, 0x1f4, 4, v291, v615);
+                    v31 = reinterpret_cast<void**>("PERS");
+                    wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, "PERS", 0x1f4, 4, v291, v615);
                     v32 = reinterpret_cast<void**>(4);
-                    leave_new_(ecx30, "PERS", 4, 0x8072fe6, 0x1f4, 4, v291, v616);
+                    leave_new_(ecx30, "PERS", 4, "PERS", 0x1f4, 4, v291, v616);
                 }
             } else {
                 if (reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a13)) * reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(a14)) != v292) {
                     fun_8048cd0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, v32, v31, v145, v144, v291, v617, v618, v619, v620, v621);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v622, v623, v624, v625, v626);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9d, 13, v145, v144, v291, v627, v628, v629, v630, v631);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v632, v633, v634, v635, v636);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8073238, 54, v145, v144, v291, v637, v638, v639, v640, v641);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072f9c, 1, v145, v144, v291, v642, v643, v644, v645, v646);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x807326e, 17, v145, v144, v291, v647, v648, v649, v650, v651);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v622, v623, v624, v625, v626);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, " rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 13, v145, v144, v291, v627, v628, v629, v630, v631);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v632, v633, v634, v635, v636);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  Reading option of rwwf. One should have npwso=npwso1  However, npwso=, and npwso1=  the k+g record of a wf file, unit=  an eigenvalue record of a wf file, unit=", 54, v145, v144, v291, v637, v638, v639, v640, v641);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v642, v643, v644, v645, v646);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, "  However, npwso=, and npwso1=  the k+g record of a wf file, unit=  an eigenvalue record of a wf file, unit=", 17, v145, v144, v291, v647, v648, v649, v650, v651);
                     fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, reinterpret_cast<int32_t>(ebp20) + 0xfffffd9c, 4, v145, v144, v291, v652, v653, v654, v655, v656);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x807327f, 13, v145, v144, v291, v657, v658, v659, v660, v661);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ", and npwso1=  the k+g record of a wf file, unit=  an eigenvalue record of a wf file, unit=", 13, v145, v144, v291, v657, v658, v659, v660, v661);
                     fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc0, 4, v145, v144, v291, v662, v663, v664, v665, v666);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fe5, 1, v145, v144, v291, v667, v668, v669, v670, v671);
-                    fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, 0x8072fe5, 1, v145, v144, v291, v672, v673, v674, v675, v676);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ".PERS", 1, v145, v144, v291, v667, v668, v669, v670, v671);
+                    fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffc14, ".PERS", 1, v145, v144, v291, v672, v673, v674, v675, v676);
                     v144 = reinterpret_cast<void**>(4);
                     v145 = reinterpret_cast<void**>(0x1f4);
-                    v31 = reinterpret_cast<void**>(0x8072fe6);
-                    wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, 0x8072fe6, 0x1f4, 4, v291, v677);
+                    v31 = reinterpret_cast<void**>("PERS");
+                    wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, "PERS", 0x1f4, 4, v291, v677);
                     v32 = reinterpret_cast<void**>(4);
-                    leave_new_(ecx30, "PERS", 4, 0x8072fe6, 0x1f4, 4, v291, v678);
+                    leave_new_(ecx30, "PERS", 4, "PERS", 0x1f4, 4, v291, v678);
                 }
             }
         }
@@ -33796,26 +33796,26 @@ void** rwwf_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, v
             }
             if (!1) {
                 fun_8048cd0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, v32, v31, v145, v144, v291, v693, v694, v695, v696, v697);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v698, v699, v700, v701, v702);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x80730a1, 14, v145, v144, v291, v703, v704, v705, v706, v707);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v708, v709, v710, v711, v712);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x80730b0, 40, v145, v144, v291, v713, v714, v715, v716, v717);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v718, v719, v720, v721, v722);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x807328c, 36, v145, v144, v291, v723, v724, v725, v726, v727);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v698, v699, v700, v701, v702);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, " rwwf: ERROR -", 14, v145, v144, v291, v703, v704, v705, v706, v707);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v708, v709, v710, v711, v712);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  Reading option of rwwf. Trying to read  the (npw,nspinor,nband) record of a wf file, unit=  gave iostat=", 40, v145, v144, v291, v713, v714, v715, v716, v717);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v718, v719, v720, v721, v722);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  the k+g record of a wf file, unit=  an eigenvalue record of a wf file, unit=", 36, v145, v144, v291, v723, v724, v725, v726, v727);
                 fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, reinterpret_cast<int32_t>(ebp20) + 0xfffffda4, 4, v145, v144, v291, v728, v729, v730, v731, v732);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v733, v734, v735, v736, v737);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x807310c, 14, v145, v144, v291, v738, v739, v740, v741, v742);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v733, v734, v735, v736, v737);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  gave iostat=", 14, v145, v144, v291, v738, v739, v740, v741, v742);
                 fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, reinterpret_cast<int32_t>(ebp20) + 0xffffffbc, 4, v145, v144, v291, v743, v744, v745, v746, v747);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x807311c, 34, v145, v144, v291, v748, v749, v750, v751, v752);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v753, v754, v755, v756, v757);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8073140, 35, v145, v144, v291, v758, v759, v760, v761, v762);
-                fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8073140, 35, v145, v144, v291, v763, v764, v765, v766, v767);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, ". Your file is likely not correct.", 34, v145, v144, v291, v748, v749, v750, v751, v752);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v753, v754, v755, v756, v757);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  Action: check your input wf file.", 35, v145, v144, v291, v758, v759, v760, v761, v762);
+                fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  Action: check your input wf file.", 35, v145, v144, v291, v763, v764, v765, v766, v767);
                 v144 = reinterpret_cast<void**>(4);
                 v145 = reinterpret_cast<void**>(0x1f4);
-                v31 = reinterpret_cast<void**>(0x8072fe6);
-                wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, 0x8072fe6, 0x1f4, 4, v291, v768);
+                v31 = reinterpret_cast<void**>("PERS");
+                wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, "PERS", 0x1f4, 4, v291, v768);
                 v32 = reinterpret_cast<void**>(4);
-                leave_new_(ecx30, "PERS", 4, 0x8072fe6, 0x1f4, 4, v291, v769);
+                leave_new_(ecx30, "PERS", 4, "PERS", 0x1f4, 4, v291, v769);
             }
         }
         if (reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a12)) < reinterpret_cast<int32_t>(*reinterpret_cast<void***>(a11))) {
@@ -33837,26 +33837,26 @@ void** rwwf_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, v
             }
             if (!1) {
                 fun_8048cd0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, v32, v31, v145, v144, v291, v784, v785, v786, v787, v788);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v789, v790, v791, v792, v793);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x80730a1, 14, v145, v144, v291, v794, v795, v796, v797, v798);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v799, v800, v801, v802, v803);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x80730b0, 40, v145, v144, v291, v804, v805, v806, v807, v808);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v809, v810, v811, v812, v813);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x80732b0, 42, v145, v144, v291, v814, v815, v816, v817, v818);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v789, v790, v791, v792, v793);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, " rwwf: ERROR -", 14, v145, v144, v291, v794, v795, v796, v797, v798);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v799, v800, v801, v802, v803);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  Reading option of rwwf. Trying to read  the (npw,nspinor,nband) record of a wf file, unit=  gave iostat=", 40, v145, v144, v291, v804, v805, v806, v807, v808);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v809, v810, v811, v812, v813);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  an eigenvalue record of a wf file, unit=", 42, v145, v144, v291, v814, v815, v816, v817, v818);
                 fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, reinterpret_cast<int32_t>(ebp20) + 0xfffffda4, 4, v145, v144, v291, v819, v820, v821, v822, v823);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v824, v825, v826, v827, v828);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x807310c, 14, v145, v144, v291, v829, v830, v831, v832, v833);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v824, v825, v826, v827, v828);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  gave iostat=", 14, v145, v144, v291, v829, v830, v831, v832, v833);
                 fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, reinterpret_cast<int32_t>(ebp20) + 0xffffffbc, 4, v145, v144, v291, v834, v835, v836, v837, v838);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x807311c, 34, v145, v144, v291, v839, v840, v841, v842, v843);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v844, v845, v846, v847, v848);
-                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8073140, 35, v145, v144, v291, v849, v850, v851, v852, v853);
-                fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8073140, 35, v145, v144, v291, v854, v855, v856, v857, v858);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, ". Your file is likely not correct.", 34, v145, v144, v291, v839, v840, v841, v842, v843);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v844, v845, v846, v847, v848);
+                fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  Action: check your input wf file.", 35, v145, v144, v291, v849, v850, v851, v852, v853);
+                fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  Action: check your input wf file.", 35, v145, v144, v291, v854, v855, v856, v857, v858);
                 v144 = reinterpret_cast<void**>(4);
                 v145 = reinterpret_cast<void**>(0x1f4);
-                v31 = reinterpret_cast<void**>(0x8072fe6);
-                wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, 0x8072fe6, 0x1f4, 4, v291, v859);
+                v31 = reinterpret_cast<void**>("PERS");
+                wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, "PERS", 0x1f4, 4, v291, v859);
                 v32 = reinterpret_cast<void**>(4);
-                leave_new_(ecx30, "PERS", 4, 0x8072fe6, 0x1f4, 4, v291, v860);
+                leave_new_(ecx30, "PERS", 4, "PERS", 0x1f4, 4, v291, v860);
             }
         }
         v861 = reinterpret_cast<void*>(0);
@@ -33886,26 +33886,26 @@ void** rwwf_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, v
                     }
                     if (!1) {
                         fun_8048cd0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, v32, v31, v145, v144, v291, v880, v881, v882, v883, v884);
-                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v885, v886, v887, v888, v889);
-                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x80730a1, 14, v145, v144, v291, v890, v891, v892, v893, v894);
-                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v895, v896, v897, v898, v899);
-                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x80730b0, 40, v145, v144, v291, v900, v901, v902, v903, v904);
-                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v905, v906, v907, v908, v909);
+                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v885, v886, v887, v888, v889);
+                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, " rwwf: ERROR -", 14, v145, v144, v291, v890, v891, v892, v893, v894);
+                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v895, v896, v897, v898, v899);
+                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  Reading option of rwwf. Trying to read  the (npw,nspinor,nband) record of a wf file, unit=  gave iostat=", 40, v145, v144, v291, v900, v901, v902, v903, v904);
+                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v905, v906, v907, v908, v909);
                         fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x80732dc, 44, v145, v144, v291, v910, v911, v912, v913, v914);
                         fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, reinterpret_cast<int32_t>(ebp20) + 0xfffffda4, 4, v145, v144, v291, v915, v916, v917, v918, v919);
-                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v920, v921, v922, v923, v924);
-                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x807310c, 14, v145, v144, v291, v925, v926, v927, v928, v929);
+                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v920, v921, v922, v923, v924);
+                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  gave iostat=", 14, v145, v144, v291, v925, v926, v927, v928, v929);
                         fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, reinterpret_cast<int32_t>(ebp20) + 0xffffffbc, 4, v145, v144, v291, v930, v931, v932, v933, v934);
-                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x807311c, 34, v145, v144, v291, v935, v936, v937, v938, v939);
-                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v940, v941, v942, v943, v944);
-                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8073140, 35, v145, v144, v291, v945, v946, v947, v948, v949);
-                        fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8073140, 35, v145, v144, v291, v950, v951, v952, v953, v954);
+                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, ". Your file is likely not correct.", 34, v145, v144, v291, v935, v936, v937, v938, v939);
+                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v940, v941, v942, v943, v944);
+                        fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  Action: check your input wf file.", 35, v145, v144, v291, v945, v946, v947, v948, v949);
+                        fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  Action: check your input wf file.", 35, v145, v144, v291, v950, v951, v952, v953, v954);
                         v144 = reinterpret_cast<void**>(4);
                         v145 = reinterpret_cast<void**>(0x1f4);
-                        v31 = reinterpret_cast<void**>(0x8072fe6);
-                        wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, 0x8072fe6, 0x1f4, 4, v291, v955);
+                        v31 = reinterpret_cast<void**>("PERS");
+                        wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, "PERS", 0x1f4, 4, v291, v955);
                         v32 = reinterpret_cast<void**>(4);
-                        leave_new_(ecx30, "PERS", 4, 0x8072fe6, 0x1f4, 4, v291, v956);
+                        leave_new_(ecx30, "PERS", 4, "PERS", 0x1f4, 4, v291, v956);
                     }
                 }
                 if (*reinterpret_cast<void***>(a16) == 1 || reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a16) == 0xfffffffe)) {
@@ -33928,26 +33928,26 @@ void** rwwf_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, v
                 }
                 if (!1) {
                     fun_8048cd0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, v32, v31, v145, v144, v291, v972, v973, v974, v975, v976);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v977, v978, v979, v980, v981);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x80730a1, 14, v145, v144, v291, v982, v983, v984, v985, v986);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v987, v988, v989, v990, v991);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x80730b0, 40, v145, v144, v291, v992, v993, v994, v995, v996);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v997, v998, v999, v1000, v1001);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v977, v978, v979, v980, v981);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, " rwwf: ERROR -", 14, v145, v144, v291, v982, v983, v984, v985, v986);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v987, v988, v989, v990, v991);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  Reading option of rwwf. Trying to read  the (npw,nspinor,nband) record of a wf file, unit=  gave iostat=", 40, v145, v144, v291, v992, v993, v994, v995, v996);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v997, v998, v999, v1000, v1001);
                     fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8073308, 36, v145, v144, v291, v1002, v1003, v1004, v1005, v1006);
                     fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, reinterpret_cast<int32_t>(ebp20) + 0xfffffda4, 4, v145, v144, v291, v1007, v1008, v1009, v1010, v1011);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v1012, v1013, v1014, v1015, v1016);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x807310c, 14, v145, v144, v291, v1017, v1018, v1019, v1020, v1021);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v1012, v1013, v1014, v1015, v1016);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  gave iostat=", 14, v145, v144, v291, v1017, v1018, v1019, v1020, v1021);
                     fun_8048c50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, reinterpret_cast<int32_t>(ebp20) + 0xffffffbc, 4, v145, v144, v291, v1022, v1023, v1024, v1025, v1026);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x807311c, 34, v145, v144, v291, v1027, v1028, v1029, v1030, v1031);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8072f9c, 1, v145, v144, v291, v1032, v1033, v1034, v1035, v1036);
-                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8073140, 35, v145, v144, v291, v1037, v1038, v1039, v1040, v1041);
-                    fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, 0x8073140, 35, v145, v144, v291, v1042, v1043, v1044, v1045, v1046);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, ". Your file is likely not correct.", 34, v145, v144, v291, v1027, v1028, v1029, v1030, v1031);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "\n rwwf : BUG -  One should have nband<=mband  However, nband=, and mband=.PERS", 1, v145, v144, v291, v1032, v1033, v1034, v1035, v1036);
+                    fun_8048cc0(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  Action: check your input wf file.", 35, v145, v144, v291, v1037, v1038, v1039, v1040, v1041);
+                    fun_8048b50(ecx30, reinterpret_cast<int32_t>(ebp20) + 0xfffffac0, "  Action: check your input wf file.", 35, v145, v144, v291, v1042, v1043, v1044, v1045, v1046);
                     v144 = reinterpret_cast<void**>(4);
                     v145 = reinterpret_cast<void**>(0x1f4);
-                    v31 = reinterpret_cast<void**>(0x8072fe6);
-                    wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, 0x8072fe6, 0x1f4, 4, v291, v1047);
+                    v31 = reinterpret_cast<void**>("PERS");
+                    wrtout_(ecx30, 0x8072fec, reinterpret_cast<int32_t>(ebp20) + 0xfffffdc8, "PERS", 0x1f4, 4, v291, v1047);
                     v32 = reinterpret_cast<void**>(4);
-                    leave_new_(ecx30, "PERS", 4, 0x8072fe6, 0x1f4, 4, v291, v1048);
+                    leave_new_(ecx30, "PERS", 4, "PERS", 0x1f4, 4, v291, v1048);
                 }
                 eax1049 = reinterpret_cast<uint1_t>(v865 == ebx864);
                 v865 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(v865) + 1);
@@ -34071,7 +34071,7 @@ void** leave_myproc_(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
     ebp7 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     fun_8048b80(reinterpret_cast<int32_t>(ebp7) - 0x104);
     if (v8) {
-        fun_8048c70(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffefc, v9, v10, v11, v12, 0, 7, 0x80743cc, 57, v13, v14);
+        fun_8048c70(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffefc, v9, v10, v11, v12, 0, 7, "leave_myproc.F90", 57, v13, v14);
     }
     fun_8048b20();
     v15 = *v16;
@@ -34584,9 +34584,9 @@ void** print_ij_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
         eax38 = reinterpret_cast<void**>(0);
     }
     if (0) {
-        v39 = reinterpret_cast<void**>(0x80739cf);
-        v40 = reinterpret_cast<void**>(0x80739d8);
-        fun_8048c30(ecx37, "At line 92 of file print_ij.F90", 0x80739d8, 0x80739cf, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v23, 0, v21, 0);
+        v39 = reinterpret_cast<void**>("prtab");
+        v40 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx37, "At line 92 of file print_ij.F90", "Attempting to allocate already allocated array '%s'", "prtab", v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v23, 0, v21, 0);
     } else {
         if (reinterpret_cast<int32_t>(eax38) < reinterpret_cast<int32_t>(0)) {
             eax38 = fun_8048c80(ecx37, "Attempt to allocate negative amount of memory. Possible integer overflow", v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, v23, 0, v21, 0, v17, 0);
@@ -34615,19 +34615,19 @@ void** print_ij_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
         eax106 = reinterpret_cast<void**>(0);
     }
     if (0) {
-        v39 = reinterpret_cast<void**>(0x8073a2c);
-        v40 = reinterpret_cast<void**>(0x80739d8);
-        fun_8048c30(ecx105, "At line 95 of file print_ij.F90", 0x80739d8, 0x8073a2c, v107, v108, v109, v110, v111, v112, v113, v114, v115, v116, v117, v118, v119, v23, 0, v21, 0);
+        v39 = reinterpret_cast<void**>("b_ij");
+        v40 = reinterpret_cast<void**>("Attempting to allocate already allocated array '%s'");
+        fun_8048c30(ecx105, "At line 95 of file print_ij.F90", "Attempting to allocate already allocated array '%s'", "b_ij", v107, v108, v109, v110, v111, v112, v113, v114, v115, v116, v117, v118, v119, v23, 0, v21, 0);
     } else {
         if (reinterpret_cast<int32_t>(eax106) < reinterpret_cast<int32_t>(0)) {
-            eax106 = fun_8048c80(ecx105, "Attempt to allocate negative amount of memory. Possible integer overflow", 0x80739d8, 0x80739cf, v120, v121, v122, v123, v124, v125, v126, v127, v128, v129, v130, v131, v132, v23, 0, v21, 0, v17, 0);
+            eax106 = fun_8048c80(ecx105, "Attempt to allocate negative amount of memory. Possible integer overflow", "Attempting to allocate already allocated array '%s'", "prtab", v120, v121, v122, v123, v124, v125, v126, v127, v128, v129, v130, v131, v132, v23, 0, v21, 0, v17, 0);
         }
         if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(eax106) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(eax106 == 0)) {
             eax106 = reinterpret_cast<void**>(1);
         }
-        eax146 = fun_8048ce0(ecx105, eax106, 0x80739d8, 0x80739cf, v133, v134, v135, v136, v137, v138, v139, v140, v141, v142, v143, v144, v145, v23, 0, v21, 0, v17, 0);
+        eax146 = fun_8048ce0(ecx105, eax106, "Attempting to allocate already allocated array '%s'", "prtab", v133, v134, v135, v136, v137, v138, v139, v140, v141, v142, v143, v144, v145, v23, 0, v21, 0, v17, 0);
         if (!eax146) {
-            eax146 = fun_8048b10(ecx105, "Out of memory", 0x80739d8, 0x80739cf, v147, v148, v149, v150, v151, v152, v153, v154, v155, v156, v157, v158, v159, v23, 0, v21, 0, v17, 0);
+            eax146 = fun_8048b10(ecx105, "Out of memory", "Attempting to allocate already allocated array '%s'", "prtab", v147, v148, v149, v150, v151, v152, v153, v154, v155, v156, v157, v158, v159, v23, 0, v21, 0, v17, 0);
         }
         v24 = eax146;
         if (*reinterpret_cast<void***>(a7)) 
@@ -34694,9 +34694,9 @@ void** print_ij_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
         }
     }
     if (!v24) {
-        v39 = reinterpret_cast<void**>(0x8073a2c);
-        v40 = reinterpret_cast<void**>(0x8073a54);
-        fun_8048c30(ecx105, "At line 129 of file print_ij.F90", 0x8073a54, 0x8073a2c, v168, v169, v170, v171, v172, v173, v174, v175, v176, v177, v178, v179, v180, v23, 0, v21, 0);
+        v39 = reinterpret_cast<void**>("b_ij");
+        v40 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx105, "At line 129 of file print_ij.F90", "Attempt to DEALLOCATE unallocated '%s'", "b_ij", v168, v169, v170, v171, v172, v173, v174, v175, v176, v177, v178, v179, v180, v23, 0, v21, 0);
     }
     fun_8048bc0(ecx105, v24, v40, v39, v181, v182, v183, v184, v185, v186, v187, v188, v189, v190, v191, v192, v193, v23, 0, v21, 0, v17, 0);
     if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a10) == 2)) {
@@ -34777,8 +34777,8 @@ void** print_ij_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
         fun_8048cd0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, v40, v39, 0x1f4, 4, v261, v262, v263, v264, v265, v266);
         fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073ae2, 10, 0x1f4, 4, v267, v268, v269, v270, v271, v272);
         fun_8048c50(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073aec, 4, 0x1f4, 4, v273, v274, v275, v276, v277, v278);
-        fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073af0, 33, 0x1f4, 4, v279, v280, v281, v282, v283, v284);
-        fun_8048b50(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073af0, 33, 0x1f4, 4, v285, v286, v287, v288, v289, v290);
+        fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, "  components have been written...(5a,i3,a,f6.1,7a) print_ij: WARNING -\n", 33, 0x1f4, 4, v279, v280, v281, v282, v283, v284);
+        fun_8048b50(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, "  components have been written...(5a,i3,a,f6.1,7a) print_ij: WARNING -\n", 33, 0x1f4, 4, v285, v286, v287, v288, v289, v290);
         v39 = reinterpret_cast<void**>(0x8073ab8);
         v40 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffdb4);
         wrtout_(ecx105, 0x8073abc, v40, 0x8073ab8, 0x1f4, 4, v291, v292);
@@ -34825,16 +34825,16 @@ void** print_ij_(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
             ecx105 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx105) + 1);
         }
         __asm__("fstp st0");
-        if (!(reinterpret_cast<uint1_t>(ebx295 < 0) | reinterpret_cast<uint1_t>(ebx295 == 0)) && (fun_8048cd0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, v40, v39, 0x1f4, 4, v302, v303, v304, v305, v306, v307), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073b22, 20, 0x1f4, 4, v308, v309, v310, v311, v312, v313), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073b36, 1, 0x1f4, 4, v314, v315, v316, v317, v318, v319), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073b38, 42, 0x1f4, 4, v320, v321, v322, v323, v324, v325), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073b36, 1, 0x1f4, 4, v326, v327, v328, v329, v330, v331), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073b62, 3, 0x1f4, 4, v332, v333, v334, v335, v336, v337), fun_8048c50(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, reinterpret_cast<int32_t>(ebp11) + 0xfffffdb0, 4, 0x1f4, 4, v338, v339, v340, v341, v342, v343), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073b68, 38, 0x1f4, 4, v344, v345, v346, v347, v348, v349), fun_8048d50(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, reinterpret_cast<int32_t>(ebp11) + 0xfffffd80, 8, 0x1f4, 4, v350, v351, v352, v353), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073b8e, 2, 0x1f4, 4, v354, v355, v356, v357, v358, v359), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073b36, 1, 0x1f4, 4, v360, v361, v362, v363, v364, v365), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073b90, 52, 0x1f4, 4, v366, v367, v368, v369, v370, v371), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073b36, 1, 0x1f4, 4, v372, v373, v374, v375, v376, v377), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073bc4, 57, 0x1f4, 4, v378, v379, v380, v381, v382, v383), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073b36, 1, 0x1f4, 4, v384, v385, v386, v387, v388, v389), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073c00, 52, 0x1f4, 4, v390, v391, v392, v393, v394, v395), fun_8048b50(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, 0x8073c00, 52, 0x1f4, 4, v396, v397, v398, v399, v400, v401), v39 = reinterpret_cast<void**>(0x8073ab8), v40 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffdb4), wrtout_(ecx105, 0x8073abc, v40, 0x8073ab8, 0x1f4, 4, v402, v403), reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a4) == 2))) {
+        if (!(reinterpret_cast<uint1_t>(ebx295 < 0) | reinterpret_cast<uint1_t>(ebx295 == 0)) && (fun_8048cd0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, v40, v39, 0x1f4, 4, v302, v303, v304, v305, v306, v307), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, " print_ij: WARNING -\n", 20, 0x1f4, 4, v308, v309, v310, v311, v312, v313), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, "\n", 1, 0x1f4, 4, v314, v315, v316, v317, v318, v319), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, "  The matrix seems to have high value(s) !  (", 42, 0x1f4, 4, v320, v321, v322, v323, v324, v325), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, "\n", 1, 0x1f4, 4, v326, v327, v328, v329, v330, v331), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, "  (", 3, 0x1f4, 4, v332, v333, v334, v335, v336, v337), fun_8048c50(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, reinterpret_cast<int32_t>(ebp11) + 0xfffffdb0, 4, 0x1f4, 4, v338, v339, v340, v341, v342, v343), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, " components have a value greater than ).  It can cause instabilities during SCF convergence.  Action: you should check your atomic dataset (psp file)", 38, 0x1f4, 4, v344, v345, v346, v347, v348, v349), fun_8048d50(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, reinterpret_cast<int32_t>(ebp11) + 0xfffffd80, 8, 0x1f4, 4, v350, v351, v352, v353), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, ").  It can cause instabilities during SCF convergence.  Action: you should check your atomic dataset (psp file)", 2, 0x1f4, 4, v354, v355, v356, v357, v358, v359), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, "\n", 1, 0x1f4, 4, v360, v361, v362, v363, v364, v365), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, "  It can cause instabilities during SCF convergence.  Action: you should check your atomic dataset (psp file)", 52, 0x1f4, 4, v366, v367, v368, v369, v370, v371), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, "\n", 1, 0x1f4, 4, v372, v373, v374, v375, v376, v377), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, "  Action: you should check your atomic dataset (psp file)", 57, 0x1f4, 4, v378, v379, v380, v381, v382, v383), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, "\n", 1, 0x1f4, 4, v384, v385, v386, v387, v388, v389), fun_8048cc0(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, "          and look for \"high\" projector functions...At line 166 of file print_ij.F90", 52, 0x1f4, 4, v390, v391, v392, v393, v394, v395), fun_8048b50(ecx105, reinterpret_cast<int32_t>(ebp11) + 0xfffffbfc, "          and look for \"high\" projector functions...At line 166 of file print_ij.F90", 52, 0x1f4, 4, v396, v397, v398, v399, v400, v401), v39 = reinterpret_cast<void**>(0x8073ab8), v40 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffdb4), wrtout_(ecx105, 0x8073abc, v40, 0x8073ab8, 0x1f4, 4, v402, v403), reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a4) == 2))) {
             v39 = reinterpret_cast<void**>(0x8073ab8);
             v40 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xfffffdb4);
             wrtout_(ecx105, 0x8073ac0, v40, 0x8073ab8, 0x1f4, 4, v404, v405);
         }
     }
     if (!v25) {
-        v39 = reinterpret_cast<void**>(0x80739cf);
-        v40 = reinterpret_cast<void**>(0x8073a54);
-        fun_8048c30(ecx105, "At line 166 of file print_ij.F90", 0x8073a54, 0x80739cf, 0x1f4, 4, v406, v407, v408, v409, v410, v411, v202, v412, v413, 1, v203, v23, 0, v21, 0);
+        v39 = reinterpret_cast<void**>("prtab");
+        v40 = reinterpret_cast<void**>("Attempt to DEALLOCATE unallocated '%s'");
+        fun_8048c30(ecx105, "At line 166 of file print_ij.F90", "Attempt to DEALLOCATE unallocated '%s'", "prtab", 0x1f4, 4, v406, v407, v408, v409, v410, v411, v202, v412, v413, 1, v203, v23, 0, v21, 0);
     }
     fun_8048bc0(ecx105, v25, v40, v39, 0x1f4, 4, v414, v415, v416, v417, v418, v419, v202, v420, v421, 1, v203, v23, 0, v21, 0, v17, 0);
     if (!1) {
@@ -35512,90 +35512,90 @@ void herald_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6) 
     ebp7 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     v8 = *reinterpret_cast<void***>(a4);
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073c78, 9, v19, v20, v21, v22, v23, v24, v25, v26);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, ".Version  of  (a,a,a,/)", 9, v19, v20, v21, v22, v23, v24, v25, v26);
     fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, a3, 6, v27, v28, v29, v30, v31, v32, v33, v34);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073c81, 4, v35, v36, v37, v38, v39, v40, v41, v42);
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp7) + 0xffffff9c, reinterpret_cast<int32_t>(ebp7) + 0xffffff98, 24, a2, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, 0x1000, v8, 0x8073c60, 65, v54, v55, v56);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " of  (a,a,a,/)", 4, v35, v36, v37, v38, v39, v40, v41, v42);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp7) + 0xffffff9c, reinterpret_cast<int32_t>(ebp7) + 0xffffff98, 24, a2, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, 0x1000, v8, "herald.F90", 65, v54, v55, v56);
     fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, v57, v58, a2, v59, v60, v61, v62, v63, v64, v65);
     if (!(reinterpret_cast<uint1_t>(v66 < 0) | reinterpret_cast<uint1_t>(v66 == 0)) && v67) {
-        fun_8048bc0(ecx, v67, v57, v58, a2, v68, v69, v70, v71, v72, v73, v74, v75, v76, v77, v78, 0x1000, v8, 0x8073c60, 65, v79, v80, v81);
+        fun_8048bc0(ecx, v67, v57, v58, a2, v68, v69, v70, v71, v72, v73, v74, v75, v76, v77, v78, 0x1000, v8, "herald.F90", 65, v79, v80, v81);
     }
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073c85, 1, a2, v82, v83, v84, v85, v86, v87, v88);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073c85, 1, a2, v89, v90, v91, v92, v93, v94, v95);
-    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073c85, 1, a2, v96, v97, v98, v99, v100, v101, v102);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073c90, 37, a2, v103, v104, v105, v106, v107, v108, v109);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073cb5, 18, a2, v110, v111, v112, v113, v114, v115, v116);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073cc7, 11, a2, v117, v118, v119, v120, v121, v122, v123);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073cc7, 11, a2, v124, v125, v126, v127, v128, v129, v130);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " (a,a,a,/)", 1, a2, v82, v83, v84, v85, v86, v87, v88);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " (a,a,a,/)", 1, a2, v89, v90, v91, v92, v93, v94, v95);
+    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " (a,a,a,/)", 1, a2, v96, v97, v98, v99, v100, v101, v102);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, ".(sequential version, prepared for a i686_linux_UNKNOWN computer) (a,/,a,a,a,/,a,/,a,/,a,/)", 37, a2, v103, v104, v105, v106, v107, v108, v109);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, "i686_linux_UNKNOWN computer) (a,/,a,a,a,/,a,/,a,/,a,/)", 18, a2, v110, v111, v112, v113, v114, v115, v116);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " computer) (a,/,a,a,a,/,a,/,a,/,a,/)", 11, a2, v117, v118, v119, v120, v121, v122, v123);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " computer) (a,/,a,a,a,/,a,/,a,/,a,/)", 11, a2, v124, v125, v126, v127, v128, v129, v130);
     v131 = reinterpret_cast<void**>(80);
     v132 = *reinterpret_cast<void***>(a4);
-    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073cc7, 11, a2, v133, v134, v135, v136, v137, v138, v139);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073cec, 40, a2, v140, v141, v142, v143, v144, v145, v146);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073c85, 1, a2, v147, v148, v149, v150, v151, v152, v153);
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp7) + 0xffffff94, reinterpret_cast<int32_t>(ebp7) + 0xffffff90, 24, a2, v154, v155, v156, v157, v158, v159, v160, v161, v162, v163, v164, 0x1000, v132, 0x8073c60, 80, v165, v166, v167);
+    fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " computer) (a,/,a,a,a,/,a,/,a,/,a,/)", 11, a2, v133, v134, v135, v136, v137, v138, v139);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, ".Copyright (C) 1998-2007 ABINIT group .  comes with ABSOLUTELY NO WARRANTY.", 40, a2, v140, v141, v142, v143, v144, v145, v146);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " (a,a,a,/)", 1, a2, v147, v148, v149, v150, v151, v152, v153);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp7) + 0xffffff94, reinterpret_cast<int32_t>(ebp7) + 0xffffff90, 24, a2, v154, v155, v156, v157, v158, v159, v160, v161, v162, v163, v164, 0x1000, v132, "herald.F90", 80, v165, v166, v167);
     fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, v168, v169, a2, v170, v171, v172, v173, v174, v175, v176);
     if (!(reinterpret_cast<uint1_t>(v177 < 0) | reinterpret_cast<uint1_t>(v177 == 0)) && v178) {
-        fun_8048bc0(ecx, v178, v168, v169, a2, v179, v180, v181, v182, v183, v184, v185, v186, v187, v188, v189, 0x1000, v132, 0x8073c60, 80, v190, v191, v192);
+        fun_8048bc0(ecx, v178, v168, v169, a2, v179, v180, v181, v182, v183, v184, v185, v186, v187, v188, v189, 0x1000, v132, "herald.F90", 80, v190, v191, v192);
     }
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073d14, 35, a2, v193, v194, v195, v196, v197, v198, v199);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073d38, 60, a2, v200, v201, v202, v203, v204, v205, v206);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073d74, 54, a2, v207, v208, v209, v210, v211, v212, v213);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073dac, 61, a2, v214, v215, v216, v217, v218, v219, v220);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073dac, 61, a2, v221, v222, v223, v224, v225, v226, v227);
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp7) + 0xffffff8c, reinterpret_cast<int32_t>(ebp7) + 0xffffff88, 24, a2, v228, v229, v230, v231, v232, v233, v234, v235, v236, v237, v238, 0x1000, v132, 0x8073c60, 80, v239, v240, v241);
-    eax244 = fun_8048d70(v242, v243, 9, 0x8073de9);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " comes with ABSOLUTELY NO WARRANTY.", 35, a2, v193, v194, v195, v196, v197, v198, v199);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " It is free software, and you are welcome to redistribute it under certain conditions (GNU General Public License,", 60, a2, v200, v201, v202, v203, v204, v205, v206);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " under certain conditions (GNU General Public License,", 54, a2, v207, v208, v209, v210, v211, v212, v213);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " see ~abinit/COPYING or http://www.gnu.org/copyleft/gpl.txt).ABINIT-GW(a,a,a,/,a,/,a,/)", 61, a2, v214, v215, v216, v217, v218, v219, v220);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " see ~abinit/COPYING or http://www.gnu.org/copyleft/gpl.txt).ABINIT-GW(a,a,a,/,a,/,a,/)", 61, a2, v221, v222, v223, v224, v225, v226, v227);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp7) + 0xffffff8c, reinterpret_cast<int32_t>(ebp7) + 0xffffff88, 24, a2, v228, v229, v230, v231, v232, v233, v234, v235, v236, v237, v238, 0x1000, v132, "herald.F90", 80, v239, v240, v241);
+    eax244 = fun_8048d70(v242, v243, 9, "ABINIT-GW(a,a,a,/,a,/,a,/)");
     if (!(reinterpret_cast<uint1_t>(v245 < 0) | reinterpret_cast<uint1_t>(v245 == 0)) && v246) {
-        fun_8048bc0(ecx, v246, v243, 9, 0x8073de9, v247, v248, v249, v250, v251, v252, v253, v254, v255, v256, v257, 0x1000, v132, 0x8073c60, 80, v258, v259, v260);
+        fun_8048bc0(ecx, v246, v243, 9, "ABINIT-GW(a,a,a,/,a,/,a,/)", v247, v248, v249, v250, v251, v252, v253, v254, v255, v256, v257, 0x1000, v132, "herald.F90", 80, v258, v259, v260);
     }
     if (!eax244) {
         v131 = reinterpret_cast<void**>(86);
         v132 = *reinterpret_cast<void***>(a4);
-        fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, v243, 9, 0x8073de9, v261, v262, v263, v264, v265, v266, v267);
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073c85, 1, 0x8073de9, v268, v269, v270, v271, v272, v273, v274);
-        fun_8048ca0(reinterpret_cast<int32_t>(ebp7) + 0xffffff84, reinterpret_cast<int32_t>(ebp7) + 0xffffff80, 24, a2, v275, v276, v277, v278, v279, v280, v281, v282, v283, v284, v285, 0x1000, v132, 0x8073c60, 86, v286, v287, v288);
+        fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, v243, 9, "ABINIT-GW(a,a,a,/,a,/,a,/)", v261, v262, v263, v264, v265, v266, v267);
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " (a,a,a,/)", 1, "ABINIT-GW(a,a,a,/,a,/,a,/)", v268, v269, v270, v271, v272, v273, v274);
+        fun_8048ca0(reinterpret_cast<int32_t>(ebp7) + 0xffffff84, reinterpret_cast<int32_t>(ebp7) + 0xffffff80, 24, a2, v275, v276, v277, v278, v279, v280, v281, v282, v283, v284, v285, 0x1000, v132, "herald.F90", 86, v286, v287, v288);
         fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, v289, v290, a2, v291, v292, v293, v294, v295, v296, v297);
         if (!(reinterpret_cast<uint1_t>(v298 < 0) | reinterpret_cast<uint1_t>(v298 == 0)) && v299) {
-            fun_8048bc0(ecx, v299, v289, v290, a2, v300, v301, v302, v303, v304, v305, v306, v307, v308, v309, v310, 0x1000, v132, 0x8073c60, 86, v311, v312, v313);
+            fun_8048bc0(ecx, v299, v289, v290, a2, v300, v301, v302, v303, v304, v305, v306, v307, v308, v309, v310, 0x1000, v132, "herald.F90", 86, v311, v312, v313);
         }
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073e04, 33, a2, v314, v315, v316, v317, v318, v319, v320);
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073e28, 58, a2, v321, v322, v323, v324, v325, v326, v327);
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073e64, 46, a2, v328, v329, v330, v331, v332, v333, v334);
-        fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073e64, 46, a2, v335, v336, v337, v338, v339, v340, v341);
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " has originally been developed by", 33, a2, v314, v315, v316, v317, v318, v319, v320);
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " R.W. Godby, V. Olevano, G. Onida, L. Reining, M. Torrent,", 58, a2, v321, v322, v323, v324, v325, v326, v327);
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " and incorporated in ABINIT by G.M. Rignanese.OPTIC(a,a,a,/,a,/,a,/,a,/,a,/) Sangeeta Sharma and incorporated in ABINIT with the help of M. Verstraete. Please refer to : ", 46, a2, v328, v329, v330, v331, v332, v333, v334);
+        fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " and incorporated in ABINIT by G.M. Rignanese.OPTIC(a,a,a,/,a,/,a,/,a,/,a,/) Sangeeta Sharma and incorporated in ABINIT with the help of M. Verstraete. Please refer to : ", 46, a2, v335, v336, v337, v338, v339, v340, v341);
     }
-    fun_8048ca0(reinterpret_cast<int32_t>(ebp7) + 0xffffff7c, reinterpret_cast<int32_t>(ebp7) + 0xffffff78, 24, a2, v342, v343, v344, v345, v346, v347, v348, v349, v350, v351, v352, 0x1000, v132, 0x8073c60, v131, v353, v354, v355);
-    v356 = reinterpret_cast<void**>(0x8073e92);
+    fun_8048ca0(reinterpret_cast<int32_t>(ebp7) + 0xffffff7c, reinterpret_cast<int32_t>(ebp7) + 0xffffff78, 24, a2, v342, v343, v344, v345, v346, v347, v348, v349, v350, v351, v352, 0x1000, v132, "herald.F90", v131, v353, v354, v355);
+    v356 = reinterpret_cast<void**>("OPTIC(a,a,a,/,a,/,a,/,a,/,a,/) Sangeeta Sharma and incorporated in ABINIT with the help of M. Verstraete. Please refer to : ");
     v357 = reinterpret_cast<void**>(5);
     v358 = v359;
-    eax361 = fun_8048d70(v360, v358, 5, 0x8073e92);
+    eax361 = fun_8048d70(v360, v358, 5, "OPTIC(a,a,a,/,a,/,a,/,a,/,a,/) Sangeeta Sharma and incorporated in ABINIT with the help of M. Verstraete. Please refer to : ");
     if (!(reinterpret_cast<uint1_t>(v362 < 0) | reinterpret_cast<uint1_t>(v362 == 0)) && v363) {
-        fun_8048bc0(ecx, v363, v358, 5, 0x8073e92, v364, v365, v366, v367, v368, v369, v370, v371, v372, v373, v374, 0x1000, v132, 0x8073c60, v131, v375, v376, v377);
+        fun_8048bc0(ecx, v363, v358, 5, "OPTIC(a,a,a,/,a,/,a,/,a,/,a,/) Sangeeta Sharma and incorporated in ABINIT with the help of M. Verstraete. Please refer to : ", v364, v365, v366, v367, v368, v369, v370, v371, v372, v373, v374, 0x1000, v132, "herald.F90", v131, v375, v376, v377);
     }
     if (!eax361) {
         v378 = *reinterpret_cast<void***>(a4);
-        fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, v358, 5, 0x8073e92, v379, v380, v381, v382, v383, v384, v385);
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073c85, 1, 0x8073e92, v386, v387, v388, v389, v390, v391, v392);
+        fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, v358, 5, "OPTIC(a,a,a,/,a,/,a,/,a,/,a,/) Sangeeta Sharma and incorporated in ABINIT with the help of M. Verstraete. Please refer to : ", v379, v380, v381, v382, v383, v384, v385);
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " (a,a,a,/)", 1, "OPTIC(a,a,a,/,a,/,a,/,a,/,a,/) Sangeeta Sharma and incorporated in ABINIT with the help of M. Verstraete. Please refer to : ", v386, v387, v388, v389, v390, v391, v392);
         v356 = a2;
-        fun_8048ca0(reinterpret_cast<int32_t>(ebp7) + 0xffffff74, reinterpret_cast<int32_t>(ebp7) + 0xffffff70, 24, v356, v393, v394, v395, v396, v397, v398, v399, v400, v401, v402, v403, 0x1000, v378, 0x8073c60, 95, v404, v405, v406);
+        fun_8048ca0(reinterpret_cast<int32_t>(ebp7) + 0xffffff74, reinterpret_cast<int32_t>(ebp7) + 0xffffff70, 24, v356, v393, v394, v395, v396, v397, v398, v399, v400, v401, v402, v403, 0x1000, v378, "herald.F90", 95, v404, v405, v406);
         fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, v407, v408, v356, v409, v410, v411, v412, v413, v414, v415);
         if (!(reinterpret_cast<uint1_t>(v416 < 0) | reinterpret_cast<uint1_t>(v416 == 0)) && v417) {
-            fun_8048bc0(ecx, v417, v407, v408, v356, v418, v419, v420, v421, v422, v423, v424, v425, v426, v427, v428, 0x1000, v378, 0x8073c60, 95, v429, v430, v431);
+            fun_8048bc0(ecx, v417, v407, v408, v356, v418, v419, v420, v421, v422, v423, v424, v425, v426, v427, v428, 0x1000, v378, "herald.F90", 95, v429, v430, v431);
         }
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073e04, 33, v356, v432, v433, v434, v435, v436, v437, v438);
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073eb0, 75, v356, v439, v440, v441, v442, v443, v444, v445);
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073efb, 19, v356, v446, v447, v448, v449, v450, v451, v452);
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073f10, 85, v356, v453, v454, v455, v456, v457, v458, v459);
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " has originally been developed by", 33, v356, v432, v433, v434, v435, v436, v437, v438);
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " Sangeeta Sharma and incorporated in ABINIT with the help of M. Verstraete. Please refer to : ", 75, v356, v439, v440, v441, v442, v443, v444, v445);
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " Please refer to : ", 19, v356, v446, v447, v448, v449, v450, v451, v452);
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " S. Sharma, J. K. Dewhurst and C. Ambrosch-Draxl, Phys. Rev. B 67, 165332 (2003), and", 85, v356, v453, v454, v455, v456, v457, v458, v459);
         v357 = reinterpret_cast<void**>(63);
-        v358 = reinterpret_cast<void**>(0x8073f68);
-        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073f68, 63, v356, v460, v461, v462, v463, v464, v465, v466);
-        fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073f68, 63, v356, v467, v468, v469, v470, v471, v472, v473);
+        v358 = reinterpret_cast<void**>(" S. Sharma and C. Ambrosch-Draxl, Physica Scripta T 109 (2004).(a,/,a,/,a,/,a,/,a)");
+        fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " S. Sharma and C. Ambrosch-Draxl, Physica Scripta T 109 (2004).(a,/,a,/,a,/,a,/,a)", 63, v356, v460, v461, v462, v463, v464, v465, v466);
+        fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " S. Sharma and C. Ambrosch-Draxl, Physica Scripta T 109 (2004).(a,/,a,/,a,/,a,/,a)", 63, v356, v467, v468, v469, v470, v471, v472, v473);
     }
     fun_8048cd0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, v358, v357, v356, v474, v475, v476, v477, v478, v479, v480);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073fbc, 61, v356, v481, v482, v483, v484, v485, v486, v487);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8073ffc, 84, v356, v488, v489, v490, v491, v492, v493, v494);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8074050, 65, v356, v495, v496, v497, v498, v499, v500, v501);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x8074094, 38, v356, v502, v503, v504, v505, v506, v507, v508);
-    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x80740bc, 50, v356, v509, v510, v511, v512, v513, v514, v515);
-    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, 0x80740bc, 50, v356, v516, v517, v518, v519, v520, v521, v522);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " ABINIT is a project of the Universite Catholique de Louvain,", 61, v356, v481, v482, v483, v484, v485, v486, v487);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " Corning Inc. and other collaborators, see ~abinit/doc/developers/contributors.txt . Please read ~abinit/doc/users/acknowledgments.html for suggested", 84, v356, v488, v489, v490, v491, v492, v493, v494);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " Please read ~abinit/doc/users/acknowledgments.html for suggested", 65, v356, v495, v496, v497, v498, v499, v500, v501);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " acknowledgments of the ABINIT effort.", 38, v356, v502, v503, v504, v505, v506, v507, v508);
+    fun_8048cc0(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " For more information, see http://www.abinit.org .(/,a,a,1x,i2,1x,a,1x,i4,a).Starting date : .", 50, v356, v509, v510, v511, v512, v513, v514, v515);
+    fun_8048b50(ecx, reinterpret_cast<int32_t>(ebp7) + 0xfffffe04, " For more information, see http://www.abinit.org .(/,a,a,1x,i2,1x,a,1x,i4,a).Starting date : .", 50, v356, v516, v517, v518, v519, v520, v521, v522);
     v523 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffff58);
     v524 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffffc5);
     v525 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffffca);
@@ -35631,7 +35631,7 @@ void herald_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6) 
     v533 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffe04);
     fun_8048cd0(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v533, v525, v524, v523, 8, 10, 5, v534, v535, v536, v537, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v533, v525, v524, v523, 8, 10, 5, v538, v539, v540, v541);
     v542 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffe04);
-    fun_8048cc0(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v542, 0x8074108, 17, v523, 8, 10, 5, v543, v544, v545, v546, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v542, 0x8074108, 17, v523, 8, 10, 5, v547, v548, v549, v550);
+    fun_8048cc0(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v542, ".Starting date : .", 17, v523, 8, 10, 5, v543, v544, v545, v546, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v542, ".Starting date : .", 17, v523, 8, 10, 5, v547, v548, v549, v550);
     edx551 = reinterpret_cast<void*>(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532) - ((edx527 << 3) - edx527) + 1 + 0xffffffff);
     v552 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffe04);
     fun_8048cc0(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v552, reinterpret_cast<uint32_t>(edx551) + reinterpret_cast<uint32_t>(edx551) + reinterpret_cast<uint32_t>(edx551) + reinterpret_cast<uint32_t>("MonTueWedThuFriSatSun"), 3, v523, 8, 10, 5, v553, v554, v555, v556, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v552, reinterpret_cast<uint32_t>(edx551) + reinterpret_cast<uint32_t>(edx551) + reinterpret_cast<uint32_t>(edx551) + reinterpret_cast<uint32_t>("MonTueWedThuFriSatSun"), 3, v523, 8, 10, 5, v557, v558, v559, v560);
@@ -35645,15 +35645,15 @@ void herald_(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6) 
     v582 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffe04);
     fun_8048c50(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v582, v581, 4, v523, 8, 10, 5, v583, v584, v585, v586, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v582, v581, 4, v523, 8, 10, 5, v587, v588, v589, v590);
     v591 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffe04);
-    fun_8048cc0(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v591, 0x8074119, 1, v523, 8, 10, 5, v592, v593, v594, v595, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v591, 0x8074119, 1, v523, 8, 10, 5, v596, v597, v598, v599);
+    fun_8048cc0(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v591, ".", 1, v523, 8, 10, 5, v592, v593, v594, v595, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v591, ".", 1, v523, 8, 10, 5, v596, v597, v598, v599);
     v600 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffe04);
-    fun_8048b50(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v600, 0x8074119, 1, v523, 8, 10, 5, v601, v602, v603, v604, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v600, 0x8074119, 1, v523, 8, 10, 5, v605, v606, v607, v608);
+    fun_8048b50(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v600, ".", 1, v523, 8, 10, 5, v601, v602, v603, v604, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v600, ".", 1, v523, 8, 10, 5, v605, v606, v607, v608);
     v609 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffe04);
-    fun_8048cd0(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v609, 0x8074119, 1, v523, 8, 10, 5, v610, v611, v612, v613, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v609, 0x8074119, 1, v523, 8, 10, 5, v614, v615, v616, v617);
+    fun_8048cd0(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v609, ".", 1, v523, 8, 10, 5, v610, v611, v612, v613, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v609, ".", 1, v523, 8, 10, 5, v614, v615, v616, v617);
     v618 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffe04);
-    fun_8048cc0(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v618, 0x8073c85, 1, v523, 8, 10, 5, v619, v620, v621, v622, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v618, 0x8073c85, 1, v523, 8, 10, 5, v623, v624, v625, v626);
+    fun_8048cc0(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v618, " (a,a,a,/)", 1, v523, 8, 10, 5, v619, v620, v621, v622, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v618, " (a,a,a,/)", 1, v523, 8, 10, 5, v623, v624, v625, v626);
     v627 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffffe04);
-    fun_8048b50(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v627, 0x8073c85, 1, v523, 8, 10, 5, v628, v629, v630, v631, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v627, 0x8073c85, 1, v523, 8, 10, 5, v632, v633, v634, v635);
+    fun_8048b50(v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v627, " (a,a,a,/)", 1, v523, 8, 10, 5, v628, v629, v630, v631, v528 + v529 + v530 + 0x1a42a3 + 2 - v531 + reinterpret_cast<uint32_t>(v532), v627, " (a,a,a,/)", 1, v523, 8, 10, 5, v632, v633, v634, v635);
     return;
 }
 

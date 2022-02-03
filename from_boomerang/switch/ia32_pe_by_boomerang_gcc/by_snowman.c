@@ -11,13 +11,13 @@ struct s0 {
     int32_t f4;
     int32_t f8;
     signed char[8] pad20;
-    int32_t f20;
+    int32_t f14;
     signed char[4] pad28;
+    int32_t f1c;
+    int32_t f20;
+    int32_t f24;
     int32_t f28;
-    int32_t f32;
-    int32_t f36;
-    int32_t f40;
-    int32_t f44;
+    int32_t f2c;
 };
 
 int32_t malloc = 0x4124;
@@ -57,17 +57,17 @@ void ___w32_eh_shared_initialize(struct s0* a1) {
     }
     ebx3->f0 = 48;
     eax5 = __data_start__;
-    ebx3->f36 = -1;
+    ebx3->f24 = -1;
     ebx3->f4 = reinterpret_cast<int32_t>(_abort);
-    ebx3->f20 = eax5;
+    ebx3->f14 = eax5;
     eax6 = bss;
     ebx3->f8 = 0x401140;
     edx7 = g402008;
-    ebx3->f28 = 0;
-    ebx3->f32 = eax6;
+    ebx3->f1c = 0;
+    ebx3->f20 = eax6;
     eax8 = _sjl_once_2;
-    ebx3->f44 = edx7;
-    ebx3->f40 = eax8;
+    ebx3->f2c = edx7;
+    ebx3->f28 = eax8;
     return;
 }
 
@@ -133,32 +133,32 @@ struct s1 {
     int32_t f0;
     int32_t f4;
     int32_t f8;
-    int32_t f12;
-    int32_t f16;
+    int32_t fc;
+    int32_t f10;
+    int32_t f14;
+    int32_t f18;
+    int32_t f1c;
     int32_t f20;
     int32_t f24;
     int32_t f28;
-    int32_t f32;
-    int32_t f36;
+    int32_t f2c;
+    int32_t f30;
+    int32_t f34;
+    int32_t f38;
+    int32_t f3c;
     int32_t f40;
     int32_t f44;
     int32_t f48;
-    int32_t f52;
-    int32_t f56;
-    int32_t f60;
-    int32_t f64;
-    int32_t f68;
-    int32_t f72;
-    int32_t f76;
+    int32_t f4c;
+    int32_t f50;
+    int32_t f54;
+    signed char[32] pad120;
+    int32_t f78;
+    int32_t f7c;
     int32_t f80;
     int32_t f84;
-    signed char[32] pad120;
-    int32_t f120;
-    int32_t f124;
-    int32_t f128;
-    int32_t f132;
     signed char[28] pad164;
-    int32_t f164;
+    int32_t fa4;
 };
 
 struct s1* _cygwin_internal(int32_t a1);
@@ -207,35 +207,35 @@ int32_t text(int32_t a1, struct s1* a2, int32_t a3) {
     }
     ebx5->f4 = 0xa8;
     ebx5->f8 = 0x3ed;
-    ebx5->f12 = 9;
-    ebx5->f128 = 0;
-    ebx5->f132 = 0x70;
-    ebx5->f44 = 0x4017a0;
-    ebx5->f48 = 0x4017ac;
-    ebx5->f20 = 0x403020;
+    ebx5->fc = 9;
+    ebx5->f80 = 0;
+    ebx5->f84 = 0x70;
+    ebx5->f2c = 0x4017a0;
+    ebx5->f30 = 0x4017ac;
+    ebx5->f14 = 0x403020;
     if (!eax4) {
-        ebx5->f16 = 0x403024;
+        ebx5->f10 = 0x403024;
     } else {
-        __impure_ptr = ebx5->f164;
+        __impure_ptr = ebx5->fa4;
     }
-    ebx5->f120 = 0;
-    ebx5->f72 = reinterpret_cast<int32_t>(text);
-    ebx5->f76 = reinterpret_cast<int32_t>(text);
-    ebx5->f40 = a1;
-    ebx5->f80 = reinterpret_cast<int32_t>(text);
-    ebx5->f84 = 0x401700;
-    ebx5->f36 = 0x403028;
+    ebx5->f78 = 0;
+    ebx5->f48 = reinterpret_cast<int32_t>(text);
+    ebx5->f4c = reinterpret_cast<int32_t>(text);
+    ebx5->f28 = a1;
+    ebx5->f50 = reinterpret_cast<int32_t>(text);
+    ebx5->f54 = 0x401700;
+    ebx5->f24 = 0x403028;
     ebx5->f0 = ebp8;
-    ebx5->f24 = reinterpret_cast<int32_t>(_malloc);
-    ebx5->f28 = reinterpret_cast<int32_t>(_free);
-    ebx5->f32 = 0x4016f0;
-    ebx5->f68 = reinterpret_cast<int32_t>(_calloc);
+    ebx5->f18 = reinterpret_cast<int32_t>(_malloc);
+    ebx5->f1c = reinterpret_cast<int32_t>(_free);
+    ebx5->f20 = 0x4016f0;
+    ebx5->f44 = reinterpret_cast<int32_t>(_calloc);
     eax9 = _GetModuleHandleA_4(0);
-    ebx5->f124 = eax9;
-    ebx5->f52 = 0x402000;
-    ebx5->f56 = 0x402010;
-    ebx5->f60 = 0x403000;
-    ebx5->f64 = 0x403080;
+    ebx5->f7c = eax9;
+    ebx5->f34 = 0x402000;
+    ebx5->f38 = 0x402010;
+    ebx5->f3c = 0x403000;
+    ebx5->f40 = 0x403080;
     __pei386_runtime_relocator(0);
     eax7 = 1;
     goto addr_40161d_3;
@@ -921,22 +921,22 @@ void fun_401668() {
 
 struct s8 {
     signed char[101] pad101;
-    signed char f101;
+    signed char f65;
 };
 
 struct s9 {
     signed char[101] pad101;
-    unsigned char f101;
+    unsigned char f65;
 };
 
 struct s10 {
     signed char[101] pad101;
-    unsigned char f101;
+    unsigned char f65;
 };
 
 struct s11 {
     signed char[101] pad101;
-    signed char f101;
+    signed char f65;
 };
 
 /* .text */
@@ -1008,10 +1008,10 @@ void text(int32_t ecx) {
         goto 0x4010e0;
     }
     addr_401073_7:
-    tmp8_20 = reinterpret_cast<unsigned char>(ebx21->f101 + dl22);
-    cf23 = reinterpret_cast<uint1_t>(tmp8_20 < ebx24->f101);
-    ebx25->f101 = tmp8_20;
-    if (cf23 | reinterpret_cast<uint1_t>(ebx26->f101 == 0)) 
+    tmp8_20 = reinterpret_cast<unsigned char>(ebx21->f65 + dl22);
+    cf23 = reinterpret_cast<uint1_t>(tmp8_20 < ebx24->f65);
+    ebx25->f65 = tmp8_20;
+    if (cf23 | reinterpret_cast<uint1_t>(ebx26->f65 == 0)) 
         goto 0x4010dd;
     __asm__("outsb ");
     *eax27 = *eax28 & eax29;

@@ -34,7 +34,7 @@ struct s0 {
     int32_t f0;
     signed char[4] pad8;
     struct s0* f8;
-    struct s0* f16;
+    struct s0* f10;
 };
 
 void insert(struct s0** rdi, struct s0* rsi) {
@@ -48,7 +48,7 @@ void insert(struct s0** rdi, struct s0* rsi) {
                 insert(rdi3, rsi);
             }
         } else {
-            rdi4 = &(*rdi)->f16;
+            rdi4 = &(*rdi)->f10;
             insert(rdi4, rsi);
         }
     } else {
@@ -61,7 +61,7 @@ struct s1 {
     int32_t f0;
     signed char[4] pad8;
     struct s1* f8;
-    struct s1* f16;
+    struct s1* f10;
 };
 
 void fun_400450(int64_t rdi, struct s0* rsi);
@@ -71,8 +71,8 @@ void printout(struct s1* rdi, struct s0* rsi) {
     struct s0* rsi4;
     struct s1* rdi5;
 
-    if (rdi->f16) {
-        rdi3 = rdi->f16;
+    if (rdi->f10) {
+        rdi3 = rdi->f10;
         printout(rdi3, rsi);
     }
     *reinterpret_cast<int32_t*>(&rsi4) = rdi->f0;
@@ -201,7 +201,7 @@ void main() {
     while (v2 <= 10) {
         rax4 = fun_400480(24, rsi3);
         rax4->f8 = reinterpret_cast<struct s0*>(0);
-        rax4->f16 = rax4->f8;
+        rax4->f10 = rax4->f8;
         eax5 = fun_400490(24, rsi3);
         rax4->f0 = eax5;
         rsi3 = rax4;

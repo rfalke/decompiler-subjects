@@ -121,13 +121,13 @@ void fun_401003() {
 int64_t __libc_start_main = 0;
 
 struct s0 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s1 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 int64_t main(struct s0* rdi, struct s1* rsi);
@@ -219,43 +219,43 @@ void fun_401036() {
 }
 
 struct s2 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s3 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s4 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s5 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s6 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s7 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s8 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s9 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 int32_t g402060 = 0x6e6b6e75;
@@ -282,31 +282,31 @@ int64_t main(struct s0* rdi, struct s1* rsi) {
     int64_t r8_11;
     int64_t r8_12;
 
-    rdi->0x0 = rsi->0x0;
-    rdi3 = reinterpret_cast<struct s2*>(&rdi->0x4);
-    rsi4 = reinterpret_cast<struct s3*>(&rsi->0x4);
+    rdi->f0 = rsi->f0;
+    rdi3 = reinterpret_cast<struct s2*>(&rdi->f4);
+    rsi4 = reinterpret_cast<struct s3*>(&rsi->f4);
     unknown_to_unknown();
     __asm__("pxor xmm1, xmm1");
     __asm__("cvtsi2sd xmm1, ebx");
     __asm__("movapd xmm0, xmm1");
     __asm__("addsd xmm0, [rip+0x1090]");
-    rdi3->0x0 = rsi4->0x0;
-    rdi5 = reinterpret_cast<struct s4*>(&rdi3->0x4);
-    rsi6 = reinterpret_cast<struct s5*>(&rsi4->0x4);
+    rdi3->f0 = rsi4->f0;
+    rdi5 = reinterpret_cast<struct s4*>(&rdi3->f4);
+    rsi6 = reinterpret_cast<struct s5*>(&rsi4->f4);
     double_to_unknown();
-    rdi5->0x0 = rsi6->0x0;
-    rdi7 = reinterpret_cast<struct s6*>(&rdi5->0x4);
-    rsi8 = reinterpret_cast<struct s7*>(&rsi6->0x4);
+    rdi5->f0 = rsi6->f0;
+    rdi7 = reinterpret_cast<struct s6*>(&rdi5->f4);
+    rsi8 = reinterpret_cast<struct s7*>(&rsi6->f4);
     unknown_to_double();
-    rdi7->0x0 = rsi8->0x0;
-    rdi9 = reinterpret_cast<struct s8*>(&rdi7->0x4);
-    rsi10 = reinterpret_cast<struct s9*>(&rsi8->0x4);
+    rdi7->f0 = rsi8->f0;
+    rdi9 = reinterpret_cast<struct s8*>(&rdi7->f4);
+    rsi10 = reinterpret_cast<struct s9*>(&rsi8->f4);
     __asm__("movapd xmm0, xmm1");
     __asm__("addsd xmm0, [rip+0x1078]");
-    rdi9->0x0 = rsi10->0x0;
+    rdi9->f0 = rsi10->f0;
     double_to_double();
     __asm__("fld qword [rip+0x1077]");
-    rdi9->0x4 = rsi10->0x4;
+    rdi9->f4 = rsi10->f4;
     __asm__("fstp tword [rsp]");
     fun_401030("unknown: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n", 100, 0x65, 0x66, r8_11);
     g402060 = g64;

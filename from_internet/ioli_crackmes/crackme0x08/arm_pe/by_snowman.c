@@ -3,7 +3,7 @@ int32_t g11128 = 0x13008;
 
 void puts(int32_t r0, void** r1, void** r2, ...);
 
-void** exit(int32_t r0, void** r1, void** r2, void** r3, void** a5, void** a6, int32_t a7, int32_t a8, void* a9, ...);
+void** exit(int32_t r0, void** r1, void** r2, void** r3, void** a5, void** a6, int32_t a7, int32_t a8, void* a9);
 
 void** g111d0 = reinterpret_cast<void**>(28);
 
@@ -27,53 +27,51 @@ void** che() {
     void** r3_8;
     void** r11_9;
     void* v10;
-    int32_t r1_11;
-    int32_t r2_12;
-    void** r0_13;
-    int1_t z14;
-    void* v15;
-    void** v16;
-    void** v17;
-    void** r1_18;
+    void** r0_11;
+    int1_t z12;
+    void* v13;
+    void** v14;
+    void** v15;
+    void** r1_16;
+    void** r1_17;
+    void** r2_18;
     void** r1_19;
-    void** r2_20;
-    void** r1_21;
+    int32_t v20;
+    void** r0_21;
     int32_t v22;
-    void** r0_23;
-    int32_t v24;
-    uint32_t v25;
-    void*** r3_26;
-    int32_t r0_27;
-    int32_t v28;
+    uint32_t v23;
+    void*** r3_24;
+    int32_t r0_25;
+    int32_t v26;
 
     r0_1 = g11128;
     puts(r0_1, r1_2, r2_3, r0_1, r1_4, r2_5);
-    r0_13 = exit(0, r1_6, r2_7, r3_8, r11_9, __zero_stack_offset(), __return_address(), 0x11118, v10, 0, r1_11, r2_12);
-    if (z14) {
+    r0_11 = exit(0, r1_6, r2_7, r3_8, r11_9, __zero_stack_offset(), __return_address(), 0x11118, v10);
+    if (z12) {
     }
-    v15 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(__zero_stack_offset()) - 4);
-    v16 = r0_13;
-    v17 = r1_18;
-    r1_19 = g111d0;
-    r2_20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(__zero_stack_offset()) - 16 - 4 - 20);
-    sscanf(v16, r1_19, r2_20);
-    r1_21 = v17;
-    r0_23 = text(v22, r1_21, r2_20);
-    if (r0_23) {
-        v24 = 0;
-        while (v24 <= 9) {
-            if (!(v25 & 1)) {
-                r3_26 = g111d4;
-                if (reinterpret_cast<int1_t>(*r3_26 == 1)) {
-                    r0_27 = g111d8;
-                    puts(r0_27, r1_21, r2_20);
+    v13 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(__zero_stack_offset()) - 4);
+    v14 = r0_11;
+    v15 = r1_16;
+    r1_17 = g111d0;
+    r2_18 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(__zero_stack_offset()) - 16 - 4 - 20);
+    sscanf(v14, r1_17, r2_18);
+    r1_19 = v15;
+    r0_21 = text(v20, r1_19, r2_18);
+    if (r0_21) {
+        v22 = 0;
+        while (v22 <= 9) {
+            if (!(v23 & 1)) {
+                r3_24 = g111d4;
+                if (reinterpret_cast<int1_t>(*r3_24 == 1)) {
+                    r0_25 = g111d8;
+                    puts(r0_25, r1_19, r2_18);
                 }
-                r0_23 = exit(0, r1_21, r2_20, *r3_26, v17, v16, v28, v24, v15);
+                r0_21 = exit(0, r1_19, r2_18, *r3_24, v15, v14, v26, v22, v13);
             }
-            ++v24;
+            ++v22;
         }
     }
-    return r0_23;
+    return r0_21;
 }
 
 void** parell(void** r0, void** r1) {
@@ -208,8 +206,8 @@ int32_t main(void** r0, void** r1, void** r2) {
 }
 
 struct s0 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s0* g11398 = reinterpret_cast<struct s0*>(0x1306c);
@@ -230,7 +228,7 @@ void text() {
         return;
     } else {
         r12_3 = g113a0;
-        while (++r0_1, *reinterpret_cast<int32_t*>(r0_1->0x4 + r12_3) = *reinterpret_cast<int32_t*>(r0_1->0x4 + r12_3) + r0_1->0x0, reinterpret_cast<uint32_t>(r0_1) >= reinterpret_cast<uint32_t>(lr2)) {
+        while (++r0_1, *reinterpret_cast<int32_t*>(r0_1->f4 + r12_3) = *reinterpret_cast<int32_t*>(r0_1->f4 + r12_3) + r0_1->f0, reinterpret_cast<uint32_t>(r0_1) >= reinterpret_cast<uint32_t>(lr2)) {
         }
         return;
     }
@@ -270,7 +268,7 @@ void** atexit(void** r0) {
 
 struct s1 {
     signed char[4] pad4;
-    int32_t 0x4;
+    int32_t f4;
 };
 
 struct s1** g1150c = reinterpret_cast<struct s1**>(0x14004);
@@ -300,7 +298,7 @@ void __dll_exit() {
             r6_4 = g1150c;
             while (1) {
                 r5_5 = r4_3;
-                z6 = r4_3->0x4 == 0;
+                z6 = r4_3->f4 == 0;
                 if (!z6) {
                 }
                 if (!z6) 
@@ -320,7 +318,7 @@ void __dll_exit() {
     *r3_7 = reinterpret_cast<struct s1*>(0);
     goto addr_11500_13;
     label_10:
-    goto r4_3->0x4;
+    goto r4_3->f4;
 }
 
 void _cexit() {
@@ -330,8 +328,8 @@ void _cexit() {
 }
 
 struct s2 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s2* g1161c = reinterpret_cast<struct s2*>(0x11988);
@@ -350,13 +348,13 @@ void** __do_global_ctors() {
     void** r0_9;
 
     r3_1 = g1161c;
-    r2_2 = r3_1->0x0;
+    r2_2 = r3_1->f0;
     if (r2_2 == -1) {
         r0_3 = r3_1;
         ++r2_2;
         while (1) {
-            r0_3 = reinterpret_cast<struct s2*>(&r0_3->0x4);
-            z4 = r0_3->0x4 == 0;
+            r0_3 = reinterpret_cast<struct s2*>(&r0_3->f4);
+            z4 = r0_3->f4 == 0;
             if (!z4) {
                 ++r2_2;
             }
@@ -839,7 +837,7 @@ void** text(int32_t r0, void** r1, void** r2) {
     goto addr_110f4_8;
 }
 
-void** exit(int32_t r0, void** r1, void** r2, void** r3, void** a5, void** a6, int32_t a7, int32_t a8, void* a9, ...) {
+void** exit(int32_t r0, void** r1, void** r2, void** r3, void** a5, void** a6, int32_t a7, int32_t a8, void* a9) {
     _cexit();
     TerminateProcess(66, r0, r2, r3, a5, a6, a7, a8, a9);
     while (1) {
@@ -1133,8 +1131,8 @@ void fun_11494() {
 }
 
 struct s3 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s3** g115b8 = reinterpret_cast<struct s3**>(0x12000);
@@ -1152,12 +1150,12 @@ void fun_11570() {
     if (z2) {
     }
     r3_3 = g115b8;
-    r3_4 = (*r3_3)->0x0;
+    r3_4 = (*r3_3)->f0;
     if (!r3_4) {
         return;
     } else {
         r4_5 = g115b8;
-        while (r3_4(), r2_6 = *r4_5, *r4_5 = reinterpret_cast<struct s3*>(&r2_6->0x4), r3_4 = r2_6->0x4, !!r3_4) {
+        while (r3_4(), r2_6 = *r4_5, *r4_5 = reinterpret_cast<struct s3*>(&r2_6->f4), r3_4 = r2_6->f4, !!r3_4) {
         }
         return;
     }

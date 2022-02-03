@@ -51,7 +51,7 @@ struct s0 {
     int32_t f4;
     int32_t f8;
     signed char[134562020] pad134562032;
-    signed char f134562032;
+    signed char f80540f0;
 };
 
 struct s0* sesp = reinterpret_cast<struct s0*>(0);
@@ -80,7 +80,7 @@ struct s1 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s0* R0 = reinterpret_cast<struct s0*>(0);
@@ -104,7 +104,7 @@ struct s3 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 int32_t D0 = 0;
@@ -188,7 +188,7 @@ struct s9 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s10 {
@@ -200,14 +200,14 @@ struct s11 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s12 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s13 {
@@ -219,7 +219,7 @@ struct s14 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s15 {
@@ -236,7 +236,7 @@ struct s17 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s18 {
@@ -248,14 +248,14 @@ struct s19 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s20 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s21 {
@@ -267,7 +267,7 @@ struct s22 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s23 {
@@ -284,7 +284,7 @@ struct s25 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s26 {
@@ -296,7 +296,7 @@ struct s27 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s28 {
@@ -335,7 +335,7 @@ struct s30 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s31 {
@@ -347,14 +347,14 @@ struct s32 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s33 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s34 {
@@ -366,7 +366,7 @@ struct s35 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s36 {
@@ -411,7 +411,7 @@ struct s42 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s43 {
@@ -423,7 +423,7 @@ struct s44 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s45 {
@@ -445,7 +445,7 @@ struct s48 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s49 {
@@ -457,7 +457,7 @@ struct s50 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s51 {
@@ -489,7 +489,7 @@ struct s56 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s57 {
@@ -501,7 +501,7 @@ struct s58 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s59 {
@@ -518,7 +518,7 @@ struct s61 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s62 {
@@ -530,7 +530,7 @@ struct s63 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s64 {
@@ -557,7 +557,7 @@ struct s68 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s69 {
@@ -569,7 +569,7 @@ struct s70 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s71 {
@@ -591,7 +591,7 @@ struct s74 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s75 {
@@ -603,7 +603,7 @@ struct s76 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 void _start() {
@@ -3052,7 +3052,7 @@ void _start() {
     edx34 = R2;
     eax31->f8 = edx34;
     edx35 = R3;
-    eax31->f12 = edx35;
+    eax31->fc = edx35;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax36 = *reinterpret_cast<struct s2**>(ecx30 * 4 + 0x83fd160);
     edx37 = F0;
@@ -3068,7 +3068,7 @@ void _start() {
     edx42 = D1;
     eax39->f8 = edx42;
     edx43 = g805406c;
-    eax39->f12 = edx43;
+    eax39->fc = edx43;
     eax44 = on;
     **reinterpret_cast<int32_t**>(eax44 * 4 + 0x83fd140) = 0;
     eax45 = target;
@@ -3367,7 +3367,7 @@ void _start() {
     edx170 = R2;
     eax167->f8 = edx170;
     edx171 = R3;
-    eax167->f12 = edx171;
+    eax167->fc = edx171;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax172 = *reinterpret_cast<struct s10**>(ecx166 * 4 + 0x83fd160);
     edx173 = F0;
@@ -3383,7 +3383,7 @@ void _start() {
     edx178 = D1;
     eax175->f8 = edx178;
     edx179 = g805406c;
-    eax175->f12 = edx179;
+    eax175->fc = edx179;
     eax180 = b0;
     **reinterpret_cast<int32_t**>(eax180 * 4 + 0x83fd140) = 0;
     R0 = reinterpret_cast<struct s0*>(0);
@@ -3401,7 +3401,7 @@ void _start() {
     edx187 = R2;
     eax184->f8 = edx187;
     edx188 = R3;
-    eax184->f12 = edx188;
+    eax184->fc = edx188;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax189 = *reinterpret_cast<struct s13**>(ecx183 * 4 + 0x83fd160);
     edx190 = F0;
@@ -3417,7 +3417,7 @@ void _start() {
     edx195 = D1;
     eax192->f8 = edx195;
     edx196 = g805406c;
-    eax192->f12 = edx196;
+    eax192->fc = edx196;
     eax197 = on;
     **reinterpret_cast<int32_t**>(eax197 * 4 + 0x83fd140) = 0;
     eax198 = target;
@@ -3559,7 +3559,7 @@ void _start() {
     edx250 = R2;
     eax247->f8 = edx250;
     edx251 = R3;
-    eax247->f12 = edx251;
+    eax247->fc = edx251;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax252 = *reinterpret_cast<struct s18**>(ecx246 * 4 + 0x83fd160);
     edx253 = F0;
@@ -3575,7 +3575,7 @@ void _start() {
     edx258 = D1;
     eax255->f8 = edx258;
     edx259 = g805406c;
-    eax255->f12 = edx259;
+    eax255->fc = edx259;
     eax260 = b0;
     **reinterpret_cast<int32_t**>(eax260 * 4 + 0x83fd140) = 0;
     R0 = reinterpret_cast<struct s0*>(1);
@@ -3593,7 +3593,7 @@ void _start() {
     edx267 = R2;
     eax264->f8 = edx267;
     edx268 = R3;
-    eax264->f12 = edx268;
+    eax264->fc = edx268;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax269 = *reinterpret_cast<struct s21**>(ecx263 * 4 + 0x83fd160);
     edx270 = F0;
@@ -3609,7 +3609,7 @@ void _start() {
     edx275 = D1;
     eax272->f8 = edx275;
     edx276 = g805406c;
-    eax272->f12 = edx276;
+    eax272->fc = edx276;
     eax277 = on;
     **reinterpret_cast<int32_t**>(eax277 * 4 + 0x83fd140) = 0;
     eax278 = target;
@@ -3697,7 +3697,7 @@ void _start() {
     edx311 = R2;
     eax308->f8 = edx311;
     edx312 = R3;
-    eax308->f12 = edx312;
+    eax308->fc = edx312;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax313 = *reinterpret_cast<struct s26**>(ecx307 * 4 + 0x83fd160);
     edx314 = F0;
@@ -3713,7 +3713,7 @@ void _start() {
     edx319 = D1;
     eax316->f8 = edx319;
     edx320 = g805406c;
-    eax316->f12 = edx320;
+    eax316->fc = edx320;
     eax321 = on;
     **reinterpret_cast<int32_t**>(eax321 * 4 + 0x83fd140) = 0;
     eax322 = target;
@@ -3914,7 +3914,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx397;
     eax398 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax398) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax398) = eax398->f134562032;
+    *reinterpret_cast<signed char*>(&eax398) = eax398->f80540f0;
     alu_t = eax398;
     eax399 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax399) * 4 + 0x81fd0a4);
@@ -4008,7 +4008,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx435;
     eax436 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax436) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax436) = eax436->f134562032;
+    *reinterpret_cast<signed char*>(&eax436) = eax436->f80540f0;
     alu_t = eax436;
     eax437 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax437) * 4 + 0x81fd0a4);
@@ -4102,7 +4102,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx473;
     eax474 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax474) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax474) = eax474->f134562032;
+    *reinterpret_cast<signed char*>(&eax474) = eax474->f80540f0;
     alu_t = eax474;
     eax475 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax475) * 4 + 0x81fd0a4);
@@ -4196,7 +4196,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx511;
     eax512 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax512) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax512) = eax512->f134562032;
+    *reinterpret_cast<signed char*>(&eax512) = eax512->f80540f0;
     alu_t = eax512;
     eax513 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax513) * 4 + 0x81fd0a4);
@@ -4290,7 +4290,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx549;
     eax550 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax550) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax550) = eax550->f134562032;
+    *reinterpret_cast<signed char*>(&eax550) = eax550->f80540f0;
     alu_t = eax550;
     eax551 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax551) * 4 + 0x81fd0a4);
@@ -4384,7 +4384,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx587;
     eax588 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax588) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax588) = eax588->f134562032;
+    *reinterpret_cast<signed char*>(&eax588) = eax588->f80540f0;
     alu_t = eax588;
     eax589 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax589) * 4 + 0x81fd0a4);
@@ -4478,7 +4478,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx625;
     eax626 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax626) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax626) = eax626->f134562032;
+    *reinterpret_cast<signed char*>(&eax626) = eax626->f80540f0;
     alu_t = eax626;
     eax627 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax627) * 4 + 0x81fd0a4);
@@ -4572,7 +4572,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx663;
     eax664 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax664) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax664) = eax664->f134562032;
+    *reinterpret_cast<signed char*>(&eax664) = eax664->f80540f0;
     alu_t = eax664;
     eax665 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax665) * 4 + 0x81fd0a4);
@@ -4666,7 +4666,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx701;
     eax702 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax702) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax702) = eax702->f134562032;
+    *reinterpret_cast<signed char*>(&eax702) = eax702->f80540f0;
     alu_t = eax702;
     eax703 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax703) * 4 + 0x81fd0a4);
@@ -4760,7 +4760,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx739;
     eax740 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax740) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax740) = eax740->f134562032;
+    *reinterpret_cast<signed char*>(&eax740) = eax740->f80540f0;
     alu_t = eax740;
     eax741 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax741) * 4 + 0x81fd0a4);
@@ -4854,7 +4854,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx777;
     eax778 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax778) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax778) = eax778->f134562032;
+    *reinterpret_cast<signed char*>(&eax778) = eax778->f80540f0;
     alu_t = eax778;
     eax779 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax779) * 4 + 0x81fd0a4);
@@ -4948,7 +4948,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx815;
     eax816 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax816) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax816) = eax816->f134562032;
+    *reinterpret_cast<signed char*>(&eax816) = eax816->f80540f0;
     alu_t = eax816;
     eax817 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax817) * 4 + 0x81fd0a4);
@@ -5042,7 +5042,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx853;
     eax854 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax854) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax854) = eax854->f134562032;
+    *reinterpret_cast<signed char*>(&eax854) = eax854->f80540f0;
     alu_t = eax854;
     eax855 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax855) * 4 + 0x81fd0a4);
@@ -5136,7 +5136,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx891;
     eax892 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax892) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax892) = eax892->f134562032;
+    *reinterpret_cast<signed char*>(&eax892) = eax892->f80540f0;
     alu_t = eax892;
     eax893 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax893) * 4 + 0x81fd0a4);
@@ -5230,7 +5230,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx929;
     eax930 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax930) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax930) = eax930->f134562032;
+    *reinterpret_cast<signed char*>(&eax930) = eax930->f80540f0;
     alu_t = eax930;
     eax931 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax931) * 4 + 0x81fd0a4);
@@ -5324,7 +5324,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx967;
     eax968 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax968) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax968) = eax968->f134562032;
+    *reinterpret_cast<signed char*>(&eax968) = eax968->f80540f0;
     alu_t = eax968;
     eax969 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax969) * 4 + 0x81fd0a4);
@@ -5418,7 +5418,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1005;
     eax1006 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1006) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1006) = eax1006->f134562032;
+    *reinterpret_cast<signed char*>(&eax1006) = eax1006->f80540f0;
     alu_t = eax1006;
     eax1007 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1007) * 4 + 0x81fd0a4);
@@ -5512,7 +5512,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1043;
     eax1044 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1044) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1044) = eax1044->f134562032;
+    *reinterpret_cast<signed char*>(&eax1044) = eax1044->f80540f0;
     alu_t = eax1044;
     eax1045 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1045) * 4 + 0x81fd0a4);
@@ -5606,7 +5606,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1081;
     eax1082 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1082) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1082) = eax1082->f134562032;
+    *reinterpret_cast<signed char*>(&eax1082) = eax1082->f80540f0;
     alu_t = eax1082;
     eax1083 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1083) * 4 + 0x81fd0a4);
@@ -5700,7 +5700,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1119;
     eax1120 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1120) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1120) = eax1120->f134562032;
+    *reinterpret_cast<signed char*>(&eax1120) = eax1120->f80540f0;
     alu_t = eax1120;
     eax1121 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1121) * 4 + 0x81fd0a4);
@@ -5794,7 +5794,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1157;
     eax1158 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1158) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1158) = eax1158->f134562032;
+    *reinterpret_cast<signed char*>(&eax1158) = eax1158->f80540f0;
     alu_t = eax1158;
     eax1159 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1159) * 4 + 0x81fd0a4);
@@ -5888,7 +5888,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1195;
     eax1196 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1196) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1196) = eax1196->f134562032;
+    *reinterpret_cast<signed char*>(&eax1196) = eax1196->f80540f0;
     alu_t = eax1196;
     eax1197 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1197) * 4 + 0x81fd0a4);
@@ -5982,7 +5982,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1233;
     eax1234 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1234) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1234) = eax1234->f134562032;
+    *reinterpret_cast<signed char*>(&eax1234) = eax1234->f80540f0;
     alu_t = eax1234;
     eax1235 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1235) * 4 + 0x81fd0a4);
@@ -6076,7 +6076,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1271;
     eax1272 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1272) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1272) = eax1272->f134562032;
+    *reinterpret_cast<signed char*>(&eax1272) = eax1272->f80540f0;
     alu_t = eax1272;
     eax1273 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1273) * 4 + 0x81fd0a4);
@@ -6170,7 +6170,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1309;
     eax1310 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1310) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1310) = eax1310->f134562032;
+    *reinterpret_cast<signed char*>(&eax1310) = eax1310->f80540f0;
     alu_t = eax1310;
     eax1311 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1311) * 4 + 0x81fd0a4);
@@ -6264,7 +6264,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1347;
     eax1348 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1348) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1348) = eax1348->f134562032;
+    *reinterpret_cast<signed char*>(&eax1348) = eax1348->f80540f0;
     alu_t = eax1348;
     eax1349 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1349) * 4 + 0x81fd0a4);
@@ -6358,7 +6358,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1385;
     eax1386 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1386) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1386) = eax1386->f134562032;
+    *reinterpret_cast<signed char*>(&eax1386) = eax1386->f80540f0;
     alu_t = eax1386;
     eax1387 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1387) * 4 + 0x81fd0a4);
@@ -6452,7 +6452,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1423;
     eax1424 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1424) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1424) = eax1424->f134562032;
+    *reinterpret_cast<signed char*>(&eax1424) = eax1424->f80540f0;
     alu_t = eax1424;
     eax1425 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1425) * 4 + 0x81fd0a4);
@@ -6546,7 +6546,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1461;
     eax1462 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1462) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1462) = eax1462->f134562032;
+    *reinterpret_cast<signed char*>(&eax1462) = eax1462->f80540f0;
     alu_t = eax1462;
     eax1463 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1463) * 4 + 0x81fd0a4);
@@ -6640,7 +6640,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1499;
     eax1500 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1500) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1500) = eax1500->f134562032;
+    *reinterpret_cast<signed char*>(&eax1500) = eax1500->f80540f0;
     alu_t = eax1500;
     eax1501 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1501) * 4 + 0x81fd0a4);
@@ -6734,7 +6734,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1537;
     eax1538 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1538) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1538) = eax1538->f134562032;
+    *reinterpret_cast<signed char*>(&eax1538) = eax1538->f80540f0;
     alu_t = eax1538;
     eax1539 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1539) * 4 + 0x81fd0a4);
@@ -6828,7 +6828,7 @@ void _start() {
     *reinterpret_cast<int32_t*>(&g81fcfee) = edx1575;
     eax1576 = reinterpret_cast<struct s0*>(0);
     *reinterpret_cast<signed char*>(&eax1576) = *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&g81fcfee) + 2);
-    *reinterpret_cast<signed char*>(&eax1576) = eax1576->f134562032;
+    *reinterpret_cast<signed char*>(&eax1576) = eax1576->f80540f0;
     alu_t = eax1576;
     eax1577 = alu_t;
     alu_psel_r = *reinterpret_cast<struct s0***>(reinterpret_cast<int32_t>(eax1577) * 4 + 0x81fd0a4);
@@ -6961,7 +6961,7 @@ void _start() {
     edx1628 = R2;
     eax1625->f8 = edx1628;
     edx1629 = R3;
-    eax1625->f12 = edx1629;
+    eax1625->fc = edx1629;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax1630 = *reinterpret_cast<struct s31**>(ecx1624 * 4 + 0x83fd160);
     edx1631 = F0;
@@ -6977,7 +6977,7 @@ void _start() {
     edx1636 = D1;
     eax1633->f8 = edx1636;
     edx1637 = g805406c;
-    eax1633->f12 = edx1637;
+    eax1633->fc = edx1637;
     eax1638 = b0;
     **reinterpret_cast<int32_t**>(eax1638 * 4 + 0x83fd140) = 0;
     R0 = reinterpret_cast<struct s0*>(0);
@@ -6995,7 +6995,7 @@ void _start() {
     edx1645 = R2;
     eax1642->f8 = edx1645;
     edx1646 = R3;
-    eax1642->f12 = edx1646;
+    eax1642->fc = edx1646;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax1647 = *reinterpret_cast<struct s34**>(ecx1641 * 4 + 0x83fd160);
     edx1648 = F0;
@@ -7011,7 +7011,7 @@ void _start() {
     edx1653 = D1;
     eax1650->f8 = edx1653;
     edx1654 = g805406c;
-    eax1650->f12 = edx1654;
+    eax1650->fc = edx1654;
     eax1655 = on;
     **reinterpret_cast<int32_t**>(eax1655 * 4 + 0x83fd140) = 0;
     eax1656 = target;
@@ -7500,7 +7500,7 @@ void _start() {
     edx1826 = R2;
     eax1823->f8 = edx1826;
     edx1827 = R3;
-    eax1823->f12 = edx1827;
+    eax1823->fc = edx1827;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax1828 = *reinterpret_cast<struct s43**>(ecx1822 * 4 + 0x83fd160);
     edx1829 = F0;
@@ -7516,7 +7516,7 @@ void _start() {
     edx1834 = D1;
     eax1831->f8 = edx1834;
     edx1835 = g805406c;
-    eax1831->f12 = edx1835;
+    eax1831->fc = edx1835;
     eax1836 = b0;
     **reinterpret_cast<int32_t**>(eax1836 * 4 + 0x83fd140) = 0;
     R0 = reinterpret_cast<struct s0*>(1);
@@ -7674,7 +7674,7 @@ void _start() {
     edx1905 = R2;
     eax1902->f8 = edx1905;
     edx1906 = R3;
-    eax1902->f12 = edx1906;
+    eax1902->fc = edx1906;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax1907 = *reinterpret_cast<struct s49**>(ecx1901 * 4 + 0x83fd160);
     edx1908 = F0;
@@ -7690,7 +7690,7 @@ void _start() {
     edx1913 = D1;
     eax1910->f8 = edx1913;
     edx1914 = g805406c;
-    eax1910->f12 = edx1914;
+    eax1910->fc = edx1914;
     eax1915 = on;
     **reinterpret_cast<int32_t**>(eax1915 * 4 + 0x83fd140) = 0;
     eax1916 = target;
@@ -7839,7 +7839,7 @@ void _start() {
     data_p = reinterpret_cast<struct s0*>(0x83fd120);
     edx1983 = stack_temp;
     **reinterpret_cast<struct s0***>(edx1982 * 4 + 0x83fd160) = edx1983;
-    R3 = reinterpret_cast<struct s0*>(0x8054026);
+    R3 = reinterpret_cast<struct s0*>("primes, 1-100000: \n");
     eax1984 = R3;
     stack_temp = eax1984;
     edx1985 = on;
@@ -8006,7 +8006,7 @@ void _start() {
     edx2054 = R2;
     eax2051->f8 = edx2054;
     edx2055 = R3;
-    eax2051->f12 = edx2055;
+    eax2051->fc = edx2055;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax2056 = *reinterpret_cast<struct s57**>(ecx2050 * 4 + 0x83fd160);
     edx2057 = F0;
@@ -8022,7 +8022,7 @@ void _start() {
     edx2062 = D1;
     eax2059->f8 = edx2062;
     edx2063 = g805406c;
-    eax2059->f12 = edx2063;
+    eax2059->fc = edx2063;
     eax2064 = on;
     **reinterpret_cast<int32_t**>(eax2064 * 4 + 0x83fd140) = 0;
     eax2065 = target;
@@ -8164,7 +8164,7 @@ void _start() {
     edx2117 = R2;
     eax2114->f8 = edx2117;
     edx2118 = R3;
-    eax2114->f12 = edx2118;
+    eax2114->fc = edx2118;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax2119 = *reinterpret_cast<struct s62**>(ecx2113 * 4 + 0x83fd160);
     edx2120 = F0;
@@ -8180,7 +8180,7 @@ void _start() {
     edx2125 = D1;
     eax2122->f8 = edx2125;
     edx2126 = g805406c;
-    eax2122->f12 = edx2126;
+    eax2122->fc = edx2126;
     eax2127 = b0;
     **reinterpret_cast<int32_t**>(eax2127 * 4 + 0x83fd140) = 0;
     eax2128 = fp;
@@ -8200,7 +8200,7 @@ void _start() {
     data_p = eax2134;
     edx2136 = stack_temp;
     **reinterpret_cast<struct s0***>(edx2135 * 4 + 0x83fd160) = edx2136;
-    R3 = reinterpret_cast<struct s0*>(0x8054022);
+    R3 = reinterpret_cast<struct s0*>("%d ");
     eax2137 = R3;
     stack_temp = eax2137;
     edx2138 = on;
@@ -8493,7 +8493,7 @@ void _start() {
     edx2250 = R2;
     eax2247->f8 = edx2250;
     edx2251 = R3;
-    eax2247->f12 = edx2251;
+    eax2247->fc = edx2251;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax2252 = *reinterpret_cast<struct s69**>(ecx2246 * 4 + 0x83fd160);
     edx2253 = F0;
@@ -8509,10 +8509,10 @@ void _start() {
     edx2258 = D1;
     eax2255->f8 = edx2258;
     edx2259 = g805406c;
-    eax2255->f12 = edx2259;
+    eax2255->fc = edx2259;
     eax2260 = b0;
     **reinterpret_cast<int32_t**>(eax2260 * 4 + 0x83fd140) = 0;
-    R3 = reinterpret_cast<struct s0*>(0x8054020);
+    R3 = reinterpret_cast<struct s0*>("\n");
     eax2261 = R3;
     stack_temp = eax2261;
     edx2262 = on;
@@ -8722,7 +8722,7 @@ void _start() {
     edx2352 = R2;
     eax2349->f8 = edx2352;
     edx2353 = R3;
-    eax2349->f12 = edx2353;
+    eax2349->fc = edx2353;
     data_p = reinterpret_cast<struct s0*>(0x85fd190);
     eax2354 = *reinterpret_cast<struct s75**>(ecx2348 * 4 + 0x83fd160);
     edx2355 = F0;
@@ -8738,7 +8738,7 @@ void _start() {
     edx2360 = D1;
     eax2357->f8 = edx2360;
     edx2361 = g805406c;
-    eax2357->f12 = edx2361;
+    eax2357->fc = edx2361;
     eax2362 = on;
     **reinterpret_cast<int32_t**>(eax2362 * 4 + 0x83fd140) = 0;
 }

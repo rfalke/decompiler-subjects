@@ -8,9 +8,9 @@ void _exit(int64_t rdi) {
 struct s0 {
     int32_t f0;
     signed char[12] pad16;
-    signed char f16;
+    signed char f10;
     signed char[7] pad24;
-    int64_t f24;
+    int64_t f18;
 };
 
 void _func(struct s0* rdi);
@@ -27,8 +27,8 @@ int32_t _main() {
 
 void _func(struct s0* rdi) {
     rdi->f0 = 1;
-    rdi->f16 = 0x6b;
-    rdi->f24 = 10;
+    rdi->f10 = 0x6b;
+    rdi->f18 = 10;
     return;
 }
 

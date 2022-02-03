@@ -407,8 +407,8 @@ void* delete_str(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     }
     if (reinterpret_cast<signed char>(a1) < reinterpret_cast<signed char>(0) || reinterpret_cast<signed char>(a1) > reinterpret_cast<signed char>(v16)) {
         v17 = a1;
-        v18 = reinterpret_cast<void**>(0x8054a3c);
-        print_error(0xffffffeb, 0x8054a3c, v17, v19, v20, v21, v22, v16, v23);
+        v18 = reinterpret_cast<void**>("delete: invalid line number %i.\n");
+        print_error(0xffffffeb, "delete: invalid line number %i.\n", v17, v19, v20, v21, v22, v16, v23);
     }
     v24 = a1;
     while (*reinterpret_cast<void***>((reinterpret_cast<unsigned char>(v24) << 2) + reinterpret_cast<unsigned char>(a2))) {
@@ -566,28 +566,28 @@ void** get_package_name(void** a1, void** a2, void** a3, void** a4, void** a5) {
     ebp6 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     eax7 = g14;
     v8 = a1;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8054a64, v8, 0x8054a6a, v9, v10, a2, a1, v11, v12, v13, v14, v15, v16, v17, v18, v19);
-    eax24 = fun_8048c74(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8054a6f, v8, 0x8054a6a, v20, v21, a2, a1, v22, v23);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "%s/%s", v8, "name", v9, v10, a2, a1, v11, v12, v13, v14, v15, v16, v17, v18, v19);
+    eax24 = fun_8048c74(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "r", v8, "name", v20, v21, a2, a1, v22, v23);
     if (eax24) {
         v8 = eax24;
-        eax33 = nc_fgets_nb(reinterpret_cast<int32_t>(ebp6) + 0xffffeff4, 0x800, v8, 0x8054a6a, v25, v26, a2, a1, v27, v28, eax24, v29, v30, v31, v32);
+        eax33 = nc_fgets_nb(reinterpret_cast<int32_t>(ebp6) + 0xffffeff4, 0x800, v8, "name", v25, v26, a2, a1, v27, v28, eax24, v29, v30, v31, v32);
         if (eax33) {
-            chop(reinterpret_cast<int32_t>(ebp6) + 0xffffeff4, 0x800, v8, 0x8054a6a);
+            chop(reinterpret_cast<int32_t>(ebp6) + 0xffffeff4, 0x800, v8, "name");
             v34 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xffffeff4);
-            fun_8048c84(a2, v34, v8, 0x8054a6a, v35, v36, a2, a1, v37, v38, eax24, v39, v40, v41, v42, v43, v44);
+            fun_8048c84(a2, v34, v8, "name", v35, v36, a2, a1, v37, v38, eax24, v39, v40, v41, v42, v43, v44);
         } else {
-            fun_8048c44(eax24, 0x800, v8, 0x8054a6a, v45, v46, a2, a1, v47, v48, eax24, v49, v50, v51, v52);
-            v34 = reinterpret_cast<void**>(0x8054a8c);
-            print_error(0xfffffffa, 0x8054a8c, v8, 0x8054a6a, v53, v54, a2, a1, v55);
+            fun_8048c44(eax24, 0x800, v8, "name", v45, v46, a2, a1, v47, v48, eax24, v49, v50, v51, v52);
+            v34 = reinterpret_cast<void**>("invalid or missing extension name.\n");
+            print_error(0xfffffffa, "invalid or missing extension name.\n", v8, "name", v53, v54, a2, a1, v55);
         }
     } else {
-        v34 = reinterpret_cast<void**>(0x8054a71);
-        print_error(0xfffffffa, 0x8054a71, v8, 0x8054a6a, v56, v57, a2, a1, v58);
+        v34 = reinterpret_cast<void**>("'name' file not readable.\n");
+        print_error(0xfffffffa, "'name' file not readable.\n", v8, "name", v56, v57, a2, a1, v58);
     }
-    fun_8048c44(eax24, v34, v8, 0x8054a6a, v59, v60, a2, a1, v61, v62, eax24, v63, v64, v65, v66);
+    fun_8048c44(eax24, v34, v8, "name", v59, v60, a2, a1, v61, v62, eax24, v63, v64, v65, v66);
     eax67 = reinterpret_cast<void**>(eax7 ^ g14);
     if (eax67) {
-        eax67 = fun_8048d34(eax24, v34, v8, 0x8054a6a, v68, v69, a2, a1, v70, v71, eax24, v72, v73, v74, v75, v76, v77);
+        eax67 = fun_8048d34(eax24, v34, v8, "name", v68, v69, a2, a1, v70, v71, eax24, v72, v73, v74, v75, v76, v77);
     }
     return eax67;
 }
@@ -662,9 +662,9 @@ void** nc_fgets(void** a1, void** a2, void** a3, void** a4, void** a5) {
             if (a1 != eax22) {
                 eax30 = fun_8048d24(0x800, 35, a3, v24, v25, v26, v27, eax22, v28, v29, ebp13, __return_address(), a1, a2, a3);
                 fun_8048c84(eax30, a1, a3, v31, v32, v33, eax30, eax22, v34, v35, ebp13, __return_address(), a1, a2, a3, a4, a5);
-                eax39 = fun_8048d54(eax30, 0x8054ab0, a3, v36, v37, v38, eax30, eax22);
-                fun_8048aa4(a1, 0x8054ab2, eax39, v40, v41, v42, eax39, eax22, v43, v44, ebp13, __return_address(), a1, a2, a3, a4, a5);
-                fun_8048bf4(eax39, 0x8054ab2, eax39, v45, v46, v47, eax39, eax22, v48, v49, ebp13, __return_address(), a1, a2, a3);
+                eax39 = fun_8048d54(eax30, "#", a3, v36, v37, v38, eax30, eax22);
+                fun_8048aa4(a1, "%s\n", eax39, v40, v41, v42, eax39, eax22, v43, v44, ebp13, __return_address(), a1, a2, a3, a4, a5);
+                fun_8048bf4(eax39, "%s\n", eax39, v45, v46, v47, eax39, eax22, v48, v49, ebp13, __return_address(), a1, a2, a3);
                 goto addr_8049e0f_3;
             } else {
                 eax23 = nc_fgets(a1, a2, a3, v50, v51);
@@ -897,19 +897,19 @@ void** nc_fgets_html(void** a1, void** a2, void** a3) {
             v84 = v76 + 1;
             eax85 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v84));
             if (*reinterpret_cast<signed char*>(&eax85) != 10) {
-                eax90 = fun_8048cf4(v69, 0x8054ab6, v4, v86, v87, v88, v89, v79);
+                eax90 = fun_8048cf4(v69, "<br>", v4, v86, v87, v88, v89, v79);
                 if (eax90 && reinterpret_cast<unsigned char>(v70) > reinterpret_cast<unsigned char>(v44)) {
                     *reinterpret_cast<void***>(v70) = reinterpret_cast<void**>(10);
                     edx91 = reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(v70) + 1);
                     *reinterpret_cast<void***>(v70) = *reinterpret_cast<void***>(&edx91);
                 }
-                eax96 = fun_8048cf4(v69, 0x8054abb, v4, v92, v93, v94, v95, v79);
+                eax96 = fun_8048cf4(v69, "<BR>", v4, v92, v93, v94, v95, v79);
                 if (eax96 && reinterpret_cast<unsigned char>(v70) > reinterpret_cast<unsigned char>(v44)) {
                     *reinterpret_cast<void***>(v70) = reinterpret_cast<void**>(10);
                     edx97 = reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(v70) + 1);
                     *reinterpret_cast<void***>(v70) = *reinterpret_cast<void***>(&edx97);
                 }
-                eax102 = fun_8048cf4(v69, 0x8054ac0, v4, v98, v99, v100, v101, v79);
+                eax102 = fun_8048cf4(v69, "<p>", v4, v98, v99, v100, v101, v79);
                 if (eax102) {
                     if (reinterpret_cast<unsigned char>(v70) > reinterpret_cast<unsigned char>(v44)) {
                         *reinterpret_cast<void***>(v70) = reinterpret_cast<void**>(10);
@@ -920,7 +920,7 @@ void** nc_fgets_html(void** a1, void** a2, void** a3) {
                     edx104 = reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(v70) + 1);
                     *reinterpret_cast<void***>(v70) = *reinterpret_cast<void***>(&edx104);
                 }
-                eax109 = fun_8048cf4(v69, 0x8054ac4, v4, v105, v106, v107, v108, v79);
+                eax109 = fun_8048cf4(v69, "<P>", v4, v105, v106, v107, v108, v79);
                 if (eax109) {
                     if (reinterpret_cast<unsigned char>(v70) > reinterpret_cast<unsigned char>(v44)) {
                         *reinterpret_cast<void***>(v70) = reinterpret_cast<void**>(10);
@@ -965,9 +965,9 @@ void** nc_fgets_html(void** a1, void** a2, void** a3) {
     if (a1 != eax131) {
         eax137 = fun_8048d24(0x800, 35, v4, v133, v134, v135, v136, v79, v70, v71, v69, v77, v84, v76, v44);
         fun_8048c84(eax137, a1, v4, v138, v139, v140, v141, v79, v70, v71, v69, v77, v84, v76, eax137, eax131, v142);
-        eax147 = fun_8048d54(eax137, 0x8054ab0, v4, v143, v144, v145, v146, v79);
-        fun_8048aa4(a1, 0x8054ab2, eax147, v148, v149, v150, v151, v79, v70, v71, v69, v77, v84, v76, eax147, eax131, v152);
-        fun_8048bf4(eax147, 0x8054ab2, eax147, v153, v154, v155, v156, v79, v70, v71, v69, v77, v84, v76, eax147);
+        eax147 = fun_8048d54(eax137, "#", v4, v143, v144, v145, v146, v79);
+        fun_8048aa4(a1, "%s\n", eax147, v148, v149, v150, v151, v79, v70, v71, v69, v77, v84, v76, eax147, eax131, v152);
+        fun_8048bf4(eax147, "%s\n", eax147, v153, v154, v155, v156, v79, v70, v71, v69, v77, v84, v76, eax147);
         goto addr_804a141_39;
     } else {
         eax132 = nc_fgets_html(a1, a2, a3);
@@ -1050,9 +1050,9 @@ void** nc_fgets_nb(void** a1, void** a2, void** a3, void** a4, void** a5, void**
                 if (a1 != eax34) {
                     eax42 = fun_8048d24(0x800, 35, a3, v36, v37, v38, v39, eax34, v40, v41, ebp23, __return_address(), a1, a2, a3);
                     fun_8048c84(eax42, a1, a3, v43, v44, v45, eax42, eax34, v46, v47, ebp23, __return_address(), a1, a2, a3, a4, a5);
-                    eax51 = fun_8048d54(eax42, 0x8054ab0, a3, v48, v49, v50, eax42, eax34);
-                    fun_8048aa4(a1, 0x8054ab2, eax51, v52, v53, v54, eax51, eax34, v55, v56, ebp23, __return_address(), a1, a2, a3, a4, a5);
-                    fun_8048bf4(eax51, 0x8054ab2, eax51, v57, v58, v59, eax51, eax34, v60, v61, ebp23, __return_address(), a1, a2, a3);
+                    eax51 = fun_8048d54(eax42, "#", a3, v48, v49, v50, eax42, eax34);
+                    fun_8048aa4(a1, "%s\n", eax51, v52, v53, v54, eax51, eax34, v55, v56, ebp23, __return_address(), a1, a2, a3, a4, a5);
+                    fun_8048bf4(eax51, "%s\n", eax51, v57, v58, v59, eax51, eax34, v60, v61, ebp23, __return_address(), a1, a2, a3);
                     goto addr_804a2c3_4;
                 } else {
                     eax35 = nc_fgets_nb(a1, a2, a3, v62, v63, v64, v65, eax34, v66, v67, ebp23, __return_address(), a1, a2, a3);
@@ -1173,22 +1173,22 @@ void** dump_plain(void** a1, void** a2, void** a3, void** a4, void** a5) {
     eax9 = g14;
     v10 = eax9;
     v11 = reinterpret_cast<void**>(32);
-    fun_8048c54(v8, 0x8054aec, 32, v12, v13, v14, v8, v7, v15, v16, v17, v18, v19, v20, v21);
-    fun_8048c14(v8, 0x8054aec, 32, v22, v23, v24, v8, v7);
-    v25 = reinterpret_cast<void**>(0x8054b0c);
-    eax31 = fun_8048c74(v8, 0x8054b0c, 32, v26, v27, v28, v8, v7, v29, v30);
+    fun_8048c54(v8, "/tmp/grass.extensions.db.XXXXXX", 32, v12, v13, v14, v8, v7, v15, v16, v17, v18, v19, v20, v21);
+    fun_8048c14(v8, "/tmp/grass.extensions.db.XXXXXX", 32, v22, v23, v24, v8, v7);
+    v25 = reinterpret_cast<void**>("w+");
+    eax31 = fun_8048c74(v8, "w+", 32, v26, v27, v28, v8, v7, v29, v30);
     v32 = eax31;
     if (!v32) {
-        eax36 = fun_8048a94(v8, 0x8054b0c, 32, v33, v34, v35, v8, v7);
+        eax36 = fun_8048a94(v8, "w+", 32, v33, v34, v35, v8, v7);
         v37 = *eax36;
-        eax41 = fun_8048ad4(v37, 0x8054b0c, 32, v38, v39, v40, v8, v7);
+        eax41 = fun_8048ad4(v37, "w+", 32, v38, v39, v40, v8, v7);
         v42 = eax41;
         v11 = v8;
-        v25 = reinterpret_cast<void**>(0x8054b10);
-        print_error(0xffffffe9, 0x8054b10, v11, v42, v43, v44, v8, v7, v45);
+        v25 = reinterpret_cast<void**>("could not create temp file '%s': %s\n \t\tMake sure that directory /tmp exists on your system and you have write permission.\n");
+        print_error(0xffffffe9, "could not create temp file '%s': %s\n \t\tMake sure that directory /tmp exists on your system and you have write permission.\n", v11, v42, v43, v44, v8, v7, v45);
     }
     atexit(exit_db, v25, v11, v42, v46, v47, v8, v7);
-    eax51 = fun_8048c74(v7, 0x8054a6f, v11, v42, v48, v49, v8, v7, v50, v32);
+    eax51 = fun_8048c74(v7, "r", v11, v42, v48, v49, v8, v7, v50, v32);
     v52 = eax51;
     while (eax54 = nc_fgets(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x800, v52, v42, v53), !!eax54) {
         fun_8048ce4(v32, reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, v52, v42, v55, v56, v8, v7, v57, v32, v52, v58, v59, v60, v61);
@@ -1265,7 +1265,7 @@ void** fun_8048c24(void** a1, void** a2, void** a3, void** a4, void** a5, void**
 
 struct s2 {
     signed char[11] pad11;
-    void** f11;
+    void** fb;
 };
 
 struct s2* fun_8048bd4(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10);
@@ -1371,27 +1371,27 @@ void** binaries_exist(void** a1, void** a2, void** a3, void** a4, void** a5, voi
         eax31 = fun_8048bd4(v14, v24, v25, v26, v27, v28, v11, v10, v29, v30);
         v32 = eax31;
         while (v32) {
-            v33 = reinterpret_cast<void**>(0x8054bbe);
-            eax42 = fun_8048da4(&v32->f11, 0x8054bbe, v34, v35, v36, v37, v11, v10, v38, v39, v40, v41);
+            v33 = reinterpret_cast<void**>(".");
+            eax42 = fun_8048da4(&v32->fb, ".", v34, v35, v36, v37, v11, v10, v38, v39, v40, v41);
             if (!eax42) 
                 goto addr_804aa6f_5;
-            v33 = reinterpret_cast<void**>(0x8054bc0);
-            eax49 = fun_8048da4(&v32->f11, 0x8054bc0, v34, v35, v43, v44, v11, v10, v45, v46, v47, v48);
+            v33 = reinterpret_cast<void**>("..");
+            eax49 = fun_8048da4(&v32->fb, "..", v34, v35, v43, v44, v11, v10, v45, v46, v47, v48);
             if (!eax49) 
                 goto addr_804aa6f_5;
-            v33 = reinterpret_cast<void**>(0x8054bc3);
-            eax56 = fun_8048da4(&v32->f11, 0x8054bc3, v34, v35, v50, v51, v11, v10, v52, v53, v54, v55);
+            v33 = reinterpret_cast<void**>("src");
+            eax56 = fun_8048da4(&v32->fb, "src", v34, v35, v50, v51, v11, v10, v52, v53, v54, v55);
             if (!eax56) 
                 goto addr_804aa6f_5;
-            v35 = reinterpret_cast<void**>(&v32->f11);
+            v35 = reinterpret_cast<void**>(&v32->fb);
             v34 = v10;
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x8054a64, v34, v35, v57, v58, v11, v10, v59, v60, v61, v62, v63, v64, v65, v66, v67);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%s/%s", v34, v35, v57, v58, v11, v10, v59, v60, v61, v62, v63, v64, v65, v66, v67);
             v33 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff794);
             stat(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, v33, v34, v35, v68);
             if ((v69 & 0xf000) != 0x4000) 
                 goto addr_804aa6f_5;
             v33 = v11;
-            v14 = reinterpret_cast<void**>(&v32->f11);
+            v14 = reinterpret_cast<void**>(&v32->fb);
             eax76 = fun_8048da4(v14, v33, v34, v35, v70, v71, v11, v10, v72, v73, v74, v75);
             if (!eax76) 
                 goto addr_804aa68_10;
@@ -1450,17 +1450,17 @@ void** check_filetype(void** a1, void** a2, void** a3, void** a4) {
     int32_t eax35;
     void** eax36;
 
-    eax10 = fun_8048cf4(a1, 0x8054bd7, v5, v6, v7, v8, ebp9, __return_address());
+    eax10 = fun_8048cf4(a1, ".tar.gz", v5, v6, v7, v8, ebp9, __return_address());
     if (!eax10) {
-        eax15 = fun_8048cf4(a1, 0x8054bdf, v11, v12, v13, v14, ebp9, __return_address());
+        eax15 = fun_8048cf4(a1, ".tgz", v11, v12, v13, v14, ebp9, __return_address());
         if (!eax15) {
-            eax20 = fun_8048cf4(a1, 0x8054be4, v16, v17, v18, v19, ebp9, __return_address());
+            eax20 = fun_8048cf4(a1, ".tar.bz2", v16, v17, v18, v19, ebp9, __return_address());
             if (!eax20) {
-                eax25 = fun_8048cf4(a1, 0x8054bed, v21, v22, v23, v24, ebp9, __return_address());
+                eax25 = fun_8048cf4(a1, ".tbz", v21, v22, v23, v24, ebp9, __return_address());
                 if (!eax25) {
-                    eax30 = fun_8048cf4(a1, 0x8054bf2, v26, v27, v28, v29, ebp9, __return_address());
+                    eax30 = fun_8048cf4(a1, ".zip", v26, v27, v28, v29, ebp9, __return_address());
                     if (!eax30) {
-                        eax35 = fun_8048cf4(a1, 0x8054bf7, v31, v32, v33, v34, ebp9, __return_address());
+                        eax35 = fun_8048cf4(a1, ".tar", v31, v32, v33, v34, ebp9, __return_address());
                         if (!eax35) {
                             eax36 = reinterpret_cast<void**>(0);
                         } else {
@@ -1562,27 +1562,27 @@ void** su(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void
     fun_8048ab4(eax22);
     eax23 = fun_8048d84(eax22);
     v24 = a1;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp18) + 0xfffff7f4, 0x8054c79, v24, eax23, v25, v26, a2, a1, v27, v28, v29, v30, v31, v32, v33, v34, v35);
-    v36 = reinterpret_cast<void**>(0x8054b0c);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp18) + 0xfffff7f4, "%s/gem.test.%i", v24, eax23, v25, v26, a2, a1, v27, v28, v29, v30, v31, v32, v33, v34, v35);
+    v36 = reinterpret_cast<void**>("w+");
     v37 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp18) + 0xfffff7f4);
-    eax42 = fun_8048c74(v37, 0x8054b0c, v24, eax23, v38, v39, a2, a1, v40, v41);
-    eax45 = fun_8048a94(v37, 0x8054b0c, v24, eax23, v43, v44, a2, a1);
+    eax42 = fun_8048c74(v37, "w+", v24, eax23, v38, v39, a2, a1, v40, v41);
+    eax45 = fun_8048a94(v37, "w+", v24, eax23, v43, v44, a2, a1);
     if (*eax45 != 13) {
-        fun_8048d14(reinterpret_cast<int32_t>(ebp18) + 0xfffff7f4, 0x8054b0c, v24, eax23);
-        fun_8048c44(eax42, 0x8054b0c, v24, eax23, v46, v47, a2, a1, v48, eax42, v49, v50, v51, v52, v53);
+        fun_8048d14(reinterpret_cast<int32_t>(ebp18) + 0xfffff7f4, "w+", v24, eax23);
+        fun_8048c44(eax42, "w+", v24, eax23, v46, v47, a2, a1, v48, eax42, v49, v50, v51, v52, v53);
         v54 = a2;
-        eax57 = fun_8048b84(v54, 0x8054b0c, v24, eax23, v55, v56, a2);
+        eax57 = fun_8048b84(v54, "w+", v24, eax23, v55, v56, a2);
         v58 = eax57;
         if (v58) {
             v24 = a2;
-            v36 = reinterpret_cast<void**>(0x8054cf1);
+            v36 = reinterpret_cast<void**>("could not run '%s'.\n");
             v54 = reinterpret_cast<void**>(0xfffffff7);
-            print_error(0xfffffff7, 0x8054cf1, v24, eax23, v59, v60, a2, a1, v61);
+            print_error(0xfffffff7, "could not run '%s'.\n", v24, eax23, v59, v60, a2, a1, v61);
         }
     } else {
-        v36 = reinterpret_cast<void**>(0x8054c88);
+        v36 = reinterpret_cast<void**>("You don't have write access to your local GRASS installation.\nPlease consult your system administrator.\n");
         v54 = reinterpret_cast<void**>(0xfffffffb);
-        print_error(0xfffffffb, 0x8054c88, v24, eax23, v62, v63, a2, a1, v64);
+        print_error(0xfffffffb, "You don't have write access to your local GRASS installation.\nPlease consult your system administrator.\n", v24, eax23, v62, v63, a2, a1, v64);
     }
     eax65 = reinterpret_cast<void**>(eax19 ^ g14);
     if (eax65) {
@@ -1855,42 +1855,42 @@ void** register_extension(void** a1, void** a2, void** a3, void** a4, void** a5,
     v12 = eax11;
     v13 = 1;
     v14 = v8;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, 0x8054d3f, v14, v15, v16, v17, v18, v19, v20, v10, v9, v8, v21, v22, v23, v24, v25);
-    v26 = reinterpret_cast<void**>(0x8054d13);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, "%s/etc/extensions.db", v14, v15, v16, v17, v18, v19, v20, v10, v9, v8, v21, v22, v23, v24, v25);
+    v26 = reinterpret_cast<void**>("r");
     v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4);
-    eax34 = fun_8048c74(v27, 0x8054d13, v14, v28, v29, v30, v31, v32, v33, v10);
+    eax34 = fun_8048c74(v27, "r", v14, v28, v29, v30, v31, v32, v33, v10);
     v35 = eax34;
     if (!v35) {
-        eax41 = fun_8048a94(v27, 0x8054d13, v14, v36, v37, v38, v39, v40);
+        eax41 = fun_8048a94(v27, "r", v14, v36, v37, v38, v39, v40);
         if (*eax41 != 2) {
-            fun_8048c44(v35, 0x8054d13, v14, v42, v43, v44, v45, v46, v47, v10, v9, v8, v48, v49, v50);
-            eax56 = fun_8048a94(v35, 0x8054d13, v14, v51, v52, v53, v54, v55);
+            fun_8048c44(v35, "r", v14, v42, v43, v44, v45, v46, v47, v10, v9, v8, v48, v49, v50);
+            eax56 = fun_8048a94(v35, "r", v14, v51, v52, v53, v54, v55);
             v57 = *eax56;
-            eax63 = fun_8048ad4(v57, 0x8054d13, v14, v58, v59, v60, v61, v62);
+            eax63 = fun_8048ad4(v57, "r", v14, v58, v59, v60, v61, v62);
             v64 = eax63;
             v14 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4);
-            v26 = reinterpret_cast<void**>(0x8054d16);
+            v26 = reinterpret_cast<void**>("checking for file '%s': %s\n");
             v27 = reinterpret_cast<void**>(0xfffffff1);
-            print_error(0xfffffff1, 0x8054d16, v14, v64, v65, v66, v67, v68, v69);
+            print_error(0xfffffff1, "checking for file '%s': %s\n", v14, v64, v65, v66, v67, v68, v69);
         } else {
             v13 = 0;
         }
     }
     if (v13) {
         v70 = reinterpret_cast<void**>(32);
-        fun_8048c54(0x8063ac0, 0x8054d54, 32, v64, v71, v72, v73, v74, v75, v10, v9, v8, v76, v77, v78);
-        fun_8048c14(0x8063ac0, 0x8054d54, 32, v64, v79, v80, v81, v82);
-        v83 = reinterpret_cast<void**>(0x8054d74);
-        eax89 = fun_8048c74(0x8063ac0, 0x8054d74, 32, v64, v84, v85, v86, v87, v88, v10);
+        fun_8048c54(0x8063ac0, "/tmp/grass.extensions.db.XXXXXX", 32, v64, v71, v72, v73, v74, v75, v10, v9, v8, v76, v77, v78);
+        fun_8048c14(0x8063ac0, "/tmp/grass.extensions.db.XXXXXX", 32, v64, v79, v80, v81, v82);
+        v83 = reinterpret_cast<void**>("w+");
+        eax89 = fun_8048c74(0x8063ac0, "w+", 32, v64, v84, v85, v86, v87, v88, v10);
         v90 = eax89;
         if (!v90) {
-            eax95 = fun_8048a94(0x8063ac0, 0x8054d74, 32, v64, v91, v92, v93, v94);
+            eax95 = fun_8048a94(0x8063ac0, "w+", 32, v64, v91, v92, v93, v94);
             v96 = *eax95;
-            eax101 = fun_8048ad4(v96, 0x8054d74, 32, v64, v97, v98, v99, v100);
+            eax101 = fun_8048ad4(v96, "w+", 32, v64, v97, v98, v99, v100);
             v64 = eax101;
             v70 = reinterpret_cast<void**>(0x8063ac0);
-            v83 = reinterpret_cast<void**>(0x8054d78);
-            print_error(0xfffffff1, 0x8054d78, 0x8063ac0, v64, v102, v103, v104, v105, v106);
+            v83 = reinterpret_cast<void**>("could not create temp file '%s': %s\n \t\t\t\t\t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n");
+            print_error(0xfffffff1, "could not create temp file '%s': %s\n \t\t\t\t\t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n", 0x8063ac0, v64, v102, v103, v104, v105, v106);
         }
         atexit(exit_db, v83, v70, v64, v107, v108, v109, v110);
         v111 = 0;
@@ -1905,7 +1905,7 @@ void** register_extension(void** a1, void** a2, void** a3, void** a4, void** a5,
             v114 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffd7cc);
             v64 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffd7d0);
             v124 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffe7f4);
-            fun_8048b34(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, 0x8054df8, v124, v64, v114, v115, v116, v117, v125);
+            fun_8048b34(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, "%s\t%i.%i.%i\t%s\t%s", v124, v64, v114, v115, v116, v117, v125);
             eax127 = fun_8048da4(reinterpret_cast<int32_t>(ebp7) + 0xffffe7f4, v10, v124, v64, v114, v115, v116, v117, v126, v10, v9, v8);
             if (!eax127) {
                 v113 = 1;
@@ -1921,13 +1921,13 @@ void** register_extension(void** a1, void** a2, void** a3, void** a4, void** a5,
                         v114 = v135;
                         v64 = v136;
                         v124 = v10;
-                        print_error(0xfffffff0, 0x8054e98, v124, v64, v114, v115, v116, v117, v137);
+                        print_error(0xfffffff0, "Extension '%s' with same or higher version (%i.%i.%i) already installed. You can use -f to overwrite this version, if you know what you are doing.\n", v124, v64, v114, v115, v116, v117, v137);
                     } else {
                         v115 = v138;
                         v114 = v139;
                         v64 = v140;
                         v124 = v10;
-                        print_error(0xfffffff0, 0x8054e0c, v124, v64, v114, v115, v116, v117, v141);
+                        print_error(0xfffffff0, "Extension '%s' with lower version (%i.%i.%i) already installed. You can use -f to overwrite this version, if you know what you are doing.\n", v124, v64, v114, v115, v116, v117, v141);
                     }
                 }
                 eax142 = FORCE;
@@ -1956,8 +1956,8 @@ void** register_extension(void** a1, void** a2, void** a3, void** a4, void** a5,
                 v114 = a5;
                 v64 = a4;
                 v14 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffe7f4);
-                v26 = reinterpret_cast<void**>(0x8054f2c);
-                fun_8048ce4(v90, 0x8054f2c, v14, v64, v114, v115, v116, v117, v157, v10, v9, v8, v158, v159, v160);
+                v26 = reinterpret_cast<void**>("%s\t%i.%i.%i\t%s\t%s\n");
+                fun_8048ce4(v90, "%s\t%i.%i.%i\t%s\t%s\n", v14, v64, v114, v115, v116, v117, v157, v10, v9, v8, v158, v159, v160);
             } else {
                 eax161 = depstr(v10, v8, v14, v64, v114, v115, v116, v117);
                 fun_8048c84(reinterpret_cast<int32_t>(ebp7) + 0xffffd7f4, eax161, v14, v64, v114, v115, v116, v117, v162, v10, v9, v8, v163, v164, v165, v90, v35);
@@ -1967,8 +1967,8 @@ void** register_extension(void** a1, void** a2, void** a3, void** a4, void** a5,
                 v114 = a5;
                 v64 = a4;
                 v14 = v10;
-                v26 = reinterpret_cast<void**>(0x8054f2c);
-                fun_8048ce4(v90, 0x8054f2c, v14, v64, v114, v115, v116, v117, v166, v10, v9, v8, v167, v168, v169);
+                v26 = reinterpret_cast<void**>("%s\t%i.%i.%i\t%s\t%s\n");
+                fun_8048ce4(v90, "%s\t%i.%i.%i\t%s\t%s\n", v14, v64, v114, v115, v116, v117, v166, v10, v9, v8, v167, v168, v169);
             }
         }
         fun_8048c44(v90, v26, v14, v64, v114, v115, v116, v117, v170, v10, v9, v8, v171, v172, v173);
@@ -1977,19 +1977,19 @@ void** register_extension(void** a1, void** a2, void** a3, void** a4, void** a5,
     }
     if (!v111 || !v13) {
         v178 = reinterpret_cast<void**>(32);
-        fun_8048c54(0x8063ac0, 0x8054d54, 32, v64, v114, v115, v116, v117, v179, v10, v9, v8, v180, v181, v182);
-        fun_8048c14(0x8063ac0, 0x8054d54, 32, v64, v114, v115, v116, v117);
-        v183 = reinterpret_cast<void**>(0x8054d74);
-        eax185 = fun_8048c74(0x8063ac0, 0x8054d74, 32, v64, v114, v115, v116, v117, v184, v10);
+        fun_8048c54(0x8063ac0, "/tmp/grass.extensions.db.XXXXXX", 32, v64, v114, v115, v116, v117, v179, v10, v9, v8, v180, v181, v182);
+        fun_8048c14(0x8063ac0, "/tmp/grass.extensions.db.XXXXXX", 32, v64, v114, v115, v116, v117);
+        v183 = reinterpret_cast<void**>("w+");
+        eax185 = fun_8048c74(0x8063ac0, "w+", 32, v64, v114, v115, v116, v117, v184, v10);
         v90 = eax185;
         if (!v90) {
-            eax186 = fun_8048a94(0x8063ac0, 0x8054d74, 32, v64, v114, v115, v116, v117);
+            eax186 = fun_8048a94(0x8063ac0, "w+", 32, v64, v114, v115, v116, v117);
             v187 = *eax186;
-            eax188 = fun_8048ad4(v187, 0x8054d74, 32, v64, v114, v115, v116, v117);
+            eax188 = fun_8048ad4(v187, "w+", 32, v64, v114, v115, v116, v117);
             v64 = eax188;
             v178 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4);
-            v183 = reinterpret_cast<void**>(0x8054f40);
-            print_error(0xfffffff1, 0x8054f40, v178, v64, v114, v115, v116, v117, v189);
+            v183 = reinterpret_cast<void**>("could not create temp db '%s': %s\n \t\t\t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n");
+            print_error(0xfffffff1, "could not create temp db '%s': %s\n \t\t\t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n", v178, v64, v114, v115, v116, v117, v189);
         }
         atexit(exit_db, v183, v178, v64, v114, v115, v116, v117);
         eax190 = depstr(v10, v8, v178, v64, v114, v115, v116, v117);
@@ -2000,10 +2000,10 @@ void** register_extension(void** a1, void** a2, void** a3, void** a4, void** a5,
         v114 = a5;
         v64 = a4;
         v14 = v10;
-        v26 = reinterpret_cast<void**>(0x8054f2c);
-        fun_8048ce4(v90, 0x8054f2c, v14, v64, v114, v115, v116, v117, v195, v10, v9, v8, v196, v197, v198);
+        v26 = reinterpret_cast<void**>("%s\t%i.%i.%i\t%s\t%s\n");
+        fun_8048ce4(v90, "%s\t%i.%i.%i\t%s\t%s\n", v14, v64, v114, v115, v116, v117, v195, v10, v9, v8, v196, v197, v198);
         v27 = v90;
-        fun_8048c44(v27, 0x8054f2c, v14, v64, v114, v115, v116, v117, v199, v10, v9, v8, v200, v201, v202);
+        fun_8048c44(v27, "%s\t%i.%i.%i\t%s\t%s\n", v14, v64, v114, v115, v116, v117, v199, v10, v9, v8, v200, v201, v202);
     }
     eax203 = reinterpret_cast<void**>(v12 ^ g14);
     if (eax203) {
@@ -2128,10 +2128,10 @@ void** depstr(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, 
     eax12 = g14;
     v13 = eax12;
     v14 = reinterpret_cast<void**>(11);
-    fun_8048c54(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x8054d08, 11, v15, v16, v17, v11, v10, v18, v19, v20, v21, v22, v23, v24);
-    v25 = reinterpret_cast<void**>(0x8054d13);
+    fun_8048c54(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "../depends", 11, v15, v16, v17, v11, v10, v18, v19, v20, v21, v22, v23, v24);
+    v25 = reinterpret_cast<void**>("r");
     v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
-    eax32 = fun_8048c74(v26, 0x8054d13, 11, v27, v28, v29, v11, v10, v30, v31);
+    eax32 = fun_8048c74(v26, "r", 11, v27, v28, v29, v11, v10, v30, v31);
     v33 = eax32;
     if (v33) {
         addr_804aed2_2:
@@ -2139,15 +2139,15 @@ void** depstr(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, 
         eax43 = fun_8048d24(0x800, v25, v14, v35, v36, v37, v11, v10, v38, v39, v40, v33, v41, 1, v42);
         v44 = eax43;
     } else {
-        eax48 = fun_8048a94(v26, 0x8054d13, 11, v45, v46, v47, v11, v10);
+        eax48 = fun_8048a94(v26, "r", 11, v45, v46, v47, v11, v10);
         if (*eax48 != 2) {
-            eax52 = fun_8048a94(v26, 0x8054d13, 11, v49, v50, v51, v11, v10);
+            eax52 = fun_8048a94(v26, "r", 11, v49, v50, v51, v11, v10);
             v53 = *eax52;
-            eax57 = fun_8048ad4(v53, 0x8054d13, 11, v54, v55, v56, v11, v10);
+            eax57 = fun_8048ad4(v53, "r", 11, v54, v55, v56, v11, v10);
             v35 = eax57;
             v14 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
-            v25 = reinterpret_cast<void**>(0x8054d16);
-            print_error(0xffffffef, 0x8054d16, v14, v35, v58, v59, v11, v10, v60);
+            v25 = reinterpret_cast<void**>("checking for file '%s': %s\n");
+            print_error(0xffffffef, "checking for file '%s': %s\n", v14, v35, v58, v59, v11, v10, v60);
             goto addr_804aed2_2;
         } else {
             eax61 = reinterpret_cast<void**>(0x8054d15);
@@ -2159,18 +2159,18 @@ void** depstr(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, 
         if (!*reinterpret_cast<signed char*>(&eax69)) 
             continue;
         v71 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4);
-        eax75 = fun_8048b34(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, 0x8054d32, v71, v35, v72, v73, v11, v10, v74);
+        eax75 = fun_8048b34(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, "%s", v71, v35, v72, v73, v11, v10, v74);
         v67 = eax75;
         if (reinterpret_cast<signed char>(v67) <= reinterpret_cast<signed char>(0)) 
             continue;
-        eax81 = fun_8048da4(0x8054d35, reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, v71, v35, v76, v77, v11, v10, v78, v79, v80, v33);
+        eax81 = fun_8048da4("GRASS", reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, v71, v35, v76, v77, v11, v10, v78, v79, v80, v33);
         if (!eax81) 
             continue;
         if (!v34) {
-            fun_8048d64(v44, 0x8054d3d, v71, v35, v82);
+            fun_8048d64(v44, ",", v71, v35, v82);
             fun_8048d64(v44, reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, v71, v35, v83);
         } else {
-            fun_8048d64(v44, 0x8054d3b, v71, v35, v84);
+            fun_8048d64(v44, "\t", v71, v35, v84);
             fun_8048d64(v44, reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, v71, v35, v85);
             v34 = reinterpret_cast<void**>(0);
         }
@@ -2355,56 +2355,56 @@ void** deregister_extension(void** a1, void** a2, void** a3, void** a4) {
     v10 = eax9;
     v11 = 0;
     v12 = v8;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, 0x8054d3f, v12, v13, v14, v15, v16, v17, v18, v8, v7, v6, v19, v20, v21, v22, v23);
-    v24 = reinterpret_cast<void**>(0x8054d13);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, "%s/etc/extensions.db", v12, v13, v14, v15, v16, v17, v18, v8, v7, v6, v19, v20, v21, v22, v23);
+    v24 = reinterpret_cast<void**>("r");
     v25 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4);
-    eax32 = fun_8048c74(v25, 0x8054d13, v12, v26, v27, v28, v29, v30, v31, v8);
+    eax32 = fun_8048c74(v25, "r", v12, v26, v27, v28, v29, v30, v31, v8);
     v33 = eax32;
     if (v33) {
         v11 = 1;
     } else {
-        eax39 = fun_8048a94(v25, 0x8054d13, v12, v34, v35, v36, v37, v38);
+        eax39 = fun_8048a94(v25, "r", v12, v34, v35, v36, v37, v38);
         if (*eax39 != 2 || (eax40 = FORCE, !!eax40)) {
             eax41 = FORCE;
             if (!eax41) {
-                fun_8048c44(v33, 0x8054d13, v12, v42, v43, v44, v45, v46, v47, v8, v7, v6, v48, v49, v50);
-                eax56 = fun_8048a94(v33, 0x8054d13, v12, v51, v52, v53, v54, v55);
+                fun_8048c44(v33, "r", v12, v42, v43, v44, v45, v46, v47, v8, v7, v6, v48, v49, v50);
+                eax56 = fun_8048a94(v33, "r", v12, v51, v52, v53, v54, v55);
                 v57 = *eax56;
-                eax63 = fun_8048ad4(v57, 0x8054d13, v12, v58, v59, v60, v61, v62);
+                eax63 = fun_8048ad4(v57, "r", v12, v58, v59, v60, v61, v62);
                 v64 = eax63;
                 v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4);
-                v24 = reinterpret_cast<void**>(0x8054d16);
+                v24 = reinterpret_cast<void**>("checking for file '%s': %s\n");
                 v25 = reinterpret_cast<void**>(0xffffffed);
-                print_error(0xffffffed, 0x8054d16, v12, v64, v65, v66, v67, v68, v69);
+                print_error(0xffffffed, "checking for file '%s': %s\n", v12, v64, v65, v66, v67, v68, v69);
             }
         } else {
-            fun_8048c44(v33, 0x8054d13, v12, v70, v71, v72, v73, v74, v75, v8, v7, v6, v76, v77, v78);
-            v24 = reinterpret_cast<void**>(0x8054fbc);
+            fun_8048c44(v33, "r", v12, v70, v71, v72, v73, v74, v75, v8, v7, v6, v76, v77, v78);
+            v24 = reinterpret_cast<void**>("could not deregister: no extensions installed\n");
             v25 = reinterpret_cast<void**>(0xffffffed);
-            print_error(0xffffffed, 0x8054fbc, v12, v79, v80, v81, v82, v83, v84);
+            print_error(0xffffffed, "could not deregister: no extensions installed\n", v12, v79, v80, v81, v82, v83, v84);
         }
     }
     if (v11) {
         v11 = 0;
         v12 = reinterpret_cast<void**>(32);
-        fun_8048c54(0x8063ac0, 0x8054d54, 32, v64, v85, v86, v87, v88, v89, v8, v7, v6, v90, v91, v92);
-        fun_8048c14(0x8063ac0, 0x8054d54, 32, v64, v93, v94, v95, v96);
-        v24 = reinterpret_cast<void**>(0x8054d74);
-        eax102 = fun_8048c74(0x8063ac0, 0x8054d74, 32, v64, v97, v98, v99, v100, v101, v8);
+        fun_8048c54(0x8063ac0, "/tmp/grass.extensions.db.XXXXXX", 32, v64, v85, v86, v87, v88, v89, v8, v7, v6, v90, v91, v92);
+        fun_8048c14(0x8063ac0, "/tmp/grass.extensions.db.XXXXXX", 32, v64, v93, v94, v95, v96);
+        v24 = reinterpret_cast<void**>("w+");
+        eax102 = fun_8048c74(0x8063ac0, "w+", 32, v64, v97, v98, v99, v100, v101, v8);
         v103 = eax102;
         if (v103 || (eax104 = FORCE, !!eax104)) {
             v11 = 1;
             v25 = reinterpret_cast<void**>(exit_db);
-            atexit(exit_db, 0x8054d74, 32, v64, v105, v106, v107, v108);
+            atexit(exit_db, "w+", 32, v64, v105, v106, v107, v108);
         } else {
-            eax113 = fun_8048a94(0x8063ac0, 0x8054d74, 32, v64, v109, v110, v111, v112);
+            eax113 = fun_8048a94(0x8063ac0, "w+", 32, v64, v109, v110, v111, v112);
             v114 = *eax113;
-            eax119 = fun_8048ad4(v114, 0x8054d74, 32, v64, v115, v116, v117, v118);
+            eax119 = fun_8048ad4(v114, "w+", 32, v64, v115, v116, v117, v118);
             v64 = eax119;
             v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4);
-            v24 = reinterpret_cast<void**>(0x8054fec);
+            v24 = reinterpret_cast<void**>("could not create temp db '%s': %s\n \t\t\t\t\t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n");
             v25 = reinterpret_cast<void**>(0xffffffed);
-            print_error(0xffffffed, 0x8054fec, v12, v64, v120, v121, v122, v123, v124);
+            print_error(0xffffffed, "could not create temp db '%s': %s\n \t\t\t\t\t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n", v12, v64, v120, v121, v122, v123, v124);
         }
     }
     if (!v11) {
@@ -2422,7 +2422,7 @@ void** deregister_extension(void** a1, void** a2, void** a3, void** a4) {
             v126 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffd7d4);
             v64 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffd7d8);
             v142 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4);
-            eax144 = fun_8048b34(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, 0x8054df8, v142, v64, v126, v127, v128, v129, v143);
+            eax144 = fun_8048b34(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, "%s\t%i.%i.%i\t%s\t%s", v142, v64, v126, v127, v128, v129, v143);
             if (reinterpret_cast<signed char>(eax144) <= reinterpret_cast<signed char>(0)) 
                 continue;
             v145 = 1;
@@ -2437,7 +2437,7 @@ void** deregister_extension(void** a1, void** a2, void** a3, void** a4) {
             if (eax148 && (eax149 = FORCE, !eax149)) {
                 v64 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4);
                 v142 = v7;
-                print_error(0xffffffed, 0x805506c, v142, v64, v126, v127, v128, v129, v150);
+                print_error(0xffffffed, "cannot uninstall extension '%s' it is needed by '%s'.\n", v142, v64, v126, v127, v128, v129, v150);
             }
             fun_8048ce4(v103, reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, v142, v64, v126, v127, v128, v129, v151, v8, v7, v6, v152, v153, v154);
         }
@@ -2454,8 +2454,8 @@ void** deregister_extension(void** a1, void** a2, void** a3, void** a4) {
     addr_804b90a_26:
     v64 = v8;
     v12 = v7;
-    v24 = reinterpret_cast<void**>(0x80550a4);
-    print_error(0xffffffed, 0x80550a4, v12, v64, v126, v127, v128, v129, v163);
+    v24 = reinterpret_cast<void**>("no extension '%s' registered/installed in '%s'.\n");
+    print_error(0xffffffed, "no extension '%s' registered/installed in '%s'.\n", v12, v64, v126, v127, v128, v129, v163);
     goto addr_804b932_25;
 }
 
@@ -2635,24 +2635,24 @@ void** check_dependencies(void** a1, void** a2, void** a3, void** a4, void** a5,
     v12 = eax11;
     eax13 = FORCE;
     if (!eax13) {
-        eax22 = fun_8048c74(0x8054d08, 0x8054d13, v14, v15, v16, v17, v18, v19, v20, v21);
+        eax22 = fun_8048c74("../depends", "r", v14, v15, v16, v17, v18, v19, v20, v21);
         v23 = eax22;
         if (v23) {
             addr_804ba35_4:
             v24 = 1;
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xfffff7e4, 0x8054d3f, v9, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v10, v9, v8, v35);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xfffff7e4, "%s/etc/extensions.db", v9, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v10, v9, v8, v35);
             v36 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffff7e4);
-            eax43 = fun_8048c74(v36, 0x8054d13, v9, v25, v37, v38, v39, v40, v41, v42);
+            eax43 = fun_8048c74(v36, "r", v9, v25, v37, v38, v39, v40, v41, v42);
             v44 = eax43;
             if (!v44) {
-                eax49 = fun_8048a94(v36, 0x8054d13, v9, v25, v45, v46, v47, v48);
+                eax49 = fun_8048a94(v36, "r", v9, v25, v45, v46, v47, v48);
                 if (*eax49 != 2) {
-                    fun_8048c44(v44, 0x8054d13, v9, v25, v50, v51, v52, v53, v54, v55, v56, v57, v58, v10, v9);
-                    eax63 = fun_8048a94(v44, 0x8054d13, v9, v25, v59, v60, v61, v62);
+                    fun_8048c44(v44, "r", v9, v25, v50, v51, v52, v53, v54, v55, v56, v57, v58, v10, v9);
+                    eax63 = fun_8048a94(v44, "r", v9, v25, v59, v60, v61, v62);
                     v64 = *eax63;
-                    eax69 = fun_8048ad4(v64, 0x8054d13, v9, v25, v65, v66, v67, v68);
+                    eax69 = fun_8048ad4(v64, "r", v9, v25, v65, v66, v67, v68);
                     v25 = eax69;
-                    print_error(0xffffffef, 0x8054d16, reinterpret_cast<int32_t>(ebp7) + 0xfffff7e4, v25, v70, v71, v72, v73, v74);
+                    print_error(0xffffffef, "checking for file '%s': %s\n", reinterpret_cast<int32_t>(ebp7) + 0xfffff7e4, v25, v70, v71, v72, v73, v74);
                     goto addr_804badd_7;
                 } else {
                     v24 = 0;
@@ -2660,21 +2660,21 @@ void** check_dependencies(void** a1, void** a2, void** a3, void** a4, void** a5,
                 }
             }
         } else {
-            eax81 = fun_8048a94(0x8054d08, 0x8054d13, v75, v76, v77, v78, v79, v80);
+            eax81 = fun_8048a94("../depends", "r", v75, v76, v77, v78, v79, v80);
             if (*eax81 != 2) {
-                fun_8048c44(v23, 0x8054d13, v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, v92, v10, v9);
-                eax99 = fun_8048a94(v23, 0x8054d13, v93, v94, v95, v96, v97, v98);
+                fun_8048c44(v23, "r", v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, v92, v10, v9);
+                eax99 = fun_8048a94(v23, "r", v93, v94, v95, v96, v97, v98);
                 v100 = *eax99;
-                eax107 = fun_8048ad4(v100, 0x8054d13, v101, v102, v103, v104, v105, v106);
+                eax107 = fun_8048ad4(v100, "r", v101, v102, v103, v104, v105, v106);
                 v25 = eax107;
-                print_error(0xffffffef, 0x8054d16, reinterpret_cast<int32_t>(ebp7) + 0xfffff7e4, v25, v108, v109, v110, v111, v112);
+                print_error(0xffffffef, "checking for file '%s': %s\n", reinterpret_cast<int32_t>(ebp7) + 0xfffff7e4, v25, v108, v109, v110, v111, v112);
                 goto addr_804ba35_4;
             } else {
                 eax113 = stderr;
                 v114 = v8;
-                v115 = reinterpret_cast<void**>(0x80550d5);
+                v115 = reinterpret_cast<void**>("\n%s/depends ENOENT\n");
                 v116 = eax113;
-                fun_8048ce4(v116, 0x80550d5, v114, v117, v118, v119, v120, v121, v122, v123, v124, v125, v126, v10, v9);
+                fun_8048ce4(v116, "\n%s/depends ENOENT\n", v114, v117, v118, v119, v120, v121, v122, v123, v124, v125, v126, v10, v9);
             }
         }
     }
@@ -2690,21 +2690,21 @@ void** check_dependencies(void** a1, void** a2, void** a3, void** a4, void** a5,
         v128 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffd7bc);
         v25 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffd7c0);
         v139 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffd7e4);
-        eax140 = fun_8048b34(reinterpret_cast<int32_t>(ebp7) + 0xffffefe4, 0x80550e9, v139, v25, v128, v129, 0, 0, 0);
+        eax140 = fun_8048b34(reinterpret_cast<int32_t>(ebp7) + 0xffffefe4, "%s\t%i.%i.%i", v139, v25, v128, v129, 0, 0, 0);
         if (reinterpret_cast<signed char>(eax140) <= reinterpret_cast<signed char>(0)) 
             continue;
-        eax144 = fun_8048da4(reinterpret_cast<int32_t>(ebp7) + 0xffffd7e4, 0x8054d35, v139, v25, v128, v129, 0, 0, 0, v141, v142, v143);
+        eax144 = fun_8048da4(reinterpret_cast<int32_t>(ebp7) + 0xffffd7e4, "GRASS", v139, v25, v128, v129, 0, 0, 0, v141, v142, v143);
         if (eax144) {
             if (!v24) 
                 continue;
             v145 = 0;
-            fun_8048b24(v44, 0x8054d35, v139, v25, v128, v129, 0, 0, 0, v146, v147, v148, v149, v10, v9);
+            fun_8048b24(v44, "GRASS", v139, v25, v128, v129, 0, 0, 0, v146, v147, v148, v149, v10, v9);
             while (eax154 = nc_fgets_nb(reinterpret_cast<int32_t>(ebp7) + 0xffffe7e4, 0x800, v44, v25, v128, v129, 0, 0, 0, v150, v151, v152, v153, v10, v9), !!eax154) {
                 v129 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffd7c4);
                 v128 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffd7c8);
                 v25 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffd7cc);
                 v155 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffdfe4);
-                eax156 = fun_8048b34(reinterpret_cast<int32_t>(ebp7) + 0xffffe7e4, 0x80550e9, v155, v25, v128, v129, 0, 0, 0);
+                eax156 = fun_8048b34(reinterpret_cast<int32_t>(ebp7) + 0xffffe7e4, "%s\t%i.%i.%i", v155, v25, v128, v129, 0, 0, 0);
                 if (reinterpret_cast<signed char>(eax156) <= reinterpret_cast<signed char>(0)) 
                     continue;
                 eax160 = fun_8048da4(reinterpret_cast<int32_t>(ebp7) + 0xffffdfe4, reinterpret_cast<int32_t>(ebp7) + 0xffffd7e4, v155, v25, v128, v129, 0, 0, 0, v157, v158, v159);
@@ -2718,16 +2718,16 @@ void** check_dependencies(void** a1, void** a2, void** a3, void** a4, void** a5,
                     v129 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffd7e4);
                     v128 = reinterpret_cast<void**>(0);
                     v25 = reinterpret_cast<void**>(0);
-                    print_error(0xffffffee, 0x805514c, 0, 0, 0, v129, 0, 0, 0);
+                    print_error(0xffffffee, "installed version %i.%i.%i of required extension '%s' is too low.\n \t\t\t\t\t\t\t\t\t\t\t\t\tRequired version is %i.%i.%i\n", 0, 0, 0, v129, 0, 0, 0);
                 }
                 v145 = 1;
             }
             if (v145) 
                 continue;
             v25 = v9;
-            print_error(0xffffffee, 0x80551bc, reinterpret_cast<int32_t>(ebp7) + 0xffffd7e4, v25, v128, v129, 0, 0, 0);
+            print_error(0xffffffee, "required extension '%s' not found in '%s'.\n", reinterpret_cast<int32_t>(ebp7) + 0xffffd7e4, v25, v128, v129, 0, 0, 0);
         } else {
-            fun_8048b34(v10, 0x80550f5, reinterpret_cast<int32_t>(ebp7) + 0xffffd7cc, reinterpret_cast<int32_t>(ebp7) + 0xffffd7c8, reinterpret_cast<int32_t>(ebp7) + 0xffffd7c4, v129, 0, 0, 0);
+            fun_8048b34(v10, "%i.%i.%i", reinterpret_cast<int32_t>(ebp7) + 0xffffd7cc, reinterpret_cast<int32_t>(ebp7) + 0xffffd7c8, reinterpret_cast<int32_t>(ebp7) + 0xffffd7c4, v129, 0, 0, 0);
             v129 = reinterpret_cast<void**>(0);
             v128 = reinterpret_cast<void**>(0);
             v25 = reinterpret_cast<void**>(0);
@@ -2736,7 +2736,7 @@ void** check_dependencies(void** a1, void** a2, void** a3, void** a4, void** a5,
                 v129 = reinterpret_cast<void**>(0);
                 v128 = reinterpret_cast<void**>(0);
                 v25 = reinterpret_cast<void**>(0);
-                print_error(0xffffffee, 0x8055100, v10, 0, 0, 0, 0, 0, 0);
+                print_error(0xffffffee, "installed version (%s) of GRASS is too low. Required version is %i.%i.%i\n", v10, 0, 0, 0, 0, 0, 0);
             }
         }
     }
@@ -3013,7 +3013,7 @@ void** insert_str(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
     }
     if (reinterpret_cast<signed char>(a2) < reinterpret_cast<signed char>(0) || reinterpret_cast<signed char>(a2) > reinterpret_cast<signed char>(v13)) {
         v14 = a2;
-        print_error(0xffffffeb, 0x8054a18, v14, v15, v16, v17, v10, v9, v18);
+        print_error(0xffffffeb, "insert: invalid line number %i.\n", v14, v15, v16, v17, v10, v9, v18);
     }
     if (a2 != v13) {
         v19 = *reinterpret_cast<void***>((reinterpret_cast<uint32_t>(v13 - 1) << 2) + reinterpret_cast<unsigned char>(v10));
@@ -3055,9 +3055,9 @@ void** insert_str(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
         *reinterpret_cast<void***>((reinterpret_cast<uint32_t>(v169 - 1) << 2) + reinterpret_cast<unsigned char>(v10)) = reinterpret_cast<void**>(0);
         eax170 = v169;
     } else {
-        eax180 = fun_8048c64(v9, 0x8054a18, v14, v171, v172, v173, v10, v9, v174, v175, v13, v176, v177, v178, v179);
+        eax180 = fun_8048c64(v9, "insert: invalid line number %i.\n", v14, v171, v172, v173, v10, v9, v174, v175, v13, v176, v177, v178, v179);
         v91 = reinterpret_cast<void**>(&eax180->f1);
-        eax189 = fun_8048d24(v91, 0x8054a18, v14, v181, v182, v183, v10, v9, v91, v184, v13, v185, v186, v187, v188);
+        eax189 = fun_8048d24(v91, "insert: invalid line number %i.\n", v14, v181, v182, v183, v10, v9, v91, v184, v13, v185, v186, v187, v188);
         *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(v13) << 2) + reinterpret_cast<unsigned char>(v10)) = eax189;
         eax190 = *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(v13) << 2) + reinterpret_cast<unsigned char>(v10));
         v158 = v9;
@@ -3192,14 +3192,14 @@ void** new_item(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6
     eax20 = g14;
     v21 = eax20;
     chop(v17, v22, v23, v24);
-    v25 = reinterpret_cast<void**>(0x8055341);
-    eax32 = fun_8048d54(v17, 0x8055341, v26, v27, v28, v29, v30, v31);
+    v25 = reinterpret_cast<void**>(";");
+    eax32 = fun_8048d54(v17, ";", v26, v27, v28, v29, v30, v31);
     v33 = eax32;
     if (v33) {
         fun_8048c84(reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, v33, v34, v35, v36, v37, v38, v39, v40, v19, v18, v17, v41, v42, v33, v43, v44);
         v45 = reinterpret_cast<void**>(0);
         while (v33) {
-            eax52 = fun_8048d54(0, 0x8055341, v46, v47, v48, v49, v50, v51);
+            eax52 = fun_8048d54(0, ";", v46, v47, v48, v49, v50, v51);
             v33 = eax52;
             if (v33) {
                 fun_8048c84(reinterpret_cast<int32_t>(ebp16) + 0xffffeff4, v33, v53, v54, v55, v56, v57, v58, v59, v19, v18, v17, v60, v45, v33, v61, v62);
@@ -3209,18 +3209,18 @@ void** new_item(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6
         if (reinterpret_cast<signed char>(v45) > reinterpret_cast<signed char>(2)) 
             goto addr_804c50d_8;
     } else {
-        v63 = reinterpret_cast<void**>(0x8055344);
-        print_warning(0x8055344, 0x8055341, v64, v65, v66, v67, v68, v69, v70, v19, v18, v17, v71, v72, v33);
+        v63 = reinterpret_cast<void**>("invalid token in 'entries-gisman'.\n");
+        print_warning("invalid token in 'entries-gisman'.\n", ";", v64, v65, v66, v67, v68, v69, v70, v19, v18, v17, v71, v72, v33);
         eax73 = reinterpret_cast<void**>(0xffffffff);
         goto addr_804c5dd_10;
     }
-    eax81 = fun_8048da4(reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, 0x805539c, v74, v75, v76, v77, v78, v79, v80, v19, v18, v17);
-    if (eax81 || (eax89 = fun_8048da4(reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, 0x805539c, v82, v83, v84, v85, v86, v87, v88, v19, v18, v17), !!eax89)) {
+    eax81 = fun_8048da4(reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, "-", v74, v75, v76, v77, v78, v79, v80, v19, v18, v17);
+    if (eax81 || (eax89 = fun_8048da4(reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, "-", v82, v83, v84, v85, v86, v87, v88, v19, v18, v17), !!eax89)) {
         v90 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp16) + 0xffffeff4);
         v91 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp16) + 0xffffeff4);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp16) + 0xffffe7f4, 0x80553b0, reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, v91, v90, v92, v93, v94, v95, v19, v18, v17, v96, v45, v33, v97, v98);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp16) + 0xffffe7f4, " \t\t\t {command \"%s\" {} \"%s\" {} -command {%s }}\n", reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, v91, v90, v92, v93, v94, v95, v19, v18, v17, v96, v45, v33, v97, v98);
     } else {
-        fun_8048c54(reinterpret_cast<int32_t>(ebp16) + 0xffffe7f4, 0x805539e, 18, v99, v100, v101, v102, v103, v104, v19, v18, v17, v105, v45, v33);
+        fun_8048c54(reinterpret_cast<int32_t>(ebp16) + 0xffffe7f4, " \t\t\t {separator}\n", 18, v99, v100, v101, v102, v103, v104, v19, v18, v17, v105, v45, v33);
     }
     v106 = v19;
     v25 = a4;
@@ -3235,8 +3235,8 @@ void** new_item(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6
     return eax73;
     addr_804c50d_8:
     v25 = v45;
-    v63 = reinterpret_cast<void**>(0x8055368);
-    print_warning(0x8055368, v25, v117, v118, v119, v120, v121, v122, v123, v19, v18, v17, v124, v45, v33);
+    v63 = reinterpret_cast<void**>("invalid number of tokens (%i) in 'entries-gisman'.\n");
+    print_warning("invalid number of tokens (%i) in 'entries-gisman'.\n", v25, v117, v118, v119, v120, v121, v122, v123, v19, v18, v17, v124, v45, v33);
     eax73 = reinterpret_cast<void**>(0xffffffff);
     goto addr_804c5dd_10;
 }
@@ -3475,61 +3475,61 @@ void** register_entries_gisman(void** a1, void** a2, void** a3, void** a4, void*
     eax9 = g14;
     v10 = eax9;
     v11 = reinterpret_cast<void**>(18);
-    fun_8048c54(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, 0x80553df, 18, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23);
-    v24 = reinterpret_cast<void**>(0x80553f1);
+    fun_8048c54(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, "../entries-gisman", 18, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23);
+    v24 = reinterpret_cast<void**>("r");
     v25 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4);
-    eax33 = fun_8048c74(v25, 0x80553f1, 18, v26, v27, v28, v29, v30, v31, v32);
+    eax33 = fun_8048c74(v25, "r", 18, v26, v27, v28, v29, v30, v31, v32);
     v34 = eax33;
     if (v34) {
         addr_804c6ab_2:
         v11 = a2;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, 0x805540f, v11, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48);
-        v24 = reinterpret_cast<void**>(0x80553f1);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, "%s/etc/dm/menu.tcl", v11, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48);
+        v24 = reinterpret_cast<void**>("r");
         v25 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4);
-        eax55 = fun_8048c74(v25, 0x80553f1, v11, v35, v49, v50, v51, v52, v53, v54);
+        eax55 = fun_8048c74(v25, "r", v11, v35, v49, v50, v51, v52, v53, v54);
         v56 = eax55;
         if (v56) {
             addr_804c741_3:
             v57 = reinterpret_cast<void**>(32);
-            fun_8048c54(0x80642c0, 0x8055424, 32, v35, v58, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68);
-            fun_8048c14(0x80642c0, 0x8055424, 32, v35, v69, v70, v71, v72);
-            v73 = reinterpret_cast<void**>(0x8055444);
-            eax80 = fun_8048c74(0x80642c0, 0x8055444, 32, v35, v74, v75, v76, v77, v78, v79);
+            fun_8048c54(0x80642c0, "/tmp/grass.extensions.db.XXXXXX", 32, v35, v58, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68);
+            fun_8048c14(0x80642c0, "/tmp/grass.extensions.db.XXXXXX", 32, v35, v69, v70, v71, v72);
+            v73 = reinterpret_cast<void**>("w+");
+            eax80 = fun_8048c74(0x80642c0, "w+", 32, v35, v74, v75, v76, v77, v78, v79);
             v81 = eax80;
             if (!v81) {
-                eax86 = fun_8048a94(0x80642c0, 0x8055444, 32, v35, v82, v83, v84, v85);
+                eax86 = fun_8048a94(0x80642c0, "w+", 32, v35, v82, v83, v84, v85);
                 v87 = *eax86;
-                eax92 = fun_8048ad4(v87, 0x8055444, 32, v35, v88, v89, v90, v91);
+                eax92 = fun_8048ad4(v87, "w+", 32, v35, v88, v89, v90, v91);
                 v35 = eax92;
                 v57 = reinterpret_cast<void**>(0x80642c0);
-                v73 = reinterpret_cast<void**>(0x8055448);
-                print_error(0xffffffeb, 0x8055448, 0x80642c0, v35, v93, v94, v95, v96, v97);
+                v73 = reinterpret_cast<void**>("could not create temp file '%s': %s\n \t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n");
+                print_error(0xffffffeb, "could not create temp file '%s': %s\n \t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n", 0x80642c0, v35, v93, v94, v95, v96, v97);
             }
         } else {
-            eax102 = fun_8048a94(v25, 0x80553f1, v11, v35, v98, v99, v100, v101);
+            eax102 = fun_8048a94(v25, "r", v11, v35, v98, v99, v100, v101);
             if (*eax102 == 2) {
                 goto addr_804cd52_7;
             } else {
-                fun_8048c44(v56, 0x80553f1, v11, v35, v103, v104, v105, v106, v107, v108, v109, v110, v111, v112, v113);
-                eax118 = fun_8048a94(v56, 0x80553f1, v11, v35, v114, v115, v116, v117);
+                fun_8048c44(v56, "r", v11, v35, v103, v104, v105, v106, v107, v108, v109, v110, v111, v112, v113);
+                eax118 = fun_8048a94(v56, "r", v11, v35, v114, v115, v116, v117);
                 v119 = *eax118;
-                eax124 = fun_8048ad4(v119, 0x80553f1, v11, v35, v120, v121, v122, v123);
+                eax124 = fun_8048ad4(v119, "r", v11, v35, v120, v121, v122, v123);
                 v35 = eax124;
-                print_error(0xffffffeb, 0x80553f3, reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, v35, v125, v126, v127, v128, v129);
+                print_error(0xffffffeb, "checking for file '%s': %s\n", reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, v35, v125, v126, v127, v128, v129);
                 goto addr_804c741_3;
             }
         }
     } else {
-        eax135 = fun_8048a94(v25, 0x80553f1, 18, v130, v131, v132, v133, v134);
+        eax135 = fun_8048a94(v25, "r", 18, v130, v131, v132, v133, v134);
         if (*eax135 == 2) {
             goto addr_804cd52_7;
         } else {
-            fun_8048c44(v34, 0x80553f1, 18, v136, v137, v138, v139, v140, v141, v142, v143, v144, v145, v146, v147);
-            eax153 = fun_8048a94(v34, 0x80553f1, 18, v148, v149, v150, v151, v152);
+            fun_8048c44(v34, "r", 18, v136, v137, v138, v139, v140, v141, v142, v143, v144, v145, v146, v147);
+            eax153 = fun_8048a94(v34, "r", 18, v148, v149, v150, v151, v152);
             v154 = *eax153;
-            eax160 = fun_8048ad4(v154, 0x80553f1, 18, v155, v156, v157, v158, v159);
+            eax160 = fun_8048ad4(v154, "r", 18, v155, v156, v157, v158, v159);
             v35 = eax160;
-            print_error(0xffffffeb, 0x80553f3, reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, v35, v161, v162, v163, v164, v165);
+            print_error(0xffffffeb, "checking for file '%s': %s\n", reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, v35, v161, v162, v163, v164, v165);
             goto addr_804c6ab_2;
         }
     }
@@ -3546,7 +3546,7 @@ void** register_entries_gisman(void** a1, void** a2, void** a3, void** a4, void*
         v178 = a2;
         v35 = reinterpret_cast<void**>(0x80672c0);
         v179 = a2;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, 0x80555a4, v179, 0x80672c0, v178, v177, 0x80672c0, v175, v174, 0x80672c0, 0x80642c0, v172, 0x80672c0, v171, 0x80672c0, v180, v181);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, "mkdir %s/etc/dm/gem-entries &> %s ; cp -f ../entries-gisman %s/etc/dm/gem-entries/%s &> %s ; \t\t\t\t\tcp -f %s/etc/dm/menu.tcl %s/etc/dm/menu.tcl.gem.bak &> %s ; \t\t\t\t\tcp -f %s %s/etc/dm/menu.tcl &> %s ; chmod a+r %s/etc/dm/menu.tcl &> %s ;", v179, 0x80672c0, v178, v177, 0x80672c0, v175, v174, 0x80672c0, 0x80642c0, v172, 0x80672c0, v171, 0x80672c0, v180, v181);
     } else {
         v173 = a2;
         v174 = a2;
@@ -3556,7 +3556,7 @@ void** register_entries_gisman(void** a1, void** a2, void** a3, void** a4, void*
         v178 = v8;
         v35 = a2;
         v179 = a2;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, 0x80554c4, v179, v35, v178, v177, v176, 0x80642c0, v174, v173, v182, v183, v184, v185, v186, v187, v188);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, "mkdir --verbose %s/etc/dm/gem-entries ; cp -vf ../entries-gisman %s/etc/dm/gem-entries/%s ; \t\t\t\t\tcp -vf %s/etc/dm/menu.tcl %s/etc/dm/menu.tcl.gem.bak ; \t\t\t\t\tcp -vf %s %s/etc/dm/menu.tcl ; chmod -v a+r %s/etc/dm/menu.tcl ;", v179, v35, v178, v177, v176, 0x80642c0, v174, v173, v182, v183, v184, v185, v186, v187, v188);
     }
     fun_8048c84(0x80682e0, reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, v179, v35, v178, v177, v176, v175, v174, v173, 0x80642c0, v172, 0x80672c0, v171, 0x80672c0, v189, v190);
     v191 = reinterpret_cast<void*>(0);
@@ -3641,7 +3641,7 @@ void** register_entries_gisman(void** a1, void** a2, void** a3, void** a4, void*
         v220 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(v220) + 1);
     }
     if (!v220 || reinterpret_cast<int32_t>(v220) < reinterpret_cast<int32_t>(v198)) {
-        print_warning(0x80556e4, 0x800, v11, v35, v178, v177, v176, v175, v174, v173, 0x80642c0, v172, 0x80672c0, v171, 0x80672c0);
+        print_warning("file truncation detected. Retaining orginal file 'menu.tcl'.\n", 0x800, v11, v35, v178, v177, v176, v175, v174, v173, 0x80642c0, v172, 0x80672c0, v171, 0x80672c0);
         v11 = reinterpret_cast<void**>(1);
         v24 = reinterpret_cast<void**>(0x8055722);
         fun_8048c54(0x80682e0, 0x8055722, 1, v35, v178, v177, v176, v175, v174, v173, 0x80642c0, v172, 0x80672c0, v171, 0x80672c0);
@@ -3659,10 +3659,10 @@ void** register_entries_gisman(void** a1, void** a2, void** a3, void** a4, void*
     fun_8048bf4(v25, v24, v11, v35, v178, v177, v176, v175, v174, v173, 0x80642c0, v172, 0x80672c0, v171, 0x80672c0);
     goto addr_804cd52_7;
     addr_804cbae_37:
-    print_warning(0x80556b8, v211, v210, v35, v178, v177, v176, v175, v174, v173, 0x80642c0, v172, 0x80672c0, v171, 0x80672c0);
+    print_warning("error creating GIS Manager menu entries.\n", v211, v210, v35, v178, v177, v176, v175, v174, v173, 0x80642c0, v172, 0x80672c0, v171, 0x80672c0);
     goto addr_804cbeb_42;
     addr_804cb59_40:
-    print_warning(0x8055690, v211, v210, v35, v178, v177, v176, v175, v174, v173, 0x80642c0, v172, 0x80672c0, v171, 0x80672c0);
+    print_warning("no GIS Manager menu entries created.\n", v211, v210, v35, v178, v177, v176, v175, v174, v173, 0x80642c0, v172, 0x80672c0, v171, 0x80672c0);
     goto addr_804cbeb_42;
 }
 
@@ -3721,26 +3721,26 @@ void** check_ext_menu(void** a1, void** a2, void** a3, void** a4, void** a5, voi
     void** v61;
     void** v62;
 
-    eax24 = find_pos(0x80551e8, a1, 0, v16, v17, v18, v19, v20, v21, v22, ebp23);
+    eax24 = find_pos("\"&Xtns\" all options 1", a1, 0, v16, v17, v18, v19, v20, v21, v22, ebp23);
     v25 = eax24;
     if (!reinterpret_cast<int1_t>(v25 == 0xffffffff)) {
         addr_804c004_2:
         eax26 = v25;
     } else {
-        eax33 = find_pos(0x80551fe, a1, 0, v27, v28, v29, v30, v25, v31, v32, ebp23);
+        eax33 = find_pos("\"&Help\" all options", a1, 0, v27, v28, v29, v30, v25, v31, v32, ebp23);
         if (!reinterpret_cast<int1_t>(eax33 == 0xffffffff)) {
-            insert_str(0x8055232, eax33, a1, v34, v35, v36, v37);
+            insert_str(" \"&Xtns\" all options 1 {\n", eax33, a1, v34, v35, v36, v37);
             v25 = eax33 + 1;
-            insert_str(0x805524c, v25, a1, v38, v39, v40, v41);
+            insert_str(" }\n", v25, a1, v38, v39, v40, v41);
             goto addr_804c004_2;
         } else {
-            eax48 = find_pos(0x8055212, a1, 0, v42, v43, v44, v45, eax33, v46, v47, ebp23);
+            eax48 = find_pos("}]", a1, 0, v42, v43, v44, v45, eax33, v46, v47, ebp23);
             if (reinterpret_cast<int1_t>(eax48 == 0xffffffff)) {
-                print_error(0xffffffeb, 0x8055215, 0, v49, v50, v51, v52, eax48, v53);
+                print_error(0xffffffeb, "could not parse 'menu.tcl'.\n", 0, v49, v50, v51, v52, eax48, v53);
             }
-            insert_str(0x8055232, eax48, a1, v54, v55, v56, v57);
+            insert_str(" \"&Xtns\" all options 1 {\n", eax48, a1, v54, v55, v56, v57);
             v58 = eax48 + 1;
-            insert_str(0x805524c, v58, a1, v59, v60, v61, v62);
+            insert_str(" }\n", v58, a1, v59, v60, v61, v62);
             eax26 = v58;
         }
     }
@@ -3943,16 +3943,16 @@ void** new_submenu(void** a1, void** a2, void** a3, void** a4, void** a5, void**
     v19 = a3;
     eax20 = g14;
     v21 = eax20;
-    eax27 = find_pos(0x8055250, v19, 0, v22, v23, v19, v18, v17, v24, v25, v26);
+    eax27 = find_pos("\"&Xtns\" all options", v19, 0, v22, v23, v19, v18, v17, v24, v25, v26);
     v28 = eax27;
     v29 = v28 + 1;
     v30 = v19;
-    eax36 = find_pos(0x8055264, v30, v29, v31, v32, v19, v18, v17, v33, v34, v35);
+    eax36 = find_pos("\" all options", v30, v29, v31, v32, v19, v18, v17, v33, v34, v35);
     v37 = eax36 - 1;
     if (reinterpret_cast<int1_t>(v37 == 0xffffffff)) {
         v29 = reinterpret_cast<void**>(0);
         v30 = v19;
-        eax43 = find_pos(0x8055212, v30, 0, v38, v39, v19, v18, v17, v40, v41, v42);
+        eax43 = find_pos("}]", v30, 0, v38, v39, v19, v18, v17, v40, v41, v42);
         v37 = eax43;
     }
     eax46 = is_submenu(v18, v30, v29, v44, v45, v19, v18);
@@ -3963,13 +3963,13 @@ void** new_submenu(void** a1, void** a2, void** a3, void** a4, void** a5, void**
         eax76 = fun_8048b54(v18, 91, v29, v68, v69, v19, v18, v17, v70, v71, v72, v73, v67, v74, v75);
         fun_8048b94(reinterpret_cast<int32_t>(ebp16) - 0x80c, eax76 + 1, v67, v77, v78, v19, v18, v17, v79, v80, v81, v82, v67, v83, v84);
         *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(ebp16) + reinterpret_cast<uint32_t>(v67 - 1) + 0xfffff7f4) = 0;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp16) + 0xffffe7f4, 0x80552ad, reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, v85, v86, v19, v18, v17, v87, v88, v89, v90, v67, v91, v92, v37, v93);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp16) + 0xffffe7f4, "{cascad \"%s\"", reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, v85, v86, v19, v18, v17, v87, v88, v89, v90, v67, v91, v92, v37, v93);
         v29 = v28;
         eax99 = find_pos(reinterpret_cast<int32_t>(ebp16) + 0xffffe7f4, v19, v29, v94, v95, v19, v18, v17, v96, v97, v98);
         if (eax99 == 0xffffffff || reinterpret_cast<signed char>(eax99) >= reinterpret_cast<signed char>(v37)) {
             v100 = v28 + 1;
             v101 = v28;
-            eax107 = find_pos(0x80552ed, v19, v101, v102, v103, v19, v18, v17, v104, v105, v106);
+            eax107 = find_pos("{cascad ", v19, v101, v102, v103, v19, v18, v17, v104, v105, v106);
             v108 = eax107;
             while (v108 != 0xffffffff && reinterpret_cast<signed char>(v108) < reinterpret_cast<signed char>(v37)) {
                 eax109 = *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(v108) << 2) + reinterpret_cast<unsigned char>(v19));
@@ -3985,30 +3985,30 @@ void** new_submenu(void** a1, void** a2, void** a3, void** a4, void** a5, void**
                     goto addr_804c2c8_8;
                 ++v28;
                 v101 = v28;
-                eax144 = find_pos(0x80552ed, v19, v101, v139, v140, v19, v18, v17, v141, v142, v143);
+                eax144 = find_pos("{cascad ", v19, v101, v139, v140, v19, v18, v17, v141, v142, v143);
                 v108 = eax144;
             }
         } else {
             v30 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4);
-            v145 = reinterpret_cast<void**>(0x80552bc);
-            print_warning(0x80552bc, v30, v29, v146, v147, v19, v18, v17, v148, v149, v150, v151, v67, v152, v153);
+            v145 = reinterpret_cast<void**>("submenu '%s' exists in GIS Manager's Xtns menu.\n");
+            print_warning("submenu '%s' exists in GIS Manager's Xtns menu.\n", v30, v29, v146, v147, v19, v18, v17, v148, v149, v150, v151, v67, v152, v153);
             eax154 = reinterpret_cast<void**>(0xffffffff);
             goto addr_804c401_11;
         }
     } else {
-        v145 = reinterpret_cast<void**>(0x8055274);
-        print_warning(0x8055274, v30, v29, v155, v156, v19, v18, v17, v157, v158, v159, v160, v161, v162, v163);
+        v145 = reinterpret_cast<void**>("first line not a submenu specifier in 'entries-gisman'.\n");
+        print_warning("first line not a submenu specifier in 'entries-gisman'.\n", v30, v29, v155, v156, v19, v18, v17, v157, v158, v159, v160, v161, v162, v163);
         eax154 = reinterpret_cast<void**>(0xffffffff);
         goto addr_804c401_11;
     }
     addr_804c31e_13:
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, 0x80552f6, reinterpret_cast<int32_t>(ebp16) + 0xffffe7f4, v164, v165, v19, v18, v17, v166, v167, v168, v169, v67, v116, v117, v37, v100);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, " \t\t\t%s {} \"\" 1 {\n", reinterpret_cast<int32_t>(ebp16) + 0xffffe7f4, v164, v165, v19, v18, v17, v166, v167, v168, v169, v67, v116, v117, v37, v100);
     insert_str(reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, v100, v19, v170, v171, v19, v18);
-    insert_str(0x8055308, v100 + 1, v19, v172, v173, v19, v18);
-    eax179 = find_pos(0x8055212, v19, 0, v174, v175, v19, v18, v17, v176, v177, v178);
+    insert_str(" \t\t\t}}\n", v100 + 1, v19, v172, v173, v19, v18);
+    eax179 = find_pos("}]", v19, 0, v174, v175, v19, v18, v17, v176, v177, v178);
     v180 = eax179;
     v181 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp16) + 0xffffe7f4);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, 0x8055310, v17, v181, v182, v19, v18, v17, v183, v184, v185, v180, v67, v116, v117, v37, v100);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4, "#(DO_NOT_REMOVE_THIS_COMMENT) <%s> %s {} \"\" 1 {\n", v17, v181, v182, v19, v18, v17, v183, v184, v185, v180, v67, v116, v117, v37, v100);
     v29 = v19;
     v30 = v180 + 1;
     v145 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp16) + 0xfffff7f4);
@@ -4126,10 +4126,10 @@ void** register_entries_gisman2(void** a1, void** a2, void** a3, void** a4, void
     ebp7 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     eax8 = g14;
     v9 = reinterpret_cast<void**>(19);
-    fun_8048c54(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, 0x8055723, 19, v10, v11, v12, v13, v14, v15, v16, a2, a1, v17, v18, v19);
-    v20 = reinterpret_cast<void**>(0x80553f1);
+    fun_8048c54(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, "../entries-gisman2", 19, v10, v11, v12, v13, v14, v15, v16, a2, a1, v17, v18, v19);
+    v20 = reinterpret_cast<void**>("r");
     v21 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4);
-    eax29 = fun_8048c74(v21, 0x80553f1, 19, v22, v23, v24, v25, v26, v27, v28);
+    eax29 = fun_8048c74(v21, "r", 19, v22, v23, v24, v25, v26, v27, v28);
     if (eax29) {
         addr_804ce26_2:
         eax30 = VERBOSE;
@@ -4137,23 +4137,23 @@ void** register_entries_gisman2(void** a1, void** a2, void** a3, void** a4, void
             v31 = a1;
             v32 = a2;
             v9 = a2;
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, 0x8055790, v9, v32, v31, v33, v34, v35, v36, v37, a2, a1, v38, v39, eax29, v40, v41);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, "mkdir -p %s/etc/gm/Xtns ; cp -f ../entries-gisman2 %s/etc/gm/Xtns/%s.gem ; ", v9, v32, v31, v33, v34, v35, v36, v37, a2, a1, v38, v39, eax29, v40, v41);
         } else {
             v31 = a1;
             v32 = a2;
             v9 = a2;
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, 0x8055738, v9, v32, v31, v42, v43, v44, v45, v46, a2, a1, v47, v48, eax29, v49, v50);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, "mkdir --verbose -p %s/etc/gm/Xtns ; cp -fv ../entries-gisman2 %s/etc/gm/Xtns/%s.gem ; ", v9, v32, v31, v42, v43, v44, v45, v46, a2, a1, v47, v48, eax29, v49, v50);
         }
     } else {
-        eax56 = fun_8048a94(v21, 0x80553f1, 19, v51, v52, v53, v54, v55);
+        eax56 = fun_8048a94(v21, "r", 19, v51, v52, v53, v54, v55);
         if (*eax56 == 2) {
             goto addr_804ceb4_7;
         } else {
-            fun_8048c44(eax29, 0x80553f1, 19, v57, v58, v59, v60, v61, v62, v63, a2, a1, v64, v65, eax29);
-            eax71 = fun_8048a94(eax29, 0x80553f1, 19, v66, v67, v68, v69, v70);
+            fun_8048c44(eax29, "r", 19, v57, v58, v59, v60, v61, v62, v63, a2, a1, v64, v65, eax29);
+            eax71 = fun_8048a94(eax29, "r", 19, v66, v67, v68, v69, v70);
             v72 = *eax71;
-            eax78 = fun_8048ad4(v72, 0x80553f1, 19, v73, v74, v75, v76, v77);
-            print_error(0xffffffe0, 0x80553f3, reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, eax78, v79, v80, v81, v82, v83);
+            eax78 = fun_8048ad4(v72, "r", 19, v73, v74, v75, v76, v77);
+            print_error(0xffffffe0, "checking for file '%s': %s\n", reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, eax78, v79, v80, v81, v82, v83);
             goto addr_804ce26_2;
         }
     }
@@ -4481,37 +4481,37 @@ void** deregister_entries_gisman(void** a1, void** a2, void** a3, void** a4) {
     eax8 = g14;
     v9 = eax8;
     v10 = v7;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, 0x805540f, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v7, v6, v22);
-    v23 = reinterpret_cast<void**>(0x80553f1);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, "%s/etc/dm/menu.tcl", v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v7, v6, v22);
+    v23 = reinterpret_cast<void**>("r");
     v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4);
-    eax32 = fun_8048c74(v24, 0x80553f1, v10, v25, v26, v27, v28, v29, v30, v31);
+    eax32 = fun_8048c74(v24, "r", v10, v25, v26, v27, v28, v29, v30, v31);
     v33 = eax32;
     if (v33) {
         addr_804cf8a_2:
         v34 = reinterpret_cast<void**>(32);
-        fun_8048c54(0x80642c0, 0x8055424, 32, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v7);
-        fun_8048c14(0x80642c0, 0x8055424, 32, v35, v46, v47, v48, v49);
-        v50 = reinterpret_cast<void**>(0x8055444);
-        eax57 = fun_8048c74(0x80642c0, 0x8055444, 32, v35, v51, v52, v53, v54, v55, v56);
+        fun_8048c54(0x80642c0, "/tmp/grass.extensions.db.XXXXXX", 32, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v7);
+        fun_8048c14(0x80642c0, "/tmp/grass.extensions.db.XXXXXX", 32, v35, v46, v47, v48, v49);
+        v50 = reinterpret_cast<void**>("w+");
+        eax57 = fun_8048c74(0x80642c0, "w+", 32, v35, v51, v52, v53, v54, v55, v56);
         v58 = eax57;
         if (!v58) {
-            eax63 = fun_8048a94(0x80642c0, 0x8055444, 32, v35, v59, v60, v61, v62);
+            eax63 = fun_8048a94(0x80642c0, "w+", 32, v35, v59, v60, v61, v62);
             v64 = *eax63;
-            eax69 = fun_8048ad4(v64, 0x8055444, 32, v35, v65, v66, v67, v68);
+            eax69 = fun_8048ad4(v64, "w+", 32, v35, v65, v66, v67, v68);
             v35 = eax69;
             v34 = reinterpret_cast<void**>(0x80642c0);
-            v50 = reinterpret_cast<void**>(0x8055448);
-            print_error(0xffffffeb, 0x8055448, 0x80642c0, v35, v70, v71, v72, v73, v74);
+            v50 = reinterpret_cast<void**>("could not create temp file '%s': %s\n \t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n");
+            print_error(0xffffffeb, "could not create temp file '%s': %s\n \t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n", 0x80642c0, v35, v70, v71, v72, v73, v74);
         }
     } else {
-        eax80 = fun_8048a94(v24, 0x80553f1, v10, v75, v76, v77, v78, v79);
+        eax80 = fun_8048a94(v24, "r", v10, v75, v76, v77, v78, v79);
         if (*eax80 != 2) {
-            fun_8048c44(v33, 0x80553f1, v10, v81, v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, v7);
-            eax97 = fun_8048a94(v33, 0x80553f1, v10, v92, v93, v94, v95, v96);
+            fun_8048c44(v33, "r", v10, v81, v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, v7);
+            eax97 = fun_8048a94(v33, "r", v10, v92, v93, v94, v95, v96);
             v98 = *eax97;
-            eax104 = fun_8048ad4(v98, 0x80553f1, v10, v99, v100, v101, v102, v103);
+            eax104 = fun_8048ad4(v98, "r", v10, v99, v100, v101, v102, v103);
             v35 = eax104;
-            print_error(0xffffffea, 0x80553f3, reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, v35, v105, v106, v107, v108, v109);
+            print_error(0xffffffea, "checking for file '%s': %s\n", reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, v35, v105, v106, v107, v108, v109);
             goto addr_804cf8a_2;
         } else {
             eax110 = reinterpret_cast<void**>(0);
@@ -4527,14 +4527,14 @@ void** deregister_entries_gisman(void** a1, void** a2, void** a3, void** a4) {
         v119 = reinterpret_cast<void**>(0x80672c0);
         v120 = v7;
         v121 = v7;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, 0x805585c, v121, v120, 0x80672c0, 0x80642c0, v117, 0x80672c0, v116, 0x80672c0, v122, v123, v124, v125, v7, v6, v126);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, "cp -f %s/etc/dm/menu.tcl %s/etc/dm/menu.tcl.gem.bak &> %s ; \t\t\t\t\t\tcp -f %s %s/etc/dm/menu.tcl &> %s ; chmod a+r %s/etc/dm/menu.tcl &> %s ;", v121, v120, 0x80672c0, 0x80642c0, v117, 0x80672c0, v116, 0x80672c0, v122, v123, v124, v125, v7, v6, v126);
     } else {
         v117 = v7;
         v118 = v7;
         v119 = reinterpret_cast<void**>(0x80642c0);
         v120 = v7;
         v121 = v7;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, 0x80557dc, v121, v120, 0x80642c0, v118, v117, v127, v128, v129, v130, v131, v132, v133, v7, v6, v134);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, "cp -vf %s/etc/dm/menu.tcl %s/etc/dm/menu.tcl.gem.bak ; \t\t\t\t\t\tcp -vf %s %s/etc/dm/menu.tcl ; chmod -v a+r %s/etc/dm/menu.tcl ;", v121, v120, 0x80642c0, v118, v117, v127, v128, v129, v130, v131, v132, v133, v7, v6, v134);
     }
     fun_8048c84(0x80682e0, reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, v121, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v135, v136, v137, v138, v7, v6, v139);
     v140 = reinterpret_cast<struct s3*>(0);
@@ -4559,7 +4559,7 @@ void** deregister_entries_gisman(void** a1, void** a2, void** a3, void** a4) {
             fun_8048c84(eax173, reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, v33, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v174, v175, v176, v177, v7, v6, v178);
             ++v157;
         }
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, 0x80558e8, v6, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v179, v180, v181, v182, v7, v6, v183);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, "#(DO_NOT_REMOVE_THIS_COMMENT) <%s> {cascad", v6, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v179, v180, v181, v182, v7, v6, v183);
         v10 = reinterpret_cast<void**>(0);
         v23 = v155;
         eax185 = find_pos(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, v23, 0, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v184);
@@ -4575,35 +4575,35 @@ void** deregister_entries_gisman(void** a1, void** a2, void** a3, void** a4) {
     eax197 = fun_8048b54(v192, 34, 0, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v193, v194, v195, v196, v7);
     fun_8048c84(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, v192, 0, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v198, v199, v200, v201, v7, v6, v202);
     *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(ebp5) + (reinterpret_cast<unsigned char>(eax197) - reinterpret_cast<unsigned char>(v192)) + 0xffffe7f4) = 0;
-    eax204 = find_pos(0x80551e8, v155, 0, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v203);
+    eax204 = find_pos("\"&Xtns\" all options 1", v155, 0, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v203);
     v10 = eax204 + 1;
     v23 = v155;
-    eax206 = find_pos(0x8055264, v23, v10, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v205);
+    eax206 = find_pos("\" all options", v23, v10, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v205);
     v207 = eax206 - 1;
     if (reinterpret_cast<int1_t>(v207 == 0xffffffff)) {
         v10 = reinterpret_cast<void**>(0);
         v23 = v155;
-        eax209 = find_pos(0x8055212, v23, 0, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v208);
+        eax209 = find_pos("}]", v23, 0, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v208);
         v207 = eax209;
     }
     if (!reinterpret_cast<int1_t>(eax204 == 0xffffffff)) {
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, 0x80552ad, reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v210, v211, v212, v213, v7, v6, v214);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, "{cascad \"%s\"", reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v210, v211, v212, v213, v7, v6, v214);
         v10 = eax204;
         eax216 = find_pos(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, v155, v10, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v215);
         v217 = eax216;
         if (v217 == 0xffffffff || reinterpret_cast<signed char>(v217) > reinterpret_cast<signed char>(v207)) {
             v23 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4);
-            v24 = reinterpret_cast<void**>(0x8055968);
-            print_warning(0x8055968, v23, v10, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v218, v219, v220, v221, v7);
+            v24 = reinterpret_cast<void**>("could not find submenu entry '%s' in 'menu.tcl'.\n");
+            print_warning("could not find submenu entry '%s' in 'menu.tcl'.\n", v23, v10, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v218, v219, v220, v221, v7);
             eax110 = reinterpret_cast<void**>(0xffffffff);
         } else {
             v10 = v217;
-            eax223 = find_pos(0x805599a, v155, v10, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v222);
+            eax223 = find_pos(" \t\t\t}}", v155, v10, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v222);
             v224 = eax223;
             if (v224 == 0xffffffff || reinterpret_cast<signed char>(v224) > reinterpret_cast<signed char>(v207)) {
                 v23 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4);
-                v24 = reinterpret_cast<void**>(0x80559a4);
-                print_warning(0x80559a4, v23, v10, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v225, v226, v227, v228, v7);
+                v24 = reinterpret_cast<void**>("could not find end of submenu entry '%s' in 'menu.tcl'.\n");
+                print_warning("could not find end of submenu entry '%s' in 'menu.tcl'.\n", v23, v10, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v225, v226, v227, v228, v7);
                 eax110 = reinterpret_cast<void**>(0xffffffff);
             } else {
                 v229 = reinterpret_cast<void**>(0);
@@ -4613,15 +4613,15 @@ void** deregister_entries_gisman(void** a1, void** a2, void** a3, void** a4) {
                     ++v229;
                     ++v230;
                 }
-                fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, 0x80558e8, v6, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v231, v232, v233, v234, v7, v6, v229);
+                fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, "#(DO_NOT_REMOVE_THIS_COMMENT) <%s> {cascad", v6, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v231, v232, v233, v234, v7, v6, v229);
                 eax236 = find_pos(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, v155, 0, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v235);
                 delete_str(eax236, v155, 0, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0);
                 v237 = v229 + 1;
-                eax239 = find_pos(0x80551e8, v155, 0, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v238);
+                eax239 = find_pos("\"&Xtns\" all options 1", v155, 0, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v238);
                 v240 = eax239;
                 v241 = v240 + 1;
                 v242 = v155;
-                eax244 = find_pos(0x8055264, v242, v241, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v243);
+                eax244 = find_pos("\" all options", v242, v241, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v243);
                 v245 = reinterpret_cast<void*>(eax244 - 1);
                 if (reinterpret_cast<int32_t>(reinterpret_cast<uint32_t>(v245) - reinterpret_cast<unsigned char>(v240)) > reinterpret_cast<int32_t>(2)) 
                     goto addr_804d5ec_35; else 
@@ -4629,8 +4629,8 @@ void** deregister_entries_gisman(void** a1, void** a2, void** a3, void** a4) {
             }
         }
     } else {
-        v24 = reinterpret_cast<void**>(0x8055949);
-        print_warning(0x8055949, v23, v10, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v246, v247, v248, v249, v7);
+        v24 = reinterpret_cast<void**>("menu 'Xtns' does not exist.\n");
+        print_warning("menu 'Xtns' does not exist.\n", v23, v10, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v246, v247, v248, v249, v7);
         eax110 = reinterpret_cast<void**>(0xffffffff);
     }
     addr_804d729_7:
@@ -4653,7 +4653,7 @@ void** deregister_entries_gisman(void** a1, void** a2, void** a3, void** a4) {
         ++v268;
     }
     if (!v268) {
-        print_warning(0x80556e4, 0x800, v10, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v274, v275, v276, v277, v7);
+        print_warning("file truncation detected. Retaining orginal file 'menu.tcl'.\n", 0x800, v10, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v274, v275, v276, v277, v7);
         v10 = reinterpret_cast<void**>(1);
         v23 = reinterpret_cast<void**>(0x8055722);
         fun_8048c54(0x80682e0, 0x8055722, 1, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v278, v279, v280, v281, v7);
@@ -4680,8 +4680,8 @@ void** deregister_entries_gisman(void** a1, void** a2, void** a3, void** a4) {
     }
     goto addr_804d5ec_35;
     addr_804d26c_22:
-    v24 = reinterpret_cast<void**>(0x8055914);
-    print_warning(0x8055914, v23, 0, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v301, v302, v303, v304, v7);
+    v24 = reinterpret_cast<void**>("could not find uninstall information in 'menu.tcl'.\n");
+    print_warning("could not find uninstall information in 'menu.tcl'.\n", v23, 0, v120, v119, v118, v117, 0x80672c0, v116, 0x80672c0, v301, v302, v303, v304, v7);
     eax110 = reinterpret_cast<void**>(0xffffffff);
     goto addr_804d729_7;
 }
@@ -4777,32 +4777,32 @@ void** deregister_entries_gisman2(void** a1, void** a2, void** a3, void** a4) {
     eax6 = g14;
     v7 = a1;
     v8 = a2;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, 0x80559dd, v8, v7, v9, v10, a2, a1, v11, v12, v13, v14, v15, v16, v17, v18, v19);
-    v20 = reinterpret_cast<void**>(0x80553f1);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, "%s/etc/gm/Xtns/%s.gem", v8, v7, v9, v10, a2, a1, v11, v12, v13, v14, v15, v16, v17, v18, v19);
+    v20 = reinterpret_cast<void**>("r");
     v21 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4);
-    eax26 = fun_8048c74(v21, 0x80553f1, v8, v7, v22, v23, a2, a1, v24, v25);
+    eax26 = fun_8048c74(v21, "r", v8, v7, v22, v23, a2, a1, v24, v25);
     if (eax26) {
         addr_804d809_2:
         eax27 = VERBOSE;
         if (!eax27) {
             v7 = a1;
             v8 = a2;
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, 0x8055a14, v8, v7, v28, v29, a2, a1, v30, v31, eax26, v32, v33, v34, v35, v36, v37);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, "rm -f %s/etc/gm/Xtns/%s.gem ; ", v8, v7, v28, v29, a2, a1, v30, v31, eax26, v32, v33, v34, v35, v36, v37);
         } else {
             v7 = a1;
             v8 = a2;
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, 0x80559f4, v8, v7, v38, v39, a2, a1, v40, v41, eax26, v42, v43, v44, v45, v46, v47);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, "rm -vf %s/etc/gm/Xtns/%s.gem ; ", v8, v7, v38, v39, a2, a1, v40, v41, eax26, v42, v43, v44, v45, v46, v47);
         }
     } else {
-        eax50 = fun_8048a94(v21, 0x80553f1, v8, v7, v48, v49, a2, a1);
+        eax50 = fun_8048a94(v21, "r", v8, v7, v48, v49, a2, a1);
         if (*eax50 == 2) {
             goto addr_804d883_7;
         } else {
-            fun_8048c44(eax26, 0x80553f1, v8, v7, v51, v52, a2, a1, v53, v54, eax26, v55, v56, v57, v58);
-            eax61 = fun_8048a94(eax26, 0x80553f1, v8, v7, v59, v60, a2, a1);
+            fun_8048c44(eax26, "r", v8, v7, v51, v52, a2, a1, v53, v54, eax26, v55, v56, v57, v58);
+            eax61 = fun_8048a94(eax26, "r", v8, v7, v59, v60, a2, a1);
             v62 = *eax61;
-            eax65 = fun_8048ad4(v62, 0x80553f1, v8, v7, v63, v64, a2, a1);
-            print_error(0xffffffdf, 0x80553f3, reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, eax65, v66, v67, a2, a1, v68);
+            eax65 = fun_8048ad4(v62, "r", v8, v7, v63, v64, a2, a1);
+            print_error(0xffffffdf, "checking for file '%s': %s\n", reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, eax65, v66, v67, a2, a1, v68);
             goto addr_804d809_2;
         }
     }
@@ -5169,37 +5169,37 @@ void** restore_entries_gisman(void** a1, void** a2, void** a3, void** a4) {
     eax7 = g14;
     v8 = eax7;
     v9 = v6;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, 0x805540f, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v6, v22);
-    v23 = reinterpret_cast<void**>(0x80553f1);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, "%s/etc/dm/menu.tcl", v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v6, v22);
+    v23 = reinterpret_cast<void**>("r");
     v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4);
-    eax32 = fun_8048c74(v24, 0x80553f1, v9, v25, v26, v27, v28, v29, v30, v31);
+    eax32 = fun_8048c74(v24, "r", v9, v25, v26, v27, v28, v29, v30, v31);
     v33 = eax32;
     if (v33) {
         addr_804d950_2:
         v34 = reinterpret_cast<void**>(32);
-        fun_8048c54(0x80642c0, 0x8055424, 32, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46);
-        fun_8048c14(0x80642c0, 0x8055424, 32, v35, v47, v48, v49, v50);
-        v51 = reinterpret_cast<void**>(0x8055444);
-        eax58 = fun_8048c74(0x80642c0, 0x8055444, 32, v35, v52, v53, v54, v55, v56, v57);
+        fun_8048c54(0x80642c0, "/tmp/grass.extensions.db.XXXXXX", 32, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46);
+        fun_8048c14(0x80642c0, "/tmp/grass.extensions.db.XXXXXX", 32, v35, v47, v48, v49, v50);
+        v51 = reinterpret_cast<void**>("w+");
+        eax58 = fun_8048c74(0x80642c0, "w+", 32, v35, v52, v53, v54, v55, v56, v57);
         v59 = eax58;
         if (!v59) {
-            eax64 = fun_8048a94(0x80642c0, 0x8055444, 32, v35, v60, v61, v62, v63);
+            eax64 = fun_8048a94(0x80642c0, "w+", 32, v35, v60, v61, v62, v63);
             v65 = *eax64;
-            eax70 = fun_8048ad4(v65, 0x8055444, 32, v35, v66, v67, v68, v69);
+            eax70 = fun_8048ad4(v65, "w+", 32, v35, v66, v67, v68, v69);
             v35 = eax70;
             v34 = reinterpret_cast<void**>(0x80642c0);
-            v51 = reinterpret_cast<void**>(0x8055448);
-            print_error(0xffffffeb, 0x8055448, 0x80642c0, v35, v71, v72, v73, v74, v75);
+            v51 = reinterpret_cast<void**>("could not create temp file '%s': %s\n \t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n");
+            print_error(0xffffffeb, "could not create temp file '%s': %s\n \t\t\tMake sure that directory /tmp exists on your system and you have write permission.\n", 0x80642c0, v35, v71, v72, v73, v74, v75);
         }
     } else {
-        eax81 = fun_8048a94(v24, 0x80553f1, v9, v76, v77, v78, v79, v80);
+        eax81 = fun_8048a94(v24, "r", v9, v76, v77, v78, v79, v80);
         if (*eax81 != 2) {
-            fun_8048c44(v33, 0x80553f1, v9, v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, v92, v93);
-            eax99 = fun_8048a94(v33, 0x80553f1, v9, v94, v95, v96, v97, v98);
+            fun_8048c44(v33, "r", v9, v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, v92, v93);
+            eax99 = fun_8048a94(v33, "r", v9, v94, v95, v96, v97, v98);
             v100 = *eax99;
-            eax106 = fun_8048ad4(v100, 0x80553f1, v9, v101, v102, v103, v104, v105);
+            eax106 = fun_8048ad4(v100, "r", v9, v101, v102, v103, v104, v105);
             v35 = eax106;
-            print_error(0xffffffeb, 0x80553f3, reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, v35, v107, v108, v109, v110, v111);
+            print_error(0xffffffeb, "checking for file '%s': %s\n", reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, v35, v107, v108, v109, v110, v111);
             goto addr_804d950_2;
         } else {
             eax112 = reinterpret_cast<void**>(0);
@@ -5215,34 +5215,34 @@ void** restore_entries_gisman(void** a1, void** a2, void** a3, void** a4) {
         v121 = reinterpret_cast<void**>(0x80672c0);
         v122 = v6;
         v123 = v6;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, 0x805585c, v123, v122, 0x80672c0, 0x80642c0, v119, 0x80672c0, v118, 0x80672c0, v124, v125, v126, v127, v128, v6, v129);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, "cp -f %s/etc/dm/menu.tcl %s/etc/dm/menu.tcl.gem.bak &> %s ; \t\t\t\t\t\tcp -f %s %s/etc/dm/menu.tcl &> %s ; chmod a+r %s/etc/dm/menu.tcl &> %s ;", v123, v122, 0x80672c0, 0x80642c0, v119, 0x80672c0, v118, 0x80672c0, v124, v125, v126, v127, v128, v6, v129);
     } else {
         v119 = v6;
         v120 = v6;
         v121 = reinterpret_cast<void**>(0x80642c0);
         v122 = v6;
         v123 = v6;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, 0x80557dc, v123, v122, 0x80642c0, v120, v119, v130, v131, v132, v133, v134, v135, v136, v137, v6, v138);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, "cp -vf %s/etc/dm/menu.tcl %s/etc/dm/menu.tcl.gem.bak ; \t\t\t\t\t\tcp -vf %s %s/etc/dm/menu.tcl ; chmod -v a+r %s/etc/dm/menu.tcl ;", v123, v122, 0x80642c0, v120, v119, v130, v131, v132, v133, v134, v135, v136, v137, v6, v138);
     }
     fun_8048c84(0x80682e0, reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, v123, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v139, v140, v141, v142, v143, v6, v144);
     v9 = v6;
-    v23 = reinterpret_cast<void**>(0x8055a33);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffdff4, 0x8055a33, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v145, v146, v147, v148, v149, v6, v150);
+    v23 = reinterpret_cast<void**>("%s/etc/dm/gem-entries");
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffdff4, "%s/etc/dm/gem-entries", v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v145, v146, v147, v148, v149, v6, v150);
     v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffdff4);
-    eax151 = fun_8048c24(v24, 0x8055a33, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0);
+    eax151 = fun_8048c24(v24, "%s/etc/dm/gem-entries", v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0);
     v152 = eax151;
     if (v152) {
         v153 = reinterpret_cast<void*>(0);
         v154 = reinterpret_cast<void*>(0);
         while (eax155 = fun_8048bd4(v152, v23, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0), !!eax155) {
-            v122 = reinterpret_cast<void**>(&eax155->f11);
+            v122 = reinterpret_cast<void**>(&eax155->fb);
             v9 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffdff4);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, 0x8055a49, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v156, v157, v158, v159, v160, v6, v161);
-            eax162 = fun_8048c74(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, 0x80553f1, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, "%s/%s", v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v156, v157, v158, v159, v160, v6, v161);
+            eax162 = fun_8048c74(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, "r", v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0);
             v163 = eax162;
-            v23 = reinterpret_cast<void**>(0x8055a4f);
-            eax166 = fun_8048da4(&eax155->f11, 0x8055a4f, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v164, v165);
-            if (!eax166 || (v23 = reinterpret_cast<void**>(0x8055a51), eax169 = fun_8048da4(&eax155->f11, 0x8055a51, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v167, v168), !eax169)) {
+            v23 = reinterpret_cast<void**>(".");
+            eax166 = fun_8048da4(&eax155->fb, ".", v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v164, v165);
+            if (!eax166 || (v23 = reinterpret_cast<void**>(".."), eax169 = fun_8048da4(&eax155->fb, "..", v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v167, v168), !eax169)) {
                 fun_8048c44(v163, v23, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v170, v171, v172, v173, v174);
             } else {
                 if (v163) {
@@ -5252,7 +5252,7 @@ void** restore_entries_gisman(void** a1, void** a2, void** a3, void** a4) {
                     v154 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(v154) + 1);
                     fun_8048c44(v163, 0x800, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v181, v182, v183, v184, v185);
                 } else {
-                    fun_8048c44(v163, 0x8055a51, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v186, v187, v188, v189, v190);
+                    fun_8048c44(v163, "..", v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v186, v187, v188, v189, v190);
                 }
             }
         }
@@ -5290,21 +5290,21 @@ void** restore_entries_gisman(void** a1, void** a2, void** a3, void** a4) {
     v243 = eax242;
     v244 = reinterpret_cast<void**>(0);
     while (eax245 = fun_8048bd4(v243, v23, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0), !!eax245) {
-        v122 = reinterpret_cast<void**>(&eax245->f11);
+        v122 = reinterpret_cast<void**>(&eax245->fb);
         v9 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffdff4);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, 0x8055a49, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v246, v247, v248, v249, v250, v6, v251);
-        v23 = reinterpret_cast<void**>(0x8055a4f);
-        eax254 = fun_8048da4(&eax245->f11, 0x8055a4f, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v252, v253);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, "%s/%s", v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v246, v247, v248, v249, v250, v6, v251);
+        v23 = reinterpret_cast<void**>(".");
+        eax254 = fun_8048da4(&eax245->fb, ".", v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v252, v253);
         if (!eax254) {
             continue;
         }
-        v23 = reinterpret_cast<void**>(0x8055a51);
-        eax257 = fun_8048da4(&eax245->f11, 0x8055a51, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v255, v256);
+        v23 = reinterpret_cast<void**>("..");
+        eax257 = fun_8048da4(&eax245->fb, "..", v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0, v255, v256);
         if (!eax257) {
             continue;
         }
-        v23 = reinterpret_cast<void**>(0x80553f1);
-        eax258 = fun_8048c74(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, 0x80553f1, v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0);
+        v23 = reinterpret_cast<void**>("r");
+        eax258 = fun_8048c74(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, "r", v9, v122, v121, v120, v119, 0x80672c0, v118, 0x80672c0);
         v259 = eax258;
         if (!v259) {
             continue;
@@ -5588,34 +5588,34 @@ void** new_ext_html(void** a1, void** a2, void** a3, void** a4, void** a5, void*
     v11 = a3;
     eax12 = g14;
     v13 = eax12;
-    eax20 = find_pos(0x8055a54, v11, 0, v14, v15, v16, v17, v18, v19, v11, v10);
+    eax20 = find_pos("<b>Drivers sections:</b>", v11, 0, v14, v15, v16, v17, v18, v19, v11, v10);
     v21 = eax20;
-    if (reinterpret_cast<signed char>(v21) >= reinterpret_cast<signed char>(0) || (v22 = reinterpret_cast<void**>(0), v23 = v11, eax30 = find_pos(0x8055a70, v23, 0, v24, v25, v26, v27, v28, v29, v11, v10), v21 = eax30, reinterpret_cast<signed char>(v21) >= reinterpret_cast<signed char>(0))) {
-        eax37 = find_pos(0x8055afe, v11, v21, v31, v32, v33, v34, v35, v36, v11, v10);
-        eax44 = find_pos(0x8055b04, v11, v21, v38, v39, v40, v41, v42, v43, v11, v10);
+    if (reinterpret_cast<signed char>(v21) >= reinterpret_cast<signed char>(0) || (v22 = reinterpret_cast<void**>(0), v23 = v11, eax30 = find_pos("<!-- GEM Extensions StartHTML. Do not delete or change this comment! -->", v23, 0, v24, v25, v26, v27, v28, v29, v11, v10), v21 = eax30, reinterpret_cast<signed char>(v21) >= reinterpret_cast<signed char>(0))) {
+        eax37 = find_pos("<hr>", v11, v21, v31, v32, v33, v34, v35, v36, v11, v10);
+        eax44 = find_pos("<h3>Installed extensions:</h3>", v11, v21, v38, v39, v40, v41, v42, v43, v11, v10);
         if (reinterpret_cast<int1_t>(eax44 == 0xffffffff)) {
-            insert_str(0x8055b24, eax37, v11, v45, v46, v47, v48);
-            insert_str(0x8055b44, eax37 + 1, v11, v49, v50, v51, v52);
-            insert_str(0x8055b4a, eax37 + 2, v11, v53, v54, v55, v56);
-            insert_str(0x8055b51, eax37 + 3, v11, v57, v58, v59, v60);
+            insert_str("<h3>Installed extensions:</h3>\n", eax37, v11, v45, v46, v47, v48);
+            insert_str("<ul>\n", eax37 + 1, v11, v49, v50, v51, v52);
+            insert_str("</ul>\n", eax37 + 2, v11, v53, v54, v55, v56);
+            insert_str("<p>\n", eax37 + 3, v11, v57, v58, v59, v60);
         }
-        eax67 = find_pos(0x8055b04, v11, v21, v61, v62, v63, v64, v65, v66, v11, v10);
+        eax67 = find_pos("<h3>Installed extensions:</h3>", v11, v21, v61, v62, v63, v64, v65, v66, v11, v10);
         v68 = eax67;
-        eax75 = find_pos(0x8055b56, v11, v68, v69, v70, v71, v72, v73, v74, v11, v10);
+        eax75 = find_pos("</ul>", v11, v68, v69, v70, v71, v72, v73, v74, v11, v10);
         v76 = eax75;
         v77 = v68 + 2;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp8) + 0xfffff7f4, 0x8055b5c, v9, v78, v79, v80, v81, v82, v83, v11, v10, v9, v84, v85, v86, v87, v88);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp8) + 0xfffff7f4, "\">%s", v9, v78, v79, v80, v81, v82, v83, v11, v10, v9, v84, v85, v86, v87, v88);
         v22 = v77;
         eax95 = find_pos(reinterpret_cast<int32_t>(ebp8) + 0xfffff7f4, v11, v22, v89, v90, v91, v92, v93, v94, v11, v10);
         if (eax95 != 0xffffffff) 
             goto addr_804e323_5;
     } else {
-        v96 = reinterpret_cast<void**>(0x8055abc);
-        print_warning(0x8055abc, v23, 0, v97, v98, v99, v100, v101, v102, v11, v10, v9, v103, v104, v105);
+        v96 = reinterpret_cast<void**>("Unknown format of index.html. Unable to register HTML man pages.\n");
+        print_warning("Unknown format of index.html. Unable to register HTML man pages.\n", v23, 0, v97, v98, v99, v100, v101, v102, v11, v10, v9, v103, v104, v105);
         goto addr_804e55c_7;
     }
     v106 = v68;
-    eax113 = find_pos(0x8055bc9, v11, v106, v107, v108, v109, v110, v111, v112, v11, v10);
+    eax113 = find_pos("<li><a href=", v11, v106, v107, v108, v109, v110, v111, v112, v11, v10);
     v114 = eax113;
     while (v114 != 0xffffffff && reinterpret_cast<signed char>(v114) < reinterpret_cast<signed char>(v76)) {
         eax115 = *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(v114) << 2) + reinterpret_cast<unsigned char>(v11));
@@ -5632,7 +5632,7 @@ void** new_ext_html(void** a1, void** a2, void** a3, void** a4, void** a5, void*
             goto addr_804e49e_11;
         ++v68;
         v106 = v68;
-        eax159 = find_pos(0x8055bc9, v11, v106, v153, v154, v155, v156, v157, v158, v11, v10);
+        eax159 = find_pos("<li><a href=", v11, v106, v153, v154, v155, v156, v157, v158, v11, v10);
         v114 = eax159;
     }
     addr_804e4f4_13:
@@ -5640,7 +5640,7 @@ void** new_ext_html(void** a1, void** a2, void** a3, void** a4, void** a5, void*
     v161 = a5;
     v162 = a4;
     v163 = v9;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp8) + 0xfffff7f4, 0x8055b8c, v9, v163, v162, v161, v160, v164, v165, v11, v10, v9, v166, v167, v124, v137, v126);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp8) + 0xfffff7f4, "<li><a href=\"../extensions/%s/index.html\">%s (%i.%i.%i)</a>\n", v9, v163, v162, v161, v160, v164, v165, v11, v10, v9, v166, v167, v124, v137, v126);
     v22 = v11;
     v23 = v77;
     v96 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffff7f4);
@@ -5656,8 +5656,8 @@ void** new_ext_html(void** a1, void** a2, void** a3, void** a4, void** a5, void*
     goto addr_804e4f4_13;
     addr_804e323_5:
     v23 = v9;
-    v96 = reinterpret_cast<void**>(0x8055b64);
-    print_warning(0x8055b64, v23, v22, v173, v174, v175, v176, v177, v178, v11, v10, v9, v179, v180, v181);
+    v96 = reinterpret_cast<void**>("list item '%s' exists in index.html.\n");
+    print_warning("list item '%s' exists in index.html.\n", v23, v22, v173, v174, v175, v176, v177, v178, v11, v10, v9, v179, v180, v181);
     eax182 = FORCE;
     if (!eax182) {
         goto addr_804e55c_7;
@@ -5671,7 +5671,7 @@ void** new_ext_html(void** a1, void** a2, void** a3, void** a4, void** a5, void*
             v162 = a4;
             v163 = v9;
             v22 = v9;
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp8) + 0xfffff7f4, 0x8055b8c, v22, v163, v162, v161, v160, v184, v185, v11, v10, v9, v186, v187, v188, v189, v190);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp8) + 0xfffff7f4, "<li><a href=\"../extensions/%s/index.html\">%s (%i.%i.%i)</a>\n", v22, v163, v162, v161, v160, v184, v185, v11, v10, v9, v186, v187, v188, v189, v190);
             eax191 = *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(eax95) << 2) + reinterpret_cast<unsigned char>(v11));
             v23 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffff7f4);
             v96 = eax191;
@@ -5782,20 +5782,20 @@ void** delete_ext_html(void** a1, void** a2, void** a3, void** a4, void** a5, vo
     v11 = a3;
     eax12 = g14;
     v13 = eax12;
-    eax19 = find_pos(0x8055a54, v11, 0, v14, v15, v11, v10, v9, v16, v17, v18);
+    eax19 = find_pos("<b>Drivers sections:</b>", v11, 0, v14, v15, v11, v10, v9, v16, v17, v18);
     v20 = eax19;
-    if (reinterpret_cast<signed char>(v20) >= reinterpret_cast<signed char>(0) || (v21 = reinterpret_cast<void**>(0), v22 = v11, eax28 = find_pos(0x8055a70, v22, 0, v23, v24, v11, v10, v9, v25, v26, v27), v20 = eax28, reinterpret_cast<signed char>(v20) >= reinterpret_cast<signed char>(0))) {
-        eax34 = find_pos(0x8055afe, v11, v20, v29, v30, v11, v10, v9, v31, v32, v33);
+    if (reinterpret_cast<signed char>(v20) >= reinterpret_cast<signed char>(0) || (v21 = reinterpret_cast<void**>(0), v22 = v11, eax28 = find_pos("<!-- GEM Extensions StartHTML. Do not delete or change this comment! -->", v22, 0, v23, v24, v11, v10, v9, v25, v26, v27), v20 = eax28, reinterpret_cast<signed char>(v20) >= reinterpret_cast<signed char>(0))) {
+        eax34 = find_pos("<hr>", v11, v20, v29, v30, v11, v10, v9, v31, v32, v33);
         v35 = eax34;
         v21 = v20;
         v22 = v11;
-        eax41 = find_pos(0x8055b04, v22, v21, v36, v37, v11, v10, v9, v38, v39, v40);
+        eax41 = find_pos("<h3>Installed extensions:</h3>", v22, v21, v36, v37, v11, v10, v9, v38, v39, v40);
         if (!reinterpret_cast<int1_t>(eax41 == 0xffffffff)) {
-            eax47 = find_pos(0x8055b04, v11, v20, v42, v43, v11, v10, v9, v44, v45, v46);
+            eax47 = find_pos("<h3>Installed extensions:</h3>", v11, v20, v42, v43, v11, v10, v9, v44, v45, v46);
             v48 = eax47;
-            eax54 = find_pos(0x8055b56, v11, v48, v49, v50, v11, v10, v9, v51, v52, v53);
+            eax54 = find_pos("</ul>", v11, v48, v49, v50, v11, v10, v9, v51, v52, v53);
             v55 = eax54;
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp8) + 0xfffff7f4, 0x8055b5c, v9, v56, v57, v11, v10, v9, v58, 0, v55, v48, v59, v35, v20, v60, v61);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp8) + 0xfffff7f4, "\">%s", v9, v56, v57, v11, v10, v9, v58, 0, v55, v48, v59, v35, v20, v60, v61);
             v21 = v48;
             eax65 = find_pos(reinterpret_cast<int32_t>(ebp8) + 0xfffff7f4, v11, v21, v62, v63, v11, v10, v9, v64, 0, v55);
             v66 = eax65;
@@ -5806,8 +5806,8 @@ void** delete_ext_html(void** a1, void** a2, void** a3, void** a4, void** a5, vo
                 --v55;
                 v21 = v48;
                 v22 = v11;
-                v70 = reinterpret_cast<void**>(0x8055c76);
-                eax74 = find_pos(0x8055c76, v22, v21, v71, v72, v11, v10, v9, v73, 0, v55);
+                v70 = reinterpret_cast<void**>("<ul>");
+                eax74 = find_pos("<ul>", v22, v21, v71, v72, v11, v10, v9, v73, 0, v55);
                 v66 = eax74;
                 if (v66 != 0xffffffff && (reinterpret_cast<signed char>(v55) > reinterpret_cast<signed char>(v66) && reinterpret_cast<int32_t>(reinterpret_cast<unsigned char>(v55) - reinterpret_cast<unsigned char>(v66)) <= reinterpret_cast<int32_t>(1))) {
                     v75 = reinterpret_cast<void**>(0);
@@ -5820,16 +5820,16 @@ void** delete_ext_html(void** a1, void** a2, void** a3, void** a4, void** a5, vo
                 }
             } else {
                 v22 = v9;
-                v70 = reinterpret_cast<void**>(0x8055c4c);
-                print_warning(0x8055c4c, v22, v21, v78, v79, v11, v10, v9, v80, 0, v55, v48, v66, v35, v20);
+                v70 = reinterpret_cast<void**>("extension '%s' not listed in index.html.\n");
+                print_warning("extension '%s' not listed in index.html.\n", v22, v21, v78, v79, v11, v10, v9, v80, 0, v55, v48, v66, v35, v20);
             }
         } else {
-            v70 = reinterpret_cast<void**>(0x8055c20);
-            print_warning(0x8055c20, v22, v21, v81, v82, v11, v10, v9, v83, v84, v85, v86, v87, v35, v20);
+            v70 = reinterpret_cast<void**>("no extensions section found in index.html.\n");
+            print_warning("no extensions section found in index.html.\n", v22, v21, v81, v82, v11, v10, v9, v83, v84, v85, v86, v87, v35, v20);
         }
     } else {
-        v70 = reinterpret_cast<void**>(0x8055bd8);
-        print_warning(0x8055bd8, v22, 0, v88, v89, v11, v10, v9, v90, v91, v92, v93, v94, v95, v20);
+        v70 = reinterpret_cast<void**>("Unknown format of index.html. Unable to de-register HTML man pages.\n");
+        print_warning("Unknown format of index.html. Unable to de-register HTML man pages.\n", v22, 0, v88, v89, v11, v10, v9, v90, v91, v92, v93, v94, v95, v20);
     }
     eax96 = reinterpret_cast<void**>(v13 ^ g14);
     if (eax96) {
@@ -6066,39 +6066,39 @@ void** deregister_html(void** a1, void** a2, void** a3, void** a4) {
     eax8 = g14;
     v9 = eax8;
     v10 = v7;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, 0x8055c7b, v10, v11, v12, v13, v14, v15, v16, v17, v7, v6, v18, v19, v20, v21, v22);
-    v23 = reinterpret_cast<void**>(0x8055c93);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, "%s/docs/html/index.html", v10, v11, v12, v13, v14, v15, v16, v17, v7, v6, v18, v19, v20, v21, v22);
+    v23 = reinterpret_cast<void**>("r");
     v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4);
-    eax32 = fun_8048c74(v24, 0x8055c93, v10, v25, v26, v27, v28, v29, v30, v31);
+    eax32 = fun_8048c74(v24, "r", v10, v25, v26, v27, v28, v29, v30, v31);
     v33 = eax32;
     if (v33) {
         addr_804ecd4_2:
         v34 = reinterpret_cast<void**>(32);
-        fun_8048c54(0x8067ac0, 0x8055cb4, 32, v35, v36, v37, v38, v39, v40, v41, v7, v6, v42, v43, v44);
-        fun_8048c14(0x8067ac0, 0x8055cb4, 32, v35, v45, v46, v47, v48);
-        v49 = reinterpret_cast<void**>(0x8055cd4);
-        eax56 = fun_8048c74(0x8067ac0, 0x8055cd4, 32, v35, v50, v51, v52, v53, v54, v55);
+        fun_8048c54(0x8067ac0, "/tmp/grass.extensions.db.XXXXXX", 32, v35, v36, v37, v38, v39, v40, v41, v7, v6, v42, v43, v44);
+        fun_8048c14(0x8067ac0, "/tmp/grass.extensions.db.XXXXXX", 32, v35, v45, v46, v47, v48);
+        v49 = reinterpret_cast<void**>("w+");
+        eax56 = fun_8048c74(0x8067ac0, "w+", 32, v35, v50, v51, v52, v53, v54, v55);
         v57 = eax56;
         if (!v57) {
-            eax62 = fun_8048a94(0x8067ac0, 0x8055cd4, 32, v35, v58, v59, v60, v61);
+            eax62 = fun_8048a94(0x8067ac0, "w+", 32, v35, v58, v59, v60, v61);
             v63 = *eax62;
-            eax68 = fun_8048ad4(v63, 0x8055cd4, 32, v35, v64, v65, v66, v67);
+            eax68 = fun_8048ad4(v63, "w+", 32, v35, v64, v65, v66, v67);
             v35 = eax68;
             v34 = reinterpret_cast<void**>(0x8067ac0);
-            v49 = reinterpret_cast<void**>(0x8055cd8);
-            print_error(0xffffffe8, 0x8055cd8, 0x8067ac0, v35, v69, v70, v71, v72, v73);
+            v49 = reinterpret_cast<void**>("could not create temp file '%s': %s\n \t\tMake sure that directory /tmp exists on your system and you have write permission.\n");
+            print_error(0xffffffe8, "could not create temp file '%s': %s\n \t\tMake sure that directory /tmp exists on your system and you have write permission.\n", 0x8067ac0, v35, v69, v70, v71, v72, v73);
         }
     } else {
-        eax79 = fun_8048a94(v24, 0x8055c93, v10, v74, v75, v76, v77, v78);
+        eax79 = fun_8048a94(v24, "r", v10, v74, v75, v76, v77, v78);
         if (*eax79 == 2) {
             goto addr_804f00c_6;
         } else {
-            fun_8048c44(v33, 0x8055c93, v10, v80, v81, v82, v83, v84, v85, v86, v7, v6, v87, v88, v89);
-            eax95 = fun_8048a94(v33, 0x8055c93, v10, v90, v91, v92, v93, v94);
+            fun_8048c44(v33, "r", v10, v80, v81, v82, v83, v84, v85, v86, v7, v6, v87, v88, v89);
+            eax95 = fun_8048a94(v33, "r", v10, v90, v91, v92, v93, v94);
             v96 = *eax95;
-            eax102 = fun_8048ad4(v96, 0x8055c93, v10, v97, v98, v99, v100, v101);
+            eax102 = fun_8048ad4(v96, "r", v10, v97, v98, v99, v100, v101);
             v35 = eax102;
-            print_error(0xffffffe8, 0x8055c95, reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, v35, v103, v104, v105, v106, v107);
+            print_error(0xffffffe8, "checking for file '%s': %s\n", reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, v35, v103, v104, v105, v106, v107);
             goto addr_804ecd4_2;
         }
     }
@@ -6108,11 +6108,11 @@ void** deregister_html(void** a1, void** a2, void** a3, void** a4) {
         v113 = v7;
         v114 = reinterpret_cast<void**>(0x80672c0);
         v115 = v7;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, 0x8055da0, 0x8067ac0, v115, 0x80672c0, v113, 0x80672c0, v116, v117, v118, v7, v6, v119, v120, v57, v33, v121);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, "cp -f %s %s/docs/html/index.html &>%s ; chmod a+r %s/docs/html/index.html &>%s ;", 0x8067ac0, v115, 0x80672c0, v113, 0x80672c0, v116, v117, v118, v7, v6, v119, v120, v57, v33, v121);
     } else {
         v114 = v7;
         v115 = v7;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, 0x8055d54, 0x8067ac0, v115, v114, v122, v123, v124, v125, v126, v7, v6, v127, v128, v57, v33, v129);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, "cp -vf %s %s/docs/html/index.html ; chmod -v a+r %s/docs/html/index.html ;", 0x8067ac0, v115, v114, v122, v123, v124, v125, v126, v7, v6, v127, v128, v57, v33, v129);
     }
     fun_8048c84(0x80692e0, reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, 0x8067ac0, v115, v114, v113, 0x80672c0, v130, v131, v132, v7, v6, v133, v134, v57, v33, v135);
     v136 = reinterpret_cast<struct s4*>(0);
@@ -6514,32 +6514,32 @@ void** restore_html(void** a1, void** a2, void** a3, void** a4) {
     eax7 = g14;
     v8 = eax7;
     v9 = v6;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, 0x8055c7b, v9, v10, v11, v12, v13, v14, v15, v16, v17, v6, v18, v19, v20, v21, v22);
-    v23 = reinterpret_cast<void**>(0x8055c93);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, "%s/docs/html/index.html", v9, v10, v11, v12, v13, v14, v15, v16, v17, v6, v18, v19, v20, v21, v22);
+    v23 = reinterpret_cast<void**>("r");
     v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4);
-    eax32 = fun_8048c74(v24, 0x8055c93, v9, v25, v26, v27, v28, v29, v30, v31);
+    eax32 = fun_8048c74(v24, "r", v9, v25, v26, v27, v28, v29, v30, v31);
     v33 = eax32;
     if (v33) {
         addr_804f0e0_2:
-        fun_8048c54(0x8067ac0, 0x8055cb4, 32, v34, v35, v36, v37, v38, v39, v40, v41, v6, v42, v43, v44);
-        fun_8048c14(0x8067ac0, 0x8055cb4, 32, v34, v45, v46, v47, v48);
-        eax55 = fun_8048c74(0x8067ac0, 0x8055cd4, 32, v34, v49, v50, v51, v52, v53, v54);
+        fun_8048c54(0x8067ac0, "/tmp/grass.extensions.db.XXXXXX", 32, v34, v35, v36, v37, v38, v39, v40, v41, v6, v42, v43, v44);
+        fun_8048c14(0x8067ac0, "/tmp/grass.extensions.db.XXXXXX", 32, v34, v45, v46, v47, v48);
+        eax55 = fun_8048c74(0x8067ac0, "w+", 32, v34, v49, v50, v51, v52, v53, v54);
         v56 = eax55;
         if (!v56) {
-            eax61 = fun_8048a94(0x8067ac0, 0x8055cd4, 32, v34, v57, v58, v59, v60);
+            eax61 = fun_8048a94(0x8067ac0, "w+", 32, v34, v57, v58, v59, v60);
             v62 = *eax61;
-            eax67 = fun_8048ad4(v62, 0x8055cd4, 32, v34, v63, v64, v65, v66);
-            print_error(0xffffffe8, 0x8055cd8, 0x8067ac0, eax67, v68, v69, v70, v71, v72);
+            eax67 = fun_8048ad4(v62, "w+", 32, v34, v63, v64, v65, v66);
+            print_error(0xffffffe8, "could not create temp file '%s': %s\n \t\tMake sure that directory /tmp exists on your system and you have write permission.\n", 0x8067ac0, eax67, v68, v69, v70, v71, v72);
         }
     } else {
-        eax78 = fun_8048a94(v24, 0x8055c93, v9, v73, v74, v75, v76, v77);
+        eax78 = fun_8048a94(v24, "r", v9, v73, v74, v75, v76, v77);
         if (*eax78 != 2) {
-            fun_8048c44(v33, 0x8055c93, v9, v79, v80, v81, v82, v83, v84, v85, v86, v6, v87, v88, v89);
-            eax95 = fun_8048a94(v33, 0x8055c93, v9, v90, v91, v92, v93, v94);
+            fun_8048c44(v33, "r", v9, v79, v80, v81, v82, v83, v84, v85, v86, v6, v87, v88, v89);
+            eax95 = fun_8048a94(v33, "r", v9, v90, v91, v92, v93, v94);
             v96 = *eax95;
-            eax102 = fun_8048ad4(v96, 0x8055c93, v9, v97, v98, v99, v100, v101);
+            eax102 = fun_8048ad4(v96, "r", v9, v97, v98, v99, v100, v101);
             v34 = eax102;
-            print_error(0xffffffe8, 0x8055c95, reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, v34, v103, v104, v105, v106, v107);
+            print_error(0xffffffe8, "checking for file '%s': %s\n", reinterpret_cast<int32_t>(ebp5) + 0xffffeff4, v34, v103, v104, v105, v106, v107);
             goto addr_804f0e0_2;
         } else {
             eax108 = reinterpret_cast<void**>(0);
@@ -6551,37 +6551,37 @@ void** restore_html(void** a1, void** a2, void** a3, void** a4) {
         v110 = v6;
         v111 = reinterpret_cast<void**>(0x80672c0);
         v112 = v6;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, 0x8055da0, 0x8067ac0, v112, 0x80672c0, v110, 0x80672c0, v113, v114, v115, v116, v6, v117, v118, v119, v120, v121);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, "cp -f %s %s/docs/html/index.html &>%s ; chmod a+r %s/docs/html/index.html &>%s ;", 0x8067ac0, v112, 0x80672c0, v110, 0x80672c0, v113, v114, v115, v116, v6, v117, v118, v119, v120, v121);
     } else {
         v111 = v6;
         v112 = v6;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, 0x8055d54, 0x8067ac0, v112, v111, v122, v123, v124, v125, v126, v127, v6, v128, v129, v130, v131, v132);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, "cp -vf %s %s/docs/html/index.html ; chmod -v a+r %s/docs/html/index.html ;", 0x8067ac0, v112, v111, v122, v123, v124, v125, v126, v127, v6, v128, v129, v130, v131, v132);
     }
     v133 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4);
     fun_8048c84(0x80692e0, v133, 0x8067ac0, v112, v111, v110, 0x80672c0, v134, v135, v136, v137, v6, v138, v139, v140, v141, v142);
     atexit(exit_db, v133, 0x8067ac0, v112, v111, v110, 0x80672c0, v143);
     v9 = v6;
-    v23 = reinterpret_cast<void**>(0x8055df1);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffdff4, 0x8055df1, v9, v112, v111, v110, 0x80672c0, v144, v145, v146, v147, v6, v148, v149, v150, v151, v152);
+    v23 = reinterpret_cast<void**>("%s/docs/extensions");
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffdff4, "%s/docs/extensions", v9, v112, v111, v110, 0x80672c0, v144, v145, v146, v147, v6, v148, v149, v150, v151, v152);
     v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffdff4);
-    eax156 = fun_8048c24(v24, 0x8055df1, v9, v112, v111, v110, 0x80672c0, v153, v154, v155);
+    eax156 = fun_8048c24(v24, "%s/docs/extensions", v9, v112, v111, v110, 0x80672c0, v153, v154, v155);
     v157 = eax156;
     if (v157) {
         v158 = reinterpret_cast<void**>(0);
         while (eax162 = fun_8048bd4(v157, v23, v9, v112, v111, v110, 0x80672c0, v159, v160, v161), !!eax162) {
-            v112 = reinterpret_cast<void**>(&eax162->f11);
+            v112 = reinterpret_cast<void**>(&eax162->fb);
             v9 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffdff4);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffd7f4, 0x8055e04, v9, v112, v111, v110, 0x80672c0, v163, v164, v165, v166, v6, v167, v168, v169, v158, v170);
-            v23 = reinterpret_cast<void**>(0x8055e0a);
-            eax175 = fun_8048da4(&eax162->f11, 0x8055e0a, v9, v112, v111, v110, 0x80672c0, v171, v172, v173, v174, v6);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffd7f4, "%s/%s", v9, v112, v111, v110, 0x80672c0, v163, v164, v165, v166, v6, v167, v168, v169, v158, v170);
+            v23 = reinterpret_cast<void**>(".");
+            eax175 = fun_8048da4(&eax162->fb, ".", v9, v112, v111, v110, 0x80672c0, v171, v172, v173, v174, v6);
             if (eax175) {
-                v23 = reinterpret_cast<void**>(0x8055e0c);
-                eax180 = fun_8048da4(&eax162->f11, 0x8055e0c, v9, v112, v111, v110, 0x80672c0, v176, v177, v178, v179, v6);
+                v23 = reinterpret_cast<void**>("..");
+                eax180 = fun_8048da4(&eax162->fb, "..", v9, v112, v111, v110, 0x80672c0, v176, v177, v178, v179, v6);
                 if (eax180) {
-                    eax184 = fun_8048c24(reinterpret_cast<int32_t>(ebp5) + 0xffffd7f4, 0x8055e0c, v9, v112, v111, v110, 0x80672c0, v181, v182, v183);
+                    eax184 = fun_8048c24(reinterpret_cast<int32_t>(ebp5) + 0xffffd7f4, "..", v9, v112, v111, v110, 0x80672c0, v181, v182, v183);
                     if (eax184) {
                         ++v158;
-                        fun_8048cb4(eax184, 0x8055e0c, v9, v112, v111, v110, 0x80672c0, v185, v186, v187);
+                        fun_8048cb4(eax184, "..", v9, v112, v111, v110, 0x80672c0, v185, v186, v187);
                     }
                 }
             }
@@ -6619,28 +6619,28 @@ void** restore_html(void** a1, void** a2, void** a3, void** a4) {
     v255 = eax254;
     v256 = reinterpret_cast<void**>(0);
     while (eax260 = fun_8048bd4(v255, v23, v9, v112, v111, v110, 0x80672c0, v257, v258, v259), v261 = eax260, !!v261) {
-        v112 = reinterpret_cast<void**>(&v261->f11);
+        v112 = reinterpret_cast<void**>(&v261->fb);
         v9 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffdff4);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffd7f4, 0x8055e04, v9, v112, v111, v110, 0x80672c0, v262, v263, v264, v265, v6, 0, 0, 0, v158, v256);
-        v23 = reinterpret_cast<void**>(0x8055e0a);
-        eax270 = fun_8048da4(&v261->f11, 0x8055e0a, v9, v112, v111, v110, 0x80672c0, v266, v267, v268, v269, v6);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffd7f4, "%s/%s", v9, v112, v111, v110, 0x80672c0, v262, v263, v264, v265, v6, 0, 0, 0, v158, v256);
+        v23 = reinterpret_cast<void**>(".");
+        eax270 = fun_8048da4(&v261->fb, ".", v9, v112, v111, v110, 0x80672c0, v266, v267, v268, v269, v6);
         if (!eax270) {
             continue;
         }
-        v23 = reinterpret_cast<void**>(0x8055e0c);
-        eax275 = fun_8048da4(&v261->f11, 0x8055e0c, v9, v112, v111, v110, 0x80672c0, v271, v272, v273, v274, v6);
+        v23 = reinterpret_cast<void**>("..");
+        eax275 = fun_8048da4(&v261->fb, "..", v9, v112, v111, v110, 0x80672c0, v271, v272, v273, v274, v6);
         if (!eax275) {
             continue;
         }
-        eax279 = fun_8048c24(reinterpret_cast<int32_t>(ebp5) + 0xffffd7f4, 0x8055e0c, v9, v112, v111, v110, 0x80672c0, v276, v277, v278);
+        eax279 = fun_8048c24(reinterpret_cast<int32_t>(ebp5) + 0xffffd7f4, "..", v9, v112, v111, v110, 0x80672c0, v276, v277, v278);
         if (!eax279) {
             continue;
         }
-        fun_8048cb4(eax279, 0x8055e0c, v9, v112, v111, v110, 0x80672c0, v280, v281, v282);
+        fun_8048cb4(eax279, "..", v9, v112, v111, v110, 0x80672c0, v280, v281, v282);
         v9 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffd7f4);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, 0x8055e0f, v9, v112, v111, v110, 0x80672c0, v283, v284, v285, v286, v6, 0, 0, 0, v158, v256);
-        v23 = reinterpret_cast<void**>(0x8055c93);
-        eax290 = fun_8048c74(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, 0x8055c93, v9, v112, v111, v110, 0x80672c0, v287, v288, v289);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, "%s/index.html", v9, v112, v111, v110, 0x80672c0, v283, v284, v285, v286, v6, 0, 0, 0, v158, v256);
+        v23 = reinterpret_cast<void**>("r");
+        eax290 = fun_8048c74(reinterpret_cast<int32_t>(ebp5) + 0xffffe7f4, "r", v9, v112, v111, v110, 0x80672c0, v287, v288, v289);
         v291 = eax290;
         if (!v291) {
             continue;
@@ -6652,8 +6652,8 @@ void** restore_html(void** a1, void** a2, void** a3, void** a4) {
             eax297 = fun_8048ba4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, 0x800, v9, v112, v111, v110, 0x80672c0, v293, v294, v295, v296, v6, 0, 0, 0);
             if (!eax297) 
                 break;
-            v23 = reinterpret_cast<void**>(0x8055e1d);
-            eax299 = fun_8048cf4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, 0x8055e1d, v9, v112, v111, v110, 0x80672c0, v298);
+            v23 = reinterpret_cast<void**>("<title>");
+            eax299 = fun_8048cf4(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, "<title>", v9, v112, v111, v110, 0x80672c0, v298);
         } while (!eax299);
         goto addr_804f5e1_46;
         addr_804f611_47:
@@ -6661,13 +6661,13 @@ void** restore_html(void** a1, void** a2, void** a3, void** a4) {
             continue;
         } else {
             eax304 = fun_8048b54(reinterpret_cast<int32_t>(ebp5) + 0xfffff7f4, 40, v9, v112, v111, v110, 0x80672c0, v300, v301, v302, v303, v6, 0, 0, 0);
-            fun_8048b34(eax304 + 1, 0x8055e25, reinterpret_cast<int32_t>(ebp5) + 0xffffd7c0, reinterpret_cast<int32_t>(ebp5) + 0xffffd7bc, reinterpret_cast<int32_t>(ebp5) + 0xffffd7b8, v110, 0x80672c0, v305, v306);
+            fun_8048b34(eax304 + 1, "%i.%i.%i", reinterpret_cast<int32_t>(ebp5) + 0xffffd7c0, reinterpret_cast<int32_t>(ebp5) + 0xffffd7bc, reinterpret_cast<int32_t>(ebp5) + 0xffffd7b8, v110, 0x80672c0, v305, v306);
             v110 = reinterpret_cast<void**>(0);
             v111 = reinterpret_cast<void**>(0);
             v112 = reinterpret_cast<void**>(0);
             v9 = v215;
             v23 = v6;
-            new_ext_html(&v261->f11, v23, v9, 0, 0, 0, 0x80672c0);
+            new_ext_html(&v261->fb, v23, v9, 0, 0, 0, 0x80672c0);
             ++v256;
             fun_8048c44(v291, v23, v9, 0, 0, 0, 0x80672c0, v307, v308, v309, v310, v6, 0, 0, 0);
             continue;
@@ -6935,9 +6935,9 @@ void** unpack_extension(void** a1, void** a2, void** a3, void** a4, void** a5) {
     ebp6 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     eax7 = g14;
     eax8 = stdout;
-    fun_8048cd4(0x8055f38, 1, 22, eax8, v9);
-    fun_8048c54(0x80632c0, 0x8055f4f, 28, eax8, v10, v11, v12, v13, v14, v15, v16, a1, v17, v18, v19);
-    fun_8048c14(0x80632c0, 0x8055f4f, 28, eax8, v20, v21, v22, v23);
+    fun_8048cd4("Uncompressing files...", 1, 22, eax8, v9);
+    fun_8048c54(0x80632c0, "/tmp/grass.extension.XXXXXX", 28, eax8, v10, v11, v12, v13, v14, v15, v16, a1, v17, v18, v19);
+    fun_8048c14(0x80632c0, "/tmp/grass.extension.XXXXXX", 28, eax8, v20, v21, v22, v23);
     v24 = reinterpret_cast<void**>(0x1ff);
     v25 = reinterpret_cast<void**>(64);
     eax27 = fun_8048ac4(0x80632c0, 64, 0x1ff, eax8, v26);
@@ -6946,35 +6946,35 @@ void** unpack_extension(void** a1, void** a2, void** a3, void** a4, void** a5) {
         v33 = *eax32;
         eax38 = fun_8048ad4(v33, 64, 0x1ff, eax8, v34, v35, v36, v37);
         v24 = eax38;
-        v25 = reinterpret_cast<void**>(0x8055f6c);
-        print_error(0xfffffff9, 0x8055f6c, v24, eax8, v39, v40, v41, v42, v43);
-        fun_8048db4(0xfffffff9, 0x8055f6c, v24, eax8, v44, v45, v46, v47, v48, v49, v50);
+        v25 = reinterpret_cast<void**>("could not create temp directory name: %s");
+        print_error(0xfffffff9, "could not create temp directory name: %s", v24, eax8, v39, v40, v41, v42, v43);
+        fun_8048db4(0xfffffff9, "could not create temp directory name: %s", v24, eax8, v44, v45, v46, v47, v48, v49, v50);
     }
     eax51 = VERBOSE;
     if (eax51) {
         eax52 = stdout;
         v24 = reinterpret_cast<void**>(0x80632c0);
-        v25 = reinterpret_cast<void**>(0x8055f95);
-        fun_8048ce4(eax52, 0x8055f95, 0x80632c0, eax8, v53, v54, v55, v56, v57, v58, v59, a1, v60, eax27, v61);
+        v25 = reinterpret_cast<void**>("\nUncompressing to: %s.\n");
+        fun_8048ce4(eax52, "\nUncompressing to: %s.\n", 0x80632c0, eax8, v53, v54, v55, v56, v57, v58, v59, a1, v60, eax27, v61);
     }
     fun_8048cc4(eax27, v25, v24, eax8);
     fun_8048d14(0x80632c0, v25, v24, eax8);
-    mkdir_s(0x80632c0, 0x8055fad, v24, eax8);
-    atexit(exit_tmp, 0x8055fad, v24, eax8, v62, v63, v64, v65);
+    mkdir_s(0x80632c0, "0700", v24, eax8);
+    atexit(exit_tmp, "0700", v24, eax8, v62, v63, v64, v65);
     v66 = reinterpret_cast<void**>(0x80632c0);
     v67 = a1;
-    v68 = reinterpret_cast<void**>(0x8055fb2);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8055fb2, v67, 0x80632c0, v69, v70, v71, v72, v73, v74, v75, a1, v76, eax27, v77, v78, v79);
-    eax83 = fun_8048b84(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8055fb2, v67, 0x80632c0, v80, v81, v82);
+    v68 = reinterpret_cast<void**>("cp %s %s");
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "cp %s %s", v67, 0x80632c0, v69, v70, v71, v72, v73, v74, v75, a1, v76, eax27, v77, v78, v79);
+    eax83 = fun_8048b84(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "cp %s %s", v67, 0x80632c0, v80, v81, v82);
     if (reinterpret_cast<signed char>(eax83) < reinterpret_cast<signed char>(0)) {
-        v68 = reinterpret_cast<void**>(0x8055fbc);
-        print_error(0xfffffff9, 0x8055fbc, v67, 0x80632c0, v84, v85, v86, v87, v88);
-        fun_8048db4(0xfffffff9, 0x8055fbc, v67, 0x80632c0, v89, v90, v91, v92, v93, v94, v95);
+        v68 = reinterpret_cast<void**>("could not copy extension files to temp dir.\n");
+        print_error(0xfffffff9, "could not copy extension files to temp dir.\n", v67, 0x80632c0, v84, v85, v86, v87, v88);
+        fun_8048db4(0xfffffff9, "could not copy extension files to temp dir.\n", v67, 0x80632c0, v89, v90, v91, v92, v93, v94, v95);
     }
     eax96 = check_filetype(a1, v68, v67, 0x80632c0);
     v97 = eax96;
     if (!v97) {
-        print_warning(0x8055fec, v68, v67, 0x80632c0, v98, v99, v100, v101, v102, v103, v104, a1, v97, eax27, eax83);
+        print_warning("file name not '.tar.gz', '.tgz', '.tar.bz2', '.tbz' or '.zip'. Assuming '.tgz'.\n", v68, v67, 0x80632c0, v98, v99, v100, v101, v102, v103, v104, a1, v97, eax27, eax83);
         v97 = reinterpret_cast<void**>(1);
     }
     if (reinterpret_cast<int1_t>(v97 == 1)) {
@@ -6983,14 +6983,14 @@ void** unpack_extension(void** a1, void** a2, void** a3, void** a4, void** a5) {
             eax107 = basename(a1, v68, v67, 0x80632c0, v106);
             v66 = eax107;
             v67 = reinterpret_cast<void**>(0x80632c0);
-            v68 = reinterpret_cast<void**>(0x8056053);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8056053, 0x80632c0, v66, 0x80632c0, v108, v109, v110, v111, v112, v113, a1, v97, eax27, eax83, v114, v115);
+            v68 = reinterpret_cast<void**>("tar -xzf %s/%s -C %s");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "tar -xzf %s/%s -C %s", 0x80632c0, v66, 0x80632c0, v108, v109, v110, v111, v112, v113, a1, v97, eax27, eax83, v114, v115);
         } else {
             eax117 = basename(a1, v68, v67, 0x80632c0, v116);
             v66 = eax117;
             v67 = reinterpret_cast<void**>(0x80632c0);
-            v68 = reinterpret_cast<void**>(0x805603d);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x805603d, 0x80632c0, v66, 0x80632c0, v118, v119, v120, v121, v122, v123, a1, v97, eax27, eax83, v124, v125);
+            v68 = reinterpret_cast<void**>("tar -xzvf %s/%s -C %s");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "tar -xzvf %s/%s -C %s", 0x80632c0, v66, 0x80632c0, v118, v119, v120, v121, v122, v123, a1, v97, eax27, eax83, v124, v125);
         }
     }
     if (reinterpret_cast<int1_t>(v97 == 2)) {
@@ -6999,14 +6999,14 @@ void** unpack_extension(void** a1, void** a2, void** a3, void** a4, void** a5) {
             eax127 = basename(a1, v68, v67, v66, 0x80632c0);
             v66 = eax127;
             v67 = reinterpret_cast<void**>(0x80632c0);
-            v68 = reinterpret_cast<void**>(0x8056068);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8056068, 0x80632c0, v66, 0x80632c0, v128, v129, v130, v131, v132, v133, a1, v97, eax27, eax83, v134, v135);
+            v68 = reinterpret_cast<void**>("tar -xjvf %s/%s -C %s");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "tar -xjvf %s/%s -C %s", 0x80632c0, v66, 0x80632c0, v128, v129, v130, v131, v132, v133, a1, v97, eax27, eax83, v134, v135);
         } else {
             eax136 = basename(a1, v68, v67, v66, 0x80632c0);
             v66 = eax136;
             v67 = reinterpret_cast<void**>(0x80632c0);
-            v68 = reinterpret_cast<void**>(0x8056068);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8056068, 0x80632c0, v66, 0x80632c0, v137, v138, v139, v140, v141, v142, a1, v97, eax27, eax83, v143, v144);
+            v68 = reinterpret_cast<void**>("tar -xjvf %s/%s -C %s");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "tar -xjvf %s/%s -C %s", 0x80632c0, v66, 0x80632c0, v137, v138, v139, v140, v141, v142, a1, v97, eax27, eax83, v143, v144);
         }
     }
     if (reinterpret_cast<int1_t>(v97 == 3)) {
@@ -7015,14 +7015,14 @@ void** unpack_extension(void** a1, void** a2, void** a3, void** a4, void** a5) {
             eax146 = basename(a1, v68, v67, v66, 0x80632c0);
             v66 = eax146;
             v67 = reinterpret_cast<void**>(0x80632c0);
-            v68 = reinterpret_cast<void**>(0x8056090);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8056090, 0x80632c0, v66, 0x80632c0, v147, v148, v149, v150, v151, v152, a1, v97, eax27, eax83, v153, v154);
+            v68 = reinterpret_cast<void**>("unzip -qq %s/%s -d %s");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "unzip -qq %s/%s -d %s", 0x80632c0, v66, 0x80632c0, v147, v148, v149, v150, v151, v152, a1, v97, eax27, eax83, v153, v154);
         } else {
             eax155 = basename(a1, v68, v67, v66, 0x80632c0);
             v66 = eax155;
             v67 = reinterpret_cast<void**>(0x80632c0);
-            v68 = reinterpret_cast<void**>(0x805607e);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x805607e, 0x80632c0, v66, 0x80632c0, v156, v157, v158, v159, v160, v161, a1, v97, eax27, eax83, v162, v163);
+            v68 = reinterpret_cast<void**>("unzip %s/%s -d %s");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "unzip %s/%s -d %s", 0x80632c0, v66, 0x80632c0, v156, v157, v158, v159, v160, v161, a1, v97, eax27, eax83, v162, v163);
         }
     }
     if (reinterpret_cast<int1_t>(v97 == 4)) {
@@ -7031,14 +7031,14 @@ void** unpack_extension(void** a1, void** a2, void** a3, void** a4, void** a5) {
             eax165 = basename(a1, v68, v67, v66, 0x80632c0);
             v66 = eax165;
             v67 = reinterpret_cast<void**>(0x80632c0);
-            v68 = reinterpret_cast<void**>(0x80560bb);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x80560bb, 0x80632c0, v66, 0x80632c0, v166, v167, v168, v169, v170, v171, a1, v97, eax27, eax83, v172, v173);
+            v68 = reinterpret_cast<void**>("tar -xf %s/%s -C %s");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "tar -xf %s/%s -C %s", 0x80632c0, v66, 0x80632c0, v166, v167, v168, v169, v170, v171, a1, v97, eax27, eax83, v172, v173);
         } else {
             eax174 = basename(a1, v68, v67, v66, 0x80632c0);
             v66 = eax174;
             v67 = reinterpret_cast<void**>(0x80632c0);
-            v68 = reinterpret_cast<void**>(0x80560a6);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x80560a6, 0x80632c0, v66, 0x80632c0, v175, v176, v177, v178, v179, v180, a1, v97, eax27, eax83, v181, v182);
+            v68 = reinterpret_cast<void**>("tar -xvf %s/%s -C %s");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "tar -xvf %s/%s -C %s", 0x80632c0, v66, 0x80632c0, v175, v176, v177, v178, v179, v180, a1, v97, eax27, eax83, v181, v182);
         }
     }
     v183 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4);
@@ -7046,18 +7046,18 @@ void** unpack_extension(void** a1, void** a2, void** a3, void** a4, void** a5) {
     if (reinterpret_cast<signed char>(eax186) < reinterpret_cast<signed char>(0)) {
         if (reinterpret_cast<int1_t>(v97 == 1)) {
             v67 = a1;
-            v68 = reinterpret_cast<void**>(0x80560d0);
-            print_error(0xfffffff9, 0x80560d0, v67, v66, 0x80632c0, v187, v188, v189, v190);
+            v68 = reinterpret_cast<void**>("could not extract files using 'tar' and 'gzip'. \n \t\t\t\t\tExtract manually using 'tar -xzvf %s'.\n");
+            print_error(0xfffffff9, "could not extract files using 'tar' and 'gzip'. \n \t\t\t\t\tExtract manually using 'tar -xzvf %s'.\n", v67, v66, 0x80632c0, v187, v188, v189, v190);
         }
         if (reinterpret_cast<int1_t>(v97 == 2)) {
             v67 = a1;
-            v68 = reinterpret_cast<void**>(0x8056130);
-            print_error(0xfffffff9, 0x8056130, v67, v66, 0x80632c0, v191, v192, v193, v194);
+            v68 = reinterpret_cast<void**>("could not extract files using 'tar' and 'bunzip2'.\n \t\t\t\tExtract manually using 'tar -xjvf %s'.\n");
+            print_error(0xfffffff9, "could not extract files using 'tar' and 'bunzip2'.\n \t\t\t\tExtract manually using 'tar -xjvf %s'.\n", v67, v66, 0x80632c0, v191, v192, v193, v194);
         }
         if (reinterpret_cast<int1_t>(v97 == 3)) {
             v67 = a1;
-            v68 = reinterpret_cast<void**>(0x8056190);
-            print_error(0xfffffff9, 0x8056190, v67, v66, 0x80632c0, v195, v196, v197, v198);
+            v68 = reinterpret_cast<void**>("could not extract files using 'unzip'.\n \t\t\t\tExtract manually using 'unzip %s'.\n");
+            print_error(0xfffffff9, "could not extract files using 'unzip'.\n \t\t\t\tExtract manually using 'unzip %s'.\n", v67, v66, 0x80632c0, v195, v196, v197, v198);
         }
         v183 = reinterpret_cast<void**>(0xfffffff9);
         fun_8048db4(0xfffffff9, v68, v67, v66, 0x80632c0, v199, v200, v201, v202, v203, v204);
@@ -7124,30 +7124,30 @@ void** basename(void** a1, void** a2, void** a3, void** a4, void** a5) {
     v7 = ebp8;
     eax16 = fun_8048d94(a1, v9, v10, v11, v12, v13, v14, v15);
     v17 = eax16;
-    eax22 = fun_8048d54(v17, 0x8054a00, v18, v19, v20, 0, v21, v17);
+    eax22 = fun_8048d54(v17, "/", v18, v19, v20, 0, v21, v17);
     v23 = eax22;
     if (v23) {
-        eax27 = fun_8048d94(v23, 0x8054a00, v24, v25, v26, 0, v23, v17);
+        eax27 = fun_8048d94(v23, "/", v24, v25, v26, 0, v23, v17);
         v28 = eax27;
         while (v23) {
-            eax32 = fun_8048d54(0, 0x8054a00, v29, v30, v31, v28, v23, v17);
+            eax32 = fun_8048d54(0, "/", v29, v30, v31, v28, v23, v17);
             v23 = eax32;
             if (v28 && v23) {
-                fun_8048bf4(v28, 0x8054a00, v33, v34, v35, v28, v23, v17, v36, v37, v7, v6, a1, a2, a3);
+                fun_8048bf4(v28, "/", v33, v34, v35, v28, v23, v17, v36, v37, v7, v6, a1, a2, a3);
             }
             if (!v23) 
                 continue;
             eax38 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v23));
             if (!*reinterpret_cast<signed char*>(&eax38)) 
                 continue;
-            eax42 = fun_8048d94(v23, 0x8054a00, v39, v40, v41, v28, v23, v17);
+            eax42 = fun_8048d94(v23, "/", v39, v40, v41, v28, v23, v17);
             v28 = eax42;
         }
         if (v17) 
             goto addr_804960d_10;
     } else {
         if (v17) {
-            fun_8048bf4(v17, 0x8054a00, v43, v44, v45, 0, v23, v17, v46, v47, v7, v6, a1, a2, a3);
+            fun_8048bf4(v17, "/", v43, v44, v45, 0, v23, v17, v46, v47, v7, v6, a1, a2, a3);
         }
         eax48 = reinterpret_cast<void**>(0);
         goto addr_804961b_14;
@@ -7157,7 +7157,7 @@ void** basename(void** a1, void** a2, void** a3, void** a4, void** a5) {
     addr_804961b_14:
     return eax48;
     addr_804960d_10:
-    fun_8048bf4(v17, 0x8054a00, v49, v50, v51, v28, v23, v17, v52, v53, v7, v6, a1, a2, a3);
+    fun_8048bf4(v17, "/", v49, v50, v51, v28, v23, v17, v52, v53, v7, v6, a1, a2, a3);
     goto addr_8049618_15;
 }
 
@@ -7295,36 +7295,36 @@ void query_extension(void** a1, void** a2, void** a3, void** a4, void** a5, void
         eax37 = fun_8048a94(v25, eax14, v31, v32, v33, v34, v35, v36);
         v38 = *eax37;
         eax45 = fun_8048ad4(v38, eax14, v39, v40, v41, v42, v43, v44);
-        print_error(0xfffffffe, 0x8055e48, a1, eax45, v46, v47, v48, v49, v50);
+        print_error(0xfffffffe, "extension '%s' not accessible: %s\n", a1, eax45, v46, v47, v48, v49, v50);
         esp30 = esp30 - 4 + 4 - 4 + 4 - 4 + 4;
     }
     eax51 = stdout;
-    fun_8048ce4(eax51, 0x80561e0, a2, a3, a4, a5, v52, v53, v54, v55, v56, a8, a7, a6, a2);
-    dump_ascii(0x8056210, 0x8056204, a2, a3, a4, a5);
-    dump_ascii(0x805622e, 0x805621c, a2, a3, a4, a5);
-    dump_ascii(0x805624a, 0x8056237, a2, a3, a4, a5);
-    dump_ascii(0x8056265, 0x805624f, a2, a3, a4, a5);
-    dump_ascii(0x805627a, 0x805626d, a2, a3, a4, a5);
-    dump_ascii(0x8056287, 0x8056282, a2, a3, a4, a5);
-    fun_8048aa4(reinterpret_cast<int32_t>(esp9) + 0xfffff7f4, 0x805628c, a1, a3, a4, a5, v57, v58, v59, v60, v61, a8, a7, a6, a2, a1, v62);
-    list_binaries(reinterpret_cast<int32_t>(esp9) + 0xfffff7f4, 0x805628c, a1, a3, a4, a5);
-    dump_ascii(0x805629c, 0x8056292, a1, a3, a4, a5);
+    fun_8048ce4(eax51, "\nExtension '%s', version %i.%i.%i\n\n", a2, a3, a4, a5, v52, v53, v54, v55, v56, a8, a7, a6, a2);
+    dump_ascii("description", "Description", a2, a3, a4, a5);
+    dump_ascii("commands", "Commands provided", a2, a3, a4, a5);
+    dump_ascii("libs", "Libraries provided", a2, a3, a4, a5);
+    dump_ascii("headers", "Header files provided", a2, a3, a4, a5);
+    dump_ascii("depends", "Dependencies", a2, a3, a4, a5);
+    dump_ascii("bugs", "Bugs", a2, a3, a4, a5);
+    fun_8048aa4(reinterpret_cast<int32_t>(esp9) + 0xfffff7f4, "../%s", a1, a3, a4, a5, v57, v58, v59, v60, v61, a8, a7, a6, a2, a1, v62);
+    list_binaries(reinterpret_cast<int32_t>(esp9) + 0xfffff7f4, "../%s", a1, a3, a4, a5);
+    dump_ascii("authors", "Author(s)", a1, a3, a4, a5);
     eax63 = stdout;
-    fun_8048ce4(eax63, 0x80562a4, a7, a8, a4, a5, v64, v65, v66, v67, v68, a8, a7, a6, a2);
+    fun_8048ce4(eax63, "Type '%s -d %s' to see more detailed information.\n", a7, a8, a4, a5, v64, v65, v66, v67, v68, a8, a7, a6, a2);
     eax69 = stdout;
-    fun_8048ce4(eax69, 0x80562d8, a7, a8, a4, a5, v70, v71, v72, v73, v74, a8, a7, a6, a2);
-    fun_8048b84(0x8056307, 0x80562d8, a7, a8, a4, a5, v75);
-    fun_8048db4(0, 0x80562d8, a7, a8, a4, a5, v76, v77, v78, v79, v80);
+    fun_8048ce4(eax69, "Type '%s -l %s' to see copyright information.\n", a7, a8, a4, a5, v70, v71, v72, v73, v74, a8, a7, a6, a2);
+    fun_8048b84("sh post", "Type '%s -l %s' to see copyright information.\n", a7, a8, a4, a5, v75);
+    fun_8048db4(0, "Type '%s -l %s' to see copyright information.\n", a7, a8, a4, a5, v76, v77, v78, v79, v80);
     ebp81 = reinterpret_cast<void*>(esp30 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4);
     eax82 = g14;
     v83 = eax82;
-    v84 = reinterpret_cast<void**>(0x8055e6b);
-    eax93 = fun_8048c74(0x805630f, 0x8055e6b, v85, v86, v87, v88, v89, v90, v91, v92);
+    v84 = reinterpret_cast<void**>("r");
+    eax93 = fun_8048c74("config.msg", "r", v85, v86, v87, v88, v89, v90, v91, v92);
     v94 = eax93;
     if (v94) {
         eax95 = stdout;
         v96 = eax95;
-        fun_8048cd4(0x805631a, 1, 27, v96, v97);
+        fun_8048cd4("\nResult of configuration: \n", 1, 27, v96, v97);
         while (v98 = v94, eax109 = fun_8048ba4(reinterpret_cast<int32_t>(ebp81) + 0xfffff7f4, 0x800, v98, v96, v99, v100, v94, v101, v102, v103, v104, v105, v106, v107, v108), !!eax109) {
             eax110 = stdout;
             fun_8048a84(reinterpret_cast<int32_t>(ebp81) - 0x80c, eax110, v98, v96);
@@ -7333,10 +7333,10 @@ void query_extension(void** a1, void** a2, void** a3, void** a4, void** a5, void
         v84 = eax111;
         fun_8048d44(10, v84, v98, v96);
     }
-    fun_8048d14(0x805630f, v84, v98, v96);
+    fun_8048d14("config.msg", v84, v98, v96);
     eax112 = v83 ^ g14;
     if (eax112) {
-        fun_8048d34(0x805630f, v84, v98, v96, v113, v114, v94, v115, v116, v117, v118, v119, v120, v121, v122, v123, v124);
+        fun_8048d34("config.msg", v84, v98, v96, v113, v114, v94, v115, v116, v117, v118, v119, v120, v121, v122, v123, v124);
     }
     goto 0;
 }
@@ -7411,13 +7411,13 @@ void** dump_ascii(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
     eax10 = g14;
     v11 = eax10;
     eax12 = stdout;
-    fun_8048ce4(eax12, 0x8054ab2, v9, v13, v14, v15, v9, v8, v16, v17, v18, v19, v20, v21, v22);
-    eax28 = fun_8048c74(v8, 0x8054a6f, v9, v23, v24, v25, v9, v8, v26, v27);
+    fun_8048ce4(eax12, "%s\n", v9, v13, v14, v15, v9, v8, v16, v17, v18, v19, v20, v21, v22);
+    eax28 = fun_8048c74(v8, "r", v9, v23, v24, v25, v9, v8, v26, v27);
     v29 = eax28;
     if (v29) {
         while (v30 = v29, eax31 = nc_fgets_html(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, 0x800, v30), !!eax31) {
             eax32 = stdout;
-            fun_8048ce4(eax32, 0x8054ae5, reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, v33, v34, v35, v9, v8, v36, v37, v29, v38, v39, v40, v41);
+            fun_8048ce4(eax32, "  %s", reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, v33, v34, v35, v9, v8, v36, v37, v29, v38, v39, v40, v41);
         }
         eax42 = stdout;
         v43 = eax42;
@@ -7429,8 +7429,8 @@ void** dump_ascii(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
         v56 = eax55;
         v30 = reinterpret_cast<void**>(28);
         v43 = reinterpret_cast<void**>(1);
-        v45 = reinterpret_cast<void**>(0x8054ac8);
-        fun_8048cd4(0x8054ac8, 1, 28, v56, v57);
+        v45 = reinterpret_cast<void**>("  No information available.\n");
+        fun_8048cd4("  No information available.\n", 1, 28, v56, v57);
     }
     eax58 = reinterpret_cast<void**>(v11 ^ g14);
     if (eax58) {
@@ -7561,26 +7561,26 @@ void** list_binaries(void** a1, void** a2, void** a3, void** a4, void** a5, void
     eax12 = stdout;
     v13 = eax12;
     v14 = reinterpret_cast<void**>(26);
-    fun_8048cd4(0x8054b99, 1, 26, v13, v15);
+    fun_8048cd4("Binary installation files\n", 1, 26, v13, v15);
     eax21 = fun_8048c24(v8, 1, 26, v13, v16, v17, v18, v8, v19, v20);
     v22 = eax21;
     if (v22) {
         eax28 = fun_8048bd4(v22, 1, 26, v13, v23, v24, v25, v8, v26, v27);
         v29 = eax28;
         while (v29) {
-            v30 = reinterpret_cast<void**>(0x8054bbe);
-            eax38 = fun_8048da4(&v29->f11, 0x8054bbe, v14, v13, v31, v32, v33, v8, v34, v35, v36, v37);
-            if (eax38 && ((v30 = reinterpret_cast<void**>(0x8054bc0), eax46 = fun_8048da4(&v29->f11, 0x8054bc0, v14, v13, v39, v40, v41, v8, v42, v43, v44, v45), !!eax46) && ((v30 = reinterpret_cast<void**>(0x8054bc3), eax54 = fun_8048da4(&v29->f11, 0x8054bc3, v14, v13, v47, v48, v49, v8, v50, v51, v52, v53), !!eax54) && (v13 = reinterpret_cast<void**>(&v29->f11), v14 = v8, fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, 0x8054a64, v14, v13, v55, v56, v57, v8, v58, v59, v60, v61, v62, v63, v64, v65, v66), v30 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffff790), stat(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, v30, v14, v13, v67), (v68 & 0xf000) == 0x4000)))) {
+            v30 = reinterpret_cast<void**>(".");
+            eax38 = fun_8048da4(&v29->fb, ".", v14, v13, v31, v32, v33, v8, v34, v35, v36, v37);
+            if (eax38 && ((v30 = reinterpret_cast<void**>(".."), eax46 = fun_8048da4(&v29->fb, "..", v14, v13, v39, v40, v41, v8, v42, v43, v44, v45), !!eax46) && ((v30 = reinterpret_cast<void**>("src"), eax54 = fun_8048da4(&v29->fb, "src", v14, v13, v47, v48, v49, v8, v50, v51, v52, v53), !!eax54) && (v13 = reinterpret_cast<void**>(&v29->fb), v14 = v8, fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, "%s/%s", v14, v13, v55, v56, v57, v8, v58, v59, v60, v61, v62, v63, v64, v65, v66), v30 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffff790), stat(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, v30, v14, v13, v67), (v68 & 0xf000) == 0x4000)))) {
                 if (v11) {
                     eax69 = stdout;
-                    v14 = reinterpret_cast<void**>(&v29->f11);
-                    v30 = reinterpret_cast<void**>(0x8054bc7);
-                    fun_8048ce4(eax69, 0x8054bc7, v14, v13, v70, v71, v72, v8, v73, v74, v75, v76, v77, v78, v79);
+                    v14 = reinterpret_cast<void**>(&v29->fb);
+                    v30 = reinterpret_cast<void**>(", %s");
+                    fun_8048ce4(eax69, ", %s", v14, v13, v70, v71, v72, v8, v73, v74, v75, v76, v77, v78, v79);
                 } else {
                     eax80 = stdout;
-                    v14 = reinterpret_cast<void**>(&v29->f11);
-                    v30 = reinterpret_cast<void**>(0x8054ae5);
-                    fun_8048ce4(eax80, 0x8054ae5, v14, v13, v81, v82, v83, v8, v84, v85, v86, v87, v88, v89, v90);
+                    v14 = reinterpret_cast<void**>(&v29->fb);
+                    v30 = reinterpret_cast<void**>("  %s");
+                    fun_8048ce4(eax80, "  %s", v14, v13, v81, v82, v83, v8, v84, v85, v86, v87, v88, v89, v90);
                 }
                 ++v11;
             }
@@ -7593,16 +7593,16 @@ void** list_binaries(void** a1, void** a2, void** a3, void** a4, void** a5, void
         eax97 = stdout;
         v98 = eax97;
         v99 = reinterpret_cast<void**>(9);
-        v100 = reinterpret_cast<void**>(0x8054bb4);
-        fun_8048cd4(0x8054bb4, 1, 9, v98, v101);
+        v100 = reinterpret_cast<void**>("  None.\n\n");
+        fun_8048cd4("  None.\n\n", 1, 9, v98, v101);
         goto addr_804a919_13;
     }
     addr_804a8f1_14:
     eax102 = stdout;
     v98 = eax102;
     v99 = reinterpret_cast<void**>(2);
-    v100 = reinterpret_cast<void**>(0x8054bd4);
-    fun_8048cd4(0x8054bd4, 1, 2, v98, v103);
+    v100 = reinterpret_cast<void**>("\n\n");
+    fun_8048cd4("\n\n", 1, 2, v98, v103);
     addr_804a919_13:
     eax104 = reinterpret_cast<void**>(v10 ^ g14);
     if (eax104) {
@@ -7611,7 +7611,7 @@ void** list_binaries(void** a1, void** a2, void** a3, void** a4, void** a5, void
     return eax104;
     addr_804a8c9_11:
     eax117 = stdout;
-    fun_8048cd4(0x8054bcc, 1, 7, eax117, v118);
+    fun_8048cd4("  None.", 1, 7, eax117, v118);
     goto addr_804a8f1_14;
 }
 
@@ -8115,157 +8115,157 @@ void** source_install(void** a1, void** a2, void** a3, void** a4, void** a5, voi
         eax22 = fun_8048a94(a2, v11, v16, v17, v18, v19, v20, v21);
         v23 = *eax22;
         eax30 = fun_8048ad4(v23, v11, v24, v25, v26, v27, v28, v29);
-        print_error(0xfffffffb, 0x8056338, eax30, v31, v32, v33, v34, v35, v36);
+        print_error(0xfffffffb, "installation directory invalid: %s\n", eax30, v31, v32, v33, v34, v35, v36);
     }
-    fun_8048aa4(0x80592a0, 0x805635c, a2, v37, v38, v39, v40, v41, v42, v43, v44, v45, a7, a3, a2, a1, v46);
-    fun_8048ca4(0x80592a0, 0x805635c, a2, v47, v48);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x805636c, a2, v49, v50, v51, v52, v53, v54, v55, v56, v57, a7, a3, a2, a1, v58);
+    fun_8048aa4(0x80592a0, "GINSTALL_DST=%s", a2, v37, v38, v39, v40, v41, v42, v43, v44, v45, a7, a3, a2, a1, v46);
+    fun_8048ca4(0x80592a0, "GINSTALL_DST=%s", a2, v47, v48);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%s/include", a2, v49, v50, v51, v52, v53, v54, v55, v56, v57, a7, a3, a2, a1, v58);
     v59 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
-    fun_8048aa4(0x8059aa0, 0x8056377, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, a7, a3, a2, a1, v69);
-    fun_8048ca4(0x8059aa0, 0x8056377, v59, v70, v71);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x8056387, a2, v72, v73, v74, v75, v76, v77, v78, v79, v80, a7, a3, a2, a1, v81);
+    fun_8048aa4(0x8059aa0, "GINSTALL_INC=%s", v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, a7, a3, a2, a1, v69);
+    fun_8048ca4(0x8059aa0, "GINSTALL_INC=%s", v59, v70, v71);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%s/lib", a2, v72, v73, v74, v75, v76, v77, v78, v79, v80, a7, a3, a2, a1, v81);
     v82 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
-    fun_8048aa4(0x805a2a0, 0x805638e, v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, a7, a3, a2, a1, v92);
-    fun_8048ca4(0x805a2a0, 0x805638e, v82, v93, v94);
-    fun_8048aa4(0x805eaa0, 0x805639e, a2, v95, v96, v97, v98, v99, v100, v101, v102, v103, a7, a3, a2, a1, v104);
-    fun_8048ca4(0x805eaa0, 0x805639e, a2, v105, v106);
-    eax112 = fun_8048d94(a7, 0x805639e, a2, v107, v108, v109, v110, v111);
-    eax118 = fun_8048d54(eax112, 0x8055edb, a2, v113, v114, v115, v116, v117);
-    eax124 = fun_8048d54(0, 0x8055edb, a2, v119, v120, v121, v122, v123);
-    eax130 = fun_8048d54(0, 0x8055edb, a2, v125, v126, v127, v128, v129);
+    fun_8048aa4(0x805a2a0, "GINSTALL_LIB=%s", v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, a7, a3, a2, a1, v92);
+    fun_8048ca4(0x805a2a0, "GINSTALL_LIB=%s", v82, v93, v94);
+    fun_8048aa4(0x805eaa0, "GEM_GRASS_DIR=%s", a2, v95, v96, v97, v98, v99, v100, v101, v102, v103, a7, a3, a2, a1, v104);
+    fun_8048ca4(0x805eaa0, "GEM_GRASS_DIR=%s", a2, v105, v106);
+    eax112 = fun_8048d94(a7, "GEM_GRASS_DIR=%s", a2, v107, v108, v109, v110, v111);
+    eax118 = fun_8048d54(eax112, ".", a2, v113, v114, v115, v116, v117);
+    eax124 = fun_8048d54(0, ".", a2, v119, v120, v121, v122, v123);
+    eax130 = fun_8048d54(0, ".", a2, v125, v126, v127, v128, v129);
     eax136 = fun_8048be4(eax118, 0, 10, v131, v132, v133, v134, v135);
     eax142 = fun_8048be4(eax124, 0, 10, v137, v138, v139, v140, v141);
     fun_8048be4(eax130, 0, 10, v143, v144, v145, v146, v147);
     fun_8048bf4(eax112, 0, 10, v148, v149, v150, v151, v152, v153, v154, v155, v156, a7, a3, a2);
     atexit(exit_tmp, 0, 10, v157, v158, v159, v160, v161);
     eax164 = basename(a1, 0, 10, v162, v163);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, 0x80563af, eax164, v165, v166, v167, v168, v169, v170, v171, v172, v173, a7, a3, a2, a1, v174);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, "%s/src", eax164, v165, v166, v167, v168, v169, v170, v171, v172, v173, a7, a3, a2, a1, v174);
     v175 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4);
-    eax178 = fun_8048c94(v175, 0x80563af, eax164, v176, v177);
+    eax178 = fun_8048c94(v175, "%s/src", eax164, v176, v177);
     if (reinterpret_cast<signed char>(eax178) < reinterpret_cast<signed char>(0)) {
-        eax184 = fun_8048a94(v175, 0x80563af, eax164, v179, v180, v181, v182, v183);
+        eax184 = fun_8048a94(v175, "%s/src", eax164, v179, v180, v181, v182, v183);
         v185 = *eax184;
-        eax191 = fun_8048ad4(v185, 0x80563af, eax164, v186, v187, v188, v189, v190);
+        eax191 = fun_8048ad4(v185, "%s/src", eax164, v186, v187, v188, v189, v190);
         v192 = eax191;
-        print_error(0xfffffffe, 0x80563b8, a1, v192, v193, v194, v195, v196, v197);
+        print_error(0xfffffffe, "extension files in '%s' not accessible: %s\n", a1, v192, v193, v194, v195, v196, v197);
     }
     eax198 = SKIP_CFG;
     if (!eax198) {
         eax199 = VERBOSE;
         if (!eax199) {
             eax200 = stdout;
-            fun_8048cd4(0x8056408, 1, 14, eax200, v201);
+            fun_8048cd4("Configuring...", 1, 14, eax200, v201);
             v192 = reinterpret_cast<void**>(0x806aae0);
-            v202 = reinterpret_cast<void**>(0x8056417);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffd7f4, 0x8056417, 0x806b2e0, 0x806aae0, 0x80672c0, v203, v204, v205, v206, v207, v208, v209, a7, a3, a2, a1, v210);
+            v202 = reinterpret_cast<void**>("sh %s %s --quiet &> %s");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffd7f4, "sh %s %s --quiet &> %s", 0x806b2e0, 0x806aae0, 0x80672c0, v203, v204, v205, v206, v207, v208, v209, a7, a3, a2, a1, v210);
             v211 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffd7f4);
-            eax214 = fun_8048b84(v211, 0x8056417, 0x806b2e0, 0x806aae0, 0x80672c0, v212, v213);
+            eax214 = fun_8048b84(v211, "sh %s %s --quiet &> %s", 0x806b2e0, 0x806aae0, 0x80672c0, v212, v213);
             v215 = eax214;
         } else {
             eax216 = stdout;
-            fun_8048cd4(0x80563e4, 1, 26, eax216, v217);
+            fun_8048cd4("Running configure script:\n", 1, 26, eax216, v217);
             v192 = reinterpret_cast<void**>(0x806aae0);
-            v202 = reinterpret_cast<void**>(0x80563ff);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffd7f4, 0x80563ff, 0x806b2e0, 0x806aae0, v218, v219, v220, v221, v222, v223, v224, v225, a7, a3, a2, a1, v226);
+            v202 = reinterpret_cast<void**>("sh %s %s");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffd7f4, "sh %s %s", 0x806b2e0, 0x806aae0, v218, v219, v220, v221, v222, v223, v224, v225, a7, a3, a2, a1, v226);
             v211 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffd7f4);
-            eax230 = fun_8048b84(v211, 0x80563ff, 0x806b2e0, 0x806aae0, v227, v228, v229);
+            eax230 = fun_8048b84(v211, "sh %s %s", 0x806b2e0, 0x806aae0, v227, v228, v229);
             v215 = eax230;
         }
         if (reinterpret_cast<int1_t>(v215 == 0xffffffff)) {
-            v202 = reinterpret_cast<void**>(0x8056430);
+            v202 = reinterpret_cast<void**>("could not run configure script.\n");
             v211 = reinterpret_cast<void**>(0xffffffe5);
-            print_error(0xffffffe5, 0x8056430, 0x806b2e0, 0x806aae0, 0x80672c0, v231, v232, v233, v234);
+            print_error(0xffffffe5, "could not run configure script.\n", 0x806b2e0, 0x806aae0, 0x80672c0, v231, v232, v233, v234);
         }
         if (reinterpret_cast<signed char>(v215) > reinterpret_cast<signed char>(0)) {
-            v202 = reinterpret_cast<void**>(0x8056451);
+            v202 = reinterpret_cast<void**>("system configuration failed.\n");
             v211 = reinterpret_cast<void**>(0xfffffffd);
-            print_error(0xfffffffd, 0x8056451, 0x806b2e0, 0x806aae0, 0x80672c0, v235, v236, v237, v238);
+            print_error(0xfffffffd, "system configuration failed.\n", 0x806b2e0, 0x806aae0, 0x80672c0, v235, v236, v237, v238);
         }
         print_done(v211, v202, 0x806b2e0, 0x806aae0, 0x80672c0, v239, v240, v241, v242, v243, v244, v245, a7, a3, a2, a1, v246);
         print_cfg(v211, v202, 0x806b2e0, 0x806aae0, 0x80672c0);
     }
-    fun_8048aa4(0x805b2a0, 0x805646f, a3, v192, 0x80672c0, v247, v248, v249, v250, v251, v252, v253, a7, a3, a2, a1, v254);
-    fun_8048ca4(0x805b2a0, 0x805646f, a3, v192, 0x80672c0);
+    fun_8048aa4(0x805b2a0, "GEM_EXT_NAME=%s", a3, v192, 0x80672c0, v247, v248, v249, v250, v251, v252, v253, a7, a3, a2, a1, v254);
+    fun_8048ca4(0x805b2a0, "GEM_EXT_NAME=%s", a3, v192, 0x80672c0);
     v255 = a6;
     v256 = a5;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x8055f03, a4, v256, v255, v257, v258, v259, v260, v261, v262, v263, a7, a3, a2, a1, v264);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%i.%i.%i", a4, v256, v255, v257, v258, v259, v260, v261, v262, v263, a7, a3, a2, a1, v264);
     v265 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
-    fun_8048aa4(0x805baa0, 0x805647f, v265, v256, v255, v266, v267, v268, v269, v270, v271, v272, a7, a3, a2, a1, v273);
-    fun_8048ca4(0x805baa0, 0x805647f, v265, v256, v255);
-    dump_html(0x8056492, 0x8064ac0, v265, v256, v255);
-    dump_html(0x80564a1, 0x80652c0, v265, v256, v255);
-    dump_html(0x80564a9, 0x8065ac0, v265, v256, v255);
-    dump_html(0x80564b4, 0x80662c0, v265, v256, v255);
-    dump_html(0x80564bc, 0x8066ac0, v265, v256, v255);
-    fun_8048aa4(0x805c2a0, 0x80564c7, 0x8064ac0, v256, v255, v274, v275, v276, v277, v278, v279, v280, a7, a3, a2, a1, v281);
-    fun_8048ca4(0x805c2a0, 0x80564c7, 0x8064ac0, v256, v255);
-    fun_8048aa4(0x805caa0, 0x80564d8, 0x80652c0, v256, v255, v282, v283, v284, v285, v286, v287, v288, a7, a3, a2, a1, v289);
-    fun_8048ca4(0x805caa0, 0x80564d8, 0x80652c0, v256, v255);
-    fun_8048aa4(0x805d2a0, 0x80564e8, 0x8065ac0, v256, v255, v290, v291, v292, v293, v294, v295, v296, a7, a3, a2, a1, v297);
-    fun_8048ca4(0x805d2a0, 0x80564e8, 0x8065ac0, v256, v255);
-    fun_8048aa4(0x805daa0, 0x80564f8, 0x80662c0, v256, v255, v298, v299, v300, v301, v302, v303, v304, a7, a3, a2, a1, v305);
-    fun_8048ca4(0x805daa0, 0x80564f8, 0x80662c0, v256, v255);
-    fun_8048aa4(0x805e2a0, 0x8056508, 0x8066ac0, v256, v255, v306, v307, v308, v309, v310, v311, v312, a7, a3, a2, a1, v313);
-    fun_8048ca4(0x805e2a0, 0x8056508, 0x8066ac0, v256, v255);
-    atexit(exit_tmp, 0x8056508, 0x8066ac0, v256, v255, v314, v315, v316);
+    fun_8048aa4(0x805baa0, "GEM_EXT_VERSION=%s", v265, v256, v255, v266, v267, v268, v269, v270, v271, v272, a7, a3, a2, a1, v273);
+    fun_8048ca4(0x805baa0, "GEM_EXT_VERSION=%s", v265, v256, v255);
+    dump_html("../description", 0x8064ac0, v265, v256, v255);
+    dump_html("../info", 0x80652c0, v265, v256, v255);
+    dump_html("../depends", 0x8065ac0, v265, v256, v255);
+    dump_html("../bugs", 0x80662c0, v265, v256, v255);
+    dump_html("../authors", 0x8066ac0, v265, v256, v255);
+    fun_8048aa4(0x805c2a0, "GEM_EXT_DESCR=%s", 0x8064ac0, v256, v255, v274, v275, v276, v277, v278, v279, v280, a7, a3, a2, a1, v281);
+    fun_8048ca4(0x805c2a0, "GEM_EXT_DESCR=%s", 0x8064ac0, v256, v255);
+    fun_8048aa4(0x805caa0, "GEM_EXT_INFO=%s", 0x80652c0, v256, v255, v282, v283, v284, v285, v286, v287, v288, a7, a3, a2, a1, v289);
+    fun_8048ca4(0x805caa0, "GEM_EXT_INFO=%s", 0x80652c0, v256, v255);
+    fun_8048aa4(0x805d2a0, "GEM_EXT_DEPS=%s", 0x8065ac0, v256, v255, v290, v291, v292, v293, v294, v295, v296, a7, a3, a2, a1, v297);
+    fun_8048ca4(0x805d2a0, "GEM_EXT_DEPS=%s", 0x8065ac0, v256, v255);
+    fun_8048aa4(0x805daa0, "GEM_EXT_BUGS=%s", 0x80662c0, v256, v255, v298, v299, v300, v301, v302, v303, v304, a7, a3, a2, a1, v305);
+    fun_8048ca4(0x805daa0, "GEM_EXT_BUGS=%s", 0x80662c0, v256, v255);
+    fun_8048aa4(0x805e2a0, "GEM_EXT_AUTHORS=%s", 0x8066ac0, v256, v255, v306, v307, v308, v309, v310, v311, v312, a7, a3, a2, a1, v313);
+    fun_8048ca4(0x805e2a0, "GEM_EXT_AUTHORS=%s", 0x8066ac0, v256, v255);
+    atexit(exit_tmp, "GEM_EXT_AUTHORS=%s", 0x8066ac0, v256, v255, v314, v315, v316);
     check_dependencies(a1, a2, a7, v256, v255, v317);
     eax318 = VERBOSE;
     if (!eax318) {
         eax319 = stdout;
-        fun_8048cd4(0x8056539, 1, 12, eax319, v255);
+        fun_8048cd4("Compiling...", 1, 12, eax319, v255);
         v256 = reinterpret_cast<void**>(0x80672c0);
-        v320 = reinterpret_cast<void**>(0x8056546);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffd7f4, 0x8056546, 0x806bae0, 0x80672c0, v255, v321, v322, v323, v324, v325, v326, v327, a7, a3, a2, a1, v328);
+        v320 = reinterpret_cast<void**>("%s -f Makefile &> %s");
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffd7f4, "%s -f Makefile &> %s", 0x806bae0, 0x80672c0, v255, v321, v322, v323, v324, v325, v326, v327, a7, a3, a2, a1, v328);
         v329 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffd7f4);
-        eax332 = fun_8048b84(v329, 0x8056546, 0x806bae0, 0x80672c0, v255, v330, v331);
+        eax332 = fun_8048b84(v329, "%s -f Makefile &> %s", 0x806bae0, 0x80672c0, v255, v330, v331);
         v333 = eax332;
     } else {
         eax334 = stdout;
-        fun_8048ce4(eax334, 0x805651b, 0x806bae0, v256, v255, v335, v336, v337, v338, v339, v340, v341, a7, a3, a2);
-        v320 = reinterpret_cast<void**>(0x805652a);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffd7f4, 0x805652a, 0x806bae0, v256, v255, v342, v343, v344, v345, v346, v347, v348, a7, a3, a2, a1, v349);
+        fun_8048ce4(eax334, "Running '%s':\n", 0x806bae0, v256, v255, v335, v336, v337, v338, v339, v340, v341, a7, a3, a2);
+        v320 = reinterpret_cast<void**>("%s -f Makefile");
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffd7f4, "%s -f Makefile", 0x806bae0, v256, v255, v342, v343, v344, v345, v346, v347, v348, a7, a3, a2, a1, v349);
         v329 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffd7f4);
-        eax352 = fun_8048b84(v329, 0x805652a, 0x806bae0, v256, v255, v350, v351);
+        eax352 = fun_8048b84(v329, "%s -f Makefile", 0x806bae0, v256, v255, v350, v351);
         v333 = eax352;
     }
     if (reinterpret_cast<int1_t>(v333 == 0xffffffff) && (eax353 = VERBOSE, !eax353)) {
-        v320 = reinterpret_cast<void**>(0x805655c);
+        v320 = reinterpret_cast<void**>("could not run '%s' do you have make tools installed?\n");
         v329 = reinterpret_cast<void**>(0xfffffff7);
-        print_error(0xfffffff7, 0x805655c, 0x806bae0, v256, v255, v354, v355, v356, v357);
+        print_error(0xfffffff7, "could not run '%s' do you have make tools installed?\n", 0x806bae0, v256, v255, v354, v355, v356, v357);
     }
     if (reinterpret_cast<signed char>(v333) > reinterpret_cast<signed char>(0)) {
-        v320 = reinterpret_cast<void**>(0x8056594);
+        v320 = reinterpret_cast<void**>("source code could not be compiled.\n \t\t\tRun again with option -v to see what is causing trouble.\n");
         v329 = reinterpret_cast<void**>(0xfffffffc);
-        print_error(0xfffffffc, 0x8056594, 0x806bae0, v256, v255, v358, v359, v360, v361);
+        print_error(0xfffffffc, "source code could not be compiled.\n \t\t\tRun again with option -v to see what is causing trouble.\n", 0x806bae0, v256, v255, v358, v359, v360, v361);
     }
     print_done(v329, v320, 0x806bae0, v256, v255, v362, v363, v364, v365, v366, v367, v368, a7, a3, a2, a1, v369);
     eax370 = stdout;
-    fun_8048cd4(0x80565f5, 1, 13, eax370, v255);
-    eax376 = fun_8048c74(0x8056603, 0x8055e6b, 13, eax370, v255, v371, v372, v373, v374, v375);
+    fun_8048cd4("Installing...", 1, 13, eax370, v255);
+    eax376 = fun_8048c74("../uninstall", "r", 13, eax370, v255, v371, v372, v373, v374, v375);
     if (eax376) {
         eax377 = VERBOSE;
         if (!eax377) {
             v255 = reinterpret_cast<void**>(0x80672c0);
             v378 = a3;
             v379 = a2;
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x80566b0, v379, v378, 0x80672c0, v380, v381, v382, v383, v384, v385, v386, a7, a3, a2, a1, v387);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "cp -f ../uninstall %s/etc/uninstall.%s &> %s ;", v379, v378, 0x80672c0, v380, v381, v382, v383, v384, v385, v386, a7, a3, a2, a1, v387);
             v388 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
             fun_8048c84(0x806a2e0, v388, v379, v378, 0x80672c0, v389, v390, v391, v392, v393, v394, v395, a7, a3, a2, a1, v396);
         } else {
             v378 = a3;
             v379 = a2;
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x8056684, v379, v378, v255, v397, v398, v399, v400, v401, v402, v403, a7, a3, a2, a1, v404);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "cp -vf ../uninstall %s/etc/uninstall.%s ;", v379, v378, v255, v397, v398, v399, v400, v401, v402, v403, a7, a3, a2, a1, v404);
             v388 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
             fun_8048c84(0x806a2e0, v388, v379, v378, v255, v405, v406, v407, v408, v409, v410, v411, a7, a3, a2, a1, v412);
         }
         fun_8048c44(eax376, v388, v379, v378, v255, v413, v414, v415, v416, v417, v418, v419, a7, a3, a2);
     } else {
-        eax423 = fun_8048a94(0x8056603, 0x8055e6b, 13, eax370, v255, v420, v421, v422);
+        eax423 = fun_8048a94("../uninstall", "r", 13, eax370, v255, v420, v421, v422);
         v424 = *eax423;
-        eax428 = fun_8048ad4(v424, 0x8055e6b, 13, eax370, v255, v425, v426, v427);
-        print_warning(0x8056610, eax428, 13, eax370, v255, v429, v430, v431, v432, v433, v434, v435, a7, a3, a2);
+        eax428 = fun_8048ad4(v424, "r", 13, eax370, v255, v425, v426, v427);
+        print_warning("error checking for uninstall script: %s\n \t\t\t\tUninstalling this extension may leave orphaned files on your system", eax428, 13, eax370, v255, v429, v430, v431, v432, v433, v434, v435, a7, a3, a2);
     }
-    register_extension(a2, 0x80566df, a3, a4, a5, a6);
+    register_extension(a2, "src", a3, a4, a5, a6);
     check_dependencies(a1, a2, a7, a4, a5, a6);
     if (reinterpret_cast<int1_t>(eax136 == 6) && reinterpret_cast<signed char>(eax142) <= reinterpret_cast<signed char>(0)) {
         register_entries_gisman(a3, a2, a7, a4, a5, a6);
@@ -8278,24 +8278,24 @@ void** source_install(void** a1, void** a2, void** a3, void** a4, void** a5, voi
         v438 = a2;
         v439 = reinterpret_cast<void**>(0x8063ac0);
         v440 = reinterpret_cast<void**>(0x80672c0);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, 0x8056760, 0x806bae0, 0x80672c0, 0x8063ac0, v438, 0x80672c0, v437, 0x80672c0, v441, v442, v443, a7, a3, a2, a1, v444);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, "%s -f Makefile -s install &> %s ; \t\t\t\t\tcp -f %s %s/etc/extensions.db &> %s ; chmod a+r %s/etc/extensions.db &> %s ;", 0x806bae0, 0x80672c0, 0x8063ac0, v438, 0x80672c0, v437, 0x80672c0, v441, v442, v443, a7, a3, a2, a1, v444);
     } else {
         eax445 = stdout;
-        fun_8048ce4(eax445, 0x80566e3, 0x806bae0, a5, a6, a6, v446, v447, v448, v449, v450, v451, a7, a3, a2);
+        fun_8048ce4(eax445, "Running '%s install':\n", 0x806bae0, a5, a6, a6, v446, v447, v448, v449, v450, v451, a7, a3, a2);
         v438 = a2;
         v439 = a2;
         v440 = reinterpret_cast<void**>(0x8063ac0);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, 0x80566fc, 0x806bae0, 0x8063ac0, v439, v438, v452, v453, v454, v455, v456, v457, a7, a3, a2, a1, v458);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, "%s -f Makefile install ; \t\t\t\t\tcp -vf %s %s/etc/extensions.db ; chmod -v a+r %s/etc/extensions.db ;", 0x806bae0, 0x8063ac0, v439, v438, v452, v453, v454, v455, v456, v457, a7, a3, a2, a1, v458);
     }
     eax459 = VERBOSE;
     if (!eax459) {
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffdff4, 0x80567df, 0x80672c0, v440, v439, v438, 0x80672c0, v437, 0x80672c0, v460, v461, v462, a7, a3, a2, a1, v463);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffdff4, "sh ../post &> %s", 0x80672c0, v440, v439, v438, 0x80672c0, v437, 0x80672c0, v460, v461, v462, a7, a3, a2, a1, v463);
     } else {
-        fun_8048c54(reinterpret_cast<int32_t>(ebp9) + 0xffffdff4, 0x80567d4, 11, v440, v439, v438, 0x80672c0, v437, 0x80672c0, v464, v465, v466, a7, a3, a2);
+        fun_8048c54(reinterpret_cast<int32_t>(ebp9) + 0xffffdff4, "sh ../post", 11, v440, v439, v438, 0x80672c0, v437, 0x80672c0, v464, v465, v466, a7, a3, a2);
     }
     v467 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffdff4);
     v468 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x80567f0, v468, 0x806a2e0, 0x80682e0, 0x8068ae0, 0x80692e0, v467, 0x80672c0, v469, v470, v471, a7, a3, a2, a1, v472);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%s %s %s %s %s %s", v468, 0x806a2e0, 0x80682e0, 0x8068ae0, 0x80692e0, v467, 0x80672c0, v469, v470, v471, a7, a3, a2, a1, v472);
     v473 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
     su(a2, v473, v468, 0x806a2e0, 0x80682e0, 0x8068ae0, 0x80692e0, v467, 0x80672c0, v474, v475, v476, a7, a3, a2, a1, v477);
     print_done(a2, v473, v468, 0x806a2e0, 0x80682e0, 0x8068ae0, 0x80692e0, v467, 0x80672c0, v478, v479, v480, a7, a3, a2, a1, v481);
@@ -8775,24 +8775,24 @@ void** bin_install(void** a1, void** a2, void** a3, void** a4, void** a5, void**
         eax22 = fun_8048a94(a2, v11, v16, v17, v18, v19, v20, v21);
         v23 = *eax22;
         eax30 = fun_8048ad4(v23, v11, v24, v25, v26, v27, v28, v29);
-        print_error(0xfffffffb, 0x8056338, eax30, v31, v32, v33, v34, v35, v36);
+        print_error(0xfffffffb, "installation directory invalid: %s\n", eax30, v31, v32, v33, v34, v35, v36);
     }
-    fun_8048aa4(0x80592a0, 0x805635c, a2, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, a8, a4);
-    fun_8048ca4(0x80592a0, 0x805635c, a2, v49, v50);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x805636c, a2, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, a8, a4);
+    fun_8048aa4(0x80592a0, "GINSTALL_DST=%s", a2, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, a8, a4);
+    fun_8048ca4(0x80592a0, "GINSTALL_DST=%s", a2, v49, v50);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%s/include", a2, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, a8, a4);
     v63 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
-    fun_8048aa4(0x8059aa0, 0x8056377, v63, v64, v65, v66, v67, v68, v69, v70, v71, v72, v73, v74, v75, a8, a4);
-    fun_8048ca4(0x8059aa0, 0x8056377, v63, v76, v77);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x8056387, a2, v78, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89, a8, a4);
+    fun_8048aa4(0x8059aa0, "GINSTALL_INC=%s", v63, v64, v65, v66, v67, v68, v69, v70, v71, v72, v73, v74, v75, a8, a4);
+    fun_8048ca4(0x8059aa0, "GINSTALL_INC=%s", v63, v76, v77);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%s/lib", a2, v78, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89, a8, a4);
     v90 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
-    fun_8048aa4(0x805a2a0, 0x805638e, v90, v91, v92, v93, v94, v95, v96, v97, v98, v99, v100, v101, v102, a8, a4);
-    fun_8048ca4(0x805a2a0, 0x805638e, v90, v103, v104);
-    fun_8048aa4(0x805eaa0, 0x805639e, a2, v105, v106, v107, v108, v109, v110, v111, v112, v113, v114, v115, v116, a8, a4);
-    fun_8048ca4(0x805eaa0, 0x805639e, a2, v117, v118);
-    eax124 = fun_8048d94(a8, 0x805639e, a2, v119, v120, v121, v122, v123);
-    eax130 = fun_8048d54(eax124, 0x8055edb, a2, v125, v126, v127, v128, v129);
-    eax136 = fun_8048d54(0, 0x8055edb, a2, v131, v132, v133, v134, v135);
-    eax142 = fun_8048d54(0, 0x8055edb, a2, v137, v138, v139, v140, v141);
+    fun_8048aa4(0x805a2a0, "GINSTALL_LIB=%s", v90, v91, v92, v93, v94, v95, v96, v97, v98, v99, v100, v101, v102, a8, a4);
+    fun_8048ca4(0x805a2a0, "GINSTALL_LIB=%s", v90, v103, v104);
+    fun_8048aa4(0x805eaa0, "GEM_GRASS_DIR=%s", a2, v105, v106, v107, v108, v109, v110, v111, v112, v113, v114, v115, v116, a8, a4);
+    fun_8048ca4(0x805eaa0, "GEM_GRASS_DIR=%s", a2, v117, v118);
+    eax124 = fun_8048d94(a8, "GEM_GRASS_DIR=%s", a2, v119, v120, v121, v122, v123);
+    eax130 = fun_8048d54(eax124, ".", a2, v125, v126, v127, v128, v129);
+    eax136 = fun_8048d54(0, ".", a2, v131, v132, v133, v134, v135);
+    eax142 = fun_8048d54(0, ".", a2, v137, v138, v139, v140, v141);
     eax148 = fun_8048be4(eax130, 0, 10, v143, v144, v145, v146, v147);
     eax154 = fun_8048be4(eax136, 0, 10, v149, v150, v151, v152, v153);
     fun_8048be4(eax142, 0, 10, v155, v156, v157, v158, v159);
@@ -8800,65 +8800,65 @@ void** bin_install(void** a1, void** a2, void** a3, void** a4, void** a5, void**
     atexit(exit_tmp, 0, 10, v172, v173, v174, v175, v176);
     eax179 = basename(a1, 0, 10, v177, v178);
     v180 = a3;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, 0x8056802, eax179, v180, v181, v182, v183, v184, v185, v186, v187, v188, v189, v190, v191, a8, a4);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, "%s/%s", eax179, v180, v181, v182, v183, v184, v185, v186, v187, v188, v189, v190, v191, a8, a4);
     v192 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4);
-    eax194 = fun_8048c94(v192, 0x8056802, eax179, v180, v193);
+    eax194 = fun_8048c94(v192, "%s/%s", eax179, v180, v193);
     if (reinterpret_cast<signed char>(eax194) < reinterpret_cast<signed char>(0)) {
-        eax199 = fun_8048a94(v192, 0x8056802, eax179, v180, v195, v196, v197, v198);
+        eax199 = fun_8048a94(v192, "%s/%s", eax179, v180, v195, v196, v197, v198);
         v200 = *eax199;
-        eax205 = fun_8048ad4(v200, 0x8056802, eax179, v180, v201, v202, v203, v204);
+        eax205 = fun_8048ad4(v200, "%s/%s", eax179, v180, v201, v202, v203, v204);
         v180 = eax205;
-        print_error(0xfffffffe, 0x8056808, a1, v180, v206, v207, v208, v209, v210);
+        print_error(0xfffffffe, "extension file binaries in '%s' not accessible: %s\n", a1, v180, v206, v207, v208, v209, v210);
     }
-    fun_8048aa4(0x805b2a0, 0x805646f, a4, v180, v211, v212, v213, v214, v215, v216, v217, v218, v219, v220, v221, a8, a4);
-    fun_8048ca4(0x805b2a0, 0x805646f, a4, v180, v222);
+    fun_8048aa4(0x805b2a0, "GEM_EXT_NAME=%s", a4, v180, v211, v212, v213, v214, v215, v216, v217, v218, v219, v220, v221, a8, a4);
+    fun_8048ca4(0x805b2a0, "GEM_EXT_NAME=%s", a4, v180, v222);
     v223 = a7;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x8055f03, a5, a6, v223, v224, v225, v226, v227, v228, v229, v230, v231, v232, v233, a8, a4);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%i.%i.%i", a5, a6, v223, v224, v225, v226, v227, v228, v229, v230, v231, v232, v233, a8, a4);
     v234 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
-    fun_8048aa4(0x805baa0, 0x805647f, v234, a6, v223, v235, v236, v237, v238, v239, v240, v241, v242, v243, v244, a8, a4);
-    fun_8048ca4(0x805baa0, 0x805647f, v234, a6, v223);
-    dump_html(0x8056492, 0x8064ac0, v234, a6, v223);
-    dump_html(0x80564a1, 0x80652c0, v234, a6, v223);
-    dump_html(0x80564a9, 0x8065ac0, v234, a6, v223);
-    dump_html(0x80564b4, 0x80662c0, v234, a6, v223);
-    dump_html(0x80564bc, 0x8066ac0, v234, a6, v223);
-    fun_8048aa4(0x805c2a0, 0x80564c7, 0x8064ac0, a6, v223, v245, v246, v247, v248, v249, v250, v251, v252, v253, v254, a8, a4);
-    fun_8048ca4(0x805c2a0, 0x80564c7, 0x8064ac0, a6, v223);
-    fun_8048aa4(0x805caa0, 0x80564d8, 0x80652c0, a6, v223, v255, v256, v257, v258, v259, v260, v261, v262, v263, v264, a8, a4);
-    fun_8048ca4(0x805caa0, 0x80564d8, 0x80652c0, a6, v223);
-    fun_8048aa4(0x805d2a0, 0x80564e8, 0x8065ac0, a6, v223, v265, v266, v267, v268, v269, v270, v271, v272, v273, v274, a8, a4);
-    fun_8048ca4(0x805d2a0, 0x80564e8, 0x8065ac0, a6, v223);
-    fun_8048aa4(0x805daa0, 0x80564f8, 0x80662c0, a6, v223, v275, v276, v277, v278, v279, v280, v281, v282, v283, v284, a8, a4);
-    fun_8048ca4(0x805daa0, 0x80564f8, 0x80662c0, a6, v223);
-    fun_8048aa4(0x805e2a0, 0x8056508, 0x8066ac0, a6, v223, v285, v286, v287, v288, v289, v290, v291, v292, v293, v294, a8, a4);
-    fun_8048ca4(0x805e2a0, 0x8056508, 0x8066ac0, a6, v223);
-    atexit(exit_tmp, 0x8056508, 0x8066ac0, a6, v223, v295, v296, v297);
+    fun_8048aa4(0x805baa0, "GEM_EXT_VERSION=%s", v234, a6, v223, v235, v236, v237, v238, v239, v240, v241, v242, v243, v244, a8, a4);
+    fun_8048ca4(0x805baa0, "GEM_EXT_VERSION=%s", v234, a6, v223);
+    dump_html("../description", 0x8064ac0, v234, a6, v223);
+    dump_html("../info", 0x80652c0, v234, a6, v223);
+    dump_html("../depends", 0x8065ac0, v234, a6, v223);
+    dump_html("../bugs", 0x80662c0, v234, a6, v223);
+    dump_html("../authors", 0x8066ac0, v234, a6, v223);
+    fun_8048aa4(0x805c2a0, "GEM_EXT_DESCR=%s", 0x8064ac0, a6, v223, v245, v246, v247, v248, v249, v250, v251, v252, v253, v254, a8, a4);
+    fun_8048ca4(0x805c2a0, "GEM_EXT_DESCR=%s", 0x8064ac0, a6, v223);
+    fun_8048aa4(0x805caa0, "GEM_EXT_INFO=%s", 0x80652c0, a6, v223, v255, v256, v257, v258, v259, v260, v261, v262, v263, v264, a8, a4);
+    fun_8048ca4(0x805caa0, "GEM_EXT_INFO=%s", 0x80652c0, a6, v223);
+    fun_8048aa4(0x805d2a0, "GEM_EXT_DEPS=%s", 0x8065ac0, a6, v223, v265, v266, v267, v268, v269, v270, v271, v272, v273, v274, a8, a4);
+    fun_8048ca4(0x805d2a0, "GEM_EXT_DEPS=%s", 0x8065ac0, a6, v223);
+    fun_8048aa4(0x805daa0, "GEM_EXT_BUGS=%s", 0x80662c0, a6, v223, v275, v276, v277, v278, v279, v280, v281, v282, v283, v284, a8, a4);
+    fun_8048ca4(0x805daa0, "GEM_EXT_BUGS=%s", 0x80662c0, a6, v223);
+    fun_8048aa4(0x805e2a0, "GEM_EXT_AUTHORS=%s", 0x8066ac0, a6, v223, v285, v286, v287, v288, v289, v290, v291, v292, v293, v294, a8, a4);
+    fun_8048ca4(0x805e2a0, "GEM_EXT_AUTHORS=%s", 0x8066ac0, a6, v223);
+    atexit(exit_tmp, "GEM_EXT_AUTHORS=%s", 0x8066ac0, a6, v223, v295, v296, v297);
     check_dependencies(a1, a2, a8, a6, v223, v298);
     eax299 = stdout;
-    fun_8048cd4(0x80565f5, 1, 13, eax299, v223);
-    eax305 = fun_8048c74(0x8056603, 0x8055e6b, 13, eax299, v223, v300, v301, v302, v303, v304);
+    fun_8048cd4("Installing...", 1, 13, eax299, v223);
+    eax305 = fun_8048c74("../uninstall", "r", 13, eax299, v223, v300, v301, v302, v303, v304);
     if (eax305) {
         eax306 = VERBOSE;
         if (!eax306) {
             v223 = reinterpret_cast<void**>(0x80672c0);
             v307 = a4;
             v308 = a2;
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x80566b0, v308, v307, 0x80672c0, v309, v310, v311, v312, v313, v314, v315, v316, v317, v318, a8, a4);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "cp -f ../uninstall %s/etc/uninstall.%s &> %s ;", v308, v307, 0x80672c0, v309, v310, v311, v312, v313, v314, v315, v316, v317, v318, a8, a4);
             v319 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
             fun_8048c84(0x806a2e0, v319, v308, v307, 0x80672c0, v320, v321, v322, v323, v324, v325, v326, v327, v328, v329, a8, a4);
         } else {
             v307 = a4;
             v308 = a2;
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x8056684, v308, v307, v223, v330, v331, v332, v333, v334, v335, v336, v337, v338, v339, a8, a4);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "cp -vf ../uninstall %s/etc/uninstall.%s ;", v308, v307, v223, v330, v331, v332, v333, v334, v335, v336, v337, v338, v339, a8, a4);
             v319 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
             fun_8048c84(0x806a2e0, v319, v308, v307, v223, v340, v341, v342, v343, v344, v345, v346, v347, v348, v349, a8, a4);
         }
         fun_8048c44(eax305, v319, v308, v307, v223, v350, v351, v352, v353, v354, v355, v356, v357, v358, v359);
     } else {
-        eax363 = fun_8048a94(0x8056603, 0x8055e6b, 13, eax299, v223, v360, v361, v362);
+        eax363 = fun_8048a94("../uninstall", "r", 13, eax299, v223, v360, v361, v362);
         v364 = *eax363;
-        eax368 = fun_8048ad4(v364, 0x8055e6b, 13, eax299, v223, v365, v366, v367);
-        print_warning(0x8056610, eax368, 13, eax299, v223, v369, v370, v371, v372, v373, v374, v375, v376, v377, v378);
+        eax368 = fun_8048ad4(v364, "r", 13, eax299, v223, v365, v366, v367);
+        print_warning("error checking for uninstall script: %s\n \t\t\t\tUninstalling this extension may leave orphaned files on your system", eax368, 13, eax299, v223, v369, v370, v371, v372, v373, v374, v375, v376, v377, v378);
     }
     register_extension(a2, a3, a4, a5, a6, a7);
     check_dependencies(a1, a2, a8, a5, a6, a7);
@@ -8873,24 +8873,24 @@ void** bin_install(void** a1, void** a2, void** a3, void** a4, void** a5, void**
         v381 = a2;
         v382 = reinterpret_cast<void**>(0x8063ac0);
         v383 = reinterpret_cast<void**>(0x80672c0);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, 0x80568a4, 0x806bae0, 0x80672c0, 0x8063ac0, v381, 0x80672c0, v380, 0x80672c0, v384, v385, v386, v387, v388, v389, a8, a4);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, "bin/%s -f Makefile -s install &> %s ; \t\t\t\t\tcp -f %s %s/etc/extensions.db &> %s ; chmod a+r %s/etc/extensions.db &> %s ;", 0x806bae0, 0x80672c0, 0x8063ac0, v381, 0x80672c0, v380, 0x80672c0, v384, v385, v386, v387, v388, v389, a8, a4);
     } else {
         eax390 = stdout;
-        fun_8048ce4(eax390, 0x80566e3, 0x806bae0, a6, a7, a7, v391, v392, v393, v394, v395, v396, v397, v398, v399);
+        fun_8048ce4(eax390, "Running '%s install':\n", 0x806bae0, a6, a7, a7, v391, v392, v393, v394, v395, v396, v397, v398, v399);
         v381 = a2;
         v382 = a2;
         v383 = reinterpret_cast<void**>(0x8063ac0);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, 0x805683c, 0x806bae0, 0x8063ac0, v382, v381, v400, v401, v402, v403, v404, v405, v406, v407, v408, a8, a4);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, "bin/%s -f Makefile install ; \t\t\t\t\tcp -vf %s %s/etc/extensions.db ; chmod -v a+r %s/etc/extensions.db ;", 0x806bae0, 0x8063ac0, v382, v381, v400, v401, v402, v403, v404, v405, v406, v407, v408, a8, a4);
     }
     eax409 = VERBOSE;
     if (!eax409) {
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffdff4, 0x80567df, 0x80672c0, v383, v382, v381, 0x80672c0, v380, 0x80672c0, v410, v411, v412, v413, v414, v415, a8, a4);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffdff4, "sh ../post &> %s", 0x80672c0, v383, v382, v381, 0x80672c0, v380, 0x80672c0, v410, v411, v412, v413, v414, v415, a8, a4);
     } else {
-        fun_8048c54(reinterpret_cast<int32_t>(ebp9) + 0xffffdff4, 0x80567d4, 11, v383, v382, v381, 0x80672c0, v380, 0x80672c0, v416, v417, v418, v419, v420, v421);
+        fun_8048c54(reinterpret_cast<int32_t>(ebp9) + 0xffffdff4, "sh ../post", 11, v383, v382, v381, 0x80672c0, v380, 0x80672c0, v416, v417, v418, v419, v420, v421);
     }
     v422 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffdff4);
     v423 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x80567f0, v423, 0x806a2e0, 0x80682e0, 0x8068ae0, 0x80692e0, v422, 0x80672c0, v424, v425, v426, v427, v428, v429, a8, a4);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%s %s %s %s %s %s", v423, 0x806a2e0, 0x80682e0, 0x8068ae0, 0x80692e0, v422, 0x80672c0, v424, v425, v426, v427, v428, v429, a8, a4);
     v430 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
     su(a2, v430, v423, 0x806a2e0, 0x80682e0, 0x8068ae0, 0x80692e0, v422, 0x80672c0, v431, v432, v433, v434, v435, v436, a8, a4);
     print_done(a2, v430, v423, 0x806a2e0, 0x80682e0, 0x8068ae0, 0x80692e0, v422, 0x80672c0, v437, v438, v439, v440, v441, v442, a8, a4);
@@ -9310,141 +9310,141 @@ void** test_install(void** a1, void** a2, void** a3, void** a4, void** a5, void*
         eax22 = fun_8048a94(a2, v11, v16, v17, v18, v19, v20, v21);
         v23 = *eax22;
         eax30 = fun_8048ad4(v23, v11, v24, v25, v26, v27, v28, v29);
-        print_error(0xfffffffb, 0x8056338, eax30, v31, v32, v33, v34, v35, a7);
+        print_error(0xfffffffb, "installation directory invalid: %s\n", eax30, v31, v32, v33, v34, v35, a7);
     }
-    fun_8048aa4(0x80592a0, 0x805635c, a2, v36, v37, v38, v39, v40, a7, a3, a2, a1, v41, v42, v43, v44, v45);
-    fun_8048ca4(0x80592a0, 0x805635c, a2, v46, v47);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x805636c, a2, v48, v49, v50, v51, v52, a7, a3, a2, a1, v53, v54, v55, v56, v57);
+    fun_8048aa4(0x80592a0, "GINSTALL_DST=%s", a2, v36, v37, v38, v39, v40, a7, a3, a2, a1, v41, v42, v43, v44, v45);
+    fun_8048ca4(0x80592a0, "GINSTALL_DST=%s", a2, v46, v47);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%s/include", a2, v48, v49, v50, v51, v52, a7, a3, a2, a1, v53, v54, v55, v56, v57);
     v58 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
-    fun_8048aa4(0x8059aa0, 0x8056377, v58, v59, v60, v61, v62, v63, a7, a3, a2, a1, v64, v65, v66, v67, v68);
-    fun_8048ca4(0x8059aa0, 0x8056377, v58, v69, v70);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x8056387, a2, v71, v72, v73, v74, v75, a7, a3, a2, a1, v76, v77, v78, v79, v80);
+    fun_8048aa4(0x8059aa0, "GINSTALL_INC=%s", v58, v59, v60, v61, v62, v63, a7, a3, a2, a1, v64, v65, v66, v67, v68);
+    fun_8048ca4(0x8059aa0, "GINSTALL_INC=%s", v58, v69, v70);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%s/lib", a2, v71, v72, v73, v74, v75, a7, a3, a2, a1, v76, v77, v78, v79, v80);
     v81 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
-    fun_8048aa4(0x805a2a0, 0x805638e, v81, v82, v83, v84, v85, v86, a7, a3, a2, a1, v87, v88, v89, v90, v91);
-    fun_8048ca4(0x805a2a0, 0x805638e, v81, v92, v93);
-    fun_8048aa4(0x805eaa0, 0x805639e, a2, v94, v95, v96, v97, v98, a7, a3, a2, a1, v99, v100, v101, v102, v103);
-    fun_8048ca4(0x805eaa0, 0x805639e, a2, v104, v105);
-    eax111 = fun_8048d94(a7, 0x805639e, a2, v106, v107, v108, v109, v110);
-    eax117 = fun_8048d54(eax111, 0x8055edb, a2, v112, v113, v114, v115, v116);
-    eax123 = fun_8048d54(0, 0x8055edb, a2, v118, v119, v120, v121, v122);
-    eax129 = fun_8048d54(0, 0x8055edb, a2, v124, v125, v126, v127, v128);
+    fun_8048aa4(0x805a2a0, "GINSTALL_LIB=%s", v81, v82, v83, v84, v85, v86, a7, a3, a2, a1, v87, v88, v89, v90, v91);
+    fun_8048ca4(0x805a2a0, "GINSTALL_LIB=%s", v81, v92, v93);
+    fun_8048aa4(0x805eaa0, "GEM_GRASS_DIR=%s", a2, v94, v95, v96, v97, v98, a7, a3, a2, a1, v99, v100, v101, v102, v103);
+    fun_8048ca4(0x805eaa0, "GEM_GRASS_DIR=%s", a2, v104, v105);
+    eax111 = fun_8048d94(a7, "GEM_GRASS_DIR=%s", a2, v106, v107, v108, v109, v110);
+    eax117 = fun_8048d54(eax111, ".", a2, v112, v113, v114, v115, v116);
+    eax123 = fun_8048d54(0, ".", a2, v118, v119, v120, v121, v122);
+    eax129 = fun_8048d54(0, ".", a2, v124, v125, v126, v127, v128);
     eax135 = fun_8048be4(eax117, 0, 10, v130, v131, v132, v133, v134);
     eax141 = fun_8048be4(eax123, 0, 10, v136, v137, v138, v139, v140);
     fun_8048be4(eax129, 0, 10, v142, v143, v144, v145, v146);
     fun_8048bf4(eax111, 0, 10, v147, v148, v149, v150, v151, a7, a3, a2, a1, v152, v153, v154);
     atexit(exit_tmp, 0, 10, v155, v156, v157, v158, v159);
     eax162 = basename(a1, 0, 10, v160, v161);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, 0x80563af, eax162, v163, v164, v165, v166, v167, a7, a3, a2, a1, v168, v169, v170, v171, v172);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, "%s/src", eax162, v163, v164, v165, v166, v167, a7, a3, a2, a1, v168, v169, v170, v171, v172);
     v173 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4);
-    eax176 = fun_8048c94(v173, 0x80563af, eax162, v174, v175);
+    eax176 = fun_8048c94(v173, "%s/src", eax162, v174, v175);
     if (reinterpret_cast<signed char>(eax176) < reinterpret_cast<signed char>(0)) {
-        eax182 = fun_8048a94(v173, 0x80563af, eax162, v177, v178, v179, v180, v181);
+        eax182 = fun_8048a94(v173, "%s/src", eax162, v177, v178, v179, v180, v181);
         v183 = *eax182;
-        eax189 = fun_8048ad4(v183, 0x80563af, eax162, v184, v185, v186, v187, v188);
+        eax189 = fun_8048ad4(v183, "%s/src", eax162, v184, v185, v186, v187, v188);
         v190 = eax189;
-        print_error(0xfffffffe, 0x80563b8, a1, v190, v191, v192, v193, v194, a7);
+        print_error(0xfffffffe, "extension files in '%s' not accessible: %s\n", a1, v190, v191, v192, v193, v194, a7);
     }
     eax195 = SKIP_CFG;
     if (!eax195) {
         eax196 = VERBOSE;
         if (!eax196) {
             eax197 = stdout;
-            fun_8048cd4(0x8056408, 1, 14, eax197, v198);
+            fun_8048cd4("Configuring...", 1, 14, eax197, v198);
             v190 = reinterpret_cast<void**>(0x806aae0);
-            v199 = reinterpret_cast<void**>(0x8056417);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, 0x8056417, 0x806b2e0, 0x806aae0, 0x80672c0, v200, v201, v202, a7, a3, a2, a1, v203, v204, v205, v206, v207);
+            v199 = reinterpret_cast<void**>("sh %s %s --quiet &> %s");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, "sh %s %s --quiet &> %s", 0x806b2e0, 0x806aae0, 0x80672c0, v200, v201, v202, a7, a3, a2, a1, v203, v204, v205, v206, v207);
             v208 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4);
-            eax211 = fun_8048b84(v208, 0x8056417, 0x806b2e0, 0x806aae0, 0x80672c0, v209, v210);
+            eax211 = fun_8048b84(v208, "sh %s %s --quiet &> %s", 0x806b2e0, 0x806aae0, 0x80672c0, v209, v210);
             v212 = eax211;
         } else {
             eax213 = stdout;
-            fun_8048cd4(0x80563e4, 1, 26, eax213, v214);
+            fun_8048cd4("Running configure script:\n", 1, 26, eax213, v214);
             v190 = reinterpret_cast<void**>(0x806aae0);
-            v199 = reinterpret_cast<void**>(0x80563ff);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, 0x80563ff, 0x806b2e0, 0x806aae0, v215, v216, v217, v218, a7, a3, a2, a1, v219, v220, v221, v222, v223);
+            v199 = reinterpret_cast<void**>("sh %s %s");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, "sh %s %s", 0x806b2e0, 0x806aae0, v215, v216, v217, v218, a7, a3, a2, a1, v219, v220, v221, v222, v223);
             v208 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4);
-            eax227 = fun_8048b84(v208, 0x80563ff, 0x806b2e0, 0x806aae0, v224, v225, v226);
+            eax227 = fun_8048b84(v208, "sh %s %s", 0x806b2e0, 0x806aae0, v224, v225, v226);
             v212 = eax227;
         }
         if (reinterpret_cast<int1_t>(v212 == 0xffffffff)) {
-            v199 = reinterpret_cast<void**>(0x8056430);
+            v199 = reinterpret_cast<void**>("could not run configure script.\n");
             v208 = reinterpret_cast<void**>(0xffffffe5);
-            print_error(0xffffffe5, 0x8056430, 0x806b2e0, 0x806aae0, 0x80672c0, v228, v229, v230, a7);
+            print_error(0xffffffe5, "could not run configure script.\n", 0x806b2e0, 0x806aae0, 0x80672c0, v228, v229, v230, a7);
         }
         if (reinterpret_cast<signed char>(v212) > reinterpret_cast<signed char>(0)) {
-            v199 = reinterpret_cast<void**>(0x8056451);
+            v199 = reinterpret_cast<void**>("system configuration failed.\n");
             v208 = reinterpret_cast<void**>(0xfffffffd);
-            print_error(0xfffffffd, 0x8056451, 0x806b2e0, 0x806aae0, 0x80672c0, v231, v232, v233, a7);
+            print_error(0xfffffffd, "system configuration failed.\n", 0x806b2e0, 0x806aae0, 0x80672c0, v231, v232, v233, a7);
         }
         print_done(v208, v199, 0x806b2e0, 0x806aae0, 0x80672c0, v234, v235, v236, a7, a3, a2, a1, v237, v238, v239, v240, v241);
         print_cfg(v208, v199, 0x806b2e0, 0x806aae0, 0x80672c0);
     }
-    fun_8048aa4(0x805b2a0, 0x805646f, a3, v190, 0x80672c0, v242, v243, v244, a7, a3, a2, a1, v245, v246, v247, v248, v249);
-    fun_8048ca4(0x805b2a0, 0x805646f, a3, v190, 0x80672c0);
+    fun_8048aa4(0x805b2a0, "GEM_EXT_NAME=%s", a3, v190, 0x80672c0, v242, v243, v244, a7, a3, a2, a1, v245, v246, v247, v248, v249);
+    fun_8048ca4(0x805b2a0, "GEM_EXT_NAME=%s", a3, v190, 0x80672c0);
     v250 = a5;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x8055f03, a4, v250, a6, v251, v252, v253, a7, a3, a2, a1, v254, v255, v256, v257, v258);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%i.%i.%i", a4, v250, a6, v251, v252, v253, a7, a3, a2, a1, v254, v255, v256, v257, v258);
     v259 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
-    fun_8048aa4(0x805baa0, 0x805647f, v259, v250, a6, v260, v261, v262, a7, a3, a2, a1, v263, v264, v265, v266, v267);
-    fun_8048ca4(0x805baa0, 0x805647f, v259, v250, a6);
-    dump_plain(0x8056492, 0x8064ac0, v259, v250, a6);
-    dump_plain(0x80564a1, 0x80652c0, v259, v250, a6);
-    dump_plain(0x80564a9, 0x8065ac0, v259, v250, a6);
-    dump_plain(0x80564b4, 0x80662c0, v259, v250, a6);
-    dump_plain(0x80564bc, 0x8066ac0, v259, v250, a6);
-    fun_8048aa4(0x805c2a0, 0x80564c7, 0x8064ac0, v250, a6, v268, v269, v270, a7, a3, a2, a1, v271, v272, v273, v274, v275);
-    fun_8048ca4(0x805c2a0, 0x80564c7, 0x8064ac0, v250, a6);
-    fun_8048aa4(0x805caa0, 0x80564d8, 0x80652c0, v250, a6, v276, v277, v278, a7, a3, a2, a1, v279, v280, v281, v282, v283);
-    fun_8048ca4(0x805caa0, 0x80564d8, 0x80652c0, v250, a6);
-    fun_8048aa4(0x805d2a0, 0x80564e8, 0x8065ac0, v250, a6, v284, v285, v286, a7, a3, a2, a1, v287, v288, v289, v290, v291);
-    fun_8048ca4(0x805d2a0, 0x80564e8, 0x8065ac0, v250, a6);
-    fun_8048aa4(0x805daa0, 0x80564f8, 0x80662c0, v250, a6, v292, v293, v294, a7, a3, a2, a1, v295, v296, v297, v298, v299);
-    fun_8048ca4(0x805daa0, 0x80564f8, 0x80662c0, v250, a6);
-    fun_8048aa4(0x805e2a0, 0x8056508, 0x8066ac0, v250, a6, v300, v301, v302, a7, a3, a2, a1, v303, v304, v305, v306, v307);
-    fun_8048ca4(0x805e2a0, 0x8056508, 0x8066ac0, v250, a6);
-    atexit(exit_tmp, 0x8056508, 0x8066ac0, v250, a6, v308, v309, v310);
+    fun_8048aa4(0x805baa0, "GEM_EXT_VERSION=%s", v259, v250, a6, v260, v261, v262, a7, a3, a2, a1, v263, v264, v265, v266, v267);
+    fun_8048ca4(0x805baa0, "GEM_EXT_VERSION=%s", v259, v250, a6);
+    dump_plain("../description", 0x8064ac0, v259, v250, a6);
+    dump_plain("../info", 0x80652c0, v259, v250, a6);
+    dump_plain("../depends", 0x8065ac0, v259, v250, a6);
+    dump_plain("../bugs", 0x80662c0, v259, v250, a6);
+    dump_plain("../authors", 0x8066ac0, v259, v250, a6);
+    fun_8048aa4(0x805c2a0, "GEM_EXT_DESCR=%s", 0x8064ac0, v250, a6, v268, v269, v270, a7, a3, a2, a1, v271, v272, v273, v274, v275);
+    fun_8048ca4(0x805c2a0, "GEM_EXT_DESCR=%s", 0x8064ac0, v250, a6);
+    fun_8048aa4(0x805caa0, "GEM_EXT_INFO=%s", 0x80652c0, v250, a6, v276, v277, v278, a7, a3, a2, a1, v279, v280, v281, v282, v283);
+    fun_8048ca4(0x805caa0, "GEM_EXT_INFO=%s", 0x80652c0, v250, a6);
+    fun_8048aa4(0x805d2a0, "GEM_EXT_DEPS=%s", 0x8065ac0, v250, a6, v284, v285, v286, a7, a3, a2, a1, v287, v288, v289, v290, v291);
+    fun_8048ca4(0x805d2a0, "GEM_EXT_DEPS=%s", 0x8065ac0, v250, a6);
+    fun_8048aa4(0x805daa0, "GEM_EXT_BUGS=%s", 0x80662c0, v250, a6, v292, v293, v294, a7, a3, a2, a1, v295, v296, v297, v298, v299);
+    fun_8048ca4(0x805daa0, "GEM_EXT_BUGS=%s", 0x80662c0, v250, a6);
+    fun_8048aa4(0x805e2a0, "GEM_EXT_AUTHORS=%s", 0x8066ac0, v250, a6, v300, v301, v302, a7, a3, a2, a1, v303, v304, v305, v306, v307);
+    fun_8048ca4(0x805e2a0, "GEM_EXT_AUTHORS=%s", 0x8066ac0, v250, a6);
+    atexit(exit_tmp, "GEM_EXT_AUTHORS=%s", 0x8066ac0, v250, a6, v308, v309, v310);
     check_dependencies(a1, a2, a7, v250, a6, v311);
     eax312 = VERBOSE;
     if (!eax312) {
         eax313 = stdout;
-        fun_8048cd4(0x8056539, 1, 12, eax313, a6);
+        fun_8048cd4("Compiling...", 1, 12, eax313, a6);
         v250 = reinterpret_cast<void**>(0x80672c0);
-        v314 = reinterpret_cast<void**>(0x8056546);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, 0x8056546, 0x806bae0, 0x80672c0, a6, v315, v316, v317, a7, a3, a2, a1, v318, v319, v320, v321, v322);
+        v314 = reinterpret_cast<void**>("%s -f Makefile &> %s");
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, "%s -f Makefile &> %s", 0x806bae0, 0x80672c0, a6, v315, v316, v317, a7, a3, a2, a1, v318, v319, v320, v321, v322);
         v323 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4);
-        eax326 = fun_8048b84(v323, 0x8056546, 0x806bae0, 0x80672c0, a6, v324, v325);
+        eax326 = fun_8048b84(v323, "%s -f Makefile &> %s", 0x806bae0, 0x80672c0, a6, v324, v325);
         v327 = eax326;
     } else {
         eax328 = stdout;
-        fun_8048ce4(eax328, 0x805651b, 0x806bae0, v250, a6, v329, v330, v331, a7, a3, a2, a1, v332, v333, v334);
-        v314 = reinterpret_cast<void**>(0x805652a);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, 0x805652a, 0x806bae0, v250, a6, v335, v336, v337, a7, a3, a2, a1, v338, v339, v340, v341, v342);
+        fun_8048ce4(eax328, "Running '%s':\n", 0x806bae0, v250, a6, v329, v330, v331, a7, a3, a2, a1, v332, v333, v334);
+        v314 = reinterpret_cast<void**>("%s -f Makefile");
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4, "%s -f Makefile", 0x806bae0, v250, a6, v335, v336, v337, a7, a3, a2, a1, v338, v339, v340, v341, v342);
         v323 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffe7f4);
-        eax345 = fun_8048b84(v323, 0x805652a, 0x806bae0, v250, a6, v343, v344);
+        eax345 = fun_8048b84(v323, "%s -f Makefile", 0x806bae0, v250, a6, v343, v344);
         v327 = eax345;
     }
     if (reinterpret_cast<int1_t>(v327 == 0xffffffff) && (eax346 = VERBOSE, !eax346)) {
-        v314 = reinterpret_cast<void**>(0x805655c);
+        v314 = reinterpret_cast<void**>("could not run '%s' do you have make tools installed?\n");
         v323 = reinterpret_cast<void**>(0xfffffff7);
-        print_error(0xfffffff7, 0x805655c, 0x806bae0, v250, a6, v347, v348, v349, a7);
+        print_error(0xfffffff7, "could not run '%s' do you have make tools installed?\n", 0x806bae0, v250, a6, v347, v348, v349, a7);
     }
     if (reinterpret_cast<signed char>(v327) > reinterpret_cast<signed char>(0)) {
-        v314 = reinterpret_cast<void**>(0x8056594);
+        v314 = reinterpret_cast<void**>("source code could not be compiled.\n \t\t\tRun again with option -v to see what is causing trouble.\n");
         v323 = reinterpret_cast<void**>(0xfffffffc);
-        print_error(0xfffffffc, 0x8056594, 0x806bae0, v250, a6, v350, v351, v352, a7);
+        print_error(0xfffffffc, "source code could not be compiled.\n \t\t\tRun again with option -v to see what is causing trouble.\n", 0x806bae0, v250, a6, v350, v351, v352, a7);
     }
     print_done(v323, v314, 0x806bae0, v250, a6, v353, v354, v355, a7, a3, a2, a1, v356, v357, v358, v359, v360);
     eax361 = stdout;
-    fun_8048cd4(0x80565f5, 1, 13, eax361, a6);
-    eax365 = fun_8048c74(0x8056603, 0x8055e6b, 13, eax361, a6, v362, v363, v364, a7, a3);
+    fun_8048cd4("Installing...", 1, 13, eax361, a6);
+    eax365 = fun_8048c74("../uninstall", "r", 13, eax361, a6, v362, v363, v364, a7, a3);
     if (eax365) {
-        fun_8048c44(eax365, 0x8055e6b, 13, eax361, a6, v366, v367, v368, a7, a3, a2, a1, v369, v370, v371);
+        fun_8048c44(eax365, "r", 13, eax361, a6, v366, v367, v368, a7, a3, a2, a1, v369, v370, v371);
     } else {
-        eax375 = fun_8048a94(0x8056603, 0x8055e6b, 13, eax361, a6, v372, v373, v374);
+        eax375 = fun_8048a94("../uninstall", "r", 13, eax361, a6, v372, v373, v374);
         v376 = *eax375;
-        eax380 = fun_8048ad4(v376, 0x8055e6b, 13, eax361, a6, v377, v378, v379);
-        print_warning(0x8056610, eax380, 13, eax361, a6, v381, v382, v383, a7, a3, a2, a1, v384, v385, v386);
+        eax380 = fun_8048ad4(v376, "r", 13, eax361, a6, v377, v378, v379);
+        print_warning("error checking for uninstall script: %s\n \t\t\t\tUninstalling this extension may leave orphaned files on your system", eax380, 13, eax361, a6, v381, v382, v383, a7, a3, a2, a1, v384, v385, v386);
     }
-    register_extension(a2, 0x80566df, a3, a4, a5, a6);
+    register_extension(a2, "src", a3, a4, a5, a6);
     check_dependencies(a1, a2, a7, a4, a5, a6);
     if (reinterpret_cast<int1_t>(eax135 == 6) && reinterpret_cast<signed char>(eax141) <= reinterpret_cast<signed char>(0)) {
         register_entries_gisman(a3, a2, a7, a4, a5, a6);
@@ -9452,11 +9452,11 @@ void** test_install(void** a1, void** a2, void** a3, void** a4, void** a5, void*
     register_entries_gisman2(a3, a2, a7, a4, a5, a6);
     register_html(a3, a2, a4, a5, a6, a6);
     eax387 = stdout;
-    fun_8048ce4(eax387, 0x805691c, 0x806bae0, a5, a6, a6, v388, v389, a7, a3, a2, a1, v390, v391, v392);
-    print_done(eax387, 0x805691c, 0x806bae0, a5, a6, a6, v393, v394, a7, a3, a2, a1, v395, v396, v397, v398, v399);
+    fun_8048ce4(eax387, "(skipping '%s install')...", 0x806bae0, a5, a6, a6, v388, v389, a7, a3, a2, a1, v390, v391, v392);
+    print_done(eax387, "(skipping '%s install')...", 0x806bae0, a5, a6, a6, v393, v394, a7, a3, a2, a1, v395, v396, v397, v398, v399);
     eax400 = reinterpret_cast<void**>(eax10 ^ g14);
     if (eax400) {
-        eax400 = fun_8048d34(eax387, 0x805691c, 0x806bae0, a5, a6, a6, v401, v402, a7, a3, a2, a1, v403, v404, v405, v406, v407);
+        eax400 = fun_8048d34(eax387, "(skipping '%s install')...", 0x806bae0, a5, a6, a6, v401, v402, a7, a3, a2, a1, v403, v404, v405, v406, v407);
     }
     return eax400;
 }
@@ -9658,13 +9658,13 @@ void** uninstall(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     ebp9 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     eax10 = g14;
     eax11 = stdout;
-    fun_8048cd4(0x8056937, 1, 16, eax11, v12);
-    fun_8048aa4(0x805aaa0, 0x8056948, a3, eax11, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25);
-    fun_8048ca4(0x805aaa0, 0x8056948, a3, eax11, v26);
-    eax31 = fun_8048d94(a4, 0x8056948, a3, eax11, v27, v28, v29, v30);
-    eax36 = fun_8048d54(eax31, 0x8055edb, a3, eax11, v32, v33, v34, v35);
-    eax41 = fun_8048d54(0, 0x8055edb, a3, eax11, v37, v38, v39, v40);
-    eax46 = fun_8048d54(0, 0x8055edb, a3, eax11, v42, v43, v44, v45);
+    fun_8048cd4("Un-installing...", 1, 16, eax11, v12);
+    fun_8048aa4(0x805aaa0, "UNINSTALL_BASE=%s", a3, eax11, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25);
+    fun_8048ca4(0x805aaa0, "UNINSTALL_BASE=%s", a3, eax11, v26);
+    eax31 = fun_8048d94(a4, "UNINSTALL_BASE=%s", a3, eax11, v27, v28, v29, v30);
+    eax36 = fun_8048d54(eax31, ".", a3, eax11, v32, v33, v34, v35);
+    eax41 = fun_8048d54(0, ".", a3, eax11, v37, v38, v39, v40);
+    eax46 = fun_8048d54(0, ".", a3, eax11, v42, v43, v44, v45);
     eax51 = fun_8048be4(eax36, 0, 10, eax11, v47, v48, v49, v50);
     eax56 = fun_8048be4(eax41, 0, 10, eax11, v52, v53, v54, v55);
     fun_8048be4(eax46, 0, 10, eax11, v57, v58, v59, v60);
@@ -9676,27 +9676,27 @@ void** uninstall(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
         v77 = a3;
         eax78 = deregister_entries_gisman(a2, v77, v76, eax11);
         if (reinterpret_cast<int1_t>(eax78 == 0xffffffff)) {
-            print_warning(0x805695c, v77, v76, eax11, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89);
+            print_warning("GIS Manager menu entries could not be removed.\n", v77, v76, eax11, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89);
             v76 = reinterpret_cast<void**>(1);
             v77 = reinterpret_cast<void**>(0x805698c);
             fun_8048c54(0x80682e0, 0x805698c, 1, eax11, v90, v91, v92, v93, v94, v95, v96, v97, v98, v99, v100);
         }
         if (!eax78) {
-            print_warning(0x8056990, v77, v76, eax11, v101, v102, v103, v104, v105, v106, v107, v108, v109, v110, v111);
+            print_warning("no entries found to remove from GIS Manager.\n", v77, v76, eax11, v101, v102, v103, v104, v105, v106, v107, v108, v109, v110, v111);
             v76 = reinterpret_cast<void**>(1);
             fun_8048c54(0x80682e0, 0x805698c, 1, eax11, v112, v113, v114, v115, v116, v117, v118, v119, v120, v121, v122);
         }
     }
     deregister_entries_gisman2(a2, a3, v76, eax11);
     deregister_html(a2, a3, v76, eax11);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, 0x80569be, a3, a2, v123, v124, v125, v126, v127, v128, v129, v130, v131, v132, v133, v134, v135);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, "%s/etc/uninstall.%s", a3, a2, v123, v124, v125, v126, v127, v128, v129, v130, v131, v132, v133, v134, v135);
     v136 = 0;
     v137 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffef78);
     v138 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4);
     eax140 = stat(v138, v137, a3, a2, v139);
     if (eax140 < 0) {
-        v138 = reinterpret_cast<void**>(0x80569d4);
-        print_warning(0x80569d4, v137, a3, a2, v141, v142, v143, v144, v145, v146, v147, v148, v149, v150, v151);
+        v138 = reinterpret_cast<void**>("no uninstall script available for this extension.\n \t\t\tUnneeded files may have been left on your system.\n");
+        print_warning("no uninstall script available for this extension.\n \t\t\tUnneeded files may have been left on your system.\n", v137, a3, a2, v141, v142, v143, v144, v145, v146, v147, v148, v149, v150, v151);
         v136 = 1;
     }
     if (!v136) {
@@ -9712,7 +9712,7 @@ void** uninstall(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
             v160 = reinterpret_cast<void**>(0x80672c0);
             v161 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4);
             v162 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x8056aec, v162, 0x80672c0, v161, 0x80672c0, v159, v158, 0x80672c0, v156, v155, 0x80672c0, 0x8063ac0, v154, 0x80672c0, v153, 0x80672c0);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "sh %s &> %s ; rm -vf %s &> %s ; \t\t\t\t\t \t\trm -vrf %s/docs/extensions/%s &> %s ; rm -vf %s/etc/dm/gem-entries/%s &> %s ; \t\t\t\t\t\t\tcp -vf %s %s/etc/extensions.db &> %s ; chmod -v a+r %s/etc/extensions.db &> %s ;", v162, 0x80672c0, v161, 0x80672c0, v159, v158, 0x80672c0, v156, v155, 0x80672c0, 0x8063ac0, v154, 0x80672c0, v153, 0x80672c0);
             fun_8048c84(0x806a2e0, reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, v162, 0x80672c0, v161, 0x80672c0, v159, v158, 0x80672c0, v156, v155, 0x80672c0, 0x8063ac0, v154, 0x80672c0, v153, 0x80672c0);
         } else {
             v155 = a3;
@@ -9723,16 +9723,16 @@ void** uninstall(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
             v160 = a2;
             v163 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4);
             v164 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x8056a40, v164, v163, a3, v160, v159, v158, 0x8063ac0, v156, v155, v165, v166, v167, v168, v169, v170);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "sh %s ; rm -vf %s ; \t\t\t\t\t \t\trm -vrf %s/docs/extensions/%s ; rm -vf %s/etc/dm/gem-entries/%s ; \t\t\t\t\t\t\tcp -vf %s %s/etc/extensions.db ; chmod -v a+r %s/etc/extensions.db ;", v164, v163, a3, v160, v159, v158, 0x8063ac0, v156, v155, v165, v166, v167, v168, v169, v170);
             fun_8048c84(0x806a2e0, reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, v164, v163, a3, v160, v159, v158, 0x8063ac0, v156, v155, v171, v172, v173, v174, v175, v176);
         }
     } else {
         eax181 = fun_8048a94(v138, v137, a3, a2, v177, v178, v179, v180);
         v182 = *eax181;
         eax187 = fun_8048ad4(v182, v137, a3, a2, v183, v184, v185, v186);
-        print_warning(0x8056610, eax187, a3, a2, v188, v189, v190, v191, v192, v193, v194, v195, v196, v197, v198);
+        print_warning("error checking for uninstall script: %s\n \t\t\t\tUninstalling this extension may leave orphaned files on your system", eax187, a3, a2, v188, v189, v190, v191, v192, v193, v194, v195, v196, v197, v198);
     }
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x8056bba, 0x806a2e0, 0x80682e0, 0x80692e0, v160, v159, v158, v157, v156, v155, 0x80672c0, 0x8063ac0, v154, 0x80672c0, v153, 0x80672c0);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%s %s %s", 0x806a2e0, 0x80682e0, 0x80692e0, v160, v159, v158, v157, v156, v155, 0x80672c0, 0x8063ac0, v154, 0x80672c0, v153, 0x80672c0);
     v199 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4);
     su(a3, v199, 0x806a2e0, 0x80682e0, 0x80692e0, v160, v159, v158, v157, v156, v155, 0x80672c0, 0x8063ac0, v154, 0x80672c0, v153, 0x80672c0);
     print_done(a3, v199, 0x806a2e0, 0x80682e0, 0x80692e0, v160, v159, v158, v157, v156, v155, 0x80672c0, 0x8063ac0, v154, 0x80672c0, v153, 0x80672c0);
@@ -9856,40 +9856,40 @@ void** source_clean(void** a1, void** a2, void** a3, void** a4, void** a5, void*
     ebp9 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     eax10 = g14;
     eax15 = basename(a1, v11, v12, v13, v14);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x80563af, eax15, v16, v17, v18, v19, a1, v20, v21, v22, v23, v24, v25, v26, v27, v28);
-    eax31 = fun_8048c94(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, 0x80563af, eax15, v29, v30);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%s/src", eax15, v16, v17, v18, v19, a1, v20, v21, v22, v23, v24, v25, v26, v27, v28);
+    eax31 = fun_8048c94(reinterpret_cast<int32_t>(ebp9) + 0xfffff7f4, "%s/src", eax15, v29, v30);
     if (reinterpret_cast<signed char>(eax31) < reinterpret_cast<signed char>(0)) {
-        print_error(0xfffffffe, 0x8056bc4, a1, v32, v33, v34, v35, a1, v36);
+        print_error(0xfffffffe, "extension '%s' not accessible: ", a1, v32, v33, v34, v35, a1, v36);
     }
     eax37 = VERBOSE;
     if (!eax37) {
         eax38 = stdout;
-        fun_8048cd4(0x8056c0e, 1, 14, eax38, v39);
-        v40 = reinterpret_cast<void**>(0x8056c1d);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, 0x8056c1d, 0x806bae0, 0x80672c0, v41, v42, v43, a1, v44, v45, eax31, v46, v47, v48, v49, v50, v51);
+        fun_8048cd4("Cleaning up...", 1, 14, eax38, v39);
+        v40 = reinterpret_cast<void**>("%s -f Makefile -s clean &> %s");
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, "%s -f Makefile -s clean &> %s", 0x806bae0, 0x80672c0, v41, v42, v43, a1, v44, v45, eax31, v46, v47, v48, v49, v50, v51);
         v52 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4);
-        eax56 = fun_8048b84(v52, 0x8056c1d, 0x806bae0, 0x80672c0, v53, v54, v55);
+        eax56 = fun_8048b84(v52, "%s -f Makefile -s clean &> %s", 0x806bae0, 0x80672c0, v53, v54, v55);
         v57 = eax56;
     } else {
         eax58 = stdout;
-        fun_8048ce4(eax58, 0x8056be4, 0x806bae0, v59, v60, v61, v62, a1, v63, v64, eax31, v65, v66, v67, v68);
-        v40 = reinterpret_cast<void**>(0x8056bf9);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, 0x8056bf9, 0x806bae0, v69, v70, v71, v72, a1, v73, v74, eax31, v75, v76, v77, v78, v79, v80);
+        fun_8048ce4(eax58, "Running '%s clean':\n", 0x806bae0, v59, v60, v61, v62, a1, v63, v64, eax31, v65, v66, v67, v68);
+        v40 = reinterpret_cast<void**>("%s -f Makefile clean");
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4, "%s -f Makefile clean", 0x806bae0, v69, v70, v71, v72, a1, v73, v74, eax31, v75, v76, v77, v78, v79, v80);
         v52 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffeff4);
-        eax85 = fun_8048b84(v52, 0x8056bf9, 0x806bae0, v81, v82, v83, v84);
+        eax85 = fun_8048b84(v52, "%s -f Makefile clean", 0x806bae0, v81, v82, v83, v84);
         v57 = eax85;
     }
     if (!reinterpret_cast<int1_t>(v57 == 0xffffffff)) {
         print_done(v52, v40, 0x806bae0, 0x80672c0, v86, v87, v88, a1, v89, v90, v57, v91, v92, v93, v94, v95, v96);
     } else {
-        v40 = reinterpret_cast<void**>(0x8056c3c);
-        print_error(0xfffffff7, 0x8056c3c, 0x806bae0, 0x80672c0, v97, v98, v99, a1, v100);
+        v40 = reinterpret_cast<void**>("could not run '%s clean' do you have make tools installed?\n");
+        print_error(0xfffffff7, "could not run '%s clean' do you have make tools installed?\n", 0x806bae0, 0x80672c0, v97, v98, v99, a1, v100);
     }
-    fun_8048b84(0x80567d4, v40, 0x806bae0, 0x80672c0, v101, v102, v103);
+    fun_8048b84("sh ../post", v40, 0x806bae0, 0x80672c0, v101, v102, v103);
     eax104 = reinterpret_cast<void**>(0);
     edx105 = eax10 ^ g14;
     if (edx105) {
-        eax104 = fun_8048d34(0x80567d4, v40, 0x806bae0, 0x80672c0, v106, v107, v108, a1, v109, v110, v57, v111, v112, v113, v114, v115, v116);
+        eax104 = fun_8048d34("sh ../post", v40, 0x806bae0, 0x80672c0, v106, v107, v108, a1, v109, v110, v57, v111, v112, v113, v114, v115, v116);
     }
     return eax104;
 }
@@ -10028,9 +10028,9 @@ void** restore(void** a1, void** a2, void** a3, void** a4, void** a5) {
     ebp6 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     eax7 = g14;
     eax15 = fun_8048d94(a2, v8, v9, v10, v11, v12, v13, v14);
-    eax22 = fun_8048d54(eax15, 0x8055edb, v16, v17, v18, v19, v20, v21);
-    eax29 = fun_8048d54(0, 0x8055edb, v23, v24, v25, v26, v27, v28);
-    eax36 = fun_8048d54(0, 0x8055edb, v30, v31, v32, v33, v34, v35);
+    eax22 = fun_8048d54(eax15, ".", v16, v17, v18, v19, v20, v21);
+    eax29 = fun_8048d54(0, ".", v23, v24, v25, v26, v27, v28);
+    eax36 = fun_8048d54(0, ".", v30, v31, v32, v33, v34, v35);
     eax42 = fun_8048be4(eax22, 0, 10, v37, v38, v39, v40, v41);
     eax48 = fun_8048be4(eax29, 0, 10, v43, v44, v45, v46, v47);
     fun_8048be4(eax36, 0, 10, v49, v50, v51, v52, v53);
@@ -10039,12 +10039,12 @@ void** restore(void** a1, void** a2, void** a3, void** a4, void** a5) {
     v66 = eax65;
     v67 = reinterpret_cast<void**>(12);
     v68 = reinterpret_cast<void**>(1);
-    fun_8048cd4(0x8056c78, 1, 12, v66, v69);
+    fun_8048cd4("Restoring...", 1, 12, v66, v69);
     if (reinterpret_cast<int1_t>(eax42 == 6) && (reinterpret_cast<signed char>(eax48) <= reinterpret_cast<signed char>(0) && (eax70 = restore_entries_gisman(a1, 1, 12, v66), eax71 = VERBOSE, !!eax71))) {
         eax72 = stdout;
         v67 = eax70;
-        v68 = reinterpret_cast<void**>(0x8056c88);
-        fun_8048ce4(eax72, 0x8056c88, v67, v66, v73, v74, v75, v76, v77, v78, v79, v80, v81, v82, a2);
+        v68 = reinterpret_cast<void**>("\nRestored entries for GIS Manager: %i\n");
+        fun_8048ce4(eax72, "\nRestored entries for GIS Manager: %i\n", v67, v66, v73, v74, v75, v76, v77, v78, v79, v80, v81, v82, a2);
     }
     v83 = a1;
     eax84 = restore_html(v83, v68, v67, v66);
@@ -10052,9 +10052,9 @@ void** restore(void** a1, void** a2, void** a3, void** a4, void** a5) {
     if (eax85) {
         eax86 = stdout;
         v67 = eax84;
-        v68 = reinterpret_cast<void**>(0x8056cb0);
+        v68 = reinterpret_cast<void**>("\nRestored links in index.hml: %i\n");
         v83 = eax86;
-        fun_8048ce4(v83, 0x8056cb0, v67, v66, v87, v88, v89, v90, v91, v92, v93, v94, v95, v96, a2);
+        fun_8048ce4(v83, "\nRestored links in index.hml: %i\n", v67, v66, v87, v88, v89, v90, v91, v92, v93, v94, v95, v96, a2);
     }
     if (reinterpret_cast<signed char>(eax84) > reinterpret_cast<signed char>(0)) {
         eax97 = VERBOSE;
@@ -10066,7 +10066,7 @@ void** restore(void** a1, void** a2, void** a3, void** a4, void** a5) {
             v102 = a1;
             v66 = a1;
             v67 = reinterpret_cast<void**>(0x80642c0);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8056d60, 0x80642c0, v66, v102, 0x80672c0, 0x8067ac0, v99, v98, v103, v104, v105, v106, v107, a2, a1, v108);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "cp -f %s %s/etc/dm/menu.tcl ; chmod a+r %s/etc/dm/menu.tcl &> %s ; \t\t\t\t\t\t\tcp -f %s %s/docs/html/index.html ; chmod a+r %s/docs/html/index.html", 0x80642c0, v66, v102, 0x80672c0, 0x8067ac0, v99, v98, v103, v104, v105, v106, v107, a2, a1, v108);
         } else {
             v99 = a1;
             v100 = a1;
@@ -10074,7 +10074,7 @@ void** restore(void** a1, void** a2, void** a3, void** a4, void** a5) {
             v102 = a1;
             v66 = a1;
             v67 = reinterpret_cast<void**>(0x80642c0);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8056cd4, 0x80642c0, v66, v102, 0x8067ac0, v100, v99, v109, v110, v111, v112, v113, v114, a2, a1, v115);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "cp -f %s %s/etc/dm/menu.tcl ; chmod a+r %s/etc/dm/menu.tcl ; \t\t\t\t\t\t\tcp -f %s %s/docs/html/index.html ; chmod a+r %s/docs/html/index.html", 0x80642c0, v66, v102, 0x8067ac0, v100, v99, v109, v110, v111, v112, v113, v114, a2, a1, v115);
         }
         v68 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4);
         v83 = a1;
@@ -10083,9 +10083,9 @@ void** restore(void** a1, void** a2, void** a3, void** a4, void** a5) {
     if (eax84) {
         print_done(v83, v68, v67, v66, v102, v101, v100, v99, v98, v122, v123, v124, v125, v126, a2, a1, v127);
     } else {
-        v68 = reinterpret_cast<void**>(0x8056df0);
+        v68 = reinterpret_cast<void**>("could not find anything to restore.\n");
         v83 = reinterpret_cast<void**>(0xffffffe6);
-        print_error(0xffffffe6, 0x8056df0, v67, v66, v102, v101, v100, v99, v98);
+        print_error(0xffffffe6, "could not find anything to restore.\n", v67, v66, v102, v101, v100, v99, v98);
     }
     eax128 = reinterpret_cast<void**>(eax7 ^ g14);
     if (eax128) {
@@ -10205,20 +10205,20 @@ void** list_extensions(void** a1, void** a2, void** a3, void** a4, void** a5) {
     ebp6 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     eax7 = g14;
     eax8 = stdout;
-    fun_8048ce4(eax8, 0x8056e18, a1, v9, v10, v11, v12, a1, v13, v14, v15, v16, v17, v18, v19);
+    fun_8048ce4(eax8, "\nExtensions in '%s' (name, version, type, depends):\n", a1, v9, v10, v11, v12, a1, v13, v14, v15, v16, v17, v18, v19);
     v20 = a1;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8056e4d, v20, v21, v22, v23, v24, a1, v25, v26, v27, v28, v29, v30, v31, v32, v33);
-    v34 = reinterpret_cast<void**>(0x8055e6b);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "%s/etc/extensions.db", v20, v21, v22, v23, v24, a1, v25, v26, v27, v28, v29, v30, v31, v32, v33);
+    v34 = reinterpret_cast<void**>("r");
     v35 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4);
-    eax42 = fun_8048c74(v35, 0x8055e6b, v20, v36, v37, v38, v39, a1, v40, v41);
+    eax42 = fun_8048c74(v35, "r", v20, v36, v37, v38, v39, a1, v40, v41);
     if (!eax42) {
-        eax47 = fun_8048a94(v35, 0x8055e6b, v20, v43, v44, v45, v46, a1);
+        eax47 = fun_8048a94(v35, "r", v20, v43, v44, v45, v46, a1);
         if (*eax47 == 2) {
             eax48 = stderr;
             v49 = eax48;
             v20 = reinterpret_cast<void**>(6);
             v34 = reinterpret_cast<void**>(1);
-            fun_8048cd4(0x8056e62, 1, 6, v49, v50);
+            fun_8048cd4("NONE.\n", 1, 6, v49, v50);
             fun_8048c44(eax42, 1, 6, v49, v51, v52, v53, a1, v54, v55, eax42, v56, v57, v58, v59);
             fun_8048db4(0, 1, 6, v49, v60, v61, v62, a1, v63, v64, eax42);
         }
@@ -10228,8 +10228,8 @@ void** list_extensions(void** a1, void** a2, void** a3, void** a4, void** a5) {
         eax82 = fun_8048ad4(v78, v34, v20, v49, v79, v80, v81, a1);
         v83 = eax82;
         v20 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4);
-        v34 = reinterpret_cast<void**>(0x8056e69);
-        print_error(0xffffffe3, 0x8056e69, v20, v83, v84, v85, v86, a1, v87);
+        v34 = reinterpret_cast<void**>("checking for file '%s': %s\n");
+        print_error(0xffffffe3, "checking for file '%s': %s\n", v20, v83, v84, v85, v86, a1, v87);
     }
     fun_8048c44(eax42, v34, v20, v83, v88, v89, v90, a1, v91, v92, eax42, v93, v94, v95, v96);
     v97 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4);
@@ -10447,79 +10447,79 @@ void** run_post(void** a1, void** a2, void** a3, void** a4, void** a5) {
     switch (a2 - 3) {
     case 0:
         v8 = reinterpret_cast<void**>(19);
-        v9 = reinterpret_cast<void**>(0x8056e85);
-        fun_8048c54(0x805f2a0, 0x8056e85, 19, v10, v11, a4, a3, a1, v12, v13, v14, v15, v16, v17, v18);
+        v9 = reinterpret_cast<void**>("GEM_ACTION=INSTALL");
+        fun_8048c54(0x805f2a0, "GEM_ACTION=INSTALL", 19, v10, v11, a4, a3, a1, v12, v13, v14, v15, v16, v17, v18);
         break;
     case 1:
         v8 = reinterpret_cast<void**>(19);
-        v9 = reinterpret_cast<void**>(0x8056e85);
-        fun_8048c54(0x805f2a0, 0x8056e85, 19, v19, v20, a4, a3, a1, v21, v22, v23, v24, v25, v26, v27);
+        v9 = reinterpret_cast<void**>("GEM_ACTION=INSTALL");
+        fun_8048c54(0x805f2a0, "GEM_ACTION=INSTALL", 19, v19, v20, a4, a3, a1, v21, v22, v23, v24, v25, v26, v27);
         break;
     case 2:
         v8 = reinterpret_cast<void**>(17);
-        v9 = reinterpret_cast<void**>(0x8056e98);
-        fun_8048c54(0x805f2a0, 0x8056e98, 17, v28, v29, a4, a3, a1, v30, v31, v32, v33, v34, v35, v36);
+        v9 = reinterpret_cast<void**>("GEM_ACTION=QUERY");
+        fun_8048c54(0x805f2a0, "GEM_ACTION=QUERY", 17, v28, v29, a4, a3, a1, v30, v31, v32, v33, v34, v35, v36);
         break;
     case 3:
         v8 = reinterpret_cast<void**>(17);
-        v9 = reinterpret_cast<void**>(0x8056ea9);
-        fun_8048c54(0x805f2a0, 0x8056ea9, 17, v37, v38, a4, a3, a1, v39, v40, v41, v42, v43, v44, v45);
+        v9 = reinterpret_cast<void**>("GEM_ACTION=CLEAN");
+        fun_8048c54(0x805f2a0, "GEM_ACTION=CLEAN", 17, v37, v38, a4, a3, a1, v39, v40, v41, v42, v43, v44, v45);
         break;
     case 4:
         v8 = reinterpret_cast<void**>(19);
-        v9 = reinterpret_cast<void**>(0x8056eba);
-        fun_8048c54(0x805f2a0, 0x8056eba, 19, v46, v47, a4, a3, a1, v48, v49, v50, v51, v52, v53, v54);
+        v9 = reinterpret_cast<void**>("GEM_ACTION=LICENSE");
+        fun_8048c54(0x805f2a0, "GEM_ACTION=LICENSE", 19, v46, v47, a4, a3, a1, v48, v49, v50, v51, v52, v53, v54);
         break;
     case 6:
         v8 = reinterpret_cast<void**>(19);
-        v9 = reinterpret_cast<void**>(0x8056ecd);
-        fun_8048c54(0x805f2a0, 0x8056ecd, 19, v55, v56, a4, a3, a1, v57, v58, v59, v60, v61, v62, v63);
+        v9 = reinterpret_cast<void**>("GEM_ACTION=DETAILS");
+        fun_8048c54(0x805f2a0, "GEM_ACTION=DETAILS", 19, v55, v56, a4, a3, a1, v57, v58, v59, v60, v61, v62, v63);
     case 5:
         goto 0x805284a;
     }
     fun_8048ca4(0x805f2a0, v9, v8, v64, v65);
     if (!a4) {
         v66 = reinterpret_cast<void**>(23);
-        v67 = reinterpret_cast<void**>(0x8056ef0);
-        fun_8048c54(0x805faa0, 0x8056ef0, 23, v68, v69, a4, a3, a1, v70, v71, v72, v73, v74, v75, v76);
+        v67 = reinterpret_cast<void**>("INSTALL_BASE=UNDEFINED");
+        fun_8048c54(0x805faa0, "INSTALL_BASE=UNDEFINED", 23, v68, v69, a4, a3, a1, v70, v71, v72, v73, v74, v75, v76);
     } else {
         v66 = a4;
-        v67 = reinterpret_cast<void**>(0x8056ee0);
-        fun_8048aa4(0x805faa0, 0x8056ee0, v66, v77, v78, a4, a3, a1, v79, v80, v81, v82, v83, v84, v85, v86, v87);
+        v67 = reinterpret_cast<void**>("INSTALL_BASE=%s");
+        fun_8048aa4(0x805faa0, "INSTALL_BASE=%s", v66, v77, v78, a4, a3, a1, v79, v80, v81, v82, v83, v84, v85, v86, v87);
     }
     fun_8048ca4(0x805faa0, v67, v66, v88, v89);
     fun_8048d74(reinterpret_cast<int32_t>(ebp6) - 0x80c, 0x800, v66);
     eax92 = basename(a1, 0x800, v66, v90, v91);
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xffffeff4, 0x8056f07, reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, eax92, v93, a4, a3, a1, v94, v95, v96, v97, v98, v99, v100, v101, v102);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xffffeff4, "%s/%s/src", reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, eax92, v93, a4, a3, a1, v94, v95, v96, v97, v98, v99, v100, v101, v102);
     v103 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xffffeff4);
-    fun_8048aa4(0x8062aa0, 0x8056f11, v103, eax92, v104, a4, a3, a1, v105, v106, v107, v108, v109, v110, v111, v112, v113);
-    fun_8048ca4(0x8062aa0, 0x8056f11, v103, eax92, v114);
+    fun_8048aa4(0x8062aa0, "EXT_BASE=%s", v103, eax92, v104, a4, a3, a1, v105, v106, v107, v108, v109, v110, v111, v112, v113);
+    fun_8048ca4(0x8062aa0, "EXT_BASE=%s", v103, eax92, v114);
     if (a3) {
         v115 = a3;
-        v116 = reinterpret_cast<void**>(0x8056f2e);
-        fun_8048aa4(0x80602a0, 0x8056f2e, v115, eax92, v117, a4, a3, a1, v118, v119, v120, v121, v122, v123, v124, v125, v126);
+        v116 = reinterpret_cast<void**>("INSTALL_TYPE=%s");
+        fun_8048aa4(0x80602a0, "INSTALL_TYPE=%s", v115, eax92, v117, a4, a3, a1, v118, v119, v120, v121, v122, v123, v124, v125, v126);
     } else {
         v115 = reinterpret_cast<void**>(17);
-        v116 = reinterpret_cast<void**>(0x8056f1d);
-        fun_8048c54(0x80602a0, 0x8056f1d, 17, eax92, v127, a4, a3, a1, v128, v129, v130, v131, v132, v133, v134);
+        v116 = reinterpret_cast<void**>("INSTALL_TYPE=src");
+        fun_8048c54(0x80602a0, "INSTALL_TYPE=src", 17, eax92, v127, a4, a3, a1, v128, v129, v130, v131, v132, v133, v134);
     }
     fun_8048ca4(0x80602a0, v116, v115, eax92, v135);
     edx136 = FORCE;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8056f3e, edx136, eax92, v137, a4, a3, a1, v138, v139, v140, v141, v142, v143, v144, v145, v146);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "%i", edx136, eax92, v137, a4, a3, a1, v138, v139, v140, v141, v142, v143, v144, v145, v146);
     v147 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4);
-    fun_8048aa4(0x8060aa0, 0x8056f41, v147, eax92, v148, a4, a3, a1, v149, v150, v151, v152, v153, v154, v155, v156, v157);
-    fun_8048ca4(0x8060aa0, 0x8056f41, v147, eax92, v158);
+    fun_8048aa4(0x8060aa0, "GEM_FORCE=%s", v147, eax92, v148, a4, a3, a1, v149, v150, v151, v152, v153, v154, v155, v156, v157);
+    fun_8048ca4(0x8060aa0, "GEM_FORCE=%s", v147, eax92, v158);
     edx159 = VERBOSE;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8056f3e, edx159, eax92, v160, a4, a3, a1, v161, v162, v163, v164, v165, v166, v167, v168, v169);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "%i", edx159, eax92, v160, a4, a3, a1, v161, v162, v163, v164, v165, v166, v167, v168, v169);
     v170 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4);
-    fun_8048aa4(0x80612a0, 0x8056f4e, v170, eax92, v171, a4, a3, a1, v172, v173, v174, v175, v176, v177, v178, v179, v180);
-    fun_8048ca4(0x80612a0, 0x8056f4e, v170, eax92, v181);
-    fun_8048c54(0x8061aa0, 0x8056f5d, 10, eax92, v182, a4, a3, a1, v183, v184, v185, v186, v187, v188, v189);
-    fun_8048ca4(0x8061aa0, 0x8056f5d, 10, eax92, v190);
-    atexit(exit_tmp, 0x8056f5d, 10, eax92, v191, a4, a3, a1);
+    fun_8048aa4(0x80612a0, "GEM_VERBOSE=%s", v170, eax92, v171, a4, a3, a1, v172, v173, v174, v175, v176, v177, v178, v179, v180);
+    fun_8048ca4(0x80612a0, "GEM_VERBOSE=%s", v170, eax92, v181);
+    fun_8048c54(0x8061aa0, "GEM_GUI=0", 10, eax92, v182, a4, a3, a1, v183, v184, v185, v186, v187, v188, v189);
+    fun_8048ca4(0x8061aa0, "GEM_GUI=0", 10, eax92, v190);
+    atexit(exit_tmp, "GEM_GUI=0", 10, eax92, v191, a4, a3, a1);
     eax192 = reinterpret_cast<void**>(eax7 ^ g14);
     if (eax192) {
-        eax192 = fun_8048d34(exit_tmp, 0x8056f5d, 10, eax92, v193, a4, a3, a1, v194, v195, v196, v197, v198, v199, v200, v201, v202);
+        eax192 = fun_8048d34(exit_tmp, "GEM_GUI=0", 10, eax92, v193, a4, a3, a1, v194, v195, v196, v197, v198, v199, v200, v201, v202);
     }
     return eax192;
 }
@@ -10803,77 +10803,77 @@ void show_help(void** a1, void** a2, void** a3, void** a4, void** a5) {
     void** v279;
 
     eax6 = stdout;
-    fun_8048cd4(0x8056f88, 1, 42, eax6, v7);
+    fun_8048cd4("Usage: gem64 [OPTION] [ACTION] [FILE|DIR]\n", 1, 42, eax6, v7);
     eax8 = stdout;
-    fun_8048cd4(0x8056fb4, 1, 44, eax8, v9);
+    fun_8048cd4("Install a GRASS extension from FILE or DIR.\n", 1, 44, eax8, v9);
     eax10 = stdout;
-    fun_8048cd4(0x8056fe4, 1, 39, eax10, v11);
+    fun_8048cd4("Manage (installed) GRASS extension(s).\n", 1, 39, eax10, v11);
     eax12 = stdout;
-    fun_8048cd4(0x805700c, 1, 23, eax12, v13);
+    fun_8048cd4("\nPossible ACTIONs are:\n", 1, 23, eax12, v13);
     eax14 = stdout;
-    fun_8048cd4(0x8057024, 1, 46, eax14, v15);
+    fun_8048cd4("  -i, --install=EXT\tinstall a GRASS extension\n", 1, 46, eax14, v15);
     eax16 = stdout;
-    fun_8048cd4(0x8057054, 1, 53, eax16, v17);
+    fun_8048cd4("  -u, --uninstall=EXT\tremove an extension from GRASS\n", 1, 53, eax16, v17);
     eax18 = stdout;
-    fun_8048cd4(0x805708c, 1, 69, eax18, v19);
+    fun_8048cd4("  -q, --query=EXT\tdisplay information about extension/list installed\n", 1, 69, eax18, v19);
     eax20 = stdout;
-    fun_8048cd4(0x80570d4, 1, 66, eax20, v21);
+    fun_8048cd4("  -d, --details=EXT\tdisplay additional details about an extension\n", 1, 66, eax20, v21);
     eax22 = stdout;
-    fun_8048cd4(0x8057118, 1, 60, eax22, v23);
+    fun_8048cd4("  -c, --clean=EXT\tclean extension's source code directories\n", 1, 60, eax22, v23);
     eax24 = stdout;
-    fun_8048cd4(0x8057158, 1, 68, eax24, v25);
+    fun_8048cd4("  -t, --test=EXT\tconfigure and compile extension, but don't install\n", 1, 68, eax24, v25);
     eax26 = stdout;
-    fun_8048cd4(0x80571a0, 1, 64, eax26, v27);
+    fun_8048cd4("  -l, --license=EXT\tshow copyright information for an extension\n", 1, 64, eax26, v27);
     eax28 = stdout;
-    fun_8048cd4(0x80571e4, 1, 61, eax28, v29);
+    fun_8048cd4("  -r, --restore\t\trecreate HTML links and GIS Manager entries\n", 1, 61, eax28, v29);
     eax30 = stdout;
-    fun_8048cd4(0x8057224, 1, 41, eax30, v31);
+    fun_8048cd4("  -h, --help\t\tdisplay this help and exit\n", 1, 41, eax30, v31);
     eax32 = stdout;
-    fun_8048cd4(0x8057250, 1, 54, eax32, v33);
+    fun_8048cd4("  -V, --version\t\toutput version information and exit\n\n", 1, 54, eax32, v33);
     eax34 = stdout;
-    fun_8048cd4(0x8057287, 1, 23, eax34, v35);
+    fun_8048cd4("\nPossible OPTIONs are:\n", 1, 23, eax34, v35);
     eax36 = stdout;
-    fun_8048cd4(0x80572a0, 1, 50, eax36, v37);
+    fun_8048cd4("  -g, --grass=PATH\tpath to GRASS installation dir\n", 1, 50, eax36, v37);
     eax38 = stdout;
-    fun_8048cd4(0x80572d4, 1, 69, eax38, v39);
+    fun_8048cd4("  -b, --binary=NAME\tno compilation: use binary files for system NAME\n", 1, 69, eax38, v39);
     eax40 = stdout;
-    fun_8048cd4(0x805731c, 1, 56, eax40, v41);
+    fun_8048cd4("  -f, --force\t\tforce action, regardless of dependencies\n", 1, 56, eax40, v41);
     eax42 = stdout;
-    fun_8048cd4(0x8057358, 1, 53, eax42, v43);
+    fun_8048cd4("  -v, --verbose\t\tdisplay detailed status information\n", 1, 53, eax42, v43);
     eax44 = stdout;
-    fun_8048cd4(0x8057390, 1, 42, eax44, v45);
+    fun_8048cd4("  -s, --skip-config\tskip configure script\n", 1, 42, eax44, v45);
     eax46 = stdout;
-    fun_8048cd4(0x80573bc, 1, 55, eax46, v47);
+    fun_8048cd4("  -x, --config-opts=OPTS\tpass OPTS to configure script\n", 1, 55, eax46, v47);
     eax48 = stdout;
-    fun_8048cd4(0x80573f4, 1, 62, eax48, v49);
+    fun_8048cd4("  -o, --options=OPTS\toptions to pass to the C compiler/linker\n", 1, 62, eax48, v49);
     eax50 = stdout;
-    fun_8048cd4(0x8057434, 1, 77, eax50, v51);
+    fun_8048cd4("  -C, --config-cmd=CMD\tDefine custom 'configure' command (default=configure)\n", 1, 77, eax50, v51);
     eax52 = stdout;
-    fun_8048cd4(0x8057484, 1, 65, eax52, v53);
+    fun_8048cd4("  -m, --make-cmd=CMD\tDefine custom 'make' command (default=make)\n", 1, 65, eax52, v53);
     eax54 = stdout;
-    fun_8048cd4(0x80574c8, 1, 71, eax54, v55);
+    fun_8048cd4("\nWhen run from within a GRASS session, locations of libs, header files\n", 1, 71, eax54, v55);
     eax56 = stdout;
-    fun_8048cd4(0x8057510, 1, 73, eax56, v57);
+    fun_8048cd4("and installation target dir will be assumed to match those of the active\n", 1, 73, eax56, v57);
     eax58 = stdout;
-    fun_8048cd4(0x805755a, 1, 15, eax58, v59);
+    fun_8048cd4("GRASS version. ", 1, 15, eax58, v59);
     eax60 = stdout;
-    fun_8048cd4(0x805756c, 1, 74, eax60, v61);
+    fun_8048cd4("Option -g can be used to override these or install extensions\nfrom outside", 1, 74, eax60, v61);
     eax62 = stdout;
-    fun_8048cd4(0x80575b7, 1, 20, eax62, v63);
+    fun_8048cd4("of a GRASS session.\n", 1, 20, eax62, v63);
     eax64 = stdout;
-    fun_8048cd4(0x80575cc, 1, 73, eax64, v65);
+    fun_8048cd4("Per default, extensions will be compiled from source and then installed.\n", 1, 73, eax64, v65);
     eax66 = stdout;
-    fun_8048cd4(0x8057618, 1, 76, eax66, v67);
+    fun_8048cd4("If the exension package contains binaries for the user's platform, they can\n", 1, 76, eax66, v67);
     eax68 = stdout;
-    fun_8048cd4(0x8057668, 1, 42, eax68, v69);
+    fun_8048cd4("be installed instead using the -b option. ", 1, 42, eax68, v69);
     eax70 = stdout;
-    fun_8048cd4(0x8057694, 1, 75, eax70, v71);
+    fun_8048cd4("For installation from source code, a C compiler and make tools are needed.\n", 1, 75, eax70, v71);
     eax72 = stdout;
-    fun_8048cd4(0x80576e0, 1, 10, eax72, v73);
+    fun_8048cd4("\nExample:\n", 1, 10, eax72, v73);
     eax74 = stdout;
-    fun_8048cd4(0x80576ec, 1, 63, eax74, v75);
+    fun_8048cd4("\tgem64 -b macosx --grass=/usr/local/grass-6.4.0 -i myExtension\n", 1, 63, eax74, v75);
     eax76 = stdout;
-    fun_8048cd4(0x805772c, 1, 75, eax76, v77);
+    fun_8048cd4("Installs the MacOS X binaries for 'myExtension' in /usr/local/grass-6.4.0.\n", 1, 75, eax76, v77);
     fun_8048db4(0, 1, 75, eax76, v78, v79, ebp80, __return_address(), a1, a2, a3);
     esp81 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 - 24 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4);
     eax86 = basename(1, v82, v83, v84, v85);
@@ -10886,49 +10886,49 @@ void show_help(void** a1, void** a2, void** a3, void** a4, void** a5) {
         v113 = *eax112;
         eax119 = fun_8048ad4(v113, eax86, v114, v115, v116, v117, v118, 1);
         v120 = eax119;
-        print_error(0xfffffffe, 0x8057778, 1, v120, v121, v122, v123, 1, v124);
+        print_error(0xfffffffe, "extension '%s' not accessible: (%s)\n", 1, v120, v121, v122, v123, 1, v124);
         esp106 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp106) - 4 + 4 - 4 + 4 - 4 + 4);
     }
-    dump_ascii(0x80577b2, 0x805779d, 1, v120, v125, v126);
-    fun_8048b84(0x80577b7, 0x805779d, 1, v120, v127, v128, v129);
-    fun_8048db4(0, 0x805779d, 1, v120, v130, v131, v132, 1, v133, v134, eax105);
+    dump_ascii("info", "Detailed information", 1, v120, v125, v126);
+    fun_8048b84("sh post", "Detailed information", 1, v120, v127, v128, v129);
+    fun_8048db4(0, "Detailed information", 1, v120, v130, v131, v132, 1, v133, v134, eax105);
     esp135 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(esp106) - 4 + 4 - 4 + 4 - 4 + 4 - 4);
-    eax140 = basename(0x805779d, v136, v137, v138, v139);
-    fun_8048c84(esp135 + 0xfffff7f4, eax140, v141, v142, v143, v144, v145, 0x805779d, v146, v147, v148, v149, v150, v151, v152, v153, v154);
+    eax140 = basename("Detailed information", v136, v137, v138, v139);
+    fun_8048c84(esp135 + 0xfffff7f4, eax140, v141, v142, v143, v144, v145, "Detailed information", v146, v147, v148, v149, v150, v151, v152, v153, v154);
     v155 = esp135 + 0xfffff7f4;
     eax159 = fun_8048c94(v155, eax140, v156, v157, v158);
     esp160 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(esp135 - 0x838) - 4 + 4 - 4 + 4 - 4 + 4);
     if (reinterpret_cast<signed char>(eax159) < reinterpret_cast<signed char>(0)) {
-        eax166 = fun_8048a94(v155, eax140, v161, v162, v163, v164, v165, 0x805779d);
+        eax166 = fun_8048a94(v155, eax140, v161, v162, v163, v164, v165, "Detailed information");
         v167 = *eax166;
-        eax173 = fun_8048ad4(v167, eax140, v168, v169, v170, v171, v172, 0x805779d);
+        eax173 = fun_8048ad4(v167, eax140, v168, v169, v170, v171, v172, "Detailed information");
         v174 = eax173;
-        print_error(0xfffffffe, 0x8057778, 0x805779d, v174, v175, v176, v177, 0x805779d, v178);
+        print_error(0xfffffffe, "extension '%s' not accessible: (%s)\n", "Detailed information", v174, v175, v176, v177, "Detailed information", v178);
         esp160 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(esp160) - 4 + 4 - 4 + 4 - 4 + 4);
     }
-    dump_ascii(0x80577bf, 0x805779d, 0x805779d, v174, v179, v180);
-    fun_8048b84(0x80577b7, 0x805779d, 0x805779d, v174, v181, v182, v183);
-    fun_8048db4(0, 0x805779d, 0x805779d, v174, v184, v185, v186, 0x805779d, v187, v188, eax159);
+    dump_ascii("license", "Detailed information", "Detailed information", v174, v179, v180);
+    fun_8048b84("sh post", "Detailed information", "Detailed information", v174, v181, v182, v183);
+    fun_8048db4(0, "Detailed information", "Detailed information", v174, v184, v185, v186, "Detailed information", v187, v188, eax159);
     eax189 = stdout;
     __asm__("fld qword [0x8057e40]");
     __asm__("fstp qword [esp+0x8]");
-    fun_8048ce4(eax189, 0x80577c8, v190, v191, v192, v193, esp135, 0, 0x805779d, 0x805779d, v174, v194, v195, v196, 0x805779d);
+    fun_8048ce4(eax189, "gem64 (GRASS extensions manager) %.2f\n", v190, v191, v192, v193, esp135, 0, "Detailed information", "Detailed information", v174, v194, v195, v196, "Detailed information");
     eax197 = stdout;
-    fun_8048cd4(0x80577ef, 1, 26, eax197, v198);
+    fun_8048cd4("Written by Benjamin Ducke\n", 1, 26, eax197, v198);
     eax199 = stdout;
-    fun_8048cd4(0x805780c, 1, 35, eax199, v200);
+    fun_8048cd4("\nCopyright (C) 2005 Benjamin Ducke\n", 1, 35, eax199, v200);
     eax201 = stdout;
-    fun_8048cd4(0x8057830, 1, 75, eax201, v202);
+    fun_8048cd4("This is free software; see the source for copying conditions.  There is NO\n", 1, 75, eax201, v202);
     eax203 = stdout;
-    fun_8048cd4(0x805787c, 1, 76, eax203, v204);
-    fun_8048db4(0, 1, 76, eax203, v205, v206, esp135, 0, 0x805779d, 0x805779d, v174);
+    fun_8048cd4("warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n", 1, 76, eax203, v204);
+    fun_8048db4(0, 1, 76, eax203, v205, v206, esp135, 0, "Detailed information", "Detailed information", v174);
     ebp207 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(esp160) - 4 + 4 - 4 + 4 - 4 + 4 - 4 - 24 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4);
     eax208 = g14;
     eax209 = CONFIG_OPTS;
     if (!*reinterpret_cast<signed char*>(&eax209)) {
         v210 = reinterpret_cast<void**>(1);
-        fun_8048aa4(reinterpret_cast<uint32_t>(ebp207) + 0xfffff7f4, 0x80578c9, 1, v211, v212, v213, v214, 1, v215, v216, v217, v218, v219, v220, v221, v222, v223);
-        eax230 = fun_8048c74(reinterpret_cast<uint32_t>(ebp207) + 0xfffff7f4, 0x80578de, 1, v224, v225, v226, v227, 1, v228, v229);
+        fun_8048aa4(reinterpret_cast<uint32_t>(ebp207) + 0xfffff7f4, "%s/etc/config.system", 1, v211, v212, v213, v214, 1, v215, v216, v217, v218, v219, v220, v221, v222, v223);
+        eax230 = fun_8048c74(reinterpret_cast<uint32_t>(ebp207) + 0xfffff7f4, "r", 1, v224, v225, v226, v227, 1, v228, v229);
         v231 = eax230;
         if (v231) {
             v210 = v231;
@@ -10942,8 +10942,8 @@ void show_help(void** a1, void** a2, void** a3, void** a4, void** a5) {
             }
         } else {
             v232 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp207) + 0xfffff7f4);
-            v233 = reinterpret_cast<void**>(0x80578e0);
-            print_warning(0x80578e0, v232, 1, v257, v258, v259, v260, 1, v261, v262, v231, v263, v264, v265, v266);
+            v233 = reinterpret_cast<void**>("could not open %s for read access. Using default configure options.\n");
+            print_warning("could not open %s for read access. Using default configure options.\n", v232, 1, v257, v258, v259, v260, 1, v261, v262, v231, v263, v264, v265, v266);
         }
     }
     eax267 = eax208 ^ g14;
@@ -11053,23 +11053,23 @@ void show_version(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
     eax8 = stdout;
     __asm__("fld qword [0x8057e40]");
     __asm__("fstp qword [esp+0x8]");
-    fun_8048ce4(eax8, 0x80577c8, v9, v10, v11, v12, ebp13, __return_address(), a1, a2, a3, a4, a5, a6, a7);
+    fun_8048ce4(eax8, "gem64 (GRASS extensions manager) %.2f\n", v9, v10, v11, v12, ebp13, __return_address(), a1, a2, a3, a4, a5, a6, a7);
     eax14 = stdout;
-    fun_8048cd4(0x80577ef, 1, 26, eax14, v15);
+    fun_8048cd4("Written by Benjamin Ducke\n", 1, 26, eax14, v15);
     eax16 = stdout;
-    fun_8048cd4(0x805780c, 1, 35, eax16, v17);
+    fun_8048cd4("\nCopyright (C) 2005 Benjamin Ducke\n", 1, 35, eax16, v17);
     eax18 = stdout;
-    fun_8048cd4(0x8057830, 1, 75, eax18, v19);
+    fun_8048cd4("This is free software; see the source for copying conditions.  There is NO\n", 1, 75, eax18, v19);
     eax20 = stdout;
-    fun_8048cd4(0x805787c, 1, 76, eax20, v21);
+    fun_8048cd4("warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n", 1, 76, eax20, v21);
     fun_8048db4(0, 1, 76, eax20, v22, v23, ebp13, __return_address(), a1, a2, a3);
     ebp24 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 - 24 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4);
     eax25 = g14;
     eax26 = CONFIG_OPTS;
     if (!*reinterpret_cast<signed char*>(&eax26)) {
         v27 = reinterpret_cast<void**>(1);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp24) + 0xfffff7f4, 0x80578c9, 1, v28, v29, v30, v31, 1, v32, v33, v34, v35, v36, v37, v38, v39, v40);
-        eax47 = fun_8048c74(reinterpret_cast<int32_t>(ebp24) + 0xfffff7f4, 0x80578de, 1, v41, v42, v43, v44, 1, v45, v46);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp24) + 0xfffff7f4, "%s/etc/config.system", 1, v28, v29, v30, v31, 1, v32, v33, v34, v35, v36, v37, v38, v39, v40);
+        eax47 = fun_8048c74(reinterpret_cast<int32_t>(ebp24) + 0xfffff7f4, "r", 1, v41, v42, v43, v44, 1, v45, v46);
         v48 = eax47;
         if (v48) {
             v27 = v48;
@@ -11083,8 +11083,8 @@ void show_version(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             }
         } else {
             v49 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp24) + 0xfffff7f4);
-            v50 = reinterpret_cast<void**>(0x80578e0);
-            print_warning(0x80578e0, v49, 1, v74, v75, v76, v77, 1, v78, v79, v48, v80, v81, v82, v83);
+            v50 = reinterpret_cast<void**>("could not open %s for read access. Using default configure options.\n");
+            print_warning("could not open %s for read access. Using default configure options.\n", v49, 1, v74, v75, v76, v77, 1, v78, v79, v48, v80, v81, v82, v83);
         }
     }
     eax84 = eax25 ^ g14;
@@ -11178,29 +11178,29 @@ void** wget_extension(void** a1, void** a2, void** a3, void** a4, void** a5) {
     ebp6 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     eax7 = g14;
     eax8 = stdout;
-    fun_8048cd4(0x8054bfc, 1, 14, eax8, v9);
+    fun_8048cd4("Downloading...", 1, 14, eax8, v9);
     eax10 = VERBOSE;
     if (!eax10) {
         v11 = a1;
-        v12 = reinterpret_cast<void**>(0x8054c16);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8054c16, v11, eax8, v13, v14, v15, a1, v16, v17, v18, v19, v20, v21, v22, v23, v24);
+        v12 = reinterpret_cast<void**>("wget -N -q %s");
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "wget -N -q %s", v11, eax8, v13, v14, v15, a1, v16, v17, v18, v19, v20, v21, v22, v23, v24);
     } else {
         v11 = a1;
-        v12 = reinterpret_cast<void**>(0x8054c0b);
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8054c0b, v11, eax8, v25, v26, v27, a1, v28, v29, v30, v31, v32, v33, v34, v35, v36);
+        v12 = reinterpret_cast<void**>("wget -N %s");
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "wget -N %s", v11, eax8, v25, v26, v27, a1, v28, v29, v30, v31, v32, v33, v34, v35, v36);
     }
     v37 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4);
     eax41 = fun_8048b84(v37, v12, v11, eax8, v38, v39, v40);
     if (reinterpret_cast<int1_t>(eax41 == 0xffffffff)) {
-        v12 = reinterpret_cast<void**>(0x8054c24);
+        v12 = reinterpret_cast<void**>("could not run 'wget' to download extension. Is it installed?\n");
         v37 = reinterpret_cast<void**>(0xffffffec);
-        print_error(0xffffffec, 0x8054c24, v11, eax8, v42, v43, v44, a1, v45);
+        print_error(0xffffffec, "could not run 'wget' to download extension. Is it installed?\n", v11, eax8, v42, v43, v44, a1, v45);
     }
     if (reinterpret_cast<signed char>(eax41) > reinterpret_cast<signed char>(0)) {
         v11 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4);
-        v12 = reinterpret_cast<void**>(0x8054c62);
+        v12 = reinterpret_cast<void**>("running command '%s'.\n");
         v37 = reinterpret_cast<void**>(0xffffffec);
-        print_error(0xffffffec, 0x8054c62, v11, eax8, v46, v47, v48, a1, v49);
+        print_error(0xffffffec, "running command '%s'.\n", v11, eax8, v46, v47, v48, a1, v49);
     }
     print_done(v37, v12, v11, eax8, v50, v51, v52, a1, v53, v54, eax41, v55, v56, v57, v58, v59, v60);
     eax61 = reinterpret_cast<void**>(eax7 ^ g14);
@@ -11378,7 +11378,7 @@ void** check_extension(void** a1, void** a2, void** a3, void** a4, void** a5) {
     eax15 = stdout;
     v16 = eax15;
     v17 = reinterpret_cast<void**>(22);
-    fun_8048cd4(0x8055e30, 1, 22, v16, v18);
+    fun_8048cd4("Checking extension ...", 1, 22, v16, v18);
     fun_8048c84(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, v7, 22, v16, v19, v20, v21, v22, v23, v24, v25, v11, v10, v9, v8, v7, v26);
     v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4);
     eax29 = fun_8048c94(v27, v7, 22, v16, v28);
@@ -11388,26 +11388,26 @@ void** check_extension(void** a1, void** a2, void** a3, void** a4, void** a5) {
         eax40 = fun_8048ad4(v35, v7, 22, v16, v36, v37, v38, v39);
         v16 = eax40;
         v17 = v7;
-        print_error(0xfffffffe, 0x8055e48, v17, v16, v41, v42, v43, v44, v45);
+        print_error(0xfffffffe, "extension '%s' not accessible: %s\n", v17, v16, v41, v42, v43, v44, v45);
     }
-    eax52 = fun_8048c74(0x8055e6d, 0x8055e6b, v17, v16, v46, v47, v48, v49, v50, v51);
+    eax52 = fun_8048c74("id", "r", v17, v16, v46, v47, v48, v49, v50, v51);
     if (eax52) {
         v17 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4);
-        fun_8048af4(eax52, 0x8055e89, v17, v16, v53, v54, v55, v56);
+        fun_8048af4(eax52, "%[<GRASS extension package>] ", v17, v16, v53, v54, v55, v56);
         v57 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4);
-        eax65 = fun_8048da4(0x8055ea7, v57, v17, v16, v58, v59, v60, v61, v62, v63, v64, v11);
+        eax65 = fun_8048da4("<GRASS extension package>", v57, v17, v16, v58, v59, v60, v61, v62, v63, v64, v11);
         if (eax65) {
             fun_8048c44(eax52, v57, v17, v16, v66, v67, v68, v69, v70, v71, v72, v11, v10, v9, v8);
-            v57 = reinterpret_cast<void**>(0x8055ec1);
-            print_error(0xfffffffa, 0x8055ec1, v17, v16, v73, v74, v75, v76, v77);
+            v57 = reinterpret_cast<void**>("unknown file identifier.\n");
+            print_error(0xfffffffa, "unknown file identifier.\n", v17, v16, v73, v74, v75, v76, v77);
         }
     } else {
-        v57 = reinterpret_cast<void**>(0x8055e70);
-        print_error(0xfffffffa, 0x8055e70, v17, v16, v78, v79, v80, v81, v82);
+        v57 = reinterpret_cast<void**>("'id' file not readable.\n");
+        print_error(0xfffffffa, "'id' file not readable.\n", v17, v16, v78, v79, v80, v81, v82);
     }
     fun_8048c44(eax52, v57, v17, v16, v83, v84, v85, v86, v87, v88, v89, v11, v10, v9, v8);
-    get_package_name(0x8055edb, v8, v17, v16, v90);
-    eax97 = fun_8048c74(0x8055edd, 0x8055e6b, v17, v16, v91, v92, v93, v94, v95, v96);
+    get_package_name(".", v8, v17, v16, v90);
+    eax97 = fun_8048c74("version", "r", v17, v16, v91, v92, v93, v94, v95, v96);
     if (eax97) {
         nc_fgets_nb(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x800, eax97, v16, v98, v99, v100, v101, v102, v103, v104, v11, v10, v9, v8);
         *reinterpret_cast<void***>(v10) = reinterpret_cast<void**>(0);
@@ -11415,22 +11415,22 @@ void** check_extension(void** a1, void** a2, void** a3, void** a4, void** a5) {
         v105 = v11;
         v16 = v10;
         v17 = v9;
-        v106 = reinterpret_cast<void**>(0x8055f03);
+        v106 = reinterpret_cast<void**>("%i.%i.%i");
         v107 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4);
-        eax112 = fun_8048b34(v107, 0x8055f03, v17, v16, v105, v108, v109, v110, v111);
+        eax112 = fun_8048b34(v107, "%i.%i.%i", v17, v16, v105, v108, v109, v110, v111);
         if (reinterpret_cast<signed char>(eax112) <= reinterpret_cast<signed char>(0)) {
-            fun_8048c44(eax97, 0x8055f03, v17, v16, v105, v113, v114, v115, v116, v117, v118, v11, v10, v9, v8);
-            v106 = reinterpret_cast<void**>(0x8055f0c);
+            fun_8048c44(eax97, "%i.%i.%i", v17, v16, v105, v113, v114, v115, v116, v117, v118, v11, v10, v9, v8);
+            v106 = reinterpret_cast<void**>("invalid or missing version information.\n");
             v107 = reinterpret_cast<void**>(0xfffffffa);
-            print_error(0xfffffffa, 0x8055f0c, v17, v16, v105, v119, v120, v121, v122);
+            print_error(0xfffffffa, "invalid or missing version information.\n", v17, v16, v105, v119, v120, v121, v122);
         }
     } else {
-        v106 = reinterpret_cast<void**>(0x8055ee5);
+        v106 = reinterpret_cast<void**>("'version' file not readable.\n");
         v107 = reinterpret_cast<void**>(0xfffffffa);
-        print_error(0xfffffffa, 0x8055ee5, v17, v16, v123, v124, v125, v126, v127);
+        print_error(0xfffffffa, "'version' file not readable.\n", v17, v16, v123, v124, v125, v126, v127);
     }
     print_done(v107, v106, v17, v16, v105, v128, v129, v130, v131, v132, v133, v11, v10, v9, v8, v7, v134);
-    fun_8048c94(0x8055f35, v106, v17, v16, v105);
+    fun_8048c94("..", v106, v17, v16, v105);
     fun_8048c44(eax97, v106, v17, v16, v105, v135, v136, v137, v138, v139, v140, v11, v10, v9, v8);
     eax141 = reinterpret_cast<void**>(v13 ^ g14);
     if (eax141) {
@@ -11653,49 +11653,49 @@ void show_details(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
         eax47 = fun_8048ad4(v41, eax14, v42, v43, v44, v45, v46, a1);
         v48 = eax47;
         v49 = a1;
-        print_error(0xfffffffe, 0x8057778, v49, v48, v50, v51, v52, a1, v53);
+        print_error(0xfffffffe, "extension '%s' not accessible: (%s)\n", v49, v48, v50, v51, v52, a1, v53);
         esp34 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp34) - 4 + 4 - 4 + 4 - 4 + 4);
     }
-    dump_ascii(0x80577b2, 0x805779d, v49, v48, v54, v55);
-    fun_8048b84(0x80577b7, 0x805779d, v49, v48, v56, v57, v58);
-    fun_8048db4(0, 0x805779d, v49, v48, v59, v60, v61, a1, v62, v63, eax33);
+    dump_ascii("info", "Detailed information", v49, v48, v54, v55);
+    fun_8048b84("sh post", "Detailed information", v49, v48, v56, v57, v58);
+    fun_8048db4(0, "Detailed information", v49, v48, v59, v60, v61, a1, v62, v63, eax33);
     esp64 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(esp34) - 4 + 4 - 4 + 4 - 4 + 4 - 4);
-    eax69 = basename(0x805779d, v65, v66, v67, v68);
-    fun_8048c84(esp64 + 0xfffff7f4, eax69, v70, v71, v72, v73, v74, 0x805779d, v75, v76, v77, v78, v79, v80, v81, v82, v83);
+    eax69 = basename("Detailed information", v65, v66, v67, v68);
+    fun_8048c84(esp64 + 0xfffff7f4, eax69, v70, v71, v72, v73, v74, "Detailed information", v75, v76, v77, v78, v79, v80, v81, v82, v83);
     v84 = esp64 + 0xfffff7f4;
     eax88 = fun_8048c94(v84, eax69, v85, v86, v87);
     esp89 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(esp64 - 0x838) - 4 + 4 - 4 + 4 - 4 + 4);
     if (reinterpret_cast<signed char>(eax88) < reinterpret_cast<signed char>(0)) {
-        eax95 = fun_8048a94(v84, eax69, v90, v91, v92, v93, v94, 0x805779d);
+        eax95 = fun_8048a94(v84, eax69, v90, v91, v92, v93, v94, "Detailed information");
         v96 = *eax95;
-        eax102 = fun_8048ad4(v96, eax69, v97, v98, v99, v100, v101, 0x805779d);
+        eax102 = fun_8048ad4(v96, eax69, v97, v98, v99, v100, v101, "Detailed information");
         v103 = eax102;
-        print_error(0xfffffffe, 0x8057778, 0x805779d, v103, v104, v105, v106, 0x805779d, v107);
+        print_error(0xfffffffe, "extension '%s' not accessible: (%s)\n", "Detailed information", v103, v104, v105, v106, "Detailed information", v107);
         esp89 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(esp89) - 4 + 4 - 4 + 4 - 4 + 4);
     }
-    dump_ascii(0x80577bf, 0x805779d, 0x805779d, v103, v108, v109);
-    fun_8048b84(0x80577b7, 0x805779d, 0x805779d, v103, v110, v111, v112);
-    fun_8048db4(0, 0x805779d, 0x805779d, v103, v113, v114, v115, 0x805779d, v116, v117, eax88);
+    dump_ascii("license", "Detailed information", "Detailed information", v103, v108, v109);
+    fun_8048b84("sh post", "Detailed information", "Detailed information", v103, v110, v111, v112);
+    fun_8048db4(0, "Detailed information", "Detailed information", v103, v113, v114, v115, "Detailed information", v116, v117, eax88);
     eax118 = stdout;
     __asm__("fld qword [0x8057e40]");
     __asm__("fstp qword [esp+0x8]");
-    fun_8048ce4(eax118, 0x80577c8, v119, v120, v121, v122, esp64, 0, 0x805779d, 0x805779d, v103, v123, v124, v125, 0x805779d);
+    fun_8048ce4(eax118, "gem64 (GRASS extensions manager) %.2f\n", v119, v120, v121, v122, esp64, 0, "Detailed information", "Detailed information", v103, v123, v124, v125, "Detailed information");
     eax126 = stdout;
-    fun_8048cd4(0x80577ef, 1, 26, eax126, v127);
+    fun_8048cd4("Written by Benjamin Ducke\n", 1, 26, eax126, v127);
     eax128 = stdout;
-    fun_8048cd4(0x805780c, 1, 35, eax128, v129);
+    fun_8048cd4("\nCopyright (C) 2005 Benjamin Ducke\n", 1, 35, eax128, v129);
     eax130 = stdout;
-    fun_8048cd4(0x8057830, 1, 75, eax130, v131);
+    fun_8048cd4("This is free software; see the source for copying conditions.  There is NO\n", 1, 75, eax130, v131);
     eax132 = stdout;
-    fun_8048cd4(0x805787c, 1, 76, eax132, v133);
-    fun_8048db4(0, 1, 76, eax132, v134, v135, esp64, 0, 0x805779d, 0x805779d, v103);
+    fun_8048cd4("warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n", 1, 76, eax132, v133);
+    fun_8048db4(0, 1, 76, eax132, v134, v135, esp64, 0, "Detailed information", "Detailed information", v103);
     ebp136 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(esp89) - 4 + 4 - 4 + 4 - 4 + 4 - 4 - 24 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4);
     eax137 = g14;
     eax138 = CONFIG_OPTS;
     if (!*reinterpret_cast<signed char*>(&eax138)) {
         v139 = reinterpret_cast<void**>(1);
-        fun_8048aa4(reinterpret_cast<uint32_t>(ebp136) + 0xfffff7f4, 0x80578c9, 1, v140, v141, v142, v143, 1, v144, v145, v146, v147, v148, v149, v150, v151, v152);
-        eax159 = fun_8048c74(reinterpret_cast<uint32_t>(ebp136) + 0xfffff7f4, 0x80578de, 1, v153, v154, v155, v156, 1, v157, v158);
+        fun_8048aa4(reinterpret_cast<uint32_t>(ebp136) + 0xfffff7f4, "%s/etc/config.system", 1, v140, v141, v142, v143, 1, v144, v145, v146, v147, v148, v149, v150, v151, v152);
+        eax159 = fun_8048c74(reinterpret_cast<uint32_t>(ebp136) + 0xfffff7f4, "r", 1, v153, v154, v155, v156, 1, v157, v158);
         v160 = eax159;
         if (v160) {
             v139 = v160;
@@ -11709,8 +11709,8 @@ void show_details(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             }
         } else {
             v161 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp136) + 0xfffff7f4);
-            v162 = reinterpret_cast<void**>(0x80578e0);
-            print_warning(0x80578e0, v161, 1, v186, v187, v188, v189, 1, v190, v191, v160, v192, v193, v194, v195);
+            v162 = reinterpret_cast<void**>("could not open %s for read access. Using default configure options.\n");
+            print_warning("could not open %s for read access. Using default configure options.\n", v161, 1, v186, v187, v188, v189, 1, v190, v191, v160, v192, v193, v194, v195);
         }
     }
     eax196 = eax137 ^ g14;
@@ -11880,32 +11880,32 @@ void show_license(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
         eax47 = fun_8048ad4(v41, eax14, v42, v43, v44, v45, v46, a1);
         v48 = eax47;
         v49 = a1;
-        print_error(0xfffffffe, 0x8057778, v49, v48, v50, v51, v52, a1, v53);
+        print_error(0xfffffffe, "extension '%s' not accessible: (%s)\n", v49, v48, v50, v51, v52, a1, v53);
         esp34 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(esp34) - 4 + 4 - 4 + 4 - 4 + 4);
     }
-    dump_ascii(0x80577bf, 0x805779d, v49, v48, v54, v55);
-    fun_8048b84(0x80577b7, 0x805779d, v49, v48, v56, v57, v58);
-    fun_8048db4(0, 0x805779d, v49, v48, v59, v60, v61, a1, v62, v63, eax33);
+    dump_ascii("license", "Detailed information", v49, v48, v54, v55);
+    fun_8048b84("sh post", "Detailed information", v49, v48, v56, v57, v58);
+    fun_8048db4(0, "Detailed information", v49, v48, v59, v60, v61, a1, v62, v63, eax33);
     eax64 = stdout;
     __asm__("fld qword [0x8057e40]");
     __asm__("fstp qword [esp+0x8]");
-    fun_8048ce4(eax64, 0x80577c8, v65, v66, v67, v68, esp9, 0, 0x805779d, v49, v48, v69, v70, v71, a1);
+    fun_8048ce4(eax64, "gem64 (GRASS extensions manager) %.2f\n", v65, v66, v67, v68, esp9, 0, "Detailed information", v49, v48, v69, v70, v71, a1);
     eax72 = stdout;
-    fun_8048cd4(0x80577ef, 1, 26, eax72, v73);
+    fun_8048cd4("Written by Benjamin Ducke\n", 1, 26, eax72, v73);
     eax74 = stdout;
-    fun_8048cd4(0x805780c, 1, 35, eax74, v75);
+    fun_8048cd4("\nCopyright (C) 2005 Benjamin Ducke\n", 1, 35, eax74, v75);
     eax76 = stdout;
-    fun_8048cd4(0x8057830, 1, 75, eax76, v77);
+    fun_8048cd4("This is free software; see the source for copying conditions.  There is NO\n", 1, 75, eax76, v77);
     eax78 = stdout;
-    fun_8048cd4(0x805787c, 1, 76, eax78, v79);
-    fun_8048db4(0, 1, 76, eax78, v80, v81, esp9, 0, 0x805779d, v49, v48);
+    fun_8048cd4("warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n", 1, 76, eax78, v79);
+    fun_8048db4(0, 1, 76, eax78, v80, v81, esp9, 0, "Detailed information", v49, v48);
     ebp82 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(esp34) - 4 + 4 - 4 + 4 - 4 + 4 - 4 - 24 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4);
     eax83 = g14;
     eax84 = CONFIG_OPTS;
     if (!*reinterpret_cast<signed char*>(&eax84)) {
         v85 = reinterpret_cast<void**>(1);
-        fun_8048aa4(reinterpret_cast<uint32_t>(ebp82) + 0xfffff7f4, 0x80578c9, 1, v86, v87, v88, v89, 1, v90, v91, v92, v93, v94, v95, v96, v97, v98);
-        eax105 = fun_8048c74(reinterpret_cast<uint32_t>(ebp82) + 0xfffff7f4, 0x80578de, 1, v99, v100, v101, v102, 1, v103, v104);
+        fun_8048aa4(reinterpret_cast<uint32_t>(ebp82) + 0xfffff7f4, "%s/etc/config.system", 1, v86, v87, v88, v89, 1, v90, v91, v92, v93, v94, v95, v96, v97, v98);
+        eax105 = fun_8048c74(reinterpret_cast<uint32_t>(ebp82) + 0xfffff7f4, "r", 1, v99, v100, v101, v102, 1, v103, v104);
         v106 = eax105;
         if (v106) {
             v85 = v106;
@@ -11919,8 +11919,8 @@ void show_license(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             }
         } else {
             v107 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp82) + 0xfffff7f4);
-            v108 = reinterpret_cast<void**>(0x80578e0);
-            print_warning(0x80578e0, v107, 1, v132, v133, v134, v135, 1, v136, v137, v106, v138, v139, v140, v141);
+            v108 = reinterpret_cast<void**>("could not open %s for read access. Using default configure options.\n");
+            print_warning("could not open %s for read access. Using default configure options.\n", v107, 1, v132, v133, v134, v135, 1, v136, v137, v106, v138, v139, v140, v141);
         }
     }
     eax142 = eax83 ^ g14;
@@ -12105,33 +12105,33 @@ void** dump_html(void** a1, void** a2, void** a3, void** a4, void** a5) {
     eax9 = g14;
     v10 = eax9;
     v11 = reinterpret_cast<void**>(32);
-    fun_8048c54(v8, 0x8054aec, 32, v12, v13, v14, v8, v7, v15, v16, v17, v18, v19, v20, v21);
-    fun_8048c14(v8, 0x8054aec, 32, v22, v23, v24, v8, v7);
-    v25 = reinterpret_cast<void**>(0x8054b0c);
-    eax31 = fun_8048c74(v8, 0x8054b0c, 32, v26, v27, v28, v8, v7, v29, v30);
+    fun_8048c54(v8, "/tmp/grass.extensions.db.XXXXXX", 32, v12, v13, v14, v8, v7, v15, v16, v17, v18, v19, v20, v21);
+    fun_8048c14(v8, "/tmp/grass.extensions.db.XXXXXX", 32, v22, v23, v24, v8, v7);
+    v25 = reinterpret_cast<void**>("w+");
+    eax31 = fun_8048c74(v8, "w+", 32, v26, v27, v28, v8, v7, v29, v30);
     v32 = eax31;
     if (!v32) {
-        eax36 = fun_8048a94(v8, 0x8054b0c, 32, v33, v34, v35, v8, v7);
+        eax36 = fun_8048a94(v8, "w+", 32, v33, v34, v35, v8, v7);
         v37 = *eax36;
-        eax41 = fun_8048ad4(v37, 0x8054b0c, 32, v38, v39, v40, v8, v7);
+        eax41 = fun_8048ad4(v37, "w+", 32, v38, v39, v40, v8, v7);
         v42 = eax41;
         v11 = v8;
-        v25 = reinterpret_cast<void**>(0x8054b10);
-        print_error(0xffffffe9, 0x8054b10, v11, v42, v43, v44, v8, v7, v45);
+        v25 = reinterpret_cast<void**>("could not create temp file '%s': %s\n \t\tMake sure that directory /tmp exists on your system and you have write permission.\n");
+        print_error(0xffffffe9, "could not create temp file '%s': %s\n \t\tMake sure that directory /tmp exists on your system and you have write permission.\n", v11, v42, v43, v44, v8, v7, v45);
     }
     atexit(exit_db, v25, v11, v42, v46, v47, v8, v7);
-    eax51 = fun_8048c74(v7, 0x8054a6f, v11, v42, v48, v49, v8, v7, v50, v32);
+    eax51 = fun_8048c74(v7, "r", v11, v42, v48, v49, v8, v7, v50, v32);
     v52 = eax51;
     while (eax54 = nc_fgets(reinterpret_cast<int32_t>(ebp6) + 0xffffeff4, 0x800, v52, v42, v53), !!eax54) {
         chop(reinterpret_cast<int32_t>(ebp6) + 0xffffeff4, 0x800, v52, v42);
         eax55 = is_text(reinterpret_cast<int32_t>(ebp6) + 0xffffeff4, 0x800, v52, v42);
         if (eax55) {
             v56 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xffffeff4);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x8054b90, v56, v42, v57, v58, v8, v7, v59, v32, v52, v60, v61, v62, v63, v64, v65);
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, "%s <br>\n", v56, v42, v57, v58, v8, v7, v59, v32, v52, v60, v61, v62, v63, v64, v65);
             fun_8048ce4(v32, reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, v56, v42, v66, v67, v8, v7, v68, v32, v52, v69, v70, v71, v72);
         } else {
             v42 = v32;
-            fun_8048cd4(0x8054b8b, 1, 4, v42, v73);
+            fun_8048cd4("<p>\n", 1, 4, v42, v73);
         }
     }
     fun_8048c44(v52, 0x800, v52, v42, v74, v75, v8, v7, v76, v32, v52, v77, v78, v79, v80);
@@ -12170,7 +12170,7 @@ void fun_8048d14(void** a1, void** a2, void** a3, void** a4) {
 
 struct s5 {
     signed char[10] pad10;
-    void** f10;
+    void** fa;
 };
 
 void** register_html(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6) {
@@ -12396,39 +12396,39 @@ void** register_html(void** a1, void** a2, void** a3, void** a4, void** a5, void
     eax10 = g14;
     v11 = eax10;
     v12 = v9;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, 0x8055c7b, v12, v13, v14, v15, v16, v17, v18, v19, v9, v8, v20, v21, v22, v23, v24);
-    v25 = reinterpret_cast<void**>(0x8055c93);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, "%s/docs/html/index.html", v12, v13, v14, v15, v16, v17, v18, v19, v9, v8, v20, v21, v22, v23, v24);
+    v25 = reinterpret_cast<void**>("r");
     v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4);
-    eax34 = fun_8048c74(v26, 0x8055c93, v12, v27, v28, v29, v30, v31, v32, v33);
+    eax34 = fun_8048c74(v26, "r", v12, v27, v28, v29, v30, v31, v32, v33);
     v35 = eax34;
     if (v35) {
         addr_804e8b0_2:
         v36 = reinterpret_cast<void**>(32);
-        fun_8048c54(0x8067ac0, 0x8055cb4, 32, v37, v38, v39, v40, v41, v42, v43, v9, v8, v44, v45, v46);
-        fun_8048c14(0x8067ac0, 0x8055cb4, 32, v37, v47, v48, v49, v50);
-        v51 = reinterpret_cast<void**>(0x8055cd4);
-        eax58 = fun_8048c74(0x8067ac0, 0x8055cd4, 32, v37, v52, v53, v54, v55, v56, v57);
+        fun_8048c54(0x8067ac0, "/tmp/grass.extensions.db.XXXXXX", 32, v37, v38, v39, v40, v41, v42, v43, v9, v8, v44, v45, v46);
+        fun_8048c14(0x8067ac0, "/tmp/grass.extensions.db.XXXXXX", 32, v37, v47, v48, v49, v50);
+        v51 = reinterpret_cast<void**>("w+");
+        eax58 = fun_8048c74(0x8067ac0, "w+", 32, v37, v52, v53, v54, v55, v56, v57);
         v59 = eax58;
         if (!v59) {
-            eax64 = fun_8048a94(0x8067ac0, 0x8055cd4, 32, v37, v60, v61, v62, v63);
+            eax64 = fun_8048a94(0x8067ac0, "w+", 32, v37, v60, v61, v62, v63);
             v65 = *eax64;
-            eax70 = fun_8048ad4(v65, 0x8055cd4, 32, v37, v66, v67, v68, v69);
+            eax70 = fun_8048ad4(v65, "w+", 32, v37, v66, v67, v68, v69);
             v37 = eax70;
             v36 = reinterpret_cast<void**>(0x8067ac0);
-            v51 = reinterpret_cast<void**>(0x8055cd8);
-            print_error(0xffffffe8, 0x8055cd8, 0x8067ac0, v37, v71, v72, v73, v74, v75);
+            v51 = reinterpret_cast<void**>("could not create temp file '%s': %s\n \t\tMake sure that directory /tmp exists on your system and you have write permission.\n");
+            print_error(0xffffffe8, "could not create temp file '%s': %s\n \t\tMake sure that directory /tmp exists on your system and you have write permission.\n", 0x8067ac0, v37, v71, v72, v73, v74, v75);
         }
     } else {
-        eax81 = fun_8048a94(v26, 0x8055c93, v12, v76, v77, v78, v79, v80);
+        eax81 = fun_8048a94(v26, "r", v12, v76, v77, v78, v79, v80);
         if (*eax81 == 2) {
             goto addr_804ebfd_6;
         } else {
-            fun_8048c44(v35, 0x8055c93, v12, v82, v83, v84, v85, v86, v87, v88, v9, v8, v89, v90, v91);
-            eax97 = fun_8048a94(v35, 0x8055c93, v12, v92, v93, v94, v95, v96);
+            fun_8048c44(v35, "r", v12, v82, v83, v84, v85, v86, v87, v88, v9, v8, v89, v90, v91);
+            eax97 = fun_8048a94(v35, "r", v12, v92, v93, v94, v95, v96);
             v98 = *eax97;
-            eax104 = fun_8048ad4(v98, 0x8055c93, v12, v99, v100, v101, v102, v103);
+            eax104 = fun_8048ad4(v98, "r", v12, v99, v100, v101, v102, v103);
             v37 = eax104;
-            print_error(0xffffffe8, 0x8055c95, reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, v37, v105, v106, v107, v108, v109);
+            print_error(0xffffffe8, "checking for file '%s': %s\n", reinterpret_cast<int32_t>(ebp7) + 0xfffff7f4, v37, v105, v106, v107, v108, v109);
             goto addr_804e8b0_2;
         }
     }
@@ -12438,11 +12438,11 @@ void** register_html(void** a1, void** a2, void** a3, void** a4, void** a5, void
         v115 = v9;
         v116 = reinterpret_cast<void**>(0x80672c0);
         v117 = v9;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, 0x8055da0, 0x8067ac0, v117, 0x80672c0, v115, 0x80672c0, v118, v119, v120, v9, v8, v121, v122, v59, v35, v123);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, "cp -f %s %s/docs/html/index.html &>%s ; chmod a+r %s/docs/html/index.html &>%s ;", 0x8067ac0, v117, 0x80672c0, v115, 0x80672c0, v118, v119, v120, v9, v8, v121, v122, v59, v35, v123);
     } else {
         v116 = v9;
         v117 = v9;
-        fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, 0x8055d54, 0x8067ac0, v117, v116, v124, v125, v126, v127, v128, v9, v8, v129, v130, v59, v35, v131);
+        fun_8048aa4(reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, "cp -vf %s %s/docs/html/index.html ; chmod -v a+r %s/docs/html/index.html ;", 0x8067ac0, v117, v116, v124, v125, v126, v127, v128, v9, v8, v129, v130, v59, v35, v131);
     }
     fun_8048c84(0x80692e0, reinterpret_cast<int32_t>(ebp7) + 0xffffeff4, 0x8067ac0, v117, v116, v115, 0x80672c0, v132, v133, v134, v9, v8, v135, v136, v59, v35, v137);
     v138 = reinterpret_cast<struct s5*>(0);
@@ -12451,10 +12451,10 @@ void** register_html(void** a1, void** a2, void** a3, void** a4, void** a5, void
     }
     if (v138) {
         fun_8048b24(v35, 0x800, v12, v117, v116, v115, 0x80672c0, v145, v146, v147, v9, v8, v148, v149, v59);
-        eax155 = fun_8048b74(&v138->f10, 4, v12, v117, v116, v115, 0x80672c0, v150, v151, v152, v9, v8, v153, v154, v59);
+        eax155 = fun_8048b74(&v138->fa, 4, v12, v117, v116, v115, 0x80672c0, v150, v151, v152, v9, v8, v153, v154, v59);
         v156 = eax155;
         v157 = reinterpret_cast<void**>(0);
-        while (reinterpret_cast<signed char>(&v138->f10) > reinterpret_cast<signed char>(v157)) {
+        while (reinterpret_cast<signed char>(&v138->fa) > reinterpret_cast<signed char>(v157)) {
             *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(v157) << 2) + reinterpret_cast<unsigned char>(v156)) = reinterpret_cast<void**>(0);
             ++v157;
         }
@@ -12483,7 +12483,7 @@ void** register_html(void** a1, void** a2, void** a3, void** a4, void** a5, void
         fun_8048c44(v35, v25, v12, v117, v116, v115, 0x80672c0, v194, v195, v196, v9, v8, v197, v198, v59);
         fun_8048c44(v59, v25, v12, v117, v116, v115, 0x80672c0, v199, v200, v201, v9, v8, v202, v203, v59);
         v204 = reinterpret_cast<void**>(0);
-        while (reinterpret_cast<signed char>(&v138->f10) > reinterpret_cast<signed char>(v204)) {
+        while (reinterpret_cast<signed char>(&v138->fa) > reinterpret_cast<signed char>(v204)) {
             v205 = *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(v204) << 2) + reinterpret_cast<unsigned char>(v156));
             fun_8048bf4(v205, v25, v12, v117, v116, v115, 0x80672c0, v206, v207, v208, v9, v8, v209, v210, v59);
             ++v204;
@@ -12537,12 +12537,12 @@ void** mkdir_s(void** a1, void** a2, void** a3, void** a4) {
 
     ebp5 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     eax6 = g14;
-    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffec6c, 0x8054a02, a1, a2, v7, v8, a2, a1, v9, v10, v11, v12, v13, v14, v15, v16, v17);
+    fun_8048aa4(reinterpret_cast<int32_t>(ebp5) + 0xffffec6c, "mkdir %s --mode=%s -p", a1, a2, v7, v8, a2, a1, v9, v10, v11, v12, v13, v14, v15, v16, v17);
     v18 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffec6c);
-    fun_8048b84(v18, 0x8054a02, a1, a2, v19, v20, a2);
+    fun_8048b84(v18, "mkdir %s --mode=%s -p", a1, a2, v19, v20, a2);
     eax21 = reinterpret_cast<void**>(eax6 ^ g14);
     if (eax21) {
-        eax21 = fun_8048d34(v18, 0x8054a02, a1, a2, v22, v23, a2, a1, v24, v25, v26, v27, v28, v29, v30, v31, v32);
+        eax21 = fun_8048d34(v18, "mkdir %s --mode=%s -p", a1, a2, v22, v23, a2, a1, v24, v25, v26, v27, v28, v29, v30, v31, v32);
     }
     return eax21;
 }
@@ -12602,13 +12602,13 @@ void** print_cfg(void** a1, void** a2, void** a3, void** a4, void** a5) {
     ebp6 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     eax7 = g14;
     v8 = eax7;
-    v9 = reinterpret_cast<void**>(0x8055e6b);
-    eax18 = fun_8048c74(0x805630f, 0x8055e6b, v10, v11, v12, v13, v14, v15, v16, v17);
+    v9 = reinterpret_cast<void**>("r");
+    eax18 = fun_8048c74("config.msg", "r", v10, v11, v12, v13, v14, v15, v16, v17);
     v19 = eax18;
     if (v19) {
         eax20 = stdout;
         v21 = eax20;
-        fun_8048cd4(0x805631a, 1, 27, v21, v22);
+        fun_8048cd4("\nResult of configuration: \n", 1, 27, v21, v22);
         while (v23 = v19, eax34 = fun_8048ba4(reinterpret_cast<int32_t>(ebp6) + 0xfffff7f4, 0x800, v23, v21, v24, v25, v19, v26, v27, v28, v29, v30, v31, v32, v33), !!eax34) {
             eax35 = stdout;
             fun_8048a84(reinterpret_cast<int32_t>(ebp6) - 0x80c, eax35, v23, v21);
@@ -12617,10 +12617,10 @@ void** print_cfg(void** a1, void** a2, void** a3, void** a4, void** a5) {
         v9 = eax36;
         fun_8048d44(10, v9, v23, v21);
     }
-    fun_8048d14(0x805630f, v9, v23, v21);
+    fun_8048d14("config.msg", v9, v23, v21);
     eax37 = reinterpret_cast<void**>(v8 ^ g14);
     if (eax37) {
-        eax37 = fun_8048d34(0x805630f, v9, v23, v21, v38, v39, v19, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49);
+        eax37 = fun_8048d34("config.msg", v9, v23, v21, v38, v39, v19, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49);
     }
     return eax37;
 }
@@ -13005,62 +13005,62 @@ void** exit_db() {
             v11 = eax10;
             v12 = reinterpret_cast<void**>(40);
             v13 = reinterpret_cast<void**>(1);
-            v4 = reinterpret_cast<void**>(0x80548a0);
-            fun_8048cd4(0x80548a0, 1, 40, v11, v14);
+            v4 = reinterpret_cast<void**>("Removing temporary registration files...");
+            fun_8048cd4("Removing temporary registration files...", 1, 40, v11, v14);
         }
         eax15 = TMPDB;
-        if (*reinterpret_cast<signed char*>(&eax15) && (v12 = reinterpret_cast<void**>(0x8063ac0), v13 = reinterpret_cast<void**>(0x80548c9), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, 0x80548c9, 0x8063ac0, v11, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax32 = fun_8048b84(v4, 0x80548c9, 0x8063ac0, v11, v29, v30, v31), v33 = eax32, !!v33)) {
+        if (*reinterpret_cast<signed char*>(&eax15) && (v12 = reinterpret_cast<void**>(0x8063ac0), v13 = reinterpret_cast<void**>("rm -rf %s"), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, "rm -rf %s", 0x8063ac0, v11, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax32 = fun_8048b84(v4, "rm -rf %s", 0x8063ac0, v11, v29, v30, v31), v33 = eax32, !!v33)) {
             v13 = reinterpret_cast<void**>(0x8063ac0);
-            v4 = reinterpret_cast<void**>(0x80548d4);
-            print_warning(0x80548d4, 0x8063ac0, 0x8063ac0, v11, v34, v35, v33, v36, v37, v38, v39, v40, v41, v42, v43);
+            v4 = reinterpret_cast<void**>("could not remove temporary file %s.\nPlease remove manually.\n");
+            print_warning("could not remove temporary file %s.\nPlease remove manually.\n", 0x8063ac0, 0x8063ac0, v11, v34, v35, v33, v36, v37, v38, v39, v40, v41, v42, v43);
         }
         eax44 = TMP_GISMAN;
-        if (*reinterpret_cast<signed char*>(&eax44) && (v12 = reinterpret_cast<void**>(0x80642c0), v13 = reinterpret_cast<void**>(0x8054911), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, 0x8054911, 0x80642c0, v11, v45, v46, v33, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax59 = fun_8048b84(v4, 0x8054911, 0x80642c0, v11, v57, v58, v33), v33 = eax59, !!v33)) {
+        if (*reinterpret_cast<signed char*>(&eax44) && (v12 = reinterpret_cast<void**>(0x80642c0), v13 = reinterpret_cast<void**>("rm -f %s"), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, "rm -f %s", 0x80642c0, v11, v45, v46, v33, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax59 = fun_8048b84(v4, "rm -f %s", 0x80642c0, v11, v57, v58, v33), v33 = eax59, !!v33)) {
             v13 = reinterpret_cast<void**>(0x80642c0);
-            v4 = reinterpret_cast<void**>(0x80548d4);
-            print_warning(0x80548d4, 0x80642c0, 0x80642c0, v11, v60, v61, v33, v62, v63, v64, v65, v66, v67, v68, v69);
+            v4 = reinterpret_cast<void**>("could not remove temporary file %s.\nPlease remove manually.\n");
+            print_warning("could not remove temporary file %s.\nPlease remove manually.\n", 0x80642c0, 0x80642c0, v11, v60, v61, v33, v62, v63, v64, v65, v66, v67, v68, v69);
         }
         eax70 = TMP_DESCR;
-        if (*reinterpret_cast<signed char*>(&eax70) && (v12 = reinterpret_cast<void**>(0x8064ac0), v13 = reinterpret_cast<void**>(0x8054911), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, 0x8054911, 0x8064ac0, v11, v71, v72, v33, v73, v74, v75, v76, v77, v78, v79, v80, v81, v82), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax85 = fun_8048b84(v4, 0x8054911, 0x8064ac0, v11, v83, v84, v33), v33 = eax85, !!v33)) {
+        if (*reinterpret_cast<signed char*>(&eax70) && (v12 = reinterpret_cast<void**>(0x8064ac0), v13 = reinterpret_cast<void**>("rm -f %s"), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, "rm -f %s", 0x8064ac0, v11, v71, v72, v33, v73, v74, v75, v76, v77, v78, v79, v80, v81, v82), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax85 = fun_8048b84(v4, "rm -f %s", 0x8064ac0, v11, v83, v84, v33), v33 = eax85, !!v33)) {
             v13 = reinterpret_cast<void**>(0x8064ac0);
-            v4 = reinterpret_cast<void**>(0x80548d4);
-            print_warning(0x80548d4, 0x8064ac0, 0x8064ac0, v11, v86, v87, v33, v88, v89, v90, v91, v92, v93, v94, v95);
+            v4 = reinterpret_cast<void**>("could not remove temporary file %s.\nPlease remove manually.\n");
+            print_warning("could not remove temporary file %s.\nPlease remove manually.\n", 0x8064ac0, 0x8064ac0, v11, v86, v87, v33, v88, v89, v90, v91, v92, v93, v94, v95);
         }
         eax96 = TMP_INFO;
-        if (*reinterpret_cast<signed char*>(&eax96) && (v12 = reinterpret_cast<void**>(0x80652c0), v13 = reinterpret_cast<void**>(0x8054911), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, 0x8054911, 0x80652c0, v11, v97, v98, v33, v99, v100, v101, v102, v103, v104, v105, v106, v107, v108), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax111 = fun_8048b84(v4, 0x8054911, 0x80652c0, v11, v109, v110, v33), v33 = eax111, !!v33)) {
+        if (*reinterpret_cast<signed char*>(&eax96) && (v12 = reinterpret_cast<void**>(0x80652c0), v13 = reinterpret_cast<void**>("rm -f %s"), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, "rm -f %s", 0x80652c0, v11, v97, v98, v33, v99, v100, v101, v102, v103, v104, v105, v106, v107, v108), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax111 = fun_8048b84(v4, "rm -f %s", 0x80652c0, v11, v109, v110, v33), v33 = eax111, !!v33)) {
             v13 = reinterpret_cast<void**>(0x80652c0);
-            v4 = reinterpret_cast<void**>(0x80548d4);
-            print_warning(0x80548d4, 0x80652c0, 0x80652c0, v11, v112, v113, v33, v114, v115, v116, v117, v118, v119, v120, v121);
+            v4 = reinterpret_cast<void**>("could not remove temporary file %s.\nPlease remove manually.\n");
+            print_warning("could not remove temporary file %s.\nPlease remove manually.\n", 0x80652c0, 0x80652c0, v11, v112, v113, v33, v114, v115, v116, v117, v118, v119, v120, v121);
         }
         eax122 = TMP_DEPS;
-        if (*reinterpret_cast<signed char*>(&eax122) && (v12 = reinterpret_cast<void**>(0x8065ac0), v13 = reinterpret_cast<void**>(0x8054911), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, 0x8054911, 0x8065ac0, v11, v123, v124, v33, v125, v126, v127, v128, v129, v130, v131, v132, v133, v134), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax137 = fun_8048b84(v4, 0x8054911, 0x8065ac0, v11, v135, v136, v33), v33 = eax137, !!v33)) {
+        if (*reinterpret_cast<signed char*>(&eax122) && (v12 = reinterpret_cast<void**>(0x8065ac0), v13 = reinterpret_cast<void**>("rm -f %s"), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, "rm -f %s", 0x8065ac0, v11, v123, v124, v33, v125, v126, v127, v128, v129, v130, v131, v132, v133, v134), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax137 = fun_8048b84(v4, "rm -f %s", 0x8065ac0, v11, v135, v136, v33), v33 = eax137, !!v33)) {
             v13 = reinterpret_cast<void**>(0x80652c0);
-            v4 = reinterpret_cast<void**>(0x80548d4);
-            print_warning(0x80548d4, 0x80652c0, 0x8065ac0, v11, v138, v139, v33, v140, v141, v142, v143, v144, v145, v146, v147);
+            v4 = reinterpret_cast<void**>("could not remove temporary file %s.\nPlease remove manually.\n");
+            print_warning("could not remove temporary file %s.\nPlease remove manually.\n", 0x80652c0, 0x8065ac0, v11, v138, v139, v33, v140, v141, v142, v143, v144, v145, v146, v147);
         }
         eax148 = TMP_BUGS;
-        if (*reinterpret_cast<signed char*>(&eax148) && (v12 = reinterpret_cast<void**>(0x80662c0), v13 = reinterpret_cast<void**>(0x8054911), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, 0x8054911, 0x80662c0, v11, v149, v150, v33, v151, v152, v153, v154, v155, v156, v157, v158, v159, v160), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax163 = fun_8048b84(v4, 0x8054911, 0x80662c0, v11, v161, v162, v33), v33 = eax163, !!v33)) {
+        if (*reinterpret_cast<signed char*>(&eax148) && (v12 = reinterpret_cast<void**>(0x80662c0), v13 = reinterpret_cast<void**>("rm -f %s"), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, "rm -f %s", 0x80662c0, v11, v149, v150, v33, v151, v152, v153, v154, v155, v156, v157, v158, v159, v160), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax163 = fun_8048b84(v4, "rm -f %s", 0x80662c0, v11, v161, v162, v33), v33 = eax163, !!v33)) {
             v13 = reinterpret_cast<void**>(0x80652c0);
-            v4 = reinterpret_cast<void**>(0x80548d4);
-            print_warning(0x80548d4, 0x80652c0, 0x80662c0, v11, v164, v165, v33, v166, v167, v168, v169, v170, v171, v172, v173);
+            v4 = reinterpret_cast<void**>("could not remove temporary file %s.\nPlease remove manually.\n");
+            print_warning("could not remove temporary file %s.\nPlease remove manually.\n", 0x80652c0, 0x80662c0, v11, v164, v165, v33, v166, v167, v168, v169, v170, v171, v172, v173);
         }
         eax174 = TMP_AUTHORS;
-        if (*reinterpret_cast<signed char*>(&eax174) && (v12 = reinterpret_cast<void**>(0x8066ac0), v13 = reinterpret_cast<void**>(0x8054911), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, 0x8054911, 0x8066ac0, v11, v175, v176, v33, v177, v178, v179, v180, v181, v182, v183, v184, v185, v186), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax189 = fun_8048b84(v4, 0x8054911, 0x8066ac0, v11, v187, v188, v33), v33 = eax189, !!v33)) {
+        if (*reinterpret_cast<signed char*>(&eax174) && (v12 = reinterpret_cast<void**>(0x8066ac0), v13 = reinterpret_cast<void**>("rm -f %s"), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, "rm -f %s", 0x8066ac0, v11, v175, v176, v33, v177, v178, v179, v180, v181, v182, v183, v184, v185, v186), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax189 = fun_8048b84(v4, "rm -f %s", 0x8066ac0, v11, v187, v188, v33), v33 = eax189, !!v33)) {
             v13 = reinterpret_cast<void**>(0x80652c0);
-            v4 = reinterpret_cast<void**>(0x80548d4);
-            print_warning(0x80548d4, 0x80652c0, 0x8066ac0, v11, v190, v191, v33, v192, v193, v194, v195, v196, v197, v198, v199);
+            v4 = reinterpret_cast<void**>("could not remove temporary file %s.\nPlease remove manually.\n");
+            print_warning("could not remove temporary file %s.\nPlease remove manually.\n", 0x80652c0, 0x8066ac0, v11, v190, v191, v33, v192, v193, v194, v195, v196, v197, v198, v199);
         }
         eax200 = TMP_HTML;
-        if (*reinterpret_cast<signed char*>(&eax200) && (v12 = reinterpret_cast<void**>(0x8067ac0), v13 = reinterpret_cast<void**>(0x8054911), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, 0x8054911, 0x8067ac0, v11, v201, v202, v33, v203, v204, v205, v206, v207, v208, v209, v210, v211, v212), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax215 = fun_8048b84(v4, 0x8054911, 0x8067ac0, v11, v213, v214, v33), v33 = eax215, !!v33)) {
+        if (*reinterpret_cast<signed char*>(&eax200) && (v12 = reinterpret_cast<void**>(0x8067ac0), v13 = reinterpret_cast<void**>("rm -f %s"), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, "rm -f %s", 0x8067ac0, v11, v201, v202, v33, v203, v204, v205, v206, v207, v208, v209, v210, v211, v212), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax215 = fun_8048b84(v4, "rm -f %s", 0x8067ac0, v11, v213, v214, v33), v33 = eax215, !!v33)) {
             v13 = reinterpret_cast<void**>(0x8067ac0);
-            v4 = reinterpret_cast<void**>(0x80548d4);
-            print_warning(0x80548d4, 0x8067ac0, 0x8067ac0, v11, v216, v217, v33, v218, v219, v220, v221, v222, v223, v224, v225);
+            v4 = reinterpret_cast<void**>("could not remove temporary file %s.\nPlease remove manually.\n");
+            print_warning("could not remove temporary file %s.\nPlease remove manually.\n", 0x8067ac0, 0x8067ac0, v11, v216, v217, v33, v218, v219, v220, v221, v222, v223, v224, v225);
         }
         eax226 = VERBOSE;
-        if (!eax226 && ((eax227 = TMP_NULL, !!*reinterpret_cast<signed char*>(&eax227)) && (v12 = reinterpret_cast<void**>(0x80672c0), v13 = reinterpret_cast<void**>(0x8054911), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, 0x8054911, 0x80672c0, v11, v228, v229, v33, v230, v231, v232, v233, v234, v235, v236, v237, v238, v239), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax242 = fun_8048b84(v4, 0x8054911, 0x80672c0, v11, v240, v241, v33), v33 = eax242, !!v33))) {
+        if (!eax226 && ((eax227 = TMP_NULL, !!*reinterpret_cast<signed char*>(&eax227)) && (v12 = reinterpret_cast<void**>(0x80672c0), v13 = reinterpret_cast<void**>("rm -f %s"), fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, "rm -f %s", 0x80672c0, v11, v228, v229, v33, v230, v231, v232, v233, v234, v235, v236, v237, v238, v239), v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4), eax242 = fun_8048b84(v4, "rm -f %s", 0x80672c0, v11, v240, v241, v33), v33 = eax242, !!v33))) {
             v13 = reinterpret_cast<void**>(0x80672c0);
-            v4 = reinterpret_cast<void**>(0x80548d4);
-            print_warning(0x80548d4, 0x80672c0, 0x80672c0, v11, v243, v244, v33, v245, v246, v247, v248, v249, v250, v251, v252);
+            v4 = reinterpret_cast<void**>("could not remove temporary file %s.\nPlease remove manually.\n");
+            print_warning("could not remove temporary file %s.\nPlease remove manually.\n", 0x80672c0, 0x80672c0, v11, v243, v244, v33, v245, v246, v247, v248, v249, v250, v251, v252);
         }
         eax253 = VERBOSE;
         if (eax253) {
@@ -13966,8 +13966,8 @@ void main(void** a1, void** a2) {
     fun_8048c54(0x8067ac0, 0x8057925, 1, v147, v148, v149, v150, v151, v152, v153, v154, v3, v155, v156, v157);
     fun_8048c54(0x80672c0, 0x8057925, 1, v158, v159, v160, v161, v162, v163, v164, v165, v3, v166, v167, v168);
     fun_8048c54(0x806aae0, 0x8057925, 1, v169, v170, v171, v172, v173, v174, v175, v176, v3, v177, v178, v179);
-    fun_8048c54(0x806b2e0, 0x8057926, 10, v180, v181, v182, v183, v184, v185, v186, v187, v3, v188, v189, v190);
-    fun_8048c54(0x806bae0, 0x8057930, 5, v191, v192, v193, v194, v195, v196, v197, v198, v3, v199, v200, v201);
+    fun_8048c54(0x806b2e0, "configure", 10, v180, v181, v182, v183, v184, v185, v186, v187, v3, v188, v189, v190);
+    fun_8048c54(0x806bae0, "make", 5, v191, v192, v193, v194, v195, v196, v197, v198, v3, v199, v200, v201);
     fun_8048d74(0x806c2e0, 0x800, 5);
     eax202 = stdout;
     fun_8048cd4(0x8057935, 1, 4, eax202, v203);
@@ -13992,40 +13992,40 @@ void main(void** a1, void** a2) {
     opterr = 0;
     v248 = reinterpret_cast<void**>(esp244 + 0xe4);
     v249 = reinterpret_cast<void**>(0x8059100);
-    v250 = reinterpret_cast<void**>(0x805793c);
+    v250 = reinterpret_cast<void**>(":i:u:q:d:c:C:t:l:m:o:x:rhVg:b:fvs");
     v251 = v3;
-    eax252 = fun_8048c34(a1, v251, 0x805793c, 0x8059100, v248);
+    eax252 = fun_8048c34(a1, v251, ":i:u:q:d:c:C:t:l:m:o:x:rhVg:b:fvs", 0x8059100, v248);
     esp253 = esp244 - 4 + 4;
     v254 = eax252;
     while (v254 != -1) {
         if (v254 == 63) {
-            v251 = reinterpret_cast<void**>(0x8057960);
-            print_error(0xffffffff, 0x8057960, v250, 0x8059100, v248, v255, v256, v257, v258);
+            v251 = reinterpret_cast<void**>("unknown option or action specified.\n");
+            print_error(0xffffffff, "unknown option or action specified.\n", v250, 0x8059100, v248, v255, v256, v257, v258);
             esp253 = esp253 - 4 + 4;
         }
         if (v254 == 58) {
             eax259 = optopt;
             if (eax259 == 0x69 || ((eax260 = optopt, eax260 == 0x75) || ((eax261 = optopt, eax261 == 100) || ((eax262 = optopt, eax262 == 99) || ((eax263 = optopt, eax263 == 0x74) || ((eax264 = optopt, eax264 == 0x6c) || (eax265 = optopt, eax265 == 0x72))))))) {
-                v251 = reinterpret_cast<void**>(0x8057988);
-                print_error(0xffffffff, 0x8057988, v250, 0x8059100, v248, v266, v267, v268, v269);
+                v251 = reinterpret_cast<void**>("missing file or directory name.\n");
+                print_error(0xffffffff, "missing file or directory name.\n", v250, 0x8059100, v248, v266, v267, v268, v269);
                 esp253 = esp253 - 4 + 4;
             }
             eax270 = optopt;
             if (eax270 == 0x67) {
-                v251 = reinterpret_cast<void**>(0x80579a9);
-                print_error(0xffffffff, 0x80579a9, v250, 0x8059100, v248, v271, v272, v273, v274);
+                v251 = reinterpret_cast<void**>("missing path to GRASS 6.\n");
+                print_error(0xffffffff, "missing path to GRASS 6.\n", v250, 0x8059100, v248, v271, v272, v273, v274);
                 esp253 = esp253 - 4 + 4;
             }
             eax275 = optopt;
             if (eax275 == 98) {
-                v251 = reinterpret_cast<void**>(0x80579c4);
-                print_error(0xffffffff, 0x80579c4, v250, 0x8059100, v248, v276, v277, v278, v279);
+                v251 = reinterpret_cast<void**>("missing name of binary architecture.\n");
+                print_error(0xffffffff, "missing name of binary architecture.\n", v250, 0x8059100, v248, v276, v277, v278, v279);
                 esp253 = esp253 - 4 + 4;
             }
             eax280 = optopt;
             if (eax280 == 98) {
-                v251 = reinterpret_cast<void**>(0x80579ea);
-                print_error(0xffffffff, 0x80579ea, v250, 0x8059100, v248, v281, v282, v283, v284);
+                v251 = reinterpret_cast<void**>("missing configure options.\n");
+                print_error(0xffffffff, "missing configure options.\n", v250, 0x8059100, v248, v281, v282, v283, v284);
                 esp253 = esp253 - 4 + 4;
             }
             eax285 = optopt;
@@ -14154,59 +14154,59 @@ void main(void** a1, void** a2) {
         }
         v248 = reinterpret_cast<void**>(esp253 + 0xe4);
         v249 = reinterpret_cast<void**>(0x8059100);
-        v250 = reinterpret_cast<void**>(0x8057a06);
+        v250 = reinterpret_cast<void**>(":i:u:q:d:c:t:l:o:x:rhVg:b:fvs");
         v251 = v3;
-        eax416 = fun_8048c34(a1, v251, 0x8057a06, 0x8059100, v248);
+        eax416 = fun_8048c34(a1, v251, ":i:u:q:d:c:t:l:o:x:rhVg:b:fvs", 0x8059100, v248);
         esp253 = esp253 - 4 + 4;
         v254 = eax416;
     }
     addr_8053aa9_54:
     if (v245 <= 0) {
-        print_error(0xffffffff, 0x8057a24, v250, 0x8059100, v248, v417, v418, v419, v420);
+        print_error(0xffffffff, "please specify a valid action.\n", v250, 0x8059100, v248, v417, v418, v419, v420);
         esp253 = esp253 - 4 + 4;
     }
     if (v245 > 1) {
-        print_error(0xffffffff, 0x8057a44, v250, 0x8059100, v248, v421, v422, v423, v424);
+        print_error(0xffffffff, "please specify only one action.\n", v250, 0x8059100, v248, v421, v422, v423, v424);
         esp253 = esp253 - 4 + 4;
     }
     v425 = reinterpret_cast<void**>(esp253 + 0x14c);
-    v426 = reinterpret_cast<void**>(0x8057a65);
-    fun_8048aa4(0x80622a0, 0x8057a65, v425, 0x8059100, v248, v427, v428, v429, v430, v431, v432, v3, v433, v434, v435, v436, v437);
+    v426 = reinterpret_cast<void**>("GEM_C_OPTS=%s");
+    fun_8048aa4(0x80622a0, "GEM_C_OPTS=%s", v425, 0x8059100, v248, v427, v428, v429, v430, v431, v432, v3, v433, v434, v435, v436, v437);
     v438 = reinterpret_cast<void**>(0x80622a0);
-    fun_8048ca4(0x80622a0, 0x8057a65, v425, 0x8059100, v248);
+    fun_8048ca4(0x80622a0, "GEM_C_OPTS=%s", v425, 0x8059100, v248);
     esp439 = esp253 - 4 + 4 - 4 + 4;
     if (reinterpret_cast<int1_t>(v286 == 1)) {
-        show_help(0x80622a0, 0x8057a65, v425, 0x8059100, v248);
+        show_help(0x80622a0, "GEM_C_OPTS=%s", v425, 0x8059100, v248);
         v438 = reinterpret_cast<void**>(0);
-        fun_8048db4(0, 0x8057a65, v425, 0x8059100, v248, v440, v441, v442, v443, v444, v445);
+        fun_8048db4(0, "GEM_C_OPTS=%s", v425, 0x8059100, v248, v440, v441, v442, v443, v444, v445);
         esp439 = esp439 - 4 + 4 - 4 + 4;
     }
     if (reinterpret_cast<int1_t>(v286 == 2)) {
-        show_version(v438, 0x8057a65, v425, 0x8059100, v248, v446, v447);
-        fun_8048db4(0, 0x8057a65, v425, 0x8059100, v248, v448, v449, v450, v451, v452, v453);
+        show_version(v438, "GEM_C_OPTS=%s", v425, 0x8059100, v248, v446, v447);
+        fun_8048db4(0, "GEM_C_OPTS=%s", v425, 0x8059100, v248, v448, v449, v450, v451, v452, v453);
         esp439 = esp439 - 4 + 4 - 4 + 4;
     }
     eax454 = VERBOSE;
-    if (!eax454 && (fun_8048c54(0x80672c0, 0x8057a74, 32, 0x8059100, v248, v455, v456, v457, v458, v459, v460, v3, v461, v462, v463), fun_8048c14(0x80672c0, 0x8057a74, 32, 0x8059100, v248, v464, v465, v466), v425 = reinterpret_cast<void**>(0x1ff), v426 = reinterpret_cast<void**>(64), eax467 = fun_8048ac4(0x80672c0, 64, 0x1ff, 0x8059100, v248), esp439 = esp439 - 4 + 4 - 4 + 4 - 4 + 4, reinterpret_cast<int1_t>(eax467 == 0xffffffff))) {
+    if (!eax454 && (fun_8048c54(0x80672c0, "/tmp/grass.extension.log.XXXXXX", 32, 0x8059100, v248, v455, v456, v457, v458, v459, v460, v3, v461, v462, v463), fun_8048c14(0x80672c0, "/tmp/grass.extension.log.XXXXXX", 32, 0x8059100, v248, v464, v465, v466), v425 = reinterpret_cast<void**>(0x1ff), v426 = reinterpret_cast<void**>(64), eax467 = fun_8048ac4(0x80672c0, 64, 0x1ff, 0x8059100, v248), esp439 = esp439 - 4 + 4 - 4 + 4 - 4 + 4, reinterpret_cast<int1_t>(eax467 == 0xffffffff))) {
         eax471 = fun_8048a94(0x80672c0, 64, 0x1ff, 0x8059100, v248, v468, v469, v470);
         v472 = *eax471;
         eax476 = fun_8048ad4(v472, 64, 0x1ff, 0x8059100, v248, v473, v474, v475);
         v425 = eax476;
-        v426 = reinterpret_cast<void**>(0x8057a94);
-        print_error(0xffffffe2, 0x8057a94, v425, 0x8059100, v248, v477, v478, v479, v480);
-        fun_8048db4(0xffffffe2, 0x8057a94, v425, 0x8059100, v248, v481, v482, v483, v484, v485, v486);
+        v426 = reinterpret_cast<void**>("could not create temp file: %s");
+        print_error(0xffffffe2, "could not create temp file: %s", v425, 0x8059100, v248, v477, v478, v479, v480);
+        fun_8048db4(0xffffffe2, "could not create temp file: %s", v425, 0x8059100, v248, v481, v482, v483, v484, v485, v486);
         esp439 = esp439 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4;
     }
     if (reinterpret_cast<int1_t>(v286 == 11)) {
         if (!v247 && (eax490 = fun_8048b64("GISBASE", v426, v425, 0x8059100, v248, v487, v488, v489), esp439 = esp439 - 4 + 4, v247 = eax490, !v247)) {
-            print_error(0xffffffff, 0x8057abc, v425, 0x8059100, v248, v491, v492, v493, v494);
+            print_error(0xffffffff, "GISBASE environment variable not set and path to GRASS not given.\n", v425, 0x8059100, v248, v491, v492, v493, v494);
             esp439 = esp439 - 4 + 4;
         }
         eax495 = VERBOSE;
         if (eax495) {
             eax496 = stdout;
             v425 = v247;
-            fun_8048ce4(eax496, 0x8057aff, v425, 0x8059100, v248, v497, v498, v499, v500, v501, v502, v3, v503, v504, v505);
+            fun_8048ce4(eax496, "Path to GRASS is %s.\n", v425, 0x8059100, v248, v497, v498, v499, v500, v501, v502, v3, v503, v504, v505);
             esp439 = esp439 - 4 + 4;
         }
         v426 = v506;
@@ -14216,26 +14216,26 @@ void main(void** a1, void** a2) {
     }
     if (reinterpret_cast<int1_t>(v286 == 12)) {
         if (!v247 && (eax516 = fun_8048b64("GISBASE", v426, v425, 0x8059100, v248, v513, v514, v515), esp439 = esp439 - 4 + 4, v247 = eax516, !v247)) {
-            v426 = reinterpret_cast<void**>(0x8057abc);
-            print_error(0xffffffff, 0x8057abc, v425, 0x8059100, v248, v517, v518, v519, v520);
+            v426 = reinterpret_cast<void**>("GISBASE environment variable not set and path to GRASS not given.\n");
+            print_error(0xffffffff, "GISBASE environment variable not set and path to GRASS not given.\n", v425, 0x8059100, v248, v517, v518, v519, v520);
             esp439 = esp439 - 4 + 4;
         }
         eax521 = VERBOSE;
         if (eax521) {
             eax522 = stdout;
             v425 = v247;
-            v426 = reinterpret_cast<void**>(0x8057aff);
-            fun_8048ce4(eax522, 0x8057aff, v425, 0x8059100, v248, v523, v524, v525, v526, v527, v528, v3, v529, v530, v531);
+            v426 = reinterpret_cast<void**>("Path to GRASS is %s.\n");
+            fun_8048ce4(eax522, "Path to GRASS is %s.\n", v425, 0x8059100, v248, v523, v524, v525, v526, v527, v528, v3, v529, v530, v531);
             esp439 = esp439 - 4 + 4;
         }
         list_extensions(v247, v426, v425, 0x8059100, v248);
         fun_8048db4(0, v426, v425, 0x8059100, v248, v532, v533, v534, v535, v536, v537);
         esp439 = esp439 - 4 + 4 - 4 + 4;
     }
-    v538 = reinterpret_cast<void**>(0x8057b15);
-    eax542 = fun_8048cf4(esp439 + 0x294c, 0x8057b15, v425, 0x8059100, v248, v539, v540, v541);
+    v538 = reinterpret_cast<void**>("http://");
+    eax542 = fun_8048cf4(esp439 + 0x294c, "http://", v425, 0x8059100, v248, v539, v540, v541);
     esp543 = esp439 - 4 + 4;
-    if (eax542 || (v538 = reinterpret_cast<void**>(0x8057b1d), eax547 = fun_8048cf4(esp543 + 0x294c, 0x8057b1d, v425, 0x8059100, v248, v544, v545, v546), esp543 = esp543 - 4 + 4, !!eax547)) {
+    if (eax542 || (v538 = reinterpret_cast<void**>("ftp://"), eax547 = fun_8048cf4(esp543 + 0x294c, "ftp://", v425, 0x8059100, v248, v544, v545, v546), esp543 = esp543 - 4 + 4, !!eax547)) {
         wget_extension(esp543 + 0x294c, v538, v425, 0x8059100, v248);
         eax557 = fun_8048d24(0x800, v538, v425, 0x8059100, v248, v548, v549, v550, v551, v552, v553, v3, v554, v555, v556);
         esp558 = esp543 - 4 + 4 - 4 + 4;
@@ -14250,7 +14250,7 @@ void main(void** a1, void** a2) {
     if (eax601) {
         eax602 = stdout;
         v425 = reinterpret_cast<void**>(esp543 + 0x294c);
-        fun_8048ce4(eax602, 0x8057b24, v425, 0x8059100, v248, v603, v604, v605, v606, v607, v608, v3, v609, v610, v611);
+        fun_8048ce4(eax602, "Extension location is '%s'.\n", v425, 0x8059100, v248, v603, v604, v605, v606, v607, v608, v3, v609, v610, v611);
         esp543 = esp543 - 4 + 4;
     }
     if (v286 == 10) {
@@ -14276,8 +14276,8 @@ void main(void** a1, void** a2) {
             esp637 = reinterpret_cast<void*>(esp543 - 4 + 4 - 4 + 4);
             v249 = eax636;
             v425 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esp637) + 0x294c);
-            v625 = reinterpret_cast<void**>(0x8057b44);
-            print_error(0xfffffffe, 0x8057b44, v425, v249, v248, v638, v639, v640, v641);
+            v625 = reinterpret_cast<void**>("extension FILE or DIR '%s' invalid: %s\n");
+            print_error(0xfffffffe, "extension FILE or DIR '%s' invalid: %s\n", v425, v249, v248, v638, v639, v640, v641);
             esp543 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esp637) - 4 + 4);
         }
         if ((v642 & 0xf000) != 0x4000) 
@@ -14300,8 +14300,8 @@ void main(void** a1, void** a2) {
     if (eax647) {
         eax648 = stdout;
         v425 = reinterpret_cast<void**>(esp613 + 0x294c);
-        v612 = reinterpret_cast<void**>(0x8057c00);
-        fun_8048ce4(eax648, 0x8057c00, v425, v249, v248, v649, v650, v651, v652, v653, v654, v3, v655, v656, v657);
+        v612 = reinterpret_cast<void**>("Extension will be installed from '%s'\n");
+        fun_8048ce4(eax648, "Extension will be installed from '%s'\n", v425, v249, v248, v649, v650, v651, v652, v653, v654, v3, v655, v656, v657);
         esp613 = esp613 - 4 + 4;
     }
     if (v286 != 10) {
@@ -14340,16 +14340,16 @@ void main(void** a1, void** a2) {
         esp613 = esp613 - 4 + 4 - 4 + 4;
     }
     if (!v247 && (eax676 = fun_8048b64("GISBASE", v612, v425, v249, v248, v660, v659, v658), esp613 = esp613 - 4 + 4, v247 = eax676, !v247)) {
-        v612 = reinterpret_cast<void**>(0x8057abc);
-        print_error(0xffffffff, 0x8057abc, v425, v249, v248, v660, v659, v658, v677);
+        v612 = reinterpret_cast<void**>("GISBASE environment variable not set and path to GRASS not given.\n");
+        print_error(0xffffffff, "GISBASE environment variable not set and path to GRASS not given.\n", v425, v249, v248, v660, v659, v658, v677);
         esp613 = esp613 - 4 + 4;
     }
     eax678 = VERBOSE;
     if (eax678) {
         eax679 = stdout;
         v425 = v247;
-        v612 = reinterpret_cast<void**>(0x8057aff);
-        fun_8048ce4(eax679, 0x8057aff, v425, v249, v248, v660, v659, v658, v680, v681, v682, v3, v683, v684, v685);
+        v612 = reinterpret_cast<void**>("Path to GRASS is %s.\n");
+        fun_8048ce4(eax679, "Path to GRASS is %s.\n", v425, v249, v248, v660, v659, v658, v680, v681, v682, v3, v683, v684, v685);
         esp613 = esp613 - 4 + 4;
     }
     eax686 = fun_8048b64("GRASS_VERSION", v612, v425, v249, v248, v660, v659, v658);
@@ -14357,34 +14357,34 @@ void main(void** a1, void** a2) {
     v688 = eax686;
     if (!v688) {
         v425 = v247;
-        fun_8048aa4(esp687 + 0x314c, 0x8057c35, v425, v249, v248, v660, v659, v658, v689, v690, v691, v3, v692, v693, v694, v695, v696);
+        fun_8048aa4(esp687 + 0x314c, "%s/etc/VERSIONNUMBER", v425, v249, v248, v660, v659, v658, v689, v690, v691, v3, v692, v693, v694, v695, v696);
         esp697 = esp687 - 4 + 4;
-        eax700 = fun_8048c74(esp697 + 0x314c, 0x80578de, v425, v249, v248, v660, v659, v658, v698, v699);
+        eax700 = fun_8048c74(esp697 + 0x314c, "r", v425, v249, v248, v660, v659, v658, v698, v699);
         esp701 = reinterpret_cast<void*>(esp697 - 4 + 4);
         if (eax700) {
-            eax708 = fun_8048d24(16, 0x80578de, v425, v249, v248, v660, v659, v658, v702, v703, v704, v3, v705, v706, v707);
+            eax708 = fun_8048d24(16, "r", v425, v249, v248, v660, v659, v658, v702, v703, v704, v3, v705, v706, v707);
             v688 = eax708;
             v425 = v688;
-            v612 = reinterpret_cast<void**>(0x8057c8b);
-            eax709 = fun_8048af4(eax700, 0x8057c8b, v425, v249, v248, v660, v659, v658);
-            fun_8048c44(eax700, 0x8057c8b, v425, v249, v248, v660, v659, v658, v710, v711, v712, v3, v713, v714, v715);
+            v612 = reinterpret_cast<void**>("%s");
+            eax709 = fun_8048af4(eax700, "%s", v425, v249, v248, v660, v659, v658);
+            fun_8048c44(eax700, "%s", v425, v249, v248, v660, v659, v658, v710, v711, v712, v3, v713, v714, v715);
             esp687 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esp701) - 4 + 4 - 4 + 4 - 4 + 4);
             if (eax709 <= 0) {
-                v612 = reinterpret_cast<void**>(0x8057c4c);
-                print_error(0xfffffff5, 0x8057c4c, v425, v249, v248, v660, v659, v658, v716);
+                v612 = reinterpret_cast<void**>("Could not read GRASS version. Did you specify the right path?\n");
+                print_error(0xfffffff5, "Could not read GRASS version. Did you specify the right path?\n", v425, v249, v248, v660, v659, v658, v716);
                 esp687 = esp687 - 4 + 4;
             }
         } else {
-            v612 = reinterpret_cast<void**>(0x8057c4c);
-            print_error(0xfffffff5, 0x8057c4c, v425, v249, v248, v660, v659, v658, v717);
+            v612 = reinterpret_cast<void**>("Could not read GRASS version. Did you specify the right path?\n");
+            print_error(0xfffffff5, "Could not read GRASS version. Did you specify the right path?\n", v425, v249, v248, v660, v659, v658, v717);
             esp687 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esp701) - 4 + 4);
         }
     }
     if (v688) {
         eax718 = fun_8048d94(v688, v612, v425, v249, v248, v660, v659, v658);
-        eax719 = fun_8048d54(eax718, 0x8057bbf, v425, v249, v248, v660, v659, v658);
-        eax720 = fun_8048d54(0, 0x8057bbf, v425, v249, v248, v660, v659, v658);
-        eax721 = fun_8048d54(0, 0x8057bbf, v425, v249, v248, v660, v659, v658);
+        eax719 = fun_8048d54(eax718, ".", v425, v249, v248, v660, v659, v658);
+        eax720 = fun_8048d54(0, ".", v425, v249, v248, v660, v659, v658);
+        eax721 = fun_8048d54(0, ".", v425, v249, v248, v660, v659, v658);
         eax722 = fun_8048be4(eax719, 0, 10, v249, v248, v660, v659, v658);
         eax723 = fun_8048be4(eax720, 0, 10, v249, v248, v660, v659, v658);
         eax724 = fun_8048be4(eax721, 0, 10, v249, v248, v660, v659, v658);
@@ -14393,23 +14393,23 @@ void main(void** a1, void** a2) {
         v248 = eax724;
         v249 = eax723;
         v732 = eax722;
-        fun_8048aa4(v688, 0x8057c8e, v732, v249, v248, v660, v659, v658, v733, v734, v735, v3, v736, v737, v738, v739, v740);
+        fun_8048aa4(v688, "%i.%i.%i", v732, v249, v248, v660, v659, v658, v733, v734, v735, v3, v736, v737, v738, v739, v740);
         esp687 = esp687 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4 - 4 + 4;
         eax741 = VERBOSE;
         if (eax741) {
             eax742 = stdout;
             v732 = v688;
-            fun_8048ce4(eax742, 0x8057c97, v732, v249, v248, v660, v659, v658, v743, v744, v745, v3, v746, v747, v748);
+            fun_8048ce4(eax742, "GRASS version is %s.\n", v732, v249, v248, v660, v659, v658, v743, v744, v745, v3, v746, v747, v748);
             esp687 = esp687 - 4 + 4;
         }
         if (reinterpret_cast<signed char>(eax722) <= reinterpret_cast<signed char>(5)) {
-            print_error(0xfffffff5, 0x8057cb0, v732, v249, v248, v660, v659, v658, v749);
+            print_error(0xfffffff5, "extensions only work with GRASS version 6 and above.\n", v732, v249, v248, v660, v659, v658, v749);
             esp687 = esp687 - 4 + 4;
         }
     }
     v750 = v247;
-    v751 = reinterpret_cast<void**>(0x8057ce8);
-    fun_8048aa4(esp687 + 0x14c, 0x8057ce8, v750, v249, v248, v660, v659, v658, v752, v753, v754, v3, v755, v756, v757, v758, v759);
+    v751 = reinterpret_cast<void**>("-L%s/lib -I/usr/local/grasslib/include/ ");
+    fun_8048aa4(esp687 + 0x14c, "-L%s/lib -I/usr/local/grasslib/include/ ", v750, v249, v248, v660, v659, v658, v752, v753, v754, v3, v755, v756, v757, v758, v759);
     esp760 = esp687 - 4 + 4;
     if (reinterpret_cast<int1_t>(v286 == 3)) {
         v659 = v688;
@@ -14454,8 +14454,8 @@ void main(void** a1, void** a2) {
             fun_8048db4(0, v247, v246, v249, v248, v660, v659, v658, v781, v782, v783);
         }
         v750 = v246;
-        v751 = reinterpret_cast<void**>(0x8057d11);
-        print_error(0xfffffff4, 0x8057d11, v750, v249, v248, v660, v659, v658, v784);
+        v751 = reinterpret_cast<void**>("no binaries for system '%s'\n");
+        print_error(0xfffffff4, "no binaries for system '%s'\n", v750, v249, v248, v660, v659, v658, v784);
     }
     fun_8048db4(0, v751, v750, v249, v248, v660, v659, v658, v785, v786, v787);
     goto 0;
@@ -14466,7 +14466,7 @@ void main(void** a1, void** a2) {
         v249 = eax789;
         v425 = reinterpret_cast<void**>(42);
         v625 = reinterpret_cast<void**>(1);
-        fun_8048cd4(0x8057b94, 1, 42, v249, v248);
+        fun_8048cd4("Extension files stored in a package file.\n", 1, 42, v249, v248);
         esp543 = esp543 - 4 + 4;
     }
     unpack_extension(esp543 + 0x294c, v625, v425, v249, v248);
@@ -14477,19 +14477,19 @@ void main(void** a1, void** a2) {
     v804 = eax802;
     v805 = 0;
     while (v804) {
-        v806 = reinterpret_cast<void**>(0x8057bbf);
-        eax813 = fun_8048da4(&v804->f11, 0x8057bbf, v425, v249, v248, v807, v808, v809, v810, v811, v812, v3);
+        v806 = reinterpret_cast<void**>(".");
+        eax813 = fun_8048da4(&v804->fb, ".", v425, v249, v248, v807, v808, v809, v810, v811, v812, v3);
         esp803 = esp803 - 4 + 4;
         if (!eax813) 
             goto addr_8053fd1_134;
-        v806 = reinterpret_cast<void**>(0x8057bc1);
-        eax820 = fun_8048da4(&v804->f11, 0x8057bc1, v425, v249, v248, v814, v815, v816, v817, v818, v819, v3);
+        v806 = reinterpret_cast<void**>("..");
+        eax820 = fun_8048da4(&v804->fb, "..", v425, v249, v248, v814, v815, v816, v817, v818, v819, v3);
         esp803 = esp803 - 4 + 4;
         if (!eax820) 
             goto addr_8053fd1_134;
-        v249 = reinterpret_cast<void**>(&v804->f11);
+        v249 = reinterpret_cast<void**>(&v804->fb);
         v425 = reinterpret_cast<void**>(0x80632c0);
-        fun_8048aa4(v216, 0x8057bc4, 0x80632c0, v249, v248, v821, v822, v823, v824, v825, v826, v3, v827, v828, v829, v830, v831);
+        fun_8048aa4(v216, "%s/%s", 0x80632c0, v249, v248, v821, v822, v823, v824, v825, v826, v3, v827, v828, v829, v830, v831);
         esp832 = esp803 - 4 + 4;
         v806 = reinterpret_cast<void**>(esp832 + 52);
         stat(v216, v806, 0x80632c0, v249, v248);
@@ -14505,7 +14505,7 @@ void main(void** a1, void** a2) {
     fun_8048c84(esp803 + 0x294c, v216, v425, v249, v248, v840, v841, v842, v843, v844, v845, v3, v846, v847, v848, v849, v850);
     esp543 = esp803 - 4 + 4;
     if (!v805) {
-        print_error(0xfffffff9, 0x8057bcc, v425, v249, v248, v851, v852, v853, v854);
+        print_error(0xfffffff9, "no top-level directory found in extension package.\n", v425, v249, v248, v851, v852, v853, v854);
         esp543 = esp543 - 4 + 4;
         goto addr_805402d_81;
     }
@@ -14518,7 +14518,7 @@ void main(void** a1, void** a2) {
         eax856 = stdout;
         v249 = eax856;
         v425 = reinterpret_cast<void**>(39);
-        fun_8048cd4(0x8057b6c, 1, 39, v249, v248);
+        fun_8048cd4("Extension files stored in a directory.\n", 1, 39, v249, v248);
         esp543 = esp543 - 4 + 4;
         goto addr_805402d_81;
     }
@@ -14606,18 +14606,18 @@ void exit_msg(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, 
         if (reinterpret_cast<int1_t>(eax9 == 1)) {
             eax10 = stdout;
             v11 = eax10;
-            fun_8048cd4(0x8054958, 1, 50, v11, v12);
+            fun_8048cd4("Job done but there was one warning. Please check.\n", 1, 50, v11, v12);
         }
         eax13 = WARNINGS;
         if (reinterpret_cast<signed char>(eax13) > reinterpret_cast<signed char>(1)) {
             ecx14 = WARNINGS;
             eax15 = stdout;
-            fun_8048ce4(eax15, 0x805498c, ecx14, v11, v16, v17, ebp18, __return_address(), a1, a2, a3, a4, a5, a6, a7);
+            fun_8048ce4(eax15, "Job done but there were %i warnings. Please check.\n", ecx14, v11, v16, v17, ebp18, __return_address(), a1, a2, a3, a4, a5, a6, a7);
         }
     } else {
         ecx19 = ERROR;
         eax20 = stdout;
-        fun_8048ce4(eax20, 0x805491c, ecx19, v21, v22, v23, ebp18, __return_address(), a1, a2, a3, a4, a5, a6, a7);
+        fun_8048ce4(eax20, "Program exited with an error (code %i). Operation aborted.\n", ecx19, v21, v22, v23, ebp18, __return_address(), a1, a2, a3, a4, a5, a6, a7);
     }
     return;
 }
@@ -14667,7 +14667,7 @@ void dump_str(void** a1, void** a2, void** a3) {
     v7 = reinterpret_cast<void**>(0);
     while (*reinterpret_cast<void***>((reinterpret_cast<unsigned char>(v7) << 2) + reinterpret_cast<unsigned char>(a2))) {
         v8 = *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(v7) << 2) + reinterpret_cast<unsigned char>(a2));
-        fun_8048ce4(a1, 0x8054a5d, v7, v8, v9, v10, v11, v7, v12, v13, v5, v4, a1, a2, a3);
+        fun_8048ce4(a1, "%i: %s", v7, v8, v9, v10, v11, v7, v12, v13, v5, v4, a1, a2, a3);
         ++v7;
     }
     return;
@@ -14887,28 +14887,28 @@ void** exit_tmp() {
         if (!eax4) {
             fun_8048c94(0x806c2e0, v5, v6, v7, v8);
             v9 = reinterpret_cast<void**>(0x80632c0);
-            v10 = reinterpret_cast<void**>(0x8054820);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, 0x8054820, 0x80632c0, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24);
+            v10 = reinterpret_cast<void**>("rm -rf %s/*");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, "rm -rf %s/*", 0x80632c0, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24);
             eax25 = VERBOSE;
             if (eax25) {
                 eax26 = stdout;
                 v27 = eax26;
                 v9 = reinterpret_cast<void**>(37);
                 v10 = reinterpret_cast<void**>(1);
-                fun_8048cd4(0x805482c, 1, 37, v27, v28);
+                fun_8048cd4("Removing temporary extension files...", 1, 37, v27, v28);
             }
             eax32 = fun_8048b84(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, v10, v9, v27, v29, v30, v31);
-            v33 = reinterpret_cast<void**>(0x8054852);
-            fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, 0x8054852, 0x80632c0, v27, v34, v35, eax32, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45);
-            eax48 = fun_8048b84(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, 0x8054852, 0x80632c0, v27, v46, v47, eax32);
+            v33 = reinterpret_cast<void**>("rmdir %s");
+            fun_8048aa4(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, "rmdir %s", 0x80632c0, v27, v34, v35, eax32, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45);
+            eax48 = fun_8048b84(reinterpret_cast<int32_t>(ebp1) + 0xfffff7f4, "rmdir %s", 0x80632c0, v27, v46, v47, eax32);
             v49 = eax48;
             v50 = reinterpret_cast<void**>(0x80632c0);
-            eax56 = fun_8048c24(0x80632c0, 0x8054852, 0x80632c0, v27, v51, v52, v49, v53, v54, v55);
+            eax56 = fun_8048c24(0x80632c0, "rmdir %s", 0x80632c0, v27, v51, v52, v49, v53, v54, v55);
             v57 = eax56;
             if (v57) {
                 v33 = reinterpret_cast<void**>(0x80632c0);
-                v50 = reinterpret_cast<void**>(0x805485c);
-                print_warning(0x805485c, 0x80632c0, 0x80632c0, v27, v58, v57, v49, v59, v60, v61, v62, v63, v64, v65, v66);
+                v50 = reinterpret_cast<void**>("could not remove temporary directory %s.\nPlease remove manually.\n");
+                print_warning("could not remove temporary directory %s.\nPlease remove manually.\n", 0x80632c0, 0x80632c0, v27, v58, v57, v49, v59, v60, v61, v62, v63, v64, v65, v66);
             }
             eax67 = VERBOSE;
             if (eax67) {

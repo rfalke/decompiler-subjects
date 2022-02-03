@@ -90,13 +90,13 @@ struct s0 {
     signed char[4] pad8;
     signed char f8;
     signed char[7] pad16;
-    int64_t f16;
+    int64_t f10;
 };
 
 void func(struct s0* rdi) {
     rdi->f0 = 1;
     rdi->f8 = 0x6b;
-    rdi->f16 = 10;
+    rdi->f10 = 10;
     return;
 }
 

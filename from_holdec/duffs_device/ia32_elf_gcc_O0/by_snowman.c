@@ -322,32 +322,36 @@ void copy2_eight_times(uint16_t* a1, uint16_t* a2, int32_t a3) {
             ++a1;
             ++a2;
             goto addr_80486e0_20;
-            addr_8048656_7:
+            addr_80486b2_16:
             edx7 = *a2;
             *a1 = *reinterpret_cast<uint16_t*>(&edx7);
             ++a1;
             ++a2;
-            addr_804866d_10:
+            goto addr_80486c9_18;
+            addr_804869b_14:
             edx8 = *a2;
             *a1 = *reinterpret_cast<uint16_t*>(&edx8);
             ++a1;
             ++a2;
+            goto addr_80486b2_16;
             addr_8048684_12:
             edx9 = *a2;
             *a1 = *reinterpret_cast<uint16_t*>(&edx9);
             ++a1;
             ++a2;
-            addr_804869b_14:
+            goto addr_804869b_14;
+            addr_804866d_10:
             edx10 = *a2;
             *a1 = *reinterpret_cast<uint16_t*>(&edx10);
             ++a1;
             ++a2;
-            addr_80486b2_16:
+            goto addr_8048684_12;
+            addr_8048656_7:
             edx11 = *a2;
             *a1 = *reinterpret_cast<uint16_t*>(&edx11);
             ++a1;
             ++a2;
-            goto addr_80486c9_18;
+            goto addr_804866d_10;
         }
     }
     return;

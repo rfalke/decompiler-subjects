@@ -144,7 +144,7 @@ int32_t inst_2_flags_var_1() {
 
 struct s0 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 struct s0* fun_804ad46() {
@@ -420,7 +420,7 @@ int32_t inst_7_values_var_8() {
 
 struct s1 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 struct s1* fun_804d77d(int32_t a1) {
@@ -760,7 +760,7 @@ int32_t inst_16_flags_var_3() {
 
 struct s2 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 struct s2* fun_8050f9c() {
@@ -1836,14 +1836,14 @@ void fun_804ac81(int32_t ecx) {
     if (ecx - 1) 
         goto 0x804acf3;
     eax2 = fun_804ad46();
-    tmp8_3 = reinterpret_cast<unsigned char>(eax2->0x1 + bh4);
-    cf5 = tmp8_3 < eax2->0x1;
-    eax2->0x1 = tmp8_3;
+    tmp8_3 = reinterpret_cast<unsigned char>(eax2->f1 + bh4);
+    cf5 = tmp8_3 < eax2->f1;
+    eax2->f1 = tmp8_3;
     if (cf5) {
     }
     if (__intrinsic()) {
     }
-    if (reinterpret_cast<signed char>(eax2->0x1) < reinterpret_cast<signed char>(0)) {
+    if (reinterpret_cast<signed char>(eax2->f1) < reinterpret_cast<signed char>(0)) {
     }
     goto v6;
 }
@@ -2791,22 +2791,22 @@ void fun_804c165(int32_t ecx) {
 
 struct s3 {
     signed char[1] pad1;
-    signed char 0x1;
+    signed char f1;
 };
 
 struct s4 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 struct s5 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 struct s6 {
     signed char[1] pad1;
-    signed char 0x1;
+    signed char f1;
 };
 
 void fun_804c1dc(int32_t ecx) {
@@ -2826,14 +2826,14 @@ void fun_804c1dc(int32_t ecx) {
     if (ecx - 1) {
         __asm__("rep retf 0xbd");
         *eax2 = reinterpret_cast<signed char>(*eax3 + al4);
-        tmp8_5 = reinterpret_cast<unsigned char>(eax6->0x1 + bh7);
-        cf8 = tmp8_5 < eax9->0x1;
-        eax10->0x1 = tmp8_5;
+        tmp8_5 = reinterpret_cast<unsigned char>(eax6->f1 + bh7);
+        cf8 = tmp8_5 < eax9->f1;
+        eax10->f1 = tmp8_5;
         if (cf8) {
         }
         if (__intrinsic()) {
         }
-        if (eax11->0x1 < 0) {
+        if (eax11->f1 < 0) {
         }
         goto v12;
     } else {
@@ -3157,17 +3157,17 @@ int32_t fun_804c99a(int32_t ecx) {
 
 struct s7 {
     signed char[1] pad1;
-    signed char 0x1;
+    signed char f1;
 };
 
 struct s8 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 struct s9 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 void fun_804ca09(int32_t ecx) {
@@ -3181,9 +3181,9 @@ void fun_804ca09(int32_t ecx) {
     int32_t v9;
 
     if (ecx - 1) {
-        tmp8_2 = reinterpret_cast<unsigned char>(eax3->0x1 + bh4);
-        cf5 = tmp8_2 < eax6->0x1;
-        eax7->0x1 = tmp8_2;
+        tmp8_2 = reinterpret_cast<unsigned char>(eax3->f1 + bh4);
+        cf5 = tmp8_2 < eax6->f1;
+        eax7->f1 = tmp8_2;
         if (cf5) {
         }
         if (__intrinsic()) {
@@ -3213,17 +3213,17 @@ void fun_804cac0(int32_t ecx) {
 
 struct s10 {
     signed char[1] pad1;
-    signed char 0x1;
+    signed char f1;
 };
 
 struct s11 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 struct s12 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 void fun_804cb08(int32_t ecx) {
@@ -3236,9 +3236,9 @@ void fun_804cb08(int32_t ecx) {
 
     if (ecx - 1) 
         goto 0x804cb72;
-    tmp8_2 = reinterpret_cast<unsigned char>(eax3->0x1 + bh4);
-    cf5 = tmp8_2 < eax6->0x1;
-    eax7->0x1 = tmp8_2;
+    tmp8_2 = reinterpret_cast<unsigned char>(eax3->f1 + bh4);
+    cf5 = tmp8_2 < eax6->f1;
+    eax7->f1 = tmp8_2;
     if (cf5) {
     }
     if (__intrinsic()) {
@@ -3258,17 +3258,17 @@ void fun_804cb77(int32_t ecx) {
 
 struct s13 {
     signed char[1] pad1;
-    signed char 0x1;
+    signed char f1;
 };
 
 struct s14 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 struct s15 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 void fun_804cbbf(int32_t ecx) {
@@ -3281,9 +3281,9 @@ void fun_804cbbf(int32_t ecx) {
 
     if (ecx - 1) 
         goto 0x804cc29;
-    tmp8_2 = reinterpret_cast<unsigned char>(eax3->0x1 + bh4);
-    cf5 = tmp8_2 < eax6->0x1;
-    eax7->0x1 = tmp8_2;
+    tmp8_2 = reinterpret_cast<unsigned char>(eax3->f1 + bh4);
+    cf5 = tmp8_2 < eax6->f1;
+    eax7->f1 = tmp8_2;
     if (cf5) {
     }
     if (__intrinsic()) {
@@ -3292,17 +3292,17 @@ void fun_804cbbf(int32_t ecx) {
 
 struct s16 {
     signed char[1] pad1;
-    signed char 0x1;
+    signed char f1;
 };
 
 struct s17 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 struct s18 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 void fun_804cc2e(int32_t ecx) {
@@ -3316,9 +3316,9 @@ void fun_804cc2e(int32_t ecx) {
     int32_t v9;
 
     if (ecx - 1) {
-        tmp8_2 = reinterpret_cast<unsigned char>(eax3->0x1 + bh4);
-        cf5 = tmp8_2 < eax6->0x1;
-        eax7->0x1 = tmp8_2;
+        tmp8_2 = reinterpret_cast<unsigned char>(eax3->f1 + bh4);
+        cf5 = tmp8_2 < eax6->f1;
+        eax7->f1 = tmp8_2;
         if (cf5) {
         }
         if (__intrinsic()) {
@@ -3718,9 +3718,9 @@ void fun_804d6b8(int32_t ecx) {
     if (ecx - 1) 
         goto 0x804d722;
     eax2 = fun_804d77d(__return_address());
-    tmp8_3 = reinterpret_cast<unsigned char>(eax2->0x1 + bh4);
-    cf5 = tmp8_3 < eax2->0x1;
-    eax2->0x1 = tmp8_3;
+    tmp8_3 = reinterpret_cast<unsigned char>(eax2->f1 + bh4);
+    cf5 = tmp8_3 < eax2->f1;
+    eax2->f1 = tmp8_3;
     if (cf5) {
     }
     if (__intrinsic()) {
@@ -4419,12 +4419,12 @@ void fun_804ec29(int32_t ecx) {
 
 struct s19 {
     signed char[189] pad189;
-    uint32_t 0xbd;
+    uint32_t fbd;
 };
 
 struct s20 {
     signed char[189] pad189;
-    uint32_t 0xbd;
+    uint32_t fbd;
 };
 
 void fun_804ec72(int32_t ecx) {
@@ -4437,7 +4437,7 @@ void fun_804ec72(int32_t ecx) {
 
     if (ecx) 
         goto inst_11_flags_var_2;
-    edi2->0xbd = edi3->0xbd >> 1;
+    edi2->fbd = edi3->fbd >> 1;
     *edi4 = reinterpret_cast<signed char>(*edi5 + bh6);
     goto v7;
 }
@@ -4525,12 +4525,12 @@ void fun_804ef16(int32_t ecx) {
 
 struct s21 {
     signed char[1] pad1;
-    int32_t 0x1;
+    int32_t f1;
 };
 
 struct s22 {
     signed char[1] pad1;
-    int32_t 0x1;
+    int32_t f1;
 };
 
 int32_t fun_6df88();
@@ -4542,7 +4542,7 @@ void fun_804ef76(int32_t ecx) {
 
     if (ecx) 
         goto inst_11_values_var_7;
-    eax2->0x1 = eax3->0x1 << *reinterpret_cast<unsigned char*>(&ecx);
+    eax2->f1 = eax3->f1 << *reinterpret_cast<unsigned char*>(&ecx);
     __asm__("fadd dword [ecx]");
     __asm__("enter 0xd001, 0x1");
     fun_6df88();
@@ -5396,9 +5396,9 @@ void fun_8050ed8() {
     int32_t v5;
 
     eax1 = fun_8050f9c();
-    tmp8_2 = reinterpret_cast<unsigned char>(eax1->0x1 + bh3);
-    cf4 = tmp8_2 < eax1->0x1;
-    eax1->0x1 = tmp8_2;
+    tmp8_2 = reinterpret_cast<unsigned char>(eax1->f1 + bh3);
+    cf4 = tmp8_2 < eax1->f1;
+    eax1->f1 = tmp8_2;
     if (cf4) {
     }
     goto v5;
@@ -6056,17 +6056,17 @@ void fun_8049da1() {
 
 struct s23 {
     signed char[1] pad1;
-    signed char 0x1;
+    signed char f1;
 };
 
 struct s24 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 struct s25 {
     signed char[1] pad1;
-    unsigned char 0x1;
+    unsigned char f1;
 };
 
 void fun_804b044() {
@@ -6077,9 +6077,9 @@ void fun_804b044() {
     struct s24* eax5;
     struct s25* eax6;
 
-    tmp8_1 = reinterpret_cast<unsigned char>(eax2->0x1 + bh3);
-    cf4 = tmp8_1 < eax5->0x1;
-    eax6->0x1 = tmp8_1;
+    tmp8_1 = reinterpret_cast<unsigned char>(eax2->f1 + bh3);
+    cf4 = tmp8_1 < eax5->f1;
+    eax6->f1 = tmp8_1;
     if (cf4) {
     }
 }

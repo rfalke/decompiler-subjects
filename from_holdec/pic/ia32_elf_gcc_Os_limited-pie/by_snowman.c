@@ -34,7 +34,7 @@ int32_t deregister_tm_clones() {
 
 struct s0 {
     signed char[24] pad24;
-    int32_t 0x18;
+    int32_t f18;
 };
 
 void fun_8049040(int32_t a1, int32_t a2, int32_t a3, int32_t a4, void* a5);
@@ -48,7 +48,7 @@ void a_func(int32_t a1, int32_t a2, int32_t a3, int32_t a4) {
 
     __x86_get_pc_thunk_bx();
     ebx5 = reinterpret_cast<struct s0*>(ebx6 + 0x2e31);
-    v7 = ebx5->0x18;
+    v7 = ebx5->f18;
     fun_8049040(reinterpret_cast<int32_t>(ebx5) - 0x1ff4, v7, v8, v9, 0x80491cf);
     return;
 }
@@ -242,7 +242,7 @@ void fun_80491b9() {
 
 struct s1 {
     signed char[24] pad24;
-    int32_t 0x18;
+    int32_t f18;
 };
 
 int32_t main() {
@@ -254,10 +254,10 @@ int32_t main() {
 
     eax1 = __x86_get_pc_thunk_bx();
     ebx2 = reinterpret_cast<struct s1*>(ebx3 + 0x2f8d);
-    v4 = ebx2->0x18;
+    v4 = ebx2->f18;
     v5 = reinterpret_cast<int32_t>(ebx2) - 0x1fe7;
     fun_8049040(v5, v4, eax1, eax1, reinterpret_cast<int32_t>(__zero_stack_offset()) + 4);
-    ebx2->0x18 = ebx2->0x18 + 1;
+    ebx2->f18 = ebx2->f18 + 1;
     a_func(v5, v4, eax1, eax1);
     return 0;
 }

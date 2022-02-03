@@ -138,14 +138,14 @@ struct s2 {
     signed char[8] pad8;
     int32_t f8;
     signed char[36] pad48;
-    int32_t f48;
+    int32_t f30;
     signed char[4] pad56;
-    int32_t f56;
+    int32_t f38;
 };
 
 struct s1 {
     signed char[140] pad140;
-    struct s2* f140;
+    struct s2* f8c;
 };
 
 int32_t XClearWindow = 0x804895a;
@@ -252,9 +252,9 @@ void init(int32_t a1, int32_t a2) {
     eax3 = XOpenDisplay(0);
     dis = eax3;
     eax4 = dis;
-    v5 = eax4->f140->f56;
+    v5 = eax4->f8c->f38;
     eax6 = dis;
-    v7 = eax6->f140->f8;
+    v7 = eax6->f8c->f8;
     v8 = dis;
     eax9 = XCreateSimpleWindow(v8, v7, 0, 0, a1, a2, 0, 0, v5);
     win = eax9;
@@ -262,7 +262,7 @@ void init(int32_t a1, int32_t a2) {
     v11 = dis;
     XMapWindow(v11, v10);
     eax12 = dis;
-    colormap = eax12->f140->f48;
+    colormap = eax12->f8c->f30;
     v13 = win;
     v14 = dis;
     eax15 = XCreateGC(v14, v13, 0, 0);
